@@ -1,5 +1,5 @@
 ---
-Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
+Description: 包含每個 UWP 應用程式說明中的通用的設計功能您建置可調式完美地利用廣泛的裝置應用程式。
 title: 通用 Windows 平台 (UWP) 應用程式設計簡介 (Windows 應用程式)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
@@ -8,17 +8,17 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 32838e2c3369535928c9e9311f62654eba54e4e0
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058779"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611753"
 ---
-# <a name="introduction-to-uwp-app-design"></a>UWP app 設計簡介
+# <a name="introduction-to-uwp-app-design"></a>UWP 應用程式設計簡介
 
 ![範例光源 App](images/introUWP-header.jpg)
 
-通用 Windows 平台 (UWP) 設計指導方針是一項資源，可以協助您設計和建立美觀、優雅的應用程式。
+通用 Windows 平台 (UWP) 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。
 
 這不是一份詳盡規則的清單，這份文件會隨著不斷演進的 [Fluent Design 系統](../fluent-design-system/index.md)以及我們 app 建置社群的需求改變。
 
@@ -26,13 +26,13 @@ ms.locfileid: "9058779"
 
 ## <a name="effective-pixels-and-scaling"></a>有效像素與縮放
 
-在所有[Windows 10 裝置](../devices/index.md)上的 UWP app 是從您的電視到您的平板電腦或電腦執行。 您要如何設計在各種不同的裝置和螢幕大小有很好的 UI？
+所有上執行 UWP app [Windows 10 裝置](../devices/index.md)，從您的平板電腦或 PC 電視。 您要如何設計 UI，看起來沒問題，在各種裝置和螢幕大小？
 
 ![各種裝置上的相同 App](images/universal-image-1.jpg)
 
-UWP 可協助自動調整 UI 元素，使它們更清晰可讀並可輕鬆地在所有裝置和螢幕大小上進行互動。
+UWP 有助於藉由自動調整 UI 項目，使它們更易於閱讀且易於互動，以在所有裝置和螢幕大小。
 
-當您在裝置上執行 App 時，系統會使用演算法將螢幕上 UI 元素的顯示方式標準化。 這個縮放演算法會考量檢視距離和畫面密度 (每英吋像素) 來最佳化認知大小 (而不是實體大小)。 此縮放演算法可確保使用者在 10 英呎遠的 Surface Hub 上看到的 24 px 字型，就和在只有幾英吋遠的 5 吋手機上看到的 24 px 字型一樣清晰。
+當您在裝置上執行應用程式 時，系統會使用演算法將螢幕上 UI 元素的顯示方式標準化。 這個縮放演算法會考量檢視距離和畫面密度 (每英吋像素) 來最佳化認知大小 (而不是實體大小)。 此縮放演算法可確保使用者在 10 英呎遠的 Surface Hub 上看到的 24 px 字型，就和在只有幾英吋遠的 5 吋手機上看到的 24 px 字型一樣清晰。
 
 ![不同裝置的檢視距離](images/scaling-chart.png)
 
@@ -56,7 +56,7 @@ UWP 可協助自動調整 UI 元素，使它們更清晰可讀並可輕鬆地在
     :::column-end:::
 :::row-end:::
 
-## <a name="layout"></a>版面配置
+## <a name="layout"></a>配置
 
 由於 UWP app 會對於所有裝置自動調整大小，所以設計適用於任何裝置的 UWP app 依照相同的結構。 讓我們從您的 UWP app 的 UI 的一開頭開始。
 
@@ -170,12 +170,12 @@ UWP 的設計平台提供一組通用控制項，確保可在所有執行 Window
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Designing-Universal-Windows-Platform-apps/player]
 
-## <a name="next-fluent-design-system"></a>下一節：Fluent Design 系統
+## <a name="next-fluent-design-system"></a>下一步:Fluent Design 系統
 
 如果您想要深入了解 Fluent Design (Microsoft 的設計系統) 背後的原理，並查看更多可納入 UWP app 中的功能，請繼續前往 [Fluent Design 系統](../fluent-design-system/index.md)。
 
 ## <a name="related-articles"></a>相關文章
 
 - [什麼是 UWP app？](../../get-started/universal-application-platform-guide.md)
-- [Fluent Design 系統](../fluent-design-system/index.md)
+- [Fluent 設計系統](../fluent-design-system/index.md)
 - [XAML 平台概觀](../../xaml-platform/index.md)

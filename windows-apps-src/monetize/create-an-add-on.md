@@ -1,26 +1,26 @@
 ---
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: 在 Microsoft Store 提交 API 中使用這個方法，來建立附加元件，已登錄到您 PartnerCenter 帳戶的應用程式。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來建立應用程式已向 PartnerCenter 帳戶的附加元件。
 title: 建立附加元件
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8465dc7a42961a20fcd33ba8d43c71e2d73727ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925935"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651033"
 ---
 # <a name="create-an-add-on"></a>建立附加元件
 
-在 Microsoft Store 提交 API 中使用這個方法，來建立附加元件 （也稱為應用程式內產品或 IAP） 針對已登錄到您的合作夥伴中心帳戶的 app。
+在 Microsoft Store 提交 API 中使用這個方法，來建立應用程式已向您的合作夥伴中心帳戶的附加元件 （也稱為應用程式內產品或 IAP）。
 
 > [!NOTE]
 > 這個方法會建立一個附加元件但不含任何提交。 若要為附加元件建立提交，請參閱[管理附加元件提交](manage-add-on-submissions.md)中的方法。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -29,7 +29,7 @@ ms.locfileid: "8925935"
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -40,7 +40,7 @@ ms.locfileid: "8925935"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-body"></a>要求本文
@@ -49,9 +49,9 @@ ms.locfileid: "8925935"
 
 |  參數  |  類型  |  描述  |  必要  |
 |------|------|------|------|
-|  applicationIds  |  陣列  |  此陣列包含此附加元件相關聯之 App 的 Store 識別碼。 此陣列只支援一個項目。   |  是  |
+|  applicationIds  |  陣列  |  此陣列包含此附加元件相關聯之 App 的市集識別碼。 此陣列只支援一個項目。   |  是  |
 |  productId  |  字串  |  附加元件的產品識別碼。 這是可在程式碼中用來參考附加元件的識別碼。 如需詳細資訊，請參閱[設定您的產品類型和產品識別碼](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。  |  是  |
-|  productType  |  字串  |  附加元件的產品類型。 支援下列值︰**Durable** 和 **Consumable**。  |  是  |
+|  productType  |  字串  |  附加元件的產品類型。 支援下列值：**永久性**並**可取用**。  |  是  |
 
 
 ### <a name="request-example"></a>要求範例
@@ -71,7 +71,7 @@ Content-Type: application/json
 
 ## <a name="response"></a>回應
 
-下列範例示範成功呼叫這個方法的 JSON 回應本文。 如需回應本文中各個值的詳細資訊，請參閱[附加元件資源](manage-add-ons.md#add-on-object)。
+下列範例示範成功呼叫此方法時的 JSON 回應主體。 如需回應本文中各個值的詳細資訊，請參閱[附加元件資源](manage-add-ons.md#add-on-object)。
 
 ```json
 {
@@ -97,12 +97,12 @@ Content-Type: application/json
 | 錯誤碼 |  描述                                                                                                                                                                           |
 |--------|------------------|
 | 400  | 要求無效。 |
-| 409  | 無法建立附加元件，因為其目前的狀態，或附加元件使用[「 Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |   
+| 409  | 無法建立附加元件，因為其目前的狀態，或附加元件會使用合作夥伴中心功能都十分[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
 * [管理附加元件提交](manage-add-on-submissions.md)
 * [取得所有附加元件](get-all-add-ons.md)
 * [取得附加元件](get-an-add-on.md)

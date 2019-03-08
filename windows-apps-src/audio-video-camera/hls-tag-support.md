@@ -4,14 +4,14 @@ description: 本文列出適用於 UWP 應用程式支援的 HTTP 即時資料�
 title: HTTP 即時資料流 (HLS) 標記支援
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c6664d13e76a5774172094d632de9db25109fdc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923375"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613083"
 ---
 # <a name="http-live-streaming-hls-tag-support"></a>HTTP 即時資料流 (HLS) 標記支援
 下表列出適用於 UWP 應用程式支援的 HLS 標記。
@@ -19,7 +19,7 @@ ms.locfileid: "8923375"
 > [!NOTE] 
 > 以 "X-" 開頭的自訂標記可做為定時中繼資料來存取，如[媒體項目、播放清單與曲目](media-playback-with-mediasource.md)文章中所述。
 
-|標記 |HLS 通訊協定版本所引進|HLS 通訊協定文件草稿版本|用戶端上的必要項|7 月發行的 Windows 10|Windows 10，版本 1511|Windows 10，版本 1607 |
+|Tag |HLS 通訊協定版本所引進|HLS 通訊協定文件草稿版本|用戶端上的必要項|7 月發行的 Windows 10|Windows 10，版本 1511|Windows 10，版本 1607 |
 |---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  基本標記                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|必要|支援|支援|支援|
@@ -29,7 +29,7 @@ ms.locfileid: "8923375"
 | 4.3.2.2.  EXT-X-BYTERANGE |4|7|選用|支援|支援|支援|
 | 4.3.2.3.  EXT-X-DISCONTINUITY |1|2|選用|支援|支援|支援|
 | 4.3.2.4.  EXT-X-KEY |1|0|選用|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp; METHOD|1|0|屬性|"NONE, AES-128"|"NONE, AES-128"|"NONE, AES-128, SAMPLE-AES"|
+|&nbsp;&nbsp;&nbsp; 方法|1|0|屬性|"NONE, AES-128"|"NONE, AES-128"|"NONE, AES-128, SAMPLE-AES"|
 |&nbsp;&nbsp;&nbsp; URI|1|0|屬性|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp; IV|2|3|屬性|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp; KEYFORMAT|5|9|屬性|不支援|不支援|不支援|
@@ -47,28 +47,28 @@ ms.locfileid: "8923375"
 | 4.3.3.6.  EXT-X-I-FRAMES-ONLY |4|7|選用|不支援|不支援|不支援|
 |4.3.4.  主要播放清單標記                 |             |                   |         |             |     |    |
 | 4.3.4.1.  EXT-X-MEDIA |4|7|選用|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  TYPE|4|7|屬性|"AUDIO, VIDEO"|"AUDIO, VIDEO"|"AUDIO, VIDEO, SUBTITLES"|
+|&nbsp;&nbsp;&nbsp;  型別|4|7|屬性|"AUDIO, VIDEO"|"AUDIO, VIDEO"|"AUDIO, VIDEO, SUBTITLES"|
 |&nbsp;&nbsp;&nbsp;  URI|4|7|屬性|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp;  GROUP-ID|4|7|屬性|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  LANGUAGE|4|7|屬性|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  ASSOC-LANGUAGE|6|13|屬性|不支援|不支援|不支援|
+|&nbsp;&nbsp;&nbsp;  語言|4|7|屬性|支援|支援|支援|
+|&nbsp;&nbsp;&nbsp;  ASSOC 語言|6|13|屬性|不支援|不支援|不支援|
 |&nbsp;&nbsp;&nbsp;  NAME|4|7|屬性|不支援|不支援|支援|
 |&nbsp;&nbsp;&nbsp;  DEFAULT|4|7|屬性|不支援|不支援|不支援|
 |&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|屬性|不支援|不支援|不支援|
-|&nbsp;&nbsp;&nbsp;  FORCED|5|9|屬性|不支援|不支援|不支援|
+|&nbsp;&nbsp;&nbsp;  強制|5|9|屬性|不支援|不支援|不支援|
 |&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|屬性|不支援|不支援|不支援|
-|&nbsp;&nbsp;&nbsp;  CHARACTERISTICS|5|9|屬性|不支援|不支援|不支援|
+|&nbsp;&nbsp;&nbsp;  特性|5|9|屬性|不支援|不支援|不支援|
 | 4.3.4.2.  EXT-X-STREAM-INF  |1|0|必要|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp;  BANDWIDTH|1|0|屬性|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp;  PROGRAM-ID|1|0|屬性|NA|NA|NA|
 |&nbsp;&nbsp;&nbsp;  AVERAGE-BANDWIDTH|7|14|屬性|不支援|不支援|不支援|
-|&nbsp;&nbsp;&nbsp;  CODECS|1|0|屬性|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  RESOLUTION|2|3|屬性|支援|支援|支援|
+|&nbsp;&nbsp;&nbsp;  轉碼器|1|0|屬性|支援|支援|支援|
+|&nbsp;&nbsp;&nbsp;  解決方式|2|3|屬性|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp;  FRAME-RATE|7|15|屬性|NA|NA|NA|
 |&nbsp;&nbsp;&nbsp;  AUDIO|4|7|屬性|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp;  VIDEO|4|7|屬性|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  SUBTITLES|5|9|屬性|不支援|不支援|支援|
-|&nbsp;&nbsp;&nbsp;  CLOSED-CAPTIONS|6|12|屬性|不支援|不支援|不支援|
+|&nbsp;&nbsp;&nbsp;  翻譯字幕|5|9|屬性|不支援|不支援|支援|
+|&nbsp;&nbsp;&nbsp;  隱藏式字幕|6|12|屬性|不支援|不支援|不支援|
 | 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|選用|不支援|不支援|不支援|
 | 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|選用|不支援|不支援|不支援|
 | 4.3.4.5.  EXT-X-SESSION-KEY |7|17|選用|不支援|不支援|不支援|
@@ -83,7 +83,7 @@ ms.locfileid: "8923375"
 ## <a name="related-topics"></a>相關主題
 
 * [媒體播放](media-playback.md)
-* [彈性資料流](adaptive-streaming.md)
+* [調適性串流處理](adaptive-streaming.md)
  
 
  

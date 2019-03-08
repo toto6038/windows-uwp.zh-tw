@@ -1,24 +1,24 @@
 ---
 title: 安全開發 Windows app 的簡介
-description: 這篇簡介文章可協助應用程式設計師和開發人員更清楚地了解建立安全的通用 Windows 平台 (UWP) 應用程式的各種 windows 10 平台功能。
+description: 本簡介文章可協助應用程式架構設計人員和開發人員進一步了解加速建立安全的通用 Windows 平台 (UWP) 應用程式的各種 Windows 10 平台功能。
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c3c57653899ce7d849eec72ad36f14f7806652c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049865"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606513"
 ---
-# <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows 應用程式的簡介
+# <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows app 的簡介
 
 
 
 
-這篇簡介文章可協助應用程式設計師和開發人員更清楚地了解建立安全的通用 Windows 平台 (UWP) 應用程式的各種 windows 10 平台功能。 文章會詳細說明如何在每個階段 (驗證、傳輸中資料及靜態資料) 中使用可用的 Windows 安全性功能。 如需深入了解每個主題，請檢視包含在每個章節中的額外資源。
+本簡介文章可協助應用程式架構設計人員和開發人員進一步了解加速建立安全的通用 Windows 平台 (UWP) 應用程式的各種 Windows 10 平台功能。 文章會詳細說明如何在每個階段 (驗證、傳輸中資料及靜態資料) 中使用可用的 Windows 安全性功能。 如需深入了解每個主題，請檢視包含在每個章節中的額外資源。
 
 ## <a name="1-introduction"></a>1 簡介
 
@@ -75,7 +75,7 @@ ms.locfileid: "9049865"
 ## <a name="211-web-authentication-broker"></a>2.1.1 Web 驗證代理人
 
 
-如同先前所討論的，對於 IT 部門來說，使用密碼驗證的挑戰之一，在於管理使用者名稱/密碼資料庫、重設機制等等的經常費用提高了。目前有種越來越受歡迎的選擇，就是仰賴第三方識別提供者來提供藉由 OAuth (開放的驗證標準) 驗證的程序。
+如先前所討論，使用密碼驗證挑戰之一，IT 部門是加入管理使用者名稱/密碼、 重設機制等等的基底的額外負荷。越來越受歡迎的選項是依賴協力廠商身分識別提供者驗證透過 OAuth 進行驗證的開放標準的供應項目。
 
 IT 部門只要使用 OAuth，就能有效地把維護使用者名稱及密碼資料庫、密碼重設功能等複雜工作「外包」給第三方識別提供者，例如 Facebook、Twitter 或 Microsoft。
 
@@ -169,7 +169,7 @@ Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也
 
 使用者必須先讓裝置向 Windows Hello 註冊，才能使用該裝置進行驗證。 Windows Hello 會使用非對稱式 (公開/私密金鑰) 加密，讓其中一方使用公開金鑰來為資料加密，而另一方使用私密金鑰來解密。 就 Windows Hello 來說，它會建立公開/私密金鑰組，並將私密金鑰寫入裝置的信賴平台模組 (TPM) 晶片中。 裝置註冊之後，UWP app 就能呼叫系統 API 來擷取使用者的公開金鑰，讓系統能用來讓使用者在伺服器上註冊。
 
-應用程式的註冊工作流程可能如下：
+app 的註冊工作流程可能如下：
 
 ![Windows Hello 註冊](images/secure-passport.png)
 
@@ -192,9 +192,9 @@ Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也
 
 Web 服務通訊的安全性需求，會比在直接連線案例中的需求還要高，因為資料不再是安全網路的一部分，且惡意攻擊者想要攔截資料的可能性也比較高。 由於會有各種類型的裝置存取服務，這些服務可能會建置為 RESTful 服務 (而非 WCF 等服務)，這代表服務的驗證與授權也有了新的挑戰。 我們將討論兩種安全的遠端系統通訊的需求。
 
-第一種需求是訊息機密性：用戶端與 Web 服務之間傳遞的資訊 (例如使用者的身分識別及其他個人資訊)，在傳輸過程中不得被第三方讀取。 這通常是透過為傳送訊息所用的連線加密，以及為訊息本身加密來達成。 在私密/公開金鑰加密方面，公開金鑰是所有人都能使用的，且會用來為要傳送給特定收件者的訊息加密。 而私密金鑰是只有收件者才能擁有的，且會用來為訊息解密。
+第一項需求是訊息機密性：用戶端與 web 服務 （例如，使用者和其他個人資訊的身分識別） 之間傳遞的資訊不能在傳輸過程中的第三方讀取。 這通常是透過為傳送訊息所用的連線加密，以及為訊息本身加密來達成。 在私密/公開金鑰加密方面，公開金鑰是所有人都能使用的，且會用來為要傳送給特定收件者的訊息加密。 而私密金鑰是只有收件者才能擁有的，且會用來為訊息解密。
 
-第二種需求是訊息完整性：用戶端與 Web 服務必須能確認自己收到的訊息是由另一方有意傳送的，且訊息在傳輸過程中沒有遭到竄改。 這可透過以數位簽章簽署訊息，以及使用憑證驗證來達成。
+第二個需求是訊息的完整性：用戶端和 web 服務必須能夠驗證其所接收的訊息是要其他合作對象所傳送的項目，而且該訊息在傳輸過程中未遭到更改。 這可透過以數位簽章簽署訊息，以及使用憑證驗證來達成。
 
 ## <a name="32-ssl-connections"></a>3.2 SSL 連線
 
@@ -286,7 +286,7 @@ Azure API Management 也能減少針對某個服務的 API 呼叫數量 (稱為�
 
 Windows 過去從來沒有為應用程式下過定義。 它之前最常被稱為可執行檔 (.exe)，且從未包含安裝、儲存體狀態、執行長度、版本設定、作業系統整合，或是 app 之間的通訊。 通用 Windows 平台模型為應用程式模型下了定義，其定義涵蓋安裝、執行階段環境、資源管理、更新、資料模型，以及解除安裝。
 
-在容器中，這表示，他們的權限有限 （額外的權限可以要求並授與使用者） 的預設，執行 windows 10 應用程式。 舉例來說，如果應用程式要存取系統中的檔案，則必須使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空間的檔案選擇器 ，來讓使用者挑選檔案 (而非啟用直接存取檔案的權限)。 我們再舉一個範例，如果應用程式要存取使用者的位置資料，它必須讓裝置的定位功能需求受到宣告，讓使用者在下載應用程式時，提示使用者該應用程式需要存取使用者的位置資訊。 除此之外，應用程式第一次要存取使用者的位置時，系統會顯示額外的同意提示，要求存取該資料的權限。
+這表示，具有有限的權限 （額外的權限的要求與被授與使用者） 的預設容器中，執行 Windows 10 應用程式。 舉例來說，如果應用程式要存取系統中的檔案，則必須使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空間的檔案選擇器 ，來讓使用者挑選檔案 (而非啟用直接存取檔案的權限)。 我們再舉一個範例，如果應用程式要存取使用者的位置資料，它必須讓裝置的定位功能需求受到宣告，讓使用者在下載應用程式時，提示使用者該應用程式需要存取使用者的位置資訊。 除此之外，應用程式第一次要存取使用者的位置時，系統會顯示額外的同意提示，要求存取該資料的權限。
 
 請注意，這個應用程式模型就像是應用程式的「監獄」，代表應用程式無法接觸外界，但它並非無法從外界接觸的「城堡」(擁有系統管理員權限的應用程式當然仍舊可以向內接觸)。 Windows 10 中的 Device Guard，可讓組織/IT 人員指定可執行的 (Win32) app，能進一步協助限制這項存取權。
 
@@ -294,7 +294,7 @@ Windows 過去從來沒有為應用程式下過定義。 它之前最常被稱�
 
 當裝置上的記憶體資源不足時，Windows 會終止應用程式以釋放記憶體空間。 這個週期模型會強制應用程式在暫停時保存資料，因為從暫停到終止之間並沒有任何額外的時間。
 
-如需詳細資訊，請參閱[這是通用的：了解 Windows 10 應用程式的週期](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx)。
+如需詳細資訊，請參閱[是標準：了解 Windows 10 應用程式的生命週期](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx)。
 
 ## <a name="42-stored-credential-protection"></a>4.2 已儲存認證的保護
 
@@ -397,7 +397,7 @@ Windows 應用程式可以實行 MAC 訊息驗證，方法是呼叫 [**MacAlgori
 
 雜湊函數是使用任意長度的資料區塊的密碼編譯演算法，會傳回一個固定大小位元字串，稱為雜湊值。 有一整個系列的雜湊函數可以執行這項操作。
 
-雜湊值可用來取代上述訊息傳輸案例中的 MAC。 寄件者會傳送雜湊值和一則訊息，收件者從寄件者的雜湊值和訊息衍生其雜湊值，並比較兩個雜湊值。 Windows 10 上執行的 app 可以呼叫 [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 類別來列舉可用的雜湊演算法，並執行其中一個演算法。 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 類別代表雜湊值。 [**CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法可以用來重複雜湊不同的資料，而不用在每次使用時都要重新建立物件。 **CryptographicHash** 類別的 Append 方法會將新資料加入要雜湊的緩衝區。 下列 C# 程式碼範例將示範這整個過程。
+雜湊值可用來取代上述訊息傳輸案例中的 MAC。 寄件者會傳送雜湊值和一則訊息，收件者從寄件者的雜湊值和訊息衍生其雜湊值，並比較兩個雜湊值。 Windows 10 上執行的 app 可以呼叫 [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 類別來列舉可用的雜湊演算法，並執行其中一個演算法。 [  **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 類別代表雜湊值。 [  **CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法可以用來重複雜湊不同的資料，而不用在每次使用時都要重新建立物件。 **CryptographicHash** 類別的 Append 方法會將新資料加入要雜湊的緩衝區。 下列 C# 程式碼範例將示範這整個過程。
 
 ```cs
 public void SampleReusableHash()
@@ -472,15 +472,15 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 -   [憑證](certificates.md)
 -   [密碼編譯金鑰](cryptographic-keys.md)
 -   [資料保護](data-protection.md)
--   [MAC、雜湊以及簽章](macs-hashes-and-signatures.md)
--   [密碼編譯的出口限制](export-restrictions-on-cryptography.md)
--   [常見的密碼編譯工作](common-cryptography-tasks.md)
+-   [Mac、 雜湊，以及簽章](macs-hashes-and-signatures.md)
+-   [密碼編譯的匯出限制](export-restrictions-on-cryptography.md)
+-   [一般密碼編譯工作](common-cryptography-tasks.md)
 
 ### <a name="62-code-samples"></a>6.2 程式碼範例
 
 -   [認證保險箱](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
 -   [認證選擇器](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
--   [利用 Azure 登入功能鎖定裝置](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
+-   [使用 Azure 登入的裝置鎖定](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
 -   [企業資料保護](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/EnterpriseDataProtection)
 -   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/KeyCredentialManager)
 -   [智慧卡](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SmartCard)

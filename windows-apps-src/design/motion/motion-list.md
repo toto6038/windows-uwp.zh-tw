@@ -1,19 +1,19 @@
 ---
-Description: List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
-title: 在 UWP app 中新增和刪除動畫
+Description: 清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
+title: 在 UVP app 中新增和刪除動畫
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c7ca332b73aba067c2ae003d458e8d0d97c7a7e3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942884"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642833"
 ---
 # <a name="add-and-delete-animations"></a>新增和刪除動畫
 
@@ -21,7 +21,7 @@ ms.locfileid: "8942884"
 
 清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
 
-> **重要 API**: [**AddDeleteThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **重要的 Api**:[**AddDeleteThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -39,8 +39,8 @@ ms.locfileid: "8942884"
 ## <a name="related-articles"></a>相關文章
 
 * [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [讓清單新增和刪除產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [以動畫顯示清單中新增及刪除](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
+* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**AddDeleteThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
  

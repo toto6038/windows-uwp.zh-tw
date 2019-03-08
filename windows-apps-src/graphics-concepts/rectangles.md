@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: aa94eb00058ba3297e7ca7cc4f93581d9281fd1c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947910"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608013"
 ---
 # <a name="rectangles"></a>矩形
 
 
-在整個 Direct3D 及 Windows 程式設計中，螢幕上的物件會以週框的形式參照。 週框的側邊永遠和螢幕的側邊平行，讓矩形可由兩個點描述，這兩點為左上角和右下角。
+在整個 Direct3D 及 Windows 程式設計中，螢幕上的物件會以週框的形式參照。 週框的側邊永遠和螢幕的側邊平行，以讓矩形可由兩個點描述，這兩點為左上角和右下角。
 
-## <a name="span-idboundingrectanglesspanspan-idboundingrectanglesspanspan-idboundingrectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>週框
+## <a name="span-idboundingrectanglesspanspan-idboundingrectanglesspanspan-idboundingrectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>週框矩形
 
 
 大部分的應用程式使用 [**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897) 結構 (或 typedef 別名) 來具備在傳輸到畫面或執行命中偵測時要使用的週框相關資訊。 在 C++ 中，**RECT** 結構具有下列定義。
@@ -44,7 +44,7 @@ typedef struct tagRECT {
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[座標系統與幾何](coordinate-systems-and-geometry.md)
+[座標系統和幾何](coordinate-systems-and-geometry.md)
 
  
 

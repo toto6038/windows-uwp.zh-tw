@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927599"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626403"
 ---
 # <a name="visual-layer"></a>視覺層
 
-視覺層提供高效能、圖形的保留模式 API、效果和動畫，以及是 Windows 裝置上所有的 UI 的基礎。您可以透過宣告方式定義 UI，而且視覺層依賴圖形硬體加速，確保以平滑且無干擾的方式轉譯您的內容、效果和動畫，並且與應用程式的 UI 執行緒無關。
+視覺層提供高效能、圖形的保留模式 API、效果和動畫，以及是 Windows 裝置上所有的 UI 的基礎。 您可以透過宣告方式定義 UI，而且視覺層依賴圖形硬體加速，確保以平滑且無干擾的方式轉譯您的內容、效果和動畫，並且與應用程式的 UI 執行緒無關。
 
 值得注意的重點︰
 
@@ -32,13 +32,13 @@ Windows UWP app 已經使用透過其中一個 UI 架構的視覺層。 您也�
 
 視覺層的主要功能如下︰
 
-1. **內容**︰自訂繪製內容的輕量型組合
-1. **效果**︰其效果可以建立動畫、鏈結和自訂的即時 UI 效果系統
-1. **動畫**：在與 UI 執行緒無關的情況下執行表達性、無從驗證的架構動畫
+1. **內容**：自訂的繪製內容的輕量型複合 （compositing)
+1. **效果**:即時 UI 會影響的系統的影響可以動畫顯示、 鏈結和自訂
+1. **動畫**:執行獨立的 UI 執行緒的表達能力、 與架構無關動畫
 
 ### <a name="content"></a>內容
 
-使用視覺效果，可讓動畫和效果系統裝載、轉換和使用內容。 類別階層的基底是[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)類別，為組合器中可見狀態之應用程式處理程序中的輕量型、敏捷執行緒 Proxy。 視覺效果的子類別包含 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) ，以允許子項建立視覺效果和[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) ，其中包含的樹狀結構的內容，而且可以使用純色、 自訂繪製內容或視覺效果進行繪製。 這些視覺效果類型可一起構成 2D UI 的視覺效果樹狀結構，並且支援大部分的可見 XAML FrameworkElement。
+使用視覺效果，可讓動畫和效果系統裝載、轉換和使用內容。 類別階層的基底是[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)類別，為組合器中可見狀態之應用程式處理程序中的輕量型、敏捷執行緒 Proxy。 視覺效果的子類別包含  [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810)以便建立視覺效果的樹狀結構的子系並[ **SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) ，包含內容，可以使用其中一個透明的色彩，自訂的繪製內容或視覺效果繪製。 這些視覺效果類型可一起構成 2D UI 的視覺效果樹狀結構，並且支援大部分的可見 XAML FrameworkElement。
 
 如需詳細資訊，請參閱[組合視覺效果](composition-visual-tree.md)概觀。
 
@@ -52,7 +52,7 @@ Windows UWP app 已經使用透過其中一個 UI 架構的視覺層。 您也�
 
 ### <a name="animations"></a>動畫
 
-視覺層中的動畫系統可讓您移動視覺效果、建立效果動畫，並驅動轉換、剪輯和其他屬性。它是無從驗證架構系統，而且在設計時都會考量效能。它會從 UI 執行緒獨立執行，確保順暢和延展性。雖然它可讓您使用熟悉的 KeyFrame 動畫來驅動一段時間的屬性變更，但也可讓您設定不同屬性之間的數學關係，包括使用者輸入，讓您直接製作順暢的編排體驗。
+視覺層中的動畫系統可讓您移動視覺效果、建立效果動畫，並驅動轉換、剪輯和其他屬性。  它是無從驗證架構系統，而且在設計時都會考量效能。  它會從 UI 執行緒獨立執行，確保順暢和延展性。  雖然它可讓您使用熟悉的 KeyFrame 動畫來驅動一段時間的屬性變更，但也可讓您設定不同屬性之間的數學關係，包括使用者輸入，讓您直接製作順暢的編排體驗。
 
 如需詳細資訊，請參閱[組合動畫](composition-animation.md)概觀。
 
@@ -65,7 +65,7 @@ Windows UWP app 已經使用透過其中一個 UI 架構的視覺層。 您也�
 ## <a name="additional-resources"></a>其他資源
 
 * [**API 的完整參考文件**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
-* [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 中的進階 UI 和組合範例
+* [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 有進階的 UI 和組合範例
 * [Windows.UI.Composition 範例庫](https://aka.ms/winuiapp)
 * [@windowsui Twitter 摘要 ](https://twitter.com/windowsui)
-* 閱讀 Kenny Kerr 針對這個 API 撰寫的 MSDN 文章：[圖形與動畫 - Windows Composition 邁向 10](https://msdn.microsoft.com/magazine/mt590968) (英文)
+* 請閱讀此 api 的 Kenny Kerr 的 MSDN 文章：[圖形與動畫-Windows 程式撰寫已升級 10](https://msdn.microsoft.com/magazine/mt590968)

@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c16f1fbb55374b1d04c9fc9f5f7eae72ad19b00
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117778"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604853"
 ---
-# <a name="rendering-framework-i-intro-to-rendering"></a>轉譯架構 I：轉譯簡介
+# <a name="rendering-framework-i-intro-to-rendering"></a>轉譯架構 i:轉譯簡介
 
-我們已經在稍早的主題中討論過如何建立通用 Windows 平台 (UWP) 遊戲的結構，以及如何定義狀態電腦來處理遊戲的流程。 現在，是時候了解如何組合轉譯架構。 讓我們看看範例遊戲如何轉譯遊戲場景使用 Direct3D11 （通常稱為 DirectX 11）。
+我們已經在稍早的主題中討論過如何建立通用 Windows 平台 (UWP) 遊戲的結構，以及如何定義狀態電腦來處理遊戲的流程。 現在，是時候了解如何組合轉譯架構。 讓我們看看此範例遊戲的遊戲使用 Direct3D 11 （通常稱為 DirectX 11） 的場景的呈現方式。
 
 >[!Note]
 >如果您尚未下載此範例的最新遊戲程式碼，請移至 [Direct3D 遊戲範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此為 UWP 功能範例的大集合的一部分。 如需下載範例方法的指示，請參閱[從 GitHub 取得 UWP 範例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
@@ -36,9 +36,9 @@ Direct3D 11 包含 API 的設定，可讓您存取高效能圖形硬體的進階
 
 這篇文章說明轉譯圖形的方式，涵蓋步驟 1 至 3。
 
-[轉譯架構 II：遊戲轉譯](tutorial-game-rendering.md)涵蓋步驟 2；如何設定轉譯架構，以及如何在轉譯前先準備好資料。
+[轉譯架構 II:遊戲轉譯](tutorial-game-rendering.md)涵蓋了步驟 2，如何設定轉譯架構和轉譯可以發生之前要準備資料的方式。
 
-## <a name="get-started"></a>開始使用
+## <a name="get-started"></a>立即開始
 
 在您開始之前，應該要熟悉基本圖形和轉譯概念。 如果您是 Direct3D 和轉譯的新手，請參閱[詞彙及概念](#terms-and-concepts)了解本文中使用的圖形簡短描述和轉譯詞彙。
 
@@ -50,7 +50,7 @@ Direct3D 11 包含 API 的設定，可讓您存取高效能圖形硬體的進階
 
 若要存取硬體用於轉譯，請參閱在[__App::Initialize__](tutorial--building-the-games-uwp-app-framework.md#appinitialize-method)的 UWP 架構文章。
 
-__make\_shared function__，如[下方](#appinitialize-method)顯示，用來將__shared\_ptr__建立到[__DX::DeviceResources__](#dxdeviceresources)，也提供裝置的存取權。 
+__製作\_共用函式__，如下所示[下方](#appinitialize-method)，用來建立__共用\_ptr__來[ __DX::DeviceResources__](#dxdeviceresources)，這也會提供裝置的存取權。 
 
 Direct3D 11 中，[裝置](#device)用於配置與摧毀物件、轉譯基本類型，並透過圖形驅動程式與圖形卡通訊。
 
@@ -75,8 +75,8 @@ void App::Initialize(
 
 簡單流程為：
 1. __更新__
-2. __Render__
-3. __目前__
+2. __轉譯__
+3. __存在__
 
 ### <a name="gamemainrun-method"></a>GameMain::Run 方法
 
@@ -122,7 +122,7 @@ void GameMain::Run()
 }
 ```
 
-### <a name="update"></a>Update
+### <a name="update"></a>更新
 
 請參閱[管理遊戲流程](tutorial-game-flow-management.md)文章，了解更多有關如何以[__App::Update__和__GameMain::Update__](tutorial-game-flow-management.md#appupdate-method)方法更新遊戲狀態。
 
@@ -130,7 +130,7 @@ void GameMain::Run()
 
 呼叫__GameMain::Run__中的[__GameRenderer::Render__](#gamerendererrender-method)方法實作轉譯。
 
-如果啟用了[立體著色運算](#stereo-rendering)，會有兩個轉譯階段：一個用於右眼，一個用於左眼。 在每個轉譯階段中，我們將轉譯目標與 深度樣板檢視 繫結至裝置。 我們稍後也會說明深度樣板檢視。
+如果啟用了[立體著色運算](#stereo-rendering)，會有兩個轉譯階段：一個用於右眼，一個用於左眼。 在每個轉譯階段中，我們將繫結呈現目標和深度樣板檢視到裝置。 我們稍後也會說明深度樣板檢視。
 
 > [!Note]
 > 可以使用其他方法，例如使用端點執行個體或幾何著色器的一階段，來達成立體著色運算。 兩個轉譯階段方法是個較慢但較方便的方式，達成立體著色運算。
@@ -146,10 +146,10 @@ void GameMain::Run()
 
 設定 Direct3D 內容以使用輸入頂點配置。 輸入配置物件描述如何將頂點緩衝區資料傳送到[轉譯管線](#rendering-pipeline)。 
 
-接下來，我們設定 Direct3D 內容，以使用之前所定義的常數緩衝區，由[頂點著色器](#vertex-shaders-and-pixel-shaders)管線階段和[像素著色器](#vertex-shaders-and-pixel-shaders)使用。 
+接下來，我們設定要使用先前定義的常數緩衝區所使用的 Direct3D 內容[頂點著色器](#vertex-shaders-and-pixel-shaders)管線階段並[像素著色器](#vertex-shaders-and-pixel-shaders)管線階段。 
 
 > [!Note]
-> 請參閱[轉譯架構 II：遊戲轉譯](tutorial-game-rendering.md)獲得有關常數緩衝區定義的詳細資訊。
+> 請參閱[轉譯架構 II:遊戲轉譯](tutorial-game-rendering.md)如需有關定義的常數緩衝區。
 
 因為相同輸入配置與常數緩衝區設定適用於在管線裡的所有著色器，所以每個畫面設定一次。
 
@@ -334,14 +334,14 @@ void GameRenderer::Render()
 
 轉譯場景時，您逐一迴圈的所有物件，需經過轉譯。 每個物件 (基本類型) 皆重複以下的步驟。
 
-* 使用模型的[世界轉換矩陣](#world-transform-matrix)和資料資訊。更新常數緩衝區 (__m\_constantBufferChangesEveryPrim__)。
+* 更新常數緩衝區 (__m\_constantBufferChangesEveryPrim__) 的模型[自然變換矩陣](#world-transform-matrix)和材質的資訊。
 * __m\_constantBufferChangesEveryPrim__包含每個物件的參數。  它包括世界轉換矩陣的物件以及資料屬性，例如色彩和光線計算的反射指數
 * 設定 Direct3D 內容以使用網格物件資料的輸入頂點配置，將其串流到[轉譯管線](#rendering-pipeline)的輸入組合 (IA) 階段
 * 設定 Direct3D 內容以使用 IA 階段的[索引緩衝](#index-buffer)。 提供基本類型資訊：類型、資料訂單。
-* 送出繪製呼叫，繪製已編製索引的非執行個體基本類型。 The __GameObject::Render__ 方法使用指定基本類型的特定資料來更新基本類型 [常數緩衝區](#constant-buffer-or-shader-constant-buffer)。 這會讓內容的 __DrawIndexed__ 呼叫，繪製每個基本類型的幾何。 具體來說，這個 Draw 呼叫會將命令和資料排到圖形處理單元 GPU 的佇列，由常數緩衝區資料進行參數化處理。 每個繪圖呼叫會在每個頂點上執行頂點著色器 一次，然後[像素著色器](#vertex-shaders-and-pixel-shaders) 會在基本類型中每個三角形的每個像素中執行一次。 紋理是像素著色器用來進行轉譯之狀態的一部分。
+* 送出繪製呼叫，繪製已編製索引的非執行個體基本類型。 The __GameObject::Render__ 方法使用指定基本類型的特定資料來更新基本類型 [常數緩衝區](#constant-buffer-or-shader-constant-buffer)。 這會讓內容的 __DrawIndexed__ 呼叫，繪製每個基本類型的幾何。 具體來說，這個 Draw 呼叫會將命令和資料排到圖形處理單元 GPU 的佇列，由常數緩衝區資料進行參數化處理。 每個繪製呼叫會執行端點著色器一次，每個頂點，然後[像素著色器](#vertex-shaders-and-pixel-shaders)一次，每個像素的基本項目中的每一個三角形。 紋理是像素著色器用來進行轉譯之狀態的一部分。
 
 多個常數緩衝區的原因：
-    * 遊戲使用多個常數緩衝區，但是只要在每個基本類型更新這些緩衝區一次。 如先前所述，常數緩衝區就像是為每個基本類型執行的著色器輸入。 有些資料是靜態的 (__m\_constantBufferNeverChanges__)；有些資料在架構上是常數 (__m\_constantBufferChangesEveryFrame__)，像是相機的位置；有些資料是專用於基本類型，像色彩和紋理 (__m\_constantBufferChangesEveryPrim__)。
+    * 遊戲使用多個常數緩衝區，但是只要在每個基本類型更新這些緩衝區一次。 如先前所述，常數緩衝區就像是為每個基本類型執行的著色器輸入。 某些資料是靜態的 (__m\_constantBufferNeverChanges__); 範圍內，一些資料是常數 (__m\_constantBufferChangesEveryFrame__)，讓觀景窗; 位置並且專屬於基本類型，例如其色彩和紋理一些資料 (__m\_constantBufferChangesEveryPrim__)
     * 遊戲轉譯器將這些輸入分成不同的常數緩衝區，以最佳化 CPU 與 GPU 使用的記憶體頻寬。 這種方式也有助於將 GPU 需要追蹤的資料數量減到最少。 GPU 有很大的命令佇列，而每次遊戲呼叫 __Draw__ 時，該命令連同與其關聯的資料一起進入佇列。 當遊戲更新基本類型常數緩衝區並發出下一個 __Draw__ 命令時，圖形驅動程式會將下一個命令及關聯的資料新增到佇列。 如果遊戲繪製 100 個基本類型，則佇列中可能會有 100 個常數緩衝區資料的複本。 若要將傳送到 GPU 的遊戲資料數量減到最少，遊戲會使用不同的基本類型常數緩衝區，其中僅包含每個基本類型的更新。
 
 #### <a name="gameobjectrender-method"></a>GameObject::Render 方法
@@ -473,7 +473,7 @@ void DX::DeviceResources::Present()
 
 ## <a name="next-steps"></a>後續步驟
 
-本文說明如何在螢幕上轉譯圖形，並提供一些轉譯詞彙所使用的簡短描述。 深入了解在[轉譯架構 II：遊戲轉譯](tutorial-game-rendering.md)文章中的轉譯，並了解如何在轉譯之前準備所需的資料。
+本文說明如何在螢幕上轉譯圖形，並提供一些轉譯詞彙所使用的簡短描述。 深入了解以轉譯[轉譯架構 II:遊戲轉譯](tutorial-game-rendering.md)一文，並了解如何準備呈現之前所需的資料。
 
 ## <a name="terms-and-concepts"></a>詞彙與概念
 
@@ -494,7 +494,7 @@ void DX::DeviceResources::Present()
 * [著色器](#Shaders)
 * [頂點著色器和像素著色器](#vertext-shaders-pixel-shaders)
 * [著色器階段](#shader-stages)
-* [各種不同的著色器檔案格式](#various-shader-file-formats)
+* [各種著色器檔案格式](#various-shader-file-formats)
 
 如需詳細資訊，請參閱[了解 Direct3D 11 轉譯管線](https://msdn.microsoft.com/library/windows/desktop/dn643746.aspx)和[圖形管線](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx)。
 
@@ -549,7 +549,7 @@ Direct3D 11 是一組 API，可協助我們建立圖形，用於像遊戲一樣�
 
 深度資訊告訴我們所呈現而不是隱藏的多邊形區域。 樣板資訊可告訴我們遮罩哪一個像素。 它可以用來製作特效，因為它會判斷是否繪製像素；設定 1 或 0 的位元。 
 
-如需詳細資訊，請參閱：[深度樣板檢視](../graphics-concepts/depth-stencil-view--dsv-.md)，[深度緩衝區](../graphics-concepts/depth-buffers.md)，與[樣板緩衝區](../graphics-concepts/stencil-buffers.md)。
+如需詳細資訊，請參閱：[深度樣板檢視](../graphics-concepts/depth-stencil-view--dsv-.md)，[深度緩衝區](../graphics-concepts/depth-buffers.md)，以及[樣板緩衝區](../graphics-concepts/stencil-buffers.md)。
 
 #### <a name="render-target"></a>轉譯目標
 
@@ -567,7 +567,7 @@ Direct3D 11 是一組 API，可協助我們建立圖形，用於像遊戲一樣�
 
 請注意，有不同版本的 ID3D11Device，[ID3D11Device5](https://msdn.microsoft.com/library/windows/desktop/mt492478.aspx)是最新版本，並在 ID3D11Device4 中新增新的方法。 如需 Direct3D 如何與基礎硬體通訊的詳細資訊，請參閱[Windows 裝置的驅動程式模型 (WDDM) 架構](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture)。
 
-每個應用程式必須至少有一個裝置，大部分的應用程式只能建立一個裝置。 為其中一個透過呼叫__D3D11CreateDevice__或__D3D11CreateDeviceAndSwapChain__來安裝在您電腦上的硬體驅動程式建立一個裝置，並使用 D3D\_DRIVER\_TYPE 旗標指定驅動程式類型。 每個裝置可以使用一或多個裝置內容，視所需的功能而定。 如需詳細資訊，請參閱 [D3D11CreateDevice 函式](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx)。
+每個應用程式必須至少有一個裝置，大部分的應用程式只能建立一個裝置。 建立裝置的硬體驅動程式安裝在您的電腦上，藉由呼叫其中一個__D3D11CreateDevice__或是__D3D11CreateDeviceAndSwapChain__ D3D 使用指定的驅動程式類型和\_驅動程式\_類型旗標。 每個裝置可以使用一或多個裝置內容，視所需的功能而定。 如需詳細資訊，請參閱 [D3D11CreateDevice 函式](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx)。
 
 #### <a name="device-context"></a>裝置內容
 
@@ -577,7 +577,7 @@ Direct3D 11 實作兩種類型的裝置內容，一種為立即轉譯，另一�
 
 __ID3D11DeviceContext__介面有不同的版本；__ID3D11DeviceContext4__將新方法新增至__ID3D11DeviceContext3__中。
 
-注意：__ID3D11DeviceContext4__在 Windows 10 Creators Update 中導入，而且是最新版本的__ID3D11DeviceContext__介面。 Windows 10 Creators Update 為目標的應用程式應該使用此介面而不是較舊版本。 如需詳細資訊，請參閱 [ID3D11DeviceContext4](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx)。
+注意：__ID3D11DeviceContext4__引進了 Windows 10 Creators Update 中，而且是最新版本__ID3D11DeviceContext__介面。 Windows 10 Creators Update 為目標的應用程式應該使用此介面而不是較舊版本。 如需詳細資訊，請參閱 [ID3D11DeviceContext4](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx)。
 
 #### <a name="dxdeviceresources"></a>DX::DeviceResources
 
@@ -587,7 +587,7 @@ __DX::DeviceResources__類別在__DeviceResources.cpp__/__.h__檔案中且控制
 
 緩衝區資源是一個完整輸入的資料集合，由元素所組成。 您可以使用緩衝區存放各式各樣的資料，包含位置向量、法向向量、頂點緩衝區中的紋理座標、索引緩衝區中的索引、或裝置狀態。 緩衝元素可以包含封裝資料值 (像是 R8G8B8A8 面值)、單一 8 位整數，或四個 32 位元浮點數值。
 
-有三種類型的緩衝區可用：頂點緩衝區、索引緩衝區，與常數緩衝區。
+有可用的三種類型的緩衝區：頂點緩衝區、 索引緩衝區和常數緩衝區。
 
 #### <a name="vertex-buffer"></a>頂點緩衝區
 
@@ -616,7 +616,7 @@ __DX::DeviceResources__類別在__DeviceResources.cpp__/__.h__檔案中且控制
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX Graphics Infrastructure (DXGI) 是新的子系統 WindowsVista 封裝部分 Direct3D 10 所需低層級工作中引進，10.1、 11 和 11.1。 在多執行緒應用程式中使用 DXGI以確保不會發生死結，要特別注意。 如需詳細資訊，請參閱[DirectX Graphics Infrastructure (DXGI)： 最佳做法- 多執行緒](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
+Microsoft DirectX 圖形基礎結構 (DXGI) 是封裝的一些低階工作所需的 Direct3D 10 的 Windows Vista 引進的新子系統 10.1、 11 和 11.1。 在多執行緒應用程式中使用 DXGI以確保不會發生死結，要特別注意。 如需詳細資訊，請參閱[DirectX 圖形基礎結構 (DXGI):最佳做法-進行多執行緒處理](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
 
 ### <a name="feature-level"></a>功能層級
 
@@ -624,9 +624,9 @@ Microsoft DirectX Graphics Infrastructure (DXGI) 是新的子系統 WindowsVista
 
 每個視訊卡實作一個特定層級的 DirectX 功能，依照所安裝的 GPU 而定。 在 Microsoft Direct3D 舊版中，可以找出視訊卡實作的 Direct3D 版本，然後隨之程式設計您的應用程式。 
 
-使用功能層級，當您建立裝置，您可以嘗試建立您所要求的功能層級的裝置。 如果裝置建立運作，該功能層級則存在，否則，硬體不支援該功能層級。 您可以嘗試重新建立較低功能層級的裝置，或您可以選擇離開應用程式。 例如，12\_0 功能層級需要 Direct3D 11.3 或 Direct3D 12 及著色器模型 5.1。 如需詳細資訊，請參閱[Direct3D 功能層級：每項功能層級的概觀](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)。
+使用功能層級，當您建立裝置，您可以嘗試建立您所要求的功能層級的裝置。 如果裝置建立運作，該功能層級則存在，否則，硬體不支援該功能層級。 您可以嘗試重新建立較低功能層級的裝置，或您可以選擇離開應用程式。 比方說，12\_0 的功能層級需要 Direct3D 11.3 或 Direct3D 12 中，而著色器模型 5.1。 如需詳細資訊，請參閱[Direct3D 功能層級：每個功能層級的概觀](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)。
 
-使用功能層級，您可以開發的應用程式 Direct3D9、 Microsoft Direct3D10 或 Direct3D11，並接著在 9、 10 或 11 硬體 （有一些例外） 上執行。 如需詳細資訊，請參閱[Direct3D 功能層級](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
+您可以使用功能層級，來開發 Direct3D 9、 Microsoft Direct3D 10 或 Direct3D 11 中的應用程式，然後執行它 9、 10 或 11 （但有些例外） 的硬體上項目。 如需詳細資訊，請參閱[Direct3D 功能層級](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
 
 ### <a name="stereo-rendering"></a>立體著色運算
 
@@ -650,10 +650,10 @@ V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device).
 * M(model-to-world) 為世界座標適用於模型座標的轉換矩陣，亦稱為[世界轉換矩陣](#world-transform-matrix)。 這是由基本類型提供。
 * M(world-to-view) 為檢視座標適用於世界座標的轉換矩陣，亦稱為[檢視轉換矩陣](#view-transform-matrix)。
     * 這是由相機的視圖矩陣提供的。 藉由相機的位置以及視角向量 (「視線」向量是從相機直接看到場景，而「仰視」向量則是垂直向上看) 來定義。
-    * 範例遊戲中，__m\_viewMatrix__為檢視轉換矩陣，且使用__Camera::SetViewParams__來計算 
+    * 在範例遊戲中， __m\_viewMatrix__為檢視轉換矩陣，而且會計算使用__Camera::SetViewParams__ 
 * M(view-to-device) 為裝置座標適用於檢視座標的轉換矩陣，亦稱為[投影轉換矩陣](#projection-transform-matrix)。
     * 這是由相機的投影提供的。 提供在最終場景中有多少空間是實際可見的資訊。 視野範圍（FoV）、外觀比例，以及裁剪平面定義投影轉換矩陣。
-    * 在範例遊戲中__m\_projectionMatrix__定義轉換為投影座標，使用__Camera::SetProjParams__ 來計算 (您在立體投影時會使用兩個投影矩陣：分別為每個眼睛的視野。) 
+    * 在範例遊戲中， __m\_projectionMatrix__投影座標，使用計算來定義轉換__Camera::SetProjParams__ （立體聲的投影，您使用兩個投影矩陣： 一個用於每個的檢視。) 
 
 從常數緩衝區使用這些向量及矩陣進行載入 VertexShader.hlsl 中的著色器程式碼，並為每個頂點執行這個轉換。
 

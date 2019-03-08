@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, opengl, direct3d 11, port, graphics, 遊戲, 連接埠, 圖形
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ee100bbbe70595049ca7298839e7906e21c3e59
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050288"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635213"
 ---
 # <a name="port-from-opengl-es-20-to-direct3d-11"></a>從 OpenGL ES 2.0 移植到 Direct3D 11
 
@@ -19,7 +19,7 @@ ms.locfileid: "9050288"
 
 包含適用於將 OpenGL ES 2.0 圖形管線移植到 Direct3D 11 與 Windows 執行階段的文章、概觀及逐步解說。
 
-> **注意：** 移植 OpenGL ES 2.0 專案的中間步驟是使用適用於 Microsoft Store 的 ANGLE。 ANGLE 可讓您透過將 OpenGL ES API 呼叫轉譯為 DirectX 11 API 呼叫，在 Windows 上執行 OpenGL ES 內容。 如需關於 ANGLE 的詳細資訊，請移至[適用於 Microsoft Store 的 ANGLE Wiki](https://go.microsoft.com/fwlink/p/?linkid=618387)。
+> **附註**  移植您的 OpenGL ES 2.0 專案的中繼步驟是使用 Microsoft Store 的角度。 ANGLE 可讓您透過將 OpenGL ES API 呼叫轉譯為 DirectX 11 API 呼叫，在 Windows 上執行 OpenGL ES 內容。 如需關於 ANGLE 的詳細資訊，請移至[適用於 Microsoft Store 的 ANGLE Wiki](https://go.microsoft.com/fwlink/p/?linkid=618387)。
 
  
 
@@ -31,7 +31,7 @@ ms.locfileid: "9050288"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -40,11 +40,11 @@ ms.locfileid: "9050288"
 <td align="left"><p>當您第一次開始進行將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 的程序時，請務必熟悉這些 API 間的重要差異。 本節中的主題可以協助您計劃移植策略，以及當您將圖形處理移至 Direct3D 時必須進行的 API 變更。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md">做法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11.1</a></p></td>
+<td align="left"><p><a href="port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md">如何： 連接埠到 Direct3D 11.1 簡單 OpenGL ES 2.0 轉譯器</a></p></td>
 <td align="left"><p>針對此移植練習，我們將從頭開始：將適用於頂點已著色旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="opengl-es-2-0-to-directx-11-1-reference.md">從 OpenGL ES 2.0 到 Direct3D 11.1 的參考</a></p></td>
+<td align="left"><p><a href="opengl-es-2-0-to-directx-11-1-reference.md">為 Direct3D 11.1 參考的 OpenGL ES 2.0</a></p></td>
 <td align="left"><p>從 OpenGL ES 2.0 移植到 Direct3D 11 時，可以使用這些參考主題來查詢 API 對應和簡短的程式碼範例。</p></td>
 </tr>
 </tbody>

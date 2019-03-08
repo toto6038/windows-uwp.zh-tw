@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, opengl, direct3d, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: e09dcb1830e62d17983f564771b4808d132179a0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926510"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640823"
 ---
 # <a name="map-opengl-es-20-to-direct3d-11"></a>將 OpenGL ES 2.0 對應到 Direct3D 11
 
@@ -27,24 +27,24 @@ ms.locfileid: "8926510"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="compare-opengl-es-2-0-api-design-to-directx.md">計劃從 OpenGL ES 2.0 移植到 Direct3D</a></p></td>
+<td align="left"><p><a href="compare-opengl-es-2-0-api-design-to-directx.md">計劃您從 OpenGL ES 2.0 移植到 Direct3D</a></p></td>
 <td align="left"><p>如果您是從 iOS 或 Android 平台移植遊戲，可能已經在 OpenGL ES 2.0 投入了大量的心力。 在準備將圖形管線程式碼基底移到 Direct3D 11 與 Windows 執行階段時，有幾件事在開始之前必須先行考量。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="moving-from-egl-to-dxgi.md">EGL 程式碼與 DXGI 和 Direct3D 的比較</a></p></td>
+<td align="left"><p><a href="moving-from-egl-to-dxgi.md">比較 EGL DXGI 和 Direct3D 的程式碼</a></p></td>
 <td align="left"><p>DirectX 圖形介面 (DXGI) 和數個 Direct3D API 都可提供與 EGL 相同的角色。 本主題可以協助您從 EGL 的觀點來了解 DXGI 和 Direct3D 11。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="porting-uniforms-and-attributes.md">OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較</a></p></td>
+<td align="left"><p><a href="porting-uniforms-and-attributes.md">比較 OpenGL ES 2.0 緩衝區、 uniforms，以及到 Direct3D 頂點屬性</a></p></td>
 <td align="left"><p>在從 OpenGL ES 2.0 移植到 Direct3D 11 的程序期間，您必須變更用來在 app 與著色器程式之間傳送資料的語法與 API 行為。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="change-your-shader-loading-code.md">OpenGL ES 2.0 著色器管線與 Direct3D 的比較</a></p></td>
+<td align="left"><p><a href="change-your-shader-loading-code.md">比較 Direct3D OpenGL ES 2.0 著色器管線</a></p></td>
 <td align="left"><p>在概念上來說，Direct3D 11 著色器管線與 OpenGL ES 2.0 中的著色器管線非常相似。 不過在 API 設計方面，建立與管理著色器階段的主要元件則分為兩個主要的介面，<a href="https://msdn.microsoft.com/library/windows/desktop/hh404575"><strong>ID3D11Device1</strong></a> 和 <a href="https://msdn.microsoft.com/library/windows/desktop/hh404598"><strong>ID3D11DeviceContext1</strong></a>。 本主題嘗試將常見的 OpenGL ES 2.0 著色器管線 API 模式對應到這些介面中的 Direct3D 11 對應項。</p></td>
 </tr>
 </tbody>

@@ -3,14 +3,14 @@ title: 指標型動畫
 description: 了解如何使用指標位置來建立動態的「與游標緊密結合」體驗。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10、uwp、動畫
+keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: 3512d47c8b3e689b0baadec26c1d8f0f510e03ef
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931399"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639923"
 ---
 # <a name="pointer-based-animations"></a>指標型動畫
 
@@ -20,8 +20,8 @@ ms.locfileid: "8931399"
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
-- [輸入導向動畫](input-driven-animations.md)
-- [關聯式動畫](relation-animations.md)
+- [輸入驅動動畫](input-driven-animations.md)
+- [關聯型動畫](relation-animations.md)
 
 ## <a name="why-create-pointer-position-driven-experiences"></a>為什麼要建立指標位置導向體驗？
 
@@ -43,7 +43,7 @@ ms.locfileid: "8931399"
 
 您可以使用 PointerPositionPropertySet 建立這些體驗。 對 UIElement 進行正面點擊測試時，這個 PropertySet 會為 UIElement 建立以維持指標位置。 位置值是相對於 UIElement 的座標空間 (<0,0> 的位置是 UIElement 的左上角)。 您可以接著利用此屬性設定在動畫中驅動其他屬性的動作。
 
-針對每個不同的指標輸入形式，輸入可以位於多種輸入狀態並變更位置：滑鼠指標暫留、已按下、按下與移動。 PointerPositionPropertySet 僅會在滑鼠和手寫筆的滑鼠指標暫留、已按下、按下與移動和已移動狀態中維持指標位置。
+針對每個不同的指標輸入型態，有一些輸入輸入可以在其中的位置變更的狀態：暫留時，按下，按下 & 移動。 PointerPositionPropertySet 僅會在滑鼠和手寫筆的滑鼠指標暫留、已按下、按下與移動和已移動狀態中維持指標位置。
 
 入門一般步驟：
 

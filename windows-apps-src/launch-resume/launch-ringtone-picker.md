@@ -7,27 +7,27 @@ keywords: Windows 10, UWP
 ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 ms.localizationpriority: medium
 ms.openlocfilehash: 293c755ecaf81ce80fab148a8aca92a7e3a8fa48
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931713"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618583"
 ---
 # <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a>使用 ms-tonepicker URI 配置來選擇及儲存音調
 
-本主題說明如何使用 **ms-tonepicker:** URI 配置。 此 URI 配置可用來：
+本主題描述如何使用**ms tonepicker:** URI 配置。 此 URI 配置可用來：
 - 判斷裝置上是否有提供音調選擇器。
 - 顯示音調選擇器以列出可用的鈴聲、系統音效、簡訊鈴聲及鬧鐘音效；並取得代表使用者所選音效的音調語彙基元。
 - 顯示音調儲存程式，此程式會以音效檔語彙基元作為輸入，然後將它儲存到裝置。 接著，便可透過音調選擇器使用已儲存的音調。 使用者也可以為音調提供易記名稱。
 - 將音調傳換成其易記名稱。
 
-## <a name="ms-tonepicker-uri-scheme-reference"></a>ms-tonepicker: URI 配置參考
+## <a name="ms-tonepicker-uri-scheme-reference"></a>ms-tonepicker:URI 配置參考
 
 這個 URI 配置不會透過 URI 配置字串傳遞引數，而是會透過 [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) 傳遞引數。 所有字串皆有區分大小寫。
 
 下列各節會指出應該傳遞哪些引數來完成指定的工作。
 
-## <a name="task-determine-if-the-tone-picker-is-available-on-the-device"></a>工作：判斷裝置上是否有提供音調選擇器。
+## <a name="task-determine-if-the-tone-picker-is-available-on-the-device"></a>工作：判斷是否可在裝置上的音調選擇器
 ```cs
 var status = await Launcher.QueryUriSupportAsync(new Uri("ms-tonepicker:"),     
                                      LaunchQuerySupportType.UriForResults,
@@ -39,7 +39,7 @@ if (status != LaunchQuerySupportStatus.Available)
 }
 ```
 
-## <a name="task-display-the-tone-picker"></a>工作：顯示音調選擇器
+## <a name="task-display-the-tone-picker"></a>工作：顯示音選擇器
 
 您可以傳遞來顯示音調選擇器的引數如下︰
 
@@ -53,12 +53,12 @@ if (status != LaunchQuerySupportStatus.Available)
 
 | 傳回值 | 類型 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0 - 成功。 <br>1 - 已取消。 <br>7 - 無效的參數。 <br>8 - 沒有任何音調符合篩選條件。 <br>255 - 未實作指定的動作。 | 選擇器作業的結果。 |
-| ToneToken | 字串 | 所選音調的語彙基元。 <br>如果使用者在選擇器中選取 **\[預設\]**，則此字串為空白。 | 這個語彙基元可以用在快顯通知承載中，或是指派為連絡人的鈴聲或簡訊鈴聲。 只有當 **Result** 為 0 時，才會在 ValueSet 中傳回此參數。 |
+| 結果 | Int32 | 0 - 成功。 <br>1 - 已取消。 <br>7 - 無效的參數。 <br>8 - 沒有任何音調符合篩選條件。 <br>255 - 未實作指定的動作。 | 選擇器作業的結果。 |
+| ToneToken | 字串 | 所選音調的語彙基元。 <br>如果使用者在選擇器中選取 [預設]，則此字串為空白。 | 這個語彙基元可以用在快顯通知承載中，或是指派為連絡人的鈴聲或簡訊鈴聲。 只有當 **Result** 為 0 時，才會在 ValueSet 中傳回此參數。 |
 | DisplayName | 字串 | 所指定音調的易記名稱。 | 可對使用者顯示來代表所選的音調的字串。 只有當 **Result** 為 0 時，才會在 ValueSet 中傳回此參數。 |
 
 
-**範例：開啟音調選擇器以便讓使用者選取音調**
+**範例：開啟音調選擇器，以便使用者可以選取音調**
 
 ``` cs
 LauncherOptions options = new LauncherOptions();
@@ -86,7 +86,7 @@ if (result.Status == LaunchUriStatus.Success)
 }
 ```
 
-## <a name="task-display-the-tone-saver"></a>工作：顯示音調儲存程式
+## <a name="task-display-the-tone-saver"></a>工作：顯示音保護裝置
 
 您可以傳遞來顯示音調儲存程式的引數如下︰
 
@@ -100,9 +100,9 @@ if (result.Status == LaunchUriStatus.Success)
 
 | 傳回值 | 類型 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0 - 成功。<br>1 - 被使用者取消。<br>2 - 無效的檔案。<br>3 - 無效的檔案內容類型。<br>4 - 檔案超出鈴聲大小上限 (在 Windows 10 中為 1 MB)。<br>5 - 檔案超出 40 秒的長度限制。<br>6 - 檔案受數位版權管理保護。<br>7 - 無效的參數。 | 選擇器作業的結果。 |
+| 結果 | Int32 | 0 - 成功。<br>1 - 被使用者取消。<br>2 - 無效的檔案。<br>3 - 無效的檔案內容類型。<br>4 - 檔案超出鈴聲大小上限 (在 Windows 10 中為 1 MB)。<br>5 - 檔案超出 40 秒的長度限制。<br>6 - 檔案受數位版權管理保護。<br>7 - 無效的參數。 | 選擇器作業的結果。 |
 
-**範例：將本機音樂檔儲存為鈴聲。**
+**範例：將本機的音樂檔案儲存為鈴聲**
 
 ``` cs
 LauncherOptions options = new LauncherOptions();
@@ -150,7 +150,7 @@ if (result.Status == LaunchUriStatus.Success)
  }
 ```
 
-## <a name="task-convert-a-tone-token-to-its-friendly-name"></a>工作：將音調傳換成其易記名稱。
+## <a name="task-convert-a-tone-token-to-its-friendly-name"></a>工作：將音調語彙基元轉換成其易記名稱
 
 您可以傳遞來取得音調易記名稱的引數如下︰
 
@@ -163,10 +163,10 @@ if (result.Status == LaunchUriStatus.Success)
 
 | 傳回值 | 類型 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0 - 選擇器作業成功。<br>7 - 不正確的參數 (例如未提供任何 ToneToken)。<br>9 - 讀取所指定語彙基元的名稱時發生錯誤。<br>10 - 找不到指定的音調語彙基元。 | 選擇器作業的結果。
+| 結果 | Int32 | 0 - 選擇器作業成功。<br>7 - 不正確的參數 (例如未提供任何 ToneToken)。<br>9 - 讀取所指定語彙基元的名稱時發生錯誤。<br>10 - 找不到指定的音調語彙基元。 | 選擇器作業的結果。
 | DisplayName | 字串 | 音調的易記名稱。 | 傳回所選音調的顯示名稱。 只有當 **Result** 為 0 時，才會在 ValueSet 中傳回此參數。 |
 
-**範例︰從 Contact.RingToneToken 擷取音調語彙基元，並在連絡人卡片中顯示其易記名稱。**
+**範例：擷取 Contact.RingToneToken 音調語彙基元和連絡人卡片中顯示好記的名稱。**
 
 ```cs
 using (var connection = new AppServiceConnection())

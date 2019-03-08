@@ -1,24 +1,24 @@
 ---
 ms.assetid: A26A287C-B4B0-49E9-BB28-6F02472AE1BA
 description: 使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得所指定應用程式的彙總廣告行銷活動績效資料。
-title: 取得廣告活動效益資料
+title: 取得廣告活動績效資料
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 廣告活動
 ms.localizationpriority: medium
 ms.openlocfilehash: 1190ec43c5b98eabd897a3bed3788aaf6eb0cb7d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928260"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594573"
 ---
-# <a name="get-ad-campaign-performance-data"></a>取得廣告活動效益資料
+# <a name="get-ad-campaign-performance-data"></a>取得廣告活動績效資料
 
 
 使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您應用程式促銷廣告行銷活動效益資料的彙總摘要。 這個方法會傳回 JSON 格式的資料。
 
-這個方法會傳回相同的資料所提供的合作夥伴中心中的[廣告行銷活動報告](../publish/app-install-ads-reports.md)。 如需有關廣告行銷活動的詳細資訊，請參閱[為您的 App 建立廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)。
+這個方法會傳回相同的資料所提供[Ad 活動報表](../publish/app-install-ads-reports.md)在合作夥伴中心。 如需有關廣告行銷活動的詳細資訊，請參閱[為您的 App 建立廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)。
 
 若要建立、更新或擷取廣告活動的詳細資料，您可以使用 [Microsoft Store 促銷 API](run-ad-campaigns-using-windows-store-services.md) 中的[管理廣告活動](manage-ad-campaigns.md)方法。
 
@@ -43,7 +43,7 @@ ms.locfileid: "8928260"
 
 | 標頭        | 類型   | 描述                |
 |---------------|--------|---------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
@@ -52,14 +52,14 @@ ms.locfileid: "8928260"
 
 | 參數     | 類型   | 描述     | 必要 |
 |---------------|--------|-----------------|----------|
-| applicationId   | 字串    | 您想要擷取廣告行銷活動績效資料之應用程式的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 |    不可以      |
-|  startDate  |  日期   |  要擷取的廣告行銷活動績效資料之日期範圍的開始日期，格式為 YYYY/MM/DD。 預設為目前的日期減去 30 天。   |   否    |
-| endDate   |  日期   |  要擷取的廣告行銷活動績效資料之日期範圍的結束日期，格式為 YYYY/MM/DD。 預設為目前的日期減去一天。   |   否    |
-| top   |  整數   |  在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。   |   否    |
-| skip   | 整數    |  在查詢中要略過的資料列數目。 使用此參數來瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。   |   否    |
+| applicationId   | 字串    | 您想要擷取廣告行銷活動績效資料之應用程式的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 |    否      |
+|  startDate  |  date   |  要擷取的廣告行銷活動績效資料之日期範圍的開始日期，格式為 YYYY/MM/DD。 預設為目前的日期減去 30 天。   |   否    |
+| endDate   |  date   |  要擷取的廣告行銷活動績效資料之日期範圍的結束日期，格式為 YYYY/MM/DD。 預設為目前的日期減去一天。   |   否    |
+| top   |  整數   |  要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。   |   否    |
+| skip   | 整數    |  在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。   |   否    |
 | filter   |  字串   |  一或多個篩選回應中資料列的陳述式。 目前唯一支援的篩選是 **campaignId**。 每個陳述式都可以使用 **eq** 或 **ne** 運算子，而陳述式之間可以使用 **and** 或 **or** 來結合。  以下是一個範例 *filter* 參數：```filter=campaignId eq '100023'```。   |   否    |
 |  aggregationLevel  |  字串   | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。    |   否    |
-| orderby   |  字串   |  <p>將廣告行銷活動績效資料的結果資料值排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>，其中 <em>field</em> 參數可以是下列其中一個字串︰</p><ul><li><strong>date</strong></li><li><strong>campaignId</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，用來指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>以下是一個範例 <em>orderby</em> 字串：<em>orderby=date,campaignId</em></p>   |   否    |
+| orderby   |  字串   |  <p>將廣告行銷活動績效資料的結果資料值排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：</p><ul><li><strong>date</strong></li><li><strong>campaignId</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>以下是一個範例 <em>orderby</em> 字串：<em>orderby=date,campaignId</em></p>   |   否    |
 |  groupby  |  字串   |  <p>將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：</p><ul><li><strong>campaignId</strong></li><li><strong>applicationId</strong></li><li><strong>date</strong></li><li><strong>currencyCode</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p>   |   否    |
 
 
@@ -96,8 +96,8 @@ Authorization: Bearer <your access token>
 
 | 值               | 類型   | 描述            |
 |---------------------|--------|------------------------|
-| 日期                | 字串 | 廣告行銷活動績效資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
-| applicationId       | 字串 | 您要擷取廣告行銷活動績效資料之 App 的「Store 識別碼」。                     |
+| date                | 字串 | 廣告行銷活動績效資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
+| applicationId       | 字串 | 您要擷取廣告行銷活動績效資料之 App 的「市集識別碼」。                     |
 | campaignId     | 字串 | 廣告行銷活動的識別碼。           |
 | lineId     | 字串 |    產生此效益資料的廣告活動[播送行](manage-delivery-lines-for-ad-campaigns.md)的識別碼。        |
 | currencyCode              | 字串 | 行銷活動預算的貨幣代碼。              |
@@ -111,7 +111,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-example"></a>回應範例
 
-下列範例針對此要求示範範例 JSON 回應主體。
+下列範例示範這個要求的一個範例 JSON 回應主體。
 
 ```json
 {
@@ -150,6 +150,6 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相關主題
 
-* [為您的應用程式建立行銷活動](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
-* [使用 Microsoft Store 服務執行廣告行銷活動](run-ad-campaigns-using-windows-store-services.md)
-* [使用 Microsoft Store 服務存取分析資料](access-analytics-data-using-windows-store-services.md)
+* [建立您的應用程式的 ad 行銷活動](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
+* [執行使用 Microsoft Store 服務的廣告活動](run-ad-campaigns-using-windows-store-services.md)
+* [使用 Microsoft Store 服務的存取分析資料](access-analytics-data-using-windows-store-services.md)

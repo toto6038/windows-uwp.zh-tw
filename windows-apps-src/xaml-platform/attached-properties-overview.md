@@ -11,17 +11,17 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 265a99e7abbb9b2f4c3341f90aecc3661ce3ffbf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922452"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614853"
 ---
 # <a name="attached-properties-overview"></a>附加屬性概觀
 
-「附加屬性」** 是一種 XAML 概念。 附加屬性可在物件上設定其他的屬性/值組，但屬性不是原始物件定義的一部分。 附加屬性一般定義為相依性屬性的特殊格式，在擁有者類型的物件模型中沒有傳統的屬性包裝函式。
+「附加屬性」是一種 XAML 概念。 附加屬性可在物件上設定其他的屬性/值組，但屬性不是原始物件定義的一部分。 附加屬性一般定義為相依性屬性的特殊格式，在擁有者類型的物件模型中沒有傳統的屬性包裝函式。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 我們假設您已了解相依性屬性的基本概念，並已閱讀[相依性屬性概觀](dependency-properties-overview.md)。
 
@@ -36,7 +36,7 @@ ms.locfileid: "8922452"
 ```
 
 > [!NOTE]
-> 我們只使用[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771)做為範例中附加屬性而沒有充分解說您為何要使用它。 如果您想要進一步了解 **Canvas.Left** 的用途，以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何處理它的配置子項，請參閱 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 參考主題或[使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)。
+> 我們只會使用[ **Canvas.Left** ](https://msdn.microsoft.com/library/windows/apps/hh759771)例如附加屬性，而不完整說明為何要使用它。 如果您想要進一步了解 **Canvas.Left** 的用途，以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何處理它的配置子項，請參閱 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 參考主題或[使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)。
 
 ## <a name="why-use-attached-properties"></a>為什麼要使用附加屬性？
 
@@ -72,7 +72,7 @@ Windows 執行階段的附加屬性會實作為相依性屬性，這樣一來值
 
 ### <a name="using-the-xaml-accessor-pattern"></a>使用 XAML 存取子樣式
 
-當 XAML 剖析為物件樹時，XAML 存取子必須能夠設定附加屬性值。 附加屬性的擁有者類型必須實作專用的存取子方法在表單中名為 **取得 * * * PropertyName*和 **設定 * * * PropertyName*。 這些專用的存取子方法，也是在程式碼中取得或設定附加屬性的一種方式。 就程式碼的觀點而言，附加屬性與擁有方法存取子 (而非屬性存取子) 的支援欄位類似，該支援欄位可以存在任何物件中，不需要具體地定義。
+當 XAML 剖析為物件樹時，XAML 存取子必須能夠設定附加屬性值。 附加屬性的擁有者類型必須實作專用存取子方法，在表單名為 **取得 * * * PropertyName*和 **設定 * * * PropertyName*。 這些專用的存取子方法，也是在程式碼中取得或設定附加屬性的一種方式。 就程式碼的觀點而言，附加屬性與擁有方法存取子 (而非屬性存取子) 的支援欄位類似，該支援欄位可以存在任何物件中，不需要具體地定義。
 
 下面的範例顯示如何透過 XAML 存取子 API，在程式碼中設定附加屬性。 在此範例中，`myCheckBox` 是 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 類別的執行個體。 最後一行是實際設定值的程式碼，前一行會建立執行個體與它們的父系-子系關係。 如果您使用屬性系統，語法是未標記為註解的最後一行。 如果您使用 XAML 存取子樣式，語法是標記為註解的最後一行。
 
@@ -123,15 +123,15 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 - 如果要將附加屬性指定為動畫之目標路徑的一部分，請用括號 ("()") 括住附加屬性名稱，例如 "(Canvas.Left)"。 如需詳細資訊，請參閱 [Property-path 語法](property-path-syntax.md)。
 
 > [!WARNING]
-> Windows 執行階段 XAML 實作的侷限是您無法動畫顯示自訂附加的屬性。
+> 現有的 Windows 執行階段 XAML 實作的限制是，您無法以動畫顯示的自訂附加的屬性。
 
-- 如果要為從資源檔到 **x:Uid** 的資源參考指定一個附加屬性做為目標屬性，請使用特殊語法，將程式碼樣式的完整 **using:** 宣告插入方括弧 ("\[\]") 中，以建立一個明確的範圍分隔。 例如，假設那里一個元素`<TextBlock x:Uid="Title" />`，目標是**Canvas.Top**值，該執行個體上的資源檔中的資源索引鍵是 「 Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top 」。 如需資源檔案和 XAML 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
+- 若要指定為所要的資源檔的資源參考目標內容的附加的屬性**X:uid**，使用插入程式碼樣式，完全符合規定的特殊語法**使用：** 內的宣告方括號 ("\[\]")，以建立蓄意的範圍內中斷。 例如，假設有項目`<TextBlock x:Uid="Title" />`，為目標的資源檔中的資源索引鍵**Canvas.Top**該執行個體上的值是"Title。\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 如需資源檔和 XAML 的詳細資訊，請參閱[快速入門：將 UI 資源轉譯](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
 ## <a name="related-topics"></a>相關主題
 
-- [自訂附加屬性](custom-attached-properties.md)
+- [自訂附加的屬性](custom-attached-properties.md)
 - [相依性屬性概觀](dependency-properties-overview.md)
 - [使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)
-- [快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/hh943060)
+- [快速入門：轉譯的 UI 資源](https://msdn.microsoft.com/library/windows/apps/hh943060)
 - [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
-- [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
+- [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)

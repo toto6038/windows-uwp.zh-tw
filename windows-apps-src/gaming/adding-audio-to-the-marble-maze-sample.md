@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 音訊, 遊戲, 範例
 ms.localizationpriority: medium
 ms.openlocfilehash: 40fa8b1c23d591453308c3ad066967ed65902917
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050891"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616713"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入音訊
 
@@ -32,7 +32,7 @@ Marble Maze 會播放背景音樂，也會使用遊戲音效來表示遊戲事�
 
 - 如果合適的話，當應用程式失去焦點或看不見或暫停執行時，應暫停音訊播放。 等到應用程式重新取得焦點、變成可見或繼續執行時，就繼續播放。
 
-- 設定音訊分類以反映每個音效的角色。 例如，一般會使用 **AudioCategory\_GameMedia** 來表示遊戲背景音訊，使用 **AudioCategory\_GameEffects** 來表示音效。
+- 設定音訊分類以反映每個音效的角色。 例如，您通常會使用**AudioCategory\_GameMedia**遊戲背景音訊並**AudioCategory\_GameEffects**音效。
 
 - 透過釋放和重建所有音訊資源和介面，以處理裝置變更，包括耳機。
 
@@ -52,7 +52,7 @@ XAudio2 是專門支援遊戲音訊的 Windows 低階音訊程式庫。 這個�
 
 - **副混音**會處理音訊資料。 此處理可能包括變更音訊資料流，或將多個資料流合而為一。 Marble Maze 使用副混音來建立殘響效果。
 
--  **主控音**會合併來源音和副混音的資料，然後將該資料傳送至音訊硬體。
+- **主控音**會合併來源音和副混音的資料，然後將該資料傳送至音訊硬體。
 
 - **音訊圖**包含每個主動音效的一個來源音、零或多個副混音，以及唯一的一個主控音。
 
@@ -106,11 +106,11 @@ Marble Maze 會執行類似的步驟，建立可用來播放遊戲音效的音�
 
 ### <a name="creating-the-mastering-voices"></a>建立主控音
 
-下列範例顯示 **Audio::CreateResources** 方法如何使用 [IXAudio2::CreateMasteringVoice](https://msdn.microsoft.com/library/windows/desktop/hh405048) 方法建立背景音樂的主控音。 在此範例中，**m\_musicMasteringVoice** 是 [IXAudio2MasteringVoice](https://msdn.microsoft.com/library/windows/desktop/ee415912) 物件。 我們指定兩個輸入通道；這可簡化殘響效果的邏輯。 
+下列範例顯示 **Audio::CreateResources** 方法如何使用 [IXAudio2::CreateMasteringVoice](https://msdn.microsoft.com/library/windows/desktop/hh405048) 方法建立背景音樂的主控音。 在此範例中， **m\_musicMasteringVoice**是[IXAudio2MasteringVoice](https://msdn.microsoft.com/library/windows/desktop/ee415912)物件。 我們指定兩個輸入通道；這可簡化殘響效果的邏輯。 
 
 我們指定 48000 做為輸入的取樣率。 我們選擇此取樣率是因為它可在音訊品質與所需的 CPU 處理之間取得平衡。 更高的取樣率需要更多的 CPU 處理，但品質不會明顯提升。 
 
-最後，我們指定 **AudioCategory_GameMedia** 做為音訊串流類別，以便使用者可以一邊玩遊戲，一邊聆聽來自不同應用程式的音樂。 當音樂 App 播放時，Windows 會將 **AudioCategory\_GameMedia** 選項所產生的任何聲音變成靜音。 使用者仍然可以聽見遊戲音效，因為遊戲音效是由 **AudioCategory\_GameEffects** 選項所建立。 如需音訊類別的詳細資訊，請參閱 [AUDIO\_STREAM\_CATEGORY](https://msdn.microsoft.com/library/windows/desktop/hh404178)。
+最後，我們指定 **AudioCategory_GameMedia** 做為音訊串流類別，以便使用者可以一邊玩遊戲，一邊聆聽來自不同應用程式的音樂。 Windows 正在播放的音樂應用程式，當靜音所建立的任何語音**AudioCategory\_GameMedia**選項。 使用者仍會聽到遊戲聽起來，因為它們會建立由**AudioCategory\_GameEffects**選項。 如需音訊的分類的詳細資訊，請參閱 <<c0> [ 音訊\_資料流\_分類](https://msdn.microsoft.com/library/windows/desktop/hh404178)。
 
 ```cpp
 // This sample plays the equivalent of background music, which we tag on the  
@@ -134,7 +134,7 @@ DX::ThrowIfFailed(
 );
 ```
 
-**Audio::CreateResources** 方法會執行類似的步驟來建立遊戲音效的主控音，差別在於它會為 *StreamCategory* 參數指定 **AudioCategory\_GameEffects**，這是預設值。
+**Audio::CreateResources**方法會執行類似的步驟，以建立的遊戲音效精通聲音，不同之處在於它會指定**AudioCategory\_GameEffects**如*StreamCategory*參數，這是預設值。
 
 ### <a name="creating-the-reverb-effect"></a>建立殘響效果
 
@@ -144,9 +144,9 @@ DX::ThrowIfFailed(
 
 1. 建立效果物件。
 
-2. 在 [XAUDIO2\_EFFECT\_DESCRIPTOR](https://msdn.microsoft.com/library/windows/desktop/ee419236) 結構中填入效果資料。
+2. 填入[XAUDIO2\_效果\_描述元](https://msdn.microsoft.com/library/windows/desktop/ee419236)影響資料的結構。
 
-3. 在 [XAUDIO2\_EFFECT\_CHAIN](https://msdn.microsoft.com/library/windows/desktop/ee419235) 結構中填入資料。
+3. 填入[XAUDIO2\_效果\_鏈結](https://msdn.microsoft.com/library/windows/desktop/ee419235)資料結構。
 
 4. 將效果鏈套用至音效。
 
@@ -154,7 +154,7 @@ DX::ThrowIfFailed(
 
 6. 適時地停用或啟用效果。
 
-**Audio** 類別定義 **CreateReverb** 方法，以建立實作殘響的效果鏈。 這個方法會呼叫 [XAudio2CreateReverb](https://msdn.microsoft.com/library/windows/desktop/ee419213) 方法來建立 **ComPtr&lt;IUnknown&gt;** 物件 **soundEffectXAPO**，做為殘響效果的副混音。
+**Audio** 類別會定義 **CreateReverb** 方法，以建立實作殘響的效果鏈。 這個方法會呼叫 [XAudio2CreateReverb](https://msdn.microsoft.com/library/windows/desktop/ee419213) 方法來建立 **ComPtr&lt;IUnknown&gt;** 物件 **soundEffectXAPO**，做為殘響效果的副混音。
 
 ```cpp
 Microsoft::WRL::ComPtr<IUnknown> soundEffectXAPO;
@@ -164,7 +164,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-[XAUDIO2\_EFFECT\_DESCRIPTOR](https://msdn.microsoft.com/library/windows/desktop/ee419236) 結構包含可供用於效果鏈的 XAPO 相關資訊，例如輸出通道目標數。 **Audio::CreateReverb** 方法會建立 **XAUDIO2\_EFFECT\_DESCRIPTOR** 物件，此物件 **soundEffectdescriptor** 設為停用狀態、使用兩個輸出通道，並且參照殘響效果的 **soundEffectXAPO** 物件。 **soundEffectdescriptor** 最初為停用狀態，因為在效果開始修改遊戲音效之前，遊戲必須先設定參數。 Marble Maze 使用兩個輸出通道來簡化殘響效果的邏輯。
+[XAUDIO2\_效果\_描述元](https://msdn.microsoft.com/library/windows/desktop/ee419236)結構包含 XAPO 用於效果鏈結，例如輸出通道的目標數目的相關資訊。 **Audio::CreateReverb**方法會建立**XAUDIO2\_效果\_描述元**物件**soundEffectdescriptor**，也就是設定為停用狀態，會使用兩個輸出通道，並參考**soundEffectXAPO**殘響器效果。 **soundEffectdescriptor** 最初為停用狀態，因為在效果開始修改遊戲音效之前，遊戲必須先設定參數。 Marble Maze 使用兩個輸出通道來簡化殘響效果的邏輯。
 
 ```cpp
 soundEffectdescriptor.InitialState = false;
@@ -172,7 +172,7 @@ soundEffectdescriptor.OutputChannels = 2;
 soundEffectdescriptor.pEffect = soundEffectXAPO.Get();
 ```
 
-如果效果鏈有多個效果，則每個效果都需要一個物件。 [XAUDIO2\_EFFECT\_CHAIN](https://msdn.microsoft.com/library/windows/desktop/ee419235) 結構會保存參與效果的 [XAUDIO2\_EFFECT\_DESCRIPTOR](https://msdn.microsoft.com/library/windows/desktop/ee419236) 物件陣列。 下列範例顯示 **Audio::CreateReverb** 方法如何指定一個效果來實作殘響。
+如果效果鏈有多個效果，則每個效果都需要一個物件。 [XAUDIO2\_效果\_鏈結](https://msdn.microsoft.com/library/windows/desktop/ee419235)結構包含一連串[XAUDIO2\_效果\_描述元](https://msdn.microsoft.com/library/windows/desktop/ee419236)參與作用中的物件。 下列範例顯示 **Audio::CreateReverb** 方法如何指定一個效果來實作殘響。
 
 ```cpp
 XAUDIO2_EFFECT_CHAIN soundEffectChain;
@@ -183,7 +183,7 @@ soundEffectChain.EffectCount = 1;
 soundEffectChain.pEffectDescriptors = &soundEffectdescriptor;
 ```
 
-**Audio::CreateReverb** 方法會呼叫 [IXAudio2::CreateSubmixVoice](https://msdn.microsoft.com/library/windows/desktop/ee418608) 方法來建立效果的副混音。 它會指定 *pEffectChain* 參數的 [XAUDIO2\_EFFECT\_CHAIN](https://msdn.microsoft.com/library/windows/desktop/ee419235) 物件 **soundEffectChain**，以將效果鏈與音效產生關聯。 Marble Maze 還會指定兩個輸出通道和 48 千赫的取樣率。
+**Audio::CreateReverb** 方法會呼叫 [IXAudio2::CreateSubmixVoice](https://msdn.microsoft.com/library/windows/desktop/ee418608) 方法來建立效果的副混音。 它會指定[XAUDIO2\_效果\_鏈結](https://msdn.microsoft.com/library/windows/desktop/ee419235)物件**soundEffectChain**，如*pEffectChain*參數來建立效果的關聯使用之語音的鏈結。 Marble Maze 還會指定兩個輸出通道和 48 千赫的取樣率。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -194,7 +194,7 @@ DX::ThrowIfFailed(
 > [!TIP]
 > 祕訣：如果您想要將現有的效果鏈附加至現有的副混音，或想要取代目前的效果鏈，請使用 [IXAudio2Voice::SetEffectChain](https://msdn.microsoft.com/library/windows/desktop/ee418594) 方法。
 
-**Audio::CreateReverb** 方法會呼叫 [IXAudio2Voice::SetEffectParameters](https://msdn.microsoft.com/library/windows/desktop/ee418595) 來設定與效果相關聯的其他參數。 這個方法使用效果特有的參數結構。 [XAUDIO2FX\_REVERB\_PARAMETERS](https://msdn.microsoft.com/library/windows/desktop/ee419224) 物件 **m_reverbParametersSmall** (包含殘響效果參數) 會在 **Audio::Initialize** 方法中初始化，因為每個殘響效果共用相同的參數。 下列範例顯示 **Audio::Initialize** 方法如何初始化近距離殘響的殘響參數。
+**Audio::CreateReverb** 方法會呼叫 [IXAudio2Voice::SetEffectParameters](https://msdn.microsoft.com/library/windows/desktop/ee418595) 來設定與效果相關聯的其他參數。 這個方法使用效果特有的參數結構。 [XAUDIO2FX\_殘響器\_參數](https://msdn.microsoft.com/library/windows/desktop/ee419224)物件**m_reverbParametersSmall**，其中包含殘響器，效果參數中初始化**Audio::Initialize**方法因為每個殘響器影響共用相同的參數。 下列範例顯示 **Audio::Initialize** 方法如何初始化近距離殘響的殘響參數。
 
 ```cpp
 m_reverbParametersSmall.ReflectionsDelay = XAUDIO2FX_REVERB_DEFAULT_REFLECTIONS_DELAY;
@@ -224,7 +224,7 @@ m_reverbParametersSmall.DisableLateField = TRUE;
 
 這個範例在大部分殘響參數中使用預設值，不過，它將 **DisableLateField** 設為 TRUE 來指定近距離殘響、將 **EarlyDiffusion** 設為 4 來模擬平坦近距離平面、將 **LateDiffusion** 設為 15 來模擬極度擴散遠距離平面。 平坦近距離平面會使回音傳遞得更快、更大聲，而擴散遠距離平面則會使回音變小聲、傳遞得較慢。 您可以實驗殘響值來取得適合遊戲的理想效果，或使用 **ReverbConvertI3DL2ToNative** 方法來採用業界標準的 I3DL2 (Interactive 3D Audio Rendering Guidelines Level 2.0) 參數。
 
-以下範例顯示 **Audio::CreateReverb** 如何設定殘響參數。 **newSubmix** 是 [IXAudio2SubmixVoice](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2submixvoice.ixaudio2submixvoice)** 物件。 **parameters** 是 [XAUDIO2FX\_REVERB\_PARAMETERS](https://msdn.microsoft.com/library/windows/desktop/ee419224)* 物件。
+以下範例顯示 **Audio::CreateReverb** 如何設定殘響參數。 **newSubmix** 是 [IXAudio2SubmixVoice](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.ixaudio2submixvoice.ixaudio2submixvoice)** 物件。 **參數**已[XAUDIO2FX\_殘響器\_參數](https://msdn.microsoft.com/library/windows/desktop/ee419224)* 物件。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -252,7 +252,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Marble Maze 會呼叫 **Audio::CreateReverb** 方法四次：其中兩次用於播放背景音樂，另外兩次用於播放遊戲音效。 下列內容顯示 Marble Maze 如何呼叫 **CreateReverb** 方法來播放背景音樂。
+Marble Maze 會呼叫 **Audio::CreateReverb** 方法四次：其中兩次用於播放背景音樂，另外兩次用於播放遊戲音效。 下列內容會顯示 Marble Maze 如何呼叫 **CreateReverb** 方法來播放背景音樂。
 
 ```cpp
 CreateReverb(
@@ -304,7 +304,7 @@ DX::ThrowIfFailed(
 
 **MediaStreamer::Initialize** 方法接著使用 [MFCreateMediaType](https://msdn.microsoft.com/library/windows/desktop/ms693861) 建立 [IMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms704850) 物件來描述音訊串流的格式。 音訊格式有兩種類型：「主類型」及「子類型」。 主類型定義媒體的整體格式，例如視訊、音訊、指令碼等。 子類型定義 PCM、ADPCM 或 WMA 等格式。
 
-**MediaStreamer::Initialize** 方法使用 [IMFAttributes::SetGUID](https://msdn.microsoft.com/library/windows/desktop/bb970530) 方法來指定主要類型 ([MF_MT_MAJOR_TYPE](https://msdn.microsoft.com/library/windows/desktop/ms702272)) 為音訊 (**MFMediaType\_Audio**)，並指定次要類型 ([MF_MT_SUBTYPE](https://msdn.microsoft.com/library/windows/desktop/ms700208)) 為未壓縮的 PCM 音訊 (**MFAudioFormat\_PCM**)。 **MF_MT_MAJOR_TYPE** 和 **MF_MT_SUBTYPE** 是[媒體基礎屬性](https://msdn.microsoft.com/library/windows/desktop/ms696989)。 **MFMediaType_Audio** 和 **MFAudioFormat_PCM** 是類型和子類型 GUID；如需詳細資訊，請參閱[音訊媒體類型](https://msdn.microsoft.com/library/windows/desktop/bb530108)。 [IMFSourceReader::SetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374667) 方法會將媒體類型與資料流讀取器產生關聯。
+**MediaStreamer::Initialize**方法會使用[IMFAttributes::SetGUID](https://msdn.microsoft.com/library/windows/desktop/bb970530)方法，以指定主要的型別 ([MF_MT_MAJOR_TYPE](https://msdn.microsoft.com/library/windows/desktop/ms702272)) 為音訊 (**MFMediaType\_音訊**) 和次要的型別 ([MF_MT_SUBTYPE](https://msdn.microsoft.com/library/windows/desktop/ms700208)) 做為未壓縮的 PCM 音訊 (**MFAudioFormat\_PCM**)。 **MF_MT_MAJOR_TYPE** 和 **MF_MT_SUBTYPE** 是[媒體基礎屬性](https://msdn.microsoft.com/library/windows/desktop/ms696989)。 **MFMediaType_Audio** 和 **MFAudioFormat_PCM** 是類型和子類型 GUID；如需詳細資訊，請參閱[音訊媒體類型](https://msdn.microsoft.com/library/windows/desktop/bb530108)。 [IMFSourceReader::SetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374667) 方法會將媒體類型與資料流讀取器產生關聯。
 
 ```cpp
 // Set the decoded output format as PCM. 
@@ -350,7 +350,7 @@ CoTaskMemFree(waveFormat);
 
  
 
-**MediaStreamer::Initialize** 方法完成時會計算資料流 **m\_maxStreamLengthInBytes** 的長度 (以位元組計)。 為了計算長度，它會呼叫 [IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) 方法來取得音訊串流的持續期間 (以 100 奈秒為單位)，將持續期間分段，然後乘以平均資料傳輸率 (每秒位元組數)。 Marble Maze 之後會使用這個值來配置用於保存每個遊戲音效的緩衝區。
+**MediaStreamer::Initialize**方法會完成藉由計算的資料流的長度**m\_maxStreamLengthInBytes**，以位元組為單位。 為了計算長度，它會呼叫 [IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) 方法來取得音訊串流的持續期間 (以 100 奈秒為單位)，將持續期間分段，然後乘以平均資料傳輸率 (每秒位元組數)。 Marble Maze 之後會使用這個值來配置用於保存每個遊戲音效的緩衝區。
 
 ```cpp
 // Get the total length of the stream, in bytes.
@@ -387,9 +387,9 @@ enum SoundEvent
 };
 ```
 
-下表顯示以下項目之間的關係：值、含有相關聯音效資料的檔案，以及每個音效所代表意義的簡短描述。 音訊檔位於 **\\Media\\Audio** 資料夾中。
+下表顯示以下項目之間的關係：值、含有相關聯音效資料的檔案，以及每個音效所代表意義的簡短描述。 音訊檔位於**\\媒體\\音訊**資料夾。
 
-| SoundEvent 值  | 檔案名稱      | 說明                                              |
+| SoundEvent 值  | 檔案名稱      | 描述                                              |
 |-------------------|----------------|----------------------------------------------------------|
 | RollingEvent      | MarbleRoll.wav | 彈珠滾動時播放。                              |
 | FallingEvent      | MarbleFall.wav | 彈珠從迷宮掉落時播放。               |
@@ -400,7 +400,7 @@ enum SoundEvent
 
  
 
-下列範例顯示 **Audio::CreateResources** 方法如何建立背景音樂的來源音。 [XAUDIO2\_SEND\_DESCRIPTOR](https://msdn.microsoft.com/library/windows/desktop/ee419244) 結構會定義其他音效的目標音效，並指定是否應該使用篩選器。 Marble Maze 會呼叫 **Audio::SetSoundEffectFilter** 方法來使用篩選器，以在彈珠滾動時變更音效。 [XAUDIO2\_VOICE\_SENDS](https://msdn.microsoft.com/library/windows/desktop/ee419246) 結構定義一組音效來接收單一輸出音效的資料。 Marble Maze 會將來源音的資料傳送至主控音 (音效播放的「原始音」或未修飾部分) 及兩個副混音 (實作音效播放的「效果音」或迴響部分)。
+下列範例顯示 **Audio::CreateResources** 方法如何建立背景音樂的來源音。 [XAUDIO2\_傳送\_描述元](https://msdn.microsoft.com/library/windows/desktop/ee419244)結構定義從另一個語音的目標目的地語音，並指定是否應該使用篩選器。 Marble Maze 會呼叫 **Audio::SetSoundEffectFilter** 方法來使用篩選器，以在彈珠滾動時變更音效。 [XAUDIO2\_語音\_傳送](https://msdn.microsoft.com/library/windows/desktop/ee419246)結構定義的語音，以接收來自單一輸出語音資料集。 Marble Maze 會將來源音的資料傳送至主控音 (音效播放的「原始音」或未修飾部分) 及兩個副混音 (實作音效播放的「效果音」或迴響部分)。
 
 [IXAudio2::CreateSourceVoice](https://msdn.microsoft.com/library/windows/desktop/ee418607) 方法會建立並設定來源音。 這個方法採用 [WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799) 結構，而此結構會定義傳送至音效的音訊緩衝區格式。 如前所述，Marble Maze 使用 PCM 格式。
 
@@ -462,14 +462,14 @@ void Audio::Start()
 
 來源音會將該音訊資料傳遞至音訊圖的下一個階段。 就 Marble Maze 而言，下一個階段包含將兩個殘響效果套用至音訊的兩個副混音。 一個副混音套用附近遠距離殘響，第二個則套用遠方遠距離殘響。
 
-每個副混音在最終混音中所貢獻的量，取決於空間的大小和形狀。 當彈珠接近牆面或在較小空間時，近距離殘響貢獻較多，當彈珠在較大空間時，遠距離殘響貢獻較多。 這種技術可在彈珠穿越迷宮時產生更真實的回音效果。 若要進一步了解 Marble Maze 如何實作此效果，請參閱 Marble Maze 原始程式碼中的 **Audio::SetRoomSize** and **Physics::CalculateCurrentRoomSize**。
+每個副混音在最終混音中所貢獻的量，取決於空間的大小和形狀。 當彈珠接近牆面或在較小空間時，近距離殘響貢獻較多，當彈珠在較大空間時，遠距離殘響貢獻較多。 這種技術可在彈珠穿越迷宮時產生更真實的回音效果。 若要進一步了解 Marble Maze 如何實作此效果，請參閱 Marble Maze 原始程式碼中的 **Audio::SetRoomSize** 和 **Physics::CalculateCurrentRoomSize**。
 
 > [!NOTE]
 > 在大多數空間大小幾乎相同的遊戲中，您可以使用更基本的殘響模式。 例如，您可以為所有空間使用一個殘響設定，也可以為每個空間建立預先定義的殘響設定。
 
 **Audio::CreateResources** 方法會使用媒體基礎來載入背景音樂。 不過，來源音目前沒有要使用的音訊資料。 此外，因為背景音樂會循環播放，來源音必須定期更新資料，音樂才能繼續播放。
 
-為了讓來源音持續填入資料，遊戲迴圈會隨每個畫面更新音訊緩衝區。 **MarbleMazeMain::Render** 方法會呼叫 **Audio::Render** 來處理背景音樂音訊緩衝區。 **Audio** 類別定義由三個音訊緩衝區 **m\_audioBuffers** 組成的陣列。 每個緩衝區保存 64 KB (65536 個位元組) 的資料。 迴圈會從媒體基礎物件讀取資料，並將該資料寫入來源音，直到來源音有三個排入佇列的緩衝區為止。
+為了讓來源音持續填入資料，遊戲迴圈會隨每個畫面更新音訊緩衝區。 **MarbleMazeMain::Render** 方法會呼叫 **Audio::Render** 來處理背景音樂音訊緩衝區。 **音訊**類別會定義三個音訊的緩衝區，陣列**m\_audioBuffers**。 每個緩衝區保存 64 KB (65536 個位元組) 的資料。 迴圈會從媒體基礎物件讀取資料，並將該資料寫入來源音，直到來源音有三個排入佇列的緩衝區為止。
 
 > [!CAUTION]
 > 雖然 Marble Maze 使用 64 KB 緩衝區保存音樂資料，但您可能需要使用更大或更小的緩衝區。 此數量視您遊戲的需求而定。
@@ -561,7 +561,7 @@ void MediaStreamer::Restart()
 }
 ```
 
-若要實作單一緩衝區 (或完全載入至記憶體的完整音效) 的音訊迴圈，您可以在初始化音效時將 [XAUDIO2_BUFFER](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.xaudio2.xaudio2_buffer)::LoopCount 欄位設為 **XAUDIO2\_LOOP\_INFINITE**。 Marble Maze 採用這種技術來播放彈珠的滾動音效。
+若要實作單一緩衝區 （或完全載入到記憶體整個音效） 音訊迴圈，您可以設定[XAUDIO2_BUFFER](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.xaudio2.xaudio2_buffer):: LoopCount 欄位**XAUDIO2\_迴圈\_無限**當您初始化播放聲音。 Marble Maze 採用這種技術來播放彈珠的滾動音效。
 
 ```cpp
 if (sound == RollingEvent)
@@ -650,7 +650,7 @@ void Audio::PlaySoundEffect(SoundEvent sound)
 
 對於滾動以外的音效，**Audio::PlaySoundEffect** 方法會呼叫 [IXAudio2SourceVoice::GetState](https://msdn.microsoft.com/library/windows/desktop/hh405047) 來決定來源音播放的緩衝區數目。 如果沒有作用中的緩衝區，它會呼叫 [IXAudio2SourceVoice::SubmitSourceBuffer](https://msdn.microsoft.com/library/windows/desktop/ee418473)，將音效的音訊資料新增至聲音的輸入佇列。 **Audio::PlaySoundEffect** 方法也能夠連續播放兩次碰撞音效。 例如，當彈珠碰撞到迷宮角落時，就會出現這種情形。
 
-如前所述，Audio 類別在初始化滾動事件的音效時會使用 **XAUDIO2\_LOOP\_INFINITE** 旗標。 第一次因為此事件而呼叫 **Audio::PlaySoundEffect** 時，就會開始循環播放音效。 為了簡化滾動音效的播放邏輯，Marble Maze 會變成靜音，而非停止音效。 當彈珠速度改變時，Marble Maze 也會隨之變更音效的音調和音量，以產生更真實的效果。 以下程式碼顯示 **MarbleMazeMain::Update** 方法如何隨著彈珠速度的改變來更新音調和音量，以及如何在彈珠停止時將音量設定為零以變成靜音。
+如前文所述，此音訊類別會使用**XAUDIO2\_迴圈\_無限**時它會初始化輪流事件的音效的旗標。 第一次因為此事件而呼叫 **Audio::PlaySoundEffect** 時，就會開始循環播放音效。 為了簡化滾動音效的播放邏輯，Marble Maze 會變成靜音，而非停止音效。 當彈珠速度改變時，Marble Maze 也會隨之變更音效的音調和音量，以產生更真實的效果。 以下程式碼顯示 **MarbleMazeMain::Update** 方法如何隨著彈珠速度的改變來更新音調和音量，以及如何在彈珠停止時將音量設定為零以變成靜音。
 
 ```cpp
 // Play the roll sound only if the marble is actually rolling.
@@ -771,7 +771,7 @@ m_musicEngineCallback.Initialize(this);
 m_musicEngine->RegisterForCallbacks(&m_musicEngineCallback);
 ```
 
-Marble Maze 不需要在音訊處理開始或結束時收到通知。 因此，它實作的 [IXAudio2EngineCallback::OnProcessingPassStart](https://msdn.microsoft.com/library/windows/desktop/ee418463) 和 [IXAudio2EngineCallback::OnProcessingPassEnd](https://msdn.microsoft.com/library/windows/desktop/ee418462) 方法沒有作用。 對於 [IXAudio2EngineCallback::OnCriticalError](https://msdn.microsoft.com/library/windows/desktop/ee418461) 方法，Marble Maze 會呼叫 **SetEngineExperiencedCriticalError** 方法來設定 **m\_engineExperiencedCriticalError** 旗標。
+Marble Maze 不需要在音訊處理開始或結束時收到通知。 因此，它實作的 [IXAudio2EngineCallback::OnProcessingPassStart](https://msdn.microsoft.com/library/windows/desktop/ee418463) 和 [IXAudio2EngineCallback::OnProcessingPassEnd](https://msdn.microsoft.com/library/windows/desktop/ee418462) 方法沒有作用。 針對[IXAudio2EngineCallback::OnCriticalError](https://msdn.microsoft.com/library/windows/desktop/ee418461)方法時，「 彈珠迷宮 」 會呼叫**SetEngineExperiencedCriticalError**方法，以設定**m\_engineExperiencedCriticalError**旗標。
 
 ```cpp
 // Audio.cpp
@@ -797,7 +797,7 @@ void SetEngineExperiencedCriticalError()
 }
 ```
 
-發生嚴重錯誤時，音訊處理會停止，而且對 XAudio2 的其他所有呼叫都會失敗。 為了從這種情況中復原，您必須釋放 XAudio2 執行個體並建立新的執行個體。 **Audio::Render** 方法 (每個畫面會從遊戲迴圈呼叫) 會先檢查 **m\_engineExperiencedCriticalError** 旗標。 如果有設定此旗標，則會加以清除、釋放目前的 XAudio2 執行個體、初始化資源，然後啟動背景音樂。
+發生嚴重錯誤時，音訊處理會停止，而且對 XAudio2 的其他所有呼叫都會失敗。 為了從這種情況中復原，您必須釋放 XAudio2 執行個體並建立新的執行個體。 **Audio::Render**方法，從遊戲迴圈每個畫面呼叫，會先檢查**m\_engineExperiencedCriticalError**旗標。 如果有設定此旗標，則會加以清除、釋放目前的 XAudio2 執行個體、初始化資源，然後啟動背景音樂。
 
 ```cpp
 if (m_engineExperiencedCriticalError)
@@ -814,12 +814,12 @@ if (m_engineExperiencedCriticalError)
 }
 ```
 
-當沒有音訊裝置可用時，Marble Maze 也會使用 **m\_engineExperiencedCriticalError** 旗標，以避免呼叫 XAudio2。 例如，有設定此旗標時，**MarbleMazeMain::Update** 方法便不會處理滾動或碰撞事件的音訊。 如有需要，App 會嘗試隨每個畫面修復音訊引擎；不過，如果電腦上沒有音訊裝置或已拔下耳機，並且也沒有其他可用的音訊裝置，則 **m\_engineExperiencedCriticalError** 旗標可能會一直維持已設定狀態。
+也會使用滾珠迷宮**m\_engineExperiencedCriticalError**防範 XAudio2 呼叫沒有音訊裝置可用時的旗標。 例如，有設定此旗標時，**MarbleMazeMain::Update** 方法便不會處理滾動或碰撞事件的音訊。 應用程式會嘗試修復音訊引擎每個畫面，如有必要的;不過， **m\_engineExperiencedCriticalError**可能一定會設定旗標，如果電腦沒有音訊裝置或耳機已拔除，而且沒有其他可用的音訊裝置。
 
 > [!CAUTION]
 > 請勿在引擎回呼的主體中執行封鎖操作。 這樣做可能會造成效能問題。 Marble Maze 會在 **OnCriticalError** 回呼中設定旗標，之後再於一般音訊處理階段中處理錯誤。 如需 XAudio2 回呼的詳細資訊，請參閱 [XAudio2 回呼](https://msdn.microsoft.com/library/windows/desktop/ee415745)。
 
-## <a name="conclusion"></a>總結
+## <a name="conclusion"></a>結論
 
 這會摘要 Marble Maze 遊戲範例！ 雖然它相對是個簡單遊戲，但包含數個重要部分，可移至任何 UWP DirectX 遊戲，並且是在製作您自己的遊戲時可遵循的很好範例。
 
@@ -831,5 +831,5 @@ if (m_engineExperiencedCriticalError)
 
 ## <a name="related-topics"></a>相關主題
 
-* [在 Marble Maze 範例中加入輸入和互動](adding-input-and-interactivity-to-the-marble-maze-sample.md)
-* [使用 C++ 和 DirectX 開發 Marble Maze (UWP 遊戲)](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [加入輸入和互動功能至滾珠迷宮範例](adding-input-and-interactivity-to-the-marble-maze-sample.md)
+* [「 彈珠迷宮 」、 UWP c + + 和 DirectX 遊戲開發](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)

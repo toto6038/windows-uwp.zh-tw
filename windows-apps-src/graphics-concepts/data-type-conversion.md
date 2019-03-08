@@ -1,25 +1,25 @@
 ---
-title: 資料類型轉換
+title: 資料型別轉換
 description: 下列章節說明 Direct3D 如何處理資料類型之間的轉換。
 ms.assetid: B50AB8DE-CAED-465B-B18C-81F3A984B8AC
 keywords:
-- 資料類型轉換
+- 資料型別轉換
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 08c6dda8759a6e1452daf7cf0a3cd3e5db9ea1e6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930519"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590573"
 ---
-# <a name="data-type-conversion"></a>資料類型轉換
+# <a name="data-type-conversion"></a>資料型別轉換
 
 
 下列章節說明 Direct3D 如何處理資料類型之間的轉換。
 
-## <a name="span-iddatatypeterminologyspanspan-iddatatypeterminologyspanspan-iddatatypeterminologyspandata-type-terminology"></a><span id="Data_Type_Terminology"></span><span id="data_type_terminology"></span><span id="DATA_TYPE_TERMINOLOGY"></span>資料類型詞彙
+## <a name="span-iddatatypeterminologyspanspan-iddatatypeterminologyspanspan-iddatatypeterminologyspandata-type-terminology"></a><span id="Data_Type_Terminology"></span><span id="data_type_terminology"></span><span id="DATA_TYPE_TERMINOLOGY"></span>資料型別術語
 
 
 下列詞彙組後續將用來描述各種不同的格式轉換。
@@ -37,12 +37,12 @@ ms.locfileid: "8930519"
 
 上述詞彙常做為「格式名稱修飾詞」，用來描述資料在記憶體中配置的方式，以及於傳輸路徑中要在記憶體與管線單位 (如著色器) 之間來回進行哪些轉換 (可能包括篩選)。
 
-## <a name="span-idfloatingpointconversionspanspan-idfloatingpointconversionspanspan-idfloatingpointconversionspanfloating-point-conversion"></a><span id="Floating_Point_Conversion"></span><span id="floating_point_conversion"></span><span id="FLOATING_POINT_CONVERSION"></span>浮點轉換
+## <a name="span-idfloatingpointconversionspanspan-idfloatingpointconversionspanspan-idfloatingpointconversionspanfloating-point-conversion"></a><span id="Floating_Point_Conversion"></span><span id="floating_point_conversion"></span><span id="FLOATING_POINT_CONVERSION"></span>浮動點轉換
 
 
 只要不同的表示法之間發生浮點轉換，包括非浮點表示法之間來回轉換，就適用下列規則。
 
-### <a name="span-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanspan-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanspan-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanconververting-from-a-higher-range-representation-to-a-lower-range-representation"></a><span id="Conververting_from_a_higher_range_representation_to_a_lower_range_representation"></span><span id="conververting_from_a_higher_range_representation_to_a_lower_range_representation"></span><span id="CONVERVERTING_FROM_A_HIGHER_RANGE_REPRESENTATION_TO_A_LOWER_RANGE_REPRESENTATION"></span>從較高範圍表示法轉換成較低範圍表示法
+### <a name="span-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanspan-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanspan-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanconververting-from-a-higher-range-representation-to-a-lower-range-representation"></a><span id="Conververting_from_a_higher_range_representation_to_a_lower_range_representation"></span><span id="conververting_from_a_higher_range_representation_to_a_lower_range_representation"></span><span id="CONVERVERTING_FROM_A_HIGHER_RANGE_REPRESENTATION_TO_A_LOWER_RANGE_REPRESENTATION"></span>從較高的範圍表示法為較低的範圍表示的 Conververting
 
 -   轉換成另一種浮點數格式時會使用 Round-to-zero (四捨五入至零)。 如果目標是整數或固定點格式，則會使用 round-to-nearest-even (四捨五入至最接近的偶數)，除非轉換明確記載為使用另一種四捨五入行為，例如 FLOAT 轉換成 SNORM、FLOAT 轉換成 UNORM 或 FLOAT 轉換成 SRGB 使用的 round-to-nearest (四捨五入至最接近數字)。 其他例外狀況為 ftoi 和 ftou shader 指令，會使用 round-to-zero (四捨五入至零)。 最後，紋理取樣工具和點陣化使用的 float-to-fixed 轉換有指定的容錯，以來自無限精確概念的 Unit-Last-Place 計算。
 -   若來源值大於較低範圍目標格式的動態範圍 (例如 大型 32 位元浮點值寫入 16 位元浮點值 RenderTarget)，則會得出最大可表示 (帶適當正負號) 值，「不」包括帶正負號的無限大 (因為上述的四捨五入至零)。
@@ -50,10 +50,10 @@ ms.locfileid: "8930519"
 -   採用較高範圍格式的 INF 將會轉換成採用較低範圍格式的 INF (如有的話)。 如果較低格式沒有 INF 表示法，它將會轉換成可表示的最大值。 正負號將保留，如果目標格式中提供。
 -   採用較高範圍格式的 Denorm 將會轉換成採用較低範圍格式的 Denorm 表示法 (如較低範圍格式中有提供且可轉換)，否則結果會是 0。 正負號位元將保留，如果目標格式中提供。
 
-### <a name="span-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanspan-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanspan-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanconverting-from-a-lower-range-representation-to-a-higher-range-representation"></a><span id="Converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="CONVERTING_FROM_A_LOWER_RANGE_REPRESENTATION_TO_A_HIGHER_RANGE_REPRESENTATION"></span>從較低範圍表示法轉換成較高範圍表示法
+### <a name="span-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanspan-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanspan-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanconverting-from-a-lower-range-representation-to-a-higher-range-representation"></a><span id="Converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="CONVERTING_FROM_A_LOWER_RANGE_REPRESENTATION_TO_A_HIGHER_RANGE_REPRESENTATION"></span>從較低的範圍表示法轉換成較高的範圍表示法
 
 -   採用較低範圍格式的 NaN 將轉換成採用較高範圍格式的 NaN 表示法 (如果較高範圍格式中有提供)。 如果較高範圍格式沒有 NaN 表示法，它將會轉換成 0。
--   採用較低範圍格式的 INF 將轉換成採用較高範圍格式的 INF 表示法 (如果較高範圍格式中有提供)。 如果較高格式沒有 INF 表示法，它將會轉換成可表示的最大值 (採用該格式的 MAX\_FLOAT)。 正負號將保留，如果目標格式中提供。
+-   採用較低範圍格式的 INF 將轉換成採用較高範圍格式的 INF 表示法 (如果較高範圍格式中有提供)。 如果較高的格式沒有 INF 表示法，則會轉換成可顯示的最大值 (最大\_浮點數以該格式)。 正負號將保留，如果目標格式中提供。
 -   採用較低範圍格式的 Denorm 將轉換成採用較高範圍格式的標準化表示法 (如有可能)，或是轉換成採用較高範圍格式的 Denorm 表示法 (如果 Denorm 表示法存在)。 若較高範圍格式沒有 Denorm 表示法，則這些都會失敗，且它將會轉換成 0。 正負號將保留，如果目標格式中提供。 請注意，32 位元浮點數計算格式時不會採用 Denorm 表示法 (因為 32 位元浮點數運算中，Denorm 會清除為保留正負號的 0)。
 
 ## <a name="span-idintegerconversionspanspan-idintegerconversionspanspan-idintegerconversionspaninteger-conversion"></a><span id="Integer_Conversion"></span><span id="integer_conversion"></span><span id="INTEGER_CONVERSION"></span>整數轉換
@@ -170,7 +170,7 @@ ms.locfileid: "8930519"
 <tr class="odd">
 <td align="left">SINT</td>
 <td align="left">UINT 與更多位元</td>
-<td align="left"><p>若要從 SINT 轉換成 UINT 與更多位元：如果是負數，值會限制為 0。 否則數字會複製到目標格式的 LSB，且其他 MSB 會以 0 填入。</p></td>
+<td align="left"><p>若要使用更多的位元轉換從荷屬 UINT:如果是負數，值會限制為 0。 否則數字會複製到目標格式的 LSB，且其他 MSB 會以 0 填入。</p></td>
 </tr>
 <tr class="even">
 <td align="left">UINT</td>
@@ -187,7 +187,7 @@ ms.locfileid: "8930519"
 
  
 
-## <a name="span-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanfixed-point-integer-conversion"></a><span id="Fixed_Point_Integer_Conversion"></span><span id="fixed_point_integer_conversion"></span><span id="FIXED_POINT_INTEGER_CONVERSION"></span>固定點整數轉換
+## <a name="span-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanfixed-point-integer-conversion"></a><span id="Fixed_Point_Integer_Conversion"></span><span id="fixed_point_integer_conversion"></span><span id="FIXED_POINT_INTEGER_CONVERSION"></span>固定的點整數轉換
 
 
 固定點整數單純是某個位元大小的整數，其中某個固定位置有隱含的小數點。
@@ -234,8 +234,8 @@ ms.locfileid: "8930519"
 <td align="left">固定點整數</td>
 <td align="left">FLOAT</td>
 <td align="left"><p>假設要轉換成浮點數的特定固定點表示法未包含總計超過 24 個位元的資訊，則分數元件中不會超過其中的 23 個位元。 假設某個固定點數字 fxp 採用 i.f 形式 (i 位元整數，f 位元分數)。 轉換成浮點數類似下列虛擬程式碼。</p>
-<p>浮點數結果 = (float) (fxp &gt; &gt; f) + / / 取整數</p>
-((float) (fxp &amp; (2 個<sup>f</sup> - 1)) / (2 個<sup>f</sup>));取分數</td>
+<p>浮點數結果 = (float)(fxp &gt;&gt; f) + // 取整數</p>
+((float)(fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); // extract fraction</td>
 </tr>
 </tbody>
 </table>
@@ -245,7 +245,7 @@ ms.locfileid: "8930519"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[附錄](appendix.md)
+[Appendices](appendix.md)
 
  
 

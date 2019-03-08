@@ -6,13 +6,13 @@ ms.topic: article
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, Azure web server, 應用程式安裝程式, 側載, 相關集合, 選用套件, Azure 網頁伺服器
 ms.localizationpriority: medium
 ms.openlocfilehash: 074a8e9941d4314bb35c28b0ee296e9d86fa23a5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929685"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608793"
 ---
-# <a name="install-a-uwp-app-from-an-azure-web-app"></a>從 Azure Web 應用程式安裝 UWP app
+# <a name="install-a-uwp-app-from-an-azure-web-app"></a>從 Azure Web 應用程式安裝 UWP 應用程式
 
 應用程式安裝程式可讓開發人員和 IT 專業人員透過在他們自己的內容傳遞網路 (CDN) 上，散發 Windows 10 應用程式。 這對於不想要或不需要發佈其應用程式至 Microsoft Store ，但仍然想要利用 Windows 10 封裝與部署平台的企業而言，是很實用的。
 
@@ -25,7 +25,7 @@ ms.locfileid: "8929685"
 1. Microsoft Azure 訂用帳戶 
 2. UWP app 套件 - 您將散發的應用程式套件
 
-選用：在 GitHub 上的[入門專案](https://github.com/AppInstaller/MySampleWebApp)。 如果您沒有要使用的應用程式套件或網頁，但仍然想要了解如何使用這項功能，這會很有幫助。
+選擇性：[入門專案](https://github.com/AppInstaller/MySampleWebApp)GitHub 上。 如果您沒有要使用的應用程式套件或網頁，但仍然想要了解如何使用這項功能，這會很有幫助。
 
 ### <a name="step-1---get-an-azure-subscription"></a>步驟 1 - 取得 Azure 訂用帳戶
 若要取得 Azure 訂用帳戶，請造訪 [Azure 帳戶頁面](https://azure.microsoft.com/free/)。 基於本教學課程的目的，您可以使用免費的會員資格。

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 303cbd5e87db773324cd98447df6d99dc6de5a0c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943501"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613363"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>相片和視訊擷取的手動相機控制項
 
@@ -21,7 +21,7 @@ ms.locfileid: "8943501"
 
 本文中討論的控制項全都會使用相同的模式新增到您的 app。 首先，檢查 app 目前執行所在的裝置是否支援此控制項。 如果支援此控制項，則為控制項設定所需的模式。 通常，如果目前的裝置不支援特定的控制項，您應該停用或隱藏可讓使用者啟用該功能的 UI 元素。
 
-本文中的程式碼是從[相機手動控制項 SDK 範例](https://go.microsoft.com/fwlink/?linkid=845228)改編而來。 您可以下載範例以查看內容中使用的程式碼，或以此範例做為自己的 app 起點。
+本文中的程式碼是從[相機手動控制項 SDK 範例](https://go.microsoft.com/fwlink/?linkid=845228)改編而來。 您可以下載範例以查看實際使用的程式碼，或以此範例做為自己的 App 起點。
 
 > [!NOTE]
 > 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
@@ -32,7 +32,7 @@ ms.locfileid: "8943501"
 
 ## <a name="exposure"></a>曝光
 
-[**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) 可讓您設定擷取相片或視訊時使用的快門速度。
+[  **ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) 可讓您設定擷取相片或視訊時使用的快門速度。
 
 這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的曝光值，以及使用核取方塊來切換自動曝光調整。
 
@@ -59,7 +59,7 @@ ms.locfileid: "8943501"
 
 ## <a name="exposure-compensation"></a>曝光補償
 
-[**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) 可讓您設定擷取相片或視訊時使用的曝光補償。
+[  **ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) 可讓您設定擷取相片或視訊時使用的曝光補償。
 
 這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的曝光補償值。
 
@@ -79,7 +79,7 @@ ms.locfileid: "8943501"
 
 ## <a name="flash"></a>閃光燈
 
-[**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) 可讓您啟用或停用閃光燈，或是啟用自動閃光燈，讓系統自動判斷是否要使用閃光燈。 這個控制項也可讓您在支援自動消除紅眼的裝置上使用該功能。 這些設定全部都可套用至相片擷取。 [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) 是個別的控制項，可針對視訊擷取開啟或關閉手電筒。
+[  **FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) 可讓您啟用或停用閃光燈，或是啟用自動閃光燈，讓系統自動判斷是否要使用閃光燈。 這個控制項也可讓您在支援自動消除紅眼的裝置上使用該功能。 這些設定全部都可套用至相片擷取。 [  **TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) 是個別的控制項，可針對視訊擷取開啟或關閉手電筒。
 
 這個範例使用一組選項按鈕，可讓使用者在開啟、關閉及自動閃光燈設定之間做切換。 此外也提供一個核取方塊，可切換消除紅眼和視訊手電筒。
 
@@ -106,7 +106,7 @@ ms.locfileid: "8943501"
 
 ## <a name="focus"></a>對焦
 
-[**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) 物件支援三種不同的常用方法來調整相機的焦點：連續自動對焦、點選以對焦以及手動對焦。 相機 App 可支援這三種方法全部，但為了方便閱讀起見，本文將分開討論每一種技術。 本節也會討論如何啟用對焦輔助燈。
+[  **FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) 物件支援三種不同的常用方法來調整相機的焦點：連續自動對焦、點選以對焦以及手動對焦。 相機 App 可支援這三種方法全部，但為了方便閱讀起見，本文將分開討論每一種技術。 本節也會討論如何啟用對焦輔助燈。
 
 ### <a name="continuous-autofocus"></a>連續自動對焦
 
@@ -149,13 +149,13 @@ ms.locfileid: "8943501"
 
 下一步是透過處理目前正在顯示擷取預覽串流之 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 的 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) 事件，在使用者點選螢幕時接聽事件。 如果相機目前沒有進行預覽，或是點選以對焦模式已停用，請從處理常式返回而不進行任何動作。
 
-如果將追蹤變數 *_isFocused* 切換為 false，且如果相機目前並未進行對焦 (由 **FocusControl** 的 [**FocusState**](https://msdn.microsoft.com/library/windows/apps/dn608074) 屬性判斷)，請開始點選以對焦程序。 從傳遞給處理常式的事件引數取得使用者的點選位置。 這個範例也會利用這個機會挑選將對焦的區域大小。 在此案例中，大小為擷取元素最小尺寸的 1/4。 將點選位置和區域大小傳遞給下一節中定義的 **TapToFocus** 協助程式方法。
+如果追蹤變數 *\_isFocused*切換為 false，而且如果焦點的過程中目前沒有攝影機 (取決於[ **FocusState** ](https://msdn.microsoft.com/library/windows/apps/dn608074)屬性**FocusControl**)，開始點選-焦點程序。 從傳遞給處理常式的事件引數取得使用者的點選位置。 這個範例也會利用這個機會挑選將對焦的區域大小。 在此案例中，大小為擷取元素最小尺寸的 1/4。 將點選位置和區域大小傳遞給下一節中定義的 **TapToFocus** 協助程式方法。
 
-如果將 *\_isFocused* 切換設定為 true，使用者點選時，應該會從先前的區域清除焦點。 這是在下面所示的 **TapUnfocus** 協助程式方法中進行。
+如果 *\_isFocused*切換設定為 true，使用者點選應清除焦點從先前的區域。 這是在下面所示的 **TapUnfocus** 協助程式方法中進行。
 
 [!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
 
-在 **TapToFocus** 協助程式方法中，請先將 *\_isFocused* 切換設定為 true，以便在下次點選螢幕時將焦點從點選的區域釋出。
+在 [ **TapToFocus**協助程式方法中，第一組 *\_isFocused*切換為 true，因此下一步] 畫面點選會釋放將焦點從點選的區域。
 
 這個協助程式方法的下一個工作，是要決定位於將被指派給對焦控制項之預覽串流內的矩形。 這需要兩個步驟。 第一個步驟是決定預覽串流在 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 控制項內佔用的矩形。 這取決於預覽串流的尺寸和裝置的方向。 本節結尾顯示的協助程式方法 **GetPreviewStreamRectInControl** 會執行此工作，並傳回包含預覽串流的矩形。
 
@@ -228,7 +228,7 @@ ms.locfileid: "8943501"
 
 ## <a name="iso-speed"></a>ISO 速度
 
-[**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) 可讓您設定擷取相片或視訊時使用的 ISO 速度。
+[  **IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) 可讓您設定擷取相片或視訊時使用的 ISO 速度。
 
 這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的曝光補償值，以及使用核取方塊來切換自動 ISO 速度調整。
 
@@ -265,13 +265,13 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 ## <a name="powerline-frequency"></a>電源頻率
 有些相機裝置支援抗閃爍處理，而這取決於了解目前環境中電源的 AC 頻率。 有些裝置支援自動決定電源頻率，有些則需要手動設定頻率。 下列程式碼範例顯示如何判斷裝置上的電源頻率支援，以及必要時如何手動設定頻率。 
 
-首先，呼叫 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，傳入一個 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 類型的輸出參數，如果此呼叫失敗，表示目前的裝置不支援電源頻率控制項。 如果支援此功能，您可以試著設定自動模式來判斷裝置上是否可使用自動模式。 藉由呼叫[**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899)並傳入的值**自動**執行此動作。如果呼叫成功，這表示您的自動電源頻率支援的說明。 如果裝置支援電源頻率控制器，但不支援自動頻率偵測，您仍然可以使用 **TrySetPowerlineFrequency** 以手動方式設定頻率。 在這個範例中，**MyCustomFrequencyLookup** 是您為了判斷裝置目前位置的正確頻率而實作的自訂方法。 
+首先，呼叫 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，傳入一個 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 類型的輸出參數，如果此呼叫失敗，表示目前的裝置不支援電源頻率控制項。 如果支援此功能，您可以試著設定自動模式來判斷裝置上是否可使用自動模式。 透過呼叫 [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) 並傳入 **Auto** 值以執行此操作。如果呼叫成功，表示裝置支援您的自動電源頻率。 如果裝置支援電源頻率控制器，但不支援自動頻率偵測，您仍然可以使用 **TrySetPowerlineFrequency** 以手動方式設定頻率。 在這個範例中，**MyCustomFrequencyLookup** 是您為了判斷裝置目前位置的正確頻率而實作的自訂方法。 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
 ## <a name="white-balance"></a>白平衡
 
-[**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) 可讓您設定擷取相片或視訊時使用的白平衡。
+[  **WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) 可讓您設定擷取相片或視訊時使用的白平衡。
 
 這個範例使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) 控制項以從內建的色溫預設進行選取，以及使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來進行手動白平衡調整。
 
@@ -299,9 +299,9 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 > [!IMPORTANT]
 > **ColorTemperaturePreset.Auto** 預設值會指示系統自動調整白平衡層級。 針對某些情況 (例如擷取每個畫面的白平衡層級應該都相同的相片序列)，您可能會想要將控制項鎖定在目前的自動值。 若要這樣做，請呼叫 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 並指定 **Manual** 預設，而不要使用 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) 在控制項上設定值。 這會導致裝置鎖定目前的值。 請勿嘗試讀取目前的控制項值，然後將傳回的值傳遞給 **SetValueAsync**，因為這個值不一定是正確的。
 
-## <a name="zoom"></a>縮放
+## <a name="zoom"></a>Zoom
 
-[**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) 可讓您設定擷取相片或視訊時使用的縮放比例。
+[  **ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) 可讓您設定擷取相片或視訊時使用的縮放比例。
 
 這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的縮放比例。 下節將說明如何根據螢幕上的捏合手勢調整縮放。
 
@@ -333,9 +333,9 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 [!code-cs[RegisterPinchGestureHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterPinchGestureHandler)]
 
-在 **ManipulationDelta** 事件的處理常式中，更新以使用者的捏合手勢變更為基礎的縮放係數。 [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 值代表捏合手勢的比例變更，讓少量增加的捏合大小是稍微大於 1.0 的數字，而少量減少的捏合大小是稍微小於 1.0 的數字。 在這個範例中，目前的縮放控制項值會乘以縮放差異。
+在 **ManipulationDelta** 事件的處理常式中，更新以使用者的捏合手勢變更為基礎的縮放係數。 [  **ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 值代表捏合手勢的比例變更，讓少量增加的捏合大小是稍微大於 1.0 的數字，而少量減少的捏合大小是稍微小於 1.0 的數字。 在這個範例中，目前的縮放控制項值會乘以縮放差異。
 
-在設定縮放係數之前，您必須確定此值不會小於裝置所支援的最小值 (以 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 屬性表示)。 此外，確定此值是小於或等於 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最後，您必須確定縮放係數是裝置所示[**步驟**](https://msdn.microsoft.com/library/windows/apps/dn633818)屬性所支援的縮放分段大小的倍數。 如果縮放係數不符合這些需求，當您嘗試在擷取裝置上設定縮放比例時，將會擲回例外狀況。
+在設定縮放係數之前，您必須確定此值不會小於裝置所支援的最小值 (以 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 屬性表示)。 此外，確定此值是小於或等於 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最後，您必須確定縮放因素是如所示，裝置所支援的縮放步驟大小的倍數[**步驟**](https://msdn.microsoft.com/library/windows/apps/dn633818)屬性。 如果縮放係數不符合這些需求，當您嘗試在擷取裝置上設定縮放比例時，將會擲回例外狀況。
 
 建立新的 [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) 物件，以在擷取裝置上設定縮放比例。 將 [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) 屬性設為 [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726)，然後將 [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) 屬性設為所需的縮放係數。 最後，呼叫 [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) 以在裝置上設定新的縮放值。 裝置將會順暢地轉換到新的縮放值。
 
@@ -344,4 +344,4 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)

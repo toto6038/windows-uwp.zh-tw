@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: 檔案存取權限
-description: App 預設可以存取特定的檔案系統位置。 應用程式也可以透過檔案選擇器或宣告功能，以存取其他位置。
+description: App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。
 ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -12,24 +12,24 @@ dev_langs:
 - cpp
 - javascript
 ms.openlocfilehash: 4845b20ed74642f6fb34ea40dd774c91ae378e7b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050278"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630403"
 ---
 # <a name="file-access-permissions"></a>檔案存取權限
 
-根據預設，通用 Windows 平台 (UWP) 應用程式可以存取某些檔案系統位置。 應用程式也可以透過檔案選擇器或宣告功能存取其他位置。
+通用 Windows 平台 (UWP) 應用程式預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。
 
 ## <a name="the-locations-that-all-apps-can-access"></a>所有 app 都能存取的位置
 
 當您建立新的 app 時，預設可以存取下列檔案系統位置：
 
 ### <a name="application-install-directory"></a>應用程式安裝目錄
-您的應用程式在使用者的系統安裝資料夾。
+您的應用程式使用者的系統的安裝所在的資料夾。
 
-有兩種主要方式，來存取檔案和資料夾，在您的應用程式安裝目錄：
+有兩種主要的方式來存取檔案和資料夾中的應用程式安裝目錄：
 
 1. 您可以抓取代表 app 安裝目錄的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，如下：
 
@@ -92,12 +92,12 @@ ms.locfileid: "9050278"
 
 此外，與其他位置不同的是，您也可以使用[通用 Windows 平台 (UWP) app 的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205757) 及 [Microsoft Visual Studio 的 C/C++ 標準程式庫功能](https://msdn.microsoft.com/library/hh875057.aspx)，來存取 app 安裝目錄中的檔案。
 
-app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目錄的存取權。
+app 安裝目錄是唯讀位置。 您無法透過檔案選擇器來取得安裝目錄的存取權。
 
-### <a name="application-data-locations"></a>應用程式資料位置
+### <a name="application-data-locations"></a>應用程式資料的位置
 您的 app 可以儲存資料的資料夾。 這些資料夾 (本機、漫遊及暫存) 都是在您 app 安裝時所建立。
 
-有兩種主要方式可以從您的應用程式資料位置存取檔案和資料夾：
+有兩種主要的方式，從您的應用程式資料的位置存取檔案和資料夾：
 
 1.  使用 [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) 屬性來抓取應用程式資料資料夾。
 
@@ -127,7 +127,7 @@ app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目
     
     在您擷取代表應用程式資料位置的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 之後，可以使用 **StorageFolder** 方法存取該位置中的檔案和資料夾。 在此範例中，這些 **StorageFolder** 物件儲存在 `localFolder` 變數中。 您可以從[ApplicationData 類別](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata)(英文) 頁面上的指導方針，以及從 GitHub 下載[應用程式資料範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData)(英文)，深入了解如何使用應用程式資料位置。
 
-2. 您可以從您的應用程式本機資料夾直接擷取檔案，藉由使用 app URI，就像這樣：
+2. 您可以使用這類應用程式的 URI，直接從您的應用程式本機資料夾的檔案，以擷取檔案：
     
     ```csharp
     using Windows.Storage;
@@ -164,7 +164,7 @@ app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目
 
 此外，與其他位置不同的是，您也可以使用[適用於 UWP app 的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205757) 及 Visual Studio 的 C/C++ 標準程式庫功能，來存取 app 資料位置中的檔案。
 
-您無法透過檔案選擇器存取本機、 漫遊或暫存資料夾。
+您無法透過檔案選擇器來存取本機、 漫遊，或暫存資料夾。
 
 ### <a name="removable-devices"></a>卸除式裝置
 此外，您的 app 預設可以存取連接裝置上的部分檔案。 如果您的 app 在使用者連接裝置 (例如相機或 USB 快閃磁碟機) 時，會使用[自動播放延伸](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay)來自動啟動，就可以使用這個選項。 您的 app 可以存取的檔案受限於特定的檔案類型，這些檔案類型是在應用程式資訊清單中的檔案類型關聯宣告中指定。
@@ -174,7 +174,7 @@ app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目
 > [!NOTE]
 > 如需存取 SD 記憶卡或其他卸除式裝置的詳細資訊，請參閱[存取 SD 記憶卡](access-the-sd-card.md)。
 
-## <a name="locations-that-uwp-apps-can-access"></a>UWP 應用程式可以存取的位置
+## <a name="locations-that-uwp-apps-can-access"></a>UWP 應用程式可存取的位置
 ### <a name="users-downloads-folder"></a>使用者的 [下載] 資料夾
 
 預設儲存下載檔案的資料夾。
@@ -212,7 +212,7 @@ app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目
     });
     ```
 
-    [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) 已超載，所以您可以在 [下載] 資料夾中已經存在相同名稱的檔案時，指定系統應該怎麼做。 當這些方法完成時，它們會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表已建立的檔案。 這個檔案在範例中稱為 `newFile`。
+    [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632)。[**CreateFileAsync** ](https://msdn.microsoft.com/library/windows/apps/hh996761)多載，所以您可以指定系統應該採取的動作如果具有相同名稱的 [下載] 資料夾中已經有現有的檔案。 當這些方法完成時，它們會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表已建立的檔案。 這個檔案在範例中稱為 `newFile`。
 
 - 您可以在使用者的 [下載] 資料夾中建立子資料夾，如下所示：
 
@@ -245,7 +245,7 @@ app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目
     });
     ```
 
-    [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) 已超載，所以您可以在 [下載] 資料夾中已經存在相同名稱的子資料夾時，指定系統應該怎麼做。 當這些方法完成時，它們會傳回 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，代表已建立的子資料。 這個檔案在範例中稱為 `newFolder`。
+    [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632)。[**CreateFolderAsync** ](https://msdn.microsoft.com/library/windows/apps/hh996763)多載，所以您可以指定系統應該採取的動作如果具有相同名稱的 [下載] 資料夾中已經有現有的子資料夾。 當這些方法完成時，它們會傳回 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，代表已建立的子資料。 這個檔案在範例中稱為 `newFolder`。
 
 如果您在下載資料夾中建立檔案或資料夾，建議您將該項目新增到應用程式的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)，如此一來，您的應用程式未來便能輕易存取該項目。
 
@@ -255,19 +255,19 @@ app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目
 
 宣告 [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) 延伸模組的應用程式對於主控台視窗中本身啟動所在的目錄，以及下層目錄具有檔案系統權限。
 
-下表列出可透過宣告功能和使用關聯的 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API 存取的其他位置：
+下表列出可透過宣告功能及使用關聯的 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API 來存取的其他位置：
 
-| 位置 | 功能 | Windows.Storage API |
+| Location | 功能 | Windows.Storage API |
 |----------|------------|---------------------|
-| 使用者可存取的所有檔案。 例如：文件、圖片、相片、下載項目、桌面、OneDrive 等。 | broadFileSystemAccess<br><br>這是受限的功能。 存取權是以可在**設定**中設定 > **隱私權** > **檔案系統**。 因為使用者可以授與或拒絕權限**設定**中的任何時候，您應該確定您的應用程式是這些變更具彈性。 如果您發現您的應用程式無法存取，您可以選擇提示使用者變更設定，藉由提供[Windows 10 的檔案系統存取權 」 和 「 隱私權](https://privacy.microsoft.com/en-US/windows-10-file-system-access-and-privacy)文章的連結。 請注意，使用者必須關閉應用程式、 切換設定，並重新啟動應用程式。 如果應用程式正在執行時，他們可以切換設定，平台將會暫停您的應用程式，以便您可以儲存狀態，然後再強制終止應用程式，才能套用新的設定。 在 2018 年 4 月更新之後，在權限預設為啟用。 在 2018 年 10 月更新之後，預設為關閉。<br /><br />如果您將 app 送出至宣告此功能的 Microsoft Store，則須提供其他描述，說明您的 app 為什麼需要此功能，以及它打算如何使用此功能。<br>這個功能適合[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346)命名空間中的 Api。 請參閱 「**範例**」 區段，如需如何啟用這項功能，您的應用程式中的範例本文結尾處。 | 不適用 |
-| 文件 | DocumentsLibrary <br><br>注意：您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 <br><br>如果您的 app 符合下列條件，則可使用此功能：<br>- 使用有效的 OneDrive URL 或資源識別碼，協助對特定的 OneDrive 內容進行跨平台離線存取<br>-開啟的檔案到使用者的 OneDrive 時自動儲存離線 | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
+| 使用者可存取的所有檔案。 例如：文件、圖片、相片、下載項目、桌面、OneDrive 等。 | broadFileSystemAccess<br><br>這是受限的功能。 存取是可在中設定**設定** > **隱私權** > **檔案系統**。 因為使用者可以授與或拒絕權限在任何時候**設定**，您應該確保您的應用程式復原這些變更。 如果您發現您的應用程式並沒有存取權，您可以選擇以提示使用者來變更此設定所提供的連結[Windows 10 的檔案系統存取與隱私權](https://privacy.microsoft.com/en-US/windows-10-file-system-access-and-privacy)文章。 請注意，使用者必須關閉應用程式、 切換設定，重新啟動應用程式。 如果應用程式執行時，它們就會切換設定，平台將會擱置您的應用程式，以便您可以儲存狀態，然後才能套用新的設定會強制終止應用程式。 在 2018 年 4 月更新中，權限預設為在上。 在 2018 年 10 月更新中，預設為關閉。<br /><br />如果您將 app 送出至宣告此功能的 Microsoft Store，則須提供其他描述，說明您的 app 為什麼需要此功能，以及它打算如何使用此功能。<br>這項功能適用於中的 Api [ **Windows.Storage** ](https://msdn.microsoft.com/library/windows/apps/BR227346)命名空間。 請參閱**範例**區段結尾的這篇文章，如需如何啟用這項功能在您的應用程式中的範例。 | 不適用 |
+| 文件 | DocumentsLibrary <br><br>注意：您必須加入您的應用程式資訊清單宣告您的應用程式可以存取這個位置中的特定檔案類型的檔案類型關聯。 <br><br>如果您的 app 符合下列條件，則可使用此功能：<br>- 使用有效的 OneDrive URL 或資源識別碼，協助對特定的 OneDrive 內容進行跨平台離線存取<br>-將開啟檔案以使用者的 OneDrive 時自動離線 | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | 音樂     | MusicLibrary <br>另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | 圖片  | PicturesLibrary<br> 另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
 | 影片    | VideosLibrary<br>另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
 | 卸除式裝置  | RemovableDevices <br><br>注意：您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的應用程式可以在這個位置中存取的特定檔案類型。 <br><br>另請參閱[存取 SD 記憶卡](access-the-sd-card.md)。 | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
 | 家用群組媒體櫃  | 至少需要下列其中一個功能。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
 | 媒體伺服器裝置 (DLNA) | 至少需要下列其中一個功能。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
-| 通用命名慣例 (UNC) 資料夾 | 需要下列功能的組合。 <br><br>家用與工作場所網路功能： <br>- PrivateNetworkClientServer <br><br>同時至少要有一個網際網路和公用網路功能： <br>- InternetClient <br>- InternetClientServer <br><br>此外，如果適當，還要有網域認證功能：<br>- EnterpriseAuthentication <br><br>注意：您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 | 使用下列方式擷取資料夾： <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>使用下列方式擷取檔案： <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
+| 通用命名慣例 (UNC) 資料夾 | 需要下列功能的組合。 <br><br>家用與工作場所網路功能： <br>- PrivateNetworkClientServer <br><br>同時至少要有一個網際網路和公用網路功能： <br>- InternetClient <br>- InternetClientServer <br><br>此外，如果適當，還要有網域認證功能：<br>- EnterpriseAuthentication <br><br>注意：您必須加入您的應用程式資訊清單宣告您的應用程式可以存取這個位置中的特定檔案類型的檔案類型關聯。 | 使用下列方式擷取資料夾： <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>使用下列方式擷取檔案： <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
 
 **範例**
 

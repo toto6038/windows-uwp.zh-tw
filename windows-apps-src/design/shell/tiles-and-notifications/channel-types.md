@@ -1,26 +1,26 @@
 ---
-Description: Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. There are many ways to send the notifications depending on the needs of your application
+Description: Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 有許多方式可以傳送通知，視應用程式的需求而定
 title: 選擇正確的推播通知通道類型
 ms.date: 07/07/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 075eaf5c02e5bddb4b87d7e4aaf931cbfde53cdd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944293"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616413"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>選擇正確的推播通知通道類型
 
 本文說明三種類型的 UWP 推播通知通道 (主要、次要及替代)，這些通道可幫助您將內容傳遞到應用程式。 
 
-（如需如何建立推播通知的詳細資訊，請參閱[Windows 推播通知服務 (WNS) 概觀](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)）。 
+(如需有關如何建立推播通知的詳細資訊，請參閱 < [Windows 推播通知服務 (WNS) 概觀](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)。) 
 
 ## <a name="types-of-push-channels"></a>推播通道的類型 
 
-有三種類型的推播通道可用於將通知推送到 UWP 應用程式。 這些類型包括： 
+有三種類型的推播通道可用於將通知推送到 UWP 應用程式。 這些報告包括： 
 
 [主要通道](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - 「傳統」推播通道。 可由市集中的任何應用程式用於傳送快顯通知、磚、原始通知或徽章通知 (快顯通知/磚/徽章描述的連結)
 
@@ -38,10 +38,10 @@ ms.locfileid: "8944293"
 
 ### <a name="what-do-primary-channels-enable"></a>主要通道會啟用哪些項目？
 
--   **將磚或徽章更新傳送至主要磚。** 如果使用者選擇將您的磚釘選在 [開始] 畫面上，這是您展示的機會。 傳送具有實用資訊的更新，或您應用程式內體驗的提醒。 
+-   **傳送磚或徽章的更新 [主要] 圖格。** 如果使用者選擇將您的磚釘選在 [開始] 畫面上，這是您展示的機會。 傳送具有實用資訊的更新，或您應用程式內體驗的提醒。 
 -   **傳送快顯通知。** 快顯通知讓您有機會立即在使用者面前取得一些資訊。 這類通知是由命令介面繪製在大多數應用程式的頂端，並存留在控制中心中，讓使用者能夠返回並在稍後與這類通知互動。 
--   **傳送原始通知以觸發背景工作。** 有時候您會想要根據通知代表使用者進行一些工作。 原始通知可讓應用程式的背景工作執行 
--   **由 Windows 使用 TLS 提供中的傳輸中訊息加密。** 當透過連線進入 WNS 與前往使用者裝置時加密訊息。  
+-   **傳送原始通知來觸發背景工作。** 有時候您會想要根據通知代表使用者進行一些工作。 原始通知可讓應用程式的背景工作執行 
+-   **Windows 使用 TLS 所提供的傳輸中的訊息加密。** 當透過連線進入 WNS 與前往使用者裝置時加密訊息。  
 
 ### <a name="limitations-of-primary-channels"></a>主要通道的限制
 
@@ -108,14 +108,14 @@ PushNotificationChannel webChannel =
 
 <tr class="header">
 <th align="left"><b>類型</b></th>
-<th align="left"><b>推播快顯通知？</b></th>
-<th align="left"><b>推播磚/徽章？</b></th>
-<th align="left"><b>推播原始通知？</b></th>
-<th align="left"><b>驗證</b></th>
+<th align="left"><b>推播快顯嗎？</b></th>
+<th align="left"><b>推播 圖格/徽章嗎？</b></th>
+<th align="left"><b>推播未經處理的通知嗎？</b></th>
+<th align="left">[驗證]<b></b></th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>需要市集註冊？</b></th>
+<th align="left"><b>所需的存放區註冊嗎？</b></th>
 <th align="left"><b>通道</b></th>
-<th align="left"><b>加密</b></th>
+<th align="left">[加密]<b></b></th>
 </tr>
 
 
@@ -142,7 +142,7 @@ PushNotificationChannel webChannel =
 <td align="left">傳輸中</td>
 </tr>
 <tr class="odd">
-<td align="left">替代</td>
+<td align="left">其他</td>
 <td align="left">否</td>
 <td align="left">否</td>
 <td align="left">是</td>
@@ -165,13 +165,13 @@ PushNotificationChannel webChannel =
 
 ## <a name="related-articles"></a>相關文章
 
-* [傳送本機磚通知](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [通知區域的圖格](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [調適型和互動式快顯通知](../tiles-and-notifications/adaptive-interactive-toasts.md)
 * [快速入門：傳送推播通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [如何透過推播通知更新徽章](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何要求、建立以及儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [如何攔截執行應用程式的通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何使用 Windows 推播通知服務 (WNS) 進行驗證](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [如何更新徽章，以透過推播通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [如何要求、 建立和儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [如何攔截來執行應用程式的通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [如何驗證與 Windows 推播通知服務 (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
 * [推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [推播通知的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [指導方針和推播通知的檢查清單](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [原始通知](raw-notification-overview.md)

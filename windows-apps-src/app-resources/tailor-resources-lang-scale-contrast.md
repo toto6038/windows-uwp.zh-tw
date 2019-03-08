@@ -1,5 +1,5 @@
 ---
-Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
+Description: 本主題說明限定詞的一般概念、其使用方式，以及每個限定詞名稱的用途。
 title: 針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 template: detail.hbs
 ms.date: 10/10/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117658"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608133"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
@@ -29,7 +29,7 @@ ms.locfileid: "9117658"
 | :--------------- | :--------------- | :--------------- |
 | 高對比設定 | 對比 | 標準、高、黑色、白色 |
 
-您可以將限定詞名稱與限定詞值結合來形成一個限定詞。 `<qualifier name>-<qualifier value>` 是限定詞的格式。 `contrast-standard` 是限定詞的範例。
+您可以將限定詞名稱與限定詞值結合來形成一個限定詞。 `<qualifier name>-<qualifier value>` 是的辨識符號的格式。 `contrast-standard` 是辨識符號的範例。
 
 因此，高對比適用的一組限定詞是 `contrast-standard`、`contrast-high`、`contrast-black` 和 `contrast-white`。 限定詞名稱及限定詞值不區分大小寫。 例如，`contrast-standard` 和 `Contrast-Standard` 是相同的限定詞。
 
@@ -102,7 +102,7 @@ ms.locfileid: "9117658"
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
-在資料夾名稱中，您可以結合多個限定詞，並以底線來分隔。 `<qualifier1>[_<qualifier2>...]` 是格式。
+在資料夾名稱中，您可以結合多個限定詞，並以底線來分隔。 `<qualifier1>[_<qualifier2>...]` 是的格式。
 
 您可以在檔案名稱中，以相同的格式來結合多個限定詞。
 
@@ -118,19 +118,19 @@ ms.locfileid: "9117658"
 
 您的目標系統或應用程式必須提供與 `alternateform` 限定詞相符的值。 不要將 `msft-` 首碼用於您自己的自訂 `alternateform` 限定詞值。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>設定
 
 您不太可能需要 `configuration` 限定詞名稱。 這可以用來指定只適用於特定製作階段環境的資源，例如僅供測試資源。
 
 `configuration` 限定詞會用於載入最符合 `MS_CONFIGURATION_ATTRIBUTE_VALUE` 環境變數值的資源。 因此，您可以將變數設定為已指派給相關資源的字串值，例如 `designer` 或 `test`。
 
-## <a name="contrast"></a>Contrast
+## <a name="contrast"></a>這個
 
 `contrast` 限定詞用來提供最符合高對比設定的資源。
 
-## <a name="custom"></a>Custom
+## <a name="custom"></a>自訂
 
-您的應用程式可以設定 `custom` 限定詞的值，然後載入最符合該值的資源。 例如，您可能會想要根據應用程式的授權載入資源。 應用程式啟動時，會呼叫 [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) 來檢查其授權並使用此授權做為 `custom` 限定詞的值，如程式碼範例中所示。
+您的應用程式可以設定 `custom` 限定詞的值，然後載入最符合該值的資源。 例如，您可能會想要根據應用程式的授權載入資源。 App 啟動時，會呼叫 [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) 來檢查其授權並使用此授權做為 `custom` 限定詞的值，如程式碼範例中所示。
 
 ```csharp
 public void SetLicenseLevel(BrandID brand)
@@ -193,11 +193,11 @@ public void SetLicenseLevel(BrandID brand)
 
 `homeregion` 限定詞對應於使用者的國家或地區設定。 這代表使用者的住家位置。 值包括任何有效 [BCP-47 區域標記](https://go.microsoft.com/fwlink/p/?linkid=227302)。 也就是，任何兩個字母的 **ISO 3166-1 alpha-2** 區域代碼，加上一組代表組成區域的三位數 **ISO 3166-1 數字**地理代碼 (請參閱[聯合國統計司 M49 區域分類編碼](https://go.microsoft.com/fwlink/p/?linkid=247929))。 「選取的經濟及其他群組」的代碼無效。
 
-## <a name="language"></a>Language
+## <a name="language"></a>語言
 
 `language` 限定詞對應於顯示語言設定。 值包括任何有效 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)。 如需語言清單，請參閱 [IANA 語言子標記登錄](https://go.microsoft.com/fwlink/p/?linkid=227303)。
 
-如果希望應用程式支援不同的顯示語言，而且您的程式碼或 XAML 標記也含有字串常值時，請將這些字串從程式碼/標記中移入資源檔案 (`.resw`)。 您可以接著針對應用程式支援的每一種語言建立該資源檔案的翻譯複本。
+如果希望應用程式支援不同的顯示語言，而且您的程式碼或 XAML 標記也含有字串常值時，請將這些字串從程式碼/標記中移入資源檔案 (`.resw`)。 您可以接著針對 App 支援的每一種語言建立該資源檔案的翻譯複本。
 
 您通常會使用 `language` 限定詞來命名包含資源檔案 (`.resw`) 的資料夾。
 
@@ -256,7 +256,7 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 
 如需有關針對 `scale` 及 `targetsize` 限定資源的詳細資訊，請參閱[針對 targetsize 限定影像資源](images-tailored-for-scale-theme-contrast.md#qualify-an-image-resource-for-targetsize)。
 
-## <a name="theme"></a>Theme
+## <a name="theme"></a>佈景主題
 
 `theme` 限定詞用來提供最符合預設應用程式模式設定的資源，或是應用程式使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme) 的覆寫。
 
@@ -267,13 +267,13 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 
 ## <a name="related-topics"></a>相關主題
 
-* [有效像素與縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [有效的像素和縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [資源管理系統](resource-management-system.md)
-* [如何準備當地語系化](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
-* [偵測執行您 app 的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [如何準備進行當地語系化](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
+* [正在偵測平台應用程式上執行](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-* [當地語系化您的 UI 字串](localize-strings-ui-manifest.md)
+* [將當地語系化的 UI 字串](localize-strings-ui-manifest.md)
 * [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [聯合國統計司 M49 區域分類編碼](https://go.microsoft.com/fwlink/p/?linkid=247929)
+* [地區碼 United Nations 統計資料除法 M49 構成要素](https://go.microsoft.com/fwlink/p/?linkid=247929)
 * [IANA 語言子標記登錄](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [調整配置和字型並支援 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

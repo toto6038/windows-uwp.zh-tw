@@ -5,11 +5,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
 ms.openlocfilehash: 49662d476d6d022ca05d53e9358fc547fda92a32
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945009"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625663"
 ---
 # <a name="cpusets-for-game-development"></a>CPUSets 遊戲開發
 
@@ -47,13 +47,13 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 此資料結構每個執行個體內的資訊 (由 **GetSystemCpuSetInformation** 傳回) 包含可能在上面排程執行緒的唯一處理單元資訊。 基於目標裝置的可能範圍，**SYSTEM_CPU_SET_INFORMATION** 資料結構中的許多資訊可能不適用於遊戲開發。 表 1 提供適用於遊戲開發的資料成員說明。
 
- **表 1. 適用於遊戲開發的資料成員。**
+ **表 1。適用於遊戲開發的資料成員。**
 
-| 成員名稱  | 資料類型 | 說明 |
+| 成員名稱  | 資料類型 | 描述 |
 | ------------- | ------------- | ------------- |
-| Type  | CPU_SET_INFORMATION_TYPE  | 結構中的資訊類型。 如果這個值不是 **CpuSetInformation**，則應該忽略。  |
+| 類型  | CPU_SET_INFORMATION_TYPE  | 結構中的資訊類型。 如果這個值不是 **CpuSetInformation**，則應該忽略。  |
 | Id  | unsigned long  | 指定的 CPU 集合識別碼。 這是應該要搭配 CPU 集合函式 (例如 **SetThreadSelectedCpuSets**) 使用的識別碼。  |
-| Group  | unsigned short  | 指定 CPU 集合的「處理器群組」。 處理器群組可讓電腦擁有超過 64 個邏輯核心，並允許在系統執行時進行 CPU 熱交換。 非伺服器電腦配備超過一個群組的狀況是很少見的。 除非您正在撰寫的應用程式是在大型的伺服器或伺服器陣列上執行，否則最好使用單一群組中的 CPU 集合，因為大部分的消費者電腦只會有一個處理器群組。 此結構中的所有其他值都與 Group 有關。  |
+| 群組  | unsigned short  | 指定 CPU 集合的「處理器群組」。 處理器群組可讓電腦擁有超過 64 個邏輯核心，並允許在系統執行時進行 CPU 熱交換。 非伺服器電腦配備超過一個群組的狀況是很少見的。 除非您正在撰寫的應用程式是在大型的伺服器或伺服器陣列上執行，否則最好使用單一群組中的 CPU 集合，因為大部分的消費者電腦只會有一個處理器群組。 此結構中的所有其他值都與 Group 有關。  |
 | LogicalProcessorIndex  | unsigned char  | CPU 集合的群組相關索引  |
 | CoreIndex  | unsigned char  | CPU 集合所在位置之實體 CPU 核心的群組相關索引  |
 | LastLevelCacheIndex  | unsigned char  | 和此 CPU 集合關聯之上次快取的群組相關索引 除非系統使用 NUMA 節點，否則這是最慢的快取，通常是 L2 或 L3 快取。  |
@@ -64,15 +64,15 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 以下是從各種不同類型硬體上執行的 UWP 應用程式所收集的一些資訊類型範例。
 
-**表 2. 從 Microsoft Lumia 950 上執行的 UWP app 傳回的資訊。 這是使用多個末級快取的系統範例。 Lumia 950 配備 Qualcomm 808 Snapdragon 處理器，該處理器包含雙核心 ARM Cortex A57 和四核心 ARM Cortex A53 CPU。**
+**表 2。從 Microsoft Lumia 950 上執行的 UWP app 傳回的資訊。這是使用多個末級快取的系統範例。Lumia 950 功能包含雙核心 ARM Cortex A57 和四核心 ARM Cortex A53 Cpu Qualcomm 808 Snapdragon 程序。**
 
   ![表 2](images/cpusets-table2.png)
 
-**表 3. 從一般電腦上執行的 UWP app 所傳回的資訊。 這是使用超執行緒的系統範例；每個實體核心具有兩個邏輯核心，可供在上面排程執行緒。 在此案例中，系統包含一顆 Intel Xenon CPU E5-2620。**
+**表 3。從一般電腦上執行的 UWP app 所傳回的資訊。這是使用超執行緒的系統範例；每個實體核心具有兩個邏輯核心，可供在上面排程執行緒。在此情況下，系統會包含 Intel Xenon 的 CPU E5-2620年。**
 
   ![表 3](images/cpusets-table3.png)
 
-**表 4. 從四核心 Microsoft Surface Pro 4 上執行的 UWP app 傳回的資訊。 這個系統配備一顆 Intel Core i5-6300 CPU。**
+**[表 4]。從四核心 Microsoft Surface Pro 4 上執行的 UWP app 傳回的資訊。此系統具有 Intel Core i5 中 6300 CPU。**
 
   ![表 4](images/cpusets-table4.png)
 
@@ -182,7 +182,7 @@ for (size_t i = 0; i < count; ++i)
 
 圖 1 中所示的快取配置，是您可能在系統中看到的配置類型範例。 下圖是在 Microsoft Lumia 950 中找到的快取圖例。 在 CPU 256 與 CPU 260 之間發生的內部執行緒通訊會產生大量的額外負荷，因為它需要系統維持 L2 快取一致性。
 
-**圖 1. 在 Microsoft Lumia 950 裝置上找到的快取架構。**
+**圖 1。在 Microsoft Lumia 950 裝置上找到的快取架構。**
 
 ![Lumia 950 快取](images/cpusets-lumia950cache.png)
 
@@ -192,6 +192,6 @@ for (size_t i = 0; i < count; ++i)
 
 ## <a name="additional-resources"></a>其他資源
 - [CPU 集合 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
-- [ATG 提供的 CPUSets 範例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
-- [Xbox One 上的 UWP](index.md)
+- [提供 ATG CPUSets 範例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [在 Xbox One UWP](index.md)
 

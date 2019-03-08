@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use headers to visually group your toast notifications in Action Center.
+Description: 了解如何使用標頭，以視覺化方式將您在行動作業中心的快顯通知。
 title: 快顯通知標頭
 label: Toast headers
 template: detail.hbs
@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 標頭, 快顯通知標頭, 通知, 群組快顯通知, 控制中心
 ms.localizationpriority: medium
 ms.openlocfilehash: 361b161b8cf323596a3b07665819300c78f1dcc5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946090"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612103"
 ---
 # <a name="toast-headers"></a>快顯通知標頭
 
 您可以在通知上使用快顯通知標頭，來視覺分組控制中心內的相關通知。
 
 > [!IMPORTANT]
-> **需要 Desktop Creators Update 和 Notifications 程式庫 1.4.0**：您必須執行桌上型電腦組建 15063 或更新版本，才能看見快顯通知標頭。 您必須使用版本 1.4.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在快顯通知內容中建構標頭。 只有桌上型電腦才支援標頭。
+> **需要 Desktop Creators Update 和通知程式庫的 1.4.0**:您必須執行桌面組建 15063 或更新版本，才能看到快顯通知的標頭。 您必須使用版本 1.4.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在快顯通知內容中建構標頭。 只有桌上型電腦才支援標頭。
 
 如下所示，群組交談已整合至單一標頭「露營!!」下方。 交談中的每個個別訊息都是不同的快顯通知，但共用相同的快顯通知標頭。
 
@@ -96,7 +96,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 標頭會在視覺上分隔與分組通知。 這不會變更其他任何邏輯，包括應用程式可以擁有的通知數目上限 (20) 以及通知清單的先進先出行為。
 
-標頭中的通知順序如下所示... 對於特定的應用程式，會首先出現來自應用程式的最新通知 (以及整個標頭群組，如果屬於標題的一部分)。
+在標頭內的通知順序如下所示...指定的應用程式中，會出現第一個應用程式 （及部分標頭的整個標頭群組） 最新的通知。
 
 **Id** 可以是您選擇的任何字串。 **ToastHeader** 中的任何屬性沒有長度或字元限制。 唯一限制是您的整個 XML 快顯通知內容不可大於 5 KB。
 
@@ -107,5 +107,5 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 ## <a name="related-topics"></a>相關主題
 
-- [傳送本機快顯通知及處理啟用](send-local-toast.md)
-- [快顯通知內容文件](adaptive-interactive-toasts.md)
+- [傳送快顯通知及控制代碼的本機啟動](send-local-toast.md)
+- [快顯通知內容的文件](adaptive-interactive-toasts.md)

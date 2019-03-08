@@ -7,19 +7,19 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 堆疊追蹤, 錯誤
 ms.localizationpriority: medium
 ms.openlocfilehash: ceffc7622f756eb17c8475208852e013df814554
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929369"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627453"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>取得應用程式中錯誤的堆疊追蹤
 
-在 Microsoft Store 分析 API 中使用此方法，以取得 App 中錯誤的堆疊追蹤。 這個方法只可以下載最近 30 天發生之 App 錯誤的堆疊追蹤。 堆疊追蹤也會提供中的[健康情況報告](../publish/health-report.md)合作夥伴中心中的 [**失敗**] 區段中。
+在 Microsoft Store 分析 API 中使用此方法，以取得 App 中錯誤的堆疊追蹤。 這個方法只可以下載最近 30 天發生之 App 錯誤的堆疊追蹤。 堆疊追蹤中也會有**失敗**一節[健康情況報告](../publish/health-report.md)在合作夥伴中心。
 
 使用這個方法之前，您必須先使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法來擷取與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的識別碼。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
 若要使用這個方法，您必須先進行下列動作：
@@ -42,20 +42,20 @@ ms.locfileid: "8929369"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  說明      |  必要  |
+| 參數        | 類型   |  描述      |  必要  |
 |---------------|--------|---------------|------|
-| applicationId | 字串 | 您想要取得堆疊追蹤之 App 的 Store 識別碼。 在合作夥伴中心的[應用程式身分識別頁面](../publish/view-app-identity-details.md)上使用 「 市集識別碼 」。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
+| applicationId | 字串 | 您想要取得堆疊追蹤之 App 的市集識別碼。 存放區識別碼位於[應用程式識別碼 頁面上](../publish/view-app-identity-details.md)在合作夥伴中心。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | cabId | 字串 | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼。 若要取得此識別碼，請使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法以擷取您的 App 中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabId** 值。 |  是  |
 
  
 ### <a name="request-example"></a>要求範例
 
-下列範例示範如何使用此方法取得堆疊追蹤。 將 *applicationId* 值取代為您 App 的 Store 識別碼。
+下列範例示範如何使用此方法取得堆疊追蹤。 將 *applicationId* 值以您應用程式的市集識別碼取代。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/stacktrace?applicationId=9NBLGGGZ5QDR&cabId=1336373323853 HTTP/1.1
@@ -67,10 +67,10 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型    | 說明                  |
+| 值      | 類型    | 描述                  |
 |------------|---------|--------------------------------|
 | 值      | 陣列   | 物件的陣列，每個物件都包含一個堆疊追蹤資料框架。 如需有關每個物件中資料的詳細資訊，請參閱下方的[堆疊追蹤值](#stack-trace-values)一節。 |
-| @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的錯誤，就會傳回此值。 |
+| @nextLink  | 字串  | 如果還有其他資料頁面，此字串會包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的錯誤，就會傳回此值。 |
 | TotalCount | 整數 | 查詢之資料結果的資料列總數。          |
 
 
@@ -88,7 +88,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-example"></a>回應範例
 
-下列範例針對此要求示範範例 JSON 回應主體。
+下列範例示範這個要求的一個範例 JSON 回應主體。
 
 ```json
 {
@@ -121,7 +121,7 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>相關主題
 
 * [健康情況報告](../publish/health-report.md)
-* [使用 Microsoft Store 服務存取分析資料](access-analytics-data-using-windows-store-services.md)
+* [使用 Microsoft Store 服務的存取分析資料](access-analytics-data-using-windows-store-services.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
-* [取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)
-* [下載應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-app.md)
+* [取得您的應用程式中的錯誤詳細資料](get-details-for-an-error-in-your-app.md)
+* [下載您的應用程式中發生錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-app.md)

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 9630AF6D-6887-4BE3-A3CB-D058F275B58F
 description: 了解如何使用 Windows.Services.Store 命名空間，來取得目前 app 及其附加元件的授權資訊。
-title: 取得應用程式和附加元件的授權資訊
+title: 取得 App 和附加元件的授權資訊
 ms.date: 12/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, 授權, 應用程式, 附加元件, App 內購買, IAP, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7c832907af17436d588f0fac6c5039d4affa82
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939066"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641913"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>取得應用程式和附加元件的授權資訊
 
@@ -24,8 +24,8 @@ ms.locfileid: "8939066"
 
 這個範例包含下列先決條件：
 * 適用於目標為 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
-* 您必須在合作夥伴中心的 [[建立應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，並在市集中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在 Microsoft Store 中搜尋。 如需詳細資訊，請參閱我們的[測試指南](in-app-purchases-and-trials.md#testing)。
-* 如果您想要取得應用程式的附加元件的授權資訊，您也必須[建立在合作夥伴中心的附加元件](../publish/add-on-submissions.md)。
+* 您必須[建立應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)在合作夥伴中心與此應用程式會發佈在存放區。 測試時您也可以選擇將應用程式設定為不可在市集中搜尋。 如需詳細資訊，請參閱我們的[測試指南](in-app-purchases-and-trials.md#testing)。
+* 若要取得應用程式的附加元件的授權資訊，您必須也[在合作夥伴中心建立附加元件](../publish/add-on-submissions.md)。
 
 這個範例中的程式碼假設：
 * 程式碼會在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的內容中執行，其中包含名為 ```workingProgressRing``` 的 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) 和名為 ```textBlock``` 的 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)。 這些物件可個別用來表示發生非同步作業，以及顯示輸出訊息。
@@ -44,13 +44,13 @@ ms.locfileid: "8939066"
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[GetLicenseInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs#GetLicenseInfo)]
 
-如需完整的範例應用程式，請參閱 [Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+如需完整的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
 ## <a name="related-topics"></a>相關主題
 
-* [App 內購買和試用版](in-app-purchases-and-trials.md)
-* [取得 App 和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
-* [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
-* [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
-* [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+* [在應用程式內購買和試用版](in-app-purchases-and-trials.md)
+* [取得應用程式和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
+* [啟用應用程式內購買的應用程式和附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [啟用可取用的附加元件購買的項目](enable-consumable-add-on-purchases.md)
+* [實作您的應用程式的試用版](implement-a-trial-version-of-your-app.md)
+* [存放區範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

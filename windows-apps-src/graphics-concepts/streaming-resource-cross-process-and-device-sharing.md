@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a0bff43cfd26c43bb5f75f37a66c55e556429470
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936128"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593663"
 ---
-# <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>串流資源跨處理序和裝置共用
+# <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>資料流資源的跨處理序及裝置共用
 
 
 磚集區可以與其他處理序共用，就像傳統資源一樣。 參考磚集區的串流資源無法跨裝置和處理序共用。 但不同的處理序可以建立自己的串流資源，對應的磚集區即可在那些串流資源之間共用。
@@ -37,7 +37,7 @@ ms.locfileid: "8936128"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="stencil-formats-not-supported-with-streaming-resources.md">串流資源不支援的樣板格式</a></p></td>
+<td align="left"><p><a href="stencil-formats-not-supported-with-streaming-resources.md">不支援使用資料流資源的樣板格式</a></p></td>
 <td align="left"><p>串流資源不支援包含樣板的格式。</p></td>
 </tr>
 </tbody>
@@ -48,7 +48,7 @@ ms.locfileid: "8936128"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[建立串流資源](creating-streaming-resources.md)
+[建立資料流的資源](creating-streaming-resources.md)
 
  
 

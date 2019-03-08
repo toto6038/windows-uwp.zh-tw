@@ -1,5 +1,5 @@
 ---
-Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
+Description: 模擬並自動化的裝置，例如鍵盤、 滑鼠、 觸控、 畫筆、 和 UWP 應用程式中的遊戲台輸入。
 title: 透過輸入插入模擬使用者輸入
 label: Input injection
 template: detail.hbs
@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933972"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602323"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>透過輸入插入模擬使用者輸入
 
 在您的 UWP 應用程式中模擬並自動化從裝置 (例如鍵盤、滑鼠、觸控功能、手寫筆和遊戲台) 的使用者輸入。
 
-> **重要 API**：[**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
+> **重要的 Api**:[**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>概觀
 
@@ -41,11 +41,11 @@ ms.locfileid: "8933972"
 
 | ![觸控輸入插入範例](images/injection/touch-input-injection.gif) | 
 |:--:|
-| *觸控輸入插入範例* |
+| *觸控輸入的資料隱碼攻擊的範例* |
 
 在此範例中，我們會示範如何使用輸入插入 API ([Windows.UI.Input.Preview.Injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection))，在一個地區的 App 接聽滑鼠輸入事件，以及在另一個地區模擬對應的觸控輸入事件。
 
-**從[輸入插入範例 (滑鼠到觸控)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)下載此範例**
+**下載這個範例來自[輸入資料隱碼攻擊範例 （觸控的滑鼠）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
 
 1. 首先，先設定 UI (MainPage.xaml)。
 
@@ -360,8 +360,8 @@ ms.locfileid: "8933972"
 
 4. 最後，我們處理任何在輸入插入區域中按鈕[點選](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase)所路由的事件按鈕，並以點選的按鈕的名稱更新 UI。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 ### <a name="topic-samples"></a>主題範例
 
-- [輸入插入範例 (滑鼠到觸控)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)
+- [輸入資料隱碼攻擊範例 （觸控的滑鼠）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)

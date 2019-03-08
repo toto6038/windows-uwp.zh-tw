@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 錯誤, 處理, 例外狀況
 ms.localizationpriority: medium
 ms.openlocfilehash: c6f7135e85ab63ddfe92bd0de8c656b58fb1a020
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937506"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626573"
 ---
 # <a name="error-handling-with-cwinrt"></a>使用 C++/WinRT 的錯誤處理
 
-本主題討論使用進行程式設計時處理錯誤的策略[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 如需更多一般資訊及背景，請參閱 [錯誤以及例外狀況處理（現代化 C++）](/cpp/cpp/errors-and-exception-handling-modern-cpp)。
+本主題討論使用程式設計時處理錯誤的策略[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 如需更多一般資訊及背景，請參閱 [錯誤以及例外狀況處理（現代化 C++）](/cpp/cpp/errors-and-exception-handling-modern-cpp)。
 
 ## <a name="avoid-catching-and-throwing-exceptions"></a>避免攔截並擲回例外狀況
 我們建議您繼續寫入 [異常安全程式碼](/cpp/cpp/how-to-design-for-exception-safety)，但您想要盡可能避免攔截並擲例外狀況。 如果沒有例外狀況的處理常式，則 Windows 會自動產生錯誤報告（包括損毀的小型傾印），這有助於您追蹤問題出在哪裡。
@@ -75,7 +75,7 @@ winrt::check_bool(::SetEvent(h.get()));
 如果您傳遞至 [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 的值是 false，則執行下列一系列動作。
 
 - **winrt::check_bool** 呼叫 [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 函式。
-- **winrt:: throw_last_error**呼叫[**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)來擷取呼叫執行緒的最後一個錯誤碼值，並接著會呼叫[**winrt:: throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)函式。
+- **winrt::throw_last_error**呼叫[ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360)擷取呼叫執行緒之最後一個錯誤碼值，然後再呼叫[ **winrt::throw_hresult** ](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)函式。
 - **winrt::throw_hresult** 使用 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 物件（或標準物件）擲回例外狀況，代表該錯誤碼。
 
 Windows Api 報告執行階段錯誤使用各種傳回值類型，因此除了 **winrt::check_bool** 之外，還有少數其他實用的協助程式函式，適用於檢查值與擲回例外狀況。
@@ -83,12 +83,12 @@ Windows Api 報告執行階段錯誤使用各種傳回值類型，因此除了 *
 - [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)。 檢查 HRESULT 碼是否代表錯誤，若是如此，則呼叫 **winrt::throw_hresult**。
 - [**winrt::check_nt**](/uwp/cpp-ref-for-winrt/error-handling/check-nt)。 檢查程式碼是否代表錯誤，若是如此，則呼叫 **winrt::throw_hresult**。
 - [**winrt::check_pointer**](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)。 檢查指標是否為 null，若是如此，則呼叫 **winrt::throw_last_error**。
-- [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32)。 檢查程式碼是否代表錯誤，若是如此，則呼叫 **winrt::throw_hresult**。
+- [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32). 檢查程式碼是否代表錯誤，若是如此，則呼叫 **winrt::throw_hresult**。
 
 您可以將這些協助程式函式用於一般傳回碼類型，或者您可以回應任何錯誤狀況並呼叫 [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 或 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)。 
 
 ## <a name="throwing-exceptions-when-authoring-an-api"></a>撰寫 API 時，擲回例外狀況
-跨 [Windows 執行階段 ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) 界限的例外狀況無效，因此在 HRESULT 錯誤碼的表單中跨 ABI 層傳回實作中出現的錯誤狀況。 您使用 C++/WinRT 撰寫 API 時，產生程式碼讓您可轉換任何例外狀況，在實作中您將其 *執行* 擲回 HRESULT。 [**Winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 函式用於像這樣的模式中所產生的程式碼。
+跨 [Windows 執行階段 ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) 界限的例外狀況無效，因此在 HRESULT 錯誤碼的表單中跨 ABI 層傳回實作中出現的錯誤狀況。 您使用 C++/WinRT 撰寫 API 時，產生程式碼讓您可轉換任何例外狀況，在實作中您將其 *執行* 擲回 HRESULT。 [  **Winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 函式用於像這樣的模式中所產生的程式碼。
 
 ```cppwinrt
 HRESULT DoWork() noexcept
@@ -105,7 +105,7 @@ HRESULT DoWork() noexcept
 }
 ```
 
-[**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 處理衍生自 **std::exception** 的例外狀況，以及 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)，和其所衍生的類型。 實作中，您應該偏好 **winrt::hresult_error**，或衍生的類型，如此一來，您 API 的消費者便能接收豐富的錯誤資訊。 如果使用標準範本庫出現例外狀況，則支援 **std::exception**（對應至 E_FAIL）。
+[**winrt::to_hresult** ](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)處理例外狀況衍生自**std:: exception**，並[ **winrt::hresult_error** ](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)和其衍生的類型。 實作中，您應該偏好 **winrt::hresult_error**，或衍生的類型，如此一來，您 API 的消費者便能接收豐富的錯誤資訊。 如果使用標準範本庫出現例外狀況，則支援 **std::exception**（對應至 E_FAIL）。
 
 ## <a name="assertions"></a>判斷提示
 針對您應用程式中的內部假設有判斷提示。 盡可能優先選擇 **static_assert** 進行編譯階段驗證。 針對執行階段狀況，請用布林運算是來使用 WINRT_ASSERT。
@@ -124,17 +124,17 @@ WINRT_VERIFY_(TRUE, ::CloseHandle(value));
 ```
 
 ## <a name="important-apis"></a>重要 API
-* [winrt::check_bool 函式範本](/uwp/cpp-ref-for-winrt/error-handling/check-bool)
+* [winrt::check_bool 函式樣板](/uwp/cpp-ref-for-winrt/error-handling/check-bool)
 * [winrt::check_hresult 函式](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
-* [winrt::check_nt 函式範本](/uwp/cpp-ref-for-winrt/error-handling/check-nt)
-* [winrt::check_pointer 函式範本](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
-* [winrt::check_win32 函式範本](/uwp/cpp-ref-for-winrt/error-handling/check-win32)
-* [winrt::handle 結構](/uwp/cpp-ref-for-winrt/handle)
-* [winrt::hresult_error 結構](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [winrt::check_nt 函式樣板](/uwp/cpp-ref-for-winrt/error-handling/check-nt)
+* [winrt::check_pointer 函式樣板](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
+* [winrt::check_win32 函式樣板](/uwp/cpp-ref-for-winrt/error-handling/check-win32)
+* [winrt::handle struct](/uwp/cpp-ref-for-winrt/handle)
+* [winrt::hresult_error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 * [winrt::throw_hresult 函式](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)
 * [winrt::throw_last_error 函式](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
-* [winrt::to_hresult 函式](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
+* [winrt::to_hresult function](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
 
 ## <a name="related-topics"></a>相關主題
-* [錯誤和例外狀況處理（現代化 C++）](/cpp/cpp/errors-and-exception-handling-modern-cpp)
-* [作法：例外狀況安全的設計](/cpp/cpp/how-to-design-for-exception-safety)
+* [錯誤和例外狀況處理 （現代 c + +）](/cpp/cpp/errors-and-exception-handling-modern-cpp)
+* [如何：例外狀況安全的設計](/cpp/cpp/how-to-design-for-exception-safety)

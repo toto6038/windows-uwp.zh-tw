@@ -1,15 +1,15 @@
 ---
 title: 在通用 Windows 平台 (UWP) app 上執行特性指引最佳化 (PGO)
-description: 將 「 特性指引最佳化 (PGO) 套用至通用 Windows 平台 (UWP) app 的逐步指南。
+description: 若要將設定檔指引最佳化 (PGO) 套用至通用 Windows 平台 (UWP) 應用程式的逐步指南。
 ms.date: 02/08/2017
 ms.localizationpriority: medium
 ms.topic: article
 ms.openlocfilehash: 8c19ea1701c6b5e82e66a54223620dace57de4b6
-ms.sourcegitcommit: e83f30486d899401debc782de891c388ba5fc03b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "9062480"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632913"
 ---
 # <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>在通用 Windows 平台 app 上執行特性指引最佳化 
  
@@ -17,23 +17,23 @@ ms.locfileid: "9062480"
 
 以下是一個基本的逐步解說，說明如何透過使用 Visual Studio 2015 Update 3，將 PGO 套用至預設 DirectX 11 應用程式 (UWP) 範本。
  
-這整份指南中的螢幕擷取畫面是以下列新專案為基礎：![[新增專案] 對話方塊](images/pgo-001.png)
+在本指南中的螢幕擷取畫面根據下列的新專案：![新增專案 對話方塊](images/pgo-001.png)
 
 將 PGO 套用至 DirectX 11 應用程式範本：
 
-1. 將您的方案組態設定為 **\[發行\]**，或選擇您要在其中產生用於發行之最佳化程式碼的方案組態。 雖然理論上您可以在偵錯組建上執行 PGO，但是使用 PGO 將一個未最佳化的組建最佳化並無效果。 
+1. 將您的方案組態設定為 [發行]，或選擇您要在其中產生用於發行之最佳化程式碼的方案組態。 雖然理論上您可以在偵錯組建上執行 PGO，但是使用 PGO 將一個未最佳化的組建最佳化並無效果。 
  
  ![App1 視窗](images/pgo-002.png)
  
-2. 在您專案的屬性中 (**\[屬性\]** > **\[C/C++\]** > **\[最佳化\]**)，確認您是搭配在 **\[整個程式最佳化\]** 選擇 /GL 旗標來進行建置 (您的組態可能已經這樣設定)。
+2. 在您專案的屬性中 ([屬性] > [C/C++] > [最佳化])，確認您是搭配在 [整個程式最佳化] 選擇 /GL 旗標來進行建置 (您的組態可能已經這樣設定)。
 
  ![整個程式最佳化](images/pgo-003.png)
 
-3. 進入連結器屬性 (**\[屬性\]** > **\[連結器\]** > **\[最佳化\]**)，將 **\[連結時產生程式碼\]** 設定為 **\[特性指引最佳化 - 檢測 (LTCG:PGInstrument)\]**。
+3. 進入連結器屬性 ([屬性] > [連結器] > [最佳化])，將 [連結時產生程式碼] 設定為 [特性指引最佳化 - 檢測 (LTCG:PGInstrument)]。
  
  ![連結時產生程式碼](images/pgo-004.png)
 
-4. 選取 **\[建置方案\]**，然後選取 **\[部署方案\]**。 
+4. 選取 [建置方案]，然後選取 [部署方案]。 
 
  ![[新增專案] 對話方塊](images/pgo-005.png)
  
@@ -41,7 +41,7 @@ ms.locfileid: "9062480"
  
  `C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1.pgd`
 
- .pgd 檔案預設會與您的可執行檔有相同的名稱。 您也可以透過變更 **\[特性指引資料庫\]** 連結器選項，來變更所產生 .pgd 檔案的名稱。 
+ .pgd 檔案預設會與您的可執行檔有相同的名稱。 您也可以透過變更 [特性指引資料庫] 連結器選項，來變更所產生 .pgd 檔案的名稱。 
  
 5. 瀏覽至您的 Visual Studio VC 二進位檔目錄 (這預設會看起來像 `C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin`)。 針對 x86 可執行檔，請複製 `pgort140.dll`；針對 x64 可執行檔，請從 `amd64\pgort140.dll` 複製 x64 版本。 將適當的 `pgort140.dll` 版本貼到您部署之套件的根目錄中。 就這個範例而言，路徑是︰
 
@@ -51,7 +51,7 @@ ms.locfileid: "9062480"
 
  ![[新增專案] 對話方塊](images/pgo-006.png)
  
-6. 從 [開始] 功能表執行 App，或從 Visual Studio **\[偵錯\]** 功能表選取 **\[啟動但不偵錯\]** 選項來執行 App。 
+6. 從 [開始] 功能表執行 App，或從 Visual Studio [偵錯] 功能表選取 [啟動但不偵錯] 選項來執行 App。 
 
  ![[新增專案] 對話方塊](images/pgo-007.png)
  
@@ -67,21 +67,21 @@ ms.locfileid: "9062480"
   pgosweep.exe App1.exe “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!1.pgc”
   ```
  
-  進一步的收集也可以是 `App1!CoreScenario.pgc`、`App1!UseCase5.pgc` 等。如果 .pgc 檔案是以這種方式命名，並且是在組建輸出位置中 .pgd 的旁邊，則在步驟 9 中進行連結時，將會自動將它們合併。
+  也可能是進一步收集`App1!CoreScenario.pgc`，`App1!UseCase5.pgc`等等。如果以這種方式，並在組建輸出位置，以及.pgd 命名.pgc 檔案，它們會自動合併步驟 9 中的連結時。
  
-8. 選擇性︰根據預設，所有依據步驟 7 中指定的方式命名並放在 .pgd 旁邊的 .pgc 檔案，在連結時都將被合併並具有同等的加權，但您也可以在對特定執行的加權方式上擁有更大的控制權。 為了這樣做，您將使用 **pgomgr.exe** 工具，此工具也位於您一開始找到 `pgort140.dll` 複本的相同資料夾中。 例如，若要將 `CoreScenario` 執行以其他執行的 3 倍優先順序合併，我可以使用下列命令：
+8. 選擇性：根據預設，所有的.pgc 檔案，名為在步驟 7 中指定與.pgd 旁放置將會合併時連結和加權，同樣地，但您也可以有更大控制如何特定的執行進行加權。 為了這樣做，您將使用 **pgomgr.exe** 工具，此工具也位於您一開始找到 `pgort140.dll` 複本的相同資料夾中。 例如，若要將 `CoreScenario` 執行以其他執行的 3 倍優先順序合併，我可以使用下列命令：
  
  ```
  pgomgr.exe -merge:3 “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!CoreScenario.pgc” “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1.pgd”
  ```
  
-9. 產生一或多個 .pgc 檔案並將它們放在 .pgd 旁邊或手動合併它們 (步驟 8) 之後，我們現在即可使用連結器來建立最終的最佳化組建。 回到您的連結器屬性 (**\[屬性\]** > **\[連結器\]** > **\[最佳化\]**)，將 **\[連結時產生程式碼\]** 設定為 **\[特性指引最佳化 - 檢測 (LTCG:PGOptimize)\]**，然後確認 **\[特性指引資料庫\]** 指向您想要使用的 .pgd (如果您尚未進行變更，所有項目應該都井然有序)。
+9. 產生一或多個 .pgc 檔案並將它們放在 .pgd 旁邊或手動合併它們 (步驟 8) 之後，我們現在即可使用連結器來建立最終的最佳化組建。 回到您的連結器屬性 ([屬性] > [連結器] > [最佳化])，將 [連結時產生程式碼] 設定為 [特性指引最佳化 - 檢測 (LTCG:PGOptimize)]，然後確認 [特性指引資料庫] 指向您想要使用的 .pgd (如果您尚未進行變更，所有項目應該都井然有序)。
 
  ![[新增專案] 對話方塊](images/pgo-009.png)
  
 10. 現在，當建置專案時，連結器將會呼叫 pgomgr.exe 將任何 `<PGDName>!*.pgc` 檔案以預設權數 1 合併至 .pgd，而產生的應用程式將會根據分析資料進行最佳化。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 - [效能](performance-and-xaml-ui.md)
 
  

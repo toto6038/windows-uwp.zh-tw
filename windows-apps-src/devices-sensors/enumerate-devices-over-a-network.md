@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e80d16b3338291c756b543018812e9db1370a4ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944906"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630413"
 ---
 # <a name="enumerate-devices-over-a-network"></a>列舉網路上的裝置
 
 
 
-**重要 API**
+**重要的 Api**
 
 - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 

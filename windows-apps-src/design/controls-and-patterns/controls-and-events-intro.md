@@ -1,5 +1,5 @@
 ---
-Description: You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input. Here, we show you how to add controls to your app.
+Description: 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的 app。
 title: 控制項和模式的簡介
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
@@ -9,19 +9,19 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ff3f89887235fc9c8d9d7afbbdea3d79bace810
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923082"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630793"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控制項和模式的簡介
 
-在 UWP app 開發中，「控制項」** 是顯示內容或啟用互動的 UI 元素。 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。
+在 UWP 應用程式開發中，「控制項」是顯示內容或啟用互動的 UI 元素。 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。
 
-> **重要 API**：[Windows.UI.Xaml.Controls 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **重要的 Api**:[Windows.UI.Xaml.Controls 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-*模式*是修改控制項或結合數個控制項以創造新項目的秘訣。 例如，[主要/詳細資料](master-details.md)模式則是，您可以使用[SplitView](split-view.md)控制項，瀏覽 app 的方式。 同樣地，您可以自訂來實作索引標籤模式[NavigationView](navigationview.md)控制項的範本。
+「模式」是可修改控制項或結合數個控制項以創造新項目的方法。 例如，[主版/詳細資料](master-details.md)模式是您可以使用的方式[SplitView](split-view.md)應用程式瀏覽的控制項。 同樣地，您可以自訂的範本[NavigationView](navigationview.md)控制項來實作 索引標籤模式。
 
 在許多情況下，您可以直接使用控制項。 但 XAML 控制項將功能和結構與外觀分開處理，因此您可以依據需求做出不同程度的修改。 在[樣式](../style/index.md)一節中，您會了解如何使用 [XAML 樣式](xaml-styles.md)與[控制項範本](control-templates.md)來修改控制項。
 

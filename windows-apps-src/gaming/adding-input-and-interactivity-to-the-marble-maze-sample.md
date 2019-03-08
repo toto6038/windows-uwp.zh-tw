@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10 , UWP, 遊戲, 輸入, 範例
 ms.localizationpriority: medium
 ms.openlocfilehash: d545f696a93bfa8416e1a772ecc015867a3615c2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045444"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611813"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入輸入和互動
 
@@ -44,7 +44,7 @@ ms.locfileid: "9045444"
 Marble Maze 支援以 Xbox 控制器、滑鼠及觸控來選取選單項目，也支援以 Xbox 控制器、滑鼠、觸控和加速計來控制遊戲進行。 Marble Maze 使用 [Windows::Gaming::Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) API 來輪詢控制器的輸入。 觸控可讓應用程式追蹤並回應指尖輸入。 加速計是測量沿著 X 軸、Y 軸和 Z 軸所施加力量的感應器。 您可以使用 Windows 執行階段來輪詢加速計裝置的目前狀態，以及透過 Windows 執行階段事件處理機制來接收觸控事件。
 
 > [!NOTE]
-> 本文件使用「觸控」來表示觸控輸入和滑鼠輸入兩者，使用「指標」來表示任何使用指標事件的裝置。 由於觸控和滑鼠會使用標準指標事件，因此，您可以使用任一裝置來選取選單項目和控制遊戲進行。
+> 本文件使用「觸控」來表示觸控輸入和滑鼠輸入兩者，使用「指標」來表示任何使用指標事件的裝置。 由於觸控和滑鼠會使用標準指標事件，因此，您可以使用任一裝置來選取功能表項目和控制遊戲進行。
 
  
 
@@ -78,7 +78,7 @@ window->PointerMoved += ref new TypedEventHandler<CoreWindow^, PointerEventArgs^
     &App::OnPointerMoved);
 ```
 
- **MarbleMazeMain** 類別也會建立 **std::map** 物件來保存觸控事件。 這個 map 物件的索引鍵是唯一識別輸入指標的值。 每個索引鍵對應至每個觸控點與螢幕中心之間的距離。 Marble Maze 之後會使用這些值來計算迷宮傾斜程度。
+**MarbleMazeMain** 類別也會建立 **std::map** 物件來保存觸控事件。 這個 map 物件的索引鍵是唯一識別輸入指標的值。 每個索引鍵對應至每個觸控點與螢幕中心之間的距離。 Marble Maze 之後會使用這些值來計算迷宮傾斜程度。
 
 ```cpp
 typedef std::map<int, XMFLOAT2> TouchMap;
@@ -98,14 +98,14 @@ Windows::Devices::Sensors::Accelerometer^           m_accelerometer;
 m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 ```
 
-##  <a name="navigating-the-menus"></a>巡覽選單
+##  <a name="navigating-the-menus"></a>瀏覽功能表
 
 您可以使用滑鼠、觸控或 Xbox 控制器來巡覽選單，如下所示：
 
--   使用方向鍵來變更現用選單項目。
+-   使用方向鍵來變更現用功能表項目。
 -   使用觸控、A 按鈕或選單鍵來挑選選單項目或關閉目前的選單，例如計分排行榜。
 -   使用選單鍵來讓遊戲暫停或繼續。
--   以滑鼠按一下選單項目來選擇該動作。
+-   以滑鼠按一下功能表項目來選擇該動作。
 
 ###  <a name="tracking-xbox-controller-input"></a>追蹤 Xbox 控制器輸入
 
@@ -264,7 +264,7 @@ if (ButtonJustPressed(GamepadButtons::View) || m_homeKeyPressed)
 }
 ```
 
-如果主選單作用中，當方向鍵按上或下時，現用選單項目會變更。 如果使用者選擇目前的選取項目，適當的 UI 元素會標示為已選取。
+如果主功能表在作用中，當方向鍵按上或下時，現用功能表項目會變更。 如果使用者選擇目前的選取項目，適當的 UI 元素會標示為已選取。
 
 ```cpp
 // Handle menu navigation.
@@ -324,7 +324,7 @@ case GameState::InGamePaused:
 
 ### <a name="tracking-touch-and-mouse-input"></a>追蹤觸控和滑鼠輸入
 
-對於觸控和滑鼠輸入，當使用者觸碰或按一下選單項目時，就會加以選擇。 下列範例顯示 **MarbleMazeMain::Update** 方法如何處理指標輸入來選取選單項目。 **m\_pointQueue** 成員變數會追蹤使用者在螢幕上觸碰或按一下的位置。 本文件稍後的[處理指標輸入](#processing-pointer-input)一節會進一步說明 Marble Maze 收集指標輸入的方式。
+對於觸控和滑鼠輸入，當使用者觸碰或按一下功能表項目時，就會加以選擇。 下列範例顯示 **MarbleMazeMain::Update** 方法如何處理指標輸入來選取選單項目。 **m\_pointQueue**成員變數會追蹤在螢幕上的使用者接觸到，或按下的位置。 本文件稍後的[處理指標輸入](#processing-pointer-input)一節會進一步說明 Marble Maze 收集指標輸入的方式。
 
 ```cpp
 // Check whether the user chose a button from the UI. 
@@ -541,7 +541,7 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 
 ###  <a name="applying-input-to-the-game-state"></a>將輸入套用至遊戲狀態
 
-裝置會以不同的方式報告輸入值。 例如，指標輸入可能以螢幕座標表示，而控制器輸入可能以完全不同的格式表示。 將多個裝置的輸入合併為一組輸入值的挑戰在於正規化，或將值轉換成一般格式。 Marble Maze 會將值縮放至範圍 \[-1.0, 1.0\] 來加以正規化。 本節稍早所述的 **PointToTouch** 函式會將螢幕座標轉換為介於大約 -1.0 和 +1.0 之間的範圍。
+裝置會以不同的方式報告輸入值。 例如，指標輸入可能以螢幕座標表示，而控制器輸入可能以完全不同的格式表示。 將多個裝置的輸入合併為一組輸入值的挑戰在於正規化，或將值轉換成一般格式。 滾珠迷宮正規化值，藉由調整它們範圍\[-1.0，1.0\]。 本節稍早所述的 **PointToTouch** 函式會將螢幕座標轉換為介於大約 -1.0 和 +1.0 之間的範圍。
 
 > [!TIP]
 > 即使您的應用程式只使用一個輸入方法，仍建議您一律將輸入值正規化。 這樣做可簡化遊戲的其他元件解譯輸入的方式 (例如物理模擬)，也能更輕鬆地撰寫可在不同螢幕解析度下執行的遊戲。
@@ -613,9 +613,9 @@ if (marblePosition.z >= resetDepth)
 ## <a name="related-topics"></a>相關主題
 
 
-* [在 Marble Maze 範例中加入音訊](adding-audio-to-the-marble-maze-sample.md)
-* [在 Marble Maze 範例中加入視覺化內容](adding-visual-content-to-the-marble-maze-sample.md)
-* [使用 C++ 和 DirectX 開發 Marble Maze (UWP 遊戲)](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [將音訊加入至滾珠迷宮範例](adding-audio-to-the-marble-maze-sample.md)
+* [將視覺內容加入至滾珠迷宮範例](adding-visual-content-to-the-marble-maze-sample.md)
+* [「 彈珠迷宮 」、 UWP c + + 和 DirectX 遊戲開發](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

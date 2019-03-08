@@ -1,5 +1,5 @@
 ---
-Description: Here are the elements and attributes you use to create adaptive tiles.
+Description: 以下是用來建立彈性磚的元素和屬性。
 title: 彈性磚結構描述與範本
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ed9124b0b66239c10b277f070ac2c9594c336fdd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942692"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611013"
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a>彈性磚範本：結構描述和指導方針
 
@@ -141,7 +141,7 @@ textStyle 值：輔助字幕 captionSubtle 內文 bodySubtle 基底 baseSubtle �
 ## <a name="related-topics"></a>相關主題
 
 
-* [建立彈性磚](create-adaptive-tiles.md)
+* [建立自動調整圖格](create-adaptive-tiles.md)
  
 
  

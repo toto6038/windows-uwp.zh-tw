@@ -1,22 +1,22 @@
 ---
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
 description: 本主題示範如何從媒體擷取預覽資料流取得單一預覽畫面。
-title: 取得預覽框架
+title: 取得預覽畫面
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7faa018dad336b6e22dd236e57585cade38f8a94
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921928"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622513"
 ---
-# <a name="get-a-preview-frame"></a>取得預覽框架
+# <a name="get-a-preview-frame"></a>取得預覽畫面
 
 
-本主題示範如何從媒體擷取預覽串流取得單一預覽畫面。
+本主題示範如何從媒體擷取預覽資料流取得單一預覽畫面。
 
 > [!NOTE] 
 > 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體，而且您有一個具有使用中視訊預覽資料流的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278)。
@@ -25,11 +25,11 @@ ms.locfileid: "8921928"
 
 [!code-cs[PreviewFrameUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewFrameUsing)]
 
-當您要求預覽框架時，您可以使用想要的格式建立 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件，以指定您要用來接收框架的格式。 這個範例會呼叫 [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 並指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 來要求預覽資料流的屬性，以建立與預覽資料流解析度相同的視訊框架。 預覽串流的寬度和高度將用來建立新的視訊框架。
+當您要求預覽框架時，您可以使用想要的格式建立 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件，以指定您要用來接收框架的格式。 這個範例會呼叫 [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 並指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 來要求預覽資料流的屬性，以建立與預覽資料流解析度相同的視訊框架。 預覽資料流的寬度和高度將用來建立新的視訊框架。
 
 [!code-cs[CreateFormatFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFormatFrame)]
 
-如果您的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件已初始化，而且您有使用中的預覽串流，請呼叫 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926711) 取得預覽串流。 傳入上一個步驟中建立的視訊框架，以指定傳回框架的格式。
+如果您的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件已初始化，而且您有使用中的預覽資料流，請呼叫 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926711) 取得預覽資料流。 傳入上一個步驟中建立的視訊框架，以指定傳回框架的格式。
 
 [!code-cs[GetPreviewFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewFrameAsync)]
 
@@ -57,7 +57,7 @@ ms.locfileid: "8921928"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

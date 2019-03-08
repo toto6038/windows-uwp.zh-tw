@@ -1,5 +1,5 @@
 ---
-Description: With the package resource indexing (PRI) APIs, you can develop a custom build system for your UWP app's resources. The build system will be able to create, version, and dump PRI files to whatever level of complexity your UWP app needs.
+Description: 與封裝資源編製索引 (PRI) Api 的情況下，您可以開發自訂建置系統的 UWP 應用程式的資源。 建置系統可以依據 UWP app 所需的任何複雜層級，建立 PRI 檔案並對這些檔案進行版本控制和傾印。
 title: 套件資源索引 (PRI) API 和自訂建置系統
 template: detail.hbs
 ms.date: 05/07/2018
@@ -7,14 +7,14 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 617812415d3dcd00ec24d5f55971ae311265b61d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931749"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598513"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>套件資源索引 (PRI) API 和自訂建置系統
-您可以使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，開發適用於您的 UWP app 資源的自訂組建系統。 建置系統可以依據 UWP app 所需的任何複雜層級，建立套件資源索引 (PRI) 檔案並對這些檔案進行版本控制和傾印 (為 XML)。 如果您的自訂建置系統目前使用 MakePri.exe 命令列工具 (請參閱[使用 MakePri.exe 來手動編譯資源](makepri-exe-command-options.md))，為了提高效能和控制，建議您改為呼叫 PRI API，而不呼叫 MakePri.exe。
+您可以使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，開發適用於您的 UWP app 資源的自訂建置系統。 建置系統可以依據 UWP app 所需的任何複雜層級，建立套件資源索引 (PRI) 檔案並對這些檔案進行版本控制和傾印 (為 XML)。 如果您的自訂建置系統目前使用 MakePri.exe 命令列工具 (請參閱[使用 MakePri.exe 來手動編譯資源](makepri-exe-command-options.md))，為了提高效能和控制，建議您改為呼叫 PRI API，而不呼叫 MakePri.exe。
 
 PRI API 是在 Windows 10 版本 1803 的 Windows SDK 中引進。 API 採用 Win32 Windows API 的形式，這表示您有一些呼叫選項。 您可以直接從 Win32 應用程式進行呼叫，也可以透過[平台叫用](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)，從 .NET 應用程式甚至 UWP app 進行呼叫。
 
@@ -28,12 +28,12 @@ PRI 檔案的大小上限是 64 KB。
 ## <a name="scenario-walkthroughs"></a>案例逐步解說
 |主題|描述|
 |-|-|
-|[案例 1：從字串資源和資產檔案建立 PRI 檔案](pri-apis-scenario-1.md)|在本案例中，我們會建立新的應用程式來表示我們的自訂建置系統。 我們會建立資源索引子，並將字串以及其他種類的資源新增至其中， 然後產生和傾印 PRI 檔案。|
+|[案例 1:從字串資源和資產檔案產生 PRI 檔案](pri-apis-scenario-1.md)|在本案例中，我們會建立新的應用程式來表示我們的自訂建置系統。 我們會建立資源索引子，並將字串以及其他種類的資源新增至其中， 然後產生和傾印 PRI 檔案。|
 
 ## <a name="important-apis"></a>重要 API
-* [套件資源索引 (PRI) 參考](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [編製索引 (PRI) 參考的套件資源](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>相關主題
-* [使用 MakePri.exe 來手動編譯資源](makepri-exe-command-options.md)
-* [使用 Unmanaged DLL 函式](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)
+* [編譯以手動方式使用 MakePri.exe 的資源](makepri-exe-command-options.md)
+* [使用 Unmanaged 的 DLL 函式](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)
 * [資源管理系統](resource-management-system.md)

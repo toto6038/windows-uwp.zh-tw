@@ -4,14 +4,14 @@ description: 這個範例程式碼說明如何在通用 Windows 平台 (UWP) app
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: ae2de8f009da1873c9aebf4f60ef315b36c7d744
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920665"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632333"
 ---
 # <a name="convert-between-strings-and-binary-data"></a>在字串與二進位資料間轉換
 

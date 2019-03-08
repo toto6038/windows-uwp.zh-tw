@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 48cea8c1a3a3c35a53a3376c48e3192c94caf709
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049285"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620773"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>開始使用：選擇程式設計語言
 
@@ -24,22 +24,22 @@ ms.locfileid: "9049285"
 
 雖然在本文中，我們將焦點放在 C# 上，但是您可能想要探索其他語言提供的獨特優點。 例如，如果您應用程式最主要的考量是效能，特別是處理大量圖形，那麼 C++ 可能是正確的選擇。 Microsoft .NET 版本的 Visual Basic 非常適合 Visual Basic 應用程式開發人員。 JavaScript 搭配 HTML5 則適合具有網路開發背景的開發人員。 如需詳細資訊，請參閱下列各個主題：
 
--   [建立第一個 UWP app 使用 c + +](../get-started/create-a-basic-windows-10-app-in-cpp.md)
--   [建立第一個 UWP app 使用 C# 或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [建立您第一次使用 JavaScript 的 UWP app](../get-started/create-a-hello-world-app-js-uwp.md)
+-   [建立第一個 UWP 應用程式使用 c + +](../get-started/create-a-basic-windows-10-app-in-cpp.md)
+-   [建立您第一次的 UWP 應用程式使用C#或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [建立第一個 UWP 應用程式使用 JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
 
-**注意：** 針對使用 3D 圖形的應用程式，OpenGL 和 OpenGL ES 標準並非原生適用於 UWP 應用程式。 如果您不希望將您的 OpenGL ES 程式碼重新撰寫成 Microsoft DirectX，則您可能會想要了解 **Angle**。 Angle 是一個正在進行中的專案，設計目的是透過將 OpenGL API 呼叫轉譯成 DirectX API 呼叫，來將 OpenGL 轉換成 DirectX。 若要深入了解，請參閱下列主題：
--   [角度](https://code.google.com/p/angleproject/)
--   [建立您第一次使用 DirectX 的 UWP app](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [使用 DirectX 的 UWP app 範例](https://go.microsoft.com/fwlink/p/?LinkId=263603)
--   [DirectX SDK 在哪裡？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
+**附註**  使用 3D 圖形的應用程式，OpenGL 和 OpenGL ES 標準也不以原生方式適用於 UWP 應用程式。 如果您不希望將您的 OpenGL ES 程式碼重新撰寫成 Microsoft DirectX，則您可能會想要了解 **Angle**。 Angle 是一個正在進行中的專案，設計目的是透過將 OpenGL API 呼叫轉譯成 DirectX API 呼叫，來將 OpenGL 轉換成 DirectX。 若要深入了解，請參閱下列主題：
+-   [Angle](https://code.google.com/p/angleproject/)
+-   [建立第一個 UWP 應用程式使用 DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [使用 DirectX 的 UWP 應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [DirectX SDK 位於何處？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
 ## <a name="giving-c-a-go"></a>試看看使用 C#
 
 身為 iOS 開發人員，您習慣使用 Objective-C 和 Swift。 與兩者最接近的 Microsoft 程式設計語言是 C#。 對於大部分的開發人員及 app 而言，我們認為 C# 是最簡單且最快速學習和使用的語言，所以本文中的資訊及逐步解說會將焦點放在該語言。 若要深入了解 C#，請參閱下列主題：
 
--   [建立第一個 UWP app 使用 C# 或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [使用 C# 的 UWP app 範例](https://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [建立您第一次的 UWP 應用程式使用C#或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [使用的 UWP 應用程式範例C#](https://go.microsoft.com/fwlink/p/?LinkId=263453)
 -   [Visual C#](https://go.microsoft.com/fwlink/p/?LinkId=263450)
 
 以下是使用 Objective-C 與 C# 撰寫的類別。 首先先顯示 Objective-C 的寫法，接著是 C# 的寫法。
@@ -140,6 +140,6 @@ int result = mySampleClass.AddTwoNumbers(1, 2);
 
 C# 是個很容易學會的語言，而且內建許多構成 .NET 的支援類別和架構。 不用多少時間，您將會快快樂樂地撰寫程式碼，再也看不到註解！
 
-## <a name="next-step"></a>下一步
+## <a name="next-step"></a>後續步驟
 
-[開始使用：使用 Visual Studio](getting-started-getting-around-in-visual-studio.md)
+[開始使用：在 Visual Studio 中瀏覽](getting-started-getting-around-in-visual-studio.md)

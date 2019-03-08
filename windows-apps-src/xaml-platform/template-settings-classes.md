@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b44aaf741c188658c7a639422b0d091f8db6e3e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924864"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589783"
 ---
 # <a name="template-settings-classes"></a>範本設定類別
 
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
-假設您可以將控制項新增至 UI、設定其屬性，以及附加事件處理常式。 如需將控制項新增至 App 的指示，請參閱[新增控制項和處理事件](https://msdn.microsoft.com/library/windows/apps/mt228345)。 我們也假設您知道如何製作預設範本的複本並加以編輯，來定義控制項自訂範本的基本知識。 如需詳細資訊，請參閱[快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
+假設您可以將控制項新增至 UI、設定其屬性，以及附加事件處理常式。 如需將控制項新增至 App 的指示，請參閱[新增控制項和處理事件](https://msdn.microsoft.com/library/windows/apps/mt228345)。 我們也假設您知道如何製作預設範本的複本並加以編輯，來定義控制項自訂範本的基本知識。 如需這的詳細資訊，請參閱[快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
 
 ## <a name="the-scenario-for-templatesettings-classes"></a>**TemplateSettings** 類別的案例
 
@@ -26,14 +26,14 @@ ms.locfileid: "8924864"
 
 **TemplateSettings** 有數種類別。 所有類別都位於 [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空間中。 以下是類別清單，以及相關控制項之 **TemplateSettings** 屬性的連結。 此 **TemplateSettings** 屬性是您如何存取控制項的 **TemplateSettings** 值，並且可以建立範本繫結至它的屬性：
 
--   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752)：[**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364) 的值
--   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499)：[**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503) 的值
--   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948)：[**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923) 的值
--   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856)：[**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537) 的值
--   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248)：[**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581) 的值
--   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721)：[**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826) 的值
--   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804)：[**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731) 的值
--   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813)：[**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629) 的值
+-   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752)： 值[ **ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
+-   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499)： 值[ **GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
+-   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948)： 值[ **ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
+-   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856)： 值[ **ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
+-   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248)： 值[ **ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
+-   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721)： 值[ **SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
+-   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804)： 值[ **ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
+-   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813)： 值[ **ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
 
 **TemplateSettings** 屬性一律用於 XAML 中，而不是在程式碼中。 這些是父項控制項唯讀 **TemplateSettings** 屬性的唯讀子屬性。 在進階的自訂控制項案例中，例如如果建立的新 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 基底類別會影響控制項邏輯，請考慮在控制項上定義自訂的 **TemplateSettings** 屬性，以便傳遞可能對任何人都有用的資訊，讓其他人也能重新製作控制項的範本。 由於該屬性的值是唯讀的，所以請為每個與範本度量、動畫定位等相關的資訊項目，定義一個新的 **TemplateSettings** 類別，與您具唯讀屬性的控制項相關，並且提供呼叫者使用您的控制項邏輯初始化該類別的執行階段執行個體。 **TemplateSettings** 類別衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)，因此屬性可以使用相依性屬性系統做為屬性變更回呼。 但是屬性的相依性屬性識別碼並未公開為公用 API，因為 **TemplateSettings** 屬性對於呼叫者應該是唯讀的。
 
@@ -54,7 +54,7 @@ ms.locfileid: "8924864"
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 範本的完整 XAML 有數百行，這裡只摘錄一小部份。 這個 XAML 定義一個控制項組件，這是六個用來描繪不確定進度之旋轉動畫的 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 元素中的其中一個。 身為開發人員，您可能不喜歡圓圈，可能會使用不同的圖形或不同的基本形狀顯示動畫進行的方式。 例如，您可以撰寫一個 **ProgressRing**，改用一組正方形排列的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 元素。 如果是，新範本的每個個別 **Rectangle** 元件可能看起來像這樣：
+[  **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 範本的完整 XAML 有數百行，這裡只摘錄一小部份。 這個 XAML 定義一個控制項組件，這是六個用來描繪不確定進度之旋轉動畫的 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 元素中的其中一個。 身為開發人員，您可能不喜歡圓圈，可能會使用不同的圖形或不同的基本形狀顯示動畫進行的方式。 例如，您可以撰寫一個 **ProgressRing**，改用一組正方形排列的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 元素。 如果是，新範本的每個個別 **Rectangle** 元件可能看起來像這樣：
 
 ```xml
 <Rectangle
@@ -95,7 +95,7 @@ ms.locfileid: "8924864"
 
 同樣地，範本中有很多 XAML，所以我們只顯示摘錄。 這只是其中一種狀態和佈景主題動畫，每一種都使用相同的 [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) 屬性。 如果是 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)，在範本中透過繫結使用 **ComboBoxTemplateSettings** 值強制執行相關的動畫，將會在根據共用值計算的位置停止並開始，因此可以順暢地轉換。
 
-**注意：** 當您使用**TemplateSettings**值做為您控制項範本的一部分時，請確定您設定的屬性符合值的類型。 如果不是，您可能需要建立繫結的值轉換器，以便繫結的目標類型可以從 **TemplateSettings** 值的不同來源類型轉換。 如需詳細資訊，請參閱 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)。
+**附註**  當您使用**TemplateSettings**值隨著您的控制項範本，請確定您正在設定符合值的類型屬性。 如果不是，您可能需要建立繫結的值轉換器，以便繫結的目標類型可以從 **TemplateSettings** 值的不同來源類型轉換。 如需詳細資訊，請參閱 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)。
 
 ## <a name="related-topics"></a>相關主題
 

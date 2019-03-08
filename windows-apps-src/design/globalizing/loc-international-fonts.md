@@ -1,5 +1,5 @@
 ---
-Description: This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
+Description: 本主題列出適用於 UWP 應用程式已當地語系化為美國以外的語言的字型英文版。
 title: 國際字型
 template: detail.hbs
 ms.date: 11/02/2017
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046651"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601133"
 ---
 # <a name="international-fonts"></a>國際字型
 
-本主題列出當地語系化為美國英文以外語言的 UWP app 可用的字型。
+本主題列出適用於 UWP 應用程式已當地語系化為美國以外的語言的字型英文版。
 
 下表的「語言標記」欄列出語言的 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)。 如需查看 Microsoft Store 特別支援的語言標記清單，請參閱[支援的語言](../../publish/supported-languages.md)。
 

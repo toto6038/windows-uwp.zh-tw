@@ -3,26 +3,26 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: Swipe commanding is a touch accelerator for context menus.
-title: 撥動
+Description: 揮擊命令為觸控加速器的操作功能表。
+title: Swipe
 label: Swipe
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d575eb25d9a013aa999cf304db6d83faeb87765
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037320"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626653"
 ---
-# <a name="swipe"></a>撥動
+# <a name="swipe"></a>Swipe
 
 撥動命令是操作功能表的快速操作，讓使用者不需要在應用程式中變更狀態，即可透過觸控輕鬆存取常用的功能表動作。
 
-> **重要 API**：[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)、[SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)、[ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **重要的 Api**:[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)， [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)， [ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![執行並顯示淺色佈景主題](images/LightThemeSwipe.png)
 
@@ -46,7 +46,7 @@ ms.locfileid: "9037320"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/SwipeControl">開啟應用程式並查看 SwipeControl 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -59,7 +59,7 @@ ms.locfileid: "9037320"
 
 ## <a name="how-does-swipe-work"></a>撥動如何運作？
 
-UWP 撥動命令功能有兩種模式：[顯示](/uwp/api/windows.ui.xaml.controls.swipemode)和[執行](/uwp/api/windows.ui.xaml.controls.swipemode)。 同時還支援四個不同的撥動方向：向上、向下、向左和向右。
+UWP 撥動命令有兩種模式：[揭露](/uwp/api/windows.ui.xaml.controls.swipemode)並[執行](/uwp/api/windows.ui.xaml.controls.swipemode)。 同時還支援四個不同的撥動方向：向上、向下、向左和向右。
 
 ### <a name="reveal-mode"></a>顯示模式
 
@@ -96,7 +96,7 @@ UWP 撥動命令功能有兩種模式：[顯示](/uwp/api/windows.ui.xaml.contro
 撥動命令有兩個您需要定義的元件：
 
 - [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)，這會包裝您的內容。 在集合 (例如 ListView) 中，這會置於 DataTemplate 內。
-- 撥動功能表項目 (這是放在撥動控制項方向容器中的一個或多個 [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) 物件)：[LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems)、[RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems)、[TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems) 或 [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
+- 揮擊功能表項目，也就是一或多個[SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)物件置於撥動控制項的方向容器：[LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems)， [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems)， [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems)，或[BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
 
 撥動內容可以用內嵌方式放置，或定義於頁面或應用程式的 [資源] 區段。
 
@@ -182,7 +182,7 @@ UWP 撥動命令功能有兩種模式：[顯示](/uwp/api/windows.ui.xaml.contro
 
 ## <a name="handle-an-invoked-swipe-command"></a>處理叫用的撥動命令
 
-若要因應撥動命令執行動作，請處理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件  (如需有關使用者如何叫用命令的詳細資訊，請檢閱本文先前所述的＜_撥動如何運作？_ ＞一節)。撥動命令通常運用於 ListView 或類似清單的案例中。 在該情況下，當叫用命令時，您會想要對這個撥動項目執行動作。
+若要因應撥動命令執行動作，請處理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件  (如需如何詳細資訊，使用者可以叫用命令，檢閱_撥動如何運作？_ 稍早在本文中的一節。)一般而言，撥動命令，就是 ListView 或清單類似的案例中。 在該情況下，當叫用命令時，您會想要對這個撥動項目執行動作。
 
 以下說明如何在您先前建立的_刪除_撥動項目上處理叫用事件。
 
@@ -210,7 +210,7 @@ UWP 撥動命令功能有兩種模式：[顯示](/uwp/api/windows.ui.xaml.contro
 - **Auto**
   - 在執行模式中，開啟的撥動項目仍然會在進行叫用時保持開啟。
   - 在顯示模式中，開啟的撥動項目則會在進行叫用時摺疊。
-- **Close**
+- **關閉**
   - 叫用項目時，不論模式為何，撥動控制項永遠都會摺疊並回復正常狀態。
 - **RemainOpen**
   - 叫用項目時，不論模式為何，撥動控制項永遠保持開啟。
@@ -239,6 +239,6 @@ UWP 撥動命令功能有兩種模式：[顯示](/uwp/api/windows.ui.xaml.contro
 
 ## <a name="related-articles"></a>相關文章
 
-- [清單檢視和方格檢視](listview-and-gridview.md)
-- [項目容器與範本](item-containers-templates.md)
+- [清單檢視和格線檢視](listview-and-gridview.md)
+- [項目容器和範本](item-containers-templates.md)
 - [拖動以重新整理](pull-to-refresh.md)

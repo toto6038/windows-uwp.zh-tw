@@ -7,11 +7,11 @@ keywords: windows 10, uwp, xbox one, 工具
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
 ms.openlocfilehash: ed106095d83ed0c6e055d22a1a0cf229380cff71
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945890"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609323"
 ---
 # <a name="introduction-to-xbox-one-tools"></a>Xbox One 工具簡介
 
@@ -55,7 +55,7 @@ Xbox 裝置入口網站是瀏覽器為基礎的裝置管理工具，可讓您新
 ## <a name="xbox-dev-mode-companion"></a>Xbox 開發人員模式小幫手
 Xbox 開發人員模式小幫手是可讓您在不需離開電腦的情況下，於主機上進行工作的工具。 該 App 允許您檢視主機畫面並向它傳送輸入。 如需詳細資訊，請參閱 [Xbox 開發人員模式小幫手](xbox-dev-mode-companion.md)。
 
-## <a name="see-also"></a>另請參閱
-- [如何在針對 UWP 進行開發時使用 Fiddler 搭配 Xbox One](uwp-fiddler.md)
+## <a name="see-also"></a>請參閱
+- [如何使用 Fiddler Xbox One uwp 開發時](uwp-fiddler.md)
 - [Windows Device Portal 概觀](../debug-test-perf/device-portal.md)
-- [Xbox One 上的 UWP](index.md)
+- [在 Xbox One UWP](index.md)

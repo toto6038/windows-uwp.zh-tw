@@ -6,17 +6,17 @@ ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: edf81f0474855c868ea1fb50afa683523aedcd07
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050781"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614863"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 開發人員文件的最新動向
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 最近已有下列功能概觀、開發人員指引和影片可以使用，包含提供給 Windows 開發人員的全新及更新資訊。
 
-在 Windows10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/your-first-app.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/your-first-app.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -43,7 +43,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ## <a name="developer-guidance"></a>開發人員指引
 
-### <a name="data-schemas-for-store-products"></a>市集產品的資料結構描述
+### <a name="data-schemas-for-store-products"></a>Microsoft Store 產品的資料結構描述
 
 我們新增了[市集產品的資料結構描述](../monetize/data-schemas-for-store-products.md)文章。 此文章針對 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中的幾個物件 (包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)) 提供其市集相關資料的結構描述。
 

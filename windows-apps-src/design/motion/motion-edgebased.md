@@ -1,19 +1,19 @@
 ---
-Description: Edge-based animations show or hide UI that originates from the edge of the screen.
-title: UWP app 中以邊緣為基礎的 UI 動畫
+Description: 以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。
+title: UWP 應用程式中以邊緣為基礎的 UI 動畫
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e07ac565fe2e223b2fb33573ad083edfdfbc888a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934843"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610203"
 ---
 # <a name="edge-based-ui-animations"></a>以邊緣為基礎的 UI 動畫
 
@@ -21,9 +21,9 @@ ms.locfileid: "8934843"
 
 
 
-以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。 可透過使用者或 app 來起始顯示和隱藏動作。 這個 UI 可以與 app 重疊，或者成為主 app 表面的一部分。 如果 UI 是應用程式表面的一部分，則可能需要重新調整應用程式其餘部分的大小以容納它。
+以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。 可透過使用者或 app 來起始顯示和隱藏動作。 這個 UI 可以與 app 重疊，或者成為主 app 表面的一部分。 如果 UI 是 app 表面的一部分，則可能需要重新調整 app 其餘部分的大小以容納它。
 
-> **重要 API**: [**EdgeUIThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **重要的 Api**:[**EdgeUIThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -46,12 +46,12 @@ ms.locfileid: "8934843"
 
 **適用於開發人員**
 * [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [讓以邊緣為基礎的 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [以動畫顯示邊緣為基礎的 UI](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
+* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**EdgeUIThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 * [**PaneThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [讓淡入/淡出產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [讓重新定位產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [建立淡出動畫](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [以動畫顯示重新置放](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
 
  
 

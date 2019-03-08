@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, uwp, ads, advertising, ad mediation, 廣告, 廣告流量分配
 ms.localizationpriority: medium
 ms.openlocfilehash: 9197dd4b62df26ff63e469063573789da948c767
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049815"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592253"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 廣告流量分配服務
 
-當您使用 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) [在您的 App 顯示廣告](display-ads-in-your-app.md)，您也可以選擇使用 Microsoft 廣告流量分配服務來最大化您的廣告收益。 本文提供廣告流量分配服務及其目標的概觀。
+當您使用 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)[在您的 App 顯示廣告](display-ads-in-your-app.md)，您也可以選擇使用 Microsoft 廣告流量分配服務來最大化您的廣告收益。 本文提供廣告流量分配服務及其目標的概觀。
 
 廣告流量分配服務是 [Microsoft 廣告營收平台](https://developer.microsoft.com/windows/ad-monetization-platform)的一部分。 平台由下列部分組成。
 
@@ -28,7 +28,7 @@ ms.locfileid: "9049815"
 
 ## <a name="manage-complexity-of-ad-network-relationships"></a>管理廣告網路關係的複雜性  
 
-廣告流量分配服務會整合各種廣告網路，因此您不需要執行這項工作。 在您的應用程式中顯示廣告的情況下，您在使用 Microsoft Advertising SDK 之後，您可以修改您的廣告流量分配設定[在合作夥伴中心](../publish/in-app-ads.md#mediation-settings)來顯示來自多個廣告網路的廣告。 您可以從新的廣告網路取得的廣告獲益，而不需要變更您的程式碼。
+廣告流量分配服務會整合各種廣告網路，因此您不需要執行這項工作。 在您的應用程式中顯示廣告的情況下，您在使用 Microsoft Advertising SDK 之後，您可以修改您的 ad 中繼設定[在合作夥伴中心](../publish/in-app-ads.md#mediation-settings)顯示來自多個 ad 網路的廣告。 您可以從新的廣告網路取得的廣告獲益，而不需要變更您的程式碼。
 
 我們代表您管理與廣告網路的端對端關係。 透過廣告網路整合以提供廣告、報告和支付的所有事項均由我們負責處理，您無須額外費心。
 
@@ -47,7 +47,7 @@ ms.locfileid: "9049815"
 
 新的廣告網路會自動包含在內並透過學習預算評估效能。 在很短時間內，它們會在瀑布中找到它們的位置。 這會讓廣告網路更具競爭力，並協助開發人員透過 App 充分運用獲利。
 
-我們高度建議使用我們[建議的流量分配設定](../publish/in-app-ads.md#mediation-settings)以最大化從應用程式中的廣告獲得的收益。 這可讓我們的演算法，得以為您的應用程式產生最佳利潤。 不過，您也可以自由選擇您自己的流量分配設定，在合作夥伴中心，若要進一步控制廣告網路，做廣告和他們執行的順序。
+我們高度建議使用我們[建議的流量分配設定](../publish/in-app-ads.md#mediation-settings)以最大化從應用程式中的廣告獲得的收益。 這可讓我們的演算法，得以為您的應用程式產生最佳利潤。 不過，您也可以自由選擇您自己的中繼設定合作夥伴中心，以更充分掌控服務廣告和它們執行的順序廣告網路。
 
 ## <a name="rich-data-and-signals"></a>豐富的資料和訊號
 
@@ -56,5 +56,5 @@ ms.locfileid: "9049815"
 ## <a name="related-topics"></a>相關主題
 
 * [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)
-* [流量分配設定](../publish/in-app-ads.md#mediation-settings)
+* [中繼設定](../publish/in-app-ads.md#mediation-settings)
 * [廣告績效報告](../publish/advertising-performance-report.md)

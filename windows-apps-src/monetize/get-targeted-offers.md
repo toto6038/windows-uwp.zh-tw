@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10 uwp, Microsoft Store 服務, Microsoft Store 針對性優惠 API, 取得針對性優惠
 ms.localizationpriority: medium
 ms.openlocfilehash: 71cd6ce3b9736b812f8ccdf4d21d35357928c63c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943713"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622763"
 ---
 # <a name="get-targeted-offers"></a>取得針對性優惠
 
 使用此方法，根據使用者是不是針對性優惠客戶區隔的一部分，取得適用於目前使用者的針對性優惠。 如需詳細資訊，請參閱[使用 Microsoft Store 服務管理針對性優惠](manage-targeted-offers-using-windows-store-services.md)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用此方式，您需要先為您的 app 目前已登入的使用者[取得 Microsoft 帳戶權杖](manage-targeted-offers-using-windows-store-services.md#obtain-a-microsoft-account-token)。 您必須在這個方法的 ```Authorization``` 要求標頭中傳遞這個權杖。 Microsoft Store 會使用此權杖，為目前使用者取得針對性優惠。
 
@@ -35,7 +35,7 @@ ms.locfileid: "8943713"
 
 | 標頭        | 類型   | 描述  |
 |---------------|--------|--------------|
-| 授權 | 字串 | 必要。 您的 app 目前已登入的使用者的 Microsoft 帳戶權杖，格式為 **bearer**&lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 目前已登入的使用者在表單中的應用程式的 Microsoft 帳戶語彙基元**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
@@ -55,13 +55,13 @@ Authorization: Bearer <Microsoft Account token>
 
 | 欄位      | 類型   | 描述         |
 |------------|--------|------------------|
-| offers      | array  | 附加元件的產品識別碼陣列，這些附加元件與適用於目前使用者的針對性優惠相關聯。 這些產品識別碼是在您的應用程式，在合作夥伴中心中的**特定對象提供了**頁面中指定。            |
+| offers      | 陣列  | 附加元件的產品識別碼陣列，這些附加元件與適用於目前使用者的針對性優惠相關聯。 這些產品識別碼中指定**為目標的供應項目**在合作夥伴中心內的應用程式頁面。            |
 | trackingId  | 字串 | 您可選擇使用 GUID 來追蹤您自己代碼或服務內的針對性優惠。 |
 
 
 ### <a name="example"></a>範例
 
-下列範例針對此要求示範範例 JSON 回應主體。
+下列範例示範這個要求的一個範例 JSON 回應主體。
 
 ```json
 [
@@ -77,7 +77,7 @@ Authorization: Bearer <Microsoft Account token>
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務管理針對性優惠](manage-targeted-offers-using-windows-store-services.md)
+* [管理使用存放區服務目標的供應項目](manage-targeted-offers-using-windows-store-services.md)
 
  
 

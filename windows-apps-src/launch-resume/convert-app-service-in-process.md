@@ -1,17 +1,17 @@
 ---
-title: 轉換 App 服務，以便與其主控 App 在相同處理序中執行
-description: 將在個別背景處理序中執行的 app 服務程式碼，轉換成和您 app 服務提供者在相同處理序內執行的程式碼。
+title: 轉換應用程式服務，以便與其主控應用程式在相同處理序中執行
+description: 將在個別背景處理序中執行的應用程式服務程式碼，轉換成和您應用程式服務提供者在相同處理序內執行的程式碼。
 ms.date: 11/03/2017
 ms.topic: article
-keywords: windows 10，uwp，應用程式服務
+keywords: windows 10 uwp 應用程式服務
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: a976ac69d289a5582c2f3546227adba707ac5297
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927110"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643413"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>轉換應用程式服務，以便與其主控應用程式在相同處理序中執行
 
@@ -38,13 +38,13 @@ ms.locfileid: "8927110"
 >   </Applications>
 > ```
 
-移除`EntryPoint`屬性從`<Extension>`元素因為[onbackgroundactivated （）](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)現在是叫用應用程式服務時，將會使用進入點。
+移除`EntryPoint`屬性從`<Extension>`項目因為現在[OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)是叫用的 app service 時，會使用的進入點。
 
 第二處變更是，將服務邏輯從其個別的背景工作專案移入可從 **OnBackgroundActivated()** 呼叫的方法中。
 
 現在可以您的應用程式可以直接執行應用程式服務。 例如，在 App.xaml.cs:
 
-[!NOTE] 下列程式碼與範例 1 （處理程序服務） 所提供的不同。 下列程式碼提供僅供說明，並不應做為範例 2 部分 （同處理序服務）。  若要繼續從範例中的文章轉換繼續使用提供的範例 1 而不是說明之下方的程式碼的程式碼範例 2 （同處理序服務） 到 1 （處理程序服務）。
+[!NOTE] 下列程式碼是不同於所提供的範例 1 （跨處理序服務）。 下列程式碼提供僅供說明用途，不應做為一部分的範例 2 （同處理序服務）。  若要繼續進行從範例的發行項的轉換範例 2 （同處理序服務） 到 1 （跨處理序服務） 繼續使用提供的範例 1，而不是說明的下列程式碼的程式碼。
 
 ``` cs
 using Windows.ApplicationModel.AppService;
@@ -101,4 +101,4 @@ sealed partial class App : Application
 
 當 app 收到要求，然後讀取提供的 [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx)，查看是否會出現 `Key` 和 `Value` 字串。 如果有的話，則應用程式服務會將一組 `Response` 和 `True` 字串值傳回 **AppServiceConnection** 另一端的 app。
 
-在[建立和使用應用程式服務](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396)，深入了解連線並與其他app 通訊。
+在[建立和取用 App 服務](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396)，深入了解連線並與其他 App 通訊。

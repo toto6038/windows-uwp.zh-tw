@@ -1,5 +1,5 @@
 ---
-Description: Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities.
+Description: 自適性磚範本是在 Windows 10 中，可讓您設計您自己使用適應不同螢幕密度的簡單及富彈性的標記語言的圖格通知內容的新功能。
 title: 建立彈性磚
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
@@ -9,24 +9,24 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945525"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639603"
 ---
 # <a name="create-adaptive-tiles"></a>建立彈性磚
 
-彈性磚範本是中的新功能 windows 10，可讓您設計您自己的磚通知內容使用配合不同螢幕密度調整的簡易靈活標記語言。 本文會告訴您如何為通用 Windows 平台 (UWP) app 建立彈性動態磚。 如需彈性元素和屬性的完整清單，請參閱[彈性磚結構描述](../tiles-and-notifications/tile-schema.md)。
+自適性磚範本是在 Windows 10 中，可讓您設計您自己使用適應不同螢幕密度的簡單及富彈性的標記語言的圖格通知內容的新功能。 本文會告訴您如何為通用 Windows 平台 (UWP) app 建立彈性動態磚。 如需彈性元素和屬性的完整清單，請參閱[彈性磚結構描述](../tiles-and-notifications/tile-schema.md)。
 
-（如果您想要您仍然可以使用的預設的範本的[Windows8 磚範本目錄](https://msdn.microsoft.com/library/windows/apps/hh761491)時設計適用於 windows 10 通知。）
+(如果您想要您仍然可以使用的預設的範本[Windows 8 磚範本類別目錄](https://msdn.microsoft.com/library/windows/apps/hh761491)設計適用於 Windows 10 的通知時。)
 
 
 ## <a name="getting-started"></a>開始使用
 
-**安裝 Notifications 程式庫。** 如果您想要使用 C# 而不是 XML 產生通知，請安裝名稱為 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 套件 (搜尋 "notifications uwp")。 本文中所提供的 C# 範例使用該 NuGet 套件 1.0.0 版本。
+**安裝通知程式庫。** 如果您想要使用 C# 而不是 XML 產生通知，請安裝名稱為 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 套件 (搜尋 "notifications uwp")。 本文中所提供的 C# 範例使用該 NuGet 套件 1.0.0 版本。
 
-**安裝通知視覺化工具。** 這個免費的 UWP 應用程式可協助您透過在編輯磚時提供即時視覺預覽 (類似 Visual Studio 的 XAML 編輯器/設計檢視)，以設計彈性動態磚。 如需詳細資訊，請參閱[通知視覺化工具](notifications-visualizer.md)或[從 Microsoft Store 下載通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)。
+**安裝通知視覺化檢視。** 這個免費的 UWP 應用程式可協助您透過在編輯磚時提供即時視覺預覽 (類似 Visual Studio 的 XAML 編輯器/設計檢視)，以設計彈性動態磚。 如需詳細資訊，請參閱[通知視覺化工具](notifications-visualizer.md)或[從 Microsoft Store 下載通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)。
 
 
 ## <a name="how-to-send-a-tile-notification"></a>如何傳送磚通知
@@ -203,12 +203,12 @@ TileContent content = new TileContent()
 
 ![彈性磚大小：小、中、寬及大](images/adaptive-tiles-sizes.png)
 
-## <a name="branding"></a>商標
+## <a name="branding"></a>Branding
 
 
 您可以使用通知承載的商標屬性，控制動態磚底部的商標 (顯示名稱和角標誌)。 您可以選擇顯示 "none"、僅顯示 "name"、僅顯示 "logo"，或使用 "nameAndLogo" 來顯示兩者。
 
-**注意：** Windows Mobile 不支援角落標誌，因此"logo"和"nameAndLogo"預設"name"行動裝置版上。
+**附註**  Windows 行動裝置不在行動裝置上支援角標誌，因此 「 商標 」 和 「 nameAndLogo 」 預設值為"name"。
 
  
 
@@ -274,13 +274,13 @@ TileContent content = new TileContent()
 };
 ```
 
-**預設商標結果：**
+**預設商標的結果：**
 
 ![磚的預設品牌](images/adaptive-tiles-defaultbranding.png)
 
 如果您沒有指定通知承載中的品牌，基底磚的屬性將決定品牌。 如果基底磚顯示顯示名稱，則品牌將會預設為 "name"。 否則若未出現顯示名稱，品牌將會預設為 "none"。
 
-**注意：** 這是變更從 Windows8.x，其預設商標為"logo"。
+**附註**  這是一項變更中 Windows 8.x 所在的預設商標是"標誌。 」
 
  
 
@@ -406,22 +406,22 @@ new AdaptiveText()
 
 ![彈性磚文字樣式](images/adaptive-tiles-textstyles.png)
 
-**注意：** 如果沒有指定 hint-style，則樣式預設為 caption。
+**附註**  樣式會預設為標題，如果未指定提示樣式。
 
  
 
-**基本文字樣式**
+**基本的文字樣式**
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
 | &lt;text hint-style="\*" /&gt; | 字型高度               | 字型寬度 |
-| caption                        | 12 個有效像素 (epx) | Regular     |
-| body                           | 15 epx                    | Regular     |
+| caption                        | 12 個有效像素 (epx) | 標準     |
+| body                           | 15 epx                    | 標準     |
 | base                           | 15 epx                    | Semibold    |
-| subtitle                       | 20 epx                    | Regular     |
+| subtitle                       | 20 epx                    | 標準     |
 | title                          | 24 epx                    | Semilight   |
-| subheader                      | 34 epx                    | Light       |
-| header                         | 46 epx                    | Light       |
+| subheader                      | 34 epx                    | 亮       |
+| header                         | 46 epx                    | 亮       |
 
  
 
@@ -481,11 +481,11 @@ new AdaptiveText()
 ## <a name="groups-and-subgroups"></a>群組與子群組
 
 
-群組可以讓您從語意宣告群組內的內容相關，而且必須以內容的完整性顯示，才會具有意義。 例如，您可能會有兩個文字元素、一個標頭和一個子標頭，如果只顯示標頭，將不具任何意義。 為子群組內的這些元素分組，將會顯示所有元素 (如果可以容納)，或完全不顯示任何元素 (因為無法容納)。
+「群組」可讓您語意式宣告群組中的內容互相關聯，且內容必須完整顯示才有意義。 例如，您可能會有兩個文字元素、一個標頭和一個子標頭，如果只顯示標頭，將不具任何意義。 為子群組內的這些元素分組，將會顯示所有元素 (如果可以容納)，或完全不顯示任何元素 (因為無法容納)。
 
 若要在裝置和螢幕上提供最佳體驗，請提供多個群組。 擁有多個群組可讓您的磚配合較大的螢幕。
 
-**注意：** 群組的唯一有效的子系是子群組。
+**附註**  群組的唯一有效的子系是子群組。
 
  
 
@@ -576,7 +576,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 ## <a name="subgroups-columns"></a>子群組 (欄)
 
 
-子群組也可讓您在群組中，將資料分成多個語意式區段。 對於動態磚，這在視覺上會翻譯成欄。
+子群組可讓您在群組內將資料分割為語意區段。 針對動態磚，這會以虛擬方式轉譯為資料行。
 
 **hint-weight** 屬性可讓您控制欄寬。 **hint-weight** 的值會表示為可用空間的加權比例，這與 **GridUnitType.Star** 行為相同。 對於等寬的欄，將每個加權指派為 1。
 
@@ -607,7 +607,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 <td align="left">25%</td>
 </tr>
 <tr class="even">
-<td align="left">總加權：4</td>
+<td align="left">總重量：4</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -638,7 +638,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 <td align="left">66.7%</td>
 </tr>
 <tr class="even">
-<td align="left">總加權：3</td>
+<td align="left">總重量：3</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -669,7 +669,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 <td align="left">80%</td>
 </tr>
 <tr class="even">
-<td align="left">總加權：100</td>
+<td align="left">總重量：100</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -679,7 +679,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 
 ![子群組，加權總計為 100](images/adaptive-tiles-subgroups03.png)
 
-**注意：** 8 個像素邊界會自動新增欄之間。
+**附註**  8 像素的邊界會自動加入資料行之間。
 
  
 
@@ -787,7 +787,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
 ![天氣磚的範例](images/adaptive-tiles-weathertile.png)
 
-## <a name="images"></a>影像
+## <a name="images"></a>映像
 
 
 &lt;image&gt; 元素用來顯示磚通知上的影像。 影像可以內嵌於磚內容內 (預設值)、當做內容後方的背景影像，或當做以動畫方式從通知上方進入的預覽影像。
@@ -1179,7 +1179,7 @@ TileWide = new TileBinding()
 
 ![預覽影像的範例](images/adaptive-tiles-imagepeeking.png)
 
-**預覽和背景影像的圓形裁剪**
+**查看和背景影像的圓形裁剪**
 
 在預覽和背景影像上使用 hint-crop 屬性以進行圓形裁剪：
 
@@ -1199,7 +1199,7 @@ new TilePeekImage()
 
 ![預覽和背景影像的圓形裁剪](images/circlecrop-image.png)
 
-**同時使用預覽和背景影像**
+**使用 peek 和背景映像**
 
 若要在磚通知上同時使用預覽和背景影像，請在您的通知承載中指定預覽影像和背景影像。
 
@@ -1212,7 +1212,7 @@ new TilePeekImage()
 
 您可以使用 **hint-overlay** 在背景和預覽影像上加上黑色重疊，它接受 0 至 100 的整數，0 代表沒有重疊，而 100 代表全黑的重疊。 您可以使用重疊來協助確保磚上文字的可讀性。
 
-**在背景影像上使用 hint-overlay**
+**使用背景映像上的提示覆疊**
 
 只要承載中有部分文字元素，背景影像的預設值就會是 20% 重疊 (否則預設為 0% 重疊)。
 
@@ -1239,11 +1239,11 @@ TileWide = new TileBinding()
 }
 ```
 
-**hint-overlay 的結果：**
+**提示覆疊結果：**
 
 ![影像 hint overlay 的範例](images/adaptive-tiles-image-hintoverlay.png)
 
-**在預覽影像上使用 hint-overlay**
+**查看映像上使用提示覆疊**
 
 在 Windows 10 版本 1511 中，也支援預覽影像的重疊，就和背景影像一樣。 以 0 至 100 的整數指定預覽影像元素上的 hint-overlay。 預覽影像預設的重疊為 0 (沒有重疊)。
 
@@ -1390,11 +1390,11 @@ TileWide = new TileBinding()
 ```
 
 ## <a name="related-topics"></a>相關主題
-* [磚內容結構描述](../tiles-and-notifications/tile-schema.md)
-* [傳送本機磚通知](sending-a-local-tile-notification.md)
-* [特殊磚範本](special-tile-templates-catalog.md)
-* [UWP 社群工具組 - 通知](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
-* [GitHub 上的 Windows 通知](https://github.com/WindowsNotifications)
+* [並排顯示內容的結構描述](../tiles-and-notifications/tile-schema.md)
+* [通知區域的圖格](sending-a-local-tile-notification.md)
+* [特殊的磚範本](special-tile-templates-catalog.md)
+* [UWP 社群工具組-通知](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [在 GitHub 上的 Windows 通知](https://github.com/WindowsNotifications)
 
  
 

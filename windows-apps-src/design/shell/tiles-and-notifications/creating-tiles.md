@@ -1,5 +1,5 @@
 ---
-Description: A tile is an app's representation on the Start menu. Every app has a tile. When you create a new Universal Windows Platform (UWP) app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo.
+Description: App 在 [開始] 功能表上以磚的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。
 title: 磚
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
@@ -9,17 +9,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e46d73c91f54b1bb74a70990a238f13ccd47645d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946889"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634433"
 ---
-# <a name="tiles-for-uwp-apps"></a>適用於 UWP app 的磚
+# <a name="tiles-for-uwp-apps"></a>適用於 UWP App 的磚
 
  
 
-App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
+App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。 Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
 
 ## <a name="configure-the-default-tile"></a>設定預設磚
 
@@ -47,15 +47,15 @@ App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一�
 
 以下是您應該更新的幾個項目。
 
--   DisplayName：使用您想要在磚上顯示的名稱來取代此值。
--   ShortName：因為磚上可容納顯示名稱的空間有限，建議您另外指定 ShortName，以確保您的 app 名稱不會被截斷。
+-   DisplayName:這個值取代為您想要在您的磚上顯示的名稱。
+-   簡短名稱：因為您的顯示名稱，以符合圖格上的有限的空間，建議您指定簡短名稱，藉此確定您的應用程式名稱不會截斷。
 -   標誌影像：
 
     您應該以自己的影像取代這些影像。 您可以選擇為不同的視覺比例提供影像，但不需全部提供。 若要確保您的 app 在各種裝置上有很好的顯示效果，我們建議您提供每個影像的 100%、200% 及 400% 比例版本。 請參閱[磚和圖示資產](app-assets.md)，以深入了解如何產生這些資產。
 
     縮放影像按照以下命名慣例：
     
-    *&lt;影像名稱&gt;*.scale-*&lt;縮放比&gt;*.*&lt;影像檔案副檔名&gt;* 
+    *&lt;映像名稱&gt;*.scale-*&lt;縮放比例&gt;*。*&lt;影像檔案延伸模組&gt;* 
 
     例如：SplashScreen.scale-100.png
 

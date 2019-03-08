@@ -1,6 +1,6 @@
 ---
 title: 三角形內插補點
-description: 在轉譯期間，管線會在每個三角形上插入頂點資料。
+description: 在轉譯期間，管線會在每個矩形上插入頂點資料。
 ms.assetid: 1A76DD78-CED7-42BE-BA81-B9050CD3AF9B
 keywords:
 - 三角形內插補點
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e8017cd75ed3dfd4129d6c15d668648792cc8d0a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919264"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592903"
 ---
 # <a name="triangle-interpolation"></a>三角形內插補點
 
 
-在轉譯期間，管線會在每個矩形上插入頂點資料。 頂點資料可以是各式各樣的資料，可能包括 (但不限於)︰擴散色彩、反射色彩，擴散 Alpha (三角形不透明度)、反射 Alpha，以及一個霧因數。 對於可程式化的頂點管線，霧因數來自霧暫存器。 對於固定函式頂點管線，霧因數來自反射 alpha。
+在轉譯期間，管線會在每個矩形上插入頂點資料。 頂點資料可以是各式各樣的資料，可能包括 (但不限於)︰擴散色彩、反射色彩，擴散 Alpha (三角形不透明度)、反射 Alpha，以及一個霧因素。 對於可程式化的頂點管線，霧因數來自霧暫存器。 對於固定函式頂點管線，霧因數來自反射 alpha。
 
 對於某些頂點資料，內插補點是根據目前的陰影模式而定，如下所示：
 
@@ -35,7 +35,7 @@ ms.locfileid: "8919264"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[座標系統與幾何](coordinate-systems-and-geometry.md)
+[座標系統和幾何](coordinate-systems-and-geometry.md)
 
  
 

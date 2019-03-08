@@ -1,6 +1,6 @@
 ---
 title: 第 2 層
-description: 串流資源的第 2 層支援新增第 1 層以外的功能，例如當大小至少是一個標準磚形狀時保證非壓縮紋理 Mipmap；鉗制詳細層級 (LOD) 以及取得著色器作業狀態的相關著色器指示；此外，讀取 NULL 對應磚，將取樣值視為零。
+description: 串流資源的第 2 層支援新增第 1 層以外的功能，例如當大小至少是一個標準磚形狀時保證非壓縮紋理 mipmap；鉗制詳細等級 (LOD) 以及取得著色器作業狀態的相關著色器指示；此外，讀取 NULL 對應磚，將取樣值視為零。
 ms.assetid: 111A28EA-661A-4D29-921A-F2E376A46DC5
 keywords:
 - 第 2 層
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9f9a69c0e30459929d1e31084ea88b3f7ebbd0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925362"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612883"
 ---
 # <a name="tier-2"></a>第 2 層
 
 
-串流資源的第 2 層支援新增第 1 層以外的功能，例如當大小至少是一個標準磚形狀時保證非壓縮紋理 Mipmap；鉗制詳細等級 (LOD) 以及取得著色器作業狀態的相關著色器指示；此外，讀取 NULL 對應磚，將取樣值視為零。
+串流資源的第 2 層支援新增第 1 層以外的功能，例如當大小至少是一個標準磚形狀時保證非壓縮紋理 mipmap；鉗制詳細等級 (LOD) 以及取得著色器作業狀態的相關著色器指示；此外，讀取 NULL 對應磚，將取樣值視為零。
 
 ## <a name="span-idtier2generalsupportspanspan-idtier2generalsupportspanspan-idtier2generalsupportspantier-2-general-support"></a><span id="Tier_2_general_support"></span><span id="tier_2_general_support"></span><span id="TIER_2_GENERAL_SUPPORT"></span>第 2 層一般支援
 
@@ -44,12 +44,12 @@ ms.locfileid: "8925362"
 
 存取 **NULL** 材質會造成狀態回應上 [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) (英文) 作業的紋理讀取傳回 False。 無論紋理存取結果如何在著色器內寫入遮罩，以及多少元件為紋理格式 (紋理格式的組合可能會造成不須存取其紋理的假象)，都會發生這項問題。
 
-## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>對齊限制
+## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>對齊條件約束
 
 
-標準磚圖形對齊限制︰在所有維度填滿至少一個標準磚的 Mipmap 一定會使用標準並排，餘數會視為**單位**而封裝至 N 磚 (將 N 回報至應用程式)。 應用程式可將 N 磚對應至磚集區中的任意斷續位置，但必須將所有的壓縮磚都對應，否則全都不對應。 Mip 套件是每個陣列切割中的一組獨特壓縮磚。
+標準的並排顯示圖形的對齊條件約束：若要使用標準並排，視為其餘封裝為保證填滿所有維度中至少一個標準的並排顯示的 Mipmap**單位**成 N (N 回報給應用程式)。 應用程式可將 N 磚對應至磚集區中的任意斷續位置，但必須將所有的壓縮磚都對應，否則全都不對應。 Mip 套件是每個陣列切割中的一組獨特壓縮磚。
 
-## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大削減篩選
+## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大減少篩選
 
 
 支援最小/最大削減篩選。 請參閱[串流資源紋理取樣功能](streaming-resources-texture-sampling-features.md) (英文)。
@@ -64,7 +64,7 @@ ms.locfileid: "8925362"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[串流資源功能層級](streaming-resources-features-tiers.md)
+[資料流的資源功能層級](streaming-resources-features-tiers.md)
 
  
 

@@ -1,5 +1,5 @@
 ---
-Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+Description: 提供一份檢查清單，以協助確定您的通用 Windows 平台 (UWP) app 可提供無障礙功能。
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: 協助工具檢查清單
 label: Accessibility checklist
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c9ff9760b3ae9b852fe1ae1b86d1cc48e49c5dd4
-ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "8990481"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602443"
 ---
 # <a name="accessibility-checklist"></a>協助工具檢查清單
 
@@ -41,12 +41,12 @@ ms.locfileid: "8990481"
 
 3. 請確定文字是可讀取的大小
 
-    * Windows 包含各種協助工具和設定，使用者可以充分利用並調整自己的需求和喜好設定來閱讀文字。 其中包括：
-        * 放大鏡工具，可以放大 UI 的選取的區域。 您應該確定應用程式中文字的版面配置不會讓很難使用放大鏡供閱讀。
-        * 中的全域縮放及解析度設定**設定]-> [系統]-> [顯示]-> [縮放與版面配置**。 確切哪些大小設定選項可供使用時可能會有所不同，因為這會根據顯示裝置的功能。
-        * 中的文字大小設定**設定]-> [輕鬆存取]-> [顯示**。 調整**大的文字，使**設定，來支援在所有應用程式和 （所有 UWP 文字控制項都支援縮放體驗不需要任何的自訂項目或範本化的文字） 的螢幕上的控制項中指定的文字大小。
+    * Windows 包含各種協助工具和設定，使用者可以利用和調整，以自己的需求和喜好設定，用於讀取文字。 這些地方包括：
+        * [放大鏡] 工具，可以放大 UI 中的所選取的區域。 您應該確定在您的應用程式中的文字版面配置不會造成難以使用 [放大鏡] 進行讀取。
+        * 中的全域規模和解析度設定**設定]-> [系統]-> [顯示比例和版面配置]-> [**。 確實有哪些調整大小選項可能會不同，因為這取決於顯示裝置的功能。
+        * 中的文字大小設定**設定]-> [輕鬆存取]-> [顯示**。 調整**使文字變大**設定來指定文字的大小在支援跨所有應用程式和畫面 （所有 UWP 文字控制項都支援規模調整體驗，而不需要任何自訂或樣板化的文字） 的控制項。
         > [!NOTE]
-        > **讓全部放大**設定可讓使用者指定其慣用的大小，對於文字與應用程式在一般情況下只其主要畫面上。
+        > **更大的每個項目**設定可讓使用者，只有其主畫面上的一般情況下指定慣用的文字和應用程式的大小。
 
 4. 用肉眼檢查 UI，確定文字有適當的對比、元素可在高對比佈景主題中正確顯示以及使用正確的色彩。
 
@@ -75,5 +75,5 @@ ms.locfileid: "8990481"
 * [協助工具文字的需求](accessible-text-requirements.md)
 * [文字大小調整](../input/text-scaling.md)
 * [協助工具](accessibility.md)
-* [協助工具設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [協助工具的設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [應避免的做法](practices-to-avoid.md)

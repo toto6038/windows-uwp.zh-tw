@@ -1,22 +1,22 @@
 ---
-Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
-title: 設定 App 價格與可用性
+Description: 您可以從應用程式提交程序的 [價格與可用性] 頁面決定您的應用程式價格、您是否提供免費試用，以及客戶如何、何時、何處可取得您的應用程式。
+title: 設定應用程式價格與可用性
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 價格, 提供, 可搜尋的, 免費試用, 試用, 試用版, 應用程式, 發行日期
 ms.localizationpriority: medium
 ms.openlocfilehash: d5fa6c3e23516a5255f8bd3252f6ded233101625
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922091"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640163"
 ---
 # <a name="set-app-pricing-and-availability"></a>設定應用程式價格與可用性
 
 
-您可以從 [app 提交程序](app-submissions.md)的 **\[價格與可用性\]** 頁面決定您的 app 價格、您是否提供免費試用，以及客戶如何、何時、何處可取得您的 app。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
+您可以從 [app 提交程序](app-submissions.md)的 [價格與可用性] 頁面決定您的 app 價格、您是否提供免費試用，以及客戶如何、何時、何處可取得您的 app。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
 
 
 ## <a name="markets"></a>市場
@@ -49,15 +49,15 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 根據預�
 
 ## <a name="free-trial"></a>免費試用
 
-許多開發人員選擇使用Microsoft Store提供的試用功能，讓客戶免費試用應用程式。 根據預設，[**沒有免費試用**] 已選取，且您的應用程式不會有試用。 如果您想要提供試用，可以從 **\[免費試用\]** 下拉式清單選取一個值。
+許多開發人員選擇使用市集提供的試用功能，讓客戶免費試用 app。 根據預設，[**沒有免費試用**] 已選取，且您的應用程式不會有試用。 如果您想要提供試用，可以從 **\[免費試用\]** 下拉式清單選取一個值。
 
 有兩種類型的試用可供您選擇，而且您可以選擇設定開始和停止提供試用的日期和時間。
 
 ### <a name="time-limited"></a>限時
 
-選擇 [**限時**]，讓客戶免費試用您的應用程式幾天，如 [**1 天**]、[**7 天**]、[**15 天**] 或 [**30 天**]。 您可以新增程式碼來[排除或限制試用版中的功能](../monetize/in-app-purchases-and-trials.md)，或者您可以讓客戶在該期間存取完整的功能。 
+選擇**期限**允許客戶的特定幾天的免費試用您的應用程式：**1 天**， **7 天**， **15 天**，或**30 天**。 您可以新增程式碼來[排除或限制試用版中的功能](../monetize/in-app-purchases-and-trials.md)，或者您可以讓客戶在該期間存取完整的功能。 
 > [!NOTE]
-> 限時試用不會對使用 Windows 10 組建 10.0.10586 或較舊版本的客戶顯示，或是使用 Windows Phone 8.1 和較舊版本的客戶。
+> 在 Windows 10 組建 10.0.10586 客戶不會顯示時間限制的試用版或更早版本，或在 Windows Phone 8.1 及更早版本的客戶。
 
 ### <a name="unlimited"></a>無限制
 
@@ -70,14 +70,14 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 根據預�
 >[!NOTE]
 > 這些日期僅適用於使用 Windows 10 (包括 Xbox) 的客戶。 如果您的 App 適用於使用較舊作業系統版本的客戶，只要您的產品可供使用，也會持續提供試用給這些客戶。 
 
-若要設定何時將試用提供給 Windows 10 的客戶，請將 **\[開始於\]** 和/或 **\[結束於\]** 下拉式清單變更為 **\[於\]**，然後選擇日期和時間。 如果您這樣做，可以選擇 [**UTC**]，如此您選擇的時間會是全球定位時間 (UTC)，或選擇 [**當地**]，如此將會使用市場所在時區的時間。 (請注意，對於包含多個時區的市場，只會使用該市場中的一個時區。 若是美國，東岸時區使用）。如果您想要設定不同的日期，為任何市場，您可以選取**針對特定市場自訂**。
+若要設定何時將試用提供給 Windows 10 的客戶，請將 **\[開始於\]** 和/或 **\[結束於\]** 下拉式清單變更為 **\[於\]**，然後選擇日期和時間。 如果您這樣做，可以選擇 [**UTC**]，如此您選擇的時間會是全球定位時間 (UTC)，或選擇 [**當地**]，如此將會使用市場所在時區的時間。 (請注意，對於包含多個時區的市場，只會使用該市場中的一個時區。 若是美國，則會使用東岸時區)。您可以選取**自訂特定市場**如果您想要設定的任何 market(s) 不同的日期。
 
 
 ## <a name="sale-pricing"></a>銷售定價
 
 如果您想要以降低的價格提供 App 一段有限的時間，您可以建立及排程銷售。
 
-如需詳細資訊，請參閱[降價銷售應用程式與附加內容](put-apps-and-add-ons-on-sale.md)。
+如需詳細資訊，請參閱[促銷 App 和附加元件](put-apps-and-add-ons-on-sale.md)。
 
 
 ## <a name="organizational-licensing"></a>組織授權

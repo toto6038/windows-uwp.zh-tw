@@ -6,17 +6,17 @@ ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926898"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592953"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 
 本教學課程告訴您如何自訂 XAML 應用程式的 UI。 警告：本教學課程不一定會涉及獨角獸。 (確實如此！)  
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 * [Visual Studio 2017 和 Windows 10 SDK (10.0.15063.468 或更新版本)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>第 0 部分：取得程式碼
@@ -30,7 +30,7 @@ PhotoLab 應用程式有兩個主要頁面：
 **DetailPage.xaml：** 在選取單一相片之後，顯示該相片。 飛出視窗編輯功能表可用來變更、重新命名和儲存相片。
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-create-a-fancy-slider-control"></a>步驟 1：建立美觀滑桿控制項  
+## <a name="part-1-create-a-fancy-slider-control"></a>第 1 部分：建立美觀的滑桿控制項  
 
 通用 Windows 平台 (UWP) 提供幾個用來自訂應用程式外觀的方法。 從字型和印刷樣式設定到色彩和漸層，再到模糊效果，您有許多種方式可以選擇。 
 
@@ -38,7 +38,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
 <figure>
     <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*使用預設樣式的平常滑桿。*</figure>
+    <figure>*具有預設樣式的 humble 滑桿。*</figure>
 </figure>
 
 這些滑桿是不錯，滑桿該有的功能全都有，就是不太有型。 我們來修整一下。 
@@ -60,9 +60,9 @@ PhotoLab 應用程式有兩個主要頁面：
 
     [Windows.XAML.Ui.Shapes 命名空間](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)提供七個可以選擇的圖形。 有橢圓形、矩形，以及所謂「路徑」的項目，這可建立任何類型的圖形；是的，甚至獨角獸都行！ 
     
-    <!-- TODO reduce size --> ![獨角獸](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size --> ![Unicorn](../basics/images/xaml-basics/unicorn.png)
     
-    > **請參閱：**[繪製圖形](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章告訴您一切您需要知道關於 XAML 圖形的所有內容。 
+    > **了解它：**[繪製圖案](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章會告訴您想要知道有關 XAML 圖形的所有項目。 
     
     我們想要建立三角形外觀的介面控件，就像在立體音響音量控制上看到的圖形一樣。
     
@@ -87,7 +87,7 @@ PhotoLab 應用程式有兩個主要頁面：
         Minimum="-2"
         Maximum="2" />
     ```
-    **之後**
+    **After**
     ```xaml
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -109,7 +109,7 @@ PhotoLab 應用程式有兩個主要頁面：
         Maximum="2" />
     ```
 
-    附註：
+    注意：
     * 如果查看 XAML 周圍，您會看到這些元素是在 Grid 中。 我們將多邊形放在曝光滑桿的的同一列 (Grid.Row="2")，因此這些元素會出現在相同位置。 我們將多邊形放在滑桿之前，讓滑桿顯示在圖形的最上方。
     * 我們在多邊形上設定 Stretch="Fill" 和 HorizontalAlignment="Stretch"，讓三角形調整以填滿可用空間。 如果滑桿寬度變小或變大，多邊形也會縮小或擴大，與之相配合。 
 
@@ -134,7 +134,7 @@ PhotoLab 應用程式有兩個主要頁面：
             Minimum="-1"
             Maximum="1" />
     ```
-    **之後**
+    **After**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -164,7 +164,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
     ![兩個美觀的滑桿](../basics/images/xaml-basics/style-2sliders-done.png)
 
-7. **額外加分**
+7. **額外的信用額度**
 
     為濃淡滑桿新增具有由綠色變紅色漸層的背景圖形。 
 
@@ -175,7 +175,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
  
     
-## <a name="part-2-create-basic-styles"></a>第 2 部分：建立基本樣式
+## <a name="part-2-create-basic-styles"></a>第 2 部分：建立基本的樣式
 
 XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式碼數量，而且可以讓您更新應用程式外觀更加輕鬆得多。
 
@@ -262,7 +262,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Grid.Resources>
     ```
 
-    **之後**
+    **After**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -302,7 +302,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             </Style>                            
     ```    
 
-    **之後**
+    **After**
     ```XAML
             <Style TargetType="TextBlock"
                    x:Key="ValueTextBox">
@@ -325,7 +325,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```
 
-    **之後**
+    **After**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -337,11 +337,10 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
 
 6. 編譯和執行應用程式。 應該看起來... 都一樣。 但您會有美妙滿意成就感撰寫有效率可維護的程式碼。
 
-<!-- TODO add new start/end points -->
-恭喜，您已完成 2 部分！
+<!-- TODO add new start/end points --> 恭喜，您已完成第 2 部分 ！
 
 
-## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>第 3 部分：使用控制項範本建立美觀的滑桿
+## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>第 3 部分：使用控制項範本來製作花俏的滑桿
 
 記得我們如何在第 1 部分新增了滑桿後面的圖形，讓它看起來更酷嗎？
 
@@ -647,7 +646,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Grid.RowDefinitions>        
     ```
 
-    **之後**
+    **After**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -692,7 +691,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Polygon>           
     ```
     
-    **之後**
+    **After**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -712,7 +711,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
                     Grid.ColumnSpan="3" />          
     ```
     
-    **之後**
+    **After**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Height="{ThemeResource SliderTrackThemeHeight}"
@@ -751,7 +750,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Template="{StaticResource FancySliderControlTemplate}"/>    
     ```
     
-    **之後**
+    **After**
     ```XAML
     <Slider Header="Exposure" 
             Grid.Row="2"  Foreground="Transparent"
@@ -792,7 +791,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Maximum="1" />
     ```
     
-    **之後**
+    **After**
     ```XAML
     <Slider Header="Temperature"
             Grid.Row="3" Foreground="Transparent"
@@ -834,7 +833,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Maximum="1" />
     ```
     
-    **之後**
+    **After**
     ```XAML
     <Slider Header="Tint"
             Grid.Row="4" Foreground="Transparent"
@@ -859,5 +858,4 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
     
     如您所見，我們更新改善了多邊形的置放方式；現在多邊形的底部已對齊滑桿縮圖的底部。
     
-<!-- TODO correct folder -->
-恭喜，您已經完成教學課程了！ 如果遇到困難或想要查看最終方案，您可以在 [UWP app 範例存放庫](https://github.com/Microsoft/Windows-universal-samples)中找到完整的範例。
+<!-- TODO correct folder --> 恭喜，您已經完成本教學課程 ！ 如果遇到困難或想要查看最終方案，您可以在 [UWP app 範例存放庫](https://github.com/Microsoft/Windows-universal-samples)中找到完整的範例。

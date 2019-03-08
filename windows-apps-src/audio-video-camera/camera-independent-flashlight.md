@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fd69900995a51af806c99b25aae43149d6e30a7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919849"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622603"
 ---
 # <a name="camera-independent-flashlight"></a>相機獨立閃光燈
 
 
 
-本文章說明如何存取和使用裝置的燈光 (如果有的話)。 燈光功能分別從裝置的相機和閃燈功能進行管理。 除了取得燈光的參考及調整其設定以外，本文也說明如何在不使用燈光時正確地釋出燈光資源，以及如何偵測燈光的可用性何時變更以免另一個 App 正在使用它。
+本文章說明如何存取和使用裝置的燈光 (如果有的話)。 燈光功能分別從裝置的相機和閃光燈功能來管理。 除了取得燈光的參考及調整其設定以外，本文也說明如何在不使用燈光時正確地釋出燈光資源，以及如何偵測燈光的可用性何時變更以免另一個 App 正在使用它。
 
 ## <a name="get-the-devices-default-lamp"></a>取得裝置的預設燈光
 

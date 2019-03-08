@@ -1,16 +1,16 @@
 ---
 title: 相機條碼掃描器設定
 description: 相機條碼掃描器啟用或停用
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b802dfa44f36768dc2446ee1d15bf9ca6d4f9f3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 3db54caa5be88559aa44f9a99273e9d8d5d6a00d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051041"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610303"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>啟用或停用隨附於 Windows 10 的軟體解碼器
 在 Windows 10 版本 1803 中，安裝有軟體解碼器並且預設為啟用。  如果您不想使用相機條碼掃描器，或者如果您已經取得協力廠商的解碼器搭配 Windows.Devices.PointOfService.BarcodeScanner API，並且兩者都不想使用，您可以停用 Windows 隨附的軟體解碼器。

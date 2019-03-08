@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6618b7573be7cd39f703299b9418d1575297120e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928399"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622623"
 ---
 # <a name="texture-wrapping"></a>紋理包裝
 
@@ -21,7 +21,7 @@ ms.locfileid: "8928399"
 
 ![兩個點之間插補線的簡圖](images/interp1.png)
 
-注意：在此圖例中，A 點與 B 點之間最短的距離會約略通過紋理中間。 啟用 u 紋理或 v 紋理座標包裝，可變更 Direct3D 計算 u 方向與 v 方向上紋理座標之間最短距離的方式。 根據定義，假設 0.0 與 1.0 同時存在，則紋理包裝會使轉譯器在紋理座標組之間選擇最短的路徑。 最後一段是較為棘手的部分︰您可以想像在單一方向啟用紋理包裝時，會導致系統彷彿將紋理包裝在圓柱體中。 例如，設想下列簡圖：
+注意：在此圖例中，A 點與 B 點之間最短的距離會約略通過紋理中間。 啟用 u 紋理或 v 紋理座標包裝，可變更 Direct3D 計算 u 方向與 v 方向上紋理座標之間最短距離的方式。 根據定義，假設 0.0 與 1.0 同時存在，則紋理包裝會使轉譯器在紋理座標組之間選擇最短的路徑。 最後一個的位元是麻煩的部分：您可以想像啟用包裝在一個方向的紋理會使系統將材質，如同它已包裝的磁柱。 例如，設想下列簡圖：
 
 ![一個紋理及兩個點包裝在一個圓柱體中的簡圖](images/interp2.png)
 
@@ -41,9 +41,9 @@ ms.locfileid: "8928399"
 
 若不啟用紋理包裝，轉譯器就不會在必要的方向上進行插補，呈現出寫實的反射影像。 而是在柱子的前方呈現 u 座標 0.175 及 0.875 間紋理的水平壓縮版本，因為其通過了紋理的中心。 包裝效果因此失去作用。
 
-請勿將「紋理包裝」與有著相似名稱的「紋理定址模式」混淆。 紋理包裝會在紋理定址之前執行。 請務必確認紋理包裝資料不包含任何位於 \[0.0, 1.0\] 範圍之外的紋理座標，因為會產生未定義的結果。 如需有關紋理定址的更多資訊，請參閱[紋理定址模式](texture-addressing-modes.md)。
+請勿將「紋理包裝」與有著相似名稱的「紋理定址模式」混淆。 紋理包裝會在紋理定址之前執行。 請務必紋理換行的資料不包含任何的紋理座標的範圍之外\[0.0，1.0\]因為這會產生未定義的結果。 如需有關紋理定址的更多資訊，請參閱[紋理定址模式](texture-addressing-modes.md)。
 
-## <a name="span-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspandisplacement-map-wrapping"></a><span id="Displacement_Map_Wrapping"></span><span id="displacement_map_wrapping"></span><span id="DISPLACEMENT_MAP_WRAPPING"></span>置換貼圖包裝
+## <a name="span-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspandisplacement-map-wrapping"></a><span id="Displacement_Map_Wrapping"></span><span id="displacement_map_wrapping"></span><span id="DISPLACEMENT_MAP_WRAPPING"></span>換行的位移對應
 
 
 置換貼圖由花格引擎進行插補。 由於花格引擎無法指定包裝模式，紋理包裝無法在置換貼圖上使用。 應用程式可選擇使用一組強制插補於任一方向進行的頂點。 應用程式也可指定插補使用簡單線性插補完成。

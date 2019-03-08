@@ -1,5 +1,5 @@
 ---
-Description: Consider how often we read text in our daily lives - in email, a book, a road sign, the prices on a menu, tire pressure markings, or posters on a street pole.
+Description: 想想我們每天多常閱讀電子郵件、書籍、路標、菜單價格、胎壓標記，或是街道柱子上張貼海報中的文字。
 title: 文字控制項
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
@@ -12,20 +12,20 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0812e4655b8d817f4318f6bd87f7578ee09d635e
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037190"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621423"
 ---
 # <a name="text-controls"></a>文字控制項
 
 文字控制項包含文字輸入方塊、密碼方塊、自動建議方塊以及文字區塊。 XAML 架構提供用於轉譯、輸入和編輯文字的數個控制項，以及一組用於格式化文字的屬性。
 
 - 顯示唯讀文字的控制項是 [TextBlock](text-block.md) 與 [RichTextBlock](rich-text-block.md)。
-- 輸入和編輯文字的控制項是： [TextBox](text-box.md)、 [RichEditBox](rich-edit-box.md)、 [AutoSuggestBox](auto-suggest-box.md)，以及[PasswordBox](password-box.md)。
+- 文字輸入和編輯的控制項如下：[TextBox](text-box.md)， [RichEditBox](rich-edit-box.md)， [AutoSuggestBox](auto-suggest-box.md)，和[PasswordBox](password-box.md)。
 
-> **重要 Api**: [TextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、 [RichTextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、 [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、 [RichEditBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、 [AutoSuggestBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、 [PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
+> **重要的 Api**:[TextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)， [RichTextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)， [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)， [RichEditBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)， [AutoSuggestBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)，[PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -35,13 +35,13 @@ ms.locfileid: "9037190"
 
 使用 **TextBlock** 可在您的應用程式中顯示大部分的唯讀文字。 您可以使用它來顯示單行或多行文字、內嵌的超連結，以及已設定格式的文字 (例如，粗體、斜體或加上底線)。
 
-TextBlock 通常很容易使用，並且提供較 RichTextBlock 更優異的文字轉譯效能，因此使其成為大部分應用程式 UI 文字的首選。 您可取得 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) 屬性值，以在您的應用程式中透過 TextBlock 輕鬆存取和使用文字。
+TextBlock 通常很容易使用，並且提供較 RichTextBlock 更優異的文字轉譯效能，因此使其成為大部分應用程式 UI 文字的首選。 您可取得 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) 屬性值，以在您的 app 中透過 TextBlock 輕鬆存取和使用文字。
 
 其還提供許多可用來自訂您文字轉譯方式的相同格式設定選項。 儘管您可以在文字中放置分行符號，但 TextBlock 是針對顯示單一段落而設計，不支援文字縮排。
 
 當您需要支援多個段落、多欄文字或其他複雜的文字配置，或是內嵌的 UI 元素 (例如影像) 時，請使用 **RichTextBlock**。 RichTextBlock 提供數項適用於進階文字配置的功能。
 
-RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) 屬性，此屬性透過 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素支援以段落為基礎的文字。 它沒有您可以用來輕鬆存取應用程式中控制項文字內容的 **Text** 屬性。  
+RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) 屬性，此屬性透過 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素支援以段落為基礎的文字。 它沒有您可以用來輕鬆存取 app 中控制項文字內容的 **Text** 屬性。  
 
 ### <a name="text-input"></a>文字輸入
 
@@ -57,18 +57,18 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 
 使用 **RichEditBox** 來顯示和編輯文字檔案。 您使用 RichEditBox 來讓使用者對應用程式進行輸入的方式與使用其他標準文字輸入方塊的方式不同。 更確切地說，您會使用它來處理與應用程式分開的文字檔案。 您通常會將輸入到 RichEditBox 的文字儲存為 .rtf 檔案。
 
-**文字輸入是最佳選項？**
+**是文字輸入的最佳選項？**
 
 您可運用眾多方式，取得使用者在您應用程式中的輸入內容。 下列問題有助於了解最適合讓使用者輸入文字是標準文字輸入方塊，或是其他控制項。
 
--   **有效率地列舉所有有效的值是否實際？** 如果是，請考慮使用其中一個選取控制項，如[核取方塊](checkbox.md)、[下拉式清單](lists.md)、清單方塊、[選項按鈕](radio-button.md)、[滑桿](slider.md)、[切換開關](toggles.md)、[日期選擇器](date-and-time.md)或時間選擇器。
--   **是否有一組相對小的有效值？** 如果是，請考慮使用[下拉式清單](lists.md)或清單方塊，特別是如果這些值大於幾個字元的長度。
--   **有效資料是否完全不受限制？ 或有效資料是否只有格式上的限制 (內容長度或字元類型)？** 如果是，請使用文字輸入控制項。 您可以限制能輸入的字元數，此外還可在應用程式程式碼中驗證格式。
--   **該值代表的資料類型是否已經有特殊的通用控制項？** 如果是，請使用適當的控制項而不是文字輸入控制項。 例如，使用 [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) 接受日期輸入，不要使用文字輸入控制項。
+-   **可以實際地有效率的方式列舉所有有效的值？** 如果是，請考慮使用其中一個選取控制項，如[核取方塊](checkbox.md)、[下拉式清單](lists.md)、清單方塊、[選項按鈕](radio-button.md)、[滑桿](slider.md)、[切換開關](toggles.md)、[日期選擇器](date-and-time.md)或時間選擇器。
+-   **是有相當小的一份有效的值？** 如果是，請考慮使用[下拉式清單](lists.md)或清單方塊，特別是如果這些值大於幾個字元的長度。
+-   **是有效的資料完全未受限制？或有效的資料只限於格式 （受條件約束的長度或字元類型）？** 如果是，請使用文字輸入控制項。 您可以限制能輸入的字元數，此外還可在應用程式程式碼中驗證格式。
+-   **此值是否代表具有特定的通用控制項的資料類型？** 如果是，請使用適當的控制項而不是文字輸入控制項。 例如，使用 [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) 接受日期輸入，不要使用文字輸入控制項。
 -   如果資料只能是數值：
-    -   **輸入的值是否為近似和 (或) 相對於相同頁面上的其他數量？** 如果是，請使用[滑桿](slider.md)。
-    -   **在變更設定時，獲得即時回應的效果是否為使用者帶來益處？** 如果是，請使用[滑桿](slider.md)，以及可能伴隨的控制項。
-    -   **輸入的值可能會在結果出現後調整 (例如音量或亮度) 嗎？** 如果是，請使用[滑桿](slider.md)。
+    -   **值正在輸入近似和/或相對於另一個數量相同頁面上嗎？** 如果是，請使用[滑桿](slider.md)。
+    -   **使用者獲益的設定變更影響的即時意見反應嗎？** 如果是，請使用[滑桿](slider.md)，以及可能伴隨的控制項。
+    -   **已輸入的值可能之後結果觀察到，例如與磁碟區或螢幕亮度調整？** 如果是，請使用[滑桿](slider.md)。
 
 ## <a name="examples"></a>範例
 
@@ -79,7 +79,7 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/category/Text">開啟應用程式並查看文字控制項的運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -113,21 +113,21 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 如需字型指導方針，請參閱以下文章：
 
 - [印刷格式指導方針](../style/typography.md)
-- [Segoe MDL2 圖示清單與指導方針](../style/segoe-ui-symbol-font.md)
+- [Segoe MDL2 圖示清單和指導方針](../style/segoe-ui-symbol-font.md)
 
 ## <a name="pen-input"></a>手寫筆輸入
 
-**適用於：** TextBox、RichEditBox、AutoSuggestBox
+**適用於：** 文字方塊中，RichEditBox，AutoSuggestBox
 
 從 Windows 10 使用 1803 開始，XAML 文字輸入方塊使用 [Windows Ink](../input/pen-and-stylus-interactions.md) 特別提供手寫筆輸入的內嵌支援。 當使用者使用 Windows 手寫筆點選文字輸入方塊時，文字方塊會改變形式，讓使用者使用手寫筆直接在其中書寫，而不是開啟另一個輸入面板。
 
 ![文字方塊在使用手寫筆點選時展開](images/handwritingview/handwritingview2.gif)
 
-如需詳細資訊，請參閱[手寫檢視使用的文字輸入](text-handwriting-view.md)。
+如需詳細資訊，請參閱 <<c0> [ 與 [手寫] 檢視的文字輸入](text-handwriting-view.md)。
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>選擇文字控制項的正確鍵盤
 
-**適用於：** TextBox、PasswordBox RichEditBox
+**適用於：** 文字方塊中，PasswordBox RichEditBox
 
 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。
 
@@ -137,14 +137,14 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 
 例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 屬性設定為 **Number**。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。
 
->重要  
+>重要事項  
 >輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
 
 如需詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
 ## <a name="color-fonts"></a>色彩字型
 
-**適用於：** TextBlock、RichTextBlock、TextBox、RichEditBox
+**適用於：** TextBlock，RichTextBlock，文字方塊中 RichEditBox
 
 Windows 可讓字型針對每個字符包含多重色層。 例如，Segoe UI Emoji 字型會定義表情符號與其他 Emoji 字元的色彩版本。
 
@@ -162,7 +162,7 @@ Windows 可讓字型針對每個字符包含多重色層。 例如，Segoe UI Em
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>行與段落分隔字元的指導方針
 
-**適用於：** TextBlock、RichTextBlock、多行 TextBox、RichEditBox
+**適用於：** TextBlock，RichTextBlock，多行文字方塊中 RichEditBox
 
 使用行分隔字元 (0x2028) 與段落分隔字元 (0x2029) 來劃分純文字。 在每個行分隔字元後方會開始新行。 在每個段落分隔字元後方會開始新段落。
 
@@ -174,7 +174,7 @@ Windows 可讓字型針對每個字符包含多重色層。 例如，Segoe UI Em
 
 ## <a name="guidelines-for-spell-checking"></a>拼字檢查指導方針
 
-**適用於：** TextBox、RichEditBox
+**適用於：** 文字方塊中 RichEditBox
 
 進行文字輸入和編輯時，拼字檢查會在拼錯的單字上以紅色波浪線醒目提示來告知使用者該字拼錯，並為使用者提供修正拼字錯誤的方式。
 
@@ -184,11 +184,11 @@ Windows 可讓字型針對每個字符包含多重色層。 例如，Segoe UI Em
 
 您可以針對下列兩個目的，搭配文字輸入控制項使用拼字檢查：
 
--   **自動校正拼字錯誤**
+-   **若要自動更正拼字錯誤**
 
     如果確定能夠修正的話，拼字檢查引擎會自動校正拼字錯誤的字。 例如，引擎會自動將 "teh" 變更成 "the"。
 
--   **顯示替代拼法**
+-   **若要顯示替代的拼字**
 
     當拼字檢查引擎不確定修正是否正確時，會在拼字錯誤的單字底下加上紅色底線，然後在您點選或以滑鼠右鍵按一下該單字時，於操作功能表中顯示替代單字。
 
@@ -200,12 +200,12 @@ TextBox 和 RichEditBox 控制項預設會開啟拼字檢查。 您可以將 **I
 
 ## <a name="related-articles"></a>相關文章
 
-**適用於設計人員**
+**設計工具**
 - [印刷格式指導方針](../style/typography.md)
-- [Segoe MDL2 圖示清單與指導方針](../style/segoe-ui-symbol-font.md)
+- [Segoe MDL2 圖示清單和指導方針](../style/segoe-ui-symbol-font.md)
 - [新增搜尋](https://msdn.microsoft.com/library/windows/apps/hh465231)
 
 **適用於開發人員 (XAML)**
 - [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [Windows.UI.Xaml.Controls PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [String.Length property](https://msdn.microsoft.com/library/system.string.length.aspx)
+- [String.Length 屬性](https://msdn.microsoft.com/library/system.string.length.aspx)

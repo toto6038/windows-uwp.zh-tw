@@ -1,17 +1,17 @@
 ---
 description: 唯一識別建立和參照為資源的元素，存在 ResourceDictionary 中。
-title: xKey 屬性
+title: x:Key 屬性
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 407ceeb4964e616bdbcacb14620ed1a488a0072b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924768"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618213"
 ---
 # <a name="xkey-attribute"></a>x:Key 屬性
 
@@ -36,9 +36,9 @@ ms.locfileid: "8924768"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
-| object | 可共用的任何物件。 請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。 |
+| 物件 | 可共用的任何物件。 請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。 |
 | stringKeyValue | 做為索引鍵的合法字串，必須符合 _XamlName_ 文法。 請參閱下面的＜XamlName 文法＞。 | 
 
 ##  <a name="xamlname-grammar"></a>XamlName 文法
@@ -54,13 +54,13 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   字元限制在低 ASCII 範圍，更具體地說，僅限羅馬字母大寫與小寫字元、數字以及底線 (\_) 字元。
+-   字元會限制較低的 ASCII 範圍，以及更明確地說羅馬字母大寫和小寫字母、 數字和底線 (\_) 字元。
 -   不支援 Unicode 字元範圍。
 -   名稱開頭不可以是數字。
 
 ## <a name="remarks"></a>備註
 
-[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的子元素通常包含 **x:Key** 屬性，該屬性會指定該字典內的唯一索引鍵值。 XAML 處理器在載入期間會強制執行索引鍵唯一性。 非唯一的 **x:Key** 值將導致 XAML 剖析例外狀況。 如果是 [{StaticResource} 標記延伸](staticresource-markup-extension.md)所要求，任何未解析的索引鍵也會導致 XAML 剖析例外狀況。
+[  **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的子元素通常包含 **x:Key** 屬性，該屬性會指定該字典內的唯一索引鍵值。 XAML 處理器在載入期間會強制執行索引鍵唯一性。 非唯一的 **x:Key** 值將導致 XAML 剖析例外狀況。 如果是 [{StaticResource} 標記延伸](staticresource-markup-extension.md)所要求，任何未解析的索引鍵也會導致 XAML 剖析例外狀況。
 
 **x:Key** 與 [x:Name](x-name-attribute.md) 並非相同的概念。 **x:Key** 專門用在資源字典中。 x:Name 則用於 XAML 的所有區域。 使用索引鍵值的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 呼叫將不會擷取索引資源。 資源字典中定義的物件可能會有 **x:Key**、**x:Name** 或是兩者。 金鑰和名稱不需要符合。
 

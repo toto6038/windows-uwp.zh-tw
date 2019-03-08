@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 ms.localizationpriority: medium
 ms.openlocfilehash: b56140f9a71c8233d2832c2b0da6ed927b5a19ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922243"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607713"
 ---
 # <a name="introduction-to-multi-user-applications"></a>多使用者應用程式的簡介
 
@@ -25,15 +25,15 @@ Xbox One 使用者模型已針對支援多個使用者在單一裝置上合作�
 Xbox One 使用者模型中的每個使用者都是由本機使用者帳戶支援。 此本機使用者帳戶會與 Xbox Live 帳戶 (以及 Microsoft 帳戶) 相關聯。 這表示 Xbox 使用者帳戶與 Xbox Live 帳戶及 Microsoft 帳戶有嚴格的一對一對應。
 
 ## <a name="single-user-applications"></a>單一使用者應用程式
-根據預設，通用 Windows 平台 (UWP) App 會在啟動應用程式之使用者的內容中執行。 這些「單一使用者應用程式」**(SUA) 只會注意該單一使用者，並會以與其他 Windows 裝置上的使用者模型相容的模式執行。 Xbox 使用者模型會管理哪個使用者與 App 相關聯，並保證特定使用者會在特定 App 啟動時登入。 在這個模型中，UWP App 和遊戲作者不需要特別執行任何動作以在 Xbox 上執行。 
+根據預設，通用 Windows 平台 (UWP) App 會在啟動應用程式之使用者的內容中執行。 這些「單一使用者應用程式」(SUA) 只會注意該單一使用者，並會以與其他 Windows 裝置上的使用者模型相容的模式執行。 Xbox 使用者模型會管理哪個使用者與 App 相關聯，並保證特定使用者會在特定 App 啟動時登入。 在這個模型中，UWP App 和遊戲作者不需要特別執行任何動作以在 Xbox 上執行。 
 
 ## <a name="multi-user-applications"></a>多使用者應用程式
-UWP 遊戲可以選擇加入 Xbox One 多使用者模型。 這些「多使用者應用程式」**(MUA) 會在系統帳戶 (稱為預設帳戶) 的內容中執行，而且可以充分利用 Xbox One 使用者模型的彈性和功能。 針對這些遊戲，Xbox 使用者模型不會管理哪個使用者與遊戲相關聯，遊戲甚至不需要使用者登入以執行。 這表示這些遊戲必須撰寫成明確知道並管理其使用者需求︰是否需要登入的使用者、是否實作目前使用者的概念、是否允許來自多個使用者的同時輸入等等。
+UWP 遊戲可以選擇加入 Xbox One 多使用者模型。 這些「多使用者應用程式」(MUA) 會在系統帳戶 (稱為預設帳戶) 的內容中執行，而且可以充分利用 Xbox One 使用者模型的彈性和功能。 針對這些遊戲，Xbox 使用者模型不會管理哪個使用者與遊戲相關聯，遊戲甚至不需要使用者登入以執行。 這表示這些遊戲必須撰寫成明確知道並管理其使用者需求︰是否需要登入的使用者、是否實作目前使用者的概念、是否允許來自多個使用者的同時輸入等等。
    
 若要選擇加入多使用者模型：   
 1. 在 Visual Studio 中，開啟您的專案。   
 2. 選取 package.appxmanifest.xml 檔案。   
-3. 以滑鼠右鍵按一下，並選取 **\[檢視程式碼\]**。   
+3. 以滑鼠右鍵按一下，並選取 [檢視程式碼]。   
 4. 在 `<Properties></Properties>` 區段中加入以下這一行：
 
 ```
@@ -50,5 +50,5 @@ UWP 遊戲可以選擇加入 Xbox One 多使用者模型。 這些「多使用�
 ## <a name="guidance-on-which-model-to-choose"></a>要選擇哪一個模型的指導方針
 所有 UWP App 和大部分的單一使用者遊戲都可以撰寫成 SUA。 我們建議只考慮將多人合作遊戲加入 Xbox One 多使用者模型。
 
-## <a name="see-also"></a>另請參閱
-- [Xbox One 上的 UWP](index.md)
+## <a name="see-also"></a>請參閱
+- [在 Xbox One UWP](index.md)

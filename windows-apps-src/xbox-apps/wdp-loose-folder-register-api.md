@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf4d62f390a5d324952ef2852a76803f4619fdc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934271"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593803"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a>登錄鬆散資料夾中的 App  
 
@@ -27,7 +27,7 @@ POST | /api/app/packagemanager/register
 
 您可以在要求 URI 上指定下列其他參數：
 
-URI 參數      | 說明
+URI 參數      | 描述
 :------     | :-----
 folder (必要) | 登錄套件的目的地資料夾名稱。 這個資料夾必須存在主機上的 d:\developmentfiles\LooseApps 底下。 這個資料夾名稱必須是 base64 編碼，因為它可能包含路徑分隔符號 (如果該資料夾位於 LooseApps 下的子資料夾中)。
 <br />
@@ -36,7 +36,7 @@ folder (必要) | 登錄套件的目的地資料夾名稱。 這個資料夾必�
 
 - 無
 
-**要求主體**
+**要求本文**
 
 - 無
 
@@ -52,13 +52,13 @@ HTTP 狀態碼      | 描述
 4XX | 錯誤碼
 5XX | 錯誤碼
 <br />
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox
 
-**注意事項**
+**附註**
 
-至少有三種不同的方式，可以取得主機上所需資料夾中的鬆散 App。 最簡單的方式是透過 SMB 將檔案複製到 \\&lt;IP_Address&gt;\DevelopmentFiles\LooseApps。 這將需要 UWA 套件上的使用者名稱和密碼 (可以透過 [/ext/smb/developerfolder](wdp-smb-api.md) 取得)。 
+至少有三種不同的方式，可以取得主機上所需資料夾中的鬆散 App。 最簡單的方法是只要複製的檔案，透過 SMB \\< p 位址 > \DevelopmentFiles\LooseApps。 這將需要 UWA 套件上的使用者名稱和密碼 (可以透過 [/ext/smb/developerfolder](wdp-smb-api.md) 取得)。 
 
 第二種方法是針對 /api/filesystem/apps/file 執行 POST (其中 knownfolderid 是 DevelopmentFiles、packagefullname 是空的，且已適當提供檔案名稱和路徑 (路徑開頭應為 LooseApps))，來將個別檔案複製到正確的位置。
 

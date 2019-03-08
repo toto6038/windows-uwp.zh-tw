@@ -1,5 +1,5 @@
 ---
-Description: Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
+Description: 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。
 title: 設定語音辨識逾時
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
@@ -9,18 +9,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 679c2632fd5793ae083b2a79e29de3a3e9da04cf
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044921"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627163"
 ---
 # <a name="set-speech-recognition-timeouts"></a>設定語音辨識逾時
 
 
 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。
 
-> **重要 API**：[**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)、[**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
+> **重要的 Api**:[**逾時**](https://msdn.microsoft.com/library/windows/apps/dn653253)， [ **SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
 
 ## <a name="set-a-timeout"></a>設定逾時
 
@@ -31,7 +31,7 @@ ms.locfileid: "9044921"
 -   BabbleTimeout - SpeechRecognizer 在假設語音輸入已結束並且完成辨識作業之前，繼續聆聽無法辨識音效 (babble) 的時間長度。
 -   EndSilenceTimeout - SpeechRecognizer 偵測靜音 (在產生辨識結果之前) 並且假設語音輸入已結束的時間長度。
 
-**注意：** 逾時可以設定每個辨識器為基礎。
+**附註**  逾時可以設定每個辨識器為基礎。
 
  
 
@@ -47,7 +47,7 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 * [語音互動](speech-interactions.md)
 **範例**
-* [語音辨識和語音合成範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音辨識和語音合成器範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

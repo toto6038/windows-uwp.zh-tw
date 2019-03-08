@@ -1,31 +1,31 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: 本章節描述了如何修改 PlayReady web app，以支援從舊版 windows 8.1 到 windows 10 版本所做的變更。
+description: 本章節描述如何修改您的 PlayReady web 應用程式，以支援從舊版的 Windows 8.1 的 Windows 10 版本所做的變更。
 title: PlayReady 加密媒體延伸
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c598868610e42e0f2ad64ef2d4fedfb48c4d91e9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047290"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598613"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady 加密媒體延伸
 
 
 
-本章節描述了如何修改 PlayReady web app，以支援從舊版 windows 8.1 到 windows 10 版本所做的變更。
+本章節描述如何修改您的 PlayReady web 應用程式，以支援從舊版的 Windows 8.1 的 Windows 10 版本所做的變更。
 
 使用 Internet Explorer 中的 PlayReady 媒體元素讓開發人員可以建立 Web App，能夠為使用者提供 PlayReady 內容，同時強制執行內容提供者所定義的存取規則。 本節說明如何只使用 HTML5 和 JavaScript，將 PlayReady 媒體元素新增到現有的 Web app。
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady 加密媒體延伸的新功能
 
-本章節提供一份啟用 PlayReady 內容保護 windows 10 上的以 PlayReady 加密媒體延伸 (EME) 所做的變更。
+本節提供一份啟用 Windows 10 上的 PlayReady 內容保護以 PlayReady 加密媒體擴充 (EME) 所做的變更。
 
-下列清單說明適用於 windows 10 的 PlayReady 加密媒體延伸到所做的變更的新功能：
+下列清單描述的新功能和 PlayReady 加密媒體擴充功能適用於 Windows 10 所做的變更：
 
 -   已新增硬體數位版權管理 (DRM)。
 
@@ -34,10 +34,10 @@ ms.locfileid: "9047290"
 -   提供主動取得非永久性授權。
 -   提供在一則訊息中取得多個授權的功能。
 
-    您可以使用 PlayReady 物件搭配多個金鑰識別碼 （keyid） （就像在 windows 8.1，或使用[內容解密模型資料 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)搭配多個 Keyid。
+    您可以使用多個索引鍵識別項 (KeyIDs) 與 Windows 8.1 的 PlayReady 物件，或使用[內容解密的資料模型 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)與多個 KeyIDs。
 
     > [!NOTE]
-    > Windows 10 的下方支援多個金鑰識別碼&lt;KeyID&gt; CDMData 中。
+    > 在 Windows 10 中，在支援多個索引鍵識別項&lt;KeyID&gt; CDMData 中。
 
 -   已新增即時到期支援或限時授權 (LDL)。
 
@@ -262,13 +262,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> 在上述範例中，安全停止資料的 `<SessionID>B64 encoded session ID</SessionID>` 可以是星號 (\*)，這是適用於所記錄之所有安全停止工作階段的萬用字元。 也就是說，**SessionID** 標記可以是特定的工作階段，或是用來選取所有安全停止工作階段的萬用字元 (\*)。
+> 安全的停駐點的資料`<SessionID>B64 encoded session ID</SessionID>`上述範例中可以使用星號 (\*)，這是記錄的所有安全停止工作階段的萬用字元。 亦即**SessionID**標記可以是特定的工作階段中或萬用字元 (\*) 來選取所有安全停止工作階段。
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>適用於加密媒體延伸的程式設計考量
 
-此區段會列出適用於 windows 10 建立已啟用 PlayReady 的 web 應用程式時，您應該考慮到的程式設計考量。
+此區段會列出適用於 Windows 10 中建立您的 PlayReady 啟用 web 應用程式時，您應該考慮到的程式設計考量。
 
-在您的 app 關閉之前，該 app 建立的 **MSMediaKeys** 和 **MSMediaKeySession** 物件必須保持運作。 確保這些物件會保持運作的一種方式，是將它們指派為全域變數 (如果將變數宣告為函式內的區域變數，變數就會變成超出範圍且受限於記憶體回收)。 例如，下列範例會將變數 *g\_msMediaKeys* 和 *g\_mediaKeySession* 指派為全域變數，接著將其指派給函式中的 **MSMediaKeys** 和 **MSMediaKeySession** 物件。
+在您的 app 關閉之前，該 app 建立的 **MSMediaKeys** 和 **MSMediaKeySession** 物件必須保持運作。 確保這些物件會保持運作的一種方式，是將它們指派為全域變數 (如果將變數宣告為函式內的區域變數，變數就會變成超出範圍且受限於記憶體回收)。 例如，下列範例會指派變數*g\_msMediaKeys*並*g\_mediaKeySession*當作全域變數，然後指派給**MSMediaKeys**並**MSMediaKeySession**函式中的物件。
 
 ``` syntax
 var g_msMediaKeys;
@@ -298,7 +298,7 @@ function foo() {
 
 如需詳細資訊，請參閱[範例應用程式](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 - [PlayReady DRM](playready-client-sdk.md)
 
 

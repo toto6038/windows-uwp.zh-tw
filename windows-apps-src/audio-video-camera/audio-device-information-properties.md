@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 443bcc3c0280aca85de31d8c9f3704302432cb76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925875"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627173"
 ---
 # <a name="audio-device-information-properties"></a>音訊裝置資訊屬性
 
@@ -28,9 +28,9 @@ ms.locfileid: "8925875"
 
 ## <a name="related-topics"></a>相關主題
 
-* [列舉裝置](../devices-sensors/enumerate-devices.md)
+* [列舉的裝置](../devices-sensors/enumerate-devices.md)
 * [裝置資訊屬性](../devices-sensors/device-information-properties.md)
-* [建置裝置選取器](../devices-sensors/build-a-device-selector.md)
+* [建置的裝置選取器](../devices-sensors/build-a-device-selector.md)
 * [媒體播放](media-playback.md)
 
 

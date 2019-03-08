@@ -1,5 +1,5 @@
 ---
-Description: Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
+Description: 您的 App 可以載入包含針對顯示縮放比例、佈景主題、高對比及其他執行階段內容量身打造之影像的影像資源檔案。
 title: 載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產
 template: detail.hbs
 ms.date: 10/10/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929494"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592023"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產
 您的應用程式可以載入包含針對[顯示縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、佈景主題、高對比及其他執行階段內容量身打造的影像資源檔案 (或其他資產檔案)。 可以從命令式程式碼或 XAML 標記中參考這些影像，例如 **Image** 的 **Source** 屬性。 也可以出現在應用程式套件資訊清單來源檔案 (`Package.appxmanifest` 檔案) 中 &mdash; 例如，在 Visual Studio 資訊清單設計工具的 \[視覺資產\] 索引標籤上做為 \[App 圖示\] 的值 &mdash; 或顯示在您的磚和快顯通知上。 您可以在影像檔案名稱中使用限定詞，並借助 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 選擇性動態載入這些檔案，以便載入最符合使用者顯示縮放比例、佈景主題、高對比、語言及其他內容之執行階段設定的最適當影像檔案。
@@ -35,7 +35,7 @@ ms.locfileid: "8929494"
 \Assets\Images\scale-100\logo.png
 ```
 
-接下來是有關如何針對顯示縮放比例、佈景主題及高對比的不同設定提供影像資源 &mdash; 名為 `/Assets/Images/logo.png` &mdash; 變化的範例。 此範例使用資料夾命名格式。
+接下來是有關如何針對顯示縮放比例、佈景主題及高對比的不同設定提供影像資源 &mdash; 名為 `/Assets/Images/logo.png`&mdash; 變化的範例。 此範例使用資料夾命名格式。
 
 ```
 \Assets\Images\contrast-standard\theme-dark
@@ -195,10 +195,10 @@ private void RefreshUIImages()
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>相關主題
-* [針對語言、縮放比例及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)
-* [將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)
-* [儲存和擷取設定及其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
-* [對語言、縮放比例及高對比的磚與快顯通知支援](tile-toast-language-scale-contrast.md)
-* [可當地語系化的資訊清單項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [鏡像影像](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)
+* [量身打造您的語言、 規模和其他辨識符號的資源](tailor-resources-lang-scale-contrast.md)
+* [UI 和應用程式封裝資訊清單中的當地語系化字串](localize-strings-ui-manifest.md)
+* [儲存和擷取設定和其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
+* [磚與快顯通知支援的語言、 規模和高對比](tile-toast-language-scale-contrast.md)
+* [可當地語系化資訊清單的項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
+* [鏡像映像](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)
 * [全球化和當地語系化](../design/globalizing/globalizing-portal.md)

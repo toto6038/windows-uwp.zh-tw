@@ -1,17 +1,17 @@
 ---
 title: x:Phase 屬性
-description: 搭配使用 xPhase 與 xBind 標記延伸，可用遞增方式轉譯 ListView 和 GridView 項目，並改善移動瀏覽體驗。
+description: 搭配使用 x:Phase 與 x:Bind 標記延伸，可用遞增方式轉譯 ListView 和 GridView項目，並改善移動瀏覽體驗。
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6def088b3e7f6410f12d1b2e411bcb547c90a09a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918559"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613283"
 ---
 # <a name="xphase-attribute"></a>x:Phase 屬性
 
@@ -28,9 +28,9 @@ ms.locfileid: "8918559"
 ## <a name="xaml-values"></a>XAML 值
 
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
-| PhaseValue | 一個數值，指出元素的處理階段。 預設是 0。 | 
+| PhaseValue | 一個數值，指出元素的處理階段。 預設值為 0。 | 
 
 ## <a name="remarks"></a>備註
 
@@ -71,7 +71,7 @@ ms.locfileid: "8918559"
 
 分段是 [{x:Bind}](x-bind-markup-extension.md) 的功能之一，可與衍生自 [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 的控制項搭配運作，並可用遞增方式處理資料繫結的項目範本。 轉譯清單項目時，**ListViewBase** 會在單一階段中轉譯檢視中的所有項目，再移至下一個階段。 轉譯工作會以分時段的批次執行，因此在清單捲動時可以重新評估所需的工作，且對於不再顯示的項目將不會執行轉譯。
 
-**x:Phase** 屬性可以對資料範本中任何使用 [{x:Bind}](x-bind-markup-extension.md) 的元素指定。 當元素的階段不是 0 時，該元素將會隱藏於檢視中 (透過 **Opacity**，而非 **Visibility**)，直到該階段處理完成且繫結更新為止。 [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 衍生的控制項在捲動時，將會從已不在畫面上的項目回收項目範本，以轉譯新的可見項目。 範本中的 UI 元素會保留其舊值，直到再次完成資料繫結為止。 分段會造成資料繫結步驟延遲，因此在分段時必須隱藏 UI 元素，以免它們過時。
+**x:Phase** 屬性可以對資料範本中任何使用 [{x:Bind}](x-bind-markup-extension.md) 的元素指定。 當元素的階段不是 0 時，該元素將會隱藏於檢視中 (透過 **Opacity**，而非 **Visibility**)，直到該階段處理完成且繫結更新為止。 [  **ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 衍生的控制項在捲動時，將會從已不在畫面上的項目回收項目範本，以轉譯新的可見項目。 範本中的 UI 元素會保留其舊值，直到再次完成資料繫結為止。 分段會造成資料繫結步驟延遲，因此在分段時必須隱藏 UI 元素，以免它們過時。
 
 每個 UI 元素可能只有一個指定的階段。 若是如此，將會套用到元素的所有繫結。 若未指定階段，將會使用階段 0。
 
@@ -79,5 +79,5 @@ ms.locfileid: "8918559"
 
 分段只會對 [{x:Bind}](x-bind-markup-extension.md) 繫結造成影響，不會影響到 [{Binding}](binding-markup-extension.md) 繫結。
 
-只有使用可辨識分段功能的控制項轉譯項目範本時，才可使用分段。 Windows 10，這是指[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)和[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 分段不會套用至其他項目控制項中使用的資料範本，或是其他案例 (如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 區段)，而在大多數的情況下，所有的 UI 元素會同時進行資料繫結。
+只有使用可辨識分段功能的控制項轉譯項目範本時，才可使用分段。 適用於 Windows 10，這表示[ **ListView** ](https://msdn.microsoft.com/library/windows/apps/br242878)並[ **GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 分段不會套用至其他項目控制項中使用的資料範本，或是其他案例 (如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 區段)，而在大多數的情況下，所有的 UI 元素會同時進行資料繫結。
 

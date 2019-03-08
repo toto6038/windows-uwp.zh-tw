@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7eabcb188aa1687d36d4b4e6f432783aa68969de
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934045"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613243"
 ---
 # <a name="customresource-markup-extension"></a>{CustomResource} 標記延伸
 
@@ -26,7 +26,7 @@ ms.locfileid: "8934045"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
 | 索引鍵 | 要求的資源的索引鍵。 最初指派索引鍵的方式取決於目前已登錄使用的 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 類別實作。 |
 
@@ -44,11 +44,11 @@ Windows 執行階段 XAML 剖析器只要在標記中遇到使用 `{CustomResour
 2.  設定 [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) 使其參考初始化邏輯中的類別。 這必須在載入任何包含 `{CustomResource}` 延伸用法的頁面層級 XAML 之前完成。 其中一個設定 **CustomXamlResourceLoader.Current** 的位置，就是在 App.xaml 程式碼後置範本中為您產生的 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 子類別建構函式。
 3.  現在您可以在應用程式載入為頁面的 XAML 中使用 `{CustomResource}` 延伸，或是從 XAML 資源字典內使用。
 
-**CustomResource** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用 "\{" 和 "\}" 字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
+**CustomResource** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 在 XAML 使用的所有標記延伸模組 」\{"和"\}"字元在其屬性語法中，這是用 XAML 處理器會辨識為標記延伸必須處理這個屬性的慣例。
 
 ## <a name="related-topics"></a>相關主題
 
-* [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [資源字典和 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)
 * [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340)
 

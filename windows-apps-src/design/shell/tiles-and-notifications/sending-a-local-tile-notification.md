@@ -1,5 +1,5 @@
 ---
-Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
+Description: 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。
 title: 傳送本機磚通知
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
@@ -8,16 +8,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946313"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636103"
 ---
 # <a name="send-a-local-tile-notification"></a>傳送本機磚通知
  
 
-Windows 10 中的主要的應用程式磚被定義在您的應用程式資訊清單中，以程式設計方式建立和由您的應用程式程式碼定義次要磚。 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。 (本機通知是透過應用程式程式碼傳送，而不是從 Web 伺服器推送或提取)。
+雖然次要磚以程式設計方式建立及定義您的應用程式程式碼中您應用程式資訊清單中定義 Windows 10 中的主要應用程式磚。 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。 (本機通知是透過應用程式程式碼傳送，而不是從 Web 伺服器推送或提取)。
 
 ![預設磚和含有通知的磚](images/sending-local-tile-01.png)
 
@@ -46,7 +46,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>建立通知內容
 
 
-在 windows 10，磚承載被定義使用彈性磚範本，可讓您建立自訂的視覺配置，針對您的通知。 (若要深入了解彈性磚可以做什麼，請參閱[建立彈性磚](create-adaptive-tiles.md)。)
+在 Windows 10 中，磚承載被定義使用調適性磚範本，可讓您建立自訂的視覺化版面配置，您的通知。 (若要深入了解彈性磚可以做什麼，請參閱[建立彈性磚](create-adaptive-tiles.md)。)
 
 這個程式碼範例會建立中型和寬形磚的彈性磚內容。
 
@@ -150,7 +150,7 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 
 雖然在本機傳送磚通知很簡單，但傳送通知到主要或次要磚則稍有不同。
 
-**主要磚**
+**主要的圖格**
 
 若要將通知傳送到主要磚，請使用 [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager) 為主要磚建立磚更新程式，並呼叫 "Update" 來傳送通知。 無論是否可見，您的應用程式主要磚一律會存在，因此即使未釘選它，也可以傳送通知給它。 如果使用者之後釘選您的主要磚，屆時就會顯示您傳送的通知。
 
@@ -286,10 +286,10 @@ var notification = new TileNotification(doc);
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立彈性磚](create-adaptive-tiles.md)
-* [磚內容結構描述](../tiles-and-notifications/tile-schema.md)
-* [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
-* [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
+* [建立自動調整圖格](create-adaptive-tiles.md)
+* [並排顯示內容的結構描述](../tiles-and-notifications/tile-schema.md)
+* [通知程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+* [在 GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications 命名空間**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
 * [如何使用通知佇列 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
 * [傳遞通知](choosing-a-notification-delivery-method.md)

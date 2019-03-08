@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e49a9dcaa2638065946f01797cbea084a1432a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930699"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602303"
 ---
 # <a name="devices"></a>裝置
 
@@ -58,11 +58,11 @@ Direct3D 支援兩種主要的 Direct3D 裝置類型：
 <td align="left"><p>Direct3D 裝置類型包括硬體抽象層 (hal) 裝置和軟體模擬轉譯器。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="windowed-vs--full-screen-mode.md">視窗與全螢幕模式</a></p></td>
+<td align="left"><p><a href="windowed-vs--full-screen-mode.md">視窗型與全螢幕模式</a></p></td>
 <td align="left"><p>Direct3D 應用程式可以兩種模式執行：視窗或全螢幕模式。 在<em>視窗模式</em>，應用程式與所有執行中的應用程式共用桌面螢幕可用空間。 在<em>全螢幕模式</em>，應用程式執行所在的視窗涵蓋整個桌面，隱藏所有執行的應用程式（包含您的開發環境）。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="lost-devices.md">遺失裝置</a></p></td>
+<td align="left"><p><a href="lost-devices.md">遺失的裝置</a></p></td>
 <td align="left"><p>Direct3D 裝置可能在操作狀態或遺失狀態。 <em>操作</em>狀態是一般裝置狀態，裝置如預期般執行和呈現所有轉譯。 該裝置會轉換成<em>遺失</em>狀態，例如在全螢幕應用程式中遺失鍵盤焦點，會導致不可能轉譯。</p></td>
 </tr>
 <tr class="even">

@@ -7,21 +7,21 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 評論 API, 附加元件下載數
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dcda52940f0218b6fdb5be147f058eca7479a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919506"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623833"
 ---
 # <a name="submit-responses-to-reviews"></a>提交評論的回應
 
 
 使用 Microsoft Store 評論 API 中的此方法，以程式設計方式回應您 app 的評論。 當您呼叫這個方法時，您必須指定您想要回應的評論的識別碼。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。
 
-當客戶提交評論時，他們可以選擇不收到評論的回應。 如果您嘗試回應到客戶選擇不收到回應的評論，這個方法的回應主體會指出回應嘗試已失敗。 呼叫這個方法之前，您可以使用[取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)方法，選擇判斷是否允許您回應特定評論。
+當客戶提交評論時，他們可以選擇不接收評論的回應。 如果您嘗試回應到客戶選擇不收到回應的評論，這個方法的回應主體會指出回應嘗試已失敗。 呼叫這個方法之前，您可以使用[取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)方法，選擇判斷是否允許您回應特定評論。
 
 > [!NOTE]
-> 除了使用此方法，以程式設計方式回應評論，或者您可以回應評論[使用合作夥伴中心](../publish/respond-to-customer-reviews.md)。
+> 除了使用這個方法來以程式設計的方式回應檢閱，您可以另外回應評論[使用合作夥伴中心](../publish/respond-to-customer-reviews.md)。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -44,7 +44,7 @@ ms.locfileid: "8919506"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
@@ -52,7 +52,7 @@ ms.locfileid: "8919506"
 這個方法沒有任何要求參數。
 
 
-### <a name="request-body"></a>要求主體
+### <a name="request-body"></a>要求本文
 
 要求主體包含下列值。
 
@@ -65,11 +65,11 @@ ms.locfileid: "8919506"
 
 | 值        | 類型   | 描述           |  必要  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | 字串 |  您想要回應評論之 App 的「Store 識別碼」。 在合作夥伴中心的[應用程式身分識別頁面](../publish/view-app-identity-details.md)上使用 「 市集識別碼 」。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。   |  是  |
-| ReviewId | 字串 |  您想要回應評論的 ID（這是 GUID）。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。   |  是  |
+| ApplicationId | 字串 |  您想要回應評論之 App 的「Store 識別碼」。 存放區識別碼位於[應用程式識別碼 頁面上](../publish/view-app-identity-details.md)的合作夥伴中心。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。   |  是  |
+| ReviewId | 字串 |  您想要回應評論的識別碼 (這是 GUID)。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。   |  是  |
 | ResponseText | 字串 | 您想要提交的回應。 您的回應必須依照[這些指導方針](../publish/respond-to-customer-reviews.md#guidelines-for-responses)。   |  是  |
 | SupportEmail | 字串 | 您 app 的支援電子郵件地址，客戶可以用來直接連絡您。 這必須是有效的電子郵件地址。     |  是  |
-| IsPublic | 布林值 |  如果您指定 **，則為 true**，您的回應將會顯示在您的應用程式市集清單中，客戶的評論下方，而且會顯示給所有客戶。 如果您指定**為 false** ，使用者還沒有選擇退出接收電子郵件回應，您的回應將會傳送給客戶透過電子郵件，並不會看到其他客戶在您的應用程式市集清單中。 如果您指定**false** ，且使用者已選擇不收到回應的電子郵件，將會傳回錯誤。   |  是  |
+| IsPublic | 布林值 |  如果您指定 **，則為 true**，您的回應會顯示在您的應用程式市集，直接在下方列出客戶的檢閱，並將可看見所有的客戶。 如果您指定**false**使用者尚未退出接收電子郵件回應，您的回應會傳送給客戶，透過電子郵件，並將不會顯示在您的應用程式存放區清單中的其他客戶。 如果您指定**false**和使用者具有退出接收電子郵件回應，將會傳回錯誤。   |  是  |
 
 
 ### <a name="request-example"></a>要求範例
@@ -106,22 +106,22 @@ Content-Type: application/json
 
 | 值        | 類型   | 描述            |
 |---------------|--------|---------------------|
-| Result | 陣列 | 物件陣列，包含您所送出每個回覆的相關資料。 如需有關每個物件中資料的詳細資訊，請參閱下表。  |
+| 結果 | 陣列 | 物件陣列，包含您所送出每個回覆的相關資料。 如需有關每個物件中資料的詳細資訊，請參閱下表。  |
 
 
 *Result* 陣列中的每個物件包含下列值。
 
 | 值        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------|
-| ApplicationId | 字串 |  您已回應評論之 App 的「Store 識別碼」。  Store 識別碼範例為 9WZDNCRFJ3Q8。   |
+| ApplicationId | 字串 |  您已回應評論之 App 的「Store 識別碼」。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。   |
 | ReviewId | 字串 |  您已回應之評論的識別碼。 這是 GUID。   |
-| Successful | 字串 | 值 **true** 指出已成功傳送您的回應。 值 **false** 表示您的回應未成功。    |
+| 成功 | 字串 | 值 **true** 指出已成功傳送您的回應。 值 **false** 表示您的回應未成功。    |
 | FailureReason | 字串 | 如果 **Successful** 是 **false**，這個值包含失敗原因。 如果 **Successful** 是 **true**，這個值是空的。      |
 
 
 ### <a name="response-example"></a>回應範例
 
-下列範例針對此要求示範範例 JSON 回應主體。
+下列範例示範這個要求的一個範例 JSON 回應主體。
 
 ```json
 {
@@ -144,7 +144,7 @@ Content-Type: application/json
 
 ## <a name="related-topics"></a>相關主題
 
-* [回應客戶評論使用合作夥伴中心](../publish/respond-to-customer-reviews.md)
-* [使用 Microsoft Store 服務回應評論](respond-to-reviews-using-windows-store-services.md)
+* [使用合作夥伴中心的客戶評論回應](../publish/respond-to-customer-reviews.md)
+* [回應程式使用 Microsoft Store 服務檢閱](respond-to-reviews-using-windows-store-services.md)
 * [取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)
 * [取得應用程式評論](get-app-reviews.md)

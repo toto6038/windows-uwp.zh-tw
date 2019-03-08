@@ -1,25 +1,25 @@
 ---
-title: 已連線的應用程式與裝置 (專案 Rome)
+title: 已連線的應用程式與裝置 (Project Rome)
 description: 本節說明如何使用遠端系統平台來探索遠端裝置、啟動遠端裝置上的 app，以及與遠端裝置上的 app 服務通訊。
 ms.date: 06/08/2018
 ms.topic: article
-keywords: windows 10，uwp，連接裝置、 遠端系統、 rome 的 project rome
+keywords: windows 10 uwp，連線裝置、 遠端系統、 羅馬、 project rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: c785e6d2a8021148f572df88a6d9e6ba07c4a457
-ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "9031364"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601173"
 ---
-# <a name="connected-apps-and-devices-project-rome"></a>已連線的應用程式與裝置 (專案 Rome)
+# <a name="connected-apps-and-devices-project-rome"></a>已連線的應用程式與裝置 (Project Rome)
 
-本節說明如何跨裝置與平台使用[專案 Rome](https://developer.microsoft.com/en-us/windows/project-rome)連線的應用程式。 若要了解如何實作專案 Rome 跨平台案例中，請瀏覽[的 Project Rome 的主要文件頁面](https://docs.microsoft.com/en-us/windows/project-rome/)。
+本節說明如何將應用程式跨裝置與平台使用的連接[Project Rome](https://developer.microsoft.com/en-us/windows/project-rome)。 若要了解如何實作 Project Rome 的跨平台案例中，請造訪[Project Rome 的主要的 docs 頁面](https://docs.microsoft.com/en-us/windows/project-rome/)。
 
-大部分的使用者擁有多部裝置，而且經常是在一部裝置上開始活動，卻在另一部上完成。 若要做到這一點，App 需要跨越裝置與平台。 Project Rome 可讓您探索遠端裝置、 啟動遠端裝置上的應用程式，以及與遠端裝置上的應用程式服務通訊。
+大部分的使用者擁有多部裝置，而且經常是在一部裝置上開始活動，卻在另一部上完成。 若要做到這一點，app 需要跨越裝置與平台。 Project Rome 可讓您探索遠端裝置、 啟動遠端裝置上的應用程式，並與遠端裝置上的 app service 進行通訊。
 
-Windows 10 (版本 1607) 中引進的[遠端系統 API](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)，可讓您撰寫 App，允許使用者在一部裝置上啟動工作，並在另一部上完成。 工作仍是中心焦點，而且使用者能在最方便使用的裝置上執行工作。 例如，使用者可能會在車內聆聽手機上的收音機，但當到家時，可能會想要換到和家庭立體聲系統連結的 Xbox One 上播放。
+Windows 10 (版本 1607) 中引進的[遠端系統 API](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)，可讓您撰寫 App，允許使用者在一部裝置上啟動工作，並在另一部上完成。 工作仍是中心焦點，而且使用者能在使用最方便的裝置上執行工作。 例如，使用者可能會在車內聆聽手機上的收音機，但當到家時，可能會想要換到和家庭立體聲系統連結的 Xbox One 上播放。
 
 您也可以將專案 Rome 用於隨附裝置或遠端控制案例。 使用 App 服務訊息傳送 API，在兩部裝置之間建立 App 通道，來傳送和接收自訂訊息。 例如，您可以為手機撰寫可控制電視播放的 App，或撰寫配對 App 來為您透過另一個 App 上觀看的電視節目角色提供相關資訊。  
 
@@ -29,11 +29,11 @@ Windows 10 (版本 1607) 中引進的[遠端系統 API](https://msdn.microsoft.c
 
 如需一般有關專案 Rome 的詳細資訊，包括跨平台整合的資源，請移至 [aka.ms/project-rome](https://aka.ms/project-rome)。
 
-| 主題 | 說明 |
+| 主題 | 描述 |
 |-------|-------------|
-| [啟動遠端裝置上的應用程式](launch-a-remote-app.md) | 了解如何啟動遠端裝置上的 App。 本主題涵蓋最簡單的使用案例和初步安裝。  |
+| [啟動 遠端裝置上的應用程式](launch-a-remote-app.md) | 了解如何啟動遠端裝置上的應用程式。 本主題涵蓋最簡單的使用案例和初步安裝。  |
 | [探索遠端裝置](discover-remote-devices.md)  | 了解如何探索能夠連線的裝置。 |
-| [與遠端應用程式服務通訊](communicate-with-a-remote-app-service.md) | 了解如何與遠端裝置上的 app 互動。 |
-| [透過遠端工作階段連接裝置](remote-sessions.md) | 將裝置加入遠端工作階段，以建立跨多部裝置的共用體驗。 |
-| [繼續使用者活動，甚至是在各個裝置之間](useractivities.md)| 協助使用者繼續使用什麼他們本來正在在您的應用程式，甚至跨多個裝置。|
-| [使用者活動最佳做法](useractivities-best-practices.md)| 了解建立和更新使用者活動的建議的做法。|
+| [與遠端應用程式服務通訊](communicate-with-a-remote-app-service.md) | 了解如何與遠端裝置上的應用程式互動。 |
+| [將裝置連線到遠端工作階段](remote-sessions.md) | 將裝置加入遠端工作階段，以建立跨多部裝置的共用體驗。 |
+| [繼續使用者活動，甚至可跨裝置](useractivities.md)| 幫助使用者繼續它們已在做什麼應用程式，甚至可跨多個裝置。|
+| [使用者活動的最佳作法](useractivities-best-practices.md)| 了解建議的做法，來建立和更新使用者的活動。|

@@ -1,5 +1,5 @@
 ---
-Description: Learn how accelerator keys can improve the usability and accessibility of UWP apps.
+Description: 了解快速鍵如何改善 UWP app 的可用性及協助工具。
 title: 鍵盤快速操作
 label: Keyboard accelerators
 template: detail.hbs
@@ -11,11 +11,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
-ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "8981877"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590733"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -35,20 +35,20 @@ ms.locfileid: "8981877"
 > [!NOTE]
 > UWP 平台控制項會有內建鍵盤快速鍵。 例如，ListView 支援用於選取清單中所有項目的 Ctrl+A，而 RichEditBox 支援在文字方塊中插入 Tab 的 Ctrl+Tab。 這些內建鍵盤快速鍵稱為**控制項快速鍵**，只有在焦點位於元素或其中一個子系時才會執行。 使用此處討論之鍵盤快速鍵 API 所定義的鍵盤快速鍵稱為**應用程式快速鍵**。
 
-鍵盤快速鍵並非所有的動作都適用，但通常與功能表中公開的命令有關聯 (而且應該以功能表項目內容來指定)。快速鍵也可以和沒有對等功能表項目的動作建立關聯。 不過，使用者依賴應用程式的功能表來探索並了解可用的命令集，因此必須盡可能嘗試讓探索快速鍵的方式變得簡單 (使用標籤或已建立的模式會很有幫助)。
+鍵盤快速鍵並非所有的動作都適用，但通常與功能表中公開的命令有關聯 (而且應該以功能表項目內容來指定)。 快速鍵也可以和沒有對等功能表項目的動作建立關聯。 不過，使用者依賴應用程式的功能表來探索並了解可用的命令集，因此必須盡可能嘗試讓探索快速鍵的方式變得簡單 (使用標籤或已建立的模式會很有幫助)。
 
-![功能表項目標籤中描述的鍵盤快速鍵](images/accelerators/accelerators_menuitemlabel.png)  
-*功能表項目標籤中描述的鍵盤快速鍵*
+![功能表項目標籤中所述的鍵盤快速鍵](images/accelerators/accelerators_menuitemlabel.png)  
+*功能表項目標籤中所述的鍵盤快速鍵*
 
 ## <a name="when-to-use-keyboard-accelerators"></a>使用鍵盤快速鍵的時機
 
 我們建議您在 UI 任何適當的地方指定鍵盤快速鍵，並在所有自訂控制項中支援快速鍵。
 
-- 鍵盤快速鍵讓您的應用程式更多 accessiblefor 使用者運動功能障礙，包括可以按一次只有一個按鍵或使用滑鼠 * 有困難的使用者
+- 鍵盤對應鍵讓您的應用程式更容易存取的不便，包括可一次按一個索引鍵，或不方便使用 mouse.* * 這些使用者的使用者
 
   設計良好的鍵盤 UI 是軟體協助工具的一個重要層面。 它讓視障使用者或受到某種程度運動神經傷害的使用者能夠瀏覽應用程式並與應用程式的功能互動。 這類使用者有可能無法使用滑鼠，因而必須仰賴像鍵盤增強功能工具、螢幕小鍵盤、螢幕放大機、螢幕助讀程式以及語音輸入公用程式這類協助技術。 對於這些使用者，完整命令涵蓋範圍很重要。
 
-- 鍵盤快速鍵讓您的應用程式更多 usablefor 電源使用者偏好使用鍵盤進行互動。
+- 鍵盤對應鍵讓您的應用程式更便於進階使用者想要透過鍵盤進行互動。
 
   經驗豐富的使用者通常極度偏好使用鍵盤，因為鍵盤式命令的輸入更快速，而且不需要從鍵盤移開其雙手。 對於這些使用者而言，效率與一致性非常重要；完整性只對最常用的命令很重要。
 
@@ -126,14 +126,14 @@ ms.locfileid: "8981877"
 </CommandBar>
 ```
 
-![工具提示中描述的鍵盤快速鍵](images/accelerators/accelerators_tooltip.png)  
-***工具提示中描述的鍵盤快速鍵***
+![工具提示中所述的鍵盤對應鍵](images/accelerators/accelerators_tooltip.png)  
+***工具提示中所述的鍵盤對應鍵***
 
 [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 物件具有 [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 集合 [KeyboardAccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)，您可在其他指定自訂 KeyboardAccelerator 物件，並定義鍵盤快速鍵的按鍵輸入：
 
--   **[Key](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** - 鍵盤快速鍵使用的 [VirtualKey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey)。
+-   **[索引鍵](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** - [VirtualKey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey)用於鍵盤對應鍵。
 
--   **[Modifiers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** – 鍵盤快速鍵使用的 [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers)。 如果 Modifiers 未設定，則預設值為 None。
+-   **[修飾詞](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** – [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers)用於鍵盤對應鍵。 如果 Modifiers 未設定，則預設值為 None。
 
 > [!NOTE]
 > 支援單一按鍵 (A、Delete、F2、空格鍵、Esc、多媒體鍵) 快速鍵以及多按鍵快速鍵 (Ctrl+Shift+M)。 不過，不支援遊戲台虛擬按鍵。
@@ -195,7 +195,7 @@ MenuFlyoutItem.KeyboardAccelerators 元素的 ScopeOwner 會將快速鍵標示�
 
 [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 物件利用[使用者介面自動化 (UIA) 控制項模式](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview)，在叫用快速鍵時執行動作 。
 
-UIA [控制項模式] 會公開常見的控制項功能。 例如，Button 控制項實作[叫用](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke)控制項模式來支援 Click 事件 （通常控制項叫用藉由按一下、 按兩下，或是按下 Enter、 預先定義的鍵盤快速鍵或一些其他按鍵輸入組合）。 使用鍵盤快速鍵時叫用控制項時，XAML 架構會查詢控制項是否實作叫用控制項模式，若是如此則加以啟動 (不需要接聽 KeyboardAcceleratorInvoked 事件)。
+UIA [控制項模式] 會公開常見的控制項功能。 按鈕控制項的實作，例如[Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke)支援 Click 事件的控制項模式 （通常是控制項的叫用方式按一下、 按兩下，或按下 Enter、 預先定義的鍵盤快速鍵，或某些其他按鍵組合）。 使用鍵盤快速鍵時叫用控制項時，XAML 架構會查詢控制項是否實作叫用控制項模式，若是如此則加以啟動 (不需要接聽 KeyboardAcceleratorInvoked 事件)。
 
 在下列範例中，因為按鈕實作叫用模式，Control+S 會觸發 Click 事件按一下。
 
@@ -219,11 +219,11 @@ UIA [控制項模式] 會公開常見的控制項功能。 例如，Button 控�
 
 執行快速鍵時會引發 [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 物件的 Invoked 事件。 [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) 事件物件包含下列屬性：
 
-- [**處理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled)（布林值）： 將此設定為 true 可防止事件觸發控制項模式，並停止快速鍵事件反昇。 預設值為 false。
-- [**項目**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element)(DependencyObject): 與快速鍵相關聯的物件。
-- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator)： 用來引發 Invoked 事件的鍵盤快速鍵。
+- [**處理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) （布林值）：將此設為 true 可避免事件觸發的控制項模式，並停止加速器事件反昇。 預設值為 false。
+- [**項目**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject):加速器與關聯的物件。
+- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator):用來引發叫用事件的鍵盤對應鍵。
 
-在這裡我們示範如何定義的鍵盤快速鍵的項目集合中 ListView 的資訊，以及如何處理 Invoked 事件的每個快速鍵。
+這裡我們會示範如何定義的鍵盤對應鍵的項目集合中的 ListView，以及如何處理每個加速器的叫用事件。
 
 ``` xaml
 <ListView x:Name="MyListView">
@@ -251,7 +251,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>覆寫預設鍵盤行為
 
-在某些情況下，您可能需要覆寫特定的按鍵，例如退格鍵索引鍵或 Enter 鍵的預設行為。 例如， 
+在某些情況下，您可能需要覆寫預設行為，例如退格鍵或 Enter 鍵的特定索引鍵。 例如， 
 
 ## <a name="disable-a-keyboard-accelerator"></a>停用鍵盤快速鍵 
 
@@ -314,13 +314,13 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 由於功能在應用程式之間各有不同，此建議不一定可行。
 
-| **編輯** | **常見鍵盤快速操作** |
+| **編輯** | **通用的鍵盤對應鍵** |
 | ------------- | ----------------------------------- |
 | 開始編輯模式 | Ctrl + E |
 | 選取焦點所在控制項或視窗中的所有項目 | Ctrl + A |
 | 搜尋和取代 | Ctrl + H |
 | 復原 | Ctrl + Z |
-| 重做 | Ctrl + Y |
+| Redo | Ctrl + Y |
 | 將選取範圍刪除後複製到剪貼簿 | Ctrl + X |
 | 將選取範圍複製到剪貼簿 | Ctrl + C、Ctrl + Insert |
 | 貼上剪貼簿的內容 | Ctrl + V、Shift + Insert |
@@ -330,9 +330,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | 新增次要項目 | Ctrl + Shift + N |
 | 刪除選取的項目 (可以復原) | Del、Ctrl+D |
 | 刪除選取的項目 (無法復原) | Shift + Del |
-| 粗體 | Ctrl + B |
-| 底線 | Ctrl + U |
-| 斜體 | Ctrl + I |
+| Bold | Ctrl + B |
+| Underline | Ctrl + U |
+| Italic | Ctrl + I |
 
 | **瀏覽** | |
 | ------------- | ----------------------------------- |
@@ -348,7 +348,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | 縮放至預設檢視大小 | Ctrl + 0 | 
 | 儲存 | Ctrl + S | 
 | 關閉 | Ctrl + W | 
-| 列印 | Ctrl + P | 
+| Print | Ctrl + P | 
 
 請注意，有些組合不適用於 Windows 的當地語系化版本。 例如，在 Windows 的西班牙文版本中，設定粗體要使用 Ctrl+N 而不是 Ctrl+B。 如果應用程式已當地語系化，建議您提供當地語系化的鍵盤快速鍵。
 
@@ -358,21 +358,21 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 鍵盤快速操作通常不會直接在您 UWP 應用程式的 UI 中描述，您可以透過[工具提示](../controls-and-patterns/tooltips.md)改善發現性。工具提示會在使用者將焦點移動到控制項、按住不放，或滑鼠指標在控制項上暫留時自動顯示。 工具提示可識別控制項是否有相關聯的鍵盤快速操作，以及快速按鍵組合為何 (若有的話)。
 
-**Windows 10，版本 1803年 （2018 年 4 月更新） 和更新版本**
+**Windows 10，1803 版 （2018 年 4 月更新） 及更新版本**
 
-根據預設，當宣告鍵盤快速鍵時，（除了[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 的所有控制項都顯示對應的按鍵組合在工具提示中。
+根據預設，鍵盤快速鍵宣告時，所有控制項 (除了[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)並[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) 將工具提示中顯示對應的組合鍵。
 
 > [!NOTE] 
-> 如果控制項有一個以上的快速鍵定義，會呈現的第一個。
+> 如果控制項已定義的多個加速器，則會顯示只有第一個。
 
 ![快速鍵工具提示](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
-*工具提示中的快速按鍵組合*
+*加速器工具提示中的按鍵組合*
 
-適用於[按鈕](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，以及[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)物件，鍵盤快速操作會附加到控制項的預設工具提示。 適用於[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 物件，鍵盤快速鍵會顯示飛出視窗文字。
+針對[ 按鈕](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)， [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，並[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)物件的鍵盤快速鍵會附加至控制項的預設工具提示。 針對[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)並[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) 物件，就會顯示飛出視窗文字的鍵盤快速鍵。
 
 > [!NOTE]
-> 指定工具提示 （請參閱 Button1 在下列範例中） 會覆寫這個行為。
+> 指定工具提示 （請參閱 Button1 在下列範例中） 會覆寫此行為。
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
@@ -403,7 +403,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![快速鍵工具提示](images/accelerators/accelerators-button-small.png)
 
-*附加到按鈕的預設工具提示的快速按鍵組合*
+*快速鍵按鍵的組合，附加至按鈕的預設工具提示*
 
 ```xaml
 <AppBarButton Icon="Save" Label="Save">
@@ -415,7 +415,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![快速鍵工具提示](images/accelerators/accelerators-appbarbutton-small.png)
 
-*附加到 AppBarButton 的預設工具提示的快速按鍵組合*
+*快速鍵按鍵的組合，附加至 AppBarButton 的預設工具提示*
 
 ```xaml
 <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
@@ -441,9 +441,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![快速鍵工具提示](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
-*附加到 MenuFlyoutItem 的文字的快速按鍵組合*
+*快速鍵按鍵的組合，附加至 MenuFlyoutItem 的文字*
 
-藉由使用 [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) 控制展示行為，其接受兩種值：[Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) 或 [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)。    
+使用控制呈現行為[KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode)屬性，它會接受兩個值：[自動](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)或是[隱藏](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)。    
 
 ```xaml
 <Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
@@ -476,8 +476,8 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 某些平台控制項會根據預設執行此作業，特別是 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) 和 [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) 物件，[AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) 則會在出現在 [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 的溢位功能表時執行此作業。
 
-![功能表項目標籤中描述的鍵盤快速鍵](images/accelerators/accelerators_menuitemlabel.png)  
-*功能表項目標籤中描述的鍵盤快速鍵*
+![功能表項目標籤中所述的鍵盤快速鍵](images/accelerators/accelerators_menuitemlabel.png)  
+*功能表項目標籤中所述的鍵盤快速鍵*
 
 您可以透過 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)、[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)、[AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) 控制項的 [KeyboardAcceleratorTextOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) 屬性覆寫標籤的預設快速操作文字 (若沒有文字則可使用單一空格鍵)。 
 
@@ -513,8 +513,8 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 預覽輸入事件會在任何其他事件之前引發。 如果不處理這些事件，就會引發焦點所在元素的快速鍵，後面接著引發 KeyDown 事件。 兩個事件都會反昇直到已處理為止。
 
 
-![按鍵事件順序](images/accelerators/accelerators_keyevents.png)
-***按鈕事件順序***
+![索引鍵的事件序列](images/accelerators/accelerators_keyevents.png)
+***金鑰事件順序***
 
 事件的順序：
 
@@ -559,8 +559,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 我們建議將所有的鍵盤快速鍵當地語系化。 您可以在 XAML 宣告中使用標準 UWP 資源 (.resw) 檔案和 x:Uid 屬性來進行此作業。 在此範例中，Windows 執行階段會自動載入資源。
 
-![使用 UWP 資源檔案將鍵盤快速鍵當地語系化](images/accelerators/accelerators_localization.png)
-***使用 UWP 資源檔案將鍵盤快速鍵當地語系化***
+![UWP 資源檔使用鍵盤快速鍵當地語系化](images/accelerators/accelerators_localization.png)
+***鍵盤對應鍵當地語系化 UWP 資源檔案***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -619,10 +619,10 @@ public class MyListView : ListView
 ## <a name="related-articles"></a>相關文章
 
 * [鍵盤互動](keyboard-interactions.md)
-* [便捷鍵](access-keys.md)
+* [存取金鑰](access-keys.md)
 
 **範例**
-* [XAML 控制項庫 (亦即 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [XAML 控制項陳列庫 (也稱為 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 
  

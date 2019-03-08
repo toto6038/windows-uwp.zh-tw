@@ -1,20 +1,20 @@
 ---
 description: 本主題示範如何直接或間接使用 **winrt::implements** 基礎結構撰寫 C++/WinRT API。
-title: '使用 C++/WinRT 撰寫 API '
+title: 使用 C++/WinRT 撰寫 API
 ms.date: 01/10/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
 ms.openlocfilehash: e4ca6946df327dbe6697a71d1050e6401ed531fe
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042400"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626663"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
-本主題示範如何撰寫[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api 使用[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)基礎結構，直接或間接。 在此內容中適用於 *author* 的同義字有 *produce*，或 *implement*。 在此訂單中，本主題涵蓋下列 C++/WinRT 類型的實作 API 案例。
+本主題說明如何撰寫[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api 使用[ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)直接或間接基底結構。 在此內容中適用於 *author* 的同義字有 *produce*，或 *implement*。 在此訂單中，本主題涵蓋下列 C++/WinRT 類型的實作 API 案例。
 
 - 您 *不* 撰寫 Windows 執行階段類別 (執行階段類別) ；您只要為應用程式中的本機使用實作一或多個 Windows 執行階段介面。 您可以直接從此案例的 **winrt::implements** 衍生並實作函式。
 - 您 *正* 撰寫執行階段類別。 您可能會撰寫使用應用程式的元件。 或您可能撰寫使用 XAML 使用者介面 (UI) 的類型，且在此情況下，您會同時實作與使用相同編譯單位中的執行階段類別。 在這些案例中，您讓工具為您產生類別，從 **winrt::implements** 衍生。
@@ -28,9 +28,9 @@ ms.locfileid: "9042400"
 您正為本機使用量實作 的Windows 執行階段介面，是最簡單的案例。 您不需要執行階段類別；只需要一般 C++ 類別。 例如，您可能會根據 [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) 撰寫應用程式。
 
 > [!NOTE]
-> 如需資訊有關安裝和使用 C + + /winrt Visual Studio 擴充功能 (VSIX) （可提供專案範本的支援） 看到[Visual Studio 支援 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如資訊需安裝和使用 C + + /cli WinRT Visual Studio 擴充功能 (VSIX) （這也提供專案範本支援） 請參閱[Visual Studio 支援 C + /cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
-在 Visual Studio 中， **Visual c + +** > **Windows 通用** > **核心應用程式 (C + + /winrt)** 專案範本說明**CoreApplication**模式。 此模式以傳遞 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)的實作給 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)，做為開始。
+在 Visual Studio 中， **Visual c + +** > **Windows Universal** > **Core 應用程式 (C + + /cli WinRT)** 專案範本說明**CoreApplication**模式。 此模式以傳遞 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)的實作給 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)，做為開始。
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -110,7 +110,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ...
 ```
 
-因為您的 **App** 類型 *是一個* **IFrameworkViewSource**，您只要 **執行** 一個。
+因為您**應用程式**型別*是* **IFrameworkViewSource**，您可以只將一個**執行**。
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -126,7 +126,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 > [!TIP]
 > 為了在您編輯 IDL 檔案時最佳化建置效能，以及將 IDL 檔案邏輯對應到其產生的原始碼檔案，建議您在其本身的介面定義語言 (IDL) (.idl) 檔案中宣告各個執行階段類別。 Visual Studio 會合併所有產生的 `.winmd` 檔案為單一檔案，檔案名稱與根命名空間相同。 最終 `.winmd` 檔案將會是您的元件消費者將參照的檔案。
 
-範例如下。
+這裡提供一個範例。
 
 ```idl
 // MyRuntimeClass.idl
@@ -142,7 +142,7 @@ namespace MyProject
 }
 ```
 
-這個 IDL 宣告 Windows 執行階段 (執行階段) 類別。 執行階段類別可透過現代化 COM 介面啟動與使用，一般經過可執行的界限。 當您新增 IDL 檔案至專案，並組建 C++/WinRT toolchain (`midl.exe`與`cppwinrt.exe`) 為您產生實作類型。 使用上述範例 IDL，實作類型是 C++ 結構虛設常式名為 **winrt::MyProject::implementation::MyRuntimeClass** 在原始程式碼檔案中名為 `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` 和 `MyRuntimeClass.cpp`。
+這個 IDL 宣告 Windows 執行階段 (執行階段) 類別。 執行階段類別是可透過現代化 COM 介面啟動與使用的類型，一般經過可執行的界限。 當您新增 IDL 檔案至專案，並組建 C++/WinRT toolchain (`midl.exe`與`cppwinrt.exe`) 為您產生實作類型。 使用上述範例 IDL，實作類型是 C++ 結構虛設常式名為 **winrt::MyProject::implementation::MyRuntimeClass** 在原始程式碼檔案中名為 `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` 和 `MyRuntimeClass.cpp`。
 
 實作類型如下所示。
 
@@ -256,9 +256,9 @@ IStringable istringable = winrt::make<MyType>();
 ```
 
 > [!NOTE]
-> 不過，如果您正在從 XAML UI 參考您的類型，則在相同的專案中將會同時有執行類型和投影類型。 在此情況下，**讓**傳回投影類型的執行個體。 如需該案例的程式碼範例，請參閱 [XAML 控制項。繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
+> 不過，如果您正在從 XAML UI 參考您的類型，則在相同的專案中將會同時有執行類型和投影類型。 在此情況下，**讓**傳回的投影的型別執行個體。 如需該案例的程式碼範例，請參閱 [XAML 控制項。繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
-我們可以只使用 `istringable` (在上述的程式碼範例中) 撥打電話給 **IStringable** 介面的成員。 但 C++/WinRT 介面 (這是一個投影介面) 從 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 衍生。 因此，您可以呼叫[**iunknown:: As**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) （或[**iunknown:: Try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)） 在其上查詢其他投影的類型或介面，您可以也使用或傳回。
+我們可以只使用 `istringable` (在上述的程式碼範例中) 撥打電話給 **IStringable** 介面的成員。 但 C++/WinRT 介面 (這是一個投影介面) 從 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 衍生。 因此，您可以呼叫[ **IUnknown::as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (或[ **IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) 上其他的投影的類型或介面，您可以查詢也請使用或傳回。
 
 ```cppwinrt
 istringable.ToString();
@@ -276,14 +276,14 @@ IClosable iclosable = myimpl.as<IClosable>();
 iclosable.Close();
 ```
 
-**MyType** 類別並不是投影的一部分。它是實作。 但這種方式您可以直接撥打其實作方法，而不需要虛擬功能通話的額外負擔。 在上述的範例中，即使 **MyType::ToString** 在 **IStringable** 使用相同簽章做為投影方法，我們仍直接呼叫非 虛擬方法，而不需要通過應用程式二進位介面 (ABI)。 **Com_ptr** 簡單的保留 **MyType** 結構的指標，讓您也可以透過 [`myimpl` 變數和箭號運算子存取的任何其他內部 **MyType** 的詳細資訊。
+**MyType** 類別並不是投影的一部分。它是實作。 但這種方式您可以直接撥打其實作方法，而不需要虛擬功能通話的額外負擔。 在上述的範例中，即使 **MyType::ToString** 在 **IStringable** 使用相同簽章做為投影方法，我們仍直接呼叫非 虛擬方法，而不需要通過應用程式二進位介面 (ABI)。 **Com_ptr** 簡單的保留 **MyType** 結構的指標，讓您也可以透過 `myimpl` 變數和箭號運算子存取的任何其他內部 **MyType** 的詳細資訊。
 
-在案例中，您有介面物件，並知道這是您實作上的介面，然後您可以回到使用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)函式範本的實作。 再試一次，這是一種技術，避免虛擬功能通話，並讓您直接在實作中取得。
+在案例中有介面物件，而且您剛好知道它是在您的實作介面，則您可以回到實作使用[ **winrt::get_self** ](/uwp/cpp-ref-for-winrt/get-self)函式範本。 再試一次，這是一種技術，避免虛擬功能通話，並讓您直接在實作中取得。
 
 > [!NOTE]
-> 如果您還沒有安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本，則您需要呼叫[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)而不是[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
+> 如果您尚未安裝 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更新版本中，然後您必須呼叫[ **winrt::from_abi** ](/uwp/cpp-ref-for-winrt/from-abi)而非[ **winrt::get_自我**](/uwp/cpp-ref-for-winrt/get-self)。
 
-這裡提供一個範例。 [實作**BgLabelControl**自訂控制項類別](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)沒有另一個範例。
+這裡提供一個範例。 中沒有另一個例子[實作**BgLabelControl**自訂控制項類別](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)。
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -311,7 +311,7 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-如果您有實作類型的執行個體，且您需要將它傳遞給預期對應投影類型的函式，則您可以進行。 轉換運算子存在於您實作類型 (但前提是由產生實作類型`cppwinrt.exe`工具)，讓這能夠進行。 您可以直接將預期對應投影類型的值的方法傳遞的實作類型值。 您可以傳遞的實作類型成員函式中，從`*this`方法，以預期對應投影類型的值。
+如果您有實作類型的執行個體，且您需要將它傳遞給預期對應投影類型的函式，則您可以進行。 轉換運算子型別上實作 (前提是所產生的實作類型`cppwinrt.exe`工具)，而其推手。 您可以實作型別值直接傳遞給預期對應投影的型別值的方法。 從實作型別成員函式中，您可以傳遞`*this`預期的值相對應的投影類型的方法。
 
 ```cppwinrt
 // MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.
@@ -334,8 +334,8 @@ void MyType::MemberFunction(MyProject::MyOtherType const& ot)
 }
 ```
 
-## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>從有一個非預設建構函式衍生
-[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)是一個非預設建構函式的範例。 因此，沒有預設建構函式建構 **ToggleButtonAutomationPeer**，您需要傳遞 *owner*。 因此，如果您從 **ToggleButtonAutomationPeer** 衍生，則您需要提供取得一個 *owner* 的建構函式，並將它傳遞給基礎。 讓我們看看實際上看起來如何。
+## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>衍生自具有非預設建構函式的類型
+[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)** ](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)舉例說明的非預設建構函式。 因此，沒有預設建構函式建構 **ToggleButtonAutomationPeer**，您需要傳遞 *owner*。 因此，如果您從 **ToggleButtonAutomationPeer** 衍生，則您需要提供取得一個 *owner* 的建構函式，並將它傳遞給基礎。 讓我們看看實際上看起來如何。
 
 ```idl
 // MySpecializedToggleButton.idl
@@ -388,20 +388,20 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 ...
 ```
 
-基礎類別建構函式期待一個 **ToggleButton**。 以及 **MySpecializedToggleButton** *是一個***ToggleButton**。
+基礎類別建構函式期待一個 **ToggleButton**。 並**MySpecializedToggleButton** *是* **ToggleButton**。
 
 直到您進行上述的編輯 (將該建構函式參數傳遞給此基礎類別)，編譯器會標幟您的建構函式並指出在稱為 (此範例中) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** 的類型中沒有適當的預設建構函式。 這是您實作類型的基礎類別的實際基礎類別。
 
 ## <a name="important-apis"></a>重要 API
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::com_ptr::copy_from 函式](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
-* [winrt::from_abi 函式範本](/uwp/cpp-ref-for-winrt/from-abi)
-* [winrt::get_self 函式範本](/uwp/cpp-ref-for-winrt/get-self)
+* [winrt::from_abi 函式樣板](/uwp/cpp-ref-for-winrt/from-abi)
+* [winrt::get_self 函式樣板](/uwp/cpp-ref-for-winrt/get-self)
 * [winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)
-* [winrt::make 函式範本](/uwp/cpp-ref-for-winrt/make)
-* [winrt::make_self 函式範本](/uwp/cpp-ref-for-winrt/make-self)
-* [winrt::Windows::Foundation::IUnknown::as 函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::make 函式樣板](/uwp/cpp-ref-for-winrt/make)
+* [winrt::make_self function template](/uwp/cpp-ref-for-winrt/make-self)
+* [winrt::Windows::Foundation::IUnknown:: 函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>相關主題
-* [使用 C++/WinRT 使用 API ](consume-apis.md)
-* [XAML 控制向；繫結一個 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [使用 Api，使用 C + + /cli WinRT](consume-apis.md)
+* [XAML 控制項，繫結至 C + + /cli WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

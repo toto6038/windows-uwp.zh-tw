@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d84bbebfaf19b756e6abc6c592187b6b0ee92200
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945039"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618463"
 ---
-# <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>視窗與全螢幕模式
+# <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>視窗型與全螢幕模式
 
 
 Direct3D 應用程式可以兩種模式執行：視窗或全螢幕模式。 在*視窗模式*，應用程式與所有執行中的應用程式共用桌面螢幕可用空間。 在*全螢幕模式*，應用程式執行所在的視窗涵蓋整個桌面，隱藏所有執行的應用程式（包含您的開發環境）。 通常遊戲預設為全螢幕模式，隱藏執行的所有應用程式，為使用者提供身歷其境的遊戲體驗。

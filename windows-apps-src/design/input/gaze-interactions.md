@@ -1,6 +1,6 @@
 ---
 title: 注視互動
-Description: Learn how to design and optimize your UWP apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.
+Description: 了解如何設計及最佳化您的 UWP 應用程式依賴的眼睛與標頭的追蹤器的視線輸入的使用者提供最佳的體驗。
 label: Gaze interactions
 template: detail.hbs
 keywords: 注視, 眼球追蹤, 頭部追蹤, 注視點, 輸入, 使用者互動, 協助工具, 可用性
@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058539"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604393"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP 應用程式中的注視互動與眼球追蹤
 
@@ -27,7 +27,7 @@ ms.locfileid: "9058539"
 > [!NOTE]
 > 如需 [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/) 中的注視輸入，請參閱 [注視](https://docs.microsoft.com/windows/mixed-reality/gaze)。
 
-**重要 Api**: [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview),[GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview),[GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview),[GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**重要的 Api**:[Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)， [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview)， [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview)， [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>概觀
 
@@ -36,7 +36,7 @@ ms.locfileid: "9058539"
 此外，注視輸入提供同樣吸引人的機會用於電腦遊戲（包括目標擷取和追蹤）和傳統生產力應用程式、kiosk，以及其他互動式案例，其中傳統輸入裝置（鍵盤、滑鼠、觸控) 就無法使用，或讓使用者空出雙手執行其他工作（例如提著購物袋）可能會很實用/有幫助。
 
 > [!NOTE]
-> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。 一組的 UWP Api ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) 來建置可以與眼球追蹤硬體互動的應用程式是使用**Windows 10 2018 年更新 (版本 1803、 組建 17134)** 和更新版本。
+> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。 一組 UWP Api ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) 來建置應用程式可以與之互動的眼睛追蹤硬體是適用於**Windows 10 April 2018 Update (版本 1803，組建 17134)** 及更新版本。
 
 ## <a name="privacy"></a>隱私權
 
@@ -70,9 +70,9 @@ ms.locfileid: "9058539"
 
 ![使用計時器範例的注視追蹤](images/gaze/gaze-input-timed2.gif)
 
-*使用計時器範例的注視追蹤*
+*視線追蹤與計時器範例*
 
-**請從 [注視輸入範例 (基本)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip) 下載此範例。**
+**下載這個範例來自[視線輸入的範例 （基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
 1. 首先，先設定 UI (MainPage.xaml)。
 
@@ -152,7 +152,7 @@ ms.locfileid: "9058539"
     </Page>
     ```
 
-2. 接下來，初始化我們的應用程式。
+2. 接下來，初始化我們的 App。
 
     在這個片段中，我們可以宣告全球物件並覆寫 [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 頁面事件，開始我們的 [注視裝置監看員](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) 和 [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) 頁面事件，停止我們的 [注視裝置監看員](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview)。
 
@@ -499,9 +499,9 @@ ms.locfileid: "9058539"
     ```
 6. 最後，以下是適用於此應用程式用來管理是注視焦點計時器的方法。
 
-    `DoesElementContainPoint` 檢查注視指標是否超過進度列。 若是如此，它開始使用注視計時器，並在每個注視計時器刻度上遞增進度列。
+    `DoesElementContainPoint` 檢查視線指標是否透過進度列。 若是如此，它開始使用注視計時器，並在每個注視計時器刻度上遞增進度列。
 
-    `SetGazeTargetLocation` 設定的進度列的初始位置，如果進度列完成（取決於注視焦點計時器），請將進度列移動至隨機位置上。
+    `SetGazeTargetLocation` 設定進度列的初始位置，以及如果進度列完成 （根據視線焦點計時器），將進度列移到隨機位置。
 
     ```csharp
     /// <summary>
@@ -596,12 +596,12 @@ ms.locfileid: "9058539"
     }
     ```
 
-## <a name="see-also"></a>也請參閱
+## <a name="see-also"></a>請參閱
 
 ### <a name="resources"></a>資源
 
-- [Windows 社群工具組注視媒體櫃](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
+- [Windows 社群工具組視線程式庫](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>主題範例
 
-- [注視範例（基本 (C#)）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)
+- [視線範例 （基本） (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)

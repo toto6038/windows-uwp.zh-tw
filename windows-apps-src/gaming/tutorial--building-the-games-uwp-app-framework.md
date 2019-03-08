@@ -1,5 +1,5 @@
 ---
-title: 定義遊戲的 UWP app 架構
+title: 定義遊戲的 UWP 應用程式架構
 description: 撰寫通用 Windows 平台 (UWP) DirectX 遊戲程式碼的第一部分，是建立讓遊戲物件與 Windows 互動的架構。
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ms.date: 10/24/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx, 遊戲
 ms.localizationpriority: medium
 ms.openlocfilehash: 175009773f7969adbaf36a036e733443f593467f
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117768"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620553"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定義 UWP app 架構
 
@@ -22,13 +22,13 @@ ms.locfileid: "9117768"
 檢視提供者物件會實作 __IFrameworkView__ 介面，其中包含一系列需要設定以建立此遊戲範例的方法。
 
 您將需要實作這五個 App 單例所呼叫的方法：
-* [__Initialize__](#initialize-the-view-provider)
+* [__初始化__](#initialize-the-view-provider)
 * [__SetWindow__](#configure-the-window-and-display-behaviors)
-* [__Load__](#load-method-of-the-view-provider)
+* [__負載__](#load-method-of-the-view-provider)
 * [__Run__](#run-method-of-the-view-provider)
-* [__Uninitialize__](#uninitialize-method-of-the-view-provider)
+* [__解除初始化__](#uninitialize-method-of-the-view-provider)
 
- __Initialize__ 方法是在應用程式啟動時呼叫。 __SetWindow__ 方法是在 __Initialize__ 之後呼叫。 然後呼叫 __Load__ 方法。 __Run__ 方法是遊戲執行中。 遊戲結束時，呼叫 __Uninitialize__ 方法。 如需詳細資訊，請參閱 [__IFrameworkView__ API 參照](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview)。 
+__Initialize__ 方法是在應用程式啟動時呼叫。 __SetWindow__ 方法是在 __Initialize__ 之後呼叫。 然後呼叫 __Load__ 方法。 __Run__ 方法是遊戲執行中。 遊戲結束時，呼叫 __Uninitialize__ 方法。 如需詳細資訊，請參閱 [__IFrameworkView__ API 參照](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview)。 
 
 >[!Note]
 >如果您尚未下載此範例的最新遊戲程式碼，請移至 [Direct3D 遊戲範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此為 UWP 功能範例的大集合的一部分。 如需下載範例方法的指示，請參閱[從 GitHub 取得 UWP 範例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
@@ -186,12 +186,12 @@ void App::Load(
 
 ### <a name="gamemain-constructor"></a>GameMain 建構函式
 
-* 建立和初始化遊戲轉譯器 如需詳細資訊，請參閱[轉譯架構 I：轉譯簡介](tutorial--assembling-the-rendering-pipeline.md)。
+* 建立和初始化遊戲轉譯器 如需詳細資訊，請參閱[轉譯架構 i:轉譯為您簡介](tutorial--assembling-the-rendering-pipeline.md)。
 * 建立和初始化 Simple3Dgame 物件。 如需詳細資訊，請參閱[定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)。    
 * 建立遊戲 UI 控制項物件，並顯示遊戲資訊重疊，以在資源檔案載入時顯示進度列。 如需詳細資訊，請參閱[新增使用者介面](tutorial--adding-a-user-interface.md)。
 * 建立控制器，使其可以從控制器 (觸控、滑鼠或 XBox 無線控制器) 讀取輸入。 如需詳細資訊，請參閱[新增控制項](tutorial--adding-controls.md)。
 * 初始化控制器之後，我們在畫面的左下角和右下角分別為移動和相機觸控控制項定義兩個矩形區域。 玩家使用左下角矩形 (呼叫 **SetMoveRect** 來定義) 當作前後左右移轉相機的虛擬控制鍵。 右下角矩形 (由 **SetFireRect** 方法定義) 當作發射子彈的虛擬按鈕。
-* 使用__ create_task__ 和 __create_task::then__ 中斷資源載入為兩個不同的階段。 因為 Direct3D 11 裝置內容的存取被限於裝置內容建立的執行緒，而存取用於建立物件的 Direct3D 11 裝置則是無限制執行緒，這表示 **CreateGameDeviceResourcesAsync** 工作可以在從完成工作 (*FinalizeCreateGameDeviceResources*，其在原始執行緒上執行) 的獨立執行緒上執行。 我們使用類似的模式來載入等級資源 **LoadLevelAsync** 和 **FinalizeLoadLevel**。
+* 使用 __create_task__ 和 __create_task::then__ 中斷資源載入為兩個不同的階段。 因為 Direct3D 11 裝置內容的存取被限於裝置內容建立的執行緒，而存取用於建立物件的 Direct3D 11 裝置則是無限制執行緒，這表示 **CreateGameDeviceResourcesAsync** 工作可以在從完成工作 (*FinalizeCreateGameDeviceResources*，其在原始執行緒上執行) 的獨立執行緒上執行。 我們使用 **LoadLevelAsync** 和 **FinalizeLoadLevel** 時會以類似的模式來載入關卡資源。
 
 ```cpp
 GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) :
@@ -298,19 +298,19 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="run-method-of-the-view-provider"></a>檢視提供者的 Run 方法
 
-先前的三種方法：__Initialize__、__SetWindow__ 和 __Load__ 已設定階段。 現在，遊戲可以開始進行 **Run** 方法，開始享受其樂趣吧！ 用來在遊戲狀態間轉換的事件已發送及處理。 圖形在遊戲迴圈循環期間進行更新。
+先前的三種方法：__初始化__， __SetWindow__，以及__負載__設定階段。 現在，遊戲可以開始進行 **Run** 方法，開始享受其樂趣吧！ 用來在遊戲狀態間轉換的事件已發送及處理。 圖形在遊戲迴圈循環期間進行更新。
 
 ### <a name="apprun"></a>App::Run
 
 啟動一個決定玩家何時關閉遊戲視窗的 __while__ 迴圈。
 
 範例程式碼會在遊戲引擎狀態電腦中轉換成兩種狀態的其中一種：
-    * __Deactivated__：遊戲視窗會停用 (失去焦點) 或定格。 發生這種情況時，遊戲會暫停事件處理，並且等候視窗取得焦點或取消定格。
-    * __TooSmall__：遊戲會更新自己的狀態，並且轉譯圖形進行顯示。
+    * __停用__:遊戲視窗會停用 (失去焦點) 或定格。 發生這種情況時，遊戲會暫停事件處理，並且等候視窗取得焦點或取消定格。
+    * __TooSmall__:在遊戲更新自己的狀態，並轉譯顯示圖形。
 
 當使用者與您的遊戲互動時，您必須處理位於訊息佇列的每個事件，因此必須使用 **ProcessAllIfPresent** 選項呼叫 [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)。 其他選項會在處理訊息事件時造成延遲，這會讓您的遊戲顯得沒有回應，或是讓觸控行為變得遲緩而不敏銳。
 
-當遊戲處於不可見、暫停或定格的狀態時，您不希望它佔用任何資源循環來發送永遠不會傳入的訊息。 在此狀況中，您的遊戲必須使用 **ProcessOneAndAllPending**，它會持續封鎖直到取得事件，然後處理該事件，並處理在處理第一個事件期間抵達處理佇列中的任何其他事件。 接著，在處理完佇列後，立即傳回 [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)。
+當遊戲處於不可見、暫停或定格的狀態時，您不希望它佔用任何資源循環來發送永遠不會傳入的訊息。 在此狀況中，您的遊戲必須使用 **ProcessOneAndAllPending**，它會持續封鎖直到取得事件，然後處理該事件，並處理在處理第一個事件期間抵達處理佇列中的任何其他事件。 [**ProcessEvents** ](https://msdn.microsoft.com/library/windows/apps/br208215)立即傳回處理完佇列之後。
 
 ```cpp
 void App::Run()
@@ -384,9 +384,9 @@ void GameMain::Run()
 
 當使用者最後結束遊戲工作階段時，我們需要進行清除。 這時就需要使用 **Uninitialize**。
 
-在 windows 10，關閉 app 視窗並不會終止應用程式的程序，但改為應用程式單例的狀態寫入到記憶體。 如需在系統必須回收此記憶體時執行任何特殊的動作，包括任何特殊的資源清理，請在這個方法中放入該清理動作的程式碼。
+在 Windows 10 中，關閉應用程式視窗不終止應用程式的程序，但改為它的應用程式的單一狀態將寫入記憶體。 如需在系統必須回收此記憶體時執行任何特殊的動作，包括任何特殊的資源清理，請在這個方法中放入該清理動作的程式碼。
 
-### <a name="app-uninitialize"></a>App:: Uninitialize
+### <a name="app-uninitialize"></a>應用程式：Uninitialize
 
 ```cpp
 void App::Uninitialize()

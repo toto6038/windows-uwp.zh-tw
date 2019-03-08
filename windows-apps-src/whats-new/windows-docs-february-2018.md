@@ -6,17 +6,17 @@ ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115835"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632863"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>2018 年 2 月 Windows 開發人員文件的最新動向
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 1 月份已有下列功能概觀、開發人員指引和影片可以使用，包含提供給 Windows 開發人員的全新及更新資訊。
 
-在 Windows10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 
 ## <a name="features"></a>功能
@@ -53,7 +53,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ![中樞頁面模式圖例](../design/basics/images/hub.png)
 
-### <a name="writing-style"></a>撰寫方式
+### <a name="writing-style"></a>撰寫樣式
 
 我們已針對有關語音與音調的文章提升品質並擴充內容，並將其轉換成[撰寫方式指引](../design/style/writing-style.md)。 這項新資訊提供關於在 App 中建立有效文字的原則，並建議撰寫控制項 (例如錯誤訊息或對話方塊) 的最佳做法。
 

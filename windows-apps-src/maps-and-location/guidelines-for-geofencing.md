@@ -1,26 +1,26 @@
 ---
-Description: Follow these best practices for geofencing in your app.
-title: 地理柵欄應用程式的指導方針
+Description: 在 App 中遵循這些適用於地理柵欄的最佳做法。
+title: 地理柵欄 App 的指導方針
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 地理柵欄
 ms.localizationpriority: medium
 ms.openlocfilehash: e3fe7cb84d4ae265ed20a6a74b76e4f08dd4c1dd
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047403"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622473"
 ---
-# <a name="guidelines-for-geofencing-apps"></a>地理柵欄應用程式的指導方針
+# <a name="guidelines-for-geofencing-apps"></a>地理柵欄 App 的指導方針
 
 
 
 
-**重要 API**
+**重要的 Api**
 
--   [**Geofence 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
+-   [**地理柵欄類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
 -   [**Geolocator 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
 在應用程式中遵循這些適用於[**地理柵欄**](https://msdn.microsoft.com/library/windows/apps/dn263744)的最佳做法。
@@ -129,7 +129,7 @@ function onVisibilityChanged() {
 
 * [設定地理柵欄](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [取得目前的位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
-* [UWP 位置範例 (地理位置)](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 位置 」 範例 （地理位置）](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  

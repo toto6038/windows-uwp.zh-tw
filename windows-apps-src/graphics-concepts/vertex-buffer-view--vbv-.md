@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cfb92c4f876d85388ce325f151408fe7b9e8d8b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945424"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636243"
 ---
 # <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a>頂點緩衝區檢視 (VBV) 和索引緩衝區檢視 (IBV)
 
@@ -35,7 +35,7 @@ CUSTOMVERTEX 的定義接著會在建立頂點緩衝區時傳遞至圖形驅動�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[檢視](views.md)
+[Views](views.md)
 
  
 

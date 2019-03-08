@@ -1,5 +1,5 @@
 ---
-Description: Use an inverted list to add new items at the bottom.
+Description: 使用反轉清單，在底部加入新項目。
 title: 反轉清單
 label: Inverted lists
 template: detail.hbs
@@ -12,11 +12,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 12f86c0d4f8980cea375b9a0a8a6876510c795b0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936505"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601593"
 ---
 # <a name="inverted-lists"></a>反轉清單
 
@@ -24,7 +24,7 @@ ms.locfileid: "8936505"
 
 您可以在聊天體驗中，使用清單檢視來呈現交談，並利用視覺上有明顯區別的項目來代表傳送者/接收者。  使用不同的色彩和水平對齊來區分傳送者/接收者的訊息，可協助使用者在交談中快速定位。
 
-> **重要 API**：[ListView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、[ItemsStackPanel 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx)、[ItemsUpdatingScrollMode 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx)
+> **重要的 Api**:[ListView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)， [ItemsStackPanel 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx)， [ItemsUpdatingScrollMode 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx)
  
 您通常需要以由下而上 (不是由上而下) 的顯示方式來呈現清單。  當新訊息送達並新增至結尾時，先前的訊息會向上滑動，以便挪出空間讓使用者注意到最新送達的訊息。  不過，如果使用者已經往上捲動來檢視先前的回覆，則新訊息的送達不應造成視覺轉變來干擾他們的焦點。
 
@@ -59,4 +59,4 @@ ms.locfileid: "8936505"
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 由下而上清單範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBottomUpList)
+- [XAML 由下而上的清單範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBottomUpList)

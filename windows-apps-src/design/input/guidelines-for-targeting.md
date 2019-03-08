@@ -1,28 +1,28 @@
 ---
-Description: This topic describes the use of contact geometry for touch targeting and provides best practices for targeting in Windows Runtime apps.
+Description: 本主題描述在 Windows 執行階段應用程式中如何使用接觸幾何來預測觸控目標，並提供觸控目標的最佳做法。
 title: 目標預測
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e8425232512650d5c80bf6fee9745b261aee8d9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929002"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646053"
 ---
 # <a name="guidelines-for-targeting"></a>目標預測的指導方針
 
 
-Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指的完整接觸區域。 數位板所回報之較大、較複雜的輸入資料，可用於提高判斷使用者意向 (或最有可能的) 目標時的準確度。
+Windows 中的觸控目標預測，使用觸控數位板所偵測到每一根手指的完整接觸區域。 數位板所回報之較大、較複雜的輸入資料，可用於提高判斷使用者意向 (或最有可能的) 目標時的準確度。
 
-> **重要 API**：[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 Api**:[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-本主題描述在 UWP app 中如何使用接觸幾何來預測觸控目標，並提供目標預測的最佳做法。
+本主題描述在 Windows 執行階段應用程式中如何使用接觸幾何來預測觸控目標，並提供目標預測的最佳做法。
 
 ## <a name="measurements-and-scaling"></a>度量單位和縮放
 
@@ -104,8 +104,8 @@ Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指
 
 這些建議目標大小可以根據自己的特殊情況而加以調整。 這些建議考慮到下列事項：
 
--   觸控頻率：考慮將重複或不斷按到的目標設成大於最小值。
--   錯誤結果：如果不小心點選之後，會有嚴重結果的目標，應該要有更多的邊框間距，而且要放在離內容區邊緣更遠的位置。 如果目標經常被點選，更是如此。
+-   修飾的頻率：請考慮將重複或經常按下大於最小大小的目標。
+-   錯誤結果：有嚴重的後果，如果錯誤接觸到的目標應該有更大的填補，但更內容區域的邊緣。 如果目標經常被點選，更是如此。
 -   在內容區中的位置
 -   尺寸和螢幕大小
 -   手指姿勢
@@ -131,7 +131,7 @@ Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊
 
 這項功能並未對使用 JavaScript 的 UWP app 的開發人員公開。
 
-## <a name="scrubbing"></a>Scrubbing
+## <a name="scrubbing"></a>擦選
 
 
 擦選是指觸控目標所在區域中的任何一個位置，然後滑動而不提起手指直到停在想要的目標上為止，以藉此選取想要的目標。 這也稱為「觸離啟動」，也就是被啟動的物件是手指從畫面提起時最後觸碰的物件。
@@ -150,20 +150,20 @@ Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊
 
 
 **範例**
-* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **封存範例**
-* [輸入：XAML 使用者輸入事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：簡化的筆跡範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [輸入：Windows 8 手勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 觸控輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [輸入：XAML 使用者輸入的事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：觸控的點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：簡化的手寫範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [輸入：Windows 8 筆勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [輸入：操作和手勢 （c + +） 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX 觸控的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

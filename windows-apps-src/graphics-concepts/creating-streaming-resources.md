@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ec96f6245969d32357563c44107f539fb9043aac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924442"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618243"
 ---
 # <a name="creating-streaming-resources"></a>建立串流資源
 
@@ -43,31 +43,31 @@ ms.locfileid: "8924442"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="mappings-are-into-a-tile-pool.md">對應在磚集區中</a></p></td>
+<td align="left"><p><a href="mappings-are-into-a-tile-pool.md">對應是到並排顯示集區</a></p></td>
 <td align="left"><p>將資源建立為串流資源時，組成資源的磚來自指向磚集區中的位置。 磚集區是記憶體的集區 (由一或多個配置於幕後備份 - 應用程式中看不見)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="streaming-resource-creation-parameters.md">串流資源建立參數</a></p></td>
+<td align="left"><p><a href="streaming-resource-creation-parameters.md">資料流的資源建立參數</a></p></td>
 <td align="left"><p>可以建立為串流資源的 Direct3D 資源類型上有一些限制。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="tile-pool-creation-parameters.md">磚集區建立參數</a></p></td>
+<td align="left"><p><a href="tile-pool-creation-parameters.md">並排顯示集區的建立參數</a></p></td>
 <td align="left"><p>使用本節的參數，在建立緩衝區時定義磚集區。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="streaming-resource-cross-process-and-device-sharing.md">串流資源跨處理序和裝置共用</a></p></td>
+<td align="left"><p><a href="streaming-resource-cross-process-and-device-sharing.md">資料流資源的跨處理序及裝置共用</a></p></td>
 <td align="left"><p>磚集區可以與其他處理序共用，就像傳統資源一樣。 參考磚集區的串流資源無法跨裝置和處理序共用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="operations-available-on-streaming-resources.md">串流資源可用的作業</a></p></td>
+<td align="left"><p><a href="operations-available-on-streaming-resources.md">資料流資源可用的作業</a></p></td>
 <td align="left"><p>這個區段列出您可以在串流資源上執行的作業。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="operations-available-on-tile-pools.md">磚集區可用的作業</a></p></td>
+<td align="left"><p><a href="operations-available-on-tile-pools.md">在圖格的集區上可用的作業</a></p></td>
 <td align="left"><p>磚集區的作業包括調整磚集區的大小、提供資源 (為整個磚集區暫時將記憶體讓給系統使用) 以及回收資源。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="how-a-streaming-resource-s-area-is-tiled.md">串流資源區域的拼貼方式</a></p></td>
+<td align="left"><p><a href="how-a-streaming-resource-s-area-is-tiled.md">資料流資源的區域會並排顯示方式</a></p></td>
 <td align="left"><p>建立串流資源時，維度、格式項目大小及 Mipmap 數目和/或陣列配量 (如適用) 決定了備份整個表面區域所需的磚數目。</p></td>
 </tr>
 </tbody>
@@ -78,7 +78,7 @@ ms.locfileid: "8924442"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[串流資源](streaming-resources.md)
+[資料流的資源](streaming-resources.md)
 
  
 

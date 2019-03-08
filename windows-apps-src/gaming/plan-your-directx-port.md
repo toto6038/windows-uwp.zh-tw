@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, directx, port, 連接埠
 ms.localizationpriority: medium
 ms.openlocfilehash: 6779fd95d4fd1964a8ca19aa4a7a9f9c29a6179b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044379"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602123"
 ---
 # <a name="plan-your-directx-port"></a>計劃 DirectX 移植
 
@@ -20,7 +20,7 @@ ms.locfileid: "9044379"
 **摘要**
 
 -   計劃 DirectX 移植
--   [從 Direct3D 9 到 Direct3D 11 的重要變更](understand-direct3d-11-1-concepts.md)
+-   [為 Direct3D 11 的重要變更與 Direct3D 9](understand-direct3d-11-1-concepts.md)
 -   [功能對應](feature-mapping.md)
 
 
@@ -35,11 +35,11 @@ ms.locfileid: "9044379"
 
 您必須使用自己的協助程式庫或社群工具來取代 D3DX 與 DXUT 協助程式庫。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
 
-> **注意：** 您可以使用[DirectX 工具組](https://go.microsoft.com/fwlink/p/?LinkID=248929)或[DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926)取代先前由 D3DX 與 DXUT 所提供的部分功能。
+> **附註**  您可以使用[DirectX 工具套件](https://go.microsoft.com/fwlink/p/?LinkID=248929)或是[DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926)來取代先前 D3DX 和 DXUT 所提供的一些功能。
 
  
 
-以組合語言撰寫的著色器應該使用著色器模型 4 層級 9\_1 或 9\_3 功能升級到 HLSL，而針對效果程式庫所撰寫的著色器將需要升級到更新版本的 HLSL 語法。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
+組件語言撰寫的著色器應該升級為使用著色器模型 4 層級 9 的 HLSL\_1 或 9\_3 個功能，以及專為效果庫將需要更新至較新版本的 HLSL 語法著色器。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
 
 熟悉不同的 [Direct3D 功能層級](https://msdn.microsoft.com/library/windows/desktop/ff476876)。 功能層級可以藉由定義已知的功能組合，將範圍廣泛的視訊硬體分類。 每一組大致上都會對應到 Direct3D 版本 (從 9.1 到 11.2)。 所有功能層級都使用 DirectX 11 API。
 

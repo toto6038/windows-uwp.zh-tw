@@ -1,5 +1,5 @@
 ---
-Description: Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
+Description: 檢閱此清單有助於避免發生經常讓 app 無法通過認證的問題，或是 app 發行後可能在抽樣檢查中發現的問題。
 title: 避免常見的認證失敗
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.date: 10/31/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c99c159ff68201919fa15baded999e3b6a2477
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932005"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625793"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常見的認證失敗
 
@@ -19,7 +19,7 @@ ms.locfileid: "8932005"
 檢閱此清單有助於避免發生經常讓 app 無法通過認證的問題，或是 app 發行後可能在抽樣檢查中發現的問題。
 
 > [!NOTE]
-> 請務必檢閱[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)，以確認您的應用程式符合此處所列的需求的所有項目。
+> 請務必檢閱[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)以確保您的應用程式符合所有需求列於此處。
 
 -   只有在完成上述檢閱之後，才提教您的 app。 您可以使用應用程式的介紹來提及即將推出的新功能，但務必確定應用程式中沒有包含未完成的區段或建構中的網頁連結，或是讓客戶覺得您的應用程式有未完成的任何其他項目。
 
@@ -31,9 +31,9 @@ ms.locfileid: "8932005"
 
 -   [提供任何所需的資訊](notes-for-certification.md)來使用應用程式，例如測試帳戶的使用者名稱和密碼 (若您的應用程式需要使用者登入服務)，或存取隱藏或鎖定功能的任何所需步驟。
 
--   如果您的應用程式需要一個;，包括[隱私權原則 URL](enter-app-properties.md#privacy-policy-url)例如，如果您的應用程式存取任何類型的任何方式個人資訊或若法律要求時。 若要協助判斷您的應用程式是否需要隱私權原則，檢閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」 和 「 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
+-   包含[隱私權原則 URL](enter-app-properties.md#privacy-policy-url)如果您的應用程式需要一個; 例如，如果您的應用程式存取任何一種以任何方式的個人資訊或法律要求。 若要協助判斷您的應用程式是否需要隱私權原則，檢閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)並[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
 
--   確定應用程式描述可清楚說明應用程式的功能。 如需說明，請參閱[撰寫一份出色的應用程式介紹](write-a-great-app-description.md)的指導方針。
+-   確定應用程式描述可清楚說明應用程式的功能。 如需說明，請參閱[撰寫一份具有吸引力的應用程式介紹](write-a-great-app-description.md)的指導方針。
 
 -   在[年齡分級](age-ratings.md)區段中，針對所有的問題提供完整且準確的回應。
 

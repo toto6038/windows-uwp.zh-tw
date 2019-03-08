@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 設定, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944582"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608703"
 ---
 # <a name="set-up-the-game-project"></a>設定遊戲專案
 
@@ -33,19 +33,19 @@ ms.locfileid: "8944582"
 
 ### <a name="use-directx-template-to-create-a-project"></a>使用 DirectX 範本建立專案
 
-Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對使用慣用語言和技術的特定應用程式類型所設計。 在 Microsoft Visual Studio2017，您會發現很多範本能夠讓遊戲和圖形的應用程式開發變得非常容易。 如果您不使用範本，就必須自己開發許多基本圖形轉譯和顯示架構，對遊戲開發初學者而言可能有點困難。
+Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對使用慣用語言和技術的特定應用程式類型所設計。 在 Microsoft Visual Studio 2017，您會發現一些可以大幅簡化遊戲和圖形應用程式開發的範本。 如果您不使用範本，就必須自己開發許多基本圖形轉譯和顯示架構，對遊戲開發初學者而言可能有點困難。
 
 用於此教學課程的範本名為 **DirectX 11 App (通用 Windows)**。 
 
 在 Visual Studio 中建立 DirectX 11 遊戲專案的步驟：
-1.  選取 **\[檔案...\]**&gt;**\[新增\]**&gt;**\[專案...\]**
-2.  在左窗格中，選取 **\[已安裝\]**&gt;**\[範本\]**&gt;**\[Visual C++\]**&gt;**\[Windows 通用\]**
+1.  選取**檔案...**&gt; **新**&gt; **專案...** 
+2.  在左窗格中，選取**已安裝** &gt; **範本** &gt; **Visual c + +** &gt; **Windows 通用**
 3.  在中央窗格中，選取 **\[DirectX 11 應用程式 (通用 Windows)\]**。
-4.  提供遊戲專案名稱，然後按一下 **\[確定\]**。
+4.  提供遊戲專案名稱，然後按一下 [確定]。
 
 ![顯示如何選取 directx11 範本以建立新的遊戲專案的螢幕擷取畫面](images/simple-dx-game-setup-new-project.png)
 
-這個範本為您提供使用 DirectX 搭配 C++ 的 UWP app 的基本架構。 按一下 F5 來建置並執行它。 查看那個粉藍色螢幕。 此範本會建立多個程式碼檔案，其中包含使用 DirectX 搭配 C++ 的 UWP app 所適用的基本功能。
+這個範本為您提供使用 DirectX 搭配 C++ 的 UWP app 的基本架構。 按一下 F5 來建置並執行它。 看看那個粉藍色螢幕。 此範本會建立多個程式碼檔案，其中包含使用 DirectX 搭配 C++ 的 UWP app 所適用的基本功能。
 
 ## <a name="review-the-apps-main-entry-point-by-understanding-iframeworkview"></a>了解 IFrameworkView 來檢視 App 的主要進入點
 
@@ -53,7 +53,7 @@ Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對
 
 ### <a name="inspect-apph"></a>檢查 **App.h**。
 
-讓我們快速查看在實作定義檢視提供者的 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) 介面時在 **App.h** &mdash; 中的 5 個方法：[**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 和 [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)。 這些方法是由遊戲啟動時建立的應用程式單例執行，而且會載入您 app 的所有資源，以及連接適當的事件處理常式。
+讓我們快速看看 5 中的方法**app.h 中** &mdash; [**初始化**](https://msdn.microsoft.com/library/windows/apps/hh700495)， [ **SetWindow** ](https://msdn.microsoft.com/library/windows/apps/hh700509)， [**負載**](https://msdn.microsoft.com/library/windows/apps/hh700501)， [**執行**](https://msdn.microsoft.com/library/windows/apps/hh700505)，以及[**解除初始化**](https://msdn.microsoft.com/library/windows/apps/hh700523)實作時[ **IFrameworkView** ](https://msdn.microsoft.com/library/windows/apps/hh700469)定義檢視提供者的介面。 這些方法是由遊戲啟動時建立的應用程式單例執行，而且會載入您 app 的所有資源，以及連接適當的事件處理常式。
 
 ```cpp
     // Main entry point for our app. Connects the app with the Windows shell and handle application lifecycle events.
@@ -118,7 +118,7 @@ void App::Run()
 }
 ```
 
-此方法的執行內容：如果遊戲的視窗沒有關閉，它會分派所有事件、更新計時器，然後轉譯和顯示圖形管線的結果。 我們將會在[定義 UWP app 架構](tutorial--building-the-games-uwp-app-framework.md)、[轉譯架構 I：轉譯簡介](tutorial--assembling-the-rendering-pipeline.md) 和 [轉譯架構 II：遊戲轉譯](tutorial-game-rendering.md)中更詳細討論。 現在，您應該對 UWP DirectX 遊戲的基本程式碼結構有大致的了解。
+這個方法的用途：如果不關閉您的遊戲的視窗，它會分派所有事件、 更新計時器，然後呈現而圖形管線的結果。 我們將討論這更詳細地[定義 UWP 應用程式架構](tutorial--building-the-games-uwp-app-framework.md)，[轉譯架構 i:轉譯為您簡介](tutorial--assembling-the-rendering-pipeline.md)，和[轉譯架構 II:遊戲轉譯](tutorial-game-rendering.md)。 現在，您應該對 UWP DirectX 遊戲的基本程式碼結構有大致的了解。
 
 ## <a name="review-and-update-the-packageappxmanifest-file"></a>檢視並更新 package.appxmanifest 檔案
 
@@ -129,13 +129,13 @@ void App::Run()
 
 ![package.appx 資訊清單編輯器的螢幕擷取畫面。](images/simple-dx-game-setup-app-manifest.png)
 
-如需 **package.appxmanifest** 檔案和封裝的詳細資訊，請參閱[資訊清單設計工具](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)。 現在，看看 **\[功能\]** 索引標籤，以及其中提供的選項。
+如需 **package.appxmanifest** 檔案和封裝的詳細資訊，請參閱[資訊清單設計工具](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)。 現在，看看 [功能] 索引標籤，以及其中提供的選項。
 
 ![direct3d App 的預設功能的螢幕擷取畫面。](images/simple-dx-game-setup-capabilities.png)
 
-如果您未選取遊戲所使用的功能 (例如透過 **\[網際網路\]** 存取全球高分板)，就無法存取對應的資源或功能。 建立新遊戲時，記得選取遊戲執行所需的功能！
+如果您未選取遊戲所使用的功能 (例如透過 [網際網路] 存取全球高分板)，就無法存取對應的資源或功能。 建立新遊戲時，記得選取遊戲執行所需的功能！
 
-現在，讓我們看看隨附於 **DirectX 11 App (通用 Windows)** 範本的其餘檔案。
+現在，讓我們看看隨附於 **DirectX 11 應用程式 (通用 Windows)** 範本的其餘檔案。
 
 ## <a name="review-the-included-libraries-and-headers"></a>檢視包含的程式庫和標頭
 

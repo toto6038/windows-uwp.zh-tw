@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 866a3b02d67409d03fccf427663de65cc94919b2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919757"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618093"
 ---
 # <a name="handle-device-orientation-with-mediacapture"></a>使用 MediaCapture 處理裝置方向
 當您的 app 擷取要在 app 以外檢視的相片或影片時 (例如，儲存到使用者裝置上的檔案或線上分享)，請務必使用正確的方向中繼資料來為影像編碼，如此一來，當其他 app 或裝置顯示該影像時，就能以正確方向顯示它。 判斷要在媒體檔案中包含的正確方向資料是一項複雜的工作，因為有數個變數需要考量，包括裝置底座的方向、顯示器的方向，以及相機在底座上的位置 (其為前方或後方相機)。 
@@ -37,7 +37,7 @@ ms.locfileid: "8919757"
 [!code-cs[DeclareCameraDevice](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareCameraDevice)]
 
 ## <a name="select-a-camera-device-and-initialize-the-mediacapture-object"></a>選取相機裝置並初始化 MediaCapture 物件
-[**使用 MediaCapture 進行基本相片、視訊和音訊的擷取**](basic-photo-video-and-audio-capture-with-mediacapture.md)一文示範如何只利用幾行程式碼來初始化 **MediaCapture** 物件。 為了支援相機方向，我們將在初始化程序中新增數個步驟。
+[  **使用 MediaCapture 進行基本相片、視訊和音訊的擷取**](basic-photo-video-and-audio-capture-with-mediacapture.md)一文示範如何只利用幾行程式碼來初始化 **MediaCapture** 物件。 為了支援相機方向，我們將在初始化程序中新增數個步驟。
 
 首先，呼叫 [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceInformation.FindAllAsync)，其會傳入裝置選取器 [**DeviceClass.VideoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceClass)，以取得所有可用視訊擷取裝置的清單。 接下來，選取清單中的第一個裝置，其中已知相機的面板位置，而且它符合所提供的值，此範例中的相機為前方相機。 如果在所需的面板上找不到相機，即會使用第一台或預設可用的相機。
 
@@ -54,7 +54,7 @@ ms.locfileid: "8919757"
 
 [!code-cs[InitRotationHelper](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitRotationHelper)]
 
-## <a name="add-orientation-data-to-the-camera-preview-stream"></a>在相機預覽串流中新增方向資料
+## <a name="add-orientation-data-to-the-camera-preview-stream"></a>在相機預覽資料流中新增方向資料
 將正確的方向新增到預覽資料流的中繼資料，不會影響為使用者顯示預覽的方式，也能協助系統為擷取自預覽資料流的畫面進行正確編碼。
 
 您可以藉由呼叫 [**MediaCapture.StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartPreviewAsync) 來啟動相機預覽。 執行此動作之前，請檢查成員變數，以查看是否應該對預覽進行鏡像處理 (適用於前方相機)。 如果是，將 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.CaptureElement) 的 [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.FlowDirection) 屬性 (在這個範例中，名稱為 *PreviewControl*) 設為 [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FlowDirection)。 啟動預覽之後，呼叫協助程式方法 **SetPreviewRotationAsync** 來設定預覽旋轉。 以下是此方法的實作。
@@ -65,7 +65,7 @@ ms.locfileid: "8919757"
 
 若要設定中繼資料，藉由呼叫 [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Devices.VideoDeviceController.GetMediaStreamProperties) 來擷取預覽資料流屬性。 接著，建立代表視訊資料流旋轉的媒體基礎轉換 (MFT) 屬性的 GUID。 在 C++ 中，您可以使用常數 [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/library/windows/desktop/hh162880.aspx)，但在 C# 中，您必須手動指定 GUID 值。 
 
-將屬性值新增到資料流屬性物件，指定 GUID 做為機碼並指定預覽旋轉做為值。 這個屬性預期值是以逆時針旋轉度數的單位來表示，因此可使用 **CameraRotationHelper** 方法 **ConvertSimpleOrientationToClockwiseDegrees** 來轉換簡單的方向值。 最後，呼叫 [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.SetEncodingPropertiesAsync(Windows.Media.Capture.MediaStreamType,Windows.Media.MediaProperties.IMediaEncodingProperties,Windows.Media.MediaProperties.MediaPropertySet))，將新的旋轉屬性套用到串流。
+將屬性值新增到資料流屬性物件，指定 GUID 做為機碼並指定預覽旋轉做為值。 這個屬性預期值是以逆時針旋轉度數的單位來表示，因此可使用 **CameraRotationHelper** 方法 **ConvertSimpleOrientationToClockwiseDegrees** 來轉換簡單的方向值。 最後，呼叫 [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.SetEncodingPropertiesAsync(Windows.Media.Capture.MediaStreamType,Windows.Media.MediaProperties.IMediaEncodingProperties,Windows.Media.MediaProperties.MediaPropertySet))，將新的旋轉屬性套用到資料流。
 
 [!code-cs[SetPreviewRotationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSetPreviewRotationAsync)]
 
@@ -76,7 +76,7 @@ ms.locfileid: "8919757"
 [!code-cs[HelperOrientationChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetHelperOrientationChanged)]
 
 ## <a name="capture-a-photo-with-orientation-data"></a>使用方向資料擷取相片
-[**使用 MediaCapture 進行基本相片、視訊和音訊的擷取**](basic-photo-video-and-audio-capture-with-mediacapture.md)一文示範如何將相片擷取到檔案，方法是先擷取到記憶體內部的資料流，然後使用解碼器讀取來自資料流的影像資料，並使用編碼器來將影像資料轉碼為檔案。 取自 **CameraRotationHelper** 類別的方向資料，可以在轉碼作業期間新增到影像檔案。
+[  **使用 MediaCapture 進行基本相片、視訊和音訊的擷取**](basic-photo-video-and-audio-capture-with-mediacapture.md)一文示範如何將相片擷取到檔案，方法是先擷取到記憶體內部的資料流，然後使用解碼器讀取來自資料流的影像資料，並使用編碼器來將影像資料轉碼為檔案。 取自 **CameraRotationHelper** 類別的方向資料，可以在轉碼作業期間新增到影像檔案。
 
 在下列範例中，會呼叫 [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync) 來將相片擷取到 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream)，並從資料流中建立 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder)。 接下來，建立並開啟 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile) 以擷取 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.IRandomAccessStream) 來寫入檔案。 
 
@@ -102,7 +102,7 @@ ms.locfileid: "8919757"
 
 * **GetUIOrientation** - 傳回相機 UI 元素的建議方向。
 * **GetCameraCaptureOrientation** - 傳回用來編碼至影像中繼資料的建議方向。
-* **GetCameraPreviewOrientation** - 傳回預覽串流的建議方向，以提供更自然的使用者體驗。
+* **GetCameraPreviewOrientation** - 傳回預覽資料流的建議方向，以提供更自然的使用者體驗。
 
 [!code-cs[CameraRotationHelperFull](./code/SimpleCameraPreview_Win10/cs/CameraRotationHelper.cs#SnippetCameraRotationHelperFull)]
 
@@ -111,7 +111,7 @@ ms.locfileid: "8919757"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

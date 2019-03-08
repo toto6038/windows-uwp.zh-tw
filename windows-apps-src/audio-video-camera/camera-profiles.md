@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fe876b362f09eaca68d84516d413d3f458edf0a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920049"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603403"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>使用相機設定檔探索並選取相機功能
 
@@ -73,7 +73,7 @@ ms.locfileid: "8920049"
 > [!NOTE] 
 > 這一節中所述的 API 從 Windows 10 版本 1803 起已過時。 請參閱上一節，**使用媒體畫面來源群組取得設定檔**。
 
-像其他案例一樣，開始選取支援 HDR 的設定檔。 建立**MediaCaptureInitializationSettings**和字串來保存擷取裝置識別碼。 新增布林值變數，以追蹤是否支援 HDR 視訊。
+像其他案例一樣，開始選取支援 HDR 的設定檔。 建立**MediaCaptureInitializationSettings**和字串來保存擷取的裝置識別碼。 新增布林值變數，以追蹤是否支援 HDR 視訊。
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 
@@ -98,7 +98,7 @@ ms.locfileid: "8920049"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

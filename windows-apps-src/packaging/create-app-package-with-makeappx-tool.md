@@ -8,28 +8,28 @@ ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3c6958491092498451743085af38b2d0fa6bdf8a
-ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991604"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634653"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具建立應用程式套件
 
 
-**MakeAppx.exe**建立同時應用程式套件 （.msix 或.appx） 與應用程式套件組合 （.msixbundle 或.appxbundle）。 **MakeAppx.exe** 也會從應用程式套件或套件組合中擷取檔案，以及加密或解密應用程式套件與套件組合。 此工具包含在 Windows 10 SDK，而且可以從命令提示字元或指令碼檔案使用。
+**MakeAppx.exe**建立應用程式套件 （.msix 則為.appx） 和應用程式套件組合 （.msixbundle 或.appxbundle）。 **MakeAppx.exe** 也會從應用程式套件或套件組合中擷取檔案，以及加密或解密應用程式套件與套件組合。 此工具包含在 Windows 10 SDK，而且可以從命令提示字元或指令碼檔案使用。
 
 > [!IMPORTANT]
 > 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈建立應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](packaging-uwp-apps.md)。
 
 > [!IMPORTANT]
-> 請注意**MakeAppx.exe**不會建立[應用程式套件上傳檔案 （.appxupload 或.msixupload）](packaging-uwp-apps.md#types-of-app-packages)，也就是建議的[提交至合作夥伴中心](../publish/upload-app-packages.md)的有效應用程式套件的類型。 應用程式套件上傳檔案通常是[建立做為 Visual Studio 封裝程序的一部分](packaging-uwp-apps.md#create-an-app-package-upload-file)，雖然它也可以建立以手動方式。
+> 請注意， **MakeAppx.exe**不會建立[應用程式套件上傳檔案 （.appxupload 或.msixupload）](packaging-uwp-apps.md#types-of-app-packages)，這是有效的應用程式套件的建議的類型[提交內容至合作夥伴中心](../publish/upload-app-packages.md). 通常是應用程式套件上傳檔案[Visual Studio 封裝程序的一部分建立](packaging-uwp-apps.md#create-an-app-package-upload-file)，不過它也可以建立以手動方式。
 
 ## <a name="using-makeappxexe"></a>使用 MakeAppx.exe
 
 根據 SDK 的安裝路徑，這就是 **MakeAppx.exe** 在您的 Windows 10 電腦上的位置︰
-- x86: C:\Program Files (x86) \Windows Kits\10\bin\\&lt;組建編號&gt;\x86\makeappx.exe
-- x64: C:\Program Files (x86) \Windows Kits\10\bin\\&lt;組建編號&gt;\x64\makeappx.exe
+- x86:C:\Program Files (x86)\Windows Kits\10\bin\\&lt;build number&gt;\x86\makeappx.exe
+- x64:C:\Program Files (x86)\Windows Kits\10\bin\\&lt;build number&gt;\x64\makeappx.exe
 
 此工具沒有 ARM 版本。
 
@@ -73,31 +73,31 @@ MakeAppx <command> [options]
 
 | **引數**                          | **描述**                       |
 |---------------------------------------|---------------------------------------|
-| &lt;輸出套件名稱&gt;           | 建立的套件名稱。 這是檔案名稱會附加.msix 或.appx。 |
-| &lt;加密的輸出套件名稱&gt; | 建立的加密套件名稱。 這是檔案名稱會附加.emsix 或.eappx。 |
-| &lt;輸入套件名稱&gt;            | 套件的名稱。 這是檔案名稱會附加.msix 或.appx。 |
-| &lt;加密的輸入套件名稱&gt;  | 加密套件的名稱。 這是檔案名稱會附加.emsix 或.eappx。 |
-| &lt;輸出套件組合名稱&gt;            | 建立的套件組合名稱。 這是檔案名稱會附加.msixbundle 或.appxbundle。 |
-| &lt;加密的輸出套件組合名稱&gt;  | 建立的加密套件組合名稱。 這是檔案名稱會附加.emsixbundle 或.eappxbundle。 |
-| &lt;輸入套件組合名稱&gt;             | 套件組合的名稱。 這是檔案名稱會附加.msixbundle 或.appxbundle。 |
-| &lt;加密的輸入套件組合名稱&gt;   | 加密套件組合的名稱。 這是檔案名稱會附加.emsixbundle 或.eappxbundle。 |
+| &lt;輸出套件名稱&gt;           | 建立的套件名稱。 這是附加.msix 或.appx 檔案名稱。 |
+| &lt;加密的輸出套件名稱&gt; | 建立的加密套件名稱。 這是與.emsix 或.eappx 附加的檔案名稱。 |
+| &lt;輸入套件名稱&gt;            | 套件的名稱。 這是附加.msix 或.appx 檔案名稱。 |
+| &lt;加密的輸入套件名稱&gt;  | 加密套件的名稱。 這是與.emsix 或.eappx 附加的檔案名稱。 |
+| &lt;輸出套件組合名稱&gt;            | 建立的套件組合名稱。 這是附加.msixbundle 或.appxbundle 檔案名稱。 |
+| &lt;加密的輸出套件組合名稱&gt;  | 建立的加密套件組合名稱。 這是與.emsixbundle 或.eappxbundle 附加的檔案名稱。 |
+| &lt;輸入套件組合名稱&gt;             | 套件組合的名稱。 這是附加.msixbundle 或.appxbundle 檔案名稱。 |
+| &lt;加密的輸入套件組合名稱&gt;   | 加密套件組合的名稱。 這是與.emsixbundle 或.eappxbundle 附加的檔案名稱。 |
 | &lt;內容目錄&gt;             | 應用程式套件或套件組合內容的路徑。 |
 | &lt;對應檔案&gt;                  | 指定套件來源和目的地的檔案名稱。 |
 | &lt;輸出目錄&gt;              | 輸出套件和套件組合的目錄路徑。 |
 | &lt;金鑰檔案&gt;                      | 包含加密或解密用之金鑰的檔案名稱。 |
-| &lt;演算法識別碼&gt;                  | 建立區塊對應時使用的演算法。 有效的演算法包括︰SHA256 (預設)、SHA384、SHA512。 |
+| &lt;演算法識別碼&gt;                  | 建立區塊對應時使用的演算法。 有效的演算法包括：SHA256 （預設值），SHA384、 SHA512。 |
 
 
 ### <a name="create-an-app-package"></a>建立應用程式套件
 
-應用程式套件是一組完整的應用程式的封裝成.msix 或.appx 套件檔案的檔案。 若要使用 **pack** 命令建立應用程式套件，您必須提供內容目錄或套件位置的對應檔案。 您也可以在建立套件時進行加密。 如果您想要加密套件，您必須使用 /ep，並指定要使用金鑰檔案 (/kf) 或全域測試金鑰 (/kt)。 如需有關建立加密套件的詳細資訊，請參閱[加密或解密套件或套件組合](#encrypt-or-decrypt-a-package-or-bundle)。
+應用程式套件是一組完整的應用程式的檔案封裝在.msix 或.appx 封裝檔案。 若要使用 **pack** 命令建立應用程式套件，您必須提供內容目錄或套件位置的對應檔案。 您也可以在建立套件時進行加密。 如果您想要加密套件，您必須使用 /ep，並指定要使用金鑰檔案 (/kf) 或全域測試金鑰 (/kt)。 如需有關建立加密套件的詳細資訊，請參閱[加密或解密套件或套件組合](#encrypt-or-decrypt-a-package-or-bundle)。
 
 **pack** 命令專用的選項︰
 
 | **選項**    | **描述**                       |
 |---------------|---------------------------------------|
 | /f            | 指定對應檔案。           |
-| /h            | 指定建立區塊對應時要使用的雜湊演算法。 只能與 pack 命令搭配使用。 有效的演算法包括︰SHA256 (預設)、SHA384、SHA512。 |
+| /h            | 指定建立區塊對應時要使用的雜湊演算法。 只能與 pack 命令搭配使用。 有效的演算法包括：SHA256 （預設值），SHA384、 SHA512。 |
 | /m            | 指定輸入應用程式資訊清單的路徑，此路徑將用來做為產生輸出應用程式套件或資源套件之資訊清單的基礎。  當您使用此選項時，您也必須使用 /f，並在對應檔案中包含一個 \[ResourceMetadata\] 區段以指定要在產生的資訊清單中包含的資源維度。|
 | /nc           | 防止壓縮套件檔案。 檔案預設會根據偵測到的檔案類型進行壓縮。 |
 | /r            | 建置資源套件。 這必須與 /m 搭配使用，也表示使用 /l 選項。 |  
@@ -133,7 +133,7 @@ MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kt
 
 | **選項**    | **描述**                       |
 |---------------|---------------------------------------|
-| /bv           | 指定套件組合的版本號碼。 版本號碼的格式必須是以句點隔開的四個部分︰&lt;主要&gt;.&lt;次要&gt;.&lt;建置&gt;.&lt;修訂&gt;。 |
+| /bv           | 指定套件組合的版本號碼。 版本號碼必須是在表單中的句點隔開的四個部分：&lt;主要&gt;。&lt;次要&gt;。&lt;建置&gt;。&lt;修訂&gt;。 |
 | /f            | 指定對應檔案。           |
 
 請注意，如果未指定套件組合版本，或如果設定為 "0.0.0.0"，則套件組合會使用目前的日期時間建立。
@@ -268,6 +268,6 @@ MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile
 此驗證可確保︰
 - 在套件資訊清單中參考的所有檔案都包含在應用程式套件中。
 - 應用程式不會有兩個相同的金鑰。
-- 應用程式不會針對此清單中禁止的通訊協定進行註冊︰SMB、FILE、MS-WWA-WEB、MS-WWA。
+- 應用程式不會註冊為禁止的通訊協定，從這份清單：SMB、 檔案、 MS WWA WEB、 MS WWA。
 
 這不是完整的語意式驗證，只是設計來攔截常見的錯誤。 透過 **MakeAppx.exe** 建置的套件不保證能夠安裝。

@@ -1,29 +1,29 @@
 ---
-title: 索引緩衝
+title: 索引緩衝區
 description: 索引緩衝是包含索引資料的記憶體緩衝區，是置入頂點緩衝區的整數位移，用於呈現基本類型。
 ms.assetid: 14D3DEC5-CF74-488B-BE41-16BF5E3201BE
 keywords:
-- 索引緩衝
+- 索引緩衝區
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d08006fa2f32812f97daef5135a98dce16c4e5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929592"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594613"
 ---
-# <a name="index-buffers"></a>索引緩衝
+# <a name="index-buffers"></a>索引緩衝區
 
 
-*索引緩衝*是包含索引資料的記憶體緩衝區，是置入頂點緩衝區的整數位移，用於呈現基本類型。
+*索引緩衝區*是包含索引資料的記憶體緩衝區，是置入頂點緩衝區的整數位移，用於呈現基本類型。
 
 索引緩衝為包含索引資料的記憶體緩衝區。 索引資料或指數，是置入頂點緩衝區的整數位移，可用來呈現基本類型。
 
 頂點緩衝包含頂點，因此，您可以使用或不使用索引的基本類型來繪製頂點緩衝。 不過，因為索引緩衝包含索引，您無法使用無對應頂點緩衝的索引緩衝。
 
-## <a name="span-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanindex-buffer-description"></a><span id="Index_Buffer_Description"></span><span id="index_buffer_description"></span><span id="INDEX_BUFFER_DESCRIPTION"></span>索引緩衝描述
+## <a name="span-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanindex-buffer-description"></a><span id="Index_Buffer_Description"></span><span id="index_buffer_description"></span><span id="INDEX_BUFFER_DESCRIPTION"></span>索引緩衝區描述
 
 
 索引緩衝是依照其能力來描述，例如存在於記憶體中的哪裡、是否支援讀取和寫入，以及可包含的索引類型以數目。
@@ -40,7 +40,7 @@ ms.locfileid: "8929592"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[頂點和索引緩衝](vertex-and-index-buffers.md)
+[端點和索引緩衝區](vertex-and-index-buffers.md)
 
  
 

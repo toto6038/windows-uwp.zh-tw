@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: 838a8c3a6dfe89de49fddefd28c53cea563408cf
-ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8968572"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593163"
 ---
 # <a name="time-based-animations"></a>以時間為基礎的動畫
 
-當元件進入或整體使用者體驗變更時，使用者通常會以兩種方式進行觀察︰隨時間或立即。 在 Windows 平台上，前者優於後者-立即經常變更的使用者體驗混淆並嚇到使用者，因為他們無法理解發生什麼事情。 接著使用者會以突兀和不自然的方式感知體驗。
+當元件進入或整體使用者體驗變更時，使用者通常會以兩種方式進行觀察︰隨時間或立即。 在 Windows 平台，前者是慣用比後者-立即經常變更的使用者體驗造成混淆，並讓終端使用者感到驚訝，因為它們不是要跟上發生了什麼事。 接著使用者會以突兀和不自然的方式感知體驗。
 
 因此，您可以隨時間慢慢變更 UI，引導使用者或通知他們關於體驗的變更。 在 Windows 平台上，做法是使用時間為基礎的動畫，也就是 KeyFrameAnimations。 KeyFrameAnimations 可讓您隨著時間變更 UI，以及控制動畫的每個層面，包括如何及何時開始，以及如何到達其結束狀態。 例如，用 300 毫秒時間以動畫效果將物件移到新的位置，會比立即「傳送」過去更令人容易接受。 使用動畫而不是瞬間變更，獲得的成果會是更令人容易接受以及吸引人的體驗。
 
@@ -62,10 +62,10 @@ ms.locfileid: "8968572"
 1. 使用動畫範本，開始新增 KeyFrames 並定義動畫的屬性。
     - 至少需要一個 KeyFrame (100% 或 1f KeyFrame)。
     - 建議也定義持續時間。
-1. 一旦您已經準備好執行此動畫，則在 CompositionObject，您想要產生動畫效果的屬性為目標上呼叫 StartAnimation(...)。 具體而言：
+1. 一次，您已準備好執行這個動畫，然後呼叫 StartAnimation(...) CompositionObject，目標為您想要建立動畫的屬性。 具體而言：
     - `visual.StartAnimation("targetProperty", CompositionAnimation animation);`
     - `visual.StartAnimationGroup(AnimationGroup animationGroup);`
-1. 如果您有執行中的動畫，而且您想要停止動畫或動畫群組，您可以使用這些 Api:
+1. 如果您有執行中的動畫，而且您想要停止的動畫或動畫群組，您可以使用這些 Api:
     - `visual.StopAnimation("targetProperty");`
     - `visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
 
@@ -73,7 +73,7 @@ ms.locfileid: "8968572"
 
 ## <a name="example"></a>範例
 
-在此範例中，您會想要產生動畫效果的位移至 < 200,0,0 > 從 < 0,0,0 > 視覺超過 1 秒。 此外，您想以 10 倍查看這些位置之間的視覺動畫。
+在此範例中，您會想要以動畫顯示 < 200,0,0 > 從 < 0,0,0 > visual 的位移超過 1 秒。 此外，您想以 10 倍查看這些位置之間的視覺動畫。
 
 ![主要畫面格動畫](images/animation/animated-rectangle.gif)
 
@@ -86,7 +86,7 @@ ms.locfileid: "8968572"
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
-然後您可以定義來描述它的持續時間以動畫顯示兩個位置 （目前和 < 200,0,0 >） 10 倍之間的行為以及 KeyFrameAnimation 的屬性。
+然後，您會定義來描述它的持續時間以動畫顯示兩個位置 （目前和 < 200,0,0 >） 10 倍之間的行為以及 KeyFrameAnimation 的屬性。
 
 ```csharp
     animation.Duration = TimeSpan.FromSeconds(2);

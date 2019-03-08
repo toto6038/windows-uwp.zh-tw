@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922610"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594803"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 簽署應用程式套件
 
@@ -27,13 +27,13 @@ ms.locfileid: "8922610"
 - **已封裝應用程式**  
     若要深入了解手動建立應用程式套件，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 
 
-- **有效簽署的憑證**  
+- **有效的簽署憑證**  
     如需有關建立或匯入有效簽署的憑證的詳細資訊，請參閱[建立或匯入要用於套件簽署的憑證](https://msdn.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)。
 
 - **SignTool.exe**  
     根據 SDK 的安裝路徑，這就是 **SignTool** 在您的 Windows 10 電腦上的位置：
-    - x86：C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
-    - x64：C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
+    - x86:C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
+    - x64:C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>使用 SignTool
 
@@ -119,13 +119,13 @@ SignTool sign /debug [options]
  
 若要在事件記錄檔中尋找詳細資訊：
 - 執行 Eventvwr.msc
-- 開啟事件記錄檔：\[事件檢視器 (本機)\] -> \[應用程式及服務記錄檔\] -> \[Microsoft\] -> \[Windows\] -> \[AppxPackagingOM\] -> \[Microsoft-Windows-AppxPackaging/Operational\]
+- 開啟事件記錄檔：事件檢視器 （本機）]-> [應用程式及服務記錄檔]-> [Microsoft]-> [Windows]-> [AppxPackagingOM]-> [Microsoft-Windows-Microsoft-windows-appxpackaging/Operational
 - 找出最近的錯誤事件
 
 內部錯誤 0x8007000B 通常會對應於其中一個值︰
 
-| **事件識別碼** | **範例事件字串** | **建議** |
+| **事件識別碼** | **事件字串範例** | **建議** |
 |--------------|--------------------------|----------------|
-| 150          | 錯誤 0x8007000B: 應用程式資訊清單發行者名稱 (CN=Contoso) 必須符合簽署憑證 (CN=Contoso, C=US) 的主體名稱。 | 應用程式資訊清單發行者名稱必須完全符合簽署的主體名稱。               |
-| 151          | 錯誤 0x8007000B: 指定的簽章雜湊方法 (SHA512) 必須符合應用程式套件區塊對應中使用的雜湊方法 (SHA256)。     | 在 /fd 參數中指定的 hashAlgorithm 不正確。 使用符合應用程式套件區塊對應的 hashAlgorithm (用來建立應用程式套件)，重新執行 **SignTool**  |
-| 152          | 錯誤 0x8007000B: 應用程式套件內容必須通過區塊對應的驗證。                                                           | 應用程式套件損壞，需要重建產生新區塊對應。 如需有關手動建立應用程式套件的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 |
+| 150          | 錯誤發生於 hresult:0x8007000b:應用程式資訊清單的發行者名稱 (CN = Contoso) 必須符合簽章憑證的主體名稱 (CN = Contoso，C = US)。 | 應用程式資訊清單發行者名稱必須完全符合簽署的主體名稱。               |
+| 151          | 錯誤發生於 hresult:0x8007000b:簽章雜湊方法指定 (SHA512) 必須符合應用程式封裝區塊對應 (SHA256) 所使用的雜湊方法。     | 在 /fd 參數中指定的 hashAlgorithm 不正確。 使用符合應用程式套件區塊對應的 hashAlgorithm (用來建立應用程式套件)，重新執行 **SignTool**  |
+| 152          | 錯誤發生於 hresult:0x8007000b:應用程式套件的內容必須驗證其區塊的對應。                                                           | 應用程式套件損壞，需要重建產生新區塊對應。 如需有關手動建立應用程式套件的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 |

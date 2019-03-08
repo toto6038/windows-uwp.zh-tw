@@ -1,5 +1,5 @@
 ---
-Description: Windows desktop applications can pin secondary tiles thanks to the Desktop Bridge!
+Description: Windows 傳統型應用程式因為傳統型橋接器之故而可以釘選次要磚！
 title: 從傳統型應用程式釘選次要磚
 label: Pin secondary tiles from desktop application
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf, 傳統型橋接器, 次要磚, 釘選, 快速入門, 程式碼範例, 範例, 次要磚, 傳統型應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e713f37cd5e5fbf4b2771e76fb7e132b5976629
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924393"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609623"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>從傳統型應用程式釘選次要磚
 
@@ -22,7 +22,7 @@ ms.locfileid: "8924393"
 ![次要磚螢幕擷取畫面](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> **需要 Fall Creators Update**：您的目標必須是 SDK 16299 並執行組建 16299 或更新版本，才能從您的傳統型橋接器應用程式釘選次要磚。
+> **需要 Fall Creators Update**:您必須為目標 SDK 16299 和執行組建 16299 或更新版本，以次要磚釘選從傳統型橋接器應用程式。
 
 從 WPF 或 WinForms 應用程式新增次要磚的方式，與單純的 UWP 應用程式非常類似。 唯一的不同是，您必須指定您的主要視窗控制代碼 (HWND)。 這是因為當釘選磚時，Windows 會顯示強制回應對話方塊要求使用者確認是否要釘選磚。 如果傳統型應用程式未透過擁有者視窗設定 SecondaryTile 物件，則 Windows 不會知道要在何處繪製對話方塊，作業將會失敗。
 
@@ -90,14 +90,14 @@ bool isPinned = await tile.RequestCreateAsync();
 ## <a name="send-tile-notifications"></a>傳送磚通知
 
 > [!IMPORTANT]
-> **需要 2018 年 4 月版本 17134.81 或更新版本**：您必須執行組建 17134.81 或更新版本，以從傳統型橋接器應用程式傳送磚或徽章通知至次要磚。 這個 .81 維護更新之前，當從傳統型橋接器應用程式傳送磚或徽章通知至次要磚時，發生 0x80070490 *找不到元素* 例外。
+> **需要年 4 月 2018 17134.81 或更新版本**:您必須執行組建 17134.81 或更新版本，以將磚或徽章通知傳送至次要磚中，從傳統型橋接器應用程式。 這個 .81 維護更新之前，當從傳統型橋接器應用程式傳送磚或徽章通知至次要磚時，發生 0x80070490 *找不到元素* 例外。
 
 傳送磚或徽章通知與 UWP app 相同。 如需詳細資訊，請參閱[傳送本機磚通知](sending-a-local-tile-notification.md)以開始使用。
 
 
 ## <a name="resources"></a>資源
 
-* [完整程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
+* [完整的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [次要磚概觀](secondary-tiles.md)
 * [釘選次要磚 (UWP)](secondary-tiles-pinning.md)
 * [傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)

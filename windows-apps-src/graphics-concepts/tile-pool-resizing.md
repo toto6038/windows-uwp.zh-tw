@@ -1,6 +1,6 @@
 ---
 title: 調整磚集區大小
-description: 如果應用程式需要讓串流資源對應至更多工作集，重新調整磚集區的大小以增加磚集區，如果需要較少空間則將集區縮小。
+description: 如果應用程式需要更多串流資源對應至工作集，重新調整磚集區的大小以增加磚集區，如果需要較少空間則縮小。
 ms.assetid: A54A06DC-BDDB-42DC-85E8-C64241100ED5
 keywords:
 - 調整磚集區大小
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e08447c575e99178e503e99eb651cd5e225a898
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921987"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607773"
 ---
 # <a name="tile-pool-resizing"></a>調整磚集區大小
 
 
-如果應用程式需要讓串流資源對應至更多工作集，重新調整磚集區的大小以增加磚集區，如果需要較少空間則將集區縮小。 針對應用程式使用的另一個方法，是為串流資源配置額外磚集區。 但如果任何單一串流資源需要的空間，比其磚集區一開始提供的更多，則增加磚集區的大小會是不錯的選擇。 串流資源無法同時對應至多個磚集區。
+如果應用程式需要更多串流資源對應至工作集，重新調整磚集區的大小以增加磚集區，如果需要較少空間則縮小。 針對應用程式使用的另一個方法，是為串流資源配置額外磚集區。 但如果任何單一串流資源需要的空間，比其磚集區一開始提供的更多，則增加磚集區的大小會是不錯的選擇。 串流資源無法同時對應至多個磚集區。
 
 當磚集區大小增加時，顯示驅動程式會透過一個或多個新配置，以在尾端新增額外的磚。 應用程式看不到這項分解至配置的過程。 現有磚集區中的記憶體將不會變更，且對應至記憶體的現有串流資源維持不變。
 
@@ -30,7 +30,7 @@ ms.locfileid: "8921987"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[對應在磚集區中](mappings-are-into-a-tile-pool.md)
+[對應是到並排顯示集區](mappings-are-into-a-tile-pool.md)
 
  
 

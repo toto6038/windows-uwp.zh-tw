@@ -1,27 +1,27 @@
 ---
 title: xLoad 屬性
-description: xLoad 可讓元素及其子系，減少啟動時間和記憶體使用量的動態建立和解構。
+description: xLoad 允許元素和其子項目的動態建立與破壞，並可降低啟動時間和記憶體使用量。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fa0f12779ad56d57c92f667443644851dc3d5e5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925033"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629363"
 ---
 # <a name="xload-attribute"></a>x:Load 屬性
 
-您可以使用**X:load**來最佳化啟動時，視覺化樹狀結構建立和 XAML 應用程式的記憶體使用量。 使用**X:load**有其**可見性**，以類似的視覺效果，差別只在於不載入項目時，會釋放它的記憶體，而且小型預留位置內部用於標記其視覺化樹狀結構中的位置。
+您可以使用 **x:Load** 最佳化您 XAML 應用程式的啟動、視覺化樹狀結構的建立，以及記憶體使用量 。 使用 **x:Load** 與 **Visibility** 有類似的效果，但其差異在於當元素沒有載入時，記憶體將會釋出，並且會在其內部使用一個小型的預留位置標記其在視覺化樹狀結構中的位置。
 
-使用 X:load 屬性化的 UI 元素可以是載入與卸載透過程式碼，或使用[X:bind](x-bind-markup-extension.md)運算式。 這在降低不常顯示或只在特定條件下需要顯示之元素的成本時很有用。 當您使用 X:load 例如方格或 StackPanel 容器上時，在容器及所有子系會載入或卸載為群組。
+帶有 x:Load 屬性的 UI 元素可透過程式碼載入或解除載入，或是使用 [x:Bind](x-bind-markup-extension.md) 運算式。 這在降低不常顯示或只在特定條件下需要顯示之元素的成本時很有用。 當您在一個容器 (例如 Grid 或 StackPanel) 上使用 x:Load 時，容器及其所有的子項目都會作為一個群組載入或取消載入。
 
-追蹤延遲元素，由 XAML 架構會增加約 600 個位元組記憶體使用量每個元素使用屬性使用 X:load，針對預留位置。 因此，就可能效能實際降低，過度使用此屬性。 我們建議您只使用它需要隱藏的項目上。 如果您在容器上使用 X:load，額外負荷會支付僅適用於具有 X:load 屬性的項目。
+XAML 架構為了追蹤延遲元素，會針對每一個帶有 x:Load 屬性的元素增加 600 位元組的記憶體使用量，作為其預留位置使用。 因此，過度使用此屬性可能反而會導致效能降低。 我們建議您只針對需要隱藏的項目使用此屬性。 若您在一個容器上使用 x:Load，則系統只需要針對帶有 x:Load 屬性的元素承擔額外負荷。
 
 > [!IMPORTANT]
-> X:load 屬性是在 Windows 10 版本 1703 (Creators Update) 中開始提供。 Visual Studio 專案設為目標的版本必須至少是 *Windows 10 Creators Update (10.0，組建 15063)*，才能使用 x:Load。
+> X： 負載屬性是可用以啟動 Windows 10 版本 1703 (Creators Update)。 Visual Studio 專案設為目標的版本必須至少是 *Windows 10 Creators Update (10.0，組建 15063)*，才能使用 x:Load。
 
 ## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
@@ -33,55 +33,55 @@ ms.locfileid: "8925033"
 
 ## <a name="loading-elements"></a>載入元素
 
-有幾種不同的方式來載入元素：
+有幾種不同的方式可用來載入元素：
 
-- 您可以使用[X:bind](x-bind-markup-extension.md)運算式來指定載入狀態。 Expression 應該會傳回**true**來載入和**false**解除載入元素。
+- 使用 [x:Bind](x-bind-markup-extension.md) 運算式指定載入狀態。 運算式應該會傳回 **true** 以進行載入，以及 **false** 以取消載入。
 - 使用您在元素上定義的名稱呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)。
 - 使用您在元素上定義的名稱呼叫 [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416)。
-- 在[**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007)中，使用 X:load 的元素為目標的[**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817)或**腳本**動畫。
-- 以任何**腳本**中的卸載的元素為目標。
+- 在 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 中，使用以 x:Load 元素為目標的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 **Storyboard** 動畫。
+- 在任何一個 **Storyboard** 中以取消載入的元素做為目標。
 
-> 注意：元素在開始具現化後，就會建立在 UI 執行緒上，因此如果同時建立太多，就可能造成 UI 間斷。
+> 注意：一旦啟動項目的具現化，則會建立在 UI 執行緒，因此可能會導致多如果太多一次建立 UI。
 
 以任何前述方法建立延遲的元素後，將會發生幾件事：
 
 - 引發元素的 [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) 事件。
-- 設定 X:name 的欄位。
-- 會評估元素的任何 X:bind 繫結。
+- 設定 x:Name 欄位。
+- 任何正繫結在元素上的 x:Bind 都會受到評估。
 - 如果您已登錄而會接收包含延遲元素之屬性的屬性變更通知，通知將會引發。
 
-## <a name="unloading-elements"></a>卸載的元素
+## <a name="unloading-elements"></a>取消載入元素
 
-若要卸載元素：
+若要取消載入元素：
 
-- 您可以使用 X:bind 運算式來指定載入狀態。 Expression 應該會傳回**true**來載入和**false**解除載入元素。
-- 在頁面或使用者控制項中，呼叫**UnloadObject**並傳入的物件參考
-- 呼叫**Windows.UI.Xaml.Markup.XamlMarkupHelper.UnloadObject** ，然後傳入的物件參考
+- 使用 x:Bind 運算式指定載入狀態。 運算式應該會傳回 **true** 以進行載入，以及 **false** 以取消載入。
+- 在 Page 或 UserControl 中，呼叫 **UnloadObject** 並傳入物件參考
+- 呼叫 **Windows.UI.Xaml.Markup.XamlMarkupHelper.UnloadObject** 並傳入物件參考
 
-卸載物件時，它用來取代樹狀目錄中的預留位置。 直到已發行的所有參考，將會維持在記憶體中的物件執行個體。 在頁面/UserControl UnloadObject API 被設計來釋出保有 codegen X:name 和 X:bind 的參照。 如果您在他們將也需要發行的應用程式程式碼中保留額外的參考。
+在物件取消載入時，一個預留位置將會取代其原先在樹狀結構中的位置。 物件執行個體將會繼續保存在記憶體中，直到所有的參考都獲得釋出。 Page/UserControl 上的 UnloadObject API，其設計的目的為了要釋出 Codegen 為 x:Name 和 x:Bind 保留的參考。 若您在應用程式程式碼中保留了額外的參考，您也需要將這些參考釋出。
 
-卸載元素時，所有項目相關聯的狀態將會被捨棄，因此如果使用 X:load 的可見性，最佳化版本為然後確保所有狀態套用透過繫結，或重新套用程式碼所引發 Loaded 的事件時。
+當一個元素取消載入時，與該元素相關聯的所有狀態都會捨棄，因此若要將 x:Load 作為 Visibility 的最佳化版本使用，請務必確認所有的狀態都已透過繫結套用，或是當 Loaded 事件發出時透過程式碼重新套用。
 
 ## <a name="restrictions"></a>限制
 
-使用**X:load**的限制是：
+**x:Load** 的使用限制如下：
 
-- 您必須定義一個[X:name](x-name-attribute.md)元素，因為程式必須至少要能在稍後找到該元素。
-- 您只能使用 X:load 上從[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)或[**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249)衍生的類型。
-- 您無法使用 X:load[**頁面**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、 [**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)或在[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)中的根元素上。
-- 您無法在[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)中的項目上使用 X:load。
-- 您無法使用 X:load 上使用[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)載入的鬆散 XAML。
-- 移動父元素將會清除任何尚未載入的項目。
+- 您必須定義[X:name](x-name-attribute.md) 讓項目，與必須設法稍後尋找項目。
+- 您只能在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 或 [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) 衍生的類型上使用 x:Load。
+- 您不能在 [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)，或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中的根元素上使用 x:Load。
+- 您不能在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的元素上使用 x:Load。
+- 您無法在與 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 一同載入的鬆散 XAML 上使用 x:Load。
+- 移動父元素將會清除任何尚未載入的元素。
 
 ## <a name="remarks"></a>備註
 
-不過，他們可以從在最外層元素開始辨識，您可以巢狀在元素上，使用 X:load。 如果您嘗試在辨識父元素之前辨識子元素，將會引發例外狀況。
+您可以在巢狀元素上使用 x:Load，但必須從最外層元素開始辨識這些元素。  如果您嘗試在辨識父元素之前辨識子元素，將會引發例外狀況。
 
-一般而言，我們建議您延後不會出現在第一個畫面中的元素。在尋找要延遲的候選項目時，建議您尋找以摺疊的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 建立的元素。 此外，使用者互動所觸發的 UI 也是您尋找延遲元素的理想之處。
+一般而言，我們建議您延後不會出現在第一個畫面中的元素。 在尋找要延遲的候選項目時，建議您尋找以摺疊的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 建立的元素。 此外，使用者互動所觸發的 UI 也是您尋找延遲元素的理想之處。
 
 請留意 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 中的延遲元素，因為它雖然可減少您的啟動時間，但也可能隨著您所建立的項目而導致移動瀏覽效能下降。 如果您想要提升移動瀏覽效能，請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)和 [x:Phase 屬性](x-phase-attribute.md)文件。
 
-如果[X:phase 屬性](x-phase-attribute.md)使用**X:load**搭配然後，當元素或元素樹狀結構實現之後，繫結會向上套用且包含目前階段。 **X:phase**所指定的階段不會影響或控制元素的載入狀態。 當清單項目視為移動瀏覽的一部分回收時，實現的元素的行為相同的方式的其他作用中的元素，以及已編譯的繫結 （**{X:bind}** 繫結） 會使用相同的規則，包括分段處理。
+如果 [x:Phase 屬性](x-phase-attribute.md)結合 **x:Load** 使用，則當元素或元素樹狀結構實現之後，繫結會向上套用且包含目前階段。 針對 **x:Phase** 指定的階段將會影響或控制元素的載入狀態。 當清單項目被視為移動瀏覽的一部分回收時，實現的元素會與其他作用中元素的行為相同，而已編譯的繫結 (**{x:Bind}** 繫結) 會使用相同的規則處理 (包括階段處理)。
 
 一般會建議您在之前或之後測量您應用程式的執行效能，以確保您得到想要的效能。
 

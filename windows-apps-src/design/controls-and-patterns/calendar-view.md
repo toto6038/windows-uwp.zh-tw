@@ -1,5 +1,5 @@
 ---
-Description: A calendar view lets a user view and interact with a calendar that they can navigate by month, year, or decade.
+Description: 行事曆檢視可讓使用者檢視行事曆並與其互動，以便依月份、年份或 10 年瀏覽行事曆。
 title: 行事曆檢視
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
@@ -13,17 +13,17 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9214ec2f2a1e352f94205675f2200920b8a00bd2
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037250"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654513"
 ---
 # <a name="calendar-view"></a>行事曆檢視
 
 行事曆檢視可讓使用者檢視行事曆並與其互動，以便依月份、年份或 10 年瀏覽行事曆。 使用者可以選取單一日期或日期範圍。 它沒有選擇器介面，而且行事曆一律會顯示。 
 
-> **重要 API**：[CalendarView 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)、[SelectedDatesChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
+> **重要的 Api**:[CalendarView 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)， [SelectedDatesChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -42,7 +42,7 @@ ms.locfileid: "9037250"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/CalendarView">開啟應用程式並查看 CalendarView 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -80,7 +80,7 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 使用者可以按一下或點選行事曆格線，以取消選取已選取的日期。
 
-您可以處理 [SelectedDatesChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) 事件，以便在 [SelectedDates](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) 集合變更時收到通知。
+您可以處理 [SelectedDatesChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) 事件，以在 [SelectedDates](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) 集合變更時接收通知。
 
 > [!NOTE]
 > 如需日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
@@ -134,7 +134,7 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 您可以呼叫 [CalendarViewDayItem.SetDensityColors](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx) 方法，以顯示一天中活動密度的內容相關資訊。 您可以為每一天顯示 0 到 10 個密度列，並設定每一列的色彩。 
 
-以下是行事曆中的某些日期項目。 第 1 天和第 2 天已封鎖。第 2 天、第 3 天和第 4 天設定了不同的密度列。
+以下是行事曆中的某些日期項目。 第 1 天和第 2 天被封鎖。第 2 天、第 3 天和第 4 天設定了不同的密度列。
 
 ![含密度列的行事曆日期](images/calendar-view-density-bars.png)
 

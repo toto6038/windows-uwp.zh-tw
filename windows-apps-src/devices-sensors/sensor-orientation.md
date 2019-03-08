@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a4c7f1ad75e1e0544486049f9bd721d8a82edf03
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941538"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623053"
 ---
 # <a name="sensor-orientation"></a>感應器方向
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
@@ -43,9 +43,9 @@ ms.locfileid: "8941538"
 
 製造商會同時生產橫向優先裝置與直向優先裝置。 橫向優先裝置 (例如桌上型電腦和膝上型電腦) 與直向優先裝置 (例如手機和某些平板電腦) 之間的參考框架並不同。 下表顯示橫向優先裝置與直向優先裝置的感應器軸線。
 
-| 方向 | 橫向優先 | 直向優先 |
+| Orientation | 橫向優先 | 直向優先 |
 |-------------|-----------------|----------------|
-| **橫向** | ![方向為 Landscape 的橫向優先裝置](images/sensor-orientation-0.PNG) | ![方向為 Landscape 的直向優先裝置](images/sensor-orientation-1.PNG) |
+| **Landscape** | ![方向為 Landscape 的橫向優先裝置](images/sensor-orientation-0.PNG) | ![方向為 Landscape 的直向優先裝置](images/sensor-orientation-1.PNG) |
 | **直向** | ![方向為 Portrait 的橫向優先裝置](images/sensor-orientation-2.PNG) | ![方向為 Portrait 的直向優先裝置](images/sensor-orientation-3.PNG) |
 | **LandscapeFlipped** | ![方向為 LandscapeFlipped 的橫向優先裝置](images/sensor-orientation-4.PNG) | ![方向為 LandscapeFlipped 的直向優先裝置](images/sensor-orientation-5.PNG) | 
 | **PortraitFlipped** | ![方向為 PortraitFlipped 的橫向優先裝置](images/sensor-orientation-6.PNG)| ![方向為 PortraitFlipped 的直向優先裝置](images/sensor-orientation-7.PNG) |
@@ -109,7 +109,7 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 
 | 參考軸線        |  X |  Y | Z |
 |-----------------------|----|----|---|
-| **橫向**         |  X |  Y | Z |
+| **Landscape**         |  X |  Y | Z |
 | **直向**          |  Y | -X | Z |
 | **LandscapeFlipped**  | -X | -Y | Z |
 | **PortraitFlipped**   | -Y |  X | Z |
@@ -159,7 +159,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="display-orientation-and-device-orientation"></a>顯示方向和裝置方向
 
-[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 資料必須以不同方式變更。 想像這些不同的方向，如逆時針旋轉到 Z 軸，所以我們需要讓旋轉反轉以回到使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
+[  **OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 資料必須以不同方式變更。 想像這些不同的方向，如逆時針旋轉到 Z 軸，所以我們需要讓旋轉反轉以回到使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
 
 ![尤拉公式](images/eulers-formula.png)
 
@@ -172,7 +172,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 | 顯示方向  | 延著 Z 軸逆時針旋轉 | 參考四元數 (反向旋轉) | 參考旋轉矩陣 (反向旋轉) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
-| **橫向**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
+| **Landscape**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
 | **直向**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
 | **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |

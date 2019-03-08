@@ -6,28 +6,28 @@ ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 89ffa2f3480664131af6664988bd9fb31687fe32
-ms.sourcegitcommit: 616adaaf15ae1b41e867181326c094f42ba6ec07
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "8990204"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600303"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>建立多執行個體通用 Windows 應用程式
 
 本主題描述如何建立多重執行個體通用 Universal Windows 平台 (UWP) 應用程式。
 
-從 Windows 10，版本 1803 (10.0;組建 17134） 後續版本，您的 UWP 應用程式可以選擇加入以支援多個執行個體。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
+從 Windows 10 版本 1803 (10.0;組建 17134） 開始，您的 UWP 應用程式可以選擇加入以支援多個執行個體。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
 
 > [!IMPORTANT]
-> 多重執行個體支援適用於 JavaScript 應用程式，但不是多重執行個體重新導向。 適用於 JavaScript 應用程式不支援多重執行個體重新導向，因為[**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)類別不是適用於這類應用程式。
+> 多重執行個體是為了支援 JavaScript 應用程式，但不是多重執行個體的重新導向。 因為 JavaScript 應用程式，不支援多重執行個體的重新導向[ **AppInstance** ](/uwp/api/windows.applicationmodel.appinstance)類別不適用於這類應用程式。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>選擇加入多個執行個體行為
 
-如果您正在建立新的多重執行個體應用程式，您可以安裝 **Multi-Instance App Project Templates.VSIX** (可從 [Visual Studio Marketplace](https://aka.ms/E2nzbv) 取得)。 在安裝範本後，便可從 \[Visual C#\] > \[Windows Universal\]**** (或 \[其他語言\] > \[Visual C++\] > \[Windows Universal\]****) 下的 \[新專案\] **** 對話方塊中取得這些範本。
+如果您正在建立新的多重執行個體應用程式，您可以安裝 **Multi-Instance App Project Templates.VSIX** (可從 [Visual Studio Marketplace](https://aka.ms/E2nzbv) 取得)。 在安裝範本後，便可從 \[Visual C#\] > \[Windows Universal\] (或 \[其他語言\] > \[Visual C++\] > \[Windows Universal\]) 下的 \[新專案\]  對話方塊中取得這些範本。
 
-這會安裝兩個範本：一是**多重執行個體 UWP 應用程式**，可提供用於建立多重執行個體應用程式的範本；另一是**多重執行個體重新導向 UWP 應用程式**，可提供額外的邏輯作為建置的基礎，以啟動新的執行個體，或選擇性地啟用已啟動的執行個體。 為例，或許您只想編輯相同文件一次一個執行個體，因此您帶入有該檔案的執行個體開啟到前景，而非啟動新的執行個體。
+會安裝兩個範本：**多重執行個體的 UWP 應用程式**，它提供範本來建立多個執行個體的應用程式，並**多重執行個體重新導向 UWP 應用程式**，可讓您可以是啟動新的執行個體建置的其他邏輯或選擇性地啟用已啟動執行個體。 比方說，或許您只想編輯相同的文件一次一個執行個體，讓您將具有該檔案的執行個體就會開啟到前景，而不是啟動新的執行個體。
 
-這兩個範本新增`SupportsMultipleInstances`到`package.appxmanifest`檔案。 請注意命名空間前置詞`desktop4`和`iot2`： 只有目標為桌面或物聯網 (IoT) 專案，支援多重執行個體。
+這兩個範本新增`SupportsMultipleInstances`至`package.appxmanifest`檔案。 請注意命名空間前置詞`desktop4`和`iot2`： 只以桌面為目標的專案或物聯網 (IoT) 專案，支援多重執行個體。
 
 ```xml
 <Package
@@ -52,13 +52,13 @@ ms.locfileid: "8990204"
 
  UWP 應用程式的多重執行個體支援不僅僅是可以啟動應用程式的多重執行個體。 無論您想要選取啟動應用程式的新執行個體，或選取啟用已執行的執行個體，皆允許自訂。 例如，如果啟動應用程式以編輯一個檔案，但已有另一個執行個體正在編輯檔案，此時您想要將啟用重新導向至該執行個體，而非開啟另一個已在編輯該檔案的執行個體。
 
-若要查看它情形，請觀看此影片有關建立多重執行個體 UWP 應用程式。
+若要查看其運作，觀看這段影片中有關建立 UWP 應用程式的多重執行個體。
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
-**多重執行個體重新導向 UWP 應用程式**範本會將 `SupportsMultipleInstances` 新增至 package.appxmanifest 檔案，如上所示，也會將  **Program.cs** (如果您使用的是 C++ 版範本，則為 **Program.cpp**) 新增至包含 `Main()` 函數的專案。 重新導向啟用的邏輯會進入 `Main` 函數。 **Program.cs**的範本如下所示。
+**多重執行個體重新導向 UWP 應用程式**範本會將 `SupportsMultipleInstances` 新增至 package.appxmanifest 檔案，如上所示，也會將  **Program.cs** (如果您使用的是 C++ 版範本，則為 **Program.cpp**) 新增至包含 `Main()` 函數的專案。 重新導向啟用的邏輯會進入 `Main` 函數。 樣板**Program.cs**如下所示。
 
-如果有的話， [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)屬性代表這個啟用要求，提供殼層慣用執行個體 (或`null`如果沒有一個)。 如果殼層提供喜好設定，然後將啟用重新導向至該執行個體，或如果您選擇您可以忽略它。
+[ **AppInstance.RecommendedInstance** ](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)屬性表示針對此啟動要求，提供 shell 慣用執行個體，如果有一個 (或`null`如果沒有的話)。 如果此命令介面提供的喜好設定，然後將啟用重新導向至該執行個體，或如果您選擇忽略它。
 
 ``` csharp
 public static class Program
@@ -108,7 +108,7 @@ public static class Program
 }
 ```
 
-`Main()` 是第一個執行的。 它會執行[**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)和[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)之前。 在任何其他初始化程式碼在您的應用程式執行之前，這可讓您決定要啟用此執行個體，或啟用另一個執行個體。
+`Main()` 是執行第一件事。 執行前[ **OnLaunched** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)並[ **OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)。 在任何其他初始化程式碼在您的應用程式執行之前，這可讓您決定要啟用此執行個體，或啟用另一個執行個體。
 
 以上的程式碼會判斷啟用的是應用程式的現有執行個體或新執行個體。 在此會使用索引鍵來判斷是否有您想要啟用的現有執行個體。 例如，如果可以啟動您的應用程式以[處理檔案啟用](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation)，您可以使用檔案名稱作為索引鍵。 然後，您可以檢查該應用程式的執行個體是否已透過該索引鍵註冊，並啟用該執行個體，而非開啟新的執行個體。 這是程式碼背後的概念： `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
@@ -125,14 +125,14 @@ public static class Program
 ## <a name="additional-considerations"></a>其他考量
 
 - 以桌面與物聯網 (IoT) 專案為目標的 UWP 應用程式支援多重執行個體。
-- 為避免產生競爭條件及發生爭用的問題，多重執行個體應用程式必須採取步驟來分割/同步化設定、應用程式本機存放區，及任何其他可在多重執行個體間共用之資源 (例如使用者檔案、資料存放區等等) 的存取權。 提供標準同步化機制，例如 mutex、 系統信號、 事件等等。
+- 為避免產生競爭條件及發生爭用的問題，多重執行個體應用程式必須採取步驟來分割/同步化設定、應用程式本機存放區，及任何其他可在多重執行個體間共用之資源 (例如使用者檔案、資料存放區等等) 的存取權。 使用標準的同步處理機制，例如 mutex、 號誌、 事件等等。
 - 如果應用程式在 Package.appxmanifest 檔案中有 `SupportsMultipleInstances`，則其延伸模組不需要宣告 `SupportsMultipleInstances`。 
 - 如果除了背景工作或應用程式服務外，您將 `SupportsMultipleInstances` 新增至任何其他延伸模組，且主控該延伸模組的應用程式也未在其 Package.appxmanifest 檔案中宣告 `SupportsMultipleInstances`，則會產生結構描述錯誤。
-- 應用程式可以在其資訊清單中使用[**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)宣告多個背景工作群組至同一部主機。 這會與多重執行個體衝突，其中的每個啟用都會分別進入不同的主機。 因此，應用程式無法在其資訊清單中宣告 `SupportsMultipleInstances` 與 `ResourceGroup`。
+- 應用程式可以使用[ **ResourceGroup** ](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)它們分組到同一個主機的多個背景工作的資訊清單中的宣告。 這會與多重執行個體衝突，其中的每個啟用都會分別進入不同的主機。 因此，應用程式無法在其資訊清單中宣告 `SupportsMultipleInstances` 與 `ResourceGroup`。
 
 ## <a name="sample"></a>範例
 
-請參閱[多重執行個體範例](https://aka.ms/Kcrqst)以取得多重執行個體啟用重新導向範例。
+請參閱[多重執行個體範例](https://aka.ms/Kcrqst)如需多重執行個體啟用重新導向的範例。
 
 ## <a name="see-also"></a>請參閱
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d2ea6ce4060957ade5dd1007389be51176440f04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936323"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593573"
 ---
 # <a name="vertex-and-index-buffers"></a>頂點和索引緩衝區
 
@@ -39,7 +39,7 @@ ms.locfileid: "8936323"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="introduction-to-buffers.md">緩衝區簡介</a></p></td>
+<td align="left"><p><a href="introduction-to-buffers.md">緩衝區的簡介</a></p></td>
 <td align="left"><p>緩衝資源是一個完整輸入的資料集合，由元素所組成。 緩衝區儲存資料，例如<em>頂點緩衝區</em>中的紋理座標、<em>索引緩衝區</em>中的索引、<em>常數緩衝區</em>中的著色器常數資料、位置向量、法向向量或裝置狀態。</p></td>
 </tr>
 <tr class="even">

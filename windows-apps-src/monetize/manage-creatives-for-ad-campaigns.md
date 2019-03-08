@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c11ee9c5decffff57a2d443e1385398ce40d89
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934533"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658463"
 ---
 # <a name="manage-creatives"></a>管理廣告素材
 
@@ -47,7 +47,7 @@ ms.locfileid: "8934533"
 
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 | 追蹤識別碼   | GUID   | 選用。 追蹤呼叫流程的識別碼。                                  |
 
 
@@ -117,7 +117,7 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  廣告素材的識別碼。     |   是    |      |    否   |       
 |  name   |  字串   |   廣告素材的名稱。    |    否   |      |  是     |       
-|  內容   |  字串   |  廣告素材影像的內容，含 Base64 編碼格式。<br/><br/>**注意**&nbsp;&nbsp;允許的廣告素材大小上限為 40 KB。 如果您提交的廣告素材檔案大於此上限，這個 API 將不會傳回錯誤，但不會成功建立行銷活動。     |  否     |      |   是    |       
+|  content   |  字串   |  廣告素材影像的內容，含 Base64 編碼格式。<br/><br/>**注意**&nbsp;&nbsp;允許的廣告素材大小上限為 40 KB。 如果您提交的廣告素材檔案大於此上限，這個 API 將不會傳回錯誤，但不會成功建立行銷活動。     |  否     |      |   是    |       
 |  height   |  整數   |   廣告素材的高度。    |    否    |      |   是    |       
 |  width   |  整數   |  廣告素材的寬度。     |  否    |     |    是   |       
 |  landingUrl   |  字串   |  如果您使用行銷活動追蹤服務例如 Kochava、AppsFlyer 或 Tune，來衡量 App 安裝分析，當您呼叫 POST 方法時，在這個欄位中指派追蹤 URL（如果指定，這個值必須是有效 URI）。 如果您未使用行銷活動追蹤服務，當您呼叫 POST 方法時略過此值（在這個情況下，就會自動建立此 URL）。   |  否    |     |   是    |       
@@ -132,13 +132,13 @@ Authorization: Bearer <your access token>
 
 | 欄位        | 類型   |  描述      |  唯讀  | 預設值  | POST 所需 |  
 |--------------|--------|---------------|------|-------------|------------|
-|  imageExtension   |   字串  |   下列其中一個值：**PNG** 或 **JPG**。    |    否   |      |   是    |       |
+|  imageExtension   |   字串  |   下列其中一個值：**PNG**或是**JPG**。    |    否   |      |   是    |       |
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務執行廣告行銷活動](run-ad-campaigns-using-windows-store-services.md)
-* [管理廣告行銷活動](manage-ad-campaigns.md)
-* [管理廣告行銷活動的廣告播送行](manage-delivery-lines-for-ad-campaigns.md)
-* [管理廣告行銷活動的目標設定檔](manage-targeting-profiles-for-ad-campaigns.md)
-* [取得廣告行銷活動績效資料](get-ad-campaign-performance-data.md)
+* [執行使用 Microsoft Store 服務的廣告活動](run-ad-campaigns-using-windows-store-services.md)
+* [管理 ad 行銷活動](manage-ad-campaigns.md)
+* [管理 ad 行銷活動傳遞明細行](manage-delivery-lines-for-ad-campaigns.md)
+* [管理 ad 行銷活動的目標設定檔](manage-targeting-profiles-for-ad-campaigns.md)
+* [取得 ad 行銷活動效能資料](get-ad-campaign-performance-data.md)

@@ -4,14 +4,14 @@ description: 這個範例程式碼說明如何在通用 Windows 平台 (UWP) app
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: b3ce63ca1780f9ed1ecd32f3ab1c029a1a92e1b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924791"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608803"
 ---
 # <a name="copy-to-and-from-byte-arrays"></a>複製到位元組陣列和從位元組陣列中複製
 

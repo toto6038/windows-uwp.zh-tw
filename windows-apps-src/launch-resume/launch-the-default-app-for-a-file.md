@@ -1,5 +1,5 @@
 ---
-title: 啟動檔案的預設 app
+title: 啟動檔案的預設應用程式
 description: 了解如何啟動檔案的預設應用程式。
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
 ms.date: 07/05/2018
@@ -7,19 +7,19 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8e59ae5fb20ce8e1a900f7c1415a699715215e0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925020"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594523"
 ---
 # <a name="launch-the-default-app-for-a-file"></a>啟動檔案的預設應用程式
 
-**重要 API**
+**重要的 Api**
 
 -   [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
 
-了解如何啟動檔案的預設 app。 許多應用程式需要使用它們本身無法處理的檔案。 例如，電子郵件 app 會收到各種類型的檔案，因此它們需要可以使用這些檔案類型的預設處理常式啟動這些檔案的方法。 這些步驟示範如何使用 [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API 來啟動您 app 本身無法處理之檔案的預設處理常式。
+了解如何啟動檔案的預設應用程式。 許多應用程式需要使用它們本身無法處理的檔案。 例如，電子郵件 app 會收到各種類型的檔案，因此它們需要可以使用這些檔案類型的預設處理常式啟動這些檔案的方法。 這些步驟示範如何使用 [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API 來啟動您 app 本身無法處理之檔案的預設處理常式。
 
 ## <a name="get-the-file-object"></a>取得檔案物件
 
@@ -33,12 +33,12 @@ ms.locfileid: "8925020"
 
 Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這些選項在這個圖表和接下來的小節中有更詳細的說明。
 
-| 選項 | 方法 | 說明 |
+| 選項 | 方法 | 描述 |
 |--------|--------|-------------|
 | 預設啟動 | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | 使用預設處理常式啟動指定的檔案。 |
 | 開啟檔案啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 啟動指定的檔案，讓使用者透過 [開啟檔案] 對話方塊挑選處理常式。 |
 | 使用建議的 app 備用選項啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 使用預設處理常式啟動指定的檔案。 如果系統上沒有安裝處理常式，則建議使用者使用市集中的應用程式。 |
-| 以所需的剩餘檢視啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (僅限 Windows) | 使用預設處理常式啟動指定的檔案。 指定啟動後停留在畫面上的喜好設定，並要求特定視窗大小。 行動裝置系列上不支援 [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)。 |
+| 以所需的剩餘檢視啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows-only) | 使用預設處理常式啟動指定的檔案。 指定啟動後停留在畫面上的喜好設定，並要求特定視窗大小。 [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314)不支援在行動裝置系列上。 |
 
 ### <a name="default-launch"></a>預設啟動
 
@@ -287,12 +287,12 @@ void MainPage::DefaultLaunch()
 }
 ```
 
-**使用建議的 app 備用選項啟動**
+**啟動後援建議的應用程式**
 
 在某些情況下，使用者可能尚未安裝處理您要啟動之檔案的 app。 依照預設，Windows 處理這些情況的方法是提供連結，讓使用者在市集上搜尋適當的應用程式。 如果您想提供使用者在此情況下應取得什麼應用程式的特定建議，您可以在啟動檔案時一併傳送該建議。 若要這樣做，請呼叫 [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法，並將 [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) 設為您想建議使用者使用的市集 app 套件系列名稱。 然後將 [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) 設為該應用程式的名稱。 Windows 將使用此資訊，以從市集取得建議 app 的特定選項，取代在市集中搜尋 app 的一般選項。
 
 > [!NOTE]
-> 您必須設定這兩個選項才能建議應用程式。 只設定其中一個將出現錯誤。
+> 您必須設定兩個應用程式的建議選項。 只設定其中一個將出現錯誤。
 
 ![啟動 .contoso 檔案的 [開啟檔案] 對話方塊。 因為 .contoso 未在電腦上安裝處理常式，所以對話方塊會包含一個選項，這個選項會包含市集圖示以及指示使用者市集中正確處理常式的文字。 對話方塊也包含 [更多選項] 連結。](images/howdoyouwanttoopen.png)
 
@@ -437,9 +437,9 @@ void MainPage::DefaultLaunch()
 呼叫 [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) 的來源應用程式可要求在檔案啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理檔案的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 也可以使用 **DesiredRemainingView**，指出來源 app 在檔案啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
 
 > [!NOTE]
-> Windows 會考量多種不同因素，在判斷來源應用程式的最終視窗大小，例如，來源 app 的喜好設定，在畫面、 螢幕方向，以及等等的應用程式數目。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 App 的特定視窗行為。
+> Windows 會考慮到多個不同的因素來決定來源應用程式的最後一個視窗大小，例如當、 原始碼應用程式的喜好設定、 畫面、 螢幕方向等等的應用程式數目。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 app 的特定視窗行為。
 
-**行動裝置系列：**[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)不支援行動裝置系列上。
+**行動裝置系列：  **[**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314)不支援在行動裝置系列上。
 
 ```csharp
 async void DefaultLaunch()
@@ -554,14 +554,14 @@ void MainPage::DefaultLaunch()
 
 ### <a name="tasks"></a>工作
 
-* [啟動 URI 的預設 app](launch-default-app.md)
+* [啟動預設的應用程式 uri](launch-default-app.md)
 * [處理檔案啟用](handle-file-activation.md)
 
 ### <a name="guidelines"></a>指導方針
 
-* [檔案類型與 URI 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [檔案類型與 Uri 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-### <a name="reference"></a>參考資料
+### <a name="reference"></a>參考
 
 * [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 * [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)

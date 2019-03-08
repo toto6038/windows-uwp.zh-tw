@@ -8,33 +8,33 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 85d1c41fc10f509f3872fb1e4a0af5fa1e1e7c30
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924758"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631393"
 ---
 # <a name="primitive-topologies"></a>基本拓撲
 
 
 Direct3D 支援數個基本拓撲，其定義管線如何轉譯及呈現頂點，例如點清單、線清單和三角形連環。
 
-## <a name="span-idprimitivetypesspanspan-idprimitivetypesspanspan-idprimitivetypesspanbasic-primitive-topologies"></a><span id="Primitive_Types"></span><span id="primitive_types"></span><span id="PRIMITIVE_TYPES"></span>基本類型拓撲
+## <a name="span-idprimitivetypesspanspan-idprimitivetypesspanspan-idprimitivetypesspanbasic-primitive-topologies"></a><span id="Primitive_Types"></span><span id="primitive_types"></span><span id="PRIMITIVE_TYPES"></span>基本的基本拓撲
 
 
 支援下列基本類型拓撲 (或基本類型)︰
 
 -   [點清單](point-lists.md)
--   [線清單](line-lists.md)
--   [帶狀線](line-strips.md)
+-   [列清單](line-lists.md)
+-   [行帶狀線](line-strips.md)
 -   [三角形清單](triangle-lists.md)
--   [三角形連環](triangle-strips.md)
+-   [三角形帶狀線](triangle-strips.md)
 
 針對每個基本類型的視覺效果，查看本主題稍後的圖表[線圈方向和前置頂點位置](#winding-direction-and-leading-vertex-positions)。
 
 [輸入組合語言 (IA) 階段](input-assembler-stage--ia-.md)讀取頂點和索引緩衝區的資料，將資料組合到下列基本類型，然後將資料傳送至剩餘管線階段。
 
-## <a name="span-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>基本相鄰關係
+## <a name="span-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>基本的相鄰
 
 
 所有 Direct3D 基本類型 (點清單除外) 均提供兩個版本︰一個具有相鄰關係的基本類型以及一個不具相鄰關係的基本類型。 具有相鄰關係的基本類型包含一些周圍頂點，而不具相鄰關係的基本類型僅包含目標基本類型的頂點。 例如，線清單基本類型有對應的包含相鄰關係的線清單基本類型。
@@ -43,7 +43,7 @@ Direct3D 支援數個基本拓撲，其定義管線如何轉譯及呈現頂點�
 
 例如，假設您想要繪圖具有相鄰關係的三角形清單。 包含 36 個頂點 (具有相鄰關係) 的三角形清單將產生 6 個已完成的基本類型。 具相鄰關係的基本類型 (帶狀線除外) 包含的頂點數是不具相鄰關係的同等基本類型正好兩倍，其中每個額外的頂點是相鄰的頂點。
 
-## <a name="span-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>線圈方向和前置頂點位置
+## <a name="span-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>捲繞方向，並導致頂點位置
 
 
 如下圖所示，前置頂點是基本類型中的第一個非相鄰頂點。 基本類型可讓多個前置頂點經過定義，只要每個前置頂點是用於不同基本類型。
@@ -66,7 +66,7 @@ Direct3D 支援數個基本拓撲，其定義管線如何轉譯及呈現頂點�
 
  
 
-## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>產生多條寬帶
+## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>產生多個列
 
 
 您可以透過寬帶切割產生多條寬帶。 您可以明確呼叫 [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL 函式或將特殊索引值插入索引緩衝區，來執行寬帶切割。 這個值是 –1，32 位元索引是 0xffffffff 或 16 位元索引是 0xffff。

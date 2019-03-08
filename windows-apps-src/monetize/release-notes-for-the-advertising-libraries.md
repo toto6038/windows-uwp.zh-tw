@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, ads, advertising, release notes, 廣告, 版本資訊
 ms.localizationpriority: medium
 ms.openlocfilehash: d7a250880d148dd4ca3ced522312904f2786715e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050861"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601223"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 程式庫的版本資訊
 
 
 
 
-本節提供目前版本 Microsoft Advertising 程式庫的版本資訊。 這些程式庫支援適用於 windows 10、 windows 8.1、 Windows Phone 8.1 以及 WindowsPhone8 的 XAML 和 JavaScript/HTML 應用程式。
+本節提供目前版本 Microsoft Advertising 程式庫的版本資訊。 這些程式庫支援 Windows 10、 Windows 8.1、 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 應用程式。
 
 ## <a name="installation"></a>安裝
 
@@ -31,7 +31,7 @@ Microsoft Advertising 程式庫屬於 [Microsoft Advertising SDK](https://aka.ms
 
 ## <a name="target-architecture-specific-build-outputs"></a>目標架構特定的建置輸出
 
-使用 Microsoft Advertising 程式庫時，您在專案中將無法以 **\[任何 CPU\]** 為目標。 如果專案的目標是 **\[任何 CPU\]**，當您將參照新增到 Microsoft Advertising 程式庫之後，便可能會在專案中看到警告。 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 如需詳細資訊，請參閱[已知問題](known-issues-for-the-advertising-libraries.md)。
+使用 Microsoft Advertising 程式庫時，您在專案中將無法以 \[任何 CPU\] 為目標。 如果專案的目標是 \[任何 CPU\]，當您將參照新增到 Microsoft Advertising 程式庫之後，便可能會在專案中看到警告。 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 如需詳細資訊，請參閱[已知問題](known-issues-for-the-advertising-libraries.md)。
 
 ## <a name="c-support"></a>C++ 支援
 

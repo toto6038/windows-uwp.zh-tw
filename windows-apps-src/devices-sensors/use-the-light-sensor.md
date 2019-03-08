@@ -7,21 +7,21 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aeb60d67f0cdee77772797816e45fdd9bdc41b4
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114534"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623613"
 ---
 # <a name="use-the-light-sensor"></a>使用光感應器
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
 
-**範例**
+**Sample**
 
 -   如需更完整的實作，請參閱[光感應器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LightSensor)。
 
@@ -29,9 +29,9 @@ ms.locfileid: "9114534"
 
 周遭環境光感應器是數種環境感應器的其中一種，可讓應用程式回應使用者環境中的變化。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
-您應該熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC # 及事件。
+您應該先熟悉使用 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
 
 您使用的裝置或模擬器必須支援周遭環境光感應器。
 
@@ -41,7 +41,7 @@ ms.locfileid: "9114534"
 
 ###  <a name="instructions"></a>指示
 
--   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
+-   從 [Visual C#] 專案範本中選擇 [空白應用程式 (通用 Windows)] 來建立一個新專案。
 
 -   開啟專案的 BlankPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -135,11 +135,11 @@ ms.locfileid: "9114534"
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **LightingCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="LightingCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:LightingCS"`。
 
--   按 F5 或選取 **\[偵錯\]** > **\[開始偵錯\]** 以建置、部署及執行 App。
+-   按 F5 或選取 [偵錯] >  [開始偵錯] 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以改變感應器可用的光線或使用模擬器工具來變更光感器值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** > **\[停止偵錯\]** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯] >  [停止偵錯] 以停止 App。
 
 ###  <a name="explanation"></a>說明
 

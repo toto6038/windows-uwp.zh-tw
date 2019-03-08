@@ -1,5 +1,5 @@
 ---
-Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools.
+Description: 多語應用程式工具組 (MAT) 4.0 與 Microsoft Visual Studio 2017 整合，提供 UWP app 翻譯支援、翻譯檔案管理及編輯器工具。
 title: 使用多語應用程式工具組
 template: detail.hbs
 ms.date: 01/23/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047613"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610113"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多語應用程式工具組 4.0
 
@@ -43,7 +43,7 @@ ms.locfileid: "9047613"
 
 若您是使用 Visual Studio 2017，請接連下載並執行這兩種安裝程式。 若您是使用 Visual Studio 2015 或 Visual Studio 2013，請下載並執行 .msi 安裝程式。
 
-### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步驟 3. 為您的專案啟用多語應用程式工具組
+### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步驟 3。 為您的專案啟用多語應用程式工具組
 
 您必須為您的專案啟用 MAT，才能開始當地語系化應用程式。 以下是啟用工具組的方法。
 
@@ -102,7 +102,7 @@ ms.locfileid: "9047613"
 多語應用程式工具組已整合至建置處理序。 在建置過程中，更新的字串會自動新增到每個語言的 .xlf 檔案。
 在您使用虛擬語言測試應用程式之後，有三種選項可以將您的應用程式翻譯成其他語言以供發行。
 
-#### <a name="option-1-translate-the-strings-yourself"></a>選項 1. 自行翻譯字串
+#### <a name="option-1-translate-the-strings-yourself"></a>選項 1： 自行翻譯字串
 
 您可以使用多語編輯器翻譯個別字串。 如前所述，此工具隨附於 [.msi 安裝程式](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)中。
 
@@ -115,13 +115,13 @@ ms.locfileid: "9047613"
 
 您也可以使用此方法啟動多語編輯器。 移至 \[開始\]，顯示所有應用程式，開啟多語應用程式工具組資料夾，然後按一下多語編輯器來啟動它。
 
-#### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>選項 2. 將 .xlf 檔案傳送到協力廠商進行翻譯
+#### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>選項 2： 將 .xlf 檔案傳送到協力廠商進行翻譯
 
 若要將翻譯及編輯工作外包給負責當地語系化的人員，請在方案總管中選取想要的 .xlf 檔案，以滑鼠右鍵按一下他們，然後按一下 **\[多語應用程式工具組\]** > **\[匯出翻譯...\]**。
 
-在匯出字串資源對話方塊中選取 **\[輸出: 郵件收件者\]**，然後按一下 \[確定\]，您的檔案便會進行壓縮並附加到新的電子郵件。 選取 **\[輸出: 檔案資料夾位置\]**，瀏覽資料夾並按一下 \[確定\]，選擇性的選擇要壓縮的檔案，再次按一下 \[確定\]，您的檔案便會 (在壓縮之後) 儲存到您選擇的位置，位於以您的專案命名的新資料夾中。
+選取**輸出：郵件收件者**中匯出字串資源對話方塊中，按一下 [確定] 和您的檔案會進行壓縮及附加至新的電子郵件。 選取**輸出：檔案資料夾位置**、 瀏覽器的資料夾，然後按一下 [確定]，選擇檔案的檔案會壓縮，再按一下 [確定]，而且您的檔案 (壓縮和) 儲存在您選擇專案的新資料夾的位置。
 
-在您負責當地語系化的人員完成工作，並將翻譯完的 .xlf 檔案傳送給您之後，您便可以將檔案匯入到您的專案中。 在方案總管中選取想要的 .xlf 檔案，以滑鼠右鍵按一下他們，按一下 **\[多語應用程式工具組\]** > **\[匯入/回收翻譯\]**。按一下 **\[新增\]**，巡覽至 .xlf 或 .zip 檔案，然後按一下 **\[匯入\]**。
+在您負責當地語系化的人員完成工作，並將翻譯完的 .xlf 檔案傳送給您之後，您便可以將檔案匯入到您的專案中。 選取所需的.xlf 檔案方案總管] 中，按一下滑鼠右鍵，然後按一下**多語系應用程式工具組** > **匯入/回收翻譯...**.按一下 [**新增**，瀏覽至.xlf 或.zip 檔案，然後按一下**匯入**。
 
 **注意**：匯入處理序會在匯入前執行基本的驗證。 這會確保匯入檔案中的目標文化資訊與現有的 .xlf 檔案相符。
 
@@ -152,7 +152,7 @@ ms.locfileid: "9047613"
 - [Microsoft 語言入口網站](https://go.microsoft.com/fwlink/p/?LinkId=330295)提供者可根據 Microsoft 產品及服務的使用者介面文字翻譯，啟用翻譯回收並提供術語比對支援。
 - [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) 提供者可啟用隨選機器翻譯服務。
 
-您和您的翻譯人員可以在多語編輯器中管理翻譯狀態，並在稍後檢閱不確定的翻譯。 您可以在 **\[屬性\]** 索引標籤中設定每個字串的狀態。狀態值為：**\[新字串\]**、**\[需要檢閱\]**、**\[已翻譯\]**、**\[最終版本\]** 及 **\[已完結\]**。 資料列左側的指標會顯示狀態。 當所有資料列在多語編輯器中都已顯示為綠色時，您的翻譯工作便已完成。
+您和您的翻譯人員可以在多語編輯器中管理翻譯狀態，並在稍後檢閱不確定的翻譯。 您可以設定每個字串中的狀態**屬性** 索引標籤。狀態的值為：**新**，**需要檢閱**，**轉譯**，**最終**，並**登出**。 資料列左側的指標會顯示狀態。 當所有資料列在多語編輯器中都已顯示為綠色時，您的翻譯工作便已完成。
 
 重新建置您的專案會將已翻譯的字串複製到對應您方才編輯之 .xlf 檔案的資源檔 (.resw)。
 
@@ -162,16 +162,16 @@ ms.locfileid: "9047613"
 
 ## <a name="related-topics"></a>相關主題
 
-* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
+* [UI 和應用程式封裝資訊清單中的當地語系化字串](../../app-resources/localize-strings-ui-manifest.md)
 * [全球化和當地語系化](globalizing-portal.md)
-* [全球化指導方針](guidelines-and-checklist-for-globalizing-your-app.md)
-* [讓您的應用程式可當地語系化](prepare-your-app-for-localization.md)
+* [全球化的指導方針](guidelines-and-checklist-for-globalizing-your-app.md)
+* [可當地語系化，讓您的應用程式](prepare-your-app-for-localization.md)
 * [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
 
 ## <a name="downloads"></a>下載
 
-* [多語應用程式工具組 4.0 .vsix 安裝程式](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [多語應用程式工具組 4.0 .msi 安裝程式](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [多語系應用程式工具組 4.0.vsix 安裝程式](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+* [多語系應用程式工具組 4.0.msi 安裝程式](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
 
 ## <a name="translation-services"></a>翻譯服務
 

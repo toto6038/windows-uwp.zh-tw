@@ -1,26 +1,26 @@
 ---
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: 在 Microsoft Store 提交 API 中使用這個方法，來建立新的提交，針對已登錄到您的合作夥伴中心帳戶的 app。
-title: 建立 App 提交
+description: 若要建立新的提交至您的合作夥伴中心帳戶已註冊的應用程式，在 Microsoft Store 提交 API 中使用這個方法。
+title: 建立應用程式提交
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立應用程式提交
 ms.localizationpriority: medium
 ms.openlocfilehash: a90be116a9d85eeae7cb7c44c2bbfe96da472f65
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943952"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594443"
 ---
-# <a name="create-an-app-submission"></a>建立 App 提交
+# <a name="create-an-app-submission"></a>建立應用程式提交
 
-在 Microsoft Store 提交 API 中使用這個方法，來建立新的提交，針對已登錄到您的合作夥伴中心帳戶的 app。 使用這個方法成功建立新提交之後，請[更新提交](update-an-app-submission.md)對提交的資料進行任何必要的變更，然後[認可提交](commit-an-app-submission.md)供擷取和發佈。
+若要建立新的提交至您的合作夥伴中心帳戶已註冊的應用程式，在 Microsoft Store 提交 API 中使用這個方法。 使用這個方法成功建立新提交之後，請[更新提交](update-an-app-submission.md)對提交的資料進行任何必要的變更，然後[認可提交](commit-an-app-submission.md)供擷取和發佈。
 
 如需這個方法如何在使用 Microsoft Store 提交 API 建立 App 提交的程序中進行的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -30,7 +30,7 @@ ms.locfileid: "8943952"
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -41,19 +41,19 @@ ms.locfileid: "8943952"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字串 | 必要。 您想要建立提交之 App 的 Store 識別碼。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | 字串 | 必要。 您想要建立提交之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 
 
 ### <a name="request-body"></a>要求本文
 
-不提供此方法的要求主體。
+不提供此方法的要求本文。
 
 ### <a name="request-example"></a>要求範例
 
@@ -66,7 +66,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>回應
 
-下列範例示範成功呼叫這個方法的 JSON 回應本文。 回應本文包含新提交的相關資訊。 如需回應本文中各個值的詳細資訊，請參閱 [App 提交資源](manage-app-submissions.md#app-submission-object)。
+下列範例示範成功呼叫此方法時的 JSON 回應主體。 回應本文包含新提交的相關資訊。 如需回應本文中各個值的詳細資訊，請參閱 [App 提交資源](manage-app-submissions.md#app-submission-object)。
 
 ```json
 {
@@ -186,14 +186,14 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 400  | 無法建立提交，因為要求無效。 |
-| 409  | 無法建立提交，因為應用程式的目前狀態，或 app 使用[Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |   
+| 409  | 無法建立提交作業，因為應用程式中的目前狀態，或應用程式使用的合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [取得 App 提交](get-an-app-submission.md)
-* [認可 App 提交](commit-an-app-submission.md)
-* [更新 App 提交](update-an-app-submission.md)
-* [刪除 App 提交](delete-an-app-submission.md)
-* [取得 App 提交的狀態](get-status-for-an-app-submission.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
+* [取得應用程式提交](get-an-app-submission.md)
+* [認可應用程式提交](commit-an-app-submission.md)
+* [更新應用程式提交](update-an-app-submission.md)
+* [刪除應用程式提交](delete-an-app-submission.md)
+* [取得應用程式提交的狀態](get-status-for-an-app-submission.md)

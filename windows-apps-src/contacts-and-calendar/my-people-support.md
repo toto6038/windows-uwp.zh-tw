@@ -3,14 +3,14 @@ title: 新增朋友圈支援至應用程式
 description: 說明如何將朋友圈支援新增至應用程式，及如何釘選與取消釘選連絡人
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044442"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611533"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>新增朋友圈支援至應用程式
 
@@ -27,15 +27,15 @@ ms.locfileid: "9044442"
 
 若要讓您的應用程式能夠使用 \[朋友圈\] 功能時，您必須完成三件事：
 
-1. [宣告支援您應用程式資訊清單中的 shareTarget 啟用合約。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [為使用者可分享使用您應用程式的連絡人加上註解。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [宣告支援 shareTarget 啟用合約，在您的應用程式資訊清單。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [加上註解的使用者可以使用您的應用程式共用的連絡人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  支援同時執行您應用程式的多個執行個體。 使用者將您應用程式的完整版用於連絡人面板中時，必須能夠與該版本互動。  他們甚至可以同時將該版本用於多個連絡人面板中。  若要支援此功能，您的應用程式必須能夠同時執行多個檢視。 若要了解做法，請參閱[顯示應用程式的多重檢視](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views) (英文) 一文。
 
 當您完成時，您的應用程式將出現在所註解連絡人的連絡人面板中。
 
 ## <a name="declaring-support-for-the-contract"></a>宣告合約的支援
 
-若要宣告支援朋友圈合約，請以 Visual Studio 開啟您的應用程式。 在 \[方案總管\]**** 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]****，然後選取 \[開啟方式\]****。 從功能表中，選取 \[XML (文字) 編輯器\]****，然後按一下 \[確定\]****。 對資訊清單進行以下變更：
+若要宣告支援朋友圈合約，請以 Visual Studio 開啟您的應用程式。 在 \[方案總管\] 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]，然後選取 \[開啟方式\]。 從功能表中，選取 \[XML (文字) 編輯器\]，然後按一下 \[確定\]。 對資訊清單進行以下變更：
 
 **之前**
 
@@ -53,7 +53,7 @@ ms.locfileid: "9044442"
 
 ```
 
-**之後**
+**After**
 
 ```xml
 <Package
@@ -101,7 +101,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId” 是套件系列名稱，後面加上 ‘!’ 及可啟用類別識別碼。 若要尋找您的套件系列名稱，請使用預設的編輯器開啟 **Package.appxmanifest**，然後尋找 \[封裝\] 索引標籤。在此，「App」是對應到應用程式啟動檢視的可啟用類別。
+“appId” 是套件系列名稱，後面加上 ‘!’ 及可啟用類別識別碼。 若要尋找您的套件系列名稱，請使用預設的編輯器開啟 **Package.appxmanifest**，然後尋找 \[封裝\] 索引標籤。在此，“App” 是對應到應用程式啟動檢視的可啟用類別。
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>允許連絡人邀請新的潛在使用者
 
@@ -121,7 +121,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 </Applications>
 ```
 
-**之後**
+**After**
 
 ```Csharp
 <Applications>
@@ -249,10 +249,10 @@ async Task PinMultipleContacts(Contact[] contacts)
 **注意：** 
 
 ## <a name="see-also"></a>請參閱
-+ [朋友圈分享](my-people-sharing.md)
-+ [朋友圈通知](my-people-notifications.md)
-+ [在新增朋友圈支援至應用程式上的 Channel 9 影片](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [朋友圈整合範例](https://aka.ms/mypeoplebuild2017)
-+ [連絡人卡片範例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [我的人共用](my-people-sharing.md)
++ [我的使用者通知](my-people-notifications.md)
++ [Channel 9 影片新增至應用程式支援的我的人員](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [我的人員的整合範例](https://aka.ms/mypeoplebuild2017)
++ [請連絡卡範例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager 類別文件](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [將應用程式連結到連絡人卡片上的動作](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [應用程式連接到連絡人卡片上的動作](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

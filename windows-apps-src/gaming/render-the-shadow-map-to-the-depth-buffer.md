@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, games, rendering, shadow map, depth buffer, direct3d, 遊戲, 轉譯, 陰影圖, 深度緩衝區
 ms.localizationpriority: medium
 ms.openlocfilehash: 27cd535dc51a330937c345acf352677a42c652eb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925567"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621333"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>將陰影圖轉譯為深度緩衝區
 
 
 
 
-從光線的視角轉譯，以建立代表陰影體的二維深度圖。 深度圖會為要在陰影中轉譯的空間設定遮罩。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第二部分。
+從光線的視角轉譯，以建立代表陰影體的二維深度圖。 深度圖會為要在陰影中轉譯的空間設定遮罩。 第 2 部分[逐步解說：實作使用 Direct3D 11 中的深度緩衝區的陰影磁碟區](implementing-depth-buffers-for-shadow-mapping.md)。
 
 ## <a name="clear-the-depth-buffer"></a>清除深度緩衝區
 
@@ -125,7 +125,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**最佳化檢視範圍：**  確定您的實作會運算緊密的檢視範圍，讓您可以從深度緩衝區中取得最佳的精確度。 如需更多關於陰影技術的提示，請參閱[改善陰影深度圖的常見技術](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
+**最佳化檢視範圍：** 請確定您的實作會計算緊密的檢視範圍，以便您深度緩衝區中發揮最大有效位數。 如需更多關於陰影技術的提示，請參閱[改善陰影深度圖的常見技術](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
 
 ## <a name="vertex-shader-for-shadow-pass"></a>適用於陰影階段的頂點著色器
 

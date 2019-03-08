@@ -7,21 +7,21 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bfd617c3c08cdcb7815010648c6036a5f39ee3ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932657"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623803"
 ---
 # <a name="use-the-inclinometer"></a>使用傾角計
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**傾角計**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+-   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
-**範例**
+**Sample**
 
 -   如需更完整的實作，請參閱[傾角計範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)。
 
@@ -29,9 +29,9 @@ ms.locfileid: "8932657"
 
 有些 3D 遊戲需要以傾角計做為輸入裝置。 一個常見範例是飛行模擬器，它需將傾角計的三個軸 (X、Y 以及 Z) 對應至飛機的升降舵、補助翼以及方向舵輸入。
 
- ## <a name="prerequisites"></a>先決條件
+ ## <a name="prerequisites"></a>必要條件
 
-您應該熟悉 Extensible Application Markup 語言 (XAML)、 Microsoft VisualC # 及事件。
+您應該先熟悉使用 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
 
 您使用的裝置或模擬器必須支援傾角計。
 
@@ -41,7 +41,7 @@ ms.locfileid: "8932657"
 
 ###  <a name="instructions"></a>指示
 
--   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
+-   從 [Visual C#] 專案範本中選擇 [空白應用程式 (通用 Windows)] 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -136,11 +136,11 @@ ms.locfileid: "8932657"
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **InclinometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="InclinometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:InclinometerCS"`。
 
--   按 F5 或選取 **\[偵錯\]** > **\[開始偵錯\]** 以建置、部署及執行 App。
+-   按 F5 或選取 [偵錯] >  [開始偵錯] 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更傾角計值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** > **\[停止偵錯\]** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯] >  [停止偵錯] 以停止 App。
 
 ###  <a name="explanation"></a>說明
 

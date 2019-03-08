@@ -1,5 +1,5 @@
 ---
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
+Description: 使用已針對觸控板進行最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，以建立通用 Windows 平台 (UWP) 應用程式。
 title: 觸控板互動
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 895bf1ffe4fc79a65fdf452235ee9466e91b7215
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046704"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593903"
 ---
 # <a name="touchpad-design-guidelines"></a>觸控板設計指導方針
 
@@ -55,11 +55,11 @@ ms.locfileid: "9046704"
 
 ![標準觸控板設定](images/mouse-touchpad-settings-standard.png)
 
-<sup>Standard\\ touchpad\\ settings</sup>
+<sup>標準\\觸控板\\設定</sup>
 
 ![Windows 精確式觸控板設定](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\ Precision\\ Touchpad\\ settings</sup>
+<sup>Windows\\有效位數\\觸控板\\設定</sup>
 
 以下是一些已針對觸控板進行最佳化且適用於執行一般工作的手勢範例。
 
@@ -71,13 +71,13 @@ ms.locfileid: "9046704"
 <thead>
 <tr class="header">
 <th align="left">詞彙</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>三指點選</p></td>
-<td align="left"><p>使用者喜好設定，可使用 <strong>Cortana</strong> 搜尋或顯示 [重要訊息中心]<strong></strong>。</p></td>
+<td align="left"><p>使用者喜好設定，可使用 <strong>Cortana</strong> 搜尋或顯示 [重要訊息中心]。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>三指滑動</p></td>
@@ -146,8 +146,8 @@ ms.locfileid: "9046704"
 -   一律使用箭頭游標 (![箭頭游標](images/cursor-arrow.png)) 於可點選的元素。 請勿使用指向手型游標 (![指向手型游標](images/cursor-pointinghand.png)) 於連結或其他互動式元素。 請改為使用暫留效果 (描述如前)。
 -   使用文字游標 (![文字游標](images/cursor-text.png)) 於可選取的文字。
 -   使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 [開始] 畫面磚)，請勿使用移動游標。
--   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png), ![調整水平大小游標](images/cursor-horizontal.png), ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png), ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
--   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png), ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
+-   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
+-   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
 ## <a name="related-articles"></a>相關文章
 
@@ -155,15 +155,15 @@ ms.locfileid: "9046704"
 * [處理指標輸入](handle-pointer-input.md)
 * [識別輸入裝置](identify-input-devices.md)
 **範例**
-* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 **封存範例**
-* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：XAML 使用者輸入事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：使用 GestureRecognizer 處理手勢與操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：XAML 使用者輸入的事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：筆勢和 GestureRecognizer 操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
 

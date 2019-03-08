@@ -1,5 +1,5 @@
 ---
-Description: If your app doesn't have resources that match the particular settings of a customer device, then the app's default resources are used. This topic explains how to specify what those default resources are.
+Description: 如果您的 App 沒有符合客戶裝置特定設定的資源，則會使用 App 的預設資源。 本主題說明如何指定這些預設資源的內容。
 title: 指定您的應用程式使用的預設資源
 template: detail.hbs
 ms.date: 11/14/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048901"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593983"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>指定您的應用程式使用的預設資源
 
@@ -102,6 +102,6 @@ Visual Studio 在幕後啟動名為 `MakePri.exe` 的工具來產生所謂套件
 
 ## <a name="related-topics"></a>相關主題
 
-* [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)
+* [量身打造您的語言、 規模、 高對比和其他辨識符號的資源](tailor-resources-lang-scale-contrast.md)
 * [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)
+* [編譯以手動方式使用 MakePri.exe 的資源](compile-resources-manually-with-makepri.md)

@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
 ms.localizationpriority: medium
 ms.openlocfilehash: e248a6ff666efe7dca262daa81a21ab44a4dc5aa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922943"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617703"
 ---
 # <a name="developer-folder-api-reference"></a>開發人員資料夾 API 參考   
 您可以使用標準的 &#91;檔案總管&#93; 存取您 Xbox One 上的開發相關檔案。 這可讓您從電腦針對主機輕鬆檢視並取代檔案。
@@ -35,7 +35,7 @@ GET | /ext/smb/developerfolder
 
 - 無
 
-**要求主體**
+**要求本文**
 
 - 無
 
@@ -54,6 +54,6 @@ HTTP 狀態碼      | 描述
 4XX | 錯誤碼
 5XX | 錯誤碼
 <br />
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox

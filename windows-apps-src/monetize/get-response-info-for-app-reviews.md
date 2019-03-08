@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 評論 API, 回應資訊
 ms.localizationpriority: medium
 ms.openlocfilehash: 0497b5eec67f9204139cd10d4523b534d6c8779f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928834"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595553"
 ---
 # <a name="get-response-info-for-reviews"></a>取得評論的回應資訊
 
@@ -40,18 +40,18 @@ ms.locfileid: "8928834"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
 | 參數        | 類型   | 描述                                     |  必要  |
 |---------------|--------|--------------------------------------------------|--------------|
-| applicationId | 字串 | 包含您想知道是否可回應之評論的應用程式 Store 識別碼。 在合作夥伴中心的[應用程式身分識別頁面](../publish/view-app-identity-details.md)上使用 「 市集識別碼 」。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
-| reviewId | 字串 | 您想要回應評論的 ID（這是 GUID）。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。 <br/>如果您省略此參數，這個方法的回應本文將會指示您是否有權限可回應指定應用程式的任何評論。 |  否  |
+| applicationId | 字串 | 包含您想知道是否可回應之評論的應用程式 Store 識別碼。 存放區識別碼位於[應用程式識別碼 頁面上](../publish/view-app-identity-details.md)在合作夥伴中心。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
+| reviewId | 字串 | 您想要回應評論的識別碼 (這是 GUID)。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。 <br/>如果您省略此參數，這個方法的回應本文將會指示您是否有權限可回應指定應用程式的任何評論。 |  否  |
 
 
-### <a name="request-example"></a>要求的範例
+### <a name="request-example"></a>要求範例
 
 下列範例說明如何使用此方法判斷您是否可以回應特定評論。
 
@@ -73,7 +73,7 @@ Authorization: Bearer <your access token>
  
 ### <a name="response-example"></a>回應範例
 
-下列範例針對此要求示範範例 JSON 回應主體。
+下列範例示範這個要求的一個範例 JSON 回應主體。
 
 ```json
 {
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 分析 API 提交評論的回應](submit-responses-to-app-reviews.md)
-* [回應客戶評論使用合作夥伴中心](../publish/respond-to-customer-reviews.md)
-* [使用 Microsoft Store 服務回應評論](respond-to-reviews-using-windows-store-services.md)
+* [提交回應到使用 Microsoft Store analytics API 的評論](submit-responses-to-app-reviews.md)
+* [使用合作夥伴中心的客戶評論回應](../publish/respond-to-customer-reviews.md)
+* [回應程式使用 Microsoft Store 服務檢閱](respond-to-reviews-using-windows-store-services.md)
 * [取得應用程式評論](get-app-reviews.md)

@@ -4,36 +4,36 @@ title: 繫結階層式資料並建立主要/詳細資料檢視
 description: 您可以將項目控制項繫結到已繫結成一個鏈的 CollectionViewSource 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c2280fd7234fc41ee02dc17909bda8d7af0e1b9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049093"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602073"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>繫結階層式資料並建立主要/詳細資料檢視
 
 
 
-> **注意：** 另請參閱[主要/詳細資料範例](https://go.microsoft.com/fwlink/p/?linkid=619991)。
+> **附註**  也會看到[主從式範例](https://go.microsoft.com/fwlink/p/?linkid=619991)。
 
 您可以將項目控制項繫結到已繫結成一個鏈的 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。 在本主題中，我們儘可能使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)，必要時也使用更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-通用 Windows 平台 (UWP) app 有一個常見的結構，當使用者在主要清單中做選擇時，將會瀏覽至不同的詳細資料頁面。 當您想在階層中的每一層，為每個項目提供豐富的視覺表示時，這就很有用。 另一種作法是在單一頁面中顯示多層資料。 當您想要顯示一些簡單的清單，讓使用者快速深入查看有興趣的項目時，這就很有用。 本主題描述如何實作這種互動。 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 執行個體會追蹤每個階層式層級上目前選取的項目。
+通用 Windows 平台 (UWP) app 有一個常見的結構，當使用者在主要清單中做選擇時，將會瀏覽至不同的詳細資料頁面。 當您想在階層中的每一層，為每個項目提供豐富的視覺表示時，這就很有用。 另一種作法是在單一頁面中顯示多層資料。 當您想要顯示一些簡單的清單，讓使用者快速深入查看有興趣的項目時，這就很有用。 本主題描述如何實作這種互動。 [  **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 執行個體會追蹤每個階層式層級上目前選取的項目。
 
 我們將建立一個運動團隊階層的檢視，分為聯盟、分組和團隊清單，並且包含團隊詳細資料檢視。 當您從任一清單中選取一個項目時，後續的檢視會自動更新。
 
 ![運動階層的主要/詳細資料檢視](images/xaml-masterdetails.png)
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 這個主題假設您知道如何建立基本的 UWP app。 如需有關建立第一個 UWP app 的指示，請參閱[使用 C# 或 Visual Basic 建立您的第一個 UWP app](https://msdn.microsoft.com/library/windows/apps/Hh974581)。
 
 ## <a name="create-the-project"></a>建立專案
 
-建立新的**空白應用程式 (Windows 通用)** 專案。 命名為 "MasterDetailsBinding"。
+建立新的 [空白應用程式 (Windows 通用)] 專案。 命名為 "MasterDetailsBinding"。
 
 ## <a name="create-the-data-model"></a>建立資料模型
 

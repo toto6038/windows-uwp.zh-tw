@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 遊戲, 概觀, 程式設計, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 83ac401892761e1e6433d337babbce00dc559b98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923957"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608843"
 ---
 # <a name="directx-programming"></a>DirectX 程式設計
 
@@ -38,7 +38,7 @@ ms.locfileid: "8923957"
 <td align="left"><p>透過遊戲範例學習 DirectX。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="directx-fundamentals.md">基礎</a></p></td>
+<td align="left"><p><a href="directx-fundamentals.md">基本概念</a></p></td>
 <td align="left"><p>解釋 DirectX 基本程式設計概念。</p></td>
 </tr>
 <tr class="even">
@@ -46,15 +46,15 @@ ms.locfileid: "8923957"
 <td align="left"><p>描述如何將各項遊戲功能新增到您的 DirectX 遊戲。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="directx-optimization-and-advanced-topics.md">最佳化與進階主題</a></p></td>
+<td align="left"><p><a href="directx-optimization-and-advanced-topics.md">最佳化和進階的主題</a></p></td>
 <td align="left"><p>深入了解最佳化和其他進階主題。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">從 DirectX 9 移植到 UWP</a></p></td>
+<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">連接埠 DirectX 9 至 UWP</a></p></td>
 <td align="left"><p>了解如何將您的 DirectX 9 遊戲移至 UWP。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">將 Direct3D 移植到 OpenGL</a></p></td>
+<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">連接埠 OpenGL 到 Direct3D</a></p></td>
 <td align="left"><p>了解如何將您的 OpenGL ES 2.0 遊戲移至 Direct3D 11。</p></td>
 </tr>
 </tbody>

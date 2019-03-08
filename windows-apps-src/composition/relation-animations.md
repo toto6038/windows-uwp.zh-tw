@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: b6fdc59e8a7203a3bb8c6ad79adabd446b884639
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926294"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597713"
 ---
 # <a name="relation-based-animations"></a>關聯式動畫
 
@@ -112,7 +112,7 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` 是「使用」標記的簡寫，定義 ExpressionBuilder.ExpressionFunctions。
+> `EF` 是速記"using"標記法來定義 ExpressionBuilder.ExpressionFunctions。
 
 最後，將這些元件結合在一起，並參考紅球的位置來定義數學關係。
 

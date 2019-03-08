@@ -1,19 +1,19 @@
 ---
-Description: Learn how to use page transitions in your UWP apps.
+Description: 了解如何使用您的 UWP 應用程式中的頁面轉換。
 title: 在 UWP app 中的頁面轉換
 template: detail.hbs
 ms.date: 04/08/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 38fe6b92828459f91ba6ea2f836d274c2cc8d761
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942240"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646453"
 ---
 # <a name="page-transitions"></a>頁面轉換
 
@@ -37,7 +37,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**注意**：A [**畫面**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)自動使用 [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) 以動畫顯示兩頁之間的瀏覽。 根據預設，動畫是頁面重新整理。
+**注意**：A [**框架**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)會自動使用[ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition)以動畫顯示兩個頁面之間瀏覽。 根據預設，動畫是頁面重新整理。
 
 ## <a name="drill"></a>切入
 
@@ -56,9 +56,9 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>水平的投影片
 
-使用水平的投影片顯示同層級頁面顯示旁邊彼此。 [NavigationView](../controls-and-patterns/navigationview.md)控制項自動使用這個動畫，如上方瀏覽，但如果您正在建置您自己的水平瀏覽體驗，然後您可以實作具有 SlideNavigationTransitionInfo 水平投影。
+您可以使用水平的滑桿顯示同層級頁面會相互並排顯示。 [NavigationView](../controls-and-patterns/navigationview.md)控制會自動使用最上層導覽中，這個動畫，但如果您要建置您自己的水平的瀏覽體驗，然後您可以實作具有 SlideNavigationTransitionInfo 水平的投影。
 
-所需的感覺是使用者，彼此旁邊的頁面之間瀏覽。 
+所需的看法卻是使用者屬於彼此相鄰的頁面之間巡覽。 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage
@@ -87,5 +87,5 @@ myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 
 ## <a name="related-topics"></a>相關主題
 
-- [在兩個頁面之間瀏覽](../basics/navigate-between-two-pages.md)
-- [UWP app 裡的動作](index.md)
+- [兩個頁面之間巡覽](../basics/navigate-between-two-pages.md)
+- [在 UWP 應用程式中的動作](index.md)

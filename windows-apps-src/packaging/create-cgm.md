@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 內容群組對應, 串流安裝, uwp app 串流安裝, 來源內容群組對應
 ms.localizationpriority: medium
 ms.openlocfilehash: 882db0a6a97c5ee203a072156ca3eb82615607bb
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115865"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647943"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>建立和轉換來源內容群組對應
 
@@ -23,7 +23,7 @@ ms.locfileid: "9115865"
 
 讓我們帶領您探索一個簡單的案例：在此案例中，UWP App 串流安裝將會非常有幫助。 
 
-假設您已建立了一個 UWP 遊戲，但您應用程式的最終大小超過 100 GB。 接著就需要較長的時間下載，從 Microsoft Store，可以是相當程度的不便。 若您選擇使用 UWP App 串流安裝，就可以指定您應用程式中檔案下載的順序。 藉由告訴市集先下載必要檔案，使用者就可以提早進入您的應用程式，並在背景繼續下載其他非必要的檔案。
+假設您已建立了一個 UWP 遊戲，但您應用程式的最終大小超過 100 GB。 要花很長的時間，若要下載從 Microsoft Store，這很不方便。 若您選擇使用 UWP App 串流安裝，就可以指定您應用程式中檔案下載的順序。 藉由告訴市集先下載必要檔案，使用者就可以提早進入您的應用程式，並在背景繼續下載其他非必要的檔案。
 
 > [!NOTE]
 > UWP App 串流安裝會受到您應用程式檔案組織的極大影響。 我們建議您盡早針對 UWP App 串流安裝考慮您應用程式內容的配置，以簡化切割您應用程式檔案的工作，
@@ -71,7 +71,7 @@ ms.locfileid: "9115865"
 
 在這裡有幾件重要的事情值得注意︰
 
-- `<Required>` 元素中的 `<ContentGroup>` **必須**命名為 "Required"。 這個名稱必須只保留給必要內容群組使用，並且在最終內容群組對應中不得由其他 `<ContentGroup>` 使用。
+- `<Required>` 元素中的 `<ContentGroup>`**必須**命名為 "Required"。 這個名稱必須只保留給必要內容群組使用，並且在最終內容群組對應中不得由其他 `<ContentGroup>` 使用。
 - 只有一個 `<ContentGroup>`。 這是刻意的，因為檔案中應該只能有一個必要檔案群組。
 - 在這個範例中的檔案是一個 `.exe` 檔案。 必要內容群組中不一定只能有一個檔案。您可以在群組中添加數個檔案。 
 
@@ -166,4 +166,4 @@ MakeAppx convertCGM /s MyApp\SourceAppxContentGroupMap.xml /f MyApp\AppxContentG
 MakeAppx convertCGM /?
 ```
 
-這些就是取得您最終 `AppxContentGroupMap.xml` 檔案並為您的應用程式準備就緒所需要的所有步驟！ 還有更多執行您應用程式才會完全準備好用 Microsoft Store。 如需有關將 UAP App 串流安裝加入您應用程式之完整程序的詳細資訊，請參閱[這篇部落格文章](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。
+這些就是取得您最終 `AppxContentGroupMap.xml` 檔案並為您的應用程式準備就緒所需要的所有步驟！ 還有更多您的應用程式已完全準備好 Microsoft Store 之前。 如需有關將 UAP App 串流安裝加入您應用程式之完整程序的詳細資訊，請參閱[這篇部落格文章](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。

@@ -1,23 +1,23 @@
 ---
-Description: Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app.
+Description: 超連結會讓使用者瀏覽到應用程式的其他部分、到其他應用程式，或使用不同的瀏覽器應用程式啟動特定的統一資源識別項 (URI)。
 title: 超連結
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9aa5053d83518c61335807874cd0d31943a60695
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058599"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606473"
 ---
 # <a name="hyperlinks"></a>超連結
 
@@ -25,7 +25,7 @@ ms.locfileid: "9058599"
 
 超連結會讓使用者瀏覽到應用程式的其他部分、到其他應用程式，或使用不同的瀏覽器應用程式啟動特定的統一資源識別項 (URI)。 有兩種方式可以將超連結新增至 XAML 應用程式：**Hyperlink** 文字元素和 **HyperlinkButton** 控制項。
 
-> **重要 API**：[Hyperlink text element](https://msdn.microsoft.com/library/windows/apps/dn279356)、[HyperlinkButton control](https://msdn.microsoft.com/library/windows/apps/br242739)
+> **重要的 Api**:[超連結文字項目](https://msdn.microsoft.com/library/windows/apps/dn279356)，[按一下 HyperlinkButton 控制項](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ![超連結按鈕](images/controls/hyperlink-button.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "9058599"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/HyperlinkButton">開啟應用程式並查看 HyperlinkButton 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -125,7 +125,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 **處理 Click 事件**
 
-將 Click 事件用於在瀏覽器中啟動 URI 以外的動作 (例如，在應用程式內進行瀏覽)。 例如，如果您要載入新的應用程式頁面，而不是開啟瀏覽器，請在 Click 事件處理常式內呼叫 [Frame.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.navigate.aspx) 方法，以瀏覽至新的應用程式頁面。 如果您要在 [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) 控制項內載入也存在於您應用程式中的外部絕對 URI，請呼叫 [WebView.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.navigate.aspx) 做為 Click 處理常式邏輯的一部分。
+將 Click 事件用於在瀏覽器中啟動 URI 以外的動作 (例如，在應用程式內進行瀏覽)。 例如，如果您要載入新的應用程式頁面，而不是開啟瀏覽器，請在 Click 事件處理常式內呼叫 [Frame.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.navigate.aspx) 方法，以瀏覽至新的應用程式頁面。 如果您要在 [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) 控制項內載入也存在於您 app 中的外部絕對 URI，請呼叫 [WebView.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.navigate.aspx) 做為 Click 處理常式邏輯的一部分。
 
 您通常不會處理 Click 事件以及指定 NavigateUri 值，因為這兩者代表兩種使用超連結元素的不同方式。 如果您的目的是要在預設瀏覽器中開啟 URI，而且已指定 NavigateUri 值，請不要處理 Click 事件。 相反地，如果您處理 Click 事件，請不要指定 NavigateUri。
 
@@ -134,7 +134,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 ## <a name="hyperlink-underlines"></a>超連結底線
 超連結預設會加上底線。 這個底線相當重要，因為它有助於符合協助工具需求。 色盲使用者使用底線來區別超連結與其他文字。 如果您停用底線，則應該考慮新增一些其他類型的格式差異，來區別超連結與其他文字 (例如 FontWeight 或 FontStyle)。
 
-**Hyperlink 文字元素**
+**超連結文字項目**
 
 您可以設定 [UnderlineStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.hyperlink.underlinestyle.aspx) 屬性來停用底線。 如果這麼做，請考慮使用 [FontWeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontweight.aspx) 或 [FontStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontstyle.aspx) 來區別您的連結文字。
 
@@ -152,15 +152,15 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 本節僅適用於 Hyperlink 文字元素，而非 HyperlinkButton 控制項。
 
-**輸入事件**
+**輸入的事件**
 
 因為 Hyperlink 不是 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx)，所以沒有一組 UI 元素輸入事件 (例如 Tapped、PointerPressed 等)。 相反地，Hyperlink 有它自己的 Click 事件，以及載入任何指定為 NavigateUri 之 URI 的系統的隱含行為。 系統會處理應該叫用 Hyperlink 動作的所有輸入動作，並引發 Click 事件予以回應。
 
-**內容**
+**Content**
 
 Hyperlink 對可存在於其 [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) 集合中的內容有所限制。 具體而言，Hyperlink 僅允許 [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) 以及不是另一個 Hyperlink 的其他 [Span](/uwp/api/windows.ui.xaml.documents.span) 類型。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) 不能在 Hyperlink 的 Inlines 集合中。 嘗試新增限制內容，會擲回無效引數例外狀況或 XAML 剖析例外狀況。
 
-**Hyperlink 和佈景主題/樣式行為**
+**超連結和主題/樣式行為**
 
 Hyperlink 不是繼承自 [Control](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.aspx)，因此沒有 [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.style.aspx) 屬性或 [Template](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.template.aspx)。 您可以編輯繼承自 [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.aspx) 的屬性 (例如 Foreground 或 FontFamily) 來變更 Hyperlink 的外觀，但無法使用常用樣式或範本來套用變更。 請考慮使用常見資源做為 Hyperlink 屬性的值以提供一致性，而不是使用範本。 部分 Hyperlink 屬性使用系統所提供 {ThemeResource} 標記延伸值的預設值。 使用者在執行階段變更系統佈景主題時，這會以適當的方式切換 Hyperlink 外觀。
 

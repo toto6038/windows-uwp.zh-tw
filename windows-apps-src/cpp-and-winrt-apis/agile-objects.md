@@ -1,29 +1,29 @@
 ---
-description: 敏捷式物件是可以從任何執行緒中存取的一種物件。 C++/WinRT 預設為敏捷式，但您可以選擇退出。
+description: 敏捷式物件是可以從任何執行緒中存取的一個。 C++/WinRT 預設為敏捷式，但您可以選擇退出。
 title: 使用 C++/WinRT 的敏捷式物件
 ms.date: 10/20/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、敏捷式、物件、敏捷性、IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058619"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639663"
 ---
-# <a name="agile-objects-in-cwinrt"></a>在 C++/WinRT 的敏捷式物件
+# <a name="agile-objects-in-cwinrt"></a>敏捷式軟體開發的物件，在 C + + /cli WinRT
 
-在大部分的情況下，從任何執行緒 （就如同大部分的標準 c + + 物件可以） 可以存取 Windows 執行階段類別的執行個體。 Windows 執行階段類別是*agile*。 只有少數隨附於 Windows 的 Windows 執行階段類別是非敏捷的但當您使用它們時需要考量其執行緒模型與封送處理行為 （封送處理是 apartment 通過界限傳遞資料）。 適用於敏捷式物件，每個 Windows 執行階段物件的最佳預設值是讓您自己[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)是敏捷的預設值。
+在大部分情況下，您可以從任何執行緒 （就像大部分的標準 c + + 物件可以），存取 Windows 執行階段類別的執行個體。 Windows 執行階段類別是*敏捷式軟體開發*。 只有少數隨附於 Windows 的 Windows 執行階段類別的非 agile 的但當您使用它們時，您需要其執行緒模型和封送處理行為納入考量 （封送處理為傳遞資料跨 apartment 界限）。 很不錯的預設值，每個 Windows 執行階段物件是敏捷式軟體開發，讓您自己[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)類型皆為敏捷式預設。
 
-但您可以選擇退出。您可能會有個有力的理由，讓您類型的物件駐留，例如，指定的單一執行緒 Apartment。 這通常與重新進入需求有關。 但即使使用者介面 (UI) API 提供越來越多敏捷式物件。 一般而言，敏捷性式最簡單且效能最佳的選項。 此外，當您實作啟動原廠，它必須是敏捷的，即使您對應執行階段類別不是。
+但是，您可以選擇退出。您可能會有充足的理由，需要存放，比方說，在指定的單一執行緒 apartment 中您型別的物件。 這通常與重新進入需求有關。 但即使使用者介面 (UI) API 提供越來越多敏捷式物件。 一般而言，敏捷性式最簡單且效能最佳的選項。 此外，當您實作啟動原廠，它必須是敏捷的，即使您對應執行階段類別不是。
 
 > [!NOTE]
-> Windows 執行階段是根據 COM。 在 COM 條款中，在 `ThreadingModel` = *Both* 中註冊一個敏捷式類別。 如需 COM 執行緒模型及 apartment 的詳細資訊，請參閱[了解與使用 COM 執行緒模式](https://msdn.microsoft.com/library/ms809971)。
+> Windows 執行階段是根據 COM。 在 COM 條款中，在 `ThreadingModel` = *Both* 中註冊一個敏捷式類別。 如需 COM 執行緒模型和 apartment 的詳細資訊，請參閱[了解與使用 COM 執行緒模型](https://msdn.microsoft.com/library/ms809971)。
 
 ## <a name="code-examples"></a>程式碼範例
 
-我們使用執行階段類別的實作範例說明如何 C + + /winrt 支援敏捷性。
+讓我們使用執行階段類別的實作範例來說明如何 C + + /cli WinRT 支援靈活度。
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -37,9 +37,9 @@ struct MyType : winrt::implements<MyType, IStringable>
 };
 ```
 
-因為我們尚未退出，因為此實作是敏捷的。 [**Winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎結構實作 [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) 和 [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal)。 **IMarshal** 實作使用 **CoCreateFreeThreadedMarshaler** 執行適用於不知道 **IAgileObject** 的舊版程式碼的正確做法。
+因為我們尚未退出，因為此實作是敏捷的。 [  **Winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎結構實作 [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) 和 [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal)。 **IMarshal** 實作使用 **CoCreateFreeThreadedMarshaler** 執行適用於不知道 **IAgileObject** 的舊版程式碼的正確做法。
 
-此程式碼檢查物件的敏捷性。 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 的呼叫擲回例外狀況，如果 `myimpl` 不敏捷的話。
+此程式碼檢查物件的敏捷性。 [  **IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 的呼叫擲回例外狀況，如果 `myimpl` 不敏捷的話。
 
 ```cppwinrt
 winrt::com_ptr<MyType> myimpl{ winrt::make_self<MyType>() };
@@ -85,7 +85,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
 
 不論標記結構在 variadic 參數套件中出現的位置。
 
-無論您選擇退出敏捷性，您可以自行實作**IMarshal** 。 例如，您可以使用**winrt:: non_agile**標記避免預設敏捷性實作，並親自實作**IMarshal** &mdash;或許可來支援依照值封送處理的語意。
+是否不論您選擇退出靈活度，您可以實作**IMarshal**自己。 例如，您可以使用**winrt::non_agile**標記，以避免預設的靈活度實作，並實作**IMarshal**自行&mdash;或許是為了支援傳值方式封送處理語意。
 
 ## <a name="agile-references-winrtagileref"></a>敏捷式參考資訊 (winrt::agile_ref)
 
@@ -111,19 +111,19 @@ NonAgileType nonagile_obj_again{ agile.get() };
 winrt::hstring message{ nonagile_obj_again.Message() };
 ```
 
-[**Agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-function) 呼叫傳回一個在呼叫 **get** 的執行緒內容中可安全使用的 Proxy。
+[  **Agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-function) 呼叫傳回一個在呼叫 **get** 的執行緒內容中可安全使用的 Proxy。
 
 ## <a name="important-apis"></a>重要 API
 
 * [IAgileObject 介面](https://msdn.microsoft.com/library/windows/desktop/hh802476)
 * [IMarshal 介面](https://docs.microsoft.com/previous-versions/windows/embedded/ms887993)
-* [winrt::agile_ref 結構範本](/uwp/cpp-ref-for-winrt/agile-ref)
+* [winrt::agile_ref struct template](/uwp/cpp-ref-for-winrt/agile-ref)
 * [winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)
-* [winrt::make_agile 函式範本](/uwp/cpp-ref-for-winrt/make-agile)
-* [winrt::non_agile 標記結構](/uwp/cpp-ref-for-winrt/non-agile)
-* [winrt::Windows::Foundation::IUnknown::as 函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::make_agile function template](/uwp/cpp-ref-for-winrt/make-agile)
+* [winrt::non_agile marker struct](/uwp/cpp-ref-for-winrt/non-agile)
+* [winrt::Windows::Foundation::IUnknown:: 函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as 函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
 
 ## <a name="related-topics"></a>相關主題
 
-* [了解與使用 COM 執行緒模式](https://msdn.microsoft.com/library/ms809971)
+* [了解與使用 COM 執行緒模型](https://msdn.microsoft.com/library/ms809971)

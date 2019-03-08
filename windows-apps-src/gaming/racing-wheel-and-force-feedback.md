@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, games, racing wheel, force feedback, 遊戲, 賽車方向盤, 動力回饋
 ms.localizationpriority: medium
 ms.openlocfilehash: ab7c5bc15b149d5f469b7fc5e6b6285986569b22
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981552"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608833"
 ---
-# <a name="racing-wheel-and-force-feedback"></a>賽車方向盤與動力回饋
+# <a name="racing-wheel-and-force-feedback"></a>競速方向盤與力回饋
 
-此頁面說明針對 Xbox One 賽車方向盤使用[Windows.Gaming.Input.RacingWheel]程式設計基本知識[racingwheel]以及適用於通用 Windows 平台 (UWP) 的相關 Api。
+此頁面說明 Xbox One racing 輪圈使用程式設計的基本概念[Windows.Gaming.Input.RacingWheel] [ racingwheel]和相關 Api 適用於通用 Windows 平台 (UWP)。
 
 閱讀此頁面，即可了解：
 
@@ -33,7 +33,7 @@ Xbox One 賽車方向盤會有多種價位，通常隨著價位越高，輸入�
 
 ### <a name="device-capabilities"></a>裝置功能
 
-不同的 Xbox One 賽車方向盤會提供不同的選用裝置功能及對於這些功能; 支援的不同層級這個層級的單一的一種輸入裝置間的變化有其獨特差異[Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) API 所支援的裝置。 此外，您所接觸的大多數裝置至少會支援部分選用功能或其他變化。 因此，個別判斷每一個連接之賽車方向盤的功能以及支援您的遊戲所適合之各項功能，是非常重要的事。
+不同的 Xbox One 賽車 wheel 提供不同的選擇性的裝置功能和各種支援這些功能; 層級此層級之間的輸入裝置的單一類型的變化是唯一支援的裝置[Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) API。 此外，您所接觸的大多數裝置至少會支援部分選用功能或其他變化。 因此，個別判斷每一個連接之賽車方向盤的功能以及支援您的遊戲所適合之各項功能，是非常重要的事。
 
 如需詳細資訊，請參閱[判斷賽車方向盤功能](#determining-racing-wheel-capabilities)。
 
@@ -45,7 +45,7 @@ Xbox One 賽車方向盤會有多種價位，通常隨著價位越高，輸入�
 
 ### <a name="ui-navigation"></a>UI 瀏覽
 
-為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」__ 輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的「邏輯」__ 輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
+為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的「邏輯」輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
 
 由於它們特別著重於不同賽車方向盤之間的類比控制與變化程度，所以它們通常會配備數位方向鍵、**檢視**、**選單**、**A**、**B**、**X** 和 **Y** 按鈕，與[遊戲台](gamepad-and-vibration.md)類似；這些按鈕並非用於支援遊戲命令，所以無法直接當做賽車方向盤按鈕進行存取。
 
@@ -53,10 +53,10 @@ Xbox One 賽車方向盤會有多種價位，通常隨著價位越高，輸入�
 
 | 瀏覽命令 | 賽車方向盤輸入 |
 | ------------------:| ------------------ |
-|                 向上 | 方向鍵向上           |
-|               向下 | 方向鍵向下         |
-|               向左 | 方向鍵向左         |
-|              向右 | 方向鍵向右        |
+|                 Up | 方向鍵向上           |
+|               Down | 方向鍵向下         |
+|               Left | 方向鍵向左         |
+|              Right | 方向鍵向右        |
 |               View | 檢視按鈕        |
 |               Menu | 功能表按鈕        |
 |             Accept | A 按鈕           |
@@ -66,18 +66,18 @@ Xbox One 賽車方向盤會有多種價位，通常隨著價位越高，輸入�
 
 | 瀏覽命令 | 賽車方向盤輸入    |
 | ------------------:| --------------------- |
-|            上一頁 | _變動_              |
-|          下一頁 | _變動_              |
-|          向左翻頁 | _變動_              |
-|         向右翻頁 | _變動_              |
-|          向上捲動 | _變動_              |
-|        向下捲動 | _變動_              |
-|        向左捲動 | _變動_              |
-|       向右捲動 | _變動_              |
-|          內容 1 | X 按鈕 (__ 常用) |
-|          內容 2 | Y 按鈕 (__ 常用) |
-|          內容 3 | _變動_              |
-|          內容 4 | _變動_              |
+|            上一頁 | _varies_              |
+|          下一頁 | _varies_              |
+|          向左翻頁 | _varies_              |
+|         向右翻頁 | _varies_              |
+|          向上捲動 | _varies_              |
+|        向下捲動 | _varies_              |
+|        向左捲動 | _varies_              |
+|       向右捲動 | _varies_              |
+|          內容 1 | X 按鈕 (常用) |
+|          內容 2 | Y 按鈕 (常用) |
+|          內容 3 | _varies_              |
+|          內容 4 | _varies_              |
 
 ## <a name="detect-and-track-racing-wheels"></a>偵測和追蹤賽車方向盤
 
@@ -260,7 +260,7 @@ if(racingwheel->HasClutch)
 
 ### <a name="reading-the-pattern-shifter"></a>讀取換檔功能
 
-換檔功能是選用的控制項，可提供介於 -1 與 [MaxPatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) 之間的數位讀數 (以帶正負號的整數值表示)。 -1 或 0 的值會分別對應到 _「倒退檔」_ 和 _「空檔」_；越大的正數值會對應到越大的前進檔，最大為 **MaxPatternShifterGear**。 換檔功能的值讀取自[RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading)結構的[PatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear)屬性。
+換檔功能是選用的控制項，可提供介於 -1 與 [MaxPatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) 之間的數位讀數 (以帶正負號的整數值表示)。 -1 或 0 的值會分別對應到 _「倒退檔」_ 和 _「空檔」_；越大的正數值會對應到越大的前進檔，最大為 **MaxPatternShifterGear**。 值的模式針對讀取[PatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear)屬性[RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading)結構。
 
 ```cpp
 if (racingwheel->HasPatternShifter)
@@ -278,7 +278,7 @@ if (racingwheel->HasPatternShifter)
 
 ## <a name="force-feedback-overview"></a>動力回饋概觀
 
-許多賽車方向盤都有動力回饋功能，以便提供更身歷其境及挑戰性更高的駕駛體驗。 支援動力回饋的賽車方向盤通常都會配備單一馬達，以便沿著單一軸 (方向盤旋轉的軸) 對方向盤施力。 Windows 10 和 Xbox One UWP 應用程式支援動力回饋受到 [ [Windows.Gaming.Input.ForceFeedback](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback)命名空間。
+許多賽車方向盤都有動力回饋功能，以便提供更身歷其境及挑戰性更高的駕駛體驗。 支援動力回饋的賽車方向盤通常都會配備單一馬達，以便沿著單一軸 (方向盤旋轉的軸) 對方向盤施力。 支援 Windows 10 和 Xbox One UWP 應用程式強制的意見反應[Windows.Gaming.Input.ForceFeedback](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback)命名空間。
 
 > [!NOTE]
 > 動力回饋 API 能夠支援多個施力軸，但是目前沒有任何 Xbox One 賽車方向盤可支援方向盤旋轉軸以外的回饋軸。
@@ -315,7 +315,7 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="loading-force-feedback-effects"></a>載入動力回饋效果
 
-動力回饋效果會載入到回饋裝置上，然後在裝置上由遊戲控制自行「播放」。 提供許多基本的效果;可透過實作 [ [IForceFeedbackEffect](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)介面的類別來建立自訂效果。
+動力回饋效果會載入到回饋裝置上，然後在裝置上由遊戲控制自行「播放」。 本文提供基本的效果數目;您可以透過實作的類別，建立自訂效果[IForceFeedbackEffect](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)介面。
 
 | 效果類別         | 效果描述                                                                     |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -369,11 +369,11 @@ else
 
 最後，您可以隨時在特定的賽車方向盤上以非同步方式啟用、停用或重設整個動力回饋系統。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.uinavigationcontroller)
 * [Windows.Gaming.Input.IGameController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.igamecontroller)
-* [遊戲的輸入練習](input-practices-for-games.md)
+* [輸入適用於遊戲的作法](input-practices-for-games.md)
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.UINavigationController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx

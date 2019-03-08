@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928067"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640143"
 ---
 # <a name="transform-overview"></a>轉換概觀
 
@@ -72,7 +72,7 @@ D3DMATRIX scale = {
 };
 ```
 
-## <a name="span-idtranslatespanspan-idtranslatespanspan-idtranslatespantranslate"></a><span id="Translate"></span><span id="translate"></span><span id="TRANSLATE"></span>轉移
+## <a name="span-idtranslatespanspan-idtranslatespanspan-idtranslatespantranslate"></a><span id="Translate"></span><span id="translate"></span><span id="TRANSLATE"></span>轉譯
 
 
 下面方程式將點 (x, y, z) 轉移到新點 (x', y', z')。
@@ -93,14 +93,14 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 }    // End of Translate
 ```
 
-## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>縮放比例
+## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>小數位數
 
 
 下面方程式以 x、y 與 z 方向的任意值，將點 (x, y, z) 縮放成新點 (x', y', z')。
 
 ![新點縮放矩陣的方程式](images/matscale.png)
 
-## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>旋轉
+## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>Rotate
 
 
 這裡描述的轉換適用於左手座標系統，因此可能不同於您在其他地方看到的轉移矩陣。
@@ -135,7 +135,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 }
 ```
 
-## <a name="span-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>串連矩陣
+## <a name="span-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>串連的矩陣
 
 
 使用矩陣的一個優點是，您可以透過將矩陣相乘，組合兩個或更多矩陣的效果。 這表示，若要旋轉模型，然後將它轉移到特定位置，您不需要套用兩個矩陣。 而是，您將旋轉矩陣和轉移矩陣相乘，產生一個包含所有效果的複合矩陣。 這個程序，稱為矩陣串連，可以使用下面方程式撰寫。

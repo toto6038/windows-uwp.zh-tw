@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下載 CAB, 傳統型應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e3535f18b8127ea18bca234cdcc9b695e89ebfd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918486"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607783"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-desktop-application"></a>下載傳統型應用程式中錯誤的 CAB 檔案
 
-在 Microsoft Store 分析 API 使用此方法，下載與傳統型應用程式之特殊錯誤相關聯的 CAB 檔案，而您已將其加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)。 這個方法只可以下載最近 30 天發生之應用程式錯誤的 CAB 檔案。 CAB 檔案下載項目也會在合作夥伴中心的傳統型應用程式的[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)中提供的。
+在 Microsoft Store 分析 API 使用此方法，下載與傳統型應用程式之特殊錯誤相關聯的 CAB 檔案，而您已將其加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)。 這個方法只可以下載最近 30 天發生之應用程式錯誤的 CAB 檔案。 封包檔下載中也會有[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)在合作夥伴中心內的桌面應用程式。
 
 使用此方法之前，您必須先使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法，擷取要下載之 CAB 檔案的識別碼雜湊。
 
@@ -41,15 +41,15 @@ ms.locfileid: "8918486"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
 | 參數        | 類型   |  描述      |  必要  |
 |---------------|--------|---------------|------|
-| applicationId | 字串 | 您想要下載 CAB 檔案之傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，請開啟任何[合作夥伴中心分析報告傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)（例如**健康情況報告**） 並從 URL 擷取產品識別碼。 |  是  |
-| cabIdHash | string | 要下載之 CAB 檔案的唯一識別碼雜湊。 若要取得此值，請使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法，以擷取您的應用程式中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabIdHash** 值。 |  是  |
+| applicationId | 字串 | 您想要下載 CAB 檔案之傳統型應用程式的產品識別碼。 若要取得桌面應用程式的產品識別碼，請開啟任何[桌面應用程式的合作夥伴中心分析回報](https://msdn.microsoft.com/library/windows/desktop/mt826504)(例如**健康情況報告**)，並從 URL 擷取產品識別碼。 |  是  |
+| cabIdHash | 字串 | 要下載之 CAB 檔案的唯一識別碼雜湊。 若要取得此值，請使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法，以擷取您的應用程式中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabIdHash** 值。 |  是  |
 
 
 ### <a name="request-example"></a>要求範例
@@ -68,7 +68,7 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>相關主題
 
 * [健康情況報告](../publish/health-report.md)
-* [使用 Microsoft Store 服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-* [取得傳統型應用程式的錯誤報告資料](get-desktop-application-error-reporting-data.md)
-* [取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)
-* [取得傳統型應用程式中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-desktop-application.md)
+* [使用 Microsoft Store 服務的存取分析資料](access-analytics-data-using-windows-store-services.md)
+* [取得錯誤報告資料，您的桌面應用程式](get-desktop-application-error-reporting-data.md)
+* [取得您的桌面應用程式中的錯誤詳細資料](get-details-for-an-error-in-your-desktop-application.md)
+* [在您的桌面應用程式錯誤中取得的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-desktop-application.md)

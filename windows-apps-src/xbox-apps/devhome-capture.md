@@ -1,28 +1,28 @@
 ---
 ms.assetid: 67934477-337a-5235-b0de-8ac038177267
-title: 媒體擷取頁面 （開發人員首頁）
-description: 提供針對 Xbox One 開發人員首頁應用程式的媒體擷取頁面的相關資訊。
+title: 媒體擷取頁面 (開發人員首頁)
+description: 提供適用於 Xbox One 之「開發人員首頁」App 的媒體擷取頁面相關資訊。
 ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-capture.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 348b937b7967cbde80c0bc25a502e727a04e8af0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940766"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650783"
 ---
-# <a name="media-capture-page-dev-home"></a>媒體擷取頁面 （開發人員首頁）
+# <a name="media-capture-page-dev-home"></a>媒體擷取頁面 (開發人員首頁)
    
   
-開發人員首頁的**媒體擷取**頁面會擷取視訊的主機目前正在執行的標題。   
- ![擷取開發人員首頁的頁面](images/devhome_capture.png)   
+開發人員首頁的 **\[媒體擷取\]** 頁面會擷取主機上目前執行之標題的視訊。   
+ ![擷取頁面開發人員首頁](images/devhome_capture.png)   
   
-**媒體擷取**頁面中包含下列窗格：   
+**\[媒體擷取\]** 頁面包含下列窗格：   
  
-   *  [視訊擷取](#ID4EHB)  
+   *  [影像擷取](#ID4EHB)  
 
  
 <a id="ID4EHB"></a>
@@ -32,13 +32,13 @@ ms.locfileid: "8940766"
 ## <a name="video-capture"></a>視訊擷取  
    
   
-**視訊擷取**\] 窗格包含錄製視訊資料流從開發人員主控台中的工具。 您也可以擷取視訊的從主控台中的最後一個幾秒。   
+**\[視訊擷取\]** 窗格包含可用來錄製來自開發人員主機視訊串流的工具。 您也可以擷取自主機最後幾秒的視訊。   
   
 <a id="ID4ERB"></a>
 
    
 
 ## <a name="see-also"></a>請參閱  
- [在主控台 （開發人員首頁） 上的開發人員首頁](dev-home.md)
+ [在主控台的 （開發人員首頁） 上的開發人員首頁](dev-home.md)
 
   

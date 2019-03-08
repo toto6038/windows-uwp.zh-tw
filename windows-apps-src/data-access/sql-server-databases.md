@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, SQL Server, 資料庫
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
-ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976925"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621153"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP app 中使用 SQL Server 資料庫
 您的 app 可以直接連接到 SQL Server 資料庫，然後使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx)命名空間中的類別儲存和擷取資料。
@@ -29,7 +29,7 @@ ms.locfileid: "8976925"
 
 在資訊清單設計工具中開啟 UWP 專案的 **Package.appxmanifest** 檔案。
 
-如果您使用 Windows 驗證來驗證您的 SQL Server，請在 [**功能**] 索引標籤中，選取**企業驗證**核取方塊。
+在 **能力**索引標籤上，選取**企業驗證**核取方塊，如果您使用 Windows 驗證來驗證您的 SQL Server。
 
 ![企業驗證功能](images/enterprise-authentication.png)
 
@@ -39,15 +39,15 @@ ms.locfileid: "8976925"
 
 本節中，我們會進行下列事項：
 
-:一: 新增連接字串。
+： 一個：新增連接字串。
 
-:二: 建立類別來保留產品資料。
+： 兩個：建立類別以包裝產品資料。
 
-:三: 從 SQL Server 資料庫擷取產品。
+： 三個：從 SQL Server 資料庫中擷取的產品。
 
-:四: 新增基本使用者介面。
+： 四個：新增基本使用者介面。
 
-:五: 將產品填入 UI。
+： 五個：填入產品的 UI。
 
 >[!NOTE]
 > 本節將說明組織資料存取碼的方式。 主要目的僅在於示範如何使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 儲存和擷取 SQL Server 資料庫中的資料。 您可以用任何最適合您應用程式設計的方式組織程式碼。
@@ -236,14 +236,14 @@ public MainPage()
 
 ## <a name="next-steps"></a>後續步驟
 
-**使用輕量資料庫儲存資料在使用者的裝置上**
+**若要將資料儲存在使用者裝置上使用輕量級資料庫**
 
 請參閱[在 UWP app 中使用 SQLite 資料庫](sqlite-databases.md)。
 
-**在不同平台的不同應用程式之間共用程式碼**
+**跨不同的平台的不同應用程式之間共用程式碼**
 
 請參閱[在傳統型與 UWP 之間共用程式碼](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)。
 
-**在 Azure SQL 後端新增主要詳細資料頁面**
+**新增包含 Azure SQL 後端的主版詳細資料頁面**
 
 請參閱[客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)

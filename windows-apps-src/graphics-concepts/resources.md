@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c31dcbcc3019538d769118b018c693174b17b4c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922920"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631473"
 ---
 # <a name="resources"></a>資源
 
@@ -51,7 +51,7 @@ ms.locfileid: "8922920"
 <td align="left"><p>資源是 3D 管線使用的一組資料。 建立資源及定義其行為，是應用程式的程式設計首項步驟。 本指引涵蓋基本主題，內容為選擇應用程式所需的資源。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="copying-and-accessing-resource-data.md">複製和存取資源資料</a></p></td>
+<td align="left"><p><a href="copying-and-accessing-resource-data.md">複製以及存取資源的資料</a></p></td>
 <td align="left"><p>使用方式旗幟表示了應用程式將會如何使用資源資料，並在可能的情況下將資源放置於記憶體中效能最佳的區域。 資源資料在所有資源中都會被複製，以便 CPU 或 GPU 可以在不影響效能的情況下進行存取。</p></td>
 </tr>
 <tr class="even">
@@ -70,6 +70,6 @@ ms.locfileid: "8922920"
 
 [Direct3D 圖形學習指南](index.md)
 
-[浮點規則](floating-point-rules.md)
+[浮點數的規則](floating-point-rules.md)
 
-[資料型別轉換](data-type-conversion.md)
+[資料類型轉換](data-type-conversion.md)

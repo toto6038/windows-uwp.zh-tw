@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 遊戲, directx, 輸入, 滑鼠, 觸控, 控制項
 ms.localizationpriority: medium
 ms.openlocfilehash: 549a4da0614dd1c7cc6884c5556c061edfccaf18
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936161"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599453"
 ---
 # <a name="game-input-for-directx-games"></a>DirectX 遊戲的遊戲輸入
 
@@ -36,15 +36,15 @@ ms.locfileid: "8936161"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">適用於遊戲的移動視角控制項</a></p></td>
+<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">適用於遊戲的移動尋找控制項</a></p></td>
 <td align="left"><p>新增移動視角控制項。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="relative-mouse-movement.md">相對滑鼠移動</a></p></td>
+<td align="left"><p><a href="relative-mouse-movement.md">相對的滑鼠移動</a></p></td>
 <td align="left"><p>處理相對滑鼠移動。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--adding-touch-controls-to-your-directx-game.md">適用於遊戲的觸控控制項</a></p></td>
+<td align="left"><p><a href="tutorial--adding-touch-controls-to-your-directx-game.md">適用於遊戲的觸控式控制項</a></p></td>
 <td align="left"><p>在遊戲中新增基本的觸控控制項。</p></td>
 </tr>
 </tbody>

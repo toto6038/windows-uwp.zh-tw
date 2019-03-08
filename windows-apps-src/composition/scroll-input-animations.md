@@ -3,14 +3,14 @@ title: 美化現有的 ScrollViewer 體驗
 description: 了解何使用 XAML ScrollViewer 和 ExpressionAnimations 來建立動態輸入導向的動作體驗。
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows 10、uwp、動畫
+keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932687"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635063"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>美化現有的 ScrollViewer 體驗
 
@@ -20,8 +20,8 @@ ms.locfileid: "8932687"
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
-- [輸入導向動畫](input-driven-animations.md)
-- [關聯式動畫](relation-animations.md)
+- [輸入驅動動畫](input-driven-animations.md)
+- [關聯型動畫](relation-animations.md)
 
 ## <a name="why-build-on-top-of-scrollviewer"></a>為何在 ScrollViewer 上建置？
 

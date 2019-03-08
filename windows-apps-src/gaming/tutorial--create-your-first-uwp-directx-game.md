@@ -7,11 +7,11 @@ ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: dc602e2dd29231c1e6554d7ef55e9666a373fa31
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934603"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642863"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲
 
@@ -44,22 +44,22 @@ ms.locfileid: "8934603"
 -   DirectX 11.1 與 Windows 執行階段的互通性
 -   第一人稱 3D 遠近景深和相機
 -   3D 立體視覺效果
--   3D 中物件之間的衝突偵測
+-   3D 中物件之間的撞擊偵測
 -   處理滑鼠、觸控以及 Xbox 控制器控制項的使用者輸入
 -   音訊混合和播放
 -   基本的遊戲狀態電腦
 
 ![進行中的遊戲範例](images/simple-dx-game-overview.png)
 
-| 主題 | 說明 |
+| 主題 | 描述 |
 |-------|-------------|
 |[設定遊戲專案](tutorial--setting-up-the-games-infrastructure.md) | 組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。 使用正確的範本並設定專用於遊戲開發的專案，可以為您節省很多時間和麻煩。 我們會逐步引導您如何準備和設定簡單的遊戲專案。 |
-| [定義遊戲的 UWP app 架構](tutorial--building-the-games-uwp-app-framework.md) | 建置一個可讓 UWP DirectX 遊戲物件與 Windows 互動的架構。 這包括下列 Windows 執行階段屬性：暫停/繼續事件處理、視窗焦點以及貼齊。  |
-| [管理遊戲流程](tutorial-game-flow-management.md) | 定義高階狀態電腦，讓玩家與系統互動。 了解 UI 如何與整體遊戲的狀態電腦互動，以及如何建立 UWP 遊戲事件處理常式。 |
-| [定義主要遊戲物件](tutorial--defining-the-main-game-loop.md) | 定義遊戲如何透過建立規則來進行。 |
-| [轉譯架構 I：轉譯簡介](tutorial--assembling-the-rendering-pipeline.md) | 組合轉譯架構以顯示圖形。 本主題分為兩個部分。 轉譯簡介說明如何在螢幕上顯示顯示器的場景物件。 |
-| [轉譯架構 II：遊戲轉譯](tutorial-game-rendering.md) | 在轉譯主題的第二個部分中，了解如何準備發生轉譯之前所需的資料。 |
-| [新增使用者介面](tutorial--adding-a-user-interface.md) | 新增簡易選單選項，提醒顯示元件，然後提供意見反應給玩家。 |
-| [新增控制項](tutorial--adding-controls.md) | 新增移動視角控制項到遊戲&mdash;基本觸控、滑鼠及遊戲控制器控制項。 |
-| [新增音效](tutorial--adding-sound.md) | 了解如何使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 建立遊戲的音效。 |
-| [延伸遊戲範例](tutorial-resources.md) | 使您進一步擁有 DirectX 遊戲開發的知識的資源，包括使用 XAML 建立重疊。 |
+| [定義該遊戲的 UWP 應用程式架構](tutorial--building-the-games-uwp-app-framework.md) | 建置一個可讓 UWP DirectX 遊戲物件與 Windows 互動的架構。 這包括下列 Windows 執行階段屬性：暫停/繼續事件處理、視窗焦點以及貼齊。  |
+| [遊戲流程管理](tutorial-game-flow-management.md) | 定義高階狀態電腦，讓玩家與系統互動。 了解 UI 如何與整體遊戲的狀態電腦互動，以及如何建立 UWP 遊戲事件處理常式。 |
+| [定義主要的遊戲物件](tutorial--defining-the-main-game-loop.md) | 定義遊戲如何透過建立規則來進行。 |
+| [轉譯架構 i:轉譯為您簡介](tutorial--assembling-the-rendering-pipeline.md) | 組合轉譯架構以顯示圖形。 本主題分為兩個部分。 轉譯簡介說明如何在螢幕上顯示顯示器的場景物件。 |
+| [轉譯架構 II:遊戲的轉譯](tutorial-game-rendering.md) | 在轉譯主題的第二個部分中，了解如何準備發生轉譯之前所需的資料。 |
+| [新增的使用者介面](tutorial--adding-a-user-interface.md) | 新增簡易選單選項，提醒顯示元件，然後提供意見反應給玩家。 |
+| [加入控制項](tutorial--adding-controls.md) | 新增移動視角控制項到遊戲&mdash;基本觸控、滑鼠及遊戲控制器控制項。 |
+| [加入聲音](tutorial--adding-sound.md) | 了解如何使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 建立遊戲的音效。 |
+| [擴充遊戲範例](tutorial-resources.md) | 使您進一步擁有 DirectX 遊戲開發的知識的資源，包括使用 XAML 建立重疊。 |

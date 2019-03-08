@@ -1,6 +1,6 @@
 ---
-Description: Learn how to store and retrieve local, roaming, and temporary app data.
-title: 儲存和擷取設定及其他 App 資料
+Description: 了解如何儲存及擷取本機、漫遊和暫存的應用程式資料。
+title: 儲存及擷取設定和其他 app 資料
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
@@ -9,17 +9,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c4f8de32be13f9de776a1c2d0ba0f6af2797329
-ms.sourcegitcommit: be52da74f0b3f24973286792afa4f5e80799161b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "9009515"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602673"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>儲存及擷取設定和其他 app 資料
 
 *app 資料*是特定 app 特有的可變動資料。 它包含執行階段狀態、使用者喜好設定及其他設定。 app 資料不同於*使用者資料*，後者是使用者在使用 app 時建立和管理的資料。 使用者資料包括文件或媒體檔案、電子郵件或通訊記錄，或保存使用者建立之內容的資料庫記錄。 使用者資料可能對於多個 app 都是實用或有意義的。 使用者資料通常是使用者想要當做與應用程式本身無關之實體來操作或傳送的資料 (如文件)。
 
-**有關 app 資料的重要注意事項：** app 資料的存留期與 app 的存留期綁在一起。 如果移除應用程式，所有應用程式資料也會隨之遺失。 請勿使用 app 資料來儲存使用者資料或使用者可能認為重要且無法取代的任何資料。 建議以使用者的媒體櫃和 Microsoft OneDrive 來儲存這類資訊。 app 資料適合儲存 app 特定的使用者喜好設定、各種設定值和我的最愛。
+**應用程式資料有關的重要注意事項：** App 資料的生命週期與 app 生命週期息息相關。 如果移除應用程式，所有應用程式資料也會隨之遺失。 請勿使用 app 資料來儲存使用者資料或使用者可能認為重要且無法取代的任何資料。 建議以使用者的媒體櫃和 Microsoft OneDrive 來儲存這類資訊。 app 資料適合儲存 app 特定的使用者喜好設定、各種設定值和我的最愛。
 
 ## <a name="types-of-app-data"></a>app 資料類型
 
@@ -33,11 +33,11 @@ app 資料有兩種類型：設定和檔案。
     以下是可用於應用程式設定的資料類型：
 
     -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
-    -   **布林值**
+    -   **Boolean**
     -   **Char16**、**String**
-    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
+    -   [**日期時間**](https://msdn.microsoft.com/library/windows/apps/br206576)， [ **TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
     -   **GUID**、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)：一組必須個別序列化和還原序列化的相關 app 設定。 使用複合設定，可以輕鬆管理不可部分完成的互相依存設定更新。 在並行存取和漫遊期間，系統可確保複合設定的完整性。 複合設定是針對少量資料最佳化，如果針對大型資料集使用複合設定，可能會拖慢系統效能。
+    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588):必須序列化和還原序列化以不可分割方式相關的應用程式設定的一組。 使用複合設定，可以輕鬆管理不可部分完成的互相依存設定更新。 在並行存取和漫遊期間，系統可確保複合設定的完整性。 複合設定是針對少量資料最佳化，如果針對大型資料集使用複合設定，可能會拖慢系統效能。
 -   **檔案**
 
     使用檔案可儲存二進位資料，或啟用您自己的自訂序列化類型。
@@ -168,11 +168,11 @@ async void ReadTimestamp()
 -   不要漫遊裝置專屬的 app 資料。 有些資訊只與本機相關，如本機檔案資源的路徑名稱。 如果您決定漫遊本機資訊，請確認如果資訊在第二個裝置上無效時，應用程式可以復原它。
 -   不要漫遊大量應用程式資料。 應用程式可以漫遊的應用程式資料數量有限；請使用 [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) 屬性取得此最大值。 如果應用程式達到這個限制，必須等到應用程式資料存放區的大小不再超過此限制時才能漫遊資料。 設計應用程式時，請考量如何在較大型資料中放置界限，以免超過該限制。 例如，如果個別儲存遊戲狀態需要 10KB，則應用程式只能允許使用者儲存最多 10 個遊戲。
 -   不要在依賴立即同步化的資料使用漫遊。 Windows 不保證立即同步化；如果使用者處於離線狀態或使用高延遲網路，可能會嚴重延遲漫遊。 請確定您的 UI 不需要立即同步化。
--   不要使用漫遊經常變更的資料。 例如，如果您的應用程式追蹤經常變更的資訊，例如追蹤歌曲每秒的位置，請勿將它儲存為漫遊的應用程式資料。 請改為挑選較不頻繁但仍提供良好使用者體驗的表示法，像是目前正在播放的歌曲。
+-   請勿使用漫遊經常變更的資料。 例如，如果您的應用程式追蹤經常變更的資訊，例如追蹤歌曲每秒的位置，請勿將它儲存為漫遊的應用程式資料。 請改為挑選較不頻繁但仍提供良好使用者體驗的表示法，像是目前正在播放的歌曲。
 
 ### <a name="roaming-pre-requisites"></a>漫遊的先決條件
 
-如果使用者使用 Microsoft 帳戶登入裝置，便能享有漫遊應用程式資料的好處。 不過，使用者和群組原則系統管理員可以隨時關閉裝置上的漫遊應用程式資料。 如果使用者選擇不使用 Microsoft 帳戶或停用漫遊資料功能，她仍然能夠使用您的應用程式，但會每個裝置的本機應用程式資料。
+如果使用者使用 Microsoft 帳戶登入裝置，便能享有漫遊應用程式資料的好處。 不過，使用者和群組原則系統管理員可以隨時關閉裝置上的漫遊應用程式資料。 如果使用者選擇不使用 Microsoft 帳戶，或停用漫遊的資料功能，她仍然能夠使用您的應用程式，但應用程式資料是由每個裝置。
 
 只有在使用者將裝置設成「受信任」時，才會轉換儲存在 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 中的資料。 如果裝置不受信任，保存在此保存庫中的資料將不會漫遊。
 
@@ -209,7 +209,7 @@ async void ReadTimestamp()
 
 1.  登錄以在漫遊資料變更時收到通知。
 
-    [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) 事件會在漫遊資料變更時通知您。 這個範例會將 `DataChangeHandler` 設定成處理漫遊資料變更的處理常式。
+    [  **DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) 事件會在漫遊資料變更時通知您。 這個範例會將 `DataChangeHandler` 設定成處理漫遊資料變更的處理常式。
 
 ```csharp
 void InitHandlers()

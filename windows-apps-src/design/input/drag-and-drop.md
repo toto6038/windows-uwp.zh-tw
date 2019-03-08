@@ -7,23 +7,23 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e508feb8a530f29b40d5a3839df573cb2ce89896
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932169"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634393"
 ---
 # <a name="drag-and-drop"></a>拖放
 
 拖放是在 Windows 桌面上於應用程式中或應用程式間傳輸資料的直覺方式。 拖放可讓使用者使用標準手勢 (使用手指按住不放然後平移，或使用滑鼠或手寫筆按住然後平移) 在應用程式間或在應用程式內傳輸資料。
 
-> **重要 API**：[CanDrag 屬性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag)、[AllowDrop 屬性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
+> **重要的 Api**:[CanDrag 屬性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag)， [AllowDrop 屬性](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
 
 拖曳來源 (即觸發拖曳手勢的應用程式或區域) 可藉由填入可包含標準資料格式，包含文字、RTF、HTML、點陣圖、儲存項目或自訂資料格式的資料套件物件，來提供要傳送的資料。 來源同時也指出其支援的作業類型：複製、移動或連結。 當指標釋放時，便會發生置放。 置放目標，即指標底下的應用程式或區域，會處理資料套件，然後傳回執行的作業類型。
 
 在拖放過程中，拖曳 UI 會提供正在發生的拖放作業類型的視覺指示。 這項視覺回饋一開始是由來源提供的，但可在指標移動到目標時，由目標進行變更。
 
-所有支援 UWP 的裝置都支援現代化的拖放。 它允許任何類型應用程式間或應用程式內的資料傳輸，包含傳統型 Windows 應用程式，雖然本文聚焦於現代化拖放的 XAML API。 實作之後，拖放不論以哪一個方向都能順暢運作，包括應用程式間、應用程式到傳統型應用程式，以及傳統型應用程式到應用程式。
+所有支援 UWP 的裝置都支援現代化的拖放。 它允許任何類型應用程式間或應用程式內的資料傳輸，包含傳統型 Windows 應用程式，雖然本文聚焦於現代化拖放的 XAML API。 實作之後，拖放不論以哪一個方向都能順暢運作，包括 App 間、App 到傳統型應用程式，以及傳統型應用程式到 App。
 
 以下是在您的應用程式中啟用拖放所需要進行之作業的概觀：
 
@@ -45,19 +45,19 @@ ms.locfileid: "8932169"
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
 
-您不需要進行任何其他工作即可允許拖曳，除非您希望自訂 UI (本文章稍後將會說明)。 置放則需要較多的步驟。
+您不需要進行任何其他工作即可允許拖曳，除非您希望自訂 UI (本文章稍後將會說明)。 放下則需要較多的步驟。
 
 ## <a name="construct-a-data-package"></a>建構資料套件 
 
 在大部分的案例中，系統會為您建構資料套件。 系統會自動處理：
-* 影像
+* 映像
 * 文字 
 
 針對其他內容，您將需要處理 **DragStarted** 和 **DragCompleted** 事件，然後使用他們建構您自己的 [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)。
 
 ## <a name="enable-dropping"></a>啟用置放
 
-下列標記示範如何使用 XAML 中的 [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 將應用程式的特定區域設為有效的置放區域。 如果使用者嘗試在其他地方放下，系統將不會允許這麼做。 如果您希望使用者可以在應用程式中的任何位置置放項目，請將整個背景設定為置放目標。
+下列標記示範如何使用 XAML 中的 [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 將 app 的特定區域設為有效的放下區域。 如果使用者嘗試在其他地方放下，系統將不會允許這麼做。 如果您希望使用者可以在 app 中的任何位置放下項目，請將整個背景設定為放下目標。
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
@@ -72,7 +72,7 @@ ms.locfileid: "8932169"
 
 當使用者在有效的放下區域釋放項目時會發生 [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) 事件。 請使用 [**DataView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DataView) 屬性處理它們。
 
-為了簡單起見，下面的範例假設使用者置放單一相片並直接存取。 事實上，使用者可以同時置放多個不同格式的項目。 您的應用程式應該檢查置放了什麼類型的檔案，以及其中有多少檔案，以便處理這種可能情況，然後相應處理每個項目。 您也應該考慮通知使用者是否要嘗試執行您的應用程式不支援的動作。
+為了簡單起見，下面的範例假設使用者置放單一相片並直接存取。 事實上，使用者可以同時放下不同格式的多個項目。 您的應用程式應該檢查置放了什麼類型的檔案，以及其中有多少檔案，以便處理這種可能情況，然後相應處理每個項目。 您也應該考慮通知使用者是否要嘗試執行您的應用程式不支援的動作。
 
 [!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
 
@@ -98,7 +98,7 @@ ms.locfileid: "8932169"
 
 ## <a name="implementing-custom-drag-and-drop"></a>實作自訂拖放
 
-[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 類別會為您完成實作拖放的大部分工作。 但如果您想要您可以藉由使用[Windows.ApplicationModel.DataTransfer.DragDrop.Core 命名空間](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core)中的 Api 來實作您自己的版本。
+[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 類別會為您完成實作拖放的大部分工作。 如果您想，您可以使用中的 Api 來實作您自己的版本，但[Windows.ApplicationModel.DataTransfer.DragDrop.Core 命名空間](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core)。
 
 | 功能 | WinRT API |
 | --- | --- |
@@ -111,7 +111,7 @@ ms.locfileid: "8932169"
 
 ## <a name="see-also"></a>請參閱
 
-* [App 間通訊](index.md)
+* [應用程式間通訊](index.md)
 * [AllowDrop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx)
 * [CanDrag](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx)
 * [DragOver](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx)

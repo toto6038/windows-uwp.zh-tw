@@ -1,27 +1,27 @@
 ---
-title: 紋理混色
-description: Direct3D 在一個階段中最多可以將八個紋理混合到原始物件上。
+title: 紋理混合
+description: Direct3D 在單一階段中最多可以將八個紋理混合到原始物件上。
 ms.assetid: 9AD388FA-B2B9-44A9-B73E-EDBD7357ACFB
 keywords:
-- 紋理混色
+- 紋理混合
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c40c7d3bd080bd927fc52cb7f740e1dc4a6358c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948000"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620803"
 ---
-# <a name="texture-blending"></a>紋理混色
+# <a name="texture-blending"></a>紋理混合
 
 
-Direct3D 在一個階段中最多可以將八個紋理混合到原始物件上。 使用多重紋理混合可大幅增加 Direct3D 應用程式的畫面播放速度。 應用程式藉由使用多重紋理混合，在一個階段中套用紋理、陰影、反射光源、擴散光源等其他特殊效果。
+Direct3D 在單一階段中最多可以將八個紋理混合到原始物件上。 使用多重紋理混合可大幅增加 Direct3D 應用程式的畫面播放速度。 應用程式藉由使用多重紋理混合，在單一階段中套用紋理、陰影、反射光源、擴散光源等其他特殊效果。
 
 若要使用紋理混色，您的應用程式首先應該確認使用者的硬體是否支援該功能。
 
-## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>紋理階段和紋理混色串聯
+## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>材質階段和材質透明混色重疊顯示
 
 
 Direct3D 透過使用紋理階段來支援一階段的多重紋理混合。 紋理階段取得兩個引數之後，對其進行混合運算，並且將結果傳回以供進一步處理或點陣化使用。 您可將紋理階段視覺化為以下圖例。
@@ -30,7 +30,7 @@ Direct3D 透過使用紋理階段來支援一階段的多重紋理混合。 紋�
 
 如上方簡圖所示，紋理階段會利用一個指定的運算子將兩個引數混合。 常見的運算包括了簡單的調節，或是增加引數的色彩或 Alpha 元件，但應用程式支援超過 24 種運算。 階段的引數可以是關聯紋理、重複色彩及 Alpha (於 Gouraud Shading 中重複)、任意色彩及 Alpha，或是前一紋理階段的結果。
 
-**注意：**  Direct3D 會區分色彩混合 alpha 混合。 應用程式會為色彩及 Alpha 個別設定混合運算及引數，並且其結果均各自獨立。
+**附註**   Direct3D 區分色彩漸變從 alpha 透明混色。 應用程式會為色彩及 Alpha 個別設定混合運算及引數，並且其結果均各自獨立。
 
  
 
@@ -60,12 +60,12 @@ Direct3D 透過使用紋理階段來支援一階段的多重紋理混合。 紋�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="blending-stages.md">混合階段</a></p></td>
-<td align="left"><p>混合階段是一組定義了紋理混合方式的紋理運算及其引數。</p></td>
+<td align="left"><p><a href="blending-stages.md">混合的階段</a></p></td>
+<td align="left"><p>混合階段是一組定義紋理混合方式的紋理作業及其引數。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="multipass-texture-blending.md">多階段紋理混色</a></p></td>
-<td align="left"><p>Direct3D 應用程式可透過在多個轉譯階段為原始物件套用各種紋理，以達到多項特殊效果。 針對此一行動的常用字詞為<em>多階段紋理混色</em>。 多階段紋理混色的典型用途為藉由套用數種不同紋理的多重色彩，模擬複雜光源和著色模型的效果。 這類應用方式稱為<em>光線對應</em>。</p></td>
+<td align="left"><p><a href="multipass-texture-blending.md">多重傳遞的材質透明混色</a></p></td>
+<td align="left"><p>Direct3D 應用程式可透過在多個轉譯階段套用各種紋理到基本類型，達到多項特效。 針對此一行動的常用字詞為<em>多階段紋理混色</em>。 多重紋理混合的一般用途為藉由套用數種不同紋理的多重色彩，模擬複雜光源和著色模型的效果。 這類應用方式稱為<em>光線對應</em>。</p></td>
 </tr>
 </tbody>
 </table>

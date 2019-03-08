@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 486eb4adc1151bac1bf6a04a8f54b67530b426a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933291"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607343"
 ---
 # <a name="swap-chains"></a>交換鏈結
 
@@ -30,13 +30,13 @@ Direct3D 實作兩個選項來避免撕裂：
 
 -   一個選項只允許垂直折返（或垂直同步）作業的監視器更新。 監視器通常藉由水平移動光針來重新整理其影像，從監視器左上角開始以 Z 字形移至監視器右下方。 當光針到達底部時，監視器會將光針移回至左上角，重新校正光針，讓此程序可以重新開始。
 
-    這個重新校正稱為垂直同步。在垂直同步時，監視器不繪製任何項目，所以將不會看到任何更新至前端緩衝區，直到監視器重新繪製為止。 垂直同步相當慢。不過，不會太慢而無法在等待時轉譯複雜的場景。 避免撕裂所需，並且可以呈現複雜場景的程序，稱為背景緩衝。
+    這個重新校正稱為垂直同步。在垂直同步時，監視器不繪製任何項目，所以將不會看到前端緩衝區的任何更新，直到監視器重新繪製為止。 垂直同步相當慢。不過，不會太慢而無法在等待時轉譯複雜的場景。 避免撕裂所需，並且可以呈現複雜場景的程序，稱為背景緩衝。
 
 -   一個選項使用稱為背景緩衝的技術。 背景緩衝是將場景繪製到螢幕外表面（稱為背景緩衝區）的程序。 前端緩衝區以外的任何表面都稱為螢幕外表面，因為監視器永遠不會直接檢視它。
 
     使用背景緩衝區，應用程式有自由在系統閒置時（也就是沒有正在等待的 Windows 訊息）呈現場景，而不需要考慮監視器的重新整理頻率。 背景緩衝增加了如何及何時將背景緩衝區移至前端緩衝區的複雜度。
 
-## <a name="span-idsurfaceflippingspanspan-idsurfaceflippingspanspan-idsurfaceflippingspansurface-flipping"></a><span id="Surface_flipping"></span><span id="surface_flipping"></span><span id="SURFACE_FLIPPING"></span>表面翻轉
+## <a name="span-idsurfaceflippingspanspan-idsurfaceflippingspanspan-idsurfaceflippingspansurface-flipping"></a><span id="Surface_flipping"></span><span id="surface_flipping"></span><span id="SURFACE_FLIPPING"></span>介面翻轉
 
 
 將背景緩衝區移至前端緩衝區的程序，稱為表面翻轉。 因為圖形卡只是使用表面指標來代表前端緩衝區，所以只需要簡單指標變更，即可將背景緩衝區設至前端緩衝區。 當應用程式要求 Direct3D 將背景緩衝區呈現到前端緩衝區時，Direct3D 只是「翻轉」兩個表面指標。 結果是背景緩衝區現在是新的前端緩衝區，而舊的前端緩衝區現在是新的背景緩衝區。

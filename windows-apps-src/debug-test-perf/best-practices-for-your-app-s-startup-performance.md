@@ -1,24 +1,24 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: App 啟動效能的最佳做法
-description: 透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) app。
+title: 應用程式啟動效能的最佳做法
+description: 透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e50d3613e5f7058e99f2e71ba023fb4191e5c734
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051101"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644533"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
 
 
 透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。
 
-## <a name="best-practices-for-your-apps-startup-performance"></a>App 啟動效能的最佳做法
+## <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
 
 使用者對您 App 回應速度快慢的感受，部分取決於 App 啟動時間的長短。 基於這個主題的目的，App 的啟動時間是從使用者啟動 App 時算起，到使用者可以用一些有意義的方式與 App 互動時為止。 本節提供有關如何在 App 啟動時獲得較佳效能的建議。
 
@@ -32,7 +32,7 @@ ms.locfileid: "9051101"
 
 下列程序說明如何執行 Ngen.exe 以重新編譯 app。
 
-**執行 Ngen.exe**
+**若要執行 Ngen.exe**
 
 1.  至少執行 app 一次，以確保 Ngen.exe 可以偵測到它。
 2.  若要開啟 \[**工作排程器**\]，請執行下列其中一個動作：

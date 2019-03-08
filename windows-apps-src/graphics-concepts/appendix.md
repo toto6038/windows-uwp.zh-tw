@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f4cd2e17754dc5b5958e8bca208e30b87718cdd8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922861"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632493"
 ---
 # <a name="appendices"></a>附錄
 
@@ -33,8 +33,8 @@ ms.locfileid: "8922861"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="floating-point-rules.md">浮點數規則</a></p></td>
-<td align="left"><p>Direct3D 支援數個浮點數表示。 所有浮點數計算運作都在 IEEE 754 32 位元單精確度浮點數規則的定義子集下運作。</p></td>
+<td align="left"><p><a href="floating-point-rules.md">浮點數的規則</a></p></td>
+<td align="left"><p>Direct3D 支援數個浮點表示法。 所有浮點數計算運作都在 IEEE 754 32 位元單精確度浮點數規則的定義子集下運作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="data-type-conversion.md">資料類型轉換</a></p></td>

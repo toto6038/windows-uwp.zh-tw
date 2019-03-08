@@ -1,22 +1,22 @@
 ---
-Description: Learn how Fluent motion fundamentals come together in your app.
+Description: 了解如何 Fluent 基礎一起出現在您的應用程式中的動作。
 title: 執行中動作 - UWP app 中的動畫
 label: Motion in practice
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6eafbfd965d2783c0f72e75c91a04e5ac1cb119f
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058559"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599403"
 ---
 # <a name="bringing-it-together"></a>組合在一起
 
@@ -78,27 +78,27 @@ ms.locfileid: "9058559"
     :::column-end:::
 :::row-end:::
 
-## <a name="implicit-animations"></a>隱含動畫
+## <a name="implicit-animations"></a>隱含的動畫
 
-> 隱含動畫需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。
+> 隱含的動畫需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。
 
 
-隱含動畫是由自動參數變更期間舊和新值之間插入達到 Fluent 動作的簡單方式。
+隱含的動畫是簡單的方式來達成 Fluent 動作透過自動之間參數變更期間的最大值舊和新值。
 
-您可以以隱含方式產生動畫效果變更下列屬性：
+您可以隱含地以動畫顯示變更下列屬性：
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
-  - **Opacity**
+  - **不透明度**
   - **旋轉**
-  - **Scale**
-  - **Translation**
+  - **縮放**
+  - **轉譯**
 
-- [框線](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[面板](/uwp/api/windows.ui.xaml.controls.panel)
+- [框線](/uwp/api/windows.ui.xaml.controls.border)， [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)，或[面板](/uwp/api/windows.ui.xaml.controls.panel)
   - **背景**
 
-每個可以有變更，以隱含方式產生動畫效果的屬性都有對應的_轉換_屬性。 要產生動畫效果的屬性，您可以指派轉換類型相對應的_轉換_屬性。 下表顯示_轉換_屬性和使用的每個轉換類型。
+可以有變更會隱含地以動畫顯示每個屬性都有對應_轉換_屬性。 若要以動畫顯示屬性，您可以指派轉換類型對應_轉換_屬性。 下表顯示_轉換_屬性和每個使用的轉換類型。
 
-| 動畫的屬性 | 轉換屬性 | 隱含轉換類型 |
+| 動畫的屬性 | 轉換屬性 | 隱含的轉換類型 |
 | -- | -- | -- |
 | [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
@@ -108,7 +108,7 @@ ms.locfileid: "9058559"
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-這個範例示範如何使用的 Opacity 屬性和轉換，讓按鈕控制項啟用時淡入動畫和淡出時停用它。
+此範例示範如何使用 Opacity 屬性和轉換，使按鈕控制項啟用時，淡入與淡出，停用時。
 
 ```xaml
 <Button x:Name="SubmitButton"
@@ -129,6 +129,6 @@ public double OpaqueIfEnabled(bool IsEnabled)
 
 ## <a name="related-articles"></a>相關文章
 
-- [動作概觀](index.md)
+- [影片概觀](index.md)
 - [計時和加/減速](timing-and-easing.md)
-- [方向性和重力](directionality-and-gravity.md)
+- [方向和重力](directionality-and-gravity.md)

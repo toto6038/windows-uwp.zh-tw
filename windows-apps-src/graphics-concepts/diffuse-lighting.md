@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1785b06aa2217e8ec15aeaa560bd98a65522df2e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939604"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603373"
 ---
 # <a name="diffuse-lighting"></a>擴散光源
 
@@ -25,11 +25,11 @@ ms.locfileid: "8939604"
 
 擴散光源以下列方程式描述。
 
-擴散光源 = sum\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>.</sup>L<sub>dir</sub>)\*Atten\*Spot\]
+擴散光源 = 總和\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>。</sup>L<sub>dir</sub>)\*Atten\*位置\]
 
 | 參數       | 預設值 | 類型          | 描述                                                                                      |
 |-----------------|---------------|---------------|--------------------------------------------------------------------------------------------------|
-| 總和             | N/A           | 無           | 每道光的擴散元件的總和。                                                     |
+| 總和             | 無           | 無           | 每道光的擴散元件的總和。                                                     |
 | C<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 擴散色彩。                                                                                   |
 | L<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 光線擴散色彩。                                                                             |
 | N               | 無           | D3DVECTOR     | 頂點垂直                                                                                    |
@@ -67,7 +67,7 @@ ms.locfileid: "8939604"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光源的數學計算](mathematics-of-lighting.md)
+[光源的數學運算](mathematics-of-lighting.md)
 
  
 

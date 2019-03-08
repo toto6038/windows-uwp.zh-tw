@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 封裝, 架構, 套件設定
 ms.localizationpriority: medium
 ms.openlocfilehash: 338dac1d43e08257fa00b51c0c311a090f3d95c0
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116107"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619933"
 ---
 # <a name="app-package-architectures"></a>應用程式套件架構
 
@@ -29,7 +29,7 @@ ms.locfileid: "9116107"
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|--------------------|
 | x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          | :heavy_check_mark: |
 | x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          | :heavy_check_mark: |
-| ARM ARM64              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
+| ARM 及 ARM64              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
 
 
 讓我們更詳細討論這些架構。
@@ -40,12 +40,12 @@ ms.locfileid: "9116107"
 ### <a name="x64"></a>x64
 此設定比 x86 設定更少用到。 應注意的是，此設定是保留給使用 64 位元版本 Windows 10 的桌上型電腦、[Xbox 上的 UWP 應用程式](https://docs.microsoft.com/windows/uwp/xbox-apps/system-resource-allocation)，以及 Intel Joule 上的 Windows 10 IoT 核心版。
 
-### <a name="arm-and-arm64"></a>ARM ARM64
+### <a name="arm-and-arm64"></a>ARM 及 ARM64
 ARM 上的 Windows 10 設定包含桌上型電腦、行動裝置和某些 IoT 核心版裝置 (Rasperry Pi 2、Raspberry Pi 3 和 DragonBoard)。 ARM 上的 Windows 10 桌上型電腦是 Windows 系列的新成員，因此如果您是 UWP app 開發人員，您應該提交 ARM 套件至市集，以便為這些電腦提供最佳使用體驗。
 
 >[!NOTE]
-> 若要建置您的 UWP 應用程式，原生 ARM64 平台為目標，您必須使用 Visual Studio 2017 版本 15.9 或更新版本。 如需詳細資訊，請參閱[此部落格文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)。
+> 若要建置您的 UWP 應用程式原生 ARM64 平台為目標，您必須擁有 Visual Studio 2017 15.9 或更新版本。 如需詳細資訊，請參閱 <<c0> [ 此部落格文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)。
 
-如需詳細資訊，請參閱[ARM 上的 Windows 10](../porting/apps-on-arm.md)。 請查看此 //Build 討論，獲得 [ARM 上的 Windows 10](https://channel9.msdn.com/Events/Build/2017/P4171) 示範並了解其運作方式。
+如需詳細資訊，請參閱 < [ARM 上的 Windows 10](../porting/apps-on-arm.md)。 請查看此 //Build 討論，獲得 [ARM 上的 Windows 10](https://channel9.msdn.com/Events/Build/2017/P4171) 示範並了解其運作方式。
 
-如需 IoT 特定主題的詳細資訊，請參閱[使用 Visual Studio 部署應用程式](https://developer.microsoft.com/windows/iot/Docs/AppDeployment)。
+如需有關 IoT 特定主題的詳細資訊，請參閱[使用 Visual Studio 將應用程式部署](https://developer.microsoft.com/windows/iot/Docs/AppDeployment)。

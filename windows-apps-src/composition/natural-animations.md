@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fde0cbf5335b4f5c3da2f21f692fc2c23455776
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937161"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630373"
 ---
 # <a name="natural-motion-animations"></a>自然運動動畫
 
@@ -22,9 +22,9 @@ ms.locfileid: "8937161"
 
 動作可協助建置這種連結的其中一種方式是建立使用者熟悉的外觀和感受。 使用者在無意識中會預期收到以實際生活體驗為基礎的動作。 我們觀察物體如何滑過地板、從桌子上掉下來、互相反彈以及使用彈簧擺盪。 運用真實世界物理原理的動作，我們看起來和感覺起來都會更自然。 動作會變得更加自然且互動性更高，但更重要的是，整個體驗會變得更令人印象深刻且容易使用。
 
-![不使用動畫的縮放動作](images/animation/scale-no-animation.gif)
-![使用三次方貝茲的縮放動作](images/animation/scale-cubic-bezier.gif)
-![使用彈簧動畫的縮放動作](images/animation/scale-spring.gif)
+![調整規模動作不會以動畫](images/animation/scale-no-animation.gif)
+![調整動作與三次方貝茲](images/animation/scale-cubic-bezier.gif)
+![調整 spring 動畫的影片](images/animation/scale-spring.gif)
 
 獲得的成果就是使用者參與率以及應用程式保留率提高。
 

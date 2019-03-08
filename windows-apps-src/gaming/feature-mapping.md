@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 0cfaa071ea0182ef5fac264e85d919be5744d15d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050671"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619313"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>將 DirectX 9 功能對應到 DirectX 11 API
 
@@ -19,8 +19,8 @@ ms.locfileid: "9050671"
 
 **摘要**
 
--   [計劃 DirectX 移植](plan-your-directx-port.md)
--   [從 Direct3D 9 到 Direct3D 11 的重要變更](understand-direct3d-11-1-concepts.md)
+-   [規劃您的 DirectX 連接埠](plan-your-directx-port.md)
+-   [為 Direct3D 11 的重要變更與 Direct3D 9](understand-direct3d-11-1-concepts.md)
 -   功能對應
 
 
@@ -66,7 +66,7 @@ Visual Studio 仍然使用 FXC 編譯著色器物件。 UWP 遊戲著色器會�
 
 若要快速瀏覽載入著色器資源，請參閱[從 Direct3D 9 到 UWP 的簡易移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)。
 
-Direct3D 11 引進了著色器模型 5，此模型需要 Direct3D 功能層級 11\_0 (或更高層級)。 請參閱 [Direct3D 11 的 HLSL 著色器模型 5 功能](https://msdn.microsoft.com/library/windows/desktop/ff471419)。
+Direct3D 11 導入的著色器模型 5 個値，也需要 Direct3D 功能層級 11\_0 （或更新版本）。 請參閱 [Direct3D 11 的 HLSL 著色器模型 5 功能](https://msdn.microsoft.com/library/windows/desktop/ff471419)。
 
 ## <a name="replace-xnamath-and-d3dxmath"></a>取代 XNAMath 與 D3DXMath
 
@@ -101,7 +101,7 @@ DirectShow 不再是 DirectX API (或 Windows API) 的一部分。 [Microsoft �
 
 Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必須提供符合 UWP 需求的網路程式碼。 請使用下列 API：
 
--   [適用於 UWP app (網路功能) (Windows) 的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205759)
+-   [Win32 和 COM 的 UWP 應用程式 （網路） (Windows)](https://msdn.microsoft.com/library/windows/apps/br205759)
 -   [**Windows.Networking 命名空間 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207124)
 -   [**Windows.Networking.Sockets 命名空間 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br226960)
 -   [**Windows.Networking.Connectivity 命名空間 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207308)
@@ -109,10 +109,10 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 
 下列文章可協助您為 app 封裝資訊清單中的網路新增網路功能與宣告支援。
 
--   [使用通訊端進行連線 (使用 C#/VB/C++ 和 XAML 的 UWP app) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
--   [使用 WebSocket 進行連線 (使用 C#/VB/C++ 和 XAML 的 UWP app) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994396)
--   [連線到 Web 服務 (使用 C#/VB/C++ 和 XAML 的 UWP app) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
--   [網路功能基本知識](https://msdn.microsoft.com/library/windows/apps/mt280233)
+-   [透過通訊端連線 (UWP 應用程式使用C#/VB/c + + 和 XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
+-   [使用 Websocket 連線 (UWP 應用程式使用C#/VB/c + + 和 XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994396)
+-   [連接到 web 服務 (UWP 應用程式使用C#/VB/c + + 和 XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
+-   [網路基本概念](https://msdn.microsoft.com/library/windows/apps/mt280233)
 
 請注意，所有 UWP App (包含遊戲) 都使用特定的背景工作類型，以維持 App 暫停時的連線功能。 如果您的遊戲需要在暫停時維持連線狀態，請參閱[網路功能基本知識](https://msdn.microsoft.com/library/windows/apps/mt280233)。
 
@@ -137,7 +137,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174336">IDirect3DDevice9</a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/dn280493">ID3D11Device2</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/dn280498">ID3D11DeviceContext2</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/desktop/ff476882">圖形管線</a>中會說明圖形管線階段。</p></td>
+<p><a href="https://msdn.microsoft.com/library/windows/desktop/ff476882">圖形管線</a>中會說明圖性管線階段。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174300">IDirect3D9</a></p></td>
@@ -216,7 +216,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174373">IDirect3DDevice9:DrawRectPatch</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174374">IDirect3DDevice9:DrawTriPatch</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174421">IDirect3DDevice9: LightEnable</a></p>
+<p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174421">IDirect3DDevice9:LightEnable</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174422">IDirect3DDevice9:MultiplyTransform</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb205798">IDirect3DDevice9:SetLight</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174437">IDirect3DDevice9:SetMaterial</a></p>
@@ -261,7 +261,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_R8G8B8</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A8R8G8B8</p></td>
@@ -279,7 +279,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X1R5G5B5</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A1R5G5B5</p></td>
@@ -291,7 +291,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_R3G3B2</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A8</p></td>
@@ -299,11 +299,11 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A8R3G3B2</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X4R4G4B4</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A2B10G10R10</p></td>
@@ -316,7 +316,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_X8B8G8R8</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_G16R16</p></td>
@@ -324,7 +324,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A2R10G10B10</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A16B16G16R16</p></td>
@@ -332,17 +332,17 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A8P8</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_P8</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>注意：</strong> 使用器.r swizzle 將紅色複製到其他元件，以取得 Direct3D 9 行為的著色器中。
+<strong>附註</strong>  使用.r swizzle 重複的紅色到其他元件，以取得 Direct3D 9 行為的著色器中。
 </div>
 <div>
  
@@ -352,7 +352,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>注意：</strong> 使用著色器中的 swizzle.rrrg 將紅色複製，並將綠色移至 alpha 元件，以取得 Direct3D 9 行為。
+<strong>附註</strong>  用以 swizzle.rrrg 著色器中重複的紅色及 alpha 元件，以取得 Direct3D 9 行為移動綠色。
 </div>
 <div>
  
@@ -360,7 +360,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A4L4</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_V8U8</p></td>
@@ -368,11 +368,11 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_L6V5U5</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X8L8V8U8</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_Q8W8V8U8</p></td>
@@ -384,21 +384,21 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_W11V11U10</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A2W10V10U10</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_UYVY</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>注意：</strong> 在 Direct3D 9 中，資料已放大為 255.0 f，但這可在著色器中處理。
+<strong>附註</strong>  在 Direct3D 9 資料已由 255.0f，相應增加，但這可以處理在著色器。
 </div>
 <div>
  
@@ -406,13 +406,13 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_YUY2</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>注意：</strong> 在 Direct3D 9 中，資料已放大為 255.0 f，但這可在著色器中處理。
+<strong>附註</strong>  在 Direct3D 9 資料已由 255.0f，相應增加，但這可以處理在著色器。
 </div>
 <div>
  
@@ -426,7 +426,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM 與 DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>注意：</strong> 來說，DXT1 與 DXT2 是相同從 API/硬體的角度。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
+<strong>附註</strong>   DXT1 和 DXT2 是相同的 API/硬體觀點。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
 </div>
 <div>
  
@@ -440,7 +440,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM 與 DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>注意：</strong> 來說，DXT3 與 DXT4 是相同從 API/硬體的角度。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
+<strong>附註</strong>   DXT3 和 DXT4 是相同的 API/硬體觀點。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
 </div>
 <div>
  
@@ -456,23 +456,23 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_D32</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D15S1</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_D24S8</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D24X8</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_D24X4S4</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D16</p></td>
@@ -484,11 +484,11 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D24FS8</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_S1D15</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_S8D24</p></td>
@@ -496,17 +496,17 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_X8D24</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X4S4D24</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>注意：</strong> 使用器.r swizzle 將紅色複製到其他元件，以取得 D3D9 行為的著色器中。
+<strong>附註</strong>  使用.r swizzle 重複 D3D9 行為的其他元件的紅色的著色器中。
 </div>
 <div>
  
@@ -526,7 +526,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_MULTI2_ARGB8</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_R16F</p></td>
@@ -554,7 +554,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_CxV8U8</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPE_FLOAT1</p></td>
@@ -574,13 +574,13 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPED3DCOLOR</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>注意：</strong> 的著色器會取得 UINT 值，但需要如果 Direct3D 9 樣式整數浮點數 （0.0 f、 1.0 f...255.f)，就可以 UINT 轉換為 float32 在著色器中。
+<strong>附註</strong>  著色器取得 UINT 值，但如果 Direct3D 9 樣式整數類資料所需的浮點數 （0.0，1.0 f...255.f)，UINT 只是可以轉換成 float32 著色器中。
 </div>
 <div>
  
@@ -590,7 +590,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>注意：</strong> 的著色器會取得 SINT 值，但如果需要 Direct3D 9 樣式整數浮點數 SINT 可以只轉換為 float32 即可在著色器中。
+<strong>附註</strong>  著色器取得荷屬值，但如果需要 Direct3D 9 樣式不可或缺的浮點數，聖剛轉換成 float32 著色器中。
 </div>
 <div>
  
@@ -600,7 +600,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>注意：</strong> 的著色器會取得 SINT 值，但如果需要 Direct3D 9 樣式整數浮點數 SINT 可以只轉換為 float32 即可在著色器中。
+<strong>附註</strong>  著色器取得荷屬值，但如果需要 Direct3D 9 樣式不可或缺的浮點數，聖剛轉換成 float32 著色器中。
 </div>
 <div>
  
@@ -628,11 +628,11 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_UDEC3</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPE_DEC3N</p></td>
-<td align="left"><p>無法使用</p></td>
+<td align="left"><p>沒有</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_FLOAT16_2</p></td>
@@ -646,7 +646,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>注意：</strong> 需要功能層級 10.0 或更高
+<strong>附註</strong>   10.0 或更新版本的功能等級
 </div>
 <div>
  
@@ -656,7 +656,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>注意：</strong> 需要功能層級 10.0 或更高
+<strong>附註</strong>   10.0 或更新版本的功能等級
 </div>
 <div>
  

@@ -1,21 +1,21 @@
 ---
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: 在 Microsoft Store 提交 API 中使用這個方法，擷取已登錄到您的合作夥伴中心帳戶的所有應用程式的所有附加元件資料。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來擷取所有的附加元件資料的已登錄到您的合作夥伴中心帳戶的所有應用程式。
 title: 取得所有附加元件
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50733bc0617d56b7e6b8596b661aff8056961f18
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937042"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599903"
 ---
 # <a name="get-all-add-ons"></a>取得所有附加元件
 
-在 Microsoft Store 提交 API 中使用這個方法，來擷取已登錄到您的合作夥伴中心帳戶的所有應用程式的所有附加元件資料。
+在 Microsoft Store 提交 API 中使用這個方法，來擷取資料的已登錄到您的合作夥伴中心帳戶的所有應用程式的所有附加元件。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -26,7 +26,7 @@ ms.locfileid: "8937042"
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -37,7 +37,7 @@ ms.locfileid: "8937042"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
@@ -50,9 +50,9 @@ ms.locfileid: "8937042"
 |  skip  |  整數  |  在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。  |  否  |
 
 
-### <a name="request-body"></a>要求主體
+### <a name="request-body"></a>要求本文
 
-不提供此方法的要求主體。
+不提供此方法的要求本文。
 
 ### <a name="request-examples"></a>要求範例
 
@@ -145,12 +145,12 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 404  | 找不到任何附加元件。 |
-| 409  | 應用程式或附加元件使用[「 Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。  |
+| 409  | 應用程式或附加元件使用合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
 * [管理附加元件提交](manage-add-on-submissions.md)
 * [取得附加元件](get-an-add-on.md)
 * [建立附加元件](create-an-add-on.md)

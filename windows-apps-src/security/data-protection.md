@@ -1,17 +1,17 @@
 ---
 title: 資料保護
-description: 本文說明如何使用 Windows.Security.Cryptography.DataProtection 命名空間中的 DataProtectionProvider 類別，來加密和解密 UWP 應用程式中的數位資料。
+description: 本文說明如何使用 Windows.Security.Cryptography.DataProtection 命名空間中的 DataProtectionProvider 類別，來加密和解密 UWP app 中的數位資料。
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c93527a2ee738a3e6b0f4e9b9d2a1343158441b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932347"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608263"
 ---
 # <a name="data-protection"></a>資料保護
 

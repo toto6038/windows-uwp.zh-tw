@@ -1,16 +1,16 @@
 ---
-description: 在傳遞至期待 **IInspectable** 的函式之前，需要將純量數值包裝在參考資料類別物件中。 該包裝處理程序稱為*boxing*值。
+description: 在傳遞至需要 **IInspectable** 的函示之前，必須將純量數值包裝在參考資料類別物件中。 該包裝處理程序稱為*boxing*值。
 title: 'Boxing 和 unboxing 純量數值到使用 C++/WinRT 的 IInspectable '
 ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制項、boxing、純量、數值
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c86d1ac8ce83ea092ce0e2730ea0e9d4a201b94
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927309"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639673"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Boxing 和 unboxing 純量數值到使用 C++/WinRT 的 IInspectable 
  
@@ -18,10 +18,10 @@ Windows 執行階段 (WinRT) 中，[**IInspectable 介面**](/windows/desktop/ap
 
 換言之，預期 **IInspectable** 的函示可以傳遞任何執行階段類別的執行個體。 但您無法直接將純量數值，例如數字或文字值，傳遞至這項函式。 而是需要將純量數值包裝於參考類別物件中。 該包裝處理程序稱為*boxing*值。
 
-[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)提供[**winrt:: box_value**](/uwp/cpp-ref-for-winrt/box-value)函式，它會將純量數值到**IInspectable**傳回 boxed 的值。 針對 unboxing **IInspectable**返回純量數值，有 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 和 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函式。
+[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)提供[ **winrt::box_value** ](/uwp/cpp-ref-for-winrt/box-value)函式，它會取得純量值，並傳回該值進行 boxed 處理**IInspectable**。 針對 unboxing **IInspectable**返回純量數值，有 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 和 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函式。
 
 ## <a name="examples-of-boxing-a-value"></a>Boxing 值的範例
-[**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) 存取子函式傳回[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)，即為純量數值。 我們可以 box 該 **hstring** 值，並將它傳遞至預期 **IInspectable** 的函式，如下所示。
+[  **LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) 存取子函式傳回[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)，即為純量數值。 我們可以 box 該 **hstring** 值，並將它傳遞至預期 **IInspectable** 的函式，如下所示。
 
 ```cppwinrt
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
@@ -64,7 +64,7 @@ WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType:
 
 ## <a name="important-apis"></a>重要 API
 * [IInspectable 介面](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [winrt::box_value 函式範本](/uwp/cpp-ref-for-winrt/box-value)
+* [winrt::box_value 函式樣板](/uwp/cpp-ref-for-winrt/box-value)
 * [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::unbox_value 函式範本](/uwp/cpp-ref-for-winrt/unbox-value)
-* [winrt::unbox_value_or 函式範本](/uwp/cpp-ref-for-winrt/unbox-value-or)
+* [winrt::unbox_value 函式樣板](/uwp/cpp-ref-for-winrt/unbox-value)
+* [winrt::unbox_value_or 函式樣板](/uwp/cpp-ref-for-winrt/unbox-value-or)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx, input latency, 遊戲, 輸入延遲
 ms.localizationpriority: medium
 ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934095"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601743"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
 
@@ -60,7 +60,7 @@ ms.locfileid: "8934095"
 
 我們將會針對簡單的拼圖遊戲進行反覆處理，以便為稍早提到的每個案例顯示遊戲迴圈的實作。 與每個實作一起討論的決策點、優點以及取捨可以當做指南，協助您針對低延遲輸入以及電源效率最佳化您的 app。
 
-## <a name="scenario-1-render-on-demand"></a>案例 1：視需求轉譯
+## <a name="scenario-1-render-on-demand"></a>案例 1：轉譯依需求
 
 
 拼圖遊戲的第一個反覆運算只會在使用者移動拼圖時更新畫面。 使用者可以選取一塊拼圖然後觸碰正確的目的地，將其拖曳到定位或貼齊定位。 在第二個情況下，這塊拼圖會在沒有動畫或效果的情況下跳到目的地。
@@ -91,7 +91,7 @@ void App::Run()
 }
 ```
 
-## <a name="scenario-2-render-on-demand-with-transient-animations"></a>案例 2：包含暫時動畫的視需求轉譯
+## <a name="scenario-2-render-on-demand-with-transient-animations"></a>案例 2：依需求以暫時性動畫呈現
 
 
 在第二個反覆運算中，遊戲經過修改，所以使用者選取一塊拼圖然後觸碰這塊拼圖的正確目的地時，拼圖會以動畫形式越過畫面，直到到達其目的地為止。
@@ -139,7 +139,7 @@ void App::Run()
 
 為支援 **ProcessOneAndAllPending** 和 **ProcessAllIfPresent** 之間的轉換，app 必須追蹤狀態以了解是否有動畫效果。 在拼圖應用程式中，您可以在 GameState 類別，透過加入可在遊戲迴圈期間呼叫的新方法來完成。 遊戲迴圈的動畫分支透過呼叫 GameState 的新 Update 方法更新動畫的狀態。
 
-## <a name="scenario-3-render-60-frames-per-second"></a>案例 3：每秒轉譯 60 個畫面格
+## <a name="scenario-3-render-60-frames-per-second"></a>案例 3：轉譯每秒 60 畫面格數
 
 
 在第三個反覆運算中，應用程式顯示一個計時器，這個計時器會向使用者顯示他們已經花在處理拼圖上的時間。 由於它所顯示的經過時間以毫秒為單位，因此每秒必須轉譯 60 個畫面格，才能將顯示維持在最新狀態。
@@ -177,7 +177,7 @@ void App::Run()
 
 不過，這個簡單的開發方式要付出代價。 每秒轉譯 60 個畫面格所使用的電源比視需求轉譯還多。 當遊戲要變更每個畫面所顯示的內容時，最好使用 **ProcessAllIfPresent**。 此方式也會增加 16.7 毫秒的輸入延遲，因為 app 現在會在顯示器的同步間隔而非 **ProcessEvents** 封鎖遊戲迴圈。 由於每個畫面只會處理一次佇列 (60 Hz)，因此可能會捨棄一些輸入事件。
 
-## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>案例 4：每秒轉譯 60 個畫面格並達到最低的輸入延遲
+## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>案例 4:轉譯每秒 60 畫面格數並達到最低的可能輸入的延遲
 
 
 有些遊戲或許能夠忽略或補償案例 3 中所看到的輸入延遲增加。 不過，如果輸入延遲低對於遊戲的體驗以及玩家意見反應來說非常重要，每秒轉譯 60 個畫面格的遊戲就必須針對個別的執行緒處理輸入。
@@ -233,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-在 Microsoft Visual Studio2015 的**DirectX 11 和 XAML App (通用 Windows)** 範本會將遊戲迴圈分割成多個執行緒類似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 物件啟動處理輸入專用的執行緒，同時建立與 XAML UI 執行緒無關的轉譯執行緒。 如需這些範本的詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
+**DirectX 11 和 XAML 應用程式 (通用 Windows)** Microsoft Visual Studio 2015 中的範本將遊戲迴圈分割成多個執行緒以類似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 物件啟動處理輸入專用的執行緒，同時建立與 XAML UI 執行緒無關的轉譯執行緒。 如需這些範本的詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>降低輸入延遲的其他方式
 
@@ -246,13 +246,13 @@ DirectX 遊戲會透過更新使用者在畫面上看到的內容，回應使用
 
 ![圖 1 Directx 的輸入延遲 ](images/input-latency1.png)
 
-在 Windows8.1，DXGI 導入交換鏈結，讓 app 輕鬆降低這個延遲，不需要實作啟發學習法以保持 Present 佇列空白**DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT**旗的標。 使用此旗標建立的交換鏈結稱為可等候的交換鏈結。 圖 2 顯示大約的生命週期，以及使用可等候的交換鏈結時對輸入事件的回應：
+在 Windows 8.1 引進 DXGI **DXGI\_交換\_鏈結\_旗標\_框架\_延遲\_WAITABLE\_物件**交換的旗標鏈結，允許輕鬆地減少這種延遲，而不需要實作啟發學習法來保持存在的佇列是空的應用程式。 使用此旗標建立的交換鏈結稱為可等候的交換鏈結。 圖 2 顯示大約的生命週期，以及使用可等候的交換鏈結時對輸入事件的回應：
 
 圖 2
 
 ![圖 2 Directx 可等候的輸入延遲](images/input-latency2.png)
 
-我們從這些圖表中看到的內容就是遊戲可能可以透過兩個完整畫面降低的輸入延遲，但前提是這些遊戲可以在顯示器的重新整理頻率所定義的 16.7 毫秒預算內轉譯並呈現每個畫面。 拼圖範例透過呼叫下行來使用可等候的交換鏈結，並控制 Present 佇列的限制：` m_deviceResources->SetMaximumFrameLatency(1);`
+我們從這些圖表中看到的內容就是遊戲可能可以透過兩個完整畫面降低的輸入延遲，但前提是這些遊戲可以在顯示器的重新整理頻率所定義的 16.7 毫秒預算內轉譯並呈現每個畫面。 細範例會使用可等候的交換鏈結，並藉由呼叫會控制存在的佇列限制：` m_deviceResources->SetMaximumFrameLatency(1);`
 
  
 

@@ -4,14 +4,14 @@ description: 本文示範如何讀取和寫入影像中繼資料屬性，以及�
 title: 影像中繼資料
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ab1279a8744d6dc9cddc88abaa064058f1259c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943074"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631803"
 ---
 # <a name="image-metadata"></a>影像中繼資料
 
@@ -19,13 +19,13 @@ ms.locfileid: "8943074"
 
 本文示範如何讀取和寫入影像中繼資料屬性，以及如何使用 [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683) 公用程式類別以標記檔案的地理位置。
 
-## <a name="image-properties"></a>影像屬性
+## <a name="image-properties"></a>映像內容
 
-[**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 屬性會傳回 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 物件，這個物件可以用來存取檔案的內容相關資訊。 呼叫 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 取得影像特定的屬性。 傳回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 物件所公開的成員包含基本影像中繼資料欄位，例如影像標題和拍攝日期。
+[  **StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 屬性會傳回 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 物件，這個物件可以用來存取檔案的內容相關資訊。 呼叫 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 取得影像特定的屬性。 傳回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 物件所公開的成員包含基本影像中繼資料欄位，例如影像標題和拍攝日期。
 
 [!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
 
-若要存取更大的一組檔案中繼資料，請使用 Windows 屬性系統，這是一組可使用唯一字串識別碼擷取的檔案中繼資料屬性。 針對您想要擷取的每個屬性，建立字串清單並加入識別碼。 [**ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) 方法接受此字串清單，並傳回機碼/值組字典，其中機碼是屬性識別碼，值是屬性值。
+若要存取更大的一組檔案中繼資料，請使用 Windows 屬性系統，這是一組可使用唯一字串識別碼擷取的檔案中繼資料屬性。 針對您想要擷取的每個屬性，建立字串清單並加入識別碼。 [  **ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) 方法接受此字串清單，並傳回機碼/值組字典，其中機碼是屬性識別碼，值是屬性值。
 
 [!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
 
@@ -69,7 +69,7 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 -   如需 WIC 中繼資料查詢語言和支援的屬性的相關資訊，請參閱 [WIC 影像格式原生中繼資料查詢](https://msdn.microsoft.com/library/windows/desktop/ee719904)。
 
--   許多中繼資料屬性只有在一部分影像類型中才支援。 如果解碼器相關的影像不支援其中一個要求的屬性，[**GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) 會失敗並傳回錯誤碼 0x88982F41，如果影像完全不支援中繼資料，則會傳回 0x88982F81。 這些錯誤碼相關的常數為 WINCODEC\_ERR\_PROPERTYNOTSUPPORTED 和 WINCODEC\_ERR\_UNSUPPORTEDOPERATION，定義於 winerror.h 標頭檔中。
+-   許多中繼資料屬性只有在一部分影像類型中才支援。 [**GetPropertiesAsync** ](https://msdn.microsoft.com/library/windows/apps/br226250)如果其中一個要求的屬性不支援映像相關聯的解碼器和 0x88982F81 若映像不完全支援中繼資料將會失敗並告知錯誤碼 0x88982F41。 這些錯誤碼與相關聯的常數是 WINCODEC\_ERR\_PROPERTYNOTSUPPORTED 和 WINCODEC\_ERR\_UNSUPPORTEDOPERATION 並且定義於 winerror.h 標頭檔。
 -   因為影像可能包含或不包含特定屬性的值，在嘗試存取屬性之前，請使用 **IDictionary.ContainsKey** 確認屬性存在於結果中。
 
 將影像中繼資料寫入資料流時，需要有影像輸出檔相關聯的 **BitmapEncoder**。
@@ -80,11 +80,11 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 -   如需哪些影像檔類型支援哪些屬性的詳細資訊，請參閱 [Windows 屬性](https://msdn.microsoft.com/library/windows/desktop/dd561977)、[相片中繼資料原則](https://msdn.microsoft.com/library/windows/desktop/ee872003)和 [WIC 影像格式原生中繼資料查詢](https://msdn.microsoft.com/library/windows/desktop/ee719904)。
 
--   如果編碼器相關的影像不支援其中一個要求的屬性，[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) 會失敗並傳回錯誤碼 0x88982F41。
+-   [**SetPropertiesAsync** ](https://msdn.microsoft.com/library/windows/apps/br226252)編碼器相關聯的映像不支援要求的屬性之一，將會失敗並錯誤碼 0x88982F41。
 
 ## <a name="related-topics"></a>相關主題
 
-* [影像處理](imaging.md)
+* [映像](imaging.md)
  
 
  

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 20662a562e67ee836feb1da73a71c76228a550cb
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058679"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643813"
 ---
 # <a name="background-transfers"></a>背景傳輸
 使用背景傳輸 API 在網路上可靠地複製檔案。 背景傳輸 API 提供進階的上傳和下載功能，這些功能會在 app 暫停期間於背景執行，並在 app 終止後保留。 API 會監視網路狀態，並自動在連線中斷時暫停和繼續傳輸，傳輸作業會是數據用量感知和電池用量感知，這表示下載活動會根據您目前的連線能力與裝置電池狀態進行調整。 API 適用於上傳和下載使用 HTTP(S) 的大型檔案。 也支援 FTP，但只限於下載項目。
@@ -28,7 +28,7 @@ ms.locfileid: "9058679"
 > [!NOTE]
 > 由於每個 app 的資源限制，因此應用程式在任何時候都不應有超過 200 個傳輸 (DownloadOperations + UploadOperations)。 超過該限制可能會使得應用程式的傳輸佇列處於無法復原狀態。
 
-應用程式啟動時，它必須呼叫[**Downloadoperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)上所有的現有[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation)和[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadoperation)物件。 未執行此動作會導致已經完成傳輸流失，並將最終轉譯您使用背景傳輸功能都毫無用處。
+啟動應用程式時，必須呼叫[ **AttachAsync** ](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)在所有現有[ **DownloadOperation** ](/uwp/api/windows.networking.backgroundtransfer.downloadoperation)和[ **UploadOperation** ](/uwp/api/windows.networking.backgroundtransfer.uploadoperation)物件。 無法執行此動作時，會導致已完成的傳輸的外洩，並將最後會使您使用的背景傳送的功能變得無法。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>使用背景傳輸來執行已驗證的檔案要求
 背景傳輸提供的方法，支援基本伺服器與 Proxy 認證、Cookie，並且支援在每個傳輸作業使用自訂的 HTTP 標頭 (透過 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146))。
@@ -40,7 +40,7 @@ ms.locfileid: "9058679"
 
 儘管背景傳輸功能有它自己的網路狀態變更處理機制，網路連線的應用程式還有其他一般連線考量。 請參閱[利用可用的網路連線資訊](https://msdn.microsoft.com/library/windows/apps/hh452983)來取得其他資訊。
 
-> **注意：** 的行動裝置上執行的應用程式，有些功能，讓使用者在來監視和限制傳輸根據連線類型、 漫遊狀態的資料量及使用者資料的計劃。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 指示傳輸應該繼續，手機上的背景傳輸還是可能被暫停。
+> **附註**  針對行動裝置上執行的應用程式，有功能可讓使用者監視，並限制傳送的連線，漫遊狀態、 類型為基礎的資料量和計劃的使用者資料。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 指示傳輸應該繼續，手機上的背景傳輸還是可能被暫停。
 
 下表說明每個 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 值何時可在手機上允許背景傳輸 (根據手機的目前狀態)。 您可以使用 [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) 類別來判定電話的目前狀態。
 
@@ -60,13 +60,13 @@ ms.locfileid: "9058679"
 ### <a name="uploading-a-single-file"></a>上傳單一檔案
 上傳的建立從 [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 開始。 這個類別用來提供讓您的 app 先設定上傳，再建立結果 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 的方法。 下列範例示範如何使用必要的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 和 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件來執行此動作。
 
-**識別上傳的檔案和目的地**
+**識別的檔案和上傳的目的地**
 
 在開始建立 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 之前，我們必須識別要上傳的目標位置 URI，以及要上傳的檔案。 在下列範例中，填入 *uriString* 值的方式是使用 UI 輸入中的字串，而填入 *file* 值的方式則是使用 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 操作傳回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "Identify the file and destination for the upload")]
 
-**建立和初始化上傳作業**
+**建立並初始化上傳作業**
 
 在上一個步驟中，*uriString* 和 *file* 值已傳遞至我們下一個範例 UploadOp 的執行個體，這兩個值將被用來設定和啟動新的上傳操作。 首先，會剖析 *uriString* 以建立必要的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 物件。
 
@@ -85,7 +85,7 @@ promise = upload.startAsync().then(complete, error, progress);
 非同步呼叫後面跟著一個指示方法的 then 陳述式，由應用程式定義，會在非同步方法呼叫傳回結果時呼叫它。 如需這種程式設計模式的詳細資訊，請參閱[使用 Promise 在 JavaScript 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/hh464930.aspx)。
 
 ### <a name="uploading-multiple-files"></a>上傳多個檔案
-**識別上傳的檔案和目的地**
+**識別的檔案和上傳的目的地**
 
 在使用一個 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 傳輸多個檔案的案例中，程序會照一般的方法開始，也就是先提供必要的目的地 URI 和本機檔案資訊。 就像上一節的範例，使用者以字串提供 URI，而 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 可以用來透過使用者介面指出檔案。 不過，在這個案例中，應用程式應該改為呼叫 [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) 方法，啟用透過 UI 選取多個檔案的功能。
 
@@ -110,7 +110,7 @@ function uploadFiles() {
     }
 ```
 
-**針對提供的參數建立物件**
+**建立物件，以便提供的參數**
 
 接下來的兩個範例使用單一範例方法 **startMultipart** 中的程式碼，並在上個步驟的結尾呼叫它。 為了清楚說明，已將建立 [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) 物件陣列方法中的程式碼與建立結果 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 的程式碼分開。
 
@@ -130,7 +130,7 @@ function uploadFiles() {
             });
 ```
 
-**建立和初始化多部分上傳作業**
+**建立並初始化多部分上傳作業**
 
 使用我們的 contentParts 陣列 (其中已填入代表每個要上傳的 [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) 的所有 [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) 物件)，我們已準備好使用 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 來呼叫 [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973)，以指示傳送要求的目的地。
 
@@ -199,7 +199,7 @@ promise = download.startAsync().then(complete, error, progress);
 1.  您現在可以使用填入的清單重新啟動擱置的作業。
 
 ## <a name="post-processing"></a>後續處理
-Windows 10 中的新功能是能夠在背景傳輸完成時執行應用程式程式碼，即使在應用程式未執行時。 例如，您的 app 可能會想要在影片完成下載後更新可用的影片清單，而不是每次啟動 app 時掃描新的影片。 或者，您的 app 可能會想要嘗試使用不同的伺服器或連接埠，重新處理失敗的檔案傳輸。 成功和失敗的傳輸都會叫用後續處理，因此您可以用它來實作自訂的錯誤處理和重試邏輯。
+Windows 10 中的新功能是能夠執行應用程式程式碼背景傳送完成時，即使在未執行應用程式。 例如，您的 app 可能會想要在影片完成下載後更新可用的影片清單，而不是每次啟動 app 時掃描新的影片。 或者，您的 app 可能會想要嘗試使用不同的伺服器或連接埠，重新處理失敗的檔案傳輸。 成功和失敗的傳輸都會叫用後續處理，因此您可以用它來實作自訂的錯誤處理和重試邏輯。
 
 Postprocessing 會使用現有的背景工作基礎結構。 您可以建立背景工作，並將它與傳輸建立關聯之後再開始傳輸。 傳輸接著會在背景執行，並在完成時呼叫您的背景工作以執行後續處理。
 
@@ -260,7 +260,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   建立連線之後，將中止任何在兩分鐘內未收到回應的 HTTP 要求訊息。
 
-> **注意：** 中的任一種情況下，假設有網際網路連線，背景傳輸會自動重試要求三次。 在偵測不到網際網路連線的事件中，其他要求將等到偵測到連線為止。
+> **附註**  在任一案例中，假設沒有網際網路連線能力，背景傳送會自動重試要求最多三次。 在偵測不到網際網路連線的事件中，其他要求將等到偵測到連線為止。
 
 ## <a name="debugging-guidance"></a>偵錯指導方針
 在 Microsoft Visual Studio 中停止偵錯工作階段就等同於關閉 app；PUT 上傳會被暫停，POST 上傳會被終止。 即使在偵錯時，應用程式應該列舉然後重新啟動或取消任何之前仍然存在的下載。 例如，如果偵錯工作階段與之前的操作無關，您可以在應用程式啟動時，讓應用程式取消已列舉的持續上傳作業。
@@ -274,25 +274,25 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 -   您使用與現有專案相同的名稱但不同的語言 (例如，從 C++ 變更為 C#) 建立新的專案。
 -   您變更現有專案中的目標架構 (例如，從 x86 變更為 x64)。
 -   您變更現有專案中的文化特性 (例如，從中性變更為 en-US)。
--   您在現有專案的套件資訊清單中新增或移除功能 (例如，新增 **\[企業驗證\]**)。
+-   您在現有專案的套件資訊清單中新增或移除功能 (例如，新增 [企業驗證])。
 
 一般應用程式服務，包括新增或移除功能的資訊清單更新，並不會在應用程式的一般使用者部署上引起這個問題。
-若要解決這個問題，請完整解除安裝應用程式的所有版本，然後使用新的語言、架構、文化特性或功能來重新部署。 這個操作可以透過 **\[開始\]** 畫面或使用 PowerShell 和 **Remove-AppxPackage** Cmdlet 來完成。
+若要解決這個問題，請完整解除安裝應用程式的所有版本，然後使用新的語言、架構、文化特性或功能來重新部署。 這個操作可以透過 [開始] 畫面或使用 PowerShell 和 **Remove-AppxPackage** Cmdlet 來完成。
 
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Windows.Networking.BackgroundTransfer 中的例外狀況
 如果傳送到 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 物件建構函式的統一資源識別項 (URI) 字串無效時，即會擲回例外狀況。
 
-**.NET：**[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型別在 C# 和 VB 中顯示為 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)。
+**.NET:**[ **Windows.Foundation.Uri** ](https://msdn.microsoft.com/library/windows/apps/br225998)類型會顯示為[ **System.Uri** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)的C#和 VB
 
 在 C# 和 Visual Basic 中，可在建構 URI 之前，於 .NET 4.5 中使用 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 類別和其中一個 [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) 方法來測試接收自應用程式使用者的字串，以避免發生這個錯誤。
 
 在 C++ 中，沒有可以嘗試將字串剖析為 URI 的方法。 如果應用程式取得使用者為 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
 
-[**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空間具備便利的協助程式方法，可以在 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中使用列舉來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
+[  **Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空間具備便利的協助程式方法，可以在 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中使用列舉來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
 
 在 [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空間中非同步方法內遇到的錯誤會以 **HRESULT** 值的形式傳回。 使用 [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) 方法，將背景傳輸作業的網路錯誤轉換為 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列舉值。 大多數 **WebErrorStatus** 列舉值都會對應到原始 HTTP 或 FTP 用戶端作業所傳回的錯誤。 app 可以篩選特定 **WebErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
 
-針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
+針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 對於大多數的參數驗證錯誤， **HRESULT**傳回**E\_INVALIDARG**。
 
 ## <a name="important-apis"></a>重要 API
 * [**Windows.Networking.BackgroundTransfer**](/uwp/api/windows.networking.backgroundtransfer)

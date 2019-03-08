@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: da1dc2ab7444bf65074d9c7ccc615aaee07fdcff
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046351"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627963"
 ---
 # <a name="audio-graphs"></a>音訊圖
 
@@ -19,13 +19,13 @@ ms.locfileid: "9046351"
 
 本文示範如何使用 [**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) 命名空間中的 API 來建立音訊路由傳送、混音及處理案例的音訊圖。
 
-「音訊圖」** 是一組用以傳送音訊資料的互連音訊節點。 
+「音訊圖」是一組用以傳送音訊資料的互連音訊節點。 
 
-- 「音訊輸入節點」** 會從音訊輸入裝置、音訊檔案，或從自訂程式碼將音訊資料提供給此圖形。 
+- 「音訊輸入節點」會從音訊輸入裝置、音訊檔案，或從自訂程式碼將音訊資料提供給此圖形。 
 
-- 「音訊輸出節點」** 是此圖形所處理之音訊的目的地。 音訊可以從此圖形路由傳送至音訊輸出裝置、音訊檔案或自訂程式碼。 
+- 「音訊輸出節點」是此圖形所處理之音訊的目的地。 音訊可以從此圖形路由傳送至音訊輸出裝置、音訊檔案或自訂程式碼。 
 
-- 「副混音節點」** 會從一或多個節點取得音訊，然後將它們結合成可路由傳送至圖形中其他節點的單一輸出。 
+- 「副混音節點」會從一或多個節點取得音訊，然後將它們結合成可路由傳送至圖形中其他節點的單一輸出。 
 
 已建立所有節點並設定它們之間的連線後，您只需啟動音訊圖形，音訊資料就會從輸入節點經由任何副混音節點傳送至輸出節點。 此模型可讓您快速且輕鬆地實作案例，例如：從裝置的麥克風錄製到音訊檔、將檔案中的音訊播放到裝置的喇叭，或混合來自多個來源的音訊。
 
@@ -43,29 +43,29 @@ Windows 執行階段音訊圖 API：
 -   明顯地比 XAudio2 容易使用。
 -   除了支援 C++，還可在 C# 中使用。
 -   可以直接使用包含壓縮檔案格式的音訊檔案。 XAudio2 只能在音訊緩衝區上操作，並不提供任何檔案 I/O 功能。
--   在 windows 10 中，可以使用低延遲音訊管線。
+-   可以使用 Windows 10 中的低延遲音訊管線。
 -   使用預設端點參數時，支援自動端點切換。 例如，如果使用者從裝置的喇叭切換到耳機時，則音訊會自動重新導向至新的輸入。
 
 ## <a name="audiograph-class"></a>AudioGraph 類別
 
-[**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) 類別是構成圖形之所有節點的父項。 使用此物件來建立所有音訊節點類型的執行個體。 將包含圖形組態設定的 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 物件初始化，接著呼叫 [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216)，以建立 **AudioGraph** 類別的執行個體。 傳回的 [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) 可供存取建立的音訊圖，或在音訊圖建立失敗時提供錯誤值。
+[  **AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) 類別是構成圖形之所有節點的父項。 使用此物件來建立所有音訊節點類型的執行個體。 將包含圖形組態設定的 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 物件初始化，接著呼叫 [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216)，以建立 **AudioGraph** 類別的執行個體。 傳回的 [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) 可供存取建立的音訊圖，或在音訊圖建立失敗時提供錯誤值。
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
--   使用 **AudioGraph** 類別的 Create\* 方法，建立所有音訊節點類型。
--   [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) 方法會導致音訊圖開始處理音訊資料。 [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) 方法會停止音訊處理。 執行圖形時，可以獨立啟動和停止圖形中的每個節點，但圖形停止時，就沒有作用中的節點。 [**ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) 會導致圖形中的所有節點捨棄目前在其音訊緩衝區中的所有資料。
+-   使用 建立所有音訊的節點型別所建立\*方法**AudioGraph**類別。
+-   [  **AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) 方法會導致音訊圖開始處理音訊資料。 [  **AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) 方法會停止音訊處理。 執行圖形時，可以獨立啟動和停止圖形中的每個節點，但圖形停止時，就沒有作用中的節點。 [**ResetAllNodes** ](https://msdn.microsoft.com/library/windows/apps/dn914242)導致捨棄其音訊的緩衝區中現存的資料圖形中的所有節點。
 -   當圖形開始處理新的音訊資料配量，會發生 [**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) 事件。 當配量處理完成時，會發生 [**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) 事件。
 
 -   唯一必要的 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 屬性是 [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724)。 指定這個值可讓系統最佳化指定類別的音訊管線。
 -   音訊圖的配量大小會決定一次處理的範例數目。 根據預設，配量大小採用預設取樣率並以 10 毫秒為基礎。 如果您藉由設定 [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) 屬性來指定自訂配量大小，您也必須將 [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) 屬性設定為 **ClosestToDesired**，否則會忽略所提供的值。 如果使用這個值，則系統會選擇儘可能接近您指定之配量大小的大小。 若要判斷實際配量大小，請在建立完成後檢查 **AudioGraph** 的 [**SamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914243)。
 -   如果您只打算搭配使用音訊圖和檔案，而不打算輸出到音訊裝置，建議您不要設定 [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) 屬性，以使用預設配量大小。
--   [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) 屬性決定主要轉譯裝置對音訊圖輸出執行的處理量。 **Default** 設定可讓系統對指定的音訊轉譯類別使用預設音訊處理。 此處理可大幅改善某些裝置上的音訊聲音，特別是具有小型喇叭的行動裝置。 **Raw** 設定可將執行的訊號處理量降至最低，進而提高效能，但可能會導致某些裝置上的音效品質較差。
+-   [  **DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) 屬性決定主要轉譯裝置對音訊圖輸出執行的處理量。 **Default** 設定可讓系統對指定的音訊轉譯類別使用預設音訊處理。 此處理可大幅改善某些裝置上的音訊聲音，特別是具有小型喇叭的行動裝置。 **Raw** 設定可將執行的訊號處理量降至最低，進而提高效能，但可能會導致某些裝置上的音效品質較差。
 -   如果 [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) 設定為 **LowestLatency**，則音訊圖會自動為 [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) 使用 **Raw**。
 - 從 Windows 10 版本 1803 開始，您可以設定 [**AudioGraphSettings.MaxPlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.maxplaybackspeedfactor) 屬性來設定用於 [**AudioFileInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileinputnode.playbackspeedfactor)、[**AudioFrameInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.playbackspeedfactor) 和 [**MediaSourceInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceinputnode.playbackspeedfactor) 屬性的最大值。 當音訊圖支援大於 1 的播放速度因素，系統必須配置額外的記憶體以維護音訊資料的足夠緩衝。 基於這個原因，將 **MaxPlaybackSpeedFactor** 設定為您的應用程式所需的最小值，可以減少應用程式耗用的記憶體。 如果您的應用程式只以正常速度播放內容，建議您將 MaxPlaybackSpeedFactor 設定為 1。
--   [**EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) 可判斷圖形所使用的音訊格式。 僅支援 32 位元的浮點格式。
--   [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) 會設定音訊圖的主要轉譯裝置。 如果您未設定此項，則會使用預設系統裝置。 主要轉譯裝置用來計算圖形中的其他節點的配量大小。 如果系統上未出現任何音訊轉譯裝置，則音訊圖建立將會失敗。
+-   [  **EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) 可判斷圖形所使用的音訊格式。 僅支援 32 位元的浮點格式。
+-   [  **PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) 會設定音訊圖的主要轉譯裝置。 如果您未設定此項，則會使用預設系統裝置。 主要轉譯裝置用來計算圖形中的其他節點的配量大小。 如果系統上未出現任何音訊轉譯裝置，則音訊圖建立將會失敗。
 
 您可以讓音訊圖使用預設音訊轉譯裝置，或使用 [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 類別來取得系統可用的音訊轉譯裝置清單，其作法是呼叫 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 並傳入 [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) 所傳回的音訊轉譯裝置選取器。 您可以程式設計方式選擇其中一個傳回的 **DeviceInformation** 物件，或顯示 UI 讓使用者選取裝置，然後使用它來設定 [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) 屬性。
 
@@ -80,7 +80,7 @@ Windows 執行階段音訊圖 API：
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-如果您想要指定特定音訊擷取裝置的裝置輸入節點，您可以使用[**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)類別來取得系統可用的音訊擷取裝置清單，藉由呼叫[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432)和傳入的音訊轉譯裝置選取器[**Windows.Media.Devices.MediaDevice.GetAudioCaptureSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector)所傳回。 您能以程式設計方式選擇其中一個傳回的 **DeviceInformation** 物件，或顯示 UI 讓使用者選取裝置，然後將它傳遞到 [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) 中。
+如果您想要指定裝置輸入節點的特定音訊擷取裝置，您可以使用[ **Windows.Devices.Enumeration.DeviceInformation** ](https://msdn.microsoft.com/library/windows/apps/br225393)類別，以取得一份系統的可用音訊擷取裝置，藉由呼叫[ **FindAllAsync** ](https://msdn.microsoft.com/library/windows/apps/br225432)並傳入所傳回的音訊轉譯的裝置選取器[ **Windows.Media.Devices.MediaDevice.GetAudioCaptureSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector)。 您能以程式設計方式選擇其中一個傳回的 **DeviceInformation** 物件，或顯示 UI 讓使用者選取裝置，然後將它傳遞到 [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) 中。
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
@@ -109,7 +109,7 @@ Windows 執行階段音訊圖 API：
 
 ##  <a name="mediasource-input-node"></a>MediaSource 輸入節點
 
-[**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) 類別提供一個常見的方法來參考和播放來自不同來源的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式，可能是磁碟上的檔案、串流或彈性資料流網路來源)。 [**MediaSourceAudioInputNode](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceaudioinputnode) 節點可讓您將音訊資料從 **MediaSource** 引導至音訊圖中。 藉由呼叫 [**CreateMediaSourceAudioInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_)、在代表您要播放內容的 **MediaSource** 物件中傳遞，建立 **MediaSourceAudioInputNode**。 會傳回 [**CreateMediaSourceAudioInputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)，您可透過檢查 [**Status**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) 屬性用來判斷作業狀態。 如果狀態為 **Success**，您可透過存取 [**Node**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) 屬性來取得建立的 **MediaSourceAudioInputNode**。 下列範例顯示從 AdaptiveMediaSource 物件 (代表在網路上串流內容) 建立節點。 如需使用 **MediaSource** 的詳細資訊，請參閱[媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。 如需在網際網路上串流媒體內容的詳細資訊，請參閱[彈性資料流](adaptive-streaming.md)。
+[  **MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) 類別提供一個常見的方法來參考和播放來自不同來源的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式，可能是磁碟上的檔案、串流或彈性資料流網路來源)。 [**MediaSourceAudioInputNode](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceaudioinputnode) 節點可讓您將音訊資料從 **MediaSource** 引導至音訊圖中。 藉由呼叫 [**CreateMediaSourceAudioInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_)、在代表您要播放內容的 **MediaSource** 物件中傳遞，建立 **MediaSourceAudioInputNode**。 會傳回 [**CreateMediaSourceAudioInputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)，您可透過檢查 [**Status**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) 屬性用來判斷作業狀態。 如果狀態為 **Success**，您可透過存取 [**Node**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) 屬性來取得建立的 **MediaSourceAudioInputNode**。 下列範例顯示從 AdaptiveMediaSource 物件 (代表在網路上串流內容) 建立節點。 如需使用 **MediaSource** 的詳細資訊，請參閱[媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。 如需在網際網路上串流媒體內容的詳細資訊，請參閱[彈性資料流](adaptive-streaming.md)。
 
 [!code-cs[DeclareMediaSourceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareMediaSourceInputNode)]
 
@@ -165,7 +165,7 @@ Windows 執行階段音訊圖 API：
 
 [!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
--   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性]**** 頁面、按一下 [建置]**** 屬性頁，然後選取 [容許 Unsafe 程式碼]**** 核取方塊。
+-   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性] 頁面、按一下 [建置] 屬性頁，然後選取 [容許 Unsafe 程式碼] 核取方塊。
 -   將所需的緩衝區大小傳入至建構函式，以在 **Windows.Media** 命名空間中初始化 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 的新執行個體。 緩衝區大小是樣本數目乘以每個樣本的大小。
 -   透過呼叫 [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878)，以取得音訊框架的 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)。
 -   呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457)，從音訊緩衝區取得 [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM 介面的執行個體。
@@ -195,7 +195,7 @@ Windows 執行階段音訊圖 API：
 -   如上述的音訊框架輸入節點範例，您必須宣告 **IMemoryBufferByteAccess** COM 介面並設定您的專案允許不安全的程式碼，才能存取底層音訊緩衝區。
 -   透過呼叫 [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878)，以取得音訊框架的 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)。
 -   透過呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457) 以從音訊緩衝區取得 **IMemoryBufferByteAccess** COM 介面的執行個體。
--   透過呼叫 **IMemoryBufferByteAccess.GetBuffer** 以取得原始音訊緩衝區資料的指標，並將它轉換為音訊資料的範例資料類型。
+-   呼叫 **IMemoryBufferByteAccess.GetBuffer**，取得原始音訊緩衝區資料的指標並將它轉換為音訊資料的範例資料類型。
 
 ## <a name="node-connections-and-submix-nodes"></a>節點連線和副混音節點
 
@@ -230,7 +230,7 @@ Windows 執行階段音訊圖 API：
 [!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
 
 -   所有音訊效果都會實作 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044)。 每個節點都會公開 **EffectDefinitions** 屬性，以表示套用至該節點的效果清單。 將效果的定義物件新增至清單，即可新增該效果。
--   **Windows.Media.Audio** 命名空間中提供了數個效果定義類別。 其中包括：
+-   **Windows.Media.Audio** 命名空間中提供了數個效果定義類別。 這些地方包括：
     -   [**EchoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914276)
     -   [**EqualizerEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914287)
     -   [**LimiterEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914306)
@@ -241,7 +241,7 @@ Windows 執行階段音訊圖 API：
 ## <a name="spatial-audio"></a>空間音訊
 從 Windows 10 版本 1607 開始，**AudioGraph** 支援空間音訊，可讓您指定要在 3D 空間中的哪個位置發出來自任何輸入或副混音節點的音訊。 您也可以指定發出音訊的形狀與方向，針對 Doppler 使用的速度會使節點的音訊移位，並定義衰減模型，以說明如何利用距離來使音訊減弱。 
 
-若要建立發射器，您可以先建立從發射器發出聲音的形狀，這可以圓錐形或全向性。 [**AudioNodeEmitterShape**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterShape) 類別提供靜態方法來建立這其中每一個形狀。 接著，建立衰減模型。 這會定義如何來自發出的音訊音量如何因為與接聽器的距離增加而降低。 [**CreateNatural**](https://msdn.microsoft.com/library/windows/apps/mt711740) 方法會建立衰減模型，其會使用距離平方減少模型來模擬聲音的自然衰減。 最後，建立 [**AudioNodeEmitterSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterSettings) 物件。 目前，此物件只能用來啟用和停用發射器的音訊中以速度為基礎的 Doppler 衰減。 呼叫 [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/mt694324.aspx) 建構函式，傳入您剛建立的初始化物件。 預設會將發射器置於原點，但您可以使用 [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.Position) 屬性來設定發射器的位置。
+若要建立發射器，您可以先建立從發射器發出聲音的形狀，這可以圓錐形或全向性。 [  **AudioNodeEmitterShape**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterShape) 類別提供靜態方法來建立這其中每一個形狀。 接著，建立衰減模型。 這會定義如何來自發出的音訊音量如何因為與接聽器的距離增加而降低。 [  **CreateNatural**](https://msdn.microsoft.com/library/windows/apps/mt711740) 方法會建立衰減模型，其會使用距離平方減少模型來模擬聲音的自然衰減。 最後，建立 [**AudioNodeEmitterSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterSettings) 物件。 目前，此物件只能用來啟用和停用發射器的音訊中以速度為基礎的 Doppler 衰減。 呼叫 [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/mt694324.aspx) 建構函式，傳入您剛建立的初始化物件。 預設會將發射器置於原點，但您可以使用 [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.Position) 屬性來設定發射器的位置。
 
 > [!NOTE]
 > 音訊節點發射器只能處理音訊格式是取樣率為 48kHz 的單聲道。 嘗試使用立體聲音訊或不同取樣率的音訊，將導致例外狀況。
@@ -264,7 +264,7 @@ Windows 執行階段音訊圖 API：
 
 根據預設，空間音訊是使用 Microsoft 的聲學頭部關係轉移函數 (HRTF) 演算法，根據相對於接聽器的形狀、速度及位置來減弱音訊。 您可以將 [**SpatialAudioModel**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.SpatialAudioModel) 屬性設為 **FoldDown** 來使用模擬空間音訊的簡單立體聲混音方法，此方法較不準確，但所需的 CPU 與記憶體資源較少。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 - [媒體播放](media-playback.md)
  
 

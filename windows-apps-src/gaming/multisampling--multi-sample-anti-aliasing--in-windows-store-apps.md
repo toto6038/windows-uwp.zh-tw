@@ -1,19 +1,19 @@
 ---
 title: 通用 Windows 平台 (UWP) app 中的多重取樣
-description: 了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) 應用程式中使用多重取樣。
+description: 了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 多重取樣, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c1634af8589a97f5070ff85909fe12ab16bf8d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924914"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610853"
 ---
-# <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>通用 Windows 平台 (UWP) app 中的多重取樣
+# <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> 多重取樣在通用 Windows 平台 (UWP) 應用程式
 
 
 
@@ -28,11 +28,11 @@ ms.locfileid: "8924914"
 
 Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保證提供可支援多重取樣的某些緩衝區格式。 圖形裝置支援的格式和取樣計數範圍，通常比基本所需的要多。 多重取樣支援可以在執行階段決定，方法是檢查是否有以特定 DXGI 格式進行多重取樣的功能支援，然後檢查每種支援格式可用的取樣計數。
 
-1.  呼叫 [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) 以找出哪些 DXGI 格式可與多重取樣一起使用。 提供您的遊戲可用的轉譯目標格式。 轉譯目標與解析目標必須使用相同格式，因此，請同時檢查 [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) 與 **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**。
+1.  呼叫 [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) 以找出哪些 DXGI 格式可與多重取樣一起使用。 提供您的遊戲可用的轉譯目標格式。 在轉譯目標和解析目標必須使用相同的格式，因此請查看兩者[ **D3D11\_格式\_支援\_MULTISAMPLE\_RENDERTARGET** ](https://msdn.microsoft.com/library/windows/desktop/ff476134)並**D3D11\_格式\_支援\_MULTISAMPLE\_解決**。
 
-    **功能層級 9:** 雖然功能層級 9 裝置[保證支援多重取樣的轉譯目標格式](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget)，多重取樣解析目標不保證支援。 因此，嘗試使用本主題中描述的多重取樣技術之前，這項檢查是必須的。
+    **功能層級 9:  **雖然功能層級 9 的裝置[保證紋理的呈現目標格式支援](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget)，多重取樣的解析目標不保證支援。 因此，嘗試使用本主題中描述的多重取樣技術之前，這項檢查是必須的。
 
-    下列程式碼會檢查所有 DXGI\_FORMAT 值的多重取樣支援：
+    下列程式碼會檢查所有 dxgi 的多重取樣支援\_格式值：
 
     ```cpp
     // Determine the format support for multisampling.
@@ -82,11 +82,11 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     }
     ```
 
-    > **注意：** 使用[**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494)而如果您需要檢查的多重取樣支援並排資源的緩衝區。
+    > **附註**  使用[ **ID3D11Device2::CheckMultisampleQualityLevels1** ](https://msdn.microsoft.com/library/windows/desktop/dn280494)而是如果您需要檢查多重取樣支援並排的資源的緩衝區。
 
      
 
-3.  建立含有所需之取樣計數的緩衝區和轉譯目標檢視。 使用相同的 DXGI\_FORMAT、寬度及高度做為交換鏈結，但指定大於 1 的取樣計數，並使用多重取樣材質維度 (例如 **D3D11\_RTV\_DIMENSION\_TEXTURE2DMS**)。 如有需要，您可以重建含有適合多重取樣的新設定的交換鏈結。
+3.  建立含有所需之取樣計數的緩衝區和轉譯目標檢視。 使用相同的 DXGI\_格式、 寬度和高度，做為交換鏈結，但指定大於 1 的取樣計數，並使用多重取樣的紋理維度 (**D3D11\_RTV\_維度\_TEXTURE2DMS**為例)。 如有需要，您可以重建含有適合多重取樣的新設定的交換鏈結。
 
     下列程式碼會建立多重取樣的轉譯目標：
 

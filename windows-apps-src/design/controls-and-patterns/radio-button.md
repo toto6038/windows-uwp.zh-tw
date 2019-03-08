@@ -1,5 +1,5 @@
 ---
-Description: Radio buttons let users select one option from two or more choices.
+Description: 選項按鈕可以讓使用者從兩個以上的選項中選取一個選項。
 title: 選項按鈕的指導方針
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
@@ -13,15 +13,15 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 91903365a258d54804b420cd217dd7c25d79406a
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037230"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606133"
 ---
 # <a name="radio-buttons"></a>選項按鈕
 
-> **重要 API**：[RadioButton 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)、[Checked 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)、[IsChecked 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+> **重要的 Api**:[RadioButton 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)，[核取的事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)， [IsChecked 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 選項按鈕可讓使用者從集合中選取一個選項。 每個選項都由一個選項按鈕表示，而且使用者在選項按鈕群組中只能選取一個選項按鈕 
 
@@ -66,7 +66,7 @@ ms.locfileid: "9037230"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/RadioButton">開啟應用程式並查看 RadioButton 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -171,13 +171,13 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 選項按鈕有兩個狀態：*已選取* 或 *已清除*。 已選取選項按鈕時，其 [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) 屬性為 **true**。 已清除選項按鈕時，其 **IsChecked** 屬性為 **false**。 按一下同一個群組中的另一個選項按鈕，即可清除選項按鈕，但無法藉由再按一次來清除。 不過，您可以將選項按鈕的 IsChecked 屬性設定為 **false**，以程式設計方式清除該選項按鈕。 您可以取得 **IsChecked** 屬性的 **Value**，將 **IsChecked** 屬性與 bool 實際做比較。
 
-## <a name="recommendations"></a>建議事項
+## <a name="recommendations"></a>建議
 
 -   確定一組選項按鈕的目的及目前狀態非常明確。
 -   將選項按鈕的文字限制為單行。
 -   如果文字內容是動態的，請考慮如何調整按鈕的大小以及調整後周圍的視覺效果會發生什麼變化。
 -   除非您的品牌指導方針指示您使用其他字型，否則使用預設字型。
--   不要將兩個選項按鈕群組並排。 當兩個選項按鈕群組並排時，很難判斷哪個按鈕屬於哪個群組。
+-   不要將兩個選項按鈕群組並排。 當兩個選項按鈕群組並列時，很難判斷哪個按鈕屬於哪個群組。
 
 ## <a name="additional-usage-guidance"></a>其他用法指導方針
 
@@ -189,7 +189,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ## <a name="related-topics"></a>相關主題
 
-**適用於設計人員**
+**設計工具**
 - [按鈕](buttons.md)
 - [切換開關](toggles.md)
 - [核取方塊](checkbox.md)

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 38a65a3532fe401f31fbf0da656aff1a141fa71a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940657"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636303"
 ---
 # <a name="mathematics-of-lighting"></a>光源的數學計算
 
@@ -77,8 +77,8 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 <td align="left"><p>相機空間端點的計算方式為使用全球檢視矩陣轉換物件端點。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="attenuation-and-spotlight-factor.md">衰減和聚光燈係數</a></p></td>
-<td align="left"><p>全域照明方程式的擴散和聚光燈型光源元件內含描述光衰減及聚光燈圓錐的字詞。</p></td>
+<td align="left"><p><a href="attenuation-and-spotlight-factor.md">衰減和焦點的因素</a></p></td>
+<td align="left"><p>全域照明方程式的擴散和聚光燈型光源元件內含描述光衰減及焦點圓錐的字詞。</p></td>
 </tr>
 </tbody>
 </table>
@@ -88,7 +88,7 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光線和材料](lights-and-materials.md)
+[光線和材質](lights-and-materials.md)
 
  
 

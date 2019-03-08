@@ -1,5 +1,5 @@
 ---
-Description: A semantic zoom control allows the user to zoom between two different semantic views of the same data set.
+Description: 語意式縮放控制項可以讓使用者在相同資料集的兩個不同語意式檢視間縮放。
 title: 語意式縮放
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
@@ -12,11 +12,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 210cca8a4b17b77e8c1f9cb490a79bcd1a53b6c7
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058789"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627613"
 ---
 # <a name="semantic-zoom"></a>語意式縮放
 
@@ -29,7 +29,7 @@ ms.locfileid: "9058789"
 
 例如，使用者檢視通訊錄時，可縮小以快速跳到字母 "W"，然後放大該字母以查看與其相關的名稱。 
 
-> **重要 API**：[SemanticZoom 類別](https://msdn.microsoft.com/library/windows/apps/hh702601)、[ListView 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)、[GridView 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
+> **重要的 Api**:[SemanticZoom 類別](https://msdn.microsoft.com/library/windows/apps/hh702601)， [ListView 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)， [GridView 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
 
 **功能**：
 
@@ -52,14 +52,14 @@ ms.locfileid: "9058789"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/SemanticZoom">開啟應用程式並查看 SemanticZoom 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-**相片 App**
+**相片應用程式**
 
 以下是相片 app 中使用的語意式縮放。 相片是依月份分組。 選取預設方格檢視中的月份標頭時，會縮小月份清單檢視以供快速瀏覽。
 
@@ -80,9 +80,9 @@ ms.locfileid: "9058789"
 - 可顯示項目層級資料的放大檢視。
 - 可顯示群組層級資料的縮小檢視。
 
-使用語意式縮放之前，您應該了解如何使用具有分組資料的清單檢視。 如需詳細資訊，請參閱[清單檢視與方格檢視](listview-and-gridview.md)。 
+使用語意式縮放之前，您應該了解如何使用具有分組資料的清單檢視。 如需詳細資訊，請參閱 <<c0> [ 清單檢視和格線檢視](listview-and-gridview.md)。 
 
-> **注意**&nbsp;&nbsp;若要定義 SemanticZoom 控制項的放大檢視和縮小檢視，您可以使用實作 [ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx) 介面的任兩個控制項。 XAML 架構提供 3 個實作此介面的控制項︰ListView、GridView 及 Hub。
+> **注意**&nbsp;&nbsp;若要定義 SemanticZoom 控制項的放大檢視和縮小檢視，您可以使用實作 [ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx) 介面的任兩個控制項。 XAML 架構還提供實作此介面的 3 個控制項：ListView、 GridView 和中樞。
  
  這個 XAML 會顯示 SemanticZoom 控制項的結構。 您會將其他控制項指派給 ZoomedInView 與 ZoomedOutView 屬性。
  
@@ -100,7 +100,7 @@ ms.locfileid: "9058789"
  
 這裡的範例取自 [XAML UI 基本知識範例](https://go.microsoft.com/fwlink/p/?LinkId=619992)的 SemanticZoom 頁面。 您可以下載範例以查看包括資料來源的完整程式碼。 此語意式縮放使用 GridView 來提供放大檢視，並使用 ListView 來提供縮小檢視。
   
-**定義放大檢視**
+**定義的放大檢視**
 
 以下是用於放大檢視的 GridView 控制項。 放大檢視應會顯示群組中的個別資料項目。 這個範例顯示如何在格線內以影像與文字顯示項目。 
 
@@ -140,7 +140,7 @@ ms.locfileid: "9058789"
 </DataTemplate>
 ```
 
-**定義縮小檢視**
+**定義拉遠檢視**
 
 此 XAML 定義用於縮小檢視的 ListView 控制項。 這個範例說明如何在清單中將群組標頭顯示為文字。
 
@@ -161,7 +161,7 @@ ms.locfileid: "9058789"
 </DataTemplate>
 ```
 
-**同步檢視**
+**同步處理檢視**
 
 放大檢視與縮小檢視應該同步，讓使用者在縮小檢視中選取群組時，該群組的詳細資料能夠顯示在放大檢視中。 您可以使用 [CollectionViewSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) 或新增程式碼來同步檢視。
 
@@ -183,7 +183,7 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 }
 ```
 
-## <a name="recommendations"></a>建議事項
+## <a name="recommendations"></a>建議
 
 -   在您的應用程式中使用語意式縮放時，請不要隨縮放層級變更項目配置和移動瀏覽方向。 配置和移動瀏覽互動在縮放比例之間應該保持一致且可預測。
 -   語意式縮放可以讓使用者快速跳到內容，所以請將縮小檢視模式中頁面/畫面的數量限制為三個。 過多的移動瀏覽會減少語意式縮放的實用性。
@@ -200,9 +200,9 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 ## <a name="related-articles"></a>相關文章
 
-- [瀏覽設計基本知識](../basics/navigation-basics.md)
-- [清單檢視和方格檢視](listview-and-gridview.md)
-- [項目容器與範本](item-containers-templates.md)
+- [瀏覽設計基本概念](../basics/navigation-basics.md)
+- [清單檢視和格線檢視](listview-and-gridview.md)
+- [項目容器和範本](item-containers-templates.md)
 
 
 

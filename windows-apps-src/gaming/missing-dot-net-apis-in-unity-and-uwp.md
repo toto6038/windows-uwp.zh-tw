@@ -7,19 +7,19 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, .net, unity
 ms.localizationpriority: medium
 ms.openlocfilehash: 247761f47b578099bf8672d9e1b2469e6506682e
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116077"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641783"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Unity 和 UWP 中遺失 .NET API
 
 使用 .NET 建置 UWP 遊戲 時，您可能會發現一些您可能在 Unity 編輯器或獨立電腦遊戲中使用的 API，未出現在 UWP 上。 這是因為 UWP apps 適用的 .NET 包括每個命名空間的完整 .NET Framework 中所提供的類型子集。
 
-此外，部分遊戲引擎使用未與 UWP 適用的 .NET (例如 Unity 的 Mono) 完全相容的不同類型 .NET。 所以當您撰寫遊戲時，所有項目在編輯器中可能運作正常，但是當您移至 UWP 的建置，您可能會收到這類錯誤：**命名空間 'System.Runtime.Serialization' 中沒有類型或命名空間 'Formatters' (是否遺漏了組件參考？)**
+此外，部分遊戲引擎使用未與 UWP 適用的 .NET (例如 Unity 的 Mono) 完全相容的不同類型 .NET。 因此當您要撰寫您的遊戲，所有項目可能會正常運作在編輯器中，但當您建置適用於 UWP，您可能會收到這類錯誤：**類型或命名空間 '格式器' 不存在於的命名空間 'System.Runtime.Serialization' （您是否遺漏了組件參考？）**
 
-幸好 Unity 提供一些這些遺失的 API 作為延伸方法和更換類型，這在[通用 Windows 平台︰.NET 指令碼後端遺失 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)中有所描述。 不過，如果您需要的功能不在這裡，[適用於 Windows 8.x App 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/br230302)討論您可以轉換您的程式碼的方式以使用 WinRT 或 UWP API 適用的 .NET。 (這討論 Windows 8，但也適用於 Windows 10 UWP app)。
+幸運的是，Unity 提供了一些這些遺漏的 Api 作為延伸方法和所述的替代類型[通用 Windows 平台：遺失.NET 型別在.NET 後端指令碼處理上的](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)。 不過，如果您需要的功能不在這裡，[適用於 Windows 8.x App 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/br230302)討論您可以轉換您的程式碼的方式以使用 WinRT 或 UWP API 適用的 .NET。 (這討論 Windows 8，但也適用於 Windows 10 UWP app)。
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -43,7 +43,7 @@ ms.locfileid: "9116077"
 
 一般而言，對於 **\[指令碼執行階段版本\]** 和 **\[Api 相容性層級\]**，您應該選取已推出的最新版本，以便與 .NET Framework 有更多相容性，如此可讓您使用更多的 .NET API。
 
-![設定︰指令碼執行階段版本；指令碼後端；Api 相容性層級](images/missing-dot-net-apis-in-unity-1.png)
+![設定：指令碼的執行階段版本;指令碼的後端;Api 相容性層級](images/missing-dot-net-apis-in-unity-1.png)
 
 ## <a name="platform-dependent-compilation"></a>平台相關編譯
 
@@ -60,7 +60,7 @@ ms.locfileid: "9116077"
 ```
 
 > [!NOTE]
-> `NETFX_CORE` 只是要檢查您是否針對 .NET 指令碼後端編譯 C# 程式碼。 如果您使用不同的指令碼後端，例如 IL2CPP，請改為使用 `UNITY_WSA_10_0`。
+> `NETFX_CORE` 只要檢查您要編譯C#.NET 指令碼的後端的程式碼。 如果您使用不同的指令碼後端，例如 IL2CPP，請改為使用 `UNITY_WSA_10_0`。
 
 如需平台相關編譯指示詞的完整清單，請參閱[平台相關編譯](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)。
 
@@ -142,8 +142,8 @@ private async void GetCertificatesAsync(string certStoreName)
 
 在 **System.Net.Mail** 的案例中，使用 [Windows.ApplicationModel.Email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email) 命名空間。 如需詳細資訊，請參閱[傳送電子郵件](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
-* [通用 Windows 平台︰.NET 指令碼後端遺失 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [用於 UWP App 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/br230302)
+* [通用 Windows 平台：在.NET 後端指令碼處理上遺漏的.NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
+* [適用於 UWP 應用程式的概觀的.NET](https://msdn.microsoft.com/library/windows/apps/br230302)
 * [Unity UWP 移植指南](https://unity3d.com/partners/microsoft/porting-guides)

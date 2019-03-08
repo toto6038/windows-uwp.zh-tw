@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f28f1f46cfd34ee1aab614c57dc99019dbd6111
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930913"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597973"
 ---
 # <a name="specular-lighting"></a>反射光源
 
@@ -23,14 +23,14 @@ ms.locfileid: "8930913"
 
 預設光源狀態不計算反射強光。
 
-## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>反射光源方程式
+## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>反射光源的方程式
 
 
 反射光源以下列方程式描述。
 
 |                                                                             |
 |-----------------------------------------------------------------------------|
-| 反射光源 = Cₛ \* sum\[Lₛ \* (N · H)<sup>P</sup> \* Atten \* Spot\] |
+| 反射光源 = Cₛ\*總和\[Lₛ \* （N •H)<sup>P</sup> \* Atten\*位置\] |
 
  
 
@@ -39,9 +39,9 @@ ms.locfileid: "8930913"
 | 參數    | 預設值 | 類型                                                             | 描述                                                                                            |
 |--------------|---------------|------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
 | Cₛ           | (0,0,0,0)     | 紅色、綠色、藍色以及 alpha 透明度（浮點值） | 反射色彩。                                                                                        |
-| sum          | N/A           | 無                                                              | 每道光的反射元件的總和。                                                          |
-| N            | N/A           | 3D 向量 (x、y 和 z 浮點值)                    | 頂點標準。                                                                                         |
-| H            | 無           | 3D 向量 (x、y 和 z 浮點值)                    | 半程向量。 請參閱有關半程向量的一節。                                                |
+| 總和          | 無           | 無                                                              | 每道光的反射元件的總和。                                                          |
+| N            | 無           | 3D 向量 ( x、y 和 z 浮點值)                    | 頂點標準。                                                                                         |
+| H            | 無           | 3D 向量 ( x、y 和 z 浮點值)                    | 半程向量。 請參閱有關半程向量的一節。                                                |
 | <sup>P</sup> | 0.0           | 浮點數                                                   | 鏡面反射力。 範圍是 0 到 + 無限大                                                     |
 | Lₛ           | (0,0,0,0)     | 紅色、綠色、藍色以及 alpha 透明度（浮點值） | 淺色反射。                                                                                  |
 | Atten        | 無           | 浮點數                                                   | 光衰減值。 參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。 |
@@ -55,13 +55,13 @@ Cₛ 的值為：
 -   頂點色彩 2，如果反射材料來源是反射頂點色彩，而且第二個頂點色彩是在頂點宣告中提供。
 -   材料反射色彩
 
-**注意：** 如果任一個反射材料來源選項，並且未提供頂點色彩，則會使用材料反射色彩。
+**附註**  如果任一反射材質的來源選項使用和未提供的端點色彩，則使用材質反射色彩。
 
  
 
 所有的光分開處理和插補之後，反射元件會鉗制為從 0 到 255。
 
-## <a name="span-idthehalfwayvectorspanspan-idthehalfwayvectorspanspan-idthehalfwayvectorspanthe-halfway-vector"></a><span id="The_Halfway_Vector"></span><span id="the_halfway_vector"></span><span id="THE_HALFWAY_VECTOR"></span>半程向量
+## <a name="span-idthehalfwayvectorspanspan-idthehalfwayvectorspanspan-idthehalfwayvectorspanthe-halfway-vector"></a><span id="The_Halfway_Vector"></span><span id="the_halfway_vector"></span><span id="THE_HALFWAY_VECTOR"></span>中間時的向量
 
 
 半程向量 (H) 存在於兩個向量之間路程的一半：從物件頂點到光源的向量，以及從物件頂點到相機位置的向量。 Direct3D 提供兩種方式來計算半程向量。 當相機相對的反射強光啟用（而不是正交反射強光）時，系統會使用相機位置、頂點位置，加上光的方向向量，計算半程向量。 下列公式說明這點。
@@ -74,9 +74,9 @@ Cₛ 的值為：
 
 | 參數       | 預設值 | 類型                                          | 描述                                                  |
 |-----------------|---------------|-----------------------------------------------|--------------------------------------------------------------|
-| Cₚ              | 無           | 3D 向量 (x、y 和 z 浮點值) | 相機位置。                                             |
-| Vₚ              | 無           | 3D 向量 (x、y 和 z 浮點值) | 頂點位置。                                             |
-| L<sub>dir</sub> | N/A           | 3D 向量 (x、y 和 z 浮點值) | 從頂點位置至光線位置的方向向量。 |
+| Cₚ              | 無           | 3D 向量 ( x、y 和 z 浮點值) | 相機位置。                                             |
+| Vₚ              | 無           | 3D 向量 ( x、y 和 z 浮點值) | 頂點位置。                                             |
+| L<sub>dir</sub> | 無           | 3D 向量 ( x、y 和 z 浮點值) | 從頂點位置至光線位置的方向向量。 |
 
  
 
@@ -95,7 +95,7 @@ Cₛ 的值為：
 
 在這個範例，物件使用場景反射淺色和材料反射色彩來著色。
 
-根據方程式，為物件端點產生的色彩是材料色彩和淺色的組合。
+根據方程式，為物件端點產生的色彩是材質色彩和淺色的組合。
 
 下列兩圖顯示反射材料色彩 (灰色)，以及反射淺色 (白色)。
 
@@ -114,7 +114,7 @@ Cₛ 的值為：
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光源的數學計算](mathematics-of-lighting.md)
+[光源的數學運算](mathematics-of-lighting.md)
 
  
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927504"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602613"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Windows 執行階段類型的 .NET Framework 對應
 
@@ -24,7 +24,7 @@ ms.locfileid: "8927504"
 
 在 UWP 與 .NET Framework 中具有相同命名空間名稱與類型名稱的類型，大部分都是結構 (或是與結構相關聯的類型，例如列舉)。 在 UWP 中，結構沒有欄位以外的成員，而且必須有協助程式類型 (.NET Framework 會隱藏此類型)。 這些結構的 .NET Framework 版本具有相關屬性與方法，可提供隱藏的協助程式類型的功能。
 
-表 1：與具有不同名稱和 (或) 命名空間的 .NET Framework 類型相對應的 UWP 類型。
+表 1:UWP 型別對應至不同的名稱及/或命名空間的.NET Framework 型別。
 
 | UWP 類型/命名空間                                            | .NET Framework 類型/命名空間                                          | .NET Framework 組件                           |
 |---------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
@@ -57,23 +57,23 @@ ms.locfileid: "8927504"
 
  
 
-表 2：與具有相同名稱和命名空間的 .NET Framework 類型相對應的 UWP 類型。
+表 2:UWP 型別對應至具有相同的名稱和命名空間的.NET Framework 型別。
 
 | 命名空間                           | 類型               | .NET Framework 組件                   |
 |-------------------------------------|--------------------|-------------------------------------------|
-| Windows.UI                          | Color              | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | Point              | System.Runtime.WindowsRuntime.dll         |
+| Windows.UI                          | 色彩              | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | 點              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | Rect               | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | Size               | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | 大小               | System.Runtime.WindowsRuntime.dll         |
 | Windows.UI.Xaml.Input               | ICommand           | System.ObjectModel.dll                    |
 | Windows.UI.Xaml                     | CornerRadius       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml                     | Duration           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml                     | 持續時間           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | DurationType       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | GridLength         | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | GridUnitType       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | Thickness          | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml.Controls.Primitives | GeneratorPosition  | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml.Media               | Matrix             | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml.Media               | 矩陣             | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml.Media.Animation     | KeyTime            | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml.Media.Animation     | RepeatBehavior     | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml.Media.Animation     | RepeatBehaviorType | System.Runtime.WindowsRuntime.UI.Xaml.dll |

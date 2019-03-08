@@ -7,21 +7,21 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c1cc6e17d95f55cc97af7695c12b374edcaaa8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936386"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632883"
 ---
 # <a name="use-the-compass"></a>使用指南針
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**指南針**](https://msdn.microsoft.com/library/windows/apps/BR225705)
+-   [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)
 
-**範例**
+**Sample**
 
 -   如需更完整的實作，請參閱[指南針範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass)。
 
@@ -29,9 +29,9 @@ ms.locfileid: "8936386"
 
 應用程式可以根據磁極或正北方來擷取目前所朝向的方向。 導航應用程式會使用指南針來判斷裝置所朝向的方向，然後據此設定地圖方位。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
-您應該熟悉 Extensible Application Markup 語言 (XAML)、 Microsoft VisualC # 及事件。
+您應該先熟悉使用 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
 
 您使用的裝置或模擬器必須支援指南針。
 
@@ -41,7 +41,7 @@ ms.locfileid: "8936386"
 
 ### <a name="instructions"></a>指示
 
--   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
+-   從 [Visual C#] 專案範本中選擇 [空白應用程式 (通用 Windows)] 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -134,11 +134,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **CompassCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="CompassCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:CompassCS"`。
 
--   按 F5 或選取 **\[偵錯\]** > **\[開始偵錯\]** 以建置、部署及執行 App。
+-   按 F5 或選取 [偵錯] >  [開始偵錯] 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更指南針值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** > **\[停止偵錯\]** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯] >  [停止偵錯] 以停止 App。
 
 ### <a name="explanation"></a>說明
 

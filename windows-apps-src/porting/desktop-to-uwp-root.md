@@ -1,81 +1,81 @@
 ---
-Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monetization.
+Description: 為您現有的 Windows Forms、WPF 或 Win32 應用程式或遊戲建立現代化 Windows 應用程式套件。 新增新式體驗 Windows 10 使用者，並簡化部署和營收。
 Search.Product: eADQiWindows 10XVcnh
 title: 封裝傳統型應用程式
 ms.date: 09/05/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 70a9b6046e3b7be9ac84678ac21c0c9f89a4a7b2
-ms.sourcegitcommit: 1a4bbfb8495e2f414deac5ee050ab679a78b1717
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "9089750"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627823"
 ---
-# <a name="package-desktop-applications-desktop-bridge"></a>封裝傳統型應用程式 （傳統型橋接器）
+# <a name="package-desktop-applications-desktop-bridge"></a>桌面應用程式封裝 （傳統型橋接器）
 
-運用現有的傳統型應用程式，新增適用於 Windows 10 使用者的現代化體驗。 接著，透過 Microsoft Store 散佈您的應用程式，達到跨國際市場的更大覆蓋率。 您可以利用市集內建的功能，從您的應用程式獲利中更簡單的方式。 當然，您不一定需要使用 Store。 歡迎使用您現有的通道。
+將您現有的桌面應用程式，並新增新式體驗 Windows 10 使用者。 接著，透過 Microsoft Store 散佈您的應用程式，達到跨國際市場的更大覆蓋率。 您可以利用內建的存放區的功能，更簡單的方式在銷售您的應用程式。 當然，您不一定需要使用 Store。 歡迎使用您現有的通道。
 
 ![傳統型橋接器](images/desktop-to-uwp/desktop-bridge-4.png)
 
-當您建立的封裝傳統型應用程式時，您的應用程式將會取得一個身分識別，並透過該身分識別，傳統型應用程式有存取 Windows 通用平台 (UWP) Api。 您可以使用它們來提供現代化的吸引人體驗，例如動態磚和通知。  使用簡單的條件式編譯和執行階段檢查來執行 Windows 10 上的應用程式時，才執行 UWP 程式碼。
+當您建立封裝傳統型應用程式時，您的應用程式會取得的身分識別，並與該身分識別，您的桌面應用程式具有存取以 Windows 通用平台 (UWP) Api。 您可以使用它們來提供現代化的吸引人體驗，例如動態磚和通知。  使用簡單的條件式編譯和執行階段會檢查只有在 Windows 10 上執行的應用程式時，才執行 UWP 程式碼。
 
-除了您用來增強 Windows 10 體驗的程式碼，您的應用程式會保持不變，您可以繼續將其提供給您現有的 Windows 7、 Windows Vista 或 Windows XP 使用者基礎。 在 Windows 10，您的應用程式會繼續執行完全信任使用者模式，就像往常。
+除了您用來體驗 Windows 10 點亮的程式碼，您的應用程式會保持不變，並將它散發給您現有的 Windows 7、 Windows Vista 或 Windows XP 使用者基底時，您可以繼續。 在 Windows 10 上您的應用程式會繼續在完全信任中執行使用者模式，就像它現今。
 
 >[!IMPORTANT]
->在 Windows 10，版本 1607 開始，引進了能夠建立 （亦稱為傳統型橋接器） 的傳統型應用程式的 Windows 應用程式套件和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
+>Windows 10 版本 1607年中引進了能夠建立您的桌面應用程式 （亦稱為傳統型橋接器） 是 Windows 應用程式套件，它僅適用於 Windows 10 Anniversary Update (10.0; 為目標的專案中組建 14393） 或更新版本，在 Visual Studio 中的。
 
 > [!NOTE]
-> 請查看<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">此系列</a>由 Microsoft Virtual Academy 發行的簡短影片。 這些影片逐步引導您完成將您的傳統型應用程式至通用 Windows 平台 (UWP) 的整個程序。
+> 請查看<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">此系列</a>由 Microsoft Virtual Academy 發行的簡短影片。 這些影片會引導您完成將您的桌面應用程式到通用 Windows 平台 (UWP) 中的整個程序。
 
-## <a name="benefits"></a>權益
+## <a name="benefits"></a>優點
 
 以下是一些為傳統型應用程式建立 Windows 應用程式套件的理由︰
 
-:heavy_check_mark: **簡化部署**。 使用橋接器的應用程式和遊戲具備了良好的部署體驗。 這個體驗可確保使用者可以放心地安裝應用程式，並更新它。 如果使用者選擇解除安裝應用程式，系統將會完全移除它，且不會留下任何痕跡。 這能縮短編寫安裝體驗的時間，並讓使用者擁有最新的更新。
+:heavy_check_mark:**簡化部署**。 使用橋接器的應用程式和遊戲具備了良好的部署體驗。 這項體驗可確保使用者可以自信滿滿地安裝應用程式，並更新它。 如果使用者選擇解除安裝 App，系統將會完全移除它，且不會留下任何痕跡。 這能縮短編寫安裝體驗的時間，並讓使用者擁有最新的更新。
 
-:heavy_check_mark: **自動更新和授權**。 您的應用程式可以參與 Microsoft Store 的內建授權和自動更新功能。 由於自動更新只會下載檔案已變更的部分，因此是一項非常可靠又有效率的機制。
+:heavy_check_mark:**自動更新和授權**。 您的應用程式可以參與 Microsoft Store 的內建授權和自動更新功能。 由於自動更新只會下載檔案已變更的部分，因此是一項非常可靠又有效率的機制。
 
-:heavy_check_mark: **增加觸達對象並簡化營利**。 選擇透過 Microsoft Store 來散布，可讓您的觸達對象擴展至數百萬的 Windows10 使用者，而他們可以利用當地的付款選項來取得應用程式、遊戲，並進行 App 內購買。
+:heavy_check_mark:**增加觸達對象並簡化營利**。 選擇透過 Microsoft Store 來散布，可讓您的觸達對象擴展至數百萬的 Windows 10 使用者，而他們可以利用當地的付款選項來取得應用程式、遊戲，並進行 App 內購買。
 
-:heavy_check_mark: **增加 UWP 功能**。  依照您自己的步調，您可以將 UWP 功能新增到您的應用程式套件，例如 XAML 使用者介面、動態磚更新、UWP 背景工作、應用程式服務，以及其他更多項目。
+:heavy_check_mark:**新增 UWP 功能**。  依照您自己的步調，您可以將 UWP 功能新增到您的應用程式套件，例如 XAML 使用者介面、動態磚更新、UWP 背景工作、應用程式服務，以及其他更多項目。
 
-:heavy_check_mark: **跨裝置擴展使用案例**。 使用橋接器，您可以逐漸將程式碼移轉到通用 Windows 平台，以觸達所有的 Windows10 裝置類型，包括手機、Xbox One 和 HoloLens。
+:heavy_check_mark:**跨裝置擴展使用案例**。 使用橋接器，您可以逐漸將程式碼移轉到通用 Windows 平台，以觸達所有的 Windows 10 裝置類型，包括手機、Xbox One 和 HoloLens。
 
 若要檢視其帶來優點的更完整清單，請參閱[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)。
 
 ## <a name="prepare"></a>準備
 
-首先，準備您的應用程式透過檢閱文章[準備封裝傳統型應用程式](desktop-to-uwp-prepare.md)，並解決任何適用於您的應用程式建立 Windows 應用程式套件為它之前的問題會影響。 您可能不需要建立套件之前，對您的應用程式進行任何變更。 不過，有一些情況下，您可能需要為其建立套件之前調整您的應用程式。
+首先，藉由檢閱文件準備您的應用程式[來封裝傳統型應用程式準備](desktop-to-uwp-prepare.md)，並再解決任何問題，將套用至您的應用程式才能為其建立 Windows 應用程式套件。 您可能沒有在建立套件之前，您的應用程式進行許多變更。 不過，有一些情況下，可能會要求您為其建立套件之前，請調整您的應用程式。
 
 <a id="convert" />
 
-## <a name="package"></a>套件
+## <a name="package"></a>封裝
 
 以下是一些您可以用來為您的應用程式建立 Windows 應用程式套件的工具。
 
 ### <a name="desktop-app-converter"></a>Desktop App Converter
 
-雖然此工具的名稱中出現「Converter」(轉換器) 這個詞，但它並不會轉換您的應用程式。 您的應用程式會保持不變。 不過，這項工具會為您產生 Windows 應用程式套件。 它可以是非常方便的情況下，您的應用程式進行大量系統修改，或如果您有任何確定性您的安裝程式。
+雖然此工具的名稱中出現「Converter」(轉換器) 這個詞，但它並不會轉換您的應用程式。 您的應用程式維持不變。 不過，這項工具會為您產生 Windows 應用程式套件。 您的應用程式可以讓很多系統的修改，或如果您有任何不確定性，安裝程式所執行的作業的相關，它會在情況下很方便。
 
-Desktop App Converter 會將轉譯的虛擬檔案及登錄系統，您的應用程式的已封裝的版本將會使用您安裝程式的動作。 Desktop App Converter 也會為您完成其他幾個項目。 以下是一些範例。
+Desktop App Converter 會將轉譯的虛擬檔案及登錄系統將使用您的應用程式封裝的版本的安裝程式的動作。 Desktop App Converter 也會為您完成其他幾個項目。 以下是一些範例。
 
-:heavy_check_mark: 自動註冊您的預覽處理常式、縮圖處理常式、屬性處理常式、防火牆規則、URL 旗標。
+:heavy_check_mark:自動註冊您的預覽處理常式、縮圖處理常式、屬性處理常式、防火牆規則、URL 旗標。
 
-:heavy_check_mark: 自動註冊檔案類型對應，讓使用者可以在檔案總管中使用 **\[類型\]** 欄位群組檔案。
+:heavy_check_mark:自動暫存器檔案使用，以啟用使用者群組檔案的類型對應**種類**檔案總管 中的資料行。
 
-:heavy_check_mark: 註冊您的公用 COM 伺服器。
+:heavy_check_mark:註冊您公開的 COM 伺服器。
 
-: heavy_check_mark： 產生憑證，您可以用來執行您的應用程式。
+:heavy_check_mark:產生可用來執行您的應用程式的憑證。
 
-: heavy_check_mark： 驗證您的應用程式已封裝的傳統型應用程式與 Microsoft Store 需求。
+:heavy_check_mark:驗證您的應用程式封裝的桌面應用程式和 Microsoft Store 的需求。
 
-另一個使用 Desktop App Converter 的更好理由是如果您使用 Visual Studio 以外的開發環境來維護您的應用程式。 即使您的應用程式沒有安裝程式，您可以使用 Desktop App Converter。
+使用 Desktop App Converter 的另一個很棒的原因是如果您使用 Visual Studio 以外的不同的開發環境維護您的應用程式。 您可以使用 Desktop App Converter，即使您的應用程式沒有安裝程式。
 
-請參閱[封裝的傳統型應用程式使用 Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)
+請參閱[封裝使用 Desktop App Converter 傳統型應用程式](desktop-to-uwp-run-desktop-app-converter.md)
 
 ### <a name="visual-studio"></a>Visual Studio
 
@@ -83,23 +83,23 @@ Desktop App Converter 會將轉譯的虛擬檔案及登錄系統，您的應用�
 
 使用 Visual Studio 建立套件非常簡單。 您只需加入封裝專案、參考桌面專案，然後按 F5 對您的應用程式進行偵錯。 不需進行任何手動調整。 這個有效率的全新體驗可以大幅改善舊版 Visual Studio 中所提供的體驗。 以下是您能使用它來做到的一些其他事情。
 
-:heavy_check_mark: 自動產生視覺資產。
+:heavy_check_mark:自動產生視覺資產。
 
-:heavy_check_mark: 使用視覺化設計工具來變更您的資訊清單。
+:heavy_check_mark:使用視覺化設計工具，以您的資訊清單中進行變更。
 
-:heavy_check_mark: 使用精靈產生您的套件。
+:heavy_check_mark:使用精靈，以產生您的套件。
 
-: heavy_check_mark： 從您已保留在[合作夥伴中心](https://partner.microsoft.com/dashboard)的名稱，輕鬆指派給您的應用程式的身分識別。
+:heavy_check_mark:從已保留在一個名稱，輕鬆地將身分識別指派給您的應用程式[合作夥伴中心](https://partner.microsoft.com/dashboard)。
 
-請參閱[使用 Visual Studio 的傳統型應用程式套件](desktop-to-uwp-packaging-dot-net.md)
+請參閱[使用 Visual Studio 封裝傳統型應用程式](desktop-to-uwp-packaging-dot-net.md)
 
 ### <a name="third-party-installer"></a>協力廠商安裝程式
 
- 一些受歡迎的協力廠商產品及安裝程式現在支援封裝傳統型應用程式的能力。 您可以使用他們來產生 MSI 安裝程式，或是透過只按幾下來完成應用程式套件。 雖然我們不會提供關於這些工具使用方式的說明文件，您還是可以瀏覽他們的網站以深入了解。
+ 數個熱門協力廠商產品和安裝程式現在支援封裝傳統型應用程式的能力。 您可以使用他們來產生 MSI 安裝程式，或是透過只按幾下來完成應用程式套件。 雖然我們不會提供關於這些工具使用方式的說明文件，您還是可以瀏覽他們的網站以深入了解。
 
 #### <a name="advanced-installer"></a>Advanced Installer
 
-Caphyon 提供免費、GUI 式的傳統型應用程式封裝工具，協助您透過只按幾下來為您的應用程式產生 Windows 應用程式套件。 它可以使用任何安裝程式;即使是以無訊息模式執行，並能執行驗證檢查以判斷是否為適用於封裝應用程式。
+Caphyon 提供免費、GUI 式的傳統型應用程式封裝工具，協助您透過只按幾下來為您的應用程式產生 Windows 應用程式套件。 它可以使用任何安裝程式;即使是以無訊息模式執行，並執行驗證檢查，以判斷是否適合用來封裝應用程式。
 Desktop App Converter 也整合了 Hyper-V 和 [VMWare](https://www.vmware.com/)。 這表示，您可以使用您自己的虛擬電腦，而不需要下載大小可能超過 3 GB 的相對應[Docker](https://docs.docker.com/) 映像。
 
 <img width="20%" src="images/desktop-to-uwp/Advanced_Installer_Vertical.png">
@@ -119,7 +119,7 @@ Advanced Installer 也提供了適用於 Visual Studio 2017 及 2015 的延伸�
 
 <img width="20%" src="images/desktop-to-uwp/cloudhouse-container-logo.png">
 
-Cloudhouse 提供 Auto Packager，可將企業營運應用程式封裝為現今應用程式所執行作業系統 (例如，Windows XP) 上的[相容性容器](https://docs.cloudhouse.com/37613-overview/266723-compatibility-containers-for-applications)，以及[準備轉換](https://docs.cloudhouse.com/37613-overview/266725-compatibility-containers-for-desktop-bridge?from_search=17883905)為 UWP。 接著可將容器整合至 Microsoft Desktop App Converter 工具以轉換為新的 Windows 應用程式套件格式。
+Cloudhouse 封裝企業營運應用程式，到提供自動 Packager[相容性容器](https://docs.cloudhouse.com/37613-overview/266723-compatibility-containers-for-applications)應用程式上執行目前的作業系統 (例如：Windows XP)，然後[準備轉換](https://docs.cloudhouse.com/37613-overview/266725-compatibility-containers-for-desktop-bridge?from_search=17883905)至 UWP。 接著可將容器整合至 Microsoft Desktop App Converter 工具以轉換為新的 Windows 應用程式套件格式。
 
 Auto Packager 使用安裝/擷取和執行階段分析來建立應用程式的容器，其中包括應用程式檔案、登錄、執行階段及相依性，以及能讓應用程式在 Windows 10 上執行所需的相容性及重新導向引擎。 容器提供應用程式及其執行階段的隔離，因此它們不會影響或與其他在使用者裝置上執行的應用程式相衝突。
 
@@ -127,15 +127,15 @@ Auto Packager 使用安裝/擷取和執行階段分析來建立應用程式的�
 
 #### <a name="firegiant"></a>FireGiant
 
-[FireGiant MSIX 擴充功能](https://www.firegiant.com/products/wix-expansion-pack/msix)可讓您從相同的 WiX 原始碼同時建立 Windows 應用程式套件和 MSI 套件。 每次組建時，您可以目標為 Windows 10 與 Windows 應用程式套件和舊版 Windows 與 MSI。
+[FireGiant MSIX 擴充](https://www.firegiant.com/products/wix-expansion-pack/msix)可讓您從相同的 WiX 原始碼同時建立 Windows 應用程式套件與 MSI 套件。 每次建置時，您可以針對 Windows 10 與 Windows 應用程式套件和舊版 Windows 使用 MSI。
 
 <img width="20%" src="images/desktop-to-uwp/FG3rdPartyLogo.png">
 
-FireGiant MSIX 擴充功能使用靜態分析及 WiX 專案的智慧型模擬，建立 Windows 應用程式套件，不需要容器或虛擬機器的磁碟空間和執行階段額外負荷。
+FireGiant MSIX 延伸模組會使用靜態分析和智慧型模擬 WiX 專案建立 Windows 應用程式套件，而不需要容器或虛擬機器的磁碟空間和執行階段額外負荷。
 
-由於 FireGiant MSIX 擴充功能不會透過執行來轉換您的安裝程式，因此您可以維持 WiX 安裝程式，而不需要將其重複轉換成 Windows 應用程式套件。 在不同版本 Windows 上的所有使用者都能取得最新改進，您不必擔心 MSI 和 Windows 應用程式套件無法同步。
+因為 FireGiant MSIX 延伸模組不會執行轉換您的安裝程式，您可以維護 WiX 安裝程式，而不必重複將它轉換成 Windows 應用程式套件。 在不同版本 Windows 上的所有使用者都能取得最新改進，您不必擔心 MSI 和 Windows 應用程式套件無法同步。
 
-請查看此[影片](https://www.youtube.com/watch?v=AFBpdBiAYQE)，並查看如何使用幾行程式碼中 FireGiant CEO Rob Mensching 就建立熱門開放原始碼 7-zip 壓縮工具的 Appx （Windows 應用程式套件） 版本，接著如何改進 Windows 應用程式和 MSI 套件在相同 WiX 原始碼中的變更。
+請參閱這[視訊](https://www.youtube.com/watch?v=AFBpdBiAYQE)並查看如何幾行程式碼 FireGiant CEO Rob mensching 撰寫建立 Appx （Windows 應用程式套件） 的受歡迎的開放原始碼 7 Zip 壓縮工具版本，然後如何改進這兩個 Windows 應用程式和MSI 封裝中相同的 WiX 原始碼的變更。
 
 #### <a name="installaware"></a>InstallAware
 
@@ -149,7 +149,7 @@ Install**Aware** 提供適用於 Visual Studio 版本 2012-2017 的免費 Instal
 
 [進階 APPX 建立選項](https://www.installaware.com/mhtml5/desktop/appx.htm)可協助您針對 Microsoft Store 提交，或產生已簽署的 Windows 應用程式套件二進位檔以便側載散佈給使用者。 您甚至可以透過單一來源建立 **WSA** (Windows Server 應用程式) 安裝程式套件並鎖定部署至 **Nano Server**，以及除了 GUI 以外，還能獲得[命令列自動化](https://www.installaware.com/scripting-automation-interface.htm)的完整支援。
 
-Install**Aware** 也[以開放原始碼的方式提供](https://www.installaware.com/gnu.asp)** APPX 建立器程式庫**，加上範例命令列小程式，一起以 GNU Affero GPL 授權提供。 這些專供開放原始碼平台 (例如 WiX) 搭配使用。
+Install**Aware** 也[以開放原始碼的方式提供](https://www.installaware.com/gnu.asp) **APPX 建立器程式庫**，加上範例命令列小程式，一起以 GNU Affero GPL 授權提供。 這些專供開放原始碼平台 (例如 WiX) 搭配使用。
 
 #### <a name="installshield"></a>InstallShield
 
@@ -183,7 +183,7 @@ InstallShield 提供單一解決方案，用以開發 MSI 和 EXE 安裝程式�
 
 #### <a name="raypack-studio"></a>RayPack Studio
 
-Raynet 的封裝解決方案， [RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio)中，做為有效率且易於設定之轉換及重新封裝架構的幾個可能途徑之一的傳統型應用程式支援建立的套件。
+Raynet 的封裝方案[RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio)、 桌面應用程式的支援封裝建立，做為其中一個有效率且輕鬆設定轉換的數個可能的結果，及重新封裝架構。
 
 <img width="20%" src="images/desktop-to-uwp/RaynetLogo_v3.png">
 
@@ -207,25 +207,25 @@ Raynet 的封裝解決方案， [RayPack Studio](https://raynet.de/Raynet-Produc
 
 ### <a name="manual-packaging"></a>手動封裝
 
-最後的選擇，您可以將您的應用程式轉換而不使用任何這些工具。 若您希望細微控制您的轉換，您可以建立一個資訊清單檔，然後執行 **MakeAppx.exe** 工具來建立您的 Windows 應用程式套件。
+做為最終的選項，您可以不使用任何一種工具來轉換您的應用程式。 若您希望細微控制您的轉換，您可以建立一個資訊清單檔，然後執行 **MakeAppx.exe** 工具來建立您的 Windows 應用程式套件。
 
-請參閱[手動封裝的傳統型應用程式](desktop-to-uwp-manual-conversion.md)。
+請參閱[手動封裝傳統型應用程式](desktop-to-uwp-manual-conversion.md)。
 
 ## <a name="integrate"></a>整合
 
-如果您的應用程式需要與系統整合 (例如： 建立防火牆規則) 描述這些項目，您的應用程式套件資訊清單中，系統會替您完成其餘。 針對大部分的工作，您完全不需要撰寫任何程式碼。 提供一些 XML 資訊清單中，您可以執行動作，例如當使用者登入時啟動處理程序，將您的應用程式整合至檔案總管] 中，並新增您的應用程式的其他應用程式中出現的列印目標清單。
+如果您的應用程式需要與系統整合 (例如： 建立防火牆規則)、 描述您的應用程式的套件資訊清單中的這些項目，以及系統將會完成其餘部分。 針對大部分的工作，您完全不需要撰寫任何程式碼。 位元的 XML 資訊清單中，您可以執行動作像是啟動處理序，當使用者登入時，將您的應用程式整合到 [檔案總管] 中，新增您的應用程式的列印目標出現在其他應用程式清單。
 
-請參閱[您已封裝的傳統型應用程式與 Windows 10 整合](desktop-to-uwp-extensions.md)。
+請參閱[整合您封裝的桌面應用程式與 Windows 10](desktop-to-uwp-extensions.md)。
 
 ## <a name="enhance"></a>增強
 
-封裝您的應用程式之後，您就可以使用一些功能，例如：動態磚，以及推播通知等美化您的應用程式。 這些功能的一些可大幅改善您的應用程式的參與程度，以及他們只需要花費您一點時間來新增。 一些增強功能則可能需要多一點程式碼。
+封裝您的應用程式之後，您就可以使用一些功能，例如：動態磚，以及推播通知等美化您的應用程式。 某些功能可以大幅改善您的應用程式的參與度，這些成本將很短的時間。 一些增強功能則可能需要多一點程式碼。
 
 請參閱[增強您的 Windows 10 傳統型應用程式](desktop-to-uwp-enhance.md)。
 
 ## <a name="extend"></a>擴充
 
-有些 Windows 10 體驗 (例如：具有觸控功能的 UI 頁面) 必須在現代化應用程式容器中執行。 一般而言，您應該先判斷是否可以使用 UWP API 透過[增強](desktop-to-uwp-enhance.md)現有的傳統型應用程式來新增體驗。 如果您有使用 UWP 元件來達成體驗，然後您可以將 UWP 專案新增至您的方案並使用您的傳統型應用程式和 UWP 元件之間通訊的應用程式服務。
+有些 Windows 10 體驗 (例如：具有觸控功能的 UI 頁面) 必須在現代化應用程式容器中執行。 一般而言，您應該先判斷是否可以使用 UWP API 透過[增強](desktop-to-uwp-enhance.md)現有的傳統型應用程式來新增體驗。 如果您有使用 UWP 元件，來達到體驗，然後您可以將 UWP 專案新增至您的解決方案和使用桌面應用程式和 UWP 元件之間進行通訊的應用程式服務。
 
 請參閱[使用現代化 UWP 元件擴充您的傳統型應用程式](desktop-to-uwp-extend.md)。
 
@@ -242,16 +242,16 @@ Raynet 的封裝解決方案， [RayPack Studio](https://raynet.de/Raynet-Produc
 
 ## <a name="test"></a>測試
 
-若要測試您的應用程式逼真的設定，當您準備散布，最好要登入您的應用程式，然後再安裝它。 請參閱[測試您的應用程式](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app)。
+當您準備散發，請在實際的設定中測試應用程式，最好是登入您的應用程式，然後再安裝它。 請參閱[測試您的應用程式](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app)。
 
 >[!IMPORTANT]
-> 如果您打算發行至 Microsoft Store 的應用程式，請確定您的應用程式執行 Windows 10 的 S 模式的裝置上正確運作。 這是 Microsoft Store 的要求條件。 請參閱[針對 Windows 10 S 模式測試您的 Windows 應用程式](desktop-to-uwp-test-windows-s.md)。
+> 如果您打算在應用程式發佈至 Microsoft Store，請確定您的應用程式可在 S 模式中執行 Windows 10 的裝置上正確運作。 這是 Microsoft Store 的要求條件。 請參閱[針對 Windows 10 S 模式測試您的 Windows 應用程式](desktop-to-uwp-test-windows-s.md)。
 
 ## <a name="validate"></a>驗證
 
-若要讓您的應用程式能順利在 Microsoft Store 上發行或成為[Windows 認證](https://go.microsoft.com/fwlink/p/?LinkID=309666)，驗證和測試在本機送出以進行認證之前。
+提供給您的應用程式最有可能在 Microsoft Store 上發行或獲得[Windows 認證](https://go.microsoft.com/fwlink/p/?LinkID=309666)、 驗證以及在本機測試之前您提交連接器等待認證。
 
-如果您正在使用 DAC 封裝您的應用程式，您可以使用新的``-Verify``旗標，以驗證您的套件，針對已封裝的傳統型應用程式與市集需求。 請參閱[封裝應用程式，簽署應用程式，並準備提交 Store](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters)。
+如果您使用 DAC 來封裝應用程式，您可以使用新``-Verify``旗標，以驗證您的套件存放區需求與已封裝的桌面應用程式。 請參閱[封裝應用程式，簽署應用程式，並準備提交 Store](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters)。
 
 如果您使用 Visual Studio，您可以驗證您的應用程式，從**建立應用程式套件**精靈。 請參閱[建立應用程式套件上傳檔案](../packaging/packaging-uwp-apps.md#create-an-app-package-upload-file)。
 
@@ -259,19 +259,19 @@ Raynet 的封裝解決方案， [RayPack Studio](https://raynet.de/Raynet-Produc
 
 若要檢閱 Windows 應用程式認證用來驗證您應用程式的測試清單，請參閱 [Windows 傳統型橋接器應用程式測試](../debug-test-perf/windows-desktop-bridge-app-tests.md)。
 
-## <a name="distribute"></a>散發
+## <a name="distribute"></a>散佈
 
-您可以發佈您的應用程式，透過 Microsoft Store 發行，或是側載至其他系統。
+您可以將您的應用程式散發發行 Microsoft Store 或側載到其他系統。
 
-請參閱[散發的已封裝的傳統型應用程式](desktop-to-uwp-distribute.md)。
+請參閱[封裝的桌面應用程式散發](desktop-to-uwp-distribute.md)。
 
 ## <a name="support-and-feedback"></a>支援與意見反應
 
-**尋找您的問題解答**
+**尋找問題的解答**
 
 有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
-**提供意見反應或功能建議**
+**提供意見反應或提出功能建議**
 
 請參閱 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
@@ -279,14 +279,14 @@ Raynet 的封裝解決方案， [RayPack Studio](https://raynet.de/Raynet-Produc
 
 | 主題 | 描述 |
 |-------|-------------|
-| [準備封裝應用程式](desktop-to-uwp-prepare.md) | 提供項目清單，可讓您在封裝傳統型應用程式前檢閱。 |
-| [使用 Desktop App Converter 封裝應用程式](desktop-to-uwp-run-desktop-app-converter.md) | 說明如何執行 Desktop App Converter。 |
-| [手動封裝的傳統型應用程式](desktop-to-uwp-manual-conversion.md) | 了解如何手動建立應用程式套件和資訊清單。 |
-| [封裝傳統型應用程式使用 Visual Studio](desktop-to-uwp-packaging-dot-net.md)| 示範如何使用 Visual Studio 封裝傳統型應用程式。 |
-| [傳統型應用程式整合至 Windows 10](desktop-to-uwp-extensions.md) | 整合您的應用程式與 Windows 10，使用您的封裝專案的封裝資訊清單檔案中描述的工作。 |
-| [增強您的 Windows 10 傳統型應用程式](desktop-to-uwp-enhance.md)| 使用 UWP API 新增適用於 Windows 10 使用者的現代化體驗。 |
-| [UWP Api 適用於已封裝的傳統型應用程式](desktop-to-uwp-supported-api.md) | 請參閱哪些 UWP Api 可供您已封裝的傳統型應用程式使用。 |
-| [使用現代化 UWP 元件擴充您的傳統型應用程式](desktop-to-uwp-extend.md)| 新增必須在 UWP app 容器中執行的進階體驗。 使用應用程式服務，傳統型應用程式連線與 UWP 處理程序。|
-| [執行、 偵錯以及測試封裝的傳統型應用程式](desktop-to-uwp-debug.md) | 說明可用來偵錯已封裝之應用程式的選項。 |
-| [散佈封裝的傳統型應用程式 ](desktop-to-uwp-distribute.md) | 您可以如何散發您已轉換的應用程式給使用者，請參閱。  |
-| [已知的 Issues(desktop-to-uwp-known-issues.md) | 列出封裝傳統型應用程式的已知問題。 |
+| [準備將應用程式封裝](desktop-to-uwp-prepare.md) | 提供項目清單，可讓您在封裝傳統型應用程式前檢閱。 |
+| [使用 Desktop App Converter 將應用程式封裝](desktop-to-uwp-run-desktop-app-converter.md) | 說明如何執行 Desktop App Converter。 |
+| [手動封裝傳統型應用程式](desktop-to-uwp-manual-conversion.md) | 了解如何手動建立應用程式套件和資訊清單。 |
+| [使用 Visual Studio 的桌面應用程式封裝](desktop-to-uwp-packaging-dot-net.md)| 說明如何使用 Visual Studio 封裝您的桌面應用程式。 |
+| [整合桌面應用程式與 Windows 10](desktop-to-uwp-extensions.md) | 使用描述封裝專案的封裝資訊清單檔案中的工作，與 Windows 10 整合您的應用程式。 |
+| [加強適用於 Windows 10 桌面應用程式](desktop-to-uwp-enhance.md)| 使用 UWP API 新增適用於 Windows 10 使用者的現代化體驗。 |
+| [UWP Api 可用來封裝傳統型應用程式](desktop-to-uwp-supported-api.md) | 查看有哪些 UWP Api 適用於您封裝的桌面應用程式使用。 |
+| [擴充您的桌面應用程式與現代化 UWP 元件](desktop-to-uwp-extend.md)| 新增必須在 UWP app 容器中執行的進階體驗。 使用應用程式服務，您的桌面應用程式連接 UWP 程序。|
+| [執行、 偵錯和測試封裝的桌面應用程式](desktop-to-uwp-debug.md) | 說明可用來偵錯已封裝之應用程式的選項。 |
+| [發佈封裝的桌面應用程式 ](desktop-to-uwp-distribute.md) | 請參閱如何散發您轉換應用程式給使用者。  |
+| [已知的 Issues(desktop-to-uwp-known-issues.md) | 封裝傳統型應用程式的已知問題的清單。 |

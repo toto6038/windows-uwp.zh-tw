@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: dc5e107fd343798698f5957c26d87a0d3ffe6625
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929207"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608623"
 ---
 # <a name="getting-started-animation"></a>開始使用：動畫
 
@@ -68,7 +68,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 重新執行專案，看看矩形的動畫效果。 萬歲！
 
-如果開啟 MainPage.xaml 檔案，在 [**XAML**] 檢視中，您會看到當您在設計工具中工作時 Blend 為您新增的 XAML 程式碼。 請特別看看 `<Storyboard>` 和 `<Rectangle>` 元素中的程式碼。 下列程式碼顯示一個範例。 橢圓形表示為簡潔而省略的不相關程式碼；為了便於閱讀程式碼，我們加入了斷行符號。
+如果開啟 MainPage.xaml 檔案，在 [**XAML**] 檢視中，您會看到當您在設計工具中工作時 Blend 為您新增的 XAML 程式碼。 請特別看看 `<Storyboard>` 和 `<Rectangle>` 元素中的程式碼。 下列程式碼顯示範例。 橢圓形表示為簡潔而省略的不相關程式碼；為了便於閱讀程式碼，我們加入了斷行符號。
 
 ```xml
 ...
@@ -126,8 +126,8 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 您可以以手動方式編輯這個 XAML，或返回 Blend 以繼續處理工作。 Blend 會以好玩的方式建立有趣的使用者介面，而使用圖形工具來製作介面動畫的功能將會大幅縮短開發時間。 如需動畫的詳細資訊，請參閱[動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)。
 
-**注意：** 適用於<span class="legacy-term">使用 JavaScript 和 HTML 的 UWP app</span>中動畫的詳細資訊，請參閱[您的 UI (HTML) 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/hh465165)。
+**附註**  如需動畫的詳細資訊<span class="legacy-term">使用 JavaScript 和 HTML 的 UWP 應用程式</span>，請參閱[以動畫顯示您的 UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
 
-### <a name="next-step"></a>下一步
+### <a name="next-step"></a>後續步驟
 
-[開始使用：後續動作？](getting-started-what-next.md)
+[開始使用：接下來呢？](getting-started-what-next.md)

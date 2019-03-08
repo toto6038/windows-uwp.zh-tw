@@ -5,24 +5,24 @@ template: detail.hbs
 label: Parallax View
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: trestar
 design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044645"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638933"
 ---
 # <a name="person-picture-control"></a>個人圖片控制項
 
 個人圖片控制項會顯示個人的虛擬人偶影像 (如果有的話)。要是沒有，則顯示個人的縮寫名或一般字符。 您可以使用控制項來顯示 [Contact 物件](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) (管理個人連絡資訊的物件)，也可以手動提供連絡人資訊，例如顯示名稱和設定檔圖片。  
 
-> **重要 API**: [PersonPicture 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **重要的 Api**:[PersonPicture 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)，[連絡類別](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)， [ContactManager 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 此圖例顯示兩個個人圖片控制項，伴隨兩個顯示使用者名稱的[文字區塊](text-block.md)元素。 
 ![個人圖片控制項](images/person-picture/person-picture_hero.png)
@@ -36,7 +36,7 @@ ms.locfileid: "9044645"
 * 顯示訊息的寄件者 
 * 顯示社交媒體連絡人
 
-圖中顯示連絡人清單中的個人圖片控制項：![個人圖片控制項](images/person-picture/person-picture-control.png)
+圖顯示個人圖片控制項中的連絡人清單：![個人圖片控制項](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>範例
 
@@ -47,7 +47,7 @@ ms.locfileid: "9044645"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/PersonPicture">開啟應用程式並查看 PersonPicture 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>

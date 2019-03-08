@@ -1,25 +1,25 @@
 ---
-title: 輪廓著色器 (HS) 階段
+title: 輪廓著色器 (HS)階段
 description: 輪廓著色器 (HS) 階段是其中一個鑲嵌階段，有效率地將模型的單一表面分成多個三角形。
 ms.assetid: C62F6F15-CAD7-4C72-9735-00762E346C4C
 keywords:
-- 輪廓著色器 (HS) 階段
+- 輪廓著色器 (HS)階段
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946271"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601053"
 ---
-# <a name="hull-shader-hs-stage"></a>輪廓著色器 (HS) 階段
+# <a name="hull-shader-hs-stage"></a>輪廓著色器 (HS)階段
 
 
 輪廓著色器 (HS) 階段是其中一個鑲嵌階段，有效率地將模型的單一表面分成多個三角形。 輪廓著色器 (HS) 階段會產生幾何塊面 (和塊面常數)，對應每一個輸入塊面 (四方形、三角形或線條)。 輪廓著色器會針對每個塊面叫用一次，並且將定義低位表面的輸入控制點轉換成構成塊面的控制點。 它也會進行一些每個塊面計算，以提供資料給[曲面細分器 (TS) 階段](tessellator-stage--ts-.md)和[網域著色器 (DS) 階段](domain-shader-stage--ds-.md)。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和使用
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
 
 
 ![輪廓著色器階段圖](images/d3d11-hull-shader.png)
@@ -41,7 +41,7 @@ ms.locfileid: "8946271"
 -   輪廓著色器會宣告[曲面細分器 (TS) 階段](tessellator-stage--ts-.md)所需的狀態。 這些資訊包括控制點數目、塊面的類型，以及鑲嵌時分割使用的類型。 這項資訊會顯示為宣告，通常是在著色器程式碼的前方。
 -   鑲嵌係數決定每個塊面要細分成多少數目。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 介於 1 到 32 輸出控制點之間，共同構成塊面。
@@ -68,7 +68,7 @@ MyOutPoint main(uint Id : SV_ControlPointID,
 }
 ```
 
-請參閱[使用方法︰建立輪廓著色器](https://msdn.microsoft.com/library/windows/desktop/ff476338)。
+請參閱[How To:建立 輪廓著色器](https://msdn.microsoft.com/library/windows/desktop/ff476338)。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 

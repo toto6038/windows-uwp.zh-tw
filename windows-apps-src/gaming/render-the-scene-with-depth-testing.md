@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, games, rendering, scene, depth testing, direct3d, shadows, 遊戲, 轉譯, 場景, 深度測試, 陰影
 ms.localizationpriority: medium
 ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924517"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630453"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>使用深度測試轉譯場景
 
 
 
 
-將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第三部分。
+將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。 第 3 個[逐步解說：實作使用 Direct3D 11 中的深度緩衝區的陰影磁碟區](implementing-depth-buffers-for-shadow-mapping.md)。
 
 ## <a name="include-transformation-for-light-frustum"></a>包含光線範圍的轉換
 
@@ -67,7 +67,7 @@ PixelShaderInput main(VertexShaderInput input)
 ## <a name="test-whether-the-position-is-in-the-light-frustum"></a>測試位置是否位於光線範圍中
 
 
-首先，透過將 X 與 Y 座標標準化，以檢查像素是否位於光線的檢視範圍中。 如果它們均位於範圍 \[0, 1\] 內，則像素可能就位於陰影中。 否則，您可以略過深度測試。 著色器可以呼叫 [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) 並根據原始值來比較結果，藉以快速測試此項目。
+首先，透過將 X 與 Y 座標標準化，以檢查像素是否位於光線的檢視範圍中。 如果它們都在範圍內\[0，1\]則很可能要在陰影中像素。 否則，您可以略過深度測試。 著色器可以呼叫 [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) 並根據原始值來比較結果，藉以快速測試此項目。
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.

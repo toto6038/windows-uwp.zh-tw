@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件
 ms.localizationpriority: medium
 ms.openlocfilehash: 287c22cbd50f1b69f505bbddd445740fe9422c31
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981452"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597013"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在舊版應用程式或遊戲中使用 Windows 10 資源管理系統
 
@@ -28,8 +28,8 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 <table>
 <tr>
-<th>工作</th>
-<th>效益</th>
+<th>Work</th>
+<th>優勢</th>
 <th>估計成本</th>
 </tr>
 <tr>
@@ -40,7 +40,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 <tr>
 <td>使用 MRT 識別並找出資源</td>
 <td>下載和安裝大小最小化的先決條件; 自動語言遞補</td>
-<td>中型</td>
+<td>中等</td>
 </tr>
 <tr>
 <td>組建資源套件</td>
@@ -70,25 +70,25 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 如果使用者說的是英文或德文以外的語言，或螢幕縮放比例既不是 100% 也不是 300%，MRT 便會根據一組遞補規則挑選最符合的候選項目 (如需和背景相關的詳細資訊，請參閱[有關 MSDN 的**資源管理系統**主題](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx))。 
 
-請注意，MRT 支援為一個以上的限定詞量身打造的資源。例如，標誌圖像包含的內嵌文字也需要進行當地語系化，而標誌會有四個候選項目︰EN/Scale-100、DE/Scale-100、EN/Scale-300 和 DE/Scale-300。
+請注意，MRT 支援專門針對多個限定詞的資源-例如，如果標誌影像包含內嵌的文字，也需要當地語系化，標誌會有四個候選項目：EN/擴展-100、 DE/擴展-100、 EN-US/擴展-300 和 DE/調整為 300。
 
 ### <a name="sections-in-this-document"></a>本文件章節
 
 下列各節概述將應用程式與 MRT 整合在一起所需的概略工作。
 
-**階段 0︰建置應用程式套件**
+**階段 0:建置應用程式套件**
 
 本節概述如何將您現有的傳統型應用程式建置為應用程式套件。 此階段不使用任何 MRT 功能。
 
-**階段 1︰ 當地語系化應用程式資訊清單**
+**第 1 階段：當地語系化應用程式資訊清單**
 
 本節概述如何當地語系化應用程式的資訊清單 (如此才能讓正確地在 Windows Shell 中顯示)，同時仍使用您的舊版資源格式與 API 以封裝及尋找資源。 
 
-**階段 2︰使用 MRT 識別及尋找資源**
+**第 2 階段：使用 MRT 識別並找出資源**
 
 本節概述如何修改的應用程式程式碼 (及可能的資源配置) 以使用 MRT 尋找資源，同時仍然使用現有的資源格式與 API 載入和取用資源。 
 
-**階段 3︰建置資源套件**
+**第 3 階段：建置資源套件**
 
 本節概述將您的資源分成不同的*資源套件*所需的最後變更，將下載 (和安裝) 的應用程式的大小縮到最小。
 
@@ -96,13 +96,13 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 完成上述階段 0-3 後，您將會有可以提交到 Microsoft Store 的應用程式「搭售方案」，其可藉由省略不需要的資源將為使用者下載與安裝的程式大小最小化 (例如，非慣用語言)。 採取最後一個步驟以進一步改善應用程式的大小和功能。 
 
-**階段 4︰ 移轉到 MRT 資源格式與 API**
+**第 4 階段：移轉至 MRT 的格式建置資源和 Api**
 
 這個階段超出本文件範圍，它需要將您的資源 (尤其是字串) 從舊版格式 (例如 MUI Dll 或.NET 資源組件) 移入 PRI 檔案。 這能更節省更多下載與安裝的空間。 您也可以使用其他 MRT 功能，例如依據縮放比例將下載和安裝的影像檔案最小化、協助工具設定等等。
 
 - - -
 
-## <a name="phase-0-build-an-application-package"></a>階段 0︰建置應用程式套件
+## <a name="phase-0-build-an-application-package"></a>階段 0:建置應用程式套件
 
 變更您的應用程式資源之前，必須先將目前包裝和安裝技術更換為標準 UWP 封裝及部署技術。 做法有三種：
 
@@ -110,7 +110,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 0. 如果您有較小型的傳統型應用程式及相對少數幾個檔案或簡易安裝程式，沒有擴充連結，則可以手動建立檔案配置和資訊清單資訊
 0. 如果您在重建來源，想要更新您的應用程式為單純的 UWP 應用程式，您可以在 Visual Studio 中建立新專案，依賴 IDE 為您執行大部分的工作
 
-如果您想要使用 [Desktop App Converter](https://aka.ms/converter)，請參閱[**有關 MSDN 的傳統型轉 UWP 橋接器：Desktop App Converter** 主題](https://aka.ms/converterdocs)以獲得轉換程序的相關資訊。 [**傳統型橋接器轉 UWP 範例**GitHub 存放庫](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)上可找到一組完整的 Desktop Converter 範例。
+如果您想要使用[Desktop App Converter](https://aka.ms/converter)，請參閱[ **UWP bridge 桌面：Desktop App Converter** MSDN 上的主題](https://aka.ms/converterdocs)如需有關轉換程序。 [  **傳統型橋接器轉 UWP 範例**GitHub 存放庫](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)上可找到一組完整的 Desktop Converter 範例。
 
 如果您要手動建立套件，您將需要建立包含所有應用程式檔案 (可執行檔及內容，但不是原始碼) 及 `AppXManifest.xml` 檔案的目錄結構。 範例位於 [**Hello, World**GitHub 樣本](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/HelloWorldSample/CentennialPackage/AppxManifest.xml)，而基本的 `AppXManifest.xml` 檔案執行名為 `ContosoDemo.exe` 的桌面可執行檔如下所述，其中<span style="background-color: yellow">反白文字</span>會取代為您自己的值︰
 
@@ -160,15 +160,15 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 ---
 
-## <a name="phase-1-localize-the-application-manifest"></a>階段 1︰ 當地語系化應用程式資訊清單
+## <a name="phase-1-localize-the-application-manifest"></a>階段 1：當地語系化應用程式資訊清單
 
-### <a name="step-11-update-strings--assets-in-the-appxmanifest"></a>步驟 1.1︰更新 AppXManifest 中的字串與資產
+### <a name="step-11-update-strings--assets-in-the-appxmanifest"></a>步驟 1.1:更新字串中，AppXManifest 資產
 
 您在階段 0 建立應用程式的基本 `AppXManifest.xml` 檔案 (根據提供給轉換器、從 MSI 擷取或手動輸入資訊清單的值)，但是它不會包含當地語系化的資訊，也不支援其他如高解析度的 [開始] 畫面磚資產等的功能。 
 
 若要確定您的應用程式名稱和描述正確當地語系化，您必須在一組資源檔案中定義部分資源，並且更新 AppX 資訊清單以進行參照。
 
-**建立預設資源檔案**
+**建立預設資源檔**
 
 第一個步驟是以預設的語言 (例如美式英文)建立預設資源檔案。 您可以使用文字編輯器，或透過 Visual Studio 中的資源設計工具，手動執行此項作業。
 
@@ -178,7 +178,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
  * 如果您的預設語言不是美式英文，請使用適當的 BCP-47 代碼 
 0. 在 XML 檔案中加入下列內容，其中<span style="background-color: yellow">醒目提示文字</span>部分會以您的預設語言的適當 App 文字取代。
 
-[!Note] 有這些字串的有些長度限制。 如需詳細資訊，請參閱 [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live)。
+[!Note] 有一些這些字串的長度限制。 如需詳細資訊，請參閱 [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live)。
 
 <blockquote>
 <pre>
@@ -205,7 +205,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 如果您想要使用 Visual studio 的設計工具︰
 
-0. 在您的專案中建立 `Strings\en-us` 資料夾 (或其他適用語言)，並增加**新項目**至專案的根資料夾，使用以下預設名稱 `resources.resw`
+0. 建立`Strings\en-us`資料夾 （或其他語言適當地） 在您的專案，並新增**新的項目**到您的專案根資料夾，使用的預設名稱 `resources.resw`
  * 請務必選擇**資源檔案 (.resw)** 而不是**資源字典** - 資源字典是 XAML 應用程式使用的檔案
 0. 使用設計工具，輸入下列字串 (使用相同 `Names` 但將 `Values` 取代為應用程式的適當文字)：
 
@@ -213,13 +213,13 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 注意︰如果您開始使用 Visual Studio 設計工具，您可以隨時按下 `F7` 直接編輯 XML。 但是，如果您以最小的 XML 檔案啟動，*設計工具將無法辨識檔案*，因為檔案遺失許多額外的中繼資料。若要修正此問題，只需將重複使用的 XSD 資訊從設計工具產生的檔案，複製到您手工編輯的 XML 檔案即可。 
 
-**更新資訊清單以參考資源**
+**更新參考的資源資訊清單**
 
 一旦在 `.resw` 檔案中定義值，下一個步驟是更新資訊清單以參考資源字串。 您可以再次直接編輯 XML 檔案，或依賴 Visual Studio 資訊清單設計工具。
 
 如果您直接編輯 XML，請開啟 `AppxManifest.xml` 檔案，對<span style="background-color: lightgreen">醒目提示值</span>進行下列變更 - 使用這個*確切*文字，而非應用程式特定的文字。 不需要使用這些確切的資源名稱，您可以自行選擇，但是您的選擇必須完全符合 `.resw` 檔案內容。 這些名稱應該符合您在 `.resw` 檔案中建立的 `Names`，其以 `ms-resource:` 配置和 `Resources/` 命名空間做為首碼。 
 
-*注意︰已經從此程式碼片段省略資訊清單的許多元素 - 請勿刪除任何項目！*
+*注意： 在資訊清單的許多項目已省略此程式碼片段-請勿刪除任何項目 ！*
 
 <blockquote>
 <pre>
@@ -250,13 +250,13 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 <img src="images\editing-application-info.png"/>
 <img src="images\editing-packaging-info.png"/>
 
-### <a name="step-12-build-pri-file-make-an-appx-package-and-verify-its-working"></a>步驟 1.2︰組建 PRI 檔案、製作 AppX 套件，並確認運作正常
+### <a name="step-12-build-pri-file-make-an-appx-package-and-verify-its-working"></a>步驟 1.2:建置 PRI 檔案，讓 AppX 套件，並確認它是否運作
 
 您現在應該可以建置 `.pri` 檔案，並且部署應用程式以確認 [開始] 功能表顯示的資訊 (您的預設語言) 正確無誤。 
 
 如果您在 Visual Studio 中建置，只要按下 `Ctrl+Shift+B` 建置專案，然後在專案上按一下滑鼠右鍵，並從內容功能表選擇 `Deploy`。 
 
-如果您正以手動方式建置，請依照下列步驟來建立 `MakePRI` 工具的設定檔，並產生 `.pri` 檔案本身 (相關詳細資訊可在[有關 MSDN** 的手動封裝 App** 主題](https://docs.microsoft.com/en-us/windows/uwp/packaging/manual-packaging-root)中找到)：
+如果您正以手動方式建置，請依照下列步驟來建立 `MakePRI` 工具的設定檔，並產生 `.pri` 檔案本身 (相關詳細資訊可在[有關 MSDN **的手動封裝 App** 主題](https://docs.microsoft.com/en-us/windows/uwp/packaging/manual-packaging-root)中找到)：
 
 0. 從 [開始] 功能表中的 `Visual Studio 2015` 資料夾開啟開發人員命令提示字元
 0. 切換至專案根目錄 (包含 `AppxManifest.xml` 檔案和 `Strings` 資料夾的目錄)
@@ -267,31 +267,31 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 ```
 
 0. 您可以輸入 `makepri createconfig /?` 來查看每個參數運作狀況，但請摘要說明︰
- * `/cf` 設定設定檔名稱 (這個命令的輸出)
- * `/dq` 以本案例語言設定預設限定詞 `en-US`
- * `/pv` 在本案例 Windows 10 中設定平台版本
- * `/o` 如果適用則設定為覆寫輸出檔案
+ * `/cf` 設定組態檔名稱 （這個命令的輸出）
+ * `/dq` 設定預設限定詞，在此情況下的語言 `en-US`
+ * `/pv` 設定平台版本，在此案例的 Windows 10
+ * `/o` 將它設定為覆寫輸出檔，若有的話
 0. 現在您擁有設定檔，請再次執行 `MakePRI` 以確實搜尋磁碟中的資源，並封裝到 PRI 檔案。 將 "contoso_demop.xml" 取代為您在上一個步驟中使用的 XML 檔名，並確實為輸入與輸出檔指定上層目錄： 
 
     `makepri new /pr . /cf ..\contoso_demo.xml /of ..\resources.pri /mf AppX /o`
 0. 您可以輸入 `makepri new /?` 來查看每個參數運作狀況，但請簡單地說明︰
- * `/pr` 設定專案根目錄 (在本案例為目前的目錄)
- * `/cf` 以上一個步驟中建立的檔名設定設定檔名稱
+ * `/pr` 設定專案根目錄 （在此案例中，目前的目錄）
+ * `/cf` 設定組態檔名，在上一個步驟中建立
  * `/of` 設定輸出檔案 
- * `/mf` 建立對應檔案 (如此我們才能在後續步驟將檔案排除在套件外)
- * `/o` 如果適用則設定為覆寫輸出檔案
+ * `/mf` 建立對應的檔案，因此我們可以排除在稍後步驟中的封裝中的檔案）
+ * `/o` 將它設定為覆寫輸出檔，若有的話
 0. 現在您具有內含預設語言資源 (例如 en-US) 的 `.pri` 檔案。 若要確認運作一切正常，您可以執行下列命令︰
 
     `makepri dump /if ..\resources.pri /of ..\resources /o`
 0. 您可以輸入 `makepri dump /?` 來查看每個參數運作狀況，但請簡單地說明︰
  * `/if` 設定輸入檔案名稱 
- * `/of` 設定輸出檔案名稱 (會自動附加 `.xml`)
- * `/o` 如果適用則設定為覆寫輸出檔案
+ * `/of` 設定輸出檔名 (`.xml`會自動予以附加)
+ * `/o` 將它設定為覆寫輸出檔，若有的話
 0. 最後，您可以在文字編輯器中開啟 `..\resources.xml`，並確認其中有列出您的 `<NamedResource>` 值 (例如 `ApplicationDescription` 和 `PublisherDisplayName`) 以及 `<Candidate>` 您選擇的預設語言值 (檔案開頭有其他內容，請先忽略)。
 
 如有需要，您可以開啟對應檔案 `..\resources.map.txt` 確認它包含專案所需的檔案 (包括不是專案目錄一部份的 PRI 檔案)。 重要的是，對應檔案將*不*包含 `resources.resw` 檔案的參考，因為該檔案的內容已經嵌入 PRI 檔案。 但是它將包含像是映像檔名之類的其他資源。
 
-**建置並登入套件**
+**建立和簽署封裝**
 
 現在建置了 PRI 檔案，接著您可以建置並登入套件︰
 
@@ -300,18 +300,18 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
     `makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o`
 0. 您可以輸入 `makeappx pack /?` 來查看每個參數運作狀況，但請簡單地說明︰
  * `/m` 設定要使用的資訊清單檔案
- * `/f` 設定要使用的對應檔案 (建立於上一個步驟) 
- * `/p` 設定輸出套件名稱
- * `/o` 如果適用則設定為覆寫輸出檔案
-0. 一旦建立套件，就必須簽署。 取得簽署憑證的最簡單方式是在 Visual Studio 中建立空白的通用 Windows 專案，然後將複製`.pfx`檔案，它會建立，但您可以建立一個使用手動`MakeCert`和`Pvk2Pfx`中所述<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832.aspx">如何建立的公用程式應用程式套件簽署憑證</a>，MSDN 上的主題。 
- * **重要︰** 手動建立簽署憑證，確保將檔案放置在不同於來源專案或套件來源的目錄中，否則可能會被納入為套件的一部分，包括私密金鑰！
+ * `/f` 設定要使用檔案的對應 （在上一個步驟中所建立的） 
+ * `/p` 設定輸出封裝名稱
+ * `/o` 將它設定為覆寫輸出檔，若有的話
+0. 一旦建立套件，就必須簽署。 若要取得簽章憑證最簡單的方式是在 Visual Studio 中建立的空白通用 Windows 專案和複製`.pfx`它所建立的檔案，但您可以建立一個使用手動`MakeCert`和`Pvk2Pfx`中所述的公用程式<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832.aspx">如何建立應用程式套件簽署憑證</a>，MSDN 上的主題。 
+ * **重要事項：** 如果您以手動方式建立簽署的憑證，請確定將檔案放在不同的目錄中的比原始碼專案或封裝來源，否則可能會收到包含的封裝，包括私密金鑰過程 ！
 0. 若要登入套件，請使用下列命令。 請注意，`AppxManifest.xml` 的 `Identity` 元素中所指定的 `Publisher`，必須符合憑證的 `Subject` (這**不是**`<PublisherDisplayName>` 元素，而是對使用者顯示的當地語系化顯示名稱)。 一如往常，將 `contoso_demo...` 檔名取代為專案的適用名稱，並且 (**非常重要**) 確定 `.pfx` 檔案不在目錄的目錄中 (否則可能建立為套件的一部分，包括私用簽署金鑰！)︰
 
     `signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appx`
 0. 您可以輸入 `signtool sign /?` 來查看每個參數運作狀況，但請簡單地說明︰
- * `/fd` 設定檔案摘要演算法 (SHA256 是 AppX 的預設值)
- * `/a` 將會自動選取最佳憑證
- * `/f` 指定包含簽署憑證的輸入檔案
+ * `/fd` 設定 （SHA256 為 AppX 的預設值） 的檔案摘要演算法
+ * `/a` 將會自動選取最佳的憑證
+ * `/f` 指定的輸入的檔包含所簽署的憑證
 
 最後，您可以按兩下 `.appx` 檔案進行安裝，若慣用好命令列則可以開啟 PowerShell 提示字元，變更到包含套件的目錄，然後輸入下列命令 (將 `contoso_demo.appx` 取代為您的套件名稱)：
 
@@ -329,29 +329,29 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
     `certutil -addstore TrustedPeople contoso_demo.cer`
 0. 您可以執行 `certutil -addstore /?` 來查看每個參數運作狀況，但請簡單地說明︰
- * `-addstore` 將憑證加入到憑證存放區
- * `TrustedPeople` 指出放置憑證的市集
+ * `-addstore` 將憑證加入至憑證存放區
+ * `TrustedPeople` 表示要放置憑證的存放區
 
 使用 Windows 檔案總管：
 
 0. 瀏覽至包含 `.pfx` 檔案的資料夾
 0. 按兩下`.pfx`檔案後應該會出現**憑證匯入精靈**
-0. 選擇 `Local Machine` 並按一下 `Next`
-0. 如果出現使用者帳戶控制管理員權限提示，請接受並按一下 `Next`
-0. 輸入私密金鑰的密碼 (如果有的話)，然後按一下 `Next`
+0. 選擇`Local Machine`按一下 `Next`
+0. 接受使用者帳戶控制系統管理員提高權限提示字元中，若出現，然後按一下 `Next`
+0. 如果有的話，輸入為私用金鑰的密碼，然後按一下 `Next`
 0. 選取 `Place all certificates in the following store`
 0. 按一下 `Browse`，並選擇 `Trusted People` 資料夾 (**非**受信任的發行者)
-0. 按一下 `Next` 然後 `Finish`
+0. 按一下 `Next`然後 `Finish`
 
 將憑證加入到 `Trusted People`存放區，再次嘗試安裝套件。
 
 您現在應該會看到您的應用程式出現在 [開始] 功能表的 [所有應用程式] 清單，附帶來自 `.resw` / `.pri` 檔案的正確資訊。 如果您看到空白字串或字串 `ms-resource:...`，表示出現錯誤，此時請再次檢查編輯內容，確定內容的正確性。 如果在 [開始] 功能表中以滑鼠右鍵按一下您的應用程式，您可以將它釘選為動態磚，並確認該處顯示的資訊也是正確的。
 
-### <a name="step-13-add-more-supported-languages"></a>步驟 1.3︰新增更多支援的語言
+### <a name="step-13-add-more-supported-languages"></a>步驟 1.3:新增支援的語言
 
 一旦變更 AppX 資訊清單，且已建立初始 `resources.resw` 檔案，新增其他語言就很容易了。
 
-**建立其他當地語系化的資源**
+**建立其他的當地語系化的資源**
 
 首先，建立其他當地語系化的資源值。 
 
@@ -384,7 +384,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 下列步驟假設您有 `de-DE` 和 `fr-FR` 兩者的新增資源，但任何語言均以遵循相同的模式。
 
-**更新 AppX 資訊清單以列出支援的語言**
+**AppX 資訊清單更新為語言支援的清單**
 
 必須更新 AppX 資訊清單以列出應用程式支援的語言。 Desktop App Converter 會新增預設的語言，但其他的語言則必須明確地新增。 如果直接編輯 `AppxManifest.xml` 檔案，請依下列方式更新 `Resources`，依您需要的數量新增元素，並且替換您支援的<span style="background-color: yellow">適當語言</span>，確保清單中的第一個項目為預設 (遞補) 語言。 在此範例中，預設值為英文 (美國)，同時也支援德文 (德國) 和法文 (法國)︰
 
@@ -408,7 +408,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 </pre>
 </blockquote>
 
-**使用當地語系化值重建**
+**重新建置當地語系化的值**
 
 現在您可以再次建置及部署應用程式，如果您變更 Windows 中的語言喜好設定，應該會看到出現在 [開始] 功能表中的新當地語系化值 (下方出現有關如何變更您的語言的指示)。
 
@@ -422,7 +422,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 這會建立一個包含可以輕鬆用於測試的所有指定語言的 PRI 檔案。 如果資源的大小總和很小，或是您只支援極少數的語言，可能您傳送的應用程式可以接受這情況。除非您因為有需要建置不同語言套件的額外工作，而需要將所安裝/下載的資源大小降到最低。
 
-**使用當地語系化值進行測試**
+**測試與當地語系化的值**
 
 若要測試當地語系化的新變更，您只需將慣用的 UI 語言加入到 Windows。 並不需要下載語言套件、重新開機，或者以外國語言顯示整個 Windows UI。 
 
@@ -437,7 +437,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 現在開啟 [開始] 功能表以搜尋您的應用程式，然後會看到選定語言的當地語系化值 (其他的應用程式可能也會呈現當地語系化)。 如果您沒有立刻看到當地語系化的名稱，請稍待數分鐘，等 [開始] 功能表的快取重新整理。 若要回復至您的母語，只需將其設定為語言清單中的預設語言。 
 
-### <a name="step-14-localizing-more-parts-of-the-appx-manifest-optional"></a>步驟 1.4︰當地語系化 AppX 資訊清單的更多部分 (選用)
+### <a name="step-14-localizing-more-parts-of-the-appx-manifest-optional"></a>步驟 1.4:當地語系化 （選擇性） 在 AppX 資訊清單的多個組件
 
 可以當地語系化其他 AppX 資訊清單區段。 舉例來說，如果您的應用程式處理檔案副檔名，資訊清單中就應具有 `windows.fileTypeAssociation` 副檔名，方法是完全依照所示來使用<span style="background-color: lightgreen">綠色反白文字</span> (因為它會參照資源)，然後將<span style="background-color: yellow">黃色反白文字</span>取代為應用程式特定資訊︰
 
@@ -485,7 +485,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 - - -
 
-## <a name="phase-2-use-mrt-to-identify-and-locate-resources"></a>階段 2︰使用 MRT 識別及尋找資源
+## <a name="phase-2-use-mrt-to-identify-and-locate-resources"></a>第 2 階段：使用 MRT 識別並找出資源
 
 前一節顯示有關使用 MRT 當地語系化您的應用程式的資訊檔案，讓 Windows Shell 可以正確地顯示應用程式的名稱及其他中繼資料的方式。 不需要為此變更程式碼；它只需要使用 `.resw` 檔案，以及一些額外的工具。 本節顯示如何使用 MRT 找出使用您現有資源格式，以及使用具最少變更的現有資源處理程式碼的資源。
 
@@ -493,9 +493,9 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 由於當地語系化 Win32 傳統型應用程式的方法有很多，本文會做出一些關於需要對應到特定環境之現有應用程式結構的簡單化假設。 您可能需要針對現有的程式碼基底或資源配置做一些變更來符合 MRT 的需求，而這些大部分都不在本文件範圍內。
 
-**資源檔案配置**
+**資源檔案版面配置**
 
-這份白皮書假設您當地語系化的資源全部都有相同的檔案名稱 (例如 `contoso_demo.exe.mui` 或 `contoso_strings.dll` 或 `contoso.strings.xml`)，但這些均位於含 BCP-47 名稱的不同資料夾中 (`en-US`、`de-DE` 等)。 這無關於您有多少資源檔案、其名稱為何、其檔案格式 / 相關的 API 為何等等。唯一重要是每個*邏輯*資源都有相同的檔名 (各位於不同的*實體*目錄)。 
+這份白皮書假設您當地語系化的資源全部都有相同的檔案名稱 (例如 `contoso_demo.exe.mui` 或 `contoso_strings.dll` 或 `contoso.strings.xml`)，但這些均位於含 BCP-47 名稱的不同資料夾中 (`en-US`、`de-DE` 等)。 它並不重要，您有多少的資源檔、 其名稱為何、 哪些其檔案格式 / 相關聯的 Api，等等。重要的是，每個唯一*邏輯*資源具有相同的檔案名稱 (但放在不同*實體*目錄)。 
 
 以反例來看，如果您的應用程式使用具單一 `Resources` 目錄的一般檔案結構 (包含檔案 `english_strings.dll` 和 `french_strings.dll`)，它不會和 MRT 對應得很好。 比較好的結構是包含子目錄及檔案 `en\strings.dll` 和 `fr\strings.dll` 的 `Resources` 目錄。 也可以使用相同的基本檔名，但具有內嵌限定詞，例如 `strings.lang-en.dll` 和 `strings.lang-fr.dll`，但使用含語言代碼的目錄在概念上更加簡單，這也是我們著重的部分。
 
@@ -537,7 +537,7 @@ set resource = LoadResource(resourceFile)
  
 例如，應用程式可能會使用 Win32 API `GetUserPreferredUILanguages`、CRT 函數 `sprintf` 和 Win32 API `CreateFile` 取代上述三個虛擬程式碼功能，然後手動剖析文字檔，尋找 `name=value` 配對。 (詳細資料並不重要；這只是闡述 MRT 對於處理找到的資源所使用的技術沒有任何影響)。
 
-### <a name="step-21-code-changes-to-use-mrt-to-locate-files"></a>步驟 2.1︰變更程式碼以使用 MRT 尋找檔案
+### <a name="step-21-code-changes-to-use-mrt-to-locate-files"></a>步驟 2.1:若要使用 MRT 找出檔案的程式碼變更
 
 切換程式碼以使用 MRT 尋找資源並不難。 它需要使用少量的 WinRT 類型和數行的程式碼。 您將使用的主要類型如下所示︰
 
@@ -574,7 +574,7 @@ set absoluteFileName = bestCandidate.ValueAsString
 
 在這裡，範例應用程式可能會繼續使用 `CreateFile` 載入 `absoluteFileName` 並像之前一樣剖析 `name=value` 配對；在應用程式中不需要變更該邏輯。 如果您以 C# 或 C++/CX 撰寫，實際的程式碼不會比這個複雜多少 (或事實上許多中繼變數都可以省略) - 請參閱下方**載入 .NET 資源**一節。 C++/WRL 所架構的應用程式將會因使用以低階 COM 為基礎的 API 來啟動並呼叫 WinRT API，而變得更加複雜，但是您採取的基本步驟都相同 - 請參閱下方**載入 Win32 MUI 資源**一節。
 
-**正在載入 .NET 資源**
+**正在載入.NET 資源**
 
 因為 .NET 具有尋找與載入資源 (稱為「衛星組件」) 的內建機制，在上述綜合範例中並無可取代的明確程式碼 - 在 .NET 中，您只需要適當目錄的資源 DLL，而且會自動幫您找出。 當應用程式封裝為使用資源套件的 AppX，目錄結構會稍有不同 - 不是將資源目錄當成主要應用程式目錄的子目錄，而是對等目錄 (若喜好設定中未列出使用者的語言則完全不顯現)。 
 
@@ -648,7 +648,7 @@ void EnableMrtResourceLookup()
 
 **注意** 如果您的 App 已經具有 `AssemblyResolve` 處理常式供其他目的使用，您將需要使用現有的程式碼整合資源解析程式碼。
 
-**載入 Win32 MUI 資源**
+**正在載入 Win32 MUI 資源**
 
 載入 Win32 MUI 資源基本上相同於載入 .NET 衛星組件，但會改用 C++/CX 或 C++/WRL 程式碼。 若使用 C++/CX，符合上述 C# 程式碼的程式碼就會簡單非常多，但會使用 C++ 語言擴充功能、編譯器切換，以及您可能想要避免發生的其他執行階段竊聽。 若是如此，使用 C++/WRL 可用更詳細的程式碼代價提供影響低許多的解決方案。 雖然如此，如果您熟悉 ATL 程式設計 (或一般 COM)，WRL 便應覺得熟悉。 
 
@@ -708,16 +708,16 @@ HRESULT GetMrtResourceHandle(LPCWSTR resourceFilePath,  HINSTANCE* resourceHandl
 }
 ```
 
-## <a name="phase-3-building-resource-packs"></a>階段 3︰建置資源套件
+## <a name="phase-3-building-resource-packs"></a>第 3 階段：建置資源套件
 
 既然您已經擁有包含所有資源的「肥包」(Fat Pack)，便可用兩個路徑來建置不同的主要套件和資源套件，以最小化下載並安裝的大小︰
 
 0. 取用現有的肥包，並透過[套件組合產生器工具](https://aka.ms/bundlegen)執行以自動建立資源套件。 如果您有一個已經產生肥包的組建系統，而且想要後置處理以產生資源套件時，這是優先選用的方法。
 0. 直接產生個人資源套件，並將這些套件建置到套件組合中。 如果您對於您的組建系統有更多控制權，而且可以直接建置套件時，這是優先選用的方法。
 
-### <a name="step-31-creating-the-bundle"></a>步驟 3.1︰建立套件組合
+### <a name="step-31-creating-the-bundle"></a>步驟 3.1:建立套件組合
 
-**使用套件組合產生器工具**
+**使用的套件組合產生器工具**
 
 若要使用套件組合產生器工具，為套件建立的 PRI 檔案，需要手動更新，以移除 `<packaging>` 一節。
 
@@ -755,9 +755,9 @@ makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.app
 
 現在您可以移到最後一個步驟「簽署」(如下所示)。
 
-**手動建立資源套件**
+**手動建立的資源套件**
 
-手動建立資源套件需要執行一組稍有不同的命令來建置不同的 `.pri` 和 `.appx` 檔案 - 這些全都和上述用來建立肥包相似，這樣就可以將解釋的必要性降到最低。 注意︰所有命令都假設目前的目錄是包含 `AppXManifest.xml` 檔案的目錄，但所有檔案全放置在上層目錄 (必要時可以使用不同的目錄，但不可使用這些檔案損壞專案目錄)。 一如往常，將 "Contoso" 檔名取代為您自己的檔案名稱。
+手動建立資源套件需要執行一組稍有不同的命令來建置不同的 `.pri` 和 `.appx` 檔案 - 這些全都和上述用來建立肥包相似，這樣就可以將解釋的必要性降到最低。 注意：所有命令都假設目前的目錄是目錄包含`AppXManifest.xml`檔案，但所有檔案會放入 （您可以使用不同的目錄中，如果有必要，但您不應該干擾任何專案目錄的上層目錄這些檔案）。 一如往常，將 "Contoso" 檔名取代為您自己的檔案名稱。
 
 0. 使用下列命令來建立設定檔的名稱，**只**命名預設的語言，做為預設限定詞 - 在本案例為 `en-US`：
 
@@ -777,7 +777,7 @@ makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.app
 
 最後一個建置套件的步驟是簽署。
 
-### <a name="step-32-signing-the-bundle"></a>步驟 3.2︰簽署套件組合
+### <a name="step-32-signing-the-bundle"></a>步驟 3.2:簽署套件組合
 
 一旦建立好 `.appxbundle` 檔案 (不是透過套件組合產生器工具，就是手動建立)，您將會有一支包含主要套件以及所有資源套件的單一檔案。 最後一個步驟是簽署檔案，讓 Windows 順利安裝︰
 
@@ -787,4 +787,4 @@ makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.app
 
 ## <a name="related-topics"></a>相關主題
 
-* [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)
+* [量身打造您的語言、 規模、 高對比和其他辨識符號的資源](tailor-resources-lang-scale-contrast.md)

@@ -1,5 +1,5 @@
 ---
-title: 處理 app 繼續執行
+title: 處理應用程式繼續執行
 description: 了解如何在系統繼續執行您的應用程式時，重新整理已顯示的內容。
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 ms.date: 07/06/2018
@@ -12,15 +12,15 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: f424a274d3e96b58f32875620f3165ccfac82ba6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939356"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612463"
 ---
 # <a name="handle-app-resume"></a>處理應用程式繼續執行
 
-**重要 API**
+**重要的 Api**
 
 - [**繼續**](https://msdn.microsoft.com/library/windows/apps/br242339)
 
@@ -116,16 +116,16 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ```
 
 > [!NOTE]
-> 因為[**繼續**](https://msdn.microsoft.com/library/windows/apps/br242339)事件不從 UI 執行緒引發，必須在您的處理常式中使用發送器，任何呼叫發送到您的 UI。
+> 因為[ **Resuming** ](https://msdn.microsoft.com/library/windows/apps/br242339)不會從 UI 執行緒引發事件，發送器必須可用於您的處理常式以任何將呼叫分派至 UI。
 
 ## <a name="remarks"></a>備註
 
-當您的 App 連接至 Visual Studio 偵錯工具時，系統將不會暫停它。 不過，您可以從偵錯工具暫停它，然後將 **Resume** 事件傳送給它，以便對您的程式碼進行偵錯。 請確定可看見 **\[偵錯位置工具列\]**，然後按一下 **\[暫停\]** 圖示旁邊的下拉式清單。 然後選擇 **\[繼續\]**。
+當您的 App 連接至 Visual Studio 偵錯工具時，系統將不會暫停它。 不過，您可以從偵錯工具暫停它，然後將 **Resume** 事件傳送給它，以便對您的程式碼進行偵錯。 請確定可看見 [偵錯位置工具列]，然後按一下 [暫停] 圖示旁邊的下拉式清單。 然後選擇 [繼續]。
 
-就「Windows Phone 市集」應用程式而言，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的後面一律跟著 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使在應用程式目前已被暫停，而使用者從主要磚或應用程式清單重新啟動應用程式的情況下，也是如此。 如果目前的視窗中已有設定的內容，App 便可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
+就「Windows Phone 市集」應用程式而言，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的後面一律跟著 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使在應用程式目前已被暫停，而使用者從主要磚或應用程式清單重新啟動應用程式的情況下，也是如此。 如果目前的視窗中已有設定的內容，app 可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
 
 ## <a name="related-topics"></a>相關主題
 
-* [App 週期](app-lifecycle.md)
-* [處理 app 啟用](activate-an-app.md)
-* [處理 app 暫停](suspend-an-app.md)
+* [應用程式生命週期](app-lifecycle.md)
+* [處理應用程式啟動](activate-an-app.md)
+* [控制代碼的應用程式暫止](suspend-an-app.md)

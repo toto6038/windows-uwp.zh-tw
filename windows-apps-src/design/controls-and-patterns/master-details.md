@@ -1,5 +1,5 @@
 ---
-Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
+Description: 主要/詳細資料模式會顯示主要清單和目前所選項目的詳細資料。 這個模式通常用於電子郵件和連絡人清單/通訊錄。
 title: 主要/詳細資料
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940637"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601253"
 ---
 # <a name="masterdetails-pattern"></a>主要/詳細資料模式
 
@@ -21,7 +21,7 @@ ms.locfileid: "8940637"
 
 主要/詳細資料模式具有一個主要窗格 (通常會有一個[清單檢視](lists.md)) 和內容的詳細資料窗格。 當選取主要清單中的項目時，會更新詳細資料窗格。 這個模式經常用於電子郵件和通訊錄。
 
-> **重要 API**：[ListView 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **重要的 Api**:[ListView 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)， [SplitView 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![主要/詳細資料模式的範例](images/HIGSecOne_MasterDetail.png)
 
@@ -77,7 +77,7 @@ ms.locfileid: "8940637"
 
 ![主要/詳細資料分割檢視組件](images/patterns_md_splitview_parts.png)
 
-對於主要窗格，[清單檢視](lists.md)非常適合用來呈現可以包含影像和文字的清單。
+針對主要窗格，[清單檢視](lists.md)能夠用於呈現可以包含影像和文字的清單。
 
 對於詳細資料內容，請使用最適合的[內容元素](../layout/layout-panels.md)。 如果您有許多個別的欄位，請考慮使用**格線**配置將元素排列成表單。
 
@@ -94,15 +94,15 @@ ms.locfileid: "8940637"
 
 下列範例使用調適型配置實作主要/詳細資訊模式，並示範靜態、資料庫及離線資源的資料繫結： 
 - [主要/詳細資料範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [主要/詳細資料以及選取項目範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Windows Template Studio 主要/詳細資料範例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
+- [主版/詳細資料，再加上選取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Windows 範本 Studio 主版/詳細範例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
-- [RSS 閱讀程式範例](https://github.com/Microsoft/Windows-appsample-rssreader)
+- [RSS 讀取器範例](https://github.com/Microsoft/Windows-appsample-rssreader)
 
 ## <a name="related-articles"></a>相關文章
 
 - [清單](lists.md)
 - [搜尋](search.md)
-- [應用程式列和命令列](app-bars.md)
+- [應用程式和命令列](app-bars.md)
 - [ListView 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [SplitView 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 82cb45dae1a4b9b1a9db8fabc044edf8157f1eb1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920442"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646333"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a>開始使用：使用 Visual Studio
 
@@ -48,7 +48,7 @@ Visual Studio 與 Xcode 不一樣，後者會將配置及繫結資訊隱藏在 .
 
 讓我們來變更按鈕的詳細資料。 稍後您將會了解，若要在 Xcode 中變更按鈕的名稱，您會在其屬性面板中，變更 \[**標題**\] 欄位中的值。
 
-使用 Visual Studio 時，您會執行非常類似的動作。 在 \[**設計**\] 窗格中，點選按鈕讓它成為焦點。 接著，在 \[**屬性**\] 窗格中，將 \[**內容**\] 方塊的值從「Button」變更為「Press Me」。 接下來，藉由將 **\[名稱\]** 值從 [&lt;No Name&gt;] 變更為 [myButton] 來更新按鈕控制項的名稱，如下所示：
+使用 Visual Studio 時，您會執行非常類似的動作。 在 \[**設計**\] 窗格中，點選按鈕讓它成為焦點。 接著，在 \[**屬性**\] 窗格中，將 \[**內容**\] 方塊的值從「Button」變更為「Press Me」。 接下來，藉由將 [名稱] 值從 [&lt;No Name&gt;] 變更為 [myButton] 來更新按鈕控制項的名稱，如下所示：
 
 ![Visual Studio 中的按鈕屬性視窗](images/ios-to-uwp/vs-button-properties.png)
 
@@ -70,7 +70,7 @@ Visual Studio 很相似。 \[**屬性**\] 右上角有一個閃電按鈕。 這�
 
 ![Visual Studio 中的按鈕事件清單](images/ios-to-uwp/vs-button-event.png)
 
-若要為按鈕的 Click 事件新增程式碼，請先在 \[**設計**\] 窗格中選取按鈕。 然後按一下閃電按鈕，並按兩下 \[**Click**\] 名稱旁的空白方塊。 Visual Studio 便會將「myButton\_Click」事件新增到 \[**Click**\] 方塊，然後在 MainPage.xaml.cs 檔案中新增並顯示對應的事件處理常式，如下所示。
+若要為按鈕的 Click 事件新增程式碼，請先在 \[**設計**\] 窗格中選取按鈕。 然後按一下閃電按鈕，並按兩下 \[**Click**\] 名稱旁的空白方塊。 Visual Studio 接著會將事件 「 myButton\_按一下"來**按一下**方塊，然後新增並顯示對應的事件處理常式在 MainPage.xaml.cs 檔案中，像這樣。
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -94,11 +94,11 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 1.  點選 MainPage.xaml 檔案索引標籤。
 2.  在 \[**設計**\] 窗格中，點選 \[**TextBlock**\] 控制項。
 3.  在 \[**屬性**\] 窗格中，點選扳手按鈕以顯示其屬性。
-4.  在 **\[名稱\]** 方塊中，將 &lt;No Name&gt; 變更為 myLabel。
+4.  在 [名稱] 方塊中，將 &lt;No Name&gt; 變更為 myLabel。
 
 ![Visual Studio 中的標籤屬性視窗](images/ios-to-uwp/vs-label-properties.png)
 
-現在要新增一些程式碼到按鈕的 Click 事件。 若要這樣做，請點選 MainPage.xaml.cs 檔案，然後新增下列程式碼到 myButton\_Click 事件處理常式。
+現在要新增一些程式碼到按鈕的 Click 事件。 這樣做，請點選 MainPage.xaml.cs 檔案中，並將下列程式碼新增至 myButton\_Click 事件處理常式。
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -122,7 +122,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 若要退出 app，請返回 Visual Studio，點選\ [**偵錯**\] 功能表，然後點選 **停止偵錯** \(或是直接按下 SHIFT + F5\)。 請注意，Visual Studio 可讓您在許多不同的裝置上試用 app，以查看它在每台裝置上的執行方式。
 
-## <a name="next-step"></a>下一步
+## <a name="next-step"></a>後續步驟
 
-[開始使用：常用控制項](getting-started-common-controls.md)
+[開始使用：通用控制項](getting-started-common-controls.md)
 

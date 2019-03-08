@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 輸入, 飛行桿
 ms.localizationpriority: medium
 ms.openlocfilehash: 5eceb30c62f1e803397aff71d59b560c39736cf9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927971"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609013"
 ---
 # <a name="flight-stick"></a>飛行桿
 
@@ -41,7 +41,7 @@ Xbox One 飛行桿配備下列控制項︰
 
 ### <a name="ui-navigation"></a>UI 瀏覽
 
-為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」__ 輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的「邏輯」__ 輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
+為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的「邏輯」輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
 
 飛行桿是UI 瀏覽控制器，會將瀏覽命令的[必要設定](ui-navigation-controller.md#required-set)對應到搖桿及**View**，**Menu**，**FirePrimary**，和**FireSecondary**按鈕。
 
@@ -54,7 +54,7 @@ Xbox One 飛行桿配備下列控制項︰
 |               View | **View**按鈕                     |
 |               Menu | **Menu**按鈕                     |
 |             Accept | **FirePrimary** 按鈕              |
-|             Cancel | **FireSecondary** 按鈕            |
+|             取消 | **FireSecondary** 按鈕            |
 
 飛行桿不會對應瀏覽命令的任何[選用設定](ui-navigation-controller.md#optional-set)。
 
@@ -116,7 +116,7 @@ Each flight stick can be associated with a user account to link their identity t
 
 ## <a name="reading-the-flight-stick"></a>讀取飛行桿
 
-在您找出感興趣的飛行桿之後，即可收集其輸入。 不過，飛行桿不是透過引發事件來溝通狀態變更，這與您可能習慣使用的一些其他類型的輸入不同。 相反的，您可以進行_輪詢_來定期讀取其目前狀態。
+在您找出感興趣的飛行桿之後，即可收集其輸入。 不過，飛行桿不是透過引發事件來溝通狀態變更，這與您可能習慣使用的一些其他類型的輸入不同。 相反地，您可以進行「輪詢」來定期讀取其目前狀態。
 
 ### <a name="polling-the-flight-stick"></a>輪詢飛行桿
 
@@ -131,7 +131,7 @@ auto flightStick = myFlightSticks->GetAt(0);
 FlightStickReading reading = flightStick->GetCurrentReading();
 ```
 
-除了飛行桿狀態之外，每次讀取都會包含精確指出狀態擷取時間的時間戳記。 時間戳記適用於與先前讀取的計時或遊戲模擬的計時建立關聯。
+除了飛行桿狀態之外，每次讀取都會包含精確指出狀態擷取時間的時間戳記。 此時間戳記適用於關聯到先前讀取的計時或遊戲模擬的計時。
 
 ### <a name="reading-the-joystick-and-throttle-input"></a>讀取搖桿和節流閥輸入
 
@@ -148,11 +148,11 @@ float pitch = reading.Pitch;
 float yaw = reading.Yaw;
 ```
 
-讀取搖桿值時，如果搖桿靜止在中心位置，您會注意到搖桿值不會確實地產生中性讀數 0.0；相反地，每次移動搖桿並回到中心位置時，它們都會產生接近 0.0 的不同值。 若要減少這些變化，您可以實作小型「靜止區域」__，這是指接近理想中心位置的可忽略值範圍。
+讀取搖桿值時，如果搖桿靜止在中心位置，您會注意到搖桿值不會確實地產生中性讀數 0.0；相反地，每次移動搖桿並回到中心位置時，它們都會產生接近 0.0 的不同值。 若要減少這些變化，您可以實作小型「靜止區域」，這是指接近理想中心位置的可忽略值範圍。
 
 實作靜止區域的一種方法是判定搖桿與中心的距離，若讀數比您選擇的距離值更接近中心則予以忽略。 只要使用畢式定理，就可以約略計算出距離；因為搖桿讀數基本上是極性 (非平面) 值，所以距離不是確切值。 所產生的會是一個放射狀靜止區域。
 
-下列範例示範使用畢式定理產生基本放射狀靜止區域：
+下列範例會使用畢式定理示範基本放射狀靜止區域。
 
 ```cpp
 // Choose a deadzone. Readings inside this radius are ignored.
@@ -177,7 +177,7 @@ if ((oppositeSquared + adjacentSquared) < deadzoneSquared)
 > [!NOTE]
 > 飛行桿配備用於 UI 瀏覽的其他按鈕，例如 **View**和 **Menu**按鈕。 這些按鈕不是 `FlightStickButtons` 列舉的一部分，而且只能將飛行桿當成 UI 瀏覽裝置存取來進行讀取。 如需詳細資訊，請參閱 [UI 瀏覽控制器](ui-navigation-controller.md)。
 
-按鈕值讀取自[FlightStickReading.Buttons](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Buttons)屬性。 因為此屬性是位元欄位，所以使用位元遮罩來隔離感興趣按鈕的值。 設定對應位元時，即按下 (向下) 按鈕；否則為放開 (向上)。
+按鈕值讀取自[FlightStickReading.Buttons](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Buttons)屬性。 由於此屬性是位元欄位，所以使用位元遮罩來隔離您感興趣的按鈕值。 設定對應位元時，即按下 (向下) 按鈕；否則為放開 (向上)。
 
 下列範例會判斷是否按下**FirePrimary**按鈕。
 
@@ -197,7 +197,7 @@ if (FlightStickButtons::None == (reading.Buttons & FlightStickButtons::FirePrima
 }
 ```
 
-您有時可能要判斷按鈕何時從按下轉換為放開或從放開轉換為按下、是否按下或放開多個按鈕，或是否以特定方式排列一組按鈕 (部分為按下，部分則否)。 如需如何偵測所有這些條件的相關資訊，請參閱[偵測按鈕轉換](input-practices-for-games.md#detecting-button-transitions)和[偵測複雜按鈕排列](input-practices-for-games.md#detecting-complex-button-arrangements)。
+您有時必須要判斷按鈕何時從按下轉換為放開或從放開轉換為按下、是否按下或放開多個按鈕，或是否以特定方式排列一組按鈕 (部分為按下，部分則否)。 如需如何偵測所有這些條件的相關資訊，請參閱[偵測按鈕轉換](input-practices-for-games.md#detecting-button-transitions)和[偵測複雜按鈕排列](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
 控制帽切換裝置的值讀取自[FlightStickReading.HatSwitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.HatSwitch)屬性。 因為此屬性也是位元欄位，所以再一次使用位元遮罩來找出控制帽切換裝置的位置。
 
@@ -223,8 +223,8 @@ if (GameControllerSwitchPosition::Center == (reading.HatSwitch & GameControllerS
 
 The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) demonstrates how to use flight sticks and different kinds of input devices in tandem, as well as how these input devices behave as UI navigation controllers.-->
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [Windows.Gaming.Input.UINavigationController 類別](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
 * [Windows.Gaming.Input.IGameController 介面](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [遊戲的輸入練習](input-practices-for-games.md)
+* [輸入適用於遊戲的作法](input-practices-for-games.md)

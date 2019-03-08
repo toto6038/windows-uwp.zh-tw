@@ -6,11 +6,11 @@ ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a7bb6f719f95766c07c1e5f92b50148cf0f2cce
-ms.sourcegitcommit: b589795bedbff993867ddce16ed1f1a4a4b39e8c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9070339"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642363"
 ---
 # <a name="create-and-host-an-app-extension"></a>建立和裝載應用程式延伸模組
 
@@ -19,7 +19,7 @@ ms.locfileid: "9070339"
 本文附有程式碼範例：
 - 下載並解壓縮[數學延伸模組程式碼範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)。
 - 在 Visual Studio 2017 中，開啟 MathExtensionSample.sln。 將組建類型設定為 x86 (**\[建置\]** > **\[組態管理員\]**，然後將兩個專案的 **\[平台\]** 變更為 **\[x86\]**)。
-- 部署方案：**\[建置\]** > **\[部署方案\]**。
+- 部署方案：**建置** > **部署解決方案**。
 
 ## <a name="introduction-to-app-extensions"></a>應用程式延伸模組簡介
 
@@ -29,7 +29,7 @@ UWP 應用程式延伸模組是具有延伸宣告的 UWP app，此宣告可讓�
 
 應用程式延伸模組就是 UWP app，因此同樣可以做為功能完整的應用程式、裝載延伸模組，以及提供延伸模組給其他應用程式，完全不需要建立不同的應用程式套件。
 
-建立應用程式延伸主機時，可能會提供以您的應用程式為中心發展生態系統的機會，其他開發人員可在其中用您想像不到的方式或您沒有的資源來增強該應用程式，。 請考慮建立 Microsoft Office 延伸模組、Visual Studio 延伸模組、瀏覽器延伸等延伸模組。這些延伸模組建立為這些應用程式更加豐富且超出其所隨附功能的體驗。 延伸模組可以增加應用程式的價值並延長其使用壽命。
+建立應用程式延伸主機時，可能會提供以您的應用程式為中心發展生態系統的機會，其他開發人員可在其中用您想像不到的方式或您沒有的資源來增強該應用程式，。 請考慮 Microsoft Office 擴充功能、 Visual Studio 擴充功能、 瀏覽器擴充功能等。這些建立的應用程式的超越隨附的功能更豐富的體驗。 延伸模組可以增加應用程式的價值並延長其使用壽命。
 
 **概觀**
 
@@ -49,7 +49,7 @@ UWP 應用程式延伸模組是具有延伸宣告的 UWP app，此宣告可讓�
 
 應用程式藉由在 Package.appxmanifest 檔案中宣告 `<AppExtensionHost>` 元素，將本身識別為應用程式延伸主機。 若要了解此作法，請參閱 **MathExtensionHost** 專案中的 **Package.appxmanifest** 檔案。
 
-_MathExtensionHost 專案中的 Package.appxmanifest_
+_Package.appxmanifest MathExtensionHost 專案中_
 ```xml
 <Package
   ...
@@ -74,7 +74,7 @@ _MathExtensionHost 專案中的 Package.appxmanifest_
 
 請注意 `xmlns:uap3="http://..."`，以及 `uap3` 是否存在於 `IgnorableNamespaces`。 由於我們要使用 uap3 命名空間，因此上述注意事項是必要。
 
-`<uap3:Extension Category="windows.appExtensionHost">` 將此應用程式識別為延伸主機。
+`<uap3:Extension Category="windows.appExtensionHost">` 識別此應用程式作為延伸模組的主機。
 
 `<uap3:AppExtensionHost>` 中的 **Name** 元素是_延伸協定_名稱。 延伸模組指定相同的延伸協定時，主機將可以找到它。 依慣例，我們建議您使用應用程式名稱或發佈者名稱建立延伸協定名稱，以避免與其他延伸協定名稱產生可能的衝突。
 
@@ -84,7 +84,7 @@ _MathExtensionHost 專案中的 Package.appxmanifest_
 
 應用程式藉由在 **Package.appxmanifest** 檔案中宣告 `<uap3:AppExtension>` 元素，將本身識別為應用程式延伸模組。 若要了解此作法，請開啟 **MathExtension** 專案中的 **Package.appxmanifest** 檔案。
 
-_MathExtension 專案中的 Package.appxmanifest：_
+_Package.appxmanifest MathExtension 專案中：_
 ```xml
 <Package
   ...
@@ -116,19 +116,19 @@ _MathExtension 專案中的 Package.appxmanifest：_
 
 再次注意 `xmlns:uap3="http://..."` 程式碼行，以及 `uap3` 是否存在於 `IgnorableNamespaces`。 由於我們要使用 `uap3` 命名空間，因此上述注意事項是必要。
 
-`<uap3:Extension Category="windows.appExtension">` 將此應用程式識別為延伸模組。
+`<uap3:Extension Category="windows.appExtension">` 識別此應用程式延伸模組。
 
 `<uap3:AppExtension>` 屬性的意義如下：
 
 |屬性|描述|必要|
 |---------|-----------|:------:|
-|**Name**|這是延伸協定名稱。 符合主機中宣告的 **Name** 時，該主機將可找到此延伸模組。| :heavy_check_mark: |
+|**名稱**|這是延伸協定名稱。 符合主機中宣告的 **Name** 時，該主機將可找到此延伸模組。| :heavy_check_mark: |
 |**ID**| 唯一識別此延伸模組。 由於可能會有多個使用相同延伸協定的延伸模組 (試想支援數個延伸模組的繪圖應用程式)，您可以使用 ID 來加以區分。 應用程式延伸主機可以使用 ID 推斷一些關於延伸模組類型的資訊。 例如，您可能會有一個延伸模組針對傳統型設計，另一個則針對行動裝置設計，此 ID 即為區分方法。 您也可以使用 **Properties** 元素進行區分，如下所述。| :heavy_check_mark: |
 |**DisplayName**| 可以從主機應用程式中用來讓使用者認明延伸模組。 此屬性可查詢 (而且可以使用) [新資源管理系統](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 進行當地語系化。 當地語系化內容是從應用程式延伸套件 (而非主機應用程式) 載入。 | |
-|**Description** | 可以從主機應用程式中用來向使用者描述延伸模組。 此屬性可查詢 (而且可以使用) [新資源管理系統](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 以進行當地語系化。 當地語系化內容是從應用程式延伸套件 (而非主機應用程式) 載入。 | |
+|**描述** | 可以從主機應用程式中用來向使用者描述延伸模組。 此屬性可查詢 (而且可以使用) [新資源管理系統](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 進行當地語系化。 當地語系化內容是從應用程式延伸套件 (而非主機應用程式) 載入。 | |
 |**PublicFolder**|與封裝根目錄相關之資料夾的名稱，您可以透過此資料夾與延伸主機共用內容。 依慣例，名稱是「Public」，但您可以使用任何符合延伸模組中資料夾的名稱。| :heavy_check_mark: |
 
-`<uap3:Properties>` 是包含主機可於執行階段讀取之自訂中繼資料的選用元素。 程式碼範例將延伸模組實作為應用程式服務，因此主機需要一個取得該應用程式服務名稱的方式，以便呼叫該服務。 應用程式服務的名稱是在我們已定義的 <Service> 中定義 (我們可以隨意命名)。 程式碼範例中的主機於執行階段尋找此屬性，以得知應用程式服務的名稱。
+`<uap3:Properties>` 是選擇性的項目，其中包含自訂主機可以在執行階段讀取的中繼資料。 程式碼範例將延伸模組實作為應用程式服務，因此主機需要一個取得該應用程式服務名稱的方式，以便呼叫該服務。 應用程式服務的名稱是在我們已定義的 <Service> 中定義 (我們可以隨意命名)。 程式碼範例中的主機於執行階段尋找此屬性，以得知應用程式服務的名稱。
 
 ## <a name="decide-how-you-will-implement-the-extension"></a>決定實作延伸模組的方式。
 
@@ -145,7 +145,7 @@ _MathExtension 專案中的 Package.appxmanifest：_
 
 以下是叫用延伸模組之應用程式服務的主機程式碼：
 
-_MathExtensionHost 專案中的 ExtensionManager.cs_
+_ExtensionManager.cs MathExtensionHost 專案中_
 ```cs
 public async Task<double> Invoke(ValueSet message)
 {
@@ -195,7 +195,7 @@ public async Task<double> Invoke(ValueSet message)
 
 有一點需要注意的是，如何判斷要呼叫之應用程式服務的名稱。 由於主機沒有實作延伸模組的相關資訊，延伸模組必須提供其應用程式服務的名稱。 在程式碼範例中，延伸模組於 `<uap3:Properties>` 元素宣告其檔案中應用程式服務的名稱：
 
-_MathExtension 專案中的 Package.appxmanifest_
+_Package.appxmanifest MathExtension 專案中_
 ```xml
     ...
     <uap3:Extension Category="windows.appExtension">
@@ -211,7 +211,7 @@ _MathExtension 專案中的 Package.appxmanifest_
 
 主機載入延伸模組時，像這樣的程式碼會從延伸模組之 Package.appxmanifest 所定義的屬性中擷取服務的名稱：
 
-_`Update()` 在 MathExtensionHost 專案的 ExtensionManager.cs 中_
+_`Update()` 在 ExtensionManager.cs，MathExtensionHost 專案中_
 ```cs
 ...
 var properties = await ext.GetExtensionPropertiesAsync() as PropertySet;
@@ -233,11 +233,11 @@ if (_properties != null)
 
 有了儲存在 `_serviceName` 中的應用程式服務名稱，主機就可以使用該名稱來叫用應用程式服務。
 
-叫用應用程式服務還需要包含應用程式服務之套件的系列名稱。 幸好應用程式延伸模組 API 提供這項資訊 (使用下列程式碼行來取得)： `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
+叫用應用程式服務還需要包含應用程式服務之套件的系列名稱。 幸運的是，應用程式擴充功能 API 提供這項資訊行中取得： `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
 
 ### <a name="define-how-the-host-and-the-extension-will-communicate"></a>定義主機與其延伸模組通訊的方式
 
-應用程式服務會使用 [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) 來交換資訊。 身為主機的作者，您必須提供通訊協定，才能與彈性的延伸模組進行通訊。 在程式碼範例中，這意味著要解釋如何處理未來可能接受 1、2 或更多個引數的延伸模組。
+app 服務會使用[ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) 來交換資訊。 身為主機的作者，您必須提供通訊協定，才能與彈性的延伸模組進行通訊。 在程式碼範例中，這意味著要解釋如何處理未來可能接受 1、2 或更多個引數的延伸模組。
 
 就此範例而言，引數的通訊協定是 **ValueSet**，包含以「'Arg' + 引數編號」命名 (例如 `Arg1` 和 `Arg2`) 的索引鍵值組。 主機傳遞 **ValueSet** 中所有的引數，而延伸模組則使用其所需的引數。 如果延伸模組可以計算結果，則主機預期延伸模組傳回的 **ValueSet** 會有包含計算值的 `Result`。 如果該索引鍵不存在，主機會假設延伸模無法完成計算。
 
@@ -303,7 +303,7 @@ Microsoft Store 以套件形式來提供延伸模組。 [AppExtensionCatalog](ht
 
 `ExtensionManager` 建構函式使用 `AppExtensionCatalog`，在延伸協定名稱與主機相同的系統上尋找應用程式延伸模組：
 
-_MathExtensionHost 專案中的 ExtensionManager.cs。_
+_ExtensionManager.cs MathExtensionHost 專案中。_
 ```cs
 public ExtensionManager(string extensionContractName)
 {
@@ -342,7 +342,7 @@ public ExtensionManager(string extensionContractName)
 現在您可以在主機和延伸模組中叫用中斷點。
 如果開始偵延伸模組應用程式本身，您將會看到應用程式的空白視窗。 如果不想看到空白視窗，您可以將延伸模組專案的偵錯設定變更為不要在開始偵錯時啟動應用程式而是進行偵錯 (以滑鼠右鍵按一下延伸模組專案、**\[屬性\]** > **\[偵錯\]** > 選取 **\[不啟動，但在我的程式碼啟動時進行偵錯\]**)。您依舊需要對延伸模組專案啟動偵錯 (**F5**)，但會等候直到主機啟動延伸模組後，才叫用延伸模組中的中斷點。
 
-**偵錯範例程式碼**
+**偵錯的程式碼範例**
 
 在程式碼範例中，主機與延伸模組位於相同的方案。 執行下列動作以進行偵錯：
 
@@ -353,11 +353,11 @@ public ExtensionManager(string extensionContractName)
 5. 開始偵錯 **MathExtension** 專案 (以滑鼠右鍵按一下 **MathExtension** 專案，**\[偵錯\] > \[開始新執行個體\]**)，這樣將會進行部署，並在主機中觸發套件安裝事件。
 6. 在 **MathExtensionHost** 應用程式中，瀏覽至 **\[Calculation\]** 頁面，然後按一下 **\[x^y\]** 以啟動延伸模組。 首先會叫用 `Invoke()`中斷點，您可以看到正在進行延伸模組應用程式服務呼叫。 接著叫用延伸模組中的 `OnAppServiceRequestReceived()` 方法，您可以看到應用程式服務計算結果並將結果傳回。
 
-**疑難排解實作為背景工作的應用程式服務**
+**實作為應用程式服務的擴充功能疑難排解**
 
 如果延伸主機有無法連接邀延伸模組的應用程式服務，請確定 `<uap:AppService Name="...">` 屬性符合您置入 `<Service>` 元素中的資訊。 如果與延伸模組提供的服務名稱不相符，主機就無法符合您實作的應用程式服務名稱，而且主機也無法啟動延伸模組。
 
-_MathExtension 專案中的 Package.appxmanifest：_
+_Package.appxmanifest MathExtension 專案中：_
 ```xml
 <Extensions>
    <uap:Extension Category="windows.appService">
@@ -386,7 +386,7 @@ _MathExtension 專案中的 Package.appxmanifest：_
 - 執行主機，然後將延伸模組應用程式更新為較新的版本。
     - 主機是否會選擇變更的版本，並正確卸除延伸模組的舊版本？  
 
-**要測試的進階案例：**
+**若要測試的進階的案例：**
 
 - 執行主機、將延伸模組應用程式移到抽取式媒體、移除媒體
     - 主機是否偵測到套件狀態變更並停用延伸模組？
@@ -407,7 +407,7 @@ _MathExtension 專案中的 Package.appxmanifest：_
 
 應用程式延伸模組會參與開放式生態系統。 如果您的應用程式可以裝載應用程式延伸模組，任何人都能針對您的主機撰寫延伸模組，只要這些延伸模組符合您從延伸模組傳送/接收資訊的方法即可。 這點與參與封閉式生態系統的選用套件不同，其中是由發佈者決定允許誰來建立可與應用程式搭配使用的選用套件。
 
-應用程式延伸模組是獨立套件，而且可以成為獨立應用程式。 這些延伸模組對其他應用程式不能有部署相依性。選用套件必須有主要套件，沒有就無法執行。
+應用程式延伸模組是獨立套件，而且可以成為獨立應用程式。 這些延伸模組對其他應用程式不能有部署相依性。 選用套件必須有主要套件，沒有就無法執行。
 
 遊戲的擴充套件緊密繫結至遊戲，因此是很好的選用套件候選項目，無法單獨在遊戲之外執行，而且您可能也不希望生態系統中的任何開發人員都來建立擴充套件。
 
@@ -420,9 +420,9 @@ _MathExtension 專案中的 Package.appxmanifest：_
 ## <a name="related-topics"></a>相關主題
 
 * [應用程式延伸模組簡介](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
-* [關於應用程式延伸的組建 2016 工作階段](https://channel9.msdn.com/Events/Build/2016/B808)
-* [組建 2016 應用程式延伸模組程式碼範例](https://github.com/Microsoft/App-Extensibility-Sample)
-* [使用背景工作支援應用程式](support-your-app-with-background-tasks.md)
+* [2016 組建會議的相關應用程式擴充功能](https://channel9.msdn.com/Events/Build/2016/B808)
+* [Build 2016 應用程式延伸模組程式碼範例](https://github.com/Microsoft/App-Extensibility-Sample)
+* [支援您的應用程式使用背景工作](support-your-app-with-background-tasks.md)
 * [如何建立和使用應用程式服務](how-to-create-and-consume-an-app-service.md)。
 * [AppExtensions 命名空間](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)
-* [透過服務、延伸模組和套件擴充您的應用程式](https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages)
+* [擴充您的應用程式服務、 擴充功能，與套件](https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages)

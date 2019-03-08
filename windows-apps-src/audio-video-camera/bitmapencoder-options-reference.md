@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 07f5c6ef180cb4abe90a705e73be8d99ecbd2ca7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947081"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603183"
 ---
 # <a name="bitmapencoder-options-reference"></a>BitmapEncoder 選項參考
 
@@ -36,7 +36,7 @@ ms.locfileid: "8947081"
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立、編輯和儲存點陣圖影像](imaging.md)
+* [建立、 編輯和儲存點陣圖影像](imaging.md)
 * [支援的轉碼器](supported-codecs.md)
 
  

@@ -6,15 +6,15 @@ ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117718"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624623"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 
-**使用受歡迎的全端 Web 技術建置適用於 Microsoft Store 的託管 Web 應用程式**
+**為 Microsoft Store，與熱門 fullstack web 技術建置裝載的 Web 應用程式**
 
 ![做為單頁 Web 應用程式的簡單記憶遊戲](images/fullstack.png)
 
@@ -28,7 +28,7 @@ ms.locfileid: "9117718"
 
  - [Node.js](https://nodejs.org/en/download/) - 務必要選取選項以新增 Node 到您的 PATH。
 
- - [Express 產生器](https://expressjs.com/en/starter/generator.html)- 在您安裝 Node 後，透過執行下列來安裝 Express： `npm install express-generator -g`
+ - [Express 產生器](https://expressjs.com/en/starter/generator.html)-之後安裝節點，執行安裝 Express `npm install express-generator -g`
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -36,11 +36,11 @@ ms.locfileid: "9117718"
 
 如果您決定要放棄 (或延後) Azure 部分，只要略過部分 I 及 II 的最後區段，其中涵蓋 Azure 裝載和封裝 Microsoft Store 適用的應用程式。 您建置的 API 服務與 Web 應用程式仍會在您的電腦上本機執行 (分別從 `http://localhost:8000` 到 `http://localhost:3000`)。
 
-## <a name="part-i-build-a-rest-api-backend"></a>部分 I︰建置 REST API 後端
+## <a name="part-i-build-a-rest-api-backend"></a>第一部分：建置 REST API 後端
 
 我們將第一次建置簡單的記憶遊戲 API 以啟動我們的記憶遊戲 Web 應用程式。 我們將使用 [Swagger](https://swagger.io/) 來定義我們 API，並產生 Scaffolding 程式碼和 Web UI 以進行手動測試。
 
-如果您想要略過此部分並直接移至[部分 II︰建置單頁 Web 應用程式](#part-ii-build-a-single-page-web-application)，以下是[部分 I 已完成的程式碼](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)。請依照 *README* 指示安裝程式碼並在本機執行，或查看 *5. 在 Azure 上裝載 API 服務，並啟用 CORS* 從 Azure 執行它。
+如果您想要跳過這個部分，並直接移到[第 ii 部分：建置單一頁面 web 應用程式](#part-ii-build-a-single-page-web-application)，如下[的第 I 部分完成的程式碼](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)。請遵循*讀我檔案*以取得啟動程式碼，並在本機執行，或請參閱指示*5。裝載您在 Azure 上的 API 服務並啟用 CORS*從 Azure 中執行它。
 
 ### <a name="game-overview"></a>遊戲概觀
 
@@ -82,7 +82,7 @@ ms.locfileid: "9117718"
 |-----------|-------------|
 | int *size* |要洗牌到遊戲板的配對數。 範例： `http://memorygameapisample/new?size=2`|
 
-| 回應 | 說明 |
+| 回應 | 描述 |
 |----------|-------------|
 | 200 OK | 所要求大小的新記憶遊戲已經就緒。|
 | 400 BAD REQUEST| 所要求的大小超出可接受的範圍。|
@@ -91,9 +91,9 @@ ms.locfileid: "9117718"
 #### <a name="get-game"></a>GET /game
 擷取記憶遊戲板的目前狀態。
 
-*無參數*
+*沒有參數*
 
-| 回應 | 說明 |
+| 回應 | 描述 |
 |----------|-------------|
 | 200 OK | 傳回 JSON 陣列的卡片物件。 每張卡都有 **cleared** 屬性，指出是否已找到其配對。 相符的卡片也會回報它們的 **value**。 範例： `[{"cleared":"false"},{"cleared":"false"},{"cleared":"true","value":1},{"cleared":"true","value":1}]`|
 
@@ -104,12 +104,12 @@ ms.locfileid: "9117718"
 |-----------|-------------|
 | int *card* | 要顯示之卡片的卡片 ID (遊戲板陣列中的索引)。 每個完成的「猜測」包含兩個指定的卡片 (亦即，使用有效且唯一的 *card* 值兩次呼叫 **/guess**)。 範例： `http://memorygameapisample/guess?card=0`|
 
-| 回應 | 說明 |
+| 回應 | 描述 |
 |----------|-------------|
 | 200 OK | 傳回指定之卡片含有 **id** 和 **value** 的 JSON。 範例： `[{"id":0,"value":1}]`|
 | 400 BAD REQUEST |  指定的卡片發生錯誤。 詳細資訊請查看 HTTP 回應本文。|
 
-### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1. 指出 API 並產生程式碼端
+### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1.規格的 api，並產生程式碼虛設常式
 
 我們將使用 [Swagger](https://swagger.io/) 將我們的記憶遊戲 API 設計轉換為有用的 Node.js 伺服器程式碼。 以下是您可以定義我們的[記憶遊戲 API 為 Swagger 中繼資料](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json)的方式。 我們會使用這個來產生伺服器程式碼端。
 
@@ -144,7 +144,7 @@ ms.locfileid: "9117718"
 
     立即啟動 VS Code 與 **\[檔案\]** > **\[開啟資料夾...\]**，並移至 MemoryGameAPI 目錄。 這是您剛建立的 Node.js API 伺服器！ 它使用受歡迎的 [ExpressJS](https://expressjs.com/en/4x/api.html) Web 應用程式架構來構建和執行您的專案。
 
-### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. 自訂伺服器程式碼與設定偵錯
+### <a name="2-customize-the-server-code-and-setup-debugging"></a>2.自訂的伺服器程式碼和安裝程式進行偵錯
 
 您的專案根目錄中的 *server.js* 檔是做為您伺服器的「主要」功能。 在 VS Code 中開啟它並複製下列到其中。 修改自所產生程式碼的程式行會註解進一步的解釋。
 
@@ -211,7 +211,7 @@ Server.listen(port, function () {  // Starts server with our modfied port settin
 
 現在按下 F5 並將您的瀏覽器開啟至 [https://localhost:8000](https://localhost:8000)。 頁面應會為我們的記憶遊戲 API 開啟至 Swagger UI，而您可以從該處為每個方法展開詳細資料和輸入欄位。 您甚至可以嘗試呼叫 API，雖然其回應將只包含模擬的資料 (由 [Swagmock](https://www.npmjs.com/package/swagmock) 模組提供)。 是時候加入我們的遊戲邏輯，讓這些 API 成真。
 
-### <a name="3-set-up-your-route-handlers"></a>3. 設定您的路由處理常式
+### <a name="3-set-up-your-route-handlers"></a>3.設定您的路由處理常式
 
 Swagger 檔案 (config\swagger.json) 會指示我們的伺服器如何處理各種用戶端 HTTP 要求，方式是對應它所定義的每個 URL 路徑至處理常式檔案 (在 \handlers 中)，以及針對該處理常式檔案中的 `operationId` (函式) 的該路徑定義的每一種方法 (例如 **GET**、**POST**)。
 
@@ -223,7 +223,7 @@ Swagger 檔案 (config\swagger.json) 會指示我們的伺服器如何處理各�
 
  您可以瀏覽這些檔案中的註解，以取得有關變更的更多詳細資料，但基本上它們檢查基本輸入錯誤 (例如，用戶端要求小於一個符合項目的新遊戲)，並視需要傳送描述性錯誤訊息。 處理常式也路由有效的用戶端要求至其對應的資料檔 (在 \data 中) 以進一步處理。 讓我們接下來進行下一步。
 
-### <a name="4-set-up-your-data-model"></a>4. 設定您的資料模型
+### <a name="4-set-up-your-data-model"></a>4.設定您的資料模型
 
 是時候使用我們的記憶遊戲板的真實資料模型，換出預留位置的資料模擬服務。
 
@@ -237,7 +237,7 @@ Swagger 檔案 (config\swagger.json) 會指示我們的伺服器如何處理各�
 
 請確定您已儲存 VS Code 中的所有變更，再次啟動您的伺服器 (VS Code 中的 F5 或殼層的 `npm start`，然後瀏覽至 [https://localhost:8000](https://localhost:8000)) 來測試遊戲 API。
 
-每次您按下 **\[試試看！\]**  按鈕 (**/game**、**/guess** 或 **/new** 作業之一)，檢查以下產生的**回應本文**和**回應碼**以確認一切是否如預期般運作。
+每次您按下 **\[試試看！\]** 按鈕 (**/game**、**/guess** 或 **/new** 作業之一)，檢查以下產生的**回應本文**和**回應碼**以確認一切是否如預期般運作。
 
 嘗試： 
 
@@ -270,13 +270,13 @@ for (var i=0; i < board.length; i++){
 
 藉由此項變更，**GET /game** 方法會傳回所有所有卡片值 (包括尚未清除的值)。 這是您在建置記憶遊戲前端時，可保留的實用偵錯駭客。
 
-### <a name="5-optional-host-your-api-service-on-azure-and-enable-cors"></a>5. (選擇性) 在 Azure 上裝載 API 服務並啟用 CORS
+### <a name="5-optional-host-your-api-service-on-azure-and-enable-cors"></a>5.（選擇性）裝載您在 Azure 上的 API 服務並啟用 CORS
 
 Azure 文件將逐步引導您完成：
 
- - [向 Azure 入口網站註冊新的 *API App*](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
+ - [註冊新*API 應用程式*使用 Azure 入口網站](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
  - [設定適用於 API 應用程式的 Git 部署](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)，以及
- - [部署 API 應用程式的程式碼到 Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
+ - [將您的 API 應用程式程式碼部署至 Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
 註冊您的 App 時，請嘗試區分您的 *App 名稱* (避免命名與 *http://memorygameapi.azurewebsites.net* URL 上的其他請求變異衝突)。
 
@@ -288,13 +288,13 @@ Azure 文件將逐步引導您完成：
 
 以下是一些可讓您更進一步的實用資源︰
 
- - [使用 Visual Studio Code 的進階 Node.js 偵錯](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
+ - [進階偵錯使用 Visual Studio Code 的 Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Azure Web + 行動裝置版文件](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
+ - [Azure Web + 行動 docs](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
 
  - [Azure DocumentDB 文件](https://docs.microsoft.com/en-us/azure/documentdb/index)
 
-## <a name="part-ii-build-a-single-page-web-application"></a>部分 II︰ 建置單頁 web 應用程式
+## <a name="part-ii-build-a-single-page-web-application"></a>第二部分：建置單一頁面 web 應用程式
 
 既然您已經從部分 I 建置 (或[下載](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) [REST API 後端](#part-i-build-a-rest-api-backend)，您就可以開始使用 [Node](https://nodejs.org/en/)、[Express](https://expressjs.com/) 和 [Bootstrap](https://getbootstrap.com/) 建立單頁記憶遊戲前端。
 
@@ -307,7 +307,7 @@ Azure 文件將逐步引導您完成：
 * [Bootstrap](https://getbootstrap.com/)︰用於回應式配置
 * [Visual Studio Code](https://code.visualstudio.com/)︰用於程式碼編寫、Markdown 檢視及偵錯
 
-### <a name="1-create-a-nodejs-application-by-using-express"></a>1. 使用 Express 建立 Node.js 應用程式
+### <a name="1-create-a-nodejs-application-by-using-express"></a>1.使用 Express 建立 Node.js 應用程式
 
 讓我們開始使用 Express 建立 Node.js 專案。
 
@@ -345,7 +345,7 @@ Azure 文件將逐步引導您完成：
 
 7. 若要重新整理應用程式以查看您的新標題，請按下 **Crtl + C**、命令提示字元中的 **Y**來停止您的應用程式，再使用 `npm start` 重新開機。
 
-### <a name="2-add-client-side-game-logic-code"></a>2. 新增用戶端遊戲邏輯程式碼
+### <a name="2-add-client-side-game-logic-code"></a>2.加入用戶端的遊戲邏輯的程式碼
 您可以在[開始](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Start)資料夾中尋找這一半教學課程所需的檔案。 如果您遺失了，完成的程式碼就在[最終](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Final)資料夾中。 
 
 1. 複製[開始](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Start)資料夾內的 scripts.js 檔並貼到 memory\public\javascripts 中。 此檔案包含執行遊戲所需的所有遊戲邏輯，包括︰
@@ -464,14 +464,14 @@ Azure 文件將逐步引導您完成：
 > [!TIP] 
 > 如果您使用 Visual Studio Code，請選取您想要取消註解的所有程式碼行，並按下 Crtl + K、U
 
-在此我們使用部分 I 建立的 [`jQuery.ajax()`](https://api.jquery.com/jQuery.ajax/) 和 **PUT** [`/guess`](#part-i-build-a-rest-api-backend) 方法。 
+在這裡我們使用[ `jQuery.ajax()` ](https://api.jquery.com/jQuery.ajax/)並**放** [ `/guess` ](#part-i-build-a-rest-api-backend)第 I 部分中建立的方法。 
 
 此程式碼以下列順序執行。
 
-* 使用者選取的第一個卡片的 `id` 新增至 selectedCards[] 陣列做為第一個值︰ `selectedCards[0]` 
+* `id`第一張卡片的使用者選取已新增為第一個值 selectedCards [] 陣列： `selectedCards[0]` 
 * 使用 [`/guess`](#part-i-build-a-rest-api-backend) 方法將 `selectedCards[0]` 中的值 (`id`) 張貼到伺服器
 * 伺服器會以該卡的 `value` (整數) 回應
-* [Bootstrap glyphicon](https://getbootstrap.com/components/) 會新增到卡片的背面，而卡片的 `id` 是 `selectedCards[0]`
+* A [Bootstrap glyphicon](https://getbootstrap.com/components/)新增至音效卡的背面的`id`是 `selectedCards[0]`
 * 第一個卡片的 `value` (從伺服器) 會儲存在 `selectedCardsValues[]` 陣列中︰`selectedCardsValues[0]`。 
 
 使用者的第二個猜測會遵照相同的邏輯。 如果使用者選取的卡片有相同的識別碼 (例如，`selectedCards[0] == selectedCards[1]`)，則卡片相符！ CSS 類別`.matched` 會新增至相符的卡片 (將其轉為綠色)，而卡片會維持翻轉狀態。
@@ -489,7 +489,7 @@ if (cardsFlipped == gameBoardSize) {
 
 如果翻轉的卡片數符合遊戲板的大小 (例如，`cardsFlipped == gameBoardSize`)，表示已沒有要翻轉的卡片，而使用者已贏得遊戲。 我們將會新增一些簡單 HTML到 `id="game-board"` 的 `div`，讓使用者知道他們已贏得遊戲並可再次玩遊戲。  
 
-### <a name="3-create-the-user-interface"></a>3. 建立使用者介面 
+### <a name="3-create-the-user-interface"></a>3.建立使用者介面 
 現在，我們透過建立使用者介面來看看此程式碼的所有動作。 本教學課程中，我們使用範本化引擎 [Pug](https://pugjs.org/)(正式 Jade)。  *Pug* 是撰寫 HTML 的全新、區分空白字元的語法。 這裡提供一個範例。 
 
 ```
@@ -537,13 +537,13 @@ becomes
     ```
 
 > [!TIP] 
-> 記住︰Pug 會區分空白字元。 請確定您的所有縮排都正確！
+> 請記住：Pug 是機密的空白字元。 請確定您的所有縮排都正確！
 
-### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4. 使用 Bootstrap 的格線系統來建立回應式配置
+### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4.若要建立回應式版面配置中使用的 Bootstrap 方格系統
 Bootstrap 的[方格系統](https://getbootstrap.com/css/#grid)是可變式方格系統，可縮放方格為裝置的檢視區變更。 此遊戲中的卡片使用 Bootstrap 預先定義的方格系統類別配置，包括︰
-* `.container-fluid`︰指定方格的可變式容器
-* `.row-fluid`︰指定可變式列
-* `.col-xs-3`︰指定欄數
+* `.container-fluid`： 指定格線的流暢容器
+* `.row-fluid`： 指定的流暢的資料列
+* `.col-xs-3`： 指定資料行數目
 
 Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您在行動裝置上看到的導覽功能表。  不過，因為我們希望我們的遊戲都要有欄位，所以我們使用預先定義的類別 `.col-xs-3`，這會一直讓方格保留水平。 
 
@@ -572,7 +572,7 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
                 script restoreGame();
     ```
 
-### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5. 使用 CSS 轉換新增卡片翻轉動畫
+### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5.加入 CSS 轉換卡 flip 動畫
 使用 [開始] 資料夾的 style.css 檔取代 memory\public\stylesheets 中的 style.css 檔。
 
 使用 [CSS 轉換](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/css/transforms)新增翻轉動作可提供卡片逼真的 3D 翻轉動作。 遊戲中的卡片是使用下列 HTML 結構建立並以程式設計方式新增到遊戲板 (在之前顯示的`drawGameBoard()` 函式中)。
@@ -592,14 +592,14 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
     perspective: 1000px; 
     ```
 
-2. 立即在 style.css 中新增下列屬性至 `.cards` 類別。 `.cards``div` 是實際做翻轉動畫的元素，會顯示卡片的正面或背面。 
+2. 立即在 style.css 中新增下列屬性至 `.cards` 類別。 `.cards` `div`是會實際進行翻轉的動畫，顯示最上層或音效卡的背面的項目。 
 
     ``` css
     transform-style: preserve-3d;
     transition-duration: 1s;
     ```
 
-    [`transform-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style) 屬性建立 3D 呈現內容，而 `.cards` 類別 (`.front`和`.back`) 的子項是 3D 空間的成員。 新增 [`transition-duration`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration) 屬性會指定動畫結束的秒數。 
+    [`transform-style`  ](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style) 屬性建立 3D 呈現內容，而 `.cards` 類別 (`.front`和`.back`) 的子項是 3D 空間的成員。 新增 [`transition-duration`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration) 屬性會指定動畫結束的秒數。 
 
 3.  使用 [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) 屬性，我們可以沿著 Y 軸旋轉卡片。  新增下列 CSS 到 `cards.flip`。
 
@@ -615,10 +615,10 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
 
     現在當使用者按下卡片，卡片就會 180 度旋轉。
 
-### <a name="6-test-and-play"></a>6. 測試和進行遊戲
+### <a name="6-test-and-play"></a>6.測試與播放
 恭喜！ 您已完成建立 Web 應用程式！ 我們來測試看看。 
 
-1. 在您的記憶目錄中開啟命令提示字元，並輸入下列命令︰ `npm start`
+1. 開啟命令提示字元，在記憶體目錄，並輸入下列命令： `npm start`
 
 2. 在您的瀏覽器中，移至 [https://localhost:3000/](https://localhost:3000/) 並玩遊戲！
 
@@ -626,11 +626,11 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
 
     您也可以比較您的程式碼與最終資料夾中提供的程式碼。
 
-4. 若要停止遊戲，請在命令提示字元中輸入︰**Ctrl + C**，**Y**。 
+4. 若要停止遊戲時，在命令提示字元中輸入：**Ctrl + C**， **Y**。 
 
 ### <a name="going-further"></a>更進一步
 
-您現在可以部署您的應用程式到 Azure (或任何其他雲端裝載服務)，跨不同的裝置外形規格 (例如行動裝置、平板電腦和桌上型電腦) 進行測試。 (別忘了也要跨不同的瀏覽器進行測試！) 一旦您的 App 準備好進入生產，您可以輕鬆地將其封裝為*通用 Windows 平台* (UWP) 的*主控 Web 應用程式* (HWA)，以及從 Microsoft Store 進行散發。
+您現在可以部署您的應用程式到 Azure (或任何其他雲端裝載服務)，跨不同的裝置外形規格 (例如行動裝置、平板電腦和桌上型電腦) 進行測試。 （別忘了太跨不同的瀏覽器測試 ！）您的應用程式可用於生產環境之後，您可以輕鬆地封裝為*裝載的 Web 應用程式*(HWA) 的*通用 Windows 平台*(UWP) 並從 Microsoft Store 散發。
 
 在 Microsoft Store 中發佈的基本步驟如下︰
 
@@ -640,8 +640,8 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
 
 以下是一些可讓您更進一步的實用資源︰
 
- - [將您的應用程式開發專案部署至 Azure 網站](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
+ - [您的應用程式開發專案部署至 Azure 網站](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [將您的 Web 應用程式轉換為通用 Windows 平台 (UWP) app](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
+ - [轉換您的通用 Windows 平台 (UWP) 應用程式的 web 應用程式](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
 
  - [發佈 Windows 應用程式](https://developer.microsoft.com/en-us/store/publish-apps)

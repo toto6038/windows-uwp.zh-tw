@@ -1,21 +1,21 @@
 ---
 title: 建立及註冊同處理序的背景工作
-description: 建立及註冊與前景應用程式在相同處理序中執行的同處理序工作。
+description: 建立及註冊與前景 App 在相同處理序中執行的同處理序工作。
 ms.date: 11/03/2017
 ms.topic: article
-keywords: windows 10，uwp，背景工作
+keywords: windows 10 uwp，背景工作
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 50e818059436cf7653bf7ac7b2203b0761b93377
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045041"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615793"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>建立及註冊同處理序的背景工作
 
-**重要 API**
+**重要的 Api**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -29,7 +29,7 @@ ms.locfileid: "9045041"
 
 ## <a name="fundamentals"></a>基礎
 
-同處理序模型藉由提供 App 進入前景或背景時的改良式通知，增強應用程式週期。 應用程式物件針對這些轉換提供兩個新的事件：[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。 這些事件適用的應用程式週期取決於應用程式的可見度狀態。如需了解這些事件及它們如何影響應用程式週情，請參閱 [App 週期](app-lifecycle.md)。
+同處理序模型藉由提供 App 進入前景或背景時的改良式通知，增強應用程式週期。 兩個新的事件都是從應用程式物件的這些轉變：[**EnteredBackground** ](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground)並[ **LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。 這些事件適用的應用程式週期取決於應用程式的可見度狀態。如需了解這些事件及它們如何影響應用程式週情，請參閱 [App 週期](app-lifecycle.md)。
 
 大致說來，您將處理 **EnteredBackground** 事件來執行將在您 App 於背景中執行時執行的程式碼，以及處理 **LeavingBackground** 以在您 App 已移至前景時能夠得知。
 
@@ -57,7 +57,7 @@ ms.locfileid: "9045041"
 
 ## <a name="add-a-condition-to-control-when-your-task-will-run-optional"></a>新增條件來控制工作執行時機 (選擇性)
 
-您可以新增條件來控制觸發程序事件發生後工作的執行時機。 例如，如果您希望等到使用者在場時才執行工作，可以使用 **UserPresent** 條件。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+您可以新增條件來控制觸發程序事件發生後工作的執行時機。 例如，如果您希望在使用者上線時執行工作，則可使用 **UserPresent** 條件。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
 下列範例程式碼會指派條件，要求必須要有使用者：
 
@@ -68,7 +68,7 @@ ms.locfileid: "9045041"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>將您的背景活動程式碼放在 OnBackgroundActivated() 中
 
-將您的背景活動程式碼放在[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)以回應時，它就會引發背景觸發程序。 **OnBackgroundActivated**可以視為如同[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)。 此方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)參數，其中包含**Run**方法提供的所有項目。 例如，在 App.xaml.cs 中：
+將背景活動的程式碼放[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)背景觸發程序來它就會引發時回應。 **OnBackgroundActivated** 可以視同 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)。 方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)參數，其中包含的所有項目所**執行**方法提供。 例如，在 App.xaml.cs:
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -88,7 +88,7 @@ sealed partial class App : Application
 }
 ```
 
-如需更豐富的**OnBackgroundActivated**範例，請參閱[轉換的應用程式服務，以便與其主控應用程式在相同處理序中執行](convert-app-service-in-process.md)。
+針對更豐富**OnBackgroundActivated**範例，請參閱[轉換為其主機應用程式相同的處理序中執行的 app service](convert-app-service-in-process.md)。
 
 ## <a name="handle-background-task-progress-and-completion"></a>處理背景工作進度和完成
 
@@ -110,24 +110,24 @@ sealed partial class App : Application
 
 ## <a name="related-topics"></a>相關主題
 
-**詳細的背景工作教學主題**
+**詳細的背景工作的說明主題**
 
 * [將跨處理序背景工作轉換成同處理序背景工作](convert-out-of-process-background-task.md)
-* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
-* [在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
-* [登錄背景工作](register-a-background-task.md)
-* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [建立並註冊跨處理序背景工作](create-and-register-a-background-task.md)
+* [在背景中播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [回應系統事件與背景工作](respond-to-system-events-with-background-tasks.md)
+* [註冊背景工作](register-a-background-task.md)
+* [設定用於執行背景工作的條件](set-conditions-for-running-a-background-task.md)
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
+* [監視背景工作的進度和完成](monitor-background-task-progress-and-completion.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 
 **背景工作指引**
 
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
 **背景工作 API 參考**
 

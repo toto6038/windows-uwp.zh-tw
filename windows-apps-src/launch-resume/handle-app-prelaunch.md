@@ -1,17 +1,17 @@
 ---
-title: 處理 App 預先啟動
-description: 了解如何透過覆寫 OnLaunched 方法及呼叫 CoreApplication.EnablePrelaunch(true) 來處理應用程式預先啟動。
+title: 處理應用程式預先啟動
+description: 了解如何透過覆寫 OnLaunched 方法及呼叫 CoreApplication.EnablePrelaunch(true) 來處理 App 預先啟動。
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ms.date: 07/05/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f68d9dd912c92ff7de8b861f576e8f0c4b4dde
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925802"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658703"
 ---
 # <a name="handle-app-prelaunch"></a>處理應用程式預先啟動
 
@@ -19,9 +19,9 @@ ms.locfileid: "8925802"
 
 ## <a name="introduction"></a>簡介
 
-在可用的系統資源允許，提升傳統型裝置系列裝置上的 UWP app 的啟動效能會藉由主動啟動使用者最常用的 app 在背景中。 預先啟動的 App 在啟動不久後就會立即進入暫停狀態。 然後，當使用者叫用 App 時，App 會從暫停狀態切換到執行中狀態來繼續執行，這比 App 冷啟動快。 使用者所體驗到的就是 App 啟動非常快速。
+當可用的系統資源允許時，會將桌面裝置系列裝置上的 UWP 應用程式的啟動效能改進主動啟動在背景中的使用者最常使用的應用程式。 預先啟動的 App 在啟動不久後就會立即進入暫停狀態。 然後，當使用者叫用 App 時，App 會從暫停狀態切換到執行中狀態來繼續執行，這比 App 冷啟動快。 使用者所體驗到的就是 App 啟動非常快速。
 
-在 Windows 10 之前，App 並未自動利用預先啟動。 在 windows 10，版本 1511 起，所有的通用 Windows 平台 (UWP) 應用程式已成為預先啟動的候選項目。 在 Windows 10 版本 1607 中，您必須透過呼叫 [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)，才能加入預先啟動行為。 在 `OnLaunched()` 內靠近進行 `if (e.PrelaunchActivated == false)` 檢查的位置就是放置這個呼叫的好地方。
+在 Windows 10 之前，App 並未自動利用預先啟動。 於 Windows 10 1511年版中，所有的通用 Windows 平台 (UWP) 應用程式的是候選項目正在預先啟動。 在 Windows 10 版本 1607 中，您必須透過呼叫 [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)，才能加入預先啟動行為。 在 `OnLaunched()` 內靠近進行 `if (e.PrelaunchActivated == false)` 檢查的位置就是放置這個呼叫的好地方。
 
 是否會預先啟動 App，取決於系統資源。 如果系統感到資源壓力，就不會預先啟動應用程式。
 
@@ -35,7 +35,7 @@ XAML 專案 (C#、VB、C++) 及 WinJS 的預設範本皆納入了 Visual Studio 
 
 ## <a name="detect-and-handle-prelaunch"></a>偵測和處理預先啟動
 
-App 在啟動期間會收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 旗標。 使用此旗標執行執行的程式碼應該僅當使用者明確啟動應用程式，如下列修改[**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)中所示。
+App 在啟動期間會收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 旗標。 若要執行應該只執行當使用者明確地啟動應用程式，如下列修改所示的程式碼中使用這個旗標[ **Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -110,9 +110,9 @@ private void TryEnablePrelaunch()
 }
 ```
 
-注意`TryEnablePrelaunch()`函式，上方。 原因，呼叫到`CoreApplication.EnablePrelaunch()`分成這個函式是因為 （只是在階段編譯） JIT 呼叫方法時，會嘗試編譯整個方法。 如果您的應用程式正在執行的版本不支援的 Windows 10 上`CoreApplication.EnablePrelaunch()`，然後 JIT 將會失敗。 藉由將分解到應用程式決定支援的平台時，才會呼叫方法呼叫`CoreApplication.EnablePrelaunch()`，我們避免該問題。
+請注意`TryEnablePrelaunch()`函式，以上所述。 原因呼叫至`CoreApplication.EnablePrelaunch()`納入為重要因素向外到此函式是因為 JIT (just-in-time 編譯） 時呼叫方法時，會嘗試將編譯整個方法。 如果您的應用程式不支援的 Windows 10 版本上執行`CoreApplication.EnablePrelaunch()`，JIT 就會失敗。 隔離應用程式會決定該平台支援時才會呼叫的方法呼叫`CoreApplication.EnablePrelaunch()`，我們避免這個問題。
 
-沒有也程式碼在上述範例中，您可以取消註解如果您的 app 必須要退出預先啟動時執行 Windows 10，版本 1511年。 在版本 1511年中，所有 UWP 應用程式已自動都選擇到預先啟動，而這可能適合您的應用程式。
+沒有也撰寫程式碼在上述範例中，您可以取消註解您的應用程式如果需要退出預先啟動 Windows 10 1511年版上執行時。 在版本 1511年中，所有 UWP 應用程式已自動都選擇到預先啟動，這可能不適合您的應用程式。
 
 ## <a name="use-the-visibilitychanged-event"></a>使用 VisibilityChanged 事件
 
@@ -203,9 +203,9 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
     -   效能影響舉例：您可以等到使用者切換到 App 才擷取當前的天氣資訊，而不是在預先啟動 App 時就載入該資訊，然後在 App 變成可見時，需要再次載入該資訊以確保該資訊是當前的。
 -   如果您的 App 會在啟動時清除其動態磚，請將此操作延遲到可見度變更事件發生之後才進行。
 -   您 App 的遙測應該要能區分一般磚啟用和預先啟動啟用，以便讓您能夠在問題發生時縮小狀況範圍。
--   如果您有 Microsoft Visual Studio2015 Update 1 和 windows 10，版本 1511 開始，您也可以模擬預先啟動 app 的 Visual Studio2015 中選擇 [**偵錯** &gt; **其他偵錯目標** &gt; **偵錯 Windows 通用應用程式預先啟動**。
+-   如果您有 Microsoft Visual Studio 2015 Update 1 和 Windows 10 1511 版，您可以模擬預先啟動應用程式在 Visual Studio 2015 中的應用程式選擇**偵錯** &gt; **其他偵錯目標**&gt; **偵錯 Windows 通用應用程式預先啟動**。
 
 ## <a name="related-topics"></a>相關主題
 
-* [App 週期](app-lifecycle.md)
+* [應用程式生命週期](app-lifecycle.md)
 * [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)

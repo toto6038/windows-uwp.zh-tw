@@ -7,23 +7,23 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 陰影圖, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e661065f86ac173a6ce323281c80fc964d0a4c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928157"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646363"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>支援各種硬體上的陰影圖
 
 
 
 
-在更快速的裝置上轉譯逼真度更高的陰影，在功能較弱的裝置上轉譯更快速的陰影。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第四部分。
+在更快速的裝置上轉譯逼真度更高的陰影，在功能較弱的裝置上轉譯更快速的陰影。 第 4 個[逐步解說：實作使用 Direct3D 11 中的深度緩衝區的陰影磁碟區](implementing-depth-buffers-for-shadow-mapping.md)。
 
 ## <a name="comparison-filter-types"></a>比較篩選器類型
 
 
-如果裝置能夠承擔效能損失，就只使用線性篩選。 一般來說，Direct3D 功能層級 9\_1 裝置沒有足夠的能力，能夠為陰影中的線性篩選進行備援。 請在這些裝置上改用點篩選。 當您使用線性篩選時，請調整像素著色器，讓它能混合陰影邊緣。
+如果裝置能夠承擔效能損失，就只使用線性篩選。 一般而言，Direct3D 功能層級 9\_1 的裝置沒有足夠的電力以線性篩選 shadows 備用。 請在這些裝置上改用點篩選。 當您使用線性篩選時，請調整像素著色器，讓它能混合陰影邊緣。
 
 建立適用於點篩選的比較取樣器：
 
@@ -113,12 +113,12 @@ return float4(input.color * (light + shadow), 1.f);
 ## <a name="shadow-buffer-depth"></a>陰影緩衝區深度
 
 
-陰影緩衝區中較高的精確度將能提供更準確的深度測試結果，這可協助避免發生像是 z 緩衝區衝突的問題。 但是，與較大的陰影圖一樣，較高的精確度會佔用較多的記憶體。 在遊戲中使用不同的深度精確度類型來進行試驗 (DXGI\_FORMAT\_R24G8\_TYPELESS 與 DXGI\_FORMAT\_R16\_TYPELESS)，然後觀察不同功能層級上的速度與品質。
+陰影緩衝區中較高的精確度將能提供更準確的深度測試結果，這可協助避免發生像是 z 緩衝區衝突的問題。 但是，與較大的陰影圖一樣，較高的精確度會佔用較多的記憶體。 嘗試各種不同的深度有效位數類型，在您的遊戲-DXGI\_格式\_R24G8\_TYPELESS 與 DXGI\_格式\_R16\_TYPELESS-，並在觀察速度和品質不同的功能層級。
 
 ## <a name="optimizing-precompiled-shaders"></a>將預先編譯的著色器最佳化
 
 
-雖然通用 Windows 平台 (UWP) 應用程式能夠使用動態著色器編譯，但是使用動態著色器連結更為快速。 您也可以使用編譯器指示詞和 `#ifdef` 區塊來建立不同版本的著色器。 您可以在文字編輯器中開啟 Visual Studio 專案檔，然後為 HLSL 新增多個 `<FxcCompiler>` 項目 (每個都有適當的前置處理器定義) 來這樣做。 請注意，這樣會使用不同的檔案名稱；在此例中，Visual Studio 會將 \_point 和 \_linear 附加到不同版本的著色器。
+雖然通用 Windows 平台 (UWP) 應用程式能夠使用動態著色器編譯，但是使用動態著色器連結更為快速。 您也可以使用編譯器指示詞和 `#ifdef` 區塊來建立不同版本的著色器。 您可以在文字編輯器中開啟 Visual Studio 專案檔，然後為 HLSL 新增多個 `<FxcCompiler>` 項目 (每個都有適當的前置處理器定義) 來這樣做。 請注意，這樣就需要不同的檔案名稱;在此情況下，Visual Studio 會將附加\_點和\_線性的著色器之不同版本。
 
 適用於著色器線性篩選版本的專案檔項目會定義 LINEAR：
 

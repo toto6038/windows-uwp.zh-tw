@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ba112e04518d3e1ee05e7ee8e23e633d4cf59748
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936858"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599173"
 ---
 # <a name="emissive-lighting"></a>放射光源
 
@@ -51,7 +51,7 @@ Cₑ 的值為色彩 1 或色彩 2。 如果未提供頂點色彩，則會使用
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光源的數學計算](mathematics-of-lighting.md)
+[光源的數學運算](mathematics-of-lighting.md)
 
  
 

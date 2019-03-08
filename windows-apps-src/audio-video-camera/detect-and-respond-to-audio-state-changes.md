@@ -4,14 +4,14 @@ description: 本文說明 UWP app 如何偵測及回應音訊資料流層級的�
 title: 偵測及回應音訊狀態變更
 ms.date: 04/03/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 69eeb82fd9a1e043e99b7fe0d635ca750779eda5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943245"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631673"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>偵測及回應音訊狀態變更
 從 Windows 10 版本 1803 開始，您的應用程式可偵測系統何時將您應用程式使用之音訊的音量降低或設為靜音。 您可以收到關於擷取和轉譯串流、特定音訊裝置和音訊類別，或您的應用程式用於播放媒體之 [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) 物件的相關通知。 例如，系統可能會在鬧鈴響起時，降低 (或者「迴避」) 音訊播放音量。 如果您的應用程式未在應用程式資訊清單中宣告 *backgroundMediaPlayback* 功能，當您的應用程式進入背景時，系統會將其設為靜音。 
@@ -22,7 +22,7 @@ ms.locfileid: "8943245"
 
 [!code-cs[SoundLevelDeviceIdCategory](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSoundLevelDeviceIdCategory)]
 
-在**SoundLevelChanged**事件處理常式中，檢查[**Audiostatemonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel)屬性**AudioStateMonitor**寄件者傳入處理常式來判斷新音訊資料流層級的功能。 在此範例中，應用程式在音量設為靜音時停止擷取音訊，並在恢復最大音量時繼續擷取。
+在  **SoundLevelChanged**事件處理常式中，核取[ **SoundLevel** ](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel)屬性**AudioStateMonitor**寄件者傳遞至處理常式來判斷資料流的新音訊層級的功能。 在此範例中，應用程式在音量設為靜音時停止擷取音訊，並在恢復最大音量時繼續擷取。
 
 [!code-cs[GameChatSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetGameChatSoundLevelChanged)]
 

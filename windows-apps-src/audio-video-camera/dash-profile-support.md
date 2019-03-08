@@ -4,14 +4,14 @@ description: 本文列出 UWP app 支援的透過 HTTP 的動態彈性資料流 
 title: 透過 HTTP 的動態彈性資料流 (DASH) 設定檔支援
 ms.date: 02/15/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d680f7d4a3510f66cba74d1c8b30d8883b07369a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926058"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627203"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a>透過 HTTP 的動態彈性資料流 (DASH) 設定檔支援
 
@@ -19,7 +19,7 @@ ms.locfileid: "8926058"
 ## <a name="supported-dash-profiles"></a>支援的 DASH 設定檔
 下表列出 UWP app 所支援的 DASH 設定檔。
 
-|標記 | 資訊清單類型 | 附註|7 月發行的 Windows 10|Windows 10，版本 1511|Windows 10，版本 1607 |Windows 10，版本 1607 |Windows 10，版本 1703|
+|Tag | 資訊清單類型 | 附註|7 月發行的 Windows 10|Windows 10，版本 1511|Windows 10，版本 1607 |Windows 10，版本 1607 |Windows 10，版本 1703|
 |----------------|------|-------|-----------|--------------|---------|-------|--------|
 |urn:mpeg&#58;dash:profile:isoff-live:2011 | 靜態 |     |支援            |  支援              | 支援        |支援| 支援|
 |urn:mpeg&#58;dash:profile:isoff-main:2011 |        | 盡力而為 | 支援            |  支援              | 支援        |支援| 支援|
@@ -38,7 +38,7 @@ ms.locfileid: "8926058"
 ## <a name="related-topics"></a>相關主題
 
 * [媒體播放](media-playback.md)
-* [彈性資料流](adaptive-streaming.md)
+* [調適性串流處理](adaptive-streaming.md)
  
 
  

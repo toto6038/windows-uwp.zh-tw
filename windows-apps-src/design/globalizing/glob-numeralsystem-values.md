@@ -1,5 +1,5 @@
 ---
-Description: This topic lists the values available to the NumeralSystem property of various classes in the Windows.Globalization namespace.
+Description: 本主題列出 Windows.Globalization 命名空間中各種類別可用的 NumeralSystem 屬性值。
 title: NumeralSystem 值
 template: detail.hbs
 ms.date: 11/02/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 當地語系化
 ms.localizationpriority: medium
 ms.openlocfilehash: f4b7e914684d2e4d3d9c4c1f0cdc7e88d7b5b8fe
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924000"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610043"
 ---
 # <a name="numeralsystem-values"></a>NumeralSystem 值
 
@@ -35,7 +35,7 @@ ms.locfileid: "8924000"
 | ArabExt | 擴充的阿拉伯文印度語系 | U+06F0、U+06F1、U+06F2、U+06F3、U+06F4、U+06F5、U+06F6、U+06F7、U+06F8、U+06F9 |
 | Bali | 峇里文 | U+1B50、U+1B51、U+1B52、U+1B53、U+1B54、U+1B55、U+1B56、U+1B57、U+1B58、U+1B59 |
 | Beng | 孟加拉文 | U+09E6、U+09E7、U+09E8、U+09E9、U+09EA、U+09EB、U+09EC、U+09ED、U+09EE、U+09EF |
-| Cham | 查姆文 | U+AA50、U+AA51、U+AA52、U+AA53、U+AA54、U+AA55、U+AA56、U+AA57、U+AA58、U+AA59 |
+| Cham | Cham | U+AA50、U+AA51、U+AA52、U+AA53、U+AA54、U+AA55、U+AA56、U+AA57、U+AA58、U+AA59 |
 | Deva | 梵文字母 | U+0966、U+0967、U+0968、U+0969、U+096A、U+096B、U+096C、U+096D、U+096E、U+096F |
 | FullWide | 全形 | U+FF10、U+FF11、U+FF12、U+FF13、U+FF14、U+FF15、U+FF16、U+FF17、U+FF18、U+FF19 |
 | Gujr | 古吉拉特文 | U+0AE6、U+0AE7、U+0AE8、U+0AE9、U+0AEA、U+0AEB、U+0AEC、U+0AED、U+0AEE、U+0AEF |
@@ -53,7 +53,7 @@ ms.locfileid: "8924000"
 | Mlym | 馬來亞拉姆文 | U+0D66、U+0D67、U+0D68、U+0D69、U+0D6A、U+0D6B、U+0D6C、U+0D6D、U+0D6E、U+0D6F |
 | Mong | 蒙古文 | U+1810、U+1811、U+1812、U+1813、U+1814、U+1815、U+1816、U+1817、U+1818、U+1819 |
 | Mtei | 曼尼普爾文 | U+ABF0、U+ABF1、U+ABF2、U+ABF3、U+ABF4、U+ABF5、U+ABF6、U+ABF7、U+ABF8、U+ABF9 |
-| Mymr | 緬甸文 | U+1040、U+1041、U+1042、U+1043、U+1044、U+1045、U+1046、U+1047、U+1048、U+1049 |
+| Mymr | 緬甸 | U+1040、U+1041、U+1042、U+1043、U+1044、U+1045、U+1046、U+1047、U+1048、U+1049 |
 | MymrShan | 緬甸文 (撣族) | U+1090、U+1091、U+1092、U+1093、U+1094、U+1095、U+1096、U+1097、U+1098、U+1099 |
 | Nkoo | 西非書面文字 | U+07C0、U+07C1、U+07C2、U+07C3、U+07C4、U+07C5、U+07C6、U+07C7、U+07C8、U+07C9 |
 | Olck | 桑塔爾文 | U+1C50、U+1C51、U+1C52、U+1C53、U+1C54、U+1C55、U+1C56、U+1C57、U+1C58、U+1C59 |
@@ -63,6 +63,6 @@ ms.locfileid: "8924000"
 | Talu | 新傣文 | U+19D0、U+19D1、U+19D2、U+19D3、U+19D4、U+19D5、U+19D6、U+19D7、U+19D8、U+19D9 |
 | TamlDec | 坦米爾文 | U+0BE6、U+0BE7、U+0BE8、U+0BE9、U+0BEA、U+0BEB、U+0BEC、U+0BED、U+0BEE、U+0BEF |
 | Telu | 特拉古文 | U+0C66、U+0C67、U+0C68、U+0C69、U+0C6A、U+0C6B、U+0C6C、U+0C6D、U+0C6E、U+0C6F |
-| Thai | 泰文 | U+0E50、U+0E51、U+0E52、U+0E53、U+0E54、U+0E55、U+0E56、U+0E57、U+0E58、U+0E59 |
+| 泰文 | 泰文 | U+0E50、U+0E51、U+0E52、U+0E53、U+0E54、U+0E55、U+0E56、U+0E57、U+0E58、U+0E59 |
 | Tibt | 藏文 | U+0F20、U+0F21、U+0F22、U+0F23、U+0F24、U+0F25、U+0F26、U+0F27、U+0F28、U+0F29 |
 | Vaii | 范文 | U+A620、U+A621、U+A622、U+A623、U+A624、U+A625、U+A626、U+A627、U+A628、U+A629 |

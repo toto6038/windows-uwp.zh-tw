@@ -1,5 +1,5 @@
 ---
-Description: Use a RichTextBlock with RichTextBlockOverflow elements to create advanced text layouts.
+Description: 使用 RichTextBlock 搭配 RichTextBlockOverflow 元素來建立進階文字配置。
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab83e74dc59b407c15e1a8213540c8954fcd16e
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037040"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610893"
 ---
 # <a name="rich-text-block"></a>RTF 區塊
 
@@ -24,13 +24,13 @@ ms.locfileid: "9037040"
 
 RTF 區塊提供數個適用於進階文字配置的功能，當您需要支援段落、內嵌的 UI 元素或複雜的文字配置時，可以使用 RTF 區塊。
 
-> **重要 API**：[RichTextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、[RichTextBlockOverflow 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)、[Paragraph 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)、[Typography 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
+> **重要的 Api**:[RichTextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)， [RichTextBlockOverflow 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)，[段落類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)，[印刷樣式類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 當您需要支援多個段落、多欄或其他複雜的文字配置，或內嵌的 UI 元素 (例如影像) 時，請使用 **RichTextBlock**。
 
-使用 **TextBlock** 可在您的 app 中顯示大部分的唯讀文字。 您可以使用它來顯示單行或多行文字、內嵌的超連結，以及已設定格式的文字 (例如，粗體、斜體或加上底線)。 TextBlock 提供較簡單的內容模型，如此一來，通常就能讓它更容易使用，而且它可以提供比 RichTextBlock 更好的文字轉譯效能。 大部分的 app UI 文字都慣用這個控制項。 儘管您可以在文字中放置分行符號，但 TextBlock 是針對顯示單一段落而設計，不支援文字縮排。
+使用 **TextBlock** 可在您的應用程式中顯示大部分的唯讀文字。 您可以使用它來顯示單行或多行文字、內嵌的超連結，以及已設定格式的文字 (例如，粗體、斜體或加上底線)。 TextBlock 提供較簡單的內容模型，如此一來，通常就能讓它更容易使用，而且它可以提供比 RichTextBlock 更好的文字轉譯效能。 大部分的 app UI 文字都慣用這個控制項。 儘管您可以在文字中放置分行符號，但 TextBlock 是針對顯示單一段落而設計，不支援文字縮排。
 
 如需如何選擇正確文字控制項的詳細資訊，請參閱[文字控制項](text-controls.md)文章。
 
@@ -43,7 +43,7 @@ RTF 區塊提供數個適用於進階文字配置的功能，當您需要支援�
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/RichTextBlock">開啟應用程式並查看 RichTextBlock 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -157,7 +157,7 @@ RichTextBlock 支援：
 
 [文字控制項](text-controls.md)
 
-**適用於設計人員**
+**設計工具**
 - [拼字檢查的指導方針](text-controls.md)
 - [新增搜尋](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文字輸入的指導方針](text-controls.md)
@@ -167,5 +167,5 @@ RichTextBlock 支援：
 - [Windows.UI.Xaml.Controls PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**適用於開發人員 (其他)**
-- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+**適用於開發人員 （其他）**
+- [String.Length 屬性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

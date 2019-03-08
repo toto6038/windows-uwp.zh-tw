@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 93bcadad38e3d070e8a6b541db4d68bf547bc0b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933468"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603583"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>建立、排程與管理媒體中斷
 
@@ -66,11 +66,11 @@ ms.locfileid: "8933468"
 
 [!code-cs[RegisterMediaBreakEvents](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetRegisterMediaBreakEvents)]
 
-[**BreakStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakStarted) 會在媒體中斷啟動時引發。 您可能想要更新 UI，讓使用者知道正在播放媒體中斷內容。 這個範例使用傳入處理常式的 [**MediaBreakStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakStartedEventArgs)，來取得啟動媒體中斷的參照。 接著，使用 [**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) 屬性，來判斷正在播放媒體中斷播放清單中的哪一個媒體項目。 然後更新 UI，以便向使用者顯示目前的廣告索引，以及中斷內剩餘的廣告數目。 請記住，更新 UI 必須在 UI 執行緒上進行，因此，您應該在 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 內進行此呼叫。 
+[  **BreakStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakStarted) 會在媒體中斷啟動時引發。 您可能想要更新 UI，讓使用者知道正在播放媒體中斷內容。 這個範例使用傳入處理常式的 [**MediaBreakStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakStartedEventArgs)，來取得啟動媒體中斷的參照。 接著，使用 [**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) 屬性，來判斷正在播放媒體中斷播放清單中的哪一個媒體項目。 然後更新 UI，以便向使用者顯示目前的廣告索引，以及中斷內剩餘的廣告數目。 請記住，更新 UI 必須在 UI 執行緒上進行，因此，您應該在 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 內進行此呼叫。 
 
 [!code-cs[BreakStarted](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakStarted)]
 
-當中斷內的所有媒體項目已完成播放或略過時，即會引發 [**BreakEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakEnded)。 您可以使用這個事件的處理常式來更新 UI，以指出不再播放媒體中斷內容。
+[**BreakEnded** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakEnded)已完成播放或透過已略過所有媒體中的項目中斷時引發。 您可以使用這個事件的處理常式來更新 UI，以指出不再播放媒體中斷內容。
 
 [!code-cs[BreakEnded](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakEnded)]
 
@@ -80,13 +80,13 @@ ms.locfileid: "8933468"
 
 [!code-cs[BreakSkipped](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSkipped)]
 
-當主要媒體項目的播放位置通過了一或多個媒體中斷的排程時間時，即會引發 [**BreaksSeekedOver**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreaksSeekedOver)。 下列範例會檢查是否有多個媒體中斷被試圖結束、播放位置是否已向前移動，以及其向前移動的時間是否少於 10 分鐘。 如果是，被試圖結束的第一個中斷 (從事件引數公開的 [**SeekedOverBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSeekedOverEventArgs.SeekedOverBreaks) 集合所取得) 可藉由呼叫 **MediaPlayer.BreakManager** 的 [**PlayBreak**](https://msdn.microsoft.com/library/windows/apps/mt670689) 方法立即播放。
+[**BreaksSeekedOver** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreaksSeekedOver)播放項目的位置主要媒體經過一或多個媒體中斷的排程時間時引發。 下列範例會檢查是否有多個媒體中斷被試圖結束、播放位置是否已向前移動，以及其向前移動的時間是否少於 10 分鐘。 如果是，被試圖結束的第一個中斷 (從事件引數公開的 [**SeekedOverBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSeekedOverEventArgs.SeekedOverBreaks) 集合所取得) 可藉由呼叫 **MediaPlayer.BreakManager** 的 [**PlayBreak**](https://msdn.microsoft.com/library/windows/apps/mt670689) 方法立即播放。
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
 
 ## <a name="access-the-current-playback-session"></a>存取目前的播放工作階段
-[**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 物件會使用 **MediaPlayer** 類別，來提供與目前播放的媒體內容相關的資料和事件。 [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) 也會有 **MediaPlaybackSession**，您可以用來取得與正在播放的媒體中斷內容明確相關的資料和事件。 您可以從播放工作階段取得的資訊包括目前的播放狀態 (播放或暫停)，以及內容中目前的播放位置。 如果媒體中斷內容的外觀比例與您的主要內容不同，您可以使用 [**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) 和 [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight) 屬性及 [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) 來調整視訊 UI。 您也可以接收像是 [**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted)、[**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded) 及 [**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged) 等事件，這些事件可以提供關於您 app 效能的重要遙測資料。
+[  **MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 物件會使用 **MediaPlayer** 類別，來提供與目前播放的媒體內容相關的資料和事件。 [  **MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) 也會有 **MediaPlaybackSession**，您可以用來取得與正在播放的媒體中斷內容明確相關的資料和事件。 您可以從播放工作階段取得的資訊包括目前的播放狀態 (播放或暫停)，以及內容中目前的播放位置。 如果媒體中斷內容的外觀比例與您的主要內容不同，您可以使用 [**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) 和 [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight) 屬性及 [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) 來調整視訊 UI。 您也可以接收像是 [**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted)、[**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded) 及 [**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged) 等事件，這些事件可以提供關於您 app 效能的重要遙測資料。
 
 下列範例會登錄適用於 **BufferingProgressChanged 事件**的處理常式；在事件處理常式中，它會更新 UI 以顯示目前的緩衝處理進度。
 
@@ -96,8 +96,8 @@ ms.locfileid: "8933468"
 
 ## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)
-* [使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)
-* [系統媒體傳輸控制項的手動控制項](system-media-transport-controls.md)
+* [播放音訊和視訊與 MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [手動控制的系統媒體傳輸控制項](system-media-transport-controls.md)
 
  
 

@@ -3,15 +3,15 @@ description: 了解如何在您的應用程式中使用印刷樣式，以協助�
 title: UWP app 中的印刷樣式
 ms.date: 04/06/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944720"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610023"
 ---
 # <a name="typography"></a>印刷樣式
 
@@ -19,7 +19,7 @@ ms.locfileid: "8944720"
 
 作為語言的視覺表示，印刷格式的主要工作是溝通資訊。 其樣式絕對不能阻礙這項目標。 在這篇文章中，我們將會討論如何在您的 UWP app 中設定印刷樣式，以協助使用者輕鬆且有效地了解內容。
 
-## <a name="font"></a>字型
+## <a name="font"></a>Font
 
 您應該在整個應用程式 UI 中使用單一字型，我們建議您維持 UWP app 的預設字型 **Segoe UI**。 它設計成可維持不同大小和像素密度的最佳可讀性，並能提供輔助系統內容的乾淨、明亮、開放審美觀。
 
@@ -154,7 +154,7 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
     :::column-end:::
 :::row-end:::
 
-**注意**：如果容器未明確定義 (例如，沒有區別的背景色彩)，或是有連結可顯示更多文字，則請使用省略符號。
+**注意**：如果容器不是妥善定義 （例如無區別背景色彩），或連結以查看更多的文字時，然後使用省略符號。
 
 ## <a name="languages"></a>語言 
 
@@ -170,8 +170,8 @@ Segoe UI 是我們的英文、歐洲語言、希臘文、希伯來文、亞美�
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">樣式</th>
-<th align="left">注意事項</th>
+<th align="left">Styles</th>
+<th align="left">附註</th>
 </tr>
 </thead>
 <tbody>
@@ -212,7 +212,7 @@ Segoe UI 是我們的英文、歐洲語言、希臘文、希伯來文、亞美�
 </tr>
 <tr class="even">
 <td align="left" style="font-family: Nirmala UI;">Nirmala UI</td>
-<td align="left">標準、Semilight、粗體</td>
+<td align="left">標準、半細體、粗體</td>
 <td align="left">南亞字集 (孟加拉文、梵文字母、古吉拉特文、果魯穆奇文、坎那達文、馬來亞拉姆文、歐迪亞文、桑塔爾文、僧伽羅文、索拉僧平文、坦米爾文、特拉古文) 的使用者介面字型</td>
 </tr>
 <tr class="odd">
@@ -243,8 +243,8 @@ Sans-serif 字型是標題和 UI 元素的絕佳選擇。
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">樣式</th>
-<th align="left">注意事項</th>
+<th align="left">Styles</th>
+<th align="left">附註</th>
 </tr>
 </thead>
 <tbody>
@@ -272,7 +272,7 @@ Sans-serif 字型是標題和 UI 元素的絕佳選擇。
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">標準、半細體、細體、粗體、半粗體</td>
-<td align="left">在格律上與 Segoe UI 相容的開放原始碼字型，用於其他不想要與 Segoe UI 搭配之平台上的 App。 <a href="https://github.com/Microsoft/Selawik">從 GitHub 取得 Selawik。</a></td>
+<td align="left">在格律上與 Segoe UI 相容的開放原始碼字型，用於其他不想要與 Segoe UI 搭配之平台上的 App。 <a href="https://github.com/Microsoft/Selawik">在 GitHub 上取得 Selawik。</a></td>
 </tr>
 
 </tbody>
@@ -286,8 +286,8 @@ Serif 字型適合呈現大量的文字。
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">樣式</th>
-<th align="left">注意事項</th>
+<th align="left">Styles</th>
+<th align="left">附註</th>
 </tr>
 </thead>
 <tbody>
@@ -302,7 +302,7 @@ Serif 字型適合呈現大量的文字。
 <td align="left">Serif 固定寬度字型支援歐洲與中東字集 (拉丁文、希臘文、斯拉夫文、阿拉伯文、亞美尼亞文及希伯來文)。</td>
 </tr>
 <tr class="odd">
-<td style="font-family: Georgia;">Georgia</td>
+<td style="font-family: Georgia;">喬治亞</td>
 <td align="left">標準、斜體、粗體、粗斜體</td>
 <td align="left">支援歐洲字集 (拉丁文、希臘文及斯拉夫文)。</td>
 </tr>
@@ -322,8 +322,8 @@ Serif 字型適合呈現大量的文字。
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">樣式</th>
-<th align="left">注意事項</th>
+<th align="left">Styles</th>
+<th align="left">附註</th>
 </tr>
 </thead>
 <tbody>
@@ -350,4 +350,4 @@ Serif 字型適合呈現大量的文字。
 * [文字控制項](../controls-and-patterns/text-controls.md)
 * [XAML 佈景主題資源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML 樣式](../controls-and-patterns/xaml-styles.md)
-* [Microsoft 印刷樣式](https://docs.microsoft.com/typography/)
+* [Microsoft Typography](https://docs.microsoft.com/typography/)

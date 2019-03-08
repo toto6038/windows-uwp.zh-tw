@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, 遊戲, 廣播
 ms.localizationpriority: medium
 ms.openlocfilehash: c906551fd626dec726498ded9a7995007230504f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930489"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607583"
 ---
 # <a name="manage-game-broadcasting"></a>管理遊戲廣播
 本文顯示如何管理 UWP app 的遊戲廣播。 使用者必須使用內建到 Windows 的系統 UI 起始遊戲廣播，但是開始使用 Windows 10 版本 1709，App 可以啟動系統廣播 UI 並且可以在廣播開始和停止時收到通知。
@@ -22,7 +22,7 @@ ms.locfileid: "8930489"
 1. 在 Visual Studio 中，請在 **\[方案總管\]** 中展開 UWP 專案，以滑鼠右鍵按一下 **\[參考\]**，然後選取 **\[加入參考...\]**。 
 2. 展開 **\[通用 Windows\]** 節點，然後選取 **\[延伸\]**。
 3. 在延伸清單中，核取符合您專案的目標組建的 **\[UWP 的 Windows 桌面延伸\]** 項目旁的核取方塊。 若是 App 的廣播功能，版本必須是 1709 或以上。
-4. 按一下 **\[確定\]**。
+4. 按一下 [確定] 。
 
 ## <a name="launch-the-system-ui-to-allow-the-user-to-initiate-broadcasting"></a>啟動系統 UI 可讓使用者起始廣播
 有幾個原因您的 App 目前可能無法廣播，包括目前的裝置是否不符合廣播的硬體需求，或者其他 App 目前正在廣播中。 啟動系統 UI 之前，您可以查看您的 App 目前是否無法廣播。 首先，檢查廣播 API 在目前的裝置上是否可用。 API 在執行 Windows 10 版本 1709 之前的作業系統版本的裝置上無法使用。 與其檢查特定的作業系統版本，不如使用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法來查詢 *Windows.Media.AppBroadcasting.AppBroadcastingContract* 1.0 版。 如果有此協定，則廣播 API 可在裝置上使用。

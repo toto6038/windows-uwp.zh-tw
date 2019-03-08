@@ -1,19 +1,19 @@
 ---
-Description: The following article describes all of the properties and elements within the toast content XML payload.
+Description: 下列文章說明快顯通知內容 XML 承載中的所有屬性和元素。
 title: 快顯通知內容 XML 結構描述
 ms.assetid: AF49EFAC-447E-44C3-93C3-CCBEDCF07D22
 label: Toast content XML schema
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934387"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612773"
 ---
 # <a name="toast-content-xml-schema"></a>快顯通知內容 XML 結構描述
 
@@ -43,7 +43,7 @@ ms.locfileid: "8934387"
 </toast>
 ```
 
-**&lt;toast&gt; 中的屬性**
+**中的屬性&lt;快顯通知&gt;**
 
 launch?
 
@@ -75,7 +75,7 @@ scenario?
 -   除非您的案例是要快顯鬧鐘、提醒或來電，否則您不需要使用此屬性。
 -   不要只為了要讓通知在螢幕上持續顯示而使用此屬性。
 
-**&lt;visual&gt; 中的屬性**
+**中的屬性&lt;視覺化&gt;**
 
 lang?
 
@@ -89,11 +89,11 @@ addImageQuery?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**&lt;binding&gt; 中的屬性**
+**中的屬性&lt;繫結&gt;**
 
 template?
 
--   [Important] template? = "ToastGeneric"
+-   \[重要\]範本嗎？ = "ToastGeneric"
 -   如果您使用新的調適型和互動式通知，請確定您是從使用 "ToastGeneric" 範本開始，而非使用舊版範本。
 -   目前可能可以搭配新動作使用舊版範本，但那並非預期的使用情況，因此我們無法保證該使用方式將會持續有效。
 
@@ -109,13 +109,13 @@ addImageQuery?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**&lt;text&gt; 中的屬性**
+**中的屬性&lt;文字&gt;**
 
 lang?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**&lt;image&gt; 中的屬性**
+**中的屬性&lt;映像&gt;**
 
 src
 
@@ -144,7 +144,7 @@ hint-crop?
 -   "none" 為預設值，表示沒有裁剪。
 -   "circle" 會將影像裁剪為圓形。 請針對連絡人設定檔影像、人員影像等項目使用此屬性。
 
-**&lt;audio&gt; 中的屬性**
+**中的屬性&lt;音訊&gt;**
 
 src?
 
@@ -177,7 +177,7 @@ silent?
 </toast>
 ```
 
-**&lt;input&gt; 中的屬性**
+**中的屬性&lt;輸入&gt;**
 
 id
 
@@ -210,7 +210,7 @@ defaultInput?
 -   如果輸入類型是 "text"，此屬性將被視為字串輸入。
 -   如果輸入類型是 "selection"，此屬性預期為此輸入元素內部其中一個可用選取項目的 id。
 
-**&lt;selection&gt; 中的屬性**
+**中的屬性&lt;選取項目&gt;**
 
 id
 
@@ -220,7 +220,7 @@ content
 
 -   這是必要屬性。 這個屬性可為此選取項目元素提供字串以供顯示。
 
-**&lt;action&gt; 中的屬性**
+**中的屬性&lt;動作&gt;**
 
 content
 

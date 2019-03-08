@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c72931d2f6bf1e892e174bc409f20a042d5e4c92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932677"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631623"
 ---
-# <a name="span-iddirect3dconceptsuavbehaviorwithnon-mappedtilesspanuav-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.uav_behavior_with_non-mapped_tiles"></span>非對應磚的 UAV 行為
+# <a name="span-iddirect3dconceptsuavbehaviorwithnon-mappedtilesspanuav-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.uav_behavior_with_non-mapped_tiles"></span>UAV 行為與非對應的圖格
 
 
 未排序存取檢視 (UAV) 讀取和寫入的行為取決於硬體支援程度。 如需需求明細，請參閱[串流資源功能層級](streaming-resources-features-tiers.md)的整體讀取和寫入行為。 本節摘要理想的行為。
@@ -26,7 +26,7 @@ ms.locfileid: "8932677"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[串流資源的存取管線](pipeline-access-to-streaming-resources.md)
+[資料流資源的存取管線](pipeline-access-to-streaming-resources.md)
 
  
 

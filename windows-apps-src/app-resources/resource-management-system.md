@@ -1,5 +1,5 @@
 ---
-Description: At build time, the Resource Management System creates an index of all the different variants of the resources that are packaged up with your app. At run-time, the system detects the user and machine settings that are in effect and loads the resources that are the best match for those settings.
+Description: 建置期間，資源管理系統會建立所有不同變體 (使用您的 App 封裝) 的資源的索引。 在執行階段，系統會偵測生效的使用者和電腦設定，並載入這些設定的最佳相符項的資源。
 title: 資源管理系統
 template: detail.hbs
 ms.date: 10/20/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931621"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598623"
 ---
 # <a name="resource-management-system"></a>資源管理系統
 資源管理系統有建置時間和執行階段的功能。 在建置期間，系統會建立所有不同變體 (使用您的 App 封裝) 的資源的索引。 此索引套件資源索引或 PRI，並且也會包含在您的應用程式套件中。 在執行階段，系統偵測到已生效的使用者與電腦設定，查詢 PRI 中的資訊，並自動載入最符合這些設定的資源。
@@ -34,15 +34,15 @@ ms.locfileid: "8931621"
 以程式設計方式存取您的 App 資源，最簡單的途徑是使用 [**Windows.ApplicationModel.Resources**](/uwp/api/windows.applicationmodel.resources?branch=live) 命名空間和 [**ResourceLoader**](/uwp/api/windows.applicationmodel.resources.resourceloader?branch=live) 類別。 **ResourceLoader** 提供您資源檔案集、參考媒體櫃或其他套件的字串資源的基本存取權。
 
 ### <a name="advanced-functionality-resourcemanager"></a>進階功能 (ResourceManager)
-[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) 類別 (在 [**Windows.ApplicationModel.Resources.Core**](/uwp/api/windows.applicationmodel.resources.core?branch=live) 命名空間中) 提供資源的其他的相關資訊，例如列舉和檢查。 這超出 **ResourceLoader** 類別所提供的。
+[  **ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) 類別 (在 [**Windows.ApplicationModel.Resources.Core**](/uwp/api/windows.applicationmodel.resources.core?branch=live) 命名空間中) 提供資源的其他的相關資訊，例如列舉和檢查。 這超出 **ResourceLoader** 類別所提供的。
 
-[**NamedResource**](/uwp/api/windows.applicationmodel.resources.core.namedresource?branch=live) 物件代表多種語言或其他合格變體的個別邏輯資源。 它描述資產或資源的邏輯檢視，包含字串資源識別碼與，例如 `Header1` 或例如 `logo.jpg` 的資源檔案名稱。
+[  **NamedResource**](/uwp/api/windows.applicationmodel.resources.core.namedresource?branch=live) 物件代表多種語言或其他合格變體的個別邏輯資源。 它描述資產或資源的邏輯檢視，包含字串資源識別碼與，例如 `Header1` 或例如 `logo.jpg` 的資源檔案名稱。
 
-[**ResourceCandidate**](/uwp/api/windows.applicationmodel.resources.core.resourcecandidate?branch=live) 物件代表單一實體資源值及其限定詞，例如針對英文的字串「Hello World」或做為合格影像資源的「logo.scale-100.jpg」，其為 **scale-100** 特定的解析度。
+[  **ResourceCandidate**](/uwp/api/windows.applicationmodel.resources.core.resourcecandidate?branch=live) 物件代表單一實體資源值及其限定詞，例如針對英文的字串「Hello World」或做為合格影像資源的「logo.scale-100.jpg」，其為 **scale-100** 特定的解析度。
 
-App 可用的資源儲存在階層集合中，您可以存取 [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 物件。 **ResourceManager** 類別提供 App 所使用各種最上層 **ResourceMap** 執行個體的存取權，對應至 App 的各種不同套件。 [**MainResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager.MainResourceMap) 值對應至目前應用程式套件的資源地圖，它不包含任何參考的架構套件。 各個 **ResourceMap** 會針對套件資訊清單中指定的套件名稱命名。 在 **ResourceMap** 內是子樹系 (請參閱 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live))，它也包含 **NamedResource** 物件。 子樹系通常對應至包含資源的資源檔案。 如需詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產](images-tailored-for-scale-theme-contrast.md)。
+App 可用的資源儲存在階層集合中，您可以存取 [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 物件。 **ResourceManager** 類別提供 App 所使用各種最上層 **ResourceMap** 執行個體的存取權，對應至 App 的各種不同套件。 [  **MainResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager.MainResourceMap) 值對應至目前應用程式套件的資源地圖，它不包含任何參考的架構套件。 各個 **ResourceMap** 會針對套件資訊清單中指定的套件名稱命名。 在 **ResourceMap** 內是子樹系 (請參閱 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live))，它也包含 **NamedResource** 物件。 子樹系通常對應至包含資源的資源檔案。 如需詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產](images-tailored-for-scale-theme-contrast.md)。
 
-範例如下。
+這裡提供一個範例。
 
 ```csharp
 // using Windows.ApplicationModel.Resources.Core;
@@ -55,7 +55,7 @@ var str = resourceMap.GetValue("String1", resourceContext).ValueAsString;
 
 **ResourceManager** 不只支援存取 App 的字串資源，也維護列舉和檢查各種不同檔案資源的能力。 為避免檔案和源自檔案內其他資源之間發生衝突，已建立索引的檔案路徑均在保留的「檔案」**ResourceMap** 子樹系內。 例如，檔案 `\Images\logo.png` 對應至資源名稱 `Files/images/logo.png`。
 
-[**StorageFile**](/uwp/api/Windows.Storage.StorageFile?branch=live) API 無障礙地處理檔案參照為資源，並且適用於常見使用案例。 **ResourceManager** 應僅用於進階案例，例如當您想要覆寫目前內容時。
+[  **StorageFile**](/uwp/api/Windows.Storage.StorageFile?branch=live) API 無障礙地處理檔案參照為資源，並且適用於常見使用案例。 **ResourceManager** 應僅用於進階案例，例如當您想要覆寫目前內容時。
 
 ### <a name="resourcecontext"></a>ResourceContext
 資源候選項目的選擇是根據特定 [**ResourceContext**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext?branch=live)，這是資源限定詞值的集合 (語言、縮放比例，對比等)。 預設內容會使用 App 目前針對每個限定詞值的設定，除非被覆寫。 例如，影像之類的資源可以縮放，從一部監視器到另一部都不同，從一個應用程式檢視到另一個也不同。 基於這個原因，每個應用程式檢視具有不同的預設內容。 指定檢視的預設內容可使用 [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView) 取得。 每當您擷取資源候選項目時，您應該在 **ResourceContext** 執行個體中傳遞，為指定的檢視取得最適當的值。
@@ -66,5 +66,5 @@ var str = resourceMap.GetValue("String1", resourceContext).ValueAsString;
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## <a name="related-topics"></a>相關主題
-* [將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)
-* [載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產](images-tailored-for-scale-theme-contrast.md)
+* [UI 和應用程式封裝資訊清單中的當地語系化字串](localize-strings-ui-manifest.md)
+* [載入影像和調整規模、 佈景主題、 高對比和其他人的資產](images-tailored-for-scale-theme-contrast.md)

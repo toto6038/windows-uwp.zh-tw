@@ -1,20 +1,20 @@
 ---
-Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
+Description: 已封裝的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP app。 本文列出您的已封裝應用程式可以使用的類別。
 Search.Product: eADQiWindows 10XVcnh
 title: UWP API 適用於已封裝的傳統型應用程式 (傳統型橋接器)
 ms.date: 10/27/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: c3131207c04b421a6d8ab6aeeb16aa3107bbf21d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048848"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644713"
 ---
-# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>UWP Api 適用於已封裝的傳統型應用程式
+# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>UWP Api 可用來封裝傳統型應用程式
 
 已封裝的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP app。 本文列出您的已封裝應用程式可以使用的類別。
 
@@ -26,11 +26,11 @@ ms.locfileid: "9048848"
 <tr><td>背景工作</td><td>雖然已封裝的應用程式可以登錄背景工作，但只有完整的 UWP app 可以<i>做為</i>背景工作執行。 如需詳細資訊，請參閱 <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">GitHub 上的背景工作範例</a>。</td></tr>
 <tr><td>藍牙</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
 <tr><td>聊天和通話</td><td>已封裝的應用程式在完全移植到 UWP 之前，無法在行動裝置上執行。</td></tr>
-<tr><td>協定啟用</td><td>只有完整的 UWP 應用程式可以透過協定啟用。</td></tr>
+<tr><td>協定啟用</td><td>只有完整的 UWP 應用程式可以先啟用合約。</td></tr>
 <tr><td>密碼編譯</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
 <tr><td>地理位置</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
 <tr><td>檔案和資料夾選擇器</td><td>已封裝的應用程式具有完整的檔案系統存取權，因此不需要 UWP 選擇器。</td></tr>
-<tr><td>媒體</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>Media</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
 <tr><td>服務點</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
 <tr><td>智慧卡</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
 <tr><td>PlayReady</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
@@ -634,15 +634,15 @@ ms.locfileid: "9048848"
 * [Windows.Devices.WiFiDirect.WiFiDirectDevice](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectDevice)
 * [Windows.Devices.WiFiDirect.WiFiDirectInformationElement](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectInformationElement)
 * [Windows.Devices.WiFiDirect.WiFiDirectLegacySettings](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectLegacySettings)
-* [Windows.Foundation.AsyncOperationProgressHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
-* [Windows.Foundation.AsyncOperationWithProgressCompletedHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
-* [Windows.Foundation.Collections.MapChangedEventHandler&lt;K,.V&gt;](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
+* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
+* [Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
+* [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
 * [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)
 * [Windows.Foundation.Collections.StringMap](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.StringMap)
 * [Windows.Foundation.Collections.ValueSet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.ValueSet)
 * [Windows.Foundation.Deferral](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral)
 * [Windows.Foundation.PropertyValue](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.PropertyValue)
-* [Windows.Foundation.TypedEventHandler&lt;Tsender,.TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
+* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
 * [Windows.Foundation.Uri](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Uri)
 * [Windows.Foundation.WwwFormUrlDecoder](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoder)
 * [Windows.Foundation.WwwFormUrlDecoderEntry](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoderEntry)
@@ -1048,10 +1048,10 @@ ms.locfileid: "9048848"
 
 ## <a name="next-steps"></a>後續步驟
 
-**尋找您的問題解答**
+**尋找問題的解答**
 
 有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
-**提供意見反應或功能建議**
+**提供意見反應或提出功能建議**
 
 請參閱 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。

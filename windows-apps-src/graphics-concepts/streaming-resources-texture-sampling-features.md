@@ -8,35 +8,35 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b6290fba9d4194df78c39902b8d96e952134682
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925159"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607413"
 ---
 # <a name="streaming-resources-texture-sampling-features"></a>串流資源紋理取樣功能
 
 
 串流資源紋理取樣功能包含取得有關對應區域的著色器狀態回饋、檢查存取的所有資料是否都在資源中對應、鉗制以協助著色器避免 mipmap 串流資源中已知為非對應的區域，以及探索整個紋理篩選足跡的完全對應最低 LOD。
 
-## <a name="span-idrequirementsofstreamingresourcestexturesamplingfeaturesspanspan-idrequirementsofstreamingresourcestexturesamplingfeaturesspanspan-idrequirementsofstreamingresourcestexturesamplingfeaturesspanrequirements-of-streaming-resources-texture-sampling-features"></a><span id="Requirements_of_streaming_resources_texture_sampling_features"></span><span id="requirements_of_streaming_resources_texture_sampling_features"></span><span id="REQUIREMENTS_OF_STREAMING_RESOURCES_TEXTURE_SAMPLING_FEATURES"></span>串流資源紋理取樣功能的需求
+## <a name="span-idrequirementsofstreamingresourcestexturesamplingfeaturesspanspan-idrequirementsofstreamingresourcestexturesamplingfeaturesspanspan-idrequirementsofstreamingresourcestexturesamplingfeaturesspanrequirements-of-streaming-resources-texture-sampling-features"></a><span id="Requirements_of_streaming_resources_texture_sampling_features"></span><span id="requirements_of_streaming_resources_texture_sampling_features"></span><span id="REQUIREMENTS_OF_STREAMING_RESOURCES_TEXTURE_SAMPLING_FEATURES"></span>資料流資源的需求紋理取樣功能
 
 
 這裡描述的紋理取樣功能需要[第 2 層](tier-2.md)串流資源支援。
 
-## <a name="span-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanshader-status-feedback-about-mapped-areas"></a><span id="Shader_status_feedback_about_mapped_areas"></span><span id="shader_status_feedback_about_mapped_areas"></span><span id="SHADER_STATUS_FEEDBACK_ABOUT_MAPPED_AREAS"></span>有關對應區域的著色器狀態回饋
+## <a name="span-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanshader-status-feedback-about-mapped-areas"></a><span id="Shader_status_feedback_about_mapped_areas"></span><span id="shader_status_feedback_about_mapped_areas"></span><span id="SHADER_STATUS_FEEDBACK_ABOUT_MAPPED_AREAS"></span>有關對應的區域著色器狀態的意見反應
 
 
 讀取和/或寫入串流資源的任何著色器指令，會導致狀態被記錄。 這個狀態公開為進入 32 位元暫時暫存器之每個資源存取指令的選擇性額外傳回值。 傳回值的內容是不透明。 也就是，不允許著色器程式直接讀取。 但是，您可以使用[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 函式來擷取狀態資訊。
 
-## <a name="span-idfullymappedcheckspanspan-idfullymappedcheckspanspan-idfullymappedcheckspanfully-mapped-check"></a><span id="Fully_mapped_check"></span><span id="fully_mapped_check"></span><span id="FULLY_MAPPED_CHECK"></span>完全對應檢查
+## <a name="span-idfullymappedcheckspanspan-idfullymappedcheckspanspan-idfullymappedcheckspanfully-mapped-check"></a><span id="Fully_mapped_check"></span><span id="fully_mapped_check"></span><span id="FULLY_MAPPED_CHECK"></span>完全對應的核取
 
 
-[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 函式解譯從記憶體存取傳回的狀態，並指出存取的所有資料是否都在資源中對應。 如果資料已對應，**CheckAccessFullyMapped** 傳回 true (0xFFFFFFFF)，如果資料未對應則傳回 false (0x00000000)。
+[  **CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 函式解譯從記憶體存取傳回的狀態，並指出存取的所有資料是否都在資源中對應。 如果資料已對應，**CheckAccessFullyMapped** 傳回 true (0xFFFFFFFF)，如果資料未對應則傳回 false (0x00000000)。
 
-在篩選作業時，有時候特定紋素的加權會變成 0.0。 一個範例是紋理座標直接落在紋素中心的線性樣本：3 個其他紋素 (有哪些可能因硬體而不同) 貢獻到篩選，但具有 0 加權。 這些 0 加權紋素完全不會貢獻到篩選結果，如果它們恰巧落在 **NULL** 磚，它們不算是未對應的存取。 請注意，相同的保證適用於包括多個 mip 層級的紋理篩選；如果其中一個 mipmap 的紋素未對應，但在那些紋素的加權是 0，那些紋素不算是未對應的存取。
+在篩選作業時，有時候特定紋素的加權會變成 0.0。 材質座標落在材質中心直接的線性範例是範例：3 （它們是的哪些可能會因硬體） 其他材質參與的篩選條件，但為 0 的加權。 這些 0 加權紋素完全不會貢獻到篩選結果，如果它們恰巧落在 **NULL** 磚，它們不算是未對應的存取。 請注意，相同的保證適用於包括多個 mip 層級的紋理篩選；如果其中一個 mipmap 的紋素未對應，但在那些紋素的加權是 0，那些紋素不算是未對應的存取。
 
-當您從少於 4 個元件 (例如 DXGI\_FORMAT\_R8\_UNORM) 的格式取樣，落在 **NULL** 磚的任何紋素都會導致 **NULL** 對應存取被回報，無論著色器實際上查看結果中的哪些元件。 例如，從 R8\_UNORM 讀取和以 .gba/.yzw 遮罩著色器讀取結果，似乎完全不需要讀取紋理。 但如果紋素位址是 **NULL** 對應磚，作業仍然算是 **NULL** 對應存取。
+當取樣從有少於 4 個元件的格式 (例如 DXGI\_格式\_R8\_UNORM)，落在任何材質**NULL**磚中的結果**NULL**對應存取正在執行報告，而不論著色器實際分析結果中的元件。 比方說，讀取 R8\_UNORM 和遮罩與.gba/.yzw 著色器中讀取的結果不會出現需要完全讀取紋理。 但如果紋素位址是 **NULL** 對應磚，作業仍然算是 **NULL** 對應存取。
 
 著色器可以檢查狀態，並在失敗時追求任何您想要的動作過程。 例如，動作過程可以是記錄「遺漏」(例如透過 UAV 寫入) 和/或發出另一個讀取 (鉗制到已知對應的更粗略 LOD)。 應用程式可能也要追蹤成功存取，以了解對應磚集的哪個部分被存取。
 
@@ -44,14 +44,14 @@ ms.locfileid: "8925159"
 
 另一個問題是，許多存取會到同一個磚，所以會發生許多重複記錄和可能記憶體競爭。 如果硬體有選項，在之前其他地方有報告時，不需要為了報告磚存取而擔心，則可能很便利。 或許這類追蹤的狀態可能從 API 重設 (可能在畫面界限)。
 
-## <a name="span-idper-sampleminlodclampspanspan-idper-sampleminlodclampspanspan-idper-sampleminlodclampspanper-sample-minlod-clamp"></a><span id="Per-sample_MinLOD_clamp"></span><span id="per-sample_minlod_clamp"></span><span id="PER-SAMPLE_MINLOD_CLAMP"></span>每個樣本 MinLOD 鉗制
+## <a name="span-idper-sampleminlodclampspanspan-idper-sampleminlodclampspanspan-idper-sampleminlodclampspanper-sample-minlod-clamp"></a><span id="Per-sample_MinLOD_clamp"></span><span id="per-sample_minlod_clamp"></span><span id="PER-SAMPLE_MINLOD_CLAMP"></span>每個範例 MinLOD clamp
 
 
 為了協助著色器避免 mipmap 串流資源中已知為非對應的區域，大部分包含使用取樣器 (篩選) 的著色器指令都有允許著色器傳遞其他 float32 MinLOD clamp 參數至紋理樣本的模式。 這個值位於檢視的 mipmap 數字空間，而不是基礎資源。
 
 硬體在 LOD 計算的同一個位置，也就是發生每個資源 MinLOD 鉗制的位置，執行` max(fShaderMinLODClamp,fComputedLOD) `，這也是 [**max**](https://msdn.microsoft.com/library/windows/desktop/bb509624)()。
 
-如果套用每個樣本 LOD 鉗制和定義於取樣器之任何其他 LOD 鉗制的結果是空集合，結果是和每個資源 minLOD 鉗制相同的超出範圍存取結果：0 表示表面格式中的元件，預設值表示遺失元件。
+如果套用每個範例 LOD clamp 和取樣器中所定義的任何其他 LOD clamps 的結果會是空的集合，結果會是相同超出界限存取的結果為每個資源 minLOD clamp:元件介面的格式和遺漏的元件的預設值為 0。
 
 LOD 指令 (例如，[**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680)) (其日期早於這裡所述的每個樣本 minLOD 鉗制) 會傳回鉗制和未鉗制的 LOD。 從這個 LOD 指令傳回的鉗制 LOD 反映所有鉗制，包括每個資源鉗制，但不是每個樣本鉗制。 每個樣本鉗制是由著色器控制和所知，因此著色器作者如有需要可以手動將該鉗制套用至 LOD 指令的傳回值。
 
@@ -73,7 +73,7 @@ LOD 追蹤的最小/最大篩選公用程式可能對其他用途有用，例如
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[串流資源的存取管線](pipeline-access-to-streaming-resources.md)
+[資料流資源的存取管線](pipeline-access-to-streaming-resources.md)
 
  
 

@@ -1,25 +1,25 @@
 ---
-title: 裝置入口網站 Xbox 資訊 API 參考
+title: Device Portal Xbox 資訊 API 參考
 description: 了解如何存取 Xbox 裝置資訊。
 ms.date: 11/072017
 ms.topic: article
-keywords: windows 10、 uwp、 xbox 裝置入口網站
+keywords: windows 10、 uwp、 xbox、 裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115978"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617493"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 資訊 API 參考   
-您可以存取 Xbox One 裝置的資訊，請使用此 API。
+您可以使用此 API 存取 Xbox One 裝置資訊。
 
 ## <a name="get-xbox-one-device-information"></a>取得 Xbox One 裝置資訊
 
 **要求**
 
-您可以取得裝置的資訊有關您的 Xbox One。
+您可以取得您的 Xbox One 裝置資訊。
 
 方法      | 要求 URI
 :------     | :-----
@@ -33,21 +33,21 @@ GET | /ext/xbox/info
 
 - 無
 
-**要求主體**
+**要求本文**
 
 - 無
 
 **回應**   
 JSON 物件，包含下列欄位：
 
-* OsVersion-（字串） 的 OS 版本。
-* OsEdition-（字串） 版本的作業系統，例如 「 3 月 2017 」 或 「 3 月 2017 QFE 月 1 日 」。
-* ConsoleId-（字串） 主機的識別碼。
-* DeviceId-（字串） 主機的 Xbox Live 裝置 id。
-* SerialNumber-（字串） 主機的序號。
-* DevMode-（字串） 主機的目前開發人員模式，例如 「 無 」 或 「 零售 」。
-* ConsoleType-（字串） 主機的類型，例如 「 Xbox One 」 或 「 Xbox One S 」。
-* DevkitCertificateExpirationTime-（數字） 的 UTC 時間 （秒） 主機的開發人員套件的憑證將會到期。
+* OsVersion - (字串) 作業系統的版本。
+* OsEdition -（字串）作業系統版本，例如「2017 年 3 月」或「2017 年 3 月 QFE 1」。
+* ConsoleId -（字串）主機的識別碼。
+* DeviceId -（字串）主機的 Xbox Live 裝置識別碼。
+* SerialNumber -（字串）主機的序號。
+* DevMode -（字串）主機目前開發人員模式，例如「None」或「Retail」。
+* ConsoleType -（字串）主機的類型，例如「Xbox One」或「Xbox One S」。
+* DevkitCertificateExpirationTime -（數字）主機開發套件憑證將到期的時間 (UTC 時間 (秒))。
 
 **狀態碼**
 
@@ -60,6 +60,6 @@ HTTP 狀態碼      | 描述
 5XX | 錯誤碼
 
 <br />
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox

@@ -4,14 +4,14 @@ description: 本文說明通用 Windows 平台 (UWP) 應用程式可以如何使
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ac2a625b3769377ed6c8dddce3ca25177dee5f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941759"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608383"
 ---
 # <a name="credential-locker"></a>認證保險箱
 
@@ -22,7 +22,7 @@ ms.locfileid: "8941759"
 
 例如，您有一個 app 會連線至服務以存取受保護的資源 (如媒體檔案或社交網路)。 而您的服務需要每個使用者的登入資訊。 您在 app 中已經建立能取得使用者的使用者名稱及密碼的 UI，之後會使用這些資訊將使用者登入服務。 使用認證保險箱 API 時，您可以儲存並輕鬆地擷取使用者的使用者名稱與密碼，並在使用者下次開啟 app 時，無論他們使用什麼裝置都可以將他們自動登入。
 
-儲存在 CredentialLocker 中的使用者認證*不會*過期，*不受* [**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) 影響，也*不會*像傳統漫遊資料在一段時間無作用之後遭到清除。 不過，您最多只能在 CredentialLocker 中針對每個 app 儲存 20 個認證。
+儲存在 CredentialLocker 中的使用者認證*不會*過期，*不受*[**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) 影響，也*不會*像傳統漫遊資料在一段時間無作用之後遭到清除。 不過，您最多只能在 CredentialLocker 中針對每個 app 儲存 20 個認證。
 
 網域帳戶的認證保險箱運作方式有些不同。 如果有隨您的 Microsoft 帳戶儲存的認證，而您將該帳戶與網域帳戶 (例如您的工作帳戶) 關聯，則您的認證會漫遊至該網域帳戶。 但使用該網域帳戶登入時所新增的任何新認證則不會漫遊。 這樣可確保網域的私密認證不會暴露到網域外。
 
@@ -124,7 +124,7 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳作法
 
 
 僅使用認證保險箱來儲存密碼，不要儲存較大的資料 blob。

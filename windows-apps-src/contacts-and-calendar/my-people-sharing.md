@@ -3,14 +3,14 @@ title: 朋友圈分享
 description: 說明如何新增朋友圈分享的支援
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945394"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597823"
 ---
 # <a name="my-people-sharing"></a>朋友圈分享
 
@@ -27,8 +27,8 @@ ms.locfileid: "8945394"
 
 您必須採取三個步驟，才能讓您的應用程式成為朋友圈分享目標：
 
-1. [宣告支援您應用程式資訊清單中的 shareTarget 啟用合約。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [為使用者可分享使用您應用程式的連絡人加上註解。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [宣告支援 shareTarget 啟用合約，在您的應用程式資訊清單。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [加上註解的使用者可以使用您的應用程式共用的連絡人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3. 支援同時執行應用程式的多個執行個體。  使用者亦將您應用程式的完整版與他人分享時，必須能夠與該版本互動。 他們可以同時將該版本用於多個分享視窗中。 若要支援此功能，您的應用程式必須能夠同時執行多個檢視。 若要了解做法，請參閱[顯示應用程式的多重檢視](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views) (英文) 一文。
 
 當您已完成此作業時，您的應用程式將在 \[朋友圈分享\] 視窗中顯示成分享目標，該視窗的啟動方式有兩種：
@@ -37,7 +37,7 @@ ms.locfileid: "8945394"
 
 ## <a name="declaring-support-for-the-share-contract"></a>宣告支援分享協定
 
-若要宣告支援您的應用程式成為分享目標，請先在 Visual Studio 中開啟您的應用程式。 在 \[方案總管\]**** 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]****，然後選取 \[開啟方式\]****。 從功能表中，選取 \[XML (文字) 編輯器\]****，然後按一下 \[確定\]****。 接著，對資訊清單進行以下變更：
+若要宣告支援您的應用程式成為分享目標，請先在 Visual Studio 中開啟您的應用程式。 在 \[方案總管\] 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]，然後選取 \[開啟方式\]。 從功能表中，選取 \[XML (文字) 編輯器\]，然後按一下 \[確定\]。 接著，對資訊清單進行以下變更：
 
 
 **之前**
@@ -50,7 +50,7 @@ ms.locfileid: "8945394"
 </Applications>
 ```
 
-**之後**
+**After**
 
 ```xml
 <Applications>
@@ -103,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId” 是套件系列名稱，後面加上 ‘!’ 及可啟用類別識別碼。 若要尋找您的套件系列名稱，開啟**Package.appxmanifest**使用預設的編輯器，然後尋找 \ [封裝 \] 索引標籤。在這裡，「 應用程式 」 是對應到分享目標檢視的可啟用類別。
+“appId” 是套件系列名稱，後面加上 ‘!’ 及可啟用類別識別碼。 若要尋找您的套件系列名稱，請使用預設的編輯器開啟 **Package.appxmanifest**，然後尋找 \[封裝\] 索引標籤。在此，“App” 是對應到 \[分享目標\] 檢視的 \[可啟用類別\]。
 
 ## <a name="running-as-a-my-people-share-target"></a>做為朋友圈分享目標執行
 
@@ -132,6 +132,6 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 ```
 
 ## <a name="see-also"></a>請參閱
-+ [新增朋友圈支援](my-people-support.md)
++ [新增我的個人支援](my-people-support.md)
 + [ShareTarget 類別](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

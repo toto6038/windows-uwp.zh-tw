@@ -1,7 +1,7 @@
 ---
-Description: Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.
+Description: 了解如何透過適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式來改善全人設計。  在設計和建置通用軟體時請隨時考量提供無障礙功能。
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
-title: 設計適用於 Windows 10 的全人軟體
+title: 設計適用於 Windows 10 的通用軟體
 label: Designing inclusive software
 template: detail.hbs
 ms.date: 02/08/2017
@@ -9,34 +9,34 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d2377f95efbe79853b1416213a25e22ed7d5f0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044745"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639693"
 ---
-# <a name="designing-inclusive-software-for-windows-10"></a>設計適用於 Windows 10 的全人軟體  
+# <a name="designing-inclusive-software-for-windows-10"></a>設計適用於 Windows 10 的通用軟體  
 
-了解如何透過適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式來改善通用設計。  在設計和建置通用軟體時考量提供無障礙功能。
+了解如何透過適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式來改善全人設計。  在設計和建置通用軟體時請隨時考量提供無障礙功能。
 
 在 Microsoft，我們一直不斷發展我們的設計原則和做法。 這些可以說明我們的體驗如何呈現、操作、運作和表現。 我們的觀點一直不斷在進化。
 
 這個新的設計哲學稱為全人設計。 我們的想法是在一開始設計軟體時就融入每個人的需求。 這相較於在開發程序結尾才匆忙加上檢視協助工具以滿足一小群使用者的技術完全不同。
 
-「我們如果將提供的服務、產品或環境不符合個人需求定義為一種限制。 那麼任何人都有可能體驗到這個限制。 我們想要排除這個常見的人性特點。」  \- 來自 [Inclusive](https://www.microsoft.com/design/inclusive) 視訊  
+「我們如果將提供的服務、產品或環境不符合個人需求定義為一種限制。 那麼任何人都有可能體驗到這個限制。 我們想要排除這個常見的人性特點。」  \- 從[Inclusive](https://www.microsoft.com/design/inclusive)影片  
 
 通用設計可以為所有人創造更好的產品。 這牽涉到要考慮完整而多樣化的人性。 您現在會在大多數街道的人行道上看到路緣坡。 這些一開始是為了讓輪椅人士使用。 但是現在幾乎每個人都使用它們，包括使用嬰兒車的人、單車族與滑板族。 甚至行人也經常使用路緣坡，因為它們就在那兒且提供更好的體驗。 電視遙控器可以被視為是一項針對身體受限的人所使用的輔助技術 (AT)。 但是現在，購買電視幾乎不可能沒有遙控器。 在孩童學習如何綁鞋帶之前，他們可以穿著容易穿脫或繫牢的鞋子。 容易穿脫的鞋子通常較受進家門前需脫鞋的文化所喜愛。 它們也比較適合有敏捷性問題 (例如關節炎或甚至是暫時性手腕骨折) 的人們。
 
 ## <a name="inclusive-design-principles"></a>全人設計原則  
 下列 4 個原則引導 Microsoft 邁向全人設計︰
 
-**思考通用性**︰我們將焦點放在人的共通性 - 人的動機、關係和能力。 這驅使我們思考我們的工作如何產生更廣泛的社交影響。 結果是一種所有人有各式各樣的方式參與的體驗。
+**將通用**:我們著重在什麼統一的人，人類的動機、 關聯性和功能。 這驅使我們思考我們的工作如何產生更廣泛的社交影響。 結果是一種所有人有各式各樣的方式參與的體驗。
 
-**個人化**︰接下來，我們挑戰自己建立情感的連結。 人與人之間的互動可以啟發人與科技之間有更好的互動。 個人的獨特經驗可以改善設計，更適合所有人。 結果就像是一種特別為一位使用者創造的體驗。
+**讓個人**:接下來，我們會挑戰自行建立情感的連線。 人與人之間的互動可以啟發人與科技之間有更好的互動。 個人的獨特經驗可以改善設計，更適合所有人。 結果就像是一種特別為一位使用者創造的體驗。
 
-**保持簡單**︰我們從簡單開始，也極致追求簡單。 當我們一切從簡，人們就會知道接下來要做的動作。 激發人們進入乾淨、明亮而且開放的空間。 結果是一種可靠而經得起時間考驗的體驗。
+**為了簡單起見**:我們從簡單出發，並此此作為終極的統一原則。 當我們一切從簡，人們就會知道接下來要做的動作。 激發人們進入乾淨、明亮而且開放的空間。 結果是一種可靠而經得起時間考驗的體驗。
 
-**創造愉悅**︰愉悅的體驗會引發好奇與探索。 有時候很神奇， 有時候是正巧需要的詳情。 我們將這些時刻設計得好像喜歡變化的節奏。 結果是一種動態和流動的體驗。
+**建立讓**:愉悅的經驗呼叫奇觀和探索。 有時候很神奇， 有時候是正巧需要的詳情。 我們將這些時刻設計得好像喜歡變化的節奏。 結果是一種動態和流動的體驗。
 
 ## <a name="inclusive-design-users"></a>全人設計的使用者  
 輔助技術 (AT) 主要針對兩種類型的使用者︰
@@ -46,7 +46,7 @@ ms.locfileid: "9044745"
 
 大部分的電腦使用者 (百分之 54) 知道某種形式的輔助技術，百分之 44 的電腦使用者會使用某種形式的輔助技術，但是有許多人並未使用對他們有幫助的輔助技術 (2004 年 Forrester 的研究)。  
 
-Microsoft 委託 Forrester Research 在 2003 到 2004 年進行的研究發現，美國 18 歲到 64 歲之間有&mdash;百分之 57&mdash; 超過一半的電腦使用者可受益於輔助技術。 大部分這些使用者不認為自己是身心障礙或行動不便人士，但在使用電腦時，即表現出某種程度的工作問題或障礙。 Forrester (2003) 也發現下列數目的使用者，有這些特定的問題︰四分之一有視覺上的障礙。 四分之一有手腕或手掌的疼痛問題。 五分之一有聽覺上的障礙。  
+Microsoft 委託 Forrester Research 在 2003 到 2004 年進行的研究發現，美國 18 歲到 64 歲之間有&mdash;百分之 57&mdash; 超過一半的電腦使用者可受益於輔助技術。 大部分這些使用者不認為自己是身心障礙或行動不便人士，但在使用電腦時，即表現出某種程度的工作問題或障礙。 Forrester (2003) 也會發現下列數目的使用者與這些特定的難題：一的四個體驗 visual 的困難度。 四分之一有手腕或手掌的疼痛問題。 五分之一有聽覺上的障礙。  
 
 除了永久的殘疾，個人使用經驗的問題嚴重性和類型會隨著年紀而變化。 沒有所謂正常人這件事。 我們的能力一直在變化。 Margaret Meade 說：「我們每個人都是唯一的。 所有人都是唯一而讓我們有了共通性。」  
 
@@ -104,8 +104,8 @@ Windows 的其中一個內建協助工具功能便是高對比模式，此模式
 7.  將您完成的產品與實作文件提供給之後可能會處理專案的人員。  
 
 ## <a name="related-topics"></a>相關主題  
-* [通用設計](https://design.microsoft.com/inclusive)
-* [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
+* [內含的設計](https://design.microsoft.com/inclusive)
+* [工程軟體，協助工具](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Microsoft 協助工具開發人員中心](https://developer.microsoft.com/windows/accessible-apps)
 * [開發全人 Windows 應用程式](developing-inclusive-windows-apps.md) 
 * [協助工具](accessibility.md)

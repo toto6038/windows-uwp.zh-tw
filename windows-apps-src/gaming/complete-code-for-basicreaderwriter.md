@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, BasicReaderWriter
 ms.localizationpriority: medium
 ms.openlocfilehash: 60c2bf74de1e56004f1f705f317bc6bd1bb34b26
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925106"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594993"
 ---
 # <a name="complete-code-for-basicreaderwriter"></a>BasicReaderWriter 的完整程式碼
 
@@ -21,9 +21,9 @@ ms.locfileid: "8925106"
 
 這個主題包含這些小節：
 
--   [技術](#technologies)
+-   [Technologies](#technologies)
 -   [需求](#requirements)
--   [檢視程式碼 (C++)](#view-the-code-c)
+-   [檢視程式碼 （c + +）](#view-the-code-c)
 
 
 ## <a name="download-location"></a>下載位置

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d95ffc14e9ae6d4ea59a4b3bdc33fd215cb61be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925905"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616373"
 ---
 # <a name="pipeline-access-to-streaming-resources"></a>串流資源的存取管線
 
@@ -39,27 +39,27 @@ ms.locfileid: "8925905"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="srv-behavior-with-non-mapped-tiles.md">非對應磚的 SRV 行為</a></p></td>
+<td align="left"><p><a href="srv-behavior-with-non-mapped-tiles.md">SRV 行為與非對應的圖格</a></p></td>
 <td align="left"><p>著色器資源檢視 (SRV) 涉及非對應磚的讀取行為取決於硬體支援程度。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="uav-behavior-with-non-mapped-tiles.md">非對應磚的 UAV 行為</a></p></td>
+<td align="left"><p><a href="uav-behavior-with-non-mapped-tiles.md">UAV 行為與非對應的圖格</a></p></td>
 <td align="left"><p>未排序存取檢視 (UAV) 讀取和寫入的行為取決於硬體支援程度。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="rasterizer-behavior-with-non-mapped-tiles.md">非對應磚的轉譯器行為</a></p></td>
+<td align="left"><p><a href="rasterizer-behavior-with-non-mapped-tiles.md">與非對應的圖格的轉譯器行為</a></p></td>
 <td align="left"><p>本節說明非對應磚的轉譯器行為。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="tile-access-limitations-with-duplicate-mappings.md">重複對應的磚存取限制</a></p></td>
+<td align="left"><p><a href="tile-access-limitations-with-duplicate-mappings.md">重複的對應圖格的存取限制</a></p></td>
 <td align="left"><p>重複對應的磚有存取限制，例如複製來源和目的地重疊的資料流資源時，或轉譯至在轉譯區域中共用的磚時。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="streaming-resources-texture-sampling-features.md">串流資源紋理取樣功能</a></p></td>
+<td align="left"><p><a href="streaming-resources-texture-sampling-features.md">資料流資源紋理取樣功能</a></p></td>
 <td align="left"><p>串流資源紋理取樣功能包含取得有關對應區域的著色器狀態回饋、檢查存取的所有資料是否都在資源中對應、鉗制以協助著色器避免 mipmap 串流資源中已知為非對應的區域，以及探索整個紋理篩選足跡的完全對應最低 LOD。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="hlsl-streaming-resources-exposure.md">HLSL 串流資源曝光</a></p></td>
+<td align="left"><p><a href="hlsl-streaming-resources-exposure.md">資料流資源暴露 HLSL</a></p></td>
 <td align="left"><p>要支援<a href="https://msdn.microsoft.com/library/windows/desktop/ff471356">著色器模型 5</a>中的串流資源，需要特定 Microsoft 高階著色器語言 (HLSL) 語意。</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ ms.locfileid: "8925905"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[串流資源](streaming-resources.md)
+[資料流的資源](streaming-resources.md)
 
  
 

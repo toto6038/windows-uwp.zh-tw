@@ -1,5 +1,5 @@
 ---
-Description: Extend the basic functionality of Cortana with voice commands that activate a UWP app and execute a single action.
+Description: 使用會啟動 UWP 應用程式及執行單一動作的語音命令，來延伸 Cortana 的基本功能。
 title: Cortana 互動
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 49290d0e0ba96a5dce562ca4148b0ebf53bf0ff5
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051121"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648163"
 ---
 # <a name="cortana-interactions-in-uwp-apps"></a>UWP 應用程式中的 Cortana 互動
 
@@ -29,9 +29,9 @@ Cortana 提供了健全且全方位的可擴充架構，讓您能夠將您應用
 
 ## <a name="related-articles"></a>相關文章
 
-* [**VCD 元素和屬性 v1.2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+* [**VCD 項目和屬性 v1.2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
-**設計人員**
+**設計工具**
 * [語音設計指導方針](speech-interactions.md)
 * [Cortana 語音命令的設計指導方針](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
 

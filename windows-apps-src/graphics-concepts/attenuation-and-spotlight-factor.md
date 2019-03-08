@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8126ac8fa738a2b8a9680d215179fe23f77c5d44
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937842"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659293"
 ---
 # <a name="attenuation-and-spotlight-factor"></a>衰減和聚光燈係數
 
@@ -33,7 +33,7 @@ Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
 | att0<sub>i</sub> | 0.0           | 浮點數 | 定值衰減因數                     | 0 至 +infinity |
 | att1<sub>i</sub> | 0.0           | 浮點數 | 線性衰減因數                       | 0 至 +infinity |
 | att2<sub>i</sub> | 0.0           | 浮點數 | 二次方衰減因數                    | 0 至 +infinity |
-| d                | N/A           | 浮點數 | 頂點位置至光源位置的距離 | N/A            |
+| d                | 無           | 浮點數 | 頂點位置至光源位置的距離 | 無            |
 
  
 
@@ -42,13 +42,13 @@ Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
 
 光線與頂點位置之間的距離一律為正值。
 
-d = |L<sub>dir</sub> |
+d = | L<sub>dir</sub> |
 
 其中：
 
 | 參數       | 預設值 | 類型                                             | 描述                                                 |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
-| L<sub>dir</sub> | N/A           | 3D 向量與 x、y 和 z 浮點值 | 從頂點位置至光線位置的方向向量 |
+| L<sub>dir</sub> | 無           | 3D 向量與 x、y 和 z 浮點值 | 從頂點位置至光線位置的方向向量 |
 
  
 
@@ -58,7 +58,7 @@ d = |L<sub>dir</sub> |
 
 衰減的光線範圍上限不是 0.0。 若要防止光線在光線範圍時突然出現，應用程式可以增加光線範圍。 或者，應用程式可以設定衰減定值，使衰減因數的光線範圍接近 0.0。 衰減值會乘以光線色彩的紅、綠及藍元件，以將光線的強度擴充作為光線傳輸至頂點之距離的因數。
 
-## <a name="span-idspotlight-factorspanspan-idspotlight-factorspanspan-idspotlight-factorspanspotlight-factor"></a><span id="Spotlight-Factor"></span><span id="spotlight-factor"></span><span id="SPOTLIGHT-FACTOR"></span>焦點因數
+## <a name="span-idspotlight-factorspanspan-idspotlight-factorspanspan-idspotlight-factorspanspotlight-factor"></a><span id="Spotlight-Factor"></span><span id="spotlight-factor"></span><span id="SPOTLIGHT-FACTOR"></span>Spotlight 因素
 
 
 以下方程式指定焦點因數。
@@ -67,9 +67,9 @@ d = |L<sub>dir</sub> |
 
 | 參數         | 預設值 | 類型           | 描述                              | 範圍                    |
 |-------------------|---------------|----------------|------------------------------------------|--------------------------|
-| rho<sub>i</sub>   | N/A           | 浮點數 | spotlight i 的 cosine(angle)            | N/A                      |
-| phi<sub>i</sub>   | 0.0           | 浮點數 | 焦點 i 在弧度的半影角度 | \[theta<sub>i</sub>, pi) |
-| theta<sub>i</sub> | 0.0           | 浮點數 | 焦點 i 在弧度的本影角度    | \[0, pi)                 |
+| rho<sub>i</sub>   | 無           | 浮點數 | spotlight i 的 cosine(angle)            | 無                      |
+| phi<sub>i</sub>   | 0.0           | 浮點數 | 焦點 i 在弧度的半影角度 | \[theta<sub>我</sub>，pi) |
+| theta<sub>i</sub> | 0.0           | 浮點數 | 焦點 i 在弧度的本影角度    | \[0，pi)                 |
 | falloff           | 0.0           | 浮點數 | Falloff 因數                           | (-infinity, +infinity)   |
 
  
@@ -82,17 +82,17 @@ rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 
 | 參數       | 預設值 | 類型                                             | 描述                                                 |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
-| L<sub>dcs</sub> | N/A           | 3D 向量與 x、y 和 z 浮點值 | 相機空間光線方向的負值         |
-| L<sub>dir</sub> | N/A           | 3D 向量與 x、y 和 z 浮點值 | 從頂點位置至光線位置的方向向量 |
+| L<sub>dcs</sub> | 無           | 3D 向量與 x、y 和 z 浮點值 | 相機空間光線方向的負值         |
+| L<sub>dir</sub> | 無           | 3D 向量與 x、y 和 z 浮點值 | 從頂點位置至光線位置的方向向量 |
 
  
 
-計算光線衰減後，為了計算頂點的擴散和反射元件，Direct3D 還會考慮焦點效果 (如適用)、光線從表面反射的角度，以及目前材料的反射係數。 在[[光類型](light-types.md)中，查看「焦點」。
+計算光線衰減後，為了計算頂點的擴散和反射元件，Direct3D 還會考慮焦點效果 (如適用)、光線從表面反射的角度，以及目前材料的反射係數。 在[光類型](light-types.md)中，查看「焦點」。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光源的數學計算](mathematics-of-lighting.md)
+[光源的數學運算](mathematics-of-lighting.md)
 
  
 

@@ -7,11 +7,11 @@ keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7a4021a2a0fb6c84755730e4f0e9917b10e94ec8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937726"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605943"
 ---
 # <a name="barcode-scanner"></a>條碼掃描器
 
@@ -19,12 +19,12 @@ ms.locfileid: "8937726"
 
 ## <a name="in-this-section"></a>本節內容
 
-|主題 |說明 |
+|主題 |描述 |
 |------|------------|
-| [設定條碼掃描器](../devices-sensors/pos-barcodescanner-configure.md)  | 了解如何設定條碼掃描器的預定的應用程式。 |
-| [使用軟體觸發器](../devices-sensors/pos-barcodescanner-software-trigger.md) | 了解如何控制的軟體從掃描動作。 |
-| [使用碼制](pos-barcodescanner-symbologies.md) | 了解如何判斷條碼掃描器所支援的條碼類型，並且控制條碼掃描器從您的應用程式辨識哪些條碼類型。 |
-| [取得並了解條碼資料](pos-barcodescanner-scan-data.md) | 了解如何取得和您掃描條碼資料解譯。 |
+| [設定為條碼掃描器](../devices-sensors/pos-barcodescanner-configure.md)  | 了解如何設定預期的應用程式的條碼掃描器。 |
+| [使用軟體的觸發程序](../devices-sensors/pos-barcodescanner-software-trigger.md) | 了解如何控制掃描軟體的動作。 |
+| [使用的象徵意義](pos-barcodescanner-symbologies.md) | 了解如何判斷條碼掃描器所支援的條碼類型，並且控制條碼掃描器從您的應用程式辨識哪些條碼類型。 |
+| [取得與了解條碼資料](pos-barcodescanner-scan-data.md) | 了解如何取得和解譯您掃描的條碼資料。 |
 | [相機條碼掃描器](pos-camerabarcode.md) | 透過通用 Windows 平台應用程式的標準相機鏡頭讀取條碼。 需要 Windows 10 2018 年 4 月更新版 (組建 17134 或更新版)。 |
 |
  

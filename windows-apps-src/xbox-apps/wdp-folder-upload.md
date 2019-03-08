@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
 ms.openlocfilehash: 0805dbeedcf66bc3596f3d284f51e8f177608396
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946173"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617603"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>將資料夾上傳到開發目錄
 
@@ -27,7 +27,7 @@ POST | /api/app/packagemanager/upload
 
 您可以在要求 URI 上指定下列其他參數：
 
-URI 參數      | 說明
+URI 參數      | 描述
 :------     | :-----
 destinationFolder (必要) | 上傳資料夾的目的地資料夾名稱。 這個資料夾會放置在主機上的 d:\developmentfiles\LooseApps 底下。 這個資料夾名稱必須是 base64 編碼，因為它可能包含路徑分隔符號 (如果該資料夾是 LooseApps 下的子資料夾)。
 <br />
@@ -36,7 +36,7 @@ destinationFolder (必要) | 上傳資料夾的目的地資料夾名稱。 這�
 
 - 無
 
-**要求主體**
+**要求本文**
 
 - 目錄內容的多部分合格 http 本文。
 
@@ -52,7 +52,7 @@ HTTP 狀態碼      | 描述
 4XX | 錯誤碼
 5XX | 錯誤碼
 <br />
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox
 

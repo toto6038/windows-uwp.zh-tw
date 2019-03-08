@@ -6,17 +6,17 @@ ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1875fecbdfa6b97cdc30413c8afa6cc58d3251ef
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045477"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595033"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 開發人員文件的最新動向
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 最近已有下列功能概觀、開發人員指引和程式碼範例可以使用，包含提供給 Windows 開發人員的全新及更新資訊。
 
-在 Windows10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/your-first-app.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/your-first-app.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -46,7 +46,7 @@ SDK 預覽組建中有新的控制項提供給 [Windows 測試人員](https://in
 
 [導覽檢視控制項](../design/controls-and-patterns/navigationview.md)可讓您將頂層導覽功能輕鬆的加入到您的應用程式之中。
 
-![NavigationView 區塊](../design/controls-and-patterns/images/navview_sections.png)
+![NavigationView 區段](../design/controls-and-patterns/images/navview_sections.png)
 
 [個人圖片控制項](../design/controls-and-patterns/person-picture.md)會為個人顯示圖片影像。
 
@@ -78,7 +78,7 @@ SDK 預覽組建中有新的控制項提供給 [Windows 測試人員](https://in
 
 ### <a name="my-people"></a>朋友圈
 
-SDK 預覽組建中有即將推出的朋友圈功能提供給 [Windows 測試人員](https://insider.windows.com/)，這項功能可讓使用者將連絡人直接從應用程式中釘選到他們的工作列。 [了解如何將朋友圈支援加入您的應用程式。](../contacts-and-calendar/my-people-support.md)
+SDK 預覽組建中有即將推出的朋友圈功能提供給 [Windows 測試人員](https://insider.windows.com/)，這項功能可讓使用者將連絡人直接從應用程式中釘選到他們的工作列。 [了解如何將我的人支援新增至您的應用程式。](../contacts-and-calendar/my-people-support.md)
 
 ![朋友圈連絡人面板](images/my-people.png)
 

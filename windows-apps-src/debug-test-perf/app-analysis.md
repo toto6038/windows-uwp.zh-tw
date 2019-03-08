@@ -3,14 +3,14 @@ title: 應用程式分析
 description: 分析應用程式的效能問題。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f1d37446cb5f540cd77928cb8167d8d4319977d1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945151"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612003"
 ---
 # <a name="app-analysis-overview"></a>應用程式分析概觀
 
@@ -38,7 +38,7 @@ App 使用 SetSource()，而不是 SetSourceAsync()。 當設定串流以透過�
 
 使用 SetSourceAsync 或 UriSource 來設定內容之後，BitmapImage 連接到動態的 XAML 樹狀結構。 您在設定來源之前，應該一律將 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) 附加到動態樹狀結構。 每當在標記中指定影像元素或筆刷時，就自動會是這種情況。 以下提供範例。 
 
-**動態樹狀結構範例**
+**即時樹狀結構範例**
 
 範例 1 (好)—在標記中指定的統一資源識別元 (URI)。
 
@@ -60,7 +60,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-範例 2 程式碼後置 （壞） — 將 BitmapImage UriSource 設定連接到樹狀結構之前先。
+範例 2 程式碼後置 （錯誤），連接到樹狀結構之前先設定 BitmapImage UriSource。
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -83,7 +83,7 @@ myImage.Source = bitmapImage;
 </Image>
 ```
 
-[**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 的單位預設是實體像素。 [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) 屬性可以用來變更這個行為：將 **DecodePixelType** 設定為 **Logical** 會導致解碼大小自動採用系統目前的縮放比例，類似於其他的 XAML 內容。 因此，舉例來說，如果您希望 **DecodePixelWidth** 和 **DecodePixelHeight** 符合影像顯示所在之 Image 控制項的 Height 和 Width 屬性，將 **DecodePixelType** 設定為 **Logical** 通常是適當的。 有了使用實體像素的預設行為時，您必須自行考量系統目前的縮放比例；而且您必須接聽縮放比例變更通知，以因應使用者變更其顯示喜好設定的情況。
+[  **DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 的單位預設是實體像素。 [  **DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) 屬性可以用來變更這個行為：將 **DecodePixelType** 設定為 **Logical** 會導致解碼大小自動採用系統目前的縮放比例，類似於其他的 XAML 內容。 因此，舉例來說，如果您希望 **DecodePixelWidth** 和 **DecodePixelHeight** 符合影像顯示所在之 Image 控制項的 Height 和 Width 屬性，將 **DecodePixelType** 設定為 **Logical** 通常是適當的。 有了使用實體像素的預設行為時，您必須自行考量系統目前的縮放比例；而且您必須接聽縮放比例變更通知，以因應使用者變更其顯示喜好設定的情況。
 
 在某些無法預先決定適當解碼大小的情況下，您應該遵從 XAML 的自動以正確大小解碼功能，它會在未指定明確的 DecodePixelWidth/DecodePixelHeight 時，盡可能嘗試以適當大小將影像解碼。
 
@@ -119,7 +119,7 @@ myImage.Source = bitmapImage;
 
 ## <a name="collapsed-elements-at-load-time"></a>載入時摺疊的元素
 
-應用程式中一種常見的模式就是一開始隱藏 UI 中的元素，在稍後才顯示。 在大多數情況下，應該使用 x:Load 或 x:DeferLoadStrategy 來延遲這些元素，以避免支付在載入時建立元素的費用。
+App 中一種常見的模式就是一開始隱藏 UI 中的元素，在稍後才顯示。 在大多數情況下，應該使用 x:Load 或 x:DeferLoadStrategy 來延遲這些元素，以避免支付在載入時建立元素的費用。
 
 這包括使用可見度轉換器的布林值來隱藏項目直到稍後才顯示的情況。
 
@@ -209,7 +209,7 @@ ResourceDictionaries 通常是用來將您的資源儲存在稍微全域的層�
 
 ## <a name="collections-control-is-using-a-non-virtualizing-panel"></a>集合控制項使用非虛擬面板
 
-如果您提供自訂項目面板範本 (請參閱 ItemsPanel)，請確定您使用的是虛擬面板，例如 ItemsWrapGrid 或 ItemsStackPanel。 如果您使用的是 VariableSizedWrapGrid、WrapGrid 或 StackPanel，則不會虛擬化。 此外，只有在使用 ItemsWrapGrid 或 ItemsStackPanel 時，才會引發下列 ListView 事件：ChoosingGroupHeaderContainer、ChoosingItemContainer 和 ContainerContentChanging。
+如果您提供自訂項目面板範本 (請參閱 ItemsPanel)，請確定您使用的是虛擬面板，例如 ItemsWrapGrid 或 ItemsStackPanel。 如果您使用的是 VariableSizedWrapGrid、WrapGrid 或 StackPanel，則不會虛擬化。 此外，只有在使用 ItemsWrapGrid 或 ItemsStackPanel 時，會產生下列的 ListView 事件：ChoosingGroupHeaderContainer、 ChoosingItemContainer 和 ContainerContentChanging。
 
 UI 虛擬化是您對改善集合效能所能做的最重要改進。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是一種資源浪費，因為項目不會同時全部顯示。 ListView 和 GridView (及其他標準 ItemsControl 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視中 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
 
@@ -227,7 +227,7 @@ UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降�
 
 使用虛擬面板，例如 ItemsWrapGrid 或 ItemsStackPanel。
 
-## <a name="accessibility-uia-elements-with-no-name"></a>協助工具：沒有名稱的 UIA 元素
+## <a name="accessibility-uia-elements-with-no-name"></a>協助工具：沒有名稱的 UIA 項目
 
 在 XAML 中，您可以透過設定 AutomationProperties.Name 來提供名稱。 如果未設定 AutomationProperties.Name，則許多自動化對等會提供預設名稱給 UIA。 
 
@@ -245,7 +245,7 @@ UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降�
 
 有時，正確的應用程式修正不是提供名稱，而是將 UIA 元素從所有地方 (原始樹狀結構除外) 移除。 做法是在 XAML 中設定 AutomationProperties.AccessibilityView = “Raw”。
 
-## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>協助工具：具有相同 Controltype 的 UIA 元素不應該有相同的名稱
+## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>協助工具：使用相同的 Controltype UIA 項目不應有相同的名稱
 
 兩個具有相同 UIA 父系的 UIA 元素不得有相同的 Name 和 ControlType。 如果兩個控制項的 ControlType 不同，則可以有相同的 Name。 
 

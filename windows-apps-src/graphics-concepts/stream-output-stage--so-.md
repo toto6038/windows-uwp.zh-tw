@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 87eb6562c6ee66ca1d409d3748e688861d5f3920
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936472"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605043"
 ---
 # <a name="stream-output-so-stage"></a>資料流輸出 (SO) 階段
 
 
 資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段輸出（串流）到記憶體中的一或多個緩衝區。 串流輸出到記憶體的資料可重新循環回到管線做為輸入資料，或從 CPU 讀回。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和使用
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
 
 
 ![在管線中資料流輸出階段的位置圖](images/d3d10-pipeline-stages-so.png)
@@ -38,12 +38,12 @@ ms.locfileid: "8936472"
 
 來自上一個著色器階段的頂點資料。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
-資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段 (例如幾何著色器 (GS) 階段) 輸出 (或串流) 到記憶體中的一或多個緩衝區。 如果幾何著色器 (GS) 階段非使用中，資料流輸出 (SO) 階段會持續將頂點資料從網域著色器 (DS) 階段到記憶體 （或者，如果 DS 也是非使用中，從頂點著色器 (VS) 階段） 中的緩衝區。
+資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段 (例如幾何著色器 (GS) 階段) 輸出 (或串流) 到記憶體中的一或多個緩衝區。 如果非作用中的幾何著色器 (GS) 階段，Stream 輸出 (SO) 階段持續輸出緩衝區的記憶體 （或如果 DS 也是作用中，從 頂點著色器 (VS) 階段） 中的頂點資料來自網域著色器 (DS) 階段。
 
-當三角形或帶狀繫結至輸入組合語言 (IA) 階段時，每個連環轉換為清單在串流輸出之前。頂點永遠寫為完整的基本類型 (例如，3 個頂點的三角形，一次）;不完整的基本類型永遠不會串流輸出。具相鄰關係的基本類型資料流輸出資料之前，會先捨棄相鄰資料。
+當三角形或帶狀線繫結至輸入組合語言 (IA) 階段時，每一個區域在串流輸出之前會先轉換為清單。頂點永遠寫出為完整的基本類型（例如，對於三角形，一次 3 個頂點）。不完整的基本類型永遠不會串流輸出。相鄰基本類型在串流輸出資料之前會先捨棄相鄰資料。
 
 資料流輸出階段同時支援最多 4 個緩衝區。
 

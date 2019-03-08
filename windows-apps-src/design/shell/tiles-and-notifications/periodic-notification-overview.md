@@ -1,5 +1,5 @@
 ---
-Description: Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.
+Description: 定期通知也稱為輪詢通知，可以在固定的時間間隔從雲端服務下載內容來更新磚和徽章。
 title: 定期通知概觀
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050511"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624853"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概觀
  
@@ -25,7 +25,7 @@ ms.locfileid: "9050511"
 
 定期通知可以讓您使用最少的雲端服務與用戶端投資設備來提供動態磚更新。 定期通知是將相同內容散佈給廣大群眾的理想方式。
 
-**注意：** 您可以進一步了解適用於 windows 8.1 下載的[推播和定期通知範例](https://go.microsoft.com/fwlink/p/?linkid=231476)，並重複使用其原始程式碼，在 windows 10 應用程式中。
+**附註**  您可以進一步了解下載[推播和定期通知範例](https://go.microsoft.com/fwlink/p/?linkid=231476)Windows 8.1 和重複使用您的 Windows 10 應用程式中的原始程式碼。
 
  
 
@@ -48,9 +48,9 @@ ms.locfileid: "9050511"
 
 呼叫這些方法的其中一個開始輪詢：
 
--   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (磚)
--   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (徽章)
--   [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (磚)
+-   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) （磚）
+-   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) （徽章）
+-   [**StartPeriodicUpdateBatch** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) （磚）
 
 呼叫其中一個方法時，會立即輪詢 URI，並使用收到的內容來更新磚或徽章。 在這次初始輪詢之後，Windows 會在固定的時間間隔繼續提供更新。 輪詢會一直持續，直到您明確加以停止 (透過 [**TileUpdater.StopPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater.StopPeriodicUpdate))、解除安裝 app 或移除磚 (次要磚) 後才會停止。 否則，即使不再啟動您的 app，Windows 還是會繼續輪詢磚或徽章的更新。
 
@@ -104,6 +104,6 @@ ms.locfileid: "9050511"
 
 
 * [定期通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [如何設定徽章的定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [如何設定定期通知徽章](https://msdn.microsoft.com/library/windows/apps/hh761476)
 * [如何設定磚的定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
  

@@ -1,5 +1,5 @@
 ---
-description: 本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的應用程式成為一個選項。
+description: 本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的 app 成為一個選項。
 title: 接收資料
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 ms.date: 02/08/2017
@@ -7,25 +7,25 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e17b9ddd5833899a83e24d24c74f9c620a28f5c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943524"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617633"
 ---
 # <a name="receive-data"></a>接收資料
 
 
 
-本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的應用程式成為一個選項。
+本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的 app 成為一個選項。
 
 ## <a name="declare-your-app-as-a-share-target"></a>將您的 app 宣告為分享目標
 
 當使用者叫用分享時，系統會顯示可能的目標 app 的清單。 為了要顯示在清單上，您的 app 必須宣告它支援分享協定。 這會讓系統知道您的 app 能夠接收內容。
 
 1.  開啟資訊清單檔案。 這個檔案的命名格式應該像這樣 **package.appxmanifest**。
-2.  開啟 **\[宣告\]** 索引標籤。
-3.  從 **\[可用宣告\]** 清單中選擇 **\[分享目標\]**，然後選取 **\[新增\]**。
+2.  開啟 [宣告] 索引標籤。
+3.  從 [可用宣告] 清單中選擇 [分享目標]，然後選取 [新增]。
 
 ## <a name="choose-file-types-and-formats"></a>選擇檔案類型和格式
 
@@ -36,13 +36,13 @@ ms.locfileid: "8943524"
 設定檔案類型：
 
 1.  開啟資訊清單檔案。 這個檔案的命名格式應該像這樣 **package.appxmanifest**。
-2.  在 **\[宣告\]** 頁面的 **\[支援的檔案類型\]** 區段中，選取 **\[加入新的\]**。
-3.  輸入想要支援的副檔名，例如 .docx。 您必須加上句點 (.)。 如果想要支援所有檔案類型，請選取 **\[SupportsAnyFileType\]** 核取方塊。
+2.  在 [宣告] 頁面的 [支援的檔案類型] 區段中，選取 [加入新的]。
+3.  輸入想要支援的副檔名，例如 .docx。 您必須加上句點 (.)。 如果想要支援所有檔案類型，請選取 [SupportsAnyFileType] 核取方塊。
 
 設定資料格式：
 
 1.  開啟資訊清單檔案。
-2.  開啟 **\[宣告\]** 頁面的 **\[資料格式\]** 區段，然後選取 **\[加入新的\]**。
+2.  開啟 [宣告] 頁面的 [資料格式] 區段，然後選取 [加入新的]。
 3.  輸入支援的資料格式名稱，例如 Text。
 
 ## <a name="handle-share-activation"></a>處理分享啟用
@@ -99,13 +99,13 @@ shareOperation.ReportError("Could not reach the server! Try again later.");
 shareOperation.ReportCompleted();
 ```
 
-當使用這些方法時，您通常會依照上述順序呼叫這些方法，而且不要呼叫它們超過一次。 不過，有時目標應用程式可能會先呼叫 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)，之後才呼叫 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted)。 例如，應用程式可能會在啟用處理常式的工作期間抓取資料，但直到使用者選取 **\[分享\]** 按鈕後才會呼叫 **ReportStarted**。
+當使用這些方法時，您通常會依照上述順序呼叫這些方法，而且不要呼叫它們超過一次。 不過，有時目標應用程式可能會先呼叫 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)，之後才呼叫 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted)。 例如，應用程式可能會在啟用處理常式的工作期間抓取資料，但直到使用者選取 [分享] 按鈕後才會呼叫 **ReportStarted**。
 
 ## <a name="return-a-quicklink-if-sharing-was-successful"></a>如果分享成功，則傳回 QuickLink
 
 當使用者選取您的 app 來接收內容時，建議您建立一個 [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink)。 **QuickLink** 就像捷徑，可讓使用者方便與您的應用程式分享資訊。 例如，您可以建立一個 **QuickLink**，開啟已預先設定朋友電子郵件地址的新電子郵件訊息。
 
-**QuickLink** 必須有標題、圖示和識別碼。當使用者點選 [分享] 常用鍵時，就會出現標題 (如「Email Mom」) 和圖示。 識別碼是您的 app 用來存取任何自訂資訊的物件，例如電子郵件地址或登入認證。 當您的 app 建立 **QuickLink** 時，app 會呼叫 [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) 來將 **QuickLink** 傳回系統。
+**QuickLink** 必須包含標題、圖示以及識別碼。當使用者點選分享常用鍵時，就會出現標題 (如「Email Mom」) 和圖示。 識別碼是您的 app 用來存取任何自訂資訊的物件，例如電子郵件地址或登入認證。 當您的 app 建立 **QuickLink** 時，app 會呼叫 [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) 來將 **QuickLink** 傳回系統。
 
 **QuickLink** 實際上不會儲存資料。 而是會含有一個識別碼，在選取時傳送到您的 app。 您的 app 要負責儲存 **QuickLink** 的識別碼及對應的使用者資料。 當使用者點選 **QuickLink** 時，您可以透過 [**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId) 屬性取得它的 ID。
 
@@ -131,10 +131,10 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 }
 ```
 
-## <a name="see-also"></a>另請參閱 
+## <a name="see-also"></a>請參閱 
 
-* [App 間通訊](index.md)
-* [分享資料](share-data.md)
+* [應用程式間通訊](index.md)
+* [共用資料](share-data.md)
 * [OnShareTargetActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
 * [ReportError](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reporterror.aspx)

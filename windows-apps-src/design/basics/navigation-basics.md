@@ -1,5 +1,5 @@
 ---
-Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
+Description: 在通用 Windows 平台 (UWP) app 中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。
 title: UWP app 的瀏覽基本知識
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116240"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636093"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -49,13 +49,13 @@ ms.locfileid: "9116240"
 
 讓我們從良好瀏覽設計的原則開始：
 
-- **一致性︰** 符合使用者的期望。
-- **簡單︰** 不超過您的需求。
-- **明確：** 提供清楚的路徑和選項。
+- **一致性：** 符合使用者的期望。
+- **簡易性：** 不會進行比您需要更多。
+- **清楚：** 提供明確的路徑和選項。
 
 ### <a name="consistency"></a>一致性
 
-瀏覽應該與使用者的期望一致。 使用[標準控制項](#use-the-right-controls)，使用者可熟悉和圖示的下列標準慣例，位置，以及樣式會讓瀏覽可預測且直覺的使用者。
+瀏覽應該與使用者的期望一致。 使用[標準控制項](#use-the-right-controls)使用者都是針對圖示的位置，熟悉並遵循標準慣例，樣式會瀏覽可預測且直覺式的使用者。
 
 ![頁面元件影像](images/nav/page-components.svg)
 
@@ -96,7 +96,7 @@ ms.locfileid: "9116240"
 
 1. 考量您的使用者。 找出使用者可能在您的 app 中依循的一般途徑，並思考使用者來到每個頁面的原因，以及接著想前往哪裡。
 
-2. 避免深層的瀏覽階層。 如果您的瀏覽超過三層，可能會讓您的使用者陷在深度階層中而難以離開。
+2. 應避免深入導覽階層。 如果您的瀏覽超過三層，可能會讓您的使用者陷在深度階層中而難以離開。
 
 3. 避免「上下彈跳」。 當有相關的內容時，但瀏覽到該內容卻要求使用者往上一層然後再往下一層，就發生上下彈跳狀況。
 
@@ -117,7 +117,7 @@ ms.locfileid: "9116240"
 
         - 頁面可以用任何順序瀏覽。
         - 頁面之間有清楚的區別，且沒有明顯的父系/子系關係。
-        - 群組中頁面小於 8 個。 <br>
+        - 在群組中有少於 8 個的頁面。 <br>
         (有多個頁面時，使用者可能會難以了解頁面的獨特性，或難以了解他們目前在群組中的位置。 如果您認為這對您的應用程式不構成問題，那請將頁面以對等方式排列。 否則，請考慮使用階層結構將頁面分成兩組，或分成多個較小的群組。)
 
     :::column-end:::
@@ -184,14 +184,14 @@ ms.locfileid: "9116240"
         
         Use top navigation when:
 
-        - 您想要顯示在螢幕上的所有瀏覽選項。
-        - 您想要針對您的應用程式內容的更多空間。
-        - 圖示不能清楚說明您的瀏覽類別。
+        - 您想要顯示在螢幕上的所有導覽選項。
+        - 您想要為您的應用程式內容的更多空間。
+        - 圖示無法清楚地描述您的瀏覽類別。
         
         使用索引標籤的時機：
 
-        - 您想要保留瀏覽歷程記錄和頁面的狀態。
-        - 您預期使用者會頻繁索引標籤之間切換。
+        - 您想要保留瀏覽歷程記錄和網頁的狀態。
+        - 您預期使用者經常索引標籤之間切換。
 
 :::row-end:::
 
@@ -205,7 +205,7 @@ ms.locfileid: "9116240"
         Displays a vertical list of links to top-level pages. Use when:
         
         - 頁面位於最上層。
-        - 有許多瀏覽項目 (超過 5)
+        - 有許多的導覽項目 (超過 5)
         - 您預期使用者不會在頁面之間頻繁切換。
         
 :::row-end:::
@@ -235,6 +235,6 @@ ms.locfileid: "9116240"
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::
 
-## <a name="next-add-navigation-code-to-your-app"></a>後續步驟︰新增瀏覽程式碼到您的 App
+## <a name="next-add-navigation-code-to-your-app"></a>下一步:將巡覽程式碼新增至您的應用程式
 
 下一篇文章：[實作基本瀏覽](navigate-between-two-pages.md)，顯示所需的程式碼，才能使用框架控制項在您的 App 中的兩個頁面之間啟用基本瀏覽。

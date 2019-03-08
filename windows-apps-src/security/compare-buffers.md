@@ -4,14 +4,14 @@ description: 這個範例程式碼說明如何比較通用 Windows 平台 (UWP) 
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 828f3a081aa3dcd095f036fb47385fc261335a7a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928555"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589773"
 ---
 # <a name="compare-buffers"></a>比較緩衝區
 

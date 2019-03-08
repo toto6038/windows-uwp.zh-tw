@@ -1,17 +1,17 @@
 ---
 title: 使用 JavaScript 建立 UWP 遊戲
-description: 簡單的 UWP Microsoft 網上商店，以 JavaScript 和 CreateJS 撰寫遊戲
+description: 為 Microsoft Store，以 JavaScript 和 CreateJS 撰寫遊戲的簡單 UWP
 ms.date: 02/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d10dbf52f0ed01d46f9e5cba83cd14d48bfc88d
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114554"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639173"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
@@ -24,13 +24,13 @@ ms.locfileid: "9114554"
 ## <a name="introduction"></a>簡介
 
 
-應用程式發佈至 Microsoft Store，意味著您可以分享 （或賣 ！） 給數百萬使用者，在許多不同的裝置上。  
+應用程式發佈至 Microsoft Store 表示您可以共用 （或銷售 ！） 有數百萬人在多種不同裝置上。  
 
-為了將您的應用程式發佈至 Microsoft Store，必須撰寫為 UWP （通用 Windows 平台） app。 不過 UWP 非常有彈性，可支援各種不同的語言版本及架構。 若要證明這點，此範例是以 JavaScript 撰寫的簡單遊戲，使用數個 CreateJS 程式庫，並示範如何繪圖 Sprite、建立遊戲迴圈、支援鍵盤與滑鼠，以及適應不同的螢幕大小。
+若要將您的應用程式發佈到 Microsoft Store 它必須寫入為 UWP （通用 Windows 平台） 的應用程式。 不過 UWP 非常有彈性，可支援各種不同的語言版本及架構。 若要證明這點，此範例是以 JavaScript 撰寫的簡單遊戲，使用數個 CreateJS 程式庫，並示範如何繪圖 Sprite、建立遊戲迴圈、支援鍵盤與滑鼠，以及適應不同的螢幕大小。
 
 這個專案是使用 Visual Studio 以 JavaScript 建置而成。 只要某些小變更，它也可以裝載於網站，或是適用於其他平台。 
 
-**附註：** 這並非完整 （或好 ！） 的遊戲;設計目的是示範使用 JavaScript 和協力廠商程式庫，建立可發佈至 Microsoft Store 的 app。
+**注意：** 這是不完整 （或好 ！） 的遊戲;它被設計來示範如何使用 JavaScript 和協力廠商程式庫，以便準備要發行至 Microsoft Store 應用程式。
 
 
 ## <a name="requirements"></a>需求
@@ -61,7 +61,7 @@ app 的完整原始碼儲存在 [GitHub](https://github.com/Microsoft/Windows-ap
 
 現在您可以執行遊戲！
 
-按 **F5** 以開始執行 app。 您應該會看到視窗開啟，以及我們熟悉的恐龍站在田園 （或稀疏） 風景中。 我們現在將會檢查 app、解釋一些重要的部分，並在過程中解除鎖定其餘部分功能。
+按 **F5** 以開始執行 app。 您應該會看到視窗開啟時和我們的熟悉恐龍常設 idyllic （如果疏鬆） 的環境中。 我們現在將會檢查 app、解釋一些重要的部分，並在過程中解除鎖定其餘部分功能。
 
 ![只是日常的恐龍與坐在其背上的忍者貓](images/JS2D_3.png)
 
@@ -69,9 +69,9 @@ app 的完整原始碼儲存在 [GitHub](https://github.com/Microsoft/Windows-ap
 
 ## <a name="walkthough"></a>逐步解說
 
-如果您按 F5 開始遊戲時，您可能想知道發生什麼事。 並答案 「 不多 」，因為許多程式碼目前已標示註解。到目前為止，您會看到所有是恐龍，以及按下空格鍵的無力請求。 
+如果您按 F5 開始遊戲時，您可能想知道發生什麼事。 答案「並不多」，因為許多程式碼目前已標示註解。到目前為止，您只會看到恐龍，以及按下空格鍵的無力請求。 
 
-### <a name="1-setting-the-stage"></a>1. 設定舞台
+### <a name="1-setting-the-stage"></a>1.設定階段
 
 如果您打開並檢查 **index.html**，您會看到它幾乎是空白的。 這個檔案是預設網頁，包含我們的 app，而且只做兩件重要的事。 首先，它包含 **EaselJS** 和 **PreloadJS** CreateJS 程式庫的 JavaScript 原始碼，以及 **main.js**（我們自己的來源程式碼檔案）。
 第二，它會定義 &lt;canvas&gt; 標記，這是我們所有的圖形將會出現的位置。 &lt;canvas&gt; 是標準 HTML5 文件元件。 我們為其提供名稱 (gameCanvas)，以便在 **main.js** 中的程式碼可以參考它。 順帶一提，若要從頭撰寫 JavaScript 遊戲，您也需要複製 **EaselJS** 和 **PreloadJS** 檔案到您的方案，並建立畫布物件。
@@ -86,9 +86,9 @@ EaselJS 為我們提供新的物件，稱為*舞台*。 舞台連結到畫布，
 
 說到這個檔案，現在是開啟 **main.js** 的好時機。
 
-### <a name="2-loading-the-bitmaps"></a>2. 載入點陣圖
+### <a name="2-loading-the-bitmaps"></a>2.正在載入點陣圖
 
-EaselJS 為我們提供許多不同類型的圖形物件。 我們可以建立簡單形狀（例如藍色矩形用於天空），或點陣圖（例如我們將要新增的雲朵）、文字物件和 Sprite。 Sprite 使用 (SpriteSheet) [https://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 包含多個影像的單一點陣圖。 例如我們使用這個 SpriteSheet 儲存恐龍動畫的不同畫面：
+EaselJS 為我們提供許多不同類型的圖形物件。 我們可以建立簡單形狀（例如藍色矩形用於天空），或點陣圖（例如我們將要新增的雲朵）、文字物件和 Sprite。 精靈會使用 (SpriteSheet) [https://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 單一點陣圖，其中包含多個映像。 例如我們使用這個 SpriteSheet 儲存恐龍動畫的不同畫面：
 
 ![Walking Dino Sprite 工作表](images/JS2D_4.png)
 
@@ -124,7 +124,7 @@ EaselJS 為我們提供許多不同類型的圖形物件。 我們可以建立�
 
 瀏覽 **main.js** 直到找到 **init()** 函式。 遊戲開始時呼叫這個函式，它是我們開始設定所有圖形物件的位置。
 
-找出下列程式碼，並從參照雲影像的該行移除註解 (\\)。
+尋找下列程式碼，並移除註解 (\\) 從列參照雲端映像。
 
 ```
  manifest = [
@@ -160,14 +160,13 @@ JavaScript 在載入資源時 (例如影像) 需要一點協助，所以我們�
 
 再次執行 app（按下 F5），您會看到雲朵會出現。
 
-### <a name="3-moving-the-clouds"></a>3. 移動雲朵
+### <a name="3-moving-the-clouds"></a>3.移動雲端
 
 現在我們要讓雲朵移動。 移動雲朵 - 事實上移動任何項目 - 的秘密是，設定每秒重複呼叫多次的 [ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html) 函式。 每次呼叫這個函式，它便會在稍微不同的地方重新繪製圖形。
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">請參閱由 Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) 發佈到 <a href="https://codepen.io">CodePen</a> 的 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 以動畫顯示雲朵</a>。</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
- 
-若要這樣做的程式碼已在 **main.js** 檔案中，由 CreateJS 程式庫 EaselJS 所提供的。 它的外觀如下：
+  若要這麼做的程式碼已在**main.js** CreateJS 程式庫，EaselJS 所提供的檔案。 它的外觀如下：
 
 ```
     // Set up the game loop and keyboard handler.
@@ -203,7 +202,7 @@ function animate_clouds()
 
 如果您目前執行 app 時，您會看到雲朵已經開始飄移。 最後，我們有動作！
 
-### <a name="4-adding-keyboard-and-mouse-input"></a>4. 新增鍵盤和滑鼠輸入
+### <a name="4-adding-keyboard-and-mouse-input"></a>4.新增的鍵盤和滑鼠輸入
 
 不能與人互動的遊戲不是遊戲。 所以我們允許玩家使用鍵盤或滑鼠執行一些動作。 回到 **loadingComplete()** 函式，您將會看到以下。 移除註解。
 
@@ -240,7 +239,7 @@ Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都
 
 我們遊戲的主要機制已完成。
 
-### <a name="5-resizing-support"></a>5. 調整大小支援
+### <a name="5-resizing-support"></a>5.調整大小的支援
 
 我們幾乎完成了！ 但在完成之前，還要先處理一個擾人的問題。 執行遊戲時，請嘗試調整視窗大小。 您會看到遊戲很快變得非常混亂，因為物件不再位於其位置。 我們可以處理這個問題，方式是為視窗調整大小事件 (當玩家調整視窗大小或當裝置從橫向旋轉至直向時所產生) 建立處理常式。
 
@@ -255,9 +254,9 @@ Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都
 
 如果您再次執行 app 時，您現在應該可以調整視窗大小，以取得較好的結果。
 
-## <a name="publishing-to-the-microsoft-store"></a>發佈至 Microsoft Store
+## <a name="publishing-to-the-microsoft-store"></a>發行至 Microsoft Store
 
-現在您擁有 UWP 應用程式，就可以將它發行至 Microsoft Store （假設您已先將它改進 ！） 
+現在您可以在 UWP 應用程式時，就可以將它發行到 （假設您已在第一次改進 ！） 的 Microsoft Store 
 
 程序有幾個步驟。
 
@@ -265,7 +264,7 @@ Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都
 2. 您必須使用 App 提交[檢查清單](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
 3. 必須提交 App 以取得[認證](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 
-如需詳細資訊，請參閱[發佈您的 UWP app](https://developer.microsoft.com/en-us/store/publish-apps)。
+如需詳細資訊，請參閱 <<c0> [ 發佈您的 UWP 應用程式](https://developer.microsoft.com/en-us/store/publish-apps)。
 
 ## <a name="suggestions-for-other-features"></a>其他功能的建議。
 
@@ -277,7 +276,7 @@ Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都
 
 ## <a name="other-links"></a>其他連結
 
-* [使用 JavaScript 製作簡單的 Windows 遊戲](https://www.sitepoint.com/creating-a-simple-windows-8-game-with-javascript-game-basics-createjseaseljs/)
-* [挑選 HTML/JS 遊戲引擎](https://html5gameengine.com/)
-* [在以 JS 為基礎的遊戲中使用 CreateJS](https://blogs.msdn.microsoft.com/cbowen/2012/09/19/using-createjs-in-your-javascript-based-windows-8-game/)
-* [LinkedIn Learning 上的遊戲開發課程](https://www.linkedin.com/learning/topics/game-development)
+* [請使用 JavaScript 的簡單 Windows 遊戲](https://www.sitepoint.com/creating-a-simple-windows-8-game-with-javascript-game-basics-createjseaseljs/)
+* [挑選的 HTML/JS 的遊戲引擎](https://html5gameengine.com/)
+* [使用 CreateJS 您 js 型遊戲](https://blogs.msdn.microsoft.com/cbowen/2012/09/19/using-createjs-in-your-javascript-based-windows-8-game/)
+* [在 LinkedIn Learning 的遊戲開發課程](https://www.linkedin.com/learning/topics/game-development)

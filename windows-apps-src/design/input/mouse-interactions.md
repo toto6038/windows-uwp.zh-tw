@@ -1,5 +1,5 @@
 ---
-Description: Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
+Description: 處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。
 title: 滑鼠互動
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f81634fdb0f9382b1f660394764e5555189783e4
-ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999911"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622353"
 ---
 # <a name="mouse-interactions"></a>滑鼠互動
 
@@ -39,7 +39,7 @@ ms.locfileid: "8999911"
 <thead>
 <tr class="header">
 <th align="left">詞彙</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -59,7 +59,7 @@ ms.locfileid: "8999911"
 <td align="left"><p>按滑鼠右鍵選取與命令</p></td>
 <td align="left"><p>按滑鼠右鍵可顯示其中包含全域命令的瀏覽列 (如果有的話) 和應用程式列。 在某個元素上按一下滑鼠右鍵即可選取該元素，並且顯示其中包含所選元素之操作命令的應用程式列。</p>
 <div class="alert">
-<strong>注意：</strong>以按滑鼠右鍵來顯示操作功能表，如果選取 」 或 「 應用程式列命令 」 不是適當的 UI 行為。 我們強烈建議您針對所有命令行為使用應用程式列。
+<strong>附註</strong>  按一下滑鼠右鍵以顯示操作功能表，如果選取範圍] 或 [應用程式列命令不適當的 UI 行為。 我們強烈建議您針對所有命令行為使用應用程式列。
 </div>
 <div>
  
@@ -86,7 +86,7 @@ ms.locfileid: "8999911"
 
 ## <a name="mouse-input-events"></a>滑鼠輸入的事件
 
-透過[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)的所有物件所支援的常見路由輸入事件，就可以處理大部分的滑鼠輸入。 其中包括：
+大部份的滑鼠輸入可以透過所有支援的常見路由輸入事件處理[ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)物件。 這些地方包括：
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -101,7 +101,7 @@ ms.locfileid: "8999911"
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
 - [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**保留**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
@@ -126,9 +126,9 @@ ms.locfileid: "8999911"
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
 - [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
-不過，您也可以利用每個裝置 （例如滑鼠滾輪事件） 中[Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)使用指標、 手勢及操作事件的特定能力。
+不過，您可以利用每個裝置 （例如滑鼠滾輪事件） 的特定功能，使用中的指標、 手勢和操作事件[Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)。
 
-**範例：** 請參閱我們的[BasicInput 範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)。
+**範例：** 請參閱我們[BasicInput 範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)，如。
 
 ## <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
@@ -145,25 +145,25 @@ ms.locfileid: "8999911"
 
 我們提供了一組可用於滑鼠指標的標準游標。 它們可用來指示元素的主要動作。
 
-每一個標準游標都有與其關聯之相對應的預設影像。 使用者或 app 可以隨時取代與任何標準游標相關聯的預設影像。 透過 [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 函式指定游標影像。
+每一個標準游標都有與其關聯之相對應的預設影像。 使用者或應用程式可以隨時取代與任何標準游標相關聯的預設影像。 透過 [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 函式指定游標影像。
 
 如果您需要自訂滑鼠游標：
 
 - 一律使用箭頭游標 (![箭頭游標](images/cursor-arrow.png)) 於可點選的元素。 請勿使用指向手型游標 (![指向手型游標](images/cursor-pointinghand.png)) 於連結或其他互動式元素。 請改為使用暫留效果 (描述如前)。
 - 使用文字游標 (![文字游標](images/cursor-text.png)) 於可選取的文字。
 - 使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 [開始] 畫面磚)，請勿使用移動游標。
-- 請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png), ![調整水平大小游標](images/cursor-horizontal.png), ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png), ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
-- 使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png), ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
+- 請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
+- 使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
 ## <a name="related-articles"></a>相關文章
 
 - [處理指標輸入](handle-pointer-input.md)
 - [識別輸入裝置](identify-input-devices.md)
-- [事件與路由事件概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
+- [事件和路由的事件概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
 ### <a name="samples"></a>範例
 
-- [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 - [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)

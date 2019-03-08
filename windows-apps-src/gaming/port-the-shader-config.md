@@ -7,25 +7,25 @@ ms.topic: article
 keywords: windows 10, uwp, games, port, shader, direct3d, opengl, 遊戲, 連接埠, 著色器, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935952"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618743"
 ---
 # <a name="port-the-shader-objects"></a>移植著色器物件
 
 
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)
 -   [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)
 
 從 OpenGL ES 2.0 移植簡單的轉譯器時，第一個步驟是在 Direct3D 11 中設定對等的頂點和片段著色器物件，以及確定主程式可以在著色器物件編譯完成之後與這些物件通訊。
 
-> **注意：** 您已建立新的 Direct3D 專案？ 如果沒有，請依照[建立適用於通用 Windows 平台 (UWP) 的新 DirectX 11 專案](user-interface.md)中的指示執行。 這個逐步解說假設您已建立可用來繪製到螢幕的 DXGI 與 Direct3D 資源，而這些是在範本中提供。
+> **附註**  您建立新的 Direct3D 專案嗎？ 如果沒有，請依照[建立適用於通用 Windows 平台 (UWP) 的新 DirectX 11 專案](user-interface.md)中的指示執行。 這個逐步解說假設您已建立可用來繪製到螢幕的 DXGI 與 Direct3D 資源，而這些是在範本中提供。
 
  
 
@@ -38,7 +38,7 @@ ms.locfileid: "8935952"
 
 在這個簡單的 OpenGL ES 2.0 範例中，著色器會以文字檔形式儲存，並當成字串資料載入，以進行執行階段編譯。
 
-OpenGL ES 2.0：編譯著色器
+OpenGL ES 2.0:編譯著色器
 
 ``` syntax
 GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
@@ -78,11 +78,11 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 在 Direct3D 中，著色器不會在執行階段期間編譯；它們一律是在編譯程式的剩餘部分時編譯成 CSO 檔案。 當您使用 Microsoft Visual Studio 編譯應用程式時，HLSL 檔案會編譯成應用程式必須載入的 CSO (.cso) 檔案。 封裝應用程式時，請務必將這些 CSO 檔案包含在內！
 
-> **注意：** 下列範例執行著色器載入與編譯使用**auto**關鍵字和 lambda 語法，以非同步方式。 ReadDataAsync() 是針對 CSO 檔案中讀取來做為位元組資料陣列 (fileData) 的範本所實作的方法。
+> **附註**  下列範例會載入著色器並以非同步方式使用編譯**自動**關鍵字和 lambda 語法。 ReadDataAsync() 是針對 CSO 檔案中讀取來做為位元組資料陣列 (fileData) 的範本所實作的方法。
 
  
 
-Direct3D 11：編譯著色器
+Direct3D 11:編譯著色器
 
 ``` syntax
 auto loadVSTask = DX::ReadDataAsync(m_projectDir + "SimpleVertexShader.cso");
@@ -105,11 +105,11 @@ auto createPSTask = loadPSTask.then([this](Platform::Array<byte>^ fileData) {
 };
 ```
 
-### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a>步驟 2：建立並載入頂點與片段 (像素) 著色器
+### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a>步驟 2：建立和載入頂點，以及片段 （像素） 著色器
 
 OpenGL ES 2.0 具備著色器「程式」的概念，而這是做為在 CPU 上執行的主程式與在 GPU 上執行的著色器之間的介面。 著色器會經過編譯 (或從編譯過的來源載入)，並與在 GPU 上啟用執行的程式產生關聯。
 
-OpenGL ES 2.0：將頂點與片段著色器載入著色程式
+OpenGL ES 2.0:頂點和片段著色器載入陰影程式
 
 ``` syntax
 GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *fragShaderSrcStr)
@@ -170,7 +170,7 @@ glUseProgram(renderer->programObject);
 
 Direct3D 沒有著色器程式物件的概念； 而是會在呼叫 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 介面 (例如 [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 或 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)) 上的其中一個著色器建立方法時建立著色器。 為了針對目前繪製內容設定著色器，我們使用一組著色器方法，提供著色器給對應的 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)，例如，適用於頂點著色器的 [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493)，或是適用於片段著色器的 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)。
 
-Direct3D 11：設定圖形裝置繪製內容的著色器。
+Direct3D 11:設定著色器圖形裝置的繪圖內容。
 
 ``` syntax
 m_d3dContext->VSSetShader(
@@ -184,18 +184,18 @@ m_d3dContext->PSSetShader(
   0);
 ```
 
-### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a>步驟 3：定義要提供給著色器的資料
+### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a>步驟 3：定義提供給著色器資料
 
 我們在 OpenGL ES 2.0 範例中提供了一個 **uniform**，以針對著色器管線進行宣告：
 
--   **u_mvpMatrix**：一個 4x4 陣列的浮點數，代表最終的模型-檢視-投影轉換矩陣，這個矩陣可取得立方體的模型座標，並將它們轉換成 2D 投影座標，以進行掃描轉換。
+-   **u\_mvpMatrix**： 表示採用此模型的最終模型-檢視-投影轉換矩陣的 4x4 陣列的浮點數協調 cube，並將其轉換成 2D 投影座標進行掃描轉換。
 
 此外，有兩個適用於頂點資料的 **attribute** 值：
 
--   **a\_position**：一個 4 浮點數的向量，適用於頂點的模型座標。
--   **a\_color**：一個 4 浮點數的向量，適用於與頂點相關聯的 RGBA 色彩值。
+-   **\_位置**: 4 浮點向量中供模型座標的頂點。
+-   **\_色彩**:4 浮點向量中的供 RGBA 色彩與頂點相關聯的值。
 
-Open GL ES 2.0：Uniform 與屬性的 GLSL 定義
+Open GL ES 2.0:GLSL uniforms 和屬性的定義
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
@@ -203,9 +203,9 @@ attribute vec4 a_position;
 attribute vec4 a_color;
 ```
 
-在這個案例中，對應的主程式變數會定義為轉譯器物件上的欄位 (請參閱[使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md) 中的標題)。我們一旦完成此動作之後，就需要在記憶體中指定位置，讓主程式可以在其中為著色器管線提供這些值，而我們通常會在繪製呼叫之前執行此動作：
+在這個案例中，對應的主程式變數會定義為轉譯器物件上的欄位 (請參閱中的標頭[如何： 連接埠簡單的 OpenGL ES 2.0 轉譯器為 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)。)一旦我們所做的我們需要在其中主要的程式會提供這些值，通常我們之前繪製呼叫的將著色器 」 管線的記憶體中指定的位置：
 
-OpenGL ES 2.0：標示 Uniform 與屬性資料的位置
+OpenGL ES 2.0:標示的統一和屬性資料的位置
 
 ``` syntax
 
@@ -227,9 +227,9 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 
 Direct3D 沒有相同意義的「屬性」或 "uniform" 概念 (或者至少它不會共用此語法)； 而是提供以 Direct3D 子資源表示的常數緩衝區 -- 在主程式與著色器程式之間共用的資源。 這其中的部分子資源 (例如，頂點位置與色彩) 會使用 HLSL 語意來說明。 如需關於常數緩衝區與 HLSL 語意 (當它們與 OpenGL ES 2.0 概念相關時) 的詳細資訊，請參閱[移植框架緩衝區物件、Uniform 及屬性](porting-uniforms-and-attributes.md)。
 
-將這個程序移至 Direct3D 時，我們會將 Uniform 轉換成 Direct3D 常數緩衝區 (cbuffer)，並為它指派暫存器，以使用 **register** HLSL 語意進行查詢。 這兩個頂點屬性會被處理成著色器管線階段的輸入元素，同時也會被指派可通知著色器的 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION 與 COLOR0)。 像素著色器會使用 SV\_ 首碼來取得 SV\_POSITION，這個首碼表示它是由 GPU 產生的系統值 (在這個案例中，它是在掃描轉換期間產生的像素位置)。VertexShaderInput 與 PixelShaderInput 並未宣告為常數緩衝區，因為前者將用來定義頂點緩衝區 (請參閱[移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md))，而後者的資料是產生來做為管線中前一個階段的結果，而在這個案例中為頂點著色器。
+將這個程序移至 Direct3D 時，我們會將 Uniform 轉換成 Direct3D 常數緩衝區 (cbuffer)，並為它指派暫存器，以使用 **register** HLSL 語意進行查詢。 這兩個頂點屬性會被處理成著色器管線階段的輸入元素，同時也會被指派可通知著色器的 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION 與 COLOR0)。 像素著色器會採用 SV\_SV 的位置，\_前置詞表示它產生 GPU 的系統值。 （在此情況下，它會掃描轉換期間所產生的像素位置。）VertexShaderInput 和 PixelShaderInput 未宣告為常數緩衝處理，因為前者會用來定義頂點緩衝區 (請參閱[連接埠的端點緩衝區和資料](port-the-vertex-buffers-and-data-config.md))，而且後者的資料會產生的結果在管線中，在此情況下是端點著色器的上一個階段。
 
-Direct3D：常數緩衝區與頂點資料的 HLSL 定義
+Direct3D:HLSL 常數緩衝區和頂點資料定義
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -256,7 +256,7 @@ struct PixelShaderInput
 
 這裡提供使用常數或頂點緩衝區傳送到著色器管線的資料配置結構。
 
-Direct3D 11：宣告常數與頂點緩衝區配置
+Direct3D 11:宣告常數和頂點緩衝區配置
 
 ``` syntax
 // Constant buffer used to send MVP matrices to the vertex shader.
@@ -273,11 +273,11 @@ struct VertexPositionColor
 };
 ```
 
-針對常數緩衝區元素使用 DirectXMath XM\* 類型，因為它們在將內容傳送到著色器管線時，提供了適當的封裝與對齊。 如果您使用標準的 Windows 平台浮點數類型與陣列，就必須自行執行封裝與對齊。
+使用 DirectXMath XM\*您常數的類型會緩衝項目，因為它們提供適當的封裝和內容的對齊方式傳送至著色器管線時。 如果您使用標準的 Windows 平台浮點數類型與陣列，就必須自行執行封裝與對齊。
 
-若要繫結常數緩衝區，請建立配置描述做為 [**CD3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/jj151620) 結構，並將它傳送到 [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)。 接著，在您的轉譯方法中，先將常數緩衝區傳送到 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486)，再進行繪製。
+要繫結常數緩衝區，建立 版面配置描述作為[ **CD3D11\_緩衝區\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/jj151620)結構，並將它傳遞給[ **ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)。 接著，在您的轉譯方法中，先將常數緩衝區傳送到 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486)，再進行繪製。
 
-Direct3D 11：繫結常數緩衝區
+Direct3D 11:常數緩衝區繫結
 
 ``` syntax
 CD3D11_BUFFER_DESC constantBufferDesc(sizeof(ModelViewProjectionConstantBuffer), D3D11_BIND_CONSTANT_BUFFER);
@@ -301,20 +301,20 @@ m_d3dContext->UpdateSubresource(
 
 頂點緩衝區是以類似的方式建立和更新，而且會在下一個步驟[移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md)中討論。
 
-<a name="next-step"></a>下一步
+<a name="next-step"></a>後續步驟
 ---------
 
-[移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md)
+[連接埠的端點緩衝區和資料](port-the-vertex-buffers-and-data-config.md)
 ## <a name="related-topics"></a>相關主題
 
 
-[使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+[如何： 連接埠到 Direct3D 11 中的簡單的 OpenGL ES 2.0 轉譯器](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 
-[移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md)
+[連接埠的端點緩衝區和資料](port-the-vertex-buffers-and-data-config.md)
 
-[移植 GLSL](port-the-glsl.md)
+[GLSL 的連接埠](port-the-glsl.md)
 
-[繪製到螢幕](draw-to-the-screen.md)
+[描繪至螢幕](draw-to-the-screen.md)
 
  
 

@@ -8,15 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f6a1277dbb2d756f0d3a4ffc1fd545f892a2096
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047207"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596503"
 ---
 # <a name="block-compression"></a>區塊壓縮
 
-區塊壓縮是一種失真紋理壓縮技術，主要用於減少紋理的大小和磁碟使用量並提升效能。 區塊壓縮的紋理可以比每個色彩 32 位元的紋理更小。
+區塊壓縮是一種失真紋理壓縮技術，主要用於減少紋理的大小和磁碟使用量並提升效能。 區塊壓縮紋理可以比每個色彩 32 位元的紋理更小。
 
 區塊壓縮是一種用於降低紋理大小的紋理壓縮技術。 與每個色彩 32 位元的材質相比，區塊壓縮的紋理可省下高達 75% 的空間。 當使用區塊壓縮時，應用程式的效能通常會增加，這是因為磁碟使用量較少。
 
@@ -24,14 +24,14 @@ ms.locfileid: "9047207"
 
 建立經區塊壓縮的紋理時，所有維度都必須是 4 的倍數，且無法用作管線的輸出。
 
-## <a name="span-idbasicsspanspan-idbasicsspanspan-idbasicsspanhow-block-compression-works"></a><span id="Basics"></span><span id="basics"></span><span id="BASICS"></span>區塊壓縮的運作方式
+## <a name="span-idbasicsspanspan-idbasicsspanspan-idbasicsspanhow-block-compression-works"></a><span id="Basics"></span><span id="basics"></span><span id="BASICS"></span>如何封鎖壓縮運作方式
 
 區塊壓縮是一種用以減少儲存色彩資料所需記憶體的技術。 藉由將某些色彩儲存為其原始大小，並在其他色彩上使用編碼配置，您可以大幅減少儲存圖片所需的記憶體。 因為硬體會自動解碼壓縮過的資料，所以就不會有使用壓縮紋理而造成效能降低的情形。
 
 若要查看壓縮的運作方式，請查看下列兩個範例。 第一個範例描述儲存未壓縮的資料時使用的記憶體量；第二個範例描述儲存壓縮資料時使用的記憶體量。
 
 - [儲存未壓縮的資料](#storing-uncompressed-data)
-- [儲存經壓縮的資料](#storing-compressed-data)
+- [儲存壓縮的資料](#storing-compressed-data)
 
 ### <a name="span-idstoringuncompresseddataspanspan-idstoringuncompresseddataspanspan-idstoringuncompresseddataspanspan-idstoring-uncompressed-dataspanstoring-uncompressed-data"></a><span id="Storing_Uncompressed_Data"></span><span id="storing_uncompressed_data"></span><span id="STORING_UNCOMPRESSED_DATA"></span><span id="storing-uncompressed-data"></span>儲存未壓縮的資料
 
@@ -43,7 +43,7 @@ ms.locfileid: "9047207"
 
 ![在循序記憶體中的未壓縮資料](images/d3d10-block-compress-2.png)
 
-### <a name="span-idstoringcompresseddataspanspan-idstoringcompresseddataspanspan-idstoringcompresseddataspanspan-idstoring-compressed-dataspanstoring-compressed-data"></a><span id="Storing_Compressed_Data"></span><span id="storing_compressed_data"></span><span id="STORING_COMPRESSED_DATA"></span><span id="storing-compressed-data"></span>儲存經壓縮的資料
+### <a name="span-idstoringcompresseddataspanspan-idstoringcompresseddataspanspan-idstoringcompresseddataspanspan-idstoring-compressed-dataspanstoring-compressed-data"></a><span id="Storing_Compressed_Data"></span><span id="storing_compressed_data"></span><span id="STORING_COMPRESSED_DATA"></span><span id="storing-compressed-data"></span>儲存壓縮的資料
 
 既然您已經看過未壓縮圖片會使用多少記憶體，現在就來看看壓縮圖片會節省多少記憶體。 [BC1](#bc1) 壓縮格式儲存 2 種色彩 (每種 1 位元組) 和 16 個 3 位元索引 (48 位元或 6 位元組)，用來插入材質內的原始色彩，如下列圖例所示。
 
@@ -63,9 +63,9 @@ ms.locfileid: "9047207"
 
 依您使用未壓縮紋理的相同方式來使用區塊壓縮紋理。 如果您的應用程式會取得記憶體指標來顯示區塊壓縮資料，你需要處理造成宣告大小和實際大小不同的 Mipmap 內記憶體填補。
 
-- [虛擬大小與實體大小](#virtual-size-versus-physical-size)
+- [虛擬與實體大小的大小](#virtual-size-versus-physical-size)
 
-### <a name="span-idvirtualsizespanspan-idvirtualsizespanspan-idvirtualsizespanspan-idvirtual-size-versus-physical-sizespanvirtual-size-versus-physical-size"></a><span id="Virtual_Size"></span><span id="virtual_size"></span><span id="VIRTUAL_SIZE"></span><span id="virtual-size-versus-physical-size"></span>虛擬大小與實體大小
+### <a name="span-idvirtualsizespanspan-idvirtualsizespanspan-idvirtualsizespanspan-idvirtual-size-versus-physical-sizespanvirtual-size-versus-physical-size"></a><span id="Virtual_Size"></span><span id="virtual_size"></span><span id="VIRTUAL_SIZE"></span><span id="virtual-size-versus-physical-size"></span>虛擬與實體大小的大小
 
 如果您應用程式中的程式碼，使用記憶體指標來引導區塊壓縮紋理記憶體的話，有一個重要考量要注意，這可能會需要修改您應用程式中的程式碼。 區塊壓縮紋理必須在所有維度中都是 4 的倍數，因為區塊壓縮演算法是在 4x4 的材質區塊上執行。 這對原始維度能被 4 整除，但分出的子層級卻不能的 Mipmap 會出現問題。 下列圖表顯示每個 Mipmap 層級的虛擬 (宣告) 大小和實體 (實際) 大小差異。
 
@@ -105,13 +105,13 @@ Direct3D 實作多種壓縮配置，其個別實作以下三種不同折衷之�
 
 ### <a name="span-idbc1spanspan-idbc1spanbc1"></a><span id="BC1"></span><span id="bc1"></span>BC1
 
-使用第一個區塊壓縮格式 (BC1) (可以是 DXGI\_FORMAT\_BC1\_TYPELESS、DXGI\_FORMAT\_BC1\_UNORM，或是 DXGI\_BC1\_UNORM\_SRGB) 來依 5:6:5 色彩 (5 位元紅色、6 位元綠色、5 位元藍色) 儲存三元件色彩資料。 即使您的資料也包含 1 位元 Alpha 也是如此。 假設 4×4 紋理使用所能使用的最大資料格式，BC1 格式會將所需的記憶體從 48 位元組 (16 色 × 3 元件/色彩 × 1 位元組/元件) 降低至 8 位元組的記憶體。
+使用第一個區塊壓縮格式 (BC1) (可能是 DXGI\_格式\_BC1\_TYPELESS、 DXGI\_格式\_BC1\_UNORM 或 DXGI\_BC1\_UNORM\_SRGB) 來儲存三分量色彩資料使用 5:6:5 （5 個位元紅色、 綠色的 6 位元，藍色的 5 位元） 的色彩。 即使您的資料也包含 1 位元 Alpha 也是如此。 假設 4×4 紋理使用所能使用的最大資料格式，BC1 格式會將所需的記憶體從 48 位元組 (16 色 × 3 元件/色彩 × 1 位元組/元件) 降低至 8 位元組的記憶體。
 
-此演算法適用於 4×4 材質區塊上。 此演算法並不儲存 16 種顏色，而是儲存 2 個參考色彩 (color\_0 和 color\_1)，以及 16 種 2 位元色彩索引 (a 至 p 區塊)，如下圖顯示。
+此演算法適用於 4×4 材質區塊上。 而不是儲存 16 種色彩，此演算法會將儲存 2 個參考的色彩 (color\_0 和色彩\_1） 和 16 2 位元的色彩索引 (區塊 a – p)，如下圖所示。
 
 ![BC1 壓縮的配置](images/d3d10-compression-bc1.png)
 
-色彩索引 (a 至 p) 是用來從色彩表查看原始的色彩。 色彩表包含 4 個色彩。 前兩個色彩，color\_0 和 color\_1 為色彩的下限和上限。 其他兩個色彩，color\_2 和 color\_3，是以線性插補計算出的中繼色彩。
+色彩索引 (a 至 p) 是用來從色彩表查看原始的色彩。 色彩表包含 4 個色彩。 前兩個色彩，色彩\_0 和色彩\_1，最小和最大色彩。 其他兩個色彩，色彩\_2 和色彩\_3，會使用線性插補計算的中間色彩。
 
 ```cpp
 color_2 = 2/3*color_0 + 1/3*color_1
@@ -129,7 +129,7 @@ color_3 = 11
 
 最後，每個 a 至 p 區塊中的色彩會與四種在色彩表內的色彩對比，而最接近色彩的索引會儲存在 2 位元區塊中。
 
-此演算法也適用於包含 1 位元 Alpha 的資料。 唯一不同的是，color\_3 設為 0 (表示透明色彩)，而且 color\_2 是 color\_0 和 color\_1 的線性混合。
+此演算法也適用於包含 1 位元 Alpha 的資料。 唯一的差別在於該顏色\_3 設定為 0 (代表透明的色彩） 和色彩\_2 是線性的色彩混合\_0 和色彩\_1。
 
 ```cpp
 color_2 = 1/2*color_0 + 1/2*color_1;
@@ -138,7 +138,7 @@ color_3 = 0;
 
 ### <a name="span-idbc2spanspan-idbc2spanbc2"></a><span id="BC2"></span><span id="bc2"></span>BC2
 
-使用 BC2 格式 (可以是 DXGI\_FORMAT\_BC2\_TYPELESS、DXGI\_FORMAT\_BC2\_UNORM 或 DXGI\_BC2\_UNORM\_SRGB) 來儲存資料，其中包含色彩和低一致性 Alpha 資料 (為高一致性 Alpha 資料使用 [BC3](#bc3))。 BC2 格式將 RGB 資料儲存為 5:6:5 色彩 (5 位元紅色、6 位元綠色、5 位元藍色)，並將 Alpha 儲存為不同的 4 位元值。 假設 4×4 紋理使用所能使用的最大資料格式，此壓縮技術會將所需的記憶體從 64 位元組 (16 色 × 4 元件/色彩 × 1 位元組/元件) 降低至 16 位元組的記憶體。
+使用 BC2 格式 (任一 DXGI\_格式\_BC2\_TYPELESS、 DXGI\_格式\_BC2\_UNORM 或 DXGI\_BC2\_UNORM\_SRGB) 至儲存含有低一致性的色彩和 alpha 資料的資料 (使用[BC3](#bc3)高度一致的 alpha 資料)。 BC2 格式將 RGB 資料儲存為 5:6:5 色彩 (5 位元紅色、6 位元綠色、5 位元藍色)，並將 Alpha 儲存為不同的 4 位元值。 假設 4×4 紋理使用所能使用的最大資料格式，此壓縮技術會將所需的記憶體從 64 位元組 (16 色 × 4 元件/色彩 × 1 位元組/元件) 降低至 16 位元組的記憶體。
 
 BC2 格式儲存的色彩與 [BC1](#bc1) 格式的位元數量和資料配置相同。不過，BC2 需要額外 64 位元的記憶體來儲存 Alpha 資料，如下圖所示。
 
@@ -146,17 +146,17 @@ BC2 格式儲存的色彩與 [BC1](#bc1) 格式的位元數量和資料配置相
 
 ### <a name="span-idbc3spanspan-idbc3spanbc3"></a><span id="BC3"></span><span id="bc3"></span>BC3
 
-使用 BC3 格式 (可以是 DXGI\_FORMAT\_BC3\_TYPELESS、DXGI\_FORMAT\_BC3\_UNORM 或 DXGI\_BC3\_UNORM\_SRGB) 來儲存高一致性的色彩資料 (使用 [BC2](#bc2) 儲存低一致性 Alpha 資料)。 BC3 格式使用 5:6:5 色彩 (5 位元紅色、6 位元綠色、5 位元藍色) 儲存色彩資料，並使用 1 個位元組儲存 Alpha 資料。 假設 4×4 紋理使用所能使用的最大資料格式，此壓縮技術會將所需的記憶體從 64 位元組 (16 色 × 4 元件/色彩 × 1 位元組/元件) 降低至 16 位元組的記憶體。
+使用 BC3 格式 (任一 DXGI\_格式\_BC3\_TYPELESS、 DXGI\_格式\_BC3\_UNORM 或 DXGI\_BC3\_UNORM\_SRGB) 至儲存高度一致的色彩資料 (使用[BC2](#bc2)較不一致的 alpha 資料)。 BC3 格式使用 5:6:5 色彩 (5 位元紅色、6 位元綠色、5 位元藍色) 儲存色彩資料，並使用 1 個位元組儲存 Alpha 資料。 假設 4×4 紋理使用所能使用的最大資料格式，此壓縮技術會將所需的記憶體從 64 位元組 (16 色 × 4 元件/色彩 × 1 位元組/元件) 降低至 16 位元組的記憶體。
 
 BC3 格式儲存的色彩與 [BC1](#bc1) 格式的位元數量和資料配置相同。不過，BC3 需要額外 64 位元的記憶體來儲存 Alpha 資料。 BC3 格式藉由儲存兩個參考值並在它們之間內插補點來處理 Alpha (和 BC1 儲存 RGB 色彩的方式相同)。
 
-此演算法適用於 4×4 材質區塊上。 此演算法並不儲存 16 種 Alpha 值，而是儲存 2 個參考色彩 (alpha\_0 和 alpha\_1)，以及 16 種 3 位元色彩索引 (alpha a 至 alpha p)，如下圖顯示。
+此演算法適用於 4×4 材質區塊上。 而不是儲存 16 的 alpha 值，此演算法會儲存 2 個參考 alpha (alpha\_0 和 alpha\_1) 和 16 3 位元的色彩索引 (alpha 透過 p)，如下圖所示。
 
 ![BC3 壓縮的配置](images/d3d10-compression-bc3.png)
 
-BC3 格式使用 Alpha 索引 (a 至 p)，從包含 8 個值的查閱資料表查詢原始的色彩。 前兩個值 (alpha\_0 和 alpha\_1) 為最小和最大值。其他六個中繼值則是使用線性插補計算出來。
+BC3 格式使用 Alpha 索引 (a 至 p)，從包含 8 個值的查閱資料表查詢原始的色彩。 前兩個值 — alpha\_0 和 alpha\_1 — 會最小和最大值; 其他六個中間值會計算使用線性插補。
 
-此演算法藉由檢查兩個 Alpha 參考值來判斷插入的 Alpha 值數目。 如果 alpha\_0 大於 alpha\_1，BC3 會插入 6 個 Alpha 值；否則會插入 4 個 Alpha 值。 當 BC3 僅插入 4 個 Alpha 值時，它就會設定兩個額外 Alpha 值 (0 為完全透明，而 255 為完全不透明)。 BC3 藉由儲存對應插補 Alpha 值的位元程式碼，以壓縮 4×4 材質區域中的 Alpha 值，插補進的 Alpha 值最符合特定材質的原始 Alpha。
+此演算法藉由檢查兩個 Alpha 參考值來判斷插入的 Alpha 值數目。 如果 alpha\_0 大於 alpha\_1，則 BC3 進行插補 6 的 alpha 值; 否則它插補 4。 當 BC3 僅插入 4 個 Alpha 值時，它就會設定兩個額外 Alpha 值 (0 為完全透明，而 255 為完全不透明)。 BC3 藉由儲存對應插補 Alpha 值的位元程式碼，以壓縮 4×4 材質區域中的 Alpha 值，插補進的 Alpha 值最符合特定材質的原始 Alpha。
 
 ```cpp
 if( alpha_0 > alpha_1 )
@@ -183,15 +183,15 @@ else
 
 ### <a name="span-idbc4spanspan-idbc4spanbc4"></a><span id="BC4"></span><span id="bc4"></span>BC4
 
-使用 BC4 格式儲存每個色彩都使用 8 位元的單一元件色彩資料。 由於正確性增加 (相較於 [BC1](#bc1))，BC4 適用於使用 DXGI\_FORMAT\_BC4\_UNORM 格式將浮點資料儲存到 \[0 至 1\] 的範圍內，以及使用 DXGI\_FORMAT\_BC4\_SNORM 將浮點資料儲存到 \[-1 至 +1\] 的範圍內。 假設 4×4 紋理使用所能使用的最大資料格式，此壓縮技術會將所需的記憶體從 16 位元組 (16 色 × 1 元件/色彩 × 1 位元組/元件) 降低至 8 位元組。
+使用 BC4 格式儲存每個色彩都使用 8 位元的單一元件色彩資料。 因為提高精確度 (相較於[BC1](#bc1))，BC4 適合用來將浮點資料儲存在各種\[0 到 1\]使用的 DXGI\_格式\_BC4\_UNORM 格式和\[-1，+ 1\]使用的 DXGI\_格式\_BC4\_SNORM 格式。 假設 4×4 紋理使用所能使用的最大資料格式，此壓縮技術會將所需的記憶體從 16 位元組 (16 色 × 1 元件/色彩 × 1 位元組/元件) 降低至 8 位元組。
 
-此演算法適用於 4×4 材質區塊上。 此演算法並不儲存 16 種顏色，而是儲存 2 個參考色彩 (red\_0 和 red\_1)，以及 16 種 3 位元色彩索引 (紅色 a 至紅色 p 區塊)，如下圖顯示。
+此演算法適用於 4×4 材質區塊上。 而不是儲存 16 種色彩，此演算法會儲存 2 的參考顏色 (紅色\_0 和紅色\_1) 和 16 的 3 位元的色彩索引 (紅色到紅色 p)，如下圖所示。
 
 ![BC4 壓縮的配置](images/d3d10-compression-bc4.png)
 
-此演算法使用 3 位元索引，從一個包含 8 種顏色的顏色表內查詢顏色。 前兩個色彩，red\_0 和 red\_1 為色彩的下限和上限。 此演算法使用線性插補來計算出剩餘的色彩。
+此演算法使用 3 位元索引，從一個包含 8 種顏色的顏色表內查詢顏色。 前兩個色彩-紅色\_0 和紅色\_1，最小和最大色彩。 此演算法使用線性插補來計算出剩餘的色彩。
 
-此演算法藉由檢查兩個參考值來判斷插入的色彩值數目。 如果 red\_0 大於 red\_1，則 BC4 會插入 6 個色彩值；否則會插入 4 個色彩值。 當 BC4 僅插入 4 個色彩值時，它會設定兩個額外的色彩值 (0.0f 為完全透明，而 1.0f 為完全不透明)。 BC4 藉由儲存對應插補 Alpha 值的位元程式碼，以壓縮 4×4 材質區域中的 Alpha 值，插補進的 Alpha 值最符合特定材質的原始 Alpha。
+此演算法藉由檢查兩個參考值來判斷插入的色彩值數目。 如果紅色\_0 大於 red\_1，則 BC4 進行插補 6 的色彩值; 否則它插補 4。 當 BC4 僅插入 4 個色彩值時，它會設定兩個額外的色彩值 (0.0f 為完全透明，而 1.0f 為完全不透明)。 BC4 藉由儲存對應插補 Alpha 值的位元程式碼，以壓縮 4×4 材質區域中的 Alpha 值，插補進的 Alpha 值最符合特定材質的原始 Alpha。
 
 - [BC4\_UNORM](#bc4-unorm)
 - [BC4\_SNORM](#bc4-snorm)
@@ -229,7 +229,7 @@ else
 
 ### <a name="span-idbc4snormspanspan-idbc4snormspanspan-idbc4-snormspanbc4snorm"></a><span id="BC4_SNORM"></span><span id="bc4_snorm"></span><span id="bc4-snorm"></span>BC4\_SNORM
 
-DXGI\_FORMAT\_BC4\_SNORM 也完全一樣，差別只在於資料會在 SNORM 範圍內及插入 4 個資料值時進行編碼。 單一元件資料的內插補點方式如下列程式碼範例所示。
+DXGI\_格式\_BC4\_SNORM 完全相同，不同之處在於資料編碼 SNORM 範圍，以及當 4 插補色彩值。 單一元件資料的內插補點方式如下列程式碼範例所示。
 
 ```cpp
 signed word red_0, red_1;
@@ -260,18 +260,18 @@ else
 
 ### <a name="span-idbc5spanspan-idbc5spanbc5"></a><span id="BC5"></span><span id="bc5"></span>BC5
 
-以 BC5 格式儲存每個色彩都使用 8 位元的雙元件色彩資料。 由於正確性增加 (相較於 [BC1](#bc1))，BC5 適用於使用 DXGI\_FORMAT\_BC5\_UNORM 格式將浮點資料儲存到 \[0 至 1\] 的範圍內，以及使用 DXGI\_FORMAT\_BC5\_SNORM 將浮點資料儲存到 \[-1 至 +1\] 的範圍內。 假設 4×4 紋理使用所能使用的最大資料格式，此壓縮技術會將所需的記憶體從 32 位元組 (16 色 × 2 元件/色彩 × 1 位元組/元件) 降低至 16 位元組。
+以 BC5 格式儲存每個色彩都使用 8 位元的雙元件色彩資料。 因為提高精確度 (相較於[BC1](#bc1))，BC5 適合用來將浮點資料儲存在各種\[0 到 1\]使用的 DXGI\_格式\_BC5\_UNORM 格式和\[-1，+ 1\]使用的 DXGI\_格式\_BC5\_SNORM 格式。 假設 4×4 紋理使用所能使用的最大資料格式，此壓縮技術會將所需的記憶體從 32 位元組 (16 色 × 2 元件/色彩 × 1 位元組/元件) 降低至 16 位元組。
 
 - [BC5\_UNORM](#bc5-unorm)
 - [BC5\_SNORM](#bc5-snorm)
 
-此演算法適用於 4×4 材質區塊上。 演算法不是為兩個元件儲存 16 種色彩，而是為每個元件儲存 2 種參考色彩 (red\_0、red\_1、green\_0，以及 green\_1)，並為每個元件儲存 16 種 3 位元色彩索引 (從紅色 a 到紅色 p，及綠色 a 到綠色 p)，如下圖所示。
+此演算法適用於 4×4 材質區塊上。 而不會儲存這兩個元件的 16 種色彩，此演算法會儲存每個元件的 2 個參考色彩 (紅色\_0，紅色\_1，綠色\_0 以及綠色\_1) 和每個元件的 16 3 位元的色彩索引 (紅色透過紅色 p 和綠色到綠色 p)，如下圖所示。
 
 ![BC5 壓縮的配置](images/d3d10-compression-bc5.png)
 
-此演算法使用 3 位元索引，從一個包含 8 種顏色的顏色表內查詢顏色。 前兩個色彩，red\_0 red\_1 (或 green\_0 和 green\_1)，為色彩的下限和上限。 此演算法使用線性插補來計算出剩餘的色彩。
+此演算法使用 3 位元索引，從一個包含 8 種顏色的顏色表內查詢顏色。 前兩個色彩-紅色\_0 和紅色\_1 (或綠色\_0 和綠色\_1)-最小和最大色彩。 此演算法使用線性插補來計算出剩餘的色彩。
 
-此演算法藉由檢查兩個參考值來判斷插入的色彩值數目。 如果 red\_0 大於 red\_1，則 BC5 會插入 6 個色彩值；否則會插入 4 個色彩值。 當 BC5 僅插入 4 個色彩值時，它會將剩下的兩個色彩值設定為 0.0f 和 1.0f。
+此演算法藉由檢查兩個參考值來判斷插入的色彩值數目。 如果紅色\_0 大於 red\_1，則 BC5 進行插補 6 的色彩值; 否則它插補 4。 當 BC5 僅插入 4 個色彩值時，它會將剩下的兩個色彩值設定為 0.0f 和 1.0f。
 
 ### <a name="span-idbc5unormspanspan-idbc5unormspanspan-idbc5-unormspanbc5unorm"></a><span id="BC5_UNORM"></span><span id="bc5_unorm"></span><span id="bc5-unorm"></span>BC5\_UNORM
 
@@ -306,7 +306,7 @@ else
 
 ### <a name="span-idbc5snormspanspan-idbc5snormspanspan-idbc5-snormspanbc5snorm"></a><span id="BC5_SNORM"></span><span id="bc5_snorm"></span><span id="bc5-snorm"></span>BC5\_SNORM
 
-DXGI\_FORMAT\_BC5\_SNORM 也完全一樣，差別只在於資料會編碼至 SNORM 範圍內，而且在插入 4 個資料值時，兩個額外的值為 -1.0f 和 1.0f。 單一元件資料的內插補點方式如下列程式碼範例所示。 綠色元件的計算方法都很相似。
+DXGI\_格式\_BC5\_SNORM 是完全相同，不同之處在於 SNORM 範圍的資料編碼及插入 4 個資料值，當兩個其他的值為-1.0 f 和 1.0f。 單一元件資料的內插補點方式如下列程式碼範例所示。 綠色元件的計算方法都很相似。
 
 ```cpp
 signed word red_0, red_1;

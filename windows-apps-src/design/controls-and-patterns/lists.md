@@ -1,5 +1,5 @@
 ---
-Description: Lists display and enable interaction with collection-based content.
+Description: 會顯示清單，並啟用與集合內容的互動。
 title: 清單
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
@@ -13,11 +13,11 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: eb9c600e58be04d8ce967eb119777d6746507fbe
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004584"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636363"
 ---
 # <a name="lists"></a>清單
 
@@ -30,14 +30,14 @@ ms.locfileid: "9004584"
 
 針對每個清單模式指定設計指導方針、功能和範例。
 
-> **重要 API**：[ListView 類別](https://msdn.microsoft.com/library/windows/apps/br242878)、[GridView 類別](https://msdn.microsoft.com/library/windows/apps/br242705)、[ComboBox 類別](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **重要的 Api**:[ListView 類別](https://msdn.microsoft.com/library/windows/apps/br242878)， [GridView 類別](https://msdn.microsoft.com/library/windows/apps/br242705)， [ComboBox 類別](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update - 行為變更</strong>
+> <strong>Windows 10 Fall Creators Update-行為變更</strong>
 > </div>
 > 根據預設，主動式手寫筆現在可在 UWP app 中捲動/移動瀏覽 (例如觸控、觸控板和被動式手寫筆)，而不用執行選擇。
-> 如果您的應用程式取決於先前的行為，您可以覆寫手寫筆捲動並還原回先前的行為。 如需詳細資訊，請參閱 [ <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a>的 API 參考主題。
+> 如果您的應用程式取決於先前的行為，您可以覆寫手寫筆捲動並還原回先前的行為。 如需詳細資訊，請參閱 API 參考主題<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a>。
 
 ## <a name="list-views"></a>清單檢視
 
@@ -57,7 +57,7 @@ ms.locfileid: "9004584"
 
 ![具有分組資料的清單檢視](images/simple-list-view-phone.png)
 
-### <a name="recommendations"></a>建議事項
+### <a name="recommendations"></a>建議
 
 -   清單中的項目應該有相同的行為。
 -   如果您的清單會分成群組，您可以使用[語意式縮放](semantic-zoom.md)，這樣能讓使用者更容易瀏覽已分組的內容。
@@ -76,27 +76,27 @@ ms.locfileid: "9004584"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="listview-and-gridview.md">清單檢視和方格檢視</a></p></td>
+<td align="left"><p><a href="listview-and-gridview.md">清單檢視和格線檢視</a></p></td>
 <td align="left"><p>了解在應用程式中使用清單檢視或方格檢視的基本資訊。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="item-containers-templates.md">項目容器與範本</a></p></td>
+<td align="left"><p><a href="item-containers-templates.md">項目容器和範本</a></p></td>
 <td align="left"><p>您以清單或方格顯示的項目，將能在應用程式整體外觀上扮演重要的角色。 修改控制項範本和資料範本以定義項目的外觀，並讓您的應用程式看起來更美觀。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="item-templates-listview.md">清單檢視的項目範本</a></p></td>
+<td align="left"><p><a href="item-templates-listview.md">清單檢視項目範本</a></p></td>
 <td align="left"><p>使用 ListView 的這些範例項目範本可取得通用應用程式類型的外觀。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="inverted-lists.md">反轉清單</a></p></td>
+<td align="left"><p><a href="inverted-lists.md">反轉的清單</a></p></td>
 <td align="left"><p>反轉清單會從底部開始加入新項目，例如聊天應用程式。 遵循此指導方針以在應用程式中使用反轉清單。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="pull-to-refresh.md">拖動以重新整理</a></p></td>
+<td align="left"><p><a href="pull-to-refresh.md">Pull-to-refresh</a></p></td>
 <td align="left"><p>拖動以重新整理模式可讓使用者以觸控的方式將資料清單向下拖動以抓取更多資料。 使用此指導方針以在清單檢視中實作拖動重新整理。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="nested-ui.md">巢狀 UI</a></p></td>
+<td align="left"><p><a href="nested-ui.md">巢狀的 UI</a></p></td>
 <td align="left"><p>巢狀 UI 是一種使用者介面 (UI)，能夠公開包含在容器中的可動作控制項，供使用者採取動作。 例如，您有一個包含按鈕的清單檢視項目，而使用者可以選取該清單項目，或按下巢嵌在其中的按鈕。 請遵循這些最佳做法來為使用者提供最佳的巢狀 UI 體驗。</p></td>
 </tr>
 </tbody>
@@ -143,19 +143,19 @@ ms.locfileid: "9004584"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="listview-and-gridview.md">清單檢視和方格檢視</a></p></td>
+<td align="left"><p><a href="listview-and-gridview.md">清單檢視和格線檢視</a></p></td>
 <td align="left"><p>了解在應用程式中使用清單檢視或方格檢視的基本資訊。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="item-containers-templates.md">項目容器與範本</a></p></td>
+<td align="left"><p><a href="item-containers-templates.md">項目容器和範本</a></p></td>
 <td align="left"><p>您以清單或方格顯示的項目，將能在應用程式整體外觀上扮演重要的角色。 修改控制項範本和資料範本以定義項目的外觀，並讓您的應用程式看起來更美觀。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="item-templates-gridview.md">方格檢視的項目範本</a></p></td>
+<td align="left"><p><a href="item-templates-gridview.md">資料格檢視中的項目範本</a></p></td>
 <td align="left"><p>使用 GridView 的這些範例項目範本可取得通用應用程式類型的外觀。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="nested-ui.md">巢狀 UI</a></p></td>
+<td align="left"><p><a href="nested-ui.md">巢狀的 UI</a></p></td>
 <td align="left"><p>巢狀 UI 是一種使用者介面 (UI)，能夠公開包含在容器中的可動作控制項，供使用者採取動作。 例如，您有一個包含按鈕的清單檢視項目，而使用者可以選取該清單項目，或按下巢嵌在其中的按鈕。 請遵循這些最佳做法來為使用者提供最佳的巢狀 UI 體驗。</p></td>
 </tr>
 </tbody>
@@ -186,7 +186,7 @@ ms.locfileid: "9004584"
 
 ![下拉式清單中捲軸的範例](images/combo_box_scroll.png)
 
-### <a name="recommendations"></a>建議事項
+### <a name="recommendations"></a>建議
 
 -   將下拉式方塊項目的文字內容限制為單行。
 -   以最合乎邏輯的順序排序下拉式方塊中的項目。 將相關選項群組在一起並將最常用的選項放在頂端。 以字母順序排序名稱、以數字順序排序數字，以及以時間順序排序日期。
@@ -229,9 +229,9 @@ ms.locfileid: "9004584"
 
 有三種選取模式：
 
--   單一：使用者一次只能選取一個項目。
--   多重：使用者不需要使用輔助按鍵就能選取多個項目。
--   延伸：使用者可以使用輔助按鍵選取多個項目，例如按住 SHIFT 鍵。
+-   單一：使用者可以選取一個項目，一次。
+-   多個：使用者可以選取多個項目，而不需使用修飾詞。
+-   擴充：使用者可以選取多個修飾詞，例如按住 SHIFT 鍵項目。
 
 在項目上點選任何位置即可選取項目。 點選命令列巨集指令會影響所有選取項目。 如果未選取任何項目，命令列動作應該為非使用中狀態 (除了 [全選] 以外)。
 
@@ -265,7 +265,7 @@ ms.locfileid: "9004584"
 - [主要/詳細資料](master-details.md)
 - [瀏覽窗格](navigationview.md)
 - [語意式縮放](semantic-zoom.md)
-- [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [將拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [縮圖影像](../../files/thumbnails.md)
 
 **適用於開發人員**

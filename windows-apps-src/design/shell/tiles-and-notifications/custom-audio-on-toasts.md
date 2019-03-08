@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use custom audio on your toast notifications.
+Description: 了解如何使用自訂的音訊在快顯通知。
 title: 自訂快顯通知的音效
 label: Custom audio on toasts
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 自訂音效, 通知, 音訊, 音效
 ms.localizationpriority: medium
 ms.openlocfilehash: 982340901d13f17945c1e7ffa11099f52732f619
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944697"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644063"
 ---
 # <a name="custom-audio-on-toasts"></a>自訂快顯通知的音效
 
@@ -27,7 +27,7 @@ ms.locfileid: "8944697"
 
 ## <a name="add-namespace-declarations"></a>加入命名空間宣告
 
-`Windows.UI.Notifications` 包含磚和快顯通知 API。 `Microsoft.Toolkit.Uwp.Notifications` 包含 Notifications 程式庫。
+`Windows.UI.Notifications` 包含磚和快顯通知的 API。 `Microsoft.Toolkit.Uwp.Notifications` 包含通知程式庫。
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
@@ -54,7 +54,7 @@ ToastContent toastContent = new ToastContent()
 
 Windows Mobile 一律支援快顯通知中的自訂音效。 不過，桌上型電腦直到版本 1511 (組建 10586) 才加入對自訂音效的支援。 如果您傳送包含自訂音效的快顯通知至版本 1511 之前的電腦裝置，快顯通知會在幕後進行。 因此，對於版本 1511 之前的桌上型電腦，您不應在您的快顯通知中加入自訂音效，讓通知至少使用預設的通知音效。
 
-**已知問題**：如果您使用桌上型電腦版本 1511，則您的應用程式必須透過 Microsoft Store 安裝，自訂快顯通知音效才能運作。 這表示您在將自訂音效提交至 Microsoft Store 之前，無法在桌上型電腦本機上測試自訂音效，但只要從 Microsoft Store 安裝，音效就能正常運作。 我們已在年度更新版修正這個問題，因此來自本機部署應用程式的自訂音效可以正常運作。
+**已知問題**:如果您使用 Desktop 1511 版，如果您的應用程式透過市集安裝，將只會運作自訂快顯音訊。 這表示您在將自訂音效提交至 Microsoft Store 之前，無法在桌上型電腦本機上測試自訂音效，但只要從 Microsoft Store 安裝，音效就能正常運作。 我們已在年度更新版修正這個問題，因此來自本機部署應用程式的自訂音效可以正常運作。
 
 ```csharp
 ?
@@ -102,6 +102,6 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 ## <a name="related-topics"></a>相關主題
 
-- [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
+- [在 GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
 - [傳送本機快顯通知](send-local-toast.md)
-- [快顯通知內容文件](adaptive-interactive-toasts.md)
+- [快顯通知內容的文件](adaptive-interactive-toasts.md)

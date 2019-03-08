@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f0806c0aa7a130a080457f4361d17f64451846f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931214"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634543"
 ---
 # <a name="projection-transform"></a>投影轉換
 
@@ -29,7 +29,7 @@ ms.locfileid: "8931214"
 
 ![轉移矩陣的圖例](images/projmat2.png)
 
-將轉移矩陣乘上投影矩陣 (T\*P) 可提供複合投影矩陣，如下圖所示。
+將投影矩陣轉換矩陣乘以 (T\*P) 可讓複合投影矩陣，如下圖所示。
 
 ![複合投影矩陣的圖例](images/projmat3.png)
 
@@ -55,7 +55,7 @@ ms.locfileid: "8931214"
 
 不論您決定使用哪個公式，務必將 Zₙ 設定為越大值越好，因為 z 值非常接近相機，不會差太多。 這會使得使用 16 位元 z 緩衝區的深度比較變得有些複雜。
 
-## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>W 方便的投影矩陣
+## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>W 友善投影矩陣
 
 
 Direct3D 可使用已被世界、檢視和投影矩陣轉換的 w 元件頂點，來執行深度緩衝區的深度計算或霧的效果。 這類運算需要投影矩陣將 w 標準化為等於世界空間 z。 簡言之，如果您的投影矩陣包含不是 1 的 (3,4) 係數，您必須透過反轉 (3,4) 係數來縮放所有係數以製作適當的矩陣。 如果您不提供相符的矩陣，霧效果和深度緩衝區就不會正確套用。

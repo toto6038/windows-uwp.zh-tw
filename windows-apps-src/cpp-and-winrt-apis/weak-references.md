@@ -1,25 +1,25 @@
 ---
-description: Windows 執行階段是計算參考次數系統;請務必讓您了解的重要性和區別，這類系統在強式和弱式參考。
-title: C++/WinRT 中的弱式參考資料
+description: Windows 執行階段是參考計數系統;務必要了解的重要性，以及區別，這類系統在強式和弱式參考。
+title: C++/WinRT 中的弱式參考
 ms.date: 10/03/2018
 ms.topic: article
-keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 強式弱式、 參考
+keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 強式、 弱的參考
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923554"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630813"
 ---
-# <a name="strong-and-weak-references-in-cwinrt"></a>強式和弱式參考，在 C + + /winrt
+# <a name="strong-and-weak-references-in-cwinrt"></a>強式和弱式參考，在 C + + /cli WinRT
 
-Windows 執行階段是計算參考次數系統;且這類系統中很重要的強式知道的重要性和區別，弱式參考 （及既不存在，例如隱含*這個*指標的參考）。 您會看到這個主題中，了解如何管理這些參考正確可能表示可靠的系統執行順暢，另一個則損毀置中行為之間的差異。 藉由提供協助程式函式中的語言投影，有深層支援[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)符合您在您的工作，只要並正確地建置更複雜的系統的中間。
+Windows 執行階段是參考計數系統;務必要了解的重要性，以及區別，這類系統在強式和弱式參考 (和參考，兩者皆否，例如隱含*這*指標)。 如您所見本主題中，了解如何正確地管理這些參考可能是指一套可靠的系統執行順暢和當機不正常的一個之間的差異。 藉由提供 helper 函式有深入的支援語言 projekci [C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)符合您在您的工作，建置更複雜的系統，只需且正確的中間數。
 
-## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>安全地存取類別成員協同程式中的*這個*指標
+## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>安全地存取*這*類別成員協同程式中的指標
 
-下列程式碼清單會顯示為類別的成員函式在協同程式的一般範例。
+在下方列出的程式碼會顯示為類別成員函式的協同程式的典型範例。
 
 ```cppwinrt
 // pch.h
@@ -57,18 +57,18 @@ int main()
 }
 ```
 
-**MyClass::RetrieveValueAsync**運作一段時間，以及最終然後它會傳回在一份`MyClass::m_value`資料成員。 呼叫**RetrieveValueAsync**造成非同步物件建立，且該物件具有隱含*這個*指標 (透過哪個，最後，`m_value`存取)。
+**MyClass::RetrieveValueAsync**運作一段時間，然後在它傳回一份最終`MyClass::m_value`資料成員。 呼叫**RetrieveValueAsync**導致非同步物件建立，且該物件具有隱含*這*指標 (透過它，最後，`m_value`存取)。
 
-以下是完整的順序的事件。
+以下是完整的事件順序。
 
-1. 在**主要**，建立**MyClass**的執行個體 (`myclass_instance`)。
-2. `async`建立物件時，（透過其*此*） 指向`myclass_instance`。
-3. **Winrt::Windows::Foundation::IAsyncAction::get**函式幾秒鐘，封鎖，然後傳回**RetrieveValueAsync**的結果。
+1. 在 **主要**，執行個體**MyClass**建立 (`myclass_instance`)。
+2. `async`建立物件時，指 (透過其*這*) 來`myclass_instance`。
+3. **Winrt::Windows::Foundation::IAsyncAction::get**函式封鎖幾秒鐘的時間，並接著會傳回的結果**RetrieveValueAsync**。
 4. **RetrieveValueAsync**傳回的值`this->m_value`。
 
-步驟 4 是安全，因為*這*是有效的。
+步驟 4 是安全，只要*這*有效。
 
-但是，如果非同步作業完成之前，會損毀的類別執行個體嗎？ 有所有類型的類別執行個體無法超出範圍之前先完成的非同步方法的方式。 但是，我們可以設定為類別執行個體來模擬`nullptr`。
+但是，在非同步作業完成之前，如果終結類別的執行個體嗎？ 有各種方法的非同步方法完成之前，將無法移出範圍的類別執行個體。 但是，我們可以將類別執行個體設定為來模擬`nullptr`。
 
 ```cppwinrt
 int main()
@@ -84,13 +84,13 @@ int main()
 }
 ```
 
-之後我們損毀的類別執行個體的某個點，它看起來就像我們不直接參考它一次。 但當然非同步物件有*這個*指標，並嘗試使用該資料來複製的類別執行個體內部儲存的值。 協同程式便是成員函式，以及它預期要能夠白白搭配使用其*這個*指標。
+之後我們損毀的類別執行個體，看起來我們沒有直接參考它一次。 當然有非同步的物件，但*這*指標給它，而且嘗試使用它來複製類別執行個體中儲存的值。 協同程式是成員函式，而且它預期能夠使用其*這*白白指標。
 
-透過這項變更的程式碼，我們遇到問題，以在步驟 4，因為終結類別執行個體，而且*此*不再有效。 非同步物件會嘗試存取內部類別執行個體的變數，因為它將會損毀 （或完全未定義的方式執行）。
+透過這項變更的程式碼，我們遇到問題在步驟 4，因為已損毀的類別執行個體，並*這*已不再有效。 非同步物件會嘗試存取類別執行個體內的變數，因為它會損毀 （或是執行某個動作未完全定義）。
 
-方案時，為非同步作業&mdash;協同程式&mdash;類別執行個體自己強式參考。 為目前撰寫、 協同程式有效地會保留的原始*這個*指標的類別執行個體;但是，並不足以保持類別執行個體。
+解決方法是提供非同步作業&mdash;協同程式&mdash;它自己的類別執行個體的強式參考。 如同目前所撰寫，有效地協同程式保留原始*這*指標的類別執行個體，但這並不足夠，以維持的類別執行個體。
 
-若要保持類別執行個體，變更**RetrieveValueAsync**的實作，如下所示。
+若要維持類別執行個體，將變更的實作**RetrieveValueAsync**下列所示。
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -101,11 +101,11 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-因為 C + + /winrt 物件直接或間接衍生自[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)範本的 C + + /winrt 物件可以呼叫其[**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)受保護的成員函式，來擷取*此*其指標的強式參考。 請注意，在無需實際上使用`strong_this`變數;只要呼叫**get_strong**遞增您參考計數，並在保留您隱含*這個*指標有效。
+因為 C + + /cli WinRT 物件直接或間接衍生自[ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)範本中，C + + /cli WinRT 物件都可以呼叫其[ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)受保護成員函式來擷取的強式參考其*這*指標。 請注意，則不需要實際使用`strong_this`變數，只呼叫**get_strong**您的參考計數會遞增，並讓您隱含*這*有效的指標。
 
-這可以解決問題我們先前已當嗯步驟 4。 即使類別執行個體的所有其他參考會消失，協同程式便已採取保證其相依性即會穩定的預防措施。
+這個方法可以解決的問題，先前我們進到步驟 4 時。 即使所有其他參考的類別執行個體消失，協同程式已保證其相依性是穩定的預防措施。
 
-如果強式參考不適當，您可以改為呼叫[**implements:: get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)來擷取*此*的弱式參考。 只是確認您可以存取*此*之前擷取的強式參考。
+如果強式參考並不恰當，則您可以改為呼叫[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)若要擷取的弱式參考*這*。 只要確認您可以存取之前擷取的強式參考*這*。
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -125,19 +125,19 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-在上述範例中，弱式參考資料不會保留時維持強式參考不被摧毀類別執行個體。 但是，它可以讓您檢查是否可以存取成員變數之前中取得一個強式參考。
+在上述範例中，弱式參考並不保留被終結時沒有強式參考保留的類別執行個體。 但可以讓您檢查是否可以存取的成員變數之前取得的強式參考。
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全地存取*此*指標與事件處理委派
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全地存取*這*與事件處理委派的指標
 
 ### <a name="the-scenario"></a>案例
 
-如一般事件處理的詳細資訊，請參閱[處理事件，藉由使用委派在 C + + /winrt](handle-events.md)。
+一般事件處理的詳細資訊，請參閱[處理事件，藉由使用委派，在 C + + /cli WinRT](handle-events.md)。
 
-如上一節反白顯示的協同程式並行區域中的潛在存留期問題。 但是，如果您處理事件的物件的成員函式，或從 lambda 函式內物件的成員函式，則您需要考量事件收件者 （處理事件的物件） 和事件來源 （該物件的相對存留時間引發事件）。 讓我們看看一些程式碼範例。
+上一節中，反白顯示潛在存留期協同程式和並行存取方面的問題。 但是，如果您處理的事件物件的成員函式，或是從 lambda 內的函式物件的成員函式，則您必須考慮事件收件者 （處理事件的物件） 和事件來源 （該物件的相對存留期引發事件）。 讓我們看看一些程式碼範例。
 
-以下程式碼清單會先定義引發任何已新增至它的委派來處理一般事件的簡單**EventSource**類別。 這個範例事件會使用[**Windows::Foundation::EventHandler**](/uwp/api/windows.foundation.eventhandler)委派類型，但將套用到所有的委派類型的問題和解決方式以下完畢。
+下方第一個列出的程式碼定義簡單**EventSource**類別，這會引發泛用的事件處理的任何已加入至它的委派。 此範例的事件會使用[ **Windows::Foundation::EventHandler** ](/uwp/api/windows.foundation.eventhandler)委派型別，但問題和這裡的補救方法適用於所有的委派型別。
 
-然後， **EventRecipient**類別提供的 lambda 函式的形式**EventSource::Event**事件的處理常式。
+然後， **EventRecipient**類別提供的處理常式**EventSource::Event** lambda 函式的形式的事件。
 
 ```cppwinrt
 // pch.h
@@ -190,16 +190,16 @@ int main()
 }
 ```
 
-模式是事件收件者其*這個*指標上有相依性的 lambda 事件處理常式。 每當事件收件者會超越事件來源，它會超越這些相依性。 和在這些情況下，很常見，模式運作良好。 這些案例中有些很明顯，例如，UI 網頁藉由頁面上的控制項處理事件時。 在頁面超越按鈕&mdash;處理常式，也超越按鈕。 任何時候都是如此，收件者擁有來源 (例如，做為資料成員)，或收件者與來源屬同層級，且由其他物件擁有。 如果您確定有一個案例，其中處理常式不會超越其所依賴的*this*，您便可以正常擷取*this*，而不需要考量強式或弱式存留時間。
+模式是事件收件者具有相依性的 lambda 事件處理常式，其*這*指標。 每當事件收件者還久的事件來源，它會超過這些相依性。 並在這些情況下，也就是常見的此模式非常適合。 這些案例中有些很明顯，例如，UI 網頁藉由頁面上的控制項處理事件時。 頁面還久按鈕&mdash;因此，處理常式也還久的按鈕。 任何時候都是如此，收件者擁有來源 (例如，做為資料成員)，或收件者與來源屬同層級，且由其他物件擁有。 如果您確定有一個案例，其中處理常式不會超越其所依賴的*this*，您便可以正常擷取*this*，而不需要考量強式或弱式存留時間。
 
-但仍有案例，其中*這*不會超越處理常識其使用 （包括完成和由非同步動作與作業引發進度事件的處理常式） 的處理常式中，而它務必了解如何處理它們。
+但仍有的情況下所在*這*不必須有存在 （包括完成和進度的非同步動作與作業所引發的事件處理常式） 的處理常式，用於務必要知道如何處理它們。
 
 - 如果您正撰寫協同程式，實作一種非同步方法，則是有可能。
 - 少數案例中特定 XAML UI 架構物件 (例如，[**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel))，則是有可能的，如果收件者不需要從事件來源取消註冊，便能完成的話。
 
-### <a name="the-issue"></a>問題
+### <a name="the-issue"></a>此問題
 
-這個下一個版本的**main**函式會模擬終結事件收件者時，會發生什麼事 （也許其超出範圍） 時的事件來源仍會引發事件。
+下的一版**主要**函式會模擬在終結事件收件者時，會發生什麼事 （或許是超出範圍） 時的事件來源仍會引發事件。
 
 ```cppwinrt
 int main()
@@ -214,14 +214,14 @@ int main()
 }
 ```
 
-事件收件者會損壞，但 lambda 事件處理常式內它仍然訂閱**事件**的事件。 當該事件引發時，lambda 會嘗試取值*這個*指標，也就是該點無效。 因此，存取違規全責在處理常式 （或在協同程式接續） 中的程式碼嘗試使用它。
+損毀事件收件者，但仍訂閱 lambda 事件處理常式，其內**事件**事件。 當引發該事件時，lambda 會嘗試取值 （dereference）*這*指標，這是在該點無效。 因此，發生存取違規所得的處理常式中 （或協同程式的接續） 程式碼嘗試使用它。
 
 > [!IMPORTANT]
-> 如果您遇到像這樣的情況下，則您將需要思考的存留期*這個*物件;並擷取到*此*物件超越此擷取。 如果沒有，然後使用擷取它的強式或弱式參考資料，因為我們將示範下方。
+> 如果您遇到的情況下，像這樣，則您必須思考的存留期*這*物件和是否擷取*這*物件還久的擷取。 如果沒有，然後擷取它以強式或弱式參考，我們將示範以下。
 >
-> 或者&mdash;如果合理的案例中，且如果執行緒考量讓它甚至可行&mdash;則另一個選項是之後收件者完成事件，或在收件者解構函式中撤銷處理常式。 請參閱[撤銷已註冊的委派](handle-events.md#revoke-a-registered-delegate)。
+> 或是&mdash;如果它適合您案例中，且執行緒考量進行它甚至可以&mdash;則會撤銷此處理常式與事件，或在 收件者的解構函式中完成收件者的另一個選項。 請參閱[撤銷已註冊的委派](handle-events.md#revoke-a-registered-delegate)。
 
-這是我們要登錄處理常式的方式。
+這是我們正在註冊處理常式的方式。
 
 ```cppwinrt
 event_source.Event([&](auto&& ...)
@@ -230,7 +230,7 @@ event_source.Event([&](auto&& ...)
 });
 ```
 
-Lambda 自動擷取任何區域變數的參考。 因此，針對此範例，我們無法對等程式碼已撰寫這。
+Lambda 會自動依參考來擷取任何區域變數。 因此，針對此範例中，我們可以對等程式碼撰寫如下。
 
 ```cppwinrt
 event_source.Event([this](auto&& ...)
@@ -239,11 +239,11 @@ event_source.Event([this](auto&& ...)
 });
 ```
 
-在這兩種情況下，我們只要擷取原始*這個*指標。 且具有不會影響參考計數，因此不會防止被終結目前的物件。
+在這兩種情況下，只擷取原始*這*指標。 而且，沒有任何作用在參考計數，以便執行任何動作，導致目前的物件無法終結。
 
-### <a name="the-solution"></a>方案
+### <a name="the-solution"></a>解決方案
 
-解決方案是擷取強式參考。 強式參考，*並*遞增參考計數，而且*沒有*保留持續執行目前的物件。 您只是宣告擷取變數 (稱為`strong_this`在此範例中)，並將它初始化呼叫[**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)，會擷取我們*這個*指標的強式參考。
+解決方法是擷取的強式參考。 強式參考*並未*遞增參考計數，以及它*沒有*維持目前的物件。 您只是宣告擷取變數 (稱為`strong_this`在此範例中)，並將它初始化藉由呼叫[ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)，表示擷取的強式參考我們*這*指標。
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)
@@ -252,7 +252,7 @@ event_source.Event([this, strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-您甚至可以省略自動擷取目前的物件，並透過擷取變數而不是透過隱含*這個*存取的資料成員。
+您甚至可以略過目前的物件，自動擷取，並透過而不是透過隱含擷取變數存取的資料成員*這*。
 
 ```cppwinrt
 event_source.Event([strong_this { get_strong()}](auto&& ...)
@@ -261,7 +261,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-如果強式參考不適當，您可以改為呼叫[**implements:: get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)來擷取*此*的弱式參考。 只是確認，所以您仍然可以擷取從它的強式參考之前存取成員。
+如果強式參考並不恰當，則您可以改為呼叫[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)若要擷取的弱式參考*這*。 只確認，所以您仍可以擷取從它的強式參考之前存取成員。
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -273,9 +273,9 @@ event_source.Event([weak_this{ get_weak() }](auto&& ...)
 });
 ```
 
-### <a name="if-you-use-a-member-function-as-a-delegate"></a>如果您使用成員函式做為委派
+### <a name="if-you-use-a-member-function-as-a-delegate"></a>如果您使用的成員函式與委派
 
-以及 lambda 函式，這些原則也適用於使用成員函式做為您的委派。 語法不同，因此讓我們看看一些程式碼。 首先，以下是可能不安全的成員函式事件處理常式中，使用原始*這個*指標。
+與使用 lambda 函式，這些原則也適用於使用成員函式，為您的委派。 語法不同，因此讓我們看看一些程式碼。 首先，以下是可能不安全的成員函式事件處理常式，使用原始*這*指標。
 
 ```cppwinrt
 struct EventRecipient : winrt::implements<EventRecipient, IInspectable>
@@ -294,23 +294,23 @@ struct EventRecipient : winrt::implements<EventRecipient, IInspectable>
 };
 ```
 
-這是標準、 傳統的方式來參考物件和其成員函式。 若要讓這安全，您可以&mdash;自 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)&mdash;建立強式或弱式參考某個點的處理常式註冊的位置。 在這個時候，事件收件者物件已知為仍持續執行。
+這是標準的傳統方式來參考物件和其成員函式。 若要使這個安全，您可以&mdash;10.0.17763.0 (Windows 10 版本 1809年) 版的 Windows SDK&mdash;建立強式或弱式參考註冊處理常式的所在之處。 此時，事件的收件者物件已知為仍在執行。
 
-針對強式參考資料，只需呼叫[**get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)取代的原始*這個*指標。 C + + /winrt 可確保產生的委派保存目前的物件的強式參考。
+如需強式參考，只需要呼叫[ **get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)來取代原始*這*指標。 C + + /cli WinRT 可確保產生的委派包含目前物件的強式參考。
 
 ```cppwinrt
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
-適用於弱式參考資料中，呼叫[**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)。 C + + /winrt 可確保產生的委派保存弱式參考資料。 在最後一分鐘，並在幕後，此委派會嘗試解析一個強式將弱式參考，而且只呼叫成員函式，如果成功。
+如需弱式參考，呼叫[ **get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)。 C + + /cli WinRT 可確保產生的委派保留的弱式參考。 在最後時刻，並在幕後，委派會嘗試解決一個強式的弱式參考，並只會呼叫此成員函式如果成功。
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 ```
 
-### <a name="a-weak-reference-example-using-swapchainpanelcompositionscalechanged"></a>使用**SwapChainPanel::CompositionScaleChanged**的弱式參考資料範例
+### <a name="a-weak-reference-example-using-swapchainpanelcompositionscalechanged"></a>弱式參考的範例使用**SwapChainPanel::CompositionScaleChanged**
 
-這個程式碼範例中，我們會使用[**SwapChainPanel::CompositionScaleChanged**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged)事件透過另一個弱式參考資料的圖例。 程式碼會登錄事件處理常式使用擷取收件者弱式參考資料的 lambda。
+在此範例中，我們會使用[ **SwapChainPanel::CompositionScaleChanged** ](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged)透過另一個圖解，弱式參考的事件。 程式碼會註冊事件處理常式使用 lambda 擷取 收件者的弱式參考。
 
 ```cppwinrt
 winrt::Windows::UI::Xaml::Controls::SwapChainPanel m_swapChainPanel;
@@ -340,12 +340,12 @@ Lamba 擷取子句中，已建立暫存變數，代表*this*的弱式參考資�
 
 ## <a name="weak-references-in-cwinrt"></a>C++/WinRT 中的弱式參考
 
-上方，我們可以看到正在使用的弱式參考資料。 一般而言，它們是適合突發循環參考。 例如，對於 XAML 型 UI 架構的原生實作&mdash;因為架構的歷史設計&mdash;的弱式參考機制，在 C + + /winrt 是才能處理循環參考。 XAML 以外，不過，您可能不需要使用弱式參考資料 (不是，沒有任何項目原本就 XAML 專用他們相關)。 而是您應該不用，能夠設計您自己的 C + + WinRT Api，在這種方式避免循環參考和弱式參考。 
+以上版本，我們會看到正在使用的弱式參考。 一般情況下，它們適合用來中斷循環參考。 例如，對於以 XAML 為基礎的 UI 架構的原生實作&mdash;歷史架構設計&mdash;弱式參考機制，在 C + + /cli WinRT 是為了處理循環參考。 外部 XAML，不過，您可能不需要使用弱式參考 (不會有任何項目本質上特定 XAML 相關)。 而是您應該往往，能夠設計您的 C + + /cli 中的方式避免需要循環參考和弱式參考的 WinRT Api。 
 
 針對您宣告的任何指定類型，當弱式參考是必要的，是否無法馬上看得出來是 C++/WinRT。 因此，C++/WinRT 自動在結構範本[**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 上提供弱式參考支援，您的 C++/WinRT 類型直接或間接從其中衍生。 它是使用付費，其中您不需要支付任何項目除非確實針對 [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) 查詢您的物件。 且您可以明確選擇[退出該支援](#opting-out-of-weak-reference-support)。
 
 ### <a name="code-examples"></a>程式碼範例
-[**Winrt::weak_ref**](/uwp/cpp-ref-for-winrt/weak-ref)結構範本是取得類別執行個體的弱式參考選項之一。
+[  **Winrt::weak_ref**](/uwp/cpp-ref-for-winrt/weak-ref)結構範本是取得類別執行個體的弱式參考選項之一。
 
 ```cppwinrt
 Class c;
@@ -394,7 +394,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, no_weak_ref>
 不論標記結構在 variadic 參數套件中出現的位置。 如果您要求弱式參考一個退出的類型，然後編譯器會協助您使用「*這僅適用於弱式參考支援*」。
 
 ## <a name="important-apis"></a>重要 API
-* [implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
-* [winrt::make_weak 函式範本](/uwp/cpp-ref-for-winrt/make-weak)
-* [winrt::no_weak_ref 標記結構](/uwp/cpp-ref-for-winrt/no-weak-ref)
+* [implements::get_weak 函式](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
+* [winrt::make_weak 函式樣板](/uwp/cpp-ref-for-winrt/make-weak)
+* [winrt::no_weak_ref marker struct](/uwp/cpp-ref-for-winrt/no-weak-ref)
 * [winrt::weak_ref 結構範本](/uwp/cpp-ref-for-winrt/weak-ref)

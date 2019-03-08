@@ -2,34 +2,50 @@
 
 感謝您對通用 Windows 平台 (UWP) 文件感興趣！ 我們非常感謝您對我們文件的意見、編輯和新增。
 
-此頁面涵蓋參與我們開發人員文件的基本步驟。
+## <a name="writing-content"></a>撰寫內容
 
-## <a name="public-and-private-repos"></a>公用和私人存放庫
+我們的文件是以 Markdown，輕量級的文字樣式語法撰寫的。 如果您不熟悉的 Markdown，您可以[了在 GitHub 上的基本概念](https://guides.github.com/features/mastering-markdown/)。 當不確定時，您就可以從我們的文件中的其他頁面，一律複製格式化的樣式。
 
-UWP 概念性文件裝載於兩個不同的存放庫中，接著這兩個存放庫會合併並更新為單一網站：一個存放庫是任何人的參與，另一個則是 Microsoft 員工的參與。
+## <a name="public-contributions"></a>公開文章
 
-如果您***不***是 Microsoft 員工，請使用[公用內容存放庫](https://github.com/MicrosoftDocs/windows-uwp)。
+您若是**未**是 Microsoft 員工，您可以透過參與[公用內容存放庫](https://github.com/MicrosoftDocs/windows-uwp)。 公開文章是適用於變更與現有頁面的說明。
 
-如果您***是***Microsoft 員工，則可以使用公用存放庫或[私人內容存放庫](https://cpubwin.visualstudio.com/_git/windows-uwp)。 員工可以透過稍微快速的方式即時推送變更，方法是參與私人存放庫，或將[特定分支](https://review.docs.microsoft.com/en-us/windows-authoring-guide/uwp/conceptual/setup-local-repo-for-large-changes#what-branch-should-i-use-for-my-authoring)用於需要嚴密控制的變更，直到某個未來日期為止。
+### <a name="editing-a-file"></a>編輯檔案
 
-## <a name="editing-topics-on-the-public-repo"></a>編輯公用存放庫的主題
+如果您已在公用內容存放庫中，啟動瀏覽至您想要變更的檔案。 從該處選取鉛筆圖示上方顯示的內容來開始編輯。
 
-我們已嘗試盡可能簡單地對現有檔案進行編輯。 
-- 如果您已經在存放庫中，則只需要導覽至該檔案，然後按一下 **[編輯]** 按鈕。  
-- 或者，如果您正在瀏覽器中檢視 Docs.microsoft.com 頁面，請按一下頁面右上方的 **[編輯]** 按鈕。 系統會將您重新導向至存放庫中的正確 Markdown 來源檔案，您可以在其中按一下**[編輯]** 按鈕。 
+或者，如果您正在檢視的頁面在 docs.microsoft.com 中，您可以選取**編輯**頁面的右上方部分上的按鈕。 相關聯的原始程式檔的儲存機制中，這會將您重新導向。
 
-GitHub 會自動將官方存放庫分為個人 GitHub 帳戶，您可以在其中進行變更。 當您完成時，請將提取要求提交回 "docs" 分支。 建立提取要求之後，UWP 文件小組的成員會檢閱您的變更。 如果接受您的要求，則會將更新發行至 https://docs.microsoft.com/windows/。
+當您開始編輯時，GitHub 會自動分支的官方存放庫到您個人的 GitHub 帳戶，您可以在其中進行變更。 當您完成時，提交提取要求回到**docs**分支。
 
-您只需要幾分鐘的時間就可以了解 Markdown 的基本概念。  若要開始，請查看[使用 Markdown](https://guides.github.com/features/mastering-markdown/)(英文)。
+### <a name="pull-requests"></a>提取要求
 
-## <a name="making-more-substantial-changes"></a>進行更多的變更
+您提交提取要求之後，就會評估針對內容的品質檢查清單以確定它符合我們的基本標準。 如果通過，則會將它指派給供進一步檢閱 UWP 文件小組的成員。 如果失敗，將會被告知要進行哪些變更。
 
-若要對現有的文件進行更多的變更、新增或變更影像，或提供新的文件，您需要建立我們私人內容存放庫的本機複本。 請遵循 [Windows 製作手冊中的指示](https://review.docs.microsoft.com/en-us/windows-authoring-guide/uwp/conceptual/)(英文)。 如果您尚未設定 GitHub 帳戶以及加入網域的 Microsoft 別名，[請從這裡開始](https://review.docs.microsoft.com/en-us/windows-authoring-guide/github-account)(英文)。
+指派的檢閱者可能會核准或拒絕提取要求，或與您合作來做進一步的變更。
+
+## <a name="internal-contributions"></a>內部的貢獻
+
+如果您是 Microsoft 員工，您可以參與透過[私人內容存放庫](https://cpubwin.visualstudio.com/_git/windows-uwp)。 您可以找到使用此存放庫中的指引[Windows 撰寫指南](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master)。 透過私用的存放庫，必須提供未來功能的文件。
+
+### <a name="editing-a-file"></a>編輯檔案
+
+如所示的公用存放庫中，您可以進行小變更的私人存放庫在瀏覽器中而不需要建立本機複製品。 您**必須**確保您正參與正確的分支上。 如需建立您的個人分支的詳細資訊，請參閱[Windows 撰寫指南中的指示](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master)。
+
+### <a name="making-substantial-changes"></a>進行大幅變更
+
+若要讓現有的發行項的更廣泛的變更，新增或變更映像，或貢獻新的發行項，請建立的私人內容存放庫本機複製。 如需詳細資訊，請遵循[Windows 撰寫指南中的指示](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/)。
+
+### <a name="pull-requests"></a>提取要求
+
+當內部存放庫中建立提取要求，請確定您想要將您的個人分支合併至所建立的分支。
+
+您提交提取要求之後，它就會根據評估[內容的品質檢查清單](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master)以確保其符合我們的基本標準。 如果通過，則會將它指派給供進一步檢閱 UWP 文件小組的成員。 如果失敗，將會被告知要進行哪些變更。
+
+指派的檢閱者可能會核准或拒絕提取要求，或與您合作來做進一步的變更。 檢閱者不會將合併提取要求，直到您已核准它自己。
 
 ## <a name="using-issues-to-provide-feedback-on-uwp-conceptual-documentation"></a>使用 Issues 提供對 UWP 概念文件的意見反應
 
-如果您只想要提供意見反應，而不是直接修改實際的文件頁面，則可以[在公用存放庫中建立問題](https://github.com/MicrosoftDocs/windows-uwp/issues)(英文)。 按一下 [問題] 索引標籤，然後按一下**[新問題]** 按鈕。 請務必包括主題標題和頁面 URL。
+如果您想要提供意見反應，而不是在文件上進行編輯自己，您可以[在公用存放庫中建立問題](https://github.com/MicrosoftDocs/windows-uwp/issues)。 選取 [**問題**索引標籤，然後選取**新問題**] 按鈕。 請務必包括主題標題和頁面 URL。 您的問題會指派給檢閱 UWP 文件小組的成員。
 
-UWP 文件小組的成員會定期檢閱問題，以及適當地對其進行分級、指派和處理。
-
-*針對內部問題，請使用 [http://aka.ms/pubrequest](http://aka.ms/pubrequest) 上的 WDG Content Request Tool。 
+* 如需內部問題，請使用[WDG 內容要求工具](https://aka.ms/pubrequest)。

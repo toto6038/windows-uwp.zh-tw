@@ -1,19 +1,19 @@
 ---
-Description: Use pop-up animations to show and hide pop-up UI for flyouts or custom pop-up UI elements. Pop-up elements are containers that appear over the app's content and are dismissed if the user taps or clicks outside of the pop-up element.
+Description: 使用快顯動畫顯示和隱藏飛出視窗的快顯 UI 或自訂快顯的 UI 元素。 快顯元素是顯示在應用程式內容之上的容器，如果使用者點選或按一下快顯元素以外的地方則會關閉。
 title: UWP app 中的快顯 UI 動畫
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d79c369e14236b827bdc18aba6c74349528728b3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942041"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635173"
 ---
 # <a name="pop-up-ui-animations"></a>快顯 UI 動畫
 
@@ -21,7 +21,7 @@ ms.locfileid: "8942041"
 
 使用快顯動畫顯示和隱藏飛出視窗的快顯 UI 或自訂快顯的 UI 元素。 快顯元素是顯示在應用程式內容之上的容器，如果使用者點選或按一下快顯元素以外的地方則會關閉。
 
-> **重要 API**: [**PopInThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210383)、[**PopupThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh969172)
+> **重要的 Api**:[**PopInThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210383)， [ **PopupThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -34,8 +34,8 @@ ms.locfileid: "8942041"
 ## <a name="related-articles"></a>相關文章
 
 * [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [讓快顯 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649433)
-* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [以動畫顯示快顯 UI](https://msdn.microsoft.com/library/windows/apps/xaml/jj649433)
+* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**PopInThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210383)
 * [**PopOutThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210391)
 * [**PopupThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh969172)

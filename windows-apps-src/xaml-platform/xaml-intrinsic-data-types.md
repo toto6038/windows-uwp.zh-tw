@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 26f4153b59c618a4559549ba7fa9ca0f99c4ab64
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933846"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613263"
 ---
 # <a name="xaml-intrinsic-data-types"></a>XAML 內建資料類型
 
@@ -22,7 +22,7 @@ Windows 執行階段的 XAML 提供數種資料類型的語言層級支援，這
 
 Windows 執行階段的 XAML 提供下列類型的語言層級支援。
 
-| XAML 基本類型 | 說明 |
+| XAML 基本類型 | 描述 |
 |-------|-------------|
 | **x:Boolean**  | 以 CLR 支援來說，會對應到 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)。 XAML 剖析 **x:Boolean** 的值時不區分大小寫。 請注意，"x:Bool" 不是可以接受的替代用法。 |
 | **x:String**   | 以 CLR 支援來說，會對應到 [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)。 字串的編碼會預設為周圍 XML 編碼。 |
@@ -31,18 +31,18 @@ Windows 執行階段的 XAML 提供下列類型的語言層級支援。
 
 通常您只有針對這些 XAML 語言基本類型，才會在 XAML 中定義使用 **x:** 前置詞的物件元素。 其他所有的 XAML 語言功能通常使用在屬性表單中，或是做為標記延伸。
 
-**注意：** 依慣例，XAML 與所有其他 XAML 語言元素的語言基本類型所顯示的"x:"前置詞。 這就是 XAML 語言元素在真實世界標記中的一般用法。 XAML 的文件與 XAML 規格會依循這個慣例。
+**附註**  依照慣例，語言基本類型，以 XAML 和所有其他 XAML 語言項目會顯示 「 x 」 前置詞。 這就是 XAML 語言元素在真實世界標記中的一般用法。 XAML 的文件與 XAML 規格會依循這個慣例。
 
 ## <a name="other-xaml-primitives"></a>其他 XAML 基本類型
 
 XAML 2009 規格有提到其他 XAML 語言層級的基本類型，如 **x:Uri** 和 **x:Single**。 除非在本主題的表格中另行列出，否則 Windows 執行階段的 XAML 目前不支援由其他 XAML 詞彙或 XAML 2009 規格所定義的其他 XAML 語言基本類型。
 
-**注意：** 日期和時間 （使用[**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)或[**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)或[**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)的屬性） 無法使用 XAML 基本類型的設定。 因為在 Windows 執行階段 XAML 剖析器中沒有適用於日期和時間的預設 from-string 轉換行為，所以這些屬性在 XAML 中通常完全無法設定。 若要初始化任何日期和時間屬性的值，您必須使用在頁面或元素載入時執行的程式碼後置。
+**附註**  日期和時間 (使用屬性[ **DateTime** ](https://msdn.microsoft.com/library/windows/apps/br206576)或是[ **DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)， [**TimeSpan** ](https://msdn.microsoft.com/library/windows/apps/br225996)或是[ **System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)) 不是以 XAML 基本可設定。 因為在 Windows 執行階段 XAML 剖析器中沒有適用於日期和時間的預設 from-string 轉換行為，所以這些屬性在 XAML 中通常完全無法設定。 若要初始化任何日期和時間屬性的值，您必須使用在頁面或元素載入時執行的程式碼後置。
 
 ## <a name="related-topics"></a>相關主題
 
 * [XAML 概觀](xaml-overview.md)
 * [XAML 語法指南](xaml-syntax-guide.md)
-* [腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [建立圖片敘述的動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
  
 

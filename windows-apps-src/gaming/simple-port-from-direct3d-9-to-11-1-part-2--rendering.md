@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯架構, 轉換, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: aba723a5ee2443664d6d640adc124b991ff0da7e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919244"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608823"
 ---
 # <a name="convert-the-rendering-framework"></a>轉換轉譯架構
 
@@ -19,9 +19,9 @@ ms.locfileid: "8919244"
 
 **摘要**
 
--   [第一部分：初始化 Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
--   第二部分：轉換轉譯架構
--   [第三部分：移植遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
+-   [第 1 部分：初始化 Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   第 2 部分：轉換轉譯架構
+-   [第 3 部分：連接埠遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
 示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。 [將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 逐步解說的第二部分。
@@ -93,19 +93,19 @@ technique RenderSceneSimple
 }
 ```
 
-在 Direct3D 11 中，我們仍然可以使用 HLSL 著色器。 我們將每個著色器放在本身的 HLSL 檔案中，讓 Visual Studio 將它們編譯成個別檔案，而稍後我們會將它們當作個別 Direct3D 資源載入。 我們將目標層級設為[著色器模型 4 層級 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876)，因為這些著色器是針對 DirectX 9.1 GPU 所撰寫。
+在 Direct3D 11 中，我們仍然可以使用 HLSL 著色器。 我們將每個著色器放在本身的 HLSL 檔案中，讓 Visual Studio 將它們編譯成個別檔案，而稍後我們會將它們當作個別 Direct3D 資源載入。 我們會將目標層級[著色器模型 4 層級 9\_1 (/ 4\_0\_層級\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876)因為這些著色器會寫入針對 DirectX 9.1 Gpu。
 
 當我們定義輸入配置時，已確定它代表我們在系統記憶體中與 GPU 記憶體中，用來儲存每個頂點資料的相同資料結構。 同理，頂點著色器的輸出應該符合用來做為像素著色器輸入的結構。 規則與 C++ 中將資料從某一個函式傳遞到另一個函式不同；您可以在結構的結尾略過未使用的變數。 但是順序無法重新安排，且您無法略過資料結構中間的內容。
 
-> **注意：**  Direct3D 9 中的規則適用於頂點著色器繫結到像素著色器已比 Direct3D 11 中的規則還要寬鬆。 Direct3D 9 排列方式具有彈性，但沒有效率。
+> **附註**   Direct3D 9 中的規則，以像素著色器的繫結頂點著色器的已比在 Direct3D 11 中的規則更寬鬆。 Direct3D 9 排列方式具有彈性，但沒有效率。
 
  
 
-您的 HLSL 檔案有可能針對著色器語意來使用較舊的語法 - 例如，使用 COLOR 而非 SV\_TARGET。 如果這樣，您將需要啟用 HLSL 相容性模式 (/Gec 編譯器選項) 或將著色器[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)更新成目前的語法。 這個範例中的頂點著色器已使用目前的語法來更新。
+可以 HLSL 檔就會使用較舊的語法著色器語意-例如，而不是 SV 色彩\_目標。 如果這樣，您將需要啟用 HLSL 相容性模式 (/Gec 編譯器選項) 或將著色器[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)更新成目前的語法。 這個範例中的頂點著色器已使用目前的語法來更新。
 
 以下為我們的硬體轉換頂點著色器，這次是定義於它自己的檔案中。
 
-> **注意：** 頂點著色器，才能輸出 SV\_POSITION 系統值語意。 這個語意可以將頂點位置資料解析成座標值，其中 x 介於 -1 與 1 之間、y 介於 -1 與 1 之間、z 會除以原始同質座標 w 值 (z/w)，而 w 是 1 除以原始 w 值 (1/w)。
+> **附註**  頂點著色器所需輸出 SV\_位置系統值語意。 這個語意可以將頂點位置資料解析成座標值，其中 x 介於 -1 與 1 之間、y 介於 -1 與 1 之間、z 會除以原始同質座標 w 值 (z/w)，而 w 是 1 除以原始 w 值 (1/w)。
 
  
 
@@ -150,9 +150,9 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 }
 ```
 
-我們的傳遞像素著色器只需要這個項目。 儘管我們將它稱為傳遞，但它實際上可以針對每個像素取得透視修正的插補色彩資料。 請注意，SV\_TARGET 系統值語意已在 API 要求時由我們的像素著色器套用到色彩值輸出。
+我們的傳遞像素著色器只需要這個項目。 儘管我們將它稱為傳遞，但它實際上可以針對每個像素取得透視修正的插補色彩資料。 請注意，SV\_目標系統值語意套用的色彩值輸出至我們的像素著色器所需的 API。
 
-> **注意：** 著色器層級 9 \_x 像素著色器無法從 SV\_POSITION 系統值語意中讀取。 模型 4.0 (及更高) 像素著色器可以使用 SV\_POSITION 來擷取螢幕上的像素位置，其中 x 介於 0 與轉譯目標寬度之間，而 y 介於 0 與轉譯目標高度之間 (每個都會位移 0.5)。
+> **附註**  著色器層級 9\_x 像素著色器無法讀取 SV\_位置系統值語意。 模型 4.0 （和更新版本） 的像素著色器可以使用 SV\_擷取其中 x 是 0 與轉譯目標寬度和 y 之間的像素位置在畫面上，位置是介於 0 到轉譯目標高度 （以 0.5 的每個位移）。
 
  
 
@@ -236,17 +236,17 @@ m_d3dDevice->CreateVertexShader(
 
 若要在編譯的應用程式套件中包含著色器位元組程式碼，只需將 HLSL 檔案新增到 Visual Studio 專案。 Visual Studio 將使用[效果編譯器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC)，將 HLSL 檔案編譯到編譯著色器物件 (.CSO 檔案)，並在應用程式套件中包含它們。
 
-> **注意：** 請確定為 HLSL 編譯器設定正確的目標功能層級： 以滑鼠右鍵按一下 HLSL 來源檔案，在 Visual Studio 中的，選取屬性，並將**著色器模型**設定下方變更**HLSL 編譯器 \]-&gt;一般**。 當您的 app 建立 Direct3D 著色器資源時，Direct3D 會針對硬體功能來檢查這個屬性。
+> **附註**  務必設定正確的目標功能層級 HLSL 編譯器： 以滑鼠右鍵按一下 HLSL 原始程式檔，在 Visual Studio 中的，選取屬性，並變更**著色器模型**底下**HLSL 編譯器-&gt;一般**。 當您的 app 建立 Direct3D 著色器資源時，Direct3D 會針對硬體功能來檢查這個屬性。
 
  
 
 ![HLSL 著色器屬性](images/hlslshaderpropertiesmenu.png)![HLSL 著色器類型](images/hlslshadertypeproperties.png)
 
-這裡很適合用來建立輸入配置，此輸入配置會對應到 Direct3D 9 中的頂點串流宣告。 每個頂點的資料結構需要符合頂點著色器所使用的內容；在 Direct3D 11 中，我們對於輸入配置有更多的控制權；我們可以定義浮點數向量的陣列大小與位元長度，以及指定頂點著色器的語意。 我們建立 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 結構，並使用它來通知 Direct3D 每個頂點資料的外觀。 我們要等到已載入頂點著色器來定義輸入配置之後，因為 API 會根據頂點著色器資源來驗證輸入配置。 如果輸入配置不相容，則 Direct3D 會擲回例外狀況。
+這裡很適合用來建立輸入配置，此輸入配置會對應到 Direct3D 9 中的頂點串流宣告。 每個頂點的資料結構需要符合頂點著色器所使用的內容；在 Direct3D 11 中，我們對於輸入配置有更多的控制權；我們可以定義浮點數向量的陣列大小與位元長度，以及指定頂點著色器的語意。 我們會建立[ **D3D11\_輸入\_項目\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180)結構，並使用它來告知 Direct3D 的每個頂點資料將會如下所示。 我們要等到已載入頂點著色器來定義輸入配置之後，因為 API 會根據頂點著色器資源來驗證輸入配置。 如果輸入配置不相容，則 Direct3D 會擲回例外狀況。
 
-每個頂點的資料都必須以相容的類型儲存在系統記憶體中。 例如，DirectXMath 資料類型可以協助 DXGI\_FORMAT\_R32G32B32\_FLOAT 對應到 [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475)。
+每個頂點的資料都必須以相容的類型儲存在系統記憶體中。 可協助 DirectXMath 資料類型;比方說，DXGI\_格式\_R32G32B32\_FLOAT 對應至[ **XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475)。
 
-> **注意：** 常數緩衝區會使用一次對齊到四個浮點數的固定輸入的配置。 建議針對常數緩衝區資料使用 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (及其衍生項目)。
+> **附註**  常數緩衝區使用固定的輸入的配置與對齊四個浮點數，一次。 [**XMFLOAT4** ](https://msdn.microsoft.com/library/windows/desktop/ee419608) （和其衍生項目） 建議的常數緩衝區的資料。
 
  
 
@@ -483,7 +483,7 @@ m_d3dContext->DrawIndexed(
 m_swapChain->Present(1, 0);
 ```
 
-我們剛建立的轉譯鏈結將會從 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中實作的遊戲迴圈進行呼叫。 這將於[第三部分：檢視區與遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)中說明。
+我們剛建立的轉譯鏈結將會從 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中實作的遊戲迴圈進行呼叫。 這會顯示[第 3 部分：檢視區和遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)。
 
  
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a6eb19ca5954b3ce71ecbaefe3339bee78f8717
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933516"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616763"
 ---
 # <a name="transcode-media-files"></a>轉碼媒體檔案
 
@@ -37,7 +37,7 @@ ms.locfileid: "8933516"
 
 編碼設定檔包含決定目的地檔案編碼方式的各項設定。 當您進行檔案的轉碼時，您可以在這裡找到很多相當實用的選項。
 
-[**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 類別提供用來建立預先定義的編碼設定檔的靜態方法：
+[  **MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 類別提供用來建立預先定義的編碼設定檔的靜態方法：
 
 ### <a name="methods-for-creating-audio-only-encoding-profiles"></a>用於建立僅限音訊編碼設定檔的方法
 
@@ -64,7 +64,7 @@ ms.locfileid: "8933516"
 
 [!code-cs[TranscodeMediaProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeMediaProfile)]
 
-靜態 [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4) 方法會建立 MP4 編碼設定檔。 這個方法的參數會提供影片的目標解析度。 在這種情況下，[**VideoEncodingQuality.hd720p**](https://msdn.microsoft.com/library/windows/apps/hh701290) 表示 1280 x 720 個像素，每秒 30 個畫面。 (「720p」表示每一個畫面有 720 條漸進式掃描線。) 預先定義設定檔的其他方法都是沿用這個模式。
+靜態 [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4) 方法會建立 MP4 編碼設定檔。 這個方法的參數會提供影片的目標解析度。 在這種情況下，[**VideoEncodingQuality.hd720p**](https://msdn.microsoft.com/library/windows/apps/hh701290) 表示 1280 x 720 個像素，每秒 30 個畫面。 （「 720p 」 代表每個畫面的 720 漸進式掃描線）。其他方法來建立所有預先定義設定檔會遵循這個模式。
 
 另一種方法是，您可以使用 [**MediaEncodingProfile.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701047) 方法來建立一個符合現有媒體檔案的設定檔。 或者，如果您知道自己需要的正確編碼設定，可以建立新的 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 物件，並填入設定檔詳細資料。
 
@@ -82,13 +82,13 @@ ms.locfileid: "8933516"
 
 
 ## <a name="encode-a-metadata-stream"></a>編碼中繼資料串流
-從 Windows 10，版本 1803 起，您可以包含定時中繼資料時轉碼媒體檔案。 不同於視訊轉碼以上範例中，使用內建的媒體編碼設定檔建立方法，例如[**MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)，您必須手動建立中繼資料編碼設定檔以支援您編碼的中繼資料的類型.
+從 Windows 10 版本 1803，您可以包含的計時中繼資料時轉碼媒體檔案。 視訊轉碼與上述範例，使用內建的媒體編碼設定檔建立方法，例如[ **MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)，您必須手動建立的中繼資料的編碼方式支援的編碼的中繼資料類型的設定檔。
 
-這個中建立的中繼資料 incoding 設定檔的第一個步驟是建立 [**TimedMetadataEncodingProperties**] 物件描述的中繼資料要轉碼的編碼方式。 子類型屬性會指定的中繼資料類型的 GUID。 針對每個中繼資料類型編碼的詳細資料是專屬並不由 Windows 提供。 在這個範例中，會使用 GoPro 中繼資料 (gprs) 的 GUID。 接下來， [**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)呼叫來設定的描述資料流格式的中繼資料格式特定資料的二進位 blob。 下一步， **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor)會從編碼屬性，建立和播放軌標籤和名稱是以允許應用程式讀取 endcoded 資料流，找出中繼資料串流，並選擇性地在 UI 中顯示的資料流的名稱。 
+第一個步驟中建立的中繼資料 incoding 設定檔是建立 [**TimedMetadataEncodingProperties**] 物件，描述要轉碼的中繼資料的編碼方式。 子型別屬性是指定的中繼資料類型的 GUID。 是專屬和不由 Windows 提供的每個中繼資料類型的編碼詳細資料。 在此範例中，會使用 GoPro 中繼資料 (gprs) 的 GUID。 下一步 [ **SetFormatUserData** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)呼叫來設定描述特有的中繼資料格式的資料流格式資料的二進位 blob。 下一步 **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor)編碼屬性中，從建立及追蹤標籤和名稱是允許應用程式讀取 endcoded 資料流來識別中繼資料資料流和 （選擇性）在 UI 中顯示的資料流名稱。 
  
 [!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
 
-建立**TimedMetadataStreamDescriptor**之後, 您可以建立**MediaEncodingProfile**描述視訊、 音訊及中繼資料檔案中進行編碼。 **TimedMetadataStreamDescriptor**在最後一個範例中建立會傳遞到此範例協助程式函式，並藉由呼叫[**SetTimedMetadataTracks**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)新增到**MediaEncodingProfile** 。
+在建立後**TimedMetadataStreamDescriptor**，您可以建立**MediaEncodingProfile**描述視訊、 音訊及編碼檔案中的中繼資料。 **TimedMetadataStreamDescriptor**建立的最後一個範例會傳遞至這個範例的協助程式函式，並新增至**MediaEncodingProfile**藉由呼叫[ **SetTimedMetadataTracks**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)。
 
 [!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
  

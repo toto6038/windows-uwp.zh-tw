@@ -1,22 +1,22 @@
 ---
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: 在 Microsoft Store 提交 API 中使用這個方法，來為登錄到您的合作夥伴中心帳戶的所有 app 都擷取相關資訊。
-title: 取得所有 App
+description: 在 Microsoft Store 提交 API 中使用這個方法，以擷取所有已登錄到您的合作夥伴中心帳戶的應用程式的相關資訊。
+title: 取得所有應用程式
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 267e1d4de3917ae332cdfe15309f3871ef7b6647
-ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8968562"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641983"
 ---
-# <a name="get-all-apps"></a>取得所有 App
+# <a name="get-all-apps"></a>取得所有應用程式
 
 
-在 Microsoft Store 提交 API 中使用這個方法，擷取已登錄到您的合作夥伴中心帳戶的應用程式資料。
+在 Microsoft Store 提交 API 中使用這個方法，來擷取資料的已登錄到您的合作夥伴中心帳戶的應用程式。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -27,7 +27,7 @@ ms.locfileid: "8968562"
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -38,12 +38,12 @@ ms.locfileid: "8968562"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-對於此方法而言，所有的要求參數都是選用的。 如果您呼叫這個不含參數的方法，回應會包含第一個 10 資料來為登錄到您帳戶的應用程式。
+對於此方法而言，所有的要求參數都是選用的。 如果您呼叫這個方法沒有參數，回應會包含資料的前 10 個應用程式註冊您的帳戶。
 
 |  參數  |  類型  |  描述  |  必要  |
 |------|------|------|------|
@@ -51,9 +51,9 @@ ms.locfileid: "8968562"
 |  skip  |  整數  |  在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。  |  否  |
 
 
-### <a name="request-body"></a>要求主體
+### <a name="request-body"></a>要求本文
 
-不提供此方法的要求主體。
+不提供此方法的要求本文。
 
 ### <a name="request-examples"></a>要求範例
 
@@ -64,14 +64,14 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-下列範例示範如何擷取已登錄到您帳戶之所有 App 的相關資訊。 首先，取得的前 10 應用程式：
+下列範例示範如何擷取已登錄到您帳戶之所有 App 的相關資訊。 首先，取得前 10 個應用程式：
 
 ```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-然後以遞迴方式呼叫`GET https://manage.devcenter.microsoft.com/v1.0/my/{@nextLink}`之前`{@nextlink}`會是 null，或在回應中不存在。 例如：
+然後以遞迴方式呼叫`GET https://manage.devcenter.microsoft.com/v1.0/my/{@nextLink}`直到`{@nextlink}`為 null，或在回應中不存在。 例如：
 
 ```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10 HTTP/1.1
@@ -88,7 +88,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=30&top=10 H
 Authorization: Bearer <your access token>
 ```
 
-如果您已經知道您有在您的帳戶的應用程式的總數，您可以只需傳入該號碼**頂端**參數，以取得您的應用程式的相關資訊。
+如果您已經知道您在您的帳戶的應用程式總數，您只要將在該數字**頂端**參數，以取得您的應用程式的相關資訊。
 
 ```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=23 HTTP/1.1
@@ -150,12 +150,12 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 404  | 找不到任何 App。 |
-| 409  | 應用程式使用合作夥伴中心功能， [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
+| 409  | 應用程式會使用合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [取得 App](get-an-app.md)
-* [取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)
-* [取得 App 的附加元件](get-add-ons-for-an-app.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
+* [取得應用程式](get-an-app.md)
+* [取得應用程式封裝的航班](get-flights-for-an-app.md)
+* [取得附加元件的應用程式](get-add-ons-for-an-app.md)

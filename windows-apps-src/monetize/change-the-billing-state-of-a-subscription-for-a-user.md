@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e4cf27331a218c0c0ef06ee1a80c141b889504a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943733"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607833"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>變更使用者訂閱的帳單狀態
 
@@ -20,7 +20,7 @@ ms.locfileid: "8943733"
 > [!NOTE]
 > Microsoft 佈建的開發人員帳戶才可以使用此方法，建立通用 Windows 平台 (UWP) 應用程式的訂閱附加元件。 訂閱附加元件目前並未提供給大部分開發人員帳戶使用。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您將需要：
 
@@ -43,8 +43,8 @@ ms.locfileid: "8943733"
 
 | 標頭         | 類型   | 描述   |
 |----------------|--------|-------------|
-| 授權  | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。                           |
-| Host           | 字串 | 其值必須設定為 **purchase.mp.microsoft.com**。                                            |
+| Authorization  | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。                           |
+| 主機           | 字串 | 其值必須設定為 **purchase.mp.microsoft.com**。                                            |
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
 
@@ -53,16 +53,16 @@ ms.locfileid: "8943733"
 
 | 名稱         | 類型  | 描述   |  必要  |
 |----------------|--------|-------------|-----------|
-| recurrenceId | string | 您想要變更之訂閱的識別碼。 若要取得此識別碼，呼叫方法，[取得使用者的訂閱](get-subscriptions-for-a-user.md)，找出代表您想要變更之訂閱附加元件的回應主體項目並使用**id**欄位的值用於項目。     | 是      |
+| recurrenceId | 字串 | 您想要變更之訂閱的識別碼。 若要取得這個識別碼，請呼叫[取得使用者的訂用帳戶](get-subscriptions-for-a-user.md)方法中，找出代表您想要變更的訂用帳戶附加元件的回應內文項目，並使用值**識別碼**欄位的項目。     | 是      |
 
 
-### <a name="request-body"></a>要求主體
+### <a name="request-body"></a>要求本文
 
 | 欄位      | 類型   | 描述   | 必要 |
 |----------------|--------|---------------|----------|
-| b2bKey         | string | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要變更其訂閱的使用者身分識別。     | 是      |
-| changeType     | string |  下列其中一個字串，辨識您想要進行的變更類型：<ul><li>**Cancel**：取消訂閱。</li><li>**Extend**：延長訂閱。 如果您指定這個值，必須也包含 *extensionTimeInDays* 參數。</li><li>**Refund**：將訂閱費用退款給客戶。</li><li>**ToggleAutoRenew**：停用訂閱的自動續約。 如果訂閱目前已停用自動續約，這個值不會執行任何動作。</li></ul>   | 是      |
-| extensionTimeInDays  | string  | 如果 *changeType* 參數有值 **Extend**，此參數指定延長訂閱的天數。 |  如果 *changeType* 有值 **Extend** 則為「是」，否則為「否」。  ||
+| b2bKey         | 字串 | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要變更其訂閱的使用者身分識別。     | 是      |
+| changeType     | 字串 |  下列其中一個字串，辨識您想要進行的變更類型：<ul><li>**取消**：取消訂用帳戶。</li><li>**擴充**:擴充的訂用帳戶。 如果您指定這個值，必須也包含 *extensionTimeInDays* 參數。</li><li>**退還**:退款給客戶的訂用帳戶。</li><li>**ToggleAutoRenew**:停用自動續約訂用帳戶。 如果訂閱目前已停用自動續約，這個值不會執行任何動作。</li></ul>   | 是      |
+| extensionTimeInDays  | 字串  | 如果 *changeType* 參數有值 **Extend**，此參數指定延長訂閱的天數。 |  如果 *changeType* 有值 **Extend** 則為「是」，否則為「否」。  ||
 
 
 ### <a name="request-example"></a>要求範例
@@ -114,25 +114,25 @@ Host: https://purchase.mp.microsoft.com
 | 值        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------|
 | autoRenew | 布林值 |  指出訂閱是否設定為訂閱期間結束時自動續約。   |
-| beneficiary | string |  這個訂閱相關聯的權利的受益人識別碼。   |
-| expirationTime | string | 訂閱將結束的日期和時間 (ISO 8601 格式)。 訂閱處於特定狀態時，才可以使用這個欄位。 到期時間通常表示目前狀態到期的時間。 例如，對於使用中的訂閱，到期日表示將會發生下一個自動續約的時間。    |
-| expirationTimeWithGrace | string | 日期和時間訂閱將會到期，包括在寬限期，格式為 ISO 8601。 這個值表示當使用者將會遺失存取訂閱之後訂閱無法自動續約。    |
-| id | string |  訂閱的識別碼。 當您呼叫[變更使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)方法，使用這個值，指出您想要修改的訂閱。    |
+| beneficiary | 字串 |  這個訂閱相關聯的權利的受益人識別碼。   |
+| expirationTime | 字串 | 訂閱將結束的日期和時間 (ISO 8601 格式)。 訂閱處於特定狀態時，才可以使用這個欄位。 到期時間通常表示目前狀態到期的時間。 例如，對於使用中的訂閱，到期日表示將會發生下一個自動續約的時間。    |
+| expirationTimeWithGrace | 字串 | 日期和時間的訂用帳戶逾期時間包括寬限期，採用 ISO 8601 格式。 這個值表示當使用者將無法再存取訂用帳戶之後的訂用帳戶無法自動更新。    |
+| id | 字串 |  訂閱的識別碼。 當您呼叫[變更使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)方法，使用這個值，指出您想要修改的訂閱。    |
 | isTrial | 布林值 |  表示訂閱是否試用。     |
-| lastModified | string |  上次修改訂閱的日期和時間 (ISO 8601 格式)。      |
-| market | string | 使用者取得訂閱所在的國家/地區代碼（兩個字母 ISO 3166-1 alpha-2 格式）。      |
-| productId | string | [產品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)，代表 Microsoft Store 型錄中訂閱附加元件。 例如，產品的 Store 識別碼是 9NBLGGH42CFD。     |
-| skuId | string |  [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)，代表 Microsoft Store 型錄中訂閱附加元件。 例如，SKU 的 Store 識別碼是 0010。    |
-| startTime | string |  訂閱的開始日期和時間，格式為 ISO 8601。     |
-| recurrenceState | string  |  下列其中一個值：<ul><li>**None**：&nbsp;&nbsp;這表示永久訂閱。</li><li>**Active**：&nbsp;&nbsp;訂閱作用中，並且使用者有資格使用服務。</li><li>**Inactive**：&nbsp;&nbsp;訂閱到期日已過，而且使用者關閉訂閱自動續約的選項。</li><li>**Canceled**：&nbsp;&nbsp;訂閱在到期日之前刻意終止，可能有退款或無退款。</li><li>**InDunning**：&nbsp;&nbsp;訂閱處於*催款*（也就是訂閱即將到期，而 Microsoft 嘗試擷取到自動續約訂閱款項）。</li><li>**Failed**：&nbsp;&nbsp;催款期間已結束，在數次嘗試之後訂閱無法續約。</li></ul><p>**注意：**</p><ul><li>**Inactive**/**Canceled**/**Failed** 是終止狀態。 當訂閱進入這些狀態時，使用者必須重新購買訂閱以再次啟動訂閱。 使用者無權使用這些狀態的服務。</li><li>當訂閱為 **Canceled**，expirationTime 會以取消日期和時間更新。</li><li>訂閱的識別碼在整個生命週期會維持不變。 如果自動續約選項已開啟或關閉，它不會變更。 如果使用者到達終止狀態之後重新購買訂閱，將會建立新的訂閱識別碼。</li><li>訂閱的識別碼應該用來執行任何個別訂閱作業。</li><li>當使用者在取消或終止訂閱之後重新購買訂閱，如果您查詢使用者的結果，您將會取到兩個項目：一個是終止狀態的舊訂閱識別碼，另一個是使用中狀態的新訂閱識別碼。</li><li>檢查 recurrenceState 和 expirationTime 是良好的做法，因為更新 recurrenceState 可能會延遲片刻（偶爾會延遲數小時）。       |
-| cancellationDate | string   |  使用者取消訂閱的日期和時間 (ISO 8601 格式)。     |
+| lastModified | 字串 |  上次修改訂閱的日期和時間 (ISO 8601 格式)。      |
+| market | 字串 | 使用者取得訂閱所在的國家/地區代碼（兩個字母 ISO 3166-1 alpha-2 格式）。      |
+| productId | 字串 | [產品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)，代表 Microsoft Store 型錄中訂閱附加元件。 例如，產品的 Store 識別碼是 9NBLGGH42CFD。     |
+| skuId | 字串 |  [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)，代表 Microsoft Store 型錄中訂閱附加元件。 例如，SKU 的 Store 識別碼是 0010。    |
+| startTime | 字串 |  訂閱的開始日期和時間，格式為 ISO 8601。     |
+| recurrenceState | 字串  |  下列其中一個值：<ul><li>**None**：&nbsp;&nbsp;這表示永久訂閱。</li><li>**Active**：&nbsp;&nbsp;訂閱作用中，並且使用者有資格使用服務。</li><li>**Inactive**：&nbsp;&nbsp;訂閱到期日已過，而且使用者關閉訂閱自動續約的選項。</li><li>**Canceled**：&nbsp;&nbsp;訂閱在到期日之前刻意終止，可能有退款或無退款。</li><li>**InDunning**：&nbsp;&nbsp;訂閱處於*催款*（也就是訂閱即將到期，而 Microsoft 嘗試擷取到自動續約訂閱款項）。</li><li>**Failed**：&nbsp;&nbsp;催款期間已結束，在數次嘗試之後訂閱無法續約。</li></ul><p>**注意：**</p><ul><li>**Inactive**/**Canceled**/**Failed** 是終止狀態。 當訂閱進入這些狀態時，使用者必須重新購買訂閱以再次啟動訂閱。 使用者無權使用這些狀態的服務。</li><li>當訂閱為 **Canceled**，expirationTime 會以取消日期和時間更新。</li><li>訂閱的識別碼在整個生命週期會維持不變。 如果自動續約選項已開啟或關閉，它不會變更。 如果使用者到達終止狀態之後重新購買訂閱，將會建立新的訂閱識別碼。</li><li>訂閱的識別碼應該用來執行任何個別訂閱作業。</li><li>當使用者在取消或終止訂閱之後重新購買訂閱，如果您查詢使用者的結果，您將會取到兩個項目：一個是終止狀態的舊訂閱識別碼，另一個是使用中狀態的新訂閱識別碼。</li><li>檢查 recurrenceState 和 expirationTime 是良好的做法，因為更新 recurrenceState 可能會延遲片刻（偶爾會延遲數小時）。       |
+| cancellationDate | 字串   |  使用者取消訂閱的日期和時間 (ISO 8601 格式)。     |
 
 
 ## <a name="related-topics"></a>相關主題
 
 
-* [管理服務的產品權利](view-and-grant-products-from-a-service.md)
-* [取得使用者訂閱](get-subscriptions-for-a-user.md)
-* [查詢產品](query-for-products.md)
-* [將消費性產品回報為已完成](report-consumable-products-as-fulfilled.md)
+* [從服務管理產品的權利](view-and-grant-products-from-a-service.md)
+* [取得使用者的訂用帳戶](get-subscriptions-for-a-user.md)
+* [適用於產品的查詢](query-for-products.md)
+* [回報完成可取用產品](report-consumable-products-as-fulfilled.md)
 * [更新 Microsoft Store 識別碼金鑰](renew-a-windows-store-id-key.md)

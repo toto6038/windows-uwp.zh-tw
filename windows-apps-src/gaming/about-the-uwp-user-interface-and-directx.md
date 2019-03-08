@@ -1,5 +1,5 @@
 ---
-title: App 物件和 DirectX
+title: 應用程式物件和 DirectX
 description: 使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 ms.date: 02/08/2017
@@ -7,19 +7,19 @@ ms.topic: article
 keywords: Windows 10, UWP, DirectX 應用程式物件
 ms.localizationpriority: medium
 ms.openlocfilehash: e12ad6ce221440e8840006b3883980721b899ae6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922973"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616973"
 ---
-# <a name="the-app-object-and-directx"></a>App 物件和 DirectX
+# <a name="the-app-object-and-directx"></a>應用程式物件和 DirectX
 
 
 
 使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。 相反地，由於它們在 Windows 執行階段堆疊的較低層次執行，因此必須以更基礎的方法來與使用者介面架構進行互通： 方法為直接與 app 物件進行存取和互通。 了解這個互通發生的時間和方式，以及身為 DirectX 開發人員如何 在開發 UWP app 時有效使用這個模型。
 
-請參閱[Direct3D 圖形詞彙](../graphics-concepts/index.md)不熟悉的圖形條款或在讀取時遇到的概念相關資訊。
+請參閱[Direct3D 圖形詞彙](../graphics-concepts/index.md)如不熟悉的圖形來說或您在讀取時遇到的概念的相關資訊。
 
 ## <a name="the-important-core-user-interface-namespaces"></a>重要的核心使用者介面命名空間
 
@@ -32,7 +32,7 @@ ms.locfileid: "8922973"
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **注意：** 如果您不開發 UWP 應用程式，請使用 JavaScript 或 XAML 專用程式庫和命名空間，而不是這些命名空間中提供的類型中提供的使用者介面元件。
+> **附註**  如果您並未開發 UWP 應用程式，使用中的 JavaScript 或 XAML 特定程式庫和命名空間，而這些命名空間所提供的類型不是提供使用者介面元件。
 
  
 
@@ -72,11 +72,11 @@ ms.locfileid: "8922973"
 -   [**Windows.UI.Core.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
 -   [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)
 
-您可以使用這些類型來存取 App 的檢視 (特別是繪製 App 父視窗內容的位元)，並處理該視窗所引發的事件。 應用程式視窗的處理程序是一個 *「應用程式單一執行緒 Apartment (ASTA)」*，它可以獨立運作並處理所有回呼。
+您可以使用這些類型來存取 App 的檢視 (特別是繪製 App 父視窗內容的位元)，並處理該視窗所引發的事件。 應用程式視窗的處理程序是一個「應用程式單一執行緒 Apartment (ASTA)」，它可以獨立運作並處理所有回呼。
 
 您的應用程式檢視是由應用程式視窗的檢視提供者所產生，在大部分情況下，都將由特定的架構套件或系統本身來實作，因此您不需要自己實作它。 針對 DirectX，您需要實作精簡型檢視提供者，如先前所討論。 下列元件和行為之間有特定的 1 對 1 關係：
 
--   [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 類型表示的應用程式檢視，可定義更新視窗的方法。
+-   [  **CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 類型表示的應用程式檢視，可定義更新視窗的方法。
 -   ASTA，這個元件的屬性可以定義應用程式執行緒的行為。 您無法在 ASTA 上建立 COM STA 屬性類型的執行個體。
 -   應用程式從系統取得或您實作的檢視提供者。
 -   一個父視窗，由 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 類型表示。
@@ -87,14 +87,14 @@ ms.locfileid: "8922973"
 ## <a name="coreapplicationview-behaviors-and-properties"></a>CoreApplicationView 行為和屬性
 
 
-[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 代表目前的應用程式檢視。 App 單例會在初始化時建立 App 檢視，但除非啟用檢視，否則這個檢視會維持休眠狀態。 您可以透過存取檢視上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 屬性來取得顯示檢視的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，然後您可以將委派登錄到 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件以處理啟用或停用事件。
+[**CoreApplicationView** ](https://msdn.microsoft.com/library/windows/apps/br225017)代表目前的應用程式檢視。 App 單例會在初始化時建立 App 檢視，但除非啟用檢視，否則這個檢視會維持休眠狀態。 您可以透過存取檢視上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 屬性來取得顯示檢視的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，然後您可以將委派登錄到 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件以處理啟用或停用事件。
 
 ## <a name="corewindow-behaviors-and-properties"></a>CoreWindow 行為和屬性
 
 
 初始化應用程式物件時，會建立父視窗 ([**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 執行個體) 並將它傳送至檢視提供者。 如果應用程式有可以顯示的視窗，就會顯示該視窗；否則只會初始化檢視。
 
-[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 會提供與輸入和基本視窗行為相關的一系列事件。 將自己的委派登錄到這些事件後，您就可以處理它們了。
+[**CoreWindow** ](https://msdn.microsoft.com/library/windows/apps/br208225)提供的事件數目的特定輸入和基本的視窗行為。 將自己的委派登錄到這些事件後，您就可以處理它們了。
 
 您也可以存取 [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) 屬性 (提供 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 執行個體)，並藉此取得視窗的視窗事件發送器。
 
@@ -103,7 +103,7 @@ ms.locfileid: "8922973"
 
 您可以使用 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 類型，判斷針對視窗分派之事件的執行緒行為。 在這個類型上，只有一個特別重要的方法：[**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 方法，這個方法會啟動視窗事件處理程序。 使用錯誤的選項為 App 呼叫這個方法，會導致各種非預期的事件處理行為。
 
-| CoreProcessEventsOption 選項                                                           | 說明                                                                                                                                                                                                                                  |
+| CoreProcessEventsOption 選項                                                           | 描述                                                                                                                                                                                                                                  |
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**CoreProcessEventsOption.ProcessOneAndAllPending**](https://msdn.microsoft.com/library/windows/apps/br208217) | 在佇列中分派所有目前可用的事件。 如果沒有擱置的事件，會等待下一個新事件。                                                                                                                                 |
 | [**CoreProcessEventsOption.ProcessOneIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | 如果佇列中有擱置的事件，則會分派一個事件。 如果沒有擱置的事件，不要等待新事件出現，而是立即返回。                                                                                          |

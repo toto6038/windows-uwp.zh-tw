@@ -1,6 +1,6 @@
 ---
 title: 重複對應的磚存取限制
-description: 重複對應的磚有存取限制，例如複製來源和目的地重疊的串流資源時，或轉譯至在轉譯區域中共用的磚時。
+description: 重複對應的磚有存取限制，例如複製來源和目的地重疊的資料流資源時，或轉譯至在轉譯區域中共用的磚時。
 ms.assetid: 6E40B1DC-BCF1-4B09-82A8-7B2D9B209A61
 keywords:
 - 重複對應的磚存取限制
@@ -8,36 +8,36 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d5563a9909ba3d6cb3deaae43bcf9e55b4b2c880
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947830"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607963"
 ---
 # <a name="tile-access-limitations-with-duplicate-mappings"></a>重複對應的磚存取限制
 
 
-重複對應的磚有存取限制，例如複製來源和目的地重疊的串流資源時，或轉譯至在轉譯區域中共用的磚時。
+重複對應的磚有存取限制，例如複製來源和目的地重疊的資料流資源時，或轉譯至在轉譯區域中共用的磚時。
 
-## <a name="span-idcopyingstreamingresourceswithoverlappingsourceanddestinationspanspan-idcopyingstreamingresourceswithoverlappingsourceanddestinationspanspan-idcopyingstreamingresourceswithoverlappingsourceanddestinationspancopying-streaming-resources-with-overlapping-source-and-destination"></a><span id="Copying_streaming_resources_with_overlapping_source_and_destination"></span><span id="copying_streaming_resources_with_overlapping_source_and_destination"></span><span id="COPYING_STREAMING_RESOURCES_WITH_OVERLAPPING_SOURCE_AND_DESTINATION"></span>複製來源和目的地重疊的串流資源
+## <a name="span-idcopyingstreamingresourceswithoverlappingsourceanddestinationspanspan-idcopyingstreamingresourceswithoverlappingsourceanddestinationspanspan-idcopyingstreamingresourceswithoverlappingsourceanddestinationspancopying-streaming-resources-with-overlapping-source-and-destination"></a><span id="Copying_streaming_resources_with_overlapping_source_and_destination"></span><span id="copying_streaming_resources_with_overlapping_source_and_destination"></span><span id="COPYING_STREAMING_RESOURCES_WITH_OVERLAPPING_SOURCE_AND_DESTINATION"></span>複製具有重疊的來源和目的地的資料流資源
 
 
-如果 Copy\* 作業來源和目的地區域中的磚在複製區域有重複對應，而即使這兩個資源未串流資源仍會重疊且 Copy\* 作業支援重疊複製，則 Copy\* 作業會正常運作 (如同來源在前往目的地前會先複製到暫存位置)。 但如果重疊不明顯 (例如來源和目的地資源不同，但給定表面上的共用對應或對應重複)，則不會定義共用磚上複製作業的結果。
+如果複製的來源和目的地區域中的磚\*作業具有重複的對應區域中的複製會有重疊，即使這兩個資源已不在資源和複製串流\*作業支援重疊複製時，複製\*作業就會如同正常 （來源會複製到暫存位置，再移至目的地）。 但如果重疊不明顯 (例如來源和目的地資源不同，但給定表面上的共用對應或對應重複)，則不會定義共用磚上複製作業的結果。
 
-## <a name="span-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspanspan-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspanspan-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspancopying-to-streaming-resource-with-duplicated-tiles-in-destination-area"></a><span id="Copying_to_streaming_resource_with_duplicated_tiles_in_destination_area"></span><span id="copying_to_streaming_resource_with_duplicated_tiles_in_destination_area"></span><span id="COPYING_TO_STREAMING_RESOURCE_WITH_DUPLICATED_TILES_IN_DESTINATION_AREA"></span>複製到在目的地區域中有重複磚的串流資源
+## <a name="span-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspanspan-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspanspan-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspancopying-to-streaming-resource-with-duplicated-tiles-in-destination-area"></a><span id="Copying_to_streaming_resource_with_duplicated_tiles_in_destination_area"></span><span id="copying_to_streaming_resource_with_duplicated_tiles_in_destination_area"></span><span id="COPYING_TO_STREAMING_RESOURCE_WITH_DUPLICATED_TILES_IN_DESTINATION_AREA"></span>將複製到目的區域中的重複磚的資料流資源
 
 
 若複製到在目的地區域中有重複磚的串流資源，則會在這些磚中產生未定義的結果，除非資料本身相同。不同的磚可能會以不同的順序寫入磚。
 
-## <a name="span-iduavaccessestoduplicatetilesmappingsspanspan-iduavaccessestoduplicatetilesmappingsspanspan-iduavaccessestoduplicatetilesmappingsspanuav-accesses-to-duplicate-tiles-mappings"></a><span id="UAV_accesses_to_duplicate_tiles_mappings"></span><span id="uav_accesses_to_duplicate_tiles_mappings"></span><span id="UAV_ACCESSES_TO_DUPLICATE_TILES_MAPPINGS"></span>UAV 對重複磚對應的存取
+## <a name="span-iduavaccessestoduplicatetilesmappingsspanspan-iduavaccessestoduplicatetilesmappingsspanspan-iduavaccessestoduplicatetilesmappingsspanuav-accesses-to-duplicate-tiles-mappings"></a><span id="UAV_accesses_to_duplicate_tiles_mappings"></span><span id="uav_accesses_to_duplicate_tiles_mappings"></span><span id="UAV_ACCESSES_TO_DUPLICATE_TILES_MAPPINGS"></span>UAV 重複磚會存取對應
 
 
 假設串流資源上未排序的存取檢視 (UAV) 在其區域有重複磚對應，或有與其他管線繫結的資源。 若由不同執行緒則執行，則不會定義這些重複磚的存取順序，就像任何 UAV 記憶體存取的順序通常都未排序。
 
-## <a name="span-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanspan-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanspan-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanrendering-after-tile-mapping-changes-or-content-updates-from-outside-mappings"></a><span id="Rendering_after_tile_mapping_changes_or_content_updates_from_outside_mappings"></span><span id="rendering_after_tile_mapping_changes_or_content_updates_from_outside_mappings"></span><span id="RENDERING_AFTER_TILE_MAPPING_CHANGES_OR_CONTENT_UPDATES_FROM_OUTSIDE_MAPPINGS"></span>磚對應變更或內容從對應外部更新後轉譯
+## <a name="span-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanspan-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanspan-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanrendering-after-tile-mapping-changes-or-content-updates-from-outside-mappings"></a><span id="Rendering_after_tile_mapping_changes_or_content_updates_from_outside_mappings"></span><span id="rendering_after_tile_mapping_changes_or_content_updates_from_outside_mappings"></span><span id="RENDERING_AFTER_TILE_MAPPING_CHANGES_OR_CONTENT_UPDATES_FROM_OUTSIDE_MAPPINGS"></span>轉譯圖格對應變更或從外部對應的內容更新之後
 
 
-如果串流資源的磚對應已變更，或在對應並排集區磚的內容透過另一個串流資源的對應進行變更，且串流資源即將透過轉譯目標檢視或深度樣板檢視進行轉譯，則應用程式必須清除 (使用固定的功能清除 API)，或使用 Copy\*/Update\* API 已在轉譯中區域 (對應或未對應) 變更的磚進行完整複製。
+如果資料流資源的圖格對應已變更，或在對應的並排顯示集區並排顯示的內容已變更透過另一個資料流資源的對應和資料流的資源，是要透過轉譯呈現目標檢視或深度樣板檢視，應用程式必須清除 （使用 fixed 的函數清楚的 Api），或透過使用複製完整複製\*/更新\*Api 呈現已變更區域內的圖格 （或未對應）。
 
 若應用程式無法在這些案例中進行清除或複製，則給定轉譯目標檢視或深度樣板檢視的硬體最佳化結構會過時，且會導致某些硬體上的廢棄項目轉譯結果，以及其他硬體間的不一致。 硬體所使用的這些隱藏的最佳化資料結構可能對個別對應而言為本機項目，而不會對其他記憶體相同的對應顯示。
 
@@ -47,7 +47,7 @@ ms.locfileid: "8947830"
 
 如果磚同時對應至多個串流資源，且透過其中一個串流資源以任何方式 (轉譯、複製等等) 操作磚內容，則如果同一個磚即將透過任何其他串流資源進行轉譯，該磚就必須如上文所述進行清除。
 
-## <a name="span-idrenderingtotilessharedoutsiderenderareaspanspan-idrenderingtotilessharedoutsiderenderareaspanspan-idrenderingtotilessharedoutsiderenderareaspanrendering-to-tiles-shared-outside-render-area"></a><span id="Rendering_to_tiles_shared_outside_render_area"></span><span id="rendering_to_tiles_shared_outside_render_area"></span><span id="RENDERING_TO_TILES_SHARED_OUTSIDE_RENDER_AREA"></span>轉譯至在轉譯區域以外共用的磚
+## <a name="span-idrenderingtotilessharedoutsiderenderareaspanspan-idrenderingtotilessharedoutsiderenderareaspanspan-idrenderingtotilessharedoutsiderenderareaspanrendering-to-tiles-shared-outside-render-area"></a><span id="Rendering_to_tiles_shared_outside_render_area"></span><span id="rendering_to_tiles_shared_outside_render_area"></span><span id="RENDERING_TO_TILES_SHARED_OUTSIDE_RENDER_AREA"></span>外部共用的圖格的轉譯呈現區域
 
 
 假設串流資源的區域為轉譯目標，且轉譯區域所參考的磚集區磚也在轉譯區域外部為對應目標 (包括透過其他串流資源，同時或不同時)。 透過其他對應檢視時，轉譯至這些磚的資料並不保證會正確顯示，即使基礎記憶體配置相容也一樣。 這是因為某些硬體所使用的最佳化資料結構對可轉譯表面的個別對應而言可能為本機，但不會對記憶體位置相同的其他對應顯示。
@@ -56,12 +56,12 @@ ms.locfileid: "8947830"
 
 同時，當您使用共用對應的不同串流資源在之間切換時 (除非僅限讀取)，您必須在切換之間於多個並列資源之間指定資料存取順序限制 (障礙)。
 
-## <a name="span-idrenderingtotilessharedwithinrenderareaspanspan-idrenderingtotilessharedwithinrenderareaspanspan-idrenderingtotilessharedwithinrenderareaspanrendering-to-tiles-shared-within-render-area"></a><span id="Rendering_to_tiles_shared_within_render_area"></span><span id="rendering_to_tiles_shared_within_render_area"></span><span id="RENDERING_TO_TILES_SHARED_WITHIN_RENDER_AREA"></span>轉譯至在轉譯區域以內共用的磚
+## <a name="span-idrenderingtotilessharedwithinrenderareaspanspan-idrenderingtotilessharedwithinrenderareaspanspan-idrenderingtotilessharedwithinrenderareaspanrendering-to-tiles-shared-within-render-area"></a><span id="Rendering_to_tiles_shared_within_render_area"></span><span id="rendering_to_tiles_shared_within_render_area"></span><span id="RENDERING_TO_TILES_SHARED_WITHIN_RENDER_AREA"></span>轉譯為共用轉譯區域內的圖格
 
 
 如果串流資源的區域為轉譯目標，且在轉譯區域中多個磚對應至相同的磚集區位置，則轉譯結果在該類磚上不會定義。
 
-## <a name="span-iddatacompatibilityacrossstreamingresourcessharingtilesspanspan-iddatacompatibilityacrossstreamingresourcessharingtilesspanspan-iddatacompatibilityacrossstreamingresourcessharingtilesspandata-compatibility-across-streaming-resources-sharing-tiles"></a><span id="Data_compatibility_across_streaming_resources_sharing_tiles"></span><span id="data_compatibility_across_streaming_resources_sharing_tiles"></span><span id="DATA_COMPATIBILITY_ACROSS_STREAMING_RESOURCES_SHARING_TILES"></span>串流資源共用磚之間的資料相容性
+## <a name="span-iddatacompatibilityacrossstreamingresourcessharingtilesspanspan-iddatacompatibilityacrossstreamingresourcessharingtilesspanspan-iddatacompatibilityacrossstreamingresourcessharingtilesspandata-compatibility-across-streaming-resources-sharing-tiles"></a><span id="Data_compatibility_across_streaming_resources_sharing_tiles"></span><span id="data_compatibility_across_streaming_resources_sharing_tiles"></span><span id="DATA_COMPATIBILITY_ACROSS_STREAMING_RESOURCES_SHARING_TILES"></span>在共用磚的資源資料流處理的資料相容性
 
 
 假設多個串流資源對應至相同的磚集區位置，且各個資源皆用來存取相同的資料。 本案例只在以下情況才有效：避免其他關於避免硬體最佳化結構問題的規則、已指定適當障礙 (在多個並行資源之間指定資料存取順序限制)，且串流資源彼此相容。
@@ -70,7 +70,7 @@ ms.locfileid: "8947830"
 
 若另一個資源共用對應首先使用新資料初始化 (回收記憶體作為其他用途)，則後續讀取或轉譯作業會運作正常，因為資料不會在不相容的解譯間洩出。 不過，當您像這樣在存取不相容的對應間切換時，您必須指定障礙 (在多個並排資源間指定資料存取順序限制)。
 
-如果在任何資源共用對應上彼此都未設定轉譯目標或深度樣板繫結旗標，則限制大為降低。 只要格式及表面類型 (例如 Texture2D) 相同，即可共用磚。 不同的格式彼此相容的案例，例如 BC\* 表面和大小相當的解壓縮 32 位元或每個元件格式 16 位元，像是 BC6H 及 R32G32B32A32。 許多每個項目 32 位元的格式也可將 R32\_\* 作為別名 (R10G10B10A2\_\*、R8G8B8A8\_\*、B8G8R8A8\_\*、B8G8R8X8\_\*、R16G16\_\*)；非串流資源一律允許這項作業。
+如果在任何資源共用對應上彼此都未設定轉譯目標或深度樣板繫結旗標，則限制大為降低。 只要格式及表面類型 (例如 Texture2D) 相同，即可共用磚。 不同相容的格式為情況下，例如 BC\*介面和對等項目調整大小未壓縮的 32 位元或每個元件的格式，例如 BC6H 和 R32G32B32A32 的 16 位元。 許多的 32 位元，每個項目格式可以是具有 R32 別名\_\*也 (R10G10B10A2\_\*，R8G8B8A8\_\*，B8G8R8A8\_\*，B8G8R8X8\_ \*，R16G16\_\*); 一律為非資料流資源允許此作業。
 
 如果格式相容且磚會填入純色，則壓縮與非壓縮磚之間的共用會運作良好。
 
@@ -79,7 +79,7 @@ ms.locfileid: "8947830"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[串流資源的存取管線](pipeline-access-to-streaming-resources.md)
+[資料流資源的存取管線](pipeline-access-to-streaming-resources.md)
 
  
 

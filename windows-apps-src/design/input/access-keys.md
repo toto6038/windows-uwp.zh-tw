@@ -1,5 +1,5 @@
 ---
-Description: Learn how to improve both the usability and the accessibility of your UWP app by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
+Description: 了解如何提供直覺的方式，讓使用者透過鍵盤而不是指標裝置（例如觸控式或滑鼠），快速瀏覽 app 的可見 UI 及互動，改善 UWP app 可用性和協助工具。
 title: 便捷鍵設計指導方針
 label: Access keys design guidelines
 keywords: 鍵盤, 便捷鍵, keytip, 按鍵提示, 協助工具, 瀏覽, 焦點, 文字, 輸入, 使用者互動
@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: bd71e4715b26f9e06326690d3642b4d19e23d292
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945800"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617263"
 ---
 # <a name="access-keys"></a>便捷鍵
 
@@ -44,7 +44,7 @@ Microsoft Office 應用程式為便捷鍵提供廣泛的支援。 下圖顯示 W
 
 ![在 Microsoft Word 中的便捷鍵按鍵提示徽章](images/accesskeys/keytip-badges-word.png)
 
-_在 Microsoft Word 便捷鍵 KeyTip 徽章_
+_存取金鑰，Microsoft Word 中的 KeyTip 徽章_
 
 若要新增便捷鍵到控制項，請使用 **AccessKey 屬性**。 這個屬性指定便捷鍵順序、捷徑 (如果是一個英數字元) 和按鍵提示。
 
@@ -72,11 +72,11 @@ _在 Microsoft Word 便捷鍵 KeyTip 徽章_
 
 下列影像示範 Word 中的兩個便捷鍵範圍。 第一個影像顯示主要便捷鍵，讓使用者選取索引標籤和其他最上層命令，而第二個影像顯示 [首頁] 索引標籤的次要便捷鍵。
 
-![Microsoft Word 的主要便捷鍵](images/accesskeys/primary-access-keys-word.png)
-_Microsoft Word 的主要便捷鍵_
+![在 Microsoft Word 中的主要存取金鑰](images/accesskeys/primary-access-keys-word.png)
+_Microsoft Word 中的主要存取金鑰_
 
-![Microsoft Word 的次要便捷鍵](images/accesskeys/secondary-access-keys-word.png)
-_Microsoft Word 的次要便捷鍵_
+![在 Microsoft Word 中的次要存取金鑰](images/accesskeys/secondary-access-keys-word.png)
+_Microsoft Word 中的次要存取金鑰_
 
 對於不同範圍中的項目，便捷鍵可以複製。 在先前的範例，“2”是主要範圍中 [復原] 的便捷鍵，也是次要範圍中 [斜體] 的便捷鍵。
 
@@ -110,11 +110,11 @@ _Microsoft Word 的次要便捷鍵_
 
 ![CommandBar 的主要便捷鍵](images/accesskeys/primary-access-keys-commandbar.png)
 
-_CommandBar 主要範圍和支援的便捷鍵_
+_CommandBar 主要範圍和支援的存取金鑰_
 
 ![CommandBar 的次要便捷鍵](images/accesskeys/secondary-access-keys-commandbar.png)
 
-_CommandBar 次要範圍和支援的便捷鍵_
+_CommandBar 次要範圍和支援的存取金鑰_
 
 ### <a name="windows-10-creators-update-and-older"></a>Windows 10 Creators Update 及較舊版本
 
@@ -233,13 +233,13 @@ public class CommandBarHack : CommandBar
 
 ![英文和西班牙文資源 string 資料夾](images/accesskeys/resource-string-folders.png)
 
-_英文和西班牙文資源 string 資料夾_
+_英文和西班牙文資源字串資料夾_
 
 在專案的 resources.resw 檔案中，指定當地語系化的便捷鍵：
 
 ![在 resources.resw 檔案中指定 AccessKey 屬性](images/accesskeys/resource-resw-file.png)
 
-_在 resources.resw 檔案中指定 AccessKey 屬性_
+_指定 resources.resw 檔案中指定的 AccessKey 屬性_
 
 如需詳細資訊，請參閱[翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965329(v=win.10).aspx)
 
@@ -251,21 +251,21 @@ _在 resources.resw 檔案中指定 AccessKey 屬性_
 
 ![自動按鍵提示位置的範例](images/accesskeys/auto-keytip-position.png)
 
-_自動按鍵提示位置的範例_
+_按鍵提示的自動放置的範例_
 
 但是，如果您需要對按鍵提示放置位置有更多的控制，我們建議下列方式：
 
-1.  **明顯關聯原則**：使用者可以輕鬆地關聯控制項與按鍵提示。
+1.  **明顯的關聯原則**:使用者可以將控制項關聯的按鍵提示輕鬆。
 
     a.  Key Tip 應該**接近**擁有便捷鍵的項目（擁有者）。  
     b.  按鍵提示應該**避免遮蔽具有便捷鍵的已啟用元素**。   
     c.  如果按鍵提示無法接近擁有者放置，它應該與擁有者重疊。 
 
-2.  **可搜尋性**：使用者可以快速探索具有按鍵提示的控制項。
+2.  **可搜尋性**:使用者可以快速地探索具有按鍵提示的控制項。
 
     a.  按鍵提示絕不與其他按鍵提示**重疊**。  
 
-3.  **輕鬆掃描：** 使用者可以輕鬆地瀏覽按鍵提示。
+3.  **快速掃描：** 使用者可以輕鬆地瀏覽按鍵提示。
 
     a.  按鍵提示應該彼此**對齊**並與 UI 項目對齊。
     b.  按鍵提示應該盡可能**分組**。 
@@ -274,11 +274,11 @@ _自動按鍵提示位置的範例_
 
 使用 **KeyTipPlacementMode** 屬性以每個項目或每個群組的方式，自訂按鍵提示的位置。
 
-位置模式是：Top、Bottom、Right、Left、Hidden、Center 和 Auto。
+放置模式包括：頂端、 底部、 右、 左、 隱藏、 置中與自動。
 
 ![按鍵提示位置模式](images/accesskeys/keytip-postion-modes.png)
 
-_按鍵提示位置模式_
+_索引鍵的小費放置模式_
 
 控制項的中心線用於計算按鍵提示的垂直及水平對齊。
 
@@ -303,7 +303,7 @@ KeyTipHorizontalOffset 屬性指示將按鍵提示向左或向右移動多遠。
 
 ![按鍵提示位置模式](images/accesskeys/keytip-offsets.png)
 
-_設定按鍵提示的垂直及水平位移_
+_設定垂直和水平位移的按鍵提示_
 
 ``` xaml
 <Button
@@ -320,7 +320,7 @@ _設定按鍵提示的垂直及水平位移_
 
 ![按鍵提示位置模式](images/accesskeys/keytips-screen-edge.png)
 
-_螢幕邊緣會造成按鍵提示自動重新定位_
+_畫面邊緣造成的按鍵提示，要自動調整本身的位置_
 
 ## <a name="key-tip-style"></a>按鍵提示樣式
 
@@ -330,7 +330,7 @@ _螢幕邊緣會造成按鍵提示自動重新定位_
 
 ![按鍵提示位置模式](images/accesskeys/keytip-customization.png)
 
-_按鍵提示自訂選項_
+_關鍵提示的自訂選項_
 
 這個範例示範如何變更這些應用程式資源：
 
@@ -358,9 +358,9 @@ XAML 架構公開自動化屬性，可讓 UI 自動化用戶端探索使用者�
 ## <a name="related-articles"></a>相關文章
 
 * [鍵盤互動](keyboard-interactions.md)
-* [鍵盤快速操作](keyboard-accelerators.md)
+* [鍵盤快速鍵](keyboard-accelerators.md)
 
 **範例**
-* [XAML 控制項庫 (亦即 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [XAML 控制項陳列庫 (也稱為 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 

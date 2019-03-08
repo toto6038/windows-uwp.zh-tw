@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, opengl, direct3d 11, port, 遊戲, 連接埠
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b6d06ff168f778c87e46fa399775492a3cebcaa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047676"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594213"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11
 
@@ -80,7 +80,7 @@ typedef struct
 
 這個結構含有一個執行個體，並包含所有用來轉譯非常簡單且頂點已著色的網格所需的元件。
 
-> **注意：** 本主題中的任何 OpenGL ES 2.0 程式碼以 Khronos Group，所提供的 Windows API 實作為基礎，並使用 Windows C 程式設計語法。
+> **附註**  Khronos 群組中，所提供的 Windows API 實作根據本主題中的任何的 OpenGL ES 2.0 程式碼，並使用 Windows C 程式設計語法。
 
  
 
@@ -92,7 +92,7 @@ typedef struct
 -   [Microsoft Visual C++](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
-### <a name="prerequisites"></a>先決條件
+### <a name="prerequisites"></a>必要條件
 
 -   選用。 檢閱[將 EGL 程式碼移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)。 閱讀本主題以更加了解 DirectX 所提供的圖形介面。
 
@@ -107,24 +107,24 @@ typedef struct
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="port-the-shader-config.md">移植著色器物件</a></p></td>
+<td align="left"><p><a href="port-the-shader-config.md">連接埠的著色器物件</a></p></td>
 <td align="left"><p>從 OpenGL ES 2.0 移植簡單的轉譯器時，第一個步驟是在 Direct3D 11 中設定對等的頂點和片段著色器物件，以及確定主程式可以在著色器物件編譯完成之後與這些物件通訊。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">移植頂點緩衝區與資料</a></p></td>
+<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">連接埠的端點緩衝區和資料</a></p></td>
 <td align="left"><p>在這個步驟中，您將定義包含網格的頂點緩衝區，以及允許著色器以特定順序周遊頂點的索引緩衝區。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="port-the-glsl.md">移植 GLSL</a></p></td>
+<td align="left"><p><a href="port-the-glsl.md">GLSL 的連接埠</a></p></td>
 <td align="left"><p>一旦將建立和設定緩衝區與著色器物件的程式碼移過去之後，就可以將這些著色器內部的程式碼從 OpenGL ES 2.0 的 GL 著色器語言 (GLSL) 移植到 Direct3D 11 的高階著色器語言 (HLSL)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="draw-to-the-screen.md">繪製到螢幕</a></p></td>
+<td align="left"><p><a href="draw-to-the-screen.md">描繪至螢幕</a></p></td>
 <td align="left"><p>最後，我們要將繪製旋轉立方體的程式碼移植到螢幕。</p></td>
 </tr>
 </tbody>
@@ -135,8 +135,8 @@ typedef struct
 ## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>其他資源
 
 
--   [為 UWP DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
--   [建立適用於 UWP 的新 DirectX 11 專案](user-interface.md)
+-   [準備開發環境適用於 UWP 的 DirectX 遊戲開發](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
+-   [建立新的 DirectX 11 專案適用於 UWP](user-interface.md)
 -   [將 OpenGL ES 2.0 概念與基礎結構對應到 Direct3D 11](map-concepts-and-infrastructure.md)
 
  

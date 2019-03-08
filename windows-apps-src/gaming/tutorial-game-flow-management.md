@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx, 遊戲
 ms.localizationpriority: medium
 ms.openlocfilehash: 37deaabe2586391b0f0c93359133f10830558539
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981492"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608853"
 ---
 # <a name="game-flow-management"></a>管理遊戲流程
 
@@ -131,9 +131,9 @@ void GameMain::InitializeGameState()
 
 在遊戲範例中，遊戲可能處於 3 種主要狀態 (__UpdateEngineState__)：
 
-1. __Waiting for resources__：遊戲迴圈正在循環，在資源 (尤其是圖形資源) 可用之前無法轉換。 當載入資源的非同步工作完成時，它會將狀態更新為 __ResourcesLoaded__。 當層級從磁碟、遊戲伺服器或雲端後端載入新資源時，這通常在層級之間發生。 在遊戲範例中，我們模擬這個行為，因為範例此時並不需要任何額外的個別關卡資源。
-2. __Waiting for press__：遊戲迴圈正在循環，等候特定使用者輸入。 這項輸入是玩家載入遊戲、開始關卡或繼續關卡的動作。 範例程式碼將這些子狀態稱為 __PressResultState__ 列舉值。
-3. 在 __Dynamics__ 中：遊戲迴圈正在執行且使用者正在玩遊戲。 當使用者在玩遊戲時，遊戲會檢查可能轉換的 3 種條件： 
+1. __等候資源__:遊戲迴圈正在循環，在資源 (尤其是圖形資源) 可用之前無法轉換。 當載入資源的非同步工作完成時，它會將狀態更新為 __ResourcesLoaded__。 當層級從磁碟、遊戲伺服器或雲端後端載入新資源時，這通常在層級之間發生。 在遊戲範例中，我們模擬這個行為，因為範例此時並不需要任何額外的個別關卡資源。
+2. __等候按__:遊戲迴圈正在循環，等候特定使用者輸入。 這項輸入是玩家載入遊戲、開始關卡或繼續關卡的動作。 範例程式碼將這些子狀態稱為 __PressResultState__ 列舉值。
+3. 在  __Dynamics__:遊戲迴圈正在執行且使用者正在玩遊戲。 當使用者在玩遊戲時，遊戲會檢查可能轉換的 3 種條件： 
     * __TimeExpired__：關卡設定的時間到期
     * __LevelComplete__：玩家完成關卡 
     * __LevelComplete__：玩家完成所有關卡
@@ -277,7 +277,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <thead>
 <tr class="header">
 <th align="left">事件處理常式</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -289,7 +289,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <td align="left">OnDpiChanged</td>
 <td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>。 已變更顯示器的 DPI，而遊戲會隨之調整其資源。
 <div class="alert">
-<strong>注意：</strong><a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong></a>座標位在<a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">direct2d</a>的 Dip （裝置獨立像素）。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
+<strong>附註</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong> </a>座標是 dip （裝置無關的像素），如<a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
 </div>
 <div>
 </div></td>
@@ -334,9 +334,9 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 本主題中，我們已討論如何使用遊戲狀態管理整體遊戲流量，以及遊戲的多個不同狀態的電腦所組成。 我們也已經了解如何更新 UI，以及管理主應用程式鍵事件處理常式。 現在，我們已經準備好深入轉譯迴圈、遊戲及其機制。
  
 您可以瀏覽其他以任何順序構成此遊戲的元件：
-* [定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)
-* [轉譯架構 I：轉譯簡介](tutorial--assembling-the-rendering-pipeline.md)
-* [轉譯架構 II：遊戲轉譯](tutorial-game-rendering.md)
-* [新增使用者介面](tutorial--adding-a-user-interface.md)
-* [新增控制項](tutorial--adding-controls.md)
-* [新增音效](tutorial--adding-sound.md)
+* [定義主要的遊戲物件](tutorial--defining-the-main-game-loop.md)
+* [轉譯架構 i:轉譯為您簡介](tutorial--assembling-the-rendering-pipeline.md)
+* [轉譯架構 II:遊戲的轉譯](tutorial-game-rendering.md)
+* [新增的使用者介面](tutorial--adding-a-user-interface.md)
+* [加入控制項](tutorial--adding-controls.md)
+* [加入聲音](tutorial--adding-sound.md)

@@ -4,14 +4,14 @@ title: Property-path 語法
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919294"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632363"
 ---
 # <a name="property-path-syntax"></a>Property-path 語法
 
@@ -50,11 +50,11 @@ ms.locfileid: "8919294"
 
 ### <a name="indexers"></a>索引子
 
-資料繫結的屬性路徑可以包含索引屬性的參考。 這樣便能繫結到已排序的清單/向量，或繫結到字典/對應。 使用方括號 "\[\]" 字元來表示索引屬性。 這種括號中的內容可以是整數 (已排序的清單) 或未加引號的字串 (字典)。 您也可以繫結到索引鍵為整數的字典。 您可以在相同的路徑中使用不同的索引屬性，並使用點來分隔物件-屬性。
+資料繫結的屬性路徑可以包含索引屬性的參考。 這樣便能繫結到已排序的清單/向量，或繫結到字典/對應。 使用方括號"\[\]"字元來表示索引的屬性。 這種括號中的內容可以是整數 (已排序的清單) 或未加引號的字串 (字典)。 您也可以繫結到索引鍵為整數的字典。 您可以在相同的路徑中使用不同的索引屬性，並使用點來分隔物件-屬性。
 
-例如，假設有一個含 "Teams" 清單 (已排序清單) 的商務物件，每一個清單都包含一個 "Players" 字典，其中每個玩家都以姓氏做為索引鍵。 則第二隊特定玩家的屬性路徑範例是："Teams\[1\].Players\[Smith\]" (您使用 1 來指出 "Teams" 中的第二個項目，因為這個清單是從 0 開始建立索引。)
+例如，假設有一個含 "Teams" 清單 (已排序清單) 的商務物件，每一個清單都包含一個 "Players" 字典，其中每個玩家都以姓氏做為索引鍵。 第二個小組的特定玩家範例屬性路徑是：「 團隊\[1\]。玩家\[Smith\]"。 (您使用 1 來指出 "Teams" 中的第二個項目，因為這個清單是從 0 開始建立索引。)
 
-**注意：** 對 c + + 資料來源的索引功能支援是有限的;請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**附註**  編製索引支援 c + + 資料來源有限制，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 ### <a name="attached-properties"></a>附加屬性
 
@@ -84,15 +84,15 @@ ms.locfileid: "8919294"
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>指定集合中的特定子項
 
-若要指定集合屬性中的子項目，可以使用數值索引子。 請將整數索引值括在方括號 "\[\]" 字元內。 您只可以參考已排序的清單，不可以參考字典。 因為集合不是可以產生動畫效果的值，所以屬性路徑的結尾屬性永遠不可以使用索引子。
+若要指定集合屬性中的子項目，可以使用數值索引子。 使用方括號"\[\]"字元周圍的整數索引值。 您只可以參考已排序的清單，不可以參考字典。 因為集合不是可以產生動畫效果的值，所以屬性路徑的結尾屬性永遠不可以使用索引子。
 
-例如，若要在套用到控制項[**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 屬性的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) 中指定第一個色彩停止點的顏色動畫，則屬性路徑如下："(Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color)"。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) 屬性，以便套用 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 動畫值。
+例如，若要指定您想要以動畫顯示的第一個色彩停止中的色彩[ **LinearGradientBrush** ](https://msdn.microsoft.com/library/windows/apps/br210108)套用至控制項[**背景**](https://msdn.microsoft.com/library/windows/apps/br209395)屬性，這是屬性路徑:"(Control.Background)。(GradientBrush.GradientStops)\[0\]。 (GradientStop.Color) 」。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) 屬性，以便套用 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 動畫值。
 
 ## <a name="animating-an-attached-property"></a>讓附加屬性產生動畫效果
 
 這不是常見情況；不過，只要附加屬性具有符合動畫類型的屬性值，就可以讓它產生動畫效果。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定讓物件上 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 附加屬性產生動畫效果的字串會使用屬性路徑 "(Grid.Row)"。
 
-**注意：** 針對此範例， [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)的值是**Int32**屬性類型。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 元件的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)，其中 [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) 會設定為 "0" 或 "1" 的整數。
+**附註**  針對此範例中，值[ **Grid.Row** ](https://msdn.microsoft.com/library/windows/apps/hh759795)是**Int32**屬性型別。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 元件的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)，其中 [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) 會設定為 "0" 或 "1" 的整數。
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>動畫目標屬性路徑中的屬性規則
 
@@ -103,19 +103,19 @@ ms.locfileid: "8919294"
 
 ## <a name="the-propertypath-class"></a>PropertyPath 類別
 
-[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別是用於繫結案例的 [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 相關屬性類型。
+[  **PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別是用於繫結案例的 [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 相關屬性類型。
 
 您通常可以在 XAML 中直接套用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，完全不需要使用任何程式碼。 但在某些情況下，您可能要使用程式碼來定義 **PropertyPath** 物件，並在執行階段將它指派給屬性。
 
-[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 具有一個 [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) 建構函式，而且不具有預設建構函式。 傳遞到這個建構函式的字串是使用屬性路徑語法定義的字串，如本文稍早的說明。 這也是用來將 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 指派為 XAML 屬性的同一個字串。 **PropertyPath** 類別唯一的另一個 API 是唯讀的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) 屬性。 您可以使用這個屬性做為另一個 **PropertyPath** 執行個體的建構字串。
+[**PropertyPath** ](https://msdn.microsoft.com/library/windows/apps/br244259)已[ **PropertyPath(String)** ](https://msdn.microsoft.com/library/windows/apps/br244261)建構函式，且沒有預設建構函式。 傳遞到這個建構函式的字串是使用屬性路徑語法定義的字串，如本文稍早的說明。 這也是用來將 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 指派為 XAML 屬性的同一個字串。 **PropertyPath** 類別唯一的另一個 API 是唯讀的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) 屬性。 您可以使用這個屬性做為另一個 **PropertyPath** 執行個體的建構字串。
 
 ## <a name="related-topics"></a>相關主題
 
 * [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [建立圖片敘述的動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [{Binding} 標記延伸](binding-markup-extension.md)
 * [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
 * [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**Binding 建構函式**](https://msdn.microsoft.com/library/windows/apps/br209825)
+* [**繫結的建構函式**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
 

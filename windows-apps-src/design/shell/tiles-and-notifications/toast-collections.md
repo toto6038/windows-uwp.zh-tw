@@ -1,5 +1,5 @@
 ---
-Description: Learn how to group notifications in Action Center using collections.
+Description: 了解如何在群組中使用集合的重要訊息中心通知。
 title: 快顯通知集合
 label: Toast Collections
 template: detail.hbs
@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Windows 10, uwp, 通知, 集合, 集合, 群組通知, 群組通知, 群組, 組織, 重要訊息中心, 快顯通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b6818f876c094298a0a6636faa00efa9a192545
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943879"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600683"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>使用集合來群組快顯通知
 使用集合來組織應用程式在重要訊息中心的快顯通知。 集合有助於使用者更容易在重要訊息中心找出資訊，並讓開發人員更好管理他們的通知。  下列 API 允許移除、建立和更新通知集合。
 
 > [!IMPORTANT]
-> **需要 Creators Update**：您必須以 SDK 15063 為目標並執行組建 15063 或更新版本，才能使用快顯通知集合。 相關 API 包含 [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection)，以及 [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **需要 Creators Update**:您必須為目標 SDK 15063，並執行組建 15063 或更高版本以使用快顯通知的集合。 相關 API 包含 [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection)，以及 [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
 您可以參閱以下訊息中心應用程式的範例，根據聊天群組分隔通知；每一個標題（Comp Sci 160A 聊天專案、直接訊息、Lacrosse 小組聊天）皆為個別的集合。  請注意如何群組不同的通知就像來自個別的應用程式一樣，即使這些通知皆來自相同的應用程式。  如果您要尋找更精細的方式組織您的通知，請參閱 [快顯通知標頭](toast-headers.md)。  
-![有兩個不同通知群組的集合範例](images/toast-collection-example.png)
+![集合範例使用兩個不同群組的通知](images/toast-collection-example.png)
 
 ## <a name="creating-collections"></a>建立集合
 建立每個集合時，您需要提供顯示名稱與圖示，在重要訊息中心中顯示為的集合標題一部分，如上圖所示。 使用者點閱集合標題時，集合也需要啟動引數來協助應用程式在應用程式中對的位置瀏覽。  
@@ -188,6 +188,6 @@ collectionHistory.Clear();
 
 ## <a name="related-topics"></a>相關主題
 
-* [快顯通知內容](adaptive-interactive-toasts.md)
-* [快顯通知標頭](toast-headers.md)
-* [GitHub 上的 Notifications 程式庫 (屬於 Windows 社群工具組)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [快顯內容](adaptive-interactive-toasts.md)
+* [快顯通知的標頭](toast-headers.md)
+* [GitHub （Windows 社群工具組的一部分） 上的通知程式庫](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

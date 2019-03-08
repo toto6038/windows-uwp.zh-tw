@@ -6,21 +6,21 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 21a053934d7391d12f7cd987026524b9ff4c279d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923115"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639983"
 ---
 # <a name="create-data-bindings"></a>建立資料繫結
 
 假設您設計並實作了美觀的 UI，其中已填入預留位置影像、「lorem ipsum」重複使用文字以及還沒有任何作用的控制項。 接下來，您就會想要將它連接到實際資料，並將其由設計原型轉換成實用應用程式。 
 
-在本教學課程中，您將了解如何將重複使用文字取代成資料繫結，以及建立 UI 與資料之間的其他直接連結。 您還會了解如何格式化或轉換資料用於顯示，以及保持 UI 與資料同步。當您完成本教學課程時，您就可以增進 XAML 和 C# 程式碼的簡約性與條理性，使之更便於維護和擴充。
+在本教學課程中，您將了解如何將重複使用文字取代成資料繫結，以及建立 UI 與資料之間的其他直接連結。 您也將了解如何格式化或轉換資料的方式顯示，並讓您的 UI 和資料保持同步。當您完成本教學課程中時，您將能夠改善的簡易性和 XAML 的組織和C#程式碼，更容易維護及擴充。
 
 您將會從簡化版的 PhotoLab 範例開始著手。 這個簡易使用包含完整的資料層以及基本的 XAML 頁面配置，但省去次要功能，讓程式碼更易於瀏覽。 本教學課程不會一直建置到完整的應用程式，因此請務必查看最終版本來了解各項功能，例如自訂動畫和電話支援。 您可以在 [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) 存放庫的根資料夾中找到最終版本。 
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 * [Visual Studio 2017 和最新版 Windows 10 SDK](https://developer.microsoft.com/windows/downloads)。
 
@@ -41,7 +41,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
 一次性繫結適用於唯讀不變的資料，意味著這些繫結有高效能且容易建立，可讓您在 **GridView**和 **ListView** 控制項中顯示大型資料集。 
 
-**以一次性繫結取代預留位置**
+**預留位置取代為單次的繫結**
 
 1. 開啟 xaml-basics-starting-points\data-binding 資料夾並啟動 PhotoLab.sln 檔案。 
 
@@ -122,7 +122,7 @@ PhotoLab 應用程式有兩個主要頁面：
 > [!Note]
 > 如果您想要進一步實驗，請嘗試將新的 TextBlock 加入至資料範本，並使用 x:Bind IntelliSense 技巧尋找要顯示的屬性。 
 
-## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>第 2 部分：使用繫結將圖庫 UI 連接至影像
+## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>第 2 部分：使用繫結來連接至映像的組件庫 UI
 
 這裡會在頁面 XAML 中建立一次性繫結，將圖庫檢視連接至影像集合，並取代在程式碼後置中執行此作業的現有程序性程式碼。 此外，還會建立 **\[刪除\]** 按鈕，用來查看圖庫檢視在影像自集合中移除時的變化情況。 在此同時，您將會了解如何將事件繫結至事件處理常式，以取得比傳統事件處理常式所能提供的還要大的彈性。 
 
@@ -132,7 +132,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
 在 PhotoLab 範例中，這類繫結的其中一個用途是將主要 **GridView** 控制直接連接至影像集合，而不是在程式碼後置中執行此作業。 您稍後將會看到其他範例。 
 
-**將主要 GridView 控制項繫結至影像集合**
+**主要的 GridView 控制項繫結至映像集合**
 
 1. 在 MainPage.xaml.cs 中，尋找 **OnNavigatedTo** 方法，並移除設定 **ItemsSource** 的程式碼。
 
@@ -160,7 +160,7 @@ PhotoLab 應用程式有兩個主要頁面：
               ItemsSource="{x:Bind Images}" 
     ```
 
-    **Images** 屬性的類型為 **ObservableCollection\<ImageFileInfo\>**，因此顯示在 **GridView** 中的個別項目屬於類型 **ImageFileInfo**。 這符合第 1 部分中所述的 **x:DataType** 值。 
+    **映像**屬性屬於型別**ObservableCollection\<ImageFileInfo\>**，所以個別項目以顯示**GridView**是型別的**ImageFileInfo**。 這符合第 1 部分中所述的 **x:DataType** 值。 
 
 到目前為止討論到的所有繫結都是一次性唯讀繫結，這是一般 **x:Bind** 運算式的預設行為。 資料只會在初始化時載入，這有助於高效能繫結，用來支援大型資料集的多個複雜檢視，再合適不過。 
 
@@ -171,11 +171,11 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-**Images** 屬性的值永不變更，但由於該屬性的類型為 **ObservableCollection\<T\>**，集合的 *contents* 卻可能變更，繫結將會自動發現變更並更新 UI。 
+**映像**永遠不會變更屬性值，但因為屬性是型別的**ObservableCollection\<T\>**，則*內容*的集合可能會變更，並繫結會自動提高一點警覺，並更新 UI。 
 
-為了測試這點，我們要暫時新增刪除目前所選影像的按鈕。 這個按鈕不在最終版本中，因為選取影像就會帶您前往詳細資料頁面。 不過，**ObservableCollection\<T\>** 的行為在最終 PhotoLab 範例中仍然很重要，因為 XAML 是在頁面建構函式中進行初始化 (透過 **InitializeComponent** 方法呼叫)，而 **Images** 集合則是後來在 **OnNavigatedTo**方法中填入。 
+為了測試這點，我們要暫時新增刪除目前所選影像的按鈕。 這個按鈕不在最終版本中，因為選取影像就會帶您前往詳細資料頁面。 不過，行為**ObservableCollection\<T\>** 很中最後一個範例中，PhotoLab 仍然重要，因為 XAML 頁面的建構函式中初始化 (透過**InitializeComponent**方法呼叫)，但**映像**稍後在填入集合**OnNavigatedTo**方法。 
 
-**新增刪除按鈕**
+**新增 [刪除] 按鈕**
 
 1. 在 MainPage.xaml 中，尋找名為 **MainCommandBar** 的 **CommandBar**，並在縮放按鈕之前加入新的按鈕  (縮放控制項尚無法運作。 您將會在教學課程的下一個部分連結這些按鈕)。
 
@@ -198,16 +198,16 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
     這個方法只是單純從 **Images** 集合中刪除選取的影像。 
 
-現在請執行應用程式，並使用按鈕來刪除一些影像。 如您所見，由於資料繫結和 **ObservableCollection\<T\>** 類型的作用，UI 已自動更新。 
+現在請執行應用程式，並使用按鈕來刪除一些影像。 如您所見，UI 會自動更新，因為資料繫結與**ObservableCollection\<T\>** 型別。 
 
 > [!Note]
 > 想要一點挑戰的話，請嘗試新增兩個分別上移和下移動清單中所選影像的按鈕，然後使用 x:Bind 將其 Click 事件繫結至類似於 DeleteSelectedImage 的新方法。
  
-## <a name="part-3-set-up-the-zoom-slider"></a>第 3 部分：設定縮放滑桿 
+## <a name="part-3-set-up-the-zoom-slider"></a>第 3 部分：設定 [縮放] 滑桿 
 
 在此部分，您將會從資料範本中的控制項建立對範本以外縮放滑桿的單向繫結。 您也將了解，您可以使用資料繫結搭配許多控制項屬性，而不只是像 **TextBlock.Text** 和 **Image.Source** 這樣最顯而易見的屬性。 
 
-**將影像資料範本繫結至縮放滑桿**
+**將映像資料範本繫結至縮放滑桿**
 
 * 尋找名為 **ImageGridView_DefaultItemTemplate** 的 **DataTemplate**，並取代範本最前面 **Grid** 控制項的 **Height** 及 **Width** 值。
 
@@ -220,7 +220,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
               Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **之後**
+    **After**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -249,13 +249,13 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 > [!NOTE]
 > 想要一點挑戰的話，請嘗試將其他 UI 屬性繫結至縮放滑桿 **Value** 屬性，或繫結至其他在縮放滑桿之後新增的滑桿。 例如，您以將 **TitleTextBlock** 的 **FontSize** 屬性繫結至預設值為 **24** 的新滑桿。 請務必設定合理的最小值和最大值。
 
-## <a name="part-4-improve-the-zoom-experience"></a>第 4 部分：改善縮放體驗 
+## <a name="part-4-improve-the-zoom-experience"></a>第 4 部分：改善的縮放體驗 
 
 此部分會將自訂 **ItemSize** 屬性新增至程式碼後置，並建立從影像範本建立至新屬性的單向繫結。 **ItemSize** 值將會因為縮放滑桿以及其他如 **\[符合螢幕大小\]** 切換鈕和視窗大小等因素而更新，使得體驗更加精緻。 
 
 與內建控制項屬性不同，您的自訂屬性不會自動更新 UI，即使有單向和雙向繫結，也不會。 這些使用**一次性**繫結的屬性可以正常運作，但如果您想要屬性變更實際顯示在 UI 上，就需要做一些工作。 
 
-**建立 ItemSize 屬性，讓它來更新 UI**
+**建立 ItemSize 屬性，讓它會更新 UI**
 
 1. 在 MainPage.xaml.cs 中，變更 **MainPage** 類別的特徵標記，以便實作 **INotifyPropertyChanged** 介面。
 
@@ -312,7 +312,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
             Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **之後**
+    **After**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -323,7 +323,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 現在 UI 可以回應 **ItemSize** 變更，您需要實際進行一些變更。 如前所述，**ItemSize** 值是從各種不同 UI 控制項的目前狀態計算求出，但每當這些控制項改變狀態時都必須執行計算。 為了這樣做，您會使用事件繫結來讓特定 UI 變更呼叫更新 **ItemSize** 的 Helper 方法。 
 
-**更新 ItemSize 屬性值**
+**更新的 ItemSize 屬性值**
 
 1. 將新增 **DetermineItemSize** 方法新增至 MainPage.xaml.cs。
 
@@ -415,7 +415,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 > 想要一點挑戰的話，請嘗試在 **ZoomSlider** 之後新增 **TextBlock**，並將 **Text** 屬性繫結至 **ItemSize** 屬性。 由於不是在資料範本之中，您可以使用 **x:Bind** 替代 **Binding**，就像在先前 **ItemSize** 繫結中一樣。  
 }
 
-## <a name="part-5-enable-user-edits"></a>第 5 部分：允許使用者編輯
+## <a name="part-5-enable-user-edits"></a>第 5 部分：讓使用者編輯
 
 這裡會建立雙向繫結，讓使用者可以更新各值，包括影像標題、評分以及各種視覺效果。 
 
@@ -428,7 +428,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 1. 在 MainPage.xaml 中，尋找名為 **ImageGridView** 的 **GridView**，並新增 **ItemClick** 值。 
 
     > [!TIP] 
-    > 如果您鍵入下方變更，而不是以複製/貼上方式進行，您將會看到 IntelliSense 快顯視窗顯示「\<新事件處理常式\>」。 如果您按下 Tab 鍵，其中會填入預設方法處理常式名稱的值，並自動移除下一個步驟中顯示的方法。 接著可以按 F12 瀏覽至程式碼後置中的方法。 
+    > 如果您鍵入下列變更，而不是複製/貼上，您會看到 IntelliSense 快顯視窗顯示 「\<新的事件處理常式\>"。 如果您按下 Tab 鍵，其中會填入預設方法處理常式名稱的值，並自動移除下一個步驟中顯示的方法。 接著可以按 F12 瀏覽至程式碼後置中的方法。 
 
     **之前：**
     ```xaml
@@ -463,7 +463,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 所有控制項皆已使用我們在第 1 部分討論的一般 **x:Bind** 運算式來進行繫結。 如果您還記得，這表示那些運算式都是一次性繫結，正好說明為什麼無法登錄值變更的原因。 若要修正這個問題，我們所需做的就是將運算式雙變成雙向繫結。 
 
-**使編輯控制項有互動功能**
+**將編輯控制項設為互動式**
 
 1. 在 DetailPage.xaml 中，尋找名為 **TitleTextBlock** 的 **TextBlock** 以及其後的 **RadRating** 控制項，並將這些控制項的 **X:bind** 運算式更新為包含 **Mode=TwoWay**。
 
@@ -502,7 +502,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 執行應用程式，然後嘗試編輯控制項。 如您所見，現在進行變更時會影響影像值，而這些變更在您瀏覽回到主頁面時仍然持續。 
 
-## <a name="part-6-format-values-through-function-binding"></a>第 6 部分：透過函式繫結將值格式化
+## <a name="part-6-format-values-through-function-binding"></a>第 6 節：透過函式繫結的格式值
 
 還剩最後一個問題。 當您移動效果滑桿時，旁邊的標籤卻仍未變更。 
 
@@ -510,7 +510,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 本教學課程的最後部分是新增格式化滑桿顯示值的繫結。
 
-**繫結效果滑桿標籤並格式化顯示值**
+**繫結生效滑動軸標籤，並格式化顯示的值**
 
 1. 尋找 **\[曝光\]** 滑桿之後的 **TextBlock**，並將 **Text** 值取代為這裡顯示的繫結運算式。
 
@@ -557,11 +557,11 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 > 嘗試將函式繫結與上次習作中的 **TextBlock** 搭配使用，並將其繫結至一個新方法，這個方法會在您將 **ItemSize** 值傳入其中時傳回格式為「000 x 000」的字串。
 
 
-## <a name="conclusion"></a>總結
+## <a name="conclusion"></a>結論
 
 本教學課程讓您了解了一下資料繫結，並且示範一些可用的功能。 但在總結之前，要提醒您注意：並非所有的項目都可繫結，有時候您嘗試連接到的值會與您嘗試繫結至的屬性不相容。 繫結有很大的彈性，但不是所有的情況下都適用。
 
-例如，就和詳細資料頁面縮放功能的情況一樣，當控制項沒有可繫結至的合適屬性時，便是繫結無法解決的問題。 這個縮放滑桿必須與顯示影像的 **ScrollViewer** 互動，但是 **ScrollViewer** 只能透過其 **ChangeView** 方法來更新。 在這種情況下，我們會使用傳統事件處理常式來保持 **ScrollViewer** 與縮放滑桿同步。如需詳細資訊，請參閱 **DetailPage** **ZoomSlider_ValueChanged** 和 **MainImageScroll_ViewChanged** 方法。
+例如，就和詳細資料頁面縮放功能的情況一樣，當控制項沒有可繫結至的合適屬性時，便是繫結無法解決的問題。 這個縮放滑桿必須與顯示影像的 **ScrollViewer** 互動，但是 **ScrollViewer** 只能透過其 **ChangeView** 方法來更新。 在此情況下，我們將使用傳統的事件處理常式**ScrollViewer**及 [縮放] 滑桿中的同步處理，請參閱**DetailPage** **ZoomSlider_ValueChanged**和**MainImageScroll_ViewChanged**方法，如需詳細資訊。
 
 盡管如此，繫結仍是有效且具彈性的方式，可以簡化程式碼，並將 UI 邏輯與資料邏輯區隔。 這使得您調整此區隔兩邊的工作越發輕鬆，同時還能降低引入另一邊所出錯誤的風險。 
 
@@ -595,5 +595,5 @@ public string ImageTitle
     
 您應該已經在本教學課程中獲得您需要的所有資訊，如果還需要更多的指導方針，只要按一下滑鼠即可取得資料繫結文件。 從這裡開始：
 
-+ [{x:Bind} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
++ [{x： 繫結} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
 + [深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)

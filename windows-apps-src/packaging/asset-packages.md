@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ae65d13f92f5ab28f2f5eda468032bb7f83793
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944349"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594663"
 ---
 # <a name="introduction-to-asset-packages"></a>資產套件簡介
 
@@ -26,7 +26,7 @@ ms.locfileid: "8944349"
 ### <a name="how-do-asset-packages-affect-publishing"></a>資產套件如何影響資產？
 資產套件的最明顯優點是減少封裝應用程式的大小。 較小的應用程式套件會透過讓 Microsoft Store 處理較少的檔案，加快應用程式的發佈程序，但是這不是最重要的資產套件好處。
 
-建立資產套件時，您可以指定是否應該允許執行套件。 因為資產套件應只包含架構無關檔案，它們通常不包含任何 .dll 或 .exe 檔案，因此通常不需要執行資產套件。 此區別的重要性是在發佈過程中，所有的可執行檔套件都必須掃描，確保不包含惡意程式碼，而對於較大的套件此掃描程序需要較長的時間。 不過，如果套件指定為不可執行，應用程式安裝將確保，無法執行此套件中所包含的檔案。 這項保證免除完整套件掃描，在應用程式發佈期間 (以及更新) 會大幅降低惡意程式碼掃描時間 - 因此使用資產套件的應用程式，發佈速度大幅提升。 請注意，[一般套件組合應用程式套件](flat-bundles.md)必須也用來取得此發佈好處，因為這可讓 microsoft Store 處理平行每個.appx 或.msix 套件檔案。 
+建立資產套件時，您可以指定是否應該允許執行套件。 因為資產套件應只包含架構無關檔案，它們通常不包含任何 .dll 或 .exe 檔案，因此通常不需要執行資產套件。 此區別的重要性是在發佈過程中，所有的可執行檔套件都必須掃描，確保不包含惡意程式碼，而對於較大的套件此掃描程序需要較長的時間。 不過，如果套件指定為不可執行，應用程式安裝將確保，無法執行此套件中所包含的檔案。 這項保證免除完整套件掃描，在應用程式發佈期間 (以及更新) 會大幅降低惡意程式碼掃描時間 - 因此使用資產套件的應用程式，發佈速度大幅提升。 請注意，[一般的套件組合應用程式套件](flat-bundles.md)也必須用來取得此發行的權益，因為這可讓每個.appx 或.msix 封裝檔案，以平行方式處理的存放區。 
 
 
 ### <a name="should-i-use-asset-packages"></a>我應該使用資產套件嗎？

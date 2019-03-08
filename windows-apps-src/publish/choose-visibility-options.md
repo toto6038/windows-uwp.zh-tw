@@ -1,23 +1,23 @@
 ---
-Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
+Description: 設定您的應用程式可以如何探索及取得，包括人員是否可以尋找您的應用程式存放區中，或參閱它列出所有的存放區的限制。
 title: 選擇可見度選項
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 可見度, 私人對象, 可用, 可搜尋
 ms.localizationpriority: medium
 ms.openlocfilehash: a002037e85f179e4a2dbe3dfdaf4bc3579e110e4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921121"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601733"
 ---
 # <a name="choose-visibility-options"></a>選擇可見度選項
 
 
 [\[價格與可用性\] 頁面](set-app-pricing-and-availability.md)的 **\[可見度\]** 區段可讓您設定探索及取得您應用程式之方式的限制。 這能讓您指定人員是否可以在 Microsoft Store 中找到您的應用程式或甚至是查看其 Store 清單。
 
-\[可見度\] 區段中有兩個不同的區段：**\[對象\]** 和 **\[可搜尋性\]**。 
+有兩個不同的區段的可見性區段中：**對象**並**可測知性**。 
 
 ## <a name="audience"></a>對象
 
@@ -58,7 +58,7 @@ ms.locfileid: "8921121"
 - 您的應用程式無法透過商務用 Microsoft Store 和/或教育用 Microsoft Store 提供 (即使是提供給私人對象中的人員)，無論您的組織授權設定為何。
 - 雖然 Microsoft Store 可以確保您的應用程式只顯示且提供給您已新增到私人對象並以 Microsoft 帳戶登入的人員，但我們無法防止這些人將資訊或螢幕擷取畫面分享到私人對象外部。 如果您很重視機密性，請確定您的私人對象只包含您信任他們不會與其他人分享應用程式相關詳細資訊的人員。
 - 請務必讓您的測試人員了解如何提供意見反應給您。 您可能不會希望他們透過 \[意見反應中樞\] 留下意見反應，因為任何其他客戶可能會看到該意見反應。 請考慮提供讓他們傳送電子郵件或以其他方式提供意見反應的連結。
-- 私人對象中的人員所撰寫的任何評論可供您檢視。 不過，即使您的提交移至 **\[公開對象\]** 後，這些評論仍不會發佈至您應用程式的 Store 清單。 您可以讀取私人對象所撰寫的檢視[評論報告](reviews-report.md)、 評論，但您無法下載此資料，或使用 「 [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md)以程式設計方式存取這些評論。
+- 私人對象中的人員所撰寫的任何評論可供您檢視。 不過，即使您的提交移至 **\[公開對象\]** 後，這些評論仍不會發佈至您應用程式的 Store 清單。 您可以閱讀檢視作者您私人的對象的評論[檢閱報表](reviews-report.md)，但您無法下載此資料，或使用[Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md)以程式設計方式存取這些審查。
 - 當您將應用程式從 **\[私人對象\]** 移動至 **\[公開對象\]**，Microsoft Store 清單中顯示的 **\[發行日期\]** 將是它首次發行給公開對象的日期。
 
 ## <a name="discoverability"></a>可搜尋性
@@ -71,7 +71,7 @@ ms.locfileid: "8921121"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>在 Microsoft Store 推出此產品並且可供搜尋
 
-此為預設選項。 保留選取您想要網上商店客戶能夠來尋找透過 app 的直接連結和/或其他方法，包括搜尋、 瀏覽和包含於經過挑選的清單中列出您的應用程式如果此選項。 
+此為預設選項。 保留此選項，選取如果您想要在客戶尋找透過應用程式的直接連結，及/或透過其他方式，包括搜尋、 瀏覽，以及包含在清單中的存放區中列出的應用程式。 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>在 Microsoft Store 推出此產品，但不供搜尋
 
@@ -86,11 +86,11 @@ ms.locfileid: "8921121"
 >[!IMPORTANT]
 > 每一個選項都會限制客戶可取得您的應用程式的作業系統版本。 請詳細閱讀描述，確實了解支援的作業系統版本。 
 
-- **僅限直接連結︰擁有產品清單的直接連結的客戶都可以下載，但是 Windows 8.x 例外。** 透過直接連結前往您的應用程式清單的客戶可在執行 Windows 10 的裝置或執行 Windows Phone 8.1 和較舊版本的裝置 (但執行 Windows 8.x 的裝置除外) 上進行下載。
-- **停止取得︰擁有直接連結的任何客戶可以看到產品的Microsoft Store清單，但除非他們已擁有該產品，或是有促銷碼而且使用 Windows 10 裝置，才能下載。** 即使客戶有直接連結，除非有[促銷碼](generate-promotional-codes.md)且使用 Windows 10 裝置，否則仍無法下載應用程式。 如果客戶有促銷碼，他們可以使用代碼免費取得您的應用程式 (僅限在 Windows 10 上)，即使您未提供給任何其他客戶。 除了使用促銷碼之外，任何人沒有其他方式可取得您的應用程式。
+- **只有直接連結：任何使用產品的清單的直接連結的客戶可以下載它，除了在 Windows 上 8.x。** 透過直接連結前往您的應用程式清單的客戶可在執行 Windows 10 的裝置或執行 Windows Phone 8.1 和較舊版本的裝置 (但執行 Windows 8.x 的裝置除外) 上進行下載。
+- **停止擷取：任何具有直接連結的客戶可以看到產品的存放區清單，但可以只會下載它如果他們擁有的產品之前，或有促銷代碼，而且使用 Windows 10 裝置。** 即使客戶有直接連結，除非有[促銷碼](generate-promotional-codes.md)且使用 Windows 10 裝置，否則仍無法下載應用程式。 如果客戶有促銷碼，他們可以使用代碼免費取得您的應用程式 (僅限在 Windows 10 上)，即使您未提供給任何其他客戶。 除了使用促銷碼之外，任何人沒有其他方式可取得您的應用程式。
 
 > [!TIP]
-> 如果您想要完全停止為新客戶提供某個應用程式，您可選取其概觀頁面的 **\[停止提供應用程式\]**。 在您確認想要停止提供該應用程式之後，該應用程式在數小時內便無法在 Microsoft Store 中讓別人看見，而所有的新客戶都將無法取得它 (除非他們有[促銷碼](generate-promotional-codes.md)且使用 Windows 10 裝置)。 這個動作會覆寫您提交中的 **\[可見度\]** 選取項目。 若要再次為新客戶提供該應用程式 (根據您的 **\[可見度\]** 選取項目)，您可隨時按一下概觀頁面中的 **\[提供 app\]**。 如需詳細資訊，請參閱[從 Microsoft Store 移除應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
+> 如果您想要完全停止為新客戶提供某個應用程式，您可選取其概觀頁面的 **\[停止提供應用程式\]**。 在您確認想要停止提供該應用程式之後，該應用程式在數小時內便無法在 Microsoft Store 中讓別人看見，而所有的新客戶都將無法取得它 (除非他們有[促銷碼](generate-promotional-codes.md)且使用 Windows 10 裝置)。 這個動作會覆寫您提交中的 **\[可見度\]** 選取項目。 若要再次為新客戶提供該應用程式 (根據您的 **\[可見度\]** 選取項目)，您可隨時按一下概觀頁面中的 **\[提供 app\]**。 如需詳細資訊，請參閱[從市集移除 app](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
 
 
 

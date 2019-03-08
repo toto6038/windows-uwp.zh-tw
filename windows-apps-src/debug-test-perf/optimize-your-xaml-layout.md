@@ -1,30 +1,30 @@
 ---
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
-title: 最佳化您的 XAML 版面配置
-description: 版面配置可說是 XAML App 中高度耗費資源的一部分&amp;\#8212;在 CPU 使用量與記憶體負荷方面。 您可以採取下列一些簡單步驟來提升 XAML 應用程式的版面配置效能。
+title: 最佳化您的 XAML 配置
+description: 配置可以是 XAML 應用程式中昂貴的一部分 （& s)\#8212; 這兩個在 CPU 使用量和記憶體額外負荷。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c00b406f77758266c68a16b078192517caaa14bf
-ms.sourcegitcommit: 616adaaf15ae1b41e867181326c094f42ba6ec07
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "8990214"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608563"
 ---
-# <a name="optimize-your-xaml-layout"></a>最佳化您的 XAML 版面配置
+# <a name="optimize-your-xaml-layout"></a>最佳化您的 XAML 配置
 
 
-**重要 API**
+**重要的 Api**
 
--   [**面板**](https://msdn.microsoft.com/library/windows/apps/BR227511)
+-   [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511)
 
 版面配置是為 UI 定義視覺化結構的程序。 用來說明 XAML 版面配置的主要機制是透過面板，這類面板是讓您能夠在其中放置與排列 UI 元素的容器物件。 在 CPU 使用量與記憶體負荷方面，版面配置可說是 XAML app 中高度耗費資源的一部分。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。
 
 ## <a name="reduce-layout-structure"></a>減少版面配置結構
 
-簡化 UI 元素樹狀結構的階層結構，就能獲得最大的版面配置效能。 面板存在於視覺化樹狀結構中，但它們是結構化元素，而不是像 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 或 a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的「像素產生的元素」**。 藉由減少非像素產生的元素來簡化樹狀結構，通常可大幅提升效能。
+簡化 UI 元素樹狀結構的階層結構，就能獲得最大的版面配置效能。 面板存在於視覺化樹狀結構中，但它們是結構化元素，而不是像 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 或 a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的「像素產生的元素」。 藉由減少非像素產生的元素來簡化樹狀結構，通常可大幅提升效能。
 
 許多 UI 都是透過巢狀面板來實作，因而產生了既深且複雜的面板與元素樹狀結構。 巢串面板是非常簡便的，但在許多情況下，您可以利用更複雜的單一面板來達成相同的 UI。 使用單一面板可提供較佳的效能。
 
@@ -42,7 +42,7 @@ ms.locfileid: "8990214"
 
 下列範例示範 3 種實作同一個 UI 的方式。 每個實作選項都會在畫面上產生幾乎完全相同的像素，但在實作細節上卻大不相同。
 
-選項 1：巢狀 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) 元素
+選項 1：巢狀[ **StackPanel** ](https://msdn.microsoft.com/library/windows/apps/BR209635)項目
 
 雖然這是最簡單的模型，但它使用了 5 個面板元素，並產生了顯著的負荷。
 
@@ -70,9 +70,9 @@ ms.locfileid: "8990214"
 </StackPanel>
 ```
 
-選項 2：單一 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
+選項 2：單一[**方格**](https://msdn.microsoft.com/library/windows/apps/BR242704)
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 增加了一些複雜度，但只使用單一面板元素。
+[  **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 增加了一些複雜度，但只使用單一面板元素。
 
 ```xml
 <Grid>
@@ -103,7 +103,7 @@ ms.locfileid: "8990214"
 </Grid>
 ```
 
-選項 3：單一 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546)
+選項 3：單一[ **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546):
 
 比起使用巢狀面板，此單一面板同樣較為複雜，但可能會比 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 更容易了解和維護。
 
@@ -134,7 +134,7 @@ ms.locfileid: "8990214"
 
 常見的 UI 需求是讓元素彼此重疊的版面配置。 通常會使用這種方式，利用邊框間距、邊界、對齊和轉換來放置元素。 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 控制項已最佳化，可改善重疊元素的版面配置效能。
 
-**重要**若要查看改進功能，請使用單一儲存格[**方格**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 請勿定義 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
+**重要**  若要查看的改進，使用單一儲存格[**方格**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 請勿定義 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
 
 ### <a name="examples"></a>範例
 
@@ -160,7 +160,7 @@ ms.locfileid: "8990214"
 
 ## <a name="use-a-panels-built-in-border-properties"></a>使用面板內建的框線屬性
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 及 [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) 控制項具有內建的框線屬性，可讓您沿著控制項繪製框線，而不需要在 XAML 中加入額外的 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素。 支援內建框線的新屬性如下：**BorderBrush**、**BorderThickness**、**CornerRadius** 及 **Padding**。 這其中每一個都是 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)，因此您可以將它們與繫結和動畫搭配使用。 它們是設計來完全取代個別的 **Border** 元素。
+[**方格**](https://msdn.microsoft.com/library/windows/apps/BR242704)， [ **StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)， [ **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546)，與[ **ContentPresenter** ](https://msdn.microsoft.com/library/windows/apps/BR209378)控制項具有內建的框線屬性，可讓您繪製其周圍的框線，而不會增加額外[**框線**](https://msdn.microsoft.com/library/windows/apps/BR209250)項目您的 XAML。 支援的內建的框線的新屬性如下：**BorderBrush**， **BorderThickness**， **CornerRadius**，和**填補**。 這其中每一個都是 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)，因此您可以將它們與繫結和動畫搭配使用。 它們是設計來完全取代個別的 **Border** 元素。
 
 如果您的 UI 在這些面板周圍具有 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素，請改用內建的框線，以便在 app 的版面配置結構中省下額外的元素。 如先前所述，這樣能夠大幅節省，特別是在重複 UI 的情況下。
 
@@ -175,11 +175,11 @@ ms.locfileid: "8990214"
 
 ## <a name="use-sizechanged-events-to-respond-to-layout-changes"></a>使用 **SizeChanged** 事件來回應版面配置變更
 
-[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 類別公開兩個可用以回應版面配置變更的類似事件：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged)。 您可能會在進行版面配置期間調整元素大小時，使用這其中一個事件來接收通知。 這兩個事件的語意不同，而且在它們之間進行選擇時有一些重要的效能考量。
+[ **FrameworkElement** ](https://msdn.microsoft.com/library/windows/apps/BR208706)類別會公開兩個類似的事件回應的配置變更：[**LayoutUpdated** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated)並[ **SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged)。 您可能會在進行版面配置期間調整元素大小時，使用這其中一個事件來接收通知。 這兩個事件的語意不同，而且在它們之間進行選擇時有一些重要的效能考量。
 
 如需良好的效能，[**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) 幾乎一向是正確的選擇。 **SizeChanged** 具備直覺式語意。 它會在進行版面配置期間更新 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的大小時引發。
 
-[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 也會在配置期間引發，但它具備全域語意—其會在更新任何元素時，於每個元素上引發。 通常只會在事件處理常式中進行本機處理，在此情況下，程式碼執行的頻率會比所需的更頻繁。 只有在您需要知道何時將重新放置元素而不會改變其大小 (這不常見) 時，才能使用 **LayoutUpdated**。
+[**LayoutUpdated** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated)也會在配置期間引發但有通用的語意 — 每次更新任何項目時，它會引發每個項目。 通常只會在事件處理常式中進行本機處理，在此情況下，程式碼執行的頻率會比所需的更頻繁。 只有在您需要知道何時將重新放置元素而不會改變其大小 (這不常見) 時，才能使用 **LayoutUpdated**。
 
 ## <a name="choosing-between-panels"></a>選擇面板
 

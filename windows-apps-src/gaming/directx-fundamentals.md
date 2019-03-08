@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 遊戲, directx, 載入, 點陣化, 網格, 點陣圖, 2D, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: afd08d62182bd0980f43ce1c4578c1181f8a6d2f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925149"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613743"
 ---
 # <a name="fundamentals-of-directx-programming"></a>DirectX 程式設計的基礎
 
@@ -50,7 +50,7 @@ ms.locfileid: "8925149"
 <td align="left"><p>建立基本 3D DirectX 圖形。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="load-a-game-asset.md">在 DirectX 遊戲中載入資源</a></p></td>
+<td align="left"><p><a href="load-a-game-asset.md">載入您的 DirectX 遊戲中的資源</a></p></td>
 <td align="left"><p>在 DirectX 遊戲中載入網格。</p></td>
 </tr>
 </tbody>

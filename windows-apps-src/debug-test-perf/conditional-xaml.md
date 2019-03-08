@@ -3,14 +3,14 @@ title: 條件式 XAML
 description: 在 XAML 標記中使用新的 API 並同時維持與先前版本的相容性
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a3133508a0cb8919994543845412ef71a8d463fe
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050841"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611763"
 ---
 # <a name="conditional-xaml"></a>條件式 XAML
 
@@ -183,7 +183,7 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 </Rectangle>
 ```
 
-將屬性繫結到另一個相依於條件式命名空間的屬性時，您必須在這兩個屬性上使用相同的條件。 在這裡，`colorPicker.Color` 相依於 'contract5Present' 條件式命名空間，因此您也必須將 'contract5Present' 前置詞放在 SolidColorBrush.Color 屬性上 (或者，也可以將 'contract5Present' 前置詞放在 SolidColorBrush，而不放在 Color 屬性)。如果沒有這麼做，您將會收到編譯時間錯誤。
+將屬性繫結到另一個相依於條件式命名空間的屬性時，您必須在這兩個屬性上使用相同的條件。 在這裡，`colorPicker.Color` 相依於 'contract5Present' 條件式命名空間，因此您也必須將 'contract5Present' 前置詞放在 SolidColorBrush.Color 屬性上 （或者，您可對而不是 SolidColorBrush 的 Color 屬性上的 'contract5Present' 前置詞）。如果不這麼做，您會發生編譯時期錯誤。
 
 ```xaml
 <SolidColorBrush contract5Present:Color="{x:Bind colorPicker.Color, Mode=OneWay}"/>
@@ -244,6 +244,6 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 
 ## <a name="related-articles"></a>相關文章
 
-- [UWP App 指南](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-- [利用 API 協定動態偵測功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [UWP 應用程式指南](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [以動態方式偵測 API 合約的功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API 協定](https://channel9.msdn.com/Events/Build/2015/3-733) (組建 2015 影片)

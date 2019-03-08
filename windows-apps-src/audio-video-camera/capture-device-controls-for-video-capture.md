@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f144ef398fc55e79d2f0190c61214cdf1aa93b68
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924076"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607653"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>視訊擷取的手動相機控制項
 
@@ -51,7 +51,7 @@ HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置�
 ## <a name="temporal-denoising"></a>時態性去雜訊
 從 Windows 10 版本 1803 開始，您可以在支援時態性去雜訊的裝置上為影片啟用此功能。 這項功能可即時融合多個相鄰畫面的影像資料，製作較少視覺雜訊的視訊畫面。
 
-[**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) 可讓您的應用程式判斷目前裝置是否支援時態性去雜訊，而如果支援，是支援哪種去雜訊模式。 可用的去雜訊模式為 [**Off**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)、[**On**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode) 和 [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)。一部裝置可能無法支援所有模式，但必須支援 **Auto** 或 **On** 及 **Off**。
+[  **VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) 可讓您的應用程式判斷目前裝置是否支援時態性去雜訊，而如果支援，是支援哪種去雜訊模式。 可用的 denoising 模式會[**關閉**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)， [**上**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)，以及[**自動**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode).裝置可能不支援所有的模式，但每個裝置必須支援**自動**或是**上**並**關閉**。
 
 下列範例使用簡單的 UI 來提供選項按鈕，讓使用者在去雜訊模式之間切換。
 
@@ -87,8 +87,8 @@ HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置�
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [處理媒體與 MediaFrameReader 的畫面格](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 

@@ -1,5 +1,5 @@
 ---
-Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
+Description: 有幾個可供您用來參考您的應用程式套件、您的 App 資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從您的 App 的檔案資源 (.resw) 載入的字串。
 title: URI 配置
 template: detail.hbs
 ms.date: 10/16/2017
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048345"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632053"
 ---
 # <a name="uri-schemes"></a>URI 配置
 
-有幾個可供您用來參考您的應用程式套件、您的 App 資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從應用程式資源檔案 (.resw) 載入的字串。 您可以在程式碼、XAML 標記、應用程式套件資訊清單或磚及快顯通知範本中使用這些 URI 配置。
+有幾個可供您用來參考您的應用程式套件、您的 App 資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從您的 App 的檔案資源 (.resw) 載入的字串。 您可以在程式碼、XAML 標記、應用程式套件資訊清單或磚及快顯通知範本中使用這些 URI 配置。
 
 ## <a name="common-features-of-the-uri-schemes"></a>URI 配置的一般功能
 
@@ -251,9 +251,9 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 如需範例及詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[對語言、縮放比例及高對比的磚和快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)。
 
-`ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，基礎擷取會[CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)與*ignoreCase*設為`true`。
+`ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，基礎的擷取會[CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)具有*ignoreCase*設定為`true`。
 
-標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 路徑中的字元「?」、「#」、「/」、「*」和「"」(雙引號字元) 必須以百分比編碼來表示檔案名稱或資料夾名稱等資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要從資源檔案擷取字串資源名稱為`Hello#World.resw`，使用這個 URI。
+標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 路徑中的字元「?」、「#」、「/」、「*」和「"」(雙引號字元) 必須以百分比編碼來表示檔案名稱或資料夾名稱等資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要從資源檔擷取的字串資源名稱為`Hello#World.resw`，使用此 URI。
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -267,10 +267,10 @@ ms-resource:///Hello%23World/String1
 
 ## <a name="related-topics"></a>相關主題
 
-* [統一資源識別項 (URI)：一般語法](https://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [統一資源識別元 (URI):一般語法](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [封裝應用程式](../packaging/index.md)
-* [從 XAML 標記和程式碼參考影像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
-* [儲存和擷取設定及其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
-* [將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)
+* [從 XAML 標記和程式碼參考映像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
+* [儲存和擷取設定和其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
+* [UI 和應用程式封裝資訊清單中的當地語系化字串](localize-strings-ui-manifest.md)
 * [資源管理系統](https://msdn.microsoft.com/library/windows/apps/jj552947)
-* [對語言、縮放比例及高對比的磚和快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
+* [磚與快顯通知的通知支援的語言、 規模和高對比](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

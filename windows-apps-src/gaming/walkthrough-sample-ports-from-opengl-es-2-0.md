@@ -6,11 +6,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 6f9b424428753529e753c9fd15bbab4321fa05b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922485"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624883"
 ---
 # <a name="walkthrough-sample-ports-from-opengl-es-20"></a>逐步解說來自 OpenGL ES 2.0 的移植範例
 
@@ -29,12 +29,12 @@ ms.locfileid: "8922485"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md">做法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11.1</a></p></td>
+<td align="left"><p><a href="port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md">如何： 連接埠到 Direct3D 11.1 簡單 OpenGL ES 2.0 轉譯器</a></p></td>
 <td align="left"><p>針對首次移植練習，我們將從頭開始：將適用於頂點已著色的旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。</p></td>
 </tr>
 </tbody>
