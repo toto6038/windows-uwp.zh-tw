@@ -3,14 +3,14 @@ title: 朋友圈通知
 description: 說明如何建立與使用朋友圈通知；朋友圈通知是一種新的快顯通知。
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058719"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630563"
 ---
 # <a name="my-people-notifications"></a>朋友圈通知
 
@@ -150,8 +150,8 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 如果朋友圈通知遞補快顯通知，則會忽略第二個朋友圈特有的繫結，並只使用第一個繫結來顯示快顯通知。 這就是在第一個快顯通知繫結中提供遞補裝載如此重要的原因。
 
-## <a name="see-also"></a>也請參閱
-+ [朋友圈通知範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [新增朋友圈支援](my-people-support.md)
-+ [調適性快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
+## <a name="see-also"></a>請參閱
++ [我的使用者通知範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [新增我的個人支援](my-people-support.md)
++ [調適性的快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 + [ToastNotification 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)

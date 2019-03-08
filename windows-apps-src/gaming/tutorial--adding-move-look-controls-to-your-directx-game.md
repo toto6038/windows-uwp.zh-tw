@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 移動視角, 控制項
 ms.localizationpriority: medium
 ms.openlocfilehash: 222f46bbda165442003aecea0bbd138bcb844a3b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943275"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604373"
 ---
-# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>適用於遊戲的移動視角控制項
+# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>適用於遊戲的移動尋找控制項
 
 
 
@@ -145,28 +145,28 @@ internal:
 
 我們首先定義一些欄位來儲存相機視角的更新資訊。
 
--   **m\_position** 是 3D 場景中使用場景座標的相機位置 (即為視圖平面)。
--   **m\_pitch** 是相機的上下移動，或以弧形繞著視圖平面 x 軸上下旋轉。
--   **m\_yaw** 是相機的左右偏移，或以弧形繞著視圖平面 y 軸左右旋轉。
+-   **m\_位置**相機 （以及 viewplane） 中 3D 場景，請使用場景座標的位置。
+-   **m\_音調**是數位相機或其上下旋轉 viewplane 的 x 軸，以弧度為單位的字幅。
+-   **m\_偏航**會繞相機上，或其左右旋轉 viewplane 的 y 軸，以弧度為單位。
 
 現在，讓我們定義用來存放控制器狀態和位置資訊的欄位。 我們先為觸控式移動控制器定義所需的欄位。 (移動控制器的鍵盤實作並沒有特別的需求。 我們只需要使用特定處理常式讀取鍵盤事件即可。)
 
--   **m\_moveInUse** 指示移動控制器是否正在使用中。
--   **m\_movePointerID** 是目前移動指標的唯一識別碼。 當我們檢查指標識別碼值時，會使用它來區別視角指標和移動指標。
--   **m\_moveFirstDown** 是玩家在螢幕上第一次觸碰移動控制器指標區域的點。 我們稍後會使用這個值來設定靜止區域，不讓細微的移動造成視角抖動。
--   **m\_movePointerPosition** 是螢幕上玩家目前將指標移過去的目標點。 我們透過檢查它與 **m\_moveFirstDown** 的相對位置，以判斷玩家想要移動的方向。
--   **m\_moveCommand** 是移動控制器最後計算出來的命令：上 (前)、下 (後)、左、右。
+-   **m\_moveInUse**指出移動控制站是否正在使用中。
+-   **m\_movePointerID**是目前的 「 移動 」 指標的唯一識別碼。 當我們檢查指標識別碼值時，會使用它來區別視角指標和移動指標。
+-   **m\_moveFirstDown**是播放程式第一次接觸移動控制器指標區域在螢幕上的點。 我們稍後會使用這個值來設定靜止區域，不讓細微的移動造成視角抖動。
+-   **m\_movePointerPosition**是播放程式目前已移至指標在螢幕上的點。 我們會使用它來判斷何種播放程式想要藉由檢查其相對於要移動的方向**m\_moveFirstDown**。
+-   **m\_moveCommand**是移動控制站計算最後一個命令: （向前），上下 （上一頁）、 left 或 right。
 
 現在，我們定義視角控制器的欄位 (針對滑鼠與觸控實作)。
 
--   **m\_lookInUse** 指示視角控制項是否正在使用中。
--   **m\_lookPointerID** 是目前視角指標的唯一識別碼。 當我們檢查指標識別碼值時，會使用它來區別視角指標和移動指標。
--   **m\_lookLastPoint** 是場景座標中的最後一點 (從先前的畫面中擷取而來)。
--   **m\_lookLastDelta** 是目前的 **m\_position** 和 **m\_lookLastPoint** 之間計算出來的差異。
+-   **m\_lookInUse**指出外觀的控制項是否正在使用中。
+-   **m\_lookPointerID**是目前看指標的唯一識別碼。 當我們檢查指標識別碼值時，會使用它來區別視角指標和移動指標。
+-   **m\_lookLastPoint**是在前一個框架中已擷取的最後一個點，在場景座標。
+-   **m\_lookLastDelta**是目前的計算的差異**m\_位置**並**m\_lookLastPoint**。
 
 最後，讓我們為 6 個角度的移動方向定義 6 個布林值，我們會使用這些值來指示每個方向移動動作的目前狀態 (開或關)：
 
--   **m\_forward**、**m\_back**、**m\_left**、**m\_right**、**m\_up** 及 **m\_down**。
+-   **m\_向前**， **m\_回**， **m\_左**， **m\_右**， **m\_向上**並**m\_向下**。
 
 我們使用 6 個事件處理常式來擷取更新控制器狀態的輸入資料：
 
@@ -181,8 +181,8 @@ internal:
 -   **Initialize**。 我們的 app 會呼叫這個事件處理常式來初始化控制項，並將它們附加到描述我們顯示視窗的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
 -   **SetPosition**。 我們的 app 會呼叫這個方法來設定場景區域中控制項的 x、y 及 z 座標。
 -   **SetOrientation**。 我們的 app 會呼叫這個方法來設定相機的上下移動和左右偏移。
--   **get\_Position**。 我們的 app 會存取這個屬性來取得場景區域中相機的目前位置。 把這個屬性當作將目前相機位置傳送到 app 的方法。
--   **get\_LookPoint**。 我們的應用程式會存取這個屬性來取得控制器相機目前面對的視點。
+-   **取得\_位置**。 我們的 app 會存取這個屬性來取得場景區域中相機的目前位置。 把這個屬性當作將目前相機位置傳送到 app 的方法。
+-   **取得\_LookPoint**。 我們的應用程式會存取這個屬性來取得控制器相機目前面對的視點。
 -   **Update**。 讀取移動和視角控制器的狀態並更新相機位置。 您會從 app 的主迴圈持續呼叫這個方法，進而重新整理相機控制器資料以及場景區域中的相機位置。
 
 到目前為止，您已經有了實作移動視角控制項所需的全部元件了。 所以，讓我們將這些元件連結起來。
@@ -251,9 +251,9 @@ _In_ PointerEventArgs^ args)
 }
 ```
 
-這個事件處理常式會檢查指標是否不是滑鼠 (因為在這個範例中同時支援滑鼠和觸控)，以及指標是否位於移動控制器區域。 如果上述兩個條件為 True，則它會測試 **m\_moveInUse** 是否為 False，藉此檢查指標是否剛剛被按下，並特別檢查這個按一下的動作是否與之前的移動或視角輸入無關。 如果是這樣，處理常式會擷取移動控制器區域中發生按下動作的點，並將 **m\_moveInUse** 設成 True，這樣再次呼叫這個處理常式時，它 就不會覆寫移動控制器輸入互動的起點。 它也會將移動控制器指標識別碼更新為目前指標的識別碼。
+這個事件處理常式會檢查指標是否不是滑鼠 (因為在這個範例中同時支援滑鼠和觸控)，以及指標是否位於移動控制器區域。 如果這兩個準則都不成立，它會檢查是否指標只按下，特別是，是否按一下無關是先前移動，或尋找輸入，測試如果**m\_moveInUse**為 false。 因此，處理常式會擷取在按下發生，並設定時，移動控制器區域中的點，如果**m\_moveInUse**為 true，以便一次呼叫此處理常式時，它不會覆寫移動的起始位置輸入的控制器的互動。 它也會將移動控制器指標識別碼更新為目前指標的識別碼。
 
-如果指標是滑鼠或者如果觸控指標沒有在移動控制器區域中，那麼它就一定是在視角控制器區域中。 它會將 **m\_lookLastPoint** 設成使用者按下滑鼠按鍵或觸控按下的目前位置，並重設距離差異，然後將視角控制器指標識別碼更新為目前指標的識別碼。 它也會將視角控制器的狀態設成作用中。
+如果指標是滑鼠或者如果觸控指標沒有在移動控制器區域中，那麼它就一定是在視角控制器區域中。 它會設定**m\_lookLastPoint**至目前位置，使用者已按下滑鼠按鈕或接觸到並按下的位置時，會重設差異，並尋找控制器的指標識別碼更新為目前的指標識別碼。 它也會將視角控制器的狀態設成作用中。
 
 **OnPointerMoved**
 
@@ -303,7 +303,7 @@ void MoveLookController::OnPointerMoved(
 
 如果它是視角控制器，就會比較複雜。 我們需要計算新的視點並把相機放在它中央，因此我們會計算最後視點與目前螢幕位置的距離差異，然後乘以縮放係數，讓視角移動相對於螢幕移動的距離縮小或放大。 我們會使用這個值計算上下移動或左右偏移。
 
-最後，當玩家停止移動滑鼠或觸控螢幕時，我們需要停用移動或視角控制器行為。 我們使用 **OnPointerReleased** ([**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 引發時呼叫它)，將 **m\_moveInUse** 或 **m\_lookInUse** 設成 FALSE 並關閉相機平移移動，然後將指標識別碼全部用零來表示。
+最後，當玩家停止移動滑鼠或觸控螢幕時，我們需要停用移動或視角控制器行為。 我們會使用**OnPointerReleased**，我們稱之為何時[ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279)引發時，若要設定**m\_moveInUse**或**m\_lookInUse**設為 FALSE，請關閉相機取景位置調整移動和零出指標識別碼。
 
 **OnPointerReleased**
 
@@ -384,7 +384,7 @@ void MoveLookController::OnKeyUp(
 
 讓我們開始執行事件，並初始化所有的控制器狀態欄位。
 
-**Initialize**
+**初始化**
 
 ```cpp
 void MoveLookController::Initialize( _In_ CoreWindow^ window )
@@ -470,7 +470,7 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 ## <a name="updating-the-controller-state-info"></a>更新控制器狀態資訊
 
 
-現在，我們要執行計算來將 **m\_movePointerPosition** 中追蹤到的指標座標資訊，轉換為使用世界座標系統的新座標資訊。 應用程式會在我們每次重新整理主應用程式迴圈時，呼叫這個方法。 所以此時我們會計算要傳送給 app 的新視點位置資訊，以便在投影到檢視區前更新檢視矩陣。
+現在，我們執行我們計算轉換中追蹤的指標座標資訊**m\_movePointerPosition**成新座標資訊各自的我們全局座標系統。 應用程式會在我們每次重新整理主應用程式迴圈時，呼叫這個方法。 所以此時我們會計算要傳送給 app 的新視點位置資訊，以便在投影到檢視區前更新檢視矩陣。
 
 ```cpp
 void MoveLookController::Update(CoreWindow ^window)
@@ -557,7 +557,7 @@ void MoveLookController::Update(CoreWindow ^window)
 
 當我們計算速度時，也會將從移動和視角控制器收到的座標，轉譯為實際視點的移動 (我們會將這個移動傳送給計算場景視圖矩陣的方法)。 首先，先反轉 x 座標，因為如果使用視角控制器來按一下移動或左右拖曳，場景中的視點會以相反的方向旋轉，相機可能會在中央軸線上晃動。 接著，我們交換 y 和 z 軸，因為移動控制器上的向上/向下鍵按下動作或觸碰拖曳動作 (讀取為 y 軸行為)，應該轉譯為將視點移入或移出螢幕的相機動作 (z 軸)。
 
-玩家視點的最後位置會是最後位置加上計算的速度，而且當它呼叫 **get\_Position** 方法 (最可能發生在設定每個畫面時) 時轉譯器就會讀取這個資料。 之後，我們要將移動命令重設為零。
+讓玩家看點的最後一個位置是最後一個位置，再加上導出的速度，而這是呼叫時讀取轉譯器所**取得\_位置**方法 （最有可能在每個安裝期間框架）。 之後，我們要將移動命令重設為零。
 
 ## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>使用新相機位置來更新視圖矩陣
 

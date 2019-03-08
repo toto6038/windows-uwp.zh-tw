@@ -6,31 +6,31 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 111ef4d5e8830485a5de3b44d69826df256d1c4d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944303"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592103"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>建立通用 Windows 平台主控台應用程式
 
-本主題說明如何建立[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + /CX 通用 Windows 平台 (UWP) 主控台應用程式。
+本主題描述如何建立[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + /CX 通用 Windows 平台 (UWP) 主控台應用程式。
 
-從 Windows 10，版本 1803 起，您可以撰寫 C + + /winrt 或 C + + /CX UWP 主控台應用程式執行於主控台視窗中，例如 DOS 或 PowerShell 主控台視窗。 主控台應用程式使用主控台視窗輸入與輸出，並可以使用[通用 C 執行階段](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，例如**printf**以及**getchar**。 UWP 主控台應用程式可發佈至 Microsoft Store。 這些應用程式均列於應用程式清單中，且皆有可釘選到 \[開始\] 功能表的主要磚。 可從 [開始] 功能表中，啟動 UWP 主控台應用程式，雖然您通常會啟動它們從命令列。
+從 Windows 10 版本 1803，您可以撰寫 C + + /cli WinRT 或 C + + /CX 的 UWP 主控台應用程式在主控台視窗中，例如 DOS 或 PowerShell 主控台視窗中執行。 主控台應用程式的輸入和輸出，使用 [主控台] 視窗，而且可以使用[通用 C 執行階段](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)函式，如**printf**並**getchar**。 UWP 主控台應用程式可發佈至 Microsoft Store。 這些應用程式均列於應用程式清單中，且皆有可釘選到 \[開始\] 功能表的主要磚。 可以從 [開始] 功能表中，啟動 UWP 主控台應用程式，但您通常會啟動它們從命令列。
 
-若要查看動作中的其中一個，以下是有關建立 UWP 主控台應用程式的影片。
+若要查看作用中的其中一個，以下是建立 UWP 主控台應用程式的影片。
 
 > [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 
 ## <a name="use-a-uwp-console-app-template"></a>使用 UWP 主控台應用程式範本 
 
-若要建立 UWP 應用程式主控台，請先安裝**主控台應用程式 (通用) 專案範本** (可從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) 取得)。 已安裝的範本，便可使用**新的專案**底下 > **已安裝** > **其他語言** > **Visual c + +** > **Windows 通用**為**Console App C + /winrt (通用 Windows)** 和**Console App C + + /CX (通用 Windows)**。
+若要建立 UWP 應用程式主控台，請先安裝**主控台應用程式 (通用) 專案範本** (可從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) 取得)。 已安裝的範本可再底下**新的專案** > **已安裝** > **其他語言** >  **Visual c + +** > **Windows Universal**作為**主控台應用程式 C + + /cli WinRT (通用 Windows)** 和**主控台應用程式 C + + /CX (通用 Windows)**.
 
 ## <a name="add-your-code-to-main"></a>將您的程式碼新增至 main()
 
 範本會新增 **Program.cpp**，其中包含 `main()` 函數。 這是在 UWP 主控台應用程式中執行開始的位置。 存取具有 `__argc` 與 `__argv` 參數的命令列引數。 當控制項從 `main()` 傳回時，會有 UWP 主控台應用程式存取。
 
-**Program.cpp**下列範例會藉由新增**Console App C + WinRT**範本：
+下列範例**Program.cpp**加入**主控台應用程式的 c + + /cli WinRT**範本：
 
 ```cppwinrt
 #include "pch.h"
@@ -99,9 +99,9 @@ UWP 主控台應用程式同一時間可以有多個執行個體執行，因為�
 
 ## <a name="additional-considerations-for-uwp-console-apps"></a>UWP 主控台應用程式的其他考量事項
 
-- 只有 C + + /winrt 與 C + + /CX UWP 應用程式可以是主控台應用程式。
+- 只有 C + + /cli WinRT 和 C + + /CX 的 UWP 應用程式可能是主控台應用程式。
 - UWP 主控台應用程式必須以桌面或 IoT 專案類型為目標。
-- UWP 主控台應用程式可能不會建立視窗。 例如，系統會提示使用者同意，它們無法使用 messagebox （） 或 Location() 或任何其他可能會因任何原因而建立視窗的 API。
+- UWP 主控台應用程式可能無法建立視窗。 它們無法使用 MessageBox()，Location() 或因為任何原因，可能會建立視窗的任何其他 API，例如使用者同意提示。
 - UWP 主控台應用程式不可以取用背景工作，也不能作為背景工作。
 - 除了[命令列啟用](https://blogs.windows.com/buildingapps/2017/07/05/command-line-activation-universal-windows-apps/#5YJUzjBoXCL4MhAe.97)外，UWP 主控台應用程式不支援啟用合約，包括檔案關聯、通訊協定關聯等等。
 - UWP 主控台應用程式雖然支援多重執行個體，但不支援[多重執行個體重新導向](multi-instance-uwp.md)

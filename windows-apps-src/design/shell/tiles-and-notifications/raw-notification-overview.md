@@ -1,5 +1,5 @@
 ---
-Description: Raw notifications are short, general purpose push notifications.
+Description: 原始通知是簡短、一般用途的推播通知。
 title: 原始通知概觀
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 606cc68aafa4de110f034336cd5d18bd1426a0a7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047350"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596363"
 ---
 # <a name="raw-notification-overview"></a>原始通知概觀
 
@@ -36,7 +36,7 @@ ms.locfileid: "9047350"
 所有原始通知都是推播通知。 因此，傳送和接收推播通知所需的設定也適用於原始通知：
 
 -   您必須具備有效的 WNS 通道才能傳送原始通知。 如需取得推播通知通道的詳細資訊，請參閱[如何要求、建立以及儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)。
--   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 **\[功能\]** 索引標籤下找到此 **\[網際網路 (用戶端)\]** 選項。 如需詳細資訊，請參閱 [**Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
+-   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 [功能] 索引標籤下找到此 [網際網路 (用戶端)] 選項。 如需詳細資訊，請參閱 [**Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
 
 通知的本文是採用應用程式定義的格式。 用戶端會以 null 結尾字串 (**HSTRING**) 的形式接收資料，該字串只需要讓應用程式了解。
 
@@ -55,7 +55,7 @@ ms.locfileid: "9047350"
 
 原始通知旨在做為可觸發應用程式採取動作的簡短訊息，例如直接連線服務以同步較大量的資料或根據通知內容修改本機狀態。 請注意，WNS 推播通知不保證一定能傳送，所以您的應用程式和雲端服務必須考慮原始通知可能不會送達用戶端的可能性，例如用戶端處於離線狀態時。
 
-如需傳送推播通知的詳細資訊，請參閱[快速入門：傳送推播通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)。
+如需有關如何傳送推播通知的詳細資訊，請參閱[快速入門：將推播通知傳送給](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)。
 
 ## <a name="receiving-a-raw-notification"></a>接收原始通知
 
@@ -63,12 +63,12 @@ ms.locfileid: "9047350"
 應用程式有兩個管道可以接收原始通知：
 
 -   在應用程式執行時透過[通知傳送事件](#notification-delivery-events)接收。
--   如果應用程式能夠執行背景工作，透過[原始通知觸發的背景工作](#background-tasks-triggered-by-raw-notifications)接收。
+-   如果 app 能夠執行背景工作，透過[原始通知觸發的背景工作](#background-tasks-triggered-by-raw-notifications)接收。
 
 應用程式可以使用這兩種機制來接收原始通知。 如果應用程式同時實作通知傳送事件處理常式以及由原始通知觸發的背景工作，則應用程式執行時會優先使用通知傳送事件。
 
 -   如果應用程式正在執行，通知傳送事件會優先於背景工作，讓應用程式能夠儘速處理通知。
--   通知傳送事件處理常式可以將事件的 [**PushNotificationReceivedEventArgs.Cancel**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs.Cancel) 屬性設為 **true**，指定在處理常式結束後，原始通知不應該傳送到應用程式的背景工作。 如果 **Cancel** 屬性設為 **false** 或未設定 (預設值為 **false**)，原始通知會在通知傳送事件處理常式完成工作後觸發背景工作。
+-   通知傳送事件處理常式可以將事件的 [**PushNotificationReceivedEventArgs.Cancel**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs.Cancel) 屬性設為 **true**，指定在處理常式結束後，原始通知不應該傳送到 app 的背景工作。 如果 **Cancel** 屬性設為 **false** 或未設定 (預設值為 **false**)，原始通知會在通知傳送事件處理常式完成工作後觸發背景工作。
 
 ### <a name="notification-delivery-events"></a>通知傳送事件
 
@@ -76,11 +76,11 @@ ms.locfileid: "9047350"
 
 如果應用程式沒有執行，也沒有使用[背景工作](#background-tasks-triggered-by-raw-notifications)，那麼傳送到該應用程式的任何原始通知，都會在收到後遭 WNS 捨棄。 為了避免浪費雲端服務的資源，您應該考慮在服務實作邏輯，以追蹤應用程式是否正在使用中。 可以從兩個來源獲得這個資訊：應用程式可以明確告訴服務它已準備好開始接收通知，以及 WNS 可以告訴服務何時停止。
 
--   **應用程式通知雲端服務**：應用程式可以連絡服務，讓它知道應用程式正在前景執行。 這種方式的缺點是應用程式可能會非常頻繁地連絡服務。 不過，它的優點是服務永遠可以知道應用程式何時準備好接收傳入的原始通知。 另一個優點是當應用程式連絡服務時，服務會知道要將原始通知傳送到該應用程式的特定執行個體而不是使用廣播。
--   **雲端服務回應 WNS 回應訊息**：應用程式服務可以使用 WNS 傳回的 [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) 與 [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) 資訊，判斷何時停止傳送原始通知給應用程式。 服務以 HTTP POST 的形式將通知傳送到通道時，它可以在回應中接收下列其中一種訊息：
+-   **應用程式通知的雲端服務**:應用程式可以連絡其的服務，讓它知道應用程式在幕前執行。 這種方式的缺點是應用程式可能會非常頻繁地連絡服務。 不過，它的優點是服務永遠可以知道應用程式何時準備好接收傳入的原始通知。 另一個優點是當應用程式連絡服務時，服務會知道要將原始通知傳送到該應用程式的特定執行個體而不是使用廣播。
+-   **WNS 的回應訊息的雲端服務會回應**:可以使用您的 app service [WNS-X-notificationstatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification)並[X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) WNS 來判斷何時停止將未經處理的通知傳送至應用程式所傳回的資訊。 服務以 HTTP POST 的形式將通知傳送到通道時，它可以在回應中接收下列其中一種訊息：
 
-    -   **X-WNS-NotificationStatus: dropped**：這表示用戶端沒有接收到通知。 因此可以大膽假設收到 **dropped** 回應的原因是由於您的應用程式已不在使用者裝置的前景執行。
-    -   **X-WNS-DeviceConnectionStatus: disconnected** 或 **X-WNS-DeviceConnectionStatus: tempconnected**：這表示 Windows 用戶端與 WNS 中斷連線。 請注意，若要從 WNS 接收這個訊息，您必須在通知的 HTTP POST 中設定 [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) 標頭來要求該訊息。
+    -   **WNS-X-notificationstatus： 卸除**:這表示用戶端未收到通知。 因此可以大膽假設收到 **dropped** 回應的原因是由於您的 app 已不在使用者裝置的前景執行。
+    -   **X WNS DeviceConnectionStatus： 中斷**或是**X-WNS-DeviceConnectionStatus: tempconnected**:這表示，在 Windows 用戶端將不再有給 WNS 的連線。 請注意，若要從 WNS 接收這個訊息，您必須在通知的 HTTP POST 中設定 [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) 標頭來要求該訊息。
 
     應用程式的雲端服務可以使用這些狀態訊息中的資訊，停止使用原始通知進行通訊。 當應用程式回到前景並連線服務時，服務就可以繼續傳送原始通知。
 
@@ -113,13 +113,13 @@ ms.locfileid: "9047350"
 ## <a name="other-resources"></a>其他資源
 
 
-您可以進一步了解藉由下載適用於 windows 8.1，以及[推播和定期通知範例](https://go.microsoft.com/fwlink/p/?LinkId=231476)的[原始通知的範例](https://go.microsoft.com/fwlink/p/?linkid=241553)，適用於 windows 8.1，並重複使用其原始程式碼，在 windows 10 應用程式中。
+您可以進一步了解下載[未經處理的通知範例](https://go.microsoft.com/fwlink/p/?linkid=241553)針對 Windows 8.1 和[推播和定期通知範例](https://go.microsoft.com/fwlink/p/?LinkId=231476)Windows 8.1 和重複使用他們的原始程式碼，您的 Windows 10 應用程式中。
 
 ## <a name="related-topics"></a>相關主題
 
-* [原始通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761463)
-* [快速入門：建立和登錄原始通知背景工作](https://msdn.microsoft.com/library/windows/apps/jj676800)
-* [快速入門：攔截執行中應用程式的推播通知](https://msdn.microsoft.com/library/windows/apps/jj709908)
+* [未經處理的通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761463)
+* [快速入門：建立和註冊原始通知背景工作](https://msdn.microsoft.com/library/windows/apps/jj676800)
+* [快速入門：攔截，執行應用程式的推播通知](https://msdn.microsoft.com/library/windows/apps/jj709908)
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
  

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b2733da1f843062a1fa7f2b4a7969326523d54e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935160"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608103"
 ---
 # <a name="mipmap-packing"></a>Mipmap 封裝
 
@@ -32,7 +32,7 @@ ms.locfileid: "8935160"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[如何拼貼串流資源區域](how-a-streaming-resource-s-area-is-tiled.md)
+[資料流資源的區域會並排顯示方式](how-a-streaming-resource-s-area-is-tiled.md)
 
  
 

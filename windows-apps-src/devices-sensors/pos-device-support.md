@@ -3,73 +3,73 @@ title: 服務點硬體的支援
 description: 本文包含各個服務點裝置類別的硬體支援的相關資訊
 ms.date: 06/13/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5154593065ce40c5ac67a4873d58b2aac913d1f8
-ms.sourcegitcommit: f01e7abae23b91bbaa007055942e93587c0ec137
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9059010"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663093"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支援的服務點週邊設備
 
 ## <a name="barcode-scanner"></a>條碼掃描器
 | 連線能力 | 支援 |
 | -------------|-------------|
-| USB          | <p>Windows 包含連接 USB 之條碼掃描器的預設類別驅動程式，而此預設類別驅動程式以 [USB.org](https://www.usb.org/developers/hidpage/)所定義的 HID POS 掃描器使用表格 (8c) 規格為基礎。請查看下列表格，以了解已知相容裝置的清單。  請參閱條碼掃描器的手冊，或連絡製造商以決定如何在 **\[USB.HID.POS 掃描器\]** 模式下進行設定。 </p><p>Windows 也支援實作供應商特定驅動程式，以支援不支援 USB.HID.POS 掃描器標準的其他條碼掃描器。 請與條碼掃描器製造商連絡，以了解供應商特定驅動程式可用性。</p><p>條碼掃描器製造商如需有關建立自訂條碼掃描器驅動程式的資訊，請參閱[條碼掃描器驅動程式設計指南](https://aka.ms/pointofservice-drv)</p> |
+| USB          | <p>Windows 包含內建類別驅動程式連接的 USB 條碼掃描器所定義的 HID POS 掃描器使用量資料表 (8c) 規格為基礎[USB.org](https://www.usb.org/developers/hidpage/)。請查看下列表格，以了解已知相容裝置的清單。  請參閱條碼掃描器的手冊，或連絡製造商以決定如何在 **\[USB.HID.POS 掃描器\]** 模式下進行設定。 </p><p>Windows 也支援實作供應商特定驅動程式，以支援不支援 USB.HID.POS 掃描器標準的其他條碼掃描器。 請與條碼掃描器製造商連絡，以了解供應商特定驅動程式可用性。</p><p>條碼掃描器製造商如需有關建立自訂條碼掃描器驅動程式的資訊，請參閱[條碼掃描器驅動程式設計指南](https://aka.ms/pointofservice-drv)</p> |
 | 藍牙    | <p>Windows 支援序列埠通訊協定 - 簡單序列介面 (SPP SSI) 藍牙條碼掃描器。 請查看下列表格，以了解已知相容裝置的清單。 請參閱條碼掃描器的手冊，或連絡製造商以決定如何在 **\[SPP-SSI\]** 模式下進行設定。</p> |
-| 網路攝影機       | <p>從 Windows 10 版本 1803 開始，您可以從通用 Windows 應用程式透過標準攝影機鏡頭讀取條碼。 建議您使用支援自動對焦的相機，並且最低解析度為 1920 x 1440。  如果條碼列印夠大的話，部分解析度較低的相機可讀取標準條碼。  元素較細的條碼可能需要解析度較高的相機。</p>| 
+| Webcam       | <p>從 Windows 10 版本 1803 開始，您可以從通用 Windows 應用程式透過標準攝影機鏡頭讀取條碼。 建議您使用支援自動對焦的相機，並且最低解析度為 1920 x 1440。  如果條碼列印夠大的話，部分解析度較低的相機可讀取標準條碼。  元素較細的條碼可能需要解析度較高的相機。</p>| 
 |
 
 
-| 製造商  | 型號                          | 功能 | [連線]    | 類型         | Mode                      |
+| 製造商  | 型號                          | 功能 | 連線    | 類型         | 模式                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
-| 代碼          | Reader™ 950                    | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| 代碼          | Reader™ 1021                   | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| 代碼          | Reader™ 1421                   | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| 代碼          | Reader™ 5000                   | 2D         | USB          | 簡報 | HID 的 POS 掃描器           |
-| Honeywell     | Genesis 7580g                  | 2D         | USB          | 簡報 | HID 的 POS 掃描器           |
-| Honeywell     | Granit 198Xi                   | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | Granit 191Xi                   | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | N5680                          | 2D         | 內部     | 元件    | HID 的 POS 掃描器           |
-| Honeywell     | N3680                          | 2D         | 內部     | 元件    | HID 的 POS 掃描器           |
-| Honeywell     | Orbit 7190g                    | 2D         | USB          | 簡報 | HID 的 POS 掃描器           |
-| Honeywell     | Stratos 2700                   | 2D         | USB          | 計數器   | HID 的 POS 掃描器           |
-| Honeywell     | Voyager 1200g                  | 1D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | Voyager 1202g                  | 1D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | Voyager 1202-bf                | 1D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | Voyager 145Xg                  | 1D/2 D ¹   | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | Voyager 1602g                  | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | Xenon 1900g                    | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | Xenon 1902g                    | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | Xenon 1902g-bf                 | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | Xenon 1900h                    | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Honeywell     | Xenon 1902h                    | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| HP            | 值條碼掃描器 (HR2150) | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Intermec      | SG20                           | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| 通訊端行動裝置 | CHS 7Ci                        | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | CHS 7Di                        | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | CHS 7mi                        | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | CHS 7Pi                        | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | CHS 8Ci                        | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | DuraScan D700                  | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | DuraScan D730                  | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | DuraScan D740                  | 2D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | SocketScan S700                | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | SocketScan S730                | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | SocketScan S740                | 2D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | SocketScan S800                | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| 通訊端行動裝置 | SocketScan S850                | 2D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
-| Zebra         | DS2208²                        | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Zebra         | DS2278                         | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Zebra         | DS8108³                        | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
+| 程式碼          | Reader™ 950                    | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| 程式碼          | Reader™ 1021                   | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| 程式碼          | Reader™ 1421                   | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| 程式碼          | Reader™ 5000                   | 2D         | USB          | 簡報 | HID 的 POS 掃描器           |
+| Honeywell     | 發生 7580 g                  | 2D         | USB          | 簡報 | HID 的 POS 掃描器           |
+| Honeywell     | Granit 198Xi                   | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Granit 191Xi                   | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | N5680                          | 2D         | 內部     | Component    | HID 的 POS 掃描器           |
+| Honeywell     | N3680                          | 2D         | 內部     | Component    | HID 的 POS 掃描器           |
+| Honeywell     | 軌跡 7190 g                    | 2D         | USB          | 簡報 | HID 的 POS 掃描器           |
+| Honeywell     | Stratos 2700                   | 2D         | USB          | 在 計數器   | HID 的 POS 掃描器           |
+| Honeywell     | Voyager 1200 g                  | 1D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Voyager 1202 g                  | 1D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Voyager 1202 bf                | 1D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Voyager 145Xg                  | 1D / 2D¹   | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Voyager 1602 g                  | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Xenon 1900 g                    | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Xenon 1902 g                    | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Xenon 1902 g bf                 | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Xenon 1900 h                    | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Xenon 1902 h                    | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| HP            | 值，條碼掃描器 (HR2150) | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Intermec      | SG20                           | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| 通訊端行動裝置 | CHS 7Ci                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | CHS 7Di                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | CHS 7Mi                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | CHS 7Pi                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | CHS 8Ci                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | DuraScan D700                  | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | DuraScan D730                  | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | DuraScan D740                  | 2D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | SocketScan S700                | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | SocketScan S730                | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | SocketScan S740                | 2D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | SocketScan S800                | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | SocketScan S850                | 2D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 色彩         | DS2208²                        | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| 色彩         | DS2278                         | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
+| 色彩         | DS8108³                        | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
 |
 
 
-支援透過 Honeywell 2D 條碼 ¹ Upgradable <br/>
-² 最小值韌體需要 009 (2018.07.09)。 可升級使用 Zebra [123Scan](http://www.zebra.com/123Scan)。<br/>
-³ 最小值韌體需要 016 (2018.01.18)。 可升級使用 Zebra [123Scan](http://www.zebra.com/123Scan)。 
+若要支援透過 Honeywell 2D 條碼 ¹ Upgradable <br/>
+² 的最小值韌體 009 (2018.07.09) 所需。 使用色彩可升級[123Scan](http://www.zebra.com/123Scan)。<br/>
+³ 的最小值韌體 016 (2018.01.18) 所需。 使用色彩可升級[123Scan](http://www.zebra.com/123Scan)。 
 
 
 <hr>
@@ -77,9 +77,9 @@ ms.locfileid: "9059010"
 ### <a name="windows-devices-with-built-in-barcode-scanner"></a>使用內建的條碼掃描器的 Windows 裝置
 | 製造商   | 型號 | 作業系統 |
 |----------------|-------|------------------|
-| Innowi         | ChecOut M | Windows 10   |
+| Innowi         | ChecOut-M | Windows 10   |
 
-### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>使用內建的條碼掃描器的 Windows 行動裝置版裝置
+### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>使用內建的條碼掃描器的 Windows Mobile 裝置
 | 製造商   | 型號 | 作業系統 |
 |----------------|-------|------------------|
 | Bluebird       | EF400 | Windows Mobile   |
@@ -91,14 +91,14 @@ ms.locfileid: "9059010"
 | Panasonic      | FZ-E1 | Windows Mobile   |
 | Panasonic      | FZ-F1 |Windows Mobile   |
 | PointMobile    | PM80 | Windows Mobile   |
-| Zebra          | TC700j | Windows Mobile   |
-| HP             | Elite X3 外套 | Windows Mobile   |
+| 色彩          | TC700j | Windows Mobile   |
+| HP             | 精英 X3 Jacket | Windows Mobile   |
 
 
 
 
 ## <a name="cash-drawer"></a>收銀機
-| 連網 | 支援 |
+| 連線能力 | 支援 |
 | -------------|-------------|
 | 網路/藍牙 | <p> 視收銀機裝置的功能而定，可以透過網路或藍牙直接與收銀機進行連線。 </p><p>APG 收銀機：NetPRO、BluePRO</p> |
 | DK 連接埠 | <p> 沒有網路或藍牙功能的收銀機也可以透過受支援收據印表機的 DK 連接埠或 Star Micronics DK-AirCash 配件進行連線。 </p>

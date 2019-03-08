@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, ui, 瀏覽
 ms.localizationpriority: medium
 ms.openlocfilehash: ec5ba9d893a622e256030601cca204abab35045f
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059709"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599923"
 ---
 # <a name="ui-navigation-controller"></a>UI 瀏覽控制器
 
@@ -27,13 +27,13 @@ ms.locfileid: "9059709"
 
 幾乎所有遊戲都具有至少一些與遊戲分離的使用者介面，即使只是遊戲前功能表或遊戲內的對話。 玩家需能夠透過使用其所選的任何輸入裝置瀏覽此 UI，但這讓開發人員得費心為各種輸入裝置新增特定支援，且可能在遊戲與輸入裝置間引入不一致而讓玩家感到困惑。 有鑑於這些原因，[UINavigationController][] API 應運而生。
 
-UI 瀏覽控制器為「邏輯」__ 輸入裝置，存在目的為提供受多種「實體」__ 輸入裝置支援的常用 UI 瀏覽命令詞彙。 「UI 瀏覽控制器」__ 僅為另一種看待實體輸入裝置的方式，我們使用「瀏覽裝置」__ 指稱任何作為瀏覽控制器看待的實體輸入裝置。 透過對瀏覽裝置而非特定輸入裝置進行程式設計，開發人員可避免支援不同輸入裝置的負擔，並預設達成一致性。
+UI 瀏覽控制器為「邏輯」輸入裝置，存在目的為提供受多種「實體」輸入裝置支援的常用 UI 瀏覽命令詞彙。 「UI 瀏覽控制器」僅為另一種看待實體輸入裝置的方式，我們使用「瀏覽裝置」指稱任何作為瀏覽控制器看待的實體輸入裝置。 透過對瀏覽裝置而非特定輸入裝置進行程式設計，開發人員可避免支援不同輸入裝置的負擔，並預設達成一致性。
 
-由於各種輸入裝置所支援的控制項數目及種類大相逕庭，且因為特定輸入裝置可能會想支援一組更豐富的瀏覽命令組，因此瀏覽控制器介面將命令詞彙分割為「必要集」__(內含最常見且必要的命令)，以及「選用集」__(內含實用但可省略的命令)。 所有瀏覽裝置都支援「必要集」中的每個命令__，「選用集」__ 中的命令則予以全部、部分或完全不支援。
+由於各種輸入裝置所支援的控制項數目及種類大相逕庭，且因為特定輸入裝置可能會想支援一組更豐富的瀏覽命令組，因此瀏覽控制器介面將命令詞彙分割為「必要集」(內含最常見且必要的命令)，以及「選用集」(內含實用但可省略的命令)。 所有瀏覽裝置都支援「必要集」中的每個命令，「選用集」中的命令則予以全部、部分或完全不支援。
 
 ### <a name="required-set"></a>必要集
 
-瀏覽裝置必須支援「必要集」__ 中的所有命令，其為定向 (上、下、左、右)、檢視、功能表、接受及取消命令。
+瀏覽裝置必須支援「必要集」中的所有命令，其為定向 (上、下、左、右)、檢視、功能表、接受及取消命令。
 
 定向命令目的為供單一 UI 元素間的主要 [XY 焦點瀏覽](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)所使用。 檢視及功能表選單目的分別為顯示遊戲資訊 (通常為短暫，有時為強制)，以及在遊戲及功能表內容間切換。 接受及取消命令的目的分別為肯定 (是) 及否定 (否) 回應。
 
@@ -44,15 +44,15 @@ UI 瀏覽控制器為「邏輯」__ 輸入裝置，存在目的為提供受多�
 |    Down | XY 焦點向下瀏覽
 |    Left | XY 焦點向左瀏覽
 |   Right | XY 焦點向右瀏覽
-|    View | 顯示遊戲資訊 (計分板、遊戲統計資料、目標、世界或區域地圖)__
-|    Menu | 主要功能表 / 暫停 (設定、狀態、設備、存貨、暫停)__
-|  Accept | 肯定回應 (接受、進階、確認、開始、是)__
-|  Cancel | 否定回應 (拒絕、反向、婉拒、停止、否)__
+|    View | 顯示遊戲資訊 (計分板、遊戲統計資料、目標、世界或區域地圖)
+|    Menu | 主要功能表 / 暫停 (設定、狀態、設備、存貨、暫停)
+|  Accept | 肯定回應 (接受、進階、確認、開始、是)
+|  取消 | 否定回應 (拒絕、反向、婉拒、停止、否)
 
 
 ### <a name="optional-set"></a>選用集
 
-瀏覽裝置可能同時支援全部、部分或不支援「選用集」__ 內的瀏覽命令，其為分頁 (上、下、左、右)、捲動 (上、下、左、右)，及內容相關的 (內容 1-4) 命令。
+瀏覽裝置可能同時支援全部、部分或不支援「選用集」內的瀏覽命令，其為分頁 (上、下、左、右)、捲動 (上、下、左、右)，及內容相關的 (內容 1-4) 命令。
 
 內容相關的命令目的明確地為應用程式特定命令及瀏覽捷徑。 分頁及捲動命令目的分別為快速在頁面及 UI 元素群組間瀏覽，以及在 UI 元素內更精細地瀏覽。
 
@@ -78,35 +78,35 @@ UI 瀏覽控制器為「邏輯」__ 輸入裝置，存在目的為提供受多�
 
 Windows.Gaming.Input 命名空間支援的所有輸入裝置皆為 UI 瀏覽裝置。
 
-下表為瀏覽命令「必要集」__ 對應至各種輸入裝置的方式摘要。
+下表為瀏覽命令「必要集」對應至各種輸入裝置的方式摘要。
 
 | 瀏覽命令 | 遊戲台輸入                       | 機台搖桿輸入 | 競速方向盤輸入 |
 | ------------------:| ----------------------------------- | ------------------ | ------------------ |
 |                 Up | 左搖桿向上 / 方向鍵向上       | 搖桿向上           | 方向鍵向上           |
-|               向下 | 左搖桿向下 / 方向鍵向下   | 搖桿向下         | 方向鍵向下         |
-|               向左 | 左搖桿向左 / 方向鍵向左   | 搖桿向左         | 方向鍵向左         |
-|              向右 | 左搖桿向右 / 方向鍵向右 | 搖桿向右        | 方向鍵向右        |
+|               Down | 左搖桿向下 / 方向鍵向下   | 搖桿向下         | 方向鍵向下         |
+|               Left | 左搖桿向左 / 方向鍵向左   | 搖桿向左         | 方向鍵向左         |
+|              Right | 左搖桿向右 / 方向鍵向右 | 搖桿向右        | 方向鍵向右        |
 |               View | 檢視按鈕                         | 檢視按鈕        | 檢視按鈕        |
 |               Menu | 功能表按鈕                         | 功能表按鈕        | 功能表按鈕        |
 |             Accept | A 按鈕                            | 動作 1 按鈕    | A 按鈕           |
 |             取消 | B 按鈕                            | 動作 2 按鈕    | B 按鈕           |
 
-下表為瀏覽命令「選用集」__ 對應至各種輸入裝置的方式摘要。
+下表為瀏覽命令「選用集」對應至各種輸入裝置的方式摘要。
 
 | 瀏覽命令 | 遊戲台輸入          | 機台搖桿輸入 | 競速方向盤輸入    |
 | ------------------:| ---------------------- | ------------------ | --------------------- |
-|             PageUp | LT 鍵           | _不受支援_    | _變動_              |
-|           PageDown | RT 鍵          | _不受支援_    | _變動_              |
-|           PageLeft | LB 鍵            | _不受支援_    | _變動_              |
-|          PageRight | RB 鍵           | _不受支援_    | _變動_              |
-|           ScrollUp | 右搖桿向上    | _不受支援_    | _變動_              |
-|         ScrollDown | 右搖桿向下  | _不受支援_    | _變動_              |
-|         ScrollLeft | 右搖桿向左  | _不受支援_    | _變動_              |
-|        ScrollRight | 右搖桿向右 | _不受支援_    | _變動_              |
-|           Context1 | X 按鈕               | _不受支援_    | X 按鈕 (常用__) |
-|           Context2 | Y 按鈕               | _不受支援_    | Y 按鈕 (常用__) |
-|           Context3 | 左搖桿按下  | _不受支援_    | _變動_              |
-|           Context4 | 右搖桿按下 | _不受支援_    | _變動_              |
+|             PageUp | LT 鍵           | _不支援_    | _varies_              |
+|           PageDown | RT 鍵          | _不支援_    | _varies_              |
+|           PageLeft | LB 鍵            | _不支援_    | _varies_              |
+|          PageRight | RB 鍵           | _不支援_    | _varies_              |
+|           ScrollUp | 右搖桿向上    | _不支援_    | _varies_              |
+|         ScrollDown | 右搖桿向下  | _不支援_    | _varies_              |
+|         ScrollLeft | 右搖桿向左  | _不支援_    | _varies_              |
+|        ScrollRight | 右搖桿向右 | _不支援_    | _varies_              |
+|           Context1 | X 按鈕               | _不支援_    | X 按鈕 (常用) |
+|           Context2 | Y 按鈕               | _不支援_    | Y 按鈕 (常用) |
+|           Context3 | 左搖桿按下  | _不支援_    | _varies_              |
+|           Context4 | 右搖桿按下 | _不支援_    | _varies_              |
 
 
 ## <a name="detect-and-track-ui-navigation-controllers"></a>偵測與追蹤 UI 瀏覽控制器
@@ -160,7 +160,7 @@ UINavigationController::UINavigationControllerRemoved += ref new EventHandler<UI
 
 ## <a name="reading-the-ui-navigation-controller"></a>閱讀 UI 瀏覽控制器
 
-在您識別到感興趣的 UI 瀏覽裝置之後，即可收集其輸入。 不過，瀏覽裝置不是透過引發事件來溝通狀態變更，這與您可能習慣使用的一些其他類型的輸入不同。 相反地，您可以進行「輪詢」__ 來定期讀取其目前狀態。
+在您識別到感興趣的 UI 瀏覽裝置之後，即可收集其輸入。 不過，瀏覽裝置不是透過引發事件來溝通狀態變更，這與您可能習慣使用的一些其他類型的輸入不同。 相反地，您可以進行「輪詢」來定期讀取其目前狀態。
 
 ### <a name="polling-the-ui-navigation-controller"></a>對 UI 瀏覽控制器進行輪詢
 
@@ -178,9 +178,9 @@ UINavigationReading reading = navigationController->GetCurrentReading();
 
 每個 UI 瀏覽按鈕都會提供布林值讀取，其對應至其按下 (向下) 或放開 (向上)。 為了更有效率，按鈕讀取並非作為個別布林值呈現，而是壓縮成由 [RequiredUINavigationButtons][] 及 [OptionalUINavigationButtons][] 列舉所呈現之位元欄位的其中一項。
 
-屬於「必要集」__ 的按鈕會從 `RequiredButtons` 屬性讀取 (該屬性屬於 [UINavigationReading][] 結構)，而屬於「選用集」__ 的按鈕會從 `OptionalButtons` 屬性讀取。 因為這些屬性為位元欄位，所以使用位元遮罩來隔離感興趣按鈕的值。 設定對應位元時，即按下 (下) 按鈕；否則為放開 (上)。
+屬於「必要集」的按鈕會從 `RequiredButtons` 屬性讀取 (該屬性屬於 [UINavigationReading][] 結構)，而屬於「選用集」的按鈕會從 `OptionalButtons` 屬性讀取。 因為這些屬性為位元欄位，所以使用位元遮罩來隔離感興趣按鈕的值。 設定對應位元時，即按下 (下) 按鈕；否則為放開 (上)。
 
-下列範例判斷「必要集」__ 的 [接受] 按鈕是否按下。
+下列範例判斷「必要集」的 [接受] 按鈕是否按下。
 ```cpp
 if (RequiredUINavigationButtons::Accept == (reading.RequiredButtons & RequiredUINavigationButtons::Accept))
 {
@@ -188,7 +188,7 @@ if (RequiredUINavigationButtons::Accept == (reading.RequiredButtons & RequiredUI
 }
 ```
 
-下列範例判斷「必要集」__ 的 [接受] 按鈕是否放開。
+下列範例判斷「必要集」的 [接受] 按鈕是否放開。
 ```cpp
 if (RequiredUINavigationButtons::None == (reading.RequiredButtons & RequiredUINavigationButtons::Accept))
 {
@@ -196,9 +196,9 @@ if (RequiredUINavigationButtons::None == (reading.RequiredButtons & RequiredUINa
 }
 ```
 
-讀取「選用集」__ 中的按鈕時，請務必使用 `OptionalButtons` 屬性及 `OptionalUINavigationButtons` 列舉。
+讀取「選用集」中的按鈕時，請務必使用 `OptionalButtons` 屬性及 `OptionalUINavigationButtons` 列舉。
 
-下列範例判斷「選用集」__ 的 [Context 1] 按鈕是否按下。
+下列範例判斷「選用集」的 [Context 1] 按鈕是否按下。
 ```cpp
 if (OptionalUINavigationButtons::Context1 == (reading.OptionalButtons & OptionalUINavigationButtons::Context1))
 {
@@ -213,7 +213,7 @@ if (OptionalUINavigationButtons::Context1 == (reading.OptionalButtons & Optional
 
 [InputInterfacingUWP 範例 _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) 示範不同輸入裝置作為 UI 瀏覽控制器表現的方式。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [Windows.Gaming.Input.Gamepad][]
 [Windows.Gaming.Input.ArcadeStick][]
 [Windows.Gaming.Input.RacingWheel][]

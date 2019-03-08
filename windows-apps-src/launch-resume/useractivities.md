@@ -6,11 +6,11 @@ ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114544"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641153"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>繼續使用者活動，甚至是在各個裝置之間
 
@@ -39,7 +39,7 @@ ms.locfileid: "9114544"
 若要將 **UserActivity** 新增至應用程式：
 
 1. 當您使用者的內容在應用程式內變更 (例如網頁瀏覽、新遊戲關卡等) 時，會產生 **UserActivity** 物件
-2. 在 **UserActivity** 物件中至少填入以下必填欄位：[ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId)、 [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri) 及 [UserActivity.VisualElements.DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText)。
+2. 填入**UserActivity**具有必要欄位的最小集合的物件：[ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId)， [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri)，以及[UserActivity.VisualElements.DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText)。
 3. 將自訂配置處理常式新增至您的應用程式，讓它可由 **UserActivity** 重新啟用。
 
 只要幾行程式碼，就能將 **UserActivity** 整合至應用程式。 例如，想像一下 MainPage 類別內部 MainPage.xaml.cs 中的這個程式碼 (注意：假設 `using Windows.ApplicationModel.UserActivities;`)：
@@ -77,7 +77,7 @@ private async Task GenerateActivityAsync()
 
 因此在此狀況下， `ActivationUri` 是自訂配置，我們也必須在應用程式資訊清單中登錄通訊協定。 這會在 Package.appmanifest XML 檔案中完成，或使用設計工具完成。
 
-若要使用設計工具進行變更，請按兩下專案中的 Package.appmanifest 檔案啟動設計工具，選取 \[宣告\]**** 索引標籤，然後新增 \[通訊協定\]**** 定義。 目前唯一需要填寫的屬性為 \[名稱\]****。 它應該符合我們上述指定的 URI，`my-app`。
+若要使用設計工具進行變更，請按兩下專案中的 Package.appmanifest 檔案啟動設計工具，選取 \[宣告\] 索引標籤，然後新增 \[通訊協定\] 定義。 目前唯一需要填寫的屬性為 \[名稱\]。 它應該符合我們上述指定的 URI，`my-app`。
 
 現在我們需要撰寫一些程式碼告訴應用程式在由通訊協定啟用後該執行的動作。 我們將覆寫 App.xaml.cs 中的 `OnActivated` 方法，將 URI 傳遞至主要網頁，如下所示：
 
@@ -99,7 +99,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-此程式碼的功能就是偵測是否是透過通訊協定啟用應用程式。 如果是，它會進一步瞭解應用程式應執行什麼動作，以繼續進行系統啟用此程式碼所針對的工作。 經過簡單的應用程式，此應用程式繼續執行的唯一活動放置您次要頁面上出現在應用程式時。
+此程式碼的功能就是偵測是否是透過通訊協定啟用應用程式。 如果是，它會進一步瞭解應用程式應執行什麼動作，以繼續進行系統啟用此程式碼所針對的工作。 簡單的應用程式，只有此應用程式繼續執行的活動會讓您在第二個頁面上應用程式出現時。
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>使用調適型卡片改善時間軸體驗
 
@@ -155,7 +155,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 ## <a name="summary"></a>摘要
 
 您可以使用 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API 讓您的應用程式顯示在時間軸與 Cortana 中。
-* 深入了解[**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* 深入了解[ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 請查看[範例程式碼](https://github.com/Microsoft/project-rome)。
 * 請參閱[更複雜的調適型卡片](https://adaptivecards.io/)。
 * 透過 [Microsoft Graph](https://developer.microsoft.com/graph/) 從 iOS、Android 或您的 Web 服務發佈 **UserActivity**。
@@ -163,13 +163,13 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="key-apis"></a>重要 API
 
-* [Useractivity 命名空間](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* [UserActivities 命名空間](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用者活動 （專案 Rome 文件）](https://docs.microsoft.com/windows/project-rome/user-activities/)
-* [調適型卡片](https://docs.microsoft.com/adaptive-cards/)
-* [調適型卡片視覺化工具範例](https://adaptivecards.io/)
-* [處理 URI 啟用](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-* [使用 Microsoft Graph、活動摘要及調適型卡片在任何平台上與您的客戶互動](https://channel9.msdn.com/Events/Connect/2017/B111)
+* [使用者活動 （Project Rome 文件）](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [自適性卡片](https://docs.microsoft.com/adaptive-cards/)
+* [自適性卡片視覺化檢視範例](https://adaptivecards.io/)
+* [處理啟動 URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+* [與您在任何平台上使用 Microsoft Graph、 活動摘要，以及自適性卡片上的客戶](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

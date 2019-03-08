@@ -1,26 +1,26 @@
 ---
-Description: A button gives the user a way to trigger an immediate action.
+Description: 按鈕讓使用者得以觸發立即動作。
 title: 連絡人卡片
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: kele
 design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117598"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638823"
 ---
 # <a name="contact-card"></a>連絡人卡片
 
 連絡人卡片會顯示[連絡人](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (UWP 用來代表人員和企業的機制) 的連絡資訊，例如姓名、電話號碼和地址。  連絡人卡片也可讓使用者編輯連絡資訊。 您可以選擇顯示精簡的連絡人卡片，或是包含額外資訊的完整連絡人卡片。
 
-> **重要 API**：[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)、[ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)、[IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[Contact 類別](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **重要的 Api**:[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)， [ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)， [IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)，[連絡類別](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 有兩種顯示連絡人卡片的方式：  
 * 做為標準連絡人卡片，出現在的飛出視窗中，並且可消失關閉 (在使用者按一下連絡人卡片外部時消失)。 
@@ -182,4 +182,4 @@ private void onUserClickShowContactCard()
 ## <a name="related-articles"></a>相關文章
 - [連絡人和行事曆](/windows/uwp/contacts-and-calendar/)
 - [連絡人卡片範例](https://go.microsoft.com/fwlink/p/?LinkId=624040)
-- [連絡人圖片控制項](/windows/uwp/controls-and-patterns/person-picture/)
+- [人圖片控制項](/windows/uwp/controls-and-patterns/person-picture/)

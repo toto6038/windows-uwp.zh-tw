@@ -1,48 +1,48 @@
 ---
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows 應用程式認證套件
-description: 若要讓您的 app 能順利在 Microsoft Store 上發行或成為 Windows 認證，驗證和測試在本機送出以進行認證之前。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
+description: 若要讓您的應用程式最有可能正在發行的 Microsoft Store，或獲得 Windows 認證，驗證，並在本機測試之前您提交連接器等待認證。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，應用程式認證
+keywords: windows 10 uwp 應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: b480e96621e143e283a2556bdbef394aaf7dbc07
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114464"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597433"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
 
 
-若要取得[Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)您的應用程式或準備[發行至 Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您應該驗證和測試它在本機第一次。 本主題示範如何安裝和執行[Windows 應用程式認證套件](https://go.microsoft.com/fwlink/p/?LinkID=309666)，以確保您的應用程式是安全且有效率。
+若要取得您的應用程式[Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)或準備，才能針對[發行至 Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您應該驗證，並在本機測試第一次。 本主題說明如何安裝和執行[Windows 應用程式認證套件](https://go.microsoft.com/fwlink/p/?LinkID=309666)以確保您的應用程式既安全又有效率。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 測試通用 Windows app 的先決條件：
 
--   您必須安裝和執行 windows 10。
--   您必須安裝[Windows 應用程式認證套件 10 版]( https://go.microsoft.com/fwlink/p/?LinkID=309666)，其中包含適用於 windows 10 中 Windows 軟體開發套件 (SDK)。
+-   您必須安裝並執行 Windows 10。
+-   您必須安裝[第 10 版 Windows 應用程式認證套件]( https://go.microsoft.com/fwlink/p/?LinkID=309666)，適用於 Windows 10 包含 Windows 軟體開發套件 (SDK) 中。
 -   您必須[啟用您的裝置以進行開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
--   您必須將要測試的 Windows 應用程式部署至電腦。
+-   您必須將要測試的 Windows App 部署至電腦。
 
-**關於就地升級的附註**
+**就地升級注意事項**
 
 安裝更新版本的 [Windows 應用程式認證套件]( https://go.microsoft.com/fwlink/p/?LinkID=309666)，將會取代電腦上安裝的任何舊版套件。
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>以互動方式使用 Windows 應用程式認證套件來驗證 Windows 應用程式
 
-1.  從 **\[開始\]** 功能表中，搜尋 **\[應用程式\]**，找到 **\[Windows 套件\]**，然後按一下 **\[Windows 應用程式認證套件\]**。
+1.  從 [開始] 功能表中，搜尋 [應用程式]，找到 [Windows 套件]，然後按一下 [Windows 應用程式認證套件]。
 
-2.  從 [Windows 應用程式認證套件] 中，選取您要執行的驗證類別。 例如：如果您要驗證 Windows 應用程式，請選取 **\[驗證 Windows 應用程式\]**。
+2.  從 [Windows 應用程式認證套件] 中，選取您要執行的驗證類別。 例如：如果您要驗證的 Windows 應用程式，請選取**驗證的 Windows 應用程式**。
 
-    您可以直接瀏覽到要測試的 app，或從 UI 中的清單中選擇 app。 首次執行 Windows 應用程式認證套件時，UI 會列出已安裝在您電腦上的所有 Windows 應用程式。 其後每次執行時，UI 將會顯示您最近已驗證過的 Windows 應用程式。 如果沒有列出您要測試的 app，可以按一下 **\[我的 app 未列在裡面\]**，以取得系統上已安裝的所有 app 的完整清單。
+    您可以直接瀏覽到要測試的 app，或從 UI 中的清單中選擇 app。 首次執行 Windows 應用程式認證套件時，UI 會列出已安裝在您電腦上的所有 Windows 應用程式。 其後每次執行時，UI 將會顯示您最近已驗證過的 Windows 應用程式。 如果沒有列出您要測試的 app，可以按一下 [我的 app 未列在裡面]，以取得系統上已安裝的所有 app 的完整清單。
 
-3.  輸入或選取要測試的 app 之後，請按一下 **\[下一步\]**。
+3.  輸入或選取要測試的 app 之後，請按一下 [下一步]。
 
-4.  在下一個畫面中，您將會看到與您要測試之應用程式類型對應的測試工作流程。 若清單中的測試呈現灰色，表示該測試不適用於您的環境。 例如，若您在 Windows 7 上測試 Windows 10 應用程式，只有靜態測試會套用到工作流程。 請注意，Microsoft Store，可能會套用來自此工作流程的所有測試。 選取要執行的測試，然後按一下 **\[下一步\]**。
+4.  在下一個畫面中，您將會看到與您要測試之應用程式類型對應的測試工作流程。 若清單中的測試呈現灰色，表示該測試不適用於您的環境。 例如，若您在 Windows 7 上測試 Windows 10 應用程式，只有靜態測試會套用到工作流程。 請注意 Microsoft Store 可套用所有的測試，從這個工作流程。 選取要執行的測試，然後按一下 [下一步]。
 
     Windows 應用程式認證套件隨即開始驗證該應用程式。
 
@@ -52,17 +52,17 @@ ms.locfileid: "9114464"
 
 6.  開啟報告檔案，然後檢閱測試結果。
 
-**注意：** 如果您使用 Visual Studio，您就可以執行 Windows 應用程式認證套件，當您建立您的應用程式套件。 若要深入了解，請參閱[封裝 UWP app](https://msdn.microsoft.com/library/windows/apps/Mt627715)。
+**附註**  如果您使用 Visual Studio，您就可以執行 Windows 應用程式認證套件，當您建立應用程式套件。 若要深入了解，請參閱[封裝 UWP app](https://msdn.microsoft.com/library/windows/apps/Mt627715)。
 
  
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-from-a-command-line"></a>從命令列使用 Windows 應用程式認證套件來驗證 Windows app
 
-**重要**Windows 應用程式認證套件必須在作用中使用者工作階段的內容中執行。
+**重要**  必須作用中使用者工作階段的內容中執行的 Windows 應用程式認證套件。
 
 1.  在命令視窗中，瀏覽到包含 Windows 應用程式認證套件的目錄。
 
-    **注意：** 的預設路徑為 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
+    **附註**  的預設路徑為 c:\\Program Files\\Windows Kits\\10\\應用程式認證套件\\。
 
 2.  依序輸入下列命令，以測試電腦上已安裝的 app：
 
@@ -78,17 +78,17 @@ ms.locfileid: "9114464"
 
 3.  測試完成之後，開啟名為 `[report file name]` 的報告檔案，然後檢閱測試結果。
 
-**注意：** Windows 應用程式認證套件可以從服務中，執行，但是該服務必須在作用中使用者工作階段內初始套件處理程序，而且無法在 Session0 中執行。
+**附註**  一項服務，從執行 Windows 應用程式認證套件，但服務必須在作用中使用者工作階段內啟動套件程序，因此無法執行 Session0 中。
 
-**注意：** 如需 Windows 應用程式認證套件命令列的詳細資訊，請輸入下列命令 `appcert.exe /?`
+**附註**  如需 Windows 應用程式認證套件命令列的詳細資訊，請輸入命令 `appcert.exe /?`
 
 ## <a name="testing-with-a-low-power-computer"></a>使用低功率電腦進行測試
 
 Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效能為基礎。
 
-執行測試之電腦的特性會影響測試結果。 若要判斷您的應用程式效能是否符合[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我們建議您測試您的應用程式在低功率電腦上，例如 Intel Atom 處理器電腦搭配 1366x768 （或更高版本） 的螢幕解析度與旋轉式硬碟磁碟機 （而非固態硬碟）。
+執行測試之電腦的特性會影響測試結果。 若要判斷您的應用程式效能是否符合[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我們建議您測試您的應用程式在低功率電腦，例如具有 1366x768 （或更高版本） 的螢幕解析度的 Intel Atom 處理器型電腦上和一個旋轉硬碟 （而不是固態硬碟）。
 
-隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 最新的[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)參考，並測試您的應用程式與最新版本的 Windows 應用程式認證套件，以確定您的 app 符合最新的效能需求。
+隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 請參閱最新[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)並測試您的應用程式與最新版本的 Windows 應用程式認證套件，藉此確定您的應用程式符合最新的效能需求。
 
 ## <a name="related-topics"></a>相關主題
 

@@ -1,5 +1,5 @@
 ---
-title: 顯示 2D、3D 和 Streetside 檢視的地圖
+title: 顯示地圖的 2D、3D 和 Streetside 檢視
 description: 您可以在稱為地圖*座次卡*的淺色可關閉視窗中顯示地圖，亦可在全功能地圖控制項中顯示地圖。
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ms.date: 03/19/2018
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Windows 10、uwp、地圖、位置、地圖控制項、地圖檢視
 ms.localizationpriority: medium
 ms.openlocfilehash: 41d44f75c80e10123c21fc310bff46371ede0fca
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116380"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641173"
 ---
-# <a name="display-maps-with-2d-3d-and-streetside-views"></a>用 2D、3D 和 Streetside 檢視顯示地圖
+# <a name="display-maps-with-2d-3d-and-streetside-views"></a>顯示地圖的 2D、3D 和 Streetside 檢視
 
 您可以在一個叫地圖*placecard*的淺色可關閉視窗中顯示一張地圖，或者在一個完整精選地圖控制項中顯示。
 
@@ -85,9 +85,9 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 
 ## <a name="display-map-in-a-control"></a>在控制項中顯示地圖
 
-在您的應用程式中使用地圖控制項顯示豐富且可自訂的地圖資料。 地圖控制項可顯示地圖、空照圖、3D 圖、檢視、方向、搜尋結果及交通路況。 您可以在地圖上顯示使用者的位置、方向，以及感興趣的地點。 地圖也可以顯示空照圖 3D 檢視、Streetside 檢視、交通路況、大眾運輸和當地企業。
+在您的應用程式中使用地圖控制項顯示豐富且可自訂的地圖資料。 地圖控制項可顯示地圖、空照圖、3D 圖、檢視、方向、搜尋結果及交通路況。 您可以在地圖上顯示使用者的位置、方向，以及感興趣的地點。 地圖也可以顯示空照圖 3D 檢視、街景檢視、交通路況、大眾運輸和當地企業。
 
-當您想要 app 內有地圖時，請使用地圖控制項讓使用者能夠檢視 app 專屬或一般地理資訊。 在 app 中擁有地圖控制項，表示使用者不需要離開您的 app 便可取得該資訊。
+當您需要在 app 內有一份地圖時，使用地圖控制項讓使用者能夠檢視 app 專屬或一般地理資訊。 在 app 中有地圖控制項，表示使用者不需要離開您的 app 便可取得該資訊。
 
 > [!NOTE]
 >如果您不介意使用者離開您的應用程式，請考慮使用 Windows 地圖 app 來提供該資訊。 您的 app 可以啟動 Windows 地圖 app 來顯示特定的地圖、方向以及搜尋結果。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://msdn.microsoft.com/library/windows/apps/mt228341)。
@@ -137,7 +137,7 @@ pageGrid.Children.Add(MapControl2);
 
 ### <a name="get-and-set-a-maps-authentication-key"></a>取得及設定地圖驗證金鑰
 
-您必須先指定地圖驗證金鑰做為 [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637004) 屬性的值，才能使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637036) 和地圖服務。 請在先前的範例中，使用您從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)取得的金鑰來取代 `EnterYourAuthenticationKeyHere`。 除非您指定地圖驗證金鑰，否則「**警告: 未指定 MapServiceToken**」文字會持續顯示在的控制項下方。 如需有關取得及設定地圖驗證金鑰的詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
+您必須先指定地圖驗證金鑰做為 [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637004) 屬性的值，才能使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637036) 和地圖服務。 請在先前的範例中，使用您從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)取得的金鑰來取代 `EnterYourAuthenticationKeyHere`。 文字**警告：未指定 MapServiceToken**仍會出現在控制項下方，直到您指定的地圖服務的驗證金鑰。 如需有關取得及設定地圖驗證金鑰的詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
 ## <a name="set-the-location-of-a-map"></a>設定地圖的位置
 將地圖指向您想要的任何位置或使用使用者的目前位置。  
@@ -222,7 +222,7 @@ myMap.StyleSheet = MapStyleSheet.RoadDark();
 
 您也可以使用 JSON 來定義自訂樣式，接著使用該 JSON 來建立 [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet) 物件。
 
-以互動方式使用[地圖樣式表編輯器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft)應用程式可以建立樣式表 JSON。
+可以建立 JSON，以互動方式使用的樣式表[地圖樣式表編輯器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft)應用程式。
 
 ```csharp
 myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"
@@ -323,7 +323,7 @@ Streetside 檢視是位置的街景透視，它會出現在地圖控制項上方
 
 本範例說明如何顯示類似先前影像的 Streetside 檢視。
 
-**注意：** 如果地圖控制項的比例太小，不會出現概觀地圖。
+**附註**  概觀圖不會出現在地圖控制項的大小太小的大小。
 
  
 
@@ -365,7 +365,7 @@ private async void showStreetsideView()
 ## <a name="display-aerial-3d-views"></a>顯示空照圖 3D 檢視
 
 
-藉由使用 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) 類別，即可指定地圖的 3D 透視。 地圖場景代表在地圖中顯示的 3D 檢視。 [**MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) 類別代表顯示這類檢視的相機位置。
+藉由使用 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) 類別，即可指定地圖的 3D 透視。 地圖場景代表在地圖中顯示的 3D 檢視。 [  **MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) 類別代表顯示這類檢視的相機位置。
 
 ![地圖場景位置之 MapCamera 位置的圖表](images/mapcontrol-techdiagram.png)
 
@@ -421,10 +421,10 @@ private async void display3DLocation()
 
 藉由呼叫下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 方法，即可取得地圖上位置的相關資訊。
 
--   [**TryGetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016)方法-取得地圖控制項檢視區中指定的點對應的地理位置。
--   [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) 方法 - 取得與指定的地理位置對應的地圖控制項檢視區中的點。
--   [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) 方法 - 決定目前是否能在地圖控制項的檢視區中看見指定的地理位置。
--   [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) 方法 - 取得地圖上位於地圖控制項檢視區中指定點的元素。
+-   [**TryGetLocationFromOffset** ](https://msdn.microsoft.com/library/windows/apps/dn637016)方法-取得對應至地圖控制項檢視區中的指定點的地理位置。
+-   [**GetOffsetFromLocation** ](https://msdn.microsoft.com/library/windows/apps/dn637018)方法-取得對應至指定的地理位置的地圖控制項檢視區中的點。
+-   [**IsLocationInView** ](https://msdn.microsoft.com/library/windows/apps/dn637022)方法-判斷指定的地理位置是目前顯示在地圖控制項的檢視區。
+-   [**FindMapElementsAtOffset** ](https://msdn.microsoft.com/library/windows/apps/dn637014)方法-Get 在地圖上的項目位於檢視區中的地圖控制項指定的點。
 
 ## <a name="handle-interaction-and-changes"></a>處理互動及變更
 
@@ -437,7 +437,7 @@ private async void display3DLocation()
 
 藉由處理控制項的 [**LoadingStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn637028) 事件，即可判斷地圖是正在載入，還是已完全載入。
 
-請處理下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 事件，以處理使用者或應用程式變更地圖設定時所發生的變更。 [地圖的指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
+請處理下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 事件，以處理使用者或應用程式變更地圖設定時所發生的變更。 [對應的指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
 
 -   [**CenterChanged**](https://msdn.microsoft.com/library/windows/apps/dn637006)
 -   [**HeadingChanged**](https://msdn.microsoft.com/library/windows/apps/dn637020)
@@ -455,10 +455,10 @@ private async void display3DLocation()
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [取得目前的位置](get-location.md)
-* [定位感知 app 的設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465148)
-* [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [定位感知應用程式的設計方針](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [對應的設計方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 影片：利用跨電話、 平板電腦和 PC 在 Windows 應用程式中的地圖與位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 流量的應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)

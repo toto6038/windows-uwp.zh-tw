@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, directx, 載入資源
 ms.localizationpriority: medium
 ms.openlocfilehash: 478c61713dfcf5bc8a420aa71b0dced81ed6a169
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114584"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633353"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 遊戲中載入資源
 
@@ -28,7 +28,7 @@ ms.locfileid: "9114584"
 
 -   平行模式程式庫 (ppltasks.h)
 
-### <a name="prerequisites"></a>先決條件
+### <a name="prerequisites"></a>必要條件
 
 -   了解基本 Windows 執行階段
 -   了解非同步工作
@@ -50,7 +50,7 @@ ms.locfileid: "9114584"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -77,7 +77,7 @@ ms.locfileid: "9114584"
 
 非同步載入使用平行模式程式庫 (PPL) 中的 **task** 範本進行處理。 **task** 包含一個後面跟著 Lambda 的方法呼叫，可以在完成後處理非同步呼叫的結果，格式通常如下：
 
-`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`.
+`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`。
 
 使用 **.then()** 語法可以將多個工作鏈結在一起，因此，當一個作業完成後，便可執行相依於前一作業之結果的另一個非同步操作。 如此一來，您就能以玩家幾乎看不見的方式，載入、轉換及管理個別執行緒上的複雜資產。
 
@@ -130,7 +130,7 @@ return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Arr
 
 但是，不要在所有非同步載入完成之前就開始遊戲！ 建立一些方法在載入完成後通知使用者 (例如特定的欄位)，並在完成時使用載入方法中的 Lambda 來設定該通知。 啟動使用那些載入資源的任一元件之前，請先檢查變數。
 
-下列範例會在遊戲啟動時，使用定義在 BasicLoader.cpp 中的非同步方法來載入著色器、網格及紋理。 請注意，當所有載入方法完成後，它會在遊戲物件 **m\_loadingComplete** 中設定一個特定欄位。
+下列範例會在遊戲啟動時，使用定義在 BasicLoader.cpp 中的非同步方法來載入著色器、網格及紋理。 請注意，在遊戲的物件上設定特定的欄位**m\_loadingComplete**，完成所有的載入方法。
 
 ```cpp
 void ResourceLoading::CreateDeviceResources()
@@ -191,7 +191,7 @@ void ResourceLoading::CreateDeviceResources()
 }
 ```
 
-請注意，工作已經使用 &amp;&amp; 運算子彙總，因此只有在所有工作完成後，才會觸發設定載入完成旗標的 Lambda。 請注意，如果您有多個旗標，可能會生競爭情況。 例如，假設 Lambda 連續將兩個旗標設為相同的值，如果另一個執行緒在第二個旗標設定之前就檢查了旗標，則可能只會看到設定的第一個旗標。
+請注意，工作已經使用 &&amp;amp; 運算子彙總，因此只有在所有工作完成後，才會觸發設定載入完成旗標的 Lambda。 請注意，如果您有多個旗標，可能會生競爭情況。 例如，假設 Lambda 連續將兩個旗標設為相同的值，如果另一個執行緒在第二個旗標設定之前就檢查了旗標，則可能只會看到設定的第一個旗標。
 
 您已經了解如何以非同步方式載入資源檔案。 以同步方式載入檔案就更簡單了，您可以在 [BasicReaderWriter 的完整程式碼](complete-code-for-basicreaderwriter.md)和 [BasicLoader 的完整程式碼](complete-code-for-basicloader.md)中找到它們的範例。
 
@@ -205,14 +205,14 @@ void ResourceLoading::CreateDeviceResources()
 
 (您應該永遠盡可能地將資產資料以接近內部表示法的格式封裝。 這樣可以減少資源使用量並節省時間。)
 
-讓我們從網格的檔案取得位元組資料吧。 範例中的格式假設檔案是尾碼 .vbo 的範例特定格式  (再次提醒，這個格式與 OpenGL's VBO 格式不同)。每個頂點本身均對應 **BasicVertex** 類型，那是定義在 obj2vbo 轉換器工具程式碼中的結構。 .vbo 檔案中的頂點資料版面配置看起來像這樣：
+讓我們從網格的檔案取得位元組資料吧。 範例中的格式假設檔案是尾碼 .vbo 的範例特定格式  （同樣地，此格式不 OpenGL 的 VBO 格式相同。）每個頂點本身會對應至**BasicVertex**型別，這是一個 obj2vbo 轉換器工具的程式碼中定義的結構。 .vbo 檔案中的頂點資料版面配置看起來像這樣：
 
 -   資料串流的前 32 個位元 (4 個位元組) 包含網格中的頂點數目 (numVertices)，以一個 uint32 值表示。
 -   資料串流的後 32 個位元 (4 個位元組) 包含網格中的索引數目 (numIndices)，以一個 uint32 值表示。
--   在那之後，後續的 (numVertices \* sizeof(**BasicVertex**)) 位元則包含頂點資料。
--   資料最後的 (numIndices \* 16) 位元包含索引資料，以一連串的 uint16 值表示。
+-   在那之後，後續 (numVertices \* sizeof (**BasicVertex**)) 含有位元的頂點資料量。
+-   最後一個 (numIndices \* 16) 的資料位元包含索引的資料，表示為一連串的 uint16 值。
 
-重點在於：了解您載入的網格資料的位元層級版面配置。 此外，也請確定使用一致的位元組順序。 所有 Windows8 平台都均是位元組由小到大。
+重點在於：了解您載入的網格資料的位元層級版面配置。 此外，也請確定使用一致的位元組順序。 所有的 Windows 8 平台是位元組由小到大。
 
 在範例中，您從 **LoadMeshAsync** 方法中呼叫方法 CreateMesh 以執行此位元層級的解譯。
 
@@ -239,7 +239,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**CreateMesh** 會解譯從檔案載入的位元組資料，然後會分別將頂點和索引清單傳送到 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)，並指定 D3D11\_BIND\_VERTEX\_BUFFER 或 D3D11\_BIND\_INDEX\_BUFFER，進而為網格建立頂點緩衝區和索引緩衝區。 下列是 **BasicLoader** 中使用的程式碼：
+**CreateMesh**會從檔案載入的位元組資料的解譯，並建立頂點緩衝區和索引緩衝區為該網格傳遞的端點和索引的清單，以分別[ **ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)並指定任一 D3D11\_繫結\_頂點\_緩衝區或 D3D11\_繫結\_索引\_緩衝區。 下列是 **BasicLoader** 中使用的程式碼：
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -320,14 +320,14 @@ DDS 檔案是包含下列資訊的二進位檔案：
 
 -   檔案中的資料描述。
 
-    資料會使用 [**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982) 的標頭描述來加以描述；而像素格式則是使用 [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) 加以定義。 請注意，**DDS\_HEADER** 和 **DDS\_PIXELFORMAT** 結構取代了已過時的 DDSURFACEDESC2、DDSCAPS2 及 DDPIXELFORMAT DirectDraw 7 結構。 **DDS\_HEADER** 等同於 DDSURFACEDESC2 與 DDSCAPS2 的二進位檔案。 **DDS\_PIXELFORMAT** 是等同於 DDPIXELFORMAT 的二進位檔案。
+    資料描述標頭的描述使用[ **DDS\_標頭**](https://msdn.microsoft.com/library/windows/desktop/bb943982); 使用定義的像素格式[ **DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984). 請注意， **DDS\_標頭**並**DDS\_PIXELFORMAT**結構取代已被取代的 DDSURFACEDESC2、 DDSCAPS2 和 DDPIXELFORMAT DirectDraw 7 結構。 **DDS\_標頭**DDSURFACEDESC2 和 DDSCAPS2 二進位對等項目。 **DDS\_PIXELFORMAT** DDPIXELFORMAT 二進位對等用法。
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    如果 [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) 中的 **dwFlags** 值設為 DDPF\_FOURCC，而 **dwFourCC** 設為 "DX10"，額外的 [**DDS\_HEADER\_DXT10**](https://msdn.microsoft.com/library/windows/desktop/bb943983) 結構將會存在以便配合無法以 RGB 像素格式 (例如浮點數格式及 sRGB 格式等) 表示的紋理陣列或 DXGI 格式。當 **DDS\_HEADER\_DXT10** 結構存在時，整個資料描述看起來會像這樣。
+    如果值**dwFlags**中[ **DDS\_PIXELFORMAT** ](https://msdn.microsoft.com/library/windows/desktop/bb943984)設為 DDPF\_FOURCC 及**dwFourCC**設為「 DX10 」 的額外[ **DDS\_標頭\_DXT10** ](https://msdn.microsoft.com/library/windows/desktop/bb943983)結構將會出現以容納材質陣列或不能表示為 RGB 的 DXGI 格式像素格式例如浮點格式，sRGB 格式等。當**DDS\_標頭\_DXT10**結構存在，則整個資料描述會看起來像這樣。
 
     ```cpp
     DWORD               dwMagic;
@@ -551,7 +551,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-在此範例中，您使用 **BasicReaderWriter** 執行個體 (**m\_basicReaderWriter**) 以位元組串流的形式讀取提供的編譯著色器物件 (.cso) 檔案。 在該工作完成後，Lambda 會以從檔案載入的位元組資料呼叫 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)。 您的回呼必須設定一些旗標以指示載入完成，而您的程式碼必須在執行著色器之前檢查此旗標。
+在此範例中，您可以使用**BasicReaderWriter**執行個體 (**m\_basicReaderWriter**) 來提供已編譯的著色器物件 (.cso) 檔案，以位元組資料流中讀取。 在該工作完成後，Lambda 會以從檔案載入的位元組資料呼叫 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)。 您的回呼必須設定一些旗標以指示載入完成，而您的程式碼必須在執行著色器之前檢查此旗標。
 
 頂點著色器就比較複雜一些。 在頂點著色器中，您也必須載入定義頂點資料的個別輸入配置。 您可以使用下列程式碼，以非同步方式載入頂點著色器和自訂的頂點輸入配置。 請確定此輸入配置可以正確地呈現您從網格載入的頂點資訊！
 

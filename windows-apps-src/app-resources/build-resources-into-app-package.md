@@ -1,5 +1,5 @@
 ---
-Description: Some kinds of apps (multilingual dictionaries, translation tools, etc.) need to override the default behavior of an app bundle, and build resources into the app package instead of having them in separate resource packages. This topic explains how to do that.
+Description: 某些類型的應用程式 (多語系字典、翻譯工具等) 需要覆寫應用程式套件組合的預設行為，並將資源建置到應用程式套件中，而不是讓這些資源分散在不同的資源套件中。 本主題說明如何執行這個動作。
 title: 將資源建置到您的應用程式套件，而不是資源套件
 template: detail.hbs
 ms.date: 11/14/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf2d34bc3dae20750f66c9116499a17444b798c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938491"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627283"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>將資源建置到您的應用程式套件，而不是資源套件
 
@@ -97,6 +97,6 @@ Visual Studio 在幕後啟動名為 `MakePri.exe` 的工具來產生所謂「套
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Visual Studio 封裝 UWP app](../packaging/packaging-uwp-apps.md)
-* [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)
+* [封裝 UWP 應用程式與 Visual Studio](../packaging/packaging-uwp-apps.md)
+* [編譯以手動方式使用 MakePri.exe 的資源](compile-resources-manually-with-makepri.md)
 * [指定您的應用程式使用的預設資源](specify-default-resources-installed.md)

@@ -1,21 +1,21 @@
 ---
-Description: Use content links to embed rich data in your text controls.
+Description: 使用豐富的資料嵌入您的文字控制項的內容連結。
 title: 文字控制項中的內容連結
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946446"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648533"
 ---
 # <a name="content-links-in-text-controls"></a>文字控制項中的內容連結
 
@@ -23,10 +23,10 @@ ms.locfileid: "8946446"
 
 當使用者在 RichEditBox 中的項目開頭加上 @ 符號時，系統會向他們顯示符合該項目的連絡人和/或地點建議。 例如，使用者接著選擇某個地點時，這個地點的 ContentLink 將會插入文字中。 當使用者從 RichEditBox 叫用內容連結時，飛出視窗會出現，並顯示地圖以及該地點的其他資訊。
 
-> **重要 API**：[ContentLink 類別](/uwp/api/windows.ui.xaml.documents.contentlink)、[ContentLinkInfo 類別](/uwp/api/windows.ui.text.contentlinkinfo)、[RichEditTextRange 類別](/uwp/api/windows.ui.text.richedittextrange)
+> **重要的 Api**:[ContentLink 類別](/uwp/api/windows.ui.xaml.documents.contentlink)， [ContentLinkInfo 類別](/uwp/api/windows.ui.text.contentlinkinfo)， [RichEditTextRange 類別](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> 內容連結的 Api 會分散在下列命名空間： Windows.UI.Xaml.Controls、 Windows.UI.Xaml.Documents 和 Windows.UI.Text。
+> 如需內容的連結 Api 會分散到下列命名空間：Windows.UI.Xaml.Controls、 Windows.UI.Xaml.Documents 和 Windows.UI.Text。
 
 
 
@@ -39,14 +39,14 @@ ms.locfileid: "8946446"
 
 以下是內容連結在 RichEditBox 和 TextBlock 中的預設外觀。
 
-![Rich Edit ](images/content-link-default-richedit.png)
-![文字方塊中的內容連結](images/content-link-default-textblock.png)
+![在豐富的內容連結編輯方塊](images/content-link-default-richedit.png)
+![文字區塊中的內容連結](images/content-link-default-textblock.png)
 
 下列章節詳細說明用法、轉譯和行為上的差異。 本表提供內容連結在 RichEditBox 與文字區塊之間主要差異的快速比較。
 
 | 功能   | RichEditBox | 文字區塊 |
 | --------- | ----------- | ---------- |
-| 用法 | ContentLinkInfo 執行個體 | ContentLink 文字元素 |
+| 用途 | ContentLinkInfo 執行個體 | ContentLink 文字元素 |
 | 游標 | 取決於內容連結的類型，無法變更 | 取決於 Cursor 屬性，預設為 **null** |
 | ToolTip | 未轉譯 | 顯示次要文字 |
 
@@ -129,7 +129,7 @@ ContentLinkInfo 物件包含用來顯示、叫用和管理內容連結的資訊�
 - **SecondaryText**：此字串顯示在所轉譯內容連結的工具提示中。
   - 在選擇器所建立的地點內容連結中，它包含位置的地址 (如果有的話)。
 - **Uri**：內容連結主題詳細資訊的連結。 此 URI 可以開啟已安裝的應用程式或網站。
-- **Id**：這是 RichEditBox 控制項所建立個別控制項的唯讀計數器。 這會在動作 (例如刪除或編輯) 期間用來追蹤此 ContentLinkInfo。 如果將 ContentLinkInfo 剪下並貼到控制項中，它將會取得新的識別碼，識別碼值是增量。
+- **Id**：這是 RichEditBox 控制項所建立個別控制項的唯讀計數器。 這會在動作 (例如刪除或編輯) 期間用來追蹤此 ContentLinkInfo。 如果 ContentLinkInfo 剪下並貼回至控制項時，它會取得新的識別碼。識別碼值都是累加的。
 - **LinkContentKind**：描述內容連結類型的字串。 建內容類型是_地點_和_連絡人_。 此值要區分大小寫。
 
 #### <a name="link-content-kind"></a>連結內容類型
@@ -162,7 +162,7 @@ Uri 屬性的作用很像超連結的 NavigateUri 屬性。 當使用者按一�
 - 如果 LinkContentKind 不是 "People"，則會開啟 **\[連絡人\]** App。 例如，如果您在 ContentLinkChanged 事件處理常式中修改了 LinkContentKind，就會發生這種情況。
 
 > [!TIP]
-> 如需從您的應用程式開啟其他應用程式和網站的詳細資訊，請參閱下[啟動 uri 的應用程式](/windows/uwp/launch-resume/launch-app-with-uri)的主題。
+> 如需從您的應用程式中開啟 其他應用程式和網站的詳細資訊，請參閱底下的主題[啟動應用程式的 uri](/windows/uwp/launch-resume/launch-app-with-uri)。
 
 #### <a name="invoked"></a>Invoked
 

@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 26eb371e767f0c1e7f3d5855cf68728958c0cda3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044991"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608933"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>判斷 Microsoft OneDrive 檔案的可用性
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**FileIO 類別**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
 -   [**StorageFile 類別**](https://msdn.microsoft.com/library/windows/apps/BR227171)
@@ -24,13 +24,13 @@ ms.locfileid: "9044991"
 
 使用 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
--   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
+-   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
     您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/Mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187334)。
 
--   **App 功能宣告**
+-   **應用程式 capabilty 宣告**
 
     請參閱[檔案存取權限](file-access-permissions.md)。
 
@@ -38,9 +38,9 @@ ms.locfileid: "9044991"
 
 使用者可以將 OneDrive 檔案標示為可離線使用 (預設值) 或僅限線上存取。 這個功能可以讓使用者將大型檔案 (例如圖片或影片) 移到他們的 OneDrive、將檔案標示為僅限線上存取，以及節省磁碟空間 (本機保存的項目僅限中繼資料檔案)。
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)，可用來判斷檔案目前是否可用。 下表顯示 **StorageFile.IsAvailable** 屬性在各種案例中的值。
+[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)，用來判斷檔案是否為目前可用。 下表顯示 **StorageFile.IsAvailable** 屬性在各種案例中的值。
 
-| 檔案類型                              | 線上 | 計量付費網路        | 離線 |
+| 檔案類型                              | Online | 計量付費網路        | 離線 |
 |-------------------------------------------|--------|------------------------|---------|
 | 本機檔案                                | True   | True                   | True    |
 | 標示為可離線使用的 OneDrive 檔案 | True   | True                   | True    |

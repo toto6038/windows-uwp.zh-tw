@@ -1,5 +1,5 @@
 ---
-Description: Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.
+Description: 特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。
 title: 特殊磚範本
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 template: detail.hbs
@@ -8,31 +8,31 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 09647347134463c8dd2d93f6b869796c8def44e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944329"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619803"
 ---
-# <a name="special-tile-templates"></a>特殊的磚範本
+# <a name="special-tile-templates"></a>特殊磚範本
  
 
-特殊磚範本是獨特的範本，這些範本不是呈現動畫，就不過是讓您可以執行無法透過調適型磚達成的工作。 每個特殊的磚範本是特別針對建置 windows 10，除了圖示磚範本，已針對 windows 10 更新的傳統型特殊範本。 本文涵蓋三個特殊的磚範本: 圖示、相片和連絡人。
+特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。 每個特殊的磚範本已特別建置適用於 Windows 10 圖示 圖格 範本中，除了傳統的特殊範本已更新適用於 Windows 10。 本文章涵蓋三個特殊的磚範本：圖示，相片和人員。
 
 ## <a name="iconic-tile-template"></a>圖示磚範本
 
 
-圖示範本 (也稱為「IconWithBadge」範本) 可讓您在磚的中心顯示一個小型影像。 Windows 10 支援手機和平板電腦/桌上型電腦上的範本。
+圖示範本 (也稱為「IconWithBadge」範本) 可讓您在磚的中心顯示一個小型影像。 Windows 10 手機和平板電腦/傳統型支援範本。
 
 ![小型和中型郵件磚](images/iconic-template-mail-2sizes.png)
 
 ### <a name="how-to-create-an-iconic-tile"></a>如何建立圖示磚
 
-下列步驟說明您需要知道要建立適用於 windows 10 圖示磚的所有項目。 就高層級而言，您需要您的圖示影像資產，然後使用圖示範本將通知傳送到磚，最後傳送提供要在磚上顯示的數字的徽章通知。
+下列步驟說明您需要知道建立圖示的圖格，適用於 Windows 10 的所有項目。 就高層級而言，您需要您的圖示影像資產，然後使用圖示範本將通知傳送到磚，最後傳送提供要在磚上顯示的數字的徽章通知。
 
 ![圖示磚的開發人員流程](images/iconic-template-dev-flow.png)
 
-**步驟 1：以 PNG 格式建立您的影像資產**
+**步驟 1：建立以 PNG 格式的影像資產**
 
 為您的磚建立圖示資產，並將它們與您的其他資產一起放在專案資源中。 建立一個最低限度為 200 x 200 像素的圖示，這適用於手機和桌上型電腦上的小型和中型磚。 若要提供最佳的使用者體驗，請為每個大小建立一個圖示。 不需要在這些資產上填補。 請參閱下方影像中的調整大小詳細資訊。
 
@@ -54,11 +54,11 @@ ms.locfileid: "8944329"
 
 ![含/不含徽章的非正方形資產大小調整](images/assetguidance26b.png)
 
-**步驟 2：建立基本的磚**
+**步驟 2：建立您的基底並排顯示**
 
 您可以在主要和次要磚上使用圖示範本。 如果您正在次要磚上使用它，您必須先建立次要磚或使用已釘選次要磚。 主要磚以隱含方式釘選，且一律會傳送通知。
 
-**步驟 3：將通知傳送到您的磚**
+**步驟 3：傳送通知給您的磚**
 
 雖然此步驟可能會因為通知在本機傳送或透過伺服器推播而不同，但您傳送的 XML 承載仍相同。 若要傳送本機磚通知，請為您的磚 (主要或次要磚) 建立 [**TileUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater)，然後將通知傳送到使用圖示磚範本的磚，如下所示。 在理想的情況下，您也應該使用[彈性磚範本](create-adaptive-tiles.md)包含寬形和大型磚大小的繫結。
 
@@ -82,7 +82,7 @@ ms.locfileid: "8944329"
 
 這個圖示範本的 XML 承載會使用指向您在步驟 1 中建立的影像的影像元素。 現在您的磚已準備好在您的圖示旁顯示徽章，只剩下傳送徽章通知。
 
-**步驟 4：將徽章通知傳送到您的磚**
+**步驟 4：將識別碼通知傳送至您的磚**
 
 和步驟 3 一樣，此步驟可能會因為通知在本機傳送或透過伺服器推播而不同，但您傳送的 XML 承載仍相同。 若要傳送本機徽章通知，請為您的磚 (主要或次要磚) 建立 [**BadgeUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater)，然後傳送包含您所需的值的徽章通知 (或清除徽章)。
 
@@ -184,7 +184,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>連絡人磚範本
 
 
-Windows 10 中的連絡人應用程式使用特殊的磚範本，會在磚上垂直或水平滑動的圓形中顯示影像集合。 這個磚範本自 windows 10 組建 10572 已可以使用與任何人都是在其應用程式中使用它歡迎畫面。
+Windows 10 中的連絡人應用程式使用特殊的磚範本，會在磚上垂直或水平滑動的圓形中顯示影像集合。 這個磚範本已經在 Windows 10 建置 10572，與任何人都可以使用其應用程式中的 歡迎使用。
 
 連絡人磚範本適用於下列大小的磚：
 
@@ -261,9 +261,9 @@ TileContent content = new TileContent()
 
 為提供最佳的使用者經驗，建議您針對每個磚大小提供下列數目的相片：
 
--   中型磚：9 張相片
--   寬形磚：15 張相片
--   大型磚：20 張相片
+-   中型磚：9 的相片
+-   寬形磚：15 的相片
+-   大型磚：20 的相片
 
 設定此數目的相片可以保留一些空的圓形，在視覺上磚就不會顯得過於雜亂。 您可以隨意調整相片數目，以設定最適合您的外觀。
 
@@ -272,11 +272,11 @@ TileContent content = new TileContent()
 ## <a name="related-topics"></a>相關主題
 
 
-* [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/quickstart-people-tile-template)
-* [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+* [在 GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-people-tile-template)
+* [通知程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [磚、徽章及通知](index.md)
-* [建立彈性磚](create-adaptive-tiles.md)
-* [磚內容結構描述](../tiles-and-notifications/tile-schema.md)
+* [建立自動調整圖格](create-adaptive-tiles.md)
+* [並排顯示內容的結構描述](../tiles-and-notifications/tile-schema.md)
  
 
  

@@ -1,5 +1,5 @@
 ---
-Description: Use nested UI to enable multiple actions on a list item
+Description: 使用巢狀 UI 在清單項目上啟用多個動作
 title: 清單項目中的巢狀 UI
 label: Nested UI in list items
 template: detail.hbs
@@ -12,11 +12,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8edb38b8ae91d836e283a8eb37830850bf504db4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929101"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661303"
 ---
 # <a name="nested-ui-in-list-items"></a>清單項目中的巢狀 UI
 
@@ -26,14 +26,14 @@ ms.locfileid: "8929101"
 
 您可以使用巢狀 UI 來向使用者顯示其他可協助加快執行重要動作的選項。 不過公開越多動作，將會使 UI 變得越加複雜。 請務必在選擇使用此 UI 模式時額外注意此狀況。 本文提供可協助您針對您特定的 UI 判斷最佳動作的指導方針。
 
-> **重要 API**：[ListView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、[GridView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+> **重要的 Api**:[ListView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)， [GridView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 在本文中，我們將會針對在 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 項目中建立巢狀 UI 進行討論。 雖然本節不會討論其他的巢狀 UI 情況，但這些概念都是共通的。 在您開始前，請先熟悉在 UI 中使用 ListView 或 GridView 控制項的一般指導方針，這些指導方針可以在[清單](lists.md)和[清單檢視和方格檢視](listview-and-gridview.md)文章中找到。
 
-在本文中，我們所使用的「清單」**、「清單項目」** 及「巢狀 UI」** 等詞彙的定義如下：
-- 「清單」** 指的是包含在清單檢視或方格檢視中的項目集合。
-- 「清單項目」** 指的是清單上使用者可以採取動作的個別項目。
-- 「巢狀 UI」** 指的是位於清單項目內，可以獨立於項目清單本身讓使用者採取動作的 UI 元素。
+在本文中，我們所使用的「清單」、「清單項目」及「巢狀 UI」等詞彙的定義如下：
+- 「清單」指的是包含在清單檢視或方格檢視中的項目集合。
+- 「清單項目」指的是清單上使用者可以採取動作的個別項目。
+- 「巢狀 UI」指的是位於清單項目內，可以獨立於項目清單本身讓使用者採取動作的 UI 元素。
 
 ![巢狀 UI 組件](images/nested-ui-example-1.png)
 
@@ -50,9 +50,9 @@ ms.locfileid: "8929101"
 - 動作應該以何種方式向使用者公開？
     - 請考慮到所有輸入類型。 某些巢狀 UI 的形式可能很適合某種輸入方法，但卻無法搭配其他方法使用。  
 
-「主要動作」** 為使用者按下清單項目時所預期發生的情況。
+「主要動作」為使用者按下清單項目時所預期發生的情況。
 
-「次要動作」** 通常是與清單項目相關聯的加速器。 這些加速器可以是用於清單管理，或是與清單項目相關的動作。
+「次要動作」通常是與清單項目相關聯的加速器。 這些加速器可以是用於清單管理，或是與清單項目相關的動作。
 
 ## <a name="options-for-secondary-actions"></a>次要動作的選項
 
@@ -109,7 +109,7 @@ ms.locfileid: "8929101"
 
 ![巢狀 UI 組件](images/nested-ui-navigation.png)
 
-**控制器**
+**Gamepad**
 
 當輸入是來自控制器時，將會提供此使用者體驗：
 
@@ -167,7 +167,7 @@ ms.locfileid: "8929101"
 
 當清單項目不會執行動作時，我們建議使用本指導方針來處理使用控制器或鍵盤的瀏覽。
 
-**控制器**
+**Gamepad**
 
 當輸入是來自控制器時，將會提供此使用者體驗：
 

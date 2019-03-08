@@ -4,14 +4,14 @@ title: 行動裝置的 Device Portal
 description: 了解 Windows Device Portal 如何讓您從遠端設定並管理行動裝置。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，裝置入口網站
+keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 879f4b9fd8806565eedeabda95f0c24c5b7931d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925229"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597223"
 ---
 # <a name="device-portal-for-mobile"></a>行動裝置的 Device Portal
 
@@ -31,17 +31,17 @@ ms.locfileid: "8925229"
 
 ![開發人員模式裝置探索設定](images/device-portal/mob-dev-mode-pairing.png)
 
-您可以從 3 種連接到 Device Portal 的方式中進行選擇：USB、本機主機，以及透過區域網路 (包括 VPN 和網際網路共用)。
+您可以選擇從連線至裝置入口網站的 3 種方式：USB、 本機主機，並透過區域網路 （包括 VPN 和網際網路共用功能）。
 
-**連接到 Device Portal**
+**連線至裝置入口網站**
 
 1. 在瀏覽器中，針對您使用的連接類型輸入位址 (如下所示)。
 
-    - USB： `http://127.0.0.1:10080`
+    - USB: `http://127.0.0.1:10080`
 
     當手機透過 USB 連線連接到電腦時，請使用這個位址。 這兩個裝置都必須具備 Windows 10 版本 1511或更新版本。
     
-    - 本機主機： `http://127.0.0.1`
+    - Localhost: `http://127.0.0.1`
 
     使用這個位址來在手機上適用於 Windows 10 行動裝置版的 Microsoft Edge 中於本機檢視 Device Portal。
     
@@ -83,5 +83,5 @@ ms.locfileid: "8925229"
 
 ## <a name="see-also"></a>請參閱
 
-* [Windows 裝置入口網站概觀](device-portal.md)
-* [裝置入口網站核心 API 參考資料](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Windows Device Portal 概觀](device-portal.md)
+* [裝置入口網站 core API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

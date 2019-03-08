@@ -1,5 +1,5 @@
 ---
-Description: Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts.
+Description: 您的磚和快顯通知可以載入針對顯示語言、顯示縮放比例、高對比及其他執行階段內容量身打造的字串與影像。
 title: 對語言、縮放比例及高對比的磚和快顯通知支援
 template: detail.hbs
 ms.date: 10/12/2017
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: aa6e93196d30c15374129eee7714604cfab7b82e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942904"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601473"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>對語言、縮放比例及高對比的磚和快顯通知支援
 
-您的磚和快顯通知可以載入針對顯示語言、[顯示縮放比例](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、高對比及其他執行階段內容量身訂做的文字與影像。 如需有關如何在您的資源檔案的名稱中使用限定詞的背景，請參閱[您的資源，針對語言、 縮放比例及其他限定詞量身打造](../../../app-resources/tailor-resources-lang-scale-contrast.md)和[應用程式圖示及標誌](/windows/uwp/design/style/app-icons-and-logos)。
+您的磚和快顯通知可以載入針對顯示語言、[顯示縮放比例](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、高對比及其他執行階段內容量身訂做的文字與影像。 如需有關如何使用限定詞的資源檔名稱中的背景，請參閱[量身訂做您的資源語言、 小數位數和其他限定詞](../../../app-resources/tailor-resources-lang-scale-contrast.md)並[應用程式圖示和標誌](/windows/uwp/design/style/app-icons-and-logos)。
 
 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../../globalizing/globalizing-portal.md)。
 
@@ -72,9 +72,9 @@ ms.locfileid: "8942904"
 
 | 限定詞 | 查詢字串 | 範例 |
 | --------- | ------------ | ------- |
-| Scale | ms-scale | ?ms-scale=400 |
-| Language | ms-lang | ?ms-lang=en-US |
-| Contrast | ms-contrast | ?ms-contrast=high |
+| 縮放比例 | ms-scale | ?ms-scale=400 |
+| 語言 | ms-lang | ?ms-lang=en-US |
+| 這個 | ms-contrast | ?ms-contrast=high |
 
 如需所有可在查詢字串中使用之可能限定詞值的參考表，請參閱 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)。
 
@@ -84,12 +84,12 @@ ms.locfileid: "8942904"
 
 ## <a name="related-topics"></a>相關主題
 
-* [回應式設計的螢幕大小與中斷點](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
-* [針對語言、縮放比例及其他限定詞量身打造您的資源](../../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [螢幕大小和中斷點的回應式設計](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
+* [量身打造您的語言、 規模和其他辨識符號的資源](../../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [磚和圖示資產的指導方針](app-assets.md)。
 * [全球化和當地語系化](../../globalizing/globalizing-portal.md)
-* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../../app-resources/localize-strings-ui-manifest.md)
-* [從 XAML 標記和程式碼參考影像或其他資產](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
+* [UI 和應用程式封裝資訊清單中的當地語系化字串](../../../app-resources/localize-strings-ui-manifest.md)
+* [從 XAML 標記和程式碼參考映像或其他資產](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
 * [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
-* [磚結構描述](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
-* [快顯通知結構描述](/uwp/schemas/tiles/toastschema/schema-root?branch=live)
+* [並排顯示結構描述](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
+* [快顯通知的結構描述](/uwp/schemas/tiles/toastschema/schema-root?branch=live)

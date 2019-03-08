@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c55a12dfa7757a48874b6857c95af592e818c2b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939568"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590763"
 ---
 # <a name="bc7-format"></a>BC7 格式
 
@@ -21,18 +21,18 @@ BC7 格式是用於高品質 RGB 和 RGBA 資料壓縮的紋理壓縮格式。
 
 如需 BC7 格式的區塊模式資訊，請參閱 [BC7 格式模式參考](https://msdn.microsoft.com/library/windows/desktop/hh308954) (英文)。
 
-## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>關於 BC7/DXGI\_FORMAT\_BC7
+## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>關於 BC7/DXGI\_格式\_BC7
 
 
-BC7 是由下列 DXGI\_FORMAT 列舉值來指定：
+BC7 由下列的 DXGI\_格式的列舉值：
 
--   **DXGI\_FORMAT\_BC7\_TYPELESS**。
--   **DXGI\_FORMAT\_BC7\_UNORM**。
--   **DXGI\_FORMAT\_BC7\_UNORM\_SRGB**。
+-   **DXGI\_格式\_BC7\_TYPELESS**。
+-   **DXGI\_格式\_BC7\_UNORM**。
+-   **DXGI\_格式\_BC7\_UNORM\_SRGB**。
 
 BC7 格式可用於 [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (包括陣列)、Texture3D，或 TextureCube (包括陣列) 紋理資源。 同樣地，此格式適用於任何與這些資源建立關聯的 Mipmap 表面。
 
-BC7 使用固定的 16 位元組 (128 位元) 區塊大小，以及固定之 4x4 材質的磚大小。 與之前的 BC 格式一樣，大於支援之磚大小 (4x4) 的紋理圖片，會使用多個區塊進行壓縮。 此位址身分識別也適用於 3D 圖片和 Mipmap、立方體貼圖，以及紋理陣列。 所有影像磚都必須格式相同。
+BC7 使用固定的 16 位元組 (128 位元) 區塊大小，以及固定之 4x4 材質的磚大小。 與之前的 BC 格式一樣，大於支援之磚大小 (4x4) 的紋理影像，程式會使用多重區塊對其進行壓縮。 此位址身分識別也適用於 3D 圖片和 Mipmap、立方體貼圖，以及紋理陣列。 所有影像磚都必須格式相同。
 
 BC7 壓縮三通道 (RGB) 和四通道 (RGBA) 定點資料影像。 一般而言，來源資料的每個色彩元件 (通道) 為 8 位元，但此格式可將來源資料的每個色彩元件編碼為較高位元。 所有影像磚都必須格式相同。
 
@@ -51,15 +51,15 @@ BC7 區塊可能包含多個端點配對。 對應至端點配對的索引集可
 
 對於具有合併色彩和 Alpha 元件的 BC7 區塊，一個區塊包含模式位元、壓縮端點、壓縮索引，以及選用的分割位元和一個 P 位元。 在這些區塊中，端點色彩以 RGBA 格式表示，而且會插入 Alpha 元件值和色彩元件值。
 
-對於具有不同色彩與 Alpha 元件的 BC7 區塊，一個區塊包含模式位元、旋轉位元、壓縮端點、壓縮索引，和一個選擇性的索引選取器位元。 這些區塊具備有效 RGB 向量 \[R、G、B\] 和一個分別編碼的純量 Alpha 色板 \[A\]。
+對於具有不同色彩與 Alpha 元件的 BC7 區塊，一個區塊包含模式位元、旋轉位元、壓縮端點、壓縮索引，和一個選擇性的索引選取器位元。 這些區塊有有效的 RGB 向量\[R、 G、 B\]和純量的 alpha 色板\[A\]分別編碼。
 
 下表列出每個區塊類型的元件。
 
 | BC7 區塊包含...     | 模式位元 | 旋轉位元 | 索引選取器位元 | 分割位元 | 壓縮端點 | P 位元    | 壓縮索引 |
 |---------------------------|-----------|---------------|--------------------|----------------|----------------------|----------|--------------------|
-| 僅限色彩元件     | 必要  | N/A           | N/A                | 必要       | 必要             | 選用 | 必要           |
-| 色彩 + Alpha 合併    | 必要  | N/A           | N/A                | 選用       | 必要             | 選用 | 必要           |
-| 色彩和 Alpha 分隔 | 必要  | 必要      | 選用           | N/A            | 必要             | N/A      | 必要           |
+| 僅限色彩元件     | 必要  | 無           | 無                | 必要       | 必要             | 選用 | 必要           |
+| 色彩 + Alpha 合併    | 必要  | 無           | 無                | 選用       | 必要             | 選用 | 必要           |
+| 色彩和 Alpha 分隔 | 必要  | 必要      | 選用           | 無            | 必要             | 無      | 必要           |
 
  
 
@@ -224,7 +224,7 @@ bitcount get_color_bitcount(block, mode)
 }
 ```
 
-## <a name="span-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanbc7-format-mode-reference"></a><span id="BC7-format-mode-reference"></span><span id="bc7-format-mode-reference"></span><span id="BC7-FORMAT-MODE-REFERENCE"></span>BC7 格式模式參考
+## <a name="span-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanbc7-format-mode-reference"></a><span id="BC7-format-mode-reference"></span><span id="bc7-format-mode-reference"></span><span id="BC7-FORMAT-MODE-REFERENCE"></span>BC7 格式模式的參考
 
 
 本節中包含了一份 8 個區塊模式和 BC7 紋理壓縮格式區塊之位元配置的清單。
@@ -331,7 +331,7 @@ BC7 模式 7 的特性如下︰
 
 ![模式 7 位元配置](images/bc7-mode7.png)
 
-### <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>備註
+### <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>註解
 
 模式 8 (最小顯著性位元組設定為 0x00) 已保留。 請勿在您的編碼器中使用它。 如果您將此模式傳遞至硬體，就會傳回初始化至所有零的區塊。
 
@@ -339,13 +339,13 @@ BC7 模式 7 的特性如下︰
 
 -   不具備明確 Alpha 元件編碼的區塊類型。 在這些區塊中，色彩端點有一個僅限 RGB 的編碼，還有對所有材質解碼至 1.0 的 Alpha 元件。
 -   具有合併色彩與 Alpha 元件的區塊類型。 在這些區塊中，端點色彩值會以 RGBA 格式指定，而且會插入 Alpha 元件值和色彩值。
--   具有獨立色彩與 Alpha 元件的區塊類型。 在這些區塊中，色彩和 Alpha 值是個別指定的，兩方都有獨立的索引集。 因此，它們的有效向量和純量通道是獨立編碼的。在這之中，向量通常指定色彩通道 \[R、G、B\]，而純量指定 Alpha 色板 \[A\]。 為了支援這種方式，編碼中提供了一個獨立的 2 位元欄位，允許將不同的通道編碼指定為純量值。 如此一來，區塊就可以具有此 Alpha 編碼 (同 2 元欄位所指示) 下列四個不同表示法中的其中一項︰
+-   具有獨立色彩與 Alpha 元件的區塊類型。 在這些區塊中，色彩和 Alpha 值是個別指定的，兩方都有獨立的索引集。 如此一來，具有有效的向量和純量的通道，分別是編碼向量通常指定的色頻\[R、 G、 B\]和純量指定 alpha 色頻\[A\]。 為了支援這種方式，編碼中提供了一個獨立的 2 位元欄位，允許將不同的通道編碼指定為純量值。 如此一來，區塊就可以具有此 Alpha 編碼 (同 2 元欄位所指示) 下列四個不同表示法中的其中一項︰
     -   RGB|A：獨立 Alpha 色板
     -   AGB|R：獨立「紅色」色彩通道
     -   RAB|G：獨立「綠色」色彩通道
     -   RGA|B：獨立「藍色」色彩通道
 
-    解碼器在解碼之後會將通道順序重新排列回 RGBA，因此開發人員看不到內部區塊格式。 具有獨立色彩和 Alpha 元件的黑色也有兩組索引資料︰一個用於通道的向量集，一個用於純量通道。 (在模式 4 的例子中，這些索引具有不同寬度 \[2 或 3 位元\]。 模式 4 也包含 1 位元選取器，可指定向量或純量通道是否使用 3 位元索引。)
+    解碼器在解碼之後會將通道順序重新排列回 RGBA，因此開發人員看不到內部區塊格式。 具有獨立色彩和 Alpha 元件的黑色也有兩組索引資料︰一個用於通道的向量集，一個用於純量通道。 (模式 4，在這些索引屬於不同的寬度\[2 或 3 位元\]。 模式 4 也包含 1 位元選取器，可指定向量或純量通道是否使用 3 位元索引。)
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 

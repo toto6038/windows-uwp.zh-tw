@@ -6,18 +6,18 @@ label: Contextual commanding in collections
 template: detail.hbs
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925610"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658593"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>集合和清單的關聯式命令功能
 
@@ -25,7 +25,7 @@ ms.locfileid: "8925610"
 
 許多應用程式會包含形式為清單、格線和樹狀目錄的內容集合，使用者可以進行操縱。 例如，使用者可以對項目進行刪除、重新命名、旗標附加或重新整理。 本文說明如何使用關聯式命令，以盡可能在所有輸入類型上提供最佳體驗的方式來實作這類動作。  
 
-> **重要 API**：[ICommand 介面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)、[UIElement.ContextFlyout 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)、[INotifyPropertyChanged 介面](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **重要的 Api**:[ICommand 介面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)， [UIElement.ContextFlyout 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)， [INotifyPropertyChanged 介面](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![使用各種不同輸入來執行 [我的最愛] 命令](images/ContextualCommand_AddFavorites.png)
 
@@ -43,9 +43,9 @@ ms.locfileid: "8925610"
 | 將項目加入我的最愛 | 操作功能表   | 暫留按鈕      | F、Ctrl+S            | 撥動以加入我的最愛 |
 
 
-* **一般而言，您應該在項目的[操作功能表](menus.md)中提供項目的所有命令。** 操作功能表不論輸入類型為何，皆可供使用者存取，而且應該包含使用者可以執行的所有關聯式命令。
+* **一般情況下，您應該將所有命令的項目提供在項目的[快顯功能表](menus.md)。** 操作功能表不論輸入類型為何，皆可供使用者存取，而且應該包含使用者可以執行的所有關聯式命令。
 
-* **使用經常存取的命令時，請考慮使用輸入快速操作。** 輸入快速操作可讓使用者依據其輸入裝置迅速執行動作。 輸入快速操作包括：
+* **對於經常存取的命令，請考慮使用輸入的加速器。** 輸入快速操作可讓使用者依據其輸入裝置迅速執行動作。 輸入快速操作包括：
     - 撥動以執行動作 (觸控快速操作)
     - 拖動以重新整理資料 (觸控快速操作)
     - 鍵盤快速鍵 (鍵盤快速操作)
@@ -234,15 +234,15 @@ public sealed partial class PodcastUserControl : UserControl
 
 使用者可以使用下列「操作動作」來叫用操作功能表：
 
-| 輸入    | 操作動作                          |
+| Input    | 操作動作                          |
 | -------- | --------------------------------------- |
 | 滑鼠    | 按一下滑鼠右鍵                             |
 | 鍵盤 | Shift+F10、功能表按鈕                  |
 | 觸控    | 在項目上長按                      |
 | 手寫筆      | 筆身按鈕、在項目上長按 |
-| 遊戲台  | 選項按鈕                             |
+| 遊戲台  | 功能表按鈕                             |
 
-**由於無論輸入類型為何，使用者都可以開啟操作功能表，因此操作功能表應該包含清單項目可用的所有關聯式命令。**
+**因為使用者可以開啟操作功能表，無論輸入類型為何，您的操作功能表應包含的所有內容的清單項目可用的命令。**
 
 ### <a name="contextflyout"></a>ContextFlyout
 
@@ -370,13 +370,13 @@ protected override void OnPointerExited(PointerRoutedEventArgs e)
 
 ### <a name="touch-accelerators"></a>觸控快速操作
 
-#### <a name="swipe"></a>撥動
+#### <a name="swipe"></a>Swipe
 
 ![撥動項目以顯示命令](images/ContextualCommand_Swipe.png)
 
 撥動命令功能是可讓使用者以觸控方式在觸控裝置上執行次要動作的觸控快速操作。 「撥動」讓觸控使用者能夠使用「撥動以刪除」或「撥動以叫用」等常見動作，來與內容進行快速且自然的互動。 請參閱[撥動命令功能](swipe.md)文章，以深入了解。
 
-為了將撥動整合到集合中，您需要兩個元件：裝載命令的 SwipeItems，以及包裝項目和允許撥動互動的 SwipeControl。
+為了將撥動整合到您的集合中，您需要兩個元件：SwipeItems，裝載命令的方式。和 SwipeControl，其中包裝項目，並允許揮擊互動。
 
 SwipeItems 可以定義為 PodcastUserControl 中的資源。 在此範例中，SwipeItems 包含 [將項目加入我的最愛] 的命令。
 
@@ -452,8 +452,8 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 
 ## <a name="related-topics"></a>相關主題
 * [ICommand 介面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
-* [功能表和操作功能表](menus.md)
-* [撥動](swipe.md)
+* [功能表和內容功能表](menus.md)
+* [Swipe](swipe.md)
 * [拖動以重新整理](pull-to-refresh.md)
-* [畫筆和手寫筆互動](../input/pen-and-stylus-interactions.md)
-* [針對遊戲台和 Xbox 量身打造您的 App](../devices/designing-for-tv.md)
+* [畫筆和手寫筆的互動](../input/pen-and-stylus-interactions.md)
+* [調整遊戲台和 Xbox 的應用程式](../devices/designing-for-tv.md)

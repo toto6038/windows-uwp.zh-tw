@@ -7,31 +7,31 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
 ms.openlocfilehash: 6529c1a21865b2997d36e9b254b19f971f620490
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947695"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633223"
 ---
 # <a name="manage-ad-campaigns"></a>管理廣告行銷活動
 
 使用這些方法在 [Microsoft Store 促銷 API](run-ad-campaigns-using-windows-store-services.md)，為您的應用程式建立、編輯及取得促銷廣告活動。 您使用此方法建立的每個活動，只能和一個應用程式相關聯。
 
->**注意：**&nbsp;&nbsp;您也可以建立和管理廣告行銷活動使用合作夥伴中心和您以程式設計方式建立的活動可以在合作夥伴中心存取。 如需有關如何管理合作夥伴中心中的廣告行銷活動的詳細資訊，請參閱 <<c0>建立您的應用程式的廣告活動。
+>**附註**&nbsp;&nbsp;您也可以建立及管理廣告活動使用合作夥伴中心和您以程式設計方式建立的活動可以存取在合作夥伴中心。 如需管理在合作夥伴中心內的廣告活動的詳細資訊，請參閱[建立您的應用程式廣告活動](../publish/create-an-ad-campaign-for-your-app.md)。
 
 當您使用這些方法建立或更新活動時，通常也呼叫下列一或多個管理方法*播送行*、*目標設定檔*及*廣告素材*相關的活動。 如需有關播送行、目標設定檔及廣告素材之間關聯性的詳細資訊，請參閱[使用 Microsoft Store 服務執行廣告行銷活動](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
-* [管理廣告行銷活動的廣告播送行](manage-delivery-lines-for-ad-campaigns.md)
-* [管理廣告行銷活動的目標設定檔](manage-targeting-profiles-for-ad-campaigns.md)
-* [管理廣告行銷活動的廣告素材](manage-creatives-for-ad-campaigns.md)
+* [管理 ad 行銷活動傳遞明細行](manage-delivery-lines-for-ad-campaigns.md)
+* [管理 ad 行銷活動的目標設定檔](manage-targeting-profiles-for-ad-campaigns.md)
+* [管理 ad 行銷活動的素材](manage-creatives-for-ad-campaigns.md)
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這些方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Microsoft Store 促銷交 API 的所有[先決條件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
 
-  >**注意：**&nbsp;&nbsp;做為必要條件的一部分，請確定該您[建立合作夥伴中心中的至少一個付費的廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)，而且，您將新增至少一個廣告行銷活動的付款方式在合作夥伴中心。 使用此 API 所建立的廣告行銷活動的播送行將會自動向合作夥伴中心**廣告行銷活動**] 頁面上所選擇預設付款方式收取費用。
+  >**附註**&nbsp;&nbsp;隨著必要條件的詳細資訊，請確定您[在合作夥伴中心中建立至少一個付費的廣告活動](../publish/create-an-ad-campaign-for-your-app.md)和協力廠商增益廣告活動的至少一個付款方式置中。 您建立使用此 API 的廣告活動的傳遞行會自動向上所選擇的預設付款方式**廣告活動**在合作夥伴中心內的頁面。
 
 * [取得 Azure AD 存取權杖](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
@@ -52,7 +52,7 @@ ms.locfileid: "8947695"
 
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 | 追蹤識別碼   | GUID   | 選用。 追蹤呼叫流程的識別碼。                                  |
 
 
@@ -65,11 +65,11 @@ ms.locfileid: "8947695"
 | 名稱        | 類型   |  描述      |    
 |-------------|--------|---------------|------|
 | skip  |  整數   | 在查詢中要略過的資料列數目。 使用此參數來瀏覽資料集。 例如，fetch=10 且 skip=0 將擷取前 10 個資料列的資料，top=10 且 skip=10 將擷取下 10 個資料列的資料，以此類推。    |       
-| fetch  |  int   | 要在要求中傳回的資料列數目。    |       
+| fetch  |  整數   | 要在要求中傳回的資料列數目。    |       
 | campaignSetSortColumn  |  字串   | 回應主體中指定欄位的訂購[活動](#campaign)物件。 語法為 <em>CampaignSetSortColumn=field</em>，其中 <em>field</em> 參數可以是下列其中一個字串︰</p><ul><li><strong>id</strong></li><li><strong>createdDateTime</strong></li></ul><p>預設值為 **createdDateTime**。     |     
 | isDescending  |  布林值   | 回應主體中以遞減或增遞順序排序[行銷活動](#campaign)物件。   |         
 | storeProductId  |  字串   | 使用這個值只傳回廣告活動相關的應用程式，含指定的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品 Store 識別碼為 9nblggh42cfd。   |         
-| 標籤  |  字串   | 使用這個值只傳回廣告活動，其在[行銷活動](#campaign)物件中包含指定的*標籤*。    |       |    
+| label  |  字串   | 使用這個值只傳回廣告活動，其在[行銷活動](#campaign)物件中包含指定的*標籤*。    |       |    
 
 
 ### <a name="request-body"></a>要求本文
@@ -143,18 +143,18 @@ Authorization: Bearer <your access token>
 
 ## <a name="campaign-object"></a>行銷活動物件
 
-下列方法的要求和回應主體包含下列欄位。 下表顯示的欄位為唯讀 (亦即們無法在 PUT 方法中變更)，而且僅 POST 方法之要求本文所需的欄位。
+下列方法的要求和回應本文包含下列欄位。 下表顯示的欄位為唯讀 (亦即們無法在 PUT 方法中變更)，而且僅 POST 方法之要求本文所需的欄位。
 
 | 欄位        | 類型   |  描述      |  唯讀  | 預設值  | POST 所需 |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  廣告行銷活動的識別碼。     |   是    |      |  否     |       
 |  name   |  字串   |   廣告行銷活動的名稱。    |    否   |      |  是     |       
-|  configuredStatus   |  字串   |  下列其中一個值，指定開發人員指定的廣告行銷活動狀態︰ <ul><li>**作用中**</li><li>**非作用中**</li></ul>     |  否     |  作用中    |   是    |       
-|  effectiveStatus   |  字串   |   下列其中一個值，根據系統驗證指定有效的廣告行銷活動狀態︰ <ul><li>**作用中**</li><li>**非作用中**</li><li>**正在處理**</li></ul>    |    是   |      |   否      |       
-|  effectiveStatusReasons   |  陣列   |  下列一或多個值，指定有效廣告行銷活動狀態的原因如下︰ <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**Failed**</li></ul>      |  是     |     |    否     |       
+|  configuredStatus   |  字串   |  下列其中一個值，指定開發人員指定的廣告行銷活動狀態︰ <ul><li>**使用中**</li><li>**Inactive**</li></ul>     |  否     |  使用中    |   是    |       
+|  effectiveStatus   |  字串   |   下列其中一個值，根據系統驗證指定有效的廣告行銷活動狀態︰ <ul><li>**使用中**</li><li>**Inactive**</li><li>**處理**</li></ul>    |    是   |      |   否      |       
+|  effectiveStatusReasons   |  陣列   |  下列一或多個值，指定有效廣告行銷活動狀態的原因如下︰ <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**失敗**</li></ul>      |  是     |     |    否     |       
 |  storeProductId   |  字串   |  此廣告行銷活動所關聯之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品 Store 識別碼為 9nblggh42cfd。     |   是    |      |  是     |       
 |  標籤   |  陣列   |   一或多個字串，表示自訂活動的標籤。 使用下列的標籤來搜尋及標記活動。    |   否    |  null    |    否     |       
-|  type   | 字串    |  下列其中一個值，指定活動類型︰ <ul><li>**付費**</li><li>**門牌**</li><li>**社群**</li></ul>      |   是    |      |   是    |       
+|  type   | 字串    |  下列其中一個值，指定活動類型︰ <ul><li>**付費**</li><li>**房屋**</li><li>**社群**</li></ul>      |   是    |      |   是    |       
 |  目標   |  字串   |  下列其中一個值，指定行銷活動的目標︰ <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   否    |  DriveInstall    |   是    |       
 |  行   |  陣列   |   一或多個物件，識別與行銷活動相關[播送行](manage-delivery-lines-for-ad-campaigns.md#line)。 每個這個欄位中的物件由*識別碼*和*名稱*欄位組成，指定廣告播送行的識別碼和名稱。     |   否    |      |    否     |       
 |  createdDate   |  字串   |  廣告行銷活動的建立日期和時間，採用 ISO 8601 格式。     |  是     |      |     否    |       |
@@ -162,8 +162,8 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務執行廣告行銷活動](run-ad-campaigns-using-windows-store-services.md)
-* [管理廣告行銷活動的廣告播送行](manage-delivery-lines-for-ad-campaigns.md)
-* [管理廣告行銷活動的目標設定檔](manage-targeting-profiles-for-ad-campaigns.md)
-* [管理廣告行銷活動的廣告素材](manage-creatives-for-ad-campaigns.md)
-* [取得廣告行銷活動績效資料](get-ad-campaign-performance-data.md)
+* [執行使用 Microsoft Store 服務的廣告活動](run-ad-campaigns-using-windows-store-services.md)
+* [管理 ad 行銷活動傳遞明細行](manage-delivery-lines-for-ad-campaigns.md)
+* [管理 ad 行銷活動的目標設定檔](manage-targeting-profiles-for-ad-campaigns.md)
+* [管理 ad 行銷活動的素材](manage-creatives-for-ad-campaigns.md)
+* [取得 ad 行銷活動效能資料](get-ad-campaign-performance-data.md)

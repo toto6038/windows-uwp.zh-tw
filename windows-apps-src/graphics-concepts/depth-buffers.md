@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 279e650532505467f3c0dbabf3814618b893aedb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927878"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637023"
 ---
 # <a name="depth-buffers"></a>深度緩衝區
 
@@ -32,7 +32,7 @@ ms.locfileid: "8927878"
 
 ![測試深度值的圖](images/zbuffer.png)
 
-## <a name="span-idbufferingtechniquesspanspan-idbufferingtechniquesspanspan-idbufferingtechniquesspanbuffering-techniques"></a><span id="Buffering_techniques"></span><span id="buffering_techniques"></span><span id="BUFFERING_TECHNIQUES"></span>緩衝技術
+## <a name="span-idbufferingtechniquesspanspan-idbufferingtechniquesspanspan-idbufferingtechniquesspanbuffering-techniques"></a><span id="Buffering_techniques"></span><span id="buffering_techniques"></span><span id="BUFFERING_TECHNIQUES"></span>緩衝處理技術
 
 
 雖然大部分應用程式不會使用此功能，但是您可以變更 Direct3D 用來判斷哪些值位於深度緩衝區中的比較，以及後續的轉譯目標表面。 在某些硬體上，變更比較功能可能會停用階層 z 測試。

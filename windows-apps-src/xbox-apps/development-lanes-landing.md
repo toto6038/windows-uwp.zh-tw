@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 ms.localizationpriority: medium
 ms.openlocfilehash: 11af5f09d9c66fc9103b36dc80eae8b8bbc88854
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945354"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595163"
 ---
 # <a name="bringing-existing-games-to-xbox"></a>將現有的遊戲移到 Xbox
 
@@ -23,10 +23,10 @@ ms.locfileid: "8945354"
 
 | 引擎      | 描述 |
 |------------|-------------|
-|[自訂 C++](development-lanes-custom-cpp.md)| 使用 UWP 在 Xbox 上進行 C++ 遊戲開發的相關資訊。 |
+|[自訂 c + +](development-lanes-custom-cpp.md)| 使用 UWP 在 Xbox 上進行 C++ 遊戲開發的相關資訊。 |
 |[Unity](development-lanes-unity.md)| 協助將現有遊戲從 Unity 移到 Xbox 的教學課程。 |
 |[HTML / JS](development-lanes-html.md)| 在 Xbox 上進行 HTML 遊戲開發的相關資訊。 |
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
-- [Xbox One 上的 UWP](index.md)
+- [在 Xbox One UWP](index.md)

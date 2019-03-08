@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, OpenGL, Direct3D
 ms.localizationpriority: medium
 ms.openlocfilehash: b17f18876ebc2faead08d8c777c7502e937aef86
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944007"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662753"
 ---
 # <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>計劃從 OpenGL ES 2.0 移植到 Direct3D
 
 
 
 
-**重要 API**
+**重要的 Api**
 
 -   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
 -   [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
@@ -36,7 +36,7 @@ ms.locfileid: "8944007"
 
 這份文件在 OpenGL ES 程式碼與參考只使用 2.0 規格 API。 如果您從 OpenGL ES 1.1 或 3.0 移植，雖然可能會對某些 OpenGL ES 2.0 程式碼範例與內容不甚熟悉，但本文內容仍然有用。
 
-這些主題中的 Direct3D 11 範例使用 Microsoft Windows C++ 搭配元件延伸 (CX)。 如需此版本 C++ 語法的詳細資訊，請閱讀 [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)、[執行階段平台的元件延伸](https://msdn.microsoft.com/library/windows/apps/xey702bw.aspx)與[快速參考 (C++\\CX)](https://msdn.microsoft.com/library/windows/apps/br212455.aspx)。
+這些主題中的 Direct3D 11 範例使用 Microsoft Windows C++ 搭配元件延伸 (CX)。 如需這個版本的 c + + 語法的詳細資訊，請閱讀[Visual c + +](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)，[執行階段平台的元件擴充功能](https://msdn.microsoft.com/library/windows/apps/xey702bw.aspx)，並[快速參考 (c + +\\CX)](https://msdn.microsoft.com/library/windows/apps/br212455.aspx)。
 
 ## <a name="understand-your-hardware-requirements-and-resources"></a>了解您的硬體需求與資源
 
@@ -48,15 +48,15 @@ OpenGL ES 2.0 支援的圖形處理功能集大致上可對應至 Direct3D 9.1 �
 ## <a name="understand-direct3d-feature-levels"></a>了解 Direct3D 功能層級
 
 
-Direct3D 11 支援從 9\_1 (Direct3D 9.1) 到 11\_1 的硬體功能層級。 這些功能層級表示某些圖形功能與資源的可用性。 一般來說，多數 OpenGL ES 2.0 平台都支援 Direct3D 9.1 (功能層級 9\_1) 功能集。
+Direct3D 11 支援硬體 「 功能層級 」 9\_1 (Direct3D 9.1) 11\_1。 這些功能層級表示某些圖形功能與資源的可用性。 一般而言，大部分的 OpenGL ES 2.0 平台支援 Direct3D 9.1 (功能層級 9\_1) 的功能集。
 
 ## <a name="review-directx-graphics-features-and-apis"></a>檢閱 DirectX 圖形功能與 API
 
 
-| API 系列                                                | 說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| API 系列                                                | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)                     | DirectX Graphics Infrastructure (DXGI) 提供圖形硬體與 Direct3D 間的介面。 它使用 [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) 與 [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) COM 介面設定裝置介面卡與硬體設定。 使用此基礎結構可建立和設定您的緩衝區與其他視窗資源。 尤其，會使用 [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) Factory 模式取得圖形資源，包含交換鏈結 (一組框架緩衝區)。 因為 DXGI 擁有交換鏈結，所以 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) 介面會用來將框架呈現在螢幕上。 |
-| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D 是一組 API，提供圖形介面的視覺呈現，可讓您用來繪製圖形。 11 版的功能大致與 OpenGL 4.3 相當。 (從另一方面來看，OpenGL ES 2.0 類似 DirectX9，功能也與 OpenGL 2.0 相當，但擁有 OpenGL 3.0 的統一著色器管線。) 大部分繁重的工作都可以使用 ID3D11Device1 與 ID3D11DeviceContext1 介面來完成，使用這些介面可分別存取個別的資源與子資源，以及轉譯內容。                                                                                                                                          |
+| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D 是一組 API，提供圖形介面的視覺呈現，可讓您用來繪製圖形。 11 版的功能大致與 OpenGL 4.3 相當。 （OpenGL ES 2.0，相反地，大致 DirectX9，到，和 OpenGL 2.0，但使用 OpenGL 3.0 整合著色器管線）。ID3D11Device1 和 ID3D11DeviceContext1 介面可以存取個別的資源和子，並呈現內容中，分別是完成大部分的苦差事。                                                                                                                                          |
 | [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)                      | Direct2D 提供一組 API，用於 GPU 加速的 2D 轉譯。 用途與 OpenVG 相似。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)            | DirectWrite 提供一組 API，用於 GPU 加速、高品質字型轉譯。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | DirectXMath 提供一組 API 與巨集，用於處理共用的線性代數與三角函數類型、值與函式。 這些類型與函式的設計可完美搭配 Direct3D 與其著色器操作使用。                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -88,7 +88,7 @@ Windows 執行階段 API 提供適用於 UWP app 的整體基礎結構。 您可
 
 不過，Direct3D 可支援右手座標系統。 DirectXMath 提供數個函式，可同時在左手與右手座標系統上運作。 可用它們來保留您部分的原始網格資料與矩陣處理。 其中包括：
 
-| DirectXMath 矩陣函式                                                   | 說明                                                                                                                 |
+| DirectXMath 矩陣函式                                                   | 描述                                                                                                                 |
 |-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | [**XMMatrixLookAtLH**](https://msdn.microsoft.com/library/windows/desktop/ee419969)                               | 使用相機位置、向上方向與焦點建置左手座標系統的視圖矩陣。       |
 | [**XMMatrixLookAtRH**](https://msdn.microsoft.com/library/windows/desktop/ee419970)                               | 使用相機位置、向上方向與焦點建置右手座標系統的視圖矩陣。      |
@@ -110,8 +110,8 @@ Windows 執行階段 API 提供適用於 UWP app 的整體基礎結構。 您可
 ## <a name="opengl-es20-to-direct3d-11-porting-frequently-asked-questions"></a>OpenGL ES2.0 到 Direct3D 11 移植常見問題集
 
 
--   問題：「一般來說，我可以在 OpenGL 程式碼中搜尋某些字串或模式，並以 Direct3D 的同等項目取代嗎？」
--   回答：不可以。 OpenGL ES 2.0 與 Direct3D 11 來自不同的圖形管線模型世代。 雖然在概念與 API 上有些許類似，例如轉譯內容與著色器執行個體，您還是應該檢閱此指引與 Direct3D 11 參考，才能在重建管線時做出最好的選擇，而不是嘗試一對一的對應。 不過，如果您是從 GLSL 移植到 HLSL，為 GLSL 變數、內建與函式建立一組共用別名，不僅可讓移植變得更容易，還可讓您只維護一組著色器程式碼檔案。
+-   問題：「 一般情況下，可以我搜尋特定字串或模式在我的 OpenGL 程式碼，並取代 Direct3D 對等項目嗎？ 」
+-   回答：不。 OpenGL ES 2.0 與 Direct3D 11 來自不同的圖形管線模型世代。 雖然在概念與 API 上有些許類似，例如轉譯內容與著色器執行個體，您還是應該檢閱此指引與 Direct3D 11 參考，才能在重建管線時做出最好的選擇，而不是嘗試一對一的對應。 不過，如果您是從 GLSL 移植到 HLSL，為 GLSL 變數、內建與函式建立一組共用別名，不僅可讓移植變得更容易，還可讓您只維護一組著色器程式碼檔案。
 
  
 

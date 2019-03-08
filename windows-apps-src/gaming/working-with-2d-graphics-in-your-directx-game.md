@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, 2d, 圖形
 ms.localizationpriority: medium
 ms.openlocfilehash: 1154abc4305307d87f15fbe0c0e5461e3a15e27e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924452"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632653"
 ---
 # <a name="2d-graphics-for-directx-games"></a>適用於 DirectX 遊戲的 2D 圖形
 
 
 
-我們要討論 2D 點陣圖圖形和效果的使用，以及如何在遊戲中使用 2D 圖形。
+我們將討論 2D 點陣圖圖形和效果的用法，以及如何在遊戲中使用它們。
 
 2D 圖形是 3D 圖形的子集，可處理 2D 基本類型或點陣圖。 較普遍的說法是，2D 圖形不使用 3D 遊戲中會使用的 z 座標，因為遊戲通常是限定在 x-y 平面上。 它們偶爾會使用 3D 圖形技術來建立自己的視覺元件，而且它們的開發通常也比較簡單。 如果您是遊戲的初學者，2D 遊戲是很好的起點，而且 2D 圖形開發也是適合您學習處理 DirectX 的好方法。
 
@@ -32,7 +32,7 @@ ms.locfileid: "8924452"
 
 這裡是您開始進行 2D 圖形開發時必須熟悉的一些基本概念。
 
--   像素和光柵座標。 像素是光柵顯示器上的單個點，而且具有自己的 (x, y) 座標組，指示它在顯示器上的位置 (「像素」這個詞是個互通名詞，它可以用來指組成顯示器的實際像素，或者是指傳送到顯示器前先存放在可定址記憶體元素中像素的色彩和 Alpha 值)。光柵被 API 視為像素元件的矩形格線，通常與顯示器上實際像素格線具有 1:1 的對應比例。 光柵座標系統從左上方開始，格線最左上角的像素為 (0, 0)。
+-   像素和光柵座標。 像素是光柵顯示器上的單個點，而且具有自己的 (x, y) 座標組，指示它在顯示器上的位置 （「 像素 」 一詞是經常交換使用之間構成顯示實體像素，以及用來保存像素的色彩和 alpha 值，再傳送至顯示的可定址記憶體元素。）點陣會被視為矩形格線的像素的項目，這通常會有 1:1 的對應關係實體的像素格線顯示的 api。 光柵座標系統從左上方開始，格線最左上角的像素為 (0, 0)。
 -   點陣圖圖形 (有時候也稱為光柵圖形) 是圖形元素，以矩形格線的像素值來表示。 子畫面技術是獨立於光柵以外管理的計算處理像素陣列，它是點陣圖圖形的其中一種，常用於遊戲中的主要角色或與背景無關的動畫物件。 子畫面技術的動畫的各種畫面是以稱為「表」或「批次」的點陣圖集合表示的。 背景是較大的點陣圖物件，與螢幕光柵具有相同或更高的解析度，通常是作為遊戲區域的底圖。
 -   向量圖形是使用幾何基本類型 (如點、線、圓形和多邊形) 來定義 2D 物件。 它們不是用像素陣列來表示的，而是使用算術等式在 2D 空間中定義。 它們與顯示器的像素格線不一定具有 1:1 的對應比例，而且必須從轉譯它們的座標系統轉換為顯示器上的光柵座標系統。
 -   轉譯是使用一點或一個頂點，然後計算它在相同座標系統上的新位置。
@@ -53,9 +53,9 @@ ms.locfileid: "8924452"
 
 出色的作品變成視覺化呈現時，是您最大的資產。 雖然您的點陣圖圖形在使用最新的著色器模型功能時不一定具有 3D 照相寫實視覺效果的震撼力，但是絕佳的高解析度作品，通常能夠表達更多風格和個性，而且不會耗用太多效能。
 
-## <a name="reference"></a>參考資料
+## <a name="reference"></a>參考
 
 
 -   [Direct2D 概觀](https://msdn.microsoft.com/library/windows/desktop/dd370987)
 -   [Direct2D 快速入門](https://msdn.microsoft.com/library/windows/desktop/dd535473)
--   [Direct2D 和 Direct3D 互通性概觀](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+-   [Direct2D 和 Direct3D 的互通性概觀](https://msdn.microsoft.com/library/windows/desktop/dd370966)

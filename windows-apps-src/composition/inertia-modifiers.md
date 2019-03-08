@@ -3,14 +3,14 @@ title: 使用慣性修飾詞建立貼齊點
 description: 了解如何使用 InteractionTracker 的 InertiaModifier 功能來建立貼齊至指定點的動作體驗。
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows 10、uwp、動畫
+keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: f99ebc4b98c87a4bc6d77fd2c626f481563e50c5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943929"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639633"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>使用慣性修飾詞建立貼齊點
 
@@ -20,9 +20,9 @@ ms.locfileid: "8943929"
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
-- [輸入導向動畫](input-driven-animations.md)
-- [使用 InteractionTracker 自訂操作體驗](interaction-tracker-manipulations.md)
-- [關聯式動畫](relation-animations.md)
+- [輸入驅動動畫](input-driven-animations.md)
+- [InteractionTracker 自訂操作經驗](interaction-tracker-manipulations.md)
+- [關聯型動畫](relation-animations.md)
 
 ## <a name="what-are-snap-points-and-why-are-they-useful"></a>貼齊點是什麼？為什麼很實用？
 

@@ -1,17 +1,17 @@
 ---
-title: 電動搖桿
-description: 使用 Windows.Gaming.Input 機台搖桿 API，偵測和讀取機台搖桿。
+title: 機台搖桿
+description: 使用 Windows.Gaming.Input 電動搖桿 API，偵測和讀取電動搖桿。
 ms.assetid: 2E52232F-3014-4C8C-B39D-FAC478BA3E01
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 機台搖桿, 輸入
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9e3ff29dfb17b6e2a07df52153013b5266206e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933813"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593143"
 ---
 # <a name="arcade-stick"></a>機台搖桿
 
@@ -22,38 +22,38 @@ ms.locfileid: "8933813"
 * 如何收集所連接電動搖桿和其使用者的清單
 * 如何偵測已新增或移除電動搖桿
 * 如何讀取來自一或多個電動搖桿的輸入
-* 電動搖桿如何當成 UI 瀏覽裝置
+* arcade 隨身碟為 UI 瀏覽裝置的行為
 
 ## <a name="arcade-stick-overview"></a>電動搖桿概觀
 
 電動搖桿為輸入裝置，價值在於重新產生直立式機台風格和其高精確度數位控制項。 電動搖桿是面對面格鬥和其他機台樣式遊戲的絕佳輸入裝置，並且適用於與全數位控制項搭配良好的任何遊戲。 在 Windows 10 和 Xbox One UWP 應用程式中，電動搖桿是由 [Windows.Gaming.Input][] 命名空間所支援。
 
-Xbox One 電動搖桿配備 8 向數位搖桿、 六個**動作**按鈕 （表示為 A1 A6 下列影像中），以及兩個**特殊**按鈕 （表示為 S1 和 S2）;它們是全數位輸入的裝置不支援類比控制項或震動。 Xbox One 電動搖桿也配備用來支援 UI 瀏覽**檢視**] 和 [**功能表**] 按鈕，但它們不支援遊戲命令，也無法直接存取為搖桿按鈕。
+Xbox One arcade 隨身碟配有 8 向處理數位搖桿六**動作**按鈕 （A1 A6 以在下圖表示） 和兩個**特殊**按鈕 （表示為 S1 和 S2）; 它們所有數位輸入的裝置不支援類比控制項或震動。 Xbox One arcade 隨身碟也配備**檢視**並**功能表**按鈕用來支援 UI 導覽，但它們不為了支援遊戲命令，而且無法輕易地存取為搖桿按鈕.
 
-![機台搖桿與 4 方向搖桿、 6 個動作按鈕 (A1-A6) 和 2 個特殊的按鈕 （S1 和 S2）](images/arcade-stick-1.png)
+![Arcade 隨身碟 4 方向性搖桿，具有 6 個動作按鈕 (A1-A6) 和 2 個特殊按鈕 （S1 和 S2）](images/arcade-stick-1.png)
 
 ### <a name="ui-navigation"></a>UI 瀏覽
 
-為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」__ 輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的不同「邏輯」__ 輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
+為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的不同「邏輯」輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
 
-當成 UI 瀏覽控制器使用時，電動搖桿會對應到搖桿並**檢視**、**功能表**、**動作 1**及**動作 2**按鈕瀏覽命令 「[必要的集](ui-navigation-controller.md#required-set)。
+為 UI 導覽控制站，arcade 隨身碟地圖[必要組](ui-navigation-controller.md#required-set)瀏覽命令，以搖桿並**檢視**，**功能表**，**動作 1**，並**動作 2**按鈕。
 
-| 瀏覽命令 | 電動搖桿輸入  |
+| 瀏覽命令 | 機台搖桿輸入  |
 | ------------------:| ------------------- |
-|                 向上 | 搖桿向上            |
-|               向下 | 搖桿向下          |
-|               向左 | 搖桿向左          |
-|              向右 | 搖桿向右         |
-|               檢視 | 檢視按鈕         |
+|                 Up | 搖桿向上            |
+|               Down | 搖桿向下          |
+|               Left | 搖桿向左          |
+|              Right | 搖桿向右         |
+|               View | 檢視按鈕         |
 |               Menu | 功能表按鈕         |
-|             接受 | 動作 1 按鈕     |
+|             Accept | 動作 1 按鈕     |
 |             取消 | 動作 2 按鈕     |
 
 電動搖桿不會對應瀏覽命令的任意[選用集](ui-navigation-controller.md#optional-set)。
 
 ## <a name="detect-and-track-arcade-sticks"></a>偵測和追蹤電動搖桿
 
-偵測和追蹤電動搖桿的相同的方式運作，但針對遊戲台，除了[ArcadeStick][]類別，而不是[遊戲台](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad)類別。 如需詳細資訊，請參閱[遊戲台與震動](gamepad-and-vibration.md)。
+偵測和追蹤 arcade 隨身碟的運作方式完全相同的方式如同對遊戲台，除了具有[ArcadeStick][]而不是類別[遊戲台](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad)類別。 如需詳細資訊，請參閱[遊戲台與震動](gamepad-and-vibration.md)。
 
 <!-- Arcade sticks are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected arcades sticks and events to notify you when an arcade stick is added or removed.
 
@@ -121,7 +121,7 @@ Each arcade stick can be associated with a user account to link their identity t
 
 ## <a name="reading-the-arcade-stick"></a>讀取電動搖桿
 
-在您找出感興趣的電動搖桿之後，即可收集其輸入。 不過，電動搖桿不是透過引發事件來溝通狀態變更，這與您可能習慣使用的一些其他類型的輸入不同。 相反的，您可以進行「輪詢」__ 來定期讀取其目前狀態。
+在您找出感興趣的電動搖桿之後，即可收集其輸入。 不過，電動搖桿不是透過引發事件來溝通狀態變更，這與您可能習慣使用的一些其他類型的輸入不同。 相反地，您可以進行「輪詢」來定期讀取其目前狀態。
 
 ### <a name="polling-the-arcade-stick"></a>對電動搖桿進行輪詢
 
@@ -137,18 +137,18 @@ auto arcadestick = myArcadeSticks[0];
 ArcadeStickReading reading = arcadestick->GetCurrentReading();
 ```
 
-除了電動搖桿狀態之外，每次讀取都會包含精確指出狀態擷取時間的時間戳記。 時間戳記適用於與先前讀取的計時或遊戲模擬的計時建立關聯。
+除了電動搖桿狀態之外，每次讀取都會包含精確指出狀態擷取時間的時間戳記。 此時間戳記適用於關聯到先前讀取的計時或遊戲模擬的計時。
 
 ### <a name="reading-the-buttons"></a>讀取按鈕
 
-每個電動搖桿按鈕&mdash;四個方向的搖桿、 六個**動作**按鈕，以及兩個**特殊**的按鈕&mdash;各自提供數位讀取來指出已按下 （向下） 或放開 （向上）。 基於效率考量，按鈕讀取並非作為個別布林值; 呈現而被壓縮成[ArcadeStickButtons][]列舉所代表的單一位元欄位。
+每個 arcade 隨身碟按鈕&mdash;痼蹗搖桿，六個**動作**按鈕和兩個**特殊**按鈕&mdash;提供數位閱讀的指出是否已按下 （向下） 或發行 （上）。 為了提高效率，按鈕的讀數不表示為個別的布林值;相反地，它們所有封裝到單一的位元欄位，由[ArcadeStickButtons][]列舉型別。
 
 > [!NOTE]
-> 電動搖桿配備用於 UI 瀏覽，例如**檢視**及**功能表**按鈕的其他按鈕。 這些按鈕不是 `ArcadeStickButtons` 列舉的一部分，而且只能將電動搖桿當成 UI 瀏覽裝置存取來進行讀取。 如需詳細資訊，請參閱 [UI 瀏覽裝置](ui-navigation-controller.md)。
+> Arcade 隨身碟配備其他按鈕，例如用於 UI 導覽**檢視**並**功能表**按鈕。 這些按鈕不是 `ArcadeStickButtons` 列舉的一部分，而且只能將電動搖桿當成 UI 瀏覽裝置存取來進行讀取。 如需詳細資訊，請參閱 [UI 瀏覽裝置](ui-navigation-controller.md)。
 
 按鈕值讀取自 [ArcadeStickReading][] 結構的 `Buttons` 屬性。 由於此屬性是位元欄位，所以使用位元遮罩來隔離您感興趣的按鈕值。 設定對應位元時，即按下 (向下) 按鈕；否則為放開 (向上)。
 
-下列範例會判斷是否按下 [**動作 1** ] 按鈕。
+下列範例會判斷是否**動作 1**按下按鈕時。
 
 ```cpp
 if (ArcadeStickButtons::Action1 == (reading.Buttons & ArcadeStickButtons::Action1))
@@ -157,7 +157,7 @@ if (ArcadeStickButtons::Action1 == (reading.Buttons & ArcadeStickButtons::Action
 }
 ```
 
-下列範例會判斷是否放開 [**動作 1** ] 按鈕。
+下列範例會判斷是否**動作 1**放開按鍵時。
 
 ```cpp
 if (ArcadeStickButtons::None == (reading.Buttons & ArcadeStickButtons::Action1))
@@ -172,11 +172,11 @@ if (ArcadeStickButtons::None == (reading.Buttons & ArcadeStickButtons::Action1))
 
 [InputInterfacingUWP 範例 _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) 示範如何同時使用電動搖桿和不同類型的輸入裝置，以及這些輸入裝置作為 UI 瀏覽控制器表現的方式。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [Windows.Gaming.Input.UINavigationController][]
 * [Windows.Gaming.Input.IGameController][]
-* [遊戲的輸入練習](input-practices-for-games.md)
+* [輸入適用於遊戲的作法](input-practices-for-games.md)
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx

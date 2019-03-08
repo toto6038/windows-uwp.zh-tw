@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 26cde97f82e6962d530721f1e0230138e5917016
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920527"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617923"
 ---
 # <a name="relativesource-markup-extension"></a>{RelativeSource} 標記延伸
 
@@ -36,14 +36,14 @@ ms.locfileid: "8920527"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
 | {RelativeSource Self} | 產生的 [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) 值是 <strong>Self</strong>。 目標元素應做為這個繫結的來源。 在同一個元素中繫結一個元素的屬性到另一個元素時，這個值很有用。 |
 | {RelativeSource TemplatedParent} | 產生 [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391)，以套用來做為這個繫結的來源。 在範本層級將執行階段資訊套用到繫結時，這個值很有用。 | 
 
 ## <a name="remarks"></a>備註
 
-[**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 可以將 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 設成 **Binding** 物件元素上的屬性，或是設成 [{Binding} 標記延伸](binding-markup-extension.md)內的元件。 這就是為什麼顯示兩個不同 XAML 語法的緣故。
+[  **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 可以將 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 設成 **Binding** 物件元素上的屬性，或是設成 [{Binding} 標記延伸](binding-markup-extension.md)內的元件。 這就是為什麼顯示兩個不同 XAML 語法的緣故。
 
 **RelativeSource** 與 [{Binding} 標記延伸](binding-markup-extension.md)類似。  它也是可以傳回本身的執行個體的標記延伸，並且支援實質上會傳遞引數到建構函式的字串型建構。 在此案例中，所傳遞的引數為 [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915) 值。
 
@@ -58,9 +58,9 @@ ms.locfileid: "8920527"
 />
 ```
 
-另一個 `RelativeSource={RelativeSource Self}` 的用法，是將物件的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 設定到其本身的做法。  例如，您可能在某些 SDK 範例中看見此技術，其中的 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 類別已使用自訂屬性加以延伸，這個自訂屬性已經為它自己的資料繫結提供「準備就緒」檢視模型，例如： `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
+另一個 `RelativeSource={RelativeSource Self}` 的用法，是將物件的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 設定到其本身的做法。  例如，您可能會看到這項技術，在某些 SDK 範例的位置[**頁**](https://msdn.microsoft.com/library/windows/apps/br227503)類別已擴充加上自己的資料繫結 已經提供已準備好要移至檢視模型的自訂屬性例如： `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**注意：** **RelativeSource**的 XAML 用法僅顯示的用法它為了： [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)在 XAML 中的設定值做為繫結運算式的一部分。 理論上，如果設定值為 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) 的屬性，也可以有其他用法。
+**附註**  XAML 使用量**RelativeSource**顯示它適用的使用狀況： 設定的值[ **Binding.RelativeSource** ](https://msdn.microsoft.com/library/windows/apps/br209831)在 XAML 做為繫結運算式的一部分。 理論上，如果設定值為 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) 的屬性，也可以有其他用法。
 
 ## <a name="related-topics"></a>相關主題
 

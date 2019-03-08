@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 18ea6af70d4c0be068ecd79b925bff69ff149a8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947455"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617853"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 內建相機 UI 來擷取相片和視訊
 
@@ -22,7 +22,7 @@ ms.locfileid: "8947455"
 如果您想提供自己的相機 UI 或您的案例需要更健全的擷取作業低階控制項，您應該使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件並實作您自己的擷取體驗。 如需詳細資訊，請參閱[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
 > [!NOTE]
-> 如果您的應用程式只使用 CameraCaptureUI，應該不在您的應用程式資訊清單檔案中指定**網路攝影機**或**麥克風**功能。 因為如果您這麼做，將會以裝置的相機隱私性設定您的應用程式；但即使使用者拒絕相機對您應用程式的存取，還是不會防止 CameraCaptureUI 擷取媒體。 原因是 Windows 內建相機應用程式是信任的第一方應用程式，需要使用者透過按下按鈕來起始相片、音訊和視訊擷取。 您的應用程式可能無法通過 Windows 應用程式認證套件認證時提交至市集，如果您在為您唯一的相片擷取機制使用 CameraCaptureUI 時指定網路攝影機或麥克風功能。
+> 您不應指定**網路攝影機**或是**麥克風**應用程式中的功能資訊清單檔案，如果您的應用程式只會使用 CameraCaptureUI。 因為如果您這麼做，將會以裝置的相機隱私性設定您的應用程式；但即使使用者拒絕相機對您應用程式的存取，還是不會防止 CameraCaptureUI 擷取媒體。 原因是 Windows 內建相機應用程式是信任的第一方應用程式，需要使用者透過按下按鈕來起始相片、音訊和視訊擷取。 您的應用程式可能會失敗時，如果您指定的網路攝影機或麥克風功能使用 CameraCaptureUI 作為唯一相片擷取機制提交至市集時，Windows 應用程式認證套件認證。
 > 如果您是使用 MediaCapture 透過程式設計方式來擷取音訊、相片或視訊，則必須在應用程式資訊清單檔案中指定網路攝影機或麥克風功能。
 
 ## <a name="capture-a-photo-with-cameracaptureui"></a>使用 CameraCaptureUI 擷取相片
@@ -89,7 +89,7 @@ ms.locfileid: "8947455"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
  
 

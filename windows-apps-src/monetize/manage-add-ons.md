@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
-description: 在 Microsoft Store 提交 API 中使用這些方法，來管理附加元件，來為登錄到您的合作夥伴中心帳戶的應用程式。
+description: 若要管理的應用程式，都會向您的合作夥伴中心帳戶的附加元件，在 Microsoft Store 提交 API 中使用這些方法。
 title: 管理附加元件
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 51c940fffde3c770f397999e566570410528a1e8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918644"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617823"
 ---
 # <a name="manage-add-ons"></a>管理附加元件
 
@@ -36,7 +36,7 @@ ms.locfileid: "8918644"
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
-<td align="left"><a href="get-all-add-ons.md">取得您所有應用程式的附加元件</a></td>
+<td align="left"><a href="get-all-add-ons.md">取得您的應用程式中的所有附加元件</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
@@ -100,9 +100,9 @@ ms.locfileid: "8918644"
 | 值      | 類型   | 描述        |
 |------------|--------|--------------|
 | applications      | 陣列  | 包含一個[應用程式資源](#application-object)的陣列，其代表與此附加元件相關聯之應用程式。 此陣列只支援一個項目。  |
-| id | 字串  | 附加元件的 Store 識別碼。 此值由 Microsoft Store 所提供。  Store 識別碼範例為 9NBLGGH4TNMP。  |
+| id | 字串  | 附加元件的市集識別碼。 此值由市集所提供。 市集識別碼範例為 9NBLGGH4TNMP。  |
 | productId | 字串  | 附加元件的產品識別碼。 這是建立附加元件時，開發人員所提供的識別碼。 如需詳細資訊，請參閱[設定您的產品類型和產品識別碼](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。 |
-| productType | 字串  | 附加元件的產品類型。 支援下列值︰**Durable** 和 **Consumable**。  |
+| productType | 字串  | 附加元件的產品類型。 支援下列值：**永久性**並**可取用**。  |
 | lastPublishedInAppProductSubmission       | 物件 | [提交資源](#submission-object)，其提供附加元件最新發行的提交相關資訊。         |
 | pendingInAppProductSubmission        | 物件  |  [提交資源](#submission-object)，其提供附加元件目前擱置提交的資訊。  |   |
 
@@ -130,8 +130,8 @@ ms.locfileid: "8918644"
 
 | 值           | 類型    | 描述        |
 |-----------------|---------|-----------|
-| value            | 物件  |  此物件包含下列值： <br/><br/> <ul><li>*id*。應用程式的 Store 識別碼。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。</li><li>*resourceLocation*。 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取應用程式完整資料的相對路徑。</li></ul>   |
-| totalCount   | 整數  | 回應內文的 applications** 陣列中的應用程式物件數目。                                                                                                                                                 |
+| value            | 物件  |  此物件包含下列值： <br/><br/> <ul><li>*id*。應用程式的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。</li><li>*resourceLocation*。 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取應用程式完整資料的相對路徑。</li></ul>   |
+| totalCount   | 整數  | 回應內文的 applications 陣列中的 App 物件數目。                                                                                                                                                 |
 
 <span id="submission-object" />
 
@@ -159,8 +159,8 @@ ms.locfileid: "8918644"
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [使用 Microsoft Store 提交 API 管理附加元件提交](manage-add-on-submissions.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
+* [管理使用 Microsoft Store 提交 API 的附加元件提交](manage-add-on-submissions.md)
 * [取得所有附加元件](get-all-add-ons.md)
 * [取得附加元件](get-an-add-on.md)
 * [建立附加元件](create-an-add-on.md)

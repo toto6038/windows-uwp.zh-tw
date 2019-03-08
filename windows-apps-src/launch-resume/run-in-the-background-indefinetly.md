@@ -2,16 +2,16 @@
 title: 在背景無限期執行
 description: 使用 extendedExecutionUnconstrained 功能，在背景無限期執行背景工作或延伸執行工作階段。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: 背景工作，延伸執行，資源，限制，背景工作
-ms.date: 10/3/2017
+keywords: 背景工作中，擴充執行、 資源、 限制、 背景工作
+ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aedd948fe58efcc3edc160db971478189d9cb4ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: faac1d8d47ddcff4e5ec32d35f2e46bab7a3f4aa
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933922"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630243"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在背景無限期執行
 
@@ -75,7 +75,7 @@ _Package.appxmanifest_
 </Package>
 ```
 
-這項功能會移除執行時間限制和閒置工作看門狗。 背景工作啟動後，無論是由觸發程序或應用程式服務呼叫所啟動，一旦對 **Run** 方法提供的 [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 執行延遲，就可以無限期執行。 如果應用程式設定已設定為 **\[由 Windows 管理\]**，仍然可能會套用能源配額，當 \[省電模式\] 為啟用狀態時，便無法啟動其背景工作。這可以使用作業系統設定來變更。 詳細資訊可在[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)中取得。
+這項功能會移除執行時間限制和閒置工作看門狗。 背景工作啟動後，無論是由觸發程序或應用程式服務呼叫所啟動，一旦對 **Run** 方法提供的 [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 執行延遲，就可以無限期執行。 如果應用程式設定已設定為 **\[由 Windows 管理\]**，仍然可能會套用能源配額，當 \[省電模式\] 為啟用狀態時，便無法啟動其背景工作。 這可以變更作業系統設定。 詳細資訊可在[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)中取得。
 
 通用 Windows 平台會監視背景工作執行，以確保正常的電池使用時間和順暢的前景應用程式體驗。 不過，個人應用程式和企業營運應用程式可以使用延伸執行和 **extendedBackgroundTaskTime**，建立不考慮裝置資源可用性而執行任意長時間的應用程式。
 

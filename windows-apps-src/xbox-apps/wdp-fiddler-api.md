@@ -7,20 +7,20 @@ keywords: Windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
 ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937809"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603333"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API 參考   
 您可以使用這個 REST API，啟用和停用開發套件的 Fiddler 網路追蹤。
 
-## <a name="determine-if-fiddler-tracing-is-enabled"></a>判斷是否已啟用 Fiddler 追蹤
+## <a name="determine-if-fiddler-tracing-is-enabled"></a>判斷 Fiddler 追蹤是否啟用
 
 **要求**
 
-您可以檢查以查看使用下列要求在裝置上是否已啟用 Fiddler 追蹤。
+您可以使用下列要求，檢查以查看裝置上是否啟用 Fiddler 追蹤。
 
 方法      | 要求 URI
 :------     | :-----
@@ -34,13 +34,13 @@ GET | /ext/fiddler
 
 - 無
 
-**要求主體**   
+**要求本文**   
 
 - 無
 
 **回應**   
 
-- JSON bool 屬性 IsProxyEnabled 哪些規範無論是否啟用 proxy。
+- JSON bool 屬性 IsProxyEnabled，指定 proxy 是否啟用。
 
 **狀態碼**
 
@@ -77,7 +77,7 @@ POST | /ext/fiddler
 
 - 無
 
-**要求主體**
+**要求本文**
 
 - 若 updateCert 為 false 或未提供，則為無。 否則，多部分合格的 http 本文包含 FiddlerRoot.cer 檔案。
 
@@ -113,7 +113,7 @@ DELETE | /ext/fiddler
 
 - 無
 
-**要求主體**   
+**要求本文**   
 
 - 無
 
@@ -132,10 +132,10 @@ HTTP 狀態碼      | 描述
 5XX | 錯誤碼
 
 <br />
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox
 
-## <a name="see-also"></a>另請參閱
-- [在 Xbox 上針對 UWP 設定 Fiddler](uwp-fiddler.md)
+## <a name="see-also"></a>請參閱
+- [在 Xbox 上設定適用於 UWP 的 Fiddler](uwp-fiddler.md)
 

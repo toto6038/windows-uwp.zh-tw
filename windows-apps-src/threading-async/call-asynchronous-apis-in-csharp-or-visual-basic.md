@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, C#, Visual Basic, 非同步
 ms.localizationpriority: medium
 ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940944"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632613"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>在 C# 或 Visual Basic 中呼叫非同步 API
 
@@ -38,7 +38,7 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 這個範例有幾個重點。 首先，`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 程式行使用 **await** 運算子搭配對非同步方法 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 的呼叫。 您可以想像成 **await** 運算子告知編譯器您正在呼叫非同步方法，因而使編譯器代替您執行一些額外的工作。 其次，事件處理常式的宣告包含 **async** 關鍵字。 您必須在您使用 **await** 運算子的任何方法的方法宣告中包含這個關鍵字。
 
-在這個主題中，我們將不深入探討使用 **await** 運算子時編譯器所執行工作的細節，但將檢查 app 執行什麼工作，使得 app 具有非同步性質和回應能力。 以使用同步程式碼時所發生的情況為例。 例如，假設有一個稱為 `SyndicationClient.RetrieveFeed` 的同步方法 (並沒有這種方法，但請想像有)。如果您的 app 包含 `SyndicationFeed feed = client.RetrieveFeed(feedUri)` 程式行而非 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`，在取得 `RetrieveFeed` 的傳回值之前，app 會停止執行。 而且，當您的 app 在等待方法完成時，不會回應任何其他事件 (另一個 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件)。 也就是說，您的 app 在 `RetrieveFeed` 傳回之前會被封鎖。
+在這個主題中，我們將不深入探討使用 **await** 運算子時編譯器所執行工作的細節，但將檢查 app 執行什麼工作，使得 app 具有非同步性質和回應能力。 以使用同步程式碼時所發生的情況為例。 例如，假設有一個稱為 `SyndicationClient.RetrieveFeed` 的同步方法 （沒有這類方法，但假設沒有）。如果您的應用程式包含線條`SyndicationFeed feed = client.RetrieveFeed(feedUri)`，而不是`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`，執行應用程式將會停止的傳回值直到`RetrieveFeed`可用。 而且，當您的 app 在等待方法完成時，不會回應任何其他事件 (另一個 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件)。 也就是說，您的 app 在 `RetrieveFeed` 傳回之前會被封鎖。
 
 但是，如果您呼叫 `client.RetrieveFeedAsync`，該方法會起始擷取作業並立即傳回。 當您使用 **await** 搭配 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 時，app 會暫時結束事件處理常式。 接著，當 **RetrieveFeedAsync** 以非同步方式執行時，app 就可以處理其他事件。 這樣可以保持 app 對使用者的回應能力。 當 **RetrieveFeedAsync** 完成而且 [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) 可用時，app 基本上會重新進入先前在 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 之後停止的事件處理常式，然後完成方法的其餘部分。
 
@@ -66,11 +66,11 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
 | [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)                                                                                                           | **void**                                          |
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)，實作 **IAsyncOperation&lt;UInt32&gt;** 的自訂結果類別 | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
+| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)，自訂產生的類別可實作**IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
  
 
-[**.NET for UWP app**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中定義的非同步方法含有 [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx) 傳回類型。 傳回 **Task** 的方法與 UWP 中傳回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) 的非同步方法類似。 在所有情況下，非同步方法的結果都是 **void**。 傳回類型 **Task&lt;TResult&gt;** 與 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) 的相似處在於執行工作時非同步方法的結果與 `TResult` 類型參數的類型相同。 如需使用 **.NET for UWP apps** 和工作的詳細資訊，請參閱[適用於 Windows 執行階段應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)。
+[  **.NET for UWP app**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中定義的非同步方法含有 [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx) 傳回類型。 傳回 **Task** 的方法與 UWP 中傳回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) 的非同步方法類似。 在所有情況下，非同步方法的結果都是 **void**。 傳回類型 **Task&lt;TResult&gt;** 與 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) 的相似處在於執行工作時非同步方法的結果與 `TResult` 類型參數的類型相同。 如需使用 **.NET for UWP apps** 和工作的詳細資訊，請參閱[適用於 Windows 執行階段應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)。
 
 ## <a name="handling-errors"></a>處理錯誤
 
@@ -79,7 +79,7 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 當非同步方法呼叫其他非同步方法時，任何造成例外狀況的非同步方法都將被傳播到外部方法中。 這表示您可以在最外層的方法中放入 **try/catch** 區塊，以攔截巢狀非同步方法的錯誤。 這和您攔截同步方法錯誤的方式類似。 不過，在 **catch** 區塊中不能使用 **await**。
 
-**提示：** 從 Microsoft Visual Studio2005 中的 C#，您可以使用**await** **catch**區塊中。
+**祕訣**  從C#在 Microsoft Visual Studio 2005 中，您可以使用**await**中**攔截**區塊。
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 

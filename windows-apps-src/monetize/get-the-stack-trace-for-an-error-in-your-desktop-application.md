@@ -6,19 +6,19 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 堆疊追蹤, 錯誤, 詳細資料, 傳統型應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cc8aaef2b26af88234efe62bf7cf1cb998e19bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937779"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659893"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>取得傳統型應用程式中錯誤的堆疊追蹤
 
-在 Microsoft Store 分析 API 使用此方法，取得已加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)之傳統型應用程式的錯誤堆疊追蹤。 這個方法只可以下載最近 30 天發生之錯誤的堆疊追蹤。 堆疊追蹤也會在合作夥伴中心的傳統型應用程式的[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)中提供的。
+在 Microsoft Store 分析 API 使用此方法，取得已加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)之傳統型應用程式的錯誤堆疊追蹤。 這個方法只可以下載最近 30 天發生之錯誤的堆疊追蹤。 堆疊追蹤中也會有[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)在合作夥伴中心內的桌面應用程式。
 
 使用這個方法之前，您必須先使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法來擷取與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的識別碼雜湊。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
 若要使用這個方法，您必須先進行下列動作：
@@ -41,15 +41,15 @@ ms.locfileid: "8937779"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
  
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  說明      |  必要  |
+| 參數        | 類型   |  描述      |  必要  |
 |---------------|--------|---------------|------|
-| applicationId | 字串 | 您想要取得堆疊追蹤的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，開啟任何 （例如**健康情況報告**） 的[傳統型應用程式在合作夥伴中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)，並從 URL 擷取產品識別碼。 |  是  |
-| cabIdHash | string | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼雜湊。 若要取得此值，請使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法，以擷取您的應用程式中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabIdHash** 值。 |  是  |
+| applicationId | 字串 | 您想要取得堆疊追蹤的傳統型應用程式的產品識別碼。 若要取得桌面應用程式的產品識別碼，請開啟任何[桌面應用程式以在合作夥伴中心中的分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)(例如**健康情況報告**)，並從 URL 擷取產品識別碼。 |  是  |
+| cabIdHash | 字串 | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼雜湊。 若要取得此值，請使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法，以擷取您的應用程式中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabIdHash** 值。 |  是  |
 
  
 ### <a name="request-example"></a>要求範例
@@ -66,10 +66,10 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型    | 說明                  |
+| 值      | 類型    | 描述                  |
 |------------|---------|--------------------------------|
 | 值      | 陣列   | 物件的陣列，每個物件都包含一個堆疊追蹤資料框架。 如需有關每個物件中資料的詳細資訊，請參閱下方的[堆疊追蹤值](#stack-trace-values)一節。 |
-| @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的錯誤，就會傳回此值。 |
+| @nextLink  | 字串  | 如果還有其他資料頁面，此字串會包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的錯誤，就會傳回此值。 |
 | TotalCount | 整數 | 查詢之資料結果的資料列總數。          |
 
 
@@ -87,7 +87,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-example"></a>回應範例
 
-下列範例針對此要求示範範例 JSON 回應主體。
+下列範例示範這個要求的一個範例 JSON 回應主體。
 
 ```json
 {
@@ -120,7 +120,7 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>相關主題
 
 * [健康情況報告](../publish/health-report.md)
-* [使用 Microsoft Store 服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-* [取得傳統型應用程式的錯誤報告資料](get-desktop-application-error-reporting-data.md)
-* [取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)
-* [下載傳統型應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-desktop-application.md)
+* [使用 Microsoft Store 服務的存取分析資料](access-analytics-data-using-windows-store-services.md)
+* [取得錯誤報告資料，您的桌面應用程式](get-desktop-application-error-reporting-data.md)
+* [取得您的桌面應用程式中的錯誤詳細資料](get-details-for-an-error-in-your-desktop-application.md)
+* [下載您的桌面應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-desktop-application.md)

@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932894"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639943"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>C++/WinRT 與 ABI 之間的互通性
 
-本主題示範如何在 SDK 應用程式二進位介面 (ABI) 之間轉換和[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)物件。 您可以使用這些技術在使用這些程式設計的兩種方法的程式碼以及 Windows 執行階段之間互通，或您逐漸將程式碼從 ABI 移至 C++/WinRT 時，可以使用它們。
+本主題說明如何將 SDK 應用程式二進位介面 (ABI) 之間轉換以及[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)物件。 您可以使用這些技術在使用這些程式設計的兩種方法的程式碼以及 Windows 執行階段之間互通，或您逐漸將程式碼從 ABI 移至 C++/WinRT 時，可以使用它們。
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>什麼事 Windows 執行階段 ABI，以及有哪些 ABI 類型？
 Windows 執行階段類別 (執行階段類別) 其實是抽象概念。 這個抽象概念定義可讓各種不同程式設計語言與物件互動的二進位介面 (應用程式二進位介面或 ABI)。 無論程式設計語言，與 Windows 執行階段物件的用戶端程式碼互動會發生在最低層級，用戶端語言建構會翻譯成物件的 ABI 呼叫。
@@ -246,11 +246,11 @@ int main()
 ## <a name="important-apis"></a>重要 API
 * [AddRef 函式](https://msdn.microsoft.com/library/windows/desktop/ms691379)
 * [QueryInterface 函式](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt:: attach_abi 函式](/uwp/cpp-ref-for-winrt/attach-abi)
+* [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt:: copy_from_abi 函式](/uwp/cpp-ref-for-winrt/copy-from-abi)
-* [winrt:: copy_to_abi 函式](/uwp/cpp-ref-for-winrt/copy-to-abi)
-* [winrt:: detach_abi 函式](/uwp/cpp-ref-for-winrt/detach-abi)
-* [winrt::get_abi 函式](/uwp/cpp-ref-for-winrt/get-abi)
-* [winrt::Windows::Foundation::IUnknown::as 成員函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [winrt::copy_to_abi function](/uwp/cpp-ref-for-winrt/copy-to-abi)
+* [winrt::detach_abi function](/uwp/cpp-ref-for-winrt/detach-abi)
+* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::Windows::Foundation::IUnknown:: 為成員函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as 成員函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)

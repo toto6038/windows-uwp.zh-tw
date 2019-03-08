@@ -1,22 +1,22 @@
 ---
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
 title: 通用 Windows 平台元件和最佳化互通性
-description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
+description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) 應用程式。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 37bcf2ff6eee6c272339fdc997ee7bbb046f85e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946486"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654083"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 元件和最佳化 Interop
 
 
-建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
+建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) 應用程式。
 
 ## <a name="best-practices-for-interoperability-with-uwp-components"></a>UWP 元件互通性的最佳做法
 
@@ -30,7 +30,7 @@ UWP 具有一個類型庫，這個類型庫可從任何可撰寫 UWP 應用程�
 
 當您在 C# 或 Visual Basic 中開發 UWP app 時，您使用的兩組最常見的 API 是 UWP API 與適用於 UWP app 的 .NET API。 一般來說，在 UWP 中定義的類型位於開頭為 "Windows." 的命名空間， 而 .NET 類型則位於開頭為 "System." 的命名空間， 但還是有些例外。 使用適用於 UWP app 的 .NET API 中所列的類型時，並不需要互通性。 如果您發現在使用 UWP 時效能不佳，可以改用適用於 UWP App 的 .NET，以獲得較佳的效能。
 
-**注意：** 大部分與 windows 10 隨附的 UWP 元件實作在 c + + 中，因此當您從 C# 或 Visual Basic 使用時，會跨越互通性界限。 一如往常，請務必先評估您的應用程式以了解使用 UWP 元件是否會影響應用程式的效能，再花費時間和精力變更程式碼。
+**附註**  大多與 Windows 10 UWP 元件，隨附實作 c + + 中，讓您跨互通性界限，當您使用從C#或 Visual Basic。 一如往常，請務必先評估您的應用程式以了解使用 UWP 元件是否會影響應用程式的效能，再花費時間和精力變更程式碼。
 
 在這個主題中，當我們提到「UWP 元件」時，是指以 C# 或 Visual Basic 以外的語言所撰寫的元件。
 
@@ -76,7 +76,7 @@ UWP 可讓開發人員以選擇的語言編寫使用 XAML 的應用程式，這�
 
 ![互通性轉換不應占去大量程式執行時間。](images/interop-transitions.png)
 
-[**.NET for Windows apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中列出的類型從 C# 或 Visual Basic 中使用時不會產生這個互通性成本。 做為經驗法則，您可以假設命名空間中以 “Windows.” 為開頭的類型 屬於 UWP，而命名空間中以 “System.” 為開頭的類型 則是 .NET 類型。 請記住，就算是簡單的 UWP 類型使用 (例如配置或屬性存取) 也會產生互通性成本。
+[  **.NET for Windows apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中列出的類型從 C# 或 Visual Basic 中使用時不會產生這個互通性成本。 做為經驗法則，您可以假設命名空間中以 “Windows.” 為開頭的類型 屬於 UWP，而命名空間中以 “System.” 為開頭的類型 則是 .NET 類型。 請記住，就算是簡單的 UWP 類型使用 (例如配置或屬性存取) 也會產生互通性成本。
 
 您應該測量應用程式並判斷互通性是否佔用了應用程式大部分執行時間，然後再最佳化互通性成本。 使用 Visual Studio 分析 app 效能前，可以使用 [**功能**] 檢視並查看呼叫至 UWP 中的方法所耗費的時間，輕易取得互通性成本上限。
 

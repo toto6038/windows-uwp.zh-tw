@@ -1,5 +1,5 @@
 ---
-Description: Command bars give users easy access to your app's most common tasks.
+Description: 命令列讓使用者輕鬆存取您應用程式最常見的工作。
 title: 命令列
 label: App bars/command bars
 template: detail.hbs
@@ -14,17 +14,17 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d2a7d34f00d40429863f08ffe6a9c34222daa32
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050025"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649303"
 ---
 # <a name="command-bar"></a>命令列
 
 命令列可讓使用者輕鬆存取您的 App 最常見的工作。 命令列可以提供 App 層級或網頁特定命令的存取權，並且可以搭配任何瀏覽模式使用。
 
-> **重要 API**：[CommandBar 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)、[AppBarButton 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)、[AppBarToggleButton 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)、[AppBarSeparator 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
+> **重要的 Api**:[CommandBar 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)， [AppBarButton 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)， [AppBarToggleButton 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)， [AppBarSeparator 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
 ![具有圖示之命令列的範例](images/controls_appbar_icons.png)
 
@@ -44,7 +44,7 @@ CommandBar 控制項是一般用途、彈性、輕量的控制項，它可以顯
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong> App，請按一下這裡<a href="xamlcontrolsgallery:/item/CommandBar">開啟 App 並查看 CommandBar 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -61,7 +61,7 @@ Windows Phone 上 Outlook 行事曆中的命令列
 
 ## <a name="anatomy"></a>結構
 
-根據預設，命令列會顯示一排圖示按鈕與一個選擇性的 [查看更多] 按鈕，它會以省略符號 \[•••\] 表示。 這個命令列是由稍後顯示的範例程式碼建立。 顯示的命令列處於關閉、精簡狀態。
+根據預設，命令列顯示的圖示按鈕和選擇性 「 請查看更多的項目 」 按鈕，以省略符號表示資料列\[• • •\]。 這個命令列是由稍後顯示的範例程式碼建立。 顯示的命令列處於關閉、精簡狀態。
 
 ![關閉的命令列](images/command-bar-compact.png)
 
@@ -73,11 +73,11 @@ Windows Phone 上 Outlook 行事曆中的命令列
 
 ![關閉的命令列](images/commandbar_anatomy_open.png)
 
-命令列分為 4 個主要區域︰
-- 內容區域對齊命令列左側。 如果已填入 [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性，就會顯示內容區域。
+命令列被分成 4 個主要區域︰
+- 內容區域會對齊命令列左側。 如果已填入 [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性，就會顯示內容區域。
 - 主要命令區域對齊命令列右側。 如果已填入 [PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx) 屬性，就會顯示主要命令區域。  
-- [查看更多] \[•••\] 按鈕顯示在命令列右側。 按 [查看更多] \[•••\] 按鈕會顯示主要命令標籤，如果有任何次要命令，還會開啟溢位功能表。 沒有主要命令標籤和次要標籤存在時，不會顯示此按鈕。 若要變更預設行為，請使用 [OverflowButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) 屬性。
-- 只有在命令列開啟且 [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) 屬性已填入時，才會顯示溢位功能表。 當空間有限時，主要命令會移到 SecondaryCommands 區域中。 若要變更預設行為，請使用 [IsDynamicOverflowEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled.aspx) 屬性。
+- 查看更多 「 \[• • •\]按鈕會顯示在右邊的列。 按下 查看更多 「 \[• • •\]按鈕會顯示主要命令的標籤，並開啟溢位功能表，如果有第二個命令。 沒有主要命令標籤和次要標籤存在時，不會顯示此按鈕。 若要變更預設行為，請使用 [OverflowButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) 屬性。
+- 只有當命令列已開啟並已填入 [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) 屬性時，才會顯示溢位功能表。 當空間有限時，主要命令會移到 SecondaryCommands 區域中。 若要變更預設行為，請使用 [IsDynamicOverflowEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled.aspx) 屬性。
 
 當 [FlowDirection](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.flowdirection.aspx) 是 **RightToLeft** 時，配置會反轉。
 
@@ -106,7 +106,7 @@ Windows Phone 上 Outlook 行事曆中的命令列
 ```
 
 ## <a name="commands-and-content"></a>命令與內容
-CommandBar 控制項有 3 個可用來新增命令及內容的屬性：[PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx)、[SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) 和 [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx)。
+CommandBar 控制項有 3 個屬性，可用來將命令和內容：[PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx)， [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx)，以及[內容](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx)。
 
 
 ### <a name="commands"></a>命令
@@ -119,14 +119,14 @@ CommandBar 控制項有 3 個可用來新增命令及內容的屬性：[PrimaryC
 
 ![包含 [更多] 區域及圖示的命令列範例](images/appbar_rs2_overflow_icons.png)
 
-您可以透過程式設計方式，視需要在 PrimaryCommands 與 SecondaryCommands 之間移動命令。
+您能以程式設計方式控制在 PrimaryCommands 與 SecondaryCommands 之間移動命令。
 
-- *如果有慣常在各頁面顯示的命令，最好讓這個命令保持在一致的位置。*
-- *我們建議將 [接受]、[是]、[確定] 命令放在 [拒絕]、[否] 和 [取消] 的左邊。 一致性可讓使用者有自信地在系統中四處移動，並幫助他們在應用程式上運用從其他應用程式學到的應用程式瀏覽知識。*
+- *命令會以一致的方式跨頁面出現時，最好是將該命令中的一致位置。*
+- *我們建議，將接受，和左邊的 [確定] 命令拒絕，否，取消。一致性可讓使用者在系統中移動的信心，並可幫助他們傳輸其專業知識的應用程式瀏覽應用程式到應用程式。*
 
 ### <a name="app-bar-buttons"></a>應用程式列按鈕
 
-PrimaryCommands 和 SecondaryCommands 都只能填入 [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 和 [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 命令元素。 
+PrimaryCommands 和 SecondaryCommands 只能填入 [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 與 [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 命令元素。 
 
 應用程式列按鈕控制項可依圖示和文字標籤加以區分。 這些控制項最適合在命令列中使用，其外觀會改變，取決於控制項是在命令列還是在溢位功能表中使用。
 
@@ -177,11 +177,11 @@ AppBarButton [IsCompact](https://docs.microsoft.com/uwp/api/windows.ui.xaml.cont
 
 ## <a name="open-and-closed-states"></a>開啟與關閉狀態
 
-可以開啟或關閉命令列。 開啟時，顯示含文字標籤的主要命令按鈕，如果有次要命令存在，還會開啟溢位功能表。
+命令列可以開啟或關閉。 開啟時，顯示含文字標籤的主要命令按鈕，如果有次要命令存在，還會開啟溢位功能表。
 
-使用者可以按下 [查看更多] \[•••\] 按鈕，以在這些狀態之間切換。 您可以設定 [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) 屬性，以程式設計方式在這些狀態之間切換。 
+使用者可以藉由按下 [查看更多 」 的這些狀態之間切換\[• • •\] ] 按鈕。 您可以設定 [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) 屬性，以程式設計方式在這些狀態之間切換。 
 
-您可以使用 [Opening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx)、[Opened](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx)、[Closing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx) 和 [Closed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) 事件來回應要開啟或關閉的命令列。  
+您可以使用 [Opening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx)、[Opened](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx)、[Closing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx) 與 [Closed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) 事件來回應要開啟或關閉的命令列。  
 - 轉換動畫開始之前，會發生 Opening 和 Closing 事件。
 - 轉換完成後，發生 Opened 和 Closed 事件。
 
@@ -214,16 +214,16 @@ private void CommandBar_Closing(object sender, object e)
 
 ### <a name="issticky"></a>IsSticky
 
-如果使用者在命令列開啟時與應用程式的其他部分互動，則命令列會自動關閉。 這稱為*消失關閉*。 您可以設定 [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) 屬性來控制消失關閉行為。 當 `IsSticky="true"` 時，命令列會保持開啟，直到使用者按 [查看更多] \[•••\] 按鈕，或從溢位功能表中選取項目為止。 
+如果使用者在命令列開啟時與應用程式的其他部分互動，則命令列會自動關閉。 這稱為*消失關閉*。 您可以設定 [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) 屬性來控制消失關閉行為。 當`IsSticky="true"`，直到使用者按下 查看更多"列將保持開啟\[• • •\]按鈕，或從溢位功能表中選取的項目。 
 
 建議您避免使用相黏命令列，因為它們不符合使用者對消失關閉的預期效果。
 
 ### <a name="display-mode"></a>顯示模式
 
-您可以設定 [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) 屬性來控制命令列在關閉狀態下的顯示方式。 目前有 3 個關閉顯示模式可供選擇︰
-- **Compact**：這是預設模式。 顯示內容、沒有標籤的主要命令圖示，以及 [查看更多] \[•••\] 按鈕。
-- **Minimal**：只顯示精簡的一列來做為 [查看更多 ] \[•••\] 按鈕。 使用者可以按該列上的任意位置以開啟它。
-- **Hidden**︰命令列關閉後就不會顯示。 這十分適合用來顯示一個含內嵌命令列的關聯式命令。 在此情況下，您必須設定 **IsOpen** 屬性或將 ClosedDisplayMode 變更為 **Minimal** 或 **Compact**，以程式設計方式來開啟命令列。
+您可以設定 [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) 屬性，以控制如何顯示關閉狀態的命令列。 目前有 3 個關閉顯示模式可供選擇︰
+- **Compact**:預設的模式。 顯示內容、 標籤、 主要的命令圖示和 「 請參閱 「 詳細\[• • •\]  按鈕。
+- **最小**:只有細橫條，可做為 「 查看更多 」 的示範\[• • •\]  按鈕。 使用者可以按該列上的任意位置以開啟它。
+- **隱藏**:當關閉時，不會顯示 [命令] 列。 這十分適合用來顯示一個含內嵌命令列的關聯式命令。 在此情況下，您必須設定 **IsOpen** 屬性或將 ClosedDisplayMode 變更為 **Minimal** 或 **Compact**，以程式設計方式來開啟命令列。
 
 在這裡，命令列是用來放置 [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 的簡單格式設定命令。 當焦點不在編輯方塊時，格式設定命令會干擾注意力，所以會隱藏起來。 使用編輯方塊時，命令列的 ClosedDisplayMode 會變更為 Compact，因此會顯示格式設定命令。
 
@@ -263,7 +263,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ![應用程式列放置範例 1](images/AppbarGuidelines_Placement1.png)
 
--   對於小型手持式裝置，我們建議將命令列放置在螢幕底部以方便存取。
+-   對於小型手持裝置，我們建議將命令列放置在螢幕底部以方便存取。
 -   若是有較大型螢幕的裝置，將命令列放在接近視窗頂端的位置會讓這些命令列更顯眼且更容易找到。
 
 使用 [DiagonalSizeInInches](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) API 來判斷實際的螢幕大小。
@@ -272,7 +272,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ![應用程式列放置範例 2](images/AppbarGuidelines_Placement2.png)
 
->**觸控裝置**︰如果當觸控式鍵盤或「螢幕輸入面板」(SIP) 出現時命令列必須保持可見，則您可以將命令列指派給頁面的 [BottomAppBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.bottomappbar.aspx) 屬性，如此一來，它就會在有 SIP 存在時，變成保持可見。 否則，您應該以內嵌方式將命令列放在應用程式內容的相對位置。
+>**觸控裝置**:如果命令列必須保持對使用者顯示時的觸控式鍵盤或螢幕輸入面板 (SIP) 會出現則只能指派給命令列[BottomAppBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.bottomappbar.aspx)頁面和它的屬性就會移到 SIP 時保持可見. 否則，您應該以內嵌方式將命令列放在 App 內容的相對位置。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
@@ -281,5 +281,5 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
-* [UWP 應用程式的命令設計基本知識](../basics/commanding-basics.md)
+* [命令用於 UWP 應用程式的設計基本概念](../basics/commanding-basics.md)
 * [CommandBar 類別](https://msdn.microsoft.com/library/windows/apps/dn279427)

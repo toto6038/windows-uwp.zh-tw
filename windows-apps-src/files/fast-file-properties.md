@@ -6,22 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp, 檔案, 屬性
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
-ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9060052"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630233"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>快速存取 UWP 中的檔案屬性 
 
 了解如何快速收集程式庫的檔案和其屬性清單，以便在應用程式中使用這些屬性。  
 
 必要條件 
-- **通用 Windows 平台 (UWP) 應用程式的非同步程式設計**    您可以了解如何在 C# 或 Visual Basic 撰寫非同步的 app，請參閱 [[呼叫非同步 Api 以 C# 或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
-- **程式庫的存取權限**這些範例中的程式碼需要**picturesLibrary**功能，但您的檔案位置可能需要其他功能或不需要功能完全。 若要深入了解，請參閱[檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)。 
-- **簡易檔案列舉**這個範例使用[QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)來設定幾個進階的列舉屬性。 若要深入了解取得小型目錄的簡易檔案清單，請參閱[列舉和查詢檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)。 
+- **非同步程式設計的通用 Windows 平台 (UWP) 應用程式** 您可以了解如何撰寫非同步應用程式C#或 Visual Basic，請參閱[呼叫中的非同步 ApiC#或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。     若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
+- **存取程式庫的權限** 這些範例中的程式碼需要**picturesLibrary**功能，但您的檔案位置可能需要不同的功能或沒有功能完全。 若要深入了解，請參閱[檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)。 
+- **簡單的檔案列舉型別**  這個範例會使用[QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)設定一些進階的列舉型別屬性。 若要深入了解取得小型目錄的簡易檔案清單，請參閱[列舉和查詢檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)。 
 
-## <a name="usage"></a>使用方式  
+## <a name="usage"></a>用途  
 許多應用程式需要列出一組檔案的屬性，但不一定需要與檔案直接互動。 例如，音樂應用程式一次播放 (開啟) 一個檔案，但它需要資料夾中所有檔案的屬性，好讓應用程式可以顯示歌曲佇列，或讓使用者可以選擇有效檔案來播放。 
 
 此頁面上的範例不應用於會修改每個檔案或應用程式的中繼資料，並且會與所有產生的 StorageFiles 進行讀取屬性以外互動行為的應用程式。 如需詳細資訊，請參閱[列舉和查詢檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)。 
@@ -109,7 +109,7 @@ while (images.Count != 0 || index < 10000) 
 ```
 
 ### <a name="results"></a>結果 
-產生的 StorageFile 檔案只包含要求的屬性，但相較於其他 IndexerOptions，傳回速度快 10 倍。應用程式仍然可以要求存取查詢中未包含的屬性，但開啟檔案並擷取這些屬性會降低效能。  
+產生的 StorageFile 檔案只包含要求的屬性，但相較於其他 IndexerOptions，傳回速度快 10 倍。 應用程式仍然可以要求存取查詢中未包含的屬性，但開啟檔案並擷取這些屬性會降低效能。  
 
 ## <a name="adding-folders-to-libraries"></a>將資料夾新增到媒體櫃 
 應用程式可以要求使用者使用 [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary.RequestAddFolderAsync) 將位置新增至索引。 包含位置之後，它將會自動編製索引，應用程式即可使用這項技術來列舉檔案。

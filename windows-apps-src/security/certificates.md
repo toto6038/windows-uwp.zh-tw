@@ -4,14 +4,14 @@ description: 本文討論通用 Windows 平台 (UWP) app 的憑證用法。
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937413"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624353"
 ---
 # <a name="intro-to-certificates"></a>憑證簡介
 
@@ -22,7 +22,7 @@ ms.locfileid: "8937413"
 
 ### <a name="shared-certificate-stores"></a>共用的憑證存放區
 
-UWP 應用程式使用 Windows8 中引進的新 isolationist 應用程式模型。 在這個模型中，在低階作業系統建構 (稱為 app 容器) 中執行的 app，除非明確允許，否則禁止 app 存取本身以外的資源或檔案。 下列章節描述這對公開金鑰基礎結構 (PKI) 所造成的影響。
+UWP 應用程式會使用在 Windows 8 中引進的新導致應用程式模型。 在這個模型中，在低階作業系統建構 (稱為 app 容器) 中執行的 app，除非明確允許，否則禁止 app 存取本身以外的資源或檔案。 下列章節描述這對公開金鑰基礎結構 (PKI) 所造成的影響。
 
 ### <a name="certificate-storage-per-app-container"></a>每一個 app 容器有一個憑證存放區
 
@@ -71,7 +71,7 @@ X.509 公開金鑰憑證標準已隨著時間不斷修訂。 每個後續的資�
 
 X.509 版本 2 憑證包含版本 1 中定義的基本欄位，並新增下列欄位。
 
-| 欄位 | 說明 |
+| 欄位 | 描述 |
 |-------|-------------|
 | 簽發者唯一識別碼 | 包含唯一識別碼，可以在一段時間後，當其他實體重複使用 CA 時，清楚識別該 CA 的 X.500 名稱。 |
 | 主體唯一識別碼 | 包含唯一識別碼，可以在一段時間後，當其他實體重複使用憑證主體時，清楚識別該憑證主體的 X.500 名稱。 |
@@ -80,7 +80,7 @@ X.509 版本 2 憑證包含版本 1 中定義的基本欄位，並新增下列�
 
 X.509 版本 3 憑證包含版本 1 和版本 2 中定義的欄位，並新增憑證延伸。
 
-| 欄位  | 說明 |
+| 欄位  | 描述 |
 |--------|-------------|
 | 授權單位金鑰識別元 | 識別憑證授權單位 (CA) 公開金鑰，這個金鑰會對應到用來簽署憑證的 CA 私密金鑰。 |
 | 基本限制 | 指定實體是否可以用來做為 CA，如果可以，可以存在於憑證鏈結中該 CA 下方的次級 CA 數目。 |

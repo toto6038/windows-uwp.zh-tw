@@ -1,21 +1,21 @@
 ---
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: 在 Microsoft Store 提交 API 中使用這個方法，來擷取已登錄到您的合作夥伴中心帳戶的特定應用程式的相關資訊。
-title: 取得 App
+description: 在 Microsoft Store 提交 API 中使用這個方法，以擷取特定的應用程式已向您的合作夥伴中心帳戶的相關資訊。
+title: 取得應用程式
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941621"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590513"
 ---
-# <a name="get-an-app"></a>取得 App
+# <a name="get-an-app"></a>取得應用程式
 
-在 Microsoft Store 提交 API 中使用這個方法，來擷取已登錄到您的合作夥伴中心帳戶的特定應用程式的相關資訊。
+在 Microsoft Store 提交 API 中使用這個方法，以擷取特定的應用程式已向您的合作夥伴中心帳戶的相關資訊。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -26,7 +26,7 @@ ms.locfileid: "8941621"
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -37,19 +37,19 @@ ms.locfileid: "8941621"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字串 | 必要。 要擷取的 App 的 Store 識別碼。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | 字串 | 必要。 要擷取的 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 
 
 ### <a name="request-body"></a>要求本文
 
-不提供此方法的要求主體。
+不提供此方法的要求本文。
 
 ### <a name="request-example"></a>要求範例
 
@@ -62,7 +62,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>回應
 
-下列範例示範成功呼叫這個方法的 JSON 回應本文。 如需回應本文中各個值的詳細資訊，請參閱[應用程式資源](get-app-data.md#application_object)。
+下列範例示範成功呼叫此方法時的 JSON 回應主體。 如需回應本文中各個值的詳細資訊，請參閱[應用程式資源](get-app-data.md#application_object)。
 
 ```json
 {
@@ -91,12 +91,12 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 404  | 找不到指定的 App。 |
-| 409  | 應用程式會使用[Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。  |
+| 409  | 應用程式使用的合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [取得所有 App](get-all-apps.md)
-* [取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)
-* [取得 App 的附加元件](get-add-ons-for-an-app.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
+* [取得所有的應用程式](get-all-apps.md)
+* [取得應用程式封裝的航班](get-flights-for-an-app.md)
+* [取得附加元件的應用程式](get-add-ons-for-an-app.md)

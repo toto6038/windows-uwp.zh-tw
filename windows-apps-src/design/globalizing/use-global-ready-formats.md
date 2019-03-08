@@ -1,5 +1,5 @@
 ---
-Description: Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You'll then be able later to adapt your app for additional cultures, regions, and languages in the global market.
+Description: 藉由為日期、時間、數字、電話號碼及貨幣進行適當的格式設定，將您的應用程式設計為可全球通用。 您的應用程式在將來便可因應全球市場中的其他文化特性、地區及語言。
 title: 全球化您的日期/時間/數字格式
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
 ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048605"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634133"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>全球化您的日期/時間/數字格式
 
@@ -106,7 +106,7 @@ ms.locfileid: "9048605"
 
 您可以藉由在 **[設定]** > **[時間與語言]** > **[地區與語言]** > **[國家或地區]** 中變更國家或地區，來在您自己的電腦上測試上述程式碼。 選擇國家或地區 (假設是冰島)，然後重新執行程式碼。
 
-## <a name="use-a-culturally-appropriate-calendar"></a>使用符合當地文化的日曆
+## <a name="use-a-culturally-appropriate-calendar"></a>使用符合當地文化的行事曆
 
 不同地區及語言的行事曆也有所不同。 公曆 (西曆) 不是每個地區的預設行事曆。 有些地區的使用者可能會選擇其他日曆，像是日本年號年曆或阿拉伯陰曆。 不同的時區及日光節約時間也會對日曆上的日期和時間有顯著影響。
 
@@ -116,9 +116,9 @@ ms.locfileid: "9048605"
 
 不同地區格式化電話號碼的方式也有所不同。 數字位數、數字分組方式及電話號碼特定部分的意義，都會隨每個國家/地區而有所不同。 從 Windows 10 版本 1607 開始，您可以使用 [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) 命名空間中的類別來針對目前地區適當地格式化電話號碼。
 
-[**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) 會剖析數字字串，並可讓您：判斷數字是否為目前地區中的有效電話號碼、比較兩個號碼是否相等、並擷取電話號碼不同的功能部分，例如國碼 (地區碼)。
+[**PhoneNumberInfo** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live)剖析數字的字串，並可讓您： 判斷數字是否為有效的電話號碼，目前的區域中，比較兩個數字是否相等，並擷取電話的不同功能組件數字，例如國家/地區或地理區域的程式碼。
 
-[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) 會格式化數字字串或 **PhoneNumberInfo** 以供顯示，即使數字字串代表部分的電話號碼。 您可以使用此部分的號碼格式，在使用者輸入號碼時格式化號碼。
+[**PhoneNumberFormatter** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live)格式的數字的字串或**PhoneNumberInfo**顯示，即使位數的字串，代表部分的電話號碼。 您可以使用此部分的號碼格式，在使用者輸入號碼時格式化號碼。
 
 以下範例示範如何使用 **PhoneNumberFormatter**，在輸入電話號碼時格式化電話號碼。 每當名為 phoneNumberInputTextBox 的 **TextBox** 內有文字變更時，就會使用目前預設地區設定來格式化文字方塊內容，並顯示在名為 phoneNumberOutputTextBlock 的 **TextBlock** 中。 為了便於示範，字串也使用紐西蘭的地區設定格式化，並顯示在名為 phoneNumberOutputTextBlockNZ 的 TextBlock 中。
   
@@ -161,19 +161,19 @@ ms.locfileid: "9048605"
 
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
-* [Calendar](/uwp/api/windows.globalization.calendar?branch=live)
+* [行事曆](/uwp/api/windows.globalization.calendar?branch=live)
 * [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
 * [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
 ## <a name="related-topics"></a>相關主題
 
-* [日曆、日期和時間控制項](../controls-and-patterns/date-and-time.md)
-* [了解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)
-* [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [行事曆、 日期和時間控制項](../controls-and-patterns/date-and-time.md)
+* [了解使用者設定檔的語言和應用程式資訊清單的語言](manage-language-and-region.md)
+* [量身打造您的語言、 規模、 高對比和其他辨識符號的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>範例
 
-* [行事曆詳細資料及數學範例](https://go.microsoft.com/fwlink/p/?linkid=231636)
-* [日期和時間格式化範例](https://go.microsoft.com/fwlink/p/?linkid=231618)
+* [行事曆的詳細資料和數學範例](https://go.microsoft.com/fwlink/p/?linkid=231636)
+* [日期和時間格式範例](https://go.microsoft.com/fwlink/p/?linkid=231618)
 * [全球化喜好設定範例](https://go.microsoft.com/fwlink/p/?linkid=231608)
-* [數字格式化及剖析範例](https://go.microsoft.com/fwlink/p/?linkid=231620)
+* [數字格式化和剖析範例](https://go.microsoft.com/fwlink/p/?linkid=231620)

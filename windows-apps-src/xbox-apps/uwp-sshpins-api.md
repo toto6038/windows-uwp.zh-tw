@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 2c7dc6fab021c11c98276ee53af161bea25601a9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926497"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663353"
 ---
 # <a name="ssh-pins-api-reference"></a>SSH Pin API 參考
 您可以使用此 REST API 在您的 devkit 上移除所有受信任的 SSH Pin 碼。
@@ -30,7 +30,7 @@ DELETE | /ext/app/sshpins
 
 - 無
 
-**要求主體**   
+**要求本文**   
 
 - 無
 
@@ -49,7 +49,7 @@ HTTP 狀態碼      | 描述
 5XX | 錯誤碼
 
 <br />
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox
 

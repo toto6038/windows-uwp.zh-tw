@@ -1,23 +1,23 @@
 ---
 title: 遊戲移植指南
-description: 提供您現有將遊戲移植到 Direct3D 11、 通用 Windows 平台 (UWP) 和 windows 10 的指南。
+description: 提供移植您現有的遊戲，到 Direct3D 11、 通用 Windows 平台 (UWP) 和 Windows 10 的指南。
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, porting, direct3d 11, 遊戲, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 6eaa057c700c69621fd66090618ca7c945522d57
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942572"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621343"
 ---
 # <a name="game-porting-guides"></a>遊戲移植指南
 
 
 
-提供您現有將遊戲移植到 Direct3D 11、 通用 Windows 平台 (UWP) 和 windows 10 的指南。
+提供移植您現有的遊戲，到 Direct3D 11、 通用 Windows 平台 (UWP) 和 Windows 10 的指南。
 
 <table>
 <colgroup>
@@ -27,7 +27,7 @@ ms.locfileid: "8942572"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

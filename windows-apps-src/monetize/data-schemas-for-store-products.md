@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, Microsoft Store 產品, 結構描述
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937666"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656103"
 ---
 # <a name="data-schemas-for-store-products"></a>Microsoft Store 產品的資料結構描述
 
@@ -71,9 +71,9 @@ ms.locfileid: "8937666"
 
 ## <a name="related-topics"></a>相關主題
 
-* [App 內購買和試用版](in-app-purchases-and-trials.md)
+* [在應用程式內購買和試用版](in-app-purchases-and-trials.md)
 * [取得應用程式和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
-* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
-* [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
-* [實作您應用程式的試用版](implement-a-trial-version-of-your-app.md)
+* [取得應用程式和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
+* [啟用應用程式內購買的應用程式和附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [啟用可取用的附加元件購買的項目](enable-consumable-add-on-purchases.md)
+* [實作您的應用程式的試用版](implement-a-trial-version-of-your-app.md)

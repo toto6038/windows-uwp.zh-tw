@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, directx, 範本
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a4491fe9a3bb97a73652c40a2968f2f53c377b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933366"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634243"
 ---
 # <a name="directx-game-project-templates"></a>DirectX 遊戲專案範本
 
@@ -19,17 +19,17 @@ ms.locfileid: "8933366"
 
 DirectX 與通用 Windows 平台 (UWP) 範本可讓您快速建立做為遊戲起點的專案。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
 若要建立專案，您需要：
 
--   [下載 Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions)。 視覺 Studio2015 具備圖形程式設計，例如偵錯工具的工具。 如需 DirectX 圖形與遊戲功能及工具的概觀，請參閱[適用於 DirectX 遊戲開發的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)。
+-   [下載 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio 2015 有為圖形程式設計，例如偵錯工具的工具。 如需 DirectX 圖形與遊戲功能及工具的概觀，請參閱[適用於 DirectX 遊戲開發的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)。
 
 ## <a name="choosing-a-template"></a>選擇範本
 
 
-視覺 Studio2015 包含三個 DirectX 和 UWP 範本：
+Visual Studio 2015 包含三個的 DirectX 和 UWP 範本：
 
 -   DirectX 11 應用程式 (通用 Windows) - DirectX 11 應用程式 (通用 Windows) 範本會建立使用 DirectX 11 直接轉譯為應用程式視窗的 UWP 專案。
 -   DirectX 12 應用程式 (通用 Windows) - DirectX 12 應用程式 (通用 Windows) 範本會建立使用 DirectX 12 直接轉譯為應用程式視窗的 UWP 專案。
@@ -44,9 +44,9 @@ DirectX 通用 Windows 範本包含下列檔案：
 
 -   pch.h 和 pch.cpp - 預先編譯的標頭支援。
 -   Package.appxmanifest - app 部署套件的屬性。
--   \*.pfx - 應用程式的憑證。
+-   \*.pfx-應用程式的憑證。
 -   外部相依性 - 專案所使用之外部檔案的連結。
--   \*Main.h 和 \*Main.cpp - 用來管理應用程式資產、更新應用程式狀態和轉譯畫面的方法。
+-   \*Main.h 和\*Main.cpp-管理應用程式資產、 更新應用程式狀態和轉譯畫面格的方法。
 -   App.h 和 App.cpp - 應用程式的主要進入點。 連接 App 與 Windows 殼層，並處理應用程式週期事件。 這些檔案只會出現在 DirectX 11 應用程式 (通用 Windows) 和 DirectX 12 應用程式 (通用 Windows) 範本中。
 -   App.xaml、App.xaml.cpp 和 App.xaml.h - 應用程式的主要進入點。 連接 App 與 Windows 殼層，並處理應用程式週期事件。 這些檔案只會出現在 DirectX 11 和 XAML 應用程式 (通用 Windows) 範本中。
 -   DirectXPage.xaml、DirectXPage.xaml.cpp 和 DirectXPage.xaml.h - 裝載 DirectX SwapChainPanel 的頁面。 這些檔案只會出現在 DirectX 11 和 XAML 應用程式 (通用 Windows) 範本中。
@@ -76,4 +76,4 @@ DirectX 通用 Windows 範本包含下列檔案：
 如果您要建立新的 DirectX 遊戲，請參閱以下主題。
 
 -   [使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-uwp-directx-game.md)
--   [使用 C++ 和 DirectX 開發 Marble Maze (通用 Windows 平台遊戲)](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [開發通用 Windows 平台遊戲，c + + 和 DirectX 滾珠迷宮](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)

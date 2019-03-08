@@ -1,5 +1,5 @@
 ---
-Description: Learn how to programmatically manage focus navigation with keyboard, gamepad, and accessibility tools in a UWP app.
+Description: 了解如何以程式設計方式管理的焦點瀏覽鍵盤、 遊戲台，與在 UWP 應用程式中的協助工具。
 title: 使用鍵盤、遊戲台、遠端控制與協助工具以程式設計方式進行焦點瀏覽
 label: Programmatic focus navigation
 keywords: 鍵盤, 遊戲控制器, 遙控器, 瀏覽, 瀏覽策略, 輸入, 使用者互動, 協助工具, 可用性
@@ -11,11 +11,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d25896a490b0a6b1d65075852f44dfb89c2e53
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075131"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662713"
 ---
 # <a name="programmatic-focus-navigation"></a>程式設計焦點瀏覽
 
@@ -143,7 +143,7 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 
 ![使用瀏覽提示自訂焦點瀏覽行為](images/keyboard/navigation-hints.png)
 
-*使用瀏覽提示自訂焦點瀏覽行為*
+*使用瀏覽提示的自訂焦點導覽行為*
 
 ## <a name="navigation-focus-events"></a>瀏覽焦點事件
 
@@ -211,7 +211,7 @@ private void OnNoFocusCandidateFound (
 
 ![在 GettingFocus 事件上變更焦點瀏覽](images/keyboard/focus-events.png)
 
-*在 GettingFocus 事件上變更焦點瀏覽*
+*變更焦點導覽目標 GettingFocus 事件*
 
 在這裡，我們顯示如何處理 [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 事件和重新導向焦點。
 
@@ -327,6 +327,6 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## <a name="related-articles"></a>相關文章
 
-- [適用於鍵盤、遊戲台、遠端控制與協助工具的焦點瀏覽](focus-navigation.md)
+- [鍵盤、 遊戲板、 遠端控制和協助工具的焦點瀏覽](focus-navigation.md)
 - [鍵盤互動](keyboard-interactions.md)
 - [鍵盤協助工具](../accessibility/keyboard-accessibility.md)

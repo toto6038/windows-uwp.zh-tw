@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c004feabf561c5a94fadba858762bf683c9ff0e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935872"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628043"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>使用執行緒集區的最佳做法
 
@@ -39,7 +39,7 @@ ms.locfileid: "8935872"
 ## <a name="donts"></a>禁止事項
 
 
--   不要建立 *period* 值 &lt;1 (包括 0) 毫秒的定時計時器。 這會讓工作項目變得像是單次計時器。
+-   不要建立 *period* 值小於 &lt;1 (包括 0) 毫秒的定時計時器。 這會讓工作項目變得像是單次計時器。
 
 -   不要提交完成時間比您使用 *period* 參數指定的時間更長的定期工作項目。
 
@@ -47,11 +47,11 @@ ms.locfileid: "8935872"
 
 -   當您使用利用 **async** 關鍵字的工作項目處理常式時，請注意在處理常式中所有的程式碼執行之前，執行緒集區工作項目可能會設為完整狀態。 處理常式中 **await** 關鍵字之後的程式碼可能會在工作項目已經設為完整狀態之後才會執行。
 
--   不要未重新起始預先配置的工作項目，就嘗試重複執行它。 [建立定期工作項目](create-a-periodic-work-item.md)
+-   不要未重新起始預先配置的工作項目，就嘗試重複執行它。 [建立定期的工作項目](create-a-periodic-work-item.md)
 
 ## <a name="related-topics"></a>相關主題
 
 
-* [建立定期工作項目](create-a-periodic-work-item.md)
-* [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
-* [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)
+* [建立定期的工作項目](create-a-periodic-work-item.md)
+* [送出至執行緒集區的工作項目](submit-a-work-item-to-the-thread-pool.md)
+* [若要提交的工作項目使用計時器](use-a-timer-to-submit-a-work-item.md)

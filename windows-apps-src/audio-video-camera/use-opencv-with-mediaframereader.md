@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
 ms.openlocfilehash: d72a8d3fcaf337973f585ab19370140cd80f3826
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047463"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640173"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>使用 Open Source Computer Vision Library (OpenCV) 搭配 MediaFrameReader
 
@@ -28,7 +28,7 @@ ms.locfileid: "9047463"
 
 除了這些文章，若要檢視及下載本文所述案例的完整端對端工作範例，請參閱 Windows 通用範例 GitHub 存放庫中的[相機畫面 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003) (英文)。
 
-若要開始快速發展，您可以將 OpenCV 程式庫中包含 UWP app 專案使用 NuGet 套件，但當您提交您的應用程式到市集，所以建議您下載 OpenCV，這些套件可能無法通過應用程式 certficication 程序來源的程式碼程式庫，並提交您的應用程式之前自行建置的二進位檔。 使用 OpenCV 開發的相關資訊位於 [https://opencv.org](https://opencv.org)
+若要開始快速開發，您可以包含 OpenCV 程式庫在 UWP 應用程式專案中使用 NuGet 套件，但這些套件可能無法通過應用程式 certficication 程序，當您送出您的應用程式存放區，因此建議您下載 OpenCV程式庫原始程式碼，並自行建置二進位檔，再提交您的應用程式。 使用 OpenCV 開發的相關資訊位於 [https://opencv.org](https://opencv.org)
 
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>實作 OpenCVHelper 原生 Windows 執行階段元件
@@ -65,11 +65,11 @@ ms.locfileid: "9047463"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)
-* [使用 OpenCV 處理軟體點陣圖](process-software-bitmaps-with-opencv.md)
-* [相機畫面範例](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [相機畫面 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [處理媒體與 MediaFrameReader 的畫面格](process-media-frames-with-mediaframereader.md)
+* [使用 OpenCV 的處理序的軟體點陣圖](process-software-bitmaps-with-opencv.md)
+* [相機框架範例](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [相機框架 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003)
  
 
  

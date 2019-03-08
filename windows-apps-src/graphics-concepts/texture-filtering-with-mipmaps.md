@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 474f97f32439c389be8283bb10e0c0ed716b3f69
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923332"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662043"
 ---
 # <a name="texture-filtering-with-mipmaps"></a>使用 Mipmap 進行紋理篩選
 
@@ -41,13 +41,13 @@ Mipmap 在模擬紋理的透視上更有效率。 相較於將單一紋理轉譯
 
 Direct3D 可評估 Mipmap 組中哪一張紋理的解析度最接近所需要的輸出影像。 若最終影像的解析度介於 Mipmap 組中紋理的解析度之間，Direct3D 可檢查兩個 Mipmap 中的紋理並且將其色彩值混合。
 
-若要使用 Mipmap，您的應用程式必須先建置一組 Mipmap。 應用程式透過將 Mipmap 組設定為現有紋理組中的第一個紋理來套用 Mipmap。 請參閱[紋理混色](texture-blending.md)。
+若要使用 Mipmap，您的應用程式必須先建置一組 Mipmap。 應用程式透過將 Mipmap 組設定為現有紋理組中的第一個紋理來套用 Mipmap。 請參閱[紋理混合](texture-blending.md)。
 
-接下來，您的應用程式必須設定 Direct3D 用來取樣材質的篩選方法。 Mipmap 篩選最快的方法就是讓 Direct3D 選擇最接近的材質。 使用 D3DTEXF\_POINT 列舉值加以選取。 若您的應用程式使用 D3DTEXF\_LINEAR 列舉值，Direct3D 可以產生更好的篩選結果。 這會選擇最接近的 Mipmap，並且計算圍繞著紋理中現有像素對應位置的材質之加權平均數。
+接下來，您的應用程式必須設定 Direct3D 用來取樣材質的篩選方法。 Mipmap 篩選最快的方法就是讓 Direct3D 選擇最接近的材質。 使用 D3DTEXF\_點列舉值，請選取此選項。 Direct3D 可能會產生進一步篩選結果，如果您的應用程式使用 D3DTEXF\_線性列舉值。 這會選擇最接近的 Mipmap，並且計算圍繞著紋理中現有像素對應位置的材質之加權平均數。
 
 Mipmap 紋理在 3D 場景中作為減少轉譯場景所需時間的用途使用。 其也能強化場景的擬真度。 然而，其通常需要大量的記憶體。
 
-**注意：**  mipmap 鏈結中的每個表面有都有著鏈結中前一個表面的維度。 如果最上層的 Mipmap 有著 256 x 128 的維度大小，第二層 Mipmap 的維度大小即為 128 x 64，第三層則為 64 x 32，以此類推，直到 1 x 1 為止。 您無法請求可能會使鏈結中任何一個 Mipmap 的寬度或高度小於 1 的 Mipmap 級數。 簡單舉例來說，若最上層 Mipmap 表面為 4 x 2，最大容許級數即為 3。 最上層維度為 4 x 2，第二層維度為 2 x 1，第三層的維度即為 1 x 1。 由於超過第三層後即會產生第二層 Mipmap 高度的分數值，因此程式並不允許。
+**附註**   mipmap 鏈結中的每個介面具有維度的一半，鏈結中的前一個介面。 如果最上層的 Mipmap 有著 256 x 128 的維度大小，第二層 Mipmap 的維度大小即為 128 x 64，第三層則為 64 x 32，以此類推，直到 1 x 1 為止。 您無法請求可能會使鏈結中任何一個 Mipmap 的寬度或高度小於 1 的 Mipmap 級數。 簡單舉例來說，若最上層 Mipmap 表面為 4 x 2，最大容許級數即為 3。 最上層維度為 4 x 2，第二層維度為 2 x 1，第三層的維度即為 1 x 1。 由於超過第三層後即會產生第二層 Mipmap 高度的分數值，因此程式並不允許。
 
  
 

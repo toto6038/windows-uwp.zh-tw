@@ -1,5 +1,5 @@
 ---
-Description: Displays images in a collection, such as photos in an album or items in a product details page, one image at a time.
+Description: 顯示集合中的影像 (一次一個影像)，例如相簿中的相片或是產品詳細資料頁面中的項目。
 title: 翻轉檢視控制項的指導方針
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
@@ -12,11 +12,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4e5bb7c761ad6661647cb88f831ffa652b6241
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048798"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662423"
 ---
 # <a name="flip-view"></a>翻轉檢視
 
@@ -24,7 +24,7 @@ ms.locfileid: "9048798"
 
 針對瀏覽集合中的影像或其他項目 (一次一個項目) 使用翻轉檢視，例如相簿中的相片或是產品詳細資料頁面中的項目。 如果是觸控式裝置，可撥動項目以在集合中移動。 如果是滑鼠，在滑鼠暫留時會顯示瀏覽按鈕。 如果是鍵盤，可使用方向鍵在集合中移動。
 
-> **重要 API**：[FlipView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)、[ItemsSource 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)、[ItemTemplate 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
+> **重要的 Api**:[FlipView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)， [ItemsSource 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)， [ItemTemplate 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -40,7 +40,7 @@ ms.locfileid: "9048798"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/FlipView">開啟應用程式並查看 FlipView 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -231,5 +231,5 @@ stackPanel1.Children.Add(flipView1);
 
 ## <a name="related-articles"></a>相關文章
 
-- [清單的指導方針](lists.md)
+- [如需清單的指導方針](lists.md)
 - [**FlipView 類別**](https://msdn.microsoft.com/library/windows/apps/br242678)

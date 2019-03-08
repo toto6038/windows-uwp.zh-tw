@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 499d361bddbecef50ee8cdf44b56530a98cfccd1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936118"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627583"
 ---
 # <a name="rasterizer-rs-stage"></a>轉譯器 (RS) 階段
 
 
 轉譯器會裁剪不在檢視中的基本類型、為[像素著色器 (PS) 階段](pixel-shader-stage--ps-.md)準備基本類型，以及決定如何叫用像素著色器。 點陣化階段會轉換向量資訊 (由圖形或基本類型組成) 為點陣影像 (由像素組成)，以顯示即時 3D 圖形。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和使用
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
 
 
 在點陣化期間，每個基本類型會轉換成像素，同時針對每個基本類型插入每個頂點值。 點陣化包含裁剪頂點到檢視範圍、執行以 z 相除以提供透視圖、將基本類型對應到 2D 檢視區，以及決定如何叫用像素著色器。 當使用像素著色器為選擇性時，而轉譯器階段始終會執行裁剪，分割透視圖以將點轉換為同質空間，以及將頂點對應到檢視區。
@@ -37,7 +37,7 @@ ms.locfileid: "8936118"
 
 固定函式轉譯器 (RS) 階段是由串流輸出 (SO) 階段和/或上一個管線階段，例如[幾何著色器 (GS) 階段](geometry-shader-stage--gs-.md)供給。 如果未使用 GS，RS 是由[網域著色器 (DS) 階段](domain-shader-stage--ds-.md)供給。 如果也未使用 DS，RS 是由[頂點著色器 (VS) 階段](vertex-shader-stage--vs-.md)供給。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 使用像素著色器 (PS) 階段是選擇性的；轉譯器階段可以改為直接輸出至[輸出合併 (OM) 階段](output-merger-stage--om-.md)。

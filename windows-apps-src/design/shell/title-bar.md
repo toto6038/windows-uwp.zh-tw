@@ -8,11 +8,11 @@ keywords: windows 10, uwp, 標題列
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 88c613456525648883735850fe831cb3b67f145c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923448"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648813"
 ---
 # <a name="title-bar-customization"></a>標題列自訂
 
@@ -20,7 +20,7 @@ ms.locfileid: "8923448"
 
 應用程式在桌面視窗中執行時，您可以自訂標題列，以符合應用程式的特質。 標題列自訂 API 可讓您指定標題列元素的色彩，或將應用程式內容延伸至標題列區域，完全加以掌控。
 
-> **重要 API**：[ApplicationView.TitleBar 屬性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、[ApplicationViewTitleBar 類別](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、[CoreApplicationViewTitleBar 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **重要的 Api**:[ApplicationView.TitleBar 屬性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)， [ApplicationViewTitleBar 類別](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)， [CoreApplicationViewTitleBar 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>可自訂標題列到什麼程度
 
@@ -158,7 +158,7 @@ UIElement (`AppTitleBar`) 是應用程式 XAML 的一部分。 您可以在不�
 
 ### <a name="system-caption-buttons"></a>系統標題按鈕
 
-系統會將應用程式視窗的左上角或右上角保留給系統標題按鈕 ([返回]、[最小化]、[最大化]、關閉])。 系統繼續擁有標題控制項區域的控制權，以保證提供最基本的拖曳、最小化，最大化及關閉視窗功能。 對於由左到右的語言，系統會在右上角繪製 [關閉]，而由右到左的語言則是在左上角繪製。
+系統會將應用程式視窗的左上角或右上角保留給系統標題按鈕 (返回、最小化、最大化、關閉)。 系統繼續擁有標題控制項區域的控制權，以保證提供最基本的拖曳、最小化，最大化及關閉視窗功能。 對於由左到右的語言，系統會在右上角繪製 [關閉]，而由右到左的語言則是在左上角繪製。
 
 標題控制項區域的尺寸及位置是由 CoreApplicationViewTitleBar 類別傳達，這樣就可以在標題列 UI 的版面配置中加以處理。 每個側邊保留區域的寬度是由 [SystemOverlayLeftInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayLeftInset) 或 [SystemOverlayRightInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayRightInset) 屬性指定，而其高度則由 [Height](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.Height) 屬性指定。
 
@@ -166,7 +166,7 @@ UIElement (`AppTitleBar`) 是應用程式 XAML 的一部分。 您可以在不�
 
 您可以處理 [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged) 事件來回應標題按鈕大小的變更。 例如，此情況會在系統 [返回] 按鈕顯示或隱藏時發生。 處理這個事件來驗證和更新取決於標題列大小的 UI 項目位置。
 
-此範例示範如何調整標題列的版面配置來處理像顯示或隱藏系統 [返回] 按鈕這樣的變更。 `AppTitleBar`、`LeftPaddingColumn` 和 `RightPaddingColumn` 是在先前顯示的 XAML 中宣告。
+此範例示範如何調整標題列的版面配置來處理像顯示或隱藏系統 [返回] 按鈕這樣的變更。 `AppTitleBar``LeftPaddingColumn`，和`RightPaddingColumn`先前所示的 XAML 中宣告。
 
 ```csharp
 private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -275,7 +275,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->只有在應用程式支援_全螢幕_模式時，才能進入該模式。 如需詳細資訊，請參閱 [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板電腦模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是支援的硬體上的使用者選項，因此使用者可以選擇在平板電腦模式下執行任何應用程式。
+>只有在應用程式支援_全螢幕_模式時，才能進入該模式。 如需詳細資訊，請參閱 [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板電腦模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是支援的硬體上的 [使用者] 選項，因此使用者可以選擇在 tablet 模式下執行任何應用程式。
 
 ## <a name="full-customization-example"></a>完整自訂範例
 
@@ -373,7 +373,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 }
 ```
 
-## <a name="dos-and-donts"></a>可行與禁止注意事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 - 務必讓視窗何時處於使用中或非使用中狀態的情況變得顯而易見。 至少要在標題列中變更文字、圖示和按鈕的色彩。
 - 務必沿著應用程式畫布的上邊緣定義可拖曳的區域。 符合系統標題列的放置方式會讓使用者較容易尋找。
@@ -381,5 +381,5 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 ## <a name="related-articles"></a>相關文章
 
-- [壓克力](../style/acrylic.md)
-- [色彩](../style/color.md)
+- [Acrylic](../style/acrylic.md)
+- [Color](../style/color.md)

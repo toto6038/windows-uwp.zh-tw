@@ -4,14 +4,14 @@ description: 本主題說明通用 Windows 平台 (UWP) 應用程式如何使用
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 47a4ceef2603d7b0178431c93fb6c271b24c506a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920537"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599223"
 ---
 # <a name="smart-cards"></a>智慧卡
 
@@ -23,7 +23,7 @@ ms.locfileid: "8920537"
 ## <a name="configure-the-app-manifest"></a>設定 app 資訊清單
 
 
-您必須先在專案的 Package.appxmanifest 檔案中設定 **\[共用使用者憑證\]** 功能，您的 app 才能驗證使用智慧卡或虛擬智慧卡的使用者。
+您必須先在專案的 Package.appxmanifest 檔案中設定「共用使用者憑證」功能，您的 app 才能驗證使用智慧卡或虛擬智慧卡的使用者。
 
 ## <a name="access-connected-card-readers-and-smart-cards"></a>存取連線的讀卡機與智慧卡
 
@@ -119,7 +119,7 @@ static class ChallengeResponseAlgorithm
 
 2.  接著，將智慧卡的挑戰值與服務或管理工具提供的管理金鑰，傳送至在上一個範例中定義的 **ChallengeResponseAlgorithm**。
 
-3.  如果驗證成功，[**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) 將傳回 **true**。
+3.  [**VerifyResponseAsync** ](https://msdn.microsoft.com/library/windows/apps/dn297627)會傳回 **，則為 true**如果驗證成功。
 
 ```cs
 bool verifyResult = false;
@@ -157,7 +157,7 @@ bool result = await provisioning.RequestPinChangeAsync();
 要求重設 PIN：
 
 1.  呼叫 [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 以起始作業。 此呼叫包含一個代表智慧卡和 PIN 重設要求的 [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 方法。
-2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 會為我們的 **ChallengeResponseAlgorithm** (包裝在 [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) 呼叫中) 提供資訊，用來比較智慧卡的挑戰值與服務或管理工具提供的管理金鑰，以驗證要求。
+2.  [**SmartCardPinResetHandler** ](https://msdn.microsoft.com/library/windows/apps/dn297701)提供的資訊，我們**ChallengeResponseAlgorithm**、 在包裝[ **SmartCardPinResetDeferral** ](https://msdn.microsoft.com/library/windows/apps/dn297693)呼叫，用來比較卡片的挑戰值 」 和 「 服務 」 或 「 管理工具來驗證要求所提供的系統管理金鑰。
 
 3.  如果挑戰成功，便會完成 [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 呼叫，如果 PIN 順利重設，則會傳回 **true**。
 

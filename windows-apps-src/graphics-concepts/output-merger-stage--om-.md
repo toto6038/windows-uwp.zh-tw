@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 63a77048bed3ad27f2040a672d93380d0250f9aa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929846"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641093"
 ---
 # <a name="output-merger-om-stage"></a>輸出合併 (OM) 階段
 
 
 輸出合併 (OM) 階段將不同類型的輸出資料 (像素著色器值、深度與樣板資訊) 與轉譯目標和深度/樣板緩衝區的內容結合，以產生最終的管線結果。
 
-## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>用途和使用
+## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>用途和用法
 
 
 輸出合併 (OM) 階段是判斷哪一個像素可見 (含深度樣板測試) 以及混合最終像素色彩的最後步驟。
@@ -31,7 +31,7 @@ OM 階段會使用下列組合產生最終呈現的像素色彩︰
 -   轉譯目標的內容
 -   深度/樣板緩衝區的內容。
 
-### <a name="span-idblending-overviewspanspan-idblending-overviewspanspan-idblending-overviewspanblending-overview"></a><span id="Blending-overview"></span><span id="blending-overview"></span><span id="BLENDING-OVERVIEW"></span>混合概觀
+### <a name="span-idblending-overviewspanspan-idblending-overviewspanspan-idblending-overviewspanblending-overview"></a><span id="Blending-overview"></span><span id="blending-overview"></span><span id="BLENDING-OVERVIEW"></span>混合的概觀
 
 混合結合了一個或多個像素值，以建立最終像素色彩。 下圖顯示混合像素資料的程序。
 
@@ -43,7 +43,7 @@ OM 階段會使用下列組合產生最終呈現的像素色彩︰
 
 當您使用 sRGB 轉譯目標時，執行階段會在執行混合之前，將轉譯目標色彩轉換為線性空間。 執行階段會在其將值儲存回轉譯目標之前，將最終混合值轉換回 sRGB 空間。
 
-### <a name="span-iddual-source-color-blendingspanspan-iddual-source-color-blendingspanspan-iddual-source-color-blendingspandual-source-color-blending"></a><span id="Dual-source-color-blending"></span><span id="dual-source-color-blending"></span><span id="DUAL-SOURCE-COLOR-BLENDING"></span>雙來源色彩混合
+### <a name="span-iddual-source-color-blendingspanspan-iddual-source-color-blendingspanspan-iddual-source-color-blendingspandual-source-color-blending"></a><span id="Dual-source-color-blending"></span><span id="dual-source-color-blending"></span><span id="DUAL-SOURCE-COLOR-BLENDING"></span>雙重來源色彩透明混色
 
 這項功能可以讓輸出合併階段，同時使用兩個像素著色器輸出 (o0 和 o1)，在插槽 0 對單一轉譯目標進行混合作業。 有效的混合作業包括︰新增、減除和 revsubtract。 混合方程式和輸出寫入遮罩會指定像素著色器將輸出哪些元件。 忽略額外的元件。
 
@@ -51,8 +51,7 @@ OM 階段會使用下列組合產生最終呈現的像素色彩︰
 
 ### <a name="span-iddepth-stencil-testspanspan-iddepth-stencil-testspanspan-iddepth-stencil-testspandepth-stencil-testing-overview"></a><span id="Depth-Stencil-Test"></span><span id="depth-stencil-test"></span><span id="DEPTH-STENCIL-TEST"></span>深度樣板測試概觀
 
-深度樣板緩衝區，這會建立為紋理資源，可以包含深度資料和樣板資料這兩個資料。 深度資料用於判斷哪些像素最靠近相機，以及樣板資料用於遮罩哪一個可以更新的
-像素。 最後，深度與樣板數值資料二者都由輸出合併階段，用於判斷是否已繪製像素。 下圖顯示如何完成深度樣板測試的概念方式。
+深度樣板緩衝區，這會建立為紋理資源，可以包含深度資料和樣板資料這兩個資料。 深度資料用於判斷哪些像素最靠近相機，以及樣板資料用於遮罩哪一個可以更新的像素。 最後，深度與樣板數值資料二者都由輸出合併階段，用於判斷是否已繪製像素。 下圖顯示如何完成深度樣板測試的概念方式。
 
 ![深度樣板測試的運作方式的圖表](images/d3d10-depth-stencil-test.png)
 
@@ -66,7 +65,7 @@ OM 階段會使用下列組合產生最終呈現的像素色彩︰
 
 一次只有一個深度/樣板緩衝區可以使用；任何繫結的資源檢視必須符合 (相同的大小和維度) 深度/樣板檢視。 這不表示資源大小必須符合，只是檢視大小必須符合。
 
-### <a name="span-idsample-maskspanspan-idsample-maskspanspan-idsample-maskspansample-mask-overview"></a><span id="Sample-Mask"></span><span id="sample-mask"></span><span id="SAMPLE-MASK"></span>樣本遮罩概觀
+### <a name="span-idsample-maskspanspan-idsample-maskspanspan-idsample-maskspansample-mask-overview"></a><span id="Sample-Mask"></span><span id="sample-mask"></span><span id="SAMPLE-MASK"></span>範例遮罩概觀
 
 樣本遮罩是 32 位元多重取樣涵蓋範圍的遮罩，判斷哪些樣本在作用中的轉譯目標中已更新。 只允許一個樣本遮罩。 樣本遮罩中位元到資源中樣本的對應，是由使用者定義。 若是 n 樣本轉譯，會使用樣本遮罩的第一個 n 位元 (從 LSB)(32 位元它的上限位元)。
 
@@ -80,7 +79,7 @@ OM 階段會使用下列組合產生最終呈現的像素色彩︰
 -   轉譯目標的內容
 -   深度/樣板緩衝區的內容。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 ### <a name="span-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanoutput-write-mask-overview"></a><span id="Output-write-mask-overview"></span><span id="output-write-mask-overview"></span><span id="OUTPUT-WRITE-MASK-OVERVIEW"></span>輸出寫入遮罩概觀
@@ -109,7 +108,7 @@ OM 階段會使用下列組合產生最終呈現的像素色彩︰
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="configuring-depth-stencil-functionality.md">設定深度樣板功能</a></p></td>
+<td align="left"><p><a href="configuring-depth-stencil-functionality.md">設定 深度樣板功能</a></p></td>
 <td align="left"><p>本章節涵蓋的步驟，內容為設定深度樣板緩衝區及輸出合併階段的深度樣板狀態。</p></td>
 </tr>
 </tbody>

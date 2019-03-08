@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a29d42a9254ca47402a38ea71c8c1ef69de5c6c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938679"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639643"
 ---
 # <a name="transforms"></a>轉換
 
@@ -39,7 +39,7 @@ ms.locfileid: "8938679"
 <td align="left"><p>矩陣轉換處理很多 3D 圖形低階數學運算。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="world-transform.md">世界矩陣轉換</a></p></td>
+<td align="left"><p><a href="world-transform.md">全局轉換</a></p></td>
 <td align="left"><p>世界矩陣轉換將座標從模型空間（其中頂點是相對於模型的區域原點定義的）變更為世界空間。 在世界空間，頂點是相對於場景中所有物件之通用原點定義的。 世界矩陣轉換將模型放置到世界。</p></td>
 </tr>
 <tr class="odd">
@@ -58,7 +58,7 @@ ms.locfileid: "8938679"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[座標系統與幾何](coordinate-systems-and-geometry.md)
+[座標系統和幾何](coordinate-systems-and-geometry.md)
 
  
 

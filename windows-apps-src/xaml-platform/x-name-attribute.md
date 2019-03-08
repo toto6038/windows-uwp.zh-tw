@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef1a6047a7c462961f40ae8913881125e2331bb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946879"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618263"
 ---
 # <a name="xname-attribute"></a>x:Name 屬性
 
@@ -26,7 +26,7 @@ ms.locfileid: "8946879"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
 | XAMLNameValue | 符合 XamlName 文法限制的字串。 |
 
@@ -43,9 +43,9 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   字元限制在低 ASCII 範圍，更具體地說，僅限羅馬字母大寫與小寫字元、數字以及底線 (\_) 字元。
+-   字元會限制較低的 ASCII 範圍，以及更明確地說羅馬字母大寫和小寫字母、 數字和底線 (\_) 字元。
 -   不支援 Unicode 字元範圍。
--   名稱開頭不可以是數字。 如果使用者提供數字做為初始字元，則某些工具實作會在字串前面加上底線 (\_)，或者工具會依據包含數字的其他值自動產生 **x:Name** 值。
+-   名稱開頭不可以是數字。 某些工具實作在前面加上底線 (\_) 的字串，如果使用者所提供的數字做為起始的字元或工具會自動產生**X:name**值根據其他包含數字的值。
 
 ## <a name="remarks"></a>備註
 
@@ -57,7 +57,7 @@ CombiningCharacter::= none
 
 **x:Name** 不能設定在 XAML 屬性元素語法中，或是使用 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 的程式碼中。 **x:Name** 只能使用 XAML 屬性語法設定在元素中。
 
-**注意：** 特別針對 C + + /CX app， **X:name**參考的支援欄位不建立的 XAML 檔案或頁面的根元素。 如果您需要從 C++ 程式碼後置參考根物件，請使用其他 API 或樹狀目錄周遊。 例如，您可以呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 以取得已知名稱的子元素，然後再呼叫 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
+**附註**  專為 C + + /CX 應用程式，支援欄位**X:name**參考不會建立 XAML 檔案或頁面的根項目。 如果您需要從 C++ 程式碼後置參考根物件，請使用其他 API 或樹狀目錄周遊。 例如，您可以呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 以取得已知名稱的子元素，然後再呼叫 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
 
 ### <a name="xname-and-other-name-properties"></a>x:Name 和其他 Name 屬性
 
@@ -65,9 +65,9 @@ UWP XAML 中使用的一些類型也具有名為 **Name** 的屬性。 例如，
 
 如果 **Name** 可做為元素上的可設定屬性，則在 XAML 中就可以交替使用 **Name** 和 **x:Name**，但如果在同一個元素上同時指定這兩個屬性，就會發生錯誤。 也有情況是有 **Name** 屬性，但是為唯讀屬性 (例如 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031))。 如果是這種情況，請一律使用 **x:Name** 在 XAML 中命名該元素，而唯讀 **Name** 則是用於一些較不常見的程式碼案例。
 
-**注意：**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)通常不應做為來變更原先**X:name**，所設定的值，雖然有些案例是這項一般規則的例外狀況。 在典型的案例中，建立與定義 XAML 命名範圍屬於 XAML 處理器作業。 在執行階段修改 **FrameworkElement.Name** 會導致 XAML 命名範圍/私用欄位命名無法對齊，這會讓您的程式碼後置難以記錄。
+**注意** 一般而言，不應該使用   [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 來變更原先由 **x:Name** 所設定的值，雖然有些案例是這項一般規則的例外。 在典型的案例中，建立與定義 XAML 命名範圍屬於 XAML 處理器作業。 在執行階段修改 **FrameworkElement.Name** 會導致 XAML 命名範圍/私用欄位命名無法對齊，這會讓您的程式碼後置難以記錄。
 
 ### <a name="xname-and-xkey"></a>x:Name 和 x:Key
 
-**x:Name** 可以當作屬性套用到 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 內的元素，用來替代 [x:Key 屬性](x-key-attribute.md)。 (**ResourceDictionary** 中的所有元素都必須具有 x:Key 或 x:Name 屬性，是一項常規)。這通用於[腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)一節。
+**x:Name** 可以當作屬性套用到 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 內的元素，用來替代 [x:Key 屬性](x-key-attribute.md)。 (它是一個規則，在中的所有項目**ResourceDictionary**必須具有 X:key 或 X:name 屬性。)這常見於[動畫建立圖片敘述](https://msdn.microsoft.com/library/windows/apps/mt187354)。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)一節。
 

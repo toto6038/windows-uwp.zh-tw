@@ -1,27 +1,27 @@
 ---
-Description: Learn how to promote your apps and content in the Microsoft Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
-title: Microsoft Store 銷售 app 的指導方針
+Description: 了解如何提升您的應用程式和 Microsoft Store 中的內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。
+title: Microsoft Store 行銷應用程式的指導方針
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8146e5f85887feb1bfa64b04de91b1cf875ccc27
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050941"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634063"
 ---
-# <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store 銷售 app 的指導方針
+# <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store 行銷應用程式的指導方針
 
-了解如何升級您的應用程式和 Microsoft Store 中的內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。
+了解如何提升您的應用程式和 Microsoft Store 中的內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。
 
 ## <a name="store-badges"></a>市集徽章
 
-我們建立了特殊的促銷徽章，可協助您吸引更多客戶到您的應用程式在 Microsoft Store 中的清單。 這些徽章提供 44 種語言的版本。 請記住，當您使用這些圖片時，您必須遵守特定要求；可以在 PDF 檔案中找到這些要求、使用方式範例以及指導方針。
+我們建立了特殊促銷的徽章，可協助您在 Microsoft Store 的應用程式的清單，促使更多客戶。 這些徽章提供 44 種語言的版本。 請記住，當您使用這些圖片時，您必須遵守特定要求；可以在 PDF 檔案中找到這些要求、使用方式範例以及指導方針。
 
-[![下載] 按鈕](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=529769)**Microsoft 市集徽章指導方針 （PDF，英文版）**
+[![[下載] 按鈕](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=529769) **Microsoft Store 徽章指南 （PDF，英文）**
 
 
 ## <a name="badge-generator-and-images"></a>徽章產生器和影像
@@ -30,26 +30,26 @@ ms.locfileid: "9050941"
 
 您也可以從下列連結下載完整的徽章影像 ( PNG 與 PDF 格式) 組。
 
-[![下載按鈕](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=529771) **所有徽章影像**
+[![[下載] 按鈕](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=529771)**所有加上徽章映像**
 
 
 ## <a name="device-images"></a>裝置影像
 
-若要促銷您的 app，您可能會想要顯示該 app 在 Windows 裝置上執行時的外觀。 我們有各種不同的裝置機格圖片讓您選取，包括手機、平板電腦、膝上型電腦和個人電腦。 [Microsoft 市集行銷指導方針](https://go.microsoft.com/fwlink/p/?LinkId=529769)可以找到的最佳做法與技術規格如何使用這些映像。
+若要促銷您的 app，您可能會想要顯示該 app 在 Windows 裝置上執行時的外觀。 我們有各種不同的裝置機格圖片讓您選取，包括手機、平板電腦、膝上型電腦和個人電腦。 最佳作法和技術規格，如何使用這些映像可在[Microsoft Store 行銷指導方針](https://go.microsoft.com/fwlink/p/?LinkId=529769)。
 
-[![下載] 按鈕](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057)**Windows 裝置美工圖案**
+[![[下載] 按鈕](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows 裝置美工圖案**
 
 ## <a name="license-to-microsoft-marks"></a>授與 Microsoft 商標權限
 
-*授與 Microsoft 商標權*表示*Microsoft 徽章*[徽章產生器](https://go.microsoft.com/fwlink/p/?LinkID=534236)頁面上所述。 若要使用這些徽章，您必須：
+*Microsoft 標記*意味著*Microsoft 徽章*所述[徽章產生器](https://go.microsoft.com/fwlink/p/?LinkID=534236)頁面。 若要使用這些徽章，您必須：
 
--   在 Microsoft Store 中擁有您的應用程式或提供其他內容，或者是[Microsoft 加盟計畫](https://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
+-   您的應用程式或其他內容可在 Microsoft Store 中，或屬於[Microsoft 加盟計劃](https://go.microsoft.com/fwlink/p/?LinkId=624463)。
 
--   如果您已註冊成為 app 開發人員，在合作夥伴中心，符合應用程式開發人員合約的[「 授權至 Microsoft 的標記 」](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)一節。
+-   如果您已登錄為在合作夥伴中心內的應用程式開發，遵守[」 授權到 Microsoft 的標記"](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)應用程式的開發人員合約區段。
 
--   如果您未註冊成為 app 開發人員，在合作夥伴中心，Microsoft 會授與您的全球、 非專屬、 免、 免費的 Microsoft 市集徽章的指導方針中所述的單獨使用徽章，授權。 Microsoft 得變更這些指導方針，若有變更，Microsoft 將使用合理的方式將您導向到張貼這些規格的任何新 URL。 Microsoft 保留此處未明確授與的所有權利。
+-   如果您不會註冊為合作夥伴中心的應用程式開發，Microsoft 不授予您全球、 非獨佔、 不可轉讓、 免權利金的授權僅 Microsoft Store 徽章的指導方針所述使用徽章。 Microsoft 得變更這些指導方針，若有變更，Microsoft 將使用合理的方式將您導向到張貼這些規格的任何新 URL。 Microsoft 保留此處未明確授與的所有權利。
 
--   請依照下列[Microsoft 市集徽章的指導方針](https://go.microsoft.com/fwlink/p/?LinkId=529769)中所述的標誌使用規範。
+-   請依照下列所述的標誌使用方式規格[Microsoft Store 徽章的指導方針](https://go.microsoft.com/fwlink/p/?LinkId=529769)。
 
 Microsoft 是 Microsoft 標誌及相關商譽的唯一擁有人，也是您使用 Microsoft 標誌之商譽的唯一受益人。 Microsoft 在未經通知的情況下，得隨時撤銷此授權。
 

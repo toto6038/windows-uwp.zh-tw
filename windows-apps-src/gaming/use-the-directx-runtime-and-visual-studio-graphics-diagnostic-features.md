@@ -7,21 +7,21 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 圖形, 診斷工具, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e3c48e69dd1ad991a2a04017d4e262e45430504
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047915"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608533"
 ---
 # <a name="graphics-diagnostics-tools"></a>圖形診斷工具
 
 
 
-在 windows 10 中的圖形診斷工具目前已提供從 Windows 內做為選用功能。 若要使用執行階段與 Visual Studio 中所提供的圖形診斷功能來開發 DirectX App 或遊戲，請安裝「圖形工具」選用功能：
+使用 Windows 10，圖形診斷工具現已提供從 Windows 內為選擇性功能。 若要使用執行階段與 Visual Studio 中所提供的圖形診斷功能來開發 DirectX App 或遊戲，請安裝「圖形工具」選用功能：
 
-1.  移至 [**設定**、 選取**應用程式**，並再按一下 [**管理選用功能**。
-2.  按一下 **\[新增功能\]**   
-3.  在 **\[選用功能\]** 清單中，選取 **\[圖形工具\]**，然後按一下 **\[安裝\]**。
+1.  移至**設定**，選取**應用程式**，然後按一下**管理選擇性功能**。
+2.  按一下 [新增功能]   
+3.  在 [選用功能] 清單中，選取 [圖形工具]，然後按一下 [安裝]。
 
 圖形診斷功能包括在 DirectX 執行階段中建立 Direct3D 偵錯裝置 (透過 Direct3D SDK 層) 的能力，再加上圖形偵錯、圖形畫面格分析與 GPU 使用量。
 
@@ -32,7 +32,7 @@ ms.locfileid: "9047915"
 ## <a name="related-topics"></a>相關主題
 
 
-[Visual Studio 中的圖形診斷概觀](https://go.microsoft.com/fwlink/p/?LinkID=526382)
+[在 Visual Studio 中的圖形診斷概觀](https://go.microsoft.com/fwlink/p/?LinkID=526382)
 
  
 

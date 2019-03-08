@@ -1,35 +1,35 @@
 ---
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: 追蹤最近使用的檔案和資料夾
-description: 將使用者經常存取的檔案新增到您應用程式的最近使用清單 (MRU) 中，以追蹤這些檔案。
+description: 將使用者經常存取的檔案新增到您 app 的最近使用清單 (MRU) 中，以追蹤這些檔案。
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c0eb2b6e668baec9f5ad1ef859b7213f20748beb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049575"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601623"
 ---
 # <a name="track-recently-used-files-and-folders"></a>追蹤最近使用的檔案和資料夾
 
-**重要 API**
+**重要的 Api**
 
 - [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
 - [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369)
 
-將使用者經常存取的檔案新增到您 app 的最近使用清單中 (MRU)，以追蹤這些檔案。 平台會根據項目上次存取的時間來排序項目，並在達到清單的 25 個項目數限制時移除最舊的項目，為您管理 MRU。 所有 app 都有自己的 MRU。
+將使用者經常存取的檔案新增到您 app 的最近使用清單 (MRU) 中，以追蹤這些檔案。 平台會根據項目上次存取的時間來排序項目，並在達到清單的 25 個項目數限制時移除最舊的項目，為您管理 MRU。 所有 app 都有自己的 MRU。
 
 從靜態 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 屬性取得的 [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) 類別，代表您的 app 的 MRU。 MRU 項目會儲存為 [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) 物件，所以 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件 (代表檔案) 和 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 物件 (代表資料夾) 都可以新增到 MRU。
 
 > [!NOTE]
-> 如需完整的範例，請參閱[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994)和[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 如需完整範例，請參閱[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994)並[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
--   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
+-   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
     您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
@@ -37,7 +37,7 @@ ms.locfileid: "9049575"
 
     請參閱[檔案存取權限](file-access-permissions.md)。
 
--   [使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md)
+-   [使用選取器中開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md)
 
     挑選的檔案經常是使用者會一再反覆使用的相同檔案。
 
@@ -52,7 +52,7 @@ ms.locfileid: "9049575"
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) 是多載。 在這個範例中，我們使用 [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481)，以便將中繼資料與檔案建立關聯。 設定中繼資料可讓您記錄項目的用途，例如「個人檔案圖片」。 您也可以藉由呼叫 [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480)，在沒有中繼資料的情況下，將檔案新增到 MRU 中。 當您將項目新增到 MRU 時，該方法會傳回唯一的識別字串 (稱為權杖)，可用來擷取該項目。
+    [**StorageItemMostRecentlyUsedList.Add** ](https://msdn.microsoft.com/library/windows/apps/br207476)多載。 在這個範例中，我們使用 [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481)，以便將中繼資料與檔案建立關聯。 設定中繼資料可讓您記錄項目的用途，例如「個人檔案圖片」。 您也可以藉由呼叫 [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480)，在沒有中繼資料的情況下，將檔案新增到 MRU 中。 當您將項目新增到 MRU 時，該方法會傳回唯一的識別字串 (稱為權杖)，可用來擷取該項目。
 
 > [!TIP]
 > 您需要此權杖才能從 MRU 擷取項目，請保存在別處。 如需 app 資料的詳細資訊，請參閱[管理應用程式資料](https://msdn.microsoft.com/library/windows/apps/hh465109)。
@@ -83,7 +83,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 }
 ```
 
-[**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) 可以讓您重複處理 MRU 中的項目。 這些項目 (entry) 是 [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) 結構，其中包含某個項目 (item) 的權杖和中繼資料。
+[  **AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) 可以讓您重複處理 MRU 中的項目。 這些項目 (entry) 是 [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) 結構，其中包含某個項目 (item) 的權杖和中繼資料。
 
 ## <a name="removing-items-from-the-mru-when-its-full"></a>當 MRU 塞滿時從 MRU 移除項目
 
@@ -95,5 +95,5 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 當使用者挑選項目時，請考慮將此項目新增到您的未來存取清單及 MRU。
 
--   [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 最多可以保留 1000 個項目。 請記住：它可以保留資料夾和檔案，所以會有許多資料夾。
+-   [  **FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 最多可以保留 1000 個項目。 請記住：它可以保留資料夾和檔案，所以會有許多資料夾。
 -   平台永遠不會替您從 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 移除項目。 當達到 1000 個項目的限制時，除非您使用 [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497) 方法挪出空間，否則無法再新增其他項目。

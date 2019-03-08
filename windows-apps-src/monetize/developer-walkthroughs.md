@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 逐步解說
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf2605c55b9b73ccd3376f9c812da31339caedc
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050711"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662663"
 ---
 # <a name="implement-ads-in-your-app"></a>在您的應用程式中實作廣告
 
@@ -19,12 +19,12 @@ ms.locfileid: "9050711"
 
 ## <a name="in-this-section"></a>本節內容
 
-|  主題    | 說明 |               
+|  主題    | 描述 |               
 |----------|-------|
 | [橫幅廣告](banner-ads.md)     | 提供使用 Microsoft Advertising SDK 中的 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 類別，將橫幅廣告加入您的 UWP app 的指示。        |
-| [插播式廣告](interstitial-ads.md)    | 提供使用 Microsoft Advertising SDK 中的 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 類別，將插播式廣告加入您的 UWP app 的指示。       |
+| [插入式廣告](interstitial-ads.md)    | 提供使用 Microsoft Advertising SDK 中的 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 類別，將插播式廣告加入您的 UWP app 的指示。       |
 | [原生廣告](native-ads.md)       | 提供使用 Microsoft Advertising SDK 中的 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 和 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 類別，將原生廣告加入您的 UWP app 的指示。  |
-| [在影片內容中顯示廣告](add-advertisements-to-video-content.md)     |  提供在您的 UWP app 中於影片內容內顯示廣告的指示 (此功能目前僅支援使用 JavaScript 搭配 HTML 所撰寫的應用程式)。 |
+| [影片的內容中顯示的廣告](add-advertisements-to-video-content.md)     |  提供在您的 UWP app 中於影片內容內顯示廣告的指示 (此功能目前僅支援使用 JavaScript 搭配 HTML 所撰寫的應用程式)。 |
 
 
 

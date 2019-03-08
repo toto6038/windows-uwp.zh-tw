@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 7543b41c6ee1d9c07f4540012f84dccc10bb4d76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922778"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638003"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>對於一或多個安裝的套件要求部署資訊。
 
@@ -27,7 +27,7 @@ POST | /ext/app/deployinfo
 
 - 無
 
-**要求主體**
+**要求本文**
 
 下列格式的 JSON 陣列：
 
@@ -37,7 +37,7 @@ POST | /ext/app/deployinfo
 
 ###<a name="response"></a>回應
 
-**回應本文**
+**回應主體**
 
 下列格式的 JSON 陣列 (部分欄位是選用的)：
 
@@ -60,6 +60,6 @@ HTTP 狀態碼      | 描述
 5XX | 錯誤碼
 <br />
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox

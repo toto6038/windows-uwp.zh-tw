@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 43013dc820c0f0f67df2e9502d3c57c77e03f250
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926169"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599243"
 ---
 # <a name="line-lists"></a>線清單
 
@@ -20,7 +20,7 @@ ms.locfileid: "8926169"
 線清單是隔離、直線段的清單。 在 3D 場景中加入冰雹或暴雨的這類工作適合使用線清單。 應用程式藉由填入頂點陣列來建立線清單。 請注意，線清單中的頂點數必須是大於或等於二的偶數。
 
 -   [範例](#example)
--   [相關主題](#related-topics)
+-   [相關的主題](#related-topics)
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>範例
 
@@ -63,7 +63,7 @@ d3dDevice->DrawPrimitive( D3DPT_LINELIST, 0, 3 );
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[基本型別](primitives.md)
+[基本項目](primitives.md)
 
  
 

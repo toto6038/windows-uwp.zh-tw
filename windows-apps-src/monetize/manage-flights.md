@@ -1,17 +1,17 @@
 ---
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
-description: 在 Microsoft Store 提交 API 中使用這些方法，來管理套件正式，針對已登錄到您的合作夥伴中心帳戶的應用程式。
+description: 在 Microsoft Store 提交 API 中使用這些方法，來管理封裝航班已登錄到您的合作夥伴中心帳戶的應用程式。
 title: 管理套件正式發行前小眾測試版
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版
 ms.localizationpriority: medium
 ms.openlocfilehash: 8678ee4d73f13e241a2c72d6dac532289af13ced
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923696"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601243"
 ---
 # <a name="manage-package-flights"></a>管理套件正式發行前小眾測試版
 
@@ -36,17 +36,17 @@ ms.locfileid: "8923696"
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}</td>
-<td align="left"><a href="get-a-flight.md">取得套件正式發行前小眾測試版</a></td>
+<td align="left"><a href="get-a-flight.md">取得封裝的航班</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights</td>
-<td align="left"><a href="create-a-flight.md">建立套件正式發行前小眾測試版</a></td>
+<td align="left"><a href="create-a-flight.md">建立封裝的航班</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}</td>
-<td align="left"><a href="delete-a-flight.md">刪除套件正式發行前小眾測試版</a></td>
+<td align="left"><a href="delete-a-flight.md">刪除套件班機</a></td>
 </tr>
 </tbody>
 </table>
@@ -57,5 +57,5 @@ ms.locfileid: "8923696"
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
+* [管理封裝飛行提交](manage-flight-submissions.md)

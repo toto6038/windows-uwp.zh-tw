@@ -1,5 +1,5 @@
 ---
-Description: Design external help pages for detailed instructions and advice about your app.
+Description: 設計您應用程式的詳細指示和建議的外部說明頁面。
 title: 設計外部說明頁面的指導方針
 label: External help
 template: detail.hbs
@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 56afd553-c520-4a28-b63d-2e1b3c1d3606
 ms.localizationpriority: medium
 ms.openlocfilehash: eaca2af3a497de75beaffe5d3af4a261b24d8ba4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938175"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617173"
 ---
 # <a name="external-help-pages"></a>外部說明頁面
 
@@ -44,4 +44,4 @@ ms.locfileid: "8938175"
 
 ## <a name="related-articles"></a>相關文章
 
-* [應用程式說明的指導方針](guidelines-for-app-help.md)
+* [如需應用程式說明的指導方針](guidelines-for-app-help.md)

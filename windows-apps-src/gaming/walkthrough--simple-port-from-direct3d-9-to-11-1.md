@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, directx, 移植, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: c7569c6b2f041f5535e0eabe934a91da86b60b9a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944707"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634223"
 ---
-# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>逐步解說：將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)
+# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>逐步解說：簡單 Direct3D 9 應用程式移植到 DirectX 11 和通用 Windows 平台 (UWP)
 
 
 
@@ -27,7 +27,7 @@ ms.locfileid: "8944707"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -40,7 +40,7 @@ ms.locfileid: "8944707"
 <td align="left"><p>示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">移植遊戲迴圈</a></p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">連接埠遊戲迴圈</a></p></td>
 <td align="left"><p>說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 <a href="https://msdn.microsoft.com/library/windows/apps/hh700478"><strong>IFrameworkView</strong></a> 以控制全螢幕的 <a href="https://msdn.microsoft.com/library/windows/apps/br208225"><strong>CoreWindow</strong></a>。</p></td>
 </tr>
 </tbody>
@@ -65,10 +65,10 @@ ms.locfileid: "8944707"
 
 請注意，為了簡單起見，本逐步解說使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，而且不涵蓋 XAML 互通性。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
-您應[為 UWP DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您還不需要範本，但您將需要 Microsoft Visual Studio2015 載入這個逐步解說的程式碼範例。
+您應[為 UWP DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您不需要的範本，但您將需要 Microsoft Visual Studio 2015 載入這個逐步解說的程式碼範例。
 
 如需進一步了解這個逐步解說中說明的 DirectX 11 和 UWP 程式設計概念，請瀏覽[移植概念和考量](porting-considerations.md)。
 
@@ -76,10 +76,10 @@ ms.locfileid: "8944707"
 
 **Direct3D**
 
-* [在 Direct3D 9 撰寫 HLSL 著色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [在 Direct3D 中撰寫 HLSL 著色器 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 * [DirectX 遊戲專案範本](user-interface.md)
 
-**Microsoft Store**
+**Microsoft 網上商店**
 
 * [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 * [**物件控制代碼運算子 (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)

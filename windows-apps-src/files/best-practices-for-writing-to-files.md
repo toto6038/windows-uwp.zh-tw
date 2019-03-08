@@ -1,157 +1,157 @@
 ---
-title: 寫入檔案的最佳做法
-description: 了解使用各種不同的檔案，撰寫 FileIO 和 PathIO 類別的方法的最佳做法。
+title: 寫入檔案的最佳作法
+description: 了解使用撰寫 FileIO 和 PathIO 類別方法的各種檔案的最佳作法。
 ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115703"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605833"
 ---
-# <a name="best-practices-for-writing-to-files"></a>寫入檔案的最佳做法
+# <a name="best-practices-for-writing-to-files"></a>寫入檔案的最佳作法
 
-**重要 API**
+**重要的 Api**
 
 * [**FileIO 類別**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)
 * [**PathIO 類別**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)
 
-開發人員有時會遇到一組常見的問題時，使用**撰寫**方法的[**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)和[**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)類別來執行檔案系統 I/O 作業。 例如，包括常見的問題：
+開發人員使用時，有時候遇到的常見問題集**撰寫**種[ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)並[ **PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)類別來執行檔案系統 I/O 作業。 例如，常見的問題包括：
 
-• 檔案部分是撰寫 • 應用程式會呼叫其中一個方法時，會收到例外狀況。 • 作業留下的東西。TMP 檔案，以類似於目標檔案名稱的檔案名稱。
+• 檔案部分寫入 • 應用程式會呼叫其中一個方法時，會收到例外狀況。 • 作業拋諸腦後。使用類似於目標檔案名稱的檔案名稱的 TMP 檔案。
 
-**撰寫** [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)和[**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)類別的方法包括：
+**撰寫**種[ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)並[ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio)類別包括下列：
 
-* **Fileio**
+* **WriteBufferAsync**
 * **WriteBytesAsync**
 * **WriteLinesAsync**
-* **Fileio**
+* **WriteTextAsync**
 
- 本文提供關於這些方法，開發人員的運作方式的詳細資料更深入了解何時及如何使用它們。 本文提供指導方針，並不會嘗試提供的所有可能的檔案 I/O 問題的解決方案。 
+ 本文章提供有關這些方法的是開發人員的運作方式的詳細資料進一步了解何時及如何使用它們。 本文提供指導方針，並不會嘗試為所有可能的檔案 I/O 問題提供解決方案。 
 
 > [!NOTE]
-> 本文著重在**FileIO**中的方法的範例及討論。 不過， **PathIO**方法遵循類似的模式，而且大部分的這篇文章中的指導方針也適用於這些方法。 
+> 這篇文章著重**FileIO**範例和討論區中的方法。 不過， **PathIO**方法遵循類似的模式和大部分的這篇文章中的指導方針也適用於這些方法。 
 
-## <a name="conveience-vs-control"></a>Conveience 與控制項
+## <a name="conveience-vs-control"></a>與控制項 Conveience
 
-[**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)物件不是像原生的 Win32 程式設計模型的檔案控制代碼。 相反地， [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)是檔案的方法來操控其內容的表示法。
+A [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)物件不是像原生 Win32 程式設計模型的檔案控制代碼。 相反地， [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)是一種方法來管理其內容的檔案。
 
-執行與**StorageFile**I/O 時，了解這個概念很有用。 例如，[檔案寫入](quickstart-reading-and-writing-files.md#writing-to-a-file)區段提供三種方式來寫入檔案：
+執行使用 I/O 時了解這個概念很有用**StorageFile**。 例如，[寫入至檔案](quickstart-reading-and-writing-files.md#writing-to-a-file)區段會顯示三種方式可寫入檔案：
 
-* 使用[**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync)方法。
-* 藉由建立一個緩衝區，然後呼叫 [ [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync)方法。
-* 使用資料流的四個步驟模型：
-  1. [開啟](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync)檔案取得資料流。
+* 使用[ **FileIO.WriteTextAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync)方法。
+* 藉由建立緩衝區，然後再呼叫[ **FileIO.WriteBufferAsync** ](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync)方法。
+* 使用資料流，在四個步驟模型：
+  1. [開啟](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync)来取得的資料流的檔案。
   2. [取得](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)輸出資料流。
-  3. 建立的[**DataWriter**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter)物件並呼叫對應的**寫入**方法。
-  4. [認可](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter.storeasync)中的資料寫入器和[排清](https://docs.microsoft.com/uwp/api/windows.storage.streams.ioutputstream.flushasync)輸出資料流的資料。
+  3. 建立[**資料寫入元**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter)物件，並呼叫對應**撰寫**方法。
+  4. [認可](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter.storeasync)中的資料寫入器的資料並[排清](https://docs.microsoft.com/uwp/api/windows.storage.streams.ioutputstream.flushasync)輸出資料流。
 
-前兩個案例是最常使用的應用程式。 在單一作業中的檔案寫入容易程式碼和維護，且它也會在應用程式的責任移除處理的許多檔案 I/O 的複雜性。 不過，雖然方便卻有其代價： 遺失控制整個作業和攔截錯誤上特定點的能力。
+前兩個案例是最常使用的應用程式。 單一作業中的檔案寫入程式碼，並維護變得更加容易，而且它也會從許多複雜的檔案 I/O 處理移除的應用程式的責任。 不過，這種便利要付出成本： 控制整個作業，並且能夠在特定時間點擷取錯誤的遺失。
 
-## <a name="the-transactional-model"></a>交易的模型
+## <a name="the-transactional-model"></a>交易式模型
 
-**撰寫**類別的方法[**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)和[**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)換行上的第三個的寫入模型，如上所述，與一層額外的步驟。 這個層級會封裝在儲存空間交易。
+**撰寫**種[ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)並[ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio)類別包裝的步驟，在第三個寫入上述，新增一層的模型。 此圖層被封裝在儲存體交易。
 
-為了保護的原始檔案的完整性，以便在發生錯誤寫入資料時，**撰寫**的方法會使用交易模型藉由開啟使用[**OpenTransactedWriteAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.opentransactedwriteasync)檔案。 此程序會建立[**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction)物件。 建立這個交易物件之後，Api 撰寫資料[檔案存取](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)範例或[**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction)文章中的程式碼範例遵循類似的方式。
+萬一發生錯誤時寫入資料，保護原始檔的完整性**撰寫**方法會使用交易式模型開啟檔案使用[ **OpenTransactedWriteAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.opentransactedwriteasync). 此程序會建立[ **StorageStreamTransaction** ](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction)物件。 Api 會建立此交易物件之後，寫入資料遵循類似的方式[檔案存取權](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)範例或中的程式碼範例[ **StorageStreamTransaction** ](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction)一文。
 
-下圖說明基礎所執行的工作中成功的寫入作業的**Fileio**方法。 這個圖例提供簡化的作業的檢視。 例如，它略過步驟，例如文字編碼和非同步完成不同執行緒上。
+下圖說明所執行的基礎工作**WriteTextAsync**中成功的寫入作業的方法。 此圖會提供作業的簡化的檢視。 比方說，它會略過步驟，例如文字編碼方式和非同步完成不同的執行緒上。
 
-![UWP API 的呼叫順序圖表來寫入檔案](images/file-write-call-sequence.svg)
+![UWP API 呼叫順序圖表，以寫入檔案](images/file-write-call-sequence.svg)
 
-使用**撰寫** [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)和[**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)類別的方法，而不使用資料流的更複雜的四個步驟模型的優點包括：
+使用的優點**撰寫**方法[ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)並[ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio)改為類別更複雜的四個步驟模型使用的資料流屬於：
 
-* 一次 API 呼叫，以處理所有中繼的步驟，包括錯誤。
-* 如果發生錯誤，會保留原始的檔案。
-* 系統狀態將會嘗試以全新儘可能保持。
+* 若要處理的所有中繼步驟，包括錯誤的一個 API 呼叫。
+* 如果發生錯誤，則會保留原始的檔案。
+* 系統狀態將會嘗試保留為清除越好。
 
-不過，許多可能中繼點失敗，沒有增加機會讓的失敗。 發生錯誤時可能會難以了解此程序失敗的位置。 下列各節會呈現部分失敗，您可能會遇到時使用**撰寫**的方法，並提供可能的解決方案。
+不過，有這麼多中繼失敗的可能點，就可能的失敗。 發生錯誤時，它可能難以了解此程序失敗的位置。 下列各節提供一些使用時可能遭遇的失敗**寫入**方法，並提供可能的解決方案。
 
-## <a name="common-error-codes-for-write-methods-of-the-fileio-and-pathio-classes"></a>常見的錯誤代碼寫入的 FileIO 和 PathIO 類別的方法
+## <a name="common-error-codes-for-write-methods-of-the-fileio-and-pathio-classes"></a>常見的錯誤碼 FileIO 和 PathIO 類別的寫入方法
 
-下表顯示應用程式開發人員在使用的**撰寫**方法時遇到的常見錯誤代碼。 此表格中的步驟會對應到先前的圖表中的步驟。
+此表顯示常見應用程式開發人員在使用時所遇到的錯誤碼**寫入**方法。 在資料表中的步驟會對應到在上圖中的步驟。
 
 |  錯誤名稱 （值）  |  步驟  |  原因  |  解決方案  |
 |----------------------|---------|----------|-------------|
-|  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  原始的檔案會在可能標示為刪除，可能是從先前的作業。  |  重試作業。</br>請確定同步處理檔案的存取權。  |
-|  ERROR_SHARING_VIOLATION (0X80070020)  |  5  |  由另一個專屬寫入開啟原始的檔案。   |  重試作業。</br>請確定同步處理檔案的存取權。  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0X80070497)  |  19-20  |  無法取代的原始的檔案 (file.txt)，因為它是使用中。 另一個處理程序或作業獲得檔案的存取權之前可能會取代。  |  重試作業。</br>請確定同步處理檔案的存取權。  |
-|  ERROR_DISK_FULL (0X80070070)  |  7、 14、 16、 20  |  交易的模型建立額外的檔案，並這樣會消耗額外的儲存空間。  |    |
-|  ERROR_OUTOFMEMORY (0X8007000E)  |  14、 16  |  這可能會發生，因為多個未完成的 I/O 作業或大型檔案的大小。  |  藉由控制資料流的更細微的方法可能會解決錯誤。  |
-|  E_FAIL (0X80004005) |  任何值  |  其他  |  重試作業。 如果仍然失敗，可能會平台錯誤，並將應用程式應該終止，因為它是以一致的狀態。 |
+|  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  原始的檔案可能會標示為刪除，可能是從先前的作業。  |  重試作業。</br>請確定檔案的存取會同步處理。  |
+|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  原始檔案會開啟另一個的獨佔寫入。   |  重試作業。</br>請確定檔案的存取會同步處理。  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  不會取代原始的檔案 (file.txt)，因為它正在使用中。 另一個處理序或作業取得檔案的存取權，可以取代之前。  |  重試作業。</br>請確定檔案的存取會同步處理。  |
+|  ERROR_DISK_FULL (0x80070070)  |  7, 14, 16, 20  |  此交易的模型會建立一個額外的檔案，這會消耗額外的儲存體。  |    |
+|  ERROR_OUTOFMEMORY (0X8007000E)  |  14, 16  |  這可能是由於多個未處理 I/O 作業或大型檔案的大小。  |  更細微的方法，藉由控制資料流可能會解決此錯誤。  |
+|  E_FAIL (0x80004005) |  任何值  |  其他  |  重試作業。 如果仍然失敗，它可能是平台錯誤，而應用程式應終止，因為它處於不一致的狀態。 |
 
-## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>檔案狀態，可能會導致錯誤的其他考量
+## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>其他考量可能會導致錯誤的檔案狀態
 
-姑且**撰寫**方法所傳回的錯誤，以下是在寫入檔案時，應用程式功能可以預期的一些指導方針。
+除了由傳回的錯誤**寫入**方法，以下是一些指導方針的應用程式可以預期會發生什麼寫入檔案。
 
-### <a name="data-was-written-to-the-file-if-and-only-if-operation-completed"></a>只有在作業完成資料已寫入檔案
+### <a name="data-was-written-to-the-file-if-and-only-if-operation-completed"></a>資料已寫入至檔案，才完成的作業
 
-您的應用程式不應任何假設有關資料檔案中寫入作業進行時。 嘗試存取檔案，在作業完成之前，可能會導致不一致的資料。 您的應用程式應該負責追蹤待處理的 I/o。
+寫入作業正在進行時您的應用程式不應在檔案中建立資料相關的任何假設。 嘗試存取檔案，作業完成之前，可能會導致不一致的資料。 您的應用程式應負責追蹤未處理 I/o。
 
-### <a name="readers"></a>閱讀程式
+### <a name="readers"></a>讀取者
 
-如果正在使用的檔案寫入也禮貌讀卡機 （也就是以[**FileAccessMode.Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode)開啟，後續的讀取會將會失敗 ERROR_OPLOCK_HANDLE_CLOSED (0x80070323) 有錯誤。 有時候應用程式重試重新開啟檔案讀取的**寫入**作業正在進行時。 這可能會導致所在的**寫入**最後失敗時嘗試覆寫原始的檔案，因為它無法取代的競爭情形。
+如果是正常的讀取器正在使用之檔案的寫入也 (亦即，以開啟[ **FileAccessMode.Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode)，後續的讀取會失敗並產生錯誤 ERROR_OPLOCK_HANDLE_CLOSED (0x80070323)。 有時候應用程式重試一次開啟檔案進行讀取時再次**寫入**作業正在進行中。 這可能會造成競爭情形所在**寫入**最後失敗時嘗試覆寫原始的檔案，因為它無法被取代。
 
 ### <a name="files-from-knownfolders"></a>從 KnownFolders 檔案
 
-您的應用程式可能不會嘗試存取任何[**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)所在的檔案的唯一應用程式。 沒有作業是否成功，應用程式寫入檔案的內容會保持固定保證下一次嘗試讀取檔案。 此外，共用或拒絕存取得在本案例下更為常見的錯誤。
+您的應用程式可能不是唯一的應用程式嘗試存取檔案所在的任何[ **KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)。 下一次嘗試讀取檔案沒有保證，如果作業成功時，應用程式寫入檔案的內容會保持不變。 此外，共用或存取被拒錯誤變得更為普遍，在這種情況下。
 
 ### <a name="conflicting-io"></a>衝突的 I/O
 
-如果我們的應用程式使用的**寫入**方法的檔案，在其本機資料，但仍需要一些警告，可以降低並行錯誤的機會。 如果多個**寫入**作業都能傳送到檔案的同時，就不保證有關哪些資料檔案中之中。 若要減輕此問題，我們建議您的應用程式會序列化至檔案的**寫入**作業。
+如果我們的應用程式使用，可能會降低並行錯誤的機會**寫入**方法在其本機資料，但某些警告是否仍需要。 如果有多個**寫入**作業傳送同時寫入檔案，則無法保證有關哪些資料最後會在檔案中。 若要緩解這個情況，我們建議您的應用程式序列化**寫入**檔案的作業。
 
 ### <a name="tmp-files"></a>~ TMP 檔案
 
-偶而，如果將強制取消作業 （例如，如果應用程式暫停或終止作業系統），不認可或交易適當地關閉。 這可以留下的東西的檔案 (。 ~ TMP) 延伸模組。 請考慮刪除這些暫存檔案 （如果他們存在於應用程式的本機資料） 時處理 app 啟用。
+有時候，將強制取消作業 （例如，如果應用程式已暫止或終止由 OS），如果交易未認可或適當地關閉。 這可以留下的檔案 (。 ~ TMP) 延伸模組。 刪除這些暫存檔，（如果它們存在於應用程式的本機資料），請考慮處理應用程式啟動時。
 
 ## <a name="considerations-based-on-file-types"></a>根據檔案類型的考量
 
-有些錯誤會變得更普遍根據檔案、 頻率所在它們正在存取，以及其檔案大小的類型。 一般而言，有三個類別的應用程式可以存取的檔案：
+某些錯誤可能會變得更普遍視檔案、 在其要存取它們，頻率和其檔案大小的類型而定。 一般來說，有三種類別的應用程式可以存取的檔案：
 
-* 檔案建立和編輯使用者在您的應用程式的本機資料資料夾中。 這些會建立並使用您的應用程式時，只能編輯，而且它們存在於只在應用程式中。
-* 應用程式中繼資料。 您的應用程式會使用這些檔案來追蹤自己的狀態。
-* 您的應用程式已宣告功能來存取的位置的檔案系統位置中的其他檔案。 這些是最常位於其中一個[**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)。
+* 檔案建立和編輯您的應用程式本機資料夾中的使用者。 這些是建立，而且只有在使用您的應用程式時，才能編輯，在於只在應用程式內。
+* 應用程式中繼資料。 您的應用程式會使用這些檔案，來追蹤自己的狀態。
+* 您的應用程式已經宣告功能，可存取的位置的檔案系統位置中的其他檔案。 這些通常位於其中一種[ **KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)。
 
-您的應用程式會有完全控制所使用的前兩個類別的檔案，因為它們是您的應用程式套件檔案的一部分，並以獨佔方式存取您的應用程式。 最後一個類別中的檔案，您的應用程式必須注意的其他應用程式和作業系統服務可能會存取檔案同時。
+您的應用程式有完全控制權限的檔案前, 兩個類別，因為它們是您的應用程式套件檔案的一部分，而且會以獨佔方式存取您的應用程式。 最後一個分類中的檔案，您的應用程式必須注意，其他應用程式和 OS 服務可能會存取檔案同時。
 
-根據應用程式，可能會有所不同頻率的存取的檔案：
+根據應用程式中，檔案的存取權可以有所不同頻率：
 
-* 很低。 這些通常是後的應用程式啟動和會儲存時暫止應用程式時所開啟的檔案。
-* 低。 這些是使用者特別採取的動作 （例如儲存或載入） 的檔案。
-* 中型或高。 這些是的檔案中的應用程式必須不斷地更新資料 （例如，自動儲存功能或追蹤常數的中繼資料）。
+* 非常低。 這些通常是一旦當應用程式啟動次數並會儲存在暫止應用程式時開啟的檔案。
+* 低。 這些是使用者特別採取動作 （例如儲存或載入） 的檔案。
+* 中度或高度。 這些是在其中應用程式必須經常更新資料 （例如，自動儲存功能或追蹤常數的中繼資料） 的檔案。
 
-檔案的大小，請考慮下列圖表**WriteBytesAsync**方法中的效能資料。 此圖表比較的時間才能完成作業 vs 檔案的大小，透過每個受控制的環境中的檔案大小的 10000 作業的平均效能。
+檔案大小，請考慮下列圖表中的效能資料**WriteBytesAsync**方法。 此圖表會比較完成的作業與檔案大小，而非每個受控制的環境中的檔案大小的 10000 個作業的平均效能的時間。
 
 ![WriteBytesAsync 效能](images/writebytesasync-performance.png)
 
-此圖表中，因為不同的硬體和設定將會產生不同的絕對時間值，y 軸的時間值是刻意省略。 不過，我們以一致的方式觀察到這些趨勢在我們的測試：
+從這個圖表，因為不同的硬體和組態會產生不同的絕對時間值的 y 軸上的時間值會刻意省略。 不過，我們已經一致地觀察到這些趨勢在我們的測試：
 
-* 適用於非常小的檔案 (< = 1 MB): 是以一致的方式快速完成作業的時機。
-* 針對較大的檔案 (> 1 MB): 以指數方式增加啟動的時間才能完成作業。
+* 非常小的檔案 (< = 1 MB):完成作業的時間會一致地快速。
+* 較大的檔案 (> 1 MB):若要完成之作業的時間就會開始以指數方式增加。
 
-## <a name="io-during-app-suspension"></a>在 app 暫停期間 I/O
+## <a name="io-during-app-suspension"></a>在應用程式暫止期間的 I/O
 
-您的應用程式必須設計成處理暫停，如果您想要保留狀態資訊或中繼資料，在稍後的工作階段中使用。 如需應用程式暫停的背景資訊，請參閱[應用程式生命週期](../launch-resume/app-lifecycle.md)和[此部落格文章](https://blogs.windows.com/buildingapps/2016/04/28/the-lifecycle-of-a-uwp-app/#qLwdmV5zfkAPMEco.97)。
+您的應用程式必須設計可處理擱置，如果您想要保留狀態資訊或中繼資料，以用於後續的工作階段。 如需應用程式暫止的背景資訊，請參閱[應用程式生命週期](../launch-resume/app-lifecycle.md)並[此部落格文章](https://blogs.windows.com/buildingapps/2016/04/28/the-lifecycle-of-a-uwp-app/#qLwdmV5zfkAPMEco.97)。
 
-作業系統會授與延伸的執行您的應用程式，除非您的應用程式暫止時它有 5 秒釋出其所有資源，並儲存自己的資料。 最佳的可靠性和使用者體驗，一律會假設您需要處理暫停工作的時間是有限。 請記住下列指導方針 5 秒時間期間，處理暫停工作期間：
+除非 OS 授與您的應用程式的擴充的執行暫止您的應用程式時有 5 秒，以釋出其所有資源，並儲存其資料。 最佳的可靠性和使用者體驗，一律假設您必須處理暫止工作的時間有限。 請記住下列指導方針在 5 秒鐘處理暫止工作的時間週期內：
 
-* 請嘗試讓 I/O 保持在最小值，以避免排清和發行作業所造成的競爭情形。
-* 避免撰寫需要數百毫秒或撰寫更多的檔案。
-* 如果您的應用程式使用的**寫入**的方法，請記住這些方法需要的所有中繼步驟。
+* 嘗試將保留在最小值，以避免排清和發行作業所造成的競爭情形的 I/O。
+* 避免撰寫需要數百毫秒或多個要寫入的檔案。
+* 如果您的應用程式會使用**寫入**方法，請記住所有這些方法需要的中繼步驟。
 
-如果您的應用程式會在暫停期間運作上少量的狀態資料，在大部分情況下您可以使用**寫入**方法將資料排清。 不過，如果您的應用程式使用大量狀態資料，請考慮使用資料流直接儲存您的資料。 這可協助降低所**撰寫**的方法的交易模型的延遲。 
+如果您的應用程式會在暫止期間操作少量的狀態資料，在大部分情況下您可以使用**寫入**排清資料的方法。 不過，如果您的應用程式使用大量的狀態資料，請考慮使用資料流直接將您的資料。 這可以協助降低延遲的交易式模型帶來**寫入**方法。 
 
 如需範例，請參閱[BasicSuspension](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicSuspension)範例。
 
 ## <a name="other-examples-and-resources"></a>其他範例和資源
 
-以下是幾個範例與特定案例的其他資源。
+以下是幾個範例，以及針對特定案例的其他資源。
 
-### <a name="code-example-for-retrying-file-io-example"></a>適用於重試檔案 I/O 範例程式碼範例
+### <a name="code-example-for-retrying-file-io-example"></a>重試檔案 I/O 的範例程式碼範例
 
-以下是有關如何重試寫入 (C# 中)，假設使用者挑選一個檔案可供儲存之後完成寫入的虛擬程式碼範例：
+以下是有關如何重試一次寫入的虛擬程式碼範例 (C#)，假設寫入完成後，使用者會取得儲存的檔案是：
 
 ```csharp
 Windows.Storage.Pickers.FileSavePicker savePicker = new Windows.Storage.Pickers.FileSavePicker();
@@ -190,8 +190,8 @@ else
 
 ### <a name="synchronize-access-to-the-file"></a>同步處理檔案的存取權
 
-[使用.NET 部落格的平行程式設計](https://blogs.msdn.microsoft.com/pfxteam/)是關於平行程式設計的指導方針的絕佳資源。 尤其是，[張貼 AsyncReaderWriterLock 相關](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)的說明如何維護獨佔存取權檔案寫入，同時允許並行讀取權限。 請記住序列化 I/O 會影響效能。
+[平行程式設計.NET 部落格](https://blogs.msdn.microsoft.com/pfxteam/)是平行程式設計的相關指引的絕佳資源。 特別是，[發表 AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)描述如何維護的獨佔存取權的檔案進行寫入，同時允許並行的讀取權限。 請注意，序列化的 I/O 會影響效能。
 
 ## <a name="see-also"></a>請參閱
 
-* [建立、寫入和讀取檔案](quickstart-reading-and-writing-files.md)
+* [建立、 寫入和讀取檔案](quickstart-reading-and-writing-files.md)

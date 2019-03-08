@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 538f7e953d430ce36ae8aa679865aa634ec49553
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047653"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601713"
 ---
 # <a name="enumerate-devices"></a>列舉裝置
 
@@ -42,13 +42,13 @@ async void enumerateSnapshot(){
 -   實際連線的匯流排。 這包含 PCI 和 USB。 例如，您可以在[**裝置管理員**] 中看到的任何項目。
 -   [UPnP](https://msdn.microsoft.com/library/windows/desktop/Aa382303)
 -   數位生活網路聯盟 (DLNA)
--   [**探索並啟動 (DIAL)**](https://msdn.microsoft.com/library/windows/apps/Dn946818)
--   [**DNS 服務探索 (DNS-SD)**](https://msdn.microsoft.com/library/windows/apps/Dn895183)
--   [裝置上的 Web 服務 (WSD)](https://msdn.microsoft.com/library/windows/desktop/Aa826001)
+-   [**探索並啟動 （撥號）**](https://msdn.microsoft.com/library/windows/apps/Dn946818)
+-   [**DNS 服務探索 (DNS SD)**](https://msdn.microsoft.com/library/windows/apps/Dn895183)
+-   [Web Services on Devices (WSD)](https://msdn.microsoft.com/library/windows/desktop/Aa826001)
 -   [藍牙](https://msdn.microsoft.com/library/windows/desktop/Aa362932)
 -   [**Wi-Fi Direct**](https://msdn.microsoft.com/library/windows/apps/Dn297687)
 -   WiGig
--   [**服務點**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
+-   [**Point of Service**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
 在許多情況下，您並不需要擔心列舉 API 的使用。 這是因為許多使用裝置的 API 會自動選取適當的預設裝置，或提供更順暢的列舉 API。 例如，[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) 會自動使用預設的音訊轉譯器裝置。 只要您的 app 可以使用預設的裝置，就沒有必要在應用程式中使用列舉 API。 列舉 API 提供一般的彈性方式，可讓您探索並連接到可用的裝置。 本主題提供列舉裝置的相關資訊，並說明四個列舉裝置的常用方式。
 
@@ -73,7 +73,7 @@ async void enumerateSnapshot(){
 ## <a name="devicepicker-ui"></a>DevicePicker UI
 
 
-[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 是 Windows 所提供的控制項，可用來建立讓使用者能夠從清單中選取裝置的小型 UI。 您可以透過幾種方式來自訂 [**DevicePicker**] 視窗。
+[  **DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 是 Windows 所提供的控制項，可用來建立讓使用者能夠從清單中選取裝置的小型 UI。 您可以透過幾種方式來自訂 [**DevicePicker**] 視窗。
 
 -   您可以控制顯示在 UI 中的裝置，方法是將 [**SupportedDeviceSelectors**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors.aspx)、[**SupportedDeviceClasses**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses.aspx)，或兩者新增至 [**DevicePicker.Filter**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.filter)。 在大部分情況下，您只需要新增一個選取器或類別，但如果您需要不止一個，您可以新增多個選取器或類別。 如果您新增多個選取器或類別，它們會使用 OR 邏輯函式結合在一起。
 -   您可以指定想要為裝置擷取的屬性。 您可以藉由將屬性新增至 [**DevicePicker.RequestedProperties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.requestedproperties) 來執行此操作。
@@ -82,7 +82,7 @@ async void enumerateSnapshot(){
 
 顯示 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 時，UI 的內容會在新增、移除或更新裝置時自動更新。
 
-**注意：** 不能指定使用[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 。 如果您想要擁有具備特定 **DeviceInformationKind** 的裝置，就需要建置 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 並提供自己的 UI。
+**附註**  不能指定[ **DeviceInformationKind** ](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)使用[ **DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841)。 如果您想要擁有具備特定 **DeviceInformationKind** 的裝置，就需要建置 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 並提供自己的 UI。
 
  
 
@@ -123,7 +123,7 @@ async void enumerateSnapshot(){
 
 以背景工作的方式監看裝置很類似上述建立 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 的方式。 事實上，您仍然需要先建立如上節所述的標準 **DeviceWatcher** 物件。 一旦建立該物件之後，您會呼叫 [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx)，而不是 [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start)。 當您呼叫 **GetBackgroundTrigger** 時，必須指定您所感興趣的通知：新增、移除或更新。 您無法在沒有要求新增的情況下要求更新或移除。 一旦登錄觸發程序之後，**DeviceWatcher** 就會立即開始在背景中執行。 自此之後，每當收到適用於您應用程式且符合您準則的新通知時，將會觸發背景工作，並提供自從上次觸發您的應用程式之後所做的最新變更。
 
-**重要** [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838)觸發您的應用程式第一次便是在監看員達到**EnumerationCompleted**狀態。 這表示它將包含所有初始結果。 當它在未來的任何時候觸發您的應用程式時，將只包含自從上次觸發之後所發生的新增、更新及移除通知。 這與前景 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 物件有些微差異，因為初始結果不會一次傳入一個，並只會在達到 **EnumerationCompleted** 之後以套件組合形式傳遞。
+**重要**  第一次[ **DeviceWatcherTrigger** ](https://msdn.microsoft.com/library/windows/apps/Dn913838)到達監看員時，就可以應用程式的觸發程序**EnumerationCompleted**狀態。 這表示它將包含所有初始結果。 當它在未來的任何時候觸發您的應用程式時，將只包含自從上次觸發之後所發生的新增、更新及移除通知。 這與前景 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 物件有些微差異，因為初始結果不會一次傳入一個，並只會在達到 **EnumerationCompleted** 之後以套件組合形式傳遞。
 
  
 
@@ -133,7 +133,7 @@ async void enumerateSnapshot(){
 |-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | 背景中的相同行為               | 無                                                                                                                                    |
 | 可能在背景中的唯一被動掃描 | 裝置在等待被動掃瞄執行時，可能需要較長的時間來探索。                                                           |
-| 不支援背景掃描            | [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 將不會偵測到任何裝置，並且將不會報告任何更新。 |
+| 不支援背景掃描            | [  **DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 將不會偵測到任何裝置，並且將不會報告任何更新。 |
 
  
 
@@ -153,7 +153,7 @@ async void enumerateSnapshot(){
 ## <a name="save-a-device-for-later-use"></a>儲存裝置以供稍後使用
 
 
-任何 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件皆是由下列兩個資訊的組合來唯一識別：[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果您保留這兩個資訊，當遺失 **DeviceInformation** 物件時，就可以將此資訊提供給 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 來重新建立該物件。 如果您這樣做，就可以儲存與您 app 整合之裝置的使用者喜好設定。
+任何[ **DeviceInformation** ](https://msdn.microsoft.com/library/windows/apps/BR225393)兩項資訊的組合可唯一識別物件：[**DeviceInformation.Id** ](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id)並[ **DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果您保留這兩個資訊，當遺失 **DeviceInformation** 物件時，就可以將此資訊提供給 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 來重新建立該物件。 如果您這樣做，就可以儲存與您 app 整合之裝置的使用者喜好設定。
 
 
  

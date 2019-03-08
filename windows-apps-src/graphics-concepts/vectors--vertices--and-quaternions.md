@@ -1,6 +1,6 @@
 ---
 title: 向量、頂點和四元數
-description: 在整個 Direct3D 中，頂點描述位置及方向。 基本類型中的每個頂點都由給予它位置、色彩、紋理座標的向量所述，以及給予它方向的標準向量所述。
+description: 在整個 Direct3D 中，頂點描述位置及方向。 原始物件中的每個頂點都由給予它位置、色彩、紋理座標的向量，以及給予它方向的標準向量所述。
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
 keywords:
 - 向量、頂點和四元數
@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8942e53b7372e2e8b3cf4ed05f89b4187bdfc4be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926407"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599863"
 ---
 # <a name="vectors-vertices-and-quaternions"></a>向量、頂點和四元數
 
 
-在整個 Direct3D 中，頂點描述位置及方向。 基本類型中的每個頂點都由給予它位置、色彩、紋理座標的向量所述，以及給予它方向的標準向量所述。
+在整個 Direct3D 中，頂點描述位置及方向。 原始物件中的每個頂點都由給予它位置、色彩、紋理座標的向量，以及給予它方向的標準向量所述。
 
-四元數在定義三元件向量的 \[x, y, z\] 值加入第四個元素。 四元數是通常用於 3D 旋轉之矩陣方法的替代方法。 四元數代表 3D 空間中的軸以及圍繞該軸的旋轉。 例如，四元數可能表示 (1,1,2) 軸及 1 弧度旋轉。 四元數載有重要資訊，但其真正的力量來自於您可以在其上執行兩項作業︰組合和內插補點。
+四元數加入至第四個項目\[x、 y、 z\]定義三分量向量的值。 四元數是通常用於 3D 旋轉之矩陣方法的替代方法。 四元數代表 3D 空間中的軸以及圍繞該軸的旋轉。 例如，四元數可能表示 (1,1,2) 軸及 1 弧度旋轉。 四元數載有重要資訊，但其真正的力量來自於您可以在其上執行兩項作業︰組合和內插補點。
 
 對四元數執行組合類似於結合它們。 兩個四元數的組合如下圖表示。
 
@@ -34,7 +34,7 @@ ms.locfileid: "8926407"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[座標系統與幾何](coordinate-systems-and-geometry.md)
+[座標系統和幾何](coordinate-systems-and-geometry.md)
 
  
 

@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1815f0956fbc175fec5ca892dbeeec92b2f939ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926796"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594693"
 ---
 # <a name="light-types"></a>光源類型
 
 
 光源類型屬性定義您正在使用的光源類型。 Direct3D 中有三種光線類型 - 點狀光源、聚光燈和方向燈。 每個類型運用不同等級的計算負荷，以不同方式照亮場景中的物件。
 
-## <a name="span-idpointlightspanspan-idpointlightspanspan-idpointlightspanpoint-light"></a><span id="Point_Light"></span><span id="point_light"></span><span id="POINT_LIGHT"></span>點狀光源
+## <a name="span-idpointlightspanspan-idpointlightspanspan-idpointlightspanpoint-light"></a><span id="Point_Light"></span><span id="point_light"></span><span id="POINT_LIGHT"></span>點光線
 
 
 點狀光源在場景中有色彩和位置，但無單一方向。 他們在所有方向發出同樣的光，如下圖所示。
@@ -28,12 +28,12 @@ ms.locfileid: "8926796"
 
 燈泡是使用點狀光源的好範例。 點狀光源會受到衰減和範圍的影片，並逐頂點照亮網格。 在照明期間，Direct3D 在世界空間使用點狀光源位置及頂點座標，點亮以衍生光線的方向向量，以及光線行進的距離。 並隨著頂點法線使用兩者，以計算光線對表面照明的貢獻。
 
-## <a name="span-iddirectionallightspanspan-iddirectionallightspanspan-iddirectionallightspandirectional-light"></a><span id="Directional_Light"></span><span id="directional_light"></span><span id="DIRECTIONAL_LIGHT"></span>方向光源
+## <a name="span-iddirectionallightspanspan-iddirectionallightspanspan-iddirectionallightspandirectional-light"></a><span id="Directional_Light"></span><span id="directional_light"></span><span id="DIRECTIONAL_LIGHT"></span>定向光線
 
 
 方向光源有只色彩和方向，不含位置。 他們發出平行光線。 這表示方向光源產生的所有光線，均透過場景同方向行進。 請想像方向光線為附近無限距離的光源，例如陽光。 方向光源不受衰減或範圍的影響，因此當 Direct3D 計算頂點色彩時，您指定的方向與色彩為認定的唯一係數。 由於照明係數少，這些都是可使用的最少計算密集型光線。
 
-## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>聚光燈
+## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>SpotLight
 
 
 聚光燈有色彩、位置及發光方向。 從聚光燈發出的光線由明亮內錐和較大的外錐體組成，兩者之間的光照強度減弱，如下圖所示。
@@ -79,7 +79,7 @@ Theta 是聚光燈的內錐體的弧度角度，Phi 值是光線外錐體的角�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光線和材料](lights-and-materials.md)
+[光線和材質](lights-and-materials.md)
 
  
 

@@ -4,14 +4,14 @@ title: 列印與掃描
 description: 本節描述如何從您的通用 Windows 應用程式列印與掃描。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，列印、 3dprinting，3d 列印
+keywords: windows 10 uwp、 列印、 3dprinting，3d 列印
 ms.localizationpriority: medium
 ms.openlocfilehash: 99272c4e9ffd461901b4b2f2d2aa93b416a1b100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044685"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605613"
 ---
 # <a name="printing-and-scanning"></a>列印與掃描
 
@@ -20,15 +20,15 @@ ms.locfileid: "9044685"
 
 | 主題 | 描述 | 
 |-------|-------------|
-| [從您的 App 列印](print-from-your-app.md) | 了解如何從通用 Windows 應用程式列印文件。 本主題也示範如何列印特定頁面。 |
-| [自訂預覽列印 UI](customize-the-print-preview-ui.md) | 本節說明如何在預覽列印 UI 中自訂列印選項和設定。 |
+| [從您的應用程式列印](print-from-your-app.md) | 了解如何從通用 Windows app 列印文件。 本主題也示範如何列印特定頁面。 |
+| [自訂列印預覽 UI](customize-the-print-preview-ui.md) | 本節說明如何在預覽列印 UI 中自訂列印選項和設定。 |
 | [自訂列印工作流程](print-workflow-customize.md) | 本節說明如何建立自訂列印工作流程體驗，以符合貴組織的需求。  |
-| [從您的 App 掃描](scan-from-your-app.md) | 在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。|
+| [從您的應用程式掃描](scan-from-your-app.md) | 在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。|
 
 ## <a name="related-topics"></a>相關主題
 
-* [列印的設計指導方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//2015 建置影片：開發在 Windows 10 中列印的 app](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [列印的設計方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [Build 2015 影片：開發 Windows 10 中列印的應用程式](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)
  
 

@@ -1,5 +1,5 @@
 ---
-Description: In this scenario, we'll make a new app to represent our custom build system. We'll create a resource indexer and add strings and other kinds of resources to it. Then we'll generate and dump a PRI file.
+Description: 在本案例中，我們會建立新的應用程式來表示我們的自訂建置系統。 我們會建立資源索引子，並將字串以及其他種類的資源新增至其中， 然後產生和傾印 PRI 檔案。
 title: 案例 1：從字串資源和資產檔案建立 PRI 檔案
 template: detail.hbs
 ms.date: 05/07/2018
@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058839"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622753"
 ---
-# <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>案例 1：從字串資源和資產檔案建立 PRI 檔案
+# <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>案例 1：從字串資源和資產檔案產生 PRI 檔案
 在本案例中，我們會使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，建立新的應用程式來表示我們的自訂建置系統。 請記住，這個自訂建置系統的目的是建立適用於目標 UWP app 的 PRI 檔案。 因此在這個逐步解說過程中，我們會建立一些範例資源檔案 (包含字串以及其他種類的資源) 來代表該目標 UWP app 的資源。
 
 ## <a name="new-project"></a>新專案
-在 Microsoft Visual Studio 中，藉由建立新的專案來開始。 建立 **Visual C++ Windows 主控台應用程式**專案，命名為 *CBSConsoleApp* (代表「自訂建置系統主控台應用程式」)。
+在 Microsoft Visual Studio 中，從建立新的專案開始。 建立 **Visual C++ Windows 主控台應用程式**專案，命名為 *CBSConsoleApp* (代表「自訂建置系統主控台應用程式」)。
 
 從 **\[方案平台\]** 下拉式清單選擇 *x64*。
 
@@ -139,7 +139,7 @@ MrmResourceIndexerHandle indexer;
 - 預設資源限定詞的清單。
 - 可供函式設定之資源索引子控制代碼的指標。
 
-下一個步驟是將我們的資源新增至剛建立的資源索引子。 `resources.resw` 是包含目標 UWP app 中性字串的資源檔案 (.resw)。 如果您想要查看其內容，請向上捲動 (在本主題中)。 `de-DE\resources.resw` 包含德文字串，而 `en-US\resources.resw` 包含英文字串。 為了將資源檔案中的字串資源新增至資源索引子，您呼叫 [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers)。 第三，我們對包含中性影像資源的檔案呼叫資源索引子的 [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) 函式。
+下一個步驟是將我們的資源新增至剛建立的資源索引子。 `resources.resw` 是包含我們的目標 UWP 應用程式的中性字串資源檔 (.resw)。 如果您想要查看其內容，請向上捲動 (在本主題中)。 `de-DE\resources.resw` 包含我們德文的字串和`en-US\resources.resw`我們的英文字串。 為了將資源檔案中的字串資源新增至資源索引子，您呼叫 [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers)。 第三，我們對包含中性影像資源的檔案呼叫資源索引子的 [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) 函式。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
@@ -162,7 +162,7 @@ MrmResourceIndexerHandle indexer;
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
-由於 PRI 檔案是二進位檔，如果我們將二進位 PRI 檔案傾印成其對應的 XML 檔案，就更容檢視我們剛才產生的內容。 [**MrmDumpPriFile**](/windows/desktop/menurc/mrmdumpprifile)呼叫的作用就是如此。
+由於 PRI 檔案是二進位檔，如果我們將二進位 PRI 檔案傾印成其對應的 XML 檔案，就更容檢視我們剛才產生的內容。 呼叫[ **MrmDumpPriFile** ](/windows/desktop/menurc/mrmdumpprifile)這樣寫的。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));
@@ -231,7 +231,7 @@ MrmResourceIndexerHandle indexer;
 在本案例中，我們示範了如何使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) 來建立資源索引子。 我們將字串資源和資產檔案新增至資源索引子， 然後使用資源索引子產生二進位 PRI 檔案。 最後，我以 XML 格式傾印二進位 PRI 檔案，這樣才能確認其中包含我們所預期的資訊。
 
 ## <a name="important-apis"></a>重要 API
-* [套件資源索引 (PRI) 參考](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [編製索引 (PRI) 參考的套件資源](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>相關主題
-* [套件資源索引 (PRI) API 和自訂建置系統](pri-apis-custom-build-systems.md)
+* [套件資源編製索引 (PRI) Api 和自訂組建系統](pri-apis-custom-build-systems.md)

@@ -1,20 +1,20 @@
 ---
-title: 單色光線對應
+title: 單色光源對應
 description: 當較舊的 3D 加速板不支援使用目的地像素 alpha 值的紋理混合時，單色光線對應可讓較舊的介面卡執行物件多重紋理混合。
 ms.assetid: 60F8F8F6-9DB7-452B-8DC0-407FFAA4BFE1
 keywords:
-- 單色光線對應
+- 單色光源對應
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b81838393d7b2692e6fd04b7ce535f58dc773780
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930324"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641263"
 ---
-# <a name="monochrome-light-maps"></a>單色光線對應
+# <a name="monochrome-light-maps"></a>單色光源對應
 
 
 當較舊的 3D 加速板不支援使用目的地像素 alpha 值的紋理混合時，單色光線對應可讓較舊的介面卡執行物件多重紋理混合。
@@ -26,7 +26,7 @@ ms.locfileid: "8930324"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光源與紋理對應](light-mapping-with-textures.md)
+[淺色與紋理的對應](light-mapping-with-textures.md)
 
  
 

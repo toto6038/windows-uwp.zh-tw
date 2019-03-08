@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b94f14b32c5dd74e0aefb9b9a99f64bbd905a05d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937337"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616703"
 ---
 # <a name="composition-animations"></a>組合動畫
 
@@ -19,42 +19,42 @@ Windows.UI.Composition API 可讓您在整合 API 層中針對撰寫器物件，
 
 ## <a name="motion-in-windows"></a>在 Windows 中的動作
 
-可以將動作設計想成電影。 順暢的轉場能讓您專注於故事本身，讓體驗與生活結合。 我們可以邀請該感覺納入我們的設計，使用電影到下前置人們從一個工作。 動作通常是使用者介面和使用者體驗之間的區別因素。
+可以將動作設計想成電影。 順暢的轉場能讓您專注於故事本身，讓體驗與生活結合。 我們可以將這種感覺納入我們的設計中，使用電影的輕鬆感帶領人們從一個工作移往下一項工作。 動作通常是使用者介面和使用者體驗之間的區別係數。
 
-Windows UI 平台的基礎建置組塊，CompositionAnimations 提供強大且有效率的方式，來建立您的應用程式 UI 中的動作體驗。 動畫引擎已被從頭開始設計向上以確保在 60 FPS 的 UI 執行緒獨立執行您的動作。 這些動畫是設計用來提供要建置創新的動作體驗，根據時間、 輸入和其他屬性的彈性。
+Windows UI 平台的基本建置組塊，CompositionAnimations 提供功能強大且有效率的方式，來建立您的應用程式 UI 中的移動體驗。 動畫引擎具有已全新設計以確保在 60 FPS，UI 執行緒的獨立執行您的影片。 這些動畫旨在提供建置創新的移動體驗時間、 輸入和其他屬性為基礎的彈性。
 
 ### <a name="examples-of-motion"></a>動作範例
 
 以下為一些應用程式中的動作範例。
 
-在此，應用程式使用連接動畫讓項目有動畫效果，因為它會「持續」成為下一頁標題的一部分。 此效果可幫助使用者在轉換之間維持脈絡。
+在此，應用程式使用連接動畫讓項目有動畫效果，因為它會「持續」成為下一頁標題的一部分。 此效果有助於維持整個轉換過程的使用者內容。
 
-![連接動畫範例](images/animation/connected-animation-example.gif)
+![舉例說明連線的動畫](images/animation/connected-animation-example.gif)
 
 在此，視覺視差效果會在 UI 捲動或平移時以不同的速率移動不同的物件，以產生深度、透視和移動的感覺。
 
 ![一個帶有背景影像和清單的視差範例](images/animation/parallax-example.gif)
 
-## <a name="using-compositionanimations-to-create-motion"></a>使用 CompositionAnimations，以建立動作
+## <a name="using-compositionanimations-to-create-motion"></a>使用 CompositionAnimations 建立動作
 
-若要產生動作在 UI 中，開發人員可以存取 XAML （連結到 storyboard （腳本） 以下） 或視覺層中的動畫。 在視覺層的動畫提供開發人員使用一系列的優點：
+若要在 UI 中產生動作，開發人員可以存取 XAML （連結到分鏡腳本以下） 或視覺分層中的動畫。 在視覺分層的動畫會提供開發人員提供一連串優點：
 
-- 在啟用順暢的動作體驗 60 FPS 的獨立執行緒上運作效能 – 而不是傳統 UI 執行緒繫結動畫，在 Windows UI 平台上的動畫。
-- 範本化模型 – Windows UI 層中的動畫是範本、 意義可以在多個物件上使用單一動畫並調整屬性或參數，而不用妨礙先前使用。
-- 自訂 – Windows UI 層不只可讓您輕鬆進行美觀的 UI，但搭配動畫類型的完整範圍，來建立新的和酷炫的可能使用的自訂項目漸層的體驗
+- 效能 – 而不是傳統的 UI 執行緒繫結動畫的 Windows UI 平台上的動畫會對在獨立執行緒在 60 FPS、 啟用體驗平順的動作。
+- 範本化模型 – Windows UI 層中的動畫是範本，可以使用多個物件上的單一動畫意義，並將其調整屬性或參數，而不用擔心的阻礙先前使用。
+- 自訂 – Windows UI 層不只會使它輕鬆製作美觀的使用者介面，但在使用完整的動畫類型，來創造嶄新又令人讚嘆的可能使用自訂的漸層
 
-身為開發人員，建立在 Windows UI 層的體驗，您可以存取各種不同的動畫概念，讓您的設計得活靈活現。 您可以使用任何這些概念的屬性產生動畫效果，或 subchannel 任何 CompositionObject 的元件 （當適用的話）。
-
-> [!NOTE]
-> 並非所有在 CompositionObject 的屬性都可產生動畫效果。 請參閱個別的 CompositionObject 以判斷是否為可產生動畫效果屬性的文件。
+開發人員建立體驗 Windows UI 層中，您可以存取各種不同的動畫的概念就可將您的設計融入生活。 您可以使用任何這些概念的動畫屬性，或 subchannel 任何 CompositionObject 元件 （如果適用）。
 
 > [!NOTE]
-> 詞彙_subchannel_指的是屬性的元件格式。 例如，X 或 XY subchannel Vector3 Offset 屬性。
+> 並非所有的 CompositionObject 屬性都可顯示動畫。 請參閱個別 CompositionObject，以判斷是否可用來建立動畫屬性的文件。
+
+> [!NOTE]
+> 詞彙_subchannel_參考屬性的元件形式。 例如，X 或 XY subchannel 的 Vector3 位移的屬性。
 
 | 動畫概念 | 描述 |
 | ----------------- | ----------- |
-| [使用 KeyFrameAnimations 時間為基礎的動作](time-animations.md)  | KeyFrameAnimations 用來直接控制的一段時間的動作體驗全部內容。 描述動作的開始、 結束、 在之間內插補點和傳統 keyframed 方式 duration 開發人員。 |
-| [使用 ExpressionAnimations 相對的動作](relation-animations.md)  | ExpressionAnimations 用來描述物件的屬性的動作應該如何導向相對於另一個物件的屬性。 開發人員定義的數學方程式，定義參考為基礎的關係。 |
-| ImplicitAnimations | 這些動畫會觸發程序為基礎，並從核心應用程式邏輯分別定義。 ImplicitAnimations 用來描述動畫如何及何時發生為直接存取的屬性變更的回應。 |
-| [輸入導向的動作，使用輸入動畫](input-driven-animations.md)  | 輸入的動畫涵蓋了一組可以讓開發人員描述操作為基礎的動作，透過觸控或其他輸入的形式的案例。 這些動畫都驅動根據作用中使用者輸入或手勢。 |
-| [使用 NaturalMotionAnimations 物理原理的動作](natural-animations.md)  | NaturalMotionAnimations 用來描述自然且熟悉的動作，根據真實世界的體驗強制導向的動作。 而不是定義的時間，開發人員定義特性 (例如彈簧的 damping ratio) 的動作 |
+| [以時間為基礎的移動與 KeyFrameAnimations](time-animations.md)  | KeyFrameAnimations 用來直接控制一段時間的移動體驗的全部內容。 描述動作的開始、 結束、 在之間插補和傳統 keyframed 方式的持續時間的開發人員。 |
+| [相對的移動與 ExpressionAnimations](relation-animations.md)  | ExpressionAnimations 用來描述一個物件的屬性的動作應該如何驅動相對於另一個物件的屬性。 開發人員定義定義參考為基礎的關聯性的數學方程式。 |
+| ImplicitAnimations | 這些動畫是觸發程序為基礎，並從核心應用程式邏輯分開定義。 ImplicitAnimations 用來描述動畫如何及何時發生當做回應直接屬性變更。 |
+| [輸入驅動的動作，以輸入動畫](input-driven-animations.md)  | 輸入的動畫涵蓋一組可讓開發人員描述操作為基礎的動作，透過觸控或其他輸入的型態的案例。 這些動畫是驅使根據作用中的使用者輸入或筆勢。 |
+| [使用 NaturalMotionAnimations 物理架構的影片](natural-animations.md)  | NaturalMotionAnimations 用來描述自然且熟悉的動作，根據真實世界體驗強制導向的動作。 而不是定義的時間，開發人員定義特性 （例如禁止的 Springs 的比率） 的動作 |

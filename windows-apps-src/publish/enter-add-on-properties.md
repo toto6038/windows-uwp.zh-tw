@@ -1,5 +1,5 @@
 ---
-Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
+Description: 提交附加元件時，[屬性] 頁面上的選項有助於決定提供給客戶時附加元件的行為。
 title: 輸入附加元件屬性
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.date: 10/31/2018
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, 附加元件, 屬性, 訂閱期間, 產品存留期, 內容類型, iap, App 內購買, 應用程式內產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925822"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629673"
 ---
 # <a name="enter-add-on-properties"></a>輸入附加元件屬性
 
-提交附加元件時，**\[屬性\]** 頁面上的選項有助於決定提供給客戶時附加元件的行為。
+提交附加元件時，[屬性] 頁面上的選項有助於決定提供給客戶時附加元件的行為。
 
 ## <a name="product-type"></a>產品類型
 
@@ -29,7 +29,7 @@ ms.locfileid: "8925822"
 
 ## <a name="product-lifetime"></a>產品存留期
 
-如果您選取的產品類型是 **\[耐久性\]**，則此處會顯示 **\[產品存留期\]**。 耐久型附加元件的預設 **\[產品存留期\]** 為 **\[永久\]**，這表示附加元件永久有效。 如果您想要的話，您可以變更 [**產品存留期**，讓附加元件 （可選擇 1-365 天） 設定的期間後到期。
+如果您選取的產品類型是 **\[耐久性\]**，則此處會顯示 **\[產品存留期\]**。 耐久型附加元件的預設 [產品存留期] 為 [永久]，這表示附加元件永久有效。 如果您想，您可以變更**產品的壽命期間**，讓附加元件到期時間設定的持續時間 （與選項 1-365 天）。
 
 
 ## <a name="quantity"></a>數量
@@ -39,7 +39,7 @@ ms.locfileid: "8925822"
 
 ## <a name="subscription-period"></a>訂閱期間
 
-如果您選取的產品類型是 **\[訂閱\]**，則此處會顯示 **\[訂閱期間\]**。 選擇一個選項，來指定向客戶收取訂閱費用的頻率。 預設選項是**每月**，但您也可以選取**3 個月**、 **6 個月**、**年度**，或**24 個月**。
+如果您選取的產品類型是 **\[訂閱\]**，則此處會顯示 **\[訂閱期間\]**。 選擇一個選項，來指定向客戶收取訂閱費用的頻率。 預設選項是**每月**，但您也可以選取**3 個月**， **6 個月**，**每年**，或**24 個月**.
 
 > [!IMPORTANT]
 > 您的附加元件發行之後，您無法變更 **\[訂閱期間\]** 選項。
@@ -55,7 +55,7 @@ ms.locfileid: "8925822"
 
 ## <a name="content-type"></a>內容類型
 
-不論您的附加元件是哪種產品類型，您都需要表明您所提供的內容類型。 對大部分的附加元件而言，內容類型應為 **\[電子軟體下載\]**。 如果清單中的其他選項更能描述您的附加元件 (例如，如果您提供音樂下載或電子書)，請改為選取該選項。
+不論您的附加元件是哪種產品類型，您都需要表明您所提供的內容類型。 對大部分的附加元件而言，內容類型應為 [電子軟體下載]。 如果清單中的其他選項更能描述您的附加元件 (例如，如果您提供音樂下載或電子書)，請改為選取該選項。
 
 以下是可能的附加元件內容類型選項：
 
@@ -84,7 +84,7 @@ ms.locfileid: "8925822"
 若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) 屬性  (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，則使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 屬性)。
 
 > [!NOTE]
-> 關鍵字不是 Windows8 和 Windows8.1 為目標的套件中可供使用。
+> 關鍵字不適用於在 Windows 8 和 Windows 8.1 為目標的封裝中使用。
 
 <span id="custom-developer-data" />
 
@@ -97,7 +97,7 @@ ms.locfileid: "8925822"
 若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) 屬性。 (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，則使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 屬性)。
 
 > [!NOTE]
-> **自訂開發人員資料**欄位不適用於以 Windows8 和 Windows8.1 為目標的套件。
+> **自訂開發人員資料**欄位不適用於在 Windows 8 和 Windows 8.1 為目標的封裝中使用。
 
  
 

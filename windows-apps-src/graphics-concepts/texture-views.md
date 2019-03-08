@@ -1,6 +1,6 @@
 ---
 title: 紋理檢視
-description: 在 Direct3D 中，紋理資源可使用檢視進行存取。這是硬體解譯記憶體中資源的一項機制。
+description: 在 Direct3D 中，紋理資源是使用檢視進行存取，這是硬體解譯記憶體中資源的一項機制。
 ms.assetid: 18DABFCE-8A36-4C4E-B08E-10428B05D701
 keywords:
 - 紋理檢視
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e9167db4648dd193acaff0a224f3378486d171ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941062"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638443"
 ---
 # <a name="texture-views"></a>紋理檢視
 
 
-在 Direct3D 中，紋理資源是使用檢視進行存取，這是硬體解譯記憶體中資源的一項機制。 在應用程式所需要的表示中，檢視允許特定的管線階段僅能存取其所需的[子資源](resource-types.md)。
+在 Direct3D 中，紋理資源是使用檢視進行存取，這是硬體解譯記憶體中資源的一項機制。 檢視允許特定的管線階段，在應用程式所要的表示中，只能存取其所需的[子資源](resource-types.md)。
 
 檢視支援無類型資源的概念。 無類型資源是具有特定的大小，但不具備特定資料類型的資源。 資料在與管線繫結之後會進行動態解譯。
 

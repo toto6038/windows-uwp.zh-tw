@@ -1,22 +1,22 @@
 ---
-Description: Learn how Fluent motion uses directionality and gravity.
+Description: 了解如何 Fluent 影片使用方向性以及重力。
 title: 方向性和重力 - UWP app 中的動畫
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4bb6f0ba60e89720a6daa37604cbe93696fb2bb7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922649"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603073"
 ---
 # <a name="directionality-and-gravity"></a>方向性和重力
 
@@ -112,5 +112,5 @@ ms.locfileid: "8922649"
 
 ## <a name="related-articles"></a>相關文章
 
-- [動作概觀](index.md)
+- [影片概觀](index.md)
 - [計時和加/減速](timing-and-easing.md)

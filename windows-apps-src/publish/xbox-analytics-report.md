@@ -1,25 +1,25 @@
 ---
-Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
+Description: 在合作夥伴中心 Xbox 分析報表會顯示解客戶如何與 Xbox 功能如何在您的產品中的統計資料。
 title: Xbox 分析報告
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計資料
 ms.localizationpriority: medium
 ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922389"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607443"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析報告
 
-**Xbox 分析**報告，在[合作夥伴中心](https://partner.microsoft.com/dashboard)會顯示有關您的客戶的方式與您的遊戲中 Xbox 功能互動的統計資料。 還會提供服務健康狀況資訊來協助您處理用戶端錯誤。
+**Xbox analytics**中的報表[合作夥伴中心](https://partner.microsoft.com/dashboard)顯示您有關您的客戶的吸引人的遊戲中的 Xbox 功能使用方式統計資料。 還會提供服務健康狀況資訊來協助您處理用戶端錯誤。
 
 > [!IMPORTANT]
-> 如果您要發佈適用於 Xbox 的遊戲或使用 Xbox Live 服務的遊戲，您就要查看這份報告。 若要這樣做，您必須瀏覽[概念核准程序](../gaming/concept-approval.md)，其中包括[Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)所發佈的遊戲和透過提交的遊戲[ID@Xbox計畫](../xbox-live/developer-program-overview.md#id)。 透過[Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)發行的遊戲不會在此報告中目前顯示的。
+> 如果您要發佈適用於 Xbox 的遊戲或使用 Xbox Live 服務的遊戲，您就要查看這份報告。 若要這樣做，您必須瀏覽[概念核准程序](../gaming/concept-approval.md)，其中包含所發行的遊戲[Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)與遊戲，透過提交[ID@Xbox程式](../xbox-live/developer-program-overview.md#id). 透過發行遊戲[Xbox Live 創作者計劃](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)目前此報表中看不到。
 
-您可以檢視為您的遊戲的**Xbox 分析**報告，從左瀏覽功能表，展開 [**分析]** ，選取**Xbox 分析**。  您可以在合作夥伴中心，或[下載報告](download-analytic-reports.md)，以便離線檢視中檢視此資料。
+您可以檢視**Xbox analytics**從您的遊戲，方法是展開的左側的導覽功能表的報表**分析**，然後選取**Xbox analytics**。  您可以檢視這項資料在合作夥伴中心，或[將報表下載為](download-analytic-reports.md)要離線檢視。
 
 
 ## <a name="overview-tab"></a>概觀索引標籤
@@ -89,9 +89,9 @@ ms.locfileid: "8922389"
 在索引標籤頂端附近，可以選取您想要顯示資料的時間週期。 預設選取項目是 **\[30D\]** (30 天)，但您可以選擇顯示 **\[7D\]** (7 天) 或您所指定之自訂日期範圍 (不超過 30 天) 的資料。 請注意，選擇自訂日期範圍時，所有的圖表都會將圖表範圍修剪到您所輸入日期範圍內的第一天和最後一天。
 
 您也可以展開 **\[篩選條件\]**，依套件版本、裝置類型和/或沙箱篩選此頁面上的所有資料。
-- **套件版本**︰預設篩選是 **\[所有版本\]**，但您可以將服務健全狀況資料限制在特定套件版本。
-- **裝置類型**：預設設定是 **\[所有裝置\]**，但您可以將服務健全狀況資料限制在特定裝置類型。
-- **沙箱**：預設設定是 **\[零售\]**，但您可以將服務健全狀況資料限制在特定沙箱。
+- **套件版本**:預設篩選是**所有版本**，不過您可以限制到特定的封裝版本的服務健全狀況資料。
+- **裝置類型**:預設值是**所有裝置**，不過您可以限制特定裝置類型的服務健康狀態資料。
+- **沙箱**:預設值是**零售**，不過您可以限制對特定的沙箱服務健康狀態資料。
 
 下列所有圖表中的資訊將反映您選取的日期範圍和任何篩選條件。 某些區段也可讓您套用其他篩選。
 

@@ -7,13 +7,13 @@ keywords: Windows 10, UWP
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
 ms.openlocfilehash: 23dfb8843ed8e70fc6f979bd778a517d0c30327a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943919"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613873"
 ---
-# <a name="bring-custom-c-games-to-uwp-on-xbox"></a>將自訂的 c + + 遊戲 UWP 在 Xbox 上
+# <a name="bring-custom-c-games-to-uwp-on-xbox"></a>將自訂的 C++ 遊戲移到 Xbox 上的 UWP
 
 如果您正在撰寫自訂的 C++ 引擎，Xbox One 具有完整的 C++ 支援。 
 
@@ -27,7 +27,7 @@ ms.locfileid: "8943919"
 > Xbox One 目前不支援 DirectX 12。
 
 
-## <a name="see-also"></a>另請參閱
-- [將現有的遊戲移到 Xbox](development-lanes-landing.md)
-- [Xbox One 上的 UWP](index.md)
+## <a name="see-also"></a>請參閱
+- [將現有的遊戲帶到 Xbox](development-lanes-landing.md)
+- [在 Xbox One UWP](index.md)
 

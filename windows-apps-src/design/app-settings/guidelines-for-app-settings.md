@@ -1,19 +1,19 @@
 ---
-Description: This article describes best practices for creating and displaying app settings.
+Description: 本文說明建立和顯示應用程式設定的最佳做法。
 title: 應用程式設定的指導方針
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a31464d208e8d9abe68703560552c99e5d957463
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049133"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638233"
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
 
@@ -30,13 +30,13 @@ ms.locfileid: "9049133"
 -   取決於使用者偏好的選項，例如音樂、音效或色彩佈景主題。
 -   不常存取的應用程式資訊 (像是隱私權原則、說明、應用程式版本或版權資訊)。
 
-作為一般工作流程一部分的命令 (例如，變更美術應用程式的筆刷大小) 不應在設定頁面中。 如需深入了解命令的放置位置，請參閱[命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)。
+作為一般工作流程一部分的命令 (例如，變更美術應用程式的筆刷大小) 不應在設定頁面中。 若要深入了解命令的放置位置，請參閱[命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)。
 
 ## <a name="general-recommendations"></a>一般建議
 
 
 -   讓設定頁面保持簡單，並使用二元 (開/關) 控制項。 [切換開關](../controls-and-patterns/toggles.md)通常是二元式設定的最佳控制項。
--   如需讓使用者從一組最多可有 5 個的互斥相關選項中選擇一個項目的設定，請使用[選項按鈕](../controls-and-patterns/radio-button.md)。
+-   若需要讓使用者從一組最多可有 5 個的互斥相關選項中選擇一個項目的設定，請使用[選項按鈕](../controls-and-patterns/radio-button.md)。
 -   為您應用程式設定頁面的所有應用程式設定建立進入點。
 -   讓設定保持簡單。 盡可能定義智慧型預設值，保持最少的設定數目。
 -   當使用者變更設定時，應用程式應立即反映變更。
@@ -63,11 +63,11 @@ ms.locfileid: "9049133"
 
 如果您使用中樞配置，應用程式設定的進入點應放在應用程式列的 [更多] 溢位功能表內。
 
-**索引標籤/樞紐**
+**索引標籤/樞紐分析表**
 
 對於索引標籤或樞紐配置，我們不建議放置應用程式設定的進入點做為瀏覽的前幾個項目之一。 而是應將應用程式設定的進入點放在應用程式列的 [更多] 溢位功能表內。
 
-**主要/詳細資料**
+**Master-details**
 
 不要將應用程式設定的進入點深藏在主要/詳細資料窗格內，而是使它成為主要窗格最上層的最後一個釘選項目。
 
@@ -129,11 +129,11 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 -   從頂端至底部以單欄呈現內容，如有必要，可讓它捲動。 捲動的上限設定為螢幕高度的兩倍。
 -   為應用程式設定使用下列控制項：
 
-    -   [切換開關](../controls-and-patterns/toggles.md)：讓使用者將值設定為開啟或關閉。
-    -   [選項按鈕](../controls-and-patterns/radio-button.md)：讓使用者從一組最多可有 5 個的互斥相關選項中選擇一個項目。
-    -   [文字輸入方塊](../controls-and-patterns/text-block.md)：讓使用者輸入文字。 您使用的文字輸入方塊類型必須與要從使用者取得的文字類型對應，例如電子郵件或密碼。
-    -   [超連結](../controls-and-patterns/hyperlinks.md)：將使用者帶到應用程式內的其他頁面或帶到外部網站。 當使用者按一下超連結的時候，[設定] 飛出視窗會關閉。
-    -   [按鈕](../controls-and-patterns/buttons.md)：讓使用者立即起始動作，而不需要關閉目前的 [設定] 飛出視窗。
+    -   [切換開關](../controls-and-patterns/toggles.md):若要讓使用者在開啟或關閉設定值。
+    -   [選項按鈕](../controls-and-patterns/radio-button.md):若要讓使用者從一組最多 5 互斥，選擇一個項目相關的選項。
+    -   [文字輸入的方塊](../controls-and-patterns/text-block.md):若要讓使用者輸入文字。 您使用的文字輸入方塊類型必須與要從使用者取得的文字類型對應，例如電子郵件或密碼。
+    -   [超連結](../controls-and-patterns/hyperlinks.md):若要將使用者帶至應用程式內的另一個頁面或外部網站。 當使用者按一下超連結的時候，[設定] 飛出視窗會關閉。
+    -   [按鈕](../controls-and-patterns/buttons.md):若要讓使用者起始立即採取行動，而不需要關閉目前的設定彈出式視窗。
 -   如果停用其中一個控制項，請新增描述訊息。 請將此訊息置於已停用控制項的上方。
 -   完成 [設定] 飛出視窗和標頭的動畫之後，以單一區塊的方式產生內容和控制項的動畫。 使用向左偏移 100px 的 [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) 或 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) 動畫，產生內容的動畫。
 -   視需要使用區段標頭、段落及標籤協助整理及釐清內容。
@@ -145,7 +145,7 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 
 ## <a name="related-articles"></a>相關文章
 
-* [命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [進度控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465469)
+* [命令設計基本概念](https://msdn.microsoft.com/library/windows/apps/dn958433)
+* [進度控制項的方針](https://msdn.microsoft.com/library/windows/apps/hh465469)
 * [儲存和擷取應用程式資料](https://msdn.microsoft.com/library/windows/apps/mt299098)
 * [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)

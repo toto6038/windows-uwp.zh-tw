@@ -1,35 +1,35 @@
 ---
-Description: In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
-title: 設定您的支付及稅收表格
+Description: 若要從 Microsoft Store 中的應用程式銷售接收金錢，您需要設定您的付款帳戶，並填妥必要的稅務表單。
+title: 設定您的支出及稅收表格
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.date: 12/14/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dff4e3b37be14729abdc3262d484745a0245776
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048045"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641003"
 ---
-# <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支付及稅收表格
+# <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支出及稅收表格
 
 
-若要接收來自 Microsoft Store 中的應用程式銷售的金額，您需要設定支付帳戶並填寫所需的納稅申報表，在[合作夥伴中心](https://partner.microsoft.com/dashboard)。
+若要收到 Microsoft Store 中的應用程式銷售金額，您必須設定您的付款帳戶，並填妥中的所需的稅務表單[合作夥伴中心](https://partner.microsoft.com/dashboard)。
 
-如果您只打算列出免費 app (而不打算提供 app 內購買，或者不打算使用 Microsoft Advertising)，就不需要設定支付帳戶或填寫任何納稅申報表。 如果您稍後改變心意，並決定您想要銷售 app （或附加元件），您可以設定支付帳戶並填寫納稅申報表，在該時間。 您要先完成支付帳戶和稅務設定檔，才能提交任何付費 App 或附加元件。
+如果您只打算列出免費 app (而不打算提供 app 內購買，或者不打算使用 Microsoft Advertising)，就不需要設定支付帳戶或填寫任何納稅申報表。 如果您稍後改變心意，並決定您想要銷售應用程式 （或附加元件），您可以設定您的付款帳戶，並在該時間填寫稅務表單。 您要先完成支付帳戶和稅務設定檔，才能提交任何付費 App 或附加元件。
 
 > [!NOTE]
 > 在[特定市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，開發人員只能提交免費 App。 如果您的帳戶在上述其中一個市場中註冊，就無法選擇設定支付帳戶。
 
-[設定您的開發人員帳戶](opening-a-developer-account.md)之後，有兩件事您需要執行之前，您可以銷售 app （或附加元件） 是在 Microsoft Store 中：
+之後[設定您的開發人員帳戶](opening-a-developer-account.md)，Microsoft Store 中有您需要執行動作，然後您可以販售應用程式 （或附加元件） 的兩件事：
 
--   [設定您的支付帳戶](#payout-account)
--   [填寫您的納稅申報表](#tax-forms)
+-   [設定您的付款帳戶](#payout-account)
+-   [填妥您的稅務表單](#tax-forms)
 
 > [!NOTE]
-> 如需深入了解取得 app 銷售款項的方法和時間，請參閱[獲得報酬](getting-paid-apps.md)。
+> 有關如何及何時您支付的錢您的應用程式的詳細資訊，請請參閱[取得付費](getting-paid-apps.md)。
  
 
 ## <a name="payout-account"></a>支付帳戶
@@ -40,10 +40,10 @@ ms.locfileid: "9048045"
 > 在某些市場中，PayPal 可以用於支付帳戶。 請參閱[帳戶類型、位置和費用](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)了解特定市場是否支援 PayPal，並且閱讀下面的 [PayPal 資訊](#paypal-info)了解詳細資訊。
 
  
-**設定您的支付帳戶**
+**若要設定您的付款帳戶**
 
-1.  在[合作夥伴中心](https://partner.microsoft.com/dashboard)，在右上角，選取**設定**齒輪圖示，然後選取 [**開發人員設定**。
-2.  在 [設定] 頁面的左方的導覽功能表中，選取 [**支付帳戶**。
+1.  在 [合作夥伴中心](https://partner.microsoft.com/dashboard)，選取**設定**齒輪圖示，在右上角，然後選取**開發人員設定**。
+2.  在 [設定] 頁面的左側的導覽功能表中選取**支出帳戶**。
 
    > [!NOTE]
    > 這是機密資訊，所以會提示您再次登入。
@@ -70,10 +70,10 @@ ms.locfileid: "9048045"
 
 使用 PayPal 做為付款方式的常見問題：
 
--   **我需要設定哪些 PayPal 設定才能接收付款？** 您必須確定您的 PayPal 帳戶並未封鎖 eCheck 付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。 如需詳細資訊，請參閱 [PayPal 的帳戶設定頁面](https://go.microsoft.com/fwlink/p/?linkid=513139)。
--   **我的國家/地區是否受支援？** 請參閱[帳戶類型、位置和費用](account-types-locations-and-fees.md)，以了解支援 PayPal 付款方式的國家/地區。
--   **我的 PayPal 帳戶有已註冊於相同國家/地區為我的合作夥伴中心帳戶嗎？** 否。 當您設定 PayPal 帳戶時，您可以接受預設設定。 接收來自其他國家/地區與其他貨幣的付款時，應該不會有問題，除非您已封鎖使用某些貨幣付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。
--   **我是否必須手動接受 PayPal 付款？** 否。 PayPal 帳戶的預設設定會要求使用者手動接受付款，這表示若您未在 30 天內接受付款，該款項將被退回。 您可以在 PayPal 的 \[More Settings\] \(更多設定\) 頁面關閉 \[Ask Me\] \(詢問我\) 來變更此設定。
+-   **若要接收付款有是否需要哪些 PayPal 設定？** 您必須確定您的 PayPal 帳戶並未封鎖 eCheck 付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。 如需詳細資訊，請參閱 [PayPal 的帳戶設定頁面](https://go.microsoft.com/fwlink/p/?linkid=513139)。
+-   **我的國家/地區是否支援？** 請參閱[帳戶類型、 位置和費用](account-types-locations-and-fees.md)，以了解支援 PayPal 付款方式的國家/地區。
+-   **PayPal 帳戶是否必須在相同國家/地區與我的合作夥伴中心帳戶中註冊？** 不。 當您設定 PayPal 帳戶時，您可以接受預設設定。 接收來自其他國家/地區與其他貨幣的付款時，應該不會有問題，除非您已封鎖使用某些貨幣付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。
+-   **我是否必須以手動方式接受 PayPal 付款？** 不。 PayPal 帳戶的預設設定會要求使用者手動接受付款，這表示若您未在 30 天內接受付款，該款項將被退回。 您可以在 PayPal 的 \[More Settings\] \(更多設定\) 頁面關閉 \[Ask Me\] \(詢問我\) 來變更此設定。
 
 
 ### <a name="specific-requirements-for-certain-countriesregions"></a>某些國家/地區的特定需求
@@ -97,9 +97,9 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 為確保付款能夠成功，請記住下列內容：
 
--   輸入您的支付帳戶在合作夥伴中心**帳戶持有人姓名**必須與您的銀行帳戶相關聯完全相同的名稱。 例如，如果您的銀行帳戶名稱包含中間名，請在 **帳戶持有人姓名** 中加入中間名。
+-   **帳戶持有者名稱**輸入您在合作夥伴中心內的付款帳戶必須是完整的相同名稱與您的銀行帳戶相關聯。 例如，如果您的銀行帳戶名稱包含中間名，請在 **帳戶持有人姓名** 中加入中間名。
 -   付款會直接從 Microsoft 轉入您的銀行帳戶，貨幣單位為盧布 (RUB)。
--   在合作夥伴中心以拉丁文字元輸入的銀行帳戶資訊會轉譯為斯拉夫文字元。
+-   在合作夥伴中心進入拉丁字元的銀行帳戶資訊會轉譯為斯拉夫語字元。
 -   支付的款項會進入銀行帳戶，而不是銀行卡。
 
 #### <a name="ukraine"></a>烏克蘭
@@ -114,37 +114,37 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 為確保付款能夠成功，請記住下列內容：
 
--   輸入您的支付帳戶在合作夥伴中心**帳戶持有人姓名**必須與您的銀行帳戶相關聯完全相同的名稱。 例如，如果您的銀行帳戶名稱包含中間名，請在 **帳戶持有人姓名** 中加入中間名。
+-   **帳戶持有者名稱**輸入您在合作夥伴中心內的付款帳戶必須是完整的相同名稱與您的銀行帳戶相關聯。 例如，如果您的銀行帳戶名稱包含中間名，請在 **帳戶持有人姓名** 中加入中間名。
 -   付款會直接從 Microsoft 轉入您的銀行帳戶，貨幣單位為美元 (USD)。
--   在合作夥伴中心以拉丁文字元輸入的銀行帳戶資訊會轉譯為斯拉夫文字元。
+-   在合作夥伴中心進入拉丁字元的銀行帳戶資訊會轉譯為斯拉夫語字元。
 
 
 ## <a name="tax-forms"></a>納稅申報表
 
-當您[註冊開發人員帳戶](opening-a-developer-account.md)並設定您的[支付帳戶](#payout-account)之後，您可以建立適用於 Microsoft Store 的*稅金設定檔*藉由完成下列步驟：
+之後[註冊為開發人員帳戶](opening-a-developer-account.md)以及設定您[支出帳戶](#payout-account)，您可以建立您*稅務設定檔*的 Microsoft Store，請依照下列步驟：
 
 -   指定您的居住國家/地區和國籍。
 -   填寫適當的納稅申報表。
 
-您可以完成並提交您的納稅申報表，以電子化方式在合作夥伴中心;在大部分情況下，您不需要列印及郵寄任何申報表。
+您可以填寫並提交您的稅務表單，以電子方式在合作夥伴中心;在大部分情況下，您不需要列印，並傳送電子郵件的任何表單。
 
 > [!IMPORTANT]
-> 不同國家和地區的稅金要求不同。 您必須繳交的稅金確切金額取決於您銷售應用程式的國家和地區。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 在哪些國家/地區為您代繳銷售和使用稅。 在其他國家/地區 (視您在何處註冊而定)，您可能必須直接到當地稅務機構繳納應用程式的銷售和使用稅。 此外，您收到的應用程式銷售收入可能會列為應稅收入。 我們強烈建議您相關機構聯繫您國家或地區最能夠協助您判斷您的 Microsoft Store 開發人員活動之正確稅金資訊。
+> 不同國家和地區的稅金要求不同。 您必須繳交的稅金確切金額取決於您銷售應用程式的國家和地區。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 在哪些國家/地區為您代繳銷售和使用稅。 在其他國家/地區 (視您在何處註冊而定)，您可能必須直接到當地稅務機構繳納應用程式的銷售和使用稅。 此外，您收到的應用程式銷售收入可能會列為應稅收入。 我們強烈建議您連絡相關的授權單位，為您的國家/地區或區域，最適合可協助您判斷您的 Microsoft Store 開發人員活動的右邊的稅務資訊。
 
  
-**完成您的稅金設定檔**
+**若要完成您的稅金設定檔**
 
-1.  在[合作夥伴中心](https://partner.microsoft.com/dashboard)，在右上角，選取 [**帳戶設定**] 圖示，然後選取 [**開發人員設定**。
-2.  在左方的導覽功能表中，選取 [**稅金設定檔**。
+1.  在 [合作夥伴中心](https://partner.microsoft.com/dashboard)，選取**帳戶設定**圖示，在右上角，然後選取**開發人員設定**。
+2.  在左側的導覽功能表中，選取**稅務設定檔**。
 
    > [!NOTE]
    > 這是機密資訊，所以會提示您再次登入。
 
-3.  檢閱您的稅金設定檔目前狀態，然後按一下 **\[編輯\]** 完成必要的表單。
-4.  回答美國公民與居住地相關問題，然後按 **\[下一步\]**。
+3.  檢閱您的稅金設定檔目前狀態，然後按一下 [編輯] 完成必要的表單。
+4.  回答美國公民與居住地相關問題，然後按 [下一步]。
 5.  如果顯示您的姓名和地址資訊，請確認這些資訊以供報稅使用。
 
-接著，您會看到必須完成填寫的電子版本納稅申報表。 不論您居住國家/地區和國籍，您必須填寫美國納稅申報表，才能銷售任何應用程式或附加元件，透過 Microsoft 網上商店。 符合特定美國居住規定的開發人員必須填寫 IRS W-9 表單。 美國以外的其他開發人員必須填寫 IRS W-8 表單。 完成稅金設定檔之後，您就可以在線上填寫這些表單。
+接著，您會看到必須完成填寫的電子版本納稅申報表。 不論您國家/地區的居住地或公民資格 」，您必須填寫美國稅務表單銷售的任何應用程式或透過 Microsoft Store 的附加元件。 符合特定美國居住規定的開發人員必須填寫 IRS W-9 表單。 美國以外的其他開發人員必須填寫 IRS W-8 表單。 完成稅金設定檔之後，您就可以在線上填寫這些表單。
 
 向 Microsoft 收到付款或要求稅務協定優惠時不需要美國個人納稅識別號碼 (或 ITIN)。
 
@@ -154,7 +154,7 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 ### <a name="tax-treaty-benefits"></a>稅務協定優惠
 
-如果您在美國以外的地區，可能可以享有稅務協定優惠。 這些權益不同國家，並可讓您將減少扣繳的稅金總額 Microsoft Store。 您可以完成 W-8BEN 表單的 Part II 來要求稅務協定優惠。 建議您與您國家或地區的適當資源聯繫，以確認您是否適用這些優惠。
+如果您在美國以外的地區，可能可以享有稅務協定優惠。 這些權益而異的國家/地區國家 （地區），並且可讓您減少的 Microsoft Store withholds 的稅金。 您可以完成 W-8BEN 表單的 Part II 來要求稅務協定優惠。 建議您與您國家或地區的適當資源聯繫，以確認您是否適用這些優惠。
 
  
 

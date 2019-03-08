@@ -7,25 +7,25 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, AdControl, 疑難排解, HTML, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919628"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633233"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML 和 JavaScript 疑難排解指南
 
 本主題包含在 JavaScript/HTML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 
 * [HTML](#html)
-  * [沒有顯示 AdControl](#html-notappearing)
-  * [黑色方塊閃爍然後消失](#html-blackboxblinksdisappears)
-  * [廣告沒有重新整理](#html-adsnotrefreshing)
+  * [AdControl 未出現](#html-notappearing)
+  * [會閃爍黑色方塊，並會消失](#html-blackboxblinksdisappears)
+  * [不重新整理的廣告](#html-adsnotrefreshing)
 
 * [JavaScript](#js)
-  * [沒有顯示 AdControl](#js-adcontrolnotappearing)
-  * [黑色方塊閃爍然後消失](#js-blackboxblinksdisappears)
-  * [廣告沒有重新整理](#js-adsnotrefreshing)
+  * [AdControl 未出現](#js-adcontrolnotappearing)
+  * [會閃爍黑色方塊，並會消失](#js-blackboxblinksdisappears)
+  * [不重新整理的廣告](#js-adsnotrefreshing)
 
 ## <a name="html"></a>HTML
 
@@ -33,7 +33,7 @@ ms.locfileid: "8919628"
 
 ### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
+1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)] 功能。
 
 2.  確定 JavaScript 參考存在。 若 &lt;head&gt; 區段中沒有 ad.js 參考，**AdControl** 將無法顯示，且建置期間會發生錯誤。
 
@@ -46,7 +46,7 @@ ms.locfileid: "8919628"
     </head>
     ```
 
-3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合應用程式識別碼和廣告單位識別碼，您在合作夥伴中心中取得。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合應用程式識別碼和您在合作夥伴中心取得 ad 單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -144,7 +144,7 @@ ms.locfileid: "8919628"
 
 1.  再次檢查前述[沒有顯示 AdControl](#html-notappearing) 一節中的所有步驟。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
+2.  處理 **onErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -223,7 +223,7 @@ ms.locfileid: "8919628"
 
 ### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
+1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)] 功能。
 
 2.  確定 **AdControl** 已具現化。 如果 **AdControl** 尚未具現化。 它將無法供使用。
 
@@ -271,7 +271,7 @@ ms.locfileid: "8919628"
     });  
     ```
 
-4.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合應用程式識別碼和廣告單位識別碼，您在合作夥伴中心中取得。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+4.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合應用程式識別碼和您在合作夥伴中心取得 ad 單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -291,7 +291,7 @@ ms.locfileid: "8919628"
 
 1.  再次檢查[沒有顯示 AdControl](#js-adcontrolnotappearing) 一節中的所有步驟。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
+2.  處理 **onErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
 
     此範例示範如何實作報告錯誤訊息的錯誤處理常式。 此 HTML 程式碼片段提供如何設定顯示錯誤訊息之 UI 的範例。
 

@@ -8,11 +8,11 @@ keywords: Windows 10, UWP, 連絡人, 連絡人卡片, 註解
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920396"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616433"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>將應用程式連結到連絡人卡片上的動作
 
@@ -20,7 +20,7 @@ ms.locfileid: "8920396"
 
 ![連絡人卡片與迷你連絡人卡片](images/all-contact-cards.png)
 
-若要開始，請尋找現有的連絡人或建立新的連絡人。 接下來，請建立「註解」** 和幾個封裝資訊清單項目，以描述您的 app 支援哪些動作。 然後，撰寫執行動作的程式碼。
+若要開始，請尋找現有的連絡人或建立新的連絡人。 接下來，請建立「註解」和幾個封裝資訊清單項目，以描述您的 app 支援哪些動作。 然後，撰寫執行動作的程式碼。
 
 如需更完整的範例，請參閱[連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)。
 
@@ -136,7 +136,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
   </uap:Extension>
 </Extensions>
 ```
-您也可以在 Visual Studio 中資訊清單設計工具的 **\[宣告\]** 索引標籤中新增這些處理常式。
+您也可以在 Visual Studio 中資訊清單設計工具的 [宣告] 索引標籤中新增這些處理常式。
 
 ![資訊清單設計工具的 [宣告] 索引標籤](images/manifest-designer-protocols.png)
 
@@ -185,7 +185,7 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 在頁面後端檔案的程式碼中，複寫 [Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) 方法。 連絡人卡片會透過此方法傳遞作業名稱與連絡人識別碼。
 
-若要開始視訊或語音通話，請參閱此範例：[VoIP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)。 您將會在 [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx) 命名空間中發現完整的 API。
+若要啟動的視訊或音訊的呼叫，請參閱此範例：[VoIP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)。 您將會在 [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx) 命名空間中發現完整的 API。
 
 若要加快傳訊速度，請參閱 [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx) 命名空間。
 

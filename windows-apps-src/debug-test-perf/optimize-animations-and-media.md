@@ -1,17 +1,17 @@
 ---
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
 title: 最佳化動畫、媒體及影像
-description: 建立具有流暢的動畫、高畫面播放速率和高效能媒體擷取和播放功能的通用 Windows 平台 (UWP) 應用程式。
+description: 建立具有流暢的動畫、高畫面播放速率和高效能媒體擷取和播放功能的通用 Windows 平台 (UWP) app。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b26274dd005813fe5c8ced2d90f6380e4d7f21
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946522"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640793"
 ---
 # <a name="optimize-animations-media-and-images"></a>最佳化動畫、媒體及影像
 
@@ -30,8 +30,8 @@ ms.locfileid: "8946522"
 
 -   使用主要畫面的物件動畫
 -   零持續時間動畫
--   [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) 屬性的動畫
--   [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 屬性的動畫
+-   [  **Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) 屬性的動畫
+-   [  **UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 屬性的動畫
 -   以 [**SolidColorBrush.Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 子屬性為目標時，[**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 類型屬性的動畫
 -   以這些傳回值類型的子屬性為目標時，下列 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 屬性的動畫：
 
@@ -50,11 +50,11 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 ### <a name="dont-animate-a-webview-or-mediaplayerelement"></a>不要讓 WebView 或 MediaPlayerElement 產生動畫
 
-[**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控制項內的網頁內容不是由 XAML 架構直接呈現，並且需要執行額外的工作才能與其他場景合成。 在畫面上產生控制項動畫會增加這項額外的工作，而這項工作可能會帶來同步化的問題 (例如，HTML 內容可能不會與頁面上的其餘 XAML 內容同步移動)。 當您需要讓 **WebView** 控制項產生動畫時，請在動畫期間將它交換為 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx)。
+[  **WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控制項內的網頁內容不是由 XAML 架構直接呈現，並且需要執行額外的工作才能與其他場景合成。 在畫面上產生控制項動畫會增加這項額外的工作，而這項工作可能會帶來同步化的問題 (例如，HTML 內容可能不會與頁面上的其餘 XAML 內容同步移動)。 當您需要讓 **WebView** 控制項產生動畫時，請在動畫期間將它交換為 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx)。
 
 讓 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 產生動畫同樣也不是很好的做法。 除了效能變差，還會造成播放的視訊內容產生裂紋或其他殘影。
 
-> **注意：**  **MediaPlayerElement**本篇文章中的建議也適用於[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 **MediaPlayerElement** 只能在 Windows 10 版本 1607 取得，因此如果您是針對先前版本的 Windows 建立 App，則需要使用 **MediaElement**。
+> **附註**  如這篇文章中的建議**MediaPlayerElement**也適用於[ **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 **MediaPlayerElement** 只能在 Windows 10 版本 1607 取得，因此如果您是針對先前版本的 Windows 建立 App，則需要使用 **MediaElement**。
 
 ### <a name="use-infinite-animations-sparingly"></a>謹慎使用無限動畫
 
@@ -64,9 +64,9 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 ### <a name="use-the-animation-library"></a>使用動畫庫
 
-[**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) 命名空間包含高效能且順暢的動畫庫，這些動畫的外觀及操作與其他 Windows 動畫相同。 相關類別的名稱中會包含「佈景主題」，其相關說明請見[動畫概觀](https://msdn.microsoft.com/library/windows/apps/Mt187350)。 這個動畫庫支援許多常見的動畫案例，例如將應用程式的第一個檢視以動畫顯示，並建立狀態與內容轉換。 建議您儘量使用這個動畫庫來提升效能以及與 UWP UI 的一致性。
+[  **Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) 命名空間包含高效能且順暢的動畫庫，這些動畫的外觀及操作與其他 Windows 動畫相同。 相關類別的名稱中會包含「佈景主題」，其相關說明請見[動畫概觀](https://msdn.microsoft.com/library/windows/apps/Mt187350)。 這個動畫庫支援許多常見的動畫案例，例如將應用程式的第一個檢視以動畫顯示，並建立狀態與內容轉換。 建議您儘量使用這個動畫庫來提升效能以及與 UWP UI 的一致性。
 
-> **注意：** 的動畫庫無法讓所有可能的屬性產生動畫。 如需無法套用動畫庫的 XAML 案例，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/Mt187354)。
+> **附註**  動畫程式庫無法以動畫顯示所有可能屬性。 如需無法套用動畫庫的 XAML 案例，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/Mt187354)。
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>個別使 CompositeTransform3D 屬性產生動畫效果
@@ -97,7 +97,7 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 若要省電並延長電池續航力，您應該在不再需要顯示器要求時呼叫 [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/BR241819) 以便立即釋放顯示器要求。
 
-以下是您應該釋放顯示器要求的一些情況：
+以下是一些您應該釋放顯示器要求的情況：
 
 -   視訊播放暫停時，例如因使用者動作、緩衝或因為頻寬有限而進行調整。
 -   播放停止時。 例如，視訊播放完畢或簡報結束。
@@ -105,7 +105,7 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 ### <a name="put-other-elements-to-the-side-of-embedded-video"></a>將其他元素放到內嵌視訊的旁邊
 
-App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 不是頁面大小，再加上其他繪製的 XAML 物件，您很明顯地無法使用全螢幕播放。 請注意不要在 **MediaPlayerElement** 周圍繪製框線，以避免不慎進入這個模式。
+App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 不是頁面大小，再加上其他繪製的 XAML 物件，您很明顯地無法使用全螢幕播放。 請注意不要在  周圍繪製框線，以避免不慎進入這個模式。
 
 當視訊是內嵌模式時，請勿在視訊上繪製 XAML 元素。 如果您這樣做，架構會強制執行一些額外工作來建構場景。 將傳輸控制項放在內嵌媒體元素下方 (而非視訊上)，是這個狀況最佳化的最佳範例。 在這個影像中，紅色列代表一組傳輸控制項 (播放、暫停及停止等)。
 
@@ -149,7 +149,7 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 
 ### <a name="scale-images-to-the-appropriate-size"></a>將影像按比例調整為適當大小
 
-如果影像以非常高的解析度擷取，可能會導致 app 解碼影像資料時使用更多 CPU，從磁碟載入影像之後使用更多記憶體。 但是如果只為了顯示比原生大小還小的影像，而將高解析度影像解碼並儲存在記憶體中，實在不太合理。 因此會改為使用 [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 屬性，以繪製在螢幕上的實際大小建立一個影像版本。
+擷取影像時是以非常高的解析度擷取，這可能會導致 App 在將影像資料解碼時使用較多 CPU，以及在從磁碟載入影像之後使用較多記憶體。 但是如果只為了顯示比原生大小還小的影像，而將高解析度影像解碼並儲存在記憶體中，實在不太合理。 因此會改為使用 [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 屬性，以繪製在螢幕上的實際大小建立一個影像版本。
 
 不要這樣做：
 
@@ -169,7 +169,7 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 </Image>
 ```
 
-[**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 的單位預設是實體像素。 [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) 屬性可以用來變更這個行為：將 **DecodePixelType** 設定為 **Logical** 會導致解碼大小自動採用系統目前的縮放比例，類似於其他的 XAML 內容。 因此，如果您希望 **DecodePixelWidth** 和 **DecodePixelHeight** 符合影像顯示所在之 Image 控制項的 Height 和 Width 屬性，將 **DecodePixelType** 設定為 **Logical** 會比較適當。 使用實體像素的預設行為，您必須自行考量系統目前的縮放比例；而且您必須接聽縮放比例變更通知，以免使用者變更其顯示喜好設定。
+[  **DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 的單位預設是實體像素。 [  **DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) 屬性可以用來變更這個行為：將 **DecodePixelType** 設定為 **Logical** 會導致解碼大小自動採用系統目前的縮放比例，類似於其他的 XAML 內容。 因此，如果您希望 **DecodePixelWidth** 和 **DecodePixelHeight** 符合影像顯示所在之 Image 控制項的 Height 和 Width 屬性，將 **DecodePixelType** 設定為 **Logical** 會比較適當。 使用實體像素的預設行為，您必須自行考量系統目前的縮放比例；而且您必須接聽縮放比例變更通知，以免使用者變更其顯示喜好設定。
 
 如果 DecodePixelWidth/Height 明確設定超過要在螢幕上顯示的影像大小，則 app 會不必要地使用額外的記憶體—每像素最多 4 個位元組—大型影像就會變得非常耗費資源。 影像也會使用雙線性縮放比例縮小，而當縮放比例變大時可能會導致影像模糊。
 
@@ -177,7 +177,7 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 
 在無法預先決定適當解碼大小的某些情況下，您應該遵從 XAML 的自動以正確大小解碼，它會在未指定明確的 DecodePixelWidth/DecodePixelHeight 時，盡可能嘗試以適當大小將影像解碼。
 
-如果您預先知道影像內容的大小，就要設定明確的解碼大小。 如果提供的解碼大小與其他 XAML 元素的大小成比例，您也應該同時將 [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) 設定為 **Logical**。 例如，如果您明確使用 Image.Width 和 Image.Height 設定內容的大小，可以將 DecodePixelType 設定為 DecodePixelType.Logical 以使用與 Image 控制項相同的邏輯像素維度，然後明確使用 BitmapImage.DecodePixelWidth 和/或 BitmapImage.DecodePixelHeight 控制影像的大小來節省大量記憶體。
+如果您預先知道影像內容的大小，就應該設定明確的解碼大小。 如果提供的解碼大小是相對其他 XAML 元素的大小，您也應該一併將 [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) 設定為 **Logical**。 例如，如果您明確使用 Image.Width 和 Image.Height 設定內容的大小，可以將 DecodePixelType 設定為 DecodePixelType.Logical 以使用與 Image 控制項相同的邏輯像素維度，然後明確使用 BitmapImage.DecodePixelWidth 和/或 BitmapImage.DecodePixelHeight 控制影像的大小來節省大量記憶體。
 
 請注意，決定解碼內容的大小時，應考量 Image.Stretch。
 
@@ -190,14 +190,14 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 -   影像在主機影像元素或筆刷或任何父元素上透過將 [[**不透明度**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)] 設定為 0，或將 [[**可見度**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility)] 設定為 [**收合**] 而隱藏。
 -   影像控制項或筆刷使用設定為 **None** 的 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242968)。
 -   影像用來做為 [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756)。
--   `CacheMode="BitmapCache"` 已在影像元素或任何父元素上設定。
+-   `CacheMode="BitmapCache"` 設定影像項目上，或任何父項目上。
 -   影像筆刷是非矩形 (例如套用至圖形或文字時)。
 
 在上述案例中，設定明確的解碼大小是節省記憶體的唯一方法。
 
 您在設定來源之前，應該一律將 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) 附加到動態樹狀結構。 每當在標記中指定影像元素或筆刷時，就自動會是這種情況。 「動態樹狀結構範例」標題之下會提供範例。 您在設定串流來源時應該一律避免使用 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255)，改為使用 [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522)。 而且最好避免在等待 [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) 事件引發時隱藏影像內容 (無論是不透明度設定為零，或是摺疊的可見性)。 這麼做只是為了判斷：如果完成，您也無法從自動以正確大小解碼獲得好處。 如果您的 app 必須一開始就隱藏影像內容，則可能的話也應該明確設定解碼大小。
 
-**動態樹狀結構範例**
+**即時樹狀結構範例**
 
 範例 1 (好)—在標記中指定的統一資源識別元 (URI)。
 
@@ -219,7 +219,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-範例 2 程式碼後置 （壞） — 將 BitmapImage UriSource 設定連接到樹狀結構之前先。
+範例 2 程式碼後置 （錯誤），連接到樹狀結構之前先設定 BitmapImage UriSource。
 
 ```csharp
 var bitmapImage = new BitmapImage();
@@ -243,19 +243,19 @@ myImage.Source = bitmapImage;
 
 ### <a name="software-rasterized-images"></a>軟體點陣化的影像
 
-當影像用於非矩形的筆刷或用於 [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756) 時，影像會使用軟體點陣化路徑，完全不會縮放影像。 此外，必須在軟體和硬體記憶體中儲存一份影像。 例如，如果有一張影像用來做為橢圓形的筆刷，則內部會儲存兩次可能很大的完整影像。 使用 **NineGrid** 或非矩形的筆刷時，您的 app 應該會將影像預先縮放到接近要呈現的大小。
+當影像用於非矩形的筆刷或用於 [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756) 時，影像會使用軟體點陣化路徑，完全不會縮放影像。 此外，它也必須在軟體和硬體記憶體中都儲存一份影像。 例如，如果有一張影像用來做為橢圓形的筆刷，則內部會儲存兩次可能很大的完整影像。 使用 **NineGrid** 或非矩形的筆刷時，您的 app 應該會將影像預先縮放到接近要呈現的大小。
 
 ### <a name="background-thread-image-loading"></a>背景執行緒影像載入
 
 XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容解碼到硬體記憶體中的表層，而不需要軟體記憶體中的中繼層。 這樣可以減少記憶體的尖峰使用量與轉譯延遲。 如果符合下列任何一個條件，則會停用此功能。
 
 -   影像用來做為 [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756)。
--   `CacheMode="BitmapCache"` 已在影像元素或任何父元素上設定。
+-   `CacheMode="BitmapCache"` 設定影像項目上，或任何父項目上。
 -   影像筆刷是非矩形 (例如套用至圖形或文字時)。
 
 ### <a name="softwarebitmapsource"></a>SoftwareBitmapSource
 
-[**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) 類別交換不同 WinRT 命名空間 (例如 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/BR226176)、相機 API 以及 XAML) 之間的互通性未壓縮映像。 這個類別會排除通常是使用 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259) 才需要的額外複本，以及協助減少尖峰記憶體和來源到螢幕的延遲。
+[  **SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) 類別交換不同 WinRT 命名空間 (例如 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/BR226176)、相機 API 以及 XAML) 之間的互通性未壓縮映像。 這個類別會排除通常是使用 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259) 才需要的額外複本，以及協助減少尖峰記憶體和來源到螢幕的延遲。
 
 提供來源資訊的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) 也可以設定為使用自訂 [**IWICBitmap**](https://msdn.microsoft.com/library/windows/desktop/Ee719675)，提供可重新載入的備份存放區，讓 app 需要時就可以重新對應記憶體。 這是進階的 C++ 使用案例。
 
@@ -263,7 +263,7 @@ XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容
 
 ### <a name="use-getthumbnailasync-for-thumbnails"></a>使用 GetThumbnailAsync 以取得縮圖
 
-按比例調整影像的一個使用案例是建立縮圖。 雖然您可以使用 [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 與 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 來提供較小的影像版本，但 UWP 提供更有效的 API 供您擷取縮圖。 [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) 會為已快取檔案系統的影像提供縮圖。 這樣做的效能比使用 XAML API 更好，因為不需要開啟或解碼影像。
+按比例調整影像的一個使用案例是建立縮圖。 雖然您可以使用 [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 與 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 來提供較小的影像版本，但 UWP 提供更有效的 API 供您擷取縮圖。 [**GetThumbnailAsync** ](https://msdn.microsoft.com/library/windows/apps/BR227210)讓已快取的檔案系統的映像，可以在縮圖。 這樣做的效能比使用 XAML API 更好，因為不需要開啟或解碼影像。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp

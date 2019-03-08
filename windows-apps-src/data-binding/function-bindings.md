@@ -1,29 +1,29 @@
 ---
-description: XBind 標記延伸可讓您在標記中使用的函式。
+description: XBind 標記延伸可讓用於標記的函式。
 title: x:Bind 中的函式
 ms.date: 02/06/2019
 ms.topic: article
-keywords: windows 10，uwp xBind
+keywords: windows 10 uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
-ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9060032"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626213"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函式
 
 > [!NOTE]
-> 如需 **{X:bind}** 使用應用程式中使用資料繫結的一般資訊 （和全啟動和之間的比較 **{X:bind}** **{Binding}**），請參閱[深入了解資料繫結](data-binding-in-depth.md)。
+> 如需在您的應用程式中使用資料繫結的一般資訊 **{x： 繫結}** (以及之間的全面比較 **{x： 繫結}** 並 **{Binding}**)，請參閱[資料深入了解繫結](data-binding-in-depth.md)。
 
-從 Windows10 版本 1607 開始，**{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這可讓：
+從 Windows 10 版本 1607 開始，**{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這可讓：
 
 - 使完成值轉換更為簡單
 - 使繫結取決於多個參數
 
 > [!NOTE]
-> 若要搭配 **{x:Bind}** 使用函式，您 App 的最低目標 SDK 版本必須是 14393 或更新版本。 當您的 App 以舊版 Windows10 為目標時，您將無法使用函式。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 若要搭配 **{x:Bind}** 使用函式，您 App 的最低目標 SDK 版本必須是 14393 或更新版本。 當您的 App 以舊版 Windows 10 為目標時，您將無法使用函式。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 在下列範例中，項目的背景與前景會繫結函式，以根據色彩參數來執行轉換
 
@@ -87,7 +87,7 @@ namespace MyNamespace
 }
 ```
 
-您也可以直接在標記中使用系統功能，來完成簡單的案例，包括日期格式設定文字格式、 文字串連、 等，例如：
+您也可以直接在標記中使用系統函數，來完成簡單的案例，例如日期格式設定、 文字格式設定、 文字串連等，例如：
 
 ```xaml
 <Page 
@@ -108,7 +108,7 @@ namespace MyNamespace
 - 引數類型需要符合傳入的資料，我們不會進行縮小轉換
 - 函式的傳回類型必須符合正在使用繫結的屬性類型
 
-繫結引擎反應通知引發的函式名稱和重新在必要時評估繫結的屬性變更。 例如：
+繫結引擎會回應通知引發函式名稱，並重新評估視的 繫結的屬性變更。 例如：
 
 ```xaml
 <DataTemplate x:DataType="local:Person">
@@ -164,7 +164,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> 您可以使用 X:bind 中的函式來達到相同的案例做為執行轉換器，並在 WPF MultiBinding 所支援的功能。
+> 您可以使用 x： 繫結中的函式，以達到相同的案例，為所支援轉換和 MultiBinding 在 WPF 中的透過。
 
 ## <a name="function-arguments"></a>函式引數
 
@@ -178,7 +178,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>雙向函式繫結
 
-在雙向繫結案例中，必須針對繫結的相反方向指定第二個函式。 做法是使用**BindBack**繫結屬性。 在以下範例中，函式應該有一個引數是推回到模型所需的值。
+在雙向繫結案例中，必須針對繫結的相反方向指定第二個函式。 這是使用**連回**繫結屬性。 在下列範例中，函式應該採用一個引數是需要回推至模型的值。
 
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />

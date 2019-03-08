@@ -3,14 +3,14 @@ title: 從網頁安裝 UWP app
 description: 在本節中，我們將檢閱可讓使用者直接從網頁安裝應用程式所需採取的步驟。
 ms.date: 11/16/2017
 ms.topic: article
-keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載, 相關集合, 選用套件
+keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, 應用程式安裝程式, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 515beebd55049ecb4d0c6747fa7d37e76577ef7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927070"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623553"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>從網頁安裝 UWP app
 
@@ -28,10 +28,10 @@ ms.locfileid: "8927070"
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>通訊協定啟動配置需求
 
-1. 需要有支援位元組範圍要求 (HTTP/1.1) 的網頁伺服器
-    - 支援 HTTP/1.1 通訊協定的伺服器應該都支援位元組範圍要求 
-2. 網頁伺服器將會需要了解 Windows 10 應用程式套件的內容類型
-    - 以下說明如何將新的內容類型宣告為[網頁設定檔](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)的一部分
+1. Web 伺服器需要有支援位元組範圍要求 (HTTP/1.1)
+    - 支援 HTTP/1.1 通訊協定的伺服器應該有支援位元組範圍要求 
+2. Web 伺服器也需要了解 Windows 10 應用程式封裝的內容類型
+    - 以下是如何將新的內容型別宣告為部分[web 設定檔](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>如何在網頁上啟用此支援 
 要在網站上裝載應用程式套件的應用程式開發人員需要依照這個步驟進行：

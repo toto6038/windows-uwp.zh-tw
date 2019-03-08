@@ -1,42 +1,42 @@
 ---
-Description: Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport. Examples of views include the folder structure of a computer, a library of documents, or a photo album.
+Description: 移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
 title: 移動瀏覽
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 363ea5728b94d6b42f29299e8d240bcfc6242b4c
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981562"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625113"
 ---
 # <a name="guidelines-for-panning"></a>移動瀏覽的指導方針
 
 
 移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
 
-> **重要 API**：[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 Api**:[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
 
-**移動瀏覽指標和捲軸**
+**移動的指標和捲軸**
 
 -   確保可以移動瀏覽/捲動，才將內容載入到應用程式中。
 
--   顯示移動瀏覽指示器和捲軸來提供位置和尺寸提示。若您要提供自訂瀏覽功能，請隱藏他們。
+-   顯示移動瀏覽指標和捲軸來提示位置及大小。如果您提供自訂瀏覽功能，請隱藏它們。
 
-    **注意：** 不同於標準捲軸，移動瀏覽指標僅為提供資訊。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
+    **附註**  不同於標準捲軸，移動指標也純粹具有資訊價值。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
 
      
 
-**單軸移動瀏覽 (一維溢位)**
+**單一軸的移動 （一維的溢位）**
 
 -   對延長超過一個檢視區界限 (垂直或水平) 的內容區域，使用單軸移動瀏覽。
 
@@ -44,14 +44,14 @@ ms.locfileid: "8981562"
     -   若為格線中的項目，請使用水平移動瀏覽。
 -   如果必須讓使用者在貼齊點之間移動瀏覽並停止時，請不要利用單軸移動瀏覽來使用強制貼齊點。 強制貼齊點會保證使用者停止在貼齊點上。 請改用鄰近性貼齊點。
 
-**任意方向移動瀏覽 (二維溢位)**
+**手繪多邊形移動瀏覽 （二維溢位）**
 
 -   對延長超過兩個檢視區界限 (垂直和水平) 的內容區域，使用雙軸移動瀏覽。
 
     -   若是使用者可能會往多個方向移動的無結構內容，請覆寫預設的柵欄行為並使用任意方向移動瀏覽。
 -   任意方向移動瀏覽通常適用於影像或地圖內。
 
-**分頁檢視**
+**分頁的檢視**
 
 -   當內容是由離散的元素所組成或您想要顯示整個元素時，請使用強制貼齊點。 這可能包含一本書或雜誌的頁面、一個項目資料欄或個別的影像。
 
@@ -64,7 +64,7 @@ ms.locfileid: "8981562"
 
 -   如果定義了最大和最小大小限制或界限，可以在使用者達到或超出這些界限時，使用視覺化回饋作為顯示。
 
-**鏈結內嵌或巢狀的內容**
+**鏈結的內嵌或巢狀內容**
 
 -   對於文字與格線內容，請使用單軸移動瀏覽 (通常為水平) 與欄配置。 在這些情況下，內容通常會在欄與欄之間自然換行和流動，以及讓使用者經驗保持一致，並且可以跨 UWP app 探索。
 
@@ -76,13 +76,13 @@ ms.locfileid: "8981562"
 
 ## <a name="additional-usage-guidance"></a>其他用法指導方針
 
-利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非在 API 中進行區別，或所需的某些裝置特定 WindowsUI，我們只需參考這兩種互動稱為移動瀏覽。
+利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非是要區隔是在 API 中進行，或一些裝置特有的 Windows UI 所需的只是我們將這兩個互動，以移動瀏覽。
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update - 行為變更</strong>
+> <strong>Windows 10 Fall Creators Update-行為變更</strong>
 > </div>
 > 根據預設，主動式手寫筆現在可在 UWP 應用程式中捲動/移動瀏覽 (例如觸控、觸控板和被動式手寫筆)，而不用選取文字。  
-> 如果您的應用程式取決於先前的行為，您可以覆寫手寫筆捲動並還原回先前的行為。 如需詳細資訊，請參閱 [ <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a>的 API 參考主題。
+> 如果您的應用程式取決於先前的行為，您可以覆寫手寫筆捲動並還原回先前的行為。 如需詳細資訊，請參閱 API 參考主題<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a>。
 
 根據輸入裝置，使用者會透過下列其中一種方式，在可移動瀏覽的區域內移動瀏覽：
 
@@ -94,18 +94,18 @@ ms.locfileid: "8981562"
 
 滑動需要將手指慢慢朝移動瀏覽方向移動。 這會產生一對一關係，內容會依手指移動的速度和距離移動瀏覽。 撥動 (需要快速滑動並提起手指) 會將下列物理作用套用到移動瀏覽動畫：
 
--   減速 (慣性)：提起手指會讓移動瀏覽開始減速。 這類似於在光滑的表面上滑動到停止的現象。
--   吸力：減速時如果到達貼齊點或內容區域界限，移動瀏覽動力會產生輕微的反彈效果。
+-   減速程度 （慣性）：能拿起開始減速移動瀏覽的手指原因。 這類似於在光滑的表面上滑動到停止的現象。
+-   吸收知識：如果到達貼齊點或內容區域界限，則移動期間的減速程度的趨勢電子報會造成些微的退件後生效。
 
-**移動瀏覽的類型**
+**類型的移動瀏覽**
 
-Windows8 支援三種類型的移動瀏覽：
+Windows 8 支援三種類型的移動瀏覽：
 
 -   單軸 - 僅支援一個方向的移動瀏覽 (水平或垂直)。
 -   柵欄 - 支援所有方向的移動瀏覽。 不過，一旦使用者超出某個特定方向的距離閾值，移動瀏覽就會受限於該軸。
 -   任意方向 - 支援所有方向的移動瀏覽。
 
-**移動瀏覽 UI**
+**移動的 UI**
 
 移動瀏覽的互動經驗對輸入裝置都是唯一的，但仍然能提供類似的功能。
 
@@ -116,7 +116,7 @@ Windows8 支援三種類型的移動瀏覽：
 -   觸控時為移動瀏覽指標。
 -   使用其他輸入裝置 (包括滑鼠、觸控板、鍵盤以及手寫筆) 時為捲軸。
 
-**注意：** 移動瀏覽指標是只有在可見時接觸點位於可移動瀏覽的區域。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
+**附註**  觸控 pannable 區域內時，才看得見移動指標。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
 
  
 
@@ -126,8 +126,8 @@ Windows8 支援三種類型的移動瀏覽：
 
 ![顯示兩個長度不同的可移動瀏覽區域及其移動瀏覽指標的影像。](images/scrolling-indicators.png)
 
-**移動瀏覽行為** 
- **貼齊點** 撥動手勢的移動瀏覽，能在提起手指時將慣性行為引入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
+**移動瀏覽行為**
+**貼齊點** 撥動手勢的移動瀏覽，能在提起手指時將慣性行為引入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
 
 貼齊點會指定應用程式內容的邏輯停止點。 貼齊點的作用就像是供使用者使用的分頁機制，將在大型可移動瀏覽區域的過度滑動或撥動減至最低程度。 使用它們即可處理不精確的使用者輸入，確保檢視區中可以顯示特定內容子集或關鍵資訊。
 
@@ -153,7 +153,7 @@ Windows8 支援三種類型的移動瀏覽：
 
 ![畫面中有柵欄限制移動瀏覽範圍的圖表](images/ux-panning-rails.png)
 
-**鏈結內嵌或巢狀的內容**
+**鏈結的內嵌或巢狀內容**
 
 使用者達到元素 (巢狀於其他可縮放或可捲動元素內) 的縮放或捲動限制後，您可以指定父項元素是否應繼續執行由其子元素開始的縮放或捲動作業。 這稱為縮放或捲動「鏈結」。
 
@@ -172,25 +172,25 @@ Windows8 支援三種類型的移動瀏覽：
 ## <a name="related-articles"></a>相關文章
 
 
-* [自訂使用者互動](https://msdn.microsoft.com/library/windows/apps/mt185599)
-* [最佳化 ListView 與 GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
+* [自訂的使用者互動](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [最佳化 ListView 和 GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
 * [鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/mt244347)
 
 **範例**
-* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **封存範例**
-* [輸入：XAML 使用者輸入事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：簡化的筆跡範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [輸入：Windows 8 手勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 觸控輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [輸入：XAML 使用者輸入的事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：觸控的點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：簡化的手寫範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [輸入：Windows 8 筆勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [輸入：操作和手勢 （c + +） 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX 觸控的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

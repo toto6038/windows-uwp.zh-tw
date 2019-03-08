@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, 應用程式安裝程式, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 44e32438034cf09695f313d24055b6ed3c82df0b
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115885"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637103"
 ---
 # <a name="optional-packages-with-executable-code"></a>具可執行程式碼的選用套件
  
@@ -18,16 +18,16 @@ ms.locfileid: "9115885"
 
 ## <a name="prerequisites"></a>必要條件
 - Visual Studio 2017，版本 15.7
-- Windows 10，版本 1709
+- Windows 10 版本 1709
 - Windows 10，版本 1709 SDK
 
 若要取得最新的開發工具，請參閱[適用於 Windows 10 的下載項目與工具](https://developer.microsoft.com/windows/downloads)。 
 
 > [!NOTE]
-> 若要提交使用了選用套件和/或相關集合的 App 至 Microsoft Store，您將需要權限。 如果不提交至市集，可以沒有合作夥伴中心的許可下線 (LOB) 或企業應用程式使用選用套件及相關的集合。 請參閱 [Windows 開發人員支援](https://developer.microsoft.com/windows/support)，以取得提交使用選用套件和相關集合應用程式的權限。
+> 若要提交使用了選用套件和/或相關集合的 App 至 Microsoft Store，您將需要權限。 選擇性的套件和相關的設定可以用於企業營運 (LOB) 或企業應用程式，而不需要合作夥伴中心的權限若不提交至市集。 請參閱 [Windows 開發人員支援](https://developer.microsoft.com/windows/support)，以取得提交使用選用套件和相關集合應用程式的權限。
 
 > [!NOTE]
-> 包含可執行程式碼的選用套件必須是一[組相關](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets)的一部分。 您無法從選用套件執行程式碼，除非它是一組相關的一部分。
+> 選擇性的套件，其中包含可執行程式碼必須屬於[相關設定](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets)。 您無法從選擇性的套件執行程式碼，除非它是一組相關的一部分。
 
 ## <a name="c-optional-packages-with-executable-code"></a>具可執行程式碼的 C++ 選用套件
 
@@ -41,7 +41,7 @@ ms.locfileid: "9115885"
 
 2. 新增**選用的程式碼套件 (Windows 通用)** 專案到解決方案。 確保**最小版本**和**目標版本**符合您的主應用程式。
 
-3. 如果您打算提交 App 到 Microsoft Store，以滑鼠右鍵按一下兩個專案並選取** Microsoft Store -> 關聯 App 與 Microsoft Store...**
+3. 如果您打算提交 App 到 Microsoft Store，以滑鼠右鍵按一下兩個專案並選取 **Microsoft Store -> 關聯 App 與 Microsoft Store...**
 
 4. 開啟主應用程式的 `Package.appxmanifest` 檔案並尋找 `Identity Name` 值。 為下一個步驟記下這個值。
 

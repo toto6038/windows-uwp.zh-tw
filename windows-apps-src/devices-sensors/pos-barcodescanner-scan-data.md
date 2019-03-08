@@ -1,31 +1,31 @@
 ---
 title: 取得並了解條碼資料
-description: 了解如何取得和您掃描條碼資料解譯。
+description: 了解如何取得和解譯您掃描的條碼資料。
 ms.date: 08/29/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ece246ffd369ee21c089598f07b2566424757f55
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934793"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605963"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>取得並了解條碼資料
 
-一旦您設定好您的條碼掃描器，您當然需要了解您掃描的資料的方式。 當您掃描條碼時，會引發[DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived)事件。 這個事件應該訂閱[Claimscannerasyc](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) 。 **DataReceived**事件會傳遞的[BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)物件，您可以用來存取條碼資料。
+一旦您已設定您的條碼掃描器，您必須了解您掃描的資料的方式。 當您掃描的條碼[DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived)就會引發事件。 [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)應該訂閱此事件。 **DataReceived**事件會傳遞[BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)物件，可用來存取條碼資料。
 
 ## <a name="subscribe-to-the-datareceived-event"></a>訂閱 DataReceived 事件
 
-一旦您有**Claimscannerasyc**時，會有其訂閱**DataReceived**事件：
+一旦**ClaimedBarcodeScanner**，讓它訂閱**DataReceived**事件：
 
 ```cs
 claimedBarcodeScanner.DataReceived += ClaimedBarcodeScanner_DataReceived;
 ```
 
-**Claimscannerasyc**和**BarcodeScannerDataReceivedEventArgs**物件，將會被傳遞的事件處理常式。 您可以透過此物件[報告](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report)屬性的類型[BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)存取條碼資料。
+將傳遞的事件處理常式**ClaimedBarcodeScanner**並**BarcodeScannerDataReceivedEventArgs**物件。 您可以透過此物件來存取條碼資料[報表](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report)屬性，這是型別的[BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)。
 
 ```cs
 private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeScannerDataReceivedEventArgs args)
@@ -36,13 +36,13 @@ private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner send
 
 ## <a name="get-the-data"></a>取得資料
 
-一旦您有**BarcodeScannerReport**，您可以存取及剖析條碼資料。 **BarcodeScannerReport**有三個屬性：
+一旦**BarcodeScannerReport**，您可以存取並剖析條碼資料。 **BarcodeScannerReport**有三個屬性：
 
-* [ScanData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata)： 完整、 原始條碼資料。
-* [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel)： 解碼的條碼標籤，這是不包含標頭、 總和檢查碼，與其他資訊。
-* [ScanDataType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype)： 解碼的條碼標籤類型。 可能的值是[BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)類別中定義。
+* [ScanData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata):完整的未經處理的條碼資料。
+* [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel):已解碼的條碼標籤，不包括標頭、 總和檢查碼和其他的其他資訊。
+* [ScanDataType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype):已解碼的條碼標籤型別。 可能的值會定義於[BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)類別。
 
-如果您想要存取**ScanDataLabel**或**ScanDataType**，您必須先設定[IsDecodeDataEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled)設**為 true**。
+如果您想要存取其中一個**ScanDataLabel**或**ScanDataType**，您必須先設定[IsDecodeDataEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled)至**true**。
 
 ```cs
 claimedBarcodeScanner.IsDecodeDataEnabled = true;
@@ -50,7 +50,7 @@ claimedBarcodeScanner.IsDecodeDataEnabled = true;
 
 ### <a name="get-the-scan-data-type"></a>取得掃描的資料類型
 
-取得已解碼的條碼標籤類型，是相當微不足道&mdash;我們只需呼叫[GetName](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname) **ScanDataType**上。
+取得已解碼的條碼標籤型別是相當繁瑣&mdash;只要呼叫[GetName](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)上**ScanDataType**。
 
 ```cs
 private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
@@ -59,9 +59,9 @@ private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
 }
 ```
 
-### <a name="get-the-scan-data-label"></a>取得掃描資料標籤
+### <a name="get-the-scan-data-label"></a>取得掃描的資料標籤
 
-若要取得已解碼的條碼標籤，有幾件事，您必須注意。 只有特定資料類型包含編碼的文字，因此您應該先檢查碼制，可以轉換為字串，及再轉換我們取得從**ScanDataLabel** utf-8 編碼的字串的緩衝區。
+若要取得已解碼的條碼標籤，有幾件事，您一定要留意。 只有特定資料類型會包含已編碼的文字，因此您應該先檢查是否象徵意義可以轉換成字串，，，然後將轉換我們從取得緩衝區**ScanDataLabel**編碼的 utf-8 字串。
 
 ```cs
 private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
@@ -99,9 +99,9 @@ private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
 }
 ```
 
-### <a name="get-the-raw-scan-data"></a>取得原始的掃描資料
+### <a name="get-the-raw-scan-data"></a>取得未經處理的掃描的資料
 
-若要取得完整，原始條碼，從我們只需轉換的資料緩衝區我們取得從**ScanData**轉換為字串。
+若要取得完整的未經處理資料，從條碼，我們只要將轉換我們從取得緩衝區**ScanData**轉換為字串。
 
 ```cs
 private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
@@ -120,23 +120,23 @@ private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
 }
 ```
 
-這些資料的一般情況下，格式為掃描器從已傳送。 郵件標頭和預告片資訊移除，不過，因為它們不包含應用程式的實用資訊，且很可能會掃描器特定。
+這些資料是，在一般情況下，傳遞從掃描器的格式。 訊息標頭和結尾資訊會移除，不過，因為它們不包含應用程式的實用資訊，可能會隨著掃描程式而不同。
 
-常見的標頭資訊是一個前置詞字元 （例如 STX 字元）。 常見的預告片資訊是終止符號字元 （例如 ETX 或 CR 字元） 和區塊核取字元，如果其中一個由掃描器所產生。
+常見的標頭資訊是前置詞字元 （例如 STX 字元）。 常見的結尾資訊是結束字元的字元 （例如 ETX 或 CR 字元） 和區塊檢查字元，如果其中一個產生的掃描器。
 
-如果其中一個傳回的掃描器，這個屬性應包含碼制字元 (例如， **A**適用於 UPC A)。 它是否出現在標籤中，則也應該包含檢查數字，並傳回的掃描器。 （請注意，同時碼制字元及檢查數字可能或可能不會出現，掃描器設定而定。 如果，掃描器會傳回它們呈現，但無法產生或計算它們，如果它們不存在。)
+這個屬性應該包含的象徵意義的字元，如果其中一個由掃描器 (例如**A**的 UPC 的)。 它是否出現在標籤中，則也應該包括檢查位數，並傳回由掃描器。 （請注意，象徵意義的字元和檢查數字可能會或可能不存在，掃描器設定而定。 如果掃描器也會傳回它們存在，但無法產生或計算它們，如果它們不存在。)
 
-某些商品可能會使用補充條碼標示。 這個條碼右側的主要的條碼，通常會放置，且包含其他兩個或五個字元的資訊。 如果掃描器讀取商品，其中包含主要和補充條碼、 補充的字元會附加到主要的字元，且結果都會傳送到應用程式成為一個標籤。 （請注意，掃描器可能會支援的設定，啟用或停用閱讀的補充代碼）。
+某些商品可能已標記與補充的條碼。 此條碼通常會位於主要的條碼，右邊，並且包含其他兩個或五個字元的資訊。 如果掃描器讀取商品，包含主要和補充的條碼，補充字元會附加到主要的字元，而且結果會傳遞到應用程式做為一個標籤。 （請注意，掃描器可能支援的組態，啟用或停用的補充程式碼讀取）。
 
-某些商品可能會有多個標籤，有時也稱為*multisymbol 標籤*或*分層的標籤*標記。 這些條碼通常會垂直排列，可能會有相同或不同的碼制。 如果掃描器讀取商品包含多個標籤，每個條碼都會傳送到應用程式做為個別的標籤。 這是因為目前的這些條碼類型標準化缺少必要。 一個不可以判斷依據個別條碼資料的所有變化。 因此，應用程式必須以判斷當多個標籤條碼已讀取根據傳回的資料。 （請注意，掃描器可能或可能不支援多個標籤中的讀取）。
+某些商品可能會標記為具有多個標籤，有時也稱為*multisymbol 標籤*或是*分層標籤*。 這些條碼通常是垂直排列，而且可能是相同或不同的象徵意義。 如果掃描器可讀取包含多個標籤的商品，每個條碼會傳遞至應用程式做為個別的標籤。 這是因為目前缺乏標準化這些條碼類型的必要。 一個不能夠判斷個別的條碼資料為基礎的所有變化。 因此，應用程式必須判斷當多個標籤條碼讀取根據傳回的資料。 （請注意，掃描器可能或可能不支援讀取多個標籤）。
 
-在**DataReceived**引發事件後的應用程式之前設定此值。
+此值設定為之前**DataReceived**對應用程式引發的事件。
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]
 
 ## <a name="see-also"></a>請參閱
 * [條碼掃描器](pos-barcodescanner.md)
-* [Claimscannerasyc 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
+* [ClaimedBarcodeScanner 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
 * [BarcodeScannerDataReceivedEventArgs 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
 * [BarcodeScannerReport 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)
 * [BarcodeSymbologies 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)

@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP, 定期工作項目, 執行緒, 計時器
 ms.localizationpriority: medium
 ms.openlocfilehash: 05ed3b4bc4fa6dbe1119dca40d22107e94cea576
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981542"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636903"
 ---
 # <a name="create-a-periodic-work-item"></a>建立定期工作項目
 
 
-<b>重要 API</b>
+<b>重要的 Api</b>
 
 -   [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
 -   [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)
@@ -27,11 +27,11 @@ ms.locfileid: "8981542"
 
 使用 [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) 方法來建立定期工作項目。 提供可完成工作的 Lambda，並且使用 *period* 參數指定提交間隔。 期間使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 結構指定。 每次期間過後工作項目就會重新提交，因此請確定期間長度足以完成工作。
 
-[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) 會傳回 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 物件。 請將這個物件儲存起來，以防需要取消計時器。
+[**CreateTimer** ](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx)會傳回[ **ThreadPoolTimer** ](https://msdn.microsoft.com/library/windows/apps/BR230587)物件。 請將這個物件儲存起來，以防需要取消計時器。
 
-> **注意：** 不要指定零值 （或任何小於 1 毫秒的值） 作為間隔。 這會讓定期計時器變得像是單次計時器。
+> **附註**  避免指定的值為零 （或任何值小於一毫秒） 的間隔。 這會讓定期計時器變得像是單次計時器。
 
-> **注意：** 您可以使用[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)來存取 UI 及顯示進度從工作項目。
+> **附註**  您可以使用[ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317)存取 UI，並顯示工作項目中的進度。
 
 下列範例會建立一個每隔 60 秒執行一次的工作項目：
 
@@ -202,7 +202,7 @@ ms.locfileid: "8981542"
 
 ## <a name="related-topics"></a>相關主題
 
-* [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
+* [送出至執行緒集區的工作項目](submit-a-work-item-to-the-thread-pool.md)
 * [使用執行緒集區的最佳做法](best-practices-for-using-the-thread-pool.md)
-* [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)
+* [若要提交的工作項目使用計時器](use-a-timer-to-submit-a-work-item.md)
  

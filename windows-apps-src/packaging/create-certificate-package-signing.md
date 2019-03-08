@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: 963c73bb7667ced5bbe9e33fef0cac561fe1183a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928972"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591543"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>建立套件簽署的憑證
 
@@ -23,7 +23,7 @@ ms.locfileid: "8928972"
 
 ## <a name="prerequisites"></a>必要條件
 
-- **已封裝或未封裝的應用程式**  
+- **封裝或未封裝的應用程式**  
 包含 AppxManifest.xml 檔案的應用程式。 在建立用來簽署最終應用程式套件的憑證時，您會需要參考資訊清單檔。 如需如何手動封裝應用程式的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
 
 - **公開金鑰基礎結構 (PKI) Cmdlet**  
@@ -54,7 +54,7 @@ ms.locfileid: "8928972"
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-執行此命令之後，憑證將會依照 "-CertStoreLocation" 參數新增至本機憑證存放區中。 命令的結果也會產生出憑證指紋。  
+執行此命令之後，憑證將會依照 "-CertStoreLocation" 參數新增至本機憑證存放區中。 命令的結果也會產生憑證的指紋。  
 
 **注意**  
 您可以使用下列命令在 PowerShell 視窗中檢視您的憑證︰
@@ -76,7 +76,7 @@ $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText
 Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
-- **ProtectTo 使用方式**
+- **ProtectTo 使用量**
 ```
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```

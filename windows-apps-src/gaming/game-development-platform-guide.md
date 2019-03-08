@@ -7,24 +7,24 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 技術, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 53616e572be6051d096c095f9587c498b769a6af
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048525"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623303"
 ---
-# <a name="game-technologies-for-uwp-apps"></a>適用於UWP app的遊戲技術
+# <a name="game-technologies-for-uwp-apps"></a>適用於 UWP app 的遊戲技術
 
 
 
 在本指南中，您將深入了解可用於開發通用 Windows 平台 (UWP) 遊戲的技術。
 
-##  <a name="benefits-of-windows10-for-game-development"></a>Windows 10 的遊戲開發優勢
+##  <a name="benefits-of-windows10-for-game-development"></a>Windows 10 的遊戲開發的優點
 
 
-UWP，windows 10 中引進，您的 windows 10 標題將能夠橫跨所有的 Microsoft 平台。 從舊版 Windows 免費移轉，沒有穩定增加 windows 10 用戶端數量。 組合上述兩項，表示您的 windows 10 標題將能夠吸引大量的客戶，透過 Microsoft 網上商店。
+在 Windows 10 UWP 推出之後，您的 Windows 10 項目都將能夠跨越所有 Microsoft 平台。 透過免費從舊版 Windows 移轉，沒有一個穩定地遞增的數字的 Windows 10 用戶端。 這兩個條件的組合表示您的 Windows 10 項目將會無法連線到大量的客戶透過 Microsoft Store。
 
-此外，windows 10 提供了許多對遊戲特別實用的新功能：
+此外，Windows 10 提供許多新功能，更是特別有用的遊戲：
 
 -   減少的記憶體分頁和減少的整體記憶體系統大小
 -   改進的圖形記憶體管理會主動為前景遊戲配置更多的記憶體並提供保護
@@ -32,12 +32,12 @@ UWP，windows 10 中引進，您的 windows 10 標題將能夠橫跨所有的 Mi
 ## <a name="uwp-games-with-c-and-directx"></a>使用 C++ 和 DirectX 的 UWP 遊戲
 
 
-需要高效能的即時遊戲應使用 DirectX API。 DirectX 是原生 API 集合，可供建立需要高效能的遊戲和多媒體應用程式 (例如 3D 遊戲)。
+需要高效能的即時遊戲應使用 DirectX API。 DirectX 是原生 API 集合，可供建立需要高效能的遊戲和多媒體 app (例如 3D 遊戲)。
 
 ## <a name="development-environment"></a>開發環境
 
 
-若要建立 UWP 遊戲，您將需要藉由安裝 Visual Studio 2015 或更新版本，設定您的開發環境。 我們建議您安裝最新版的 Visual Studio 中，讓您能夠存取最新的開發和安全性更新。 Visual Studio 可讓您建立 UWP 應用程式，並提供遊戲開發工具：
+若要建立適用於 UWP 的遊戲，您必須安裝 Visual Studio 2015 或更新版本，設定您的開發環境。 我們建議您安裝最新版的 Visual Studio 中，讓您存取最新的開發和安全性更新。 Visual Studio 可讓您建立 UWP 應用程式，並提供遊戲開發工具：
 
 -   可供 DX 遊戲程式設計的 Visual Studio 工具 - Visual Studio 提供的工具可用來建立、編輯、預覽及匯出影像、模型及著色器資源。 同時還有工具可讓您在建置期間用來轉換資源和偵錯 DirectX 圖形程式碼。 如需詳細資訊，請參閱[使用 Visual Studio 工具進行遊戲程式設計](set-up-visual-studio-for-game-development.md)。
 -   Visual Studio 圖形診斷功能 - 圖形診斷工具目前已在 Windows 內做為選用功能提供。 診斷工具讓您 進行圖形偵錯、圖形框架分析以及即時監視 GPU 使用量。 如需詳細資訊，請參閱[使用 DirectX 執行階段與 Visual Studio 圖形診斷功能](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)。
@@ -77,7 +77,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>Direct3D 12 引進了下一版的 Direct3D，也就是 DirectX 核心的 3D 圖形 API。 相較於舊版 Direct3D，此 Direct3D 版本的設計更快且更有效率。 Direct3D 12 提高速度的缺點是它是較低層級，而且需要您自行管理圖形資源， 還要有更廣泛的圖形程式設計經驗才能實現提高的速度。</p>
     <p><strong>使用時機</strong></p>
     <p>當您需要將遊戲效能最大化且您的遊戲佔用龐大 CPU 資源時，請使用 Direct3D 12。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/dn899121">Direct3d 12</a> 文件。</p></td>
     </tr>
     <tr class="even">
@@ -85,7 +85,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>Direct3D 11 是舊版的 Direct3D，可讓您 使用高於 D3D 12 的硬體抽象層級建立 3D 圖形。</p>
     <p><strong>使用時機</strong></p>
     <p>如果您有現有的 Direct3D 11 程式碼、您的遊戲沒有佔用龐大 CPU 資源，或您想要擁有為您管理資源的優勢，請使用 Direct3D 11。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/ff476080">Direct3D 11</a> 文件。</p></td>
     </tr>
     </tbody>
@@ -112,7 +112,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>Direct2D 是一種硬體加速的即時模式 2D 圖形 API，能夠以高效能和高品質來呈現 2D 幾何、點陣圖和文字。 Direct2D API 是以 Direct3D 為建置基礎，設計用來與 GDI、GDI+ 和 Direct3D 交互操作。</p>
     <p><strong>使用時機</strong></p>
     <p>Direct2D (而非 Direct3D) 可用於提供純 2D 遊戲的圖形，例如側捲動或棋盤遊戲，或可搭配 Direct3D 使用來簡化在 3D 遊戲中建立 2D 圖形，例如使用者介面或抬頭顯示器。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/dd370990">Direct2D</a> 文件。</p></td>
     </tr>
     <tr class="even">
@@ -120,7 +120,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>DirectWrite 提供其他處理文字的功能，並可搭配 Direct3D 與 Direct2D 使用， 以提供使用者介面或其他需要文字之區域的文字輸出。 DirectWrite 支援多格式文字的測量、繪圖和點擊測試。 DirectWrite 可使用全域和當地語系化應用程式的所有支援語言來處理文字。 DirectWrite 也提供低階字符轉譯 API，適用於想要執行自己的版面配置和 Unicode 對字符處理的開發人員。</p>
     <p><strong>使用時機</strong></p>
     <p></p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/dd368038">DirectWrite</a> 文件。</p></td>
     </tr>
     <tr class="odd">
@@ -128,7 +128,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>DirectComposition 是一個 Windows 元件，能夠利用轉換、效果和動畫來產生高效能的 點陣圖組合。 應用程式開發人員可以使用 DirectComposition API 來建立視覺上吸引人的使用者介面，以提供豐富和流暢的動畫轉換 (從一種視覺效果轉換成另一種視覺效果)。</p>
     <p><strong>使用時機</strong></p>
     <p>DirectComposition 設計用來簡化撰寫視覺效果及建立動畫轉換的程序。 如果您的遊戲需要複雜的使用者介面，您可以使用 DirectComposition 來簡化 UI 的建立和管理。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371">DirectComposition</a> 文件。</p></td>
     </tr>
     </tbody>
@@ -146,7 +146,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <thead>
     <tr class="header">
     <th align="left">API</th>
-    <th align="left">說明</th>
+    <th align="left">描述</th>
     </tr>
     </thead>
     <tbody>
@@ -155,7 +155,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>XAudio2 是低階的音訊 API，可提供訊號處理和混音基礎。 XAudio 的設計對遊戲音訊引擎非常敏感， 而且還能夠建立自訂音訊效果以及複雜的音訊效果和篩選器鏈結。</p>
     <p><strong>使用時機</strong></p>
     <p>當您的遊戲需要以最低的負荷和延遲來播放音效時，請使用 XAudio2。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/hh405049">XAudio2</a> 文件。</p></td>
     </tr>
     <tr class="even">
@@ -163,7 +163,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>Microsoft 媒體基礎是設計來播放音訊和視訊的媒體檔案和串流，但需要高於 XAudio2 的功能層級並可接受一些額外的負荷時，也可以在遊戲中使用。</p>
     <p><strong>使用時機</strong></p>
     <p>媒體基礎對於遊戲中的電影場景或非互動式元件特別實用。 媒體基礎也很適合用於解碼音訊檔案以便使用 XAudio2 播放。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/ms694197">Microsoft 媒體基礎</a>概觀。</p></td>
     </tr>
     </tbody>
@@ -190,7 +190,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>XInput 遊戲控制器 API 可讓應用程式接收遊戲控制器的輸入。</p>
     <p><strong>使用時機</strong></p>
     <p>如果您的遊戲需要支援 gampad 輸入，而且您有現有的 XInput 程式碼，即可繼續使用 XInput。 UWP 的 Windows.Gaming.Input 已取代 XInput，而如果您正在撰寫新的輸入程式碼，則應該使用 Windows.Gaming.Input 而不是 XInput。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/hh405053">XInput</a> 文件。</p></td>
     </tr>
     <tr class="even">
@@ -199,14 +199,14 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <ul>
     <li>較低的資源使用量</li>
     <li>可供擷取輸入的較低 API 呼叫延遲</li>
-    <li>能夠一次處理 4 個以上的遊戲台</li>
+    <li>能夠一次處理 4 個以上的遊戲板</li>
     <li>能夠存取其他 Xbox One 遊戲台功能，例如觸發程序震動馬達</li>
     <li>能夠在控制器透過事件 (而非輪詢) 連線/中斷連線時收到通知</li>
     <li>能夠將輸入歸屬於特定使用者 (Windows.System.User)</li>
     </ul>
     <p><strong>使用時機</strong></p>
     <p>如果您的遊戲需要支援遊戲板輸入但不是使用現有的 XInput 程式碼或您需要以上所列的其中一個優勢，則應使用 Windows.Gaming.Input。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/apps/dn707817">Windows.Gaming.Input</a> 文件。</p></td>
     </tr>
     <tr class="odd">
@@ -214,7 +214,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>Windows.UI.Core.CoreWindow 類別提供的事件可用於追蹤按下指標和移動、按下和放開按鍵事件。</p>
     <p><strong>使用時機</strong></p>
     <p>當您需要追蹤您遊戲中的按下滑鼠或按鍵時，請使用 Windows.UI.Core.CoreWindows 事件。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>如需在您的遊戲中使用滑鼠或鍵盤的詳細資訊，請參閱<a href="https://docs.microsoft.com/windows/uwp/gaming/tutorial--adding-move-look-controls-to-your-directx-game">適用於遊戲的移動視角控制項</a>。</p></td>
     </tr>
     </tbody>
@@ -241,7 +241,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>DirectXMath API 針對遊戲常用的一般線性代數和圖形數學運算，提供適用於 SIMD 架構的 C++ 類型和函式。</p>
     <p><strong>使用時機</strong></p>
     <p>使用 DirectXMath 是選擇性的，可簡化一般數學運算。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/hh437833">DirectXMath</a> 文件。</p></td>
     </tr>
     </tbody>
@@ -259,7 +259,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <thead>
     <tr class="header">
     <th align="left">API</th>
-    <th align="left">說明</th>
+    <th align="left">描述</th>
     </tr>
     </thead>
     <tbody>
@@ -268,7 +268,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>Windows.Networking.Sockets 命名空間提供的 TCP 與 UDP 通訊端可允許可靠或不可靠的網路通訊。</p>
     <p><strong>使用時機</strong></p>
     <p>如果您的遊戲需要透過網路與其他電腦或裝置通訊，請使用 Windows.Networking.Sockets。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱<a href="https://docs.microsoft.com/windows/uwp/gaming/work-with-networking-in-your-directx-game">在您的遊戲中使用網路功能</a>。</p></td>
     </tr>
     <tr class="even">
@@ -276,7 +276,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>Windows.Web.HTTP 命名空間提供對 HTTP 伺服器的可靠連線，可用來存取網站。</p>
     <p><strong>使用時機</strong></p>
     <p>當您的遊戲需要存取網站才能抓取或儲存資訊時，請使用 Windows.Web.HTTP。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱<a href="https://docs.microsoft.com/windows/uwp/gaming/work-with-networking-in-your-directx-game">在您的遊戲中使用網路功能</a>。</p></td>
     </tr>
     </tbody>
@@ -293,8 +293,8 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">程式庫</th>
-    <th align="left">說明</th>
+    <th align="left">Library</th>
+    <th align="left">描述</th>
     </tr>
     </thead>
     <tbody>
@@ -303,7 +303,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>DirectX 工具組 (DirectXTK) 是協助程式類別集合，可供以 C++ 撰寫 DirectX 11.x 程式碼。</p>
     <p><strong>使用時機</strong></p>
     <p>如果您是尋找舊版 D3DX 公用程式程式碼的新式替代程式碼的 C++ 開發人員，或您是轉換到原生 C++ 的 XNA Game Studio 開發人員，請使用 DirectX 工具組。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 DirectX 工具套件專案頁面：<a href="https://github.com/Microsoft/DirectXTK">https://github.com/Microsoft/DirectXTK</a>。</p></td>
     </tr>
     <tr class="even">
@@ -311,7 +311,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left"><p>Win2D 是方便使用的 Windows 執行階段 API，適用於直接模式 2D 圖形轉譯。</p>
     <p><strong>使用時機</strong></p>
     <p>如果您是 C++ 開發人員並想要適用於 Direct2D 和 DirectWrite 且更易於使用的 WinRT 包裝函式，或您是想要使用 Direct2D 和 DirectWrite 的 C# 開發人員，請使用 Win2D。</p>
-    <p><strong>其他資訊</strong></p>
+    <p><strong>如需詳細資訊</strong></p>
     <p>請參閱 Win2D 專案頁面：<a href="https://github.com/Microsoft/Win2D">https://github.com/Microsoft/Win2D</a>。</p></td>
     </tr>
     </tbody>
@@ -321,7 +321,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
 
 ## <a name="xbox-live-services"></a>Xbox Live 服務
 
-[Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator)允許任何開發人員將 Xbox Live 整合至其 UWP 遊戲並發佈到 Xbox One 和 windows 10。 用最少的開發時間，將 Xbox Live 社交體驗 (例如登入、顯示線上狀態、排行榜等) 整合到您的遊戲中。 Xbox Live 社交功能的設計旨在自然地逐漸擴大您的目標客群，向超過 5 千 5 百萬戶的使用中玩家展開宣傳。
+[Xbox Live 創作者計劃](https://developer.microsoft.com/games/xbox/xboxlive/creator)可讓任何開發人員整合 Xbox Live 及其 UWP 遊戲，並發行到 Xbox One 和 Windows 10。 用最少的開發時間，將 Xbox Live 社交體驗 (例如登入、顯示線上狀態、排行榜等) 整合到您的遊戲中。 Xbox Live 社交功能的設計旨在自然地逐漸擴大您的目標客群，向超過 5 千 5 百萬戶的使用中玩家展開宣傳。
 
 如果您想要存取其他 Xbox Live 功能、專用的行銷和開發支援，以及有機會獲得主要 Xbox One 市集的推薦，您可以申請加入 [ID@Xbox](https://www.xbox.com/developers/id) 計畫。 若要了解哪些功能適用於 Xbox Live 創作者計畫與 ID@Xbox 計畫，請參閱[功能表格](../xbox-live/developer-program-overview.md#feature-table)。
 
@@ -332,7 +332,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
 
 ### <a name="uwp-games-without-directx"></a>不使用 DirectX 的 UWP 遊戲
 
-不需 DirectX 即可撰寫最低效能需求的較簡單遊戲 (例如撲克牌遊戲或棋盤遊戲)，而不需使用 C++ 撰寫。 這幾種遊戲可使用 UWP 支援的任何語言，例如 C#、Visual Basic、C++ 和 HTML/JavaScript。 如果您的遊戲不需要效能與大量的圖形，請參閱 [JavaScript 與 HTML5 觸控遊戲範例](https://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)做為參考。
+不需 DirectX 即可撰寫最低效能需求的較簡單遊戲 (例如撲克牌遊戲或棋盤遊戲)，而不需使用 C++ 撰寫。 這幾種遊戲可使用 UWP 支援的任何語言，例如 C#、Visual Basic、C++ 和 HTML/JavaScript 。 如果您的遊戲不需要效能與大量的圖形，請參閱 [JavaScript 與 HTML5 觸控遊戲範例](https://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)做為參考。
 
 ### <a name="game-engines"></a>遊戲引擎
 
@@ -345,7 +345,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
 -   人工智慧和路徑搜尋引擎 - AI 和路徑搜尋引擎提供的架構可用於控制您遊戲中的代理程式行為。
 -   特殊用途引擎 - 另外還有各種不同的引擎，幾乎可讓您處理可能遇到的任何遊戲開發相關工作，例如建立清查系統與對話方塊樹狀結構。
 
-## <a name="submitting-a-game-to-the-store"></a>將遊戲提交至 Microsoft Store
+## <a name="submitting-a-game-to-the-store"></a>將遊戲提交至市集
 
 
 一旦準備好發佈您的遊戲，您就需要建立開發人員帳戶並將遊戲提交至 Microsoft Store。

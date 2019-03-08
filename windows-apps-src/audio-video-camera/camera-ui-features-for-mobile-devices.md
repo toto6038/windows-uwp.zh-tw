@@ -6,14 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bf27de9c9b1bce2b35918b2a9d1357d2f3ba20b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0c0da215cad867a498527b475422c4026cc65ce3
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942864"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640693"
 ---
-#<a name="camera-ui-features-for-mobile-devices"></a>適用於行動裝置的相機 UI 功能
+# <a name="camera-ui-features-for-mobile-devices"></a>適用於行動裝置的相機 UI 功能
 
 本文示範如何利用只會出現在行動裝置上的特殊相機 UI 功能。 
 
@@ -21,13 +21,13 @@ ms.locfileid: "8942864"
 
 若要使用這些功能，您必須將 Microsoft Mobile Extension SDK for Universal App Platform 的參照新增到您的專案。
 
-**新增硬體相機按鈕支援的行動擴充功能 SDK 的參照**
+**若要加入硬體相機按鈕支援的行動裝置擴充功能 SDK 參考**
 
-1.  在 **\[方案總管\]** 中的 **\[參照\]** 上按一下滑鼠右鍵，然後選取 **\[加入參照\]**。
+1.  在 [方案總管] 中的 [參照] 上按一下滑鼠右鍵，然後選取 [加入參照]。
 
-2.  展開 **\[Windows 通用\]** 節點，然後選取 **\[擴充功能\]**。
+2.  展開 [Windows 通用] 節點，然後選取 [擴充功能]。
 
-3.  選取 **\[Microsoft Mobile Extension SDK for Universal App Platform\]** 核取方塊。
+3.  選取 [Microsoft Mobile Extension SDK for Universal App Platform] 核取方塊。
 
 ## <a name="hide-the-status-bar"></a>隱藏狀態列
 
@@ -58,7 +58,7 @@ ms.locfileid: "8942864"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 
 
 

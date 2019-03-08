@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, OpenGL, Direct3D 11
 ms.localizationpriority: medium
 ms.openlocfilehash: e3b86054048aaa6aa80f37f66ebc57ab9b8e6b50
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939303"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644073"
 ---
 # <a name="opengl-es-20-to-direct3d-11-reference"></a>從 OpenGL ES 2.0 到 Direct3D 11 的參考
 
@@ -27,12 +27,12 @@ ms.locfileid: "8939303"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="glsl-to-hlsl-reference.md">GLSL-to-HLSL 參考</a></p></td>
+<td align="left"><p><a href="glsl-to-hlsl-reference.md">GLSL-HLSL 參考</a></p></td>
 <td align="left"><p>當您<a href="port-from-opengl-es-2-0-to-directx-11-1.md">將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 11</a> 以建立通用 Windows 平台 (UWP) 遊戲時，也必須將 OpenGL 著色器語言 (GLSL) 程式碼移植到 Microsoft 高階著色器語言 (HLSL) 程式碼。</p></td>
 </tr>
 </tbody>

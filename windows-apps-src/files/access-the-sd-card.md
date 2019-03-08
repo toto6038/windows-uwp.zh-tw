@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, sd 記憶卡, 儲存空間
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931611"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625513"
 ---
 # <a name="access-the-sd-card"></a>存取 SD 記憶卡
 
@@ -23,7 +23,7 @@ ms.locfileid: "8931611"
 
 您可以藉由使用下列方法，在選用的 SD 記憶卡上儲存和存取檔案：
 - 檔案選擇器。
-- [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
+- [  **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
 
 ## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>SD 記憶卡上可存取和不可存取的項目
 
@@ -62,9 +62,9 @@ ms.locfileid: "8931611"
 
 ### <a name="getting-a-reference-to-the-sd-card"></a>取得 SD 記憶卡的參照
 
-[**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 資料夾是目前與裝置連接之一組卸除式裝置的邏輯根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果有 SD 記憶卡，**KnownFolders.RemovableDevices** 資料夾下的第一個 (也是唯一一個) **StorageFolder** 代表 SD 記憶卡。
+[  **KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 資料夾是目前與裝置連接之一組卸除式裝置的邏輯根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果有 SD 記憶卡，**KnownFolders.RemovableDevices** 資料夾下的第一個 (也是唯一一個) **StorageFolder** 代表 SD 記憶卡。
 
-使用與下面類似的程式碼，判斷是否有 SD 記憶卡，並取得其參照做為 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。
+使用與下面類似的程式碼，判斷是否有 SD 記憶卡，並取得它的參照當做 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。
 
 ```csharp
 using Windows.Storage;
@@ -98,7 +98,7 @@ SD 記憶卡可能包含許多無法被辨識為已知資料夾，也無法使�
 
 當您使用衍生自 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 的路徑來存取 SD 記憶卡上的檔案系統時，下列方法會以下列方式運作。
 
--   [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法會傳回一個聯集，這個聯集是由您登錄為可處理的副檔名以及與您已指定之任何媒體櫃功能關聯的副檔名所組成。
+-   [  **GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法會傳回一個聯集，這個聯集是由您登錄為可處理的副檔名以及與您已指定之任何媒體櫃功能關聯的副檔名所組成。
 -   如果您尚未將您嘗試存取之檔案的副檔名登錄為可處理，[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) 方法將會失敗。
 
 ## <a name="identifying-the-individual-sd-card"></a>識別個別的 SD 記憶卡
