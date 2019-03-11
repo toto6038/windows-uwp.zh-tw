@@ -1,26 +1,26 @@
 ---
 ms.assetid: ''
 description: 顯示如何在 UWP app 中錄製遊戲音訊、影片和元資料。
-title: 擷取遊戲音訊、影片、螢幕擷取畫面和元資料
+title: 擷取遊戲音訊、影片、螢幕擷取畫面和中繼資料
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, 遊戲, 擷取, 音訊, 影片, 元資料
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921830"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601933"
 ---
-# <a name="capture-game-audio-video-screenshots-and-metadata"></a>擷取遊戲音訊、元資料、螢幕擷取畫面和元資料
+# <a name="capture-game-audio-video-screenshots-and-metadata"></a>擷取遊戲音訊、影片、螢幕擷取畫面和中繼資料
 本文說明如何擷取遊戲影片、音訊和螢幕擷取畫面，以及如何提交系統將會嵌入所擷取和廣播的媒體中的元資料，讓您的 App 和其他人可建立與遊戲活動同步的動態遊戲體驗。 
 
 有兩種不同方式可在 UWP app 中擷取遊戲。 使用者可以使用內建的系統 UI 起始擷取。 使用這項技術擷取的媒體會內嵌到 Microsoft 電競生態系統，可以進行檢視和透過諸如 XBox 應用程式的第一方體驗進行分享，並且您的 App 或使用者無法直接使用。 本文的第一節顯示如何啟用和停用系統實作的 App 擷取，以及如何在 App 擷取開始或停止時接收通知。
 
 擷取媒體的其他方式是使用 **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** 命名空間的 API。 如果在裝置上啟用擷取，您的 App 可以開始擷取遊戲，然後在經過一段時間後，您可以停止擷取，此時媒體會寫入檔案。 如果使用者已啟用歷史擷取，您也可以錄製已經發生的遊戲，只要指定過去的開始時間和要錄製的持續時間即可。 這兩種技術都會產生您的 App 和使用者可以存取的影片檔案，並根據您選擇的位置儲存檔案。 本文的中間章節會帶領您實作這些案例。
 
-**[Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.capture)** 命名空間提供 API，用於建立描述將擷取或廣播之遊戲的元資料。 這可包含文字或數值，還有識別每個資料項目的文字標籤。 元資料可以代表單一時刻發生的「事件」，例如在使用者完成賽車遊戲的一圈時，或者也可以代表持續一段時間的「狀態」，例如目前使用者正在玩的遊戲中的地圖。 元資料是寫入快取中，而快取則是由系統為您的 App 進行配置和管理。 元資料是內嵌到廣播串流及擷取的影片檔案中，同時包括內建的系統擷取或自訂的 App 擷取技術。 本文的最後一節顯示如何撰寫遊戲元資料。
+ **[Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.capture)** 命名空間提供 API，用於建立描述將擷取或廣播之遊戲的元資料。 這可包含文字或數值，還有識別每個資料項目的文字標籤。 元資料可以代表單一時刻發生的「事件」，例如在使用者完成賽車遊戲的一圈時，或者也可以代表持續一段時間的「狀態」，例如目前使用者正在玩的遊戲中的地圖。 元資料是寫入快取中，而快取則是由系統為您的 App 進行配置和管理。 元資料是內嵌到廣播串流及擷取的影片檔案中，同時包括內建的系統擷取或自訂的 App 擷取技術。 本文的最後一節顯示如何撰寫遊戲元資料。
 
 > [!NOTE] 
 > 因為遊戲元資料可內嵌到可能透過網路共用的媒體檔案，使用者無法加以控制，所以不應在元資料中包含可識別個人的資訊或其他潛在的敏感資料。
@@ -49,15 +49,15 @@ ms.locfileid: "8921830"
 1. 在 Visual Studio 中，請在 **\[方案總管\]** 中展開 UWP 專案，以滑鼠右鍵按一下 **\[參考\]**，然後選取 **\[加入參考...\]**。 
 2. 展開 **\[通用 Windows\]** 節點，然後選取 **\[延伸\]**。
 3. 在延伸清單中，核取符合您專案的目標組建的 **\[UWP 的 Windows 桌面延伸\]** 項目旁的核取方塊。 若是 App 的廣播功能，版本必須是 1709 或以上。
-4. 按一下 **\[確定\]**。
+4. 按一下 [確定] 。
 
 ## <a name="get-an-instance-of-apprecordingmanager"></a>取得 AppRecordingManager 的執行個體
-**[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** 類別是您將用來管理 App 錄製的中央 API。 透過呼叫 Factory 方法 **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** 取得的此類別的執行個體。 使用 **Windows.Media.AppRecording** 命名空間中的任何 API 之前，應該檢查其是否存在於目前的裝置上。 API 在執行 Windows 10 版本 1709 之前的作業系統版本的裝置上無法使用。 與其檢查特定的作業系統版本，不如使用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法來查詢 *Windows.Media.AppBroadcasting.AppRecordingContract* 1.0 版。 如果有此協定，則可在裝置上錄製 API。 本文中的範例程式碼會檢查一次 API，然後在進行後續作業之前檢查 **AppRecordingManager** 是否為 null。
+ **[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** 類別是您將用來管理 App 錄製的中央 API。 透過呼叫 Factory 方法 **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** 取得的此類別的執行個體。 使用 **Windows.Media.AppRecording** 命名空間中的任何 API 之前，應該檢查其是否存在於目前的裝置上。 API 在執行 Windows 10 版本 1709 之前的作業系統版本的裝置上無法使用。 與其檢查特定的作業系統版本，不如使用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法來查詢 *Windows.Media.AppBroadcasting.AppRecordingContract* 1.0 版。 如果有此協定，則可在裝置上錄製 API。 本文中的範例程式碼會檢查一次 API，然後在進行後續作業之前檢查 **AppRecordingManager** 是否為 null。
 
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## <a name="determine-if-your-app-can-currently-record"></a>判斷您的 App 目前是否可以錄製
-有幾個原因您的 App 可能目前無法擷取音訊或影片，包括目前的裝置是否不符合錄製的硬體需求，或者其他 App 目前正在廣播中。 在起始錄製之前，您可以檢查您的 App 是否目前無法錄製。 呼叫 **AppRecordingManager** 物件的 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然後檢查傳回之 **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** 物件的 **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 屬性。 如果**CanRecord**傳回**false**，這表示您的 app 目前無法錄製，您可以檢查**[詳細資料](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 屬性，以判定原因。 根據原因而定，您可能想要對使用者顯示狀態，或顯示啟用 App 錄製的指示。
+有幾個原因您的 App 可能目前無法擷取音訊或影片，包括目前的裝置是否不符合錄製的硬體需求，或者其他 App 目前正在廣播中。 在起始錄製之前，您可以檢查您的 App 是否目前無法錄製。 呼叫 **AppRecordingManager** 物件的 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然後檢查傳回之 **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** 物件的 **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 屬性。 如果**CanRecord**會傳回**false**，這表示您的應用程式無法目前記錄，您可以檢查**[詳細資料](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 屬性來判斷原因。 根據原因而定，您可能想要對使用者顯示狀態，或顯示啟用 App 錄製的指示。
 
 
 
@@ -97,7 +97,7 @@ ms.locfileid: "8921830"
 [!code-cpp[CallRecordTimeSpanToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCallRecordTimeSpanToFile)]
 
 ## <a name="save-screenshot-images-to-files"></a>儲存螢幕擷取畫面的影像到檔案
-您的 App 可以起始螢幕擷取畫面的擷取，將 App 視窗的目前內容儲存到一個影像檔或到不同影像編碼的多個影像檔。 若要指定您想要使用的影像編碼，請建立一份字串清單，其中每個字串代表一種影像類型。 **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** 的屬性為每一種支援的影像類型 (例如 **MediaEncodingSubtypes.Png** 或 **MediaEncodingSubtypes.JpegXr**) 提供正確的字串。
+您的 App 可以起始螢幕擷取畫面的擷取，將 App 視窗的目前內容儲存到一個影像檔或到不同影像編碼的多個影像檔。 若要指定您想要使用的影像編碼，請建立一份字串清單，其中每個字串代表一種影像類型。  **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** 的屬性為每一種支援的影像類型 (例如 **MediaEncodingSubtypes.Png** 或 **MediaEncodingSubtypes.JpegXr**) 提供正確的字串。
 
 透過呼叫 **AppRecordingManager** 物件的 **[SaveScreenshotToFilesAsync](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.savescreenshottofilesasync)** 方法，來起始螢幕擷取。 此方法的第一個參數是 **StorageFolder**，影像檔案將會儲存在其中。 第二個參數是檔案名稱前置詞，系統將為每種儲存的影像類型附加副檔名，例如「.png」。
 
@@ -143,7 +143,7 @@ ms.locfileid: "8921830"
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>管理元資料快取儲存空間的限制
-您使用 **AppCaptureMetadataWriter** 撰寫的元資料，會由系統快取直到其寫入相關聯的媒體串流。 系統會定義每個 App 元資料快取的大小限制。 一旦達到快取的大小限制，系統會開始清除快取的元資料。 系統將會刪除撰寫**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 優先順序值之前先刪除**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 優先順序的中繼資料的中繼資料。
+您使用 **AppCaptureMetadataWriter** 撰寫的元資料，會由系統快取直到其寫入相關聯的媒體串流。 系統會定義每個 App 元資料快取的大小限制。 一旦達到快取的大小限制，系統會開始清除快取的元資料。 系統將會刪除中繼資料，以撰寫**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 刪除中繼資料與之前的優先順序值**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 優先順序。
 
 任何時候，您都可以透過呼叫 **[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)** 來查看您的 App 元資料快取中可用的位元組數。 您可以選擇設定您自己的 App 定義的閾值，之後您可以選擇減少要寫入快取的元資料量。 下列範例顯示此模式的簡單實作。
 
@@ -152,7 +152,7 @@ ms.locfileid: "8921830"
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>當系統清除元資料時收到通知
-您可以註冊在系統開始清除您的應用程式的中繼資料登錄**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件的處理常式時收到通知。
+您可以註冊要收到通知，系統會開始清除您的應用程式的中繼資料所註冊的處理常式時**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件。
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 

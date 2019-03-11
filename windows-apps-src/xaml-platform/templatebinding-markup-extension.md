@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940107"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661803"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 標記延伸
 
@@ -31,7 +31,7 @@ ms.locfileid: "8940107"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
 | propertyName | 正在 setter 語法中設定的屬性的名稱。 必須是相依性屬性。 |
 | sourceProperty | 存在於範本化類型中其他相依性屬性的名稱。 |
@@ -40,9 +40,9 @@ ms.locfileid: "8940107"
 
 不論您是一個自訂控制項作者，還是要取代現有控制項的控制項範本，定義控制項範本的方法時，使用 **TemplateBinding** 是相當基礎的一個部分。 如需詳細資訊，請參閱[快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
 
-讓 *propertyName* 與 *targetProperty* 使用相同的屬性名稱是相當常見的做法。 在這個情況下，控制項可以在本身定義一個屬性，然後將該屬性轉送到它的其中一個元件部分的現有直覺式具名屬性。 例如，組合中併入 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的控制項 (用來顯示控制項擁有的 **Text** 屬性) 可能會包含這個 XAML 以做為控制項範本的一部分： `<TextBlock Text="{TemplateBinding Text}" .... />`
+讓 *propertyName* 與 *targetProperty* 使用相同的屬性名稱是相當常見的做法。 在這個情況下，控制項可以在本身定義一個屬性，然後將該屬性轉送到它的其中一個元件部分的現有直覺式具名屬性。 例如，控制項，其中包含[ **TextBlock** ](https://msdn.microsoft.com/library/windows/apps/br209652)中其複合 （compositing），這用來顯示控制項所擁有**文字**屬性，可能會包含在此 XAML在 [控制項] 範本中： `<TextBlock Text="{TemplateBinding Text}" .... />`
 
-用來做為來源屬性值和目標屬性值的類型必須相符。 當您正在使用 **TemplateBinding** 時，沒有機會可以引入轉換器。 這樣在剖析 XAML 時會因為無法比對值而產生錯誤。 如果您需要轉換器，可以針對範本繫結使用動詞語法，例如： `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
+用來做為來源屬性值和目標屬性值的類型必須相符。 當您正在使用 **TemplateBinding** 時，沒有機會可以引入轉換器。 這樣在剖析 XAML 時會因為無法比對值而產生錯誤。 如果您需要轉換程式您可以使用詳細的語法，範本繫結，例如： `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
 
 嘗試在 XAML 中的 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定義之外使用 **TemplateBinding** 會導致剖析器錯誤。
 
@@ -52,20 +52,20 @@ ms.locfileid: "8940107"
 
 **TemplateBinding** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用「{」和「}」字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
 
-**注意：** 在 Windows 執行階段 XAML 處理器實作中，沒有**TemplateBinding**的支援類別表示法。 **TemplateBinding** 僅限在 XAML 標記中使用。 並沒有一個直接的方式可以在程式碼中重現行為。
+**附註**  在 Windows 執行階段 XAML 處理器實作中，針對沒有支援類別表示法**TemplateBinding**。 **TemplateBinding** 僅限在 XAML 標記中使用。 並沒有一個直接的方式可以在程式碼中重現行為。
 
-### <a name="xbind-in-controltemplate"></a>X:bind ControlTemplate 中
+### <a name="xbind-in-controltemplate"></a>在 ControlTemplate 中的 x： 繫結
 
 > [!NOTE]
-> ControlTemplate 中使用 X:bind，需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 在 ControlTemplate 中使用 x： 繫結需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-從 Windows 10 版本 1809，您可以使用**X:bind**標記延伸任何使用**TemplateBinding** [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中。 
+從 Windows 10 版本 1809，您可以使用**X:bind**標記延伸任何使用**TemplateBinding**中[ **ControlTemplate** ](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
-[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)屬性必要屬性 （不是選用的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**時。
+[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)屬性必要屬性 （不是選擇性的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用時**X:bind**。
 
-您可以使用**X:bind**支援這兩個[函式繫結](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中的良好為雙向繫結。
+具有**X:bind**支援，您可以同時使用[函式繫結](../data-binding/function-bindings.md)中的雙向繫結以及[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)。
 
-在此範例中， **TextBlock.Text**屬性評估**Button.Content.ToString**。 ControlTemplate 上的 TargetType 做為資料來源，並達到目標與父項 TemplateBinding 相同的結果。
+在此範例中， **TextBlock.Text**屬性評估為**Button.Content.ToString**。 在 ControlTemplate TargetType 做為資料來源，並完成與 TemplateBinding 至上一層相同的結果。
 
 ```xaml
 <ControlTemplate TargetType="Button">

@@ -4,11 +4,11 @@ title: 做為物件的內容
 template: detail.hbs
 ms.localizationpriority: medium
 ms.openlocfilehash: ed2ac8530d69929cc0e0e921cfb1cc5368058cd2
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981442"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593113"
 ---
 # <a name="content-as-objects"></a>做為物件的內容
 
@@ -16,7 +16,7 @@ ms.locfileid: "8981442"
 
 您可以操控元素的深度，或圖層順序，建立視覺階層，其協助有助於您更容易使用應用程式。  
 
-> 注意：本文是針對 Windows 10 RS2 的新功能所撰寫的早期草稿。 功能名稱、詞彙和功能並非最終版本。 
+> 注意：這篇文章是針對 Windows 10 RS2 新功能的早期草稿。 功能名稱、詞彙和功能尚未定案。 
 
 ## <a name="why-visual-hierarchy-is-important"></a>視覺階層很重要的原因
 
@@ -35,7 +35,7 @@ ms.locfileid: "8981442"
   <p>因此，該如何建立清楚的視覺階層呢？ 使用較舊的 Windows 10 版本，您可以使用空格、位置及印刷樣式來定義視覺階層。 </p>
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/flat-layout.png">一般版面配置</a>
+    <a href="images/content-as-objects/flat-layout.png">一般的版面配置</a>
     
   </div>
 </div>
@@ -43,7 +43,7 @@ ms.locfileid: "8981442"
 
 使用 Windows 10 RS2，我們實際上新增另一個維度：深度。 
 
-<a href="images/content-as-objects/depth-in-layout2.png">版面配置的深度</a>
+<a href="images/content-as-objects/depth-in-layout2.png">在配置中的深度</a>
 
 
 ## <a name="use-depth-to-establish-a-hierarchy"></a>使用深度建立階層 
@@ -59,14 +59,14 @@ ms.locfileid: "8981442"
     </p>
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">版面配置的深度</a> 
+    <a href="images/content-as-objects/elements-forward-backward.png">在配置中的深度</a> 
     
   </div>
 </div>
 </div>
 
 ## <a name="how-does-it-work"></a>它如何運作？
-> TODO：簡短描述您如何控制元素的圖層順序。 您明確的硬式編碼圖層順序，或是否有語意排名系統？ 項目如何從一層移動到另一層？ 系統會自動執行什麼，以及設計人員/開發人員需要擔心什麼？ 
+> TODO:簡短描述如何控制疊置順序的項目。 您明確的硬式編碼圖層順序，或是否有語意排名系統？ 項目如何從一層移動到另一層？ 系統會自動執行什麼，以及設計人員/開發人員需要擔心什麼？ 
 
 ## <a name="the-four-layers-of-a-typical-app-layers"></a>一般應用程式層級的四個層級
 
@@ -76,12 +76,12 @@ ms.locfileid: "8981442"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>背景以外</b>這個層級應用程式的後面。  當元素移到這個層級時，我們建議讓它們成為非互動式。 在這個層級的元素有最慢的視差且裁剪至應用程式視窗。 TODO：這個層級會縮放嗎？ 
+<b>超過背景</b>位於應用程式背後的這一層。  當元素移到這個層級時，我們建議讓它們成為非互動式。 在這個層級的元素有最慢的視差且裁剪至應用程式視窗。 TODO:此圖層會調整？ 
 
-<p>範例背景元素包括內容後面的影像，TODO：範例、TODO：範例。</p>
+<p>範例背景的項目包含內容，TODO 背後的映像：例如，TODO:範例。</p>
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">應用程式的背景以外層級</a>
+    <a href="images/content-as-objects/elements-forward-backward.png">更多背景圖層的應用程式</a>
     
   </div>
 </div>
@@ -92,12 +92,12 @@ ms.locfileid: "8981442"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>被動式層</b>這是應用程式中，基底層其中 UI 元素存在於預設。  元素在這個層級即時移動 (沒有視差) 、裁剪至應用程式視窗，且以 100% 縮放比例轉譯。 
+<b>被動層</b>這是基底圖層的應用程式時，UI 項目所在的預設值。  元素在這個層級即時移動 (沒有視差) 、裁剪至應用程式視窗，且以 100% 縮放比例轉譯。 
 
-<p>範例元素：應用程式背景、文字、次要 UI，例如應用程式瀏覽 UI。</p>
+<p>範例項目：應用程式背景、 文字，第二個 UI，例如應用程式的巡覽 UI。</p>
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">應用程式的被動式層</a>
+    <a href="images/content-as-objects/elements-forward-backward.png">被動的圖層的應用程式</a>
     
   </div>
 </div>
@@ -108,12 +108,12 @@ ms.locfileid: "8981442"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>呼叫行動</b>這個層級適合的上述被動式層元素優先順序互動式項目。 這個層級上的元素有中度視差且裁剪至應用程式視窗。 TODO：在這個層級縮放中執行元素，或會有陰影嗎？
+<b>呼籲</b>這一層是被動的圖層項目上方您排定優先順序的互動式項目。 這個層級上的元素有中度視差且裁剪至應用程式視窗。 TODO:在此圖層規模的項目或有下拉式陰影？
 
-<p>範例元素：清單、格線、主要命令 (TODO：例如...)。</p> 
+<p>範例項目： 清單、 格線、 主要的命令 (TODO:Such as.)。</p> 
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">應用程式的呼叫動作層級</a>
+    <a href="images/content-as-objects/elements-forward-backward.png">呼叫以動作圖層的應用程式</a>
     
   </div>
 </div>
@@ -123,12 +123,12 @@ ms.locfileid: "8981442"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>主角層</b>這個層級次是在螢幕上最高優先順序的元素。  這個層級上的元素可能會中斷應用程式視窗的界限，其可縮放並自動取得陰影。
+<b>主圖層</b>這一層是在螢幕上的最高優先順序項目時。  這個層級上的元素可能會中斷應用程式視窗的界限，其可縮放並自動取得陰影。
 
 <p>範例元素：攝影元素，目前所選的項目。</p>  
   </div>
   <div class="side-by-side-content-right">
-    <a href="images/content-as-objects/elements-forward-backward.png">應用程式的主角層</a>
+    <a href="images/content-as-objects/elements-forward-backward.png">Hero 圖層的應用程式</a>
     
   </div>
 </div>
@@ -141,10 +141,10 @@ Depth is meaningful; it establishes visual and interactive hierarchy for users t
 -->
 
 ## <a name="example-tbd"></a>範例：TBD
-> TODO：示範如何調整常見 UI 模式來使用圖層順序。 我們應該顯示圖例和程式碼。 
+> TODO:顯示如何調整使用疊置順序的常見 UI 模式。 我們應該顯示圖例和程式碼。 
 
 ## <a name="download-the-code-samples"></a>下載程式碼範例
->TODO：連結至示範此功能的範例。 
+>TODO:連結至範例，示範這項功能。 
 
 
 ## <a name="related-articles"></a>相關文章

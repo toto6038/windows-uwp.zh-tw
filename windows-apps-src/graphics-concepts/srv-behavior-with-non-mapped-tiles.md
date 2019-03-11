@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d62a1d3158e13187f89277a1ba009bd56fc2b39a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921401"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659423"
 ---
-# <a name="span-iddirect3dconceptssrvbehaviorwithnon-mappedtilesspansrv-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.srv_behavior_with_non-mapped_tiles"></span>非對應磚的 SRV 行為
+# <a name="span-iddirect3dconceptssrvbehaviorwithnon-mappedtilesspansrv-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.srv_behavior_with_non-mapped_tiles"></span>SRV 行為與非對應的圖格
 
 
 著色器資源檢視 (SRV) 涉及非對應磚的讀取行為取決於硬體支援程度。 如需需求明細，請參閱[串流資源功能層](streaming-resources-features-tiers.md)的讀取行為。 本節摘要[第 2 層](tier-2.md)需要的理想行為。
@@ -26,7 +26,7 @@ ms.locfileid: "8921401"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[串流資源的存取管線](pipeline-access-to-streaming-resources.md)
+[資料流資源的存取管線](pipeline-access-to-streaming-resources.md)
 
  
 

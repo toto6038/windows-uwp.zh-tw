@@ -1,5 +1,5 @@
 ---
-title: 取得 UWP app 範例
+title: 取得 UWP 應用程式範例
 description: 了解如何下載 GitHub 中的 UWP 程式碼範例
 ms.date: 02/08/2017
 ms.topic: article
@@ -7,22 +7,22 @@ keywords: windows 10, uwp, sample code, code samples, 範例程式碼, 程式碼
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049715"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598533"
 ---
-# <a name="get-uwp-app-samples"></a>取得 UWP app 範例
+# <a name="get-uwp-app-samples"></a>取得 UWP 應用程式範例
 
 通用 Windows 平台 (UWP) app 範例可透過 GitHub 上的存放庫取得。 如需可搜尋的分類清單，請參閱[範例](https://developer.microsoft.com/windows/samples "Dev Center samples")或瀏覽 [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "通用 Windows 平台應用程式範例 GitHub 存放庫")存放庫，其包含示範所有 UWP 功能及其 API 使用模式的範例。  
-![GitHub UWP 範例存放庫](images/GitHubUWPSamplesPage.png)
+![UWP GitHub 範例存放庫](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>下載程式碼
 
 若要下載範例，請移至[存放庫](https://github.com/Microsoft/Windows-universal-samples "通用 Windows 平台應用程式範例 GitHub 存放庫")並選取 **\[Clone or download\]** (複製或下載)，然後是 **\[下載 ZIP\]**。 或者，只要按一下[這裡](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "通用 Windows 平台應用程式範例壓縮檔下載")。
 
-壓縮檔一定會有最新的範例。 您不需要 GitHub 帳戶就可以下載。 當 SDK 更新發行時或如果您想要挑選任何最近的變更/新增項目，只要查看最新的 zip 檔案即可。
+Zip 檔案一定會有最新的範例。 您不需要 GitHub 帳戶就可以下載。 當 SDK 更新發行時或如果您想要挑選任何最近的變更/新增項目，只要查看最新的 zip 檔案即可。
 
 ![範例下載](images/SamplesDownloadButton.png)
 
@@ -34,7 +34,7 @@ ms.locfileid: "9049715"
 
 下載 zip 檔案之後，請在 Visual Studio 中開啟範例︰
 
-1.  將封存解壓縮之前，請以滑鼠右鍵按一下封存，選取 \[內容\]**** > ** \[解除封鎖\]** > **** \[套用\]。 然後，將封存解壓縮到您電腦上的本機資料夾。
+1.  將封存解壓縮之前，請以滑鼠右鍵按一下封存，選取 \[內容\] > \[解除封鎖\] > \[套用\]。 然後，將封存解壓縮到您電腦上的本機資料夾。
 
     ![解壓縮的封存](images/SamplesUnzip1.png)
 2.  在範例資料夾中，您會看到許多資料夾，每一個都包含 UWP 功能範例。
@@ -45,7 +45,7 @@ ms.locfileid: "9049715"
 
     ![語言資料夾](images/SamplesUnzip3.png)
 
-4.  選取您想要使用的語言，例如適用於 C\# 的 CS，您會看到一個可以在 Visual Studio 中開啟的 Visual Studio 方案檔。
+4.  選取您想要使用，例如適用於 C 的 CS 語言\#，您會看到一個 Visual Studio 方案檔，您可以在 Visual Studio 中開啟。
 
     ![VS 方案](images/SamplesUnzip4.png)
 

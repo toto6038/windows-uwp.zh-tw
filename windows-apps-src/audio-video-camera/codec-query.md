@@ -7,14 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp, 轉碼器, 編碼器, 解碼器, 查詢
 ms.localizationpriority: medium
 ms.openlocfilehash: 4241aad5a01617d6a002c6f5d6da0a4bb1455616
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921572"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593863"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>查詢裝置已安裝的轉碼器
-**[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** 類別可讓您查詢目前的裝置上已安裝的轉碼器。 Windows 10 針對不同裝置系列所隨附的轉碼器清單列在[支援的轉碼器](supported-codecs.md)文章中，但因為使用者和應用程式可以在裝置上安裝其他的轉碼器，所以您可能會想要查詢執行階段的轉碼器支援，以判斷目前裝置提供哪些轉碼器。
+ **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** 類別可讓您查詢目前的裝置上已安裝的轉碼器。 Windows 10 針對不同裝置系列所隨附的轉碼器清單列在[支援的轉碼器](supported-codecs.md)文章中，但因為使用者和應用程式可以在裝置上安裝其他的轉碼器，所以您可能會想要查詢執行階段的轉碼器支援，以判斷目前裝置提供哪些轉碼器。
 
 CodecQuery API 屬於 **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/windows.media.core)** 命名空間，因此您需要在您的應用程式中包括這個命名空間。
 
@@ -26,7 +26,7 @@ CodecQuery API 屬於 **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/
 
 [!code-cs[NewCodecQuery](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetNewCodecQuery)]
 
-**[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery.findallasync)** 方法會傳回符合所提供參數的所有已安裝轉碼器。 這些參數包括指定查詢音訊和 (或) 視訊轉碼器的 **[CodecKind](https://docs.microsoft.com/uwp/api/windows.media.core.codeckind)** 值、指定查詢編碼器還是解碼器的 **[CodecCategory](https://docs.microsoft.com/uwp/api/windows.media.core.codeccategory)** 值，以及代表您正在查詢之媒體編碼子類型的字串，如 H.264 視訊或 MP3 音訊。
+ **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery.findallasync)** 方法會傳回符合所提供參數的所有已安裝轉碼器。 這些參數包括指定查詢音訊和 (或) 視訊轉碼器的 **[CodecKind](https://docs.microsoft.com/uwp/api/windows.media.core.codeckind)** 值、指定查詢編碼器還是解碼器的 **[CodecCategory](https://docs.microsoft.com/uwp/api/windows.media.core.codeccategory)** 值，以及代表您正在查詢之媒體編碼子類型的字串，如 H.264 視訊或 MP3 音訊。
 
 針對子類型值指定空字串或空值，以傳回所有子類型的轉碼器。 下列範例會列出裝置上已安裝的所有視訊編碼器。
 
@@ -45,8 +45,8 @@ CodecQuery API 屬於 **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/
 ## <a name="related-topics"></a>相關主題
 
 * [媒體播放](media-playback.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [轉碼媒體檔案](transcode-media-files.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [媒體檔案轉碼](transcode-media-files.md)
 * [支援的轉碼器](supported-codecs.md)
  
 

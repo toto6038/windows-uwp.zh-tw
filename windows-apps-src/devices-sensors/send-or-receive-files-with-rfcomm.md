@@ -11,15 +11,15 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 27adf5bb39a06e24b7d76e272ceb8dcf6348b57e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943836"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615623"
 ---
 # <a name="bluetooth-rfcomm"></a>藍牙 RFCOMM
 
-**重要 API**
+**重要的 Api**
 
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529)
@@ -28,7 +28,7 @@ ms.locfileid: "8943836"
 
 ## <a name="overview"></a>概觀
 
-[**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 命名空間中的 API 建構在適用於 Windows 裝置的現有模式上，包括 [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 和 [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654)。 資料讀取和寫入是為了利用 [**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) 和 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 中的物件所設計。 服務探索通訊協定 (SDP) 屬性具有值和預期的類型。 但是一些常見裝置的 SDP 屬性實作有誤，導致值並非預期的類型。 此外，許多 RFCOMM 的用法完全不需要額外的 SDP 屬性。 基於這些理由，此 API 提供未剖析之 SDP 資料的存取，開發人員可藉此取得所需的資訊。
+[  **Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 命名空間中的 API 建構在適用於 Windows 裝置的現有模式上，包括 [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 和 [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654)。 資料讀取和寫入是為了利用 [**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) 和 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 中的物件所設計。 服務探索通訊協定 (SDP) 屬性具有值和預期的類型。 但是一些常見裝置的 SDP 屬性實作有誤，導致值並非預期的類型。 此外，許多 RFCOMM 的用法完全不需要額外的 SDP 屬性。 基於這些理由，此 API 提供未剖析之 SDP 資料的存取，開發人員可藉此取得所需的資訊。
 
 RFCOMM API 運用了服務識別碼的概念。 雖然服務識別碼只是 128 位元的 GUID，但也通常會指定為 16 或 32 位元的整數。 RFCOMM API 為服務識別碼提供一個包裝函式，使它們可指定和做為 128 位元的 GUID 及 32 位元的整數使用，但不提供 16 位元的整數。 這對 API 而言不是問題，因為語言將自動轉換成 32 位元的整數，而且仍然可以正確地產生識別碼。
 
@@ -40,7 +40,7 @@ app 可以在背景工作中執行多步驟的裝置作業，因此即使 app �
 
 傳送檔案時，依據所需的服務連線至成對裝置，是最基本的案例。 這牽涉到下列步驟：
 
--   使用 **RfcommDeviceService.GetDeviceSelector\*** 函式協助產生 AQS 查詢，該查詢可用於所需服務的列舉成對裝置執行個體。
+-   使用**RfcommDeviceService.GetDeviceSelector\*** 函數，可協助產生 AQS 查詢，可用為列舉配對的裝置所需的服務執行個體。
 -   選擇一個列舉裝置、建立一個 [**RfcommDeviceService**](https://msdn.microsoft.com/library/windows/apps/Dn263463)，並視需要讀取 SDP 屬性 (使用 [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) 剖析屬性的資料)。
 -   建立通訊端，並且使用[**RfcommDeviceService.ConnectionHostName**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) 和 [**RfcommDeviceService.ConnectionServiceName**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) 屬性以[**StreamSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701504) 至具有適當參數的遠端裝置服務。
 -   遵循建立的資料串流模式以讀取檔案中的資料區塊，並在通訊端的 [**StreamSocket.OutputStream**](https://msdn.microsoft.com/library/windows/apps/BR226920) 上將它傳送至裝置。

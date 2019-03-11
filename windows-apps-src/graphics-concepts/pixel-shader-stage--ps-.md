@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e1f7e787f2ee80a3168d38a9afd9a249dc0e6de0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941448"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603063"
 ---
 # <a name="pixel-shader-ps-stage"></a>像素著色器 (PS) 階段
 
 
 像素著色器 (PS) 階段會接收基本類型的插補資料，並產生每一像素資料，例如色彩。
 
-這是可程式著色器階段；它會在[圖形管線](graphics-pipeline.md)圖表中顯示為圓角區塊。。 這個著色器階段會公開自己的獨特功能，以著色器模型 4.0 [通用著色器核心](https://msdn.microsoft.com/library/windows/desktop/bb509580)建置。
+這是可程式著色器階段；它會在[圖形管線](graphics-pipeline.md)圖表中顯示為圓角區塊。 這個著色器階段會公開自己的獨特功能，以著色器模型 4.0 [通用著色器核心](https://msdn.microsoft.com/library/windows/desktop/bb509580)建置。
 
 像素著色器 (PS) 階段可啟用豐富的陰影技術，例如個別像素光線和後處理。 像素著色器是結合常數變數、紋理資料、插補每個頂點值和其他資料的程式，以產生每個像素的輸出。 [轉譯器 (RS) 階段](rasterizer-stage--rs-.md)會對每個基本類型所涵蓋的每個像素叫用一次像素著色器，但是可以指定 **NULL** 著色器以避免執行著色器。
 
@@ -36,14 +36,14 @@ ms.locfileid: "8941448"
 
 頂點屬性是在像素著色器中心位置插補 (或評估)。 像素著色器屬性插補模式會在輸入登錄宣告中宣告，以每個元素為基礎，如[引數](https://msdn.microsoft.com/library/windows/desktop/bb509606)或[輸入結構](https://msdn.microsoft.com/library/windows/desktop/bb509668)。 可線性插補的屬性，或使用距心取樣。 查看[點陣化規則](rasterization-rules.md)中的「多重取樣鋸齒化時屬性的距心取樣」一節。 距心評估只在多重取樣到基本類型所涵蓋的像素時相關，但像素中心可能不是；距心評估盡可能發生在靠近 (非涵蓋) 像素中心。
 
-輸入也可以使用[系統值語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)宣告，這會由其他管線階段使用的參數標記。 例如，像素位置應該使用 SV\_Position 語意標示。 [輸入組合語言 (IA) 階段](input-assembler-stage--ia-.md)可以為像素著色器產生一個純量 (使用 SV\_PrimitiveID)；[轉譯器 (RS) 階段](rasterizer-stage--rs-.md)也可以針對像素著色器產生一個純量 (使用 SV\_IsFrontFace)。
+輸入也可以使用[系統值語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)宣告，這會由其他管線階段使用的參數標記。 比方說，像素位置應該標示 SV\_語意的位置。 [輸入組譯工具 (IA) 階段](input-assembler-stage--ia-.md)可能會產生一個純量的像素著色器 (使用 SV\_PrimitiveID);[轉譯器 (RS) 階段](rasterizer-stage--rs-.md)也可以產生一個純量 （使用 SV像素著色器\_IsFrontFace)。
 
 ## <a name="span-idoutputsspanspan-idoutputsspanspan-idoutputsspanoutputs"></a><span id="Outputs"></span><span id="outputs"></span><span id="OUTPUTS"></span>輸出
 
 
 像素著色器可以輸出最多 8、32 位元、4 個元件的色彩，或無色彩 (如果捨棄像素)。 像素著色器輸出暫存器元件必須先宣告，才能使用；每個暫存器可以有不同的輸出寫入遮罩。
 
-使用可深度寫入狀態 (在[輸出合併 (OM) 階段](output-merger-stage--om-.md)中) 來控制深度資料是否寫入深度緩衝區 (或使用捨棄指令捨棄該像素的資料）。 像素著色器也可以輸出選擇性的 32 位元、1-元件、浮點、深度測試的深度值 (使用語意 SV\_Depth)。 深度值是在 oDepth 登錄中輸出，並會取代深度測試的插補深度值 (假設已啟用深度測試的話)。 無法在使用固定函式深度或著色器 oDepth 之間動態變更。
+使用可深度寫入狀態 (在[輸出合併 (OM) 階段](output-merger-stage--om-.md)中) 來控制深度資料是否寫入深度緩衝區 (或使用捨棄指令捨棄該像素的資料）。 像素著色器也可以輸出深度測試的選擇性的 32 位元、 1 元件、 浮點、 深度值 (使用 SV\_語意深度)。 深度值是在 oDepth 登錄中輸出，並會取代深度測試的插補深度值 (假設已啟用深度測試的話)。 無法在使用固定函式深度或著色器 oDepth 之間動態變更。
 
 像素著色器無法輸出樣板值。
 
