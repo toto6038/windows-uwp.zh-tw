@@ -1,25 +1,25 @@
 ---
 description: 了解 Fluent Design 以及如何將其納入您的應用程式。
-title: 適用於 Windows 的 fluent Design 系統
-keywords: uwp app 配置、通用 Windows 平台、應用程式設計、Fluent Design 系統
+title: 適用於 Windows 的 Fluent Design 系統
+keywords: 'uwp 應用程式配置, 通用 Windows 平台, 應用程式設計, Fluent Design 系統'
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent 設計系統的 Windows 應用程式 creators
+# <a name="the-fluent-design-system-for-windows-app-creators"></a>適用於 Windows 的 Fluent Design 系統應用程式建立者
 
-![Fluent 設計標頭](images/fluentdesign-app-header.jpg)
+![Fluent Design 標頭](images/fluentdesign-app-header.jpg)
 
 ## <a name="introduction"></a>簡介
 
-Fluent Design 系統是我們建立彈性、 共鳴和美觀的使用者介面的系統。
+Fluent Design 系統是我們的系統，用於建立調適型、富有感情的，且效能良好的使用者介面。
 
 ## <a name="principles"></a>原則
 
 **調適型：Fluent 體驗在每個裝置上帶來自然的感覺**
 
-Fluent 體驗適應環境。 Fluent 體驗以及上感覺舒適平板電腦、 桌上型電腦、 Xbox — 它甚至適用於混合實境頭戴式裝置。 且當您新增更多的硬體，例如您電腦的其他螢幕，Fluent 體驗可充分利用它。
+Fluent 體驗適應環境。 Fluent 體驗在桌上型電腦、平板電腦，以及 Xbox 上感覺舒適—甚至適用於混合實境頭戴式裝置。 且當您新增更多的硬體，例如您電腦的其他螢幕，Fluent 體驗可充分利用它。
 
 **富有感情的：Fluent 體驗是直覺且強大的**
 
@@ -30,19 +30,19 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
 藉由納入現實世界的元素，Fluent 體驗點選到基本項目。 它會使用光線、陰影、動作、深度和紋理，以直覺與本能的方式組織資訊。
 
 
-## <a name="applying-fluent-design-to-your-app-with-uwp"></a>套用 Fluent Design 到您的應用程式的 UWP
+## <a name="applying-fluent-design-to-your-app-with-uwp"></a>透過 UWP 將 Fluent Design 套用到您的應用程式
 
-![Fluent 設計標誌](images/fluentdesign_header.png)
+![Fluent Design 標誌](images/fluentdesign_header.png)
 
-我們設計指導方針，將說明如何將 Fluent 設計原則套用到應用程式。 什麼類型的應用程式？ 雖然我們的指導方針的許多可以套用至任何平台，但我們會建立 UWP （通用 Windows 平台） 以支援 Fluent Design。
+我們的設計指導方針說明如何將 Fluent Design 原則套用至應用程式。 何種應用程式？ 雖然我們有許多指導方針可套用到任何平台，但我們建立了 UWP (通用 Windows 平台) 來支援 Fluent Design。
 
-將 Fluent Design 功能建置到 UWP。 其中部分功能&mdash;例如有效像素和通用輸入系統&mdash;是自動的。 您不需要編寫任何額外程式碼，即可運用它們。 其他功能 (例如壓克力風格) 是選用的；您可撰寫程式碼來包含它們新增在您的應用程式中。
+將 Fluent Design 功能建置到 UWP。 其中部分功能&mdash;例如有效像素和通用輸入系統&mdash;是自動的。 您不需要編寫任何額外程式碼，即可運用它們。 其他功能 (例如壓克力風格) 是選用的；您可撰寫程式碼來將它們新增在您的應用程式中。
 
-> 我們將 UWP 控制項放到桌面上，以便您可以 Fluent Design 功能提升外觀、感覺和現有 WPF 或 Windows 應用程式的功能。 若要深入了解，請參閱[WPF 和 Windows Form 應用程式中的主機 UWP 控制項](/windows/uwp/xaml-platform/xaml-host-controls)。
+> 我們將 UWP 控制項放到桌面上，以便您可以 Fluent Design 功能提升外觀、感覺和現有 WPF 或 Windows 應用程式的功能。 若要深入了解，請參閱[在 WPF 和 Windows Form 應用程式中裝載 UWP 控制項](/windows/uwp/xaml-platform/xaml-host-controls)。
 
 <!-- To apply Fluent Design to your app, follow our guidelines and use UWP (Universal Windows Platform) you can use UWP UI features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. -->
 
-除了設計指導方針，我們的 Fluent Design 文章也說明如何撰寫可讓您的設計會發生的代碼。 UWP 使用 XAML，標記為基礎的語言，可讓您更輕鬆地建立使用者介面。 以下是範例：
+除了設計指引，我們的 Fluent Design 文章也會說明如何撰寫程式碼，讓您的設計付諸實踐。 UWP 會使用 XAML，這是以標記為基礎的語言，可讓您更輕鬆地建立使用者介面。 以下是範例：
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4">
@@ -53,7 +53,7 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
 ![](images/xaml-example.png)
 
 
-> 如果您是 UWP 開發的新手，請查看我們[開始使用 UWP 頁面](https://developer.microsoft.com/windows/apps/getstarted)。
+> 如果您是 UWP 開發的新手，請參閱我們的[開始使用 UWP 頁面](https://developer.microsoft.com/windows/apps/getstarted)。
 
 ## <a name="find-a-natural-fit"></a>尋找自然符合
 
@@ -109,9 +109,9 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
         [Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
 :::row-end:::
 
-## <a name="make-it-intuitive"></a>讓直覺化
+## <a name="make-it-intuitive"></a>讓它是直覺的
 
-當它做出使用者期待的行為，體驗感覺是直覺。 利用以建立的控制項和模式以及充分利用協助工具與全球化的平台支援，您可以建立輕鬆的體驗，可協助使用者變更有效率。
+當它做出使用者期待的行為，體驗感覺是直覺的。 利用以建立的控制項和模式以及充分利用協助工具與全球化的平台支援，您可以建立輕鬆的體驗，可協助使用者變更有效率。
 
 示範同理是在正確的時間做正確的事。
 
@@ -172,7 +172,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
 
 光源總是能夠吸引大家的注意力。 它會創造氛圍與存在感，而且是照亮資訊的實用工具。
 
-將光線新增到您的 UWP app：
+將光線新增到您的 UWP 應用程式：
 
 :::row:::
     :::column:::
@@ -198,7 +198,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
 
 我們活在立體世界中。 藉由特意將深度納入 UI，我們可以轉換扁平的 2-D 介面，透過建立視覺階層&mdash;有效率地呈現資訊。 此功能在有層次的實體環境中，重新塑造項目彼此之間的關聯
 
-將深度新增到您的 UWP app：
+將深度新增到您的 UWP 應用程式：
 
 :::row:::
     :::column:::
@@ -214,7 +214,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
 
 可以將動作設計想成電影。 順暢的轉場能讓您專注於故事本身，讓體驗與生活結合。 我們可以將這些感覺納入我們的設計中，使用電影的輕鬆感帶領人們從一個工作移往下一項工作。
 
-將動作新增到您的 UWP app：
+將動作新增到您的 UWP 應用程式：
 
 :::row:::
     :::column:::
@@ -230,7 +230,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
 
 現實世界中圍繞著我們的萬物充滿感官性和刺激。 它們會彎曲、伸展、反彈、粉碎和滑翔。 這些材質轉化為數位環境，讓人們想要伸手去碰觸我們的設計。
 
-將材質新增到您的 UWP app：
+將材質新增到您的 UWP 應用程式：
 
 :::row:::
     :::column:::

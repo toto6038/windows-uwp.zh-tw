@@ -23,11 +23,11 @@ items:
     items:
     - name: 建立使用者介面
       href: basics/xaml-basics-ui.md
-    - name: 建立調適型配置
+    - name: 建立調適型版面配置
       href: basics/xaml-basics-adaptive-layout.md
     - name: 設定控制項樣式
       href: basics/xaml-basics-style.md
-- name: 版面配置
+- name: 配置
   items:
   - name: 概觀
     href: layout/index.md
@@ -37,7 +37,7 @@ items:
     href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
   - name: 回應式設計技術
     href: layout/responsive-design.md
-  - name: 使用 XAML 定義的版面配置
+  - name: 使用 XAML 的版面配置
     href: layout/layouts-with-xaml.md
   - name: 顯示多重檢視
     href: layout/show-multiple-views.md
@@ -67,7 +67,7 @@ items:
     href: controls-and-patterns/index.md
   - name: 控制項與事件簡介
     href: controls-and-patterns/controls-and-events-intro.md
-  - name: 命令功能的簡介
+  - name: 命令簡介
     href: controls-and-patterns/commanding.md
   - name: 依功能排序的控制項索引
     href: controls-and-patterns/controls-by-function.md
@@ -112,7 +112,7 @@ items:
       href: controls-and-patterns/nested-ui.md
     - name: 集合命令
       href: controls-and-patterns/collection-commanding.md
-    - name: 撥動
+    - name: Swipe
       href: controls-and-patterns/swipe.md
     - name: 樹狀檢視
       href: controls-and-patterns/tree-view.md
@@ -126,7 +126,7 @@ items:
       href: controls-and-patterns/dialogs-and-flyouts/flyouts.md
   - name: 表單
     href: controls-and-patterns/forms.md
-  - name: 媒體、 圖形及圖形
+  - name: 媒體、圖形和形狀
     items:
     - name: 影像與影像筆刷
       href: controls-and-patterns/images-imagebrushes.md
@@ -146,7 +146,7 @@ items:
       href: controls-and-patterns/app-bars.md
     - name: 命令列飛出視窗
       href: controls-and-patterns/command-bar-flyout.md
-    - name: 功能表和特色選單
+    - name: 功能表和操作功能表
       href: controls-and-patterns/menus.md
   - name: 瀏覽
     items:
@@ -154,9 +154,9 @@ items:
       href: controls-and-patterns/master-details.md
     - name: 瀏覽檢視
       href: controls-and-patterns/navigationview.md
-    - name: 樞紐
+    - name: 樞紐分析
       href: controls-and-patterns/pivot.md
-  - name: 連絡人
+  - name: People
     items:
     - name: 連絡人卡片
       href: controls-and-patterns/contact-card.md
@@ -202,7 +202,7 @@ items:
       href: controls-and-patterns/rich-text-block.md
     - name: 文字方塊
       href: controls-and-patterns/text-box.md
-    - name: 可編輯對話方塊
+    - name: Rich Edit 方塊
       href: controls-and-patterns/rich-edit-box.md
     - name: 密碼方塊
       href: controls-and-patterns/password-box.md
@@ -282,9 +282,9 @@ items:
     - name: 次要磚
       href: shell/tiles-and-notifications/secondary-tiles.md
       items:
-      - name: 指引
+      - name: 指導方針
         href: shell/tiles-and-notifications/secondary-tiles-guidance.md
-      - name: '[釘選到 [開始]] '
+      - name: 釘選到開始畫面
         href: shell/tiles-and-notifications/secondary-tiles-pinning.md
       - name: 釘選到工作列
         href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
@@ -312,7 +312,7 @@ items:
     items:
     - name: 快顯通知
       items:
-      - name: UX 指引
+      - name: UX 指導方針
         href: shell/tiles-and-notifications/toast-ux-guidance.md
       - name: 快顯通知內容
         href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
@@ -417,7 +417,7 @@ items:
   - name: Surface Dial
     href: input/windows-wheel-interactions.md
     items:
-    - name: 教學課程：在您的應用程式中 Surface Dial 支援
+    - name: 教學課程：在您的應用程式中新增 Surface Dial 支援
       href: input/radialcontroller-walkthrough.md
   - name: 語音互動
     href: input/speech-interactions.md
@@ -473,7 +473,7 @@ items:
     href: input/guidelines-for-textselection.md
   - name: 目標預測
     href: input/guidelines-for-targeting.md
-  - name: 視覺回饋
+  - name: 視覺化回饋
     href: input/guidelines-for-visualfeedback.md
 - name: 裝置
   items:
@@ -492,7 +492,7 @@ items:
     items:
     - name: 概觀
       href: accessibility/accessibility-overview.md
-    - name: 設計全人軟體
+    - name: 設計通用軟體
       href: accessibility/designing-inclusive-software.md
     - name: 開發全人 Windows 應用程式
       href: accessibility/developing-inclusive-windows-apps.md
@@ -526,7 +526,7 @@ items:
       href: app-settings/guidelines-for-app-settings.md
     - name: 儲存和擷取應用程式設定及資料
       href: app-settings/store-and-retrieve-app-data.md
-  - name: 全球化和當地語系化
+  - name: 全球化與當地語系化
     href: globalizing/globalizing-portal.md
     items:
     - name: 全球化指導方針
@@ -537,7 +537,7 @@ items:
       href: globalizing/use-global-ready-formats.md
     - name: 使用範本和模式來設定日期和時間的格式
       href: globalizing/use-patterns-to-format-dates-and-times.md
-    - name: 調整配置和字型以及支援 RTL
+    - name: 調整配置和字型並支援 RTL
       href: globalizing/adjust-layout-and-fonts--and-support-rtl.md
     - name: NumeralSystem 值
       href: globalizing/glob-numeralsystem-values.md
@@ -565,8 +565,8 @@ items:
 - name: 設計工具組
   href: downloads/index.md
 ms.openlocfilehash: b6430ee5f121d672282513fa524a50e7788f404c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117447"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582853"

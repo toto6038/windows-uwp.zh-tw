@@ -1,25 +1,19 @@
 ---
-description: Windows Template Studio 是快速建立 UWP app 的 Visual Studio 擴充功能。
+description: Windows Template Studio 是一項 Visual Studio 擴充功能，可讓您快速建立 UWP 應用程式。
 title: Windows Template Studio
 template: detail.hbs
 ms.date: 05/10/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: 'windows 10, uwp'
 pm-contact: clint.rutkas
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfb593508ef6e366e133b04e7c47344e09d33dd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919337"
 ---
 # <a name="windows-template-studio"></a>Windows Template Studio
 
 ![主角圖像](images/wts1.png)
 
-Windows 範本 Studio (WTS) 是加速建立新的通用 Windows 平台 (UWP) 應用程式使用精靈為基礎的體驗的 Visual Studio 2017 擴充功能。 產生的 UWP 專案的格式正確、 可讀性的程式碼會同時實作經證實的模式與最佳做法結合的最新的 Windows 10 功能。 我們在產生的程式碼整個試想有文件、 Stack Overflow 與部落格的連結來提供有用的見解。 WTS 會支援在 C# 或 Visual Basic 中建立的應用程式。
+Windows Template Studio (WTS) 是 Visual Studio 2017 的擴充功能，可讓您更快速地使用精靈式體驗建立新的通用 Windows 平台 (UWP) 應用程式。 產生的 UWP 專案是是格式正確的可讀程式碼，其中包含最新的 Windows 10 功能，同時實作經過實證的模式和最佳做法。 在產生的程式碼中，我們在各處加入了文件、Stack Overflow 和部落格的連結，以提供有用的深入解析。 WTS 支援以 C# 或 Visual Basic 建立應用程式。
 
-如需詳細資訊，請瀏覽[GitHub 上的專案存放庫](https://github.com/microsoft/windowsTemplateStudio)。
+如需詳細資訊，請造訪 [GitHub 上的專案存放庫](https://github.com/microsoft/windowsTemplateStudio)。
 

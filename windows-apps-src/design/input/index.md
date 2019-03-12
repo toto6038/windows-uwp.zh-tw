@@ -1,7 +1,7 @@
 ---
 description: 針對手寫筆、Surface Dial 和其他輸入類型最佳化您的應用程式。
 title: 輸入與互動
-keywords: 應用程式輸入, 自訂 UWP 應用程式
+keywords: '應用程式輸入, 自訂 UWP 應用程式'
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
@@ -9,12 +9,6 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918976"
 ---
 # <a name="input-and-interactions"></a>輸入與互動
 
@@ -23,9 +17,9 @@ ms.locfileid: "8918976"
   <img src="images/input-interactions/icons-inputdevices03.png" />
 </div> -->
 
-UWP app 可自動處理各種輸入並在各種不同的裝置上執行 — 例如，您不需要額外做任何動作即可啟用觸控輸入。 但是您有時候可能會想要針對特定類型的輸入或裝置將您的應用程式最佳化。 例如，如果您建立繪圖應用程式，您可能想要自訂手寫筆輸入的處理方式。
+UWP 應用程式可自動處理各種輸入並在各種不同的裝置上執行 — 例如，您不需要額外做任何動作即可啟用觸控輸入。 但是您有時候可能會想要針對特定類型的輸入或裝置將您的應用程式最佳化。 例如，如果您建立繪圖應用程式，您可能想要自訂手寫筆輸入的處理方式。
 
-本節中的設計與程式碼撰寫指示可協助您針對特定類型輸入自訂您的 UWP app。
+本節中的設計與程式碼撰寫指示可協助您針對特定類型輸入自訂您的 UWP 應用程式。
 
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
@@ -59,7 +53,7 @@ UWP app 可自動處理各種輸入並在各種不同的裝置上執行 — 例�
                         </div>
                     </div> -->
                     <div class="cardText">
-                        <h3><a href="gaze-interactions.md">新增! 注視輸入</a></h3>
+                        <h3><a href="gaze-interactions.md">新功能！注視輸入</a></h3>
                         <p>根據使用者眼睛和頭部的位置和移動追蹤他們的注視。</p>
                     </div>
                 </div>
@@ -80,14 +74,14 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
             <div style="display:block" class="cardPadding">
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
-                        <h3>輸入</h3>
+                        <h3>Input</h3>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">識別輸入裝置</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">指標</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">手寫筆與 Windows Ink</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">觸控</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/mouse-interactions">滑鼠</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/keyboard-interactions">鍵盤</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">遊戲台與遙控器</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">遊戲台和遙控器</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">觸控板</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">多重輸入</a></p>
@@ -104,7 +98,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>互動</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">拖放</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">拖放功能</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">移動瀏覽</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-rotation">旋轉</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-textselection">選取文字和影像</a></p>

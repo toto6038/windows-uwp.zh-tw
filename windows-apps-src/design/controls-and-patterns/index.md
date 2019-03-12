@@ -1,19 +1,13 @@
 ---
-description: 取得對您的 UWP 應用程式新增控制項和模式的設計指導方針 &amp; 程式碼撰寫指示。 尋找 45 種以上的實用控制項來用於您的應用程式。
+description: 取得對您的 UWP 應用程式新增控制項和模式的設計指導方針與程式碼撰寫指示。 尋找 45 種以上的實用控制項來用於您的應用程式。
 title: UWP 控制項和模式 - Windows 應用程式開發
-keywords: uwp 控制項, 使用者介面,應用程式控制項
+keywords: 'uwp 控制項, 使用者介面,應用程式控制項'
 label: Controls & patterns
 template: detail.hbs
 ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 417f9b72c5708a85fa570476de2829bf6217c165
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044279"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>適用於 UWP 應用程式的控制項和模式
  
@@ -31,16 +25,16 @@ ms.locfileid: "9044279"
 :::row:::
     :::column:::
       <p><b><a href="controls-and-events-intro.md">新增控制項和處理事件</a></b> <br/>
-將控制項新增到應用程式有 3 個主要步驟︰將控制項新增到應用程式 UI、在控制項上設定屬性，以及將程式碼新增到控制項的事件處理常式以便使其執行某些功能。</p>
+將控制項新增到應用程式有 3 個主要步驟：將控制項新增到應用程式 UI、在控制項上設定屬性，以及將程式碼新增到控制項的事件處理常式以便使其執行某些功能。</p>
     :::column-end:::
     :::column:::
       <p><b><a href="xaml-styles.md">設定控制項的樣式</a></b> <br/>
-您可以使用 XAML 架構，以許多方式自訂 app 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
+您可以使用 XAML 架構，以許多方式自訂應用程式的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
     :::column-end:::
 :::row-end:::
 
-## <a name="get-the-windows-ui-library"></a>取得 Windows UI 文件庫
-有些控制項只都可在 Windows UI 文件庫中。 若要取得它，請參閱[Windows UI 文件庫概觀和安裝指示](/uwp/toolkits/winui/)。
+## <a name="get-the-windows-ui-library"></a>取得 Windows UI 程式庫
+有些控制項只能從 Windows UI 程式庫取得。 若要加以取得，請參閱 [Windows UI 程式庫概觀和安裝指示](/uwp/toolkits/winui/)。
 
 ## <a name="alphabetical-index"></a>依字母排序的索引 
 
@@ -54,7 +48,7 @@ ms.locfileid: "9044279"
 
 <li style="list-style-type: none;"><a href="buttons.md">按鈕</a></li>
 
-<li style="list-style-type: none;"><a href="checkbox.md">核取方塊 </a></li>
+<li style="list-style-type: none;"><a href="checkbox.md">核取方塊</a></li>
 
 <li style="list-style-type: none;"><a href="color-picker.md">色彩選擇器</a></li>
 
@@ -82,7 +76,7 @@ ms.locfileid: "9044279"
 
 <li style="list-style-type: none;"><a href="media-playback.md">媒體播放</a></li>
 
-<li style="list-style-type: none;"><a href="menus.md">功能表和特色選單</a></li>
+<li style="list-style-type: none;"><a href="menus.md">功能表和操作功能表</a></li>
 
 <li style="list-style-type: none;"><a href="navigationview.md">瀏覽檢視</a></li>
 
@@ -122,11 +116,11 @@ ms.locfileid: "9044279"
 
 ## <a name="xaml-controls-gallery"></a>XAML 控制項庫
 
-從 Microsoft Store 取得 _XAML 控制項庫_ App，以便查看這些控制項與 Fluent Design 系統的運作情形。 此 App 是此網站的互動小幫手。 安裝過後，您就可以使用個別控制頁面上的連結，啟動此 App 並查看控制項的運作情形。
+從 Microsoft Store 取得 _XAML 控制項庫_應用程式，以查看這些控制項與 Fluent Design 系統的運作情形。 此應用程式是此網站的互動小幫手。 安裝過後，您就可以使用個別控制頁面上的連結，啟動此應用程式並查看控制項的運作情形。
 
 <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a>
 
-<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a>
+<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a>
 
 <img src="images/xaml-controls-gallery.png" alt="XAML Controls Gallery screen" />
 

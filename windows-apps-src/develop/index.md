@@ -1,15 +1,15 @@
 ---
-description: 了解如何在開發 UWP 應用程式。
-title: 開發 UWP app
+description: 了解如何開發 UWP 應用程式。
+title: 開發 UWP 應用程式
 layout: LandingPage
-keywords: uwp app 開發執行緒 async 平台概觀入口網站開發開發人員
+keywords: uwp 應用程式開發執行緒非同步平台概觀入口網站開發的開發人員
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
 ---
 <div> 
-<h1>開發 UWP app</h1>
-<p>操作說明文章和適用於建立適用於 Windows 10 的 UWP 應用程式的程式碼。 </p> 
+<h1>開發 UWP 應用程式</h1>
+<p>關於建立 Windows 10 適用 UWP 應用程式的操作說明文章和程式碼。 </p> 
 </div>
 
 <ul class="panelContent cardsH" style="margin-left: 1px">
@@ -24,8 +24,8 @@ ms.localizationpriority: medium
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>通用 Windows 平台的概觀</h3>
-                        <p>哪些 UWP 的說明，它的運作方式，而且它所提供的功能。</p>
+                        <h3>通用 Windows 平台概觀</h3>
+                        <p>說明 UWP 是什麼、其運作方式，以及它所提供的功能。</p>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@ ms.localizationpriority: medium
                     </div>                
                     <div class="cardText">
                         <h3>移植指南</h3>
-                        <p>將您現有的 Windows Forms、 WPF、 Android 或 iOS 應用程式移到 UWP。 </p>
+                        <p>將您現有的 Windows Forms、WPF、Android 或 iOS 應用程式帶到 UWP。 </p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@ ms.localizationpriority: medium
     </li>                 
 </ul>
 
-## <a name="api-reference"></a>API 參考
+## <a name="api-reference"></a>API 參考資料
 
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
@@ -63,7 +63,7 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardText">
                         <h3>Windows UWP 命名空間</h3>
-                        <p>類別、 結構、 介面、 方法、 屬性和 Windows 執行階段，命名空間來編排所組成的事件。</p>
+                        <p>組成 Windows 執行階段的類別、結構、介面、方法、屬性和事件 (依命名空間組織)。</p>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardText">
                         <h3>適用於 UWP 的結構描述</h3>
-                        <p>檔案與 XML 結構描述規格適用於通用 Windows 平台 (UWP) app。 </p>
+                        <p>通用 Windows 平台 (UWP) 應用程式的檔案和 XML 結構描述規格。 </p>
                     </div>
                 </div>
             </div>
@@ -110,7 +110,7 @@ ms.localizationpriority: medium
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>應用程式 UI</h3>
-                        <p><a href="https://developer.microsoft.com/windows/apps/design">如控制項、 配置、 印刷樣式、 動畫、 可用性及 UI 設計，請參閱設計與 UI 的區段。</a></p>
+                        <p><a href="https://developer.microsoft.com/windows/apps/design">如需控制項、配置、印刷樣式、動畫、可用性和 UI 設計，請參閱「設計和 UI」一節。</a></p>
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@ ms.localizationpriority: medium
             <div style="display:block"  class="cardPadding">
                 <div style="display:block"  class="card">
                     <div style="display:block"  class="cardText">
-                        <h3>資料與檔案</h3>
+                        <h3>資料和檔案</h3>
                         <p style="display:block"><a href="/windows/uwp/audio-video-camera/">音訊、視訊和相機</a></p>
                         <p><a href="/windows/uwp/data-access/" style="display:block" >資料存取</a></p>
                         <p><a href="/windows/uwp/data-binding/"style="display:block" >資料繫結</a></p>
@@ -153,7 +153,7 @@ ms.localizationpriority: medium
                         <h3>部署</h3>
                         <p style="display:block"><a href="/windows/uwp/updates-and-versions/choose-a-uwp-version">選擇 UWP 版本</a></p>
                         <p style="display:block"><a href="/windows/uwp/debug-test-perf/">偵錯、測試及效能</a></p>
-                        <p style="display:block"><a href="/windows/uwp/monetize/">營利、參與和 Microsoft Store 服務</a></p>                        
+                        <p style="display:block"><a href="/windows/uwp/monetize/">創造營收、參與及 Microsoft Store 服務</a></p>                        
                         <p style="display:block"><a href="/windows/uwp/packaging/">封裝應用程式</a></p>
                     </div>
                 </div>
@@ -204,7 +204,7 @@ ms.localizationpriority: medium
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/point-of-service">服務點</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/sensors">感應器</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/printing-and-scanning">列印</a></p>
-                        <p style="display:block"><a href="/windows/uwp/devices-sensors/3d-printing">3d 列印</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/3d-printing">3D 列印</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/nfc">NFC</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/get-battery-info">電池資訊</a></p>
                     </div>
@@ -219,14 +219,14 @@ ms.localizationpriority: medium
                     <div style="display:block" class="cardText">
                         <h3>移植</h3>
                         <p style="display:block"><a href="/windows/uwp/porting/">概觀</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone Silverlight 到 UWP</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows 執行階段 8.x 至 UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">Windows Phone Silverlight 移到 UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows Runtime 8.x 移到 UWP</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">傳統型橋接器</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">在傳統型與 UWP 之間共用程式碼</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/android-ios-uwp-map">適用於 Android 與 iOS 開發人員的概念對應</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/ios-to-uwp-root">從 iOS 移到 UWP</a></p>
                         <p style="display:block"><a href="/microsoft-edge/progressive-web-apps">將您的 Web 應用程式轉換成 PWA</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/apps-on-arm">ARM 上的 Windows 10</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/apps-on-arm">Windows 10 on ARM</a></p>
                     </div>
                 </div>
             </div>
@@ -263,7 +263,7 @@ ms.localizationpriority: medium
                     </div>
                     <div class="cardText">
                         <h3>範例</h3>
-                        <p> 了解如何建立適用於 Windows 的絕佳 app 透過這些樣本的實驗。 這些範例說明功能的運作方式，並協助您快速建立您自己的 UWP 應用程式。</p>
+                        <p> 了解如何透過實驗這些範例來建置出色的 Windows 應用程式。 這些範例可向您示範功能運作方式，並協助您開始建置您自己的 UWP 應用程式。</p>
                     </div>
                 </div>
             </div>
@@ -282,7 +282,7 @@ ms.localizationpriority: medium
                     </div>                
                     <div class="cardText">
                         <h3>開發人員工具</h3>
-                        <p>取得 Visual Studio 2017、 Windows 10 SDK，以及其他開發人員工具。</p>
+                        <p>取得 Visual Studio 2017、Windows 10 SDK 和其他開發人員工具。</p>
                     </div>
                 </div>
             </div>

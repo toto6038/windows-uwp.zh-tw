@@ -1,22 +1,16 @@
 ---
 layout: LandingPage
-Description: See how to publish your Windows apps to the Microsoft Store.
-title: 發佈 Windows 應用程式
+Description: 了解如何將您的 Windows 應用程式發佈到 Microsoft Store。
+title: 發行 Windows 應用程式
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp, 發佈, 銷售, 散發, store, 儀表板
+keywords: 'windows 10, uwp, 發佈, 銷售, 散發, store, 儀表板'
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b9d78014b2416cae7d387261ec1732b1f8932ad
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980306"
 ---
 # <a name="publish-windows-apps-and-games"></a>發佈 Windows 應用程式與遊戲  
  
-您可以使用[合作夥伴中心](https://partner.microsoft.com/dashboard)，將您的應用程式和遊戲發佈至 Microsoft Store。 <a href="//developer.microsoft.com/store/register">立即註冊！</a>
+您可以使用[合作夥伴中心](https://partner.microsoft.com/dashboard)將您的應用程式與遊戲發佈到 Microsoft Store。 <a href="//developer.microsoft.com/store/register">立即註冊！</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -29,7 +23,7 @@ ms.locfileid: "8980306"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>App 提交</h3>
+                        <h3>應用程式提交</h3>
                         <p>了解如何建立提交項並讓您的應用程式通過驗證。</p>
                         <ul>
                         <li><a href="app-submissions.md">App 提交檢查清單</a></li>
@@ -55,7 +49,7 @@ ms.locfileid: "8980306"
                     <p>透過每個市場的定價與排程、可見性選項、銷售定價以及其他選項，來自訂您應用程式的可用性。</p>
                     <ul>
                         <li><a href="define-pricing-and-market-selection.md">選擇您的市場</a></li>
-                        <li><a href="set-and-schedule-app-pricing.md">設定及安排定價 </a></li>
+                        <li><a href="set-and-schedule-app-pricing.md">設定及安排定價</a></li>
                         <li><a href="configure-precise-release-scheduling.md">設定精確發行時間日期</a></li>
                         <li><a href="set-app-pricing-and-availability.md">查看所有可用性選項</a></li>
                     </ul>
@@ -118,7 +112,7 @@ ms.locfileid: "8980306"
                     </div>
                 </div>
                 <div class="cardText">
-                    <h3>推銷您的應用程式</h3>   
+                    <h3>促銷您的應用程式</h3>   
                     <p><a href="create-an-ad-campaign-for-your-app.md">建立廣告活動</a></p>
                     <p><a href="generate-promotional-codes.md">產生促銷碼</a></p>
                     <p><a href="put-apps-and-add-ons-on-sale.md">提供銷售定價</a></p>
@@ -198,7 +192,7 @@ ms.locfileid: "8980306"
                 </div>
                 <div class="cardText">
                     <h3>測試策略</h3>
-                    <p><a href="beta-testing-and-targeted-distribution.md">搶鮮版 (Beta) 測試和特定對象的發佈</a></p>
+                    <p><a href="beta-testing-and-targeted-distribution.md">Beta 版測試和特定對象的發佈</a></p>
                     <p><a href="choose-visibility-options.md#audience">私人對象</a></p>
                     <p><a href="package-flights.md">套件正式發行前小眾測試版</a></p>
                      <p><a href="gradual-package-rollout.md">漸進式推出</a></p>

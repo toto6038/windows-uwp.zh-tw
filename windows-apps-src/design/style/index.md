@@ -1,24 +1,18 @@
 ---
-description: 透過 UWP 樣式指南，了解如何使用色彩、印刷樣式和圖示來定義您的 UWP app 的特質。
-keywords: uwp 樣式指南, 設計指導方針, 印刷樣式, 動作, 音效, 動作, 應用程式開發
-title: 適用於 UWP app 的樣式
+description: 透過 UWP 樣式指南，了解如何使用色彩、印刷樣式和圖示來定義您的 UWP 應用程式的特質。
+keywords: 'uwp 樣式指南, 設計指導方針, 印刷樣式, 動作, 音效, 動作, 應用程式開發'
+title: 適用於 UWP 應用程式的樣式
 ms.date: 08/10/2017
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946617"
 ---
-# <a name="style-for-uwp-apps"></a>適用於 UWP app 的樣式
+# <a name="style-for-uwp-apps"></a>適用於 UWP 應用程式的樣式
 
 ![主角圖像](images/header-style.svg)
 
-樣式可以讓您的應用程式脫穎而出，本節的樣式指導方針協助您透過色彩、印刷樣式以及壓克力材質和顯色醒目提示等新功能，來建立 Fluent Design。
+樣式是讓您的應用程式脫穎而出的關鍵。本節的樣式指導方針協助您透過色彩、印刷樣式以及壓克力材質和顯色醒目提示等新功能，來建立 Fluent Design。
 
 :::row:::
     :::column:::
@@ -29,7 +23,7 @@ ms.locfileid: "8946617"
     :::column:::
         ![hero image](images/header-typography.svg)
         ### [Typography](typography.md)
-       如同語言的視覺呈現，印刷格式的主要任務就是清晰呈現。 其樣式絕對不能阻礙這項目標。 下列指導方針著重於如何使用印刷樣式，以協助使用者輕鬆地了解內容。 
+       如同語言的視覺呈現，印刷格式的主要任務就是清晰呈現。 其樣式絕對不能阻礙這項目標。 下列指導方針主要將說明如何使用印刷樣式，以協助使用者輕鬆了解內容。 
     :::column-end:::
 :::row-end:::
 

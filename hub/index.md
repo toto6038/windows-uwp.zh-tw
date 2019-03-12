@@ -1,13 +1,11 @@
 ---
 layout: HubPage
-hide_bc: True
-title: "Windows 文件"
-description: "尋找開發人員、硬體和 IT 專業人員的文件，以協助您建置及維護您的 Windows 解決方案。"
-ms.openlocfilehash: 3837a3649acd5b9656c3d1b76973fca9f26ba740
-ms.sourcegitcommit: d6cf700ed2771c7a88f32972abdd0e192ae71b73
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2017
+hide_bc: true
+ms.prod: windows
+title: Windows 文件
+description: 尋找開發人員、硬體和 IT 專業人員的文件，以協助您建置及維護您的 Windows 解決方案。
+ms.technology: hub
+localizationpriority: medium
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -49,7 +47,7 @@ ms.lasthandoff: 07/14/2017
               </a>
           </li>
           <li>
-              <a href="https://mva.microsoft.com/">
+              <a href="/learn/browse/?roles=developer&products=windows">
                   <div class="cardSize">
                       <div class="cardPadding">
                           <div class="card">
@@ -59,7 +57,7 @@ ms.lasthandoff: 07/14/2017
                                   </div>
                               </div>
                               <div class="cardText">
-                                  <h3>探索 Microsoft Virtual Academy</h3>
+                                  <h3>探索 Microsoft Learn</h3>
                               </div>
                           </div>
                       </div>
@@ -76,181 +74,146 @@ ms.lasthandoff: 07/14/2017
             <ul id="developer">
                 <li>
                     <a href="#developer-all">全部</a>
-                    <ul id="developer-all" class="cardsF">
-                        <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-1.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>UWP 應用程式</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/apps/getstarted">開始使用</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/apps/design">設計</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/develop">開發</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://msdn.microsoft.com/windows/uwp/publish/index">發佈</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">獲利</a>
-                                            </p>
-                                            <p>
-                                                <a href="/uwp/">API 參考資料</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <ul id="developer-all" class="cardsC">
+<li>
+                            <div class="container intro">
+                                <p>為 Windows 10 建置</p>
                             </div>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-2.svg" alt="" />
+                            <a href="https://docs.microsoft.com/windows/uwp/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-uwp.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>桌上型電腦</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/getstarted">開始使用</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/design">設計</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/develop">開發</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/app-compatibility">相容性</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/test-deploy">測試及部署</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>UWP 應用程式</h3>
+                                                <p>建置適用於 Windows 裝置 (電腦、手機、Xbox One、HoloLens 等等) 的應用程式，並將它們發佈到 Microsoft Store。 </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-3.svg" alt="" />
+                            <a href="https://docs.microsoft.com/en-us/windows/desktop">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-desktop.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>遊戲</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/games/uwp">UWP</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/games/xbox/xboxlive">Xbox Live</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/games/support">支援</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>傳統型應用程式</h3>
+                                                <p>取得工具、了解最適合您的技術，以及了解如何在您慣用的平台上開發傳統型應用程式。</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-4.svg" alt="" />
+                            <a href="https://developer.microsoft.com/games">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-games.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>IoT</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Docs">文件</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Downloads">下載</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/samples">範例</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Community">社群</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://www.windowsforiotdevices.com/">商業化</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>遊戲</h3>
+                                                <p>建立 Windows 10 裝置適用的 UWP 遊戲，包括電腦、Xbox 和混合實境。</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-5.svg" alt="" />
+                            <a href="https://docs.microsoft.com/windows/iot-core/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-iot.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>混合實境</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/academy">學院</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/development">開發</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/design">設計</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/community">社群與支援</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>Windows IoT</h3>
+                                                <p>了解如何在 Windows 10 IoT 核心版上建置。 專為物聯網而建置的作業系統。</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>                            
-                        <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-6.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Edge</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/platform/documentation/">Microsoft Edge 文件</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/tools/">工具</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/testdrive/">示範</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </a>
                         </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/windows/mixed-reality">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-mixed-reality.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>混合實境</h3>
+                                                <p>學習為 HoloLens 和沈浸式頭戴式裝置構建混合實境的體驗。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/microsoft-edge/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-edge.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>網路</h3>
+                                                <p>建立由 Microsoft Edge 和最新 Web 標準提供的體驗。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/windows/ai/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/windows-ai.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Windows AI</h3>
+                                                <p>建置適用於 Windows 和 Windows 裝置的智慧型應用程式。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                       <li>
                     </ul>
                 </li>
             </ul>
@@ -277,8 +240,8 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>開始使用</h3>
-                                                <p>對使用 Windows 10 建置裝置不熟悉？</p>
+                                                <h3>立即開始</h3>
+                                                <p>第一次使用 Windows 10 建置裝置嗎？</p>
                                             </div>
                                         </div>
                                     </div>
@@ -305,7 +268,7 @@ ms.lasthandoff: 07/14/2017
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/windows-hardware/drivers/develop/">
+                            <a href="https://docs.microsoft.com/windows-hardware/drivers/index">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -316,7 +279,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>開發</h3>
-                                                <p>開發、測試和部署驅動程式。</p>
+                                                <p>使用 Windows 驅動程式套件 (WDK) 來開發、測試和部署驅動程式。</p>
                                             </div>
                                         </div>
                                     </div>
@@ -415,7 +378,7 @@ ms.lasthandoff: 07/14/2017
                             </div>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows-server/windows-server-2016">
+                            <a href="https://docs.microsoft.com/windows-server/index">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -425,8 +388,8 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Windows Server 2016</h3>
-                                                <p>了解如何規劃、部署、保護及擴充 Windows Server 2016。</p>
+                                                <h3>Windows Server 2019 和 Windows Server 2016</h3>
+                                                <p>了解如何規劃、部署、保護及擴充 Windows Server 2019 和 Windows Server 2016。</p>
                                             </div>
                                         </div>
                                     </div>
@@ -482,8 +445,8 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>商務用 Microsoft 網上商店</h3>
-                                                <p>了解如何使用商務用 Microsoft 網上商店，為您的公司尋找、取得、散發及管理應用程式。</p>
+                                                <h3>商務用 Microsoft Store</h3>
+                                                <p>了解如何使用商務用 Microsoft Store，為您的公司尋找、取得、散發及管理應用程式。</p>
                                             </div>
                                         </div>
                                     </div>
@@ -501,8 +464,27 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>教育用 Microsoft 網上商店</h3>
-                                                <p>了解如何使用教育用 Microsoft 網上商店，為您的學校尋找、取得、散發及管理應用程式。</p>
+                                                <h3>教育用 Microsoft Store</h3>
+                                                <p>了解如何使用教育用 Microsoft Store，為您的學校尋找、取得、散發及管理應用程式。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/en-us/windows/privacy">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/illustrations/dynamics-gdpr-center.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Windows 隱私權</h3>
+                                                <p>了解 Windows 中的隱私權，並及早因應一般資料保護規定 (GDPR)。</p>
                                             </div>
                                         </div>
                                     </div>
@@ -578,7 +560,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>HoloLens</h3>
-                                                <p>了解如何設定及管理 HoloLens Commercial Suite。</p>
+                                                <p>了解如何設定及管理 HoloLens 商業套件。</p>
                                             </div>
                                         </div>
                                     </div>

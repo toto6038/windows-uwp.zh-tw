@@ -1,20 +1,14 @@
 ---
 title: 開發教育用 App。
-description: 本節說明可供您撰寫 Windows10 平台教育用 App 的通用 Windows App 資源。
+description: "本節說明可供您撰寫 Windows\_10 平台教育用 App 的通用 Windows App 資源。"
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，教育版
+keywords: 'windows 10, uwp, 教育'
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943984"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>開發教育用通用 Windows App
-![「 進行測驗應用程式螢幕擷取畫面](images/take-a-test-screen-small.png)
+![測試應用程式螢幕擷取畫面](images/take-a-test-screen-small.png)
 
 下列資源會協助您撰寫教育用通用 Windows App。
 
@@ -34,11 +28,11 @@ ms.locfileid: "8943984"
 Windows Ink 平台可以融入學生熟悉的輸入模式來讓教育用 App 更出色。 請參閱[手寫筆互動與 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) 和其底下的主題，以瞭解在您的 App 中實作 Windows Ink 的完整指南。 以下範例 App 提供此 API 的使用範例。
 - [手寫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Ink) (英文) 示範如何使用 JavaScript 在通用 Windows App 中使用手寫功能 (例如，擷取、操縱和解譯筆墨筆劃)。
 - [簡易手寫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) (英文) 示範如何使用 C# 在通用 Windows App 中使用手寫功能 (例如，從使用者輸入擷取筆跡，以及對筆墨筆劃執行手寫辨識)。
-- [複雜手寫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) (英文) 示範如何使用進階的 InkPresenter 功能，讓筆跡與其他物件交錯、選取筆跡、複製/貼上，及處理事件。 範例是在通用 Windows 平台上以 C++ 建立，並且可在電腦版和行動裝置版 Windows10 SKU 上執行。
+- [複雜手寫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) (英文) 示範如何使用進階的 InkPresenter 功能，讓筆跡與其他物件交錯、選取筆跡、複製/貼上，及處理事件。 範例是在通用 Windows 平台上以 C++ 建立，並且可在電腦版和行動裝置版 Windows 10 SKU 上執行。
 
 
 ### <a name="microsoft-store"></a>Microsoft Store
 教育用 App 通常是在特殊情況下向特定組織發行。 請參閱[向企業散發企業營運應用程式](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)以取得相關詳細資訊。
 
 ## <a name="related-topics"></a>相關主題
-- Windows IT 中心中的[教育用 Windows10](https://technet.microsoft.com/edu/windows/index)
+- Windows IT 中心中的[教育用 Windows 10](https://technet.microsoft.com/edu/windows/index)

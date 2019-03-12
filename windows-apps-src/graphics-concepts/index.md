@@ -1,23 +1,17 @@
 ---
 title: Direct3D 圖形詞彙
-description: 定義使用 Microsoft Direct3D 圖形詞彙。
+description: 定義 Microsoft Direct3D 所使用的圖形詞彙。
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
-- Direct3D 圖形詞彙
+  - Direct3D 圖形詞彙
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926433"
 ---
 # <a name="direct3d-graphics-glossary"></a>Direct3D 圖形詞彙
 
 
-定義 Microsoft Direct3D 圖形條款。 在高等級、 一般 3D 電腦圖形條款，使用 Direct3D 遊戲和應用程式開發中，這個詞彙的定義。
+定義 Microsoft Direct3D 圖形詞彙。 本詞彙粗略定義 Direct3D 遊戲和應用程式開發中所使用的一般 3D 電腦圖形詞彙。
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本節內容
 
@@ -36,7 +30,7 @@ ms.locfileid: "8926433"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="coordinate-systems-and-geometry.md">座標系統與幾何</a></p></td>
-<td align="left"><p>要進行 Direct3D 應用程式的程式設計，就需要在工作上熟悉 3D 幾何原則。 本節引進建立 3D 場景所需的最重要幾何概念。</p></td>
+<td align="left"><p>要進行 Direct3D 應用程式的程式設計，就需要在工作上熟悉 3D 幾何原則。 本節介紹建立 3D 場景所需的最重要幾何概念。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="vertex-and-index-buffers.md">頂點和索引緩衝區</a></p></td>
@@ -52,7 +46,7 @@ ms.locfileid: "8926433"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="depth-and-stencil-buffers.md">深度和樣板緩衝區</a></p></td>
-<td align="left"><p><em>深度緩衝區</em>儲存深度資訊來控制所呈現而不是隱藏的多邊形區域。 <em>樣板緩衝區</em>用於遮罩影像中的像素，以製造特效，包括合成、印花、溶解、淡化及撥動、外框及剪影，以及雙面樣板。</p></td>
+<td align="left"><p><em>深度緩衝區</em>儲存深度資訊來控制所呈現而不是隱藏的多邊形區域。 <em>樣板緩衝區</em>用於遮罩處理影像中的像素，以製造特效，包括合成、印花、溶解、淡化及撥動、外框及剪影，以及雙面樣板。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="textures.md">紋理</a></p></td>
@@ -64,11 +58,11 @@ ms.locfileid: "8926433"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="views.md">檢視</a></p></td>
-<td align="left"><p>詞彙「檢視」&quot;&quot;用來表示「所需格式的資料」&quot;&quot;。 例如，常數緩衝區檢視 (CBV) 是格式正確的常數緩衝區資料。 本節描述最常見且實用的檢視。</p></td>
+<td align="left"><p>「檢視」&quot;&quot;一詞用來表示「所需格式的資料」&quot;&quot;。 例如，常數緩衝區檢視 (CBV) 是格式正確的常數緩衝區資料。 本節描述最常見且實用的檢視。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="compute-pipeline.md">計算管線</a></p></td>
-<td align="left"><p>Direct3D 計算管線主要被設計用來處理大部分可與圖形管線平行進行的計算。</p></td>
+<td align="left"><p>Direct3D 計算管線主要設計用來處理大部分可與圖形管線平行進行的計算。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="resources.md">資源</a></p></td>
@@ -76,11 +70,11 @@ ms.locfileid: "8926433"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="streaming-resources.md">串流資源</a></p></td>
-<td align="left"><p><em>串流處理資源</em>是使用少量實體記憶體的大型邏輯資源。 會視需要串流少部分資源，而不傳遞整個大型資源。 串流資源先前稱為<em>並排資源</em>。</p></td>
+<td align="left"><p><em>串流資源</em>是使用少量實體記憶體的大型邏輯資源。 視需要串流少部分資源，而不傳遞整個大型資源。 串流資源先前稱為<em>並排資源</em>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="appendix.md">附錄</a></p></td>
-<td align="left"><p>這些章節提供深入的技術詳細資料。</p></td>
+<td align="left"><p>這幾節提供深入的技術詳細資料。</p></td>
 </tr>
 </tbody>
 </table>

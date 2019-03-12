@@ -4,14 +4,8 @@ description: 開始使用通用 Windows 平台 (UWP) 與適用於 Windows 10 的
 title: 通用 Windows 平台 (UWP) 入門
 ms.date: 03/23/2018
 ms.topic: article
-keywords: 開始使用, windows 10, uwp, xaml, c#
+keywords: '開始使用, windows 10, uwp, xaml, c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934723"
 ---
 # <a name="get-started-with-windows-10-apps"></a>開始使用 Windows 10 應用程式 
  
@@ -92,7 +86,7 @@ ms.locfileid: "8934723"
                 </div>
                 <div class="cardText">
                     <h3>教學課程</h3>
-                    <p>尋找導覽的學習體驗？ 這些教學課程可以幫的上忙。</p>
+                    <p>尋找導覽的學習體驗？ 這些教學課程可以幫得上忙。</p>
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">UI 基本知識</a></p>
                     <p><a href="//docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding">資料繫結</a></p>
@@ -115,7 +109,7 @@ ms.locfileid: "8934723"
                     <h3>範例</h3>
                     <p>獲得 Windows 10 平台的第一手經驗並查看實際使用的 API。</p>
                     <br>
-                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">使用UWP app 範例</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">使用UWP 應用程式範例</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">客戶訂單資料庫</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">測驗遊戲 (Project Rome)</a></p>
                     <p><a href="//developer.microsoft.com/windows/samples">Windows 程式碼範例入口網站</a></p>
@@ -134,7 +128,7 @@ ms.locfileid: "8934723"
                     </div>
                 </div>
                 <div class="cardText">
-                    <h3>最新動向</h3>
+                    <h3>新功能</h3>
                     <p>展開您的視野與探索 Windows 10 最新新增項目。</p>
                     <br>
                     <p><a href="//developer.microsoft.com/windows/windows-10-for-developers">最新版 Windows 10 中有哪些酷炫功能</a></p>

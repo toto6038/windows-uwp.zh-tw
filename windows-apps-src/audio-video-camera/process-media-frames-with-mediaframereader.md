@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a1d5a15bd88b7adc23ccc835001c384a91e65a31
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050701"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597983"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理媒體畫面
 
@@ -32,25 +32,25 @@ ms.locfileid: "9050701"
 ## <a name="setting-up-your-project"></a>設定您的專案
 就像任何使用 **MediaCapture** 的 App 一樣，您必須在嘗試存取任何相機裝置之前，宣告您的 App 是使用*網路攝影機*功能。 如果您的應用程式會從音訊裝置擷取，您也應該宣告*麥克風*裝置功能。 
 
-**將功能新增到應用程式資訊清單**
+**將功能新增至應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 **\[方案總管\]** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
-2.  選取 **\[功能\]** 索引標籤。
-3.  核取 **\[網路攝影機\]** 方塊和 **\[麥克風\]** 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 **\[圖片媒體櫃\]** 方塊和 **\[視訊媒體櫃\]** 方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 [功能] 索引標籤。
+3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。
 
 除了預設專案範本所包含的 API 以外，這篇文章中的範例程式碼還會使用下列命名空間的 API。
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>選取畫面來源和畫面來源群組
-許多處理媒體畫面的 App 需要一次從多個來源取得畫面，例如裝置的彩色和景深相機。 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup)物件代表一組可同時使用的媒體畫面來源。 呼叫靜態方法 [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync)，以取得目前裝置所支援之所有畫面來源群組的清單。
+許多處理媒體畫面的 App 需要一次從多個來源取得畫面，例如裝置的色彩和深度相機。 [ **MediaFrameSourceGroup** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup)物件都代表一組可以同時使用的媒體框架來源。 呼叫靜態方法 [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync)，以取得目前裝置所支援之所有畫面來源群組的清單。
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-您也可以建立[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)使用[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)和[**Devicewatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)從傳回的值，在裝置上的可用的畫面來源群組時收到通知變更，例如當插入外部相機時。 如需詳細資訊，請參閱[**列舉裝置**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+您也可以建立[ **DeviceWatcher** ](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)使用[ **DeviceInformation.CreateWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225427) 從傳回的值和[ **MediaFrameSourceGroup.GetDeviceSelector** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)可用框架的來源群組的裝置變更，例如當外部的攝影機已插入電源時收到通知。 如需詳細資訊，請參閱[**列舉裝置**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
-[**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 有一個 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 物件的集合，可描述群組中包含的畫面來源。 在擷取裝置上可用的畫面來源群組之後，您可以選取公開您感興趣的畫面來源群組。
+[  **MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 有一個 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 物件的集合，可描述群組中包含的畫面來源。 在擷取裝置上可用的畫面來源群組之後，您可以選取公開您感興趣的畫面來源群組。
 
 下列範例示範選取畫面來源群組最簡單的方式。 這個程式碼僅重複查看所有可用的群組，然後重複查看 [**SourceInfos**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.SourceInfos) 集合中的每個項目。 每個 **MediaFrameSourceInfo** 都會被檢查，以查看是否支援我們要尋找的功能。 在這個案例中，會針對值 [**VideoPreview**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.MediaStreamType) 檢查 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType) 屬性，表示裝置提供一個視訊預覽資料流，以及針對值 [**Color**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.SourceKind) 檢查 [**SourceKind**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceKind) 屬性，指示來源提供色彩畫面。
 
@@ -64,7 +64,7 @@ ms.locfileid: "9050701"
 
 [!code-cs[SelectColor](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColor)]
 
-下列範例使用上述類似技術，來選取包含彩色、景深與紅外線相機的來源群組。
+下列範例使用上述類似技術，來選取包含色彩、深度與紅外線相機的來源群組。
 
 [!code-cs[ColorInfraredDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetColorInfraredDepth)]
 
@@ -81,10 +81,10 @@ ms.locfileid: "9050701"
 
 藉由呼叫建構函式，建立 **MediaCapture** 物件的執行個體。 接下來，建立將用來初始化 **MediaCapture** 物件的 [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings) 物件。 在這個範例中，會使用下列設定︰
 
-* [**SourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SourceGroup) - 這會告訴系統您將會使用哪一個來源群組取得畫面。 請記住，來源群組會定義一組可同時使用的媒體畫面來源。
-* [**SharingMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SharingMode) - 這會告訴系統您是否需要擷取來源裝置的專屬控制項。 如果您將此設定為 [**ExclusiveControl**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode)，就表示您可以變更擷取裝置的設定 (像是裝置所產生的畫面格式)，但是這表示如果其他 App 已經有專屬控制項，當您的 App 嘗試初始化媒體擷取裝置時將會失敗。 如果您將此設定為 [**SharedReadOnly**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode)，即使畫面來源正由其他 App 使用，您也可以接收來自畫面來源的畫面，但您無法變更裝置的設定。
-* [**MemoryPreference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.MemoryPreference) - 如果您指定 [**CPU**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference)，系統將會使用 CPU 記憶體確保當畫面抵達時，畫面可以做為 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) 物件使用。 如果您指定 [**Auto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference)，系統會以動態方式選擇最佳的記憶體位置來儲存畫面。 如果系統選擇使用 GPU 記憶體，媒體畫面會以 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 物件的方式抵達，而不是 **SoftwareBitmap**。
-* [**StreamingCaptureMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.StreamingCaptureMode) - 將它設定為 [**Video**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.StreamingCaptureMode) 以指示該音訊不需要串流處理。
+* [**SourceGroup** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SourceGroup) -這會告訴系統便會用來取得框架的來源群組。 請記住，來源群組會定義一組可同時使用的媒體畫面來源。
+* [**SharingMode** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SharingMode) -這會告訴系統是否需要擷取來源裝置的專有控制權。 如果您將此設定為 [**ExclusiveControl**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode)，就表示您可以變更擷取裝置的設定 (像是裝置所產生的畫面格式)，但是這表示如果其他 App 已經有專屬控制項，當您的 App 嘗試初始化媒體擷取裝置時將會失敗。 如果您將此設定為 [**SharedReadOnly**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode)，即使畫面來源正由其他 App 使用，您也可以接收來自畫面來源的畫面，但您無法變更裝置的設定。
+* [**MemoryPreference** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.MemoryPreference) -如果您指定[ **CPU**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference)系統會使用 CPU 記憶體，以確保框架到達時，它們就可以為[ **SoftwareBitmap** ](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap)物件。 如果您指定 [**Auto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference)，系統會以動態方式選擇最佳的記憶體位置來儲存畫面。 如果系統選擇使用 GPU 記憶體，媒體畫面會以 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 物件的方式抵達，而不是 **SoftwareBitmap**。
+* [**StreamingCaptureMode** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.StreamingCaptureMode) -將此設為[**影片**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.StreamingCaptureMode)表示不需要該音訊串流。
 
 呼叫 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)，以使用您想要的設定將 **MediaCapture** 初始化。 請務必在 *try* 區塊中呼叫，以防初始化失敗。
 
@@ -93,7 +93,7 @@ ms.locfileid: "9050701"
 ## <a name="set-the-preferred-format-for-the-frame-source"></a>針對畫面來源設定慣用的格式
 若要設定畫面來源的慣用格式，您必須取得代表來源的 [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource) 物件。 您可以透過存取已初始化 **MediaCapture** 物件的 [**Frames**](https://msdn.microsoft.com/library/windows/apps/Windows.Phone.Media.Capture.CameraCaptureSequence.Frames) 字典，指定您想要使用的畫面來源的識別碼來取得此物件。 這就是為什麼我們在選取畫面來源群組時會儲存 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 物件的原因。
 
-[**MediaFrameSource.SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) 屬性包含一份 [**MediaFrameFormat**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameFormat) 物件的清單，其中說明了畫面來源的支援格式。 使用 **Where** Linq 延伸方法，根據所需的屬性選取格式。 在這個範例中，會選取一個寬度為 1080 像素，並且可提供 32 位元 RGB 格式畫面的格式。 **FirstOrDefault** 延伸方法會選取清單中的第一個項目。 如果選取的格式為 null，那麼畫面來源就不支援要求的格式。 如果是支援的格式，您可透過呼叫 [**SetFormatAsync**](https://msdn.microsoft.com/library/windows/apps/)，要求來源使用此格式。
+[  **MediaFrameSource.SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) 屬性包含一份 [**MediaFrameFormat**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameFormat) 物件的清單，其中說明了畫面來源的支援格式。 使用 **Where** Linq 延伸方法，根據所需的屬性選取格式。 在這個範例中，會選取一個寬度為 1080 像素，並且可提供 32 位元 RGB 格式畫面的格式。 **FirstOrDefault** 延伸方法會選取清單中的第一個項目。 如果選取的格式為 null，那麼畫面來源就不支援要求的格式。 如果是支援的格式，您可透過呼叫 [**SetFormatAsync**](https://msdn.microsoft.com/library/windows/apps/)，要求來源使用此格式。
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
@@ -252,8 +252,8 @@ ms.locfileid: "9050701"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [相機畫面範例](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [相機框架範例](https://go.microsoft.com/fwlink/?LinkId=823230)
  
 
  

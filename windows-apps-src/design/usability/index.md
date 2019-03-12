@@ -1,6 +1,6 @@
 ---
 description: 了解如何讓您的應用程式包容世界各地的使用者且無障礙。
-keywords: uwP 應用程式協助工具, 全球化, 設計包容性應用程式, 協助工具應用程式需求
+keywords: 'uwP 應用程式協助工具, 全球化, 設計包容性應用程式, 協助工具應用程式需求'
 title: UWP 應用程式的可用性 - Windows 應用程式開發
 layout: LandingPage
 template: detail.hbs
@@ -8,12 +8,6 @@ ms.date: 10/18/2017
 ms.topic: landing-page
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: f218df3b4118508049023218b64e6c7321fbbda9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937932"
 ---
 # <a name="usability-for-uwp-apps"></a>UWP 應用程式的可用性
 
@@ -26,7 +20,7 @@ ms.locfileid: "8937932"
 
 ## <a name="accessiblity"></a>協助工具
 
-協助工具可以針對無法或不便使用傳統使用者介面的殘障人士，讓他們也能使用應用程式。 根據法律的規定，某些情況必須提供協助工具， 不過無論法律的規定為何，最好能解決無障礙問題，這樣應用程式便能吸引更多的使用者。
+協助工具可以針對無法或不便使用傳統使用者介面的殘障人士，讓他們也能使用應用程式。 根據法律的規定，某些情況必須提供協助工具。 不過無論法律的規定為何，最好能解決無障礙問題，這樣應用程式便能吸引更多的使用者。
 
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
@@ -45,7 +39,7 @@ ms.locfileid: "8937932"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/designing-inclusive-software.md">設計全人軟體</a></b><br/>了解如何透過適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式來改善全人設計。  在設計和建置全人軟體時考量提供無障礙功能。</p>
+<p><b><a href="../accessibility/designing-inclusive-software.md">設計全人軟體</a></b><br/>了解如何透過適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式來改善全人設計。  在設計和建置通用軟體時請隨時考量提供無障礙功能。</p>
                     </div>
                 </div>
             </div>
@@ -67,7 +61,7 @@ ms.locfileid: "8937932"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-testing.md">協助工具測試</a> </b><br/>確認 UWP 應用程式可提供無障礙功能的測試程序。</p>
+<p><b><a href="../accessibility/accessibility-testing.md">協助工具測試</a></b><br/>確認 UWP 應用程式可提供無障礙功能的測試程序。</p>
                     </div>
                 </div>
             </div>
@@ -78,7 +72,7 @@ ms.locfileid: "8937932"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-in-the-store.md">市集中的協助工具</a></b><br/>說明在 Microsoft Store 中，宣告 UWP 應用程式提供無障礙功能的條件。</p>
+<p><b><a href="../accessibility/accessibility-in-the-store.md">Store 中的協助工具</a></b><br/>說明在 Microsoft Store 中，宣告 UWP 應用程式提供無障礙功能的條件。</p>
                     </div>
                 </div>
             </div>
@@ -166,7 +160,7 @@ ms.locfileid: "8937932"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/control-patterns-and-interfaces.md">控制項模式和介面</a></b><br/>本文列出 Microsoft UI 自動化控制項模式、用戶端用來存取控制項模式的類別，以及介面提供者用來實作控制項模式的類別。</p>                    
+<p><b><a href="../accessibility/control-patterns-and-interfaces.md">控制項模式和介面</a></b><br/>本文列出 Microsoft 使用者介面自動化控制項模式、用戶端用來存取控制項模式的類別，以及介面提供者用來實作控制項模式的類別。</p>                    
                     </div>
                 </div>
             </div>
@@ -175,7 +169,7 @@ ms.locfileid: "8937932"
 </ul>
 
 
-## <a name="globalization-and-localization"></a>全球化和當地語系化
+## <a name="globalization-and-localization"></a>全球化與當地語系化
 
 全球不同語言、地區和文化的對象都使用 Windows。 您的使用者使用各種不同的語言，居住在各種不同的國家和地區。 有些使用者甚至會說一種以上的語言。 因此，您的應用程式是根據包含許多語言、地區及文化系統設定變更的設定執行的。 使用*全球化*和*當地語系化*可設計您的應用程式並使它能做出調整，以提升應用程式的潛在市場。
 
@@ -220,7 +214,7 @@ ms.locfileid: "8937932"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/guidelines-for-app-help.md">應用程式說明的指導方針</a></b><br/>應用程式可能十分複雜，提供有效的說明，讓使用者可以大幅改善其體驗。
+<p><b><a href="../in-app-help/guidelines-for-app-help.md">應用程式說明的指導方針</a></b><br/>應用程式可能十分複雜，並提供有效的說明，讓使用者可以大幅改善其體驗。
 </p>
                     </div>
                 </div>
@@ -243,7 +237,7 @@ ms.locfileid: "8937932"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/in-app-help.md">應用程式內說明</a></b><br/>大部分時間，最好是在應用程式內顯示說明，並在使用者選擇檢視時才顯示。 當建立應用程式內說明時，請考慮下列指導方針。</p>
+<p><b><a href="../in-app-help/in-app-help.md">應用程式內說明</a></b><br/>大部分時間，最好是在 app 內顯示說明，並在使用者選擇檢視時才顯示。 當建立 App 內說明時，請考慮下列指導方針。</p>
                     </div>
                 </div>
             </div>
@@ -254,7 +248,7 @@ ms.locfileid: "8937932"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/external-help.md">外部說明</a></b><br/>大部分時間，最好是在應用程式內顯示說明，並在使用者選擇檢視時才顯示。 當建立應用程式內說明時，請考慮下列指導方針。</p>
+<p><b><a href="../in-app-help/external-help.md">外部說明</a></b><br/>大部分時間，最好是在 app 內顯示說明，並在使用者選擇檢視時才顯示。 當建立 App 內說明時，請考慮下列指導方針。</p>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 items:
 - name: 概觀
   href: ../publish/index.md
-- name: 開啟開發人員帳戶
+- name: 開立開發人員帳戶
   href: ../publish/opening-a-developer-account.md
   items:
   - name: 帳戶類型、位置和費用
@@ -57,18 +57,18 @@ items:
       href: ../publish/package-version-numbering.md
     - name: 支援的語言
       href: ../publish/supported-languages.md
-    - name: 應用程式套件管理指引
+    - name: 應用程式套件管理指導方針
       href: ../publish/guidance-for-app-package-management.md
-  - name: 建立應用程式 Store 清單
+  - name: 建立應用程式市集清單
     href: ../publish/create-app-store-listings.md
     items:
     - name: 撰寫一份出色的應用程式介紹
       href: ../publish/write-a-great-app-description.md
     - name: 應用程式螢幕擷取畫面、影像及預告片
       href: ../publish/app-screenshots-and-images.md
-    - name: 匯入及匯出市集清單
+    - name: 匯入及匯出 Store 清單
       href: ../publish/import-and-export-store-listings.md
-    - name: 建立平台專屬的 Store 清單
+    - name: 建立平台專屬的市集清單
       href: ../publish/create-platform-specific-store-listings.md
   - name: 管理提交選項
     href: ../publish/manage-submission-options.md
@@ -97,20 +97,20 @@ items:
     href: ../publish/set-your-add-on-product-id.md
   - name: 輸入附加元件屬性
     href: ../publish/enter-add-on-properties.md
-  - name: 設定附加元件價格與可用性
+  - name: 設定附加內容價格與可用性
     href: ../publish/set-add-on-pricing-and-availability.md
-  - name: 建立附加元件 Store 清單
+  - name: 建立附加元件市集清單
     href: ../publish/create-add-on-store-listings.md
 - name: 應用程式內廣告
   href: ../publish/in-app-ads.md
-- name: App 管理與服務
+- name: 應用程式管理與服務
   href: ../publish/app-management-and-services.md
   items:
   - name: 檢視應用程式身分識別詳細資料
     href: ../publish/view-app-identity-details.md
   - name: 管理應用程式名稱
     href: ../publish/manage-app-names.md
-  - name: 產生 OEM 的預先安裝套件
+  - name: 針對 OEM 產生預先安裝套件
     href: ../publish/generate-preinstall-packages-for-oems.md
 - name: 吸引關注與宣傳
   href: ../publish/attract-customers-and-promote-your-apps.md
@@ -186,13 +186,13 @@ items:
 - name: 獲得報酬
   href: ../publish/getting-paid-apps.md
   items:
-  - name: 設定您的支出及稅收表格
+  - name: 設定您的支出及納稅申報表
     href: ../publish/setting-up-your-payout-account-and-tax-forms.md
   - name: 支付臨界值、方法和時間範圍
     href: ../publish/payment-thresholds-methods-and-timeframes.md
-  - name: 支出摘要
+  - name: 支付摘要
     href: ../publish/payout-summary.md
-  - name: 稅務詳細資料
+  - name: 納稅詳細資料
     href: ../publish/tax-details-for-paid-apps.md
   - name: 了解 IRS 稅單
     href: ../publish/understand-irs-tax-forms.md
@@ -213,8 +213,8 @@ items:
   - name: 開發人員管理辦法
     href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
 ms.openlocfilehash: d44affff4838b8799bfd2e82e4f57058d60e657b
-ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042468"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582206"

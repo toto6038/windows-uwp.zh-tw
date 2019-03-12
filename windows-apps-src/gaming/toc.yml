@@ -1,7 +1,7 @@
 items:
 - name: 開始使用
   href: ../gaming/getting-started.md
-- name: Windows 10 遊戲開發指南
+- name: Windows 10 遊戲開發指南
   href: ../gaming/e2e.md
 - name: 遊戲程式設計
   href: ../gaming/index.md
@@ -40,7 +40,7 @@ items:
         href: ../gaming/gamepad-and-vibration.md
       - name: 機台搖桿
         href: ../gaming/arcade-stick.md
-      - name: 賽車方向盤與動力回饋
+      - name: 競速方向盤與力回饋
         href: ../gaming/racing-wheel-and-force-feedback.md
       - name: 飛行桿
         href: ../gaming/flight-stick.md
@@ -63,10 +63,10 @@ items:
 - name: DirectX 程式設計
   href: ../gaming/directx-programming.md
   items:
-  - name: 入門
+  - name: 立即開始
     href: ../gaming/directx-getting-started.md
     items:
-    - name: App 物件
+    - name: 應用程式物件
       href: ../gaming/about-the-uwp-user-interface-and-directx.md
     - name: 專案範本與工具
       href: ../gaming/prepare-your-dev-environment-for-windows-store-directx-game-development.md
@@ -77,14 +77,14 @@ items:
         href: ../gaming/set-up-visual-studio-for-game-development.md
       - name: 圖形診斷工具
         href: ../gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md
-    - name: 啟動和繼續 App
+    - name: 啟動和繼續應用程式
       href: ../gaming/launching-and-resuming-apps-directx-and-cpp.md
       items:
-      - name: 啟動 app
+      - name: 啟動應用程式
         href: ../gaming/how-to-activate-an-app-directx-and-cpp.md
-      - name: 暫停 app
+      - name: 暫停應用程式
         href: ../gaming/how-to-suspend-an-app-directx-and-cpp.md
-      - name: 繼續 app
+      - name: 繼續應用程式
         href: ../gaming/how-to-resume-an-app-directx-and-cpp.md
   - name: 範例
     href: ../gaming/directx-samples.md
@@ -117,11 +117,11 @@ items:
       items:
       - name: 基礎
         href: ../gaming/marble-maze-sample-fundamentals.md
-      - name: App 結構
+      - name: 應用程式結構
         href: ../gaming/marble-maze-application-structure.md
       - name: 新增視覺內容
         href: ../gaming/adding-visual-content-to-the-marble-maze-sample.md
-      - name: 加入輸入和互動
+      - name: 新增輸入和互動
         href: ../gaming/adding-input-and-interactivity-to-the-marble-maze-sample.md
       - name: 新增音訊
         href: ../gaming/adding-audio-to-the-marble-maze-sample.md
@@ -433,7 +433,7 @@ items:
       items:
       - name: 設定資源
         href: ../gaming/setting-up-directx-resources.md
-      - name: 繪製基本型別
+      - name: 繪製基本類型
         href: ../gaming/creating-shaders-and-drawing-primitives.md
       - name: 使用深度和效果
         href: ../gaming/using-depth-and-effects-on-primitives.md
@@ -473,13 +473,13 @@ items:
       href: ../gaming/asynchronous-programming-directx-and-cpp.md
     - name: 裝置已移除案例
       href: ../gaming/handling-device-lost-scenarios.md
-    - name: 多重取樣
+    - name: 多重採樣
       href: ../gaming/multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md
     - name: 最佳化輸入和轉譯迴圈
       href: ../gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md
     - name: 透過交換鏈結減少延遲
       href: ../gaming/reduce-latency-with-dxgi-1-3-swap-chains.md
-    - name: 交換鏈結縮放和覆疊
+    - name: 交換鏈結縮放和重疊
       href: ../gaming/multisampling--scaling--and-overlay-swap-chains.md
   - name: 從 DirectX 9 移植到 UWP
     href: ../gaming/porting-your-directx-9-game-to-windows-store.md
@@ -550,7 +550,7 @@ items:
   items:
   - name: 開始使用
     href: ../xbox-apps/getting-started.md
-  - name: 最新動向
+  - name: 新功能
     href: ../xbox-apps/whats-new.md
   - name: 啟用 Xbox One 開發人員模式
     href: ../xbox-apps/devkit-activation.md
@@ -562,7 +562,7 @@ items:
     href: ../xbox-apps/samples.md
   - name: 已知問題
     href: ../xbox-apps/known-issues.md
-  - name: 常見問題
+  - name: 常見問題集
     href: ../xbox-apps/frequently-asked-questions.md
   - name: 工具
     href: ../xbox-apps/introduction-to-xbox-tools.md
@@ -644,8 +644,8 @@ items:
 - name: Xbox Live
   href: ../xbox-live/TOC.md
 ms.openlocfilehash: 0d44f8286586f3019864097357051e43fa88fbae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962580"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582872"
