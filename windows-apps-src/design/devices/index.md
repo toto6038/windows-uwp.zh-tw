@@ -1,19 +1,13 @@
 ---
-Description: Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
-title: 適用於通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
+Description: 了解支援通用 Windows 平台 (UWP) 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。
+title: 通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
-keywords: 裝置, 輸入, 互動
+keywords: '裝置, 輸入, 互動'
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 127c01321c0341e7125e8c6da955c789c4c65f2f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049905"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
 
@@ -21,7 +15,7 @@ ms.locfileid: "9049905"
 
 ![執行 Windows 的裝置](images/device-primer/device-primer-ramp.png)
 
-了解支援通用 Windows 平台 (UWP) 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。 為特定裝置設計時，主要的考量包括應用程式在該裝置上顯示的方式、位置、時機與使用方式，以及使用者與該裝置互動的方式。
+了解支援通用 Windows 平台 (UWP) 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。 針對特定裝置進行設計時，主要的考量包括應用程式在該裝置上將如何顯示、將在該裝置上的何處使用應用程式、何時使用和如何使用，以及使用者將如何與該裝置互動。
 
 ## <a name="pcs-and-laptops"></a>電腦和膝上型電腦
 
@@ -92,7 +86,7 @@ UI 考量
 
 ## <a name="xbox-and-tv"></a>Xbox 和電視
 
-坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為 **「10 英呎體驗」**。 這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或任何其他連接至電視螢幕的裝置開發應用程式，並且可能使用遊戲台或遙控器作為輸入，您就必須記住這一點。
+坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為「10 英呎體驗」。 這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或任何其他連接至電視螢幕的裝置開發應用程式，並且可能使用遊戲台或遙控器作為輸入，您就必須記住這一點。
 
 為 10 英呎體驗設計 UWP 應用程式，與為這裡所列出的任何其他裝置類別設計 UWP 應用程式十分不同。 如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](designing-for-tv.md)。
 
@@ -129,7 +123,7 @@ UI 考量
 
 所有計算裝置中最為廣泛使用的裝置，手機透過有限的螢幕空間和基本輸入，就可以執行很多功能。 手機有各種不同的大小。較大的手機稱為 平板手機。 平板手機上的 app 體驗類似智慧型手機，但因為平板手機有更大的螢幕實際可用空間，所以在內容使用的方式有一些重要變更。
 
-Continuum 手機，適用於相容的 windows 10 行動裝置，新的體驗與使用者可將其手機連接到監視器和甚至使用滑鼠和鍵盤，來讓手機可以像膝上型電腦一樣運作。 (如需詳細資訊，請參閱 [Continuum 手機版](https://go.microsoft.com/fwlink/p/?LinkID=699431)一文)。
+透過 Continuum 手機版 (此為可相容的 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器，甚至使用滑鼠和鍵盤來讓手機可像膝上型電腦一樣運作。 (如需詳細資訊，請參閱 [Continuum 手機版](https://go.microsoft.com/fwlink/p/?LinkID=699431)一文)。
 
 螢幕大小
 -   手機 (4 吋 到 5 吋)

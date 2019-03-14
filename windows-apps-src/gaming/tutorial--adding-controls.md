@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 控制項, 輸入
 ms.localizationpriority: medium
 ms.openlocfilehash: 369aa076184f79aa1e43c3aac11706982a6be268
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045637"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595413"
 ---
 # <a name="add-controls"></a>新增控制項
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 更新 Windows 10 上的 UWP 應用程式。 Windows 8.x 文件，請參閱[封存](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-一個好的通用 Windows 平台 (UWP) 遊戲可以支援多種介面。 潛在玩家可能會有 windows 10 上沒有實體按鈕連接，Xbox 控制器的電腦與平板電腦或最新傳統型遊戲也許有高效能滑鼠和遊戲鍵盤。 在我們的遊戲中，控制項是在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 類別中實作。 這個類別彙總三種輸入 (滑鼠和鍵盤、觸控板及遊戲台) 到單一控制器。 最後的結果是第一人稱射擊遊戲使用可搭配多個裝置運作的一般標準移動視角控制項。
+一個好的通用 Windows 平台 (UWP) 遊戲可以支援多種介面。 潛在的播放程式可能會有 Windows 10 平板電腦與實體按鈕、 附加、 Xbox 控制器的電腦或最新的桌面遊戲 rig，與高效能的滑鼠和鍵盤遊戲。 在我們的遊戲中，控制項是在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 類別中實作。 這個類別彙總三種輸入 (滑鼠和鍵盤、觸控板及遊戲台) 到單一控制器。 最後的結果是第一人稱射擊遊戲使用可搭配多個裝置運作的一般標準移動視角控制項。
 
 > [!NOTE]
 > 如需有關控制項的詳細資訊，請參閱[適用於遊戲的移動視角控制項](tutorial--adding-move-look-controls-to-your-directx-game.md)和[適用於遊戲的觸控控制項](tutorial--adding-touch-controls-to-your-directx-game.md)。
@@ -95,7 +95,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 當遊戲暫停時，遊戲會進入 **WaitForInput** 狀態。 當玩家將指標移到遊戲主視窗外，或按下暫停按鈕 (P 按鍵或遊戲台 \[**開始** \] 按鈕)，就會發生此狀況。 **MoveLookController** 會登錄按鍵動作，並在呼叫 [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127) 方法時通知遊戲迴圈。 此時，如果 **IsPauseRequested** 傳回 **true**，遊戲迴圈會在 **MoveLookController** 上呼叫 **WaitForPress**，讓控制器進入 **WaitForInput** 狀態。 
 
 
-一旦在 **WaitForInput** 狀態，遊戲會停止處理幾乎所有遊戲輸入事件，直到它會返回 \[**使用中**\] 狀態。 例外的是暫停按鈕，按此按鈕會造成遊戲回復到使用中的狀態。 暫停按鈕以外，為了讓遊戲回復到**使用中**狀態玩家需要選取功能表項目。 
+一旦在 **WaitForInput** 狀態，遊戲會停止處理幾乎所有遊戲輸入事件，直到它會返回 \[**使用中**\] 狀態。 例外的是暫停按鈕，按此按鈕會造成遊戲回復到使用中的狀態。 [暫停] 按鈕回到此遊戲讓以外**Active**狀態玩家必須將選取的功能表項目。 
 
 
 
@@ -113,7 +113,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 將指標事件對應到特定遊戲動作後，就應該更新 **MoveLookController** 物件與主遊戲迴圈共用的資料。
 
-呼叫時，遊戲範例中的 [**Update**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096) 方法會處理輸入，並更新速度和視角方向變數 (**m\_velocity** 和 **m\_lookdirection**)，遊戲迴圈接著會透過呼叫公用的 [**Velocity**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909) 和 [**LookDirection**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923) 方法來擷取。
+呼叫時， [**更新**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096)遊戲的範例中的方法處理輸入和更新的速度和外觀的 「 方向 」 變數 (**m\_速度**和**m\_將 lookdirection 變更**)，它會藉由呼叫公用然後擷取遊戲迴圈[**速度**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909)和[ **將 lookdirection 變更**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923)方法。
 
 > [!NOTE]
 > 有關 [**Update**](#the-update-method) 方法的更多詳細資料，稍後可在本頁面上看到。
@@ -237,10 +237,10 @@ void MoveLookController::OnMouseMoved(
 螢幕左下方象限中的移動控制器矩形是用做方向鍵。 在此空間內將您的拇指向左和向右滑動，可將玩家向左和向右移動，而向上和向下滑動則可將相機向前和向後移動。
 設定好這個之後，輕觸螢幕右下方象限中的射擊控制器會射擊球體。
 
-[**SetMoveRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L843-L853) 和 [**SetFireRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L857-L867) 方法會建立我們的輸入矩形，使用兩個 2D 向量來指定每個矩形在螢幕上的左上角和右下角位置。 
+[  **SetMoveRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L843-L853) 和 [**SetFireRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L857-L867) 方法會建立我們的輸入矩形，使用兩個 2D 向量來指定每個矩形在螢幕上的左上角和右下角位置。 
 
 
-然後參數會指派給 **m\_fireUpperLeft** 和 **m\_fireLowerRight**，這可協助我們判斷使用者是否在矩形內觸碰。 
+參數會接著指派給**m\_fireUpperLeft**並**m\_fireLowerRight** ，以便協助我們判斷如果在使用者觸碰內的矩形。 
 ```cpp
 m_fireUpperLeft  = upperLeft;
 m_fireLowerRight = lowerRight;
@@ -266,9 +266,9 @@ window->PointerReleased +=
 
 我們會先判斷當使用者第一次使用 [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313) 方法在移動或射擊矩形內按下時，所發生的情況。
 以下我們檢查他們觸摸控制項的位置，以及指標是否已在該控制器。 如果這是第一個手指觸控特定控制項，我們會執行下列動作。
-- 以 2D 向量在 **m\_moveFirstDown** 或 **m\_fireFirstDown** 儲存共用的位置。
-- 指派指標 ID 為 **m\_movePointerID** 或 **m\_firePointerID**。
-- 設定適當的 **InUse** 旗標 (**m\_moveInUse** 或 **m\_fireInUse**) 為 `true`，因為我們已經有該控制項的使用中指標。
+- 儲存的位置中 touchdown **m\_moveFirstDown**或**m\_fireFirstDown**以 2 維向量。
+- 指派要指標 ID **m\_movePointerID**或是**m\_firePointerID**。
+- 設定適當**InUse**旗標 (**m\_moveInUse**或是**m\_fireInUse**) 至`true`因為我們現在使用中的指標，控制項。
 
 
 ```cpp
@@ -357,7 +357,7 @@ window->PointerReleased +=
 
 如果移動控制項已經釋放，我們會執行下列動作。
 - 設定玩家在所有方向的速度為 `0`，以防止玩家在遊戲中移動。
-- 將 **m\_moveInUse** 切換為 `false`，因為使用者不再觸碰移動控制器。
+- 交換器**m\_moveInUse**到`false`因為使用者不再會觸碰移動控制器。
 - 將移動指標 ID 設定為 `0`，因為移動控制器中不再有指標。
 
 ```cpp
@@ -399,13 +399,13 @@ window->PointerReleased +=
 
 
 
-以下 **MoveLookController** 指派指標 ID 給觸發事件到對應至視角區域的特定變數的指標。 對於觸控，視角區域中發生， **m\_lookPointerID**變數會設定成引發事件的指標 ID。 布林值變數 **m\_lookInUse** 也會設定，以指出控制項尚未釋放。
+以下 **MoveLookController** 指派指標 ID 給觸發事件到對應至視角區域的特定變數的指標。 在 [查詢] 區域中發生觸控**m\_lookPointerID**變數會設為引發事件的指標識別碼。 布林值變數， **m\_lookInUse**，也指出控制項是否未設定但已經發行。
 
-現在，我們來看看遊戲範例如何處理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 觸控螢幕事件。
+現在，我們再來看看遊戲範例如何處理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 觸控螢幕事件。
 
 
 在 **MoveLookController::OnPointerMoved** 方法中，我們查看何種指標 ID 已指派給事件。 如果這是 **m_lookPointerID**，我們會計算指標位置的變動。
-然後，我們會使用此差異來計算應該變更多少旋轉。 最後，我們目前所在點，是我們可以更新要在遊戲中使用的 **m\_pitch** 和 **m\_yaw**，以變更玩家的旋轉。 
+然後，我們會使用此差異來計算應該變更多少旋轉。 最後我們的定位點，我們可以在這裡更新**m\_音調**並**m\_偏航**至遊戲中用來變更 player 旋轉。 
 
 ```cpp
     else if (pointerID == m_lookPointerID)     // This is the look pointer.
@@ -575,7 +575,7 @@ RT 鍵 | 射擊球體
 
 
 
-在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我們新增兩個新事件，以判斷遊戲台是否已經[新增](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[移除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 下列事件會更新 **m_gamepadsChanged** 屬性。 這是在**UpdatePollingDevices**方法用來檢查已知遊戲台的清單是否有所變更。 
+在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我們新增兩個新事件，以判斷遊戲台是否已經[新增](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[移除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 下列事件會更新 **m_gamepadsChanged** 屬性。 這用於**UpdatePollingDevices**方法來檢查是否已變更的已知的遊戲台清單。 
 
 ```cpp
     // Detect gamepad connection and disconnection events.
@@ -587,7 +587,7 @@ RT 鍵 | 射擊球體
 ```
 
 > [!NOTE]
-> UWP 應用程式在應用程式不在焦點時，無法從 Xbox One 控制器接收輸入。
+> UWP 應用程式在應用程式不是焦點時，無法從 Xbox 一個控制站接收輸入。
 
 ### <a name="the-updatepollingdevices-method"></a>UpdatePollingDevices 方法
 
@@ -727,7 +727,7 @@ RT 鍵 | 射擊球體
 
 在我們的 **Update** 方法中，我們接著執行下列輸入檢查。
 - 如果玩家使用移動控制器矩形，則我們會判斷指標位置中的變更，然後使用其來計算使用者是否已經將指標退出控制器的靜止區域。 如果在靜止區域以外，**m_moveCommand** 向量屬性則會以虛擬搖桿值更新。
-- 如果按下任何移動鍵盤輸入，**m_moveCommand** 向量的對應元件中會新增 `1.0f` 或 `-1.0f` 的值 &mdash; `1.0f` 為向前，`-1.0f` 為向後。
+- 如果任何移動鍵盤輸入會按下，值為`1.0f`或`-1.0f`中的對應元件會新增**m_moveCommand**向量&mdash;`1.0f`正向，和`-1.0f`的回溯。
 
 
 一旦所有移動輸入都納入考慮，則我們會透過一些計算執行 **m_moveCommand** 向量，以產生表示玩家在遊戲世界的方向的新向量。

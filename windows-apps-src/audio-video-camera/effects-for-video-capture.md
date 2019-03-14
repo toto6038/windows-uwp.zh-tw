@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e9960e66c6bcdd7105e201d48e2317de4a39a19a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947510"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636623"
 ---
 # <a name="effects-for-video-capture"></a>視訊擷取的效果
 
@@ -19,10 +19,10 @@ ms.locfileid: "8947510"
 本主題說明如何將效果套用到相機預覽和錄製中的視訊串流，並示範如何使用影像防震效果。
 
 > [!NOTE] 
-> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 App 已有正確初始化的 MediaCapture 執行個體。
+> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
 ## <a name="adding-and-removing-effects-from-the-camera-video-stream"></a>針對相機視訊串流新增和移除效果
-若要從裝置的相機擷取或預覽視訊，您必須使用在[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中所描述的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 物件。 在您初始化 **MediaCapture** 物件之後，若要將一或多個視訊效果新增到預覽或擷取串流，您可以呼叫 [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035)，傳遞代表要新增之效果的 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IVideoEffectDefinition) 物件，以及指出效果應該新增到相機的預覽串流或錄製串流的 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType) 列舉成員。
+若要從裝置的相機擷取或預覽視訊，您必須使用在使用 MediaCapture 進行基本相片、[視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中所描述的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 物件。 在您初始化 **MediaCapture** 物件之後，若要將一或多個視訊效果新增到預覽或擷取串流，您可以呼叫 [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035)，傳遞代表要新增之效果的 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IVideoEffectDefinition) 物件，以及指出效果應該新增到相機的預覽串流或錄製串流的 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType) 列舉成員。
 
 > [!NOTE]
 > 在某些裝置上，預覽串流和擷取串流是相同的，這表示當您呼叫 **AddVideoEffectAsync** 時，若您指定 **MediaStreamType.VideoPreview** 或 **MediaStreamType.VideoRecord**，該效果將會同時套用到預覽和錄製串流。 您可以透過檢查針對 **MediaCapture** 物件之 [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.MediaCaptureSettings) 的 [**VideoDeviceCharacteristic**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings.VideoDeviceCharacteristic) 屬性，來判斷目前裝置上的預覽和錄製串流是否是相同的。 如果此屬性的值為 **VideoDeviceCharacteristic.AllStreamsIdentical** 或 **VideoDeviceCharacteristic.PreviewRecordStreamsIdentical**，便代表這兩個串流是相同的，而您針對任何一個串流所套用的效果，也將會套用到另外一個串流。
@@ -33,7 +33,7 @@ ms.locfileid: "8947510"
 
 請注意，**AddVideoEffectAsync** 會傳回實作代表已新增視訊效果之 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.IMediaExtension) 的物件。 某些效果能讓您透過將 [**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet) 傳遞到 [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法中，來變更效果設定。
 
-從 Windows10 版本 1607 開始，您也可以將由 **AddVideoEffectAsync** 傳回的物件傳遞到 [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957)，來從視訊管線移除效果。 **RemoveEffectAsync** 會自動判斷效果物件參數是否已新增到預覽或錄製串流，使您不需在進行呼叫時指定串流類型。
+從 Windows 10 版本 1607 開始，您也可以將由 **AddVideoEffectAsync** 傳回的物件傳遞到 [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957)，來從視訊管線移除效果。 **RemoveEffectAsync** 會自動判斷效果物件參數是否已新增到預覽或錄製串流，使您不需在進行呼叫時指定串流類型。
 
 [!code-cs[RemoveOneEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetRemoveOneEffect)]
 
@@ -87,7 +87,7 @@ ms.locfileid: "8947510"
 
 ### <a name="handle-the-video-stabilization-effect-being-disabled"></a>處理停用的影像防震效果
 
-如果像素輸送量太高，超過防震效果的處理能力，或如果系統偵測到效果執行速度變慢，則系統可能會自動停用影像防震效果。 如果發生這種情況，則會引發 EnabledChanged 事件。 *sender* 參數中的 **VideoStabilizationEffect** 執行個體指出效果的新狀態：啟用或停用。 [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) 具有 [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) 值，指出效果啟用或停用的原因。 請注意，如果您以程式設計方式啟用或停用效果，則也會引發這個事件，在此情況下原因是 **Programmatic**。
+如果像素輸送量太高，超過防震效果的處理能力，或如果系統偵測到效果執行速度變慢，則系統可能會自動停用影像防震效果。 如果發生這種情況，則會引發 EnabledChanged 事件。 *sender* 參數中的 **VideoStabilizationEffect** 執行個體指出效果的新狀態：啟用或停用。 [  **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) 具有 [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) 值，指出效果啟用或停用的原因。 請注意，如果您以程式設計方式啟用或停用效果，則也會引發這個事件，在此情況下原因是 **Programmatic**。
 
 通常您會使用此事件來調整您 app 的 UI，指示目前的影像防震狀態。
 
@@ -102,7 +102,7 @@ ms.locfileid: "8947510"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

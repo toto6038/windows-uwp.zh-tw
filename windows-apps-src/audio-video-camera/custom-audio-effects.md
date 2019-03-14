@@ -1,5 +1,5 @@
 ---
-Description: This article describes how to create a Windows Runtime component that implements the IBasicAudioEffect interface to allow you to create custom effects for audio streams.
+Description: 本文章明如何建立能實作 IBasicAudioEffect 介面以允許您為音訊串流建立自訂效果的 Windows 執行階段元件。
 title: 自訂音訊效果
 ms.date: 02/08/2017
 ms.topic: article
@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
 ms.openlocfilehash: e04b3a764c170fa3e3e0ce1372e72b73795b5b12
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049325"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617953"
 ---
 # <a name="custom-audio-effects"></a>自訂音訊效果
 
@@ -22,14 +22,14 @@ ms.locfileid: "9049325"
 
 自訂音訊訊效果是在實作 [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) 介面之類別中定義。 此類別不能直接包含在您 App 的專案中。 您必須改為使用 Windows 執行階段元件來裝載您的音訊效果類別。
 
-**為您的音訊效果新增 Windows 執行階段元件**
+**新增音訊效果的 Windows 執行階段元件**
 
-1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 **\[檔案\]** 功能表，然後選取 **\[新增\] -&gt; \[新專案...\]**。
-2.  選取 **\[Windows 執行階段元件 (通用 Windows)\]** 專案類型。
+1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 \[檔案\] 功能表，然後選取 \[新增\] - \[新專案...\]。**&gt;**
+2.  選取 \[Windows 執行階段元件 (通用 Windows)\] 專案類型。
 3.  針對此範例，請將專案命名為 *AudioEffectComponent*。 此名稱將會由稍後的程式碼所參考。
-4.  按一下 **\[確定\]**。
-5.  專案範本會建立名為 Class1.cs 的類別。 在 **\[方案總管\]** 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 **\[重新命名\]**。
-6.  將檔案重新命名為 *ExampleAudioEffect.cs*。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 **\[是\]**。
+4.  按一下 [確定] 。
+5.  專案範本會建立名為 Class1.cs 的類別。 在 \[方案總管\] 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 \[重新命名\]。
+6.  將檔案重新命名為 *ExampleAudioEffect.cs*。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 [是] 。
 7.  開啟 **ExampleAudioEffect.cs** 並更新類別定義以實作 [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) 介面。
 
 
@@ -59,10 +59,7 @@ ms.locfileid: "9049325"
 
 ### <a name="setproperties-method"></a>SetProperties 方法
 
-
-            [
-              **SetProperties**
-            ](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允許使用您效果的 App 調整效果參數。 屬性將會以包含屬性名稱和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 對應進行傳遞。
+[  **SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允許使用您效果的 App 調整效果參數。 屬性將會以包含屬性名稱和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 對應進行傳遞。
 
 [!code-cs[SetProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetProperties)]
 
@@ -72,7 +69,7 @@ ms.locfileid: "9049325"
 
 ### <a name="processframe-method"></a>ProcessFrame 方法
 
-[**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法可以讓您的效果修改串流的音訊資料。 此方法會於每個框架呼叫一次，並會被傳遞 [**ProcessAudioFrameContext**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext) 物件。 此物件包含輸入 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioFrame) 物件 (該物件包含要處理的傳入框架)，以及輸出 **AudioFrame** 物件 (您將會針對該物件寫入會傳遞至剩餘音訊管線的音訊資料)。 音訊框架是代表音訊資料片段的音訊範例緩衝區。
+[  **ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法可以讓您的效果修改串流的音訊資料。 此方法會於每個框架呼叫一次，並會被傳遞 [**ProcessAudioFrameContext**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext) 物件。 此物件包含輸入 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioFrame) 物件 (該物件包含要處理的傳入框架)，以及輸出 **AudioFrame** 物件 (您將會針對該物件寫入會傳遞至剩餘音訊管線的音訊資料)。 音訊框架是代表音訊資料片段的音訊範例緩衝區。
 
 存取 **AudioFrame** 的資料緩衝區需要 COM Interop，因此您應該將 **System.Runtime.InteropServices** 命名空間包含在效果類別檔案中，然後將下列程式碼新增到命名空間內，使您的效果能匯入存取音訊緩衝區的介面。
 
@@ -80,9 +77,9 @@ ms.locfileid: "9049325"
 
 > [!NOTE]
 > 因為此技術會存取原生、未受管理的影像緩衝區，您必須將您的專案設定為允許不安全的程式碼。
-> 1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[AudioEffectComponent\] 專案，然後選取 **\[屬性\]**。
-> 2.  選取 **\[建置\]** 索引標籤。
-> 3.  選取 **\[允許 Unsafe 程式碼\]** 核取方塊。
+> 1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[AudioEffectComponent\] 專案，然後選取 \[屬性\]。
+> 2.  選取 \[建置\] 索引標籤。
+> 3.  選取 \[允許 Unsafe 程式碼\] 核取方塊。
 
  
 
@@ -96,7 +93,7 @@ ms.locfileid: "9049325"
 
 ### <a name="close-method"></a>Close 方法
 
-系統將會在效果應該關閉時，呼叫您類別上的 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) 方法。 您應該使用此方法來處置您已建立的任何資源。 方法的引數為 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，可讓您知道效果是否正常關閉、是否有發生錯誤，或是效果是否不支援所需的編碼格式。
+系統會呼叫[**關閉**](https://msdn.microsoft.com/library/windows/apps/dn764782) [**關閉**](https://msdn.microsoft.com/library/windows/apps/dn764782)時效果應該關閉您類別上的方法。 您應該使用此方法來處置您已建立的任何資源。 方法的引數為 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，可讓您知道效果是否正常關閉、是否有發生錯誤，或是效果是否不支援所需的編碼格式。
 
 [!code-cs[Close](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetClose)]
 
@@ -108,7 +105,7 @@ ms.locfileid: "9049325"
 
 ### <a name="timeindependent-property"></a>TimeIndependent 屬性
 
-[**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) 屬性能讓系統知道您的效果不需要統一計時。 當設定為 true 時，系統將可以使用能增強效果效能的最佳化功能。
+[  **TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) 屬性能讓系統知道您的效果不需要統一計時。 當設定為 true 時，系統將可以使用能增強效果效能的最佳化功能。
 
 [!code-cs[TimeIndependent](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetTimeIndependent)]
 
@@ -124,9 +121,9 @@ ms.locfileid: "9049325"
 
 如果要從您的 App 使用您的音訊效果，您必須將針對效果專案的參照新增到您的 App。
 
-1.  在 \[方案總管\] 中，於您的專案下方，以滑鼠右鍵按一下 **\[參考\]**，然後選取 **\[加入參考\]**。
-2.  展開 **\[專案\]** 索引標籤，選取 **\[方案\]**，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *AudioEffectComponent*。
-3.  按一下 **\[確定\]**
+1.  在 \[方案總管\] 中，於您的專案下方，以滑鼠右鍵按一下 \[參考\]，然後選取 \[加入參考\]。
+2.  展開 \[專案\] 索引標籤，選取 \[方案\]，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *AudioEffectComponent*。
+3.  按一下 [確定]。
 
 如果您的音訊效果類別已宣告為不同的命名空間，請務必將該命名空間包含在程式碼檔案中。
 
@@ -148,9 +145,9 @@ ms.locfileid: "9049325"
 
 
 ## <a name="related-topics"></a>相關主題
-* [簡單的相機預覽存取](simple-camera-preview-access.md)
-* [媒體組合和編輯](media-compositions-and-editing.md)
-* [Win2D 文件](https://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [簡單的相機預覽存取權](simple-camera-preview-access.md)
+* [媒體撰寫和編輯](media-compositions-and-editing.md)
+* [來參照 Win2D 文件](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [媒體播放](media-playback.md)
 
  

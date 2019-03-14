@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ea8d387becaef171175fd5e91bfc3a1402e79faa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927642"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616613"
 ---
 # <a name="legacy-background-media-playback"></a>舊版背景媒體播放
 
@@ -19,7 +19,7 @@ ms.locfileid: "8927642"
 本文說明用來新增 UWP app 背景音訊支援的舊版雙處理序模型。 從 Windows 10 版本 1607 開始，背景音訊的單一處理程序模型變得更容易實作。 如需有關背景音訊目前建議的詳細資訊，請參閱[在背景播放媒體](background-audio.md)。 本文用來提供已使用舊版雙處理序模型開發之 app 的支援。
 
 > [!NOTE]
-> 開始使用 Windows，版本 1703 中， **BackgroundMediaPlayer**已過時，並且可能無法在未來的 Windows 版本中使用。
+> 開頭為 Windows，版本 1703年**BackgroundMediaPlayer**已被取代，可能無法在 Windows 的未來版本中。
 
 ## <a name="background-audio-architecture"></a>背景音訊架構
 
@@ -30,7 +30,7 @@ ms.locfileid: "8927642"
 ![Windows 10 背景音訊架構](images/backround-audio-architecture-win10.png)
 ## <a name="mediaplayer"></a>MediaPlayer
 
-[**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空間包含用來在背景播放音訊的 API。 每個 app 都有一個可發生播放的 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 執行個體。 您的背景音訊 app 會呼叫方法並設定 **MediaPlayer** 類別的屬性，以設定目前的曲目、開始播放、暫停、向前快轉、倒轉等。 媒體播放程式物件執行個體一律透過 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 屬性存取。
+[  **Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空間包含用來在背景播放音訊的 API。 每個 app 都有一個可發生播放的 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 執行個體。 您的背景音訊 app 會呼叫方法並設定 **MediaPlayer** 類別的屬性，以設定目前的曲目、開始播放、暫停、向前快轉、倒轉等。 媒體播放程式物件執行個體一律透過 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 屬性存取。
 
 ## <a name="mediaplayer-proxy-and-stub"></a>MediaPlayer Proxy 和虛設常式
 
@@ -56,7 +56,7 @@ ms.locfileid: "8927642"
 
 有時候，您會想在背景音訊 app 的兩個處理程序間進行通訊。 例如，開始播放新曲目時，您可能希望背景工作通知前景工作，然後將新的歌曲標題傳送到前景工作以顯示在畫面上。
 
-簡單的通訊機制可同時在前景和背景處理程序中引發事件。 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) 和 [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) 方法會個別叫用對應處理程序中的事件。 訂閱 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 和 [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) 事件，可以接收訊息。
+簡單的通訊機制可同時在前景和背景處理程序中引發事件。 [  **SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) 和 [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) 方法會個別叫用對應處理程序中的事件。 訂閱 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 和 [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) 事件，可以接收訊息。
 
 資料可以做為引數傳遞至傳送訊息方法，然後再傳入收到訊息事件處理常式。 使用 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 類別傳遞資料。 此類別是一個字典，其中包含的字串為索引鍵，而其他值類型則是值。 您可以傳送簡易的值類型，例如整數、字串和布林值。
 
@@ -64,7 +64,7 @@ ms.locfileid: "8927642"
 
 背景工作的存留期與 App 的目前播放狀態有很緊密的關係。 例如，當使用者暫停音訊播放時，系統可能會根據情況終止或取消您的 App。 在一段沒有音訊播放的時間之後，系統可能會自動關閉背景工作。
 
-[**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法會在 app 從在前景 app 中執行的程式碼存取 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 時，或在您登錄 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 事件的處理常式時首次呼叫，以較早發生者為準。 建議您在首次呼叫 **BackgroundMediaPlayer.Current** 之前，先註冊收到訊息的處理常式，如此前景 app 就不會錯過任何從背景處理程序傳送的訊息。
+[  **IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法會在 app 從在前景 app 中執行的程式碼存取 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 時，或在您登錄 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 事件的處理常式時首次呼叫，以較早發生者為準。 建議您在首次呼叫 **BackgroundMediaPlayer.Current** 之前，先註冊收到訊息的處理常式，如此前景 app 就不會錯過任何從背景處理程序傳送的訊息。
 
 若要讓背景工作持續執行，您的 app 必須在 **Run** 方法中要求 [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)，並在工作執行個體收到 [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) 或 [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) 事件時呼叫 [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504)。 不要在 **Run** 方法中執行迴圈或等待，因為這樣會消耗資源，而且可能導致系統終止 app 的背景工作。
 
@@ -114,11 +114,11 @@ ms.locfileid: "8927642"
 
 下表列出各裝置類型上會強制執行的原則。
 
-| 子原則             | 桌上型電腦  | 行動裝置版   | 其他    |
+| 子原則             | 桌面  | 行動裝置   | 其他    |
 |------------------------|----------|----------|----------|
-| **專屬性**        | 已停用 | 已啟用  | 已啟用  |
-| **閒置逾時** | 已停用 | 已啟用  | 已停用 |
-| **共用的存留期**    | 已啟用  | 已停用 | 已停用 |
+| **獨佔**        | 已停用 | Enabled  | Enabled  |
+| **閒置逾時** | 已停用 | Enabled  | 已停用 |
+| **共用的存留期**    | Enabled  | 已停用 | 已停用 |
 
 
  

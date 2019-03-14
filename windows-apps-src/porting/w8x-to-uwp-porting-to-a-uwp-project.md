@@ -7,26 +7,26 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c7a40d81171113656a39dda2fe02e0701fdd8ba4
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050358"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596653"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>將 Windows 執行階段 8.x 專案移植到 UWP 專案
 
 
 
-當您開始移植程序時，會有兩個選項。 其中一個是編輯現有專案檔案的複本，包括應用程式套件資訊清單 (若要了解該選項，請參閱[將 app 移轉至通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中關於更新您專案檔案的資訊)。 另一個選項是在 Visual Studio 中建立新的 windows 10 專案，並將檔案複製到其中。 本主題的第一節會說明第二個選項，但本主題的其餘部分則會包含其他適用於這兩個選項的資訊。 您也可以選擇保留在同一個方案中，您現有的專案中的新的 windows 10 專案，並共用使用共用的專案的原始碼檔案。 或者，您可以在方案中保留新專案，並在 Visual Studio 中使用連結檔案的功能共用原始程式碼檔案。
+當您開始移植程序時，會有兩個選項。 其中一個是編輯現有專案檔案的複本，包括應用程式套件資訊清單 (若要了解該選項，請參閱[將 app 移轉至通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中關於更新您專案檔案的資訊)。 另一個選項是在 Visual Studio 中建立新的 Windows 10 專案，並將檔案複製到它。 本主題的第一節會說明第二個選項，但本主題的其餘部分則會包含其他適用於這兩個選項的資訊。 您也可以選擇將新的 Windows 10 專案保留在與您現有的專案相同的方案，並分享使用共用的專案的原始程式檔。 或者，您可以在方案中保留新專案，並在 Visual Studio 中使用連結檔案的功能共用原始程式碼檔案。
 
 ## <a name="create-the-project-and-copy-files-to-it"></a>建立專案並將檔案複製到其中
 
-這些步驟著重在 Visual Studio 中建立新的 windows 10 專案，並將檔案複製到其中的選項。 一些有關您建立的專案數量以及要複製哪些檔案的特定內容，取決於[如果您有通用 8.1 應用程式](w8x-to-uwp-root.md)與其中各小節中所述的因素與決策。 這些步驟假設最簡單的情況。
+這些步驟會著重在 Visual Studio 中建立新的 Windows 10 專案，並將檔案複製到其中的選項。 一些有關您建立的專案數量以及要複製哪些檔案的特定內容，取決於[如果您有通用 8.1 應用程式](w8x-to-uwp-root.md)與其中各小節中所述的因素與決策。 這些步驟假設最簡單的情況。
 
-1.  啟動 Microsoft Visual Studio2015 並建立新的空白應用程式 （Windows 通用） 專案。 如需詳細資訊，請參閱[快速建立您的 Windows 執行階段 8.x 應用程式使用的範本 （C#、 c + +、 Visual Basic）](https://msdn.microsoft.com/library/windows/apps/hh768232)。 新專案建置的應用程式套件 (appx 檔案) 將在所有裝置系列執行。
+1.  啟動 Microsoft Visual Studio 2015，並建立新的空白應用程式 （Windows 通用） 專案。 如需詳細資訊，請參閱 <<c0> [ 快速啟動您的 Windows 執行階段使用範本的 8.x 應用程式 (C#，c + +、 Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)。</c0> 新專案建置的應用程式套件 (appx 檔案) 將在所有裝置系列執行。
 2.  在通用 8.1 應用程式專案中，找出您想要重複使用的所有原始程式碼檔案及視覺資產檔案。 使用 [檔案總管]，將資料模型、檢視模型、視覺資產、資源字典、資料夾結構，以及任何您想要重複使用的其他項目複製到新專案。 視需要在磁碟上複製或建立子資料夾。
 3.  將檢視 (例如 MainPage.xaml 和 MainPage.xaml.cs) 一併複製到新專案。 同樣地，請視需要建立新的子資料夾，然後從專案移除現有的檢視。 但是在您覆寫或移除 Visual Studio 產生的檢視之前，請保留一份複本，因為可能稍後可用來供參考。 移植通用 8.1 應用程式的第一個階段著重在美化外觀以及能在裝置系列上運作良好。 稍後，您會將重點放在確認檢視能隨所有尺寸規格適當調整，也可以新增任何調適型程式碼，以充分利用特定的裝置系列。
-4.  在 **\[方案總管\]** 中，確定 **\[顯示所有檔案\]** 已切換成開啟。 選取您複製的檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 **\[加入至專案\]**。 這將會自動包含它們的容器資料夾。 然後您可以視需要將 [**顯示所有檔案**] 切換成關閉。 如果您想要的話，也可以選擇替代的工作流程，就是先在 Visual Studio [**方案總管**] 中建立任何必要的子資料夾，然後使用 [**加入現有項目**]命令。 仔細檢查您視覺資產的 **\[建置動作\]** 是否已設定為 **\[內容\]**，而 **\[複製到輸出目錄\]** 是否已設定為 **\[不要複製\]**。
+4.  在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 選取您複製的檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 [加入至專案]。 這將會自動包含它們的容器資料夾。 然後您可以視需要將 [**顯示所有檔案**] 切換成關閉。 如果您想要的話，也可以選擇替代的工作流程，就是先在 Visual Studio [**方案總管**] 中建立任何必要的子資料夾，然後使用 [**加入現有項目**]命令。 仔細檢查您視覺資產的 [**建置動作**] 是否已設定為 [**內容**]，而 [**複製到輸出目錄**] 是否已設定為 [**不要複製**]。
 5.  您在這個階段可能會看到一些建置錯誤。 但如果您知道需要變更什麼，就可以使用 Visual Studio 的 **Find and Replace** 命令針對原始碼進行大量變更；還可以在 Visual Studio 的命令式程式碼編輯器中使用內容功能表上的 **Resolve** 和 **Organize Usings** 命令，對更多目標項目做出變更。
 
 ## <a name="maximizing-markup-and-code-reuse"></a>儘可能重複使用標記與程式碼
@@ -36,10 +36,10 @@ ms.locfileid: "9050358"
 -   所有裝置系列都通用的檔案不需要特殊考量。 那些檔案將由所有裝置系列上執行的應用程式使用。 這包括 XAML 標記檔案、命令式原始程式碼檔案以及資產檔案。
 -   您的應用程式能夠偵測到執行的裝置系列，並瀏覽到專為該裝置系列設計的檢視。 如需詳細資訊，請參閱[偵測執行您 app 的平台](w8x-to-uwp-input-and-sensors.md)。
 -   有項可能很有用的類似技術，就是在別無他法時，為標記檔案或 **ResourceDictionary** 檔案 (或包含該檔案的資料夾) 指定特殊名稱，如此一來，只有在特定裝置系列執行您的 App 時，才會於執行階段自動載入。 此技術會在 [Bookstore1](w8x-to-uwp-case-study-bookstore1.md) 案例研究中說明。
--   您無法移除通用 8.1 應用程式的原始程式碼中的許多條件式編譯指示詞，如果您只需要支援 windows 10。 請參閱本主題中的[條件式編譯與調適型程式碼](#conditional-compilation-and-adaptive-code)。
+-   您應該能夠 Universal 8.1 應用程式的原始程式碼中移除的條件式編譯指示詞很多，如果您只需要支援 Windows 10。 請參閱本主題中的[條件式編譯與調適型程式碼](#conditional-compilation-and-adaptive-code)。
 -   若要使用並非所有裝置系列都適用的功能 (例如，印表機、掃描器或相機按鈕)，您可以撰寫調適型程式碼。 請參閱本主題中[條件式編譯與調適型程式碼](#conditional-compilation-and-adaptive-code)的第三個範例。
--   如果您想要支援 Windows 8.1、 Windows Phone 8.1 及 windows 10，然後您可以將三個專案保留在同一個方案中，使用共用專案共用程式碼。 或者，您可以在專案間共用原始程式碼檔案。 做法如下：在 Visual Studio 中，於 **\[方案總管\]** 中的專案上按一下滑鼠右鍵，選取 **\[加入現有項目\]**，選取要共用的檔案，然後按一下 **\[加入做為連結\]**。 將您的原始程式碼檔案儲存在檔案系統上的通用資料夾中，這是連結到那些檔案的專案可看見它們的資料夾。 同時別忘了將它們新增到原始檔控制。
--   若要在二進位層級重複使用，而不是在原始程式碼層級重複使用，請參閱[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx)。 也有 「 可攜式類別庫，支援適用於 Windows 8.1、 Windows Phone 8.1 和 windows 10 應用程式 (.NET Core) 的.NET Framework 以及完整.NET Framework 中提供的.NET Api 子集。 「可攜式類別庫」組件與這些平台皆二進位相容。 請使用 Visual Studio 來建立針對「可攜式類別庫」設計的專案。 請參閱[使用可攜式類別庫進行跨平台開發](https://msdn.microsoft.com/library/gg597391.aspx)。
+-   如果您想要支援 Windows 8.1、 Windows Phone 8.1 和 Windows 10，然後您可以讓相同的方案中的三個專案並與使用共用專案共用程式碼。 或者，您可以在專案間共用原始程式碼檔案。 做法如下：在 Visual Studio 中，於 **\[方案總管\]** 中的專案上按一下滑鼠右鍵，選取 **\[加入現有項目\]**，選取要共用的檔案，然後按一下 **\[加入做為連結\]**。 將您的原始程式碼檔案儲存在檔案系統上的通用資料夾中，這是連結到那些檔案的專案可看見它們的資料夾。 同時別忘了將它們新增到原始檔控制。
+-   若要在二進位層級重複使用，而不是在原始程式碼層級重複使用，請參閱[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx)。 另外還有可攜式類別庫，支援可用於.NET Framework for Windows 8.1、 Windows Phone 8.1 和 Windows 10 應用程式 (.NET Core)，以及完整的.NET Framework 的.NET Api 的子集。 「可攜式類別庫」組件與這些平台皆二進位相容。 請使用 Visual Studio 來建立針對「可攜式類別庫」設計的專案。 請參閱[使用可攜式類別庫進行跨平台開發](https://msdn.microsoft.com/library/gg597391.aspx)。
 
 ## <a name="extension-sdks"></a>擴充功能 SDK
 
@@ -47,7 +47,7 @@ ms.locfileid: "9050358"
 
 如果您收到有關找不到命名空間或型別或成員的編譯錯誤，原因可能在此。 開啟 API 參考文件中的 API 主題，並瀏覽到＜需求＞一節：文中會告訴您實作裝置系列為何。 如果那不是您的目標裝置系列，則您必須擁有該裝置系列之擴充功能 SDK 的參考，您的專案才能使用 API。
 
-按一下 **\[專案\]** &gt; **\[加入參考\]** &gt; **\[Windows 通用\]** &gt; **\[擴充功能\]**，然後選取適當的擴充功能 SDK。 例如，如果您想要呼叫的 API 只能在行動裝置系列中使用且是在版本 10.0.x.y 引進，則選取 **\[適用於 UWP 的 Windows 行動擴充功能\]**。
+按一下 **專案** &gt; **加入參考** &gt; **Windows Universal** &gt; **延伸**和選取適當的擴充功能 SDK。 例如，如果您想要呼叫的 API 只能在行動裝置系列中使用且是在版本 10.0.x.y 引進，則選取 **\[適用於 UWP 的 Windows 行動擴充功能\]**。
 
 如此便會將下列參考加入您的專案檔案：
 
@@ -69,9 +69,9 @@ ms.locfileid: "9050358"
 
 ## <a name="conditional-compilation-and-adaptive-code"></a>條件式編譯與調適型程式碼
 
-如果您使用條件式編譯 （搭配 C# 前置處理器指示詞），讓 Windows 8.1 和 Windows Phone 8.1 上運作的程式碼檔案，然後您現在可以檢閱該可按照來在 windows 10 中完成的交集工作的條件式編譯。 交集表示，在您的 windows 10 應用程式，某些條件可以全然移除。 其他有關執行階段檢查的變更，如下列範例所示。
+如果您使用條件式編譯 (使用C#前置處理器指示詞)，讓您的程式碼檔案會在 Windows 8.1 和 Windows Phone 8.1 工作，然後您現在可以檢閱完成 Windows 10 中的聚合工作根據該條件式編譯。 聚合表示，您的 Windows 10 應用程式，在某些情況可以將其完全移除。 其他有關執行階段檢查的變更，如下列範例所示。
 
-**注意：** 如果您想要支援 Windows 8.1、 Windows Phone 8.1 和 windows 10，在單一程式碼檔案中，則您可以執行這個動作。 如果您查看您的 windows 10 專案，在專案屬性頁面中，您會看到該專案 windows\_uap 定義為條件式編譯符號。 因此您能夠用來與 WINDOWS\_APP 及 WINDOWS\_PHONE\_APP 一起使用。 這些範例說明較簡單的情況，移除通用 8.1 應用程式中的條件式編譯，然後取代為 windows 10 應用程式的對等程式碼。
+**附註**  如果您想要在單一程式碼檔案中，支援 Windows 8.1、 Windows Phone 8.1 和 Windows 10，則您可以這麼。 如果您查看 Windows 10 專案在專案的 [屬性] 頁面中，您會看到專案定義 WINDOWS\_UAP 為條件式編譯符號。 因此，您可以搭配 WINDOWS 使用所\_應用程式和 WINDOWS\_PHONE\_應用程式。 下列範例示範簡單的情況下，從 Universal 8.1 應用程式中移除條件式編譯和替代的 Windows 10 應用程式的對等程式碼。
 
 第一個範例示範 **PickSingleFileAsync** API (這只適用於 Windows 8.1) 與 **PickSingleFileAndContinue** API (這只適用於 Windows Phone 8.1) 的使用模式。
 
@@ -83,7 +83,7 @@ ms.locfileid: "9050358"
 #endif // WINDOWS_APP
 ```
 
-Windows 10 已交集在一起上[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API，因此您的程式碼可簡化如下：
+Windows 10 聚合於[ **PickSingleFileAsync** ](https://msdn.microsoft.com/library/windows/apps/jj635275) API，因此這會簡化您的程式碼：
 
 ```csharp
     // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
@@ -106,7 +106,7 @@ Windows 10 已交集在一起上[**PickSingleFileAsync**](https://msdn.microsoft
 #endif // WINDOWS_PHONE_APP
 ```
 
-Windows 10 的返回按鈕事件是通用的概念。 實作於硬體或軟體的返回按鈕都會引發 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件，因此要處理的就是這個事件。
+Windows 10 中的上一頁按鈕的事件是通用的概念。 實作於硬體或軟體的返回按鈕都會引發 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件，因此要處理的就是這個事件。
 
 ```csharp
     Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
@@ -137,7 +137,7 @@ void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input.CameraE
 #endif // WINDOWS_PHONE_APP
 ```
 
-Windows 10 的硬體相機按鈕是行動裝置系列專屬的概念。 因為應用程式套件將在所有裝置上執行，所以我們將編譯階段條件變更為使用調適型程式碼的執行階段條件。 為此，我們使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 類別查詢執行階段是否有 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別存在。 **HardwareButtons** 定義在行動裝置的擴充功能 SDK，因此我們必須將該 SDK 的參照新增到專案，以供編譯這個程式碼。 不過請注意，處理常式只會在實作行動裝置擴充功能 SDK 中定義的裝置類型上執行，那就是行動裝置系列。 因此這個程式碼實質上等同於通用 8.1 程式碼，因為它很謹慎地僅使用現有的功能 (雖然是以不同的方式達成)。
+在 Windows 10 中，硬體相機按鈕是專門針對行動裝置系列的概念。 因為應用程式套件將在所有裝置上執行，所以我們將編譯階段條件變更為使用調適型程式碼的執行階段條件。 為此，我們使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 類別查詢執行階段是否有 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別存在。 **HardwareButtons** 定義在行動裝置的擴充功能 SDK，因此我們必須將該 SDK 的參照新增到專案，以供編譯這個程式碼。 不過請注意，處理常式只會在實作行動裝置擴充功能 SDK 中定義的裝置類型上執行，那就是行動裝置系列。 因此這個程式碼實質上等同於通用 8.1 程式碼，因為它很謹慎地僅使用現有的功能 (雖然是以不同的方式達成)。
 
 ```csharp
     // Note: Cache the value instead of querying it more than once.
@@ -162,7 +162,7 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 ## <a name="app-package-manifest"></a>應用程式套件資訊清單
 
-[在 windows 10 中有哪些變更](https://msdn.microsoft.com/library/windows/apps/dn705793)的主題會列出對套件資訊清單結構描述參考適用於 windows 10，包括已新增、 移除和變更的元素。 如需結構描述中所有元素、屬性和類型的參考資訊，請參閱[元素階層](https://msdn.microsoft.com/library/windows/apps/dn934819)。 如果您正在移植 Windows Phone 市集應用程式，或您的 app 是 Windows Phone 市集中 app 的更新，請確定 **pm:PhoneIdentity** 元素符合上一個 app (使用市集指派給 app 的相同 GUID) 的應用程式資訊清單中的元素。 這樣可確保應用程式使用者升級到 Windows 10 時，將會以更新方式 (而不是重複) 收到新的應用程式。 如需詳細資訊，請參閱 [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) 參考主題。
+[Windows 10 中變更的項目](https://msdn.microsoft.com/library/windows/apps/dn705793)主題適用於 Windows 10，包括已新增、 移除和變更的項目列出的套件資訊清單結構描述參考的變更。 如需結構描述中所有元素、屬性和類型的參考資訊，請參閱[元素階層](https://msdn.microsoft.com/library/windows/apps/dn934819)。 如果您正在移植 Windows Phone 市集應用程式，或您的 app 是 Windows Phone 市集中 app 的更新，請確定 **pm:PhoneIdentity** 元素符合上一個 app (使用市集指派給 app 的相同 GUID) 的應用程式資訊清單中的元素。 這樣可確保應用程式使用者升級到 Windows 10 時，將會以更新方式 (而不是重複) 收到新的應用程式。 如需詳細資訊，請參閱 [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) 參考主題。
 
 您專案 (包括任何擴充功能 SDK 參考) 中的設定，會決定您應用程式能呼叫的 API 介面區。 但客戶實際上能夠透過市集安裝您應用程式的裝置集，是由您的應用程式套件資訊清單決定。 如需詳細資訊，請參閱 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 中的範例。
 
@@ -172,8 +172,8 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 ## <a name="related-topics"></a>相關主題
 
-* [開發適用於通用 Windows 平台的應用程式](https://msdn.microsoft.com/library/dn975273.aspx)
-* [快速建立您的 Windows 執行階段 8.x 應用程式使用範本 (C#、 c + +、 Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
+* [適用於通用 Windows 平台開發應用程式](https://msdn.microsoft.com/library/dn975273.aspx)
+* [快速啟動您的 Windows 執行階段使用範本的 8.x 應用程式 (C#，c + +、 Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [可攜式類別庫的跨平台開發](https://msdn.microsoft.com/library/gg597391.aspx)
+* [使用可攜式類別庫的跨平台開發](https://msdn.microsoft.com/library/gg597391.aspx)
 

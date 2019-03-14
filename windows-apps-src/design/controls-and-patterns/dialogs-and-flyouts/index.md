@@ -1,22 +1,16 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
+Description: 對話方塊和飛出視窗會在使用者要求暫時性 UI 元素，或發生需要通知或核准的情況時顯示暫時性 UI 元素。
 title: 對話方塊和飛出視窗
 template: detail.hbs
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: 'windows 10, uwp'
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036860"
 ---
 # <a name="dialogs-and-flyouts"></a>對話方塊和飛出視窗
 
@@ -24,7 +18,7 @@ ms.locfileid: "9036860"
 
 對話方塊和飛出視窗為在發生需要來自使用者的通知、核准或是其他資訊的情況時，所顯示的暫時性 UI 元素。
 
-> **重要 API**：[ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、[Flyout 類別](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **重要 API**：[ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、 [Flyout 類別](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 
 :::row:::
@@ -49,7 +43,7 @@ ms.locfileid: "9036860"
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-對話方塊和飛出視窗可確保使用者知曉重要的資訊，但也會干擾使用者體驗。 對話方塊是強制回應 (阻斷式) 對話方塊，因此會干擾使用者，並在他們與對話方塊互動之前阻擋其繼續執行動作。 飛出視窗能提供較不突兀的體驗，但是顯示太多的飛出視窗也可能會造成困擾。
+對話方塊和飛出視窗可確保使用者知曉重要的資訊，但它們也會干擾使用者體驗。 因為對話方塊為強制回應 (封鎖)，所以會打擾使用者，並防止他們繼續執行動作，直到他們與對話方塊互動為止。 飛出視窗能提供較不突兀的體驗，但是顯示太多的飛出視窗也可能會造成困擾。
 
 在您決定要使用對話方塊或飛出視窗之後，您必須選擇要使用哪一個。
 
@@ -59,7 +53,7 @@ ms.locfileid: "9036860"
     :::column:::
    <p><b>適合使用對話方塊的情況...</b> <br/>
 <ul>
-<li>表示使用者<b>必須</b>先閱讀並確認才能繼續執行工作的重要資訊。 範例包含：
+<li>表示使用者<b>「必須」</b>先閱讀並確認才能繼續執行工作的重要資訊。 範例包含：
 <ul>
   <li>當使用者的安全性可能受到破壞時</li>
   <li>當使用者將要永久修改重要資產時</li>
@@ -69,22 +63,22 @@ ms.locfileid: "9036860"
 
 </li>
 <li>套用到整個應用程式內容的錯誤訊息，例如連線錯誤。</li>
-<li>問題，當應用程式需要詢問使用者關於造成應用程式無法繼續執行的問題時 (例如當應用程式無法代替使用者選擇時)。 封鎖性問題不能忽略或延遲回應，因此應該向使用者提供明確定義的選擇。</li>
+<li>問題，當應用程式需要詢問使用者關於造成應用程式無法繼續執行的問題時 (例如當應用程式無法代替使用者選擇時)。 會造成應用程式無法繼續執行的問題，且該問題不能忽略或延遲回應，並應該向使用者提供明確定義的選擇。</li>
 </ul>
 </p>
     :::column-end:::
     :::column:::
    <p><b>適合使用飛出視窗的情況...</b> <br/>
 <ul>
-<li>在完成動作之前收集所需的其他資訊。</li>
+<li>用來在完成動作之前收集所需的其他資訊。</li>
 <li>顯示僅在某些情況下有關聯的資訊。 例如，在影像中心 App 中，當使用者按一下影像縮圖時，您可以使用飛出視窗顯示該影像的大尺寸版本。</li>
-<li>顯示詳細資訊，例如頁面上項目的詳細資料或較長描述。</li>
+<li>顯示詳細資訊，例如頁面上項目的詳細資料或較長的描述。</li>
 </ul></p>
     :::column-end:::
 :::row-end:::
 
 
-## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>若要避免將對話方塊與飛出視窗的方式
+## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>避免使用對話方塊與飛出視窗的方法
 
 考量您要分享之資訊的重要性：是否重要到必須打擾使用者？ 也請考慮需顯示資訊的頻率。如果您每隔幾分鐘便需要顯示對話方塊或通知，您可以考慮將這項資訊配置在主要 UI 上。 例如，在聊天用戶端中，與其在有朋友登入時就顯示飛出視窗，您可以顯示當時在線上的朋友清單，並在有朋友登入時針對他們進行醒目提示。
 
@@ -96,7 +90,7 @@ ms.locfileid: "9036860"
 
 ## <a name="how-to-create-a-flyout"></a>如何建立飛出視窗
 
-請參閱[飛出視窗的文章](flyouts.md)。 
+請參閱[飛出視窗文章](flyouts.md)。 
 
 ## <a name="examples"></a>範例
 
@@ -108,7 +102,7 @@ ms.locfileid: "9036860"
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡開啟應用程式並查看 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 運作情形。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>

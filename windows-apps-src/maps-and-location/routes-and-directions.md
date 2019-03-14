@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 路線, 地圖, 位置, 路線指引
 ms.localizationpriority: medium
 ms.openlocfilehash: 218ca052a3e525a1f7cfc2ce18542a5a30c61e5e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049255"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646683"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>在地圖上顯示路線和路線指引
 
@@ -29,11 +29,11 @@ ms.locfileid: "9049255"
 
 以下說明路線與路線指引類別如何相關：
 
-* [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 類別擁有可取得路線與路線指引的方法。 這些方法會傳回 [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939)。
+* [  **MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 類別擁有可取得路線與路線指引的方法。 這些方法會傳回 [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939)。
 
-* [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 包含一個 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 物件。 請透過 **MapRouteFinderResult** 的 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 屬性存取這個物件。
+* [  **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 包含一個 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 物件。 請透過 **MapRouteFinderResult** 的 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 屬性存取這個物件。
 
-* [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 包含 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 物件的集合。 請透過 **MapRoute** 的 [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) 屬性存取這個集合。
+* [  **MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 包含 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 物件的集合。 請透過 **MapRoute** 的 [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) 屬性存取這個集合。
 
 * 每個 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 都包含 [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) 物件的集合。 請透過 **MapRouteLeg** 的 [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) 屬性存取這個集合。
 
@@ -53,7 +53,7 @@ ms.locfileid: "9049255"
 
 ## <a name="display-directions"></a>顯示路線指引
 
-[**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 物件包含您可以透過其 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 屬性存取的 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 物件。
+[  **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 物件包含您可以透過其 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 屬性存取的 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 物件。
 
 計算的 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 擁有的屬性可提供行經路線的時間、路線長度，以及包含路線行程的 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 物件集合。 每個 **MapRouteLeg** 物件都包含 [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) 物件的集合。 **MapRouteManeuver** 物件包含您可以透過其 [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964) 屬性存取的路線指引。
 
@@ -242,7 +242,7 @@ private async void ShowRouteOnMap()
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [對應的設計方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 影片：利用跨電話、 平板電腦和 PC 在 Windows 應用程式中的地圖與位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 流量的應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)

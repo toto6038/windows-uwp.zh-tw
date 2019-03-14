@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
 ms.openlocfilehash: dfed365e097b6f0d3816477513202b2693127ade
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049975"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592963"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
@@ -20,15 +20,15 @@ ms.locfileid: "9049975"
 使用螢幕擷取，開發人員可以為終端使用者叫用安全的系統 UI，選取要擷取的顯示或應用程式視窗，系統會在主動擷取項目周圍繪製黃色通知邊框。 在多個同時擷取工作階段中，會在每個擷取項目周圍繪製黃色邊框。
 
 > [!NOTE]
-> 傳統型應用程式和 Windows Mixed Reality 沉浸式頭戴式裝置上才支援螢幕擷取 Api。
+> 桌面和 Windows Mixed Reality 沈浸式耳機上才支援的螢幕擷取畫面的 Api。
 
 ## <a name="add-the-screen-capture-capability"></a>新增螢幕擷取功能
 
-**Windows.Graphics.Capture**命名空間中找到的 Api 需要您的應用程式資訊清單中宣告一般的功能：
+Api 中找到**Windows.Graphics.Capture**命名空間需要的一般功能，以便在您的應用程式資訊清單中宣告：
     
-1. 在**方案總管] 中**開啟**Package.appxmanifest** 。
-2. 選取 **\[功能\]** 索引標籤。
-3. 檢查**圖形擷取**。
+1. 開啟**Package.appxmanifest**中**方案總管 中**。
+2. 選取 [功能] 索引標籤。
+3. 請檢查**圖形擷取**。
 
 ![圖形擷取](images/screen-capture-1.png)
 
@@ -68,7 +68,7 @@ public async Task StartCaptureAsync()
 }
 ```
 
-這是 UI 程式碼，所以它必須在 UI 執行緒上呼叫。 如果您正在從程式碼後置中呼叫它，您的應用程式 （例如**MainPage.xaml.cs**) 的頁面這是為您自動完成，但如果不是，您可以強迫在下列程式碼在 UI 執行緒上執行：
+因為這是 UI 程式碼時，它必須在 UI 執行緒上呼叫。 如果您從程式碼後置中呼叫它，您的應用程式頁面 (例如**MainPage.xaml.cs**) 這為您自動完成，但如果沒有，您可以強制它為下列程式碼的 UI 執行緒上執行：
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -81,7 +81,7 @@ await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>建立擷取畫面集區與擷取工作階段
 
-使用 **GraphicsCaptureItem**，您將會使用 D3D 裝置、支援的像素格式 (**DXGI\_FORMAT\_B8G8R8A8\_UNORM**)、所需畫面數 (可以是任何整數) 以及畫面大小，來建立 [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool)。 **GraphicsCaptureItem** 類別的 **ContentSize** 屬性可以當做畫面的大小：
+使用**GraphicsCaptureItem**，您將建立[Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) D3D 裝置，支援像素格式 (**DXGI\_格式\_B8G8R8A8\_UNORM**)、 數字 （這可以是任何整數） 所需的框架和框架的大小。 **GraphicsCaptureItem** 類別的 **ContentSize** 屬性可以當做畫面的大小：
 
 ```cs
 private GraphicsCaptureItem _item;
@@ -163,10 +163,10 @@ _framePool.FrameArrived += (s, a) =>
 
 ## <a name="putting-it-all-together"></a>總結
 
-下列程式碼片段是如何在 UWP 應用程式中實作擷取螢幕的端對端範例。 在此範例中，新增按鈕前端中，按一下時，會呼叫**Button_ClickAsync**方法。
+下列程式碼片段是如何實作在 UWP 應用程式的螢幕擷取畫面的端對端範例。 在此範例中，有一個按鈕前端，當按下，會呼叫**Button_ClickAsync**方法。
 
 > [!NOTE]
-> 此程式碼片段會使用[Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)，2D 圖形轉譯的程式庫。 如需有關如何設定以供您的專案資訊其文件，請參閱。
+> 此程式碼片段會使用[來參照 Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)，轉譯 2D 圖形的程式庫。 請參閱其文件，如需有關如何將它設定為您的專案資訊。
 
 ```cs
 using Microsoft.Graphics.Canvas;
@@ -384,9 +384,9 @@ namespace WindowsGraphicsCapture
 }
 ```
 
-## <a name="record-a-video"></a>視訊錄製
+## <a name="record-a-video"></a>錄製影片
 
-如果您想要您的應用程式的視訊錄製，您可以更輕鬆[Windows.Media.AppRecording 命名空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 這是傳統型擴充功能 SDK 的一部分，因此只適用於桌上型電腦，且需要您新增到它的參考，從您的專案。 如需詳細資訊，請參閱[裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
+如果您想要錄製您的應用程式的視訊，則可以更輕鬆使用[Windows.Media.AppRecording 命名空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 這是桌面延伸模組 SDK 的一部分，因此僅適用於在桌面上，而且需要您加入對它的參考，從您的專案。 請參閱[裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)如需詳細資訊。
 
 ## <a name="see-also"></a>請參閱
 

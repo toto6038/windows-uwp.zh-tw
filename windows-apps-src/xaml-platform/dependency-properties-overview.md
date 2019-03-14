@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 52ab0dfba6261a5e278a42f38ea13c632df400f9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050771"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637383"
 ---
 # <a name="dependency-properties-overview"></a>相依性屬性概觀
 
@@ -21,7 +21,7 @@ ms.locfileid: "9050771"
 
 相依性屬性是特殊化的屬性類型。 更明確地說，這個屬性會追蹤屬性值，並受到專用屬性系統 (Windows 執行階段的一部分) 所影響。
 
-為了支援相依性屬性，定義屬性的物件必須是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (也就是在其繼承中包含了 **DependencyObject** 基底類別的類別)。 許多您使用適用於您使用 XAML 的 UWP 應用程式的 UI 定義的類型將會是**DependencyObject**的子類別，並且將支援相依性屬性。 但是，任何來自其名稱內不含 "XAML" 的 Windows 執行階段命名空間的類型將不支援相依性屬性；這類型的屬性是一般屬性，將不會擁有屬性系統的相依性行為。
+為了支援相依性屬性，定義屬性的物件必須是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (也就是在其繼承中包含了 **DependencyObject** 基底類別的類別)。 許多與 XAML 的 UWP 應用程式將會用於您的 UI 定義型別的**DependencyObject**子類別，且支援相依性屬性。 但是，任何來自其名稱內不含 "XAML" 的 Windows 執行階段命名空間的類型將不支援相依性屬性；這類型的屬性是一般屬性，將不會擁有屬性系統的相依性行為。
 
 相依性屬性的目的是提供一個系統方法，以根據其他輸入 (當您的 app 執行時，於該應用程式內發生的其他屬性、事件及狀態) 來計算屬性值。 這些其他輸入可能包括：
 
@@ -30,10 +30,10 @@ ms.locfileid: "9050771"
 - 多用途範本模式，如資源和樣式
 - 透過與物件樹中其他元素的父系-子系關係取得的值
 
-相依性屬性代表或支援的定義使用 XAML UI 和 C#、 Microsoft Visual Basic 或 VisualC + + 元件延伸的 Windows 執行階段應用程式的程式設計模型的特定功能 (C + + /CX) 程式碼。 這些功能包括：
+代表相依性屬性，或支援特定功能的程式設計模型來定義 ui 的 XAML 的 Windows 執行階段應用程式和C#，Microsoft Visual Basic 或 Visual c + + 元件擴充功能 (C + + /CX) 程式碼。 這些功能包括：
 
 - 資料繫結
-- 樣式
+- Styles
 - 腳本動畫
 - "PropertyChanged" 行為；可以實作相依性屬性來提供可將變更傳播到其他相依性屬性的回呼
 - 使用來自屬性中繼資料的預設值
@@ -47,7 +47,7 @@ ms.locfileid: "9050771"
 
 下列是我們在討論相依性屬性時，於文件中所使用的詞彙摘要：
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
 | 相依性屬性 | 存在於 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別碼的屬性 (如下所示)。 這個識別碼通常是以負責定義 **DependencyObject** 衍生類別的靜態成員方式來提供。 |
 | 相依性屬性識別碼 | 用來識別屬性的常數值，通常是公用和唯讀的。 |
@@ -74,7 +74,7 @@ public bool IsSpinning
 ```
 
 > [!NOTE]
-> 上述範例並非如何建立自訂相依性屬性的完整範例性中。 而是為了顯示相依性屬性概念，讓使用者藉由程式碼具體了解概念。 如需更完整的範例，請參閱[自訂相依性屬性](custom-dependency-properties.md)。
+> 上述範例的目的不是如何建立自訂的相依性屬性的完整範例。 而是為了顯示相依性屬性概念，讓使用者藉由程式碼具體了解概念。 如需更完整的範例，請參閱[自訂相依性屬性](custom-dependency-properties.md)。
 
 ## <a name="dependency-property-value-precedence"></a>相依性屬性值優先順序
 
@@ -86,10 +86,10 @@ public bool IsSpinning
 
 下列是指派相依性屬性的執行階段值時，屬性系統使用的決定性順序。 優先順序最高的會優先列出。 您只需瀏覽這個清單，就能找到更詳細的說明。
 
-1. **動畫值：** 作用中動畫、視覺狀態動畫，或具有 [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 行為的動畫。 為取得任何實際效果，套用到屬性的動畫優先順序必須高於基礎 (未動畫化的) 值，即使該值是在本機設定也一樣。
-1. **本機值：** 本機值可以輕鬆透過屬性包裝函式設定，這也等同於在 XAML 中設定為屬性 (Attribute) 或屬性 (Property) 元素，或使用特定執行個體的屬性 (Property) 呼叫 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 方法。 如果您使用繫結或靜態資源設定本機值，在優先順序上就像分別設定了本機值，如果設定了新的本機值，就會清除繫結或資源參考。
-1. **範本化屬性：** 如果將元素建立為範本 (來自 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)) 的一部分，元素就會含有這些屬性。
-1. **Style Setter：** 頁面或應用程式資源樣式中的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值。
+1. **動畫的值：** 作用中的動畫、 視覺狀態動畫或使用的動畫[ **HoldEnd** ](https://msdn.microsoft.com/library/windows/apps/br210306)行為。 為取得任何實際效果，套用到屬性的動畫優先順序必須高於基礎 (未動畫化的) 值，即使該值是在本機設定也一樣。
+1. **本機值：** 可能透過方便的屬性包裝函式，也等同於設定為屬性或屬性項目中 XAML，或藉由呼叫設定區域數值[ **SetValue** ](https://msdn.microsoft.com/library/windows/apps/br242361)方法使用的屬性特定的執行個體。 如果您使用繫結或靜態資源設定本機值，在優先順序上就像分別設定了本機值，如果設定了新的本機值，就會清除繫結或資源參考。
+1. **樣板化的屬性：** 項目會有這些是建立為範本的一部分 (從[ **ControlTemplate** ](https://msdn.microsoft.com/library/windows/apps/br209391)或是[ **DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348))。
+1. **樣式 setter:** 從數值[ **Setter** ](https://msdn.microsoft.com/library/windows/apps/br208817)內從網頁或應用程式資源的樣式。
 1. **預設值：** 相依性屬性可以有預設值做為其中繼資料的一部分。
 
 ### <a name="templated-properties"></a>範本化屬性
@@ -109,7 +109,7 @@ public bool IsSpinning
 
 ### <a name="storyboarded-animations-and-base-value"></a>腳本動畫和基礎值
 
-腳本動畫是以「基礎值」** 的概念來操作。 基礎值是屬性系統使用它的優先順序來判斷的值，但會省略尋找動畫的最後一個步驟。 例如，基礎值可能來自控制項的範本，也可能來自在控制項執行個體上設定本機值。 無論使用何種方法，只要您的動畫持續執行，套用動畫將覆寫這個基礎值並套用動畫值。
+腳本動畫是以「基礎值」的概念來操作。 基礎值是屬性系統使用它的優先順序來判斷的值，但會省略尋找動畫的最後一個步驟。 例如，基礎值可能來自控制項的範本，也可能來自在控制項執行個體上設定本機值。 無論使用何種方法，只要您的動畫持續執行，套用動畫將覆寫這個基礎值並套用動畫值。
 
 對於動畫屬性，如果該動畫未明確指定 **From** 與 **To**，或者，如果動畫會在完成時將屬性還原為其基礎值，基礎值就仍能對動畫值產生影響。 在這些情況下，當動畫不再執行之後，就會再次使用剩餘的優先順序。
 
@@ -125,12 +125,12 @@ public bool IsSpinning
 
 即使未在相依性屬性的中繼資料中明確定義這些預設值，該屬性仍會有預設值。 除非已使用中繼資料變更它們，否則 Windows 執行階段相依性屬性的預設值通常是下列其中一項：
 
-- 使用執行階段物件或基本 **Object** 類型 (「參考類型」**) 的屬性具有 **null** 的預設值。 例如，在刻意設定或繼承 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 之前，它會是 **null**。
-- 使用像是數值或布林值 (「值類型」**) 等基礎值的屬性，會使用該值的預期預設值。 例如，若為整數和浮點數則為 0，若為布林值則為 **false**。
+- 使用執行階段物件或基本 **Object** 類型 (「參考類型」) 的屬性具有 **null** 的預設值。 例如，在刻意設定或繼承 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 之前，它會是 **null**。
+- 使用像是數值或布林值 (「值類型」) 等基礎值的屬性，會使用該值的預期預設值。 例如，若為整數和浮點數則為 0，若為布林值則為 **false**。
 - 使用 Windows 執行階段結構的屬性預設值，可透過呼叫該結構的隱含預設建構函式來取得。 這個建構函式會針對結構的每一個基礎值欄位使用預設值。 例如，[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 值的預設值會使用它的 **X** 和 **Y** 值初始化為 0。
 - 使用列舉的屬性預設值為該列舉中第一個定義的成員。 檢查特定列舉的參考，以查看預設值為何。
 - 使用字串 (適用於 .NET 的 [**System.String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)、適用於 C++/CX 的 [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx)) 的屬性預設值為空字串 (**""**)。
-- 根據本主題中深入探討的因素，集合屬性通常不會實作為相依性屬性。 但是，如果您實作自訂集合屬性且想要讓它成為相依性屬性，請確定會避免「不想要的單一執行個體」**，如接近[自訂相依性屬性](custom-dependency-properties.md)結尾處所述。
+- 根據本主題中深入探討的因素，集合屬性通常不會實作為相依性屬性。 但是，如果您實作自訂集合屬性且想要讓它成為相依性屬性，請確定會避免「不想要的單一執行個體」，如接近[自訂相依性屬性](custom-dependency-properties.md)結尾處所述。
 
 ## <a name="property-functionality-provided-by-a-dependency-property"></a>相依性屬性提供的屬性功能
 
@@ -149,7 +149,7 @@ public bool IsSpinning
 您也可以使用程式碼建立繫結，而不要使用 XAML。 請參閱 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)。
 
 > [!NOTE]
-> 就像這樣的繫結會被視為本機值基於相依性屬性值優先順序的緣故。 如果您將另一個本機值設成原先擁有 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 值的屬性，將會完全覆寫該繫結，而不只是繫結的執行階段值。 {x:Bind} 繫結會使用產生的程式碼 (將會為屬性設定本機值) 來實作。 如果您針對使用 {x:Bind} 的屬性設定了本機值，那麼下一次評估繫結時 (例如當繫結在其來源物件上觀察到屬性變更時) 將會取代該值。
+> 像這樣的繫結視為區域數值的相依性屬性值優先順序進行。 如果您將另一個本機值設成原先擁有 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 值的屬性，將會完全覆寫該繫結，而不只是繫結的執行階段值。 {x:Bind} 繫結會使用產生的程式碼 (將會為屬性設定本機值) 來實作。 如果您針對使用 {x:Bind} 的屬性設定了本機值，那麼下一次評估繫結時 (例如當繫結在其來源物件上觀察到屬性變更時) 將會取代該值。
 
 ### <a name="binding-sources-binding-targets-the-role-of-frameworkelement"></a>繫結來源、繫結目標、FrameworkElement 的角色
 
@@ -162,7 +162,7 @@ public bool IsSpinning
 建立繫結不是大多數資料繫結案例唯一需要做的事。 如果要讓單向或雙向繫結生效，來源屬性必須支援傳播到繫結系統 (因此就是目標) 的來源屬性。 針對自訂的繫結來源，這表示屬性必須是相依性屬性，或物件必須支援 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。 集合應支援 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。 某些類別在它們的實作中支援這些介面，因此使用它們做為基底類別對資料繫結案例來說很有用；[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 是這種類別的範例之一。 如需有關資料繫結以及資料繫結如何與屬性系統建立關聯的詳細資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 > [!NOTE]
-> 類型此處列出的支援 Microsoft.NET 資料來源。 C++/CX 資料來源會針對變更通知或可觀察的行為使用不同的介面，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+> 型別列出這裡支援 Microsoft.NET 資料來源。 C++/CX 資料來源會針對變更通知或可觀察的行為使用不同的介面，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 ### <a name="styles-and-templates"></a>樣式與範本
 
@@ -174,7 +174,7 @@ public bool IsSpinning
 
 您可以使用腳本動畫將相依性屬性的值製作成動畫。 Windows 執行階段中的腳本動畫不僅僅是視覺裝飾。 這在考慮將動畫做為狀態機器技術時更有用，這類技術可設定個別屬性的值或所有屬性的值以及控制項的視覺效果，並且在一段時間後變更這些值。
 
-若要動畫化，動畫的目標屬性必須是相依性屬性。 此外，若要動畫化，現有的 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) 衍生動畫類型之一必須支援目標屬性的值類型。 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) 及 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 的值可以使用內插補點或主要畫面格技術來製作動畫效果。 大部分的其他值可以使用分離的 **Object** 主要畫面格來製作動畫效果。
+若要動畫化，動畫的目標屬性必須是相依性屬性。 此外，若要動畫化，現有的 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) 衍生動畫類型之一必須支援目標屬性的值類型。 [  **Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) 及 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 的值可以使用內插補點或主要畫面格技術來製作動畫效果。 大部分的其他值可以使用分離的 **Object** 主要畫面格來製作動畫效果。
 
 套用與執行動畫時，動畫化的值的優先順序高於屬性另外包含的任何值 (像是本機值)。 動畫也包含一個選擇性的 [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 行為，即使動畫看起來像是已停止，仍會造成動畫套用到屬性值。
 
@@ -188,28 +188,28 @@ Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://msdn.microsof
 
 ### <a name="default-value-and-clearvalue"></a>預設值與 **ClearValue**
 
-相依性屬性可以在其屬性中繼資料中定義一個預設值。 針對相依性屬性，它的預設值不會在第一次設定屬性預設值之後變成無關的。 每當值優先順序中有一些其他行列式消失時，預設值可能會在執行階段再次套用。 (相依性屬性值的優先順序會在下一節中討論)。例如，您可能會刻意移除套用到屬性的樣式值或動畫，但卻希望這樣做之後，將該值設定為合理的預設值。 相依性屬性的預設值可以提供這個值，而不需要執行額外步驟來特別設定每個屬性的值。
+相依性屬性可以在其屬性中繼資料中定義一個預設值。 針對相依性屬性，它的預設值不會在第一次設定屬性預設值之後變成無關的。 每當值優先順序中有一些其他行列式消失時，預設值可能會在執行階段再次套用。 （下一節會討論相依性屬性值優先順序）。比方說，您可能會刻意移除樣式值或動畫套用至屬性，但您想要這麼做之後，是合理的預設值。 相依性屬性的預設值可以提供這個值，而不需要執行額外步驟來特別設定每個屬性的值。
 
 即使在您已經使用本機值來設定屬性之後，您還是能夠刻意將該屬性設為預設值。 若要再次將值重設為預設值，並且還要一併啟用可能覆寫預設值但不會覆寫本機值的優先順序中的其他參與者，可以呼叫 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 方法 (參考要清除的屬性以做為方法參數)。 您不一定想讓屬性照字面使用預設值，但是清除本機值並還原為預設值，可能會讓優先順序中您所需的另一個項目立即運作，例如，使用來自控制項範本中樣式 setter 的值。
 
 ## <a name="dependencyobject-and-threading"></a>**DependencyObject** 和執行緒處理
 
-所有的 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 執行個體都必須在 UI 執行緒上建立，而這個執行緒與 Windows 執行階段應用程式所顯示的目前 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 關聯。 雖然每個 **DependencyObject** 都必須在主 UI 執行緒上建立，但是只要存取 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) 屬性，即可使用其他緒行緒的發送器參考來存取物件。 接著，您可以在 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件上呼叫像是 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的方法，並在 UI 執行緒上的執行緒限制規則內執行您的程式碼。
+所有的 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 執行個體都必須在 UI 執行緒上建立，而這個執行緒與 Windows 執行階段 app 所顯示的目前 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 關聯。 雖然每個 **DependencyObject** 都必須在主 UI 執行緒上建立，但是只要存取 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) 屬性，即可使用其他緒行緒的發送器參考來存取物件。 接著，您可以在 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件上呼叫像是 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的方法，並在 UI 執行緒上的執行緒限制規則內執行您的程式碼。
 
-[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的執行緒層面都是相關的，因為它通常表示只有在 UI 執行緒上執行的程式碼才可以變更或甚至是讀取相依性屬性的值。 在一般的 UI 程式碼中通常可以避免緒行緒處理的問題，因為它能夠正確使用 **async** 模式及背景工作者執行緒。 通常您只會在定義自己的 **DependencyObject** 類型並且嘗試在 **DependencyObject** 不適用的資料來源或其他案例中使用這些類型時，才會遇到 **DependencyObject** 相關的執行緒處理問題。
+[  **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的執行緒層面都是相關的，因為它通常表示只有在 UI 執行緒上執行的程式碼才可以變更或甚至是讀取相依性屬性的值。 在一般的 UI 程式碼中通常可以避免緒行緒處理的問題，因為它能夠正確使用 **async** 模式及背景工作者執行緒。 通常您只會在定義自己的 **DependencyObject** 類型並且嘗試在 **DependencyObject** 不適用的資料來源或其他案例中使用這些類型時，才會遇到 **DependencyObject** 相關的執行緒處理問題。
 
 ## <a name="related-topics"></a>相關主題
 
 ### <a name="conceptual-material"></a>概念資料
 
 - [自訂相依性屬性](custom-dependency-properties.md)
-- [附加屬性概觀](attached-properties-overview.md)
+- [附加的屬性概觀](attached-properties-overview.md)
 - [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
-- [腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
+- [建立圖片敘述的動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
 - [建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 - [XAML 使用者和自訂控制項範例](https://go.microsoft.com/fwlink/p/?linkid=238581)
 
-## <a name="apis-related-to-dependency-properties"></a>與相依性屬性相關的 Api
+## <a name="apis-related-to-dependency-properties"></a>相依性屬性相關的 Api
 
 - [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 - [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)

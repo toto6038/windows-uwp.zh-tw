@@ -3,14 +3,14 @@ title: PointOfService device 功能
 description: 要使用 Windows.Devices.PointOfService 命名空間需要具備 PointOfService 功能。
 ms.date: 05/02/2018
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos, 服務點
+keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c09a9093389fc0a917243773eae6803220ed610
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115752"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634683"
 ---
 # <a name="pointofservice-device-capability"></a>PointOfService device 功能
 您透過在您的應用程式套件資訊清單中宣告功能，來要求存取 PointOfService API] 您可以使用 Microsoft Visual Studio 中的資訊清單設計工具宣告大部分的功能，或是手動新增功能。  
@@ -21,7 +21,7 @@ ms.locfileid: "9115752"
 ## <a name="declare-capability-using-manifest-designer"></a>使用資訊清單設計工具宣告功能
 
 1. 在 **\[方案總管\]** 中，展開您的 UWP 應用程式的專案節點。
-2. 按兩下 **\[Package.appxmanifest\]** 檔案。  
+2. 按兩下 [Package.appxmanifest] 檔案。  
 *如果資訊清單檔案已在 XML 程式碼檢視中開啟，Visual Studio 會提示您關閉檔案。*
 3. 按一下 **\[功能\]** 索引標籤。
 4. 按一下功能清單中核取方塊旁的 **\[Point of Service\]**，以啟用服務點裝置功能

@@ -1,24 +1,24 @@
 ---
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
 description: 了解如何使用 Windows.Services.Store 命名空間來購買 App 或其附加元件。
-title: 啟用應用程式和附加元件的 App 內購買
+title: 啟用應用程式和附加元件的應用程式內購買
 keywords: Windows 10, UWP, 附加元件, App 內購買, IAP, Windows.Services.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929081"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661723"
 ---
-# <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>啟用應用程式和附加元件的 App 內購買
+# <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>啟用應用程式和附加元件的應用程式內購買
 
 本文示範如何使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中的成員，讓使用者要求購買目前的應用程式或其附加元件之一。 例如，若使用者目前擁有的是試用版 App，您可以使用這個程序來讓該使用者購買完整版授權。 或者，您可以使用這個程序來購買附加元件，像是提供使用者新的遊戲關卡。
 
 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間提供了幾個方法可要求購買 App 或附加元件：
-* 如果您知道應用程式或附加元件的[ Store 識別碼](in-app-purchases-and-trials.md#store_ids)，則您可以使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [RequestPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestpurchaseasync) 方法。
+* 如果您知道 App 或附加元件的[市集識別碼](in-app-purchases-and-trials.md#store_ids)，則您可以使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [RequestPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestpurchaseasync) 方法。
 * 如果您已經有代表應用程式或附加元件的 [**StoreProduct**、**StoreSku** 或 **StoreAvailability** 物件](in-app-purchases-and-trials.md#products-skus)，則您可以使用這些物件的 **RequestPurchaseAsync** 方法。 如需在程式碼中擷取 **StoreProduct** 的不同方式範例，請參閱[取得應用程式和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)。
 
 每個方法會對使用者呈現一個標準購買 UI，並且會在交易完成之後以非同步的方式完成。 該方法會傳回指示交易是否成功的物件。
@@ -30,8 +30,8 @@ ms.locfileid: "8929081"
 
 這個範例包含下列先決條件：
 * 適用於目標為 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
-* 您必須在合作夥伴中心的 [[建立應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，並在市集中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在 Microsoft Store 中搜尋。 如需詳細資訊，請參閱我們的[測試指南](in-app-purchases-and-trials.md#testing)。
-* 如果您想要啟用應用程式內購買，應用程式的附加元件，您也必須[建立在合作夥伴中心的附加元件](../publish/add-on-submissions.md)。
+* 您必須[建立應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)在合作夥伴中心與此應用程式會發佈在存放區。 測試時您也可以選擇將應用程式設定為不可在市集中搜尋。 如需詳細資訊，請參閱我們的[測試指南](in-app-purchases-and-trials.md#testing)。
+* 如果您想要啟用的應用程式的附加元件的應用程式內購買，您必須也[在合作夥伴中心建立附加元件](../publish/add-on-submissions.md)。
 
 這個範例中的程式碼假設：
 * 程式碼會在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的內容中執行，其中包含名為 ```workingProgressRing``` 的 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) 和名為 ```textBlock``` 的 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)。 這些物件可個別用來表示發生非同步作業，以及顯示輸出訊息。
@@ -43,7 +43,7 @@ ms.locfileid: "8929081"
 
 ## <a name="code-example"></a>程式碼範例
 
-此範例示範如何使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [RequestPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestpurchaseasync) 方法來購買已知其[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)的 App 或附加元件。 如需完整的範例應用程式，請參閱[ Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+此範例示範如何使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [RequestPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestpurchaseasync) 方法來購買已知其[市集識別碼](in-app-purchases-and-trials.md#store-ids)的 App 或附加元件。 如需完整的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
@@ -57,9 +57,9 @@ ms.locfileid: "8929081"
 
 ## <a name="related-topics"></a>相關主題
 
-* [App 內購買和試用版](in-app-purchases-and-trials.md)
+* [在應用程式內購買和試用版](in-app-purchases-and-trials.md)
 * [取得應用程式和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
-* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
-* [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
-* [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
-* [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+* [取得應用程式和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
+* [啟用可取用的附加元件購買的項目](enable-consumable-add-on-purchases.md)
+* [實作您的應用程式的試用版](implement-a-trial-version-of-your-app.md)
+* [存放區範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

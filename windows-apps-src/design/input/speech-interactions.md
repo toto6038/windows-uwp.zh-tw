@@ -1,5 +1,5 @@
 ---
-Description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
+Description: 使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的應用程式。
 title: 語音互動
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 09787d5a83415b65b8946860edb5b7cad09a5846
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050811"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637073"
 ---
 # <a name="speech-interactions"></a>語音互動
 
@@ -81,20 +81,20 @@ Windows 應用程式中的 **Cortana** 使用自訂語音命令 (口說或鍵入
 -   預先定義的文法 (聽寫或網頁搜尋)
 
     -   [正在聆聽] 畫面。
-    -   **[正在思考]** 畫面。
+    -   [正在思考] 畫面。
     -   [聽到您說] 畫面或錯誤畫面。
 -   字詞或片語的清單或 SRGS 文法檔案
 
-    -   **\[正在聆聽\]** 畫面。
-    -   **[您說的是]** 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
-    -   **\[聽到您說\]** 畫面或錯誤畫面。
+    -   [正在聆聽] 畫面。
+    -   [您說的是] 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
+    -   [聽到您說] 畫面或錯誤畫面。
 
-您可以在 **\[正在聆聽\]** 畫面上：
+您可以在 [正在聆聽] 畫面上：
 
 -   自訂標頭文字
 -   提供使用者可以說出的範例文字。
--   指定是否顯示 **\[聽到您說\]** 畫面。
--   在 **\[聽到您說\]** 畫面向使用者讀出已辨識到的字串。
+-   指定是否顯示 [聽到您說] 畫面。
+-   在 [聽到您說] 畫面向使用者讀出已辨識到的字串。
 
 以下是使用 SRGS 定義限制之語音辨識器的內建辨識流程範例。 在這個範例中，語音辨識是成功的。
 
@@ -204,13 +204,13 @@ TTS 從純文字或 SSML 產生語音輸出。
 
 ## <a name="other-articles-in-this-section"></a>本節中的其他文章 
 
-| 主題 | 說明 |
+| 主題 | 描述 |
 | --- | --- |
 | [語音辨識](speech-recognition.md) | 使用語音辨識以提供輸入、指定動作或命令，以及完成工作。 |
-| [指定語音辨識器語言](specify-the-speech-recognizer-language.md) | 了解如何選取已安裝的語言以用於語音辨識。 |
+| [指定的語音辨識器語言](specify-the-speech-recognizer-language.md) | 了解如何選取已安裝的語言以用於語音辨識。 |
 | [定義自訂辨識限制式](define-custom-recognition-constraints.md) | 了解如何定義及使用自訂限制式來進行語音辨識。 |
 | [啟用連續聽寫](enable-continuous-dictation.md) |了解如何擷取及辨識較長且連續的聽寫語音輸入。 |
-| [管理音訊輸入的問題](manage-issues-with-audio-input.md) | 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。 |
+| [管理問題的音訊輸入](manage-issues-with-audio-input.md) | 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。 |
 | [設定語音辨識逾時](set-speech-recognition-timeouts.md) | 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。 |
 
 ## <a name="related-articles"></a>相關文章
@@ -220,7 +220,7 @@ TTS 從純文字或 SSML 產生語音輸出。
 
  **範例**
 
-* [語音辨識和語音合成範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音辨識和語音合成器範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

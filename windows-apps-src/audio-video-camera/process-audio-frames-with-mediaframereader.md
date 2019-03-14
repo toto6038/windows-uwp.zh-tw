@@ -4,14 +4,14 @@ description: 本文說明如何使用 MediaFrameReader 搭配 MediaCapture 以�
 title: 使用 MediaFrameReader 處理音訊框架
 ms.date: 04/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058768"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598583"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理音訊框架
 
@@ -26,12 +26,12 @@ ms.locfileid: "9058768"
 ## <a name="setting-up-your-project"></a>設定您的專案
 擷取音訊框架的程序與取得其他媒體框架類型的程序大致相同。 就像任何使用 **MediaCapture** 的 App 一樣，您必須在嘗試存取任何相機裝置之前，宣告您的 App 是使用*網路攝影機*功能。 如果您的應用程式會從音訊裝置擷取，您也應該宣告*麥克風*裝置功能。 
 
-**將功能新增到應用程式資訊清單**
+**將功能新增至應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 **\[方案總管\]** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
-2.  選取 **\[功能\]** 索引標籤。
-3.  核取 **\[網路攝影機\]** 方塊和 **\[麥克風\]** 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 **\[圖片媒體櫃\]** 方塊和 **\[視訊媒體櫃\]** 方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 [功能] 索引標籤。
+3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。
 
 
 
@@ -76,11 +76,11 @@ ms.locfileid: "9058768"
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)
+* [處理媒體與 MediaFrameReader 的畫面格](process-media-frames-with-mediaframereader.md)
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [相機畫面範例](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [音訊圖](audio-graphs.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [相機框架範例](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [音訊的圖形](audio-graphs.md)
  
 
 

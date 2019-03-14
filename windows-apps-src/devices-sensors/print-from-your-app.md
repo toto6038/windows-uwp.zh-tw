@@ -1,39 +1,39 @@
 ---
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
-title: 從您的 app 列印
+title: 從您的應用程式列印
 description: 了解如何從通用 Windows app 列印文件。 本主題也示範如何列印特定頁面。
 ms.date: 01/29/2018
 ms.topic: article
-keywords: windows 10，uwp 列印
+keywords: windows 10、 uwp、 列印
 ms.localizationpriority: medium
 ms.openlocfilehash: aecb09b4fbaa7614c1d31c9dc0bb8095925175e7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045331"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620693"
 ---
 # <a name="print-from-your-app"></a>從您的應用程式列印
 
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
 -   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
 -   [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314)
 
-了解如何從通用 Windows 應用程式列印文件。 本主題也示範如何列印特定頁面。 如需預覽列印 UI 的更進階變更，請參閱[自訂預覽列印 UI](customize-the-print-preview-ui.md)。
+了解如何從通用 Windows app 列印文件。 本主題也示範如何列印特定頁面。 如需預覽列印 UI 的更進階變更，請參閱[自訂預覽列印 UI](customize-the-print-preview-ui.md)。
 
 > [!TIP]
-> 本主題中大部分的範例是以列印範例為基礎。 若要查看完整程式碼，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)。
+> 本主題中的範例大多根據列印的範例。 若要查看完整程式碼，請從 GitHub 的 [Windows-universal-samples 儲存機制](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)。
 
 ## <a name="register-for-printing"></a>註冊列印
 
 新增列印至 app 的第一個步驟是註冊列印協定。 您的 App 必須在要讓您的使用者能夠進行列印的每個畫面上登錄列印協定。 只有對使用者顯示的畫面可以登錄列印。 如果應用程式的某個畫面已登錄列印，則必須在結束該畫面時解除登錄列印。 如果該畫面被另一個畫面取代，則下一個畫面開啟時，必須註冊新的列印協定。
 
 > [!TIP]
-> 如果您需要在 App 內一個以上的頁面中支援列印，可以將這個列印程式碼放置於常用協助程式類別中，並讓您的 App 頁面重複使用它。 如需如何執行這項操作的範例，請參閱 [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `PrintHelper` 類別。
+> 如果您需要在您的應用程式支援從多個頁面的列印，您可以將此列印的程式碼放在常見的協助程式類別，並讓您重複使用的應用程式頁面。 如需如何執行這項操作的範例，請參閱 [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `PrintHelper` 類別。
 
 首先，宣告 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 和 [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314)。 **PrintManager** 類型位於 [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489) 命名空間以及支援其他 Windows 列印功能的類型中。 **PrintDocument** 類型位於 [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325) 命名空間以及其他支援準備列印 XAML 內容的類型中。 您可以藉由將下列 **using** 或 **Imports** 陳述式新增到頁面中，更輕鬆地撰寫列印程式碼。
 
@@ -42,9 +42,9 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 ```
 
-[**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 類別是用來處理大部分的 app 與 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 之間的互動，但是它會公開自己的數個回呼。 在註冊期間，建立 **PrintManager** 和 **PrintDocument** 的執行個體，並註冊其列印事件的處理常式。
+[  **PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 類別是用來處理大部分的 app 與 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 之間的互動，但是它會公開自己的數個回呼。 在註冊期間，建立 **PrintManager** 和 **PrintDocument** 的執行個體，並註冊其列印事件的處理常式。
 
-在 [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984) 中，註冊是由 `RegisterForPrinting` 方法執行。
+在 [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中，註冊是由 `RegisterForPrinting` 方法執行。
 
 ```csharp
 public virtual void RegisterForPrinting()
@@ -168,7 +168,7 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 建立列印工作之後，[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 會藉由引發 [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) 事件，要求在預覽列印 UI 中顯示列印頁面集合。 這會對應至 **IPrintPreviewPageCollection** 介面的 **Paginate** 方法。 您在註冊期間建立的事件處理常式會在此時呼叫。
 
 > [!IMPORTANT]
-> 如果使用者變更列印設定，會再次呼叫編頁事件處理常式，讓您自動重排內容。 若要獲得最佳的使用者經驗，建議您先檢查設定，再自動重排內容，並避免在不必要時重新初始化已編頁的內容。
+> 如果使用者變更列印設定，編頁的事件處理常式會再次呼叫可讓您自動重排內容。 若要獲得最佳的使用者經驗，建議您先檢查設定，再自動重排內容，並避免在不必要時重新初始化已編頁的內容。
 
 在 [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) 事件處理常式中 ([UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `CreatePrintPreviewPages` 方法)，建立要在預覽列印 UI 中顯示並傳送到印表機的頁面。 您用來準備應用程式列印內容的程式碼，是應用程式和所列印內容專屬的程式碼。 請參閱 [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)原始程式碼，了解如何將要列印的內容格式化。
 
@@ -254,7 +254,7 @@ protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
 
 | 選項名稱          | 動作 |
 |----------------------|--------|
-| **列印全部**        | 列印文件中的所有頁面。|
+| **所有的列印**        | 列印文件中的所有頁面。|
 | **列印選取項目**  | 僅列印使用者選取的內容。|
 | **列印範圍**      | 顯示編輯控制項，讓使用者可以輸入頁面進行列印。|
 
@@ -267,7 +267,7 @@ PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrin
 清除預覽列印 UI 中顯示的選項清單，並新增當使用者想要從 app 列印時要顯示的選項。
 
 > [!NOTE]
-> 這些選項會依照附加的順序出現在預覽列印 UI 中，第一個選項會在視窗的頂端顯示。
+> 選項會出現在列印預覽 UI，它們會加上，顯示在視窗頂端的第一個選項的順序相同。
 
 ```csharp
 IList<string> displayedOptions = printDetailedOptions.DisplayedOptions;
@@ -301,7 +301,7 @@ PrintCustomTextOptionDetails pageRangeEdit = printDetailedOptions.CreateTextOpti
 printDetailedOptions.OptionChanged += printDetailedOptions_OptionChanged;
 ```
 
-[**CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) 方法會建立 **\[範圍\]** 文字方塊。 當使用者選取 **\[列印範圍\]** 選項時，可以在此處輸入想要列印的特定頁面。
+[  **CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) 方法會建立 [範圍] 文字方塊。 當使用者選取 [列印範圍] 選項時，可以在此處輸入想要列印的特定頁面。
 
 ## <a name="handle-print-option-changes"></a>處理列印選項變更
 
@@ -384,7 +384,7 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ```
 
 > [!TIP]
-> 如需如何剖析使用者在 [範圍] 文字方塊中輸入之頁面範圍的詳細資料，請參閱 [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `GetPagesInRange` 方法。
+> 請參閱`GetPagesInRange`方法中的[UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)的詳細說明如何剖析頁面範圍的使用者輸入在範圍 文字方塊中。
 
 ## <a name="preview-selected-pages"></a>預覽已選取的頁面
 
@@ -398,6 +398,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 ## <a name="related-topics"></a>相關主題
 
-* [列印的設計指導方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//2015 建置影片：開發在 Windows 10 中列印的 app](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [列印的設計方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [Build 2015 影片：開發 Windows 10 中列印的應用程式](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)

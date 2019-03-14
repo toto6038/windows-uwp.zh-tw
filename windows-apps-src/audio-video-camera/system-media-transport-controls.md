@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6be1680d1ce843c1fbe7105dc2027e764095495a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933304"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635653"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>系統媒體傳輸控制項的手動控制項
 
 
-從 Windows10 版本 1607 開始，使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 類別來播放媒體的 UWP App，預設將會自動與系統媒體傳輸控制項 (SMTC) 整合。 針對大部分的案例，這是與 SMTC 互動的建議方式。 如需自訂 SMTC 與 **MediaPlayer** 預設整合的詳細資訊，請參閱[與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)。
+從 Windows 10 版本 1607 開始，使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 類別來播放媒體的 UWP App，預設將會自動與系統媒體傳輸控制項 (SMTC) 整合。 針對大部分的案例，這是與 SMTC 互動的建議方式。 如需自訂 SMTC 與 **MediaPlayer** 預設整合的詳細資訊，請參閱[與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)。
 
 在某幾個案例中，您可能需要實作 SMTC 的手動控制項。 這包括使用 [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) 來控制一或多個媒體播放程式之播放的案例。 或是會使用多個媒體播放程式，但針對 App 只想要單一 SMTC 執行個體的案例。 如果您是使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaElement) 來播放媒體，便必須手動控制 SMTC。
 
@@ -74,7 +74,7 @@ ms.locfileid: "8933304"
 
 -   您必須提供 [**StartTime**](https://msdn.microsoft.com/library/windows/apps/mt218751)、[**EndTime**](https://msdn.microsoft.com/library/windows/apps/mt218747) 和 [**Position**](https://msdn.microsoft.com/library/windows/apps/mt218755) 的值，系統控制項才能為您正在播放的項目顯示時間軸。
 
--   [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) 和 [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) 可讓您指定使用者可以搜尋的時間軸的範圍。 典型的案例是讓內容提供者在他們的媒體中包含廣告中斷。
+-   [**MinSeekTime** ](https://msdn.microsoft.com/library/windows/apps/mt218749)並[ **MaxSeekTime** ](https://msdn.microsoft.com/library/windows/apps/mt218748)可讓您指定的範圍內的使用者可搜尋的時間表。 典型的案例是讓內容提供者在他們的媒體中包含廣告中斷。
 
     您必須設定 [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) 和 [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748)，才會引發 [**PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755)。
 
@@ -111,8 +111,8 @@ ms.locfileid: "8933304"
 
 ## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)
-* [與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md) 
-* [系統媒體傳輸範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
+* [整合系統媒體傳輸控制項](integrate-with-systemmediatransportcontrols.md) 
+* [系統媒體傳輸站範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 

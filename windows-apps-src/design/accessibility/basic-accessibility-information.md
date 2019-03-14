@@ -1,5 +1,5 @@
 ---
-Description: Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.
+Description: 基本協助工具資訊通常分類為名稱、角色以及值。 本主題說明的程式碼可協助您的應用程式公開輔助技術所需的基本資訊。
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: 公開基本的協助工具資訊
 label: Expose basic accessibility information
@@ -9,17 +9,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8320b2b4abb5e49bbf589b360cc9cc2e0e033f79
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050328"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625943"
 ---
 # <a name="expose-basic-accessibility-information"></a>公開基本的協助工具資訊  
 
 
 
-基本協助工具資訊通常分類為名稱、角色以及值。 本主題描述的程式碼可協助您的 App 公開輔助技術所需的基本資訊。
+基本協助工具資訊通常分類為名稱、角色以及值。 本主題說明的程式碼可協助您的應用程式公開輔助技術所需的基本資訊。
 
 <span id="accessible_name"/>
 <span id="ACCESSIBLE_NAME"/>
@@ -29,10 +29,10 @@ ms.locfileid: "9050328"
 
 這個表格描述如何定義或取得 XAML UI 中各種元素類型的無障礙名稱。
 
-| 元素類型 | 說明 |
+| 元素類型 | 描述 |
 |--------------|-------------|
 | 靜態文字 | 若為 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 和 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) 元素，則會從可見的 (內部) 文字自動判斷無障礙名稱。 該元素中的所有文字都會當作名稱使用。 請參閱[來自內部文字的名稱](#name_from_inner_text)。 |
-| 影像 | XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素與 **img** 及類似元素的 HTML **alt** 屬性沒有直接的相似項目。 請使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 提供名稱，或使用輔助字幕技術。 請參閱[影像的無障礙名稱](#images)。 |
+| 映像 | XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素與 **img** 及類似元素的 HTML **alt** 屬性沒有直接的相似項目。 請使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 提供名稱，或使用輔助字幕技術。 請參閱[影像的無障礙名稱](#images)。 |
 | 表單元素 | 表單元素的無障礙名稱應該和元素的顯示標籤相同。 請參閱 [Labels 和 LabeledBy](#labels)。 |
 | 按鈕和連結 | 根據預設值，按鈕或連結的無障礙名稱是以可見的文字為基礎，使用與[來自內部文字的名稱](#name_from_inner_text)中所述之規則相同的規則。 如果按鈕只包含一個影像，則使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 提供與設計的按鈕動作相當的純文字。 |
 
@@ -64,7 +64,7 @@ ms.locfileid: "9050328"
 ## <a name="name-from-inner-text"></a>來自內部文字的名稱  
 為了讓可見 UI 中已經存在的字串可以更容易當成無障礙名稱值，很多控制項和其他 UI 元素會根據元素的內部文字或來自內容屬性的字串值，自動判斷預設的無障礙名稱。
 
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)、[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 以及 **RichTextBlock**，每一個都會將 **Text** 屬性的值升級為預設的無障礙名稱。
+* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)， [ **RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)， [**文字方塊**](https://msdn.microsoft.com/library/windows/apps/BR209683)和**RichTextBlock**每個升級的值**文字**屬性做為預設可存取的名稱。
 * 任何 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 子類別都會使用反覆的 "ToString" 技術在它的 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 值內尋找字串，然後將這些字串升級為預設的無障礙名稱。
 
 > [!NOTE]
@@ -83,7 +83,7 @@ XAML
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
 
-您也可以考慮加入文字輔助字幕，讓它顯示在可見 UI 中，它同時也可以當作是影像內容中與標籤相關的協助工具資訊。 這裡提供一個範例：
+您也可以考慮加入文字輔助字幕，讓它顯示在可見 UI 中，它同時也可以當作是影像內容中與標籤相關的協助工具資訊。 以下是範例：
 
 XAML
 ```xml
@@ -141,7 +141,7 @@ XAML
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>動態資料的無障礙名稱  
-Windows 支援許多控制項，而這些控制項可以透過名為「資料繫結」** 的功能來顯示相關資料來源的值。 將資料項目填入清單時，您可能需要使用一種技術，在填入初始清單之後為這些資料繫結的清單項目設定無障礙名稱。 如需詳細資訊，請參閱 [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)的＜案例 4＞。
+Windows 支援許多控制項，而這些控制項可以透過名為「資料繫結」的功能來顯示相關資料來源的值。 將資料項目填入清單時，您可能需要使用一種技術，在填入初始清單之後為這些資料繫結的清單項目設定無障礙名稱。 如需詳細資訊，請參閱 [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)的＜案例 4＞。
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
@@ -157,5 +157,5 @@ Windows 支援許多控制項，而這些控制項可以透過名為「資料繫
 ## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
-* [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 的協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [協助工具測試](accessibility-testing.md)

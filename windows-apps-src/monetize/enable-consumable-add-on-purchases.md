@@ -7,11 +7,11 @@ ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0446269fcbde87dfa25b7bff25f7160335950fba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928585"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636723"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>啟用消費性附加元件購買
 
@@ -24,9 +24,9 @@ ms.locfileid: "8928585"
 
 應用程式可提供兩種類型的消費性附加元件，其差別在於管理完成的方式：
 
-* **開發人員管理的消費性產品**。 針對這種類型的消費性產品，您必須負責持續追蹤使用者對該附加元件所代表之項目的餘額，以及在使用者用完所有項目之後，向市集回報已完成附加元件的購買。 在您的 App 回報已完成先前的附加元件購買之前，使用者將無法再次購買該附加元件。
+* **開發人員管理的消費性產品**。 針對這種類型的消費性產品，您必須負責持續追蹤使用者對該附加元件所代表之項目的餘額，以及在使用者用完所有項目之後，向市集回報已完成附加元件的購買。 使用者必須等到您的應用程式將先前的附加元件購買回報為已完全交付之後，才能再次購買該附加元件。
 
-  例如，如果您的附加元件在遊戲中代表 100 個金幣，而使用者花費了 10 個金幣，則您的應用程式或服務必須針對該使用者保留 90 個金幣的新餘額。 當使用者花光 100 個金幣之後，您的 App 必須回報該附加元件已完成，接著使用者就能再次購買 100 個金幣的附加元件。
+  例如，如果您的附加元件在遊戲中代表 100 個金幣，而使用者花費了 10 個金幣，則您的應用程式或服務必須針對該使用者保留 90 個金幣的新餘額。 當使用者花光 100 個金幣之後，您的應用程式必須回報該附加元件已完成，接著使用者就能再次購買 100 個金幣的附加元件。
 
 * **市集管理的消費性產品**。 針對這種類型的消費性產品，市集會持續追蹤使用者對該附加元件所代表之項目的餘額。 當使用者取用任何項目時，您必須負責向市集回報這些項目已完成，而市集會更新使用者的餘額。 使用者可以隨時多次購買附加元件 (不需要先取用項目)。 您的應用程式可以隨時查詢 Microsoft Store 有關使用者目前的餘額。
 
@@ -41,12 +41,12 @@ ms.locfileid: "8928585"
 
 您也可以隨時針對市集管理的消費性產品來[取得剩下的餘額](enable-consumable-add-on-purchases.md#get_balance)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 這些範例包含下列先決條件：
 * 適用於目標為 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
-* 您必須在合作夥伴中心的 [[建立應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，並在市集中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在 Microsoft Store 中搜尋。 如需詳細資訊，請參閱我們的[測試指南](in-app-purchases-and-trials.md#testing)。
-* 在合作夥伴中心已[建立消費性附加元件的應用程式](../publish/add-on-submissions.md)。
+* 您必須[建立應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)在合作夥伴中心與此應用程式會發佈在存放區。 測試時您也可以選擇將應用程式設定為不可在市集中搜尋。 如需詳細資訊，請參閱我們的[測試指南](in-app-purchases-and-trials.md#testing)。
+* 您必須[建立應用程式需求的可取用的附加元件](../publish/add-on-submissions.md)在合作夥伴中心。
 
 這些範例中的程式碼假設：
 * 程式碼會在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的內容中執行，其中包含名為 ```workingProgressRing``` 的 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) 和名為 ```textBlock``` 的 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)。 這些物件可個別用來表示發生非同步作業，以及顯示輸出訊息。
@@ -70,7 +70,7 @@ ms.locfileid: "8928585"
   * 針對市集管理的消費性產品，指定實際已取用的單位數。 市集將會更新該消費性產品剩下的餘額。
 * 適用於完成操作的追蹤識別碼。 這是開發人員提供的 GUID，可基於追蹤目的用來識別與完成操作相關聯的特定交易。 如需詳細資訊，請參閱 [ReportConsumableFulfillmentAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.reportconsumablefulfillmentasync) 中的備註。
 
-這個範例示範如何將 Microsoft Store 管理的消費性產品回報為已完成。
+這個範例示範如何將市集管理的消費性產品回報為已完成。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
@@ -86,9 +86,9 @@ ms.locfileid: "8928585"
 
 ## <a name="related-topics"></a>相關主題
 
-* [App 內購買和試用版](in-app-purchases-and-trials.md)
+* [在應用程式內購買和試用版](in-app-purchases-and-trials.md)
 * [取得應用程式和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
-* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
-* [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
-* [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+* [取得應用程式和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
+* [啟用應用程式內購買的應用程式和附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [實作您的應用程式的試用版](implement-a-trial-version-of-your-app.md)
+* [存放區範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

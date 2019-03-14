@@ -1,5 +1,5 @@
 ---
-title: 為您的 UWP app 設定自動化組建
+title: 設定您的 UWP 應用程式的自動化組建
 description: 如何設定您的自動化組建以產生側載及/或儲存套件。
 ms.date: 09/30/2018
 ms.topic: article
@@ -7,13 +7,13 @@ keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 4208fd56b16d5130f218492428eb459364b8ada9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923845"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590893"
 ---
-# <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
+# <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP 應用程式的自動化組建
 
 您可以使用 Visual Studio Team Services (VSTS) 來建立 UWP 專案的自動化組建。
 在本文中，我們會說明執行此操作的不同方式。  我們也會說明如何透過使用命令列來執行這些工作，這樣您就可以與其他建置系統 (例如 AppVeyor) 整合。
@@ -23,11 +23,11 @@ ms.locfileid: "8923845"
 選擇您希望 VSTS 在執行建置處理序時使用的組建代理程式類型。
 託管的組建代理程式是使用最常見的工具與 SDK 進行部署，且大部分情況下都可運作，請參閱[託管的組建伺服器上的軟體](https://www.visualstudio.com/docs/build/admin/agents/hosted-pool#software)一文。 不過，如果您需要對建置步驟有更多控制權，您可以建立自訂的組建代理程式。 您可以使用下表來協助您決定。
 
-| **案例** | **自訂的代理程式** | **託管的組建代理程式** |
+| **案例** | **自訂代理程式** | **裝載的組建代理程式** |
 |-------------|----------------|----------------------|
 | 基本 UWP 組建 (包含 .NET Native)| :white_check_mark: | :white_check_mark: |
 | 產生側載套件| :white_check_mark: | :white_check_mark: |
-| 產生 [Microsoft Store] 提交套件| :white_check_mark: | :white_check_mark: |
+| 產生 [市集] 提交套件| :white_check_mark: | :white_check_mark: |
 | 使用自訂憑證| :white_check_mark: | |
 | 以自訂 Windows SDK 為目標的組建| :white_check_mark: |  |
 | 執行單元測試| :white_check_mark: |  |
@@ -49,7 +49,7 @@ ms.locfileid: "8923845"
 
 我們將從 VSTS 中可用的預設 UWP 組建定義開始，然後為您說明如何設定該定義，以讓您完成更多進階組建工作。
 
-**將您的專案憑證新增到原始程式碼儲存機制**
+**您的專案將憑證加入原始程式碼存放庫**
 
 VSTS 可同時搭配以 TFS 和 GIT 為基礎的程式碼儲存機制運作。
 如果您使用 Git 儲存機制，請將您專案的憑證檔案新增到儲存機制，這樣一來組建代理程式就可以簽署應用程式套件。 如果您沒有這麼做，Git 儲存機制會略過憑證檔案。
@@ -69,8 +69,8 @@ VSTS 可同時搭配以 TFS 和 GIT 為基礎的程式碼儲存機制運作。
 
 此組建定義包含下列的建置工作︰
 
-- NuGet restore **\*.sln
-- Build solution **\*.sln
+- NuGet 還原 * *\*.sln
+- 組建方案 * *\*.sln
 - 發行符號
 - 發行構件：拖放
 
@@ -82,14 +82,14 @@ VSTS 可同時搭配以 TFS 和 GIT 為基礎的程式碼儲存機制運作。
 
 #### <a name="configure-the-build-solution-build-task"></a>設定建置方案建置工作
 
-這項工作會編譯任何方案中為二進位檔的工作資料夾並產生輸出應用程式套件檔案。
+這項工作會編譯二進位檔的工作資料夾中，並產生輸出的應用程式套件檔案的任何解決方案。
 這個工作會使用 MSbuild 引數。  您必須指定那些引數的值。 使用下表做為指引。
 
-|**MSBuild 引數**|**值**|**說明**|
+|**MSBuild 引數**|**值**|**描述**|
 |--------------------|---------|---------------|
 |AppxPackageDir|$(Build.ArtifactStagingDirectory)\AppxPackages|定義要儲存所產生構件的資料夾。|
 |AppxBundlePlatforms|$(Build.BuildPlatform)|可讓您定義套件組合中要包含的平台。|
-|AppxBundle|一律|使用指定平台的 appx 檔案建立 appxbundle。|
+|AppxBundle|永遠|使用指定平台的 appx 檔案建立 appxbundle。|
 |**UapAppxPackageBuildMode**|StoreUpload|定義要產生的應用程式套件的類型。 (預設為不包含)|
 
 如果您想要使用命令列，或使用任何其他建置系統建置您的方案，請使用這些引數執行 msbuild。
@@ -114,7 +114,7 @@ VSTS 會使用我們之前已定義的 `$(Build.ArtifactStagingDirectory)\AppxPa
 
 ![構件](images/building-screen6.png)
 
-因為我們已將 `UapAppxPackageBuildMode` 屬性設定為 `StoreUpload`，構件資料夾包含建議提交至Microsoft Store的套件 (.appxupload)。 請注意，您也可以提交一般應用程式套件 (.appx/.msix) 或應用程式套件組合 (.appxbundle/.msixbundle) 至市集。 根據本文的用途，我們將使用 .appxupload 檔案。
+因為我們已將 `UapAppxPackageBuildMode` 屬性設定為 `StoreUpload`，構件資料夾包含建議提交至Microsoft Store的套件 (.appxupload)。 請注意，您也可以提交的規則的應用程式套件 (.appx/.msix) 或應用程式套件組合 (.appxbundle/.msixbundle) 存放區。 根據本文的用途，我們將使用 .appxupload 檔案。
 
 >[!NOTE]
 > 根據預設，VSTS 代理程式會維持所產生的最新應用程式套件。 如果您只想要儲存目前組建的構件，請設定組建以清除二進位檔目錄。 若要這樣做，請新增一個名為 `Build.Clean` 的變數，然後將它的值設定為 `all`。 若要深入了解，請參閱[指定儲存機制](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)。
@@ -123,7 +123,7 @@ VSTS 會使用我們之前已定義的 `$(Build.ArtifactStagingDirectory)\AppxPa
 
 接下來，您將使用您的組建定義建立自動化組建。 下表說明您可以建立的每一種自動化組建。
 
-|**建置類型**|**構件**|**建議頻率**|**說明**|
+|**組建類型**|**成品**|**建議的頻率**|**描述**|
 |-----------------|------------|-------------------------|---------------|
 |連續整合|組建記錄檔，測試結果|每個認可|這種類型的組建很快速，且一天可以執行數次。|
 |用於側載的連續部署組建|部署套件|每天 |這種類型的組建可包含單元測試，但需要較長的時間。 它允許手動測試，且您可以將它與其他工具整合 (例如 HockeyApp)。|
@@ -138,7 +138,7 @@ VSTS 會使用我們之前已定義的 `$(Build.ArtifactStagingDirectory)\AppxPa
 如果您想要執行 UWP 單元測試做為您 CI 組建的一部分，您需要使用自訂組建代理程式而非裝載的組建代理程式。
 
 >[!NOTE]
-> 如果您在同一個方案中組合多個應用程式，您可能會收到錯誤。 請參閱下列主題，以取得解決錯誤的說明︰[解決在同一個方案中組合多個 App 時出現的錯誤。](#bundle-errors)
+> 如果您在同一個方案中組合多個應用程式，您可能會收到錯誤。 請參閱下列主題來協助解決該錯誤：[解決您組合多個應用程式在相同的方案時，會出現的錯誤。](#bundle-errors)
 
 ### <a name="configure-a-ci-build-definition"></a>設定 CI 組建定義
 
@@ -146,8 +146,7 @@ VSTS 會使用我們之前已定義的 `$(Build.ArtifactStagingDirectory)\AppxPa
 
 ![ci 觸發程序](images/building-screen7.png)
 
-因為 CI 組建不會部署到使用者，所以最好維持不同的版本編號以避免混淆 CD 組建。 例如：
-`$(BuildDefinitionName)_0.0.$(DayOfYear)$(Rev:.r)`
+因為 CI 組建不會部署到使用者，所以最好維持不同的版本編號以避免混淆 CD 組建。 例如：`$(BuildDefinitionName)_0.0.$(DayOfYear)$(Rev:.r)`
 
 #### <a name="configure-a-custom-build-agent-for-unit-testing"></a>設定單元測試的自訂組建代理程式
 
@@ -171,15 +170,14 @@ UWP 單元測試會在指定 appxrecipe 檔案的內容中執行，因此您無�
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.UnitTest_$(AppxVersion)_x86.appxrecipe
 ```
 
-為了讓測試執行，主控台參數需要新增到 vstest.console.exe。 可透過以下方式提供此參數：**執行選項 => 其他主控台選項**。 請新增以下參數：
+為了讓測試執行，主控台參數需要新增到 vstest.console.exe。 這個參數可以透過提供：**執行選項 = > 其他主控台選項**。 請新增以下參數：
 
 ```ps
 /framework:FrameworkUap10
 ```
 
 >[!NOTE]
-> 使用下列命令從命令列在本機執行單元測試：
-`"%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"`
+> 若要從命令列在本機執行單元測試中使用下列命令： `"%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"`
 
 #### <a name="access-test-results"></a>存取測試結果
 
@@ -195,7 +193,7 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.Un
 
 1. 僅適用單一平台的組建
 2. 編輯 BuildPlatform 變數，以僅使用 x86。 ![設定 ci](images/building-screen10.png)
-3. 在建置步驟中，將 /p:AppxBundle=Never 新增到 MSBuild 引數屬性中，然後設定 [平台] 屬性。. ![設定平台](images/building-screen11.png)
+3. 在建置步驟中，將 /p:AppxBundle=Never 新增到 MSBuild 引數屬性中，然後設定 [平台] 屬性. ![設定平台](images/building-screen11.png)
 4. 在單元測試專案中，停用 .NET 原生項目。
 
 若要這樣做，請開啟專案檔案，然後在專案屬性中將 `UseDotNetNativeToolchain` 屬性設定為 `false`。
@@ -215,16 +213,16 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 會顯示此錯誤是因為在方案層級，仍不清楚套件組合中應顯示哪個 App。
 若要解決此問題，請開啟每個專案檔案，並在第一個 `<PropertyGroup>` 項目的結尾處新增下列屬性：
 
-|**專案**|**屬性**|
+|**Project**|**屬性**|
 |-------|----------|
-|App|`<AppxBundle>Always</AppxBundle>`|
+|應用程式|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
 
 然後，從建置步驟中移除 `AppxBundle` msbuild 引數。
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>設定用於側載的連續部署組建
 
-完成這種類型的組建時，使用者可以從組建結果頁面的構件區段下載應用程式套件組合檔案。
+這種類型的組建完成時，使用者可以從組建結果頁面的 [成品] 區段下載應用程式套件組合檔案。
 如果您想透過建立更完整的通訊群組對 App 進行 Beta 測試，您可以使用 HockeyApp 服務。 此服務提供進行 Beta 測試、使用者分析以及損毀診斷的進階功能。
 
 ### <a name="applying-version-numbers-to-your-builds"></a>對您的組建套用版本號碼
@@ -257,21 +255,20 @@ CI_MyUWPApp_1.1.2501.0
 
 ![更新版本](images/building-screen13.png)
 
+`$(AppxVersion)` 變數包含版本號碼。 您可以在其他建置步驟中使用該號碼。
 
-            `$(AppxVersion)` 變數包含版本號碼。 您可以在其他建置步驟中使用該號碼。
-
-#### <a name="optional-integrate-with-hockeyapp"></a>選用︰整合 HockeyApp
+#### <a name="optional-integrate-with-hockeyapp"></a>選擇性：使用 HockeyApp 整合
 
 首先，安裝 [HockeyApp](https://marketplace.visualstudio.com/items?itemName=ms.hockeyapp) Visual Studio 擴充功能。 您必須以 VSTS 系統管理員身分安裝此擴充功能。
 
 ![hockey app](images/building-screen14.png)
 
-接著，使用本指南設定 HockeyApp 連線：[如何使用 HockeyApp 搭配 Visual Studio Team Services (VSTS) 或 Team Foundation Server (TFS)](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)。
+使用本指南，接下來，設定 HockeyApp 連線：[如何使用 Visual Studio Team Services (VSTS) 或 Team Foundation Server (TFS) 中的 HockeyApp。](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)
 您可以使用您的 Microsoft 帳戶、社交媒體帳戶或電子郵件地址來設定您的 HockeyApp 帳戶。 免費方案隨附兩個 App、一位擁有者，而且沒有資料限制。
 
-然後，您可以建立 HockeyApp app，以手動方式，或上傳現有的應用程式套件檔案。 若要深入了解，請參閱[如何建立新的 App](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。
+然後，您也可以手動方式或藉由上傳現有的應用程式套件檔案建立的 HockeyApp 應用程式。 若要深入了解，請參閱[如何建立新的 App](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。
 
-若要使用現有的應用程式套件檔案，新增建置步驟中，並設定該建置步驟的二進位檔案路徑參數。
+若要使用現有的應用程式套件檔案，加入建置步驟，並將二進位檔案路徑參數的建置步驟。
 
 ![設定 hockey app](images/building-screen15.png)
 
@@ -281,17 +278,17 @@ CI_MyUWPApp_1.1.2501.0
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-雖然 HockeyApp 工作允許您指定符號檔案的路徑，它會是最佳做法中包含符號套件組合。
+雖然 HockeyApp 工作可讓您指定的符號檔的路徑，最好要包含的符號套件組合。
 
 ## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>設定將套件提交至Microsoft Store的連續部署組建
 
 若要產生Microsoft Store提交套件，請在 Visual Studio 中使用 [Microsoft Store關聯精靈]，將您的 App 與Microsoft Store產生關聯。
 
-![關聯到Microsoft Store](images/building-screen16.png)
+![關聯到市集](images/building-screen16.png)
 
 Microsoft Store 關聯精靈會產生名稱為 Package.StoreAssociation.xml 的檔案，其中包含 Microsoft Store 關聯資訊。 如果您在公用儲存機制 (例如 GitHub) 儲存您的原始程式碼，此檔案將包含該帳戶所有保留的應用程式名稱。 您可以在公開之前，先排除或刪除此檔案。
 
-如果您沒有用來發行應用程式的合作夥伴中心帳戶的存取權，您可以依照本文件中的指示：[第 3 方建置 app 嗎？如何封裝其市集應用程式](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)。
+如果您沒有合作夥伴中心帳戶用來發佈應用程式的存取權，您可以依照這份文件中的指示：[建置應用程式的第 3 方嗎？如何將封裝存放區應用程式](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)。
 
 然後，您需要確認建置步驟包含下列參數︰
 
@@ -299,15 +296,15 @@ Microsoft Store 關聯精靈會產生名稱為 Package.StoreAssociation.xml 的�
 /p:UapAppxPackageBuildMode=StoreUpload
 ```
 
-這將會產生可提交至市集的上傳檔案。
+這會產生可提交至市集的上傳檔案。
 
 #### <a name="configure-automatic-store-submission"></a>設定自動Microsoft Store提交
 
 使用適用於 Microsoft Store 的 Visual Studio Team Services 擴充功能來整合 Microsoft Store API，並將應用程式套件傳送到 Microsoft Store。
 
-您需要連接您的合作夥伴中心帳戶與 Azure Active Directory (AD)，然後在您的廣告，以驗證要求建立應用程式。 您可以依照 [擴充功能] 頁面中的指示來完成該作業。
+您需要連線到您的合作夥伴中心帳戶與 Azure Active Directory (AD)，然後建立您的 AD 驗證的要求中的 應用程式。 您可以依照 [擴充功能] 頁面中的指示來完成該作業。
 
-一旦您設定好擴充功能，您可以新增建置工作，並使用您的應用程式識別碼和上傳檔案的位置進行設定。
+一旦您設定擴充功能，您可以新增 「 建置 」 工作，並設定您的應用程式識別碼和上傳檔案的位置。
 
 ![設定合作夥伴中心](images/building-screen17.png)
 
@@ -328,18 +325,18 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 如果您想要在不發佈到Microsoft Store的情況下發佈您的 App，只要這些裝置信任用來簽署應用程式套件的憑證，您就可以將您的 App 直接側載到裝置。
 
-使用 `Add-AppDevPackage.ps1` PowerShell 指令碼來安裝 App。 這個指令碼會將憑證新增到在本機電腦、 信任的根憑證] 區段，並接著將會安裝或更新應用程式套件檔案。
+使用 `Add-AppDevPackage.ps1` PowerShell 指令碼來安裝 App。 此指令碼會將憑證新增至本機電腦的 [信任的根憑證] 區段，並再將安裝或更新應用程式套件檔案。
 
-#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 年度更新版側載您的 App
+#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows 10 年度更新版側載您的 App
 
-在 Windows 10 年度更新版，您可以按兩下應用程式套件檔案，並在對話方塊中選擇 [安裝] 按鈕來安裝您的應用程式。
+在 Windows 10 年度更新版，您可以按兩下應用程式套件檔案，並安裝您的應用程式在對話方塊中選擇 [安裝] 按鈕。
 
 ![在 rs1 側載](images/building-screen18.png)
 
 >[!NOTE]
 > 此方法不會安裝憑證或相關的相依性。
 
-如果您想要發佈您的 Windows 應用程式套件從例如 VSTS 或 HockeyApp 網站，您將需要將該網站新增到您的瀏覽器中信任的網站清單。 否則，Windows 會將檔案標示為已鎖定。
+如果您想要發佈的網站，例如 VSTS 或 HockeyApp 從您 Windows 應用程式套件，您必須將該網站新增至您的瀏覽器中的信任網站清單。 否則，Windows 會將檔案標示為已鎖定。
 
 <span id="certificates-best-practices"/>
 
@@ -361,13 +358,13 @@ MakeCert /n publisherName /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.1
 
 提供這些憑證給每個電腦角色︰
 
-|**電腦**|**使用方式**|**憑證**|**憑證存放區**|
+|**機器**|**使用方式**|**憑證**|**憑證存放區**|
 |-----------|---------|---------------|---------------------|
 |開發人員/建置電腦|簽署組建|MyCert.PFX|目前的使用者/個人|
-|開發人員/建置電腦|Run|MyCert.cer|本機電腦/受信任的人|
-|使用者|Run|MyCert.cer|本機電腦/受信任的人|
+|開發人員/建置電腦|執行|MyCert.cer|本機電腦/受信任的人|
+|使用者|執行|MyCert.cer|本機電腦/受信任的人|
 
->注意︰您也可以使用您的使用者已經信任的企業憑證。
+>注意：您也可以使用企業憑證已經信任您的使用者。
 
 #### <a name="sign-your-uwp-app"></a>簽署您的 UWP app
 
@@ -389,7 +386,7 @@ Visual Studio 和 MSBuild 提供不同的選項來管理您用來簽署 App 的�
 
 ## <a name="related-topics"></a>相關主題
 
-- [建置適用於 Windows 的.NET App](https://www.visualstudio.com/docs/build/get-started/dot-net)
-- [封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-- [在 Windows 10 中側載 LOB 應用程式](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-- [建立套件簽署的憑證](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
+- [針對 Windows 建置您的.NET 應用程式](https://www.visualstudio.com/docs/build/get-started/dot-net)
+- [封裝 UWP 應用程式](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
+- [側載 Windows 10 中的 LOB 應用程式](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
+- [建立封裝簽章的憑證](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

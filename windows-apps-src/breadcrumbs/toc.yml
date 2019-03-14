@@ -1,5 +1,5 @@
 items:
-- name: 文件
+- name: Docs
   tocHref: /
   topicHref: /
   items:
@@ -11,10 +11,10 @@ items:
       tocHref: /windows/uwp/
       topicHref: /windows/uwp/index
       items:
-      - name: 最新動向
+      - name: 新功能
         tocHref: /windows/uwp/whats-new/
         topicHref: /windows/uwp/whats-new/windows-10-version-latest
-      - name: 入門
+      - name: 立即開始
         tocHref: /windows/uwp/get-started/
         topicHref: /windows/uwp/get-started/
       - name: 設計與 UI
@@ -27,7 +27,7 @@ items:
         - name: 設計基本知識
           tocHref: /windows/uwp/design/fluent-design-system/
           topicHref: /windows/uwp/design/basics/index
-        - name: 版面配置
+        - name: 配置
           tocHref: /windows/uwp/design/layout/
           topicHref: /windows/uwp/design/layout/index
         - name: 樣式
@@ -52,10 +52,10 @@ items:
           - name: 協助工具
             tocHref: /windows/uwp/design/accessibility/
             topicHref: /windows/uwp/design/accessibility/accessibility
-          - name: 應用程式設定和資料
+          - name: App 設定和資料
             tocHref: /windows/uwp/design/app-settings/
             topicHref: /windows/uwp/design/app-settings/app-settings-and-data
-          - name: 全球化和當地語系化
+          - name: 全球化與當地語系化
             tocHref: /windows/uwp/design/globalizing/
             topicHref: /windows/uwp/design/globalizing/globalizing-portal
           - name: 應用程式說明的指導方針
@@ -95,7 +95,7 @@ items:
         - name: 裝置、感應器及電源
           tocHref: /windows/uwp/devices-sensors/
           topicHref: /windows/uwp/devices-sensors/index
-        - name: 企業版
+        - name: 企業
           tocHref: /windows/uwp/enterprise/
           topicHref: /windows/uwp/enterprise/index
         - name: 檔案、資料夾和媒體櫃
@@ -104,7 +104,7 @@ items:
         - name: 圖形
           tocHref: /windows/uwp/graphics/
           topicHref: /windows/uwp/graphics/index
-        - name: 託管的 web 應用程式
+        - name: 託管的 Web 應用程式
           tocHref: /windows/uwp/bridges/
           topicHref: /windows/uwphttps://developer.microsoft.com/en-us/windows/bridges/hosted-web-apps
         - name: 啟動、繼續和背景工作
@@ -125,7 +125,7 @@ items:
         - name: 封裝應用程式
           tocHref: /windows/uwp/packaging/
           topicHref: /windows/uwp/packaging/index
-        - name: 將應用程式移植到 Windows 10
+        - name: 將應用程式移植到 Windows 10
           tocHref: /windows/uwp/porting/
           topicHref: /windows/uwp/porting/index
         - name: 安全性
@@ -143,7 +143,7 @@ items:
         - name: XAML 平台
           tocHref: /windows/uwp/xaml-platform/
           topicHref: /windows/uwp/xaml-platform/index
-        - name: API 參考
+        - name: API 參考資料
           tocHref: /windows/uwp/api/
           topicHref: https://docs.microsoft.com/en-us/uwp/
         - name: Windows 即服務
@@ -178,8 +178,8 @@ items:
         tocHref: /windows/uwp/publish/
         topicHref: /windows/uwp/publish/index
 ms.openlocfilehash: 1d79038daa4f2a50dd287da879fa8153ca3fb118
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962500"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582243"

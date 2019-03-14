@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ffe6119e9cac162486d23472f5d5876924b7ef9e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928419"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589813"
 ---
 # <a name="xaml-namescopes"></a>XAML 命名範圍
 
 
-*「XAML 命名範圍」* 會儲存 XAML 定義的物件名稱與它們的執行個體對應項之間的關係。 這個概念與其他程式設計語言和技術中較廣義的「命名範圍」 ** 一詞類似。
+「XAML 命名範圍」會儲存 XAML 定義的物件名稱與它們的執行個體對應項之間的關係。 這個概念與其他程式設計語言和技術中較廣義的「命名範圍」 一詞類似。
 
 ## <a name="how-xaml-namescopes-are-defined"></a>XAML 命名範圍如何定義
 
@@ -30,7 +30,7 @@ XAML 命名範圍中的名稱的最典型用法，是做為物件執行個體的
 
 技術上，XAML 本身會進行標記編譯器階段，同時，XAML 與 XAML 為程式碼後置定義的部分類別會一起編譯。 在標記中定義 **Name** 或 [x:Name 屬性](x-name-attribute.md)的每個物件元素，都會產生一個含有與 XAML 名稱相符的名稱的內部欄位。 這個欄位最初是空白的。 接著，類別會產生在所有 XAML 都載入後才會呼叫的 **InitializeComponent** 方法。 在 **InitializeComponent** 邏輯中，每個內部欄位都會填入對應的名稱字串的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 傳回值。 編譯完成後，您可以在 Windows 執行階段應用程式專案的 /obj 子資料夾中查看為每個 XAML 頁面建立的 ".g" (產生的) 檔案，以觀察這個基礎結構。 您也可以查看做為結果組件成員的欄位與 **InitializeComponent** 方法 (如果您反映它們或以其他方式檢查它們的介面語言內容的話)。
 
-**注意：** 專為 VisualC + + 元件延伸 (C + + /CX) 的應用程式， **X:name**參考的支援欄位不建立的 XAML 檔案的根元素。 如果您需要從 C++/CX 程式碼後置參考根物件，請使用其他 API 或樹狀目錄周遊。 例如，您可以呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 以取得已知名稱的子元素，然後再呼叫 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
+**附註**  專為 Visual c + + 元件擴充功能 (C + + /CX) 應用程式，支援欄位**X:name**參考不會建立 XAML 檔案的根項目。 如果您需要從 C++/CX 程式碼後置參考根物件，請使用其他 API 或樹狀目錄周遊。 例如，您可以呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 以取得已知名稱的子元素，然後再呼叫 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
 
 ## <a name="creating-objects-at-run-time-with-xamlreaderload"></a>在執行階段使用 XamlReader.Load 建立物件
 
@@ -38,7 +38,7 @@ XAML 也可以做為 [**XamlReader.Load**](https://msdn.microsoft.com/library/wi
 
 ### <a name="xaml-namescope-implications-of-xamlreaderload"></a>XamlReader.Load 的 XAML 命名範圍含意
 
-[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 建立的新物件樹定義的初步 XAML 命名範圍，會評估在提供的 XAML 中為了唯一性而定義的任何名稱。 如果此時提供的 XAML 中有名稱在內部不是唯一的，**XamlReader.Load** 會產生例外狀況。 中斷連接的物件樹在連接到主應用程式物件樹時，不會嘗試合併它的 XAML 命名範圍與主應用程式的 XAML 命名範圍。 在連接樹狀目錄後，您的 app 會有一個統一的物件樹，但該樹狀目錄內有分離的 XAML 命名範圍。 分割會出現在物件之間的連接點，就是您設定某個屬性做為從 **XamlReader.Load** 呼叫傳回的值的位置。
+[  **XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 建立的新物件樹定義的初步 XAML 命名範圍，會評估在提供的 XAML 中為了唯一性而定義的任何名稱。 如果此時提供的 XAML 中有名稱在內部不是唯一的，**XamlReader.Load** 會產生例外狀況。 中斷連接的物件樹在連接到主應用程式物件樹時，不會嘗試合併它的 XAML 命名範圍與主應用程式的 XAML 命名範圍。 在連接樹狀目錄後，您的 app 會有一個統一的物件樹，但該樹狀目錄內有分離的 XAML 命名範圍。 分割會出現在物件之間的連接點，就是您設定某個屬性做為從 **XamlReader.Load** 呼叫傳回的值的位置。
 
 含有分離與中斷連接的 XAML 命名範圍所造成的困難，是 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 方法的呼叫與直接管理的物件參考無法再用於統一的 XAML 命名範圍。 相反地，呼叫 **FindName** 的特定物件表示範圍，而該範圍就是呼叫物件所在的 XAML 命名範圍。 在直接管理的物件參考案例中，範圍是以程式碼存在的類別表示。 應用程式內容的「頁面」執行階段互動的程式碼後置，通常存在支援根「頁面」的部分類別中，因此 XAML 命名範圍是根 XAML 命名範圍。
 
@@ -51,7 +51,7 @@ XAML 也可以做為 [**XamlReader.Load**](https://msdn.microsoft.com/library/wi
 -   使用已知存在物件樹結構中的 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) 和 (或) 集合屬性 (像是 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 傳回的集合)，在個別的步驟中瀏覽整個樹狀目錄。
 -   如果您是從分離的 XAML 命名範圍呼叫，並且想要根 XAML 命名範圍，取得目前顯示的主視窗的參考就很容易。 您可以使用一行含有呼叫 `Window.Current.Content` 的程式碼，就能從目前的應用程式視窗取得視覺化根目錄 (根 XAML 元素，也稱為內容來源)。 您可以接著轉換成 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706)，然後從這個範圍呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)。
 -   如果您是從根 XAML 命名範圍呼叫，並想要某個分離的 XAML 命名範圍中的物件，最佳做法是事先在您的程式碼中規劃，並保留 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 傳回並新增到主要物件樹的物件參考。 這個物件現在是可以在分離的 XAML 命名範圍內呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 的有效物件。 您可以讓這個物件做為全域變數，或使用方法參數以其他方式傳遞它。
--   您可以檢查視覺化樹狀目錄，以徹底避開名稱與 XAML 命名範圍考量。 [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API 可以讓您純粹依據位置與索引，以周遊視覺化樹狀目錄中的父物件與子集合。
+-   您可以檢查視覺化樹狀目錄，以徹底避開名稱與 XAML 命名範圍考量。 [  **VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API 可以讓您純粹依據位置與索引，以周遊視覺化樹狀目錄中的父物件與子集合。
 
 ## <a name="xaml-namescopes-in-templates"></a>範本中的 XAML 命名範圍
 
@@ -81,7 +81,7 @@ XAML 中的範本可以讓您直接重新使用和重新套用內容，但範本
 ## <a name="related-topics"></a>相關主題
 
 * [XAML 概觀](xaml-overview.md)
-* [x:Name 屬性](x-name-attribute.md)
+* [X:name 屬性](x-name-attribute.md)
 * [快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)

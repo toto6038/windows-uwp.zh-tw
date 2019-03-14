@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 208a61b565c0522d3e9ce88f3938f57dfa1fbddd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945193"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644843"
 ---
 # <a name="variable-photo-sequence"></a>可變相片序列
 
 
 
-本文章示範如何拍攝可變相片序列，讓您以快速連續的方式拍攝多個影像框架，並將每個框架設為使用不同焦點、閃光燈、ISO、曝光度以及曝光補償設定。 這個功能可用於建立高動態範圍 (HDR) 影像這類案例。
+本文章示範如何擷取可變相片序列，讓您以快速連續的方式拍攝多個影像畫面，並針對每個畫面使用不同焦點、閃光燈、ISO、曝光度及曝光補償設定進行設定。 這個功能可用於建立高動態範圍 (HDR) 影像這類案例。
 
 如果您想要擷取 HDR 影像，但不想要實作您自己的處理演算法，您可以使用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) API 來使用 Windows 內建的 HDR 功能。 如需詳細資訊，請參閱[高動態範圍 (HDR) 相片擷取](high-dynamic-range-hdr-photo-capture.md)。
 
@@ -40,9 +40,9 @@ ms.locfileid: "8945193"
 
 [!code-cs[IsVPSSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
 
-從可變相片序列控制器取得 [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) 物件。 這個物件有可以針對相片序列每個畫面設定的屬性。 其中包括：
+從可變相片序列控制器取得 [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) 物件。 這個物件有可以針對相片序列每個畫面設定的屬性。 這些地方包括：
 
--   [**Exposure**](https://msdn.microsoft.com/library/windows/apps/dn652552)
+-   [**風險**](https://msdn.microsoft.com/library/windows/apps/dn652552)
 -   [**ExposureCompensation**](https://msdn.microsoft.com/library/windows/apps/dn652560)
 -   [**Flash**](https://msdn.microsoft.com/library/windows/apps/dn652566)
 -   [**Focus**](https://msdn.microsoft.com/library/windows/apps/dn652570)
@@ -94,7 +94,7 @@ ms.locfileid: "8945193"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

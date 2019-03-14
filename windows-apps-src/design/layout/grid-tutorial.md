@@ -1,40 +1,40 @@
 ---
-Description: This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
+Description: 本教學課程逐步解說如何建立基本應用程式使用者介面。 其解釋並示範 Grid 與 StackPanel 這兩項常見 XAML 元素的用法。
 title: 使用 Grid 和 StackPanel 建立簡單的天氣應用程式。
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10、uwp
+keywords: Windows 10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b221220d417df5b70927984ac65eff93fae54a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931247"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646533"
 ---
-# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教學課程：使用 Grid 和 StackPanel 建立簡單的天氣應用程式
+# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教學課程：建立簡單的氣象應用程式中使用格線與 StackPanel
 
-利用 **Grid** 和 **StackPanel** 元素，使用 XAML 來建立簡單的天氣應用程式。 有了這些工具，您便可製作外觀極佳的應用程式，且其可在任何執行 Windows 10 的裝置上運作。 完成本教學課程可能需要 10-20 分鐘。
+利用 **Grid** 和 **StackPanel** 元素，使用 XAML 來建立簡單的天氣 app。 有了這些工具，您便可製作外觀極佳的應用程式，且其可在任何執行 Windows 10 的裝置上運作。 完成本教學課程可能需要 10-20 分鐘。
 
-> **重要 API**：[Grid 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **重要的 Api**:[Grid 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)， [StackPanel 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>必要條件
-- Windows 10 和 Microsoft Visual Studio 2015 或更新版本。 （最新的 Visual Studio 建議使用最新的開發和安全性更新）[按一下此處以了解如何使用 Visual Studio 開始設定](../../get-started/get-set-up.md)。
+- Windows 10 和 Microsoft Visual Studio 2015 或更新版本。 （最新的 Visual Studio 建議用於目前的開發和安全性更新）[按一下這裡以了解如何使用 Visual Studio 完成設定](../../get-started/get-set-up.md)。
 - 如何使用 XAML 和 C# 建立基本 "Hello World" 應用程式的知識。 如果您未具備此知識，[按一下這裡，以了解如何建立 "Hello World" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="step-1-create-a-blank-app"></a>步驟 1：建立空白的應用程式
-1. 在 Visual Studio 功能表中，選取 **\[檔案\]** > **\[新增專案\]**。
-2. 在 **\[新增專案\]** 對話方塊的左窗格中，選取 **\[Visual C#\]** > **\[Windows\]** > **\[通用\]** 或 **\[Visual C++\]** > **\[Windows\]** > **\[通用\]**。
-3. 在中央窗格中，選取 **\[空白應用程式\]**。
-4. 在 **\[名稱\]** 方塊中，輸入 **WeatherPanel**，然後選取 **\[確定\]**。
-5. 若要執行程式，從功能表中選取 **\[偵錯\]** > **\[開始偵錯\]**，或選取 F5。
+1. 在 Visual Studio 功能表中，選取 \[檔案\] > \[新增專案\]。
+2. 在 \[新增專案\] 對話方塊的左窗格中，選取 \[Visual C#\] > \[Windows\] > \[通用\] 或 \[Visual C++\] > \[Windows\] > \[通用\]。
+3. 在中央窗格中，選取 \[空白應用程式\]。
+4. 在 \[名稱\] 方塊中，輸入 **WeatherPanel**，然後選取 \[確定\]。
+5. 若要執行程式，從功能表中選取 \[偵錯\] > \[開始偵錯\]，或選取 F5。
 
-## <a name="step-2-define-a-grid"></a>步驟 2︰定義 Grid
+## <a name="step-2-define-a-grid"></a>步驟 2：定義方格
 在 XAML 中，**Grid** 是由一系列的列和欄所組成。 透過在 **Grid** 內指定元素的列與欄，您便可在使用者介面內放置及隔開其他元素。 列與欄是使用 **RowDefinition** 和 **ColumnDefinition** 元素所定義。
 
-若要開始建立版面配置，請使用 **\[方案總管\]** 來開啟 **MainPage.xaml**，然後使用此程式碼來取代自動產生的 **Grid** 元素。
+若要開始建立版面配置，請使用 \[方案總管\] 來開啟 **MainPage.xaml**，然後使用此程式碼來取代自動產生的 **Grid** 元素。
 
 ```xml
 <Grid>
@@ -49,13 +49,13 @@ ms.locfileid: "8931247"
 </Grid>
 ```
 
-新的 **Grid** 會建立一個兩列和兩欄的組合，其會定義應用程式介面的版面配置。 第一欄的 **Width** 為 "3\*"，而第二欄為 "5\*"，並以 3:5 的比例在兩欄之間劃分出水平空間。 透過相同的方式，這兩列的 **Height** 分別為 "2\*" 和 "\*"，因此，**Grid** 為第一列配置的空間為第二列的兩倍 ("\*" 相當於 "1\*")。 即使重新調整視窗大小或變更裝置，都會保留這些比例。
+新的 **Grid** 會建立一個兩列和兩欄的組合，其會定義 app 介面的版面配置。 第一個資料行具有**寬度**的 「 3\*"，而第二個有"5\*"，除以比率為 5 3： 在兩個資料行之間的水平空間。 在相同的方式有兩個資料列**高度**的"2\*"和"\*"分別，因此**方格**配置第二個與第一個資料列的兩倍之多的空間 ("\*「 相同 」 1\*")。 即使重新調整視窗大小或變更裝置，都會保留這些比例。
 
 若要了解調整列與欄的其他方法，請參閱[使用 XAML 定義版面配置](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties)。
 
 如果您立即執行應用程式，就只會看見空白頁面，因為 **Grid** 區域中沒有任何內容。 為了顯示 **Grid**，我們將為它提供一些色彩。
 
-## <a name="step-3-color-the-grid"></a>步驟 3︰為 Grid 上色
+## <a name="step-3-color-the-grid"></a>步驟 3：色彩方格
 為了為 **Grid** 上色，我們新增了三個 **Border** 元素，每一個都有不同的背景色彩。 此外，也會使用 **Grid.Row** 和 **Grid.Column** 屬性，將每一個元素指派給父項 **Grid** 中的列與欄。 這些屬性的值均預設為 0，如此您就不需將它們指派給第一個 **Border**。 將下列程式碼新增到 **Grid** 元素的列與欄定義之後。
 
 ```xml
@@ -64,14 +64,14 @@ ms.locfileid: "8931247"
 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
 ```
 
-請注意，我們針對第三個 **Border** 使用額外的屬性 **Grid.ColumnSpan**，這導致此 **Border** 會在較低的列中橫跨兩欄。 您可以透過相同方式來使用 **Grid.RowSpan**，而且一起使用這些屬性，可讓您在任意數目的列和欄上橫跨某個元素。 這類橫跨的左上角永遠是元素屬性中所指定的 **Grid.Column** 和 **Grid.Row**。
+請注意，我們針對第三個 **Border** 使用額外的屬性 **Grid.ColumnSpan**，這導致此 **Border** 會在較低的列中橫跨兩欄。 您可以透過相同方式來使用 **Grid.RowSpan**，而且一起使用這些屬性，可讓您在任意數目的列和欄上橫跨某個元素。 這類橫跨的左上角永遠是元素屬性中所指定的 **Grid.Column** 和 **Grid.Row** 。
 
 如果您執行此應用程式，結果看起來就像這樣。
 
 ![為格線上色](images/grid-weather-1.png)
 
-## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>步驟 4︰使用 StackPanel 元素整理內容
-**StackPanel** 是我們將用來建立天氣應用程式的第二個 UI 元素。  **StackPanel** 是許多基本應用程式配置的基礎部分，可讓您以垂直或水平方式堆疊元素。
+## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>步驟 4：使用 StackPanel 項目組織的內容
+**StackPanel** 是我們將用來建立天氣應用程式的第二個 UI 元素。 **StackPanel** 是許多基本應用程式配置的基礎部分，可讓您以垂直或水平方式堆疊元素。
 
 在下列程式碼中，我們會建立兩個 **StackPanel** 元素，並使用三個 **TextBlocks** 來填滿每一個元素。 將這些 **StackPanel** 元素新增至 **Grid** 的 **Border** 元素 (來自步驟 3) 下方。 這導致 **TextBlock** 元素會呈現在我們稍早建立的彩色 **Grid** 上方。
 
@@ -95,7 +95,7 @@ ms.locfileid: "8931247"
 
 ![新增 StackPanel](images/grid-weather-2.png)
 
-## <a name="step-5-add-an-image-icon"></a>步驟 5︰新增影像圖示
+## <a name="step-5-add-an-image-icon"></a>步驟 5：新增的影像圖示
 
 最後，讓我們將代表今日天氣的影像填入 **Grid** 中的空白區段，而這類影像會包含「有時多雲」之類的內容。
 
@@ -103,7 +103,7 @@ ms.locfileid: "8931247"
 
 ![有時多雲](images/partially-cloudy.PNG)
 
-在 **\[方案總管\]** 中，以滑鼠右鍵按一下 **\[資產\]** 資料夾，然後選取 **\[新增\]** -> **\[現有項目...\]**。在快顯的瀏覽器中尋找 partially-cloudy.png、選取它，然後按一下 **[新增]**。
+在 **方案總管**，以滑鼠右鍵按一下**資產**資料夾，然後選取**新增** -> **現有項目...** 尋找出現在瀏覽器中的部分 cloudy.png，加以選取，然後按一下**新增**。
 
 接著，在 **MainPage.xaml** 中，將下列 **Image** 元素新增到步驟 4 的 StackPanel 下方。
 

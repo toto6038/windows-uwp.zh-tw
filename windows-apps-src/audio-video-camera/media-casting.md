@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e4b794e560c213e5c3796b11dd1a5fd77a98506
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930539"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619943"
 ---
 # <a name="media-casting"></a>媒體傳播
 
@@ -77,7 +77,7 @@ ms.locfileid: "8930539"
 
 [!code-cs[CastingDeviceSelected](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
-In the **ErrorOccurred** and **StateChanged** event handlers, you should update your UI to inform the user of the current casting status. 下節的建立自訂傳播裝置選擇器中，將詳細討論這些事件。
+在 **ErrorOccurred** 和 **StateChanged** 事件處理常式中，您應該更新 UI 讓使用者知道目前的傳播狀態。 下節的建立自訂傳播裝置選擇器中，將詳細討論這些事件。
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
@@ -92,8 +92,8 @@ In the **ErrorOccurred** and **StateChanged** event handlers, you should update 
 將下列控制項新增到 XAML 頁面，以實作這個範例的初步 UI：
 
 -   用來啟動裝置監控程式的按鈕，以尋找可用的傳播裝置。
--   [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控制項會提供使用者回饋，讓他們知道傳播列舉正在進行。
--   [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)，列出找到的傳播裝置。 定義控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830)，讓我們可以將傳播裝置物件直接指派給控制項，且仍然顯示 [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) 屬性。
+-   [  **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控制項會提供使用者回饋，讓他們知道傳播列舉正在進行。
+-   [  **ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)，列出找到的傳播裝置。 定義控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830)，讓我們可以將傳播裝置物件直接指派給控制項，且仍然顯示 [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) 屬性。
 -   可讓使用者中斷連接傳播裝置的按鈕。
 
 [!code-xml[CustomPickerXAML](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetCustomPickerXAML)]
@@ -145,7 +145,7 @@ In the **ErrorOccurred** and **StateChanged** event handlers, you should update 
 
 [!code-cs[StateChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetStateChanged)]
 
-In the handler for the **ErrorOccurred** event, update your UI to let the user know that a casting error occurred and unselect the current **CastingDevice** object in the list box.
+在 **ErrorOccurred** 事件的處理常式中，更新 UI 讓使用者知道發生傳播錯誤，並取消選取清單方塊中目前的 **CastingDevice** 物件。
 
 [!code-cs[ErrorOccurred](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 

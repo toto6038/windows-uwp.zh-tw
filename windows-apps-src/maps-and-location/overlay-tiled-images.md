@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, map, location, images, overlay, 地圖, 位置, 影像, 重疊
 ms.localizationpriority: medium
 ms.openlocfilehash: c0c2f07a364980b67a34a519eb5dd8b4da1a18f0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046431"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663083"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>在地圖上重疊顯示並排影像
 
@@ -25,7 +25,7 @@ ms.locfileid: "9046431"
 
 Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成正方形磚以便快速抓取和顯示。 這些磚的大小是 256 像素 x 256 像素，並以多個詳細層級預先轉譯。 許多協力廠商服務也會提供切成磚的地圖式資料。 您可以使用磚來源來抓取協力廠商磚，或建立您自己的自訂磚，然後在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 中顯示的地圖上重疊顯示這些磚。
 
-**重要**當您使用磚來源時，您不需要撰寫程式碼來要求或放置個別的磚。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 會在需要磚時要求磚。 每個要求都會指定 X 和 Y 座標，以及個別磚的縮放比例。 您只需指定要用來抓取 **UriFormatString** 屬性中的磚的 URI 格式或檔案名稱。 也就是說，您需在基底 URI 或檔案名稱中插入可置換參數，以指出要將 X 和 Y 座標傳遞到哪裡，以及每個磚的縮放比例。
+**重要**  當您使用來源 圖格時，您不必撰寫程式碼來要求或位置的個別圖格。 [  **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 會在需要磚時要求磚。 每個要求都會指定 X 和 Y 座標，以及個別磚的縮放比例。 您只需指定要用來抓取 **UriFormatString** 屬性中的磚的 URI 格式或檔案名稱。 也就是說，您需在基底 URI 或檔案名稱中插入可置換參數，以指出要將 X 和 Y 座標傳遞到哪裡，以及每個磚的縮放比例。
 
 以下是 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性範例，示範 X 和 Y 座標及縮放比例的可置換參數。
 
@@ -93,7 +93,7 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 3.  然後，依照先前[並排影像概觀](#tileintro)中所述的其餘步驟進行。
 
-下列範例會在北美地圖上重疊顯示來自一個虛構 Web 服務的磚。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值是在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的建構函式中指定。 在這個範例中，只有在選擇性 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 屬性所指定的地理界限內，才會顯示磚。
+下列範例會在北美地圖上重疊顯示來自一個虛構 Web 服務的磚。 [  **UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值是在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的建構函式中指定。 在這個範例中，只有在選擇性 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 屬性所指定的地理界限內，才會顯示磚。
 
 ```csharp
 private void AddHttpMapTileSource()
@@ -182,7 +182,7 @@ void MainPage::AddHttpMapTileSource()
 
 您可以使用下列通訊協定和位置以從本機存放區載入磚：
 
-| URI | 其他資訊 |
+| Uri | 其他資訊 |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | ms-appx:/// | 指向 app 安裝資料夾的根目錄。 |
 |  | 這是 [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681) 屬性所參考的位置。 |
@@ -193,7 +193,7 @@ void MainPage::AddHttpMapTileSource()
 
  
 
-下列範例會使用 `ms-appx:///` 通訊協定來載入在 app 安裝資料夾中儲存為檔案的磚。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 的值是在 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的建構函式中指定。 在這個範例中，只有當地圖的縮放比例是在選擇性 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 屬性指定的範圍內時，才會顯示磚。
+下列範例會使用 `ms-appx:///` 通訊協定來載入在 app 安裝資料夾中儲存為檔案的磚。 [  **UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 的值是在 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的建構函式中指定。 在這個範例中，只有當地圖的縮放比例是在選擇性 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 屬性指定的範圍內時，才會顯示磚。
 
 ```csharp
         void AddLocalMapTileSource()
@@ -421,7 +421,7 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [對應的設計方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 影片：利用跨電話、 平板電腦和 PC 在 Windows 應用程式中的地圖與位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 流量的應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)

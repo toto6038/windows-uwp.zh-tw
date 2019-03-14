@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, visual studio, 工具, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924642"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653473"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>用來進行遊戲程式設計的 Visual Studio 工具
 
@@ -45,7 +45,7 @@ ms.locfileid: "8924642"
 
 如需詳細資訊，請參閱[使用紋理與影像](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)。
 
-> **注意：** 影像編輯器並非用來取代功能完整的影像編輯 app，但適合用於許多簡單的檢視與編輯案例。
+> **附註**  影像編輯器不是要編輯應用程式的完整功能映像的取代項目，但適用於許多簡單的檢視和編輯案例。
 
  
 
@@ -64,7 +64,7 @@ ms.locfileid: "8924642"
 
 如需詳細資訊，請參閱[使用 3D 模型](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx)。
 
-> **注意：** 模型編輯器並非用來取代功能完整的模型編輯 app，但適合用於許多簡單的檢視與編輯案例。
+> **附註**  模型編輯器並不打算編輯應用程式的完整功能模型取代，但適用於許多簡單的檢視和編輯案例。
 
  
 
@@ -116,7 +116,7 @@ float3 LambertLighting(
 
 您可以將組建自訂新增到專案，如此一來，Visual Studio 便能將資源轉換成可使用的格式。 在此之後，您就可以將資產載入 App， 並藉由建立並填入 DirectX 資源 (就像您在任何其他 DirectX App 中所做的動作) 來使用它們。
 
-若要新增組建自訂，您可以在**方案總管]** 中的專案上按一下滑鼠右鍵，然後選取**建置自訂設定**。您可以將下列類型的組建自訂新增到您的專案。
+若要新增組建自訂，您可以在 \[方案總管\] 中以滑鼠右鍵按一下專案，然後選取 \[組建自訂\]。您可以將下列組建自訂類型新增到專案。
 
 -   影像內容管線會取得影像檔做為輸入並輸出 DirectDraw 表面 (.dds) 檔案。
 -   網格內容管線會取得網格檔 (例如 .fbx) 並輸出 .cmo 網格檔。

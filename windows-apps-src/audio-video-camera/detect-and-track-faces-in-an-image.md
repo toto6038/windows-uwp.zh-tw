@@ -7,19 +7,19 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045929"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640833"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>偵測影像或影片中的臉部
 
 
 
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[某些資訊與相關預先發行的產品，這可能會在正式發行之前大幅修改。 Microsoft 不做任何明示明示或默示此處提供的資訊。\]
 
-本主題說明如何使用 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 來偵測影像中的臉部。 [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 已進行最佳化，可在一連串視訊框架中用來追蹤隨著時間改變的臉部。
+本主題說明如何使用 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 來偵測影像中的臉部。 [  **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 已進行最佳化，可在一連串視訊框架中用來追蹤隨著時間改變的臉部。
 
 如需使用 [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 追蹤臉部的替代方法，請參閱[媒體擷取的場景分析](scene-analysis-for-media-capture.md)。
 
@@ -27,7 +27,7 @@ ms.locfileid: "9045929"
 
 ## <a name="detect-faces-in-a-single-image"></a>偵測單一影像中的臉部
 
-[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 類別可讓您偵測靜物影像中的一或多個臉部。
+[  **FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 類別可讓您偵測靜物影像中的一或多個臉部。
 
 這個範例會使用來自下列命名空間的 API。
 
@@ -87,7 +87,7 @@ ms.locfileid: "9045929"
 
 計時器會以非同步方式來呼叫 **ProcessCurrentVideoFrame** 協助程式，因此，此方法會先呼叫旗號的 **Wait** 方法，來查看追蹤作業是否正在進行中，如果正在進行，方法即會回傳而不需嘗試偵測臉部。 在這個方法結束時，會呼叫旗號的 **Release** 方法，這樣就能對 **ProcessCurrentVideoFrame** 進行後續呼叫來繼續。
 
-[**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 類別會在 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件上運作。 有多種方式您可以用來取得 **VideoFrame**，包括從執行中的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 物件擷取預覽框架，或者透過實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 的 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法 。 這個範例使用未定義的協助程式方法，此方法會傳回視訊畫面 **GetLatestFrame**，以做為這個作業的預留位置。 如需從執行中的媒體擷取裝置的預覽資料流中取得視訊畫面的相關資訊，請參閱[取得預覽畫面](get-a-preview-frame.md)。
+[  **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 類別會在 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件上運作。 有多種方式您可以用來取得 **VideoFrame**，包括從執行中的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 物件擷取預覽框架，或者透過實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 的 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法 。 這個範例使用未定義的協助程式方法，此方法會傳回視訊畫面 **GetLatestFrame**，以做為這個作業的預留位置。 如需從執行中的媒體擷取裝置的預覽資料流中取得視訊畫面的相關資訊，請參閱[取得預覽畫面](get-a-preview-frame.md)。
 
 如同 **FaceDetector**，**FaceTracker** 支援一組有限的像素格式。 這個範例會在提供的畫面格式不是 Nv12 格式時放棄臉部偵測。
 
@@ -97,9 +97,9 @@ ms.locfileid: "9045929"
 
 ## <a name="related-topics"></a>相關主題
 
-* [媒體擷取的場景分析](scene-analysis-for-media-capture.md)
-* [基本臉部偵測範例](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [基本臉部追蹤範例](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [媒體擷取的畫面分析](scene-analysis-for-media-capture.md)
+* [基本的臉部偵測範例](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [基本的臉部追蹤範例](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [媒體播放](media-playback.md)

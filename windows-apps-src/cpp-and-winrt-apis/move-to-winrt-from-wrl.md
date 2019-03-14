@@ -6,18 +6,18 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058809"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630743"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>從 WRL 移到 C++/WinRT
-本主題示範如何將其的對等項目中的[Windows 執行階段 c + + 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)程式碼的移植[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
+本主題說明如何移植[Windows 執行階段 c + + 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)程式碼，以在其對等[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
-第一個步驟移植至 C + + /winrt 是手動新增 C + + /winrt 支援您的專案 (請參閱[Visual Studio 支援 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 若要這樣做，安裝[Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)到您的專案。 開啟專案，在 Visual Studio 中，按一下 [**專案** \> **管理 NuGet 套件...** \> **瀏覽**，請輸入或貼上**Microsoft.Windows.CppWinRT** ，在搜尋方塊中，在搜尋結果中選取的項目，然後按一下 [安裝該專案的套件的**安裝**。 該變更的一個效果是支援的[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx)在專案中，關閉。 如果您在專案中使用 C++/CX，則您也可以讓支援保持關閉並更新 C++/CX 程式碼為 C++/WinRT (查看[從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md))。 或您可以將支援切換回來 (專案屬性中，**C/C++** \> **一般** \> ** 使用 Windows 執行階段延伸** \> **是 (/ZW)**)，並優先著重在移植您的 WRL 程式碼。 C + + /CX 與 C + + /winrt 程式碼可以同時存在於在同一個專案中，除了 XAML 編譯器支援，以及 Windows 執行階段元件 (請參閱[移到 C + + WinRT 從 C + + /CX](move-to-winrt-from-cx.md))。
+第一個步驟中移植到 C + + /cli WinRT 是以手動方式加入 C + + /cli WinRT 支援加入至您的專案 (請參閱[Visual Studio 支援 C + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 若要這樣做，請安裝[Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)到您的專案。 開啟的專案在 Visual Studio 中，按一下**專案** \> **管理 NuGet 套件...**\> **瀏覽**中，輸入或貼上**Microsoft.Windows.CppWinRT**在 [搜尋] 方塊中，選取項目在搜尋結果中，然後按一下**安裝**安裝適用於該專案的套件。 這項變更的其中一個影響是，支援[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx)專案中已關閉。 如果您在專案中使用 C++/CX，則您也可以讓支援保持關閉並更新 C++/CX 程式碼為 C++/WinRT (查看[從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md))。 您可以支援重新開啟或者 (在專案屬性中， **C/c + +** \> **一般** \> **取用的 Windows 執行階段延伸模組** \>**是 (/ZW)**)，並先專心移植您 WRL 的程式碼。 C + + /CX 和 C + + /cli WinRT 程式碼可以共存於相同專案中，除了 XAML 編譯器支援，以及 Windows 執行階段元件 (請參閱[移至 C + + WinRT 從 C + + /CX](move-to-winrt-from-cx.md))。
 
-將專案屬性**一般** \> **目標平台版本**設置為 10.0.17134.0 (Windows 10，版本 1803) 或更高。
+設定專案屬性**一般** \> **目標平台版本**到 10.0.17134.0 (Windows 10 1803年版) 或更新版本。
 
 在您先行編譯的標頭檔案 (通常是 `pch.h`)，包含 `winrt/base.h`。
 
@@ -28,7 +28,7 @@ ms.locfileid: "9058809"
 如果包含任何 C++/WinRT 投影 Windows API 標頭 (例如，`winrt/Windows.Foundation.h`)，則您不需要像這樣明確包含 `winrt/base.h`，因為它會自動為您包含。
 
 ## <a name="porting-wrl-com-smart-pointers-microsoftwrlcomptrcppwindowscomptr-class"></a>移植 WRL COM 智慧型指標 ([Microsoft: 110:: WRL::ComPtr](/cpp/windows/comptr-class))
-移植任何使用 **Microsoft::WRL::ComPtr\<T\>** 的程式碼，使用 [**winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr)。 以下是變更前後的程式碼範例。 在 *之後* 版本中，[**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) 成員函式擷取基礎原始指標，如此一來便可以設定它。
+使用任何程式碼移植**Microsoft::WRL::ComPtr\<T\>** 若要使用[ **winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr)。 以下是變更前後的程式碼範例。 在 *之後* 版本中，[**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) 成員函式擷取基礎原始指標，如此一來便可以設定它。
 
 ```cpp
 ComPtr<IDXGIAdapter1> previousDefaultAdapter;
@@ -41,7 +41,7 @@ winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put(
 ```
 
 > [!IMPORTANT]
-> 如果您有已經安裝[**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) （其內部的原始指標已經有一個目標） 和您想要重新座位它指向不同的物件，則您必須先指派`nullptr`，&mdash;在下列程式碼範例所示。 如果沒有，則已經安裝**com_ptr**將會繪製問題 （當您呼叫[**com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) [**:: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)） 注意到藉由宣告其內部指標不 null。
+> 如果您有[ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr)的已插入擴充槽 （其內部的原始指標已經有一個目標） 和您想要重新基座，以指向不同的物件，則您必須先指派`nullptr`它&mdash;如下列程式碼範例所示。 如果沒有，則已經為插入擴充槽**com_ptr**將會繪製您注意的問題 (當您呼叫[ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)或是[ **com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) 藉由判斷提示其內部指標不 null。
 
 ```cppwinrt
 winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;
@@ -87,7 +87,7 @@ m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->G
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
 ```
 
-當您想要將基礎原始指標傳遞至預期**IUnknown**指標的函式時，請使用[**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function)可用函式下, 一個範例中所示。
+當您想要將基礎的原始指標傳遞給需要指標的函式**IUnknown**，使用[ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function)免費函式，這個下一步 所示範例。
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;
@@ -116,7 +116,7 @@ winrt::check_hresult(
 );
 ```
 
-## <a name="porting-a-wrl-module-microsoftwrlmodule"></a>移植 WRL 模組 (Microsoft: 110:: WRL::Module)
+## <a name="porting-a-wrl-module-microsoftwrlmodule"></a>移植 WRL 模組 (Microsoft::WRL::Module)
 您可以逐漸將 C++/WinRT 程式碼新增至使用 WRL 實作元件的現有投影，且會持續支援現有的 WRL 類別。 本章節示範方式。
 
 如果您在 Visual Studio 中建立新的 **Windows 執行階段元件 (C++/WinRT)** 專案類型並組建，則為您產生檔案 `Generated Files\module.g.cpp`。 該檔案包含兩個的實用 C++/WinRT 函式（列於下方）的定義，您可以將其複製並新增到您的專案。 這些函式為 **WINRT_CanUnloadNow** 和 **WINRT_GetActivationFactory**，如您所見，他們有條件的呼叫 WRL 來支援您，不論您在移植的哪個階段。
@@ -211,9 +211,9 @@ HRESULT __stdcall DllCanUnloadNow(void)
 
 ## <a name="important-apis"></a>重要 API
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::Windows::Foundation::IUnknown 結構](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相關主題
-* [C++/WinRT 的簡介](intro-to-using-cpp-with-winrt.md)
-* [從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md)
-* [Windows 執行階段 C++ 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
+* [簡介使用 C + + /cli WinRT](intro-to-using-cpp-with-winrt.md)
+* [移至 C + + /cli WinRT 從 C + + /CX](move-to-winrt-from-cx.md)
+* [Windows 執行階段 c + + 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

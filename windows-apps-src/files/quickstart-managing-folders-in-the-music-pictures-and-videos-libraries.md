@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e04170fb8952ecd5802b6190816d44012f56d8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926997"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661433"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音樂、圖片及影片媒體櫃中的檔案和資料夾
 
@@ -19,20 +19,20 @@ ms.locfileid: "8926997"
 
 媒體櫃是一個虛擬資料夾集合，依預設會包含已知的資料夾，外加使用者透過您的 app 或其中一個內建 app 新增至媒體櫃的任何其他資料夾。 例如，圖片媒體櫃依預設會包含 [圖片] 這個已知資料夾。 使用者可以透過您的 app 或內建的 [相片] app，在圖片媒體櫃中新增或移除資料夾。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
--   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
+-   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
     您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
 -   **位置的存取權限**
 
-    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 **\[功能\]** 頁面上，選取您應用程式所管理的媒體櫃。
+    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 [功能] 頁面上，選取您應用程式所管理的媒體櫃。
 
     -   **音樂媒體櫃**
     -   **圖片媒體櫃**
-    -   **視訊庫**
+    -   **視訊媒體櫃**
 
     若要深入了解，請參閱[檔案存取權限](file-access-permissions.md)。
 
@@ -115,15 +115,15 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 這些位置包括：
 
--   **\[圖片\]** 資料夾。 包含圖片。
+-   [**圖片**] 資料夾。 包含圖片。
 
-    -   **\[手機相簿\]** 資料夾。 包含內建相機中的相片和視訊。
+    -   [**手機相簿**] 資料夾。 包含內建相機中的相片和視訊。
 
-    -   **\[儲存的圖片\]** 資料夾。 包含使用者從其他 app 儲存的圖片。
+    -   [**儲存的圖片**] 資料夾。 包含使用者從其他 app 儲存的圖片。
 
--   **\[音樂\]** 資料夾。 包含歌曲、播客和有聲書。
+-   [**音樂**] 資料夾。 包含歌曲、播客和有聲書。
 
--   **\[影片\]** 資料夾。 包含視訊。
+-   [**影片**] 資料夾。 包含視訊。
 
 使用者或應用程式也可以將媒體檔案儲存在媒體櫃資料夾以外的 SD 記憶卡上。 若要尋找確實在 SD 記憶卡上的媒體檔案，請掃描 SD 記憶卡的內容，或要求使用者使用檔案選擇器來找出檔案。 如需詳細資訊，請參閱[存取 SD 記憶卡](access-the-sd-card.md)。
 
@@ -158,9 +158,7 @@ private async void getSongs()
 
 使用者可以選擇預設將檔案儲存到選用的 SD 記憶卡。 不過，應用程式可以選擇不允許將檔案儲存到 SD 記憶卡。 因此，媒體櫃可以分割到裝置的內部儲存空間及 SD 記憶卡上。
 
-您不需要編寫其他程式碼即可處理這項操作。 [
-              **Windows.Storage**
-            ](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
+您不需要編寫其他程式碼即可處理這項操作。 [  **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
 
 考量下圖中裝置儲存空間的狀態：
 
@@ -175,7 +173,7 @@ private async void getSongs()
 
 [手機相簿] 和 [儲存的圖片] 資料夾不支援深層查詢。
 
-**在拍攝相片的 app 中開啟該相片**
+**開啟應用程式中擷取它的相片**
 
 如果您想要讓使用者稍後可以在拍攝相片的 app 中再次開啟該相片，您可以使用與下列範例類似的程式碼，將 **CreatorAppId** 與相片的中繼資料儲存在一起。 在此範例中，**testPhoto** 是 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)。
 

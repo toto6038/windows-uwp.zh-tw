@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9466ec598fad090e31768d680b64ffea52688844
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919692"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661143"
 ---
 # <a name="themeresource-markup-extension"></a>{ThemeResource} 標記延伸
 
@@ -25,7 +25,7 @@ ms.locfileid: "8919692"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
 | 索引鍵 | 要求的資源的索引鍵。 這個索引鍵最初是由 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 所指派。 資源索引鍵可以是定義在 XamlName 文法中的任何字串。 |
 
@@ -67,7 +67,7 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 您可能會在一系列的相依值中看到 **ThemeResource** 的使用。 例如，[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 使用的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 值同時也是索引鍵資源，可能使用 **ThemeResource** 參考。 但是，所有使用索引鍵 **SolidColorBrush** 資源的 UI 屬性也會使用 **ThemeResource** 參考，因此具體說來，在佈景主題變更時啟用動態值變更的是每個 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 類型屬性。
 
-**注意：** `{ThemeResource}`和執行階段資源評估上佈景主題切換是 Windows8.1 XAML 中支援，但 Windows8 為目標的應用程式在 XAML 中不支援。
+**附註**  `{ThemeResource}`及佈景主題切換執行階段資源評估是在 Windows 8.1 的 XAML 支援，但不是支援在 XAML 中以 Windows 8 為目標的應用程式。
 
 ### <a name="system-resources"></a>系統資源
 
@@ -89,7 +89,7 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 在這裡，屬性採用 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 值，而使用 **ThemeResource** 建立對名為 `ButtonBackgroundThemeBrush` 和 `ButtonForegroundThemeBrush` 之 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 資源的參考。
 
-[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的一些視覺狀態也會調整這些相同的屬性。 較明顯的就是當按一下按鈕時，背景色彩會變更。 同樣地，在這裡，視覺狀態腳本中的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 動畫會以 **ThemeResource** 做為主要畫面值，使用 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 物件及對筆刷的參考。
+[  **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的一些視覺狀態也會調整這些相同的屬性。 較明顯的就是當按一下按鈕時，背景色彩會變更。 同樣地，在這裡，視覺狀態腳本中的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 動畫會以 **ThemeResource** 做為主要畫面值，使用 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 物件及對筆刷的參考。
 
 ```xml
 <VisualState x:Name="Pressed">
@@ -136,21 +136,21 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 這裡的 [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 值是對系統資源的另一個 **ThemeResource** 參考。 如果您參考某個系統資源，並且希望它隨著佈景主題變更而改變，您應該使用 **ThemeResource** 進行參考。
 
-## <a name="windows8-behavior"></a>Windows8 行為
+## <a name="windows8-behavior"></a>Windows 8 的行為
 
-Windows8 不支援**ThemeResource**標記延伸，它是從 Windows8.1 開始提供。 此外，Windows8 不支援動態切換與佈景主題相關的資源為 Windows 執行階段應用程式。 應用程式必須重新啟動，才能針對 XAML 範本和樣式挑選佈景主題變更。 這不是一個良好的使用者經驗，因此使用者可以使用樣式與**ThemeResource**使用方式，可以在使用者進行時動態切換佈景主題應用程式重新編譯和目標 Windows8.1 我們強烈建議。 針對 Windows8 但 Windows8.1 上執行繼續使用 Windows8 行為已編譯的應用程式。
+不支援 Windows 8 **ThemeResource**標記延伸，它是從 Windows 8.1 推出。 此外，Windows 8 不支援動態切換 Windows 執行階段應用程式的佈景主題相關資源。 應用程式必須重新啟動，才能針對 XAML 範本和樣式挑選佈景主題變更。 這不是良好的使用者經驗，讓應用程式會極力建議您重新編譯，並以 Windows 8.1 為目標，使其可以使用的樣式**ThemeResource**使用方式和動態切換佈景主題，當使用者執行。 針對 Windows 8，但執行 Windows 8.1 上繼續使用 Windows 8 行為所編譯的應用程式。
 
 ## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>**{ThemeResource}** 標記延伸的設計階段工具支援
 
-Microsoft Visual Studio2013 可以在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值，當您在 XAML 頁面中使用 **{ThemeResource}** 標記延伸。 例如，一旦輸入「{ThemeResource」之後，就會立即顯示所有來自 [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)的資源索引鍵。
+Microsoft Visual Studio 2013 時，可以包含可能的索引鍵值的 Microsoft IntelliSense 下拉式清單中您使用 **{ThemeResource}** XAML 頁面中的標記延伸。 例如，一旦輸入「{ThemeResource」之後，就會立即顯示所有來自 [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)的資源索引鍵。
 
 一旦資源索引鍵存在於任何 **{ThemeResource}** 用法中，**[移至定義]** (F12) 功能就可以立即解析該資源，並為您顯示設計階段的 generic.xaml，這是定義佈景主題資源的位置。 因為已經多次定義佈景主題資源 (針對每個佈景主題)，所以 **[移至定義]** 會將您帶往檔案中找到的第一個定義，也就是 **Default** 的定義。 如果你需要其他定義，可以在檔案內搜尋索引鍵名稱，以尋找其他佈景主題的定義。
 
 ## <a name="related-topics"></a>相關主題
 
-* [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [資源字典和 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
-* [x:Key 屬性](x-key-attribute.md)
+* [X:key 屬性](x-key-attribute.md)
  
 

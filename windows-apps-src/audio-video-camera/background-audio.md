@@ -7,22 +7,20 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f5fe7cad12193b409c4923f876b47cae0852aa9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045557"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645813"
 ---
 # <a name="play-media-in-the-background"></a>在背景播放媒體
 本文說明如何設定您的 app，當 app 從前景移至背景時，該媒體仍能繼續播放。 這表示即使使用者已最小化您的 App、回到主畫面，或以其他方式從您的 App 離開之後，您的 App 仍可繼續播放音訊。 
 
 背景音訊播放的案例包含：
 
--   
-            **長時間執行的播放清單：** 使用者會短暫叫用前景 app 來選取和開始播放清單，完成這些動作後，使用者預期播放清單會在背景持續播放。
+-   **長時間執行的播放清單：** 選取，然後開始之後，使用者會預期以繼續在背景播放播放清單的播放清單，讓前景應用程式簡短顯示使用者。
 
--   
-            **使用工作切換器：** 使用者會短暫叫用前景 app 來開始播放音訊，然後使用工作切換器，切換到另一個開啟的 app。 使用者預期音訊會在背景持續播放。
+-   **使用工作切換器：** 使用者簡短開始播放音訊，啟動一個前景應用程式，然後切換到另一個開啟的應用程式使用的工作切換器。 使用者預期音訊會在背景持續播放。
 
 本文中描述的背景音訊實作可讓您的 app 在所有 Windows 裝置上執行，包括行動裝置、桌上型電腦及 Xbox。
 
@@ -30,7 +28,7 @@ ms.locfileid: "9045557"
 > 本文中的程式碼是從 UWP [背景音訊範例](https://go.microsoft.com/fwlink/p/?LinkId=800141)改編而來。
 
 ## <a name="explanation-of-one-process-model"></a>單處理序模型的說明
-從 Windows10 版本 1607 開始，引進了新的單一處理序模型，可大幅簡化啟用背景音訊的處理序。 之前，除了前景 app 之外還要求您的 app 能夠管理背景處理程序，然後在這兩個處理程序之間手動傳遞狀態變更。 在新模型中，您只需將背景音訊功能新增到您的應用程式資訊清單，而您的 app 將會在移至背景時自動繼續播放音訊。 有兩個新的應用程式週期事件 ([**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)) 可讓您的 app 知道它進入和離開背景的時機。 當您的 app 移到轉換為背景或轉換為前景的處理程序時，系統強制執行的記憶體限制可能會變更，讓您能夠使用這些事件來檢查您目前的記憶體耗用量並釋出資源，以維持在限制之下。
+從 Windows 10 版本 1607 開始，引進了新的單一處理序模型，可大幅簡化啟用背景音訊的處理序。 之前，除了前景 app 之外還要求您的 app 能夠管理背景處理程序，然後在這兩個處理程序之間手動傳遞狀態變更。 在新模型中，您只需將背景音訊功能新增到您的應用程式資訊清單，而您的 app 將會在移至背景時自動繼續播放音訊。 有兩個新的應用程式週期事件 ([**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)) 可讓您的 app 知道它進入和離開背景的時機。 當您的 app 移到轉換為背景或轉換為前景的處理程序時，系統強制執行的記憶體限制可能會變更，讓您能夠使用這些事件來檢查您目前的記憶體耗用量並釋出資源，以維持在限制之下。
 
 藉由消除複雜的跨處理程序通訊與狀態管理，新模型可讓您藉由大幅減少程式碼，更快速地實作背景音訊。 不過，目前的回溯相容性版本仍然支援兩個處理程序的模型。 如需詳細資訊，請參閱[舊版的背景音效模型](legacy-background-media-playback.md)。
 
@@ -44,11 +42,11 @@ ms.locfileid: "9045557"
 ## <a name="background-media-playback-manifest-capability"></a>背景媒體播放資訊清單功能
 若要啟用背景音訊，您必須將背景媒體播放功能新增到應用程式資訊清單檔案 Package.appxmanifest。 
 
-**使用資訊清單設計工具以將功能新增到應用程式資訊清單**
+**若要將功能新增至應用程式資訊清單中使用資訊清單設計工具**
 
-1.  在 Microsoft Visual Studio 中，按兩下 **\[方案總管\]** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
-2.  選取 **\[功能\]** 索引標籤。
-3.  選取 **\[背景媒體播放\]** 核取方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 [功能] 索引標籤。
+3.  選取 [背景媒體播放] 核取方塊。
 
 若要藉由手動編輯應用程式資訊清單 xml 來設定功能，請先確認已在 **Package** 元素中定義 *uap3* 命名空間前置詞。 如果沒有，請新增它，如下所示。
 ```xml
@@ -88,14 +86,14 @@ ms.locfileid: "9045557"
 處理前景和背景之間轉換最重要的部分，便是管理 App 使用的記憶體。 因為在背景中執行將會減少系統允許您 App 保留的記憶體資源，所以，您也應該註冊 [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) 和 [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) 事件。 引發這些事件時，您應該檢查 App 目前的記憶體使用量與目前的限制，然後視需求降低記憶體使用量。 如需降低在背景執行時的記憶體使用量，請參閱[當 App 移至背景時釋出記憶體](../launch-resume/reduce-memory-usage.md)。
 
 ## <a name="network-availability-for-background-media-apps"></a>背景媒體 App 的網路可用性
-所有網路感知的媒體來源 (不是從資料流或檔案建立的媒體來源) 會在擷取遠端內容時，讓網路連線保持使用中狀態，並且在不需擷取遠端內容時釋放網路連線。 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource) 特別依賴應用程式使用 [**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762)，正確地向平台報告正確的緩衝範圍。 針對整個內容完整進行緩衝處理之後，就不會再代替 app 保留網路了。
+所有網路感知的媒體來源 (不是從資料流或檔案建立的媒體來源) 會在擷取遠端內容時，讓網路連線保持使用中狀態，並且在不需擷取遠端內容時釋放網路連線。 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource)，具體來說，要正確地報告平台使用的正確緩衝處理的範圍內的應用程式會依賴[ **SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762)。 針對整個內容完整進行緩衝處理之後，就不會再代替 app 保留網路了。
 
 如果您需要在無法下載媒體時，於背景中進行網路呼叫，則必須將它們包裝於適當的工作中，例如 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger)。 如需詳細資訊，請參閱[使用背景工作支援 app](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 ## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)
-* [使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)
-* [與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)
+* [播放音訊和視訊與 MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [整合系統媒體傳輸控制項](integrate-with-systemmediatransportcontrols.md)
 * [背景音訊範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
  

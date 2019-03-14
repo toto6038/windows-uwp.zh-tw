@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e342094509dd5d8fb06657d147ac6468a5f8cd6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926047"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618103"
 ---
 # <a name="media-compositions-and-editing"></a>媒體組合和編輯
 
@@ -21,7 +21,7 @@ ms.locfileid: "8926047"
 
 ## <a name="create-a-new-media-composition"></a>建立新的媒體組合
 
-[**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 類別是適用於所有媒體剪輯的容器，這些媒體剪輯組成組合，負責轉譯最終組合、將組合載入和儲存到光碟，以及提供組合的預覽串流，讓使用者可以在 UI 中檢視。 若要在您的 app 中使用 **MediaComposition**，請包含 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間以及 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空間，該命名空間提供您需要的相關 API。
+[  **MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 類別是適用於所有媒體剪輯的容器，這些媒體剪輯組成組合，負責轉譯最終組合、將組合載入和儲存到光碟，以及提供組合的預覽串流，讓使用者可以在 UI 中檢視。 若要在您的 app 中使用 **MediaComposition**，請包含 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間以及 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空間，該命名空間提供您需要的相關 API。
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
 
@@ -44,7 +44,7 @@ ms.locfileid: "8926047"
 
 -   **MediaClip** 只能併入組合一次。 嘗試新增已由組合使用的 **MediaClip** 會導致錯誤。 若要在組合中重複使用視訊剪輯多次，請呼叫 [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) 以建立稍後可以新增至組合的新 **MediaClip** 物件。
 
--   通用 Windows app 沒有權限可以存取整個檔案系統。 [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 類別的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 屬性可以讓您的 app 儲存檔案的記錄，該檔案已由使用者選取，所以您可以保留存取檔案的權限。 **FutureAccessList** 具有最多的 1000 個項目，所以您的 app 需要管理清單以確定不會變滿。 如果您計劃支援載入和修改之前建立的組合，這特別重要。
+-   通用 Windows app 沒有權限可以存取整個檔案系統。 [  **StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 類別的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 屬性可以讓您的 app 儲存檔案的記錄，該檔案已由使用者選取，所以您可以保留存取檔案的權限。 **FutureAccessList** 具有最多的 1000 個項目，所以您的 app 需要管理清單以確定不會變滿。 如果您計劃支援載入和修改之前建立的組合，這特別重要。
 
 -   **MediaComposition** 支援 MP4 格式的視訊剪輯。
 
@@ -74,7 +74,7 @@ ms.locfileid: "8926047"
 
 -   **MediaComposition** 必須包含至少一個媒體剪輯，然後才能呼叫 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674)，否則傳回的物件將會是 Null。
 
--   **MediaElement** 時間軸不會自動更新以反映組合中的變更。 當您每次對組合進行一組變更並且想要更新 UI 時，建議您同時呼叫 **GeneratePreviewMediaStreamSource** 並設定 **MediaPlayerElement** **Source** 屬性。
+-   **MediaElement** 時間軸不會自動更新以反映組合中的變更。 建議您呼叫兩者**GeneratePreviewMediaStreamSource**並設定**MediaPlayerElement** **來源**每次您進行的變更集的屬性撰寫，而且想来更新 UI。
 
 當使用者離開頁面以釋放相關聯的資源時，建議您將 **MediaStreamSource** 物件和 **MediaPlayerElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設為 Null。
 
@@ -90,7 +90,7 @@ ms.locfileid: "8926047"
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
--   [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) 可讓您設定轉碼作業速度與修剪相鄰媒體剪輯的精確度的優先順序。 **Fast** 會讓轉碼速度較快而修剪精確度較低，**Precise** 會讓轉碼較慢而修剪精確度較高。
+-   [  **MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) 可讓您設定轉碼作業速度與修剪相鄰媒體剪輯的精確度的優先順序。 **Fast** 會讓轉碼速度較快而修剪精確度較低，**Precise** 會讓轉碼較慢而修剪精確度較高。
 
 ## <a name="trim-a-video-clip"></a>修剪視訊剪輯
 
@@ -100,7 +100,7 @@ ms.locfileid: "8926047"
 
 -   您可以使用任何您想要的 UI 讓使用者指定開始和結束修剪值。 上述範例使用與 **MediaPlayerElement** 相關聯之 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 的 [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.Position) 屬性，藉由檢查 [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) 和 [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618)，先決定要在組合中的目前位置播放哪個 **MediaClip**。 然後再次使用 **Position** 和 **StartTimeInComposition** 屬性，計算從剪輯開頭修剪的時間量。 **FirstOrDefault** 方法是 **System.Linq** 命名空間的擴充方法，可簡化從清單中選取項目的程式碼。
 -   **MediaClip** 物件的 [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) 屬性可讓您知道未套用任何剪輯的媒體剪輯的持續時間。
--   [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) 屬性可讓您知道套用修剪之後的媒體剪輯的持續時間。
+-   [  **TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) 屬性可讓您知道套用修剪之後的媒體剪輯的持續時間。
 -   指定大於媒體剪輯原始持續時間的修剪值不會擲回錯誤。 不過，如果組合只包含單一剪輯，並且藉由指定大的修剪值而修剪為零長度，[**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 的後續呼叫會傳回 Null，如同組合沒有任何剪輯。
 
 ## <a name="add-a-background-audio-track-to-a-composition"></a>將背景曲目新增至組合
@@ -109,7 +109,7 @@ ms.locfileid: "8926047"
 
 [!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
 
--   **MediaComposition** 支援下列格式的背景曲目：MP3、WAV、FLAC
+-   A **MediaComposition**支援背景音訊資料軌，格式如下：MP3，WAV FLAC
 
 -   背景曲目
 

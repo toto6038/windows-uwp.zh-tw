@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, XAML 互通性
 ms.localizationpriority: medium
 ms.openlocfilehash: 34fb65ec53f6addccf8723b451d333d602c17908
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046208"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604703"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 與 XAML 互通性
 
@@ -19,15 +19,15 @@ ms.locfileid: "9046208"
 
 您可以在通用 Windows 平台 (UWP) 遊戲或 App 中，同時使用 Extensible Application Markup Language (XAML) 與 Microsoft DirectX。 XAML 和 DirectX 的組合可讓您建置彈性的使用者介面架構，以便與 DirectX 轉譯的內容互通，而這對於具有大量圖形的 App 特別有用。 本主題說明使用 DirectX 的 UWP App 結構，並指出建置與 DirectX 搭配使用的 UWP App 時應使用的重要類型。
 
-如果您的 App 著重在 2D 轉譯，您可能想要使用 [Win2D](https://github.com/microsoft/win2d) Windows 執行階段程式庫。 此程式庫是由 Microsoft 維護，且採用 Direct2D 核心技術。 它能大幅簡化實作 2D 圖形的使用模式，且包含本文件中所提及之某些技術的實用抽象。 如需詳細資訊，請參閱專案頁面。 此文件涵蓋的指南適用於 *「沒有」* 使用 Win2D 的 App 開發人員。
+如果您的 App 著重在 2D 轉譯，您可能想要使用 [Win2D](https://github.com/microsoft/win2d) Windows 執行階段程式庫。 此程式庫是由 Microsoft 維護，且採用 Direct2D 核心技術。 它能大幅簡化實作 2D 圖形的使用模式，且包含本文件中所提及之某些技術的實用抽象。 如需詳細資訊，請參閱專案頁面。 此文件涵蓋的指南適用於「沒有」使用 Win2D 的 App 開發人員。
 
-> **注意：** DirectX Api 不定義為 Windows 執行階段類型，因此您通常會使用 VisualC + + 元件延伸 (C + + /CX) 來開發與 DirectX 互通的 xamluwp XAML UWP 元件。 此外，如果您將 DirectX 呼叫包裝在個別的 Windows 執行階段中繼資料檔中，您就可以使用 C# 和 XAML 建立使用 DirectX 的 UWP App。
+> **附註**  DirectX Api 會未定義為 Windows 執行階段類型，因此您通常會使用 Visual c + + 元件擴充功能 (C + + /CX) 來開發與 DirectX 交互操作的 XAML UWP 元件。 此外，如果您將 DirectX 呼叫包裝在個別的 Windows 執行階段中繼資料檔中，您就可以使用 C# 和 XAML 建立使用 DirectX 的 UWP App。
 
  
 
 ## <a name="xaml-and-directx"></a>XAML 和 DirectX
 
-DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 Microsoft Direct3D。 雖然 XAML 可支援基本的 2D 基本形狀和效果，但許多應用程式 (例如模型和遊戲) 需要更複雜的圖形支援。 對於這類的應用程式，您可以使用 Direct2D 和 Direct3D 呈現局部或所有圖形，然後使用 XAML 處理其他作業。
+DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D 和 Microsoft Direct3D。 雖然 XAML 可支援基本的 2D 基本形狀和效果，但許多應用程式 (例如模型和遊戲) 需要更複雜的圖形支援。 對於這類的應用程式，您可以使用 Direct2D 和 Direct3D 呈現局部或所有圖形，然後使用 XAML 處理其他作業。
 
 若要實作自訂 XAML 和 DirectX 互通性，您需要了解這兩個概念：
 
@@ -369,9 +369,9 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 為了確保最佳的效能，[SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) 類型有部分限制：
 
 -   每個 App 的 [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) 執行個體不能超過 4 個。
--   您應該將 DirectX 交換鏈結的高度和寬度 (在 [DXGI\_SWAP\_CHAIN\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中) 設定成交換鏈結元素目前的尺寸。 如果沒有這麼做，顯示內容就會按縮放比例 (使用 **DXGI\_SCALING\_STRETCH**) 調整為最適合的大小。
--   您必須將 DirectX 交換鏈結的縮放模式 (在 [DXGI\_SWAP\_CHAIN\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中) 設定為 **DXGI\_SCALING\_STRETCH**。
--   您不能將 DirectX 交換鏈結的 Alpha 模式 (在 [DXGI\_SWAP\_CHAIN\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中) 設定為 **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**。
+-   您應該設定 DirectX 交換鏈結的高度和寬度 (在[DXGI\_交換\_鏈結\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) 目前維度的交換鏈結項目。 如果不這麼做，將會相應顯示內容 (使用**DXGI\_調整\_STRETCH**) 以符合。
+-   您必須設定 DirectX 交換鏈結的縮放模式 (在[DXGI\_交換\_鏈結\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) 來**DXGI\_調整\_STRETCH**。
+-   您不能設定 DirectX 交換鏈結的 alpha 模式 (在[DXGI\_交換\_鏈結\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) 來**DXGI\_ALPHA\_模式\_預乘**。
 -   您必須呼叫 [IDXGIFactory2::CreateSwapChainForComposition](https://msdn.microsoft.com/library/windows/desktop/hh404558) 來建立 DirectX 交換鏈結。
 
 請根據應用程式的需求更新 [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834)，不是根據 XAML 架構的更新。 如果您需要將 **SwapChainPanel** 的更新與 XAML 架構的更新同步，請登錄 [Windows::UI::Xaml::Media::CompositionTarget::Rendering](https://msdn.microsoft.com/library/windows/apps/br228127) 事件。 否則，您必須在嘗試從 (更新 **SwapChainPanel** 的執行緒以外的) 其他執行緒更新 XAML 元素時，考量會發生的跨執行緒問題。
@@ -465,7 +465,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 * [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050)
 * [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834)
 * [ISwapChainPanelNative](https://msdn.microsoft.com/library/windows/desktop/dn302143)
-* [Direct3D 11 的程式設計指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)
+* [程式設計手冊為 Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 
  
 
