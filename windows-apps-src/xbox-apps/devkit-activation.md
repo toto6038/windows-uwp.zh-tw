@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
 ms.openlocfilehash: 3664ecae152b7178709bffc373a877e58a86461a
-ms.sourcegitcommit: eaee5a45d5eace64c69e67691e5330b466cc74c2
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083256"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590533"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>啟用 Xbox One 開發人員模式
 
@@ -38,26 +38,26 @@ Xbox One 有兩種模式，*零售*模式 (**1**) 和*開發人員*模式 (**2**
 
     ![啟用步驟 5](images/activation-step-5.png)  
     
-5.  [註冊合作夥伴中心中的應用程式開發人員帳戶](https://developer.microsoft.com/store/register)。  這也是邁向發行您遊戲的第一個步驟。
+5.  [在合作夥伴中心內註冊應用程式開發人員帳戶](https://developer.microsoft.com/store/register)。  這也是發行您的遊戲，第一個步驟。
 
-6.  使用您有效且目前的合作夥伴中心的應用程式開發人員帳戶登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。  如果您沒有看到多個選項，在左側瀏覽窗格中，或看不到在**概觀**區段中，下列步驟，啟用的連結_無法運作_，**建立新的應用程式**選項請確定您完全註冊您的應用程式開發人員帳戶，從上一個步驟。
+6.  登入[合作夥伴中心](https://partner.microsoft.com/dashboard)有效、 目前合作夥伴中心應用程式開發人員帳戶。  如果您沒有看到左側導覽窗格中的多個選項，或看不到**建立新的應用程式**選項**概觀**一節中，下列步驟和啟用連結_將無法運作_; 請確定您完全註冊您的應用程式開發人員帳戶，從上一個步驟。
 
 7.  移至[partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices)。
 
-8.  輸入在「啟用開發人員模式」App 中顯示的啟用代碼。 您的帳戶具備有限的啟用次數。 啟用開發人員模式之後，合作夥伴中心會指出您已經使用其中一個與您帳戶相關聯的啟用。
+8.  輸入在「啟用開發人員模式」App 中顯示的啟用代碼。 您的帳戶具備有限的啟用次數。 開發人員模式下啟動之後，合作夥伴中心會指出您已使用其中一個啟用您的帳戶相關聯。
 
     ![啟用步驟 8](images/activation-step-8-rs2.png)    
     
-9.  按一下 **\[同意並啟用\]**。 這會導致頁面重新整理，您將會看見您的裝置填入表格當中。 您可在[Xbox One 開發人員模式啟用計畫](https://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 開發人員模式啟用計畫合約。
+9.  按一下 [同意並啟用]。 這會導致頁面重新整理，您將會看見您的裝置填入表格當中。 您可在[Xbox One 開發人員模式啟用計畫](https://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 開發人員模式啟用計畫合約。
 
 10. 在您輸入啟用代碼之後，您的主機將會顯示啟用程序的進度畫面。  
     
-11. 啟用完成之後，請開啟「啟用開發人員模式」App 並按一下 **\[切換並重新啟動\]** 以移至開發人員模式。 請注意，這可能會花費比平常還要久的時間。
+11. 啟用完成之後，請開啟「啟用開發人員模式」App 並按一下 [切換並重新啟動] 以移至開發人員模式。 請注意，這可能會花費比平常還要久的時間。
 
     ![啟用步驟 12](images/activation-step-12.png)   
 
 ## <a name="switch-between-retail-and-developer-mode"></a>在零售和開發人員模式之間切換
-當開發人員模式已在您的主機上啟用之後，請使用 **\[開發人員首頁\]** 來在零售模式和開發人員模式之間切換。 如需深入了解啟動並使用 [開發人員首頁] 的方式，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
+當開發人員模式已在您的主機上啟用之後，請使用 [開發人員首頁] 來在零售模式和開發人員模式之間切換。 如需深入了解啟動並使用 [開發人員首頁] 的方式，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
 
 * 若要切換至零售模式，請開啟**開發人員首頁**。 在 **/[快速控制項目/]** 下，選取 **/[離開開發人員模式/]**。 這會將您的主機重新啟動為零售模式。    
 
@@ -67,6 +67,6 @@ Xbox One 有兩種模式，*零售*模式 (**1**) 和*開發人員*模式 (**2**
 
   ![啟用步驟 14](images/activation-step-12.png)  
 
-## <a name="see-also"></a>另請參閱
-- [停用 Xbox One 開發人員模式](devkit-deactivation.md)
-- [Xbox One 上的 UWP](index.md)
+## <a name="see-also"></a>請參閱
+- [Xbox 一個開發人員模式停用](devkit-deactivation.md)
+- [在 Xbox One UWP](index.md)
