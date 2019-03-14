@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, 廣告, AdControl, AdMediatorControl, 移轉
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ms.openlocfilehash: ff0ea54f55803e652964203899f429faf196805e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048675"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620463"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>將您的應用程式更新到橫幅廣告的最新 Advertising 程式庫
 
@@ -25,13 +25,13 @@ ms.locfileid: "9048675"
 
 * 將不會再為您應用程式中的任何 **AdControl** 提供橫幅廣告，您將無法再從這些控制項賺取廣告收入。
 
-* When the **AdControl** in your app requests a new ad, the **ErrorOccurred** event of the control will be raised and the **ErrorCode** property of the event args will have the value **NoAdAvailable**.
+* 當您應用程式中的 **AdControl** 要求新的廣告時，將會引發控制項的 **ErrorOccurred** 事件，而事件引數的 **ErrorCode** 屬性值將會是 **NoAdAvailable**。
 
-* 與您應用程式相關的任何廣告單元將會被停用。 您無法從您 DePartnerv 中心帳戶移除這些停用的廣告單元。 如果您更新應用程式為使用 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)，請忽略這些廣告單元，並建立新的廣告單元。
+* 與您應用程式相關的任何廣告單元將會被停用。 您無法移除這些已停用的 ad 單位從 DePartnerv Center 帳戶。 如果您更新應用程式為使用 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)，請忽略這些廣告單元，並建立新的廣告單元。
 
 * 也不再提供橫幅廣告給多個 app 中使用的任何廣告單元。 請確定您的每個廣告單元只在單一 app 中使用。
 
-如果您的現有應用程式 (已經在 Microsoft Store 中，或仍在開發) 顯示橫幅廣告使用 **AdControl**，但您不確定應用程式使用哪個廣告 SDK，請依照本文中的指示，判斷您是否需要更新應用程式為使用支援的 SDK。 如果您遭遇任何問題或需要協助，請[連絡客戶支援](https://go.microsoft.com/fwlink/?LinkId=393643)。
+如果您的現有應用程式 (已經在 Microsoft Store 中，或仍在開發) 顯示橫幅廣告使用 **AdControl**，但您不確定應用程式使用哪個廣告 SDK，請依照本文中的指示，判斷您是否需要更新應用程式為使用支援的 SDK。 如果您遭遇任何問題或需要協助，請[聯絡支援服務](https://go.microsoft.com/fwlink/?LinkId=393643)。
 
 > [!NOTE]
 > 如果您的應用程式已使用 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) (適用於 UWP app)，則不需要進一步變更您的應用程式。
@@ -46,7 +46,7 @@ ms.locfileid: "9048675"
 
 <span id="part-1" />
 
-## <a name="part-1-determine-whether-you-need-to-update-your-uwp-app"></a>第 1 部分︰判斷是否需要更新您的 UWP app
+## <a name="part-1-determine-whether-you-need-to-update-your-uwp-app"></a>第 1 部分：判斷是否需要更新您的 UWP 應用程式
 
 請依照下列各節中的指示來判斷是否需要更新您的應用程式。
 
@@ -69,7 +69,7 @@ ms.locfileid: "9048675"
 
 1.  將您開發電腦上的所有舊版 Microsoft Advertising SDK 和 Ad Mediator SDK 解除安裝。
 
-2.  開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何 SDK 版本：
+2.  開啟 \[命令提示字元\] 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何 SDK 版本：
     ```syntax
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
@@ -86,4 +86,4 @@ ms.locfileid: "9048675"
 
 請測試您的應用程式以確定它如預期般顯示橫幅廣告。
 
-如果[建立新的提交](../publish/app-submissions.md)在合作夥伴中心來重新發佈您的應用程式的應用程式已更新的 「 市集 」 中已經有舊版的應用程式。
+如果您的應用程式的先前版本是已在存放區中，[建立新的提交](../publish/app-submissions.md)在合作夥伴中心，若要重新發佈您的應用程式的應用程式更新。

@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
 ms.openlocfilehash: 5606a8fa6db5b439aa71f5d72b34c0f519d7eea9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947299"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651773"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>停用 Xbox One 開發人員模式
 
@@ -21,7 +21,7 @@ ms.locfileid: "8947299"
 
 首先，請將您的 Xbox One 主機切換回零售模式。
 
-1. 開啟 **\[開發人員首頁\]**。
+1. 開啟 [開發人員首頁]。
 
 2. 選取 **\[離開開發人員模式\]**。  您的主機將重新啟動為零售模式。  
 
@@ -54,9 +54,9 @@ ms.locfileid: "8947299"
 
 如需重設主機，請執行下列步驟：
 
-1.  移至 **\[我的遊戲與 app\]**。
+1.  移至 [我的遊戲與 app]。
 
-2.  選取 **\[App\]**，然後選取 **\[設定\]**。
+2.  選取 [App]，然後選取 [設定]。
 
 3.  移至左窗格中的 **\[系統\]**，然後選取右窗格中的 **\[主機資訊\]**。   
    
@@ -66,24 +66,24 @@ ms.locfileid: "8947299"
     
     ![重設主機](images/devkit-deactivation-3.png)
     
-5.  接下來，選取 **\[重設並移除所有項目\]**。 此選項會將主機重設為原始的零售狀態。  您所有的 App、遊戲及本機存檔資料都會被刪除。 請注意，若選擇另一個 **\[重設並保留我的遊戲與 app\]** 選項，會無法將您的主機從開發人員計畫中移除。  
+5.  接下來，選取 **\[重設並移除所有項目\]**。 此選項會將主機重設為原始的零售狀態。  您所有的 App、遊戲及本機存檔資料都會被刪除。 請注意，若選擇另一個 [重設並保留我的遊戲與 app] 選項，會無法將您的主機從開發人員計畫中移除。  
    
     ![重設並移除所有項目](images/devkit-deactivation-4.png)
 
-## <a name="deactivate-your-console-using-partner-center"></a>停用您的主機使用合作夥伴中心
+## <a name="deactivate-your-console-using-partner-center"></a>停用您的主控台使用合作夥伴中心
 
-如果您是無法存取您的主機，因為任何原因，您可以也透過停用開發人員模式在您的主機上使用合作夥伴中心。
+如果您無法存取您的主控台，因為任何原因，您可以也停用開發人員模式主控台上使用合作夥伴中心。
 
-1. 瀏覽至合作夥伴中心[管理 Xbox One 主機](https://partner.microsoft.com/xboxdevices)] 頁面。 系統可能會提示您登入。
+1. 瀏覽至[管理 Xbox One 主控台](https://partner.microsoft.com/xboxdevices)在合作夥伴中心內的頁面。 系統可能會提示您登入。
 
 2. 在主機清單上，藉由比對序號、主機 ID 或裝置識別碼來尋找您想要停用的主機。  
 
-3. 按一下 **\[停用\]**。  
+3. 按一下 [停用]。  
   
 ![使用開發人員中心進行停用](images/devkit-deactivation-6.png)
 
 如果您之前並未將 Xbox One 主機切換回零售模式，請立即執行，如[切換至零售模式](#switch-to-retail-mode)中所述。
 
 ## <a name="see-also"></a>請參閱
-- [啟用 Xbox One 開發人員模式](devkit-activation.md)
-- [Xbox One 上的 UWP](index.md)
+- [Xbox 一個開發人員模式下啟用](devkit-activation.md)
+- [在 Xbox One UWP](index.md)
