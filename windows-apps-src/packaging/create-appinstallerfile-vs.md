@@ -1,20 +1,20 @@
 ---
-title: 使用 Visual studio 建立應用程式安裝程式檔案
+title: 使用 Visual Studio 建立應用程式安裝程式檔案
 description: 了解如何使用 Visual Studio，以便啟用透過 .appinstaller 檔案的自動更新。
 ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aa7622fe408fcbc1f8da4c0fe0c6b8d54dd2cd6
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115772"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648483"
 ---
-# <a name="create-an-app-installer-file-with-visual-studio"></a>使用 Visual studio 建立應用程式安裝程式檔案
+# <a name="create-an-app-installer-file-with-visual-studio"></a>使用 Visual Studio 建立應用程式安裝程式檔案
 
-從 Windows 10 版本 1803年和 Visual Studio 2017 更新 15.7 開始，側載應用程式可以設定為自動接收更新使用`.appinstaller`檔案。 Visual Studio 支援啟用這些更新。
+使用 Windows 10，第 1803 版與 Visual Studio 2017 15.7 版更新啟動側載應用程式可以設定為接收自動更新使用`.appinstaller`檔案。 Visual Studio 支援啟用這些更新。
 
 ## <a name="app-installer-file-location"></a>應用程式安裝程式檔案位置
 `.appinstaller`檔案可以裝載於共用位置 (例如 HTTP 端點或 UNC 共用資料夾)，並包含了應用程式套件的安裝路徑。 使用者從共用位置安裝應用程式以及啟用新更新的定期檢查。 
@@ -25,20 +25,20 @@ ms.locfileid: "9115772"
 您可以在建立專案時設定`TargetPlatformMinVersion`屬性，或稍後從專案屬性變更屬性。 
 
 >[!IMPORTANT]
-> 只有在應用程式安裝程式檔案時產生的時機`TargetPlatformMinVersion`是 Windows 10 版本 1803年或更高。
+> 應用程式安裝程式檔案才時產生`TargetPlatformMinVersion`是 Windows 10 1803年或更高的版本。
 
 
 ### <a name="create-packages"></a>建立套件
 
-若要透過側載應用程式發佈，您必須建立應用程式套件 (.appx/.msix) 或應用程式套件組合 (.appxbundle/.msixbundle)，並將它發佈至共用位置。
+要散發透過側載應用程式，必須建立應用程式套件 (.appx/.msix) 或應用程式套件組合 (.appxbundle/.msixbundle)，然後將它發佈在共用位置。
 
 若要這樣做，請依照下列步驟使用 Visual Studio 中的**\[建立應用程式套件\]** 精靈。
 
-1. 在專案上按一下滑鼠右鍵，然後選擇 **\[Microsoft Store\]** -> **\[建立應用程式套件\]**。  
+1. 在專案上按一下滑鼠右鍵，然後選擇 [市集] -> [建立應用程式套件]。  
 
 ![導覽至 [建立應用程式套件] 的操作功能表](images/packaging-screen2.jpg)   
 
-**\[建立應用程式套件\]** 精靈便會出現。
+[建立應用程式套件] 精靈便會出現。
 
 2. 選取 **\[我想要建立側載套件\]** 和 **\[啟用自動更新\]**。  
 

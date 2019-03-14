@@ -7,19 +7,19 @@ ms.topic: article
 keywords: Windows 10, UWP, 在應用程式內購買, IAP, 附加元件, 試用版, 消費性, 耐久性, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a8bad5207c5907beb91e5664b4bc7e140ab036b
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114674"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656953"
 ---
-# <a name="in-app-purchases-and-trials"></a>在應用程式內購買和試用版
+# <a name="in-app-purchases-and-trials"></a>應用程式內購買和試用版
 
 Windows SDK 提供您可用來實作下列功能以從您的「通用 Windows 平台」(UWP) 應用程式提升獲利的 API。
 
 * **應用程式內購買**&nbsp;&nbsp;無論您的應用程式是否免費，您都可以直接從應用程式內銷售內容或新的應用程式功能 (例如將遊戲的下一個關卡解除鎖定)。
 
-* **試用版功能**&nbsp;&nbsp;如果您[設定為在合作夥伴中心的免費試用您的應用程式](../publish/set-app-pricing-and-availability.md#free-trial)，您可以吸引客戶購買完整版的應用程式由排除或限制某些功能，在試用期間。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的應用程式之前的試用期間顯示。
+* **試用版的功能**&nbsp;&nbsp;如果您[您的應用程式設定為在合作夥伴中心的免費試用](../publish/set-app-pricing-and-availability.md#free-trial)，您可以誘使您的客戶藉由排除或限制某些購買完整版的應用程式在試用期間的功能。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的應用程式之前的試用期間顯示。
 
 本文提供 UWP 應用程式中應用程式內購買和試用版的運作方式概觀。
 
@@ -27,32 +27,32 @@ Windows SDK 提供您可用來實作下列功能以從您的「通用 Windows �
 
 ## <a name="choose-which-namespace-to-use"></a>選擇要使用的命名空間
 
-您可以根據您應用程式的目標是哪一個 Windows10 版本，使用兩種不同的命名空間將應用程式內購買和試用版功能新增到 UWP 應用程式。 雖然這些命名空間中的 API 都是為相同的目標服務，但其設計方式截然不同，且兩個 API 之間的程式碼並不相容。
+您可以根據您應用程式的目標是哪一個 Windows 10 版本，使用兩種不同的命名空間將應用程式內購買和試用版功能新增到 UWP 應用程式。 雖然這些命名空間中的 API 都是為相同的目標服務，但其設計方式截然不同，且兩個 API 之間的程式碼並不相容。
 
-* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;從 Windows 10 版本 1607 開始，應用程式可以使用此命名空間中的 API 來實作應用程式內購買和試用版。 如果您應用程式專案的目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本，建議您使用此命名空間中的成員。 這個命名空間支援最新的附加元件類型，例如市集管理消耗型附加元件，且設計成與未來產品與合作夥伴中心和市集所支援的功能類型相容。 如需有關此命名空間的詳細資訊，請參閱本文中的[使用 Windows.Services.Store 命名空間的應用程式內購買和試用版](#api_intro)一節。
+* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;於 Windows 10 版本 1607 版，請啟動應用程式可以使用 API 這個命名空間中實作應用程式內購買和試用版。 如果您應用程式專案的目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本，建議您使用此命名空間中的成員。 這個命名空間支援最新的附加元件類型，例如存放區管理需求的可取用的附加元件，並設計為與未來的產品和合作夥伴中心和儲存區所支援功能的類型相容。 如需有關此命名空間的詳細資訊，請參閱本文中的[使用 Windows.Services.Store 命名空間的應用程式內購買和試用版](#api_intro)一節。
 
-* **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;所有 Windows 10 版本也都支援一個較舊的 API 來用於此命名空間中的應用程式內購買和試用版。 如需 **Windows.ApplicationModel.Store** 命名空間的相關資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+* **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;所有版本的 Windows 10 也都支援舊版的 API 應用程式內購買和試用版，此命名空間中的。 如需 **Windows.ApplicationModel.Store** 命名空間的相關資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store** 命名空間不再提供新功能更新，建議您改為使用 **Windows.Services.Store** 命名空間，如果您的應用程式可這麼做的話。 使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 傳統型應用程式中，或使用合作夥伴中心開發沙箱的遊戲或應用程式不支援**Windows.ApplicationModel.Store**命名空間 （例如，這種情況的任何遊戲，與 Xbox Live 整合）。
+> **Windows.ApplicationModel.Store** 命名空間不再提供新功能更新，建議您改為使用 **Windows.Services.Store** 命名空間，如果您的應用程式可這麼做的話。 **Windows.ApplicationModel.Store**使用的 Windows 桌面應用程式中不支援命名空間[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)或應用程式或遊戲，並在合作夥伴中心 （適用於使用開發沙箱範例中，這是任何整合了 Xbox Live 的遊戲的情況）。
 
 <span id="concepts" />
 
 ## <a name="basic-concepts"></a>基本概念
 
-「市集」中提供的每個項目通常稱為 *「產品」*。 大部分的開發人員只會使用下列類型的產品︰*應用程式*和*附加元件*。
+「市集」中提供的每個項目通常稱為「產品」。 大部分的開發人員只會使用下列類型的產品︰*應用程式*和*附加元件*。
 
 附加元件是您在應用程式內容中提供給客戶使用的產品或功能︰例如，在應用程式或遊戲中使用的貨幣、適用於遊戲的新地圖或武器，能夠在沒有廣告的情況下使用您的應用程式，或者適用於能夠提供該類型內容之應用程式的數位內容 (例如，音樂或視訊)。 每個應用程式與附加元件都有相關的授權，可指出使用者是否有資格使用該應用程式或附加元件。 如果使用者有資格使用應用程式或附加元件，授權也會提供關於試用版的額外資訊。
 
-若要提供給您的應用程式中的客戶的附加元件，您必須[定義您的應用程式，在合作夥伴中心的附加元件](../publish/add-on-submissions.md)讓 「 市集 」 知道它。 接著，您的應用程式便可以使用 **Windows.Services.Store** 或 **Windows.ApplicationModel.Store** 命名空間中的 API，以應用程式內購買形式提供要對使用者銷售的附加元件。
+若要提供給客戶，在您的應用程式中的附加元件，您必須[定義您的應用程式的附加元件在合作夥伴中心](../publish/add-on-submissions.md)讓知道其相關的存放區。 接著，您的 App 便可以使用 **Windows.Services.Store** 或 **Windows.ApplicationModel.Store** 命名空間中的 API，以 App 內購買形式提供要對使用者銷售的附加元件。
 
 UWP 應用程式可以提供下列類型的附加元件。
 
 | 附加元件類型 |  描述  |
 |---------|-------------------|
-| 耐久性  |  附加元件，您[在合作夥伴中心中指定](../publish/enter-iap-properties.md)的存留期持續存在。 <p/><p/>根據預設，耐久性附加元件永遠不會過期，在此情況下只需購買一次。 如果您為附加元件指定特定的持續時間，則使用者就能在該附加元件到期之後重新進行購買。 |
-| 開發人員管理的消費性產品  |  可購買、使用，然後消費過後再次購買的附加元件。 您要負責記錄附加元件所代表項目的使用者餘額。<p/><p/>當使用者取用任何與附加元件相關的項目時，您需負責維持使用者在該附加元件所代表項目的餘額，以及負責在使用者取用所有項目之後，向 Microsoft Store 回報已完全交付此附加元件的購買。 使用者必須等到您的應用程式將先前的附加元件購買回報為已完全交付之後，才能再次購買該附加元件。 <p/><p/>例如，如果您的附加元件在遊戲中代表 100 個金幣，而使用者花費了 10 個金幣，則您的應用程式或服務必須針對該使用者保留 90 個金幣的新餘額。 當使用者花光 100 個金幣之後，您的 App 必須回報該附加元件已完成，接著使用者就能再次購買 100 個金幣的附加元件。    |
-| Microsoft Store 管理的消費性產品  |  隨時可供購買、使用，然後再次購買的附加元件。 Microsoft Store 會記錄使用者在該附加元件所代表項目的餘額。<p/><p/>當使用者取用任何與附加元件相關的項目時，您必須負責向 Microsoft Store 回報這些項目已完成，而 Microsoft Store 會更新使用者的餘額。 使用者可以隨時多次購買附加元件 (不需要先取用項目)。 您的應用程式可以隨時查詢使用者目前的餘額。 <p/><p/> 例如，如果您的附加元件在遊戲中代表最初的 100 個金幣數量，而使用者花費了 50 個金幣，則您的應用程式會向 Microsoft Store 回報已完成附加元件的 50 個單位，而 Microsoft Store 會更新剩下的餘額。 如果使用者然後重新購買附加元件以獲取多 100 個硬幣，它們現在總計會有 150 個硬幣。 <p/><p/>**注意**&nbsp;&nbsp;若要使用 Microsoft Store 管理的消費性產品，您的應用程式必須以 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本為目標，而且必須使用 **Windows.Services.Store** 命名空間，而不是 **Windows.ApplicationModel.Store** 命名空間。  |
+| 耐久性  |  持續的存留期間發生，您的附加元件[指定在合作夥伴中心](../publish/enter-iap-properties.md)。 <p/><p/>根據預設，耐久性附加元件永遠不會過期，在此情況下只需購買一次。 如果您為附加元件指定特定的持續時間，則使用者就能在該附加元件到期之後重新進行購買。 |
+| 開發人員管理的消費性產品  |  可購買、使用，然後消費過後再次購買的附加元件。 您要負責記錄附加元件所代表項目的使用者餘額。<p/><p/>當使用者取用任何與附加元件相關的項目時，您需負責維持使用者在該附加元件所代表項目的餘額，以及負責在使用者取用所有項目之後，向 Microsoft Store 回報已完全交付此附加元件的購買。 使用者必須等到您的應用程式將先前的附加元件購買回報為已完全交付之後，才能再次購買該附加元件。 <p/><p/>例如，如果您的附加元件在遊戲中代表 100 個金幣，而使用者花費了 10 個金幣，則您的應用程式或服務必須針對該使用者保留 90 個金幣的新餘額。 當使用者花光 100 個金幣之後，您的應用程式必須回報該附加元件已完成，接著使用者就能再次購買 100 個金幣的附加元件。    |
+| 市集管理的消費性產品  |  隨時可供購買、使用，然後再次購買的附加元件。 Microsoft Store 會記錄使用者在該附加元件所代表項目的餘額。<p/><p/>當使用者取用任何與附加元件相關的項目時，您必須負責向 Microsoft Store 回報這些項目已完成，而 Microsoft Store 會更新使用者的餘額。 使用者可以隨時多次購買附加元件 (不需要先取用項目)。 您的應用程式可以隨時查詢使用者目前的餘額。 <p/><p/> 例如，如果您的附加元件在遊戲中代表最初的 100 個金幣數量，而使用者花費了 50 個金幣，則您的應用程式會向 Microsoft Store 回報已完成附加元件的 50 個單位，而 Microsoft Store 會更新剩下的餘額。 如果使用者然後重新購買附加元件以獲取多 100 個硬幣，它們現在總計會有 150 個硬幣。 <p/><p/>**注意**&nbsp;&nbsp;若要使用 Microsoft Store 管理的消費性產品，您的應用程式必須以 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本為目標，而且必須使用 **Windows.Services.Store** 命名空間，而不是 **Windows.ApplicationModel.Store** 命名空間。  |
 | 訂閱 | 耐久性附加元件會繼續向客戶收取週期性費用，才能繼續使用附加元件。 客戶隨時都可以取消訂閱，避免進一步的費用。 <p/><p/>**注意**&nbsp;&nbsp;若要使用訂閱附加元件，您的應用程式必須以 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本為目標，而且必須使用 **Windows.Services.Store** 命名空間，而不是 **Windows.ApplicationModel.Store** 命名空間。  |
 
 <span />
@@ -66,17 +66,17 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 本章節概略說明 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的重要任務和概念。 此命名空間僅提供給目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的應用程式 (這對應到 Windows 10 (版本 1607))。 建議應用程式盡可能使用 **Windows.Services.Store** 命名空間，而不是 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間。 如需 **Windows.ApplicationModel.Store** 命名空間的相關資訊，請參閱[本文](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
-**本節內容**
+**這一節**
 
 * [影片](#video)
 * [開始使用 StoreContext 類別](#get-started-storecontext)
 * [實作應用程式內購買](#implement-iap)
-* [實作試用版功能](#implement-trial)
-* [測試您的應用程式內購買或試用實作。](#testing)
-* [應用程式內購買的收據](#receipts)
-* [使用 StoreContext 類別和傳統型橋接器](#desktop)
-* [產品、SKU 和可用性](#products-skus)
-* [市集識別碼](#store-ids)
+* [實作試用版的功能](#implement-trial)
+* [測試您的應用程式內購買或試用版的實作](#testing)
+* [針對應用程式內購買](#receipts)
+* [使用傳統型橋接器 StoreContext 類別](#desktop)
+* [產品、 Sku 和可用性](#products-skus)
+* [儲存識別碼](#store-ids)
 
 <span id="video" />
 
@@ -112,11 +112,11 @@ UWP 應用程式可以提供下列類型的附加元件。
 在您具備 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件之後，您可以開始呼叫此物件的方法來取得目前應用程式及其附加元件的「市集」產品資訊、擷取目前應用程式及其附加元件的授權資訊、為目前的使用者購買應用程式或附加元件，以及執行其他工作。 如需有關您可以使用此物件來執行常見工作的詳細資訊，請參閱下列文章：
 
 * [取得應用程式和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
-* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
-* [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
-* [啟用應用程式的訂閱附加元件](enable-subscription-add-ons-for-your-app.md)
-* [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
+* [取得應用程式和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
+* [啟用應用程式內購買的應用程式和附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [啟用可取用的附加元件購買的項目](enable-consumable-add-on-purchases.md)
+* [啟用您的應用程式的訂用帳戶附加元件](enable-subscription-add-ons-for-your-app.md)
+* [實作您的應用程式的試用版](implement-a-trial-version-of-your-app.md)
 
 如需示範如何在 **Windows.Services.Store** 命名空間中使用 **StoreContext** 和其他類型的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
@@ -124,9 +124,9 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 ### <a name="implement-in-app-purchases"></a>實作應用程式內購買
 
-使用 **Windows.Services.Store** 命名空間在您的應用程式中為客戶提供應用程式內購買：
+使用 **Windows.Services.Store** 命名空間在您的 App 中為客戶提供 App 內購買：
 
-1. 如果您的應用程式提供附加元件的客戶可購買，[建立您的應用程式，在合作夥伴中心的附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
+1. 如果您的應用程式提供的客戶可以購買，附加元件[在合作夥伴中心建立您的應用程式的附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
 
 2. 請在您的應用程式中撰寫程式碼以[擷取您應用程式或您應用程式所提供之附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)，然後[判斷授權是否有效](get-license-info-for-apps-and-add-ons.md) (亦即，使用者是否具有可使用應用程式或附加元件的授權)。 如果授權無效，請顯示一個 UI 來以應用程式內購買形式為使用者提供要銷售的應用程式或附加元件。
 
@@ -142,9 +142,9 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 ### <a name="implement-trial-functionality"></a>實作試用版功能
 
-使用 **Windows.Services.Store** 命名空間在您的應用程式試用版中排除或限制功能：
+使用 **Windows.Services.Store** 命名空間在您的 App 試用版中排除或限制功能：
 
-1. [設定您的應用程式為免費試用在合作夥伴中心](../publish/set-app-pricing-and-availability.md#free-trial)。
+1. [將您的應用程式設定為在合作夥伴中心的免費試用](../publish/set-app-pricing-and-availability.md#free-trial)。
 
 2. 在您的應用程式中撰寫程式碼以[擷取您應用程式或您應用程式所提供之附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)，然後[判斷與該應用程式關聯的授權是否為試用版授權](get-license-info-for-apps-and-add-ons.md)。
 
@@ -158,15 +158,15 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 如果您的應用程式使用 **Windows.Services.Store** 命名空間中的 API 來實作 App 內購買或試用版功能，您必須將應用程式發行至 Microsoft Store，並將應用程式下載至您的開發裝置以便使用它的授權來進行測試。 請依照此程序，測試您的程式碼：
 
-1. 如果您的應用程式尚未發行且可在市集中，請確定您的應用程式符合最低的[Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求，在合作夥伴中心的 [[送出您的應用程式](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，並確定您的應用程式通過認證程序。 測試時您可以[將應用程式設定為不可在市集中搜尋](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。 請注意，[套件正式](../publish/package-flights.md)的適當設定。 不正確地設定的套件正式可能會無法下載。
+1. 如果您的應用程式尚未發佈和提供存放區中，請確定您的應用程式符合最小[Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求[提交您的應用程式](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)在合作夥伴中心，並確定您的應用程式通過認證程序。 測試時您可以[將應用程式設定為不可在市集中搜尋](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。 請注意 適當的組態[封裝航班](../publish/package-flights.md)。 未正確設定的封裝可能航班無法下載。
 
 2. 接著，確定您已完成下列操作：
 
     * 在您的應用程式中撰寫使用 **Windows.Services.Store** 命名空間中的 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 及其他相關類型來實作 [應用程式內購買](#implement-iap)或[試用功能](#implement-trial)的程式碼。
-    * 如果您的應用程式提供客戶可購買，[建立附加元件提交您的應用程式，在合作夥伴中心](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)的附加元件。
-    * 如果您想要排除或限制某些功能，在您的應用程式，[設定您的應用程式為免費試用在合作夥伴中心中](../publish/set-app-pricing-and-availability.md#free-trial)的試用版。
+    * 如果您的應用程式提供的客戶可以購買，附加元件[在合作夥伴中心建立您的應用程式的附加元件送出](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
+    * 如果您想要排除或限制您的應用程式的試用版中的某些功能[將您的應用程式設定為在合作夥伴中心的免費試用](../publish/set-app-pricing-and-availability.md#free-trial)。
 
-3. 在您的專案於 Visual Studio 中開啟的情況下，按一下 [專案]**** 功能表、指向 [市集]****，然後按一下 [將應用程式與市集建立關聯]****。 完成精靈中的指示，將應用程式專案與應用程式中您想要用來測試您的合作夥伴中心帳戶產生關聯。
+3. 在您的專案於 Visual Studio 中開啟的情況下，按一下 [專案] 功能表、指向 [市集]，然後按一下 [將應用程式與市集建立關聯]。 完成精靈中的指示，您想要用於測試的合作夥伴中心帳戶中的應用程式相關聯的應用程式專案。
     > [!NOTE]
     > 如果您不會將專案與市集中的應用程式建立關聯，[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 方法就會將其傳回值的 **ExtendedError** 屬性設定為錯誤碼值 0x803F6107。 這個值表示市集沒有任何關於該應用程式的知識。
 4. 如果您尚未執行此動作，從市集中安裝您在上一個步驟指定的應用程式、執行一次應用程式，然後關閉此應用程式。 這可確保應用程式的有效授權已安裝於您的開發裝置上。
@@ -175,7 +175,7 @@ UWP 應用程式可以提供下列類型的附加元件。
     > [!NOTE]
     > 在您完成這些步驟之後，您可以繼續更新您的應用程式的程式碼，然後在您的開發電腦上偵錯更新的專案，而不用提交新的應用程式套件到市集。 您只需要下載您的應用程式的市集版到您的開發電腦，即可取得將用於測試的本機授權。 您只需要在完成測試後提交新的應用程式套件到市集，並讓您的客戶能夠使用您的應用程式中的應用程式內購買或試用相關功能。
 
-如果您的應用程式使用 **Windows.ApplicationModel.Store** 命名空間，您可在應用程式中使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 類別，以便在提交 App 至市集之前的測試期間模擬授權資訊。 如需詳細資訊，請參閱[開始使用 CurrentApp 和 CurrentAppSimulator 類別](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes)。  
+如果您的應用程式使用 **Windows.ApplicationModel.Store** 命名空間，您可在應用程式中使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 類別，以便在提交 App 至市集之前的測試期間模擬授權資訊。 如需詳細資訊，請參閱 <<c0> [ 快速入門的 CurrentApp 和 CurrentAppSimulator 類別](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes)。  
 
 > [!NOTE]
 > **Windows.Services.Store** 命名空間不提供您可在測試期間用來模擬授權資訊的類別。 如果您使用 **Windows.Services.Store** 命名空間來實作在應用程式中購買項目或試用版，您必須將應用程式發行至市集，並將應用程式下載至您的開發裝置以便使用它的授權來進行測試，如上所述。
@@ -225,7 +225,7 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 ### <a name="products-skus-and-availabilities"></a>產品、SKU 和可用性
 
-「市集」中的每個產品都至少有一個 *SKU*，而每個 SKU 都至少會有一個「可用性」**。 在合作夥伴中心，大部分的開發人員而言是非常抽象這些概念和大部分的開發人員永遠不會定義 Sku 或可用性為他們的應用程式或附加元件。 不過，由於 **Windows.Services.Store** 命名空間中適用於市集產品的物件模型包含了 SKU 和可用性，因此對這些概念有基本了解在某些情況下是很有幫助的。
+「市集」中的每個產品都至少有一個 *SKU*，而每個 SKU 都至少會有一個「可用性」。 這些概念會抽象化大部分的開發人員在合作夥伴中心，遠離和大部分的開發人員永遠不會定義 Sku 或他們的應用程式或附加元件的可用性。 不過，由於 **Windows.Services.Store** 命名空間中適用於市集產品的物件模型包含了 SKU 和可用性，因此對這些概念有基本了解在某些情況下是很有幫助的。
 
 | 物件 |  描述  |
 |---------|-------------------|
@@ -241,25 +241,25 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 「市集」中任何產品的「市集識別碼」都是 12 個字元的英數字串，例如 ```9NBLGGH4R315```。 有幾種不同方式可在市集中取得產品的市集識別碼：
 
-* 用於應用程式，您可以在合作夥伴中心[的應用程式身分識別頁面](../publish/view-app-identity-details.md)上取得 「 市集識別碼 」。
-* 附加元件，您可以取得附加的概觀頁面，在合作夥伴中心上的 「 市集識別碼 」。
+* 為應用程式，您可以取得存放區識別碼[應用程式識別碼 頁面上](../publish/view-app-identity-details.md)在合作夥伴中心。
+* 附加元件，您可以新增元件的概觀 頁面上在合作夥伴中心取得存放區識別碼。
 * 對於任何產品，您也可以使用代表產品之 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 物件的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.storeid) 屬性，以程式設計方式取得市集識別碼。
 
 對於具有 SKU 和可用性的產品，SKU 和可用性也有自己的市集識別碼，但是格式不同。
 
 | 物件 |  市集識別碼格式  |
 |---------|-------------------|
-| SKU |  SKU 的「市集識別碼」的格式為 ```<product Store ID>/xxxx```，其中 ```xxxx``` 是 4 個字元的英數字串，用來識別產品的 SKU。 例如，```9NBLGGH4R315/000N```。 這個識別碼是由 [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) 物件的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.storeid) 屬性所傳回，有時稱為 *「SKU 市集識別碼」*。 |
-| 可用性  |  可用性的「市集識別碼」的格式為 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是 4 個字元的英數字串，用來識別產品的 SKU，而 ```yyyyyyyyyyyy``` 是 12 個字元的英數字串，用來識別 SKU 的可用性。 例如，```9NBLGGH4R315/000N/4KW6QZD2VN6X```。 這個識別碼是由 [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) 物件的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid) 屬性所傳回，有時稱為 *「可用性市集識別碼」*。  |
+| SKU |  SKU 的「市集識別碼」的格式為 ```<product Store ID>/xxxx```，其中 ```xxxx``` 是 4 個字元的英數字串，用來識別產品的 SKU。 例如， ```9NBLGGH4R315/000N```。 這個識別碼是由 [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) 物件的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.storeid) 屬性所傳回，有時稱為「SKU 市集識別碼」。 |
+| 可用性  |  可用性的「市集識別碼」的格式為 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是 4 個字元的英數字串，用來識別產品的 SKU，而 ```yyyyyyyyyyyy``` 是 12 個字元的英數字串，用來識別 SKU 的可用性。 例如， ```9NBLGGH4R315/000N/4KW6QZD2VN6X```。 這個識別碼是由 [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) 物件的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid) 屬性所傳回，有時稱為「可用性市集識別碼」。  |
 
 <span id="product-ids" />
 
 ## <a name="how-to-use-product-ids-for-add-ons-in-your-code"></a>如何在程式碼中使用附加元件的產品識別碼
 
-如果您想要讓您的客戶，您的應用程式的內容中使用附加元件，您必須[輸入的唯一產品識別碼與](../publish/set-your-add-on-product-id.md#product-id)您的附加元件時在合作夥伴中心 [[建立您的附加元件提交](../publish/add-on-submissions.md)。 您可以在程式碼中使用此產品識別碼來參考附加元件，不過您可使用產品識別碼的具體情況取決於您在應用程式中用於在應用程式內購買的命名空間。
+如果您想要附加元件提供給您的客戶，您的應用程式的內容中，您必須[輸入唯一的產品識別碼](../publish/set-your-add-on-product-id.md#product-id)針對您的附加元件時您[建立您的附加元件提交](../publish/add-on-submissions.md)在合作夥伴中心。 您可以在程式碼中使用此產品識別碼來參考附加元件，不過您可使用產品識別碼的具體情況取決於您在應用程式中用於在應用程式內購買的命名空間。
 
 > [!NOTE]
-> 您在合作夥伴中心輸入附加元件的產品識別碼是不同於新增的[市集識別碼](#store-ids)。 合作夥伴中心會產生 「 市集識別碼 」。
+> 您輸入在合作夥伴中心內的附加元件產品識別碼都是與 新增元件的不同[存放區識別碼](#store-ids)。 存放區識別碼是由合作夥伴中心產生的。
 
 ### <a name="apps-that-use-the-windowsservicesstore-namespace"></a>使用 Windows.Services.Store 命名空間的應用程式
 
@@ -270,21 +270,21 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 ### <a name="apps-that-use-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的應用程式
 
-如果您的應用程式使用**Windows.ApplicationModel.Store**命名空間，您將需要使用您指派給合作夥伴中心中針對大部分操作附加元件的產品識別碼。 例如：
+如果您的應用程式會使用**Windows.ApplicationModel.Store**命名空間中，您必須使用您指派給大部分的作業在合作夥伴中心內的附加元件產品識別碼。 例如：
 
 * 使用產品識別碼找出代表附加元件的 [ProductListing](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting)或代表附加元件授權的 [ProductLicense](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense)。 產品識別碼由 [ProductListing.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.ProductId) 和 [ProductLicense.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense.ProductId) 屬性公開。
 
-* 當您使用 [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) 方法為使用者購買附加元件時，請指定產品識別碼。 如需詳細資訊，請參閱[啟用在應用程式內產品購買](enable-in-app-product-purchases.md)。
+* 當您使用 [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) 方法為使用者購買附加元件時，請指定產品識別碼。 如需詳細資訊，請參閱[啟用應用程式內產品購買](enable-in-app-product-purchases.md)。
 
 * 當您使用 [ReportConsumableFulfillmentAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync) 方法報告消費性附加元件完成時，請指定產品識別碼。 如需詳細資訊，請參閱[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)。
 
 ## <a name="related-topics"></a>相關主題
 
 * [取得應用程式和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
-* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
-* [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
-* [啟用應用程式的訂閱附加元件](enable-subscription-add-ons-for-your-app.md)
-* [實作應用程式的試用版](implement-a-trial-version-of-your-app.md)
-* [Microsoft Store 作業的錯誤碼](error-codes-for-store-operations.md)
-* [使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+* [取得應用程式和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
+* [啟用應用程式內購買的應用程式和附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [啟用可取用的附加元件購買的項目](enable-consumable-add-on-purchases.md)
+* [啟用您的應用程式的訂用帳戶附加元件](enable-subscription-add-ons-for-your-app.md)
+* [實作您的應用程式的試用版](implement-a-trial-version-of-your-app.md)
+* [存放區作業的錯誤碼](error-codes-for-store-operations.md)
+* [在應用程式內購買和使用 Windows.ApplicationModel.Store 命名空間的試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)

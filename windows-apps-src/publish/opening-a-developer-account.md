@@ -1,21 +1,21 @@
 ---
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
-title: 開啟開發人員帳戶
-description: 以下是如何在 Windows 開發人員帳戶註冊的 Microsoft Store 和其他的 Microsoft 計劃在合作夥伴中心的概觀。
+title: 開立開發人員帳戶
+description: 以下是如何註冊 Microsoft Store 及其他 Microsoft 程式在合作夥伴中心內的 Windows 開發人員帳戶的概觀。
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f28204edeec7a1f256eae803095edf587532117
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046092"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628173"
 ---
 # <a name="opening-a-developer-account"></a>開立開發人員帳戶
 
-以下是如何在[合作夥伴中心](https://partner.microsoft.com/dashboard)中的 Windows 開發人員帳戶註冊的概觀。
+以下是如何註冊中的 Windows 開發人員帳戶的概觀[合作夥伴中心](https://partner.microsoft.com/dashboard)。
 
 > [!NOTE]
 > 當您註冊開發人員帳戶時，我們會使用您在連絡資訊中提供的電子郵件地址，寄送與您帳戶相關的電子郵件通訊。 有時也會包含與程式相關的資訊性電子郵件。 如果您透過[退出宣告](https://go.microsoft.com/fwlink/p/?LinkId=533280)選擇不要收到這些資訊性電子郵件，請注意，我們仍然會寄送交易性電子郵件給您 (例如，讓您知道您的 app 已通過認證，或即將進行付款)。 這些電子郵件是您帳戶的必要部分，除非您關閉帳戶，否則將持續收到這些交易式電子郵件。
@@ -25,7 +25,7 @@ ms.locfileid: "9046092"
 > [!NOTE]
 > 在某些情況中，註冊開發人員帳戶時所看見的畫面與欄位可能會與下面概述稍微不同。 基本資訊與程序是相同的。
 
-1.  前往[註冊頁面](https://go.microsoft.com/fwlink/p/?LinkId=615100)，然後按一下 **\[註冊\]**。
+1.  前往[註冊頁面](https://go.microsoft.com/fwlink/p/?LinkId=615100)，然後按一下 [註冊]。
 2.  如果您尚未使用 Microsoft 帳戶登入，請立即登入，或建立新的 Microsoft 帳戶。 您在這裡使用的 Microsoft 帳戶將用來登入您的開發人員帳戶。
 3.  選取您居住或您的公司所在的[國家/地區](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)。 之後將無法變更此設定。
 4.  選取您的[開發人員帳戶類型](account-types-locations-and-fees.md) (個人或公司)。 您稍後將無法變更此設定，因此請務必選擇正確的帳戶類型。
@@ -43,38 +43,38 @@ ms.locfileid: "9046092"
 
 7.  請按 **\[下一步\]** 移到 **\[付款\]** 區段。
 
-8.  輸入付款資訊以支付一次性註冊費用。 如果您有涵蓋註冊費用的促銷碼，可以在此輸入。 否則，請提供您的信用卡資訊 (或支援之市場中的 PayPal)。 請注意，此購買無法使用預付卡。 當您完成時，請按一下 **\[下一步\]** 移到 **\[檢閱\]** 畫面。
+8.  輸入付款資訊以支付一次性註冊費用。 如果您有涵蓋註冊費用的促銷碼，可以在此輸入。 否則，請提供您的信用卡資訊 (或支援之市場中的 PayPal)。 請注意，此購買無法使用預付卡。 當您完成時，請按一下 [下一步] 移到 [檢閱] 畫面。
 
 9.  請檢閱您的帳戶資訊，並確認所有項目正確。 接著，請閱讀並接受[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的條款及條件。 選取方塊以表示您已閱讀並同意這些條款。
 
-10.  按一下 **\[完成\]** 來確認您的註冊。 將會處理您的付款，我們會將確認訊息傳送到您的電子郵件地址。
+10.  按一下 **\[完成\]** 來確認您的註冊。 將會處理您的款項，我們會傳送一則確認訊息到您的電子郵件地址。
 
-註冊之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 若是公司帳戶，這個程序需要較長的時間，因為我們必須確定您有權代替您的公司設定帳戶。 驗證可能需要花費數天至數個星期，且通常會電話連絡您的公司。 您可以在 **\[帳戶設定\]** 頁面查看您的驗證狀態。
+註冊之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 若是公司帳戶，這個程序需要較長的時間，因為我們必須確定您有權代替您的公司設定帳戶。 驗證可能需要花費數天至數個星期，且通常會電話連絡您的公司。 您可以在 [帳戶設定] 頁面查看您的驗證狀態。
 
 
 ## <a name="additional-guidelines-for-company-accounts"></a>公司帳戶的其他指導方針
 
 > [!IMPORTANT]
-> 若要允許多個使用者存取您的開發人員帳戶，我們建議使用 Azure Active Directory 來指派角色給個別的使用者 （而非共用的存取權的 Microsoft 帳戶）。 每一位使用者可以存取該開發人員帳戶來登入合作夥伴中心使用其個別的 Azure AD 認證。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
+> 若要允許多個使用者存取您的開發人員帳戶，我們建議使用 Azure Active Directory 將角色指派給個別使用者 （而不是共用的存取權的 Microsoft 帳戶）。 每個使用者可以再使用其個別登入合作夥伴中心存取開發人員帳戶的 Azure AD 認證。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
 
-如果您將需要有多個使用者存取公司帳戶來登入開啟它的 Microsoft 帳戶 （而不以個別使用者新增至帳戶)，遵循下列指導方針可能會很有幫助：
+如果您將需要存取多個的人，可能很有幫助公司帳戶簽署以開啟它的 Microsoft 帳戶 （而不個別使用者新增至帳戶)，下列指導方針：
 
--   建立使用還不屬於您或其他人，例如電子郵件地址的 Microsoft 帳戶MyCompany_PartnerCenter@outlook.com。 不要在您的公司網域使用電子郵件地址，尤其是當您的公司已使用 Azure AD。 (如上文所述，您可以新增額外的使用者從您公司的 Azure AD 稍後。)
+-   建立 Microsoft 帳戶電子郵件地址不已屬於您或另一個人，例如MyCompany_PartnerCenter@outlook.com。 特別是如果您的公司已經使用 Azure AD 在您的公司網域，請勿使用電子郵件地址。 (如先前所述，您可以新增額外的使用者從公司的 Azure AD 更新版本。)
 -   將可以存取此 Microsoft 帳戶的使用者人數限制在最少。
--   設定公司的電子郵件通訊群組清單，其中包含需要存取開發人員帳戶的人，並將這個電子郵件地址新增到[Microsoft 帳戶相關聯的安全性資訊](https://account.microsoft.com/security)。 這可讓的所有員工在收到安全密碼傳送給此別名清單上。 如果設定通訊清單不可行，您可以將個人的電子郵件地址新增到您的安全性資訊，但該電子郵件地址的擁有者會是唯一的人可存取和共用安全的程式碼系統提示時 （例如，當有新的安全性資訊新增到 t他帳戶，或存取從新的裝置時）。
--   使用 Microsoft 帳戶的安全性資訊新增公司電話號碼。 請嘗試使用不需要延伸模組分機而且主要小組成員的數字。
--   一般情況下，有開發人員使用[信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)登入貴公司的開發人員帳戶。 所有主要小組成員都必須擁有這些信任的裝置的存取權。 這樣可減少存取帳戶時必須傳送安全密碼的需求。 每週每個帳戶可產生的代碼數目有限。
+-   設定公司電子郵件通訊群組清單，其中包含每一位使用者需要存取開發人員帳戶，並新增此電子郵件地址[與 Microsoft 帳戶相關聯的安全性資訊](https://account.microsoft.com/security)。 這會允許所有員工上接收安全性驗證碼傳送到此別名清單。 如果設定通訊群組清單不可行，您可以將個人的電子郵件地址新增至您的安全性資訊，但該電子郵件地址的擁有者將會是唯一一個人可以存取及共用安全碼 （例如新的安全性資訊新增至 t 時出現提示時他的帳戶，或存取從新裝置時）。
+-   新增公司電話號碼的 Microsoft 帳戶安全性資訊。 嘗試使用不需要延伸模組，而且重要小組成員可以存取的數字。
+-   一般情況下，已使用的開發人員[受信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)貴公司的開發人員帳戶登入。 所有主要小組成員都必須擁有這些信任的裝置的存取權。 這樣可減少存取帳戶時必須傳送安全密碼的需求。 每週每個帳戶可產生的代碼數目有限。
 -   如果您需要允許從非信任的電腦存取帳戶，請將可存取的開發人員人數限制為最多 5 位。 在理想的情況下，這些開發人員應該從位於相同地理和網路位置的電腦存取帳戶。
--   經常檢閱位於 https://account.microsoft.com/security 的公司安全性資訊，確認資訊都是最新的。
+-   經常檢閱貴公司的安全性資訊在 https://account.microsoft.com/security以確定全都是最新資訊。
 
 
 ## <a name="microsoft-account-security"></a>Microsoft 帳戶安全性
 
 我們會使用您提供的安全性資訊，將您的 Microsoft 帳戶與多種形式的證明建立關聯，藉此提高帳戶的安全性等級。 這樣可以提高未經授權就存取您 Microsoft 帳戶 (以及開發人員帳戶) 的難度。 此外，如果您忘記密碼或有人嘗試存取您的帳戶，我們可以和您取得聯繫，確認擁有權，及/或對您的帳戶重新建立適當的控制。
 
-您的 Microsoft 帳戶必須至少有兩個電子郵件地址和/或電話號碼。 建議您新增的越多越好。 請記住，部分安全性資訊需要經過確認才能生效。 同時，務必經常檢閱您的安全性資訊，以確保是最新的資訊。 前往 https://account.microsoft.com/security，然後使用您的 Microsoft 帳戶登入，可以管理您的安全性資訊。 如需詳細資訊，請參閱[安全性資訊 & 安全密碼](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes)。
+您的 Microsoft 帳戶必須至少有兩個電子郵件地址和/或電話號碼。 建議您新增的越多越好。 請記住，部分安全性資訊需要經過確認才能生效。 同時，務必經常檢閱您的安全性資訊，以確保是最新的資訊。 您可以管理您的安全性資訊，方法是前往 https://account.microsoft.com/security和登入您的 Microsoft 帳戶。 請參閱[安全性資訊和安全性驗證碼](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes)如需詳細資訊。
 
-當您登入合作夥伴中心使用您的 Microsoft 帳戶時，系統可能會要求您驗證身分，藉由傳送安全性代碼，您必須提供來完成登入程序。 我們建議您指定為*信任的裝置*經常使用的電腦。 當您從信任的裝置登入時，通常不會提示您的程式碼中，雖然可能偶爾會提示您在特定情況下，或如果您還沒有登入該裝置上中很長的時間。 如需詳細資訊，請參閱[新增到您的 Microsoft 帳戶信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
+當您登入合作夥伴中心使用 Microsoft 帳戶時，系統可能會要求您確認您的身分識別，藉由傳送安全性驗證碼，您必須提供才能完成登入程序。 我們建議您指定您為經常使用的電腦*受信任的裝置*。 當您從受信任的裝置登入時，您通常不會提示您輸入程式碼中，雖然您可能偶爾會提示您在特定情況中，或如果您還沒有登入該裝置上很長的時間。 請參閱[受信任的裝置加入您的 Microsoft 帳戶](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)如需詳細資訊。
 
 
 ## <a name="closing-your-account"></a>關閉您的帳戶
@@ -83,7 +83,7 @@ ms.locfileid: "9046092"
 
 當您關閉您的帳戶時，請務必了解您已在 Microsoft Store 中發行的任何應用程式會發生什麼事：
 
--   您目前應用程式的客戶仍然可以繼續使用應用程式。 但是，他們將無法使用 App 內購買功能。
+-   您目前 app 的客戶仍然可以繼續使用 app。 但是，他們將無法使用 App 內購買功能。
 -   即使先前取得應用程式的客戶仍能使用應用程式，但您的應用程式清單將自市集中移除。 新客戶將無法取得您的應用程式。
 -   您的應用程式名稱將釋出，而其他開發人員可以使用該名稱。
 -   如果您先前的 app 銷售額有到期的餘額，則即使到期金額未達一般付款門檻，您也能要求將餘額支付給您。

@@ -1,17 +1,17 @@
 ---
 description: 提供標記元素的唯一識別碼。 對通用 Windows 平台 (UWP) XAML 來說，XAML 當地語系化處理程序和工具會使用這個唯一識別碼，像是使用來自 .resw 資源檔的資源。
-title: xUid 指示詞
+title: x:Uid 指示詞
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 03cf647fdb243fd18212ca894f7682e913378907
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943179"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609633"
 ---
 # <a name="xuid-directive"></a>x:Uid 指示詞
 
@@ -26,7 +26,7 @@ ms.locfileid: "8943179"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
 | stringID | 這是可以在應用程式中唯一識別 XAML 元素的字串，並且會成為資源檔中資源路徑的一部分。 請參閱＜備註＞。| 
 
@@ -38,7 +38,7 @@ ms.locfileid: "8943179"
 <Button x:Uid="GoButton" Content="Go"/>
 ```
 
-若要指定內容來取代顯示文字 **\[執行\]**，您必須指定一個來自資源檔的新資源。 您的資源檔應該包含一個名稱為 "GoButton.Content" 的資源項目。 在這種情況下，[**Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 會是 [**Button**](/uwp/api/windows.ui.xaml.controls.button) 類別所繼承的特定屬性。 您也可以為這個按鈕的其他屬性提供當地語系化值，例如您可以為 "GoButton.FlowDirection" 提供一個以資源為基礎的值。 如需如何一起使用 **x:Uid** 和資源檔的詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](../app-resources/localize-strings-ui-manifest.md)。
+若要指定內容來取代顯示文字 \[執行\]，您必須指定一個來自資源檔的新資源。 您的資源檔應該包含一個名稱為 "GoButton.Content" 的資源項目。 [**內容**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)在此情況下是特定的屬性，繼承自[  **按鈕**](/uwp/api/windows.ui.xaml.controls.button)類別。 您也可以為這個按鈕的其他屬性提供當地語系化值，例如您可以為 "GoButton.FlowDirection" 提供一個以資源為基礎的值。 如需如何一起使用 **x:Uid** 和資源檔的詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](../app-resources/localize-strings-ui-manifest.md)。
 
 要使用哪些字串做為 **x:Uid** 值才有效，實際上取決於哪些字串在資源檔和資源路徑中可以做為合法識別碼。
 
