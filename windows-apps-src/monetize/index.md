@@ -4,8 +4,14 @@ description: Windows SDK、Microsoft Advertising SDK、Microsoft Store Services 
 title: 營利、參與和 Microsoft Store 服務
 ms.date: 11/29/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, 營利, 參與, 促銷, Microsoft Store 服務'
+keywords: Windows 10, UWP, 營利, 參與, 促銷, Microsoft Store 服務
 ms.localizationpriority: medium
+ms.openlocfilehash: 747dbf7951a9db20bb8a1063757b88320fcc3f43
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582345"
 ---
 # <a name="monetization-engagement-and-store-services"></a>營利、參與和 Microsoft Store 服務
 

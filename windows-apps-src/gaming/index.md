@@ -4,8 +4,14 @@ description: 通用 Windows 平台 (UWP) 提供建立遊戲、發佈遊戲以及
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ms.date: 06/13/2017
 ms.topic: article
-keywords: 'windows 10, uwp, games, directx'
+keywords: windows 10, uwp, games, directx
 ms.localizationpriority: medium
+ms.openlocfilehash: 2dddead7dcc2eedbe4e32fa4bfd749bed60ba796
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582297"
 ---
 # <a name="game-programming"></a>遊戲程式設計
 

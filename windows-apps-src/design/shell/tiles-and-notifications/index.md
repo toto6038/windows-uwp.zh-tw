@@ -2,12 +2,18 @@
 Description: 了解如何使用磚、徽章、快顯通知以及通知提供您應用程式的進入點，並將使用者維持在最新狀態。
 title: 磚、徽章及通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
-label: 'Tiles, badges, and notifications'
+label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 8a87fe2bbff1768da43d6cb366b173077555270f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582340"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>UWP app的磚、徽章及通知
  

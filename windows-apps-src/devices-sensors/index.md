@@ -4,8 +4,14 @@ title: 裝置、感應器及電源
 description: 為提供使用者豐富的使用經驗，您可能會發現有必要將外部裝置或感應器與您的應用程式整合。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 06dd8355cd0afd3889c0db2c337c93b5fbedf0fa
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582321"
 ---
 # <a name="devices-sensors-and-power"></a>裝置、感應器及電源
 

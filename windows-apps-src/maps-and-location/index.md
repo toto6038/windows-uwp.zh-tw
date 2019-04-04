@@ -4,8 +4,14 @@ description: 本節說明如何在您的 app 中顯示地圖、使用地圖服�
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, 地圖, 位置, 地圖服務'
+keywords: Windows 10, UWP, 地圖, 位置, 地圖服務
 ms.localizationpriority: medium
+ms.openlocfilehash: 3482370719a658f303964204661f1fb5d69ae5b4
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582269"
 ---
 # <a name="maps-and-location-overview"></a>地圖和位置概觀
 

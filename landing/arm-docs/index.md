@@ -7,9 +7,14 @@ ms.author: misatran
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.topic: article
-keywords: 'Windows 10 on ARM, ARM, 建置 win32 ARM64 應用程式, 建置 ARM64 驅動程式'
+keywords: Windows 10 on ARM, ARM, 建置 win32 ARM64 應用程式, 建置 ARM64 驅動程式
+ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582328"
 ---
-
 # <a name="windows-10-on-arm"></a>Windows 10 on ARM
 Windows 10 會在由 ARM 處理器提供支援的電腦上執行。 此頁面為您提供深入了解此平台和開始開發應用程式的資訊。 我們也鼓勵您使用頁面底部的連結來提供意見反應。
 

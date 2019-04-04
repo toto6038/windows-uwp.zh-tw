@@ -6,6 +6,12 @@ title: Windows 文件
 description: 尋找開發人員、硬體和 IT 專業人員的文件，以協助您建置及維護您的 Windows 解決方案。
 ms.technology: hub
 localizationpriority: medium
+ms.openlocfilehash: 1926f38d4b7772488e086395d4e28545b1f85a81
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582381"
 ---
 <div id="main" class="v2">
   <div class="container">

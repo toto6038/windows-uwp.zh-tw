@@ -4,8 +4,14 @@ description: 本節提供有關建立通用 Windows 平台 (UWP) app 以擷取�
 title: 音訊、視訊和相機
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 6aecc5b9a43d6cb00b42b1535a196afd8a138af9
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582223"
 ---
 # <a name="audio-video-and-camera"></a>音訊、視訊和相機
 

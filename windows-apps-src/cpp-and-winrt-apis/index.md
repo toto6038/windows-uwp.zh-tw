@@ -3,8 +3,14 @@ description: C++/WinRT 是 Windows 執行階段 (WinRT) API 的全新完全標�
 title: C++/WinRT
 ms.date: 05/14/2018
 ms.topic: article
-keywords: 'Windows 10, uwp, 標準, c++, cpp, winrt, 投影'
+keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
+ms.openlocfilehash: 664fd22fc954403776e1becc31563a06d5fdd15b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582229"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 

@@ -4,8 +4,14 @@ title: 偵錯、測試及效能
 description: 使用 Microsoft Visual Studio 和其他工具來偵錯和測試您的應用程式，並準備進行 Microsoft Store 認證程序。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 757de9201d1cb7f753419024271f2be5c1aa67f4
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582309"
 ---
 # <a name="debugging-testing-and-performance"></a>偵錯、測試及效能
 

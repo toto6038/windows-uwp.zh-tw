@@ -4,8 +4,14 @@ description: 本節說明如何將您現有的應用程式移植到通用 Window
 title: 將應用程式移植到 Windows 10
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: eefebbd7087070f85ead09e562f154f43ed49e37
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582352"
 ---
 # <a name="porting-apps-to-windows10"></a>將應用程式移植到 Windows 10
 

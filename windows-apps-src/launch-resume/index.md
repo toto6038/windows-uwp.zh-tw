@@ -4,8 +4,14 @@ description: 本節描述通用 Windows 平台 (UWP) 應用程式在啟動、暫
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ms.date: 10/04/2017
 ms.topic: article
-keywords: 'windows 10, uwp, 背景工作, 應用程式服務, 連線的裝置, 遠端系統'
+keywords: windows 10, uwp, 背景工作, 應用程式服務, 連線的裝置, 遠端系統
 ms.localizationpriority: medium
+ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582397"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>啟動、繼續和背景工作
 

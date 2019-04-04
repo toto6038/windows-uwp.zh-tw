@@ -1,6 +1,6 @@
 ---
 description: 了解如何讓您的應用程式包容世界各地的使用者且無障礙。
-keywords: 'uwP 應用程式協助工具, 全球化, 設計包容性應用程式, 協助工具應用程式需求'
+keywords: uwP 應用程式協助工具, 全球化, 設計包容性應用程式, 協助工具應用程式需求
 title: UWP 應用程式的可用性 - Windows 應用程式開發
 layout: LandingPage
 template: detail.hbs
@@ -8,6 +8,12 @@ ms.date: 10/18/2017
 ms.topic: landing-page
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
+ms.openlocfilehash: f218df3b4118508049023218b64e6c7321fbbda9
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582277"
 ---
 # <a name="usability-for-uwp-apps"></a>UWP 應用程式的可用性
 

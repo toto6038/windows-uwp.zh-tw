@@ -1,7 +1,7 @@
 ---
 description: 針對手寫筆、Surface Dial 和其他輸入類型最佳化您的應用程式。
 title: 輸入與互動
-keywords: '應用程式輸入, 自訂 UWP 應用程式'
+keywords: 應用程式輸入, 自訂 UWP 應用程式
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
@@ -9,6 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
+ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582236"
 ---
 # <a name="input-and-interactions"></a>輸入與互動
 

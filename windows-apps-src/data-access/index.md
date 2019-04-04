@@ -4,8 +4,14 @@ title: 資料存取
 description: 本節討論在私人資料庫的裝置上儲存資料，以及在通用 Windows 平台 (UWP) app 中使用物件關聯對應。
 ms.date: 11/13/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, 資料, 資料庫, 關聯式, 資料, sqlite'
+keywords: Windows 10, UWP, 資料, 資料庫, 關聯式, 資料, sqlite
 ms.localizationpriority: medium
+ms.openlocfilehash: eb5adbdd3ae12d039d934e8d0cbe468ae5c1187c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582301"
 ---
 # <a name="data-access"></a>資料存取
 

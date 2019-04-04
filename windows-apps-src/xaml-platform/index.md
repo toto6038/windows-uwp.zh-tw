@@ -4,8 +4,14 @@ description: 本節所包含的主題說明通用 Windows 平台 (UWP) 應用程
 title: XAML 平台
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582361"
 ---
 # <a name="xaml-platform"></a>XAML 平台
 

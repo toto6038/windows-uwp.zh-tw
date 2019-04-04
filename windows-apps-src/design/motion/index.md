@@ -6,12 +6,18 @@ label: Motion
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582365"
 ---
 # <a name="motion-for-uwp-apps"></a>適用於 UWP app 的動作
 

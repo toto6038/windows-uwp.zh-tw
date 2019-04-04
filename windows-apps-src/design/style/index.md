@@ -1,12 +1,18 @@
 ---
 description: 透過 UWP 樣式指南，了解如何使用色彩、印刷樣式和圖示來定義您的 UWP 應用程式的特質。
-keywords: 'uwp 樣式指南, 設計指導方針, 印刷樣式, 動作, 音效, 動作, 應用程式開發'
+keywords: uwp 樣式指南, 設計指導方針, 印刷樣式, 動作, 音效, 動作, 應用程式開發
 title: 適用於 UWP 應用程式的樣式
 ms.date: 08/10/2017
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582962"
 ---
 # <a name="style-for-uwp-apps"></a>適用於 UWP 應用程式的樣式
 

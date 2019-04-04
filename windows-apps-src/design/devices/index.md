@@ -4,10 +4,16 @@ title: 通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
-keywords: '裝置, 輸入, 互動'
+keywords: 裝置, 輸入, 互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
+ms.openlocfilehash: 127c01321c0341e7125e8c6da955c789c4c65f2f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582405"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
 

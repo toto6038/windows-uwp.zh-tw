@@ -4,8 +4,14 @@ description: 開始使用通用 Windows 平台 (UWP) 與適用於 Windows 10 的
 title: 通用 Windows 平台 (UWP) 入門
 ms.date: 03/23/2018
 ms.topic: article
-keywords: '開始使用, windows 10, uwp, xaml, c#'
+keywords: 開始使用, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
+ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582955"
 ---
 # <a name="get-started-with-windows-10-apps"></a>開始使用 Windows 10 應用程式 
  

@@ -1,12 +1,18 @@
 ---
 description: 取得適用於 UWP 應用程式使用者介面配置和控制項設計的最新下載和工具。
-keywords: 'uwP 應用程式layout, UI, user interface designs, downloads, uwp tools, UWP 應用程式版面配置, 使用者介面設計, 下載, UWP 工具'
+keywords: uwP 應用程式layout, UI, user interface designs, downloads, uwp tools, UWP 應用程式版面配置, 使用者介面設計, 下載, UWP 工具
 title: 設計 UWP 應用程式的工具組和範例
 ms.date: 10/11/2018
 ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: cbe17d8e7093a15c66e482acd935974bc57074ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582860"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>設計 UWP 應用程式的工具組和範例
  

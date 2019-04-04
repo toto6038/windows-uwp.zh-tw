@@ -4,8 +4,14 @@ title: 資料繫結
 description: 資料繫結可讓您的 App UI 顯示資料，以及選擇性地與該資料保持同步。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: eb9283e336cb13d733098c139edc36d1216b2727
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582372"
 ---
 # <a name="data-binding"></a>資料繫結
 

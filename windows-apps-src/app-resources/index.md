@@ -5,8 +5,14 @@ label: Intro
 template: detail.hbs
 ms.date: 10/20/2017
 ms.topic: article
-keywords: 'Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞'
+keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
+ms.openlocfilehash: a5af904c099b92e399f169221cae3122f358be19
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582212"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>應用程式資源和資源管理系統
 

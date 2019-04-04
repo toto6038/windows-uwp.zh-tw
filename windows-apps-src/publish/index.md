@@ -4,9 +4,15 @@ Description: 了解如何將您的 Windows 應用程式發佈到 Microsoft Store
 title: 發行 Windows 應用程式
 ms.date: 10/31/2018
 ms.topic: article
-keywords: 'windows 10, uwp, 發佈, 銷售, 散發, store, 儀表板'
+keywords: windows 10, uwp, 發佈, 銷售, 散發, store, 儀表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
+ms.openlocfilehash: 3b9d78014b2416cae7d387261ec1732b1f8932ad
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582239"
 ---
 # <a name="publish-windows-apps-and-games"></a>發佈 Windows 應用程式與遊戲  
  
