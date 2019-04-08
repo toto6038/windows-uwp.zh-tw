@@ -128,7 +128,7 @@ API 透過幾個品質等級報告對於多重取樣的硬體支援。 例如，
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[Appendices](appendix.md)
+[附錄](appendix.md)
 
 [轉譯器 (RS) 階段](rasterizer-stage--rs-.md)
 

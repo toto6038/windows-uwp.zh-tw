@@ -292,7 +292,7 @@ items:
       href: ../debug-test-perf/loose-file-registration.md
     - name: 搶鮮版 (Beta) 測試
       href: ../debug-test-perf/beta-testing.md
-    - name: Windows 裝置入口網站
+    - name: Windows Device Portal
       href: ../debug-test-perf/device-portal.md
       items:
       - name: 傳統型裝置的 Device Portal

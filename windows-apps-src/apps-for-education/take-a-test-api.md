@@ -4,7 +4,7 @@ title: 進行測驗 JavaScript API。
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 08/08/2018
 ms.topic: article
-keywords: windows 10 uwp、 教育版
+keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
 ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -32,17 +32,17 @@ ms.locfileid: "57627593"
 
 | 方法 | 描述   |
 |--------|---------------|
-|[lockDown](#lockDown) | 鎖定裝置以進行考試。 |
+|[鎖定](#lockDown) | 鎖定裝置以進行考試。 |
 |[isEnvironmentSecure](#isEnvironmentSecure) | 判斷鎖定內容是否仍已套用到裝置。 |
-|[getDeviceInfo](#getDeviceInfo) | 取得有關考試應用程式執行所在平台的詳細資訊。 |
+|[GetDeviceInfo](#getDeviceInfo) | 取得有關考試應用程式執行所在平台的詳細資訊。 |
 |[examineProcessList](#examineProcessList)|取得執行中使用者及系統處理程序的清單。|
-|[close](#close) | 關閉瀏覽器並將裝置解除鎖定。 |
+|[關閉](#close) | 關閉瀏覽器並將裝置解除鎖定。 |
 |[getPermissiveMode](#getPermissiveMode)|檢查寬鬆模式是開啟還是關閉。|
 |[setPermissiveMode](#setPermissiveMode)|將寬鬆模式切換為開啟或關閉。|
 |[emptyClipBoard](#emptyClipBoard)|清除系統剪貼簿。|
 |[getMACAddress](#getMACAddress)|取得裝置 MAC 位址的清單。|
 |[getStartTime](#getStartTime) | 取得啟動考試應用程式的時間。 |
-|[getCapability](#getCapability) | 查詢功能已啟用還是已停用。 |
+|[GetCapability](#getCapability) | 查詢功能已啟用還是已停用。 |
 |[setCapability](#setCapability)|啟用或停用指定的功能。| 
 |[isRemoteSession](#isRemoteSession) | 檢查目前的工作階段是否已在遠端登入。 |
 |[isVMSession](#isVMSession) | 檢查目前的工作階段是否正在虛擬機器中執行。 |

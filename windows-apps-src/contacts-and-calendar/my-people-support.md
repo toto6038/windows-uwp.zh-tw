@@ -53,7 +53,7 @@ ms.locfileid: "57611533"
 
 ```
 
-**After**
+**之後**
 
 ```xml
 <Package
@@ -121,7 +121,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 </Applications>
 ```
 
-**After**
+**之後**
 
 ```Csharp
 <Applications>
@@ -249,10 +249,10 @@ async Task PinMultipleContacts(Contact[] contacts)
 **注意：** 
 
 ## <a name="see-also"></a>請參閱
-+ [我的人共用](my-people-sharing.md)
++ [朋友圈分享](my-people-sharing.md)
 + [我的使用者通知](my-people-notifications.md)
 + [Channel 9 影片新增至應用程式支援的我的人員](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [我的人員的整合範例](https://aka.ms/mypeoplebuild2017)
 + [請連絡卡範例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager 類別文件](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [應用程式連接到連絡人卡片上的動作](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [將應用程式連結到連絡人卡片上的動作](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

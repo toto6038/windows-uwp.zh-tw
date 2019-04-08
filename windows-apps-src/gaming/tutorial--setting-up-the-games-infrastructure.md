@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, 遊戲, 設定, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57608703"
@@ -38,7 +38,7 @@ Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對
 用於此教學課程的範本名為 **DirectX 11 App (通用 Windows)**。 
 
 在 Visual Studio 中建立 DirectX 11 遊戲專案的步驟：
-1.  選取**檔案...**&gt; **新**&gt; **專案...** 
+1.  選取**檔案...**&gt; **新**&gt; **專案...**
 2.  在左窗格中，選取**已安裝** &gt; **範本** &gt; **Visual c + +** &gt; **Windows 通用**
 3.  在中央窗格中，選取 **\[DirectX 11 應用程式 (通用 Windows)\]**。
 4.  提供遊戲專案名稱，然後按一下 [確定]。

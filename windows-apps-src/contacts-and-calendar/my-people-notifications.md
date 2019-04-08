@@ -51,15 +51,15 @@ experienceType=”shoulderTap”
 
 + **src**
     + 資產的 URI。 這可以是 HTTP/HTTPS Web URI、msappx URI，或本機檔案的路徑。
-+ **spritesheet-src**
++ **spritesheet src**
     + 資產的 URI。 這可以是 HTTP/HTTPS Web URI、msappx URI，或本機檔案的路徑。 僅 Spritesheet 動畫需要。
-+ **spritesheet-height**
++ **spritesheet 高度**
     + 畫面高度 (以像素為單位)。 僅 Spritesheet 動畫需要。
-+ **spritesheet-fps**
++ **spritesheet fps**
     + 每秒畫面數 (FPS)。 僅 Spritesheet 動畫需要。 僅支援值 1-120。
-+ **spritesheet-startingFrame**
++ **spritesheet startingFrame**
     + 動畫開始的畫面編號。 僅用於 Spritesheet 動畫，若未提供則預設為 0。
-+ **alt**
++ **Alt 鍵**
     + 用於螢幕助讀程式旁白的文字字串。
 
 > [!NOTE]

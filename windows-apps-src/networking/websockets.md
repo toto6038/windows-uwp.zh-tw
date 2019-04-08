@@ -806,7 +806,7 @@ protected:
 
 ## <a name="important-apis"></a>重要 API
 * [DataReader](/uwp/api/Windows.Storage.Streams.DataReader)
-* [DataWriter](/uwp/api/Windows.Storage.Streams.DataWriter)
+* [資料寫入元](/uwp/api/Windows.Storage.Streams.DataWriter)
 * [DataWriter.DetachStream](/uwp/api/windows.storage.streams.datawriter.DetachStream)
 * [MessageWebSocket](/uwp/api/windows.networking.sockets.messagewebsocket)
 * [MessageWebSocket.Closed](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.Closed)
@@ -834,8 +834,8 @@ protected:
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>相關主題
-* [WebSocket Protocol](https://tools.ietf.org/html/rfc6455)
-* [Sockets](sockets.md)
+* [WebSocket 通訊協定](https://tools.ietf.org/html/rfc6455)
+* [通訊端](sockets.md)
 
 ## <a name="samples"></a>範例
-* [WebSocket sample](https://go.microsoft.com/fwlink/p/?LinkId=620623)
+* [WebSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620623)

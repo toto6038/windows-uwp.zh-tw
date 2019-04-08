@@ -82,7 +82,7 @@ Microsoft Visual Studio 2013 時，可以包含可能的索引鍵值的 Microsof
 ## <a name="related-topics"></a>相關主題
 
 * [資源字典和 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
-* [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
+* [**資源字典**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [X:key 屬性](x-key-attribute.md)
 * [{ThemeResource} 標記延伸](themeresource-markup-extension.md)
 

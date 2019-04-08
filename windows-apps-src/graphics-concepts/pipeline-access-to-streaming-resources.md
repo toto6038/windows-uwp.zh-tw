@@ -70,7 +70,7 @@ ms.locfileid: "57616373"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[資料流的資源](streaming-resources.md)
+[串流資源](streaming-resources.md)
 
  
 

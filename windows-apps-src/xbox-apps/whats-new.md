@@ -42,12 +42,12 @@ Windows Device Portal (WDP) 現在包含主機設定的其他支援。
 在「應用程式」與「遊戲」之間切換 UWP 標題的類型，可讓您測試遊戲案例，而不發行至市集。 在開發人員首頁，選取**\[遊戲與應用程式\]** 窗格中的應用程式，按控制器上的 \[檢視\] 按鈕，選取**\[App details\]** (App 詳細資料)，然後變更至「應用程式」或「遊戲」的類型。
 
 ## <a name="see-also"></a>請參閱
-- [已知的問題](known-issues.md)
+- [已知問題](known-issues.md)
 - [在 Xbox One UWP](index.md)
  - 您現在可以擷取主機的螢幕擷取畫面。 如需製作螢幕擷取畫面的詳細資訊，請參閱 [/ext/screenshot](wdp-media-capture-api.md) 參考主題。
  - 此工具可以部署 App 的鬆散檔案組建。 如需鬆散檔案組建的詳細資訊，請參閱 [/api/app/packagemanager/register](wdp-loose-folder-register-api.md) 參考主題。
  - 可以從開發電腦的 [檔案總管] 存取主機上的開發人員檔案。 如需透過 [檔案總管] 存取檔案的詳細資訊，請參閱 [/ext/smb/developerfolder](wdp-smb-api.md) 參考主題。
 
 ## <a name="see-also"></a>請參閱
-- [已知的問題](known-issues.md)
+- [已知問題](known-issues.md)
 - [在 Xbox One UWP](index.md)

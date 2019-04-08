@@ -8,7 +8,7 @@ keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57635713"
@@ -19,7 +19,7 @@ ms.locfileid: "57635713"
 
 下列步驟顯示如何啟用 Xbox 裝置入口網站，讓您能夠遠端存取開發 Xbox。
 
-1. 開啟 \[開發人員首頁\]。 這預設應該會在您啟動開發 Xbox 時開啟，但您也可以從主畫面將它開啟。
+1. 開啟 [開發人員首頁]。 這預設應該會在您啟動開發 Xbox 時開啟，但您也可以從主畫面將它開啟。
 
     ![Device Portal 開發人員首頁](images/device-portal-xbox-1.png)
 

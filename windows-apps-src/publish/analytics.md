@@ -29,7 +29,7 @@ ms.locfileid: "57625443"
 
 -   [下載數報告](acquisitions-report.md)
 -   [附加元件下載數報告](add-on-acquisitions-report.md)
--   [使用方式報表](usage-report.md)
+-   [使用報告](usage-report.md)
 -   [健康情況報告](health-report.md)
 -   [評等的報表](ratings-report.md)
 -   [評論報告](reviews-report.md)

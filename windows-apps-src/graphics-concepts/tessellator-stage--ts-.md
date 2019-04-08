@@ -63,7 +63,7 @@ Direct3D 圖形管線在硬體實作鑲嵌，將工作從 CPU 卸載到 GPU。 �
 
     | 分割類型 | 範圍                       |
     |----------------------|-----------------------------|
-    | Fractional\_odd      | \[1...63\]                  |
+    | 小數\_奇數      | \[1...63\]                  |
     | 小數\_甚至     | TessFactor 範圍：\[2..64\] |
     | 整數              | TessFactor 範圍：\[1..64\] |
     | Pow2                 | TessFactor 範圍：\[1..64\] |
@@ -83,7 +83,7 @@ Direct3D 圖形管線在硬體實作鑲嵌，將工作從 CPU 卸載到 GPU。 �
 
 使用從輪廓著色器階段傳入的鑲嵌因數 (這指定網域被鑲嵌的細微程度) 和分割類型 (指定用於切割塊面的演算法)，曲面細分器每個塊面運作一次。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
 曲面細分器輸出 uv (和選擇性 w) 座標及表面拓撲至網域著色器階段。

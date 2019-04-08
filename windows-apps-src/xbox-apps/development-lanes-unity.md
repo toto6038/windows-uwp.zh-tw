@@ -59,5 +59,5 @@ Unity 現在已經建立了將用來部署 UWP 遊戲的新 Visual Studio 解決
 在一些常見的情況下，將新產生之 UWP 目錄的一部份加入版本控制，變成一項必要的動作。 例如，假如您正在新增新的相依性到 UWP 專案 (例如 Xbox Live SDK)。  我們會在[針對您的 UWP 專案進行版本控制](development-lanes-unity-versioning.md)中詳細討論此範例。
 
 ## <a name="see-also"></a>請參閱
-- [將現有的遊戲帶到 Xbox](development-lanes-landing.md)
+- [將現有的遊戲移到 Xbox](development-lanes-landing.md)
 - [在 Xbox One UWP](index.md)

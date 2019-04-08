@@ -414,7 +414,7 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;text hint-style="\*" /&gt; | 字型高度               | 字型寬度 |
+| &lt;文字提示 style ="\*"/&gt; | 字型高度               | 字型寬度 |
 | caption                        | 12 個有效像素 (epx) | 標準     |
 | body                           | 15 epx                    | 標準     |
 | base                           | 15 epx                    | Semibold    |
@@ -1390,7 +1390,7 @@ TileWide = new TileBinding()
 ```
 
 ## <a name="related-topics"></a>相關主題
-* [並排顯示內容的結構描述](../tiles-and-notifications/tile-schema.md)
+* [磚內容結構描述](../tiles-and-notifications/tile-schema.md)
 * [通知區域的圖格](sending-a-local-tile-notification.md)
 * [特殊的磚範本](special-tile-templates-catalog.md)
 * [UWP 社群工具組-通知](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

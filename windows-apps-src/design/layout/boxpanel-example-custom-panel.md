@@ -225,7 +225,7 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 * [**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 * [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
-* [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+* [**面板**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
 **概念**
 

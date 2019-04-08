@@ -188,7 +188,7 @@ App 通常只支援任何指定語言的單一種類。 假設 App 擁有僅一�
 
 ## <a name="related-topics"></a>相關主題
 
-* [資源管理系統如何比對，並選擇資源](how-rms-matches-and-chooses-resources.md)
+* [資源管理系統如何比對和選擇資源](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [了解使用者設定檔的語言和應用程式資訊清單的語言](../design/globalizing/manage-language-and-region.md)
 * [組合巨集 （大陸） 地區、 地理位置的子區域，與所選的經濟和其他群組](https://go.microsoft.com/fwlink/p/?LinkId=247929)

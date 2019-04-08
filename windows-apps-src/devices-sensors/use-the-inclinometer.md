@@ -19,9 +19,9 @@ ms.locfileid: "57623803"
 **重要的 Api**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+-   [**傾角**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
-**Sample**
+**範例**
 
 -   如需更完整的實作，請參閱[傾角計範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)。
 

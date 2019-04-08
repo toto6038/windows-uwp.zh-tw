@@ -45,8 +45,8 @@ ms.locfileid: "57618623"
 <td>
     <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可<a href="xamlcontrolsgallery:/item/ComboBox">開啟 應用程式，並查看作用中的下拉式方塊</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -173,13 +173,13 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 - SelectedItem = null
 - SelectedValue = null
-- SelectedIndex = -1
+- SelectedIndex =-1
 
 Sdk 17763 及更新版本、 SelectedItem 屬性的值 (因此 SelectedValue 和 SelectedIndex) 不需要在下拉式方塊的項目集合。 使用上述範例中，設定`colorComboBox.SelectedItem = "Pink"`導致：
 
 - SelectedItem = 粉紅
-- SelectedValue = Pink
-- SelectedIndex = -1
+- SelectedValue = 粉紅
+- SelectedIndex =-1
 
 ### <a name="text-search"></a>文字搜尋
 

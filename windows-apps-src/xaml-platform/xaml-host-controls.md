@@ -35,7 +35,7 @@ WPF 和 Windows Forms 應用程式可以使用選取的已包裝的 UWP 控制�
 
 | 控制項 | 支援的最低 OS | 描述 |
 |-----------------|-------------------------------|-------------|
-| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 版本 1803 | 您可以使用 Microsoft Edge 轉譯引擎來顯示 web 內容。 |
+| [Web 檢視](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 版本 1803 | 您可以使用 Microsoft Edge 轉譯引擎來顯示 web 內容。 |
 | [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供的版本**WebView**與更多的 OS 版本相容。 此控制項會使用 Microsoft Edge 轉譯引擎，以顯示在 Windows 10 在版本 1803年和更新版本上的 web 內容和 Internet Explorer 轉譯引擎，以顯示 web 內容在較早版本的 Windows 10，Windows 8.x 和 Windows 7。 |
 | [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 版本 1809年 （組建 17763） | 提供在 Windows Form 或 WPF 桌面應用程式中的 Windows Ink 為基礎的使用者互動的介面和相關的工具列。 |
 | [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 版本 1809年 （組建 17763） | 將內嵌資料流，並呈現媒體內容，例如視訊在 Windows Form 或 WPF 桌面應用程式中的檢視。 |
@@ -81,24 +81,24 @@ WPF 和 Windows Forms 應用程式可以使用選取的已包裝的 UWP 控制�
 
 ### <a name="whats-not-yet-supported"></a>不支援的功能
 
-:no_entry_sign:跨應用程式順暢地運作，裝載控制項的協助工具。
+: no_entry_sign:跨應用程式順暢地運作，裝載控制項的協助工具。
 
-:no_entry_sign:在您加入不含 Windows 應用程式套件的應用程式的控制項中的當地語系化的內容。
+: no_entry_sign:在您加入不含 Windows 應用程式套件的應用程式的控制項中的當地語系化的內容。
 
-:no_entry_sign:在 XAML 中建立不包含 Windows 應用程式套件的應用程式內的資產參考。
+: no_entry_sign:在 XAML 中建立不包含 Windows 應用程式套件的應用程式內的資產參考。
 
-:no_entry_sign:適當地回應變更 DPI 和小數位數的控制項。
+: no_entry_sign:適當地回應變更 DPI 和小數位數的控制項。
 
-:no_entry_sign:新增**WebView** （執行緒上，關閉執行緒，或從程序） 的自訂使用者控制項的控制項。
+: no_entry_sign:新增**WebView** （執行緒上，關閉執行緒，或從程序） 的自訂使用者控制項的控制項。
 
-:no_entry_sign:[顯示反白顯示](https://docs.microsoft.com/windows/uwp/design/style/reveal)Fluent 的效果。
+: no_entry_sign:[顯示反白顯示](https://docs.microsoft.com/windows/uwp/design/style/reveal)Fluent 的效果。
 
-:no_entry_sign:內嵌的手寫筆跡功能， @Places，和@People輸入的控制項。
+: no_entry_sign:內嵌的手寫筆跡功能， @Places，和@People輸入的控制項。
 
-:no_entry_sign:指派的快速鍵。
+: no_entry_sign:指派的快速鍵。
 
-:no_entry_sign:C + + 為基礎的協力廠商控制項。
+: no_entry_sign:C + + 為基礎的協力廠商控制項。
 
-:no_entry_sign:裝載的自訂使用者控制項。
+: no_entry_sign:裝載的自訂使用者控制項。
 
 我們會持續改善桌面 Fluent 的體驗，所以這份清單中的項目也可能會變更。  

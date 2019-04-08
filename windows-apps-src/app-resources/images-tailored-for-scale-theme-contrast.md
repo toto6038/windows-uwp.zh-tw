@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592023"
@@ -190,13 +190,13 @@ private void RefreshUIImages()
 ```
 
 ## <a name="important-apis"></a>重要 API
-* [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
+* [Resourcecontext)&lt;2}](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 * [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>相關主題
 * [量身打造您的語言、 規模和其他辨識符號的資源](tailor-resources-lang-scale-contrast.md)
-* [UI 和應用程式封裝資訊清單中的當地語系化字串](localize-strings-ui-manifest.md)
+* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](localize-strings-ui-manifest.md)
 * [儲存和擷取設定和其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
 * [磚與快顯通知支援的語言、 規模和高對比](tile-toast-language-scale-contrast.md)
 * [可當地語系化資訊清單的項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)

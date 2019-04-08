@@ -47,11 +47,11 @@ ms.locfileid: "57628043"
 
 -   當您使用利用 **async** 關鍵字的工作項目處理常式時，請注意在處理常式中所有的程式碼執行之前，執行緒集區工作項目可能會設為完整狀態。 處理常式中 **await** 關鍵字之後的程式碼可能會在工作項目已經設為完整狀態之後才會執行。
 
--   不要未重新起始預先配置的工作項目，就嘗試重複執行它。 [建立定期的工作項目](create-a-periodic-work-item.md)
+-   不要未重新起始預先配置的工作項目，就嘗試重複執行它。 [建立定期工作項目](create-a-periodic-work-item.md)
 
 ## <a name="related-topics"></a>相關主題
 
 
-* [建立定期的工作項目](create-a-periodic-work-item.md)
-* [送出至執行緒集區的工作項目](submit-a-work-item-to-the-thread-pool.md)
-* [若要提交的工作項目使用計時器](use-a-timer-to-submit-a-work-item.md)
+* [建立定期工作項目](create-a-periodic-work-item.md)
+* [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
+* [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)

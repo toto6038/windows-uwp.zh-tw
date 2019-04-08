@@ -169,7 +169,7 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
 如需 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) 值和 XAML 語法的詳細資訊，請參閱 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411)。
 
-### <a name="fillbehaviorstop"></a>**FillBehavior="Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior ="Stop"**
 
 根據預設，當動畫結束時，動畫會將屬性值留在最後的 **To** 或 **By** 修改的值，即使在它的持續時間已經超過也是一樣。 不過，如果您將 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 屬性的值設定為 [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306)，動畫值的值會還原為套用動畫之前的值，或是更精確的說，是相依性屬性系統所決定的目前有效值 (如需這個區別的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583))。
 

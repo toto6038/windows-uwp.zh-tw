@@ -58,10 +58,10 @@ UWP App 會自動縮放，以確保 UI 元素 (例如控制項與字型) 可在�
 
 下列在 [Channel 9](https://channel9.msdn.com/) 上的討論，是在 Xbox 上建置優秀 App 的絕佳資訊來源：
 
-- [Xbox 的建置很棒的通用 Windows 平台 (UWP) 應用程式](https://channel9.msdn.com/Events/Build/2016/B883)
-- [針對 Xbox One 和電視節目調整您的應用程式](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP 開發 1:建置彈性的 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [Web 應用程式更多瀏覽器：跨平台符合跨裝置](https://channel9.msdn.com/Events/Build/2016/B888)
+- [建置適用於 Xbox 的絕佳通用 Windows 平台 (UWP) 應用程式](https://channel9.msdn.com/Events/Build/2016/B883)
+- [針對 Xbox One 與電視調整您的應用程式](https://channel9.msdn.com/Events/Build/2016/T651-R1)
+- [UWP 開發 1：建置調適型 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [瀏覽器以外的 Web 應用程式：跨平台與跨裝置](https://channel9.msdn.com/Events/Build/2016/B888)
 
 ## <a name="app-dev-on-xbox"></a>在 Xbox 上的應用程式開發
 
@@ -74,4 +74,4 @@ UWP App 會自動縮放，以確保 UI 元素 (例如控制項與字型) 可在�
 
 - [在 Xbox One UWP](index.md)
 - [針對 Xbox 和電視進行設計](../design/devices/designing-for-tv.md)
-- [Xbox One 的漸進式 Web 應用程式](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [適用於 Xbox One 的漸進式 Web 應用程式](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)

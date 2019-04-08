@@ -48,8 +48,8 @@ GridView 會在可垂直捲動的列和欄中顯示項目集合。 資料會以�
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡開啟應用程式並查看 <a href="xamlcontrolsgallery:/item/ListView">ListView</a> 或 <a href="xamlcontrolsgallery:/item/GridView">GridView</a> 運作情形。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -527,4 +527,4 @@ ListView 和 GridView 控制項支援在項目本身內部，以及在本身和�
 
 - [清單](lists.md)
 - [項目容器和範本](item-containers-templates.md)
-- [將拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [拖放功能](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)

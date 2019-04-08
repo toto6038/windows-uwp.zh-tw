@@ -70,6 +70,6 @@ Promise 物件代表會在未來完成的值。 在 UWP 中，您會從 Factory 
 在許多情況下，呼叫非同步函式幾乎和呼叫傳統函式一樣容易。 其中的差異在於您是使用 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 或 [**done**](https://msdn.microsoft.com/library/windows/apps/Hh701079) 方法，為結果或錯誤指派處理常式以及啟動作業。
 
 ## <a name="related-topics"></a>相關主題
-* [呼叫非同步 ApiC#或 Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
+* [在 C# 或 Visual Basic 中呼叫非同步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [非同步程式設計使用 Async 和 Await （C# 和 Visual Basic）](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [棋功能案例範例： 非同步程式碼](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)

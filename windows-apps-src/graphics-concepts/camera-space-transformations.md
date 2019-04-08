@@ -37,7 +37,7 @@ Lₚ = Lₚ \* vMatrix
 
 相機空間光線方向的計算方式為，將光線來源方向乘以檢視矩陣、正規化以及取補數結果。
 
-L<sub>dir</sub> = -norm(L<sub>dir</sub> \* wvMatrix)
+L<sub>dir</sub> =-範數 (L<sub>dir</sub> \* wvMatrix)
 
 點光線及焦點光線位置的計算方式則如下所示︰
 

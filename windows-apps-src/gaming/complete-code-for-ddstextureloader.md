@@ -22,7 +22,7 @@ ms.locfileid: "57662443"
 
 這個主題包含這些小節：
 
--   [Technologies](#technologies)
+-   [技術](#technologies)
 -   [需求](#requirements)
 -   [檢視程式碼 （c + +）](#view-the-code-c)
 

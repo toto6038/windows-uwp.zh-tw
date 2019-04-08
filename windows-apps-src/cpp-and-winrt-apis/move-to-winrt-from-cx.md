@@ -7,7 +7,7 @@ keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、�
 ms.localizationpriority: medium
 ms.openlocfilehash: fe988bffbf024308fb5d43da7ed538e5330b58de
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57635073"
@@ -281,12 +281,12 @@ C++/CX 在 **平台** 命名空間中提供幾種資料類型。 這些類型不
 
 | C++/CX | C++/WinRT |
 | ---- | ---- |
-| **Platform::Agile\^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
-| **Platform::Array\^** | 請參閱[連接埠**platform:: array\^**](#port-platformarray) |
-| **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
-| **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
-| **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
-| **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
+| **Platform:: agile\^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
+| **Platform:: array\^** | 請參閱[連接埠**platform:: array\^**](#port-platformarray) |
+| **Platform:: exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
+| **Platform:: invalidargumentexception\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
+| **Platform:: object\^** | **winrt::Windows::Foundation::IInspectable** |
+| **Platform:: string\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
 ### <a name="port-platformagile-to-winrtagileref"></a>連接埠**platform:: agile\^** 到**winrt::agile_ref**
 **Platform:: agile\^** 型別在 C + + /CX 表示可以從任何執行緒存取的 Windows 執行階段類別。 C + + /cli WinRT 對等項目是[ **winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)。
@@ -398,7 +398,7 @@ void LogWrapLine(String str);
 void LogWrapLine(winrt::hstring const& str);
 ```
 
-#### <a name="tostring"></a>ToString()
+#### <a name="tostring"></a>Tostring （)
 
 C + + /CX 提供[object:: tostring](/cpp/cppcx/platform-object-class?view=vs-2017#tostring)方法。
 
@@ -415,18 +415,18 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 ```
 
 ## <a name="important-apis"></a>重要 API
-* [winrt::delegate struct template](/uwp/cpp-ref-for-winrt/delegate)
-* [winrt::hresult_error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [winrt::delegate 結構範本](/uwp/cpp-ref-for-winrt/delegate)
+* [winrt::hresult_error 結構](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 * [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
+* [winrt 命名空間](/uwp/cpp-ref-for-winrt/winrt)
 
 ## <a name="related-topics"></a>相關主題
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [撰寫事件在 C + + /cli WinRT](author-events.md)
 * [並行和非同步作業以 C + + /cli WinRT](concurrency.md)
-* [使用 Api，使用 C + + /cli WinRT](consume-apis.md)
+* [使用 C++/WinRT 取用 API](consume-apis.md)
 * [處理事件，藉由使用委派，在 C + + /cli WinRT](handle-events.md)
-* [Interop 之間 C + + /cli WinRT 和 C + + /CX](interop-winrt-cx.md)
+* [C++/WinRT 與 C++/CX 之間的互通性](interop-winrt-cx.md)
 * [Microsoft 介面定義語言 3.0 參考](/uwp/midl-3)
-* [移至 C + + /cli wrl WinRT](move-to-winrt-from-wrl.md)
+* 從 WRL 移到 [C++/WinRT](move-to-winrt-from-wrl.md)
 * [字串處理 C + /cli WinRT](strings.md)

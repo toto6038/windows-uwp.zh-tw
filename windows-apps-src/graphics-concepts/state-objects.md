@@ -62,7 +62,7 @@ ms.locfileid: "57596083"
 
 [圖形管線](graphics-pipeline.md)
 
-[Views](views.md)
+[檢視](views.md)
 
  
 

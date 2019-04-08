@@ -1,5 +1,5 @@
 ---
-description: 本主題說明各種類別的 c + + 中存在的值。 您其實有聽說的左值和右值，但有其他種類的太。
+description: 本主題說明 C++ 中存在的各類值。 您必定聽說左值和右值，但還有其他種類的值。
 title: 值類別和它們的參考
 ms.date: 08/11/2018
 ms.topic: article
@@ -153,7 +153,7 @@ void bar(A&& a) // a is a named rvalue reference; it's an lvalue.
 A&& get_by_rvalue_ref() { ... } // This unnamed rvalue reference is an xvalue.
 ```
 
-### <a name="im"></a>\!i\&\!m
+### <a name="im"></a>\!我\&\!m
 值，沒有身分識別，而且不是可移動的類型是一個的組合，我們還沒討論。 但是，我們可以忽略它，因為該類別不是很有用的做法，在 c + + 語言中。
 
 ## <a name="reference-collapsing-rules"></a>參考摺疊規則
@@ -189,4 +189,4 @@ template <typename _Ty> void bar(_Ty&& ty) { ... }
 - 轉送參考的原因 (例如`_Ty&&`) 存在時*不*最佳化，但才會傳遞給它們，並且將它上明確而有效率地。 您很可能會遇到轉送的參考，只有當您撰寫 （或仔細研究） 程式庫程式碼時，才&mdash;轉送上建構函式引數，例如 factory 函式。
 
 ## <a name="sources"></a>來源
-* \[Stroustrup 2013\] B.Stroustrup:C + + 程式設計語言，第四版。 Addison-Wesley. 2013.
+* \[Stroustrup 2013\] B.Stroustrup:C + + 程式設計語言，第四版。 Addison-Wesley. 2013。

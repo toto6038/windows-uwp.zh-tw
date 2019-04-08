@@ -234,4 +234,4 @@ MrmResourceIndexerHandle indexer;
 * [編製索引 (PRI) 參考的套件資源](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>相關主題
-* [套件資源編製索引 (PRI) Api 和自訂組建系統](pri-apis-custom-build-systems.md)
+* [套件資源索引 (PRI) API 和自訂建置系統](pri-apis-custom-build-systems.md)

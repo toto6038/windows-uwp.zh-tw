@@ -29,7 +29,7 @@ ms.locfileid: "57617653"
 1. 瀏覽至 **Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras**。
 2. 選取 **\[編輯\] > \[新增\] > \[字串值\]**，並指定其名稱 **2019 05 01**。
 3. 以滑鼠右鍵按一下機碼，然後按一下 **\[修改\]**。
-4. 在 **值的資料**欄位中，輸入**嗎？？\_？\_??????\_?** (您從這裡複製後再貼上，會變得容易些)。
+4. 在 **值的資料**欄位中，輸入**嗎？？\_嗎？\_??????\_?** (您從這裡複製後再貼上，會變得容易些)。
 
 如需深入了解這些登錄機碼的格式，請參閱[日本曆的紀元處理方式](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar)。
 
@@ -69,7 +69,7 @@ ms.locfileid: "57617653"
 
 ## <a name="test-your-application"></a>測試您的應用程式
 
-現在來測試應用程式處理新紀元的情況。 檢查會顯示日期的位置，例如時間戳記和日期選擇器。 請確定這個時代是正確的 1，2019 年 （平成、 平成） 之前和之後 （嗎？？).
+現在來測試應用程式處理新紀元的情況。 檢查會顯示日期的位置，例如時間戳記和日期選擇器。 請確定這個時代是正確的 1，2019 年 （平成、 平成） 之前和之後 （嗎？？）。
 
 ### <a name="gannen-"></a>*元年*
 
@@ -120,7 +120,7 @@ ms.locfileid: "57617653"
 
 ### <a name="win32"></a>Win32
 
-* [datetimeapi.h header](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
+* [datetimeapi.h 標頭](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
     * [GetDateFormatA 函式](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformata)
     * [GetDateFormatEx 函式](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatex)
     * [GetDateFormatW 函式](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatw)

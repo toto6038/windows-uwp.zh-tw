@@ -24,10 +24,10 @@ Windows 執行階段的 XAML 提供下列類型的語言層級支援。
 
 | XAML 基本類型 | 描述 |
 |-------|-------------|
-| **x:Boolean**  | 以 CLR 支援來說，會對應到 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)。 XAML 剖析 **x:Boolean** 的值時不區分大小寫。 請注意，"x:Bool" 不是可以接受的替代用法。 |
-| **x:String**   | 以 CLR 支援來說，會對應到 [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)。 字串的編碼會預設為周圍 XML 編碼。 |
-| **x:Double**   | 以 CLR 支援來說，會對應到 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 除了數值外，**x:Double** 的文字語法也允許語彙基元 "NaN"，這是配置行為的 "Auto" 如何儲存為資源值的方式。 處理語彙基元時會區分大小寫。 您可以使用科學記號標記法，例如 "1+E06" 代表 `1,000,000`。 |
-| **x:Int32**    | 以 CLR 支援來說，會對應到 [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)。 **x:Int32** 會視為已簽署，您可以包含減號 ("-") 符號以表示負數。 在 XAML 中，文字語法中沒有加號表示為正數的已簽署值。 |
+| **x： 布林值**  | 以 CLR 支援來說，會對應到 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)。 XAML 剖析 **x:Boolean** 的值時不區分大小寫。 請注意，"x:Bool" 不是可以接受的替代用法。 |
+| **x： 字串**   | 以 CLR 支援來說，會對應到 [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)。 字串的編碼會預設為周圍 XML 編碼。 |
+| **x： 雙精度浮點數**   | 以 CLR 支援來說，會對應到 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 除了數值外，**x:Double** 的文字語法也允許語彙基元 "NaN"，這是配置行為的 "Auto" 如何儲存為資源值的方式。 處理語彙基元時會區分大小寫。 您可以使用科學記號標記法，例如 "1+E06" 代表 `1,000,000`。 |
+| **x: Int32**    | 以 CLR 支援來說，會對應到 [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)。 **x:Int32** 會視為已簽署，您可以包含減號 ("-") 符號以表示負數。 在 XAML 中，文字語法中沒有加號表示為正數的已簽署值。 |
 
 通常您只有針對這些 XAML 語言基本類型，才會在 XAML 中定義使用 **x:** 前置詞的物件元素。 其他所有的 XAML 語言功能通常使用在屬性表單中，或是做為標記延伸。
 

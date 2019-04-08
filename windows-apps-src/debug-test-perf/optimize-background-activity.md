@@ -63,6 +63,6 @@ ms.locfileid: "57613223"
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立並註冊跨處理序背景工作](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
+* [建立及註冊跨處理序的背景工作](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [規劃效能](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 

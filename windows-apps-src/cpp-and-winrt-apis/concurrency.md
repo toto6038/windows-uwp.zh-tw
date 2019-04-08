@@ -20,8 +20,8 @@ ms.locfileid: "57611293"
 
 實作有可能超過 50 毫秒完成的任何 Windows 執行階段 API 做為非同步函式 (名稱以 "Async" 結尾)。 非同步函式的實作在另一個執行續上起始工作，並立即傳回代表非同步作業的物件。 非同步作業完成時，傳回包含工作所產生任何值的物件。 **Windows::Foundation** Windows 執行階段命名空間包含四種非同步作業物件。
 
-- [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction),
-- [**IAsyncActionWithProgress&lt;TProgress&gt;**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_),
+- [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)，
+- [**IAsyncActionWithProgress&lt;Tprogress>&gt;**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)，
 - [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation_tresult_)，及
 - [**IAsyncOperationWithProgress&lt;Iasyncoperationwithprogress<tresult，Tprogress>&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)。
 
@@ -740,7 +740,7 @@ int main()
 ## <a name="important-apis"></a>重要 API
 * [concurrency:: task 類別](/cpp/parallel/concrt/reference/task-class)
 * [IAsyncAction 介面](/uwp/api/windows.foundation.iasyncaction)
-* [IAsyncActionWithProgress&lt;TProgress&gt; interface](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
+* [IAsyncActionWithProgress&lt;Tprogress>&gt;介面](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
 * [IAsyncOperation&lt;TResult&gt;介面](/uwp/api/windows.foundation.iasyncoperation_tresult_)
 * [IAsyncOperationWithProgress&lt;Iasyncoperationwithprogress<tresult，Tprogress>&gt;介面](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
@@ -751,4 +751,4 @@ int main()
 
 ## <a name="related-topics"></a>相關主題
 * [處理事件，藉由使用委派，在 C + + /cli WinRT](handle-events.md)
-* [標準 c + + 資料類型和 C + + /cli WinRT](std-cpp-data-types.md)
+* [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)

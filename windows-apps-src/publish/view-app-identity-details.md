@@ -27,7 +27,7 @@ ms.locfileid: "57610813"
 
 -   **封裝/身分識別/名稱**
 -   **封裝/身分識別/發行者**
--   **Package/Properties/PublisherDisplayName**
+-   **封裝/屬性/PublisherDisplayName**
 
 如需詳細資訊，請參閱[套件資訊清單結構描述參考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 

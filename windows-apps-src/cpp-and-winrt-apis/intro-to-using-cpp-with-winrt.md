@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction, 
 ms.localizationpriority: medium
 ms.openlocfilehash: 883463f291864016ebc32f2d510936452c931366
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649693"
@@ -124,12 +124,12 @@ IDL 檔案中，在您的元件、其預設的介面，以及任何其實作的�
 
 ## <a name="important-apis"></a>重要 API
 * [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
+* [winrt 命名空間](/uwp/cpp-ref-for-winrt/winrt)
 
 ## <a name="related-topics"></a>相關主題
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [C + + /cli WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix)
-* [開始使用 C + + /cli WinRT](get-started.md)
-* [標準 c + + 資料類型和 C + + /cli WinRT](std-cpp-data-types.md)
+* [開始使用 C++/WinRT](get-started.md)
+* [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)
 * [字串處理 C + /cli WinRT](strings.md)
 * [Windows UWP Api](https://docs.microsoft.com/uwp/api/)

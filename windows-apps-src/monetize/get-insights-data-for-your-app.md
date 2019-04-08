@@ -49,7 +49,7 @@ ms.locfileid: "57662843"
 | applicationId | 字串 | [存放區識別碼](in-app-purchases-and-trials.md#store-ids)您要擷取深入解析資料的應用程式。 如果您未指定此參數，回應主體會包含您的帳戶已註冊的所有應用程式的深入解析資料。  |  否  |
 | startDate | date | 若要擷取的 insights 資料的日期範圍中開始日期。 預設為目前日期的前 30 天。 |  否  |
 | endDate | date | 若要擷取的 insights 資料的日期範圍中結束日期。 預設為目前的日期。 |  否  |
-| filter | 字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 例如，*篩選器 = 資料類型 eq '擷取'*。 <p/><p/>您可以指定下列的篩選欄位：<p/><ul><li><strong>acquisition</strong></li><li><strong>health</strong></li><li><strong>usage</strong></li></ul> | 否   |
+| filter | 字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 例如，*篩選器 = 資料類型 eq '擷取'*。 <p/><p/>您可以指定下列的篩選欄位：<p/><ul><li><strong>取得</strong></li><li><strong>健全狀況</strong></li><li><strong>使用方式</strong></li></ul> | 否   |
 
 ### <a name="request-example"></a>要求範例
 
@@ -78,7 +78,7 @@ Authorization: Bearer <your access token>
 |---------------------|--------|-------------------------------------------|
 | applicationId       | 字串 | 應用程式，您要為其擷取深入解析資料存放區識別碼。     |
 | insightDate                | 字串 | 日期，我們所識別的特定度量的變更。 此日期表示我們偵測到大幅增加一週結尾，或減少相較於之前一週的計量。 |
-| dataType     | 字串 | 其中一個指定描述此深入解析的一般分析區域的下列字串：<p/><ul><li><strong>acquisition</strong></li><li><strong>health</strong></li><li><strong>usage</strong></li></ul>   |
+| 資料類型     | 字串 | 其中一個指定描述此深入解析的一般分析區域的下列字串：<p/><ul><li><strong>取得</strong></li><li><strong>健全狀況</strong></li><li><strong>使用方式</strong></li></ul>   |
 | insightDetail          | 陣列 | 一或多個[InsightDetail 值](#insightdetail-values)，代表目前的深入解析的詳細資料。    |
 
 
@@ -86,7 +86,7 @@ Authorization: Bearer <your access token>
 
 | 值               | 類型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | 字串 | 其中一個下列的值，指出目前維度的目前的深入解析所述，計量為基礎**dataType**值。<ul><li>針對**健全狀況**，這個值一律為**叫用次數**。</li><li>針對**併購**，這個值一律為**分類的售出數量**。</li><li>針對**使用量**，這個值可以是下列字串之一：<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
+| FactName           | 字串 | 其中一個下列的值，指出目前維度的目前的深入解析所述，計量為基礎**dataType**值。<ul><li>針對**健全狀況**，這個值一律為**叫用次數**。</li><li>針對**併購**，這個值一律為**分類的售出數量**。</li><li>針對**使用量**，這個值可以是下列字串之一：<ul><li><strong>dailyActiveUsers</strong></li><li><strong>engagementDurationMinutes</strong></li><li><strong>dailyActiveDevices</strong></li><li><strong>dailyNewUsers</strong></li><li><strong>dailySessionCount</strong></li></ul></ul>  |
 | SubDimensions         | 陣列 |  描述單一計量付費的一或多個物件。   |
 | PercentChange            | 字串 |  百分比度量變更跨整個客戶群。  |
 | DimensionName           | 字串 |  目前維度中所述的計量名稱。 範例包括**EventType**，**市場**， **DeviceType**， **PackageVersion**， **AcquisitionType**，**年齡群組**並**性別**。   |

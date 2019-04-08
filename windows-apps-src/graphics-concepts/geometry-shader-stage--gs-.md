@@ -59,7 +59,7 @@ ms.locfileid: "57623373"
 
  
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
 幾何著色器 (GS) 階段能夠輸出多個頂點，以形成選取的單一拓撲。 可用的幾何著色器輸出拓撲包括 **tristrip**、**linestrip** 和 **pointlist**。 發出的基本類型數目可在幾何著色器的任何叫用內自由改變，雖然可發出的頂點最大數目必須以靜態方式宣告。 從幾何著色器叫用發出的連環長度可以是任意的，而新的連環可以透過 [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL 功能建立。

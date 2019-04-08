@@ -473,7 +473,7 @@ XAML [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br2087
  
 ## <a name="related-topics"></a>相關主題
 
-* [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794)
+* [資源字典](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/mt185595)
 * [StaticResource 標記延伸](../../xaml-platform/staticresource-markup-extension.md)
 * [ThemeResource 標記延伸](../../xaml-platform/themeresource-markup-extension.md)

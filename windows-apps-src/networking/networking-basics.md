@@ -31,9 +31,9 @@ ms.locfileid: "57651653"
 
 | 功能 | 描述 |
 |------------|-------------|
-| **enterpriseAuthentication** | 允許 app 連線至需要網域認證的網路資源。 此功能需要網域系統管理員啟用所有應用程式的功能。 例如，從私人內部網路上的 SharePoint 伺服器擷取資料的應用程式。 <br/> 透過此功能，您的認證可用來在需要認證的網路上存取網路資源。 具有此功能的應用程式可在網路上模擬您。 <br/> 若要允許 app 透過驗證 Proxy 來存取網際網路，此功能並非必要。 |
-| **proximity** | 與非常靠近電腦的裝置進行近距離鄰近性通訊時所需。 近距離鄰近性可用來傳送或與鄰近裝置上的應用程式連線。 <br/> 這個功能可讓 app 存取網路以連線至非常靠近的裝置，只要使用者同意傳送邀請或是接受邀請即可。 |
-| **sharedUserCertificates** | 這個功能可讓 app 存取軟體和硬體憑證，例如智慧卡憑證。 在執行階段叫用這個功能時，使用者必須採取行動，例如插入卡片或是選取憑證。 <br/> 透過這個功能，您的軟體與硬體憑證或智慧卡可供應用程式識別身分。 您的員工、銀行或政府服務單位可使用這個功能來識別身分。 |
+| **EnterpriseAuthentication** | 允許 app 連線至需要網域認證的網路資源。 此功能需要網域系統管理員啟用所有應用程式的功能。 例如，從私人內部網路上的 SharePoint 伺服器擷取資料的應用程式。 <br/> 透過此功能，您的認證可用來在需要認證的網路上存取網路資源。 具有此功能的應用程式可在網路上模擬您。 <br/> 若要允許 app 透過驗證 Proxy 來存取網際網路，此功能並非必要。 |
+| **鄰近性** | 與非常靠近電腦的裝置進行近距離鄰近性通訊時所需。 近距離鄰近性可用來傳送或與鄰近裝置上的應用程式連線。 <br/> 這個功能可讓 app 存取網路以連線至非常靠近的裝置，只要使用者同意傳送邀請或是接受邀請即可。 |
+| **SharedUserCertificates** | 這個功能可讓 app 存取軟體和硬體憑證，例如智慧卡憑證。 在執行階段叫用這個功能時，使用者必須採取行動，例如插入卡片或是選取憑證。 <br/> 透過這個功能，您的軟體與硬體憑證或智慧卡可供應用程式識別身分。 您的員工、銀行或政府服務單位可使用這個功能來識別身分。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>App 不在前景時進行通訊
 [使用背景工作支援應用程式](https://msdn.microsoft.com/library/windows/apps/mt299103)包含當 app 不在前景時，使用背景工作執行工作的一般資訊。 具體而言，如果 app 不是目前的前景 app，您的程式碼必須執行特殊步驟，才可在資料透過網路送達時接收通知。 控制通道的觸發程序用於此目的，在 Windows 8 和 Windows 10 中仍然支援它們。 如需使用控制通道觸發程序的完整資訊，請參閱 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032)。 Windows 10 的新技術提供更佳的功能使用，請在某些情況下，例如啟用推播的資料流通訊端的額外負荷較低： 通訊端訊息代理程式和通訊端活動觸發程序。
@@ -478,7 +478,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ### <a name="providing-authentication-credentials-to-a-web-service"></a>提供驗證認證到 Web 服務
 能讓 app 與安全 Web 服務互動的網路 API，每一個都提供自己的方法來初始化用戶端，或是使用伺服器和 Proxy 驗證認證來設定要求標頭。 使用指出使用者名稱、密碼以及使用這些認證之資源的 [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) 物件設定每個方法。 下表提供這些 API 的對應：
 
-| **WebSockets** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
+| **WebSocket** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
 |-------------------------|----------------------------------------------------------------------------------------------------------|
 |  | [**MessageWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226847) |
 |  | [**StreamWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226928) |
@@ -487,7 +487,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 |  | [**BackgroundDownloader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
 |  | [**BackgroundUploader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
 |  | [**BackgroundUploader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701178) |
-| **Syndication** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
+| **新聞訂閱** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
 |  | [**SyndicationClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) |
 |  | [**SyndicationClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) |
 | **AtomPub** | [**AtomPubClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702262) |

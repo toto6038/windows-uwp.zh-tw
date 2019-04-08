@@ -79,8 +79,8 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/category/Text">開啟應用程式並查看文字控制項的運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -107,7 +107,7 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 -   [RichEditBox](rich-edit-box.md)
 -   [RichTextBlock](rich-text-block.md)
 -   [TextBlock](text-block.md)
--   [TextBox](text-box.md)
+-   [文字方塊](text-box.md)
 
 ## <a name="font-and-style-guidelines"></a>字型和樣式指導方針
 如需字型指導方針，請參閱以下文章：

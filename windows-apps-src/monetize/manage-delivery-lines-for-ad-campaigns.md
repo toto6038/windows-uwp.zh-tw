@@ -139,8 +139,8 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  播送行的識別碼。     |   是    |      |  否      |    
 |  name   |  字串   |   播送行的名稱。    |    否   |      |  POST     |     
-|  configuredStatus   |  字串   |  下列其中一個值，指定開發人員指定的播送行狀態︰ <ul><li>**使用中**</li><li>**Inactive**</li></ul>     |  否     |      |   POST    |       
-|  effectiveStatus   |  字串   |   下列其中一個值，根據系統驗證指定有效的播送行狀態︰ <ul><li>**使用中**</li><li>**Inactive**</li><li>**處理**</li><li>**失敗**</li></ul>    |    是   |      |  否      |      
+|  configuredStatus   |  字串   |  下列其中一個值，指定開發人員指定的播送行狀態︰ <ul><li>**使用中**</li><li>**非使用中**</li></ul>     |  否     |      |   POST    |       
+|  effectiveStatus   |  字串   |   下列其中一個值，根據系統驗證指定有效的播送行狀態︰ <ul><li>**使用中**</li><li>**非使用中**</li><li>**處理**</li><li>**失敗**</li></ul>    |    是   |      |  否      |      
 |  effectiveStatusReasons   |  陣列   |  下列一或多個值，指定有效播送行狀態的原因如下︰ <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  是     |     |    否    |           
 |  startDatetime   |  字串   |  播送行的開始日期和時間，格式為 ISO 8601。 如果時間在過去，則無法變更這個值。     |    否   |      |    POST, PUT     |
 |  endDatetime   |  字串   |  播送行的結束日期和時間，格式為 ISO 8601。 如果時間在過去，則無法變更這個值。     |   否    |      |  POST, PUT     |

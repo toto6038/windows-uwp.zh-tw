@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610183"
@@ -207,7 +207,7 @@ ms.locfileid: "57610183"
 <ul>
 <li>轉碼器：AAC-LC</li>
 <li>通道：立體聲或環繞音效</li>
-<li>取樣速率：48 KHz</li>
+<li>取樣速率：48 kHz</li>
 <li>音訊位元速率：384 KB/秒的立體聲、 512 KB/s 的環繞音效</li>
 </ul>
 </td>

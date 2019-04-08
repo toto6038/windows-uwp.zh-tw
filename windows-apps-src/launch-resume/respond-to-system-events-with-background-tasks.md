@@ -23,7 +23,7 @@ ms.locfileid: "57634853"
 
 - [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 - [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
-- [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838)
+- [**Networkstatechange**](https://msdn.microsoft.com/library/windows/apps/br224838)
 
 了解如何建立回應 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的背景工作。
 
@@ -96,14 +96,14 @@ App 可以登錄會回應 [**TimeTrigger**](https://msdn.microsoft.com/library/w
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立並註冊跨處理序背景工作](create-and-register-a-background-task.md)
-* [建立並註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)
-* [宣告應用程式資訊清單中的背景工作](declare-background-tasks-in-the-application-manifest.md)
+* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
+* [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
+* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [監視背景工作的進度和完成](monitor-background-task-progress-and-completion.md)
+* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 * [註冊背景工作](register-a-background-task.md)
-* [設定用於執行背景工作的條件](set-conditions-for-running-a-background-task.md)
-* [更新即時磚的背景工作](update-a-live-tile-from-a-background-task.md)
+* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
 ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57652323"
@@ -182,11 +182,11 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Direct3D 12 圖形範例</td>
-        <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX-Graphics-Samples</a></td>
+        <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX 圖形範例</a></td>
     </tr>
     <tr>
         <td>Direct3D 11 圖形範例</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx sdk 範例</a></td>
     </tr>
     <tr>
         <td>Direct3D 11 第一人稱遊戲範例</td>
@@ -206,11 +206,11 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Xbox Advanced Technology Group 公開範例</td>
-        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox-ATG-Samples</a></td>
+        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox ATG 範例</a></td>
     </tr>
     <tr>
         <td>Xbox Live 範例</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox live 範例</a></td>
     </tr>
     <tr>
         <td>Xbox One 遊戲範例 (XGD)</td>
@@ -874,7 +874,7 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL、WebVR
     </colgroup>
     <tr>
         <td>將 Windows 8 應用程式移植到通用 Windows 平台 app</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">從 Windows 執行階段移至 UWP 8.x</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">從 Windows Runtime 8.x 移至 UWP</a></td>
     </tr>
     <tr>
         <td>將 Windows 8 應用程式移植到通用 Windows 平台 app (影片)</td>
@@ -910,7 +910,7 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL、WebVR
     </tr>
     <tr>
         <td>使用 ANGLE 將 OpenGL ES 轉譯成 Direct3D 11</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">角度</a></td>
     </tr>
     <tr>
         <td>UWP 中的傳統型 Windows API 對應項</td>
@@ -1098,7 +1098,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     </colgroup>
     <tr>
         <td>色彩指南</td>
-        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">最佳做法：Color</a></td>
+        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">最佳做法：色彩</a></td>
     </tr>
 </table>
  
@@ -1130,7 +1130,7 @@ UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 U
     </colgroup>
     <tr>
         <td>UI 對應指南</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">最佳做法：UI Map</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">最佳做法：UI 對應</a></td>
     </tr>
 </table>
 
@@ -1343,7 +1343,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
     </tr>
     <tr>
         <td>適用於以互動方式開發動態磚範本的 Windows 10 應用程式</td>
-        <td><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">通知視覺化檢視</a></td>
+        <td><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">通知視覺化工具</a></td>
     </tr>
     <tr>
         <td>適用於 Visual Studio 的 UWP Tile Generator 擴充功能</td>
@@ -1563,7 +1563,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </tr>
     <tr>
         <td>建立選擇性套件，例如 DLC 遊戲內容</td>
-        <td><a href="../packaging/optional-packages.md">選擇性的套件和撰寫相關的設定</a></td>
+        <td><a href="../packaging/optional-packages.md">選用套件及相關集合的製作</a></td>
     </tr>
     <tr>
         <td>封裝您的 UWP 遊戲</td>

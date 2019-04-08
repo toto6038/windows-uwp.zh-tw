@@ -52,7 +52,7 @@ ms.locfileid: "57658613"
 | _bindingProperties_ |
 | _propName_=_值_\[， _propName_=_值_\]* | 使用名稱/值對語法指定的一或多個繫結屬性。 |
 | _propName_ | 要在繫結物件上設定之屬性的字串名稱。 例如，"Converter"。 |
-| _value_ | 設定屬性使用的值。 引數的語法取決於目前設定的屬性。 以下為 _propName_=_value_ 用法的範例，其中的 value 本身是標記延伸：`Converter={StaticResource myConverterClass}`。 如需詳細資訊，請參閱以下的[您可以使用 {x:Bind} 設定的屬性](#properties-that-you-can-set-with-xbind)一節。 |
+| _值_ | 設定屬性使用的值。 引數的語法取決於目前設定的屬性。 以下為 _propName_=_value_ 用法的範例，其中的 value 本身是標記延伸：`Converter={StaticResource myConverterClass}`。 如需詳細資訊，請參閱以下的[您可以使用 {x:Bind} 設定的屬性](#properties-that-you-can-set-with-xbind)一節。 |
 
 ## <a name="examples"></a>範例
 
@@ -136,13 +136,13 @@ _注意：C#-樣式轉型的語法比附加的屬性語法，更有彈性，而�
 | 屬性 | 描述 |
 |----------|-------------|
 | **路徑** | 請參閱先前的[屬性路徑](#property-path)一節。 |
-| **Converter** | 指定繫結引擎呼叫的轉換器物件。 轉換器可以在 XAML 中設定，但若您參考已在 [{StaticResource} 標記延伸](staticresource-markup-extension.md)中指派的物件執行個體，請在資源字典中參考該物件。 |
+| **轉換子** | 指定繫結引擎呼叫的轉換器物件。 轉換器可以在 XAML 中設定，但若您參考已在 [{StaticResource} 標記延伸](staticresource-markup-extension.md)中指派的物件執行個體，請在資源字典中參考該物件。 |
 | **ConverterLanguage** | 指定轉換器要使用的文化特性 (如果已設定**ConverterLanguage**您也應該設定**轉換器**。)文化特性設定為標準式識別項。 如需詳細資訊，請參閱 [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)。 |
-| **ConverterParameter** | 指定可用於轉換器邏輯的轉換器參數 (如果已設定**ConverterParameter**您也應該設定**轉換器**。)大部分的轉換器使用簡單的邏輯，從傳遞的值轉換時，取得所需的所有資訊，而且不需要**ConverterParameter**值。 **ConverterParameter** 參數適用於中度進階轉換器實作，其中具備一個以上使用 **ConverterParameter** 傳遞內容的邏輯。 您可以撰寫一個使用字串以外的值的轉換器，但這並不常見，請參閱 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中的＜備註＞，以了解詳細資訊。 |
-| **FallbackValue** | 指定當無法解析來源或路徑時，所要顯示的值。 |
+| **converterParameter** | 指定可用於轉換器邏輯的轉換器參數 (如果已設定**ConverterParameter**您也應該設定**轉換器**。)大部分的轉換器使用簡單的邏輯，從傳遞的值轉換時，取得所需的所有資訊，而且不需要**ConverterParameter**值。 **ConverterParameter** 參數適用於中度進階轉換器實作，其中具備一個以上使用 **ConverterParameter** 傳遞內容的邏輯。 您可以撰寫一個使用字串以外的值的轉換器，但這並不常見，請參閱 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中的＜備註＞，以了解詳細資訊。 |
+| **fallbackValue** | 指定當無法解析來源或路徑時，所要顯示的值。 |
 | **Mode** | 指定的繫結模式，為以下字串之一：「 OneTime 」、 「 單向 」 或 「 TwoWay 」。 預設值是 "OneTime"。 請注意，此與 **{Binding}** 的預設值 (通常為 "OneWay") 不同。 |
 | **TargetNullValue** | 指定當來源值解析結果明確為 **null** 時，所要顯示的值。 |
-| **BindBack** | 指定要針對雙向繫結的相反方向使用的函式。 |
+| **連回** | 指定要針對雙向繫結的相反方向使用的函式。 |
 | **UpdateSourceTrigger** | 指定何時將變更從控制項推送回 TwoWay 繫結中的模型。 TextBox.Text 以外的所有屬性的預設值是 PropertyChanged;TextBox.Text 是 LostFocus。|
 
 > [!NOTE]

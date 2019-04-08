@@ -122,7 +122,7 @@ Authorization: Bearer <your access token>
 |  width   |  整數   |  廣告素材的寬度。     |  否    |     |    是   |       
 |  landingUrl   |  字串   |  如果您使用行銷活動追蹤服務例如 Kochava、AppsFlyer 或 Tune，來衡量 App 安裝分析，當您呼叫 POST 方法時，在這個欄位中指派追蹤 URL（如果指定，這個值必須是有效 URI）。 如果您未使用行銷活動追蹤服務，當您呼叫 POST 方法時略過此值（在這個情況下，就會自動建立此 URL）。   |  否    |     |   是    |       
 |  format   |  字串   |   廣告格式。 目前唯一支援的值為 **Banner**。    |   否    |  橫幅   |  否     |       
-|  imageAttributes   | [ImageAttributes](#image-attributes)    |   提供廣告素材的屬性。     |   否    |      |   是    |       
+|  imageAttributes   | [imageAttributes](#image-attributes)    |   提供廣告素材的屬性。     |   否    |      |   是    |       
 |  storeProductId   |  字串   |   此廣告行銷活動所關聯之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品 Store 識別碼為 9nblggh42cfd。    |   否    |    |  否     |   |  
 
 

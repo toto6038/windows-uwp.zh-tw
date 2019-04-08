@@ -331,12 +331,12 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 
 遊戲狀態 | 狀態設定方法 | 狀態欄位
 :----- | :------- | :---------
-正在載入 | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**標題**</br>正在載入資源 </br>**Body**</br> 以累加方式列印 」。 「 暗示載入活動。
-初始的開始/高分數的統計資料 | [GameInfoOverlay::SetGameStats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**標題**</br>高的分數</br> **Body**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #
-層級開始 | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**標題**</br>層級的 #</br>**Body**</br>層級目標的描述。
-遊戲已暫停 | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**標題**</br>遊戲已暫停</br>**Body**</br>無
-遊戲結束 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**標題**</br>遊戲結束</br> **Body**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #</br>層級完成 #</br>高評分 #
-獲勝的遊戲 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**標題**</br>您贏了 ！</br> **Body**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #</br>層級完成 #</br>高評分 #
+正在載入 | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**標題**</br>正在載入資源 </br>**內文**</br> 以累加方式列印 」。 「 暗示載入活動。
+初始的開始/高分數的統計資料 | [GameInfoOverlay::SetGameStats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**標題**</br>高的分數</br> **內文**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #
+層級開始 | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**標題**</br>層級的 #</br>**內文**</br>層級目標的描述。
+遊戲已暫停 | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**標題**</br>遊戲已暫停</br>**內文**</br>無
+遊戲結束 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**標題**</br>遊戲結束</br> **內文**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #</br>層級完成 #</br>高評分 #
+獲勝的遊戲 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**標題**</br>您贏了 ！</br> **內文**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #</br>層級完成 #</br>高評分 #
 
 
 

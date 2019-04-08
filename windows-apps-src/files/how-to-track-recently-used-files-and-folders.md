@@ -37,7 +37,7 @@ ms.locfileid: "57601623"
 
     請參閱[檔案存取權限](file-access-permissions.md)。
 
--   [使用選取器中開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md)
+-   [使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md)
 
     挑選的檔案經常是使用者會一再反覆使用的相同檔案。
 

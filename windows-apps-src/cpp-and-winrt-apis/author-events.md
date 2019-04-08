@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, event,
 ms.localizationpriority: medium
 ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644483"
@@ -283,6 +283,6 @@ logCallback(L"Hello, World!");
 請注意，是否您在設計內部 API，不一定會套用這些指導方針。 雖然內部 Api 通常會變成公用經過一段時間。
 
 ## <a name="related-topics"></a>相關主題
-* [撰寫 Api 使用 C + + /cli WinRT](author-apis.md)
-* [使用 Api，使用 C + + /cli WinRT](consume-apis.md)
+* [使用 C++/WinRT 撰寫 API](author-apis.md)
+* [使用 C++/WinRT 取用 API](consume-apis.md)
 * [處理事件，藉由使用委派，在 C + + /cli WinRT](handle-events.md)

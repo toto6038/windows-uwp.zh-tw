@@ -88,6 +88,6 @@ ms.locfileid: "57612933"
 
 [已連線的應用程式和裝置 (Project Rome) 概觀](connected-apps-and-devices.md)  
 [啟動遠端應用程式](launch-a-remote-app.md)  
-[建立和使用 app service](how-to-create-and-consume-an-app-service.md)  
+[建立和使用應用程式服務](how-to-create-and-consume-an-app-service.md)  
 [遠端系統的 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [遠端系統範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

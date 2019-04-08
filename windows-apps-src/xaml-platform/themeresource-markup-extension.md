@@ -150,7 +150,7 @@ Microsoft Visual Studio 2013 時，可以包含可能的索引鍵值的 Microsof
 
 * [資源字典和 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)
-* [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
+* [**資源字典**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [X:key 屬性](x-key-attribute.md)
  
 

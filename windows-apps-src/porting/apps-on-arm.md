@@ -37,13 +37,13 @@ ms.locfileid: "57640993"
 ## <a name="in-this-section"></a>本節內容
 |主題 | 描述 |
 |-----|-----|
-|[如何模擬適用於 ARM 的 x86](apps-on-arm-x86-emulation.md)|概觀詳述在 ARM 上如何模擬 x86 應用程式。|
-|[疑難排解 x86 ARM 上的應用程式](apps-on-arm-troubleshooting-x86.md)|在 ARM 上執行 x86 應用程式的一般問題，以及修正這些問題。 |
+|[x86 模擬在 ARM 上的運作方式](apps-on-arm-x86-emulation.md)|概觀詳述在 ARM 上如何模擬 x86 應用程式。|
+|[對 ARM 上的 x86 應用程式進行疑難排解](apps-on-arm-troubleshooting-x86.md)|在 ARM 上執行 x86 應用程式的一般問題，以及修正這些問題。 |
 |[疑難排解在 ARM 上的 ARM 應用程式](apps-on-arm-troubleshooting-arm32.md)|ARM32 及 ARM64 應用程式上 ARM，以及如何修正它們執行時的常見問題。 |
-|[在 ARM 上的 程式相容性疑難排解員](apps-on-arm-program-compat-troubleshooter.md)|如果您的應用程式在 ARM 上無法正常運作時調整相容性設定的指引。 |
+|[ARM 上的程式相容性疑難排解員](apps-on-arm-program-compat-troubleshooter.md)|如果您的應用程式在 ARM 上無法正常運作時調整相容性設定的指引。 |
 
 ## <a name="related-topics"></a>相關主題
 |主題 | 描述 |
 |-----|-----|
-|[WDK 建置 ARM64 驅動程式](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)|建置 ARM64 驅動程式的指示。 |
+|[使用 WDK 建置 ARM64 驅動程式](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)|建置 ARM64 驅動程式的指示。 |
 | [偵錯 x86 ARM 上的應用程式](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) | 用於偵錯 ARM 上的 x86 應用程式的指引。 |

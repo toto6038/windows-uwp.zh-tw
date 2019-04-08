@@ -146,7 +146,7 @@ float11/float10 值 (v) 遵循下列規則：
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[Appendices](appendix.md)
+[附錄](appendix.md)
 
 [資源](https://msdn.microsoft.com/library/windows/desktop/ff476894)
 

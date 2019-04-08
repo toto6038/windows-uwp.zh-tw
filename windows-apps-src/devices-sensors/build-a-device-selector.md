@@ -44,7 +44,7 @@ ms.locfileid: "57652493"
 
 | 運算子                       | 支援的類型                                                             |
 |--------------------------------|-----------------------------------------------------------------------------|
-| **COP\_EQUAL**                 | 字串、布林值、GUID、UInt16、UInt32                                       |
+| **COP\_相等**                 | 字串、布林值、GUID、UInt16、UInt32                                       |
 | **COP\_NOTEQUAL**              | 字串、布林值、GUID、UInt16、UInt32                                       |
 | **COP\_LESSTHAN**              | UInt16、UInt32                                                              |
 | **COP\_GREATERTHAN**           | UInt16、UInt32                                                              |
@@ -52,10 +52,10 @@ ms.locfileid: "57652493"
 | **COP\_GREATERTHANOREQUAL**    | UInt16、UInt32                                                              |
 | **COP\_值\_CONTAINS**       | 字串、字串陣列、布林值陣列、GUID 陣列、UInt16 陣列、UInt32 陣列 |
 | **COP\_值\_NOTCONTAINS**    | 字串、字串陣列、布林值陣列、GUID 陣列、UInt16 陣列、UInt32 陣列 |
-| **COP\_VALUE\_STARTSWITH**     | 字串                                                                      |
+| **COP\_值\_STARTSWITH**     | 字串                                                                      |
 | **COP\_值\_ENDSWITH**       | 字串                                                                      |
 | **COP\_DOSWILDCARDS**          | 不支援                                                               |
-| **COP\_WORD\_EQUAL**           | 不支援                                                               |
+| **COP\_WORD\_相等**           | 不支援                                                               |
 | **COP\_WORD\_STARTSWITH**      | 不支援                                                               |
 | **COP\_應用程式\_特定** | 不支援                                                               |
 

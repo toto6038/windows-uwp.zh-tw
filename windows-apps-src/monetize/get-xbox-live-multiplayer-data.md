@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.openlocfilehash: 74f1a64bde32fe68a51527527a0b049d811d0853
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57662033"
@@ -55,8 +55,8 @@ ms.locfileid: "57662033"
 | endDate | date | 要擷取多人遊戲資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
 | top | 整數 | 要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
-| filter | 字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 您可以在回應本文中指定下列欄位：<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul> | 否   |
-| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以在回應本文中指定下列欄位：<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul><p/>如果您指定一個或多個 *groupby* 欄位，則您未指定的任何其他 *groupby* 欄位將在回應本文中有 **All** 值。 |  否  |
+| filter | 字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 您可以在回應本文中指定下列欄位：<p/><ul><li><strong>裝置類型</strong></li><li><strong>PackageVersion</strong></li><li><strong>市場</strong></li><li><strong>訂閱名稱</strong></li></ul> | 否   |
+| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以在回應本文中指定下列欄位：<p/><ul><li><strong>日期</strong></li><li><strong>裝置類型</strong></li><li><strong>PackageVersion</strong></li><li><strong>市場</strong></li><li><strong>訂閱名稱</strong></li></ul><p/>如果您指定一個或多個 *groupby* 欄位，則您未指定的任何其他 *groupby* 欄位將在回應本文中有 **All** 值。 |  否  |
 
 
 ### <a name="request-example"></a>要求範例
@@ -89,7 +89,7 @@ Authorization: Bearer <your access token>
 | applicationName       | 字串 |  您正在擷取多人遊戲資料之遊戲名稱。     |
 | market       | 字串 | 多人資料是來自 Microsoft Store 的兩個字母 ISO 3166 國碼 (地區碼)。       |
 | packageVersion     | 字串 |  遊戲的四個部分套件版本。  |
-| deviceType          | 字串 | 以下字串之一指定多人遊戲資料來自的裝置類型：<p/><ul><li><strong>Console</strong></li><li><strong>PC</strong></li><li>**未知**</li></ul>  |
+| deviceType          | 字串 | 以下字串之一指定多人遊戲資料來自的裝置類型：<p/><ul><li><strong>主控台</strong></li><li><strong>PC</strong></li><li>**未知**</li></ul>  |
 | subscriptionName     | 字串 |  用於多人遊戲資料的訂閱名稱。 可能的值包括 **Xbox Game Pass** 和 **""** (沒有訂閱)。  |
 | dailySessionCount     | 數字 |  在指定日期，該遊戲中多人遊戲工作階段數目。  |
 | engagementDurationMinutes     | 數字 |  在指定日期，該遊戲中客戶參與多人遊戲工作階段的總分鐘數。  |
@@ -112,7 +112,7 @@ Authorization: Bearer <your access token>
 | applicationName       | 字串 |  您正在擷取多人遊戲資料之遊戲名稱。     |
 | market       | 字串 | 多人資料是來自 Microsoft Store 的兩個字母 ISO 3166 國碼 (地區碼)。       |
 | packageVersion     | 字串 |  遊戲的四個部分套件版本。  |
-| deviceType          | 字串 | 以下字串之一指定多人遊戲資料來自的裝置類型：<p/><ul><li><strong>Console</strong></li><li><strong>PC</strong></li><li>**未知**</li></ul>  |
+| deviceType          | 字串 | 以下字串之一指定多人遊戲資料來自的裝置類型：<p/><ul><li><strong>主控台</strong></li><li><strong>PC</strong></li><li>**未知**</li></ul>  |
 | subscriptionName     | 字串 |  用於多人遊戲資料的訂閱名稱。 可能的值包括 **Xbox Game Pass** 和 **""** (沒有訂閱)。  |
 | monthlySessionCount     | 數字 |  在指定月份內，該遊戲中的多人遊戲工作階段數目。   |
 | engagementDurationMinutes     | 數字 |  在指定月份內，該遊戲中客戶參與多人遊戲工作階段的總分鐘數。  |

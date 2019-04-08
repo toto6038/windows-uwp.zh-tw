@@ -110,7 +110,7 @@ ms.locfileid: "57658153"
 ### <a name="text-input"></a>文字輸入
 控制項 | 用法 | 範例
  - | - | -
-[TextBox](text-box.md) | 擷取一或多個文字行 | 名稱、 自由格式的回應或意見反應
+[文字方塊](text-box.md) | 擷取一或多個文字行 | 名稱、 自由格式的回應或意見反應
 [PasswordBox](password-box.md) | 藉由隱藏字元收集私人資料 | 社會安全號碼 (SSN) 的密碼 Pin，信用卡資訊 
 [AutoSuggestBox](auto-suggest-box.md) | 輸入一組對應的資料從建議清單顯示使用者 | 資料庫搜尋，郵寄給： 行，先前的查詢
 [RichEditBox](rich-edit-box.md) | 編輯格式化的文字、 超連結與映像的文字檔 | 上傳檔案、 預覽及應用程式中編輯
@@ -118,8 +118,8 @@ ms.locfileid: "57658153"
 ### <a name="selection"></a>選項
 控制項 | 用法 | 範例
 - | - | - 
-| [CheckBox](checkbox.md) | 選取或取消選取一或多個動作項目 | 同意條款及條件、 新增選用項目、 選取所有適用
-[RadioButton](radio-button.md) | 從兩個或多個選項中選取其中一個選項 | 挑選出貨等方法的類型。
+| [核取方塊](checkbox.md) | 選取或取消選取一或多個動作項目 | 同意條款及條件、 新增選用項目、 選取所有適用
+[選項按鈕](radio-button.md) | 從兩個或多個選項中選取其中一個選項 | 挑選出貨等方法的類型。
 [ToggleSwitch](toggles.md) | 選擇其中兩個互斥的選項 | 開啟/關閉
 
 > **注意**：如果有五個或多個選取項目，請使用清單控制項。
@@ -127,7 +127,7 @@ ms.locfileid: "57658153"
 ### <a name="lists"></a>清單
 控制項 | 用法 | 範例
 - | - | -
-[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | 壓縮的狀態啟動，並展開以顯示可選取的項目清單 | 選取 從一長串的項目，例如州或國家/地區
+[下拉式方塊](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | 壓縮的狀態啟動，並展開以顯示可選取的項目清單 | 選取 從一長串的項目，例如州或國家/地區
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | 分類項目，並指派群組標頭、 拖放項目、 規劃內容，並重新排列項目 | Rank 選項
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | 排列，並瀏覽映像為基礎的集合 | 挑選一張照片，色彩、 顯示佈景主題
 
@@ -143,7 +143,7 @@ ms.locfileid: "57658153"
 - | - 
 [CalendarView](calendar-view.md) | 挑選單一日期或從最上層顯示的行事曆的日期範圍 
 [CalendarDatePicker](calendar-date-picker.md) | 挑選單一內容行事曆的日期 
-[DatePicker](date-picker.md) | 挑選單一當地語系化的日期時內容的資訊並不重要
+[日期選擇器](date-picker.md) | 挑選單一當地語系化的日期時內容的資訊並不重要
 [TimePicker](time-picker.md) | 挑選單一時間值
 
 ### <a name="additional-controls"></a>其他控制項 
@@ -238,4 +238,4 @@ ms.locfileid: "57658153"
 
 ## <a name="related-topics"></a>相關主題
 - [輸入的控制項](controls-and-events-intro.md)
-- [Typography](../style/typography.md)
+- [印刷樣式](../style/typography.md)

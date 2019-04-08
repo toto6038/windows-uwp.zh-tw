@@ -453,7 +453,7 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 ## <a name="related-topics"></a>相關主題
 * [ICommand 介面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
 * [功能表和內容功能表](menus.md)
-* [Swipe](swipe.md)
+* [揮擊](swipe.md)
 * [拖動以重新整理](pull-to-refresh.md)
 * [畫筆和手寫筆的互動](../input/pen-and-stylus-interactions.md)
 * [調整遊戲台和 Xbox 的應用程式](../devices/designing-for-tv.md)

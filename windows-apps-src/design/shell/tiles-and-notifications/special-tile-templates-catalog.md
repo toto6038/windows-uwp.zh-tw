@@ -276,7 +276,7 @@ TileContent content = new TileContent()
 * [通知程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [磚、徽章及通知](index.md)
 * [建立自動調整圖格](create-adaptive-tiles.md)
-* [並排顯示內容的結構描述](../tiles-and-notifications/tile-schema.md)
+* [磚內容結構描述](../tiles-and-notifications/tile-schema.md)
  
 
  
