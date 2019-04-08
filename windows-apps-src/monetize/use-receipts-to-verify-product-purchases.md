@@ -8,7 +8,7 @@ keywords: Windows 10, uwp,app 內購買, IAPs, 收據, Windows.ApplicationModel.
 ms.localizationpriority: medium
 ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57605723"
@@ -129,7 +129,7 @@ App 收據看起來如下。
 
 |  屬性  |  描述   |
 |-------------|-------------------|
-|  **Id**  |    識別購買。           |
+|  **識別碼**  |    識別購買。           |
 |  **AppId**  |     作業系統用於 App 的「套件系列名稱」值。           |
 |  **LicenseType**  |    如果使用者已購買完整版的 App，為 **Full**。 如果使用者下載試用版的 App，為 **Trial**。           |  
 |  **PurchaseDate**  |    取得 App 的日期。          |  |
@@ -144,7 +144,7 @@ App 收據看起來如下。
 
 |  屬性  |  描述   |
 |-------------|-------------------|
-|  **Id**  |    識別購買。           |
+|  **識別碼**  |    識別購買。           |
 |  **AppId**  |     識別使用者透過哪個 App 進行購買。           |
 |  **ProductId**  |     識別購買的產品。           |
 |  **ProductType**  |    決定產品類型。 目前僅支援 **Durable** 值。          |  

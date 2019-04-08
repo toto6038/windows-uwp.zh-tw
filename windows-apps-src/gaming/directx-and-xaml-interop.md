@@ -460,7 +460,7 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
 
 ## <a name="related-topics"></a>相關主題
 
-* [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
+* [來參照 Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041)
 * [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050)
 * [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834)

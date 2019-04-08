@@ -99,7 +99,7 @@ ms.locfileid: "57652823"
 </Image>
 ```
 
-**CenterOfRotationY = "0.5" (default)**
+**CenterOfRotationY ="0.5"（預設值）**
 
 ![CenterOfRotationY 等於 0.5](images/3drotatexminus35.png)
 ```xml
@@ -110,7 +110,7 @@ ms.locfileid: "57652823"
 </Image>
 ```
 
-**CenterOfRotationY = "0.1"**
+**CenterOfRotationY ="0.1"**
 
 ![CenterOfRotationY 等於 0.1](images/3dcenterofrotationy0point1.png)
 
@@ -124,7 +124,7 @@ ms.locfileid: "57652823"
 </Image>
 ```
 
-**CenterOfRotationX = "0.5" (default)**
+**CenterOfRotationX ="0.5"（預設值）**
 
 ![CenterOfRotationX 等於 0.5](images/3drotateyminus35.png)
 ```xml
@@ -135,7 +135,7 @@ ms.locfileid: "57652823"
 </Image>
 ```
 
-**CenterOfRotationX = "0.9" (right-hand edge)**
+**CenterOfRotationX ="0.9"（右邊）**
 
 ![CenterOfRotationX 等於 0.9](images/3dcenterofrotationx0point9.png)
 

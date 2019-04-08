@@ -32,5 +32,5 @@ Xbox One 是在通用 Windows 平台上執行，因此它和其他 Microsoft 裝
 若要開始，請下載您偏好的引擎，並尋找 Windows 10 App 的指示。 另請務必閱讀[入門指南](getting-started.md)，以取得如何將主機變成開發套件的相關資訊，以及從 Visual Studio 進行部署的方式。
 
 ## <a name="see-also"></a>請參閱
-- [將現有的遊戲帶到 Xbox](development-lanes-landing.md)
+- [將現有的遊戲移到 Xbox](development-lanes-landing.md)
 - [在 Xbox One UWP](index.md)

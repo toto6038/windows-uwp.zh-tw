@@ -19,7 +19,7 @@ ms.locfileid: "57598233"
 # <a name="streaming-resources"></a>串流資源
 
 
-*串流處理資源*是使用少量實體記憶體的大型邏輯資源。 會視需要串流少部分資源，而不傳遞整個大型資源。 串流資源先前稱為*並排資源*。
+*串流處理資源*是使用少量實體記憶體的大型邏輯資源。 視需要串流少部分資源，而不傳遞整個大型資源。 串流資源先前稱為*並排資源*。
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本節內容
 

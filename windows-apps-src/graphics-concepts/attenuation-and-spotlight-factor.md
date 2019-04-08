@@ -24,7 +24,7 @@ ms.locfileid: "57659293"
 
 光線的衰減取決於光線的類型以及光線與頂點位置之間的距離。 若要計算衰減，請使用下列其中一個方程式。
 
-Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
+Atten = 1 / (att0<sub>我</sub>+ att1<sub>我</sub> \* d + att2<sub>我</sub> \* d²)
 
 其中：
 

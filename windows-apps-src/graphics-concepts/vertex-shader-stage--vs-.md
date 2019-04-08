@@ -46,7 +46,7 @@ ms.locfileid: "57598153"
 
 單一頂點，有 VertexID 和 InstanceID 系統產生值。 每個頂點著色器輸入頂點可包含最多 16 個 32 位元向量（每個向量最多 4 個元件）。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
 單一頂點。 每個輸出頂點可包含同樣多的 16 個 32 位元 4 元件向量。

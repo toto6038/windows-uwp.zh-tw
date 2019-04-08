@@ -100,12 +100,12 @@ Windows 應用程式服務會啟用應用程式-應用程式的通訊，藉由�
 
 ## <a name="see-also"></a>另請參閱
 
-[建立和使用 app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
+[建立和使用應用程式服務](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
 [資產封裝的簡介](../packaging/asset-packages.md)  
 [封裝建立的封裝版面配置](../packaging/packaging-layout.md)  
-[選擇性的套件和撰寫相關的設定](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
+[選用套件及相關集合的製作](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
 [使用資產封裝和封裝摺疊功能進行開發](../packaging/package-folding.md)  
-[UWP 應用程式串流處理的安裝](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)  
+[UWP 應用程式串流安裝](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)  
 [一般的套件組合應用程式套件](../packaging/flat-bundles.md)  
 [Windows.ApplicationModel.AppService 命名空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService)  
 [Windows.ApplicationModel.Extensions 命名空間](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)  

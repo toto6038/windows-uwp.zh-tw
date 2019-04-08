@@ -53,7 +53,7 @@ ms.locfileid: "57599113"
 | top | 整數 | 要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
 | filter |字串  | 一或多個篩選回應中資料列的陳述式。 如需更多資訊，請參閱下方的＜[篩選欄位](#filter-fields)＞一節。 | 否   |
-| orderby | 字串 | 將結果資料值排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：<ul><li><strong>date</strong></li><li><strong>osVersion</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised</strong></li><li><strong>packageVersion</strong></li><li><strong>deviceModel</strong></li><li><strong>productFamily</strong></li><li><strong>deviceScreenResolution</strong></li><li><strong>isTouchEnabled</strong></li><li><strong>reviewerName</strong></li><li><strong>reviewTitle</strong></li><li><strong>reviewText</strong></li><li><strong>helpfulCount</strong></li><li><strong>notHelpfulCount</strong></li><li><strong>responseDate</strong></li><li><strong>responseText</strong></li><li><strong>deviceRAM</strong></li><li><strong>deviceStorageCapacity</strong></li><li><strong>rating</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
+| orderby | 字串 | 將結果資料值排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：<ul><li><strong>日期</strong></li><li><strong>osVersion</strong></li><li><strong>市場</strong></li><li><strong>裝置類型</strong></li><li><strong>isRevised</strong></li><li><strong>PackageVersion</strong></li><li><strong>deviceModel</strong></li><li><strong>productfamily 無效</strong></li><li><strong>deviceScreenResolution</strong></li><li><strong>isTouchEnabled</strong></li><li><strong>reviewerName</strong></li><li><strong>reviewTitle</strong></li><li><strong>reviewText</strong></li><li><strong>helpfulCount</strong></li><li><strong>notHelpfulCount</strong></li><li><strong>responseDate</strong></li><li><strong>ResponseText</strong></li><li><strong>deviceRAM</strong></li><li><strong>deviceStorageCapacity</strong></li><li><strong>評等</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
 
 
 ### <a name="filter-fields"></a>篩選欄位
@@ -68,11 +68,11 @@ ms.locfileid: "57599113"
 |---------------|--------|-----------------|
 | market | eq、ne | 內含裝置市場的 ISO 3166 國家/地區碼的字串。 |
 | osVersion  | eq、ne  | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>未知</strong></li></ul>  |
-| deviceType  | eq、ne  | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>全像攝影版</strong></li><li><strong>未知</strong></li></ul>  |
+| deviceType  | eq、ne  | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>電話</strong></li><li><strong>主控台</strong></li><li><strong>IoT</strong></li><li><strong>全像攝影版</strong></li><li><strong>未知</strong></li></ul>  |
 | isRevised  | eq、ne  | 指定 <strong>true</strong> 以篩選已修訂的評論，否則請指定 <strong>false</strong>。  |
 | packageVersion  | eq、ne  | 已評論的應用程式套件版本。  |
 | deviceModel  | eq、ne  | 評論 app 的裝置類型。  |
-| productFamily  | eq、ne  | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>平板電腦</strong></li><li><strong>Phone</strong></li><li><strong>可穿戴式</strong></li><li><strong>Server</strong></li><li><strong>共同作業</strong></li><li><strong>其他</strong></li></ul>  |
+| productFamily  | eq、ne  | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>平板電腦</strong></li><li><strong>電話</strong></li><li><strong>可穿戴式</strong></li><li><strong>伺服器</strong></li><li><strong>共同作業</strong></li><li><strong>其他</strong></li></ul>  |
 | deviceRAM  | eq、ne、gt、lt、ge、le  | 實體 RAM (以 MB 為單位)。  |
 | deviceScreenResolution  | eq、ne  | 裝置的螢幕解析度，格式為「&quot;<em>width</em> x <em>height</em>&quot;」。   |
 | deviceStorageCapacity  | eq、ne、gt、lt、ge、le   | 主要存放磁碟的容量 (以 GB 為單位)。  |

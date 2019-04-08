@@ -125,7 +125,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 在下列文法中，*property* 是您要設定之屬性的名稱，*propertyValueAsObjectElement* 是一個要用來滿足該屬性的值類型需求的單一物件元素。
 
-`<`*object*`>`
+`<`*物件*`>`
 
 `<`*object*`.`*property*`>`
 
@@ -133,7 +133,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 `</`*object*`.`*property*`>`
 
-`</`*object*`>`
+`</`*物件*`>`
 
 下列範例使用屬性元素語法來設定含有 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 物件元素之 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) (在**SolidColorBrush**， [**色彩**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)設為屬性。)這個 XAML 剖析的結果等同於先前的 XAML 範例設定**填滿**使用屬性語法。
 

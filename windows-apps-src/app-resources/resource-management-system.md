@@ -63,8 +63,8 @@ var str = resourceMap.GetValue("String1", resourceContext).ValueAsString;
 ## <a name="important-apis"></a>重要 API
 * [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader?branch=live)
 * [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
-* [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
+* [Resourcecontext)&lt;2}](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## <a name="related-topics"></a>相關主題
-* [UI 和應用程式封裝資訊清單中的當地語系化字串](localize-strings-ui-manifest.md)
-* [載入影像和調整規模、 佈景主題、 高對比和其他人的資產](images-tailored-for-scale-theme-contrast.md)
+* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](localize-strings-ui-manifest.md)
+* [載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產](images-tailored-for-scale-theme-contrast.md)

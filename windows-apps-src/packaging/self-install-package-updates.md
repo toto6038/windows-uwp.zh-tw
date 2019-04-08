@@ -463,4 +463,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## <a name="related-topics"></a>相關主題
 
-* [選擇性的套件和撰寫相關的設定](optional-packages.md)
+* [選用套件及相關集合的製作](optional-packages.md)

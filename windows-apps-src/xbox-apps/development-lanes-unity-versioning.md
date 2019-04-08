@@ -100,5 +100,5 @@ ms.locfileid: "57608863"
 ***ScrapyardPhoenix (通用 Windows)*** 是您會將參考新增至如 Xbox Live SDK 等的專案。
 
 ## <a name="see-also"></a>請參閱
-- [將現有的遊戲帶到 Xbox](development-lanes-landing.md)
+- [將現有的遊戲移到 Xbox](development-lanes-landing.md)
 - [在 Xbox One UWP](index.md)

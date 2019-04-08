@@ -10,7 +10,7 @@ keywords: windows 10, uwp, 可追蹤式磚, 動態磚, 可追蹤式磚通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592643"
@@ -178,5 +178,5 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ## <a name="related-articles"></a>相關文章
 
-- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [LaunchActivatedEventArgs.TileActivatedInfo 屬性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [TileActivatedInfo 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

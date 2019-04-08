@@ -37,7 +37,7 @@ ms.locfileid: "57656613"
 > [!NOTE]
 > 您可能會注意到此應用程式沒有 MainPage。 這是因為我們在指定**App.xaml.cs**應用程式應該啟動**CustomerListPage**時啟動。
 
-### <a name="viewmodels"></a>ViewModels
+### <a name="viewmodels"></a>Viewmodel
 
 雖然此應用程式只有一個檢視，有兩個的 Viewmodel。 為什麼會這樣？
 

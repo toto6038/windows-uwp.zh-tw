@@ -27,9 +27,9 @@ ms.locfileid: "57606283"
 
 App 可以使用四種機制來傳遞通知：
 
--   **Local**
+-   **本機**
 -   **排程**
--   **Periodic**
+-   **定期**
 -   **推播**
 
 下表摘要說明通知傳遞類型。
@@ -111,7 +111,7 @@ App 可以使用四種機制來傳遞通知：
 如需詳細資訊，請參閱這些主題：
 
 -   [通知區域的圖格](sending-a-local-tile-notification.md)
--   [傳送本機的快顯通知](send-local-toast.md)
+-   [傳送本機快顯通知](send-local-toast.md)
 -   [通用 Windows 平台 (UWP) 通知的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>排程通知
@@ -161,7 +161,7 @@ App 可以使用四種機制來傳遞通知：
 
 
 * [通知區域的圖格](sending-a-local-tile-notification.md)
-* [傳送本機的快顯通知](send-local-toast.md)
+* [傳送本機快顯通知](send-local-toast.md)
 * [推播通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [快顯通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [定期通知概觀](periodic-notification-overview.md)

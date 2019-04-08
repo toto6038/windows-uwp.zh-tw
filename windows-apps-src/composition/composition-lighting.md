@@ -38,7 +38,7 @@ Windows.UI.Composition Api 可讓您建立即時的動畫和效果。 撰寫光�
 | [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | 藉由在場景中的所有項目會反映發出出現的非方向性光線的光源。 |
 | [DistantLight](/uwp/api/windows.ui.composition.distantlight) | 無限大遙遠的光源發出以單一方向的光線。 例如太陽。 |
 | [PointLight](/uwp/api/windows.ui.composition.pointlight) | 發出在所有方向的光線的燈光的點來源。 例如燈泡。 |
-| [SpotLight](/uwp/api/windows.ui.composition.spotlight) | 發出內部和外部圓錐體光線的光源。 例如手電筒。 |
+| [焦點](/uwp/api/windows.ui.composition.spotlight) | 發出內部和外部圓錐體光線的光源。 例如手電筒。 |
 
 ## <a name="targets"></a>目標
 
@@ -83,11 +83,11 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 
 屬性 | 描述
 --- | ---
-**Color** | [色彩](/uwp/api/windows.ui.color)燈光。 光源的色彩值由定義[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties) Diffuse、 Ambient，以及定義發出色彩的反射。 光源的燈號; 使用 RGBA 值不使用 alpha 色彩元件。
+**色彩** | [色彩](/uwp/api/windows.ui.color)燈光。 光源的色彩值由定義[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties) Diffuse、 Ambient，以及定義發出色彩的反射。 光源的燈號; 使用 RGBA 值不使用 alpha 色彩元件。
 **方向** | 燈光的方向。 指定燈光會指出指標的方向相對於其[CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace)視覺化。
 **座標空間** | 每個視覺項目具有隱含的 3D 座標空間。 X 方向是從左到右。 Y 方向是從上到下。 Z 方向是從平面的點。 原始的點，此座標的左上角的 視覺效果，且單位是裝置獨立像素 (DIP)。 在此座標所定義的燈號位移。
 **內部和外部錐形** | 聚光燈發出的光線錐體分兩部分︰明亮的內錐和外錐體。 複合功能可讓您控制內部和外部的圓錐形角度和色彩。
-**Offset** | 光源相對於其座標空間 Visual 的位移。
+**位移** | 光源相對於其座標空間 Visual 的位移。
 
 > [!NOTE]
 > 當多個號誌叫用相同的視覺效果，或每當光線色彩值取得夠大，無法超過 1.0 時，可能會因為光線色彩色板的固定變更燈光的色彩。
@@ -121,7 +121,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 --- | ---
 **法線貼圖** | NormalMaps 建立的紋理，燈光正常指向會更亮，因此一般指離開調光器的效果。 若要加入您的目標 visual 使用 NormalMap [CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)使用 LoadedImageSurface 載入 NormalMap 資產。
 **環境** | 環境屬性主要用來控制整體的色彩反映。
-**Specular** | 反射反映物件，使其出現閃亮上建立反白顯示。 您可以控制的反射反映層級和發亮的層級。  這些屬性會操作來建立材質的效果，例如 shinny 金屬等或光面紙張。
+**反射** | 反射反映物件，使其出現閃亮上建立反白顯示。 您可以控制的反射反映層級和發亮的層級。  這些屬性會操作來建立材質的效果，例如 shinny 金屬等或光面紙張。
 **擴散** | 顆漫射型的反映 scatters 往所有方向的光線。
 **Reflectance 模型** | [Reflectance 模型](/uwp/api/windows.ui.composition.effects.scenelightingeffectreflectancemodel)可讓您選擇之間[Blinn Phong](https://docs.microsoft.com/visualstudio/designers/how-to-create-a-basic-phong-shader)與實際基礎 Blinn Phong。  當您想要有壓縮反射反白顯示，您會選擇實際基礎 Blinn Phong。
 

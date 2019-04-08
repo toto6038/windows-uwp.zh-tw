@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f36ab1f90c36d87f710ddb02dd078363bdb896dd
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603083"
+---
 ## <a name="legal-notices"></a>法律聲明
 Microsoft 和任何著作人依據[創意共用 CC 協定 4.0 國際公用授權](https://creativecommons.org/licenses/by/4.0/legalcode)，授與您對此存放庫中 Microsoft 文件和其他內容的使用權 (請參閱 [LICENSE](LICENSE) 檔案)，並依據 [MIT 授權](https://opensource.org/licenses/MIT)，授與您對此存放庫中任何程式碼的使用權 (請參閱[LICENSE-CODE](LICENSE-CODE)檔案)。
 

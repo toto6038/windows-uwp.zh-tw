@@ -69,7 +69,7 @@ ms.locfileid: "57599203"
 
 2.  使用資訊清單設計工具來檢查已在套件資訊清單中正確宣告背景工作：
 
-    -   在 C# 與 C++ 中，進入點屬性必須符合類別名稱後的背景工作命名空間。 例如：RuntimeComponent1.MyBackgroundTask.
+    -   在 C# 與 C++ 中，進入點屬性必須符合類別名稱後的背景工作命名空間。 例如：RuntimeComponent1.MyBackgroundTask。
     -   也必須指定與工作搭配使用的所有觸發程序類型。
     -   除非您使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 或 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)，否則「切勿」指定可執行檔。
 
@@ -105,10 +105,10 @@ ms.locfileid: "57599203"
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立並註冊跨處理序背景工作](create-and-register-a-background-task.md)
-* [建立並註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)
+* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
+* [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
 * [註冊背景工作](register-a-background-task.md)
-* [宣告應用程式資訊清單中的背景工作](declare-background-tasks-in-the-application-manifest.md)
+* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [如何觸發暫止、 繼續及背景事件在 UWP 應用程式](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [使用 Visual Studio 程式碼分析的 UWP 應用程式的程式碼品質](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)

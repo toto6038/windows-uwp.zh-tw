@@ -33,7 +33,7 @@ app 資料有兩種類型：設定和檔案。
     以下是可用於應用程式設定的資料類型：
 
     -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
-    -   **Boolean**
+    -   **布林值**
     -   **Char16**、**String**
     -   [**日期時間**](https://msdn.microsoft.com/library/windows/apps/br206576)， [ **TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
     -   **GUID**、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)

@@ -77,7 +77,7 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)  
 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)  
-[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)  [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
+[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
 [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)  
 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)
 
@@ -205,19 +205,19 @@ Visual Studio 專案範本中會提供與 app 週期相關的基本程式碼。 
 
 ## <a name="key-application-lifecycle-apis"></a>重要的應用程式週期 API
 
--   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) namespace
--   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) namespace
--   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) namespace
+-   [**Windows.ApplicationModel** ](https://msdn.microsoft.com/library/windows/apps/br224691)命名空間
+-   [**Windows.ApplicationModel.Activation** ](https://msdn.microsoft.com/library/windows/apps/br224766)命名空間
+-   [**Windows.ApplicationModel.Core** ](https://msdn.microsoft.com/library/windows/apps/br205865)命名空間
 -   [**Windows.UI.Xaml.Application** ](https://msdn.microsoft.com/library/windows/apps/br242324)類別 (XAML)
--   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) class (XAML)
+-   [**Windows.UI.Xaml.Window** ](https://msdn.microsoft.com/library/windows/apps/br209041)類別 (XAML)
 
 ## <a name="related-topics"></a>相關主題
 
 * [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694)
 * [應用程式的指導方針暫停和繼續](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [處理預先啟動的應用程式](handle-app-prelaunch.md)
-* [處理應用程式啟動](activate-an-app.md)
-* [控制代碼的應用程式暫止](suspend-an-app.md)
+* [處理應用程式預先啟動](handle-app-prelaunch.md)
+* [處理應用程式啟用](activate-an-app.md)
+* [處理應用程式暫停](suspend-an-app.md)
 * [處理應用程式繼續執行](resume-an-app.md)
 * [背景活動，具有單一處理序模型](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [在背景中播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)

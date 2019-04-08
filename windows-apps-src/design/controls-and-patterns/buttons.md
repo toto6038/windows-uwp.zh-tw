@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f585d278d9420865c895d4e20fa1730196d9f0cd
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57593023"
@@ -32,7 +32,7 @@ XAML 架構提供的標準按鈕控制項，以及數個特製化的按鈕控制
 ------- | -----------
 [按鈕](/uwp/api/windows.ui.xaml.controls.button) | 起始立即採取行動。 可以搭配 Click 事件，或命令繫結。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 會引發 Click 事件只有在按下時，持續按鈕。
-[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A 按鈕，已有像超連結，用於導覽的樣式。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
+[按一下 HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A 按鈕，已有像超連結，用於導覽的樣式。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 若要開啟附加的彈出式視窗的 > 形箭號按鈕。
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 具有兩個邊的按鈕。 一端會起始動作，並另一端可開啟功能表。
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 具有兩個邊的切換按鈕。 一端切換開啟/關閉，並另一端可開啟功能表。
@@ -67,8 +67,8 @@ XAML 架構提供的標準按鈕控制項，以及數個特製化的按鈕控制
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/Button">開啟應用程式並查看 Button 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>

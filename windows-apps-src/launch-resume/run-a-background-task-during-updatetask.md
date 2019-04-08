@@ -95,4 +95,4 @@ namespace BackgroundTasks
 
 ## <a name="see-also"></a>請參閱
 
-[建立並註冊跨處理序背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+[建立及註冊跨處理序的背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

@@ -54,8 +54,8 @@ ms.locfileid: "57600133"
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
 | filter | 字串  | 一或多個篩選回應中資料列的陳述式。 如需更多資訊，請參閱下方的＜[篩選欄位](#filter-fields)＞一節。 | 否   |
 | aggregationLevel | 字串 | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。 | 否 |
-| orderby | 字串 | 對每個評分的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：<ul><li><strong>date</strong></li><li><strong>osVersion</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
-| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised</strong></li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>fiveStars</strong></li><li><strong>fourStars</strong></li><li><strong>threeStars</strong></li><li><strong>twoStars</strong></li><li><strong>oneStar</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=osVersion,market&amp;aggregationLevel=week</em></p> |  否  |
+| orderby | 字串 | 對每個評分的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：<ul><li><strong>日期</strong></li><li><strong>osVersion</strong></li><li><strong>市場</strong></li><li><strong>裝置類型</strong></li><li><strong>isRevised</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
+| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>日期</strong></li><li><strong>應用程式名稱</strong></li><li><strong>市場</strong></li><li><strong>osVersion</strong></li><li><strong>裝置類型</strong></li><li><strong>isRevised</strong></li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li><strong>日期</strong></li><li><strong>applicationId</strong></li><li><strong>fiveStars</strong></li><li><strong>fourStars</strong></li><li><strong>threeStars</strong></li><li><strong>twoStars</strong></li><li><strong>oneStar</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=osVersion,market&amp;aggregationLevel=week</em></p> |  否  |
 
  
 ### <a name="filter-fields"></a>篩選欄位
@@ -70,7 +70,7 @@ ms.locfileid: "57600133"
 |---------------|-----------------|
 | market | 內含 App 所評分市場之 ISO 3166 國家/地區代碼的字串。 |
 | osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>未知</strong></li></ul> |
-| deviceType | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>全像攝影版</strong></li><li><strong>未知</strong></li></ul> |
+| deviceType | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>電話</strong></li><li><strong>主控台</strong></li><li><strong>IoT</strong></li><li><strong>全像攝影版</strong></li><li><strong>未知</strong></li></ul> |
 | isRevised | 指定 <strong>true</strong> 以篩選已修訂的評分，否則請指定 <strong>false</strong>。 |
 
 

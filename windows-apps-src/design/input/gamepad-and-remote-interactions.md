@@ -514,7 +514,7 @@ public App()
 
 除了 [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 控制項，還有其他您需要佔用的控制項，例如︰
 
-- [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [清單方塊](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
 - [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [FlipView]https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)

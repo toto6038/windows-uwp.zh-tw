@@ -1,6 +1,6 @@
 ---
 Description: 若要了解您在價格選擇、支付關連及稅責等方面的稅務考量，請參閱下表您發行應用程式的國家/地區。
-title: 稅務詳細資料
+title: 納稅詳細資料
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.date: 01/31/2019
 ms.topic: article
@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 稅, 應用程式稅金, 稅金要求, 商務擴展, 
 ms.localizationpriority: medium
 ms.openlocfilehash: e5ada027b835e852d1db728ef124a798540abdf7
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57607663"

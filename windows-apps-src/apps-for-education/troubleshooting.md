@@ -4,7 +4,7 @@ title: 使用事件檢視器對「Microsoft 進行測驗」進行疑難排解。
 ms.assetid: 9218e542-f520-4616-98fc-b113d5a08e0f
 ms.date: 10/06/2017
 ms.topic: article
-keywords: windows 10 uwp、 教育版
+keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f4bdcf45c7dd37dd540a666d99b5fa2fd2d49f8
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

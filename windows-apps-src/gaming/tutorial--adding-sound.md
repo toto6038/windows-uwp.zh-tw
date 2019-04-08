@@ -477,7 +477,7 @@ __AudioX2__是低階 API，提供訊號處理和混合的基礎。 如需詳細�
 
 ### <a name="additional-reading"></a>其他閱讀資料
 
-* [如何：Initialize XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)
+* [如何：初始化 XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)
 * [如何：載入 XAudio2 中的音訊資料檔案](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
 * [如何：播放使用 XAudio2 音效](https://msdn.microsoft.com/library/windows/desktop/ee415787.aspx)
 

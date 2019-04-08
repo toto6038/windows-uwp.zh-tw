@@ -95,18 +95,18 @@ Windows.Gaming.Input 命名空間支援的所有輸入裝置皆為 UI 瀏覽裝�
 
 | 瀏覽命令 | 遊戲台輸入          | 機台搖桿輸入 | 競速方向盤輸入    |
 | ------------------:| ---------------------- | ------------------ | --------------------- |
-|             PageUp | LT 鍵           | _不支援_    | _varies_              |
-|           PageDown | RT 鍵          | _不支援_    | _varies_              |
-|           PageLeft | LB 鍵            | _不支援_    | _varies_              |
-|          PageRight | RB 鍵           | _不支援_    | _varies_              |
-|           ScrollUp | 右搖桿向上    | _不支援_    | _varies_              |
-|         ScrollDown | 右搖桿向下  | _不支援_    | _varies_              |
-|         ScrollLeft | 右搖桿向左  | _不支援_    | _varies_              |
-|        ScrollRight | 右搖桿向右 | _不支援_    | _varies_              |
+|             PageUp | LT 鍵           | _不支援_    | _而有所不同_              |
+|           PageDown | RT 鍵          | _不支援_    | _而有所不同_              |
+|           PageLeft | LB 鍵            | _不支援_    | _而有所不同_              |
+|          PageRight | RB 鍵           | _不支援_    | _而有所不同_              |
+|           ScrollUp | 右搖桿向上    | _不支援_    | _而有所不同_              |
+|         ScrollDown | 右搖桿向下  | _不支援_    | _而有所不同_              |
+|         ScrollLeft | 右搖桿向左  | _不支援_    | _而有所不同_              |
+|        ScrollRight | 右搖桿向右 | _不支援_    | _而有所不同_              |
 |           Context1 | X 按鈕               | _不支援_    | X 按鈕 (常用) |
 |           Context2 | Y 按鈕               | _不支援_    | Y 按鈕 (常用) |
-|           Context3 | 左搖桿按下  | _不支援_    | _varies_              |
-|           Context4 | 右搖桿按下 | _不支援_    | _varies_              |
+|           Context3 | 左搖桿按下  | _不支援_    | _而有所不同_              |
+|           Context4 | 右搖桿按下 | _不支援_    | _而有所不同_              |
 
 
 ## <a name="detect-and-track-ui-navigation-controllers"></a>偵測與追蹤 UI 瀏覽控制器

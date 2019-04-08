@@ -12,7 +12,7 @@ dev_langs:
 - cpp
 ms.openlocfilehash: 9df6eef44d45db37e17610d6a5333f3a387b5cf6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592163"
@@ -447,12 +447,12 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 
 **詳細的背景工作的說明主題**
 
-* [回應系統事件與背景工作](respond-to-system-events-with-background-tasks.md)
+* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
 * [註冊背景工作](register-a-background-task.md)
-* [設定用於執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [監視背景工作的進度和完成](monitor-background-task-progress-and-completion.md)
+* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [建立及註冊同處理序序背景工作](create-and-register-an-inproc-background-task.md)。
 * [將跨處理序背景工作轉換成同處理序背景工作](convert-out-of-process-background-task.md)  

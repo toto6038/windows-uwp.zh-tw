@@ -210,10 +210,10 @@ Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區
 ## <a name="related-topics"></a>相關主題
 * [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [IANA 語言子標記登錄](https://go.microsoft.com/fwlink/p/?linkid=227303)
-* [量身打造您的語言、 規模、 高對比和其他辨識符號的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [支援的語言](../../publish/supported-languages.md)
 * [全球化您的日期/時間/數字格式](use-global-ready-formats.md)
-* [資源管理系統與語言標記的相符](../../app-resources/how-rms-matches-lang-tags.md)
+* [資源管理系統如何比對語言標記](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>範例
 * [應用程式資源和當地語系化範例](https://go.microsoft.com/fwlink/p/?linkid=231501)

@@ -49,10 +49,10 @@ ms.locfileid: "57594773"
 | endDate | date | 擷取訂用帳戶的附加元件取得資料的日期範圍的結束日期。 預設為目前的日期。 |  否  |
 | top | 整數 | 要在要求中傳回的資料列數目。 最大值，如果未指定的預設值為 100。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=100 且 skip=0 時，會擷取前 100 列資料，top=100 且 skip=100 時，會擷取下 100 列資料，以此類推。 |  否  |
-| filter | 字串  | 一或多個篩選回應本文的陳述式。 每個陳述式都可以使用 **eq** 或 **ne** 運算子，而陳述式之間可以使用 **and** 或 **or** 來結合。 您可以在 篩選陳述式中指定下列字串 (這些會對應至[回應主體中的值](#subscription-acquisition-values)): <ul><li><strong>date</strong></li><li><strong>subscriptionProductName</strong></li><li><strong>applicationName</strong></li><li><strong>skuId</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li></ul><p>以下是範例*篩選條件*參數：<em>篩選 = 日期 eq ' 2017年-07-08'</em>。</p> | 否   |
+| filter | 字串  | 一或多個篩選回應本文的陳述式。 每個陳述式都可以使用 **eq** 或 **ne** 運算子，而陳述式之間可以使用 **and** 或 **or** 來結合。 您可以在 篩選陳述式中指定下列字串 (這些會對應至[回應主體中的值](#subscription-acquisition-values)): <ul><li><strong>日期</strong></li><li><strong>subscriptionProductName</strong></li><li><strong>應用程式名稱</strong></li><li><strong>SkuId</strong></li><li><strong>市場</strong></li><li><strong>裝置類型</strong></li></ul><p>以下是範例*篩選條件*參數：<em>篩選 = 日期 eq ' 2017年-07-08'</em>。</p> | 否   |
 | aggregationLevel | 字串 | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。 | 否 |
-| orderby | 字串 | 排序結果的每個訂用帳戶的附加元件取得資料值的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：<ul><li><strong>date</strong></li><li><strong>subscriptionProductName</strong></li><li><strong>applicationName</strong></li><li><strong>skuId</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
-| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>date</strong></li><li><strong>subscriptionProductName</strong></li><li><strong>applicationName</strong></li><li><strong>skuId</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如： <em>groupby = 市場&amp;aggregationLevel = 週</em></p> |  否  |
+| orderby | 字串 | 排序結果的每個訂用帳戶的附加元件取得資料值的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：<ul><li><strong>日期</strong></li><li><strong>subscriptionProductName</strong></li><li><strong>應用程式名稱</strong></li><li><strong>SkuId</strong></li><li><strong>市場</strong></li><li><strong>裝置類型</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
+| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>日期</strong></li><li><strong>subscriptionProductName</strong></li><li><strong>應用程式名稱</strong></li><li><strong>SkuId</strong></li><li><strong>市場</strong></li><li><strong>裝置類型</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如： <em>groupby = 市場&amp;aggregationLevel = 週</em></p> |  否  |
 
 
 ### <a name="request-example"></a>要求範例
@@ -90,7 +90,7 @@ Authorization: Bearer <your access token>
 | applicationId       | 字串  | [存放區識別碼](in-app-purchases-and-trials.md#store-ids)您擷取訂用帳戶的附加元件取得資料的應用程式。   |
 | applicationName     | 字串  | 應用程式的顯示名稱。     |
 | skuId     | 字串  | 識別碼[SKU](in-app-purchases-and-trials.md#products-skus)訂用帳戶附加元件，您要為其擷取取得資料。     |
-| deviceType          | 字串  |  以下字串之一指定完成收購的裝置類型：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>全像攝影版</strong></li><li><strong>未知</strong></li></ul>       |
+| deviceType          | 字串  |  以下字串之一指定完成收購的裝置類型：<ul><li><strong>PC</strong></li><li><strong>電話</strong></li><li><strong>主控台</strong></li><li><strong>IoT</strong></li><li><strong>全像攝影版</strong></li><li><strong>未知</strong></li></ul>       |
 | market           | 字串  | 發生下載之市場的 ISO 3166 國家/地區碼。     |
 | currencyCode         | 字串  | 格式之前稅金的銷售毛額的 ISO 4217 貨幣代碼。       |
 | grossSalesBeforeTax           | 整數  | 中所指定的本地貨幣的銷售毛額*currencyCode*值。     |

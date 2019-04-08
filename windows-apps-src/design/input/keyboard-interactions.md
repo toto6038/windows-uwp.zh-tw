@@ -320,7 +320,7 @@ UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>對話方塊按鈕</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>RadioButtons</sup></p>     
+      <p><sup>選項按鈕</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
@@ -400,7 +400,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 以下顯示鍵盤、遊戲台與遙控器之間的一些按鍵對應。
 
-| **鍵盤**  | **Gamepad**                         | **遠端控制**  |
+| **鍵盤**  | **遊戲台**                         | **遠端控制**  |
 |---------------|-------------------------------------|---------------------|
 | 空格鍵         | A 按鈕                            | 選取按鈕       |
 | Enter         | A 按鈕                            | 選取按鈕       |

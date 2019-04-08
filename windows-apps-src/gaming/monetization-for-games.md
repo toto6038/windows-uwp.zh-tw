@@ -31,18 +31,18 @@ Microsoft Store 可讓您的遊戲可供下載超過 200 個國家和地區全�
 
 ## <a name="set-a-price-for-your-game"></a>為您的遊戲設定價格
 
-發佈到市集的 UWP 遊戲可以是「付費」或「免費」的。 付費遊戲可讓玩家先以您設定的價格購買遊戲，免費遊戲則允許使用者下載並直接玩遊戲而不需要付費。
+發佈到市集的 UWP 遊戲可以是_付費_或_免費_的。 付費遊戲可讓玩家先以您設定的價格購買遊戲，免費遊戲則允許使用者下載並直接玩遊戲而不需要付費。
 
 以下是有關您的遊戲在市集中之價格的重要概念。
 
 ### <a name="base-price"></a>基本價格
 
-遊戲的基本價格會決定您的遊戲是歸類為「付費」或「免費」。 您可以使用[合作夥伴中心](https://partner.microsoft.com/dashboard)設定國家/地區和區域為基礎的基本價格。
+遊戲的基本價格會決定您的遊戲是歸類為_付費_或_免費_。 您可以使用[合作夥伴中心](https://partner.microsoft.com/dashboard)設定國家/地區和區域為基礎的基本價格。
 決定價格的程序可能包括您[在不同國家/地區銷售時的納稅義務](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)，以及[特定市場的成本考量](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets)。 您也可以[針對特定市場設定自訂價格](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets)。
 
 ### <a name="sale-price"></a>銷售價格
 
-宣傳您遊戲的其中一個方法是在有限的一段時間內降低其價格。 您也可以將銷售價格設為「免費」使該遊戲可以免費下載而不需要付款。
+宣傳您遊戲的其中一個方法是在有限的一段時間內降低其價格。 您也可以將銷售價格設為 __「免費」__ 使該遊戲可以免費下載而不需要付款。
 您可以藉由事先設定好銷售的開始日期和結束日期，來排程銷售活動。 如需詳細資訊，請參閱[促銷 App 和附加元件](https://msdn.microsoft.com/windows/uwp/publish/put-apps-and-add-ons-on-sale)。
 
 ## <a name="in-game-purchases"></a>遊戲內購買
@@ -51,9 +51,9 @@ Microsoft Store 可讓您的遊戲可供下載超過 200 個國家和地區全�
 
 ### <a name="types-of-add-ons"></a>附加元件的類型
 
-您在市集中可建立的附加元件有兩種：「耐久品」或「消費性產品」。 耐久品是可以持續一段指定時間的項目，且在它到期之前只能購買一次。 消費性產品是可以不斷重複購買的項目。
+您在市集中可建立的附加元件有兩種：_耐久品_或_消費性產品_。 耐久品是可以持續一段指定時間的項目，且在它到期之前只能購買一次。 消費性產品是可以不斷重複購買的項目。
 
-在建立消費性產品的時候，可以決定您想要追蹤它們的方式 &mdash; 亦即它們是「開發人員管理」或是「市集管理」(此功能自 Windows 10 版本 1607 開始可供使用)。 與開發人員管理可使用時，您必須負責追蹤的項目的玩家; 平衡與存放區管理可使用時，Microsoft Store 會追蹤的項目的餘額為您。 如需詳細資訊，請參閱[消費性附加元件的概觀](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
+在建立消費性產品的時候，可以決定您想要追蹤它們的方式 &mdash; 亦即它們是_開發人員管理_或是_市集管理_(此功能自 Windows 10 版本 1607 開始可供使用)。 與開發人員管理可使用時，您必須負責追蹤的項目的玩家; 平衡與存放區管理可使用時，Microsoft Store 會追蹤的項目的餘額為您。 如需詳細資訊，請參閱[消費性附加元件的概觀](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
 
 ### <a name="create-in-game-purchases"></a>建立遊戲內購買
 
@@ -69,7 +69,7 @@ Microsoft Store 可讓您的遊戲可供下載超過 200 個國家和地區全�
 |遊戲內的動作 / 活動                                                | 遊戲的背景工作                  |
 |--------------------------------------------------------------------------|----------------------------------------|
 |玩家進入商店。 跳出商店功能表以顯示可取得的附加元件和購買價格 |  遊戲會[抓取附加元件的產品資訊](https://msdn.microsoft.com/windows/uwp/monetize/get-product-info-for-apps-and-add-ons)，[判斷附加元件是否有適當的授權](https://msdn.microsoft.com/windows/uwp/monetize/get-license-info-for-apps-and-add-ons)，並顯示可供玩家在商店功能表購買的附加元件。                           |
-|玩家按一下 [購買] 購買某個項目             |「購買」的動作會傳送要求以購買該項目，並開始付款程序以取得它。 實作會根據項目類型而有所不同。 如果它是[耐久品或一次性購買項目](https://msdn.microsoft.com/windows/uwp/monetize/enable-in-app-purchases-of-apps-and-add-ons)，則在它到期之前客戶只能擁有一個該項目。 如果它是[消費性產品](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases)，則客戶可以擁有一或多個該項目。 |
+|玩家按一下 __\[購買\]__ 購買某個項目             |__「購買」__ 的動作會傳送要求以購買該項目，並開始付款程序以取得它。 實作會根據項目類型而有所不同。 如果它是[耐久品或一次性購買項目](https://msdn.microsoft.com/windows/uwp/monetize/enable-in-app-purchases-of-apps-and-add-ons)，則在它到期之前客戶只能擁有一個該項目。 如果它是[消費性產品](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases)，則客戶可以擁有一或多個該項目。 |
 
 ### <a name="test-in-game-purchases-during-game-development"></a>在遊戲開發期間測試遊戲內購買
 
@@ -89,25 +89,25 @@ Microsoft Store 可讓您的遊戲可供下載超過 200 個國家和地區全�
 建立可上傳到市集的檔案：
 
 1. 在 Visual Studio 中開啟您的遊戲方案。
-2. 在 Visual Studio 中，移至 [專案] > [市集] > [建立應用程式套件]
+2. 在 Visual Studio 中，移至 __\[專案\]__ > __\[市集\]__ > __\[建立應用程式套件\]__
 3. 針對__您要建置套件以上傳到 Microsoft Store 嗎？__ 選項中，選取__是__。
 4. 登入您[合作夥伴中心](https://partner.microsoft.com/dashboard)開發人員帳戶。 如果您還沒有開發人員帳戶，可以[註冊](https://developer.microsoft.com/store/register)一個。
 5. 選取一個要建立上傳套件的 App。 如果您尚未建立 App 提交，請提供新的 App 名稱以建立新的提交。 如需詳細資訊，請參閱[透過保留名稱建立您的 App](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
-6. 成功建立套件之後，按一下 [啟動 Windows 應用程式認證套件] 以開始測試程序。
+6. 成功建立套件之後，按一下 __\[啟動 Windows 應用程式認證套件\]__ 以開始測試程序。
 7. 修正任何錯誤以建立遊戲套件。
 
 #### <a name="publish-the-game-as-hidden"></a>將遊戲以隱藏的方式發佈
 
 1. 移至[合作夥伴中心](https://partner.microsoft.com/dashboard)並登入。
-2. 從 [儀表板總覽] 或 [所有應用程式] 頁面，按一下您要處理的 App。 如果您尚未建立 App 提交，按一下 [建立新應用程式] 並保留名稱。
-3. 在 [應用程式概觀] 頁面上，按一下 [開始您的提交]。
+2. 從 __\[儀表板總覽\]__ 或 __\[所有應用程式\]__ 頁面，按一下您要處理的 App。 如果您尚未建立 App 提交，按一下 __\[建立新應用程式\]__ 並保留名稱。
+3. 在 __\[應用程式概觀\]__ 頁面上，按一下 __\[開始您的提交\]__。
 4. 設定這個新的提交。 在提交頁面上：
-    * 按一下 [定價和可用性]。 在 __可視性__區段中，選擇 '__隱藏此應用程式，並防止擷取...__' 以確保您的開發小組可以存取的遊戲。 如需詳細資訊，請移至[配送和可見性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
-    * 按一下 [內容] 。 在 [類別和子類別] 區段中，選擇 [遊戲]，再選取適合您遊戲的子類別。
-    * 按一下 [年齡分級]。 準確地填寫問卷。
-    * 按一下 [套件]。 上傳在先前步驟中建立的遊戲套件。
+    * 按一下 __\[定價和可用性\]__。 在 __可視性__區段中，選擇 '__隱藏此應用程式，並防止擷取...__' 以確保您的開發小組可以存取的遊戲。 如需詳細資訊，請移至[配送和可見性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
+    * 按一下 [內容] 。 在 __\[類別和子類別\]__ 區段中，選擇 __\[遊戲\]__，再選取適合您遊戲的子類別。
+    * 按一下 __\[年齡分級\]__。 準確地填寫問卷。
+    * 按一下 __\[套件\]__。 上傳在先前步驟中建立的遊戲套件。
 5. 遵循儀表板中的任何其他提交提示，您就能成功發佈該遊戲並讓它維持對大眾隱藏。
-6. 按一下 [提交至市集]。
+6. 按一下 __\[提交至市集\]__。
 
 如需詳細資訊，請移至 [App 提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
 
@@ -117,9 +117,9 @@ Microsoft Store 可讓您的遊戲可供下載超過 200 個國家和地區全�
 
 在 Visual Studio 中開啟您的遊戲方案：
 
-1. 移至 [專案] > [市集] > [將應用程式與市集建立關聯]
+1. 移至 __\[專案\]__ > __\[市集\]__ > __\[將應用程式與市集建立關聯\]__
 2. 合作夥伴中心開發人員帳戶登入，然後選取將使用此解決方案的應用程式名稱。
-3. 按兩下 __Package.appxmanifest.xml file__ 然後移至 [套件] 索引標籤以檢查遊戲已正確建立關聯。
+3. 按兩下 __Package.appxmanifest.xml file__ 然後移至 __\[套件\]__ 索引標籤以檢查遊戲已正確建立關聯。
 
 如果您已經將方案與已經在市集上架的遊戲建立關聯，您的方案將會有使用中的授權，且離為遊戲建立附加元件又更近一些。 如需詳細資訊，請參閱[封裝 app](https://msdn.microsoft.com/windows/uwp/packaging/index)。
 
@@ -128,9 +128,9 @@ Microsoft Store 可讓您的遊戲可供下載超過 200 個國家和地區全�
 在建立附加元件的時候，請確認您將他們與正確的遊戲提交建立關聯。 如需設定與附加元件關聯之各資訊的方法，請參閱[附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
 
 1. 移至[合作夥伴中心](https://partner.microsoft.com/dashboard)並登入。
-2. 從 [儀表板總覽] 或 [所有應用程式] 頁面，按一下您要建立附加元件的 App。
-3. 在 [應用程式概觀] 頁面上，於 [附加元件] 區段中，選取 [建立新的附加元件]。
-4. 選取附加元件的產品類型：[開發人員管理的消費性產品]、[市集管理的消費性產品]，或 [耐久品]。
+2. 從 __\[儀表板總覽\]__ 或 __\[所有應用程式\]__ 頁面，按一下您要建立附加元件的 App。
+3. 在 __\[應用程式概觀\]__ 頁面上，於 __\[附加元件\]__ 區段中，選取 __\[建立新的附加元件\]__。
+4. 選取附加元件的產品類型：__\[開發人員管理的消費性產品\]__、__\[市集管理的消費性產品\]__，或 __\[耐久品\]__。
 5. 輸入唯一的產品識別碼，將此附加元件整合到遊戲程式碼中的時候，會用它當作字串變數。 消費者不會看到這個識別碼。 如需詳細資訊，請參閱[設定您的 App 產品類型與產品識別碼](https://msdn.microsoft.com/windows/uwp/publish/set-your-add-on-product-id)。
 
 附加元件的其他設定包括：

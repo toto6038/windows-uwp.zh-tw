@@ -31,7 +31,7 @@ Xbox One 上的 UWP 支援開發 App 和遊戲。 您要實驗、建立和測試
 |[範例](samples.md)| GitHub 位置指標 (TVHelpers)，您將在其中找到有用的 XAML 和 JavaScript 範例以開始針對 Xbox 進行開發。 範例包括完整的 XAML 媒體 App 範本，以及針對網路技術的自動控制器瀏覽、多媒體播放及搜尋。 |
 |[已知問題](known-issues.md)| Xbox One 上的 UWP 已知問題。 |
 |[常見問題集](frequently-asked-questions.md)| 與 Xbox One 上的 UWP 相關的常見問題集。 |
-|[工具](introduction-to-xbox-tools.md)| 說明 Xbox One 專屬的工具「開發人員首頁」、如何使用 Windows 裝置入口網站，和如何針對開發設定 Visual Studio。 本節也會引導新的開發人員完成第一個 Xbox UWP 應用程式範例，並說明 Fiddler 工具的使用方式以檢視網路流量。 |
+|[工具](introduction-to-xbox-tools.md)| 說明 Xbox One 專屬的工具「開發人員首頁」、如何使用 Windows Device Portal，和如何針對開發設定 Visual Studio。 本節也會引導新的開發人員完成第一個 Xbox UWP 應用程式範例，並說明 Fiddler 工具的使用方式以檢視網路流量。 |
 | [Xbox 事件上的應用程式開發](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event) | Xbox 事件上的應用程式開發是開發人員在 Xbox 上建置應用程式的絕佳起點。 觀賞錄製工作階段，閱讀事件部落格貼文。 |
 |[針對 Xbox 和電視進行設計](../design/devices/designing-for-tv.md)| 描述設計將在 TV 上檢視並使用控制器進行輸入之 App 的最佳做法。 |
 |[Xbox 最佳做法](tailoring-for-xbox.md)| 如何關閉滑鼠模式、繪製到螢幕邊緣，以及停用縮放。 |

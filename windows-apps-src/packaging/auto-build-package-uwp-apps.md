@@ -213,7 +213,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 會顯示此錯誤是因為在方案層級，仍不清楚套件組合中應顯示哪個 App。
 若要解決此問題，請開啟每個專案檔案，並在第一個 `<PropertyGroup>` 項目的結尾處新增下列屬性：
 
-|**Project**|**屬性**|
+|**專案**|**屬性**|
 |-------|----------|
 |應用程式|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|

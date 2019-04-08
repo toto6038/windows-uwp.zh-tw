@@ -38,7 +38,7 @@ ms.locfileid: "57605043"
 
 來自上一個著色器階段的頂點資料。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
 資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段 (例如幾何著色器 (GS) 階段) 輸出 (或串流) 到記憶體中的一或多個緩衝區。 如果非作用中的幾何著色器 (GS) 階段，Stream 輸出 (SO) 階段持續輸出緩衝區的記憶體 （或如果 DS 也是作用中，從 頂點著色器 (VS) 階段） 中的頂點資料來自網域著色器 (DS) 階段。

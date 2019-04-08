@@ -241,7 +241,7 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 
 * [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
-* [未經處理的通知概觀](raw-notification-overview.md)
+* [原始通知概觀](raw-notification-overview.md)
 * [連接到 Windows Azure 行動服務 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
 * [連接到 Windows Azure 行動服務 (C#/C+ + VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
 * [快速入門：新增推播通知的行動服務 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)

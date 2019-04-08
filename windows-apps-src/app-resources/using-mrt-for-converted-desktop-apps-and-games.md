@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App C
 ms.localizationpriority: medium
 ms.openlocfilehash: 287c22cbd50f1b69f505bbddd445740fe9422c31
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57597013"
@@ -787,4 +787,4 @@ makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.app
 
 ## <a name="related-topics"></a>相關主題
 
-* [量身打造您的語言、 規模、 高對比和其他辨識符號的資源](tailor-resources-lang-scale-contrast.md)
+* [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)

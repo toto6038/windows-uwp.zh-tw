@@ -89,7 +89,7 @@ typedef struct
 
 ### <a name="technologies"></a>技術
 
--   [Microsoft Visual C++](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
+-   [Microsoft Visual c + +](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
 ### <a name="prerequisites"></a>必要條件

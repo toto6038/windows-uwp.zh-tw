@@ -1,6 +1,6 @@
 ---
 title: 在 C++ 中建立 Windows 執行階段元件
-description: 本主題說明如何使用 C + + /CX，以建立 Windows 執行階段元件，元件可從使用建置通用 Windows 應用程式呼叫C#，Visual Basic、 c + + 或 Javascript。
+description: 本主題說明如何使用 C++/CX 來建立 Windows 執行階段元件，此元件是可從使用 C#、Visual Basic、C++ 或 Javascript 所建置的通用 Windows 應用程式呼叫的元件。
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.date: 05/14/2018
 ms.topic: article
@@ -17,7 +17,7 @@ ms.locfileid: "57600863"
 > [!NOTE]
 > 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 若要了解如何建立 Windows 執行階段元件使用 C + + /cli WinRT，請參閱[撰寫事件在 C + + /cli WinRT](../cpp-and-winrt-apis/author-events.md)。
 
-本主題說明如何使用 C + + /CX，以建立 Windows 執行階段元件，元件可從使用建置通用 Windows 應用程式呼叫C#，Visual Basic、 c + + 或 Javascript。
+本主題說明如何使用 C++/CX 來建立 Windows 執行階段元件，此元件是可從使用 C#、Visual Basic、C++ 或 Javascript 所建置的通用 Windows 應用程式呼叫的元件。
 
 有幾個原因，用於建立 Windows 執行階段元件。
 - 獲得 C++ 在複雜或密集運算作業中的效能優勢。

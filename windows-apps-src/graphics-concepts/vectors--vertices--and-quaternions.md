@@ -34,7 +34,7 @@ ms.locfileid: "57599863"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[座標系統和幾何](coordinate-systems-and-geometry.md)
+[座標系統與幾何](coordinate-systems-and-geometry.md)
 
  
 

@@ -11,7 +11,7 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57594583"
@@ -112,7 +112,7 @@ ms.locfileid: "57594583"
 </tr>
 <tr class="even">
 <td align="left">WebView</td>
-<td align="left"><a href="../controls-and-patterns/web-view.md">WebView</a></td>
+<td align="left"><a href="../controls-and-patterns/web-view.md">Web 檢視</a></td>
 <td align="left">呈現 HTML 內容。</td>
 </tr>
 </tbody>

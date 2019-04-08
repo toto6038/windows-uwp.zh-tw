@@ -74,7 +74,7 @@ ms.locfileid: "57662873"
 
 ## <a name="related-topics"></a>相關主題
 
-* [在應用程式內購買和試用版](in-app-purchases-and-trials.md)
+* [應用程式內購買和試用版](in-app-purchases-and-trials.md)
 * [取得應用程式和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
 * [取得應用程式和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
 * [啟用應用程式內購買的應用程式和附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)

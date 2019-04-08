@@ -22,7 +22,7 @@ ms.locfileid: "57591763"
 
 ### <a name="important-apis"></a>重要 API
 - [InputScope](https://msdn.microsoft.com/library/windows/apps/hh702632)
-- [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)
+- [inputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)
 
 
 當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者點選可編輯的輸入欄位 (例如 **[TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)** 或 **[RichEditBox](https://msdn.microsoft.com/library/windows/apps/br227548)**) 時，就會叫用觸控式鍵盤。 您可以設定文字控制項的「輸入範圍」，使它符合您預期使用者輸入的資料類型，讓使用者在您的 App 中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。

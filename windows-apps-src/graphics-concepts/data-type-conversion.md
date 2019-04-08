@@ -235,7 +235,7 @@ ms.locfileid: "57590573"
 <td align="left">FLOAT</td>
 <td align="left"><p>假設要轉換成浮點數的特定固定點表示法未包含總計超過 24 個位元的資訊，則分數元件中不會超過其中的 23 個位元。 假設某個固定點數字 fxp 採用 i.f 形式 (i 位元整數，f 位元分數)。 轉換成浮點數類似下列虛擬程式碼。</p>
 <p>浮點數結果 = (float)(fxp &gt;&gt; f) + // 取整數</p>
-((float)(fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); // extract fraction</td>
+((float) (fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); / / 擷取分數</td>
 </tr>
 </tbody>
 </table>
@@ -245,7 +245,7 @@ ms.locfileid: "57590573"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[Appendices](appendix.md)
+[附錄](appendix.md)
 
  
 

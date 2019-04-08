@@ -1,5 +1,5 @@
 ---
-title: 寫入檔案的最佳作法
+title: 寫入檔案的最佳做法
 description: 了解使用撰寫 FileIO 和 PathIO 類別方法的各種檔案的最佳作法。
 ms.date: 02/06/2019
 ms.topic: article
@@ -7,12 +7,12 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57605833"
 ---
-# <a name="best-practices-for-writing-to-files"></a>寫入檔案的最佳作法
+# <a name="best-practices-for-writing-to-files"></a>寫入檔案的最佳做法
 
 **重要的 Api**
 
@@ -76,11 +76,11 @@ A [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storage
 |  錯誤名稱 （值）  |  步驟  |  原因  |  解決方案  |
 |----------------------|---------|----------|-------------|
 |  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  原始的檔案可能會標示為刪除，可能是從先前的作業。  |  重試作業。</br>請確定檔案的存取會同步處理。  |
-|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  原始檔案會開啟另一個的獨佔寫入。   |  重試作業。</br>請確定檔案的存取會同步處理。  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  不會取代原始的檔案 (file.txt)，因為它正在使用中。 另一個處理序或作業取得檔案的存取權，可以取代之前。  |  重試作業。</br>請確定檔案的存取會同步處理。  |
-|  ERROR_DISK_FULL (0x80070070)  |  7, 14, 16, 20  |  此交易的模型會建立一個額外的檔案，這會消耗額外的儲存體。  |    |
-|  ERROR_OUTOFMEMORY (0X8007000E)  |  14, 16  |  這可能是由於多個未處理 I/O 作業或大型檔案的大小。  |  更細微的方法，藉由控制資料流可能會解決此錯誤。  |
-|  E_FAIL (0x80004005) |  任何值  |  其他  |  重試作業。 如果仍然失敗，它可能是平台錯誤，而應用程式應終止，因為它處於不一致的狀態。 |
+|  並傳回 ERROR_SHARING_VIOLATION (0X80070020)  |  5  |  原始檔案會開啟另一個的獨佔寫入。   |  重試作業。</br>請確定檔案的存取會同步處理。  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0X80070497)  |  19-20  |  不會取代原始的檔案 (file.txt)，因為它正在使用中。 另一個處理序或作業取得檔案的存取權，可以取代之前。  |  重試作業。</br>請確定檔案的存取會同步處理。  |
+|  ERROR_DISK_FULL (0X80070070)  |  7、 14、 16、 20  |  此交易的模型會建立一個額外的檔案，這會消耗額外的儲存體。  |    |
+|  ERROR_OUTOFMEMORY (0X8007000E)  |  14、 16  |  這可能是由於多個未處理 I/O 作業或大型檔案的大小。  |  更細微的方法，藉由控制資料流可能會解決此錯誤。  |
+|  E_FAIL (0X80004005) |  任何值  |  其他  |  重試作業。 如果仍然失敗，它可能是平台錯誤，而應用程式應終止，因為它處於不一致的狀態。 |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>其他考量可能會導致錯誤的檔案狀態
 
@@ -194,4 +194,4 @@ else
 
 ## <a name="see-also"></a>請參閱
 
-* [建立、 寫入和讀取檔案](quickstart-reading-and-writing-files.md)
+* [建立、寫入和讀取檔案](quickstart-reading-and-writing-files.md)

@@ -102,6 +102,6 @@ Visual Studio 在幕後啟動名為 `MakePri.exe` 的工具來產生所謂套件
 
 ## <a name="related-topics"></a>相關主題
 
-* [量身打造您的語言、 規模、 高對比和其他辨識符號的資源](tailor-resources-lang-scale-contrast.md)
+* [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)
 * [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [編譯以手動方式使用 MakePri.exe 的資源](compile-resources-manually-with-makepri.md)
+* [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)

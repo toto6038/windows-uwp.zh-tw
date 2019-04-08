@@ -59,8 +59,8 @@ ms.locfileid: "57594573"
 | skip   | 整數    |  在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。   |   否    |
 | filter   |  字串   |  一或多個篩選回應中資料列的陳述式。 目前唯一支援的篩選是 **campaignId**。 每個陳述式都可以使用 **eq** 或 **ne** 運算子，而陳述式之間可以使用 **and** 或 **or** 來結合。  以下是一個範例 *filter* 參數：```filter=campaignId eq '100023'```。   |   否    |
 |  aggregationLevel  |  字串   | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。    |   否    |
-| orderby   |  字串   |  <p>將廣告行銷活動績效資料的結果資料值排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：</p><ul><li><strong>date</strong></li><li><strong>campaignId</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>以下是一個範例 <em>orderby</em> 字串：<em>orderby=date,campaignId</em></p>   |   否    |
-|  groupby  |  字串   |  <p>將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：</p><ul><li><strong>campaignId</strong></li><li><strong>applicationId</strong></li><li><strong>date</strong></li><li><strong>currencyCode</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p>   |   否    |
+| orderby   |  字串   |  <p>將廣告行銷活動績效資料的結果資料值排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：</p><ul><li><strong>日期</strong></li><li><strong>campaignId</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>以下是一個範例 <em>orderby</em> 字串：<em>orderby=date,campaignId</em></p>   |   否    |
+|  groupby  |  字串   |  <p>將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：</p><ul><li><strong>campaignId</strong></li><li><strong>applicationId</strong></li><li><strong>日期</strong></li><li><strong>currencyCode</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p>   |   否    |
 
 
 ### <a name="request-example"></a>要求範例

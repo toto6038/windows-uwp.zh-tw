@@ -84,7 +84,7 @@ ms.locfileid: "57602573"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[端點和索引緩衝區](vertex-and-index-buffers.md)
+[頂點和索引緩衝區](vertex-and-index-buffers.md)
 
  
 

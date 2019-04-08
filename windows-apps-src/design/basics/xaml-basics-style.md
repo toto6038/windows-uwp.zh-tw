@@ -87,7 +87,7 @@ PhotoLab 應用程式有兩個主要頁面：
         Minimum="-2"
         Maximum="2" />
     ```
-    **After**
+    **之後**
     ```xaml
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -134,7 +134,7 @@ PhotoLab 應用程式有兩個主要頁面：
             Minimum="-1"
             Maximum="1" />
     ```
-    **After**
+    **之後**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -262,7 +262,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Grid.Resources>
     ```
 
-    **After**
+    **之後**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -302,7 +302,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             </Style>                            
     ```    
 
-    **After**
+    **之後**
     ```XAML
             <Style TargetType="TextBlock"
                    x:Key="ValueTextBox">
@@ -325,7 +325,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```
 
-    **After**
+    **之後**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -646,7 +646,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Grid.RowDefinitions>        
     ```
 
-    **After**
+    **之後**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -691,7 +691,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Polygon>           
     ```
     
-    **After**
+    **之後**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -711,7 +711,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
                     Grid.ColumnSpan="3" />          
     ```
     
-    **After**
+    **之後**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Height="{ThemeResource SliderTrackThemeHeight}"
@@ -750,7 +750,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Template="{StaticResource FancySliderControlTemplate}"/>    
     ```
     
-    **After**
+    **之後**
     ```XAML
     <Slider Header="Exposure" 
             Grid.Row="2"  Foreground="Transparent"
@@ -791,7 +791,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Maximum="1" />
     ```
     
-    **After**
+    **之後**
     ```XAML
     <Slider Header="Temperature"
             Grid.Row="3" Foreground="Transparent"
@@ -833,7 +833,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Maximum="1" />
     ```
     
-    **After**
+    **之後**
     ```XAML
     <Slider Header="Tint"
             Grid.Row="4" Foreground="Transparent"

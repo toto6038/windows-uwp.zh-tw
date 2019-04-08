@@ -40,7 +40,7 @@ ms.locfileid: "57595383"
 | sharedAccessToken | 字串 | 否 | 語彙基元，可識別要剪取 & 草圖應用程式中開啟的檔案。 擷取自[SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)。 如果省略這個參數，則會啟動應用程式，而不需要開啟的檔案。 |
 | secondarySharedAccessToken | 字串 | 否 | 剪取的相關中繼資料中識別的 JSON 檔案的字串。 中繼資料可能包含**clipPoints**欄位的 x，y 座標陣列和/或[userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity)。 |
 | 來源 | 字串 | 否 | 自由格式字串，以指出啟動 URI 的來源。 |
-| isTemporary | bool | 否 | 如果設定為 True，畫面草圖會嘗試刪除檔案之後將它開啟。 |
+| IsTemporary | bool | 否 | 如果設定為 True，畫面草圖會嘗試刪除檔案之後將它開啟。 |
 
 下列範例會呼叫[LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_)剪取 & 草圖傳送映像，從使用者的應用程式的方法。
 

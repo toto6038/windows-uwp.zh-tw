@@ -279,7 +279,7 @@ makeToast 函式必須連結至一個按鈕。 更新 default.html 以增加一�
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>為元件的介面產生 GUID (C# 及其他 .NET 程式語言)
 
-在功能表列上，依序選擇 \[工具\] &gt; \[建立 GUID\]。 在對話方塊中，選取 5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. 選擇 \[新的 GUID\] 按鈕，然後選擇 \[複製\] 按鈕。
+在功能表列上，依序選擇 \[工具\] &gt; \[建立 GUID\]。 在對話方塊中，選取 5. \[Guid ("xxxxxxxx-xxxx...xxxx)\]。 選擇 \[新的 GUID\] 按鈕，然後選擇 \[複製\] 按鈕。
 
 ![GUID 產生器工具](./images/guidgeneratortool.png)
 
@@ -422,4 +422,4 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA
 
 ## <a name="related-topics"></a>相關主題
 
-* [在 c + + 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md)
+* [在 C++ 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md)

@@ -28,6 +28,6 @@ ms.locfileid: "57613873"
 
 
 ## <a name="see-also"></a>請參閱
-- [將現有的遊戲帶到 Xbox](development-lanes-landing.md)
+- [將現有的遊戲移到 Xbox](development-lanes-landing.md)
 - [在 Xbox One UWP](index.md)
 

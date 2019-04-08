@@ -8,7 +8,7 @@ ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b338fd3b34d530ad365b0377d6b6c6c65398b7
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57604233"
@@ -49,6 +49,6 @@ ms.locfileid: "57604233"
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用方式報表](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
+* [使用報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
 * [Log 方法](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

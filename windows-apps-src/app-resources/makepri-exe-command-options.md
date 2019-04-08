@@ -416,7 +416,7 @@ MakePri 可以在索引子中繼資料檔案中包含資源套件特定的資訊
 
 **FILEPATH** 是指定輸入 PRI 檔案或 PRI 結構描述檔案的位置的權杖。
 
-## <a name="47indexoptionsio-option"></a>&#47;IndexOptions(io) option
+## <a name="47indexoptionsio-option"></a>&#47;IndexOptions(io) 選項
 
 使用 [索引選項] 選項 (/ io) 與`new`， `resourcepack`，和`versioned`來指定提供細微地控制資源的索引子行為的選項。 根據預設，會停用索引選項。
 

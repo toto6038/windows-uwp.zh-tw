@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 24ec2013735597efae73aee31bb4aee1a8e1413e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57594983"
@@ -29,7 +29,7 @@ Microsoft Store Services SDK 目前支援下列 UWP app 案例。 如需 API 參
 |  案例  |  描述   |
 |------------|----------------|
 |  [執行實驗，在您的 UWP 應用程式，以 A / B 測試](run-app-experiments-with-a-b-testing.md)    |  在「通用 Windows 平台」(UWP) app 中執行 A/B 測試，以在將功能釋出給每個人之前，先對部分客戶測量功能是否有效。 在合作夥伴中心內定義的實驗之後，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)類別，即可取得您的實驗，在您的應用程式中使用此資料來修改您要測試，此功能的行為變化，然後使用[LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)檢視事件和轉換事件傳送給合作夥伴中心的方法。 最後，使用合作夥伴中心來檢視結果，並管理實驗。  |
-|  [啟動從 UWP 應用程式的意見反應中樞](launch-feedback-hub-from-your-app.md)    |  在您的 UWP app 中使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 類別將您的 Windows 10 客戶引導至「意見反應中樞」，以便他們在其中提交問題、建議及附議。 接著，管理在此意見反應[意見反應報表](../publish/feedback-report.md)在合作夥伴中心。 |
+|  [啟動從 UWP 應用程式的意見反應中樞](launch-feedback-hub-from-your-app.md)    |  在您的 UWP app 中使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 類別將您的 Windows 10 客戶引導至「意見反應中樞」，以便他們在其中提交問題、建議及附議。 然後，在「合作夥伴中心」的[意見反應報告](../publish/feedback-report.md)中管理此意見反應。 |
 |  [設定您的 UWP 應用程式，以接收合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)    |  使用[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)在 UWP 應用程式註冊您的應用程式，以接收您傳送給客戶使用合作夥伴中心的目標推播通知的類別。  |
 |   [在您的 UWP 應用程式，在合作夥伴中心內的 [使用量] 報表的記錄自訂事件](log-custom-events-for-dev-center.md)   |  使用[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)在 UWP 應用程式與您在合作夥伴中心內的應用程式相關聯的自訂事件記錄中的類別。 接著，檢閱 在您的自訂事件的發生次數總計**自訂事件**一節[使用量報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)在合作夥伴中心。  |
 
@@ -141,5 +141,5 @@ Microsoft Store Services SDK 中的 Microsoft.Services.Store.Engagement.dll 程�
 * [Microsoft Store Services SDK API 參考](https://docs.microsoft.com/uwp/api/overview/engagement)
 * [執行包含 A/B 測試的實驗](run-app-experiments-with-a-b-testing.md)
 * [從您的 App 啟動意見反應中樞](launch-feedback-hub-from-your-app.md)
-* [設定您的應用程式接收合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)
-* [合作夥伴中心記錄自訂事件](log-custom-events-for-dev-center.md)
+* [設定您的應用程式以接收合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)
+* [記錄合作夥伴中心的自訂事件](log-custom-events-for-dev-center.md)

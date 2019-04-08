@@ -33,7 +33,7 @@ ms.locfileid: "57594693"
 
 方向光源有只色彩和方向，不含位置。 他們發出平行光線。 這表示方向光源產生的所有光線，均透過場景同方向行進。 請想像方向光線為附近無限距離的光源，例如陽光。 方向光源不受衰減或範圍的影響，因此當 Direct3D 計算頂點色彩時，您指定的方向與色彩為認定的唯一係數。 由於照明係數少，這些都是可使用的最少計算密集型光線。
 
-## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>SpotLight
+## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>焦點
 
 
 聚光燈有色彩、位置及發光方向。 從聚光燈發出的光線由明亮內錐和較大的外錐體組成，兩者之間的光照強度減弱，如下圖所示。

@@ -472,9 +472,9 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 -   [憑證](certificates.md)
 -   [密碼編譯金鑰](cryptographic-keys.md)
 -   [資料保護](data-protection.md)
--   [Mac、 雜湊，以及簽章](macs-hashes-and-signatures.md)
+-   [MAC、雜湊以及簽章](macs-hashes-and-signatures.md)
 -   [密碼編譯的匯出限制](export-restrictions-on-cryptography.md)
--   [一般密碼編譯工作](common-cryptography-tasks.md)
+-   [常見的密碼編譯工作](common-cryptography-tasks.md)
 
 ### <a name="62-code-samples"></a>6.2 程式碼範例
 

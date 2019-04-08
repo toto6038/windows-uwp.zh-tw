@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602323"

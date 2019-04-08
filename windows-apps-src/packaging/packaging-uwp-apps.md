@@ -11,7 +11,7 @@ f1_keywords:
 ms.localizationpriority: medium
 ms.openlocfilehash: f2e89490a76c9174c1e938466bf1fbcc9cc13455
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57599133"
@@ -96,7 +96,7 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 4.  在下一步 頁面上，使用您開發人員帳戶登入合作夥伴中心。 如果您還沒有開發人員帳戶，精靈會幫助您建立一個。
     ![建立應用程式封裝 視窗以顯示選取的應用程式名稱](images/packaging-screen4.jpg)
 5.  從目前已註冊您的帳戶，應用程式清單中選取您封裝應用程式的名稱，或保留新的如果您有保留一個在合作夥伴中心。  
-6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 **\[產生應用程式套件組合\]** 清單方塊中，選取 **\[一律\]**。 應用程式配套 （.appxbundle 或.msixbundle） 建議，透過單一的應用程式套件檔案因為它包含每種類型的處理器架構所設定的應用程式套件的集合。 當您選擇要產生應用程式套件組合時，應用程式套件組合會包含在最終的應用程式封裝上傳 （.appxupload 或.msixupload） 檔案以及偵錯和當機分析的資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
+6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 [產生應用程式套件組合] 清單方塊中，選取 [一律]。 應用程式配套 （.appxbundle 或.msixbundle） 建議，透過單一的應用程式套件檔案因為它包含每種類型的處理器架構所設定的應用程式套件的集合。 當您選擇要產生應用程式套件組合時，應用程式套件組合會包含在最終的應用程式封裝上傳 （.appxupload 或.msixupload） 檔案以及偵錯和當機分析的資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
     ![使用封裝組態顯示建立應用程式封裝 視窗](images/packaging-screen5.jpg)
 7.  包含完整的 PDB 符號檔才能[分析應用程式效能](https://docs.microsoft.com/windows/uwp/publish/analytics)從已發行您的應用程式之後，合作夥伴中心。 設定任何其他詳細資料，例如版本編號或套件輸出位置。
 9.  按一下 **\[建立\]** 產生應用程式套件。 如果您選取其中一個**我想要建立套件以上傳到 Microsoft Store**步驟 3 中的選項，並建立合作夥伴中心提交套件，精靈會建立封裝上傳 （.appxupload 或.msixupload） 檔案。 如果您選取**我想要建立封裝以側載**在步驟 3 中，精靈會建立單一應用程式套件或應用程式套件組合，根據您在步驟 6 中的選取項目。

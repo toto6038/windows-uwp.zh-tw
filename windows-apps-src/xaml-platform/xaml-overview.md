@@ -68,10 +68,10 @@ XAML 檔案幾乎永遠在它的根元素中宣告預設的 XAML 命名空間。
 
 | 詞彙 | 描述 |
 |------|-------------|
-| [x:Key](x-key-attribute.md) | 為 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的每個資源設定唯一的使用者定義索引鍵。 索引鍵的權杖字串是 **StaticResource** 標記延伸的引數，而您稍後可以使用這個索引鍵，從位於 app XAML 任一處的其他 XAML 用法中抓取 XAML 資源。 |
-| [x:Class](x-class-attribute.md) | 指定類別的程式碼命名空間和程式碼類別名稱，該類別提供 XAML 頁面的程式碼後置。 這會在您建置應用程式時，為組建動作所建立或加入的類別命名。 這些組建動作支援 XAML 標記編譯器，並且可以在編譯應用程式時組合您的標記和程式碼後置。 您必須擁有這類類別，才能支援 XAML 頁面的程式碼後置。 [**Window.Content** ](https://msdn.microsoft.com/library/windows/apps/br209051)以預設的 Windows 執行階段啟用模型。 |
-| [x:Name](x-name-attribute.md) | 為處理完 XAML 中定義的物件元素後而存在執行階段程式碼中的執行個體，指定執行階段物件名稱。 您可以將在 XAML 中設定 **x:Name** 想像成在程式碼中宣告具名變數。 之後您就會了解，當您的 XAML 載入為 Windows 執行階段 app 的元件時所發生的狀況。 <br/><div class="alert">**注意**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是架構中的類似屬性，但並非所有的元素都支援它。 因此，每當該元素類型不支援 **FrameworkElement.Name** 時，您就可以將 **x:Name** 用於元素識別。 |
-| [x:Uid](x-uid-directive.md) | 識別應該為某些屬性值使用當地語系化資源的元素。 如需使用方式詳細資訊**X:uid**，請參閱[快速入門：將 UI 資源轉譯](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
+| [x： 索引鍵](x-key-attribute.md) | 為 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的每個資源設定唯一的使用者定義索引鍵。 索引鍵的權杖字串是 **StaticResource** 標記延伸的引數，而您稍後可以使用這個索引鍵，從位於 app XAML 任一處的其他 XAML 用法中抓取 XAML 資源。 |
+| [x： 類別](x-class-attribute.md) | 指定類別的程式碼命名空間和程式碼類別名稱，該類別提供 XAML 頁面的程式碼後置。 這會在您建置應用程式時，為組建動作所建立或加入的類別命名。 這些組建動作支援 XAML 標記編譯器，並且可以在編譯應用程式時組合您的標記和程式碼後置。 您必須擁有這類類別，才能支援 XAML 頁面的程式碼後置。 [**Window.Content** ](https://msdn.microsoft.com/library/windows/apps/br209051)以預設的 Windows 執行階段啟用模型。 |
+| [x： 名稱](x-name-attribute.md) | 為處理完 XAML 中定義的物件元素後而存在執行階段程式碼中的執行個體，指定執行階段物件名稱。 您可以將在 XAML 中設定 **x:Name** 想像成在程式碼中宣告具名變數。 之後您就會了解，當您的 XAML 載入為 Windows 執行階段 app 的元件時所發生的狀況。 <br/><div class="alert">**注意**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是架構中的類似屬性，但並非所有的元素都支援它。 因此，每當該元素類型不支援 **FrameworkElement.Name** 時，您就可以將 **x:Name** 用於元素識別。 |
+| [x: Uid](x-uid-directive.md) | 識別應該為某些屬性值使用當地語系化資源的元素。 如需使用方式詳細資訊**X:uid**，請參閱[快速入門：將 UI 資源轉譯](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
 | [XAML 內建資料類型](xaml-intrinsic-data-types.md) | 這些類型可以針對屬性或資源要求的簡單值類型指定值。 這些內建類型會對應到通常是針對每種程式設計語言內建定義所定義的簡單值類型。 例如，您可能需要一個物件以表示要在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 腳本視覺狀態中使用的 **true** 布林值。 對於 XAML 中的值，您可以使用**x： 布林值**內建類型的物件項目，像這樣： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
 XAML 語言 XAML 命名空間中的其他程式設計建構雖然存在，但比較少見。

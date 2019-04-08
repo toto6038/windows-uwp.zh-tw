@@ -52,9 +52,9 @@ private void SubscribeToEvents(ClaimedMagneticStripeReader claimedReader, Magnet
 
 將傳遞的事件處理常式[ClaimedMagneticStripeReader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)並*args*物件，其型別取決於事件：
 
-* **AamvaCardDataReceived**事件：[MagneticStripeReaderAamvaCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
-* **BankCardDataReceived**事件：[MagneticStripeReaderBankCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
-* **VendorSpecificDataReceived**事件：[MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
+* **AamvaCardDataReceived**事件：[MagneticStripeReaderAamvaCardDataReceivedEventArgs 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
+* **BankCardDataReceived**事件：[MagneticStripeReaderBankCardDataReceivedEventArgs 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
+* **VendorSpecificDataReceived**事件：[MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
 
 ## <a name="get-the-data"></a>取得資料
 
@@ -122,8 +122,8 @@ private void GetTrackData(MagneticStripeReaderBankCardDataReceivedEventArgs args
 
 * [磁條讀取器](pos-magnetic-stripe-reader.md)
 * [ClaimedMagneticStripeReader 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)
-* [MagneticStripeReaderAamvaCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
-* [MagneticStripeReaderBankCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
-* [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
+* [MagneticStripeReaderAamvaCardDataReceivedEventArgs 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
+* [MagneticStripeReaderBankCardDataReceivedEventArgs 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
+* [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
 * [MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport)
 * [MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata)

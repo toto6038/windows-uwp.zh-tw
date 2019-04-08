@@ -34,6 +34,6 @@ PRI 檔案的大小上限是 64 KB。
 * [編製索引 (PRI) 參考的套件資源](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>相關主題
-* [編譯以手動方式使用 MakePri.exe 的資源](makepri-exe-command-options.md)
+* [使用 MakePri.exe 來手動編譯資源](makepri-exe-command-options.md)
 * [使用 Unmanaged 的 DLL 函式](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)
 * [資源管理系統](resource-management-system.md)

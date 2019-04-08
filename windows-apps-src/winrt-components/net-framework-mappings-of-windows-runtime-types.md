@@ -83,4 +83,4 @@ ms.locfileid: "57602613"
 
 ## <a name="related-topics"></a>相關主題
 
-* [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [使用 C# 和 Visual Basic 建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

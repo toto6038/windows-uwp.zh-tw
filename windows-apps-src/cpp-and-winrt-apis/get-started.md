@@ -7,7 +7,7 @@ keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開�
 ms.localizationpriority: medium
 ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602233"
@@ -162,12 +162,12 @@ C + + /cli WinRT 語言推演，取決於特定的 Windows 執行階段可用的
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed.Items 屬性](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::hresult-error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [winrt::hresult 錯誤結構](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>相關主題
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [錯誤處理使用 C + + /cli WinRT](error-handling.md)
-* [Interop 之間 C + + /cli WinRT 和 C + + /CX](interop-winrt-cx.md)
-* [Interop 之間 C + + /cli WinRT 和 ABI](interop-winrt-abi.md)
-* [移至 C + + /cli WinRT 從 C + + /CX](move-to-winrt-from-cx.md)
+* [使用 C++/WinRT 處理錯誤](error-handling.md)
+* [C++/WinRT 與 C++/CX 之間的互通性](interop-winrt-cx.md)
+* [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md)
+* [從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md)
 * [字串處理 C + /cli WinRT](strings.md)
