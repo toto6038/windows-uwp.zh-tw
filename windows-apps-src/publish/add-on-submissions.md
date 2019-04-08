@@ -68,9 +68,9 @@ ms.locfileid: "57620363"
 
 | 欄位名稱                    | 附註                                       |
 |-------------------------------|---------------------------------------------|
-| [**Title**](create-add-on-store-listings.md#title)                    | 必要 (最多 100 個字元)           |
+| [**標題**](create-add-on-store-listings.md#title)                    | 必要 (最多 100 個字元)           |
 | [**描述**](create-add-on-store-listings.md#description)       | 選擇性 (最多 200 個字元)            |
-| [**Icon**](create-add-on-store-listings.md#icon)                    | 選擇性 (300x300 像素的 .png)            |
+| [**圖示**](create-add-on-store-listings.md#icon)                    | 選擇性 (300x300 像素的 .png)            |
 
 
 當您輸入完此資訊，請按一下 [送出到市集]。 在大多數情況下，認證程序大概需要一個小時。 之後，您的附加元件就會發佈到市集，供客戶購買。

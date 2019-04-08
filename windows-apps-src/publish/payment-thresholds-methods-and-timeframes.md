@@ -43,7 +43,7 @@ ms.locfileid: "57610663"
 > 付款門檻在此以美元列出。 在某些市場中，會使用當地貨幣對等項目。 
 
 - [Microsoft 網上商店](#microsoft-store)
-- [Microsoft Advertising](#microsoft-advertising)
+- [Microsoft advertising 刊登](#microsoft-advertising)
 - [Azure Marketplace](#azure-marketplace)
 - [Office 市集](#office-store)
 

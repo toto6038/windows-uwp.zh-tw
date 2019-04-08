@@ -55,8 +55,8 @@ ms.locfileid: "57650983"
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
 | filter |字串  | 一或多個篩選回應中資料列的陳述式。 如需更多資訊，請參閱下方的＜[篩選欄位](#filter-fields)＞一節。 | 否   |
 | aggregationLevel | 字串 | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。 | 否 |
-| orderby | 字串 | 對每個附加元件下載數的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
-| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>inAppProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  否  |
+| orderby | 字串 | 對每個附加元件下載數的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：<ul><li><strong>日期</strong></li><li><strong>acquisitionType</strong></li><li><strong>年齡群組</strong></li><li><strong>儲存區用戶端</strong></li><li><strong>性別</strong></li><li><strong>市場</strong></li><li><strong>osVersion</strong></li><li><strong>裝置類型</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
+| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>日期</strong></li><li><strong>應用程式名稱</strong></li><li><strong>inAppProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>年齡群組</strong></li><li><strong>儲存區用戶端</strong></li><li><strong>性別</strong></li><li><strong>市場</strong></li><li><strong>osVersion</strong></li><li><strong>裝置類型</strong></li><li><strong>orderName</strong></li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li><strong>日期</strong></li><li><strong>applicationId</strong></li><li><strong>inAppProductId</strong></li><li><strong>分類的售出數量</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  否  |
 
 
 ### <a name="filter-fields"></a>篩選欄位
@@ -70,13 +70,13 @@ ms.locfileid: "57650983"
 
 | 欄位        |  描述        |
 |---------------|-----------------|
-| acquisitionType | 下列其中一個字串：<ul><li><strong>free</strong></li><li><strong>trial</strong></li><li><strong>paid</strong></li><li><strong>促銷代碼</strong></li><li><strong>iap</strong></li></ul> |
-| ageGroup | 下列其中一個字串：<ul><li><strong>小於 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>大於 55</strong></li><li><strong>未知</strong></li></ul> |
+| acquisitionType | 下列其中一個字串：<ul><li><strong>免費</strong></li><li><strong>試用版</strong></li><li><strong>付費</strong></li><li><strong>促銷代碼</strong></li><li><strong>Iap</strong></li></ul> |
+| ageGroup | 下列其中一個字串：<ul><li><strong>小於 13</strong></li><li><strong>13 至 17 日</strong></li><li><strong>18 至 24 個</strong></li><li><strong>25 34</strong></li><li><strong>35 44</strong></li><li><strong>44 55</strong></li><li><strong>大於 55</strong></li><li><strong>未知</strong></li></ul> |
 | storeClient | 下列其中一個字串：<ul><li><strong>Windows Phone 市集 （用戶端）</strong></li><li><strong>Microsoft Store （用戶端）</strong></li><li><strong>Microsoft Store (web)</strong></li><li><strong>由組織的大量採購</strong></li><li><strong>其他</strong></li></ul> |
-| gender | 下列其中一個字串：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>未知</strong></li></ul> |
+| gender | 下列其中一個字串：<ul><li><strong>M</strong></li><li><strong>F</strong></li><li><strong>未知</strong></li></ul> |
 | market | 內含發生下載之市場的 ISO 3166 國家/地區碼的字串。 |
 | osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>未知</strong></li></ul> |
-| deviceType | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>全像攝影版</strong></li><li><strong>未知</strong></li></ul> |
+| deviceType | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>電話</strong></li><li><strong>主控台</strong></li><li><strong>IoT</strong></li><li><strong>全像攝影版</strong></li><li><strong>未知</strong></li></ul> |
 | orderName | 指定用來取得附加元件之促銷碼訂單名稱的字串 (這只適用於使用者透過兌換促銷碼來取得附加元件的情況)。 |
 
 

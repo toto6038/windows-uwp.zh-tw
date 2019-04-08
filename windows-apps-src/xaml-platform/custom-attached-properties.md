@@ -48,7 +48,7 @@ ms.locfileid: "57638453"
 
 **Get**_PropertyName_ 存取子的簽章必須是這個。
 
-`public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
+`public static` _valueType_ **取得**_PropertyName_ `(DependencyObject target)`
 
 針對 Microsoft Visual Basic，它是這個。
 
@@ -301,6 +301,6 @@ protected override Size ArrangeOverride(Size finalSize)
 ## <a name="related-topics"></a>相關主題
 
 * [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)
-* [附加的屬性概觀](attached-properties-overview.md)
+* [附加屬性概觀](attached-properties-overview.md)
 * [自訂相依性屬性](custom-dependency-properties.md)
 * [XAML 概觀](xaml-overview.md)

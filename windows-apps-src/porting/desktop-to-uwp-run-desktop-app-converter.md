@@ -265,7 +265,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-Destination &lt;String&gt; |必要 |適用於轉換器 appx 輸出的所需目的地，如果尚未存在，DesktopAppConverter可以建立此位置。|
 |-Installer &lt;String&gt; |必要 |應用程式的安裝程式路徑，必須能夠自動執行或以無訊息方式執行。 沒有安裝程式的轉換，這是您的應用程式檔案的根目錄的路徑。 |
 |-InstallerArguments &lt;String&gt; |選擇性 |以逗號分隔的引數清單或字串，可強制您的安裝程式自動執行或以無訊息方式執行。 如果您的安裝程式是 msi，則此為選用參數。 若要取得安裝程式的記錄，請提供此處的安裝程式記錄引數，然後使用路徑 &lt;log_folder&gt;，此為轉換器會使用適當路徑來取代的語彙基元。 <br><br>**附註**：安裝程式技術之間有所不同的自動/無訊息旗標和 log 引數。 <br><br>此參數使用方式範例:-InstallerArguments"/ 無訊息/記錄檔&lt;log_folder&gt;\install.log 」 並不會產生記錄檔的另一個範例可能如下：```-InstallerArguments "/quiet", "/norestart"``` 同樣地，您實際上必須直接到語彙基元路徑的任何記錄檔&lt;log_folder&gt;如果您想要擷取它，並將它放在最後一個記錄檔資料夾中的轉換子。|
-|-InstallerValidExitCodes &lt;Int32&gt; |選擇性 |已成功執行的結束代碼，指出您的安裝程式以逗號分隔清單 (例如：0, 1234, 5678).  針對非 msi，這個值預設是 0，針對 msi 則為 0, 1641, 3010。|
+|-InstallerValidExitCodes &lt;Int32&gt; |選擇性 |已成功執行的結束代碼，指出您的安裝程式以逗號分隔清單 (例如：0、 1234，5678)。  針對非 msi，這個值預設是 0，針對 msi 則為 0, 1641, 3010。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |選擇性 |一個參數，如果顯示，即會通知這個指令碼呼叫輸出上的 MakeAppx。 |
 |-MakeMSIX [&lt;SwitchParameter&gt;]  |選擇性 |這個參數，存在時，會告知此指令碼以封裝為 MSIX 封裝輸出。 |
 |<a id="identity-params" /><strong>套件識別參數</strong>||

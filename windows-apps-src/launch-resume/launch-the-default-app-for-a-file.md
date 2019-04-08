@@ -36,9 +36,9 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 | 選項 | 方法 | 描述 |
 |--------|--------|-------------|
 | 預設啟動 | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | 使用預設處理常式啟動指定的檔案。 |
-| 開啟檔案啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 啟動指定的檔案，讓使用者透過 [開啟檔案] 對話方塊挑選處理常式。 |
-| 使用建議的 app 備用選項啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 使用預設處理常式啟動指定的檔案。 如果系統上沒有安裝處理常式，則建議使用者使用市集中的應用程式。 |
-| 以所需的剩餘檢視啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows-only) | 使用預設處理常式啟動指定的檔案。 指定啟動後停留在畫面上的喜好設定，並要求特定視窗大小。 [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314)不支援在行動裝置系列上。 |
+| 開啟檔案啟動 | [**LaunchFileAsync （IStorageFile、 LauncherOptions）**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 啟動指定的檔案，讓使用者透過 [開啟檔案] 對話方塊挑選處理常式。 |
+| 使用建議的 app 備用選項啟動 | [**LaunchFileAsync （IStorageFile、 LauncherOptions）**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 使用預設處理常式啟動指定的檔案。 如果系統上沒有安裝處理常式，則建議使用者使用市集中的應用程式。 |
+| 以所需的剩餘檢視啟動 | [**（IStorageFile、 LauncherOptions） LaunchFileAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701465) （Windows-僅限） | 使用預設處理常式啟動指定的檔案。 指定啟動後停留在畫面上的喜好設定，並要求特定視窗大小。 [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314)不支援在行動裝置系列上。 |
 
 ### <a name="default-launch"></a>預設啟動
 
@@ -554,7 +554,7 @@ void MainPage::DefaultLaunch()
 
 ### <a name="tasks"></a>工作
 
-* [啟動預設的應用程式 uri](launch-default-app.md)
+* [啟動 URI 的預設應用程式](launch-default-app.md)
 * [處理檔案啟用](handle-file-activation.md)
 
 ### <a name="guidelines"></a>指導方針

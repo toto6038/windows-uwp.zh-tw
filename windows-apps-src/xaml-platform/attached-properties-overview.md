@@ -129,7 +129,7 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 
 ## <a name="related-topics"></a>相關主題
 
-- [自訂附加的屬性](custom-attached-properties.md)
+- [自訂附加屬性](custom-attached-properties.md)
 - [相依性屬性概觀](dependency-properties-overview.md)
 - [使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)
 - [快速入門：轉譯的 UI 資源](https://msdn.microsoft.com/library/windows/apps/hh943060)

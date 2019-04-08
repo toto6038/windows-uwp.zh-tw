@@ -22,7 +22,7 @@ ms.locfileid: "57606123"
 
 **提示**：若要深入了解如何在 app 中存取位置，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
 
--   [通用 Windows 平台 (UWP) 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>啟用位置功能
 
@@ -483,4 +483,4 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 * [UWP 地理位置範例](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [地理圍欄的設計方針](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [定位感知應用程式的設計方針](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [定位感知應用程式的設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465148)

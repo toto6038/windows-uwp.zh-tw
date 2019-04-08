@@ -19,7 +19,7 @@ ms.locfileid: "57596823"
 
 調適型和互動式快顯通知可讓您使用文字、影像和按鈕/輸入建立彈性通知。
 
-> **重要的 Api**:[UWP Community Toolkit 通知 nuget 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要的 Api**:[UWP 社群工具組通知 NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
 > 若要查看舊版的範本，從 Windows 8.1 和 Windows Phone 8.1，請參閱[舊版的快顯通知範本類別目錄](https://msdn.microsoft.com/library/windows/apps/hh761494)。

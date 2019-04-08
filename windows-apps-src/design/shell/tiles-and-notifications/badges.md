@@ -201,5 +201,5 @@ private void clearBadge()
 ## <a name="related-articles"></a>相關文章
 
 * [調適型和互動式快顯通知](adaptive-interactive-toasts.md)
-* [建立圖格](creating-tiles.md)
+* [建立磚](creating-tiles.md)
 * [建立自動調整圖格](create-adaptive-tiles.md)

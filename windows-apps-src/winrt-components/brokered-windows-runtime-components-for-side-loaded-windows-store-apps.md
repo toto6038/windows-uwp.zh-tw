@@ -42,7 +42,7 @@ Windows 包含新功能，稱為 *側載應用程式的代理 Windows 執行階
 
 這個功能中的桌面元件是這個功能引進的新應用程式類型。 此桌面元件的類型只能以 C 撰寫\#和必須以.NET 4.6 或更新版本為目標的 Windows 10。 這個專案類型混合了以 UWP 為目標的 CLR，因為處理程序間通訊格式是由 UWP 類型和類別所組成，而且桌面元件可呼叫 .NET 執行階段類別庫的所有部分。 對 Visual Studio 專案產生的影響將會在稍後詳細討論。 這種混合式設定可在桌面元件上建置的應用程式間封送處理 UWP 類型，同時可以在桌面元件實作內呼叫桌面 CLR 程式碼。
 
-**Contract**
+**合約**
 
 我們將針對 UWP 類型系統說明側載應用程式和桌面元件間的協定。 這牽涉到宣告一或多個 C\#可以代表 UWP 的類別。 請參閱 MSDN 主題[Creating Windows Runtime Components in C\#和 Visual Basic](https://msdn.microsoft.com/library/br230301.aspx)特定需求建立 Windows 執行階段類別使用 C\#。
 
@@ -521,7 +521,7 @@ MyWinRTComponent.Proxies
 
 **C/c + + > 前置處理器定義 > 新增**
 
-"WIN32;\_WINDOWS;REGISTER\_PROXY\_DLL"
+「 WIN32;\_WINDOWS;註冊\_PROXY\_DLL 」
 
 **C/c + + > 先行編譯標頭：選取 [不使用先行編譯標頭]**
 
@@ -529,7 +529,7 @@ MyWinRTComponent.Proxies
 
 **連結器 > 輸入 > 其他相依性：新增 rpcrt4.lib;runtimeobject.lib**
 
-**連結器 > Windows 中繼資料 > 產生 Windows 中繼資料：Select "No"**
+**連結器 > Windows 中繼資料 > 產生 Windows 中繼資料：選取 [否]**
 
 **步驟 8:** 建置 「 MyWinRTProxy 」 專案。
 

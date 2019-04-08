@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制
 ms.localizationpriority: medium
 ms.openlocfilehash: c3551ebcc59ebfe426b0be8d5bd20f7578517a25
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649203"
@@ -121,9 +121,9 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 現在建置並執行專案。 按一下按鈕執行 **按一下** 事件處理常式。 我們所見 **Append** 的實作引發一個事件，讓 UI 知道集合已變更；且 **ListBox** 重新查詢集合，更新其自己的 **Items** 值。 就像以前一樣，變更書籍其中之一的標題；且同時在按鈕與清單方塊上反映該標題的變更。
 
 ## <a name="important-apis"></a>重要 API
-* [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
+* [IObservableVector&lt;T&gt;:: VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
 * [winrt::make 函式樣板](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>相關主題
-* [使用 Api，使用 C + + /cli WinRT](consume-apis.md)
-* [撰寫 Api 使用 C + + /cli WinRT](author-apis.md)
+* [使用 C++/WinRT 取用 API](consume-apis.md)
+* [使用 C++/WinRT 撰寫 API](author-apis.md)

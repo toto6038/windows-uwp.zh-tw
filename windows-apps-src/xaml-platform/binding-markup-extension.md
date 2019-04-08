@@ -43,7 +43,7 @@ ms.locfileid: "57618503"
 | *propertyPath* | 指定繫結屬性路徑的字串。 如需詳細資訊，請參閱下面[屬性路徑](#property-path)一節。 |
 | *bindingProperties* | *propName*=*值*\[， *propName*=*值*\]*<br/>使用名稱/值對語法指定的一或多個繫結屬性。 |
 | *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 物件上設定的屬性字串名稱。 例如，"Converter"。 |
-| *value* | 設定屬性使用的值。 引數的語法取決於下面[可以使用 {Binding} 設定的繫結類別屬性](#properties-of-the-binding-class-that-can-be-set-with-binding)一節的屬性。 |
+| *值* | 設定屬性使用的值。 引數的語法取決於下面[可以使用 {Binding} 設定的繫結類別屬性](#properties-of-the-binding-class-that-can-be-set-with-binding)一節的屬性。 |
 
 ## <a name="property-path"></a>屬性路徑
 
@@ -68,15 +68,15 @@ ms.locfileid: "57618503"
 
 | 屬性 | 描述 |
 |----------|-------------|
-| [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) | 請參閱先前的[屬性路徑](#property-path)一節。 |
-| [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) | 指定繫結引擎呼叫的轉換器物件。 轉換器可以使用 [{StaticResource} 標記延伸](staticresource-markup-extension.md)在標記中設定，以參考至資源字典中的該物件。 |
+| [**路徑**](https://msdn.microsoft.com/library/windows/apps/br209830) | 請參閱先前的[屬性路徑](#property-path)一節。 |
+| [**轉換子**](https://msdn.microsoft.com/library/windows/apps/br209826) | 指定繫結引擎呼叫的轉換器物件。 轉換器可以使用 [{StaticResource} 標記延伸](staticresource-markup-extension.md)在標記中設定，以參考至資源字典中的該物件。 |
 | [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | 指定轉換器要使用的文化特性 (如果已設定[**轉換器**](https://msdn.microsoft.com/library/windows/apps/br209826)。)文化特性設定為標準式識別項。 如需詳細資訊，請參閱 [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) |
-| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | 指定可用於轉換器邏輯的轉換器參數。 (如果已設定[**轉換器**](https://msdn.microsoft.com/library/windows/apps/br209826)。)大部分的轉換器使用簡單的邏輯，從傳遞的值轉換時，取得所需的所有資訊，而且不需要**ConverterParameter**值。 **ConverterParameter** 參數適用於更為複雜的轉換器實作，這些實作具備可切斷 **ConverterParameter** 中傳遞之內容的條件式邏輯。 您可以撰寫一個使用字串以外的值的轉換器，但這並不常見，請參閱 **ConverterParameter** 中的＜備註＞，以了解詳細資訊。 |
-| [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | 透過參考相同 XAML 建構中具有 **Name** 屬性或 [x:Name](x-name-attribute.md) 屬性的另一個元素來指定資料來源。 這通常是用來共用相關的值，或使用一個 UI 元素的子屬性提供特定值給另一個元素 (例如，在 XAML 控制項範本中)。 |
-| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定當無法解析來源或路徑時，所要顯示的值。 |
-| [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) | 指定的繫結模式，為下列值之一：「 OneTime 」、 「 單向 」 或 「 TwoWay 」。 這些會對應 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 列舉的常數名稱。 預設值是 "OneWay"。 請注意，這與 **{x:Bind}** 的預設值 ("OneTime") 不同。 | 
+| [**converterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | 指定可用於轉換器邏輯的轉換器參數。 (如果已設定[**轉換器**](https://msdn.microsoft.com/library/windows/apps/br209826)。)大部分的轉換器使用簡單的邏輯，從傳遞的值轉換時，取得所需的所有資訊，而且不需要**ConverterParameter**值。 **ConverterParameter** 參數適用於更為複雜的轉換器實作，這些實作具備可切斷 **ConverterParameter** 中傳遞之內容的條件式邏輯。 您可以撰寫一個使用字串以外的值的轉換器，但這並不常見，請參閱 **ConverterParameter** 中的＜備註＞，以了解詳細資訊。 |
+| [**項目名稱**](https://msdn.microsoft.com/library/windows/apps/br209828) | 透過參考相同 XAML 建構中具有 **Name** 屬性或 [x:Name](x-name-attribute.md) 屬性的另一個元素來指定資料來源。 這通常是用來共用相關的值，或使用一個 UI 元素的子屬性提供特定值給另一個元素 (例如，在 XAML 控制項範本中)。 |
+| [**fallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定當無法解析來源或路徑時，所要顯示的值。 |
+| [**模式**](https://msdn.microsoft.com/library/windows/apps/br209829) | 指定的繫結模式，為下列值之一：「 OneTime 」、 「 單向 」 或 「 TwoWay 」。 這些會對應 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 列舉的常數名稱。 預設值是 "OneWay"。 請注意，這與 **{x:Bind}** 的預設值 ("OneTime") 不同。 | 
 | [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | 透過描述相對於繫結目標位置的繫結來源位置，以指定資料來源。 這最常用於 XAML 控制項範本內的繫結中。 設定 [{RelativeSource} 標記延伸](relativesource-markup-extension.md)。 |
-| [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定物件資料來源。 在 **Binding** 標記延伸內，[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) 屬性需要物件參考，例如 [{StaticResource} 標記延伸](staticresource-markup-extension.md)參考。 如果未指定這個屬性，動作資料內容會指定來源。 通常不會在個別的繫結中指定 Source 值，而是倚賴共用的 **DataContext** 進行多重繫結。 如需詳細資訊，請參閱[**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx)或[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
+| [**來源**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定物件資料來源。 在 **Binding** 標記延伸內，[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) 屬性需要物件參考，例如 [{StaticResource} 標記延伸](staticresource-markup-extension.md)參考。 如果未指定這個屬性，動作資料內容會指定來源。 通常不會在個別的繫結中指定 Source 值，而是倚賴共用的 **DataContext** 進行多重繫結。 如需詳細資訊，請參閱[**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx)或[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | 指定當來源值解析結果明確為 **null** 時，所要顯示的值。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | 指定繫結來源更新的時機。 如果沒有指定，則預設為 **Default**。 |
 

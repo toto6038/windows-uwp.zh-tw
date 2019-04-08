@@ -202,7 +202,7 @@ ms.locfileid: "57636903"
 
 ## <a name="related-topics"></a>相關主題
 
-* [送出至執行緒集區的工作項目](submit-a-work-item-to-the-thread-pool.md)
+* [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
 * [使用執行緒集區的最佳做法](best-practices-for-using-the-thread-pool.md)
-* [若要提交的工作項目使用計時器](use-a-timer-to-submit-a-work-item.md)
+* [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)
  

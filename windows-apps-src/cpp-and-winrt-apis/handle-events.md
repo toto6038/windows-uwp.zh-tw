@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、一般、c++、cpp、winrt、投影、投射、控�
 ms.localizationpriority: medium
 ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602423"
@@ -233,11 +233,11 @@ winrt::hstring f(ListView listview)
 如果您處理的事件，該物件的成員函式，或從出現在 lambda 函式內物件的成員函式，然後您必須考慮事件收件者 （處理事件的物件） 和事件來源 （該物件的相對存留期引發事件）。 如需詳細資訊，以及程式碼範例，請參閱[強式和弱式參考，在 C + + /cli WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要 API
-* [winrt::auto_revoke_t marker struct](/uwp/cpp-ref-for-winrt/auto-revoke-t)
+* [winrt::auto_revoke_t 標記結構](/uwp/cpp-ref-for-winrt/auto-revoke-t)
 * [winrt::implements::get_weak 函式](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [winrt::implements::get_strong 函式](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
 
 ## <a name="related-topics"></a>相關主題
 * [撰寫事件在 C + + /cli WinRT](author-events.md)
 * [並行和非同步作業以 C + + /cli WinRT](concurrency.md)
-* [強式和弱式參考，在 C + + /cli WinRT](weak-references.md)
+* [C++/WinRT 中的強式和弱式參考](weak-references.md)

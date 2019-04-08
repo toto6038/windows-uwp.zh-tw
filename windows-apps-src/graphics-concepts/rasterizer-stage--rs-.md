@@ -37,7 +37,7 @@ ms.locfileid: "57627583"
 
 固定函式轉譯器 (RS) 階段是由串流輸出 (SO) 階段和/或上一個管線階段，例如[幾何著色器 (GS) 階段](geometry-shader-stage--gs-.md)供給。 如果未使用 GS，RS 是由[網域著色器 (DS) 階段](domain-shader-stage--ds-.md)供給。 如果也未使用 DS，RS 是由[頂點著色器 (VS) 階段](vertex-shader-stage--vs-.md)供給。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
 使用像素著色器 (PS) 階段是選擇性的；轉譯器階段可以改為直接輸出至[輸出合併 (OM) 階段](output-merger-stage--om-.md)。

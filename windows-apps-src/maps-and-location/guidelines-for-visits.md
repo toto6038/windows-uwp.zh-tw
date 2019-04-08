@@ -269,6 +269,6 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 您的應用程式現在應該可以註冊行止動線處理背景工作，而且每當裝置記錄一次行止動線相關狀態變更時，都必須啟動這項工作。 您必須在背景工作類別中填入邏輯，以判斷如何處理此狀態變更資訊。
 
 ## <a name="related-topics"></a>相關主題
-* [建立並註冊跨處理序背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [建立及註冊跨處理序的背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
 * [取得使用者的位置](get-location.md)
 * [Windows.Devices.Geolocation 命名空間](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)

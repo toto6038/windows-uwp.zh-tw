@@ -154,7 +154,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
 1. 確認您的電腦是否已連線至網際網路。
 2. 若您位於加入網域的電腦上，請說出您的網路系統管理員。 在 WSUS 中預設會封鎖開發人員模式套件，如所有的「功能隨選安裝」。
-2.1. 若要解除封鎖開發人員模式套件，在目前和先前版本中的，應該在 WSUS 中允許下列 Kb:4016509, 3180030, 3197985  
+2.1. 若要解除封鎖開發人員模式套件，在目前和先前版本中的，應該在 WSUS 中允許下列 Kb:4016509 3180030、 3197985  
 3. 在 \[設定\] &gt; \[更新與安全性\] &gt; Windows Updates 中，檢查 Windows 更新。
 4. 確認 Windows 開發人員模式套件顯示於 [設定] &gt; [系統] &gt; [應用程式與功能] &gt; 管理選用功能 &gt; [新增功能]。 若該套件遺失，Windows 即無法找到適用於您電腦的正確套件。
 
@@ -201,20 +201,20 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 1.  執行 **regedit**。
 2.  若要啟用側載功能，請將此 DWORD 的值設定為 1：
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   **HKLM\\軟體\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
     - 或 -
 
     若要啟用開發人員模式，請將此 DWORD 的值設定為 1：
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\軟體\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **使用 PowerShell 來啟用您的裝置**
 
 1.  使用系統管理員權限執行 PowerShell。
 2.  若要啟用側載功能，請執行下列命令：
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    -   **PS c:\\WINDOWS\\system32&gt; reg 新增"HKEY\_本機\_機器\\軟體\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock"/t REG\_DWORD /f /v"AllowAllTrustedApps"/d"1"**
 
     - 或 -
 

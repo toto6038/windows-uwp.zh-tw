@@ -126,7 +126,7 @@ _Package.appxmanifest MathExtension 專案中：_
 |**ID**| 唯一識別此延伸模組。 由於可能會有多個使用相同延伸協定的延伸模組 (試想支援數個延伸模組的繪圖應用程式)，您可以使用 ID 來加以區分。 應用程式延伸主機可以使用 ID 推斷一些關於延伸模組類型的資訊。 例如，您可能會有一個延伸模組針對傳統型設計，另一個則針對行動裝置設計，此 ID 即為區分方法。 您也可以使用 **Properties** 元素進行區分，如下所述。| :heavy_check_mark: |
 |**DisplayName**| 可以從主機應用程式中用來讓使用者認明延伸模組。 此屬性可查詢 (而且可以使用) [新資源管理系統](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 進行當地語系化。 當地語系化內容是從應用程式延伸套件 (而非主機應用程式) 載入。 | |
 |**描述** | 可以從主機應用程式中用來向使用者描述延伸模組。 此屬性可查詢 (而且可以使用) [新資源管理系統](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 進行當地語系化。 當地語系化內容是從應用程式延伸套件 (而非主機應用程式) 載入。 | |
-|**PublicFolder**|與封裝根目錄相關之資料夾的名稱，您可以透過此資料夾與延伸主機共用內容。 依慣例，名稱是「Public」，但您可以使用任何符合延伸模組中資料夾的名稱。| :heavy_check_mark: |
+|**公用資料夾**|與封裝根目錄相關之資料夾的名稱，您可以透過此資料夾與延伸主機共用內容。 依慣例，名稱是「Public」，但您可以使用任何符合延伸模組中資料夾的名稱。| :heavy_check_mark: |
 
 `<uap3:Properties>` 是選擇性的項目，其中包含自訂主機可以在執行階段讀取的中繼資料。 程式碼範例將延伸模組實作為應用程式服務，因此主機需要一個取得該應用程式服務名稱的方式，以便呼叫該服務。 應用程式服務的名稱是在我們已定義的 <Service> 中定義 (我們可以隨意命名)。 程式碼範例中的主機於執行階段尋找此屬性，以得知應用程式服務的名稱。
 

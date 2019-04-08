@@ -7,7 +7,7 @@ ms.topic: article
 ms.localizationpriority: med
 ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57623243"
@@ -45,7 +45,7 @@ ms.locfileid: "57623243"
 * A **RadDataGrid**來顯示和編輯您的客戶。 
 * A **StackPanel**設為新客戶的初始值。
 
-### <a name="viewmodels"></a>ViewModels
+### <a name="viewmodels"></a>Viewmodel
 
 **ViewModels\CustomerListPageViewModel.cs**是應用程式的基本邏輯所在的位置。 在檢視中採取的每個使用者動作將傳入此檔案進行處理。 在本教學課程中，您將新增一些新的程式碼，並實作下列方法：
 

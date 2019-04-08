@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制, 繫結
 ms.localizationpriority: medium
 ms.openlocfilehash: 4033327fa51b0801583a518a0dea055f59e57fc8
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616623"
@@ -281,5 +281,5 @@ namespace winrt::Bookstore::implementation
 * [winrt::make 函式樣板](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>相關主題
-* [使用 Api，使用 C + + /cli WinRT](consume-apis.md)
-* [撰寫 Api 使用 C + + /cli WinRT](author-apis.md)
+* [使用 C++/WinRT 取用 API](consume-apis.md)
+* [使用 C++/WinRT 撰寫 API](author-apis.md)

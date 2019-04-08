@@ -203,7 +203,7 @@ Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://msdn.microsof
 ### <a name="conceptual-material"></a>概念資料
 
 - [自訂相依性屬性](custom-dependency-properties.md)
-- [附加的屬性概觀](attached-properties-overview.md)
+- [附加屬性概觀](attached-properties-overview.md)
 - [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
 - [建立圖片敘述的動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
 - [建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)

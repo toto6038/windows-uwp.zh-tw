@@ -133,19 +133,19 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>uniform</strong></p>
+<td align="left"><p><strong>統一</strong></p>
 <p>您將 uniform 變數從 app 程式碼傳遞至頂點與片段著色器內，或是其中之一。 使用這些著色器繪製任何三角形之前，您必須設定所有 uniform 的值，這樣在繪製三角形網格的整個過程中，它們的值才能維持相同。 這些值是 uniform。 有些 uniform 是針對整個框架所設定，而其他則是特別針對某一組特殊頂點像素著色器而設定。</p>
 <p>uniform 變數是基於多邊形的變數。</p></td>
 <td align="left"><p>使用常數緩衝區。</p>
 <p>請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">How to:建立常數緩衝區</a>並<a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">著色器常數</a>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>varying</strong></p>
+<td align="left"><p><strong>不同的</strong></p>
 <p>您在頂點著色器內初始化 varying 變數，並將它傳遞至片段著色器中擁有相同名稱的 varying 變數。 因為頂點著色器只設定每個頂點的 varying 變數值，因此點陣化會插補這些值 (以透視修正方式) 來產生每個片段值，以傳遞至片段著色器。 這些變數在每個三角形都不同。</p></td>
 <td align="left">使用從頂點著色器傳回的結構做為像素著色器的輸入。 請確定語意值相符。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>attribute</strong></p>
+<td align="left"><p><strong>屬性</strong></p>
 <p>attribute 是您單獨從 app 程式碼傳遞至頂點著色器之頂點描述的一部分。 與 uniform 不同，您要為每個頂點設定各個 attribute 的值，然後每個頂點便有不同的值。 Attribute 變數是基於頂點的變數。</p></td>
 <td align="left"><p>在 Direct3D 應用程式程式碼中定義頂點緩衝區，並使它與頂點著色器中定義的頂點輸入相符。 您可選擇是否定義索引緩衝區。 請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">How to:建立頂點緩衝區</a>和<a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">How to:建立索引緩衝區</a>。</p>
 <p>在 Direct3D 應用程式程式碼中建立輸入配置，並使語意值與頂點輸入中的語意值相符。 請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">建立輸入配置</a>。</p></td>
@@ -324,7 +324,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <p>例如，float4 色彩 [4]:SV_Target;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>gl_FragData[n]</strong></p>
+<td align="left"><p><strong>gl_FragData [n]</strong></p>
 <p>此變數為 <strong>vec4</strong> 類型。</p>
 <p>色彩附件 n 的片段色彩</p></td>
 <td align="left"><p>SV_Target[n]</p>

@@ -49,24 +49,24 @@ ms.locfileid: "57613083"
 | 4.3.4.1.  EXT-X-MEDIA |4|7|選用|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp;  型別|4|7|屬性|"AUDIO, VIDEO"|"AUDIO, VIDEO"|"AUDIO, VIDEO, SUBTITLES"|
 |&nbsp;&nbsp;&nbsp;  URI|4|7|屬性|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  GROUP-ID|4|7|屬性|支援|支援|支援|
+|&nbsp;&nbsp;&nbsp;  群組識別碼|4|7|屬性|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp;  語言|4|7|屬性|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp;  ASSOC 語言|6|13|屬性|不支援|不支援|不支援|
-|&nbsp;&nbsp;&nbsp;  NAME|4|7|屬性|不支援|不支援|支援|
-|&nbsp;&nbsp;&nbsp;  DEFAULT|4|7|屬性|不支援|不支援|不支援|
-|&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|屬性|不支援|不支援|不支援|
+|&nbsp;&nbsp;&nbsp;  名稱|4|7|屬性|不支援|不支援|支援|
+|&nbsp;&nbsp;&nbsp;  預設值|4|7|屬性|不支援|不支援|不支援|
+|&nbsp;&nbsp;&nbsp;  自動選擇|4|7|屬性|不支援|不支援|不支援|
 |&nbsp;&nbsp;&nbsp;  強制|5|9|屬性|不支援|不支援|不支援|
-|&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|屬性|不支援|不支援|不支援|
+|&nbsp;&nbsp;&nbsp;  針對識別碼|6|12|屬性|不支援|不支援|不支援|
 |&nbsp;&nbsp;&nbsp;  特性|5|9|屬性|不支援|不支援|不支援|
 | 4.3.4.2.  EXT-X-STREAM-INF  |1|0|必要|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  BANDWIDTH|1|0|屬性|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  PROGRAM-ID|1|0|屬性|NA|NA|NA|
-|&nbsp;&nbsp;&nbsp;  AVERAGE-BANDWIDTH|7|14|屬性|不支援|不支援|不支援|
+|&nbsp;&nbsp;&nbsp;  頻寬|1|0|屬性|支援|支援|支援|
+|&nbsp;&nbsp;&nbsp;  程式識別碼|1|0|屬性|NA|NA|NA|
+|&nbsp;&nbsp;&nbsp;  平均頻寬|7|14|屬性|不支援|不支援|不支援|
 |&nbsp;&nbsp;&nbsp;  轉碼器|1|0|屬性|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp;  解決方式|2|3|屬性|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  FRAME-RATE|7|15|屬性|NA|NA|NA|
-|&nbsp;&nbsp;&nbsp;  AUDIO|4|7|屬性|支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  VIDEO|4|7|屬性|支援|支援|支援|
+|&nbsp;&nbsp;&nbsp;  畫面播放速率|7|15|屬性|NA|NA|NA|
+|&nbsp;&nbsp;&nbsp;  音訊|4|7|屬性|支援|支援|支援|
+|&nbsp;&nbsp;&nbsp;  影片|4|7|屬性|支援|支援|支援|
 |&nbsp;&nbsp;&nbsp;  翻譯字幕|5|9|屬性|不支援|不支援|支援|
 |&nbsp;&nbsp;&nbsp;  隱藏式字幕|6|12|屬性|不支援|不支援|不支援|
 | 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|選用|不支援|不支援|不支援|
@@ -75,8 +75,8 @@ ms.locfileid: "57613083"
 |4.3.5.  媒體或主要播放清單標記                  |             |                   |         |             |     |    |
 | 4.3.5.1.  EXT-X-INDEPENDENT-SEGMENTS |6|13|選用|不支援|支援|支援|
 | 4.3.5.2.  EXT-X-START  |6|12|選用|不支援|部分支援|部分支援|
-|&nbsp;&nbsp;&nbsp;  TIME-OFFSET|6|12|屬性|不支援|支援|支援|
-|&nbsp;&nbsp;&nbsp;  PRECISE|6|12|屬性|不支援|支援預設 "NO"|支援預設 "NO"|
+|&nbsp;&nbsp;&nbsp;  時間位移|6|12|屬性|不支援|支援|支援|
+|&nbsp;&nbsp;&nbsp;  精確|6|12|屬性|不支援|支援預設 "NO"|支援預設 "NO"|
 
 
 

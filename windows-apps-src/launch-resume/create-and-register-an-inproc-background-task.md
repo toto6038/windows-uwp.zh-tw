@@ -113,14 +113,14 @@ sealed partial class App : Application
 **詳細的背景工作的說明主題**
 
 * [將跨處理序背景工作轉換成同處理序背景工作](convert-out-of-process-background-task.md)
-* [建立並註冊跨處理序背景工作](create-and-register-a-background-task.md)
+* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 * [在背景中播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [回應系統事件與背景工作](respond-to-system-events-with-background-tasks.md)
+* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
 * [註冊背景工作](register-a-background-task.md)
-* [設定用於執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [監視背景工作的進度和完成](monitor-background-task-progress-and-completion.md)
+* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 
 **背景工作指引**

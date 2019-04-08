@@ -1,5 +1,5 @@
 ---
-description: 本主題會使用完整的 Direct2D 程式碼範例示範如何使用 C + + /cli WinRT 取用 COM 類別和介面。
+description: 本主題使用完整的 Direct2D 程式碼範例來示範如何使用 C++/WinRT 來取用 COM 類別和介面。
 title: 使用 C++/WinRT 來使用 COM 元件
 ms.date: 07/23/2018
 ms.topic: article
@@ -7,7 +7,7 @@ keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 COM、 元件�
 ms.localizationpriority: medium
 ms.openlocfilehash: 129477689e12de2634b422a0fc4487b283e3bf03
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644803"
@@ -485,4 +485,4 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ## <a name="important-apis"></a>重要 API
 * [winrt::check_hresult 函式](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::Windows::Foundation::IUnknown 結構](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)

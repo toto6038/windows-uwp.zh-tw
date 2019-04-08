@@ -112,7 +112,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 -   [透過通訊端連線 (UWP 應用程式使用C#/VB/c + + 和 XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
 -   [使用 Websocket 連線 (UWP 應用程式使用C#/VB/c + + 和 XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994396)
 -   [連接到 web 服務 (UWP 應用程式使用C#/VB/c + + 和 XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
--   [網路基本概念](https://msdn.microsoft.com/library/windows/apps/mt280233)
+-   [網路功能基本知識](https://msdn.microsoft.com/library/windows/apps/mt280233)
 
 請注意，所有 UWP App (包含遊戲) 都使用特定的背景工作類型，以維持 App 暫停時的連線功能。 如果您的遊戲需要在暫停時維持連線狀態，請參閱[網路功能基本知識](https://msdn.microsoft.com/library/windows/apps/mt280233)。
 
@@ -216,7 +216,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174373">IDirect3DDevice9:DrawRectPatch</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174374">IDirect3DDevice9:DrawTriPatch</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174421">IDirect3DDevice9:LightEnable</a></p>
+<p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174421">IDirect3DDevice9: LightEnable</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174422">IDirect3DDevice9:MultiplyTransform</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb205798">IDirect3DDevice9:SetLight</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174437">IDirect3DDevice9:SetMaterial</a></p>

@@ -83,7 +83,7 @@ Windows Api 報告執行階段錯誤使用各種傳回值類型，因此除了 *
 - [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)。 檢查 HRESULT 碼是否代表錯誤，若是如此，則呼叫 **winrt::throw_hresult**。
 - [**winrt::check_nt**](/uwp/cpp-ref-for-winrt/error-handling/check-nt)。 檢查程式碼是否代表錯誤，若是如此，則呼叫 **winrt::throw_hresult**。
 - [**winrt::check_pointer**](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)。 檢查指標是否為 null，若是如此，則呼叫 **winrt::throw_last_error**。
-- [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32). 檢查程式碼是否代表錯誤，若是如此，則呼叫 **winrt::throw_hresult**。
+- [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32)。 檢查程式碼是否代表錯誤，若是如此，則呼叫 **winrt::throw_hresult**。
 
 您可以將這些協助程式函式用於一般傳回碼類型，或者您可以回應任何錯誤狀況並呼叫 [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 或 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)。 
 
@@ -129,11 +129,11 @@ WINRT_VERIFY_(TRUE, ::CloseHandle(value));
 * [winrt::check_nt 函式樣板](/uwp/cpp-ref-for-winrt/error-handling/check-nt)
 * [winrt::check_pointer 函式樣板](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
 * [winrt::check_win32 函式樣板](/uwp/cpp-ref-for-winrt/error-handling/check-win32)
-* [winrt::handle struct](/uwp/cpp-ref-for-winrt/handle)
-* [winrt::hresult_error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [winrt::handle 結構](/uwp/cpp-ref-for-winrt/handle)
+* [winrt::hresult_error 結構](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 * [winrt::throw_hresult 函式](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)
 * [winrt::throw_last_error 函式](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
-* [winrt::to_hresult function](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
+* [winrt::to_hresult 函式](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
 
 ## <a name="related-topics"></a>相關主題
 * [錯誤和例外狀況處理 （現代 c + +）](/cpp/cpp/errors-and-exception-handling-modern-cpp)

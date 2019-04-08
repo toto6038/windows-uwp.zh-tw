@@ -51,7 +51,7 @@ ms.locfileid: "57618023"
 | 觸發程序名稱                     | 描述                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
 | **InternetAvailable**            | 網際網路變成可用。                                                                                |
-| **NetworkStateChange**           | 網路變更，例如發生費用或連線變更。                                              |
+| **Systemtrigger**           | 網路變更，例如發生費用或連線變更。                                              |
 | **OnlineIdConnectedStateChange** | 與帳戶關聯的線上識別碼變更。                                                                 |
 | **SmsReceived**                  | 安裝的行動式寬頻裝置收到新的 SMS 訊息。                                         |
 | **TimeZoneChange**               | 裝置時區變更 (例如，系統因為日光節約時間而調整時鐘)。 |
@@ -164,7 +164,7 @@ ms.locfileid: "57618023"
 背景工作可使用事件與本機存放裝置向您的 app 報告進度、完成與取消。 您的 app 也可抓取由背景工作擲回的例外狀況，並在 app 更新期間管理背景工作登錄。 如需詳細資訊，請參閱：
 
 [處理已取消的背景工作](handle-a-cancelled-background-task.md)  
-[監視背景工作的進度和完成](monitor-background-task-progress-and-completion.md)
+[監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 
 在 App 啟動期間檢查背景工作註冊。 確定 BackgroundTaskBuilder.AllTasks 中有 App 未分組的背景工作。 重新註冊不在其中的背景工作。 取消註冊任何不再需要的工作。 這可確保每次啟動 App 時，所有背景工作註冊都是最新的。
 
@@ -177,23 +177,23 @@ ms.locfileid: "57618023"
 **相關的背景工作指引**
 
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [存取感應器與裝置，從背景工作](access-sensors-and-devices-from-a-background-task.md)
-* [建立並註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)
-* [建立並註冊跨處理序背景工作](create-and-register-a-background-task.md)
+* [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)
+* [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
+* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 * [將跨處理序背景工作轉換成同處理序背景工作](convert-out-of-process-background-task.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [宣告應用程式資訊清單中的背景工作](declare-background-tasks-in-the-application-manifest.md)
+* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [群組背景工作註冊](group-background-tasks.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
-* [監視背景工作的進度和完成](monitor-background-task-progress-and-completion.md)
+* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 * [在背景中播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [註冊背景工作](register-a-background-task.md)
-* [回應系統事件與背景工作](respond-to-system-events-with-background-tasks.md)
+* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [更新您的 UWP 應用程式時，執行背景工作](run-a-background-task-during-updatetask.md)
-* [無限期地在背景執行](run-in-the-background-indefinetly.md)
-* [設定用於執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [在背景無限期執行](run-in-the-background-indefinetly.md)
+* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
 * [觸發背景工作，從您的應用程式](trigger-background-task-from-app.md)
-* [更新即時磚的背景工作](update-a-live-tile-from-a-background-task.md)
+* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
 * [使用維護觸發程序](use-a-maintenance-trigger.md)

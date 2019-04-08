@@ -459,6 +459,6 @@ namespace MyAppService
 
 ## <a name="related-topics"></a>相關主題
 
-* [轉換為其主機應用程式相同的處理序中執行的應用程式服務](convert-app-service-in-process.md)
+* [轉換應用程式服務，以便與其主機應用程式在相同處理序中執行](convert-app-service-in-process.md)
 * [支援您的應用程式使用背景工作](support-your-app-with-background-tasks.md)
 * [應用程式服務的程式碼範例 (C#，c + + 和 VB)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

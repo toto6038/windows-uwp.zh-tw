@@ -170,6 +170,6 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 * [使用者活動 （Project Rome 文件）](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [自適性卡片](https://docs.microsoft.com/adaptive-cards/)
 * [自適性卡片視覺化檢視範例](https://adaptivecards.io/)
-* [處理啟動 URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+* [處理 URI 啟用](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [與您在任何平台上使用 Microsoft Graph、 活動摘要，以及自適性卡片上的客戶](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

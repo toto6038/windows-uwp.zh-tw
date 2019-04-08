@@ -33,7 +33,7 @@ feedback 參數是 **uint** 變數，您可以將它提供給記憶體存取查�
 
 以下是 [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 的語法：
 
-**bool CheckAccessFullyMapped(in uint FeedbackVar);**
+**bool CheckAccessFullyMapped （在 uint FeedbackVar);**
 
 [**CheckAccessFullyMapped** ](https://msdn.microsoft.com/library/windows/desktop/dn292083)的值會將解譯*FeedbackVar* ，並傳回 true，如果正在存取的所有資料資源中的對應，否則**CheckAccessFullyMapped**會傳回 false。
 

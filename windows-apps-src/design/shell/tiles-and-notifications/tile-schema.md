@@ -38,7 +38,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Visual** | [ToastVisual](#tilevisual) | true | 描述磚通知的視覺效果部分。 |
+| **視覺化** | [ToastVisual](#tilevisual) | true | 描述磚通知的視覺效果部分。 |
 
 
 ## <a name="tilevisual"></a>TileVisual
@@ -56,7 +56,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 | **LockDetailedStatus1** | 字串 | false | 若您指定此項，也必須提供 TileWide 繫結。 如果使用者選取磚做為詳細狀態應用程式，這會是顯示在鎖定畫面上的第一行文字。 |
 | **LockDetailedStatus2** | 字串 | false | 若您指定此項，也必須提供 TileWide 繫結。 如果使用者選取磚做為詳細狀態應用程式，這會是顯示在鎖定畫面上的第二行文字。 |
 | **LockDetailedStatus3** | 字串 | false | 若您指定此項，也必須提供 TileWide 繫結。 如果使用者選取磚做為詳細狀態應用程式，這會是顯示在鎖定畫面上的第三行文字。 |
-| **BaseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
+| **baseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至快顯通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 | **語言**| 字串 | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 繫結或文字中指定的任何地區設定都會覆寫此地區設定。 如果未提供，則改用系統地區設定。 |
 
@@ -66,11 +66,11 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Content** | [ITileBindingContent](#itilebindingcontent) | false | 要在磚上顯示的視覺內容。 其中一個 [TileBindingContentAdaptive](#tilebindingcontentadaptive)，[TileBindingContentIconic](#TileBindingContentIconic)、[TileBindingContentContact](#TileBindingContentContact)、[TileBindingContentPeople](#TileBindingContentPeople) 或 [TileBindingContentPhotos](#TileBindingContentPhotos)。 |
+| **內容** | [ITileBindingContent](#itilebindingcontent) | false | 要在磚上顯示的視覺內容。 其中一個 [TileBindingContentAdaptive](#tilebindingcontentadaptive)，[TileBindingContentIconic](#TileBindingContentIconic)、[TileBindingContentContact](#TileBindingContentContact)、[TileBindingContentPeople](#TileBindingContentPeople) 或 [TileBindingContentPhotos](#TileBindingContentPhotos)。 |
 | **商標** | TileBranding | false | 磚應用來顯示應用程式品牌的表單。 根據預設，繼承自預設磚的品牌。 |
 | **DisplayName** | 字串 | false | 選擇性字串，覆寫此磚大小的磚顯示名稱。 |
 | **引數** | 字串 | false | 年度更新版： 的新功能應用程式定義的資料時，傳遞給您的應用程式透過 TileActivatedInfo 屬性上 LaunchActivatedEventArgs 使用者啟動您的應用程式，從動態磚。 這可讓您知道當使用者點選動態磚時，看到哪個磚通知。 在沒有年度更新版的裝置上，這會被忽略。 |
-| **BaseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
+| **baseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至快顯通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 | **語言**| 字串 | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 繫結或文字中指定的任何地區設定都會覆寫此地區設定。 如果未提供，則改用系統地區設定。 |
 
@@ -92,7 +92,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Children** | IList<ITileBindingContentAdaptiveChild> | false | 內嵌視覺元素。 可以新增 [AdaptiveText](#adaptivetext)、[AdaptiveImage](#adaptiveimage) 和 [AdaptiveGroup](#adaptivegroup) 物件。 這些子系會以垂直 StackPanel 方式顯示。 |
+| **子系** | IList<ITileBindingContentAdaptiveChild> | false | 內嵌視覺元素。 可以新增 [AdaptiveText](#adaptivetext)、[AdaptiveImage](#adaptiveimage) 和 [AdaptiveGroup](#adaptivegroup) 物件。 這些子系會以垂直 StackPanel 方式顯示。 |
 | **BackgroundImage** | [TileBackgroundImage](#tilebackgroundimage) | false | 選用背景影像，會顯示在所有磚內容後面，跨頁顯示。 |
 | **PeekImage** | [TilePeekImage](#tilepeekimage) | false | 選用預覽影像，可從磚的上方動畫顯示進來。 |
 | **TextStacking** | [TileTextStacking](#tiletextstacking) | false | 控制整體子系內容的文字堆疊 (垂直對齊)。 |
@@ -120,16 +120,16 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 | **預設值** | 預設值。 樣式取決於轉譯器。 |
 | **標題** | 小於段落字型大小。 |
 | **CaptionSubtle** | 和 Caption 一樣，只是有輕微不透明度。 |
-| **Body** | 段落字型大小。 |
+| **內文** | 段落字型大小。 |
 | **BodySubtle** | 和 Body 一樣，只是有輕微不透明度。 |
 | **基底** | 段落字型大小、粗體粗細。 基本上是 Body 的粗體版本。 |
 | **BaseSubtle** | 和 Base 一樣，只是有輕微不透明度。 |
-| **Subtitle** | H4 字型大小。 |
+| **子標題** | H4 字型大小。 |
 | **SubtitleSubtle** | 和 Subtitle 一樣，只是有輕微不透明度。 |
 | **標題** | H3 字型大小。 |
 | **TitleSubtle** | 和 Title 一樣，只是有輕微不透明度。 |
 | **TitleNumeral** | 和 Title 一樣，只是上/下邊框間距已移除。 |
-| **Subheader** | H2 字型大小。 |
+| **子標頭** | H2 字型大小。 |
 | **SubheaderSubtle** | 和 Subheader 一樣，只是有輕微不透明度。 |
 | **SubheaderNumeral** | 和 Subheader 一樣，只是上/下邊框間距已移除。 |
 | **標頭** | H1 字型大小。 |
@@ -144,9 +144,9 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 |---|---|
 | **預設值** | 預設值。 對齊方式自動由轉譯器決定。 |
 | **Auto** | 對齊方式取決於目前的語言及文化特性。 |
-| **Left** | 將文字水平對齊左側。 |
-| **Center** | 將文字水平對齊中央。 |
-| **Right** | 將文字水平對齊右側。 |
+| **左邊** | 將文字水平對齊左側。 |
+| **中心** | 將文字水平對齊中央。 |
+| **權限** | 將文字水平對齊右側。 |
 
 
 ## <a name="adaptiveimage"></a>AdaptiveImage
@@ -169,7 +169,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 |---|---|
 | **預設值** | 預設值。 裁剪行為取決於轉譯器。 |
 | **無** | 不裁剪影像。 |
-| **Circle** | 將影像裁剪成圓形形狀。 |
+| **圓形** | 將影像裁剪成圓形形狀。 |
 
 
 ### <a name="adaptiveimagealign"></a>AdaptiveImageAlign
@@ -179,9 +179,9 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 |---|---|
 | **預設值** | 預設值。 對齊行為取決於轉譯器。 |
 | **Stretch** | 影像自動縮放到填滿可用寬度 (和可能會有的可用高度，視放置影像的位置而定)。 |
-| **Left** | 將影像對齊左側，並以其原生解析度來顯示影像。 |
-| **Center** | 將影像對齊中央，並以其原生解析度來顯示影像。 |
-| **Right** | 將影像對齊右側，並以其原生解析度來顯示影像。 |
+| **左邊** | 將影像對齊左側，並以其原生解析度來顯示影像。 |
+| **中心** | 將影像對齊中央，並以其原生解析度來顯示影像。 |
+| **權限** | 將影像對齊右側，並以其原生解析度來顯示影像。 |
 
 
 ## <a name="adaptivegroup"></a>AdaptiveGroup
@@ -189,7 +189,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | 子群組會顯示為垂直欄。 要在 AdaptiveGroup 中提供任何內容，您必須使用子群組。 |
+| **子系** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | 子群組會顯示為垂直欄。 要在 AdaptiveGroup 中提供任何內容，您必須使用子群組。 |
 
 
 ## <a name="adaptivesubgroup"></a>AdaptiveSubgroup
@@ -197,7 +197,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Children** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) 和 [AdaptiveImage](#adaptiveimage) 是子群組的有效子系。 |
+| **子系** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) 和 [AdaptiveImage](#adaptiveimage) 是子群組的有效子系。 |
 | **HintWeight** | int? | false | 藉由指定相對於其他子群組的粗細，控制這個子群組欄的寬度。 |
 | **HintTextStacking** | [AdaptiveSubgroupTextStacking](#adaptivesubgrouptextstacking) | false | 控制這個子群組內容的垂直對齊方式。 |
 
@@ -217,8 +217,8 @@ TextStacking 指定內容的垂直對齊方式。
 | 值 | 意義 |
 |---|---|
 | **預設值** | 預設值。 轉譯器自動選取預設垂直對齊方式。 |
-| **Top** | 垂直對齊最上方。 |
-| **Center** | 垂直對齊中央。 |
+| **頁首** | 垂直對齊最上方。 |
+| **中心** | 垂直對齊中央。 |
 | **底部** | 垂直對齊底部。 |
 
 
@@ -241,7 +241,7 @@ TextStacking 指定內容的垂直對齊方式。
 |---|---|
 | **預設值** | 裁剪時會使用轉譯器的預設行為。 |
 | **無** | 不裁剪影像，顯示為正方形。 |
-| **Circle** | 將影像裁剪成圓形。 |
+| **圓形** | 將影像裁剪成圓形。 |
 
 
 ## <a name="tilepeekimage"></a>TilePeekImage
@@ -263,7 +263,7 @@ TextStacking 指定內容的垂直對齊方式。
 |---|---|
 | **預設值** | 裁剪時會使用轉譯器的預設行為。 |
 | **無** | 不裁剪影像，顯示為正方形。 |
-| **Circle** | 將影像裁剪成圓形。 |
+| **圓形** | 將影像裁剪成圓形。 |
 
 
 ### <a name="tiletextstacking"></a>TileTextStacking
@@ -272,8 +272,8 @@ TextStacking 指定內容的垂直對齊方式。
 | 值 | 意義 |
 |---|---|
 | **預設值** | 預設值。 轉譯器自動選取預設垂直對齊方式。 |
-| **Top** | 垂直對齊最上方。 |
-| **Center** | 垂直對齊中央。 |
+| **頁首** | 垂直對齊最上方。 |
+| **中心** | 垂直對齊中央。 |
 | **底部** | 垂直對齊底部。 |
 
 

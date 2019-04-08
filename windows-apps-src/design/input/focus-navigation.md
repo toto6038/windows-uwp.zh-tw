@@ -236,7 +236,7 @@ ms.locfileid: "57625823"
 
    *「 本機 」 的索引標籤瀏覽行為*
 
-- **Once**  
+- **一次**  
   容器和所有子元素都會取得焦點一次。 針對此範例，定位順序為 B1、B2、B7、B1 (此處也會同時展示使用方向鍵的內部瀏覽)。
 
    ![「一次」Tab 瀏覽行為](images/keyboard/tabnav-once.gif)
@@ -318,7 +318,7 @@ ms.locfileid: "57625823"
 </Grid>
 ```
 
-### <a name="tabindexhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscontrolwindowsuixamlcontrolscontroltabindex"></a>[TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
+### <a name="tabindexhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscontrolwindowsuixamlcontrolscontroltabindex"></a>[定位點索引](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
 
 使用 [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 指定使用者使用 TAB 鍵巡覽控制項時，元素取得焦點的順序。 擁有較低標籤索引的控制項會在擁有較高索引的控制項之後取得焦點。
 

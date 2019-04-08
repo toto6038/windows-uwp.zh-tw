@@ -3842,7 +3842,7 @@ ms.locfileid: "57649053"
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE3.png" width="32" height="32" alt="ButtonMenu" /></td>
   <td>EDE3</td>
-  <td>ButtonMenu</td>
+  <td>按鈕功能表</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE4.png" width="32" height="32" alt="CloudSeach" /></td>
   <td>EDE4</td>

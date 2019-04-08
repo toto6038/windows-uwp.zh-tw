@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store 提交 API
 ms.localizationpriority: medium
 ms.openlocfilehash: 82e5ba10b8f0480f4d996840df26817e324111d8
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57613113"

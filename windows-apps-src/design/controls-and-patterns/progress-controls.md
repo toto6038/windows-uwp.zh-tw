@@ -54,8 +54,8 @@ ms.locfileid: "57634423"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡開啟應用程式並查看 <a href="xamlcontrolsgallery:/item/ProgressBar">ProgressBar</a> 或 <a href="xamlcontrolsgallery:/item/ProgressRing">ProgressRing</a> 運作情形。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -123,7 +123,7 @@ ms.locfileid: "57634423"
 
 第一個範例是「確定」的 ProgressBar。 當作業的持續時間是已知時 (如正在安裝、下載、設定等時候)，ProgressBar 是最佳的選項。
 
-**ProgressBar - Indeterminate**
+**ProgressBar-不定**
 
 ![「不確定」的 ProgressBar 範例](images/PB_IndeterminateExample.png)
 

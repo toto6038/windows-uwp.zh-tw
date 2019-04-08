@@ -66,7 +66,7 @@ ms.locfileid: "57633223"
 |-------------|--------|---------------|------|
 | skip  |  整數   | 在查詢中要略過的資料列數目。 使用此參數來瀏覽資料集。 例如，fetch=10 且 skip=0 將擷取前 10 個資料列的資料，top=10 且 skip=10 將擷取下 10 個資料列的資料，以此類推。    |       
 | fetch  |  整數   | 要在要求中傳回的資料列數目。    |       
-| campaignSetSortColumn  |  字串   | 回應主體中指定欄位的訂購[活動](#campaign)物件。 語法為 <em>CampaignSetSortColumn=field</em>，其中 <em>field</em> 參數可以是下列其中一個字串︰</p><ul><li><strong>id</strong></li><li><strong>createdDateTime</strong></li></ul><p>預設值為 **createdDateTime**。     |     
+| campaignSetSortColumn  |  字串   | 回應主體中指定欄位的訂購[活動](#campaign)物件。 語法為 <em>CampaignSetSortColumn=field</em>，其中 <em>field</em> 參數可以是下列其中一個字串︰</p><ul><li><strong>識別碼</strong></li><li><strong>日期</strong></li></ul><p>預設值為 **createdDateTime**。     |     
 | isDescending  |  布林值   | 回應主體中以遞減或增遞順序排序[行銷活動](#campaign)物件。   |         
 | storeProductId  |  字串   | 使用這個值只傳回廣告活動相關的應用程式，含指定的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品 Store 識別碼為 9nblggh42cfd。   |         
 | label  |  字串   | 使用這個值只傳回廣告活動，其在[行銷活動](#campaign)物件中包含指定的*標籤*。    |       |    
@@ -149,8 +149,8 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  廣告行銷活動的識別碼。     |   是    |      |  否     |       
 |  name   |  字串   |   廣告行銷活動的名稱。    |    否   |      |  是     |       
-|  configuredStatus   |  字串   |  下列其中一個值，指定開發人員指定的廣告行銷活動狀態︰ <ul><li>**使用中**</li><li>**Inactive**</li></ul>     |  否     |  使用中    |   是    |       
-|  effectiveStatus   |  字串   |   下列其中一個值，根據系統驗證指定有效的廣告行銷活動狀態︰ <ul><li>**使用中**</li><li>**Inactive**</li><li>**處理**</li></ul>    |    是   |      |   否      |       
+|  configuredStatus   |  字串   |  下列其中一個值，指定開發人員指定的廣告行銷活動狀態︰ <ul><li>**使用中**</li><li>**非使用中**</li></ul>     |  否     |  使用中    |   是    |       
+|  effectiveStatus   |  字串   |   下列其中一個值，根據系統驗證指定有效的廣告行銷活動狀態︰ <ul><li>**使用中**</li><li>**非使用中**</li><li>**處理**</li></ul>    |    是   |      |   否      |       
 |  effectiveStatusReasons   |  陣列   |  下列一或多個值，指定有效廣告行銷活動狀態的原因如下︰ <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**失敗**</li></ul>      |  是     |     |    否     |       
 |  storeProductId   |  字串   |  此廣告行銷活動所關聯之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品 Store 識別碼為 9nblggh42cfd。     |   是    |      |  是     |       
 |  標籤   |  陣列   |   一或多個字串，表示自訂活動的標籤。 使用下列的標籤來搜尋及標記活動。    |   否    |  null    |    否     |       

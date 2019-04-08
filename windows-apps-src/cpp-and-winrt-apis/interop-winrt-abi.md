@@ -7,7 +7,7 @@ keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、�
 ms.localizationpriority: medium
 ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639943"
@@ -246,11 +246,11 @@ int main()
 ## <a name="important-apis"></a>重要 API
 * [AddRef 函式](https://msdn.microsoft.com/library/windows/desktop/ms691379)
 * [QueryInterface 函式](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
+* [winrt::attach_abi 函式](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)
-* [winrt::copy_to_abi function](/uwp/cpp-ref-for-winrt/copy-to-abi)
-* [winrt::detach_abi function](/uwp/cpp-ref-for-winrt/detach-abi)
-* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::copy_from_abi 函式](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [winrt::copy_to_abi 函式](/uwp/cpp-ref-for-winrt/copy-to-abi)
+* [winrt::detach_abi 函式](/uwp/cpp-ref-for-winrt/detach-abi)
+* [winrt::get_abi 函式](/uwp/cpp-ref-for-winrt/get-abi)
 * [winrt::Windows::Foundation::IUnknown:: 為成員函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as 成員函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)

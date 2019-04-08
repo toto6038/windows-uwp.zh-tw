@@ -43,7 +43,7 @@ ms.locfileid: "57630353"
 | [縮放](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | 縮放中心點上置中的項目 |
 | [旋轉](/uwp/api/windows.ui.xaml.uielement.rotation) | 浮點數 | 將元素周圍的 RotationAxis 和中心點旋轉 |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | 旋轉軸 |
-| [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 縮放和旋轉中心點 |
+| [中心點](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 縮放和旋轉中心點 |
 
 TransformMatrix 屬性值結合的小數位數、 旋轉和轉譯的屬性，順序如下：TransformMatrix，小數位數，旋轉，轉譯。
 
@@ -74,7 +74,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 
 - [RenderTransform](/uwp/api/windows.ui.xaml.uielement.rendertransform)
 - [RenderTransformOrigin](/uwp/api/windows.ui.xaml.uielement.rendertransformorigin)
-- [Projection](/uwp/api/windows.ui.xaml.uielement.projection)
+- [投影](/uwp/api/windows.ui.xaml.uielement.projection)
 - [Transform3D](/uwp/api/windows.ui.xaml.uielement.transform3d)
 
 當您設定 （或以動畫顯示） 的任何新的屬性時，您無法使用舊的屬性。 相反地，如果您設定 （或以動畫顯示） 的任何舊的屬性，您無法使用新的屬性。

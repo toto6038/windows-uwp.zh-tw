@@ -177,7 +177,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 ### <a name="tasks"></a>工作
 
-- [啟動預設的應用程式 uri](launch-default-app.md)
+- [啟動 URI 的預設應用程式](launch-default-app.md)
 - [處理檔案啟用](handle-file-activation.md)
 
 ### <a name="guidelines"></a>指導方針

@@ -46,9 +46,9 @@ BC1、BC2，以及 BC3 格式對等於 Direct3D 9 DXTn 紋理壓縮格式，並�
 
 | 區塊壓縮格式 | DXGI 格式                                                                           | Direct3D 9 對等格式                               | 每個 4 x 4 像素區塊的位元組 |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------|
-| BC1                      | DXGI\_格式\_BC1\_UNORM、 DXGI\_格式\_BC1\_UNORM\_SRGB、 DXGI\_格式\_BC1\_TYPELESS | D3DFMT\_DXT1, FourCC="DXT1"                                | 8                         |
-| BC2                      | DXGI\_FORMAT\_BC2\_UNORM, DXGI\_FORMAT\_BC2\_UNORM\_SRGB, DXGI\_FORMAT\_BC2\_TYPELESS | D3DFMT\_DXT2\*, FourCC="DXT2", D3DFMT\_DXT3, FourCC="DXT3" | 16                        |
-| BC3                      | DXGI\_格式\_BC3\_UNORM、 DXGI\_格式\_BC3\_UNORM\_SRGB、 DXGI\_格式\_BC3\_TYPELESS | D3DFMT\_DXT4\*, FourCC="DXT4", D3DFMT\_DXT5, FourCC="DXT5" | 16                        |
+| BC1                      | DXGI\_格式\_BC1\_UNORM、 DXGI\_格式\_BC1\_UNORM\_SRGB、 DXGI\_格式\_BC1\_TYPELESS | D3DFMT\_DXT1、 FourCC ="DXT1 」                                | 8                         |
+| BC2                      | DXGI\_格式\_BC2\_UNORM、 DXGI\_格式\_BC2\_UNORM\_SRGB、 DXGI\_格式\_BC2\_TYPELESS | D3DFMT\_DXT2\*，FourCC ="DXT2 」，D3DFMT\_DXT3、 FourCC ="DXT3 」 | 16                        |
+| BC3                      | DXGI\_格式\_BC3\_UNORM、 DXGI\_格式\_BC3\_UNORM\_SRGB、 DXGI\_格式\_BC3\_TYPELESS | D3DFMT\_DXT4\*，FourCC ="DXT4 」，D3DFMT\_DXT5、 FourCC ="DXT5 」 | 16                        |
 
  
 
@@ -59,8 +59,8 @@ BC1、BC2，以及 BC3 格式對等於 Direct3D 9 DXTn 紋理壓縮格式，並�
 
 | 區塊壓縮格式 | DXGI 格式                                                                     | Direct3D 9 對等格式 | 每個 4 x 4 像素區塊的位元組 |
 |--------------------------|---------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC4                      | DXGI\_FORMAT\_BC4\_UNORM, DXGI\_FORMAT\_BC4\_SNORM, DXGI\_FORMAT\_BC4\_TYPELESS | FourCC="ATI1"                | 8                         |
-| BC5                      | DXGI\_FORMAT\_BC5\_UNORM, DXGI\_FORMAT\_BC5\_SNORM, DXGI\_FORMAT\_BC5\_TYPELESS | FourCC="ATI2"                | 16                        |
+| BC4                      | DXGI\_格式\_BC4\_UNORM、 DXGI\_格式\_BC4\_SNORM、 DXGI\_格式\_BC4\_TYPELESS | FourCC="ATI1"                | 8                         |
+| BC5                      | DXGI\_格式\_BC5\_UNORM、 DXGI\_格式\_BC5\_SNORM、 DXGI\_格式\_BC5\_TYPELESS | FourCC="ATI2"                | 16                        |
 
  
 
@@ -71,7 +71,7 @@ BC1、BC2，以及 BC3 格式對等於 Direct3D 9 DXTn 紋理壓縮格式，並�
 
 | 區塊壓縮格式 | DXGI 格式                                                                      | Direct3D 9 對等格式 | 每個 4 x 4 像素區塊的位元組 |
 |--------------------------|----------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC6H                     | DXGI\_FORMAT\_BC6H\_UF16, DXGI\_FORMAT\_BC6H\_SF16, DXGI\_FORMAT\_BC6H\_TYPELESS | 無                          | 16                        |
+| BC6H                     | DXGI\_格式\_BC6H\_UF16、 DXGI\_格式\_BC6H\_SF16、 DXGI\_格式\_BC6H\_TYPELESS | 無                          | 16                        |
 
  
 
@@ -84,7 +84,7 @@ BC6H 格式針對每個 4 x 4 的像素區塊可以選擇不同的編碼模式�
 
 | 區塊壓縮格式 | DXGI 格式                                                                           | Direct3D 9 對等格式 | 每個 4 x 4 像素區塊的位元組 |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC7                      | DXGI\_FORMAT\_BC7\_UNORM, DXGI\_FORMAT\_BC7\_UNORM\_SRGB, DXGI\_FORMAT\_BC7\_TYPELESS | 無                          | 16                        |
+| BC7                      | DXGI\_格式\_BC7\_UNORM、 DXGI\_格式\_BC7\_UNORM\_SRGB、 DXGI\_格式\_BC7\_TYPELESS | 無                          | 16                        |
 
  
 
@@ -93,7 +93,7 @@ BC7 格式針對每個 4 x 4 的像素區塊可以選擇不同的編碼模式。
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[Appendices](appendix.md)
+[附錄](appendix.md)
 
 [紋理](https://msdn.microsoft.com/library/windows/desktop/ff476902)
 

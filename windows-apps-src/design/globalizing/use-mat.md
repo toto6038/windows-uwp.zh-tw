@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610113"
@@ -162,7 +162,7 @@ ms.locfileid: "57610113"
 
 ## <a name="related-topics"></a>相關主題
 
-* [UI 和應用程式封裝資訊清單中的當地語系化字串](../../app-resources/localize-strings-ui-manifest.md)
+* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
 * [全球化和當地語系化](globalizing-portal.md)
 * [全球化的指導方針](guidelines-and-checklist-for-globalizing-your-app.md)
 * [可當地語系化，讓您的應用程式](prepare-your-app-for-localization.md)

@@ -287,7 +287,7 @@ var notification = new TileNotification(doc);
 ## <a name="related-topics"></a>相關主題
 
 * [建立自動調整圖格](create-adaptive-tiles.md)
-* [並排顯示內容的結構描述](../tiles-and-notifications/tile-schema.md)
+* [磚內容結構描述](../tiles-and-notifications/tile-schema.md)
 * [通知程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [在 GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications 命名空間**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)

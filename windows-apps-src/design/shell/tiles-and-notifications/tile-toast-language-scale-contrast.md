@@ -88,8 +88,8 @@ ms.locfileid: "57601473"
 * [量身打造您的語言、 規模和其他辨識符號的資源](../../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [磚和圖示資產的指導方針](app-assets.md)。
 * [全球化和當地語系化](../../globalizing/globalizing-portal.md)
-* [UI 和應用程式封裝資訊清單中的當地語系化字串](../../../app-resources/localize-strings-ui-manifest.md)
+* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../../app-resources/localize-strings-ui-manifest.md)
 * [從 XAML 標記和程式碼參考映像或其他資產](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
-* [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
+* [AddImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
 * [並排顯示結構描述](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
 * [快顯通知的結構描述](/uwp/schemas/tiles/toastschema/schema-root?branch=live)

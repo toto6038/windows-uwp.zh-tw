@@ -48,7 +48,7 @@ ms.locfileid: "57648243"
 * [了解使用者設定檔的語言和應用程式資訊清單的語言](manage-language-and-region.md)
 * [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [應用程式資源和資源管理系統](../../app-resources/index.md)
-* [資源管理系統與語言標記的相符](../../app-resources/how-rms-matches-lang-tags.md)
+* [資源管理系統如何比對語言標記](../../app-resources/how-rms-matches-lang-tags.md)
 * [調整配置和字型並支援 RTL](adjust-layout-and-fonts--and-support-rtl.md)
 * [國際字型](loc-international-fonts.md)
 * [可當地語系化，讓您的應用程式](prepare-your-app-for-localization.md)

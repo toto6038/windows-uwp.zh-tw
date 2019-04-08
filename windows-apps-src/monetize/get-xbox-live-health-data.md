@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b996d85776cb49d45cc5b699709b4eb107e7086
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57650903"
@@ -55,8 +55,8 @@ ms.locfileid: "57650903"
 | endDate | date | 要擷取健康情況資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
 | top | 整數 | 要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
-| filter | 字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 您可以在回應本文中指定下列欄位：<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul> | 否   |
-| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以在回應本文中指定下列欄位：<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul><p/>如果您指定一個或多個 *groupby* 欄位，則您未指定的任何其他 *groupby* 欄位將在回應本文中有 **All** 值。 |  否  |
+| filter | 字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 您可以在回應本文中指定下列欄位：<p/><ul><li><strong>裝置類型</strong></li><li><strong>PackageVersion</strong></li><li><strong>sandboxId</strong></li></ul> | 否   |
+| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以在回應本文中指定下列欄位：<p/><ul><li><strong>日期</strong></li><li><strong>裝置類型</strong></li><li><strong>PackageVersion</strong></li><li><strong>sandboxId</strong></li></ul><p/>如果您指定一個或多個 *groupby* 欄位，則您未指定的任何其他 *groupby* 欄位將在回應本文中有 **All** 值。 |  否  |
 
 
 ### <a name="request-example"></a>要求範例

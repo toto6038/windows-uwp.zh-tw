@@ -58,8 +58,8 @@ InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與�
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/InkCanvas">開啟應用程式並查看 InkCanvas 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -107,7 +107,7 @@ InkToolbar 包含下列內建按鈕︰
 
 您可以在各個畫筆的飛出視窗中自訂色彩調色盤和大小屬性 (最小值、最大值、預設值)。
 
-**Tool**
+**工具**
 
 - 橡皮擦 – 刪除任何觸碰到的筆墨筆劃。 請注意，這會刪除整個筆墨筆劃，而不只是橡皮擦筆觸下的部分。
 

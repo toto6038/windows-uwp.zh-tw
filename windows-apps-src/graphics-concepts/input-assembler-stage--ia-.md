@@ -35,7 +35,7 @@ IA 階段可以將頂組合到數個不同的[基本類型](primitive-topologies
 
 IA 階段從記憶體讀取資料︰使用者填入緩衝區的基本資料 (點、行及/或三角形)。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
 IA 階段將資料組合到基元，並附加系統產生的值，而如同基元的輸出將被[頂點著色器 (VS) 階段](vertex-shader-stage--vs-.md)使用，再由其他管線階段使用。

@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, imp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4ca6946df327dbe6697a71d1050e6401ed531fe
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57626663"
@@ -399,9 +399,9 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 * [winrt::get_self 函式樣板](/uwp/cpp-ref-for-winrt/get-self)
 * [winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make 函式樣板](/uwp/cpp-ref-for-winrt/make)
-* [winrt::make_self function template](/uwp/cpp-ref-for-winrt/make-self)
+* [winrt::make_self 函式樣板](/uwp/cpp-ref-for-winrt/make-self)
 * [winrt::Windows::Foundation::IUnknown:: 函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>相關主題
-* [使用 Api，使用 C + + /cli WinRT](consume-apis.md)
-* [XAML 控制項，繫結至 C + + /cli WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [使用 C++/WinRT 取用 API](consume-apis.md)
+* [XAML 控制項；繫結至一個 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

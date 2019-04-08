@@ -45,7 +45,7 @@ Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::Acti
 如果您的 app 無法啟動，但測試平台符合 [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 的先決條件，則您可以檢閱啟用事件記錄檔以疑難排解問題。 在事件記錄檔中找到這些項目：
 
 1.  開啟 eventvwr.exe 並瀏覽至應用程式及服務記錄檔\\Microsoft\\Windows\\Immersive 殼層資料夾。
-2.  篩選檢視，以顯示事件識別碼：5900-6000.
+2.  篩選檢視，以顯示事件識別碼：5900-6000。
 3.  查閱記錄項目，尋找說明為什麼應用程式無法啟動的資訊。
 
 疑難排解有問題的檔案，並尋找和修正問題。 重新建置並重新測試應用程式。 您也可以檢查 Windows 應用程式認證套件記錄檔資料夾中是否已產生可用來偵錯應用程式的傾印檔案。

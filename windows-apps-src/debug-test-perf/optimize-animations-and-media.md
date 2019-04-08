@@ -37,8 +37,8 @@ ms.locfileid: "57640793"
 
     -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
     -   [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d)
-    -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
-    -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
+    -   [**投影**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
+    -   [**美工圖案**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 
 相依式動畫會影響配置，因此需要有來自 UI 執行緒的額外輸入才能進行計算。 相依式動畫包含對 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 和 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 這類屬性的修改。 相依式動畫預設不會執行，且需要由 app 開發人員選擇加入。 如果 UI 執行緒保持未封鎖狀態，則相依式動畫啟用後便可以很流暢地執行，但是如果架構或 app 正在 UI 執行緒上執行大量的其他工作，就會發生斷斷續續的現象。
 

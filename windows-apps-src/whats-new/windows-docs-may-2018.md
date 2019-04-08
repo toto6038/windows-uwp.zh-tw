@@ -36,7 +36,7 @@ Fluent Design System 中的動作的使用者不斷進化，基礎的執行時�
 視覺效果更新和次要的變更進行了下列 Fluent 設計頁面：
 
 * [對齊方式，與邊框距離、 邊界](../design/layout/alignment-margin-padding.md)
-* [Color](../design/style/color.md)
+* [色彩](../design/style/color.md)
 * [命令基本知識](../design/basics/commanding-basics.md)
 * [Windows 應用程式的 Fluent 設計](../design/fluent-design-system/index.md)
 * [應用程式設計的簡介](../design/basics/design-and-ui-intro.md)

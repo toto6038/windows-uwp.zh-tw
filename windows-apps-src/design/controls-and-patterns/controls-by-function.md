@@ -28,8 +28,8 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 <td>
     <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡以<a href="xamlcontrolsgallery:/item/NavigationView">開啟應用程式，並查看動作中的 NavigationView</a> </p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -117,7 +117,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
                  NavigateUri="https://www.microsoft.com"/>
 ```
 
-參考：[HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
+參考：[按一下 HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
 
 設計和操作說明：[超連結控制指南](hyperlinks.md)
 
@@ -228,7 +228,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 <DatePicker Header="Arrival Date"/>
 ```
 
-參考：[DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx) 
+參考：[日期選擇器](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx) 
 
 設計和操作說明：[行事曆、 日期和時間控制項](date-and-time.md)
  
@@ -264,7 +264,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 </Flyout>
 ```
 
-參考：[Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
+參考：[飛出視窗](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
 設計和操作說明：[延伸顯示](dialogs-and-flyouts/flyouts.md) 
 
@@ -286,14 +286,14 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)， [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)， [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)， [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-設計和操作說明：[功能表和內容功能表](menus.md) 
+設計和操作說明：[功能表和操作功能表](menus.md) 
 
 範例程式碼：[XAML 內容功能表範例](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### <a name="popup-menu"></a>快顯功能表
 顯示您所指定命令的自訂功能表。
 
-參考：[PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
+參考：[蹦現式功能表](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
 設計和操作說明：[對話方塊](dialogs-and-flyouts/dialogs.md) 
 
@@ -349,7 +349,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 <Rectangle/>
 ```
 
-參考：[圖形](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
+參考：[形狀](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
 
 作法：[繪製圖案](../../graphics/drawing-shapes.md) 
 
@@ -373,7 +373,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 </Border>
 ```
 
-參考：[Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
+參考：[框線](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
 
 ### <a name="canvas"></a>畫布
 支援將子元素以畫布左上角為起點進行絕對定位的配置面板。
@@ -389,7 +389,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 </Canvas>
 ```
 
-參考：[Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
+參考：[畫布](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
  
 ### <a name="grid"></a>方格
 支援以列和欄排列子元素的配置面板。
@@ -435,7 +435,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 ### <a name="scroll-bar"></a>捲軸
 請參閱＜捲動檢視器＞。 (ScrollBar 是 ScrollViewer 的元素。 您通常不會將它做為獨立控制項)。
 
-參考：[ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
+參考：[捲軸](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
  
 ### <a name="scroll-viewer"></a>捲動檢視器
 讓使用者移動瀏覽和縮放內容的容器控制項。
@@ -587,7 +587,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
          Height="400" Width="800"/>
 ```
 
-參考：[WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
+參考：[Web 檢視](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
 
 設計和操作說明：Web 檢視的方針 
 
@@ -635,7 +635,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 <ProgressBar x:Name="indeterminateProgressBar1" IsIndeterminate="True" Width="100"/>
 ```
 
-參考：[ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx) 
+參考：[進度列](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx) 
 
 設計和操作說明：[進度控制項指南](progress-controls.md) 
 
@@ -731,7 +731,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
          TextChanged="TextBox_TextChanged"/>
 ```
 
-參考：[TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
+參考：[文字方塊](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
 
 設計和操作說明：[文字控制項](text-controls.md)，[文字 方塊控制指南](text-box.md) 
 
@@ -749,7 +749,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
           Checked="CheckBox_Checked"/>
 ```
 
-參考：[CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
+參考：[核取方塊](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
 
 設計和操作說明：[核取方塊控制指南](checkbox.md) 
 
@@ -767,7 +767,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 </ComboBox>
 ```
 
-參考：[ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
+參考：[下拉式方塊](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
 
 設計和操作說明：[清單](lists.md) 
 
@@ -785,7 +785,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 </ListBox>
 ```
 
-參考：[ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
+參考：[清單方塊](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
 
 設計和操作說明：[清單](lists.md) 
 
@@ -803,7 +803,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
              Checked="RadioButton_Checked"/>
 ```
 
-參考：[RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
+參考：[選項按鈕](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
 
 設計和操作說明：[選項按鈕控制項指南](radio-button.md)
  

@@ -49,8 +49,8 @@ ms.locfileid: "57606473"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/HyperlinkButton">開啟應用程式並查看 HyperlinkButton 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -138,7 +138,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 您可以設定 [UnderlineStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.hyperlink.underlinestyle.aspx) 屬性來停用底線。 如果這麼做，請考慮使用 [FontWeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontweight.aspx) 或 [FontStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontstyle.aspx) 來區別您的連結文字。
 
-**HyperlinkButton** 
+**按一下 HyperlinkButton** 
 
 設定字串做為 [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性的值時，HyperlinkButton 預設會顯示為加底線文字。
 
@@ -156,7 +156,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 因為 Hyperlink 不是 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx)，所以沒有一組 UI 元素輸入事件 (例如 Tapped、PointerPressed 等)。 相反地，Hyperlink 有它自己的 Click 事件，以及載入任何指定為 NavigateUri 之 URI 的系統的隱含行為。 系統會處理應該叫用 Hyperlink 動作的所有輸入動作，並引發 Click 事件予以回應。
 
-**Content**
+**內容**
 
 Hyperlink 對可存在於其 [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) 集合中的內容有所限制。 具體而言，Hyperlink 僅允許 [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) 以及不是另一個 Hyperlink 的其他 [Span](/uwp/api/windows.ui.xaml.documents.span) 類型。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) 不能在 Hyperlink 的 Inlines 集合中。 嘗試新增限制內容，會擲回無效引數例外狀況或 XAML 剖析例外狀況。
 

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57657753"
@@ -43,7 +43,7 @@ ms.locfileid: "57657753"
 | 保加利亞文             | bg、bg-bg                                                                                                                                                                                             |
 | 卡達隆尼亞文               | ca、ca-es、ca-es-valencia                                                                                                                                                                             |
 | 卻洛奇文              | chr-cher、chr-cher-us、chr-latn                                                                                                                                                                       |
-| 中文 (簡體)  | zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
+| 中文 (簡體)  | -Zh-hans、 zh cn、 zh-hans-cn、 zh sg、 zh-hans-sg                                                                                                                                                     |
 | 中文 (繁體) | zh-Hant、zh-hk、zh-mo、zh-tw、zh-hant-hk、zh-hant-mo、zh-hant-tw                                                                                                                                      |
 | 克羅埃西亞文              | hr、hr-hr、hr-ba                                                                                                                                                                                      |
 | 捷克文                 | cs、cs-cz                                                                                                                                                                                             |

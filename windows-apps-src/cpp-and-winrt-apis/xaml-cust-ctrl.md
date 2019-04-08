@@ -1,5 +1,5 @@
 ---
-description: 本主題將逐步引導您逐步完成建立簡單的自訂控制項，使用 C + + /cli WinRT。 您可以建置要建立您自己的功能豐富且可自訂 UI 控制項的這裡的資訊。
+description: 本主題會逐步引導您完成使用 C++/WinRT 建立簡單自訂控制項。 您可以根據這裡的資訊，替自己建立功能豐富且可自訂的 UI 控制項。
 title: 使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項
 ms.date: 10/03/2018
 ms.topic: article

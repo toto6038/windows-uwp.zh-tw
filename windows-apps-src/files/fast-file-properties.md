@@ -17,7 +17,7 @@ ms.locfileid: "57630233"
 了解如何快速收集程式庫的檔案和其屬性清單，以便在應用程式中使用這些屬性。  
 
 必要條件 
-- **非同步程式設計的通用 Windows 平台 (UWP) 應用程式** 您可以了解如何撰寫非同步應用程式C#或 Visual Basic，請參閱[呼叫中的非同步 ApiC#或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。     若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
+- **非同步程式設計的通用 Windows 平台 (UWP) 應用程式** 您可以了解如何撰寫非同步應用程式C#或 Visual Basic，請參閱[呼叫中的非同步 ApiC#或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
 - **存取程式庫的權限** 這些範例中的程式碼需要**picturesLibrary**功能，但您的檔案位置可能需要不同的功能或沒有功能完全。 若要深入了解，請參閱[檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)。 
 - **簡單的檔案列舉型別**  這個範例會使用[QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)設定一些進階的列舉型別屬性。 若要深入了解取得小型目錄的簡易檔案清單，請參閱[列舉和查詢檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)。 
 

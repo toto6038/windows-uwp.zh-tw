@@ -62,7 +62,7 @@ Direct3D 各版本提供查詢功能，以驗證串流資源的硬體及驅動�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[資料流的資源](streaming-resources.md)
+[串流資源](streaming-resources.md)
 
  
 

@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, W
 ms.localizationpriority: medium
 ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57630743"
@@ -211,9 +211,9 @@ HRESULT __stdcall DllCanUnloadNow(void)
 
 ## <a name="important-apis"></a>重要 API
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::Windows::Foundation::IUnknown 結構](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相關主題
-* [簡介使用 C + + /cli WinRT](intro-to-using-cpp-with-winrt.md)
-* [移至 C + + /cli WinRT 從 C + + /CX](move-to-winrt-from-cx.md)
-* [Windows 執行階段 c + + 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
+* [C++/WinRT 的簡介](intro-to-using-cpp-with-winrt.md)
+* [從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md)
+* [Windows 執行階段 C++ 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

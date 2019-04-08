@@ -33,16 +33,16 @@ ms.locfileid: "57643973"
 
 根據預設，預覽列印 UI 會顯示 [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478)、[**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479) 和 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486) 選項。 除了上述選項，還有數個其他常見的印表機選項，讓您可以新增到預覽列印 UI：
 
--   [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR226476)
+-   [**繫結**](https://msdn.microsoft.com/library/windows/apps/BR226476)
 -   [**定序**](https://msdn.microsoft.com/library/windows/apps/BR226477)
--   [**Duplex**](https://msdn.microsoft.com/library/windows/apps/BR226480)
+-   [**雙工**](https://msdn.microsoft.com/library/windows/apps/BR226480)
 -   [**HolePunch**](https://msdn.microsoft.com/library/windows/apps/BR226481)
 -   [**InputBin**](https://msdn.microsoft.com/library/windows/apps/BR226482)
 -   [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483)
--   [**MediaType**](https://msdn.microsoft.com/library/windows/apps/BR226484)
+-   [**媒體類型**](https://msdn.microsoft.com/library/windows/apps/BR226484)
 -   [**NUp**](https://msdn.microsoft.com/library/windows/apps/BR226485)
 -   [**PrintQuality**](https://msdn.microsoft.com/library/windows/apps/BR226487)
--   [**Staple**](https://msdn.microsoft.com/library/windows/apps/BR226488)
+-   [**裝訂位置**](https://msdn.microsoft.com/library/windows/apps/BR226488)
 
 這些選項會在 [**StandardPrintTaskOptions**](https://msdn.microsoft.com/library/windows/apps/BR226475) 類別中定義。 您可以在預覽列印 UI 中顯示的選項清單中新增或移除選項。 您也可以變更選項出現的順序，以及設定對使用者顯示的預設設定。
 

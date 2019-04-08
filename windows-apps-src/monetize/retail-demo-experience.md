@@ -8,14 +8,14 @@ keywords: Windows 10, uwp, 零售示範應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: b66435dd7c94762874461b48e19e9a60224f287b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57596753"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>將零售示範 (RDX) 功能加入至您的應用程式
 
-讓客戶試用電腦和裝置在銷售的前可以直接進入正題，請在 您的 Windows 應用程式中包含零售示範模式。
+在您的 Windows 應用程式中加入零售示範模式，讓在銷售場所試用電腦和裝置的客戶可以直接開始試用。
 
 當客戶在零售商店，他們預期能夠試用示範的電腦和裝置。 它們通常會耗費相當長的時間試用應用程式透過區塊[零售示範體驗 (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)。
 

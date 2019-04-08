@@ -22,7 +22,7 @@ ms.locfileid: "57606363"
 
 -   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
 -   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)
--   [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
+-   [**Corewindow 物件**](https://msdn.microsoft.com/library/windows/apps/br208225)
 
 DirectX 圖形介面 (DXGI) 和數個 Direct3D API 都可提供與 EGL 相同的角色。 本主題可以協助您從 EGL 的觀點來了解 DXGI 和 Direct3D 11。
 

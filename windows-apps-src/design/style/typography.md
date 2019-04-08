@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610023"
@@ -350,4 +350,4 @@ Serif 字型適合呈現大量的文字。
 * [文字控制項](../controls-and-patterns/text-controls.md)
 * [XAML 佈景主題資源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML 樣式](../controls-and-patterns/xaml-styles.md)
-* [Microsoft Typography](https://docs.microsoft.com/typography/)
+* [Microsoft 印刷樣式](https://docs.microsoft.com/typography/)

@@ -8,7 +8,7 @@ ms.date: 11/01/2018
 ms.author: kbridge
 ms.openlocfilehash: 32d5005f9965b14d5080344832eb185f0e711689
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646523"
@@ -225,7 +225,7 @@ A [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.s
 </Page>
 ```
 
-**Code-behind**
+**程式碼後置**
 
 1. 首先，我們會定義`ListItemData`我們 ListView 中每個 ListViewItem 包含文字字串和 ICommand 的類別。
 
@@ -465,7 +465,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 </Page>
 ```
 
-**Code-behind**
+**程式碼後置**
 
 1. 首先，我們會定義`ListItemData`我們 ListView 中每個 ListViewItem 包含文字字串和 ICommand 的類別。
 

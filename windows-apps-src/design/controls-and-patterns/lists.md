@@ -92,7 +92,7 @@ ms.locfileid: "57636363"
 <td align="left"><p>反轉清單會從底部開始加入新項目，例如聊天應用程式。 遵循此指導方針以在應用程式中使用反轉清單。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="pull-to-refresh.md">Pull-to-refresh</a></p></td>
+<td align="left"><p><a href="pull-to-refresh.md">若要重新整理提取</a></p></td>
 <td align="left"><p>拖動以重新整理模式可讓使用者以觸控的方式將資料清單向下拖動以抓取更多資料。 使用此指導方針以在清單檢視中實作拖動重新整理。</p></td>
 </tr>
 <tr class="even">
@@ -265,7 +265,7 @@ ms.locfileid: "57636363"
 - [主要/詳細資料](master-details.md)
 - [瀏覽窗格](navigationview.md)
 - [語意式縮放](semantic-zoom.md)
-- [將拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [拖放功能](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [縮圖影像](../../files/thumbnails.md)
 
 **適用於開發人員**

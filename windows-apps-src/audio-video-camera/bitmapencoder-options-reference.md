@@ -36,7 +36,7 @@ ms.locfileid: "57603183"
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立、 編輯和儲存點陣圖影像](imaging.md)
+* [建立、編輯和儲存點陣圖影像](imaging.md)
 * [支援的轉碼器](supported-codecs.md)
 
  

@@ -114,8 +114,8 @@ ms.locfileid: "57632363"
 * [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [建立圖片敘述的動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [{Binding} 標記延伸](binding-markup-extension.md)
-* [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
-* [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
+* [**propertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
+* [**繫結**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**繫結的建構函式**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
 
