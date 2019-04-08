@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645873"
@@ -397,7 +397,7 @@ ResW 索引子可透過 RESW 的 `type` 屬性來識別。 它會編制 `.resw` 
 
 ## <a name="related-topics"></a>相關主題
 
-* [編譯以手動方式使用 MakePri.exe 的資源](compile-resources-manually-with-makepri.md)
+* [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)
 * [MakePri.exe 命令列選項](makepri-exe-command-options.md)
 * [MakePri.exe 組態檔](makepri-exe-configuration.md)
 * [應用程式 /json 媒體類型的 JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

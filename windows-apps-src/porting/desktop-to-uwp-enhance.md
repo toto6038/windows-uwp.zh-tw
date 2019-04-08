@@ -36,8 +36,8 @@ ms.locfileid: "57628033"
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program 檔案 (x86) \Windows Kits\10\References\<*sdk 版本*> \Windows.Foundation.UniversalApiContract\<*版本*>|
+|Windows.Foundation.FoundationContract.winmd|C:\Program 檔案 (x86) \Windows Kits\10\References\<*sdk 版本*> \Windows.Foundation.FoundationContract\<*版本*>|
 
 在 **\[屬性\]** 視窗中，將每個 *.winmd* 檔案的 **\[複製本機\]** 欄位設定為 **\[False\]**。
 

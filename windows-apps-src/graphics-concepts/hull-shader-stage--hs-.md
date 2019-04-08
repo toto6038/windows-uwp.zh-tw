@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57601053"
@@ -41,7 +41,7 @@ ms.locfileid: "57601053"
 -   輪廓著色器會宣告[曲面細分器 (TS) 階段](tessellator-stage--ts-.md)所需的狀態。 這些資訊包括控制點數目、塊面的類型，以及鑲嵌時分割使用的類型。 這項資訊會顯示為宣告，通常是在著色器程式碼的前方。
 -   鑲嵌係數決定每個塊面要細分成多少數目。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
 介於 1 到 32 輸出控制點之間，共同構成塊面。

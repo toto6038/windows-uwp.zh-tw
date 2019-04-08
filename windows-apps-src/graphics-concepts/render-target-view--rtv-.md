@@ -22,7 +22,7 @@ ms.locfileid: "57607763"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[Views](views.md)
+[檢視](views.md)
 
  
 

@@ -18,7 +18,7 @@ ms.locfileid: "57608563"
 
 **重要的 Api**
 
--   [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511)
+-   [**面板**](https://msdn.microsoft.com/library/windows/apps/BR227511)
 
 版面配置是為 UI 定義視覺化結構的程序。 用來說明 XAML 版面配置的主要機制是透過面板，這類面板是讓您能夠在其中放置與排列 UI 元素的容器物件。 在 CPU 使用量與記憶體負荷方面，版面配置可說是 XAML app 中高度耗費資源的一部分。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。
 

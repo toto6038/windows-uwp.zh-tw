@@ -86,7 +86,7 @@ PSF 包含您可以使用，例如檔案重新導向修復的執行階段修正�
 
 ### <a name="create-the-package-layout-folder"></a>建立封裝配置資料夾
 
-如果您已經有.msix （則為.appx） 檔案，您可以將其內容解壓縮到到版面配置資料夾將做為暫存區域，為您的封裝。 您可以從命令提示字元使用 MakeAppx 工具，根據您的安裝路徑的 sdk，這是您將在其中找到您的 Windows 10 電腦上 makeappx.exe 工具： x86:C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe x64:C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
+如果您已經有.msix （則為.appx） 檔案，您可以將其內容解壓縮到到版面配置資料夾將做為暫存區域，為您的封裝。 您可以從命令提示字元使用 MakeAppx 工具，根據您的安裝路徑的 sdk，這是您將在其中找到您的 Windows 10 電腦上 makeappx.exe 工具： x86:C:\Program 檔案 (x86) \Windows Kits\10\bin\x86\makeappx.exe x64:C:\Program 檔案 (x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -190,10 +190,10 @@ nuget install Microsoft.PackageSupportFramework
 |-------|-----------|-------|
 | applications | id |  使用值`Id`屬性的`Application`封裝資訊清單中的項目。 |
 | applications | 可執行檔 | 您想要啟動之可執行檔封裝相對路徑。 在大部分情況下，您可以從您的套件資訊清單檔案取得此值，再進行修改。 值很`Executable`屬性的`Application`項目。 |
-| applications | workingDirectory | （選擇性）若要啟動之應用程式的工作目錄為使用封裝相對路徑。 如果您未設定此值，就會使用作業系統`System32`為應用程式的工作目錄的目錄。 |
+| applications | WorkingDirectory | （選擇性）若要啟動之應用程式的工作目錄為使用封裝相對路徑。 如果您未設定此值，就會使用作業系統`System32`為應用程式的工作目錄的目錄。 |
 | 處理程序 | 可執行檔 | 在大部分情況下，這會是名稱`executable`上方移除的路徑和檔案延伸模組設定。 |
-| fixups | dll | 修復，.msix/.appx 載入的封裝相對路徑。 |
-| fixups | 設定 | （選擇性）控制修復 dl 的運作方式。 為每個修復可解譯此 「 blob 」 它想要修復的修復為基礎而異的確切的格式，這個值。 |
+| 修復 | dll | 修復，.msix/.appx 載入的封裝相對路徑。 |
+| 修復 | 設定 | （選擇性）控制修復 dl 的運作方式。 為每個修復可解譯此 「 blob 」 它想要修復的修復為基礎而異的確切的格式，這個值。 |
 
 `applications`， `processes`，和`fixups`索引鍵是陣列。 這表示您可以指定多個應用程式、 處理程序，以及修復 DLL 使用的 config.json 檔案。
 
@@ -403,10 +403,10 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 |-------|-----------|-------|
 | applications | id |  使用值`Id`屬性的`Application`封裝資訊清單中的項目。 |
 | applications | 可執行檔 | 您想要啟動之可執行檔封裝相對路徑。 在大部分情況下，您可以從您的套件資訊清單檔案取得此值，再進行修改。 值很`Executable`屬性的`Application`項目。 |
-| applications | workingDirectory | （選擇性）若要啟動之應用程式的工作目錄為使用封裝相對路徑。 如果您未設定此值，就會使用作業系統`System32`為應用程式的工作目錄的目錄。 |
+| applications | WorkingDirectory | （選擇性）若要啟動之應用程式的工作目錄為使用封裝相對路徑。 如果您未設定此值，就會使用作業系統`System32`為應用程式的工作目錄的目錄。 |
 | 處理程序 | 可執行檔 | 在大部分情況下，這會是名稱`executable`上方移除的路徑和檔案延伸模組設定。 |
-| fixups | dll | 修復 DLL 載入的封裝相對路徑。 |
-| fixups | 設定 | （選擇性）控制修復 DLL 的運作方式。 為每個修復可解譯此 「 blob 」 它想要修復的修復為基礎而異的確切的格式，這個值。 |
+| 修復 | dll | 修復 DLL 載入的封裝相對路徑。 |
+| 修復 | 設定 | （選擇性）控制修復 DLL 的運作方式。 為每個修復可解譯此 「 blob 」 它想要修復的修復為基礎而異的確切的格式，這個值。 |
 
 當您完成時，您``config.json``檔案會看起來像這樣。
 

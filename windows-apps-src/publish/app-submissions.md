@@ -41,7 +41,7 @@ ms.locfileid: "57643283"
 | 欄位名稱                    | 附註                                       | 如需詳細資訊                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **市場**                   | Default：所有可能的市場  | [定義定價和市場的選取範圍](define-pricing-and-market-selection.md)         |
-| **Audience**                | Default：公開對象 | [Audience](choose-visibility-options.md#audience) |
+| **對象**                | Default：公開對象 | [對象](choose-visibility-options.md#audience) |
 | **可搜尋性**                | Default：在市集中可用且可探索製作此應用程式 | [可搜尋性](choose-visibility-options.md#discoverability) |
 | **排程**                  | Default：儘速版本        | [設定精確的發行排程](configure-precise-release-scheduling.md) |
 | **基本價格**                | 必要                                    | [設定和排程應用程式的定價](set-and-schedule-app-pricing.md)              |
@@ -97,9 +97,9 @@ ms.locfileid: "57643283"
 | **市集標誌**               | 建議使用；某些 OS 版本為必要 | [市集標誌](app-screenshots-and-images.md#store-logos)             |
 | **結尾**                  | 選擇性                                    | [結尾](app-screenshots-and-images.md#trailers)                | 
 | **Windows 10 和 Xbox 的映像 （16:9 進階 hero 圖案）**     | 推薦項目        | [Windows 10 和 Xbox 映像 （16:9 進階 hero 圖案）
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Xbox 映像**     | 如果您發行至 Xbox，需要正確地顯示        | [Xbox 映像
-](app-screenshots-and-images.md#xbox-images) |
+] (應用程式-螢幕擷取畫面-和-images.md #xbox 映像) |
 | **補充的欄位**  | 選擇性                                    | [補充的欄位](create-app-store-listings.md#supplemental-fields) 
 | **搜尋字詞**              | 選擇性                                    | [搜尋字詞](create-app-store-listings.md#search-terms)         |
 | **著作權及商標資訊** | 選擇性                                 | [著作權及商標資訊](create-app-store-listings.md#copyright-and-trademark-info) |

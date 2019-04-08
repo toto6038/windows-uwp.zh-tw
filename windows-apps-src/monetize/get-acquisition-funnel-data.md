@@ -61,7 +61,7 @@ ms.locfileid: "57646193"
 |---------------|-----------------|
 | campaignId | 與取得相關聯之[自訂應用程式促銷活動](../publish/create-a-custom-app-promotion-campaign.md)的識別碼字串。 |
 | market | 內含發生下載之市場的 ISO 3166 國家/地區碼的字串。 |
-| deviceType | 下列其中一個字串，指定發生取得的裝置類型：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>全像攝影版</strong></li><li><strong>未知</strong></li></ul> |
+| deviceType | 下列其中一個字串，指定發生取得的裝置類型：<ul><li><strong>PC</strong></li><li><strong>電話</strong></li><li><strong>主控台</strong></li><li><strong>IoT</strong></li><li><strong>全像攝影版</strong></li><li><strong>未知</strong></li></ul> |
 | ageGroup | 下列其中一個字串，指定完成取得之使用者的年齡層：<ul><li><strong>0 – 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 – 49</strong></li><li><strong>50 或以上</strong></li><li><strong>未知</strong></li></ul> |
 | gender | 下列其中一個字串，指定完成取得之使用者的性別：<ul><li><strong>M</strong></li><li><strong>F</strong></li><li><strong>未知</strong></li></ul> |
 

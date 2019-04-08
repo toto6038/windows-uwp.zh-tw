@@ -46,7 +46,7 @@ CodecQuery API 屬於 **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/
 
 * [媒體播放](media-playback.md)
 * [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [媒體檔案轉碼](transcode-media-files.md)
+* [轉碼媒體檔案](transcode-media-files.md)
 * [支援的轉碼器](supported-codecs.md)
  
 

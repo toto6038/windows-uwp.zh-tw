@@ -21,7 +21,7 @@ ms.locfileid: "57638703"
 
 [  **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 命名空間中的核心文字 API 讓通用 Windows 平台 (UWP) 應用程式能夠接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。 這類 API 十分類似[文字服務架構](https://msdn.microsoft.com/library/windows/desktop/ms629032) API，其中的 App 不需要具備文字服務的詳細知識。 這讓應用程式能夠接收任何語言以及來自任何輸入類型的文字，例如鍵盤、語音或手寫筆。
 
-> **重要的 Api**:[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
+> **重要的 Api**:[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)， [ **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 ## <a name="why-use-core-text-apis"></a>為什麼要使用核心文字 API？
 
@@ -56,8 +56,8 @@ ms.locfileid: "57638703"
 
 | 欄位                  | 資料類型                                                                 | 描述                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範圍的開始位置是緊接在第一個字元之前的 ACP。 |
-| **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範圍的結束位置是緊接在最後一個字元之後的 ACP。     |
+| **StartCaretPosition** | **數字** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[c + +\] | 範圍的開始位置是緊接在第一個字元之前的 ACP。 |
+| **EndCaretPosition**   | **數字** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[c + +\] | 範圍的結束位置是緊接在最後一個字元之後的 ACP。     |
 
  
 
@@ -99,8 +99,8 @@ ms.locfileid: "57638703"
 ![範例文字資料流圖表](images/coretext/stream-3.png)當使用者輸入"d" [ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176)就會引發事件，以下列[ **CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229)資料：
 
 -   [**範圍**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10，10\]
--   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
--   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
+-   [**文字**](https://msdn.microsoft.com/library/windows/apps/dn958236) ="d"
+-   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11、 11\]
 
 在編輯控制項中，套用指定的變更，並將 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 **Succeeded**。 以下是控制項在套用變更之後的狀態。
 
@@ -123,7 +123,7 @@ ms.locfileid: "57638703"
 
 -   *modifiedRange* = \[6、 6\]
 -   *newLength* = 5
--   *newSelection* = \[11, 11\]
+-   *newSelection* = \[11、 11\]
 
 隨後會有一或多個 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件，您可在其中處理更新文字服務正在使用的文字。
 
@@ -139,9 +139,9 @@ ms.locfileid: "57638703"
 
 ![範例文字資料流圖表](images/coretext/stream-8.png)當發生這種情況時，您應該呼叫[ **NotifyTextChanged** ](https://msdn.microsoft.com/library/windows/apps/dn958172)的這些引數：
 
--   *modifiedRange* = \[1, 2\]
+-   *modifiedRange* = \[1、 2\]
 -   *newLength* = 2
--   *newSelection* = \[5, 5\]
+-   *newSelection* = \[5，5\]
 
 隨後會有一或多個 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件，您可在其中處理更新文字服務正在使用的文字。
 

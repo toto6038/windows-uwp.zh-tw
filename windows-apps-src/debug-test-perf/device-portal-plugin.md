@@ -197,6 +197,6 @@ Device Portal 提供者所提供的靜態內容，是在與核心 Device Portal 
 
 ## <a name="related-topics"></a>相關主題
 * [Windows Device Portal 概觀](device-portal.md)
-* [建立和使用 app service](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [建立和使用應用程式服務](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
 
 

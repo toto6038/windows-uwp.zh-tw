@@ -50,7 +50,7 @@ ms.locfileid: "57597823"
 </Applications>
 ```
 
-**After**
+**之後**
 
 ```xml
 <Applications>

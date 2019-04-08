@@ -7,7 +7,7 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 075eaf5c02e5bddb4b87d7e4aaf931cbfde53cdd
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616413"
@@ -111,7 +111,7 @@ PushNotificationChannel webChannel =
 <th align="left"><b>推播快顯嗎？</b></th>
 <th align="left"><b>推播 圖格/徽章嗎？</b></th>
 <th align="left"><b>推播未經處理的通知嗎？</b></th>
-<th align="left">[驗證]<b></b></th>
+<th align="left"><b>驗證</b></th>
 <th align="left"><b>API</b></th>
 <th align="left"><b>所需的存放區註冊嗎？</b></th>
 <th align="left"><b>通道</b></th>

@@ -21,7 +21,7 @@ ms.locfileid: "57662753"
 **重要的 Api**
 
 -   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
--   [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
+-   [Visual c + +](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
 
 如果您是從 iOS 或 Android 平台移植遊戲，可能已經在 OpenGL ES 2.0 投入了大量的心力。 在準備將圖形管線程式碼基底移到 Direct3D 11 與 Windows 執行階段時，有幾件事在開始之前必須先行考量。
 

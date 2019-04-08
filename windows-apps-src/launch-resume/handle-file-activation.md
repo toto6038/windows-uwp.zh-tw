@@ -145,7 +145,7 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 ### <a name="tasks"></a>工作
 
 * [啟動檔案的預設應用程式](launch-the-default-app-for-a-file.md)
-* [處理啟動 URI](handle-uri-activation.md)
+* [處理 URI 啟用](handle-uri-activation.md)
 
 ### <a name="guidelines"></a>指導方針
 

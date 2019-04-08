@@ -22,7 +22,7 @@ ms.locfileid: "57649553"
 
 **提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
 
--   [通用 Windows 平台 (UWP) 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="get-a-key"></a>取得金鑰
 
@@ -92,5 +92,5 @@ ms.locfileid: "57649553"
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
 * [UWP 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [對應的設計方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 影片：利用跨電話、 平板電腦和 PC 在 Windows 應用程式中的地圖與位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 流量的應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows 應用程式中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 車流量應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)

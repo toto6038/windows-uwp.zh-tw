@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57632053"
@@ -271,6 +271,6 @@ ms-resource:///Hello%23World/String1
 * [封裝應用程式](../packaging/index.md)
 * [從 XAML 標記和程式碼參考映像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [儲存和擷取設定和其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
-* [UI 和應用程式封裝資訊清單中的當地語系化字串](localize-strings-ui-manifest.md)
+* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](localize-strings-ui-manifest.md)
 * [資源管理系統](https://msdn.microsoft.com/library/windows/apps/jj552947)
 * [磚與快顯通知的通知支援的語言、 規模和高對比](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

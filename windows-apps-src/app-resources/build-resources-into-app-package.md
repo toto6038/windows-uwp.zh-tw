@@ -97,6 +97,6 @@ Visual Studio 在幕後啟動名為 `MakePri.exe` 的工具來產生所謂「套
 
 ## <a name="related-topics"></a>相關主題
 
-* [封裝 UWP 應用程式與 Visual Studio](../packaging/packaging-uwp-apps.md)
-* [編譯以手動方式使用 MakePri.exe 的資源](compile-resources-manually-with-makepri.md)
+* [使用 Visual Studio 封裝 UWP 應用程式](../packaging/packaging-uwp-apps.md)
+* [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)
 * [指定您的應用程式使用的預設資源](specify-default-resources-installed.md)

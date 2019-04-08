@@ -124,6 +124,6 @@ else
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>相關主題
-* [UI 和應用程式封裝資訊清單中的當地語系化字串](../../app-resources/localize-strings-ui-manifest.md)
+* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
 * [量身打造您的語言、 規模和其他辨識符號的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [了解使用者設定檔的語言和應用程式資訊清單的語言](manage-language-and-region.md)

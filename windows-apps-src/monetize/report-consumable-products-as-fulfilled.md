@@ -69,7 +69,7 @@ UserIdentity 物件包含下列參數。
 |----------------------|--------|-------------------|----------|
 | identityType         | 字串 | 指定字串值 **b2b**。    | 是      |
 | identityValue        | 字串 | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要回報消費性產品已完成之使用者的身分。      | 是      |
-| localTicketReference | 字串 | 所傳回回應的要求識別碼。 我們建議您使用相同的值*userId*[宣告](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key)Microsoft Store 識別碼索引鍵中。   | 是      |
+| localTicketReference | 字串 | 所傳回回應的要求識別碼。 我們建議您使用相同的值*userId*[宣告](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key)Microsoft Store 識別碼索引鍵中。 | 是      |
 
 
 ### <a name="request-examples"></a>要求範例

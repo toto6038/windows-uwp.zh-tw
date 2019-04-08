@@ -75,7 +75,7 @@ Direct3D 支援在特定邊上使用最多 16384 像素的 [**Texture2D**](https
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[資料流的資源](streaming-resources.md)
+[串流資源](streaming-resources.md)
 
  
 

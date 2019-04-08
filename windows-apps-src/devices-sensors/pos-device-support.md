@@ -39,7 +39,7 @@ ms.locfileid: "57663093"
 | Honeywell     | Voyager 1200 g                  | 1D         | USB          | 掌上型     | HID 的 POS 掃描器           |
 | Honeywell     | Voyager 1202 g                  | 1D         | USB          | 掌上型     | HID 的 POS 掃描器           |
 | Honeywell     | Voyager 1202 bf                | 1D         | USB          | 掌上型     | HID 的 POS 掃描器           |
-| Honeywell     | Voyager 145Xg                  | 1D / 2D¹   | USB          | 掌上型     | HID 的 POS 掃描器           |
+| Honeywell     | Voyager 145Xg                  | 1D/2 D ¹   | USB          | 掌上型     | HID 的 POS 掃描器           |
 | Honeywell     | Voyager 1602 g                  | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
 | Honeywell     | Xenon 1900 g                    | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
 | Honeywell     | Xenon 1902 g                    | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
@@ -50,7 +50,7 @@ ms.locfileid: "57663093"
 | Intermec      | SG20                           | 2D         | USB          | 掌上型     | HID 的 POS 掃描器           |
 | 通訊端行動裝置 | CHS 7Ci                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
 | 通訊端行動裝置 | CHS 7Di                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
-| 通訊端行動裝置 | CHS 7Mi                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
+| 通訊端行動裝置 | CHS 7 英哩                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
 | 通訊端行動裝置 | CHS 7Pi                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
 | 通訊端行動裝置 | CHS 8Ci                        | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
 | 通訊端行動裝置 | DuraScan D700                  | 1D         | 藍牙    | 掌上型     | 序列通訊埠設定檔 (SPP) |
@@ -88,8 +88,8 @@ ms.locfileid: "57663093"
 | Honeywell      | CT50   | Windows Mobile   |
 | Honeywell      | D75e | Windows Mobile   |
 | Janam          | XT2      | Windows Mobile   |
-| Panasonic      | FZ-E1 | Windows Mobile   |
-| Panasonic      | FZ-F1 |Windows Mobile   |
+| Panasonic      | FZ E1 | Windows Mobile   |
+| Panasonic      | FZ F1 |Windows Mobile   |
 | PointMobile    | PM80 | Windows Mobile   |
 | 色彩          | TC700j | Windows Mobile   |
 | HP             | 精英 X3 Jacket | Windows Mobile   |

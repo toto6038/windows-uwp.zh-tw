@@ -250,5 +250,5 @@ JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在
 
 ## <a name="related-topics"></a>相關主題
 
-* [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [使用 C# 和 Visual Basic 建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe （Windows 執行階段中繼資料匯出工具）](https://msdn.microsoft.com/library/hh925576.aspx)

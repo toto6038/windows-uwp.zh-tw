@@ -374,7 +374,7 @@ using namespace Windows::Web::Http;
 * [連接到資料流通訊端的網路資源](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
 * [連接到網路服務](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
 * [連接到 web 服務](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
-* [網路基本概念](https://msdn.microsoft.com/library/windows/apps/mt280233)
+* [網路功能基本知識](https://msdn.microsoft.com/library/windows/apps/mt280233)
 * [如何設定網路隔離功能](https://msdn.microsoft.com/library/windows/apps/hh770532)
 * [如何啟用回送和偵錯網路隔離](https://msdn.microsoft.com/library/windows/apps/hh780593)
 

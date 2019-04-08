@@ -146,7 +146,7 @@ ms.locfileid: "57617953"
 
 ## <a name="related-topics"></a>相關主題
 * [簡單的相機預覽存取權](simple-camera-preview-access.md)
-* [媒體撰寫和編輯](media-compositions-and-editing.md)
+* [媒體組合和編輯](media-compositions-and-editing.md)
 * [來參照 Win2D 文件](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [媒體播放](media-playback.md)
 

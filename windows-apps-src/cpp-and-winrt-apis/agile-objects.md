@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、敏捷式、�
 ms.localizationpriority: medium
 ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639663"
@@ -117,10 +117,10 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 
 * [IAgileObject 介面](https://msdn.microsoft.com/library/windows/desktop/hh802476)
 * [IMarshal 介面](https://docs.microsoft.com/previous-versions/windows/embedded/ms887993)
-* [winrt::agile_ref struct template](/uwp/cpp-ref-for-winrt/agile-ref)
+* [winrt::agile_ref 結構範本](/uwp/cpp-ref-for-winrt/agile-ref)
 * [winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)
-* [winrt::make_agile function template](/uwp/cpp-ref-for-winrt/make-agile)
-* [winrt::non_agile marker struct](/uwp/cpp-ref-for-winrt/non-agile)
+* [winrt::make_agile 函式樣板](/uwp/cpp-ref-for-winrt/make-agile)
+* [winrt::non_agile 標記結構](/uwp/cpp-ref-for-winrt/non-agile)
 * [winrt::Windows::Foundation::IUnknown:: 函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as 函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
 

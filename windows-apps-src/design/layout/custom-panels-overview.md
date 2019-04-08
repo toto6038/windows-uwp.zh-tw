@@ -86,7 +86,7 @@ ms.locfileid: "57620343"
 -   [**DesiredSize** ](https://msdn.microsoft.com/library/windows/apps/br208921) (實際上[ **UIElement** ](https://msdn.microsoft.com/library/windows/apps/br208911)屬性)
 -   [**ActualHeight** ](https://msdn.microsoft.com/library/windows/apps/br208707)並[ **ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)
 -   [**高度**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)並[**寬度**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)
--   [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
+-   [**邊界**](https://msdn.microsoft.com/library/windows/apps/br208724)
 -   [**LayoutUpdated** ](https://msdn.microsoft.com/library/windows/apps/br208722)事件
 -   [**HorizontalAlignment** ](https://msdn.microsoft.com/library/windows/apps/br208720)並[ **VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
 -   [**ArrangeOverride** ](https://msdn.microsoft.com/library/windows/apps/br208711)並[ **MeasureOverride** ](https://msdn.microsoft.com/library/windows/apps/br208730)方法
@@ -195,7 +195,7 @@ protected override Size ArrangeOverride(Size finalSize)
 **參考**
 * [**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 * [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
-* [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+* [**面板**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
 **概念**
 * [對齊、 邊界和邊框距離](alignment-margin-padding.md)

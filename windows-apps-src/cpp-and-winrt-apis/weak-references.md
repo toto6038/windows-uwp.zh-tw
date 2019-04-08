@@ -1,5 +1,5 @@
 ---
-description: Windows 執行階段是參考計數系統;務必要了解的重要性，以及區別，這類系統在強式和弱式參考。
+description: Windows 執行階段是參考計數式系統；在這樣的系統中，請務必了解強式和弱式參考的重要性以及之間的區別。
 title: C++/WinRT 中的弱式參考
 ms.date: 10/03/2018
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57630813"
@@ -396,5 +396,5 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, no_weak_ref>
 ## <a name="important-apis"></a>重要 API
 * [implements::get_weak 函式](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [winrt::make_weak 函式樣板](/uwp/cpp-ref-for-winrt/make-weak)
-* [winrt::no_weak_ref marker struct](/uwp/cpp-ref-for-winrt/no-weak-ref)
+* [winrt::no_weak_ref 標記結構](/uwp/cpp-ref-for-winrt/no-weak-ref)
 * [winrt::weak_ref 結構範本](/uwp/cpp-ref-for-winrt/weak-ref)

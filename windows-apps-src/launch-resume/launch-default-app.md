@@ -33,14 +33,14 @@ URI 配置可讓您按一下超連結來開啟 App。 就像您可以使用 **ma
 |[bingmaps: ms 磁碟機來:、 和 ms 查核行程來： ](#maps-app-uri-schemes) | 地圖 App |
 |[http:](#http-uri-scheme) | 預設網頁瀏覽器 |
 |[mailto:](#email-uri-scheme) | 預設電子郵件 App |
-|[ms-call:](#call-app-uri-scheme) |  呼叫 App |
-|[ms-chat:](#messaging-app-uri-scheme) | 訊息中心 App |
+|[ms 呼叫：](#call-app-uri-scheme) |  呼叫 App |
+|[ms-對談：](#messaging-app-uri-scheme) | 訊息中心 App |
 |[ms 人員：](#people-app-uri-scheme) | 連絡人 App |
 |[ms 相片：](#photos-app-uri-scheme) | 相片 App |
 |[ms-設定：](#settings-app-uri-scheme) | 「設定」App |
 |[ms store:](#store-app-uri-scheme)  | 市集應用程式 |
 |[ms tonepicker:](#tone-picker-uri-scheme) | 音調選擇器 |
-|[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | 附近號碼 App |
+|[ms yellowpage:](#nearby-numbers-app-uri-scheme) | 附近號碼 App |
 |[msnweather:](#weather-app-uri-scheme) | 氣象應用程式 |
 
 <br>
@@ -244,4 +244,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 配置 | 結果 |
 |------------|---------|
-| msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | 啟動位置的地理座標為基礎的 [預測] 頁面中的氣象應用程式。<br>`latitude` 是指位置的緯度。<br> `longitude` 是指位置的經度。<br> |
+| msnweather://forecast?la=\[緯度\]& lo =\[經度\] | 啟動位置的地理座標為基礎的 [預測] 頁面中的氣象應用程式。<br>`latitude` 是指位置的緯度。<br> `longitude` 是指位置的經度。<br> |

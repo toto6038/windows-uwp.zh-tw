@@ -271,7 +271,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
 ## <a name="related-topics"></a>相關主題
-* [控制代碼的應用程式暫止](suspend-an-app.md)
+* [處理應用程式暫停](suspend-an-app.md)
 * [處理應用程式繼續執行](resume-an-app.md)
 * [應用程式的指導方針暫停和繼續](https://msdn.microsoft.com/library/windows/apps/hh465088)
 * [應用程式生命週期](app-lifecycle.md)

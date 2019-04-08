@@ -50,7 +50,7 @@ Direct3D 使用左手系座標系統。 雖然左手系和右手系座標是最�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[座標系統和幾何](coordinate-systems-and-geometry.md)
+[座標系統與幾何](coordinate-systems-and-geometry.md)
 
  
 

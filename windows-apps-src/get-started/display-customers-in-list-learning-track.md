@@ -166,10 +166,10 @@ public class Customer : INotifyPropertyChanged
 | API | 描述 |
 |------|---------------|
 | [資料範本](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | 描述資料物件的視覺化結構，允許顯示 UI 中的特定元素。 |
-| [x:Bind](../xaml-platform/x-bind-markup-extension.md) | 關於建議的 x:Bind 標記延伸的文件。 |
+| [x： 繫結](../xaml-platform/x-bind-markup-extension.md) | 關於建議的 x:Bind 標記延伸的文件。 |
 | [繫結](../xaml-platform/binding-markup-extension.md) | 關於較舊的 Binding 標記延伸的文件。 |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | 以垂直堆疊顯示資料項目的 UI 控制項。 |
-| [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 用於在 UI 中顯示可編輯文字資料的控制項的基本文字。 |
+| [文字方塊](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 用於在 UI 中顯示可編輯文字資料的控制項的基本文字。 |
 | [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | 使資料變成可觀察的介面，提供至資料繫結。 |
 | [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | 此類別的 **ItemsSource** 屬性允許 ListView 繫結至資料來源。 |
 

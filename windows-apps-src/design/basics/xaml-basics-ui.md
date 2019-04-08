@@ -170,7 +170,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
     </Grid>
     ```
 
-    **After**
+    **之後**
     ```xaml
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="TitleTextBlock"
@@ -301,7 +301,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
     <Grid/>
     ```
 
-    **After**
+    **之後**
     ```xaml
     <Grid Height="300"
           Width="300"
@@ -445,7 +445,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
         <Setter Property="Background" Value="{ThemeResource GridViewItemBackground}"/>
     ```
 
-    **After**
+    **之後**
     ```xaml
         <Setter Property="Background" Value="Gray"/>
     ```
@@ -457,7 +457,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
         <Setter Property="Margin" Value="0,0,4,4"/>
     ```
 
-    **After**
+    **之後**
     ```xaml
         <Setter Property="Margin" Value="8"/>
     ```
@@ -492,7 +492,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
                   ItemContainerStyle="{StaticResource ImageGridView_DefaultItemContainerStyle}"/>
     ```
 
-    **After**
+    **之後**
     ```xaml
         <GridView x:Name="ImageGridView"
                   Margin="0,0,0,8"
@@ -533,7 +533,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
     </ItemsPanelTemplate>
     ```
 
-    **After**
+    **之後**
     ```xaml
     <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal"

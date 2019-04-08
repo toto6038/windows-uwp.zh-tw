@@ -41,7 +41,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
 | **啟動**| 字串 | false | 快顯通知啟動應用程式時，傳遞給應用程式的字串。 此字串的格式和內容是由應用程式定義以供應用程式自己使用。 當使用者點選或按一下快顯通知來啟動其相關聯應用程式時，啟動字串會提供相關內容給應用程式，以允許應用程式向使用者顯示與快顯通知內容有關的檢視，而非以其預設方式啟動。 |
-| **Visual** | [ToastVisual](#toastvisual) | true | 描述快顯通知的視覺效果部分。 |
+| **視覺化** | [ToastVisual](#toastvisual) | true | 描述快顯通知的視覺效果部分。 |
 | **動作** | [IToastActions](#itoastactions) | false | 選擇性使用按鈕和輸入建立自訂動作。 |
 | **音訊** | [ToastAudio](#toastaudio) | false | 描述快顯通知的音效部分。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 指定使用者此快顯通知內文時，將會使用什麼啟用類型。 |
@@ -58,7 +58,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 |---|---|
 | **預設值** | 一般快顯通知行為。 |
 | **提醒** | 提醒通知。 這會以預先展開的方式顯示，並停留在使用者的螢幕上，直到關閉為止。 |
-| **Alarm** | 鬧鐘通知。 這會以預先展開的方式顯示，並停留在使用者的螢幕上，直到關閉為止。 音效預設會重複播放，並使用鬧鐘音效。 |
+| **警示** | 鬧鐘通知。 這會以預先展開的方式顯示，並停留在使用者的螢幕上，直到關閉為止。 音效預設會重複播放，並使用鬧鐘音效。 |
 | **IncomingCall** | 來電通知。 這會使用特殊通話格式以預先展開的方式顯示，並停留在使用者的螢幕上，直到關閉為止。 音效預設會重複播放，並使用鈴聲音效。 |
 
 
@@ -68,7 +68,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
 | **BindingGeneric** | [ToastBindingGeneric](#toastbindinggeneric) | true | 一般快顯通知繫結，可呈現在所有裝置上。 此繫結為必要項，但不可為 null。 |
-| **BaseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
+| **baseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至快顯通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 | **語言**| 字串 | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 繫結或文字中指定的任何地區設定都會覆寫此地區設定。 如果未提供，則改用系統地區設定。 |
 
@@ -78,11 +78,11 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Children** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | 快顯通知的內文內容，其中可能包含文字、影像和群組 (年度更新版新增功能)。 文字元素必須放在任何其他元素前面，但僅支援 3 個文字元素。 如果將文字元素放在任何其他元素後面，不是將其提拉到頂端，就是捨棄。 總之，根子系文字元素不支援某些像是 HintStyle 的文字屬性，只能在 AdaptiveSubgroup 中使用。 如果您在沒有年度更新版的裝置上使用 AdaptiveGroup，就會直接捨棄群組內容。 |
+| **子系** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | 快顯通知的內文內容，其中可能包含文字、影像和群組 (年度更新版新增功能)。 文字元素必須放在任何其他元素前面，但僅支援 3 個文字元素。 如果將文字元素放在任何其他元素後面，不是將其提拉到頂端，就是捨棄。 總之，根子系文字元素不支援某些像是 HintStyle 的文字屬性，只能在 AdaptiveSubgroup 中使用。 如果您在沒有年度更新版的裝置上使用 AdaptiveGroup，就會直接捨棄群組內容。 |
 | **AppLogoOverride** | [ToastGenericAppLogo](#toastgenericapplogo) | false | 要覆寫 App 標誌的選用標誌。 |
 | **HeroImage** | [ToastGenericHeroImage](#toastgenericheroimage) | false | 選擇性精選「主角」影像，這會顯示在快顯通知和控制中心。 |
 | **屬性** | [ToastGenericAttributionText](#toastgenericattributiontext) | false | 選擇性屬性文字，這會顯示在快顯通知的底部。 |
-| **BaseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
+| **baseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至快顯通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 | **語言**| 字串 | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 繫結或文字中指定的任何地區設定都會覆寫此地區設定。 如果未提供，則改用系統地區設定。 |
 
@@ -117,7 +117,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **BindingName** | 字串 | true | 取得或設定對應至您資料繫結值的名稱。 |
+| **bindingName** | 字串 | true | 取得或設定對應至您資料繫結值的名稱。 |
 
 
 ### <a name="adaptivetextstyle"></a>AdaptiveTextStyle
@@ -128,16 +128,16 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 | **預設值** | 預設值。 樣式取決於轉譯器。 |
 | **標題** | 小於段落字型大小。 |
 | **CaptionSubtle** | 和 Caption 一樣，只是有輕微不透明度。 |
-| **Body** | 段落字型大小。 |
+| **內文** | 段落字型大小。 |
 | **BodySubtle** | 和 Body 一樣，只是有輕微不透明度。 |
 | **基底** | 段落字型大小、粗體粗細。 基本上是 Body 的粗體版本。 |
 | **BaseSubtle** | 和 Base 一樣，只是有輕微不透明度。 |
-| **Subtitle** | H4 字型大小。 |
+| **子標題** | H4 字型大小。 |
 | **SubtitleSubtle** | 和 Subtitle 一樣，只是有輕微不透明度。 |
 | **標題** | H3 字型大小。 |
 | **TitleSubtle** | 和 Title 一樣，只是有輕微不透明度。 |
 | **TitleNumeral** | 和 Title 一樣，只是上/下邊框間距已移除。 |
-| **Subheader** | H2 字型大小。 |
+| **子標頭** | H2 字型大小。 |
 | **SubheaderSubtle** | 和 Subheader 一樣，只是有輕微不透明度。 |
 | **SubheaderNumeral** | 和 Subheader 一樣，只是上/下邊框間距已移除。 |
 | **標頭** | H1 字型大小。 |
@@ -152,9 +152,9 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 |---|---|
 | **預設值** | 預設值。 對齊方式自動由轉譯器決定。 |
 | **Auto** | 對齊方式取決於目前的語言及文化特性。 |
-| **Left** | 將文字水平對齊左側。 |
-| **Center** | 將文字水平對齊中央。 |
-| **Right** | 將文字水平對齊右側。 |
+| **左邊** | 將文字水平對齊左側。 |
+| **中心** | 將文字水平對齊中央。 |
+| **權限** | 將文字水平對齊右側。 |
 
 
 ## <a name="adaptiveimage"></a>AdaptiveImage
@@ -177,7 +177,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 |---|---|
 | **預設值** | 預設值。 裁剪行為取決於轉譯器。 |
 | **無** | 不裁剪影像。 |
-| **Circle** | 將影像裁剪成圓形形狀。 |
+| **圓形** | 將影像裁剪成圓形形狀。 |
 
 
 ### <a name="adaptiveimagealign"></a>AdaptiveImageAlign
@@ -187,9 +187,9 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 |---|---|
 | **預設值** | 預設值。 對齊行為取決於轉譯器。 |
 | **Stretch** | 影像自動縮放到填滿可用寬度 (和可能會有的可用高度，視放置影像的位置而定)。 |
-| **Left** | 將影像對齊左側，並以其原生解析度來顯示影像。 |
-| **Center** | 將影像對齊中央，並以其原生解析度來顯示影像。 |
-| **Right** | 將影像對齊右側，並以其原生解析度來顯示影像。 |
+| **左邊** | 將影像對齊左側，並以其原生解析度來顯示影像。 |
+| **中心** | 將影像對齊中央，並以其原生解析度來顯示影像。 |
+| **權限** | 將影像對齊右側，並以其原生解析度來顯示影像。 |
 
 
 ## <a name="adaptivegroup"></a>AdaptiveGroup
@@ -197,7 +197,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | 子群組會顯示為垂直欄。 要在 AdaptiveGroup 中提供任何內容，您必須使用子群組。 |
+| **子系** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | 子群組會顯示為垂直欄。 要在 AdaptiveGroup 中提供任何內容，您必須使用子群組。 |
 
 
 ## <a name="adaptivesubgroup"></a>AdaptiveSubgroup
@@ -205,7 +205,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Children** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) 和 [AdaptiveImage](#adaptiveimage) 是子群組的有效子系。 |
+| **子系** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) 和 [AdaptiveImage](#adaptiveimage) 是子群組的有效子系。 |
 | **HintWeight** | int? | false | 藉由指定相對於其他子群組的粗細，控制這個子群組欄的寬度。 |
 | **HintTextStacking** | [AdaptiveSubgroupTextStacking](#adaptivesubgrouptextstacking) | false | 控制這個子群組內容的垂直對齊方式。 |
 
@@ -225,8 +225,8 @@ TextStacking 指定內容的垂直對齊方式。
 | 值 | 意義 |
 |---|---|
 | **預設值** | 預設值。 轉譯器自動選取預設垂直對齊方式。 |
-| **Top** | 垂直對齊最上方。 |
-| **Center** | 垂直對齊中央。 |
+| **頁首** | 垂直對齊最上方。 |
+| **中心** | 垂直對齊中央。 |
 | **底部** | 垂直對齊底部。 |
 
 
@@ -255,7 +255,7 @@ Creators Update： 的新功能進度列。 僅支援桌上型電腦組建 15063
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **BindingName** | 字串 | true | 取得或設定對應至您資料繫結值的名稱。 |
+| **bindingName** | 字串 | true | 取得或設定對應至您資料繫結值的名稱。 |
 
 
 ## <a name="toastgenericapplogo"></a>ToastGenericAppLogo
@@ -276,7 +276,7 @@ Creators Update： 的新功能進度列。 僅支援桌上型電腦組建 15063
 |---|---|
 | **預設值** | 裁剪時會使用轉譯器的預設行為。 |
 | **無** | 不裁剪影像，顯示為正方形。 |
-| **Circle** | 將影像裁剪成圓形。 |
+| **圓形** | 將影像裁剪成圓形。 |
 
 
 ## <a name="toastgenericheroimage"></a>ToastGenericHeroImage
@@ -335,7 +335,7 @@ Creators Update： 的新功能進度列。 僅支援桌上型電腦組建 15063
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Id** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
+| **識別碼** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
 | **標題** | 字串 | false | 要顯示在文字方塊上方的標題文字。 |
 | **PlaceholderContent** | 字串 | false | 使用者尚未輸入任何文字時，要顯示在文字方塊中的預留位置文字。 |
 | **DefaultInput** | 字串 | false | 要放在文字方塊中的初始文字。 如需空白文字方塊，請保持為 null。 |
@@ -348,8 +348,8 @@ Creators Update： 的新功能進度列。 僅支援桌上型電腦組建 15063
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Id** | 字串 | true | Id 為必要項。 如果使用者選取此項目，這個 Id 將會傳回到 App 的程式碼，表示他們選擇了哪些選取項目。 |
-| **Content** | 字串 | true | Content 為必要項，並且是顯示在選取項目上的字串。 |
+| **識別碼** | 字串 | true | Id 為必要項。 如果使用者選取此項目，這個 Id 將會傳回到 App 的程式碼，表示他們選擇了哪些選取項目。 |
+| **內容** | 字串 | true | Content 為必要項，並且是顯示在選取項目上的字串。 |
 
 
 ### <a name="toastselectionboxitem"></a>ToastSelectionBoxItem
@@ -357,7 +357,7 @@ Creators Update： 的新功能進度列。 僅支援桌上型電腦組建 15063
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Id** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
+| **識別碼** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
 | **標題** | 字串 | false | 要顯示在選擇方塊上方的標題文字。 |
 | **DefaultSelectionBoxItemId** | 字串 | false | 這會控制預設選取哪些項目，並且參考 [ToastSelectionBoxItem](#toastselectionboxitem) 的的 Id 屬性。 如果沒有提供這個屬性，預設選取項目會是空白 (使用者看不到任何項目)。 |
 | **項目** | IList<[ToastSelectionBoxItem](#toastselectionboxitem)> | false | 使用者可以從這個 SelectionBox 中挑選的選取項目。 只能新增 5 個項目。 |
@@ -380,7 +380,7 @@ Creators Update： 的新功能進度列。 僅支援桌上型電腦組建 15063
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Content** | 字串 | true | 必要。 要在按鈕上顯示的文字。 |
+| **內容** | 字串 | true | 必要。 要在按鈕上顯示的文字。 |
 | **引數** | 字串 | true | 必要。 App 定義的引數字串，如果使用者按一下此按鈕，App 稍後會收到該字串。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 控制此按鈕在使用者按一下時使用什麼類型的啟用。 預設為 Foreground。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Creators Update： 的新功能取得或設定與啟用快顯 按鈕的相關的其他選項。 |
@@ -449,7 +449,7 @@ Creators Update： 的新功能與啟動相關的其他選項。
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Content** | 字串 | true | 必要。 要顯示的文字。 |
+| **內容** | 字串 | true | 必要。 要顯示的文字。 |
 | **引數** | 字串 | true | 必要。 this button.App 定義的引數字串，當使用者按一下功能表項目時，只要 App 已啟用，稍後即可收到該字串。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 控制此功能表項目在使用者按一下時使用什麼類型的啟用。 預設為 Foreground。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Creators Update： 的新功能啟用快顯內容功能表項目與相關的其他選項。 |
@@ -460,8 +460,8 @@ Creators Update： 的新功能與啟動相關的其他選項。
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Src** | uri | false | 要取代預設音效播放的媒體檔案。 僅支援 ms-appx 和 ms-appdata。 |
-| **Loop** | 布林值 | false | 如果快顯通知顯示多久就要重複音效多久，則設定為 true。false 表示只播放一次 (預設)。 |
+| **src** | uri | false | 要取代預設音效播放的媒體檔案。 僅支援 ms-appx 和 ms-appdata。 |
+| **迴圈** | 布林值 | false | 如果快顯通知顯示多久就要重複音效多久，則設定為 true。false 表示只播放一次 (預設)。 |
 | **無訊息** | 布林值 | false | true 表示將音效設定為靜音。false 表示允許播放快顯通知音訊 (預設)。 |
 
 
@@ -470,7 +470,7 @@ Creators Update： 的新功能將控制中心內多個通知群組一起的自�
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Id** | 字串 | true | 開發人員所建立唯一辨識此標頭的識別碼。 如果兩個通知標頭識別碼相同，這些通知將會在控制中心顯示於相同標頭下方。 |
+| **識別碼** | 字串 | true | 開發人員所建立唯一辨識此標頭的識別碼。 如果兩個通知標頭識別碼相同，這些通知將會在控制中心顯示於相同標頭下方。 |
 | **標題** | 字串 | true | 標頭的標題。 |
 | **引數**| 字串 | true | 取得或設定開發人員定義的引數字串，當使用者按下此標頭時會傳回至應用程式。 不可為 null。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 取得或設定此標頭在使用者按一下時要使用的啟用類型。 預設為 Foreground。 請注意，只支援 Foreground 和 Protocol。 |

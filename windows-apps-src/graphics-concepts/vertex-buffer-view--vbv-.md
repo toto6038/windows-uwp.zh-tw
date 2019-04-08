@@ -35,7 +35,7 @@ CUSTOMVERTEX 的定義接著會在建立頂點緩衝區時傳遞至圖形驅動�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[Views](views.md)
+[檢視](views.md)
 
  
 

@@ -218,7 +218,7 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
 
 * [定義應用程式資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
 * [封裝應用程式](https://msdn.microsoft.com/library/windows/apps/mt270969)
-* [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+* [應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
 
  
 

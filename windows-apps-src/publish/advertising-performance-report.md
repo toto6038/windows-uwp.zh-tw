@@ -65,7 +65,7 @@ ms.locfileid: "57640273"
 ## <a name="related-topics"></a>相關主題
 
 * [應用程式內廣告](in-app-ads.md)
-* [使用 Microsoft Advertising SDK 的應用程式中顯示廣告](../monetize/display-ads-in-your-app.md)
+* [使用 Microsoft Advertising SDK 停用應用程式中的廣告](../monetize/display-ads-in-your-app.md)
 * [最佳化您的 ad 單元 viewability](../monetize/optimize-ad-unit-viewability.md)
 
 

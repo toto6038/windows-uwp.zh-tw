@@ -183,8 +183,8 @@ ms.locfileid: "57626983"
 ## <a name="related-topics"></a>相關主題
 
 - [全球化的指導方針](guidelines-and-checklist-for-globalizing-your-app.md)
-- [UI 和應用程式封裝資訊清單中的當地語系化字串](../../app-resources/localize-strings-ui-manifest.md)
-- [量身打造您的語言、 規模、 高對比和其他辨識符號的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
+- [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
+- [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [調整配置和字型並支援 RTL](adjust-layout-and-fonts--and-support-rtl.md)
 - [更新的映像，以回應限定詞的值變更事件](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 

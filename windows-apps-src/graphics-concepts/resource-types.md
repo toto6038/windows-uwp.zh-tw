@@ -34,11 +34,11 @@ ms.locfileid: "57661983"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typed</p></td>
+<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>型別</p></td>
 <td align="left"><p>建立資源時完整指定類型。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>Typeless</p></td>
+<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>無類型</p></td>
 <td align="left"><p>資源繫結到管線時完整指定類型。</p></td>
 </tr>
 </tbody>

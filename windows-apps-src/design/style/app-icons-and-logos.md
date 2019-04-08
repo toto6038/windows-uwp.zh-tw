@@ -181,7 +181,7 @@ Visual Studio 會產生您的影像檔，並將它們新增至專案。 如果�
 
 縮放的圖示的資產會遵循此檔案命名慣例：
 
-*filename*-scale-*scale factor*.png
+*檔名*-縮放-*縮放比例*.png
 
 例如，
 
@@ -208,11 +208,11 @@ Visual Studio 會產生您的專案所需的所有應用程式圖示資產，但
 
 | 資產大小 | 檔案名稱範例                  |
 |------------|------------------------------------|
-| 16x16\*    | Square44x44Logo.targetsize-16.png  |
-| 24x24\*    | Square44x44Logo.targetsize-24.png  |
-| 32x32\*    | Square44x44Logo.targetsize-32.png  |
-| 48x48\*    | Square44x44Logo.targetsize-48.png  |
-| 256x256\*  | Square44x44Logo.targetsize-256.png |
+| 16 x 16\*    | Square44x44Logo.targetsize-16.png  |
+| 24 x 24\*    | Square44x44Logo.targetsize-24.png  |
+| 32 x 32\*    | Square44x44Logo.targetsize-32.png  |
+| 48 x 48\*    | Square44x44Logo.targetsize-48.png  |
+| 256 x 256\*  | Square44x44Logo.targetsize-256.png |
 | 20x20      | Square44x44Logo.targetsize-20.png  |
 | 30x30      | Square44x44Logo.targetsize-30.png  |
 | 36x36      | Square44x44Logo.targetsize-36.png  |

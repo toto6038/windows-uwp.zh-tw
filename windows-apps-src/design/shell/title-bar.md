@@ -382,4 +382,4 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ## <a name="related-articles"></a>相關文章
 
 - [Acrylic](../style/acrylic.md)
-- [Color](../style/color.md)
+- [色彩](../style/color.md)

@@ -23,7 +23,7 @@ ms.locfileid: "57611903"
 
 如需此範例中各種通用 Windows 應用程式功能的詳細資訊，請參閱：
 
--   [媒體檔案轉碼](transcode-media-files.md)
+-   [轉碼媒體檔案](transcode-media-files.md)
 -   [啟動繼續和背景工作](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [並排顯示徽章和通知](https://msdn.microsoft.com/library/windows/apps/mt185606)
 

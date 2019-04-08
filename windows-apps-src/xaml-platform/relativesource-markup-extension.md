@@ -67,6 +67,6 @@ ms.locfileid: "57617923"
 * [XAML 概觀](xaml-overview.md)
 * [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [{Binding} 標記延伸](binding-markup-extension.md)
-* [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
+* [**繫結**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
 

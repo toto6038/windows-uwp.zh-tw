@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57594003"
@@ -61,9 +61,9 @@ else
 
 | 單字位址 | 16 位元單字    |
 |--------------|----------------|
-| 0            | Color\_0       |
+| 0            | 色彩\_0       |
 | 1            | 色彩\_1       |
-| 2            | Bitmap Word\_0 |
+| 2            | 點陣圖 Word\_0 |
 | 3            | 點陣圖 Word\_1 |
 
  
@@ -84,7 +84,7 @@ else
 
 | 位元數          | 紋素           |
 |---------------|-----------------|
-| 1:0 (LSB)     | Texel\[0\]\[0\] |
+| 1:0 (LSB)     | 材質\[0\]\[0\] |
 | 3:2           | 材質\[0\]\[1\] |
 | 5:4           | 材質\[0\]\[2\] |
 | 7:6           | 材質\[0\]\[3\] |

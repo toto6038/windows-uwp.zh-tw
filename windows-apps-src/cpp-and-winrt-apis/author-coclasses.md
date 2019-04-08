@@ -1,5 +1,5 @@
 ---
-description: C + + /cli WinRT 可協助您撰寫傳統的 COM 元件，就像它可協助您撰寫 Windows 執行階段類別。
+description: C++/WinRT 可協助您撰寫傳統的 COM 元件，因為它可協助您撰寫 Windows 執行階段類別。
 title: 使用 C++/WinRT 撰寫 COM 元件
 ms.date: 09/06/2018
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: e6b77f8be6c75070336ad48f0c6471fc0a824a4c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616563"
@@ -530,6 +530,6 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 * [winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>相關主題
-* [撰寫 Api 使用 C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [使用 COM 元件使用 C + + /cli WinRT](consume-com.md)
-* [傳送本機的快顯通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
+* [使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [使用 C++/WinRT 取用 COM 元件](consume-com.md)
+* [傳送本機快顯通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

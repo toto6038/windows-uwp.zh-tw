@@ -136,7 +136,7 @@ ms.locfileid: "57618393"
 
 ## <a name="related-topics"></a>相關主題
 
-* [Camera](camera.md) [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
+* [觀景窗](camera.md) [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
 您可以多次呼叫 **StartAsync** 和 **StopAsync** 來錄製數個音訊檔。 當您完成擷取音訊時，呼叫 [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.FinishAsync) 來處置擷取工作階段，並清除相關聯的資源。 在這個呼叫之後，您必須再次呼叫 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化拍攝工作階段，然後再呼叫 **StartAsync**。
 
@@ -163,6 +163,6 @@ ms.locfileid: "57618393"
 
 * [使用 Windows 內建相機 UI 擷取相片和視訊](capture-photos-and-video-with-cameracaptureui.md)
 * [處理與 MediaCapture 裝置方向](handle-device-orientation-with-mediacapture.md)
-* [建立、 編輯和儲存點陣圖影像](imaging.md)
+* [建立、編輯和儲存點陣圖影像](imaging.md)
 * [檔案、資料夾和媒體櫃](https://msdn.microsoft.com/windows/uwp/files/index)
 

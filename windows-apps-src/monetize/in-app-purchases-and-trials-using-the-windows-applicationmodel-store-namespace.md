@@ -372,8 +372,8 @@ ms.locfileid: "57628533"
 
 |  元素  |  必要  |  數量  |  描述   |
 |-------------|------------|--------|--------|
-|  [App](#app-child-of-listinginformation)  |    是   |  1   |    提供有關 App 的資料。         |
-|  [Product](#product-child-of-listinginformation)  |    否  |  0 或以上   |      描述 App 的附加元件。     |     |
+|  [應用程式](#app-child-of-listinginformation)  |    是   |  1   |    提供有關 App 的資料。         |
+|  [產品](#product-child-of-listinginformation)  |    否  |  0 或以上   |      描述 App 的附加元件。     |     |
 
 <span id="app-child-of-listinginformation"/>
 
@@ -386,7 +386,7 @@ ms.locfileid: "57628533"
 |  元素  |  必要  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  **AppId**  |    是   |  1   |   識別市集中 App 的 GUID。 測試時可以是任何 GUID。        |
-|  **LinkUri**  |    是  |  1   |    市集清單頁面的 URI。 測試時可以是任何有效的 URI。         |
+|  **Linkuri&gt**  |    是  |  1   |    市集清單頁面的 URI。 測試時可以是任何有效的 URI。         |
 |  **CurrentMarket**  |    是  |  1   |    客戶的國家/地區。         |
 |  **AgeRating**  |    是  |  1   |     表示 App 最小年齡分級的整數。 這是當您提交應用程式時，會指定在合作夥伴中心相同的值。 存放區所使用的值如下：3、 7、 12 和 16。 如需這些分級的詳細資訊，請參閱[年齡分級](../publish/age-ratings.md)。        |
 |  [MarketData](#marketdata-child-of-app)  |    是  |  1 或以上      |    包含特定國家/地區的 App 相關資訊。 對於列出 App 的每個國家/地區，您必須各包含一個 **MarketData** 元素。       |    |
@@ -405,13 +405,13 @@ ms.locfileid: "57628533"
 |  **描述**  |    是  |  1   |      用於此國家/地區的 App 描述。       |
 |  **價格**  |    是  |  1   |     在此國家/地區的 App 價格。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此國家/地區中使用的貨幣符號。        |
-|  **CurrencyCode**  |    否  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  |
+|  **currencyCode**  |    否  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  |
 
 **MarketData** 具有下列屬性。
 
 |  屬性  |  必要  |  描述   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    是        |     指定市場資料資訊適用的國家/地區。          |  |
+|  **Xml: lang**  |    是        |     指定市場資料資訊適用的國家/地區。          |  |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -440,17 +440,17 @@ ms.locfileid: "57628533"
 |  **名稱**  |    是   |  1   |   在此國家/地區的附加元件名稱。        |
 |  **價格**  |    是  |  1   |     在此國家/地區的附加元件價格。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此國家/地區中使用的貨幣符號。        |
-|  **CurrencyCode**  |    否  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  
+|  **currencyCode**  |    否  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  
 |  **描述**  |    否  |   0 或 1   |      用於此國家/地區的附加元件描述。       |
-|  **Tag**  |    否  |   0 或 1   |      附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (也稱為標記)。       |
+|  **標記**  |    否  |   0 或 1   |      附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (也稱為標記)。       |
 |  **關鍵字**  |    否  |   0 或 1   |      最多可以有 10 個 **Keyword** 元素，包含附加元件的[關鍵字](../publish/enter-add-on-properties.md#keywords)。       |
-|  **ImageUri**  |    否  |   0 或 1   |      附加元件清單中[影像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
+|  **imageUri**  |    否  |   0 或 1   |      附加元件清單中[影像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
 
 **MarketData** 具有下列屬性。
 
 |  屬性  |  必要  |  描述   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    是        |     指定市場資料資訊適用的國家/地區。          |  |
+|  **Xml: lang**  |    是        |     指定市場資料資訊適用的國家/地區。          |  |
 
 <span id="licenseinformation"/>
 
@@ -462,8 +462,8 @@ ms.locfileid: "57628533"
 
 |  元素  |  必要  |  數量  | 描述   |
 |-------------|------------|--------|--------|
-|  [App](#app-child-of-licenseinformation)  |    是   |  1   |    描述 App 的授權。         |
-|  [Product](#product-child-of-licenseinformation)  |    否  |  0 或以上   |      描述 App 中耐久性附加元件的授權狀態。         |   |
+|  [應用程式](#app-child-of-licenseinformation)  |    是   |  1   |    描述 App 的授權。         |
+|  [產品](#product-child-of-licenseinformation)  |    否  |  0 或以上   |      描述 App 中耐久性附加元件的授權狀態。         |   |
 
 下表顯示如何結合 **App** 和 **Product** 元素下的值來模擬一些常見的情形。
 
@@ -485,7 +485,7 @@ ms.locfileid: "57628533"
 |  元素  |  必要  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    是   |  1   |    描述此 App 目前的授權狀態。 值 **true** 表示授權有效；**false** 表示無效的授權。 無論 App 是否有試用模式，此值通常為 **true**。  將此值設定為 **false** 可測試您的 App 在授權無效時是如何運作。           |
-|  **IsTrial**  |    是  |  1   |      描述此 App 目前的試用狀態。 值 **true** 表示 App 正在試用期間；**false** 表示 App 不在試用，可能因為已購買 App，或試用期間已到期。         |
+|  **isTrial**  |    是  |  1   |      描述此 App 目前的試用狀態。 值 **true** 表示 App 正在試用期間；**false** 表示 App 不在試用，可能因為已購買 App，或試用期間已到期。         |
 |  **ExpirationDate**  |    否  |  0 或 1       |     此 App 到期的試用日期，以國際標準時間 (UTC) 表示。 日期的格式必須為︰yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 要指定為 2015-01-19T05:00:00.00Z。 當 **IsTrial** 為 **true** 時，這是必要的元素。 否則就不需要。          |  |
 
 <span id="product-child-of-licenseinformation"/>
@@ -530,7 +530,7 @@ ms.locfileid: "57628533"
 
 |  屬性  |  必要  |  描述   |
 |-------------|------------|----------------|
-|  **MethodName**  |    是        |   對此屬性指派[結構描述](#schema)中 **StoreMethodName** 類型所顯示的其中一個列舉值。 這些列舉值代表在測試期間，您想要模擬 App 中錯誤碼傳回值的 **CurrentAppSimulator** 方法。 例如，值 **RequestAppPurchaseAsync_GetResult** 表示您想要模擬 [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) 方法的錯誤碼傳回值。            |
+|  **方法名稱**  |    是        |   對此屬性指派[結構描述](#schema)中 **StoreMethodName** 類型所顯示的其中一個列舉值。 這些列舉值代表在測試期間，您想要模擬 App 中錯誤碼傳回值的 **CurrentAppSimulator** 方法。 例如，值 **RequestAppPurchaseAsync_GetResult** 表示您想要模擬 [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) 方法的錯誤碼傳回值。            |
 |  **HResult**  |     是       |   對此屬性指派[結構描述](#schema)中 **ResponseCodes** 類型所顯示的其中一個列舉值。 這些列舉值代表您想要為已指派給此 **DefaultResponse** 元素之 **MethodName** 屬性的方法傳回的錯誤碼。           |
 
 <span id="consumableinformation"/>
@@ -550,6 +550,6 @@ ms.locfileid: "57628533"
 |  屬性  |  必要  |  描述   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |   包含 App 用來識別消費性附加元件的字串。            |
-|  **TransactionId**  |     是       |   包含 App 用來追蹤整個履行程序之消費性產品的購買交易的 GUID (做為字串)。 請參閱[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)。            |
+|  **transactionId**  |     是       |   包含 App 用來追蹤整個履行程序之消費性產品的購買交易的 GUID (做為字串)。 請參閱[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)。            |
 |  **狀態**  |      是      |  包含 App 用來表示消費性產品之履行狀態的字串。 值可以是 **Active**、**PurchaseReverted**、**PurchasePending** 或 **ServerError**。             |
 |  **OfferId**  |     否       |    包含 App 用來識別消費性產品所屬類別的字串。 這可以對大型的項目型錄提供支援，如[管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)中所述。           |
