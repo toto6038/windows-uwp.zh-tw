@@ -1,19 +1,19 @@
 ---
-title: 開始使用
+title: 使用者入門
 description: 遊戲開發學習指南
 ms.assetid: 40490837-6c7f-4f82-96b5-14f6858982b3
 ms.date: 01/25/2018
 ms.topic: article
 keywords: windows 10、 uwp、 遊戲，開始使用
 localizationpriority: medium
-ms.openlocfilehash: f818837a6f8703721520a8be8c0ed9b062cf797a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 596d0b1eb371fec98825b23a214683421e388506
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653553"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162653"
 ---
-# <a name="getting-started"></a>開始使用
+# <a name="getting-started"></a>使用者入門
 
 這篇文章是入門指南，建立者想要開發 Windows 或 Xbox 的遊戲。 
 
@@ -54,7 +54,7 @@ ms.locfileid: "57653553"
 
 如果您想要開發 Xbox 遊戲，或在您的遊戲中使用 Xbox Live 功能，將其中一個[Xbox Live 創作者計劃](https://developer.microsoft.com/games/xbox/xboxlive/creator)或是[ ID@Xbox ](https://www.xbox.com/Developers/id)程式。 
 
-若要深入了解可用於每個程式的 Xbox Live 功能，請參閱[特徵資料表](../xbox-live/developer-program-overview.md#feature-table)。 如需詳細資訊，請參閱 <<c0> [ 開發人員計劃](e2e.md#developer-programs)。
+若要深入了解可用於每個程式的 Xbox Live 功能，請參閱[特徵資料表](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table)。 如需詳細資訊，請參閱 <<c0> [ 開發人員計劃](e2e.md#developer-programs)。
 
 > [!Note]
 > Xbox Live 創作者計劃是所有開發人員可使用。 **任何人**可以發行 Xbox 遊戲。 若要讓您標題的一部分 Xbox Live 創作者計劃，您只需要啟用此選項，從合作夥伴中心。 如需有關登入合作夥伴中心帳戶的詳細資訊，請參閱[步驟 5](#step-5-sign-up-for-a-partner-center-account)如下。

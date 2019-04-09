@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, python
 ms.localizationpriority: medium
-ms.openlocfilehash: 157c11484de150d363157e5b6e5de00a35bafd5f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bc3959b4e26bd54542edc3f69666f6d97cddba26
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634403"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334826"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 範例：提交應用程式、附加元件與正式發行前小眾測試版
 
@@ -30,7 +30,7 @@ ms.locfileid: "57634403"
 
 下列範例示範如何[取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，您可以使用它來呼叫 Microsoft Store 提交 API 中的方法。 取得權杖之後，在權杖到期之前，您有 60 分鐘的時間可以使用這個權杖呼叫 Microsoft Store 提交 API。 權杖到期之後，您可以產生新的權杖。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
 
 <span id="create-add-on" />
 
@@ -38,7 +38,7 @@ ms.locfileid: "57634403"
 
 下列範例示範如何[建立](create-an-add-on.md)然後[刪除](delete-an-add-on.md)套件正式發行前小眾測試版和附加元件。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 
 <span id="create-package-flight" />
 
@@ -46,7 +46,7 @@ ms.locfileid: "57634403"
 
 下列範例示範如何[建立](create-a-flight.md)然後[刪除](delete-a-flight.md)套件正式發行前小眾測試版。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
 
 <span id="create-app-submission" />
 
@@ -61,7 +61,7 @@ ms.locfileid: "57634403"
 5. 接下來，它[更新](update-an-app-submission.md)，然後[認可](commit-an-app-submission.md)新提交到合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-app-submission.md)，直到此提交認可成功為止。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
 
 <span id="create-add-on-submission" />
 
@@ -76,7 +76,7 @@ ms.locfileid: "57634403"
 5. 接下來，它[更新](update-an-add-on-submission.md)，然後[認可](commit-an-add-on-submission.md)新提交到合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-add-on-submission.md)，直到此提交認可成功為止。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
 
 <span id="create-flight-submission" />
 
@@ -91,7 +91,7 @@ ms.locfileid: "57634403"
 5. 接下來，它[更新](update-a-flight-submission.md)，然後[認可](commit-a-flight-submission.md)新提交到合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-a-flight-submission.md)，直到此提交認可成功為止。
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
 
 ## <a name="related-topics"></a>相關主題
 

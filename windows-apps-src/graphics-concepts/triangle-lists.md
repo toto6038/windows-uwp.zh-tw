@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aae797db890c6bee141c3b4a79a6a85a55a6b512
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 53fd2b132fda018030b7555a9cdac718ec1f1cc4
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653743"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291556"
 ---
 # <a name="triangle-lists"></a>三角形清單
-
 
 三角形清單是隔離三角形的清單。 隔離的三角形不一定彼此相近。 三角形清單必須至少有 3 個頂點，而且頂點總數必須可被 3 整除。
 
@@ -32,7 +31,7 @@ ms.locfileid: "57653743"
 
 下列程式碼顯示如何建立這個三角形清單的頂點。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -52,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 下列程式碼範例顯示如何在 Direct3D 中轉譯這個三角形清單。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to a device interface.

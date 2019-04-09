@@ -6,17 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b177a7741cae0fe786d095c26a6be08ec598bcbb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 450b1721f24d53fa1503551c40feda793af4155c
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604473"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291916"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
-
-
-
 
 本逐步解說示範如何使用 .NET Framework 搭配 Visual Basic 或 C#，建立您自己的 Windows 執行階段類型 (封裝於 Windows 執行階段元件中)，以及如何從使用 JavaScript 為 Windows 建置的通用 Windows 應用程式呼叫此元件。
 
@@ -32,7 +29,6 @@ Visual Studio 可讓您輕鬆地將使用 C# 或 Visual Basic 撰寫的 Windows 
 -   Microsoft Visual Studio 2015 或 Microsoft Visual Studio Community 2015
 
 ## <a name="creating-a-simple-windows-runtime-class"></a>建立簡單的 Windows 執行階段類別
-
 
 本節會建立使用 JavaScript 為 Windows 建置的通用 Windows 應用程式，以及加入 Visual Basic 或 C# Windows 執行階段元件專案。 它將示範如何定義 Managed Windows 執行階段類型、從 JavaScript 建立類型的執行個體，以及呼叫靜態和執行個體成員。 範例應用程式的視覺顯示會刻意保持單調，以便將焦點保留在元件上。 請自行將它美化。
 
@@ -71,7 +67,6 @@ Visual Studio 可讓您輕鬆地將使用 C# 或 Visual Basic 撰寫的 Windows 
 
 ## <a name="call-the-component-from-javascript"></a>從 JavaScript 呼叫元件
 
-
 若要使用來自 JavaScript 的 Windows 執行階段 類型，請在 Visual Studio 範本所提供之 default.js 檔 (在專案的 js 資料夾中) 的匿名函式中，加入下列程式碼。 它應該在應用程式.oncheckpoint 事件處理常式之後，且在呼叫應用程式.start 之前。
 
 ```javascript
@@ -100,7 +95,6 @@ function basics2() {
 以類似的方式，.NET Framework 為了方便您在 Managed 程式碼中使用 Windows 執行階段而提供支援。 這篇文章的後續各節中，並在文章中討論這[Creating Windows Runtime Components inC#和 Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)並[.NET Framework 支援 UWP 應用程式和 Windows 執行階段](https://msdn.microsoft.com/library/hh694558.aspx).
 
 ## <a name="create-a-simple-user-interface"></a>建立簡單的使用者介面
-
 
 在 JavaScript 專案中，開啟 default.html 檔案並更新內容，如下列程式碼所示。 這段程式碼包含範例應用程式的整組控制項，並指定 Click 事件的函式名稱。
 
@@ -161,10 +155,9 @@ args.setPromise(WinJS.UI.processAll().then(function () {
 }));
 ```
 
-若要將事件加入至 HTML 控制項，比起直接在 HTML 中加入 click 事件處理常式，這會是更好的方式。 請參閱[建立 "Hello World" 應用程式 (JS)](https://msdn.microsoft.com/library/windows/apps/mt280216)。
+若要將事件加入至 HTML 控制項，比起直接在 HTML 中加入 click 事件處理常式，這會是更好的方式。 請參閱[建立"Hello，World"應用程式 (JS)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp)。
 
 ## <a name="build-and-run-the-app"></a>建置和執行應用程式
-
 
 建置之前，請先根據您的電腦而定，將適用於所有專案的目標平台變更為 ARM、x64 或 x86。
 
@@ -183,18 +176,13 @@ Visual Studio 會先編譯類別庫，然後執行可執行 [Winmdexp.exe (Windo
 
 > **附註**  預設情況下，您可以只在您的 JavaScript 程式碼中設定中斷點。 若要偵錯您的 Visual Basic 或 C# 程式碼，請參閱＜在 C# 和 Visual Basic 中建立 Windows 執行階段元件＞。
 
- 
-
 若要停止偵錯並關閉應用程式，請從應用程式切換至 Visual Studio，然後選擇 SHIFT+F5。
 
 ## <a name="using-the-windows-runtime-from-javascript-and-managed-code"></a>從 JavaScript 和 Managed 程式碼使用 Windows 執行階段
 
-
 Windows 執行階段可以從 JavaScript 或 Managed 程式碼呼叫。 Windows 執行階段物件可以在這兩者之間來回傳遞，而且可從任一端處理事件。 但是，因為 JavaScript 和 .NET Framework 會以不同方式支援 Windows 執行階段，所以您在這兩個環境中使用 Windows 執行階段類型的方式會有些許差異。 下列範例使用 [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx) 類別來示範這些差異。 在這個範例中，您會在 Managed 程式碼中建立 PropertySet 集合的執行個體並註冊事件處理常式，以追蹤集合中的變更。 接著，加入可取得集合的 JavaScript 程式碼、註冊其擁有的事件處理常式，然後使用該集合。 最後，加入可從 Managed 程式碼對集合進行變更的方法，並顯示用於處理 Managed 例外狀況的 JavaScript。
 
 > **重要**  在此範例中，事件在 UI 執行緒上引發。 如果您從背景執行緒引發事件 (例如，在非同步呼叫中)，則必須執行一些額外工作，JavaScript 才能處理事件。 如需詳細資訊，請參閱[在 Windows 執行階段元件中引發事件](raising-events-in-windows-runtime-components.md)。
-
- 
 
 在 SampleComponent 專案中，加入名為 PropertySetStats 的新 **public sealed** 類別 (在 Visual Basic 中為 **Public NotInheritable** 類別)。 此類別會包裝 PropertySet 集合，並處理它的 MapChanged 事件。 事件處理常式會追蹤所發生的各種變更數目，而 DisplayStats 方法會產生 HTML 格式的報告。 請注意其他的 **using** 陳述式 (在 Visual Basic 中為 **Imports** 陳述式)；小心地將此陳述式加入至現有的 **using** 陳述式，而不是覆寫它們。
 
@@ -378,7 +366,6 @@ runtimeButton2.addEventListener("click", runtime2, false);
 相反地，當 JavaScript 以重複的索引鍵呼叫 insert 方法時，項目值就會變更。 此行為差異是由於 JavaScript 和 .NET Framework 各以不同的方式支援 Windows 執行階段，如[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中所述。
 
 ## <a name="returning-managed-types-from-your-component"></a>從您的元件傳回 Managed 類型
-
 
 如先前所討論，您可以在 JavaScript 程式碼與 C# 或 Visual Basic 程式碼之間，自由地來回傳遞原生 Windows 執行階段類型。 類型名稱和成員名稱在這兩個環境中通常都相同 (但在 JavaScript 中以小寫字母開頭的成員名稱除外)。 不過，在上一節中，PropertySet 類別在 Managed 程式碼內看起來有不同的成員 （例如，在 JavaScript 中呼叫 insert 方法，而且在.NET Framework 程式碼中呼叫 Add 方法）。本節會探究這些差異會影響傳遞至 JavaScript 的.NET Framework 型別。
 

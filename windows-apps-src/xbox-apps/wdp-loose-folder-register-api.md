@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf4d62f390a5d324952ef2852a76803f4619fdc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6e1a6d2e0c408d37195f5a4764f71c2acc932ab5
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593803"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240006"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a>登錄鬆散資料夾中的 App  
 
@@ -22,7 +22,7 @@ ms.locfileid: "57593803"
 方法      | 要求 URI
 :------     | :------
 POST | /api/app/packagemanager/register
-<br />
+
 **URI 參數**
 
 您可以在要求 URI 上指定下列其他參數：
@@ -30,15 +30,14 @@ POST | /api/app/packagemanager/register
 URI 參數      | 描述
 :------     | :-----
 folder (必要) | 登錄套件的目的地資料夾名稱。 這個資料夾必須存在主機上的 d:\developmentfiles\LooseApps 底下。 這個資料夾名稱必須是 base64 編碼，因為它可能包含路徑分隔符號 (如果該資料夾位於 LooseApps 下的子資料夾中)。
-<br />
 
 **要求標頭**
 
-- 無
+- None
 
 **要求本文**
 
-- 無
+- None
 
 **回應**
 
@@ -51,8 +50,8 @@ HTTP 狀態碼      | 描述
 200 | 部署要求已受理並正在處理
 4XX | 錯誤碼
 5XX | 錯誤碼
-<br />
-**可用的裝置系列**
+
+**可用裝置系列**
 
 * Windows Xbox
 

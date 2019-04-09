@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 套件推出, App 提交, 更新, 百分比
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
-ms.openlocfilehash: 172c750d370f8fd8822d78265a04e694bc958ddf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 175f4e562d7c91580e7783f6328b73f06a80095e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605703"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335036"
 ---
 # <a name="update-the-rollout-percentage-for-an-app-submission"></a>更新 App 提交的推出百分比
 
@@ -34,7 +34,7 @@ ms.locfileid: "57605703"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage``` |
+| POST   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -50,7 +50,7 @@ ms.locfileid: "57605703"
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字串 | 必要。 App 的「市集識別碼」，此 App 包含您想要更新其套件推出百分比的提交。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | submissionId | 字串 | 必要。 您想要更新其套件推出百分比之提交的識別碼。 在[建立 App 提交](create-an-app-submission.md)要求的回應資料中有提供此識別碼。 提交在合作夥伴中心所建立，此識別碼也會提供在合作夥伴中心內的 [提交] 頁面的 url。   |
-| percentage  |  浮點數  |  必要。 將接收漸進式推出套件的使用者百分比。  |
+| percentage  |  FLOAT  |  必要。 將接收漸進式推出套件的使用者百分比。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -61,7 +61,7 @@ ms.locfileid: "57605703"
 
 下列範例示範如何更新 App 提交的套件推出百分比。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243680/updatepackagerolloutpercentage?percentage=25 HTTP/1.1
 Authorization: Bearer <your access token>
 ```

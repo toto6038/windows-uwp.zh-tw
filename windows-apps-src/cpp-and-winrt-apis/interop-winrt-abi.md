@@ -5,29 +5,29 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3eee6b75d3ea86c183293ffc27289e9cae2929ce
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639943"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291676"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>C++/WinRT 與 ABI 之間的互通性
 
-本主題說明如何將 SDK 應用程式二進位介面 (ABI) 之間轉換以及[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)物件。 您可以使用這些技術在使用這些程式設計的兩種方法的程式碼以及 Windows 執行階段之間互通，或您逐漸將程式碼從 ABI 移至 C++/WinRT 時，可以使用它們。
+本主題說明如何將 SDK 應用程式二進位介面 (ABI) 之間轉換以及[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)物件。 您可以使用這些技術在使用這些程式設計的兩種方法的程式碼以及 Windows 執行階段之間互通，或您逐漸將程式碼從 ABI 移至 C++/WinRT 時，可以使用它們。
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>什麼事 Windows 執行階段 ABI，以及有哪些 ABI 類型？
 Windows 執行階段類別 (執行階段類別) 其實是抽象概念。 這個抽象概念定義可讓各種不同程式設計語言與物件互動的二進位介面 (應用程式二進位介面或 ABI)。 無論程式設計語言，與 Windows 執行階段物件的用戶端程式碼互動會發生在最低層級，用戶端語言建構會翻譯成物件的 ABI 呼叫。
 
 "%Windowssdkdir%include\10.0.17134.0\winrt" 資料夾中的 Windows SDK 標頭 (視需要調整案例中的 SDK 版本號碼)，是 Windows 執行階段 ABI 標頭檔案。 MIDL 編譯器產生它們。 以下是包括這些標頭之一的範例。
 
-```
+```cpp
 #include <windows.foundation.h>
 ```
 
 並且以下是您會在該特定 SDK 標頭找到的 ABI 類型之一的簡化範例。 請注意 **ABI** namespace; **Windows::Foundation** 以及其他 Windows 命名空間，均由 SDK 標頭在 **ABI** 命名空間內宣告。
 
-```
+```cpp
 namespace ABI::Windows::Foundation
 {
     IUriRuntimeClass : public IInspectable
@@ -51,7 +51,7 @@ Windows 執行階段是根據元件物件模型 (COM) API。 您可以用該方�
 
 且從該標頭，以下是 (簡化) C++/WinRT 相當於我們看到的該 ABI 類型。
 
-```
+```cppwinrt
 namespace winrt::Windows::Foundation
 {
     struct Uri : IUriRuntimeClass, ...
@@ -67,7 +67,7 @@ namespace winrt::Windows::Foundation
 本主題是針對您想要與其互通的案例、或者在應用程式二進位介面 (ABI) 層級的連接埠和程式碼。
 
 ## <a name="converting-to-and-from-abi-types-in-code"></a>程式碼中在 ABI 類型間來回轉換
-針對安全性與簡化，對於雙向轉換，您可以只要使用 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)、[**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function)，與 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 以下是一個程式碼範例 (根據**主控台應用程式**專案範本)，也會示範您可以如何對不同孤立區使用命名空間別名，處理 C++/WinRT 投影與 ABI 之間可能產生的命名空間衝突。
+針對安全性與簡化，對於雙向轉換，您可以只要使用 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)、[**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptras-function)，與 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 以下是一個程式碼範例 (根據**主控台應用程式**專案範本)，也會示範您可以如何對不同孤立區使用命名空間別名，處理 C++/WinRT 投影與 ABI 之間可能產生的命名空間衝突。
 
 ```cppwinrt
 // pch.h
@@ -175,7 +175,7 @@ T convert_from_abi(::IUnknown* from)
 
 函式簡單呼叫 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) 來為要求的 C++/WinRT 類型的預設介面詢問。
 
-如我們所了解，協助程式函式不需要從 C++/WinRT 物件轉換至對等 ABI 介面指標。 只要使用 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (或[**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) 成員函式為要求的介面詢問。 **as** 和 **try_as** 函式傳回一個 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 包裝要求的 ABI 類型的物件。
+如我們所了解，協助程式函式不需要從 C++/WinRT 物件轉換至對等 ABI 介面指標。 只要使用 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (或[**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) 成員函式為要求的介面詢問。 **as** 和 **try_as** 函式傳回一個 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 包裝要求的 ABI 類型的物件。
 
 ## <a name="code-example-using-convertfromabi"></a>使用 convert_from_abi 的程式碼範例
 以下是示範實務上此協助程式函式的程式碼範例。
@@ -246,11 +246,11 @@ int main()
 ## <a name="important-apis"></a>重要 API
 * [AddRef 函式](https://msdn.microsoft.com/library/windows/desktop/ms691379)
 * [QueryInterface 函式](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::attach_abi 函式](/uwp/cpp-ref-for-winrt/attach-abi)
+* [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::copy_from_abi 函式](/uwp/cpp-ref-for-winrt/copy-from-abi)
-* [winrt::copy_to_abi 函式](/uwp/cpp-ref-for-winrt/copy-to-abi)
-* [winrt::detach_abi 函式](/uwp/cpp-ref-for-winrt/detach-abi)
-* [winrt::get_abi 函式](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [winrt::copy_to_abi function](/uwp/cpp-ref-for-winrt/copy-to-abi)
+* [winrt::detach_abi function](/uwp/cpp-ref-for-winrt/detach-abi)
+* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
 * [winrt::Windows::Foundation::IUnknown:: 為成員函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [winrt::Windows::Foundation::IUnknown::try_as 成員函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
+* [winrt::Windows::Foundation::IUnknown::try_as 成員函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)

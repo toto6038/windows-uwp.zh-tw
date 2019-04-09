@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 285e4a70062c57c957530aa1e548c22c4cf7711e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bd59c1d32b4f09b58b7e78281e468fbb00a777d9
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629463"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291876"
 ---
 # <a name="stencil-buffers"></a>樣板緩衝區
-
 
 *樣板緩衝區*用於影像中遮罩像素，製作特殊效果。 遮罩控制是否繪製像素。 這些特殊效果包含組合、印花、溶解、淡化、撥動、外框及剪影，以及雙面樣板。 一些比較常見的效果如下所示。
 
@@ -25,7 +24,6 @@ ms.locfileid: "57629463"
 
 ## <a name="span-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanhow-the-stencil-buffer-works"></a><span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>樣板緩衝區的運作方式
 
-
 Direct3D 依據個別像素在樣板緩衝區的內容執行測試。 對於目標表面的每一個像素，它會使用樣板緩衝區中的對應值、樣板參考值，以及樣板遮罩值來執行測試。 如果通過測試，Direct3D 執行動作。 使用下列步驟執行測試。
 
 1.  執行樣板參考值與樣板遮罩的位元 AND 運算。
@@ -34,7 +32,7 @@ Direct3D 依據個別像素在樣板緩衝區的內容執行測試。 對於目�
 
 在下列一行的程式碼顯示上述步驟：
 
-```
+```cpp
 (StencilRef & StencilMask) CompFunc (StencilBufferValue & StencilMask)
 ```
 

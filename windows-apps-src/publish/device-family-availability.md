@@ -1,16 +1,16 @@
 ---
 Description: 成功上傳套件之後，您會看到一個依排名順序顯示將會提供哪些套件給特定 Windows 10 裝置系列 (以及舊版 OS，如果適用的話) 的表格。
 title: 裝置系列可用性
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 套件, 上傳, 裝置系列可用性
 ms.localizationpriority: medium
-ms.openlocfilehash: 217a6ab9f25ee533a754138db5cf83c2ac81e3e9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 516339b33ac4cf8e29e320f442791402b64c6a94
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605353"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334624"
 ---
 # <a name="device-family-availability"></a>裝置系列可用性
 
@@ -34,7 +34,7 @@ ms.locfileid: "57605353"
 
 <span id="xbox" />
 
-Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 **\[Windows 10 Xbox\]**。 如果您的 App 不是遊戲 (或者是遊戲，但您已啟用 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或完成[概念核准](../gaming/concept-approval.md)程序)，且您的提交包含使用 Windows 10 SDK 版本 14393 或更新版本編譯的中性和/或 x64 UWP 套件，您可以選取 **\[Windows 10 Xbox\]** 方塊來提供 App 給 Xbox One 上的客戶。
+Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 **\[Windows 10 Xbox\]**。 如果您的 App 不是遊戲 (或者是遊戲，但您已啟用 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)或完成[概念核准](../gaming/concept-approval.md)程序)，且您的提交包含使用 Windows 10 SDK 版本 14393 或更新版本編譯的中性和/或 x64 UWP 套件，您可以選取 **\[Windows 10 Xbox\]** 方塊來提供 App 給 Xbox One 上的客戶。
 
 > [!IMPORTANT]
 > 為了讓您的 App 在 Xbox 裝置上啟動，您必須包含使用 Windows SDK 版本 14393 或更新版本編譯的中性或 x64 套件。 不過，如果您選取 **\[Windows 10 Xbox\]**，您可用於 Xbox 的最高版本套件 (也就是以 Xbox 或通用裝置系列為目標的中性或 x64 套件) 將一律提供給 Xbox 上的客戶，即使套件是以舊版 SDK 編譯。 基於這個原因，確保適用於 Xbox 的最高版本套件是以 Windows SDK 版本 14393 或更高版本進行編譯非常重要。 如果不是，您會看到錯誤訊息，指出 Xbox 客戶不能啟動您的 App。 

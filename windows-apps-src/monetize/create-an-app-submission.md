@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立應用程式提交
 ms.localizationpriority: medium
-ms.openlocfilehash: a90be116a9d85eeae7cb7c44c2bbfe96da472f65
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5563b8281a713b57f98c48ae04153b19062f2f12
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594443"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334936"
 ---
 # <a name="create-an-app-submission"></a>建立應用程式提交
 
@@ -19,8 +19,7 @@ ms.locfileid: "57594443"
 
 如需這個方法如何在使用 Microsoft Store 提交 API 建立 App 提交的程序中進行的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
-
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -34,8 +33,7 @@ ms.locfileid: "57594443"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions``` |
-
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions` |
 
 ### <a name="request-header"></a>要求的標頭
 
@@ -43,13 +41,11 @@ ms.locfileid: "57594443"
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
-
 ### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字串 | 必要。 您想要建立提交之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-
 
 ### <a name="request-body"></a>要求本文
 
@@ -59,7 +55,7 @@ ms.locfileid: "57594443"
 
 下列範例示範如何為 App 建立新的提交。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -187,7 +183,6 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 無法建立提交，因為要求無效。 |
 | 409  | 無法建立提交作業，因為應用程式中的目前狀態，或應用程式使用的合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
-
 
 ## <a name="related-topics"></a>相關主題
 

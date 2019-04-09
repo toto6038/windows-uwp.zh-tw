@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7cae075b0d71925eb35ac2362aef291994b29801
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634643"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244404"
 ---
 # <a name="xaml-theme-resources"></a>XAML 佈景主題資源
 
@@ -65,7 +65,7 @@ XAML 架構提供一組已命名的 [Color](/uwp/api/Windows.UI.Color) 資源，
 
 下表列出索引鍵、 簡單名稱和色彩的字串表示 (使用\#aarrggbb 格式) 的 XAML 架構所提供的"Light"和"暗色調 」 資源。 索引鑰可用來參考應用程式中的資源。 「簡單的亮色調/暗色調名稱」是用來做為筆刷命名慣例的一部分 (稍後將會說明)。
 
-| 索引鍵                             | 簡單的亮色調/暗色調名稱 | 亮      | 暗       |
+| Key                             | 簡單的亮色調/暗色調名稱 | 亮      | 暗       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -151,14 +151,14 @@ XAML 架構提供一組已命名的 [Color](/uwp/api/Windows.UI.Color) 資源，
 
 此表格列出全系統的色彩，XAML 可提供來做為衍生自 Windows 系統調色盤的資源物件。 [輕鬆存取名稱] 欄顯示如何在 Windows 設定 UI 中標示色彩。 [簡單的高對比名稱] 欄是簡單的說明，描述色彩如何套用到 XAML 通用控制項的方式。 它是用來做為筆刷命名慣例的一部分 (稍後將會說明)。 [初始預設值] 欄顯示若系統完全不是以高對比執行時您會獲得的值。
 
-| 索引鍵                           | 輕鬆存取名稱            | 簡單的高對比名稱 | 初始預設值 |
+| Key                           | 輕鬆存取名稱            | 簡單的高對比名稱 | 初始預設值 |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
 | SystemColorButtonFaceColor    | **按鈕文字** (背景)   | 背景               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **按鈕文字** (前景)   | 前景               | \#FF000000      |
-| SystemColorGrayTextColor      | **已停用的文字**              | 已停用                 | \#FF6D6D6D      |
+| SystemColorGrayTextColor      | **停用的文字**              | 已停用                 | \#FF6D6D6D      |
 | SystemColorHighlightColor     | **選取的文字** (背景) | 醒目顯示                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **選取的文字** (前景) | HighlightAlt             | \#FFFFFFFF      |
-| SystemColorHotlightColor      | **超連結**                 | Hyperlink                | \#FF0066CC      |
+| SystemColorHotlightColor      | **超連結**                 | 超連結                | \#FF0066CC      |
 | SystemColorWindowColor        | **背景**                 | PageBackground           | \#FFFFFFFF      |
 | SystemColorWindowTextColor    | **文字**                       | PageText                 | \#FF000000      |
 
@@ -177,7 +177,7 @@ Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存�
 
 ### <a name="theme-dependent-brushes"></a>佈景主題相依筆刷
 
-前述各節中顯示的色彩資源可用來設定系統佈景主題資源字典中 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 資源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 屬性。 您可以使用筆刷資源，將色彩套用到 XAML 元素。 適用於筆刷資源的索引鍵會遵循下列命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如， `SystemControlBackroundAltHighBrush`。
+前述各節中顯示的色彩資源可用來設定系統佈景主題資源字典中 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 資源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 屬性。 您可以使用筆刷資源，將色彩套用到 XAML 元素。 適用於筆刷資源的索引鍵會遵循下列命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如， `SystemControlBackroundAltHighBrush` 。
 
 讓我們看看如何在執行階段決定此筆刷的色彩值。 在 "Light" 和 "Dark" 資源字典中，此筆刷的定義如下：
 
@@ -240,7 +240,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
     <Setter Property="FontFamily" Value="Segoe UI"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="TextTrimming" Value="None"/>
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
@@ -318,7 +318,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 <Style x:Key="BodyTextBlockStyle" TargetType="TextBlock" 
        BasedOn="{StaticResource BaseTextBlockStyle}">
     <Setter Property="FontWeight" Value="Normal"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
 </Style>
 ```
 
@@ -352,7 +352,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 <Style x:Key="BaseRichTextBlockStyle" TargetType="RichTextBlock">
     <Setter Property="FontFamily" Value="Segoe UI"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="TextTrimming" Value="None"/>
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
@@ -418,7 +418,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**:[按鈕](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**:[Button](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 這個 [Style](https://msdn.microsoft.com/library/windows/apps/br208849) 提供可做為瀏覽 app 之向後瀏覽按鈕的 [Button](https://msdn.microsoft.com/library/windows/apps/br209265) 完整範本。 與 **NavigationBackButtonNormalStyle** 類似，但尺寸是 30 x 30 像素。
 

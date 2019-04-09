@@ -13,12 +13,12 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 194e8578244fee72d0f122ee96caaf22bf2b8807
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d3ea8e2bff2455340a1183dbe5c1840fdb599d46
+ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610483"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59247186"
 ---
 # <a name="menus-and-context-menus"></a>功能表和操作功能表
 
@@ -26,7 +26,7 @@ ms.locfileid: "57610483"
 
 ![一般操作功能表的範例](images/contextmenu_rs2_icons.png)
 
-| **取得 Windows 的 UI 程式庫** |
+| **取得 Windows UI 程式庫** |
 | - |
 | 此控制項是包含 Windows UI 程式庫，包含新的控制項和 UWP 應用程式的 UI 功能的 NuGet 套件的過程。 如需詳細資訊，包括安裝指示，請參閱 < [Windows 的 UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
@@ -74,7 +74,7 @@ ms.locfileid: "57610483"
 
 您何時應該使用功能表或操作功能表？
 
-- 如果裝載元素為按鈕或一些其他命令元素，且其主要作用是呈現其他命令，請使用功能表。
+- 如果主機項目 按鈕或其主要角色是為了要呈現其他命令的一些其他命令元素，請使用功能表。
 - 如果裝載元素是一些具有不同主要用途 (例如呈現文字或影像) 的其他類型元素，請使用操作功能表。
 
 比方說，使用功能表上的按鈕，提供篩選和排序選項的清單。 在這個案例中，按鈕控制項的主要用途是提供功能表的存取。
@@ -130,15 +130,17 @@ ms.locfileid: "57610483"
 
 ## <a name="create-a-menu-flyout-or-a-context-menu"></a>建立功能表飛出視窗或操作功能表
 
-若要建立的功能表彈出式視窗或操作功能表時，您使用[MenuFlyout 類別](https://msdn.microsoft.com/library/windows/apps/dn299030)。 您可以藉由將 [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 及 [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) 物件新增到 MenuFlyout，來定義功能表的內容。
+若要建立的功能表彈出式視窗或操作功能表時，您使用[MenuFlyout 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)。 藉由加入定義功能表的內容[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutitem)， [MenuFlyoutSubItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem)， [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)， [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)並[MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) MenuFlyout 的物件。
 
 這些物件的用途如下：
 
-- [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx) - 執行立即的動作。
-- [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) - 開啟或關閉選項。
-- [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) - 在視覺上分隔功能表項目。
+- [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutitem) - 執行立即的動作。
+- [MenuFlyoutSubItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem)— 包含階層式清單的功能表項目。
+- [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) - 開啟或關閉選項。
+- [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)— 互斥功能表項目之間切換。
+- [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) - 在視覺上分隔功能表項目。
 
-這個範例會建立[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)並用[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)屬性，可用於大部分的控制項，以顯示操作功能表為 MenuFlyout 屬性。
+這個範例會建立[MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)並用[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)屬性，可用於大部分的控制項，以顯示操作功能表為 MenuFlyout 屬性。
 
 ````xaml
 <Rectangle
@@ -169,7 +171,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-下一個範例幾乎完全相同，但不會使用 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 屬性來將 [MenuFlyout 類別](https://msdn.microsoft.com/library/windows/apps/dn299030)顯示為操作功能表，這個範例改用 [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 屬性來將它顯示為功能表。
+下一個範例幾乎完全相同，但不會使用 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 屬性來將 [MenuFlyout 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)顯示為操作功能表，這個範例改用 [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 屬性來將它顯示為功能表。
 
 ````xaml
 <Rectangle
@@ -208,7 +210,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ### <a name="light-dismiss"></a>正常關閉
 
-消失關閉控制項 (例如，功能表、操作功能表及其他飛出視窗) 會將鍵盤和遊戲台焦點困在暫時性 UI 內，直到關閉為止。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的可見度變暗。 您可以使用新的 [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) 屬性來修改此行為。 根據預設，暫時性 UI 將在 Xbox (**\[自動\]**) 上繪製消失關閉重疊，但不會在其他裝置系列上繪製，不過應用程式可以選擇強制重疊一律為 **\[開啟\]** 或一律為 **\[關閉\]**。
+正常關閉功能表、 操作功能表和其他延伸顯示等控制項，設陷在暫時性 UI 之前關閉鍵盤及遊戲台焦點。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的可見度變暗。 您可以使用新的 [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) 屬性來修改此行為。 根據預設，暫時性的 Ui 會在 Xbox 上繪製淺解除覆疊 (**自動**)，但不是其他裝置系列。 您可以強制覆疊可讓您隨時**上**或 alwayson**關閉**。
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />
@@ -227,8 +229,8 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 > 此範例示範如何只建立 UI 結構，但不會顯示的任何命令的實作。
 
 ```xaml
-<MenuBar>
-    <MenuBarItem Title="File">
+<muxc:MenuBar>
+    <muxc:MenuBarItem Title="File">
         <MenuFlyoutSubItem Text="New">
             <MenuFlyoutItem Text="Plain Text Document"/>
             <MenuFlyoutItem Text="Rich Text Document"/>
@@ -236,29 +238,40 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
         </MenuFlyoutSubItem>
         <MenuFlyoutItem Text="Open..."/>
         <MenuFlyoutItem Text="Save"/>
-        <MenuFlyoutSeparator/>
+        <MenuFlyoutSeparator />
         <MenuFlyoutItem Text="Exit"/>
-    </MenuBarItem>
+    </muxc:MenuBarItem>
 
-    <MenuBarItem Title="Edit">
+    <muxc:MenuBarItem Title="Edit">
         <MenuFlyoutItem Text="Undo"/>
         <MenuFlyoutItem Text="Cut"/>
         <MenuFlyoutItem Text="Copy"/>
         <MenuFlyoutItem Text="Paste"/>
-    </MenuBarItem>
+    </muxc:MenuBarItem>
 
-    <MenuBarItem Title="Help">
+    <muxc:MenuBarItem Title="View">
+        <MenuFlyoutItem Text="Output"/>
+        <MenuFlyoutSeparator/>
+        <muxc:RadioMenuFlyoutItem Text="Landscape" GroupName="OrientationGroup"/>
+        <muxc:RadioMenuFlyoutItem Text="Portrait" GroupName="OrientationGroup" IsChecked="True"/>
+        <MenuFlyoutSeparator/>
+        <muxc:RadioMenuFlyoutItem Text="Small icons" GroupName="SizeGroup"/>
+        <muxc:RadioMenuFlyoutItem Text="Medium icons" IsChecked="True" GroupName="SizeGroup"/>
+        <muxc:RadioMenuFlyoutItem Text="Large icons" GroupName="SizeGroup"/>
+    </muxc:MenuBarItem>
+
+    <muxc:MenuBarItem Title="Help">
         <MenuFlyoutItem Text="About"/>
-    </MenuBarItem>
-</MenuBar>
+    </muxc:MenuBarItem>
+</muxc:MenuBar>
 ```
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
 - [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
-- [XAML 內容功能表範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
+- [XAML 操作功能表範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
 
 ## <a name="related-articles"></a>相關文章
 
-- [MenuFlyout 類別](https://msdn.microsoft.com/library/windows/apps/dn299030)
-- [功能表列類別](/uwp/api/Windows.UI.Xaml.Controls.MenuBar)
+- [MenuFlyout 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)
+- [功能表列類別](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubar)

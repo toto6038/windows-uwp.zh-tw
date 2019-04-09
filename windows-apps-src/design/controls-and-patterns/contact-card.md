@@ -9,18 +9,18 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4c227629ace1f3fdbb2af8582401f9273cf11c2e
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638823"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913978"
 ---
 # <a name="contact-card"></a>連絡人卡片
 
-連絡人卡片會顯示[連絡人](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (UWP 用來代表人員和企業的機制) 的連絡資訊，例如姓名、電話號碼和地址。  連絡人卡片也可讓使用者編輯連絡資訊。 您可以選擇顯示精簡的連絡人卡片，或是包含額外資訊的完整連絡人卡片。
+連絡人卡片會顯示[連絡人](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (UWP 用來代表人員和企業的機制) 的連絡資訊，例如姓名、電話號碼和地址。  連絡人卡片也可讓使用者編輯連絡資訊。 您可以選擇顯示精簡的連絡人卡片，或是包含額外資訊的完整連絡人卡片。
 
-> **重要的 Api**:[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)， [ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)， [IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)，[連絡類別](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **重要的 Api**:[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)， [ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard)， [IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)，[連絡類別](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 有兩種顯示連絡人卡片的方式：  
 * 做為標準連絡人卡片，出現在的飛出視窗中，並且可消失關閉 (在使用者按一下連絡人卡片外部時消失)。 
@@ -146,7 +146,7 @@ private void OnUserClickShowContactCard(object sender, RoutedEventArgs e)
 
 ## <a name="show-a-full-contact-card"></a>顯示完整連絡人卡片
 
-若要顯示完整的連絡人卡片，請呼叫 [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_) 方法，而不是 [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)。
+若要顯示完整的連絡人卡片，請呼叫 [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard) 方法，而不是 [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)。
 
 ```csharp
 private void onUserClickShowContactCard() 
@@ -182,4 +182,4 @@ private void onUserClickShowContactCard()
 ## <a name="related-articles"></a>相關文章
 - [連絡人和行事曆](/windows/uwp/contacts-and-calendar/)
 - [連絡人卡片範例](https://go.microsoft.com/fwlink/p/?LinkId=624040)
-- [人圖片控制項](/windows/uwp/controls-and-patterns/person-picture/)
+- [連絡人圖片控制項](/windows/uwp/controls-and-patterns/person-picture/)

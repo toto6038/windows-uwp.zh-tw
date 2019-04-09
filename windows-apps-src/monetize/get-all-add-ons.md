@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 50733bc0617d56b7e6b8596b661aff8056961f18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 84b55ea8bc62955e3556fcff4e8d608738eb59ce
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599903"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334426"
 ---
 # <a name="get-all-add-ons"></a>取得所有附加元件
 
@@ -30,7 +30,7 @@ ms.locfileid: "57599903"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -44,7 +44,7 @@ ms.locfileid: "57599903"
 
 對於此方法而言，所有的要求參數都是選用的。 如果您呼叫這個不含參數的方法，回應會包含已登錄到您帳戶之所有 App 的所有附加元件的資料。
 
-|  參數  |  類型  |  描述  |  必要  |
+|  參數  |  類型  |  描述  |  必要項  |
 |------|------|------|------|
 |  top  |  整數  |  要求中要傳回的項目數目 (也就是要傳回的附加元件數目)。 如果您的帳戶擁有的附加元件超過您在查詢中指定的值，回應本文會包含您可以附加到方法 URI 的相對 URI 路徑以要求下一個頁面的資料。  |  否  |
 |  skip  |  整數  |  在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。  |  否  |
@@ -58,14 +58,14 @@ ms.locfileid: "57599903"
 
 下列範例示範如何擷取已登錄到您帳戶之所有 App 的所有附加元件資料。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
 下列範例示範如何僅擷取前 10 個附加元件。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -133,7 +133,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求主體的 *top* 參數設為 10，但是 App 有 100 個登錄到您帳戶的附加元件，回應本文會包含 ```inappproducts?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` 來要求接下來的 10 個附加元件。 |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求主體的 *top* 參數設為 10，但是 App 有 100 個登錄到您帳戶的附加元件，回應本文會包含 `inappproducts?skip=10&top=10` 的 @nextLink 值，這指出您可以呼叫 `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10` 來要求接下來的 10 個附加元件。 |
 | value            | 陣列  |  包含提供每個附加元件相關資訊之物件的陣列。 如需詳細資訊，請參閱[附加元件資源](manage-add-ons.md#add-on-object)。   |
 | totalCount   | 整數  | 回應內文的 *value* 陣列中的 App 物件數目。     |
 

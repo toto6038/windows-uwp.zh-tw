@@ -6,19 +6,19 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 刪除正式發行前小眾測試版
 ms.localizationpriority: medium
-ms.openlocfilehash: fa3fa78c695538ec13dbd20d38a24224c560463e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a3455973d86b0c9e7c779cca429e36fa32266ed6
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641833"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335106"
 ---
 # <a name="delete-a-package-flight"></a>刪除套件正式發行前小眾測試版
 
 若要刪除封裝班機的應用程式，已向您的合作夥伴中心帳戶，Microsoft Store 提交 API 中使用這個方法。
 
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -31,7 +31,7 @@ ms.locfileid: "57641833"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
+| DELETE    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -58,7 +58,7 @@ ms.locfileid: "57641833"
 
 下列範例示範如何刪除套件正式發行前小眾測試版。
 
-```
+```json
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd HTTP/1.1
 Authorization: Bearer <your access token>
 ```

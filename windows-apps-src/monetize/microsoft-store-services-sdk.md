@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ec2013735597efae73aee31bb4aee1a8e1413e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b74cb2b23b5fbfc7487d18be0531ff26170cbe3f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594983"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334507"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>透過 Microsoft Store Services SDK 與客戶互動
 
@@ -26,7 +26,7 @@ Microsoft Store Services SDK 提供的功能，協助您洽詢客戶在您的通
 
 Microsoft Store Services SDK 目前支援下列 UWP app 案例。 如需 API 參考文件，請參閱 [Microsoft Store Services SDK API 參考](https://docs.microsoft.com/uwp/api/overview/engagement)。
 
-|  案例  |  描述   |
+|  狀況  |  描述   |
 |------------|----------------|
 |  [執行實驗，在您的 UWP 應用程式，以 A / B 測試](run-app-experiments-with-a-b-testing.md)    |  在「通用 Windows 平台」(UWP) app 中執行 A/B 測試，以在將功能釋出給每個人之前，先對部分客戶測量功能是否有效。 在合作夥伴中心內定義的實驗之後，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)類別，即可取得您的實驗，在您的應用程式中使用此資料來修改您要測試，此功能的行為變化，然後使用[LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)檢視事件和轉換事件傳送給合作夥伴中心的方法。 最後，使用合作夥伴中心來檢視結果，並管理實驗。  |
 |  [啟動從 UWP 應用程式的意見反應中樞](launch-feedback-hub-from-your-app.md)    |  在您的 UWP app 中使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 類別將您的 Windows 10 客戶引導至「意見反應中樞」，以便他們在其中提交問題、建議及附議。 然後，在「合作夥伴中心」的[意見反應報告](../publish/feedback-report.md)中管理此意見反應。 |
@@ -35,7 +35,7 @@ Microsoft Store Services SDK 目前支援下列 UWP app 案例。 如需 API 參
 
 <span id="prerequisites" />
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 Microsoft Store Services SDK 需要：
 
@@ -62,7 +62,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
 1.  關閉所有 Visual Studio 執行個體。
 
 2. 如果您先前已安裝 Microsoft Store Engagement and Monetization SDK、通用廣告用戶端 SDK 或 Ad Mediator 擴充功能，請立即將這些 SDK 解除安裝。 您也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊 SDK 版本：
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -85,7 +85,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
 1.  關閉所有 Visual Studio 執行個體。
 
 2. 如果您先前已安裝 Microsoft Store Engagement and Monetization SDK、通用廣告用戶端 SDK 或 Ad Mediator 擴充功能，請立即將這些 SDK 解除安裝。 您也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊 SDK 版本：
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -99,7 +99,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
 
 5. 在搜尋方塊中，輸入 **Microsoft.Services.Store.Engagement** 並安裝 Microsoft.Services.Store.Engagement 套件。 套件完成安裝後，儲存您的方案。
     > [!NOTE]
-    > 如果 **\[輸出\]** 視窗回報 *Install-Package* 錯誤，指出指定的路徑太長，您可能需要設定讓 NuGet 將套件解壓縮至路徑比預設位置短的替代位置。 若要這樣做，請將 ```repositoryPath``` 值新增到您電腦上的 nuget.config 檔案中，然後將它指派至可解壓縮 NuGet 套件的較短資料夾路徑。 如需詳細資訊，請參閱 NuGet 文件中的[這篇文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，您也可以嘗試將您的 Visual Studio 專案移至路徑較短的替代資料夾。 此問題也可能因您全域套件路徑太長。 在此案例中，將```globalPackagesFolder```到您的 nuget.config 檔案的值。
+    > 如果 **\[輸出\]** 視窗回報 *Install-Package* 錯誤，指出指定的路徑太長，您可能需要設定讓 NuGet 將套件解壓縮至路徑比預設位置短的替代位置。 若要這樣做，請將 `repositoryPath` 值新增到您電腦上的 nuget.config 檔案中，然後將它指派至可解壓縮 NuGet 套件的較短資料夾路徑。 如需詳細資訊，請參閱 NuGet 文件中的[這篇文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，您也可以嘗試將您的 Visual Studio 專案移至路徑較短的替代資料夾。 此問題也可能因您全域套件路徑太長。 在此案例中，將`globalPackagesFolder`到您的 nuget.config 檔案的值。
 
 6. 關閉包含您專案的 Visual Studio 方案，然後重新開啟方案。
 

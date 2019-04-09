@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2a7d34f00d40429863f08ffe6a9c34222daa32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 461d6d135838a5141e6606d4c77ce21972a45fe1
+ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649303"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901646"
 ---
 # <a name="command-bar"></a>命令列
 
@@ -121,8 +121,8 @@ CommandBar 控制項有 3 個屬性，可用來將命令和內容：[PrimaryComm
 
 您能以程式設計方式控制在 PrimaryCommands 與 SecondaryCommands 之間移動命令。
 
-- *命令會以一致的方式跨頁面出現時，最好是將該命令中的一致位置。*
-- *我們建議，將接受，和左邊的 [確定] 命令拒絕，否，取消。一致性可讓使用者在系統中移動的信心，並可幫助他們傳輸其專業知識的應用程式瀏覽應用程式到應用程式。*
+- *如果有會顯示在各頁面上的命令，最好將該命令保持在一致的位置。*
+- *我們建議將 [接受]、[是]、[確定] 命令放在 [拒絕]、[否] 和 [取消] 的左邊。 一致性可讓使用者自信地在系統中移動，幫助他們將 app 瀏覽的知識從某個 app 運用到另一個 app。*
 
 ### <a name="app-bar-buttons"></a>應用程式列按鈕
 
@@ -177,7 +177,8 @@ AppBarButton [IsCompact](https://docs.microsoft.com/uwp/api/windows.ui.xaml.cont
 
 ## <a name="open-and-closed-states"></a>開啟與關閉狀態
 
-命令列可以開啟或關閉。 開啟時，顯示含文字標籤的主要命令按鈕，如果有次要命令存在，還會開啟溢位功能表。
+命令列可以開啟或關閉。 當開啟時，它會顯示主要命令按鈕的文字標籤，而且它會開啟溢位功能表，（如果有第二個命令）。
+命令列開啟溢位功能表向上 （超過主要命令中） 或向下 （低於主要命令中）。 預設的方向，但如果沒有足夠的空間，以開啟 往上溢位功能表，在命令列開啟向下。 
 
 使用者可以藉由按下 [查看更多 」 的這些狀態之間切換\[• • •\] ] 按鈕。 您可以設定 [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) 屬性，以程式設計方式在這些狀態之間切換。 
 
@@ -216,7 +217,7 @@ private void CommandBar_Closing(object sender, object e)
 
 如果使用者在命令列開啟時與應用程式的其他部分互動，則命令列會自動關閉。 這稱為*消失關閉*。 您可以設定 [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) 屬性來控制消失關閉行為。 當`IsSticky="true"`，直到使用者按下 查看更多"列將保持開啟\[• • •\]按鈕，或從溢位功能表中選取的項目。 
 
-建議您避免使用相黏命令列，因為它們不符合使用者對消失關閉的預期效果。
+我們建議您避免自黏便箋的命令列，因為它們不符合使用者的期望，如[光線關閉和鍵盤焦點行為](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#light-dismiss)。
 
 ### <a name="display-mode"></a>顯示模式
 
@@ -281,5 +282,5 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
-* [命令用於 UWP 應用程式的設計基本概念](../basics/commanding-basics.md)
+* [UWP 應用程式的命令設計基本知識](../basics/commanding-basics.md)
 * [CommandBar 類別](https://msdn.microsoft.com/library/windows/apps/dn279427)

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dcf0176e20e498f8c6744a542010b5197689b8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5b628c4d473c2a74eb63a17c12b17ade43c11964
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639933"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244414"
 ---
 # <a name="item-containers-and-templates"></a>項目容器與範本
 
@@ -54,7 +54,7 @@ ms.locfileid: "57639933"
                 <Image Source="Assets/placeholder.png" Width="44" Height="44"
                        HorizontalAlignment="Left"/>
                 <TextBlock Text="{x:Bind}" Foreground="Black"
-                           FontSize="15" Grid.Column="1"
+                           FontSize="14" Grid.Column="1"
                            VerticalAlignment="Center"
                            Padding="0,0,54,0"/>
             </Grid>
@@ -333,12 +333,12 @@ ListView 和 GridView 控制項已最佳化，可減少針對每個項目所建�
 > [!NOTE]
 > ListViewItem 和 GridViewItem 預設樣式會在 ListViewItemPresenter 上設定許多屬性。 您應一律從使用預設樣式的複本開始，並且只修改您也需要的屬性。 否則，由於某些屬性未正確地設定，因此視覺效果可能不會以您預期的方式顯示。
 
-**要在 Visual Studio 中的預設範本的複本**
+**在 Visual Studio 中建立預設範本的複本**
  
 1. 開啟 [文件大綱] 窗格 ([檢視] &gt; [其他視窗] &gt; [文件大綱])。
 2. 選取要修改的清單或方格元素。 在這個範例中，您可以修改 `colorsGridView` 元素。
 3. 以滑鼠右鍵按一下，然後選取 [編輯其他範本] &gt; [編輯產生的項目容器 (ItemContainerStyle)] &gt; [編輯複本]。
-    ![Visual Studio editor](images/listview-itemcontainerstyle-vs.png)
+    ![Visual Studio 編輯器](images/listview-itemcontainerstyle-vs.png)
 4. 在 建立樣式資源 對話方塊中，輸入樣式的名稱。 在此範例中，您使用 `colorsGridViewItemStyle`。
     ![Visual Studio 的 建立樣式資源](images/listview-style-resource-vs.png) 對話方塊
 
@@ -430,13 +430,13 @@ Overlay | ![重疊單一或延伸選取](images/gridview-single-selection.png) |
 
 狀態/筆刷名稱 | 內嵌樣式 | 重疊樣式
 ------------|--------------|--------------
-<b>標準模式</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![一般內嵌項目選取](images/listview-item-normal.png) | ![一般重疊項目選取](images/gridview-item-normal.png)
-<b>PointerOver</b><ul><li><b>PointerOverForeground ="DarkOrange 」</b></li><li><b>PointerOverBackground ="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![指標暫留內嵌項目選取](images/listview-item-pointerover.png) | ![指標暫留重疊項目選取](images/gridview-item-pointerover.png)
-<b>按下</b><ul><li><b>PressedBackground ="[lightcyan] 」</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![按下內嵌項目選取](images/listview-item-pressed.png) | ![按下重疊項目選取](images/gridview-item-pressed.png)
-<b>選取</b><ul><li><b>SelectedForeground ="海軍"</b></li><li><b>SelectedBackground ="卡其色 」</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (僅限內嵌)</li></ul> | ![選取內嵌項目選取](images/listview-item-selected.png) | ![選取重疊項目選取](images/gridview-item-selected.png)
-<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground ="淡紫"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (僅限重疊)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (僅限內嵌)</li></ul> | ![指標暫留以選取內嵌項目選取](images/listview-item-pointeroverselected.png) | ![指標暫留以選取重疊項目選取](images/gridview-item-pointeroverselected.png)
-<b>PressedSelected</b><ul><li><b>SelectedPressedBackground ="MediumTurquoise 」</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (僅限重疊)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (僅限內嵌)</li></ul> | ![按下以選取內嵌項目選取](images/listview-item-pressedselected.png) | ![按下以選取重疊項目選取](images/gridview-item-pressedselected.png)
-<b>已取得焦點</b><ul><li><b>FocusBorderBrush ="Crimson 」</b></li><li><b>FocusSecondaryBorderBrush = 「 金級 」</b></li><li>CheckBoxBrush="Red"</li></ul> | ![取得內嵌項目選取的焦點](images/listview-item-focused.png) | ![取得重疊項目選取的焦點](images/gridview-item-focused.png)
+<b>一般</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![一般內嵌項目選取](images/listview-item-normal.png) | ![一般重疊項目選取](images/gridview-item-normal.png)
+<b>PointerOver</b><ul><li><b>PointerOverForeground="DarkOrange"</b></li><li><b>PointerOverBackground="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![指標暫留內嵌項目選取](images/listview-item-pointerover.png) | ![指標暫留重疊項目選取](images/gridview-item-pointerover.png)
+<b>Pressed</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![按下內嵌項目選取](images/listview-item-pressed.png) | ![按下重疊項目選取](images/gridview-item-pressed.png)
+<b>Selected</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (僅限內嵌)</li></ul> | ![選取內嵌項目選取](images/listview-item-selected.png) | ![選取重疊項目選取](images/gridview-item-selected.png)
+<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground="Lavender"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (僅限重疊)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (僅限內嵌)</li></ul> | ![指標暫留以選取內嵌項目選取](images/listview-item-pointeroverselected.png) | ![指標暫留以選取重疊項目選取](images/gridview-item-pointeroverselected.png)
+<b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (僅限重疊)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (僅限內嵌)</li></ul> | ![按下以選取內嵌項目選取](images/listview-item-pressedselected.png) | ![按下以選取重疊項目選取](images/gridview-item-pressedselected.png)
+<b>Focused</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![取得內嵌項目選取的焦點](images/listview-item-focused.png) | ![取得重疊項目選取的焦點](images/gridview-item-focused.png)
 
 ListViewItemPresenter 有其他筆刷屬性適用於資料預留位置和拖曳狀態。 如果您會在清單檢視中使用增量載入或拖放，則應考慮是否也需要修改這些額外的筆刷屬性。 如需您可修改的屬性完整清單，請參閱 ListViewItemPresenter 類別。 
 
@@ -451,7 +451,7 @@ ListViewItemPresenter 有其他筆刷屬性適用於資料預留位置和拖曳�
 
 若要自訂延伸的 XAML 範本，您需要在應用程式中建立它的複本，並將 **ItemContainerStyle** 屬性設為您的複本。
 
-**複製展開的範本**
+**複製延伸的範本**
 1. 針對 ListView 或 GridView 設定 ItemContainerStyle 屬性，如下所示。
     ```xaml
     <ListView ItemContainerStyle="{StaticResource ListViewItemExpanded}"/>
@@ -470,5 +470,5 @@ ListViewItemPresenter 有其他筆刷屬性適用於資料預留位置和拖曳�
 ## <a name="related-articles"></a>相關文章
 
 - [清單](lists.md)
-- [ListView 和 GridView](listview-and-gridview.md)
+- [ListView 與 GridView](listview-and-gridview.md)
 

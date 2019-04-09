@@ -6,18 +6,18 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: a87f0e694434774db215f3f5323588f94ec0465b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8d997dd4d1369ef09f29a165f9e0554d6f3ad7c7
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599813"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334739"
 ---
 # <a name="get-an-add-on-submission"></a>取得附加元件提交
 
 在 Microsoft Store 提交 API 中使用這個方法，取得現有附加元件 (也稱為應用程式內產品或 IAP) 提交的資料。 如需使用 Microsoft Store 提交 API 建立附加元件提交的程序的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -31,7 +31,7 @@ ms.locfileid: "57599813"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ``` |
+| GET   | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -57,7 +57,7 @@ ms.locfileid: "57599813"
 
 下列範例示範如何取得附加元件提交。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621243680 HTTP/1.1
 Authorization: Bearer <your access token>
 ```

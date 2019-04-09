@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 80c834257e883d3aeb8594001344abd6ef14682c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bae6e5b21369c30c8ed067fe7283c0a116d220b8
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596563"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343287"
 ---
 # <a name="interaction-primer"></a>互動基本資訊
 
@@ -82,11 +82,11 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 
 語音命令會定義於語音命令定義 (VCD) 檔中，它是一種單次語言表達，會透過 **Cortana** 導向已安裝的應用程式。 根據互動的層次和複雜性，您可以在前景或背景啟動這個應用程式。 例如，某些語音命需要參考前後文或者需要使用者輸入資料，那麼在前景進行處理最合適；而基本的命令，則可以在背景進行處理。
 
-整合 app 的基本功能，並提供一個中心進入點，讓使用者不需要開啟 app 就能完成大部分的工作，這讓 **Cortana** 成為您的 app 與使用者之間的橋樑。 在多數情況下，這可以為使用者節省很多時間和精力。 如需詳細資訊，請參閱 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)。
+整合 app 的基本功能，並提供一個中心進入點，讓使用者不需要開啟 app 就能完成大部分的工作，這讓 **Cortana** 成為您的 app 與使用者之間的橋樑。 在多數情況下，這可以為使用者節省很多時間和精力。 如需詳細資訊，請參閱 [Cortana 設計指導方針](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)。
 
 ### <a name="more-info"></a>其他資訊
 
-[Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)
+[Cortana 設計指導方針](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)
  
 
 ## <a name="speech"></a>語音

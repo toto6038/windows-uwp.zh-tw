@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 可追蹤式磚, 動態磚, 可追蹤式磚通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6e27dec0e7256cfc035ecc3150bd976f69743fe3
+ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592643"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58358613"
 ---
 # <a name="chaseable-tile-notifications"></a>可追蹤式磚通知
 
@@ -21,7 +21,7 @@ ms.locfileid: "57592643"
 例如，新聞應用程式可使用此功能來判斷當使用者啟動它時，其動態磚會顯示什麼新聞故事，藉以確保以醒目的方式顯示某些新聞，讓使用者可以找到它。 
 
 > [!IMPORTANT]
-> **需要年度更新版**:若要使用與 chaseable 磚通知C#，c + + 或 VB 為基礎的 UWP 應用程式，您必須為目標 SDK 14393，並執行組建 14393 或更高版本。 對於 JavaScript 型 UWP app，您的目標必須是 SDK 17134 並執行組建 17134 或更新版本。 
+> **需要年度更新版**:若要使用與 chaseable 磚通知C#， C++，或 VB 為基礎的 UWP 應用程式，您必須為目標 SDK 14393，並執行組建 14393 或更高版本。 對於 JavaScript 型 UWP app，您的目標必須是 SDK 17134 並執行組建 17134 或更新版本。 
 
 
 > **重要的 Api**:[LaunchActivatedEventArgs.TileActivatedInfo 屬性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)， [TileActivatedInfo 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
@@ -140,6 +140,49 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ```
 
 
+### <a name="accessing-onlaunched-from-desktop-applications"></a>從桌面應用程式存取 OnLaunched
+
+傳統型應用程式 （如 Win32，WPF 中，等） 使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，也可以使用 chaseable 磚 ！ 唯一的差別存取 OnLaunched 引數。 請注意，您必須先[封裝使用傳統型橋接器應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)。
+
+> [!IMPORTANT]
+> **需要 2018 年 10 月更新**:若要使用`AppInstance.GetActivatedEventArgs()`API，您必須為目標 SDK 17763，而且執行組建，17763 或更高版本。
+
+針對桌面應用程式，若要存取的啟動引數，執行下列操作...
+
+```csharp
+
+static void Main()
+{
+    Application.EnableVisualStyles();
+    Application.SetCompatibleTextRenderingDefault(false);
+
+    // API only available on build 17763 or higher
+    var args = AppInstance.GetActivatedEventArgs();
+    switch (args.Kind)
+    {
+        case ActivationKind.Launch:
+
+            var launchArgs = args as LaunchActivatedEventArgs;
+
+            // If clicked on from tile
+            if (launchArgs.TileActivatedInfo != null)
+            {
+                // If tile notification(s) were present
+                if (launchArgs.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+                {
+                    // Get arguments from the notifications that were recently displayed
+                    string[] allTileArgs = launchArgs.TileActivatedInfo.RecentlyShownNotifications
+                    .Select(i => i.Arguments)
+                    .ToArray();
+     
+                    // TODO: Highlight each story in the app
+                }
+            }
+    
+            break;
+```
+
+
 ## <a name="raw-xml-example"></a>原始 XML 範例
 
 如果您使用原始 XML 而非通知程式庫，以下是 XML。
@@ -178,5 +221,5 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ## <a name="related-articles"></a>相關文章
 
-- [LaunchActivatedEventArgs.TileActivatedInfo 屬性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [TileActivatedInfo 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

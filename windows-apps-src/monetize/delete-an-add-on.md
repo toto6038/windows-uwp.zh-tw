@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 刪除, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 837cbc19268a88be986068f4a5e60002a1eb55e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5540dfbdc185eae405b2cdde7f18faee0efd0cac
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657613"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334616"
 ---
 # <a name="delete-an-add-on"></a>刪除附加元件
 
 若要刪除應用程式已向您的合作夥伴中心帳戶的附加元件 （也稱為應用程式內產品或 IAP），在 Microsoft Store 提交 API 中使用這個方法。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -30,7 +30,7 @@ ms.locfileid: "57657613"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` |
+| DELETE    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -56,7 +56,7 @@ ms.locfileid: "57657613"
 
 下列範例示範如何刪除附加元件。
 
-```
+```json
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP HTTP/1.1
 Authorization: Bearer <your access token>
 ```

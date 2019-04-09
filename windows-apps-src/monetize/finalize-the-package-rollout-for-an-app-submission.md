@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 應用程式提交, 完成
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
-ms.openlocfilehash: c8fe211268190ac269018a6bd47acb4b824d2075
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7271d5892c4abbe94945a34787fbbf6b020149da
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607883"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334556"
 ---
 # <a name="finalize-the-rollout-for-an-app-submission"></a>完成應用程式提交的推出
 
@@ -33,7 +33,7 @@ ms.locfileid: "57607883"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout``` |
+| POST   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -59,7 +59,7 @@ ms.locfileid: "57607883"
 
 下列範例示範如何完成套件正式發行前小眾測試版提交的套件推出。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243680/finalizepackagerollout HTTP/1.1
 Authorization: Bearer <your access token>
 ```

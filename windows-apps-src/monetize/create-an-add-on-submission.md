@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cbb093576badf5cd84b132cfb139db9da7d31991
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661703"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334926"
 ---
 # <a name="create-an-add-on-submission"></a>建立附加元件提交
-
 
 若要建立新的附加元件 （也稱為應用程式內產品或 IAP） 提交至您的合作夥伴中心帳戶已註冊的應用程式，在 Microsoft Store 提交 API 中使用這個方法。 使用這個方法成功建立新提交之後，請[更新提交](update-an-add-on-submission.md)對提交的資料進行任何必要的變更，然後[認可提交](commit-an-add-on-submission.md)供擷取和發佈。
 
@@ -23,7 +22,7 @@ ms.locfileid: "57661703"
 > [!NOTE]
 > 這個方法會為現有的附加元件建立提交。 若要建立附加元件，請使用[建立附加元件](create-an-add-on.md)方法。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -37,8 +36,7 @@ ms.locfileid: "57661703"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions``` |
-
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions` |
 
 ### <a name="request-header"></a>要求的標頭
 
@@ -46,13 +44,11 @@ ms.locfileid: "57661703"
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
-
 ### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | inAppProductId | 字串 | 必要。 您想要建立提交之附加元件的市集識別碼。 存放區的識別碼在合作夥伴中心，而且它包含在要求的回應資料[建立附加元件](create-an-add-on.md)或是[取得附加元件詳細資料](get-all-add-ons.md)。  |
-
 
 ### <a name="request-body"></a>要求本文
 
@@ -62,7 +58,7 @@ ms.locfileid: "57661703"
 
 下列範例示範如何為附加元件建立新的提交。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -152,7 +148,6 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 無法建立提交，因為要求無效。 |
 | 409  | 無法建立提交作業，因為應用程式中的目前狀態，或應用程式使用的合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
-
 
 ## <a name="related-topics"></a>相關主題
 

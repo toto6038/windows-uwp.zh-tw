@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 應用程式提交, 停止
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 ms.localizationpriority: medium
-ms.openlocfilehash: 08450b7aa9608e610a31d114059dd49e3ef3e10c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5262089a2eab57ff84f399637fd98e58ec3e13ed
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637323"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334666"
 ---
 # <a name="halt-the-rollout-for-an-app-submission"></a>中斷 App 提交的推出
 
@@ -22,7 +22,7 @@ ms.locfileid: "57637323"
 > 如果您停止 App 提交的推出，然後[建立新的 App 提交](create-an-app-submission.md)，新提交是暫止提交的複本。
 
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -37,7 +37,7 @@ ms.locfileid: "57637323"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/haltpackagerollout``` |
+| POST   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/haltpackagerollout` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -63,7 +63,7 @@ ms.locfileid: "57637323"
 
 下列範例示範如何停止 App 提交的套件推出。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243680/haltpackagerollout HTTP/1.1
 Authorization: Bearer <your access token>
 ```

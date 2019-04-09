@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f144ef398fc55e79d2f0190c61214cdf1aa93b68
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f503910a46254f4e885dd2ded1d43b975d78f84e
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607653"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244310"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>視訊擷取的手動相機控制項
 
@@ -55,7 +55,7 @@ HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置�
 
 下列範例使用簡單的 UI 來提供選項按鈕，讓使用者在去雜訊模式之間切換。
 
-[!code-cs[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
+[!code-xml[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
 
 在下列方法中，會檢查 [**VideoTemporalDenoisingControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) 屬性，以查看目前的裝置是否支援時態性去雜訊。 如果支援，接著檢查以確定支援的是 **Off** 和 **Auto** 或 **On**，以便顯示相應的選項按鈕。 接著，如果支援 **Auto** 和 **On** 方法則顯示這些按鈕。
 
@@ -87,8 +87,8 @@ HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置�
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [處理媒體與 MediaFrameReader 的畫面格](process-media-frames-with-mediaframereader.md)
+* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 

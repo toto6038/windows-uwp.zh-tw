@@ -6,15 +6,14 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e5ba10b8f0480f4d996840df26817e324111d8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c2f2638e93ecbe346cc5dccb503d94d926ddcdae
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613113"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335146"
 ---
 # <a name="create-and-manage-submissions"></a>建立及管理提交
-
 
 使用*Microsoft Store 提交 API*來以程式設計方式查詢及建立應用程式、 附加元件和套件的航班，您或您組織的合作夥伴中心帳戶。 如果您的帳戶管理多個應用程式或附加元件，而且您想要自動化與最佳化這些資產的提交程序，這個 API 非常有用。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
 
@@ -82,7 +81,7 @@ ms.locfileid: "57613113"
 
 若要取得存取權杖，請按照[使用用戶端認證的服務對服務呼叫](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)中的指示，將 HTTP POST 傳送至 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 端點。 以下是範例要求。
 
-```
+```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
@@ -108,7 +107,7 @@ grant_type=client_credentials
 > [!NOTE]
 > 取得存取權杖之後，在權杖到期之前，您有 60 分鐘的時間可以呼叫 Microsoft Store 提交 API 中的方法。
 
-| 案例       | 描述                                                                 |
+| 狀況       | 描述                                                                 |
 |---------------|----------------------------------------------------------------------|
 | 應用程式 |  擷取資料，都會向您的合作夥伴中心帳戶並建立應用程式的所有應用程式。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[取得應用程式資料](get-app-data.md)</li><li>[管理應用程式提交](manage-app-submissions.md)</li></ul> |
 | 附加元件 | 取得、建立或刪除您 App 的附加元件，然後取得、建立或刪除附加元件的提交。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[管理附加元件](manage-add-ons.md)</li><li>[管理附加元件提交](manage-add-on-submissions.md)</li></ul> |

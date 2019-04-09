@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 57f8d7d57c016c015d01e80b07fc0e2c0260ef7f
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592023"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320611"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產
 您的應用程式可以載入包含針對[顯示縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、佈景主題、高對比及其他執行階段內容量身打造的影像資源檔案 (或其他資產檔案)。 可以從命令式程式碼或 XAML 標記中參考這些影像，例如 **Image** 的 **Source** 屬性。 也可以出現在應用程式套件資訊清單來源檔案 (`Package.appxmanifest` 檔案) 中 &mdash; 例如，在 Visual Studio 資訊清單設計工具的 \[視覺資產\] 索引標籤上做為 \[App 圖示\] 的值 &mdash; 或顯示在您的磚和快顯通知上。 您可以在影像檔案名稱中使用限定詞，並借助 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 選擇性動態載入這些檔案，以便載入最符合使用者顯示縮放比例、佈景主題、高對比、語言及其他內容之執行階段設定的最適當影像檔案。
@@ -23,21 +23,27 @@ ms.locfileid: "57592023"
 ## <a name="qualify-an-image-resource-for-scale-theme-and-contrast"></a>針對縮放比例、佈景主題和對比限定影像資源
 `scale` 限定詞的預設值為 `scale-100`。 因此，這兩個變化對等 (皆提供縮放 100 或縮放比例 1 的影像)。
 
-```
+<blockquote>
+<pre>
 \Assets\Images\logo.png
 \Assets\Images\logo.scale-100.png
-```
+</pre>
+</blockquote>
+
 
 您可以在資料夾名稱 (而不是檔案名稱) 中使用限定詞。 如果每個限定詞各有數個資產檔案，這會是較好的策略。 為了便於說明，這兩個變化相當於上述兩個。
 
-```
+<blockquote>
+<pre>
 \Assets\Images\logo.png
 \Assets\Images\scale-100\logo.png
-```
+</pre>
+</blockquote>
 
 接下來是有關如何針對顯示縮放比例、佈景主題及高對比的不同設定提供影像資源 &mdash; 名為 `/Assets/Images/logo.png`&mdash; 變化的範例。 此範例使用資料夾命名格式。
 
-```
+<blockquote>
+<pre>
 \Assets\Images\contrast-standard\theme-dark
     \scale-100\logo.png
     \scale-200\logo.png
@@ -47,7 +53,8 @@ ms.locfileid: "57592023"
 \Assets\Images\contrast-high
     \scale-100\logo.png
     \scale-200\logo.png
-```
+</pre>
+</blockquote>
 
 ## <a name="reference-an-image-or-other-asset-from-xaml-markup-and-code"></a>從 XAML 標記和程式碼參考影像或其他資產
 影像資源的名稱&mdash;或識別碼&mdash;即是移除所有限定詞之後的路徑及檔案名稱。 如果依照上一節任何範例的方式來命名資料夾和/或檔案，您會有單一影像資源，而其名稱 (與絕對路徑相同) 為 `/Assets/Images/logo.png`。 以下說明如何在 XAML 標記中使用該名稱。
@@ -83,7 +90,8 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 
 注意這些範例中的 URI 配置 ("`ms-appx`" 或 "`ms-appx-web`") 如何在後面加上 "`://`"，再後接絕對路徑。 在絕對路徑中，前置 `/` 會導致路徑從套件的根目錄開始進行解譯。
 
-**注意**：`ms-resource` (代表[字串資源](localize-strings-ui-manifest.md)) 和 `ms-appx(-web)` (代表影像及其他資產) URI 配置會執行自動限定詞比對來尋找最適合目前內容的資源。 `ms-appdata` URI 配置 (用來載入應用程式資料) 不會執行任何這樣的自動比對，但您可以回應 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 的內容，並使用 URI 中的完整實體檔案名稱從應用程式資料明確載入適當的資產。 如需有關應用程式資料的詳細資訊，請參閱[儲存和擷取設定及其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)。 Web URI 配置 (例如，`http`、`https` 和 `ftp`) 也不會執行自動比對。 如需有關這種情況下該執行哪些動作的詳細資訊，請參閱[在雲端裝載和載入影像](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud)。
+> [!NOTE]
+> `ms-resource` (如[字串資源](localize-strings-ui-manifest.md)) 和`ms-appx(-web)`（適用於映像和其他資產） 的 URI 結構描述會執行自動辨識符號的比對來尋找最適合目前內容的資源。 `ms-appdata` URI 配置 (用來載入應用程式資料) 不會執行任何這樣的自動比對，但您可以回應 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 的內容，並使用 URI 中的完整實體檔案名稱從應用程式資料明確載入適當的資產。 如需有關應用程式資料的詳細資訊，請參閱[儲存和擷取設定及其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)。 Web URI 配置 (例如，`http`、`https` 和 `ftp`) 也不會執行自動比對。 如需有關這種情況下該執行哪些動作的詳細資訊，請參閱[在雲端裝載和載入影像](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud)。
 
 如果影像檔案仍位於其原本在專案結構中的位置，絕對路徑會是不錯的選擇。 如果您希望可以移動影像檔案，但很在意要保留相對於其參考 XAML 標記檔案中的相同位置時，您可能需要使用相對於包含所在標記檔案的路徑，而不使用絕對路徑。 如果這樣做，您就不需要使用 URI 配置。 在這種情況下，您仍可從自動限定詞比對受益，但只是因為您是在 XAML 標記中使用相對路徑。
 
@@ -96,23 +104,29 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ## <a name="qualify-an-image-resource-for-targetsize"></a>針對 targetsize 限定影像資源
 您可以對相同影像資源的不同變化使用 `scale` 和 `targetsize` 限定詞，但無法對單一變化的資源同時使用這兩個限定詞。 此外，您至少還需要定義一個不含 `TargetSize` 限定詞的變化。 該變化必須定義 `scale` 的值，不然就讓它預設為 `scale-100`。 因此，`/Assets/Square44x44Logo.png` 資源的這兩個變化是有效的資源。
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.scale-200.png
 \Assets\Square44x44Logo.targetsize-24.png
-```
+</pre>
+</blockquote>
 
 下列兩個變化都有效。 
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.png // defaults to scale-100
 \Assets\Square44x44Logo.targetsize-24.png
-```
+</pre>
+</blockquote>
 
 但這個變化就無效。
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.scale-200_targetsize-24.png
-```
+</pre>
+</blockquote>
 
 ## <a name="refer-to-an-image-file-from-your-app-package-manifest"></a>從應用程式套件資訊清單參考影像檔案
 如果依照上一節兩個範例之一的方式來命名資料夾和/或檔案，您會有單一應用程式圖示影像資源，而其名稱 (與相對路徑相同) 為 `Assets\Square44x44Logo.png`。 在應用程式套件資訊清單中，只需依據名稱參考資源即可。 並不需要使用任何 URI 配置。
@@ -190,7 +204,7 @@ private void RefreshUIImages()
 ```
 
 ## <a name="important-apis"></a>重要 API
-* [Resourcecontext)&lt;2}](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
+* [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 * [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 

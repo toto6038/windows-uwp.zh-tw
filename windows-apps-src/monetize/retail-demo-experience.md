@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, 零售示範應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: b66435dd7c94762874461b48e19e9a60224f287b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 39b1323f048c1b420a2cf0b239cd9f1a9fb63ff7
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596753"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334876"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>將零售示範 (RDX) 功能加入至您的應用程式
 
@@ -158,7 +158,7 @@ console.log(pro.retailInfo.properties[pro.KnownRetailInfoProperties.price);
 
 #### <a name="idl"></a>IDL
 
-```
+```cpp
 //  Copyright (c) Microsoft Corporation. All rights reserved.
 //
 //  WindowsRuntimeAPISet
@@ -237,7 +237,7 @@ namespace Windows.System.Profile
 * 非結構化和結構化漫遊狀態都會被刪除
 * 結構化本機狀態會被刪除
 
-步驟 2：設定
+步驟 2：安裝程式
 * 適用於離線的裝置：資料夾維持空白
 * 適用於線上的裝置：零售示範資產可以推送至裝置，從 Microsoft Store
 

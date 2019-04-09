@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 刪除, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: cdcd74b86ce846f19f8a4eb912781762adb66a2d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4a694846c745fbfbc175781dd76cc983e402b676
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655773"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334916"
 ---
 # <a name="delete-an-add-on-submission"></a>刪除附加元件提交
 
@@ -30,7 +30,7 @@ ms.locfileid: "57655773"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}``` |
+| DELETE    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -57,7 +57,7 @@ ms.locfileid: "57655773"
 
 下列範例示範如何刪除附加元件提交。
 
-```
+```json
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621230023 HTTP/1.1
 Authorization: Bearer <your access token>
 ```

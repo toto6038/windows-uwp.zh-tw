@@ -2,16 +2,16 @@
 Description: 您可以選取螢幕擷取畫面、標誌及其他美工圖案資產 (例如預告片和促銷影像) 加入您應用程式的市集清單中。
 title: 應用程式螢幕擷取畫面、影像及預告片
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a27763d76d2be65c7e0d2c6ccaeb0cd13123bdae
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610183"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244304"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 
@@ -128,7 +128,7 @@ ms.locfileid: "57610183"
 
 另外也須遵循下列需求。
 
-**若要新增您的清單結尾：**
+**若要新增預告片至清單：**
 1. 在指定的方塊中上傳預告片 [**視訊檔案**]。 下拉式方塊也會顯示，方便您重複使用已上傳的預告片 (可能是其他語言的Microsoft Store清單)。
 2. 上傳預告片之後，您將需要上傳與它搭配的 [**縮圖影像**]。 這必須是 1920 x 1080 像素的 .png 檔案，通常是取自預告片的靜態影像。
 3. 按一下鉛筆圖示新增預告片的 [**標題**] (255 個字元以內)。
@@ -144,7 +144,7 @@ ms.locfileid: "57610183"
 
 提供預告片時，務必遵循下列需求：
 
-- 視訊格式必須是 MOV 或 MP4。 
+- 視訊格式必須是 MOV 或 MP4。 如果您要上傳 4k 視訊，則支援只 MP4。
 - 視訊長度不應超過 60 秒。
 - 預告片的檔案大小不應超過 2 GB。 
 - 視訊解析度必須是 1920 x 1080 像素或 3840 x 2160 像素。
@@ -158,61 +158,19 @@ ms.locfileid: "57610183"
 
 #### <a name="mov"></a>MOV
 
-<table>
-<tr>
-<td>
+| 視訊 | 音訊 | 
+| --- | --- | 
+| <ul><li>1080p ProRes (HQ，適用的話)</li><li>原生畫面播放速率；慣用 29.97 FPS</li></ul> | <ul><li>須為立體聲</li><li>建議音訊等級：-16 LKFS/LUFS</li></ul> |
 
-**影片：**
-
-<ul>
-<li>1080p ProRes (HQ，適用的話)</li>
-<li>原生畫面播放速率；慣用 29.97 FPS</li>
-</ul>
-</td>
-<td>
-
-**音訊：**
-
-<ul>
-<li>須為立體聲</li>
-<li>建議音訊等級：-16 LKFS/LUFS</li>
-</ul> 
-</td>
-</tr>
-</table>
 
 #### <a name="mp4"></a>MP4
 
-<table>
-<tr>
-<td>
+| 視訊 | 音訊 |
+| --- | --- |
+| <ul><li>轉碼器：[H.264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>漸進式掃描 (無交錯)</li><li>高調明確</li><li>2 個連續 B 畫面格</li><li>封閉式 GOP。 一半畫面播放速率的 GOP</li><li>CABAC</li><li>每秒 50 MB </li><li>色彩空間：4.2.0</li></ul> | <ul><li>轉碼器：AAC-LC</li><li>通道：立體聲或環繞音效</li><li>取樣速率：48 KHz</li><li>音訊位元速率：384 KB/秒的立體聲、 512 KB/s 的環繞音效</li></ul> |
 
-**影片：**
-
-<ul>
-<li>轉碼器：H.264</li>
-<li>漸進式掃描 (無交錯)</li>
-<li>高調明確</li>
-<li>2 個連續 B 畫面格</li>
-<li>封閉式 GOP。 一半畫面播放速率的 GOP</li>
-<li>CABAC</li>
-<li>每秒 50 MB </li>
-<li>色彩空間：4.2.0</li>
-</ul>
-</td>
-<td>
-
-**音訊：**
-
-<ul>
-<li>轉碼器：AAC-LC</li>
-<li>通道：立體聲或環繞音效</li>
-<li>取樣速率：48 kHz</li>
-<li>音訊位元速率：384 KB/秒的立體聲、 512 KB/s 的環繞音效</li>
-</ul>
-</td>
-</tr>
-</table>
+> [!WARNING]
+> 客戶可能不會聽到 AVC1 以外的轉碼器編碼的 MP4 檔案的音訊。
 
 如為 H.264 夾層檔案，我們的建議如下：
 - 容器：MP4

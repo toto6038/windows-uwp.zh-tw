@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610023"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244384"
 ---
 # <a name="typography"></a>印刷樣式
 
@@ -72,7 +72,7 @@ UWP app 的字型大小會在所有裝置上自動縮放。 此縮放演算法�
 
 UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者輕鬆閱讀內容。 所有大小都是有效像素，會針對在所有裝置上執行的 UWP app 而最佳化。
 
-![字體坡形](images/type/type-ramp.svg)
+![字體坡形](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>使用字體坡形
 
@@ -110,7 +110,7 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
     :::column-end:::
 :::row-end:::
 
-## <a name="alignment"></a>對齊方式
+## <a name="alignment"></a>對齊
 
 預設 [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) 是 Left，而在大部分情況下，靠左和不齊右方法可提供一致的內容錨定與統一的配置。 對於 RTL 語言，請參閱[調整配置和字型以支援全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
 
@@ -170,7 +170,7 @@ Segoe UI 是我們的英文、歐洲語言、希臘文、希伯來文、亞美�
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">Styles</th>
+<th align="left">樣式</th>
 <th align="left">附註</th>
 </tr>
 </thead>
@@ -243,7 +243,7 @@ Sans-serif 字型是標題和 UI 元素的絕佳選擇。
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">Styles</th>
+<th align="left">樣式</th>
 <th align="left">附註</th>
 </tr>
 </thead>
@@ -272,7 +272,7 @@ Sans-serif 字型是標題和 UI 元素的絕佳選擇。
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">標準、半細體、細體、粗體、半粗體</td>
-<td align="left">在格律上與 Segoe UI 相容的開放原始碼字型，用於其他不想要與 Segoe UI 搭配之平台上的 App。 <a href="https://github.com/Microsoft/Selawik">在 GitHub 上取得 Selawik。</a></td>
+<td align="left">在格律上與 Segoe UI 相容的開放原始碼字型，用於其他不想要與 Segoe UI 搭配之平台上的 App。 <a href="https://github.com/Microsoft/Selawik">從 GitHub 取得 Selawik。</a></td>
 </tr>
 
 </tbody>
@@ -286,7 +286,7 @@ Serif 字型適合呈現大量的文字。
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">Styles</th>
+<th align="left">樣式</th>
 <th align="left">附註</th>
 </tr>
 </thead>
@@ -322,7 +322,7 @@ Serif 字型適合呈現大量的文字。
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">Styles</th>
+<th align="left">樣式</th>
 <th align="left">附註</th>
 </tr>
 </thead>

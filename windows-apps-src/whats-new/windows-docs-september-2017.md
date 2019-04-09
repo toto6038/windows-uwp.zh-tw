@@ -5,12 +5,12 @@ keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10, 1709
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a296cc877279292f73b591a86ede9136b0d9758
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0ae5001e907d7d38cbf05fd6863b192337fe365f
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645193"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162884"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>2017 年 9 月 Windows 開發人員文件的最新動向
 
@@ -24,7 +24,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="xbox-live-creators-program"></a>Xbox Live 創作者計畫
 
-Xbox Live 創作者計畫現在已上線，可讓您輕鬆地建立並發行能在 Windows 10 電腦和 Xbox One 主機上執行的 UWP 遊戲。 如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)。
+Xbox Live 創作者計畫現在已上線，可讓您輕鬆地建立並發行能在 Windows 10 電腦和 Xbox One 主機上執行的 UWP 遊戲。 如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)。
 
 ## <a name="developer-guidance"></a>開發人員指引
 

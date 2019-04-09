@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, uwp,app 內購買, IAPs, 收據, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6cae88e57a61e6d4e982f1eac7e65582861ef5d2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605723"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335006"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收據來驗證產品購買
 
@@ -92,7 +92,7 @@ App 收據看起來如下。
 以下是該驗證程序的範例。 這個程式碼會在包含 **System.Security** 組件之參考的 .NET Framework 主控台應用程式中執行。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
+[!code-csharp[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
 <span id="receipt-descriptions" />
 
@@ -104,7 +104,7 @@ App 收據看起來如下。
 
 此檔案的根元素是 **Receipt** 元素，其中包含 App 與 App 內購買的相關資訊。 此元素包含下列子項元素。
 
-|  元素  |  必要  |  數量  |  描述   |
+|  元素  |  必要項  |  數量  |  描述   |
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含目前 App 的購買資訊。            |
 |  [ProductReceipt](#productreceipt)  |     否       |  0 或以上    |   包含目前 App 之 App 內購買的相關資訊。     |
@@ -129,7 +129,7 @@ App 收據看起來如下。
 
 |  屬性  |  描述   |
 |-------------|-------------------|
-|  **識別碼**  |    識別購買。           |
+|  **Id**  |    識別購買。           |
 |  **AppId**  |     作業系統用於 App 的「套件系列名稱」值。           |
 |  **LicenseType**  |    如果使用者已購買完整版的 App，為 **Full**。 如果使用者下載試用版的 App，為 **Trial**。           |  
 |  **PurchaseDate**  |    取得 App 的日期。          |  |
@@ -144,7 +144,7 @@ App 收據看起來如下。
 
 |  屬性  |  描述   |
 |-------------|-------------------|
-|  **識別碼**  |    識別購買。           |
+|  **Id**  |    識別購買。           |
 |  **AppId**  |     識別使用者透過哪個 App 進行購買。           |
 |  **ProductId**  |     識別購買的產品。           |
 |  **ProductType**  |    決定產品類型。 目前僅支援 **Durable** 值。          |  

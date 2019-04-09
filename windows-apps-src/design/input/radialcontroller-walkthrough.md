@@ -3,15 +3,15 @@ ms.assetid: ''
 title: 在您的 UWP app 中支援 Surface Dial (及其他轉盤裝置)
 description: 新增 Surface Dial (及其他轉盤裝置) 的支援至您的 UWP app 的逐步教學課程。
 keywords: dial, 轉盤, 弧形, 教學
-ms.date: 01/25/2018
+ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d8729826c2f372b3d3b5607ce828aaf515e47f3d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1c8042bbe3ad8a37802b592e4e638a7c42e79a6d
+ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643983"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58221464"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>教學課程：在您的 UWP app 中支援 Surface Dial (及其他轉盤裝置)
 
@@ -42,7 +42,7 @@ Dial 支援三個基本手勢︰
 
 * 執行 Windows 10 Creators Update 或更新版本的電腦 (或虛擬機器)
 * [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 轉盤裝置 (這次僅限 [Surface Dial](https://aka.ms/purchasesurfacedial))
 * 如果您是使用 Visual Studio 開發通用 Windows 平台 (UWP) app 的新手，請在您開始本教學課程之前參閱這些主題︰  
     * [開始設定](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
@@ -609,6 +609,38 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
 
     <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe>  
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 恭喜，您已完成*開始使用教學課程：在 UWP 應用程式中支援 Surface Dial （和其他滾輪裝置）*！ 我們向您展示在您的 UWP app 中支援轉盤裝置所需的基本程式碼，以及如何提供一些 **RadialController** API 所支援更豐富的使用者體驗。
+
+## <a name="related-articles"></a>相關文章
+
+[介面的撥號互動](windows-wheel-interactions.md)
+
+### <a name="api-reference"></a>API 參考資料
+
+- [**RadialController** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
+- [**RadialControllerButtonClickedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**RadialControllerConfiguration** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 
+- [**RadialControllerControlAcquiredEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**RadialControllerMenu**類別](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenu) 
+- [**RadialControllerMenuItem**類別](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 
+- [**RadialControllerRotationChangedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**RadialControllerScreenContact** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact) 
+- [**RadialControllerScreenContactContinuedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**RadialControllerScreenContactStartedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**RadialControllerMenuKnownIcon**列舉](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuKnownIcon) 
+- [**RadialControllerSystemMenuItemKind** enum](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+
+### <a name="samples"></a>範例
+
+#### <a name="topic-samples"></a>主題範例
+
+[RadialController 自訂](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
+
+#### <a name="other-samples"></a>其他範例
+[著色書範例](https://github.com/Microsoft/Windows-appsample-coloringbook)
+
+[通用 Windows 平台的範例 (C#和C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+
+[Windows 傳統桌面範例](https://aka.ms/radialcontrollerclassicsample)

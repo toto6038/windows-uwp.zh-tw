@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dba9095326c01029e14742c98c1c368b896dfb8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 463eb17d341ccad494058861b2e6d1cfd276005e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660213"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334676"
 ---
 # <a name="create-and-run-your-first-experiment"></a>建立和執行您的第一個實驗
 
@@ -52,7 +52,7 @@ ms.locfileid: "57660213"
 6. 將 [按鈕]  從 [工具箱] 拖曳至頁面。
 7. 按兩下位於設計工具的按鈕，以開啟程式碼檔案並為**點選**事件新增事件處理常式。  
 8. 使用下列程式碼取代整個程式碼檔案內容。 指派```projectId```變數設為[專案識別碼](run-app-experiments-with-a-b-testing.md#terms)您從上一節中的合作夥伴中心取得的值。
-    [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
+    [!code-csharp[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 9. 儲存程式碼檔案，並建置專案。
 

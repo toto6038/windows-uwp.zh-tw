@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 94d50554baf412c7329521df68eb19f58340387f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c899334b43353fbc69c3080cfd329df0ef9e0797
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658653"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913968"
 ---
 # <a name="calendar-date-picker"></a>行事曆日期選擇器
 
@@ -91,7 +91,7 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 您可以處理 [DateChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) 事件，以便在 Date 值變更時收到通知。
 
 > [!NOTE]
-如需日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> 如需日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
 ### <a name="setting-a-header-and-placeholder-text"></a>設定標頭與預留位置文字
 

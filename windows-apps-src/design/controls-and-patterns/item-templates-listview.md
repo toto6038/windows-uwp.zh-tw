@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 397c1d3a1502eaa352bf66b1bbf24e3fa39beff2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0a772c0ec6aad2c0d6a099b54eb4c6faa413cc7b
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593053"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913938"
 ---
 # <a name="item-templates-for-list-view"></a>清單檢視的項目範本
 
@@ -19,12 +19,12 @@ ms.locfileid: "57593053"
 為了示範資料繫結，這些範本繫結**ListViewItems**範例記錄類別，從[資料繫結概觀](../../data-binding/data-binding-quickstart.md)。
 
 > [!NOTE] 
-目前，當 **DataTemplate** 包含多個控制 (例如不只一個 **TextBlock**)，螢幕助讀程式的預設可存取名稱來自項目的 .ToString()。 為了方便起見，您可以改為在 **DataTemplate** 的根元素上設定 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 如需協助工具的詳細資訊，請參閱[協助工具概觀](../accessibility/accessibility-overview.md)。
+> 目前，當 **DataTemplate** 包含多個控制 (例如不只一個 **TextBlock**)，螢幕助讀程式的預設可存取名稱來自項目的 .ToString()。 為了方便起見，您可以改為在 **DataTemplate** 的根元素上設定 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 如需協助工具的詳細資訊，請參閱[協助工具概觀](../accessibility/accessibility-overview.md)。
 
 ## <a name="single-line-list-item"></a>單行清單項目
 使用此範本可用影像和單行文字來顯示項目清單。
 
-![單一行的清單項目範例](images/listitems/singlelineexample.png)
+![單行清單項目範例](images/listitems/singlelineexample.png)
 ![單行清單項目](images/listitems/singlelineicon.png)
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -42,8 +42,8 @@ ms.locfileid: "57593053"
 ## <a name="double-line-list-item"></a>雙行清單項目 
 使用此範本可用影像和兩行文字來顯示項目清單。
 
-![雙線清單項目圖示的範例](images/listitems/doublelineexample.png) 
-![雙線清單項目圖示](images/listitems/doublelineicon.png)
+![雙行清單項目與圖示範例](images/listitems/doublelineexample.png) 
+![雙行清單項目與圖示](images/listitems/doublelineicon.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -68,8 +68,8 @@ ms.locfileid: "57593053"
 ## <a name="triple-line-list-item"></a>三行清單項目
 使用此範本可用影像和三行文字來顯示項目清單。
 
-![三條線的清單項目範例](images/listitems/triplelineexample.png)
-![三條線清單項目](images/listitems/tripleline.png)
+![三行清單項目範例](images/listitems/triplelineexample.png)
+![三行清單項目](images/listitems/tripleline.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -131,6 +131,6 @@ ms.locfileid: "57593053"
 ## <a name="related-articles"></a>相關文章
 - [ListView 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
 - [資料繫結概觀](../../data-binding/data-binding-quickstart.md)
-- [Accessibililty 概觀](../accessibility/accessibility-overview.md)
+- [協助工具概觀](../accessibility/accessibility-overview.md)
 - [ListView 和 GridView 範例 (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [縮圖影像](../../files/thumbnails.md)

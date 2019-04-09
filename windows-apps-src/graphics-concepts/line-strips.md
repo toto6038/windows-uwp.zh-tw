@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 869f0ac2b255c0dee231828f6d9064a917668821
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d17a79c14e981ab0c2c0414074aff17c90a0b478
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646373"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291626"
 ---
 # <a name="line-strips"></a>帶狀線
-
 
 帶狀線是包含連接的帶狀線的基本類型。 您的應用程式可使用帶狀線建立未閉合之多邊形。 封閉的多邊形是用線段將其最後一個頂點連接到第一個頂點的多邊形。 如果您的應用程式讓多邊形以帶狀線為主，不保證頂點為共面。
 
@@ -28,7 +27,7 @@ ms.locfileid: "57646373"
 
 下列程式碼顯示如何建立這個帶狀線的頂點。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -47,7 +46,7 @@ CUSTOMVERTEX Vertices[] =
 
 下列程式碼範例顯示如何在 Direct3D 中呈現帶狀線。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.

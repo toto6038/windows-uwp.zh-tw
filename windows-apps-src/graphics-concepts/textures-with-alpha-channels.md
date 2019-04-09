@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1a75c854d413f4681960c890691d99dd2529cc97
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651473"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291686"
 ---
 # <a name="textures-with-alpha-channels"></a>使用 alpha 色板的紋理
-
 
 有兩種方式可以對呈現較複雜透明度的材質貼圖進行編碼。 在每個例子中，描述透明度的區塊都會優先於之前已描述完成的 64 位元區塊。 透明度通常不是透過每像素 4 個位元 (明確編碼) 的 4 x 4 點陣圖呈現，就是透過較少位元並且類比於色彩編碼的線性插補呈現。
 
@@ -25,8 +24,6 @@ ms.locfileid: "57651473"
 |--------------|-----------------------------------|
 | 3:0          | 透明度區塊                |
 | 7:4          | 之前已描述完成的 64 位元區塊 |
-
- 
 
 ## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>明確的紋理編碼
 
@@ -98,7 +95,7 @@ BC3 格式的透明度編碼以類似於色彩線性編碼的概念作為基礎�
 
 下列程式碼示範了這個演算法。
 
-```
+```cpp
 // 8-alpha or 6-alpha block?    
 if (alpha_0 > alpha_1) {    
     // 8-alpha block:  derive the other six alphas.    

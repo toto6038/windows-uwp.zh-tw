@@ -2,16 +2,16 @@
 Description: 如果您的應用程式會顯示使用 Microsoft Advertising SDK 的廣告，使用合作夥伴中心的應用程式內廣告 頁面來管理您的廣告。
 title: 應用程式內廣告
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.date: 10/31/2018
+ms.date: 03/25/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cfdc4bd81a96d3bbdb2dd369cbdd0444ca22ea4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4b8fc913818d5abe3317582cc18d5cb676a7a2fe
+ms.sourcegitcommit: 9f23bc9265c13f7ccedbc826261ceed2aff5ab83
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658023"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58417054"
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -117,7 +117,7 @@ ms.locfileid: "57658023"
 | Outbrain |  選取此選項可從 [Outbrain](https://www.outbrain.com/) 提供廣告。 |  橫幅、插播式橫幅  |
 | Revcontent |  選取此選項可從 [Revcontent](https://www.revcontent.com/) 提供廣告。 |  橫幅、原生  |
 | Smaato |  選取此選項可從 [Smaato](https://www.smaato.com/) 提供廣告。 |  橫幅  |
-| smartclip |  選取此選項可從 [smartclip](https://www.smartclip.com/) 提供廣告。 |  插播式影片  |
+| smartclip |  選取此選項可從 [smartclip](http://www.smartclip.com/) 提供廣告。 |  插播式影片  |
 | SpotX |  選取此選項可從 [SpotX](https://www.spotx.tv/) 提供廣告。 |  插播式影片  |
 | Taboola |  選取此選項可從 [Taboola](https://www.taboola.com/) 提供廣告。 |  橫幅  |
 | Undertone | 選取此選項可提供從廣告[Undertone](https://www.undertone.com/)。 | 插入的橫幅 |

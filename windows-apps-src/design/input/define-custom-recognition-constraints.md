@@ -8,35 +8,30 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a83cbc547ede1977f0222298bf451611905fad50
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631723"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343257"
 ---
 # <a name="define-custom-recognition-constraints"></a>定義自訂辨識限制式
 
-
-
 了解如何定義及使用自訂限制式來進行語音辨識。
 
-> **重要的 Api**:[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)， [ **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)， [ **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
-
+> **重要的 Api**:[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 語音辨識至少需要一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的通用 Windows app 聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
 
-
 ## <a name="add-constraints"></a>新增限制式
-
 
 使用 [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 屬性可以為語音辨識器新增限制式。
 
-這裡涵蓋了三種從 app 內部使用的語音辨識限制式。 (關於語音命令限制式，請參閱[利用 Cortana 語音命令啟動前景應用程式](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana))。
+這裡涵蓋了三種從 app 內部使用的語音辨識限制式。 (Cortana 語音命令的條件約束，請參閱[啟動前景應用程式，以在 Cortana 中的語音命令](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。)
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— 條件約束會根據預先定義的文法 （聽寫或 web 搜尋）。
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— 的單字或片語清單為基礎的條件約束。
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)— 語音辨識文法規格 (SRGS) 檔案中定義的條件約束。
+- [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— 條件約束會根據預先定義的文法 （聽寫或 web 搜尋）。
+- [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— 的單字或片語清單為基礎的條件約束。
+- [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)— 語音辨識文法規格 (SRGS) 檔案中定義的條件約束。
 
 每個語音辨識器可以有一個限制式集合。 只有下列限制式組合是有效的：
 
@@ -88,13 +83,12 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## <a name="specify-a-programmatic-list-constraint-speechrecognitionlistconstraint"></a>指定程式設計清單限制式 (SpeechRecognitionListConstraint)
 
-
 必須將清單限制式新增到語音辨識器的限制式集合。
 
 請記住下列重點：
 
--   您可以將多個清單限制式新增到限制式集合。
--   您可以將實作 **IIterable&lt;String&gt;** 的任何集合用於字串值。
+- 您可以將多個清單限制式新增到限制式集合。
+- 您可以將實作 **IIterable&lt;String&gt;** 的任何集合用於字串值。
 
 在這裡，我們將透過程式設計方式指定一個字詞陣列做為清單限制式，並將它新增到語音辨識器的限制式集合。
 
@@ -128,28 +122,27 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 
 ## <a name="specify-an-srgs-grammar-constraint-speechrecognitiongrammarfileconstraint"></a>指定 SRGS 文法限制式 (SpeechRecognitionGrammarFileConstraint)
 
-
 必須將 SRGS 文法檔新增到語音辨識器的限制式集合。
 
 SRGS 版本 1.0 是業界標準的標記語言，用於建立語音辨識適用的 XML 格式文法。 雖然通用 Windows 應用程式提供使用 SRGS 建立語音辨識文法的替代方案，但您會發現，使用 SRGS 建立文法可產生最佳結果，尤其是在更為複雜的語音辨識案例上。
 
 SRGS 文法提供完整的功能集，可幫助您為應用程式建構複雜的語音互動。 例如，您可以使用 SRGS 文法：
 
--   指定字詞和片語的說出順序，以進行識別。
--   合併要辨識的多個清單和片語中的字詞。
--   連結至其他文法。
--   指派替代字詞或片語的加權，以增加或減少其用於比對語音輸入的可能性。
--   包含選擇性字詞或片語。
--   使用特殊規則以協助篩選未指定或非預期的輸入，例如，不符合文法的隨機語音或背景噪音。
--   使用語意，定義語音識別對您應用程式的意義。
--   以內嵌於文法或透過語彙連結的方式指定發音。
+- 指定字詞和片語的說出順序，以進行識別。
+- 合併要辨識的多個清單和片語中的字詞。
+- 連結至其他文法。
+- 指派替代字詞或片語的加權，以增加或減少其用於比對語音輸入的可能性。
+- 包含選擇性字詞或片語。
+- 使用特殊規則以協助篩選未指定或非預期的輸入，例如，不符合文法的隨機語音或背景噪音。
+- 使用語意，定義語音識別對您應用程式的意義。
+- 以內嵌於文法或透過語彙連結的方式指定發音。
 
 如需 SRGS 元素與屬性的詳細資料，請參閱 [SRGS 文法 XML 參考](https://go.microsoft.com/fwlink/p/?LinkID=269886)。 如果要開始建立 SRGS 文法，請參閱[如何建立基本 XML 文法](https://go.microsoft.com/fwlink/p/?LinkID=269887)。
 
 請記住下列重點：
 
--   您可以將多個文法檔限制式新增到限制式集合。
--   針對符合 SRGS 規則的 XML 型文法文件，請使用 .grxml 副檔名。
+- 您可以將多個文法檔限制式新增到限制式集合。
+- 針對符合 SRGS 規則的 XML 型文法文件，請使用 .grxml 副檔名。
 
 這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中，**[封裝動作]** 是設定為 **[內容]**，而 **[複製到輸出目錄]** 是設定為 **[ 永遠複製 ]**：
 
@@ -219,7 +212,6 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 ## <a name="manage-constraints"></a>管理限制式
 
-
 載入限制集合以執行辨識後，透過將限制的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 屬性設為 **true** 或 **false**，您的 app 可以管理要啟用哪些限制以執行辨識操作。 預設設定是 **true**。
 
 與針對每項辨識操作載入、卸載及編譯限制式相比，先一次載入限制式，再視需要予以啟用及停用，通常是較有效率的方式。 請視需要使用 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 屬性。
@@ -232,15 +224,8 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
+- [語音互動](speech-interactions.md)
 
-* [語音互動](speech-interactions.md)
+### <a name="samples"></a>範例
 
-**範例**
-* [語音辨識和語音合成器範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
-
-
-
-
+- [語音辨識和語音合成器範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)

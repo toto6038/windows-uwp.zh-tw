@@ -5,16 +5,16 @@ ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 12/1/2017
+ms.date: 12/01/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594583"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913958"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP app 的內容設計基本知識
 
@@ -80,7 +80,7 @@ ms.locfileid: "57594583"
 <tr class="odd">
 <td align="left">音訊與視訊<br/><br/>
     <img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
-<td align="left"><a href="../controls-and-patterns/media-playback.md">媒體的播放，以及傳輸控制項</a></td>
+<td align="left"><a href="../controls-and-patterns/media-playback.md">媒體播放和傳輸控制項</a></td>
 <td align="left">播放音訊與視訊。</td>
 </tr>
 <tr class="even">
@@ -92,7 +92,7 @@ ms.locfileid: "57594583"
 <tr class="odd">
 <td align="left">集合 <br/><br/>
     <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">清單檢視和格線檢視</a></td>
+<td align="left"><a href="../controls-and-patterns/lists.md">清單檢視和方格檢視</a></td>
 <td align="left">在互動式清單或方格中呈現項目。 使用這些元素，可讓使用者從最新發行的清單中選取電影，或是管理詳細目錄。</td>
 </tr>
 <tr class="even">
@@ -112,7 +112,7 @@ ms.locfileid: "57594583"
 </tr>
 <tr class="even">
 <td align="left">WebView</td>
-<td align="left"><a href="../controls-and-patterns/web-view.md">Web 檢視</a></td>
+<td align="left"><a href="../controls-and-patterns/web-view.md">WebView</a></td>
 <td align="left">呈現 HTML 內容。</td>
 </tr>
 </tbody>

@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版, 套件正式發行前小眾測試版
 ms.localizationpriority: medium
-ms.openlocfilehash: c4ff6c929a7264b5dece0057701c8348fe5d39be
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e4f96d503d52abe71cff6fcdd1295c862e551e09
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646033"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334386"
 ---
 # <a name="get-a-package-flight"></a>取得套件正式發行前小眾測試版
 
@@ -30,7 +30,7 @@ ms.locfileid: "57646033"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -56,7 +56,7 @@ ms.locfileid: "57646033"
 
 下列範例示範如何針對市集識別碼值為 9WZDNCRD91MD 的 App 擷取識別碼為 43e448df-97c9-4a43-a0bc-2a445e736bcd 的套件正式發行前小眾測試版的相關資訊
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -105,7 +105,7 @@ Authorization: Bearer <your access token>
 | 值           | 類型    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | 字串  | 提交的識別碼。    |
-| resourceLocation   | 字串  | 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取提交完整資料的相對路徑。               |
+| resourceLocation   | 字串  | 您可以附加到基底 `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI 以抓取提交完整資料的相對路徑。               |
 
 
 ## <a name="error-codes"></a>錯誤碼

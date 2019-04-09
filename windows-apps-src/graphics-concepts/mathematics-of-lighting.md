@@ -7,22 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a65a3532fe401f31fbf0da656aff1a141fa71a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d21f60694c55edacc7a5723e7ed470c37af992ab
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636303"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618425"
 ---
 # <a name="mathematics-of-lighting"></a>光源的數學計算
-
 
 Direct3D 燈光模型涵蓋環境、擴散、反射及發光。 這個範圍足以因應大範圍的照明情況。 稱為*全球照明*的場景中的光線總量。
 
 全球照明的計算，如下所示︰
 
-```
-Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive Light 
+```cpp
+global_illumination = ambient_lighting + diffuse_lighting + specular_lighting + emissive_lighting;
 ```
 
 [環境光源](ambient-lighting.md)常亮。 環境光線於所有方向皆為定值，且為物件的所有像素以相同方式上色。 加以計算很快速，但是會讓物件看起來很平板且不真實。

@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: cc02cd5ae94b51b274c0e3ce1245020222e101f1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 01438f4f684720a2f8285471c626d7040724c79f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645913"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334416"
 ---
 # <a name="get-an-add-on"></a>取得附加元件
 
 在 Microsoft Store 提交 API 中使用這個方法，以擷取應用程式已向您的合作夥伴中心帳戶的附加元件 （也稱為應用程式內產品或 IAP） 的相關資訊。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -30,7 +30,7 @@ ms.locfileid: "57645913"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -56,7 +56,7 @@ ms.locfileid: "57645913"
 
 下列範例示範如何擷取附加元件的相關資訊。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP HTTP/1.1
 Authorization: Bearer <your access token>
 ```

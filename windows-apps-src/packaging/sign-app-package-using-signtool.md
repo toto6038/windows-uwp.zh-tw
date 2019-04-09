@@ -6,15 +6,14 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7748ff7d5acf8a94c92e2b51953299131910d63e
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594803"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320571"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 簽署應用程式套件
-
 
 **SignTool** 是使用憑證以數位方式簽署應用程式套件或套件組合的命令列工具。 憑證可以由使用者建立 (適用於測試目的) 或由公司發行 (適用於發佈)。 簽署應用程式套件，為使用者提供驗證：在簽署之後應用程式的資料尚未修改，同時也確認簽署使用者或公司的身分識別。 **SignTool** 可以簽署加密或未加密的應用程式套件和套件組合。
 
@@ -23,7 +22,7 @@ ms.locfileid: "57594803"
 
 如需有關程式碼簽署以及憑證的一般資訊，請參閱[程式碼簽署簡介](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 - **已封裝應用程式**  
     若要深入了解手動建立應用程式套件，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 
 
@@ -32,8 +31,8 @@ ms.locfileid: "57594803"
 
 - **SignTool.exe**  
     根據 SDK 的安裝路徑，這就是 **SignTool** 在您的 Windows 10 電腦上的位置：
-    - x86:C:\Program 檔案 (x86) \Windows Kits\10\bin\x86\SignTool.exe
-    - x64:C:\Program 檔案 (x86) \Windows Kits\10\bin\x64\SignTool.exe
+    - x86:C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
+    - x64:C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>使用 SignTool
 
@@ -43,7 +42,8 @@ ms.locfileid: "57594803"
 使用 **SignTool** 簽署應用程式套件或套件組合，用於 **SignTool** 的雜湊演算法必須是用來封裝應用程式的相同演算法。 例如，如果您使用 **MakeAppx.exe** 以預設設定來建立您的應用程式套件，使用 **SignTool** 時必須指定 SHA256，因為這是 **MakeAppx.exe** 所使用的預設演算法。
 
 若要了解封裝應用程式時使用哪種雜湊演算法，請解壓縮應用程式套件並檢查 AppxBlockMap.xml 檔案。 若要了解如何解開/解壓縮應用程式套件，請參閱[從套件或套件組合解壓縮檔案](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool#extract-files-from-a-package-or-bundle)。 雜湊方法在 BlockMap 元素中，而且採用此格式：
-```
+
+```xml
 <BlockMap xmlns="http://schemas.microsoft.com/appx/2010/blockmap" 
 HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 ```
@@ -65,34 +65,42 @@ HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 一旦您擁有所有必要條件並判斷使用何種雜湊演算法封裝您的應用程式，就已準備好簽署它。 
 
 **SignTool** 套件簽署的一般命令列語法是：
-```
+
+```syntax
 SignTool sign [options] <filename(s)>
 ```
 
 用來簽署您應用程式的憑證必須是 .pfx 檔案，或是安裝在憑證存放區中。
 
 若要使用 .pfx 檔案中的憑證簽署您的應用程式套件，使用下列語法：
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.msix
 ```
+
 請注意，`/a` 選項可讓 **SignTool** 自動選擇最佳的憑證。
 
 如果您的憑證不是 .pfx 檔案，請使用下列語法：
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.msix
 ```
 
 或者，您可以指定所要憑證的 SHA1 雜湊，而不是 &lt;Name of Certificate&gt;，請使用這個語法：
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ```
 
@@ -103,7 +111,7 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ## <a name="common-errors-and-troubleshooting"></a>常見的錯誤以及疑難排解
 使用 **SignTool** 最常見的錯誤類型是內部錯誤，通常看起來像這樣：
 
-```
+```syntax
 SignTool Error: An unexpected internal error has occurred.
 Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B) 
 ```
@@ -111,7 +119,8 @@ Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B)
 如果錯誤碼開頭是 0x8008，例如 0x80080206 (APPX_E_CORRUPT_CONTENT)，簽署的套件無效。 如果您收到此類型的錯誤，必須重新建立套件，並再次執行 **SignTool**。
 
 **SignTool** 有偵錯選項，可顯示憑證錯誤及篩選。 若要使用偵錯功能，請將 `/debug` 選項直接放在 `sign` 之後，後面接著完整 **SignTool** 命令。
-```
+
+```syntax
 SignTool sign /debug [options]
 ``` 
 

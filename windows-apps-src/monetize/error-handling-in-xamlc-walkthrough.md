@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 錯誤處理, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: fe01a01dc97b67c339d015a260288176a5ba57da
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c0b8389d2319a670dd314417726b24e98378cd49
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642143"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334466"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# 錯誤處理的逐步解說
 
@@ -68,8 +68,8 @@ ms.locfileid: "57642143"
     }
     ```
 
-4.  建置和執行專案。 執行 app 之後，您將會看到下面與 Visual Studio 之 **Output** 視窗中的訊息類似的訊息。
-    ```
+4.  建置並執行專案。 執行 app 之後，您將會看到下面與 Visual Studio 之 **Output** 視窗中的訊息類似的訊息。
+    ```json
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```
 

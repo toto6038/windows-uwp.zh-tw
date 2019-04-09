@@ -6,16 +6,16 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fce4ed3f32c0207e55b37a765b4d48d234343e38
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: f1f147d98b8d88e912cc9fec40d5e29c34748167
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625033"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291896"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>逐步解說：在 C++/CX 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C\# 呼叫該元件
 > [!NOTE]
-> 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 若要了解如何建立 Windows 執行階段元件使用 C + + /cli WinRT，請參閱[撰寫事件在 C + + /cli WinRT](../cpp-and-winrt-apis/author-events.md)。
+> 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 若要了解如何建立 Windows 執行階段元件，使用C++/WinRT，請參閱[撰寫在事件C++/WinRT](../cpp-and-winrt-apis/author-events.md)。
 
 本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。 開始本逐步解說之前，請確定您了解一些概念，例如：抽象二進位介面 (ABI)、ref 類別，以及讓 ref 類別更容易使用的 Visual C++ 元件擴充功能。 如需詳細資訊，請參閱[在 C++ 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md)和 [Visual C++ 語言參考 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)。
 
@@ -24,7 +24,7 @@ ms.locfileid: "57625033"
 
 請注意，元件的主要類別包含屬性和方法定義的範例，以及事件宣告。 提供這些項目只是為了示範它的進行方式。 這些並不是必要項目，而且在此範例中，我們會以自己的程式碼來取代所有產生的程式碼。
 
-### <a name="to-create-the-c-component-project"></a>**若要建立 c + + 元件專案**
+### <a name="to-create-the-c-component-project"></a>**若要建立C++元件專案**
 1. 在 Visual Studio 功能表列上，依序選擇 [檔案]、[新增] 及 [專案]。
 
 2. 在 [**新增專案**] 對話方塊的左窗格中，展開 [**Visual C++**]，然後選取通用 Windows app 的節點。
@@ -421,7 +421,7 @@ function ButtonClear_Click() {
 }
 ```
 
-新增程式碼來加入事件接聽程式，方法是利用下列在 then 區塊中實作事件註冊的程式碼，來取代 default.js 中對於 app.onactivated 之 WinJS.UI.processAll 的現有呼叫。 如需此動作的詳細說明，請參閱＜建立 "Hello World" app (JS)＞。
+新增程式碼來加入事件接聽程式，方法是利用下列在 then 區塊中實作事件註冊的程式碼，來取代 default.js 中對於 app.onactivated 之 WinJS.UI.processAll 的現有呼叫。 如需這個詳細說明，請參閱[建立"Hello，World"應用程式 (JS)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp)。
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -610,4 +610,4 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 如果從方案中移除 C++ Windows 執行階段元件專案，也必須手動從 JavaScript 專案中移除該專案的參考。 若未執行此動作，後續的偵錯或建置作業將無法執行。 之後如有必要，您可以加入 DLL 的組件參考。
 
 ## <a name="related-topics"></a>相關主題
-* [建立 Windows 執行階段元件，在 C + + /CX](creating-windows-runtime-components-in-cpp.md)
+* [建立 Windows 執行階段元件中的C++/CX](creating-windows-runtime-components-in-cpp.md)

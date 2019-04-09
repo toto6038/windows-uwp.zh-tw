@@ -5,36 +5,36 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd051ffe3af9e18370666f5c6c772b7f188e54a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 70aedf4034ce433b0aa529375799cf45a18ca3e0
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635573"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291886"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
-您很可能會有關於撰寫和使用 Windows 執行階段 Api 的問題的答案[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
+您很可能會有關於撰寫和使用 Windows 執行階段 Api 的問題的答案[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
 > [!NOTE]
 > 如果您的問題是關於您已經看過的錯誤訊息，則也會看到[疑難排解 C++/WinRT](troubleshooting.md)主題。
 
-## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>我該如何重定我的 C + + /cli 至較新版的 Windows sdk 的 WinRT 專案？
-請參閱[如何將目標重定您 C + + /cli 至較新版的 Windows sdk 的 WinRT 專案](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。
+## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何重定我C++至較新版的 Windows sdk 的 /WinRT 專案？
+請參閱[如何將目標重定您C++/WinRT 專案至較新版的 Windows sdk](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>為什麼我的新專案將無法編譯？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 版本 17134
-如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，與目標 Windows SDK 版本 10.0.17134.0 (Windows 10 1803年版)，然後新建立 C + + /cli WinRT 專案可能無法編譯錯誤 」*錯誤 c3861:: 'from_abi':找不到識別項*"，且其他錯誤源自*base.h*。 解決方法是其中一個目標更新版本 （更一致） 版本的 Windows SDK 或將專案屬性**C/c + +** > **語言** > **一致性模式：否**(此外，如果 **/permissive--** 會顯示在專案屬性**C/c + +** > **命令列**下**其他選項**，再將它刪除)。
+如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，與目標 Windows SDK 版本 10.0.17134.0 (Windows 10 1803年版)，然後在新建立C++/WinRT 專案可能無法編譯錯誤 」*錯誤 c3861:: 'from_abi':找不到識別項*"，且其他錯誤源自*base.h*。 解決方法是其中一個目標更新版本 （更一致） 版本的 Windows SDK 或將專案屬性**C /C++** > **語言** >  **一致性模式：否**(此外，如果 **/permissive--** 會顯示在專案屬性**C /C++** > **命令列**下**其他選項**，再將它刪除)。
 
-## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>如何解決建置錯誤 「 C + + /cli WinRT VSIX 不再提供專案的建置支援。  請新增 Microsoft.Windows.CppWinRT Nuget 套件的專案參考 」？
+## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>如何解決建置錯誤 」 C++WinRT VSIX 不再提供專案的建置支援。  請新增 Microsoft.Windows.CppWinRT Nuget 套件的專案參考 」？
 安裝**Microsoft.Windows.CppWinRT** NuGet 套件納入您的專案。 如需詳細資訊，請參閱 < [VSIX 擴充功能的舊版](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
-## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>需要何種才能 C + + /cli WinRT Visual Studio 擴充功能 (VSIX)？
+## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>需求為何C++WinRT Visual Studio 擴充功能 (VSIX)？
 如需版本 1.0.190128.4 的 VSIX 擴充功能和更新版本，請參閱[Visual Studio 支援 C + /cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。 針對其他版本，請參閱[VSIX 擴充功能的舊版](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
 ## <a name="whats-a-runtime-class"></a>什麼是*執行階段類別*？
 執行階段類別是可透過現代化 COM 介面啟動與使用的類型，一般經過可執行的界限。 不過，執行階段類別也可在實作它的編譯單位中使用。 您可以在介面定義語言 (IDL) 中宣告執行階段類別，並可以在使用 C++/WinRT 的標準 C++ 中實作它。
 
 ## <a name="what-do-the-projected-type-and-the-implementation-type-mean"></a>*投影類型*和*實作類型*的意思是什麼？
-如果您只是*使用*一個 Windows 執行階段類別 (執行階段類別)，則您可以專用*投影類型*來處理。 C++/WinRT 是一個*語言投影*，因此投影類型是 Windows 執行階段介面一部分，其使用 C++/WinRT *投影*到 C++ 裡。 如需詳細資訊，請參閱 <<c0> [ 取用的 Api，使用 C + + /cli WinRT](consume-apis.md)。
+如果您只是*使用*一個 Windows 執行階段類別 (執行階段類別)，則您可以專用*投影類型*來處理。 C++/WinRT 是一個*語言投影*，因此投影類型是 Windows 執行階段介面一部分，其使用 C++/WinRT *投影*到 C++ 裡。 如需詳細資訊，請參閱 <<c0> [ 取用的 Api，使用C++/WinRT](consume-apis.md)。</c0>
 
 *實作類型*包含執行階段類別的實作，因此它僅在實作執行階段類別的專案中可用。 當您在實作執行階段類別的專案中執行時 (Windows 執行階段元件專案，或使用 XAML UI 的專案)，請務必將熟悉適用於執行階段類別的實作類型間的區別，且代表執行階段類別的投影類型投影至 C++/WinRT。 如需詳細資訊，請參閱 [使用 C++/WinRT 撰寫 API](author-apis.md)。
 
@@ -63,7 +63,7 @@ ms.locfileid: "57635573"
 
 移至 [LLVM 下載頁面](https://releases.llvm.org/download.html)，尋找**下載 LLVM 6.0.0** > **預先建置的二進位檔**，然後下載 **Clang for Windows (64 位元)**。 在安裝期間，選擇新增 LLVM 到 PATH 系統變數，讓您可以從命令提示字元叫用它。 基於此實驗的目的，您可以略過 (如果您看到) 任何「找不到 MSBuild 工具組目錄」和/或「MSVC 整合安裝失敗」錯誤。 有各種不同的方式可叫用 LLVM/Clang;，以下範例顯示的只是一種方式。
 
-```
+```cmd
 C:\ExperimentWithLLVMClang>type main.cpp
 // main.cpp
 #pragma comment(lib, "windowsapp")
@@ -119,9 +119,9 @@ int main()
 }
 ```
 
-呼叫**ToString**上述**移至宣告**Visual Studio 中的命令顯示 Windows 執行階段的投影**IStringable::ToString**於 C + + /cliWinRT 看起來像這樣。
+呼叫**ToString**上述**移至宣告**Visual Studio 中的命令顯示 Windows 執行階段的投影**IStringable::ToString** C++/WinRT 看起來像這樣。
 
-```
+```cppwinrt
 winrt::hstring ToString() const;
 ```
 
@@ -129,7 +129,7 @@ winrt::hstring ToString() const;
 
 了解，這些範例中的`const`是實作詳細資料，C + /cli WinRT 投影和實作，它們是由組成您的權益的程式碼防護。 沒有這類的`const`COM 或 Windows 執行階段的 ABI (成員函式）。
 
-## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>您是否有任何建議用於減少程式碼大小的 C + + /cli WinRT 二進位檔？
+## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>您是否有任何建議用於減少的程式碼大小C++/WinRT 二進位檔？
 使用 Windows 執行階段物件，您應該避免因為它可以在您的應用程式上有負面影響，造成超過所產生的多個二進位程式碼，如下所示的程式碼撰寫模式。
 
 ```cppwinrt
@@ -147,10 +147,10 @@ a.e();
 a.f();
 ```
 
-建議的模式，如上所示適用於不只是 C + + /cli WinRT 但所有的 Windows 執行階段語言投影。
+建議的模式，如上所示適用於不只是C++/WinRT 但所有的 Windows 執行階段語言投影。
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>如何為類型開啟字串&mdash;巡覽，例如？
-在結尾[瀏覽檢視程式碼範例](/windows/uwp/design/controls-and-patterns/navigationview#code-example)(大部分是在C#)，沒有 C + + /cli WinRT 程式碼片段顯示如何執行這項操作。
+在結尾[瀏覽檢視程式碼範例](/windows/uwp/design/controls-and-patterns/navigationview#code-example)(大部分是在C#)，有C++/WinRT 程式碼片段顯示如何執行這項操作。
 
 > [!NOTE]
-> 如果本主題不到解答您的問題，則您可能會發現說明，請造訪[Visual Studio c + + 開發人員社群](https://developercommunity.visualstudio.com/spaces/62/index.html)，或使用[ `c++-winrt` Stack Overflow 上標記](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)。
+> 如果本主題不到解答您的問題，則您可能會發現說明，請造訪[Visual StudioC++開發人員社群](https://developercommunity.visualstudio.com/spaces/62/index.html)，或使用[`c++-winrt`在 Stack Overflow 上標記](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)。

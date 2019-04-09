@@ -1,23 +1,23 @@
 ---
 description: 本主題示範如何註冊和撤銷使用 C++/WinRT 的事件處理委派。
 title: 藉由在 C++/WinRT 使用委派來處理事件
-ms.date: 05/07/2018
+ms.date: 03/04/2019
 ms.topic: article
 keywords: Windows 10、uwp、一般、c++、cpp、winrt、投影、投射、控點、事件、委派
 ms.localizationpriority: medium
-ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c647168f44ffbfc4d753700a87825b5ca7b28544
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602423"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921674"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 
-本主題說明如何註冊及撤銷使用的事件處理委派[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 您可以使用任何標準 C++ 類函式的物件處理事件。
+本主題說明如何註冊及撤銷使用的事件處理委派[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 您可以使用任何標準 C++ 類函式的物件處理事件。
 
 > [!NOTE]
-> 如需安裝和使用 C + 資訊 + WinRT Visual Studio 擴充功能 (VSIX) (以提供專案範本支援，以及 C + + /cli WinRT MSBuild 屬性和目標) 請參閱[Visual Studio 支援 C + /cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如需安裝和使用的資訊C++WinRT Visual Studio 擴充功能 (VSIX) 和 NuGet 套件 （其同時提供專案範本，並建置支援），請參閱[Visual Studio 支援C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>註冊委派，處理事件
 
@@ -51,7 +51,7 @@ MainPage::MainPage()
 > [!IMPORTANT]
 > 當註冊委派，上述程式碼範例會將傳遞原始*這*指標 （指向目前物件而定）。 若要了解如何建立強式或目前物件的弱式參考，請參閱**如果您使用的成員函式為委派**一節中的子區段[安全地存取*這*指標與事件處理委派](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
-有其他方式可建構 **RoutedEventHandler**。 以下是從文件主題取得的語法區塊適用於 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (從頁面中 **語言** 下拉式清單選擇 *C++/WinRT*)。 請注意的各種建構函式：一種是 lambda；另一種是可用函式；以及另一種是 (上述中我們使用的) 物件和指標成員函式。
+有其他方式可建構 **RoutedEventHandler**。 以下是取自的文件主題的語法區塊[ **RoutedEventHandler** ](/uwp/api/windows.ui.xaml.routedeventhandler) (選擇 *C++/WinRT*從**語言**網頁的右上角的下拉式清單)。 請注意的各種建構函式：一種是 lambda；另一種是可用函式；以及另一種是 (上述中我們使用的) 物件和指標成員函式。
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -67,7 +67,25 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 
 函式呼叫運算子的語法對查看也很有幫助。 它會告訴您所需的委派參數。 如您所見，在此案例中函式呼叫運算子語法與我們的**MainPage::ClickHandler**參數相符合。
 
-如果您不在事件處理中執行多項工作，則您可以使用 lambda 函式而非成員函式。 再次提醒您，從上述程式碼範例所示中它可能不明顯，但 **RoutedEventHandler** 委派會從 lambda 函式建構，再次提醒，必須符合函式呼叫運算子的語法。
+> [!NOTE]
+> 對於任何給定的事件，若要找出其委派，而該委派參數的詳細資料，前往第一個事件本身的文件主題。 讓我們來看[UIElement.KeyDown 事件](/uwp/api/windows.ui.xaml.uielement.keydown)做為範例。 請瀏覽該主題，然後選擇 *C++/WinRT*從**語言**下拉式清單。 在本主題開頭的語法區塊，您會看到這個。
+> 
+> ```cppwinrt
+> // Register
+> event_token KeyDown(KeyEventHandler const& handler) const;
+> ```
+>
+> 資訊會告訴我們所**UIElement.KeyDown** （我們在主題） 的事件有委派類型的**KeyEventHandler**，因為這是您向此事件類型的委派時所傳遞的類型。 因此，現在請依照下列連結主題所[KeyEventHandler 委派](/uwp/api/windows.ui.xaml.input.keyeventhandler)型別。 在這裡，語法區塊包含函式呼叫運算子。 而且，如先前所述，告訴您委派的參數必須為。
+> 
+> ```cppwinrt
+> void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+> ```
+>
+>  如您所見，委派必須宣告為會採用**IInspectable**寄件者，以及執行個體[KeyRoutedEventArgs 類別](/uwp/api/windows.ui.xaml.input.keyroutedeventargs)作為引數。
+>
+> 若要另一個範例，請讓我們看看[Popup.Closed 事件](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed)。 其委派類型是[事件處理常式\<IInspectable\>](/uwp/api/windows.foundation.eventhandler)。 因此，您的委派會花**IInspectable**做為傳送者，而另一個**IInspectable** (因為這**事件處理常式**的型別參數) 做為引數。
+
+如果您不在事件處理中執行多項工作，則您可以使用 lambda 函式而非成員函式。 同樣地，它可能無法從程式碼範例所示，但**RoutedEventHandler**正在從 lambda 的函式，同樣地，必須符合我們上面所討論的函式呼叫運算子的語法建構委派。
 
 ```cppwinrt
 MainPage::MainPage()
@@ -122,7 +140,7 @@ private:
 };
 ```
 
-而不是強式參考，如上述範例所示，您可以儲存按鈕的弱式參考 (請參閱[強式和弱式參考，在 C + + /cli WinRT](weak-references.md))。
+而不是強式參考，如上述範例所示，您可以儲存按鈕的弱式參考 (請參閱[中的強式和弱式參考C++/WinRT](weak-references.md))。
 
 或者，當您註冊委派時，您可以指定**winrt::auto_revoke** (這是值型別的[ **winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) 要求 （的事件 revoker型別[ **winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker))。 事件 revoker 保有您事件來源 （引發事件的物件） 的弱式參考。 您可以藉由呼叫 **event_revoker::revoke** 成員函式手動撤銷；但是事件撤銷會在其超出範圍時自動呼叫該函式本身。 **revoke** 函式會檢查事件來源是否仍然存在，如果是，撤銷您的委派。 在此範例中，不需要儲存事件來源，並且也不需要解構函式。
 
@@ -230,14 +248,14 @@ winrt::hstring f(ListView listview)
 
 ## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全地存取*這*與事件處理委派的指標
 
-如果您處理的事件，該物件的成員函式，或從出現在 lambda 函式內物件的成員函式，然後您必須考慮事件收件者 （處理事件的物件） 和事件來源 （該物件的相對存留期引發事件）。 如需詳細資訊，以及程式碼範例，請參閱[強式和弱式參考，在 C + + /cli WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
+如果您處理的事件，該物件的成員函式，或從出現在 lambda 函式內物件的成員函式，然後您必須考慮事件收件者 （處理事件的物件） 和事件來源 （該物件的相對存留期引發事件）。 如需詳細資訊，以及程式碼範例，請參閱[中的強式和弱式參考C++/WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要 API
 * [winrt::auto_revoke_t 標記結構](/uwp/cpp-ref-for-winrt/auto-revoke-t)
-* [winrt::implements::get_weak 函式](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
-* [winrt::implements::get_strong 函式](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
+* [winrt::implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
+* [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## <a name="related-topics"></a>相關主題
-* [撰寫事件在 C + + /cli WinRT](author-events.md)
-* [並行和非同步作業以 C + + /cli WinRT](concurrency.md)
-* [C++/WinRT 中的強式和弱式參考](weak-references.md)
+* [在 C++/WinRT 中撰寫事件](author-events.md)
+* [透過 C++/WinRT 的並行和非同步作業](concurrency.md)
+* [中的強式和弱式參考C++/WinRT](weak-references.md)

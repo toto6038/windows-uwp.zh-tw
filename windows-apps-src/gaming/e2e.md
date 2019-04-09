@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ca3ed91d7250425b9a77fb09820a53952c8f3cfc
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57652323"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162733"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 遊戲開發指南
 
@@ -86,7 +86,7 @@ ms.locfileid: "57652323"
     </tr>
     <tr>
         <td>Xbox Live 文件</td>
-        <td><a href="../xbox-live/index.md">Xbox Live 開發人員指南</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/">Xbox Live 開發人員指南</a></td>
     </tr>
     <tr>
         <td>Xbox One 開發文件 (XGD)</td>
@@ -182,11 +182,11 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Direct3D 12 圖形範例</td>
-        <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX 圖形範例</a></td>
+        <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX-Graphics-Samples</a></td>
     </tr>
     <tr>
         <td>Direct3D 11 圖形範例</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx sdk 範例</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
     </tr>
     <tr>
         <td>Direct3D 11 第一人稱遊戲範例</td>
@@ -206,11 +206,11 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Xbox Advanced Technology Group 公開範例</td>
-        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox ATG 範例</a></td>
+        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox-ATG-Samples</a></td>
     </tr>
     <tr>
         <td>Xbox Live 範例</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox live 範例</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
     </tr>
     <tr>
         <td>Xbox One 遊戲範例 (XGD)</td>
@@ -322,7 +322,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Visual C++ 工具小組部落格</td>
-        <td><a href="https://blogs.msdn.com/b/vcblog/">Visual c + + 小組部落格</a></td>
+        <td><a href="https://blogs.msdn.com/b/vcblog/">視覺化C++小組部落格</a></td>
     </tr>
     <tr>
         <td>PIX 小組部落格</td>
@@ -517,11 +517,11 @@ C++/CX 是一種高效能、低額外負荷的語言，可提供結合速度、�
     </colgroup>
     <tr>
         <td>C++/CX 參考與概觀</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/hh699871.aspx">Visual c + + 語言參考 (C + + /CX)</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/hh699871.aspx">視覺化C++語言參考 (C++/CX)</a></td>
     </tr>
     <tr>
         <td>Visual C++ 程式設計指南與參考</td>
-        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual Studio 2017 中 visual c + +</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">視覺化C++在 Visual Studio 2017</a></td>
     </tr>
 </table>
  
@@ -645,7 +645,7 @@ PlayFab 現在是 Microsoft 家庭成員，它是直播遊戲的完整後端平�
         <td><a href="https://playfab.com/">工具和服務的概觀</a></td>
     </tr>
     <tr>
-        <td>開始使用</td>
+        <td>使用者入門</td>
         <td><a href="https://api.playfab.com/docs/general-getting-started">一般使用者入門指南</a></td>
     </tr>
     <tr>
@@ -910,7 +910,7 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL、WebVR
     </tr>
     <tr>
         <td>使用 ANGLE 將 OpenGL ES 轉譯成 Direct3D 11</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">角度</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
     </tr>
     <tr>
         <td>UWP 中的傳統型 Windows API 對應項</td>
@@ -1018,7 +1018,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     </colgroup>
     <tr>
         <td>使用現有的 C++ 程式碼開發 UWP 遊戲</td>
-        <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">如何：在 UWP 應用程式中使用現有的 c + + 程式碼</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">如何：使用現有的C++中的 UWP 應用程式的程式碼</a></td>
     </tr>
     <tr>
         <td>Win32 UWP API 與 COM API</td>
@@ -1098,7 +1098,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     </colgroup>
     <tr>
         <td>色彩指南</td>
-        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">最佳做法：色彩</a></td>
+        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">最佳做法：Color</a></td>
     </tr>
 </table>
  
@@ -1130,7 +1130,7 @@ UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 U
     </colgroup>
     <tr>
         <td>UI 對應指南</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">最佳做法：UI 對應</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">最佳做法：UI Map</a></td>
     </tr>
 </table>
 
@@ -1742,7 +1742,7 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
 Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 開發人員可存取能夠增加他們遊戲的對象的 Xbox Live 功能，包括 Xbox Live 目前狀態、排行榜、雲端儲存、遊戲中心、俱樂部、派對交談、遊戲 DVR 等。
 
 > [!Note]
-> 如果您想要開發 Xbox Live 支援的遊戲，則有數個選項可供您使用。 如需各種計畫的相關資訊，請參閱[開發人員計畫概觀](../xbox-live/developer-program-overview.md)。
+> 如果您想要開發 Xbox Live 支援的遊戲，則有數個選項可供您使用。 如需各種計畫的相關資訊，請參閱[開發人員計畫概觀](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview)。
 
 <table>
     <colgroup>
@@ -1751,19 +1751,19 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
     </colgroup>
     <tr>
         <td>Xbox Live 概觀</td>
-        <td><a href="../xbox-live/index.md">Xbox Live 開發人員指南</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/index.md">Xbox Live 開發人員指南</a></td>
     </tr>
     <tr>
         <td>了解視計畫可使用哪些功能</td>
-        <td><a href="../xbox-live/developer-program-overview.md#feature-table">開發人員計劃概觀：功能資料表</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">開發人員計劃概觀：功能資料表</a></td>
     </tr>
     <tr>
         <td>開發 Xbox Live 遊戲的實用資源的連結</td>
-        <td><a href="../xbox-live/xbox-live-resources.md">Xbox Live 的資源</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/xbox-live-resources.md">Xbox Live 的資源</a></td>
     </tr>
     <tr>
         <td>了解如何從 Xbox Live 服務取得資訊</td>
-        <td><a href="../xbox-live/introduction-to-xbox-live-apis.md">Xbox Live Api 簡介</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/introduction-to-xbox-live-apis.md">Xbox Live Api 簡介</a></td>
     </tr>
 </table>
 
@@ -1776,24 +1776,24 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>概觀</td>
-        <td><a href="../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">開始使用 Xbox Live 創作者計劃。</a></td>
+        <td>總覽</td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">開始使用 Xbox Live 創作者計劃。</a></td>
     </tr>
     <tr>
         <td>將 Xbox Live 新增到您的遊戲</td>
-        <td><a href="../xbox-live/get-started-with-creators/creators-step-by-step-guide.md">逐步解說將 Xbox Live 創作者計劃指南</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-step-by-step-guide.md">逐步解說將 Xbox Live 創作者計劃指南</a></td>
     </tr>
     <tr>
         <td>將 Xbox Live 新增至您使用 Unity 建立的 UWP 遊戲</td>
-        <td><a href="../xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">開始使用 Unity 遊戲引擎開發 Xbox Live 創作者計劃標題</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">開始使用 Unity 遊戲引擎開發 Xbox Live 創作者計劃標題</a></td>
     </tr>
     <tr>
         <td>設定開發沙箱</td>
-        <td><a href="../xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Xbox Live 沙箱簡介</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Xbox Live 沙箱簡介</a></td>
     </tr>
     <tr>
         <td>設定帳戶供測試用</td>
-        <td><a href="../xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">授權在您的測試環境中的 Xbox Live 帳戶</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">授權在您的測試環境中的 Xbox Live 帳戶</a></td>
     </tr>
     <tr>
         <td>Xbox Live 創作者計畫的範例</td>
@@ -1813,20 +1813,20 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>概觀</td>
-        <td><a href="../xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">為受管理的夥伴或識別碼開發人員開始使用 Xbox Live</a></td>
+        <td>總覽</td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">為受管理的夥伴或識別碼開發人員開始使用 Xbox Live</a></td>
     </tr>
     <tr>
         <td>將 Xbox Live 新增到您的遊戲</td>
-        <td><a href="../xbox-live/get-started-with-partner/partners-step-by-step-guide.md">逐步解說指南將 Xbox Live 的受管理的合作夥伴和 ID 成員</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partners-step-by-step-guide.md">逐步解說指南將 Xbox Live 的受管理的合作夥伴和 ID 成員</a></td>
     </tr>
     <tr>
         <td>將 Xbox Live 新增至您使用 Unity 建立的 UWP 遊戲</td>
-        <td><a href="../xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">加入 Xbox Live 支援 Unity 適用於 UWP IL2CPP 指令碼的後端識別碼和受管理的合作夥伴</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">加入 Xbox Live 支援 Unity 適用於 UWP IL2CPP 指令碼的後端識別碼和受管理的合作夥伴</a></td>
     </tr>
     <tr>
         <td>設定開發沙箱</td>
-        <td><a href="../xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">進階的 Xbox Live 沙箱</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">進階的 Xbox Live 沙箱</a></td>
     </tr>
     <tr>
         <td>使用 Xbox Live 之遊戲的需求 (GDN)</td>

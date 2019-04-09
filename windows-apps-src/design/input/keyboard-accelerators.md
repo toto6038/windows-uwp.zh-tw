@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cc696746de837c4883ae4a9ee8ebcf42cb78b12
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590733"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822883"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -28,7 +28,7 @@ ms.locfileid: "57590733"
 > [!NOTE]
 > 鍵盤對身障使用者而言是不可或缺的工具 (請參閱[鍵盤協助工具](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility))，對於希望透過它而能更有效率地與應用程式互動的使用者而言，也是重要工具。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 快速鍵通常包括功能鍵 F1 到 F12，或是一些標準按鍵與一個或多個輔助按鍵 (CTRL、Shift) 配對的組合。
 
@@ -618,12 +618,9 @@ public class MyListView : ListView
 
 ## <a name="related-articles"></a>相關文章
 
-* [鍵盤互動](keyboard-interactions.md)
-* [存取金鑰](access-keys.md)
+- [鍵盤互動](keyboard-interactions.md)
+- [存取金鑰](access-keys.md)
 
-**範例**
-* [XAML 控制項陳列庫 (也稱為 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+### <a name="samples"></a>範例
 
-
- 
-
+- [XAML 控制項陳列庫](https://github.com/Microsoft/Xaml-Controls-Gallery)

@@ -1,23 +1,23 @@
 ---
 Description: 在合作夥伴中心 Xbox 分析報表會顯示解客戶如何與 Xbox 功能如何在您的產品中的統計資料。
 title: Xbox 分析報告
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計資料
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: fe44c4bc8a4e2843d0158bfce730f322a67cbfa7
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607443"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334845"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析報告
 
 **Xbox analytics**中的報表[合作夥伴中心](https://partner.microsoft.com/dashboard)顯示您有關您的客戶的吸引人的遊戲中的 Xbox 功能使用方式統計資料。 還會提供服務健康狀況資訊來協助您處理用戶端錯誤。
 
 > [!IMPORTANT]
-> 如果您要發佈適用於 Xbox 的遊戲或使用 Xbox Live 服務的遊戲，您就要查看這份報告。 若要這樣做，您必須瀏覽[概念核准程序](../gaming/concept-approval.md)，其中包含所發行的遊戲[Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)與遊戲，透過提交[ID@Xbox程式](../xbox-live/developer-program-overview.md#id). 透過發行遊戲[Xbox Live 創作者計劃](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)目前此報表中看不到。
+> 如果您要發佈適用於 Xbox 的遊戲或使用 Xbox Live 服務的遊戲，您就要查看這份報告。 若要這樣做，您必須瀏覽[概念核准程序](../gaming/concept-approval.md)，其中包含所發行的遊戲[Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#microsoft-partners)與遊戲，透過提交[ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#id). 透過發行遊戲[Xbox Live 創作者計劃](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)目前此報表中看不到。
 
 您可以檢視**Xbox analytics**從您的遊戲，方法是展開的左側的導覽功能表的報表**分析**，然後選取**Xbox analytics**。  您可以檢視這項資料在合作夥伴中心，或[將報表下載為](download-analytic-reports.md)要離線檢視。
 

@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 1e2c8b7d9fb7bdc61595296a137c4448cadf52d3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: f1cc576bbc7fe7fc326d86072e22b7a385cfeb8b
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629263"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913948"
 ---
 # <a name="item-templates-for-grid-view"></a>方格檢視的項目範本
 
@@ -19,7 +19,7 @@ ms.locfileid: "57629263"
 為了示範資料繫結，這些範本繫結**GridViewItems**範例記錄類別，從[資料繫結概觀](../../data-binding/data-binding-quickstart.md)。
 
 > [!NOTE] 
-目前，當 **DataTemplate** 包含多個控制 (例如不只一個 **TextBlock**)，螢幕助讀程式的預設可存取名稱來自項目的 .ToString()。 為了方便起見，您可以改為在 **DataTemplate** 的根元素上設定 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 如需協助工具的詳細資訊，請參閱[協助工具概觀](../accessibility/accessibility-overview.md)。
+> 目前，當 **DataTemplate** 包含多個控制 (例如不只一個 **TextBlock**)，螢幕助讀程式的預設可存取名稱來自項目的 .ToString()。 為了方便起見，您可以改為在 **DataTemplate** 的根元素上設定 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 如需協助工具的詳細資訊，請參閱[協助工具概觀](../accessibility/accessibility-overview.md)。
 
 ## <a name="icon-and-text"></a>圖示和文字
 使用這些範本可在方格中以圖示和文字顯示應用程式集合。
@@ -158,6 +158,6 @@ ms.locfileid: "57629263"
 ## <a name="related-articles"></a>相關文章
 - [GridView 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [資料繫結概觀](../../data-binding/data-binding-quickstart.md)
-- [Accessibililty 概觀](../accessibility/accessibility-overview.md)
+- [協助工具概觀](../accessibility/accessibility-overview.md)
 - [ListView 和 GridView 範例 (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [縮圖影像](../../files/thumbnails.md)

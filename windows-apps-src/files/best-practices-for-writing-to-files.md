@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e0fcb903bd272bd10d434a27d41e6e4558a624ea
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605833"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334896"
 ---
 # <a name="best-practices-for-writing-to-files"></a>寫入檔案的最佳做法
 
@@ -21,7 +21,9 @@ ms.locfileid: "57605833"
 
 開發人員使用時，有時候遇到的常見問題集**撰寫**種[ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)並[ **PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)類別來執行檔案系統 I/O 作業。 例如，常見的問題包括：
 
-• 檔案部分寫入 • 應用程式會呼叫其中一個方法時，會收到例外狀況。 • 作業拋諸腦後。使用類似於目標檔案名稱的檔案名稱的 TMP 檔案。
+* 部分寫入檔案。
+* 呼叫其中一個方法時，應用程式會收到例外狀況。
+* 作業會拋諸腦後。使用類似於目標檔案名稱的檔案名稱的 TMP 檔案。
 
 **撰寫**種[ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)並[ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio)類別包括下列：
 
@@ -35,7 +37,7 @@ ms.locfileid: "57605833"
 > [!NOTE]
 > 這篇文章著重**FileIO**範例和討論區中的方法。 不過， **PathIO**方法遵循類似的模式和大部分的這篇文章中的指導方針也適用於這些方法。 
 
-## <a name="conveience-vs-control"></a>與控制項 Conveience
+## <a name="convenience-vs-control"></a>為了方便起見，與控制
 
 A [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)物件不是像原生 Win32 程式設計模型的檔案控制代碼。 相反地， [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)是一種方法來管理其內容的檔案。
 
@@ -76,11 +78,11 @@ A [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storage
 |  錯誤名稱 （值）  |  步驟  |  原因  |  解決方案  |
 |----------------------|---------|----------|-------------|
 |  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  原始的檔案可能會標示為刪除，可能是從先前的作業。  |  重試作業。</br>請確定檔案的存取會同步處理。  |
-|  並傳回 ERROR_SHARING_VIOLATION (0X80070020)  |  5  |  原始檔案會開啟另一個的獨佔寫入。   |  重試作業。</br>請確定檔案的存取會同步處理。  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0X80070497)  |  19-20  |  不會取代原始的檔案 (file.txt)，因為它正在使用中。 另一個處理序或作業取得檔案的存取權，可以取代之前。  |  重試作業。</br>請確定檔案的存取會同步處理。  |
-|  ERROR_DISK_FULL (0X80070070)  |  7、 14、 16、 20  |  此交易的模型會建立一個額外的檔案，這會消耗額外的儲存體。  |    |
-|  ERROR_OUTOFMEMORY (0X8007000E)  |  14、 16  |  這可能是由於多個未處理 I/O 作業或大型檔案的大小。  |  更細微的方法，藉由控制資料流可能會解決此錯誤。  |
-|  E_FAIL (0X80004005) |  任何值  |  其他  |  重試作業。 如果仍然失敗，它可能是平台錯誤，而應用程式應終止，因為它處於不一致的狀態。 |
+|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  原始檔案會開啟另一個的獨佔寫入。   |  重試作業。</br>請確定檔案的存取會同步處理。  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  不會取代原始的檔案 (file.txt)，因為它正在使用中。 另一個處理序或作業取得檔案的存取權，可以取代之前。  |  重試作業。</br>請確定檔案的存取會同步處理。  |
+|  ERROR_DISK_FULL (0x80070070)  |  7, 14, 16, 20  |  此交易的模型會建立一個額外的檔案，這會消耗額外的儲存體。  |    |
+|  ERROR_OUTOFMEMORY (0X8007000E)  |  14, 16  |  這可能是由於多個未處理 I/O 作業或大型檔案的大小。  |  更細微的方法，藉由控制資料流可能會解決此錯誤。  |
+|  E_FAIL (0x80004005) |  任何值  |  其他  |  重試作業。 如果仍然失敗，它可能是平台錯誤，而應用程式應終止，因為它處於不一致的狀態。 |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>其他考量可能會導致錯誤的檔案狀態
 
@@ -192,6 +194,6 @@ else
 
 [平行程式設計.NET 部落格](https://blogs.msdn.microsoft.com/pfxteam/)是平行程式設計的相關指引的絕佳資源。 特別是，[發表 AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)描述如何維護的獨佔存取權的檔案進行寫入，同時允許並行的讀取權限。 請注意，序列化的 I/O 會影響效能。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [建立、寫入和讀取檔案](quickstart-reading-and-writing-files.md)

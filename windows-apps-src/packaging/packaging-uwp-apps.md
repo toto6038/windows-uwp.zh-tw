@@ -2,19 +2,19 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: 封裝 UWP 應用程式
 description: 若要發佈或銷售您的通用 Windows 平台 (UWP) 應用程式，您必須為其建立應用程式套件。
-ms.date: 01/02/2019
+ms.date: 03/18/2019
 ms.topic: article
 keywords: Windows 10, UWP
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: f2e89490a76c9174c1e938466bf1fbcc9cc13455
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d5ed75cb79488eb994135dcfef74483ec078a32e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599133"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58173024"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
@@ -149,12 +149,12 @@ UWP 應用程式封裝、 應用程式未安裝到裝置，因為它們是使用
 
 ### <a name="sideload-your-app-package-on-windows-10-anniversary-update-or-later"></a>側載您的應用程式封裝，在 Windows 10 年度更新版或更新版本
 
-Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件檔案即可安裝應用程式套件。 若要使用這種情況，請瀏覽至您的應用程式套件或應用程式套件組合的檔案，然後按兩下。 應用程式安裝程式會啟動並提供基本的應用程式資訊，以及安裝按鈕、安裝進度列和任何相關的錯誤訊息。
+在 Windows 10 年度更新版 （Windows 10、 1607年版） 引進，可以只要按兩下應用程式套件檔案安裝應用程式套件。 若要使用這種情況，請瀏覽至您的應用程式套件或應用程式套件組合的檔案，然後按兩下。 [應用程式安裝程式](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root)會啟動，並提供基本的應用程式資訊，以及安裝 按鈕、 安裝進度列，以及任何相關的錯誤訊息。
 
 ![應用程式安裝程式顯示安裝稱為 Contoso 的範例應用程式](images/appinstaller-screen.png)
 
 > [!NOTE]
-> 應用程式安裝程式假設應用程式已受到裝置的信任。 如果要側載開發人員或企業應用程式，您必須在裝置的受信任的人或受信任的發行者憑證授權單位存放區安裝簽署憑證。 如果您不確定如何執行此動作，請參閱[安裝測試憑證](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
+> 應用程式安裝程式會假設應用程式由裝置信任。 如果要側載開發人員或企業應用程式，您必須在裝置的受信任的人或受信任的發行者憑證授權單位存放區安裝簽署憑證。 如果您不確定如何執行此動作，請參閱[安裝測試憑證](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
 
 ### <a name="sideload-your-app-package-on-previous-versions-of-windows"></a>側載您的應用程式封裝在舊版 Windows
 

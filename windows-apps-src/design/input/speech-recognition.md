@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7eec51044a70b0738e246d3aa516c37643cf68
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a4eadb82de2035b931d75ff2eefa6f8bd6652c94
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608073"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343267"
 ---
 # <a name="speech-recognition"></a>語音辨識
 
@@ -275,9 +275,9 @@ catch (Exception exception)
 
 ### <a name="voice-command-constraints"></a>語音命令的條件約束
 
-使用語音命令定義 (VCD) XML 檔案，定義使用者在啟用您 app 時可以說出以起始動作的命令。 如需詳細資訊，請參閱[利用 Cortana 語音命令啟動前景 app](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana)。
+使用語音命令定義 (VCD) XML 檔案，定義使用者在啟用您 app 時可以說出以起始動作的命令。 如需詳細資訊，請參閱 <<c0> [ 啟用前景應用程式與 Cortana 透過語音命令](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。
 
-請參閱[ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
+See [**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
 
 **附註**  您所使用的條件約束類型的類型取決於您想要建立的辨識經驗的複雜性。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制類型在應用程式中的用途。
 若要開始使用條件約束，請參閱[定義自訂辨識條件約束](define-custom-recognition-constraints.md)。

@@ -2,16 +2,16 @@
 Description: 您可以提交 100 個以上的語言版本的 Microsoft Store 應用程式。
 title: 支援的語言
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.date: 02/20/2019
+ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 716a6e86e03feb6edcbc5cde5aa37d0282df6aca
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657753"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244284"
 ---
 # <a name="supported-languages"></a>支援的語言
 
@@ -35,7 +35,7 @@ ms.locfileid: "57657753"
 | 阿姆哈拉文               | am、am-et                                                                                                                                                                                             |
 | 亞美尼亞文              | hy、hy-am                                                                                                                                                                                             |
 | 阿薩姆文              | as、as-in                                                                                                                                                                                             |
-| 亞塞拜然文           | az、az-arab、az-arab-az、az-cyrl、az-cyrl-az、az-latn、az-latn-az                                                                                                                                     |
+| 亞塞拜然文           | az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
 | 巴斯克文 (巴斯克文)       | eu、eu-es                                                                                                                                                                                             |
 | 白俄羅斯文            | be、be-by                                                                                                                                                                                             |
 | 孟加拉文                | bn、bn-bd、bn-in                                                                                                                                                                                      |
@@ -43,7 +43,7 @@ ms.locfileid: "57657753"
 | 保加利亞文             | bg、bg-bg                                                                                                                                                                                             |
 | 卡達隆尼亞文               | ca、ca-es、ca-es-valencia                                                                                                                                                                             |
 | 卻洛奇文              | chr-cher、chr-cher-us、chr-latn                                                                                                                                                                       |
-| 中文 (簡體)  | -Zh-hans、 zh cn、 zh-hans-cn、 zh sg、 zh-hans-sg                                                                                                                                                     |
+| 中文 (簡體)  | zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
 | 中文 (繁體) | zh-Hant、zh-hk、zh-mo、zh-tw、zh-hant-hk、zh-hant-mo、zh-hant-tw                                                                                                                                      |
 | 克羅埃西亞文              | hr、hr-hr、hr-ba                                                                                                                                                                                      |
 | 捷克文                 | cs、cs-cz                                                                                                                                                                                             |

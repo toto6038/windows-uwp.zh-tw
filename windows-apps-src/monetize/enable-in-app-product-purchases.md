@@ -6,12 +6,12 @@ keywords: UWP, 附加元件, app 內購買, IAP, Windows.ApplicationModel.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a203ef79fc6ebb45107cd9ac9d79cadf330f7a5d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9be40d78e00e583988ba8c6b318e7a8941d7f971
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604363"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334976"
 ---
 # <a name="enable-in-app-product-purchases"></a>啟用應用程式內產品購買
 
@@ -23,7 +23,7 @@ ms.locfileid: "57604363"
 > [!NOTE]
 > 試用版的 App 無法提供應用程式內產品。 使用試用版 App 的客戶只有在購買 App 的完整版本後，才能購買應用程式內產品。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 -   要新增功能讓客戶購買的 Windows 應用程式。
 -   初次撰寫並測試新應用程式內產品的程式碼時，您必須使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您需要自訂檔案 %userprofile%中名為 WindowsStoreProxy.xml\\AppData\\本機\\封裝\\&lt;封裝名稱&gt;\\LocalState\\Microsoft\\Windows 市集\\ApiData。 Microsoft Visual Studio 模擬器會在您第一次執行您的 App 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱[使用 WindowsStoreProxy.xml 檔案搭配 CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
@@ -34,7 +34,7 @@ ms.locfileid: "57604363"
 在您的 App 進行初始化時，請透過初始化 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) 或 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 來為應用程式取得 [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) 物件，以啟用購買應用程式內產品的功能。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
+[!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
 
 ## <a name="step-2-add-the-in-app-offers-to-your-app"></a>步驟 2：將應用程式內的供應項目新增至您的應用程式
 
@@ -61,7 +61,7 @@ ms.locfileid: "57604363"
     下列範例示範如何在授權專屬的條件性區塊中，撰寫 **featureName** 產品功能的程式碼。 **featureName** 字串是可在 App 內唯一識別這個產品的權杖，同時也可用來在市集中識別此產品。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
+    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
 
 3.  **加入這項功能在購買 UI**
 
@@ -70,7 +70,7 @@ ms.locfileid: "57604363"
     以下是如何測試以查看客戶是否已經擁有應用程式內產品，如果沒有，就顯示購買對話方塊來讓客戶購買。 請以您為購買對話方塊自訂的程式碼取代 "show the purchase dialog" 註解 (例如提供一個含有親切提醒「購買此應用程式！」 按鈕的頁面)。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
+    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
 
 ## <a name="step-3-change-the-test-code-to-the-final-calls"></a>步驟 3：將測試程式碼變更為最終的呼叫
 

@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 74768202554a3eb49c0df8ee5f17a4fe5f979be8
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594003"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291806"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明，1 位元 alpha 的材質
-
 
 紋理格式 BC1 主要針對不透明或只有單一透明色彩的紋理。
 
@@ -29,7 +28,7 @@ ms.locfileid: "57594003"
 
 下列程式碼示範的演算法用於決定是否選取三或四個色彩編碼︰
 
-```
+```cpp
 if (color_0 > color_1) 
 {
     // Four-color block: derive the other two colors. 
@@ -61,9 +60,9 @@ else
 
 | 單字位址 | 16 位元單字    |
 |--------------|----------------|
-| 0            | 色彩\_0       |
+| 0            | Color\_0       |
 | 1            | 色彩\_1       |
-| 2            | 點陣圖 Word\_0 |
+| 2            | Bitmap Word\_0 |
 | 3            | 點陣圖 Word\_1 |
 
  
@@ -84,7 +83,7 @@ else
 
 | 位元數          | 紋素           |
 |---------------|-----------------|
-| 1:0 (LSB)     | 材質\[0\]\[0\] |
+| 1:0 (LSB)     | Texel\[0\]\[0\] |
 | 3:2           | 材質\[0\]\[1\] |
 | 5:4           | 材質\[0\]\[2\] |
 | 7:6           | 材質\[0\]\[3\] |
@@ -117,7 +116,7 @@ else
 
 以不透明編碼為例，假設色彩紅色和黑色位於極端。 Red 是色彩\_0，而黑色是色彩\_1。 有四個以內插值取代的色彩之之間平均漸層分散。 若要判斷 4x4 點陣圖值，請使用下列的計算︰
 
-```
+```cpp
 00 ? color_0
 01 ? color_1
 10 ? 2/3 color_0 + 1/3 color_1
@@ -149,7 +148,7 @@ else
 
 適用於色彩和透明度的點陣圖編碼，會使用下列的計算來判定。
 
-```
+```cpp
 00 ? color_0
 01 ? color_1
 10 ? 1/2 color_0 + 1/2 color_1

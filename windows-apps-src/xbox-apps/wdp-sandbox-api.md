@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
-ms.openlocfilehash: d05528ecf4408a7e7483b909b75722037c6528b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8f04514962cf0684daa99ee75d4c4da73c785735
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645693"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244084"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Xbox Live 沙箱 API 參考   
 您可以使用此 REST API 取得並設定您的 Xbox Live 沙箱。
@@ -25,18 +25,18 @@ ms.locfileid: "57645693"
 方法      | 要求 URI
 :------     | :-----
 GET | /ext/xboxlive/sandbox
-<br />
+
 **URI 參數**
 
-- 無
+- None
 
 **要求標頭**
 
-- 無
+- None
 
 **要求本文**
 
-- 無
+- None
 
 **回應**   
 Sandbox - (字串) 目前裝置所在的沙箱。   
@@ -61,14 +61,14 @@ HTTP 狀態碼      | 描述
 方法      | 要求 URI
 :------     | :-----
 PUT | /ext/xboxlive/sandbox
-<br />
+
 **URI 參數**
 
-- 無
+- None
 
 **要求標頭**
 
-- 無
+- None
 
 **要求本文**   
 要求主體是包含下列欄位的 JSON 物件：   
@@ -87,8 +87,7 @@ HTTP 狀態碼      | 描述
 4XX | 錯誤碼
 5XX | 錯誤碼
 
-<br />
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Xbox
 

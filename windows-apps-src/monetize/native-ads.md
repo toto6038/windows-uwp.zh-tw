@@ -5,12 +5,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告控制項, 原生廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e9df87cd214d3d03f25c674ec80a73fedf53d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4cb77f7f2622a06334ee35ec61e18b3b01f98bdb
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628063"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335016"
 ---
 # <a name="native-ads"></a>原生廣告
 
@@ -21,7 +21,7 @@ ms.locfileid: "57628063"
 > [!NOTE]
 > 原生廣告目前僅支援適用於 Windows 10 的 XAML 型 UWP app。 計劃於未來版本的 Microsoft Advertising SDK 支援使用 HTML 與 JavaScript 撰寫的 UWP App。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 * 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
 
@@ -43,21 +43,21 @@ ms.locfileid: "57628063"
 
 4. 在您的應用程式的適當程式碼檔案中 (例如在 MainPage.xaml.cs 中，或部分其他頁面的程式碼檔案)，新增下列命名空間參考。
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
 5.  在您的應用程式的適當位置中 (例如，在 ```MainPage``` 中或部分其他頁面)，為您的插播式廣告宣告 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 物件和代表原生廣告的應用程式識別碼和廣告單元識別碼的幾個字串欄位。 以下程式碼範例指派 `myAppId` 和 `myAdUnitId` 欄位至原生廣告的[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
     > [!NOTE]
     > 每個 **NativeAdsManagerV2** 都有對應的*廣告單元*，由我們的服務用來提供廣告給原生廣告控制項，且每個廣告單元都包含*廣告單元 ID* 和*應用程式 ID*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 您將您的應用程式發佈至市集之前，您必須[取代這些測試的值與即時值](#release)從合作夥伴中心。
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
 6.  在啟動時執行的程式碼中 (例如，頁面的建構函式中)，起始 **NativeAdsManagerV2** 物件並為物件的 **AdReady** 和 **ErrorOccurred** 事件連結事件處理常式。
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
 7.  當您準備就緒可以顯示原生廣告時，呼叫 **RequestAd** 方法來擷取廣告。
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
 
 8.  原生廣告準備好可供您的應用程式使用時，會呼叫您的 [AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.adready) 事件處理常式，而代表原生廣告的 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 物件會傳遞至 *e* 參數。 使用 **NativeAdV2** 屬性來取得原生廣告的每個元素，並將這些元素顯示在頁面上。 請務必也要呼叫 **RegisterAdContainer** 方法來註冊做為原生廣告容器的 UI 元素，這樣才能正確追蹤廣告的曝光次數和點擊數。
     > [!NOTE]
@@ -93,11 +93,11 @@ ms.locfileid: "57628063"
 
     下列程式碼範例示範 **AdReady** 事件處理常式，在 **StackPanel** 的控制項中顯示原生廣告的每個元素，接著呼叫 **RegisterAdContainer** 方法來註冊 **StackPanel**。 此程式碼假設它是從包含 **StackPanel** 之頁面的程式碼後置檔案執行。
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
 
 9.  定義 **ErrorOccurred** 事件的事件處理常式來處理原生廣告的相關錯誤。 下列範例會在測試期間將錯誤資訊寫入 Visual Studio **\[輸出\]** 視窗。
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
 
 10.  編譯並執行應用程式來查看其中的測試廣告。
 

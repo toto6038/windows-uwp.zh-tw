@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, 消費性, 附加元件, 應用程式內購買, IAP, 
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0446269fcbde87dfa25b7bff25f7160335950fba
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 142c9f90161f4fd61946ccb7452af7ee91f66baa
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636723"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334816"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>啟用消費性附加元件購買
 
@@ -41,7 +41,7 @@ ms.locfileid: "57636723"
 
 您也可以隨時針對市集管理的消費性產品來[取得剩下的餘額](enable-consumable-add-on-purchases.md#get_balance)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 這些範例包含下列先決條件：
 * 適用於目標為 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
@@ -73,7 +73,7 @@ ms.locfileid: "57636723"
 這個範例示範如何將市集管理的消費性產品回報為已完成。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
+[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
 
 <span id="get_balance" />
 
@@ -82,7 +82,7 @@ ms.locfileid: "57636723"
 這個範例示範如何使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [GetConsumableBalanceRemainingAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getconsumablebalanceremainingasync) 方法，來取得市集管理的消費性產品剩下的餘額。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
+[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
 
 ## <a name="related-topics"></a>相關主題
 

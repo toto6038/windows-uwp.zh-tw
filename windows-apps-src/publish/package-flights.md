@@ -2,16 +2,16 @@
 Description: 您可以使用「套件正式發行前小眾測試版」，將套件發佈至有限的測試群組。
 title: 套件正式發行前小眾測試版
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, 正式發行前小眾測試
 ms.localizationpriority: medium
-ms.openlocfilehash: 568fbff28d6c57acb6214bf274becc9cbc7f8830
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2070d1312df8f840c2368600197ca2bd7c506cdc
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610163"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244294"
 ---
 # <a name="package-flights"></a>套件正式發行前小眾測試版
 
@@ -70,7 +70,7 @@ ms.locfileid: "57610163"
 
 ## <a name="configure-additional-package-flight-options"></a>設定其他套件正式發行前小眾測試版選項
 
-依照預設，您的套件正式發行前小眾測試版會在完成認證程序之後，立即發佈並提供給您的正式發行前小眾測試版群組使用。 如果您想要變更[發行日期](set-app-pricing-and-availability.md#publish-date)，或想要新增[認證注意事項](notes-for-certification.md)，您可以在 **\[正式發行前小眾測試版選項\]** 區段中進行。 按一下 \[儲存\] 回到套件正式發行前小眾測試版概觀頁面。 
+依照預設，您的套件正式發行前小眾測試版會在完成認證程序之後，立即發佈並提供給您的正式發行前小眾測試版群組使用。 如果您想要變更[發行日期](set-app-pricing-and-availability.md#publish-date)，您可以在執行**飛行選項**一節。 按一下 \[儲存\] 回到套件正式發行前小眾測試版概觀頁面。 
 
 
 ## <a name="submit-your-package-flight-to-the-store"></a>將您的套件正式發行前小眾測試版提交至市集

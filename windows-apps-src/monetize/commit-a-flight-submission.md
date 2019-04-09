@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 認可正式發行前小眾測試版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 820e10695cce2d6242a51b0017d2fe3981cf77b1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0cf1abcb1575252456383fd8fe187962567a6096
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603473"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334406"
 ---
 # <a name="commit-a-package-flight-submission"></a>認可套件正式發行前小眾測試版提交
 
@@ -33,15 +33,13 @@ ms.locfileid: "57603473"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit``` |
-
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit` |
 
 ### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
-
 
 ### <a name="request-parameters"></a>要求參數
 
@@ -51,7 +49,6 @@ ms.locfileid: "57603473"
 | flightId | 字串 | 必要。 包含要認可提交之套件正式發行前小眾測試版的識別碼。 識別碼可從[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中取得。 在合作夥伴中心建立的航班，此識別碼也會提供在合作夥伴中心 [飛行] 頁面的 url。  |
 | submissionId | 字串 | 必要。 要認可之提交的識別碼。 在[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)要求的回應資料中有提供此識別碼。 提交在合作夥伴中心所建立，此識別碼也會提供在合作夥伴中心內的 [提交] 頁面的 url。  |
 
-
 ### <a name="request-body"></a>要求本文
 
 不提供此方法的要求本文。
@@ -60,7 +57,7 @@ ms.locfileid: "57603473"
 
 下列範例示範如何認可套件正式發行前小眾測試版提交。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649/commit HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -79,8 +76,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | 字串  | 提交的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>  |
-
+| status           | 字串  | 提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>  |
 
 ## <a name="error-codes"></a>錯誤碼
 
@@ -91,7 +87,6 @@ Authorization: Bearer <your access token>
 | 400  | 要求參數無效。 |
 | 404  | 找不到指定的提交。 |
 | 409  | 找不到指定的提交，但無法認可目前的狀態，或應用程式使用的合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |
-
 
 ## <a name="related-topics"></a>相關主題
 

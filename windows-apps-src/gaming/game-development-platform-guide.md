@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 技術, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 53616e572be6051d096c095f9587c498b769a6af
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1c5c6bb9bc2dadc89811c18c0aa844b899e52cf1
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623303"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162703"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>適用於 UWP app 的遊戲技術
 
@@ -323,7 +323,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
 
 [Xbox Live 創作者計劃](https://developer.microsoft.com/games/xbox/xboxlive/creator)可讓任何開發人員整合 Xbox Live 及其 UWP 遊戲，並發行到 Xbox One 和 Windows 10。 用最少的開發時間，將 Xbox Live 社交體驗 (例如登入、顯示線上狀態、排行榜等) 整合到您的遊戲中。 Xbox Live 社交功能的設計旨在自然地逐漸擴大您的目標客群，向超過 5 千 5 百萬戶的使用中玩家展開宣傳。
 
-如果您想要存取其他 Xbox Live 功能、專用的行銷和開發支援，以及有機會獲得主要 Xbox One 市集的推薦，您可以申請加入 [ID@Xbox](https://www.xbox.com/developers/id) 計畫。 若要了解哪些功能適用於 Xbox Live 創作者計畫與 ID@Xbox 計畫，請參閱[功能表格](../xbox-live/developer-program-overview.md#feature-table)。
+如果您想要存取其他 Xbox Live 功能、專用的行銷和開發支援，以及有機會獲得主要 Xbox One 市集的推薦，您可以申請加入 [ID@Xbox](https://www.xbox.com/developers/id) 計畫。 若要了解哪些功能適用於 Xbox Live 創作者計畫與 ID@Xbox 計畫，請參閱[功能表格](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table)。
 
 如需詳細資訊，請移至[將 Xbox Live 新增到您的遊戲](e2e.md#adding-xbox-live-to-your-game)。
 

@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, 試用版, app 內購買, IAP, Windows.ApplicationMod
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d7ada6567db95609203f8f163b78631e141b4f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 38590282a95e29ab240486e9c4a3f9cb9afe229c
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655563"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335096"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>在試用版本中排除或限制某些功能
 
@@ -20,7 +20,7 @@ ms.locfileid: "57655563"
 > [!IMPORTANT]
 > 這篇文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來實作試用版功能。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間。 **Windows.Services.Store**命名空間支援最新的附加元件類型，例如存放區管理需求的可取用的附加元件和訂用帳戶，而且設計成與未來的產品和協力廠商所支援功能的類型相容Center 和存放區。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需使用 **Windows.Services.Store** 命名空間實作試用功能的詳細資訊，請參閱[本文](implement-a-trial-version-of-your-app.md)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 要新增功能讓客戶購買的 Windows 應用程式。
 
@@ -66,12 +66,12 @@ App 目前的授權狀態會儲存為 [LicenseInformation](https://msdn.microsof
 現在，您將要使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 而不是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) 取得模擬的授權資訊。 將 App 的發行版本提交到**市集**之前，您必須將程式碼中所有的 **CurrentAppSimulator** 參考取代為 **CurrentApp**。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
 
 接下來新增事件處理常式，以在 App 執行時接收授權變更的通知。 例如，如果試用期到期，或是客戶透過市集購買 App，則 App 的授權會有所變更。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
 
 ## <a name="step-3-code-the-features-in-conditional-blocks"></a>步驟 3：程式碼條件式區塊中的功能
 
@@ -80,7 +80,7 @@ App 目前的授權狀態會儲存為 [LicenseInformation](https://msdn.microsof
 此範例顯示如何評估 App 的授權狀態，據以啟用或停用您 App 的功能。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
 
 ## <a name="step-4-get-an-apps-trial-expiration-date"></a>步驟 4：取得應用程式的試用版到期日
 
@@ -89,7 +89,7 @@ App 目前的授權狀態會儲存為 [LicenseInformation](https://msdn.microsof
 此範例中的程式碼定義的函式可以取得應用程式試用版授權的到期日。 如果授權仍然有效，就會顯示到期日與試用版到期之前的剩餘天數。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
 
 ## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>步驟 5：測試使用模擬的授權 API 呼叫的功能
 
@@ -105,7 +105,7 @@ App 目前的授權狀態會儲存為 [LicenseInformation](https://msdn.microsof
 > 在將您的 App 提交至 Microsoft Store 時，該 App 必須使用 **CurrentApp** 物件，否則將無法通過認證。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
 
 ## <a name="step-7-describe-how-the-free-trial-works-to-your-customers"></a>步驟 7：說明的免費試用版客戶的運作方式
 

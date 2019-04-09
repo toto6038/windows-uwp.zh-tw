@@ -5,26 +5,26 @@ ms.date: 07/18/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, event, 標準, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c410d209972a0221928548901f79bd599c67eae
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644483"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921694"
 ---
 # <a name="author-events-in-cwinrt"></a>在 C++/WinRT 中撰寫事件
 
 本主題示範如何撰寫一個 Windows 執行階段元件，其包含一個執行階段類別代表銀行帳戶，當餘額進入借方時，引發一個事件。 也示範一個核心應用程式，其使用銀行帳戶執行階段類別，呼叫調整餘額的函式，並處理所造成的任何事件。
 
 > [!NOTE]
-> 如需安裝和使用的資訊[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 擴充功能 (VSIX) （這也提供專案範本支援） 請參閱[Visual Studio 支援 C + /cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如需安裝和使用的資訊[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 擴充功能 (VSIX) 和 NuGet 套件 （其同時提供專案範本，並建置支援），請參閱[Visual Studio 支援C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 > [!IMPORTANT]
 > 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請查閱[使用 C++/WinRT 使用API](consume-apis.md)和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>建立 Windows 執行階段元件 (BankAccountWRC)
 
-在 Microsoft Visual Studio 中，從建立新的專案開始。 建立**Visual c + +** > **Windows Universal** > **Windows 執行階段元件 (C + + /cli WinRT)** 專案，並將它命名*BankAccountWRC* （適用於 「 銀行帳戶為 Windows 執行階段元件 」）。
+在 Microsoft Visual Studio 中，從建立新的專案開始。 建立**Visual C++**   >  **Windows Universal** > **Windows 執行階段元件 (C++/WinRT)** 專案，並將它命名*BankAccountWRC* （適用於 「 銀行帳戶為 Windows 執行階段元件 」）。
 
 新建立的專案中包含一個名為 `Class.idl` 的檔案。 重新命名該檔案`BankAccount.idl`(重新命名`.idl`檔案會自動重新命名相依`.h`和`.cpp`太檔案)。 內容取代`BankAccount.idl`與下列清單。
 
@@ -93,11 +93,11 @@ namespace winrt::BankAccountWRC::implementation
 
 如果餘額為負數的話，您也可能看到以上 **AdjustBalance** 函式的實作引發 **AccountIsInDebit** 事件。
 
-如果任何警告會使您無法建置，然後解決這些問題，或設定專案屬性**C/c + +** > **一般** > **警告視為錯誤**要**否 (/ WX-)**，並再次建置專案。
+如果任何警告會使您無法建置，然後解決這些問題，或設定專案屬性**C /C++** > **一般** > **警告視為錯誤**要**否 (/ WX-)**，並再次建置專案。
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>建立核心應用程式 (BankAccountCoreApp) 測試 Windows 執行階段元件
 
-現在建立新的專案 (在您的 `BankAccountWRC` 解決方案中，或在新的一個裡)。 建立**Visual c + +** > **Windows Universal** > **Core 應用程式 (C + + /cli WinRT)** 專案，並將它命名*BankAccountCoreApp*.
+現在建立新的專案 (在您的 `BankAccountWRC` 解決方案中，或在新的一個裡)。 建立**Visual C++**   >  **Windows Universal** > **Core 應用程式 (C++/WinRT)** 專案，並將它命名*BankAccountCoreApp*。
 
 加入參考，並瀏覽至`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`（或加入專案對專案參考，如果位於相同方案中的兩個專案）。 按一下 \[新增\]，然後 **\[確定\]**。 現在建置 BankAccountCoreApp。 您會看到錯誤的罕見事件中，將內容檔案`readme.txt`不存在，從 Windows 執行階段元件專案中排除該檔案，請重建它然後重建 BankAccountCoreApp。
 
@@ -244,7 +244,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>參數化的委派、 簡單的訊號和在專案內的回撥
 
-如果您的事件只在內部使用內您 C + + /cli WinRT 專案 （不是在二進位檔），則您仍然可以使用[ **winrt::event** ](/uwp/cpp-ref-for-winrt/event)結構的範本，但您將它參數化使用 C + + /cli WinRT 的非 Windows Runtime [ **winrt::delegate&lt;...T&gt;**  ](/uwp/cpp-ref-for-winrt/delegate)結構的範本，也就是有效的、 參考計數的委派。 它支援任意數目的參數，而且它們不一定要 Windows 執行階段類型。
+如果您的事件只有在內部會在您C++/WinRT 專案 （不是在二進位檔），則您仍然可以使用[ **winrt::event** ](/uwp/cpp-ref-for-winrt/event)結構的範本，但您將它參數化與C++/WinRT 的非 Windows Runtime [ **winrt::delegate&lt;...T&gt;**  ](/uwp/cpp-ref-for-winrt/delegate)結構的範本，也就是有效的、 參考計數的委派。 它支援任意數目的參數，而且它們不一定要 Windows 執行階段類型。
 
 下列範例會先顯示委派簽章不採用任何參數 （基本上是簡單信號），以及採用字串一。
 
@@ -272,7 +272,7 @@ logCallback = [](std::wstring const& message) { std::wcout << message.c_str() <<
 logCallback(L"Hello, World!");
 ```
 
-如果您要移植的 C + + /CX 程式碼基底位置事件與委派會在內部使用在專案中，然後**winrt::delegate**有助於您複寫該模式，在 C + + /cli WinRT。
+如果您要移植從C++/CX 程式碼基底位置事件與委派會在內部使用在專案中，然後**winrt::delegate**可協助您在複寫中的該模式C++/WinRT。
 
 ## <a name="design-guidelines"></a>設計指導方針
 
@@ -284,5 +284,5 @@ logCallback(L"Hello, World!");
 
 ## <a name="related-topics"></a>相關主題
 * [使用 C++/WinRT 撰寫 API](author-apis.md)
-* [使用 C++/WinRT 取用 API](consume-apis.md)
-* [處理事件，藉由使用委派，在 C + + /cli WinRT](handle-events.md)
+* [使用 C++/WinRT 來使用 API](consume-apis.md)
+* [藉由在 C++/WinRT 使用委派來處理事件](handle-events.md)

@@ -6,12 +6,12 @@ ms.date: 11/26/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e73d020738e0bad5404f164417bbce35e5e60c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 58609ed1b3b2e178c735f3ebf042a98587ce6cb9
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591303"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822943"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -58,14 +58,17 @@ ms.locfileid: "57591303"
 
 ## <a name="device-capabilities"></a>裝置功能
 
-裝置功能可以讓您的 app 存取周邊和內部裝置。 裝置功能是使用 app 套件資訊清單中的 **DeviceCapability** 元素來指定。 這個元素可能需要其他子元素，而且您必須手動將一些裝置功能新增到套件資訊清單。 如需詳細資訊，請參閱[如何在套件資訊清單中指定裝置功能](https://msdn.microsoft.com/library/windows/apps/Dn263092)和 [**DeviceCapability 結構描述參考**](https://msdn.microsoft.com/library/windows/apps/BR211430)。
+裝置功能可以讓您的 app 存取周邊和內部裝置。 裝置功能是使用 app 套件資訊清單中的 **DeviceCapability** 元素來指定。 這個元素可能需要其他子元素，而且您必須手動將一些裝置功能新增到套件資訊清單。 如需詳細資訊，請參閱[如何在套件資訊清單中指定裝置功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)和 [**DeviceCapability 結構描述參考**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability)。
+
+> [!NOTE]
+> 您可以有多個**DeviceCapability**並**功能**下的項目**功能**項目，但是所有**DeviceCapability**項目必須緊跟在後**功能**項目。
 
 | 功能案例 | 功能使用方式 |
 |---------------------|------------------|
 | **位置**\* | **location** 功能提供存取位置功能，您可以透過專用硬體 (例如電腦中的 GPS 感應器) 來擷取這類功能，或是從可用的網路資訊加以衍生。 當使用者從設定常用鍵停用定位服務時，app 必須能夠處理這種狀況。 |
-| **麥克風** | **microphone** 功能提供存取麥克風的音訊饋送，讓 app 能夠從連接的麥克風錄音。 當使用者從設定常用鍵停用麥克風時，app 必須能夠處理這種狀況。 |
+| **Microphone** | **microphone** 功能提供存取麥克風的音訊饋送，讓 app 能夠從連接的麥克風錄音。 當使用者從設定常用鍵停用麥克風時，app 必須能夠處理這種狀況。 |
 | **鄰近性** | **proximity** 功能可以讓多個近接的裝置彼此通訊。 這個功能通常用於輕鬆的多人遊戲，以及交換資訊的 app 中。 裝置會試著使用提供最佳連線的通訊技術，例如藍牙、Wi-Fi 以及網際網路。 這個功能只能用於起始裝置間的通訊。 |
-| **網路攝影機** | **webcam** 功能提供存取內建相機或外接式網路攝影機的視訊饋送，讓 app 能夠擷取相片和影片。 在 Windows 上，當使用者從設定常用鍵停用相機時，app 必須能夠處理這種狀況。<br/>**webcam** 功能只授與對視訊串流的存取權。 若要同時授與對音訊串流的存取權，必須新增 **microphone** 功能。 |
+| **Webcam** | **webcam** 功能提供存取內建相機或外接式網路攝影機的視訊饋送，讓 app 能夠擷取相片和影片。 在 Windows 上，當使用者從設定常用鍵停用相機時，app 必須能夠處理這種狀況。<br/>**webcam** 功能只授與對視訊串流的存取權。 若要同時授與對音訊串流的存取權，必須新增 **microphone** 功能。 |
 | **USB** | **usb** 裝置功能可讓您存取[針對 USB 裝置更新應用程式資訊清單套件](https://go.microsoft.com/fwlink/p/?LinkId=302259)中所述的 API。 |
 | **人性化介面裝置 (HID)** | **humaninterfacedevice** 裝置功能可讓您存取[如何指定 HID 的裝置功能](https://msdn.microsoft.com/library/windows/apps/Dn263091)中的 API。 |
 | **Point of Service (POS)** | **pointOfService** 裝置功能可讓您存取 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 命名空間中的 API。 這個命名空間可以讓您的 app 存取服務指標 (POS) 條碼掃描器和磁條讀取器。 這個命名空間提供一個廠商中性介面，可讓您從 UWP app 存取來自各個製造商的 POS 裝置。 |
@@ -134,7 +137,7 @@ ms.locfileid: "57591303"
 | **共用的使用者憑證** | **SharedUserCertificates**功能可讓應用程式來新增和存取軟體和硬體架構中共用使用者的憑證存放區，例如儲存在智慧卡上的憑證。 這個功能通常用於需要使用智慧卡進行身分驗證的金融或企業 app。<br /><br />在您的 app 套件資訊清單中宣告 **sharedUserCertificates** 功能時，它必須包含 **uap** 命名空間，如下所示。<br /><br />```<Capabilities><uap:Capability Name="sharedUserCertificates"/></Capabilities>``` |
 |**文件**\* | **DocumentsLibrary**功能提供以程式設計方式存取使用者的 [文件] 資料夾中，篩選至套件資訊清單中宣告的檔案類型關聯。 比方說，如果文字處理應用程式宣告了.doc 檔案類型關聯，它可以開啟.doc 檔案在使用者的文件 資料夾中。 <br /><br />一般而言，應用程式應該允許使用者選擇的檔案，使用下列 Api 的其中一個位置：<ul><li>[FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)來開啟現有的檔案。</li><li>[FileSavePicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker)儲存新的檔案。</li><li>[FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker)來選擇要開啟 / 儲存從其他檔案的資料夾。</li></ul>使用這些 Api 可讓使用者選擇最適合他們，例如雲端同步處理帳戶 (例如 OneDrive) 的位置。 您的應用程式使用者已選取檔案或資料夾使用這些 Api 之後，可以使用來取得位置的持續存取[FutureAccessList](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) API。 此 API 可讓您的應用程式存取的檔案或資料夾在未來，而不要求使用者再次挑選它們。<br /><br />在現有的工作流程其中假設檔案會在文件 資料夾 (例如，使用現有的傳統型應用程式的 interop)，或不想使用的使用者能夠選擇的位置，其中您可以宣告的情況下**documentsLibrary**應用程式的功能。 如果您使用**documentsLibrary**應用程式的功能，建議您也可讓使用者能夠以手動方式選取位置。<br /><br />在您的 app 套件資訊清單中宣告 **documentsLibrary** 功能時，它必須包含 **uap** 命名空間，如下所示。<br /><br />```<Capabilities><uap:Capability Name="documentsLibrary"/></Capabilities>``` |
 | **遊戲 DVR 設定** | **appCaptureSettings** 受限制的功能讓 app 能夠控制「遊戲 DVR」的使用者設定。<br /><br />需要具備這個功能，才能使用 [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) 命名空間中的某些 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。  |
-| **行動數據** | **cellularDeviceControl** 受限制的功能讓 app 能夠控制行動電話通訊裝置。<br /><br />**cellularDeviceIdentity** 功能讓 app 能夠存取行動電話通訊識別資料。<br /><br />**cellularMessaging** 功能讓 app 能夠使用簡訊和 RCS。<br /><br />需要具備這些功能，才能使用 [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567) 命名空間中的某些 API。  |
+| **Cellular** | **cellularDeviceControl** 受限制的功能讓 app 能夠控制行動電話通訊裝置。<br /><br />**cellularDeviceIdentity** 功能讓 app 能夠存取行動電話通訊識別資料。<br /><br />**cellularMessaging** 功能讓 app 能夠使用簡訊和 RCS。<br /><br />需要具備這些功能，才能使用 [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567) 命名空間中的某些 API。  |
 | **裝置解除鎖定** | **deviceUnlock** 受限制的功能讓 app 能夠解除鎖定裝置，以供開發人員和企業側載案例使用。<br /><br /> 我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 | **雙重 sim 卡磚** | **dualSimTiles** 受限制的功能讓 app 能夠在配備多張 SIM 卡的裝置上建立其他 app 清單項目。<br /><br />需要具備這個功能，才能使用 [**Windows.UI.StartScreen**](https://msdn.microsoft.com/library/windows/apps/BR242235) 命名空間中的某些 API。 |
 | **企業共用儲存體** | **enterpriseDeviceLockdown** 受限制的功能讓 app 使用裝置鎖定 API，以及存取企業共用存放裝置資料夾。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
@@ -145,7 +148,7 @@ ms.locfileid: "57591303"
 | **其他應用程式管理** | **packageManagement** 受限制的功能讓 app 能夠直接管理其他 app。<br /><br />**packageQuery** 裝置功能讓 app 能夠收集其他 app 的相關資訊。<br /><br />需要具備這個功能，才能使用存取 [**PackageManager**](https://msdn.microsoft.com/library/windows/apps/BR240960) 類別中的某些方法和屬性。 |
 | **螢幕投影** | **screenDuplication** 受限制的功能讓 app 能將畫面投影到其他裝置。<br /><br />需要具備這個功能，才能使用 DirectX 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 | **使用者主體名稱** | **userPrincipalName** 受限制的功能讓 app 能夠修改和存取相片的縮圖快取。<br /><br />需要具備這個功能，才能呼叫 [**GetUserNameEx**](https://msdn.microsoft.com/library/windows/desktop/ms724435) 函式。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
-| **「 電子錢包 」** | **walletSystem** 受限制的功能讓 app 能完整存取儲存式電子錢包卡。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610) 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
+| **Wallet** | **walletSystem** 受限制的功能讓 app 能完整存取儲存式電子錢包卡。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610) 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 | **位置記錄** | **locationHistory** 受限制的功能讓 app 能夠存取裝置的位置歷程記錄。<br /><br />需要具備這個功能，才能使用 [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/BR225603) 命名空間中的 API。
 | **應用程式關閉確認** | **confirmAppClose** 受限制的功能讓 app 能夠關閉本身和它們自己的視窗，並延遲關閉它們的 app。<br /><br />App 可能會在 Windows 10 版本 1703 (組建 10.0.15063) 及更新版本中要求此功能。 在先前的 Windows 10 版本中，此功能為私用，並且導致應用程式安裝失敗而顯示「此應用程式無法授權要求的功能」錯誤訊息。 |
 | **通訊記錄**\* | **phoneCallHistory** 受限制的功能讓 app 能夠讀取通訊記錄並刪除記錄中的項目。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |

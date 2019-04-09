@@ -2,16 +2,16 @@
 title: 遊戲控制器的登錄資料
 description: 深入了解您可以新增至 PC 登錄的資料，讓控制器可用於 UWP 遊戲中。
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 06/25/2018
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp, games, input, registry, custom, 遊戲, 輸入, 登錄, 自訂
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633603"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244394"
 ---
 # <a name="registry-data-for-game-controllers"></a>遊戲控制器的登錄資料
 
@@ -32,7 +32,7 @@ ms.locfileid: "57633603"
     <tr>
         <th>名稱</th>
         <th>類型</th>
-        <th>必要？</th>
+        <th>必要項？</th>
         <th>資訊</th>
     </tr>
     <tr>
@@ -65,11 +65,11 @@ ms.locfileid: "57633603"
 <table>
     <tr>
         <th>子機碼</th>
-        <th>必要？</th>
+        <th>必要項？</th>
         <th>資訊</th>
     </tr>
     <tr>
-        <td>Menu</td>
+        <td>功能表</td>
         <td>是</td>
         <td rowspan="18" style="vertical-align: middle;">請參閱<a href="#button-mapping">按鈕對應</a></td>
     </tr>
@@ -178,7 +178,7 @@ ms.locfileid: "57633603"
 <table>
     <tr>
         <th>子機碼</th>
-        <th>必要？</th>
+        <th>必要項？</th>
         <th>資訊</th>
     </tr>
     <tr>
@@ -337,7 +337,7 @@ ms.locfileid: "57633603"
 <table>
     <tr>
         <th>子機碼</th>
-        <th>必要？</th>
+        <th>必要項？</th>
         <th>資訊</th>
     </tr>
     <tr>
@@ -398,7 +398,7 @@ ms.locfileid: "57633603"
 <table>
     <tr>
         <th>子機碼</th>
-        <th>必要？</th>
+        <th>必要項？</th>
         <th>資訊</th>
     </tr>
     <tr>
@@ -441,11 +441,11 @@ ms.locfileid: "57633603"
 <table>
     <tr>
         <th>子機碼</th>
-        <th>必要？</th>
+        <th>必要項？</th>
         <th>資訊</th>
     </tr>
     <tr>
-        <td>Menu</td>
+        <td>功能表</td>
         <td>是</td>
         <td rowspan="24" style="vertical-align: middle;">請參閱<a href="#button-mapping">按鈕對應</a></td>
     </tr>
@@ -545,7 +545,7 @@ ms.locfileid: "57633603"
 
 如需有關 UI 瀏覽控制器及上述命令的詳細資訊，請參閱 [UI 瀏覽控制器](https://docs.microsoft.com/windows/uwp/gaming/ui-navigation-controller)。
 
-## <a name="keys"></a>機碼
+## <a name="keys"></a>按鍵
 
 以下幾節說明 \[Gamepad\]、\[RacingWheel\]、\[ArcadeStick\]、\[FlightStick\] 及 \[UINavigation\] 機碼下方每個子機碼的內容。
 
@@ -555,10 +555,10 @@ ms.locfileid: "57633603"
 
 <table>
     <tr>
-        <th>來源</th>
+        <th>原始程式檔</th>
         <th>值名稱</th>
         <th>值類型</th>
-        <th>必要？</th>
+        <th>必要項？</th>
         <th>值資訊</th>
     </tr>
     <tr>
@@ -610,11 +610,11 @@ ms.locfileid: "57633603"
         <td>
             <p>指出將造成對應的按鈕回報其為已按下中的切換位置。 位置值可以是以下其中一個字串：</p>
             <ul>
-                <li>Up</li> 
+                <li>Up</li>
                 <li>UpRight</li>
                 <li>Right</li>
                 <li>DownRight</li>
-                <li>Down</li>
+                <li>下移</li>
                 <li>DownLeft</li>
                 <li>Left</li>
                 <li>UpLeft</li>
@@ -635,10 +635,10 @@ ms.locfileid: "57633603"
 
 <table>
     <tr>
-        <th>來源</th>
+        <th>原始程式檔</th>
         <th>值名稱</th>
         <th>值類型</th>
-        <th>必要？</th>
+        <th>必要項？</th>
         <th>值資訊</th>
     </tr>
     <tr>
@@ -730,7 +730,7 @@ ms.locfileid: "57633603"
                 <li>UpRight</li>
                 <li>Right</li>
                 <li>DownRight</li>
-                <li>Down</li>
+                <li>下移</li>
                 <li>DownLeft</li>
                 <li>Left</li>
                 <li>UpLeft</li>
@@ -750,7 +750,7 @@ ms.locfileid: "57633603"
                     <td>0.5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>下移</td>
                     <td>0.0</td>
                 </tr>
             </table>
@@ -784,7 +784,7 @@ ms.locfileid: "57633603"
                     <td>0.5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>下移</td>
                     <td>0.0</td>
                 </tr>
                 <tr>
@@ -806,7 +806,7 @@ ms.locfileid: "57633603"
 
 <table>
     <tr>
-        <th>來源</th>
+        <th>原始程式檔</th>
         <th>值名稱</th>
         <th>值類型</th>
         <th>值資訊</th>
@@ -820,7 +820,7 @@ ms.locfileid: "57633603"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>，<b>通訊組織十字路</b>，或<b>EightWay</b>
+        <td><b>TwoWay</b>、<b>FourWay</b> 或 <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -956,7 +956,7 @@ ms.locfileid: "57633603"
                     <td>5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>下移</td>
                     <td>7</td>
                     <td>4</td>
                 </tr>
@@ -1075,7 +1075,7 @@ RightBumper         // Index 9
     </tr>
     <tr>
         <td>Button0</td>
-        <td>Menu</td>
+        <td>功能表</td>
     </tr>
     <tr>
         <td>Button1</td>
@@ -1121,10 +1121,10 @@ RightBumper         // Index 9
 
 ### <a name="switch-labels"></a>切換標籤
 
-\[Switches\] 機碼會將切換位置對應至標籤。 這些值遵循此命令慣例：若要將其索引在 \[RawGameController\] 的切換陣列中為 \[x\] 的切換位置設定標籤，則在 \[Switches\] 子機碼下方新增這些值： 
+\[Switches\] 機碼會將切換位置對應至標籤。 這些值遵循此命令慣例：若要將其索引在 \[RawGameController\] 的切換陣列中為 \[x\] 的切換位置設定標籤，則在 \[Switches\] 子機碼下方新增這些值：
 
-* SwitchxUp 
-* SwitchxUpRight 
+* SwitchxUp
+* SwitchxUpRight
 * SwitchxRight
 * SwitchxDownRight
 * SwitchxDown
@@ -1132,7 +1132,7 @@ RightBumper         // Index 9
 * SwitchxUpLeft
 * SwitchxLeft
 
-下表顯示 4 向切換其切換位置的一組範例標籤，該切換會在 \[RawGameController\] 的索引 0 處顯示： 
+下表顯示 4 向切換其切換位置的一組範例標籤，該切換會在 \[RawGameController\] 的索引 0 處顯示：
 
 <table>
     <tr>
@@ -1232,7 +1232,7 @@ RightBumper         // Index 9
 
 為了顯示這些對應與值如何全部集結在一起，以下是一般 \[RacingWheel\] 的範例登錄檔案：
 
-```
+```text
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\1234567800010004]
@@ -1345,7 +1345,7 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Windows.Gaming.Input 命名空間](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Windows.Gaming.Input.Custom 命名空間](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)

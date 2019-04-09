@@ -6,12 +6,12 @@ ms.date: 02/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, App 內購買, IAP, 附加元件, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8ec9c64e3cffb55a674fcc19d3152de29ef6d988
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623093"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334886"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>取得應用程式和附加元件的產品資訊
 
@@ -42,7 +42,7 @@ ms.locfileid: "57623093"
 若要取得目前 app 的市集產品資訊，請使用 [GetStoreProductForCurrentAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstoreproductforcurrentappasync) 方法。 這是傳回 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 物件的非同步方法，您可以使用該物件來取得資訊，例如價格。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
 
 ## <a name="get-info-for-add-ons-with-known-store-ids-that-are-associated-with-the-current-app"></a>取得具有與目前應用程式相關聯的已知 Microsoft Store 識別碼的附加元件資訊
 
@@ -54,7 +54,7 @@ ms.locfileid: "57623093"
 此範例利用與目前應用程式相關聯之指定 Microsoft Store 識別碼來擷取耐久性附加元件的資訊。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
 
 ## <a name="get-info-for-add-ons-that-are-available-for-purchase-from-the-current-app"></a>從目前應用程式取得可購買的附加元件資訊
 
@@ -66,7 +66,7 @@ ms.locfileid: "57623093"
 下列範例會擷取適用於所有耐久性附加元件、Microsoft Store 管理的消費性附加元件，以及開發人員管理的消費性附加元件的相關資訊，這些均可從目前應用程式購買。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
 
 
 ## <a name="get-info-for-add-ons-for-the-current-app-that-the-user-has-purchased"></a>取得使用者已購買之目前應用程式的附加元件資訊
@@ -79,7 +79,7 @@ ms.locfileid: "57623093"
 下列範例利用指定的 [Store 識別碼](in-app-purchases-and-trials.md#store_ids)來擷取耐久性附加元件的資訊。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
 
 ## <a name="related-topics"></a>相關主題
 

@@ -6,12 +6,12 @@ keywords: 筆跡, 教學
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bc28a4b1cb8afd70ef68a2e297b51ad0a5a0fc5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: be7005e64a431d65006315fbee551e5c6c3a2a6f
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661913"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343277"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>教學課程：UWP 應用程式中的支援連結
 
@@ -27,17 +27,17 @@ ms.locfileid: "57661913"
 * 支援基本圖形辨識
 * 儲存和載入筆跡
 
-如需實作這些功能的詳細資訊，請參閱 [UWP app 中的手寫筆互動及 Windows Ink](https://docs.microsoft.com/windows/uwp/input/pen-and-stylus-interactions)。
+如需實作這些功能的詳細資訊，請參閱 [UWP app 中的手寫筆互動及 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)。
 
 ## <a name="introduction"></a>簡介
 
 您可以藉由 Windows Ink 提供客戶幾乎相當於可想像的所有紙筆體驗的數位手寫功能，從快速的手寫筆記和註解到白板示範，以及從架構和工程繪圖到個人傑作。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 * 執行目前版本的 Windows 10 的電腦 (或虛擬機器)
 * [Visual Studio 2017 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 根據您的設定，您可能必須安裝[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 套件，並啟用**開發人員模式**(設定-> [更新您系統設定] 中（& s) 開發人員使用開發人員功能-> [安全性]->)。
 * 如果您是使用 Visual Studio 開發通用 Windows 平台 (UWP) app 的新手，請在您開始本教學課程之前參閱這些主題︰  
     * [開始設定](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
@@ -119,7 +119,7 @@ ms.locfileid: "57661913"
     <InkCanvas x:Name="inkCanvas" />
 ```
 
-這樣就完成了！ 
+就這麼容易！ 
 
 現在再次執行 App。 請繼續進行並徒手畫、撰寫您的名稱或者 (如果您有一面鏡子或者記性很好) 繪製您自己的自畫像。
 
@@ -458,7 +458,7 @@ Windows 筆跡也支援從剪貼簿複製並貼上筆墨筆劃或複製並貼到
 </tr>
 </table>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 恭喜，您已完成**輸入：支援在 UWP 應用程式中的筆墨**教學課程 ！ 我們已向您顯示在您的 UWP 應用程式中支援筆跡所需的基本程式碼，以及如何提供一些更豐富 Windows Ink 平台所支援的使用者體驗。
 
@@ -475,7 +475,7 @@ Windows 筆跡也支援從剪貼簿複製並貼上筆墨筆劃或複製並貼到
 * [筆墨工具列位置和方向範例 （基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
 * [筆墨工具列位置和方向範例 （動態）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
 * [簡單的筆墨範例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雜的筆墨範例 （c + +）](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [複雜的筆墨範例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
 * [筆墨範例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [快速入門教學課程：支援在 UWP 應用程式中的筆墨](https://aka.ms/appsample-ink)
 * [著色書範例](https://aka.ms/cpubsample-coloringbook)

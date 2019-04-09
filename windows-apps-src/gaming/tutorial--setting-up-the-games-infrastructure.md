@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 設定, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 789b235220e5d22b85f7b3038d5d468729439501
+ms.sourcegitcommit: 7a3d28472901edbe4ecdde7e1a01a505ee5bc028
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608703"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58658764"
 ---
 # <a name="set-up-the-game-project"></a>設定遊戲專案
 
@@ -39,7 +39,7 @@ Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對
 
 在 Visual Studio 中建立 DirectX 11 遊戲專案的步驟：
 1.  選取**檔案...**&gt; **新**&gt; **專案...**
-2.  在左窗格中，選取**已安裝** &gt; **範本** &gt; **Visual c + +** &gt; **Windows 通用**
+2.  在左窗格中，選取**已安裝** &gt; **範本** &gt; **Visual C++**  &gt; **Windows標準**
 3.  在中央窗格中，選取 **\[DirectX 11 應用程式 (通用 Windows)\]**。
 4.  提供遊戲專案名稱，然後按一下 [確定]。
 
@@ -89,9 +89,9 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-在此方法中，它會從檢視提供者 Factory (**App.h** 中定義的 **Direct3DApplicationSource**) 來建立 Direct3D 檢視提供者的執行個體，並將它傳遞給應用程式單例執行 (透過呼叫 [**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469))。 這表示遊戲的起點將位於 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法實作的內文，在這個情況就是 **App::Run**。 
+這個方法會從檢視提供者 factory 建立的 Direct3D 檢視提供者執行個體 (**Direct3DApplicationSource**，其定義於`App.h`)，並將其傳遞至應用程式的單一呼叫[ **CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。 架構檢視的方法 (即**應用程式**在此範例中的類別) 中的順序會呼叫**初始化**-**SetWindow** -**負載**-**OnActivated**-**執行**-**解除初始化**。 呼叫**CoreApplication::Run**開始該 lifycycle。 您的遊戲主迴圈所在之實作的主體中[ **IFrameworkView::Run**方法](/uwp/api/windows.applicationmodel.core.iframeworkview.run)，而且在此情況下，它具有**App::Run**。
 
-在 **App.cpp** 中捲動以尋找 **App::Run** 方法。 以下是程式碼：
+在 **App.cpp** 中捲動以尋找 **App::Run** 方法。 以下是程式碼。
 
 ```cpp
 //This method is called after the window becomes active.

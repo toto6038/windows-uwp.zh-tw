@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, 協助工具, 遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 38060d0a6bead360ef8a682902a433670c79b495
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592933"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162776"
 ---
 #  <a name="making-games-accessible"></a>設計無障礙遊戲
 
@@ -196,7 +196,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 沒有麥克風連接到其遊戲裝置的人，仍然可與正在說話的某人用語音交談。 他們可以在聊天視窗中輸入文字，而這些訊息會轉換為語音。 也可以讓聽力不太好的人，閱讀其正用語音交談之對象的對話轉譯後的文字訊息。
 
-對於 ID@Xbox 的開發人員和受管理的合作夥伴計畫，在 Xbox Live 服務中，文字轉換語音和語音轉換文字功能可做為[遊戲聊天 2 協助工具功能](../xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility)的一部分。 如需詳細資訊，請參閱[遊戲交談 2 概觀](../xbox-live/multiplayer/chat/game-chat-2-overview.md)。
+對於 ID@Xbox 的開發人員和受管理的合作夥伴計畫，在 Xbox Live 服務中，文字轉換語音和語音轉換文字功能可做為[遊戲聊天 2 協助工具功能](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/using-game-chat-2.md#accessibility)的一部分。 如需詳細資訊，請參閱[遊戲交談 2 概觀](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/game-chat-2-overview.md)。
 
 ### <a name="sound-feedback"></a>音訊回饋
 

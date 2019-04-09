@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aa94eb00058ba3297e7ca7cc4f93581d9281fd1c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6ce91b47d2846f945a0e4a15f705491ab22e9dea
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608013"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291666"
 ---
 # <a name="rectangles"></a>矩形
-
 
 在整個 Direct3D 及 Windows 程式設計中，螢幕上的物件會以週框的形式參照。 週框的側邊永遠和螢幕的側邊平行，以讓矩形可由兩個點描述，這兩點為左上角和右下角。
 
@@ -24,7 +23,7 @@ ms.locfileid: "57608013"
 
 大部分的應用程式使用 [**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897) 結構 (或 typedef 別名) 來具備在傳輸到畫面或執行命中偵測時要使用的週框相關資訊。 在 C++ 中，**RECT** 結構具有下列定義。
 
-```
+```cpp
 typedef struct tagRECT { 
     LONG    left;    // This is the upper-left corner x-coordinate.
     LONG    top;     // The upper-left corner y-coordinate.

@@ -6,12 +6,12 @@ keywords: UWP, 消費性, 附加元件, app 內購買, IAP, Windows.ApplicationM
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5588558eff3e9c9b2954f0726995765a2862c43b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e3673db795e3edc2a7c9d83a3ba1036ad8feb659
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655643"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334566"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>啟用消費性應用程式內產品購買
 
@@ -20,7 +20,7 @@ ms.locfileid: "57655643"
 > [!IMPORTANT]
 > 這篇文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來啟用消費性 App 內產品購買。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間。 **Windows.Services.Store**命名空間支援最新的附加元件類型，例如存放區管理需求的可取用的附加元件和訂用帳戶，而且設計成與未來的產品和協力廠商所支援功能的類型相容Center 和存放區。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需有關使用 **Windows.Services.Store** 命名空間來啟用消費性 App 內產品購買的詳細資訊，請參閱[本文](enable-consumable-add-on-purchases.md)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 -   本主題涵蓋消費性應用程式內產品的購買和履行狀況報告。 如果您不熟悉應用程式內產品，請檢閱[啟用應用程式內產品購買](enable-in-app-product-purchases.md)，以了解授權資訊及如何在市集中正確列出應用程式內產品。
 -   初次撰寫並測試新應用程式內產品的程式碼時，您必須使用 [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 物件，而不是 [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您需要自訂檔案 %userprofile%中名為 WindowsStoreProxy.xml\\AppData\\本機\\封裝\\&lt;封裝名稱&gt;\\LocalState\\Microsoft\\Windows 市集\\ApiData。 Microsoft Visual Studio 模擬器會在您第一次執行您的 App 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱[使用 WindowsStoreProxy.xml 檔案搭配 CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
@@ -33,7 +33,7 @@ ms.locfileid: "57655643"
 下列範例示範消費性應用程式內產品購買要求。 您會注意到程式碼註解指出在下列兩種不同的情況下，App 應該於何時在本機履行消費性應用程式內產品，一是在要求成功的情況，二是在因為購買尚未履行的相同產品而導致要求失敗的情況。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#MakePurchaseRequest)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#MakePurchaseRequest)]
 
 ## <a name="step-2-tracking-local-fulfillment-of-the-consumable"></a>步驟 2：追蹤本機滿足取用
 
@@ -45,7 +45,7 @@ ms.locfileid: "57655643"
 下列範例示範如何使用上一個步驟之 [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) 呼叫中的 [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 屬性，來識別購買的產品是否已經履行。 此範例使用集合將產品資訊儲存在可供參照的位置，以便稍後確認是否已在本機順利履行。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
 
 下個範例說明將履行回報給市集後，如何使用上個範例的陣列來存取之後要使用的產品識別碼/交易識別碼。
 
@@ -53,7 +53,7 @@ ms.locfileid: "57655643"
 > 無論您的 App 使用哪種方法來追蹤和確認履行，都必須提供審查評鑑，以確保不會針對客戶尚未收到的項目向客戶收費。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
 
 ## <a name="step-3-reporting-product-fulfillment-to-the-store"></a>步驟 3：報告的產品 「 履行 」 存放區
 
@@ -63,7 +63,7 @@ ms.locfileid: "57655643"
 > 若未將已履行的消費性應用程式內產品報告給 Microsoft Store，將導致使用者無法再次購買該產品，必須等到回報已履行上次的購買後才能再購買。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
 
 ## <a name="step-4-identifying-unfulfilled-purchases"></a>步驟 4：識別尚未完成處理的購買項目
 
@@ -72,7 +72,7 @@ ms.locfileid: "57655643"
 下列範例示範如何使用 [GetUnfulfilledConsumablesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getunfulfilledconsumablesasync) 列舉未履行的消費性產品，以及您的 App 如何重複此清單來完成本機履行。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GetUnfulfilledConsumables)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GetUnfulfilledConsumables)]
 
 ## <a name="related-topics"></a>相關主題
 

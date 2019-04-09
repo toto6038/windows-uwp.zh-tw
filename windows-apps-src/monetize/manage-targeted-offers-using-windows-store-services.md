@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10 uwp, Microsoft Store 服務, Microsoft Store 針對性優惠 API, 針對性優惠
 ms.localizationpriority: medium
-ms.openlocfilehash: bcf270bd56d17936ef404adbc3663034b58e7a2c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3ea4adac82692e80d652523d05a7ba0b901db300
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615683"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334396"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用Microsoft Store 服務管理針對性優惠
 
@@ -33,7 +33,7 @@ ms.locfileid: "57615683"
 
 若要取得 MSA 權杖，請使用[WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) 類別來要求使用範圍 ```devcenter_implicit.basic,wl.basic``` 的權杖。 以下範例示範操作方法。 此範例是[完整範例](#code-example)的摘要，並需要完整範例中提供的 **using** 陳述式。
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
 
 如需有關如何取得 MSA 權杖的詳細資訊，請[Web 帳戶管理員](../security/web-account-manager.md)。
 
@@ -47,7 +47,7 @@ ms.locfileid: "57615683"
 
 下列範例示範如何取得適用於目前使用者的針對性優惠。 此範例是[完整範例](#code-example)的摘要。 它需要 Newtonsoft 的 [Json.NET](https://www.newtonsoft.com/json) 程式庫和其他類別，以及完整範例中提供的 **using** 陳述式。
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
 
 <span id="code-example" />
 
@@ -61,7 +61,7 @@ ms.locfileid: "57615683"
 
 此範例需要來自 Newtonsoft 的 [Json.NET](https://www.newtonsoft.com/json) 程式庫。 範例使用此程式庫來序列化和還原序列化 JSON 格式的資料。
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
 
 ## <a name="related-topics"></a>相關主題
 

@@ -6,21 +6,20 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 認可應用程式提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a860239bcd266f577abca3af1cfc994393cae8e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9e44f5672c817f9e1ab00df341a2fd78b23f2944
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594273"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334146"
 ---
 # <a name="commit-an-app-submission"></a>認可應用程式提交
-
 
 在 Microsoft Store 提交 API 中使用這個方法，以認可新的或更新應用程式提交到合作夥伴中心。 認可動作警示合作夥伴中心，提交資料已上傳 （包括任何相關的套件和映像）。 在回應中，合作夥伴中心會認可的變更，提交資料的擷取及發行。 認可作業成功後，提交的變更會顯示在合作夥伴中心。
 
 如需認可作業如何在使用 Microsoft Store 提交 API 提交 App 的程序中進行的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -34,7 +33,7 @@ ms.locfileid: "57594273"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit``` |
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -51,7 +50,6 @@ ms.locfileid: "57594273"
 | applicationId | 字串 | 必要。 包含您想要認可提交之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | submissionId | 字串 | 必要。 您想要認可之提交的識別碼。 在[建立 App 提交](create-an-app-submission.md)要求的回應資料中有提供此識別碼。 提交在合作夥伴中心所建立，此識別碼也會提供在合作夥伴中心內的 [提交] 頁面的 url。  |
 
-
 ### <a name="request-body"></a>要求本文
 
 不提供此方法的要求本文。
@@ -60,7 +58,7 @@ ms.locfileid: "57594273"
 
 下列範例示範如何認可 App 提交。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243610/commit HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -79,8 +77,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | 字串  | 提交的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>  |
-
+| status           | 字串  | 提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>  |
 
 ## <a name="error-codes"></a>錯誤碼
 
@@ -91,7 +88,6 @@ Authorization: Bearer <your access token>
 | 400  | 要求參數無效。 |
 | 404  | 找不到指定的提交。 |
 | 409  | 找不到指定的提交，但無法認可目前的狀態，或應用程式使用的合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |
-
 
 ## <a name="related-topics"></a>相關主題
 

@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ac958a93fcafbb33a9025196b49398e2e3269e55
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663643"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291836"
 ---
 # <a name="ambient-lighting"></a>環境光源
-
 
 環境光線為場景提供定值光線。 它同等地照亮所有物件端點，因為其不取決於任何其他照明因素，例如頂點標準、光源方向、光源位置、範圍或衰減。 環境光線於所有方向皆為定值，且為物件的所有像素以相同方式上色。 加以計算很快速，但是會讓物件看起來很平板且不真實。
 
@@ -33,7 +32,7 @@ ms.locfileid: "57663643"
 | Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | 全域環境色彩                                                                                              |
 | Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | 第 i 個光線的光衰減。 參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。 |
 | Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | 第 i 個光線的聚光燈係數。 參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。  |
-| 總和               | 無           | 無           | 環境光線的加總                                                                                          |
+| 總和               | N/A           | N/A           | 環境光線的加總                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | 第 i 個光線的環境光線色彩                                                                              |
 
  
@@ -59,7 +58,7 @@ L<sub>ai</sub> 是場景中第 i 個光線的環境色彩。 每個 Direct3D 光
 
 在此範例中，物件使用場景環境光線和材料環境色彩上色。
 
-```
+```cpp
 #define GRAY_COLOR  0x00bfbfbf
 
 Ambient.r = 0.75f;

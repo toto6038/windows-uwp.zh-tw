@@ -5,16 +5,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
-ms.openlocfilehash: c934a88dd1825fb0111083d71eb25e477956d79c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 71c47767cf026b962f682fb30ca93758dbd5e227
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627363"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244074"
 ---
 #<a name="xbox-live-user-management"></a>Xbox Live 的使用者管理 #
 
-**要求**
+## <a name="request"></a>要求
 
 您可以取得主機上的使用者清單，或是透過新增、移除、登入、登出或修改現有使用者來更新清單。
 
@@ -22,15 +22,15 @@ ms.locfileid: "57627363"
 | ------------- |-----------------|
 | GET           | /ext/user |
 | PUT           | /ext/user |
-<br>
+
 
 **URI 參數**
 
-* 無
+* None
 
 **要求標頭**
 
-* 無
+* None
 
 **要求本文**
 
@@ -45,7 +45,7 @@ ms.locfileid: "57627363"
   * SponsoredUser (選擇性)：指定是否要新增贊助使用者的布林值。
   * （選擇性） 刪除： 指定要從主控台刪除這位使用者的 bool
 
-###<a name="response"></a>回應 # # #
+## <a name="response"></a>回應
 
 **回應主體**
 
@@ -70,6 +70,3 @@ ms.locfileid: "57627363"
 | 204                | 針對 PUT 的呼叫成功，且已更新主機上的使用者 |
 | 4XX                | 無效的要求資料或格式的各種錯誤 |
 | 5XX                | 未預期失敗的錯誤代碼 |
-<br>
-
-

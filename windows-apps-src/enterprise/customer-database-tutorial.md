@@ -5,12 +5,12 @@ keywords: enterprise、 教學課程中，客戶資料，建立讀取、 更新 
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: med
-ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7bd3a180762c3ef06d7c24ae001fb2c7fb7fc55e
+ms.sourcegitcommit: 6df46d7d5b5522805eab11a9c0e07754f28673c6
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623243"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58808296"
 ---
 # <a name="tutorial-create-a-customer-database-application"></a>教學課程：建立客戶資料庫應用程式
 
@@ -24,7 +24,7 @@ ms.locfileid: "57623243"
 
 ![工作應用程式的主頁面](images/customer-database-tutorial/customer-list.png)
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
 * [請確定您有最新版的 Visual Studio 和 Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * [複製或下載客戶資料庫教學課程範例](https://aka.ms/customer-database-tutorial)
@@ -45,7 +45,7 @@ ms.locfileid: "57623243"
 * A **RadDataGrid**來顯示和編輯您的客戶。 
 * A **StackPanel**設為新客戶的初始值。
 
-### <a name="viewmodels"></a>Viewmodel
+### <a name="viewmodels"></a>ViewModels
 
 **ViewModels\CustomerListPageViewModel.cs**是應用程式的基本邏輯所在的位置。 在檢視中採取的每個使用者動作將傳入此檔案進行處理。 在本教學課程中，您將新增一些新的程式碼，並實作下列方法：
 
@@ -247,7 +247,7 @@ ms.locfileid: "57623243"
         get => _newCustomer;
         set
         {
-            if {_newCustomer != value}
+            if (_newCustomer != value)
             {
                 _newCustomer = value;
                 OnPropertyChanged();
@@ -421,7 +421,7 @@ ms.locfileid: "57623243"
 
 ## <a name="conclusion"></a>結論
 
-恭喜！ 進行這一切完成，您的應用程式現在會有完整的本機資料庫作業。 您可以建立、 讀取、 更新和刪除您的使用者介面內的客戶，以及這些變更儲存到您的資料庫，並會保存到不同的會啟動您的應用程式。
+恭喜您！ 進行這一切完成，您的應用程式現在會有完整的本機資料庫作業。 您可以建立、 讀取、 更新和刪除您的使用者介面內的客戶，以及這些變更儲存到您的資料庫，並會保存到不同的會啟動您的應用程式。
 
 現在，您已完成，請考慮下列各項：
 * 如果您還沒有這麼做，請參閱[應用程式結構概觀](../enterprise/customer-database-app-structure.md)如需有關為什麼應用程式建置其用法。
@@ -447,7 +447,7 @@ ms.locfileid: "57623243"
 * 將您的應用程式與 Microsoft Store 產生關聯。
 * 透過複製[服務專案](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService)到您的應用程式，並將它部署至 Azure。
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>驗證
 
 您必須建立一個按鈕來開始驗證序列，並快顯視窗或個別的頁面，來收集使用者的資訊。 一旦您已建立的您必須提供要求的使用者資訊，並使用它來取得存取權杖的程式碼。 客戶訂單資料庫範例會包裝呼叫 Microsoft Graph **web 帳戶管理員**程式庫來取得權杖，以及處理至 AAD 帳戶的驗證。
 

@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 43013dc820c0f0f67df2e9502d3c57c77e03f250
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ac66066a4140ace5905ff6bc52a7b1290341beea
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599243"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291581"
 ---
 # <a name="line-lists"></a>線清單
-
 
 線清單是隔離、直線段的清單。 在 3D 場景中加入冰雹或暴雨的這類工作適合使用線清單。 應用程式藉由填入頂點陣列來建立線清單。 請注意，線清單中的頂點數必須是大於或等於二的偶數。
 
@@ -33,7 +32,7 @@ ms.locfileid: "57599243"
 
 下列程式碼顯示如何建立這個線段的頂點。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -52,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 下列程式碼範例顯示如何在 Direct3D 中呈現線段。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.

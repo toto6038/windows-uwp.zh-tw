@@ -6,12 +6,12 @@ ms.date: 02/12/2017
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cbf94420b8ed7a2e030ccb2799a8636f56bef2f
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635713"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162924"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 的 Device Portal
 
@@ -53,7 +53,7 @@ Xbox 裝置入口網站提供一組標準頁面，類似 Windows 裝置入口網
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live (遊戲儲存)
 
-Windows 裝置入口網站和 Xbox 裝置入口網站都有 **\[Xbox Live\]** 頁面。 不過，Xbox 裝置入口網站有一個專用區段 **\[Xbox Live 遊戲儲存\]**，可讓您儲存 Xbox 上已安裝遊戲的資料。 輸入與標題和遊戲儲存相關的 **\[服務設定 ID (SCID)\]** (如需詳細資訊，請參閱 [Xbox Live 服務設定](../xbox-live/xbox-live-service-configuration.md#get-your-ids))、**\[Membername (MSA)\]** 和 **\[套件系列名稱 (PFN)\]**，瀏覽 **\[輸入檔案 (.json 或.xml)\]**，然後選取其中一個按鈕 (**\[重設\]**、**\[匯入\]**、**\[匯出\]** 和 **\[刪除\]**) 來操控儲存資料。
+Windows 裝置入口網站和 Xbox 裝置入口網站都有 **\[Xbox Live\]** 頁面。 不過，Xbox 裝置入口網站有一個專用區段 **\[Xbox Live 遊戲儲存\]**，可讓您儲存 Xbox 上已安裝遊戲的資料。 輸入與標題和遊戲儲存相關的 **\[服務設定 ID (SCID)\]** (如需詳細資訊，請參閱 [Xbox Live 服務設定](https://docs.microsoft.com/gaming/xbox-live//xbox-live-service-configuration.md#get-your-ids))、**\[Membername (MSA)\]** 和 **\[套件系列名稱 (PFN)\]**，瀏覽 **\[輸入檔案 (.json 或.xml)\]**，然後選取其中一個按鈕 (**\[重設\]**、**\[匯入\]**、**\[匯出\]** 和 **\[刪除\]**) 來操控儲存資料。
 
 在 **\[產生\]** 區段中，您可以產生虛設資料，並儲存到指定的輸入檔案。 只要輸入 **\[容器 (預設為 2)\]**、**\[Blob (預設為 3)\]** 和 **\[Blob 大小 (預設為 1024)\]**，然後選取 **\[產生\]**。
 
@@ -199,7 +199,7 @@ Kinect 感應器必須連接至主機，才能變更這些設定。
 
 ![遊戲事件資料](images/device-portal-xbox-22.PNG)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Windows Device Portal 概觀](device-portal.md)
 * [裝置入口網站 core API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, 記錄事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b338fd3b34d530ad365b0377d6b6c6c65398b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 368e2fb7b3c6d78f68235b829e088d79b5673cf2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604233"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334756"
 ---
 # <a name="log-custom-events-for-partner-center"></a>記錄合作夥伴中心的自訂事件
 
@@ -22,7 +22,7 @@ ms.locfileid: "57604233"
 > [!NOTE]
 > 您登入合作夥伴中心的自訂事件無關[Windows 事件](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)，它們不會出現在**事件檢視器**。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 您可以檢閱中的自訂記錄事件之前**使用量報告**在合作夥伴中心中的應用程式，必須發行應用程式存放區中。
 
@@ -39,10 +39,10 @@ ms.locfileid: "57604233"
 5. 在 SDK 清單中，按一下 \[Microsoft Engagement Framework\] 旁邊的核取方塊，然後按一下 \[確定\]。
 
 6. 將下列陳述式新增到您要記錄自訂事件的每個程式碼檔案頂端。
-    [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
+    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
 
 7. 在您要記錄自訂事件的每個程式碼區段中，取得 [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 物件，然後呼叫 [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 將您的自訂事件字串傳送給該方法。
-    [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
+    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
     > [!NOTE]
     > 如果您的應用程式使用長名稱記錄許多自訂事件，[使用報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)可能需要很長的時間來載入。 建議讓您的自訂事件使用簡短名稱。 

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 786c9bc4962d26c58950e06a82140e524b967db1
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653573"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240056"
 ---
 # <a name="list-view-and-grid-view"></a>清單檢視和方格檢視
 
@@ -182,7 +182,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
                 <Image Source="Assets/placeholder.png" Width="32" Height="32" 
                        HorizontalAlignment="Left"/>
                 <TextBlock Text="{x:Bind}" Foreground="Teal" 
-                           FontSize="15" Grid.Column="1"/>
+                           FontSize="14" Grid.Column="1"/>
             </Grid> 
         </DataTemplate>
     </ListView.ItemTemplate>
@@ -290,11 +290,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 若要啟用此互動︰ | 使用這些設定： | 處理這個事件︰ | 使用此屬性來取得選取的項目：
 ----------------------------|---------------------|--------------------|--------------------------------------------
-沒有互動 | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **None**，[IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | 無 | 無 
+沒有互動 | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **None**，[IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | N/A | N/A 
 單一選取 | SelectionMode = **Single**，IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx)，[SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx)  
 多重選取 | SelectionMode = **Multiple**，IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
 延伸選取 | SelectionMode = **Extended**，IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
-按一下 | SelectionMode = **None**，IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | 無 
+按一下 | SelectionMode = **None**，IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | N/A 
 
 > **注意**&nbsp;&nbsp;從 Windows 10 開始，您可以啟用 IsItemClickEnabled 來引發 ItemClick 事件，同時也將 SelectionMode 設定為 Single、Multiple 或 Extended。 如果您執行此動作，就會先引發 ItemClick 事件，接著引發 SelectionChanged 事件。 在某些情況下，假設您瀏覽到 ItemClick 事件處理常式的另一個頁面，就不會引發 SelectionChanged 事件且不會選取該項目。
 
@@ -325,7 +325,7 @@ myGridView.IsItemClickEnabled = true;
 
 輔助按鍵 | 互動
 -------------|------------
-無 | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取單一項目。</li>
+None | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取單一項目。</li>
 Ctrl | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來取消選取單一項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
 
 當 SelectionMode 是 **Single** 時，您可以從 [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx) 屬性取得選取的資料項目。 您可以使用 [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx) 屬性來取得選取項目集合中的索引。 如果未選取任何項目，SelectedItem 即為 **null** 且 SelectedIndex 是 -1。 
@@ -338,7 +338,7 @@ Ctrl | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來取
 
 輔助按鍵 | 互動
 -------------|------------
-無 | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取多個項目，以便在焦點項目上切換選取項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
+None | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取多個項目，以便在焦點項目上切換選取項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
 Shift | <li>使用者可以選取多個連續項目，方法是按一下或點選選取範圍中的第一個項目，然後按一下或點選選取範圍中的最後一個項目。</li><li>使用者可以使用方向鍵來建立連續的選取範圍，選取範圍的第一個項目是按下 Shift 鍵時所選取的項目。</li>
 
 ### <a name="extended-selection"></a>延伸選取
@@ -347,7 +347,7 @@ Shift | <li>使用者可以選取多個連續項目，方法是按一下或點�
 
 輔助按鍵 | 互動
 -------------|------------
-無 | <li>此行為與**單一**選取相同。</li>
+None | <li>此行為與**單一**選取相同。</li>
 Ctrl | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取多個項目，以便在焦點項目上切換選取項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
 Shift | <li>使用者可以選取多個連續項目，方法是按一下或點選選取範圍中的第一個項目，然後按一下或點選選取範圍中的最後一個項目。</li><li>使用者可以使用方向鍵來建立連續的選取範圍，選取範圍的第一個項目是按下 Shift 鍵時所選取的項目。</li>
 
@@ -526,5 +526,5 @@ ListView 和 GridView 控制項支援在項目本身內部，以及在本身和�
 ## <a name="related-articles"></a>相關文章
 
 - [清單](lists.md)
-- [項目容器和範本](item-containers-templates.md)
-- [拖放功能](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [項目容器與範本](item-containers-templates.md)
+- [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)

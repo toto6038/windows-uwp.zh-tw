@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 認可附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: efab4412486566ae817eb66e78f5407533a30d5b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c748d2e8544a27e8cca58fd8aa96154319f77b47
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608213"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334606"
 ---
 # <a name="commit-an-add-on-submission"></a>認可附加元件提交
 
@@ -19,7 +19,7 @@ ms.locfileid: "57608213"
 
 如需認可作業如何在使用 Microsoft Store 提交 API 提交附加元件的程序中進行的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -33,7 +33,7 @@ ms.locfileid: "57608213"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}/commit``` |
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}/commit` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -59,7 +59,7 @@ ms.locfileid: "57608213"
 
 下列範例示範如何認可附加元件提交。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621230023/commit HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -78,8 +78,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | 字串  | 提交的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>  |
-
+| status           | 字串  | 提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>  |
 
 ## <a name="error-codes"></a>錯誤碼
 
@@ -90,7 +89,6 @@ Authorization: Bearer <your access token>
 | 400  | 要求參數無效。 |
 | 404  | 找不到指定的提交。 |
 | 409  | 找不到指定的提交，但無法認可目前的狀態，或附加元件會使用合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |
-
 
 ## <a name="related-topics"></a>相關主題
 

@@ -7,12 +7,12 @@ keywords: device, digitizer, input, interaction, injection, 裝置, 數位板, �
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2699917beed9330dd2044704f19b3c25256c3ca8
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602323"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343237"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>透過輸入插入模擬使用者輸入
 
@@ -20,13 +20,13 @@ ms.locfileid: "57602323"
 
 > **重要的 Api**:[**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 輸入插入可讓您 UWP 應用程式模擬從各種輸入裝置的輸入和隨處直接輸入，包括在您的應用程式的用戶端區域以外 (即使以系統管理員權限執行 App，例如登錄編輯程式)。
 
 輸入插入適用於 UWP app 和工具，其需要提供功能，包括協助工具、測試 (臨機操作、自動)，以及遠端存取和支援功能。
 
-## <a name="setup"></a>設定
+## <a name="setup"></a>安裝程式
 
 若要在您的 UWP app 中使用輸入插入 API，您將需要新增下列項目到應用程式資訊清單：
 
@@ -169,11 +169,11 @@ ms.locfileid: "57602323"
     
     在這個程式碼片段中，我們會在可能標示為已在按鈕點選事件中處理的滑鼠事件區域內，宣告我們的全域物件並宣告指標事件的接聽程式 ([AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler))。
 
-    [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) 物件代表用於傳送輸入資料的虛擬輸入裝置。
+    [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) 物件代表用於傳送輸入資料的虛擬輸入裝置。
 
     在 `ContainerInput_PointerPressed` 處理常式中，我們呼叫觸控插入函式。
 
-    在 `ContainerInput_PointerReleased` 處理常式中，我們呼叫 UninitializeTouchInjection 來關閉 [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) 物件。
+    在 `ContainerInput_PointerReleased` 處理常式中，我們呼叫 UninitializeTouchInjection 來關閉 [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) 物件。
 
     ```csharp
     public sealed partial class MainPage : Page
@@ -250,7 +250,7 @@ ms.locfileid: "57602323"
     ```
 3. 以下是觸控輸入插入函式。
 
-    首先，我們呼叫 [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) 來起始 [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) 物件。
+    首先，我們呼叫 [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) 來起始 [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) 物件。
 
     接著，我們使用 `Default` 的 [InjectedInputVisualizationMode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) 呼叫 [InitializeTouchInjection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection)。
 
@@ -360,7 +360,7 @@ ms.locfileid: "57602323"
 
 4. 最後，我們處理任何在輸入插入區域中按鈕[點選](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase)所路由的事件按鈕，並以點選的按鈕的名稱更新 UI。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 ### <a name="topic-samples"></a>主題範例
 

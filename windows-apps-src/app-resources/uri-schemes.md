@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5d66d717d77d2797e8a483871b8d3369befb5b6b
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632053"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320581"
 ---
 # <a name="uri-schemes"></a>URI 配置
 
@@ -98,9 +98,11 @@ ms-appx:///images/logo.png
 
 上述 URI 可能會實際擷取目前應用程式套件中具有下列實體檔案名稱的檔案。
 
-```
+<blockquote>
+<pre>
 \Images\fr-FR\logo.scale-100_contrast-white.png
-```
+</blockquote>
+</pre>
 
 當然也可以直接以其完整名稱參考這個相同的實體檔案來進行擷取。
 

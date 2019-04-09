@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 意見反應中樞, 啟動
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5d5c12deed9fffc3d2515529aa5bba5fbffc47
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bfce2ed245a3bf4e9b1c8b1a70c8de905d7034a3
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631833"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334796"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>從您的應用程式啟動意見反應中樞
 
@@ -48,13 +48,13 @@ ms.locfileid: "57631833"
 
     如果這個屬性傳回 **true**，請將控制項設為可見。 下列程式碼示範適用於 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 的操作方法。
 
-    [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
+    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
       > [!NOTE]
       > 雖然目前 Xbox 裝置上不支援「意見反應中樞」，但在執行 Windows 10 10.0.14271 版或更新版本的 Xbox 裝置上，**IsSupported** 屬性目前會傳回 **true**。 這是已知的問題，在未來的 Microsoft Store Services SDK 版本中將會修正此問題。  
 
 8. 在使用者按一下控制項時會執行的事件處理常式中，取得 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 物件，並呼叫 [LaunchAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync) 方法來啟動「意見反應中樞」App。 這個方法有兩個多載︰一個不含參數，另一個接受索引鍵/值組的字典，其中包含您想要與意見反應產生關聯的中繼資料。 下列範例示範如何在 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件處理常式中啟動意見反應中樞。
 
-    [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
+    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
 
 ## <a name="design-recommendations-for-your-feedback-ui"></a>意見反應 UI 的設計建議
 

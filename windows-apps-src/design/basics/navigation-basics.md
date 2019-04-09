@@ -10,12 +10,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3d516343798b7d8c221a5af12210a4897a3124a9
+ms.sourcegitcommit: 358abe22243da4592c30e18d6fc322778f091c8d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636093"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58362948"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -197,6 +197,21 @@ ms.locfileid: "57636093"
 
 :::row:::
     :::column:::
+         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+        :::column span="2":::
+    [**Pivot**](../controls-and-patterns/pivot.md)
+    
+    類似於[瀏覽檢視](../controls-and-patterns/navigationview.md)，但僅提供針對觸控和稍有不同的瀏覽行為的其他支援。
+    
+    使用 pivot 時:-您想要允許兩個類別之間撥動觸控應用程式
+        - 您要旋轉木馬 infintely 瀏覽選項
+        - 您不需要有效掌控類別之間的導覽行為
+
+:::row-end:::
+
+:::row:::
+    :::column:::
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
@@ -207,9 +222,9 @@ ms.locfileid: "57636093"
         - 頁面位於最上層。
         - 有許多的導覽項目 (超過 5)
         - 您預期使用者不會在頁面之間頻繁切換。
-        
-:::row-end:::
 
+:::row-end:::
+        
 :::row:::
     :::column:::
         ![Master details image](images/nav/thumbnail-master-detail.svg)

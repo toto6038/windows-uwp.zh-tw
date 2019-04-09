@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
-ms.openlocfilehash: 0869f5cfc2499a00577f0196cd9f9f84987c0321
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a382fd879ce656a81e1de4ae2d91180f622cd730
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647323"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334738"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>適用於 Xbox One 上 UWP 應用程式和遊戲的系統資源
 
@@ -52,8 +52,8 @@ ms.locfileid: "57647323"
 </br>
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developing-xbox-one-applications-16860/Video-What-s-Unique--vk0fOPf9C_2006218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 - [在 Xbox One UWP](index.md)
-- [開始使用 Xbox Live 創作者計劃。](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
+- [開始使用 Xbox Live 創作者計劃。](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-program)
 - [DirectX 和 Xbox One 上的 UWP](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
 

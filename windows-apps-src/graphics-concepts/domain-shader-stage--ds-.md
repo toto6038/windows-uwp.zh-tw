@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bbde90d848d3bc8fb18a5ecf370c85121adc02f6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c38259c303673c3c3c5494470d721856fcaaf6c9
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620493"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291716"
 ---
 # <a name="domain-shader-ds-stage"></a>網域著色器 (DS) 階段
-
 
 網域著色器 (DS) 階段會計算輸出修補檔案中細分點的頂點位置；它會計算對應每一個網域取樣的頂點位置。 網域著色器會在每個曲面細分器階段輸出點執行一次，並且對輪廓著色器輸出塊面和輸出塊面常數，以及曲面細分器階段輸出 UV 座標具有唯讀存取權。
 
@@ -35,7 +34,7 @@ ms.locfileid: "57620493"
     -   鑲嵌係數。 鑲嵌係數可能包括固定函式曲面細分器使用的值，以及原始值 (例如在整數鑲嵌進位之前)，藉此簡化地理變形。
 -   網域著色器會對來自[曲面細分器 (TS) 階段](tessellator-stage--ts-.md)的每個輸出座標叫用一次。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 -   網域著色器 (DS) 階段會將輸出塊面中細分點的頂點位置輸出。
@@ -45,7 +44,7 @@ ms.locfileid: "57620493"
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>範例
 
 
-```
+```hlsl
 void main( out    MyDSOutput result, 
            float2 myInputUV : SV_DomainPoint, 
            MyDSInput DSInputs,

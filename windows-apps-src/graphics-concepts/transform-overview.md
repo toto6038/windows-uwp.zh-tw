@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a01814729e38668e05201b4b7c8876dc150c488e
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640143"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291766"
 ---
 # <a name="transform-overview"></a>轉換概觀
-
 
 矩陣轉換處理很多 3D 圖形低階數學運算。
 
@@ -63,7 +62,7 @@ ms.locfileid: "57640143"
 
 在 C++，Direct3D 使用矩陣結構，宣告矩陣為二維陣列。 下列範例顯示如何初始化 [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573) 結構做為統一縮放矩陣（縮放比例 "s"）。
 
-```
+```cpp
 D3DMATRIX scale = {
     5.0f,            0.0f,            0.0f,            0.0f,
     0.0f,            5.0f,            0.0f,            0.0f,
@@ -81,7 +80,7 @@ D3DMATRIX scale = {
 
 您可以在 C++ 中手動建立轉移矩陣。 下列範例程式碼示範如何建立矩陣以轉移頂點的功能。
 
-```
+```cpp
 D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
     D3DXMATRIX ret;
 
@@ -100,7 +99,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 ![新點縮放矩陣的方程式](images/matscale.png)
 
-## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>旋轉
+## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>Rotate
 
 
 這裡描述的轉換適用於左手座標系統，因此可能不同於您在其他地方看到的轉移矩陣。
@@ -121,7 +120,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 下列程式碼顯示圍繞 X 軸處理旋轉的功能。
 
-```
+```cpp
     // Inputs are a pointer to a matrix (pOut) and an angle in radians.
     float sin, cos;
     sincosf(angle, &sin, &cos);  // Determine sin and cos of angle

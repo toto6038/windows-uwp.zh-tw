@@ -6,19 +6,21 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
 ms.localizationpriority: medium
-ms.openlocfilehash: e248a6ff666efe7dca262daa81a21ab44a4dc5aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a1040ec91af767d9472842b5ba656d347e7782d0
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617703"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244064"
 ---
-# <a name="developer-folder-api-reference"></a>開發人員資料夾 API 參考   
+# <a name="developer-folder-api-reference"></a>開發人員資料夾 API 參考
+
 您可以使用標準的 &#91;檔案總管&#93; 存取您 Xbox One 上的開發相關檔案。 這可讓您從電腦針對主機輕鬆檢視並取代檔案。
 
 **要求**
 
-您可以使用下列要求存取開發人員資料夾。 要求會傳回：    
+您可以使用下列要求存取開發人員資料夾。 要求會傳回：
+
 * 檔案共用的位置。 此位置可以輸入至 [檔案總管] 的位址列中。
 * 存取檔案共用的使用者名稱。
 * 存取檔案共用的密碼。
@@ -26,18 +28,18 @@ ms.locfileid: "57617703"
 方法      | 要求 URI
 :------     | :-----
 GET | /ext/smb/developerfolder
-<br />
+
 **URI 參數**
 
-- 無
+- None
 
 **要求標頭**
 
-- 無
+- None
 
 **要求本文**
 
-- 無
+- None
 
 **回應**   
 路徑 - 檔案開發人員檔案共用的路徑。   
@@ -53,7 +55,7 @@ HTTP 狀態碼      | 描述
 200 | 已授與存取檔案共用認證的要求。
 4XX | 錯誤碼
 5XX | 錯誤碼
-<br />
-**可用的裝置系列**
+
+**可用裝置系列**
 
 * Windows Xbox

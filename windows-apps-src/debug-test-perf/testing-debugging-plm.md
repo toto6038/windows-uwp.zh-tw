@@ -1,17 +1,17 @@
 ---
 description: 用來偵錯和測試您 App 如何使用處理程序生命週期管理的工具及技術。
 title: 處理程序生命週期管理 (PLM) 的測試與偵錯工具
-ms.date: 02/08/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b3e37d4de3a346e0f29909727a46d3b31f9d59d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 94cbad6e497ea2f5b36a07a6b039bfc293175c4c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608493"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244344"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>處理程序生命週期管理 (PLM) 的測試與偵錯工具
 
@@ -25,11 +25,11 @@ Visual Studio 2015 中內建的偵錯工具可協助您調查使用 UWP 專屬�
 
 ## <a name="the-plmdebug-tool"></a>PLMDebug 工具
 
-PLMDebug.exe 是一項隨附於 Windows SDK 中的命令列工具，可讓您控制應用程式套件的 PLM 狀態。 工具安裝之後，預設會位於 *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64*。 
+PLMDebug.exe 是一項隨附於 Windows SDK 中的命令列工具，可讓您控制應用程式套件的 PLM 狀態。 工具安裝之後，預設會位於 *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64*。
 
 PLMDebug 也允許您停用任何已安裝之應用程式套件的 PLM，這對於某些偵錯程式來說是必要的。 停用 PLM 會防止 Runtime Broker 服務在您可以偵錯前，終止您的 App。 若要停用 PLM，請使用 **/enableDebug** 切換參數，後面加上您 UWP app 的完整套件名稱 (簡短名稱、套件系列名稱或套件的 AUMID 將無法運作)：
 
-```
+```cmd
 plmdebug /enableDebug [PackageFullName]
 ```
 
@@ -41,7 +41,7 @@ plmdebug /enableDebug [PackageFullName]
 
 您可以撰寫指令碼或工具，識別您遊戲的處理序，然後在殼層中執行 VSJITDebugger.exe，傳入 UWP app 的 PID 來解決這個限制。 下列 C# 程式碼範例說明完成這項作業的簡單方法。
 
-```
+```cs
 using System.Diagnostics;
 
 namespace VSJITLauncher
@@ -76,13 +76,15 @@ namespace VSJITLauncher
 
 這個範例用法搭配 PLMDebug：
 
-```
+```cmd
 plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg "\"C:\VSJITLauncher.exe\" Game"
 ```
+
 其中 `Game` 是處理程序名稱，`279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` 是範例 UWP app 套件的完整套件名稱。
 
 請注意，每次呼叫 **/enableDebug** 都必須在稍後使用 **/disableDebug** 切換參數結合另一個 PLMDebug 呼叫。 此外，偵錯工具路徑必須是絕對路徑 (不支援相對路徑)。
 
 ## <a name="related-topics"></a>相關主題
+
 - [部署和偵錯 UWP 應用程式](deploying-and-debugging-uwp-apps.md)
 - [偵錯、測試及效能](index.md)

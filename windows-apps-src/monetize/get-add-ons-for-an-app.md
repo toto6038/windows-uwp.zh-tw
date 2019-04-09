@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: ec065eef5d411e35515837b169fd57d71e4ef6ac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8211d65f04b7487aeca6f683375fe87b80d1b9a9
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594553"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334996"
 ---
 # <a name="get-add-ons-for-an-app"></a>取得應用程式的附加元件
 
 若要列出的應用程式，已向您的合作夥伴中心帳戶的附加元件，在 Microsoft Store 提交 API 中使用這個方法。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -30,7 +30,7 @@ ms.locfileid: "57594553"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -43,7 +43,7 @@ ms.locfileid: "57594553"
 ### <a name="request-parameters"></a>要求參數
 
 
-|  名稱  |  類型  |  描述  |  必要  |
+|  名稱  |  類型  |  描述  |  必要項  |
 |------|------|------|------|
 |  applicationId  |  字串  |  您想要擷取其附加元件之 App 的「市集識別碼」。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
 |  top  |  整數  |  要求中要傳回的項目數目 (也就是要傳回的附加元件數目)。 如果 App 擁有的附加元件超過您在查詢中指定的值，回應主體會包含您可以附加到方法 URI 的相對 URI 路徑以要求下一個頁面的資料。  |  否  |
@@ -58,14 +58,14 @@ ms.locfileid: "57594553"
 
 下列範例示範如何列出 App 的所有附加元件。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listinappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
 下列範例示範如何列出 App 的前 10 個附加元件。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listinappproducts?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -97,7 +97,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求主體的 *top* 參數設為 10，但是 App 有 50 個附加元件，回應主體會包含 ```applications/{applicationid}/listinappproducts/?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10``` 來要求接下來的 10 個附加元件。 |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求主體的 *top* 參數設為 10，但是 App 有 50 個附加元件，回應主體會包含 `applications/{applicationid}/listinappproducts/?skip=10&top=10` 的 @nextLink 值，這指出您可以呼叫 `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10` 來要求接下來的 10 個附加元件。 |
 | value      | 陣列  | 列出指定 App 每個附加元件之市集識別碼的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱[附加元件資源](get-app-data.md#add-on-object)。                                                                                                                           |
 | totalCount | 整數    | 查詢的資料結果中的列數總計 (也就是指定 App 的附加元件總數目)。    |
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4cbdae1084f96901e90f8237d71bd59bf2d4c592
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603333"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240016"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API 參考   
 您可以使用這個 REST API，啟用和停用開發套件的 Fiddler 網路追蹤。
@@ -25,18 +25,19 @@ ms.locfileid: "57603333"
 方法      | 要求 URI
 :------     | :-----
 GET | /ext/fiddler
-<br />
+
+
 **URI 參數**
 
-- 無
+- None
 
 **要求標頭**
 
-- 無
+- None
 
 **要求本文**   
 
-- 無
+- None
 
 **回應**   
 
@@ -61,7 +62,7 @@ HTTP 狀態碼      | 描述
 方法      | 要求 URI
 :------     | :-----
 POST | /ext/fiddler
-<br />
+
 **URI 參數**
 
 您可以在要求 URI 上指定下列其他參數：
@@ -71,11 +72,11 @@ POST | /ext/fiddler
 | proxyAddress       | 執行 Fiddler 之裝置的 IP 位址或主機名稱 |
 | proxyPort          | Fiddler 用來監視流量的連接埠。 預設值為 8888 |
 | updateCert (可省略)| 布林值，指出是否有提供根 Fiddler 憑證。 如果從未在此開發套件上設定 Fiddler，或是在曾其他主機上設定 Fiddler，則這個值必須為 true。  |
-<br>
+
 
 **要求標頭**
 
-- 無
+- None
 
 **要求本文**
 
@@ -83,7 +84,7 @@ POST | /ext/fiddler
 
 **回應**   
 
-- 無  
+- None  
 
 **狀態碼**
 
@@ -104,22 +105,22 @@ HTTP 狀態碼      | 描述
 方法      | 要求 URI
 :------     | :-----
 DELETE | /ext/fiddler
-<br />
+
 **URI 參數**
 
-- 無
+- None
 
 **要求標頭**
 
-- 無
+- None
 
 **要求本文**   
 
-- 無
+- None
 
 **回應**   
 
-- 無 
+- None 
 
 **狀態碼**
 
@@ -131,11 +132,11 @@ HTTP 狀態碼      | 描述
 4XX | 錯誤碼
 5XX | 錯誤碼
 
-<br />
-**可用的裝置系列**
+
+**可用裝置系列**
 
 * Windows Xbox
 
-## <a name="see-also"></a>請參閱
-- [在 Xbox 上設定適用於 UWP 的 Fiddler](uwp-fiddler.md)
+## <a name="see-also"></a>另請參閱
+- [在 Xbox 上針對 UWP 設定 Fiddler](uwp-fiddler.md)
 

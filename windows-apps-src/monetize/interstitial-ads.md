@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: 9abf761aa141ef3d0c19d6d5401b6815542d4172
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6283c4d69a511e4dd4aa342b547c18624952be29
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603913"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335116"
 ---
 # <a name="interstitial-ads"></a>插播式廣告
 
@@ -34,7 +34,7 @@ ms.locfileid: "57603913"
 > [!NOTE]
 > 插播式廣告 API 不會處理任何使用者介面，除了在影片播放時。 請參閱[插入式廣告最佳做法](ui-and-user-experience-guidelines.md#interstitialbestpractices10)，以在您考慮如何將插入式廣告整合到 App 時，取得應該執行和應該避免之事項的指導方針。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 * 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
 
@@ -44,7 +44,7 @@ ms.locfileid: "57603913"
 
 * [XAML/.NET](#interstitialadsxaml10)
 * [HTML/JavaScript](#interstitialadshtml10)
-* [C + + (DirectX Interop)](#interstitialadsdirectx10)
+* [C++(DirectX Interop)](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
 
@@ -66,22 +66,22 @@ ms.locfileid: "57603913"
 
 3.  在您的應用程式的適當程式碼檔案中 (例如在 MainPage.xaml.cs 中，或部分其他頁面的程式碼檔案)，新增下列命名空間參考。
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
 
 4.  在您的應用程式的適當位置中 (例如，在 ```MainPage``` 中或部分其他頁面)，為您的插播式廣告宣告 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 物件和代表應用程式識別碼和單位識別碼的幾個字串欄位。 以下程式碼範例指派 `myAppId` 和 `myAdUnitId` 欄位至插播式廣告的[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
     > [!NOTE]
     > 每個 **InterstitialAd** 都有對應的*廣告單元*，由我們的服務用來提供廣告給控制項，且每個廣告單元都包含*廣告單元識別碼*和*應用程式識別碼*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 您將您的應用程式發佈至市集之前，您必須[取代這些測試的值與即時值](#release)從合作夥伴中心。
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
 
 5.  在啟動時執行的程式碼中 (例如，頁面的建構函式中)，起始 **InterstitialAd** 物件並為物件的事件連結事件處理常式。
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
 
 6.  如果您想要顯示*插入式視訊*ad:大約 30 至 60 秒之前需要 ad 中，使用[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)預先擷取 ad 的方法。 這可讓您有足夠的時間在其顯示前請求和準備廣告。 請務必指定 **AdType.Video**做為廣告類型。
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
     如果您想要顯示*插入式橫幅*ad:大約 5 到 8 秒才需要 ad 中，使用[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)預先擷取 ad 的方法。 這可讓您有足夠的時間在其顯示前請求和準備廣告。 請務必指定 **AdType.Display**做為廣告類型。
 
@@ -91,11 +91,11 @@ ms.locfileid: "57603913"
 
 6.  在您要顯示插播式影片廣告或插播式橫幅廣告的程式碼中的某個點，確認 **InterstitialAd** 已就緒可供顯示，然後使用 [Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法顯示廣告。
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
 
 7.  為 **InterstitialAd** 物件定義事件處理常式。
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
 
 8.  建置並測試您的應用程式以確認它會顯示測試廣告。
 

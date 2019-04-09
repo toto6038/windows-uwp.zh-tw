@@ -5,19 +5,19 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析
 ms.localizationpriority: medium
-ms.openlocfilehash: 74c898630641e8b0d53a181d1874c6df62baaa78
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: dd10fadea415bd769061e198fcf29f8edf0f3124
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637083"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162666"
 ---
 # <a name="get-xbox-live-analytics-data"></a>取得 Xbox Live 分析資料
 
-在 Microsoft Store 分析 API 中使用此方法可取得玩 [Xbox Live-enabled game](../xbox-live/index.md) 的客戶的過去 30 天的一般分析資料，包括裝置配件使用量、網際網路連接類型、玩家分數分佈情況、遊戲統計資料以及朋友和追隨者資料。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
+在 Microsoft Store 分析 API 中使用此方法可取得玩 [Xbox Live-enabled game](https://docs.microsoft.com/gaming/xbox-live//index.md) 的客戶的過去 30 天的一般分析資料，包括裝置配件使用量、網際網路連接類型、玩家分數分佈情況、遊戲統計資料以及朋友和追隨者資料。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
 
 > [!IMPORTANT]
-> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](../xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
+> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
 
 可透過下列方法取得支援已啟用 Xbox Live 遊戲的其他分析資料：
 * [取得 Xbox Live 的成就資料](get-xbox-live-achievements-data.md)
@@ -27,7 +27,7 @@ ms.locfileid: "57637083"
 * [取得 Xbox Live 多人的資料](get-xbox-live-multiplayer-data.md)
 * [取得 Xbox Live 並行使用方式資料](get-xbox-live-concurrent-usage-data.md)
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -53,7 +53,7 @@ ms.locfileid: "57637083"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  描述      |  必要項  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取一般 Xbox Live 分析資料之遊戲的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | metricType | 字串 | 指定要擷取之 Xbox Live 分析資料類型的字串。 對於此方法，請指定 **productvalues**值。  |  是  |

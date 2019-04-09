@@ -2,16 +2,16 @@
 Description: 管理及檢視您的應用程式，在合作夥伴中心內的每個相關的詳細資料，並設定服務，例如 A / B 測試，並將對應。
 title: 應用程式管理與服務
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d6261a7cce86c82b4865d7ca1d68c082cba9ccca
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ba28fb49accc213f570e470142e259c08122b704
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610003"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334576"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
@@ -27,7 +27,7 @@ ms.locfileid: "57610003"
 
 如果您要發行的遊戲，您可以啟用[Xbox Live 創作者計劃](https://xbox.com/developers/creators-program)此頁面上。 這可讓您啟動設定及測試 Xbox Live 功能，並最終發佈您的 Xbox Live 創作者計劃的遊戲。
 
-如需詳細資訊，請參閱 <<c0> [ 開始使用 Xbox Live 創作者計劃](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)並[建立新的 Xbox Live 創作者計劃標題並發行至測試環境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
+如需詳細資訊，請參閱 <<c0> [ 開始使用 Xbox Live 創作者計劃](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)並[建立新的 Xbox Live 創作者計劃標題並發行至測試環境](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title)。
 
 ## <a name="experimentation"></a>實驗
 

@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 691ce1cc0c49154142a52f329af6f2a1df4ae027
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d07a90ce34e9b4613eed6782338cbd889d7935c9
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591523"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58081870"
 ---
 # <a name="responsive-layouts-with-xaml"></a>搭配 XAML 的回應式版面配置
 
@@ -61,7 +61,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
         <ColumnDefinition Width="44"/>
         <ColumnDefinition Width="2*"/>
     </Grid.ColumnDefinitions>
-    <TextBlock Text="Column 1 sizes to its conent." FontSize="24"/>
+    <TextBlock Text="Column 1 sizes to its content." FontSize="24"/>
 </Grid>
 ```
 
@@ -111,7 +111,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 面板控制項 | 描述
 --------------|------------
-[**畫布**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) | **Canvas** 不支援流暢的 UI；您可以完全控制放置子元素及調整其大小的各方面設定。 您通常會在特殊的情況下使用它，例如，建立圖形或定義較大型調適型 UI 的小型靜態區域。 您可以使用程式碼或視覺狀態，在執行階段重新置放元素。<li>元素是使用 Canvas.Top 與 Canvas.Left 附加屬性以絕對位置的方式來放置。</li><li>圖層可以使用 Canvas.ZIndex 附加屬性明確指定。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值都會遭到忽略。 如果沒有明確設定元素的大小，它就會調整其大小來符合它的內容。</li><li>如果子內容大於面板，就不會以視覺化方式進行剪裁。 </li><li>子內容不會受限於面板的範圍內。</li>
+[**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) | **Canvas** 不支援流暢的 UI；您可以完全控制放置子元素及調整其大小的各方面設定。 您通常會在特殊的情況下使用它，例如，建立圖形或定義較大型調適型 UI 的小型靜態區域。 您可以使用程式碼或視覺狀態，在執行階段重新置放元素。<li>元素是使用 Canvas.Top 與 Canvas.Left 附加屬性以絕對位置的方式來放置。</li><li>圖層可以使用 Canvas.ZIndex 附加屬性明確指定。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值都會遭到忽略。 如果沒有明確設定元素的大小，它就會調整其大小來符合它的內容。</li><li>如果子內容大於面板，就不會以視覺化方式進行剪裁。 </li><li>子內容不會受限於面板的範圍內。</li>
 [**方格**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) | **Grid** 支援流暢地調整子元素大小。 您可以使用程式碼或視覺狀態，重新置放和自動重排元素。<li>元素是使用 Grid.Row 與 Grid.Column 附加屬性，以列和欄形式來排列。</li><li>您可以使用 Grid.RowSpan 與 Grid.ColumnSpan 附加屬性，讓元素橫跨多個列與欄。</li><li>系統會採用適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果沒有明確設定元素的大小，它會向兩邊延伸以填滿方格儲存格中的可用空間。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li>
 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) | <li>元素是以相較於面板的邊緣或中心，以及彼此相對的關係來排列。</li><li>元素是使用各種不同的附加屬性來放置，這些屬性可控制面板對齊方式、同層級對齊方式及同層級位置。 </li><li>除非用來對齊的 RelativePanel 附加屬性會造成向兩邊延伸 (例如，元素會向面板的左右邊緣對齊)，否則 HorizontalAlignment/VerticalAlignment 的 Stretch 值會遭到忽略。 如果沒有明確設定元素的大小且它不會向兩邊延伸，則它會調整大小來符合其內容。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li>
 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) |<li>元素以垂直或水平方式堆疊到單行中。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值會以與 Orientation 屬性相反的方向來採用。 如果沒有明確設定元素的大小，它會向兩邊延伸以填滿可用的寬度 (或高度，如果 Orientation 是 Horizontal)。 利用 Orientation 屬性指定的方向，元素會調整大小來符合其內容。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小不會以 Orientation 屬性指定的方向受限於面板的範圍內，因此，可捲動內容向兩邊延伸的範圍會超過面板的範圍且不會顯示捲軸。 您必須明確限制子內容的高度 (或寬度)，讓它能夠顯示捲軸。</li>

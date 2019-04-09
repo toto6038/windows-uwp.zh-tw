@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: af8e45e13eb89185e346c3c8e8cd5303da399471
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0b25a3d31ed32d5629f9dcc2b5a89959472bac08
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658733"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59242376"
 ---
 # <a name="guidelines-for-background-tasks"></a>背景工作的指導方針
 
@@ -39,7 +39,7 @@ ms.locfileid: "57658733"
 
 **管理背景工作：** 您的應用程式應該取得一份已註冊的背景工作、 註冊進度和完成處理常式，並適當地處理這些事件。 您的背景工作類別應該報告進度、取消和完成。 如需詳細資訊，請參閱[處理已取消的背景工作](handle-a-cancelled-background-task.md)和[監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)。
 
-**使用[BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499):** 如果您的背景工作類別執行非同步程式碼，請務必使用延後。 否則，執行 [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) 方法 (若為同處理序背景工作的情況則為 [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 方法) 時，您可能會提早終止背景工作。 如需詳細資訊，請參閱[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
+**使用[BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499):** 如果您的背景工作類別執行非同步程式碼，請務必使用延後。 否則您的背景工作可能會提前終止時[執行](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx)方法會傳回 (或[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)方法在同處理序背景工作的情況下)。 如需詳細資訊，請參閱[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
 
 或者，要求一個延遲並使用 **async/await** 來完成非同步方法呼叫。 請在 **await** 方法呼叫後關閉延遲。
 
@@ -57,14 +57,14 @@ ms.locfileid: "57658733"
 
 **準備應用程式更新：** 如果您的應用程式將會更新，建立並註冊**ServicingComplete**背景工作 (請參閱[SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839)) 來取消註冊應用程式時，舊版的背景工作，並註冊如需新版本的背景工作。 除了在前景內執行的內容以外，此時也很適合執行可能需要的應用程式更新。
 
-**若要執行背景工作的要求：**
+**執行背景工作的要求：**
 
 > **重要**  從 Windows 10 開始，應用程式不會再必須是在鎖定畫面上執行背景工作的必要元件。
 
 通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何類型的背景工作。 如果使用者已明確地在裝置設定中拒絕您應用程式的背景工作權限，則這個方法會傳回 [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439)。 如需使用者的背景活動與省電模式選項的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。 
 ## <a name="background-task-checklist"></a>背景工作檢查清單
 
-*適用於這兩個同處理序和跨處理序背景工作*
+*同時適用於同處理序和跨處理序的背景工作*
 
 -   將背景工作與正確的觸發程序關聯。
 -   新增條件以協助確認背景工作順利執行。
@@ -93,7 +93,7 @@ ms.locfileid: "57658733"
 * [建立及註冊同處理序序背景工作](create-and-register-an-inproc-background-task.md)。
 * [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
-* [在背景中播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 * [註冊背景工作](register-a-background-task.md)
@@ -103,7 +103,7 @@ ms.locfileid: "57658733"
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 

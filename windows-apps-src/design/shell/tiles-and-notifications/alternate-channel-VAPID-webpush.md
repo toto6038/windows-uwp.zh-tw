@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10 uwp、 WinRT API WNS
 localizationpriority: medium
-ms.openlocfilehash: ba8630a2e877345adeac7eb443dd3e418d3ed277
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bf224b6c0997ce8af86ab2919a1d0513f619a8a3
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639523"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59067823"
 ---
 # <a name="alternate-push-channels-using-webpush-and-vapid-in-uwp"></a>在 UWP 中使用 Webpush 和 VAPID 替代的推播通道 
 從開始 Fall Creators Update，UWP 應用程式可以使用 web 推播 VAPID 驗證傳送推播通知。  
@@ -45,7 +45,7 @@ private async void AppCreateVAPIDChannelAsync(string appChannelId, IBuffer appli
     //               The resulting key is an uncompressed point in ANSI X9.62 format             
     // ChannelId is an app provided value for it to identify the channel later.  
     // case of this app it is from the set { "Football", "News", "Baseball" } 
-    PushNotificationChannel webChannel = await PushNotificationChannelManager.Current.CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId); 
+    PushNotificationChannel webChannel = await PushNotificationChannelManager.GetDefault().CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId); 
  
     //Save the channel  
     AppUpdateChannelMapping(appChannelId, webChannel); 
@@ -106,7 +106,7 @@ protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 如果您想要使用其他加密形式，關鍵在於將未經處理。標頭屬性。 它包含所有已納入推播伺服器的 POST 要求的加密標頭。 從該處，您的應用程式可以使用的金鑰來解密訊息。  
 
 ## <a name="related-topics"></a>相關主題
-- [通知的通道型別](channel-types.md)
+- [通知通道類型](channel-types.md)
 - [Windows 推播通知服務 (WNS)](windows-push-notification-services--wns--overview.md)
 - [PushNotificationChannel 類別](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
 - [PushNotificationChannelManager 類別](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)

@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 套件推出, 正式發行前小眾測試版提交, 更新, 百分比
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ms.localizationpriority: medium
-ms.openlocfilehash: 025db5cb0beb36a5b4a3ca1b765b5da3434c9d7a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d5f7a388eed193e780fe2b7be9cafa5d249f6653
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638973"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334805"
 ---
 # <a name="update-the-rollout-percentage-for-a-flight-submission"></a>更新正式發行前小眾測試版提交的推出百分比
 
 
 使用「Microsoft Store 提交 API」中的這個方法，來[更新套件正式發行前小眾測試版提交的推出百分比](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)。 如需使用 Microsoft Store 提交 API 建立套件正式發行前小眾測試版提交程序的詳細資訊，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -33,7 +33,7 @@ ms.locfileid: "57638973"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage``` |
+| POST   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -50,7 +50,7 @@ ms.locfileid: "57638973"
 | applicationId | 字串 | 必要。 App 的「市集識別碼」，此 App 包含您想要更新其套件推出百分比的套件正式發行前小眾測試版提交。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | flightId | 字串 | 必要。 套件正式發行前小眾測試版的識別碼，此正式發行前小眾測試版包含您想要更新其套件推出百分比的提交。 識別碼可從[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中取得。 在合作夥伴中心建立的航班，此識別碼也會提供在合作夥伴中心 [飛行] 頁面的 url。  |
 | submissionId | 字串 | 必要。 您想要更新其套件推出百分比之提交的識別碼。 在[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)要求的回應資料中有提供此識別碼。 提交在合作夥伴中心所建立，此識別碼也會提供在合作夥伴中心內的 [提交] 頁面的 url。  |
-| percentage  |  浮點數  |  必要。 將接收漸進式推出套件的使用者百分比。  |
+| percentage  |  FLOAT  |  必要。 將接收漸進式推出套件的使用者百分比。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -61,7 +61,7 @@ ms.locfileid: "57638973"
 
 下列範例示範如何更新套件正式發行前小眾測試版提交的套件推出百分比。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243680/updatepackagerolloutpercentage?percentage=25 HTTP/1.1
 Authorization: Bearer <your access token>
 ```

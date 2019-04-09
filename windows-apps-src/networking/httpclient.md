@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dd4b8c137d65339701b40027bb3230162e2c2456
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 304c023251a15995ce15f5b3d846c662797661cd
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620473"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244324"
 ---
 # <a name="httpclient"></a>HttpClient
 
-**重要的 Api**
+**重要 API**
 
 -   [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)
--   [**Windows.web.http 應用程式開發**](https://msdn.microsoft.com/library/windows/apps/dn279692)
+-   [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
 -   [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)
 
 使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和其餘 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。
@@ -158,10 +158,10 @@ int main()
 
 ## <a name="post-binary-data-over-http"></a>透過 HTTP POST 二進位資料
 
-[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis)下列程式碼範例說明使用表單資料和 POST 要求傳送至 web 伺服器，檔案上傳為少量的二進位資料。 程式碼會使用[ **HttpBufferContent** ](/uwp/api/windows.web.http.httpbuffercontent)類別來代表二進位資料，而[ **HttpMultipartFormDataContent** ](/uwp/api/windows.web.http.httpmultipartformdatacontent)類別代表多部分表單資料。
+[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis)下列程式碼範例說明使用表單資料和 POST 要求傳送至 web 伺服器，檔案上傳為少量的二進位資料。 程式碼會使用[ **HttpBufferContent** ](/uwp/api/windows.web.http.httpbuffercontent)類別來代表二進位資料，而[ **HttpMultipartFormDataContent** ](/uwp/api/windows.web.http.httpmultipartformdatacontent)類別代表多部分表單資料。
 
 > [!NOTE]
-> 呼叫**取得**（如下列程式碼範例所示） 並不適合用於 UI 執行緒。 若要在此情況下使用正確的技術，請參閱[並行和非同步作業以 C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+> 呼叫**取得**（如下列程式碼範例所示） 並不適合用於 UI 執行緒。 若要在此情況下使用正確的技術，請參閱[並行和非同步作業C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 ```cppwinrt
 // pch.h
@@ -183,19 +183,6 @@ int main()
 {
     init_apartment();
 
-    Windows::Web::Http::HttpClient httpClient;
-
-    Uri requestUri{ L"https://www.contoso.com/post" };
-
-    Windows::Web::Http::HttpMultipartFormDataContent postContent;
-    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue disposition{ L"form-data" };
-    postContent.Headers().ContentDisposition(disposition);
-    // The 'name' directive contains the name of the form field representing the data.
-    disposition.Name(L"fileForUpload");
-    // Here, the 'filename' directive is used to indicate to the server a file name
-    // to use to save the uploaded data.
-    disposition.FileName(L"file.dat");
-
     auto buffer{
         Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
             L"A sentence of text to encode into binary to serve as sample data.",
@@ -207,6 +194,15 @@ int main()
     // it's not necessarily an image file.
     binaryContent.Headers().Append(L"Content-Type", L"image/jpeg");
 
+    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue disposition{ L"form-data" };
+    binaryContent.Headers().ContentDisposition(disposition);
+    // The 'name' directive contains the name of the form field representing the data.
+    disposition.Name(L"fileForUpload");
+    // Here, the 'filename' directive is used to indicate to the server a file name
+    // to use to save the uploaded data.
+    disposition.FileName(L"file.dat");
+
+    Windows::Web::Http::HttpMultipartFormDataContent postContent;
     postContent.Add(binaryContent); // Add the binary data content as a part of the form data content.
 
     // Send the POST request asynchronously, and retrieve the response as a string.
@@ -216,6 +212,8 @@ int main()
     try
     {
         // Send the POST request.
+        Uri requestUri{ L"https://www.contoso.com/post" };
+        Windows::Web::Http::HttpClient httpClient;
         httpResponseMessage = httpClient.PostAsync(requestUri, postContent).get();
         httpResponseMessage.EnsureSuccessStatusCode();
         httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();

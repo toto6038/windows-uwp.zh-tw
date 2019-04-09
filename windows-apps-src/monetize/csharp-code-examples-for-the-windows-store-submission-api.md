@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 19cfec890d6a434a392ce08257cad6bbeee4cda1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b3073e2a5ffa445a39bdf6d54dd288be97c88207
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627513"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334966"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\#範例： 應用程式、 附加元件和航班的提交內容
 
@@ -24,7 +24,7 @@ ms.locfileid: "57627513"
 
 您可以檢閱每個範例以深入了解示範的工作，或者您可以將本篇文章中的所有程式碼範例建置到主控台應用程式。 若要建置範例，請在 Visual Studio 中建立名為 **DeveloperApiCSharpSample** 的 C# 主控台應用程式，分別將每個範例複製到專案中單獨的程式碼檔案，然後建置專案。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 這些範例使用下列程式庫：
 
@@ -39,7 +39,7 @@ ms.locfileid: "57627513"
 * 將 ```ClientId``` 和 ```ClientSecret``` 屬性指派給應用程式的用戶端識別碼和金鑰，並使用應用程式的租用戶識別碼來取代 ```TokenEndpoint``` URL 中的 *tenantid* 字串。 如需詳細資訊，請參閱[如何與您的合作夥伴中心帳戶相關聯的 Azure AD 應用程式](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
 
 <span id="clientconfiguration" />
 
@@ -48,7 +48,7 @@ ms.locfileid: "57627513"
 範例應用程式使用 ```ClientConfiguration``` 協助程式類別，將 Azure Active Directory 資料和應用程式資料傳遞給每個使用 Microsoft Store 提交 API 的範例方法。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
 <span id="create-app-submission" />
 
@@ -64,7 +64,7 @@ ms.locfileid: "57627513"
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-app-submission.md)，直到此提交認可成功為止。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
 
@@ -79,7 +79,7 @@ ms.locfileid: "57627513"
 5. 最後，它會定期[檢查新提交的狀態](get-status-for-an-add-on-submission.md)，直到此提交認可成功為止。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs#InAppProductSubmissionCreateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs#InAppProductSubmissionCreateSample)]
 
 <span id="update-add-on-submission" />
 
@@ -94,7 +94,7 @@ ms.locfileid: "57627513"
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-add-on-submission.md)，直到此提交認可成功為止。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
 <span id="create-flight-submission" />
 
@@ -110,7 +110,7 @@ ms.locfileid: "57627513"
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-a-flight-submission.md)，直到此提交認可成功為止。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs#FlightSubmissionUpdateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs#FlightSubmissionUpdateSample)]
 
 <span id="ingestionclient" />
 
@@ -123,7 +123,7 @@ ms.locfileid: "57627513"
 * 處理 Microsoft Store 提交 API 的 HTTP 要求。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/IngestionClient.cs#IngestionClient)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/IngestionClient.cs#IngestionClient)]
 
 ## <a name="related-topics"></a>相關主題
 

@@ -6,18 +6,18 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6f4a4cb86bb5cf23e84e75ad99750dd6cff9539
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590513"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334537"
 ---
 # <a name="get-an-app"></a>取得應用程式
 
 在 Microsoft Store 提交 API 中使用這個方法，以擷取特定的應用程式已向您的合作夥伴中心帳戶的相關資訊。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -30,7 +30,7 @@ ms.locfileid: "57590513"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -55,7 +55,7 @@ ms.locfileid: "57590513"
 
 下列範例示範如何擷取 Store 識別碼值為 9NBLGGH4R315 的 App 的相關資訊。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315 HTTP/1.1
 Authorization: Bearer <your access token>
 ```

@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b94f14b32c5dd74e0aefb9b9a99f64bbd905a05d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 18208986d7d07e4d437e52dce844deecc03cf1f6
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616703"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240026"
 ---
 # <a name="composition-animations"></a>組合動畫
 
@@ -37,7 +37,7 @@ Windows UI 平台的基本建置組塊，CompositionAnimations 提供功能強�
 
 ## <a name="using-compositionanimations-to-create-motion"></a>使用 CompositionAnimations 建立動作
 
-若要在 UI 中產生動作，開發人員可以存取 XAML （連結到分鏡腳本以下） 或視覺分層中的動畫。 在視覺分層的動畫會提供開發人員提供一連串優點：
+若要在 UI 中產生動作，開發人員可以存取在 XAML 或視覺分層中的動畫。 在視覺分層的動畫會提供開發人員提供一連串優點：
 
 - 效能 – 而不是傳統的 UI 執行緒繫結動畫的 Windows UI 平台上的動畫會對在獨立執行緒在 60 FPS、 啟用體驗平順的動作。
 - 範本化模型 – Windows UI 層中的動畫是範本，可以使用多個物件上的單一動畫意義，並將其調整屬性或參數，而不用擔心的阻礙先前使用。

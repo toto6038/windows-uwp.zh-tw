@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6dc07ff35cdd90deaddff06f89aa585aa63156a
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610113"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335026"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多語應用程式工具組 4.0
 
@@ -93,9 +93,7 @@ ms.locfileid: "57610113"
 
 在此案例中為 "Hello, World!" 文字範例，虛擬翻譯會展開並多占據約 30% 的螢幕空間，然後套用資源追蹤器。
 
-```
-"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"
-```
+`"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"`
 
 ### <a name="step-6-translate-your-app-into-selected-languages"></a>步驟 6. 將您的應用程式翻譯成選取的語言
 

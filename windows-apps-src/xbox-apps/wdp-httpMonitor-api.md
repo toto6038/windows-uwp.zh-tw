@@ -4,12 +4,12 @@ description: 了解如何在 Xbox 主機上存取來自焦點應用程式的 HTT
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1e7c07c92c1671cd9051393586e1e8562fa756d0
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645673"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244094"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP 監視 API 參考   
 您可以使用此 API 存取焦點應用程式的即時 HTTP 流量，如果 Xbox 主機上已啟用 HTTP 監視 (開發人員首頁中核取方塊)。
@@ -23,18 +23,18 @@ ms.locfileid: "57645673"
 方法      | 要求 URI
 :------     | :-----
 GET | /ext/httpmonitor/sessions
-<br />
+
 **URI 參數**
 
-- 無
+- None
 
 **要求標頭**
 
-- 無
+- None
 
 **要求本文**
 
-- 無
+- None
 
 **回應**   
 JSON 物件，包含下列欄位：
@@ -52,6 +52,7 @@ HTTP 狀態碼      | 描述
 5XX | 錯誤碼
 
 ## <a name="get-http-traffic-from-the-focused-app"></a>取得來自焦點應用程式的 HTTP 流量
+
 **要求**
 
 在 Xbox 上即時取得來自焦點應用程式的 HTTP 流量，只要它不是系統應用程式，如果已從開發人員首頁啟用 HTTP 監視。
@@ -59,18 +60,18 @@ HTTP 狀態碼      | 描述
 方法      | 要求 URI
 :------     | :-----
 Websocket | /ext/httpmonitor/sessions
-<br />
+
 **URI 參數**
 
-- 無
+- None
 
 **要求標頭**
 
-- 無
+- None
 
 **要求本文**
 
-- 無
+- None
 
 **回應**   
 JSON 物件，包含下列欄位：
@@ -98,7 +99,7 @@ HTTP 狀態碼      | 描述
 403 | HTTP 監視停用，必須在開發人員首頁中啟用
 5XX | 錯誤碼
 
-<br />
-**可用的裝置系列**
+
+**可用裝置系列**
 
 * Windows Xbox

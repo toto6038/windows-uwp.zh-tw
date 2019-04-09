@@ -5,15 +5,15 @@ ms.date: 08/21/2018
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制, 繫結, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: 4033327fa51b0801583a518a0dea055f59e57fc8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9bdbfef54b799f8dff23ad739007cec9fef98af8
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616623"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921724"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結一個 C++/WinRT 屬性
-可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題說明如何實作可觀察的屬性，在[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何在 XAML 控制項繫結至它們。
+可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題說明如何實作可觀察的屬性，在[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何在 XAML 控制項繫結至它們。
 
 > [!IMPORTANT]
 > 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請查閱[使用 C++/WinRT 使用API](consume-apis.md)和[使用 C++/WinRT 撰寫 API](author-apis.md)。
@@ -24,10 +24,10 @@ ms.locfileid: "57616623"
 XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯示新的值，可繫結至並處理這些事件。
 
 > [!NOTE]
-> 如資訊需安裝和使用 C + + /cli WinRT Visual Studio 擴充功能 (VSIX) （這也提供專案範本支援） 請參閱[Visual Studio 支援 C + /cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如需安裝和使用的資訊C++WinRT Visual Studio 擴充功能 (VSIX) 和 NuGet 套件 （其同時提供專案範本，並建置支援），請參閱[Visual Studio 支援C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="create-a-blank-app-bookstore"></a>建立空白的應用程式 (Bookstore)
-在 Microsoft Visual Studio 中，從建立新的專案開始。 建立**Visual c + +** > **Windows Universal** > **空白應用程式 (C + + /cli WinRT)** 專案，並將它命名*書店*.
+在 Microsoft Visual Studio 中，從建立新的專案開始。 建立**Visual C++**   >  **Windows Universal** > **空白應用程式 (C++/WinRT)** 專案，並將它命名*Bookstore*。
 
 我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 我們在相同的編譯單位裡撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且我們會使用 C++/WinRT 撰寫和使用它。
 
@@ -49,11 +49,11 @@ namespace Bookstore
 >
 > 您在應用程式中宣告的任何執行階段類別的*並未*衍生自基底類別稱為*組合*類別。 並且有條件約束可組合的類別。 將應用程式[Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)測試來驗證提交由 Visual Studio 和 Microsoft Store (因此成功擷取到 Microsoft Store 應用程式)、可組合的類別必須最終衍生自 Windows 的基底類別。 這表示繼承階層架構類別非常的根目錄必須源自 windows.* 命名空間中的類型。 如果您需要衍生自基底類別的執行階段類別&mdash;例如，若要實作**BindableBase**類別衍生自您檢視模型的所有&mdash;則可衍生自[ **Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。
 >
-> 檢視模型是抽象的檢視，並因此它直接繫結至檢視 （XAML 標記）。 資料模型是抽象的資料，以及它使用只能從您的檢視模型，並不直接繫結至 XAML。 因此，您可以在不執行階段類別，而會視為 c + + 結構或類別，宣告您的資料模型。 它們不需要宣告於 MIDL，而且您可以隨意使用任何您喜歡的繼承階層架構。
+> 檢視模型是抽象的檢視，並因此它直接繫結至檢視 （XAML 標記）。 資料模型是抽象的資料，以及它使用只能從您的檢視模型，並不直接繫結至 XAML。 因此，宣告您的資料模型，而不是執行階段類別，C++結構或類別。 它們不需要宣告於 MIDL，而且您可以隨意使用任何您喜歡的繼承階層架構。
 
 儲存檔案並建置專案。 在建置程序期間，執行 `midl.exe` 工具建立描述執行階段類別的 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)。 然後，執行 `cppwinrt.exe` 工具產生原始碼檔案在撰寫和使用執行階段類別中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
 
-以滑鼠右鍵按一下專案節點，然後按一下 [**在檔案總管] 中開啟資料夾**。 這會開啟檔案總管 中的專案資料夾。 Stub 檔案，複製`BookSku.h`並`BookSku.cpp`從`\Bookstore\Bookstore\Generated Files\sources\`資料夾到專案資料夾中，這是和`\Bookstore\Bookstore\`。 在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 按一下滑鼠右鍵您複製的虛設常式檔案，然後按一下 **\[加入至專案\]**。
+以滑鼠右鍵按一下專案節點，然後按一下 [**在檔案總管] 中開啟資料夾**。 這會開啟檔案總管 中的專案資料夾。 Stub 檔案，複製`BookSku.h`並`BookSku.cpp`從`\Bookstore\Bookstore\Generated Files\sources\`資料夾到專案資料夾中，這是和`\Bookstore\Bookstore\`。 在 [**方案總管] 中**，選取專案節點，請確定**顯示所有檔案**上切換。 按一下滑鼠右鍵您複製的虛設常式檔案，然後按一下 **\[加入至專案\]**。
 
 ## <a name="implement-booksku"></a>執行 **BookSku**
 現在，我們開啟 `\Bookstore\Bookstore\BookSku.h` 與 `BookSku.cpp` 並實作我們的執行階段類別。 在 `BookSku.h` 中，新增一個採用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的建構函式，一個儲存標題字串的私用成員，以及另一個用於標題變更時，我們會引發的事件。 進行這些變更之後, 您`BookSku.h`看起來像這樣。
@@ -273,13 +273,13 @@ namespace winrt::Bookstore::implementation
 
 現在建置並執行專案。 按一下按鈕執行 **按一下** 事件處理常式。 該處理常式呼叫本書標題更動子函式；該更動子引發一個事件，讓 UI 知道 **Title** 屬性已變更；且按鈕重新查詢該屬性的值，更新其自身的 **Content** 值。
 
-## <a name="using-the-binding-markup-extension-with-cwinrt"></a>使用 {Binding} 標記延伸使用 C + + /cli WinRT
-目前發行版本的 C + + /cli WinRT，為了能夠使用 {Binding} 標記延伸模組必須實作[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)並[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面。
+## <a name="using-the-binding-markup-extension-with-cwinrt"></a>使用 {Binding} 標記延伸模組搭配C++/WinRT
+目前發行版本的C++/WinRT，為了能夠使用 {Binding} 標記延伸模組必須實作[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)並[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面。
 
 ## <a name="important-apis"></a>重要 API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
-* [winrt::make 函式樣板](/uwp/cpp-ref-for-winrt/make)
+* [winrt::make 函式範本](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>相關主題
-* [使用 C++/WinRT 取用 API](consume-apis.md)
+* [使用 C++/WinRT 來使用 API](consume-apis.md)
 * [使用 C++/WinRT 撰寫 API](author-apis.md)

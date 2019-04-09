@@ -5,12 +5,12 @@ ms.date: 07/07/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 075eaf5c02e5bddb4b87d7e4aaf931cbfde53cdd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d010816b1ba4c9941aea7bdcdb4bd4c50038aca6
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616413"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59067833"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>選擇正確的推播通知通道類型
 
@@ -20,11 +20,11 @@ ms.locfileid: "57616413"
 
 ## <a name="types-of-push-channels"></a>推播通道的類型 
 
-有三種類型的推播通道可用於將通知推送到 UWP 應用程式。 這些報告包括： 
+有三種類型的推播通道可用於將通知推送到 UWP 應用程式。 其中包括： 
 
-[主要通道](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - 「傳統」推播通道。 可由市集中的任何應用程式用於傳送快顯通知、磚、原始通知或徽章通知 (快顯通知/磚/徽章描述的連結)
+[主要通道](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - 「傳統」推播通道。 可用來傳送快顯、 磚中，未經處理、 或徽章通知存放區中的任何應用程式。 [從這裡深入了解](windows-push-notification-services--wns--overview.md)。
 
-[次要磚通道](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - 用於推播次要磚的更新。 僅能用於將磚或徽章通知傳送至釘選到使用者開始畫面上的次要磚
+[次要磚通道](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_)-用來將磚更新推送至次要的圖格。 僅能用於將磚或徽章通知傳送至釘選到使用者開始畫面上的次要磚
 
 [替代通道](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - Creators Update 中新增的一種通道。 它允許將原始通知傳送到任何 UWP 應用程式，包括未在市集中註冊的通知。 
 
@@ -38,10 +38,10 @@ ms.locfileid: "57616413"
 
 ### <a name="what-do-primary-channels-enable"></a>主要通道會啟用哪些項目？
 
--   **傳送磚或徽章的更新 [主要] 圖格。** 如果使用者選擇將您的磚釘選在 [開始] 畫面上，這是您展示的機會。 傳送具有實用資訊的更新，或您應用程式內體驗的提醒。 
+-   **將磚或徽章更新傳送至主要磚。** 如果使用者選擇將您的磚釘選在 [開始] 畫面上，這是您展示的機會。 傳送具有實用資訊的更新，或您應用程式內體驗的提醒。 
 -   **傳送快顯通知。** 快顯通知讓您有機會立即在使用者面前取得一些資訊。 這類通知是由命令介面繪製在大多數應用程式的頂端，並存留在控制中心中，讓使用者能夠返回並在稍後與這類通知互動。 
--   **傳送原始通知來觸發背景工作。** 有時候您會想要根據通知代表使用者進行一些工作。 原始通知可讓應用程式的背景工作執行 
--   **Windows 使用 TLS 所提供的傳輸中的訊息加密。** 當透過連線進入 WNS 與前往使用者裝置時加密訊息。  
+-   **傳送原始通知以觸發背景工作。** 有時候您會想要根據通知代表使用者進行一些工作。 原始通知可讓應用程式的背景工作執行 
+-   **由 Windows 使用 TLS 提供中的傳輸中訊息加密。** 當透過連線進入 WNS 與前往使用者裝置時加密訊息。  
 
 ### <a name="limitations-of-primary-channels"></a>主要通道的限制
 
@@ -84,21 +84,21 @@ PushNotificationChannel channel =
 替代通道可讓應用程式無須向 Microsoft Store 註冊或建立應用程式所使用主要通道之外的推播通道，即可傳送推播通知。 
  
 ### <a name="what-do-alternate-channels-enable"></a>替代通道會啟用哪些項目？
--   將推播通知傳送到在任何 Windows 裝置上執行的 UWP。 替代通道僅允許原始通知。
+-   將推播通知傳送到在任何 Windows 裝置上執行的 UWP。 （不過您仍可喚醒向上背景工作，以在本機上顯示快顯通知，或圖格通知） 的原始通知只允許替代的通道。
 -   允許應用程式為應用程式內的不同功能建立多個原始推送通道。 應用程式可以建立最多 1000 個替代通道，每個通道的有效期間為 30 天。 這些通道每一個都能由應用程式分開管理或撤銷。
 -   無須向 Microsoft Store 註冊應用程式，便可建立替代推播通道。 如果您的應用程式即將安裝在裝置上，但未將它向 Microsoft Store 註冊，則該應用程式仍能夠接收推播通知。
 -   伺服器可使用 W3C 標準 REST API 與 VAPID 通訊協定推播通知。 替代通道會使用 W3C 標準通訊協定，這可讓您簡化必須維護的伺服器邏輯。
 -   完整、端對端、訊息加密。 當主要通道一邊傳輸，一邊提供加密時，如果您想要有額外的安全性，則替代通道可讓應用程式傳遞加密標頭以保護訊息。 
 
 ### <a name="limitations-of-alternate-channels"></a>替代通道的限制
--   應用程式無法傳送快顯通知、磚、或徽章類型通知。 替代通道會限制您傳送其他通知類型的能力。 您的應用程式仍能從您的背景工作傳送本機通知。 
+-   您的應用程式伺服器無法傳送推播快顯、 磚或徽章通知類型。 您只可以傳送推播傳送原始通知。 您的應用程式仍能從您的背景工作傳送本機通知。 
 -   需要與主要和次要磚通道不同的 REST API。 使用標準 W3C REST API，表示您的應用程式需要有不同的邏輯，才能傳送推播快顯通知或磚更新
 
 ### <a name="creating-an-alternate-channel"></a>建立替代通道 
 
 ```csharp
 PushNotificationChannel webChannel = 
-    await PushNotificationChannelManager.Current.CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId);
+    await PushNotificationChannelManager.GetDefault().CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId);
 ```
 
 ## <a name="channel-type-comparison"></a>通道類型比較
@@ -108,14 +108,14 @@ PushNotificationChannel webChannel =
 
 <tr class="header">
 <th align="left"><b>類型</b></th>
-<th align="left"><b>推播快顯嗎？</b></th>
-<th align="left"><b>推播 圖格/徽章嗎？</b></th>
-<th align="left"><b>推播未經處理的通知嗎？</b></th>
+<th align="left"><b>推播快顯通知？</b></th>
+<th align="left"><b>推播磚/徽章？</b></th>
+<th align="left"><b>推播原始通知？</b></th>
 <th align="left"><b>驗證</b></th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>所需的存放區註冊嗎？</b></th>
+<th align="left"><b>需要市集註冊？</b></th>
 <th align="left"><b>通道</b></th>
-<th align="left">[加密]<b></b></th>
+<th align="left"><b>加密</b></th>
 </tr>
 
 
@@ -165,13 +165,13 @@ PushNotificationChannel webChannel =
 
 ## <a name="related-articles"></a>相關文章
 
-* [通知區域的圖格](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [傳送本機磚通知](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [調適型和互動式快顯通知](../tiles-and-notifications/adaptive-interactive-toasts.md)
 * [快速入門：傳送推播通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [如何更新徽章，以透過推播通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何要求、 建立和儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [如何攔截來執行應用程式的通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何驗證與 Windows 推播通知服務 (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [如何透過推播通知更新徽章](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [如何要求、建立以及儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [如何攔截執行應用程式的通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [如何使用 Windows 推播通知服務 (WNS) 進行驗證](https://msdn.microsoft.com/library/windows/apps/hh465407)
 * [推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [指導方針和推播通知的檢查清單](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [推播通知的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [原始通知](raw-notification-overview.md)

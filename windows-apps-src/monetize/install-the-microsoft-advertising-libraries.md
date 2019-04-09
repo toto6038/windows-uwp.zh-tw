@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 安裝, SDK, 廣告庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 121accdfc8996c609c616838f645f19e2377c7c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: baf70cc6df7b0683f3dc362436c63eb1e688e678
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658033"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334696"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安裝 Microsoft Advertising SDK
 
@@ -29,7 +29,7 @@ ms.locfileid: "57658033"
 1.  關閉所有 Visual Studio 執行個體。
 
 2. 如果您先前已安裝任何版本的 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 擴充功能或 Microsoft Store Engagement and Monetization SDK，請將這些 SDK 版本解除安裝。 或者，也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊廣告 SDK 版本：
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -52,7 +52,7 @@ ms.locfileid: "57658033"
 1.  關閉所有 Visual Studio 執行個體。
 
 2.  如果您先前已安裝任何版本的 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 擴充功能或 Microsoft Store Engagement and Monetization SDK，請將這些 SDK 版本解除安裝。 或者，也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊廣告 SDK 版本：
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -66,7 +66,7 @@ ms.locfileid: "57658033"
 
 5. 在搜尋方塊中，輸入 **Microsoft.Advertising.XAML** (適用於 XAML 專案) 或 **Microsoft.Advertising.JS** (適用於 JavaScript/HTML 專案) 並安裝對應的套件。 套件完成安裝後，儲存您的方案。
     > [!NOTE]
-    > 如果 **\[輸出\]** 視窗回報 *Install-Package* 錯誤，指出指定的路徑太長，您可能需要設定讓 NuGet 將套件解壓縮至路徑比預設位置短的替代位置。 若要這樣做，請將 ```repositoryPath``` 值新增到您電腦上的 nuget.config 檔案中，然後將它指派至可解壓縮 NuGet 套件的較短資料夾路徑。 如需詳細資訊，請參閱 NuGet 文件中的[這篇文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，您也可以嘗試將您的 Visual Studio 專案移至路徑較短的替代資料夾。
+    > 如果 **\[輸出\]** 視窗回報 *Install-Package* 錯誤，指出指定的路徑太長，您可能需要設定讓 NuGet 將套件解壓縮至路徑比預設位置短的替代位置。 若要這樣做，請將 `repositoryPath` 值新增到您電腦上的 nuget.config 檔案中，然後將它指派至可解壓縮 NuGet 套件的較短資料夾路徑。 如需詳細資訊，請參閱 NuGet 文件中的[這篇文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，您也可以嘗試將您的 Visual Studio 專案移至路徑較短的替代資料夾。
 
 6. 關閉您的方案，然後重新開啟它。
 

@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 19ddd43d4e61480764882f1b10e6240aa2afeb8c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 74d93c700ecbfe3db39bf1ffc4c90e107b80f5a5
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662723"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335070"
 ---
 # <a name="manage-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交
 
@@ -85,7 +85,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 3. 在 Microsoft Store 提交 API 中執行下列方法來[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)。 這個方法會建立新的處理中提交，這是最後一個已發佈提交的複本。
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
     ```
 
@@ -98,7 +98,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 5. 以新提交的任何所需變更來修訂[正式發行前小眾測試版提交](#flight-submission-object)資料，然後執行下列方法來[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)。
 
-    ```
+    ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
     ```
       > [!NOTE]
@@ -121,13 +121,13 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 5. 執行下列方法來[認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)。 這將會警告合作夥伴中心，您會完成您的提交和您的更新現在可套用至您的帳戶。
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
     ```
 
 6. 執行下列方法來[取得套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)，以檢查認可狀態。
 
-    ```
+    ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
     ```
 
@@ -259,7 +259,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 |------------|--------|------------------------------|
 | id            | 字串  | 提交的識別碼。  |
 | flightId           | 字串  |  包含要與提交產生關聯之套件正式發行前小眾測試版的識別碼。  |  
-| status           | 字串  | 提交的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>   |
+| status           | 字串  | 提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 物件  |  [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。  |
 | flightPackages           | 陣列  | 包含可提供關於提交中每個套件之詳細資料的[正式發行前小眾測試版套件資源](#flight-package-object)。   |
 | packageDeliveryOptions    | 物件  | [套件交付選項資源](#package-delivery-options-object)包含提交的漸進式套件推出和強制更新設定。   |
@@ -290,7 +290,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 | 值           | 類型    | 描述       |
 |-----------------|---------|------|
 |  code               |    字串     |   描述錯誤或警告類型的[提交狀態碼](#submission-status-code)。 |  
-|  details               |     字串    |  含有更多關於問題之詳細資料的訊息。     |
+|  詳細資料               |     字串    |  含有更多關於問題之詳細資料的訊息。     |
 
 
 <span id="certification-report-object" />
@@ -301,7 +301,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 | 值           | 類型    | 描述         |
 |-----------------|---------|------|
-|     date            |    字串     |  日期和時間所產生的報表，採用 ISO 8601 格式。    |
+|     日期            |    字串     |  日期和時間所產生的報表，採用 ISO 8601 格式。    |
 |     reportUrl            |    字串     |  您可以存取報告的 URL。    |
 
 
@@ -336,14 +336,14 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 | 值           | 類型    | 描述              |
 |-----------------|---------|------|
 | fileName   |   字串      |  套件的名稱。    |  
-| fileStatus    | 字串    |  套件的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
+| fileStatus    | 字串    |  套件的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  字串   |  唯一識別套件的識別碼。 這個值會使用合作夥伴中心。   |     
 | version    |  字串   |  應用程式套件的版本。 如需詳細資訊，請參閱[套件版本編號](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
 | architecture    |  字串   |  應用程式套件的架構 (例如，ARM)。   |     
 | languages    | 陣列    |  應用程式所支援之語言的語言代碼陣列。 如需詳細資訊，請參閱[支援的語言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
 | capabilities    |  陣列   |  套件所需的功能陣列。 如需功能的詳細資訊，請參閱[應用程式功能宣告](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
-| minimumDirectXVersion    |  字串   |  應用程式套件所支援的最低 DirectX 版本。 這只能針對目標為 Windows 8.x 的應用程式進行設定；對於目標為其他版本的應用程式則會加以忽略。 這可以是下列其中一個值： <ul><li>無</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | 字串    |  應用程式套件所需的最小 RAM。 這只能針對目標為 Windows 8.x 的應用程式進行設定；對於目標為其他版本的應用程式則會加以忽略。 這可以是下列其中一個值： <ul><li>無</li><li>Memory2GB</li></ul>   |    
+| minimumDirectXVersion    |  字串   |  應用程式套件所支援的最低 DirectX 版本。 這只能針對目標為 Windows 8.x 的應用程式進行設定；對於目標為其他版本的應用程式則會加以忽略。 這可以是下列其中一個值： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | 字串    |  應用程式套件所需的最小 RAM。 這只能針對目標為 Windows 8.x 的應用程式進行設定；對於目標為其他版本的應用程式則會加以忽略。 這可以是下列其中一個值： <ul><li>None</li><li>Memory2GB</li></ul>   |    
 
 
 <span id="package-delivery-options-object" />
@@ -373,7 +373,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 |-----------------|---------|------|
 | packageRollout   |   物件      |   [套件推出資源](#package-rollout-object)包含用於提交的漸進式套件推出設定。    |  
 | isMandatoryUpdate    | 布林值    |  指出您是否要將這項提交中的套件視為自我安裝應用程式更新的強制項目。 如需有關自我安裝 App 更新的強制套件詳細資訊，請參閱[下載與安裝 App 的套件更新](../packaging/self-install-package-updates.md)。    |  
-| mandatoryUpdateEffectiveDate    |  date   |  這項提交中的套件變成強制項目的日期和時間，採用 ISO 8601 格式和 UTC 時區。   |        
+| mandatoryUpdateEffectiveDate    |  日期   |  這項提交中的套件變成強制項目的日期和時間，採用 ISO 8601 格式和 UTC 時區。   |        
 
 <span id="package-rollout-object" />
 
@@ -384,7 +384,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
 | isPackageRollout   |   布林值      |  指出是否已為提交啟用漸進式套件推出。    |  
-| packageRolloutPercentage    | 浮點數    |  將接收漸進式推出中套件的使用者百分比。    |  
+| packageRolloutPercentage    | FLOAT    |  將接收漸進式推出中套件的使用者百分比。    |  
 | packageRolloutStatus    |  字串   |  下列其中一個字串，這些字串指出漸進式套件推出的狀態： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  字串   |  未取得漸進式推出套件的客戶將收到的提交識別碼。   |          
 
@@ -405,7 +405,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 | 程式碼           |  描述      |
 |-----------------|---------------|
-|  無            |     未指定任何代碼。         |     
+|  None            |     未指定任何代碼。         |     
 |      InvalidArchive        |     包含該套件的 ZIP 封存無效，或具有無法辨識的封存格式。  |
 | MissingFiles | ZIP 封存沒有您提交資料中列出的所有檔案，或者它們位於封存中的錯誤位置。 |
 | PackageValidationFailed | 提交中有一或多個套件無法驗證。 |

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 正式發行前小眾測試版提交, 停止
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
-ms.openlocfilehash: 74c95e36d0bc4c9848be1e336b2e34c41dc0631f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 259520910e33b901de4fb7126b69300417555859
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650823"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334726"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>停止正式發行前小眾測試版的推出
 
@@ -20,7 +20,7 @@ ms.locfileid: "57650823"
 > [!NOTE]
 > 如果您停止套件正式發行前小眾測試版提交的推出，然後[建立新的套件正式發行前小眾測試版提交](create-a-flight-submission.md)，新提交是暫止提交的複本。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -35,7 +35,7 @@ ms.locfileid: "57650823"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout``` |
+| POST   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -62,7 +62,7 @@ ms.locfileid: "57650823"
 
 下列範例示範如何停止套件正式發行前小眾測試版提交的套件推出。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243680/haltpackagerollout HTTP/1.1
 Authorization: Bearer <your access token>
 ```

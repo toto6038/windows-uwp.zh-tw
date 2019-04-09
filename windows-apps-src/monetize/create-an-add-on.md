@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8465dc7a42961a20fcd33ba8d43c71e2d73727ff
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b358eecd1799e76573cf6d254a80e7a7971bc123
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651033"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334166"
 ---
 # <a name="create-an-add-on"></a>建立附加元件
 
@@ -20,7 +20,7 @@ ms.locfileid: "57651033"
 > [!NOTE]
 > 這個方法會建立一個附加元件但不含任何提交。 若要為附加元件建立提交，請參閱[管理附加元件提交](manage-add-on-submissions.md)中的方法。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -33,7 +33,7 @@ ms.locfileid: "57651033"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -47,7 +47,7 @@ ms.locfileid: "57651033"
 
 要求本文包含下列參數。
 
-|  參數  |  類型  |  描述  |  必要  |
+|  參數  |  類型  |  描述  |  必要項  |
 |------|------|------|------|
 |  applicationIds  |  陣列  |  此陣列包含此附加元件相關聯之 App 的市集識別碼。 此陣列只支援一個項目。   |  是  |
 |  productId  |  字串  |  附加元件的產品識別碼。 這是可在程式碼中用來參考附加元件的識別碼。 如需詳細資訊，請參閱[設定您的產品類型和產品識別碼](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。  |  是  |
@@ -58,7 +58,7 @@ ms.locfileid: "57651033"
 
 下列範例示範如何為 App 建立新的消耗性附加元件。
 
-```syntax
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1Q...
 Content-Type: application/json

@@ -7,20 +7,18 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 62ad93fa480f0515c4ed6df2d73a745454197ac6
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599283"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291636"
 ---
 # <a name="triangle-strips"></a>三角形連環
-
 
 三角形連環是一系列的連接三角形。 因為是連接三角形，應用程式不需要重複指定每個三角形的所有三個頂點。 例如，您只需要七個頂點即可定義下列三角形連環。
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>範例
-
 
 ![使用七個頂點的三角形連環的圖例](images/tristrip.png)
 
@@ -34,7 +32,7 @@ ms.locfileid: "57599283"
 
 下列程式碼顯示如何建立這個三角形連環的頂點。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
 float x,y,z;
@@ -53,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 下列程式碼範例顯示如何在 Direct3D 中轉譯這個三角形連環。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to a device interface.

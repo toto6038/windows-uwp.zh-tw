@@ -2,7 +2,7 @@
 title: 建立及註冊跨處理序的背景工作
 description: 建立跨處理序背景工作類別並加以註冊，讓它在 App 不在前景時也能執行。
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
-ms.date: 07/02/2018
+ms.date: 2/27/2019
 ms.topic: article
 keywords: windows 10 uwp，背景工作
 ms.localizationpriority: medium
@@ -10,16 +10,16 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9df6eef44d45db37e17610d6a5333f3a387b5cf6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1420b41ef48123e302b546c45669a75545927d89
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592163"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240046"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>建立及註冊跨處理序的背景工作
 
-**重要的 Api**
+**重要 API**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -37,7 +37,7 @@ ms.locfileid: "57592163"
 下列步驟示範如何撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。
 
 1.  為背景工作建立一個新專案，並將其新增到您的方案中。 若要這樣做，以滑鼠右鍵按一下您的方案節點，在**方案總管**，然後選取**新增** \> **新專案**。 然後選取**Windows 執行階段元件**專案類型、 為專案命名，並按一下 [確定]。
-2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。 針對C#或 c + + 應用程式，在您的應用程式專案，以滑鼠右鍵按一下**參考**，然後選取**加入新參考**。 在 [方案] 下選取 [專案]，然後選取您背景工作專案的名稱並按一下 [確定]。
+2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。 針對C#或C++應用程式專案中的應用程式，以滑鼠右鍵按一下**參考**，然後選取**加入新參考**。 在 [方案] 下選取 [專案]，然後選取您背景工作專案的名稱並按一下 [確定]。
 3.  加入背景工作專案，將新的類別可實作[ **IBackgroundTask** ](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)介面。 [ **IBackgroundTask.Run** ](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是將在指定的事件觸發時呼叫的必要項目點，此方法需要在每個背景工作。
 
 > [!NOTE]
@@ -150,7 +150,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 BackgroundTaskDeferral _deferral; // Note: defined at class scope so that we can mark it complete inside the OnCancel() callback if we choose to support cancellation
 public async void Run(IBackgroundTaskInstance taskInstance)
 {
-    _deferral = taskInstance.GetDeferral()
+    _deferral = taskInstance.GetDeferral();
     //
     // TODO: Insert code to start one or more asynchronous methods using the
     //       await keyword, for example:
@@ -200,7 +200,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 ```
 
 > [!NOTE]
-> 在 C# 中，可以使用 **async/await** 關鍵字呼叫背景工作的非同步方法。 在 C + + /CX 中，類似的結果可藉由使用工作鏈結。
+> 在 C# 中，可以使用 **async/await** 關鍵字呼叫背景工作的非同步方法。 在C++/CX，類似的結果可藉由使用工作鏈結。
 
 如需有關非同步模式的詳細資訊，請參閱[非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187335)。 如需有關如何使用延遲防止背景工作提前停止的其他範例，請參閱[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)。
 
@@ -445,7 +445,7 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 
 ## <a name="related-topics"></a>相關主題
 
-**詳細的背景工作的說明主題**
+**詳細的背景工作說明主題**
 
 * [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
 * [註冊背景工作](register-a-background-task.md)
@@ -461,7 +461,7 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
 **背景工作 API 參考**
 

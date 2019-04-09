@@ -5,12 +5,12 @@ keywords: 新功能, 更新, 功能, 全新, Windows 10, 1709, 10 月, 最新版
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e0749ba30dc4c4e8d2791aa2d6699581b48fb8e5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5179b4615d1b7ada40e064c21991fee3d9dbb60e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626513"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162693"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>適用於開發人員的 Windows 10 (組建 16299) 的新功能
 
@@ -43,7 +43,7 @@ UI 控制項 | 這些新的控制項使得快速建立美觀 UI 的工作變得�
 遊戲模式 | 通用 Windows 平台 (UWP) 的[遊戲模式](https://msdn.microsoft.com/library/windows/desktop/mt808808) API 可讓您利用 Windows 10 中的遊戲模式產生最佳化的遊戲體驗。 這些 API 位於 **&lt;expandedresources.h&gt;** 標頭檔中。
 遊戲監視器 | [GameMonitor 類別](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor)允許應用程式取得裝置的遊戲監視權限狀態，並可能提示使用者啟用遊戲監視。
 TruePlay | [TruePlay](https://aka.ms/trueplay) 提供一組新工具給開發人員，可讓他們打擊在其電腦遊戲中的作弊行為。 在 TruePlay 中註冊的遊戲會在受保護程序中執行，減輕一些常見的攻擊。 通用 Windows 平台 (UWP) 適用的 TruePlay API 允許遊戲及遊戲監控系統在 Windows 10 電腦上進行有限的互動。 這些 API 位於 **&lt;gamemonitor.h&gt;** 標頭中。
-Xbox Live | 我們已經為 Xbox Live 開發人員新增關於 UWP 遊戲和 Xbox 開發人員套件 (XDK) 遊戲的文件。 </br>* 請參閱 [Xbox Live 開發人員指南](../xbox-live/index.md)，以了解如何使用 Xbox Live API 將您的遊戲連線至 Xbox Live 社交遊戲網路。 </br>* 任何 UWP 遊戲開發人員都可以利用 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)，在電腦和 Xbox One 上開發並發行支援 Xbox Live 的遊戲。 </br>* 請參閱 [Xbox Live 開發人員計畫概觀](../xbox-live/developer-program-overview.md)，以取得提供給 Xbox Live 開發人員的程式和功能的相關資訊。
+Xbox Live | 我們已經為 Xbox Live 開發人員新增關於 UWP 遊戲和 Xbox 開發人員套件 (XDK) 遊戲的文件。 </br>* 請參閱 [Xbox Live 開發人員指南](https://docs.microsoft.com/gaming/xbox-live//index.md)，以了解如何使用 Xbox Live API 將您的遊戲連線至 Xbox Live 社交遊戲網路。 </br>* 任何 UWP 遊戲開發人員都可以利用 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)，在電腦和 Xbox One 上開發並發行支援 Xbox Live 的遊戲。 </br>* 請參閱 [Xbox Live 開發人員計畫概觀](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md)，以取得提供給 Xbox Live 開發人員的程式和功能的相關資訊。
 
 ## <a name="develop-windows-apps"></a>開發 Windows 應用程式
 

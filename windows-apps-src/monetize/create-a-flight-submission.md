@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立正式發行前小眾測試版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e303027aaf3b10260090c500df573f1bf484e20
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c7a60de3440106e446f6c3e896cd747741e4db2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636863"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334686"
 ---
 # <a name="create-a-package-flight-submission"></a>建立套件正式發行前小眾測試版提交
 
@@ -22,7 +22,7 @@ ms.locfileid: "57636863"
 > [!NOTE]
 > 這個方法會為現有的套件正式發行前小眾測試版建立提交。 若要建立套件正式發行前小眾測試版，請使用 [建立套件正式發行前小眾測試版](create-a-flight.md)方法。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -36,7 +36,7 @@ ms.locfileid: "57636863"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` |
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -62,7 +62,7 @@ ms.locfileid: "57636863"
 
 下列範例示範如何為市集識別碼為 9WZDNCRD91MD 的 App 建立新的套件正式發行前小眾測試版提交。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -118,7 +118,6 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 無法建立套件正式發行前小眾測試版提交，因為要求無效。 |
 | 409  | 無法建立封裝飛行提交，因為應用程式中的目前狀態，或應用程式使用的合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
-
 
 ## <a name="related-topics"></a>相關主題
 

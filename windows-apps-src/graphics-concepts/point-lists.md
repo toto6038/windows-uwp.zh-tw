@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 84a08d480070e4a23147679dd9b5dda1f8c9cca1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3f59d86a03abdeb097ab60e1961d7869669875eb
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605493"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291579"
 ---
 # <a name="point-lists"></a>點清單
-
 
 點清單是轉譯為隔離點的頂點集合。 應用程式可以在 3D 場景中使用點清單，在多邊形的表面上有星星欄位或點線。
 
@@ -30,7 +29,7 @@ ms.locfileid: "57605493"
 
 下列程式碼顯示如何建立這個點清單的頂點。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -49,7 +48,7 @@ CUSTOMVERTEX Vertices[] =
 
 下列程式碼範例顯示如何在 Direct3D 中轉譯這個點清單。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.

@@ -5,39 +5,39 @@ ms.date: 11/072017
 ms.topic: article
 keywords: windows 10、 uwp、 xbox、 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7aa8b11bc439266d36fbb27a7eaa7b07e924a17c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617493"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244034"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 資訊 API 參考   
 您可以使用此 API 存取 Xbox One 裝置資訊。
 
 ## <a name="get-xbox-one-device-information"></a>取得 Xbox One 裝置資訊
 
-**要求**
+## <a name="request"></a>要求
 
 您可以取得您的 Xbox One 裝置資訊。
 
 方法      | 要求 URI
 :------     | :-----
 GET | /ext/xbox/info
-<br />
+
 **URI 參數**
 
-- 無
+- None
 
 **要求標頭**
 
-- 無
+- None
 
 **要求本文**
 
-- 無
+- None
 
-**回應**   
+## <a name="response"></a>回應
 JSON 物件，包含下列欄位：
 
 * OsVersion - (字串) 作業系統的版本。
@@ -59,7 +59,6 @@ HTTP 狀態碼      | 描述
 4XX | 錯誤碼
 5XX | 錯誤碼
 
-<br />
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Xbox

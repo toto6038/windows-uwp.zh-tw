@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 45fc2274ac22eee4a4c249397f25c1b0405cb856
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d3bf92e308d42b9dd93539ebbe44525067f23b6f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647213"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335126"
 ---
 # <a name="manage-add-on-submissions"></a>管理附加元件提交
 
@@ -85,7 +85,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 3. 在 Microsoft Store 提交 API 中執行下列方法。 這個方法會建立新的處理中提交，這是最後一個已發佈提交的複本。 如需詳細資訊，請參閱[建立附加元件提交](create-an-add-on-submission.md)。
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
     ```
 
@@ -98,7 +98,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 5. 藉由對新的提交進行任何必要變更來更新[附加元件提交](#add-on-submission-object)資料，然後執行下列方法來更新提交。 如需詳細資訊，請參閱[更新附加元件提交](update-an-add-on-submission.md)。
 
-    ```
+    ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
     ```
       > [!NOTE]
@@ -121,13 +121,13 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 5. 執行下列方法來認可提交。 這將會警告合作夥伴中心，您會完成您的提交和您的更新現在可套用至您的帳戶。 如需詳細資訊，請參閱[認可附加元件提交](commit-an-add-on-submission.md)。
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
     ```
 
 6. 執行下列方法來檢查認可狀態。 如需詳細資訊，請參閱[取得附加元件提交的狀態](get-status-for-an-add-on-submission.md)。
 
-    ```
+    ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
     ```
 
@@ -240,7 +240,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
 | tag           | 字串  |  附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (此資訊以前稱為「標記」)。   |
 | 可見度  | 字串  |  附加元件的可見度。 這可以是下列其中一個值： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
-| status  | 字串  |  提交的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>   |
+| status  | 字串  |  提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 物件  |  [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。 |
 | fileUploadUrl           | 字串  | 共用存取簽章 (SAS) URI，可用於上傳任何適用於提交的套件。 如果您要新增提交的新套件，請將包含套件的 ZIP 封存上傳至這個 URI。 如需詳細資訊，請參閱[建立附加元件提交](#create-an-add-on-submission)。  |
 | friendlyName  | 字串  |  提交，如合作夥伴中心中所示的好記的名稱。 當您建立提交時，也會為您產生此值。  |
@@ -266,7 +266,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 | 值           | 類型    | 描述     |
 |-----------------|---------|------|
 |  fileName               |    字串     |   圖示檔案的名稱，位於您針對提交所上傳的 ZIP封存中。 圖示必須是 .png 檔案，大小必須是 300 x 300 像素。   |     
-|  fileStatus               |   字串      |  圖示檔案的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
+|  fileStatus               |   字串      |  圖示檔案的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />
 
@@ -324,7 +324,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 | 值           | 類型    | 描述    |
 |-----------------|---------|------|
 |  code               |    字串     |   描述錯誤或警告類型的[提交狀態碼](#submission-status-code)。   |     
-|  details               |     字串    |  含有更多關於問題之詳細資料的訊息。     |
+|  詳細資料               |     字串    |  含有更多關於問題之詳細資料的訊息。     |
 
 <span id="certification-report-object" />
 
@@ -334,7 +334,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           | 類型    | 描述               |
 |-----------------|---------|------|
-|     date            |    字串     |  日期和時間所產生的報表，採用 ISO 8601 格式。    |
+|     日期            |    字串     |  日期和時間所產生的報表，採用 ISO 8601 格式。    |
 |     reportUrl            |    字串     |  您可以存取報告的 URL。    |
 
 ## <a name="enums"></a>列舉
@@ -362,7 +362,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           |  描述      |
 |-----------------|---------------|
-|  無            |     未指定任何代碼。         |     
+|  None            |     未指定任何代碼。         |     
 |      InvalidArchive        |     包含該套件的 ZIP 封存無效，或具有無法辨識的封存格式。  |
 | MissingFiles | ZIP 封存沒有您提交資料中列出的所有檔案，或者它們位於封存中的錯誤位置。 |
 | PackageValidationFailed | 提交中有一或多個套件無法驗證。 |

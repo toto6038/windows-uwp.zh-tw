@@ -6,19 +6,19 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e07c0b2730da258126465fbeea917b32ef9d23e6
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645873"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320601"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe 格式特定的索引子
 
 本主題說明  [MakePri.exe](compile-resources-manually-with-makepri.md) 工具用來產生資源索引的格式特定索引子。
 
 > [!NOTE]
-> 檢查時，已安裝 MakePri.exe **UWP 管理的應用程式的 Windows SDK**安裝 Windows 軟體開發套件時的選項。 它會安裝到路徑`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他架構資料夾）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 檢查時，已安裝 MakePri.exe **UWP 管理的應用程式的 Windows SDK**安裝 Windows 軟體開發套件時的選項。 它會安裝到路徑`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他架構資料夾）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` 。
 
 MakePri.exe 通常搭配 `new`、`versioned` 或 `resourcepack` 命令使用。 請參閱 [MakePri.exe 命令列選項](makepri-exe-command-options.md)。 在這些案例中，它會編制來源檔案的索引來產生資源的索引。 MakePri.exe 使用各種個別索引子來讀取不同來源的資源檔案或資源的容器。 最簡單的索引子是資料夾索引子，它會為諸如 `.jpg` 或 `.png` 影像等編制資料夾內容的索引。
 
@@ -284,12 +284,14 @@ ResFiles 索引子可透過 RESFILES 的 `type` 屬性來識別。 它會編制 
 
 `.resfiles` 檔案是包含一般檔案路徑清單的純文字檔。 `.resfiles` 檔案可包含「//」註解。 這裡提供一個範例。
 
-```
+<blockquote>
+<pre>
 Strings\component1\fr\elements.resjson
 Images\logo.scale-100.png
 Images\logo.scale-140.png
 Images\logo.scale-180.png
-```
+</pre>
+</blockquote>
 
 ## <a name="resjson"></a>ResJSON
 

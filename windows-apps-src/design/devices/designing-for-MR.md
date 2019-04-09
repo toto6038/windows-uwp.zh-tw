@@ -13,18 +13,18 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: df81348dee781d1c329562d558ed8df30fd40bc5
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610493"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244114"
 ---
 # <a name="designing-for-mixed-reality"></a>設計混合實境
 
 在混合實境中將您的應用程式設計美觀，並充分利用新的輸入法。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 [混合實境](https://developer.microsoft.com/windows/mixed-reality/mixed_reality)是實際環境與數位世界混合的結果。 混合實境體驗的頻譜包含一個極端的裝置，例如 HoloLens (混合真實世界與電腦產生的內容的裝置)，以及其他虛擬實境的完全沈浸式檢視 (如同使用 Windows Mixed Reality 頭戴式裝置檢視)。 請查閱 [混合實境應用程式的類型](https://developer.microsoft.com/en-us/windows/mixed-reality/types_of_mixed_reality_apps)，了解體驗的範例有什麼不同。
 
@@ -151,7 +151,7 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
             {
                 // Running on desktop
                 textBlock.Text = "I'm running on the desktop.";
-                textBlock.FontSize = 16;
+                textBlock.FontSize = 14;
             }
 
 ```
@@ -163,7 +163,7 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 ## <a name="related-articles"></a>相關文章
 
 
-* [目前的限制，從殼層中使用 Api 的應用程式](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [從殼層使用 API 的應用程式的目前限制](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
 * [建置 2D 應用程式](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens:建置 UWP Microsoft HoloLens 的 2D 應用程式](https://channel9.msdn.com/Events/Build/2016/B854)
 * [條件式 XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)

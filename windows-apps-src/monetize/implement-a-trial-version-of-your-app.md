@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, 試用版, App 內購買, Windows.Services.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 796266565965a62d3f168b48893d62e1cdd7df44
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 49d57f32961726507c0114aed648787dd7f6bd1f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646163"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334706"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>實作應用程式的試用版
 
@@ -78,7 +78,7 @@ App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.c
 此時，如果使用者購買應用程式，最好可以對使用者提供授權狀態有所變更的回應。 根據程式碼的撰寫方式，您可能必須要求使用者重新啟動應用程式。 但請盡可能讓轉換流暢、輕鬆。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
+[!code-csharp[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
 
 如需完整的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 

@@ -5,16 +5,16 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、資料、類型
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b0b529bbf397b76acb1eb589095a84f5c85745c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 44de7b61264f8e0e04d1de6d2b1101844656f28b
+ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654283"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58221454"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>標準 C++ 資料類型與 C++/WinRT
 
-具有[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，您可以呼叫使用 Standard c + + 資料類型，包括一些 c + + 標準程式庫的資料類型的 Windows 執行階段 Api。 您可以將標準字串傳遞至 Api (請參閱[字串處理 C + /cli WinRT](strings.md))，而且您可以將初始設定式清單和標準容器 api 所預期的語意相等的集合。
+具有[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，您可以呼叫使用標準的 Windows 執行階段 ApiC++資料類型，包括一些C++標準程式庫的資料類型。 您可以將標準字串傳遞至 Api (請參閱[字串處理 C + /cli WinRT](strings.md))，而且您可以將初始設定式清單和標準容器 api 所預期的語意相等的集合。
 
 ## <a name="standard-initializer-lists"></a>標準初始設定式清單
 初始設定式清單 (**std::initializer_list**) 是 C++ 標準程式庫建構。 您呼叫某些 Windows 執行階段建構函式與方法時，可以使用初始設定式清單。 例如，您可以使用一個來呼叫 [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes)。
@@ -30,25 +30,25 @@ int main()
 
     InMemoryRandomAccessStream stream;
     DataWriter dataWriter{stream};
-    dataWriter.WriteBytes({ 99, 98, 97 }); // the initializer list is converted to an array_view before being passed to WriteBytes.
+    dataWriter.WriteBytes({ 99, 98, 97 }); // the initializer list is converted to a winrt::array_view before being passed to WriteBytes.
 }
 ```
 
 有兩個項目參與進行這項工作。 第一個，**DataWriter::WriteBytes** 方法採用類型 [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) 的參數。
 
 ```cppwinrt
-void WriteBytes(array_view<uint8_t const> value) const
+void WriteBytes(winrt::array_view<uint8_t const> value) const
 ```
 
- **array_view** 是自訂 C++/WinRT 類型，其安全地表示一連串的值 (在 C++/WinRT 基礎程式庫中定義它，也就是 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`)。
+**winrt::array_view**是自訂C++/WinRT 表示型別安全地一系列連續的值 (定義於C++/WinRT 基礎程式庫，也就是`%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`)。
 
-第二個，**array_view** 有初始設定式清單建構函式。
+第二個， **winrt::array_view**有初始設定式清單建構函式。
 
 ```cppwinrt
-template <typename T> array_view(std::initializer_list<T> value) noexcept
+template <typename T> winrt::array_view(std::initializer_list<T> value) noexcept
 ```
 
-在許多情況下，您可以選擇是否要在您的程式設計中注意 **array_view**。 如果您選擇 *不* 注意它，如果以及當 C++ 標準程式庫中出現對等類型時，則不會變更任何程式碼。
+在許多情況下，您可以選擇是否要留意**winrt::array_view**程式設計中。 如果您選擇 *不* 注意它，如果以及當 C++ 標準程式庫中出現對等類型時，則不會變更任何程式碼。
 
 您可以將一個初始設定式清單傳遞至需要一個集合參數的 Windows 執行階段 API。 以 **StorageItemContentProperties::RetrievePropertiesAsync** 為例。
 
@@ -65,28 +65,28 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
 }
 ```
 
-此處執行兩個因素。 第一個，被呼叫者從初始設定式清單建構一個 **std::vector** (此被呼叫者必須為非同步，如此才能有該物件)。 第二個、C++/WinRT 無障礙地 (且不使用複製) 繫結 **std::vector** 做為 Windows 執行階段集合參數。
+此處執行兩個因素。 首先，被呼叫端的建構**std:: vector**從初始設定式清單 （此被呼叫端是非同步的因此它無法擁有該物件，它必須)。 第二個、C++/WinRT 無障礙地 (且不使用複製) 繫結 **std::vector** 做為 Windows 執行階段集合參數。
 
 ## <a name="standard-arrays-and-vectors"></a>標準陣列和向量
-**array_view**也有 **std::vector** 和 **std::array** 的轉換建構函式。
+[**winrt::array_view** ](/uwp/cpp-ref-for-winrt/array-view)還有轉換建構函式，從**std:: vector**並**std:: array**。
 
 ```cppwinrt
-template <typename C, size_type N> array_view(std::array<C, N>& value) noexcept
-template <typename C> array_view(std::vector<C>& vectorValue) noexcept
+template <typename C, size_type N> winrt::array_view(std::array<C, N>& value) noexcept
+template <typename C> winrt::array_view(std::vector<C>& vectorValue) noexcept
 ```
 
 因此，您可以改為使用 **std::vector** 呼叫 **DataWriter::WriteBytes**。
 
 ```cppwinrt
 std::vector<byte> theVector{ 99, 98, 97 };
-dataWriter.WriteBytes(theVector); // theVector is converted to an array_view before being passed to WriteBytes.
+dataWriter.WriteBytes(theVector); // theVector is converted to a winrt::array_view before being passed to WriteBytes.
 ```
 
 或使用 **std::array**。
 
 ```cppwinrt
 std::array<byte, 3> theArray{ 99, 98, 97 };
-dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
+dataWriter.WriteBytes(theArray); // theArray is converted to a winrt::array_view before being passed to WriteBytes.
 ```
 
 C++/WinRT 繫結 **std::vector** 做為 Windows 執行階段集合參數。 因此，您可以傳遞 **std::vector&lt;winrt::hstring&gt;**，並將它轉換為適當的 **winrt::hstring** Windows 執行階段集合。 沒有要謹記在心，如果是非同步的被呼叫端的額外詳細資料。 由於這種情況下的實作詳細資料，您必須提供右值，因此您必須提供複製還是移動的向量。 在下列程式碼範例中，移動向量的擁有權之物件的非同步被呼叫端所接受的參數類型 (就請小心，不要存取`vecH`在移動之後，一次)。 如果您想要深入了解右值，請參閱[值的類別，及其參考](cpp-value-categories.md)。
@@ -108,23 +108,23 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vect
 ```
 
 ## <a name="raw-arrays-and-pointer-ranges"></a>原始陣列和指標範圍
-請記住，在之後 C++ 標準程式庫中可能會存在一個對等項目，您也可以直接使用 **array_view**，如果您選擇如此，或者需要這麼做的話。
+記住，對等的型別可能存在於在未來需要注意C++標準程式庫，您也可以使用直接**winrt::array_view**如果您選擇，或需要。
 
-**array_view**轉換建構函式從未經處理的陣列，並從各種**T&ast;**  （項目類型的指標）。
+**winrt::array_view**轉換建構函式從未經處理的陣列，並從各種**T&ast;**  （項目類型的指標）。
 
 ```cppwinrt
 using namespace winrt;
 ...
 byte theRawArray[]{ 99, 98, 97 };
 array_view<byte const> fromRawArray{ theRawArray };
-dataWriter.WriteBytes(fromRawArray); // the array_view is passed to WriteBytes.
+dataWriter.WriteBytes(fromRawArray); // the winrt::array_view is passed to WriteBytes.
 
 array_view<byte const> fromRange{ theArray.data(), theArray.data() + 2 }; // just the first two elements.
-dataWriter.WriteBytes(fromRange); // the array_view is passed to WriteBytes.
+dataWriter.WriteBytes(fromRange); // the winrt::array_view is passed to WriteBytes.
 ```
 
 ## <a name="winrtarrayview-functions-and-operators"></a>winrt::array_view 函式和運算子
-建構函式的主機、運算子、函式以及為 **array_view** 實作 Iterator。 **array_view** 是一個範圍，讓您可以有範圍基礎 `for`，或有 **std::for_each** 來使用它。
+建構函式、 運算子、 函數和迭代器的主控件會實作**winrt::array_view**。 A **winrt::array_view**是範圍，因此您可以使用它與範圍架構`for`，或使用**std:: for_each**。
 
 如需詳細範例和資訊，請參閱 [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API 參考主題。
 
@@ -149,8 +149,8 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 }
 ```
 
-## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>使用非同步 Windows 執行階段 Api 的 c + + 協同程式
-您可以繼續使用[平行模式程式庫 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)呼叫非同步 Windows 執行階段 Api 時。 不過，在許多情況下，c + + 協同程式會提供與非同步物件互動的有效率且更輕鬆地-自動程式化的慣用語。 如需詳細資訊，以及程式碼範例，請參閱[並行和非同步作業以 C + + /cli WinRT](concurrency.md)。
+## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>C++使用非同步 Windows 執行階段 Api 的協同程式
+您可以繼續使用[平行模式程式庫 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)呼叫非同步 Windows 執行階段 Api 時。 不過，在許多情況下，C++協同程式提供有效率且更輕鬆地-自動程式化的慣用語與非同步的物件互動。 如需詳細資訊，以及程式碼範例，請參閱[並行和非同步作業C++/WinRT](concurrency.md)。
 
 ## <a name="important-apis"></a>重要 API
 * [IVector&lt;T&gt;介面](/uwp/api/windows.foundation.collections.ivector_t_)

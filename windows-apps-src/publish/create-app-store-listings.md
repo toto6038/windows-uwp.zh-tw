@@ -2,16 +2,16 @@
 Description: 應用程式提交程序的存放區清單一節是您可在此提供的文字和客戶時，會看到檢視您的應用程式的 Microsoft Store 中列出的映像。
 title: 建立應用程式市集清單
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
-ms.date: 10/31/2018
+ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp, 清單, 描述, Store 頁面, 版本資訊, 標題
 ms.localizationpriority: medium
-ms.openlocfilehash: a913c522450a8d28c03066c922df2e3e2972f92f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cc0c257be2343244872945de17d8c90a23d736ae
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601853"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57977451"
 ---
 # <a name="create-app-store-listings"></a>建立應用程式市集清單
 
@@ -130,7 +130,7 @@ Microsoft Store標誌是選用影像，您可以上傳以強化應用程式對�
 
 遊戲的簡短描述可能也會出現在 Xbox One 遊戲中心的 [資訊] 一節。
 
-獲得最佳結果，請保留您的簡短說明下 270 個字元。 欄位限制為 500 的字元，但是在某些檢視中，只有第一次 270 字元將會顯示 （與連結，無法檢視其餘的簡短描述）。
+獲得最佳結果，請保留您的簡短說明下 270 個字元。 欄位有 1000年字元限制，但在某些檢視中，只有第一次 270 字元將會顯示 （與連結，無法檢視其餘的簡短描述）。
 
 
 ### <a name="additional-system-requirements"></a>其他系統需求

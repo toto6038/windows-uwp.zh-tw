@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: afda713e4a3d0ae30a4ee1ad9e9308d835062108
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a39faf77237596179486eb6c1a0a59a40049155c
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640023"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58914008"
 ---
 # <a name="media-player"></a>媒體播放器
 
@@ -87,7 +87,7 @@ Windows 10 入門 app 中的媒體播放器。
 
 ![手機上雙列 MTC 控制項範例](images/controls/mtc_double_inprod.png)
 
-**系統媒體傳輸控制**
+**系統媒體傳輸控制項**
 
 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 會自動與系統媒體傳輸控制項整合。 系統媒體傳輸控制項是指當使用者按下硬體媒體鍵 (例如鍵盤上的媒體按鈕) 時，會以快顯方式顯示的控制項。 如需詳細資訊，請參閱 [SystemMediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn278677)。
 
@@ -173,7 +173,7 @@ private void LoadEmbeddedAppFile()
 
 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) 不需要特殊功能來存取本機檔案系統 (例如，使用者的 **\[音樂\]** 或 **\[影片\]** 資料夾) 上的檔案，因為使用者可以完全控制存取的檔案。 從安全性與隱私權的立場看，最佳做法是將 app 使用的「功能」數降到最小。
 
-**若要開啟本機媒體使用 FileOpenPicker**
+**使用 FileOpenPicker 開啟本機媒體**
 
 1.  呼叫 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847)，讓使用者挑選媒體檔案。
 
@@ -246,7 +246,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 
 > **注意**&nbsp;&nbsp; 如果 [MediaPlayerElement.IsFullWindow](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) 設為 true，且媒體正在播放，系統將會自動防止顯示器停用。
 
-**為了保持畫面的作用中**
+**讓螢幕保持使用中**
 
 1.  建立全域 [DisplayRequest](https://msdn.microsoft.com/library/windows/apps/br241816) 變數。 將變數初始化為 null。
 ```csharp
@@ -259,8 +259,9 @@ private DisplayRequest appDisplayRequest = null;
 3.  每當影片播放停止、暫停或因播放錯誤而中斷時，呼叫 [RequestRelease](https://msdn.microsoft.com/library/windows/apps/br241819) 以釋放顯示要求。 當 App 不再有任何啟用的顯示要求時，Windows 會在沒有使用裝置時將顯示器畫面變暗 (最後將它關閉) 以延長電池壽命。
 
     每個 [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 都有一個 [MediaPlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx) 類型 的 [PlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx)，可控制媒體播放的各種方面，例如 [PlaybackRate](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx)、[PlaybackState](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx) 及 [Position](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx)。 這裡會使用 [MediaPlayer.PlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) 上的 [PlaybackStateChanged](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) 事件來偵測您必須釋放顯示器要求時的情況。 然後，使用 [NaturalVideoHeight](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) 屬性來判斷是否正在播放音訊或視訊檔案，並只在播放視訊時才讓螢幕保持使用中狀態。
+
     ```xaml
-<MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
+    <MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
     ```
 
     ```csharp
@@ -395,5 +396,5 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 ## <a name="related-articles"></a>相關文章
 
-- [命令用於 UWP 應用程式的設計基本概念](https://msdn.microsoft.com/library/windows/apps/dn958433)
-- [UWP 應用程式的內容設計基本概念](https://msdn.microsoft.com/library/windows/apps/dn958434)
+- [UWP 應用程式的命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)
+- [UWP app 的內容設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958434)

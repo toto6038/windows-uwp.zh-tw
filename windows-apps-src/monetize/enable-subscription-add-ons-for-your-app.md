@@ -5,12 +5,12 @@ keywords: Windows 10, UWP, 訂閱, 附加元件, 在應用程式內購買, IAP, 
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b937ca61110452e233061179c398cae0d047686e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589983"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335056"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>啟用應用程式的訂閱附加元件
 
@@ -88,14 +88,14 @@ UWP app 的訂閱附加元件支援下列功能：
 4. 最後，程式碼 呼叫 [**RequestPurchaseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) 方法來要求購買訂閱。 如果試用可用於訂閱，則試用將提供給客戶購買。 否則，將提供完整的訂閱供購買。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
+[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
 
 ### <a name="get-info-about-subscription-add-ons-for-the-current-app"></a>取得有關目前應用程式的訂閱附加元件資訊
 
 此程式碼範例示範如何取得應用程式中可用的所有訂閱附加元件資訊。 若要取得此項資訊，請先使用 [**GetAssociatedStoreProductsAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) 方法，取得代表應用程式可用之每個附加元件的 [**StoreProduct**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct) 物件集合。 然後，取得每個產品的 [**StoreSku**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) 並使用 [**IsSubscription**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.IsSubscription) 和 [**SubscriptionInfo**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.SubscriptionInfo) 屬性存取訂閱資訊。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
+[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
 
 <span id="manage-subscriptions" />
 
