@@ -2,16 +2,16 @@
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Device Portal 核心 API 參考資料
 description: 了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。
-ms.date: 03/22/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f541a27a96b88b37d3f32b98246ba0ccbe2c8cf
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 58ae7d83c0889131313d136c13048b83a861f601
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/08/2019
-ms.locfileid: "59067853"
+ms.locfileid: "59244134"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 參考資料
 
@@ -2803,7 +2803,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | SecondayDNS | (**必要**如果*PrimaryDNS*不是 null) 來設定靜態的次要 DNS。 |
 
 為了清楚起見，若要設定 dhcp 的介面，序列化只`AdapterName`在網路上：
-```
+
+```json
 {
     "AdapterName":"{82F86C1B-2BAE-41E3-B08D-786CA44FEED7}"
 }
