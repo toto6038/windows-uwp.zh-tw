@@ -630,7 +630,7 @@ ms.locfileid: "57610663"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>馬其頓 (FYROM)</td>
+    <td>北馬其頓 (FYROM)</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>無</td>
@@ -1692,7 +1692,7 @@ ms.locfileid: "57610663"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>馬其頓 (FYROM)</td>
+    <td>北馬其頓 (FYROM)</td>
     <td>50 美元</td>
     <td>電匯</td>
     <td>無</td>
@@ -2747,7 +2747,7 @@ ms.locfileid: "57610663"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>馬其頓 (FYROM)</td>
+    <td>北馬其頓 (FYROM)</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>無</td>
@@ -3752,7 +3752,7 @@ ms.locfileid: "57610663"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>馬其頓 (FYROM)</td>
+    <td>北馬其頓 (FYROM)</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>無</td>
