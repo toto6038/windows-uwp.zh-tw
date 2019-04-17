@@ -27,7 +27,7 @@ ms.locfileid: "57589953"
 -   所有連續的空格都會被刪除，並取代為一個空格。
 -   在開始標記後的空格會被刪除。
 -   在結束標記前的空格會被刪除。
--   「東亞字元」會定義為 Unicode 字元範圍集：U+20000 到 U+2FFFD 與 U+30000 到 U+3FFFD。 這個子集有時也稱為「CJK 表意字元」。 如需詳細資訊，請參閱 http://www.unicode.org。
+-   「東亞字元」會定義為 Unicode 字元範圍集：U+20000 到 U+2FFFD 與 U+30000 到 U+3FFFD。 這個子集有時也稱為「CJK 表意字元」。 如需詳細資訊，請參閱 http://www.unicode.org 。
 
 "Default" 會對應 **xml:space** 屬性預設值代表的狀態。
 
