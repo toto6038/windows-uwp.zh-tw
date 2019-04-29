@@ -8,7 +8,7 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b6ea9fdf2e504e1ceee71658eab308751e1745c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57601443"
@@ -50,7 +50,7 @@ Visual Studio 是非常相似的。 您會看見如下圖中顯示的 [**開始�
 
 Visual Studio 中也提供好幾個可以選用的專案範本，如下圖中所示。
 
-![visual studio 新專案] 對話方塊](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png) 對於此逐步解說中，點選**Visual C#** ，然後點選 [ **Windows**， **Windows 通用**及**空白應用程式 （Windows 通用）**。 在 \[名稱\] 方塊中，輸入「MyApp」，然後點選 \[確定\]。 Visual Studio 會建立並接著顯示您的第一個專案。 現在您可以開始設計您的應用程式並在其中新增程式碼。
+![visual studio 新專案 對話方塊](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png) 對於此逐步解說中，點選**Visual C#** ，然後點選  **Windows**， **Windows 通用**及**空白應用程式 （Windows 通用）**。 在 \[名稱\] 方塊中，輸入「MyApp」，然後點選 \[確定\]。 Visual Studio 會建立並接著顯示您的第一個專案。 現在您可以開始設計您的應用程式並在其中新增程式碼。
 
 ## <a name="next-step"></a>後續步驟
 
