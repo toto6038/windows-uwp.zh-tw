@@ -8,7 +8,7 @@ keywords: windows 10, 遊戲, 擷取, 音訊, 影片, 元資料
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57601933"
@@ -97,7 +97,7 @@ ms.locfileid: "57601933"
 [!code-cpp[CallRecordTimeSpanToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCallRecordTimeSpanToFile)]
 
 ## <a name="save-screenshot-images-to-files"></a>儲存螢幕擷取畫面的影像到檔案
-您的 App 可以起始螢幕擷取畫面的擷取，將 App 視窗的目前內容儲存到一個影像檔或到不同影像編碼的多個影像檔。 若要指定您想要使用的影像編碼，請建立一份字串清單，其中每個字串代表一種影像類型。  **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** 的屬性為每一種支援的影像類型 (例如 **MediaEncodingSubtypes.Png** 或 **MediaEncodingSubtypes.JpegXr**) 提供正確的字串。
+您的 App 可以起始螢幕擷取畫面的擷取，將 App 視窗的目前內容儲存到一個影像檔或到不同影像編碼的多個影像檔。 若要指定您想要使用的影像編碼，請建立一份字串清單，其中每個字串代表一種影像類型。 **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** 的屬性為每一種支援的影像類型 (例如 **MediaEncodingSubtypes.Png** 或 **MediaEncodingSubtypes.JpegXr**) 提供正確的字串。
 
 透過呼叫 **AppRecordingManager** 物件的 **[SaveScreenshotToFilesAsync](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.savescreenshottofilesasync)** 方法，來起始螢幕擷取。 此方法的第一個參數是 **StorageFolder**，影像檔案將會儲存在其中。 第二個參數是檔案名稱前置詞，系統將為每種儲存的影像類型附加副檔名，例如「.png」。
 

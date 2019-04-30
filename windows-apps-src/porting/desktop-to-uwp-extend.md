@@ -8,7 +8,7 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d1fac6d735d4f6915dea1af531dffa666607fe3
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57641703"
@@ -460,11 +460,11 @@ public sealed class SiteVerifier : IBackgroundTask
 
 在 資訊清單設計工具中，開啟**package.appxmanifest**封裝專案方案中的檔案。
 
-在**\[宣告\]** 索引標籤，新增**\[背景工作\]** 宣告。
+在 **\[宣告\]** 索引標籤，新增 **\[背景工作\]** 宣告。
 
 ![背景工作選項](images/desktop-to-uwp/background-task-option.png)
 
-然後，選擇您想要的屬性。 我們的範例使用**\[計時器\]** 屬性。
+然後，選擇您想要的屬性。 我們的範例使用 **[計時器\]** 屬性。
 
 ![計時器屬性](images/desktop-to-uwp/timer-property.png)
 

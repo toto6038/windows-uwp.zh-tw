@@ -8,7 +8,7 @@ keywords: Windows 10, 遊戲, 廣播
 ms.localizationpriority: medium
 ms.openlocfilehash: c906551fd626dec726498ded9a7995007230504f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57607583"
@@ -17,7 +17,7 @@ ms.locfileid: "57607583"
 本文顯示如何管理 UWP app 的遊戲廣播。 使用者必須使用內建到 Windows 的系統 UI 起始遊戲廣播，但是開始使用 Windows 10 版本 1709，App 可以啟動系統廣播 UI 並且可以在廣播開始和停止時收到通知。
 
 ## <a name="add-the-windows-desktop-extensions-for-the-uwp-to-your-app"></a>將 UWP 的 Windows 桌面延伸新增到您的 App
-管理 App 廣播的 API 位於**[Windows.Media.AppBroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)** 命名空間，不包含在通用 API 協定中。 若要存取 API，您必須利用下列步驟將 UWP 的 Windows 桌面延伸的參考新增到您的 App。
+管理 App 廣播的 API 位於 **[Windows.Media.AppBroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)** 命名空間，不包含在通用 API 協定中。 若要存取 API，您必須利用下列步驟將 UWP 的 Windows 桌面延伸的參考新增到您的 App。
 
 1. 在 Visual Studio 中，請在 **\[方案總管\]** 中展開 UWP 專案，以滑鼠右鍵按一下 **\[參考\]**，然後選取 **\[加入參考...\]**。 
 2. 展開 **\[通用 Windows\]** 節點，然後選取 **\[延伸\]**。

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57617873"
@@ -106,7 +106,7 @@ ms.locfileid: "57617873"
 
 [!code-cs[InitMediaBinder](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetInitMediaBinder)]
 
-在 **Binding**事件處理常式、使用權杖字串找出要繫結的內容，然後呼叫**[CreateFromStreamAsync](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromstreamasync)** 或**[CreateFromUriAsync](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromuriasync)** 中的其中一個多載來建立彈性媒體來源。 因為這些是非同步方法，所以您應該先呼叫[**MediaBindingEventArgs.GetDeferral**](https://docs.microsoft.com/uwp/api/windows.media.core.mediabindingeventargs.GetDeferral)方法，指示系統等候作業完成，再繼續進行。  呼叫**[SetAdaptiveMediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediabindingeventargs.setadaptivemediasource)**，將彈性媒體來源設定為繫結的內容。 最後，在作業完成之後呼叫[**Deferral.Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.Complete)，指示系統繼續進行。
+在 **Binding** 事件處理常式、使用權杖字串找出要繫結的內容，然後呼叫**[CreateFromStreamAsync](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromstreamasync)** 或 **[CreateFromUriAsync](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromuriasync)** 中的其中一個多載來建立彈性媒體來源。 因為這些是非同步方法，所以您應該先呼叫[**MediaBindingEventArgs.GetDeferral**](https://docs.microsoft.com/uwp/api/windows.media.core.mediabindingeventargs.GetDeferral)方法，指示系統等候作業完成，再繼續進行。  呼叫**[SetAdaptiveMediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediabindingeventargs.setadaptivemediasource)**，將彈性媒體來源設定為繫結的內容。 最後，在作業完成之後呼叫[**Deferral.Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.Complete)，指示系統繼續進行。
 
 [!code-cs[BinderBindingAMS](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetBinderBindingAMS)]
 
