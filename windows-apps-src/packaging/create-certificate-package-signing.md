@@ -8,7 +8,7 @@ ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: a8d94f43edbdc3ec410ae7f878b38d41cddf5145
 ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/22/2019
 ms.locfileid: "58358603"
@@ -49,7 +49,7 @@ ms.locfileid: "58358603"
 
 ### <a name="use-new-selfsignedcertificate-to-create-a-certificate"></a>使用 **New-SelfSignedCertificate** 來建立憑證
 
-使用 **New-SelfSignedCertificate** PowerShell cmdlet 來建立自我簽署憑證。 **New-SelfSignedCertificate** 有數個可供自訂的參數，但為符合本篇文章的主旨，我們會著重於建立使用 ***SignTool** 的簡單憑證。 如需詳細範例以及此 Cmdlet 的使用方法，請參閱 [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/New-SelfSignedCertificate)。
+使用 **New-SelfSignedCertificate** PowerShell cmdlet 來建立自我簽署憑證。 **New-SelfSignedCertificate** 有數個可供自訂的參數，但為符合本篇文章的主旨，我們會著重於建立使用 **SignTool** 的簡單憑證。 如需詳細範例以及此 Cmdlet 的使用方法，請參閱 [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/New-SelfSignedCertificate)。
 
 根據先前範例的 AppxManifest.xml 檔案，您應該使用下列語法來建立憑證。 在提升權限的 PowerShell 提示字元內︰
 
