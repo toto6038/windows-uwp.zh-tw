@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10 s, 永遠連線, 限制, ARM 上的 windows 10
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
-ms.openlocfilehash: 42a2866642d11d1d97cc7b0b663486723499a5cf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b282cda4e77533f5cf946e0d73121dffb1bcfd48
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633453"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63814994"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>ARM 上應用程式和體驗的限制
 ARM 上的 Windows 10 有下列必要限制：
@@ -30,7 +30,7 @@ ARM 上的 Windows 10 有下列必要限制：
 
 下表列出一些常見問題，並提供如何修正問題的相關建議。
 
-|問題|解決方案|
+|問題|方案|
 |-----|--------|
 | 您的應用程式依賴不是針對 ARM 所設計的驅動程式。 | 將 x86 驅動程式編譯為 ARM64。 查看[使用 WDK 建置 ARM64 驅動程式](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)。 |
 | 您的應用程式僅適用於 x64。 | 如果您針對 Microsoft Store 開發，請提交應用程式的 ARM 版本。 如需詳細資訊，請參閱[應用程式套件架構](../packaging/device-architecture.md)。 如果您是 Win32 開發人員，請散發應用程式的 x86 版本。 |

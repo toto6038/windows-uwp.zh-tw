@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、 uwp、 azure ad 應用程式、 aad、 使用者、 群組、 多個使用者、 多使用者
 ms.localizationpriority: medium
-ms.openlocfilehash: 326bb547ac5b0d31f5112d7d5737ddad0d592dd5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ddbe47d94e17db0d272aedcff56df95fccf3434d
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610123"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787282"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>新增使用者、 群組和您的合作夥伴中心帳戶的 Azure AD 應用程式
 
@@ -48,7 +48,7 @@ ms.locfileid: "57610123"
     > 如果您選取多個使用者新增到您的合作夥伴中心帳戶，您必須指派它們，相同的角色或自訂的權限集。 若要新增多個具有不同角色/權限的使用者，請針對每個角色或一組自訂權限重複下列步驟。
 4.  當您完成選取使用者時，請按一下 **\[新增選取的項目\]**。
 5.  在 **\[角色\]** 區段中，指定所選使用者的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
-6.  按一下 **[儲存]**。
+6.  按一下 [儲存] 。
 
 ### <a name="additional-methods-for-adding-users"></a>新增使用者的其他方法
 
@@ -71,7 +71,7 @@ ms.locfileid: "57610123"
 4.  如果您選取 **\[將這個使用者設為 Azure AD 中的全域管理員\]** 方塊，請輸入使用者需要復原其密碼時可以使用的電子郵件。
 5.  在 **\[群組成員資格\]** 區段中，選取任何您要讓新使用者隸屬的群組。
 6.  在 **\[角色\]** 區段中，指定使用者的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
-7.  按一下 **[儲存]**。
+7.  按一下 [儲存] 。
 8.  在確認頁面上，您將會看見新使用者的登入資訊 (包括暫時密碼)。 請確定會記下此資訊，並將它提供給新的使用者，因為您在離開此頁面之後將無法存取該暫時密碼。
 
 
@@ -85,7 +85,7 @@ ms.locfileid: "57610123"
 1.  從**使用者**網頁 (底下**帳戶設定**)，選取**將使用者新增**，然後選擇**邀請使用者透過電子郵件**。
 1.  輸入一或多個電子郵件地址 (最多十個)，以逗號或分號分隔。
 2.  在 **\[角色\]** 區段中，指定使用者的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
-3.  按一下 **[儲存]**。
+3.  按一下 [儲存] 。
 
 您邀請的使用者會取得電子郵件邀請來加入您的帳戶，而在您的 Azure AD 租用戶中將為其建立新的[來賓使用者](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)帳戶。 使用者必須接受邀請才能存取您的帳戶。
 
@@ -122,7 +122,7 @@ ms.locfileid: "57610123"
 
 3.  當您完成選取群組時，請按一下 **\[新增選取的項目\]**。
 4.  在 **\[角色\]** 區段中，指定所選群組的[角色或自訂權限](set-custom-permissions-for-account-users.md)。 所有群組的成員都可以存取合作夥伴中心帳戶的權限您套用至群組，不論其個別的帳戶相關聯的角色/權限。
-5.  按一下 **[儲存]**。
+5.  按一下 [儲存] 。
 
 
 ### <a name="create-a-new-group-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account"></a>在您的組織目錄中建立新的群組帳戶，並將它新增至您的合作夥伴中心帳戶
@@ -135,7 +135,7 @@ ms.locfileid: "57610123"
 4.  指定群組的[角色或自訂權限](set-custom-permissions-for-account-users.md)。 所有群組的成員都可以存取合作夥伴中心帳戶的權限您套用至群組，不論其個別的帳戶相關聯的角色/權限。
 5.  從出現的清單中選取要指派至新群組的使用者。 您可以使用搜尋方塊來搜尋特定的使用者。
 6.  完成選取使用者時，按一下 **\[新增選取的項目\]**，將其新增到新群組。
-7.  按一下 **[儲存]**。
+7.  按一下 [儲存] 。
 
 
 <span id="azure-ad-applications" />
@@ -155,7 +155,7 @@ ms.locfileid: "57610123"
 
 4.  當您完成選取 Azure AD 應用程式時，請按一下 **\[新增選取的項目\]**。
 5.  在 **\[角色\]** 區段中，指定所選 Azure AD 應用程式的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
-6.  按一下 **[儲存]**。
+6.  按一下 [儲存] 。
 
 
 ### <a name="create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account"></a>建立新的 Azure AD 應用程式帳戶在您的組織目錄中，並將它新增至您的合作夥伴中心帳戶
@@ -170,7 +170,7 @@ ms.locfileid: "57610123"
 3.  輸入新的 Azure AD 應用程式的 **\[回覆 URL\]**。 使用者可以從此 URL 登入並使用您的 Azure AD 應用程式 (也稱為 App URL 或登入 URL)。 **回覆 URL** 長度不可超過 256 個字元，而且在您的目錄中必須是唯一的。
 4.  輸入新 Azure AD 應用程式的 [**應用程式識別碼 URI**]。 這是 Azure AD 應用程式的邏輯識別碼，是在傳送單一登入要求至 Azure AD 時提供。 請注意，在目錄中的每個 Azure AD 應用程式的 **\[應用程式識別碼 URI\]** 必須是唯一的，且長度不能超過 256 個字元。 如需**應用程式識別碼 URI** 的詳細資訊，請參閱[整合應用程式與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。
 5.  在 **\[角色\]** 區段中，指定 Azure AD 應用程式的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
-6.  按一下 **[儲存]**。
+6.  按一下 [儲存] 。
 
 新增或建立 Azure AD 應用程式之後，您可以返回 **\[使用者\]** 區段，然後選取應用程式名稱以檢閱應用程式的設定，包括租用戶識別碼、用戶端識別碼、回覆 URL，以及 App 識別碼 URI。
 
@@ -210,7 +210,7 @@ ms.locfileid: "57610123"
     -   對於 **\[Azure AD 應用程式\]**，您可以為 **\[回覆 URL\]** 或 **\[應用程式識別碼 URI\]** 輸入新值。
     請記住這些變更都會在您的組織目錄以及您的合作夥伴中心帳戶。
 3.  如需與合作夥伴中心存取相關的變更，選取或取消選取您想要套用，或選取的角色**自訂權限**並進行所需的變更。 這些變更只會影響合作夥伴中心存取並不會變更您的組織 Azure AD 租用戶內的任何權限。
-3.  按一下 **[儲存]**。
+3.  按一下 [儲存] 。
 
 
 ## <a name="view-history-for-account-users"></a>檢視帳戶使用者歷程記錄

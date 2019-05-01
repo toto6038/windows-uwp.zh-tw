@@ -1,104 +1,117 @@
 ---
 description: 本指南可協助您直接在 WPF 和 Windows Forms 應用程式中建立 Fluent 型 UWP UI
 title: 傳統型應用程式中的 UWP 控制項
-ms.date: 01/11/2019
+ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, uwp, windows forms, wpf
+keywords: windows 10、 uwp、 windows form、 wpf、 xaml 群島
 ms.localizationpriority: medium
-ms.custom: RS5
-ms.openlocfilehash: bf25fea6ca6e8809c12324ae57a42cc712ded2a5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: RS5, 19H1
+ms.openlocfilehash: df2bb23f3934b7629f2fec408f8bde713e5f69d9
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619703"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63812709"
 ---
-# <a name="uwp-controls-in-desktop-applications"></a>傳統型應用程式中的 UWP 控制項
+# <a name="uwp-controls-in-desktop-applications-xaml-islands"></a>UWP 控制項，在傳統型應用程式 （XAML 群島）
+
+從 Windows 10 版本 1903，您可以裝載在非 UWP 桌面應用程式使用稱為 UWP 控制項*XAML 群島*。 這項功能可讓您加強的外觀、 風格和您現有的傳統型應用程式最新的 Windows 10 UI 功能才可透過 UWP 控制項的功能。 這表示您可以使用 UWP 功能這類[Windows Ink](../design/input/pen-and-stylus-interactions.md)並控制該支援[Fluent Design System](../design/fluent-design-system/index.md)在您現有的 WPF、 Windows Form 和C++Win32 應用程式。
+
+我們提供數種方式使用您的 WPF、 Windows Form 中的 XAML 群島和C++Win32 應用程式的技術或您使用的架構而定。
 
 > [!NOTE]
-> XAML 島是開發人員預覽目前可用的。 雖然我們鼓勵您試用看看在自己的原型程式碼現在，我們不建議，您使用它們在實際程式碼這一次。 這些 Api 和控制項將會繼續成熟並穩定未來 Windows 版本。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
->
-> 如果您有意見反應的相關 XAML 群島，建立新的問題，在[WindowsCommunityToolkit 存放庫](https://github.com/windows-toolkit/WindowsCommunityToolkit/issues)和那里留下您的意見。 如果您想要私下提交您的意見反應，您可以傳送到XamlIslandsFeedback@microsoft.com。 您的深入解析和案例會對我們非常重要。
+> 如果您有意見反應的相關 XAML 群島，建立新的問題，在[Microsoft.Toolkit.Win32 存放庫](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)和那里留下您的意見。 如果您想要私下提交您的意見反應，您可以傳送到XamlIslandsFeedback@microsoft.com。 您的深入解析和案例會對我們非常重要。
 
-Windows 10 現在可讓您在非 UWP 桌面應用程式中使用 UWP 控制項，以便您可以增強的外觀、 風格和您現有的傳統型應用程式最新的 Windows 10 UI 功能才可透過 UWP 控制項的功能。 這表示您可以使用 UWP 功能這類[Windows Ink](../design/input/pen-and-stylus-interactions.md) ，並控制該支援[Fluent Design System](../design/fluent-design-system/index.md)現有 WPF、 Windows Form 和 c + + Win32 應用程式中。 此案例中開發人員有時稱為*XAML 群島*。
+## <a name="how-do-xaml-islands-work"></a>XAML 群島如何運作？
 
-我們提供數種方式使用 XAML 群島，在您 WPF、 Windows Form 和 c + + Win32 應用程式的技術或您使用的架構而定。
+從 Windows 10 版本 1903，我們提供兩種方式可使用您的 WPF、 Windows Form 中的 XAML 群島和C++Win32 應用程式：
 
-## <a name="wrapped-controls"></a>已包裝的控制項
+* Windows SDK 提供數個 Windows 執行階段類別和 COM 介面，您的應用程式可以用來裝載任何 UWP 控制項衍生自[ **Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)。 整體而言，這些類別和介面統稱*UWP XAML 裝載 API*，可讓您在有相關聯的視窗控制代碼 (HWND) 的應用程式中的任何 UI 項目中的主機 UWP 控制項。 如需有關此 API 的詳細資訊，請參閱 <<c0> [ 使用裝載 API XAML](using-the-xaml-hosting-api.md)。
 
-WPF 和 Windows Forms 應用程式可以使用選取的已包裝的 UWP 控制項中[Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)。 我們將這些控制項做為*包裝控制項*因為它們所包裝的介面和特定的 UWP 控制項的功能。 您可以將這些控制項直接加入 WPF 或 Windows Form 專案的設計介面，然後依照像任何其他 WPF 或 Windows Form 控制項設計工具中使用它們。
+* [Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)也提供適用於 WPF 和 Windows Forms 的 其他 XAML 島控制項。 這些控制項使用 UWP XAML，內部裝載 API，並實作的所有行為，您必須自行處理，如果您使用裝載 API，包括鍵盤導覽和版面配置變更 UWP XAML。 WPF 和 Windows Forms 應用程式，我們強烈建議您使用這些控制項，而不是 UWP XAML 直接裝載 API，因為其抽象許多使用 API 的實作詳細資料。 請注意，從 Windows 10 版本 1903，這些控制項可[可供開發人員預覽](#feature-roadmap)。
 
 > [!NOTE]
-> 已包裝的控制項不是適用於 c + + Win32 桌面應用程式。 這類應用程式必須使用[UWP XAML 裝載 API](#uwp-xaml-hosting-api)。
+> C++Win32 桌面應用程式必須使用裝載 API 來裝載 UWP 控制項 UWP XAML。 Windows 社群工具組中的 XAML 島控制項沒有可用的C++Win32 桌面應用程式。
 
-下列已包裝的 UWP 控制項是目前適用於 WPF 和 Windows Form 應用程式。 Windows 社群工具組的未來版本的更多的 UWP 包裝控制項已計劃。
+有兩種類型的 WPF 和 Windows Form 應用程式針對 Windows 社群工具組所提供的 XAML 島控制項：*包裝控制項*並*主控制項*。
+
+### <a name="wrapped-controls"></a>已包裝的控制項
+
+WPF 和 Windows Forms 應用程式可以使用選取的已包裝的 UWP 控制項中[Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)。 這些稱為*包裝控制項*因為它們所包裝的介面和特定的 UWP 控制項的功能。 您可以將這些控制項直接加入 WPF 或 Windows Form 專案的設計介面，然後依照像任何其他 WPF 或 Windows Form 控制項設計工具中使用它們。
+
+下列實作 XAML 島已包裝的 UWP 控制項是目前適用於 WPF 和 Windows Form 應用程式。
 
 | 控制項 | 支援的最低 OS | 描述 |
 |-----------------|-------------------------------|-------------|
-| [Web 檢視](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 版本 1803 | 您可以使用 Microsoft Edge 轉譯引擎來顯示 web 內容。 |
-| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供的版本**WebView**與更多的 OS 版本相容。 此控制項會使用 Microsoft Edge 轉譯引擎，以顯示在 Windows 10 在版本 1803年和更新版本上的 web 內容和 Internet Explorer 轉譯引擎，以顯示 web 內容在較早版本的 Windows 10，Windows 8.x 和 Windows 7。 |
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 版本 1809年 （組建 17763） | 提供在 Windows Form 或 WPF 桌面應用程式中的 Windows Ink 為基礎的使用者互動的介面和相關的工具列。 |
-| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 版本 1809年 （組建 17763） | 將內嵌資料流，並呈現媒體內容，例如視訊在 Windows Form 或 WPF 桌面應用程式中的檢視。 |
-| [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10 版本 1809年 （組建 17763） | 可讓您在 Windows Form 或 WPF 桌面應用程式中顯示的符號或逼真的對應。 |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 (版本 1903) | 提供在 Windows Form 或 WPF 桌面應用程式中的 Windows Ink 為基礎的使用者互動的介面和相關的工具列。 |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 (版本 1903) | 將內嵌資料流，並呈現媒體內容，例如視訊在 Windows Form 或 WPF 桌面應用程式中的檢視。 |
+| [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10 (版本 1903) | 可讓您在 Windows Form 或 WPF 桌面應用程式中顯示的符號或逼真的對應。 |
 
-## <a name="host-controls"></a>主控制項
+XAML 島已包裝控制項，除了 Windows 社群工具組也提供下列控制項來裝載 web 內容。
+
+| 控制項 | 支援的最低 OS | 描述 |
+|-----------------|-------------------------------|-------------|
+| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 版本 1803 | 您可以使用 Microsoft Edge 轉譯引擎來顯示 web 內容。 |
+| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供的版本**WebView**與更多的 OS 版本相容。 此控制項會使用 Microsoft Edge 轉譯引擎，以顯示在 Windows 10 在版本 1803年和更新版本上的 web 內容和 Internet Explorer 轉譯引擎，以顯示 web 內容在較早版本的 Windows 10，Windows 8.x 和 Windows 7。 |
+
+### <a name="host-controls"></a>主控制項
 
 如需可用的已包裝控制項所未包含的案例，WPF 和 Windows Form 應用程式也可以使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制中[Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)。 這個控制項可以裝載任何 UWP 控制項衍生自[ **Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，包括任何由 Windows SDK 所提供的 UWP 控制項，以及自訂使用者控制項。 此控制項支援 Windows 10 Insider Preview SDK 建置 17709 和更新版本。
 
-> [!NOTE]
-> 無法使用 c + + Win32 桌面應用程式的主控制項。 這類應用程式必須使用[UWP XAML 裝載 API](#uwp-xaml-hosting-api)。
+### <a name="architecture-overview"></a>架構概觀
 
-## <a name="uwp-xaml-hosting-api"></a>裝載 API 的 UWP XAML
-
-如果您有 c + + Win32 應用程式時，您可以使用*UWP XAML 裝載 API*來裝載任何 UWP 控制項衍生自[ **Windows.UI.Xaml.UIElement** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)中的任何 UI 項目中您有相關聯的視窗控制代碼 (HWND) 的應用程式。 此 API 是在 Windows 10 Insider Preview SDK 建置 17709 引進。 如需使用此 API 的詳細資訊，請參閱[使用桌面應用程式中裝載 API XAML](using-the-xaml-hosting-api.md)。
-
-> [!NOTE]
-> C + + Win32 桌面應用程式必須使用裝載 API 來裝載 UWP 控制項 UWP XAML。 已包裝的控制項和主控制項不適用於這些類型的應用程式。 WPF 和 Windows Forms 應用程式，我們建議您先使用 Windows 社群工具組，而不是 UWP XAML 中的已包裝的控制項和主控制項裝載 API。 這些控制項使用 UWP XAML，內部裝載 API，並提供更簡單的開發經驗。 不過，您可以使用裝載 API 直接在 WPF 和 Windows Form 應用程式中，如果您選擇 UWP XAML。
-
-## <a name="architecture-overview"></a>架構概觀
-
-以下可快速查看這些控制項在架構上的組織方式。 此圖表中使用的名稱會隨時變更。  
+以下可快速查看這些控制項在架構上的組織方式。
 
 ![裝載控制項架構](images/host-controls.png)
 
-隨附於 Windows SDK 的此圖表底部會出現 API。 您將新增到您的設計工具的控制項，是隨附於 Windows 社群工具組中的 Nuget 套件。
+隨附於 Windows SDK 的此圖表底部會出現 API。 已包裝的控制項和主控制項可透過 Windows 社群工具組中的 Nuget 套件。
 
-這些新的控制項都有限制，所以在您使用前，請花一些時間檢閱什麼尚未支援，以及哪些只有利用因應措施才能使用。
+## <a name="feature-roadmap"></a>功能藍圖
 
-## <a name="limitations"></a>限制
+在版本的 Windows 10 版本 1903，包裝的控制項和 Windows 社群工具組中的主控制項是仍在開發人員指南預覽中有可用的控制項的 1.0 版發行為止。
 
-### <a name="whats-supported"></a>支援的功能
+* 1.0 版的.NET Framework 4.6.2 中的控制項和更新版本已計劃將於發行[6.0 版的工具組](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones)。
+* 以較新版的工具組 1.0 版的.NET Core 3 的控制項已計劃。
+* 如果您想要嘗試最新預覽版本 1.0 發行版本，這些控制項的.NET Framework 和.NET Core 3，請參閱**6.0.0-preview3** NuGet 套件中[UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit)資源庫。
 
-大部分，支援全部，除非以下明確提出。
+## <a name="requirements"></a>需求
 
-### <a name="whats-supported-only-with-workarounds"></a>只有利用因應措施才能使用
+XAML 群島需要 Windows 10 版本 1903，及更新版本。 若要在您的應用程式中使用 XAML 群島，您必須先設定您的專案。
 
-:heavy_check_mark:裝載多個視窗內的多個收件匣 控制項。 您將必須將每個視窗置於其本身的執行緒。
+### <a name="step-1-modify-your-project-to-use-windows-runtime-apis"></a>步驟 1：將專案修改為使用 Windows 執行階段 Api
 
-:heavy_check_mark:使用``x:Bind``裝載的控制項。 您將必須在 .NET Standard 程式庫中宣告資料模型。
+如需相關指示，請參閱 <<c0> [ 這篇文章](../porting/desktop-to-uwp-enhance.md#first-set-up-your-project)。
 
-:heavy_check_mark:C#-根據協力廠商控制項。 如果您有第三方控制項的原始程式碼，您可以對它進行編譯。
+### <a name="step-2-enable-xaml-island-support-in-your-project"></a>步驟 2：在您的專案中啟用 XAML 島支援
 
-### <a name="whats-not-yet-supported"></a>不支援的功能
+進行下列變更的其中一個專案，讓 XAML 島支援。 如需詳細資訊，請參閱 <<c0> [ 此部落格文章](https://techcommunity.microsoft.com/t5/Windows-Dev-AppConsult/Using-XAML-Islands-on-Windows-10-19H1-fixing-the-quot/ba-p/376330#M117)。
 
-: no_entry_sign:跨應用程式順暢地運作，裝載控制項的協助工具。
+#### <a name="option-1-package-your-application-in-an-msix-package"></a>選項 1：MSIX 封裝中的應用程式封裝  
 
-: no_entry_sign:在您加入不含 Windows 應用程式套件的應用程式的控制項中的當地語系化的內容。
+安裝 Windows 10，版本 1903 SDK （或更新版本）。 然後，藉由新增封裝 MSIX 封裝中的應用程式[Windows 應用程式封裝專案](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)到您的解決方案，並將參考加入您的 WPF 或 Windows Form 專案。
 
-: no_entry_sign:在 XAML 中建立不包含 Windows 應用程式套件的應用程式內的資產參考。
+#### <a name="option-2-set-the-maxversiontested-value-in-your-assembly-manifest"></a>選項 2：設定您的組件資訊清單中 maxVersionTested 值
 
-: no_entry_sign:適當地回應變更 DPI 和小數位數的控制項。
+如果您不想在 MSIX 封裝中的應用程式封裝，您可以新增[並排顯示組件資訊清單](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)至您的專案，並新增**maxVersionTested**值來指定資訊清單程式應用程式是與 Windows 10 版本 1903年或更新版本相容。
 
-: no_entry_sign:新增**WebView** （執行緒上，關閉執行緒，或從程序） 的自訂使用者控制項的控制項。
+1. 如果您還沒有組件資訊清單中您的專案，專案中加入新的 XML 檔案並將它命名**app.manifest**。 針對 WPF 或 Windows Form 應用程式，請確定您也將指派**Manifest**屬性設 **。 app.manifest**中**應用程式**頁面您[專案屬性](https://docs.microsoft.com/en-us/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources)。
+2. 在您的組件資訊清單，包括**相容性**項目和子項目，在下列範例所示。 取代**識別碼**屬性**maxVersionTested**與您設為目標的 Windows 10 的版本號碼的項目 （必須是 Windows 10 版本 1903 或更新版本）。 
 
-: no_entry_sign:[顯示反白顯示](https://docs.microsoft.com/windows/uwp/design/style/reveal)Fluent 的效果。
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+        <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+            <application>
+                <!-- Windows 10 -->
+                <maxversiontested Id="10.0.18362.0"/>
+                <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+            </application>
+        </compatibility>
+    </assembly>
+    ```
 
-: no_entry_sign:內嵌的手寫筆跡功能， @Places，和@People輸入的控制項。
+## <a name="additional-resources"></a>其他資源
 
-: no_entry_sign:指派的快速鍵。
+如需詳細背景資訊和教學課程，需使用 XAML 群島，請參閱下列文章和資源：
 
-: no_entry_sign:C + + 為基礎的協力廠商控制項。
-
-: no_entry_sign:裝載的自訂使用者控制項。
-
-我們會持續改善桌面 Fluent 的體驗，所以這份清單中的項目也可能會變更。  
+* [XAML 群島實驗室](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn)。 這個完整的實驗室提供 Windows 社群工具組中使用的已包裝的控制項和主控制項，將 UWP 控制項新增至現有的 WPF 特定業務應用程式的逐步指示。 此實驗室包括[WPF 應用程式的完整程式碼](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn/Lab)，以及[詳細指示](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/blob/microsoftlearn/Manual/README.md)程序中的每個步驟。

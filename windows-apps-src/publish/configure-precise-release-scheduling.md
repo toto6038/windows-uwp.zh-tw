@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 排程, 發行日期, 日期, 推出
 ms.localizationpriority: medium
-ms.openlocfilehash: a1477a426a9cdf240e694efb19bd7521fcd734cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e247d59253d24fd309b26aebc450dcc7b5e9051d
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597203"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787132"
 ---
 # <a name="configure-precise-release-scheduling"></a>設定精確發行時間表
 
@@ -46,7 +46,7 @@ ms.locfileid: "57597203"
 
 以下是您可針對產品的 [**發行**] 排程設定的選項：
 - **儘速**:只要它是認證和發佈，則會發行產品。 此為預設選項。
-- **在**:在您選取的時間與日期發行產品。 您還有另外兩個選項：
+- **at**:在您選取的時間與日期發行產品。 您還有另外兩個選項：
    - **UTC**:您選取的時間會 Universal Coordinated Time (UTC) 時間，以便在相同的應用程式版本的時間所有位置。
    - **本機**:您選取的時間將會被用來在每個市集相關聯的時區。 (請注意，對於包含多個時區的市場，只會使用該市場中的一個時區。 若是美國，則會使用東岸時區)。
 - **未排程**:應用程式存放區中將無法使用。 如果您選擇此選項，稍後可以透過建立新的提交項目並選擇其中一個其他選項在Microsoft Store中提供應用程式。

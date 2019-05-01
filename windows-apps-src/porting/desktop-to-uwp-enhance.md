@@ -2,16 +2,17 @@
 Description: 使用通用 Windows 平台 (UWP) Api，以強化您的 Windows 10 使用者的桌面應用程式。
 Search.Product: eADQiWindows 10XVcnh
 title: 增強您的 Windows 10 傳統型應用程式
-ms.date: 10/15/2018
+ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e06de7d33604981e0055d9d57f774d280753db2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: 55e91c96b7a978f0c90365073aa655553d4a658a
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628033"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63805728"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增強您的 Windows 10 傳統型應用程式
 
@@ -36,18 +37,19 @@ ms.locfileid: "57628033"
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program 檔案 (x86) \Windows Kits\10\References\<*sdk 版本*> \Windows.Foundation.UniversalApiContract\<*版本*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program 檔案 (x86) \Windows Kits\10\References\<*sdk 版本*> \Windows.Foundation.FoundationContract\<*版本*>|
+|windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
+|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
 在 **\[屬性\]** 視窗中，將每個 *.winmd* 檔案的 **\[複製本機\]** 欄位設定為 **\[False\]**。
 
 ![複製本機欄位](images/desktop-to-uwp/copy-local-field.png)
 
-### <a name="modify-a-c-project-to-use-windows-runtime-apis"></a>C + + 專案修改成使用 Windows 執行階段 Api
+### <a name="modify-a-c-project-to-use-windows-runtime-apis"></a>修改C++專案，以使用 Windows 執行階段 Api
 
-使用[C + + /cli WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)使用 Windows 執行階段 Api。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。
+使用[ C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)若要使用 Windows 執行階段 Api。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。
 
-若要設定您的專案 C + /cli WinRT，請參閱[修改 Windows 桌面應用程式專案，以加入 C + + /cli WinRT 支援](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
+若要設定您的專案，如C++/WinRT，請參閱[修改 Windows 桌面應用程式專案，以加入C++/WinRT 支援](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
 
 ## <a name="add-windows-10-experiences"></a>新增 Windows 10 體驗
 

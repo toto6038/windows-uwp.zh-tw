@@ -5,12 +5,12 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 518529fecff9f25a83a03847b1623bf9f09a8145
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d059f0e33f7343fa0ac9919a243008ed486e31ff
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661153"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63772738"
 ---
 # <a name="getting-started-with-point-of-service"></a>開始使用服務點
 
@@ -207,7 +207,7 @@ if (claimedBarcodeScanner != null)
 > [!NOTE]
 > 已宣告和未宣告的服務點裝置類別都會實作 [IClosable 介面](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable)。 如果裝置透過網路或藍牙應用程式連接至 App，則必須先處置已宣告及未宣告的物件，其他 App 才能進行連接。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 + [條碼掃描器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
 + [現金隱藏式選單的範例]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
 + [列顯示範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)

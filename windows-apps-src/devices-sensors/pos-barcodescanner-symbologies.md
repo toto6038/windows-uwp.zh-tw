@@ -5,12 +5,12 @@ ms.date: 08/29/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 690b6b8ee688f62dcae375ed48e07797c921bf43
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ee78ffbc49fdcb7f8e87844dea1e2ce29297e9f3
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637593"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63816693"
 ---
 # <a name="working-with-symbologies"></a>使用碼制
 [條碼碼制](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)是資料到特定條碼格式的對應。 一些常見的象徵意義包括 UPC、 程式碼 128、 QR 代碼，等等。  通用 Windows 平台的條碼掃描器的 Api 可讓應用程式控制掃描器處理這些象徵意義不需要手動設定掃描器的方式。 
@@ -158,7 +158,7 @@ private async Task<bool> SetCheckDigitValidation(ClaimedBarcodeScanner scanner, 
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [條碼掃描器](pos-barcodescanner.md)
 * [BarcodeSymbologies 類別](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)

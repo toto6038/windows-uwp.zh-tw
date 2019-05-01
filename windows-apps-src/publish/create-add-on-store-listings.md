@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b32abae4938081610db2cfc2ded25adadab95d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 43782a1a5d26ba84fe53f6c164a944fa357edfb1
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650953"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787031"
 ---
 # <a name="create-add-on-store-listings"></a>建立附加元件市集清單
 
@@ -41,7 +41,7 @@ ms.locfileid: "57650953"
 
 如果您想要顯示更多資訊，而不只是標題，您最多可以在此處輸入 200 個字元。 這是選填欄位。
 
-## <a name="icon"></a>Icon
+## <a name="icon"></a>圖示
 
 您也可以選擇提供可以向客戶顯示的影像。 此圖示必須是 .png 檔案，大小必須是 300 x 300 像素。
 

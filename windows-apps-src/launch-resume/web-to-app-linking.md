@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 176009cb3a2fb14eb5071d48d59a0b807d4c81d6
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641073"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63770362"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>使用 App URI 處理常式啟用網站的應用程式
 
@@ -46,7 +46,7 @@ ms.locfileid: "57641073"
 </Applications>
 ```
 
-上述的宣告會登錄您的應用程式要從指定的主機來處理連結。 如果您的網站有多個網址 (例如︰m.example.com、www.example.com 和 example.com)，請在 `<uap3:AppUriHandler>` 內為每個網址新增個別的 `<uap3:Host Name=... />` 項目。
+上述的宣告會登錄您的應用程式要從指定的主機來處理連結。 如果您的網站有多個位址 (例如： m.example.com，www\.example.com 和 example.com) 再新增個別`<uap3:Host Name=... />`內的項目`<uap3:AppUriHandler>`每個位址。
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>使用 JSON 檔案將應用程式與網站關聯
 
@@ -55,7 +55,7 @@ ms.locfileid: "57641073"
 >[!Important]
 > JSON 檔案不應該有.json 後置檔案。
 
-建立名為 **windows-app-web-link** 的 JSON 檔案 (不含.json 副檔名)，並提供您的應用程式套件系列名稱。 例如：
+建立名為 **windows-app-web-link** 的 JSON 檔案 (不含.json 副檔名)，並提供您的應用程式套件系列名稱。 例如: 
 
 ``` JSON
 [{
@@ -71,7 +71,7 @@ Windows 會讓 https 連線至您的網站，並會在網頁伺服器上尋找�
 
 上面的 JSON 檔案範例示範萬用字元的用法。 萬用字元可讓您以較少行的程式碼，支援各種不同的連結。 網站至應用程式連結可在 JSON 檔案中支援兩種類型的萬用字元︰
 
-| **萬用字元** | **描述**               |
+| **Wildcard** | **描述**               |
 |--------------|-------------------------------|
 | **\***       | 代表任何子字串      |
 | **?**        | 代表單一字元 |
@@ -186,14 +186,14 @@ Keyname:`ForceValidation` 值： `1`
 ## <a name="appurihandlers-tips"></a>AppUriHandlers 祕訣︰
 
 - 請務必只指定您的應用程式能夠處理的連結。
-- 列出所有您將會支援的主機。  請注意，www.example.com 與 example.com 的主機不同。
+- 列出所有您將會支援的主機。  請注意，www\.example.com 和 example.com 是不同的主控件。
 - 使用者可以在 \[設定\] 中，選擇他們想要哪個應用程式來處理網站。
 - 您的 JSON 檔案必須上傳到 https 伺服器。
 - 如果您需要變更所要支援的路徑，您可以重新發佈 JSON 檔案，而不需要重新發佈您的應用程式。 使用者能在 1-8 天內查看所做的變更。
 - 所有使用 AppUriHandlers 側載的應用程式，在安裝時都會有該主機的驗證連結。 您不需要將 JSON 檔案上傳，也能測試該功能。
 - 只要您的應用程式是利用 [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) 啟動的 UWP 應用程式，或使用 [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx) 啟動的 Windows 傳統型應用程式，此功能都能運作。 如果 URL 對應到已登錄的應用程式 URI 處理常式，會啟動該應用程式，而不是瀏覽器。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 [網站至應用程式範例專案](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol 註冊](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)

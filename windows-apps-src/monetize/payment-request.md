@@ -4,17 +4,17 @@ title: 使用付款要求 API 簡化付款
 ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10 uwp，付款要求
-ms.openlocfilehash: 36078c65d6762c8ed477a3a1342f3b6a0acaaa6f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a40b8265e3445319bd7baa530df0f9e9eaae0f31
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334586"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63804501"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>使用付款要求 API 簡化付款
 付款所要求的 API 用於 UWP 應用程式依據[W3C 付款要求 API 規格](https://w3c.github.io/browser-payment-api/)。它可讓您能夠簡化您的 UWP 應用程式中的簽出程序。 使用者可以透過簽出加快速度，藉由使用付款選項，以及送貨地址已儲存以 Microsoft 帳戶。 您可以增加轉換率，並減少資料外洩的風險，因為付款資訊會 token 化。 從 Windows 10 Creators Update 開始，使用者可以使用他們的已儲存的付款選項，輕鬆地支付跨 UWP 應用程式中的體驗。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 在您開始使用付款要求 API 之前，有幾件事，您必須執行或的注意。
 
 ### <a name="getting-a-merchant-id"></a>取得商家識別碼

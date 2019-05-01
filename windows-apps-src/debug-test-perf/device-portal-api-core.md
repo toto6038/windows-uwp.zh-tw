@@ -2,16 +2,17 @@
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Device Portal 核心 API 參考資料
 description: 了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。
-ms.date: 4/8/2019
+ms.custom: 19H1
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 58ae7d83c0889131313d136c13048b83a861f601
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 910e3108009704d444fb81b195f9dd9eae3daa9d
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244134"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63798185"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 參考資料
 
@@ -58,7 +59,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -67,7 +68,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 安裝相關集合
+
+### <a name="install-a-related-set"></a>安裝相關集合
 
 **要求**
 
@@ -106,7 +108,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -115,7 +117,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 登錄鬆散資料夾中的 App
+
+### <a name="register-an-app-in-a-loose-folder"></a>登錄鬆散資料夾中的 App
 
 **要求**
 
@@ -158,7 +161,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * Xbox
@@ -166,7 +169,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 在鬆散檔案資料夾中登錄相關集合
+
+### <a name="register-a-related-set-in-loose-file-folders"></a>在鬆散檔案資料夾中登錄相關集合
 
 **要求**
 
@@ -218,7 +222,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * Xbox
@@ -226,7 +230,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 取得 App 安裝狀態
+
+### <a name="get-app-installation-status"></a>取得 App 安裝狀態
 
 **要求**
 
@@ -260,7 +265,7 @@ ms.locfileid: "59244134"
 | 204 | 正在執行安裝 |
 | 404 | 找不到安裝動作 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -269,7 +274,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 解除安裝 App
+
+### <a name="uninstall-an-app"></a>解除安裝 App
 
 **要求**
 
@@ -305,7 +311,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -314,7 +320,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 取得已安裝的應用程式
+
+### <a name="get-installed-apps"></a>取得已安裝的應用程式
 
 **要求**
 
@@ -374,7 +381,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -383,7 +390,9 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-## 藍牙
+
+## <a name="bluetooth"></a>藍牙
+
 <hr>
 
 ### <a name="get-the-bluetooth-radios-on-the-machine"></a>取得電腦上的藍牙無線電
@@ -436,14 +445,15 @@ ms.locfileid: "59244134"
 | 4XX              | 錯誤碼 |
 | 5XX              | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * HoloLens
 * IoT
 
 <hr>
-### 開啟或關閉藍牙無線電。
+
+### <a name="turn-the-bluetooth-radio-on-or-off"></a>開啟或關閉藍牙無線電。
 
 **要求**
 
@@ -482,16 +492,178 @@ ms.locfileid: "59244134"
 | 4XX              | 錯誤碼 |
 | 5XX              | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * HoloLens
 * IoT
 
+---
+### <a name="get-a-list-of-paired-bluetooth-devices"></a>取得一份配對的藍牙裝置
+
+**要求**
+
+您可以使用下列的要求格式，以取得一份目前配對的藍牙裝置。 這可以升級為 WebSocket 連接，並使用相同的 JSON 資料。 在 WebSocket 連線的存留期內，可以變更 [裝置] 清單。 會透過 WebSocket 連線有可用更新的每次傳送裝置的完整清單。
+
+| 方法        | 要求 URI       |
+| :---          | :---              |
+| GET           | /api/bt/getpaired |
+| GET/WebSocket | /api/bt/getpaired |
+
+**URI 參數**
+
+- None
+
+**要求標頭**
+
+- None
+
+**要求本文**
+
+- None
+
+**回應**
+
+回應會包含目前配對的藍牙裝置的 JSON 陣列。
+```json
+{"PairedDevices": [
+    {
+        "Name" : string,
+        "ID" : string,
+        "AudioConnectionStatus" : string
+    },...
+]}
+```
+*AudioConnectionStatus*欄位才會出現在裝置可使用此系統上的音訊。 （原則和選用元件可能會影響此）。*AudioConnectionStatus*將會是 「 已連線 」 或 「 中斷連線 」。
+
+---
+### <a name="get-a-list-of-available-bluetooth-devices"></a>取得一份可用的藍芽裝置
+
+**要求**
+
+您可以取得一份可用的藍芽裝置進行配對使用下列的要求格式。 這可以升級為 WebSocket 連接，並使用相同的 JSON 資料。 在 WebSocket 連線的存留期內，可以變更 [裝置] 清單。 會透過 WebSocket 連線有可用更新的每次傳送裝置的完整清單。
+
+| 方法        | 要求 URI          |
+| :---          | :---                 |
+| GET           | /api/bt/getavailable |
+| GET/WebSocket | /api/bt/getavailable |
+
+**URI 參數**
+
+- None
+
+**要求標頭**
+
+- None
+
+**要求本文**
+
+- None
+
+**回應**
+
+回應會包含目前可供配對的藍牙裝置的 JSON 陣列。
+```json
+{"AvailableDevices": [
+    {
+        "Name" : string,
+        "ID" : string
+    },...
+]}
+```
+
+---
+### <a name="connect-a-bluetooth-device"></a>連線到藍芽裝置
+
+**要求**
+
+如果在裝置可使用此系統上的音訊會連線到裝置。 （原則和選用元件可能會影響此）。
+
+| 方法       | 要求 URI           |
+| :---         | :---                  |
+| POST         | /api/bt/connectdevice |
+
+**URI 參數**
+
+| URI 參數 | 描述 |
+| :---          | :--- |
+| 識別碼            | (**必要**) 藍芽裝置的關聯端點 ID，而且必須是 Base64 編碼。 |
+
+**要求標頭**
+
+- None
+
+**要求本文**
+
+- None
+
+**回應**
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+| HTTP 狀態碼 | 描述 |
+| :---             | :--- |
+| 200              | [確定] |
+| 4XX              | 錯誤碼 |
+| 5XX              | 錯誤碼 |
+
+**可用的裝置系列**
+
+* Windows 桌面
+* HoloLens
+* IoT
+
+
+---
+### <a name="disconnect-a-bluetooth-device"></a>中斷連線的藍芽裝置
+
+**要求**
+
+如果在裝置可使用此系統上的音訊，則會中斷連線的裝置。 （原則和選用元件可能會影響此）。
+
+| 方法       | 要求 URI              |
+| :---         | :---                     |
+| POST         | /api/bt/disconnectdevice |
+
+**URI 參數**
+
+| URI 參數 | 描述 |
+| :---          | :--- |
+| 識別碼            | (**必要**) 藍芽裝置的關聯端點 ID，而且必須是 Base64 編碼。 |
+
+**要求標頭**
+
+- None
+
+**要求本文**
+
+- None
+
+**回應**
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+| HTTP 狀態碼 | 描述 |
+| :---             | :--- |
+| 200              | [確定] |
+| 4XX              | 錯誤碼 |
+| 5XX              | 錯誤碼 |
+
+**可用的裝置系列**
+
+* Windows 桌面
+* HoloLens
+* IoT
+
+---
+## <a name="device-manager"></a>裝置管理員
 <hr>
-## 裝置管理員
-<hr>
-### 取得電腦上已安裝的裝置
+
+### <a name="get-the-installed-devices-on-the-machine"></a>取得電腦上已安裝的裝置
 
 **要求**
 
@@ -540,14 +712,15 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
 * IoT
 
 <hr>
-### 在連接的 USB 裝置/中樞上取得資料
+
+### <a name="get-data-on-connected-usb-deviceshubs"></a>在連接的 USB 裝置/中樞上取得資料
 
 **要求**
 
@@ -589,7 +762,7 @@ ms.locfileid: "59244134"
 }
 ```
 
-**範例傳回資料**
+**範例傳回的資料**
 ```json
 {
     "DeviceList": [{
@@ -625,15 +798,18 @@ ms.locfileid: "59244134"
 |  200 | [確定] | 
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-## 傾印集合
+
+## <a name="dump-collection"></a>傾印集合
+
 <hr>
-### 取得 App 的所有損毀傾印清單
+
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>取得 App 的所有損毀傾印清單
 
 **要求**
 
@@ -670,7 +846,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
 * Windows 桌面
@@ -678,7 +854,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 取得 App 的損毀傾印集合設定
+
+### <a name="get-the-crash-dump-collection-settings-for-an-app"></a>取得 App 的損毀傾印集合設定
 
 **要求**
 
@@ -722,7 +899,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
 * Windows 桌面
@@ -730,7 +907,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 刪除側載 App 的損毀傾印
+
+### <a name="delete-a-crash-dump-for-a-sideloaded-app"></a>刪除側載 App 的損毀傾印
 
 **要求**
 
@@ -770,7 +948,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
 * Windows 桌面
@@ -778,7 +956,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 停用側載 App 的損毀傾印
+
+### <a name="disable-crash-dumps-for-a-sideloaded-app"></a>停用側載 App 的損毀傾印
 
 **要求**
 
@@ -817,7 +996,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
 * Windows 桌面
@@ -825,7 +1004,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 下載側載 App 的損毀傾印
+
+### <a name="download-the-crash-dump-for-a-sideloaded-app"></a>下載側載 App 的損毀傾印
 
 **要求**
 
@@ -867,7 +1047,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
 * Windows 桌面
@@ -875,7 +1055,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 啟用側載 App 的損毀傾印
+
+### <a name="enable-crash-dumps-for-a-sideloaded-app"></a>啟用側載 App 的損毀傾印
 
 **要求**
 
@@ -912,7 +1093,7 @@ ms.locfileid: "59244134"
 | :------     | :----- |
 |  200 | [確定] | 
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
 * Windows 桌面
@@ -920,7 +1101,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 取得錯誤檢查檔案的清單
+
+### <a name="get-the-list-of-bugcheck-files"></a>取得錯誤檢查檔案的清單
 
 **要求**
 
@@ -963,13 +1145,14 @@ ms.locfileid: "59244134"
 | :------     | :----- |
 |  200 | [確定] | 
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 下載錯誤檢查傾印檔案
+
+### <a name="download-a-bugcheck-dump-file"></a>下載錯誤檢查傾印檔案
 
 **要求**
 
@@ -1011,13 +1194,14 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 取得錯誤檢查損毀控制設定
+
+### <a name="get-the-bugcheck-crash-control-settings"></a>取得錯誤檢查損毀控制設定
 
 **要求**
 
@@ -1072,13 +1256,14 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 取得即時核心傾印
+
+### <a name="get-a-live-kernel-dump"></a>取得即時核心傾印
 
 **要求**
 
@@ -1115,13 +1300,14 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 取得即時使用者處理程序的傾印
+
+### <a name="get-a-dump-from-a-live-user-process"></a>取得即時使用者處理程序的傾印
 
 **要求**
 
@@ -1162,13 +1348,14 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 設定錯誤檢查損毀控制設定
+
+### <a name="set-the-bugcheck-crash-control-settings"></a>設定錯誤檢查損毀控制設定
 
 **要求**
 
@@ -1210,15 +1397,18 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-## ETW
+
+## <a name="etw"></a>ETW
+
 <hr>
-### 透過 WebSocket 建立即時 ETW 工作階段
+
+### <a name="create-a-realtime-etw-session-over-a-websocket"></a>透過 WebSocket 建立即時 ETW 工作階段
 
 **要求**
 
@@ -1255,7 +1445,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1312,7 +1502,8 @@ ms.locfileid: "59244134"
 ```
 
 <hr>
-### 列舉已登錄的 ETW 提供者
+
+### <a name="enumerate-the-registered-etw-providers"></a>列舉已登錄的 ETW 提供者
 
 **要求**
 
@@ -1355,7 +1546,7 @@ ms.locfileid: "59244134"
 | :------     | :----- |
 |  200 | [確定] | 
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1363,7 +1554,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 列舉由平台公開的自訂 ETW 提供者。
+
+### <a name="enumerate-the-custom-etw-providers-exposed-by-the-platform"></a>列舉由平台公開的自訂 ETW 提供者。
 
 **要求**
 
@@ -1403,7 +1595,7 @@ ms.locfileid: "59244134"
 
 - 標準狀態碼。
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1411,7 +1603,9 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-## Location
+
+## <a name="location"></a>Location
+
 <hr>
 
 ### <a name="get-location-override-mode"></a>取得位置覆寫模式
@@ -1455,7 +1649,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1506,7 +1700,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1558,7 +1752,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1615,7 +1809,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1624,9 +1818,12 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-## OS 資訊
+
+## <a name="os-information"></a>OS 資訊
+
 <hr>
-### 取得電腦名稱
+
+### <a name="get-the-machine-name"></a>取得電腦名稱
 
 **要求**
 
@@ -1667,7 +1864,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1676,7 +1873,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 取得作業系統資訊
+
+### <a name="get-the-operating-system-information"></a>取得作業系統資訊
 
 **要求**
 
@@ -1723,7 +1921,7 @@ ms.locfileid: "59244134"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1732,7 +1930,8 @@ ms.locfileid: "59244134"
 * IoT
 
 <hr>
-### 取得裝置系列 
+
+### <a name="get-the-device-family"></a>取得裝置系列 
 
 **要求**
 
@@ -1777,7 +1976,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1786,7 +1985,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-### 設定電腦名稱
+
+### <a name="set-the-machine-name"></a>設定電腦名稱
 
 **要求**
 
@@ -1823,7 +2023,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | 200 | [確定] |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1832,9 +2032,12 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-## 使用者資訊
+
+## <a name="user-information"></a>使用者資訊
+
 <hr>
-### 取得使用中使用者
+
+### <a name="get-the-active-user"></a>取得使用中使用者
 
 **要求**
 
@@ -1888,16 +2091,19 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * HoloLens
 * IoT
 
 <hr>
-## 效能資料
+
+## <a name="performance-data"></a>效能資料
+
 <hr>
-### 取得執行中的處理程序清單
+
+### <a name="get-the-list-of-running-processes"></a>取得執行中的處理程序清單
 
 **要求**
 
@@ -1950,7 +2156,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -1958,7 +2164,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-### 取得系統效能統計資料
+
+### <a name="get-the-system-performance-statistics"></a>取得系統效能統計資料
 
 **要求**
 
@@ -2028,7 +2235,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -2037,9 +2244,12 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-## 電源
+
+## <a name="power"></a>電源
+
 <hr>
-### 取得目前的電池狀態
+
+### <a name="get-the-current-battery-state"></a>取得目前的電池狀態
 
 **要求**
 
@@ -2088,7 +2298,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -2096,7 +2306,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-### 取得使用中電源配置
+
+### <a name="get-the-active-power-scheme"></a>取得使用中電源配置
 
 **要求**
 
@@ -2136,13 +2347,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 取得電源配置的子值
+
+### <a name="get-the-sub-value-for-a-power-scheme"></a>取得電源配置的子值
 
 **要求**
 
@@ -2179,13 +2391,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 取得系統的電源狀態
+
+### <a name="get-the-power-state-of-the-system"></a>取得系統的電源狀態
 
 **要求**
 
@@ -2225,14 +2438,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * HoloLens
 * IoT
 
 <hr>
-### 設定使用中電源配置
+
+### <a name="set-the-active-power-scheme"></a>設定使用中電源配置
 
 **要求**
 
@@ -2271,13 +2485,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 設定電源配置的子值
+
+### <a name="set-the-sub-value-for-a-power-scheme"></a>設定電源配置的子值
 
 **要求**
 
@@ -2315,13 +2530,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | 200 | [確定] |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 取得睡眠研究報告
+
+### <a name="get-a-sleep-study-report"></a>取得睡眠研究報告
 
 **要求**
 
@@ -2358,13 +2574,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 列舉可用的睡眠研究報告
+
+### <a name="enumerate-the-available-sleep-study-reports"></a>列舉可用的睡眠研究報告
 
 **要求**
 
@@ -2409,13 +2626,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-### 取得睡眠研究轉換
+
+### <a name="get-the-sleep-study-transform"></a>取得睡眠研究轉換
 
 **要求**
 
@@ -2452,15 +2670,18 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * IoT
 
 <hr>
-## 遙控器
+
+## <a name="remote-control"></a>遙控器
+
 <hr>
-### 重新啟動目標電腦
+
+### <a name="restart-the-target-computer"></a>重新啟動目標電腦
 
 **要求**
 
@@ -2493,7 +2714,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | 200 | [確定] |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -2502,7 +2723,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-### 將目標電腦關機
+
+### <a name="shut-down-the-target-computer"></a>將目標電腦關機
 
 **要求**
 
@@ -2537,7 +2759,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -2546,9 +2768,12 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-## 工作管理員
+
+## <a name="task-manager"></a>工作管理員
+
 <hr>
-### 啟動現代化 App
+
+### <a name="start-a-modern-app"></a>啟動現代化 App
 
 **要求**
 
@@ -2588,7 +2813,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -2597,7 +2822,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-### 停止現代化 App
+
+### <a name="stop-a-modern-app"></a>停止現代化 App
 
 **要求**
 
@@ -2637,7 +2863,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -2646,7 +2872,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-### 依 PID 終止處理序
+
+### <a name="kill-process-by-pid"></a>依 PID 終止處理序
 
 **要求**
 
@@ -2685,16 +2912,19 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * HoloLens
 * IoT
 
 <hr>
-## 網路功能
+
+## <a name="networking"></a>網路功能
+
 <hr>
-### 取得目前的 IP 設定
+
+### <a name="get-the-current-ip-configuration"></a>取得目前的 IP 設定
 
 **要求**
 
@@ -2771,7 +3001,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -2780,7 +3010,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-### 設定靜態 IP 位址 （IPV4 組態）
+
+### <a name="set-a-static-ip-address-ipv4-configuration"></a>設定靜態 IP 位址 （IPV4 組態）
 
 **要求**
 
@@ -2830,15 +3061,17 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
 * Xbox
 * HoloLens
 * IoT
+
 <hr>
-### 列舉無線網路介面
+
+### <a name="enumerate-wireless-network-interfaces"></a>列舉無線網路介面
 
 **要求**
 
@@ -2891,7 +3124,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -2900,7 +3133,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-### 列舉無線網路
+
+### <a name="enumerate-wireless-networks"></a>列舉無線網路
 
 **要求**
 
@@ -2961,7 +3195,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -2970,7 +3204,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-### 連線到 Wi-Fi 網路和與它中斷連線。
+
+### <a name="connect-and-disconnect-to-a-wi-fi-network"></a>連線到 Wi-Fi 網路和與它中斷連線。
 
 **要求**
 
@@ -2990,7 +3225,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 介面   | (**必要**) 可用來連線到網路的網路介面 GUID。 |
 | op   | (**必要**) 指出要採取的動作。 可能的值是 connect 或 disconnect。|
 | ssid   | (**如果 *op* == connect 則為必要**) 要連線的 SSID。 |
-| 索引鍵   | (**如果 *op* == connect 且網路需要驗證則為必要**) 共用金鑰。 |
+| key   | (**如果 *op* == connect 且網路需要驗證則為必要**) 共用金鑰。 |
 | createprofile | (**必要**) 在裝置上建立網路設定檔。  這會導致日後將裝置自動連線至網路。 此項目可為**是**或**否**。 |
 
 **要求標頭**
@@ -3011,7 +3246,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | 200 | [確定] |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3020,7 +3255,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-### 刪除 Wi-Fi 設定檔
+
+### <a name="delete-a-wi-fi-profile"></a>刪除 Wi-Fi 設定檔
 
 **要求**
 
@@ -3058,7 +3294,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | 200 | [確定] |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3067,9 +3303,12 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 * IoT
 
 <hr>
-## Windows 錯誤報告 (WER)
+
+## <a name="windows-error-reporting-wer"></a>Windows 錯誤報告 (WER)
+
 <hr>
-### 下載 Windows 錯誤報告 (WER) 檔案
+
+### <a name="download-a-windows-error-reporting-wer-file"></a>下載 Windows 錯誤報告 (WER) 檔案
 
 **要求**
 
@@ -3113,14 +3352,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * HoloLens
 * IoT
 
 <hr>
-### 列舉 Windows 錯誤報告 (WER) 報告中的檔案
+
+### <a name="enumerate-files-in-a-windows-error-reporting-wer-report"></a>列舉 Windows 錯誤報告 (WER) 報告中的檔案
 
 **要求**
 
@@ -3168,14 +3408,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * HoloLens
 * IoT
 
 <hr>
-### 列出 Windows 錯誤報告 (WER) 報告
+
+### <a name="list-the-windows-error-reporting-wer-reports"></a>列出 Windows 錯誤報告 (WER) 報告
 
 **要求**
 
@@ -3226,16 +3467,19 @@ WER 報告使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows 桌面
 * HoloLens
 * IoT
 
 <hr>
-## Windows Performance Recorder (WPR) 
+
+## <a name="windows-performance-recorder-wpr"></a>Windows Performance Recorder (WPR) 
+
 <hr>
-### 使用自訂設定檔開始追蹤
+
+### <a name="start-tracing-with-a-custom-profile"></a>使用自訂設定檔開始追蹤
 
 **要求**
 
@@ -3279,7 +3523,7 @@ WPR 工作階段狀態使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3287,7 +3531,8 @@ WPR 工作階段狀態使用下列格式。
 * IoT
 
 <hr>
-### 啟動開機效能追蹤工作階段
+
+### <a name="start-a-boot-performance-tracing-session"></a>啟動開機效能追蹤工作階段
 
 **要求**
 
@@ -3335,7 +3580,7 @@ WPR 工作階段狀態使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3343,7 +3588,8 @@ WPR 工作階段狀態使用下列格式。
 * IoT
 
 <hr>
-### 停止開機效能追蹤工作階段
+
+### <a name="stop-a-boot-performance-tracing-session"></a>停止開機效能追蹤工作階段
 
 **要求**
 
@@ -3380,7 +3626,7 @@ WPR 工作階段狀態使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3388,7 +3634,8 @@ WPR 工作階段狀態使用下列格式。
 * IoT
 
 <hr>
-### 啟動效能追蹤工作階段
+
+### <a name="start-a-performance-tracing-session"></a>啟動效能追蹤工作階段
 
 **要求**
 
@@ -3436,7 +3683,7 @@ WPR 工作階段狀態使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3444,7 +3691,8 @@ WPR 工作階段狀態使用下列格式。
 * IoT
 
 <hr>
-### 停止效能追蹤工作階段
+
+### <a name="stop-a-performance-tracing-session"></a>停止效能追蹤工作階段
 
 **要求**
 
@@ -3481,7 +3729,7 @@ WPR 工作階段狀態使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3489,7 +3737,8 @@ WPR 工作階段狀態使用下列格式。
 * IoT
 
 <hr>
-### 擷取追蹤工作階段的狀態
+
+### <a name="retrieve-the-status-of-a-tracing-session"></a>擷取追蹤工作階段的狀態
 
 **要求**
 
@@ -3533,7 +3782,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3541,7 +3790,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-### 列出已完成的追蹤工作階段 (ETL)。
+
+### <a name="list-completed-tracing-sessions-etls"></a>列出已完成的追蹤工作階段 (ETL)。
 
 **要求**
 
@@ -3590,7 +3840,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3598,7 +3848,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-### 下載追蹤工作階段 (ETL)
+
+### <a name="download-a-tracing-session-etl"></a>下載追蹤工作階段 (ETL)
 
 **要求**
 
@@ -3639,7 +3890,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3647,7 +3898,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-### 刪除追蹤工作階段 (ETL)
+
+### <a name="delete-a-tracing-session-etl"></a>刪除追蹤工作階段 (ETL)
 
 **要求**
 
@@ -3688,7 +3940,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3696,9 +3948,12 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-## DNS-SD 標記 
+
+## <a name="dns-sd-tags"></a>DNS-SD 標記 
+
 <hr>
-### 檢視標記
+
+### <a name="view-tags"></a>檢視標記
 
 **要求**
 
@@ -3742,7 +3997,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 5XX | 伺服器錯誤 |
 
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3751,7 +4006,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-### 刪除標記
+
+### <a name="delete-tags"></a>刪除標記
 
 **要求**
 
@@ -3787,7 +4043,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 5XX | 伺服器錯誤 |
 
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3796,7 +4052,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-### 刪除標記
+
+### <a name="delete-tag"></a>刪除標記
 
 **要求**
 
@@ -3833,7 +4090,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 200 | [確定] |
 
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3842,7 +4099,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
  
 <hr>
-### 新增標記
+
+### <a name="add-a-tag"></a>新增標記
 
 **要求**
 
@@ -3880,7 +4138,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 401 | 標記空間溢位。  當建議標記對於產生的 DNS-SD 服務記錄過長時的結果。 |
 
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3891,7 +4149,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 ## <a name="app-file-explorer"></a>App 檔案總管
 
 <hr>
-### 取得已知的資料夾
+
+### <a name="get-known-folders"></a>取得已知的資料夾
 
 **要求**
 
@@ -3932,7 +4191,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 5XX | 錯誤碼 |
 
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -3941,7 +4200,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-### 取得檔案
+
+### <a name="get-files"></a>取得檔案
 
 **要求**
 
@@ -3992,7 +4252,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -4001,7 +4261,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-### 下載檔案
+
+### <a name="download-a-file"></a>下載檔案
 
 **要求**
 
@@ -4040,7 +4301,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 404 | 找不到檔案 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -4049,7 +4310,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-### 重新命名檔案
+
+### <a name="rename-a-file"></a>重新命名檔案
 
 **要求**
 
@@ -4092,7 +4354,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 404 | 找不到檔案 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -4101,7 +4363,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-### 刪除檔案
+
+### <a name="delete-a-file"></a>刪除檔案
 
 **要求**
 
@@ -4142,7 +4405,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 404 | 找不到檔案 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面
@@ -4151,7 +4414,8 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 * IoT
 
 <hr>
-### 上傳檔案
+
+### <a name="upload-a-file"></a>上傳檔案
 
 **要求**
 
@@ -4189,7 +4453,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Mobile
 * Windows 桌面

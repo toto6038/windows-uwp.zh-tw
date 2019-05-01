@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a8ce14094733ef5598c510198f4268744cb581e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bf71e5f6dd77da025a50866d32caca2870d3525b
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621873"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788426"
 ---
 # <a name="package-version-numbering"></a>套件版本編號
 
@@ -45,9 +45,9 @@ Windows 10 可讓您撰寫單一程式碼基底，可隨處執行。 如此一�
 | 提交 | 內容                                                  | 客戶體驗                                                                                                                                                                             |
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1          | 封裝版本：1.1.10.0 <br> 裝置系列：Windows.Desktop，minVersion 10.0.10240.0 <br> <br> 封裝版本：1.1.0.0 <br> 裝置系列：Windows.Mobile，minVersion 10.0.10240.0     | -   Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> -   Windows 10 行動裝置組建 10.0.10240.0 和更新版本的裝置會取得 1.1.0.0 <br> -   其他裝置系列無法購買及安裝應用程式 |
-| 2          | 封裝版本：1.1.10.0 <br> 裝置系列：Windows.Desktop，minVersion 10.0.10240.0 <br> <br> 封裝版本：1.1.0.0 <br> 裝置系列：Windows.Mobile，minVersion 10.0.10240.0 <br> <br> 封裝版本：1.0.0.0 <br> 裝置系列：Windows.Universal，minVersion 10.0.10240.0    | -   Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> -   Windows 10 行動裝置組建 10.0.10240.0 和更新版本的裝置會取得 1.1.0.0 <br> -   其他 (非傳統型、非行動) 裝置系列在被引入時將會取得 1.0.0.0 <br> -   已安裝應用程式的傳統型和行動裝置不會看到任何更新 (因為它們已經有最佳的可用版本—1.1.10.0 和 1.1.0.0 都高於 1.0.0.0) |
-| 3          | 封裝版本：1.1.10.0 <br> 裝置系列：Windows.Desktop，minVersion 10.0.10240.0 <br> <br> 封裝版本：1.1.5.0 <br> 裝置系列：Windows.Universal，minVersion 10.0.10250.0 <br> <br> 封裝版本：1.0.0.0 <br> 裝置系列：Windows.Universal，minVersion 10.0.10240.0    | -   Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> -   Windows 10 行動裝置組建 10.0.10250.0 和更新版本的裝置會取得 1.1.5.0 <br> -   Windows 10 行動裝置組建 &gt;=10.0.10240.0 和 &lt; 10.010250.0 的裝置會取得 1.1.0.0 
-| 4          | 封裝版本：2.0.0.0 <br> 裝置系列：Windows.Universal，minVersion 10.0.10240.0   | -   在 Windows 10 組建 10.0.10240.0 版和更高版本上所有裝置系列的所有客戶會取得套件 2.0.0.0 | 
+| 2          | 封裝版本：1.1.10.0 <br> 裝置系列：Windows.Desktop，minVersion 10.0.10240.0 <br> <br> 封裝版本：1.1.0.0 <br> 裝置系列：Windows.Mobile，minVersion 10.0.10240.0 <br> <br> 封裝版本：1.0.0.0 <br> 裝置系列：Windows.Universal, minVersion 10.0.10240.0    | -   Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> -   Windows 10 行動裝置組建 10.0.10240.0 和更新版本的裝置會取得 1.1.0.0 <br> -   其他 (非傳統型、非行動) 裝置系列在被引入時將會取得 1.0.0.0 <br> -   已安裝應用程式的傳統型和行動裝置不會看到任何更新 (因為它們已經有最佳的可用版本—1.1.10.0 和 1.1.0.0 都高於 1.0.0.0) |
+| 3          | 封裝版本：1.1.10.0 <br> 裝置系列：Windows.Desktop，minVersion 10.0.10240.0 <br> <br> 封裝版本：1.1.5.0 <br> 裝置系列：Windows.Universal, minVersion 10.0.10250.0 <br> <br> 封裝版本：1.0.0.0 <br> 裝置系列：Windows.Universal, minVersion 10.0.10240.0    | -   Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> -   Windows 10 行動裝置組建 10.0.10250.0 和更新版本的裝置會取得 1.1.5.0 <br> -   Windows 10 行動裝置組建 &gt;=10.0.10240.0 和 &lt; 10.010250.0 的裝置會取得 1.1.0.0 
+| 4          | 封裝版本：2.0.0.0 <br> 裝置系列：Windows.Universal, minVersion 10.0.10240.0   | -   在 Windows 10 組建 10.0.10240.0 版和更高版本上所有裝置系列的所有客戶會取得套件 2.0.0.0 | 
 
 > [!NOTE]
 >  在所有情況下，客戶的裝置將獲得可享有最高可能版本號碼。 例如，在上述的第三個提交中，所有傳統型裝置將會收到 v1.1.10.0，即使他們有作業系統版本 10.0.10250.0 或更高版本，因此也可以接受 v1.1.5.0。 因為 1.1.10.0 是它們可用的最高版本號碼，所以這是它們會取得的套件。

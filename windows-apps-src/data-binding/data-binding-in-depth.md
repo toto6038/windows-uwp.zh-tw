@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: fe86656756eab9d9286d68c2a37357a9b824561e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd6620e8bfb2bba58a2bdc28d61e4855a75dd203
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636063"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63798179"
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
 
@@ -27,6 +27,8 @@ ms.locfileid: "57636063"
 
 > [!NOTE]
 > 這個主題將提供資料繫結功能的詳細說明。 如需簡短且實用的簡介，請參閱[資料繫結概觀](data-binding-quickstart.md)。
+
+本主題是關於在通用 Windows 平台 (UWP) 應用程式中的資料繫結。 此處所討論的 Api 位於[ **Windows.UI.Xaml.Data**命名空間](/uwp/api/windows.ui.xaml.data)。
 
 資料繫結可讓您的 App UI 顯示資料，以及選擇性地與該資料保持同步。 資料繫結可讓您將資料與 UI 分開考量，為 app 建構更簡單的概念模型，以及更好的可讀性、測試性和維護性。
 
@@ -61,7 +63,7 @@ ms.locfileid: "57636063"
 
 以下是一個非常基本的類別實作，可做為繫結來源。
 
-如果您使用[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，再加入新**Midl 檔 (.idl)** 項目加入專案中，名為所示，在 C + + /cli WinRT 程式碼範例清單下方。 使用這些新檔案的內容取代[MIDL 3.0](/uwp/midl-3/intro)顯示在清單中，程式碼建置專案以產生`HostViewModel.h`和`.cpp`，然後將程式碼新增至產生的檔案，以符合清單中。 如需這些產生的檔案的詳細資訊，以及如何將它們複製到您的專案，請參閱 < [XAML 控制項，繫結至 C + + /cli WinRT 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
+如果您使用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後新增**Midl 檔 (.idl)** 項目加入專案中，如中所示C++/WinRT 下方的程式碼範例清單。 使用這些新檔案的內容取代[MIDL 3.0](/uwp/midl-3/intro)顯示在清單中，程式碼建置專案以產生`HostViewModel.h`和`.cpp`，然後將程式碼新增至產生的檔案，以符合清單中。 如需這些產生的檔案的詳細資訊，以及如何將它們複製到您的專案，請參閱 < [XAML 控制項，繫結至C++/WinRT 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
 
 ```csharp
 public class HostViewModel
@@ -228,13 +230,13 @@ public class HostViewModel : BindableBase
 
 繫結來源可以視為單一物件 (屬性包含資料) 或物件集合。 在C#和 Visual Basic 程式碼，您可以一次的繫結到該物件會實作[ **List (Of T)** ](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx)在執行階段顯示的集合，不會變更。 對於可觀察的集合 (觀察集合中新增和移除項目)，則改為單向繫結到 [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)。 在 C++ 程式碼中，對於可觀察和不可觀察的集合，您都可以繫結到 [**Vector&lt;T&gt;**](https://msdn.microsoft.com/library/dn858385.aspx)。 如果要繫結到您自己的集合類別，請使用下表中的指導方針。
 
-|案例|C# 及 VB (CLR)|C++/WinRT|C++/CX|
+|狀況|C# 及 VB (CLR)|C++/WinRT|C++/CX|
 |-|-|-|-|
 |繫結到物件。|可為任何物件。|可為任何物件。|物件必須具有 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 或實作 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。|
 |從繫結的物件中取得屬性變更通知。|物件必須實作[ **INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。| 物件必須實作[ **INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)。|物件必須實作[ **INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)。|
-|繫結到集合。| [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx)|[**IVector** ](/uwp/api/windows.foundation.collections.ivector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)，或[ **IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。 請參閱[控制項的 XAML 項目，繫結至 C + + WinRT 集合](../cpp-and-winrt-apis/binding-collection.md)並[集合，使用 C + + /cli WinRT](../cpp-and-winrt-apis/collections.md)。| [**向量&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx)|
-|取得從繫結集合的集合變更通知。|[**ObservableCollection (Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)|[**IObservableVector** ](/uwp/api/windows.foundation.collections.iobservablevector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)。|[**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/br226052.aspx)|
-|實作支援繫結的集合。|擴充 [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx) 或實作 [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)、[**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/5y536ey6.aspx)(Of [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx))、[**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ienumerable.aspx) 或 [**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/9eekhta0.aspx)(Of **Object**)。 不支援繫結到泛型 **IList(Of T)** 與 **IEnumerable(Of T)**。|實作[ **IVector** ](/uwp/api/windows.foundation.collections.ivector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)。 請參閱[控制項的 XAML 項目，繫結至 C + + WinRT 集合](../cpp-and-winrt-apis/binding-collection.md)並[集合，使用 C + + /cli WinRT](../cpp-and-winrt-apis/collections.md)。|實作 [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979)、[**IBindableIterable**](https://msdn.microsoft.com/library/windows/apps/Hh701957)、[**IVector**](https://msdn.microsoft.com/library/windows/apps/BR206631)&lt;[**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx)^&gt;、[**IIterable**](https://msdn.microsoft.com/library/windows/apps/BR226024)&lt;**Object**^&gt;、**IVector**&lt;[**IInspectable**](https://msdn.microsoft.com/library/BR205821)\*&gt; 或 **IIterable**&lt;**IInspectable**\*&gt;。 不支援繫結到泛型 **IVector&lt;T&gt;** 與 **IIterable&lt;T&gt;**。|
+|繫結到集合。| [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx)|[**IVector** ](/uwp/api/windows.foundation.collections.ivector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)，或[ **IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。 請參閱[控制項的 XAML 項目，繫結至C++/WinRT 集合](../cpp-and-winrt-apis/binding-collection.md)並[集合C++/WinRT](../cpp-and-winrt-apis/collections.md)。| [**Vector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx)|
+|取得從繫結集合的集合變更通知。|[**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)|[**IObservableVector** ](/uwp/api/windows.foundation.collections.iobservablevector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)。|[**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/br226052.aspx)|
+|實作支援繫結的集合。|擴充 [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx) 或實作 [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)、[**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/5y536ey6.aspx)(Of [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx))、[**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ienumerable.aspx) 或 [**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/9eekhta0.aspx)(Of **Object**)。 不支援繫結到泛型 **IList(Of T)** 與 **IEnumerable(Of T)**。|實作[ **IVector** ](/uwp/api/windows.foundation.collections.ivector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)。 請參閱[控制項的 XAML 項目，繫結至C++/WinRT 集合](../cpp-and-winrt-apis/binding-collection.md)並[集合C++/WinRT](../cpp-and-winrt-apis/collections.md)。|實作 [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979)、[**IBindableIterable**](https://msdn.microsoft.com/library/windows/apps/Hh701957)、[**IVector**](https://msdn.microsoft.com/library/windows/apps/BR206631)&lt;[**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx)^&gt;、[**IIterable**](https://msdn.microsoft.com/library/windows/apps/BR226024)&lt;**Object**^&gt;、**IVector**&lt;[**IInspectable**](https://msdn.microsoft.com/library/BR205821)\*&gt; 或 **IIterable**&lt;**IInspectable**\*&gt;。 不支援繫結到泛型 **IVector&lt;T&gt;** 與 **IIterable&lt;T&gt;**。|
 | 實作支援變更通知的集合。 | 擴充 [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 或實作 (非泛型) [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) 與 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。|實作[ **IObservableVector** ](/uwp/api/windows.foundation.collections.iobservablevector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)，或[ **IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).|實作 [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979) 及 [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974)。|
 |實作支援增量載入的集合。|擴充 [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 或實作 (非泛型) [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) 與 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。 此外，也實作 [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)。|實作[ **IObservableVector** ](/uwp/api/windows.foundation.collections.iobservablevector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)，或[ **IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector). 此外，實作[ **ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)|實作 [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979)、[**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974) 及 [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)。|
 
@@ -252,10 +254,10 @@ public class HostViewModel : BindableBase
 <Button Content="{Binding ...}" ... />
 ```
 
-如果您使用 C + + /cli WinRT 或 Visual c + + 元件擴充功能 (C + + /CX)，則您必須新增[ **BindableAttribute** ](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性設定為任何您想要使用的執行階段類別[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
+如果您使用C++/WinRT 或視覺效果C++元件擴充功能 (C++/CX)，則您必須新增[ **BindableAttribute** ](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性設定為您想要使用任何執行階段類別[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
 
 > [!IMPORTANT]
-> 如果您使用[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則[ **BindableAttribute** ](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性時才可以使用您已安裝 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更新版本。 如果沒有該屬性中，您必須實作[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)並[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)為了能夠使用的介面[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
+> 如果您使用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後在[ **BindableAttribute** ](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性時才可以使用您已安裝 Windows SDK 版本 10.0.17763.0 (Windows 10版本 1809年），或更新版本。 如果沒有該屬性中，您必須實作[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)並[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)為了能夠使用的介面[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
 
 ### <a name="binding-object-declared-using-xbind"></a>使用 {x:Bind} 宣告的繫結物件
 
@@ -377,7 +379,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 
 ### <a name="binding-object-declared-using-binding"></a>使用 {Binding} 宣告的繫結物件
 
-如果您使用 C + + /cli WinRT 或 Visual c + + 元件擴充功能 (C + + /CX) 然後，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您必須新增[ **BindableAttribute** ](https://msdn.microsoft.com/library/windows/apps/Hh701872)您想要繫結至任何執行階段類別的屬性。 若要使用[{x： 繫結}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，您不需要該屬性。
+如果您使用C++/WinRT 或視覺效果C++元件擴充功能 (C++/CX) 然後，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您必須新增[ **BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性設定為您想要繫結至任何執行階段類別。 若要使用[{x： 繫結}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，您不需要該屬性。
 
 ```cppwinrt
 // HostViewModel.idl
@@ -388,7 +390,7 @@ runtimeclass HostViewModel : Windows.UI.Xaml.Data.INotifyPropertyChanged
 ```
 
 > [!IMPORTANT]
-> 如果您使用[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則[ **BindableAttribute** ](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性時才可以使用您已安裝 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更新版本。 如果沒有該屬性中，您必須實作[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)並[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)為了能夠使用的介面[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
+> 如果您使用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後在[ **BindableAttribute** ](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性時才可以使用您已安裝 Windows SDK 版本 10.0.17763.0 (Windows 10版本 1809年），或更新版本。 如果沒有該屬性中，您必須實作[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)並[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)為了能夠使用的介面[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
 
 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 預設會假設您繫結到標記頁面的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)。 我們會將頁面的 **DataContext** 設定為繫結來源類別的執行個體 (在此案例中為 **HostViewModel** 類型)。 下列範例顯示宣告繫結物件的標記。 我們使用稍早已在「繫結目標」一節中使用的 **Button.Content** 繫結目標，並繫結到 **HostViewModel.NextButtonText** 屬性。
 
@@ -673,7 +675,7 @@ ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
 </GridView>
 ```
 
-「是一個群組」模式有兩種實作方式。 其中一種方法是撰寫您自己的群組類別。 從 **List&lt;T&gt;** 衍生類別 (其中，*T* 是項目類型)。 例如， `public class Author : List<BookSku>`。 第二種方法是使用 [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) 運算式，從 **BookSku** 項目的相似屬性值，動態建立群組物件 (和群組類別)。 這個方法—維護一般項目清單並即時將它們組合在一起—常見於從雲端服務存取資料的 app。 這可讓您依作者或內容類型 (舉例)，靈活地將書籍分組，而不需要 **Author** 和 **Genre** 之類的特殊群組類別。
+「是一個群組」模式有兩種實作方式。 其中一種方法是撰寫您自己的群組類別。 從 **List&lt;T&gt;** 衍生類別 (其中，*T* 是項目類型)。 例如， `public class Author : List<BookSku>` 。 第二種方法是使用 [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) 運算式，從 **BookSku** 項目的相似屬性值，動態建立群組物件 (和群組類別)。 這個方法—維護一般項目清單並即時將它們組合在一起—常見於從雲端服務存取資料的 app。 這可讓您依作者或內容類型 (舉例)，靈活地將書籍分組，而不需要 **Author** 和 **Genre** 之類的特殊群組類別。
 
 下列範例使用 [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) 說明「是一個群組」模式。 這次我們依內容類型將書籍分組，並在群組標頭中顯示內容類型名稱。 這是由群組 [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx) 值之參照中的 "Key" 屬性路徑所指示。
 
@@ -791,7 +793,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | Path 是預設屬性 | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
 | Path 屬性 | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | 在 x:Bind 中，Path 預設以 Page 為根目錄，而不是 DataContext。 | 
 | 索引子 | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | 繫結至集合中指定的項目。 支援僅整數索引。 | 
-| 附加屬性 | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | 使用括號指定附加屬性。 如果未在 XAML 命名空間中宣告屬性，則需要以 xml 命名空間為其加上首碼，而此命名空間應對應到文件最前面的程式碼命名空間。 | 
+| 附加的屬性 | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | 使用括號指定附加屬性。 如果未在 XAML 命名空間中宣告屬性，則需要以 xml 命名空間為其加上首碼，而此命名空間應對應到文件最前面的程式碼命名空間。 | 
 | 轉型 | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | 不需要。 | 使用括號指定轉型。 如果未在 XAML 命名空間中宣告屬性，則需要以 xml 命名空間為其加上首碼，而此命名空間應對應到文件最前面的程式碼命名空間。 | 
 | Converter | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | Converter 必須在 Page/ResourceDictionary 的根目錄或 App.xaml 中宣告。 | 
 | ConverterParameter、ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | Converter 必須在 Page/ResourceDictionary 的根目錄或 App.xaml 中宣告。 | 
@@ -800,7 +802,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | 您使用 {x:Bind} 繫結到欄位；Path 預設以 Page 為根目錄，任何具名的項目都可以透過它的欄位來存取。 | 
 | RelativeSource:Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | 使用 {X:Bind} 來命名元素，並在 Path 中使用它的名稱。 | 
 | RelativeSource:TemplatedParent | 不需要 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | 使用 {x： 繫結} TargetType ControlTemplate 上的會指出繫結至範本的父代。 {Binding} 的一般範本繫結可用在控制項範本中用於大部分用途。 但在需要使用轉換器或雙向繫結的情況下，請使用 TemplatedParent。&lt; | 
-| 來源 | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | {X： 繫結} 您可以直接使用具名的項目使用屬性或靜態的路徑。 | 
+| Source | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | {X： 繫結} 您可以直接使用具名的項目使用屬性或靜態的路徑。 | 
 | 模式 | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode 可以是 OneTime、OneWay 或 TwoWay。 {x:Bind} 預設為 OneTime。{Binding} 預設為 OneWay。 | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger 可以是 Default、LostFocus 或 PropertyChanged。 {x:Bind} 不支援 UpdateSourceTrigger=Explicit。 {x:Bind} 一律使用 PropertyChanged 行為，但 TextBox.Text 除外，它會使用 LostFocus 行為。 | 
 

@@ -5,12 +5,12 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10 s, 永遠連線, ARM 上的 ARM32 應用程式, ARM 上的 windows 10, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 75019df4b7d70dad20aea1a256abac05c93a481d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3431b12fc6f6b6ba2d870400ec4f6684f8290a61
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661543"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63815280"
 ---
 # <a name="troubleshooting-arm-uwp-apps"></a>疑難排解 ARM UWP 應用程式
 

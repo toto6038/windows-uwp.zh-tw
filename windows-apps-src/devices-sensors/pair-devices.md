@@ -2,16 +2,17 @@
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: 配對裝置
 description: 有些裝置在使用之前需要先進行配對。 Windows.Devices.Enumeration 命名空間支援三種不同方式來配對裝置。
-ms.date: 02/08/2017
+ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: 6f59a23f08abbd5edeb9d68be476fb29bd8aab2e
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653383"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63813620"
 ---
 # <a name="pair-devices"></a>配對裝置
 
@@ -57,6 +58,8 @@ ms.locfileid: "57653383"
 若要支援自訂配對，您需要針對 [**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested.aspx) 事件建立一個處理常式。 這個處理常式必須確定會負責所有不同的 [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808)，這可能會在自訂配對案例中使用。 要採取的適當動作將取決於 **DevicePairingKinds**，這可提供來做為事件引數的一部分。
 
 請務必注意，自訂配對一律是系統層級的操作。 基於這個原因，當您在桌面或 Windows Phone 上進行操作時，在配對即將發生時，一律會向使用者顯示系統對話方塊。 這是因為這兩個平台擁有的使用者體驗需要取得使用者同意。 由於對話方塊是自動產生的，因此在這些平台上進行操作時，您不需要在選擇 **ConfirmOnly** 的 [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) 時建立自己的對話方塊。 針對另一個 **DevicePairingKinds**，您將需要根據特定的 **DevicePairingKinds** 值來執行一些特殊處理。 請參閱範例，以取得如何針對不同的 **DevicePairingKinds** 值來處理自訂配對的範例。
+
+從 Windows 10 版本 1903年，新**DevicePairingKinds**支援，則**ProvidePasswordCredential**。 這個值表示，應用程式必須要求使用者名稱和密碼向使用者為了向配對的裝置。 若要處理這種情況，呼叫[ **AcceptWithPasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_)方法的事件引數**PairingRequested**接受配對的事件處理常式。 傳入[ **PasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential)封裝的使用者名稱和密碼做為參數的物件。 請注意，是不同的使用者名稱和密碼為遠端裝置和通常不完全相同的本機登入使用者的認證。
 
 ## <a name="unpairing"></a>取消配對
 

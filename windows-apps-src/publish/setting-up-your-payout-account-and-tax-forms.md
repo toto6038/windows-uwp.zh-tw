@@ -6,12 +6,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dff4e3b37be14729abdc3262d484745a0245776
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d9d3ce38548616c561acf30038c97bdd332b67c3
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641003"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63818113"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支出及稅收表格
 
@@ -72,8 +72,8 @@ ms.locfileid: "57641003"
 
 -   **若要接收付款有是否需要哪些 PayPal 設定？** 您必須確定您的 PayPal 帳戶並未封鎖 eCheck 付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。 如需詳細資訊，請參閱 [PayPal 的帳戶設定頁面](https://go.microsoft.com/fwlink/p/?linkid=513139)。
 -   **我的國家/地區是否支援？** 請參閱[帳戶類型、 位置和費用](account-types-locations-and-fees.md)，以了解支援 PayPal 付款方式的國家/地區。
--   **PayPal 帳戶是否必須在相同國家/地區與我的合作夥伴中心帳戶中註冊？** 不。 當您設定 PayPal 帳戶時，您可以接受預設設定。 接收來自其他國家/地區與其他貨幣的付款時，應該不會有問題，除非您已封鎖使用某些貨幣付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。
--   **我是否必須以手動方式接受 PayPal 付款？** 不。 PayPal 帳戶的預設設定會要求使用者手動接受付款，這表示若您未在 30 天內接受付款，該款項將被退回。 您可以在 PayPal 的 \[More Settings\] \(更多設定\) 頁面關閉 \[Ask Me\] \(詢問我\) 來變更此設定。
+-   **PayPal 帳戶是否必須在相同國家/地區與我的合作夥伴中心帳戶中註冊？** 資料分割 當您設定 PayPal 帳戶時，您可以接受預設設定。 接收來自其他國家/地區與其他貨幣的付款時，應該不會有問題，除非您已封鎖使用某些貨幣付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。
+-   **我是否必須以手動方式接受 PayPal 付款？** 資料分割 PayPal 帳戶的預設設定會要求使用者手動接受付款，這表示若您未在 30 天內接受付款，該款項將被退回。 您可以在 PayPal 的 \[More Settings\] \(更多設定\) 頁面關閉 \[Ask Me\] \(詢問我\) 來變更此設定。
 
 
 ### <a name="specific-requirements-for-certain-countriesregions"></a>某些國家/地區的特定需求

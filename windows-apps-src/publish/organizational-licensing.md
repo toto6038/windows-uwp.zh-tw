@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 商務用 store, 教育用 store, 組織, 大量授權, 企業版, 教育 store, 商務 store, 大量購買, 大量
 localizationpriority: high
-ms.openlocfilehash: 4babaa9bca13fe1861d5772ba70ec5998cd06285
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b7f0ecc1eb7faec39eaad925ccd6c9d501d39749
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57600973"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788398"
 ---
 # <a name="organizational-licensing-options"></a>組織授權選項
 

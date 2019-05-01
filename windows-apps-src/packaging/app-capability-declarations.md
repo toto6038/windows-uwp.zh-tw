@@ -2,16 +2,17 @@
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: 應用程式功能宣告
 description: 功能必須在您的通用 Windows 平台 (UWP) app 的套件資訊清單中進行宣告，才能存取特定 API、資源 (例如圖片或音樂) 或裝置 (例如相機或麥克風)。
-ms.date: 11/26/2018
+ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 58609ed1b3b2e178c735f3ebf042a98587ce6cb9
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.custom: 19H1
+ms.openlocfilehash: 3c126b17e8ba9b66bc5e7c4fccd0142cd63ab7e9
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57822943"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63777909"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -155,7 +156,7 @@ ms.locfileid: "57822943"
 | **系統層級的約會的存取權** | **appointmentsSystem** 受限制的功能讓 app 能夠讀取和修改使用者行事曆上的所有約會。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 | **系統層級的聊天訊息存取**\* | **chatSystem** 受限制的功能讓 app 能夠讀取和寫入所有簡訊和多媒體簡訊訊息。<br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 | **系統層級的連絡人存取** | **contactsSystem** 受限制的功能讓 app 能夠讀取已指定為受限制或敏感的連絡人資訊，並修改現有的連絡人資訊。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
-| **電子郵件存取*** | **email** 受限制的功能讓 app 能夠讀取、分級，以及傳送電子郵件給使用者。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
+| **電子郵件存取** | **email** 受限制的功能讓 app 能夠讀取、分級，以及傳送電子郵件給使用者。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 | **系統層級的電子郵件存取**| **emailSystem** 受限制的功能讓 app 能夠讀取、分級，以及傳送受限制或敏感的電子郵件給使用者。 <br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 | **系統層級的呼叫歷程記錄存取** | **phoneCallHistorySystem** 受限制的功能讓 app 能夠透過變更現有項目及撰寫新項目來完整修改通話記錄。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) 命名空間中的 API。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 | **傳送簡訊**\* | **smsSend** 受限制的功能讓 app 能夠傳送簡訊和多媒體簡訊訊息。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空間中的 API。 |
@@ -213,7 +214,14 @@ ms.locfileid: "57822943"
 | **Windows Team 裝置的認證** | **TeamEditionDeviceCredential**受限的功能可讓應用程式存取要求的裝置執行 Windows 10 版本 1703 版或更新版本的 Surface Hub 裝置上的帳戶認證的 Api。<br/><br/>我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 | **Windows 小組應用程式檢視** | **TeamEditionView**受限的功能可讓應用程式裝載在執行 Windows 10 版本 1703 版或更新版本的 Surface Hub 裝置上的應用程式檢視存取 Api。<br/><br/>我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 | **相機處理延伸模組** | **CameraProcessingExtension**受限的功能可讓應用程式來處理從數位相機，而不需要直接存取的相機控制項擷取的映像。<br /><br />這項功能，才能呼叫中的 Api [Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider)命名空間。<br /><br />任何人都可能要求存取這個功能以進行市集提交。 |
-| **使用資料管理*** | **NetworkDataUsageManagement**受限的功能可讓應用程式來收集網路資料使用方式資訊。<br /><br />這項功能，才能呼叫[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)。<br /><br />任何人都可能要求存取這個功能以進行市集提交。 |
+| **使用資料管理** | **NetworkDataUsageManagement**受限的功能可讓應用程式來收集網路資料使用方式資訊。<br /><br />這項功能，才能呼叫[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)。<br /><br />任何人都可能要求存取這個功能以進行市集提交。 |
+| **管理電話列連線** | **PhoneLineTransportManagement**功能可讓應用程式能夠管理系統負責電話列連線的裝置。<br /><br />這項功能，才能使用 Api PhoneLineTransportDevice [Windows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls)命名空間。 |
+| **Unvirtualized 的資源** | **UnvirtualizedResources**受限的功能可讓您的應用程式，來宣告[RegistryWriteVirtualization](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-registrywritevirtualization)並[FileSystemWriteVirtualization](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-filesystemwritevirtualization)若要停用登錄和檔案系統的虛擬化其封裝資訊清單中的項目。 這些宣告可防止系統分別將任何寫入至 HKEY_CURRENT_USER 或使用者的 AppData 資料夾，將虛擬化。 這是在其中的應用程式需要讀取或寫入相同的登錄或檔案系統項目，為您的應用程式的其他應用程式的情況下很有用。<br /><br />這項功能被設計用於特定類型的 Microsoft 和我們的合作夥伴所發佈的桌面電腦遊戲。 它並不適用於其他案例中，因為它可能會危害系統的能力將完全解除安裝。 |
+| **可修改的應用程式** | **ModifiableApp**受限的功能可讓您的應用程式，來宣告[windows.mutablePackageDirectories](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension)其封裝資訊清單中的延伸模組。 這可讓您提供您的應用程式的預期其中的資料夾的名稱修改或新增要找的檔案。 作業系統會建立這個資料夾，並啟用您的應用程式使用此資料夾，而不是 （或除了） 中的檔案原本安裝的應用程式的檔案。<br /><br />這項功能被設計用於特定類型的 Microsoft 和我們的合作夥伴所發佈的桌面電腦遊戲。 它會授與其他案例中，因為它可讓不帶正負號的程式碼來執行。 |
+| **封裝寫入重新導向相容性填充碼** | **PackageWriteRedirectionCompatibilityShim**受限的功能會設定您的應用程式在每個使用者的位置中建立所有新檔案。 開啟以供寫入任何現存的檔案都會先複製到每個使用者的位置，並修改出現在該位置的檔案。 這項功能可用於建立或修改其安裝資料夾中的檔案的應用程式。<br /><br />這項功能被設計用於特定類型的 Microsoft 和我們的合作夥伴所發佈的桌面電腦遊戲。 不過，它也可能適用於其他應用程式，在某些情況下。 |
+| **自訂安裝動作** | **CustomInstallActions**受限的功能可讓您的應用程式，來宣告[windows.customInstall](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension)中其封裝資訊清單，好讓它可以指定一個或以上的額外擴充功能安裝程式檔案 （.exe 或.msi） 都是以您的應用程式執行。 這可讓您指定自訂動作的任何標準的部署案例： 安裝、 更新、 修復或解除安裝。 比方說，這是適用於第 3 個合作對象可轉散發套件的元件項目組合的應用程式。<br /><br />這項功能被設計用於特定類型的 Microsoft 和我們的合作夥伴所發佈的桌面電腦遊戲。 它將不會具有適用於其他案例中。 |
+| **套裝的服務** | **PackagedServices**受限的功能可讓應用程式所建立的 Microsoft 夥伴和企業宣告[windows.service](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-extension)其封裝中的擴充功能資訊清單，確定它可以安裝一或多個服務和應用程式。 這些服務可以設定本機服務、 網路服務或本機系統帳戶下執行。 本機服務和網路服務的服務只需要**packagedServices**功能。 本機系統服務需要**packagedServices**並**localSystemServices**功能。<br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。  |
+| **本機系統服務** | **LocalSystemServices**受限的功能可讓 Microsoft 夥伴和企業安裝一或多個本機系統服務和應用程式所建立的應用程式 (也就是您的應用程式可以宣告StartAccount 服務是 LocalSystem)。 此案例也需要**packagesServices**功能。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 
 
 ## <a name="custom-capabilities"></a>自訂功能
 

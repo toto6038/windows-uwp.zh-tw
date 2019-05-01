@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 評論 API, 回應資訊
 ms.localizationpriority: medium
-ms.openlocfilehash: 0497b5eec67f9204139cd10d4523b534d6c8779f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 095afd1eab9b7bd0acdac7c38d9e8e99dd59f38c
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595553"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63785753"
 ---
 # <a name="get-response-info-for-reviews"></a>取得評論的回應資訊
 
 如果您想要以程式設計方式回應客戶對您的應用程式的評論，可以在 Microsoft Store 評論 API 中使用此方法先判斷自己是否有權限可回應評論。 您無法回應已選擇不要接收評論回應的客戶所提交的評論。 在您確認可回應評論後，以程式設計方式使用[提交應用程式評論的回應](submit-responses-to-app-reviews.md)方法回應。
 
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -45,7 +45,7 @@ ms.locfileid: "57595553"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   | 描述                                     |  必要  |
+| 參數        | 類型   | 描述                                     |  必要項  |
 |---------------|--------|--------------------------------------------------|--------------|
 | applicationId | 字串 | 包含您想知道是否可回應之評論的應用程式 Store 識別碼。 存放區識別碼位於[應用程式識別碼 頁面上](../publish/view-app-identity-details.md)在合作夥伴中心。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | reviewId | 字串 | 您想要回應評論的識別碼 (這是 GUID)。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。 <br/>如果您省略此參數，這個方法的回應本文將會指示您是否有權限可回應指定應用程式的任何評論。 |  否  |

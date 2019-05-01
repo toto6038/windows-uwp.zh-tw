@@ -1,17 +1,18 @@
 ---
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: 使用自訂 SSL 憑證佈建 Device Portal
-description: TBD
-ms.date: 4/8/2019
+description: 了解如何使用 HTTPS 通訊中使用自訂憑證佈建 Windows Device Portal。
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: cbe813a58124b1cd80f352ae11e9dcff59b21da4
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.custom: 19H1
+ms.openlocfilehash: ce4e45bc23f4efb636618bb4891b9d6e9d207490
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244334"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63774143"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>使用自訂 SSL 憑證佈建 Device Portal
 
