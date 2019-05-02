@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e108d603a623e3b9e41d7ced3c0fafc80f006b8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: acc39dfecaf4360f9f5b7db9f3c1fe34021f35c0
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610813"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788225"
 ---
 # <a name="view-app-identity-details"></a>檢視應用程式身分識別詳細資料
 
@@ -27,7 +27,7 @@ ms.locfileid: "57610813"
 
 -   **封裝/身分識別/名稱**
 -   **封裝/身分識別/發行者**
--   **封裝/屬性/PublisherDisplayName**
+-   **Package/Properties/PublisherDisplayName**
 
 如需詳細資訊，請參閱[套件資訊清單結構描述參考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
