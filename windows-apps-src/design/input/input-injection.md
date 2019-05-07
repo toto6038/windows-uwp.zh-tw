@@ -7,12 +7,12 @@ keywords: device, digitizer, input, interaction, injection, 裝置, 數位板, �
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2699917beed9330dd2044704f19b3c25256c3ca8
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 2ff3150d4c1ed713451669b8918906141daa9659
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343237"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065238"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>透過輸入插入模擬使用者輸入
 
@@ -50,7 +50,8 @@ ms.locfileid: "58343237"
 1. 首先，先設定 UI (MainPage.xaml)。
 
     我們有兩個方格區域 (一個供滑鼠輸入用，一個供插入的觸控輸入用)，每一個都有四個按鈕。
-       > [!NOTE] The Grid background must be assigned a value (`Transparent`, in this case), otherwise pointer events are not detected.
+      > [!NOTE] 
+      > 格線背景必須指派一個值 (`Transparent`，在此情況下)，否則不會偵測到的指標事件。
 
     當在輸入區域中偵測到按下任何滑鼠鍵時，對應的觸控事件會插入到輸入插入區域。 來自輸入插入的按鈕點選會報告在標題區域中。
 
