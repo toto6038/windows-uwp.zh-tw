@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a205fb151d1c9e6614dc97ccde639e43720aa8a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 901aa1fa5c37c18a815e5e70becdf15001ed74c4
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618193"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444235"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>UWP 應用程式適用的連接動畫
 
@@ -24,7 +24,22 @@ ms.locfileid: "57618193"
 
 > **重要的 Api**:[ConnectedAnimation 類別](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)， [ConnectedAnimationService 類別](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
-## <a name="see-it-in-action"></a>以動作呈現
+
+## <a name="examples"></a>範例
+
+<table>
+<th align="left">XAML 控制項庫<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可<a href="xamlcontrolsgallery:/item/ConnectedAnimation">開啟應用程式，並查看 作用中的 已連線的動畫</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 在這個簡短的影片中，應用程式會使用已連線的動畫以動畫顯示的項目映像，「 持續 」 會成為下一個頁面的標頭的一部分。 此效果有助於維持整個轉換過程的使用者內容。
 
@@ -83,7 +98,7 @@ ms.locfileid: "57618193"
 
 若要達到的各種效果，某些組態會忽略 ConnectedAnimationService 這些屬性，並使用自己的值，這個資料表中所述。
 
-| 設定 | 尊重 DefaultDuration 嗎？ | 尊重 DefaultEasingFunction 嗎？ |
+| 組態 | 尊重 DefaultDuration 嗎？ | 尊重 DefaultEasingFunction 嗎？ |
 | - | - | - |
 | 重力 | 是 | 是* <br/> **從 A 到 B 的基本轉譯會使用這個 easing 函式，但是"重力 dip 」 有它自己的 easing 函式。*  |
 | 直接存取 | 否 <br/> *以動畫顯示超過 150ms年。*| 否 <br/> *會使用加/減速函數開始減速。* |
@@ -318,10 +333,6 @@ void OnNavigatedTo(NavigationEventArgs e)
 - 使用[DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration)針對回 瀏覽。
 - 不要再等其他長時間執行的非同步作業準備和啟動已連線的動畫之間網路要求上。 您可能需要預先載入必要的資訊，才能事先執行轉換，或在目的地檢視中載入高解析度影像時，使用低解析度預留位置影像。
 - 使用[SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)若要避免在過場動畫**框架**如果您使用**ConnectedAnimationService**，自相連的動畫不適用於同時預設瀏覽轉換。 請參閱 [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) 以取得如何使用瀏覽轉換的詳細資訊。
-
-## <a name="download-the-code-samples"></a>下載程式碼範例
-
-請參閱 [WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs) 範例庫中的[連接動畫範例](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/ConnectedAnimationSample)。
 
 ## <a name="related-articles"></a>相關文章
 

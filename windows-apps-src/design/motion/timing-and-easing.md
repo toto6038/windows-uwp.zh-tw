@@ -11,16 +11,31 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b736a10a7284e3cc9aa193e082dc654e908afe40
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645263"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444178"
 ---
 # <a name="timing-and-easing"></a>計時和加/減速
 
-動作是根據現實世界，而我們也有數位媒體，伴隨對速度和效能的期望。 
+動作是根據現實世界，而我們也有數位媒體，伴隨對速度和效能的期望。
+
+## <a name="examples"></a>範例
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可<a href="xamlcontrolsgallery:/item/EasingFunction">開啟 應用程式，並查看作用中的加/減速函式</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="how-fluent-motion-uses-time"></a>Fluent 動作如何使用時間
 
@@ -40,8 +55,8 @@ ms.locfileid: "57645263"
 
 :::row:::
     :::column:::
-        Use for objects or pages that are exiting the scene or closing.
-        Allows for very quick directional feedback of exiting UI where timing does not impede upon framerate to achieve a smooth animation.
+用於物件或場景的結束或關閉頁面。
+可讓非常快速的方向回饋離開 UI，而計時不會阻礙畫面播放速率以達到流暢的動畫。
     :::column-end:::
     :::column:::
         ![150ms motion](images/150msAlt.gif)
@@ -52,8 +67,8 @@ ms.locfileid: "57645263"
 
 :::row:::
     :::column:::
-        Use for objects or pages that are entering the scene or opening.
-        Allows a reasonable amount of time to celebrate content as it enters the scene.
+物件或輸入場景或開啟的頁面中使用。
+可在其進入場景時擁有合理的量的時間展示內容。
     :::column-end:::
     :::column:::
         ![300ms motion](images/300ms.gif)
@@ -64,7 +79,7 @@ ms.locfileid: "57645263"
 
 :::row:::
     :::column:::
-        Use for objects which are translating across a single scene or multiple scenes. 
+使用的轉譯場景是單一或多個場景物件。 
     :::column-end:::
     :::column:::
         ![500ms motion](images/500ms.gif)
@@ -87,10 +102,10 @@ ms.locfileid: "57645263"
 
 :::row:::
     :::column:::
-        Use for UI or objects that are exiting the scene.
+使用 UI 或即將結束場景的物件。
 
-        Objects become powered and gain momentum until they reach escape velocity.
-        The resulting feel is that the object is trying its hardest to get out of the user's way and make room for new content to come in.
+物件會提供，並取得趨勢電子報，直到達到逸出的速度。
+產生的操作是物件會嘗試利用使用者的方式並騰出空間給新的內容傳入到其最困難。
     :::column-end:::
     :::column:::
         ![accelerate easing](images/accelEase.gif)
@@ -126,12 +141,12 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 :::row:::
     :::column:::
-        Use for objects or UI entering the scene, either navigating or spawning.
+物件或 UI 輸入場景，請瀏覽，或產生中使用。
 
-        Once on-scene, the object is met with extreme friction, which slows the object to rest.
-        The resulting feel is that the object traveled from a long distance away and entered at an extreme velocity, or is quickly returning to a rest state.
+一旦在場景，滿足物件，具有極大的阻力，會變慢的其餘部分的物件。
+產生的操作是物件經過長時間距離離開和在極端的速度，輸入或已快速回到其餘狀態。
 
-        Even if it's preceded by a moment of unresponsiveness, the velocity of the incoming object has the effect of feeling fast and responsive.
+即使它前面的無回應，連入物件的速度就會有的感覺快速且回應迅速的效果。
     :::column-end:::
     :::column:::
         ![decelerate easing](images/decelEase.gif)
@@ -167,10 +182,10 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 :::row:::
     :::column:::
-        This is the baseline easing for any animated parameter change inside of the system.
-        Use standard easing for objects that change from state to state on-screen, such as a simple position change. Also, use it for objects morphing in-scene, like an object that grows.
+這是在系統內任何動畫的參數變更加/減速的基準。
+請對使用畫面上狀態會改變的物件使用標準加/減速，例如簡單的位置變更。 此外，對場景中的物件變形使用，像是會長大的物件。
 
-        The resulting feel is that objects changing state from A to B are overcoming, and taken over by, natural forces.
+物件變更狀態從 A，b 克服，，和透過所採取，自然會強制產生的操作。
     :::column-end:::
     :::column:::
         ![standard easing](images/standardEase.gif)

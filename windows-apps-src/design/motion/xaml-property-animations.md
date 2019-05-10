@@ -8,12 +8,12 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 81da1e769ab171e47a4f4046e8ec7e7c84ecf2d1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 183a5433553ff6fdfcb09f6960f6a642f2c8bc08
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630353"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444142"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>以動畫顯示組合動畫的 XAML 項目
 
@@ -31,19 +31,35 @@ ms.locfileid: "57630353"
 > [!NOTE]
 > 若要使用這些屬性的 UIElement，1809年或更新版本，必須是您的 UWP 專案目標版本。 如需設定您的專案版本的詳細資訊，請參閱[版本的自適性應用程式](../../debug-test-perf/version-adaptive-apps.md)。
 
+## <a name="examples"></a>範例
+
+<table>
+<th align="left">XAML 控制項庫<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可<a href="xamlcontrolsgallery:/item/XamlCompInterop">開啟 應用程式，並查看動作中的動畫 interop</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## <a name="new-rendering-properties-replace-old-rendering-properties"></a>新的轉譯屬性取代舊的轉譯屬性
 
 下表顯示您可用來修改的 UIElement，還能夠變成動畫與呈現的屬性[CompositionAnimation](/uwp/api/windows.ui.composition.compositionanimation)。
 
-| 屬性 | 類型 | 描述 |
+| 屬性 | Type | 描述 |
 | -- | -- | -- |
-| [不透明度](/uwp/api/windows.ui.xaml.uielement.opacity) | 雙聲道 | 物件的不透明度 |
+| [不透明度](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | 物件的不透明度 |
 | [轉譯](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | 移動元素的 X/Y/Z 位置 |
 | [TransformMatrix](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | 轉換矩陣套用至項目 |
 | [縮放](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | 縮放中心點上置中的項目 |
 | [旋轉](/uwp/api/windows.ui.xaml.uielement.rotation) | 浮點數 | 將元素周圍的 RotationAxis 和中心點旋轉 |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | 旋轉軸 |
-| [中心點](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 縮放和旋轉中心點 |
+| [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 縮放和旋轉中心點 |
 
 TransformMatrix 屬性值結合的小數位數、 旋轉和轉譯的屬性，順序如下：TransformMatrix，小數位數，旋轉，轉譯。
 
@@ -74,7 +90,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 
 - [RenderTransform](/uwp/api/windows.ui.xaml.uielement.rendertransform)
 - [RenderTransformOrigin](/uwp/api/windows.ui.xaml.uielement.rendertransformorigin)
-- [投影](/uwp/api/windows.ui.xaml.uielement.projection)
+- [Projection](/uwp/api/windows.ui.xaml.uielement.projection)
 - [Transform3D](/uwp/api/windows.ui.xaml.uielement.transform3d)
 
 當您設定 （或以動畫顯示） 的任何新的屬性時，您無法使用舊的屬性。 相反地，如果您設定 （或以動畫顯示） 的任何舊的屬性，您無法使用新的屬性。

@@ -12,18 +12,33 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1096bdab340c3f0fef24b5815423f72b0f5c8219
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582365"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444164"
 ---
 # <a name="motion-for-uwp-apps"></a>適用於 UWP app 的動作
 
-![主角圖像](images/header-motion2.svg)
+![動作圖示](../images/motion-2x.png)
 
 Fluent 動作在您的應用程式中可以發揮作用。 它根據使用者的行為提供智慧的意見反應、保持 UI 充滿生氣，以及引導使用者瀏覽您的應用程式。 Fluent 動作在使用者及其數位體驗間引發感情的聯繫。 我們以使用者已經從實際的世界理解的自然移動為基礎來建置，並從那裡延伸我們的系統。
+
+## <a name="examples"></a>範例
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下此處以<a href="xamlcontrolsgallery:/category/Motion">開啟應用程式並查看動作運作情形</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="fluent-motion-principles"></a>Fluent 動作原則
 
@@ -53,7 +68,7 @@ Fluent 動作在您的應用程式中可以發揮作用。 它根據使用者的
 智慧型動作提供回饋給使用者，與其操作 UI 的方式一致。 互動以使用者為中心。 移動感覺上合乎其外形規格，並依情境而設計。 使用者看了應該都覺得舒適。
 
 ![前後呼應動作的 UI 範例](images/Contextual.gif)
-> 動畫應繫結至使用者互動。 操作功能表會從使用者加以啟用之處部署。 
+> 動畫應繫結至使用者互動。 操作功能表會從使用者加以啟用之處部署。
 
 ## <a name="motion-articles"></a>動作文章
 
