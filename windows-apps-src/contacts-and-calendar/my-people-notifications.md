@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 291c2a922e2b2df7111da8bfc6aefb57b87e84bb
+ms.sourcegitcommit: 4bad5f9427e7db27b57bedc6d7df19077c62e8c3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630563"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535193"
 ---
 # <a name="my-people-notifications"></a>朋友圈通知
 
@@ -51,15 +51,15 @@ experienceType=”shoulderTap”
 
 + **src**
     + 資產的 URI。 這可以是 HTTP/HTTPS Web URI、msappx URI，或本機檔案的路徑。
-+ **spritesheet src**
++ **spritesheet-src**
     + 資產的 URI。 這可以是 HTTP/HTTPS Web URI、msappx URI，或本機檔案的路徑。 僅 Spritesheet 動畫需要。
-+ **spritesheet 高度**
++ **spritesheet-height**
     + 畫面高度 (以像素為單位)。 僅 Spritesheet 動畫需要。
-+ **spritesheet fps**
++ **spritesheet-fps**
     + 每秒畫面數 (FPS)。 僅 Spritesheet 動畫需要。 僅支援值 1-120。
-+ **spritesheet startingFrame**
++ **spritesheet-startingFrame**
     + 動畫開始的畫面編號。 僅用於 Spritesheet 動畫，若未提供則預設為 0。
-+ **Alt 鍵**
++ **alt**
     + 用於螢幕助讀程式旁白的文字字串。
 
 > [!NOTE]
@@ -68,7 +68,7 @@ experienceType=”shoulderTap”
 此外，最上層的快顯通知節點必須包含 **hint-people** 參數，以指定傳送連絡人。 這個參數可以有以下任何的值：
 
 + **電子郵件地址** 
-    + 例如 mailto:johndoe@mydomain.com
+    + 例如 ` mailto:johndoe@mydomain.com `
 + **電話號碼** 
     + 例如 tel:888-888-8888
 + **遠端識別碼** 
@@ -150,7 +150,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 如果朋友圈通知遞補快顯通知，則會忽略第二個朋友圈特有的繫結，並只使用第一個繫結來顯示快顯通知。 這就是在第一個快顯通知繫結中提供遞補裝載如此重要的原因。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 + [我的使用者通知範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [新增我的個人支援](my-people-support.md)
 + [調適性的快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
