@@ -5,16 +5,16 @@ keywords: uwP 應用程式配置, 通用 Windows 平台,應用程式設計, 介�
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6afaada45c3f332085135212be39e43bb1c3fe8f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 03e30aa091a04e16ee84f38832dc962d34659e1b
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582247"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065438"
 ---
 # <a name="design-basics-for-uwp-apps"></a>UWP 應用程式設計基本知識
 
-![主角圖像](images/header-design-basics.svg)
+![設計基本圖示](../images/basics-2x.png)
 
 通用 Windows 平台 (UWP) 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。 這不是一份詳盡規則的清單，這份文件會隨著不斷演進的 Fluent Design 系統以及我們應用程式建置社群的需求改變。 
 

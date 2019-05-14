@@ -1,6 +1,6 @@
 ---
 Description: 了解支援通用 Windows 平台 (UWP) 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。
-title: 通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
+title: 適用於 UWP 裝置的 UI 考量
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
@@ -8,20 +8,22 @@ keywords: 裝置, 輸入, 互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 127c01321c0341e7125e8c6da955c789c4c65f2f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6333345a79d92394539d337f1f2390118cff1153
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582405"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065325"
 ---
-#  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
+#  <a name="ui-considerations-for-uwp-devices"></a>適用於 UWP 裝置的 UI 考量
 
+![裝置](../images/devices-2x.png)
 
+了解支援通用 Windows 平台 (UWP) 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。
 
 ![執行 Windows 的裝置](images/device-primer/device-primer-ramp.png)
 
-了解支援通用 Windows 平台 (UWP) 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。 針對特定裝置進行設計時，主要的考量包括應用程式在該裝置上將如何顯示、將在該裝置上的何處使用應用程式、何時使用和如何使用，以及使用者將如何與該裝置互動。
+ 針對特定裝置進行設計時，主要的考量包括應用程式在該裝置上將如何顯示、將在該裝置上的何處使用應用程式、何時使用和如何使用，以及使用者將如何與該裝置互動。
 
 ## <a name="pcs-and-laptops"></a>電腦和膝上型電腦
 
