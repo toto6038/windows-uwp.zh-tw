@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d2c965bcfbf81efe73ce8aff93cdb8b31163fbd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 89b393120657b7c02ccfe10ce6aca16be80118aa
+ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653843"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852265"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>使用 InteractionTracker 自訂操作體驗
 
@@ -61,7 +61,7 @@ ms.locfileid: "57653843"
 
 如先前所述，InteractionTracker 是具有 4 個狀態 – 每一個都可以轉換成任何其他四個狀態的狀態機器。 (如需 InteractionTracker 如何在這些狀態之間轉換的詳細資訊，請參閱 [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker) 類別文件)。
 
-| 狀態 | 描述 |
+| State | 描述 |
 |-------|-------------|
 | 閒置 | 未使用中，驅動輸入或動畫 |
 | Interacting | 偵測到作用中使用者輸入 |
@@ -151,7 +151,7 @@ private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
     tracker.MinPosition = new Vector3(-1000f);
     tracker.MaxPosition = new Vector3(1000f);
 
-    // #3 Setup the VisualInteractionSourc
+    // #3 Setup the VisualInteractionSource
     var source = VisualInteractionSource.Create(hitTestRoot);
 
     // #4 Set the properties for the VisualInteractionSource

@@ -1,16 +1,16 @@
 ---
 title: 版本調適型應用程式
 description: 了解如何利用新的 API 並維持與先前版本的相容性
-ms.date: 09/17/2018
+ms.date: 05/17/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 435bbdbfaaf1bec90fa1ee2d598b4a3fe78d3789
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 579f92cc51ed5f9eeea522d81cfdb030f85ef0da
+ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631653"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852269"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>自適性應用程式版本：使用新的 Api，同時維持與舊版的相容性
 
@@ -48,7 +48,7 @@ ms.locfileid: "57631653"
 
 下表顯示各個 SDK 的組建編號，供您參考。
 
-| 易記名稱 | 版本 | OS/SDK 組建 |
+| 易記名稱 | Version | OS/SDK 組建 |
 | ---- | ---- | ---- |
 | RTM | 1507 | 10240 |
 | 11 月份更新 | 1511 | 10586 |
@@ -57,6 +57,7 @@ ms.locfileid: "57631653"
 | Fall Creators Update | 1709 | 16299 |
 | 2018 年 4 月更新 | 1803 | 17134 |
 | 2018 年 10 月更新 | 1809 | 17763 |
+| 2019 年更新 | 1903 | 18362 |
 
 您可以從 [Windows SDK 與模擬器封存](https://developer.microsoft.com/downloads/sdk-archive)下載任何已發行版本的 SDK 。 您可以從 [Windows 測試人員](https://insider.windows.com/Home/BuildWithWindows)網站的開發人員區段下載最新的 Windows Insider Preview SDK。
 
