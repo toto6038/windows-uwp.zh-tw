@@ -1,5 +1,5 @@
 ---
-Description: 了解如何將本機的快顯通知的傳送和處理使用者按一下快顯通知 Win32 c + + WRL 應用程式。
+Description: 了解如何 Win32 C++ WRL 應用程式可以傳送本機的快顯通知，並處理使用者按一下快顯通知。
 title: 從傳統型 C++ WRL 應用程式傳送本機快顯通知
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, 傳統型, 快顯通知, 傳送快顯通知, 傳送本機快顯通知, 傳統型橋接器, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 82de349009350c970fce923a2aa503df0801c3b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: af6c4392d97bdbf06c3e185b8a1c0235225bfe5a
+ms.sourcegitcommit: 81021b7930905beb67383a08b09520cf95c68fd9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609843"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940310"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>從傳統型 C++ WRL 應用程式傳送本機快顯通知
 
@@ -62,7 +62,7 @@ using namespace Microsoft::WRL;
 
 ## <a name="step-4-implement-the-activator"></a>步驟 4：實作啟動程式
 
-您必須為快顯通知啟用實作處理常式，以便使用者按下您的快顯通知時，您的應用程式可執行某個動作。 您的快顯通知若要保留在控制中心 (因為可能在您的應用程式關閉幾天時，使用者才按下快顯通知)，此為必要步驟。 這個類別可以放在專案的任何位置。
+因此，當使用者按一下您的快顯通知，您的應用程式可以執行的項目，您必須實作快顯通知啟動的處理常式。 您的快顯通知若要保留在控制中心 (因為可能在您的應用程式關閉幾天時，使用者才按下快顯通知)，此為必要步驟。 這個類別可以放在專案的任何位置。
 
 如下所示實作 **INotificationActivationCallback** 介面，包括 UUID，同時呼叫 **CoCreatableClass** 以將您的類別標幟為可由 COM 建立。 對於 UUID，使用眾多線上 GUID 產生器的其中一個，建立唯一 GUID。 此 GUID CLSID (類別識別碼) 是控制中心得知 COM 啟用哪個類別的方式。
 
@@ -421,8 +421,8 @@ Windows 8 已引進快顯通知，但使用[舊版快顯通知範本](https://do
 | 作業系統 | ToastGeneric | COM 啟動器 | 舊版快顯通知範本 |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | 支援 | 支援 | 支援 (但不會啟用 COM 伺服器) |
-| Windows 8.1 / 8 | 無 | 無 | 支援 |
-| Windows 7 和更舊版本 | 無 | 無 | 無 |
+| Windows 8.1 / 8 | N/A | N/A | 支援 |
+| Windows 7 和更舊版本 | N/A | N/A | N/A |
 
 若要查看您是否正在執行 Windows 10，請加入 `<VersionHelpers.h>` 標頭並檢查 **IsWindows10OrGreater** 方法。 如果這傳回 true，請繼續呼叫本文中提及的所有方法！ 
 

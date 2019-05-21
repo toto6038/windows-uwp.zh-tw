@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 通知接聽程式, usernotificationlistener, 文件, 存取通知
 ms.localizationpriority: medium
-ms.openlocfilehash: de1032eb3d0d364a62beff0a1af8f84240c11d87
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d6c18740cbba0ea037440300edbe2d7ba4fd116e
+ms.sourcegitcommit: 1d04910a6bbfcaa985d2074caf8f898c35eab7ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649613"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933156"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知接聽程式：存取所有通知
 
@@ -277,17 +277,17 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>新增/關閉通知的前景事件
 
 > [!IMPORTANT] 
-> 已知的問題：前景事件會導致 CPU 迴圈上最新版本的 Windows，，和先前無法運作之前。 請勿使用前景事件。 在即將推出更新至 Windows 中，我們將會修正此問題。
+> 已知的問題：在組建之前建置 17763 / 2018 年 10 月更新 / 版本 1809年前景事件會導致 CPU 迴圈和/或無法運作。 如果您需要在這些較早的建置支援時，請改為使用背景工作。
 
-而不是使用前景事件，使用稍早所示的程式碼[單一處理序模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)背景工作。 背景工作還能讓您接收變更事件通知這兩個已關閉或執行您的應用程式時。
+您也可以從記憶體中的事件處理常式來接聽通知...
 
 ```csharp
-// Subscribe to foreground event (DON'T USE THIS)
+// Subscribe to foreground event
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
+    // Your code for handling the notification
 }
 ```
 

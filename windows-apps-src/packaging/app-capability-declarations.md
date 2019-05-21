@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3c126b17e8ba9b66bc5e7c4fccd0142cd63ab7e9
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: d004f3e735328fb23b7dab6c062d046b005563c2
+ms.sourcegitcommit: a4ea618279448a3099fee4c94dcfc560d00ffdd6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63777909"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65922408"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -196,7 +196,7 @@ ms.locfileid: "63777909"
 | **背景媒體錄製** | **BackgroundMediaRecording**功能變更的媒體特定 Api，例如行為[ **MediaCapture** ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)並[ **AudioGraph** ](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiograph.aspx)類別以啟動媒體錄製您的應用程式處於背景時。 |
 |**預覽 Ink 工作區**| **previewInkWorkspace** 功能可讓 app 存取裝載在 ink 工作區的預覽 Ink 命名空間。 一般而言，OEM 會使用這項功能來取代裝置上的白板應用程式。<br /> <br />必須具備這項功能，才能使用 [**Windows.ApplicationModel.Preview.InkWorkspace**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.preview.inkworkspace) 命名空間中的 API。 |
 |**啟動畫面管理**| **startScreenManagement** 功能可讓 app 直接將磚釘選至開始畫面。 App 也可以從背景進行釘選。 不具備 **startScreenManagement** 功能時並不會封鎖任何 API。然而，使用 **startScreenManagement** 表示殼層不會在任何 app 使用釘選 API 時顯示任何 UI。 |
-|**Cortana 權限**| **cortanaPermissions** 功能可讓 app 列舉使用者授與裝置上 Cortana 的權限。 此功能同時也允許 app 授與或撤銷裝置上 Cortana 的權限。 請注意：使用 **cortanaPermissions** 需要裝置在授與權限前顯示法律聲明文字。 因此，app 應負起責任，告知使用者修改權限可能造成的法律後果。<br /> <br /><br />這項功能，才能取得讀取存取權**HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\(*)** 登錄設定。<br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
+|**Cortana 權限**| **cortanaPermissions** 功能可讓 app 列舉使用者授與裝置上 Cortana 的權限。 此功能同時也允許 app 授與或撤銷裝置上 Cortana 的權限。 請注意：使用 **cortanaPermissions** 需要裝置在授與權限前顯示法律聲明文字。 因此，app 應負起責任，告知使用者修改權限可能造成的法律後果。<br /> <br /><br />這項功能，才能取得讀取存取權**HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search**登錄設定。<br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
 |**所有的應用程式遊戲外掛**| **allAppMods** 功能可讓 app 存取所有 app 的 AppMods 資料夾。 模組管理公用程式使用 **allAppMods** 以在使用該模組的遊戲或 app 之外管理模組。 |
 |**擴充的資源**| **expandedResources** 功能可讓 app 存取遊戲模式資源。 在 Xbox，以及符合足夠列的電腦上，遊戲模式資源代表可供 app 獨佔使用的保留 CPU 核心子集。 在 Xbox 上，app 也有至少 4 GB 記憶體分割的獨佔使用權。<br /><br />必須具備這項功能，才能取得如上方所定義之 CPU 和記憶體資源的獨佔使用權。 |
 |**受保護的應用程式**| **protectedApp** 功能授與 app 載入至來自Microsoft Store之受保護處理程序的能力。 當 app 內嵌至Microsoft Store時，Microsoft Store會將 blob 新增至可執行檔。 Microsoft Store也會使用 Microsoft 金鑰頁面簽署可執行檔。 由於 blob 需要 Microsoft 的簽章，處理程序載入器會檢查此 blob，而非強制執行受保護處理程序的能力。<br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
@@ -221,7 +221,8 @@ ms.locfileid: "63777909"
 | **封裝寫入重新導向相容性填充碼** | **PackageWriteRedirectionCompatibilityShim**受限的功能會設定您的應用程式在每個使用者的位置中建立所有新檔案。 開啟以供寫入任何現存的檔案都會先複製到每個使用者的位置，並修改出現在該位置的檔案。 這項功能可用於建立或修改其安裝資料夾中的檔案的應用程式。<br /><br />這項功能被設計用於特定類型的 Microsoft 和我們的合作夥伴所發佈的桌面電腦遊戲。 不過，它也可能適用於其他應用程式，在某些情況下。 |
 | **自訂安裝動作** | **CustomInstallActions**受限的功能可讓您的應用程式，來宣告[windows.customInstall](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension)中其封裝資訊清單，好讓它可以指定一個或以上的額外擴充功能安裝程式檔案 （.exe 或.msi） 都是以您的應用程式執行。 這可讓您指定自訂動作的任何標準的部署案例： 安裝、 更新、 修復或解除安裝。 比方說，這是適用於第 3 個合作對象可轉散發套件的元件項目組合的應用程式。<br /><br />這項功能被設計用於特定類型的 Microsoft 和我們的合作夥伴所發佈的桌面電腦遊戲。 它將不會具有適用於其他案例中。 |
 | **套裝的服務** | **PackagedServices**受限的功能可讓應用程式所建立的 Microsoft 夥伴和企業宣告[windows.service](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-extension)其封裝中的擴充功能資訊清單，確定它可以安裝一或多個服務和應用程式。 這些服務可以設定本機服務、 網路服務或本機系統帳戶下執行。 本機服務和網路服務的服務只需要**packagedServices**功能。 本機系統服務需要**packagedServices**並**localSystemServices**功能。<br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。  |
-| **本機系統服務** | **LocalSystemServices**受限的功能可讓 Microsoft 夥伴和企業安裝一或多個本機系統服務和應用程式所建立的應用程式 (也就是您的應用程式可以宣告StartAccount 服務是 LocalSystem)。 此案例也需要**packagesServices**功能。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 
+| **本機系統服務** | **LocalSystemServices**受限的功能可讓 Microsoft 夥伴和企業安裝一或多個本機系統服務和應用程式所建立的應用程式 (也就是您的應用程式可以宣告StartAccount 服務是 LocalSystem)。 此案例也需要**packagesServices**功能。 <br /><br />我們不建議您宣告在您提交到 Microsoft Store 的應用程式中的這項功能。 在大部分情況下，不會核准使用這項功能。 |
+| **背景空間感知** | **BackgroundSpatialPerception**受限的功能可讓應用程式在背景中執行應用程式時存取使用者的大腦、 實際操作、 移動控制者和其他追蹤的物件的移動。 |
 
 ## <a name="custom-capabilities"></a>自訂功能
 
