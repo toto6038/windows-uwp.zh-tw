@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 901aa1fa5c37c18a815e5e70becdf15001ed74c4
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 21e7c026d336507b1a82badba770ac3bb50e19f8
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444235"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984122"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>UWP 應用程式適用的連接動畫
 
@@ -55,7 +55,7 @@ ms.locfileid: "65444235"
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>連接動畫和 Fluent 設計系統
 
- Fluent Design 系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 連接動畫是將動作加入應用程式中的 Fluent 設計系統元件。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](../fluent-design-system/index.md)。
+ Fluent Design 系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 連接動畫是將動作加入應用程式中的 Fluent 設計系統元件。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](/windows/apps/fluent-design-system)。
 
 ## <a name="why-connected-animation"></a>為何要使用連接動畫？
 

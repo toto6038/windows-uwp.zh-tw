@@ -1,18 +1,17 @@
 ---
 Description: 比較 iOS、Android 和 Windows 10 平台之間的功能。
-Search.Product: eADQiWindows 10XVcnh
 title: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d4739442414b02358f3afea8967b0fc404ff7f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 737e169e2502076f370eaed91658eae59be84a0b
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641333"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984255"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
@@ -235,7 +234,7 @@ ms.locfileid: "57641333"
 <td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/br241319">DatagramSocket</a></strong> 類別透過 UDP 資料包通訊端進行通訊，以及使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/br226882">StreamSocket</a></strong> 類別透過 TCP 或藍牙 RFCOMM 進行通訊。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">網路功能基本知識</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">哪一種網路功能技術？</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280234.aspx">通訊端概觀</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Websocket。</strong> <br><br>在用戶端與伺服器之間提供雙向通訊，實現即時資料傳輸。</td>
+<td align="left"><strong>WebSockets.</strong> <br><br>在用戶端與伺服器之間提供雙向通訊，實現即時資料傳輸。</td>
 <td align="left">Android 上沒有內建 WebSockets 程式庫。</td>
 <td align="left">iOS 上沒有內建 WebSockets 程式庫。</td>
 <td align="left">您可以透過下面的類別建立與支援 WebSocket 之伺服器間的安全連線<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx">MessageWebSocket</a></strong> 類別 (適用具有接收通知的小型訊息)，以及 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx">StreamWebSocket</a></strong> (適用於可分段讀取的較大二進位檔案傳輸)。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">網路功能基本知識</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">哪一種網路功能技術？</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt186447.aspx">Websocket 概觀</a></td>

@@ -11,7 +11,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.openlocfilehash: 1350c6e0eae057386fb721a358f71acb19c4efc1
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57591763"
@@ -38,7 +38,7 @@ ms.locfileid: "57591763"
 您的應用程式中可用的輸入範圍是 **[InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)** 列舉的成員。 您可以將 ****TextBox**** 或 **[RichEditBox](https://msdn.microsoft.com/library/windows/apps/br209683)** 的 [InputScope](https://msdn.microsoft.com/library/windows/apps/br227548) 屬性設定成這些值的其中之一。
 
 > [!IMPORTANT]
-> **[InputScope](https://msdn.microsoft.com/library/windows/apps/dn996570)** 屬性**[PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)** 僅支援**密碼**與**NumericPin**值。 會略過其他任何值。
+> **[InputScope](https://msdn.microsoft.com/library/windows/apps/dn996570)** 屬性 **[PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)** 僅支援 **密碼**與 **NumericPin** 值。 會略過其他任何值。
 
 您會在這裡變更數個文字方塊的輸入範圍，使其符合每個文字方塊的預期資料。
 
@@ -214,7 +214,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="Search"/>`
 
 ![Windows 搜尋觸控式鍵盤](images/input-scopes/search.png)
-- 包含**搜尋**而不是索引鍵**Enter**金鑰
+- 包含 **搜尋** 而不是索引鍵 **Enter** 金鑰
 - 拼字檢查：預設為開啟，可以停用
 - 自動校正：預設為開啟，可以停用
 - 自動大寫：一律停用
@@ -236,8 +236,8 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="Formula"/>`
 
 ![Windows 觸控式鍵盤的公式](images/input-scopes/formula.png)
-- 包含**=** 金鑰
-- 也包含**%**， **$**，以及**+** 金鑰
+- 包含 **=** 金鑰
+- 也包含**%**， **$**，以及 **+** 金鑰
 - 拼字檢查：預設為開啟，可以停用
 - 自動校正：預設為開啟，可以停用
 - 自動大寫：一律停用

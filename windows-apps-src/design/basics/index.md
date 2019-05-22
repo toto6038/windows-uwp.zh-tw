@@ -5,12 +5,12 @@ keywords: uwP 應用程式配置, 通用 Windows 平台,應用程式設計, 介�
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e30aa091a04e16ee84f38832dc962d34659e1b
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 78462d5d29ebcc31792aa46da7657c57fb960e13
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065438"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984108"
 ---
 # <a name="design-basics-for-uwp-apps"></a>UWP 應用程式設計基本知識
 
@@ -24,7 +24,7 @@ ms.locfileid: "65065438"
 
 與最佳做法結合的 UWP 功能簡介，其用於建立在所有執行 Windows 裝置類型上都能展現絕佳效能的應用程式。
 
-[**Fluent Design 系統**](../fluent-design-system/index.md)
+[**Fluent Design 系統**](/windows/apps/fluent-design-system)
 
 Fluent Design 系統展現我們建立彈性、共鳴和美觀的使用者介面的目標和原則。
 

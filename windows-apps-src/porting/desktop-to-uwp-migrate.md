@@ -1,31 +1,46 @@
 ---
 Description: 桌面應用程式和 UWP 應用程式之間共用程式碼
-Search.Product: eADQiWindows 10XVcnh
 title: 桌面應用程式和 UWP 應用程式之間共用程式碼
 ms.date: 10/03/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 151584f15013c9d4ab7d9566e175b957a7a84149
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 16b75226d6b79b19978ddf7e37231b15ac7a4e3e
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644343"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984172"
 ---
-# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>桌面應用程式和 UWP 應用程式之間共用程式碼
+# <a name="move-from-a-desktop-application-to-uwp"></a>移至 UWP 的桌面應用程式
 
-您可以將您的程式碼移入 .NET Standard 程式庫中，然後建立通用 Windows 平台 (UWP) app，將適用範圍擴及所有 Windows 10 裝置。 沒有工具可將傳統型應用程式轉換為 UWP app 時，您可以重複使用許多現有的程式碼，而這樣還會降低建置應用程式的成本。 本指南會示範做法。
+如果您有現有的傳統型應用程式使用 （包括 WPF 和 Windows Form） 的.NET Framework 所建置或C++Win32 Api，您有幾個選項將移到通用 Windows 平台 (UWP) 和 Windows 10。
 
-## <a name="share-code-in-a-net-standard-20-library"></a>共用 .NET Standard 2.0 程式庫中的程式碼
+## <a name="package-your-desktop-application-in-an-msix-package"></a>封裝您 MSIX 封裝中的傳統型應用程式
 
-盡可能多地將程式碼放入 .NET Standard 2.0 類別庫中。  只要您的程式碼使用 Standard 中定義的 API，就可以在 UWP app 中重複使用該程式碼。 這比以往任何時候都還要容易共用 .NET Standard 程式庫的程式碼，因為 .NET Standard 2.0 中包含更加多的 API 了。
+您可以封裝 MSIX 封裝中您的桌面應用程式以存取許多 Windows 10 功能。 MSIX 是針對所有的 Windows 應用程式，包括 UWP、 WPF、 Windows Form 和 Win32 應用程式提供通用的封裝體驗的新式 Windows 應用程式封裝格式。 封裝 MSIX 封裝中的您傳統型 Windows 應用程式可讓您存取強大的安裝和更新體驗，受管理的安全性模型具有彈性的功能系統、 支援 Microsoft Store、 企業管理和許多自訂散發模型。 您可以封裝您的應用程式是否有原始程式碼，或如果您只需要現有的安裝程式檔案 （例如 MSI 或 APP-V 安裝程式）。 封裝您的應用程式之後，您可以整合 UWP 功能，例如封裝擴充功能和其他 UWP 元件。
 
-以下是一部告訴您更多相關資訊的不錯影片。
-&nbsp;
+如需詳細資訊，請參閱 <<c0> [ 桌面應用程式 （傳統型橋接器） 封裝](/windows/msix/desktop/desktop-to-uwp-root)並[需要的套件識別功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
+
+## <a name="use-uwp-apis"></a>使用 UWP Api
+
+您可以直接在您的 WPF、 Windows Form 中呼叫許多 UWP Api 或C++來整合新式體驗也淺註冊 Windows 10 使用者的 Win32 桌面應用程式。 例如，您可以呼叫 UWP Api 來將快顯通知新增至您的桌面應用程式。
+
+如需詳細資訊，請參閱 <<c0> [ 桌面應用程式中使用 UWP Api](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
+
+## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>移轉 .NET Framework 應用程式的 UWP 應用程式
+
+如果您的應用程式在.NET Framework 上執行，您可以利用.NET Standard 2.0 將它移轉至 UWP 應用程式。 移動程式碼以及您可以到.NET Standard 2.0 類別庫，然後建立參考您的.NET Standard 2.0 程式庫的 UWP 應用程式。 
+
+### <a name="share-code-in-a-net-standard-20-library"></a>共用 .NET Standard 2.0 程式庫中的程式碼
+
+如果您的應用程式在.NET Framework 上執行，將程式碼，您可以到.NET Standard 2.0 類別庫。 只要您的程式碼使用 Standard 中定義的 API，就可以在 UWP app 中重複使用該程式碼。 這比以往任何時候都還要容易共用 .NET Standard 程式庫的程式碼，因為 .NET Standard 2.0 中包含更加多的 API 了。
+
+以下是告訴您其相關的影片。
+
 > [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
-### <a name="add-net-standard-libraries"></a>新增 .NET Standard 程式庫
+#### <a name="add-net-standard-libraries"></a>新增 .NET Standard 程式庫
 
 首先將一個或多個 .NET Standard 類別庫新增至您的方案。  
 
@@ -45,7 +60,7 @@ ms.locfileid: "57644343"
 
 接下來，使用工具來判斷您的程式碼有多少符合標準。 如此一來，將程式碼移入程式庫之前就可以決定您可重複使用哪些部分、哪些部分需要進行最基本的修改，以及哪些部分要保留給特定應用程式專用。
 
-### <a name="check-library-and-code-compatibility"></a>檢查程式庫與程式碼的相容性
+#### <a name="check-library-and-code-compatibility"></a>檢查程式庫與程式碼的相容性
 
 我們會從 Nuget 套件及其他從協力廠商取得的 dll 檔案開始著手。
 
@@ -61,7 +76,7 @@ ms.locfileid: "57644343"
 
 您部分的程式碼專屬於特定平台，必須繼續留在傳統型應用程式專案中。
 
-### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>範例：移轉至.NET Standard 2.0 程式庫的資料存取程式碼
+#### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>範例：移轉至.NET Standard 2.0 程式庫的資料存取程式碼
 
 例如，假設我們有非常基本的 Windows Forms 應用程式會顯示從 Northwind 範例資料庫的客戶。
 
@@ -151,7 +166,7 @@ public partial class Customers : Form
 }
 ```
 
-## <a name="reach-all-windows-devices"></a>將適用範圍擴及所有 Windows 裝置
+### <a name="create-a-uwp-app"></a>建立 UWP 應用程式
 
 現在就可以開始將 UWP app 新增至您的方案。
 
@@ -163,7 +178,7 @@ public partial class Customers : Form
 
 以上所述只是 UWP 附帶的其中幾個好處。 若要深入了解，請參閱[建置美好的 Windows 使用體驗](https://developer.microsoft.com/windows/why-build-for-uwp)。
 
-### <a name="add-a-uwp-project"></a>新增 UWP 專案
+#### <a name="add-a-uwp-project"></a>新增 UWP 專案
 
 首先，將 UWP 專案新增至您的方案。
 
@@ -173,7 +188,7 @@ public partial class Customers : Form
 
 ![類別庫參考](images/desktop-to-uwp/class-library-reference2.png)
 
-### <a name="build-your-pages"></a>建置您的頁面
+#### <a name="build-your-pages"></a>建置您的頁面
 
 新增 XAML 頁面，並呼叫在 .NET Standard 2.0 程式庫中的程式碼。
 
@@ -201,10 +216,9 @@ public sealed partial class MainPage : Page
 }
 ```
 
-
 若要開始使用 UWP，請參閱[什麼是 UWP app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
-## <a name="reach-ios-and-android-devices"></a>將目標範本擴及 iOS 和 Android 裝置
+### <a name="reach-ios-and-android-devices"></a>將目標範本擴及 iOS 和 Android 裝置
 
 您可以透過新增 Xamarin 專案，將目標範本擴及 Android 和 iOS 裝置  
 
@@ -216,7 +230,7 @@ public sealed partial class MainPage : Page
 
 就像 UWP 一樣，新增 Android 或 iOS 應用程式的成本較低，因為您可以重複使用 .NET Standard 2.0 類別庫中的商務邏輯。 您必須使用 XAML 設計 UI 頁面，並撰寫任何裝置或平台特定的程式碼。
 
-### <a name="add-a-xamarin-project"></a>新增 Xamarin 專案
+#### <a name="add-a-xamarin-project"></a>新增 Xamarin 專案
 
 首先，將 **\[Android\]**、**\[iOS\]** 或 **\[跨平台\]** 專案新增至您的方案。
 
@@ -231,7 +245,7 @@ public sealed partial class MainPage : Page
 
 ![類別庫參考](images/desktop-to-uwp/class-library-reference3.png)
 
-### <a name="build-your-pages"></a>建置您的頁面
+#### <a name="build-your-pages"></a>建置您的頁面
 
 我們的範例會在 Android 應用程式中顯示客戶清單。
 

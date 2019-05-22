@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4607280fd031fa556bfc5d1c719f4b4e1aeb928e
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626403"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984104"
 ---
 # <a name="visual-layer"></a>視覺層
 
@@ -61,6 +61,12 @@ Windows UWP app 已經使用透過其中一個 UI 架構的視覺層。 您也�
 您可以使用 XAML 架構所建立的視覺效果，並在[**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908)中使用[**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976)類別，以支援可見的 FrameworkElement。 請注意，架構為您建立的視覺效果會隨附自訂的一些限制。 這是因為架構將會管理位移、轉換和存留時間。 不過，您可以建立自己的視覺效果，並透過 ElementCompositionPreview，或將它新增到視覺效果樹狀結構中某個位置的現有 ContainerVisual，以將它們附加至現有 XAML 元素。
 
 如需詳細資訊，請參閱[搭配使用視覺層與 XAML](using-the-visual-layer-with-xaml.md) 概觀。
+
+### <a name="working-with-your-desktop-app"></a>使用傳統型應用程式
+
+您可以使用視覺圖層以增強的外觀、 風格和您的 WPF、 Windows Form 的功能和C++Win32 桌面應用程式。 您可以移轉內容，以使用視覺分層，並將您的 UI 的其餘部分保留在其現有的架構資料的島。 這表示您可以進行重大更新和增強功能到您的應用程式 UI 而不需要進行廣泛的變更對您現有的程式碼基底。
+
+如需詳細資訊，請參閱 <<c0> [ 現代化您桌面的應用程式，使用視覺分層](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps)。
 
 ## <a name="additional-resources"></a>其他資源
 
