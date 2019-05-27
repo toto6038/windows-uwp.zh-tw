@@ -4,13 +4,16 @@ Description: 了解如何開始建置 Windows PC 適用的傳統型應用程式�
 title: 建置適用於 Windows 的應用程式
 ms.topic: landing-page
 ms.date: 04/18/2019
+ms.author: mcleans
+author: mcleanbyron
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: c73121458c3b9c5a8d51b69e088a7711a479986f
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.localizationpriority: medium
+ms.openlocfilehash: 8cb104d873e810a9c5bedaa68675fd346cb3f33d
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984318"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215051"
 ---
 # <a name="build-apps-for-windows"></a>建置適用於 Windows 的應用程式
 
