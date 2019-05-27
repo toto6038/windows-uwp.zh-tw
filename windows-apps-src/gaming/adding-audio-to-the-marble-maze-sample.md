@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, 音訊, 遊戲, 範例
 ms.localizationpriority: medium
 ms.openlocfilehash: 40fa8b1c23d591453308c3ad066967ed65902917
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616713"
@@ -387,7 +387,7 @@ enum SoundEvent
 };
 ```
 
-下表顯示以下項目之間的關係：值、含有相關聯音效資料的檔案，以及每個音效所代表意義的簡短描述。 音訊檔位於**\\媒體\\音訊**資料夾。
+下表顯示以下項目之間的關係：值、含有相關聯音效資料的檔案，以及每個音效所代表意義的簡短描述。 音訊檔位於 **\\媒體\\音訊**資料夾。
 
 | SoundEvent 值  | 檔案名稱      | 描述                                              |
 |-------------------|----------------|----------------------------------------------------------|

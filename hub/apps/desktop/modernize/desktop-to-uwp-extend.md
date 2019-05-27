@@ -4,13 +4,15 @@ title: 使用 Windows UI 和元件擴充您的傳統型應用程式
 ms.date: 06/08/2018
 ms.topic: article
 keywords: Windows 10, UWP
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: ff87990341b3936b5f2e02b8ff8b119a23188e92
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 10ad54dd485d7dbf5e7f4cb119c7700c09056017
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984428"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215137"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>擴充現代化 UWP 元件，您的桌面應用程式
 
@@ -51,7 +53,7 @@ ms.locfileid: "65984428"
 
 ![UWP 專案](images/desktop-to-uwp/add-uwp-project-to-solution.png)
 
-在封裝專案的 **\[應用程式\]** 節點上按一下滑鼠右鍵，然後按一下 **\[加入參考\]**。
+在封裝專案的 **\[應用程式\]** 節點上按一下滑鼠右鍵，然後按一下 **\[加入參考\]** 。
 
 ![參考 UWP 專案](images/desktop-to-uwp/add-uwp-project-reference.png)
 

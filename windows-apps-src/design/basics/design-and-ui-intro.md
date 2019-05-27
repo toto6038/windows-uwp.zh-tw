@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 32838e2c3369535928c9e9311f62654eba54e4e0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25dc7118fcb7d9c6e997fae458ef7846777b1262
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611753"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65983921"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 應用程式設計簡介
 
@@ -20,7 +20,7 @@ ms.locfileid: "57611753"
 
 通用 Windows 平台 (UWP) 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。
 
-這不是一份詳盡規則的清單，這份文件會隨著不斷演進的 [Fluent Design 系統](../fluent-design-system/index.md)以及我們 app 建置社群的需求改變。
+這不是一份詳盡規則的清單，這份文件會隨著不斷演進的 [Fluent Design 系統](/windows/apps/fluent-design-system)以及我們 app 建置社群的需求改變。
 
 本簡介提供每個 UWP app 中包含的通用設計功能概觀，幫助您建立可在各種裝置上精美縮放的使用者介面 (UI)。
 
@@ -98,7 +98,7 @@ UWP 有助於藉由自動調整 UI 項目，使它們更易於閱讀且易於互
 
 ## <a name="controls"></a>控制項
 
-UWP 的設計平台提供一組通用控制項，確保可在所有執行 Windows 的裝置上運作良好，並遵循我們的 [Fluent Design 系統](../fluent-design-system/index.md)原則。 這些控制項包括從按鈕和文字元素這類簡單的控制項，到可從一組資料和範本產生清單的複雜控制項。
+UWP 的設計平台提供一組通用控制項，確保可在所有執行 Windows 的裝置上運作良好，並遵循我們的 [Fluent Design 系統](/windows/apps/fluent-design-system)原則。 這些控制項包括從按鈕和文字元素這類簡單的控制項，到可從一組資料和範本產生清單的複雜控制項。
 
 ![UWP 控制項](../style/images/color/windows-controls.svg)
 
@@ -172,10 +172,10 @@ UWP 的設計平台提供一組通用控制項，確保可在所有執行 Window
 
 ## <a name="next-fluent-design-system"></a>下一步:Fluent Design 系統
 
-如果您想要深入了解 Fluent Design (Microsoft 的設計系統) 背後的原理，並查看更多可納入 UWP app 中的功能，請繼續前往 [Fluent Design 系統](../fluent-design-system/index.md)。
+如果您想要深入了解 Fluent Design (Microsoft 的設計系統) 背後的原理，並查看更多可納入 UWP app 中的功能，請繼續前往 [Fluent Design 系統](/windows/apps/fluent-design-system)。
 
 ## <a name="related-articles"></a>相關文章
 
 - [什麼是 UWP app？](../../get-started/universal-application-platform-guide.md)
-- [Fluent 設計系統](../fluent-design-system/index.md)
+- [Fluent 設計系統](/windows/apps/fluent-design-system)
 - [XAML 平台概觀](../../xaml-platform/index.md)

@@ -5,283 +5,237 @@ description: 通用 Windows 平台 (UWP) 可讓您建置適用於任何 Windows 
 title: UWP 文件 - UWP 應用程式開發人員 | Microsoft 文件
 ms.topic: landing-page
 ms.author: mijacobs
-ms.date: 08/4/2017
+ms.date: 08/04/2017
 keywords: windows uwp, 通用 windows 平台, Windows 執行階段 APIs, windows api, windows api 參考, winrt api, windows api 參考, uwp api, uwp api 參考, 開發 uwp, 設計 uwp, 發佈 uwp
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: 21e6b168ccd656a15fc8efa70e8cded3f12916d4
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: ebc8d3c8602a5a67816f0817af0d2f7851a82d68
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162623"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984147"
 ---
 # <a name="universal-windows-platform-documentation"></a>通用 Windows 平台文件
-通用 Windows 平台 (UWP) 可讓您建置適用於任何 Windows 裝置 (電腦、手機、Xbox One、HoloLens 等等) 的應用程式，並將它們發佈到 Microsoft Store。
 
-<ul class="panelContent cardsF">
+通用 Windows 平台 (UWP) 可讓您建置適用於任何 Windows 10 裝置 (電腦、Xbox One、HoloLens 等等) 的應用程式，並將它們發佈到 Microsoft Store。
+
+<ul class="cardsK panelContent">
     <li>
+      <a href="https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_whats-new.svg" alt="What's new icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/ms365enterprise-partner-news-2.svg?branch=master" alt="What's new illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>新功能</h3>
-                        <p>
-                            <a href="whats-new/windows-10-version-latest.md">新 API 與功能</a>
-                        </p>
-                        <p>
-                            <a href="whats-new/windows-docs-latest.md">文件中的新功能</a>
-                        </p>
-                        <p>
-                            <a href="whats-new/experimental-apis.md">實驗 API</a>
-                        </p>
+                        <p></p>了解最新版本 Windows 10 中的新 UWP API 和功能。</p>
                     </div>
                 </div>
             </div>
         </div>
+      </a>
     </li>
     <li>
+      <a href="get-started/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_get-started.svg" alt="Get started icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/biztalk-get-started-get-started.svg?branch=master" alt="Get started illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>立即開始</h3>
-                        <p>
-                            <a href="get-started/universal-application-platform-guide.md">什麼是 UWP 應用程式？</a>
-                        </p>
-                        <p>
-                            <a href="get-started/sign-up.md">註冊開發人員帳戶</a>
-                        </p>
-                        <p>
-                            <a href="get-started/get-set-up.md">開始設定</a>
-                        </p>
-                        <p>
-                            <a href="get-started/your-first-app.md">建立您的第一個應用程式</a>
-                        </p>
+                        <p></p>了解核心概念並且設定您的電腦以開始建置應用程式。</p>
                     </div>
                 </div>
             </div>
         </div>
+      </a>
     </li>
     <li>
+      <a href="design/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_management.svg" alt="Design icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/sql-database-develop.svg?branch=master" alt="Design illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>設計與 UI</h3>
-                        <p>
-                            <a href="design/basics/design-and-ui-intro.md">設計基本知識</a>
-                        </p>
-                         <p>
-                            <a href="design/fluent-design-system/index.md">Fluent Design 系統</a>
-                        </p>
-                        <p>
-                            <a href="design/controls-and-patterns/index.md">控制項和模式</a>
-                        </p>
-                        <p>
-                            <a href="design/downloads/index.md">設計工具組</a>
-                        </p>                      
-                    </div>
+                    <h3>設計</h3>
+                    <p>了解如何透過使用 Fluent Design 系統，為應用程式設計使用者介面及進行編碼。</p>
+                  </div>
                 </div>
             </div>
         </div>
+      </a>
     </li>
+</ul>
+<ul class="cardsK panelContent">
     <li>
+      <a href="develop/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_code-edit.svg" alt="Develop icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/dynamics-training.svg?branch=master" alt="Develop apps illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>開發應用程式</h3>
-                        <p>
-                            <a href="enterprise/index.md">企業應用程式</a>
-                        </p>
-                        <p>
-                            <a href="packaging/index.md">封裝應用程式</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows 社群工具組</a>
-                        </p>
-                        <p>
-                            <a href="porting/index.md">將應用程式移植到 Windows 10</a>
-                        </p>
-                        <p>
-                            <a href="winrt-components/index.md">Windows 執行階段元件</a>
-                        </p>
-                        <p>
-                            <a href="apps-for-education/index.md">教育應用程式</a>
-                        </p>
-                        <p>
-                            <a href="porting/apps-on-arm.md">Windows 10 on ARM</a>
-                        </p>
+                        <p></p>瀏覽我們的操作說明文章和程式碼，以了解建立 Windows 10 適用 UWP 應用程式。</p>
                     </div>
                 </div>
             </div>
         </div>
+      </a>
     </li>
     <li>
+      <a href="gaming/getting-started.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_build.svg" alt="Develop Games icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/biztalk-get-started-scenarios.svg?branch=master" alt="Develop games illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>開發遊戲</h3>
-                        <p>
-                            <a href="gaming/e2e.md">Windows 10 遊戲開發指南</a>
-                        </p>
-                        <p>
-                            <a href="gaming/index.md">遊戲程式設計</a>
-                        </p>
-                        <p>
-                            <a href="gaming/directx-programming.md">DirectX 程式設計</a>
-                        </p>
-                        <p>
-                            <a href="xbox-apps/index.md">Xbox One 上的 UWP</a>
-                        </p>
-                        <p>
-                            <a href="https://docs.microsoft.com/gaming/xbox-live">Xbox Live</a>
-                        </p>
+                        <p></p>了解如何建置 Xbox 和 Windows 10 適用的 UWP 遊戲</p>
                     </div>
                 </div>
             </div>
         </div>
-    </li>    
+      </a>
+    </li>
     <li>
+      <a href="publish/index.md">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_upgrade.svg" alt="Publish icon" />
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/teams-fast-track.svg?branch=master" alt="Publish illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>發佈</h3>
-                        <p>
-                            <a href="publish/app-submissions.md">應用程式提交</a>
-                        </p>
-                        <p>
-                            <a href="publish/the-app-certification-process.md">應用程式認證程序</a>
-                        </p>
-                        <p>
-                            <a href="publish/upload-app-packages.md">上傳應用程式套件</a>
-                        </p>
-                        <p>
-                            <a href="publish/create-your-app-by-reserving-a-name.md">保留名稱</a>
-                        </p>
-                        <p>
-                            <a href="publish/set-app-pricing-and-availability.md">設定應用程式價格與可用性</a>
-                        </p>
-                    </div>
+                    <h3>發佈</h3>
+                    <p>使用「合作夥伴中心」將您的應用程式與遊戲發佈到 Microsoft Store。</p>
+                  </div>
                 </div>
             </div>
         </div>
+      </a>
     </li>
+</ul>
+    <ul class="cardsY panelContent featuredContent">
+       <li>
+            <a href="https://docs.microsoft.com/uwp/">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_api-reference.svg?branch=master" src="/media/common/i_api-reference.svg?branch=master" alt="API reference icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>API 參考資料</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+       <li>
+            <a href="https://developer.microsoft.com/windows/samples">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_code-samples.svg?branch=master" src="/media/common/i_code-samples.svg?branch=master" alt="Samples icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>程式碼範例</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="https://developer.microsoft.com/windows/downloads">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_tools.svg?branch=master" src="/media/common/i_tools.svg?branch=master" alt="Tools icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>工具和下載</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<hr />
+<ul class="panelContent cardsW">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_api-reference.svg" alt="API Ref icon" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>API 參考資料</h3>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/">通用 Windows 平台 API</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/API">Windows UWP 命名空間</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/extension-sdks">擴充功能 SDK</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/schemas">結構描述</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_multi-connect.svg" alt="Related links icon" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>相關連結</h3>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">適用於 UWP 應用程式的 Win32 與 COM API</a>
-                        </p>
-                        <p>
-                            <a href="//msdn.microsoft.com/library/windows/apps/mt185501.aspx">適用於 UWP 應用程式的 .NET</a>
-                        </p>
-                        <p>
-                            <a href="//msdn.microsoft.com/library/windows/apps/mt691886.aspx">Microsoft Store Services SDK API</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/extension-sdks">裝置系列擴充功能 SDK 與 API 合約</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/schemas/">適用於 UWP 應用程式的檔案與 XML 結構描述規格</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/common/i_support.svg" alt=" " />
-                        </div>
-                    </div>
                     <div class="cardText">
                         <h3>社群與支援</h3>
-                        <p>
-                            <a href="https://twitter.com/WindowsDocs">Twitter 上的 @WindowsDocs</a>
-                        </p>
-                        <p>
-                            <a href="https://aka.ms/OneDevMinute">YouTube 上的 OneDevMinute</a>
-                        </p>
-                        <p>
-                            <a href="https://developer.microsoft.com/windows/support">Windows 開發人員支援</a>
-                        </p>
+                        <p><a href="https://twitter.com/WindowsDocs">Twitter 上的 @WindowsDocs</a></p>
+                        <p><a href="https://aka.ms/OneDevMinute">YouTube 上的 OneDevMinute</a></p>
+                        <p><a href="https://developer.microsoft.com/windows/support">Windows 開發人員支援</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>對於開發不熟悉？</h3>
+                        <p><a href="//mva.microsoft.com/training-topics/c-app-development">Microsoft Virtual Academy</a></p>
+                        <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">LinkedIn Learning</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>相關文件</h3>
+                        <p><a href="/windows/msix/desktop/desktop-to-uwp-root">MSIX 封裝和部署</a></p>
+                        <p><a href="https://docs.microsoft.com/dotnet/csharp/index">C# 指南</a></p>
+                        <p><a href="https://docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
                     </div>
                 </div>
             </div>
         </div>
-    </li>    
+    </li>
 </ul>

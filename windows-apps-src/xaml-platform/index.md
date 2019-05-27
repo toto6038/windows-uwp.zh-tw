@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e22a10e74a834daf4d256313f0e353a6829911c0
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582361"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984244"
 ---
 # <a name="xaml-platform"></a>XAML 平台
 
@@ -26,4 +26,4 @@ ms.locfileid: "57582361"
 | [附加屬性概觀](attached-properties-overview.md) | 說明 XAML 中附加屬性的概念並提供一些範例。 |
 | [自訂附加屬性](custom-attached-properties.md) | 說明如何將 XAML 附加屬性當作相依性屬性來實作，以及如何定義讓附加屬性可以在 XAML 中使用所需的存取子慣例。 |
 | [事件與路由事件概觀](events-and-routed-events-overview.md) | 我們將描述使用 C#、Visual Basic 或 C++/CX 做為程式設計語言並使用 XAML 定義 UI 時，Windows 執行階段 app 中事件的程式設計概念。 您可以在 XAML 中指派事件的處理常式，以做為 UI 元素宣告的一部分，或是在程式碼中新增處理常式。 Windows 執行階段支援「路由事件」：某些輸入事件與資料事件，可以由引發事件之物件以外的物件來處理。 當您定義控制項範本或是使用頁面或配置容器時，路由事件非常實用。 |
-|[在 WPF 和 Windows Form 應用程式中裝載 UWP 控制項](xaml-host-controls.md)| 說明如何使用 UWP XAML 控制項來增強 Windows Forms 或 WPF 傳統型應用程式的 UI。|
+|[傳統型應用程式中的 UWP 控制項 (XAML Islands)](/windows/apps/desktop/modernize/xaml-islands)| 說明如何使用 UWP XAML 控制項來增強 Windows Forms、WPF 或 Win32 傳統型應用程式的 UI。|

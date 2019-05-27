@@ -1,14 +1,17 @@
 ---
 Description: 本節可協助您了解如何在不同的應用程式平台上支援某些索引鍵的 Windows 功能，以及如何開始使用您的程式碼中的功能。
-title: 功能與技術
+title: 功能和技術
 ms.topic: article
 ms.date: 05/08/2019
-ms.openlocfilehash: ff91d8c01e6832e645cc857b638851e1833fc3f9
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.localizationpriority: medium
+ms.author: mcleans
+author: mcleanbyron
+ms.openlocfilehash: 433869c2f6b9a540259073127de1f139b70e9de0
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984978"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215117"
 ---
 # <a name="features-and-technologies-for-windows-apps"></a>功能與技術的 Windows 應用程式
 
@@ -59,7 +62,7 @@ Windows 會提供許多方式來整合語音辨識和文字轉換語音 （也�
 
 |  UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
-| [設計](/windows/uwp/design/basics/)<br/><br/>[版面配置](/windows/uwp/design/layout/)<br/><br/>[控制項](/windows/uwp/design/controls-and-patterns/)<br/><br/>[輸入](/windows/uwp/design/input/)<br/><br/>[磚](/windows/uwp/design/shell/tiles-and-notifications/creating-tiles)<br/><br/>[視覺層](/windows/uwp/composition/visual-layer)<br/><br/>[XAML 平台](/windows/uwp/xaml-platform/)<br/><br/>[啟動、繼續和背景工作](/windows/uwp/launch-resume/)<br/><br/>[Windows 協助工具](/windows/uwp/design/accessibility/accessibility)<br/><br/>  |  [桌面的使用者介面](/windows/desktop/windows-application-ui-development)<br/><br/>[桌面環境和 shell](/windows/desktop/user-interface)<br/><br/>[windows 控制項](/windows/desktop/controls/window-controls)<br/><br/>[UWP 控制項，在傳統型應用程式 （XAML 群島）](/windows/apps/desktop/modernize/xaml-islands)<br/><br/>[桌面應用程式中的 UWP 視覺圖層](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps)<br/><br/>[Windows 和訊息](/windows/desktop/winmsg/windowing)<br/><br/>[功能表和其他資源](/windows/desktop/menurc/resources)<br/><br/>[高 DPI](/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)<br/><br/>[協助工具](/windows/desktop/accessibility)<br/><br/>  |  [在 WPF 中的 Windows](https://docs.microsoft.com/dotnet/framework/wpf/app-development/windows-in-wpf-applications)<br/><br/>[瀏覽概觀](https://docs.microsoft.com/dotnet/framework/wpf/app-development/navigation-overview)<br/><br/>[在 WPF 中的 XAML](https://docs.microsoft.com/dotnet/framework/wpf/advanced/xaml-in-wpf)<br/><br/>[控制項](https://docs.microsoft.com/dotnet/framework/wpf/controls/)<br/><br/>[視覺分層程式設計](https://docs.microsoft.com/dotnet/framework/wpf/graphics-multimedia/visual-layer-programming)<br/><br/>[輸入](https://docs.microsoft.com/dotnet/framework/wpf/advanced/input-wpf)<br/><br/>[協助工具](https://docs.microsoft.com/dotnet/framework/ui-automation/)<br/><br/>  | [建立 Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/creating-a-new-windows-form)<br/><br/>[控制項](https://docs.microsoft.com/dotnet/framework/winforms/controls/)<br/><br/>[對話方塊](https://docs.microsoft.com/dotnet/framework/winforms/dialog-boxes-in-windows-forms)<br/><br/>[使用者輸入](https://docs.microsoft.com/dotnet/framework/winforms/user-input-in-windows-forms)<br/><br/>[Windows Forms 協助工具](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)<br/><br/> |
+| [設計](/windows/uwp/design/basics/)<br/><br/>[版面配置](/windows/uwp/design/layout/)<br/><br/>[控制項](/windows/uwp/design/controls-and-patterns/)<br/><br/>[輸入](/windows/uwp/design/input/)<br/><br/>[磚](/windows/uwp/design/shell/tiles-and-notifications/creating-tiles)<br/><br/>[視覺層](/windows/uwp/composition/visual-layer)<br/><br/>[XAML 平台](/windows/uwp/xaml-platform/)<br/><br/>[啟動、繼續和背景工作](/windows/uwp/launch-resume/)<br/><br/>[Windows 協助工具](/windows/uwp/design/accessibility/accessibility)<br/><br/>  |  [桌面的使用者介面](/windows/desktop/windows-application-ui-development)<br/><br/>[桌面環境和 shell](/windows/desktop/user-interface)<br/><br/>[windows 控制項](/windows/desktop/controls/window-controls)<br/><br/>[傳統型應用程式中的 UWP 控制項 (XAML Islands)](/windows/apps/desktop/modernize/xaml-islands)<br/><br/>[桌面應用程式中的 UWP 視覺圖層](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps)<br/><br/>[Windows 和訊息](/windows/desktop/winmsg/windowing)<br/><br/>[功能表和其他資源](/windows/desktop/menurc/resources)<br/><br/>[高 DPI](/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)<br/><br/>[協助工具](/windows/desktop/accessibility)<br/><br/>  |  [在 WPF 中的 Windows](https://docs.microsoft.com/dotnet/framework/wpf/app-development/windows-in-wpf-applications)<br/><br/>[瀏覽概觀](https://docs.microsoft.com/dotnet/framework/wpf/app-development/navigation-overview)<br/><br/>[在 WPF 中的 XAML](https://docs.microsoft.com/dotnet/framework/wpf/advanced/xaml-in-wpf)<br/><br/>[控制項](https://docs.microsoft.com/dotnet/framework/wpf/controls/)<br/><br/>[視覺分層程式設計](https://docs.microsoft.com/dotnet/framework/wpf/graphics-multimedia/visual-layer-programming)<br/><br/>[輸入](https://docs.microsoft.com/dotnet/framework/wpf/advanced/input-wpf)<br/><br/>[協助工具](https://docs.microsoft.com/dotnet/framework/ui-automation/)<br/><br/>  | [建立 Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/creating-a-new-windows-form)<br/><br/>[控制項](https://docs.microsoft.com/dotnet/framework/winforms/controls/)<br/><br/>[對話方塊](https://docs.microsoft.com/dotnet/framework/winforms/dialog-boxes-in-windows-forms)<br/><br/>[使用者輸入](https://docs.microsoft.com/dotnet/framework/winforms/user-input-in-windows-forms)<br/><br/>[Windows Forms 協助工具](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)<br/><br/> |
 
 ### <a name="audio-video-and-graphics"></a>音訊、 視訊和圖形
 

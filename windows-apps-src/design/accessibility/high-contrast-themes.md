@@ -154,7 +154,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-請注意如何**\{ThemeResource\}** 兩次，用來參考一次**SystemColorWindowColor**並再次參考**BrandedPageBackgroundBrush**. 兩次都是為了讓您的 App 在執行階段能正確設定佈景主題。 現在是測試您 App 內功能的好時機。 當您切換成高對比佈景主題時，格線的背景將會自動更新。 在不同的高對比佈景主題之間切換時，它也會更新。
+請注意如何 **\{ThemeResource\}** 兩次，用來參考一次 **SystemColorWindowColor** 並再次參考 **BrandedPageBackgroundBrush**. 兩次都是為了讓您的 App 在執行階段能正確設定佈景主題。 現在是測試您 App 內功能的好時機。 當您切換成高對比佈景主題時，格線的背景將會自動更新。 在不同的高對比佈景主題之間切換時，它也會更新。
 
 ## <a name="when-to-use-borders"></a>使用框線的時機
 

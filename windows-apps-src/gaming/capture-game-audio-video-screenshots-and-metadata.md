@@ -57,7 +57,7 @@ ms.locfileid: "57601933"
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## <a name="determine-if-your-app-can-currently-record"></a>判斷您的 App 目前是否可以錄製
-有幾個原因您的 App 可能目前無法擷取音訊或影片，包括目前的裝置是否不符合錄製的硬體需求，或者其他 App 目前正在廣播中。 在起始錄製之前，您可以檢查您的 App 是否目前無法錄製。 呼叫 **AppRecordingManager** 物件的 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然後檢查傳回之 **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** 物件的 **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 屬性。 如果**CanRecord**會傳回**false**，這表示您的應用程式無法目前記錄，您可以檢查**[詳細資料](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 屬性來判斷原因。 根據原因而定，您可能想要對使用者顯示狀態，或顯示啟用 App 錄製的指示。
+有幾個原因您的 App 可能目前無法擷取音訊或影片，包括目前的裝置是否不符合錄製的硬體需求，或者其他 App 目前正在廣播中。 在起始錄製之前，您可以檢查您的 App 是否目前無法錄製。 呼叫 **AppRecordingManager** 物件的 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然後檢查傳回之 **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** 物件的 **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 屬性。 如果 **CanRecord** 會傳回 **false** ，這表示您的應用程式無法目前記錄，您可以檢查 **[詳細資料](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 屬性來判斷原因。 根據原因而定，您可能想要對使用者顯示狀態，或顯示啟用 App 錄製的指示。
 
 
 
@@ -143,7 +143,7 @@ ms.locfileid: "57601933"
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>管理元資料快取儲存空間的限制
-您使用 **AppCaptureMetadataWriter** 撰寫的元資料，會由系統快取直到其寫入相關聯的媒體串流。 系統會定義每個 App 元資料快取的大小限制。 一旦達到快取的大小限制，系統會開始清除快取的元資料。 系統將會刪除中繼資料，以撰寫**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 刪除中繼資料與之前的優先順序值**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 優先順序。
+您使用 **AppCaptureMetadataWriter** 撰寫的元資料，會由系統快取直到其寫入相關聯的媒體串流。 系統會定義每個 App 元資料快取的大小限制。 一旦達到快取的大小限制，系統會開始清除快取的元資料。 系統將會刪除中繼資料，以撰寫 **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)**  刪除中繼資料與之前的優先順序值 **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)**  優先順序。
 
 任何時候，您都可以透過呼叫 **[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)** 來查看您的 App 元資料快取中可用的位元組數。 您可以選擇設定您自己的 App 定義的閾值，之後您可以選擇減少要寫入快取的元資料量。 下列範例顯示此模式的簡單實作。
 

@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0f6a4fef72206058874edf845d5fbbe0768c53ec
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628663"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984216"
 ---
 # <a name="reveal-highlight"></a>顯示反白顯示
 
@@ -60,7 +60,7 @@ ms.locfileid: "57628663"
 
 - [**ListView**](../controls-and-patterns/lists.md)
 - [**GridView**](../controls-and-patterns/lists.md)
-- [**樹狀檢視**](../controls-and-patterns/tree-view.md)
+- [**TreeView**](../controls-and-patterns/tree-view.md)
 - [**NavigationView**](../controls-and-patterns/navigationview.md)
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
@@ -282,13 +282,13 @@ ms.locfileid: "57628663"
 
 ## <a name="reveal-and-the-fluent-design-system"></a>顯色和 Fluent Design 系統
 
- Fluent Design 系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 顯色是將光源加入應用程式中的 Fluent Design 系統元件。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](../fluent-design-system/index.md)。
+ Fluent Design 系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 顯色是將光源加入應用程式中的 Fluent Design 系統元件。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](/windows/apps/fluent-design-system)。
 
 ## <a name="related-articles"></a>相關文章
 
 - [RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
 - [Acrylic](acrylic.md)
 - [撰寫效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
-- [適用於 UWP 的 Fluent 設計](../fluent-design-system/index.md)
+- [適用於 UWP 的 Fluent 設計](/windows/apps/fluent-design-system)
 - [在系統中的科學：Fluent 設計和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [在系統中的科學：Fluent Design and 光線](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

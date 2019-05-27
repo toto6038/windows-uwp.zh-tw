@@ -3,13 +3,16 @@ title: Windows 10 中的協助工具
 description: 此頁面提供您開始開發可存取的 Windows 應用程式的資訊。
 ms.topic: article
 ms.date: 04/03/2019
+ms.localizationpriority: medium
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
 keywords: 在 Windows 10 中，協助工具，建置可存取的 win32 應用程式，建置可存取的 UWP 應用程式，建置可存取的 WPF 應用程式，建置可存取的 WinForms 應用程式的協助工具
-ms.openlocfilehash: 2b9a6ad9157d08a802e589368a9baba592356437
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: b818b99ebf896b2d2de219d2eedbfd101f3a5caa
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984518"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214999"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的協助工具
 

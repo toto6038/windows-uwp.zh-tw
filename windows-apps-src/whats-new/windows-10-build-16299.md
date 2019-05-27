@@ -5,12 +5,12 @@ keywords: 新功能, 更新, 功能, 全新, Windows 10, 1709, 10 月, 最新版
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5179b4615d1b7ada40e064c21991fee3d9dbb60e
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 2d2a4e657d9fe574131625b2ab2374700dc59cdf
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162693"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984144"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>適用於開發人員的 Windows 10 (組建 16299) 的新功能
 
@@ -54,7 +54,7 @@ Xbox Live | 我們已經為 Xbox Live 開發人員新增關於 UWP 遊戲和 Xbo
 應用程式服務與延伸模組 | 我們加入了新指南[建立和使用應用程式延伸模組](../launch-resume/how-to-create-an-extension.md)，可協助您撰寫和裝載通用 Windows 平台 (UWP) 應用程式延伸模組，透過使用者可從 Microsoft Store 安裝的套件來擴充應用程式。 </br></br> 我們加入了新指南[透過服務、延伸模組和套件擴充您的應用程式](../launch-resume/extend-your-app-with-services-extensions-packages.md)，將 Windows 10 中您可用來擴充及組件化應用程式的各種技術分門別類。
 背景工作 | 我們加入了三份指南，可協助您充分運用背景工作：</br></br> * [無限期地執行在背景中](../launch-resume/run-in-the-background-indefinetly.md)沒有任何背景或延伸的執行節流的裝置上使用所有可用的資源。 這適用於企業 UWP app 和不會提交至 Microsoft Store 的 UWP app。 </br></br> * [觸發背景工作從應用程式內](../launch-resume/trigger-background-task-from-app.md)啟動背景工作從應用程式內。 </br></br>* [更新您的 UWP 應用程式時，執行背景工作](../launch-resume/run-a-background-task-during-updatetask.md)建立 UWP 應用程式會更新時執行的背景工作。
 Cortana | 使用 [Cortana 技能套件](https://docs.microsoft.com/cortana/skills/overview)可新增並測試技能，以擴充 Cortana 的原有功能，並讓它與您的應用程式和服務互動。
-傳統型橋接器 | 我們加入了三份指南，協助您新增適用於 Windows 10 傳統型應用程式的現代化體驗： </br>* [增強您的桌面應用程式適用於 Windows 10](../porting/desktop-to-uwp-enhance.md)引導來找到並參考正確的檔案，並再撰寫程式碼來照亮 UWP 體驗 Windows 10 使用者。 </br></br>* [擴充您的桌面應用程式與現代化 UWP 元件](../porting/desktop-to-uwp-extend.md)來納入最新的 XAML Ui 和其他必須在 UWP 應用程式容器中執行的 UWP 體驗。 </br></br>* [您應用程式移轉至通用 Windows 平台](../porting/desktop-to-uwp-migrate.md)WPF、 Windows Forms、 UWP、 Android 和 iOS 應用程式之間共用程式碼。
+傳統型橋接器 | 我們加入了三份指南，協助您新增適用於 Windows 10 傳統型應用程式的現代化體驗： </br>* [增強您的桌面應用程式適用於 Windows 10](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)引導來找到並參考正確的檔案，並再撰寫程式碼來照亮 UWP 體驗 Windows 10 使用者。 </br></br>* [擴充您的桌面應用程式與現代化 UWP 元件](/windows/apps/desktop/modernize/desktop-to-uwp-extend)來納入最新的 XAML Ui 和其他必須在 UWP 應用程式容器中執行的 UWP 體驗。 </br></br>* [您應用程式移轉至通用 Windows 平台](/windows/apps/desktop/modernize/desktop-to-uwp-migrate)WPF、 Windows Forms、 UWP、 Android 和 iOS 應用程式之間共用程式碼。
 傳統型橋接器封裝 | Visual Studio 引進了新的[封裝專案](../porting/desktop-to-uwp-packaging-dot-net.md)，讓您不必執行以往封裝完全信任傳統型應用程式過程中需要執行的所有手動步驟。 只需加入封裝專案、參考桌面專案，然後按 F5 對您的應用程式進行偵錯。 不需進行任何手動調整。 這個有效率的全新體驗可以大幅改善舊版 Visual Studio 中所提供的體驗。
 診斷和執行緒處理 | 新的診斷 API 提供執行應用程式的相關資訊： </br></br>* [AppMemoryReport](https://docs.microsoft.com/uwp/api/Windows.System.AppMemoryReport) 類別提供應用程式總認可限制、私人認可使用量及其他項目的相關資訊。 </br>* [AppDiagnosticInfo](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfo) 類別現在可以監控應用程式或工作的執行狀態，並提供執行狀態變更時的通知。 </br>* [MemoryManager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 類別有新的方法來設定應用程式記憶體的使用量限制並報告預期的應用程式記憶體使用量限制。 </br></br>您可以依照優先順序佇列工作，並使用 [DispatcherQueue](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue) 類別在不同的執行緒上執行工作。 此功能也能透過 [CreateDispatcherQueueController](https://msdn.microsoft.com/library/windows/desktop/mt826210.aspx) 功能在 Win32 上使用。
 EdgeHTML 16 | 為 Microsoft Edge 和 JS 型通用 Windows 平台應用程式提供動力的 Web 平台已更新至 EdgeHTML 16，並且現在包含 F12 開發人員工具的重大改進、支援 CSS 格線版面配置，以及其他數個重要功能。 </br></br> * Microsoft Edge 現在支援 [CSS 格線版面配置](https://docs.microsoft.com/microsoft-edge/dev-guide/css/grid-layout)。 格線版面配置定義二維的格線型版面配置系統，可提供比使用浮點數或指令碼定位更高的版面配置流暢度。</br></br> * [Microsoft Edge 之 F12 DevTools 文件](https://docs.microsoft.com/microsoft-edge/f12-devtools-guide)已更新，改進穩定性和效能。 此外也加入新功能，用以最佳化您的開發體驗。 </br></br>* 僅限 Microsoft Edge，[WebVR](https://docs.microsoft.com/microsoft-edge/webvr/) 已新增支援[運動控制器](https://docs.microsoft.com/microsoft-edge/webvr/input#controller-buttons)和多種 [Windows Mixed Reality 頭戴式裝置](https://docs.microsoft.com/microsoft-edge/webvr/hardware)。 WebVR 也已最佳化為支援高達每秒 90 個畫面格。 </br></br> 請參閱 [Microsoft Edge 開發人員指南](https://docs.microsoft.com/microsoft-edge/dev-guide) 以取得完整的變更和新支援 API 清單。

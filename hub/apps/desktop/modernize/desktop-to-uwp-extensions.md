@@ -5,13 +5,15 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: a7815639c8dafa555be6d4f0eac0eb07b43dba98
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 063106362a36aa32d0874be15dd589b5fb573409
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984448"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214942"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>整合 Windows 10 和 UWP 的傳統型應用程式封裝
 
@@ -408,7 +410,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 
 使用延伸模組來識別這些資料夾。 如此一來，系統可以找出並載入您放置的檔案。 將此延伸模組視為 _%PATH%_ 環境變數的替代。
 
-如果您未使用此延伸模組，系統會依序搜尋程序的套件相依性圖形、套件根資料夾，然後搜尋系統目錄 (_%SystemRoot%\system32_)。 若要深入了解，請參閱 [Windows 應用程式的搜尋順序](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps)。
+如果您未使用此延伸模組，系統會依序搜尋程序的套件相依性圖形、套件根資料夾，然後搜尋系統目錄 ( _%SystemRoot%\system32_)。 若要深入了解，請參閱 [Windows 應用程式的搜尋順序](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps)。
 
 每個套件只可以包含下列其中一個延伸模組。 這表示您可以將其中一個新增到您的主要套件，並在每個[選用套件及相關集合](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)中新增一個。
 
@@ -508,7 +510,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 * ``Single``:您的應用程式會啟動一次第一個選取的檔案。 系統會忽略其他的檔案。
 * ``Document``:針對每個所選取的檔案，會啟動您的應用程式的新獨立執行個體。
 
- 您可針對不同的檔案類型和動作，設定不同的喜好設定。 例如：您可能會想要在 *Documents* 模式中開啟 *「文件」*，以及在 *Player* 模式中開啟 *「影像」*。
+ 您可針對不同的檔案類型和動作，設定不同的喜好設定。 例如：您可能會想要在 *Documents* 模式中開啟 *「文件」* ，以及在 *Player* 模式中開啟 *「影像」* 。
 
 #### <a name="example"></a>範例
 

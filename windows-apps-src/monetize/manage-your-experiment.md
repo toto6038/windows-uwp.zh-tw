@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e5c0d0ca1b1d771df2b224cc41ec5a37e267bc9
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57594923"
@@ -30,7 +30,7 @@ ms.locfileid: "57594923"
 2. 在**您的應用程式** 之下，選取您要啟用實驗的應用程式。
 3. 在瀏覽窗格中，選取 **[服務]**，然後選取 **[實驗]**。
 4. 在 **\[專案\]** 區段的專案表格中，展開包含您實驗的專案，接著執行下列其中一項：
-  * 按一下實驗的 **\[啟用]\** 連結。 您的實驗即會新增到接近頁面頂端的 **\[作用中的實驗\]** 區段。
+  * 按一下實驗的 **\[啟用\]** 連結。 您的實驗即會新增到接近頁面頂端的 **\[作用中的實驗\]** 區段。
   * 按一下實驗名稱、捲動到實驗頁面底部，然後按一下 **\[啟用\]**。
 
 > [!IMPORTANT]

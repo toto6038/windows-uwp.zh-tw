@@ -1,17 +1,17 @@
 ---
 description: C++/WinRT 的新聞和變更。
 title: 什麼是新的 C + /cli WinRT
-ms.date: 04/02/2019
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 新聞、 什麼的 new
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8ee10450a7a346c1ae032240aaecc65e7f87822d
-ms.sourcegitcommit: 940645c705865ba9635ccae2da9d917420faf608
+ms.openlocfilehash: b84736e41e039d350a849c55fead008cbab5fdea
+ms.sourcegitcommit: bc64db47b6ff326f15cac15fc2cfd709fa7f877b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58812607"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65626219"
 ---
 # <a name="whats-new-in-cwinrt"></a>什麼是新的 C + /cli WinRT
 
@@ -28,7 +28,7 @@ ms.locfileid: "58812607"
 
 - `cppwinrt.exe`工具現在隨附於 Microsoft.Windows.CppWinRT NuGet 封裝中，與此工具會產生隨選的每個專案的平台 投影標頭。 因此，`cppwinrt.exe`工具不再相依於 Windows SDK （雖然此工具仍會隨附的 SDK 相容性的理由）。
 - `cppwinrt.exe` 現在會產生每個平台/組態特有中繼資料夾下 ($IntDir) 啟用平行建置的投影標頭。
-- C++/WinRT 建置支援 （屬性/目標） 現在已完整記載，萬一您想要以手動方式自訂您的專案檔。 請參閱[Microsoft.Windows.CppWinRT NuGet 套件](https://github.com/Microsoft/xlang/tree/user/sjones/cppwinrt_nuget/src/package/nuget)。
+- C++/WinRT 建置支援 （屬性/目標） 現在已完整記載，萬一您想要以手動方式自訂您的專案檔。 請參閱[Microsoft.Windows.CppWinRT NuGet 套件](https://github.com/Microsoft/xlang/blob/master/src/package/cppwinrt/nuget/readme.md)。
 - 已進行許多 bug 修正。
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>若要變更C++2.0 版的 /WinRT
@@ -261,7 +261,7 @@ struct MainPage : PageT<MainPage>
 
 ## <a name="news-and-changes-in-windows-sdk-version-100177630-windows-10-version-1809"></a>新聞和變更，請在 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)
 
-下表包含新聞和變為[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)中的 Windows sdk 最新的正式推出版本，這是 10.0.17763.0 (Windows 10 版本 1809年)。 這些變更也可能會出現在較新的 SDK Insider Preview 版本。
+下表包含新聞和變更C++Windows sdk 版本 10.0.17763.0 的 /WinRT (Windows 10 版本 1809年)。
 
 | 新增或變更的功能 | 其他資訊 |
 | - | - |

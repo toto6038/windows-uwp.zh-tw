@@ -1,17 +1,17 @@
 ---
 description: Windows 執行階段是參考計數式系統；在這樣的系統中，請務必了解強式和弱式參考的重要性以及之間的區別。
 title: C++/WinRT 中的弱式參考
-ms.date: 10/03/2018
+ms.date: 05/16/2019
 ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 強式、 弱的參考
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0e2e40daaf777e36094b698d058f21840b1804c8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: c9fb112c6f83fa7bd9a3612916efd2527d821c29
+ms.sourcegitcommit: 6c7e1aa3bd396a1ad714e8b77c0800759dc2d8e1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291826"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65821076"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>中的強式和弱式參考C++/WinRT
 
@@ -19,12 +19,13 @@ Windows 執行階段是參考計數系統;務必要了解的重要性，以及�
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>安全地存取*這*類別成員協同程式中的指標
 
-在下方列出的程式碼會顯示為類別成員函式的協同程式的典型範例。
+在下方列出的程式碼會顯示為類別成員函式的協同程式的典型範例。 您可以複製-貼上此範例中為指定的檔案中的新**Windows 主控台應用程式 (C++/WinRT)** 專案。
 
 ```cppwinrt
 // pch.h
 #pragma once
 #include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 // main.cpp : Defines the entry point for the console application.
@@ -101,11 +102,14 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-因為C++/WinRT 物件直接或間接衍生自[ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) ] 範本， C++/WinRT 物件都可以呼叫其[ **implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)受保護成員函式來擷取的強式參考其*這*指標。 請注意，則不需要實際使用`strong_this`變數，只呼叫**get_strong**您的參考計數會遞增，並讓您隱含*這*有效的指標。
+C++/WinRT 類別直接或間接衍生自[ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)範本。 因此， C++/WinRT 物件都可以呼叫其[ **implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)受保護成員函式來擷取的強式參考其*這*指標。 請注意，則不需要實際使用`strong_this`上述程式碼範例中的變數，只要呼叫**get_strong**遞增C++/WinRT 物件的參考計數，並讓其隱含*此*有效的指標。
+
+> [!IMPORTANT]
+> 因為**get_strong**的成員函式**winrt::implements**結構的範本，您可以呼叫它只能從直接或間接衍生自類別**winrt::implements**，例如C++/WinRT 類別。 如需詳細資訊，關於衍生自**winrt::implements**，和範例，請參閱[作者 Api 與C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)。
 
 這個方法可以解決的問題，先前我們進到步驟 4 時。 即使所有其他參考的類別執行個體消失，協同程式已保證其相依性是穩定的預防措施。
 
-如果強式參考並不恰當，則您可以改為呼叫[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)若要擷取的弱式參考*這*。 只要確認您可以存取之前擷取的強式參考*這*。
+如果強式參考並不恰當，則您可以改為呼叫[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)若要擷取的弱式參考*這*。 只要確認您可以存取之前擷取的強式參考*這*。 同樣地， **get_weak**的成員函式**winrt::implements**結構的範本。
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -244,6 +248,9 @@ event_source.Event([this](auto&& ...)
 ### <a name="the-solution"></a>解決方案
 
 解決方法是擷取的強式參考。 強式參考*並未*遞增參考計數，以及它*沒有*維持目前的物件。 您只是宣告擷取變數 (稱為`strong_this`在此範例中)，並將它初始化藉由呼叫[ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)，表示擷取的強式參考我們*這*指標。
+
+> [!IMPORTANT]
+> 因為**get_strong**的成員函式**winrt::implements**結構的範本，您可以呼叫它只能從直接或間接衍生自類別**winrt::implements**，例如C++/WinRT 類別。 如需詳細資訊，關於衍生自**winrt::implements**，和範例，請參閱[作者 Api 與C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)。
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)

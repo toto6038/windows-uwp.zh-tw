@@ -1,16 +1,16 @@
 ---
 description: 可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 本主題示範如何實作和使用可觀察屬性，以及如何將 XAML 控制項繫結至它。
 title: XAML 控制項；繫結一個 C++/WinRT 屬性
-ms.date: 08/21/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制, 繫結, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bdbfef54b799f8dff23ad739007cec9fef98af8
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 2fe5c03eebd2b68e98ae908ea4624471fbd2b3d2
+ms.sourcegitcommit: d23dab1533893b7fe0f01ca6eb273edfac4705e6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921724"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65627662"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結一個 C++/WinRT 屬性
 可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題說明如何實作可觀察的屬性，在[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何在 XAML 控制項繫結至它們。
@@ -27,7 +27,7 @@ XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯
 > 如需安裝和使用的資訊C++WinRT Visual Studio 擴充功能 (VSIX) 和 NuGet 套件 （其同時提供專案範本，並建置支援），請參閱[Visual Studio 支援C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="create-a-blank-app-bookstore"></a>建立空白的應用程式 (Bookstore)
-在 Microsoft Visual Studio 中，從建立新的專案開始。 建立**Visual C++**   >  **Windows Universal** > **空白應用程式 (C++/WinRT)** 專案，並將它命名*Bookstore*。
+在 Microsoft Visual Studio 中，從建立新的專案開始。 建立**空白應用程式 (C++/WinRT)** 專案，並將它命名*書店*。
 
 我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 我們在相同的編譯單位裡撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且我們會使用 C++/WinRT 撰寫和使用它。
 
@@ -61,7 +61,6 @@ namespace Bookstore
 ```cppwinrt
 // BookSku.h
 #pragma once
-
 #include "BookSku.g.h"
 
 namespace winrt::Bookstore::implementation
@@ -89,6 +88,7 @@ namespace winrt::Bookstore::implementation
 // BookSku.cpp
 #include "pch.h"
 #include "BookSku.h"
+#include "BookSku.g.cpp"
 
 namespace winrt::Bookstore::implementation
 {
@@ -142,18 +142,17 @@ namespace Bookstore
 }
 ```
 
-儲存並建置。 從 `Generated Files` 資料夾將 `BookstoreViewModel.h` 與 `BookstoreViewModel.cpp` 複製到專案資料夾，在專案中包含它們。 開啟這些檔案，並實作的執行階段類別，如下所示。 請注意如何，請在`BookstoreViewModel.h`，我們加入`BookSku.h`，其中宣告的實作類型 (**winrt::Bookstore::implementation::BookSku**)。 我們要還原預設建構函式，藉由移除和`= delete`。
+儲存並建置。 從 `Generated Files\sources` 資料夾將 `BookstoreViewModel.h` 與 `BookstoreViewModel.cpp` 複製到專案資料夾，在專案中包含它們。 開啟這些檔案，並實作的執行階段類別，如下所示。 請注意如何，請在`BookstoreViewModel.h`，我們加入`BookSku.h`，其中宣告的實作類型**BookSku** (也就是**winrt::Bookstore::implementation::BookSku**)。 我們要移除和`= default`從預設的建構函式。
 
 ```cppwinrt
 // BookstoreViewModel.h
 #pragma once
-
 #include "BookstoreViewModel.g.h"
 #include "BookSku.h"
 
 namespace winrt::Bookstore::implementation
 {
-    struct BookstoreViewModel final : BookstoreViewModelT<BookstoreViewModel>
+    struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
     {
         BookstoreViewModel();
 
@@ -169,6 +168,7 @@ namespace winrt::Bookstore::implementation
 // BookstoreViewModel.cpp
 #include "pch.h"
 #include "BookstoreViewModel.h"
+#include "BookstoreViewModel.g.cpp"
 
 namespace winrt::Bookstore::implementation
 {
@@ -208,9 +208,9 @@ namespace Bookstore
 
 如果您省略的 include `BookstoreViewModel.idl` (查看的清單`MainPage.idl`上方)，則您會看到錯誤**預期\<附近"MainViewModel"**。 請確定您將所有類型都保留在相同的命名空間中為另一個秘訣： 所示的程式碼清單的命名空間。
 
-若要解決我們預期會看見此錯誤，您現在必須將複製的存取子虛設常式**MainViewModel**屬性從產生的檔案 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`並`MainPage.cpp`)，並`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
+若要解決我們預期會看見此錯誤，您現在必須將複製的存取子虛設常式**MainViewModel**屬性從產生的檔案 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`並`MainPage.cpp`)，並`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。 接下來說明的步驟，若要這麼做。
 
-在  `\Bookstore\Bookstore\MainPage.h`，包括`BookstoreViewModel.h`，其中宣告的實作類型 (**winrt::Bookstore::implementation::BookstoreViewModel**)。 加入私用成員，才能儲存檢視的模型。 請注意，按照 **Bookstore::BookstoreViewModel**，即為投影類型，實作屬性存取子函式 (以及 member m_mainViewModel)。 實作類型是在相同的專案 （編譯單位） 為應用程式，因此我們建構 m_mainViewModel 透過建構函式多載， `nullptr_t`。 也會移除**MyProperty**屬性。
+在  `\Bookstore\Bookstore\MainPage.h`，包括`BookstoreViewModel.h`，其中宣告的實作類型**BookstoreViewModel** (也就是**winrt::Bookstore::implementation::BookstoreViewModel**)。 加入私用成員，才能儲存檢視的模型。 請注意，將屬性存取子函式 （和成員 m_mainViewModel） 實作的投影的型別方面**BookstoreViewModel** (即**Bookstore::BookstoreViewModel**)。 實作類型是在相同的專案 （編譯單位） 為應用程式，因此我們建構 m_mainViewModel 透過建構函式多載， `nullptr_t`。 也會移除**MyProperty**屬性。
 
 ```cppwinrt
 // MainPage.h
@@ -240,6 +240,7 @@ namespace winrt::Bookstore::implementation
 // MainPage.cpp
 #include "pch.h"
 #include "MainPage.h"
+#include "MainPage.g.cpp"
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
@@ -278,8 +279,8 @@ namespace winrt::Bookstore::implementation
 
 ## <a name="important-apis"></a>重要 API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
-* [winrt::make 函式範本](/uwp/cpp-ref-for-winrt/make)
+* [winrt::make 函式樣板](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>相關主題
-* [使用 C++/WinRT 來使用 API](consume-apis.md)
+* [使用 C++/WinRT 取用 API](consume-apis.md)
 * [使用 C++/WinRT 撰寫 API](author-apis.md)

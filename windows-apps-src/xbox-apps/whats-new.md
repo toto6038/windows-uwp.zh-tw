@@ -8,7 +8,7 @@ ms.assetid: fe63c527-8f06-43a5-868f-de909f5664b3
 ms.localizationpriority: medium
 ms.openlocfilehash: aff65e5f1b4771cbb33bc8b8219224042b7bf7e2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57660683"
@@ -39,7 +39,7 @@ Xbox One 上的 UWP 應用程式現在支援瀏覽回到先前的 app。 若要�
 Windows Device Portal (WDP) 現在包含主機設定的其他支援。 
 
 ## <a name="you-can-now-switch-the-type-of-your-uwp-title-between-app-and-game"></a>您現在可以在「應用程式」與「遊戲」之間切換 UWP 標題的類型
-在「應用程式」與「遊戲」之間切換 UWP 標題的類型，可讓您測試遊戲案例，而不發行至市集。 在開發人員首頁，選取**\[遊戲與應用程式\]** 窗格中的應用程式，按控制器上的 \[檢視\] 按鈕，選取**\[App details\]** (App 詳細資料)，然後變更至「應用程式」或「遊戲」的類型。
+在「應用程式」與「遊戲」之間切換 UWP 標題的類型，可讓您測試遊戲案例，而不發行至市集。 在開發人員首頁，選取 **[遊戲與應用程式]** 窗格中的應用程式，按控制器上的 \[檢視\] 按鈕，選取 **[App details]** (App 詳細資料)，然後變更至「應用程式」或「遊戲」的類型。
 
 ## <a name="see-also"></a>請參閱
 - [已知問題](known-issues.md)

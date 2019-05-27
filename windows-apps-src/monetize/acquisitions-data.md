@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, 廣告網路, 應用程式中繼資料
 ms.localizationpriority: medium
 ms.openlocfilehash: beca5620f25713e8a07e5dbaf64e955d920702a7
 ms.sourcegitcommit: df8e4143e81a1c5fe1aa5f14407b8dd5f155a12e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/14/2019
 ms.locfileid: "57829863"
@@ -48,7 +48,7 @@ ms.locfileid: "57829863"
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，*頂端 = 10000，並略過 = 0*擷取的資料，第一次 10000 個資料列*頂端 = 10000，並略過 = 10000*擷取的資料，等下一步 10000 個資料列。  | 否 |
 | filter | 字串 | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 必須以篩選參數中的單引號括住的字串值。 例如，*filter=market eq 'US' and gender eq 'm'*。  <br/> 您可以在回應本文中指定下列欄位： <ul><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**sandboxId**</li></ul> | 否 |
 | aggregationLevel | 字串 | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：**day**、**week** 或 **month**。 如果沒有指定，則預設為 **day**。  | 否 |
-| orderby | 字串 | 對每個下載數的結果資料值做出排序的陳述式。 語法是*orderby = field [order]，欄位 [order]，...**field* 參數可以是下列其中一個字串： <ul><li>**date**</li><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**paymentInstrumentType**</li><li>**sandboxId**</li><li>**xboxTitleIdHex**</li></ul> *order* 參數為選擇性，並可以是 **asc** 或 **desc**，以指定每個欄位的遞增或遞減順序。 預設為 **asc**。 下列為 *orderby* 字串的範例：*orderby=date,market*  | 否 |
+| orderby | 字串 | 對每個下載數的結果資料值做出排序的陳述式。 語法是 *orderby = field [order]，欄位 [order]，...* *field* 參數可以是下列其中一個字串： <ul><li>**date**</li><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**paymentInstrumentType**</li><li>**sandboxId**</li><li>**xboxTitleIdHex**</li></ul> *order* 參數為選擇性，並可以是 **asc** 或 **desc**，以指定每個欄位的遞增或遞減順序。 預設為 **asc**。 下列為 *orderby* 字串的範例：*orderby=date,market*  | 否 |
 | groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位： <ul><li>**date**</li><li>**applicationName**</li><li>**acquisitionType**</li><li>**ageGroup**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**paymentInstrumentType**</li><li>**sandboxId**</li><li>**xboxTitleIdHex**</li></ul> 傳回的資料列將包含 *groupby* 參數中指定的欄位，以及下列項目： <ul><li>**date**</li><li>**applicationId**</li><li>**acquisitionQuantity**</li></ul> *Groupby*參數可以搭配 aggregationLevel 參數。 例如： *& groupby = 年齡群組、 市場與 aggregationLevel = 週*  | 否 |
 
 ### <a name="request-example"></a>要求範例

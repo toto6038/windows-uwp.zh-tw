@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4ba3a45701d82ad0b43591469bf390190ec18db0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1a396377eb332052ae7f238a23865f2b7dc0aa16
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642223"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984176"
 ---
 # <a name="navigation-view"></a>瀏覽檢視
 
@@ -250,7 +250,7 @@ NavigationView 中時，我們會建議您的內容區域的 12px 邊界**最小
 
 根據預設，[導覽] 檢視會自動變更其根據的螢幕空間可供其使用的顯示模式。 [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth)並[ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth)屬性指定的顯示模式變更中斷點。 您可以修改這些值，以自訂的自動調整的顯示模式行為。
 
-### <a name="default"></a>預設值
+### <a name="default"></a>預設
 
 當 PaneDisplayMode 設為其預設值**自動**，適應性行為是要示範：
 
@@ -356,7 +356,7 @@ _設定為 LeftMinimal PaneDisplayMode，[導覽] 檢視_
 > [!TIP]
 > 當您使用 AdaptiveTrigger.MinWindowWidth 時，當視窗超出指定的最小寬度時，會觸發的可見狀態。 這表示預設的 XAML 定義窄 視窗中，而且 VisualState 定義視窗變寬時，會套用的修改。 預設 PaneDisplayMode 導覽檢視為自動，因此當視窗寬度小於或等於 CompactModeThresholdWidth，LeftMinimal 導覽會使用。 當視窗變寬時，VisualState 覆寫預設值，並會使用上方導覽。
 
-## <a name="navigation"></a>瀏覽
+## <a name="navigation"></a>巡覽
 
 導覽檢視不會自動執行任何瀏覽工作。 當使用者點選瀏覽項目上時，瀏覽 檢視顯示為已選取該項目，並引發[ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked)事件。 如果新的項目被選取，會產生 tap [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged)也會引發事件。
 
@@ -624,7 +624,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 }
 ```
 
-以下是[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/index)版**NavView_ItemInvoked**處理常式，從C#上述程式碼範例。 技巧，在 C + + WinRT 處理常式需要您先儲存 (中的標記[ **NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) 您要瀏覽頁面的完整型別名稱。 在處理常式中的值進行 unbox 處理，將它變成[ **Windows::UI::Xaml::Interop::TypeName** ](/uwp/api/windows.ui.xaml.interop.typename)物件，並使用它來瀏覽至 [目的地] 頁面。 對應變數，名為無須`_pages`中看到C#範例中，而且您將能夠建立單元測試，以確認您的標記內的值屬於有效的型別。 另請參閱[Boxing 和 unboxing 的純量值，以 IInspectable，使用 C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/boxing)。
+以下是[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)新版**NavView_ItemInvoked**處理常式，從C#上述程式碼範例。 技術C++/WinRT 處理常式需要您先儲存 (中的標記[ **NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) 的完整類型名稱，您要瀏覽的頁面。 在處理常式中的值進行 unbox 處理，將它變成[ **Windows::UI::Xaml::Interop::TypeName** ](/uwp/api/windows.ui.xaml.interop.typename)物件，並使用它來瀏覽至 [目的地] 頁面。 對應變數，名為無須`_pages`中看到C#範例中，而且您將能夠建立單元測試，以確認您的標記內的值屬於有效的型別。 另請參閱[Boxing 和 unboxing 的純量值，以與 IInspectable C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing)。
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* sender */, Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const & args)
@@ -715,4 +715,4 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 - [NavigationView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 - [主要/詳細資料](master-details.md)
 - [瀏覽基本知識](../basics/navigation-basics.md)
-- [Fluent 設計 UWP 概觀](../fluent-design-system/index.md)
+- [Fluent 設計 UWP 概觀](/windows/apps/fluent-design-system)

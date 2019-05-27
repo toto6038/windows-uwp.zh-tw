@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4332bd0b19d381937e477efc472634d6d81afd58
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b7e8be3a2c2f3d6d4ecf3ade708741fa323167fc
+ms.sourcegitcommit: 13fe5d04bdb43c75d0fc4de18c2c3d4ae58ff982
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651083"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66221034"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空間與命名空間對應
 
@@ -49,6 +49,33 @@ XAML 檔案幾乎永遠在它的根元素中宣告預設的 XAML 命名空間。
 
 XAML 語言會指定特定語言元素，這些元素中的每個元素都應該透過針對 XAML 命名空間而運作的 XAML 處理器實作來進行存取。 XAML 語言 XAML 命名空間的 "x:" 對應慣例後面接著專案範本、範例程式碼以及語言功能的文件。 XAML 語言命名空間定義數個即使是使用 C++、C# 或 Visual Basic 的基本 Windows 執行階段 app 也必須使用的常用功能。 例如，為了透過部分類別將任何程式碼後置加入到 XAML 檔案，您必須在相關的 XAML 檔案的根元素中將這個類別命名為 [x:Class 屬性](x-class-attribute.md)。 或者，XAML 頁面中定義為 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)中的索引資源的任何元素，就不一定必須在物件元素上設定 [x:Key 屬性](x-key-attribute.md)。
 
+## <a name="code-namespaces-that-map-to-the-default-xaml-namespace"></a>對應至預設 XAML 命名空間的程式碼命名空間
+
+下列項目是目前對應至預設 XAML 命名空間的程式碼命名空間的清單。
+
+* Windows.UI
+* Windows.UI.Xaml
+* Windows.UI.Xaml.Automation
+* Windows.UI.Xaml.Automation.Peers
+* Windows.UI.Xaml.Automation.Provider
+* Windows.UI.Xaml.Automation.Text
+* Windows.UI.Xaml.Controls
+* Windows.UI.Xaml.Controls.Primitives
+* Windows.UI.Xaml.Data
+* Windows.UI.Xaml.Documents
+* Windows.UI.Xaml.Input
+* Windows.UI.Xaml.Interop
+* Windows.UI.Xaml.Markup
+* Windows.UI.Xaml.Media
+* Windows.UI.Xaml.Media.Animation
+* Windows.UI.Xaml.Media.Imaging
+* Windows.UI.Xaml.Media.Media3D
+* Windows.UI.Xaml.Navigation
+* Windows.UI.Xaml.Resources
+* Windows.UI.Xaml.Shapes
+* Windows.UI.Xaml.Threading
+* Windows.UI.Text
+
 <span id="other-XAML-namespaces"/>
 
 ## <a name="other-xaml-namespaces"></a>其他 XAML 命名空間
@@ -73,7 +100,7 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 ### <a name="local-and-common"></a>**local:** 與 **common:**
 
-"local:" 是一個前置詞，通常會針對範本化的 UWP app 專案，在 XAML 頁面內進行對應。 對應這個前置詞，以便參考建立來包含 [x:Class 屬性](x-class-attribute.md)的相同命名空間，以及適用於所有 XAML 檔案 (包含 app.xaml 在內) 的程式碼。 只要您在這個相同命名空間中定義任何想要在 XAML 中使用的自訂類別，就可以使用 **local:** 前置詞，在 XAML 中參考您的自訂類型。 來自範本化 UWP app 專案的相關前置詞為 **common:**。 這個前置詞會參考巢狀的 "Common" 命名空間 (其中包含像是轉換器和命令的公用程式類別)，而您可以在 [**方案總管**] 檢視的 Common 資料夾中找到定義。
+"local:" 是一個前置詞，通常會針對範本化的 UWP app 專案，在 XAML 頁面內進行對應。 對應這個前置詞，以便參考建立來包含 [x:Class 屬性](x-class-attribute.md)的相同命名空間，以及適用於所有 XAML 檔案 (包含 app.xaml 在內) 的程式碼。 只要您在這個相同命名空間中定義任何想要在 XAML 中使用的自訂類別，就可以使用 **local:** 前置詞，在 XAML 中參考您的自訂類型。 來自範本化 UWP app 專案的相關前置詞為 **common:** 。 這個前置詞會參考巢狀的 "Common" 命名空間 (其中包含像是轉換器和命令的公用程式類別)，而您可以在 [**方案總管**] 檢視的 Common 資料夾中找到定義。
 
 ### <a name="vsm"></a>**vsm:**
 
@@ -103,7 +130,7 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 如果您是從主 app 定義或頁面定義參考自訂類型，這些類型不需要進一步進行相依組件設定即可使用，但是您仍然必須對應包含這些類型的程式碼命名空間。 常用慣例是為任何特定 XAML 頁面的預設程式碼命名空間對應前置詞 "local"。 這個慣例通常是包含在 XAML 專案的起始專案範本內。
 
-## <a name="attached-properties"></a>附加屬性
+## <a name="attached-properties"></a>附加的屬性
 
 如果您正在參考附加屬性，附加屬性名稱的 owner-type 部份必須位於預設的 XAML 命名空間或做為前置詞。 只有在極少數的情況下，才會將前置詞屬性從其元素中獨立出來，但有時會有一種情況必須這樣做，特別是針對自訂的附加屬性。 如需詳細資訊，請參閱[自訂附加屬性](custom-attached-properties.md)。
 
@@ -112,7 +139,7 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 * [XAML 概觀](xaml-overview.md)
 * [XAML 語法指南](xaml-syntax-guide.md)
 * [建立 Windows 執行階段元件，在C#和 Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [C#VB 和 c + + 專案範本可用於 Windows 執行階段應用程式](https://msdn.microsoft.com/library/windows/apps/hh768232)
+* [C#VB，和C++適用於 Windows 執行階段應用程式專案範本](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [移轉的 Silverlight 或 WPF XAML/程式碼到 Windows 執行階段應用程式](https://msdn.microsoft.com/library/windows/apps/br229571)
  
 

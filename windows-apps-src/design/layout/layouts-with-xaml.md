@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d07a90ce34e9b4613eed6782338cbd889d7935c9
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 53a69393d945be1640f733b47410f88631fc7714
+ms.sourcegitcommit: 13fe5d04bdb43c75d0fc4de18c2c3d4ae58ff982
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58081870"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66221044"
 ---
 # <a name="responsive-layouts-with-xaml"></a>搭配 XAML 的回應式版面配置
 
@@ -27,7 +27,7 @@ XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中�
 我們將在此處討論如何使用 XAML 屬性和版面配置面板，建立流暢版面配置。
 
 ### <a name="layout-properties"></a>版面配置屬性
-版面配置屬性控制元素的大小與位置。 若要建立流暢版面配置，請針對元素使用自動或等比例調整大小，並視需要允許版面配置面板放置其子系。 
+版面配置屬性控制元素的大小與位置。 若要建立流暢的版面配置，使用自動或按比例調整大小的項目，並允許視需要放置其子系的版面配置面板。 
 
 以下是一些常見的版面配置屬性，以及如何使用它們來建立流暢版面配置。
 
@@ -40,7 +40,7 @@ XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中�
 > [!NOTE]
 > 元素是否會調整大小以符合其內容或容器，取決於父容器如何處理調整其子項的大小。 如需詳細資訊，請參閱本文後續內容中的 [版面配置面板](#layout-panels)。
 
-等比例調整大小 (亦稱為 *「星號調整」*)，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML，星狀的值會表示為\*(或*n* \*加權的星狀調整大小時)。 例如，若要指定該單一資料行大於 5 倍的 2 欄版面配置中的第二個資料行，請使用"5\*"和"\*」 的[**寬度**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx)中的屬性[**ColumnDefinition** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx)項目。
+等比例調整大小 (亦稱為 *「星號調整」* )，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML，星狀的值會表示為\*(或*n* \*加權的星狀調整大小時)。 例如，若要指定該單一資料行大於 5 倍的 2 欄版面配置中的第二個資料行，請使用"5\*"和"\*」 的[**寬度**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx)中的屬性[**ColumnDefinition** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx)項目。
 
 這個範例會在具有 4 欄的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) 中結合固定、自動和等比例調整大小。
 
@@ -348,7 +348,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 **使用檔案名稱**
 
-若要使用限定詞名稱搭配檔案，請使用下列格式：*[pageName]*.DeviceFamily-*[qualifierString]*.xaml。
+若要使用限定詞名稱搭配檔案，請使用下列格式： *[pageName]* .DeviceFamily- *[qualifierString]* .xaml。
 
 讓我們看一個名為 MainPage.xaml 的檔案範例。 若要建立適用於平板電腦裝置的檢視，請將 XAML 檢視命名為 MainPage.DeviceFamily-Tablet.xaml。 若要建立適用於電腦裝置的檢視，請將檢視命名為 MainPage.DeviceFamily-Desktop.xaml。 以下是方案在 Microsoft Visual Studio 中看起來的樣子。
 
@@ -356,7 +356,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 **使用資料夾名稱**
 
-若要在 Visual Studio 專案中使用資料夾組織檢視，您可以使用限定詞名稱搭配資料夾。 若要這樣做，將資料夾命名為就像這樣：DeviceFamily-*[qualifierString]*。 在此案例中，每個 XAML 檢視檔案都具有相同名稱。 請勿在檔案名稱中包含限定詞。
+若要在 Visual Studio 專案中使用資料夾組織檢視，您可以使用限定詞名稱搭配資料夾。 若要這樣做，將資料夾命名為就像這樣：DeviceFamily- *[qualifierString]* 。 在此案例中，每個 XAML 檢視檔案都具有相同名稱。 請勿在檔案名稱中包含限定詞。
 
 以下提供一個範例，再次提醒，這適用於名為 MainPage.xaml 的檔案。 若要建立適用於平板電腦裝置的檢視，請建立名為 DeviceFamily-Tablet 的資料夾，並將名為 MainPage.xaml 的 XAML 檢視放置到其中。 若要建立適用於電腦裝置的檢視，請建立名為 "DeviceFamily-Desktop" 的資料夾，並將另一個名為 MainPage.xaml 的 XAML 檢視放置到其中。 以下是方案在 Visual Studio 中看起來的樣子。
 

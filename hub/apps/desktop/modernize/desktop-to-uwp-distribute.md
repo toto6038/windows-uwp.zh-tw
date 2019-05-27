@@ -5,17 +5,19 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 274f69c71890423d9962efe67cca81646a1e8e68
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 2e1aa424fe038a50a5e29364c7f8246e324dc07c
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984478"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215004"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>將傳統型應用程式封裝
 
-如果您決定[封裝傳統型應用程式中的 MSIX 套件](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)，您可以發行至 Microsoft Store 或側載應用程式封裝到一個或多個裝置。
+如果您決定[封裝傳統型應用程式中的 MSIX 套件](/windows/msix/desktop/desktop-to-uwp-root)，您可以發行至 Microsoft Store 或側載應用程式封裝到一個或多個裝置。
 
 > [!NOTE]
 > 您是否有您可能會如何轉換使用者已封裝應用程式的計劃？ 在您散布您的應用程式之前，請參閱本文中[轉換使用者至您的已封裝應用程式](#transition-users)一節，以取得一些靈感。
@@ -26,12 +28,12 @@ ms.locfileid: "65984478"
 
 應用程式發佈至 Microsoft Store 連線到廣泛的觀眾。 此外，組織的客戶可以取得您的應用程式散發給組織的內部[Microsoft Store for Business](https://www.microsoft.com/business-store)。
 
-如果您打算發佈至 Microsoft Store，提交程序中您會被要求詢問一些額外的問題。 這是因為您的封裝資訊清單宣告名為 **runFullTrust** 的受限功能，以及我們需要核准您的應用程式使用該功能。 您可以深入了解這項需求：[限制功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
+如果您打算發佈至 Microsoft Store，提交程序中您會被要求詢問一些額外的問題。 這是因為您的封裝資訊清單宣告名為 **runFullTrust** 的受限功能，以及我們需要核准您的應用程式使用該功能。 您可以深入了解這項需求：[限制功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
 您不需要登入您的應用程式，再提交至市集。
 
 >[!IMPORTANT]
-> 如果您打算在應用程式發佈至 Microsoft Store，請確定您的應用程式可在執行 Windows 10 S 的裝置上正確運作這是存放區需求。 請參閱[針對 Windows 10 S 測試您的 Windows 應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s)。
+> 如果您打算在應用程式發佈至 Microsoft Store，請確定您的應用程式可在執行 Windows 10 S 的裝置上正確運作這是存放區需求。 請參閱[針對 Windows 10 S 測試您的 Windows 應用程式](/windows/msix/desktop/desktop-to-uwp-test-windows-s)。
 
 <a id="side-load" />
 
@@ -43,7 +45,7 @@ ms.locfileid: "65984478"
 
 若要散發到其他裝置的應用程式不需將它放在存放區中，您必須取得憑證，簽署應用程式，使用該憑證，然後側載您的應用程式至那些裝置上。
 
-您可以[建立憑證](/windows/uwp/packaging/create-certificate-package-signing.md)或從受歡迎的供應商，例如 [Verisign](https://www.verisign.com/) 取得憑證。
+您可以[建立憑證](/windows/uwp/packaging/create-certificate-package-signing)或從受歡迎的供應商，例如 [Verisign](https://www.verisign.com/) 取得憑證。
 
 如果您打算發佈您的應用程式，到執行 Windows 10 S 的裝置，您的應用程式必須經過簽署的 Microsoft Store 因此您必須瀏覽市集提交程序，您可以散發到那些裝置上的應用程式之前。
 
@@ -52,9 +54,9 @@ ms.locfileid: "65984478"
 > [!IMPORTANT]
 > 請確定您憑證的發行者名稱符合您應用程式的發行者名稱。
 
-若要使用的憑證來簽署應用程式，請參閱[登入使用 SignTool 應用程式封裝](/windows/uwp/packaging/sign-app-package-using-signtool.md)。
+若要使用的憑證來簽署應用程式，請參閱[登入使用 SignTool 應用程式封裝](/windows/uwp/packaging/sign-app-package-using-signtool)。
 
-若要側載您的應用程式，到其他裝置，請參閱[Windows 10 中的 側載 LOB 應用程式](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
+若要側載您的應用程式，到其他裝置，請參閱[Windows 10 中的 側載 LOB 應用程式](/windows/application-management/sideload-apps-in-windows-10)。
 
 **影片**
 

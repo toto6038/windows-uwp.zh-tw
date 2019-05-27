@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c11ee9c5decffff57a2d443e1385398ce40d89
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3411ee4c947d809009c2185389f5513a49afce98
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658463"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215037"
 ---
 # <a name="manage-creatives"></a>管理廣告素材
 
@@ -22,7 +22,7 @@ ms.locfileid: "57658463"
 > [!NOTE]
 > 使用此 API 上傳您自己的廣告素材時，允許的廣告素材大小上限為 40 KB。 如果您提交的廣告素材檔案大於此上限，這個 API 將不會傳回錯誤，但不會成功建立行銷活動。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這些方法，您必須先進行下列動作：
 
@@ -48,7 +48,7 @@ ms.locfileid: "57658463"
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
 | Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
-| 追蹤識別碼   | GUID   | 選用。 追蹤呼叫流程的識別碼。                                  |
+| 追蹤識別碼   | GUID   | 選擇性。 追蹤呼叫流程的識別碼。                                  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -113,16 +113,16 @@ Authorization: Bearer <your access token>
 
 下列方法的要求和回應本文包含下列欄位。 下表顯示的欄位為唯讀 (亦即們無法在 PUT 方法中變更)，而且僅 POST 方法之要求本文所需的欄位。
 
-| 欄位        | 類型   |  描述      |  唯讀  | 預設值  |  POST 所需 |  
+| 欄位        | 類型   |  描述      |  唯讀  | 預設  |  POST 所需 |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  廣告素材的識別碼。     |   是    |      |    否   |       
-|  name   |  字串   |   廣告素材的名稱。    |    否   |      |  是     |       
+|  NAME   |  字串   |   廣告素材的名稱。    |    否   |      |  是     |       
 |  content   |  字串   |  廣告素材影像的內容，含 Base64 編碼格式。<br/><br/>**注意**&nbsp;&nbsp;允許的廣告素材大小上限為 40 KB。 如果您提交的廣告素材檔案大於此上限，這個 API 將不會傳回錯誤，但不會成功建立行銷活動。     |  否     |      |   是    |       
 |  height   |  整數   |   廣告素材的高度。    |    否    |      |   是    |       
 |  width   |  整數   |  廣告素材的寬度。     |  否    |     |    是   |       
-|  landingUrl   |  字串   |  如果您使用行銷活動追蹤服務例如 Kochava、AppsFlyer 或 Tune，來衡量 App 安裝分析，當您呼叫 POST 方法時，在這個欄位中指派追蹤 URL（如果指定，這個值必須是有效 URI）。 如果您未使用行銷活動追蹤服務，當您呼叫 POST 方法時略過此值（在這個情況下，就會自動建立此 URL）。   |  否    |     |   是    |       
+|  landingUrl   |  字串   |  如果您使用活動追蹤 AppsFlyer、 Kochava、 調整，Vungle 等服務來測量您的應用程式的安裝 analytics，指派您在此欄位中的追蹤 URL 時呼叫 POST 方法 （如果指定，此值必須是有效的 URI）。 如果您未使用行銷活動追蹤服務，當您呼叫 POST 方法時略過此值（在這個情況下，就會自動建立此 URL）。   |  否    |     |   是    |
 |  format   |  字串   |   廣告格式。 目前唯一支援的值為 **Banner**。    |   否    |  橫幅   |  否     |       
-|  imageAttributes   | [imageAttributes](#image-attributes)    |   提供廣告素材的屬性。     |   否    |      |   是    |       
+|  imageAttributes   | [ImageAttributes](#image-attributes)    |   提供廣告素材的屬性。     |   否    |      |   是    |       
 |  storeProductId   |  字串   |   此廣告行銷活動所關聯之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品 Store 識別碼為 9nblggh42cfd。    |   否    |    |  否     |   |  
 
 

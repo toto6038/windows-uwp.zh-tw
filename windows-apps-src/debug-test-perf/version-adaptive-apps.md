@@ -90,11 +90,11 @@ ms.locfileid: "65852269"
 
 在 Windows 10 的所有版本中，都可以使用程式碼條件中的 ApiInformation 類別，測試您要呼叫的 API 是否存在。 您可以在調適型程式碼中使用該類別的各種方法 (例如 IsTypePresent、IsEventPresent、IsMethodPresent 和 IsPropertyPresent)，以您所需的細微性來測試 API 是否存在。
 
-如需詳細資訊和範例，請參閱**[版本調適型程式碼](version-adaptive-code.md)**。
+如需詳細資訊和範例，請參閱 **[版本調適型程式碼](version-adaptive-code.md)** 。
 
 如果您的應用程式最小版本是組建 15063 (Creators Update) 或更新版本，您可以在標記中使用*條件式 XAML*來設定屬性和具現化物件，而不需使用程式碼後置。 條件式 XAML 提供一種在標記中使用 ApiInformation.IsApiContractPresent 方法的方式。
 
-如需詳細資訊和範例，請參閱**[條件式 XAML](conditional-xaml.md)**。
+如需詳細資訊和範例，請參閱 **[條件式 XAML](conditional-xaml.md)** 。
 
 ## <a name="test-your-version-adaptive-app"></a>測試版本調適型應用程式
 

@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 是否可本地化, 當地語系化, 日文, 紀元
 ms.localizationpriority: high
 ms.openlocfilehash: 0d5de4c1713ab80afcdf2e028d39340aebcc018b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57617653"
@@ -73,7 +73,7 @@ ms.locfileid: "57617653"
 
 ### <a name="gannen-"></a>*元年*
 
-日本曆法的格式通常是**&lt;紀元名稱&gt;&lt;紀元的年份&gt;**。 例如，2018 年是**平成 30 年**。  不過，紀元的第一年有特殊格式；使用的不是 **&lt;紀元年號&gt; 1 年**，而是 **&lt;紀元年號&gt; 元年**。 因此，平成紀元的第一年會是*平成元年*。 確定您的應用程式適當地處理這個新的時代，第一年，並正確輸出？？ 元年。
+日本曆法的格式通常是**&lt;紀元名稱&gt; &lt;紀元的年份&gt;**。 例如，2018 年是**平成 30 年**。  不過，紀元的第一年有特殊格式；使用的不是 **&lt;紀元年號&gt; 1 年**，而是 **&lt;紀元年號&gt; 元年**。 因此，平成紀元的第一年會是*平成元年*。 確定您的應用程式適當地處理這個新的時代，第一年，並正確輸出？？ 元年。
 
 ## <a name="related-apis"></a>相關的 API
 

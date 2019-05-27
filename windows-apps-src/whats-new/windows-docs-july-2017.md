@@ -5,12 +5,12 @@ keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1875fecbdfa6b97cdc30413c8afa6cc58d3251ef
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 03bc41ca76f6c6b20f06c98b0e71e2bc5a361992
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595033"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984196"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 開發人員文件的最新動向
 
@@ -112,7 +112,7 @@ SDK 預覽組建中有新的 TaskbarManager 類別提供給 [Windows 測試人�
 
 ### <a name="test-your-windows-app-for-windows-10-s"></a>針對 Windows 10 S 測試您的 Windows 應用程式
 
-測試您的 Windows 應用程式，以確定此應用程式會在執行 Windows S 的裝置上正常運作。使用[這份新指南](../porting/desktop-to-uwp-test-windows-s.md)了解做法。 
+測試您的 Windows 應用程式，以確定此應用程式會在執行 Windows S 的裝置上正常運作。使用[這份新指南](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s)了解做法。
 
 ## <a name="samples"></a>範例
 
@@ -130,7 +130,7 @@ SDK 預覽組建中有新的 TaskbarManager 類別提供給 [Windows 測試人�
 
 ## <a name="videos"></a>影片
 
-### <a name="accessibility"></a>協助工具
+### <a name="accessibility"></a>協助工具選項
 
 將協助工具建置在您的應用程式中，將應用程式推廣至更廣大的客群。 [觀看影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility)，然後深入了解[開發無障礙應用程式](https://developer.microsoft.com/en-us/windows/accessible-apps)。
 

@@ -6,12 +6,12 @@ ms.date: 03/25/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 355cff08c6ab98b0837b8cc95f2480aa1fb17bd4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: bdcb8132052cd12444c192c93170fb2f8e94113a
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63784731"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215219"
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -40,7 +40,7 @@ ms.locfileid: "63784731"
     * 如果您顯示插入式橫幅廣告的插入式視訊的 ad 應用程式中，選取**插入式視訊**或**橫幅插入**（請確定選取類型的適當的選項插入式廣告您想要顯示）。
     * 如果您顯示原生的 ad 應用程式中，選取**原生**。
 
-5. 在 **\[裝置系列\]** 下拉式清單中，選取使用廣告單元所在應用程式的目標裝置系列。 可用的選項為：**UWP (Windows 10)**， **(Windows 8.1) / Tablet PC**，或**Mobile (Windows Phone 8.x)**。
+5. 在 **\[裝置系列\]** 下拉式清單中，選取使用廣告單元所在應用程式的目標裝置系列。 可用的選項為：**UWP (Windows 10)** ， **(Windows 8.1) / Tablet PC**，或**Mobile (Windows Phone 8.x)** 。
 
 6. 視需要設定下列其他設定：
 
@@ -56,7 +56,7 @@ ms.locfileid: "63784731"
 
 ## <a name="review-and-edit-ad-units"></a>檢閱和編輯廣告單元
 
-在您的帳戶中建立一或多個應用程式的 ad 單位之後，這些廣告單元，會出現在底部的資料表**Monetize** &gt; **應用程式內廣告**頁面。 此表格會顯示每個廣告單元的 **\[應用程式識別碼\]** 和 **\[廣告單元識別碼\]**，以及其他資訊。 若要在應用程式中顯示廣告，您必須在程式碼中使用下列值。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](../monetize/set-up-ad-units-in-your-app.md)。
+在您的帳戶中建立一或多個應用程式的 ad 單位之後，這些廣告單元，會出現在底部的資料表**Monetize** &gt; **應用程式內廣告**頁面。 此表格會顯示每個廣告單元的 **\[應用程式識別碼\]** 和 **\[廣告單元識別碼\]** ，以及其他資訊。 若要在應用程式中顯示廣告，您必須在程式碼中使用下列值。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](../monetize/set-up-ad-units-in-your-app.md)。
 
 * 如果您的 app 顯示[橫幅廣告](../monetize/banner-ads.md)，請將這些值指派給 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 物件的 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 和 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 屬性。
 * 如果您的應用程式顯示[插播式廣告](../monetize/interstitial-ads.md)，請將這些值傳遞給 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 物件的 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法。
@@ -92,7 +92,7 @@ ms.locfileid: "63784731"
     > [!NOTE]
     > 在本節中的其餘步驟，才適用，如果您選擇**修改預設設定**。
 
-3. 在 **\[目標\]** 下拉式清單中選擇 **\[基準\]**，為您的廣告流量分配設定預設設定。 這個預設設定將適用於所有市場，除了您定義市場特定設定的市場之外。
+3. 在 **\[目標\]** 下拉式清單中選擇 **\[基準\]** ，為您的廣告流量分配設定預設設定。 這個預設設定將適用於所有市場，除了您定義市場特定設定的市場之外。
 4. 接著指定要在控制項中顯示付費網路 (依據廣告效果支付收益給您) 和其他廣告網路 (不依據廣告效果支付收益給您) 的廣告比率。 若要這樣做，請在 **\[付費廣告網路\]** 和 **\[其他廣告網路\]** 的 **\[權重\]** 欄位中輸入介於 0 到 100 之間的值。  
 5. 在 **\[付費廣告網路\]** 區段中，選取 **\[作用中\]** 欄中每個您要使用的[付費網路](#paid-networks)的核取方塊，然後使用 **\[排名\]** 欄中的箭號依排名順序排列網路 (這會指定控制項使用每個網路的頻率)。
 6. 如果您選取 **\[橫幅\]** 或 **\[插播式橫幅\]** 廣告單元，您會看到名為 **\[其他廣告網路\]** 的區段。 此區段中的網路不會依廣告效果讓您賺取收益。 這些網路會從來源顯示廣告，像是應用程式促銷活動。
@@ -120,6 +120,7 @@ ms.locfileid: "63784731"
 | smartclip |  選取此選項可從 [smartclip](http://www.smartclip.com/) 提供廣告。 |  插播式影片  |
 | SpotX |  選取此選項可從 [SpotX](https://www.spotx.tv/) 提供廣告。 |  插播式影片  |
 | Taboola |  選取此選項可從 [Taboola](https://www.taboola.com/) 提供廣告。 |  橫幅  |
+| Vungle | 選取此選項可提供從廣告[Vungle](https://vungle.com/) | 插播式影片 |
 | Undertone | 選取此選項可提供從廣告[Undertone](https://www.undertone.com/)。 | 插入的橫幅 |
 
 
@@ -154,7 +155,7 @@ ms.locfileid: "63784731"
 
 當您[建立 ad 單位](#create-ad-unit)或[選取現有的 ad 單元](#available-ad-units)，則**COPPA 合規性**區段會出現在頁面底部，如果至少有 ad 單位的所選應用程式針對已達到一個提交[存放區中](../publish/the-app-certification-process.md#in-the-store)應用程式的認證程序中的步驟。
 
-基於兒童線上隱私權保護法 (「COPPA」) 的立法宗旨，如果您的應用程式是針對 13 歲以下的兒童，您必須選取本區段中的 **\[這個應用程式是針對 13 歲以下的孩童\]**。 如果您選取此選項，當傳送廣告到您的應用程式時，Microsoft 會採取步驟來停用其行為廣告服務。
+基於兒童線上隱私權保護法 (「COPPA」) 的立法宗旨，如果您的應用程式是針對 13 歲以下的兒童，您必須選取本區段中的 **\[這個應用程式是針對 13 歲以下的孩童\]** 。 如果您選取此選項，當傳送廣告到您的應用程式時，Microsoft 會採取步驟來停用其行為廣告服務。
 
 您選擇的 **\[COPPA 合規性\]** 設定會自動套用到所選應用程式的所有廣告單元。
 

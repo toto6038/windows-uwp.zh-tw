@@ -1,22 +1,22 @@
 ---
 description: 可有效地繫結至 XAML 項目控制項的集合稱為*可觀察的* 集合。 本主題示範實作和使用可觀察集合的方法，以及如何將 XAML 項目控制項繫結至它。
 title: XAML 項目控制項；繫結至一個 C++/WinRT 集合
-ms.date: 10/03/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制項、繫結、集合
 ms.localizationpriority: medium
-ms.openlocfilehash: c4bf1805b16d869e7a29c49e8fe53c01cf469132
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 7669c6536f28d5f979567f5b433dbf614800bec3
+ms.sourcegitcommit: d23dab1533893b7fe0f01ca6eb273edfac4705e6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921664"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65627681"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 項目控制項；繫結至一個 C++/WinRT 集合
 
 可有效地繫結至 XAML 項目控制項的集合稱為*可觀察的* 集合。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題說明如何實作可觀察的集合中[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，和如何繫結 XAML 項目給他們的控制項。
 
-在建立於 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md) 中的專案裡組建本逐步解說，並新增到該主題中所述的概念。
+如果您想要遵循本主題中，則我們建議您先建立專案中所述[XAML 控制項，繫結至C++/WinRT 屬性](binding-property.md)。 本主題將更多程式碼加入至該專案，並將會加入該主題所述的概念。
 
 > [!IMPORTANT]
 > 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請查閱[使用 C++/WinRT 使用API](consume-apis.md)和[使用 C++/WinRT 撰寫 API](author-apis.md)。
@@ -30,9 +30,6 @@ ms.locfileid: "58921664"
 ## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>將 **BookSkus** 集合新增至 **BookstoreViewModel**
 
 在 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md) 中，我們已將類型 **BookSku** 的屬性新增至我們主要的檢視模型。 在此步驟中，我們將使用[ **winrt::single_threaded_observable_vector** ](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) factory 函式樣板，以協助我們實作的可觀察集合**BookSku**上相同的檢視模型。
-
-> [!NOTE]
-> 如果您還沒有安裝 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更新版本中，然後看到[如果您有較舊版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk)如需您可以使用取代observable向量範本的清單**winrt::single_threaded_observable_vector**。
 
 在 `BookstoreViewModel.idl` 中宣告一個新的屬性。
 
@@ -50,7 +47,7 @@ runtimeclass BookstoreViewModel
 > [!IMPORTANT]
 > 在上述的 MIDL 3.0 清單中，請注意，該類**BookSkus**屬性是[ **IObservableVector** ](/uwp/api/windows.foundation.collections.ivector_t_)的[ **IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). 在本主題的下一步 區段中，我們將會繫結的項目來源[ **ListBox** ](/uwp/api/windows.ui.xaml.controls.listbox)來**BookSkus**。 清單方塊是以項目控制項，並正確設定[ **ItemsControl.ItemsSource** ](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)屬性，您必須將它設定為型別的值**IObservableVector** (或是**IVector**) 的**IInspectable**，或是屬於這類的互通性型別[ **IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。
 
-儲存並建置。 從 `Generated Files` 資料夾中的 `BookstoreViewModel.h` 與 `BookstoreViewModel.cpp` 複製存取子虛設常式，並加以執行。
+儲存並建置。 複製從存取子虛設常式`BookstoreViewModel.h`並`BookstoreViewModel.cpp`中`\Bookstore\Bookstore\Generated Files\sources`資料夾 (如需詳細資訊，請參閱先前的主題[XAML 控制項，繫結至C++/WinRT 屬性](binding-property.md))。 實作這些存取子虛設常式，就像這樣。
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -122,8 +119,8 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 
 ## <a name="important-apis"></a>重要 API
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
-* [winrt::make 函式範本](/uwp/cpp-ref-for-winrt/make)
+* [winrt::make 函式樣板](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>相關主題
-* [使用 C++/WinRT 來使用 API](consume-apis.md)
+* [使用 C++/WinRT 取用 API](consume-apis.md)
 * [使用 C++/WinRT 撰寫 API](author-apis.md)

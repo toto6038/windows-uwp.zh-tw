@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0600e66c672a28683befdb7b0090f5455a28c948
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4731ab089189a8a03656281d1a9a6da6e4d24e89
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624193"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984265"
 ---
 # <a name="acrylic-material"></a>壓克力素材
 
@@ -38,7 +38,7 @@ Acrylic 是一種[筆刷](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>壓克力和 Fluent Design 系統
 
- Fluent Design 系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 壓克力是將實體紋理 (材質) 與深度加入應用程式中的 Fluent Design 系統元件。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](../fluent-design-system/index.md)。
+ Fluent Design 系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 壓克力是將實體紋理 (材質) 與深度加入應用程式中的 Fluent Design 系統元件。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](/windows/apps/fluent-design-system)。
 
  ## <a name="video-summary"></a>影片摘要
 
@@ -48,14 +48,14 @@ Acrylic 是一種[筆刷](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 
 :::row:::
     :::column span:::
-        ![Some image](images/XAML-controls-gallery-app-icon.png)
+![有些映像](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span="2":::
-        **XAML Controls Gallery**<br>
-        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
+**XAML 控制項陳列庫**<br>
+如果您安裝的 XAML 控制項陳列庫應用程式，請按一下<a href="xamlcontrolsgallery:/item/Acrylic">此處</a>開啟應用程式，並查看 acrylic 作用中的。
 
-        <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-        <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
+<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a><br>
+<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
@@ -73,7 +73,7 @@ Acrylic 是一種[筆刷](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 ## <a name="when-to-use-acrylic"></a>使用壓克力的時機
 
 * 您可以使用 應用程式內 acrylic 支援的 UI，例如，可能會重疊的內容時捲動或與之互動的介面上。
-* 使用背景 acrylic 暫時性的 UI 項目，例如操作功能表、 延伸顯示，以及 light dimsissable UI。<br />在暫時性的案例中使用 Acrylic 有助於維護的內容來觸發暫時性的 UI 視覺化關聯性。
+* 使用背景 acrylic 暫時性的 UI 項目，例如操作功能表、 延伸顯示，以及 light 可解除的 UI。<br />在暫時性的案例中使用 Acrylic 有助於維護的內容來觸發暫時性的 UI 視覺化關聯性。
 
 如果您使用應用程式內 acrylic 瀏覽介面，請考慮擴充來改善您的應用程式上的流程壓克力窗格下的內容。 使用 NavigationView 將會為您自動。 不過，若要避免建立等量效果，不嘗試放置多段壓克力邊緣到邊緣-這可以建立不必要的接合線之間的兩個套用模糊效果的介面。 Acrylic 工具以視覺化的完美帶入您的設計，但當使用不正確，可能會導致視覺干擾也。
 
@@ -98,7 +98,7 @@ Acrylic 是一種[筆刷](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 
 ![使用參考的飛出視窗的郵件應用程式模式](images/Mail_TransientContextMenu.png)
 
-許多控制項預設會使用 acrylic。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)， [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)， [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)而且類似 light dimiss 快顯視窗控制項全部都會使用暫時性 acrylic 時叫用這些。
+許多控制項預設會使用 acrylic。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)， [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)， [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和類似的控制，與光線關閉快顯全部都會使用暫時性 acrylic 時叫用這些。
 
 > [!Note]
 > 轉譯壓克力介面是 GPU 密集，這可能會增加裝置的功率耗用量，並縮短電池壽命。 壓克力的效果會自動停用裝置進入省電模式，和使用者可以停用所有的應用程式，壓克力效果時，若其選擇。
@@ -319,7 +319,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>可行與禁止事項
 * 請使用壓克力作為非主要應用程式表面 (如瀏覽窗格) 的背景材質。
 * 請將壓克力延伸至應用程式的至少一個邊緣，藉此與應用程式背景巧妙地混合以呈現無縫的效果。
-* 不要將桌面 arylic 放在您的應用程式的大型背景表面-這會中斷主要是用於暫時性表面的 acrylic 心智模型。
+* 不要將桌面 acrylic 放在您的應用程式的大型背景表面-這會中斷主要是用於暫時性表面的 acrylic 心智模型。
 * 請勿將應用程式內壓克力與背景壓克力直接相鄰放置，以避免在接縫處產生視覺壓力。
 * 請勿將多個色調與不透明度相同的壓克力窗格彼此相鄰，因為這會產生不想要讓人看到的接縫。
 * 請勿將輔色文字放置在壓克力表面。

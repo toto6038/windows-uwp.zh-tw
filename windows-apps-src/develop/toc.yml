@@ -1,1521 +1,1469 @@
-items:
 - name: 概觀
   href: index.md
 - name: 應用程式類型
   items:
-  - name: 教育應用程式
-    href: ../apps-for-education/index.md
-    items:
-    - name: 進行測驗 API
-      href: ../apps-for-education/take-a-test-api.md
-  - name: 企業應用程式
-    href: ../enterprise/index.md
-    items:
-    - name: Windows 資訊保護 (WIP)
-      href: ../enterprise/wip-hub.md
+    - name: 教育應用程式
+      href: ../apps-for-education/index.md
       items:
-      - name: WIP 開發人員指南
-        href: ../enterprise/wip-dev-guide.md
-    - name: 企業共用存放裝置
-      href: ../enterprise/enterprise-shared-storage.md
-    - name: 教學課程：建立客戶資料庫應用程式
-      href: ../enterprise/customer-database-tutorial.md
+        - name: 進行測驗 API
+          href: ../apps-for-education/take-a-test-api.md
+    - name: 企業應用程式
+      href: ../enterprise/index.md
       items:
-      - name: 客戶資料庫教學課程應用程式結構
-        href: ../enterprise/customer-database-app-structure.md
-  - name: 漸進式 Web 應用程式
-    href: /microsoft-edge/progressive-web-apps
+        - name: Windows 資訊保護 (WIP)
+          href: ../enterprise/wip-hub.md
+          items:
+            - name: WIP 開發人員指南
+              href: ../enterprise/wip-dev-guide.md
+        - name: 企業共用存放裝置
+          href: ../enterprise/enterprise-shared-storage.md
+        - name: 教學課程：建立客戶資料庫應用程式
+          href: ../enterprise/customer-database-tutorial.md
+          items:
+            - name: 客戶資料庫教學課程應用程式結構
+              href: ../enterprise/customer-database-app-structure.md
+    - name: 漸進式 Web 應用程式
+      href: /microsoft-edge/progressive-web-apps
 - name: 音訊、視訊和相機
   href: ../audio-video-camera/index.md
   items:
-  - name: 相機
-    href: ../audio-video-camera/camera.md
-    items:
-    - name: 使用 Windows 內建相機 UI 來擷取相片和視訊
-      href: ../audio-video-camera/capture-photos-and-video-with-cameracaptureui.md
-    - name: 顯示相機預覽
-      href: ../audio-video-camera/simple-camera-preview-access.md
-    - name: 使用 MediaCapture 進行基本相片、視訊和音訊的擷取
-      href: ../audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md
-    - name: 適用於行動裝置的相機 UI 功能
-      href: ../audio-video-camera/camera-ui-features-for-mobile-devices.md
-    - name: 使用 MediaCapture 處理裝置和螢幕方向
-      href: ../audio-video-camera/handle-device-orientation-with-mediacapture.md
-    - name: 使用相機設定檔探索並選取相機功能
-      href: ../audio-video-camera/camera-profiles.md
-    - name: 設定 MediaCapture 的格式、解析度和畫面播放速率
-      href: ../audio-video-camera/set-media-encoding-properties.md
-    - name: HDR 和弱光相片擷取
-      href: ../audio-video-camera/high-dynamic-range-hdr-photo-capture.md
-    - name: 相片和視訊擷取的手動相機控制項
-      href: ../audio-video-camera/capture-device-controls-for-photo-and-video-capture.md
-    - name: 視訊擷取的手動相機控制項
-      href: ../audio-video-camera/capture-device-controls-for-video-capture.md
-    - name: 視訊擷取的影像防震效果
-      href: ../audio-video-camera/effects-for-video-capture.md
-    - name: 媒體擷取的場景分析
-      href: ../audio-video-camera/scene-analysis-for-media-capture.md
-    - name: 使用 VariablePhotoSequence 擷取相片序列
-      href: ../audio-video-camera/variable-photo-sequence.md
-    - name: 使用 MediaFrameReader 處理媒體畫面
-      href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
+    - name: 相機
+      href: ../audio-video-camera/camera.md
       items:
-      - name: 使用 MediaFrameReader 處理音訊框架
-        href: ../audio-video-camera/use-opencv-with-mediaframereader.md
-      - name: 使用 OpenCV 搭配 MediaFrameReader
-        href: ../audio-video-camera/use-opencv-with-mediaframereader.md
-    - name: 使用 MediaFrameSourceGroup 從多個來源擷取
-      href: ../audio-video-camera/capture-from-multiple-sources-simultaneously.md
-    - name: 取得預覽畫面
-      href: ../audio-video-camera/get-a-preview-frame.md
-  - name: 媒體播放
-    href: ../audio-video-camera/media-playback.md
-    items:
-    - name: 使用 MediaPlayer 播放音訊和視訊
-      href: ../audio-video-camera/play-audio-and-video-with-mediaplayer.md
-    - name: 媒體項目、播放清單與曲目
-      href: ../audio-video-camera/media-playback-with-mediasource.md
-    - name: 與系統媒體傳輸控制項整合
-      href: ../audio-video-camera/integrate-with-systemmediatransportcontrols.md
+        - name: 使用 Windows 內建相機 UI 來擷取相片和視訊
+          href: ../audio-video-camera/capture-photos-and-video-with-cameracaptureui.md
+        - name: 顯示相機預覽
+          href: ../audio-video-camera/simple-camera-preview-access.md
+        - name: 使用 MediaCapture 進行基本相片、視訊和音訊的擷取
+          href: ../audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md
+        - name: 適用於行動裝置的相機 UI 功能
+          href: ../audio-video-camera/camera-ui-features-for-mobile-devices.md
+        - name: 使用 MediaCapture 處理裝置和螢幕方向
+          href: ../audio-video-camera/handle-device-orientation-with-mediacapture.md
+        - name: 使用相機設定檔探索並選取相機功能
+          href: ../audio-video-camera/camera-profiles.md
+        - name: 設定 MediaCapture 的格式、解析度和畫面播放速率
+          href: ../audio-video-camera/set-media-encoding-properties.md
+        - name: HDR 和弱光相片擷取
+          href: ../audio-video-camera/high-dynamic-range-hdr-photo-capture.md
+        - name: 相片和視訊擷取的手動相機控制項
+          href: ../audio-video-camera/capture-device-controls-for-photo-and-video-capture.md
+        - name: 視訊擷取的手動相機控制項
+          href: ../audio-video-camera/capture-device-controls-for-video-capture.md
+        - name: 視訊擷取的影像防震效果
+          href: ../audio-video-camera/effects-for-video-capture.md
+        - name: 媒體擷取的場景分析
+          href: ../audio-video-camera/scene-analysis-for-media-capture.md
+        - name: 使用 VariablePhotoSequence 擷取相片序列
+          href: ../audio-video-camera/variable-photo-sequence.md
+        - name: 使用 MediaFrameReader 處理媒體畫面
+          href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
+          items:
+            - name: 使用 MediaFrameReader 處理音訊框架
+              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+            - name: 使用 OpenCV 搭配 MediaFrameReader
+              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+        - name: 使用 MediaFrameSourceGroup 從多個來源擷取
+          href: ../audio-video-camera/capture-from-multiple-sources-simultaneously.md
+        - name: 連線到遠端照相機
+          href: ../audio-video-camera/connect-to-remote-cameras.md
+        - name: 取得預覽畫面
+          href: ../audio-video-camera/get-a-preview-frame.md
+    - name: 媒體播放
+      href: ../audio-video-camera/media-playback.md
       items:
-      - name: 系統媒體傳輸控制項的手動控制項
-        href: ../audio-video-camera/system-media-transport-controls.md
-    - name: 系統支援的定時中繼資料提示
-      href: ../audio-video-camera/system-supported-metadata-cues.md
-    - name: 建立、排程與管理媒體中斷
-      href: ../audio-video-camera/create-schedule-and-manage-media-breaks.md
-    - name: 在背景播放媒體
-      href: ../audio-video-camera/background-audio.md
+        - name: 使用 MediaPlayer 播放音訊和視訊
+          href: ../audio-video-camera/play-audio-and-video-with-mediaplayer.md
+        - name: 媒體項目、播放清單與曲目
+          href: ../audio-video-camera/media-playback-with-mediasource.md
+        - name: 與系統媒體傳輸控制項整合
+          href: ../audio-video-camera/integrate-with-systemmediatransportcontrols.md
+          items:
+            - name: 系統媒體傳輸控制項的手動控制項
+              href: ../audio-video-camera/system-media-transport-controls.md
+        - name: 系統支援的定時中繼資料提示
+          href: ../audio-video-camera/system-supported-metadata-cues.md
+        - name: 建立、排程與管理媒體中斷
+          href: ../audio-video-camera/create-schedule-and-manage-media-breaks.md
+        - name: 在背景播放媒體
+          href: ../audio-video-camera/background-audio.md
+          items:
+            - name: 舊版背景媒體播放
+              href: ../audio-video-camera/legacy-background-media-playback.md
+        - name: 彈性資料流
+          href: ../audio-video-camera/adaptive-streaming.md
+          items:
+            - name: HLS 標記支援
+              href: ../audio-video-camera/hls-tag-support.md
+            - name: DASH 設定檔支援
+              href: ../audio-video-camera/dash-profile-support.md
+        - name: 媒體傳播
+          href: ../audio-video-camera/media-casting.md
+        - name: PlayReady DRM
+          href: ../audio-video-camera/playready-client-sdk.md
+          items:
+            - name: 硬體 DRM
+              href: ../audio-video-camera/hardware-drm.md
+            - name: 搭配使用彈性資料流與 PlayReady
+              href: ../audio-video-camera/adaptive-streaming-with-playready.md
+        - name: PlayReady 加密媒體延伸
+          href: ../audio-video-camera/playready-encrypted-media-extension.md
+    - name: 偵測影像或影片中的臉部
+      href: ../audio-video-camera/detect-and-track-faces-in-an-image.md
+    - name: 自訂視訊效果
+      href: ../audio-video-camera/custom-video-effects.md
+    - name: 自訂音訊效果
+      href: ../audio-video-camera/custom-audio-effects.md
+    - name: 媒體組合和編輯
+      href: ../audio-video-camera/media-compositions-and-editing.md
+    - name: 音訊裝置資訊屬性
+      href: ../audio-video-camera/audio-device-information-properties.md
+    - name: 偵測及回應音訊狀態變更
+      href: ../audio-video-camera/detect-and-respond-to-audio-state-changes.md
+    - name: 建立、編輯和儲存點陣圖影像
+      href: ../audio-video-camera/imaging.md
       items:
-      - name: 舊版背景媒體播放
-        href: ../audio-video-camera/legacy-background-media-playback.md
-    - name: 彈性資料流
-      href: ../audio-video-camera/adaptive-streaming.md
-      items:
-      - name: HLS 標記支援
-        href: ../audio-video-camera/hls-tag-support.md
-      - name: DASH 設定檔支援
-        href: ../audio-video-camera/dash-profile-support.md
-    - name: 媒體傳播
-      href: ../audio-video-camera/media-casting.md
-    - name: PlayReady DRM
-      href: ../audio-video-camera/playready-client-sdk.md
-      items:
-      - name: 硬體 DRM
-        href: ../audio-video-camera/hardware-drm.md
-      - name: 搭配使用彈性資料流與 PlayReady
-        href: ../audio-video-camera/adaptive-streaming-with-playready.md
-    - name: PlayReady 加密媒體延伸
-      href: ../audio-video-camera/playready-encrypted-media-extension.md
-  - name: 偵測影像或影片中的臉部
-    href: ../audio-video-camera/detect-and-track-faces-in-an-image.md
-  - name: 自訂視訊效果
-    href: ../audio-video-camera/custom-video-effects.md
-  - name: 自訂音訊效果
-    href: ../audio-video-camera/custom-audio-effects.md
-  - name: 媒體組合和編輯
-    href: ../audio-video-camera/media-compositions-and-editing.md
-  - name: 音訊裝置資訊屬性
-    href: ../audio-video-camera/audio-device-information-properties.md
-  - name: 偵測及回應音訊狀態變更
-    href: ../audio-video-camera/detect-and-respond-to-audio-state-changes.md
-  - name: 建立、編輯和儲存點陣圖影像
-    href: ../audio-video-camera/imaging.md
-    items:
-    - name: 使用 OpenCV 處理點陣圖
-      href: ../audio-video-camera/process-software-bitmaps-with-opencv.md
-    - name: 使用 LowLightFusion API 處理點陣圖
-      href: ../audio-video-camera/process-bitmaps-low-light-fusion.md
-    - name: BitmapEncoder 選項參考
-      href: ../audio-video-camera/bitmapencoder-options-reference.md
-    - name: 影像中繼資料
-      href: ../audio-video-camera/image-metadata.md
-  - name: 轉碼媒體檔案
-    href: ../audio-video-camera/transcode-media-files.md
-  - name: 在背景處理媒體檔案
-    href: ../audio-video-camera/process-media-files-in-the-background.md
-  - name: 音訊圖
-    href: ../audio-video-camera/audio-graphs.md
-  - name: MIDI
-    href: ../audio-video-camera/midi.md
-  - name: 從裝置匯入媒體
-    href: ../audio-video-camera/import-media-from-a-device.md
-  - name: 相機獨立閃光燈
-    href: ../audio-video-camera/camera-independent-flashlight.md
-  - name: 支援的轉碼器
-    href: ../audio-video-camera/supported-codecs.md
-  - name: 查詢已安裝的轉碼器
-    href: ../audio-video-camera/codec-query.md
-  - name: 螢幕擷取
-    href: ../audio-video-camera/screen-capture.md
+        - name: 使用 OpenCV 處理點陣圖
+          href: ../audio-video-camera/process-software-bitmaps-with-opencv.md
+        - name: 使用 LowLightFusion API 處理點陣圖
+          href: ../audio-video-camera/process-bitmaps-low-light-fusion.md
+        - name: BitmapEncoder 選項參考
+          href: ../audio-video-camera/bitmapencoder-options-reference.md
+        - name: 影像中繼資料
+          href: ../audio-video-camera/image-metadata.md
+    - name: 轉碼媒體檔案
+      href: ../audio-video-camera/transcode-media-files.md
+    - name: 在背景處理媒體檔案
+      href: ../audio-video-camera/process-media-files-in-the-background.md
+    - name: 音訊圖
+      href: ../audio-video-camera/audio-graphs.md
+    - name: MIDI
+      href: ../audio-video-camera/midi.md
+    - name: 從裝置匯入媒體
+      href: ../audio-video-camera/import-media-from-a-device.md
+    - name: 相機獨立閃光燈
+      href: ../audio-video-camera/camera-independent-flashlight.md
+    - name: 支援的轉碼器
+      href: ../audio-video-camera/supported-codecs.md
+    - name: 查詢已安裝的轉碼器
+      href: ../audio-video-camera/codec-query.md
+    - name: 螢幕擷取
+      href: ../audio-video-camera/screen-capture.md
 - name: 通訊
   items:
-  - name: 應用程式間通訊
-    href: ../app-to-app/index.md
-    items:
-    - name: 分享資料
-      href: ../app-to-app/share-data.md
-    - name: 接收資料
-      href: ../app-to-app/receive-data.md
-    - name: 複製和貼上
-      href: ../app-to-app/copy-and-paste.md
-  - name: 網路和 Web 服務
-    href: ../networking/index.md
-    items:
-    - name: 網路功能基本知識
-      href: ../networking/networking-basics.md
-    - name: 哪一種網路功能技術？
-      href: ../networking/which-networking-technology.md
-    - name: 背景網路通訊
-      href: ../networking/network-communications-in-the-background.md
-    - name: 通訊端
-      href: ../networking/sockets.md
-    - name: WebSocket
-      href: ../networking/websockets.md
-    - name: HttpClient
-      href: ../networking/httpclient.md
-    - name: RSS/Atom 摘要
-      href: ../networking/web-feeds.md
-    - name: 背景傳輸
-      href: ../networking/background-transfers.md
+    - name: 應用程式間通訊
+      href: ../app-to-app/index.md
+      items:
+        - name: 分享資料
+          href: ../app-to-app/share-data.md
+        - name: 接收資料
+          href: ../app-to-app/receive-data.md
+        - name: 複製和貼上
+          href: ../app-to-app/copy-and-paste.md
+    - name: 網路和 Web 服務
+      href: ../networking/index.md
+      items:
+        - name: 網路功能基本知識
+          href: ../networking/networking-basics.md
+        - name: 哪一種網路功能技術？
+          href: ../networking/which-networking-technology.md
+        - name: 背景網路通訊
+          href: ../networking/network-communications-in-the-background.md
+        - name: 通訊端
+          href: ../networking/sockets.md
+        - name: WebSocket
+          href: ../networking/websockets.md
+        - name: HttpClient
+          href: ../networking/httpclient.md
+        - name: RSS/Atom 摘要
+          href: ../networking/web-feeds.md
+        - name: 背景傳輸
+          href: ../networking/background-transfers.md
 - name: 資料和檔案
   items:
-  - name: 應用程式資源
-    href: ../app-resources/index.md
-    items:
-    - name: 資源管理系統
-      href: ../app-resources/resource-management-system.md
-    - name: RMS 如何比對和選擇資源
-      href: ../app-resources/how-rms-matches-and-chooses-resources.md
-    - name: RMS 如何比對語言標記
-      href: ../app-resources/how-rms-matches-lang-tags.md
-    - name: 針對語言、縮放比例、對比及其他設定，量身打造您的資源
-      href: ../app-resources/tailor-resources-lang-scale-contrast.md
-    - name: 當地語系化您的 UI 及應用程式套件資訊清單中的字串
-      href: ../app-resources/localize-strings-ui-manifest.md
-    - name: 載入針對縮放比例、佈景主題、對比及其他設定量身打造的影像和資產
-      href: ../app-resources/images-tailored-for-scale-theme-contrast.md
-    - name: URI 配置
-      href: ../app-resources/uri-schemes.md
-    - name: 指定您的應用程式使用的預設資源
-      href: ../app-resources/specify-default-resources-installed.md
-    - name: 將資源建置到您的應用程式套件，而不是資源套件
-      href: ../app-resources/build-resources-into-app-package.md
-    - name: PRI API 和自訂組建系統
-      href: ../app-resources/pri-apis-custom-build-systems.md
+    - name: 應用程式資源
+      href: ../app-resources/index.md
       items:
-      - name: 案例 1 (PRI API)
-        href: ../app-resources/pri-apis-scenario-1.md
-    - name: 使用 MakePri.exe 來手動編譯資源
-      href: ../app-resources/compile-resources-manually-with-makepri.md
-    - name: MakePri.exe 命令列選項
-      href: ../app-resources/makepri-exe-command-options.md
-    - name: MakePri.exe 設定檔
-      href: ../app-resources/makepri-exe-configuration.md
-    - name: MakePri.exe 格式特定的索引子
-      href: ../app-resources/makepri-exe-format-specific-indexers.md
-    - name: 移轉舊版資源
-      href: ../app-resources/using-mrt-for-converted-desktop-apps-and-games.md
-  - name: 資料存取
-    href: ../data-access/index.md
-    items:
-    - name: 使用 SQLite 資料庫
-      href: ../data-access/sqlite-databases.md
-    - name: 使用 SQL Server 資料庫
-      href: ../data-access/sql-server-databases.md
-  - name: 資料繫結
-    href: ../data-binding/index.md
-    items:
-    - name: 資料繫結概觀
-      href: ../data-binding/data-binding-quickstart.md
-    - name: 深入了解資料繫結
-      href: ../data-binding/data-binding-in-depth.md
-    - name: x:Bind 中的函式
-      href: ../data-binding/function-bindings.md
-    - name: 教學課程：建立資料繫結
-      href: ../data-binding/xaml-basics-data-binding.md
-    - name: 設計介面上適用於原型設計的範例資料
-      href: ../data-binding/displaying-data-in-the-designer.md
-    - name: 繫結階層式資料並建立主要/詳細資料檢視
-      href: ../data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md
-    - name: 資料繫結和 MVVM
-      href: ../data-binding/data-binding-and-mvvm.md
-  - name: 檔案、資料夾和媒體櫃
-    href: ../files/index.md
-    items:
-    - name: 列舉和查詢檔案和資料夾
-      href: ../files/quickstart-listing-files-and-folders.md
-    - name: 建立、寫入和讀取檔案
-      href: ../files/quickstart-reading-and-writing-files.md
-    - name: 寫入檔案的最佳做法
-      href: ../files/best-practices-for-writing-to-files.md
-    - name: 取得檔案屬性
-      href: ../files/quickstart-getting-file-properties.md
-    - name: 使用選擇器開啟檔案和資料夾
-      href: ../files/quickstart-using-file-and-folder-pickers.md
-    - name: 使用選擇器儲存檔案
-      href: ../files/quickstart-save-a-file-with-a-picker.md
-    - name: 存取 HomeGroup 內容
-      href: ../files/quickstart-accessing-homegroup-content.md
-    - name: 判斷 Microsoft OneDrive 檔案的可用性
-      href: ../files/quickstart-determining-availability-of-microsoft-onedrive-files.md
-    - name: 音樂、圖片及影片媒體櫃中的檔案和資料夾
-      href: ../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md
-    - name: 縮圖影像
-      href: ../files/thumbnails.md
-    - name: 追蹤最近使用的檔案和資料夾
-      href: ../files/how-to-track-recently-used-files-and-folders.md
-    - name: 追蹤在背景中的檔案系統變更
-      href: ../files/change-tracking-filesystem.md
-    - name: 存取 SD 記憶卡
-      href: ../files/access-the-sd-card.md
-    - name: 檔案存取權限
-      href: ../files/file-access-permissions.md
-    - name: 快速存取 UWP 中的檔案屬性
-      href: ../files/fast-file-properties.md
-  - name: 機器學習
-    href: https://docs.microsoft.com/windows/ai/
+        - name: 資源管理系統
+          href: ../app-resources/resource-management-system.md
+        - name: RMS 如何比對和選擇資源
+          href: ../app-resources/how-rms-matches-and-chooses-resources.md
+        - name: RMS 如何比對語言標記
+          href: ../app-resources/how-rms-matches-lang-tags.md
+        - name: 針對語言、縮放比例、對比及其他設定，量身打造您的資源
+          href: ../app-resources/tailor-resources-lang-scale-contrast.md
+        - name: 當地語系化您的 UI 及應用程式套件資訊清單中的字串
+          href: ../app-resources/localize-strings-ui-manifest.md
+        - name: 載入針對縮放比例、佈景主題、對比及其他設定量身打造的影像和資產
+          href: ../app-resources/images-tailored-for-scale-theme-contrast.md
+        - name: URI 配置
+          href: ../app-resources/uri-schemes.md
+        - name: 指定您的應用程式使用的預設資源
+          href: ../app-resources/specify-default-resources-installed.md
+        - name: 將資源建置到您的應用程式套件，而不是資源套件
+          href: ../app-resources/build-resources-into-app-package.md
+        - name: PRI API 和自訂組建系統
+          href: ../app-resources/pri-apis-custom-build-systems.md
+          items:
+            - name: 案例 1 (PRI API)
+              href: ../app-resources/pri-apis-scenario-1.md
+        - name: 使用 MakePri.exe 來手動編譯資源
+          href: ../app-resources/compile-resources-manually-with-makepri.md
+        - name: MakePri.exe 命令列選項
+          href: ../app-resources/makepri-exe-command-options.md
+        - name: MakePri.exe 設定檔
+          href: ../app-resources/makepri-exe-configuration.md
+        - name: MakePri.exe 格式特定的索引子
+          href: ../app-resources/makepri-exe-format-specific-indexers.md
+        - name: 移轉舊版資源
+          href: ../app-resources/using-mrt-for-converted-desktop-apps-and-games.md
+    - name: 資料存取
+      href: ../data-access/index.md
+      items:
+        - name: 使用 SQLite 資料庫
+          href: ../data-access/sqlite-databases.md
+        - name: 使用 SQL Server 資料庫
+          href: ../data-access/sql-server-databases.md
+        - name: 使用 MongoDB 資料庫
+          href: ../data-access/mongo-db-databases.md
+        - name: 使用 MySQL 資料庫
+          href: ../data-access/mysql-databases.md
+    - name: 資料繫結
+      href: ../data-binding/index.md
+      items:
+        - name: 資料繫結概觀
+          href: ../data-binding/data-binding-quickstart.md
+        - name: 深入了解資料繫結
+          href: ../data-binding/data-binding-in-depth.md
+        - name: 'x:Bind 中的函式'
+          href: ../data-binding/function-bindings.md
+        - name: 教學課程：建立資料繫結
+          href: ../data-binding/xaml-basics-data-binding.md
+        - name: 設計介面上適用於原型設計的範例資料
+          href: ../data-binding/displaying-data-in-the-designer.md
+        - name: 繫結階層式資料並建立主要/詳細資料檢視
+          href: ../data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md
+        - name: 資料繫結和 MVVM
+          href: ../data-binding/data-binding-and-mvvm.md
+    - name: 檔案、資料夾和媒體櫃
+      href: ../files/index.md
+      items:
+        - name: 列舉和查詢檔案和資料夾
+          href: ../files/quickstart-listing-files-and-folders.md
+        - name: 建立、寫入和讀取檔案
+          href: ../files/quickstart-reading-and-writing-files.md
+        - name: 寫入檔案的最佳做法
+          href: ../files/best-practices-for-writing-to-files.md
+        - name: 取得檔案屬性
+          href: ../files/quickstart-getting-file-properties.md
+        - name: 使用選擇器開啟檔案和資料夾
+          href: ../files/quickstart-using-file-and-folder-pickers.md
+        - name: 使用選擇器儲存檔案
+          href: ../files/quickstart-save-a-file-with-a-picker.md
+        - name: 存取 HomeGroup 內容
+          href: ../files/quickstart-accessing-homegroup-content.md
+        - name: 判斷 Microsoft OneDrive 檔案的可用性
+          href: ../files/quickstart-determining-availability-of-microsoft-onedrive-files.md
+        - name: 音樂、圖片及影片媒體櫃中的檔案和資料夾
+          href: ../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md
+        - name: 縮圖影像
+          href: ../files/thumbnails.md
+        - name: 追蹤最近使用的檔案和資料夾
+          href: ../files/how-to-track-recently-used-files-and-folders.md
+        - name: 追蹤在背景中的檔案系統變更
+          href: ../files/change-tracking-filesystem.md
+        - name: 存取 SD 記憶卡
+          href: ../files/access-the-sd-card.md
+        - name: 檔案存取權限
+          href: ../files/file-access-permissions.md
+        - name: 快速存取 UWP 中的檔案屬性
+          href: ../files/fast-file-properties.md
+    - name: 機器學習
+      href: 'https://docs.microsoft.com/windows/ai/'
 - name: 部署
   items:
-  - name: 選擇 UWP 版本
-    href: ../updates-and-versions/choose-a-uwp-version.md
-  - name: 偵錯、測試及效能
-    href: ../debug-test-perf/index.md
-    items:
-    - name: 部署和偵錯 UWP 應用程式
-      href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
-    - name: 適用於 PLM 的測試和偵錯工具
-      href: ../debug-test-perf/testing-debugging-plm.md
-    - name: 使用適用於 Windows 10 的 Microsoft 模擬器進行測試
-      href: ../debug-test-perf/test-with-the-emulator.md
-    - name: 使用 Visual Studio 測試 Surface Hub應用程式
-      href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
-    - name: 透過鬆散檔案註冊部署應用程式
-      href: ../debug-test-perf/loose-file-registration.md
-    - name: 搶鮮版 (Beta) 測試
-      href: ../debug-test-perf/beta-testing.md
-    - name: Windows Device Portal
-      href: ../debug-test-perf/device-portal.md
+    - name: 選擇 UWP 版本
+      href: ../updates-and-versions/choose-a-uwp-version.md
+    - name: 偵錯、測試及效能
+      href: ../debug-test-perf/index.md
       items:
-      - name: 傳統型裝置的 Device Portal
-        href: ../debug-test-perf/device-portal-desktop.md
-      - name: 行動裝置的 Device Portal
-        href: ../debug-test-perf/device-portal-mobile.md
-      - name: Xbox 的 Device Portal
-        href: ../debug-test-perf/device-portal-xbox.md
-      - name: HoloLens 的裝置入口網站
-        href: ../debug-test-perf/device-portal-hololens.md
-      - name: Device Portal 核心 API
-        href: ../debug-test-perf/device-portal-api-core.md
-      - name: 撰寫裝置入口網站的自訂外掛程式
-        href: ../debug-test-perf/device-portal-plugin.md
-      - name: 使用自訂 SSL 憑證佈建裝置入口網站
-        href: ../debug-test-perf/device-portal-ssl.md
-    - name: Windows 應用程式認證套件
-      href: ../debug-test-perf/windows-app-certification-kit.md
+        - name: 部署和偵錯 UWP 應用程式
+          href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
+        - name: 適用於 PLM 的測試和偵錯工具
+          href: ../debug-test-perf/testing-debugging-plm.md
+        - name: "使用適用於 Windows\_10 的 Microsoft 模擬器進行測試"
+          href: ../debug-test-perf/test-with-the-emulator.md
+        - name: 使用 Visual Studio 測試 Surface Hub應用程式
+          href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
+        - name: 透過鬆散檔案註冊部署應用程式
+          href: ../debug-test-perf/loose-file-registration.md
+        - name: 搶鮮版 (Beta) 測試
+          href: ../debug-test-perf/beta-testing.md
+        - name: Windows Device Portal
+          href: ../debug-test-perf/device-portal.md
+          items:
+            - name: 傳統型裝置的 Device Portal
+              href: ../debug-test-perf/device-portal-desktop.md
+            - name: 行動裝置的 Device Portal
+              href: ../debug-test-perf/device-portal-mobile.md
+            - name: HoloLens 的裝置入口網站
+              href: ../debug-test-perf/device-portal-hololens.md
+            - name: Device Portal 核心 API
+              href: ../debug-test-perf/device-portal-api-core.md
+            - name: 撰寫裝置入口網站的自訂外掛程式
+              href: ../debug-test-perf/device-portal-plugin.md
+            - name: 使用自訂 SSL 憑證佈建裝置入口網站
+              href: ../debug-test-perf/device-portal-ssl.md
+        - name: Windows 應用程式認證套件
+          href: ../debug-test-perf/windows-app-certification-kit.md
+          items:
+            - name: Windows 應用程式認證套件測試
+              href: ../debug-test-perf/windows-app-certification-kit-tests.md
+              items:
+                - name: Windows 傳統型橋接器應用程式測試
+                  href: ../debug-test-perf/windows-desktop-bridge-app-tests.md
+        - name: 效能
+          href: ../debug-test-perf/performance-and-xaml-ui.md
+          items:
+            - name: 規劃效能
+              href: ../debug-test-perf/planning-and-measuring-performance.md
+            - name: 最佳化背景活動
+              href: ../debug-test-perf/optimize-background-activity.md
+            - name: ListView 與 GridView UI 最佳化
+              href: ../debug-test-perf/optimize-gridview-and-listview.md
+            - name: ListView 與 GridView 資料虛擬化
+              href: ../debug-test-perf/listview-and-gridview-data-optimization.md
+            - name: 改善記憶體回收效能
+              href: ../debug-test-perf/improve-garbage-collection-performance.md
+            - name: 讓 UI 執行緒保持回應
+              href: ../debug-test-perf/keep-the-ui-thread-responsive.md
+            - name: 最佳化您的 XAML 標記
+              href: ../debug-test-perf/optimize-xaml-loading.md
+            - name: 最佳化您的 XAML 配置
+              href: ../debug-test-perf/optimize-your-xaml-layout.md
+            - name: MVVM 和語言效能祕訣
+              href: ../debug-test-perf/mvvm-performance-tips.md
+            - name: 應用程式啟動效能的最佳做法
+              href: ../debug-test-perf/best-practices-for-your-app-s-startup-performance.md
+            - name: 最佳化動畫、媒體及影像
+              href: ../debug-test-perf/optimize-animations-and-media.md
+            - name: 最佳化暫停/繼續
+              href: ../debug-test-perf/optimize-suspend-resume.md
+            - name: 最佳化檔案存取
+              href: ../debug-test-perf/optimize-file-access.md
+            - name: Windows 執行階段元件和最佳化互通性
+              href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
+            - name: 分析和效能的工具
+              href: ../debug-test-perf/tools-for-profiling-and-performance.md
+        - name: 版本調適型應用程式
+          href: ../debug-test-perf/version-adaptive-apps.md
+          items:
+            - name: 版本調適型程式碼
+              href: ../debug-test-perf/version-adaptive-code.md
+            - name: 條件式 XAML
+              href: ../debug-test-perf/conditional-xaml.md
+    - name: 營利、參與和 Microsoft Store 服務
+      href: ../monetize/index.md
       items:
-      - name: Windows 應用程式認證套件測試
-        href: ../debug-test-perf/windows-app-certification-kit-tests.md
-        items:
-        - name: Windows 傳統型橋接器應用程式測試
-          href: ../debug-test-perf/windows-desktop-bridge-app-tests.md
-    - name: 效能
-      href: ../debug-test-perf/performance-and-xaml-ui.md
+        - name: 應用程式內購買和試用版
+          href: ../monetize/in-app-purchases-and-trials.md
+          items:
+            - name: 取得應用程式和附加元件的產品資訊
+              href: ../monetize/get-product-info-for-apps-and-add-ons.md
+            - name: 取得應用程式和附加元件的授權資訊
+              href: ../monetize/get-license-info-for-apps-and-add-ons.md
+            - name: 啟用應用程式和附加元件的應用程式內購買
+              href: ../monetize/enable-in-app-purchases-of-apps-and-add-ons.md
+            - name: 啟用消費性附加元件購買
+              href: ../monetize/enable-consumable-add-on-purchases.md
+            - name: 啟用應用程式的訂閱附加元件
+              href: ../monetize/enable-subscription-add-ons-for-your-app.md
+            - name: 實作應用程式的試用版
+              href: ../monetize/implement-a-trial-version-of-your-app.md
+            - name: Microsoft Store 產品的資料結構描述
+              href: ../monetize/data-schemas-for-store-products.md
+            - name: Microsoft Store 作業的錯誤碼
+              href: ../monetize/error-codes-for-store-operations.md
+            - name: 使用 Windows.ApplicationModel.Store 命名空間
+              href: ../monetize/in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md
+              items:
+                - name: 在試用版本中排除或限制某些功能
+                  href: ../monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.md
+                - name: 啟用應用程式內產品購買
+                  href: ../monetize/enable-in-app-product-purchases.md
+                - name: 啟用消費性應用程式內產品購買
+                  href: ../monetize/enable-consumable-in-app-product-purchases.md
+                - name: 管理大型的應用程式內產品型錄
+                  href: ../monetize/manage-a-large-catalog-of-in-app-products.md
+                - name: 使用收據來驗證產品購買
+                  href: ../monetize/use-receipts-to-verify-product-purchases.md
+        - name: 使用 Microsoft Advertising SDK 停用應用程式中的廣告
+          href: ../monetize/display-ads-in-your-app.md
+          items:
+            - name: 安裝 Microsoft Advertising SDK
+              href: ../monetize/install-the-microsoft-advertising-libraries.md
+              items:
+                - name: 將您的應用程式更新到橫幅廣告的最新程式庫
+                  href: ../monetize/update-your-app-to-the-latest-advertising-libraries.md
+            - name: 在您的應用程式中實作廣告
+              href: ../monetize/developer-walkthroughs.md
+              items:
+                - name: 橫幅廣告
+                  href: ../monetize/banner-ads.md
+                  items:
+                    - name: XAML 和 .NET 中的 AdControl
+                      href: ../monetize/adcontrol-in-xaml-and--net.md
+                    - name: HTML 5 和 JavaScript 中的 AdControl
+                      href: ../monetize/adcontrol-in-html-5-and-javascript.md
+                    - name: 支援的橫幅廣告大小
+                      href: ../monetize/supported-ad-sizes-for-banner-ads.md
+                - name: 插播式廣告
+                  href: ../monetize/interstitial-ads.md
+                  items:
+                    - name: '使用 C# 的插播式廣告範例程式碼'
+                      href: ../monetize/interstitial-ad-sample-code-in-c.md
+                    - name: 使用 JavaScript 的插播式廣告範例程式碼
+                      href: ../monetize/interstitial-ad-sample-code-in-javascript.md
+                - name: 原生廣告
+                  href: ../monetize/native-ads.md
+                - name: 在影片內容中顯示廣告
+                  href: ../monetize/add-advertisements-to-video-content.md
+            - name: 在您的應用程式中設定廣告單元
+              href: ../monetize/set-up-ad-units-in-your-app.md
+            - name: Microsoft 廣告流量分配服務
+              href: ../monetize/ad-mediation-service.md
+            - name: 最佳作法
+              href: ../monetize/best-practices-for-ads-in-apps.md
+              items:
+                - name: UI 和使用者體驗指導方針
+                  href: ../monetize/ui-and-user-experience-guidelines.md
+                - name: 最佳化您的廣告單元的可見性
+                  href: ../monetize/optimize-ad-unit-viewability.md
+                - name: 處理廣告錯誤
+                  href: ../monetize/error-handling-with-advertising-libraries.md
+                  items:
+                    - name: 'XAML/C# 錯誤處理的逐步解說'
+                      href: ../monetize/error-handling-in-xamlc-walkthrough.md
+                    - name: JavaScript 錯誤處理的逐步解說
+                      href: ../monetize/error-handling-in-javascript-walkthrough.md
+            - name: 已知問題與疑難排解
+              href: ../monetize/known-issues-for-the-advertising-libraries.md
+              items:
+                - name: HTML 和 JavaScript 疑難排解指南
+                  href: ../monetize/html-and-javascript-troubleshooting-guide.md
+                - name: 'XAML 和 C# 的疑難排解指南'
+                  href: ../monetize/xaml-and-c-troubleshooting-guide.md
+            - name: 版本資訊
+              href: ../monetize/release-notes-for-the-advertising-libraries.md
+            - name: Windows Premium 廣告發行者計畫
+              href: ../monetize/windows-premium-ads-publishers-program.md
+        - name: 透過 Microsoft Store Services SDK 與客戶互動
+          href: ../monetize/microsoft-store-services-sdk.md
+          items:
+            - name: 使用 A/B 測試執行應用程式實驗
+              href: ../monetize/run-app-experiments-with-a-b-testing.md
+              items:
+                - name: 在合作夥伴中心建立實驗專案
+                  href: ../monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md
+                - name: 編寫實驗用的應用程式程式碼
+                  href: ../monetize/code-your-experiment-in-your-app.md
+                - name: 在合作夥伴中心定義您的實驗
+                  href: ../monetize/define-your-experiment-in-the-dev-center-dashboard.md
+                - name: 在合作夥伴中心管理您的實驗
+                  href: ../monetize/manage-your-experiment.md
+                - name: 建立和執行您的第一個實驗
+                  href: ../monetize/create-and-run-your-first-experiment-with-a-b-testing.md
+            - name: 從您的應用程式啟動意見反應中樞
+              href: ../monetize/launch-feedback-hub-from-your-app.md
+            - name: 設定您的應用程式以接收目標式推播通知
+              href: ../monetize/configure-your-app-to-receive-dev-center-notifications.md
+            - name: 記錄合作夥伴中心的自訂事件
+              href: ../monetize/log-custom-events-for-dev-center.md
+        - name: 要求評分與評論
+          href: ../monetize/request-ratings-and-reviews.md
+        - name: Microsoft Store 服務
+          href: ../monetize/using-windows-store-services.md
+          items:
+            - name: 存取分析資料
+              href: ../monetize/access-analytics-data-using-windows-store-services.md
+              items:
+                - name: 取得遊戲和應用程式的銷售資料
+                  href: ../monetize/acquisitions-data.md
+                - name: 取得遊戲和應用程式的其他銷售資料
+                  href: ../monetize/add-on-acquisitions-data.md
+                - name: UWP 應用程式
+                  items:
+                    - name: 取得下載數和安裝數資料
+                      items:
+                        - name: 取得應用程式銷售數 (舊版)
+                          href: ../monetize/get-app-acquisitions.md
+                        - name: 取得應用程式安裝數
+                          href: ../monetize/get-app-installs.md
+                        - name: 取得應用程式下載漏斗圖資料 (舊版)
+                          href: ../monetize/get-acquisition-funnel-data.md
+                        - name: 依通路取得應用程式轉換
+                          href: ../monetize/get-app-conversions-by-channel.md
+                        - name: 取得附加元件下載數
+                          href: ../monetize/get-in-app-acquisitions.md
+                        - name: 取得訂閱附加元件下載數
+                          href: ../monetize/get-subscription-acquisitions.md
+                        - name: 依通路取得附加元件轉換
+                          href: ../monetize/get-add-on-conversions-by-channel.md
+                    - name: 取得應用程式的深入解析資料
+                      href: ../monetize/get-insights-data-for-your-app.md
+                    - name: 取得應用程式評分
+                      href: ../monetize/get-app-ratings.md
+                    - name: 取得應用程式評論
+                      href: ../monetize/get-app-reviews.md
+                    - name: 取得每日應用程式使用量
+                      href: ../monetize/get-app-usage-daily.md
+                    - name: 取得每月應用程式使用量
+                      href: ../monetize/get-app-usage-monthly.md
+                    - name: 取得錯誤報告資料
+                      href: ../monetize/get-error-reporting-data.md
+                      items:
+                        - name: 取得應用程式中錯誤的詳細資料
+                          href: ../monetize/get-details-for-an-error-in-your-app.md
+                        - name: 取得應用程式中錯誤的堆疊追蹤
+                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-app.md
+                        - name: 下載應用程式中錯誤的 CAB 檔案
+                          href: ../monetize/download-the-cab-file-for-an-error-in-your-app.md
+                    - name: 取得廣告績效資料
+                      href: ../monetize/get-ad-performance-data.md
+                    - name: 取得廣告活動績效資料
+                      href: ../monetize/get-ad-campaign-performance-data.md
+                - name: 傳統型應用程式
+                  items:
+                    - name: 取得傳統型應用程式安裝
+                      href: ../monetize/get-desktop-app-installs.md
+                    - name: 取得傳統型應用程式的深入解析資料
+                      href: ../monetize/get-insights-data-for-your-desktop-app.md
+                    - name: 取得傳統型應用程式的升級區塊
+                      href: ../monetize/get-desktop-block-data.md
+                    - name: 取得傳統型應用程式的升級區塊詳細資料
+                      href: ../monetize/get-desktop-block-data-details.md
+                    - name: 取得傳統型應用程式的錯誤報告資料
+                      href: ../monetize/get-desktop-application-error-reporting-data.md
+                      items:
+                        - name: 取得傳統型應用程式中錯誤的詳細資料
+                          href: ../monetize/get-details-for-an-error-in-your-desktop-application.md
+                        - name: 取得傳統型應用程式中錯誤的堆疊追蹤
+                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-desktop-application.md
+                        - name: 下載傳統型應用程式中錯誤的 CAB 檔案
+                          href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
+                - name: Xbox One 遊戲和 Xbox Live
+                  items:
+                    - name: 取得 Xbox One 遊戲下載數
+                      href: ../monetize/get-xbox-one-game-acquisitions.md
+                    - name: 取得 Xbox One 附加元件下載數
+                      href: ../monetize/get-xbox-one-add-on-acquisitions.md
+                    - name: 取得 Xbox One 遊戲的錯誤報告資料
+                      href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
+                      items:
+                        - name: 針對 Xbox One 遊戲中的錯誤取得詳細資料
+                          href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
+                        - name: 針對 Xbox One 遊戲中的錯誤取得堆疊追蹤
+                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
+                        - name: 針對 Xbox One 遊戲中的錯誤下載 CAB 檔案
+                          href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
+                    - name: 取得 Xbox Live 分析資料
+                      href: ../monetize/get-xbox-live-analytics.md
+                      items:
+                        - name: 取得 Xbox Live 成就資料
+                          href: ../monetize/get-xbox-live-achievements-data.md
+                        - name: 取得 Xbox Live 健康情況資料
+                          href: ../monetize/get-xbox-live-health-data.md
+                        - name: 取得 Xbox Live 遊戲中心資料
+                          href: ../monetize/get-xbox-live-game-hub-data.md
+                        - name: 取得 Xbox Live 俱樂部資料
+                          href: ../monetize/get-xbox-live-club-data.md
+                        - name: 取得 Xbox Live 多人遊戲資料
+                          href: ../monetize/get-xbox-live-multiplayer-data.md
+                        - name: 取得 Xbox Live 並行使用資料
+                          href: ../monetize/get-xbox-live-concurrent-usage-data.md
+            - name: 回應評論
+              href: ../monetize/respond-to-reviews-using-windows-store-services.md
+              items:
+                - name: 取得評論的回應資訊
+                  href: ../monetize/get-response-info-for-app-reviews.md
+                - name: 提交評論的回應
+                  href: ../monetize/submit-responses-to-app-reviews.md
+            - name: 執行廣告活動
+              href: ../monetize/run-ad-campaigns-using-windows-store-services.md
+              items:
+                - name: 管理廣告行銷活動
+                  href: ../monetize/manage-ad-campaigns.md
+                - name: 管理廣告播送行
+                  href: ../monetize/manage-delivery-lines-for-ad-campaigns.md
+                - name: 管理目標設定檔
+                  href: ../monetize/manage-targeting-profiles-for-ad-campaigns.md
+                - name: 管理廣告素材
+                  href: ../monetize/manage-creatives-for-ad-campaigns.md
+            - name: 建立及管理提交
+              href: ../monetize/create-and-manage-submissions-using-windows-store-services.md
+              items:
+                - name: 取得應用程式資料
+                  href: ../monetize/get-app-data.md
+                  items:
+                    - name: 取得所有應用程式
+                      href: ../monetize/get-all-apps.md
+                    - name: 取得應用程式
+                      href: ../monetize/get-an-app.md
+                    - name: 取得應用程式的附加元件
+                      href: ../monetize/get-add-ons-for-an-app.md
+                    - name: 取得應用程式套件正式發行前小眾測試版
+                      href: ../monetize/get-flights-for-an-app.md
+                - name: 管理應用程式提交
+                  href: ../monetize/manage-app-submissions.md
+                  items:
+                    - name: 取得應用程式提交
+                      href: ../monetize/get-an-app-submission.md
+                    - name: 取得應用程式提交的狀態
+                      href: ../monetize/get-status-for-an-app-submission.md
+                    - name: 建立應用程式提交
+                      href: ../monetize/create-an-app-submission.md
+                    - name: 認可應用程式提交
+                      href: ../monetize/commit-an-app-submission.md
+                    - name: 更新應用程式提交
+                      href: ../monetize/update-an-app-submission.md
+                    - name: 刪除應用程式提交
+                      href: ../monetize/delete-an-app-submission.md
+                    - name: 取得應用程式提交的推出資訊
+                      href: ../monetize/get-package-rollout-info-for-an-app-submission.md
+                    - name: 更新應用程式提交的推出百分比
+                      href: ../monetize/update-the-package-rollout-percentage-for-an-app-submission.md
+                    - name: 中斷應用程式提交的推出
+                      href: ../monetize/halt-the-package-rollout-for-an-app-submission.md
+                    - name: 完成應用程式提交的推出
+                      href: ../monetize/finalize-the-package-rollout-for-an-app-submission.md
+                - name: 管理附加元件
+                  href: ../monetize/manage-add-ons.md
+                  items:
+                    - name: 取得所有附加元件
+                      href: ../monetize/get-all-add-ons.md
+                    - name: 取得附加元件
+                      href: ../monetize/get-an-add-on.md
+                    - name: 建立附加元件
+                      href: ../monetize/create-an-add-on.md
+                    - name: 刪除附加元件
+                      href: ../monetize/delete-an-add-on.md
+                - name: 管理附加元件提交
+                  href: ../monetize/manage-add-on-submissions.md
+                  items:
+                    - name: 取得附加元件提交
+                      href: ../monetize/get-an-add-on-submission.md
+                    - name: 取得附加元件提交的狀態
+                      href: ../monetize/get-status-for-an-add-on-submission.md
+                    - name: 建立附加元件提交
+                      href: ../monetize/create-an-add-on-submission.md
+                    - name: 認可附加元件提交
+                      href: ../monetize/commit-an-add-on-submission.md
+                    - name: 更新附加元件提交
+                      href: ../monetize/update-an-add-on-submission.md
+                    - name: 刪除附加元件提交
+                      href: ../monetize/delete-an-add-on-submission.md
+                - name: 管理套件正式發行前小眾測試版
+                  href: ../monetize/manage-flights.md
+                  items:
+                    - name: 取得套件正式發行前小眾測試版
+                      href: ../monetize/get-a-flight.md
+                    - name: 建立套件正式發行前小眾測試版
+                      href: ../monetize/create-a-flight.md
+                    - name: 刪除套件正式發行前小眾測試版
+                      href: ../monetize/delete-a-flight.md
+                - name: 管理套件正式發行前小眾測試版提交
+                  href: ../monetize/manage-flight-submissions.md
+                  items:
+                    - name: 取得套件正式發行前小眾測試版提交
+                      href: ../monetize/get-a-flight-submission.md
+                    - name: 取得套件正式發行前小眾測試版提交的狀態
+                      href: ../monetize/get-status-for-a-flight-submission.md
+                    - name: 建立套件正式發行前小眾測試版提交
+                      href: ../monetize/create-a-flight-submission.md
+                    - name: 認可套件正式發行前小眾測試版提交
+                      href: ../monetize/commit-a-flight-submission.md
+                    - name: 更新套件正式發行前小眾測試版提交
+                      href: ../monetize/update-a-flight-submission.md
+                    - name: 刪除套件正式發行前小眾測試版提交
+                      href: ../monetize/delete-a-flight-submission.md
+                    - name: 取得正式發行前小眾測試版提交的推出資訊
+                      href: ../monetize/get-package-rollout-info-for-a-flight-submission.md
+                    - name: 更新正式發行前小眾測試版提交的推出百分比
+                      href: ../monetize/update-the-package-rollout-percentage-for-a-flight-submission.md
+                    - name: 中斷正式發行前小眾測試版提交的推出
+                      href: ../monetize/halt-the-package-rollout-for-a-flight-submission.md
+                    - name: 完成正式發行前小眾測試版提交的推出
+                      href: ../monetize/finalize-the-package-rollout-for-a-flight-submission.md
+                - name: 提交 API 的程式碼範例
+                  href: ../monetize/code-examples-for-the-windows-store-submission-api.md
+                  items:
+                    - name: 'C# 範例：提交應用程式、附加元件與正式發行前小眾測試版'
+                      href: ../monetize/csharp-code-examples-for-the-windows-store-submission-api.md
+                    - name: 'C# 範例：提交含遊戲選項與預告片的應用程式'
+                      href: ../monetize/csharp-code-examples-for-submissions-game-options-and-trailers.md
+                    - name: Java 範例：提交應用程式、附加元件與正式發行前小眾測試版
+                      href: ../monetize/java-code-examples-for-the-windows-store-submission-api.md
+                    - name: Java 範例：提交含遊戲選項與預告片的應用程式
+                      href: ../monetize/java-code-examples-for-submissions-game-options-and-trailers.md
+                    - name: Python 範例：提交應用程式、附加元件與正式發行前小眾測試版
+                      href: ../monetize/python-code-examples-for-the-windows-store-submission-api.md
+                    - name: Python 範例：提交含遊戲選項與預告片的應用程式
+                      href: ../monetize/python-code-examples-for-submissions-game-options-and-trailers.md
+            - name: 管理針對性優惠
+              href: ../monetize/manage-targeted-offers-using-windows-store-services.md
+              items:
+                - name: 取得針對性優惠
+                  href: ../monetize/get-targeted-offers.md
+            - name: 管理服務的產品權利
+              href: ../monetize/view-and-grant-products-from-a-service.md
+              items:
+                - name: 查詢產品
+                  href: ../monetize/query-for-products.md
+                - name: 將消費性產品回報為已完成
+                  href: ../monetize/report-consumable-products-as-fulfilled.md
+                - name: 授與免費產品
+                  href: ../monetize/grant-free-products.md
+                - name: 取得使用者訂閱
+                  href: ../monetize/get-subscriptions-for-a-user.md
+                - name: 變更使用者訂閱的帳單狀態
+                  href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
+                - name: 更新 Microsoft Store 識別碼金鑰
+                  href: ../monetize/renew-a-windows-store-id-key.md
+            - name: 廣告網路的應用程式中繼資料 API
+              href: ../monetize/app-metadata-api-for-advertising-networks.md
+        - name: 傳送要求至 Microsoft Store
+          href: ../monetize/send-requests-to-the-store.md
+        - name: 新增零售示範 (RDX) 功能
+          href: ../monetize/retail-demo-experience.md
+        - name: 使用付款要求 API 簡化付款
+          href: ../monetize/payment-request.md
+    - name: 封裝應用程式
+      href: ../packaging/index.md
       items:
-      - name: 規劃效能
-        href: ../debug-test-perf/planning-and-measuring-performance.md
-      - name: 最佳化背景活動
-        href: ../debug-test-perf/optimize-background-activity.md
-      - name: ListView 與 GridView UI 最佳化
-        href: ../debug-test-perf/optimize-gridview-and-listview.md
-      - name: ListView 與 GridView 資料虛擬化
-        href: ../debug-test-perf/listview-and-gridview-data-optimization.md
-      - name: 改善記憶體回收效能
-        href: ../debug-test-perf/improve-garbage-collection-performance.md
-      - name: 讓 UI 執行緒保持回應
-        href: ../debug-test-perf/keep-the-ui-thread-responsive.md
-      - name: 最佳化您的 XAML 標記
-        href: ../debug-test-perf/optimize-xaml-loading.md
-      - name: 最佳化您的 XAML 配置
-        href: ../debug-test-perf/optimize-your-xaml-layout.md
-      - name: MVVM 和語言效能祕訣
-        href: ../debug-test-perf/mvvm-performance-tips.md
-      - name: 應用程式啟動效能的最佳做法
-        href: ../debug-test-perf/best-practices-for-your-app-s-startup-performance.md
-      - name: 最佳化動畫、媒體及影像
-        href: ../debug-test-perf/optimize-animations-and-media.md
-      - name: 最佳化暫停/繼續
-        href: ../debug-test-perf/optimize-suspend-resume.md
-      - name: 最佳化檔案存取
-        href: ../debug-test-perf/optimize-file-access.md
-      - name: Windows 執行階段元件和最佳化互通性
-        href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
-      - name: 分析和效能的工具
-        href: ../debug-test-perf/tools-for-profiling-and-performance.md
-    - name: 版本調適型應用程式
-      href: ../debug-test-perf/version-adaptive-apps.md
-      items:
-      - name: 版本調適型程式碼
-        href: ../debug-test-perf/version-adaptive-code.md
-      - name: 條件式 XAML
-        href: ../debug-test-perf/conditional-xaml.md
-  - name: 營利、參與和 Microsoft Store 服務
-    href: ../monetize/index.md
-    items:
-    - name: 應用程式內購買和試用版
-      href: ../monetize/in-app-purchases-and-trials.md
-      items:
-      - name: 取得應用程式和附加元件的產品資訊
-        href: ../monetize/get-product-info-for-apps-and-add-ons.md
-      - name: 取得應用程式和附加元件的授權資訊
-        href: ../monetize/get-license-info-for-apps-and-add-ons.md
-      - name: 啟用應用程式和附加元件的應用程式內購買
-        href: ../monetize/enable-in-app-purchases-of-apps-and-add-ons.md
-      - name: 啟用消費性附加元件購買
-        href: ../monetize/enable-consumable-add-on-purchases.md
-      - name: 啟用應用程式的訂閱附加元件
-        href: ../monetize/enable-subscription-add-ons-for-your-app.md
-      - name: 實作應用程式的試用版
-        href: ../monetize/implement-a-trial-version-of-your-app.md
-      - name: Microsoft Store 產品的資料結構描述
-        href: ../monetize/data-schemas-for-store-products.md
-      - name: Microsoft Store 作業的錯誤碼
-        href: ../monetize/error-codes-for-store-operations.md
-      - name: 使用 Windows.ApplicationModel.Store 命名空間
-        href: ../monetize/in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md
-        items:
-        - name: 在試用版本中排除或限制某些功能
-          href: ../monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.md
-        - name: 啟用應用程式內產品購買
-          href: ../monetize/enable-in-app-product-purchases.md
-        - name: 啟用消費性應用程式內產品購買
-          href: ../monetize/enable-consumable-in-app-product-purchases.md
-        - name: 管理大型的應用程式內產品型錄
-          href: ../monetize/manage-a-large-catalog-of-in-app-products.md
-        - name: 使用收據來驗證產品購買
-          href: ../monetize/use-receipts-to-verify-product-purchases.md
-    - name: 使用 Microsoft Advertising SDK 停用應用程式中的廣告
-      href: ../monetize/display-ads-in-your-app.md
-      items:
-      - name: 安裝 Microsoft Advertising SDK
-        href: ../monetize/install-the-microsoft-advertising-libraries.md
-        items:
-        - name: 將您的應用程式更新到橫幅廣告的最新程式庫
-          href: ../monetize/update-your-app-to-the-latest-advertising-libraries.md
-      - name: 在您的應用程式中實作廣告
-        href: ../monetize/developer-walkthroughs.md
-        items:
-        - name: 橫幅廣告
-          href: ../monetize/banner-ads.md
+        - name: 使用 Visual Studio 封裝 UWP 應用程式
+          href: ../packaging/packaging-uwp-apps.md
+        - name: 手動應用程式封裝
+          href: ../packaging/manual-packaging-root.md
           items:
-          - name: XAML 和 .NET 中的 AdControl
-            href: ../monetize/adcontrol-in-xaml-and--net.md
-          - name: HTML 5 和 JavaScript 中的 AdControl
-            href: ../monetize/adcontrol-in-html-5-and-javascript.md
-          - name: 支援的橫幅廣告大小
-            href: ../monetize/supported-ad-sizes-for-banner-ads.md
-        - name: 插播式廣告
-          href: ../monetize/interstitial-ads.md
+            - name: 使用 MakeAppx.exe 工具建立應用程式套件
+              href: ../packaging/create-app-package-with-makeappx-tool.md
+            - name: 建立套件簽署的憑證
+              href: ../packaging/create-certificate-package-signing.md
+            - name: 使用 SignTool 簽署應用程式套件
+              href: ../packaging/sign-app-package-using-signtool.md
+            - name: 使用資產套件與套件摺疊進行開發
+              href: ../packaging/package-folding.md
+            - name: 一般套件組合應用程式套件
+              href: ../packaging/flat-bundles.md
+            - name: 資產套件簡介
+              href: ../packaging/asset-packages.md
+            - name: 使用封裝配置的套件建立
+              href: ../packaging/packaging-layout.md
+        - name: 應用程式套件架構
+          href: ../packaging/device-architecture.md
+        - name: UWP 應用程式串流安裝
+          href: ../packaging/streaming-install.md
           items:
-          - name: 使用 C# 的插播式廣告範例程式碼
-            href: ../monetize/interstitial-ad-sample-code-in-c.md
-          - name: 使用 JavaScript 的插播式廣告範例程式碼
-            href: ../monetize/interstitial-ad-sample-code-in-javascript.md
-        - name: 原生廣告
-          href: ../monetize/native-ads.md
-        - name: 在影片內容中顯示廣告
-          href: ../monetize/add-advertisements-to-video-content.md
-      - name: 在您的應用程式中設定廣告單元
-        href: ../monetize/set-up-ad-units-in-your-app.md
-      - name: Microsoft 廣告流量分配服務
-        href: ../monetize/ad-mediation-service.md
-      - name: 最佳作法
-        href: ../monetize/best-practices-for-ads-in-apps.md
-        items:
-        - name: UI 和使用者體驗指導方針
-          href: ../monetize/ui-and-user-experience-guidelines.md
-        - name: 最佳化您的廣告單元的可見性
-          href: ../monetize/optimize-ad-unit-viewability.md
-        - name: 處理廣告錯誤
-          href: ../monetize/error-handling-with-advertising-libraries.md
+            - name: 建立和轉換來源內容群組對應
+              href: ../packaging/create-cgm.md
+        - name: 選用套件及相關集合的製作
+          href: ../packaging/optional-packages.md
           items:
-          - name: XAML/C# 錯誤處理的逐步解說
-            href: ../monetize/error-handling-in-xamlc-walkthrough.md
-          - name: JavaScript 錯誤處理的逐步解說
-            href: ../monetize/error-handling-in-javascript-walkthrough.md
-      - name: 已知問題與疑難排解
-        href: ../monetize/known-issues-for-the-advertising-libraries.md
-        items:
-        - name: HTML 和 JavaScript 疑難排解指南
-          href: ../monetize/html-and-javascript-troubleshooting-guide.md
-        - name: XAML 和 C# 的疑難排解指南
-          href: ../monetize/xaml-and-c-troubleshooting-guide.md
-      - name: 版本資訊
-        href: ../monetize/release-notes-for-the-advertising-libraries.md
-      - name: Windows Premium 廣告發行者計畫
-        href: ../monetize/windows-premium-ads-publishers-program.md
-    - name: 透過 Microsoft Store Services SDK 與客戶互動
-      href: ../monetize/microsoft-store-services-sdk.md
-      items:
-      - name: 使用 A/B 測試執行應用程式實驗
-        href: ../monetize/run-app-experiments-with-a-b-testing.md
-        items:
-        - name: 在合作夥伴中心建立實驗專案
-          href: ../monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md
-        - name: 編寫實驗用的應用程式程式碼
-          href: ../monetize/code-your-experiment-in-your-app.md
-        - name: 在合作夥伴中心定義您的實驗
-          href: ../monetize/define-your-experiment-in-the-dev-center-dashboard.md
-        - name: 在合作夥伴中心管理您的實驗
-          href: ../monetize/manage-your-experiment.md
-        - name: 建立和執行您的第一個實驗
-          href: ../monetize/create-and-run-your-first-experiment-with-a-b-testing.md
-      - name: 從您的應用程式啟動意見反應中樞
-        href: ../monetize/launch-feedback-hub-from-your-app.md
-      - name: 設定您的應用程式以接收目標式推播通知
-        href: ../monetize/configure-your-app-to-receive-dev-center-notifications.md
-      - name: 記錄合作夥伴中心的自訂事件
-        href: ../monetize/log-custom-events-for-dev-center.md
-    - name: 要求評分與評論
-      href: ../monetize/request-ratings-and-reviews.md
-    - name: Microsoft Store 服務
-      href: ../monetize/using-windows-store-services.md
-      items:
-      - name: 存取分析資料
-        href: ../monetize/access-analytics-data-using-windows-store-services.md
-        items:
-        - name: 取得遊戲和應用程式的銷售資料
-          href: ../monetize/acquisitions-data.md
-        - name: 取得遊戲和應用程式的其他銷售資料
-          href: ../monetize/add-on-acquisitions-data.md
-        - name: UWP 應用程式
-          items:
-          - name: 取得下載數和安裝數資料
-            items:
-            - name: 取得應用程式銷售數 (舊版)
-              href: ../monetize/get-app-acquisitions.md
-            - name: 取得應用程式安裝數
-              href: ../monetize/get-app-installs.md
-            - name: 取得應用程式下載漏斗圖資料 (舊版)
-              href: ../monetize/get-acquisition-funnel-data.md
-            - name: 依通路取得應用程式轉換
-              href: ../monetize/get-app-conversions-by-channel.md
-            - name: 取得附加元件下載數
-              href: ../monetize/get-in-app-acquisitions.md
-            - name: 取得訂閱附加元件下載數
-              href: ../monetize/get-subscription-acquisitions.md
-            - name: 依通路取得附加元件轉換
-              href: ../monetize/get-add-on-conversions-by-channel.md
-          - name: 取得應用程式的深入解析資料
-            href: ../monetize/get-insights-data-for-your-app.md
-          - name: 取得應用程式評分
-            href: ../monetize/get-app-ratings.md
-          - name: 取得應用程式評論
-            href: ../monetize/get-app-reviews.md
-          - name: 取得每日應用程式使用量
-            href: ../monetize/get-app-usage-daily.md
-          - name: 取得每月應用程式使用量
-            href: ../monetize/get-app-usage-monthly.md
-          - name: 取得錯誤報告資料
-            href: ../monetize/get-error-reporting-data.md
-            items:
-            - name: 取得應用程式中錯誤的詳細資料
-              href: ../monetize/get-details-for-an-error-in-your-app.md
-            - name: 取得應用程式中錯誤的堆疊追蹤
-              href: ../monetize/get-the-stack-trace-for-an-error-in-your-app.md
-            - name: 下載應用程式中錯誤的 CAB 檔案
-              href: ../monetize/download-the-cab-file-for-an-error-in-your-app.md
-          - name: 取得廣告績效資料
-            href: ../monetize/get-ad-performance-data.md
-          - name: 取得廣告活動績效資料
-            href: ../monetize/get-ad-campaign-performance-data.md
-        - name: 傳統型應用程式
-          items:
-          - name: 取得傳統型應用程式安裝
-            href: ../monetize/get-desktop-app-installs.md
-          - name: 取得傳統型應用程式的深入解析資料
-            href: ../monetize/get-insights-data-for-your-desktop-app.md
-          - name: 取得傳統型應用程式的升級區塊
-            href: ../monetize/get-desktop-block-data.md
-          - name: 取得傳統型應用程式的升級區塊詳細資料
-            href: ../monetize/get-desktop-block-data-details.md
-          - name: 取得傳統型應用程式的錯誤報告資料
-            href: ../monetize/get-desktop-application-error-reporting-data.md
-            items:
-            - name: 取得傳統型應用程式中錯誤的詳細資料
-              href: ../monetize/get-details-for-an-error-in-your-desktop-application.md
-            - name: 取得傳統型應用程式中錯誤的堆疊追蹤
-              href: ../monetize/get-the-stack-trace-for-an-error-in-your-desktop-application.md
-            - name: 下載傳統型應用程式中錯誤的 CAB 檔案
-              href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
-        - name: Xbox One 遊戲和 Xbox Live
-          items:
-          - name: 取得 Xbox One 遊戲下載數
-            href: ../monetize/get-xbox-one-game-acquisitions.md
-          - name: 取得 Xbox One 附加元件下載數
-            href: ../monetize/get-xbox-one-add-on-acquisitions.md
-          - name: 取得 Xbox One 遊戲的錯誤報告資料
-            href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
-            items:
-            - name: 針對 Xbox One 遊戲中的錯誤取得詳細資料
-              href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
-            - name: 針對 Xbox One 遊戲中的錯誤取得堆疊追蹤
-              href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
-            - name: 針對 Xbox One 遊戲中的錯誤下載 CAB 檔案
-              href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
-          - name: 取得 Xbox Live 分析資料
-            href: ../monetize/get-xbox-live-analytics.md
-            items:
-            - name: 取得 Xbox Live 成就資料
-              href: ../monetize/get-xbox-live-achievements-data.md
-            - name: 取得 Xbox Live 健康情況資料
-              href: ../monetize/get-xbox-live-health-data.md
-            - name: 取得 Xbox Live 遊戲中心資料
-              href: ../monetize/get-xbox-live-game-hub-data.md
-            - name: 取得 Xbox Live 俱樂部資料
-              href: ../monetize/get-xbox-live-club-data.md
-            - name: 取得 Xbox Live 多人遊戲資料
-              href: ../monetize/get-xbox-live-multiplayer-data.md
-            - name: 取得 Xbox Live 並行使用資料
-              href: ../monetize/get-xbox-live-concurrent-usage-data.md
-      - name: 回應評論
-        href: ../monetize/respond-to-reviews-using-windows-store-services.md
-        items:
-        - name: 取得評論的回應資訊
-          href: ../monetize/get-response-info-for-app-reviews.md
-        - name: 提交評論的回應
-          href: ../monetize/submit-responses-to-app-reviews.md
-      - name: 執行廣告活動
-        href: ../monetize/run-ad-campaigns-using-windows-store-services.md
-        items:
-        - name: 管理廣告行銷活動
-          href: ../monetize/manage-ad-campaigns.md
-        - name: 管理廣告播送行
-          href: ../monetize/manage-delivery-lines-for-ad-campaigns.md
-        - name: 管理目標設定檔
-          href: ../monetize/manage-targeting-profiles-for-ad-campaigns.md
-        - name: 管理廣告素材
-          href: ../monetize/manage-creatives-for-ad-campaigns.md
-      - name: 建立及管理提交
-        href: ../monetize/create-and-manage-submissions-using-windows-store-services.md
-        items:
-        - name: 取得應用程式資料
-          href: ../monetize/get-app-data.md
-          items:
-          - name: 取得所有應用程式
-            href: ../monetize/get-all-apps.md
-          - name: 取得應用程式
-            href: ../monetize/get-an-app.md
-          - name: 取得應用程式的附加元件
-            href: ../monetize/get-add-ons-for-an-app.md
-          - name: 取得應用程式套件正式發行前小眾測試版
-            href: ../monetize/get-flights-for-an-app.md
-        - name: 管理應用程式提交
-          href: ../monetize/manage-app-submissions.md
-          items:
-          - name: 取得應用程式提交
-            href: ../monetize/get-an-app-submission.md
-          - name: 取得應用程式提交的狀態
-            href: ../monetize/get-status-for-an-app-submission.md
-          - name: 建立應用程式提交
-            href: ../monetize/create-an-app-submission.md
-          - name: 認可應用程式提交
-            href: ../monetize/commit-an-app-submission.md
-          - name: 更新應用程式提交
-            href: ../monetize/update-an-app-submission.md
-          - name: 刪除應用程式提交
-            href: ../monetize/delete-an-app-submission.md
-          - name: 取得應用程式提交的推出資訊
-            href: ../monetize/get-package-rollout-info-for-an-app-submission.md
-          - name: 更新應用程式提交的推出百分比
-            href: ../monetize/update-the-package-rollout-percentage-for-an-app-submission.md
-          - name: 中斷應用程式提交的推出
-            href: ../monetize/halt-the-package-rollout-for-an-app-submission.md
-          - name: 完成應用程式提交的推出
-            href: ../monetize/finalize-the-package-rollout-for-an-app-submission.md
-        - name: 管理附加元件
-          href: ../monetize/manage-add-ons.md
-          items:
-          - name: 取得所有附加元件
-            href: ../monetize/get-all-add-ons.md
-          - name: 取得附加元件
-            href: ../monetize/get-an-add-on.md
-          - name: 建立附加元件
-            href: ../monetize/create-an-add-on.md
-          - name: 刪除附加元件
-            href: ../monetize/delete-an-add-on.md
-        - name: 管理附加元件提交
-          href: ../monetize/manage-add-on-submissions.md
-          items:
-          - name: 取得附加元件提交
-            href: ../monetize/get-an-add-on-submission.md
-          - name: 取得附加元件提交的狀態
-            href: ../monetize/get-status-for-an-add-on-submission.md
-          - name: 建立附加元件提交
-            href: ../monetize/create-an-add-on-submission.md
-          - name: 認可附加元件提交
-            href: ../monetize/commit-an-add-on-submission.md
-          - name: 更新附加元件提交
-            href: ../monetize/update-an-add-on-submission.md
-          - name: 刪除附加元件提交
-            href: ../monetize/delete-an-add-on-submission.md
-        - name: 管理套件正式發行前小眾測試版
-          href: ../monetize/manage-flights.md
-          items:
-          - name: 取得套件正式發行前小眾測試版
-            href: ../monetize/get-a-flight.md
-          - name: 建立套件正式發行前小眾測試版
-            href: ../monetize/create-a-flight.md
-          - name: 刪除套件正式發行前小眾測試版
-            href: ../monetize/delete-a-flight.md
-        - name: 管理套件正式發行前小眾測試版提交
-          href: ../monetize/manage-flight-submissions.md
-          items:
-          - name: 取得套件正式發行前小眾測試版提交
-            href: ../monetize/get-a-flight-submission.md
-          - name: 取得套件正式發行前小眾測試版提交的狀態
-            href: ../monetize/get-status-for-a-flight-submission.md
-          - name: 建立套件正式發行前小眾測試版提交
-            href: ../monetize/create-a-flight-submission.md
-          - name: 認可套件正式發行前小眾測試版提交
-            href: ../monetize/commit-a-flight-submission.md
-          - name: 更新套件正式發行前小眾測試版提交
-            href: ../monetize/update-a-flight-submission.md
-          - name: 刪除套件正式發行前小眾測試版提交
-            href: ../monetize/delete-a-flight-submission.md
-          - name: 取得正式發行前小眾測試版提交的推出資訊
-            href: ../monetize/get-package-rollout-info-for-a-flight-submission.md
-          - name: 更新正式發行前小眾測試版提交的推出百分比
-            href: ../monetize/update-the-package-rollout-percentage-for-a-flight-submission.md
-          - name: 中斷正式發行前小眾測試版提交的推出
-            href: ../monetize/halt-the-package-rollout-for-a-flight-submission.md
-          - name: 完成正式發行前小眾測試版提交的推出
-            href: ../monetize/finalize-the-package-rollout-for-a-flight-submission.md
-        - name: 提交 API 的程式碼範例
-          href: ../monetize/code-examples-for-the-windows-store-submission-api.md
-          items:
-          - name: C# 範例：提交應用程式、附加元件與正式發行前小眾測試版
-            href: ../monetize/csharp-code-examples-for-the-windows-store-submission-api.md
-          - name: C# 範例：提交含遊戲選項與預告片的應用程式
-            href: ../monetize/csharp-code-examples-for-submissions-game-options-and-trailers.md
-          - name: Java 範例：提交應用程式、附加元件與正式發行前小眾測試版
-            href: ../monetize/java-code-examples-for-the-windows-store-submission-api.md
-          - name: Java 範例：提交含遊戲選項與預告片的應用程式
-            href: ../monetize/java-code-examples-for-submissions-game-options-and-trailers.md
-          - name: Python 範例：提交應用程式、附加元件與正式發行前小眾測試版
-            href: ../monetize/python-code-examples-for-the-windows-store-submission-api.md
-          - name: Python 範例：提交含遊戲選項與預告片的應用程式
-            href: ../monetize/python-code-examples-for-submissions-game-options-and-trailers.md
-      - name: 管理針對性優惠
-        href: ../monetize/manage-targeted-offers-using-windows-store-services.md
-        items:
-        - name: 取得針對性優惠
-          href: ../monetize/get-targeted-offers.md
-      - name: 管理服務的產品權利
-        href: ../monetize/view-and-grant-products-from-a-service.md
-        items:
-        - name: 查詢產品
-          href: ../monetize/query-for-products.md
-        - name: 將消費性產品回報為已完成
-          href: ../monetize/report-consumable-products-as-fulfilled.md
-        - name: 授與免費產品
-          href: ../monetize/grant-free-products.md
-        - name: 取得使用者訂閱
-          href: ../monetize/get-subscriptions-for-a-user.md
-        - name: 變更使用者訂閱的帳單狀態
-          href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
-        - name: 更新 Microsoft Store 識別碼金鑰
-          href: ../monetize/renew-a-windows-store-id-key.md
-      - name: 廣告網路的應用程式中繼資料 API
-        href: ../monetize/app-metadata-api-for-advertising-networks.md
-    - name: 傳送要求至 Microsoft Store
-      href: ../monetize/send-requests-to-the-store.md
-    - name: 新增零售示範 (RDX) 功能
-      href: ../monetize/retail-demo-experience.md
-    - name: 使用付款要求 API 簡化付款
-      href: ../monetize/payment-request.md
-  - name: 封裝應用程式
-    href: ../packaging/index.md
-    items:
-    - name: 使用 Visual Studio 封裝 UWP 應用程式
-      href: ../packaging/packaging-uwp-apps.md
-    - name: 手動應用程式封裝
-      href: ../packaging/manual-packaging-root.md
-      items:
-      - name: 使用 MakeAppx.exe 工具建立應用程式套件
-        href: ../packaging/create-app-package-with-makeappx-tool.md
-      - name: 建立套件簽署的憑證
-        href: ../packaging/create-certificate-package-signing.md
-      - name: 使用 SignTool 簽署應用程式套件
-        href: ../packaging/sign-app-package-using-signtool.md
-      - name: 使用資產套件與套件摺疊進行開發
-        href: ../packaging/package-folding.md
-      - name: 一般套件組合應用程式套件
-        href: ../packaging/flat-bundles.md
-      - name: 資產套件簡介
-        href: ../packaging/asset-packages.md
-      - name: 使用封裝配置的套件建立
-        href: ../packaging/packaging-layout.md
-    - name: 應用程式套件架構
-      href: ../packaging/device-architecture.md
-    - name: UWP 應用程式串流安裝
-      href: ../packaging/streaming-install.md
-      items:
-      - name: 建立和轉換來源內容群組對應
-        href: ../packaging/create-cgm.md
-    - name: 選用套件及相關集合的製作
-      href: ../packaging/optional-packages.md
-      items:
-      - name: 具可執行程式碼的選用套件
-        href: ../packaging/optional-packages-with-executable-code.md
-    - name: 使用 WinAppDeployCmd.exe 工具安裝應用程式
-      href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
-    - name: 應用程式功能宣告
-      href: ../packaging/app-capability-declarations.md
-    - name: 設定您的 UWP 應用程式的自動化組建
-      href: ../packaging/auto-build-package-uwp-apps.md
-    - name: 從 Microsoft Store 下載與安裝套件更新
-      href: ../packaging/self-install-package-updates.md
+            - name: 具可執行程式碼的選用套件
+              href: ../packaging/optional-packages-with-executable-code.md
+        - name: 使用 WinAppDeployCmd.exe 工具安裝應用程式
+          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
+        - name: 應用程式功能宣告
+          href: ../packaging/app-capability-declarations.md
+        - name: 設定您的 UWP 應用程式的自動化組建
+          href: ../packaging/auto-build-package-uwp-apps.md
+        - name: 從 Microsoft Store 下載與安裝套件更新
+          href: ../packaging/self-install-package-updates.md
 - name: 平台
   items:
-  - name: C++/WinRT
-    href: ../cpp-and-winrt-apis/index.md
-    items:
-    - name: 簡介
-      href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-    - name: 立即開始
-      href: ../cpp-and-winrt-apis/get-started.md
-    - name: 新功能
-      href: ../cpp-and-winrt-apis/news.md
-    - name: 常見問題集
-      href: ../cpp-and-winrt-apis/faq.md
-    - name: 疑難排解
-      href: ../cpp-and-winrt-apis/troubleshooting.md
-    - name: Photo Editor 範例應用程式
-      href: ../cpp-and-winrt-apis/photo-editor-sample.md
-    - name: 字串處理
-      href: ../cpp-and-winrt-apis/strings.md
-    - name: 標準 C++ 資料類型
-      href: ../cpp-and-winrt-apis/std-cpp-data-types.md
-    - name: 將純量數值 Boxing 和 unboxing 到 IInspectable
-      href: ../cpp-and-winrt-apis/boxing.md
-    - name: 取用 API
-      href: ../cpp-and-winrt-apis/consume-apis.md
-    - name: 撰寫 API
-      href: ../cpp-and-winrt-apis/author-apis.md
-    - name: 錯誤處理
-      href: ../cpp-and-winrt-apis/error-handling.md
-    - name: 使用委派來處理事件
-      href: ../cpp-and-winrt-apis/handle-events.md
-    - name: 撰寫事件
-      href: ../cpp-and-winrt-apis/author-events.md
-    - name: 集合
-      href: ../cpp-and-winrt-apis/collections.md
-    - name: 並行和非同步作業
-      href: ../cpp-and-winrt-apis/concurrency.md
-    - name: XAML 控制項；繫結到屬性
-      href: ../cpp-and-winrt-apis/binding-property.md
-    - name: XAML 項目控制項；繫結到集合
-      href: ../cpp-and-winrt-apis/binding-collection.md
-    - name: XAML 自訂 (範本化) 控制項
-      href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
-    - name: 取用 COM 元件
-      href: ../cpp-and-winrt-apis/consume-com.md
-    - name: 撰寫 COM 元件
-      href: ../cpp-and-winrt-apis/author-coclasses.md
-    - name: 從 C++/CX 移到 C++/WinRT
-      href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
-    - name: 與 C++/CX 的互通性
-      href: ../cpp-and-winrt-apis/interop-winrt-cx.md
-    - name: 從 WRL 移到 C++/WinRT
-      href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
-    - name: 與 ABI 的互通性
-      href: ../cpp-and-winrt-apis/interop-winrt-abi.md
-    - name: 強式和弱式參考
-      href: ../cpp-and-winrt-apis/weak-references.md
-    - name: 敏捷式物件
-      href: ../cpp-and-winrt-apis/agile-objects.md
-    - name: C++ 語言
+    - name: C++/WinRT
+      href: ../cpp-and-winrt-apis/index.md
       items:
-      - name: 值類別，以及參考
-        href: ../cpp-and-winrt-apis/cpp-value-categories.md
-  - name: 安全性
-    href: ../security/index.md
-    items:
-    - name: 安全開發 Windows app 的簡介
-      href: ../security/intro-to-secure-windows-app-development.md
-    - name: 驗證和使用者識別
-      href: ../security/authentication-and-user-identity.md
-      items:
-      - name: 認證保險箱
-        href: ../security/credential-locker.md
-      - name: 指紋生物識別技術
-        href: ../security/fingerprint-biometrics.md
-      - name: Windows Hello
-        href: ../security/microsoft-passport.md
-        items:
-        - name: 建立 Windows Hello 登入應用程式
-          href: ../security/microsoft-passport-login.md
-        - name: 建立 Windows Hello 登入服務
-          href: ../security/microsoft-passport-login-auth-service.md
-      - name: 智慧卡
-        href: ../security/smart-cards.md
-      - name: 共用的憑證
-        href: ../security/share-certificates.md
-      - name: Web 帳戶管理員
-        href: ../security/web-account-manager.md
-      - name: 使用 IoT 夥伴裝置解除鎖定
-        href: ../security/companion-device-unlock.md
-      - name: Web 驗證代理人
-        href: ../security/web-authentication-broker.md
-    - name: 密碼編譯
-      href: ../security/cryptography.md
-      items:
-      - name: 憑證
-        href: ../security/certificates.md
-      - name: 密碼編譯金鑰
-        href: ../security/cryptographic-keys.md
-      - name: 資料保護
-        href: ../security/data-protection.md
-      - name: MAC、雜湊以及簽章
-        href: ../security/macs-hashes-and-signatures.md
-      - name: 密碼編譯的出口限制
-        href: ../security/export-restrictions-on-cryptography.md
-      - name: 常見的密碼編譯工作
-        href: ../security/common-cryptography-tasks.md
-        items:
-        - name: 建立隨機數字
-          href: ../security/create-random-numbers.md
-        - name: 比較緩衝區
-          href: ../security/compare-buffers.md
-        - name: 在字串與二進位資料間轉換
-          href: ../security/convert-between-strings-and-binary-data.md
-        - name: 複製到位元組陣列和從位元組陣列中複製
-          href: ../security/copy-to-and-from-byte-arrays.md
-        - name: 編碼及解碼資料
-          href: ../security/encode-and-decode-data.md
-  - name: 視覺層
-    href: ../composition/visual-layer.md
-    items:
-    - name: 組合視覺效果
-      href: ../composition/composition-visual-tree.md
-    - name: 組合動畫
-      href: ../composition/composition-animation.md
-      items:
-      - name: 時間動畫
-        href: ../composition/time-animations.md
-      - name: 關聯動畫
-        href: ../composition/relation-animations.md
-      - name: 自然動畫
-        href: ../composition/natural-animations.md
-        items:
-        - name: 彈簧動畫
-          href: ../composition/spring-animations.md
-      - name: 輸入導向動畫
-        href: ../composition/input-driven-animations.md
-        items:
-        - name: 捲動型動畫
-          href: ../composition/scroll-input-animations.md
-        - name: 指標型動畫
-          href: ../composition/pointer-input-animations.md
-        - name: 自訂操作
-          href: ../composition/interaction-tracker-manipulations.md
+        - name: 簡介
+          href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
+        - name: 立即開始
+          href: ../cpp-and-winrt-apis/get-started.md
+        - name: 新功能
+          href: ../cpp-and-winrt-apis/news.md
+        - name: 常見問題集
+          href: ../cpp-and-winrt-apis/faq.md
+        - name: 疑難排解
+          href: ../cpp-and-winrt-apis/troubleshooting.md
+        - name: Photo Editor 範例應用程式
+          href: ../cpp-and-winrt-apis/photo-editor-sample.md
+        - name: 字串處理
+          href: ../cpp-and-winrt-apis/strings.md
+        - name: 標準 C++ 資料類型
+          href: ../cpp-and-winrt-apis/std-cpp-data-types.md
+        - name: 將純量數值 Boxing 和 unboxing 到 IInspectable
+          href: ../cpp-and-winrt-apis/boxing.md
+        - name: 取用 API
+          href: ../cpp-and-winrt-apis/consume-apis.md
+        - name: 撰寫 API
+          href: ../cpp-and-winrt-apis/author-apis.md
+        - name: 錯誤處理
+          href: ../cpp-and-winrt-apis/error-handling.md
+        - name: 使用委派來處理事件
+          href: ../cpp-and-winrt-apis/handle-events.md
+        - name: 撰寫事件
+          href: ../cpp-and-winrt-apis/author-events.md
+        - name: 集合
+          href: ../cpp-and-winrt-apis/collections.md
+        - name: 並行和非同步作業
+          href: ../cpp-and-winrt-apis/concurrency.md
+        - name: XAML 控制項；繫結到屬性
+          href: ../cpp-and-winrt-apis/binding-property.md
+        - name: XAML 項目控制項；繫結到集合
+          href: ../cpp-and-winrt-apis/binding-collection.md
+        - name: XAML 自訂 (範本化) 控制項
+          href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
+        - name: 取用 COM 元件
+          href: ../cpp-and-winrt-apis/consume-com.md
+        - name: 撰寫 COM 元件
+          href: ../cpp-and-winrt-apis/author-coclasses.md
+        - name: 從 C++/CX 移到 C++/WinRT
+          href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
+        - name: 與 C++/CX 的互通性
+          href: ../cpp-and-winrt-apis/interop-winrt-cx.md
+        - name: 從 WRL 移到 C++/WinRT
+          href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: 與 ABI 的互通性
+          href: ../cpp-and-winrt-apis/interop-winrt-abi.md
+        - name: 強式和弱式參考
+          href: ../cpp-and-winrt-apis/weak-references.md
+        - name: 敏捷式物件
+          href: ../cpp-and-winrt-apis/agile-objects.md
+        - name: C++ 語言
           items:
-          - name: 貼齊點
-            href: ../composition/inertia-modifiers.md
-          - name: 拖動以重新整理
-            href: ../composition/source-modifiers.md
-    - name: 組合效果
-      href: ../composition/composition-effects.md
+            - name: 值類別，以及參考
+              href: ../cpp-and-winrt-apis/cpp-value-categories.md
+    - name: 安全性
+      href: ../security/index.md
       items:
-      - name: 組合陰影
-        href: ../composition/composition-shadows.md
-      - name: 組合光源
-        href: ../composition/composition-lighting.md
-    - name: 組合筆刷
-      href: ../composition/composition-brushes.md
-    - name: 組合原生交互操作
-      href: ../composition/composition-native-interop.md
-    - name: 量身打造您的 UI
-      href: ../composition/composition-tailoring.md
-    - name: 使用 UWP XAML
-      href: ../composition/using-the-visual-layer-with-xaml.md
+        - name: 安全開發 Windows app 的簡介
+          href: ../security/intro-to-secure-windows-app-development.md
+        - name: 驗證和使用者識別
+          href: ../security/authentication-and-user-identity.md
+          items:
+            - name: 認證保險箱
+              href: ../security/credential-locker.md
+            - name: 指紋生物識別技術
+              href: ../security/fingerprint-biometrics.md
+            - name: Windows Hello
+              href: ../security/microsoft-passport.md
+              items:
+                - name: 建立 Windows Hello 登入應用程式
+                  href: ../security/microsoft-passport-login.md
+                - name: 建立 Windows Hello 登入服務
+                  href: ../security/microsoft-passport-login-auth-service.md
+            - name: 智慧卡
+              href: ../security/smart-cards.md
+            - name: 共用的憑證
+              href: ../security/share-certificates.md
+            - name: Web 帳戶管理員
+              href: ../security/web-account-manager.md
+            - name: 使用 IoT 夥伴裝置解除鎖定
+              href: ../security/companion-device-unlock.md
+            - name: Web 驗證代理人
+              href: ../security/web-authentication-broker.md
+        - name: 密碼編譯
+          href: ../security/cryptography.md
+          items:
+            - name: 憑證
+              href: ../security/certificates.md
+            - name: 密碼編譯金鑰
+              href: ../security/cryptographic-keys.md
+            - name: 資料保護
+              href: ../security/data-protection.md
+            - name: MAC、雜湊以及簽章
+              href: ../security/macs-hashes-and-signatures.md
+            - name: 密碼編譯的出口限制
+              href: ../security/export-restrictions-on-cryptography.md
+            - name: 常見的密碼編譯工作
+              href: ../security/common-cryptography-tasks.md
+              items:
+                - name: 建立隨機數字
+                  href: ../security/create-random-numbers.md
+                - name: 比較緩衝區
+                  href: ../security/compare-buffers.md
+                - name: 在字串與二進位資料間轉換
+                  href: ../security/convert-between-strings-and-binary-data.md
+                - name: 複製到位元組陣列和從位元組陣列中複製
+                  href: ../security/copy-to-and-from-byte-arrays.md
+                - name: 編碼及解碼資料
+                  href: ../security/encode-and-decode-data.md
+    - name: 視覺層
+      href: ../composition/visual-layer.md
       items:
-      - name: XAML 光源
-        href: ../composition/xaml-lighting.md
-    - name: 桌面應用程式現代化
-      href: ../composition/visual-layer-in-desktop-apps.md
+        - name: 組合視覺效果
+          href: ../composition/composition-visual-tree.md
+        - name: 組合動畫
+          href: ../composition/composition-animation.md
+          items:
+            - name: 時間動畫
+              href: ../composition/time-animations.md
+            - name: 關聯動畫
+              href: ../composition/relation-animations.md
+            - name: 自然動畫
+              href: ../composition/natural-animations.md
+              items:
+                - name: 彈簧動畫
+                  href: ../composition/spring-animations.md
+            - name: 輸入導向動畫
+              href: ../composition/input-driven-animations.md
+              items:
+                - name: 捲動型動畫
+                  href: ../composition/scroll-input-animations.md
+                - name: 指標型動畫
+                  href: ../composition/pointer-input-animations.md
+                - name: 自訂操作
+                  href: ../composition/interaction-tracker-manipulations.md
+                  items:
+                    - name: 貼齊點
+                      href: ../composition/inertia-modifiers.md
+                    - name: 拖動以重新整理
+                      href: ../composition/source-modifiers.md
+        - name: 組合效果
+          href: ../composition/composition-effects.md
+          items:
+            - name: 組合陰影
+              href: ../composition/composition-shadows.md
+            - name: 組合光源
+              href: ../composition/composition-lighting.md
+        - name: 組合筆刷
+          href: ../composition/composition-brushes.md
+        - name: 組合原生交互操作
+          href: ../composition/composition-native-interop.md
+        - name: 量身打造您的 UI
+          href: ../composition/composition-tailoring.md
+        - name: 使用 UWP XAML
+          href: ../composition/using-the-visual-layer-with-xaml.md
+          items:
+            - name: XAML 光源
+              href: ../composition/xaml-lighting.md
+    - name: Windows 即服務
+      href: ../updates-and-versions/application-development-for-windows-as-a-service.md
+    - name: Windows 執行階段元件
+      href: ../winrt-components/index.md
       items:
-      - name: 使用 WPF
-        href: ../composition/using-the-visual-layer-with-wpf.md
-      - name: 使用 Windows Forms
-        href: ../composition/using-the-visual-layer-with-windows-forms.md
-      - name: 使用 Win32
-        href: ../composition/using-the-visual-layer-with-win32.md
-  - name: Windows 即服務
-    href: ../updates-and-versions/application-development-for-windows-as-a-service.md
-  - name: Windows 執行階段元件
-    href: ../winrt-components/index.md
-    items:
-    - name: 在 C++/CX 中建立 Windows 執行階段元件
-      href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-    - name: 逐步解說：在 C++/CX 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C# 呼叫該元件
-      href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-    - name: 使用 C# 和 Visual Basic 建立 Windows 執行階段元件
-      href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
+        - name: 在 C++/CX 中建立 Windows 執行階段元件
+          href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
+        - name: '逐步解說：在 C++/CX 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C# 呼叫該元件'
+          href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
+        - name: '使用 C# 和 Visual Basic 建立 Windows 執行階段元件'
+          href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
+          items:
+            - name: Windows 執行階段元件中的自訂事件和事件存取子
+              href: ../winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md
+            - name: 將陣列傳遞到 Windows 執行階段元件
+              href: ../winrt-components/passing-arrays-to-a-windows-runtime-component.md
+            - name: 診斷 Windows 執行階段元件錯誤狀況
+              href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
+            - name: 發佈 Managed Windows 執行階段元件
+              href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
+            - name: Windows 執行階段類型的 .NET Framework 對應
+              href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
+        - name: 逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
+          href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
+        - name: 在 Windows 執行階段元件中引發事件
+          href: ../winrt-components/raising-events-in-windows-runtime-components.md
+        - name: 側載 UWP 應用程式的代理 Windows 執行階段元件
+          href: ../winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md
+    - name: XAML 平台
+      href: ../xaml-platform/index.md
       items:
-      - name: Windows 執行階段元件中的自訂事件和事件存取子
-        href: ../winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md
-      - name: 將陣列傳遞到 Windows 執行階段元件
-        href: ../winrt-components/passing-arrays-to-a-windows-runtime-component.md
-      - name: 診斷 Windows 執行階段元件錯誤狀況
-        href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
-      - name: 發佈 Managed Windows 執行階段元件
-        href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-      - name: Windows 執行階段類型的 .NET Framework 對應
-        href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-    - name: 逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
-      href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
-    - name: 在 Windows 執行階段元件中引發事件
-      href: ../winrt-components/raising-events-in-windows-runtime-components.md
-    - name: 側載 UWP 應用程式的代理 Windows 執行階段元件
-      href: ../winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md
-  - name: XAML 平台
-    href: ../xaml-platform/index.md
-    items:
-    - name: XAML 概觀
-      href: ../xaml-platform/xaml-overview.md
-      items:
-      - name: XAML 語法指南
-        href: ../xaml-platform/xaml-syntax-guide.md
-        items:
-        - name: Property-path 語法
-          href: ../xaml-platform/property-path-syntax.md
-        - name: 移動與繪製命令語法
-          href: ../xaml-platform/move-draw-commands-syntax.md
-      - name: XAML 與空格
-        href: ../xaml-platform/xaml-and-whitespace.md
-      - name: XAML 命名範圍
-        href: ../xaml-platform/xaml-namescopes.md
-      - name: XAML 命名空間與命名空間對應
-        href: ../xaml-platform/xaml-namespaces-and-namespace-mapping.md
-      - name: 範本設定類別
-        href: ../xaml-platform/template-settings-classes.md
-      - name: x:Class 屬性
-        href: ../xaml-platform/x-class-attribute.md
-      - name: x:DefaultBindMode 屬性
-        href: ../xaml-platform/x-defaultbindmode-attribute.md
-      - name: x:DeferLoadStrategy 屬性
-        href: ../xaml-platform/x-deferloadstrategy-attribute.md
-      - name: x:FieldModifier 屬性
-        href: ../xaml-platform/x-fieldmodifier-attribute.md
-      - name: x:Key 屬性
-        href: ../xaml-platform/x-key-attribute.md
-      - name: x:Load 屬性
-        href: ../xaml-platform/x-load-attribute.md
-      - name: x:Name 屬性
-        href: ../xaml-platform/x-name-attribute.md
-      - name: x:Phase 屬性
-        href: ../xaml-platform/x-phase-attribute.md
-      - name: x:Uid 指示詞
-        href: ../xaml-platform/x-uid-directive.md
-      - name: '{x:Bind} 標記延伸'
-        href: ../xaml-platform/x-bind-markup-extension.md
-      - name: '{Binding} 標記延伸'
-        href: ../xaml-platform/binding-markup-extension.md
-      - name: '{x:Null} 標記延伸'
-        href: ../xaml-platform/x-null-markup-extension.md
-      - name: XAML 內建資料類型
-        href: ../xaml-platform/xaml-intrinsic-data-types.md
-      - name: '{CustomResource} 標記延伸'
-        href: ../xaml-platform/customresource-markup-extension.md
-      - name: '{RelativeSource} 標記延伸'
-        href: ../xaml-platform/relativesource-markup-extension.md
-      - name: '{StaticResource} 標記延伸'
-        href: ../xaml-platform/staticresource-markup-extension.md
-      - name: '{TemplateBinding} 標記延伸'
-        href: ../xaml-platform/templatebinding-markup-extension.md
-      - name: '{ThemeResource} 標記延伸'
-        href: ../xaml-platform/themeresource-markup-extension.md
-    - name: 相依性屬性概觀
-      href: ../xaml-platform/dependency-properties-overview.md
-    - name: 自訂相依性屬性
-      href: ../xaml-platform/custom-dependency-properties.md
-    - name: 附加屬性概觀
-      href: ../xaml-platform/attached-properties-overview.md
-    - name: 自訂附加屬性
-      href: ../xaml-platform/custom-attached-properties.md
-    - name: 事件與路由事件概觀
-      href: ../xaml-platform/events-and-routed-events-overview.md
-    - name: 傳統型應用程式中的 UWP 控制項
-      href: ../xaml-platform/xaml-host-controls.md
-      items:
-      - name: 使用 UWP XAML 裝載 API
-        href: ../xaml-platform/using-the-xaml-hosting-api.md
+        - name: XAML 概觀
+          href: ../xaml-platform/xaml-overview.md
+          items:
+            - name: XAML 語法指南
+              href: ../xaml-platform/xaml-syntax-guide.md
+              items:
+                - name: Property-path 語法
+                  href: ../xaml-platform/property-path-syntax.md
+                - name: 移動與繪製命令語法
+                  href: ../xaml-platform/move-draw-commands-syntax.md
+            - name: XAML 與空格
+              href: ../xaml-platform/xaml-and-whitespace.md
+            - name: XAML 命名範圍
+              href: ../xaml-platform/xaml-namescopes.md
+            - name: XAML 命名空間與命名空間對應
+              href: ../xaml-platform/xaml-namespaces-and-namespace-mapping.md
+            - name: 範本設定類別
+              href: ../xaml-platform/template-settings-classes.md
+            - name: 'x:Class 屬性'
+              href: ../xaml-platform/x-class-attribute.md
+            - name: 'x:DefaultBindMode 屬性'
+              href: ../xaml-platform/x-defaultbindmode-attribute.md
+            - name: 'x:DeferLoadStrategy 屬性'
+              href: ../xaml-platform/x-deferloadstrategy-attribute.md
+            - name: 'x:FieldModifier 屬性'
+              href: ../xaml-platform/x-fieldmodifier-attribute.md
+            - name: 'x:Key 屬性'
+              href: ../xaml-platform/x-key-attribute.md
+            - name: 'x:Load 屬性'
+              href: ../xaml-platform/x-load-attribute.md
+            - name: 'x:Name 屬性'
+              href: ../xaml-platform/x-name-attribute.md
+            - name: 'x:Phase 屬性'
+              href: ../xaml-platform/x-phase-attribute.md
+            - name: 'x:Uid 指示詞'
+              href: ../xaml-platform/x-uid-directive.md
+            - name: '{x:Bind} 標記延伸'
+              href: ../xaml-platform/x-bind-markup-extension.md
+            - name: '{Binding} 標記延伸'
+              href: ../xaml-platform/binding-markup-extension.md
+            - name: '{x:Null} 標記延伸'
+              href: ../xaml-platform/x-null-markup-extension.md
+            - name: XAML 內建資料類型
+              href: ../xaml-platform/xaml-intrinsic-data-types.md
+            - name: '{CustomResource} 標記延伸'
+              href: ../xaml-platform/customresource-markup-extension.md
+            - name: '{RelativeSource} 標記延伸'
+              href: ../xaml-platform/relativesource-markup-extension.md
+            - name: '{StaticResource} 標記延伸'
+              href: ../xaml-platform/staticresource-markup-extension.md
+            - name: '{TemplateBinding} 標記延伸'
+              href: ../xaml-platform/templatebinding-markup-extension.md
+            - name: '{ThemeResource} 標記延伸'
+              href: ../xaml-platform/themeresource-markup-extension.md
+        - name: 相依性屬性概觀
+          href: ../xaml-platform/dependency-properties-overview.md
+        - name: 自訂相依性屬性
+          href: ../xaml-platform/custom-dependency-properties.md
+        - name: 附加屬性概觀
+          href: ../xaml-platform/attached-properties-overview.md
+        - name: 自訂附加屬性
+          href: ../xaml-platform/custom-attached-properties.md
+        - name: 事件與路由事件概觀
+          href: ../xaml-platform/events-and-routed-events-overview.md
 - name: 連絡人和地點
   items:
-  - name: 連絡人、朋友圈及行事曆
-    href: ../contacts-and-calendar/index.md
-    items:
-    - name: 朋友圈
-      href: ../contacts-and-calendar/my-people-support.md
+    - name: 連絡人、朋友圈及行事曆
+      href: ../contacts-and-calendar/index.md
       items:
-      - name: 朋友圈分享
-        href: ../contacts-and-calendar/my-people-sharing.md
-      - name: 朋友圈通知
-        href: ../contacts-and-calendar/my-people-notifications.md
-    - name: 選取連絡人
-      href: ../contacts-and-calendar/selecting-contacts.md
-    - name: 傳送電子郵件
-      href: ../contacts-and-calendar/sending-email.md
-    - name: 傳送 SMS 訊息
-      href: ../contacts-and-calendar/sending-an-sms-message.md
-    - name: 管理約會
-      href: ../contacts-and-calendar/managing-appointments.md
-    - name: 將應用程式連結到連絡人卡片上的動作
-      href: ../contacts-and-calendar/integrating-with-contacts.md
-  - name: 地圖和位置
-    href: ../maps-and-location/index.md
-    items:
-    - name: 要求驗證金鑰
-      href: ../maps-and-location/authentication-key.md
-    - name: 顯示地圖
-      href: ../maps-and-location/display-maps.md
-    - name: 顯示感興趣的地點
-      href: ../maps-and-location/display-poi.md
-    - name: 顯示路線和路線指引
-      href: ../maps-and-location/routes-and-directions.md
-    - name: 重疊顯示並排影像
-      href: ../maps-and-location/overlay-tiled-images.md
-    - name: 執行地理編碼
-      href: ../maps-and-location/geocoding.md
-    - name: 取得目前的位置
-      href: ../maps-and-location/get-location.md
-    - name: 定位感知應用程式的設計指導方針
-      href: ../maps-and-location/guidelines-and-checklist-for-detecting-location.md
-    - name: 關於使用行止動線追蹤功能的指導方針
-      href: ../maps-and-location/guidelines-for-visits.md
-    - name: 設定地理柵欄
-      href: ../maps-and-location/set-up-a-geofence.md
-    - name: 地理柵欄設計指導方針
-      href: ../maps-and-location/guidelines-for-geofencing.md
-    - name: 地圖樣式表參考
-      href: ../maps-and-location/elements-of-map-style-sheet.md
+        - name: 朋友圈
+          href: ../contacts-and-calendar/my-people-support.md
+          items:
+            - name: 朋友圈分享
+              href: ../contacts-and-calendar/my-people-sharing.md
+            - name: 朋友圈通知
+              href: ../contacts-and-calendar/my-people-notifications.md
+        - name: 選取連絡人
+          href: ../contacts-and-calendar/selecting-contacts.md
+        - name: 傳送電子郵件
+          href: ../contacts-and-calendar/sending-email.md
+        - name: 傳送 SMS 訊息
+          href: ../contacts-and-calendar/sending-an-sms-message.md
+        - name: 管理約會
+          href: ../contacts-and-calendar/managing-appointments.md
+        - name: 將應用程式連結到連絡人卡片上的動作
+          href: ../contacts-and-calendar/integrating-with-contacts.md
+    - name: 地圖和位置
+      href: ../maps-and-location/index.md
+      items:
+        - name: 要求驗證金鑰
+          href: ../maps-and-location/authentication-key.md
+        - name: 顯示地圖
+          href: ../maps-and-location/display-maps.md
+        - name: 顯示感興趣的地點
+          href: ../maps-and-location/display-poi.md
+        - name: 顯示路線和路線指引
+          href: ../maps-and-location/routes-and-directions.md
+        - name: 重疊顯示並排影像
+          href: ../maps-and-location/overlay-tiled-images.md
+        - name: 執行地理編碼
+          href: ../maps-and-location/geocoding.md
+        - name: 取得目前的位置
+          href: ../maps-and-location/get-location.md
+        - name: 定位感知應用程式的設計指導方針
+          href: ../maps-and-location/guidelines-and-checklist-for-detecting-location.md
+        - name: 關於使用行止動線追蹤功能的指導方針
+          href: ../maps-and-location/guidelines-for-visits.md
+        - name: 設定地理柵欄
+          href: ../maps-and-location/set-up-a-geofence.md
+        - name: 地理柵欄設計指導方針
+          href: ../maps-and-location/guidelines-for-geofencing.md
+        - name: 地圖樣式表參考
+          href: ../maps-and-location/elements-of-map-style-sheet.md
 - name: 周邊、感應器及電源
   href: ../devices-sensors/index.md
   items:
-  - name: 啟用裝置功能
-    href: ../devices-sensors/enable-device-capabilities.md
-  - name: 啟用使用者模式存取
-    href: ../devices-sensors/enable-usermode-access.md
-  - name: 列舉裝置
-    href: ../devices-sensors/enumerate-devices.md
-    items:
-    - name: 建置裝置選取器
-      href: ../devices-sensors/build-a-device-selector.md
-    - name: 列舉網路上的裝置
-      href: ../devices-sensors/enumerate-devices-over-a-network.md
-    - name: 裝置資訊屬性
-      href: ../devices-sensors/device-information-properties.md
-    - name: AEP 服務類別識別碼
-      href: ../devices-sensors/aep-service-class-ids.md
-  - name: 配對裝置
-    href: ../devices-sensors/pair-devices.md
-  - name: 服務點
-    href: ../devices-sensors/point-of-service.md
-    items:
-    - name: 基礎
-      href: ../devices-sensors/pos-basics.md
+    - name: 啟用裝置功能
+      href: ../devices-sensors/enable-device-capabilities.md
+    - name: 啟用使用者模式存取
+      href: ../devices-sensors/enable-usermode-access.md
+    - name: 列舉裝置
+      href: ../devices-sensors/enumerate-devices.md
       items:
-      - name: 功能宣告
-        href: ../devices-sensors/pos-basics-capability.md
-      - name: 列舉裝置
-        href: ../devices-sensors/pos-basics-enumerating.md
-      - name: 建立裝置物件
-        href: ../devices-sensors/pos-basics-deviceobject.md
-      - name: 宣告和啟用
-        href: ../devices-sensors/pos-basics-claim.md
-      - name: 與其他人共用周邊設備
-        href: ../devices-sensors/pos-basics-sharing.md
-      - name: 開始使用
-        href: ../devices-sensors/pos-get-started.md
-    - name: 硬體支援
-      href: ../devices-sensors/pos-device-support.md
-    - name: 條碼掃描器
-      href: ../devices-sensors/pos-barcodescanner.md
+        - name: 建置裝置選取器
+          href: ../devices-sensors/build-a-device-selector.md
+        - name: 列舉網路上的裝置
+          href: ../devices-sensors/enumerate-devices-over-a-network.md
+        - name: 裝置資訊屬性
+          href: ../devices-sensors/device-information-properties.md
+        - name: AEP 服務類別識別碼
+          href: ../devices-sensors/aep-service-class-ids.md
+    - name: 配對裝置
+      href: ../devices-sensors/pair-devices.md
+    - name: 服務點
+      href: ../devices-sensors/point-of-service.md
       items:
-      - name: 設定條碼掃描器
-        href: ../devices-sensors/pos-barcodescanner-configure.md
-      - name: 使用軟體觸發器
-        href: ../devices-sensors/pos-barcodescanner-software-trigger.md
-      - name: 使用碼制
-        href: ../devices-sensors/pos-barcodescanner-symbologies.md
-      - name: 取得並了解條碼資料
-        href: ../devices-sensors/pos-barcodescanner-scan-data.md
-      - name: 相機條碼掃描器
-        href: ../devices-sensors/pos-camerabarcode.md
-        items:
-        - name: 系統需求
-          href: ../devices-sensors/pos-camerabarcode-system-requirements.md
-        - name: 開始使用
-          href: ../devices-sensors/pos-camerabarcode-get-started.md
-        - name: 裝載相機預覽版
-          href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
-        - name: 啟用/停用相機條碼掃描器
-          href: ../devices-sensors/pos-camerabarcode-enable-disable.md
-        - name: 支援的碼制
-          href: ../devices-sensors/pos-camerabarcode-symbologies.md
-    - name: 磁條讀取器
-      href: ../devices-sensors/pos-magnetic-stripe-reader.md
+        - name: 基礎
+          href: ../devices-sensors/pos-basics.md
+          items:
+            - name: 功能宣告
+              href: ../devices-sensors/pos-basics-capability.md
+            - name: 列舉裝置
+              href: ../devices-sensors/pos-basics-enumerating.md
+            - name: 建立裝置物件
+              href: ../devices-sensors/pos-basics-deviceobject.md
+            - name: 宣告和啟用
+              href: ../devices-sensors/pos-basics-claim.md
+            - name: 與其他人共用周邊設備
+              href: ../devices-sensors/pos-basics-sharing.md
+            - name: 開始使用
+              href: ../devices-sensors/pos-get-started.md
+        - name: 硬體支援
+          href: ../devices-sensors/pos-device-support.md
+        - name: 條碼掃描器
+          href: ../devices-sensors/pos-barcodescanner.md
+          items:
+            - name: 設定條碼掃描器
+              href: ../devices-sensors/pos-barcodescanner-configure.md
+            - name: 使用軟體觸發器
+              href: ../devices-sensors/pos-barcodescanner-software-trigger.md
+            - name: 使用碼制
+              href: ../devices-sensors/pos-barcodescanner-symbologies.md
+            - name: 取得並了解條碼資料
+              href: ../devices-sensors/pos-barcodescanner-scan-data.md
+            - name: 相機條碼掃描器
+              href: ../devices-sensors/pos-camerabarcode.md
+              items:
+                - name: 系統需求
+                  href: ../devices-sensors/pos-camerabarcode-system-requirements.md
+                - name: 開始使用
+                  href: ../devices-sensors/pos-camerabarcode-get-started.md
+                - name: 裝載相機預覽版
+                  href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
+                - name: 啟用/停用相機條碼掃描器
+                  href: ../devices-sensors/pos-camerabarcode-enable-disable.md
+                - name: 支援的碼制
+                  href: ../devices-sensors/pos-camerabarcode-symbologies.md
+        - name: 磁條讀取器
+          href: ../devices-sensors/pos-magnetic-stripe-reader.md
+          items:
+            - name: 取得並了解磁條資料
+              href: ../devices-sensors/pos-magnetic-stripe-reader-data.md
+        - name: POSPrinter
+          href: ../devices-sensors/pos-printer.md
+          items:
+            - name: 用來設定格式的 Epson ESC/POS
+              href: ../devices-sensors/epson-esc-pos-with-formatting.md
+    - name: 感應器
+      href: ../devices-sensors/sensors.md
       items:
-      - name: 取得並了解磁條資料
-        href: ../devices-sensors/pos-magnetic-stripe-reader-data.md
-    - name: POSPrinter
-      href: ../devices-sensors/pos-printer.md
+        - name: 校正感應器
+          href: ../devices-sensors/calibrate-sensors.md
+        - name: 感應器方向
+          href: ../devices-sensors/sensor-orientation.md
+        - name: 使用加速計
+          href: ../devices-sensors/use-the-accelerometer.md
+        - name: 使用指南針
+          href: ../devices-sensors/use-the-compass.md
+        - name: 使用陀螺儀
+          href: ../devices-sensors/use-the-gyrometer.md
+        - name: 使用傾角計
+          href: ../devices-sensors/use-the-inclinometer.md
+        - name: 使用光感應器
+          href: ../devices-sensors/use-the-light-sensor.md
+        - name: 使用方向感應器
+          href: ../devices-sensors/use-the-orientation-sensor.md
+    - name: 藍牙
+      href: ../devices-sensors/bluetooth.md
       items:
-      - name: 用來設定格式的 Epson ESC/POS
-        href: ../devices-sensors/epson-esc-pos-with-formatting.md
-  - name: 感應器
-    href: ../devices-sensors/sensors.md
-    items:
-    - name: 校正感應器
-      href: ../devices-sensors/calibrate-sensors.md
-    - name: 感應器方向
-      href: ../devices-sensors/sensor-orientation.md
-    - name: 使用加速計
-      href: ../devices-sensors/use-the-accelerometer.md
-    - name: 使用指南針
-      href: ../devices-sensors/use-the-compass.md
-    - name: 使用陀螺儀
-      href: ../devices-sensors/use-the-gyrometer.md
-    - name: 使用傾角計
-      href: ../devices-sensors/use-the-inclinometer.md
-    - name: 使用光感應器
-      href: ../devices-sensors/use-the-light-sensor.md
-    - name: 使用方向感應器
-      href: ../devices-sensors/use-the-orientation-sensor.md
-  - name: 藍牙
-    href: ../devices-sensors/bluetooth.md
-    items:
-    - name: RFCOMM
-      href: ../devices-sensors/send-or-receive-files-with-rfcomm.md
-    - name: 藍牙低功耗
-      href: ../devices-sensors/bluetooth-low-energy-overview.md
+        - name: RFCOMM
+          href: ../devices-sensors/send-or-receive-files-with-rfcomm.md
+        - name: 藍牙低功耗
+          href: ../devices-sensors/bluetooth-low-energy-overview.md
+          items:
+            - name: GATT 用戶端
+              href: ../devices-sensors/gatt-client.md
+            - name: GATT 伺服器
+              href: ../devices-sensors//gatt-server.md
+            - name: 公告
+              href: ../devices-sensors/ble-beacon.md
+        - name: 藍牙開發人員常見問題集
+          href: ../devices-sensors/bluetooth-dev-faq.md
+    - name: 列印與掃描
+      href: ../devices-sensors/printing-and-scanning.md
       items:
-      - name: GATT 用戶端
-        href: ../devices-sensors/gatt-client.md
-      - name: GATT 伺服器
-        href: ../devices-sensors//gatt-server.md
-      - name: 公告
-        href: ../devices-sensors/ble-beacon.md
-    - name: 藍牙開發人員常見問題集
-      href: ../devices-sensors/bluetooth-dev-faq.md
-  - name: 列印與掃描
-    href: ../devices-sensors/printing-and-scanning.md
-    items:
-    - name: 從您的應用程式列印
-      href: ../devices-sensors/print-from-your-app.md
-    - name: 自訂預覽列印 UI
-      href: ../devices-sensors/customize-the-print-preview-ui.md
-    - name: 自訂列印工作流程
-      href: ../devices-sensors/print-workflow-customize.md
-    - name: 從您的 app 掃描
-      href: ../devices-sensors/scan-from-your-app.md
-  - name: 3D 列印
-    href: ../devices-sensors/3d-printing.md
-    items:
-    - name: 從 app 進行 3D 列印
-      href: ../devices-sensors/3d-print-from-app.md
-    - name: 產生 3MF 套件
-      href: ../devices-sensors/generate-3mf.md
-  - name: NFC
-    href: ../devices-sensors/nfc.md
-    items:
-    - name: 建立 NFC 智慧卡應用程式
-      href: ../devices-sensors/host-card-emulation.md
-  - name: 取得電池資訊
-    href: ../devices-sensors/get-battery-info.md
+        - name: 從您的應用程式列印
+          href: ../devices-sensors/print-from-your-app.md
+        - name: 自訂預覽列印 UI
+          href: ../devices-sensors/customize-the-print-preview-ui.md
+        - name: 自訂列印工作流程
+          href: ../devices-sensors/print-workflow-customize.md
+        - name: 從您的 app 掃描
+          href: ../devices-sensors/scan-from-your-app.md
+    - name: 3D 列印
+      href: ../devices-sensors/3d-printing.md
+      items:
+        - name: 從 app 進行 3D 列印
+          href: ../devices-sensors/3d-print-from-app.md
+        - name: 產生 3MF 套件
+          href: ../devices-sensors/generate-3mf.md
+    - name: NFC
+      href: ../devices-sensors/nfc.md
+      items:
+        - name: 建立 NFC 智慧卡應用程式
+          href: ../devices-sensors/host-card-emulation.md
+    - name: 取得電池資訊
+      href: ../devices-sensors/get-battery-info.md
 - name: 移植應用程式
   items:
-  - name: 概觀
-    href: ../porting/index.md
-  - name: 從 Windows Phone Silverlight 移到 UWP
-    href: ../porting/wpsl-to-uwp-root.md
-    items:
-    - name: 命名空間與類別對應
-      href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
-    - name: 移植專案
-      href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
-    - name: 疑難排解
-      href: ../porting/wpsl-to-uwp-troubleshooting.md
-    - name: 移植 XAML 與 UI
-      href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
-    - name: I/O、裝置與應用程式模型的移植
-      href: ../porting/wpsl-to-uwp-input-and-sensors.md
-    - name: 移植商務與資料層
-      href: ../porting/wpsl-to-uwp-business-and-data.md
-    - name: 尺寸與 UX 的移植
-      href: ../porting/wpsl-to-uwp-form-factors-and-ux.md
-    - name: 案例研究：Bookstore1
-      href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
-    - name: 案例研究：Bookstore2
-      href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
-  - name: 從 Windows Runtime 8.x 移至 UWP
-    href: ../porting/w8x-to-uwp-root.md
-    items:
-    - name: 移植專案
-      href: ../porting/w8x-to-uwp-porting-to-a-uwp-project.md
-    - name: 疑難排解
-      href: ../porting/w8x-to-uwp-troubleshooting.md
-    - name: 移植 XAML 與 UI
-      href: ../porting/w8x-to-uwp-porting-xaml-and-ui.md
-    - name: I/O、裝置與應用程式模型的移植
-      href: ../porting/w8x-to-uwp-input-and-sensors.md
-    - name: 案例研究：Bookstore1
-      href: ../porting/w8x-to-uwp-case-study-bookstore1.md
-    - name: 案例研究：Bookstore2
-      href: ../porting/w8x-to-uwp-case-study-bookstore2.md
-    - name: 案例研究：QuizGame
-      href: ../porting/w8x-to-uwp-case-study-quizgame.md
-  - name: 封裝傳統型應用程式
-    href: ../porting/desktop-to-uwp-root.md
-    items:
-    - name: 準備封裝
-      href: ../porting/desktop-to-uwp-prepare.md
-    - name: 使用 Desktop App Converter 進行封裝
-      href: ../porting/desktop-to-uwp-run-desktop-app-converter.md
-    - name: 使用 Visual Studio 封裝
-      href: ../porting/desktop-to-uwp-packaging-dot-net.md
-    - name: 手動封裝
-      href: ../porting/desktop-to-uwp-manual-conversion.md
-    - name: 與 Windows 10 整合
-      href: ../porting/desktop-to-uwp-extensions.md
-    - name: 增強 Windows 10
-      href: ../porting/desktop-to-uwp-enhance.md
+    - name: 概觀
+      href: ../porting/index.md
+    - name: 從傳統型移動到 UWP
+      href: ../porting/desktop-to-uwp-migrate.md
+    - name: 從 Windows Runtime 8.x 移至 UWP
+      href: ../porting/w8x-to-uwp-root.md
       items:
-      - name: 可用 UWP API
-        href: ../porting/desktop-to-uwp-supported-api.md
-      - name: 使用原生映像最佳化應用程式二進位檔
-        href: ../porting/desktop-to-uwp-r2r.md
-    - name: 透過 UWP 延伸
-      href: ../porting/desktop-to-uwp-extend.md
-    - name: 執行、偵錯與測試
-      href: ../porting/desktop-to-uwp-debug.md
+        - name: 移植專案
+          href: ../porting/w8x-to-uwp-porting-to-a-uwp-project.md
+        - name: 疑難排解
+          href: ../porting/w8x-to-uwp-troubleshooting.md
+        - name: 移植 XAML 與 UI
+          href: ../porting/w8x-to-uwp-porting-xaml-and-ui.md
+        - name: I/O、裝置與應用程式模型的移植
+          href: ../porting/w8x-to-uwp-input-and-sensors.md
+        - name: 案例研究：Bookstore1
+          href: ../porting/w8x-to-uwp-case-study-bookstore1.md
+        - name: 案例研究：Bookstore2
+          href: ../porting/w8x-to-uwp-case-study-bookstore2.md
+        - name: 案例研究：QuizGame
+          href: ../porting/w8x-to-uwp-case-study-quizgame.md
+    - name: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
+      href: ../porting/android-ios-uwp-map.md
+    - name: 從 iOS 移到 UWP
+      href: ../porting/ios-to-uwp-root.md
       items:
-      - name: 以 S 模式測試 Windows 10
-        href: ../porting/desktop-to-uwp-test-windows-s.md
-    - name: 套用執行階段修正
-      href: ../porting/package-support-framework.md
-    - name: 散佈
-      href: ../porting/desktop-to-uwp-distribute.md
-    - name: 幕後
-      href: ../porting/desktop-to-uwp-behind-the-scenes.md
-    - name: 已知問題
-      href: ../porting/desktop-to-uwp-known-issues.md
-  - name: 在傳統型與 UWP 之間共用程式碼
-    href: ../porting/desktop-to-uwp-migrate.md
-  - name: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
-    href: ../porting/android-ios-uwp-map.md
-  - name: 從 iOS 移到 UWP
-    href: ../porting/ios-to-uwp-root.md
-    items:
-    - name: 選取 iOS 和 UWP 應用程式開發的方式
-      href: ../porting/selecting-an-approach-to-ios-and-uwp-app-development.md
-    - name: 開始使用適用於 iOS 開發人員的 UWP
-      href: ../porting/getting-started-with-uwp-for-ios-developers.md
+        - name: 選取 iOS 和 UWP 應用程式開發的方式
+          href: ../porting/selecting-an-approach-to-ios-and-uwp-app-development.md
+        - name: 開始使用適用於 iOS 開發人員的 UWP
+          href: ../porting/getting-started-with-uwp-for-ios-developers.md
+          items:
+            - name: 開始使用：建立專案
+              href: ../porting/getting-started-creating-a-project.md
+            - name: 開始使用：選擇程式設計語言
+              href: ../porting/getting-started-choosing-a-programming-language.md
+            - name: 開始使用：使用 Visual Studio
+              href: ../porting/getting-started-getting-around-in-visual-studio.md
+            - name: 開始使用：常用控制項
+              href: ../porting/getting-started-common-controls.md
+            - name: 開始使用：瀏覽
+              href: ../porting/getting-started-navigation.md
+            - name: 開始使用：動畫
+              href: ../porting/getting-started-animation.md
+            - name: 開始使用：接下來該怎麼辦？
+              href: ../porting/getting-started-what-next.md
+        - name: 設定 Mac 的 Windows 10
+          href: ../porting/setting-up-your-mac-with-windows-10.md
+    - name: 從 Windows Phone Silverlight 移到 UWP
+      href: ../porting/wpsl-to-uwp-root.md
       items:
-      - name: 開始使用：建立專案
-        href: ../porting/getting-started-creating-a-project.md
-      - name: 開始使用：選擇程式設計語言
-        href: ../porting/getting-started-choosing-a-programming-language.md
-      - name: 開始使用：使用 Visual Studio
-        href: ../porting/getting-started-getting-around-in-visual-studio.md
-      - name: 開始使用：常用控制項
-        href: ../porting/getting-started-common-controls.md
-      - name: 開始使用：瀏覽
-        href: ../porting/getting-started-navigation.md
-      - name: 開始使用：動畫
-        href: ../porting/getting-started-animation.md
-      - name: 開始使用：接下來該怎麼辦？
-        href: ../porting/getting-started-what-next.md
-    - name: 設定 Mac 的 Windows 10
-      href: ../porting/setting-up-your-mac-with-windows-10.md
-  - name: 在 Windows 10 上將您的 Web 應用程式轉換成 PWA
-    href: https://docs.microsoft.com/microsoft-edge/progressive-web-apps
-    items:
-    - name: 將 Windows 7 應用程式封裝為 PWA
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html
-    - name: 將 iOS 應用程式封裝為 PWA
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-ios.html
-    - name: 將 Android 應用程式封裝為 PWA
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html
-    - name: 將 MacOS 應用程式封裝為 PWA
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html
-  - name: Windows 10 on ARM
-    href: ../porting/apps-on-arm.md
-    items:
-    - name: x86 模擬在 ARM 上的運作方式
-      href: ../porting/apps-on-arm-x86-emulation.md
-    - name: 對傳統型 x86 應用程式進行疑難排解
-      href: ../porting/apps-on-arm-troubleshooting-x86.md
-    - name: 對 UWP ARM 應用程式進行疑難排解
-      href: ../porting/apps-on-arm-troubleshooting-arm32.md
-    - name: ARM 上的程式相容性疑難排解員
-      href: ../porting/apps-on-arm-program-compat-troubleshooter.md
+        - name: 命名空間與類別對應
+          href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
+        - name: 移植專案
+          href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
+        - name: 疑難排解
+          href: ../porting/wpsl-to-uwp-troubleshooting.md
+        - name: 移植 XAML 與 UI
+          href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
+        - name: I/O、裝置與應用程式模型的移植
+          href: ../porting/wpsl-to-uwp-input-and-sensors.md
+        - name: 移植商務與資料層
+          href: ../porting/wpsl-to-uwp-business-and-data.md
+        - name: 尺寸與 UX 的移植
+          href: ../porting/wpsl-to-uwp-form-factors-and-ux.md
+        - name: 案例研究：Bookstore1
+          href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
+        - name: 案例研究：Bookstore2
+          href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
+    - name: 在 Windows 10 上將您的 Web 應用程式轉換成 PWA
+      href: 'https://docs.microsoft.com/microsoft-edge/progressive-web-apps'
+      items:
+        - name: 將 Windows 7 應用程式封裝為 PWA
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html'
+        - name: 將 iOS 應用程式封裝為 PWA
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-ios.html'
+        - name: 將 Android 應用程式封裝為 PWA
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html'
+        - name: 將 MacOS 應用程式封裝為 PWA
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html'
+    - name: Windows 10 on ARM
+      href: ../porting/apps-on-arm.md
+      items:
+        - name: x86 模擬在 ARM 上的運作方式
+          href: ../porting/apps-on-arm-x86-emulation.md
+        - name: 對傳統型 x86 應用程式進行疑難排解
+          href: ../porting/apps-on-arm-troubleshooting-x86.md
+        - name: 對 UWP ARM 應用程式進行疑難排解
+          href: ../porting/apps-on-arm-troubleshooting-arm32.md
+        - name: ARM 上的程式相容性疑難排解員
+          href: ../porting/apps-on-arm-program-compat-troubleshooter.md
 - name: 處理序和執行緒
   items:
-  - name: 啟動、繼續和背景工作
-    href: ../launch-resume/index.md
-    items:
-    - name: 建立通用 Windows 平台主控台應用程式
-      href: ../launch-resume/console-uwp.md
-    - name: 建立多重執行個體 UWP 應用程式
-      href: ../launch-resume/multi-instance-uwp.md
-    - name: 應用程式週期
-      href: ../launch-resume/app-lifecycle.md
+    - name: 啟動、繼續和背景工作
+      href: ../launch-resume/index.md
       items:
-      - name: 處理應用程式預先啟動
-        href: ../launch-resume/handle-app-prelaunch.md
-      - name: 處理應用程式啟用
-        href: ../launch-resume/activate-an-app.md
-      - name: 處理應用程式暫停
-        href: ../launch-resume/suspend-an-app.md
-      - name: 處理應用程式繼續執行
-        href: ../launch-resume/resume-an-app.md
-      - name: 當應用程式移至背景時釋出記憶體
-        href: ../launch-resume/reduce-memory-usage.md
-      - name: 透過延長執行延後應用程式暫停
-        href: ../launch-resume/run-minimized-with-extended-execution.md
-    - name: 使用 URI 啟動應用程式
-      href: ../launch-resume/launch-app-with-uri.md
+        - name: 建立通用 Windows 平台主控台應用程式
+          href: ../launch-resume/console-uwp.md
+        - name: 建立多重執行個體 UWP 應用程式
+          href: ../launch-resume/multi-instance-uwp.md
+        - name: 應用程式週期
+          href: ../launch-resume/app-lifecycle.md
+          items:
+            - name: 處理應用程式預先啟動
+              href: ../launch-resume/handle-app-prelaunch.md
+            - name: 處理應用程式啟用
+              href: ../launch-resume/activate-an-app.md
+            - name: 處理應用程式暫停
+              href: ../launch-resume/suspend-an-app.md
+            - name: 處理應用程式繼續執行
+              href: ../launch-resume/resume-an-app.md
+            - name: 當應用程式移至背景時釋出記憶體
+              href: ../launch-resume/reduce-memory-usage.md
+            - name: 透過延長執行延後應用程式暫停
+              href: ../launch-resume/run-minimized-with-extended-execution.md
+        - name: 使用 URI 啟動應用程式
+          href: ../launch-resume/launch-app-with-uri.md
+          items:
+            - name: 啟動 URI 的預設應用程式
+              href: ../launch-resume/launch-default-app.md
+            - name: 處理 URI 啟用
+              href: ../launch-resume/handle-uri-activation.md
+            - name: 啟動應用程式以取得結果
+              href: ../launch-resume/how-to-launch-an-app-for-results.md
+            - name: 使用 ms-tonepicker URI 配置來選擇及儲存音調
+              href: ../launch-resume/launch-ringtone-picker.md
+            - name: 啟動 Windows 設定應用程式
+              href: ../launch-resume/launch-settings-app.md
+            - name: 啟動 Microsoft Store 應用程式
+              href: ../launch-resume/launch-store-app.md
+            - name: 啟動 Windows 地圖應用程式
+              href: ../launch-resume/launch-maps-app.md
+            - name: 啟動連絡人應用程式
+              href: ../launch-resume/launch-people-apps.md
+            - name: 啟動螢幕剪取
+              href: ../launch-resume/launch-screen-snipping.md
+            - name: 透過應用程式 URI 處理常式支援網站至應用程式連結
+              href: ../launch-resume/web-to-app-linking.md
+        - name: 透過檔案啟用啟動應用程式
+          href: ../launch-resume/launch-app-from-file.md
+          items:
+            - name: 啟動檔案的預設應用程式
+              href: ../launch-resume/launch-the-default-app-for-a-file.md
+            - name: 處理檔案啟用
+              href: ../launch-resume/handle-file-activation.md
+        - name: 使用自動播放功能來自動啟動
+          href: ../launch-resume/auto-launching-with-autoplay.md
+        - name: 保留檔案和 URI 配置名稱
+          href: ../launch-resume/reserved-uri-scheme-names.md
+        - name: 使用應用程式服務與延伸模組
+          href: ../launch-resume/app-services.md
+          items:
+            - name: 建立和取用應用程式服務
+              href: ../launch-resume/how-to-create-and-consume-an-app-service.md
+            - name: 轉換應用程式服務，以便與其主控應用程式在相同處理序中執行
+              href: ../launch-resume/convert-app-service-in-process.md
+            - name: 透過服務、延伸模組和套件擴充您的應用程式
+              href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
+            - name: 建立和裝載應用程式延伸模組
+              href: ../launch-resume/how-to-create-an-extension.md
+        - name: 使用背景工作支援應用程式
+          href: ../launch-resume/support-your-app-with-background-tasks.md
+          items:
+            - name: 背景工作的指導方針
+              href: ../launch-resume/guidelines-for-background-tasks.md
+            - name: 從背景工作存取感應器和裝置
+              href: ../launch-resume/access-sensors-and-devices-from-a-background-task.md
+            - name: 建立及註冊同處理序的背景工作
+              href: ../launch-resume/create-and-register-an-inproc-background-task.md
+            - name: 建立及註冊跨處理序的背景工作
+              href: ../launch-resume/create-and-register-a-background-task.md
+            - name: 將跨處理序背景工作移植到同處理序背景工作
+              href: ../launch-resume/convert-out-of-process-background-task.md
+            - name: 偵錯背景工作
+              href: ../launch-resume/debug-a-background-task.md
+            - name: 在應用程式資訊清單中宣告背景工作
+              href: ../launch-resume/declare-background-tasks-in-the-application-manifest.md
+            - name: 群組背景工作註冊
+              href: ../launch-resume/group-background-tasks.md
+            - name: 處理已取消的背景工作
+              href: ../launch-resume/handle-a-cancelled-background-task.md
+            - name: 監視背景工作進度和完成
+              href: ../launch-resume/monitor-background-task-progress-and-completion.md
+            - name: 註冊背景工作
+              href: ../launch-resume/register-a-background-task.md
+            - name: 使用背景工作回應系統事件
+              href: ../launch-resume/respond-to-system-events-with-background-tasks.md
+            - name: 在計時器上執行背景工作
+              href: ../launch-resume/run-a-background-task-on-a-timer-.md
+            - name: 在更新 UWP 應用程式時執行背景工作
+              href: ../launch-resume/run-a-background-task-during-updatetask.md
+            - name: 在背景無限期執行
+              href: ../launch-resume/run-in-the-background-indefinetly.md
+            - name: 設定執行背景工作的條件
+              href: ../launch-resume/set-conditions-for-running-a-background-task.md
+            - name: 從您的應用程式觸發背景工作
+              href: ../launch-resume/trigger-background-task-from-app.md
+            - name: 從背景工作更新動態磚
+              href: ../launch-resume/update-a-live-tile-from-a-background-task.md
+            - name: 使用維護觸發程序
+              href: ../launch-resume/use-a-maintenance-trigger.md
+        - name: 已連線的應用程式與裝置 (Project Rome)
+          href: ../launch-resume/connected-apps-and-devices.md
+          items:
+            - name: 探索遠端裝置
+              href: ../launch-resume/discover-remote-devices.md
+            - name: 啟動遠端裝置上的應用程式
+              href: ../launch-resume/launch-a-remote-app.md
+            - name: 與遠端應用程式服務通訊
+              href: ../launch-resume/communicate-with-a-remote-app-service.md
+            - name: 透過遠端工作階段連接裝置
+              href: ../launch-resume/remote-sessions.md
+            - name: 繼續使用者活動，甚至是在各個裝置之間
+              href: ../launch-resume/useractivities.md
+            - name: 使用者活動最佳做法
+              href: ../launch-resume/useractivities-best-practices.md
+        - name: 啟動顯示畫面
+          href: ../launch-resume/splash-screens.md
+          items:
+            - name: 新增啟動顯示畫面
+              href: ../launch-resume/add-a-splash-screen.md
+            - name: 延長顯示啟動顯示畫面
+              href: ../launch-resume/create-a-customized-splash-screen.md
+    - name: 執行緒和非同步程式設計
+      href: ../threading-async/index.md
       items:
-      - name: 啟動 URI 的預設應用程式
-        href: ../launch-resume/launch-default-app.md
-      - name: 處理 URI 啟用
-        href: ../launch-resume/handle-uri-activation.md
-      - name: 啟動應用程式以取得結果
-        href: ../launch-resume/how-to-launch-an-app-for-results.md
-      - name: 使用 ms-tonepicker URI 配置來選擇及儲存音調
-        href: ../launch-resume/launch-ringtone-picker.md
-      - name: 啟動 Windows 設定應用程式
-        href: ../launch-resume/launch-settings-app.md
-      - name: 啟動 Microsoft Store 應用程式
-        href: ../launch-resume/launch-store-app.md
-      - name: 啟動 Windows 地圖應用程式
-        href: ../launch-resume/launch-maps-app.md
-      - name: 啟動連絡人應用程式
-        href: ../launch-resume/launch-people-apps.md
-      - name: 啟動螢幕剪取
-        href: ../launch-resume/launch-screen-snipping.md
-      - name: 透過應用程式 URI 處理常式支援網站至應用程式連結
-        href: ../launch-resume/web-to-app-linking.md
-    - name: 透過檔案啟用啟動應用程式
-      href: ../launch-resume/launch-app-from-file.md
-      items:
-      - name: 啟動檔案的預設應用程式
-        href: ../launch-resume/launch-the-default-app-for-a-file.md
-      - name: 處理檔案啟用
-        href: ../launch-resume/handle-file-activation.md
-    - name: 使用自動播放功能來自動啟動
-      href: ../launch-resume/auto-launching-with-autoplay.md
-    - name: 保留檔案和 URI 配置名稱
-      href: ../launch-resume/reserved-uri-scheme-names.md
-    - name: 使用應用程式服務與延伸模組
-      href: ../launch-resume/app-services.md
-      items:
-      - name: 建立和取用應用程式服務
-        href: ../launch-resume/how-to-create-and-consume-an-app-service.md
-      - name: 轉換應用程式服務，以便與其主控應用程式在相同處理序中執行
-        href: ../launch-resume/convert-app-service-in-process.md
-      - name: 透過服務、延伸模組和套件擴充您的應用程式
-        href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
-      - name: 建立和裝載應用程式延伸模組
-        href: ../launch-resume/how-to-create-an-extension.md
-    - name: 使用背景工作支援應用程式
-      href: ../launch-resume/support-your-app-with-background-tasks.md
-      items:
-      - name: 背景工作的指導方針
-        href: ../launch-resume/guidelines-for-background-tasks.md
-      - name: 從背景工作存取感應器和裝置
-        href: ../launch-resume/access-sensors-and-devices-from-a-background-task.md
-      - name: 建立及註冊同處理序的背景工作
-        href: ../launch-resume/create-and-register-an-inproc-background-task.md
-      - name: 建立及註冊跨處理序的背景工作
-        href: ../launch-resume/create-and-register-a-background-task.md
-      - name: 將跨處理序背景工作移植到同處理序背景工作
-        href: ../launch-resume/convert-out-of-process-background-task.md
-      - name: 偵錯背景工作
-        href: ../launch-resume/debug-a-background-task.md
-      - name: 在應用程式資訊清單中宣告背景工作
-        href: ../launch-resume/declare-background-tasks-in-the-application-manifest.md
-      - name: 群組背景工作註冊
-        href: ../launch-resume/group-background-tasks.md
-      - name: 處理已取消的背景工作
-        href: ../launch-resume/handle-a-cancelled-background-task.md
-      - name: 監視背景工作進度和完成
-        href: ../launch-resume/monitor-background-task-progress-and-completion.md
-      - name: 註冊背景工作
-        href: ../launch-resume/register-a-background-task.md
-      - name: 使用背景工作回應系統事件
-        href: ../launch-resume/respond-to-system-events-with-background-tasks.md
-      - name: 在計時器上執行背景工作
-        href: ../launch-resume/run-a-background-task-on-a-timer-.md
-      - name: 在更新 UWP 應用程式時執行背景工作
-        href: ../launch-resume/run-a-background-task-during-updatetask.md
-      - name: 在背景無限期執行
-        href: ../launch-resume/run-in-the-background-indefinetly.md
-      - name: 設定執行背景工作的條件
-        href: ../launch-resume/set-conditions-for-running-a-background-task.md
-      - name: 從您的應用程式觸發背景工作
-        href: ../launch-resume/trigger-background-task-from-app.md
-      - name: 從背景工作更新動態磚
-        href: ../launch-resume/update-a-live-tile-from-a-background-task.md
-      - name: 使用維護觸發程序
-        href: ../launch-resume/use-a-maintenance-trigger.md
-    - name: 已連線的應用程式與裝置 (Project Rome)
-      href: ../launch-resume/connected-apps-and-devices.md
-      items:
-      - name: 探索遠端裝置
-        href: ../launch-resume/discover-remote-devices.md
-      - name: 啟動遠端裝置上的應用程式
-        href: ../launch-resume/launch-a-remote-app.md
-      - name: 與遠端應用程式服務通訊
-        href: ../launch-resume/communicate-with-a-remote-app-service.md
-      - name: 透過遠端工作階段連接裝置
-        href: ../launch-resume/remote-sessions.md
-      - name: 繼續使用者活動，甚至是在各個裝置之間
-        href: ../launch-resume/useractivities.md
-      - name: 使用者活動最佳做法
-        href: ../launch-resume/useractivities-best-practices.md
-    - name: 啟動顯示畫面
-      href: ../launch-resume/splash-screens.md
-      items:
-      - name: 新增啟動顯示畫面
-        href: ../launch-resume/add-a-splash-screen.md
-      - name: 延長顯示啟動顯示畫面
-        href: ../launch-resume/create-a-customized-splash-screen.md
-  - name: 執行緒和非同步程式設計
-    href: ../threading-async/index.md
-    items:
-    - name: 非同步程式設計 (UWP 應用程式)
-      href: ../threading-async/asynchronous-programming-universal-windows-platform-apps.md
-    - name: C++/CX 的非同步程式設計 (UWP 應用程式)
-      href: ../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md
-    - name: 使用執行緒集區的最佳做法
-      href: ../threading-async/best-practices-for-using-the-thread-pool.md
-    - name: 在 C# 或 Visual Basic 中呼叫非同步 API
-      href: ../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md
-    - name: 建立定期工作項目
-      href: ../threading-async/create-a-periodic-work-item.md
-    - name: 將工作項目提交至執行緒集區
-      href: ../threading-async/submit-a-work-item-to-the-thread-pool.md
-    - name: 使用計時器提交工作項目
-      href: ../threading-async/use-a-timer-to-submit-a-work-item.md
-    - name: 在多執行緒環境中使用 Windows 執行階段物件
-      href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: 36d2fba58373cd35321c7787856b782b1291b12d
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57822933"
+        - name: 非同步程式設計 (UWP 應用程式)
+          href: ../threading-async/asynchronous-programming-universal-windows-platform-apps.md
+        - name: C++/CX 的非同步程式設計 (UWP 應用程式)
+          href: ../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md
+        - name: 使用執行緒集區的最佳做法
+          href: ../threading-async/best-practices-for-using-the-thread-pool.md
+        - name: '在 C# 或 Visual Basic 中呼叫非同步 API'
+          href: ../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md
+        - name: 建立定期工作項目
+          href: ../threading-async/create-a-periodic-work-item.md
+        - name: 將工作項目提交至執行緒集區
+          href: ../threading-async/submit-a-work-item-to-the-thread-pool.md
+        - name: 使用計時器提交工作項目
+          href: ../threading-async/use-a-timer-to-submit-a-work-item.md
+        - name: 在多執行緒環境中使用 Windows 執行階段物件
+          href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md

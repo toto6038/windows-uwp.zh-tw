@@ -4,14 +4,16 @@ title: 使用桌面應用程式中裝載 API UWP XAML
 ms.date: 04/16/2019
 ms.topic: article
 keywords: windows 10、 uwp、 windows form、 wpf、 win32、 xaml 群島
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9b318b922541180108dfdd053ba28ce98ad9ebcb
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 545e1e1b220de9edf444ca06c3b21140227e8284
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985008"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215145"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用桌面應用程式中裝載 API UWP XAML
 
@@ -182,13 +184,13 @@ ms.locfileid: "65985008"
 
 ### <a name="keyboard-focus-navigation"></a>鍵盤焦點導覽
 
-當使用者巡覽應用程式中使用鍵盤的 UI 項目 (比方說，是藉由按下** 索引標籤**或方向/方向鍵)，您必須以程式設計方式將焦點移入及移出**DesktopWindowXamlSource**物件。 當使用者的鍵盤瀏覽到達**DesktopWindowXamlSource**，將焦點移到第一個[ **Windows.UI.Xaml.UIElement** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)巡覽順序中的物件針對您的 UI 中，繼續將焦點移至下列**Windows.UI.Xaml.UIElement**物件做為使用者不斷循環的項目，然後再移動焦點設回的**DesktopWindowXamlSource**到父 UI 項目。  
+當使用者巡覽應用程式中使用鍵盤的 UI 項目 (比方說，是藉由按下 **索引標籤** 或方向/方向鍵)，您必須以程式設計方式將焦點移入及移出 **DesktopWindowXamlSource** 物件。 當使用者的鍵盤瀏覽到達**DesktopWindowXamlSource**，將焦點移到第一個[ **Windows.UI.Xaml.UIElement** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)巡覽順序中的物件針對您的 UI 中，繼續將焦點移至下列**Windows.UI.Xaml.UIElement**物件做為使用者不斷循環的項目，然後再移動焦點設回的**DesktopWindowXamlSource**到父 UI 項目。  
 
 裝載 API UWP XAML 提供幾個型別和成員，可協助您完成這些工作。
 
 * 當輸入鍵盤瀏覽您**DesktopWindowXamlSource**，則[ **GotFocus** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.gotfocus)就會引發事件。 處理此事件，並以程式設計方式將焦點移至第一個裝載**Windows.UI.Xaml.UIElement**利用[ **NavigateFocus** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.navigatefocus)方法。
 
-* 當使用者位於最後一個可焦點化項目，在您**DesktopWindowXamlSource**且按下** 索引標籤**索引鍵或方向鍵， [ **TakeFocusRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested)就會引發事件。 處理此事件，並以程式設計方式將焦點移至主應用程式中的下一個可焦點化項目。 例如，在 WPF 應用程式所在**DesktopWindowXamlSource**裝載於[ **System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)，您可以使用[ **MoveFocus** ](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus)方法，以將焦點轉移到主應用程式中的下一個可焦點化項目。
+* 當使用者位於最後一個可焦點化項目，在您 **DesktopWindowXamlSource** 且按下 **索引標籤** 索引鍵或方向鍵， [**TakeFocusRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested)就會引發事件。 處理此事件，並以程式設計方式將焦點移至主應用程式中的下一個可焦點化項目。 例如，在 WPF 應用程式所在**DesktopWindowXamlSource**裝載於[ **System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)，您可以使用[ **MoveFocus** ](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus)方法，以將焦點轉移到主應用程式中的下一個可焦點化項目。
 
 如需示範如何執行此動作之工作的範例應用程式內容中的範例，請參閱下列程式碼檔案：
 

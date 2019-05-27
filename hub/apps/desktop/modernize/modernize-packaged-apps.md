@@ -4,20 +4,22 @@ title: 將封裝的桌面應用程式現代化
 ms.date: 04/22/2019
 ms.topic: article
 keywords: Windows 10, UWP
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6d71233bc7b96af9d9b261406d6b149f36f65f29
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 191a8b8a007a866f37780a7c52cd40047dc9817f
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985288"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215204"
 ---
-# <a name="features-that-require-package-identity"></a>需要封裝識別碼的功能
+# <a name="features-that-require-package-identity"></a>需要套件身分識別的功能
 
 如果您想要更新您的桌面應用程式與[現代 Windows 10 體驗](index.md)，許多功能都只封裝在 MSIX 封裝中的傳統型應用程式。
 
-MSIX 是針對所有 Windows 應用程式、 WPF、 Windows Forms 和 Win32 應用程式提供通用的封裝體驗的新式 Windows 應用程式封裝格式。 封裝您的傳統型 Windows 應用程式，可讓您將動態磚和通知等現代 Windows 10 體驗整合到您的應用程式。 它也會取得您存取強大的安裝和更新的體驗、 受管理的安全性模型與彈性的功能系統，支援 Microsoft Store、 企業管理和許多自訂發佈模型。 如需詳細資訊，請參閱 <<c0> [ 桌面應用程式封裝](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)MSIX 文件中。
+MSIX 是針對所有 Windows 應用程式、 WPF、 Windows Forms 和 Win32 應用程式提供通用的封裝體驗的新式 Windows 應用程式封裝格式。 封裝您的傳統型 Windows 應用程式，可讓您將動態磚和通知等現代 Windows 10 體驗整合到您的應用程式。 它也會取得您存取強大的安裝和更新的體驗、 受管理的安全性模型與彈性的功能系統，支援 Microsoft Store、 企業管理和許多自訂發佈模型。 如需詳細資訊，請參閱 MSIX 文件中的[封裝傳統型應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
 
 如果您封裝傳統型應用程式時，您可以使用 UWP Api 需要封裝識別碼、 封裝擴充功能和 UWP 應用程式封裝中的元件。 如需詳細資訊，請參閱下列文章。
 
@@ -33,7 +35,7 @@ MSIX 是針對所有 Windows 應用程式、 WPF、 Windows Forms 和 Win32 應�
 
 如需詳細資訊，請參閱 <<c0> [ 傳統型應用程式整合套件擴充功能](desktop-to-uwp-extensions.md)。
 
-## <a name="extend-with-uwp-components"></a>使用 UWP 元件，擴充
+## <a name="extend-with-uwp-components"></a>使用 UWP 元件進行擴充
 
 有些 Windows 10 體驗 (例如：具有觸控功能的 UI 頁面) 必須在現代化應用程式容器中執行。 一般情況下，您應該先判斷是否可以新增您的經驗，包括[增強](desktop-to-uwp-enhance.md)UWP Api 與您現有的桌面應用程式。 如果您有使用 UWP 元件，來達到體驗，然後您可以將 UWP 專案新增至您的解決方案和使用桌面應用程式和 UWP 元件之間進行通訊的應用程式服務。
 

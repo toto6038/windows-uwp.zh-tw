@@ -4,14 +4,16 @@ title: 在傳統型應用程式中使用 UWP Api
 ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: eb0cee26ee65c029af3f0385f44630afa057b29f
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 22aefb58dc06a35ed3a10338eb585aa6c49e55fc
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984658"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215107"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>在傳統型應用程式中呼叫 UWP Api
 
@@ -27,7 +29,7 @@ ms.locfileid: "65984658"
 
 ### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>.NET 專案修改成使用 Windows 執行階段 Api
 
-1. 開啟 **\[參考管理員\]** 對話方塊，選擇 **\[瀏覽\]** 按鈕，然後選取 **\[所有檔案\]**。
+1. 開啟 **\[參考管理員\]** 對話方塊，選擇 **\[瀏覽\]** 按鈕，然後選取 **\[所有檔案\]** 。
 
     ![新增參考對話方塊](images/desktop-to-uwp/browse-references.png)
 
@@ -42,7 +44,7 @@ ms.locfileid: "65984658"
   |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
   |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
-3. 在 **\[屬性\]** 視窗中，將每個 *.winmd* 檔案的 **\[複製本機\]** 欄位設定為 **\[False\]**。
+3. 在 **\[屬性\]** 視窗中，將每個 *.winmd* 檔案的 **\[複製本機\]** 欄位設定為 **\[False\]** 。
 
     ![複製本機欄位](images/desktop-to-uwp/copy-local-field.png)
 
@@ -84,7 +86,7 @@ ms.locfileid: "65984658"
 
 ![API 協定表格](images/desktop-to-uwp/contract-table.png)
 
-如果您有 .NET 型傳統型應用程式，請新增該 API 協定的參考，然後將該檔案的 **\[複製本機\]** 屬性設定為 **\ [False\]**。 如果您有 C++ 型專案，請將包含此協定之資料夾的路徑新增至 **\[其他 Include 目錄\]**。
+如果您有 .NET 型傳統型應用程式，請新增該 API 協定的參考，然後將該檔案的 **\[複製本機\]** 屬性設定為 **\ [False\]** 。 如果您有 C++ 型專案，請將包含此協定之資料夾的路徑新增至 **\[其他 Include 目錄\]** 。
 
 :white_check_mark:**呼叫的 Api 來新增您的體驗**
 
