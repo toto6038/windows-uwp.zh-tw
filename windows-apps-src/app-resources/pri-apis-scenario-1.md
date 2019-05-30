@@ -6,15 +6,15 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a63cf64fec32be5439838618e534617d1f4a9afc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622753"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359354"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>案例 1：從字串資源和資產檔案產生 PRI 檔案
-在本案例中，我們會使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，建立新的應用程式來表示我們的自訂建置系統。 請記住，這個自訂建置系統的目的是建立適用於目標 UWP app 的 PRI 檔案。 因此在這個逐步解說過程中，我們會建立一些範例資源檔案 (包含字串以及其他種類的資源) 來代表該目標 UWP app 的資源。
+在本案例中，我們會使用[套件資源索引 (PRI) API](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)，建立新的應用程式來表示我們的自訂建置系統。 請記住，這個自訂建置系統的目的是建立適用於目標 UWP app 的 PRI 檔案。 因此在這個逐步解說過程中，我們會建立一些範例資源檔案 (包含字串以及其他種類的資源) 來代表該目標 UWP app 的資源。
 
 ## <a name="new-project"></a>新專案
 在 Microsoft Visual Studio 中，從建立新的專案開始。 建立 **Visual C++ Windows 主控台應用程式**專案，命名為 *CBSConsoleApp* (代表「自訂建置系統主控台應用程式」)。
@@ -30,7 +30,7 @@ ms.locfileid: "57622753"
 #include <MrmResourceIndexer.h>
 ```
 
-API 是在 MrmSupport.dll 中實作，您可以連結到靜態程式庫 MrmSupport.lib 來存取。 開啟專案的 **\[屬性\]**、按一下 **[連結器]** > **\[輸入\]**、編輯 **AdditionalDependencies**，然後新增 `MrmSupport.lib`。
+API 是在 MrmSupport.dll 中實作，您可以連結到靜態程式庫 MrmSupport.lib 來存取。 開啟專案的 **\[屬性\]** 、按一下 **[連結器]**  >  **\[輸入\]** 、編輯 **AdditionalDependencies**，然後新增 `MrmSupport.lib`。
 
 建置方案，然後將 `MrmSupport.dll` 從 `C:\Program Files (x86)\Windows Kits\10\bin\<WindowsTargetPlatformVersion>\x64\` 複製到您的組建輸出資料夾 (可能是 `C:\Users\%USERNAME%\source\repos\CBSConsoleApp\x64\Debug\`)。
 
@@ -227,11 +227,11 @@ MrmResourceIndexerHandle indexer;
 
 第一個字串資源是 `en-US\resources.resw` 的 *EnOnlyString*，而這只有一個候選項目 (符合 *language-en-US* 限定詞)。 接下來是 `resources.resw` 和 `en-US\resources.resw` 中都有的 *LocalizedString1*。 因此會有兩個候選項目：一個符合 *language-en-US* 的候選項目，以及一個符合任何內部的遞補中性候選項目。 同樣地，*LocalizedString2* 也有兩個候選項目：*language-de-DE* 和中性候選項目。 最後，*NeutralOnlyString* 只有中性形式。 我指定這個名稱給它，是為了釐清這並不是要將它當地語系化。
 
-## <a name="summary"></a>摘要
-在本案例中，我們示範了如何使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) 來建立資源索引子。 我們將字串資源和資產檔案新增至資源索引子， 然後使用資源索引子產生二進位 PRI 檔案。 最後，我以 XML 格式傾印二進位 PRI 檔案，這樣才能確認其中包含我們所預期的資訊。
+## <a name="summary"></a>總結
+在本案例中，我們示範了如何使用[套件資源索引 (PRI) API](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) 來建立資源索引子。 我們將字串資源和資產檔案新增至資源索引子， 然後使用資源索引子產生二進位 PRI 檔案。 最後，我以 XML 格式傾印二進位 PRI 檔案，這樣才能確認其中包含我們所預期的資訊。
 
 ## <a name="important-apis"></a>重要 API
-* [編製索引 (PRI) 參考的套件資源](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [編製索引 (PRI) 參考的套件資源](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)
 
 ## <a name="related-topics"></a>相關主題
 * [套件資源索引 (PRI) API 和自訂建置系統](pri-apis-custom-build-systems.md)

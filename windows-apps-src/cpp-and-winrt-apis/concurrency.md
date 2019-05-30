@@ -1,42 +1,42 @@
 ---
 description: 本主題示範的方式，您可以使用 C++/WinRT，同時建立及使用 Windows 執行階段非同步物件。
 title: 透過 C++/WinRT 的並行和非同步作業
-ms.date: 10/27/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: f3283ffa5fa047806befa2712301c25a7d07af8e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5dba97ede63b1bcb85c4ee1807d5558f4c93834a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611293"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361205"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
-本主題說明的方式，您可以同時建立和使用 Windows 執行階段非同步物件[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
+本主題說明的方式，您可以同時建立和使用 Windows 執行階段非同步物件[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>非同步作業與 Windows 執行階段 "Async" 函式
 
 實作有可能超過 50 毫秒完成的任何 Windows 執行階段 API 做為非同步函式 (名稱以 "Async" 結尾)。 非同步函式的實作在另一個執行續上起始工作，並立即傳回代表非同步作業的物件。 非同步作業完成時，傳回包含工作所產生任何值的物件。 **Windows::Foundation** Windows 執行階段命名空間包含四種非同步作業物件。
 
-- [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)，
-- [**IAsyncActionWithProgress&lt;Tprogress>&gt;**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)，
-- [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation_tresult_)，及
-- [**IAsyncOperationWithProgress&lt;Iasyncoperationwithprogress<tresult，Tprogress>&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)。
+- [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction),
+- [**IAsyncActionWithProgress&lt;TProgress&gt;** ](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_),
+- [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation_tresult_)，及
+- [**IAsyncOperationWithProgress&lt;Iasyncoperationwithprogress<tresult，Tprogress>&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)。
 
 這些非同步作業類型的每一個皆投影到 **winrt::Windows::Foundation** C++/WinRT 命名空間中的對應類型。 C++/WinRT 也包含內部等待介面卡結構。 您不使用它直接，但，由於該結構，您可以撰寫`co_await`陳述式以合作方式等候其中一個非同步作業類型會傳回任何函式的結果。 且您可以撰寫自己的協同程式，傳回這些類型。
 
-非同步 Windows 函式的範例是 [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)，其傳回類型 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) 的非同步作業物件。 讓我們看看一些方法&mdash;第一個封鎖，然後非封鎖&mdash;使用 C + + /cli 來呼叫 API，例如，WinRT。
+非同步 Windows 函式的範例是 [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)，其傳回類型 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) 的非同步作業物件。 讓我們看看一些&mdash;第一個封鎖，然後非封鎖&mdash;使用C++來呼叫 API，例如 /WinRT。
 
 ## <a name="block-the-calling-thread"></a>封鎖呼叫執行緒
 
 下列的程式碼範例從 **RetrieveFeedAsync** 接收一個非同步作業物件，並在該物件上呼叫 **get**，封鎖呼叫執行緒，直到非同步作業的結果可用。
 
+如果您想要複製-貼上本範例直接到的主要原始程式碼檔案**Windows 主控台應用程式 (C++/WinRT)** 專案，則第一組**未使用先行編譯標頭**專案中屬性。
+
 ```cppwinrt
 // main.cpp
-
-#include "pch.h"
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Web.Syndication.h>
 
@@ -63,18 +63,20 @@ int main()
 
 ## <a name="write-a-coroutine"></a>撰寫協同程式
 
+> [!IMPORTANT]
+> 至於[ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)，請務必`#include <winrt/coroutine.h>`每當撰寫，或使用協同程式。
+
 C++/WinRT 與 C++ 協同程式整合為程式設計模型，提供以自然的方式合作等待結果。 您可以藉由撰寫協同程式產生自己的 Windows 執行階段非同步作業。 下列程式碼範例中，**ProcessFeedAsync** 是協同程式。
 
 > [!NOTE]
-> **取得**函式存在，在 C + + /cli WinRT 投射類型**winrt::Windows::Foundation::IAsyncAction**，因此您可以呼叫的函式，在任何 C + + /cli WinRT 專案。 您將無法找到列為的成員函式[ **IAsyncAction** ](/uwp/api/windows.foundation.iasyncaction)介面，因為**取得**不屬於的應用程式二進位介面 (ABI) 介面實際的 Windows 執行階段型別**IAsyncAction**。
+> **取得**函式存在於C++/WinRT 投射類型**winrt::Windows::Foundation::IAsyncAction**，因此您可以呼叫內任何函式的C++/WinRT 專案。 您將無法找到列為的成員函式[ **IAsyncAction** ](/uwp/api/windows.foundation.iasyncaction)介面，因為**取得**不屬於的應用程式二進位介面 (ABI) 介面實際的 Windows 執行階段型別**IAsyncAction**。
 
 ```cppwinrt
 // main.cpp
-
-#include "pch.h"
-#include <winrt/Windows.Foundation.h>
-#include <winrt/Windows.Web.Syndication.h>
 #include <iostream>
+#include <winrt/coroutine.h>
+#include <winrt/Windows.Foundation.Collections.h>
+#include <winrt/Windows.Web.Syndication.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -118,11 +120,10 @@ int main()
 
 ```cppwinrt
 // main.cpp
-
-#include "pch.h"
-#include <winrt/Windows.Foundation.h>
-#include <winrt/Windows.Web.Syndication.h>
 #include <iostream>
+#include <winrt/coroutine.h>
+#include <winrt/Windows.Foundation.Collections.h>
+#include <winrt/Windows.Web.Syndication.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -155,13 +156,16 @@ int main()
 
 上述範例中，**RetrieveBlogFeedAsync** 傳回 **IAsyncOperationWithProgress**，其同時具有處理程序和一個傳回值。 我們可以執行其他工作，同時 **RetrieveBlogFeedAsync** 執行其項目與擷取摘要。 接著，我們在非同步作業物件上呼叫 **get** 封鎖，等待其完成，再取得作業的結果。
 
-如果您正非同步傳回 Windows 執行階段類型，則您應該要傳回 [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation_tresult_) 或 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)。 任何第一或第三方執行階段類別資格，或任何可從 Windows Runtime 函式或傳送至 Windows Runtime 函式的任何類型 (例如，`int`，或 **winrt::hstring**)。 編譯器將會協助您解決 *必須為 WinRT 類型* 的錯誤，如果您嘗試使用非 Windows 執行階段類型的這些非同步作業類型之一的話。
+如果您正非同步傳回 Windows 執行階段類型，則您應該要傳回 [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation_tresult_) 或 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)。 任何第一或第三方執行階段類別資格，或任何可從 Windows Runtime 函式或傳送至 Windows Runtime 函式的任何類型 (例如，`int`，或 **winrt::hstring**)。 編譯器將會協助您解決 *必須為 WinRT 類型* 的錯誤，如果您嘗試使用非 Windows 執行階段類型的這些非同步作業類型之一的話。
 
 如果協同程式沒有至少一個 `co_await` 陳述式，為了符合協同程式，它必須至少有一個 `co_return` 或一個 `co_yield` 陳述式。 在這個情況下，您的協同程式不用引入任何非同步便可以傳回一個值，且因此不封鎖也不會切換內容。 以下是透過快取值這樣做（稱為第二次以上的次數）的範例。
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 winrt::hstring m_cache;
- 
+
 IAsyncOperation<winrt::hstring> ReadAsync()
 {
     if (m_cache.empty())
@@ -181,12 +185,10 @@ IAsyncOperation<winrt::hstring> ReadAsync()
 
 ```cppwinrt
 // main.cpp
-
-#include "pch.h"
-#include <winrt/Windows.Foundation.h>
-#include <winrt/Windows.Web.Syndication.h>
 #include <iostream>
 #include <ppltasks.h>
+#include <winrt/Windows.Foundation.Collections.h>
+#include <winrt/Windows.Web.Syndication.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -195,12 +197,12 @@ using namespace Windows::Web::Syndication;
 concurrency::task<std::wstring> RetrieveFirstTitleAsync()
 {
     return concurrency::create_task([]
-    {
-        Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
-        SyndicationClient syndicationClient;
-        SyndicationFeed syndicationFeed{ syndicationClient.RetrieveFeedAsync(rssFeedUri).get() };
-        return std::wstring{ syndicationFeed.Items().GetAt(0).Title().Text() };
-    });
+        {
+            Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+            SyndicationClient syndicationClient;
+            SyndicationFeed syndicationFeed{ syndicationClient.RetrieveFeedAsync(rssFeedUri).get() };
+            return std::wstring{ syndicationFeed.Items().GetAt(0).Title().Text() };
+        });
 }
 
 int main()
@@ -225,11 +227,14 @@ void DoWork(Param const& value);
 如果您將參考參數傳遞至協同程式，則您會遇到問題。
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 // NOT the recommended way to pass a value to a coroutine!
 IASyncAction DoWorkAsync(Param const& value)
 {
     // While it's ok to access value here...
-    
+
     co_await DoOtherWorkAsync();
 
     // ...accessing value here carries no guarantees of safety.
@@ -244,7 +249,7 @@ IASyncAction DoWorkAsync(Param value);
 ```
 
 透過 const 值來傳遞也是一個很好的做法 (除非您想要移動該值)。 它不會對您製作複本的來源值有任何影響，但它意圖明確，且有助於您無意中修改複本。
-    
+
 ```cppwinrt
 // coroutine with strictly unnecessary const (but arguably good practice).
 IASyncAction DoWorkAsync(Param const value);
@@ -258,9 +263,12 @@ IASyncAction DoWorkAsync(Param const value);
 
 因此，然後才執行協同程式中的計算繫結工作，您需要返回呼叫端的執行 （亦即，導入暫停點），因此不會封鎖呼叫端。 如果您還沒進行， `co_await`-ing 其他作業，則您可以`co_await` [ **winrt::resume_background** ](/uwp/cpp-ref-for-winrt/resume-background)函式。 其將控制項傳回給呼叫者，並立即恢復執行緒集區執行緒的執行。
 
-實作中使用的執行緒集區是低層級的 [Windows 執行緒集區](https://msdn.microsoft.com/library/windows/desktop/ms686766)，所以是最有效的。
+實作中使用的執行緒集區是低層級的 [Windows 執行緒集區](https://docs.microsoft.com/windows/desktop/ProcThread/thread-pool-api)，所以是最有效的。
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
 {
     co_await winrt::resume_background(); // Return control; resume on thread pool.
@@ -280,6 +288,9 @@ IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
 從前一個案例展開此案例。 您將一些工作卸載至執行緒集區，但您想在使用者介面 (UI) 中顯示進度。
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     co_await winrt::resume_background();
@@ -292,6 +303,9 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 上方的程式碼擲回一個 [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/error-handling/hresult-wrong-thread) 例外，因為 **TextBlock** 必須從建立它的執行緒進行更新，也就是 UI 執行緒。 一種解決方案就是擷取我們最初呼叫的協同程式的執行緒內容。 若要這樣做，請具現化[ **winrt::apartment_context** ](/uwp/cpp-ref-for-winrt/apartment-context)物件，執行背景工作，然後`co_await` **apartment_context**若要切換回呼叫內容。
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     winrt::apartment_context ui_thread; // Capture calling context.
@@ -310,7 +324,9 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 更多一般解決方案來更新 UI，其中涵蓋了，您會確定呼叫的執行緒資料的情況下，您可以`co_await` [ **winrt::resume_foreground** ](/uwp/cpp-ref-for-winrt/resume-foreground)切換至特定的函式前景執行緒。 在下列程式碼範例中，我們透過傳遞與 **TextBlock** (透過存取其[**發送器**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) 屬性) 相關聯的發送器物件，來指定前景執行緒。 **winrt::resume_foreground** 的實作在發送器物件上呼叫 [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync)，來執行協同程式中之後的工作。
 
 ```cppwinrt
-#include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
+...
+#include <winrt/coroutine.h>
+...
 IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     co_await winrt::resume_background();
@@ -326,9 +342,12 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 更廣泛地說，協同程式中暫停點之後, 在原始的執行緒可能會消失，而且繼續可能會發生在任何執行緒上 (也就是說，任何執行緒可能會呼叫**已完成**非同步作業的方法)。
 
-但是如果您`co_await`任何四個 Windows 執行階段非同步作業類型 (**IAsyncXxx**)，然後 C + + /cli WinRT 會擷取呼叫的內容，在時間點您`co_await`。 它可確保您是仍在內容上，接續會繼續執行時。 C + + /cli WinRT 的做法是檢查您是否已呼叫的內容上，如果沒有，請切換到它。 如果您選擇了之前在單一執行緒 apartment (STA) 執行緒上`co_await`，然後就會在同一個之後，如果您已在之前的多執行緒的 apartment (MTA) 執行緒上`co_await`，則您將會在同一個之後。
+但若是您`co_await`任何四個 Windows 執行階段非同步作業類型 (**IAsyncXxx**)，然後C++/WinRT 會擷取呼叫的內容，在時間點您`co_await`。 它可確保您是仍在內容上，接續會繼續執行時。 C++/ WinRT 作法是檢查是否您已經在呼叫的內容，如果沒有，請切換到它。 如果您選擇了之前在單一執行緒 apartment (STA) 執行緒上`co_await`，然後就會在同一個之後，如果您已在之前的多執行緒的 apartment (MTA) 執行緒上`co_await`，則您將會在同一個之後。
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 IAsyncAction ProcessFeedAsync()
 {
     Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
@@ -340,9 +359,12 @@ IAsyncAction ProcessFeedAsync()
 }
 ```
 
-您可以依賴此行為的原因是因為 C + + /cli WinRT 提供程式碼來調整這些 Windows 執行階段非同步作業類型 （這些程式碼片段會呼叫等待配接器） 的 c + + 協同程式語言支援。 其餘的 awaitable 型別在 C + + /cli WinRT 就是執行緒集區的包裝函式和 （或） 協助程式;因此他們完成執行緒集區。
+您可以依賴此行為的原因是因為C++/WinRT 提供程式碼來調整這些 Windows 執行階段非同步作業類型C++（這些程式碼片段會呼叫等待配接器） 的協同程式語言支援。 在其餘的 awaitable 型別C++/WinRT 就是執行緒集區的包裝函式和 （或） 協助程式;因此他們完成執行緒集區。
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 using namespace std::chrono;
 IAsyncOperation<int> return_123_after_5s()
 {
@@ -353,12 +375,14 @@ IAsyncOperation<int> return_123_after_5s()
 }
 ```
 
-如果您`co_await`其他型別&mdash;甚至在 C + + /cli WinRT 協同程式實作&mdash;另一個程式庫提供為配接器，然後您必須了解這些配接器如何繼續和內容。
+如果您`co_await`其他型別&mdash;甚至內C++/WinRT 協同程式實作&mdash;另一個程式庫提供為配接器，然後您必須了解這些配接器如何繼續和內容。
 
 若要保留，最小的內容切換，您可以使用一些我們已經看過本主題中的技術。 我們來看看一些示範這麼做。 在這個下一步 的虛擬程式碼範例中，我們會示範事件處理常式呼叫 Windows 執行階段 API 來載入映像、 卸除到背景執行緒來處理該映像，而傳回至 UI 執行緒，以在 UI 中顯示影像的外框。
 
 ```cppwinrt
-#include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
+...
+#include <winrt/coroutine.h>
+...
 IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
 {
     // We begin in the UI context.
@@ -381,10 +405,12 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 }
 ```
 
-此案例中，沒有呼叫周圍 ineffiency 一點**StorageFile::OpenAsync**。 沒有必要的內容切換至背景執行緒 （因此，處理常式傳回給呼叫端執行），繼續之後的 C + + /cli WinRT 還原 UI 執行緒內容。 但是，在此情況下，不需要是在 UI 執行緒上，直到我們即將更新 UI。 多個 Windows 執行階段 Api，我們稱之為*之前*我們呼叫**winrt::resume_background**，我們會產生更不需要後往來內容切換。 方案不是呼叫*任何*之前的 Windows 執行階段 Api。 所有之後將它們移**winrt::resume_background**。
+此案例中，沒有呼叫周圍 ineffiency 一點**StorageFile::OpenAsync**。 沒有必要的內容切換至背景執行緒 （因此，處理常式傳回給呼叫端執行） 之後，繼續C++/WinRT 還原 UI 執行緒內容。 但是，在此情況下，不需要是在 UI 執行緒上，直到我們即將更新 UI。 多個 Windows 執行階段 Api，我們稱之為*之前*我們呼叫**winrt::resume_background**，我們會產生更不需要後往來內容切換。 方案不是呼叫*任何*之前的 Windows 執行階段 Api。 所有之後將它們移**winrt::resume_background**。
 
 ```cppwinrt
-#include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
+...
+#include <winrt/coroutine.h>
+...
 IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
 {
     // We begin in the UI context.
@@ -408,9 +434,12 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 如果您想要進行更進階的則您也可以撰寫自己，await 配接器。 例如，如果您想要`co_await`完成的非同步動作的相同執行緒上繼續 （因此，沒有任何內容切換），然後您就可以開始撰寫 await 配接器類似於如下所示。
 
 > [!NOTE]
-> 下列程式碼範例被供教育目的之用它可協助您開始了解如何 await 配接器工作。 如果您要使用您自己的程式碼基底，這項技術，則我們建議您開發並測試您自己 await struct(s) 配接器。 例如，您可以撰寫**complete_on_any**， **complete_on_current**，並**complete_on(dispatcher)**。 也請考慮讓它們需要的範本**IAsyncXxx**做為範本參數的型別。
+> 下列程式碼範例被供教育目的之用它可協助您開始了解如何 await 配接器工作。 如果您要使用您自己的程式碼基底，這項技術，則我們建議您開發並測試您自己 await struct(s) 配接器。 例如，您可以撰寫**complete_on_any**， **complete_on_current**，並**complete_on(dispatcher)** 。 也請考慮讓它們需要的範本**IAsyncXxx**做為範本參數的型別。
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 struct no_switch
 {
     no_switch(Windows::Foundation::IAsyncAction const& async) : m_async(async)
@@ -440,9 +469,12 @@ private:
 };
 ```
 
-若要了解如何使用**no_switch** await 配接器，您必須先知道當 c + + 編譯器遇到`co_await`運算式呼叫的函式會尋找**await_ready**， **await_suspend**，並**await_resume**。 C + + /cli WinRT 程式庫會提供這些函式，以便您取得合理的行為，根據預設，像這樣。
+若要了解如何使用**no_switch** await 配接器，您必須先知道，當C++編譯器遇到`co_await`它會尋找呼叫的函式的運算式**await_ready**，**await_suspend**，並**await_resume**。 C++/WinRT 程式庫會提供這些函式，以便您取得合理的行為，根據預設，像這樣。
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 IAsyncAction async{ ProcessFeedAsync() };
 co_await async;
 ```
@@ -450,11 +482,14 @@ co_await async;
 若要使用**no_switch** await 配接器，只需變更的型別`co_await`運算式**IAsyncXxx**來**no_switch**，如下所示。
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 IAsyncAction async{ ProcessFeedAsync() };
 co_await static_cast<no_switch>(async);
 ```
 
-然後，而不是尋找三**await_xxx**函式符合**IAsyncXxx**，c + + 編譯器會尋找符合的函式**no_switch**。
+然後，而不是尋找三**await_xxx**函式符合**IAsyncXxx**、C++編譯器會尋找符合的函式**no_switch**。
 
 ## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>取消非同步作業，並取消回呼
 
@@ -469,7 +504,16 @@ co_await static_cast<no_switch>(async);
 
 // MainPage.h
 ...
+#include <winrt/coroutine.h>
+#include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Storage.Search.h>
+
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::Foundation::Collections;
+using namespace Windows::Storage;
+using namespace Windows::Storage::Search;
+using namespace Windows::UI::Xaml;
 ...
 struct MainPage : MainPageT<MainPage>
 {
@@ -506,18 +550,17 @@ struct MainPage : MainPageT<MainPage>
 private:
     IAsyncOperation<::IVectorView<StorageFile>> m_async;
 };
+...
 ```
 
 針對取消實作端，讓我們開始使用簡單的範例。
 
 ```cppwinrt
-// pch.h
-#pragma once
+// main.cpp
 #include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
-// main.cpp : Defines the entry point for the console application.
-#include "pch.h"
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace std::chrono_literals;
@@ -553,6 +596,8 @@ int main()
 
 ```cppwinrt
 ...
+#include <winrt/coroutine.h>
+...
 IAsyncAction ExplicitCancellationAsync()
 {
     auto cancellation_token{ co_await winrt::get_cancellation_token() };
@@ -582,13 +627,11 @@ Windows 執行階段取消不會自動流向其他非同步物件的限制。 �
 在這個下一步 的程式碼範例中， **NestedCoroutineAsync**運作，但在其中有任何特殊的取消邏輯。 **CancellationPropagatorAsync**是基本上是在巢狀的協同程式; 上的包裝函式包裝函式會事先轉送取消。
 
 ```cppwinrt
-// pch.h
-#pragma once
+// main.cpp
 #include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
-// main.cpp : Defines the entry point for the console application.
-#include "pch.h"
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace std::chrono_literals;
@@ -629,20 +672,18 @@ int main()
 }
 ```
 
-**CancellationPropagatorAsync** lambda 函式本身取消回呼，然後等候的暫存器 （它會暫止） 到巢狀的工作完成為止。 時，或如果**CancellationPropagatorAsync**已取消，它會傳播到巢狀的協同程式的取消。 若要輪詢取消，不需要也會取消永遠被封鎖。 這項機制是有足夠的彈性，讓您用於互通的協同程式或並行處理的媒體櫃之一無所知的 C + + /cli WinRT。
+**CancellationPropagatorAsync** lambda 函式本身取消回呼，然後等候的暫存器 （它會暫止） 到巢狀的工作完成為止。 時，或如果**CancellationPropagatorAsync**已取消，它會傳播到巢狀的協同程式的取消。 若要輪詢取消，不需要也會取消永遠被封鎖。 這項機制是有足夠的彈性，您可以使用與一無所知的協同程式或並行處理程式庫互通C++/WinRT。
 
 ## <a name="reporting-progress"></a>報告進度
 
 如果您的協同程式會傳回[ **IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)，或[ **IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)，則您可以擷取所傳回的物件[ **winrt::get_progress_token** ](/uwp/cpp-ref-for-winrt/get-progress-token)函式，並使用它來報告進度，回到進度處理常式。 以下是程式碼範例。
 
 ```cppwinrt
-// pch.h
-#pragma once
+// main.cpp
 #include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
-// main.cpp : Defines the entry point for the console application.
-#include "pch.h"
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace std::chrono_literals;
@@ -715,12 +756,10 @@ double pi{ co_await async_op_with_progress };
 有時候，您有可以與其他工作，同時完成工作，而您不需要等待該工作才能完成 （沒有其他工作而定它），也不需要它來傳回值。 在此情況下，您可以啟動工作，且忘了它。 您可以執行，藉由撰寫協同程式傳回型別是[ **winrt::fire_and_forget** ](/uwp/cpp-ref-for-winrt/fire-and-forget) (而不是其中一個 Windows 執行階段非同步作業類型，或**concurrency::task**).
 
 ```cppwinrt
-// pch.h
-#pragma once
+// main.cpp
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
-// main.cpp : Defines the entry point for the console application.
-#include "pch.h"
 using namespace winrt;
 using namespace std::chrono_literals;
 
@@ -740,7 +779,7 @@ int main()
 ## <a name="important-apis"></a>重要 API
 * [concurrency:: task 類別](/cpp/parallel/concrt/reference/task-class)
 * [IAsyncAction 介面](/uwp/api/windows.foundation.iasyncaction)
-* [IAsyncActionWithProgress&lt;Tprogress>&gt;介面](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
+* [IAsyncActionWithProgress&lt;TProgress&gt; interface](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
 * [IAsyncOperation&lt;TResult&gt;介面](/uwp/api/windows.foundation.iasyncoperation_tresult_)
 * [IAsyncOperationWithProgress&lt;Iasyncoperationwithprogress<tresult，Tprogress>&gt;介面](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
@@ -750,5 +789,5 @@ int main()
 * [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)
 
 ## <a name="related-topics"></a>相關主題
-* [處理事件，藉由使用委派，在 C + + /cli WinRT](handle-events.md)
+* [您可以使用中的委派處理事件C++/WinRT](handle-events.md)
 * [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)

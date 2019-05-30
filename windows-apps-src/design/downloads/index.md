@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 24e994435a2ff7a01e5c77a0043e7a3fb8bc3f33
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 2c7332a3e1097a8e62576ae5920eb82c2bd5d2a6
+ms.sourcegitcommit: 423ff8f1fd791445e21cca534bcefe407251acf1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065419"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66251604"
 ---
 ![設計基本知識](../images/downloads-2x.png)
 
@@ -27,44 +27,44 @@ Fluent 設計/UWP 應用程式的設計與 UI 相關下載。 如需其他工具
 
 :::row:::
     :::column:::
-        ![hero image](images/figma.png)
-        <b>Figma toolkit</b><br>
-        v1810, October 2018<br>
-        <a href="https://aka.ms/figmatoolkit">Download</a>
+![主角圖像](images/figma.png)
+<b>Figma 工具組</b><br>
+1810 版，2018 年 10 月<br>
+<a href="https://aka.ms/figmatoolkit">下載</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/sketch.png)
-        <b>Sketch toolkit</b><br>
-        v1810, October 2018<br>
-        <a href="https://aka.ms/sketchtoolkit">Download</a>
+![主角圖像](images/sketch.png)
+<b>草圖工具組</b><br>
+1810 版，2018 年 10 月<br>
+<a href="https://aka.ms/sketchtoolkit">下載</a>
     :::column-end:::    
     :::column:::
-        ![hero image](images/adobe-xd.png)
-        <b>Adobe XD toolkit</b><br>
-        v1901, January 2019<br>
-        <a href="https://aka.ms/adobexdtoolkit">Download</a>
+![主角圖像](images/adobe-xd.png)
+<b>Adobe XD 工具組</b><br>
+1901 版，2019 年 1 月<br>
+<a href="https://aka.ms/adobexdtoolkit">下載</a>
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![hero image](images/adobe-illustrator.png)
-        <b>Adobe Illustrator toolkit</b><br>
-        v1806, June 2018<br>
-        <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
+![主角圖像](images/adobe-illustrator.png)
+<b>Adobe Illustrator 工具組</b><br>
+1806 版，2018 年 6 月<br>
+<a href="https://aka.ms/adobeillustratortoolkit">下載</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/adobe-photoshop.png)
-        <b>Adobe Photoshop toolkit</b><br>
-        v1705, May 2017<br>
-        <a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
+![主角圖像](images/adobe-photoshop.png)
+<b>Adobe Photoshop 工具組</b><br>
+1705 版，2017 年 5 月<br>
+<a href="https://aka.ms/adobephotoshoptoolkit">下載</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/framer.png)
-        <b>Framer toolkit</b><br>
-        (This toolkit is no longer supported.)<br/>
-        v1806, June 2018<br>
-        <a href="https://aka.ms/framertoolkit">Download</a>
+![主角圖像](images/framer.png)
+<b>Framer 工具組</b><br>
+(不再支援此工具組。)<br/>
+1806 版，2018 年 6 月<br>
+<a href="https://aka.ms/framertoolkit">下載</a>
     :::column-end:::
 :::row-end:::
 
@@ -72,16 +72,16 @@ Fluent 設計/UWP 應用程式的設計與 UI 相關下載。 如需其他工具
 
 :::row:::
     :::column:::
-        ![WinUI library thumbnail](images/WinUI-library.png)
-        <b>Windows UI Library</b><br>
-        Controls and other UI elements for UWP apps.<br/>
-        <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
+![WinUI 程式庫縮圖](images/WinUI-library.png)
+<b>Windows UI 程式庫</b><br>
+用於 UWP 應用程式的控制項和其他 UI 元素。<br/>
+<a href="/uwp/toolkits/winui/getting-started">安裝指示</a><br/>
     :::column-end:::
     :::column:::
-        ![Windows community thumbnail](images/Windows-community-toolkit.png)
-        <b>Windows Community Toolkit</b><br>
-        Helper functions, custom controls, and app services.<br />
-        <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
+![Windows 社群縮圖](images/Windows-community-toolkit.png)
+<b>Windows 社群工具組</b><br>
+Helper 函式、自訂控制項和應用程式服務。<br />
+<a href="/windows/uwpcommunitytoolkit/getting-started">安裝指示</a>
     :::column-end:::
     :::column:::
     :::column-end:::

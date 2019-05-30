@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bae6e5b21369c30c8ed067fe7283c0a116d220b8
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 55879c33e30564f4639b8880c3a12f4b4181245e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343287"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365925"
 ---
 # <a name="interaction-primer"></a>互動基本資訊
 
@@ -135,7 +135,7 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 
 ### <a name="more-info"></a>其他資訊
 
-[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
+[語音設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
  
 
 ## <a name="pen"></a>手寫筆
@@ -168,7 +168,7 @@ Windows 筆跡平台搭配手寫筆之後，使用者就可以自然的方式手
 
 ### <a name="more-info"></a>其他資訊
 
-[手寫筆設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456352)
+[手寫筆設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
  
 
 ## <a name="touch"></a>觸控
@@ -203,7 +203,7 @@ Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
 
 ### <a name="more-info"></a>其他資訊
 
-[觸控設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465370)
+[觸控設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)
  
 
 ## <a name="touchpad"></a>觸控板
@@ -227,7 +227,7 @@ Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
 
 ### <a name="more-info"></a>其他資訊
 
-[觸控板設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456353)
+[觸控板設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
  
 
 ## <a name="keyboard"></a>鍵盤
@@ -267,7 +267,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
 ### <a name="more-info"></a>其他資訊
 
-[鍵盤設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh972345)
+[鍵盤設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
  
 
 ## <a name="mouse"></a>滑鼠
@@ -294,7 +294,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
 ### <a name="more-info"></a>其他資訊
 
-[滑鼠設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456351)
+[滑鼠設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions)
  
 
 ## <a name="gesture"></a>手勢

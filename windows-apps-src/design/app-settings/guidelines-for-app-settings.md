@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a31464d208e8d9abe68703560552c99e5d957463
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0e5c5e19c6e23f4c0094220a735a0c2a48c1cc34
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638233"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362060"
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
 
@@ -30,7 +30,7 @@ ms.locfileid: "57638233"
 -   取決於使用者偏好的選項，例如音樂、音效或色彩佈景主題。
 -   不常存取的應用程式資訊 (像是隱私權原則、說明、應用程式版本或版權資訊)。
 
-作為一般工作流程一部分的命令 (例如，變更美術應用程式的筆刷大小) 不應在設定頁面中。 若要深入了解命令的放置位置，請參閱[命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)。
+作為一般工作流程一部分的命令 (例如，變更美術應用程式的筆刷大小) 不應在設定頁面中。 若要深入了解命令的放置位置，請參閱[命令設計基本知識](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)。
 
 ## <a name="general-recommendations"></a>一般建議
 
@@ -67,7 +67,7 @@ ms.locfileid: "57638233"
 
 對於索引標籤或樞紐配置，我們不建議放置應用程式設定的進入點做為瀏覽的前幾個項目之一。 而是應將應用程式設定的進入點放在應用程式列的 [更多] 溢位功能表內。
 
-**主版詳細資料**
+**Master-details**
 
 不要將應用程式設定的進入點深藏在主要/詳細資料窗格內，而是使它成為主要窗格最上層的最後一個釘選項目。
 
@@ -135,17 +135,17 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
     -   [超連結](../controls-and-patterns/hyperlinks.md):若要將使用者帶至應用程式內的另一個頁面或外部網站。 當使用者按一下超連結的時候，[設定] 飛出視窗會關閉。
     -   [按鈕](../controls-and-patterns/buttons.md):若要讓使用者起始立即採取行動，而不需要關閉目前的設定彈出式視窗。
 -   如果停用其中一個控制項，請新增描述訊息。 請將此訊息置於已停用控制項的上方。
--   完成 [設定] 飛出視窗和標頭的動畫之後，以單一區塊的方式產生內容和控制項的動畫。 使用向左偏移 100px 的 [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) 或 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) 動畫，產生內容的動畫。
+-   完成 [設定] 飛出視窗和標頭的動畫之後，以單一區塊的方式產生內容和控制項的動畫。 使用向左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 動畫，產生內容的動畫。
 -   視需要使用區段標頭、段落及標籤協助整理及釐清內容。
 -   如果您需要重複設定，可使用額外的 UI 層級或展開/摺疊模式，但避免使用超過兩層的階層。 例如，提供每個城市設定的氣象應用程式可列出城市，然後讓使用者點選城市以開啟新的飛出視窗或展開以顯示設定選項。
--   如果載入控制項或網頁內容需要時間，請使用不確定的進度控制項，向使用者指出資訊正在載入。 如需詳細資訊，請參閱[進度控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465469)。
+-   如果載入控制項或網頁內容需要時間，請使用不確定的進度控制項，向使用者指出資訊正在載入。 如需詳細資訊，請參閱[進度控制項的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)。
 -   不要使用按鈕瀏覽或認可變更。 使用超連結瀏覽到其他頁面。與其使用按鈕來確認變更，不如在使用者關閉 [設定] 飛出視窗時，自動儲存對應用程式設定所做的變更。
 
 
 
 ## <a name="related-articles"></a>相關文章
 
-* [命令設計基本概念](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [進度控制項的方針](https://msdn.microsoft.com/library/windows/apps/hh465469)
-* [儲存和擷取應用程式資料](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
+* [命令設計基本概念](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+* [進度控制項的方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
+* [儲存和擷取應用程式資料](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

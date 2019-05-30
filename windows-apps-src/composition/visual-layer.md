@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4607280fd031fa556bfc5d1c719f4b4e1aeb928e
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 7c61f6580039b9fe3da915491acd84c939088370
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984104"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361390"
 ---
 # <a name="visual-layer"></a>視覺層
 
@@ -38,7 +38,7 @@ Windows UWP app 已經使用透過其中一個 UI 架構的視覺層。 您也�
 
 ### <a name="content"></a>內容
 
-使用視覺效果，可讓動畫和效果系統裝載、轉換和使用內容。 類別階層的基底是[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)類別，為組合器中可見狀態之應用程式處理程序中的輕量型、敏捷執行緒 Proxy。 視覺效果的子類別包含  [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810)以便建立視覺效果的樹狀結構的子系並[ **SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) ，包含內容，可以使用其中一個透明的色彩，自訂的繪製內容或視覺效果繪製。 這些視覺效果類型可一起構成 2D UI 的視覺效果樹狀結構，並且支援大部分的可見 XAML FrameworkElement。
+使用視覺效果，可讓動畫和效果系統裝載、轉換和使用內容。 類別階層的基底是[**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual)類別，為組合器中可見狀態之應用程式處理程序中的輕量型、敏捷執行緒 Proxy。 視覺效果的子類別包含  [**ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual)以便建立視覺效果的樹狀結構的子系並[ **SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) ，包含內容，可以使用其中一個透明的色彩，自訂的繪製內容或視覺效果繪製。 這些視覺效果類型可一起構成 2D UI 的視覺效果樹狀結構，並且支援大部分的可見 XAML FrameworkElement。
 
 如需詳細資訊，請參閱[組合視覺效果](composition-visual-tree.md)概觀。
 
@@ -58,7 +58,7 @@ Windows UWP app 已經使用透過其中一個 UI 架構的視覺層。 您也�
 
 ### <a name="working-with-your-xaml-uwp-app"></a>使用 XAML UWP app
 
-您可以使用 XAML 架構所建立的視覺效果，並在[**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908)中使用[**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976)類別，以支援可見的 FrameworkElement。 請注意，架構為您建立的視覺效果會隨附自訂的一些限制。 這是因為架構將會管理位移、轉換和存留時間。 不過，您可以建立自己的視覺效果，並透過 ElementCompositionPreview，或將它新增到視覺效果樹狀結構中某個位置的現有 ContainerVisual，以將它們附加至現有 XAML 元素。
+您可以使用 XAML 架構所建立的視覺效果，並在[**Windows.UI.Xaml.Hosting**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting)中使用[**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)類別，以支援可見的 FrameworkElement。 請注意，架構為您建立的視覺效果會隨附自訂的一些限制。 這是因為架構將會管理位移、轉換和存留時間。 不過，您可以建立自己的視覺效果，並透過 ElementCompositionPreview，或將它新增到視覺效果樹狀結構中某個位置的現有 ContainerVisual，以將它們附加至現有 XAML 元素。
 
 如需詳細資訊，請參閱[搭配使用視覺層與 XAML](using-the-visual-layer-with-xaml.md) 概觀。
 
@@ -66,11 +66,11 @@ Windows UWP app 已經使用透過其中一個 UI 架構的視覺層。 您也�
 
 您可以使用視覺圖層以增強的外觀、 風格和您的 WPF、 Windows Form 的功能和C++Win32 桌面應用程式。 您可以移轉內容，以使用視覺分層，並將您的 UI 的其餘部分保留在其現有的架構資料的島。 這表示您可以進行重大更新和增強功能到您的應用程式 UI 而不需要進行廣泛的變更對您現有的程式碼基底。
 
-如需詳細資訊，請參閱 <<c0> [ 現代化您桌面的應用程式，使用視覺分層](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps)。
+如需詳細資訊，請參閱[使用視覺層讓您的傳統型應用程式現代化](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps)。
 
 ## <a name="additional-resources"></a>其他資源
 
-* [**API 的完整參考文件**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+* [**API 的完整參考文件**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 * [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 有進階的 UI 和組合範例
 * [Windows.UI.Composition 範例庫](https://aka.ms/winuiapp)
 * [@windowsui Twitter 摘要 ](https://twitter.com/windowsui)

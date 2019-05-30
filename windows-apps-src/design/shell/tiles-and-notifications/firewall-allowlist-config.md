@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10 uwp、 WNS，windows 通知服務、 通知、 windows、 防火牆、 疑難排解、 IP、 流量、 enterprise、 網路、 IPv4、 VIP、 FQDN、 公用 IP 位址
 ms.localizationpriority: medium
-ms.openlocfilehash: 466463bfc984707af4cb30618f9cbfa47d78703c
-ms.sourcegitcommit: fd7d358aad3a5b7112f5a587bb6ea86805dc8a4d
+ms.openlocfilehash: 9ed4ad6ed828abda9d487ef96beca9b655c92421
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976248"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366673"
 ---
 # <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>透過企業防火牆允許 Windows 通知流量
 
@@ -78,10 +78,10 @@ ms.locfileid: "65976248"
 
 ## <a name="related-topics"></a>相關主題
 
-* [快速入門：傳送推播通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [如何要求、 建立和儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [如何攔截來執行應用程式的通知](https://msdn.microsoft.com/library/windows/apps/xaml/jj709907.aspx)
-* [如何驗證與 Windows 推播通知服務 (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [指導方針和推播通知的檢查清單](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [快速入門：傳送推播通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [如何要求、 建立和儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [如何攔截來執行應用程式的通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [如何驗證與 Windows 推播通知服務 (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [推播通知服務要求和回應標頭](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [指導方針和推播通知的檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
  

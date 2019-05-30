@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0e5ba7ddb6ef37b4aa54584602fc890bbabc8998
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608133"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359346"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
@@ -114,11 +114,11 @@ ms.locfileid: "57608133"
 
 ## <a name="alternateform"></a>AlternateForm
 
-`alternateform` 限定詞用來針對某些特殊用途提供其他形式的資源。 這通常僅供日文應用程式開發人員用來提供其 `msft-phonetic` 值已保留的注音假名字串 (請參閱[如何準備當地語系化](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)中的＜支援可排序的日文注音假名字串＞一節)。
+`alternateform` 限定詞用來針對某些特殊用途提供其他形式的資源。 這通常僅供日文應用程式開發人員用來提供其 `msft-phonetic` 值已保留的注音假名字串 (請參閱[如何準備當地語系化](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))中的＜支援可排序的日文注音假名字串＞一節)。
 
 您的目標系統或應用程式必須提供與 `alternateform` 限定詞相符的值。 不要將 `msft-` 首碼用於您自己的自訂 `alternateform` 限定詞值。
 
-## <a name="configuration"></a>設定
+## <a name="configuration"></a>組態
 
 您不太可能需要 `configuration` 限定詞名稱。 這可以用來指定只適用於特定製作階段環境的資源，例如僅供測試資源。
 
@@ -250,7 +250,7 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 
 ## <a name="targetsize"></a>TargetSize
 
-`targetsize` 限定詞主要用來指定要顯示在 [檔案總管] 中的[檔案類型關聯圖示](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh127427)或[通訊協定圖示](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bb266530)。 限定詞值表示以原始 (實體) 像素為單位的正方形影像側邊長度。 載入的會是符合 [檔案總管] 中 [檢視] 設定值的資源，如果完全相符的項目，則載入含有次大值的資源。
+`targetsize` 限定詞主要用來指定要顯示在 [檔案總管] 中的[檔案類型關聯圖示](https://docs.microsoft.com/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type)或[通訊協定圖示](https://docs.microsoft.com/windows/desktop/search/-search-3x-wds-ph-ui-extensions)。 限定詞值表示以原始 (實體) 像素為單位的正方形影像側邊長度。 載入的會是符合 [檔案總管] 中 [檢視] 設定值的資源，如果完全相符的項目，則載入含有次大值的資源。
 
 在應用程式封裝資訊清單設計工具的 [視覺資產] 索引標籤中，您可以定義資產來表示應用程式圖示 (`/Assets/Square44x44Logo.png`) 的數個 `targetsize` 限定詞值大小。
 
@@ -259,6 +259,21 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 ## <a name="theme"></a>佈景主題
 
 `theme` 限定詞用來提供最符合預設應用程式模式設定的資源，或是應用程式使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme) 的覆寫。
+
+
+## <a name="shell-light-theme-and-unplated-resources"></a>Shell 淺色佈景主題和 unplated 的資源
+*Windows 10 可能 2019年更新*引進了新的"light"佈景主題，提供 Windows 殼層。 如此一來，先前已使用深色背景顯示某些應用程式資產現在會顯示淺色背景。 針對應用程式的應用程式，提供 altform unplated 資產的 工作列及視窗切換器 （Alt + Tab、 工作檢視等），您應該確認其可接受的對比淺色背景上。
+
+### <a name="providing-light-theme-specific-assets"></a>提供淺色佈景主題特定資產
+應用程式想要提供量身訂做的資源，殼層淺色佈景主題可以使用新的替代形式的資源限定詞： `altform-lightunplated`。 這個限定詞鏡像現有的 altform unplated 限定詞。 
+
+### <a name="downlevel-considerations"></a>舊版的考量
+應用程式應該不會使用`theme-light`辨識符號與`altform-unplated`限定詞。 這會導致無法預期的行為上 RS5 和較早版本的 Windows，因為方法的資源，所以會載入工作列。 在舊版 windows 中，可能不正確地使用佈景主題 light 版本。 `altform-lightunplated`限定詞可避免此問題。 
+
+### <a name="compatibility-behavior"></a>相容性問題
+回溯相容性，Windows 會包含邏輯來偵測單色的圖示，並檢查是否它有別於預定的背景。 如果圖示無法符合對比需求，Windows 會尋找白底黑字新版的資產。 如果未提供，Windows 會切換回使用 plated 的新版的資產。
+
+
 
 ## <a name="important-apis"></a>重要 API
 
@@ -269,7 +284,7 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 
 * [有效的像素和縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [資源管理系統](resource-management-system.md)
-* [如何準備進行當地語系化](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
+* [如何準備進行當地語系化](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
 * [正在偵測平台應用程式上執行](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [將當地語系化的 UI 字串](localize-strings-ui-manifest.md)

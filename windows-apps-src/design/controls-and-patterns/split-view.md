@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0c709261b08231fa82af615d5398fd66648d4e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646463"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364182"
 ---
 # <a name="split-view-control"></a>分割檢視控制項
 
 分割檢視控制項有一個可展開/可摺疊的窗格和內容區域。
 
-> **重要的 Api**:[SplitView 類別](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **重要的 Api**:[SplitView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 以下是 Microsoft Edge app 使用 SplitView 顯示其「中心」的範例。
 
@@ -32,11 +32,11 @@ ms.locfileid: "57646463"
 
  分割檢視的內容區域一律會顯示。 窗格可以展開或摺疊或維持在開啟狀態，並且可以從應用程式視窗的左邊或右邊顯示。 窗格有四種模式︰
 
--   **覆疊**
+-   **Overlay**
 
     窗格在開啟之前是隱藏的。 開啟窗格時，窗格會與內容區域重疊。
 
--   **內嵌**
+-   **Inline**
 
     一律顯示窗格，而且不會和內容區域重疊。 窗格和內容區域會劃分螢幕實際可用空間。
 

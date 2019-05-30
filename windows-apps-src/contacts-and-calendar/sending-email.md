@@ -6,12 +6,12 @@ keywords: 連絡人, 電子郵件, 傳送
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 524e1f12c3da0d9d06e73d84e08e2d54efde9a7e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626483"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361222"
 ---
 # <a name="send-email"></a>傳送電子郵件
 
@@ -25,7 +25,7 @@ ms.locfileid: "57626483"
 
 ## <a name="launch-the-compose-email-dialog"></a>啟動 [撰寫電子郵件] 對話方塊
 
-建立一個新的 [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) 物件，然後設定您要在 [撰寫電子郵件] 對話方塊中預先填入的資料。 呼叫 [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) 以顯示該對話方塊。
+建立一個新的 [**EmailMessage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email.EmailMessage) 物件，然後設定您要在 [撰寫電子郵件] 對話方塊中預先填入的資料。 呼叫 [**ShowComposeNewEmailAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailmanager.showcomposenewemailasync) 以顯示該對話方塊。
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -51,12 +51,12 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
-本主題已經示範如何啟動 [撰寫電子郵件] 對話方塊。 如需有關如何選取連絡人做為電子郵件訊息收件者的資訊，請參閱[選取連絡人](selecting-contacts.md)。 請參閱 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) 來選取要做為電子郵件附件的檔案。
+本主題已經示範如何啟動 [撰寫電子郵件] 對話方塊。 如需有關如何選取連絡人做為電子郵件訊息收件者的資訊，請參閱[選取連絡人](selecting-contacts.md)。 請參閱 [**PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) 來選取要做為電子郵件附件的檔案。
 
 ## <a name="related-topics"></a>相關主題
 
 * [選取連絡人](selecting-contacts.md)
-* [如何在呼叫檔案選擇器之後繼續您的 Windows Phone 應用程式](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [如何在呼叫檔案選擇器之後繼續您的 Windows Phone 應用程式](https://docs.microsoft.com/previous-versions/windows/apps/dn614994(v=win.10))
  
 
  

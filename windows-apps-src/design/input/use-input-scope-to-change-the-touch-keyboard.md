@@ -9,25 +9,25 @@ template: detail.hbs
 keywords: 鍵盤、協助工具、瀏覽、焦點、文字、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
-ms.openlocfilehash: 1350c6e0eae057386fb721a358f71acb19c4efc1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c522e21c45a3edd08a14b081cc227a83f19a3ea0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591763"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365359"
 ---
 # <a name="use-input-scope-to-change-the-touch-keyboard"></a>使用輸入範圍來變更觸控式鍵盤
 
 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。
 
 ### <a name="important-apis"></a>重要 API
-- [InputScope](https://msdn.microsoft.com/library/windows/apps/hh702632)
-- [inputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)
+- [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope)
+- [InputScopeNameValue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)
 
 
-當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者點選可編輯的輸入欄位 (例如 **[TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)** 或 **[RichEditBox](https://msdn.microsoft.com/library/windows/apps/br227548)**) 時，就會叫用觸控式鍵盤。 您可以設定文字控制項的「輸入範圍」，使它符合您預期使用者輸入的資料類型，讓使用者在您的 App 中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
+當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者點選可編輯的輸入欄位 (例如 **[TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)** 或 **[RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)** ) 時，就會叫用觸控式鍵盤。 您可以設定文字控制項的「輸入範圍」  ，使它符合您預期使用者輸入的資料類型，讓使用者在您的 App 中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
 
-例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) 屬性設定為 **Number**。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。
+例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number**。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。
 
 > [!IMPORTANT]
 > - 此資訊只適用於 SIP。 它並不適用於硬體鍵盤或 Windows [輕鬆存取] 選項中提供的 [螢幕小鍵盤]。
@@ -35,19 +35,19 @@ ms.locfileid: "57591763"
 
 ## <a name="changing-the-input-scope-of-a-text-control"></a>變更文字控制項的輸入範圍
 
-您的應用程式中可用的輸入範圍是 **[InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)** 列舉的成員。 您可以將 ****TextBox**** 或 **[RichEditBox](https://msdn.microsoft.com/library/windows/apps/br209683)** 的 [InputScope](https://msdn.microsoft.com/library/windows/apps/br227548) 屬性設定成這些值的其中之一。
+您的應用程式中可用的輸入範圍是 **[InputScopeNameValue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)** 列舉的成員。 您可以將 ****TextBox**** 或 **[RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)** 的 [InputScope](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 屬性設定成這些值的其中之一。
 
 > [!IMPORTANT]
-> **[InputScope](https://msdn.microsoft.com/library/windows/apps/dn996570)** 屬性 **[PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)** 僅支援 **密碼**與 **NumericPin** 值。 會略過其他任何值。
+> **[InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope)** 屬性 **[PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)** 僅支援 **密碼**與 **NumericPin** 值。 會略過其他任何值。
 
 您會在這裡變更數個文字方塊的輸入範圍，使其符合每個文字方塊的預期資料。
 
 **若要變更在 XAML 中的輸入的範圍**
 
 1.  在您頁面的 XAML 檔案中，找出您想要變更之文字控制項的標記。
-2.  將 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) 屬性新增到標記中，並指定符合預期輸入的 [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028) 值。
+2.  將 [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性新增到標記中，並指定符合預期輸入的 [**InputScopeNameValue**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue) 值。
 
-    以下是一些可能會出現在常見客戶連絡人表單上的文字方塊。 設定 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) 之後，就會為每個文字方塊顯示具有適當資料配置的觸控式鍵盤。
+    以下是一些可能會出現在常見客戶連絡人表單上的文字方塊。 設定 [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 之後，就會為每個文字方塊顯示具有適當資料配置的觸控式鍵盤。
 
     ```xaml
     <StackPanel Width="300">
@@ -60,37 +60,37 @@ ms.locfileid: "57591763"
 
 **若要變更程式碼中的輸入的範圍**
 
-1.  在您頁面的 XAML 檔案中，找出您想要變更之文字控制項的標記。 如果未設定，請設定 [x:Name 屬性](https://msdn.microsoft.com/library/windows/apps/mt204788)，以便在您的程式碼中參考控制項。
+1.  在您頁面的 XAML 檔案中，找出您想要變更之文字控制項的標記。 如果未設定，請設定 [x:Name 屬性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute)，以便在您的程式碼中參考控制項。
 
     ```csharp
     <TextBox Header="Telephone Number" x:Name="phoneNumberTextBox"/>
     ```
 
-2.  具現化新的 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025) 物件。
+2.  具現化新的 [**InputScope**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScope) 物件。
 
     ```csharp
     InputScope scope = new InputScope();
     ```
 
-3.  具現化新的 [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027) 物件。
+3.  具現化新的 [**InputScopeName**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeName) 物件。
     
     ```csharp
     InputScopeName scopeName = new InputScopeName();
     ```
 
-4.  將 [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702032) 物件的 [**NameValue**](https://msdn.microsoft.com/library/windows/apps/hh702027) 屬性設定為 [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028) 列舉的值。
+4.  將 [**InputScopeName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopename.namevalue) 物件的 [**NameValue**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeName) 屬性設定為 [**InputScopeNameValue**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue) 列舉的值。
 
     ```csharp
     scopeName.NameValue = InputScopeNameValue.TelephoneNumber;
     ```
 
-5.  將 [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027) 物件新增到 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702034) 物件的 [**Names**](https://msdn.microsoft.com/library/windows/apps/hh702025) 集合。
+5.  將 [**InputScopeName**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeName) 物件新增到 [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope.names) 物件的 [**Names**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScope) 集合。
 
     ```csharp
     scope.Names.Add(scopeName);
     ```
 
-6.  將 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025) 物件設定為文字控制項的 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) 屬性值。
+6.  將 [**InputScope**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScope) 物件設定為文字控制項的 [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性值。
 
     ```csharp
     phoneNumberTextBox.InputScope = scope;
@@ -117,17 +117,17 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 ## <a name="text-prediction-spell-checking-and-auto-correction"></a>文字預測、拼字檢查及自動校正
 
-[  **TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 和 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) 控制項有數個影響 SIP 行為的屬性。 若要為使用者提供最佳的體驗，了解這些屬性如何影響使用觸控進行的文字輸入，就相當重要。
+[  **TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 和 [**RichEditBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 控制項有數個影響 SIP 行為的屬性。 若要為使用者提供最佳的體驗，了解這些屬性如何影響使用觸控進行的文字輸入，就相當重要。
 
--   [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688)— 啟用拼字檢查時，文字控制項，控制項互動時使用系統的拼字檢查引擎標示無法辨識的字。 您可以點選單字以查看建議的校正清單。 預設會啟用拼字檢查功能。
+-   [**IsSpellCheckEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled)— 啟用拼字檢查時，文字控制項，控制項互動時使用系統的拼字檢查引擎標示無法辨識的字。 您可以點選單字以查看建議的校正清單。 預設會啟用拼字檢查功能。
 
     對於 **Default** 輸入範圍，這個屬性也可以自動大寫句子中的第一個字，並自動校正您輸入的文字。 這些自動校正功能在其他輸入範圍可能會停用。 如需詳細資訊，請參閱本主題稍後的表格。
 
--   [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690)— 文字控制項啟用文字預測時，系統會顯示您可能會從輸入的單字清單。 您可以從清單中選取單字，這樣您就不必輸入整個單字。 文字預測預設為啟用。
+-   [**IsTextPredictionEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled)— 文字控制項啟用文字預測時，系統會顯示您可能會從輸入的單字清單。 您可以從清單中選取單字，這樣您就不必輸入整個單字。 文字預測預設為啟用。
 
-    如果輸入範圍不是 **Default**，則即使 [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) 屬性為 **true**，也可能停用文字預測功能。能。 如需詳細資訊，請參閱本主題稍後的表格。
+    如果輸入範圍不是 **Default**，則即使 [**IsTextPredictionEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) 屬性為 **true**，也可能停用文字預測功能。能。 如需詳細資訊，請參閱本主題稍後的表格。
 
--   [**PreventKeyboardDisplayOnProgrammaticFocus**](https://msdn.microsoft.com/library/windows/apps/dn299273)— 當這個屬性是 **，則為 true**，它就會防止系統顯示 SIP 焦點時以程式設計方式設定上的文字控制項。 取而代之的是，只有當使用者與控制項互動時，才會顯示鍵盤。
+-   [**PreventKeyboardDisplayOnProgrammaticFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus)— 當這個屬性是 **，則為 true**，它就會防止系統顯示 SIP 焦點時以程式設計方式設定上的文字控制項。 取而代之的是，只有當使用者與控制項互動時，才會顯示鍵盤。
 
 ## <a name="touch-keyboard-index-for-windows"></a>Windows 的觸控式鍵盤索引
 
@@ -136,7 +136,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 > [!Tip] 
 > 您可以藉由按下切換大部分字母和數字和符號版面配置之間的觸控式鍵盤 **& 123**鍵以將變更為數字和符號的版面配置，然後按**abcd**機碼將變更為字母的版面配置。
 
-### <a name="default"></a>預設值
+### <a name="default"></a>預設
 
 `<TextBox InputScope="Default"/>`
 
@@ -162,14 +162,14 @@ phoneNumberTextBox.InputScope = new InputScope()
 - 自動大寫：一律停用
 - 文字預測：預設為開啟，可以停用
  
-### <a name="url"></a>URL
+### <a name="url"></a>url
 
 `<TextBox InputScope="Url"/>`
 
 ![Windows URL 觸控式鍵盤](images/input-scopes/url.png)
 
-- 包含 [.com] 和 [前往鍵]![](images/input-scopes/kbdgokey.png) (前往) 鍵。 按住不放 **.com**鍵以顯示其他選項 (**.org**， **.net**，和特定區域的後置詞)
-- 包含 **:**， **-**，和**/** 金鑰
+- 包含 [.com]  和 [前往鍵]![](images/input-scopes/kbdgokey.png) (前往) 鍵。 按住不放 **.com**鍵以顯示其他選項 ( **.org**， **.net**，和特定區域的後置詞)
+- 包含 **:** ， **-** ，和 **/** 金鑰
 - 拼字檢查：預設為關閉，可以啟用
 - 自動校正：預設為關閉，可以啟用
 - 自動大寫：預設為關閉，可以啟用
@@ -181,8 +181,8 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="EmailSmtpAddress"/>`
 
 ![Windows 電子郵件地址觸控式鍵盤](images/input-scopes/emailsmtpaddress.png)
-- 包含 [@] 和 [.com] 鍵。 按住不放 **.com**鍵以顯示其他選項 (**.org**， **.net**，和特定區域的後置詞)
-- 包含 **_** 並**-** 金鑰
+- 包含 [@]  和 [.com]  鍵。 按住不放 **.com**鍵以顯示其他選項 ( **.org**， **.net**，和特定區域的後置詞)
+- 包含 **_** 並 **-** 金鑰
 - 拼字檢查：預設為關閉，可以啟用
 - 自動校正：預設為關閉，可以啟用
 - 自動大寫：預設為關閉，可以啟用
@@ -237,7 +237,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 ![Windows 觸控式鍵盤的公式](images/input-scopes/formula.png)
 - 包含 **=** 金鑰
-- 也包含**%**， **$**，以及 **+** 金鑰
+- 也包含 **%** ， **$** ，以及 **+** 金鑰
 - 拼字檢查：預設為開啟，可以停用
 - 自動校正：預設為開啟，可以停用
 - 自動大寫：一律停用

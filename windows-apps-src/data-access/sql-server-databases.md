@@ -1,19 +1,19 @@
 ---
 title: 在 UWP app 中使用 SQL Server 資料庫
 description: 在 UWP app 中使用 SQL Server 資料庫。
-ms.date: 11/13/2017
+ms.date: 3/28/2019
 ms.topic: article
 keywords: Windows 10, uwp, SQL Server, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f8986f14872d4e5de2c45bba264de6619ef07141
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621153"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360144"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP app 中使用 SQL Server 資料庫
-您的 app 可以直接連接到 SQL Server 資料庫，然後使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx)命名空間中的類別儲存和擷取資料。
+您的 app 可以直接連接到 SQL Server 資料庫，然後使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN)命名空間中的類別儲存和擷取資料。
 
 在本指南中，我們將說明怎麼做。 如果您在 SQL Server 執行個體上安裝 [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) 範例資料庫，然後使用這些程式碼片段，您就會有基本 UI 可顯示 Northwind 範例資料庫中的產品。
 
@@ -50,7 +50,7 @@ ms.locfileid: "57621153"
 ： 五個：填入產品的 UI。
 
 >[!NOTE]
-> 本節將說明組織資料存取碼的方式。 主要目的僅在於示範如何使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 儲存和擷取 SQL Server 資料庫中的資料。 您可以用任何最適合您應用程式設計的方式組織程式碼。
+> 本節將說明組織資料存取碼的方式。 主要目的僅在於示範如何使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) 儲存和擷取 SQL Server 資料庫中的資料。 您可以用任何最適合您應用程式設計的方式組織程式碼。
 
 ### <a name="add-a-connection-string"></a>新增連接字串
 
@@ -77,7 +77,7 @@ sealed partial class App : Application
 
 ### <a name="create-a-class-to-hold-product-data"></a>建立類別來保留產品資料
 
-我們將建立類別來實作 [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged.aspx) 事件，以便將 XAML UI 中的屬性繫結到此類別中的屬性。
+我們將建立類別來實作 [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) 事件，以便將 XAML UI 中的屬性繫結到此類別中的屬性。
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -106,7 +106,7 @@ public class Product : INotifyPropertyChanged
 
 ### <a name="retrieve-products-from-the-sql-server-database"></a>從 SQL Server 資料庫擷取產品
 
-建立方法，以便從 Northwind 範例資料庫中取得產品，然後將其做為 ``Product`` 執行個體的 [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) 集合傳回。
+建立方法，以便從 Northwind 範例資料庫中取得產品，然後將其做為 ``Product`` 執行個體的 [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) 集合傳回。
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -208,7 +208,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="show-products-in-the-listview"></a>在 ListView 中顯示產品
 
-開啟 **MainPage.xaml.cs** 檔案，並將程式碼新增至 ``MainPage`` 類別的建構函式，該類別會將 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 的 **ItemSource** 屬性設定為 ``Product`` 執行個體的 [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx)。
+開啟 **MainPage.xaml.cs** 檔案，並將程式碼新增至 ``MainPage`` 類別的建構函式，該類別會將 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 的 **ItemSource** 屬性設定為 ``Product`` 執行個體的 [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN)。
 
 ```csharp
 public MainPage()
@@ -222,7 +222,7 @@ public MainPage()
 
 ![Northwind 產品](images/products-northwind.png)
 
-探索 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 命名空間，了解還能如何處理 SQL Server 資料庫中的資料。
+探索 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) 命名空間，了解還能如何處理 SQL Server 資料庫中的資料。
 
 ## <a name="trouble-connecting-to-your-database"></a>連接到您的資料庫有問題嗎？
 

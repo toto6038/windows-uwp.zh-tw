@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f6a1277dbb2d756f0d3a4ffc1fd545f892a2096
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ac7f0785894849cffe09cd902f459015f1f7b6b
+ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596503"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377326"
 ---
 # <a name="block-compression"></a>區塊壓縮
 
@@ -73,7 +73,7 @@ ms.locfileid: "57596503"
 
 圖表左側顯示專為未壓縮 60 × 40 紋理而產生的 Mipmap 層級大小。 最上層大小是從產生該紋理的 API 呼叫而來；每個後續層級的大小為先前層級的一半。 對未壓縮紋理而言，虛擬 (宣告) 大小和實體 (實際) 大小之間並無不同。
 
-圖表右側顯示專為使用壓縮之相同 60 × 40 紋理而產生的 Mipmap 層級大小。 請注意第二個和第三個層級都有記憶體填補，讓每個層級的大小都為 4 的因數。 這是必要的，好讓演算法可以在 4×4 材質區塊上執行。 如果您考慮讓 Mipmap 層級小於 4×4，這會特別明顯。在配置紋理記憶體時，這些非常小的 Mipmap 層級大小將會進位成最接近之 4 的因數。
+圖表右側顯示專為使用壓縮之相同 60 × 40 紋理而產生的 Mipmap 層級大小。 請注意第二個和第三個層級都有記憶體填補，讓每個層級的大小都為 4 的因數。 這是必要的，好讓演算法可以在 4×4 材質區塊上執行。 這會特別明顯，如果您考慮 mipmap 層級小於 4 × 4;這些非常小的 mipmap 層級的大小會無條件進位到最接近的因子 4 紋理記憶體配置時。
 
 取樣硬體使用虛擬大小。在取樣紋理時，會忽略記憶體填補。 對小於 4x4 的 Mipmap 層級，僅前四個材質會用於 2×2 貼圖，且只有第一個材質會由一個 1×1 區塊使用。 不過，沒有 API 結構會公開實體大小 (包括記憶體填補)。
 
@@ -346,13 +346,13 @@ FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
-若要將 'f' 重新解譯為 'u' 類型，請使用 [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx)：
+若要將 'f' 重新解譯為 'u' 類型，請使用 [memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy)：
 
 ```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
-在上述重新解譯中，資料的基礎值不會變更。[memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) 會將浮點數重新解譯為不帶正負號的整數。
+在上述重新解譯中，資料的基礎值不會變更。[memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy) 會將浮點數重新解譯為不帶正負號的整數。
 
 若要執行更常見的轉換類型，請使用下列設定︰
 

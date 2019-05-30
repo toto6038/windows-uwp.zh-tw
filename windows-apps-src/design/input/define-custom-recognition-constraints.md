@@ -8,30 +8,30 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a83cbc547ede1977f0222298bf451611905fad50
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 4bb24002e3738213ba3e784e6b91ff55d970a26a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343257"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363632"
 ---
 # <a name="define-custom-recognition-constraints"></a>定義自訂辨識限制式
 
 了解如何定義及使用自訂限制式來進行語音辨識。
 
-> **重要的 Api**:[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
+> **重要的 Api**:[**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
 語音辨識至少需要一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的通用 Windows app 聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
 
 ## <a name="add-constraints"></a>新增限制式
 
-使用 [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 屬性可以為語音辨識器新增限制式。
+使用 [**SpeechRecognizer.Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) 屬性可以為語音辨識器新增限制式。
 
 這裡涵蓋了三種從 app 內部使用的語音辨識限制式。 (Cortana 語音命令的條件約束，請參閱[啟動前景應用程式，以在 Cortana 中的語音命令](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。)
 
-- [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— 條件約束會根據預先定義的文法 （聽寫或 web 搜尋）。
-- [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— 的單字或片語清單為基礎的條件約束。
-- [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)— 語音辨識文法規格 (SRGS) 檔案中定義的條件約束。
+- [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)— 條件約束會根據預先定義的文法 （聽寫或 web 搜尋）。
+- [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)— 的單字或片語清單為基礎的條件約束。
+- [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)— 語音辨識文法規格 (SRGS) 檔案中定義的條件約束。
 
 每個語音辨識器可以有一個限制式集合。 只有下列限制式組合是有效的：
 
@@ -40,7 +40,7 @@ ms.locfileid: "58343257"
 - 清單限制式和/或文法檔限制式的組合。
 
 > [!Important]
-> 先呼叫 **[SpeechRecognizer.CompileConstraintsAsync](https://msdn.microsoft.com/library/windows/apps/dn653240)** 方法編譯限制式，再開始辨識處理序。
+> 先呼叫 **[SpeechRecognizer.CompileConstraintsAsync](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync)** 方法編譯限制式，再開始辨識處理序。
 
 ## <a name="specify-a-web-search-grammar-speechrecognitiontopicconstraint"></a>指定網頁搜尋文法 (SpeechRecognitionTopicConstraint)
 
@@ -144,7 +144,7 @@ SRGS 文法提供完整的功能集，可幫助您為應用程式建構複雜的
 - 您可以將多個文法檔限制式新增到限制式集合。
 - 針對符合 SRGS 規則的 XML 型文法文件，請使用 .grxml 副檔名。
 
-這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中，**[封裝動作]** 是設定為 **[內容]**，而 **[複製到輸出目錄]** 是設定為 **[ 永遠複製 ]**：
+這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中， **[封裝動作]** 是設定為 **[內容]** ，而 **[複製到輸出目錄]** 是設定為 **[ 永遠複製 ]** ：
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)
@@ -212,15 +212,15 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 ## <a name="manage-constraints"></a>管理限制式
 
-載入限制集合以執行辨識後，透過將限制的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 屬性設為 **true** 或 **false**，您的 app 可以管理要啟用哪些限制以執行辨識操作。 預設設定是 **true**。
+載入限制集合以執行辨識後，透過將限制的 [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) 屬性設為 **true** 或 **false**，您的 app 可以管理要啟用哪些限制以執行辨識操作。 預設設定是 **true**。
 
-與針對每項辨識操作載入、卸載及編譯限制式相比，先一次載入限制式，再視需要予以啟用及停用，通常是較有效率的方式。 請視需要使用 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 屬性。
+與針對每項辨識操作載入、卸載及編譯限制式相比，先一次載入限制式，再視需要予以啟用及停用，通常是較有效率的方式。 請視需要使用 [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) 屬性。
 
 對限制式的數目加以限制可以限制語音辨識器針對語音輸入所需搜尋及比對的資料量。 這樣可以同時改善語音辨識的效能和準確度。
 
 請根據應用程式在目前辨識操作的內容中可預期的片語，決定要啟用的限制式。 例如，如果目前的應用程式內容是要顯示色彩，您可能就不需要啟用辨識動物名稱的限制式。
 
-若要提示使用者可以說出什麼內容，請使用 [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) 與 [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) 屬性，這兩個屬性是藉由 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 屬性來設定。 在進行辨識操作時，幫使用者準備好可以說出的內容，可以讓使用者更可能說出符合使用中限制式的片語。
+若要提示使用者可以說出什麼內容，請使用 [**SpeechRecognizerUIOptions.AudiblePrompt**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.audibleprompt) 與 [**SpeechRecognizerUIOptions.ExampleText**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.exampletext) 屬性，這兩個屬性是藉由 [**SpeechRecognizer.UIOptions**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) 屬性來設定。 在進行辨識操作時，幫使用者準備好可以說出的內容，可以讓使用者更可能說出符合使用中限制式的片語。
 
 ## <a name="related-articles"></a>相關文章
 

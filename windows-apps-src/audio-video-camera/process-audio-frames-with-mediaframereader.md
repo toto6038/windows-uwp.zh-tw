@@ -6,16 +6,16 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 60abc29ad4f9e16dc9d37e99f94c9f30039c0087
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598583"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360695"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理音訊框架
 
-本文說明如何使用 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 搭配 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture)，從媒體畫面來源取得音訊資料。 若要了解如何使用 **MediaFrameReader** 從彩色、紅外線或景深相機 (舉例來說) 取得影像資料，請參閱[使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)。 該篇文章提供畫面讀取程式使用模式的一般概觀，並討論 **MediaFrameReader** 類別的一些額外功能，例如使用 **MediaFrameSourceGroup** 同時從多個來源擷取畫面。 
+本文說明如何使用 [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) 搭配 [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)，從媒體畫面來源取得音訊資料。 若要了解如何使用 **MediaFrameReader** 從彩色、紅外線或景深相機 (舉例來說) 取得影像資料，請參閱[使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)。 該篇文章提供畫面讀取程式使用模式的一般概觀，並討論 **MediaFrameReader** 類別的一些額外功能，例如使用 **MediaFrameSourceGroup** 同時從多個來源擷取畫面。 
 
 > [!NOTE] 
 > 本文中所討論的功能只從 Windows 10 版本 1803 開始提供。
@@ -28,16 +28,16 @@ ms.locfileid: "57598583"
 
 **將功能新增至應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
-2.  選取 [功能] 索引標籤。
-3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。 
+2.  選取 [功能] 索引標籤。 
+3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。  
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。  
 
 
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>選取畫面來源和畫面來源群組
 
-擷取音訊框架的第一個步驟是初始化代表音訊資料來源的 [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource)，例如麥克風或其他音訊擷取裝置。 若要這樣做，您必須建立 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 物件的新執行個體。 針對此範例，**MediaCapture** 的唯一初始化設定是將 [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) 設定為指出我們要從擷取裝置串流處理音訊。 
+擷取音訊框架的第一個步驟是初始化代表音訊資料來源的 [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource)，例如麥克風或其他音訊擷取裝置。 若要這樣做，您必須建立 [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 物件的新執行個體。 針對此範例，**MediaCapture** 的唯一初始化設定是將 [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) 設定為指出我們要從擷取裝置串流處理音訊。 
 
 在呼叫 [**MediaCapture.InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) 後，您可以取得可存取媒體框架來源清單並包含 [**FrameSources**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.framesources) 屬性。 此範例使用 Linq 查詢來選取所有框架來源，其中 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo) 描述框架來源具有 **Audio** 的 [**MediaStreamType**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype)，指出媒體來源產生音訊資料。
 

@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d66d717d77d2797e8a483871b8d3369befb5b6b
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: f199d70fc9194f211533820a7b23e20de929752d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320581"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359335"
 ---
 # <a name="uri-schemes"></a>URI 配置
 
@@ -249,11 +249,11 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>路徑 (ms-resource)
 
-路徑會識別 [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) 樹狀子目錄的階層位置 (請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/jj552947)) 以及其中的 [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live)。 這通常對應至資源檔案 (.resw) 的檔名 (不含副檔名)，以及其中字串資源的識別碼。
+路徑會識別 [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) 樹狀子目錄的階層位置 (請參閱[資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))) 以及其中的 [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live)。 這通常對應至資源檔案 (.resw) 的檔名 (不含副檔名)，以及其中字串資源的識別碼。
 
 如需範例及詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[對語言、縮放比例及高對比的磚和快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)。
 
-`ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，基礎的擷取會[CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)具有*ignoreCase*設定為`true`。
+`ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，基礎的擷取會[CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal)具有*ignoreCase*設定為`true`。
 
 標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 路徑中的字元「?」、「#」、「/」、「*」和「"」(雙引號字元) 必須以百分比編碼來表示檔案名稱或資料夾名稱等資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要從資源檔擷取的字串資源名稱為`Hello#World.resw`，使用此 URI。
 
@@ -274,5 +274,5 @@ ms-resource:///Hello%23World/String1
 * [從 XAML 標記和程式碼參考映像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [儲存和擷取設定和其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
 * [當地語系化您 UI 及應用程式封裝資訊清單中的字串](localize-strings-ui-manifest.md)
-* [資源管理系統](https://msdn.microsoft.com/library/windows/apps/jj552947)
+* [資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
 * [磚與快顯通知的通知支援的語言、 規模和高對比](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

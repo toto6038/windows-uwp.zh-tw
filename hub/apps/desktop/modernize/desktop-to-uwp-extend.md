@@ -7,12 +7,12 @@ keywords: Windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ad54dd485d7dbf5e7f4cb119c7700c09056017
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 672485dd505227da0a59a220edaa9648e2521e63
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215137"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359630"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>擴充現代化 UWP 元件，您的桌面應用程式
 
@@ -175,7 +175,7 @@ ms.locfileid: "66215137"
 
 ### <a name="start-the-uwp-app"></a>啟動 UWP 應用程式。
 
-首先，從您的傳統型應用程式建立 [Uri](https://msdn.microsoft.com/library/system.uri.aspx)，包括通訊協定名稱以及您想要傳遞到 UWP 應用程式的任何參數。 然後，呼叫 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。
+首先，從您的傳統型應用程式建立 [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)，包括通訊協定名稱以及您想要傳遞到 UWP 應用程式的任何參數。 然後，呼叫 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。
 
 ```csharp
 

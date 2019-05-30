@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 09647347134463c8dd2d93f6b869796c8def44e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 739abc139eabc9f773938f55c15d3e18aaf562ce
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619803"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365967"
 ---
 # <a name="special-tile-templates"></a>特殊磚範本
  
@@ -96,7 +96,7 @@ ms.locfileid: "57619803"
 
 **步驟 5：總結**
 
-下列影像說明各種 API 與承載如何與圖示磚範本的每個層面相關聯。 [磚通知](https://msdn.microsoft.com/library/windows/apps/hh779724) (包含這些 &lt;binding[元素) 是用來指定圖示範本和影像資產；&gt;徽章通知](https://msdn.microsoft.com/library/windows/apps/hh779719)指定數值；磚屬性控制磚的顯示名稱及色彩等。
+下列影像說明各種 API 與承載如何與圖示磚範本的每個層面相關聯。 [磚通知](https://docs.microsoft.com/previous-versions/windows/apps/hh779724(v=win.10)) (包含這些 &lt;binding[元素) 是用來指定圖示範本和影像資產；&gt;徽章通知](https://docs.microsoft.com/previous-versions/windows/apps/hh779719(v=win.10))指定數值；磚屬性控制磚的顯示名稱及色彩等。
 
 ![與圖示磚範本相關聯的 API 與承載](images/iconic-template-properties-info.png)
 

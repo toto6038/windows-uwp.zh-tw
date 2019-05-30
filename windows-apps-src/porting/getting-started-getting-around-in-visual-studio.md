@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 82cb45dae1a4b9b1a9db8fabc044edf8157f1eb1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 58d3b59d8fdd1587a0bec8369a78863d0c3d4557
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646333"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66358814"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a>開始使用：使用 Visual Studio
 
@@ -44,11 +44,11 @@ Microsoft Visual Studio 看起來非常類似，但預設檢視的控制項在 \
 
 ![在 Visual Studio 中設計 UI](images/ios-to-uwp/vs-add-button-label.png)
 
-Visual Studio 與 Xcode 不一樣，後者會將配置及繫結資訊隱藏在 .xib 或腳本檔案內部，而前者會鼓勵您使用豐富、可編輯、宣告式且類似 XML 架構的語言來編輯用來儲存這些詳細資料的 XAML 檔案。 如需有關 Extensible Application Markup Language (XAML) 的詳細資訊，請參閱 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/mt185595)。 現在，您只需知道 \[**設計**\] 窗格中顯示的所有物件都是在 \[**XAML**\] 窗格中定義。 \[**XAML**\] 窗格能夠視需要進行更精確的控制。隨著您了解得越多，也就可以更快地手動開發使用者介面程式碼。 不過，在目前這個階段，讓我們先只專注於 \[**設計**\] 和 \[**屬性**\] 窗格。
+Visual Studio 與 Xcode 不一樣，後者會將配置及繫結資訊隱藏在 .xib 或腳本檔案內部，而前者會鼓勵您使用豐富、可編輯、宣告式且類似 XML 架構的語言來編輯用來儲存這些詳細資料的 XAML 檔案。 如需有關 Extensible Application Markup Language (XAML) 的詳細資訊，請參閱 [XAML 概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)。 現在，您只需知道 \[**設計**\] 窗格中顯示的所有物件都是在 \[**XAML**\] 窗格中定義。 \[**XAML**\] 窗格能夠視需要進行更精確的控制。隨著您了解得越多，也就可以更快地手動開發使用者介面程式碼。 不過，在目前這個階段，讓我們先只專注於 \[**設計**\] 和 \[**屬性**\] 窗格。
 
 讓我們來變更按鈕的詳細資料。 稍後您將會了解，若要在 Xcode 中變更按鈕的名稱，您會在其屬性面板中，變更 \[**標題**\] 欄位中的值。
 
-使用 Visual Studio 時，您會執行非常類似的動作。 在 \[**設計**\] 窗格中，點選按鈕讓它成為焦點。 接著，在 \[**屬性**\] 窗格中，將 \[**內容**\] 方塊的值從「Button」變更為「Press Me」。 接下來，藉由將 [名稱] 值從 [&lt;No Name&gt;] 變更為 [myButton] 來更新按鈕控制項的名稱，如下所示：
+使用 Visual Studio 時，您會執行非常類似的動作。 在 \[**設計**\] 窗格中，點選按鈕讓它成為焦點。 接著，在 \[**屬性**\] 窗格中，將 \[**內容**\] 方塊的值從「Button」變更為「Press Me」。 接下來，藉由將 [名稱]  值從 [&lt;No Name&gt;] 變更為 [myButton] 來更新按鈕控制項的名稱，如下所示：
 
 ![Visual Studio 中的按鈕屬性視窗](images/ios-to-uwp/vs-button-properties.png)
 
@@ -94,7 +94,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 1.  點選 MainPage.xaml 檔案索引標籤。
 2.  在 \[**設計**\] 窗格中，點選 \[**TextBlock**\] 控制項。
 3.  在 \[**屬性**\] 窗格中，點選扳手按鈕以顯示其屬性。
-4.  在 [名稱] 方塊中，將 &lt;No Name&gt; 變更為 myLabel。
+4.  在 [名稱]  方塊中，將 &lt;No Name&gt; 變更為 myLabel。
 
 ![Visual Studio 中的標籤屬性視窗](images/ios-to-uwp/vs-label-properties.png)
 

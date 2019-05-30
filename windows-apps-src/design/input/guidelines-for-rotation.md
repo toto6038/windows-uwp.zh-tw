@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d58587c8a7e391c51dc3267dd6ebb069170604a4
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: f6593c19503fec3ee0e60920c66af7de8f2a7025
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244274"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363640"
 ---
 # <a name="rotation"></a>旋轉
 
 
 本文說明旋轉的新 Windows UI，並提供在 UWP 應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
 
-> **重要的 Api**:[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 Api**:[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [ **Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -29,7 +29,7 @@ ms.locfileid: "59244274"
 ## <a name="additional-usage-guidance"></a>其他用法指導方針
 
 
-**旋轉概觀**
+**旋轉的概觀**
 
 旋轉是 UWP 應用程式所使用的一項觸控最佳化技術，可以讓使用者以圓形方向 (順時針或逆時針) 轉動物件。
 
@@ -38,7 +38,7 @@ ms.locfileid: "59244274"
 -   滑鼠或主動式畫筆/手寫筆來移動所選物件的旋轉移駐夾。
 -   使用旋轉手勢，利用觸控或被動式畫筆/手寫筆，將物件轉到想要的方向。
 
-**使用旋轉的時機**
+**使用循環的時機**
 
 使用旋轉以協助使用者直接旋轉 UI 元素。 下圖顯示一些支援的旋轉互動手指位置。
 
@@ -48,13 +48,13 @@ ms.locfileid: "59244274"
 
 第一張圖片顯示初始 (拇指) 和次要 (食指) 觸碰點：食指觸碰一顆樹，而拇指觸碰一段木材。
 
-![顯示旋轉手勢的兩個初始觸碰點的影像。](images/ux-rotate-points1.png)
+![顯示兩個初始的觸控點旋轉筆勢的影像。](images/ux-rotate-points1.png)
 在第二張圖片中，是以繞著初始 (拇指) 觸碰點的方式執行旋轉。 在旋轉之後，食指仍然觸碰著樹幹，而拇指仍然觸碰著木材 (旋轉點)。
 
-![顯示旋轉後圖片的影像，其中旋轉點被限制為兩個初始觸碰點的其中一點。](images/ux-rotate-points2.png)
+![顯示與旋轉的點旋轉的圖片的影像限制為兩個初始的觸控點的其中一個。](images/ux-rotate-points2.png)
 在第三張圖片中，旋轉中心由應用程式定義 (或由使用者設定) 為圖片中心點。 在旋轉之後，因為圖片並未繞著其中一隻手指旋轉，直接操作的感覺就會消失 (除非使用者選擇此設定)。
 
-![顯示旋轉後圖片的影像，其中旋轉點被限制為圖片的中心，而非兩個初始觸碰點的其中一點。](images/ux-rotate-points3.png)
+![顯示與旋轉的點旋轉的圖片的影像限制為中心的圖片而不是其中兩個初始的觸控點。](images/ux-rotate-points3.png)
 在最後一張圖片中，旋轉中心由應用程式定義 (或由使用者設定) 為圖片左邊緣的中間點。 同樣地，除非使用者選擇此設定，否則直接操作的感覺在此情況下將會消失。
 
 ![顯示旋轉後圖片的影像，其中旋轉點被限制為圖片最左邊的中心，而非兩個初始觸碰點的其中一點。](images/ux-rotate-points4.png)
@@ -103,8 +103,8 @@ Windows 10 支援的旋轉的三種類型： 免費、 受條件約束，且合�
 
 
 **範例**
-* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
@@ -112,11 +112,11 @@ Windows 10 支援的旋轉的三種類型： 免費、 受條件約束，且合�
 * [輸入：XAML 使用者輸入的事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
 * [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
 * [輸入：觸控的點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [輸入：簡化的手寫範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [輸入：筆勢和 GestureRecognizer 操作](https://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 觸控輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [DirectX 觸控的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

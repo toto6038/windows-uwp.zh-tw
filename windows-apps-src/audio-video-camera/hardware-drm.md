@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f0a53d0f725c134bbb7adecaa956000a53235b0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9c48cd52d69d13b61f059894cc0dbea89eecf913
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57600903"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360872"
 ---
 # <a name="hardware-drm"></a>硬體 DRM
 
@@ -89,18 +89,18 @@ mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectio
 
 本節說明如何偵測系統上支援何種類型的硬體 DRM。
 
-您可以使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法，來判斷系統是否支援特定的硬體 DRM 功能。 例如：
+您可以使用 [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware) 方法，來判斷系統是否支援特定的硬體 DRM 功能。 例如: 
 
 ```csharp
 bool isFeatureSupported = PlayReadyStatics.CheckSupportedHardware(PlayReadyHardwareDRMFeatures.HEVC);
 ```
 
-[  **PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 列舉包含可查詢之硬體 DRM 功能值的有效清單。 若要判斷是否支援硬體 DRM，可在查詢中使用 **HardwareDRM** 成員。 若要判斷硬體是否支援高效率視訊編碼 (HEVC)/H.265 轉碼器，可在查詢中使用 **HEVC** 成員。
+[  **PlayReadyHardwareDRMFeatures**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) 列舉包含可查詢之硬體 DRM 功能值的有效清單。 若要判斷是否支援硬體 DRM，可在查詢中使用 **HardwareDRM** 成員。 若要判斷硬體是否支援高效率視訊編碼 (HEVC)/H.265 轉碼器，可在查詢中使用 **HEVC** 成員。
 
-您也可以使用 [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) 屬性來取得用戶端憑證的安全性層級，以判斷是否支援硬體 DRM。 除非傳回的憑證安全性層級大於或等於 3000，否則用戶端就不會進行個人化或佈建 (在此案例中，這個屬性會傳回 0)，或者硬體 DRM 不會處於使用狀態 (在此案例中，這個屬性會傳回小於 3000 的值)。
+您也可以使用 [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel) 屬性來取得用戶端憑證的安全性層級，以判斷是否支援硬體 DRM。 除非傳回的憑證安全性層級大於或等於 3000，否則用戶端就不會進行個人化或佈建 (在此案例中，這個屬性會傳回 0)，或者硬體 DRM 不會處於使用狀態 (在此案例中，這個屬性會傳回小於 3000 的值)。
 
 ### <a name="detecting-support-for-aes128cbc-hardware-drm"></a>偵測對 AES128CBC 硬體 DRM 的支援
-從 Windows 10 版本 1709 開始，您可以透過呼叫 **[PlayReadyStatics.CheckSupportedHardware](https://msdn.microsoft.com/library/windows/apps/dn986441)** 並指定列舉值 [**PlayReadyHardwareDRMFeatures.Aes128Cbc**](https://msdn.microsoft.com/library/windows/apps/dn986265) 來偵測裝置是否支援 AES128CBC 硬體加密。 在舊版 Windows 10 中，指定這個值會造成例外狀況。 基於這個原因，在呼叫 **CheckSupportedHardware** 之前，您應該先透過呼叫 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 並指定主要合約版本 5 來檢查是否存在列舉值。
+從 Windows 10 版本 1709 開始，您可以透過呼叫 **[PlayReadyStatics.CheckSupportedHardware](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware)** 並指定列舉值 [**PlayReadyHardwareDRMFeatures.Aes128Cbc**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) 來偵測裝置是否支援 AES128CBC 硬體加密。 在舊版 Windows 10 中，指定這個值會造成例外狀況。 基於這個原因，在呼叫 **CheckSupportedHardware** 之前，您應該先透過呼叫 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 並指定主要合約版本 5 來檢查是否存在列舉值。
 
 ```csharp
 bool supportsAes128Cbc = ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5);
@@ -111,5 +111,5 @@ if (supportsAes128Cbc)
 }
 ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 - [PlayReady DRM](playready-client-sdk.md)

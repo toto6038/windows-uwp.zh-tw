@@ -10,12 +10,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648533"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363063"
 ---
 # <a name="content-links-in-text-controls"></a>文字控制項中的內容連結
 
@@ -46,8 +46,8 @@ ms.locfileid: "57648533"
 
 | 功能   | RichEditBox | 文字區塊 |
 | --------- | ----------- | ---------- |
-| 用途 | ContentLinkInfo 執行個體 | ContentLink 文字元素 |
-| 游標 | 取決於內容連結的類型，無法變更 | 取決於 Cursor 屬性，預設為 **null** |
+| 使用量 | ContentLinkInfo 執行個體 | ContentLink 文字元素 |
+| 資料指標 | 取決於內容連結的類型，無法變更 | 取決於 Cursor 屬性，預設為 **null** |
 | ToolTip | 未轉譯 | 顯示次要文字 |
 
 ## <a name="enable-content-links-in-a-richeditbox"></a>在 RichEditBox 中啟用內容連結
@@ -303,7 +303,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> 當您在包含其他 XAML 文字元素的文字控制項中使用 ContentLink 時，將內容置入 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器，然後將 `xml:space="preserve"` 屬性套用至 Span 以保留 ContentLink 與其他元素之間的空白字元。
+> 當您在包含其他 XAML 文字元素的文字控制項中使用 ContentLink 時，將內容置入 [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) 容器，然後將 `xml:space="preserve"` 屬性套用至 Span 以保留 ContentLink 與其他元素之間的空白字元。
 
 ## <a name="examples"></a>範例
 

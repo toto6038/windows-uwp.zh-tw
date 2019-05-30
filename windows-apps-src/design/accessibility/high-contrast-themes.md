@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b58eb4b6e3f3f02bb1f72fcba9da3710f08a72da
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c37ceb63a5d9d9f83d3f1ebca0b0584f1092b7f6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649003"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359582"
 ---
 # <a name="high-contrast-themes"></a>高對比佈景主題  
 
@@ -22,7 +22,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 *淺色佈景主題和黑色高對比佈景主題中所示的計算機。*
 
-您可以使用 [設定] &gt; [輕鬆存取] &gt; [高對比]，切換成高對比佈景主題。
+您可以使用 [設定] &gt; [輕鬆存取] &gt; [高對比]  ，切換成高對比佈景主題。
 
 > [!NOTE]
 > 請留意，高對比佈景主題與淺色和深色佈景主題不同，後兩者使用較多種色彩，且不一定是高對比。 如需淺色和深色佈景主題的詳細資訊，請參閱關於[色彩](../style/color.md)的文章。
@@ -39,14 +39,14 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 在第一個範例中以內嵌方式設定色彩 `#E6E6E6` 時，該格線在所有佈景主題中都會保持該背景色彩。 如果使用者切換成「黑底白字」佈景主題，他們會預期 App 具有黑色背景。 由於 `#E6E6E6` 很接近白色，某些使用者可能會無法與您的 App 互動。
 
-在第二個範例中，[**{ThemeResource} 標記延伸**](../../xaml-platform/themeresource-markup-extension.md)是用來參考 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx) 集合 ([**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 元素的專用屬性) 中的某個色彩。 **ThemeDictionaries** 讓 XAML 能根據使用者目前的佈景主題，自動為您切換色彩。
+在第二個範例中，[ **{ThemeResource} 標記延伸**](../../xaml-platform/themeresource-markup-extension.md)是用來參考 [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 集合 ([**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 元素的專用屬性) 中的某個色彩。 **ThemeDictionaries** 讓 XAML 能根據使用者目前的佈景主題，自動為您切換色彩。
 
 ## <a name="theme-dictionaries"></a>佈景主題字典
 
 當您需要變更系統預設色彩時，請針對您的 App 建立 ThemeDictionaries 集合。
 
 1. 由建立適當的配置開始 (如果尚未存在)。 在 App.xaml 中，建立 **ThemeDictionaries** 集合，其中至少包含 **Default** 與 **HighContrast**。
-2. 在 **Default** 中，建立您需要的 [Brush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) 類型 (通常是 **SolidColorBrush**)。 針對它的用途來指定 *x:Key* 名稱。
+2. 在 **Default** 中，建立您需要的 [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) 類型 (通常是 **SolidColorBrush**)。 針對它的用途來指定 *x:Key* 名稱。
 3. 指派您想要的**色彩**。
 4. 將該 **Brush** 標記複製到 **HighContrast** 中。
 
@@ -82,7 +82,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ## <a name="high-contrast-colors"></a>高對比色彩
 
-在 [設定] &gt; [輕鬆存取] &gt; [高對比] 頁面中，有 4 個預設的高對比佈景主題。 
+在 [設定] &gt; [輕鬆存取] &gt; [高對比]  頁面中，有 4 個預設的高對比佈景主題。 
 
 
 ![高對比設定](images/high-contrast-settings.png)  
@@ -95,7 +95,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 每個 **SystemColor*Color** 資源都是變數，當使用者切換高對比佈景主題時會自動更新色彩。 以下是在何處及何時使用各項資源的指導方針。
 
-資源 | 用途 |
+Resource | 使用量 |
 |--------|-------|
 **SystemColorWindowTextColor** | 內文文字、標題、清單；任何無法進行互動的文字 |
 | **SystemColorHotlightColor** | 超連結 |
@@ -167,7 +167,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ## <a name="list-items"></a>清單項目
 
-在高對比佈景主題中，當游標暫留、按下或選取 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 中的項目時，其背景會設為 **SystemColorHighlightColor**。 複雜的清單項目通常會有一種錯誤，就是當游標暫留、按下或選取清單項目時，沒有反轉其內容的色彩。 這會使該項目難以閱讀。
+在高對比佈景主題中，當游標暫留、按下或選取 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 中的項目時，其背景會設為 **SystemColorHighlightColor**。 複雜的清單項目通常會有一種錯誤，就是當游標暫留、按下或選取清單項目時，沒有反轉其內容的色彩。 這會使該項目難以閱讀。
 
 ![淺色佈景主題和「黑底白字」佈景主題中的簡易清單](images/high-contrast-list1.png)
 
@@ -176,7 +176,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ### <a name="list-items-with-colored-text"></a>包含文字色彩的清單項目
 
-問題的其中一個癥結是在 ListView 的 [DataTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 中設定 TextBlock.Foreground。 這通常是用來建立視覺階層。 Foreground 屬性是在 [ListViewItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) 上設定，而在游標暫留、按下或選取項目時，DataTemplate 中的 TextBlocks 會繼承正確的 Foreground 色彩。 不過，設定 Foreground 會中斷繼承。
+問題的其中一個癥結是在 ListView 的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 中設定 TextBlock.Foreground。 這通常是用來建立視覺階層。 Foreground 屬性是在 [ListViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem) 上設定，而在游標暫留、按下或選取項目時，DataTemplate 中的 TextBlocks 會繼承正確的 Foreground 色彩。 不過，設定 Foreground 會中斷繼承。
 
 ![淺色佈景主題和「黑底白字」佈景主題中的複雜清單](images/high-contrast-list2.png)
 
@@ -228,7 +228,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ## <a name="detecting-high-contrast"></a>偵測高對比
 
-您可使用 [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) 類別的成員，以程式設計的方式檢查目前的佈景主題是否為高對比。
+您可使用 [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings) 類別的成員，以程式設計的方式檢查目前的佈景主題是否為高對比。
 
 > [!NOTE]
 > 請確定您是從 App 已經初始化且已經顯示內容的範圍內呼叫 **AccessibilitySettings** 建構函式。
@@ -238,4 +238,4 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 * [UI 對比和設定範例](https://go.microsoft.com/fwlink/p/?linkid=231539)
 * [XAML 的協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [XAML 高對比範例](https://go.microsoft.com/fwlink/p/?linkid=254993)
-* [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)
+* [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

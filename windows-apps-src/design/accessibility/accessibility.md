@@ -1,21 +1,21 @@
 ---
 Description: 介紹與通用 Windows 平台 (UWP) app 相關的協助工具概念。
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: 協助工具
+title: 協助工具選項
 label: Accessibility
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9cdfb8a20e273d5d9e5819fc1e28aba97e4296
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 157d0c2ef640f4059d532c26956419e7b3fd3cb4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611693"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362104"
 ---
-# <a name="accessibility"></a>協助工具  
+# <a name="accessibility"></a>協助工具選項  
 
 
 
@@ -44,5 +44,5 @@ ms.locfileid: "57611693"
 | [控制項模式和介面](control-patterns-and-interfaces.md) | 本文列出 Microsoft 使用者介面自動化控制項模式、用戶端用來存取控制項模式的類別，以及介面提供者用來實作控制項模式的類別。 |
 
 ## <a name="related-topics"></a>相關主題  
-* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
+* [**Windows.UI.Xaml.Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation) 
 * [開始使用 [朗讀程式]](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

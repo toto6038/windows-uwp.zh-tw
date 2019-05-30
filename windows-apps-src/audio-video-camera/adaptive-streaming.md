@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9ee2f8fd670da6bf843962e6b4dcac7a4b0c516d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617873"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359137"
 ---
 # <a name="adaptive-streaming"></a>彈性資料流
 
 
-本文說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能支援 HTTP 即時串流 (HLS) 與 HTTP 動態串流 (DASH) 內容播放。 從 Windows 10 版本 1803 開始，**[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** 支援平滑串流處理。
+本文說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能支援 HTTP 即時串流 (HLS) 與 HTTP 動態串流 (DASH) 內容播放。 從 Windows 10 版本 1803 開始， **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** 支援平滑串流處理。
 
 如需支援的 HLS 通訊協定標記的清單，請參閱 [HLS 標記支援](hls-tag-support.md)。 
 
@@ -27,17 +27,17 @@ ms.locfileid: "57617873"
 
 ## <a name="simple-adaptive-streaming-with-mediaplayer-and-mediaplayerelement"></a>使用 MediaPlayer 與 MediaPlayerElement 的簡易彈性資料流 
 
-若要在 UWP app 中播放彈性資料流媒體，請建立一個指向 DASH 或 HLS 資訊清單檔案的 **Uri** 物件。 建立 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 類別的執行個體。 呼叫 [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) 以建立新的 **MediaSource** 物件，然後將它設定為 **MediaPlayer** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) 屬性。 呼叫 [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play) 以開始播放媒體內容。
+若要在 UWP app 中播放彈性資料流媒體，請建立一個指向 DASH 或 HLS 資訊清單檔案的 **Uri** 物件。 建立 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 類別的執行個體。 呼叫 [**MediaSource.CreateFromUri**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromuri) 以建立新的 **MediaSource** 物件，然後將它設定為 **MediaPlayer** 的 [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source) 屬性。 呼叫 [**Play**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.play) 以開始播放媒體內容。
 
 [!code-cs[DeclareMediaPlayer](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaPlayer)]
 
 [!code-cs[ManifestSourceNoUI](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSourceNoUI)]
 
-上述範例會播放媒體內容的音訊，但不會自動轉譯您 UI 中的內容。 播放視訊內容的多數應用程式都會想轉譯 XAML 頁面中的內容。  若要這樣做，請新增 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) 控制項到您的 XAML 頁面。
+上述範例會播放媒體內容的音訊，但不會自動轉譯您 UI 中的內容。 播放視訊內容的多數應用程式都會想轉譯 XAML 頁面中的內容。  若要這樣做，請新增 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 控制項到您的 XAML 頁面。
 
 [!code-xml[MediaPlayerElementXAML](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
-呼叫 [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) 以從 DASH 或 HLS 資訊清單檔案建立 **MediaSource**。 接著設定 **MediaPlayerElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227420) 屬性。 **MediaPlayerElement** 將會自動為內容建立一個新的 **MediaPlayer** 物件。 您可以在 **MediaPlayer** 上呼叫 **Play** 以開始播放內容。
+呼叫 [**MediaSource.CreateFromUri**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromuri) 以從 DASH 或 HLS 資訊清單檔案建立 **MediaSource**。 接著設定 **MediaPlayerElement** 的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement.sourceproperty) 屬性。 **MediaPlayerElement** 將會自動為內容建立一個新的 **MediaPlayer** 物件。 您可以在 **MediaPlayer** 上呼叫 **Play** 以開始播放內容。
 
 [!code-cs[ManifestSource](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSource)]
 
@@ -48,35 +48,35 @@ ms.locfileid: "57617873"
 
 如果您的 app 需要更多進階彈性資料流功能 (例如提供自訂 HTTP 標頭、監視目前下載與播放位元速率，或調整判斷系統切換彈性資料流位元速率時機的比率)，請使用 **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** 物件。
 
-可在 [**Windows.Media.Streaming.Adaptive**](https://msdn.microsoft.com/library/windows/apps/dn931279) 命名空間中找到彈性資料流 API。 本文中的範例使用下列命名空間中的 API。
+可在 [**Windows.Media.Streaming.Adaptive**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive) 命名空間中找到彈性資料流 API。 本文中的範例使用下列命名空間中的 API。
 
 [!code-cs[AdaptiveStreamingUsing](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAdaptiveStreamingUsing)]
 
 ## <a name="initialize-an-adaptivemediasource-from-a-uri"></a>從 URI 初始化 AdaptiveMediaSource。
 
-透過呼叫 [**CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261)，使用彈性資料流資訊清單檔的 URI 初始化 **AdaptiveMediaSource**。 此方法傳回的 [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) 值會讓您知道是否順利建立媒體來源。 如果是這樣，您可以將物件設定為 **MediaPlayer** 的串流來源，方式為呼叫 [**MediaSource.CreateFromAdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource.AdaptiveMediaSource)，再將其指派給媒體播放器的 [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source) 屬性，以建立 **MediaSource** 物件。 在這個範例中，會查詢 [**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) 屬性來判斷串流的位元速率支援上限，然後將該值設為初始位元速率。 這個範例也會暫存本文稍後討論之數個 **AdaptiveMediaSource** 事件的處理常式。
+透過呼叫 [**CreateFromUriAsync**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromuriasync)，使用彈性資料流資訊清單檔的 URI 初始化 **AdaptiveMediaSource**。 此方法傳回的 [**AdaptiveMediaSourceCreationStatus**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationStatus) 值會讓您知道是否順利建立媒體來源。 如果是這樣，您可以將物件設定為 **MediaPlayer** 的串流來源，方式為呼叫 [**MediaSource.CreateFromAdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource.AdaptiveMediaSource)，再將其指派給媒體播放器的 [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source) 屬性，以建立 **MediaSource** 物件。 在這個範例中，會查詢 [**AvailableBitrates**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.availablebitrates) 屬性來判斷串流的位元速率支援上限，然後將該值設為初始位元速率。 這個範例也會暫存本文稍後討論之數個 **AdaptiveMediaSource** 事件的處理常式。
 
 [!code-cs[InitializeAMS](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetInitializeAMS)]
 
 ## <a name="initialize-an-adaptivemediasource-using-httpclient"></a>使用 HttpClient 初始化 AdaptiveMediaSource
 
-如果您需要設定自訂的 HTTP 標頭以取得資訊清單檔，您可以建立 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 物件、設定想要的標題，然後將物件傳遞到 **CreateFromUriAsync** 的多載中。
+如果您需要設定自訂的 HTTP 標頭以取得資訊清單檔，您可以建立 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 物件、設定想要的標題，然後將物件傳遞到 **CreateFromUriAsync** 的多載中。
 
 [!code-cs[InitializeAMSWithHttpClient](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetInitializeAMSWithHttpClient)]
 
-當系統即將從伺服器擷取資源時，會引發 [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) 事件。 傳遞至事件處理常式的 [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn946935) 會公開提供要求之資源的相關資訊 (例如資源類型和 URI) 的內容。
+當系統即將從伺服器擷取資源時，會引發 [**DownloadRequested**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.downloadrequested) 事件。 傳遞至事件處理常式的 [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs) 會公開提供要求之資源的相關資訊 (例如資源類型和 URI) 的內容。
 
 ## <a name="modify-resource-request-properties-using-the-downloadrequested-event"></a>使用 DownloadRequested 事件修改資源要求屬性
 
-您可以使用 **DownloadRequested** 事件處理常式，透過更新事件引數所提供之 [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942) 物件的內容，來修改資源要求。 在下列範例中，會透過更新結果物件的 [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250) 內容來修改要從中擷取資源的 URI。 您也可以重新撰寫媒體區段的位元組範圍偏移和長度，或者，如下列範例所示，變更資源 URI 以下載完整的資源，並將位元組範圍偏移和長度設定為空值。
+您可以使用 **DownloadRequested** 事件處理常式，透過更新事件引數所提供之 [**AdaptiveMediaSourceDownloadResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadResult) 物件的內容，來修改資源要求。 在下列範例中，會透過更新結果物件的 [**ResourceUri**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadresult.resourceuri) 內容來修改要從中擷取資源的 URI。 您也可以重新撰寫媒體區段的位元組範圍偏移和長度，或者，如下列範例所示，變更資源 URI 以下載完整的資源，並將位元組範圍偏移和長度設定為空值。
 
-您可以透過設定結果物件的 [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943) 或 [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249) 屬性，來覆寫要求之資源的內容。 在下列範例中，會透過設定 **Buffer** 屬性來取代資訊清單資源的內容。 請注意，如果您是使用非同步取得的資料來更新資源要求 (例如從遠端伺服器或非同步使用者驗證擷取資料)，您必須呼叫 [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936) 取得延遲，然後在作業完成時呼叫 [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934)，通知系統可以繼續下載要求作業。
+您可以透過設定結果物件的 [**Buffer**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadresult.buffer) 或 [**InputStream**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadresult.inputstream) 屬性，來覆寫要求之資源的內容。 在下列範例中，會透過設定 **Buffer** 屬性來取代資訊清單資源的內容。 請注意，如果您是使用非同步取得的資料來更新資源要求 (例如從遠端伺服器或非同步使用者驗證擷取資料)，您必須呼叫 [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadrequestedeventargs.getdeferral) 取得延遲，然後在作業完成時呼叫 [**Complete**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadrequesteddeferral.complete)，通知系統可以繼續下載要求作業。
 
 [!code-cs[AMSDownloadRequested](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadRequested)]
 
 ## <a name="use-bitrate-events-to-manage-and-respond-to-bitrate-changes"></a>使用 bitrate 事件管理和回應位元速率變更
 
-**AdaptiveMediaSource** 物件提供了可讓您在下載或播放位元速率變更時用來反應的事件。 在此範例中，目前的位元速率僅在 UI 中更新。 請注意，您可以修改判斷系統切換彈性資料流位元速率時機的比率。 如需詳細資訊，請參閱 [**AdvancedSettings**](https://msdn.microsoft.com/library/windows/apps/mt628697) 屬性。
+**AdaptiveMediaSource** 物件提供了可讓您在下載或播放位元速率變更時用來反應的事件。 在此範例中，目前的位元速率僅在 UI 中更新。 請注意，您可以修改判斷系統切換彈性資料流位元速率時機的比率。 如需詳細資訊，請參閱 [**AdvancedSettings**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.advancedsettings) 屬性。
 
 [!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
 
@@ -100,13 +100,13 @@ ms.locfileid: "57617873"
 [!code-cs[AMSDiagnosticAvailable](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDiagnosticAvailable)]
 
 ## <a name="defer-binding-of-adaptive-streaming-content-for-items-in-a-playback-list-by-using-mediabinder"></a>使用 MediaBinder 延遲繫結播放清單中項目的彈性資料流內容
-[  **MediaBinder**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder) 類別可讓您延期繫結 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 中的媒體內容。 從 Windows 10 版本 1703 開始，您可以提供 [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) 作為繫結的內容。 延遲繫結彈性媒體來源的程序大部分與繫結其他類型的媒體相同，如[媒體項目、播放清單與曲目](media-playback-with-mediasource.md)中所述。 
+[  **MediaBinder**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder) 類別可讓您延期繫結 [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList) 中的媒體內容。 從 Windows 10 版本 1703 開始，您可以提供 [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) 作為繫結的內容。 延遲繫結彈性媒體來源的程序大部分與繫結其他類型的媒體相同，如[媒體項目、播放清單與曲目](media-playback-with-mediasource.md)中所述。 
 
 建立 **MediaBinder** 執行個體、設定應用程式所定義的 [**權杖**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder.Token) 字串以找出要繫結的內容，以及註冊 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder.Binding) 事件。 呼叫 [**MediaSource.CreateFromMediaBinder**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediabinder)，以從 **Binder** 建立 **MediaSource**。 然後，從 **MediaSource** 建立 **MediaPlaybackItem**，並將它新增到播放清單。
 
 [!code-cs[InitMediaBinder](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetInitMediaBinder)]
 
-在 **Binding** 事件處理常式、使用權杖字串找出要繫結的內容，然後呼叫**[CreateFromStreamAsync](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromstreamasync)** 或 **[CreateFromUriAsync](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromuriasync)** 中的其中一個多載來建立彈性媒體來源。 因為這些是非同步方法，所以您應該先呼叫[**MediaBindingEventArgs.GetDeferral**](https://docs.microsoft.com/uwp/api/windows.media.core.mediabindingeventargs.GetDeferral)方法，指示系統等候作業完成，再繼續進行。  呼叫**[SetAdaptiveMediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediabindingeventargs.setadaptivemediasource)**，將彈性媒體來源設定為繫結的內容。 最後，在作業完成之後呼叫[**Deferral.Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.Complete)，指示系統繼續進行。
+在 **Binding** 事件處理常式、使用權杖字串找出要繫結的內容，然後呼叫 **[CreateFromStreamAsync](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromstreamasync)** 或 **[CreateFromUriAsync](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromuriasync)** 中的其中一個多載來建立彈性媒體來源。 因為這些是非同步方法，所以您應該先呼叫[**MediaBindingEventArgs.GetDeferral**](https://docs.microsoft.com/uwp/api/windows.media.core.mediabindingeventargs.GetDeferral)方法，指示系統等候作業完成，再繼續進行。  呼叫 **[SetAdaptiveMediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediabindingeventargs.setadaptivemediasource)** ，將彈性媒體來源設定為繫結的內容。 最後，在作業完成之後呼叫[**Deferral.Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.Complete)，指示系統繼續進行。
 
 [!code-cs[BinderBindingAMS](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetBinderBindingAMS)]
 

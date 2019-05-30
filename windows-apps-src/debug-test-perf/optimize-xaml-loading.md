@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ec88af01e46788ea9f24760af7f9a3b81281ba8d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e177f4715d549ce3ef64534e0fc28d2fc3a9fe0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593123"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359944"
 ---
 # <a name="optimize-your-xaml-markup"></a>最佳化您的 XAML 標記
 
@@ -39,7 +39,7 @@ ms.locfileid: "57593123"
 使用 [x:Load 屬性](../xaml-platform/x-load-attribute.md) 而非 [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.Visibility) 屬性來控制項顯示元素的時機。 當元素的可見度設定為 **Collapsed** 時，系統會在轉譯階段跳過該元素，但仍然要付出物件執行個體佔用記憶體的代價。 改用 x:Load 時，除非必要，否則架構不會建立物件執行個體，因此記憶體使用量甚至更低。 缺點是未載入 UI 時，會產生少量的記憶體額外負荷 (約為 600 個位元組)。
 
 > [!NOTE]
-> 您可以使用 [x:Load](../xaml-platform/x-load-attribute.md) 或 [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md) 屬性來延遲載入元素。 x:Load 屬性是在 Windows 10 Creators Update (版本 1703，SDK 組建 15063) 中開始提供。 Visual Studio 專案設為目標的版本必須至少是 *Windows 10 Creators Update (10.0，組建 15063)*，才能使用 x:Load。 若要以舊版為目標，請使用 x:DeferLoadStrategy。
+> 您可以使用 [x:Load](../xaml-platform/x-load-attribute.md) 或 [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md) 屬性來延遲載入元素。 x:Load 屬性是在 Windows 10 Creators Update (版本 1703，SDK 組建 15063) 中開始提供。 Visual Studio 專案設為目標的版本必須至少是 *Windows 10 Creators Update (10.0，組建 15063)* ，才能使用 x:Load。 若要以舊版為目標，請使用 x:DeferLoadStrategy。
 
 下列範例顯示元素計數及記憶體使用量在使用不同技術隱藏 UI 元素時的差異。 將包含完全相同項目的 ListView 和 GridView 放置在頁面的根方格中。 隱藏 ListView，但顯示 GridView。 這其中每個範例的 XAML 都會在螢幕上產生相同的 UI。 我們使用 Visual Studio [分析和效能的工具](tools-for-profiling-and-performance.md)來檢查元素計數和記憶體使用量。
 
@@ -124,7 +124,7 @@ ListView 及其子系未載入記憶體中。
 
 ### <a name="use-layout-panel-properties"></a>使用版面配置面板屬性
 
-配置面板有 [Background](https://msdn.microsoft.com/library/windows/apps/BR227512) 屬性，所以不需要只是為了塗上色彩而將 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 放在面板前面。
+配置面板有 [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background) 屬性，所以不需要只是為了塗上色彩而將 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 放在面板前面。
 
 **效率不佳**
 
@@ -135,7 +135,7 @@ ListView 及其子系未載入記憶體中。
 </Grid>
 ```
 
-**有效率**
+**Efficient**
 
 ```xaml
 <Grid Background="Black"/>
@@ -223,7 +223,7 @@ ListView 及其子系未載入記憶體中。
 </Page>
 ```
 
-**SecondPage.xaml。**
+**SecondPage.xaml.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -238,7 +238,7 @@ ListView 及其子系未載入記憶體中。
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>將看起來相同的多個筆刷合併到一個資源
 
-XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使用這些物件。 但是，XAML 無法清楚分辨某個標記中宣告的筆刷與另一個標記中宣告的筆刷是否相同。 此處的範例使用 [SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962) 進行示範，但是 [GradientBrush](https://msdn.microsoft.com/library/windows/apps/BR210068) 的案例更類似且更重要。 此外，還會檢查是否有使用預先定義色彩的筆刷；例如 `"Orange"` 和 `"#FFFFA500"` 是相同的色彩。
+XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使用這些物件。 但是，XAML 無法清楚分辨某個標記中宣告的筆刷與另一個標記中宣告的筆刷是否相同。 此處的範例使用 [SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 進行示範，但是 [GradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientBrush) 的案例更類似且更重要。 此外，還會檢查是否有使用預先定義色彩的筆刷；例如 `"Orange"` 和 `"#FFFFA500"` 是相同的色彩。
 
 **效率不佳。**
 
@@ -281,15 +281,15 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 過度繪製是在以相同螢幕像素繪製多個物件的情況下發生。 請注意，在這個指導方針和想要最小化元素計數之間有時需要取捨。
 
-使用 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) 做為視覺診斷。 您可能會發現原先不知道已在場景內的繪製中物件。
+使用 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled) 做為視覺診斷。 您可能會發現原先不知道已在場景內的繪製中物件。
 
 ### <a name="transparent-or-hidden-elements"></a>透明或隱藏的元素
 
-如果元素因為是透明的或是隱藏在其他元素後面而看不見，而且它不會參與配置，則刪除它。 如果元素在初始視覺狀態看不見，但是在其他視覺狀態中可見，請使用 x:Load 來控制其狀態，或者在元素本身將 [Visibility](https://msdn.microsoft.com/library/windows/apps/BR208992) 設為 **Collapsed**，並且在適當狀態中將值變更為 **Visible**。 這個啟發學習法有例外狀況：一般來說，屬性在大多數視覺狀態中的值最好是在本機對元素進行設定。
+如果元素因為是透明的或是隱藏在其他元素後面而看不見，而且它不會參與配置，則刪除它。 如果元素在初始視覺狀態看不見，但是在其他視覺狀態中可見，請使用 x:Load 來控制其狀態，或者在元素本身將 [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 設為 **Collapsed**，並且在適當狀態中將值變更為 **Visible**。 這個啟發學習法有例外狀況：一般來說，屬性在大多數視覺狀態中的值最好是在本機對元素進行設定。
 
 ### <a name="composite-elements"></a>複合元素
 
-使用複合元素，而不要分層放置多個元素來建立效果。 在這個範例中，結果是雙色調圖形，上半部是黑色 (從 [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) 的背景)，下半部是灰色 (從半透明白色的 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) alpha 混合 **Grid** 的黑色背景)。 這裡需要 150% 的像素以達成填滿的結果。
+使用複合元素，而不要分層放置多個元素來建立效果。 在這個範例中，結果是雙色調圖形，上半部是黑色 (從 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的背景)，下半部是灰色 (從半透明白色的 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) alpha 混合 **Grid** 的黑色背景)。 這裡需要 150% 的像素以達成填滿的結果。
 
 **效率不佳。**
 
@@ -346,11 +346,11 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 </GridView>
 ```
 
-如果 [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) 可以進行點擊測試，則在其上設定透明背景值。
+如果 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 可以進行點擊測試，則在其上設定透明背景值。
 
 ### <a name="borders"></a>框線
 
-使用 [Border](https://msdn.microsoft.com/library/windows/apps/BR209253) 元素以在物件周圍繪製框線。 在這個範例中，[Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) 是做為 [TextBox](https://msdn.microsoft.com/library/windows/apps/BR209683) 周圍的臨時框線。 但是會過度繪製中心儲存格中的所有像素。
+使用 [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.) 元素以在物件周圍繪製框線。 在這個範例中，[Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 是做為 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 周圍的臨時框線。 但是會過度繪製中心儲存格中的所有像素。
 
 **效率不佳。**
 
@@ -385,7 +385,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 ### <a name="cache-static-content"></a>快取靜態內容
 
-另一個過度繪製的來源是來自許多重疊元素的圖形。 如果您在 [UIElement](https://msdn.microsoft.com/library/windows/apps/BR208911)上將 [CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084) 設為 **BitmapCache**，該元素包含組合圖形，則平台會將元素轉譯為點陣圖一次，然後在每個框架使用該點陣圖，而不會過度繪製。
+另一個過度繪製的來源是來自許多重疊元素的圖形。 如果您在 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)上將 [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) 設為 **BitmapCache**，該元素包含組合圖形，則平台會將元素轉譯為點陣圖一次，然後在每個框架使用該點陣圖，而不會過度繪製。
 
 **效率不佳。**
 
@@ -413,7 +413,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 </Canvas>
 ```
 
-請注意使用 [CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084)。 如果有任何子圖形具有動畫效果，請勿使用這項技巧，因為每個框架可能需要重新產生點陣快取，而導致破壞原本的目的。
+請注意使用 [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode)。 如果有任何子圖形具有動畫效果，請勿使用這項技巧，因為每個框架可能需要重新產生點陣快取，而導致破壞原本的目的。
 
 ## <a name="use-xbf2"></a>使用 XBF2
 

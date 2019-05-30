@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 keywords: windows win32, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb104d873e810a9c5bedaa68675fd346cb3f33d
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 31d1c81bbc5af932435860b55ebe5651a789eb6e
+ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215051"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266422"
 ---
 # <a name="build-apps-for-windows"></a>建置適用於 Windows 的應用程式
 
@@ -120,6 +120,25 @@ ms.locfileid: "66215051"
       </a>
     </li>
     <li>
+      <a href="/windows/msix/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/sql-get-started-download.svg?branch=master" alt="MSIX packaging illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                    <h3>MSIX 封裝和部署</h3>
+                    <p>以安全和可靠的通用封裝體驗，封裝並部署任何 Windows 應用程式。</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </a>
+    </li>
+    <li>
       <a href="fluent-design-system.md">
         <div class="cardSize">
             <div class="cardPadding">
@@ -132,6 +151,25 @@ ms.locfileid: "66215051"
                     <div class="cardText">
                     <h3>Fluent Design 系統</h3>
                     <p>了解如何透過使用 Fluent Design 系統，為 Windows 應用程式設計使用者介面及進行編碼。</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/uwp/toolkits/winui/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/virtualization-containers-samples.svg?branch=master" alt="Design illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                    <h3>Windows UI 程式庫</h3>
+                    <p>使用原生 Windows UI 控制項和舊版 Windows 10 應用程式中的其他使用者介面元素。</p>
                   </div>
                 </div>
             </div>

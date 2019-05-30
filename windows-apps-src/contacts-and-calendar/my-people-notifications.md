@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 291c2a922e2b2df7111da8bfc6aefb57b87e84bb
-ms.sourcegitcommit: 4bad5f9427e7db27b57bedc6d7df19077c62e8c3
+ms.openlocfilehash: d4150e7296badd3d31a9aacc7becd3d849f6affd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535193"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360416"
 ---
 # <a name="my-people-notifications"></a>朋友圈通知
 
@@ -126,7 +126,7 @@ experienceType=”shoulderTap”
 ![spritesheet 通知](images/pizza-notification-small.gif)
 
 ## <a name="starting-the-notification"></a>啟動通知
-為了啟動朋友圈通知，我們必須將快顯通知範本轉換為 [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) 物件。 當您已在 XML 檔案中定義快顯通知 (在此名為 "content.xml")，則可以使用此程式碼啟動快顯通知：
+為了啟動朋友圈通知，我們必須將快顯通知範本轉換為 [XmlDocument](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument) 物件。 當您已在 XML 檔案中定義快顯通知 (在此名為 "content.xml")，則可以使用此程式碼啟動快顯通知：
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");

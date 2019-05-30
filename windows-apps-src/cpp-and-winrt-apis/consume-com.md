@@ -1,16 +1,16 @@
 ---
 description: 本主題使用完整的 Direct2D 程式碼範例來示範如何使用 C++/WinRT 來取用 COM 類別和介面。
 title: 使用 C++/WinRT 來使用 COM 元件
-ms.date: 07/23/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 COM、 元件、 類別、 介面
 ms.localizationpriority: medium
-ms.openlocfilehash: 16425fd6d296a4abd4ed62c0c64cd23ef1f88891
-ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.openlocfilehash: dc4acd288496d83d5d91f1bdf206be19fe2fbb06
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58618405"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361151"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>使用 C++/WinRT 來使用 COM 元件
 
@@ -30,7 +30,7 @@ ms.locfileid: "58618405"
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-上述程式碼示範如何宣告要未初始化的智慧型指標[ **ID2D1Factory1** ](https://msdn.microsoft.com/library/Hh404596) COM 介面。 智慧型指標未初始化，因此它尚不指向**ID2D1Factory1**屬於任何實際的物件 （它並未指向介面完全） 的介面。 但有可能會這麼做;而且它有透過 COM 參考計數來管理的介面，它會指向，主控物件的存留期，以及可供您函式呼叫該介面的媒體功能 （在智慧型指標）。
+上述程式碼示範如何宣告要未初始化的智慧型指標[ **ID2D1Factory1** ](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1) COM 介面。 智慧型指標未初始化，因此它尚不指向**ID2D1Factory1**屬於任何實際的物件 （它並未指向介面完全） 的介面。 但有可能會這麼做;而且它有透過 COM 參考計數來管理的介面，它會指向，主控物件的存留期，以及可供您函式呼叫該介面的媒體功能 （在智慧型指標）。
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>COM 函式會傳回介面指標當做**void**
 
@@ -46,7 +46,7 @@ D2D1CreateFactory(
 );
 ```
 
-呼叫上述程式碼[ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory)函式，它會傳回**ID2D1Factory1**介面指標，其最後一個參數，已透過**void\* \*** 型別。 許多 COM 函式會傳回**void\*\***。 對於這類函式中，使用[ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)所示。
+呼叫上述程式碼[ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory)函式，它會傳回**ID2D1Factory1**介面指標，其最後一個參數，已透過**void\* \*** 型別。 許多 COM 函式會傳回**void\*\*** 。 對於這類函式中，使用[ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)所示。
 
 ## <a name="com-functions-that-return-a-specific-interface-pointer"></a>傳回特定的介面指標的 COM 函式
 
@@ -72,7 +72,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>COM 函式會傳回介面指標當做**IUnknown**
 
-[ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)函式會傳回其最後一個參數，已透過 DirectWrite factory 的介面指標[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)型別。 對於這類函式，使用[ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function)，但轉換轉換成**IUnknown**。
+[ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)函式會傳回其最後一個參數，已透過 DirectWrite factory 的介面指標[ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)型別。 對於這類函式，使用[ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function)，但轉換轉換成**IUnknown**。
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -169,7 +169,7 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>完整來源的最小的 Direct2D 應用程式的程式碼清單
 
-如果您想要建置並執行此原始程式碼範例，則第一個，在 Visual Studio 中，建立新**Core 應用程式 (C++/WinRT)**。 `Direct2D` 合理專案名稱，但它可以隨意命名。 開啟`App.cpp`、 刪除整個內容，並貼上下列清單中。
+如果您想要建置並執行此原始程式碼範例，則第一個，在 Visual Studio 中，建立新**Core 應用程式 (C++/WinRT)** 。 `Direct2D` 合理專案名稱，但它可以隨意命名。 開啟`App.cpp`、 刪除整個內容，並貼上下列清單中。
 
 ```cppwinrt
 #include "pch.h"
@@ -477,7 +477,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(App());
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 

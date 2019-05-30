@@ -5,18 +5,18 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件
 ms.localizationpriority: medium
-ms.openlocfilehash: b17dffec37a5cadb450e93ea15508becfd7b9233
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: 82050c92311ce8bb7457637a486943a5fed3e334
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320631"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359332"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在舊版應用程式或遊戲中使用 Windows 10 資源管理系統
 
 .NET 和 Win32 應用程式和遊戲通常會當地語系化為不同語言，以拓展其潛在市場範圍。 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。 封裝您的.NET 或 Win32 應用程式或遊戲為 MSIX 或 AppX 套件，您可以利用資源管理系統，載入執行階段內容量身打造的應用程式資源。 這個深入主題說明技術。
 
-將傳統 Win32 應用程式當地語系化的方法有許多種，但 Windows 8 引進了[新資源管理系統](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx)，其跨程式設計語言、跨應用程式類型運作，並且提供超簡單的當地語系化功能。 此系統在本主題中將稱為「MRT」。 過去這代表「現代化資源技術」，但「現代化」一詞已停止使用。 資源管理員也稱為 MRM (現代化資源管理員) 或 PRI (套件資源索引)。
+將傳統 Win32 應用程式當地語系化的方法有許多種，但 Windows 8 引進了[新資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))，其跨程式設計語言、跨應用程式類型運作，並且提供超簡單的當地語系化功能。 此系統在本主題中將稱為「MRT」。 過去這代表「現代化資源技術」，但「現代化」一詞已停止使用。 資源管理員也稱為 MRM (現代化資源管理員) 或 PRI (套件資源索引)。
 
 結合 MSIX 或 AppX 型部署 （例如，從 Microsoft Store 中)，MRT 可以自動傳遞最適用的資源，針對指定的使用者 / 裝置的最小化下載並安裝應用程式的大小。 對於具有大量當地語系化內容的應用程式而言，縮減約莫數個 *GB* 的 AAA 遊戲大小有絕對的重要性。 其他 MRT 好處包括 Windows Shell 和 Microsoft Store 的當地語系化清單，當使用者慣用的語言不符合可用資源時的自動後援邏輯。
 
@@ -66,7 +66,7 @@ ms.locfileid: "58320631"
 
 在圖片中，應用程式碼參考三個邏輯資源名稱。 在執行階段，`GetResource`虛擬功能使用 MRT 在資源表中查詢這些資源名稱 (稱為 PRI 檔案)，並根據環境條件尋找最適當的候選項目 (使用者的語言和顯示器的縮放比例)。 對於標籤則會直接使用字串。 對於標誌圖像，字串會解譯為檔名，並從磁碟讀出檔案。 
 
-如果使用者使用英文或德文，以外的語言，或具有顯示縮放比例為 100%或 300%以外，MRT 會挑選一組後援規則為基礎的 「 最靠近 」 比對候選 (請參閱[資源管理系統](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx)如需詳細資訊背景）。
+如果使用者使用英文或德文，以外的語言，或具有顯示縮放比例為 100%或 300%以外，MRT 會挑選一組後援規則為基礎的 「 最靠近 」 比對候選 (請參閱[資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))如需詳細資訊背景）。
 
 請注意，MRT 支援專門針對多個限定詞的資源-例如，如果標誌影像包含內嵌的文字，也需要當地語系化，標誌會有四個候選項目：EN/擴展-100、 DE/擴展-100、 EN-US/擴展-300 和 DE/調整為 300。
 
@@ -150,7 +150,7 @@ ms.locfileid: "58320631"
 
 如需有關封裝資訊清單檔和封裝配置的詳細資訊，請參閱[應用程式封裝資訊清單](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest)。
 
-最後，如果您建立新的專案，並移轉您現有的程式碼，在使用 Visual Studio，請參閱[建立"Hello，world"應用程式](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。 您可以將現有的程式碼包含到新的專案，但您可能必須進行大幅變更程式碼 （特別是在使用者介面），才能執行為單純的 UWP 應用程式。 這些變更不在本文件範圍內。
+最後，如果您建立新的專案，並移轉您現有的程式碼，在使用 Visual Studio，請參閱[建立"Hello，world"應用程式](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。 您可以將現有的程式碼包含到新的專案，但您可能必須進行大幅變更程式碼 （特別是在使用者介面），才能執行為單純的 UWP 應用程式。 這些變更不在本文件範圍內。
 
 ## <a name="phase-1-localize-the-manifest"></a>階段 1：當地語系化資訊清單
 
@@ -464,7 +464,7 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 
 <p><img src="images\editing-declarations-info.png"/></p>
 
-立即將對應的資源名稱加入到每一個 `.resw` 檔案，並將<span style="background-color: yellow">反白文字</span>取代為應用程式的適用文字 (務必針對*每一種支援的語言執行此動作！*)：
+立即將對應的資源名稱加入到每一個 `.resw` 檔案，並將<span style="background-color: yellow">反白文字</span>取代為應用程式的適用文字 (務必針對*每一種支援的語言執行此動作！* )：
 
 ```xml
 ... existing content...
@@ -763,7 +763,7 @@ HRESULT GetMrtResourceHandle(LPCWSTR resourceFilePath,  HINSTANCE* resourceHandl
 
 #### <a name="manually-creating-resource-packages"></a>手動建立資源套件
 
-手動建立資源套件需要執行一組稍有不同的命令來建置不同的 `.pri` 和 `.appx` 檔案 - 這些全都和上述用來建立肥包相似，這樣就可以將解釋的必要性降到最低。 注意：所有命令都假設目前的目錄是目錄包含`AppXManifest.xml`檔案，但所有檔案會放入 （您可以使用不同的目錄中，如果有必要，但您不應該干擾任何專案目錄的上層目錄這些檔案）。 一如往常，將 "Contoso" 檔名取代為您自己的檔案名稱。
+手動建立資源套件需要執行一組稍有不同的命令來建置不同的 `.pri` 和 `.appx` 檔案 - 這些全都和上述用來建立肥包相似，這樣就可以將解釋的必要性降到最低。 注意:所有命令都假設目前的目錄是目錄包含`AppXManifest.xml`檔案，但所有檔案會放入 （您可以使用不同的目錄中，如果有必要，但您不應該干擾任何專案目錄的上層目錄這些檔案）。 一如往常，將 "Contoso" 檔名取代為您自己的檔案名稱。
 
 1. 使用下列命令來建立設定檔的名稱，**只**命名預設的語言，做為預設限定詞 - 在本案例為 `en-US`：
 

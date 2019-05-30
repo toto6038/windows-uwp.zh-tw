@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf54e062ef2388562cc970a2f124f0ce1f978c7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b07ab7fa6b65e16f39d9e2a77a677d33d3c70254
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653823"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360504"
 ---
 # <a name="composition-effects"></a>組合效果
 
-[  **Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
+[  **Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
 
-為支援[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供開發人員在其應用程式中描述效果， 組合效果會利用 Win2D 的 IGraphicsEffect 介面 透過 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間來使用效果描述。
+為支援[通用 Windows 平台 (UWP)](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp) 一致性以供開發人員在其應用程式中描述效果， 組合效果會利用 Win2D 的 IGraphicsEffect 介面 透過 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間來使用效果描述。
 
 筆刷效果可用來將效果套用到一組現有的影像，以繪製應用程式的部分區域。 Windows 10 組合效果 API 著重在 SpriteVisual 上。 SpriteVisual 在色彩、影像和效果建立上提供彈性和相互作用。 SpriteVisual 是一種可利用筆刷填滿 2D 矩形的視覺化組合類型。 視覺化定義矩形的界線，筆刷則定義用來繪製矩形的像素。
 
@@ -238,7 +238,7 @@ LoadImage(surfaceBrush);
 ## <a name="more-information"></a>更多資訊
 
 - [Microsoft-組合 GitHub](https://github.com/Microsoft/composition)
-- [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+- [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 - [在 Twitter 上的 Windows 撰寫小組](https://twitter.com/wincomposition)
 - [撰寫概觀](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
 - [視覺化樹狀結構的基本概念](composition-visual-tree.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bc555030c2f5202e5c128c1d1a2fe45b5b71b4b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 607b7956786f5713b6133633c2609b801883c76b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639973"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362394"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>讓 UI 執行緒保持回應
 
@@ -20,7 +20,7 @@ ms.locfileid: "57639973"
 
 您的 app 是事件驅動，這表示程式碼會執行工作來回應事件，接著進入閒置狀態，直到出現下一個事件。 平台的 UI 程式碼 (配置、輸入、引發事件等等) 及 app 的 UI 程式碼都在相同的 UI 執行緒上執行。 該執行緒上一次只能執行一個指令，如果您的 app 程式碼花費太多時間處理事件，則架構無法執行配置或引發代表使用者互動的新事件。 App 的回應性與是否有 UI 執行緒來處理工作相關。
 
-幾乎所有對 UI 執行緒所做的變更都需要用到 UI 執行緒，包括建立 UI 類型和存取其成員。 您無法從背景執行緒更新 UI，但可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 傳遞訊息給它，就在那裡執行程式碼。
+幾乎所有對 UI 執行緒所做的變更都需要用到 UI 執行緒，包括建立 UI 類型和存取其成員。 您無法從背景執行緒更新 UI，但可以使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 傳遞訊息給它，就在那裡執行程式碼。
 
 > **附註**  唯一例外的是，沒有可以將不會影響如何處理輸入的 UI 變更套用在不同的轉譯執行緒或基本版面配置。 例如，許多不會影響版面配置的動畫和轉場效果可以在這個轉譯執行緒上執行。
 
@@ -28,22 +28,22 @@ ms.locfileid: "57639973"
 
 app 中最慢的一些階段包括啟動和切換檢視。 顯示使用者最初看到的 UI 時不要太過花俏。 例如，不要建立那種逐漸展露 UI 和快顯內容的 UI。
 
--   使用[x:Load 屬性](../xaml-platform/x-load-attribute.md)或[x: DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785)延遲具現化元素。
+-   使用[x:Load 屬性](../xaml-platform/x-load-attribute.md)或[x: DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute)延遲具現化元素。
 -   以程式設計方式隨需將元素插入樹狀目錄。
 
-[**CoreDispatcher.RunIdleAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh967918) UI 執行緒來處理不忙碌時的工作佇列。
+[**CoreDispatcher.RunIdleAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) UI 執行緒來處理不忙碌時的工作佇列。
 
 ## <a name="use-asynchronous-apis"></a>使用非同步 API
 
-為了協助保持 App 的回應性，平台為其許多 API 提供非同步的版本。 非同步 API 可確保使用中的執行緒不會被封鎖太長的時間。 當您從 UI 執行緒呼叫 API 時，如果有非同步版本可用，請使用非同步版本。 如需使用 **async** 模式進行設計程式的詳細資訊，請參閱[非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187335)或[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/Mt187337)。
+為了協助保持 App 的回應性，平台為其許多 API 提供非同步的版本。 非同步 API 可確保使用中的執行緒不會被封鎖太長的時間。 當您從 UI 執行緒呼叫 API 時，如果有非同步版本可用，請使用非同步版本。 如需使用 **async** 模式進行設計程式的詳細資訊，請參閱[非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps)或[在 C# 或 Visual Basic 中呼叫非同步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。
 
 ## <a name="offload-work-to-background-threads"></a>將工作卸載到背景執行緒
 
 撰寫可快速返回的事件處理常式。 在需要執行不少的工作量時，排定給背景執行緒並返回。
 
-您可以使用 C# 的 **await** 運算子、Visual Basic 的 **Await** 運算子或 C++ 中的委派，以非同步方式排程工作。 但這並不保證您排程的工作一定會在背景執行緒中執行。 許多通用 Windows 平台 (UWP) API 會為您在背景執行緒中排程工作，但如果僅使用 **await** 或委派呼叫您的 app 程式碼，則會在 UI 執行緒中執行該委派或方法。 您必須明確指示何時要在背景執行緒中執行您的 app 程式碼。 在C#和 Visual Basic，您可以傳遞至程式碼來完成這[ **Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx)。
+您可以使用 C# 的 **await** 運算子、Visual Basic 的 **Await** 運算子或 C++ 中的委派，以非同步方式排程工作。 但這並不保證您排程的工作一定會在背景執行緒中執行。 許多通用 Windows 平台 (UWP) API 會為您在背景執行緒中排程工作，但如果僅使用 **await** 或委派呼叫您的 app 程式碼，則會在 UI 執行緒中執行該委派或方法。 您必須明確指示何時要在背景執行緒中執行您的 app 程式碼。 在C#和 Visual Basic，您可以傳遞至程式碼來完成這[ **Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?redirectedfrom=MSDN#overloads)。
 
-請記住，只有從 UI 執行緒才能存取 UI 元素。 啟動背景工作之前先使用 UI 執行緒存取 UI 元素，以及/或在背景執行緒上使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 或 [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918)。
+請記住，只有從 UI 執行緒才能存取 UI 元素。 啟動背景工作之前先使用 UI 執行緒存取 UI 元素，以及/或在背景執行緒上使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 或 [**CoreDispatcher.RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync)。
 
 例如，遊戲中的人工智慧計算，就是背景執行緒中可以執行的工作。 計算電腦下一步行動的程式碼需要花很多時間執行。
 
@@ -101,8 +101,8 @@ public class AsyncExample
 
 在這個範例中，`NextMove_Click` 處理常式會回到 **await**，讓 UI 執行緒保持回應。 但在 `ComputeNextMove` (在背景執行緒上執行) 完成之後，該處理常式又會再次執行。 處理常式中的其餘程式碼會以結果更新 UI。
 
-> **附註**  另外還有[ **ThreadPool** ](https://msdn.microsoft.com/library/windows/apps/BR229621)並[ **ThreadPoolTimer** ](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx)適用於 UWP，它可以是 API用於類似的案例。 如需詳細資訊，請參閱[執行緒和非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187340)。
+> **附註**  另外還有[ **ThreadPool** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool)並[ **ThreadPoolTimer** ](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer)適用於 UWP，它可以是 API用於類似的案例。 如需詳細資訊，請參閱[執行緒和非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/index)。
 
 ## <a name="related-topics"></a>相關主題
 
-* [自訂的使用者互動](https://msdn.microsoft.com/library/windows/apps/Mt185599)
+* [自訂的使用者互動](https://developer.microsoft.com/windows/design/inputs-devices)

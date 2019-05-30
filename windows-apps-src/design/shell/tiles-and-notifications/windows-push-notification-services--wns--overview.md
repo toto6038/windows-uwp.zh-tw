@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 267e6e1cf9a004b6703e000b694274b802220f60
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cf538e6b7c66bfc61574295d5b040db82122e78a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611923"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363351"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀
  
@@ -40,12 +40,12 @@ Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的�
 
 每個應用程式都有自己雲端服務的一組認證。 這些認證無法用於傳送通知給任何其他應用程式。
 
-如需如何註冊 app 的詳細資訊，請參閱[如何使用 Windows 通知服務 (WNS) 進行驗證](https://msdn.microsoft.com/library/windows/apps/hh465407)。
+如需如何註冊 app 的詳細資訊，請參閱[如何使用 Windows 通知服務 (WNS) 進行驗證](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))。
 
 ## <a name="requesting-a-notification-channel"></a>要求通知通道
 
 
-執行可接收推播通知的應用程式時，該應用程式必須先透過 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_) 要求通知通道。 如需查看完整討論與程式碼範例，請參閱[如何要求、建立以及儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)。 這個 API 可傳回以唯一方式連結至呼叫端應用程式及其磚的通道 URI，而所有的通知類型都可以透過它來傳送。
+執行可接收推播通知的應用程式時，該應用程式必須先透過 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_) 要求通知通道。 如需查看完整討論與程式碼範例，請參閱[如何要求、建立以及儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))。 這個 API 可傳回以唯一方式連結至呼叫端應用程式及其磚的通道 URI，而所有的通知類型都可以透過它來傳送。
 
 應用程式順利建立通道 URI 後，會將通道 URI 連同應該與此 URI 關聯的任何應用程式特定中繼資料一起傳送到雲端服務。
 
@@ -54,7 +54,7 @@ Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的�
 -   我們不保證應用程式的通知通道 URI 一律保持相同。 我們建議每次執行應用程式時要求新通道，並在 URI 變更時更新本身的服務。 開發人員不得修改通道 URI，而是要將它視為黑箱字串。 在這個時候，通道 URI 會在 30 天後到期。 如果您的 Windows 10 應用程式將會定期更新其在背景中的通道，則您可以下載[推播和定期通知範例](https://go.microsoft.com/fwlink/p/?linkid=231476)Windows 8.1 和重複使用其原始碼和 （或） 模式會示範。
 -   雲端服務與用戶端應用程式之間的介面要由您 (開發人員) 實作。 我們建議應用程式完成與本身服務的驗證程序，並透過安全通訊協定 (像是 HTTPS) 傳輸資料。
 -   雲端服務務必確定通道 URI 使用「notify.windows.com」網域，這一點非常重要。 在任何情況下服務都不可以將通知推播至其他任何網域的通道。 如果應用程式的回呼遭到竄改，惡意攻擊者可能會提交通道 URI 來詐騙 WNS。 如果不檢查網域，您的雲端服務可能會不知不覺地將資訊曝露給攻擊者。
--   如果您的雲端服務嘗試將通知傳遞到已過期的通道，WNS 將傳回[回應碼 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes)。 您回應這該代碼的方式為讓您的服務不繼續嘗試傳送通知到該 URI。
+-   如果您的雲端服務嘗試將通知傳遞到已過期的通道，WNS 將傳回[回應碼 410](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))。 您回應這該代碼的方式為讓您的服務不繼續嘗試傳送通知到該 URI。
 
 ## <a name="authenticating-your-cloud-service"></a>驗證您的雲端服務
 
@@ -70,7 +70,7 @@ WNS 驗證配置使用 [OAuth 2.0](https://go.microsoft.com/fwlink/p/?linkid=226
 
 ![雲端服務驗證的 WNS 圖表](images/wns-diagram-02.png)
 
-在向 WNS 進行驗證時，雲端服務會透過安全通訊端階層 (SSL) 提交 HTTP 要求。 參數使用「application/x-www-for-urlencoded」格式提供。 提供在您封裝 SID 」 用戶端\_識別碼 」 欄位，以及您的祕密金鑰在 「 用戶端\_祕密 」 欄位。 如需語法詳細資訊，請參閱[存取權杖要求](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request)參考。
+在向 WNS 進行驗證時，雲端服務會透過安全通訊端階層 (SSL) 提交 HTTP 要求。 參數使用「application/x-www-for-urlencoded」格式提供。 提供在您封裝 SID 」 用戶端\_識別碼 」 欄位，以及您的祕密金鑰在 「 用戶端\_祕密 」 欄位。 如需語法詳細資訊，請參閱[存取權杖要求](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))參考。
 
 **附註**  這是只是範例中，成功運用在自己的程式碼中的不剪下並貼入程式碼。
 
@@ -87,7 +87,7 @@ WNS 驗證配置使用 [OAuth 2.0](https://go.microsoft.com/fwlink/p/?linkid=226
 
 WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存取權杖由包含在 HTTP 回應主體 (使用「application/json」媒體類型) 內的參數傳回。 您的服務收到存取權杖後，就可以傳送通知。
 
-以下範例顯示成功的驗證回應，其中包括存取權杖。 如需語法詳細資訊，請參閱[推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435)。
+以下範例顯示成功的驗證回應，其中包括存取權杖。 如需語法詳細資訊，請參閱[推播通知服務要求和回應標頭](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))。
 
 ``` http
  HTTP/1.1 200 OK   
@@ -113,13 +113,13 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 使用通道 URI，雲端服務就能在有提供給使用者的更新時傳送通知。
 
-上述存取權杖可在多個通知要求重複使用；雲端伺服器不需要針對每個通知要求新的存取權杖。 如果存取權杖已經過期，通知要求會傳回錯誤。 如果存取權杖被拒絕，建議您不要嘗試多次重新傳送您的通知。 如果遇到這種錯誤，您必須要求新存取權杖並重新傳送通知。 如需確切的錯誤碼，請參閱[推播通知回應碼](https://msdn.microsoft.com/library/windows/apps/hh465435)。
+上述存取權杖可在多個通知要求重複使用；雲端伺服器不需要針對每個通知要求新的存取權杖。 如果存取權杖已經過期，通知要求會傳回錯誤。 如果存取權杖被拒絕，建議您不要嘗試多次重新傳送您的通知。 如果遇到這種錯誤，您必須要求新存取權杖並重新傳送通知。 如需確切的錯誤碼，請參閱[推播通知回應碼](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))。
 
 1.  雲端服務向通道 URI 發出 HTTP POST。 這項要求必須透過 SSL 傳送，並且要包含必要的標頭與通知承載。 授權標頭必須包含取得的存取權杖以進行授權。
 
-    以下提供一個要求範例。 如需語法詳細資訊，請參閱[推播通知回應碼](https://msdn.microsoft.com/library/windows/apps/hh465435)。
+    以下提供一個要求範例。 如需語法詳細資訊，請參閱[推播通知回應碼](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))。
 
-    如需撰寫通知裝載的詳細資訊，請參閱[快速入門：將推播通知傳送給](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)。 磚、快顯通知或徽章推播通知的承載是以 XML 內容來提供的，它們遵守各自已定義的[彈性磚結構描述](adaptive-tiles-schema.md)或[傳統磚結構描述](https://msdn.microsoft.com/library/windows/apps/br212853)。 原始通知的承載則沒有指定的結構。 它完全是由應用程式定義的。
+    如需撰寫通知裝載的詳細資訊，請參閱[快速入門：將推播通知傳送給](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))。 磚、快顯通知或徽章推播通知的承載是以 XML 內容來提供的，它們遵守各自已定義的[彈性磚結構描述](adaptive-tiles-schema.md)或[傳統磚結構描述](https://docs.microsoft.com/uwp/schemas/tiles/tiles-xml-schema-portal)。 原始通知的承載則沒有指定的結構。 它完全是由應用程式定義的。
 
     ``` http
      POST https://cloud.notify.windows.com/?token=AQE%bU%2fSjZOCvRjjpILow%3d%3d HTTP/1.1
@@ -145,7 +145,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 -   在任何情況下通知都不應該包含機密或敏感資料。
 -   若要傳送通知，雲端服務必須先向 WNS 驗證並接收存取權杖。
 -   存取權杖只允許雲端服務傳送通知給建立權杖的單一應用程式。 一個存取權杖無法用於傳送通知給多個應用程式。 因此，如果您的雲端服務支援多個應用程式，在將通知推播至每個通道 URI 時，您必須提供應用程式的正確存取權杖。
--   當裝置離線時，WNS 預設將針對每個應用程式最多儲存五個磚通知 (已啟用佇列的情況，否則只儲存一個磚通知)，以及針對每個通道 URI 儲存一個徽章通知，而且不會有任何原始通知。 這個預設的快取行為可以透過 [X-WNS-Cache-Policy 標頭](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache)來變更。 請注意，當裝置離線時，絕不會儲存快顯通知。
+-   當裝置離線時，WNS 預設將針對每個應用程式最多儲存五個磚通知 (已啟用佇列的情況，否則只儲存一個磚通知)，以及針對每個通道 URI 儲存一個徽章通知，而且不會有任何原始通知。 這個預設的快取行為可以透過 [X-WNS-Cache-Policy 標頭](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))來變更。 請注意，當裝置離線時，絕不會儲存快顯通知。
 -   在通知內容針對使用者個人化的案例，WNS 建議雲端服務在收到更新後立即傳送更新。 這個情況的範例包括社交媒體摘要更新、立即通訊邀請、新訊息通知或警示。 或者，您可能遇到將相同的一般性更新頻繁傳送給大量使用者子集的情況；例如，氣象、股票與新聞更新。 WNS 指導方針規定，這些更新的頻率應該最多每 30 分鐘一次。 如果例行更新的頻率更頻繁，使用者或 WNS 可能會判斷有濫用的行為。
 
 ## <a name="expiration-of-tile-and-badge-notifications"></a>磚和徽章通知的到期時間
@@ -153,7 +153,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 根據預設，磚和徽章通知會在下載後的三天到期。 當通知到期的時候，會從磚或佇列中移除內容，不再對使用者顯示。 最佳作法是在所有的磚和徽章通知上設定到期時間 (使用一個對您的應用程式有意義的時間)，如此您的磚內容就不會超過內容的時效性。 明確的到期時間對於已定義存留時間的內容而言很重要。 如果您的雲端服務停止傳送通知或使用者從網路中斷連線一段期間時，這也可以確保會移除過時內容。
 
-您的雲端服務可以藉由設定 X-WNS-TTL HTTP 標頭，指定在傳送通知之後該通知將維持有效狀態的時間 (秒)，以便設定每個通知的到期時間。 如需詳細資訊，請參閱[推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl)。
+您的雲端服務可以藉由設定 X-WNS-TTL HTTP 標頭，指定在傳送通知之後該通知將維持有效狀態的時間 (秒)，以便設定每個通知的到期時間。 如需詳細資訊，請參閱[推播通知服務要求和回應標頭](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))。
 
 例如，在股市交易日，您可以將股價更新到期時間設定為傳送間隔時間的兩倍 (例如，如果是每半小時傳送通知一次，則是接收後的一小時)。 另一個範例是新聞應用程式可能決定每日新聞磚更新的適當到期時間為一天。
 
@@ -244,14 +244,14 @@ async public void CheckForEnergySaving()
 
 
 * [通知區域的圖格](sending-a-local-tile-notification.md)
-* [快速入門：傳送推播通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [如何更新徽章，以透過推播通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何要求、 建立和儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [如何攔截來執行應用程式的通知](https://msdn.microsoft.com/library/windows/apps/xaml/jj709907.aspx)
-* [如何驗證與 Windows 推播通知服務 (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [指導方針和推播通知的檢查清單](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [原始通知](https://msdn.microsoft.com/library/windows/apps/hh761488)
+* [快速入門：傳送推播通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [如何更新徽章，以透過推播通知](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [如何要求、 建立和儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [如何攔截來執行應用程式的通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [如何驗證與 Windows 推播通知服務 (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [推播通知服務要求和回應標頭](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [指導方針和推播通知的檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [原始通知](https://docs.microsoft.com/previous-versions/windows/apps/hh761488(v=win.10))
  
 
  

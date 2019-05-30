@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 606cc68aafa4de110f034336cd5d18bd1426a0a7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 350565d9eccb8b19cf276c800522e28c59c9b10f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596363"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361034"
 ---
 # <a name="raw-notification-overview"></a>原始通知概觀
 
@@ -35,12 +35,12 @@ ms.locfileid: "57596363"
 
 所有原始通知都是推播通知。 因此，傳送和接收推播通知所需的設定也適用於原始通知：
 
--   您必須具備有效的 WNS 通道才能傳送原始通知。 如需取得推播通知通道的詳細資訊，請參閱[如何要求、建立以及儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)。
--   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 [功能] 索引標籤下找到此 [網際網路 (用戶端)] 選項。 如需詳細資訊，請參閱 [**Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
+-   您必須具備有效的 WNS 通道才能傳送原始通知。 如需取得推播通知通道的詳細資訊，請參閱[如何要求、建立以及儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))。
+-   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 [功能]  索引標籤下找到此 [網際網路 (用戶端)]  選項。 如需詳細資訊，請參閱 [**Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
 
 通知的本文是採用應用程式定義的格式。 用戶端會以 null 結尾字串 (**HSTRING**) 的形式接收資料，該字串只需要讓應用程式了解。
 
-如果用戶端處於離線狀態，只有通知中包含 [X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) 標頭時，WNS 才會快取原始通知。 不過，只會快取一個原始通知，並在裝置恢復連線狀態後進行傳送。
+如果用戶端處於離線狀態，只有通知中包含 [X-WNS-Cache-Policy](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 標頭時，WNS 才會快取原始通知。 不過，只會快取一個原始通知，並在裝置恢復連線狀態後進行傳送。
 
 在用戶端上原始通知只能使用三種可能的途徑進行傳送：透過通知傳送事件傳送到正在執行的應用程式、傳送到背景工作或捨棄。 所以，如果用戶端處於離線狀態且 WNS 嘗試傳送原始通知，則會捨棄通知。
 
@@ -50,12 +50,12 @@ ms.locfileid: "57596363"
 傳送原始通知的方式與傳送磚、快顯通知或徽章推播通知類似，但是有一些差異：
 
 -   HTTP Content-Type 標頭必須設定為 "application/octet-stream"。
--   HTTP [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) 標頭必須設定為 "wns/raw"。
+-   HTTP [X-WNS-Type](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 標頭必須設定為 "wns/raw"。
 -   通知本文可以包含小於 5 KB 的任何字串裝載。
 
 原始通知旨在做為可觸發應用程式採取動作的簡短訊息，例如直接連線服務以同步較大量的資料或根據通知內容修改本機狀態。 請注意，WNS 推播通知不保證一定能傳送，所以您的應用程式和雲端服務必須考慮原始通知可能不會送達用戶端的可能性，例如用戶端處於離線狀態時。
 
-如需有關如何傳送推播通知的詳細資訊，請參閱[快速入門：將推播通知傳送給](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)。
+如需有關如何傳送推播通知的詳細資訊，請參閱[快速入門：將推播通知傳送給](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))。
 
 ## <a name="receiving-a-raw-notification"></a>接收原始通知
 
@@ -77,16 +77,16 @@ ms.locfileid: "57596363"
 如果應用程式沒有執行，也沒有使用[背景工作](#background-tasks-triggered-by-raw-notifications)，那麼傳送到該應用程式的任何原始通知，都會在收到後遭 WNS 捨棄。 為了避免浪費雲端服務的資源，您應該考慮在服務實作邏輯，以追蹤應用程式是否正在使用中。 可以從兩個來源獲得這個資訊：應用程式可以明確告訴服務它已準備好開始接收通知，以及 WNS 可以告訴服務何時停止。
 
 -   **應用程式通知的雲端服務**:應用程式可以連絡其的服務，讓它知道應用程式在幕前執行。 這種方式的缺點是應用程式可能會非常頻繁地連絡服務。 不過，它的優點是服務永遠可以知道應用程式何時準備好接收傳入的原始通知。 另一個優點是當應用程式連絡服務時，服務會知道要將原始通知傳送到該應用程式的特定執行個體而不是使用廣播。
--   **WNS 的回應訊息的雲端服務會回應**:可以使用您的 app service [WNS-X-notificationstatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification)並[X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) WNS 來判斷何時停止將未經處理的通知傳送至應用程式所傳回的資訊。 服務以 HTTP POST 的形式將通知傳送到通道時，它可以在回應中接收下列其中一種訊息：
+-   **WNS 的回應訊息的雲端服務會回應**:可以使用您的 app service [WNS-X-notificationstatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))並[X-WNS-DeviceConnectionStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) WNS 來判斷何時停止將未經處理的通知傳送至應用程式所傳回的資訊。 服務以 HTTP POST 的形式將通知傳送到通道時，它可以在回應中接收下列其中一種訊息：
 
     -   **WNS-X-notificationstatus： 卸除**:這表示用戶端未收到通知。 因此可以大膽假設收到 **dropped** 回應的原因是由於您的 app 已不在使用者裝置的前景執行。
-    -   **X WNS DeviceConnectionStatus： 中斷**或是**X-WNS-DeviceConnectionStatus: tempconnected**:這表示，在 Windows 用戶端將不再有給 WNS 的連線。 請注意，若要從 WNS 接收這個訊息，您必須在通知的 HTTP POST 中設定 [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) 標頭來要求該訊息。
+    -   **X WNS DeviceConnectionStatus： 中斷**或是**X-WNS-DeviceConnectionStatus: tempconnected**:這表示，在 Windows 用戶端將不再有給 WNS 的連線。 請注意，若要從 WNS 接收這個訊息，您必須在通知的 HTTP POST 中設定 [X-WNS-RequestForStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 標頭來要求該訊息。
 
     應用程式的雲端服務可以使用這些狀態訊息中的資訊，停止使用原始通知進行通訊。 當應用程式回到前景並連線服務時，服務就可以繼續傳送原始通知。
 
-    請注意，您不應該依賴 [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) 來判斷通知是否已經成功傳送到用戶端。
+    請注意，您不應該依賴 [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 來判斷通知是否已經成功傳送到用戶端。
 
-    如需詳細資訊，請參閱[推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435)
+    如需詳細資訊，請參閱[推播通知服務要求和回應標頭](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
 
 ### <a name="background-tasks-triggered-by-raw-notifications"></a>原始通知觸發的背景工作
 
@@ -117,9 +117,9 @@ ms.locfileid: "57596363"
 
 ## <a name="related-topics"></a>相關主題
 
-* [未經處理的通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761463)
-* [快速入門：建立和註冊原始通知背景工作](https://msdn.microsoft.com/library/windows/apps/jj676800)
-* [快速入門：攔截，執行應用程式的推播通知](https://msdn.microsoft.com/library/windows/apps/jj709908)
+* [未經處理的通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
+* [快速入門：建立和註冊原始通知背景工作](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
+* [快速入門：攔截，執行應用程式的推播通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
  

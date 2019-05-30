@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bd71e4715b26f9e06326690d3642b4d19e23d292
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6c13ac8f1421fe785ebce70789c8ea6d0bf6c068
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617263"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364021"
 ---
 # <a name="access-keys"></a>便捷鍵
 
@@ -29,7 +29,7 @@ ms.locfileid: "57617263"
 
 通用 Windows 平台 (UWP) 針對以鍵盤為基礎的便捷鍵，以及透過視覺提示 (稱為按鍵提示) 的相關 UI 回饋，提供內建支援的跨平台控制項。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 便捷鍵是 Alt 鍵與一或多個英數字元鍵 (有時稱為「*助憶鍵*」) 的組合，通常是循序，而不是同時按下。
 
@@ -259,7 +259,7 @@ _按鍵提示的自動放置的範例_
 
     a.  Key Tip 應該**接近**擁有便捷鍵的項目（擁有者）。  
     b.  按鍵提示應該**避免遮蔽具有便捷鍵的已啟用元素**。   
-    c.  如果按鍵提示無法接近擁有者放置，它應該與擁有者重疊。 
+    c.   如果按鍵提示無法接近擁有者放置，它應該與擁有者重疊。 
 
 2.  **可搜尋性**:使用者可以快速地探索具有按鍵提示的控制項。
 
@@ -353,7 +353,7 @@ _關鍵提示的自訂選項_
 
 XAML 架構公開自動化屬性，可讓 UI 自動化用戶端探索使用者介面項目的相關資訊。
 
-如果您在 UIElement 或 TextElement 控制項上指定 AccessKey 屬性，可以使用 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) 屬性取得這個值。 協助工具用戶端，例如「朗讀程式」，會在項目取得焦點時朗讀這個屬性的值。
+如果您在 UIElement 或 TextElement 控制項上指定 AccessKey 屬性，可以使用 [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) 屬性取得這個值。 協助工具用戶端，例如「朗讀程式」，會在項目取得焦點時朗讀這個屬性的值。
 
 ## <a name="related-articles"></a>相關文章
 

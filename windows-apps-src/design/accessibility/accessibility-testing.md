@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d84683544628a9b6df0eafb2999fabb134465ea8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8af03b32453bcdacb3da95678cf23a988c375f1b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635563"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359637"
 ---
 # <a name="accessibility-testing"></a>協助工具測試  
 
@@ -23,7 +23,7 @@ ms.locfileid: "57635563"
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
 
 ## <a name="run-accessibility-testing-tools"></a>執行協助工具測試工具  
-Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)、[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 和 [**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985)。 這些工具可以協助您確認應用程式的協助工具。 請務必確認所有的 app 案例以及 UI 元素。
+Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope)、[**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) 和 [**UI Accessibility Checker**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-accessibility-checker)。 這些工具可以協助您確認應用程式的協助工具。 請務必確認所有的 app 案例以及 UI 元素。
 
 您可以從 Microsoft Visual Studio 命令提示字元或從 Windows SDK 工具資料夾 (您開發電腦上安裝 Windows SDK 所在的 bin 子目錄) 啟動協助工具測試工具。
   
@@ -35,16 +35,16 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 
 ### <a name="accscope"></a>**AccScope**  
 
-[  **AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 工具可讓開發人員和測試人員在 App 開發和設計期間 (有可能在早期原型階段，而不是 App 開發週期的晚期測試階段) 評估 App 的協助工具。 這是特別針對 App 的朗讀程式協助工具案例測試所設計。
+[  **AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) 工具可讓開發人員和測試人員在 App 開發和設計期間 (有可能在早期原型階段，而不是 App 開發週期的晚期測試階段) 評估 App 的協助工具。 這是特別針對 App 的朗讀程式協助工具案例測試所設計。
 
 <span id="inspect"/>
 <span id="INSPECT"/>
 
 ### <a name="inspect"></a>**Inspect**  
 
-[**檢查**](https://msdn.microsoft.com/library/windows/desktop/Dd318521)可讓您選取任何 UI 項目，並檢視其協助工具資料。 您可以檢視 Microsoft 使用者介面自動化屬性和控制項模式，以及為使用者介面自動化樹狀目錄的自動化元素測試瀏覽結構。 當您開發 UI 時，請使用 **Inspect** 確認協助工具屬性如何在使用者介面自動化中公開。 在某些情況下，屬性來自已經為預設 XAML 控制項實作的使用者介面自動化支援。 在其他情況下，屬性來自已經在 XAML 標記中設定的特定值，如 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) 附加屬性。
+[**檢查**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects)可讓您選取任何 UI 項目，並檢視其協助工具資料。 您可以檢視 Microsoft 使用者介面自動化屬性和控制項模式，以及為使用者介面自動化樹狀目錄的自動化元素測試瀏覽結構。 當您開發 UI 時，請使用 **Inspect** 確認協助工具屬性如何在使用者介面自動化中公開。 在某些情況下，屬性來自已經為預設 XAML 控制項實作的使用者介面自動化支援。 在其他情況下，屬性來自已經在 XAML 標記中設定的特定值，如 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) 附加屬性。
 
-以下影像顯示 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 工具正在查詢「記事本」中 [編輯] 功能表元素的使用者介面自動化屬性。
+以下影像顯示 [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) 工具正在查詢「記事本」中 [編輯]  功能表元素的使用者介面自動化屬性。
 
 ![Inspect 工具螢幕擷取畫面。](./images/inspect.png)
 
@@ -52,19 +52,19 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 <span id="UI_ACCESSIBILITY_CHECKER"/>
 
 ### <a name="ui-accessibility-checker"></a>**使用者介面協助工具檢查程式**  
-**UI 協助工具檢查程式 (AccChecker)** 可協助您找出在執行階段的協助工具問題。 當 UI 設計完成而且功能正常後，請使用 **AccChecker** 測試不同的案例、確認執行階段協助工具資訊是否正確，以及發現執行階段發生的問題。 您可以在 UI 或命令列模式中執行 **AccChecker**。 若要執行 UI 模式工具，請開啟 Windows SDK bin 目錄中的 **AccChecker** 目錄，執行 acccheckui.exe，然後按一下 [說明] 功能表。
+**UI 協助工具檢查程式 (AccChecker)** 可協助您找出在執行階段的協助工具問題。 當 UI 設計完成而且功能正常後，請使用 **AccChecker** 測試不同的案例、確認執行階段協助工具資訊是否正確，以及發現執行階段發生的問題。 您可以在 UI 或命令列模式中執行 **AccChecker**。 若要執行 UI 模式工具，請開啟 Windows SDK bin 目錄中的 **AccChecker** 目錄，執行 acccheckui.exe，然後按一下 [說明]  功能表。
 
 <span id="ui_automation_verify"/>
 <span id="UI_AUTOMATION_VERIFY"/>
 
 ### <a name="ui-automation-verify"></a>**使用者介面自動化確認**  
-「使用者介面自動化驗證 (UIA 驗證)」 是一種使用者介面自動化實作的自動測試和驗證架構。 「UIA 驗證」可以整合到測試程式碼中，並執行使用者介面自動化案例的一般自動測試或抽樣檢查。 若要執行「UIA 驗證」，請從 [UIAVerify] 子目錄執行 VisualUIAVerifyNative.exe。
+「使用者介面自動化驗證 (UIA 驗證)」  是一種使用者介面自動化實作的自動測試和驗證架構。 「UIA 驗證」  可以整合到測試程式碼中，並執行使用者介面自動化案例的一般自動測試或抽樣檢查。 若要執行「UIA 驗證」  ，請從 [UIAVerify] 子目錄執行 VisualUIAVerifyNative.exe。
 
 <span id="accessible_event_watcher"/>
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 
 ### <a name="accessible-event-watcher"></a>**協助工具事件監控程式**  
-[**可存取事件監看員 (AccEvent)** ](https://msdn.microsoft.com/library/windows/desktop/Dd317979)測試是否應用程式的 UI 項目引發適當的 UI 自動化和 Microsoft Active Accessibility 發生事件時 UI 變更。 當焦點變更，或者當叫用、選取 UI 元素，或 UI 元素的狀態或屬性變更時，就會發生 UI 變更。
+[**可存取事件監看員 (AccEvent)** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher)測試是否應用程式的 UI 項目引發適當的 UI 自動化和 Microsoft Active Accessibility 發生事件時 UI 變更。 當焦點變更，或者當叫用、選取 UI 元素，或 UI 元素的狀態或屬性變更時，就會發生 UI 變更。
 
 > [!NOTE]
 > 文件中提及的大部分協助工具測試工具都是在電腦上執行，而不是在手機上執行。 您可以在開發和使用模擬器的同時執行某些工具，不過其中大部分的工具都無法在模擬器內公開使用者介面自動化樹狀目錄。
@@ -95,7 +95,7 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 
 ## <a name="verify-your-app-with-display-settings"></a>使用顯示設定驗證應用程式  
 
-使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，您的 app UI 能夠正確縮放。 (某些使用者變更 dpi 值的協助工具選項，便可從**輕鬆存取**也做為顯示屬性。)如果您發現任何問題，請遵循[版面配置調整指導方針](https://msdn.microsoft.com/library/windows/apps/Dn611863)，並提供不同的縮放比例的其他資源。
+使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，您的 app UI 能夠正確縮放。 (某些使用者變更 dpi 值的協助工具選項，便可從**輕鬆存取**也做為顯示屬性。)如果您發現任何問題，請遵循[版面配置調整指導方針](https://developer.microsoft.com/windows/design)，並提供不同的縮放比例的其他資源。
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -142,9 +142,9 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 
     部分控制項提供其他動作。 若要顯示完整清單，請使用四指點一下。
 
-    如果控制項可以回應滑鼠或鍵盤，但是不能回應主要或次要觸控互動，則該控制項可能需要實作其他 [UI 自動化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)控制項模式。
+    如果控制項可以回應滑鼠或鍵盤，但是不能回應主要或次要觸控互動，則該控制項可能需要實作其他 [UI 自動化](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)控制項模式。
 
-您也應該考慮使用 [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 工具，測試 app 的朗讀程式協助工具案例。 [  **AccScope 工具主題**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)描述如何設定 **AccScope** 以測試朗讀程式案例。
+您也應該考慮使用 [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) 工具，測試 app 的朗讀程式協助工具案例。 [  **AccScope 工具主題**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope)描述如何設定 **AccScope** 以測試朗讀程式案例。
 
 <span id="Examine_the_UI_Automation_representation_for_your_app"/>
 <span id="examine_the_ui_automation_representation_for_your_app"/>
@@ -153,15 +153,15 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 ## <a name="examine-the-ui-automation-representation-for-your-app"></a>檢查適合您應用程式的使用者介面自動化表示法  
 先前提及的數個使用者介面自動化測試工具提供一種方式，以刻意不考量應用程式外觀的方式來檢視您的應用程式，並改以使用者介面自動化元素的結構來呈現應用程式。 這就是協助工具案例中使用者介面自動化用戶端 (主要輔助技術) 將如何與您應用程式進行互動的方式。
 
-[  **AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 工具可為您的應用程式提供特別有趣的檢視，因為您能看見以視覺表示法或清單形式呈現的使用者介面自動化元素。 如果您使用視覺效果，則可利用能與應用程式 UI 視覺化外觀產生關聯的方式，向下切入到組件中。 您甚至可以先測試最早 UI 原型的協助工具，然後將所有邏輯指派到 UI，確定應用程式的視覺化互動與協助工具案例瀏覽可以達成平衡。
+[  **AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) 工具可為您的應用程式提供特別有趣的檢視，因為您能看見以視覺表示法或清單形式呈現的使用者介面自動化元素。 如果您使用視覺效果，則可利用能與應用程式 UI 視覺化外觀產生關聯的方式，向下切入到組件中。 您甚至可以先測試最早 UI 原型的協助工具，然後將所有邏輯指派到 UI，確定應用程式的視覺化互動與協助工具案例瀏覽可以達成平衡。
 
-您可以測試的一個層面是，是否有任何您不想讓其出現在使用者介面自動化元素檢視中的元素出現在其中。 如果您在檢視中發現您想要省略的元素，或反之遺漏了任何元素，則可以使用 [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) XAML 附加屬性，來調整 XAML 控制項出現在協助工具檢視中的方式。 在您看過基本協助工具檢視之後，在使用方向鍵啟用時，這也是個重新檢查 Tab 順序或部分瀏覽的好時機，可確定使用者能到達控制項檢視中可互動且已公開的每一個組件。
+您可以測試的一個層面是，是否有任何您不想讓其出現在使用者介面自動化元素檢視中的元素出現在其中。 如果您在檢視中發現您想要省略的元素，或反之遺漏了任何元素，則可以使用 [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityview) XAML 附加屬性，來調整 XAML 控制項出現在協助工具檢視中的方式。 在您看過基本協助工具檢視之後，在使用方向鍵啟用時，這也是個重新檢查 Tab 順序或部分瀏覽的好時機，可確定使用者能到達控制項檢視中可互動且已公開的每一個組件。
 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
 * [應避免的做法](practices-to-avoid.md)
-* [使用者介面自動化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
+* [使用者介面自動化](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [在 Windows 中的協助工具](https://go.microsoft.com/fwlink/p/?LinkId=320802)
 * [開始使用 [朗讀程式]](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

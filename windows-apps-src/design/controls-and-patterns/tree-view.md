@@ -3,7 +3,7 @@ description: 您可以建立一個可展開的樹狀檢視繫結 ItemsSource 階
 title: 樹狀檢視
 label: Tree view
 template: detail.hbs
-ms.date: 01/03/2019
+ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid
@@ -13,13 +13,13 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.custom: RS5
-ms.openlocfilehash: 7c666d417fb980cab72165681583ac83e9eaca00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: RS5, 19H1
+ms.openlocfilehash: d9f0396558186008430ccf1454e48f5e2194ee0e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628513"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363994"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -85,7 +85,7 @@ TreeView API 支援下列功能：
 > [!IMPORTANT]
 > ItemsSource 和其相關的 Api 都需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或有[Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 >
-> ItemsSource 是 TreeView.RootNodes 用於將內容放入 TreeView 控制項的替代機制。 在此同時，您無法設定 ItemsSource 及 RootNodes。 當您使用 ItemsSource 時，為您建立的節點，您可以從 TreeView.RootNodes 屬性存取它們。
+> ItemsSource 是 TreeView.RootNodes 用於將內容放入 TreeView 控制項的替代機制。 在此同時，您無法設定 ItemsSource 及 RootNodes。 當您使用 ItemsSource 時，節點會為您建立，您可以從 TreeView.RootNodes 屬性存取它們。
 
 以下是使用 XAML 宣告的簡單樹狀檢視範例。 您通常會在程式碼中新增節點，但我們在此顯示 XAML 階層，因為這對視覺化展示如何建立節點階層可能會有幫助。
 
@@ -171,17 +171,17 @@ End Sub
 
 這些 API 可用來管理樹狀檢視的資料階層。
 
-| **[樹狀檢視](/uwp/api/windows.ui.xaml.controls.treeview)** | |
+| **[TreeView](/uwp/api/windows.ui.xaml.controls.treeview)** | |
 | - | - |
 | [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) | 樹狀檢視可以有一或多個根節點。 將 TreeViewNode 物件新增至 RootNodes 集合以建立根節點。 根節點的 **Parent** 永遠為 **null**。 根節點的 **Depth** 為 0。 |
 
 | **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
 | - | - |
-| [子系](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | 將 TreeViewNode 物件新增至父節點的 Children 集合以建立您的節點階層。 節點是其 **Children** 集合中所有節點的 **Parent**。 |
-| [Lt;haschildren>1</haschildren&gt](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | 如果節點有具現化的子系，則為 **true**。 **false** 表示空的資料夾或一個項目。 |
+| [Children](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | 將 TreeViewNode 物件新增至父節點的 Children 集合以建立您的節點階層。 節點是其 **Children** 集合中所有節點的 **Parent**。 |
+| [HasChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | 如果節點有具現化的子系，則為 **true**。 **false** 表示空的資料夾或一個項目。 |
 | [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | 如果您正在節點展開時填滿節點，請使用此屬性。 請參閱本文稍後的＜_當節點正在展開時填滿節點_＞。 |
 | [深度](/uwp/api/windows.ui.xaml.controls.treeviewnode.depth) | 表示子節點距離根節點有多遠。 |
-| [父代](/uwp/api/windows.ui.xaml.controls.treeviewnode.parent) | 取得擁有此節點所屬 **Children** 集合的 TreeViewNode。 |
+| [Parent](/uwp/api/windows.ui.xaml.controls.treeviewnode.parent) | 取得擁有此節點所屬 **Children** 集合的 TreeViewNode。 |
 
 樹狀檢視使用 **HasChildren** 和 **HasUnrealizedChildren** 屬性來判斷展開/摺疊圖示是否已顯示。 如果任一屬性為 **true**，則圖示已顯示，否則未顯示。
 
@@ -932,5 +932,5 @@ End Sub
 ## <a name="related-articles"></a>相關文章
 
 - [TreeView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
-- [ListView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+- [ListView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
 - [ListView 和 GridView](listview-and-gridview.md)

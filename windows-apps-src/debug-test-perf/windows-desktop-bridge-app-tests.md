@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10 uwp 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: 42ec5c1e91fbeebcaad68f346f317893fdfb2e1c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3f979edbd49699447040880964dd1378bc7c94c0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606883"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362077"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
@@ -118,7 +118,7 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 影像 {image name} 不是有效的影像檔。  | 確認所有應用程式影像都遵守適當的檔案格式類型限制。 在實際訊息中，{image name} 包含無效的影像名稱。 
 影像 "BadgeLogo" 在位置 (x, y) 的 ABGR 值 {value} 無效。 像素必須是白色 (##FFFFFF) 或透明 (00######)  | 徽章標誌是出現在徽章通知旁邊的影像，用以在鎖定畫面識別應用程式。 這個影像必須為單色 (只能包含白色和透明像素)。 在實際訊息中，{value} 包含影像中無效的色彩值。 
 影像 "BadgeLogo" 在位置 (x, y) 的 ABGR 值 {value} 對於高對比白色影像無效。 像素必須是 (##2A2A2A) 或較深，或透明 (00######)。  | 徽章標誌是出現在徽章通知旁邊的影像，用以在鎖定畫面識別應用程式。 因為在高對比白色中，徽章標誌會出現在白色背景上，所以它必須是正常徽章標誌的深色版本。 在高對比白色中，徽章標誌只能包含比 (##2A2A2A) 深的像素或透明。 在實際訊息中，{value} 包含影像中無效的色彩值。 
-影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。  | 如需詳細資訊，請參閱[回應式設計](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx)和[應用程式資源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
+影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。  | 如需詳細資訊，請參閱[回應式設計](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)和[應用程式資源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
 套件缺少 "resources.pri" 檔案。  | 如果您的 app 資訊清單中有可當地語系化的內容，app 套件中務必包含有效的 resources.pri 檔案。 
 "resources.pri" 檔案必須包含資源對應，且名稱符合套件名稱 {package full name}  | 如果資訊清單已變更，而 resources.pri 中的資源對應名稱不再符合資訊清單中的套件名稱，就會發生這個錯誤。 在實際訊息中，{package full name} 包含 resources.pri 必須包含的套件名稱。 若要更正此錯誤，您需要重建 resources.pri，最簡單的方式就是重建 app 的套件。 
 "resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這對於您要透過 Microsoft Store 散發的應用程式。 Resources.pri 透過 Microsoft Store 散發的應用程式根目錄中的應用程式的套件，並包含應用程式支援的所有語言參考。 
@@ -156,7 +156,7 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 * **架構相依性規則**  
 這個測試會強制要求應用程式需要宣告與 UWP 的適當相依性。 如果有不適當的相依性，這個測試就會失敗。 如果應用程式設為目標的作業系統版本與建立架構相依性的作業系統版本不符，測試將會失敗。 如果應用程式參照任何「預覽」版本的架構 DLL，則測試也會失敗。
 * **處理序間通訊 (IPC) 驗證**  
-這個測試強制要求傳統型橋接器應用程式不會在應用程式容器外部與傳統型元件通訊。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) 的名稱指定為 `DesktopApplicationPath` 的應用程式將無法通過這個測試。  
+這個測試強制要求傳統型橋接器應用程式不會在應用程式容器外部與傳統型元件通訊。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的名稱指定為 `DesktopApplicationPath` 的應用程式將無法通過這個測試。  
 
 **更正動作**  
 按照 [App 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)中所述的需求來檢閱 App 的資訊清單。
@@ -217,10 +217,10 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 確保應用程式已編譯為發行組建，而非偵錯組建，即可進行修正。 
 
 > [!NOTE]
-> 即使應用程式只會使用應用程式的偵錯組建會讓此測試的失敗[UWP 應用程式的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 檢閱要找出有 API 不允許的 API for UWP 應用程式的錯誤訊息。 
+> 即使應用程式只會使用應用程式的偵錯組建會讓此測試的失敗[UWP 應用程式的 Api](https://docs.microsoft.com/uwp/)。 檢閱要找出有 API 不允許的 API for UWP 應用程式的錯誤訊息。 
 
 > [!NOTE]
-> 內建的偵錯組態的 c + + 應用程式會讓此測試失敗，即使設定只會從 Windows SDK 的 Api 使用 UWP 應用程式。 請參閱[UWP 應用程式中的 Windows Api 替代方案](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)如需詳細資訊。
+> C++內建的偵錯組態的應用程式會讓此測試失敗，即使設定只會從 Windows SDK 的 Api 使用 UWP 應用程式。 請參閱[UWP 應用程式中的 Windows Api 替代方案](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)如需詳細資訊。
 
 ### <a name="6-user-account-control-uac-test"></a>6.使用者帳戶控制 (UAC) 的測試  
 
@@ -286,4 +286,4 @@ Windows 應用程式認證套件中的「禁止的檔案檢查」目前會檢查
 
 ## <a name="related-topics"></a>相關主題
 
-* [Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)

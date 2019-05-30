@@ -1,21 +1,21 @@
 ---
 description: 無論您是剪下新的程式碼或移植現有的應用程式，本主題中的疑難排解問題和解決方式表格可能對您會很有幫助。
 title: 疑難排解 C++/WinRT 問題
-ms.date: 05/07/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、移難排解、HRESULT、錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: 3158c257738e68d74feefda99a9171d25a63fdde
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fe67fd0593c9c1f605a5d1cc7418c348b6ca9c3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606323"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360103"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>疑難排解 C++/WinRT 問題
 
 > [!NOTE]
-> 如需安裝和使用的資訊[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 擴充功能 (VSIX) （這也提供專案範本支援） 請參閱[Visual Studio 支援 C + /cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如需安裝和使用的資訊[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 擴充功能 (VSIX) （這也提供專案範本支援） 請參閱[Visual Studio 支援C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 本主題是預先準備，這樣您就會立即知道；即使您還不需要。 無論您是剪下新的程式碼或移植現有的應用程式，下述疑難排解問題和解決方式表格可能對您會很有幫助。 如果您正在移植，且您急著想要儘快進入建置及執行專案的階段，您可以暫時將任何非必要的程式碼標成註解或移除，稍後再回來清償該負債。
 
@@ -30,27 +30,29 @@ XAML 剖析例外狀況可能難以診斷&mdash;特別是如果例外狀況中�
 | 徵兆 | 解決方式 |
 |---------|--------|
 | 有個例外，在執行階段擲回 REGDB_E_CLASSNOTREGISTERED 的 HRESULT 值。 | 這個錯誤的其中一個原因是無法載入您的 Windows 執行階段元件。 請確定元件的 Windows 執行階段中繼資料檔案 (`.winmd`) 具有與元件二進位相同的名稱 ( `.dll`)，這也是專案名稱以及根命名空間的名稱。 也會確保，Windows 執行階段中繼資料和二進位已由建置程序正確複製到使用中應用程式`Appx`資料夾。 並且確認使用中的應用程式 `AppxManifest.xml`(也在`Appx`資料夾) 包含一個正確宣告啟動類別與二進位檔案名稱的 **&lt;InProcessServer&gt;** 元素。 如果您透過投影類型的預設建構函式犯了具現化一個本機實作執行階段類別的錯誤，也可能會發生這個錯誤。 請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md) 了解如何正確此時使用該案例中的投影類型的詳細資訊。 |
-| C++ 編譯器產生此錯誤 「*'implements_type'：不是 '&lt;投影類型&gt;' 任一直接或間接基底類別的成員之一*」。 | 您呼叫 **make** 實作類型的不完整命名空間名稱 (例如，**MyRuntimeClass**)，且您尚未包含該類型的標頭時，便會發生此情況。 編譯器解譯 **MyRuntimeClass** 做為投影類型。 解決方案會包含適用於您實作類型的標頭 (例如，`MyRuntimeClass.h`)。 |
+| C++ 編譯器產生此錯誤 「 *'implements_type'：不是 '&lt;投影類型&gt;' 任一直接或間接基底類別的成員之一*」。 | 您呼叫 **make** 實作類型的不完整命名空間名稱 (例如，**MyRuntimeClass**)，且您尚未包含該類型的標頭時，便會發生此情況。 編譯器解譯 **MyRuntimeClass** 做為投影類型。 解決方案會包含適用於您實作類型的標頭 (例如，`MyRuntimeClass.h`)。 |
 | C++ 編譯器產生錯誤「*嘗試參考已刪除的函式*」。 | 您呼叫 **make** 且您做為範本參數傳遞的實作類型有一個 `= delete` 預設建構函式時，便會發生此情況。 編輯實作類型的標頭檔案，並變更 `= delete` 為 `= default`。 您也可以將建構函式新增至適用於執行階段類別的 IDL。 |
 | 您已實作 [**INotifyPropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged)，但無法更新您的 XAML 繫結 (且 UI 不訂閱 [**PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged))。 | 請記得在 XAML 標記中的繫結運算式上設定 `Mode=OneWay` (或 TwoWay)。 請參閱 [XAML 控制項；繫結一個 C++/WinRT 屬性](binding-property.md)。 |
-| 您把 XAML 項目控制項繫結到可觀察的集合，且在執行階段擲回一個例外與「參數不正確」的訊息。 | 在您的 IDL 和實作中，宣告任何可觀察的集合做為類型 **Windows.Foundation.Collections.IVector<IInspectable>**。 但傳回實作 **Windows.Foundation.Collections.IObservableVector<T>** 的物件，其中 T 為您的元素類型。 請參閱 [XAML 項目控制項；繫結一個 C++/WinRT 集合](binding-collection.md)。  |
-| C++ 編譯器產生一個錯誤的表單「*' MyImplementationType_base&lt;MyImplementationType&gt;'；沒有適當的預設建構函式可使用*」。|您已從有一個非小型建構函式衍生時，這可能會發生。 您衍生的類型建構函式需要與需要基本類型建構函式的參數一起傳遞。 如需一個已執行的範例，請參閱 [從一個不小的建構函式衍生](author-apis.md#deriving-from-a-type-that-has-a-non-default-constructor)。|
-| C++ 編譯器產生錯誤「*無法從 'const std::vector&lt;std::wstring,std::allocator&lt;_Ty&gt;&gt;' 轉換至 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*」。|您將 std::wstring 的 std::vector 傳遞到除了一個集合之外的 Windows 執行階段 API，便可能會發生此情況。 如需詳細資訊，請參閱 [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)。|
-| C++ 編譯器產生錯誤「*無法從 'const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;' 轉換至 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*」。|當您將 winrt::hstring 的 std::vector 傳遞至除了一個集合之外的 Windows 執行階段 API，且您已沒有將向量複製或移動到非同步被呼叫者，便會發生此情況。 如需詳細資訊，請參閱 [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)。|
-| 打開一個專案時，Visual Studio 產生此錯誤「*未安裝此專案的應用程式*」。|如果您尚未開始，您需要從 Visual Studio 的**新專案**對話方塊中安裝 **C++ 開發 Windows 通用工具**。 如果這無法解決問題，則專案可能相依於 C + + /cli WinRT Visual Studio 擴充功能 (VSIX) (請參閱[Visual Studio 支援 C + /cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。|
-| Windows 應用程式認證套件測試會產生錯誤執行階段類別的其中一個 「*並非衍生自 Windows 基底類別。可組合的所有類別最終必須都衍生自 Windows 命名空間中的型別*"。|任何執行階段類別 （您在您的應用程式中宣告時） 衍生自基底類別，稱為*簡式*類別。 可組合的 ultimate 基底類別必須是類別的類型，源自於 windows.* 命名空間;例如， [ **Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。 請參閱[XAML 控制項，繫結至 C + + /cli WinRT 屬性](binding-property.md)如需詳細資訊。|
-| C++ 編譯器產生一個 EventHandler 或 TypedEventHandler 特定委派的「*必須為 WinRT 類型*」錯誤。|請考慮改用 **winrt::delegate&lt;...T&gt;**。 請參閱 [在 C++/WinRT 中撰寫事件](author-events.md)。|
-| C++ 編譯器產生一個特定 Windows 執行階段非同步作業的「*必須為 WinRT 類型*」錯誤。|請考慮改傳回平行模式程式庫 (PPL) [**工作**](https://msdn.microsoft.com/library/hh750113)。 請查閱[並行和非同步作業](concurrency.md)。|
-| C++ 編譯器產生「*錯誤 C2220：警告視為錯誤，不產生 '物件' 檔案*」。|請更正這個警告，或是設定**C/c + +** > **一般** > **警告視為錯誤**至**否 (/ WX-)**。|
+| 您把 XAML 項目控制項繫結到可觀察的集合，且在執行階段擲回一個例外與「參數不正確」的訊息。 | 在您的 IDL 和實作中，宣告任何可觀察的集合做為類型 **Windows.Foundation.Collections.IVector<IInspectable>** 。 但傳回實作 **Windows.Foundation.Collections.IObservableVector<T>** 的物件，其中 T 為您的元素類型。 請參閱 [XAML 項目控制項；繫結一個 C++/WinRT 集合](binding-collection.md)。  |
+| C++ 編譯器產生一個錯誤的表單「 *' MyImplementationType_base&lt;MyImplementationType&gt;'；沒有適當的預設建構函式可使用*」。|您已從有一個非小型建構函式衍生時，這可能會發生。 您衍生的類型建構函式需要與需要基本類型建構函式的參數一起傳遞。 如需一個已執行的範例，請參閱 [從一個不小的建構函式衍生](author-apis.md#deriving-from-a-type-that-has-a-non-default-constructor)。|
+| C++ 編譯器產生錯誤「*無法從 'const std::vector&lt;std::wstring,std::allocator&lt;_Ty&gt;&gt;' 轉換至 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'* 」。|您將 std::wstring 的 std::vector 傳遞到除了一個集合之外的 Windows 執行階段 API，便可能會發生此情況。 如需詳細資訊，請參閱 [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)。|
+| C++ 編譯器產生錯誤「*無法從 'const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;' 轉換至 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'* 」。|當您將 winrt::hstring 的 std::vector 傳遞至除了一個集合之外的 Windows 執行階段 API，且您已沒有將向量複製或移動到非同步被呼叫者，便會發生此情況。 如需詳細資訊，請參閱 [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)。|
+| 打開一個專案時，Visual Studio 產生此錯誤「*未安裝此專案的應用程式*」。|如果您尚未開始，您需要從 Visual Studio 的**新專案**對話方塊中安裝 **C++ 開發 Windows 通用工具**。 如果這無法解決問題，則專案可能取決於C++WinRT Visual Studio 擴充功能 (VSIX) (請參閱[Visual Studio 支援C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。|
+| Windows 應用程式認證套件測試會產生錯誤執行階段類別的其中一個 「*並非衍生自 Windows 基底類別。可組合的所有類別最終必須都衍生自 Windows 命名空間中的型別*"。|任何執行階段類別 （您在您的應用程式中宣告時） 衍生自基底類別，稱為*簡式*類別。 可組合的 ultimate 基底類別必須是類別的類型，源自於 windows.* 命名空間;例如， [ **Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。 請參閱[XAML 控制項，繫結至C++/WinRT 屬性](binding-property.md)如需詳細資訊。|
+| C++ 編譯器產生一個 EventHandler 或 TypedEventHandler 特定委派的「*必須為 WinRT 類型*」錯誤。|請考慮改用 **winrt::delegate&lt;...T&gt;** 。 請參閱 [在 C++/WinRT 中撰寫事件](author-events.md)。|
+| C++ 編譯器產生一個特定 Windows 執行階段非同步作業的「*必須為 WinRT 類型*」錯誤。|請考慮改傳回平行模式程式庫 (PPL) [**工作**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class)。 請查閱[並行和非同步作業](concurrency.md)。|
+| C++ 編譯器產生「*錯誤 C2220：警告視為錯誤，不產生 '物件' 檔案*」。|請更正這個警告，或是設定**C /C++**  > **一般** > **警告視為錯誤**若要**否 (/ WX-)** 。|
 | 您的應用程式當機，因為在終結物件後，呼叫了在 C++/WinRT 物件中處理的事件。|請參閱[安全地存取*這*事件處理委派指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。|
-| C + + 編譯器會產生 「*錯誤 C2338:這是僅針對弱式參考支援*"。|您為將 **winrt::no_weak_ref** 標記結構做為範本引數傳遞至其基底類別的類型，要求一個弱式參考資料。 請參閱[退出弱式參考支援](weak-references.md#opting-out-of-weak-reference-support)。|
-| C + + 連結器會產生 「*LNK2019 錯誤：無法解析的外部符號*"|請參閱[為什麼連結器提供 「 LNK2019:無法解析的外部符號 」 錯誤？](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).|
-| LLVM 和 Clang 工具鏈會產生錯誤時搭配 C + + /cli WinRT。|我們不支援 LLVM 和 Clang 工具鏈，C + /cli WinRT，但如果您想要模擬我們如何使用它在內部，則您可以嘗試實驗如中所述的其中一個[我可以使用 LLVM/Clang 方式，來編譯以 C + + /cli WinRT？](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)。|
-| C + + 編譯器會產生 「*沒有適當的預設建構函式可用*」 的投影的型別。 | 如果您想要延遲初始化的執行階段類別物件，或要取用，並在相同專案中，實作的執行階段類別，則您必須呼叫`nullptr_t`建構函式。 如需詳細資訊，請參閱 [使用 C++/WinRT 取用 API](consume-apis.md)。 |
-| C + + 編譯器會產生 「*錯誤 c3861:: 'from_abi': 找不到識別碼*」，及其他錯誤源自*base.h*。 您會看到此錯誤，如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 Windows SDK 版本 10.0.17134.0 (Windows 10 1803年版) 為目標。 | 其中一個目標更新版本 （更一致） 版本的 Windows SDK 或將專案屬性**C/c + +** > **語言** > **一致性模式：否**(此外，如果 **/permissive--** 會顯示在專案屬性**C/c + +** > **語言** > **命令列**底下**其他選項**，再將它刪除)。 |
-| C + + 編譯器會產生 「*錯誤 C2039:'IUnknown': 不是成員 '\`全域命名空間'*"。 | 請參閱[如何將目標重定您 C + + /cli 至較新版的 Windows sdk 的 WinRT 專案](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
-| C + + 連結器會產生 「*錯誤 LNK2019： 無法解析的外部符號_WINRT_CanUnloadNow@0函式中參考_VSDesignerCanUnloadNow@0* " | 請參閱[如何將目標重定您 C + + /cli 至較新版的 Windows sdk 的 WinRT 專案](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
-| 建置程序會產生錯誤訊息*c + + /cli WinRT VSIX 不再提供專案的建置支援。請加入 Microsoft.Windows.CppWinRT Nuget 套件的專案參考*。 | 安裝**Microsoft.Windows.CppWinRT** NuGet 套件納入您的專案。 如需詳細資訊，請參閱 < [VSIX 擴充功能的舊版](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。 |
+| C++編譯器會產生 「*產生錯誤 C2338:這是僅針對弱式參考支援*"。|您為將 **winrt::no_weak_ref** 標記結構做為範本引數傳遞至其基底類別的類型，要求一個弱式參考資料。 請參閱[退出弱式參考支援](weak-references.md#opting-out-of-weak-reference-support)。|
+| C++連結器會產生 「*LNK2019 錯誤：無法解析的外部符號*"|請參閱[為什麼連結器提供 「 LNK2019:無法解析的外部符號 」 錯誤？](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).|
+| LLVM 和 Clang 工具鏈會產生錯誤，當搭配C++/WinRT。|我們不支援 LLVM 和 Clang 工具鏈，用於C++/WinRT，但如果您想要模擬我們如何使用它在內部，則您可以嘗試實驗如中所述的其中一個[可以使用 LLVM/Clang 編譯與C++/WinRT？](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)。|
+| C++編譯器會產生 「*沒有適當的預設建構函式可用*」 的投影的型別。 | 如果您想要延遲初始化的執行階段類別物件，或要取用，並在相同專案中，實作的執行階段類別，則您必須呼叫`nullptr_t`建構函式。 如需詳細資訊，請參閱 [使用 C++/WinRT 取用 API](consume-apis.md)。 |
+| C++編譯器會產生 「*錯誤 c3861:: 'from_abi': 找不到識別碼*」，及其他錯誤源自*base.h*。 您會看到此錯誤，如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 Windows SDK 版本 10.0.17134.0 (Windows 10 1803年版) 為目標。 | 其中一個目標更新版本 （更一致） 版本的 Windows SDK 或將專案屬性**C /C++**  > **語言** > **一致性模式：否**(此外，如果 **/permissive--** 會顯示在專案屬性**C /C++**  > **語言** >  **Command Line**底下**其他選項**，再將它刪除)。 |
+| C++編譯器會產生 「*錯誤 C2039:'IUnknown': 不是成員 '\`全域命名空間'* "。 | 請參閱[如何將目標重定您C++/WinRT 專案至較新版的 Windows sdk](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
+| C++連結器會產生 「*錯誤 LNK2019： 無法解析的外部符號_WINRT_CanUnloadNow@0函式中參考_VSDesignerCanUnloadNow@0* " | 請參閱[如何將目標重定您C++/WinRT 專案至較新版的 Windows sdk](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
+| 建置程序會產生錯誤訊息 *C++WinRT VSIX 不再提供專案的建置支援。請加入 Microsoft.Windows.CppWinRT Nuget 套件的專案參考*。 | 安裝**Microsoft.Windows.CppWinRT** NuGet 套件納入您的專案。 如需詳細資訊，請參閱 < [VSIX 擴充功能的舊版](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。 |
+| C++編譯器會產生錯誤訊息中提及 *'std::experimental'* ，和/或錯誤格式的*錯誤 c3861:: 'resume_background': 找不到識別碼*。 | 自[ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)，任何的協同程式支援 (包括協同程式協助程式，例如**winrt::resume_background**， **winrt::resume_foreground**，和**winrt::resume_on_signal**)，您將需要`#include <winrt/coroutine.h>`。 |
+| C++連結器會產生*錯誤 LNK2019： 無法解析的外部符號*，以有關*winrt::impl::consume_Windows_Foundation_Collections_IVector*。 | 自[ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)，如果您使用範圍架構`for`上 Windows 執行階段集合，然後您現在必須`#include <winrt/Windows.Foundation.Collections.h>`。 |
 
 > [!NOTE]
-> 如果本主題不到解答您的問題，則您可能會發現說明，請造訪[Visual Studio c + + 開發人員社群](https://developercommunity.visualstudio.com/spaces/62/index.html)，或使用[ `c++-winrt` Stack Overflow 上標記](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)。
+> 如果本主題不到解答您的問題，則您可能會發現說明，請造訪[Visual StudioC++開發人員社群](https://developercommunity.visualstudio.com/spaces/62/index.html)，或使用[`c++-winrt`在 Stack Overflow 上標記](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)。

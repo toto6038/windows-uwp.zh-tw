@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb7cb68b57e3d9b30a25237a63410d3bfa319b3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0a7cf1e89c91f9ad53777aa21af1d43e070c4fc8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645083"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362224"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
@@ -34,7 +34,7 @@ ms.locfileid: "57645083"
 
 我們會透過認證測試來測試 app 的復原能力和穩定性。
 
-Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 以啟動 app。 為了讓 **ActivateApplication** 啟動 app，必須啟用使用者帳戶控制 (UAC)，而且螢幕解析度至少必須為 1024 x 768 或 768 x 1024。 如果任一條件不符合，您的 app 就無法通過這個測試。
+Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 以啟動 app。 為了讓 **ActivateApplication** 啟動 app，必須啟用使用者帳戶控制 (UAC)，而且螢幕解析度至少必須為 1024 x 768 或 768 x 1024。 如果任一條件不符合，您的 app 就無法通過這個測試。
 
 ### <a name="corrective-actions"></a>修正動作
 
@@ -42,10 +42,10 @@ Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::Acti
 
 確定您在螢幕夠大的電腦上執行測試。
 
-如果您的 app 無法啟動，但測試平台符合 [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 的先決條件，則您可以檢閱啟用事件記錄檔以疑難排解問題。 在事件記錄檔中找到這些項目：
+如果您的 app 無法啟動，但測試平台符合 [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 的先決條件，則您可以檢閱啟用事件記錄檔以疑難排解問題。 在事件記錄檔中找到這些項目：
 
 1.  開啟 eventvwr.exe 並瀏覽至應用程式及服務記錄檔\\Microsoft\\Windows\\Immersive 殼層資料夾。
-2.  篩選檢視，以顯示事件識別碼：5900-6000。
+2.  篩選檢視，以顯示事件識別碼：5900-6000.
 3.  查閱記錄項目，尋找說明為什麼應用程式無法啟動的資訊。
 
 疑難排解有問題的檔案，並尋找和修正問題。 重新建置並重新測試應用程式。 您也可以檢查 Windows 應用程式認證套件記錄檔資料夾中是否已產生可用來偵錯應用程式的傾印檔案。
@@ -64,7 +64,7 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 ### <a name="corrective-action"></a>修正動作
 
-應用程式應該使用「版本 API」協助程式函式進行檢查。 如需詳細資訊，請參閱[作業系統版本](https://msdn.microsoft.com/library/windows/desktop/ms724832)。
+應用程式應該使用「版本 API」協助程式函式進行檢查。 如需詳細資訊，請參閱[作業系統版本](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)。
 
 ## <a name="background-tasks-cancellation-handler-validation"></a>背景工作取消處理常式驗證
 
@@ -80,7 +80,7 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 ### <a name="corrective-action"></a>修正動作
 
-新增取消處理常式到 app。 如需詳細資訊，請參閱[使用背景工作支援 app](https://msdn.microsoft.com/library/windows/apps/Mt299103)。
+新增取消處理常式到 app。 如需詳細資訊，請參閱[使用背景工作支援 app](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 ## <a name="app-count"></a>應用程式計數
 
@@ -110,7 +110,7 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 ### <a name="test-details"></a>測試詳細資料
 
-檢查 App 資訊清單，確認內容是正確的，如 [App 套件需求](https://msdn.microsoft.com/library/windows/apps/Mt148525)中所述。
+檢查 App 資訊清單，確認內容是正確的，如 [App 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。
 
 -   **副檔名和通訊協定**
 
@@ -124,11 +124,11 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 -   **處理序間通訊 (IPC) 驗證**
 
-    這項測試會強制執行的 UWP 應用程式不通訊桌面元件的應用程式容器之外的需求。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) 的名稱指定為 "DesktopApplicationPath" 的 App 將無法通過這個測試。
+    這項測試會強制執行的 UWP 應用程式不通訊桌面元件的應用程式容器之外的需求。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的名稱指定為 "DesktopApplicationPath" 的 App 將無法通過這個測試。
 
 ### <a name="corrective-action"></a>修正動作
 
-按照 [App 套件需求](https://msdn.microsoft.com/library/windows/apps/Mt148525)中所述的需求來檢閱 App 的資訊清單。
+按照 [App 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的需求來檢閱 App 的資訊清單。
 
 ## <a name="windows-security-features-test"></a>Windows 安全性功能測試
 
@@ -172,7 +172,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 請勿在強式命名的組件上使用 APTCA 屬性，除非您的專案需要，而且您充分了解風險。 若有必要，請務必使用適當的程式碼存取安全性要求來保護所有 API。 當組件是通用 Windows 平台 (UWP) app 的一部分時，APTCA 沒有任何作用。
 
-**註解**
+**備註**
 
 這個測試只會在 Managed 程式碼 (C#、.NET 等) 執行。
 
@@ -186,7 +186,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 建置您的應用程式時，在連結器命令中啟用 /SAFESEH 選項。 在 Visual Studio 的發行組態中，這個選項預設會處於開啟。 針對您應用程式中的所有可執行檔模組，確認建置指示中的這個選項已經啟用。
 
-**註解**
+**備註**
 
 測試不會在 64 位元的二進位檔或 ARM 晶片組二進位檔上執行，原因是兩者不會在堆疊上儲存例外處理常式位址。
 
@@ -200,7 +200,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 建置您的應用程式時，在連結器命令中啟用 /NXCOMPAT 選項。 在支援資料執行防止 (DEP) 的連結器版本中，這個選項預設會處於開啟。
 
-**註解**
+**備註**
 
 建議您在支援 DEP 的 CPU 上測試應用程式，並修正由 DEP 所導致的任何失敗。
 
@@ -214,7 +214,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 建置您的應用程式時，在連結器命令中啟用 /DYNAMICBASE 選項。 確認您應用程式使用的所有模組也都使用這個連結器選項。
 
-**註解**
+**備註**
 
 通常 ASLR 不會影響效能。 但在某些情況下，可稍微改善 32 位元系統上的效能。 系統若將許多影像載入多個不同的記憶體位置而發生嚴重壅塞，可能會使效能降低。
 
@@ -224,13 +224,13 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 **Windows 應用程式認證套件出現錯誤訊息：** SharedSectionsCheck 測試失敗。
 
-含有標示為共用可寫入區段的二進位檔便是一個安全性威脅。 除非必要，否則不要建置含有共用可寫入區段的應用程式。 使用 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) 或 [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) 建立有適當安全保護的共用記憶體物件。
+含有標示為共用可寫入區段的二進位檔便是一個安全性威脅。 除非必要，否則不要建置含有共用可寫入區段的應用程式。 使用 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 建立有適當安全保護的共用記憶體物件。
 
 **如果通過此測試您的應用程式，該怎麼辦**
 
-從 app 中移除任何共用的區段，然後搭配適當的安全性屬性來呼叫 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) 或 [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) 以建立共用的記憶體物件，然後重新建置您的 app。
+從 app 中移除任何共用的區段，然後搭配適當的安全性屬性來呼叫 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 以建立共用的記憶體物件，然後重新建置您的 app。
 
-**註解**
+**備註**
 
 這個測試只能在以 Unmanaged 語言 (如 C 或 C++) 撰寫的應用程式上執行。
 
@@ -246,7 +246,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 如果 managed 可執行檔無法通過測試，請確定您使用的最新的編譯器和連結器，例如 Microsoft Visual Studio 中，若要建置的 UWP 應用程式。
 
-**註解**
+**備註**
 
 這個測試會在所有 .exe 檔案和 Unmanaged DLL 上執行。
 
@@ -260,7 +260,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 不要將匯入表格合併到可執行程式碼區段中。 確定 Visual C++ 連結器的 */merge* 旗標沒有設定為將 ".rdata" 區段合併到程式碼區段中。
 
-**註解**
+**備註**
 
 這個測試會在完全 Managed 組件以外的所有二進位程式碼上執行。
 
@@ -274,7 +274,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 請確定二進位檔沒有寫入或可執行檔的區段，二進位檔的*SectionAlignment*值是至少等於其*頁\-大小*。
 
-**註解**
+**備註**
 
 這個測試會在所有 .exe 檔案和原生的 Unmanaged DLL 上執行。
 
@@ -315,11 +315,11 @@ UWP 應用程式 （Windows 執行階段或支援的 Win32 Api） 通過 Microso
 
 確定 app 是編譯為發行組建而不是偵錯組建。
 
-> **附註**  應用程式的偵錯組建將會失敗這項測試，即使應用程式只會使用[UWP 應用程式的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
+> **附註**  應用程式的偵錯組建將會失敗這項測試，即使應用程式只會使用[UWP 應用程式的 Api](https://docs.microsoft.com/uwp/)。
 
-檢閱錯誤訊息，以識別此 API 不是應用程式會使用[適用於 UWP 應用程式的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
+檢閱錯誤訊息，以識別此 API 不是應用程式會使用[適用於 UWP 應用程式的 API](https://docs.microsoft.com/uwp/)。
 
-> **附註**  內建的偵錯組態的 c + + 應用程式將會失敗這項測試，即使設定只會從 Windows SDK 的 Api 使用 UWP 應用程式。 查看，請[UWP 應用程式中的 Windows Api 替代方案](https://go.microsoft.com/fwlink/p/?LinkID=244022)如需詳細資訊。
+> **附註**   C++內建的偵錯組態的應用程式將會失敗這項測試，即使設定只會從 Windows SDK 的 Api 使用 UWP 應用程式。 查看，請[UWP 應用程式中的 Windows Api 替代方案](https://go.microsoft.com/fwlink/p/?LinkID=244022)如需詳細資訊。
 
 ## <a name="performance-tests"></a>效能測試
 
@@ -412,7 +412,7 @@ UWP 應用程式 （Windows 執行階段或支援的 Win32 Api） 通過 Microso
 <tr><td>
 <p>影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。</p>
 </td><td>
-<p>如需詳細資訊，請參閱 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">UWP app 回應設計 101</a> 和 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">app 資源的指導方針</a>。</p>
+<p>如需詳細資訊，請參閱 <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">UWP app 回應設計 101</a> 和 <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">app 資源的指導方針</a>。</p>
 </td></tr>
 <tr><td>
 <p>套件缺少 "resources.pri" 檔案。</p>
@@ -434,7 +434,7 @@ UWP 應用程式 （Windows 執行階段或支援的 Win32 Api） 通過 Microso
 <tr><td>
 <p>字串 {string} 不符合 {number} 個字元的長度上限限制。</p>
 </td><td>
-<p>請參閱 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">app 套件需求</a>。</p>
+<p>請參閱 <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">app 套件需求</a>。</p>
 <p>在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。</p>
 </td></tr>
 <tr><td>
@@ -447,12 +447,12 @@ UWP 應用程式 （Windows 執行階段或支援的 Win32 Api） 通過 Microso
 <tr><td>
 <p>字串必須為非空白 (長度大於零)</p>
 </td><td>
-<p>如需詳細資訊，請參閱 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">app 套件需求</a>。</p>
+<p>如需詳細資訊，請參閱 <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">app 套件需求</a>。</p>
 </td></tr>
 <tr><td>
 <p>"resources.pri" 檔案中沒有指定預設資源。</p>
 </td><td>
-<p>如需詳細資訊，請參閱 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">app 資源的指導方針</a>。</p>
+<p>如需詳細資訊，請參閱 <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">app 資源的指導方針</a>。</p>
 <p>在預設建置組態中，當產生套件組合、將其他資源放在資源套件中時，Visual Studio 只會在 app 套件中包含縮放比例-200 影像資源。 請確定您包含縮放比例-200 影像資源，或將您的專案設定為包含您所擁有的資源。</p>
 </td></tr>
 <tr><td>
@@ -551,15 +551,15 @@ Microsoft Store 需要使用 Direct3D 轉譯正確，或依正常程序在失敗
 
 ### <a name="background"></a>背景
 
-如果 app 未在本身的 Direct3D 裝置上呼叫 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346)，該 app 就不會釋放它為較早的 3D 工作所配置的記憶體。 這會增加應用程式由於系統記憶體壓力而終止的風險。
+如果 app 未在本身的 Direct3D 裝置上呼叫 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)，該 app 就不會釋放它為較早的 3D 工作所配置的記憶體。 這會增加應用程式由於系統記憶體壓力而終止的風險。
 
 ### <a name="test-details"></a>測試詳細資料
 
-檢查 app 是否符合 d3d 需求，確保 app 在暫停回呼時，呼叫新的 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API。
+檢查 app 是否符合 d3d 需求，確保 app 在暫停回呼時，呼叫新的 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ### <a name="corrective-action"></a>修正動作
 
-每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) 介面上呼叫 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API。
+每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 介面上呼叫 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ## <a name="app-capabilities-test"></a>App 功能測試
 
@@ -668,5 +668,5 @@ WinJS 背景工作測試可確保 JavaScript 應用程式具備適當的 close �
 ## <a name="related-topics"></a>相關主題
 
 * [Windows 傳統型橋接器應用程式測試](windows-desktop-bridge-app-tests.md)
-* [Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)
  

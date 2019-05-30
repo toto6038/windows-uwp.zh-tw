@@ -5,18 +5,18 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592953"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361226"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 
 本教學課程告訴您如何自訂 XAML 應用程式的 UI。 警告：本教學課程不一定會涉及獨角獸。 (確實如此！)  
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 * [Visual Studio 2017 和 Windows 10 SDK (10.0.15063.468 或更新版本)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>第 0 部分：取得程式碼
@@ -60,9 +60,10 @@ PhotoLab 應用程式有兩個主要頁面：
 
     [Windows.XAML.Ui.Shapes 命名空間](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)提供七個可以選擇的圖形。 有橢圓形、矩形，以及所謂「路徑」的項目，這可建立任何類型的圖形；是的，甚至獨角獸都行！ 
     
-    <!-- TODO reduce size --> ![Unicorn](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size -->
+    ![Unicorn](../basics/images/xaml-basics/unicorn.png)
     
-    > **了解它：**[繪製圖案](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章會告訴您想要知道有關 XAML 圖形的所有項目。 
+    > **了解它：** [繪製圖案](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章會告訴您想要知道有關 XAML 圖形的所有項目。 
     
     我們想要建立三角形外觀的介面控件，就像在立體音響音量控制上看到的圖形一樣。
     
@@ -87,7 +88,7 @@ PhotoLab 應用程式有兩個主要頁面：
         Minimum="-2"
         Maximum="2" />
     ```
-    **之後**
+    **After**
     ```xaml
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -134,7 +135,7 @@ PhotoLab 應用程式有兩個主要頁面：
             Minimum="-1"
             Maximum="1" />
     ```
-    **之後**
+    **After**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -179,7 +180,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
 XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式碼數量，而且可以讓您更新應用程式外觀更加輕鬆得多。
 
-若要定義樣式，請將 [Style](https://msdn.microsoft.com/library/windows/apps/br208849) 元素新增至包含需要設定樣式之控制項的元素的 [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) 屬性。  如果將樣式新增至 **Page.Resources** 屬性，整個頁面都可以存取您的樣式。 如果將樣式新增至 App.xaml 檔案中的 **Application.Resources** 屬性，整個應用程式都可以存取該樣式。
+若要定義樣式，請將 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素新增至包含需要設定樣式之控制項的元素的 [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) 屬性。  如果將樣式新增至 **Page.Resources** 屬性，整個頁面都可以存取您的樣式。 如果將樣式新增至 App.xaml 檔案中的 **Application.Resources** 屬性，整個應用程式都可以存取該樣式。
 
 您可以建立具名樣式和一般樣式。 具名樣式必須明確套用至特定控制項；一般樣式則套用至任何符合指定之 **TargetType** 的控制項。 
 
@@ -262,7 +263,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Grid.Resources>
     ```
 
-    **之後**
+    **After**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -302,7 +303,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             </Style>                            
     ```    
 
-    **之後**
+    **After**
     ```XAML
             <Style TargetType="TextBlock"
                    x:Key="ValueTextBox">
@@ -325,7 +326,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```
 
-    **之後**
+    **After**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -337,7 +338,8 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
 
 6. 編譯和執行應用程式。 應該看起來... 都一樣。 但您會有美妙滿意成就感撰寫有效率可維護的程式碼。
 
-<!-- TODO add new start/end points --> 恭喜，您已完成第 2 部分 ！
+<!-- TODO add new start/end points -->
+恭喜，您已完成 2 部分！
 
 
 ## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>第 3 部分：使用控制項範本來製作花俏的滑桿
@@ -347,7 +349,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
 嗯，工作是完成了，但還有更好的方式來達到相同的效果：建立控制項範本。 
 
 <!-- TODO add new starting points -->
-1. 在 [方案總管] 面板中，按兩下 **\[DetailPage.xaml\]**。
+1. 在 [方案總管] 面板中，按兩下 **\[DetailPage.xaml\]** 。
 
 2. 接下來，將預設控制範本用於滑桿做為我們的起始點。 將此 XAML 新增至 **Page.Resources** 元素  (**Page.Resources** 元素較靠近頁面開頭)。
 
@@ -646,7 +648,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Grid.RowDefinitions>        
     ```
 
-    **之後**
+    **After**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -691,7 +693,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Polygon>           
     ```
     
-    **之後**
+    **After**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -711,7 +713,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
                     Grid.ColumnSpan="3" />          
     ```
     
-    **之後**
+    **After**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Height="{ThemeResource SliderTrackThemeHeight}"
@@ -750,7 +752,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Template="{StaticResource FancySliderControlTemplate}"/>    
     ```
     
-    **之後**
+    **After**
     ```XAML
     <Slider Header="Exposure" 
             Grid.Row="2"  Foreground="Transparent"
@@ -791,7 +793,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Maximum="1" />
     ```
     
-    **之後**
+    **After**
     ```XAML
     <Slider Header="Temperature"
             Grid.Row="3" Foreground="Transparent"
@@ -833,7 +835,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Maximum="1" />
     ```
     
-    **之後**
+    **After**
     ```XAML
     <Slider Header="Tint"
             Grid.Row="4" Foreground="Transparent"
@@ -858,4 +860,5 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
     
     如您所見，我們更新改善了多邊形的置放方式；現在多邊形的底部已對齊滑桿縮圖的底部。
     
-<!-- TODO correct folder --> 恭喜，您已經完成本教學課程 ！ 如果遇到困難或想要查看最終方案，您可以在 [UWP app 範例存放庫](https://github.com/Microsoft/Windows-universal-samples)中找到完整的範例。
+<!-- TODO correct folder -->
+恭喜，您已經完成教學課程了！ 如果遇到困難或想要查看最終方案，您可以在 [UWP app 範例存放庫](https://github.com/Microsoft/Windows-universal-samples)中找到完整的範例。

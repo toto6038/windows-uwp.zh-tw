@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cb87bea001492e39a0f60b96f884db70b5bd28ad
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d5774b5301f7e8ce0616df72cfbf4fc81d0d0cf7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592523"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363245"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 
@@ -153,7 +153,7 @@ CommandBarFlyout 控制項具有可用來將命令和內容的 2 個屬性：[Pr
 
 ### <a name="app-bar-buttons"></a>應用程式列按鈕
 
-您可以填入 PrimaryCommands 和直接與 SecondaryCommands [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)， [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx)，並[AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx)控制項。
+您可以填入 PrimaryCommands 和直接與 SecondaryCommands [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)， [AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton)，並[AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator)控制項。
 
 應用程式列按鈕控制項可依圖示和文字標籤加以區分。 這些控制項適用於在命令列中使用，其外觀會變更取決於在命令列或溢位功能表是否顯示控制項。
 
@@ -411,4 +411,4 @@ TextCommandBarFlyout 無法自訂，並自動管理的每個文字控制項。 �
 ## <a name="related-articles"></a>相關文章
 
 - [命令用於 UWP 應用程式的設計基本概念](../basics/commanding-basics.md)
-- [CommandBar 類別](https://msdn.microsoft.com/library/windows/apps/dn279427)
+- [CommandBar 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

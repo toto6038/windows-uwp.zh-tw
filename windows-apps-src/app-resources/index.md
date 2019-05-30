@@ -7,12 +7,12 @@ ms.date: 10/20/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: a5af904c099b92e399f169221cae3122f358be19
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f40a68b6e07a90bcb1ce1d646bdfc0dfb4553495
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582212"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359415"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>應用程式資源和資源管理系統
 
@@ -36,7 +36,7 @@ ms.locfileid: "57582212"
 | [URI 配置](uri-schemes.md) | 有幾個可供您用來參考您的應用程式套件、您的應用程式資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從您應用程式的檔案資源 (.resw) 載入的字串。 |
 | [指定您的應用程式使用的預設資源](specify-default-resources-installed.md) | 如果您的應用程式沒有符合客戶裝置特定設定的資源，則會使用應用程式的預設資源。 本主題說明如何指定這些預設資源的內容。 |
 | [將資源建置到您的應用程式套件，而不是資源套件](build-resources-into-app-package.md) | 某些類型的應用程式 (多語系字典、翻譯工具等) 需要覆寫應用程式套件組合的預設行為，並將資源建置到應用程式套件中，而不是讓這些資源分散在不同的資源套件中。 本主題說明如何執行這個動作。 |
-| [套件資源索引 (PRI) API 和自訂建置系統](pri-apis-custom-build-systems.md) | 您可以使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，開發適用於您的 UWP 應用程式資源的自訂建置系統。 建置系統可以依據 UWP 應用程式所需的任何複雜層級，建立套件資源索引 (PRI) 檔案並對這些檔案進行版本控制和傾印 (為 XML)。 |
+| [套件資源索引 (PRI) API 和自訂建置系統](pri-apis-custom-build-systems.md) | 您可以使用[套件資源索引 (PRI) API](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)，開發適用於您的 UWP 應用程式資源的自訂建置系統。 建置系統可以依據 UWP 應用程式所需的任何複雜層級，建立套件資源索引 (PRI) 檔案並對這些檔案進行版本控制和傾印 (為 XML)。 |
 | [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md) | MakePri.exe 是一個命令列工具，您可以用來建立和傾印 PRI 檔案。 其做為 MSBuild 的一部分整合到 Microsoft Visual Studio 中，但用於手動建立套件或自訂組建系統也很有用。 |
 | [在舊版應用程式或遊戲中使用 Windows 10 資源管理系統](using-mrt-for-converted-desktop-apps-and-games.md) | 將您的 .NET 或 Win32 應用程式或遊戲封裝成 AppX 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的應用程式資源。 這個深入主題說明技術。 |
 

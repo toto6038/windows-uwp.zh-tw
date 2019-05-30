@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 321f8efc1475bc153102f3f8157cd2d094b37077
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 71150df50a7c7e01293d4ec638f520239124e7cd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630133"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359411"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>當地語系化您 UI 及應用程式封裝資訊清單中的字串
 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
@@ -69,7 +69,7 @@ Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 您可以明確地載入依據簡單字串資源識別碼的字串資源。
 
 > [!NOTE]
-> 如果您已呼叫任何*可能*會在背景/背景工作執行緒中執行的 **GetForCurrentView** 方法，請使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 測試來守護這個呼叫。 從背景/背景工作執行緒呼叫 **GetForCurrentView** 會造成例外狀況「無法在沒有 CoreWindow 的執行緒上建立 *&lt;typename&gt;。*」
+> 如果您已呼叫任何*可能*會在背景/背景工作執行緒中執行的 **GetForCurrentView** 方法，請使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 測試來守護這個呼叫。 從背景/背景工作執行緒呼叫 **GetForCurrentView** 會造成例外狀況「無法在沒有 CoreWindow 的執行緒上建立 *&lt;typename&gt;。* 」
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
@@ -132,7 +132,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ![新增資源，法文](images/addresource-fr-fr.png)
 
 ## <a name="test-your-app"></a>測試您的應用程式
-針對您的預設顯示語言來測試應用程式。 您可以接著在 **\[設定\]** > **\[時間與語言\]** > **\[地區與語言\]** > **\[語言\]** 變更顯示語言，並重新測試您的 App。 查看 UI 和命令介面 (例如您的標題列&mdash;這是您的顯示名稱&mdash;，以及您的磚上的簡短名稱) 中的字串。
+針對您的預設顯示語言來測試應用程式。 您可以接著在 **\[設定\]**  >  **\[時間與語言\]**  >  **\[地區與語言\]**  >  **\[語言\]** 變更顯示語言，並重新測試您的 App。 查看 UI 和命令介面 (例如您的標題列&mdash;這是您的顯示名稱&mdash;，以及您的磚上的簡短名稱) 中的字串。
 
 **注意** 如果找到符合顯示語言設定的資料夾名稱，則該資料夾中的資源檔案已載入。 否則，會發生遞補，以您的 App 預設語言的資源結束。
 
@@ -152,7 +152,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 以下程式碼範例假設 `ErrorMessages.resw` 包含的資源其名稱為「MismatchedPasswords」，其值描述錯誤。
 
 > [!NOTE]
-> 如果您已呼叫任何*可能*會在背景/背景工作執行緒中執行的 **GetForCurrentView** 方法，請使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 測試來守護這個呼叫。 從背景/背景工作執行緒呼叫 **GetForCurrentView** 會造成例外狀況「無法在沒有 CoreWindow 的執行緒上建立 *&lt;typename&gt;。*」
+> 如果您已呼叫任何*可能*會在背景/背景工作執行緒中執行的 **GetForCurrentView** 方法，請使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 測試來守護這個呼叫。 從背景/背景工作執行緒呼叫 **GetForCurrentView** 會造成例外狀況「無法在沒有 CoreWindow 的執行緒上建立 *&lt;typename&gt;。* 」
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ErrorMessages");
@@ -282,15 +282,15 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 架構套件可以存取自己具有絕對資源識別碼 URI 的資源。 另請參閱 [URI 配置](uri-schemes.md)。
 
 ## <a name="important-apis"></a>重要 API
-* [ApplicationModel.Resources.ResourceLoader](https://msdn.microsoft.com/library/windows/apps/br206014)
+* [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
 * [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>相關主題
 * [移植的 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [X:uid 指示詞](../xaml-platform/x-uid-directive.md)
+* [x:Uid directive](../xaml-platform/x-uid-directive.md)
 * [附加的屬性](../xaml-platform/attached-properties-overview.md)
 * [可當地語系化資訊清單的項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [量身打造您的語言、 規模和其他辨識符號的資源](tailor-resources-lang-scale-contrast.md)
-* [如何載入字串資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)
+* [如何載入字串資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965323(v=win.10))

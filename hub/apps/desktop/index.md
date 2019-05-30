@@ -8,12 +8,12 @@ keywords: windows win32, 傳統型應用程式
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 437ee2352eceb8776b79f05f77867ccffdea6521
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: c69c744684d05c3ad64d98fbda30a3ccfdc91080
+ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215021"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266418"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>建置 Windows PC 適用的傳統型應用程式
 
@@ -30,7 +30,7 @@ ms.locfileid: "66215021"
                     </div>
                     <div class="cardText">
                         <h3>選擇您的平台</h3>
-                        <p></p>深入了解傳統型 Windows 應用程式的應用程式平台，包括 UWP、WPF、Windows Forms 及 Win32。</p>
+                        <p></p>選擇應用程式平台，開始建立新的桌面應用程式：UWP、WPF、Windows Form 或 Win32。</p>
                     </div>
                 </div>
             </div>
@@ -76,19 +76,19 @@ ms.locfileid: "66215021"
       </a>
     </li>
 </ul>
-    <ul class="cardsY panelContent featuredContent">
+<ul class="cardsY panelContent featuredContent">
        <li>
-            <a href="/windows/desktop/appxpkg/windows-desktop-application-program">
+            <a href="https://developer.microsoft.com/windows/downloads">
                 <div class="cardSize">
                     <div class="cardPadding">
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_code-performance.svg?branch=master" src="/media/common/i_code-performance.svg?branch=master" alt="Performance icon" />
+                                    <img data-hoverimage="/media/common/i_tools.svg?branch=master" src="/media/common/i_tools.svg?branch=master" alt="Tools icon" />
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Windows 傳統型應用程式</h3>
+                                <h3>下載工具</h3>
                             </div>
                         </div>
                     </div>
@@ -96,17 +96,17 @@ ms.locfileid: "66215021"
             </a>
         </li>
         <li>
-            <a href="https://developer.microsoft.com/windows/desktop/app-compatibility">
+            <a href="https://developer.microsoft.com/windows/samples">
                 <div class="cardSize">
                     <div class="cardPadding">
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_code-quality.svg?branch=master" src="/media/common/i_code-quality.svg?branch=master" alt="App compatibility icon" />
+                                    <img data-hoverimage="/media/common/i_code-samples.svg?branch=master" src="/media/common/i_code-samples.svg?branch=master" alt="Samples icon" />
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>保持與 Windows 10 相容</h3>
+                                <h3>範例</h3>
                             </div>
                         </div>
                     </div>
@@ -114,24 +114,24 @@ ms.locfileid: "66215021"
             </a>
         </li>
        <li>
-            <a href="https://developer.microsoft.com/windows/enterprise">
+            <a href="/windows/desktop/apiindex/api-index-portal">
                 <div class="cardSize">
                     <div class="cardPadding">
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_form.svg?branch=master" src="/media/common/i_form.svg?branch=master" alt="Enterprise icon" />
+                                    <img data-hoverimage="/media/common/i_api-reference.svg?branch=master" src="/media/common/i_api-reference.svg?branch=master" alt="API index icon" />
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>企業應用程式</h3>
+                                <h3>API 索引</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </a>
         </li>
-    </ul>
+</ul>
 <hr />
 <h2>平台和功能</h2>
 <ul class="cardsK panelContent">
@@ -249,6 +249,62 @@ ms.locfileid: "66215021"
         </div>
       </a>
     </li>
+</ul>
+<ul class="cardsY panelContent featuredContent">
+       <li>
+            <a href="/windows/desktop/appxpkg/windows-desktop-application-program">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_code-performance.svg?branch=master" src="/media/common/i_code-performance.svg?branch=master" alt="Performance icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>Windows 傳統型應用程式</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="https://developer.microsoft.com/windows/desktop/app-compatibility">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_code-quality.svg?branch=master" src="/media/common/i_code-quality.svg?branch=master" alt="App compatibility icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>保持與 Windows 10 相容</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+       <li>
+            <a href="https://developer.microsoft.com/windows/enterprise">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_form.svg?branch=master" src="/media/common/i_form.svg?branch=master" alt="Enterprise icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>企業應用程式</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
 </ul>
 <hr/>
 </div>

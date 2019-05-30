@@ -1,16 +1,16 @@
 ---
 description: 本主題示範如何使用 C++/WinRT API，無論 Windows、第三方元件廠商或您自己是否實作它們。
 title: 使用 C++/WinRT 來使用 API
-ms.date: 05/08/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影的、投影、實作、執行階段類別、啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 545ce8c5e18a9cc1016f4bf09e5d062b5b31b5a6
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: e6bf1e7fb32533aa9d7b865ac7c8afc374290e54
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921704"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360344"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 來使用 API
 
@@ -19,9 +19,10 @@ ms.locfileid: "58921704"
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>如果 API 在 Windows 命名空間中
 這是您使用 Windows 執行階段 API 最常見的案例。 適用於中繼資料中定義的 Windows 命名空間裡每一類型，C++/WinRT 定義 C++ 適用的對等項目 (稱為 *投影類型*)。 投影類型有相同的完整名稱做為 Windows 類型，但它放在使用 C++ syntax 的 C++ **winrt** 命名空間。 例如，將 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 投影到 C++/WinRT 做為 **winrt::Windows::Foundation::Uri**。
 
-以下是一個簡單的程式碼範例。
+以下是一個簡單的程式碼範例。 如果您想要複製-貼上下列程式碼範例直接到的主要原始程式碼檔案**Windows 主控台應用程式 (C++/WinRT)** 專案，則第一組**未使用先行編譯標頭**在 專案屬性。
 
 ```cppwinrt
+// main.cpp
 #include <winrt/Windows.Foundation.h>
 
 using namespace winrt;
@@ -40,9 +41,9 @@ int main()
 > [!TIP]
 > 每當您要使用從 Windows 命名空間投影到 C++/WinRT，請包含對應到該命名空間的 C++/WinRT 標頭。 `using namespace` 指示詞是選擇性的，但很便利。
 
-上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，[**Uri(String)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) 堆疊配置 **winrt::Windows::Foundation::Uri** 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
+上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，[**Uri(String)** ](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) 堆疊配置 **winrt::Windows::Foundation::Uri** 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
 
-事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為，**Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下圖所示，預估的值的成員呼叫實際委派，透過智慧型指標，以支援的物件;這是狀態變更發生的位置。
+事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為，**Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下圖所示，預估的值的成員呼叫實際委派，透過智慧型指標，以支援的物件;這是狀態變更發生的位置。
 
 ![投影 Windows::Foundation::Uri 類型](images/uri.png)
 
@@ -86,6 +87,7 @@ WINRT_ASSERT(contosoUri.ToString() == L"http://www.contoso.com/"); // QueryInter
 透過查詢適當的介面達成此便利。 但是，您隨時可以控制。 您可以透過自我擷取 IStringable 介面並直接使用，來選擇放棄一點方便以獲得一點效能。 在下列程式碼範例中，您可以在執行階段取得實際 IStringable 介面指標（透過一次性查詢）。 之後，您便直接呼叫 **ToString**，並避免任何進一步呼叫 **QueryInterface**。
 
 ```cppwinrt
+...
 IStringable stringable = contosoUri; // One-off QueryInterface.
 WINRT_ASSERT(stringable.ToString() == L"http://www.contoso.com/");
 ```
@@ -95,10 +97,21 @@ WINRT_ASSERT(stringable.ToString() == L"http://www.contoso.com/");
 順帶一提，如果您想要存取 ABI 層級的成員，接著您便可以存取。 下列程式碼範例顯示執行的方式，以及 [C++/WinRT 和 ABI 間的互通性](interop-winrt-abi.md) 裡的更多詳細資料和程式碼範例。
 
 ```cppwinrt
-int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+#include <Windows.Foundation.h>
+#include <unknwn.h>
+#include <winrt/Windows.Foundation.h>
+using namespace winrt::Windows::Foundation;
 
-winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
-HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
+int main()
+{
+    winrt::init_apartment();
+    Uri contosoUri{ L"http://www.contoso.com" };
+
+    int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+
+    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
+    HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
+}
 ```
 
 ## <a name="delayed-initialization"></a>延遲初始化
@@ -107,6 +120,8 @@ HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
 using namespace winrt::Windows::Storage::Streams;
+
+#define MAX_IMAGE_SIZE 1024
 
 struct Sample
 {
@@ -119,11 +134,19 @@ struct Sample
 private:
     Buffer m_gamerPicBuffer{ nullptr };
 };
+
+int main()
+{
+    winrt::init_apartment();
+    Sample s;
+    // ...
+    s.DelayedInit();
+}
 ```
 
 所有投影類型的預設建構函式*除了*`nullptr_t` 建構函式，皆導致建立支援 Windows 執行階段物件。 `nullptr_t` 建構函式基本上是沒有選項。 它預期在後續次數會初始化投影物件。 因此，不管執行階段類別是否有預設建構函式，您都可以使用這項技術有效地延遲初始化。
 
-這項考量會影響其他位置叫用預設建構函式，例如在向量和對應的位置。 請考慮這個程式碼範例。
+這項考量會影響其他位置叫用預設建構函式，例如在向量和對應的位置。 請考慮此程式碼範例中，您將需要**空白應用程式 (C++/WinRT)** 專案。
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
@@ -145,7 +168,7 @@ lookup.insert_or_assign(2, value);
 
 您的應用程式專案中，參考 Windows 執行階段元件的 Windows 執行階段中繼資料 (`.winmd`) 檔案，並建置。 在建置期間，`cppwinrt.exe` 工具產生完整描述的標準 C++ 程式庫&mdash;或 *投影*&mdash;適用於元件的 API 介面。 換言之，產生的程式庫包含適用於元件的投影類型。
 
-然後，就像 Windows 命名空間類型一樣，您包含標頭並透過其中一個建構函式建構投影類型。 您的應用程式專案啟動程式碼註冊執行階段類別，且投影類別的建構函式呼叫 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646)，從參考的元件啟動執行階段類別。
+然後，就像 Windows 命名空間類型一樣，您包含標頭並透過其中一個建構函式建構投影類型。 您的應用程式專案啟動程式碼註冊執行階段類別，且投影類別的建構函式呼叫 [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)，從參考的元件啟動執行階段類別。
 
 ```cppwinrt
 #include <winrt/BankAccountWRC.h>
@@ -163,6 +186,8 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 從 XAML UI 使用的類型必須是執行階段類別，即使是在像 XAML 一樣的專案。
 
 針對這個案例，您從執行階段類別的 Windows 執行階段中繼資料 (`.winmd`) 產生一個投影類別。 同樣地，您包含標頭，但這次透過其 `nullptr` 建構函式建構投影類型。 該建構函式不執行任何初始設定，因此您接下來必須透過 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 協助程式函式將一個值指派給執行個體，傳遞任何必要的建構函式引數。 在如同使用程式碼相同的專案中實作執行階段類別不需要註冊，也不用透過 Windows 執行階段/COM 啟用初始化。
+
+您將需要**空白應用程式 (C++/WinRT)** 此程式碼範例的專案。
 
 ```cppwinrt
 // MainPage.h
@@ -211,7 +236,7 @@ myrc2 = winrt::make<MyProject::implementation::MyRuntimeClass>();
 
 - 您可以存取所有投影類型介面的成員。
 - 您可以將投影類型傳回給呼叫者。
-- 投影類型與介面從 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 衍生。 因此，您可以在投影類型或介面上呼叫 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)，查詢其他投影介面，您可以也可以使用或將其傳回給呼叫者。 **as** 成員函式如同 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) 一樣運作。
+- 投影類型與介面從 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 衍生。 因此，您可以在投影類型或介面上呼叫 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)，查詢其他投影介面，您可以也可以使用或將其傳回給呼叫者。 **as** 成員函式如同 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 一樣運作。
 
 ```cppwinrt
 void f(MyProject::MyRuntimeClass const& myrc)
@@ -256,15 +281,15 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ```
 
 ## <a name="important-apis"></a>重要 API
-* [QueryInterface 介面](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [RoActivateInstance 函式](https://msdn.microsoft.com/library/br224646)
+* [QueryInterface 介面](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [RoActivateInstance 函式](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)
 * [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
-* [winrt::get_activation_factory 函式範本](/uwp/cpp-ref-for-winrt/get-activation-factory)
-* [winrt::make 函式範本](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown 結構](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::get_activation_factory 函式樣板](/uwp/cpp-ref-for-winrt/get-activation-factory)
+* [winrt::make 函式樣板](/uwp/cpp-ref-for-winrt/make)
+* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相關主題
-* [在 C++/WinRT 中撰寫事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [撰寫中的事件C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
 * [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md)
 * [C++/WinRT 的簡介](intro-to-using-cpp-with-winrt.md)
-* [XAML 控制項；繫結一個 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [XAML 控制項；繫結至一個 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

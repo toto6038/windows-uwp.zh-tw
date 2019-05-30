@@ -8,12 +8,12 @@ keywords: 觸控板、PTP、觸控、指標、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 895bf1ffe4fc79a65fdf452235ee9466e91b7215
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7a4c3c5e2c3041aef3e2223e3bb45c1c3d3d37ad
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593903"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365265"
 ---
 # <a name="touchpad-design-guidelines"></a>觸控板設計指導方針
 
@@ -42,7 +42,7 @@ ms.locfileid: "57593903"
 
 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及一般較小目標的生產力應用程式和桌面環境兩者。 針對觸控輸入最佳化您的 UWP app 設計，獲得預設的觸控板支援。
 
-因為觸控板支援整合的互動體驗，所以我們建議使用 [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) 事件，在內建的觸控輸入支援以外，還提供滑鼠樣式的 UI 命令。 例如，使用 [上一頁] 和 [下一頁] 按鈕，讓使用者翻頁內容以及移動瀏覽內容。
+因為觸控板支援整合的互動體驗，所以我們建議使用 [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件，在內建的觸控輸入支援以外，還提供滑鼠樣式的 UI 命令。 例如，使用 [上一頁] 和 [下一頁] 按鈕，讓使用者翻頁內容以及移動瀏覽內容。
 
 本主題中討論的手勢和指導方針可以協助您確保您的應用程式使用最少的程式碼就能順暢地支援觸控板輸入。
 
@@ -119,7 +119,7 @@ ms.locfileid: "57593903"
 ## <a name="hardware"></a>硬體
 
 
-查詢滑鼠裝置的功能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626))，了解觸控板硬體可以直接存取應用程式 UI 的什麼層面。 建議提供同時適用於觸控與滑鼠輸入的 UI。
+查詢滑鼠裝置的功能 ([**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities))，了解觸控板硬體可以直接存取應用程式 UI 的什麼層面。 建議提供同時適用於觸控與滑鼠輸入的 UI。
 
 如需有關查詢裝置功能的詳細資訊，請參閱[識別輸入裝置](identify-input-devices.md)。
 
@@ -132,14 +132,14 @@ ms.locfileid: "57593903"
 -   請勿搭配觸控板互動使用焦點矩形。 請保留這些給鍵盤互動。
 -   如果所有元素均代表相同的輸入目標，請同時顯示視覺化回饋。
 
-如需有關視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465342)。
+如需有關視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-visualfeedback)。
 
 ## <a name="cursors"></a>游標
 
 
 我們提供了一組可用於觸控板指標的標準游標。 它們可用來指示元素的主要動作。
 
-每一個標準游標都有與其關聯之相對應的預設影像。 使用者或應用程式可以隨時取代與任何標準游標相關聯的預設影像。 UWP app 透過 [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 函式指定游標影像。
+每一個標準游標都有與其關聯之相對應的預設影像。 使用者或應用程式可以隨時取代與任何標準游標相關聯的預設影像。 UWP app 透過 [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 函式指定游標影像。
 
 如果您需要自訂滑鼠游標：
 

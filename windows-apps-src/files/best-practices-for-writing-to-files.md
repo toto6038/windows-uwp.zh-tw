@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e0fcb903bd272bd10d434a27d41e6e4558a624ea
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a6a1d93b1deaad084ff25db946199b678b35703c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334896"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369515"
 ---
 # <a name="best-practices-for-writing-to-files"></a>寫入檔案的最佳做法
 
@@ -192,7 +192,7 @@ else
 
 ### <a name="synchronize-access-to-the-file"></a>同步處理檔案的存取權
 
-[平行程式設計.NET 部落格](https://blogs.msdn.microsoft.com/pfxteam/)是平行程式設計的相關指引的絕佳資源。 特別是，[發表 AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)描述如何維護的獨佔存取權的檔案進行寫入，同時允許並行的讀取權限。 請注意，序列化的 I/O 會影響效能。
+[平行程式設計.NET 部落格](https://devblogs.microsoft.com/pfxteam/)是平行程式設計的相關指引的絕佳資源。 特別是，[發表 AsyncReaderWriterLock](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)描述如何維護的獨佔存取權的檔案進行寫入，同時允許並行的讀取權限。 請注意，序列化的 I/O 會影響效能。
 
 ## <a name="see-also"></a>另請參閱
 

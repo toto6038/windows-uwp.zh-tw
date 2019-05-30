@@ -8,12 +8,12 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c05b6686d31606a9510b1433339dc8829a52893
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.openlocfilehash: 34f8d15b971cc9ed286471010a21d1b44b84af13
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59247176"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363464"
 ---
 # <a name="guidelines-for-touch-targets"></a>觸控目標的指導方針
 
@@ -25,7 +25,7 @@ ms.locfileid: "59247176"
 
 本主題中，我們會說明這些預設行為，讓您可以設計您的應用程式使用平台控制項和自訂控制項 （應您的應用程式需要它們） 的最大可用性。
 
-> **重要的 Api**:[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 Api**:[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [ **Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="fluent-standard-sizing"></a>Fluent 標準的調整大小
 
@@ -77,14 +77,14 @@ Compact 的調整大小可以套用在頁面或方格層級。
 
 ## <a name="related-articles"></a>相關文章
 
-- [UWP 應用程式設計簡介](../basics/design-and-ui-intro.md)
+- [UWP app 設計](../basics/design-and-ui-intro.md)
 - [控制項大小和密度](../style/spacing.md)
-- [對齊、邊界、邊框間距](../layout/alignment-margin-padding.md)
+- [對齊、 邊界、 邊框間距](../layout/alignment-margin-padding.md)
 
 ### <a name="samples"></a>範例
 
-- [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 - [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
@@ -93,8 +93,8 @@ Compact 的調整大小可以套用在頁面或方格層級。
 - [輸入：XAML 使用者輸入的事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
 - [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
 - [輸入：觸控的點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-- [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+- [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
 - [輸入：簡化的手寫範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 - [輸入：Windows 8 筆勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
 - [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-- [DirectX 觸控輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+- [DirectX 觸控的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)

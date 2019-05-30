@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a9991cd4a0a3fce630b1c7be64650c79daf74e6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8f00bb9449d9e48518d16e08fa6b6665eecd2f85
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597403"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359738"
 ---
 # <a name="accessibility-in-the-store"></a>市集中的協助工具  
 
@@ -21,7 +21,7 @@ ms.locfileid: "57597403"
 
 描述在 Microsoft Store 中，宣告您的通用 Windows 平台 (UWP) app 可提供無障礙功能的要求條件。
 
-將您的 App 送出到 Microsoft Store 進行認證時，您可以宣告 App 可提供無障礙功能。 將您的應用程式宣告為無障礙應用程式，可以讓需要使用無障礙應用程式的使用者 (例如視覺障礙者) 比較容易找到這些程式。 使用者搜尋 Microsoft Store 時，可以使用 **\[無障礙\]** 篩選器尋找無障礙 app。 宣告您的 App 可提供無障礙功能時，也會在您的 App 介紹加上 [無障礙] 標記。
+將您的 App 送出到 Microsoft Store 進行認證時，您可以宣告 App 可提供無障礙功能。 將您的應用程式宣告為無障礙應用程式，可以讓需要使用無障礙應用程式的使用者 (例如視覺障礙者) 比較容易找到這些程式。 使用者搜尋 Microsoft Store 時，可以使用 **\[無障礙\]** 篩選器尋找無障礙 app。 宣告您的 App 可提供無障礙功能時，也會在您的 App 介紹加上 [無障礙]  標記。
 
 將 app 宣告為無障礙 app，說明該 app 具有符合使用者主要案例所需的[基本協助工具資訊](basic-accessibility-information.md)，可使用下列一或多個項目：
 
@@ -40,7 +40,7 @@ ms.locfileid: "57597403"
     * 使用鍵盤快速鍵，存取主要的應用程式功能。
     * 在未配置鍵盤的裝置，針對等同於 Tab 鍵和方向鍵的動作使用朗讀程式觸控手勢。
 * 確保您的應用程式 UI 不會造成視覺上的障礙；文字對比率至少要 4.5:1，且不會單獨依賴色彩來傳達資訊等。
-* 使用協助工具測試工具 (例如 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 和 [**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986)) 驗證您實作的無障礙功能，並解決此類工具報告的所有第 1 優先順序錯誤。
+* 使用協助工具測試工具 (例如 [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) 和 [**UIAVerify**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-automation-verify)) 驗證您實作的無障礙功能，並解決此類工具報告的所有第 1 優先順序錯誤。
 * 使用朗讀程式、放大鏡、螢幕小鍵盤、高對比佈景主題，以及調整過的 DPI 設定，全盤檢驗 App 的各個主要功能。
 
 請參閱[協助工具檢查清單](accessibility-checklist.md)，了解可協助您完成工作的相關程序和資源連結。

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e50d3613e5f7058e99f2e71ba023fb4191e5c734
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9ecb325566733e57c1ae9d1a13c68b25794e9e87
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644533"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360043"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
 
@@ -41,10 +41,10 @@ ms.locfileid: "57644533"
 3.  在 \[**工作排程器**\] 的左窗格中，展開 \[**工作排程器程式庫**\]。
 4.  展開 \[**Microsoft**\]。
 5.  展開 \[**Windows**\]。
-6.  選取 \[**.NET Framework**\]。
-7.  從工作清單選取 \[**.NET Framework NGEN 4.x**\]。
+6.  選取 \[ **.NET Framework**\]。
+7.  從工作清單選取 \[ **.NET Framework NGEN 4.x**\]。
 
-    如果您是使用 64 位元電腦，也有 \[**.NET Framework NGEN v4.x 64**\]。 如果您要建立 64 位元應用程式，請選取 \[**.NET Framework NGEN v4.x 64**\]。
+    如果您是使用 64 位元電腦，也有 \[ **.NET Framework NGEN v4.x 64**\]。 如果您要建立 64 位元應用程式，請選取 \[ **.NET Framework NGEN v4.x 64**\]。
 
 8.  從 \[**動作**\] 功能表，按一下 \[**執行**\]。
 
@@ -60,7 +60,7 @@ Ngen.exe 會預先編譯電腦上所有已經使用且沒有原生映像的應�
 
 即使您的 App 有部分無法完整運作，它仍然可以與使用者互動。 例如，如果應用程式顯示資料時需要一些時間抓取，您可以在不考慮應用程式啟動程式碼的情況下，用非同步的方式抓取資料來執行程式碼。 等到資料可供使用時，再將該資料填入 App 的使用者介面。
 
-許多抓取資料的「通用 Windows 平台」(UWP) API 都是非同步的，因此無論如何，您可能都會以非同步的方式抓取資料。 如需有關非同步 API 的詳細資訊，請參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/Mt187337)。 如果您執行未使用非同步 API 的工作，則可以使用 Task 類別來進行長時間執行的工作，這樣您就不會阻礙使用者與 App 互動。 這將可使 App 在載入資料時，仍然可以回應使用者。
+許多抓取資料的「通用 Windows 平台」(UWP) API 都是非同步的，因此無論如何，您可能都會以非同步的方式抓取資料。 如需有關非同步 API 的詳細資訊，請參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 如果您執行未使用非同步 API 的工作，則可以使用 Task 類別來進行長時間執行的工作，這樣您就不會阻礙使用者與 App 互動。 這將可使 App 在載入資料時，仍然可以回應使用者。
 
 如果 App 在載入其部分 UI 時花費的時間特別長，請考慮在該部分新增像是「正在取得最新資料」的字串，讓使用者知道應用程式仍然在進行處理。
 
@@ -103,11 +103,11 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 -   UserControl 和控制項範本將會擴充，因此也應將這些納入考量。
 -   如果您建立任何不會顯示在螢幕上的 XAML，則您應該要有正當的理由確定這些 XAML 片段是否應該在啟動時建立。
 
-[Visual Studio 即時視覺化樹狀結構](https://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx)視窗會顯示樹狀結構中每個節點的子元素計數。
+[Visual Studio 即時視覺化樹狀結構](https://devblogs.microsoft.com/visualstudio/introducing-the-ui-debugging-tools-for-xaml/)視窗會顯示樹狀結構中每個節點的子元素計數。
 
 ![即時視覺化樹狀結構。](images/live-visual-tree.png)
 
-**使用延遲**。 將元素摺疊或將其不透明度設定為 0 並不會防止建立該元素。 使用 x:Load 或 x:DeferLoadStrategy，您便可延遲載入某個 UI，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在啟動畫面期間不顯示的 UI，讓您在需要時才載入該 UI，或是隨著延遲邏輯一起載入。 若要觸發載入，您只需要針對該元素呼叫 FindName。 如需範例和詳細資訊，請參閱 [x:Load 屬性](../xaml-platform/x-load-attribute.md)和 [x:DeferLoadStrategy 屬性](https://msdn.microsoft.com/library/windows/apps/Mt204785)。
+**使用延遲**。 將元素摺疊或將其不透明度設定為 0 並不會防止建立該元素。 使用 x:Load 或 x:DeferLoadStrategy，您便可延遲載入某個 UI，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在啟動畫面期間不顯示的 UI，讓您在需要時才載入該 UI，或是隨著延遲邏輯一起載入。 若要觸發載入，您只需要針對該元素呼叫 FindName。 如需範例和詳細資訊，請參閱 [x:Load 屬性](../xaml-platform/x-load-attribute.md)和 [x:DeferLoadStrategy 屬性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute)。
 
 **虛擬化**。 如果您的 UI 中有清單或重複器內容，則強烈建議您使用 UI 虛擬化。 如果不將清單 UI 虛擬化，代價就是會在最前面建立所有元素，而這會導致啟動變慢。 請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)。
 
@@ -146,13 +146,13 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 </Package>
 ```
 
-如需詳細資訊，請參閱[新增啟動顯示畫面](https://msdn.microsoft.com/library/windows/apps/Mt187306)。
+如需詳細資訊，請參閱[新增啟動顯示畫面](https://docs.microsoft.com/windows/uwp/launch-resume/add-a-splash-screen)。
 
 請只使用 App 的建構函式來初始化對應用程式非常重要的資料結構。 只有第一次執行應用程式時需要呼叫建構函式，不需要在每次啟用應用程式時呼叫它。 例如，不會為已執行、置於背景然後透過搜尋協定啟用的應用程式呼叫建構函式。
 
 ### <a name="phase-2"></a>階段 2
 
-啟用應用程式有數個原因，而處理每個原因的方法也不相同。 您可以覆寫 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330)、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801)、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336) 以及 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) 方法來處理啟用的每個原因。 應用程式必須在這些方法進行的其中一個動作是建立 UI，將它指派給 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051)，然後呼叫 [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046)。 此時，啟動顯示畫面會被 app 建立的 UI 所取代。 這個視覺畫面可能是載入畫面或應用程式實際的 UI (如果啟用時有足夠的資訊建立 UI 的話)。
+啟用應用程式有數個原因，而處理每個原因的方法也不相同。 您可以覆寫 [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)、[**OnCachedFileUpdaterActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.oncachedfileupdateractivated)、[**OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)、[**OnFileOpenPickerActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileopenpickeractivated)、[**OnFileSavePickerActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfilesavepickeractivated)、[**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)、[**OnSearchActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onsearchactivated) 以及 [**OnShareTargetActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onsharetargetactivated) 方法來處理啟用的每個原因。 應用程式必須在這些方法進行的其中一個動作是建立 UI，將它指派給 [**Window.Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content)，然後呼叫 [**Window.Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate)。 此時，啟動顯示畫面會被 app 建立的 UI 所取代。 這個視覺畫面可能是載入畫面或應用程式實際的 UI (如果啟用時有足夠的資訊建立 UI 的話)。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -267,9 +267,9 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 > End Class 
 > ```
 
-在啟用處理常式中顯示載入頁面的應用程式會開始在背景建立 UI。 建立該元素之後，會發生元素的 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件。 在事件處理常式中，您可以將視窗的內容 (目前的載入畫面) 取代成新建立的首頁。
+在啟用處理常式中顯示載入頁面的應用程式會開始在背景建立 UI。 建立該元素之後，會發生元素的 [**FrameworkElement.Loaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.loaded) 事件。 在事件處理常式中，您可以將視窗的內容 (目前的載入畫面) 取代成新建立的首頁。
 
-對於具有延長式初始化期間的應用程式來說，顯示載入頁面是非常重要的。 除了可提供使用者啟用程序的回應之外，如果在啟用程序開始的 15 秒內未呼叫 [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046)，這個程序就會終止。
+對於具有延長式初始化期間的應用程式來說，顯示載入頁面是非常重要的。 除了可提供使用者啟用程序的回應之外，如果在啟用程序開始的 15 秒內未呼叫 [**Window.Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate)，這個程序就會終止。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -339,7 +339,7 @@ app 對每個啟動階段的反應方式完全取決於您，但是請盡可能�
 
 可重複使用的程式碼通常會以專案中包含的模組 (DLL) 形式出現。 載入這些模組需要存取磁碟，因此您可以想像這樣做會增加大量負擔。 這不但對冷啟動有非常大的影響，也會影響暖啟動。 如果是 C# 和 Visual Basic，CLR 會視需要載入組件，嘗試將這類負擔盡可能延後。 也就是說，CLR 只會在執行方法參照模組時載入模組。 因此，請僅在啟動程式碼中參照啟動應用程式所需的必要組件，讓 CLR 不要載入不必要的模組。 如果啟動路徑中有含有非必要參照的未使用程式碼路徑，您可以將這些程式碼路徑移到其他方法以避免不必要的載入。
 
-減少模組載入的另外一個方法是合併您的應用程式模組。 載入一個大組件所需的時間通常比載入兩個小組件的時間短。 但這並非永遠可行，只有在不會對開發人員生產力或重複使用程式碼造成實質差異的情況下，才可以合併模組。 您可以使用工具 (例如 [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 效能分析程式 (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx)) 來找出啟動時載入的模組。
+減少模組載入的另外一個方法是合併您的應用程式模組。 載入一個大組件所需的時間通常比載入兩個小組件的時間短。 但這並非永遠可行，只有在不會對開發人員生產力或重複使用程式碼造成實質差異的情況下，才可以合併模組。 您可以使用工具 (例如 [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 效能分析程式 (WPA)](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-)) 來找出啟動時載入的模組。
 
 ### <a name="make-smart-web-requests"></a>聰明的 Web 要求
 

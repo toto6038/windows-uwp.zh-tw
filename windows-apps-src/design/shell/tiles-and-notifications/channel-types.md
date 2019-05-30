@@ -5,12 +5,12 @@ ms.date: 07/07/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d010816b1ba4c9941aea7bdcdb4bd4c50038aca6
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 72bad5bff8092e63a73cc1e32f4424b70867d245
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59067833"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366034"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>選擇正確的推播通知通道類型
 
@@ -38,10 +38,10 @@ ms.locfileid: "59067833"
 
 ### <a name="what-do-primary-channels-enable"></a>主要通道會啟用哪些項目？
 
--   **將磚或徽章更新傳送至主要磚。** 如果使用者選擇將您的磚釘選在 [開始] 畫面上，這是您展示的機會。 傳送具有實用資訊的更新，或您應用程式內體驗的提醒。 
+-   **傳送磚或徽章的更新 [主要] 圖格。** 如果使用者選擇將您的磚釘選在 [開始] 畫面上，這是您展示的機會。 傳送具有實用資訊的更新，或您應用程式內體驗的提醒。 
 -   **傳送快顯通知。** 快顯通知讓您有機會立即在使用者面前取得一些資訊。 這類通知是由命令介面繪製在大多數應用程式的頂端，並存留在控制中心中，讓使用者能夠返回並在稍後與這類通知互動。 
--   **傳送原始通知以觸發背景工作。** 有時候您會想要根據通知代表使用者進行一些工作。 原始通知可讓應用程式的背景工作執行 
--   **由 Windows 使用 TLS 提供中的傳輸中訊息加密。** 當透過連線進入 WNS 與前往使用者裝置時加密訊息。  
+-   **傳送原始通知來觸發背景工作。** 有時候您會想要根據通知代表使用者進行一些工作。 原始通知可讓應用程式的背景工作執行 
+-   **Windows 使用 TLS 所提供的傳輸中的訊息加密。** 當透過連線進入 WNS 與前往使用者裝置時加密訊息。  
 
 ### <a name="limitations-of-primary-channels"></a>主要通道的限制
 
@@ -107,15 +107,15 @@ PushNotificationChannel webChannel =
 <table>
 
 <tr class="header">
-<th align="left"><b>類型</b></th>
-<th align="left"><b>推播快顯通知？</b></th>
-<th align="left"><b>推播磚/徽章？</b></th>
-<th align="left"><b>推播原始通知？</b></th>
+<th align="left"><b>型別</b></th>
+<th align="left"><b>推播快顯嗎？</b></th>
+<th align="left"><b>推播 圖格/徽章嗎？</b></th>
+<th align="left"><b>推播未經處理的通知嗎？</b></th>
 <th align="left"><b>驗證</b></th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>需要市集註冊？</b></th>
+<th align="left"><b>所需的存放區註冊嗎？</b></th>
 <th align="left"><b>通道</b></th>
-<th align="left"><b>加密</b></th>
+<th align="left">[加密]<b></b></th>
 </tr>
 
 
@@ -165,13 +165,13 @@ PushNotificationChannel webChannel =
 
 ## <a name="related-articles"></a>相關文章
 
-* [傳送本機磚通知](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [通知區域的圖格](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [調適型和互動式快顯通知](../tiles-and-notifications/adaptive-interactive-toasts.md)
-* [快速入門：傳送推播通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [如何透過推播通知更新徽章](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何要求、建立以及儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [如何攔截執行應用程式的通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何使用 Windows 推播通知服務 (WNS) 進行驗證](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [推播通知的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [快速入門：傳送推播通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [如何更新徽章，以透過推播通知](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [如何要求、 建立和儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [如何攔截來執行應用程式的通知](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [如何驗證與 Windows 推播通知服務 (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [推播通知服務要求和回應標頭](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [指導方針和推播通知的檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 * [原始通知](raw-notification-overview.md)

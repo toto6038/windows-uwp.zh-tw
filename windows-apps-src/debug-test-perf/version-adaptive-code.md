@@ -6,22 +6,22 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
-ms.openlocfilehash: d62ce9abd84a0769a2393db169b8198d3d9f6cec
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f542c76d879881af296351ce51a803aa9986ecbb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616403"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359704"
 ---
 # <a name="version-adaptive-code"></a>版本調適型程式碼
 
-您可以考慮撰寫調適型程式碼 (和您針對[建立調適型 UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml) 所進行的考量類似)。 您可以將基底 UI 設計為在最小的螢幕上執行，然後在偵測到 App 正在較大的螢幕上執行時移動或新增元素。 使用調適型程式碼，您只要撰寫在最低 OS 版本上執行的基底程式碼，並在偵測到 App 正在具有新功能的較新版本上執行時，新增選取功能。
+您可以考慮撰寫調適型程式碼 (和您針對[建立調適型 UI](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml) 所進行的考量類似)。 您可以將基底 UI 設計為在最小的螢幕上執行，然後在偵測到 App 正在較大的螢幕上執行時移動或新增元素。 使用調適型程式碼，您只要撰寫在最低 OS 版本上執行的基底程式碼，並在偵測到 App 正在具有新功能的較新版本上執行時，新增選取功能。
 
 如需有關 ApiInformation、API 協定以及設定 Visual Studio 的重要背景資訊，請參閱[版本調適型應用程式](version-adaptive-apps.md)。
 
 ### <a name="runtime-api-checks"></a>執行階段 API 檢查
 
-使用程式碼條件中的 [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) 類別，以測試您要呼叫的 API 是否存在。 此條件會在您的 App 每次執行時受到評估，但它只會在存在該 API (因而可供呼叫) 的裝置上被評估為 **true**。 這可讓您撰寫版本調適型程式碼，以便建立使用僅在特定 OS 版本提供之 API 的 App。
+使用程式碼條件中的 [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) 類別，以測試您要呼叫的 API 是否存在。 此條件會在您的 App 每次執行時受到評估，但它只會在存在該 API (因而可供呼叫) 的裝置上被評估為 **true**。 這可讓您撰寫版本調適型程式碼，以便建立使用僅在特定 OS 版本提供之 API 的 App。
 
 我們在這裡看一下針對 Windows Insider Preview 中的新功能示範的特定範例。 如需使用 **ApiInformation** 的一般概觀，請參閱[裝置系列概觀](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code)，以及 [Dynamically detecting features with API contracts (利用 API 協定動態偵測功能)](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/) 這篇部落格文章。
 
@@ -34,7 +34,7 @@ ms.locfileid: "57616403"
 
 如果您使用下列項目，便必須提高您 App 的「最低」版本：
 - 需要無法在較早版本中使用之功能的新 API。 您必須將支援的最低版本增加至包括該功能的其中一個版本。 如需詳細資訊，請參閱[應用程式功能宣告](../packaging/app-capability-declarations.md)。
-- 任何新增至 generic.xaml 且在先前版本中無法使用的新資源識別碼。 在執行階段所使用的 generic.xaml 版本取決於裝置執行的 OS 版本。 您無法使用執行階段 API 檢查來判斷 XAML 資源的存在。 因此，您必須只使用您 App 所支援的最低版本中可以使用的資源識別碼，否則 [XAMLParseException](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.markup.xamlparseexception.aspx) 會導致您的 App 在執行階段當機。
+- 任何新增至 generic.xaml 且在先前版本中無法使用的新資源識別碼。 在執行階段所使用的 generic.xaml 版本取決於裝置執行的 OS 版本。 您無法使用執行階段 API 檢查來判斷 XAML 資源的存在。 因此，您必須只使用您 App 所支援的最低版本中可以使用的資源識別碼，否則 [XAMLParseException](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlparseexception) 會導致您的 App 在執行階段當機。
 
 ### <a name="adaptive-code-options"></a>調適型程式碼選項
 
@@ -73,9 +73,9 @@ ms.locfileid: "57616403"
 
 ### <a name="example-1-new-enum-value"></a>範例 1：新的列舉值
 
-Windows 10 版本 1607年加入新的值，以[InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx)列舉型別：**ChatWithoutEmoji**。 這個新的輸入範圍具有與 **Chat** 輸入範圍相同的輸入行為 (拼字檢查、自動完成、自動大寫)，但是它會對應到沒有 Emoji 按鈕的觸控式鍵盤。 如果您建立自己的 Emoji 選擇器，並想要停用觸控式鍵盤中內建的 Emoji 按鈕，這會很有用。 
+Windows 10 版本 1607年加入新的值，以[InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue)列舉型別：**ChatWithoutEmoji**。 這個新的輸入範圍具有與 **Chat** 輸入範圍相同的輸入行為 (拼字檢查、自動完成、自動大寫)，但是它會對應到沒有 Emoji 按鈕的觸控式鍵盤。 如果您建立自己的 Emoji 選擇器，並想要停用觸控式鍵盤中內建的 Emoji 按鈕，這會很有用。 
 
-這個範例示範如何檢查 **ChatWithoutEmoji** 列舉值是否存在，並在存在的情況下設定 **TextBox** 的[InputScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.inputscope.aspx) 屬性。 如果它沒有出現在 App 所執行的系統上，**InputScope** 會改成設定為 **Chat**。 顯示的程式碼可以放置在 Page 建構子或 Page.Loaded 事件處理常式中。
+這個範例示範如何檢查 **ChatWithoutEmoji** 列舉值是否存在，並在存在的情況下設定 **TextBox** 的[InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性。 如果它沒有出現在 App 所執行的系統上，**InputScope** 會改成設定為 **Chat**。 顯示的程式碼可以放置在 Page 建構子或 Page.Loaded 事件處理常式中。
 
 > [!TIP]
 > 當您檢查 API 時，請使用靜態字串，而不倚賴 .NET 語言功能，否則您的 App 可能會嘗試存取未定義的類型，且在執行階段當機。
@@ -156,20 +156,20 @@ private void messageBox_Loaded(object sender, RoutedEventArgs e)
 
 ### <a name="example-2-new-control"></a>範例 2：新的控制項
 
-新版本的 Windows 一般會將新的控制項加入將新功能帶至平台的 UWP API 表面。 若要利用新的控制項，請使用 [ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) 方法。
+新版本的 Windows 一般會將新的控制項加入將新功能帶至平台的 UWP API 表面。 若要利用新的控制項，請使用 [ApiInformation.IsTypePresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) 方法。
 
-Windows 10 版本 1607 導入了新的媒體控制項，稱為 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)。 這個控制項以 [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) 類別建置，因此帶來像是輕鬆地連結背景音訊的功能，並會利用媒體堆疊中的架構改進功能。
+Windows 10 版本 1607 導入了新的媒體控制項，稱為 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)。 這個控制項以 [MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) 類別建置，因此帶來像是輕鬆地連結背景音訊的功能，並會利用媒體堆疊中的架構改進功能。
 
-不過，如果 App 在比 Windows 10 版本 1607 還舊的版本上執行，您必須使用[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) 控制項而非新的 **MediaPlayerElement** 控制項。 您可以使用 [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) 方法檢查 MediaPlayerElement 控制項在執行階段是否存在，並載入適用於執行 App 之系統的任何一個控制項。
+不過，如果 App 在比 Windows 10 版本 1607 還舊的版本上執行，您必須使用[**MediaElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement) 控制項而非新的 **MediaPlayerElement** 控制項。 您可以使用 [**ApiInformation.IsTypePresent**](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) 方法檢查 MediaPlayerElement 控制項在執行階段是否存在，並載入適用於執行 App 之系統的任何一個控制項。
 
-這個範例示範如何建立能根據 MediaPlayerElement 類型是否存在來使用新的 MediaPlayerElement 或舊的 MediaElement 的 App。 在這個程式碼中，您可以使用 [UserControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol.aspx) 類別，以組件化控制項和其相關 UI 和程式碼，好讓您可以根據 OS 版本對它們進行移入和移出的切換。 另外，您也可以使用自訂的控制項，以提供更多此簡易範例用不到的功能及自訂行為。
+這個範例示範如何建立能根據 MediaPlayerElement 類型是否存在來使用新的 MediaPlayerElement 或舊的 MediaElement 的 App。 在這個程式碼中，您可以使用 [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) 類別，以組件化控制項和其相關 UI 和程式碼，好讓您可以根據 OS 版本對它們進行移入和移出的切換。 另外，您也可以使用自訂的控制項，以提供更多此簡易範例用不到的功能及自訂行為。
  
 **MediaPlayerUserControl** 
 
 `MediaPlayerUserControl` 會封裝 **MediaPlayerElement** 和數個用來逐格略過媒體的按鈕。 UserControl 可讓您將這些控制項視為單一項目，並讓在舊版系統上切換 MediaElement 變得更容易。 這個使用者控制項應該僅於存在 MediaPlayerElement 的系統上使用，因此您不必在此使用者控制項的程式碼中使用 ApiInformation 檢查。
 
 > [!NOTE]
-> 為了讓此範例簡單且聚焦，畫面速度按鈕將放置在媒體播放程式之外。 若要取得較佳的使用者體驗，您應該自訂 MediaTransportControls 以包含您的自訂按鈕。 如需詳細資訊，請參閱[自訂傳輸控制項](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls)。 
+> 為了讓此範例簡單且聚焦，畫面速度按鈕將放置在媒體播放程式之外。 若要取得較佳的使用者體驗，您應該自訂 MediaTransportControls 以包含您的自訂按鈕。 如需詳細資訊，請參閱[自訂傳輸控制項](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls)。 
 
 **XAML**
 ```xaml
@@ -305,7 +305,7 @@ public MainPage()
 
 ### <a name="example-1-new-property"></a>範例 1：新的屬性
 
-設定可延伸狀態觸發程序的第一個步驟，就是子類別化 [StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx) 類別來建立會根據 API 的存在啟用的自訂觸發程序。 這個範例示範如果存在的屬性符合 XAML 中設定的 `_isPresent` 變數時，便會啟用的觸發程序。
+設定可延伸狀態觸發程序的第一個步驟，就是子類別化 [StateTriggerBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.statetriggerbase) 類別來建立會根據 API 的存在啟用的自訂觸發程序。 這個範例示範如果存在的屬性符合 XAML 中設定的 `_isPresent` 變數時，便會啟用的觸發程序。
 
 **C#**
 ```csharp
@@ -339,7 +339,7 @@ class IsPropertyPresentTrigger : StateTriggerBase
 
 下一個步驟是在 XAML 中設定視覺狀態觸發程序，根據 API 是否存在產生兩個不同的視覺狀態。 
 
-Windows 10 版本 1607 在 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) 類別上導入了新的屬性，稱為 [AllowFocusOnInteraction](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.allowfocusoninteraction.aspx)，它可判斷使用者與控制項互動時，控制項是否會接受焦點。 如果您想要在使用者按一下按鈕時，將焦點保持在資料輸入的文字方塊上 (並維持讓觸控式鍵盤顯示)，這會很有用。
+Windows 10 版本 1607 在 [FrameworkElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement) 類別上導入了新的屬性，稱為 [AllowFocusOnInteraction](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.allowfocusoninteraction)，它可判斷使用者與控制項互動時，控制項是否會接受焦點。 如果您想要在使用者按一下按鈕時，將焦點保持在資料輸入的文字方塊上 (並維持讓觸控式鍵盤顯示)，這會很有用。
 
 在這個範例中的觸發程序會檢查屬性是否存在。 如果該屬性存在，它會將 Button 上的 **AllowFocusOnInteraction** 屬性設為 **false**，如果該屬性不存在，Button 會保留它的原始狀態。 TextBox 會包含在內，讓您可以在執行程式碼時更容易地查看這個屬性的效果。
 

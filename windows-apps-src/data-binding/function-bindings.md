@@ -5,25 +5,25 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10 uwp xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626213"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360077"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函式
 
 > [!NOTE]
-> 如需在您的應用程式中使用資料繫結的一般資訊 **{x： 繫結}** (以及之間的全面比較 **{x： 繫結}** 並 **{Binding}**)，請參閱[資料深入了解繫結](data-binding-in-depth.md)。
+> 如需在您的應用程式中使用資料繫結的一般資訊 **{x： 繫結}** (以及之間的全面比較 **{x： 繫結}** 並 **{Binding}** )，請參閱[資料深入了解繫結](data-binding-in-depth.md)。
 
-從 Windows 10 版本 1607 開始，**{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這可讓：
+從 Windows 10 版本 1607 開始， **{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這可讓：
 
 - 使完成值轉換更為簡單
 - 使繫結取決於多個參數
 
 > [!NOTE]
-> 若要搭配 **{x:Bind}** 使用函式，您 App 的最低目標 SDK 版本必須是 14393 或更新版本。 當您的 App 以舊版 Windows 10 為目標時，您將無法使用函式。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 若要搭配 **{x:Bind}** 使用函式，您 App 的最低目標 SDK 版本必須是 14393 或更新版本。 當您的 App 以舊版 Windows 10 為目標時，您將無法使用函式。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 在下列範例中，項目的背景與前景會繫結函式，以根據色彩參數來執行轉換
 
@@ -108,7 +108,7 @@ namespace MyNamespace
 - 引數類型需要符合傳入的資料，我們不會進行縮小轉換
 - 函式的傳回類型必須符合正在使用繫結的屬性類型
 
-繫結引擎會回應通知引發函式名稱，並重新評估視的 繫結的屬性變更。 例如：
+繫結引擎會回應通知引發函式名稱，並重新評估視的 繫結的屬性變更。 例如: 
 
 ```xaml
 <DataTemplate x:DataType="local:Person">
