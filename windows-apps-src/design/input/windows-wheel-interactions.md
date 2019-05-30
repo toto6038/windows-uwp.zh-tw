@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 3456742c4dbb3ca2ab146217763e8f7475c79df2
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: da9142a073df1058bf220f948c49a492c2862670
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57822923"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365383"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 互動
 
@@ -32,9 +32,9 @@ Windows 滾輪裝置，例如 Surface Dial，是一種新的輸入裝置，可�
 | <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
 | *介面的撥號應用程式合作夥伴* | *開發人員介面撥號* |
 
-Surface Dial 使用根據「旋轉」動作 (或手勢) 的形狀規格，做為次要、多重強制回應的輸入裝置，補充主要裝置的輸入。 在大部分情況下，使用者是以慣用手執行工作 (例如以手寫筆寫字)，同時以非慣用手操作這類裝置。 其設計的目的並不是為了精確的指標輸入 (例如觸控、手寫筆或滑鼠)。 
+Surface Dial 使用根據「旋轉」動作 (或手勢) 的形狀規格，做為次要、多重強制回應的輸入裝置，補充主要裝置的輸入。  在大部分情況下，使用者是以慣用手執行工作 (例如以手寫筆寫字)，同時以非慣用手操作這類裝置。 其設計的目的並不是為了精確的指標輸入 (例如觸控、手寫筆或滑鼠)。 
 
-Surface Dial 也支援「長按」以及「按一下」兩個動作。 長按有單一的功能︰顯示命令的功能表。 如果功能表使用中，旋轉並按一下輸入是由功能表處理。 否則，輸入就會傳遞到您的應用程式進行處理。 
+Surface Dial 也支援「長按」以及「按一下」兩個動作。   長按有單一的功能︰顯示命令的功能表。 如果功能表使用中，旋轉並按一下輸入是由功能表處理。 否則，輸入就會傳遞到您的應用程式進行處理。 
 
 **所有 Windows 輸入裝置，您可以自訂及調整以符合您的應用程式中的功能的 Surface Dial 互動體驗。**
 
@@ -57,7 +57,7 @@ Surface Dial 與 Windows 緊密整合，而且支援功能表上的一組內建�
 - 使用者在 Windows 桌面時的系統亮度工具
 - 播放媒體時的上一首/下一首工具
 
-除了這個一般的平台支援，Surface Dial 也能與 Windows Ink 平台控制項 ([**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) 與 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar)) 緊密整合。
+除了這個一般的平台支援，Surface Dial 也能與 Windows Ink 平台控制項 ([**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 與 [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)) 緊密整合。
 
 ![使用 Surface 手寫筆的介面撥號](images/windows-wheel/dial-and-pen-400px.png)  
 *使用 Surface 手寫筆的介面撥號*
@@ -77,7 +77,7 @@ Surface Dial 與 Windows 緊密整合，而且支援功能表上的一組內建�
 
 ## <a name="user-customization"></a>使用者自訂項目
 
-使用者可以透過 \[Windows 設定\] -&gt; \[裝置\] -&gt; \[滾輪\] 頁面自訂自己的 Dial 體驗的某些層面，包含預設工具、震動 (或觸覺回饋) 以及寫字的手 (或慣用手)。 
+使用者可以透過 \[Windows 設定\] -&gt; \[裝置\] -&gt; \[滾輪\] 頁面自訂自己的 Dial 體驗的某些層面，包含預設工具、震動 (或觸覺回饋) 以及寫字的手 (或慣用手)。  
 
 自訂 Surface Dial 使用者體驗時，一定要確定使用者可以使用並啟用特定的功能或行為。
 
@@ -127,7 +127,7 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 
 ### <a name="developer-guidance"></a>開發人員指導方針
 
-您可以透過一組完整的 [Windows 執行階段 API](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 自訂 Surface Dial 體驗，補充您 App 的功能。 
+您可以透過一組完整的 [Windows 執行階段 API](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) 自訂 Surface Dial 體驗，補充您 App 的功能。 
 
 如先前所述，預設的 Surface Dial 功能表會預先填入一組內建工具，涵蓋廣泛的基本系統功能 (系統音量、系統亮度、捲動、縮放、復原，以及當系統偵測到播放音訊或視訊時的媒體控制項)。 不過，這些預設工具可能無法提供您的應用程式所需的功能。 
 
@@ -174,15 +174,15 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
     </Grid>
     ```
 
-2. 然後，在程式碼後置中，我們將自訂工具新增到 Surface Dial 功能表，並宣告 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 輸入處理常式。 
+2. 然後，在程式碼後置中，我們將自訂工具新增到 Surface Dial 功能表，並宣告 [**RadialController**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) 輸入處理常式。 
 
-   我們呼叫 [**CreateForCurrentView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 取得 Surface Dial (myController) 的 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.CreateForCurrentView) 物件的參考。
+   我們呼叫 [**CreateForCurrentView**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) 取得 Surface Dial (myController) 的 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.createforcurrentview) 物件的參考。
 
-   接著我們呼叫 [**RadialControllerMenuItem.CreateFromIcon**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 建立 [**RadialControllerMenuItem**](https://msdn.microsoft.com/library/windows/apps/mt759255) (myItem) 的執行個體。 
+   接著我們呼叫 [**RadialControllerMenuItem.CreateFromIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 建立 [**RadialControllerMenuItem**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem.createfromicon) (myItem) 的執行個體。 
 
    接下來，我們將該項目附加到功能表項目的集合。
 
-   我們宣告 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 物件的輸入事件處理常式 ([**ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged) 和 [**RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController))。
+   我們宣告 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 物件的輸入事件處理常式 ([**ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.rotationchanged) 和 [**RotationChanged**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController))。
 
    最後，我們定義事件處理常式。
 
@@ -247,7 +247,7 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 
 **指定內建的工具**
 
-您可以使用 [**RadialControllerConfiguration**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 類別來自訂您應用程式的內建功能表項目集合。
+您可以使用 [**RadialControllerConfiguration**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 類別來自訂您應用程式的內建功能表項目集合。
 
 例如，如果您的應用程式不會有任何捲動或縮放區域，而且不需要復原/重做功能，就可以從功能表移除這些工具。 這樣就能在功能表上騰出空間，新增您應用程式的自訂工具。 
 
@@ -298,7 +298,7 @@ Surface Dial 主要是設計來支援涉及順暢、增量調整類比值或控�
 裝置可以順時針方向和逆時針方向旋轉，也可以提供觸覺回饋以指出不連續的距離。
 
 > [!NOTE]
-> 使用者可以在 \[Windows 設定\] -&gt; \[裝置\] -&gt; \[滾輪\] 頁面中停用觸覺回饋。
+> 使用者可以在 \[Windows 設定\] -&gt; \[裝置\] -&gt; \[滾輪\] 頁面中停用觸覺回饋。 
 
 #### <a name="ux-guidance-for-custom-interactions"></a>自訂的互動的 UX 指導方針
 
@@ -308,7 +308,7 @@ Surface Dial 主要是設計來支援涉及順暢、增量調整類比值或控�
 
 **主控項的手應該不會影響旋轉式互動**
 
-Surface Dial 無法偵測到您正在使用哪隻手，但是使用者可以在 \[Windows 設定\] -&gt; \[裝置\] -&gt; \[手寫筆與 Windows Ink\] 中設定寫字的手 (或慣用手)。
+Surface Dial 無法偵測到您正在使用哪隻手，但是使用者可以在 \[Windows 設定\] -&gt; \[裝置\] -&gt; \[手寫筆與 Windows Ink\] 中設定寫字的手 (或慣用手)。 
 
 **地區設定應該視為旋轉的所有互動**
 
@@ -329,14 +329,14 @@ Dial 功能表上的內建工具和命令遵循下列指導方針進行以旋轉
 
 #### <a name="developer-guidance"></a>開發人員指導方針
 
-當使用者旋轉裝置，會根據相對於旋轉方向的差異 ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged)) 引發 [**RadialController.RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees) 事件。 使用 [**RadialController.RotationResolutionInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationResolutionInDegrees) 屬性可以設定資料的靈敏度 (或解析度)。
+當使用者旋轉裝置，會根據相對於旋轉方向的差異 ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.rotationchanged)) 引發 [**RadialController.RotationChanged**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs.rotationdeltaindegrees) 事件。 使用 [**RadialController.RotationResolutionInDegrees**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.rotationresolutionindegrees) 屬性可以設定資料的靈敏度 (或解析度)。
 
 > [!NOTE]
-> 根據預設，裝置最少要旋轉 10 度，旋轉的輸入事件才會傳遞至 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 物件。 每個輸入事件都會導致裝置震動。
+> 根據預設，裝置最少要旋轉 10 度，旋轉的輸入事件才會傳遞至 [**RadialController**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) 物件。 每個輸入事件都會導致裝置震動。
 
 一般而言，我們建議當旋轉解析度設定為少於 5 度時停用觸覺回饋。 這可以為連續的互動提供更順暢的體驗。 
 
-您可以設定 [**RadialController.UseAutomaticHapticFeedback**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.UseAutomaticHapticFeedback) 屬性，啟用和停用自訂工具的觸覺回饋。
+您可以設定 [**RadialController.UseAutomaticHapticFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.useautomatichapticfeedback) 屬性，啟用和停用自訂工具的觸覺回饋。
 
 > [!NOTE]
 > 您不能覆寫系統工具 (例如音量控制) 的觸覺回饋行為。 這些工具的觸覺回饋，只能由使用者從滾輪設定頁面停用。
@@ -380,13 +380,13 @@ private void MyController_ButtonClicked(RadialController sender,
 
 **強制回應工具不應啟用或停用依序按一下 Surface Dial**
 
-有些應用程式/工具模式可能會與依賴旋轉的互動發生衝突，或停用這類互動。 Windows Ink 工具列中尺規之類的工具，應該透過其他 UI 能供性開啟或關閉 (Ink 工具列提供內建的 [**ToggleButton**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.ToggleButton) 控制項)。
+有些應用程式/工具模式可能會與依賴旋轉的互動發生衝突，或停用這類互動。 Windows Ink 工具列中尺規之類的工具，應該透過其他 UI 能供性開啟或關閉 (Ink 工具列提供內建的 [**ToggleButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton) 控制項)。
 
 對於強制回應工具，請將使用中的 Surface Dial 功能表項目對應到目標工具或先前選取的功能表項目。
 
 #### <a name="developer-guidance"></a>開發人員指導方針
 
-按一下 Surface Dial 時，會引發 [**RadialController.ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 事件。 [  **RadialControllerButtonClickedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs) 包括 [**Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs.Contact) 屬性，其中包含 Surface Dial 在 Surface Studio 螢幕上接觸的位置以及週框區域。 如果 Surface Dial 沒有接觸螢幕，這個屬性為 null。 
+按一下 Surface Dial 時，會引發 [**RadialController.ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 事件。 [  **RadialControllerButtonClickedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs) 包括 [**Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact) 屬性，其中包含 Surface Dial 在 Surface Studio 螢幕上接觸的位置以及週框區域。 如果 Surface Dial 沒有接觸螢幕，這個屬性為 null。 
 
 ### <a name="on-screen"></a>螢幕上
 
@@ -413,7 +413,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 除了硬體遮蔽，使用者在使用裝置時，手和手臂可能會遮蓋到部分螢幕。
 
-被遮蔽的區域取決於正用哪隻手使用裝置。 由於裝置主要是搭配非慣用手使用而設計，所以應該針對使用者指定的相反手調整與 Surface Dial 相關的 UI (\[Windows 設定\] &gt; \[裝置\] &gt; \[手寫筆與 Windows Ink\] &gt; \[選擇您用來寫字的那隻手\] 設定)。
+被遮蔽的區域取決於正用哪隻手使用裝置。 由於裝置主要是搭配非慣用手使用而設計，所以應該針對使用者指定的相反手調整與 Surface Dial 相關的 UI (\[Windows 設定\] &gt; \[裝置\] &gt; \[手寫筆與 Windows Ink\] &gt; \[選擇您用來寫字的那隻手\] 設定)。 
 
 **Surface Dial 位置，而不是移動回應互動**
 
@@ -425,11 +425,11 @@ private void MyController_ButtonClicked(RadialController sender,
 
 #### <a name="developer-guidance"></a>開發人員指導方針
 
-將 Surface Dial 放在 Surface Studio 的數位板表面時，會引發 [**RadialController.ScreenContactStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ScreenContactStarted) 事件並將接觸資訊 ([**RadialControllerScreenContactStartedEventArgs.Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs.Contact)) 提供給您的應用程式。
+將 Surface Dial 放在 Surface Studio 的數位板表面時，會引發 [**RadialController.ScreenContactStarted**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.screencontactstarted) 事件並將接觸資訊 ([**RadialControllerScreenContactStartedEventArgs.Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs.contact)) 提供給您的應用程式。
 
-同樣地，如果在接觸 Surface Studio 的數位板表面時按一下 Surface Dial，會引發 [**RadialController.ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 事件並將接觸資訊 ([**RadialControllerButtonClickedEventArgs.Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs.Contact)) 提供給您的應用程式。 
+同樣地，如果在接觸 Surface Studio 的數位板表面時按一下 Surface Dial，會引發 [**RadialController.ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 事件並將接觸資訊 ([**RadialControllerButtonClickedEventArgs.Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact)) 提供給您的應用程式。 
 
-接觸資訊 ([**RadialControllerScreenContact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact)) 包含 Surface Dial 中心在應用程式座標空間中的 X/Y 座標 ([**RadialControllerScreenContact.Position**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact.Position))，以及週框 ([**RadialControllerScreenContact.Bounds**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact.Bounds))，單位為裝置獨立畫素 (DIP)。 這項資訊對於提供情境給可使用工具，以及提供與裝置相關的視覺化回饋給使用者時很有用。
+接觸資訊 ([**RadialControllerScreenContact**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContact)) 包含 Surface Dial 中心在應用程式座標空間中的 X/Y 座標 ([**RadialControllerScreenContact.Position**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontact.position))，以及週框 ([**RadialControllerScreenContact.Bounds**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontact.bounds))，單位為裝置獨立畫素 (DIP)。 這項資訊對於提供情境給可使用工具，以及提供與裝置相關的視覺化回饋給使用者時很有用。
 
 在下列範例中，我們建立了一個有四個不同區段的基本應用程式，每一個區段都包含一個滑桿和一個切換開關。 我們接著會使用 Surface Dial 在螢幕上的位置指定 Surface Dial 要控制哪一組滑桿和切換開關。
 
@@ -652,18 +652,18 @@ private void ActivateGridAtLocation(Point Location)
 
 ### <a name="api-reference"></a>API 參考資料
 
-- [**RadialController** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
-- [**RadialControllerButtonClickedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
-- [**RadialControllerConfiguration** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 
-- [**RadialControllerControlAcquiredEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
-- [**RadialControllerMenu**類別](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenu) 
-- [**RadialControllerMenuItem**類別](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 
-- [**RadialControllerRotationChangedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
-- [**RadialControllerScreenContact** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact) 
-- [**RadialControllerScreenContactContinuedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
-- [**RadialControllerScreenContactStartedEventArgs** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
-- [**RadialControllerMenuKnownIcon**列舉](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuKnownIcon) 
-- [**RadialControllerSystemMenuItemKind** enum](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+- [**RadialController** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
+- [**RadialControllerButtonClickedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**RadialControllerConfiguration** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
+- [**RadialControllerControlAcquiredEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**RadialControllerMenu**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenu) 
+- [**RadialControllerMenuItem**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
+- [**RadialControllerRotationChangedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**RadialControllerScreenContact** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
+- [**RadialControllerScreenContactContinuedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**RadialControllerScreenContactStartedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**RadialControllerMenuKnownIcon**列舉](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
+- [**RadialControllerSystemMenuItemKind** enum](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### <a name="samples"></a>範例
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, direct3d 11, 初始設定, 移植, direct3d 9
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c5a7f33ddbc6d70af5293b92165892c2098e452d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604183"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368037"
 ---
 # <a name="initialize-direct3d-11"></a>初始化 Direct3D 11
 
@@ -29,7 +29,7 @@ ms.locfileid: "57604183"
 ## <a name="initialize-the-direct3d-device"></a>初始化 Direct3D 裝置
 
 
-在 Direct3D 9 中，我們透過呼叫 [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313) 來建立 Direct3D 裝置的控制代碼。 我們一開始先取得 [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) 的指標，並指定一些參數來控制 Direct3D 裝置與交換鏈結的設定。 在這樣做之前，我們已呼叫 [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877)，確定我們沒有要求裝置執行某些它無法執行的動作。
+在 Direct3D 9 中，我們透過呼叫 [**IDirect3D9::CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-createdevice) 來建立 Direct3D 裝置的控制代碼。 我們一開始先取得 [**IDirect3D9 interface**](https://docs.microsoft.com/windows/desktop/api/d3d9helper/nn-d3d9helper-idirect3d9) 的指標，並指定一些參數來控制 Direct3D 裝置與交換鏈結的設定。 在這樣做之前，我們已呼叫 [**GetDeviceCaps**](https://docs.microsoft.com/windows/desktop/api/wingdi/nf-wingdi-getdevicecaps)，確定我們沒有要求裝置執行某些它無法執行的動作。
 
 Direct3D 9
 
@@ -69,7 +69,7 @@ m_pD3D->CreateDevice(
 
 在 Direct3D 11 中，裝置內容與圖形基礎結構被視為與裝置本身不同。 初始化分成數個步驟。
 
-首先，我們會建立裝置。 我們取得裝置支援的功能層級清單 - 這會告知大部分我們需要了解有關 GPU 的事項。 此外，不需要建立只為存取 Direct3D 的介面， 而是應該使用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 核心 API。 這個 API 可以為我們提供裝置的控制代碼與裝置的直接內容。 裝置內容是用來設定管線狀態和產生轉譯命令。
+首先，我們會建立裝置。 我們取得裝置支援的功能層級清單 - 這會告知大部分我們需要了解有關 GPU 的事項。 此外，不需要建立只為存取 Direct3D 的介面， 而是應該使用 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 核心 API。 這個 API 可以為我們提供裝置的控制代碼與裝置的直接內容。 裝置內容是用來設定管線狀態和產生轉譯命令。
 
 建立 Direct3D 11 裝置與內容之後，我們可以利用 COM 指標功能來取得包含額外功能的最新介面版本 (一律建議您取得最新版本)。
 
@@ -125,7 +125,7 @@ Direct3D 11 包含稱為 DirectX Graphics Infrastructure (DXGI) 的裝置 API。
 
 Direct3D 裝置會實作 DXGI 的 COM 介面。 首先，我們需要取得該介面，並使用它來要求裝載裝置的 DXGI 介面卡。 接著，使用 DXGI 介面卡來建立 DXGI Factory。
 
-> **附註**  這些是 COM 介面，因此您第一次的回應可能會使用[ **QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 您應該改用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智慧型指標。 接著，只需呼叫 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，提供正確介面類型的空 COM 指標。
+> **附註**  這些是 COM 介面，因此您第一次的回應可能會使用[ **QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 您應該改用 [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class) 智慧型指標。 接著，只需呼叫 [**As()** ](https://docs.microsoft.com/previous-versions/br230426(v=vs.140)) 方法，提供正確介面類型的空 COM 指標。
 
  
 
@@ -147,7 +147,7 @@ dxgiAdapter->GetParent(
     );
 ```
 
-現在，我們已經有 DXGI Factory，可以使用它來建立交換鏈結。 讓我們來定義交換鏈結參數。 我們需要指定介面的格式;我們將選擇[ **DXGI\_格式\_B8G8R8A8\_UNORM** ](https://msdn.microsoft.com/library/windows/desktop/bb173059)因為它是與 Direct2D 相容。 我們關閉顯示縮放比例、多重取樣及立體著色運算，因為這個範例中並未用到它們。 由於我們是直接在 CoreWindow 中執行，所以能夠讓寬度與高度保留為 0 的設定，並自動取得全螢幕值。
+現在，我們已經有 DXGI Factory，可以使用它來建立交換鏈結。 讓我們來定義交換鏈結參數。 我們需要指定介面的格式;我們將選擇[ **DXGI\_格式\_B8G8R8A8\_UNORM** ](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)因為它是與 Direct2D 相容。 我們關閉顯示縮放比例、多重取樣及立體著色運算，因為這個範例中並未用到它們。 由於我們是直接在 CoreWindow 中執行，所以能夠讓寬度與高度保留為 0 的設定，並自動取得全螢幕值。
 
 > **附註**  永遠組*SDKVersion*參數，以 D3D11\_SDK\_UWP 應用程式的版本。
 
@@ -167,9 +167,9 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-若要確保我們不比實際顯示畫面可以更常轉譯，我們設定 1 」 和 「 使用畫面格延遲[ **DXGI\_交換\_效果\_FLIP\_循序**](https://msdn.microsoft.com/library/windows/desktop/bb173077). 這樣就能節省電源，而且這是一項市集憑證需求；我們將在這個逐步解說的第二部分中深入了解如何在螢幕上顯示。
+若要確保我們不比實際顯示畫面可以更常轉譯，我們設定 1 」 和 「 使用畫面格延遲[ **DXGI\_交換\_效果\_FLIP\_循序**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_effect). 這樣就能節省電源，而且這是一項市集憑證需求；我們將在這個逐步解說的第二部分中深入了解如何在螢幕上顯示。
 
-> **附註**  您可以使用多執行緒處理 (例如[ **ThreadPool** ](https://msdn.microsoft.com/library/windows/apps/br229642)工作項目) 呈現執行緒封鎖時，請繼續執行其他工作。
+> **附註**  您可以使用多執行緒處理 (例如[ **ThreadPool** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading)工作項目) 呈現執行緒封鎖時，請繼續執行其他工作。
 
  
 

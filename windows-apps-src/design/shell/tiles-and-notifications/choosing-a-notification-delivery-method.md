@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 503f7baad0d91f4e7c29010145ecb162f98bc81c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1ea41a509b1673b7c4f5812d34db93dd6b0c93e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606283"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365938"
 ---
 # <a name="choose-a-notification-delivery-method"></a>選擇通知傳遞方法
 
@@ -27,9 +27,9 @@ ms.locfileid: "57606283"
 
 App 可以使用四種機制來傳遞通知：
 
--   **本機**
+-   **Local**
 -   **排程**
--   **定期**
+-   **Periodic**
 -   **推播**
 
 下表摘要說明通知傳遞類型。
@@ -153,7 +153,7 @@ App 可以使用四種機制來傳遞通知：
 如需詳細資訊，請參閱：
 
 -   [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
--   [推播通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761462)
+-   [推播通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 -   [通用 Windows 平台 (UWP) 通知的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
@@ -162,8 +162,8 @@ App 可以使用四種機制來傳遞通知：
 
 * [通知區域的圖格](sending-a-local-tile-notification.md)
 * [傳送本機快顯通知](send-local-toast.md)
-* [推播通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [快顯通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465391)
+* [推播通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [快顯通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [定期通知概觀](periodic-notification-overview.md)
 * [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
 * [通用 Windows 平台 (UWP) 通知的程式碼在 GitHub 上的範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)

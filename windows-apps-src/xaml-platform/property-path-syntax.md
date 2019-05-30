@@ -6,29 +6,29 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 63656fc545596fc045dc536167313c0c8e3f6ad2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632363"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371164"
 ---
 # <a name="property-path-syntax"></a>Property-path 語法
 
 
-您可以使用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別和字串語法，具現化 XAML 或程式碼中的 **PropertyPath** 值。 資料繫結會使用 **PropertyPath** 值。 而目標腳本動畫也會使用類似的語法。 在這兩個案例中，屬性路徑描述了一或多個物件-屬性關係的周遊，這些關係最後會解析為單一屬性。
+您可以使用 [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) 類別和字串語法，具現化 XAML 或程式碼中的 **PropertyPath** 值。 資料繫結會使用 **PropertyPath** 值。 而目標腳本動畫也會使用類似的語法。 在這兩個案例中，屬性路徑描述了一或多個物件-屬性關係的周遊，這些關係最後會解析為單一屬性。
 
-您可以直接將屬性路徑字串設定為 XAML 中的屬性。 您可以使用相同的字串語法來建構 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，以便在程式碼中設定 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)，或是使用 [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503) 在程式碼中設定動畫目標。 Windows 執行階段中有兩個獨特的功能領域會使用屬性路徑：資料繫結和動畫目標。 在 Windows 執行階段實作中，動畫目標不會建立基礎的 Property-path 語法值，它會將資訊保持為字串，但是這兩者的物件-屬性周遊的概念非常類似。 資料繫結與動畫目標在評估屬性路徑上有些微的差異，所以我們會分別描述它們的屬性路徑語法。
+您可以直接將屬性路徑字串設定為 XAML 中的屬性。 您可以使用相同的字串語法來建構 [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)，以便在程式碼中設定 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)，或是使用 [**SetTargetProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.settargetproperty) 在程式碼中設定動畫目標。 Windows 執行階段中有兩個獨特的功能領域會使用屬性路徑：資料繫結和動畫目標。 在 Windows 執行階段實作中，動畫目標不會建立基礎的 Property-path 語法值，它會將資訊保持為字串，但是這兩者的物件-屬性周遊的概念非常類似。 資料繫結與動畫目標在評估屬性路徑上有些微的差異，所以我們會分別描述它們的屬性路徑語法。
 
 ## <a name="property-path-for-objects-in-data-binding"></a>資料繫結中物件的屬性路徑
 
 在 Windows 執行階段中，您可以繫結到任何相依性屬性的目標值。 資料繫結的來源屬性值不一定要是相依性屬性；它可以是商務物件上的屬性 (例如使用 Microsoft .NET 語言或 C++ 編寫的類別)。 或者，繫結值的來源物件可以是應用程式已經定義的現有相依性物件。 若要參考來源，您可以使用簡單的屬性名稱，或使用商務物件的物件圖形中物件-屬性關係的周遊。
 
-您可以繫結到個別屬性值或繫結到保存清單或集合的目標屬性。 如果您的來源是集合，或者如果路徑指定了集合屬性，則資料繫結引擎會將來源的集合項目與繫結目標進行比對，進而產生將資料來源集合的項目清單填入 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) 而不需要預期該集合中特定項目的這類行為。
+您可以繫結到個別屬性值或繫結到保存清單或集合的目標屬性。 如果您的來源是集合，或者如果路徑指定了集合屬性，則資料繫結引擎會將來源的集合項目與繫結目標進行比對，進而產生將資料來源集合的項目清單填入 [**ListBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) 而不需要預期該集合中特定項目的這類行為。
 
 ### <a name="traversing-an-object-graph"></a>周遊物件圖形
 
-在物件圖形中標示物件-屬性關係周遊的語法元素是點 (**.**) 字元。 屬性路徑字串中的每個點表示物件 (點的左邊) 與該物件之屬性 (點的右邊) 間的分隔。 字串的會由左到右逐步評估多個物件-屬性的關係。 讓我們看一下範例：
+在物件圖形中標示物件-屬性關係周遊的語法元素是點 ( **.** ) 字元。 屬性路徑字串中的每個點表示物件 (點的左邊) 與該物件之屬性 (點的右邊) 間的分隔。 字串的會由左到右逐步評估多個物件-屬性的關係。 讓我們看一下範例：
 
 ``` syntax
 "{Binding Path=Customer.Address.StreetAddress1}"
@@ -36,7 +36,7 @@ ms.locfileid: "57632363"
 
 以下是這個路徑的評估方式：
 
-1.  針對資料內容物件 (或同一個 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 所指定的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)) 搜尋一個名為 "Customer" 的屬性。
+1.  針對資料內容物件 (或同一個 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 所指定的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.source)) 搜尋一個名為 "Customer" 的屬性。
 2.  針對物件 ("Customer" 屬性的值) 搜尋一個名為 "Address" 的屬性。
 3.  針對物件 ("Address" 屬性的值) 搜尋一個名為 "StreetAddress1" 的屬性。
 
@@ -46,7 +46,7 @@ ms.locfileid: "57632363"
 
 -   屬性路徑參考的所有屬性在來源商務物件中必須是公開的。
 -   結尾屬性 (即路徑中最後一個具名屬性) 必須是公開且可變的 (您不能繫結到靜態值)。
--   如果這個路徑在雙向繫結中做為 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 資訊，則結尾屬性必須可以被讀取/寫入。
+-   如果這個路徑在雙向繫結中做為 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) 資訊，則結尾屬性必須可以被讀取/寫入。
 
 ### <a name="indexers"></a>索引子
 
@@ -54,11 +54,11 @@ ms.locfileid: "57632363"
 
 例如，假設有一個含 "Teams" 清單 (已排序清單) 的商務物件，每一個清單都包含一個 "Players" 字典，其中每個玩家都以姓氏做為索引鍵。 第二個小組的特定玩家範例屬性路徑是：「 團隊\[1\]。玩家\[Smith\]"。 (您使用 1 來指出 "Teams" 中的第二個項目，因為這個清單是從 0 開始建立索引。)
 
-**附註**  編製索引支援 c + + 資料來源有限制，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**附註**  編製索引的支援C++資料來源會受到限制，請參閱[深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
 
-### <a name="attached-properties"></a>附加屬性
+### <a name="attached-properties"></a>附加的屬性
 
-屬性路徑可以包含對附加屬性的參考。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定使用 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) 做為繫結路徑的字串是 "(Canvas.ZIndex)"。 如需附加屬性的詳細資訊，請參閱[附加屬性概觀](attached-properties-overview.md)。
+屬性路徑可以包含對附加屬性的參考。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定使用 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) 做為繫結路徑的字串是 "(Canvas.ZIndex)"。 如需附加屬性的詳細資訊，請參閱[附加屬性概觀](attached-properties-overview.md)。
 
 ### <a name="combining-property-path-syntax"></a>合併屬性路徑的語法
 
@@ -70,52 +70,52 @@ ms.locfileid: "57632363"
 
 ## <a name="property-path-for-animation-targeting"></a>動畫目標的屬性路徑
 
-動畫的目標是相依性屬性，動畫執行時會在相依性屬性套用腳本值。 為了識別含有動畫屬性的物件，動畫會使用名稱 ([x:Name 屬性](x-name-attribute.md)) 來設定目標元素。 通常必須定義以 [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823) 識別的物件開頭，並以應該套用動畫的特定相依性屬性值結束的屬性路徑。 這個屬性路徑可用來做為 [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/hh759824) 的值。
+動畫的目標是相依性屬性，動畫執行時會在相依性屬性套用腳本值。 為了識別含有動畫屬性的物件，動畫會使用名稱 ([x:Name 屬性](x-name-attribute.md)) 來設定目標元素。 通常必須定義以 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) 識別的物件開頭，並以應該套用動畫的特定相依性屬性值結束的屬性路徑。 這個屬性路徑可用來做為 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)) 的值。
 
-如需如何在 XAML 中定義動畫的詳細資訊，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)。
+如需如何在 XAML 中定義動畫的詳細資訊，請參閱[腳本動畫](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)。
 
 ## <a name="simple-targeting"></a>簡單目標
 
-如果您要在位於目標物件本身的屬性產生動畫效果，而且該屬性的類型具備可直接套用其本身的動畫 (而不是套用到屬性值的子屬性)，則您只需命名要產生動畫效果的屬性，而不用進一步限定。 例如，如果您要以 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 子類別 (如 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)) 為目標，並要將動畫的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 套用到 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) 屬性，則屬性路徑可以是 "Fill"。
+如果您要在位於目標物件本身的屬性產生動畫效果，而且該屬性的類型具備可直接套用其本身的動畫 (而不是套用到屬性值的子屬性)，則您只需命名要產生動畫效果的屬性，而不用進一步限定。 例如，如果您要以 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 子類別 (如 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)) 為目標，並要將動畫的 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 套用到 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) 屬性，則屬性路徑可以是 "Fill"。
 
 ## <a name="indirect-property-targeting"></a>間接屬性目標
 
-您可以為目標物件的子屬性產生動畫效果。 換句話說，如果有一個目標物件的屬性是物件本身，且該物件具有屬性，您必須定義屬性路徑，說明如何逐步設定該物件-屬性關係。 如需指定要讓其子屬性產生動畫效果的物件，您必須將屬性名稱放入括號內，並以 *typename*.*propertyname* 格式指定屬性。 例如，若要指定目標物件 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) 屬性的物件值，第一個步驟是在屬性路徑中指定 "(UIElement.RenderTransform)"。 這還不是完整的路徑，因為沒有動畫可以直接套用到 [**Transform**](https://msdn.microsoft.com/library/windows/apps/br243006) 值。 所以，在此例中，您現在要完成整個屬性路徑，讓結尾屬性成為可以使用 **Double** 值來產生動畫效果的 **Transform** 子類別屬性："(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+您可以為目標物件的子屬性產生動畫效果。 換句話說，如果有一個目標物件的屬性是物件本身，且該物件具有屬性，您必須定義屬性路徑，說明如何逐步設定該物件-屬性關係。 如需指定要讓其子屬性產生動畫效果的物件，您必須將屬性名稱放入括號內，並以 *typename*.*propertyname* 格式指定屬性。 例如，若要指定目標物件 [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) 屬性的物件值，第一個步驟是在屬性路徑中指定 "(UIElement.RenderTransform)"。 這還不是完整的路徑，因為沒有動畫可以直接套用到 [**Transform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Transform) 值。 所以，在此例中，您現在要完成整個屬性路徑，讓結尾屬性成為可以使用 **Double** 值來產生動畫效果的 **Transform** 子類別屬性："(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>指定集合中的特定子項
 
 若要指定集合屬性中的子項目，可以使用數值索引子。 使用方括號"\[\]"字元周圍的整數索引值。 您只可以參考已排序的清單，不可以參考字典。 因為集合不是可以產生動畫效果的值，所以屬性路徑的結尾屬性永遠不可以使用索引子。
 
-例如，若要指定您想要以動畫顯示的第一個色彩停止中的色彩[ **LinearGradientBrush** ](https://msdn.microsoft.com/library/windows/apps/br210108)套用至控制項[**背景**](https://msdn.microsoft.com/library/windows/apps/br209395)屬性，這是屬性路徑:"(Control.Background)。(GradientBrush.GradientStops)\[0\]。 (GradientStop.Color) 」。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) 屬性，以便套用 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 動畫值。
+例如，若要指定您想要以動畫顯示的第一個色彩停止中的色彩[ **LinearGradientBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)套用至控制項[**背景**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)屬性，這是屬性路徑:"(Control.Background)。(GradientBrush.GradientStops)\[0\]。 (GradientStop.Color) 」。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 屬性，以便套用 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 動畫值。
 
 ## <a name="animating-an-attached-property"></a>讓附加屬性產生動畫效果
 
-這不是常見情況；不過，只要附加屬性具有符合動畫類型的屬性值，就可以讓它產生動畫效果。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定讓物件上 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 附加屬性產生動畫效果的字串會使用屬性路徑 "(Grid.Row)"。
+這不是常見情況；不過，只要附加屬性具有符合動畫類型的屬性值，就可以讓它產生動畫效果。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定讓物件上 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) 附加屬性產生動畫效果的字串會使用屬性路徑 "(Grid.Row)"。
 
-**附註**  針對此範例中，值[ **Grid.Row** ](https://msdn.microsoft.com/library/windows/apps/hh759795)是**Int32**屬性型別。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 元件的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)，其中 [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) 會設定為 "0" 或 "1" 的整數。
+**附註**  針對此範例中，值[ **Grid.Row** ](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8)是**Int32**屬性型別。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 元件的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)，其中 [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 會設定為 "0" 或 "1" 的整數。
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>動畫目標屬性路徑中的屬性規則
 
--   屬性路徑的假設起點是 [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823) 識別的物件。
+-   屬性路徑的假設起點是 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) 識別的物件。
 -   屬性路徑中參考的所有物件及屬性必須是公開的。
 -   結尾屬性 (即路徑中最後一個具名屬性) 必須是公開、唯讀且必須是相依性屬性。
--   結尾屬性必須具有能夠使用其中一個動畫類型廣泛類別產生動畫效果的屬性類型，這些動畫類型包括：[**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 動畫、**Double** 動畫、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 動畫、[**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)。
+-   結尾屬性必須具有能夠使用其中一個動畫類型廣泛類別產生動畫效果的屬性類型，這些動畫類型包括：[**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 動畫、**Double** 動畫、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 動畫、[**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)。
 
 ## <a name="the-propertypath-class"></a>PropertyPath 類別
 
-[  **PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別是用於繫結案例的 [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 相關屬性類型。
+[  **PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) 類別是用於繫結案例的 [**Binding.Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) 相關屬性類型。
 
-您通常可以在 XAML 中直接套用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，完全不需要使用任何程式碼。 但在某些情況下，您可能要使用程式碼來定義 **PropertyPath** 物件，並在執行階段將它指派給屬性。
+您通常可以在 XAML 中直接套用 [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)，完全不需要使用任何程式碼。 但在某些情況下，您可能要使用程式碼來定義 **PropertyPath** 物件，並在執行階段將它指派給屬性。
 
-[**PropertyPath** ](https://msdn.microsoft.com/library/windows/apps/br244259)已[ **PropertyPath(String)** ](https://msdn.microsoft.com/library/windows/apps/br244261)建構函式，且沒有預設建構函式。 傳遞到這個建構函式的字串是使用屬性路徑語法定義的字串，如本文稍早的說明。 這也是用來將 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 指派為 XAML 屬性的同一個字串。 **PropertyPath** 類別唯一的另一個 API 是唯讀的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) 屬性。 您可以使用這個屬性做為另一個 **PropertyPath** 執行個體的建構字串。
+[**PropertyPath** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)已[ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.)建構函式，且沒有預設建構函式。 傳遞到這個建構函式的字串是使用屬性路徑語法定義的字串，如本文稍早的說明。 這也是用來將 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) 指派為 XAML 屬性的同一個字串。 **PropertyPath** 類別唯一的另一個 API 是唯讀的 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path) 屬性。 您可以使用這個屬性做為另一個 **PropertyPath** 執行個體的建構字串。
 
 ## <a name="related-topics"></a>相關主題
 
-* [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [建立圖片敘述的動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
+* [建立圖片敘述的動畫](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
 * [{Binding} 標記延伸](binding-markup-extension.md)
-* [**propertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
-* [**繫結**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**繫結的建構函式**](https://msdn.microsoft.com/library/windows/apps/br209825)
-* [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
+* [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)
+* [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
+* [**繫結的建構函式**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.)
+* [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)
 

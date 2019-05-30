@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1026bd153f43d5e956fbacdcc33728d890f34e34
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651543"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371974"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -115,16 +115,16 @@ if (!keyCredentialAvailable)
 
 在這個案例中，我們把電子郵件地址是當做該使用者的唯一識別碼。 當使用者註冊成功時，您應該要考慮傳送驗證電子郵件，以確認該電子郵件地址是有效的。 這個機制還能讓您在必要時重設帳戶。
 
-如果使用者已經設定自己的 PIN，應用程式就能建立使用者的 [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029)。 應用程式也會獲得選用的金鑰證明資訊，以便取得金鑰是在 TPM 上產生的密碼編譯證明。 產生的公開金鑰，以及選用的證明會傳送到後端伺服器，來為使用者所用的裝置註冊。 在每個裝置上所產生的金鑰組都是唯一的。
+如果使用者已經設定自己的 PIN，應用程式就能建立使用者的 [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential)。 應用程式也會獲得選用的金鑰證明資訊，以便取得金鑰是在 TPM 上產生的密碼編譯證明。 產生的公開金鑰，以及選用的證明會傳送到後端伺服器，來為使用者所用的裝置註冊。 在每個裝置上所產生的金鑰組都是唯一的。
 
-以下是建立 [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) 的程式碼範例：
+以下是建立 [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential) 的程式碼範例：
 
 ```csharp
 var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-[  **RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是建立公開金鑰和私密金鑰的部分。 如果裝置有正確的 TPM 晶片，API 會要求 TPM 晶片建立私密和公開金鑰金鑰並儲存結果；如果使用沒有 TPM 晶片，作業系統會在程式碼中建立金鑰組。 沒有方法能讓應用程式直接存取建立的私密金鑰。 建立金鑰組的過程也會產生證明資訊。 (如需證明的詳細資訊，請參閱下一節。)
+[  **RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) 是建立公開金鑰和私密金鑰的部分。 如果裝置有正確的 TPM 晶片，API 會要求 TPM 晶片建立私密和公開金鑰金鑰並儲存結果；如果使用沒有 TPM 晶片，作業系統會在程式碼中建立金鑰組。 沒有方法能讓應用程式直接存取建立的私密金鑰。 建立金鑰組的過程也會產生證明資訊。 (如需證明的詳細資訊，請參閱下一節。)
 
 當金鑰組和證明資訊在裝置上建立之後，公開金鑰、選用的證明資訊，以及唯一識別碼 (例如電子郵件地址) 必須傳送至後端註冊服務，並儲存在後端。
 
@@ -208,8 +208,8 @@ static async void RegisterUser(string AccountId)
 - AIK 憑證是有效的時限。
 - 鏈結中所有簽發的 CA 憑證都是有效的時限而且未被撤銷。
 - 證明聲明的格式正確。
-- [  **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的簽章使用 AIK 公開金鑰。
-- [  **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 中的公開金鑰，符合用戶端連同證明聲明一起傳送的公開 RSA 金鑰。
+- [  **KeyAttestation**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.KeyAttestationHelper) blob 上的簽章使用 AIK 公開金鑰。
+- [  **KeyAttestation**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.KeyAttestationHelper) blob 中的公開金鑰，符合用戶端連同證明聲明一起傳送的公開 RSA 金鑰。
 
 根據以上這些條件，您的應用程式可能會把不同的授權層級指派給使用者。 舉例來說，如果這些檢查項目中有一個檢查失敗，應用程式可能不會讓使用者註冊，或是可能會限制使用者能執行的功能。
 
@@ -219,7 +219,7 @@ static async void RegisterUser(string AccountId)
 
 ### <a name="33-force-the-user-to-sign-in-again"></a>3.3 強迫使用者再次登入
 
-在某些情況下，您可能會想要求使用者在存取應用程式之前，或是有時在您的應用程式中進行特定動作之前，證明自己的確就是目前登入的那個人。 舉例來說，在銀行應用程式傳送轉帳命令給伺服器之前，您想要確定這的確是正確的使用者，而不是某個找到已登入裝置，且嘗試要執行交易的人。 您可以使用 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) 來強迫使用者再次登入您的應用程式。 下列程式碼會強迫使用者輸入自己的認證。
+在某些情況下，您可能會想要求使用者在存取應用程式之前，或是有時在您的應用程式中進行特定動作之前，證明自己的確就是目前登入的那個人。 舉例來說，在銀行應用程式傳送轉帳命令給伺服器之前，您想要確定這的確是正確的使用者，而不是某個找到已登入裝置，且嘗試要執行交易的人。 您可以使用 [**UserConsentVerifier**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier) 來強迫使用者再次登入您的應用程式。 下列程式碼會強迫使用者輸入自己的認證。
 
 下列程式碼會強迫使用者輸入自己的認證。
 
@@ -267,7 +267,7 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 }
 ```
 
-第一行的 [**KeyCredentialManager.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn973046) 會要求作業系統開啟金鑰控制代碼。 如果成功完成，您就能利用 [**KeyCredential.RequestSignAsync**](https://msdn.microsoft.com/library/windows/apps/dn973058) 方法來簽署查問訊息，這會讓作業系統透過 Windows Hello 來要求使用者提供 PIN 或生物特徵辨識資料。 開發人員永遠沒有使用者私密金鑰的存取權。 這整個過程會透過 API 來保持資料的安全。
+第一行的 [**KeyCredentialManager.OpenAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.keycredentialmanager.openasync) 會要求作業系統開啟金鑰控制代碼。 如果成功完成，您就能利用 [**KeyCredential.RequestSignAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.keycredential.requestsignasync) 方法來簽署查問訊息，這會讓作業系統透過 Windows Hello 來要求使用者提供 PIN 或生物特徵辨識資料。 開發人員永遠沒有使用者私密金鑰的存取權。 這整個過程會透過 API 來保持資料的安全。
 
 API 會要求作業系統利用私密金鑰來簽署查問。 然後系統會要求使用者提供 PIN 碼，或已設定的生物特徵辨識登入資料。 當使用者輸入正確的資訊時，系統可以要求 TPM 晶片執行密碼編譯函式，並簽署查問 (或如果沒有 TPM 可用，則使用後援軟體解決方案)。 用戶端必須將已簽署的查問傳送回伺服器。
 
@@ -387,9 +387,9 @@ UI 看起來如下：
 
 ![Windows Hello UI](images/passport-ui.png)
 
-如果使用者選擇開始使用 Windows Hello，您就要建立之前所述的 [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029)。 後端的註冊伺服器會把公開金鑰和選用的證明聲明新增到資料庫中。 因為使用者已經利用使用者名稱及密碼驗證自己的身分，伺服器可以讓新的認證與資料庫中目前的使用者資訊建立連結。 資料庫模型可能會與先前所述的範例相同。
+如果使用者選擇開始使用 Windows Hello，您就要建立之前所述的 [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential)。 後端的註冊伺服器會把公開金鑰和選用的證明聲明新增到資料庫中。 因為使用者已經利用使用者名稱及密碼驗證自己的身分，伺服器可以讓新的認證與資料庫中目前的使用者資訊建立連結。 資料庫模型可能會與先前所述的範例相同。
 
-如果應用程式能夠建立使用者的 [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029)，它會把使用者識別碼儲存在隔離儲存體，讓使用者在應用程式再次啟動時，能夠從清單中選擇這個帳戶。 從這一點開始，流程就跟之前章節中所述的範例完全一樣。
+如果應用程式能夠建立使用者的 [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential)，它會把使用者識別碼儲存在隔離儲存體，讓使用者在應用程式再次啟動時，能夠從清單中選擇這個帳戶。 從這一點開始，流程就跟之前章節中所述的範例完全一樣。
 
 移轉至完全使用 Windows Hello 的最後一個步驟，就是停用應用程式中登入名稱和密碼的選項，並移除儲存在資料庫中的雜湊密碼。
 
@@ -408,7 +408,7 @@ Windows 10 引進較高的安全性層級，實行方法也很簡單。 Windows 
 ### <a name="61-articles-and-sample-code"></a>6.1 文章與範例程式碼
 
 - [Windows Hello 概觀](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
-- [Windows hello 的實作詳細資料](https://msdn.microsoft.com/library/mt589441)
+- [Windows hello 的實作詳細資料](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide)
 - [Windows Hello 的程式碼範例在 GitHub 上](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 詞彙

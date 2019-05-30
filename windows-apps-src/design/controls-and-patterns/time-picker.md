@@ -12,19 +12,19 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5187f3fe6f8ca14725f56b64f212e11f99dfc911
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 58321c6c32536c07d3a56a05ce26b353ec32a982
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637163"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364163"
 ---
 # <a name="time-picker"></a>時間選擇器
  
 
 時間選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選時間值。 
 
-> **重要的 Api**:[TimePicker 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)，[時間屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
+> **重要的 Api**:[TimePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker)，[時間屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -70,7 +70,7 @@ arrivalTimePicker.Header = "Arrival time";
 ![時間選擇器的範例](images/time-picker-closed.png)
 
 > [!NOTE]
-> 如需日期及時間值的重要資訊，請參閱 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values) (位於＜日期及時間控制項＞文章中)。
+> 如需日期及時間值的重要資訊，請參閱 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values) (位於  ＜日期及時間控制項＞文章中)。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 

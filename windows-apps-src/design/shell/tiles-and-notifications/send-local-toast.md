@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 傳送快顯通知, 通知, 傳送通知, 快顯通知, 如何, 快速入門, 開始使用, 程式碼範例, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4c8def5d1a220fe0458dd5c244d875b991b2b76c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605923"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365934"
 ---
 # <a name="send-a-local-toast-notification"></a>傳送本機快顯通知
 
@@ -42,7 +42,7 @@ ms.locfileid: "57605923"
 > **重要的 Api**:[ToastNotification 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)， [ToastNotificationActivatedEventArgs 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 要完全了解本主題，下列項目將有所幫助...
 
@@ -54,7 +54,7 @@ ms.locfileid: "57605923"
 > 不同於 Windows 8/8.1，您已不需要在 App 的資訊清單中宣告您的 App 能夠顯示快顯通知。 所有 App 都可以傳送和顯示快顯通知。
 
 > [!NOTE]
-> **Windows 8/8.1 應用程式**:請改用[封存的文件](https://msdn.microsoft.com/library/windows/apps/xaml/hh868254.aspx)。
+> **Windows 8/8.1 應用程式**:請改用[封存的文件](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10))。
 
 
 ## <a name="install-nuget-packages"></a>安裝 NuGet 套件
@@ -238,7 +238,7 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 如果想以程式設計方式移除或取代您傳送的通知，您必須使用 Tag 屬性 (並選擇性使用 Group 屬性) 提供通知的主索引鍵。 那麼，日後就可以使用這個主索引鍵來移除或取代通知。
 
-若要查看更多有關取代/移除已傳遞的快顯通知，請參閱[快速入門：管理行動作業中心 (XAML) 中的快顯通知](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx)。
+若要查看更多有關取代/移除已傳遞的快顯通知，請參閱[快速入門：管理行動作業中心 (XAML) 中的快顯通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
 
 Tag 與 Group 結合可以做為主複合索引鍵。 群組為更泛用識別碼，您可以在其中指派群組，例如"wallPosts"、"messages"、"friendRequests 」 等。然後標記應專門用於識別通知本身從群組中。 然後可以使用一般群組，透過 [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 移除該群組中的所有通知。
 
@@ -270,7 +270,7 @@ Windows 只有在使用者明確按一下通知時，才會自動移除通知。
 3. App 開啟交談，然後清除該交談的所有快顯通知 (方法是針對該交談在 App 提供的群組上使用 [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_))
 4. 使用者的控制中心現在會正確反映通知狀態，因為沒有該交談的任何過時通知留存在控制中心上。
 
-若要深入了解清除所有的通知，或移除特定的通知，請參閱[快速入門：管理行動作業中心 (XAML) 中的快顯通知](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx)。
+若要深入了解清除所有的通知，或移除特定的通知，請參閱[快速入門：管理行動作業中心 (XAML) 中的快顯通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
 
 
 ## <a name="handling-activation"></a>處理啟用

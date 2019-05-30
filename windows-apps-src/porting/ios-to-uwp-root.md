@@ -7,12 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ddcb64aed8205f18b17706e987cbd9981bb8044
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d3f72e563f6463d55af40acae74d061b5030aa9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655463"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371614"
 ---
 # <a name="move-from-ios-to-uwp"></a>從 iOS 移到 UWP
 
@@ -34,4 +34,4 @@ ms.locfileid: "57655463"
 
 **設計人員和開發人員**
 * [建置適用於所有 Windows 裝置的通用 Windows 應用程式](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [下載設計資產以供 UWP 應用程式](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+* [下載設計資產以供 UWP 應用程式](https://dev.windows.com/design/assets)

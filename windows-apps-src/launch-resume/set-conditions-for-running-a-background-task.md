@@ -10,38 +10,38 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 8740829ab95b804afba564110f38116f2c90b416
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 88836ac0363001e86c17486e1527b96a4eac0faa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650933"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371839"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>設定執行背景工作的條件
 
 **重要的 Api**
 
-- [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
-- [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)
-- [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+- [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
+- [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)
+- [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 了解如何設定條件以控制背景工作的執行時間。
 
-有時，背景工作還需要在某些條件符合的情況下，才能順利執行。 登錄背景工作時，您可以指定一或多個由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的條件。 在引發觸發程序之後，會檢查條件。 接著將背景工作排入佇列，但是必 須等到符合所有必要的條件之後才會執行它。
+有時，背景工作還需要在某些條件符合的情況下，才能順利執行。 登錄背景工作時，您可以指定一或多個由 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) 指定的條件。 在引發觸發程序之後，會檢查條件。 接著將背景工作排入佇列，但是必 須等到符合所有必要的條件之後才會執行它。
 
-將條件放在背景工件可以避免執行不必要的工作，以延長電池壽命和節省 CPU。 例如，如果背景工作在計時器上執行，並且需要網際網路連線，則在登錄工作之前，請先將 **InternetAvailable** 條件新增到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 這樣可以藉由讓工作只有在計時器時間已經過「並且」網際網路可用時才執行，協助防止工作不必要地使用系統資源與電池電力。
+將條件放在背景工件可以避免執行不必要的工作，以延長電池壽命和節省 CPU。 例如，如果背景工作在計時器上執行，並且需要網際網路連線，則在登錄工作之前，請先將 **InternetAvailable** 條件新增到 [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)。 這樣可以藉由讓工作只有在計時器時間已經過「並且」網際網路可用時才執行，協助防止工作不必要地使用系統資源與電池電力。 
 
-您也可以藉由在相同的 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 上多次呼叫 **AddCondition** 來結合多個條件。 請小心，不要新增衝突的條件，例如 **UserPresent** 和 **UserNotPresent**。
+您也可以藉由在相同的 [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 上多次呼叫 **AddCondition** 來結合多個條件。 請小心，不要新增衝突的條件，例如 **UserPresent** 和 **UserNotPresent**。
 
 ## <a name="create-a-systemcondition-object"></a>建立 SystemCondition 物件
 
-本主題假設您有一個已經與 App 關聯的背景工作，而且 App 包含的程式碼已經建立名為 **taskBuilder** 的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件。  如果您必須先建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
+本主題假設您有一個已經與 App 關聯的背景工作，而且 App 包含的程式碼已經建立名為 **taskBuilder** 的 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 物件。  如果您必須先建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
 
 本主題既適用於與前景 App 在不同處理序中執行的背景工作，也適用於與前景 App 在相同處理序中執行的背景工作。
 
-在新增條件之前，請先建立 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 物件，來代表背景工作執行時必須生效的條件。 在建構函式中，透過提供 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 列舉數值的方式，指定必須滿足的條件。
+在新增條件之前，請先建立 [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) 物件，來代表背景工作執行時必須生效的條件。 在建構函式中，透過提供 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) 列舉數值的方式，指定必須滿足的條件。
 
-下列程式碼會建立 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 物件，以指定 **InternetAvailable** 條件：
+下列程式碼會建立 [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) 物件，以指定 **InternetAvailable** 條件：
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -58,7 +58,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 ## <a name="add-the-systemcondition-object-to-your-background-task"></a>將 SystemCondition 物件新增到背景工作
 
-如果要新增條件，請呼叫 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224769) 物件上的 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224768) 方法，並將 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 物件傳給它。
+如果要新增條件，請呼叫 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition) 物件上的 [**AddCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 方法，並將 [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) 物件傳給它。
 
 下列程式碼使用 **taskBuilder** 來新增 **InternetAvailable** 條件。
 
@@ -76,7 +76,7 @@ taskBuilder->AddCondition(internetCondition);
 
 ## <a name="register-your-background-task"></a>註冊您的背景工作
 
-現在您可以使用 [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法來登錄背景工作，而且只有在滿足指定條件時，背景工作才會啟動。
+現在您可以使用 [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) 方法來登錄背景工作，而且只有在滿足指定條件時，背景工作才會啟動。
 
 下列程式碼會登錄工作並儲存產生的 BackgroundTaskRegistration 物件：
 
@@ -93,16 +93,16 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 ```
 
 > [!NOTE]
-> 通用 Windows app 必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何背景觸發程序類型。
+> 通用 Windows app 必須先呼叫 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)，才能登錄任何背景觸發程序類型。
 
-為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
+為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
 > [!NOTE]
 > 背景工作登錄參數都是在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的應用程式能夠妥善處理背景工作註冊失敗的狀況；反之，如果應用程式需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 
 ## <a name="place-multiple-conditions-on-your-background-task"></a>在背景工作上放置多個條件
 
-若要新增多個條件，您的應用程式必須多次呼叫 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) 方法。 這些呼叫必須在工作登錄生效之前發生。
+若要新增多個條件，您的應用程式必須多次呼叫 [**AddCondition**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition) 方法。 這些呼叫必須在工作登錄生效之前發生。
 
 > [!NOTE]
 > 請小心不要將衝突的條件新增至背景工作。
@@ -178,7 +178,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>備註
 
 > [!NOTE]
-> 使其只執行所需的並不會執行時的時候，請選擇您的背景工作的條件。 如需不同背景工作條件的說明，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+> 使其只執行所需的並不會執行時的時候，請選擇您的背景工作的條件。 如需不同背景工作條件的說明，請參閱 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 ## <a name="related-topics"></a>相關主題
 

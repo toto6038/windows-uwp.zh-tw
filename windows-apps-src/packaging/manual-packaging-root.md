@@ -6,19 +6,19 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 封裝
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c429c3c88b0ae23cb518a59cab2e5a3c4f380a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d90307560c315741751a5ab58ccdf0eaf35d97fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658193"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372797"
 ---
 # <a name="manual-app-packaging"></a>手動封裝 App
 
 如果想要建立並簽署應用程式套件，但是沒有使用 Visual Studio 來開發 App 時，您必須使用手動 App 封裝工具。
 
 > [!IMPORTANT] 
-> 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈建立並簽署應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
+> 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈建立並簽署應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
 ## <a name="purpose"></a>用途
 

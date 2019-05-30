@@ -6,16 +6,16 @@ ms.date: 07/06/2018
 ms.topic: article
 keywords: windows 10 uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 46d2b5704fa8a9bf53534ded98647ce57da0f520
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 08f163fb660ad158694f925467711e4d62bf8217
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661893"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371457"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在計時器上執行背景工作
 
-了解如何使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 排程一次性的背景工作，或執行定期的背景工作。
+了解如何使用 [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger) 排程一次性的背景工作，或執行定期的背景工作。
 
 請參閱[背景啟用範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation) 中的 **Scenario4**，以查看如何實作本主題所述時間觸發背景工作的範例。
 
@@ -23,7 +23,7 @@ ms.locfileid: "57661893"
 
 ## <a name="create-a-time-trigger"></a>建立時間觸發程序
 
-建立一個新的 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)。 第二個參數 *OneShot* 會指定背景工作將只執行一次，還是要繼續定期執行。 如果 *OneShot* 設定成 True，第一個參數 (*FreshnessTime*) 會指定排定背景工作之前要等待的時間 (以分鐘為單位)。 如果 *OneShot* 設定成 False，*FreshnessTime* 會指定背景工作的執行頻率。
+建立一個新的 [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger)。 第二個參數 *OneShot* 會指定背景工作將只執行一次，還是要繼續定期執行。 如果 *OneShot* 設定成 True，第一個參數 (*FreshnessTime*) 會指定排定背景工作之前要等待的時間 (以分鐘為單位)。 如果 *OneShot* 設定成 False，*FreshnessTime* 會指定背景工作的執行頻率。
 
 以傳統型或行動裝置系列為目標之「通用 Windows 平台」(UWP) app 的內建計時器會每隔 15 分鐘執行一次背景工作。 (計時器按照 15 分鐘的間隔執行，讓系統只需要每隔 15 分鐘喚醒一次來喚醒已要求 TimerTriggers 的 App，這樣也省節電力)。
 
@@ -52,7 +52,7 @@ TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
 
 您可以建立背景工作條件來控制何時執行工作。 條件會在條件符合之前，一直讓背景工作無法執行。 如需詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
 
-這個範例中，條件是設成 **UserPresent**，因此觸發後工作只有在使用者作用中時才會執行一次。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+這個範例中，條件是設成 **UserPresent**，因此觸發後工作只有在使用者作用中時才會執行一次。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 ```cs
 SystemCondition userCondition = new SystemCondition(SystemConditionType.UserPresent);
@@ -71,7 +71,7 @@ SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::U
 
 ##  <a name="call-requestaccessasync"></a>呼叫 RequestAccessAsync()
 
-註冊 **ApplicationTrigger** 背景工作之前，由於使用者可能已經停用 App 的背景活動，請呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) 來判斷使用者允許的背景活動層級。 如需有關使用者可如何控制背景活動設定的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。
+註冊 **ApplicationTrigger** 背景工作之前，由於使用者可能已經停用 App 的背景活動，請呼叫 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) 來判斷使用者允許的背景活動層級。 如需有關使用者可如何控制背景活動設定的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。
 
 ```cs
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -115,9 +115,9 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 ## <a name="manage-resources-for-your-background-task"></a>管理背景工作的資源
 
-使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 可判斷使用者是否已決定限制您的應用程式的背景活動。 請留意您的電池使用量，並且只在需要完成使用者想要的動作時才在背景執行。 如需有關使用者可如何控制背景活動設定的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。
+使用 [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) 可判斷使用者是否已決定限制您的應用程式的背景活動。 請留意您的電池使用量，並且只在需要完成使用者想要的動作時才在背景執行。 如需有關使用者可如何控制背景活動設定的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。
 
-- 記憶體：微調您的應用程式的記憶體和能源使用是確保作業系統可讓您執行的背景工作的關鍵。 使用[記憶體管理 API](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) 來了解您的背景工作正在使用多少記憶體。 您的背景工作使用的記憶體越多，作業系統就越不容易在有其他 App 執行於前景時允許您的 App 繼續執行。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。  
+- 記憶體：微調您的應用程式的記憶體和能源使用是確保作業系統可讓您執行的背景工作的關鍵。 使用[記憶體管理 API](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 來了解您的背景工作正在使用多少記憶體。 您的背景工作使用的記憶體越多，作業系統就越不容易在有其他 App 執行於前景時允許您的 App 繼續執行。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。  
 - CPU 時間：背景工作會受到時鐘取得根據觸發程序類型的使用時間數量。
 
 請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)，以了解套用至背景工作的資源限制。
@@ -126,7 +126,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 從 Windows 10 開始，它不再需要將您的應用程式新增至在鎖定畫面中，才能利用背景工作的使用者。
 
-如果您已經先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，背景工作將只會使用 **TimeTrigger** 來執行。
+如果您已經先呼叫 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)，背景工作將只會使用 **TimeTrigger** 來執行。
 
 ## <a name="related-topics"></a>相關主題
 

@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a3133508a0cb8919994543845412ef71a8d463fe
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d02c75775dfd63281dbf46c7f9fc58f48ac1e20
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611763"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359972"
 ---
 # <a name="conditional-xaml"></a>條件式 XAML
 
@@ -44,7 +44,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 
 條件式 XAML 支援下列條件式方法：
 
-方法 | 反轉
+方法 | 反向
 ------ | -------
 IsApiContractPresent(ContractName, VersionNumber) | IsApiContractNotPresent(ContractName, VersionNumber)
 IsTypePresent(ControlType) | IsTypeNotPresent(ControlType)
@@ -244,6 +244,6 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 
 ## <a name="related-articles"></a>相關文章
 
-- [UWP 應用程式指南](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [UWP 應用程式指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 - [以動態方式偵測 API 合約的功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API 協定](https://channel9.msdn.com/Events/Build/2015/3-733) (組建 2015 影片)

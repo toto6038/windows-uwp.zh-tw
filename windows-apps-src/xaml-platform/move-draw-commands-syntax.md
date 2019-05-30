@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 604ad25bb65486b3b388a9a03d7503b0c1ce9c03
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 40b959feed09546791840dafe15ab98d65f0ea09
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632523"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371149"
 ---
 # <a name="move-and-draw-commands-syntax"></a>移動與繪製命令語法
 
@@ -20,20 +20,20 @@ ms.locfileid: "57632523"
 
 ## <a name="properties-that-use-move-and-draw-command-strings"></a>使用移動與繪製命令字串的屬性
 
-移動與繪製命令語法受到 XAML 的內部類型轉換器支援，這個轉換器會剖析命令並產生執行階段圖形表示法。 這個表示法基本上是一組可供呈現的已完成向量。 向量本身並不會完成呈現詳細資料；您仍然需要設定元素的其他值。 以 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 物件來說，您還需要 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)、[**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) 及其他屬性的值，然後該 **Path** 必須以某種方式連接到視覺化樹狀結構。 針對 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) 物件，請設定 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) 屬性。
+移動與繪製命令語法受到 XAML 的內部類型轉換器支援，這個轉換器會剖析命令並產生執行階段圖形表示法。 這個表示法基本上是一組可供呈現的已完成向量。 向量本身並不會完成呈現詳細資料；您仍然需要設定元素的其他值。 以 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 物件來說，您還需要 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)、[**Stroke**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.stroke) 及其他屬性的值，然後該 **Path** 必須以某種方式連接到視覺化樹狀結構。 針對 [**PathIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon) 物件，請設定 [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iconelement.foreground) 屬性。
 
-Windows 執行階段，可以使用字串，表示移動，並繪製命令中有兩個屬性：[**Path.Data** ](https://msdn.microsoft.com/library/windows/apps/br243356)並[ **PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723)。 如果藉由指定移動與繪製命令來設定其中一個屬性，您通常會將它設為 XAML 屬性值以及該元素的其他必要屬性。 在不探討內容的情況下，它看起來就像以下這樣：
+Windows 執行階段，可以使用字串，表示移動，並繪製命令中有兩個屬性：[**Path.Data** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data)並[ **PathIcon.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon.data)。 如果藉由指定移動與繪製命令來設定其中一個屬性，您通常會將它設為 XAML 屬性值以及該元素的其他必要屬性。 在不探討內容的情況下，它看起來就像以下這樣：
 
 ```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[**PathGeometry.Figures** ](https://msdn.microsoft.com/library/windows/apps/br210169)也可以使用移動和繪製命令。 您可以將使用移動與繪製命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 物件與 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 物件中的其他 [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) 類型結合，然後用來做為 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是相較於將移動與繪製命令用於屬性定義的資料，這並不常見。
+[**PathGeometry.Figures** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathgeometry.figures)也可以使用移動和繪製命令。 您可以將使用移動與繪製命令的 [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 物件與 [**GeometryGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GeometryGroup) 物件中的其他 [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) 類型結合，然後用來做為 [**Path.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data) 的值。 但是相較於將移動與繪製命令用於屬性定義的資料，這並不常見。
 
 ## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>使用移動與複製命令與使用 **PathGeometry** 比較
 
-對 Windows 執行階段 XAML 而言，移動與繪製命令會產生一個含有單一 [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) 物件搭配 [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 屬性值的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168)。 每個繪製命令都會在該單一 **PathFigure** 的 [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) 集合中產生一個 [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) 衍生類別，移動命令會變更 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166)，如果有關閉命令，則會將 [**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) 設定為 **true**。 如果您在執行階段檢查 **Data** 值，可以將這個結構當做物件模型來瀏覽。
+對 Windows 執行階段 XAML 而言，移動與繪製命令會產生一個含有單一 [**PathFigure**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure) 物件搭配 [**Figures**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathgeometry.figures) 屬性值的 [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry)。 每個繪製命令都會在該單一 **PathFigure** 的 [**Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments) 集合中產生一個 [**PathSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathSegment) 衍生類別，移動命令會變更 [**StartPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.startpoint)，如果有關閉命令，則會將 [**IsClosed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.isclosed) 設定為 **true**。 如果您在執行階段檢查 **Data** 值，可以將這個結構當做物件模型來瀏覽。
 
 ## <a name="the-basic-syntax"></a>基本語法
 
@@ -51,7 +51,7 @@ Windows 執行階段，可以使用字串，表示移動，並繪製命令中有
 -   除了關閉命令以外，每個命令後面通常會跟著一或多個數字。
 -   如果命令有一個以上的數字，請使用逗號或空格來分隔。
 
-**\[**_fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\* \]** **\[** _closeCommand_**\]**
+**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\*\]** **\[** _closeCommand_ **\]**
 
 許多繪製命令會使用點，由您提供 _x,y_ 值。 每當您看到\*_點_兩個十進位值可讓您可以假設您的預留位置_x，y_點值。
 
@@ -63,7 +63,7 @@ Windows 執行階段，可以使用字串，表示移動，並繪製命令中有
 
 **填滿規則**
 
-有選用的填滿規則的兩個可能值：**其中 F0**或是**F1**。 ( **F**一律是大寫。)**其中 F0**做為預設值; 它會產生**EvenOdd**填滿行為，因此您通常不指定它。 使用 **F1** 可以取得 **Nonzero** 填滿行為。 這些填滿值與 [**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030) 列舉的值一致。
+有選用的填滿規則的兩個可能值：**其中 F0**或是**F1**。 ( **F**一律是大寫。)**其中 F0**做為預設值; 它會產生**EvenOdd**填滿行為，因此您通常不指定它。 使用 **F1** 可以取得 **Nonzero** 填滿行為。 這些填滿值與 [**FillRule**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.FillRule) 列舉的值一致。
 
 **移動命令**
 
@@ -71,11 +71,11 @@ Windows 執行階段，可以使用字串，表示移動，並繪製命令中有
 
 | 語法 |
 |--------|
-| `M ` _圓弧_ <br/>- 或 -<br/>`m` _圓弧_|
+| `M ` _startPoint_ <br/>- 或 -<br/>`m` _startPoint_|
 
 | 詞彙 | 描述 |
 |------|-------------|
-| _圓弧_ | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新圖形的起點。|
+| _startPoint_ | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/>新圖形的起點。|
 
 大寫 **M** 表示 *startPoint* 是絕對座標；小寫 **m** 表示 *startPoint* 是前一個點的位移，如果沒有前一個點，則為 (0,0)。
 
@@ -91,15 +91,15 @@ Windows 執行階段，可以使用字串，表示移動，並繪製命令中有
 
 **線條命令**
 
-在目前的點與指定的終點之間建立一條直線。 `l 20 30` 和`L 20,30`是有效的列命令的範例。 定義 [**LineGeometry**](https://msdn.microsoft.com/library/windows/apps/br210117) 物件的對等物件。
+在目前的點與指定的終點之間建立一條直線。 `l 20 30` 和`L 20,30`是有效的列命令的範例。 定義 [**LineGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LineGeometry) 物件的對等物件。
 
 | 語法 |
 |--------|
-| `L` _端點_ <br/>- 或 -<br/>`l` _端點_ |
+| `L` _endPoint_ <br/>- 或 -<br/>`l` _endPoint_ |
 
 | 詞彙 | 描述 |
 |------|-------------|
-| endPoint | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>線條的終點。|
+| endPoint | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/>線條的終點。|
 
 **水平線命令**
 
@@ -107,11 +107,11 @@ Windows 執行階段，可以使用字串，表示移動，並繪製命令中有
 
 | 語法 |
 |--------|
-| `H ` _X_ <br/> - 或 - <br/>`h ` _X_ |
+| `H ` _x_ <br/> - 或 - <br/>`h ` _x_ |
 
 | 詞彙 | 描述 |
 |------|-------------|
-| x | [**雙精度浮點數**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 線條終點的 x 座標。 |
+| x | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> 線條終點的 x 座標。 |
 
 **垂直線命令**
 
@@ -119,29 +119,29 @@ Windows 執行階段，可以使用字串，表示移動，並繪製命令中有
 
 | 語法 |
 |--------|
-| `V ` _Y_ <br/> - 或 - <br/> `v ` _Y_ |
+| `V ` _y_ <br/> - 或 - <br/> `v ` _y_ |
 
 | 詞彙 | 描述 |
 |------|-------------|
-| *Y* | [**雙精度浮點數**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 線條終點的 y 座標。 |
+| *y* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> 線條終點的 y 座標。 |
 
 **三次方貝茲曲線命令**
 
-使用兩個指定的控制點 (*controlPoint1* 與 *controlPoint2*) 在目前的點與指定的終點之間建立一條三次方貝茲曲線。 `C 100,200 200,400 300,200` 是有效曲線命令的範例。 以 [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) 物件定義 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 物件的對等物件。
+使用兩個指定的控制點 (*controlPoint1* 與 *controlPoint2*) 在目前的點與指定的終點之間建立一條三次方貝茲曲線。 `C 100,200 200,400 300,200` 是有效曲線命令的範例。 以 [**BezierSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.BezierSegment) 物件定義 [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 物件的對等物件。
 
 | 語法 |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *端點* <br/> - 或 - <br/> `c ` *controlPoint1* *controlPoint2* *端點* |
+| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - 或 - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
 
 | 詞彙 | 描述 |
 |------|-------------|
-| *controlPoint1* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的第一個控制點，決定曲線的起點切線。 |
-| *controlPoint2* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的第二個控制點，決定曲線的終點切線。 |
-| *端點* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線將繪製到的點。 | 
+| *controlPoint1* | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> 曲線的第一個控制點，決定曲線的起點切線。 |
+| *controlPoint2* | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> 曲線的第二個控制點，決定曲線的終點切線。 |
+| *endPoint* | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> 曲線將繪製到的點。 | 
 
 **二次方貝茲曲線命令**
 
-使用指定的控制點 (*controlPoint*) 在目前的點與指定的終點之間建立一條二次方貝茲曲線。 `q 100,200 300,200` 是有效的二次方貝茲曲線命令的範例。 以 [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) 定義 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 的對等物件。
+使用指定的控制點 (*controlPoint*) 在目前的點與指定的終點之間建立一條二次方貝茲曲線。 `q 100,200 300,200` 是有效的二次方貝茲曲線命令的範例。 以 [**QuadraticBezierSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.QuadraticBezierSegment) 定義 [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 的對等物件。
 
 | 語法 |
 |--------|
@@ -149,50 +149,50 @@ Windows 執行階段，可以使用字串，表示移動，並繪製命令中有
 
 | 詞彙 | 描述 |
 |------|-------------|
-| *controlPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的控制點，決定曲線的起點與終點切線。 |
-| *端點* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線將繪製到的點。 |
+| *controlPoint* | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> 曲線的控制點，決定曲線的起點與終點切線。 |
+| *endPoint* | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> 曲線將繪製到的點。 |
 
 **平滑三次方貝茲曲線命令**
 
-在目前的點與指定的終點之間建立一條三次方貝茲曲線。 第一個控制點假設為前一個命令之第二個控制點相對於目前點的反射。 如果沒有前一個命令，或者前一個命令不是三次方貝茲曲線命令或平滑的三次方貝茲曲線命令，則會假設第一個控制點就是目前的點。 第二個控制點 (曲線終點的控制點) 是由 *controlPoint2* 指定。 例如，`S 100,200 200,300` 是一個有效的平滑三次方貝茲曲線命令。 這個命令是以前面曲線線段的 [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) 定義 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 的對等物件。
+在目前的點與指定的終點之間建立一條三次方貝茲曲線。 第一個控制點假設為前一個命令之第二個控制點相對於目前點的反射。 如果沒有前一個命令，或者前一個命令不是三次方貝茲曲線命令或平滑的三次方貝茲曲線命令，則會假設第一個控制點就是目前的點。 第二個控制點 (曲線終點的控制點) 是由 *controlPoint2* 指定。 例如，`S 100,200 200,300` 是一個有效的平滑三次方貝茲曲線命令。 這個命令是以前面曲線線段的 [**BezierSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.BezierSegment) 定義 [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 的對等物件。
 
 | 語法 |
 |--------|
-| `S` *controlPoint2* *端點* <br/> - 或 - <br/>`s` *controlPoint2 端點* |
+| `S` *controlPoint2* *endPoint* <br/> - 或 - <br/>`s` *controlPoint2 端點* |
 
 | 詞彙 | 描述 |
 |------|-------------|
-| *controlPoint2* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的控制點，決定曲線的終點切線。 |
-| *端點* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線將繪製到的點。 |
+| *controlPoint2* | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> 曲線的控制點，決定曲線的終點切線。 |
+| *endPoint* | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> 曲線將繪製到的點。 |
 
 **平滑二次方貝茲曲線命令**
 
-在目前的點與指定的終點之間建立一條二次方貝茲曲線。 控制點假設為前一個命令之控制點相對於目前點的反射。 如果沒有前一個命令，或者前一個命令不是二次方貝茲曲線命令或平滑的二次方貝茲曲線命令，則控制點就是目前的點。 這個命令是以前面曲線線段的 [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) 定義 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 的對等物件。
+在目前的點與指定的終點之間建立一條二次方貝茲曲線。 控制點假設為前一個命令之控制點相對於目前點的反射。 如果沒有前一個命令，或者前一個命令不是二次方貝茲曲線命令或平滑的二次方貝茲曲線命令，則控制點就是目前的點。 這個命令是以前面曲線線段的 [**QuadraticBezierSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.QuadraticBezierSegment) 定義 [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 的對等物件。
 
 | 語法 |
 |--------|
-| `T` *controlPoint* *端點* <br/> - 或 - <br/> `t` *controlPoint* *端點* |
+| `T` *controlPoint* *endPoint* <br/> - 或 - <br/> `t` *controlPoint* *endPoint* |
 
 | 詞彙 | 描述 |
 |------|-------------|
-| *controlPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線的控制點，決定曲線的起點切線。 |
-| *端點* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線將繪製到的點。 |
+| *controlPoint* | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> 曲線的控制點，決定曲線的起點切線。 |
+| *endPoint* | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> 曲線將繪製到的點。 |
 
 **橢圓形弧線命令**
 
-在目前的點與指定的終點之間建立一條橢圓形弧線。 以 [**ArcSegment**](https://msdn.microsoft.com/library/windows/apps/br228054) 定義 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 的對等物件。
+在目前的點與指定的終點之間建立一條橢圓形弧線。 以 [**ArcSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ArcSegment) 定義 [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 的對等物件。
 
 | 語法 |
 |--------|
-| `A ` *大小* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *端點* <br/> - 或 - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - 或 - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | 詞彙 | 描述 |
 |------|-------------|
-| *大小* | [**大小**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>弧線的 x 軸半徑與 y 軸半徑。 |
-| *rotationAngle* | [**雙精度浮點數**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 橢圓形的旋轉度數。 |
+| *size* | [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)<br/>弧線的 x 軸半徑與 y 軸半徑。 |
+| *rotationAngle* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> 橢圓形的旋轉度數。 |
 | *isLargeArcFlag* | 如果弧線的角度應該等於或大於 180 度，則設定為 1；否則設定為 0。 |
 | *sweepDirectionFlag* | 如果是以正角方向繪製弧線，則設定為 1；否則設定為 0。 |
-| *端點* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 弧線將繪製到的點。|
+| *endPoint* | [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> 弧線將繪製到的點。|
  
 **關閉命令**
 
@@ -204,7 +204,7 @@ Windows 執行階段，可以使用字串，表示移動，並繪製命令中有
 
 **點語法**
 
-描述點的 x 座標與 y 座標。 另請參閱 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)。
+描述點的 x 座標與 y 座標。 另請參閱 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)。
 
 | 語法 |
 |--------|
@@ -212,8 +212,8 @@ Windows 執行階段，可以使用字串，表示移動，並繪製命令中有
 
 | 詞彙 | 描述 |
 |------|-------------|
-| *x* | [**雙精度浮點數**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 點的 x 座標。 |
-| *Y* | [**雙精度浮點數**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 點的 y 座標。 |
+| *x* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> 點的 x 座標。 |
+| *y* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> 點的 y 座標。 |
 
 **其他注意事項**
 
@@ -229,14 +229,14 @@ Windows 執行階段，可以使用字串，表示移動，並繪製命令中有
 
 使用**畫筆**工具和 Blend for Microsoft Visual Studio 2015 中的其他繪圖工具通常會產生[**路徑**](/uwp/api/Windows.UI.Xaml.Shapes.Path)物件，以移動和繪製命令。
 
-您會在 Windows 執行階段 XAML 控制項預設範本所定義的一些控制項組件中，看到現有的移動與繪製命令資料。 例如，有些控制項使用將資料定義為移動與繪製命令的 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)。
+您會在 Windows 執行階段 XAML 控制項預設範本所定義的一些控制項組件中，看到現有的移動與繪製命令資料。 例如，有些控制項使用將資料定義為移動與繪製命令的 [**PathIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon)。
 
-其他可將向量以 XAML 形式輸出的常用向量圖形設計工具有可用的匯出工具或外掛程式。 這些通常會在配置容器中建立含有 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 之移動與繪製命令的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 物件。 XAML 中可能會有多個 **Path** 元素，以便可以套用不同的筆刷。 許多這些匯出工具或外掛程式原始撰寫的 Windows Presentation Foundation (WPF) XAML 或 Silverlight，但 XAML 路徑的語法完全相同的 Windows 執行階段 XAML。 通常，您可以使用匯出工具的 XAML 區塊，將它們貼到 Windows 執行階段 XAML 頁面中。 (不過，如果 **RadialGradientBrush** 是已轉換之 XAML 的一部分，您就無法加以使用，因為 Windows 執行階段 XAML 不支援該筆刷)。
+其他可將向量以 XAML 形式輸出的常用向量圖形設計工具有可用的匯出工具或外掛程式。 這些通常會在配置容器中建立含有 [**Path.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data) 之移動與繪製命令的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 物件。 XAML 中可能會有多個 **Path** 元素，以便可以套用不同的筆刷。 許多這些匯出工具或外掛程式原始撰寫的 Windows Presentation Foundation (WPF) XAML 或 Silverlight，但 XAML 路徑的語法完全相同的 Windows 執行階段 XAML。 通常，您可以使用匯出工具的 XAML 區塊，將它們貼到 Windows 執行階段 XAML 頁面中。 (不過，如果 **RadialGradientBrush** 是已轉換之 XAML 的一部分，您就無法加以使用，因為 Windows 執行階段 XAML 不支援該筆刷)。
 
 ## <a name="related-topics"></a>相關主題
 
-* [繪製圖案](https://msdn.microsoft.com/library/windows/apps/mt280380)
-* [使用筆刷](https://msdn.microsoft.com/library/windows/apps/mt280383)
-* [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
-* [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
+* [繪製圖案](https://docs.microsoft.com/windows/uwp/graphics/drawing-shapes)
+* [使用筆刷](https://docs.microsoft.com/windows/uwp/graphics/using-brushes)
+* [**Path.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data)
+* [**PathIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon)
 

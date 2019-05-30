@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a77048bed3ad27f2040a672d93380d0250f9aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 177d5a8fed47396fa694bd8fb88baea8d8b7bbb3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641093"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371178"
 ---
 # <a name="output-merger-om-stage"></a>輸出合併 (OM) 階段
 
@@ -37,7 +37,7 @@ OM 階段會使用下列組合產生最終呈現的像素色彩︰
 
 ![混合資料的運作方式的圖表](images/d3d10-blend-state.png)
 
-在概念上，您可以在輸出合併階段中視覺化此實作的流程圖兩次︰第一個以平行方式混合 RGB 資料，第二個混合差異資料。 若要瞭解如何使用 API 建立並設定混合狀態，請參閱[設定混合功能](https://msdn.microsoft.com/library/windows/desktop/bb205072)。
+在概念上，您可以在輸出合併階段中視覺化此實作的流程圖兩次︰第一個以平行方式混合 RGB 資料，第二個混合差異資料。 若要瞭解如何使用 API 建立並設定混合狀態，請參閱[設定混合功能](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-blend-state)。
 
 固定函式混合可以針對每個轉譯目標單獨啟用。 不過，只有一組混合控制項，如此相同混合才會套用到所有啟用混合的 RenderTarget。 混合值 (包括 BlendFactor) 始終會限制為混合之前的轉譯目標格式的範圍之內。 關於轉譯目標類型，按照每個轉譯目標完成鉗制。 唯一例外是，位鉗制的 float16、float11 或 float10 格式，如此這些格式的混合作業都可以至少等於精確度/範圍，完成為輸出格式。 NaN 的及簽署的零會針對所有案例傳播 (包括 0.0 混合重量)。
 
@@ -79,7 +79,7 @@ OM 階段會使用下列組合產生最終呈現的像素色彩︰
 -   轉譯目標的內容
 -   深度/樣板緩衝區的內容。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 ### <a name="span-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanoutput-write-mask-overview"></a><span id="Output-write-mask-overview"></span><span id="output-write-mask-overview"></span><span id="OUTPUT-WRITE-MASK-OVERVIEW"></span>輸出寫入遮罩概觀

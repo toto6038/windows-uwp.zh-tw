@@ -5,12 +5,12 @@ keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10, 1708
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: edf81f0474855c868ea1fb50afa683523aedcd07
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 53bd11950d30e3924d6d196e911fa05208d0f5ec
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614863"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371910"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 開發人員文件的最新動向
 
@@ -32,7 +32,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="game-mode"></a>遊戲模式
 
-通用 Windows 平台 (UWP) 的[遊戲模式](https://msdn.microsoft.com/library/windows/desktop/mt808808) API 可讓您利用 Windows 10 中的遊戲模式產生最佳化的遊戲體驗。 這些 API 位於 **&lt;expandedresources.h&gt;** 標頭檔中。
+通用 Windows 平台 (UWP) 的[遊戲模式](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) API 可讓您利用 Windows 10 中的遊戲模式產生最佳化的遊戲體驗。 這些 API 位於 **&lt;expandedresources.h&gt;** 標頭檔中。
 
 ![遊戲模式](images/game-mode.png)
 
@@ -45,7 +45,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="data-schemas-for-store-products"></a>Microsoft Store 產品的資料結構描述
 
-我們新增了[市集產品的資料結構描述](../monetize/data-schemas-for-store-products.md)文章。 此文章針對 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中的幾個物件 (包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)) 提供其市集相關資料的結構描述。
+我們新增了[市集產品的資料結構描述](../monetize/data-schemas-for-store-products.md)文章。 此文章針對 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中的幾個物件 (包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)) 提供其市集相關資料的結構描述。
 
 ### <a name="desktop-bridge"></a>傳統型橋接器
 

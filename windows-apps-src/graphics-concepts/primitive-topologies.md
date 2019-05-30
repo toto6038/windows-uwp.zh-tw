@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 85d1c41fc10f509f3872fb1e4a0af5fa1e1e7c30
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0b7a60b3eba8545eeeea4cf477a40e044578c166
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631393"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371247"
 ---
 # <a name="primitive-topologies"></a>基本拓撲
 
@@ -69,7 +69,7 @@ Direct3D 支援數個基本拓撲，其定義管線如何轉譯及呈現頂點�
 ## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>產生多個列
 
 
-您可以透過寬帶切割產生多條寬帶。 您可以明確呼叫 [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL 函式或將特殊索引值插入索引緩衝區，來執行寬帶切割。 這個值是 –1，32 位元索引是 0xffffffff 或 16 位元索引是 0xffff。
+您可以透過寬帶切割產生多條寬帶。 您可以明確呼叫 [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL 函式或將特殊索引值插入索引緩衝區，來執行寬帶切割。 這個值是 –1，32 位元索引是 0xffffffff 或 16 位元索引是 0xffff。
 
 –1 的索引表示明確「剪下」或」重新啟動」目前的寬帶。 上一個索引完成上一個基本類型或寬帶，而下一個索引開始新的基本類型或寬帶。
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10 uwp，連線裝置、 遠端系統、 羅馬、 project rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: c785e6d2a8021148f572df88a6d9e6ba07c4a457
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ae9229378f75adeb215a881bdaf955b010cd7806
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601173"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366368"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>已連線的應用程式與裝置 (Project Rome)
 
@@ -19,7 +19,7 @@ ms.locfileid: "57601173"
 
 大部分的使用者擁有多部裝置，而且經常是在一部裝置上開始活動，卻在另一部上完成。 若要做到這一點，app 需要跨越裝置與平台。 Project Rome 可讓您探索遠端裝置、 啟動遠端裝置上的應用程式，並與遠端裝置上的 app service 進行通訊。
 
-Windows 10 (版本 1607) 中引進的[遠端系統 API](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)，可讓您撰寫 App，允許使用者在一部裝置上啟動工作，並在另一部上完成。 工作仍是中心焦點，而且使用者能在使用最方便的裝置上執行工作。 例如，使用者可能會在車內聆聽手機上的收音機，但當到家時，可能會想要換到和家庭立體聲系統連結的 Xbox One 上播放。
+Windows 10 (版本 1607) 中引進的[遠端系統 API](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)，可讓您撰寫 App，允許使用者在一部裝置上啟動工作，並在另一部上完成。 工作仍是中心焦點，而且使用者能在使用最方便的裝置上執行工作。 例如，使用者可能會在車內聆聽手機上的收音機，但當到家時，可能會想要換到和家庭立體聲系統連結的 Xbox One 上播放。
 
 您也可以將專案 Rome 用於隨附裝置或遠端控制案例。 使用 App 服務訊息傳送 API，在兩部裝置之間建立 App 通道，來傳送和接收自訂訊息。 例如，您可以為手機撰寫可控制電視播放的 App，或撰寫配對 App 來為您透過另一個 App 上觀看的電視節目角色提供相關資訊。  
 

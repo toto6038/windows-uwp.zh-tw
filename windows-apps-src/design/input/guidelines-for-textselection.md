@@ -8,19 +8,19 @@ keywords: 鍵盤、文字、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fc227904e57577a30eb2d171a060fb69d39b71f0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612503"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363503"
 ---
 # <a name="selecting-text-and-images"></a>選取文字和影像
 
 
 本文說明如何選取及操作文字、影像以及控制項，並提供在應用程式中使用這些機制時，所應考慮的使用者經驗指導方針。
 
-> **重要的 Api**:[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)， [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **重要的 Api**:[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
  
 
 
@@ -109,7 +109,7 @@ Windows 會辨識選取項目互動，可以讓您編輯和不可編輯的兩個
 
 
 **適用於開發人員**
-* [自訂的使用者互動](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [自訂的使用者互動](https://developer.microsoft.com/windows/design/inputs-devices)
 
 **範例**
 * [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
@@ -124,7 +124,7 @@ Windows 會辨識選取項目互動，可以讓您編輯和不可編輯的兩個
 * [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [輸入：簡化的手寫範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [輸入：Windows 8 筆勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 （c + +） 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 觸控的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 

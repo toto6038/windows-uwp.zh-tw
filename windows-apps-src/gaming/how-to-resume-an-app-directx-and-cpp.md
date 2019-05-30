@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 繼續, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: f0aa60061ae9fc14392bfe4beb0693ba50fda0df
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1506351dd06563386154ac35938cbd17f5ced32
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601603"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368608"
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a>如何繼續 app (DirectX 和 C++)
 
@@ -22,9 +22,9 @@ ms.locfileid: "57601603"
 ## <a name="register-the-resuming-event-handler"></a>登錄繼續事件處理常式
 
 
-登錄以處理 [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859) 事件，它指示使用者跳出然後又返回您的應用程式。
+登錄以處理 [**CoreApplication::Resuming**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming) 事件，它指示使用者跳出然後又返回您的應用程式。
 
-將這個程式碼新增到檢視提供者的 [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) 方法實作中：
+將這個程式碼新增到檢視提供者的 [**IFrameworkView::Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) 方法實作中：
 
 ```cpp
 // The first method is called when the IFrameworkView is being created.
@@ -43,7 +43,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 ## <a name="refresh-displayed-content-after-suspension"></a>暫停之後重新整理顯示的內容
 
 
-當您的應用程式處理繼續事件時，就會有機會重新整理它自己的已顯示內容。 請還原任何您已經使用 [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) 的處理常式儲存的應用程式，然後重新啟動處理。 遊戲裝置：如果您已經暫停音訊引擎，現在就是重新啟動它的時候。
+當您的應用程式處理繼續事件時，就會有機會重新整理它自己的已顯示內容。 請還原任何您已經使用 [**CoreApplication::Suspending**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending) 的處理常式儲存的應用程式，然後重新啟動處理。 遊戲裝置：如果您已經暫停音訊引擎，現在就是重新啟動它的時候。
 
 ```cpp
 void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
@@ -56,7 +56,7 @@ void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
 }
 ```
 
-這個回呼會以 app [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 所處理之事件訊息的形式發生。 如果您未從 app 的主迴圈 (實作於檢視提供者的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中) 呼叫 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)，就不會叫用這個回呼。
+這個回呼會以 app [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 的 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 所處理之事件訊息的形式發生。 如果您未從 app 的主迴圈 (實作於檢視提供者的 [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) 方法中) 呼叫 [**CoreDispatcher::ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)，就不會叫用這個回呼。
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -90,8 +90,8 @@ void App::Run()
 
 ## <a name="related-topics"></a>相關主題
 
-* [如何暫停應用程式 （DirectX 和 c + +）](how-to-suspend-an-app-directx-and-cpp.md)
-* [如何啟用應用程式 （DirectX 和 c + +）](how-to-activate-an-app-directx-and-cpp.md)
+* [如何暫停應用程式 (DirectX 和C++)](how-to-suspend-an-app-directx-and-cpp.md)
+* [如何啟用應用程式 (DirectX 和C++)](how-to-activate-an-app-directx-and-cpp.md)
 
  
 

@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 互動式快顯通知, 調適性快顯通知, 快顯通知內容, 快顯通知裝載
 ms.localizationpriority: medium
-ms.openlocfilehash: a75e39dfcddbef5bb5c37c2a253a46a7b9cc9577
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 75e5ea7e83a1a274b90b14588f7d809a4aa91269
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596823"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366871"
 ---
 # <a name="toast-content"></a>快顯通知內容
 
@@ -22,10 +22,10 @@ ms.locfileid: "57596823"
 > **重要的 Api**:[UWP 社群工具組通知 NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> 若要查看舊版的範本，從 Windows 8.1 和 Windows Phone 8.1，請參閱[舊版的快顯通知範本類別目錄](https://msdn.microsoft.com/library/windows/apps/hh761494)。
+> 若要查看舊版的範本，從 Windows 8.1 和 Windows Phone 8.1，請參閱[舊版的快顯通知範本類別目錄](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))。
 
 
-## <a name="getting-started"></a>開始使用
+## <a name="getting-started"></a>使用者入門
 
 **安裝通知程式庫。** 如果您想要使用 C# 而不是 XML 產生通知，請安裝名稱為 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 套件 (搜尋 "notifications uwp")。 本文中所提供的 C# 範例使用該 NuGet 套件 1.0.0 版本。
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 87eb6562c6ee66ca1d409d3748e688861d5f3920
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e3614b7bde3a87c8f5fa6fdc0eada560fd7bbcdc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605043"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370948"
 ---
 # <a name="stream-output-so-stage"></a>資料流輸出 (SO) 階段
 
@@ -31,14 +31,14 @@ ms.locfileid: "57605043"
 有兩種方式可將資料流輸出資料饋送至管線：
 
 -   資料流輸出資料可以饋送回到輸入組合語言 (IA) 階段。
--   使用 [Load](https://msdn.microsoft.com/library/windows/desktop/bb509694) 函式，可程式化的著色器可讀取資料流輸出資料。
+-   使用 [Load](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load) 函式，可程式化的著色器可讀取資料流輸出資料。
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>輸入
 
 
 來自上一個著色器階段的頂點資料。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段 (例如幾何著色器 (GS) 階段) 輸出 (或串流) 到記憶體中的一或多個緩衝區。 如果非作用中的幾何著色器 (GS) 階段，Stream 輸出 (SO) 階段持續輸出緩衝區的記憶體 （或如果 DS 也是作用中，從 頂點著色器 (VS) 階段） 中的頂點資料來自網域著色器 (DS) 階段。

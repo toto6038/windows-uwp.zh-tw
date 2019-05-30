@@ -6,21 +6,21 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 851f8a25055c90dfd592d5a68c733258bcd5f7b5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a3569a6c7f487ae17030bad03a1b839ad9df4167
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605953"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372718"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 執行階段元件中引發事件
 > [!NOTE]
-> 若要了解如何在中引發事件[C + + /cli WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows 執行階段元件，請參閱[撰寫事件在 C + + /cli WinRT](../cpp-and-winrt-apis/author-events.md)。
+> 若要了解如何在中引發事件[ C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows 執行階段元件，請參閱[撰寫事件C++/WinRT](../cpp-and-winrt-apis/author-events.md)。
 
 如果您的 Windows 執行階段元件會在背景執行緒 (背景工作執行緒) 上引發使用者定義的委派類型事件，而您希望 JavaScript 能夠接收該事件，您可以透過下列其中一種方式來實作和 (或) 引發此事件：
 
--   (選項 1) 透過 [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) 引發事件，將事件封送處理至 JavaScript 執行緒內容。 雖然這通常是最佳選擇，但在某些情況下卻無法提供最佳效能。
--   (選項 2) 使用 [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt;，不過會遺失類型資訊 (但會遺失事件類型資訊)。 如果選項 1 不可行或其效能不足，而且您可以接受遺失類型資訊的缺點，那麼選項 2 也是不錯的選擇。
+-   (選項 1) 透過 [Windows.UI.Core.CoreDispatcher](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher) 引發事件，將事件封送處理至 JavaScript 執行緒內容。 雖然這通常是最佳選擇，但在某些情況下卻無法提供最佳效能。
+-   (選項 2) 使用 [Windows.Foundation.EventHandler](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)&lt;Object&gt;，不過會遺失類型資訊 (但會遺失事件類型資訊)。 如果選項 1 不可行或其效能不足，而且您可以接受遺失類型資訊的缺點，那麼選項 2 也是不錯的選擇。
 -   (選項 3) 針對元件建立您自己的 Proxy 和虛設常式。 這是最難實作的選項，但對於有需要的案例來說，與選項 1 相比，這個選項不僅可以保留類型資訊，可能還會提供更佳的效能。
 
 如果您僅在背景執行緒上引發事件，卻沒有使用上述任何選項，JavaScript 用戶端就不會接收事件。
@@ -29,11 +29,11 @@ ms.locfileid: "57605953"
 
 所有 Windows 執行階段元件和 app 基本上都是 COM 物件，無論您使用哪種語言來建立它們都一樣。 在 Windows API 中，大部分元件都是敏捷式 COM 物件，這些元件與在背景執行緒上及 UI 執行緒上的物件通訊的能力都相同。 如果 COM 物件無法成為敏捷式物件，則它需要稱為 Proxy 和虛設常式的協助程式物件，協助跨越 UI 執行緒背景的執行緒界限，才能與其他 COM 物件通訊 (從 COM 方面來說，這稱為執行緒 Apartment 之間的通訊)。
 
-Windows API 中的大部分物件都是敏捷式物件或內建 Proxy 和虛設常式。 不過，您無法為泛型類型 (例如 Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx)) 建立 Proxy 和虛設常式，因為除非提供類型引數，否則它們都不是完整類型。 JavaScript 用戶端只有在缺少 Proxy 或虛設常式時才會有問題，但若您希望自己的元件在 JavaScript 以及 C++ 或 .NET 語言中都能使用，就必須使用下列其中一個選項。
+Windows API 中的大部分物件都是敏捷式物件或內建 Proxy 和虛設常式。 不過，您無法為泛型類型 (例如 Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](https://docs.microsoft.com/uwp/api/windows.foundation.typedeventhandler)) 建立 Proxy 和虛設常式，因為除非提供類型引數，否則它們都不是完整類型。 JavaScript 用戶端只有在缺少 Proxy 或虛設常式時才會有問題，但若您希望自己的元件在 JavaScript 以及 C++ 或 .NET 語言中都能使用，就必須使用下列其中一個選項。
 
 ## <a name="option-1-raise-the-event-through-the-coredispatcher"></a>(選項 1) 透過 CoreDispatcher 引發事件
 
-您可以使用 [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx)，傳送具有任何使用者定義之委派類型的事件，如此 JavaScript 就可以接收這些事件。 如果不確定要使用哪個選項，請先嘗試這一個。 如果事件引發和事件處理之間的延遲情況造成問題，請嘗試其他兩個選項。
+您可以使用 [Windows.UI.Core.CoreDispatcher](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher)，傳送具有任何使用者定義之委派類型的事件，如此 JavaScript 就可以接收這些事件。 如果不確定要使用哪個選項，請先嘗試這一個。 如果事件引發和事件處理之間的延遲情況造成問題，請嘗試其他兩個選項。
 
 下列範例示範如何使用 CoreDispatcher 來引發強類型事件。 請注意，類型引數是 Toast 而非 Object。
 
@@ -72,7 +72,7 @@ public void MakeToastWithDispatcher(string message)
 
 ## <a name="option-2-use-eventhandlerltobjectgt-but-lose-type-information"></a>(選項 2) 使用 EventHandler&lt;Object&gt;，但會遺失類型資訊
 
-另一種從背景執行緒傳送事件的方式，是使用 [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; 做為事件的類型。 Windows 會提供這個泛型類型的具象安裝，並為其提供 Proxy 和虛設常式。 缺點是事件引數的類型資訊和傳送者都會遺失。 C++ 和 .NET 用戶端必須透過文件來得知收到事件時要轉換回的類型。 JavaScript 用戶端不需要原始類型資訊， 而是會根據其在中繼資料內的名稱來尋找 arg 屬性。
+另一種從背景執行緒傳送事件的方式，是使用 [Windows.Foundation.EventHandler](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)&lt;Object&gt; 做為事件的類型。 Windows 會提供這個泛型類型的具象安裝，並為其提供 Proxy 和虛設常式。 缺點是事件引數的類型資訊和傳送者都會遺失。 C++ 和 .NET 用戶端必須透過文件來得知收到事件時要轉換回的類型。 JavaScript 用戶端不需要原始類型資訊， 而是會根據其在中繼資料內的名稱來尋找 arg 屬性。
 
 下列範例示範如何在 C# 中使用 Windows.Foundation.EventHandler&lt;Object&gt;：
 
@@ -120,11 +120,11 @@ toastCompletedEventHandler: function (event) {
 
 如需激發使用者定義之事件類型的潛在效能並完整保留類型資訊，您必須建立自己的 Proxy 和虛設常式物件，並將其內嵌於 app 封裝中。 通常，只有另外兩個選項不適用時才必須使用這個選項，但這是極少見的情況。 此外，這個選項也不保證能提供比其他兩個選項更佳的效能。 實際效能取決於諸多因素。 請使用 Visual Studio 分析工具或其他程式碼剖析工具來測量應用程式中的實際效能，並判斷事件是否確實為效能瓶頸。
 
-本文的剩餘部分說明如何使用 C# 來建立基本 Windows 執行階段元件，然後使用 C++ 來為 Proxy 和虛設常式建立 DLL，讓 JavaScript 能夠取用非同步作業中元件所引發的 Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt; 事件。 (您也可以使用 C++ 或 Visual Basic 來建立元件。 若要建立 proxy 和虛設常式相關的步驟都相同。）本逐步解說根據建立 Windows 執行階段同處理序元件範例 (C + + /CX) 並說明其用途。
+本文的剩餘部分說明如何使用 C# 來建立基本 Windows 執行階段元件，然後使用 C++ 來為 Proxy 和虛設常式建立 DLL，讓 JavaScript 能夠取用非同步作業中元件所引發的 Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt; 事件。 (您也可以使用 C++ 或 Visual Basic 來建立元件。 若要建立 proxy 和虛設常式相關的步驟都相同。）本逐步解說根據建立 Windows 執行階段同處理序元件範例 (C++/CX) 並說明其用途。
 
 這個逐步解說包含下列部分：
 
--   您將在此處建立兩個基本的 Windows 執行階段類別。 其中一個類別會公開類型為 [Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) 的事件，另一個類別則是傳回 JavaScript 做為 TValue 之引數的類型。 除非您完成後續步驟，否則這些類別都無法與 JavaScript 通訊。
+-   您將在此處建立兩個基本的 Windows 執行階段類別。 其中一個類別會公開類型為 [Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](https://docs.microsoft.com/uwp/api/windows.foundation.typedeventhandler) 的事件，另一個類別則是傳回 JavaScript 做為 TValue 之引數的類型。 除非您完成後續步驟，否則這些類別都無法與 JavaScript 通訊。
 -   這個 app 會啟用主要類別物件、呼叫方法，然後處理 Windows 執行階段元件所引發的事件。
 -   用來產生 Proxy 和虛設常式類別的工具需要這些項目。
 -   然後您會使用 IDL 檔案來產生 Proxy 和虛設常式的 C 原始程式碼。
@@ -132,11 +132,11 @@ toastCompletedEventHandler: function (event) {
 
 ## <a name="to-create-the-windows-runtime-component"></a>建立 Windows 執行階段元件
 
-在 Visual Studio 的功能表列上，依序選擇 [檔案] &gt; [新增專案]。 在 [新增專案] 對話方塊中，展開 [JavaScript] &gt; [通用 Windows]，然後選取 [空白應用程式]。 將專案命名為 ToasterApplication，然後選擇 [確定] 按鈕。
+在 Visual Studio 的功能表列上，依序選擇 [檔案] &gt; [新增專案]  。 在 [新增專案]  對話方塊中，展開 [JavaScript] &gt; [通用 Windows]  ，然後選取 [空白應用程式]  。 將專案命名為 ToasterApplication，然後選擇 [確定]  按鈕。
 
-新增C#方案的 Windows 執行階段元件：在 [方案總管] 中，開啟方案的捷徑功能表，然後再選擇**新增&gt;新的專案**。 依序展開**Visual C# &gt; Microsoft Store** ，然後選取**Windows 執行階段元件**。 將專案命名為 ToasterComponent，然後選擇 [確定] 按鈕。 ToasterComponent 將是您在後續步驟中建立之元件的根命名空間。
+新增C#方案的 Windows 執行階段元件：在 [方案總管] 中，開啟方案的捷徑功能表，然後再選擇**新增&gt;新的專案**。 依序展開**Visual C# &gt; Microsoft Store** ，然後選取**Windows 執行階段元件**。 將專案命名為 ToasterComponent，然後選擇 [確定]  按鈕。 ToasterComponent 將是您在後續步驟中建立之元件的根命名空間。
 
-在 [方案總管] 中，開啟方案的捷徑功能表，然後選擇 [屬性]。 在 [屬性頁] 對話方塊的左窗格中選取 [組態屬性]，然後將對話方塊頂端的 [組態] 設定為 [偵錯]，並將 [平台] 設定為 [x86]、[x64] 或 [ARM]。 選擇 [確定] 按鈕。
+在 [方案總管] 中，開啟方案的捷徑功能表，然後選擇 [屬性]  。 在 [屬性頁]  對話方塊的左窗格中選取 [組態屬性]  ，然後將對話方塊頂端的 [組態]  設定為 [偵錯]  ，並將 [平台]  設定為 [x86]、[x64] 或 [ARM]。 選擇 [確定] 按鈕。 
 
 **重要** 平台 = Any CPU 將無法運作，因為它並不適用於您稍後會加入至方案的機器碼架構 Win32 DLL。
 
@@ -146,7 +146,7 @@ toastCompletedEventHandler: function (event) {
 
 需要 Proxy 和虛設常式時，您的元件必須使用介面來公開它的公用成員。 在 ToasterComponent.cs 中，分別為快顯通知程式及其產生的 Toast 定義介面。
 
-**附註** 在C#您可以略過此步驟。 改為先建立類別，然後開啟其捷徑功能表並選擇 [重構] &gt; [擷取介面]。 在產生的程式碼中，手動為介面提供公用存取範圍。
+**附註** 在C#您可以略過此步驟。 改為先建立類別，然後開啟其捷徑功能表並選擇 [重構] &gt; [擷取介面]  。 在產生的程式碼中，手動為介面提供公用存取範圍。
 
 ```csharp
     public interface IToaster
@@ -229,9 +229,9 @@ IToast 介面包含可擷取來描述快顯通知類型的字串。 IToaster 介
 
 ## <a name="to-program-the-javascript-app"></a>撰寫 JavaScript 應用程式
 
-現在，我們可以將按鈕新增至 JavaScript 應用程式，使其利用我們方才定義的類別建立快顯通知。 在我們繼續之前，我們必須先新增一個我們建立的 ToasterComponent 專案參考。 在 \[方案總管\] 中，開啟 ToasterApplication 專案的捷徑功能表，選擇 **\[新增\] &gt; \[參考\]**，然後選擇 **\[加入參考\]** 按鈕。 在 \[加入參考\] 對話方塊中，在左側窗格的 \[方案\] 底下，選取元件專案，然後在中央窗格中選取 \[ToasterComponent\]。 選擇 [確定] 按鈕。
+現在，我們可以將按鈕新增至 JavaScript 應用程式，使其利用我們方才定義的類別建立快顯通知。 在我們繼續之前，我們必須先新增一個我們建立的 ToasterComponent 專案參考。 在 \[方案總管\] 中，開啟 ToasterApplication 專案的捷徑功能表，選擇 **\[新增\] &gt; \[參考\]** ，然後選擇 **\[加入參考\]** 按鈕。 在 \[加入參考\] 對話方塊中，在左側窗格的 \[方案\] 底下，選取元件專案，然後在中央窗格中選取 \[ToasterComponent\]。 選擇 [確定] 按鈕。 
 
-在 \[方案總管\] 中，開啟 ToasterApplication 專案捷徑功能表，然後選擇 **\[設定為啟始專案\]**。
+在 \[方案總管\] 中，開啟 ToasterApplication 專案捷徑功能表，然後選擇 **\[設定為啟始專案\]** 。
 
 在 default.js 檔案的結尾，新增一個命名空間，以包含呼叫元件，並且可讓元件回呼的函式。 命名空間會有兩個函式：一個負責建立快顯通知，另一個負責處理快顯通知完成 (toast-complete) 事件。 實作 makeToast 會建立一個 Toaster 物件，註冊事件處理常式，並建立快顯通知。 到目前為止，事件處理常式並沒有完成很多工作，如下所示︰
 
@@ -269,7 +269,7 @@ makeToast 函式必須連結至一個按鈕。 更新 default.html 以增加一�
     </body>
 ```
 
-若我們沒有使用 TypedEventHandler，我們現在應該就可以在本機電腦上執行應用程式，並按一下按鈕以建立快顯通知。 但在我們的應用程式中，卻沒有發生任何事情。 若要找出原因，我們必須針對引發 ToastCompletedEvent 的 Managed 程式碼進行偵錯。 停止專案，然後在功能表列中，選擇 **\[偵錯\] &gt; Toaster 應用程式屬性**。 將 **\[偵錯工具類型\]** 變更為 **\[只針對 Managed 程式碼\]**。 再次在功能表列中，選擇 **\[偵錯\] &gt; \[例外狀況\]**，然後選取 **\[通用語言執行平台例外狀況\]**。
+若我們沒有使用 TypedEventHandler，我們現在應該就可以在本機電腦上執行應用程式，並按一下按鈕以建立快顯通知。 但在我們的應用程式中，卻沒有發生任何事情。 若要找出原因，我們必須針對引發 ToastCompletedEvent 的 Managed 程式碼進行偵錯。 停止專案，然後在功能表列中，選擇 **\[偵錯\] &gt; Toaster 應用程式屬性**。 將 **\[偵錯工具類型\]** 變更為 **\[只針對 Managed 程式碼\]** 。 再次在功能表列中，選擇 **\[偵錯\] &gt; \[例外狀況\]** ，然後選取 **\[通用語言執行平台例外狀況\]** 。
 
 現在執行應用程式，然後按一下 make-toast 按鈕。 偵錯工具會捕捉到類型轉換例外狀況。 雖然從訊息中看起來並不明顯，但此例外狀況是由於該介面遺漏所需要的 Proxy 而導致的。
 
@@ -279,7 +279,7 @@ makeToast 函式必須連結至一個按鈕。 更新 default.html 以增加一�
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>為元件的介面產生 GUID (C# 及其他 .NET 程式語言)
 
-在功能表列上，依序選擇 \[工具\] &gt; \[建立 GUID\]。 在對話方塊中，選取 5. \[Guid ("xxxxxxxx-xxxx...xxxx)\]。 選擇 \[新的 GUID\] 按鈕，然後選擇 \[複製\] 按鈕。
+在功能表列上，依序選擇 \[工具\] &gt; \[建立 GUID\]。 在對話方塊中，選取 5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. 選擇 \[新的 GUID\] 按鈕，然後選擇 \[複製\] 按鈕。
 
 ![GUID 產生器工具](./images/guidgeneratortool.png)
 
@@ -337,13 +337,13 @@ midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid 
 
 ## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>將 Proxy 和虛設常式程式碼編譯為 DLL
 
-您現在已經擁有所需的所有檔案，接著您就可以將他們編譯為一個由 C++ 構成的 DLL 檔案。 若要以最簡單的方式完成這項工作，請新增一個專案以支援建置 Proxy。 開啟 ToasterApplication 方案的捷徑功能表，然後依序選擇 **\[加入\] > \[新增專案\]**。 在左窗格中**新的專案**對話方塊方塊中，展開**Visual c + + &gt; Windows&gt;通用 Windows**，然後在中間窗格中，選取**DLL (UWP app)**. （請注意這不是 c + + Windows 執行階段元件專案）。將專案命名為 Proxy，然後選擇 [**確定**] 按鈕。 當 C# 類別發生變更時，這些檔案會由 post-build 事件進行更新。
+您現在已經擁有所需的所有檔案，接著您就可以將他們編譯為一個由 C++ 構成的 DLL 檔案。 若要以最簡單的方式完成這項工作，請新增一個專案以支援建置 Proxy。 開啟 ToasterApplication 方案的捷徑功能表，然後依序選擇 **\[加入\] > \[新增專案\]** 。 在左窗格中**新的專案**對話方塊方塊中，展開**視覺化C++ &gt; Windows&gt;通用 Windows**，然後在中間窗格中，選取**DLL (UWP應用程式）** 。 (請注意，這不是C++Windows 執行階段元件專案。)將專案命名為 Proxy，然後選擇 [**確定**] 按鈕。 當 C# 類別發生變更時，這些檔案會由 post-build 事件進行更新。
 
-根據預設值，Proxy 專案會產生標頭 .h 檔案以及 C++ .cpp 檔案。 由於 DLL 是利用 MIDL 產生的檔案進行建置的，因此不需要 .h 和 .cpp 檔案。 在 \[方案總管\] 中，開啟他們的捷徑功能表，選擇 **\[移除\]**，然後確認刪除。
+根據預設值，Proxy 專案會產生標頭 .h 檔案以及 C++ .cpp 檔案。 由於 DLL 是利用 MIDL 產生的檔案進行建置的，因此不需要 .h 和 .cpp 檔案。 在 \[方案總管\] 中，開啟他們的捷徑功能表，選擇 **\[移除\]** ，然後確認刪除。
 
 專案清空後，現在您就可以將 MIDL 產生的檔案加回。 開啟 Proxy 專案的捷徑功能表，然後選擇 **\[新增\] > \[現有的項目\]。** 在對話方塊中，巡覽至 ToasterComponent 專案目錄並選取下列檔案：有 ToasterComponent.h、 ToasterComponent_i.c、 ToasterComponent_p.c 和 dlldata.c 的檔案。 選擇 **\[新增\]** 按鈕。
 
-在 Proxy 專案中，建立一個 .def 檔案來定義 dlldata.c 中所描述的 DLL 匯出檔。 開啟專案的捷徑功能表，然後依序選擇 **\[加入\] > \[新增項目\]**。 在對話方塊的左側窗格中，選取 \[程式碼\]，然後在中央窗格中，選取 \[模組定義檔案\]。 將檔案命名為 proxies.def，然後選擇 **\[新增\]** 按鈕。 開啟此 .def 檔案，並修改為包含了 dlldata.c 中所定義的 EXPORTS︰
+在 Proxy 專案中，建立一個 .def 檔案來定義 dlldata.c 中所描述的 DLL 匯出檔。 開啟專案的捷徑功能表，然後依序選擇 **\[加入\] > \[新增項目\]** 。 在對話方塊的左側窗格中，選取 \[程式碼\]，然後在中央窗格中，選取 \[模組定義檔案\]。 將檔案命名為 proxies.def，然後選擇 **\[新增\]** 按鈕。 開啟此 .def 檔案，並修改為包含了 dlldata.c 中所定義的 EXPORTS︰
 
 ```cpp
 EXPORTS
@@ -351,18 +351,18 @@ EXPORTS
     DllGetClassObject       PRIVATE
 ```
 
-若您現在就建置專案，建置工作將會失敗。 若要正確編譯此專案，您必須變更專案編譯和連結的方式。 在 \[方案總管\] 中，開啟 Proxies 方案的捷徑功能表，然後選擇 **\[屬性\]**。 將屬性頁面變更如下。
+若您現在就建置專案，建置工作將會失敗。 若要正確編譯此專案，您必須變更專案編譯和連結的方式。 在 \[方案總管\] 中，開啟 Proxies 方案的捷徑功能表，然後選擇 **\[屬性\]** 。 將屬性頁面變更如下。
 
-在左側窗格中，選取  **\[C/C++\] > \[前置處理器\]**，然後在右側窗格中，選取 **\[前置處理器定義\]**，選擇向下箭號按鈕，然後再次選取 **\[編輯\]**。 在方塊中新增這些定義：
+在左側窗格中，選取  **\[C/C++\] > \[前置處理器\]** ，然後在右側窗格中，選取 **\[前置處理器定義\]** ，選擇向下箭號按鈕，然後再次選取 **\[編輯\]** 。 在方塊中新增這些定義：
 
 ```cpp
 WIN32;_WINDOWS
 ```
-在 **\[C/C++\] > \[先行編譯標頭檔\]** 底下，將 **\[先行編譯標頭檔\]** 變更為 **\[不使用先行編譯標頭檔\]**，然後選擇 **\[套用\]** 按鈕。
+在 **\[C/C++\] > \[先行編譯標頭檔\]** 底下，將 **\[先行編譯標頭檔\]** 變更為 **\[不使用先行編譯標頭檔\]** ，然後選擇 **\[套用\]** 按鈕。
 
-在 **\[連結器\] > \[一般\]** 底下，將 **\[忽略匯入程式庫\]** 變更為 **\[是\]**，然後選擇 **\[套用\]** 按鈕。
+在 **\[連結器\] > \[一般\]** 底下，將 **\[忽略匯入程式庫\]** 變更為 **\[是\]** ，然後選擇 **\[套用\]** 按鈕。
 
-在 **\[連結器\] > \[輸入\]** 底下，選取 **\[其他相依性\]**，選擇向下箭號按鈕，然後選取 **\[編輯\]**。 在方塊中加入此文字︰
+在 **\[連結器\] > \[輸入\]** 底下，選取 **\[其他相依性\]** ，選擇向下箭號按鈕，然後選取 **\[編輯\]** 。 在方塊中加入此文字︰
 
 ```cpp
 rpcrt4.lib;runtimeobject.lib
@@ -381,7 +381,7 @@ rpcrt4.lib;runtimeobject.lib
 
 ## <a name="to-register-the-proxy-and-stub"></a>註冊 Proxy 和虛設常式
 
-在 ToasterApplication 專案中，請開啟 package.appxmanifest 的捷徑功能表，然後選擇 **\[以...開啟\]**。 在 \[開啟\] 對話方塊中，選取 **\[XML 文字編輯器\]**，然後選擇 **\[確定\]** 按鈕。 我們將會貼上一些 XML，以提供 windows.activatableClass.proxyStub 延伸模組註冊和以 Proxy 中的 GUID 為基礎的東西。 若要尋找在 .appxmanifest 檔案中使用的 GUID，請開啟 ToasterComponent_i.c。 尋找與下列範例相似的項目。 請注意 IToast、IToaster，和第三個介面 (一個具類型，並包含兩個參數︰Toaster 和 Toast 的事件處理常式) 的定義。 這會與 Toaster 類別中所定義的事件相符。 請注意 IToast 和 IToaster 所使用的 GUID 皆符合 C# 檔案中介面上定義的 GUID。 由於具類別的事件處理常式是自動產生的，因此該介面的 GUID 也會自動產生。
+在 ToasterApplication 專案中，請開啟 package.appxmanifest 的捷徑功能表，然後選擇 **\[以...開啟\]** 。 在 \[開啟\] 對話方塊中，選取 **\[XML 文字編輯器\]** ，然後選擇 **\[確定\]** 按鈕。 我們將會貼上一些 XML，以提供 windows.activatableClass.proxyStub 延伸模組註冊和以 Proxy 中的 GUID 為基礎的東西。 若要尋找在 .appxmanifest 檔案中使用的 GUID，請開啟 ToasterComponent_i.c。 尋找與下列範例相似的項目。 請注意 IToast、IToaster，和第三個介面 (一個具類型，並包含兩個參數︰Toaster 和 Toast 的事件處理常式) 的定義。 這會與 Toaster 類別中所定義的事件相符。 請注意 IToast 和 IToaster 所使用的 GUID 皆符合 C# 檔案中介面上定義的 GUID。 由於具類別的事件處理常式是自動產生的，因此該介面的 GUID 也會自動產生。
 
 ```cpp
 MIDL_DEFINE_GUID(IID, IID___FITypedEventHandler_2_ToasterComponent__CToaster_ToasterComponent__CToast,0x1ecafeff,0x1ee1,0x504a,0x9a,0xf5,0xa6,0x8c,0x6f,0xb2,0xb4,0x7d);
@@ -416,7 +416,7 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA
 -   資訊清單中的介面識別碼符合 ToasterComponent 中的 Iid\_i.c 檔案。
 -   資訊清單中的介面名稱都是唯一的。 由於系統並不會使用到這些，您可以選擇使用數值來命名。 通常選擇與您定義的介面明確相符的介面名稱是一個很好的作法。 針對產生的介面，名稱應該要能夠指示產生的介面。 您可以使用 ToasterComponent\_i.c 檔案，可協助您產生介面名稱。
 
-若您嘗試現在就執行方案，您將會收到一則錯誤，告知您 proxies.dll 並非承載的一部分。 在 ToasterApplication 專案中開啟 **\[參考\]** 資料夾的捷徑功能表，然後選擇 **\[加入參考\]**。 選取 Proxies 專案旁的核取方塊。 同時，請確定 ToasterComponent 旁邊的核取方塊也已選取。 選擇 [確定] 按鈕。
+若您嘗試現在就執行方案，您將會收到一則錯誤，告知您 proxies.dll 並非承載的一部分。 在 ToasterApplication 專案中開啟 **\[參考\]** 資料夾的捷徑功能表，然後選擇 **\[加入參考\]** 。 選取 Proxies 專案旁的核取方塊。 同時，請確定 ToasterComponent 旁邊的核取方塊也已選取。 選擇 [確定] 按鈕。 
 
 現在您應該已可以正常建置專案。 執行專案並驗證您確實可以建立快顯通知。
 

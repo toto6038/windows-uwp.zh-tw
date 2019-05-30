@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 286b278d0c41edfbc5c008f31e5a8e28fa30f93a
-ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.openlocfilehash: 210431928c5dd7c5d5dfb99855322f1560e91dd7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58901636"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363224"
 ---
 # <a name="buttons"></a>按鈕
 
@@ -30,14 +30,14 @@ XAML 架構提供的標準按鈕控制項，以及數個特製化的按鈕控制
 
 控制項 | 描述
 ------- | -----------
-[按鈕](/uwp/api/windows.ui.xaml.controls.button) | 起始立即採取行動。 可以搭配 Click 事件，或命令繫結。
+[Button](/uwp/api/windows.ui.xaml.controls.button) | 起始立即採取行動。 可以搭配 Click 事件，或命令繫結。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 會引發 Click 事件只有在按下時，持續按鈕。
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A 按鈕，已有像超連結，用於導覽的樣式。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 若要開啟附加的彈出式視窗的 > 形箭號按鈕。
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 具有兩個邊的按鈕。 一端會起始動作，並另一端可開啟功能表。
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 具有兩個邊的切換按鈕。 一端切換開啟/關閉，並另一端可開啟功能表。
 
-| **取得 Windows UI 程式庫** |
+| **取得 Windows 的 UI 程式庫** |
 | - |
 | DropDownButton、 SplitButton，ToggleSplitButton 等 Windows UI 程式庫，包含新的控制項和 UWP 應用程式的 UI 功能的 NuGet 套件的一部分。 如需詳細資訊，包括安裝指示，請參閱 < [Windows 的 UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
@@ -47,7 +47,7 @@ XAML 架構提供的標準按鈕控制項，以及數個特製化的按鈕控制
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-使用** 按鈕**，讓使用者起始立即採取行動，例如送出表單。
+使用 **按鈕**，讓使用者起始立即採取行動，例如送出表單。
 
 若要瀏覽至其他網頁則動作時，請勿使用按鈕使用 [按一下 HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton)改。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
 > 例外狀況：精靈導覽中，使用標示為 「 反向 」 的按鈕和 下一步 」。 對於其他類型的向後導覽或瀏覽到較高層級，使用[上一頁按鈕](../basics/navigation-history-and-backwards-navigation.md)。
@@ -120,16 +120,16 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ### <a name="button-interaction"></a>按鈕互動
 
-當您以手指或手寫筆點選按鈕，或在游標位於按鈕上方時按下滑鼠左鍵，按鈕會引發 [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 如果按鈕有鍵盤焦點，則按下 Enter 鍵或空格鍵也會引發 Click 事件。
+當您以手指或手寫筆點選按鈕，或在游標位於按鈕上方時按下滑鼠左鍵，按鈕會引發 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 如果按鈕有鍵盤焦點，則按下 Enter 鍵或空格鍵也會引發 Click 事件。
 
-您通常無法處理按鈕上的低階 [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件，因為按鈕本身有 Click 行為。 如需詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx)。
+您通常無法處理按鈕上的低階 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件，因為按鈕本身有 Click 行為。 如需詳細資訊，請參閱[事件與路由事件概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)。
 
 您可以變更 [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode) 屬性，以變更按鈕引發 Click 事件的方式。 預設 ClickMode 值是 **Release**，但您也可以將按鈕的 ClickMode 設定為 **Hover** 或 **Press**。 如果 ClickMode 是 **Hover**，則使用鍵盤或觸控方式並不能引發 Click 事件。
 
 
 ### <a name="button-content"></a>按鈕內容
 
-按鈕是 [ContentControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx)。 它的 XAML 內容屬性是 [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx)，它可讓您使用如下 XAML 語法︰`<Button>A button's content</Button>`。 您可以將任何物件設定為按鈕的內容。 如果內容是 [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx)，就會呈現於按鈕中。 如果內容是其他類型的物件，則會在按鈕中顯示它的字串表示。
+按鈕是 [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl)。 它的 XAML 內容屬性是 [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content)，它可讓您使用如下 XAML 語法︰`<Button>A button's content</Button>`。 您可以將任何物件設定為按鈕的內容。 如果內容是 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)，就會呈現於按鈕中。 如果內容是其他類型的物件，則會在按鈕中顯示它的字串表示。
 
 按鈕的內容通常是文字。 以下是對含有文字內容的按鈕的設計建議：
 -   使用簡潔、專屬、一目了然的文字，清楚說明按鈕執行的動作。 通常按鈕文字內容是一個動詞單字。
@@ -140,7 +140,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 <table>
 <tr>
-<td> <b>需要修正：</b><br> 含溢位文字的按鈕。 </td>
+<td> <b>若要修正的需要：</b><br> 含溢位文字的按鈕。 </td>
 <td> <img src="images/button-wraptext.png"/> </td>
 </tr>
 <tr>
@@ -175,7 +175,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-repeat-button"></a>建立一個重複按鈕
 
-[RepeatButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 是一個按鈕，可以從按鈕被按下的當時到鬆開後為止，重複引發 [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 設定 [Delay](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) 屬性以指定 RepeatButton 在它被按下之後以及在它開始重複按一下動作之前，必須等待的時間。 設定 [Interval](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) 屬性以指定重複按下動作之間的時間。 這兩個屬性的時間是以毫秒為單位來指定。
+[RepeatButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) 是一個按鈕，可以從按鈕被按下的當時到鬆開後為止，重複引發 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 設定 [Delay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.delay) 屬性以指定 RepeatButton 在它被按下之後以及在它開始重複按一下動作之前，必須等待的時間。 設定 [Interval](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.interval) 屬性以指定重複按下動作之間的時間。 這兩個屬性的時間是以毫秒為單位來指定。
 
 下列範例顯示兩個 RepeatButton 控制項，而且其各自的 Click 事件是用來增加或減少文字區塊中顯示的值。
 
@@ -268,7 +268,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 > SplitButton 需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或有[Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)有可以分別叫用的兩個部分。 一個組件的行為類似標準按鈕，並叫用立即採取行動。 另一個組件會叫用飛出視窗，其中包含使用者可以選擇的其他選項。
+A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)有可以分別叫用的兩個部分。 一個組件的行為類似標準按鈕，並且會叫用立即動作。 另一個組件會叫用飛出視窗，其中包含使用者可以選擇的其他選項。
 
 > [!NOTE]
 > 分割按鈕時叫用使用觸控，行為會如同下拉式按鈕，按鈕的兩部分叫用飛出視窗。 使用輸入的其他方法，使用者可以叫用按鈕的其中一個半分開。
@@ -376,7 +376,7 @@ public sealed partial class MainPage : Page
 
 > ToggleSplitButton 需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或有[Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)有可以分別叫用的兩個部分。 一個組件就可以開啟或關閉切換按鈕。 另一個組件會叫用飛出視窗，其中包含使用者可以選擇的其他選項。
+A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)有可以分別叫用的兩個部分。 一個組件的行為類似可以開或關的切換按鈕。 另一個組件會叫用飛出視窗，其中包含使用者可以選擇的其他選項。
 
 切換分割按鈕通常用來啟用或停用功能，當功能有多個使用者可以選擇的選項。 例如，在文件編輯器，它可用來開啟清單，或關閉，而下拉式清單來選擇清單的樣式。
 
@@ -535,7 +535,7 @@ private void ApplyListStyle(string listStyle)
 
 ## <a name="related-articles"></a>相關文章
 
-- [Button 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+- [Button 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)
 - [選項按鈕](radio-button.md)
 - [核取方塊](checkbox.md)
 - [切換開關](toggles.md)

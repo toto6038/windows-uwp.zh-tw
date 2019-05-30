@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯架構, 轉換, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: aba723a5ee2443664d6d640adc124b991ff0da7e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6629ba035a7fb0085e28f3fa033e58a1c1105ccf
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608823"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368019"
 ---
 # <a name="convert-the-rendering-framework"></a>轉換轉譯架構
 
@@ -93,7 +93,7 @@ technique RenderSceneSimple
 }
 ```
 
-在 Direct3D 11 中，我們仍然可以使用 HLSL 著色器。 我們將每個著色器放在本身的 HLSL 檔案中，讓 Visual Studio 將它們編譯成個別檔案，而稍後我們會將它們當作個別 Direct3D 資源載入。 我們會將目標層級[著色器模型 4 層級 9\_1 (/ 4\_0\_層級\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876)因為這些著色器會寫入針對 DirectX 9.1 Gpu。
+在 Direct3D 11 中，我們仍然可以使用 HLSL 著色器。 我們將每個著色器放在本身的 HLSL 檔案中，讓 Visual Studio 將它們編譯成個別檔案，而稍後我們會將它們當作個別 Direct3D 資源載入。 我們會將目標層級[著色器模型 4 層級 9\_1 (/ 4\_0\_層級\_9\_1)](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)因為這些著色器會寫入針對 DirectX 9.1 Gpu。
 
 當我們定義輸入配置時，已確定它代表我們在系統記憶體中與 GPU 記憶體中，用來儲存每個頂點資料的相同資料結構。 同理，頂點著色器的輸出應該符合用來做為像素著色器輸入的結構。 規則與 C++ 中將資料從某一個函式傳遞到另一個函式不同；您可以在結構的結尾略過未使用的變數。 但是順序無法重新安排，且您無法略過資料結構中間的內容。
 
@@ -101,7 +101,7 @@ technique RenderSceneSimple
 
  
 
-可以 HLSL 檔就會使用較舊的語法著色器語意-例如，而不是 SV 色彩\_目標。 如果這樣，您將需要啟用 HLSL 相容性模式 (/Gec 編譯器選項) 或將著色器[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)更新成目前的語法。 這個範例中的頂點著色器已使用目前的語法來更新。
+可以 HLSL 檔就會使用較舊的語法著色器語意-例如，而不是 SV 色彩\_目標。 如果這樣，您將需要啟用 HLSL 相容性模式 (/Gec 編譯器選項) 或將著色器[語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)更新成目前的語法。 這個範例中的頂點著色器已使用目前的語法來更新。
 
 以下為我們的硬體轉換頂點著色器，這次是定義於它自己的檔案中。
 
@@ -185,7 +185,7 @@ PS_OUTPUT main(PS_INPUT In)
 ## <a name="compile-and-load-shaders"></a>編譯和載入著色器
 
 
-Direct3D 9 遊戲通常會使用效果程式庫來做為實作可程式化管線的簡便方式。 效果可以使用 [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768) 方法在執行階段期間進行編譯。
+Direct3D 9 遊戲通常會使用效果程式庫來做為實作可程式化管線的簡便方式。 效果可以使用 [**D3DXCreateEffectFromFile function**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dxcreateeffectfromfile) 方法在執行階段期間進行編譯。
 
 在 Direct3D 9 中載入效果
 
@@ -234,7 +234,7 @@ m_d3dDevice->CreateVertexShader(
     );
 ```
 
-若要在編譯的應用程式套件中包含著色器位元組程式碼，只需將 HLSL 檔案新增到 Visual Studio 專案。 Visual Studio 將使用[效果編譯器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC)，將 HLSL 檔案編譯到編譯著色器物件 (.CSO 檔案)，並在應用程式套件中包含它們。
+若要在編譯的應用程式套件中包含著色器位元組程式碼，只需將 HLSL 檔案新增到 Visual Studio 專案。 Visual Studio 將使用[效果編譯器工具](https://docs.microsoft.com/windows/desktop/direct3dtools/fxc) (FXC)，將 HLSL 檔案編譯到編譯著色器物件 (.CSO 檔案)，並在應用程式套件中包含它們。
 
 > **附註**  務必設定正確的目標功能層級 HLSL 編譯器： 以滑鼠右鍵按一下 HLSL 原始程式檔，在 Visual Studio 中的，選取屬性，並變更**著色器模型**底下**HLSL 編譯器-&gt;一般**。 當您的 app 建立 Direct3D 著色器資源時，Direct3D 會針對硬體功能來檢查這個屬性。
 
@@ -242,11 +242,11 @@ m_d3dDevice->CreateVertexShader(
 
 ![HLSL 著色器屬性](images/hlslshaderpropertiesmenu.png)![HLSL 著色器類型](images/hlslshadertypeproperties.png)
 
-這裡很適合用來建立輸入配置，此輸入配置會對應到 Direct3D 9 中的頂點串流宣告。 每個頂點的資料結構需要符合頂點著色器所使用的內容；在 Direct3D 11 中，我們對於輸入配置有更多的控制權；我們可以定義浮點數向量的陣列大小與位元長度，以及指定頂點著色器的語意。 我們會建立[ **D3D11\_輸入\_項目\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180)結構，並使用它來告知 Direct3D 的每個頂點資料將會如下所示。 我們要等到已載入頂點著色器來定義輸入配置之後，因為 API 會根據頂點著色器資源來驗證輸入配置。 如果輸入配置不相容，則 Direct3D 會擲回例外狀況。
+這裡很適合用來建立輸入配置，此輸入配置會對應到 Direct3D 9 中的頂點串流宣告。 每個頂點的資料結構需要符合頂點著色器所使用的內容；在 Direct3D 11 中，我們對於輸入配置有更多的控制權；我們可以定義浮點數向量的陣列大小與位元長度，以及指定頂點著色器的語意。 我們會建立[ **D3D11\_輸入\_項目\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc)結構，並使用它來告知 Direct3D 的每個頂點資料將會如下所示。 我們要等到已載入頂點著色器來定義輸入配置之後，因為 API 會根據頂點著色器資源來驗證輸入配置。 如果輸入配置不相容，則 Direct3D 會擲回例外狀況。
 
-每個頂點的資料都必須以相容的類型儲存在系統記憶體中。 可協助 DirectXMath 資料類型;比方說，DXGI\_格式\_R32G32B32\_FLOAT 對應至[ **XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475)。
+每個頂點的資料都必須以相容的類型儲存在系統記憶體中。 可協助 DirectXMath 資料類型;比方說，DXGI\_格式\_R32G32B32\_FLOAT 對應至[ **XMFLOAT3**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3)。
 
-> **附註**  常數緩衝區使用固定的輸入的配置與對齊四個浮點數，一次。 [**XMFLOAT4** ](https://msdn.microsoft.com/library/windows/desktop/ee419608) （和其衍生項目） 建議的常數緩衝區的資料。
+> **附註**  常數緩衝區使用固定的輸入的配置與對齊四個浮點數，一次。 [**XMFLOAT4** ](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) （和其衍生項目） 建議的常數緩衝區的資料。
 
  
 
@@ -483,7 +483,7 @@ m_d3dContext->DrawIndexed(
 m_swapChain->Present(1, 0);
 ```
 
-我們剛建立的轉譯鏈結將會從 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中實作的遊戲迴圈進行呼叫。 這會顯示[第 3 部分：檢視區和遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)。
+我們剛建立的轉譯鏈結將會從 [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) 方法中實作的遊戲迴圈進行呼叫。 這會顯示[第 3 部分：檢視區和遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)。
 
  
 

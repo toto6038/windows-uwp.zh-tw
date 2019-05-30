@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 33e850ba16be7a8d2621f061015d39c8b334cab2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7179f8644970a24a9e7b9ce50a4bcb4d5d225d46
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651063"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370449"
 ---
 # <a name="constant-buffer-view-cbv"></a>常數緩衝區檢視 (CBV)
 
@@ -21,7 +21,7 @@ ms.locfileid: "57651063"
 
 常數緩衝區的一般資料為全球、投影及檢視矩陣，其在一個畫面的繪圖中保持不變。
 
-常數緩衝區配置應與 HLSL 配置相符 (請參閱[常數變數的封裝規則](https://msdn.microsoft.com/library/windows/desktop/bb509632.aspx))。
+常數緩衝區配置應與 HLSL 配置相符 (請參閱[常數變數的封裝規則](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-packing-rules))。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, 陰影體, 深度緩衝區, DirectX 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2feecb3080efefb2f9625fd8b66c5b722ad02a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ce0cbd310ea89c5fa7b5c68033402f559768a24
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622273"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368515"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>逐步解說：實作使用 Direct3D 11 中的深度緩衝區的陰影磁碟區
 
@@ -65,7 +65,7 @@ Windows 8 adde d 深度比較功能，功能層級 9\_1 和 9\_3。 現在，您
 
 完成本逐步解說中，您應該熟悉如何在 Direct3D 11 功能層級 9 與相容實作的基本相容的陰影磁碟區技術\_1 和更新版本。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 
 您應該[為通用 Windows 平台 (UWP) DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您不需要的範本，但您將需要 Microsoft Visual Studio 2015 建置此逐步解說的程式碼範例。
@@ -75,13 +75,13 @@ Windows 8 adde d 深度比較功能，功能層級 9\_1 和 9\_3。 現在，您
 
 **Direct3D**
 
-* [在 Direct3D 中撰寫 HLSL 著色器 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [在 Direct3D 中撰寫 HLSL 著色器 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [建立新的 DirectX 11 專案適用於 UWP](user-interface.md)
 
 **對應技術文件的陰影**
 
-* [常見的技術來改善陰影深度對應](https://msdn.microsoft.com/library/windows/desktop/ee416324)
-* [串聯的陰影對應](https://msdn.microsoft.com/library/windows/desktop/ee416307)
+* [常見的技術來改善陰影深度對應](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)
+* [串聯的陰影對應](https://docs.microsoft.com/windows/desktop/DxTechArts/cascaded-shadow-maps)
 
  
 

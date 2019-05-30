@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c16f1fbb55374b1d04c9fc9f5f7eae72ad19b00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0eeb515f07d9bc2e48ba97f6ef4d71afd0226ace
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604853"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367736"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>轉譯架構 i:轉譯簡介
 
@@ -122,7 +122,7 @@ void GameMain::Run()
 }
 ```
 
-### <a name="update"></a>更新
+### <a name="update"></a>Update
 
 請參閱[管理遊戲流程](tutorial-game-flow-management.md)文章，了解更多有關如何以[__App::Update__和__GameMain::Update__](tutorial-game-flow-management.md#appupdate-method)方法更新遊戲狀態。
 
@@ -496,11 +496,11 @@ void DX::DeviceResources::Present()
 * [著色器階段](#shader-stages)
 * [各種著色器檔案格式](#various-shader-file-formats)
 
-如需詳細資訊，請參閱[了解 Direct3D 11 轉譯管線](https://msdn.microsoft.com/library/windows/desktop/dn643746.aspx)和[圖形管線](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx)。
+如需詳細資訊，請參閱[了解 Direct3D 11 轉譯管線](https://docs.microsoft.com/windows/desktop/direct3dgetstarted/understand-the-directx-11-2-graphics-pipeline)和[圖形管線](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline)。
 
 #### <a name="hlsl"></a>HLSL
 
-HLSL 是適用於 DirectX 的高階著色器語言。 使用 HLSL，您可以建立像可程式化著色器的 C 用於 Direct3D 管線。 如需詳細資訊，請參閱 [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561.aspx)。
+HLSL 是適用於 DirectX 的高階著色器語言。 使用 HLSL，您可以建立像可程式化著色器的 C 用於 Direct3D 管線。 如需詳細資訊，請參閱 [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl)。
 
 #### <a name="shaders"></a>著色器
 
@@ -516,7 +516,7 @@ HLSL 是適用於 DirectX 的高階著色器語言。 使用 HLSL，您可以建
 
 #### <a name="shader-stages"></a>著色器階段
 
-定義一系列這些各式著色器處理這個在轉譯管線中稱為著色器階段的基本類型串流。 實際階段取決於 Direct3D 的版本，但通常會包含頂點、幾何及像素階段。 還有其他階段，例如鑲嵌的輪廓以及網域著色器，和計算著色器。 所有這些階段可使用 [HLSL])(#hlsl) 完全程式化。 如需詳細資訊，請參閱[圖形管線](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx)。
+定義一系列這些各式著色器處理這個在轉譯管線中稱為著色器階段的基本類型串流。 實際階段取決於 Direct3D 的版本，但通常會包含頂點、幾何及像素階段。 還有其他階段，例如鑲嵌的輪廓以及網域著色器，和計算著色器。 所有這些階段可使用 [HLSL])(#hlsl) 完全程式化。 如需詳細資訊，請參閱[圖形管線](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline)。
 
 #### <a name="various-shader-file-formats"></a>各種不同的著色器檔案格式
 
@@ -533,7 +533,7 @@ HLSL 是適用於 DirectX 的高階著色器語言。 使用 HLSL，您可以建
 
 Direct3D 11 是一組 API，可協助我們建立圖形，用於像遊戲一樣的大量圖形的應用程式，其中我們要用很好的圖形卡來處理大量計算。 本章節簡短說明 Direct3D 11 圖形的程式設計蓋瑱：資源、子資源、裝置以及裝置操作。
 
-#### <a name="resource"></a>資源
+#### <a name="resource"></a>Resource
 
 適用於這些新的人員，您可以思考資源（也稱為裝置資源）如何做為轉譯物件，例如材質、位置、色彩的資訊。 資源將資料提供給管線並定義您場景期間轉譯的項目。 從您的遊戲媒體載入或在執行階段動態建立資源。
 
@@ -545,7 +545,7 @@ Direct3D 11 是一組 API，可協助我們建立圖形，用於像遊戲一樣�
 
 #### <a name="depth-stencil"></a>深度樣板
 
-深度樣板資源包含格式及緩衝區，以保留深度和樣板資訊。 使用紋理資源建立它。 如需如何建立深度樣板資源的詳細資訊，請參閱[設定深度樣板功能](https://msdn.microsoft.com/library/windows/desktop/bb205074.aspx)。 我們透過使用 [ID3D11DepthStencilView](https://msdn.microsoft.com/library/windows/desktop/ff476377.aspx)介面實作深度樣板檢視來存取深度樣板資源。
+深度樣板資源包含格式及緩衝區，以保留深度和樣板資訊。 使用紋理資源建立它。 如需如何建立深度樣板資源的詳細資訊，請參閱[設定深度樣板功能](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-depth-stencil)。 我們透過使用 [ID3D11DepthStencilView](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview)介面實作深度樣板檢視來存取深度樣板資源。
 
 深度資訊告訴我們所呈現而不是隱藏的多邊形區域。 樣板資訊可告訴我們遮罩哪一個像素。 它可以用來製作特效，因為它會判斷是否繪製像素；設定 1 或 0 的位元。 
 
@@ -553,9 +553,9 @@ Direct3D 11 是一組 API，可協助我們建立圖形，用於像遊戲一樣�
 
 #### <a name="render-target"></a>轉譯目標
 
-轉譯目標是我們可以在轉譯階段結尾撰寫的資源。 常使用[ID3D11Device::CreateRenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476517.aspx)方法建立它，該方法使用交換鏈結背景緩衝區（這也是資源）做為輸入參數。 
+轉譯目標是我們可以在轉譯階段結尾撰寫的資源。 常使用[ID3D11Device::CreateRenderTargetView](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createrendertargetview)方法建立它，該方法使用交換鏈結背景緩衝區（這也是資源）做為輸入參數。 
 
-每個轉譯目標也該有對應深度樣板檢視，因為在使用它之前，當我們使用[OMSetRenderTargets](https://msdn.microsoft.com/library/windows/desktop/ff476464.aspx)來設定轉譯目標時，它也需要深度樣板檢視。 我們透過使用[ID3D11RenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476582.aspx)介面實作轉譯目標來存取轉譯目標資源。 
+每個轉譯目標也該有對應深度樣板檢視，因為在使用它之前，當我們使用[OMSetRenderTargets](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets)來設定轉譯目標時，它也需要深度樣板檢視。 我們透過使用[ID3D11RenderTargetView](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)介面實作轉譯目標來存取轉譯目標資源。 
 
 #### <a name="device"></a>裝置
 
@@ -563,25 +563,25 @@ Direct3D 11 是一組 API，可協助我們建立圖形，用於像遊戲一樣�
 
 更精確的說明，Direct3D 裝置是 Direct3D 的轉譯元件。 裝置封裝並儲存呈現狀態、執行轉換照明作業，並將影像點陣化到表面。 如需詳細資訊，請參閱 [裝置](../graphics-concepts/devices.md)。
 
-裝置會以[ID3D11Device](https://msdn.microsoft.com/library/windows/desktop/ff476379.aspx)介面顯示。 換言之，ID3D11Device 介面代表虛擬顯示卡，並用來建立裝置擁有的資源。 
+裝置會以[ID3D11Device](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)介面顯示。 換言之，ID3D11Device 介面代表虛擬顯示卡，並用來建立裝置擁有的資源。 
 
-請注意，有不同版本的 ID3D11Device，[ID3D11Device5](https://msdn.microsoft.com/library/windows/desktop/mt492478.aspx)是最新版本，並在 ID3D11Device4 中新增新的方法。 如需 Direct3D 如何與基礎硬體通訊的詳細資訊，請參閱[Windows 裝置的驅動程式模型 (WDDM) 架構](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture)。
+請注意，有不同版本的 ID3D11Device，[ID3D11Device5](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11device5)是最新版本，並在 ID3D11Device4 中新增新的方法。 如需 Direct3D 如何與基礎硬體通訊的詳細資訊，請參閱[Windows 裝置的驅動程式模型 (WDDM) 架構](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture)。
 
-每個應用程式必須至少有一個裝置，大部分的應用程式只能建立一個裝置。 建立裝置的硬體驅動程式安裝在您的電腦上，藉由呼叫其中一個__D3D11CreateDevice__或是__D3D11CreateDeviceAndSwapChain__ D3D 使用指定的驅動程式類型和\_驅動程式\_類型旗標。 每個裝置可以使用一或多個裝置內容，視所需的功能而定。 如需詳細資訊，請參閱 [D3D11CreateDevice 函式](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx)。
+每個應用程式必須至少有一個裝置，大部分的應用程式只能建立一個裝置。 建立裝置的硬體驅動程式安裝在您的電腦上，藉由呼叫其中一個__D3D11CreateDevice__或是__D3D11CreateDeviceAndSwapChain__ D3D 使用指定的驅動程式類型和\_驅動程式\_類型旗標。 每個裝置可以使用一或多個裝置內容，視所需的功能而定。 如需詳細資訊，請參閱 [D3D11CreateDevice 函式](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice)。
 
 #### <a name="device-context"></a>裝置內容
 
 裝置內容用來設定 [管線](#rendering-pipeline) 狀態以及使用[裝置](#device)擁有的[資源](#resource)來產生轉譯命令。 
 
-Direct3D 11 實作兩種類型的裝置內容，一種為立即轉譯，另一種為延遲轉譯；這兩個內容都可以使用[ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476385.aspx)介面顯示。  
+Direct3D 11 實作兩種類型的裝置內容，一種為立即轉譯，另一種為延遲轉譯；這兩個內容都可以使用[ID3D11DeviceContext](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)介面顯示。  
 
 __ID3D11DeviceContext__介面有不同的版本；__ID3D11DeviceContext4__將新方法新增至__ID3D11DeviceContext3__中。
 
-注意：__ID3D11DeviceContext4__引進了 Windows 10 Creators Update 中，而且是最新版本__ID3D11DeviceContext__介面。 Windows 10 Creators Update 為目標的應用程式應該使用此介面而不是較舊版本。 如需詳細資訊，請參閱 [ID3D11DeviceContext4](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx)。
+注意:__ID3D11DeviceContext4__引進了 Windows 10 Creators Update 中，而且是最新版本__ID3D11DeviceContext__介面。 Windows 10 Creators Update 為目標的應用程式應該使用此介面而不是較舊版本。 如需詳細資訊，請參閱 [ID3D11DeviceContext4](https://docs.microsoft.com/windows/desktop/api/d3d11_3/nn-d3d11_3-id3d11devicecontext4)。
 
 #### <a name="dxdeviceresources"></a>DX::DeviceResources
 
-__DX::DeviceResources__類別在__DeviceResources.cpp__/__.h__檔案中且控制所有 DirectX 裝置資源。 在範例遊戲專案和 DirectX 11 應用程式範本專案中，這些檔案會在__Commons__資料夾。 當您在 Visual Studio 2015 或更新版本中建立新的 DirectX 11 應用程式範本專案，您可以取得這些檔案的最新版本。
+__DX::DeviceResources__類別在__DeviceResources.cpp__/ __.h__檔案中且控制所有 DirectX 裝置資源。 在範例遊戲專案和 DirectX 11 應用程式範本專案中，這些檔案會在__Commons__資料夾。 當您在 Visual Studio 2015 或更新版本中建立新的 DirectX 11 應用程式範本專案，您可以取得這些檔案的最新版本。
 
 ### <a name="buffer"></a>緩衝區
 
@@ -612,11 +612,11 @@ __DX::DeviceResources__類別在__DeviceResources.cpp__/__.h__檔案中且控制
     * 藉由呼叫__ID3D11DeviceContext::SOSetTargets__的資料流輸出階段
     * 藉由呼叫著色器方法，像__ID3D11DeviceContext::VSSetConstantBuffers__的著色器階段
 
-如需詳細資訊，請參閱 [Direct3D 11 中的緩衝區簡介](https://msdn.microsoft.com/library/windows/desktop/ff476898.aspx)。
+如需詳細資訊，請參閱 [Direct3D 11 中的緩衝區簡介](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro)。
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX 圖形基礎結構 (DXGI) 是封裝的一些低階工作所需的 Direct3D 10 的 Windows Vista 引進的新子系統 10.1、 11 和 11.1。 在多執行緒應用程式中使用 DXGI以確保不會發生死結，要特別注意。 如需詳細資訊，請參閱[DirectX 圖形基礎結構 (DXGI):最佳做法-進行多執行緒處理](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
+Microsoft DirectX 圖形基礎結構 (DXGI) 是封裝的一些低階工作所需的 Direct3D 10 的 Windows Vista 引進的新子系統 10.1、 11 和 11.1。 在多執行緒應用程式中使用 DXGI以確保不會發生死結，要特別注意。 如需詳細資訊，請參閱[DirectX 圖形基礎結構 (DXGI):最佳做法-進行多執行緒處理](https://docs.microsoft.com/windows/desktop/direct3darticles/dxgi-best-practices)
 
 ### <a name="feature-level"></a>功能層級
 
@@ -624,9 +624,9 @@ Microsoft DirectX 圖形基礎結構 (DXGI) 是封裝的一些低階工作所需
 
 每個視訊卡實作一個特定層級的 DirectX 功能，依照所安裝的 GPU 而定。 在 Microsoft Direct3D 舊版中，可以找出視訊卡實作的 Direct3D 版本，然後隨之程式設計您的應用程式。 
 
-使用功能層級，當您建立裝置，您可以嘗試建立您所要求的功能層級的裝置。 如果裝置建立運作，該功能層級則存在，否則，硬體不支援該功能層級。 您可以嘗試重新建立較低功能層級的裝置，或您可以選擇離開應用程式。 比方說，12\_0 的功能層級需要 Direct3D 11.3 或 Direct3D 12 中，而著色器模型 5.1。 如需詳細資訊，請參閱[Direct3D 功能層級：每個功能層級的概觀](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)。
+使用功能層級，當您建立裝置，您可以嘗試建立您所要求的功能層級的裝置。 如果裝置建立運作，該功能層級則存在，否則，硬體不支援該功能層級。 您可以嘗試重新建立較低功能層級的裝置，或您可以選擇離開應用程式。 比方說，12\_0 的功能層級需要 Direct3D 11.3 或 Direct3D 12 中，而著色器模型 5.1。 如需詳細資訊，請參閱[Direct3D 功能層級：每個功能層級的概觀](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)。
 
-您可以使用功能層級，來開發 Direct3D 9、 Microsoft Direct3D 10 或 Direct3D 11 中的應用程式，然後執行它 9、 10 或 11 （但有些例外） 的硬體上項目。 如需詳細資訊，請參閱[Direct3D 功能層級](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
+您可以使用功能層級，來開發 Direct3D 9、 Microsoft Direct3D 10 或 Direct3D 11 中的應用程式，然後執行它 9、 10 或 11 （但有些例外） 的硬體上項目。 如需詳細資訊，請參閱[Direct3D 功能層級](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)。
 
 ### <a name="stereo-rendering"></a>立體著色運算
 

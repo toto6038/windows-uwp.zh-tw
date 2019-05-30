@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b221220d417df5b70927984ac65eff93fae54a4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ad32f67dc8cfaf90b96523429bb0ac4b6722abb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646533"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365082"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教學課程：建立簡單的氣象應用程式中使用格線與 StackPanel
 
@@ -22,14 +22,14 @@ ms.locfileid: "57646533"
 
 ## <a name="prerequisites"></a>必要條件
 - Windows 10 和 Microsoft Visual Studio 2015 或更新版本。 （最新的 Visual Studio 建議用於目前的開發和安全性更新）[按一下這裡以了解如何使用 Visual Studio 完成設定](../../get-started/get-set-up.md)。
-- 如何使用 XAML 和 C# 建立基本 "Hello World" 應用程式的知識。 如果您未具備此知識，[按一下這裡，以了解如何建立 "Hello World" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
+- 如何使用 XAML 和 C# 建立基本 "Hello World" 應用程式的知識。 如果您未具備此知識，[按一下這裡，以了解如何建立 "Hello World" app](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="step-1-create-a-blank-app"></a>步驟 1：建立空白的應用程式
-1. 在 Visual Studio 功能表中，選取 \[檔案\] > \[新增專案\]。
-2. 在 \[新增專案\] 對話方塊的左窗格中，選取 \[Visual C#\] > \[Windows\] > \[通用\] 或 \[Visual C++\] > \[Windows\] > \[通用\]。
-3. 在中央窗格中，選取 \[空白應用程式\]。
-4. 在 \[名稱\] 方塊中，輸入 **WeatherPanel**，然後選取 \[確定\]。
-5. 若要執行程式，從功能表中選取 \[偵錯\] > \[開始偵錯\]，或選取 F5。
+1. 在 Visual Studio 功能表中，選取 \[檔案\] > \[新增專案\]。  
+2. 在 \[新增專案\] 對話方塊的左窗格中，選取 \[Visual C#\] > \[Windows\] > \[通用\] 或 \[Visual C++\] > \[Windows\] > \[通用\]。       
+3. 在中央窗格中，選取 \[空白應用程式\]。 
+4. 在 \[名稱\] 方塊中，輸入 **WeatherPanel**，然後選取 \[確定\]。  
+5. 若要執行程式，從功能表中選取 \[偵錯\] > \[開始偵錯\]，或選取 F5。  
 
 ## <a name="step-2-define-a-grid"></a>步驟 2：定義方格
 在 XAML 中，**Grid** 是由一系列的列和欄所組成。 透過在 **Grid** 內指定元素的列與欄，您便可在使用者介面內放置及隔開其他元素。 列與欄是使用 **RowDefinition** 和 **ColumnDefinition** 元素所定義。
@@ -51,7 +51,7 @@ ms.locfileid: "57646533"
 
 新的 **Grid** 會建立一個兩列和兩欄的組合，其會定義 app 介面的版面配置。 第一個資料行具有**寬度**的 「 3\*"，而第二個有"5\*"，除以比率為 5 3： 在兩個資料行之間的水平空間。 在相同的方式有兩個資料列**高度**的"2\*"和"\*"分別，因此**方格**配置第二個與第一個資料列的兩倍之多的空間 ("\*「 相同 」 1\*")。 即使重新調整視窗大小或變更裝置，都會保留這些比例。
 
-若要了解調整列與欄的其他方法，請參閱[使用 XAML 定義版面配置](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties)。
+若要了解調整列與欄的其他方法，請參閱[使用 XAML 定義版面配置](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)。
 
 如果您立即執行應用程式，就只會看見空白頁面，因為 **Grid** 區域中沒有任何內容。 為了顯示 **Grid**，我們將為它提供一些色彩。
 
@@ -120,6 +120,6 @@ ms.locfileid: "57646533"
 您可以視需要試著使用上述的版面配置進行試驗，並探索您可用來代表天氣資料的各種方式。
 
 ## <a name="related-articles"></a>相關文章
-如需如何設計 UWP 應用程式版面配置的簡介，請參閱 [UWP 應用程式設計簡介](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro)
+如需如何設計 UWP 應用程式版面配置的簡介，請參閱 [UWP 應用程式設計簡介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
-若要了解如何建立可適應不同螢幕大小的回應式版面配置，請參閱[使用 XAML 定義頁面版面配置](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)
+若要了解如何建立可適應不同螢幕大小的回應式版面配置，請參閱[使用 XAML 定義頁面版面配置](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)

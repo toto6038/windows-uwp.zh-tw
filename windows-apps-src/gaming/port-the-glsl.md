@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, glsl, port, 遊戲, 連接埠
 ms.localizationpriority: medium
-ms.openlocfilehash: 809440f9e77af19c01f4a050eee3b6f8d1c709b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 210f98476a06b88e7d3d543006a6d4ec886cfd45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621373"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368257"
 ---
 # <a name="port-the-glsl"></a>移植 GLSL
 
@@ -20,14 +20,14 @@ ms.locfileid: "57621373"
 
 **重要的 Api**
 
--   [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb205574)
--   [著色器常數 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
+-   [HLSL 語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps)
+-   [著色器常數 (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)
 
 一旦將建立和設定緩衝區與著色器物件的程式碼移過去之後，就可以將這些著色器內部的程式碼從 OpenGL ES 2.0 的 GL 著色器語言 (GLSL) 移植到 Direct3D 11 的高階著色器語言 (HLSL)。
 
 著色器在 OpenGL ES 2.0 中，使用下列內建函式執行之後傳回資料**gl\_位置**， **gl\_FragColor**，或**gl\_FragData\[n\]**  （其中 n 是特定的呈現目標的索引）。 在 Direct3D 中，沒有特定的內建函式，而且著色器會傳回資料做為其各自 main() 函式的傳回類型。
 
-您想要在著色器階段之間插補的資料 (例如，頂點位置或法向量) 是藉由使用 **varying** 宣告來處理。 但是，Direct3D 沒有這個宣告；而是必須使用 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb205574)來標示您要在著色器階段之間傳送的任何資料。 所選擇的特定語意表示資料的用途及意義。 例如，您要將在片段著色器之間插補的頂點資料宣告為：
+您想要在著色器階段之間插補的資料 (例如，頂點位置或法向量) 是藉由使用 **varying** 宣告來處理。 但是，Direct3D 沒有這個宣告；而是必須使用 [HLSL 語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps)來標示您要在著色器階段之間傳送的任何資料。 所選擇的特定語意表示資料的用途及意義。 例如，您要將在片段著色器之間插補的頂點資料宣告為：
 
 `float4 vertPos : POSITION;`
 
@@ -54,7 +54,7 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-此處的常數緩衝區使用暫存器 b0 來保留封裝的緩衝區。 表單 b 會參照所有暫存器\#。 如需關於常數緩衝區、暫存器及資料封裝的 HLSL 實作的詳細資訊，請參閱[著色器常數 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)。
+此處的常數緩衝區使用暫存器 b0 來保留封裝的緩衝區。 表單 b 會參照所有暫存器\#。 如需關於常數緩衝區、暫存器及資料封裝的 HLSL 實作的詳細資訊，請參閱[著色器常數 (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)。
 
 <a name="instructions"></a>指示
 ------------
@@ -159,10 +159,10 @@ float4 main(PixelShaderInput input) : SV_TARGET
 ---------
 [繪製到螢幕](draw-to-the-screen.md) 備註
 -------
-了解 HLSL 語意與常數緩衝區的封裝，除了可為您省掉一些令人頭痛的偵錯工作，還能提供最佳化的時機。 如果您有機會，閱讀[變數語法 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)，[簡介在 Direct3D 11 中的緩衝區](https://msdn.microsoft.com/library/windows/desktop/ff476898)，和[How to:建立常數緩衝區](https://msdn.microsoft.com/library/windows/desktop/ff476896)。 如果沒有機會，那麼此處提供一些有關語意與常數緩衝區的入門提示，請謹記在心。
+了解 HLSL 語意與常數緩衝區的封裝，除了可為您省掉一些令人頭痛的偵錯工作，還能提供最佳化的時機。 如果您有機會，閱讀[變數語法 (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax)，[簡介在 Direct3D 11 中的緩衝區](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro)，和[How to:建立常數緩衝區](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to)。 如果沒有機會，那麼此處提供一些有關語意與常數緩衝區的入門提示，請謹記在心。
 
 -   總是重複檢查轉譯器的 Direct3D 設定程式碼，以確定常數緩衝區的結構符合 HLSL 中的 cbuffer struct 宣告，且這兩個宣告中的元件純量類型是相符的。
--   在轉譯器的 C++ 程式碼中，於常數緩衝區宣告中使用 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) 類型，以確保進行適當的資料封裝。
+-   在轉譯器的 C++ 程式碼中，於常數緩衝區宣告中使用 [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal) 類型，以確保進行適當的資料封裝。
 -   有效使用常數緩衝區的最佳方法是根據它們的更新頻率，將著色器變數組織到常數緩衝區。 例如，如果您有一些每個框架都要更新一次的制式資料，而其他制式資料只會在相機移動時更新，那麼，請考慮將該資料分隔成兩個不同的常數緩衝區。
 -   您忘記套用或未正確套用的語意將是最早出現的著色器編譯 (FXC) 錯誤來源。 請仔細檢查它們！ 相關文件可能有一點混亂，因為許多較舊的頁面和範例會參考 Direct3D 11 之前不同版本的 HLSL 語意。
 -   請確定您知道要將每個著色器目標設定為哪一個 Direct3D 功能層級。 功能的語意層級 9\_ \*栖瓾 11\_1。

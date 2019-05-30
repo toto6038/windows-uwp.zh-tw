@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 網格, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b5aa00b5beb7c80a903fbf17d432f73f16561a2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595643"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368979"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>建立和顯示基本網格
 
@@ -28,7 +28,7 @@ ms.locfileid: "57595643"
 
 ### <a name="technologies"></a>技術
 
--   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
+-   [Direct3D](https://docs.microsoft.com/windows/desktop/getting-started-with-direct3d)
 
 ### <a name="prerequisites"></a>必要條件
 
@@ -77,7 +77,7 @@ SimpleCubeVertex cubeVertices[] =
 
 ### <a name="step-2-set-up-the-input-layout"></a>步驟 2：設定輸入的版面配置
 
-現在您的記憶體中已經有頂點。 但是您的圖形裝置有自己的記憶體，而您使用 Direct3D 進行存取。 為了將頂點資料送入圖形裝置以進行處理，您必須想以往一樣執行一些前置作業：您必須宣告如何配置頂點資料，圖形裝置才能在從遊戲取得頂點資料時解譯這些資料。 若要這樣做，可以使用 [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)。
+現在您的記憶體中已經有頂點。 但是您的圖形裝置有自己的記憶體，而您使用 Direct3D 進行存取。 為了將頂點資料送入圖形裝置以進行處理，您必須想以往一樣執行一些前置作業：您必須宣告如何配置頂點資料，圖形裝置才能在從遊戲取得頂點資料時解譯這些資料。 若要這樣做，可以使用 [**ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout)。
 
 宣告和設定頂點緩衝區的輸入配置。
 
@@ -110,17 +110,17 @@ m_d3dDevice->CreateInputLayout(
 
     **COLOR** 值通常會在著色器管線尾端以一個有 4 個組成部分的 RGBA 值傳回。 例如，您會在所有像素的著色器管線中，將 "A" Alpha 值設為 1.0 (最大不透明度)。
 
-如需的格式的完整清單，請參閱[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。 如需 HLSL 語意的完整清單，請參閱[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
+如需的格式的完整清單，請參閱[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)。 如需 HLSL 語意的完整清單，請參閱[語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)。
 
-在 Direct3D 裝置上呼叫 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) 並建立輸入配置。 現在，您必須建立可以實際容納資料的緩衝區！
+在 Direct3D 裝置上呼叫 [**ID3D11Device::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) 並建立輸入配置。 現在，您必須建立可以實際容納資料的緩衝區！
 
 ### <a name="step-3-populate-the-vertex-buffers"></a>步驟 3：填入端點緩衝區
 
 頂點緩衝區包含網格中每個三角形的頂點清單。 每個頂點在清單中必須是唯一的。 在範例中，立方體有 8 個頂點。 頂點著色器會在圖形裝置上執行並讀取頂點緩衝區的內容，而且會依據您在先前步驟中指定的輸入配置解譯資料。
 
-在下一個範例中，您會提供緩衝區的描述和子資源以告知 Direct3D 關於頂點資料實際對應的一些資訊，以及如何在圖形裝置的記憶體中處理它。 由於您使用的是可包含任何項目的一般 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351)，因此這是必要的動作。 [ **D3D11\_緩衝區\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092)並[ **D3D11\_SUBRESOURCE\_資料**](https://msdn.microsoft.com/library/windows/desktop/ff476220)結構會提供給確保 Direct3D 了解實體記憶體配置的緩衝區，包括每個頂點的元素大小的緩衝區，以及頂點清單的大小上限。 您也可以在此控制緩衝區記憶體的存取和如何進行周遊，但這不在本教學課程的範圍內。
+在下一個範例中，您會提供緩衝區的描述和子資源以告知 Direct3D 關於頂點資料實際對應的一些資訊，以及如何在圖形裝置的記憶體中處理它。 由於您使用的是可包含任何項目的一般 [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer)，因此這是必要的動作。 [ **D3D11\_緩衝區\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)並[ **D3D11\_SUBRESOURCE\_資料**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)結構會提供給確保 Direct3D 了解實體記憶體配置的緩衝區，包括每個頂點的元素大小的緩衝區，以及頂點清單的大小上限。 您也可以在此控制緩衝區記憶體的存取和如何進行周遊，但這不在本教學課程的範圍內。
 
-在設定緩衝區後，您要呼叫 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 才能實際建立它。 顯而易見地，如果您有多個的物件，就必須為每個不同的模型建立緩衝區。
+在設定緩衝區後，您要呼叫 [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 才能實際建立它。 顯而易見地，如果您有多個的物件，就必須為每個不同的模型建立緩衝區。
 
 宣告與建立頂點緩衝區。
 
@@ -159,8 +159,8 @@ m_d3dDevice->CreateBuffer(
 
 ![建構菱形時的索引順序](images/rhombus-surface-1.png)
 
--   三角形 1:\[0、 1、 2\]
--   三角形 2:\[0、 2、 3\]
+-   三角形 1:\[0, 1, 2\]
+-   三角形 2:\[0, 2, 3\]
 
 寬帶或風扇拓撲時，您可以訂購的頂點 （例如端從索引 0 到索引 2 的映像中。） 周遊期間排除許多多餘的側邊的方式針對大型的網狀結構，這會大幅減少端點著色器執行時，並大幅改善效能的次數。 不過，我們將持續以最簡單的方式說明三角形清單。
 
@@ -187,9 +187,9 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-當您只有 8 個頂點時，緩衝區中 36 個索引元素的數目就顯得太多。 如果您選擇要排除部分備援，並使用不同的頂點清單類型，例如帶狀線還是風扇，您就必須指定該型別，當您提供特定[ **D3D11\_基本\_拓樸**](https://msdn.microsoft.com/library/windows/desktop/ff476189)值[ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455)方法。
+當您只有 8 個頂點時，緩衝區中 36 個索引元素的數目就顯得太多。 如果您選擇要排除部分備援，並使用不同的頂點清單類型，例如帶狀線還是風扇，您就必須指定該型別，當您提供特定[ **D3D11\_基本\_拓樸**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85))值[ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology)方法。
 
-如需不同索引清單技巧的詳細資訊，請參閱[基本拓撲](https://msdn.microsoft.com/library/windows/desktop/bb205124)。
+如需不同索引清單技巧的詳細資訊，請參閱[基本拓撲](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-primitive-topologies)。
 
 ### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>步驟 5：建立您的轉換矩陣的常數緩衝區
 
@@ -199,7 +199,7 @@ unsigned short cubeIndices[] =
 -   從世界座標系統轉換成相機 (視圖) 座標系統的 4x4 矩陣。
 -   從相機座標系統轉換成 2D 檢視投影座標系統的 4x4 矩陣。
 
-這些矩陣會傳送到「常數緩衝區」中的著色器。 常數緩衝區是會在著色器管線下一階段的執行期間維持一致的記憶體區域，著色器可從您的 HLSL 程式碼直接存取它。 您要為每個常數緩衝區定義兩次：第一次是在遊戲的 C++ 程式碼中，而 (至少) 一次是在您著色器程式碼的類 C 程式語言的 HLSL 語法中。 兩種宣告在類型和資料對齊方面都必須直接對應。 當著色器使用 HLSL 宣告來解譯以 C++ 宣告的資料，但類型不符或資料對齊不一致時，這種錯誤很容易出現，但又不容易被發現。
+這些矩陣會傳送到「常數緩衝區」  中的著色器。 常數緩衝區是會在著色器管線下一階段的執行期間維持一致的記憶體區域，著色器可從您的 HLSL 程式碼直接存取它。 您要為每個常數緩衝區定義兩次：第一次是在遊戲的 C++ 程式碼中，而 (至少) 一次是在您著色器程式碼的類 C 程式語言的 HLSL 語法中。 兩種宣告在類型和資料對齊方面都必須直接對應。 當著色器使用 HLSL 宣告來解譯以 C++ 宣告的資料，但類型不符或資料對齊不一致時，這種錯誤很容易出現，但又不容易被發現。
 
 HLSL 不會變更常數緩衝區。 您可以在遊戲更新特定資料時變更它們。 遊戲開發人員通常會建立 4 種類別的常數緩衝區：一種用於依畫面更新；一種用於依模型/物件更新；一種用於依遊戲狀態重新整理更新；還有一種用於遊戲生命週期內均未曾變更的資料。
 
@@ -289,7 +289,7 @@ m_constantBufferData.projection = DirectX::XMFLOAT4X4(
             );
 ```
 
-到了這裡，請在[ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149) 上設定頂點和索引緩衝區，還有您正在使用的拓撲。
+到了這裡，請在[ID3D11DeviceContext](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference-10level9-context) 上設定頂點和索引緩衝區，還有您正在使用的拓撲。
 
 ```cpp
 // Set the vertex and index buffers, and specify the way they define geometry.
@@ -412,7 +412,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 ### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>步驟 8：點陣化，並顯示網狀拓撲
 
-我們來執行管線吧。 很簡單：呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565)。
+我們來執行管線吧。 很簡單：呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexed)。
 
 繪製該立方體！
 

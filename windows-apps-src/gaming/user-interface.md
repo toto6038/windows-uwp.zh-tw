@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, directx, 範本
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a4491fe9a3bb97a73652c40a2968f2f53c377b5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5eb36b66cc067111e2749ebd51a05994a011ba01
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634243"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367468"
 ---
 # <a name="directx-game-project-templates"></a>DirectX 遊戲專案範本
 
@@ -33,7 +33,7 @@ Visual Studio 2015 包含三個的 DirectX 和 UWP 範本：
 
 -   DirectX 11 應用程式 (通用 Windows) - DirectX 11 應用程式 (通用 Windows) 範本會建立使用 DirectX 11 直接轉譯為應用程式視窗的 UWP 專案。
 -   DirectX 12 應用程式 (通用 Windows) - DirectX 12 應用程式 (通用 Windows) 範本會建立使用 DirectX 12 直接轉譯為應用程式視窗的 UWP 專案。
--   DirectX 11 和 XAML App (通用 Windows) - DirectX 11 和 XAML App (通用 Windows) 範本會建立使用 DirectX 11 在 XAML 控制項內轉譯的 UWP 專案。 此範本採用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)，因此您可以使用 XAML UI 控制項。 這讓新增使用者介面元素變得更容易，但是使用 XAML 範本可能會導致 效能變差。
+-   DirectX 11 和 XAML App (通用 Windows) - DirectX 11 和 XAML App (通用 Windows) 範本會建立使用 DirectX 11 在 XAML 控制項內轉譯的 UWP 專案。 此範本採用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)，因此您可以使用 XAML UI 控制項。 這讓新增使用者介面元素變得更容易，但是使用 XAML 範本可能會導致 效能變差。
 
 您可以根據效能和想要使用的技術來選擇範本。
 
@@ -76,4 +76,4 @@ DirectX 通用 Windows 範本包含下列檔案：
 如果您要建立新的 DirectX 遊戲，請參閱以下主題。
 
 -   [使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-uwp-directx-game.md)
--   [開發通用 Windows 平台遊戲，c + + 和 DirectX 滾珠迷宮](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [開發滾珠迷宮這個通用 Windows 平台遊戲C++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)

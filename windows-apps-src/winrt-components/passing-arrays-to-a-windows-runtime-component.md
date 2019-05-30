@@ -6,26 +6,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 60c2e2221cd174ffd75a45d6fe8e2f66744d67a0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: aedf33b6fab55aeb217a3b41a22b55f1cc5c9c5f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657873"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372498"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>將陣列傳遞到 Windows 執行階段元件
 
 
 
 
-Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可能兩者皆是。 這表示傳遞到方法以及陣列本身的陣列內容也會分成輸入或輸出。 如果陣列的內容是用於輸入，方法就會從陣列讀取，而不會寫入陣列。 如果陣列的內容是用於輸出，方法就會寫入陣列，而不會從陣列讀取。 這會衍生出一個有關陣列參數的問題，因為 .NET Framework 中的陣列屬於參考類型，即便是依值傳遞陣列參考 (在 Visual Basic 中為 **ByVal**)，陣列的內容都是可變動的。 [Windows 執行階段中繼資料匯出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 會在無法從內容判斷陣列的預定用法時，要求您對參數套用 ReadOnlyArrayAttribute 屬性或 WriteOnlyArrayAttribute 屬性，以指定其用法。 陣列用法的判斷方式如下：
+Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可能兩者皆是。 這表示傳遞到方法以及陣列本身的陣列內容也會分成輸入或輸出。 如果陣列的內容是用於輸入，方法就會從陣列讀取，而不會寫入陣列。 如果陣列的內容是用於輸出，方法就會寫入陣列，而不會從陣列讀取。 這會衍生出一個有關陣列參數的問題，因為 .NET Framework 中的陣列屬於參考類型，即便是依值傳遞陣列參考 (在 Visual Basic 中為 **ByVal**)，陣列的內容都是可變動的。 [Windows 執行階段中繼資料匯出工具 (Winmdexp.exe)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) 會在無法從內容判斷陣列的預定用法時，要求您對參數套用 ReadOnlyArrayAttribute 屬性或 WriteOnlyArrayAttribute 屬性，以指定其用法。 陣列用法的判斷方式如下：
 
--   就傳回值或 out 參數 (在 Visual Basic 中為具有 [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 屬性的 **ByRef** 參數) 而言，陣列一律僅供輸出。 請不要套用 ReadOnlyArrayAttribute 屬性。 WriteOnlyArrayAttribute 屬性可用於輸出參數，但這是多此一舉。
+-   就傳回值或 out 參數 (在 Visual Basic 中為具有 [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute?redirectedfrom=MSDN) 屬性的 **ByRef** 參數) 而言，陣列一律僅供輸出。 請不要套用 ReadOnlyArrayAttribute 屬性。 WriteOnlyArrayAttribute 屬性可用於輸出參數，但這是多此一舉。
 
     > **請小心**  Visual Basic 編譯器不會強制執行僅限輸出的規則。 您不應讀取輸出參數，其中可能包含 **Nothing**。 請一律指派新的陣列。
  
 -   參數不可以有 **ref** 修飾詞 (在 Visual Basic 中為 **ByRef**)。 Winmdexp.exe 會產生錯誤。
--   對於依值傳遞的參數，您必須套用 [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) 屬性或 [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) 屬性，以指定陣列內容是用於輸入或輸出。 同時指定這兩個屬性會產生錯誤。
+-   對於依值傳遞的參數，您必須套用 [ReadOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute?redirectedfrom=MSDN) 屬性或 [WriteOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute?redirectedfrom=MSDN) 屬性，以指定陣列內容是用於輸入或輸出。 同時指定這兩個屬性會產生錯誤。
 
 如果方法必須接受用於輸入的陣列，請修改陣列內容，並將陣列傳回至呼叫端、對輸入使用唯讀參數，並對輸出使用唯寫參數 (或傳回值)。 下列程式碼將說明一個實作此模式的方式：
 
@@ -62,6 +62,6 @@ Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可�
 
 ## <a name="related-topics"></a>相關主題
 
-* [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
-* [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
+* [ReadOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute?redirectedfrom=MSDN)
+* [WriteOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute?redirectedfrom=MSDN)
 * [使用 C# 和 Visual Basic 建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

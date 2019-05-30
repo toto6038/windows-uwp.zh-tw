@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, directx, input latency, 遊戲, 輸入延遲
 ms.localizationpriority: medium
-ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a74e2e24810dee058aa166800091af91d55cdef4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601743"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368451"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
 
@@ -65,7 +65,7 @@ ms.locfileid: "57601743"
 
 拼圖遊戲的第一個反覆運算只會在使用者移動拼圖時更新畫面。 使用者可以選取一塊拼圖然後觸碰正確的目的地，將其拖曳到定位或貼齊定位。 在第二個情況下，這塊拼圖會在沒有動畫或效果的情況下跳到目的地。
 
-此程式碼在使用 **CoreProcessEventsOption::ProcessOneAndAllPending** 的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法內，有一個單一執行緒的遊戲迴圈。 使用這個選項會在佇列中分派所有目前可用的事件。 如果沒有任何事件擱置中，遊戲迴圈會等到有事件出現為止。
+此程式碼在使用 **CoreProcessEventsOption::ProcessOneAndAllPending** 的 [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) 方法內，有一個單一執行緒的遊戲迴圈。 使用這個選項會在佇列中分派所有目前可用的事件。 如果沒有任何事件擱置中，遊戲迴圈會等到有事件出現為止。
 
 ``` syntax
 void App::Run()
@@ -96,7 +96,7 @@ void App::Run()
 
 在第二個反覆運算中，遊戲經過修改，所以使用者選取一塊拼圖然後觸碰這塊拼圖的正確目的地時，拼圖會以動畫形式越過畫面，直到到達其目的地為止。
 
-和之前一樣，此程式碼有一個使用 **ProcessOneAndAllPending** 的單一執行緒遊戲迴圈，以分派佇列中的輸入事件。 現在的差異是在動畫期間，迴圈改為使用 **CoreProcessEventsOption::ProcessAllIfPresent**，所以它不會等待新的輸入事件。 如果沒有任何事件擱置中，[**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 會立即傳回，並讓 app 呈現動畫中的下一個畫面。 當動畫完成時，迴圈會切換回 **ProcessOneAndAllPending** 以限制畫面更新。
+和之前一樣，此程式碼有一個使用 **ProcessOneAndAllPending** 的單一執行緒遊戲迴圈，以分派佇列中的輸入事件。 現在的差異是在動畫期間，迴圈改為使用 **CoreProcessEventsOption::ProcessAllIfPresent**，所以它不會等待新的輸入事件。 如果沒有任何事件擱置中，[**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) 會立即傳回，並讓 app 呈現動畫中的下一個畫面。 當動畫完成時，迴圈會切換回 **ProcessOneAndAllPending** 以限制畫面更新。
 
 ``` syntax
 void App::Run()
@@ -182,7 +182,7 @@ void App::Run()
 
 有些遊戲或許能夠忽略或補償案例 3 中所看到的輸入延遲增加。 不過，如果輸入延遲低對於遊戲的體驗以及玩家意見反應來說非常重要，每秒轉譯 60 個畫面格的遊戲就必須針對個別的執行緒處理輸入。
 
-拼圖遊戲的第四個反覆運算建立在案例 3 之上，方法是，將遊戲迴圈的輸入處理和圖形轉譯分割成個別的執行緒。 每個遊戲迴圈擁有個別的執行緒可確保圖形輸出絕不會延遲輸入，不過，程式碼會因此變得更為複雜。 在案例 4 中，輸入執行緒會使用 [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217) 呼叫 [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)，以等待新的事件並分派所有可用的事件。 它會繼續這個行為，直到視窗關閉或遊戲呼叫 [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260) 為止。
+拼圖遊戲的第四個反覆運算建立在案例 3 之上，方法是，將遊戲迴圈的輸入處理和圖形轉譯分割成個別的執行緒。 每個遊戲迴圈擁有個別的執行緒可確保圖形輸出絕不會延遲輸入，不過，程式碼會因此變得更為複雜。 在案例 4 中，輸入執行緒會使用 [**CoreProcessEventsOption::ProcessUntilQuit**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption) 呼叫 [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)，以等待新的事件並分派所有可用的事件。 它會繼續這個行為，直到視窗關閉或遊戲呼叫 [**CoreWindow::Close**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.close) 為止。
 
 ``` syntax
 void App::Run()
@@ -233,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-**DirectX 11 和 XAML 應用程式 (通用 Windows)** Microsoft Visual Studio 2015 中的範本將遊戲迴圈分割成多個執行緒以類似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 物件啟動處理輸入專用的執行緒，同時建立與 XAML UI 執行緒無關的轉譯執行緒。 如需這些範本的詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
+**DirectX 11 和 XAML 應用程式 (通用 Windows)** Microsoft Visual Studio 2015 中的範本將遊戲迴圈分割成多個執行緒以類似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreIndependentInputSource) 物件啟動處理輸入專用的執行緒，同時建立與 XAML UI 執行緒無關的轉譯執行緒。 如需這些範本的詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>降低輸入延遲的其他方式
 

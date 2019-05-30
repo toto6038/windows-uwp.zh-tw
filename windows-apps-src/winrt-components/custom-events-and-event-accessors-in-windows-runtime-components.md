@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b8c4777e1c34bca36200bf6e8a96c35d6a0b1079
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 727abc5724914e3a8ad4463645455b9d63933bd7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640303"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372196"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Windows 執行階段元件中的自訂事件和事件存取子
 
@@ -26,8 +26,8 @@ ms.locfileid: "57640303"
 
 幸運的是，Visual Basic 和C#編譯器會簡化此程序：當您宣告事件以 Windows 執行階段元件中的自訂存取子時，編譯器會自動使用 UWP 模式。 例如，若 add 存取子未傳回語彙基元，就會發生編譯器錯誤。 .NET Framework 提供兩個類型來支援實作：
 
--   [EventRegistrationToken](https://msdn.microsoft.com/library/windows/apps/windows.foundation.eventregistrationtoken.aspx) 結構代表語彙基元。
--   [EventRegistrationTokenTable&lt;T&gt;](https://msdn.microsoft.com/library/hh138412.aspx) 類別會建立語彙基元，並維護語彙基元和事件處理常式之間的對應。 泛型類型引數是事件引數類型。 您為每個事件建立此類別的執行個體時，第一次為該事件註冊事件處理常式。
+-   [EventRegistrationToken](https://docs.microsoft.com/uwp/api/windows.foundation.eventregistrationtoken) 結構代表語彙基元。
+-   [EventRegistrationTokenTable&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1?redirectedfrom=MSDN) 類別會建立語彙基元，並維護語彙基元和事件處理常式之間的對應。 泛型類型引數是事件引數類型。 您為每個事件建立此類別的執行個體時，第一次為該事件註冊事件處理常式。
 
 下列適用於 NumberChanged 事件的程式碼會顯示 UWP 事件的基本模式。 在這個範例中，事件引數物件的建構函式 (NumberChangedEventArgs) 會採用表示已變更數值的單一整數參數。
 
@@ -101,16 +101,16 @@ static (在 Visual Basic 中為 Shared) GetOrCreateEventRegistrationTokenTable �
 
 > **重要**  以確保執行緒安全性，欄位來保存事件的執行個體 EventRegistrationTokenTable&lt;T&gt;必須是類別層級欄位。 如果是類別層級的欄位，則 GetOrCreateEventRegistrationTokenTable 方法會確保當多個執行緒嘗試建立語彙基元資料表時，所有執行緒都會取得此資料表的相同執行個體。 對於指定的事件，GetOrCreateEventRegistrationTokenTable 方法的所有呼叫都必須使用相同的類別層級欄位。
 
-在 remove 存取子和 [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) 方法 (在 C# 中為 OnRaiseEvent 方法) 中呼叫 GetOrCreateEventRegistrationTokenTable 方法，可確保在加入任何事件處理常式委派之前呼叫這些方法，不會發生例外狀況。
+在 remove 存取子和 [RaiseEvent](https://docs.microsoft.com/dotnet/articles/visual-basic/language-reference/statements/raiseevent-statement) 方法 (在 C# 中為 OnRaiseEvent 方法) 中呼叫 GetOrCreateEventRegistrationTokenTable 方法，可確保在加入任何事件處理常式委派之前呼叫這些方法，不會發生例外狀況。
 
 在 UWP 事件模式中使用的其他 EventRegistrationTokenTable&lt;T&gt; 類別成員包括下列各項：
 
--   [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) 方法會產生事件處理常式委派的語彙基元、在資料表中儲存委派、將它加入至叫用清單，然後傳回語彙基元。
--   [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) 方法多載會從資料表和叫用清單中移除此委派。
+-   [AddEventHandler](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1.addeventhandler?redirectedfrom=MSDN#System_Runtime_InteropServices_WindowsRuntime_EventRegistrationTokenTable_1_AddEventHandler__0_) 方法會產生事件處理常式委派的語彙基元、在資料表中儲存委派、將它加入至叫用清單，然後傳回語彙基元。
+-   [RemoveEventHandler(EventRegistrationToken)](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1.removeeventhandler?redirectedfrom=MSDN#System_Runtime_InteropServices_WindowsRuntime_EventRegistrationTokenTable_1_RemoveEventHandler_System_Runtime_InteropServices_WindowsRuntime_EventRegistrationToken_) 方法多載會從資料表和叫用清單中移除此委派。
 
     >**附註**  AddEventHandler 和 RemoveEventHandler(EventRegistrationToken) 方法會鎖定資料表，協助確保執行緒安全性。
 
--   [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) 屬性傳回的委派包含目前已註冊來處理事件的所有事件處理常式。 使用此委派來引發事件，或使用 Delegate 類別的方法個別叫用處理常式。
+-   [InvocationList](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1.invocationlist?redirectedfrom=MSDN#System_Runtime_InteropServices_WindowsRuntime_EventRegistrationTokenTable_1_InvocationList) 屬性傳回的委派包含目前已註冊來處理事件的所有事件處理常式。 使用此委派來引發事件，或使用 Delegate 類別的方法個別叫用處理常式。
 
     >**附註**  我們建議您遵循這篇文章中，稍早所提供的範例所示的模式，並將委派複製到暫存變數，然後再叫用它。 這可避免某一個執行緒移除最後一個處理常式的競爭情形，進而讓委派在另一個執行緒嘗試叫用委派之前減少至 null。 委派是不可變的，因此複本仍然有效。
 
@@ -118,12 +118,12 @@ static (在 Visual Basic 中為 Shared) GetOrCreateEventRegistrationTokenTable �
 
 C#使用者：當您撰寫自訂事件存取子中 UWP 事件模式時，編譯器不會提供一般語法快速鍵。 如果您在程式碼中使用事件名稱，則會產生錯誤。
 
-Visual Basic 使用者：在.NET Framework 中，事件就只是多點傳送的委派，表示所有已註冊的事件處理常式。 引發事件只是表示叫用委派。 Visual Basic 語法通常會隱藏與委派的互動，而且編譯器會在叫用委派之前先行複製 (如執行緒安全相關注意事項所述)。 當您在 Windows 執行階段元件中建立自訂事件時，您必須直接處理委派。 這也表示您可以使用 [MulticastDelegate.GetInvocationList](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) 方法來取得一個陣列，如果您想要個別叫用處理常式，該陣列會包含每個事件處理常式的個別委派。
+Visual Basic 使用者：在.NET Framework 中，事件就只是多點傳送的委派，表示所有已註冊的事件處理常式。 引發事件只是表示叫用委派。 Visual Basic 語法通常會隱藏與委派的互動，而且編譯器會在叫用委派之前先行複製 (如執行緒安全相關注意事項所述)。 當您在 Windows 執行階段元件中建立自訂事件時，您必須直接處理委派。 這也表示您可以使用 [MulticastDelegate.GetInvocationList](https://docs.microsoft.com/dotnet/api/system.multicastdelegate.getinvocationlist?redirectedfrom=MSDN#System_MulticastDelegate_GetInvocationList) 方法來取得一個陣列，如果您想要個別叫用處理常式，該陣列會包含每個事件處理常式的個別委派。
 
 ## <a name="related-topics"></a>相關主題
 
-* [事件 (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
-* [事件 （C# 程式設計手冊）](https://msdn.microsoft.com/library/awbftdfh.aspx)
-* [適用於 UWP 應用程式的概觀的.NET](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [適用於 UWP 應用程式的.NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [事件 (Visual Basic)](https://docs.microsoft.com/dotnet/articles/visual-basic/programming-guide/language-features/events/index)
+* [事件 （C# 程式設計手冊）](https://docs.microsoft.com/dotnet/articles/csharp/programming-guide/events/index)
+* [適用於 UWP 應用程式的概觀的.NET](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
+* [適用於 UWP 應用程式的.NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 * [逐步解說：建立簡單的 Windows 執行階段元件，然後從 JavaScript 呼叫該](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

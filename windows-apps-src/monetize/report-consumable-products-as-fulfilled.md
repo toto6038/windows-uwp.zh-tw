@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, fulfill, consumable, Microsoft Store 集合, 執行, 消費性產品
 ms.localizationpriority: medium
-ms.openlocfilehash: cea8937af3df0ad1e80434d649f431d188521667
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 994113abc34a0a5f7905bff00aa77c6785409927
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615803"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372776"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>將消費性產品回報為已完成
 
@@ -22,7 +22,7 @@ ms.locfileid: "57615803"
 * 提供消費性產品的項目識別碼 (在[查詢產品](query-for-products.md)時所傳回的 **itemId** 參數中)，以及您提供的唯一追蹤識別碼。 如果您使用相同的追蹤識別碼來嘗試多次，即使該項目已遭取用，仍會傳回相同的結果。 如果您不確定某個取用要求是否已成功，您的服務應該要利用相同的追蹤識別碼來重新提交取用要求。 該追蹤識別碼會永遠繫結到該取用要求，且可以無限期地重新提交。
 * 提供產品識別碼 (在[查詢產品](query-for-products.md)時所傳回的 **productId** 參數中)，以及從下方＜要求主體＞一節中 **transactionId** 參數的說明列出的某個來源所取得的交易識別碼。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 
 若要使用這個方法，您將需要：
@@ -54,18 +54,18 @@ ms.locfileid: "57615803"
 
 ### <a name="request-body"></a>要求本文
 
-| 參數     | 類型         | 描述         | 必要 |
+| 參數     | 類型         | 描述         | 必要項 |
 |---------------|--------------|---------------------|----------|
 | beneficiary   | UserIdentity | 取用此項目時所針對的使用者。 如需詳細資訊，請參閱下表。        | 是      |
 | itemId        | 字串       | [查詢產品](query-for-products.md)時所傳回的 *itemId* 值。 請搭配 *trackingId* 來使用這個參數      | 否       |
 | trackingId    | guid         | 開發人員所提供的唯一追蹤識別碼。 請搭配 *itemId* 來使用這個參數。         | 否       |
 | productId     | 字串       | [查詢產品](query-for-products.md)時所傳回的 *productId* 值。 請搭配 *transactionId* 來使用這個參數   | 否       |
-| transactionId | guid         | 從下列其中一個來源取得的交易識別碼值。 請搭配 *productId* 來使用這個參數。<ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 類別的 [TransactionID](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.purchaseresults.transactionid) 屬性。</li><li>由 [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)、[RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) 或 [GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) 所傳回的 app 或產品收據。</li><li>[查詢產品](query-for-products.md)時所傳回的 *transactionId* 參數。</li></ul>   | 否       |
+| transactionId | guid         | 從下列其中一個來源取得的交易識別碼值。 請搭配 *productId* 來使用這個參數。<ul><li>[PurchaseResults](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.PurchaseResults) 類別的 [TransactionID](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.purchaseresults.transactionid) 屬性。</li><li>由 [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)、[RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) 或 [GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) 所傳回的 app 或產品收據。</li><li>[查詢產品](query-for-products.md)時所傳回的 *transactionId* 參數。</li></ul>   | 否       |
 
 
 UserIdentity 物件包含下列參數。
 
-| 參數            | 類型   | 描述       | 必要 |
+| 參數            | 類型   | 描述       | 必要項 |
 |----------------------|--------|-------------------|----------|
 | identityType         | 字串 | 指定字串值 **b2b**。    | 是      |
 | identityValue        | 字串 | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要回報消費性產品已完成之使用者的身分。      | 是      |

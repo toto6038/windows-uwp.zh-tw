@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c622c037f878d1ad34cdadf897dde10683532832
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28376f6e96cc490c7c44f4ed60093591e873300e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660863"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371000"
 ---
 # <a name="rasterization-rules"></a>點陣化規則
 
@@ -97,7 +97,7 @@ srcColor \* srcAlpha + destColor \* (1-srcAlpha)
 
 -   對於點，會為每個樣本位置 (而不是像素中心) 執行涵蓋範圍測試。
 
-多重取樣格式可用於呈現目標，目標則可使用[載入](https://msdn.microsoft.com/library/windows/desktop/bb509694)讀回著色器，因為著色器所存取的個別樣本不需要任何解析。 多重取樣資源不支援深度格式，因此，深度格式只限於呈現目標。
+多重取樣格式可用於呈現目標，目標則可使用[載入](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load)讀回著色器，因為著色器所存取的個別樣本不需要任何解析。 多重取樣資源不支援深度格式，因此，深度格式只限於呈現目標。
 
 無類型格式支援多重取樣，以允許資源檢視來解譯不同方式中的資料。 比方說，您可以在其中建立多重取樣的資源使用 R8G8B8A8\_TYPELESS，轉譯，轉譯目標檢視資源使用 R8G8B8A8\_UINT 格式，則解析 R8G8B8A8 的另一個資源內容\_UNORM 資料格式。
 

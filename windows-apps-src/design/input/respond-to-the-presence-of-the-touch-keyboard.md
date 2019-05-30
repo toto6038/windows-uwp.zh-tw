@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: 鍵盤、協助工具、瀏覽、焦點、文字、輸入、使用者互動
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: e44b7cf5a61a795e52490f6d603aea0bcf87bea2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 192c016dfa61f39074d99bccf58ff9371f16d16f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658293"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365422"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>回應觸控式鍵盤的出現
 
@@ -66,7 +66,7 @@ ms.locfileid: "57658293"
 
     ![顯示和未顯示觸控式鍵盤的表單](images/touch-keyboard-pan1.png)
 
-    在某些情況下，有些 UI 元素應該一直停留在畫面上。 設計 UI 以讓移動瀏覽區域中包含表單控制項，並讓重要的 UI 元素處於靜態。 例如：
+    在某些情況下，有些 UI 元素應該一直停留在畫面上。 設計 UI 以讓移動瀏覽區域中包含表單控制項，並讓重要的 UI 元素處於靜態。 例如: 
 
     ![表單中包含應永久留在檢視中的區域](images/touch-keyboard-pan2.png)
 
@@ -211,8 +211,8 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 ## <a name="related-articles"></a>相關文章
 
 - [鍵盤互動](keyboard-interactions.md)
-- [鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/mt244347)
-- [自訂自動化對等](https://msdn.microsoft.com/library/windows/apps/mt297667)
+- [鍵盤協助工具](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
+- [自訂自動化對等](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
 
 **範例**
 

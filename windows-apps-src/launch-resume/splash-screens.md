@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: df3fc8f54a4174006fd28f319d7cab09142a81fd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 09eadb8467725cbf40f3fb54d32741960fc89321
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630193"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371867"
 ---
 # <a name="splash-screens"></a>啟動顯示畫面
 
@@ -27,7 +27,7 @@ ms.locfileid: "57630193"
 
 無論您的 app 執行所在的裝置為何，具有背景色彩的簡單影像看起來都很美觀。 只會變更背景的大小來適應不同的螢幕大小。 您的影像將永遠保持不變。
 
-此外，您可以使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 類別自訂 app 的啟動經驗。 您可以放置延長式啟動顯示畫面，建立這個畫面是為了讓您的 app 有更多的時間可以完成其他工作，像是準備 app UI 或是完成網路作業。 您也可以使用 **SplashScreen** 類別，在關閉啟動顯示畫面時通知您，這樣您就可以開始進入動畫。
+此外，您可以使用 [**SplashScreen**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) 類別自訂 app 的啟動經驗。 您可以放置延長式啟動顯示畫面，建立這個畫面是為了讓您的 app 有更多的時間可以完成其他工作，像是準備 app UI 或是完成網路作業。 您也可以使用 **SplashScreen** 類別，在關閉啟動顯示畫面時通知您，這樣您就可以開始進入動畫。
 
 | 主題 | 描述 |
 |-------|-------------|

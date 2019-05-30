@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c5e1c294da2b4ef24ff8f62b686890cb8c69c06
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 70957cbce10da25943b3c6347ccbbc81aafb5739
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646283"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370777"
 ---
 # <a name="input-assembler-ia-stage"></a>輸入組合語言 (IA) 階段
 
@@ -22,7 +22,7 @@ ms.locfileid: "57646283"
 ## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>用途和用法
 
 
-輸入組合語言 (IA) 階段的目的是從使用者填入緩衝讀取基本類型資料 (點、行及三角形)，然後將資料分配到將由其他管線階段使用的基本類型，並且附加[系統產生的值](https://msdn.microsoft.com/library/windows/desktop/bb509647)來讓著色更有效率。 系統產生的值為也稱為語意的文字字串。 可程式化著色器模型是從使用系統產生的值 (例如基本類型識別碼、執行個體識別碼或頂點識別碼) 的一般著色器核心建構，如此，著色器階段可以減少只處理這些尚未處理的基本類型、執行個體或頂點。
+輸入組合語言 (IA) 階段的目的是從使用者填入緩衝讀取基本類型資料 (點、行及三角形)，然後將資料分配到將由其他管線階段使用的基本類型，並且附加[系統產生的值](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)來讓著色更有效率。 系統產生的值為也稱為語意的文字字串。 可程式化著色器模型是從使用系統產生的值 (例如基本類型識別碼、執行個體識別碼或頂點識別碼) 的一般著色器核心建構，如此，著色器階段可以減少只處理這些尚未處理的基本類型、執行個體或頂點。
 
 IA 階段可以將頂組合到數個不同的[基本類型](primitive-topologies.md) (例如行清單、三角形連環或相鄰基本類型)。 基本類型 (例如相鄰三角形清單和相鄰行清單) 支援[幾何著色器 (GS) 階段](geometry-shader-stage--gs-.md)。
 
@@ -35,7 +35,7 @@ IA 階段可以將頂組合到數個不同的[基本類型](primitive-topologies
 
 IA 階段從記憶體讀取資料︰使用者填入緩衝區的基本資料 (點、行及/或三角形)。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 IA 階段將資料組合到基元，並附加系統產生的值，而如同基元的輸出將被[頂點著色器 (VS) 階段](vertex-shader-stage--vs-.md)使用，再由其他管線階段使用。
@@ -61,7 +61,7 @@ IA 階段將資料組合到基元，並附加系統產生的值，而如同基�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="using-system-generated-values.md">使用系統產生的值</a></p></td>
-<td align="left"><p>系統產生的值由輸入組合語言 (IA) 階段產生 (根據使用者提供輸入<a href="https://msdn.microsoft.com/library/windows/desktop/bb509647">語意</a>) 允許特定著色器作業效率。 藉由附加像執行個體識別碼 (顯現於<a href="vertex-shader-stage--vs-.md">頂點著色器 (VS) 階段</a>)、頂點識別碼 (顯現於 VS) 或基本識別碼 (顯現於<a href="geometry-shader-stage--gs-.md">幾何著色器 (GS) 階段</a>/<a href="pixel-shader-stage--ps-.md">像素著色器 (PS) 階段</a>)，後續著色器階段可能會尋找這些系統值，以在該階段進行最佳化處理。</p></td>
+<td align="left"><p>系統產生的值由輸入組合語言 (IA) 階段產生 (根據使用者提供輸入<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">語意</a>) 允許特定著色器作業效率。 藉由附加像執行個體識別碼 (顯現於<a href="vertex-shader-stage--vs-.md">頂點著色器 (VS) 階段</a>)、頂點識別碼 (顯現於 VS) 或基本識別碼 (顯現於<a href="geometry-shader-stage--gs-.md">幾何著色器 (GS) 階段</a>/<a href="pixel-shader-stage--ps-.md">像素著色器 (PS) 階段</a>)，後續著色器階段可能會尋找這些系統值，以在該階段進行最佳化處理。</p></td>
 </tr>
 </tbody>
 </table>

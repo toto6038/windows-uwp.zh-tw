@@ -6,12 +6,12 @@ ms.date: 01/29/2018
 ms.topic: article
 keywords: windows 10、 uwp、 列印
 ms.localizationpriority: medium
-ms.openlocfilehash: aecb09b4fbaa7614c1d31c9dc0bb8095925175e7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 743df4398792d910626f63900d244ab4da388fb0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620693"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369820"
 ---
 # <a name="print-from-your-app"></a>從您的應用程式列印
 
@@ -19,9 +19,9 @@ ms.locfileid: "57620693"
 
 **重要的 Api**
 
--   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
--   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
--   [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314)
+-   [**Windows.Graphics.Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)
+-   [**Windows.UI.Xaml.Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)
+-   [**PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument)
 
 了解如何從通用 Windows app 列印文件。 本主題也示範如何列印特定頁面。 如需預覽列印 UI 的更進階變更，請參閱[自訂預覽列印 UI](customize-the-print-preview-ui.md)。
 
@@ -35,14 +35,14 @@ ms.locfileid: "57620693"
 > [!TIP]
 > 如果您需要在您的應用程式支援從多個頁面的列印，您可以將此列印的程式碼放在常見的協助程式類別，並讓您重複使用的應用程式頁面。 如需如何執行這項操作的範例，請參閱 [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `PrintHelper` 類別。
 
-首先，宣告 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 和 [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314)。 **PrintManager** 類型位於 [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489) 命名空間以及支援其他 Windows 列印功能的類型中。 **PrintDocument** 類型位於 [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325) 命名空間以及其他支援準備列印 XAML 內容的類型中。 您可以藉由將下列 **using** 或 **Imports** 陳述式新增到頁面中，更輕鬆地撰寫列印程式碼。
+首先，宣告 [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) 和 [**PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument)。 **PrintManager** 類型位於 [**Windows.Graphics.Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing) 命名空間以及支援其他 Windows 列印功能的類型中。 **PrintDocument** 類型位於 [**Windows.UI.Xaml.Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing) 命名空間以及其他支援準備列印 XAML 內容的類型中。 您可以藉由將下列 **using** 或 **Imports** 陳述式新增到頁面中，更輕鬆地撰寫列印程式碼。
 
 ```csharp
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 ```
 
-[  **PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 類別是用來處理大部分的 app 與 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 之間的互動，但是它會公開自己的數個回呼。 在註冊期間，建立 **PrintManager** 和 **PrintDocument** 的執行個體，並註冊其列印事件的處理常式。
+[  **PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument) 類別是用來處理大部分的 app 與 [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) 之間的互動，但是它會公開自己的數個回呼。 在註冊期間，建立 **PrintManager** 和 **PrintDocument** 的執行個體，並註冊其列印事件的處理常式。
 
 在 [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中，註冊是由 `RegisterForPrinting` 方法執行。
 
@@ -96,7 +96,7 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
 <Button x:Name="InvokePrintingButton" Content="Print" Click="OnPrintButtonClick"/>
 ```
 
-接下來，將事件處理常式新增至您的 app 的程式碼，以處理 Click 事件。 使用 [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync) 方法，開始從 app 列印。 **ShowPrintUIAsync** 是非同步方法，會顯示適當的列印視窗。 我們建議先呼叫 [**IsSupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Printing.PrintManager.IsSupported) 方法來檢查 App 是否是在支援列印的裝置上執行 (並處理不支援的情況)。 如果當下因任何其他原因而無法列印，**ShowPrintUIAsync** 會擲回例外狀況。 我們建議攔截這些例外狀況，並在無法繼續進行列印時讓使用者知道。
+接下來，將事件處理常式新增至您的 app 的程式碼，以處理 Click 事件。 使用 [**ShowPrintUIAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printmanager.showprintuiasync) 方法，開始從 app 列印。 **ShowPrintUIAsync** 是非同步方法，會顯示適當的列印視窗。 我們建議先呼叫 [**IsSupported**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printmanager.issupported) 方法來檢查 App 是否是在支援列印的裝置上執行 (並處理不支援的情況)。 如果當下因任何其他原因而無法列印，**ShowPrintUIAsync** 會擲回例外狀況。 我們建議攔截這些例外狀況，並在無法繼續進行列印時讓使用者知道。
 
 ```csharp
 async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
@@ -133,11 +133,11 @@ async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 }
 ```
 
-在這個範例中，事件處理常式中會針對按鈕點擊顯示列印視窗。 如果這個方法擲回例外狀況 (因為當時無法執行列印)，[**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/Dn633972) 控制項會通知使用者該情況。
+在這個範例中，事件處理常式中會針對按鈕點擊顯示列印視窗。 如果這個方法擲回例外狀況 (因為當時無法執行列印)，[**ContentDialog**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) 控制項會通知使用者該情況。
 
 ## <a name="format-your-apps-content"></a>將 app 的內容格式化
 
-呼叫 **ShowPrintUIAsync** 時，會引發 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件。 此步驟顯示的 **PrintTaskRequested** 事件處理常式，會藉由呼叫 [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtaskrequest.createprinttask.aspx) 方法及傳遞列印頁面的標題和 [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source) 委派的名稱來建立 [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436)。 請注意，這個範例中的 **PrintTaskSourceRequestedHandler** 是以內嵌的方式定義。 **PrintTaskSourceRequestedHandler** 會提供要列印的格式化內容，稍後會加以描述。
+呼叫 **ShowPrintUIAsync** 時，會引發 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件。 此步驟顯示的 **PrintTaskRequested** 事件處理常式，會藉由呼叫 [**PrintTaskRequest.CreatePrintTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest.createprinttask) 方法及傳遞列印頁面的標題和 [**PrintTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.source) 委派的名稱來建立 [**PrintTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintTask)。 請注意，這個範例中的 **PrintTaskSourceRequestedHandler** 是以內嵌的方式定義。 **PrintTaskSourceRequestedHandler** 會提供要列印的格式化內容，稍後會加以描述。
 
 在這個範例中，也會定義完成處理常式以擷取錯誤。 處理完成事件是較好的做法，因為這樣一來，應用程式就可以讓使用者知道發生錯誤，並提供可能的解決方法。 同樣地，應用程式可以使用完成事件指出列印工作成功之後，使用者採取的後續步驟。
 
@@ -165,12 +165,12 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 }
 ```
 
-建立列印工作之後，[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 會藉由引發 [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) 事件，要求在預覽列印 UI 中顯示列印頁面集合。 這會對應至 **IPrintPreviewPageCollection** 介面的 **Paginate** 方法。 您在註冊期間建立的事件處理常式會在此時呼叫。
+建立列印工作之後，[**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) 會藉由引發 [**Paginate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.paginate) 事件，要求在預覽列印 UI 中顯示列印頁面集合。 這會對應至 **IPrintPreviewPageCollection** 介面的 **Paginate** 方法。 您在註冊期間建立的事件處理常式會在此時呼叫。
 
 > [!IMPORTANT]
 > 如果使用者變更列印設定，編頁的事件處理常式會再次呼叫可讓您自動重排內容。 若要獲得最佳的使用者經驗，建議您先檢查設定，再自動重排內容，並避免在不必要時重新初始化已編頁的內容。
 
-在 [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) 事件處理常式中 ([UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `CreatePrintPreviewPages` 方法)，建立要在預覽列印 UI 中顯示並傳送到印表機的頁面。 您用來準備應用程式列印內容的程式碼，是應用程式和所列印內容專屬的程式碼。 請參閱 [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)原始程式碼，了解如何將要列印的內容格式化。
+在 [**Paginate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.paginate) 事件處理常式中 ([UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `CreatePrintPreviewPages` 方法)，建立要在預覽列印 UI 中顯示並傳送到印表機的頁面。 您用來準備應用程式列印內容的程式碼，是應用程式和所列印內容專屬的程式碼。 請參閱 [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)原始程式碼，了解如何將要列印的內容格式化。
 
 ```csharp
 protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs e)
@@ -213,9 +213,9 @@ protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs 
 }
 ```
 
-當特定頁面顯示在預覽列印視窗中時，[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 會引發 [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) 事件。 這會對應至 **IPrintPreviewPageCollection** 介面的 **MakePage** 方法。 您在註冊期間建立的事件處理常式會在此時呼叫。
+當特定頁面顯示在預覽列印視窗中時，[**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) 會引發 [**GetPreviewPage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.getpreviewpage) 事件。 這會對應至 **IPrintPreviewPageCollection** 介面的 **MakePage** 方法。 您在註冊期間建立的事件處理常式會在此時呼叫。
 
-在 [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) 事件處理常式 ([UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `GetPrintPreviewPage` 方法) 中，在列印文件上設定適當的頁面。
+在 [**GetPreviewPage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.getpreviewpage) 事件處理常式 ([UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `GetPrintPreviewPage` 方法) 中，在列印文件上設定適當的頁面。
 
 ```csharp
 protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArgs e)
@@ -225,9 +225,9 @@ protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArg
 }
 ```
 
-最後，當使用者按一下 [列印] 按鈕時，[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 會要求傳送至印表機的頁面最終集合，方法是呼叫 **IDocumentPageSource** 介面的 **MakeDocument** 方法。 在 XAML 中，這會引發 [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) 事件。 您在註冊期間建立的事件處理常式會在此時呼叫。
+最後，當使用者按一下 [列印] 按鈕時，[**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) 會要求傳送至印表機的頁面最終集合，方法是呼叫 **IDocumentPageSource** 介面的 **MakeDocument** 方法。 在 XAML 中，這會引發 [**AddPages**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.addpages) 事件。 您在註冊期間建立的事件處理常式會在此時呼叫。
 
-在 [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) 事件處理常式 ([UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `AddPrintPages` 方法) 中，將來自頁面集合的頁面新增至要傳送到印表機的 [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 物件。 如果使用者指定要列印特定的頁面或頁面範圍，您可以使用此處的資訊，只新增實際要傳送到印表機的頁面。
+在 [**AddPages**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.addpages) 事件處理常式 ([UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `AddPrintPages` 方法) 中，將來自頁面集合的頁面新增至要傳送到印表機的 [**PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument) 物件。 如果使用者指定要列印特定的頁面或頁面範圍，您可以使用此處的資訊，只新增實際要傳送到印表機的頁面。
 
 ```csharp
 protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
@@ -258,7 +258,7 @@ protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
 | **列印選取項目**  | 僅列印使用者選取的內容。|
 | **列印範圍**      | 顯示編輯控制項，讓使用者可以輸入頁面進行列印。|
 
-首先，修改 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件處理常式以新增程式碼，以便取得 [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256) 物件。
+首先，修改 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件處理常式以新增程式碼，以便取得 [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails) 物件。
 
 ```csharp
 PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(printTask.Options);
@@ -301,7 +301,7 @@ PrintCustomTextOptionDetails pageRangeEdit = printDetailedOptions.CreateTextOpti
 printDetailedOptions.OptionChanged += printDetailedOptions_OptionChanged;
 ```
 
-[  **CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) 方法會建立 [範圍] 文字方塊。 當使用者選取 [列印範圍] 選項時，可以在此處輸入想要列印的特定頁面。
+[  **CreateTextOption**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) 方法會建立 [範圍]  文字方塊。 當使用者選取 [列印範圍]  選項時，可以在此處輸入想要列印的特定頁面。
 
 ## <a name="handle-print-option-changes"></a>處理列印選項變更
 
@@ -398,6 +398,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 ## <a name="related-topics"></a>相關主題
 
-* [列印的設計方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [列印的設計方針](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
 * [Build 2015 影片：開發 Windows 10 中列印的應用程式](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)

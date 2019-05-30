@@ -11,23 +11,23 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: eaf6118720ab77931decf93113a13341ab4f51d0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28188acfd3999c0b384326f013a0ba1bdf71a34f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642173"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370748"
 ---
 # <a name="handle-file-activation"></a>處理檔案啟用
 
 **重要的 Api**
 
--   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
--   [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
+-   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+-   [**Windows.UI.Xaml.Application.OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
 
 您的應用程式可以註冊成為特定檔案類型的預設處理常式。 Windows 傳統型應用程式和「通用 Windows 平台」(UWP) app 皆可登錄為預設檔案處理常式。 如果使用者選擇您的 App 作為特定檔案類型的預設處理常式，則在啟動該類型的檔案時就會啟用您的 App。
 
-建議只有當您希望處理某個檔案類型的所有檔案啟動時，才登錄該檔案類型。 如果您的應用程式只需在內部使用檔案類型，就不需要登錄為預設處理常式。 如果您選擇登錄某個檔案類型，則在針對該檔案類型啟用您的應用程式時，您必須為使用者提供預期的功能。 例如，圖片檢視器應用程式需要登錄以顯示 .jpg 檔案。 如需檔案關聯的詳細資訊，請參閱[檔案類型與 URI 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700321)。
+建議只有當您希望處理某個檔案類型的所有檔案啟動時，才登錄該檔案類型。 如果您的應用程式只需在內部使用檔案類型，就不需要登錄為預設處理常式。 如果您選擇登錄某個檔案類型，則在針對該檔案類型啟用您的應用程式時，您必須為使用者提供預期的功能。 例如，圖片檢視器應用程式需要登錄以顯示 .jpg 檔案。 如需檔案關聯的詳細資訊，請參閱[檔案類型與 URI 的指導方針](https://docs.microsoft.com/windows/uwp/files/index)。
 
 這些步驟示範如何登錄自訂檔案類型 .alsdk，以及如何在使用者啟動 .alsdk 檔案時啟用您的 app。
 
@@ -37,25 +37,25 @@ ms.locfileid: "57642173"
 
 App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下是如何指示應 app 處理具有 `.alsdk` 副檔名的檔案。
 
-1.  在 [方案總管] 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 [宣告] 索引標籤，然後在 [可用宣告] 下拉式清單中選取 [檔案類型關聯]，然後按一下 [新增]。 請參閱[以程式設計方式撰寫識別碼](https://msdn.microsoft.com/library/windows/desktop/cc144152)，了解檔案關聯使用的識別碼詳細資料。
+1.  在 [方案總管]  中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 [宣告] 索引標籤，然後在 [可用宣告] 下拉式清單中選取 [檔案類型關聯]，然後按一下 [新增]。     請參閱[以程式設計方式撰寫識別碼](https://docs.microsoft.com/windows/desktop/shell/fa-progids)，了解檔案關聯使用的識別碼詳細資料。
 
     以下簡短說明可在資訊清單設計工具中填寫的每個欄位：
 
 | 欄位 | 描述 |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **顯示名稱** | 指定一組檔案類型的顯示名稱。 顯示名稱用於在 [控制台] 的[設定預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中識別檔案類型。 |
-| **標誌** | 指定用於桌面以及在 [控制台] 的[設定預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中識別檔案類型的標誌。 如果沒有指定標誌，則會使用應用程式的小標誌。 |
-| **資訊提示** | 指定一組檔案類型的[資訊提示](https://msdn.microsoft.com/library/windows/desktop/cc144152)。 當使用者的滑鼠游標暫留在這類檔案的圖示上時，就會顯示這個工具提示文字。 |
+| **顯示名稱** | 指定一組檔案類型的顯示名稱。 顯示名稱用於在 [控制台] 的[設定預設程式](https://docs.microsoft.com/windows/desktop/shell/default-programs)中識別檔案類型。  |
+| **標誌** | 指定用於桌面以及在 [控制台] 的[設定預設程式](https://docs.microsoft.com/windows/desktop/shell/default-programs)中識別檔案類型的標誌。  如果沒有指定標誌，則會使用應用程式的小標誌。 |
+| **資訊提示** | 指定一組檔案類型的[資訊提示](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。 當使用者的滑鼠游標暫留在這類檔案的圖示上時，就會顯示這個工具提示文字。 |
 | **名稱** | 為共用相同顯示名稱、標誌、資訊提示以及編輯旗標的一組檔案類型選擇一個名稱。 選擇可以在所有 app 更新都維持一致的群組名稱。 **注意**  [名稱] 必須全都是小寫字母。 |
 | **內容類型** | 為特定檔案類型指定 MIME 內容類型，例如 **image/jpeg**。 **允許的內容類型有關的重要注意事項：** 以下是依字母順序列出，因為它們會保留，或禁止，無法輸入到封裝資訊清單的 MIME 內容類型：**應用程式/強制下載**，**應用程式/八位元資料流**，**應用程式/不明**，**應用程式/x-msdownload**。 |
 | **檔案類型** | 指定要登錄的檔案類型，前面加上句號，例如 “.jpeg”。 **保留和禁止的檔案類型：** 請參閱[保留的 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)字母的檔案類型，因為它們會保留，或禁止，無法註冊您的 UWP 應用程式的內建應用程式清單。 |
 
-2.  輸入 `alsdk` 做為 [名稱]。
-3.  輸入 `.alsdk` 做為 [檔案類型]。
+2.  輸入 `alsdk` 做為 [名稱]  。
+3.  輸入 `.alsdk` 做為 [檔案類型]。 
 4.  輸入 「 映像\\Icon.png 」 為標誌。
 5.  按下 Ctrl+S 以將變更儲存至 package.appxmanifest。
 
-上述步驟會將和這個一樣的 [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 元素新增至封裝資訊清單。 **windows.fileTypeAssociation** 類別指示 app 處理具有 `.alsdk` 副檔名的檔案。
+上述步驟會將和這個一樣的 [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension) 元素新增至封裝資訊清單。 **windows.fileTypeAssociation** 類別指示 app 處理具有 `.alsdk` 副檔名的檔案。
 
 ```xml
       <Extensions>
@@ -83,7 +83,7 @@ App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下
 
 ## <a name="step-3-handle-the-activated-event"></a>步驟 3：處理已啟動的事件
 
-[  **OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) 事件處理常式會接收所有的檔案啟用事件。
+[  **OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated) 事件處理常式會接收所有的檔案啟用事件。
 
 ```csharp
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -129,7 +129,7 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 
 ## <a name="remarks"></a>備註
 
-您接收的檔案可能來自不受信任的來源。 建議您先驗證檔案內容，然後才在上面執行動作。 如需輸入驗證的詳細資訊，請參閱[撰寫安全程式碼](https://go.microsoft.com/fwlink/p/?LinkID=142053)
+您接收的檔案可能來自不受信任的來源。 建議您先驗證檔案內容，然後才在上面執行動作。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -139,8 +139,8 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 
 ### <a name="concepts"></a>概念
 
-* [預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [檔案類型和通訊協定關聯模型](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+* [預設程式](https://docs.microsoft.com/windows/desktop/shell/default-programs)
+* [檔案類型和通訊協定關聯模型](https://docs.microsoft.com/windows/desktop/w8cookbook/file-type-and-protocol-associations-model)
 
 ### <a name="tasks"></a>工作
 
@@ -149,8 +149,8 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 
 ### <a name="guidelines"></a>指導方針
 
-* [檔案類型與 Uri 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [檔案類型與 Uri 的指導方針](https://docs.microsoft.com/windows/uwp/files/index)
 
-### <a name="reference"></a>參考
-* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224716)
-* [Windows.UI.Xaml.Application.OnFileActivated](https://msdn.microsoft.com/library/windows/apps/br242331)
+### <a name="reference"></a>參考資料
+* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+* [Windows.UI.Xaml.Application.OnFileActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)

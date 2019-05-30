@@ -6,27 +6,27 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cdad8f3405420e0548974c734ad23bfd44f2c6b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648823"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363304"
 ---
 # <a name="sockets"></a>通訊端
 通訊端是低階資料傳輸技術，許多網路通訊協定在其上實作。 UWP 為用戶端-伺服器或對等應用程式提供 TCP 與 UDP 通訊端類別，不需要指定連線是長期或已建立的連線。
 
-本主題著重於如何使用[**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets)命名空間中的通用 Windows 平台 (UWP) 通訊端類別。 但您也可以在 UWP app 使用[Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)。
+本主題著重於如何使用[**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets)命名空間中的通用 Windows 平台 (UWP) 通訊端類別。 但您也可以在 UWP app 使用[Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)。
 
 > [!NOTE]
-> 因為[網路隔離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)的關係，所以 Windows 禁止在同一部電腦上執行的兩個 UWP app 之間建立通訊端連線 (Sockets 或 WinSock)，不論是透過本機迴路位址 (127.0.0.0) 或是透過明確指定本機 IP 位址。 如需 UWP app 通訊機制的詳細資訊，請查看[應用程式間通訊](/windows/uwp/app-to-app/index)。
+> 因為[網路隔離](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))的關係，所以 Windows 禁止在同一部電腦上執行的兩個 UWP app 之間建立通訊端連線 (Sockets 或 WinSock)，不論是透過本機迴路位址 (127.0.0.0) 或是透過明確指定本機 IP 位址。 如需 UWP app 通訊機制的詳細資訊，請查看[應用程式間通訊](/windows/uwp/app-to-app/index)。
 
 ## <a name="build-a-basic-tcp-socket-client-and-server"></a>建置基本 TCP 通訊端用戶端和伺服器
 TCP (傳輸控制通訊協定) 通訊端為長期連線提供雙向的低階網路資料傳輸。 TCP 通訊端是網際網路上大多數網路通訊協定所使用的基本功能。 為了示範基本 TCP 作業，以下範例程式碼示範[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket)和[**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener)透過 TCP 傳送和接收資料，形成 echo 用戶端和伺服器。
 
 為了一開始盡可能使用較少的移動部分&mdash;和暫時避免網路隔離的問題&mdash;建立新的專案，並將以下用戶端和伺服器程式碼放在同一個專案。
 
-您的專案中需要[宣告應用程式功能](../packaging/app-capability-declarations.md)。 開啟應用程式套件資訊清單來源檔案 (`Package.appxmanifest`檔案)，然後在 [功能] 索引標籤，勾選**\[私人網路 (用戶端 & 伺服器)\]**。 這是`Package.appxmanifest`標記中的樣子。
+您的專案中需要[宣告應用程式功能](../packaging/app-capability-declarations.md)。 開啟應用程式套件資訊清單來源檔案 (`Package.appxmanifest`檔案)，然後在 [功能] 索引標籤，勾選 **\[私人網路 (用戶端 & 伺服器)\]** 。 這是`Package.appxmanifest`標記中的樣子。
 
 ```xml
 <Capability Name="privateNetworkClientServer" />
@@ -555,7 +555,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 ## <a name="build-a-basic-udp-socket-client-and-server"></a>建置基本 UDP 通訊端用戶端和伺服器
 ，UDP（使用者資料包通訊協定）通訊端與 TCP 通訊端類似，也提供雙向的低階網路資料傳輸。 但是，TCP 通訊端適用於長期連線，UDP 通訊端適用於不需要建立連線的應用程式。 因為 UDP 通訊端不會維持兩端點的連線，所以是遠端電腦之間網路功能快速又簡單的解決方案。 不過，UDP 通訊端不會確保網路封包的完整性，甚至不會確認封包是否到達遠端目的地。 所以您的應用程式需要設計成可容許這點。 使用 UDP 通訊端的應用程式範例包括區域網路探索和區域聊天用戶端。
 
-為了示範基本 UDP 作業，以下範例程式碼示範[**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)類別用來透過 UDP 傳送和接收資料，形成 echo 用戶端和伺服器。 建立新的專案，並將以下用戶端和伺服器程式碼放在同一個專案。 如同 TCP 通訊端，您將需要宣告**\[私人網路 (用戶端 & 伺服器)\]** 應用程式功能。
+為了示範基本 UDP 作業，以下範例程式碼示範[**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)類別用來透過 UDP 傳送和接收資料，形成 echo 用戶端和伺服器。 建立新的專案，並將以下用戶端和伺服器程式碼放在同一個專案。 如同 TCP 通訊端，您將需要宣告 **\[私人網路 (用戶端 & 伺服器)\]** 應用程式功能。
 
 ### <a name="an-echo-client-and-server-using-udp-sockets"></a>echo 用戶端和伺服器，使用 UDP 通訊端
 建構[**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)扮演 echo 伺服器的角色、繫結至特定連接埠號碼、接聽連入的 UDP 訊息，然後將訊息 echo 回來。 通訊端上收到訊息時，會引發[**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived)事件。
@@ -1379,9 +1379,9 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 
 ## <a name="related-topics"></a>相關主題
 * [應用程式間通訊](/windows/uwp/app-to-app/index)
-* [並行和非同步作業以 C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [如何設定網路功能](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
-* [Windows Sockets (Winsock) 2](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+* [並行和非同步作業C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [如何設定網路功能](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
+* [Windows Sockets (Winsock) 2](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>範例
 * [StreamSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620609)

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: feef520614e1cc6076e6abc388fe419fe61d3a92
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: a02d562b73f61094f820e74a213614d80c4fb5e1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343247"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365850"
 ---
 # <a name="mouse-interactions"></a>滑鼠互動
 
@@ -145,7 +145,7 @@ ms.locfileid: "58343247"
 
 我們提供了一組可用於滑鼠指標的標準游標。 它們可用來指示元素的主要動作。
 
-每一個標準游標都有與其關聯之相對應的預設影像。 使用者或應用程式可以隨時取代與任何標準游標相關聯的預設影像。 透過 [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 函式指定游標影像。
+每一個標準游標都有與其關聯之相對應的預設影像。 使用者或應用程式可以隨時取代與任何標準游標相關聯的預設影像。 透過 [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 函式指定游標影像。
 
 如果您需要自訂滑鼠游標：
 

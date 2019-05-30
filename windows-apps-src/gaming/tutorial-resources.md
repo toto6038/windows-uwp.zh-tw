@@ -5,25 +5,25 @@ keywords: DirectX, XAML
 ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cb1c9f9cf6cbc6cce0c5d4547ed503bb9a06e56
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 39fc465a38aa31e86d5c6162c4b333517c9efb4d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660113"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367695"
 ---
 # <a name="extend-the-game-sample"></a>延伸遊戲範例
 
 現在，我們已經討論基本通用 Windows 平台 (UWP) DirectX 3D 遊戲的關鍵元件。 您可以設定遊戲的架構，包含檢視提供者和轉譯管線，以及實作基本的遊戲迴圈。 您也可以建立基本的使用者介面重疊，並納入音效和實作控制項。 您已開始建立自己的遊戲，但如果您需要更多協助和資訊，請查看這些資源。
 
--   [DirectX 圖形與遊戲](https://msdn.microsoft.com/library/windows/desktop/ee663274)
--   [Direct3D 11 的概觀](https://msdn.microsoft.com/library/windows/desktop/ff476345)
--   [Direct3D 11 的參考](https://msdn.microsoft.com/library/windows/desktop/ff476147)
+-   [DirectX 圖形與遊戲](https://docs.microsoft.com/windows/desktop/directx)
+-   [Direct3D 11 的概觀](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)
+-   [Direct3D 11 的參考](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference)
 
 ## <a name="using-xaml-for-the-overlay"></a>用於重疊的 XAML
 
 
-有一個替代方法我們沒有深入討論，那就是在重疊使用 XAML，而不使用 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)。 XAML 對於 Direct2D 有許多好處，可繪製使用者介面元素。 最重要的優點是它可讓 Windows 10 的外觀及操作併入您更方便的 DirectX 遊戲。 許多定義 UWP 應用程式的常用元素、樣式以及行為已緊密整合到 XAML 模型，讓遊戲開發人員需要的實作的工作變得更少。 如果您的遊戲設計具有很複雜的使用者介面，請考慮使用 XAML 而不要使用 Direct2D。
+有一個替代方法我們沒有深入討論，那就是在重疊使用 XAML，而不使用 [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal)。 XAML 對於 Direct2D 有許多好處，可繪製使用者介面元素。 最重要的優點是它可讓 Windows 10 的外觀及操作併入您更方便的 DirectX 遊戲。 許多定義 UWP 應用程式的常用元素、樣式以及行為已緊密整合到 XAML 模型，讓遊戲開發人員需要的實作的工作變得更少。 如果您的遊戲設計具有很複雜的使用者介面，請考慮使用 XAML 而不要使用 Direct2D。
 
 使用 XAML，我們可以讓遊戲介面看起來類似 Direct2D 的舊版本。
 
@@ -37,8 +37,8 @@ ms.locfileid: "57660113"
 
 功能 | XAML| Direct2D
 :----------|:----------- | :-----------
-定義重疊 | 已在 XAML 檔案 `\*.xaml` 中定義。 一旦了解 XAML，相較於 Direct2D 建立和設定較複雜的重疊變得更容易。| 定義為 Direct2D 基本類型的集合，而 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) 字串是手動放置和撰寫到 Direct2D 目標緩衝區。 
-使用者介面元素 | XAML 使用者介面元素來自標準化元素，它們屬於 Windows 執行階段 XAML API 的一部分，包括 [**Windows::UI::Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) 和 [**Windows::UI::Xaml::Controls**](https://msdn.microsoft.com/library/windows/apps/br227716)。 處理 XAML 使用者介面元素行為的程式碼定義在程式碼後置檔案 Main.xaml.cpp 中。 | 簡單圖形可以繪製成類似矩形和省略符號。
+定義重疊 | 已在 XAML 檔案 `\*.xaml` 中定義。 一旦了解 XAML，相較於 Direct2D 建立和設定較複雜的重疊變得更容易。| 定義為 Direct2D 基本類型的集合，而 [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal) 字串是手動放置和撰寫到 Direct2D 目標緩衝區。 
+使用者介面元素 | XAML 使用者介面元素來自標準化元素，它們屬於 Windows 執行階段 XAML API 的一部分，包括 [**Windows::UI::Xaml**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml) 和 [**Windows::UI::Xaml::Controls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls)。 處理 XAML 使用者介面元素行為的程式碼定義在程式碼後置檔案 Main.xaml.cpp 中。 | 簡單圖形可以繪製成類似矩形和省略符號。
 調整視窗大小 | 自然地處理重新調整大小和檢視狀態變更事件，並依變更轉換重疊 | 需要手動指定重新繪製重疊的元件。
 
 
@@ -78,7 +78,7 @@ void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
 ```
 
 
-如果要將設定的交換鏈結附加到 XAML 定義的 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 執行個體，就必須取得基礎原生 [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/dn302143) 介面實作的指標，並在上面呼叫 [**ISwapChainPanelNative::SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144)，將設定的交換鏈結傳遞給它。 
+如果要將設定的交換鏈結附加到 XAML 定義的 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 執行個體，就必須取得基礎原生 [**ISwapChainPanelNative**](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative) 介面實作的指標，並在上面呼叫 [**ISwapChainPanelNative::SetSwapChain**](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain)，將設定的交換鏈結傳遞給它。 
 
 來自 [**DX::DeviceResources::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) 的下列程式碼片段詳述 DirectX/XAML interop：
 

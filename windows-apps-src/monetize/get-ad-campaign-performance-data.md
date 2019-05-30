@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 廣告活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 1190ec43c5b98eabd897a3bed3788aaf6eb0cb7d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d1b76184f70c796ad3b6e89b119dd56670ed028f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594573"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372164"
 ---
 # <a name="get-ad-campaign-performance-data"></a>取得廣告活動績效資料
 
@@ -50,17 +50,17 @@ ms.locfileid: "57594573"
 
 若要擷取特定 App 的廣告行銷活動績效資料，請使用 *applicationId* 參數。 若要擷取與您開發人員帳戶關聯之所有 App 的廣告績效資料，請省略 *applicationId* 參數。
 
-| 參數     | 類型   | 描述     | 必要 |
+| 參數     | 類型   | 描述     | 必要項 |
 |---------------|--------|-----------------|----------|
 | applicationId   | 字串    | 您想要擷取廣告行銷活動績效資料之應用程式的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 |    否      |
 |  startDate  |  date   |  要擷取的廣告行銷活動績效資料之日期範圍的開始日期，格式為 YYYY/MM/DD。 預設為目前的日期減去 30 天。   |   否    |
 | endDate   |  date   |  要擷取的廣告行銷活動績效資料之日期範圍的結束日期，格式為 YYYY/MM/DD。 預設為目前的日期減去一天。   |   否    |
-| top   |  整數   |  要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。   |   否    |
-| skip   | 整數    |  在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。   |   否    |
+| top   |  ssNoversion   |  要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。   |   否    |
+| skip   | ssNoversion    |  在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。   |   否    |
 | filter   |  字串   |  一或多個篩選回應中資料列的陳述式。 目前唯一支援的篩選是 **campaignId**。 每個陳述式都可以使用 **eq** 或 **ne** 運算子，而陳述式之間可以使用 **and** 或 **or** 來結合。  以下是一個範例 *filter* 參數：```filter=campaignId eq '100023'```。   |   否    |
 |  aggregationLevel  |  字串   | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。    |   否    |
-| orderby   |  字串   |  <p>將廣告行銷活動績效資料的結果資料值排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：</p><ul><li><strong>日期</strong></li><li><strong>campaignId</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>以下是一個範例 <em>orderby</em> 字串：<em>orderby=date,campaignId</em></p>   |   否    |
-|  groupby  |  字串   |  <p>將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：</p><ul><li><strong>campaignId</strong></li><li><strong>applicationId</strong></li><li><strong>日期</strong></li><li><strong>currencyCode</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p>   |   否    |
+| orderby   |  字串   |  <p>將廣告行銷活動績效資料的結果資料值排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 參數可以是下列其中一個字串：</p><ul><li><strong>date</strong></li><li><strong>campaignId</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>以下是一個範例 <em>orderby</em> 字串：<em>orderby=date,campaignId</em></p>   |   否    |
+|  groupby  |  字串   |  <p>將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：</p><ul><li><strong>campaignId</strong></li><li><strong>applicationId</strong></li><li><strong>date</strong></li><li><strong>currencyCode</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p>   |   否    |
 
 
 ### <a name="request-example"></a>要求範例
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 |------------|--------|---------------|
 | 值      | 陣列  | 內含彙總廣告行銷活動績效資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[行銷活動績效物件](#campaign-performance-object)一節。          |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串會包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 5，但是查詢有超過 5 個資料項目，就會傳回此值。 |
-| TotalCount | 整數    | 查詢之資料結果的資料列總數。                                |
+| TotalCount | ssNoversion    | 查詢之資料結果的資料列總數。                                |
 
 
 <span id="campaign-performance-object" />
@@ -150,6 +150,6 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立您的應用程式的 ad 行銷活動](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
+* [建立您的應用程式的 ad 行銷活動](https://docs.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
 * [執行使用 Microsoft Store 服務的廣告活動](run-ad-campaigns-using-windows-store-services.md)
 * [使用 Microsoft Store 服務的存取分析資料](access-analytics-data-using-windows-store-services.md)

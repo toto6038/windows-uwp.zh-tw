@@ -5,12 +5,12 @@ keywords: hosted web app, HWA, REST API, single-page app, SPA, 託管的 Web 應
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c38a7182cd27abcfb0de66c721f0e06b95b695d5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624623"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366979"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 
@@ -22,7 +22,7 @@ ms.locfileid: "57624623"
 
 我們會使用一些最受歡迎的 Web 技術，包括 [Node.js](https://nodejs.org/en/) 執行階段和用於伺服器端開發的 [Express](https://expressjs.com/)、[Bootstrap](https://getbootstrap.com/) UI 架構、[Pug](https://www.npmjs.com/package/pug) 範本引擎和用於建置 RESTful API 的 [Swagger](https://swagger.io/tools/)。 您也可以體驗 [Azure 入口網站](https://ms.portal.azure.com/)的雲端裝載以及使用 [Visual Studio Code](https://code.visualstudio.com/) 編輯器。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 如果您的電腦上尚未有這些資源，請遵循這些下載連結︰
 
@@ -115,7 +115,7 @@ ms.locfileid: "57624623"
 
 1. 建立新資料夾 (例如您的本機 *GitHub* 目錄)，然後下載包含我們的記憶遊戲 API 定義的 [**api.json**](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/api.json?token=ACEfklXAHTeLkHYaI5plV20QCGuqC31cks5ZFhVIwA%3D%3D) 檔。 請確定您的資料夾名稱未包含任何空格。
 
-2. 開啟您最愛的殼層 ([或使用 Visual Studio Code 的整合式終端機！](https://code.visualstudio.com/docs/editor/integrated-terminal)) 到該資料夾，然後為您的全域 (**-g**) Node 環境執行下列 Node Package Manager (NPM) 命令，以安裝 [Yeoman](https://yeoman.io/) (yo) 程式碼 Scaffolding 工具和 Swagger 產生器︰
+2. 開啟您最愛的殼層 ([或使用 Visual Studio Code 的整合式終端機！](https://code.visualstudio.com/docs/editor/integrated-terminal)) 到該資料夾，然後為您的全域 ( **-g**) Node 環境執行下列 Node Package Manager (NPM) 命令，以安裝 [Yeoman](https://yeoman.io/) (yo) 程式碼 Scaffolding 工具和 Swagger 產生器︰
 
     ```
     npm install -g yo
@@ -131,7 +131,7 @@ ms.locfileid: "57624623"
 4. **swaggerize** 命令會詢問您幾個問題。
     - Swagger 文件的路徑 (或 URL)︰**api.json**
     - 架構：**express**
-    - 您想要如何稱呼這個專案 (YourFolderNameHere)：**[enter]**
+    - 您想要如何稱呼這個專案 (YourFolderNameHere)： **[enter]**
 
     依您的喜好回答一切；資訊是大部分是提供 *package.json* 檔與您的連絡人資訊，以便您可以發佈您的程式碼為 NPM 套件。
 
@@ -142,7 +142,7 @@ ms.locfileid: "57624623"
     npm install swaggerize-ui
     ```
 
-    立即啟動 VS Code 與 **\[檔案\]** > **\[開啟資料夾...\]**，並移至 MemoryGameAPI 目錄。 這是您剛建立的 Node.js API 伺服器！ 它使用受歡迎的 [ExpressJS](https://expressjs.com/en/4x/api.html) Web 應用程式架構來構建和執行您的專案。
+    立即啟動 VS Code 與 **\[檔案\]**  >  **\[開啟資料夾...\]** ，並移至 MemoryGameAPI 目錄。 這是您剛建立的 Node.js API 伺服器！ 它使用受歡迎的 [ExpressJS](https://expressjs.com/en/4x/api.html) Web 應用程式架構來構建和執行您的專案。
 
 ### <a name="2-customize-the-server-code-and-setup-debugging"></a>2.自訂的伺服器程式碼和安裝程式進行偵錯
 
@@ -237,7 +237,7 @@ Swagger 檔案 (config\swagger.json) 會指示我們的伺服器如何處理各�
 
 請確定您已儲存 VS Code 中的所有變更，再次啟動您的伺服器 (VS Code 中的 F5 或殼層的 `npm start`，然後瀏覽至 [https://localhost:8000](https://localhost:8000)) 來測試遊戲 API。
 
-每次您按下 **\[試試看！\]** 按鈕 (**/game**、**/guess** 或 **/new** 作業之一)，檢查以下產生的**回應本文**和**回應碼**以確認一切是否如預期般運作。
+每次您按下 **\[試試看！\]** 按鈕 ( **/game**、 **/guess** 或 **/new** 作業之一)，檢查以下產生的**回應本文**和**回應碼**以確認一切是否如預期般運作。
 
 嘗試： 
 
@@ -280,7 +280,7 @@ Azure 文件將逐步引導您完成：
 
 註冊您的 App 時，請嘗試區分您的 *App 名稱* (避免命名與 *http://memorygameapi.azurewebsites.net* URL 上的其他請求變異衝突)。
 
-如果您已經進行到此並且 Azure 現在已供您的 Swagger UI 使用，最後一個步驟則是記憶遊戲後端部分。 從 [Azure 入口網站](https://portal.azure.com)，選取您剛建立的 *App Service*，然後選取或搜尋**CORS** (跨原始來源資源共用) 選項。 在 **\[允許的來源\]** 下，新增星號 (`*`)，然後按一下 **\[儲存\]**。 這可讓您在本機電腦上開發時從您的記憶遊戲前端，跨原始來源呼叫您的 API 服務。 一旦您完成記憶遊戲前端並將其部署到 Azure，您就可以Web 應用程式的特定 URL 取代此項目。
+如果您已經進行到此並且 Azure 現在已供您的 Swagger UI 使用，最後一個步驟則是記憶遊戲後端部分。 從 [Azure 入口網站](https://portal.azure.com)，選取您剛建立的 *App Service*，然後選取或搜尋**CORS** (跨原始來源資源共用) 選項。 在 **\[允許的來源\]** 下，新增星號 (`*`)，然後按一下 **\[儲存\]** 。 這可讓您在本機電腦上開發時從您的記憶遊戲前端，跨原始來源呼叫您的 API 服務。 一旦您完成記憶遊戲前端並將其部署到 Azure，您就可以Web 應用程式的特定 URL 取代此項目。
 
 ### <a name="going-further"></a>更進一步
 
@@ -616,7 +616,7 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
     現在當使用者按下卡片，卡片就會 180 度旋轉。
 
 ### <a name="6-test-and-play"></a>6.測試與播放
-恭喜！ 您已完成建立 Web 應用程式！ 我們來測試看看。 
+恭喜您！ 您已完成建立 Web 應用程式！ 我們來測試看看。 
 
 1. 開啟命令提示字元，在記憶體目錄，並輸入下列命令： `npm start`
 
@@ -636,7 +636,7 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
 
  1. 建立 [Windows 開發人員](https://developer.microsoft.com/en-us/store/register)帳戶
  2. 使用 App 提交[檢查清單](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions)
- 3. 提交您的 App [進行認證](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)
+ 3. 提交您的 App [進行認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
 
 以下是一些可讓您更進一步的實用資源︰
 

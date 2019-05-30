@@ -1,16 +1,16 @@
 ---
 description: 敏捷式物件是可以從任何執行緒中存取的一個。 C++/WinRT 預設為敏捷式，但您可以選擇退出。
 title: 使用 C++/WinRT 的敏捷式物件
-ms.date: 10/20/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、敏捷式、物件、敏捷性、IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b390161a4eb2c4f38fed9bce226c5a5e92c5ad8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 82dff619e6fa3934f69b93090bee90de6359ca07
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291776"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360326"
 ---
 # <a name="agile-objects-in-cwinrt"></a>敏捷式軟體開發中的物件C++/WinRT
 
@@ -19,7 +19,7 @@ ms.locfileid: "58291776"
 但是，您可以選擇退出。您可能會有充足的理由，需要存放，比方說，在指定的單一執行緒 apartment 中您型別的物件。 這通常與重新進入需求有關。 但即使使用者介面 (UI) API 提供越來越多敏捷式物件。 一般而言，敏捷性式最簡單且效能最佳的選項。 此外，當您實作啟動原廠，它必須是敏捷的，即使您對應執行階段類別不是。
 
 > [!NOTE]
-> Windows 執行階段是根據 COM。 在 COM 條款中，在 `ThreadingModel` = *Both* 中註冊一個敏捷式類別。 如需 COM 執行緒模型和 apartment 的詳細資訊，請參閱[了解與使用 COM 執行緒模型](https://msdn.microsoft.com/library/ms809971)。
+> Windows 執行階段是根據 COM。 在 COM 條款中，在 `ThreadingModel` = *Both* 中註冊一個敏捷式類別。 如需 COM 執行緒模型和 apartment 的詳細資訊，請參閱[了解與使用 COM 執行緒模型](/previous-versions/ms809971(v=msdn.10))。
 
 ## <a name="code-examples"></a>程式碼範例
 
@@ -37,7 +37,7 @@ struct MyType : winrt::implements<MyType, IStringable>
 };
 ```
 
-因為我們尚未退出，因為此實作是敏捷的。 [  **Winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎結構實作 [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) 和 [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal)。 **IMarshal** 實作使用 **CoCreateFreeThreadedMarshaler** 執行適用於不知道 **IAgileObject** 的舊版程式碼的正確做法。
+因為我們尚未退出，因為此實作是敏捷的。 [  **Winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎結構實作 [**IAgileObject**](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) 和 [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal)。 **IMarshal** 實作使用 **CoCreateFreeThreadedMarshaler** 執行適用於不知道 **IAgileObject** 的舊版程式碼的正確做法。
 
 此程式碼檢查物件的敏捷性。 [  **IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 的呼叫擲回例外狀況，如果 `myimpl` 不敏捷的話。
 
@@ -115,7 +115,7 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 
 ## <a name="important-apis"></a>重要 API
 
-* [IAgileObject 介面](https://msdn.microsoft.com/library/windows/desktop/hh802476)
+* [IAgileObject 介面](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject)
 * [IMarshal 介面](/windows/desktop/api/objidl/nn-objidl-imarshal)
 * [winrt::agile_ref struct template](/uwp/cpp-ref-for-winrt/agile-ref)
 * [winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)
@@ -126,4 +126,4 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 
 ## <a name="related-topics"></a>相關主題
 
-* [了解與使用 COM 執行緒模型](https://msdn.microsoft.com/library/ms809971)
+* [了解與使用 COM 執行緒模型](/previous-versions/ms809971(v=msdn.10))

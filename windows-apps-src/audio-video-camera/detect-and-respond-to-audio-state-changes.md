@@ -6,17 +6,17 @@ ms.date: 04/03/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 69eeb82fd9a1e043e99b7fe0d635ca750779eda5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1a680347e9d1a749cc6e1d86ef1f02da280b4b74
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631673"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361774"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>偵測及回應音訊狀態變更
 從 Windows 10 版本 1803 開始，您的應用程式可偵測系統何時將您應用程式使用之音訊的音量降低或設為靜音。 您可以收到關於擷取和轉譯串流、特定音訊裝置和音訊類別，或您的應用程式用於播放媒體之 [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) 物件的相關通知。 例如，系統可能會在鬧鈴響起時，降低 (或者「迴避」) 音訊播放音量。 如果您的應用程式未在應用程式資訊清單中宣告 *backgroundMediaPlayback* 功能，當您的應用程式進入背景時，系統會將其設為靜音。 
 
-對於所有受支援音訊串流的音訊狀態變更處理模式都相同。 首先，建立 [**AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor) 類別的執行個體。 在下列範例中，應用程式使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 類別來擷取遊戲聊天的音訊。 呼叫 factory 方法來取得預設通訊裝置的遊戲聊天音訊擷取串流之相關聯音訊狀態監視器。  接著，註冊 [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) 事件的處理常式，此事件會在系統變更相關串流的音訊時引發。
+對於所有受支援音訊串流的音訊狀態變更處理模式都相同。 首先，建立 [**AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor) 類別的執行個體。 在下列範例中，應用程式使用 [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 類別來擷取遊戲聊天的音訊。 呼叫 factory 方法來取得預設通訊裝置的遊戲聊天音訊擷取串流之相關聯音訊狀態監視器。  接著，註冊 [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) 事件的處理常式，此事件會在系統變更相關串流的音訊時引發。
 
 [!code-cs[DeviceIdCategoryVars](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeviceIdCategoryVars)]
 
@@ -28,7 +28,7 @@ ms.locfileid: "57631673"
 
 如需使用 **MediaCapture** 擷取音訊的詳細資訊，請參閱[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
-每個 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 類別的執行個體都有與其關聯的 **AudioStateMonitor**，您可用來偵測系統何時變更目前播放內容的音量大小。 您可以根據正在播放的內容類型，決定以不同方式處理音訊狀態變更。 例如，您可以決定在音量降低時暫停播放播客，但如果內容是音樂則繼續播放。 
+每個 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 類別的執行個體都有與其關聯的 **AudioStateMonitor**，您可用來偵測系統何時變更目前播放內容的音量大小。 您可以根據正在播放的內容類型，決定以不同方式處理音訊狀態變更。 例如，您可以決定在音量降低時暫停播放播客，但如果內容是音樂則繼續播放。 
 
 [!code-cs[AudioStateVars](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
 

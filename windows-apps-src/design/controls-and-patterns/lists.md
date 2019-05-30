@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: eb9c600e58be04d8ce967eb119777d6746507fbe
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a574ff858f8eab3fa1984ecd883a786fa0e0f19c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636363"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364715"
 ---
 # <a name="lists"></a>清單
 
@@ -30,7 +30,7 @@ ms.locfileid: "57636363"
 
 針對每個清單模式指定設計指導方針、功能和範例。
 
-> **重要的 Api**:[ListView 類別](https://msdn.microsoft.com/library/windows/apps/br242878)， [GridView 類別](https://msdn.microsoft.com/library/windows/apps/br242705)， [ComboBox 類別](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **重要的 Api**:[ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)， [GridView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)， [ComboBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 
 > <div id="main">
@@ -92,7 +92,7 @@ ms.locfileid: "57636363"
 <td align="left"><p>反轉清單會從底部開始加入新項目，例如聊天應用程式。 遵循此指導方針以在應用程式中使用反轉清單。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="pull-to-refresh.md">若要重新整理提取</a></p></td>
+<td align="left"><p><a href="pull-to-refresh.md">Pull-to-refresh</a></p></td>
 <td align="left"><p>拖動以重新整理模式可讓使用者以觸控的方式將資料清單向下拖動以抓取更多資料。 使用此指導方針以在清單檢視中實作拖動重新整理。</p></td>
 </tr>
 <tr class="even">
@@ -265,11 +265,11 @@ ms.locfileid: "57636363"
 - [主要/詳細資料](master-details.md)
 - [瀏覽窗格](navigationview.md)
 - [語意式縮放](semantic-zoom.md)
-- [拖放功能](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [拖放功能](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [縮圖影像](../../files/thumbnails.md)
 
 **適用於開發人員**
-- [ListView 類別](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [GridView 類別](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [ComboBox 類別](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [ListBox 類別](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [GridView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [ComboBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+- [ListBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)

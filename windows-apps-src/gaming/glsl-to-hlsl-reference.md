@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, 著色器
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f468584d995de40ff14df1527ab1df8275c36a8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 60ab16566b6e86fe458dbd4a896c354d978994b6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611163"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368698"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL-to-HLSL 參考
 
@@ -63,7 +63,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 </tr>
 <tr class="even">
 <td align="left">著色器編譯整合至圖形 API</td>
-<td align="left">在 Direct3D 將著色器傳遞到驅動程式之前，HLSL 編譯器會先將<a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">著色器編譯</a>至中繼的二進位表示法。
+<td align="left">在 Direct3D 將著色器傳遞到驅動程式之前，HLSL 編譯器會先將<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-part1">著色器編譯</a>至中繼的二進位表示法。
 <div class="alert">
 <strong>附註</strong>  此二進位表示法是獨立的硬體。 通常會在 app 建置時進行編譯，而不是在 app 執行時進行編譯。
 </div>
@@ -84,17 +84,17 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 </tr>
 <tr class="odd">
 <td align="left">texture2D [Function]</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb509695">texture.Sample</a> [datatype.Function]</td>
+<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample">texture.Sample</a> [datatype.Function]</td>
 </tr>
 <tr class="even">
 <td align="left">sampler2D [datatype]</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471525">Texture2D</a> [datatype]</td>
+<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> [datatype]</td>
 </tr>
 <tr class="odd">
 <td align="left">以列為主的矩陣 (預設值)</td>
 <td align="left">以欄為主的矩陣 (預設值)
 <div class="alert">
-<strong>附註</strong>  使用<strong>row_major</strong>型別修飾詞來變更其配置的一個變數。 如需詳細資訊，請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">變數語法</a>。 您也可指定編譯器旗標或 pragma 來變更全域預設值。
+<strong>附註</strong>  使用<strong>row_major</strong>型別修飾詞來變更其配置的一個變數。 如需詳細資訊，請參閱<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">變數語法</a>。 您也可指定編譯器旗標或 pragma 來變更全域預設值。
 </div>
 <div>
  
@@ -113,7 +113,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 
  
 
-在 GLSL 中，您將大部分的 OpenGL 狀態呈現為預先定義的全域變數。 比方說，GLSL，您使用**gl\_位置**變數，以指定頂點位置並**gl\_FragColor**變數來指定片段的色彩。 在 HLSL 中，您明確將 Direct3D 狀態從 app 程式碼傳遞至著色器。 例如，使用 Direct3D 與 HLSL 時，頂點著色器的輸入必須符合頂點緩衝區中的資料格式，而應用程式程式碼中的常數緩衝區結構必須符合著色器程式碼中的常數緩衝區 ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) 結構。
+在 GLSL 中，您將大部分的 OpenGL 狀態呈現為預先定義的全域變數。 比方說，GLSL，您使用**gl\_位置**變數，以指定頂點位置並**gl\_FragColor**變數來指定片段的色彩。 在 HLSL 中，您明確將 Direct3D 狀態從 app 程式碼傳遞至著色器。 例如，使用 Direct3D 與 HLSL 時，頂點著色器的輸入必須符合頂點緩衝區中的資料格式，而應用程式程式碼中的常數緩衝區結構必須符合著色器程式碼中的常數緩衝區 ([cbuffer](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)) 結構。
 
 ## <a name="porting-glsl-variables-to-hlsl"></a>將 GLSL 變數移植到 HLSL
 
@@ -133,22 +133,22 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>統一</strong></p>
+<td align="left"><p><strong>uniform</strong></p>
 <p>您將 uniform 變數從 app 程式碼傳遞至頂點與片段著色器內，或是其中之一。 使用這些著色器繪製任何三角形之前，您必須設定所有 uniform 的值，這樣在繪製三角形網格的整個過程中，它們的值才能維持相同。 這些值是 uniform。 有些 uniform 是針對整個框架所設定，而其他則是特別針對某一組特殊頂點像素著色器而設定。</p>
 <p>uniform 變數是基於多邊形的變數。</p></td>
 <td align="left"><p>使用常數緩衝區。</p>
-<p>請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">How to:建立常數緩衝區</a>並<a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">著色器常數</a>。</p></td>
+<p>請參閱<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to">How to:建立常數緩衝區</a>並<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants">著色器常數</a>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>不同的</strong></p>
+<td align="left"><p><strong>varying</strong></p>
 <p>您在頂點著色器內初始化 varying 變數，並將它傳遞至片段著色器中擁有相同名稱的 varying 變數。 因為頂點著色器只設定每個頂點的 varying 變數值，因此點陣化會插補這些值 (以透視修正方式) 來產生每個片段值，以傳遞至片段著色器。 這些變數在每個三角形都不同。</p></td>
 <td align="left">使用從頂點著色器傳回的結構做為像素著色器的輸入。 請確定語意值相符。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>屬性</strong></p>
+<td align="left"><p><strong>attribute</strong></p>
 <p>attribute 是您單獨從 app 程式碼傳遞至頂點著色器之頂點描述的一部分。 與 uniform 不同，您要為每個頂點設定各個 attribute 的值，然後每個頂點便有不同的值。 Attribute 變數是基於頂點的變數。</p></td>
-<td align="left"><p>在 Direct3D 應用程式程式碼中定義頂點緩衝區，並使它與頂點著色器中定義的頂點輸入相符。 您可選擇是否定義索引緩衝區。 請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">How to:建立頂點緩衝區</a>和<a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">How to:建立索引緩衝區</a>。</p>
-<p>在 Direct3D 應用程式程式碼中建立輸入配置，並使語意值與頂點輸入中的語意值相符。 請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">建立輸入配置</a>。</p></td>
+<td align="left"><p>在 Direct3D 應用程式程式碼中定義頂點緩衝區，並使它與頂點著色器中定義的頂點輸入相符。 您可選擇是否定義索引緩衝區。 請參閱<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-vertex-how-to">How to:建立頂點緩衝區</a>和<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-index-how-to">How to:建立索引緩衝區</a>。</p>
+<p>在 Direct3D 應用程式程式碼中建立輸入配置，並使語意值與頂點輸入中的語意值相符。 請參閱<a href="https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">建立輸入配置</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
@@ -162,7 +162,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 
 在 GLSL，沒有修飾詞的變數只是每個著色器私有的一般全域變數。
 
-當您將資料傳遞至紋理 (HLSL 中的 [Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525)) 以及其關聯的取樣器 (HLSL 中的 [SamplerState](https://msdn.microsoft.com/library/windows/desktop/bb509644)) 時，通常會將它們宣告為像素著色器中的全域變數。
+當您將資料傳遞至紋理 (HLSL 中的 [Texture2D](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)) 以及其關聯的取樣器 (HLSL 中的 [SamplerState](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-sampler)) 時，通常會將它們宣告為像素著色器中的全域變數。
 
 ## <a name="porting-glsl-types-to-hlsl"></a>將 GLSL 類型移植到 HLSL
 
@@ -185,7 +185,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <td align="left">純量類型：float、int、bool</td>
 <td align="left"><p>純量類型：float、int、bool</p>
 <p>還有 uint、double</p>
-<p>如需詳細資訊，請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/bb509646">純量類型</a>。</p></td>
+<p>如需詳細資訊，請參閱<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">純量類型</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>向量類型</p>
@@ -207,8 +207,8 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>如需詳細資訊，請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/bb509707">向量類型</a>與<a href="https://msdn.microsoft.com/library/windows/desktop/bb509568">關鍵字</a>。</p>
-<p>向量也是定義為 float4 (typedef vector &lt;float, 4&gt; vector;) 的類型。 如需詳細資訊，請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/bb509702">使用者定義的類型</a>。</p></td>
+<p>如需詳細資訊，請參閱<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-vector">向量類型</a>與<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-appendix-keywords">關鍵字</a>。</p>
+<p>向量也是定義為 float4 (typedef vector &lt;float, 4&gt; vector;) 的類型。 如需詳細資訊，請參閱<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">使用者定義的類型</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>矩陣類型</p>
@@ -231,9 +231,9 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>您也可使用<a href="https://msdn.microsoft.com/library/windows/desktop/bb509623">矩陣類型</a>來定義矩陣。</p>
+<p>您也可使用<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-matrix">矩陣類型</a>來定義矩陣。</p>
 <p>例如，matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>矩陣也是定義為 float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;) 的類型。 如需詳細資訊，請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/bb509702">使用者定義的類型</a>。</p></td>
+<p>矩陣也是定義為 float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;) 的類型。 如需詳細資訊，請參閱<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">使用者定義的類型</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>適用於 float、int、取樣器的精確度限定詞</p>
@@ -254,18 +254,18 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <p>最小固定點帶正負號 2.8 位元值 (2 位元的整數與 8 位元的分數元件)。 8 位元的分數元件可包含 1 而不排除，讓範圍完整包含從 -2 到 2。</p></li>
 <li>min16int：最小 16 位元帶正負號的整數</li>
 <li><p>min12int：最小 12 位元帶正負號的整數</p>
-<p>此類型適用於 10Level9 (<a href="https://msdn.microsoft.com/library/windows/desktop/ff476876">9_x 功能層級</a>)，其中整數由浮點數表示。 這會是您在使用 16 位元浮點數列舉整數時所得到的精確度。</p></li>
+<p>此類型適用於 10Level9 (<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">9_x 功能層級</a>)，其中整數由浮點數表示。 這會是您在使用 16 位元浮點數列舉整數時所得到的精確度。</p></li>
 <li>min16uint：最小 16 位元不帶正負號的整數</li>
 </ul>
-<p>如需詳細資訊，請參閱<a href="https://msdn.microsoft.com/library/windows/desktop/bb509646">純量類型</a>與<a href="https://msdn.microsoft.com/library/windows/desktop/hh968108">使用 HLSL 最小精確度</a>。</p></td>
+<p>如需詳細資訊，請參閱<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">純量類型</a>與<a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">使用 HLSL 最小精確度</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471525">Texture2D</a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a></td>
 </tr>
 <tr class="even">
 <td align="left">samplerCube</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb509700">TextureCube</a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-type">TextureCube</a></td>
 </tr>
 </tbody>
 </table>
@@ -324,7 +324,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <p>例如，float4 色彩 [4]:SV_Target;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>gl_FragData [n]</strong></p>
+<td align="left"><p><strong>gl_FragData[n]</strong></p>
 <p>此變數為 <strong>vec4</strong> 類型。</p>
 <p>色彩附件 n 的片段色彩</p></td>
 <td align="left"><p>SV_Target[n]</p>
@@ -380,7 +380,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 
  
 
-您可使用語意來指定頂點著色器輸入與像素著色器輸入的位置、色彩等等。 您必須使輸入配置中的語意值與頂點著色器輸入相符。 如需範例，請參閱[將 GLSL 變數移植到 HLSL 的範例](#examples-of-porting-glsl-variables-to-hlsl)。 如需 HLSL 語意的詳細資訊，請參閱[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
+您可使用語意來指定頂點著色器輸入與像素著色器輸入的位置、色彩等等。 您必須使輸入配置中的語意值與頂點著色器輸入相符。 如需範例，請參閱[將 GLSL 變數移植到 HLSL 的範例](#examples-of-porting-glsl-variables-to-hlsl)。 如需 HLSL 語意的詳細資訊，請參閱[語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)。
 
 ## <a name="examples-of-porting-glsl-variables-to-hlsl"></a>將 GLSL 變數移植到 HLSL 的範例
 
@@ -433,7 +433,7 @@ gl_FragColor = vec4(colorVarying, 1.0);
 
 ### <a name="constant-buffers-and-data-transfers-in-hlsl"></a>HLSL 中的常數緩衝區與資料傳輸
 
-以下範例說明如何將資料傳遞至 HLSL 頂點著色器，然後流向像素著色器。 在您的應用程式程式碼中，定義頂點與常數緩衝區。 然後，在頂點著色器程式碼中，將常數緩衝區定義為 [cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)，並儲存每一頂點資料與像素著色器輸入資料。 這裡我們使用名為 **VertexShaderInput** 與 **PixelShaderInput** 的結構。
+以下範例說明如何將資料傳遞至 HLSL 頂點著色器，然後流向像素著色器。 在您的應用程式程式碼中，定義頂點與常數緩衝區。 然後，在頂點著色器程式碼中，將常數緩衝區定義為 [cbuffer](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)，並儲存每一頂點資料與像素著色器輸入資料。 這裡我們使用名為 **VertexShaderInput** 與 **PixelShaderInput** 的結構。
 
 Direct3D app 程式碼
 

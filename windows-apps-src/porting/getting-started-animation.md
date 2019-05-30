@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dc5e107fd343798698f5957c26d87a0d3ffe6625
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b30f2e9d08fd36686045523c54180829570cbd2d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608623"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372877"
 ---
 # <a name="getting-started-animation"></a>開始使用：動畫
 
@@ -124,9 +124,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 ...
 ```
 
-您可以以手動方式編輯這個 XAML，或返回 Blend 以繼續處理工作。 Blend 會以好玩的方式建立有趣的使用者介面，而使用圖形工具來製作介面動畫的功能將會大幅縮短開發時間。 如需動畫的詳細資訊，請參閱[動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)。
+您可以以手動方式編輯這個 XAML，或返回 Blend 以繼續處理工作。 Blend 會以好玩的方式建立有趣的使用者介面，而使用圖形工具來製作介面動畫的功能將會大幅縮短開發時間。 如需動畫的詳細資訊，請參閱[動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)。
 
-**附註**  如需動畫的詳細資訊<span class="legacy-term">使用 JavaScript 和 HTML 的 UWP 應用程式</span>，請參閱[以動畫顯示您的 UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
+**附註**  如需動畫的詳細資訊<span class="legacy-term">使用 JavaScript 和 HTML 的 UWP 應用程式</span>，請參閱[以動畫顯示您的 UI (HTML)](https://docs.microsoft.com/previous-versions/windows/apps/hh465165(v=win.10))。
 
 ### <a name="next-step"></a>後續步驟
 

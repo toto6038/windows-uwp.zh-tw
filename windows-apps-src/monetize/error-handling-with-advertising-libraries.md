@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 錯誤處理, JavaScript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e2e1c019497fc22e8d922ba5f0a02a30034b65
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e7b98dc583b8f7d77aa582b4c69b87c726a83129
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617753"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371816"
 ---
 # <a name="handle-ad-errors"></a>處理廣告錯誤
 
@@ -67,9 +67,9 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 </div>
 ```
 
-錯誤處理函式是宣告式的，並且必須使用 [markSupportedForProcessing](https://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) 函式括住。
+錯誤處理函式是宣告式的，並且必須使用 [markSupportedForProcessing](https://docs.microsoft.com/previous-versions/windows/apps/hh967819(v=win.10)) 函式括住。
 
-錯誤處理常式會在發生錯誤時抓取 JavaScript 錯誤物件。 錯誤物件會提供兩個引數給錯誤處理常式。 如需詳細資訊，請參閱[非同步 Windows 執行階段方法中的特殊錯誤屬性](https://msdn.microsoft.com/library/windows/apps/hh994690.aspx)。
+錯誤處理常式會在發生錯誤時抓取 JavaScript 錯誤物件。 錯誤物件會提供兩個引數給錯誤處理常式。 如需詳細資訊，請參閱[非同步 Windows 執行階段方法中的特殊錯誤屬性](https://docs.microsoft.com/scripting/jswinrt/special-error-properties-from-asynchronous-windows-runtime-methods)。
 
 以下是處理 **onErrorOccurred** 事件且名為 **errorLogger** 之錯誤處理函式的範例。
 

@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版, 套件正式發行前小眾測試版
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f55a218c0cb4f4964fe12eb8e2eeb5b504f6405
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 66e64f2c499835a345bb9563fd005b86a926a4d2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334776"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372008"
 ---
 # <a name="get-package-flights-for-an-app"></a>取得應用程式套件正式發行前小眾測試版
 
-若要列出已向您的合作夥伴中心帳戶的應用程式封裝的航班，Microsoft Store 提交 API 中使用這個方法。 如需有關套件正式發行前小眾測試版的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。
+若要列出已向您的合作夥伴中心帳戶的應用程式封裝的航班，Microsoft Store 提交 API 中使用這個方法。 如需有關套件正式發行前小眾測試版的詳細資訊，請參閱[套件正式發行前小眾測試版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -44,9 +44,9 @@ ms.locfileid: "58334776"
 
 |  名稱  |  類型  |  描述  |  必要項  |
 |------|------|------|------|
-|  applicationId  |  字串  |  您想要擷取其套件正式發行前小眾測試版之 App 的「市集識別碼」。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
-|  top  |  整數  |  要在要求中傳回的項目數目 (也就是要傳回的套件正式發行前小眾測試版數目)。 如果您帳戶擁有的套件正式發行前小眾測試版數目超出您在查詢中指定的值，回應主體中就會包含一個相對 URI 路徑，您可以將此路徑附加到方法 URI 來要求下一頁資料。  |  否  |
-|  skip  |  整數  |  在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。  |  否  |
+|  applicationId  |  字串  |  您想要擷取其套件正式發行前小眾測試版之 App 的「市集識別碼」。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
+|  top  |  ssNoversion  |  要在要求中傳回的項目數目 (也就是要傳回的套件正式發行前小眾測試版數目)。 如果您帳戶擁有的套件正式發行前小眾測試版數目超出您在查詢中指定的值，回應主體中就會包含一個相對 URI 路徑，您可以將此路徑附加到方法 URI 來要求下一頁資料。  |  否  |
+|  skip  |  ssNoversion  |  在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。  |  否  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -103,7 +103,7 @@ Authorization: Bearer <your access token>
 |------------|--------|---------------------|
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求內文的 *top* 參數設為 2，但是 App 有 4 個套件正式發行前小眾測試版，回應主體會包含 `applications/{applicationid}/listflights/?skip=2&top=2` 的 @nextLink 值，這指出您可以呼叫 `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2` 來要求接下來的 2 個套件正式發行前小眾測試版。 |
 | value      | 陣列  | 提供指定 App 之套件正式發行前小眾測試版相關資訊的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱[正式發行前小眾測試版資源](get-app-data.md#flight-object)。               |
-| totalCount | 整數    | 查詢的資料結果中的列數總計 (也就是指定 App 的套件正式發行前小眾測試版總數目)。   |
+| totalCount | ssNoversion    | 查詢的資料結果中的列數總計 (也就是指定 App 的套件正式發行前小眾測試版總數目)。   |
 
 
 ## <a name="error-codes"></a>錯誤碼

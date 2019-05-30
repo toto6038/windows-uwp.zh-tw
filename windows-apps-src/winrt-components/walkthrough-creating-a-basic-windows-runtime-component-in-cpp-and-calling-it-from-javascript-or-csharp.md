@@ -6,18 +6,18 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f1f147d98b8d88e912cc9fec40d5e29c34748167
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 4bed6858998fe20a5dddf709cac1d2436f001c08
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291896"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363202"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>逐步解說：在 C++/CX 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C\# 呼叫該元件
 > [!NOTE]
 > 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 若要了解如何建立 Windows 執行階段元件，使用C++/WinRT，請參閱[撰寫在事件C++/WinRT](../cpp-and-winrt-apis/author-events.md)。
 
-本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。 開始本逐步解說之前，請確定您了解一些概念，例如：抽象二進位介面 (ABI)、ref 類別，以及讓 ref 類別更容易使用的 Visual C++ 元件擴充功能。 如需詳細資訊，請參閱[在 C++ 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md)和 [Visual C++ 語言參考 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)。
+本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。 開始本逐步解說之前，請確定您了解一些概念，例如：抽象二進位介面 (ABI)、ref 類別，以及讓 ref 類別更容易使用的 Visual C++ 元件擴充功能。 如需詳細資訊，請參閱[在 C++ 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md)和 [Visual C++ 語言參考 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)。
 
 ## <a name="creating-the-c-component-dll"></a>建立 C++ 元件 DLL
 此範例會先建立元件專案，但您也可以先建立 JavaScript 專案。 順序並不重要。
@@ -25,16 +25,16 @@ ms.locfileid: "58291896"
 請注意，元件的主要類別包含屬性和方法定義的範例，以及事件宣告。 提供這些項目只是為了示範它的進行方式。 這些並不是必要項目，而且在此範例中，我們會以自己的程式碼來取代所有產生的程式碼。
 
 ### <a name="to-create-the-c-component-project"></a>**若要建立C++元件專案**
-1. 在 Visual Studio 功能表列上，依序選擇 [檔案]、[新增] 及 [專案]。
+1. 在 Visual Studio 功能表列上，依序選擇 [檔案]、[新增] 及 [專案]  。
 
-2. 在 [**新增專案**] 對話方塊的左窗格中，展開 [**Visual C++**]，然後選取通用 Windows app 的節點。
+2. 在 [**新增專案**] 對話方塊的左窗格中，展開 [**Visual C++** ]，然後選取通用 Windows app 的節點。
 
 3. 在中央窗格中，選取**Windows 執行階段元件**，然後將專案命名為 WinRT\_CPP。
 
-4. 選擇 [確定] 按鈕。
+4. 選擇 [確定] 按鈕。 
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**若要將可啟動類別新增至元件**
-可啟用的類別是用戶端程式碼可以使用 **new** 運算式 (在 Visual Basic 中是 **New**，在 C++ 中則是 **ref new**) 建立的類別。 在您的元件中，您會將它宣告為 **public ref class sealed**。 事實上，Class1.h 和 .cpp 檔案已經有 ref 類別。 您可以變更名稱，但在這個範例中，我們會使用預設名稱 -- Class1。 如有必要，您可以在元件中定義其他 ref 類別或一般類別。 如需 ref 類別的詳細資訊，請參閱[類型系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
+可啟用的類別是用戶端程式碼可以使用 **new** 運算式 (在 Visual Basic 中是 **New**，在 C++ 中則是 **ref new**) 建立的類別。 在您的元件中，您會將它宣告為 **public ref class sealed**。 事實上，Class1.h 和 .cpp 檔案已經有 ref 類別。 您可以變更名稱，但在這個範例中，我們會使用預設名稱 -- Class1。 如有必要，您可以在元件中定義其他 ref 類別或一般類別。 如需 ref 類別的詳細資訊，請參閱[類型系統 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
 
 加入下列\#include 指示詞至 Class1.h:
 
@@ -270,21 +270,21 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 如果您只想建立 C# 用戶端，則可略過本節。
 
 ### <a name="to-create-a-javascript-project"></a>建立 JavaScript 專案
-1. 在 [方案總管] 中，開啟 [方案] 節點的捷徑功能表，然後依序選擇 [加入] 和 [新增專案]。
+1. 在 [方案總管] 中，開啟 [方案] 節點的捷徑功能表，然後依序選擇 [加入] 和 [新增專案]  。
 
-2. 展開 \[JavaScript\] \(它可能是以巢狀方式置於 \[其他語言\] 底下\)，然後選擇 \[空白應用程式 \(通用 Windows\)\]。
+2. 展開 \[JavaScript\] \(它可能是以巢狀方式置於 \[其他語言\]  底下\)，然後選擇 \[空白應用程式 \(通用 Windows\)\]  。
 
-3. 選擇 [確定] 按鈕，接受 App1 這個預設名稱。
+3. 選擇 [確定]  按鈕，接受 App1 這個預設名稱。
 
-4. 開啟 App1 專案節點的捷徑功能表，然後選擇 [設定為啟始專案]。
+4. 開啟 App1 專案節點的捷徑功能表，然後選擇 [設定為啟始專案]  。
 
 5. 將專案參考加入至 WinRT_CPP：
 
-6. 開啟 [參考] 節點的捷徑功能表，然後選擇 [加入參考]。
+6. 開啟 [參考] 節點的捷徑功能表，然後選擇 [加入參考]  。
 
-7. 在 [參考管理員] 對話方塊的左窗格中，依序選取 [專案] 和 [方案]。
+7. 在 [參考管理員] 對話方塊的左窗格中，依序選取 [專案]  和 [方案]  。
 
-8. 在中央窗格，選取 [WinRT_CPP]，然後選擇 [確定] 按鈕。
+8. 在中央窗格，選取 [WinRT_CPP]，然後選擇 [確定]  按鈕。
 
 ## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>加入可叫用 JavaScript 事件處理常式的 HTML
 將此 HTML 貼到 default.html 頁面的 <body> 節點中：
@@ -441,21 +441,21 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 ## <a name="creating-a-c-client-app"></a>建立 C# 用戶端 App
 
 ### <a name="to-create-a-c-project"></a>建立 C# 專案
-1. 在 [方案總管] 中，開啟 [方案] 節點的捷徑功能表，然後依序選擇 [加入] 和 [新增專案]。
+1. 在 [方案總管] 中，開啟 [方案] 節點的捷徑功能表，然後依序選擇 [加入] 和 [新增專案]  。
 
-2. 展開 \[Visual C#\] (它可能是以巢狀方式置於 \[其他語言\] 底下\)、選取 \[Windows\]，接著選取左窗格中的 \[通用\]，然後選取中間窗格的 \[空白應用程式\]。
+2. 展開 \[Visual C#\] (它可能是以巢狀方式置於 \[其他語言\]  底下\)、選取 \[Windows\]  ，接著選取左窗格中的 \[通用\]  ，然後選取中間窗格的 \[空白應用程式\]  。
 
-3. 將這個 app 命名為 CS_Client，然後選擇 [確定] 按鈕。
+3. 將這個 app 命名為 CS_Client，然後選擇 [確定]  按鈕。
 
-4. 開啟 CS_Client 專案節點的捷徑功能表，然後選擇 [設定為啟始專案]。
+4. 開啟 CS_Client 專案節點的捷徑功能表，然後選擇 [設定為啟始專案]  。
 
 5. 將專案參考加入至 WinRT_CPP：
 
-   - 開啟 [參考] 節點的捷徑功能表，然後選擇 [加入參考]。
+   - 開啟 [參考]  節點的捷徑功能表，然後選擇 [加入參考]  。
 
-   - 在 [參考管理員] 對話方塊的左窗格中，依序選取 [專案] 和 [方案]。
+   - 在 [參考管理員]  對話方塊的左窗格中，依序選取 [專案]  和 [方案]  。
 
-   - 在中央窗格，選取 [WinRT_CPP]，然後選擇 [確定] 按鈕。
+   - 在中央窗格，選取 [WinRT_CPP]，然後選擇 [確定]  按鈕。
 
 ## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>加入定義使用者介面的 XAML
 將下列程式碼複製到 MainPage.xaml 中的 Grid 元素。
@@ -579,7 +579,7 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ```
 
 ## <a name="running-the-app"></a>執行 App
-在 [方案總管] 中開啟專案節點的捷徑功能表，然後選擇 [設定為啟始專案]，選取 C# 專案或 JavaScript 專案做為啟始專案。 然後，按 F5 開始執行並偵錯，或是按 Ctrl+F5 開始執行而不偵錯。
+在 [方案總管] 中開啟專案節點的捷徑功能表，然後選擇 [設定為啟始專案]  ，選取 C# 專案或 JavaScript 專案做為啟始專案。 然後，按 F5 開始執行並偵錯，或是按 Ctrl+F5 開始執行而不偵錯。
 
 ## <a name="inspecting-your-component-in-object-browser-optional"></a>在物件瀏覽器中檢查您的元件 (選擇性)
 在 [物件瀏覽器] 中，您可以檢查 .winmd 檔案中定義的所有 Windows 執行階段類型。 這包含 Platform 命名空間和預設命名空間中的類型。 不過，由於 Platform::Collections 命名空間中的類型是定義於標頭檔 collections.h (而非 winmd 檔案) 中，因此它們不會出現在 [物件瀏覽器] 中。
@@ -593,17 +593,17 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 若想獲得較佳的偵錯經驗，請從公用 Microsoft 符號伺服器下載偵錯符號：
 
 ### <a name="to-download-debugging-symbols"></a>**若要下載偵錯符號**
-1. 在功能表列上，依序選擇 [工具] 和 [選項]。
+1. 在功能表列上，依序選擇 [工具] 和 [選項]  。
 
-2. 在 [選項] 對話方塊中，展開 [偵錯]，然後選取 [符號]。
+2. 在 [選項]  對話方塊中，展開 [偵錯]  ，然後選取 [符號]  。
 
-3. 選取 [Microsoft 符號伺服器]，然後選擇 [確定] 按鈕。
+3. 選取 [Microsoft 符號伺服器]  ，然後選擇 [確定]  按鈕。
 
 第一次下載這些符號時可能需要一些時間。 若要縮短下載時間，當您下次按 F5 時，請指定用來快取符號的本機目錄。
 
-對含有元件 DLL 的 JavaScript 方案進行偵錯時，您可以設定偵錯工具以啟用逐步執行指令碼或逐步執行元件中的機器碼，但不可兩者同時啟用。 若要變更設定，請在 [方案總管] 中開啟 JavaScript 專案節點的捷徑功能表，然後依序選擇 [屬性]、[偵錯] 及 [偵錯工具類型]。
+對含有元件 DLL 的 JavaScript 方案進行偵錯時，您可以設定偵錯工具以啟用逐步執行指令碼或逐步執行元件中的機器碼，但不可兩者同時啟用。 若要變更設定，請在 [方案總管] 中開啟 JavaScript 專案節點的捷徑功能表，然後依序選擇 [屬性]、[偵錯] 及 [偵錯工具類型]  。
 
-請務必在封裝設計工具中選取適當的功能。 您可以藉由開啟 Package.appxmanifest 檔案來開啟封裝設計工具。 例如，如果您嘗試以程式設計方式存取 [圖片] 資料夾中的檔案，請務必在封裝設計工具中的 [功能] 窗格中選取 [圖片庫] 核取方塊 。
+請務必在封裝設計工具中選取適當的功能。 您可以藉由開啟 Package.appxmanifest 檔案來開啟封裝設計工具。 例如，如果您嘗試以程式設計方式存取 [圖片] 資料夾中的檔案，請務必在封裝設計工具中的 [功能]  窗格中選取 [圖片庫]  核取方塊 。
 
 如果 JavaScript 程式碼無法辨識元件中的公用屬性或方法，請確定您在 JavaScript 中使用 Camel 命名法的大小寫慣例。 例如，`ComputeResult` C++ 方法必須當做 JavaScript 中的 `computeResult` 來參考。
 

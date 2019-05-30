@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 陰影圖, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e661065f86ac173a6ce323281c80fc964d0a4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1087a063fa19bea716b86143c10097711cef9205
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646363"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367901"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>支援各種硬體上的陰影圖
 
@@ -108,7 +108,7 @@ return float4(input.color * (light + shadow), 1.f);
 ## <a name="shadow-buffer-size"></a>陰影緩衝區大小
 
 
-較大的陰影圖不會看起來濃淡不均勻，但是它們會在圖形記憶體中佔據更多空間。 在遊戲中試驗不同的陰影圖大小，並觀察不同裝置類型與不同顯示大小的結果。 請考量像是階層式陰影圖的最佳化，以使用較少的圖形記憶體來取得更好的結果。 請參閱[改善陰影深度圖的常見技術](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
+較大的陰影圖不會看起來濃淡不均勻，但是它們會在圖形記憶體中佔據更多空間。 在遊戲中試驗不同的陰影圖大小，並觀察不同裝置類型與不同顯示大小的結果。 請考量像是階層式陰影圖的最佳化，以使用較少的圖形記憶體來取得更好的結果。 請參閱[改善陰影深度圖的常見技術](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)。
 
 ## <a name="shadow-buffer-depth"></a>陰影緩衝區深度
 

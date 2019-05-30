@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, games, directx, 遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: 37deaabe2586391b0f0c93359133f10830558539
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4e4d8f43893b5f2a9a58c2eb6209ecb7d8dd1c21
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608853"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367586"
 ---
 # <a name="game-flow-management"></a>管理遊戲流程
 
@@ -283,13 +283,13 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <tbody>
 <tr class="odd">
 <td align="left">OnActivated</td>
-<td align="left">處理 <a href="https://msdn.microsoft.com/library/windows/apps/br225018"><strong>CoreApplicationView::Activated</strong></a>。 遊戲 app 已經被帶到前景，因此啟動主視窗。</td>
+<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated"><strong>CoreApplicationView::Activated</strong></a>。 遊戲 app 已經被帶到前景，因此啟動主視窗。</td>
 </tr>
 <tr class="even">
 <td align="left">OnDpiChanged</td>
 <td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>。 已變更顯示器的 DPI，而遊戲會隨之調整其資源。
 <div class="alert">
-<strong>附註</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong> </a>座標是 dip （裝置無關的像素），如<a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
+<strong>附註</strong> <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow"><strong>CoreWindow</strong> </a>座標是 dip （裝置無關的像素），如<a href="https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview">Direct2D</a>。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
 </div>
 <div>
 </div></td>
@@ -304,27 +304,27 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 </tr>
 <tr class="odd">
 <td align="left">OnResuming</td>
-<td align="left">處理 <a href="https://msdn.microsoft.com/library/windows/apps/br205859"><strong>CoreApplication::Resuming</strong></a>。 遊戲應用程式從暫停狀態還原遊戲。</td>
+<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming"><strong>CoreApplication::Resuming</strong></a>。 遊戲應用程式從暫停狀態還原遊戲。</td>
 </tr>
 <tr class="even">
 <td align="left">OnSuspending</td>
-<td align="left">處理 <a href="https://msdn.microsoft.com/library/windows/apps/br205860"><strong>CoreApplication::Suspending</strong></a>。 遊戲 app 將它的狀態儲存到磁碟。 它有 5 秒的時間將狀態儲存到存放區。</td>
+<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending"><strong>CoreApplication::Suspending</strong></a>。 遊戲 app 將它的狀態儲存到磁碟。 它有 5 秒的時間將狀態儲存到存放區。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnVisibilityChanged</td>
-<td align="left">處理<a href="https://msdn.microsoft.com/library/windows/apps/hh701591"><strong>CoreWindow::VisibilityChanged</strong></a>。 遊戲 app 已經變更可見度，可以是已經變成可見，或因為另一個 app 成為可見而變成不可見。</td>
+<td align="left">處理<a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.visibilitychanged"><strong>CoreWindow::VisibilityChanged</strong></a>。 遊戲 app 已經變更可見度，可以是已經變成可見，或因為另一個 app 成為可見而變成不可見。</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowActivationChanged</td>
-<td align="left">處理 <a href="https://msdn.microsoft.com/library/windows/apps/br208255"><strong>CoreWindow::Activated</strong></a>。 遊戲 app 主視窗已經停用或啟動，因此必須移除焦點並暫停遊戲，或重新取得焦點。 在這兩種情況下，重疊會指示遊戲已經暫停。</td>
+<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.activated"><strong>CoreWindow::Activated</strong></a>。 遊戲 app 主視窗已經停用或啟動，因此必須移除焦點並暫停遊戲，或重新取得焦點。 在這兩種情況下，重疊會指示遊戲已經暫停。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnWindowClosed</td>
-<td align="left">處理 <a href="https://msdn.microsoft.com/library/windows/apps/br208261"><strong>CoreWindow::Closed</strong></a>。 遊戲 app 關閉主視窗並暫停遊戲。</td>
+<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.closed"><strong>CoreWindow::Closed</strong></a>。 遊戲 app 關閉主視窗並暫停遊戲。</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowSizeChanged</td>
-<td align="left">處理 <a href="https://msdn.microsoft.com/library/windows/apps/br208283"><strong>CoreWindow::SizeChanged</strong></a>。 遊戲應用程式重新分配圖形資源及重疊，以容納大小變更，然後更新轉譯目標。</td>
+<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.sizechanged"><strong>CoreWindow::SizeChanged</strong></a>。 遊戲應用程式重新分配圖形資源及重疊，以容納大小變更，然後更新轉譯目標。</td>
 </tr>
 </tbody>
 </table>

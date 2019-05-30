@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7146fe6489d61c641b7104e8c7c25728550c1c54
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636553"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370658"
 ---
 # <a name="face-and-vertex-normal-vectors"></a>面和頂點一般向量
 
@@ -31,7 +31,7 @@ ms.locfileid: "57636553"
 ## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>上一步剔除面臨
 
 
-只要不是正面，都稱為背面。 Direct3D 不一定會呈現背面；一般會說背面被消除。 背面消除是指，消除背面不轉譯。 如果您想要的話，可以變更消除模式以轉譯背面。 如需詳細資訊，請參閱[消除狀態](https://msdn.microsoft.com/library/windows/desktop/bb204882)。
+只要不是正面，都稱為背面。 Direct3D 不一定會呈現背面；一般會說背面被消除。 背面消除是指，消除背面不轉譯。 如果您想要的話，可以變更消除模式以轉譯背面。 如需詳細資訊，請參閱[消除狀態](https://docs.microsoft.com/windows/desktop/direct3d9/culling-state)。
 
 ## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>頂點單元法線
 

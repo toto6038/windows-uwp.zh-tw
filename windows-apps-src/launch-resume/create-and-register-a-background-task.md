@@ -10,34 +10,34 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 1420b41ef48123e302b546c45669a75545927d89
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 61edeaae7006d1ed2dd8b77c20c2b6b611c8687a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59240046"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366255"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>建立及註冊跨處理序的背景工作
 
-**重要 API**
+**重要的 Api**
 
--   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
+-   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
 
 建立背景工作類別並加以登錄，讓它在 App 不在前景時也能執行。 本主題示範如何建立及註冊與 App 處理序不同處理序中執行的背景工作。 若要在前景應用程式中直接進行背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
 
 > [!NOTE]
-> 如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows 10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
+> 如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows 10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
 
 ## <a name="create-the-background-task-class"></a>建立背景工作類別
 
-您可以撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的類別，在背景執行程式碼。 此程式碼執行特定的事件觸發時藉由使用，例如[ **Networkstatechange** ](https://msdn.microsoft.com/library/windows/apps/br224839)或是[ **MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)。
+您可以撰寫實作 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 介面的類別，在背景執行程式碼。 此程式碼執行特定的事件觸發時藉由使用，例如[ **Networkstatechange** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)或是[ **MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger)。
 
-下列步驟示範如何撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。
+下列步驟示範如何撰寫實作 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 介面的新類別。
 
 1.  為背景工作建立一個新專案，並將其新增到您的方案中。 若要這樣做，以滑鼠右鍵按一下您的方案節點，在**方案總管**，然後選取**新增** \> **新專案**。 然後選取**Windows 執行階段元件**專案類型、 為專案命名，並按一下 [確定]。
-2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。 針對C#或C++應用程式專案中的應用程式，以滑鼠右鍵按一下**參考**，然後選取**加入新參考**。 在 [方案] 下選取 [專案]，然後選取您背景工作專案的名稱並按一下 [確定]。
+2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。 針對C#或C++應用程式專案中的應用程式，以滑鼠右鍵按一下**參考**，然後選取**加入新參考**。 在 [方案]  下選取 [專案]  ，然後選取您背景工作專案的名稱並按一下 [確定]  。
 3.  加入背景工作專案，將新的類別可實作[ **IBackgroundTask** ](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)介面。 [ **IBackgroundTask.Run** ](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是將在指定的事件觸發時呼叫的必要項目點，此方法需要在每個背景工作。
 
 > [!NOTE]
@@ -202,7 +202,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 > [!NOTE]
 > 在 C# 中，可以使用 **async/await** 關鍵字呼叫背景工作的非同步方法。 在C++/CX，類似的結果可藉由使用工作鏈結。
 
-如需有關非同步模式的詳細資訊，請參閱[非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187335)。 如需有關如何使用延遲防止背景工作提前停止的其他範例，請參閱[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)。
+如需有關非同步模式的詳細資訊，請參閱[非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps)。 如需有關如何使用延遲防止背景工作提前停止的其他範例，請參閱[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)。
 
 下列步驟是在您 app 的其中一個類別 (例如 MainPage.xaml.cs) 中完成。
 
@@ -211,7 +211,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 
 ## <a name="register-the-background-task-to-run"></a>註冊要執行的背景工作
 
-1.  了解的背景工作是否已經註冊逐一查看[ **BackgroundTaskRegistration.AllTasks** ](https://msdn.microsoft.com/library/windows/apps/br224787)屬性。 這個步驟很重要；如果您的 app 不會檢查現有背景工作的註冊情況，就很容易多次註冊同一工作，因而造成效能問題，且將耗費大量 CPU 時間才能完成工作。
+1.  了解的背景工作是否已經註冊逐一查看[ **BackgroundTaskRegistration.AllTasks** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks)屬性。 這個步驟很重要；如果您的 app 不會檢查現有背景工作的註冊情況，就很容易多次註冊同一工作，因而造成效能問題，且將耗費大量 CPU 時間才能完成工作。
 
 下列範例會逐一查看**AllTasks**屬性，並設定為 true，如果工作已登錄旗標變數。
 
@@ -268,9 +268,9 @@ while (hascur)
 }
 ```
 
-2.  如果應用程式工作尚未登錄，則使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 建立您背景工作的執行個體。 工作進入點應該是您的背景工作類別名稱，並以命名空間為前置詞。
+2.  如果應用程式工作尚未登錄，則使用 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 建立您背景工作的執行個體。 工作進入點應該是您的背景工作類別名稱，並以命名空間為前置詞。
 
-背景工作觸發程序會控制背景工作將在何時執行。 如需可用觸發程序的清單，請參閱 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)。
+背景工作觸發程序會控制背景工作將在何時執行。 如需可用觸發程序的清單，請參閱 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)。
 
 比方說，此程式碼會建立新的背景工作，並將它設定為執行時**TimeZoneChanged**觸發程序，就會發生：
 
@@ -302,7 +302,7 @@ builder->TaskEntryPoint = "Tasks.ExampleBackgroundTask";
 builder->SetTrigger(ref new SystemTrigger(SystemTriggerType::TimeZoneChange, false));
 ```
 
-3.  您可以新增條件，以控制觸發程序事件發生後何時執行工作 (選用)。 例如，如果您希望在使用者上線時執行工作，則可使用 **UserPresent** 條件。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+3.  您可以新增條件，以控制觸發程序事件發生後何時執行工作 (選用)。 例如，如果您希望在使用者上線時執行工作，則可使用 **UserPresent** 條件。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 下列範例程式碼會指派條件，要求必須要有使用者：
 
@@ -319,7 +319,7 @@ builder.AddCondition(Windows::ApplicationModel::Background::SystemCondition{ Win
 builder->AddCondition(ref new SystemCondition(SystemConditionType::UserPresent));
 ```
 
-4.  透過呼叫 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件的 Register 方法來註冊背景工作。 儲存 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) 結果以便在下一個步驟使用。
+4.  透過呼叫 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 物件的 Register 方法來註冊背景工作。 儲存 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 結果以便在下一個步驟使用。
 
 下列程式碼會註冊背景工作並儲存結果：
 
@@ -336,15 +336,15 @@ BackgroundTaskRegistration^ task = builder->Register();
 ```
 
 > [!NOTE]
-> 通用 Windows app 必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何背景觸發程序類型。
+> 通用 Windows app 必須先呼叫 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)，才能登錄任何背景觸發程序類型。
 
-為了確保您的通用 Windows app 在您發行更新之後繼續正常執行，請使用 **ServicingComplete** (請參閱 [SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839)) 觸發程序來執行任何更新後的組態變更，例如移轉 App 的資料庫及登錄背景工作。 此時，最佳做法是將與舊版 App 關聯的背景工作取消登錄 (請參閱 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471))，然後為新版 App 登錄背景工作 (請參閱 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485))。
+為了確保您的通用 Windows app 在您發行更新之後繼續正常執行，請使用 **ServicingComplete** (請參閱 [SystemTriggerType](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)) 觸發程序來執行任何更新後的組態變更，例如移轉 App 的資料庫及登錄背景工作。 此時，最佳做法是將與舊版 App 關聯的背景工作取消登錄 (請參閱 [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess))，然後為新版 App 登錄背景工作 (請參閱 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync))。
 
 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
 ## <a name="handle-background-task-completion-using-event-handlers"></a>使用事件處理常式來處理背景工作完成
 
-您應該向 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 註冊方法，以便讓 app 可以從背景工作取得結果。 當應用程式啟動或繼續時，如果背景工作已完成應用程式已在前景中最後一次，將會呼叫標記的方法。 (如果背景工作是在您 app 目前處於前景時完成，將會立即呼叫 OnCompleted 方法)。
+您應該向 [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) 註冊方法，以便讓 app 可以從背景工作取得結果。 當應用程式啟動或繼續時，如果背景工作已完成應用程式已在前景中最後一次，將會呼叫標記的方法。 (如果背景工作是在您 app 目前處於前景時完成，將會立即呼叫 OnCompleted 方法)。
 
 1.  在 OnCompleted 方法中處理背景工作的完成。 例如，背景工作結果可能會導致 UI 更新。 OnCompleted 事件處理常式方法需要在此處顯示的方法配置，即使這個範例未使用 *args* 參數亦同。
 
@@ -395,9 +395,9 @@ void MainPage::OnCompleted(BackgroundTaskRegistration^ task, BackgroundTaskCompl
 > [!NOTE]
 > UI 更新應該以非同步方式執行，以避免 UI 執行緒阻塞。 例如，請參閱[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)中的 UpdateUI 方法。
 
-2.  返回登錄背景工作的位置。 在該行的程式碼後面，新增 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 物件。 提供您的 OnCompleted 方法做為 **BackgroundTaskCompletedEventHandler** 建構函式的參數。
+2.  返回登錄背景工作的位置。 在該行的程式碼後面，新增 [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) 物件。 提供您的 OnCompleted 方法做為 **BackgroundTaskCompletedEventHandler** 建構函式的參數。
 
-下列範例程式碼會將 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 新增到 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)：
+下列範例程式碼會將 [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) 新增到 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)：
 
 ```csharp
 task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
@@ -416,9 +416,9 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 在 app 能執行背景工作之前，您必須在 app 資訊清單中宣告每一個背景工作。 如果您的應用程式會嘗試向未在資訊清單中列出的觸發程序的背景工作，背景工作註冊將會失敗並發生 「 執行階段類別未登錄 」 錯誤。
 
 1.  透過開啟名為 Package.appxmanifest 的檔案來開啟封裝資訊清單設計工具。
-2.  開啟 [宣告] 索引標籤。
-3.  從 [可用宣告] 下拉式清單中選擇 [背景工作]，然後按一下 [新增]。
-4.  選取 [系統事件] 核取方塊。
+2.  開啟 [宣告]  索引標籤。
+3.  從 [可用宣告]  下拉式清單中選擇 [背景工作]  ，然後按一下 [新增]  。
+4.  選取 [系統事件]  核取方塊。
 5.  在 **進入點：** 文字方塊中，輸入您的背景類別也就是本例中為 Tasks.ExampleBackgroundTask 的名稱與命名空間。
 6.  關閉資訊清單設計工具。
 
@@ -445,7 +445,7 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 
 ## <a name="related-topics"></a>相關主題
 
-**詳細的背景工作說明主題**
+**詳細的背景工作的說明主題**
 
 * [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
 * [註冊背景工作](register-a-background-task.md)
@@ -461,8 +461,8 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
 **背景工作 API 參考**
 
-* [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)

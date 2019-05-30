@@ -10,18 +10,18 @@ dev_langs:
 - vb
 - cppcx
 - cppwinrt
-ms.openlocfilehash: 7d66eaa77f86deffd59ebc81360ccb8183afd7d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9e13138ca634c075eba0c9b1331f6af4176de1eb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654533"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360433"
 ---
 # <a name="xaml-lighting"></a>XAML 光源
 
 [**CompositionLight** ](/uwp/api/Windows.UI.Composition.CompositionLight)物件會用於搭配[ **SceneLightingEffect** ](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect)以模擬動態光源和反射率。
 
-您可以將光源套用至[**視覺效果**](https://msdn.microsoft.com/library/windows/apps/Dn706858)和 XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement)。
+您可以將光源套用至[**視覺效果**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual)和 XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement)。
 
 ## <a name="applying-lights-to-xaml-uielements"></a>將光源套用至 XAML UIElement
 
@@ -460,7 +460,7 @@ Platform::String^ OrangeSpotLight::GetId()
 您接著可以套用此光線來啟用它們的任何 XAML UIElement 或筆刷。 這個範例會示範不同的可能用法。
 
 > [!Important]
-> 針對[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，移除的兩個`local:OrangeSpotLight.IsTarget="True"`從以下的標記。 附加的屬性已設定在程式碼後置中。
+> 針對[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，移除的兩個`local:OrangeSpotLight.IsTarget="True"`從以下的標記。 附加的屬性已設定在程式碼後置中。
 
 ```xaml
 <StackPanel Width="100">

@@ -6,28 +6,28 @@ ms.date: 07/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f8e59ae5fb20ce8e1a900f7c1415a699715215e0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 475c7b98e33b78ac3bea4ddecc8414a8e3aa07b3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594523"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370803"
 ---
 # <a name="launch-the-default-app-for-a-file"></a>啟動檔案的預設應用程式
 
 **重要的 Api**
 
--   [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+-   [**Windows.System.Launcher.LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.)
 
-了解如何啟動檔案的預設應用程式。 許多應用程式需要使用它們本身無法處理的檔案。 例如，電子郵件 app 會收到各種類型的檔案，因此它們需要可以使用這些檔案類型的預設處理常式啟動這些檔案的方法。 這些步驟示範如何使用 [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API 來啟動您 app 本身無法處理之檔案的預設處理常式。
+了解如何啟動檔案的預設應用程式。 許多應用程式需要使用它們本身無法處理的檔案。 例如，電子郵件 app 會收到各種類型的檔案，因此它們需要可以使用這些檔案類型的預設處理常式啟動這些檔案的方法。 這些步驟示範如何使用 [**Windows.System.Launcher**](https://docs.microsoft.com/uwp/api/Windows.System.Launcher) API 來啟動您 app 本身無法處理之檔案的預設處理常式。
 
 ## <a name="get-the-file-object"></a>取得檔案物件
 
-首先，為檔案取得 [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。
+首先，為檔案取得 [**Windows.Storage.StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件。
 
-如果檔案包含在應用程式的套件中，您可以使用 [**Package.InstalledLocation**](https://msdn.microsoft.com/library/windows/apps/br224681) 屬性來取得 [**Windows.Storage.StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 物件，並使用 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 方法來取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。
+如果檔案包含在應用程式的套件中，您可以使用 [**Package.InstalledLocation**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.installedlocation) 屬性來取得 [**Windows.Storage.StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 物件，並使用 [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) 方法來取得 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件。
 
-如果檔案位於已知資料夾中，您可以使用 [**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 類別的屬性來取得 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，並使用 [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 方法來取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。
+如果檔案位於已知資料夾中，您可以使用 [**Windows.Storage.KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) 類別的屬性來取得 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder)，並使用 [**GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) 方法來取得 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件。
 
 ## <a name="launch-the-file"></a>啟動檔案
 
@@ -35,14 +35,14 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 
 | 選項 | 方法 | 描述 |
 |--------|--------|-------------|
-| 預設啟動 | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | 使用預設處理常式啟動指定的檔案。 |
-| 開啟檔案啟動 | [**LaunchFileAsync （IStorageFile、 LauncherOptions）**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 啟動指定的檔案，讓使用者透過 [開啟檔案] 對話方塊挑選處理常式。 |
-| 使用建議的 app 備用選項啟動 | [**LaunchFileAsync （IStorageFile、 LauncherOptions）**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 使用預設處理常式啟動指定的檔案。 如果系統上沒有安裝處理常式，則建議使用者使用市集中的應用程式。 |
-| 以所需的剩餘檢視啟動 | [**（IStorageFile、 LauncherOptions） LaunchFileAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701465) （Windows-僅限） | 使用預設處理常式啟動指定的檔案。 指定啟動後停留在畫面上的喜好設定，並要求特定視窗大小。 [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314)不支援在行動裝置系列上。 |
+| 預設啟動 | [**LaunchFileAsync(IStorageFile)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchfileasync) | 使用預設處理常式啟動指定的檔案。 |
+| 開啟檔案啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) | 啟動指定的檔案，讓使用者透過 [開啟檔案] 對話方塊挑選處理常式。 |
+| 使用建議的 app 備用選項啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) | 使用預設處理常式啟動指定的檔案。 如果系統上沒有安裝處理常式，則建議使用者使用市集中的應用程式。 |
+| 以所需的剩餘檢視啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) (Windows-only) | 使用預設處理常式啟動指定的檔案。 指定啟動後停留在畫面上的喜好設定，並要求特定視窗大小。 [**LauncherOptions.DesiredRemainingView** ](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)不支援在行動裝置系列上。 |
 
 ### <a name="default-launch"></a>預設啟動
 
-呼叫 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) 方法來啟動預設 app。 這個範例使用 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 方法來啟動影像檔案 test.png，它包含於 app 套件內。
+呼叫 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchfileasync) 方法來啟動預設 app。 這個範例使用 [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) 方法來啟動影像檔案 test.png，它包含於 app 套件內。
 
 ```csharp
 async void DefaultLaunch()
@@ -155,7 +155,7 @@ void MainPage::DefaultLaunch()
 
 ### <a name="open-with-launch"></a>開啟檔案啟動
 
-呼叫 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法並將 [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) 設定為 **true**，以啟動使用者從 [**開啟檔案**] 對話方塊中選取的 app。
+呼叫 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) 方法並將 [**LauncherOptions.DisplayApplicationPicker**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.displayapplicationpicker) 設定為 **true**，以啟動使用者從 [**開啟檔案**] 對話方塊中選取的 app。
 
 建議您在使用者不想選取特定檔案預設的 app 時，使用 [**開啟檔案**] 對話方塊。 例如，如果您的應用程式允許使用者啟動影像檔案，則預設處理常式可能是某個檢視器應用程式。 在某些情況下，使用者可能想編輯影像而非檢視影像。 使用 [**開啟檔案**] 選項搭配 [**AppBar**] 或操作功能表中的其他命令，可以讓使用者開啟 [**開啟檔案**] 對話方塊，並選取想在這類情況中使用的編輯器 app。
 
@@ -289,7 +289,7 @@ void MainPage::DefaultLaunch()
 
 **啟動後援建議的應用程式**
 
-在某些情況下，使用者可能尚未安裝處理您要啟動之檔案的 app。 依照預設，Windows 處理這些情況的方法是提供連結，讓使用者在市集上搜尋適當的應用程式。 如果您想提供使用者在此情況下應取得什麼應用程式的特定建議，您可以在啟動檔案時一併傳送該建議。 若要這樣做，請呼叫 [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法，並將 [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) 設為您想建議使用者使用的市集 app 套件系列名稱。 然後將 [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) 設為該應用程式的名稱。 Windows 將使用此資訊，以從市集取得建議 app 的特定選項，取代在市集中搜尋 app 的一般選項。
+在某些情況下，使用者可能尚未安裝處理您要啟動之檔案的 app。 依照預設，Windows 處理這些情況的方法是提供連結，讓使用者在市集上搜尋適當的應用程式。 如果您想提供使用者在此情況下應取得什麼應用程式的特定建議，您可以在啟動檔案時一併傳送該建議。 若要這樣做，請呼叫 [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) 方法，並將 [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) 設為您想建議使用者使用的市集 app 套件系列名稱。 然後將 [**LauncherOptions.PreferredApplicationDisplayName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationdisplayname) 設為該應用程式的名稱。 Windows 將使用此資訊，以從市集取得建議 app 的特定選項，取代在市集中搜尋 app 的一般選項。
 
 > [!NOTE]
 > 您必須設定兩個應用程式的建議選項。 只設定其中一個將出現錯誤。
@@ -434,12 +434,12 @@ void MainPage::DefaultLaunch()
 
 ### <a name="launch-with-a-desired-remaining-view-windows-only"></a>以所需的剩餘檢視啟動 (僅限 Windows)
 
-呼叫 [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) 的來源應用程式可要求在檔案啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理檔案的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 也可以使用 **DesiredRemainingView**，指出來源 app 在檔案啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
+呼叫 [**LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.) 的來源應用程式可要求在檔案啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理檔案的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 也可以使用 **DesiredRemainingView**，指出來源 app 在檔案啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
 
 > [!NOTE]
-> Windows 會考慮到多個不同的因素來決定來源應用程式的最後一個視窗大小，例如當、 原始碼應用程式的喜好設定、 畫面、 螢幕方向等等的應用程式數目。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 app 的特定視窗行為。
+> Windows 會考慮到多個不同的因素來決定來源應用程式的最後一個視窗大小，例如當、 原始碼應用程式的喜好設定、 畫面、 螢幕方向等等的應用程式數目。 設定 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 並無法保證來源 app 的特定視窗行為。
 
-**行動裝置系列：  **[**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314)不支援在行動裝置系列上。
+**行動裝置系列：  **[**LauncherOptions.DesiredRemainingView** ](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)不支援在行動裝置系列上。
 
 ```csharp
 async void DefaultLaunch()
@@ -559,9 +559,9 @@ void MainPage::DefaultLaunch()
 
 ### <a name="guidelines"></a>指導方針
 
-* [檔案類型與 Uri 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [檔案類型與 Uri 的指導方針](https://docs.microsoft.com/windows/uwp/files/index)
 
-### <a name="reference"></a>參考
+### <a name="reference"></a>參考資料
 
-* [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
-* [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+* [**Windows.Storage.StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
+* [**Windows.System.Launcher.LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.)

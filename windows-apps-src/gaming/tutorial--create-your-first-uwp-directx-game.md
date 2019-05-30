@@ -6,12 +6,12 @@ keywords: DirectX 遊戲範例, 遊戲範例, 通用 Windows 平台 (UWP), Direc
 ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dc602e2dd29231c1e6554d7ef55e9666a373fa31
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c2ee2795410c083a6dd460a8537115dc8d20de31
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642863"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367699"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲
 
@@ -32,7 +32,7 @@ ms.locfileid: "57642863"
 -   基本線性代數和牛頓物理概念。
 -   基本圖形程式設計詞彙。
 -   基本 Windows 程式設計概念。
--   必須對 [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) 和 [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) API 有基本的認識。
+-   必須對 [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) 和 [Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/how-to-use-direct3d-11) API 有基本的認識。
 
 ##  <a name="direct3d-uwp-shooting-game-sample"></a>Direct3D UWP 射擊遊戲範例
 
@@ -61,5 +61,5 @@ ms.locfileid: "57642863"
 | [轉譯架構 II:遊戲的轉譯](tutorial-game-rendering.md) | 在轉譯主題的第二個部分中，了解如何準備發生轉譯之前所需的資料。 |
 | [新增的使用者介面](tutorial--adding-a-user-interface.md) | 新增簡易選單選項，提醒顯示元件，然後提供意見反應給玩家。 |
 | [加入控制項](tutorial--adding-controls.md) | 新增移動視角控制項到遊戲&mdash;基本觸控、滑鼠及遊戲控制器控制項。 |
-| [加入聲音](tutorial--adding-sound.md) | 了解如何使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 建立遊戲的音效。 |
+| [加入聲音](tutorial--adding-sound.md) | 了解如何使用 [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction) API 建立遊戲的音效。 |
 | [擴充遊戲範例](tutorial-resources.md) | 使您進一步擁有 DirectX 遊戲開發的知識的資源，包括使用 XAML 建立重疊。 |

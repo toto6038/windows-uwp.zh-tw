@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, opengl, direct3d 11, port, 遊戲, 連接埠
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b6d06ff168f778c87e46fa399775492a3cebcaa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3c17e0b8ceb5938b7ca224f4a67198929a37a7f4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594213"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368364"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11
 
@@ -27,7 +27,7 @@ ms.locfileid: "57594213"
 
 本主題一開始假設您已建立新的 DirectX 11 專案。 若要了解如何建立新的 DirectX 11 專案，請閱讀[建立適用於通用 Windows 平台 (UWP) 的新 DirectX 11 專案](user-interface.md)。
 
-從這其中任一個連結建立的專案都會包含所有針對 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345) 基礎結構所準備的程式碼，而您可以立即開始進行將轉譯器從 Open GL ES 2.0 移植到 Direct3D 11 的程序。
+從這其中任一個連結建立的專案都會包含所有針對 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews) 基礎結構所準備的程式碼，而您可以立即開始進行將轉譯器從 Open GL ES 2.0 移植到 Direct3D 11 的程序。
 
 本主題將逐步解說兩個執行相同基本圖形工作的程式碼路徑：在視窗中顯示旋轉的頂點著色立方體。 在這兩個案例中，程式碼會涵蓋下列程序：
 
@@ -89,12 +89,12 @@ typedef struct
 
 ### <a name="technologies"></a>技術
 
--   [Microsoft Visual c + +](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
+-   [Microsoft Visual C++](https://docs.microsoft.com/previous-versions/60k1461a(v=vs.140))
 -   OpenGL ES 2.0
 
 ### <a name="prerequisites"></a>必要條件
 
--   選用。 檢閱[將 EGL 程式碼移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)。 閱讀本主題以更加了解 DirectX 所提供的圖形介面。
+-   選擇性。 檢閱[將 EGL 程式碼移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)。 閱讀本主題以更加了解 DirectX 所提供的圖形介面。
 
 ## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>步驟
 

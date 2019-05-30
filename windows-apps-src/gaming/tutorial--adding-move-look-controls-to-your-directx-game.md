@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 移動視角, 控制項
 ms.localizationpriority: medium
-ms.openlocfilehash: 222f46bbda165442003aecea0bbd138bcb844a3b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f1516ada043ac5e9d5c059f7cd2b91cb69a5eab1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604373"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367849"
 ---
 # <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>適用於遊戲的移動尋找控制項
 
@@ -178,7 +178,7 @@ internal:
 
 最後，我們使用這些方法和屬性來初始化、存取以及更新控制器的狀態資訊。
 
--   **Initialize**。 我們的 app 會呼叫這個事件處理常式來初始化控制項，並將它們附加到描述我們顯示視窗的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
+-   **Initialize**。 我們的 app 會呼叫這個事件處理常式來初始化控制項，並將它們附加到描述我們顯示視窗的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 物件。
 -   **SetPosition**。 我們的 app 會呼叫這個方法來設定場景區域中控制項的 x、y 及 z 座標。
 -   **SetOrientation**。 我們的 app 會呼叫這個方法來設定相機的上下移動和左右偏移。
 -   **取得\_位置**。 我們的 app 會存取這個屬性來取得場景區域中相機的目前位置。 把這個屬性當作將目前相機位置傳送到 app 的方法。
@@ -192,17 +192,17 @@ internal:
 
 Windows 執行階段事件發送器提供了要讓 **MoveLookController** 類別執行個體處理的 5 個事件：
 
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
--   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271)
--   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270)
+-   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
+-   [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup)
+-   [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown)
 
-這些事件都在 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 類型上實作。 我們假設您有一個要使用的 **CoreWindow** 物件。 如果您不知道如何取得這個物件，請參閱[如何設定您的通用 Windows 平台 (UWP) C++ app 來顯示 DirectX 檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
+這些事件都在 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 類型上實作。 我們假設您有一個要使用的 **CoreWindow** 物件。 如果您不知道如何取得這個物件，請參閱[如何設定您的通用 Windows 平台 (UWP) C++ app 來顯示 DirectX 檢視](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10))。
 
 如果在 app 執行時引發了這些事件，處理常式會更新我們在私用欄位中定義的控制器狀態資訊。
 
-首先，讓我們填入滑鼠和觸控指標事件處理常式。 在第一個事件處理常式 **OnPointerPressed()** 中，我們要從 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 中取得指標的 x-y 座標，這個類別可在使用者於視角控制器區域中按一下滑鼠或觸控螢幕時，管理我們的顯示。
+首先，讓我們填入滑鼠和觸控指標事件處理常式。 在第一個事件處理常式 **OnPointerPressed()** 中，我們要從 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 中取得指標的 x-y 座標，這個類別可在使用者於視角控制器區域中按一下滑鼠或觸控螢幕時，管理我們的顯示。
 
 **OnPointerPressed**
 
@@ -299,11 +299,11 @@ void MoveLookController::OnPointerMoved(
 
 每當指標移動時 (以此為例，即在使用者拖曳觸控式螢幕指標，或按住滑鼠左鍵並移動滑鼠指標的情況下)，都會引發 **OnPointerMoved** 事件處理常式。 如果指標識別碼與移動控制器指標的識別碼相同，那麼它就是移動指標；不然我們會檢查它是否為視角控制器的作用中指標。
 
-如果它是移動控制器，我們就只要更新指標位置。 只要 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 事件持續引發，我們就會一直更新它，因為我們要將最後位置與使用 **OnPointerPressed** 事件處理常式擷取的最初位置進行比對。
+如果它是移動控制器，我們就只要更新指標位置。 只要 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 事件持續引發，我們就會一直更新它，因為我們要將最後位置與使用 **OnPointerPressed** 事件處理常式擷取的最初位置進行比對。
 
 如果它是視角控制器，就會比較複雜。 我們需要計算新的視點並把相機放在它中央，因此我們會計算最後視點與目前螢幕位置的距離差異，然後乘以縮放係數，讓視角移動相對於螢幕移動的距離縮小或放大。 我們會使用這個值計算上下移動或左右偏移。
 
-最後，當玩家停止移動滑鼠或觸控螢幕時，我們需要停用移動或視角控制器行為。 我們會使用**OnPointerReleased**，我們稱之為何時[ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279)引發時，若要設定**m\_moveInUse**或**m\_lookInUse**設為 FALSE，請關閉相機取景位置調整移動和零出指標識別碼。
+最後，當玩家停止移動滑鼠或觸控螢幕時，我們需要停用移動或視角控制器行為。 我們會使用**OnPointerReleased**，我們稱之為何時[ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)引發時，若要設定**m\_moveInUse**或**m\_lookInUse**設為 FALSE，請關閉相機取景位置調整移動和零出指標識別碼。
 
 **OnPointerReleased**
 
@@ -424,7 +424,7 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** 會將 app 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 執行個體參考當作一個參數，並將我們已開發的事件處理常式登錄到該 **CoreWindow** 上的適當事件。 在應用程式啟動時，它會初始化移動和視角指標的識別碼，將觸控式螢幕移動控制器實作的命令向量設成零，並將相機視角設成正前方。
+**Initialize** 會將 app 的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 執行個體參考當作一個參數，並將我們已開發的事件處理常式登錄到該 **CoreWindow** 上的適當事件。 在應用程式啟動時，它會初始化移動和視角指標的識別碼，將觸控式螢幕移動控制器實作的命令向量設成零，並將相機視角設成正前方。
 
 ## <a name="getting-and-setting-the-position-and-orientation-of-the-camera"></a>取得和設定相機的位置和方向
 
@@ -575,7 +575,7 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-恭喜！ 您已經在遊戲中實作觸控式螢幕和鍵盤/滑鼠輸入觸控控制項的基本移動視角控制項！
+恭喜您！ 您已經在遊戲中實作觸控式螢幕和鍵盤/滑鼠輸入觸控控制項的基本移動視角控制項！
 
 
 

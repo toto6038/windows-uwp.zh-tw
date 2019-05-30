@@ -6,12 +6,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 橫幅, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: 84ed7f5f1eb65f06a47e92de962777ca9d3c50c7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ef3050e2583674bf6cd5a601dbde1500f6b457e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658493"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372557"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
 
@@ -48,7 +48,7 @@ ms.locfileid: "57658493"
     <br/>
     <a href="best-practices-for-ads-in-apps.md">最佳作法</a>
     <br/>
-    <a href="https://msdn.microsoft.com/en-us/library/windows/apps/mt691884.aspx">API 參考</a>
+    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">API 參考</a>
     </td>
 </tr>
 </tbody>
@@ -108,9 +108,9 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 如需使用 Microsoft Advertising SDK 的其他說明，請使用下列資源。
 
-|  工作    | 資源 |               
+|  工作    | Resource |               
 |----------|-------|
-| 回報錯誤或取得針對廣告的支援。     | 請造訪[支援頁面](https://developer.microsoft.com/en-us/windows/support)，然後選擇 **\[用程式內廣告\]**。        |
+| 回報錯誤或取得針對廣告的支援。     | 請造訪[支援頁面](https://developer.microsoft.com/en-us/windows/support)，然後選擇 **\[用程式內廣告\]** 。        |
 | 取得社群支援     | 造訪[論壇](https://go.microsoft.com/fwlink/p/?LinkId=401266)。       |
 | 下載示範如何新增橫幅和插入式廣告到 App 的範例專案。     | 請參閱 [GitHub 上的廣告範例](https://aka.ms/githubads)。       |
 | 了解最新的 Windows App 獲利機會     | 請瀏覽[從您的 App 獲利](https://developer.microsoft.com/store/monetize)。        |

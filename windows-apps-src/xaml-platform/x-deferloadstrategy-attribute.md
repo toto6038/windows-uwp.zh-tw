@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4432362db74f830774a2c4f74401c472c128a120
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f445b186c42095bfdf6d10fa7960b78691ced792
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659983"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371097"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 屬性
 
@@ -33,17 +33,17 @@ ms.locfileid: "57659983"
 **x:DeferLoadStrategy** 的使用限制如下：
 
 - 您必須定義[X:name](x-name-attribute.md) 讓項目，與必須設法稍後尋找項目。
-- 您只能延遲 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 或 [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) 衍生的類型。
-- 您無法延遲 [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中的根元素。
-- 您無法延遲 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的元素。
-- 您無法延遲隨 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 載入的鬆散 XAML。
+- 您只能延遲 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 或 [**FlyoutBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase) 衍生的類型。
+- 您無法延遲 [**Page**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)、[**UserControls**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) 或 [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) 中的根元素。
+- 您無法延遲 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中的元素。
+- 您無法延遲隨 [**XamlReader.Load**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlreader.load) 載入的鬆散 XAML。
 - 移動父元素將會清除任何尚未辨識的元素。
 
 有幾種不同的方式可用來辨識延遲的元素：
 
-- 使用您在元素上定義的名稱呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)。
-- 使用您在元素上定義的名稱呼叫 [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416)。
-- 在 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 中，使用以延遲的元素為目標的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 **Storyboard** 動畫。
+- 使用您在元素上定義的名稱呼叫 [**FindName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.findname)。
+- 使用您在元素上定義的名稱呼叫 [**GetTemplateChild**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.gettemplatechild)。
+- 在 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 中，使用以延遲的元素為目標的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 或 **Storyboard** 動畫。
 - 在 **Storyboard** 中以任何延遲的元素做為目標。
 - 使用以延遲的元素為目標的繫結。
 
@@ -51,17 +51,17 @@ ms.locfileid: "57659983"
 
 以任何前述方法建立延遲的元素後，將會發生幾件事：
 
-- 引發元素的 [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) 事件。
+- 引發元素的 [**Loaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.loaded) 事件。
 - 元素的任何繫結會受到評估。
 - 如果您已登錄而會接收包含延遲元素之屬性的屬性變更通知，通知將會引發。
 
 您可以內嵌延遲的元素，但必須從最外層元素開始辨識這些元素。  如果您嘗試在辨識父元素之前辨識子元素，將會引發例外狀況。
 
-一般而言，我們建議您延後不會出現在第一個畫面中的元素。 在尋找要延遲的候選項目時，建議您尋找以摺疊的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 建立的元素。 此外，使用者互動所觸發的 UI 也是您尋找延遲元素的理想之處。
+一般而言，我們建議您延後不會出現在第一個畫面中的元素。 在尋找要延遲的候選項目時，建議您尋找以摺疊的 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 建立的元素。 此外，使用者互動所觸發的 UI 也是您尋找延遲元素的理想之處。
 
-請留意 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 中的延遲元素，因為它雖然可減少您的啟動時間，但也可能隨著您所建立的項目而導致移動瀏覽效能下降。 如果您想要提升移動瀏覽效能，請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)和 [x:Phase 屬性](x-phase-attribute.md)文件。
+請留意 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 中的延遲元素，因為它雖然可減少您的啟動時間，但也可能隨著您所建立的項目而導致移動瀏覽效能下降。 如果您想要提升移動瀏覽效能，請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)和 [x:Phase 屬性](x-phase-attribute.md)文件。
 
-如果 [x:Phase 屬性](x-phase-attribute.md)結合 **x:DeferLoadStrategy** 使用，則當元素或元素樹狀結構實現之後，繫結會向上套用且包含目前階段。 針對 **x:Phase** 指定的階段不會影響或控制元素的延遲。 當清單項目被視為移動瀏覽的一部分回收時，實現的元素會與其他作用中元素的行為相同，而已編譯的繫結 (**{x:Bind}** 繫結) 會使用相同的規則處理 (包括階段處理)。
+如果 [x:Phase 屬性](x-phase-attribute.md)結合 **x:DeferLoadStrategy** 使用，則當元素或元素樹狀結構實現之後，繫結會向上套用且包含目前階段。 針對 **x:Phase** 指定的階段不會影響或控制元素的延遲。 當清單項目被視為移動瀏覽的一部分回收時，實現的元素會與其他作用中元素的行為相同，而已編譯的繫結 ( **{x:Bind}** 繫結) 會使用相同的規則處理 (包括階段處理)。
 
 一般會建議您在之前或之後測量您應用程式的執行效能，以確保您得到想要的效能。
 

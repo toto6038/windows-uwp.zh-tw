@@ -2,16 +2,16 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal 概觀
 description: 了解 Windows Device Portal 如何讓您從遠端透過網路或 USB 連線來設定及管理您的裝置。
-ms.date: 02/19/2019
+ms.date: 4/9/2019
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: ba3c0a393cc5eb536de43539df48f43bb98d8ef1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 39715dc3f4b88a2e9a91a7cb659208f8370f16f2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611933"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362420"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 
@@ -23,28 +23,32 @@ Windows Device Portal 位於每個裝置系列中，但功能和安裝程式因�
 
 Windows Device Portal 的功能透過實作[REST Api](device-portal-api-core.md) ，您可以直接使用來存取資料，並以程式設計方式控制您的裝置。
 
-## <a name="setup"></a>設定
+## <a name="setup"></a>安裝程式
 
 每個裝置都有連線到 Device Portal 的特定指示，但是每個裝置都需要執行這些一般步驟：
+
 1. （在 [設定] 應用程式中設定） 裝置上啟用開發人員模式和裝置入口網站。
+
 2. 將您的裝置與電腦的連線，透過區域網路或使用 USB。
+
 3. 在瀏覽器中瀏覽到 Device Portal 頁面。 下表顯示每個裝置系列所使用的通訊協定與連接埠。
 
 裝置系列 | 預設開啟？ | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
 HoloLens | 是，在開發人員模式 | 80 (預設值) | 443 (預設值) | http://127.0.0.1:10080
-IoT | 是，在開發人員模式 | 8080 | 透過登錄機碼啟用 | 無
-Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | 無
-桌面| 在開發人員模式內啟用 | 50080\* | 50043\* | 無
+IoT | 是，在開發人員模式 | 8080 | 透過登錄機碼啟用 | N/A
+Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
+桌面| 在開發人員模式內啟用 | 50080\* | 50043\* | N/A
 Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 
 \* 這並非一律如此，因為裝置入口網站，在桌面上宣告暫時範圍中的連接埠 (> 50,000) 以避免與現有的連接埠宣告以在裝置上的衝突。 若要深入了解，請參閱適用於電腦的[連接埠設定](device-portal-desktop.md#registry-based-configuration-for-device-portal)一節。  
 
 如需裝置特定的安裝指示，請參閱︰
+
 - [HoloLens 裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
 - [Iot 裝置入口網站](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [行動裝置的裝置入口網站](device-portal-mobile.md)
-- [Xbox 裝置入口網站](device-portal-xbox.md)
+- [Xbox 裝置入口網站](../xbox-apps/device-portal-xbox.md)
 - [適用於桌面裝置入口網站](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
 ## <a name="features"></a>功能
@@ -52,6 +56,7 @@ Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 ### <a name="toolbar-and-navigation"></a>工具列與瀏覽
 
 在頁面頂端的工具列會提供常用功能的存取權。
+
 - **電源**:存取 電源選項。
   - **關閉**:關閉裝置。
   - **重新啟動**:在裝置上的循環電源。
@@ -75,9 +80,9 @@ Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 
 使用 Windows Device Portal 的開發期間，您可以側載應用程式：
 
-1.  當您已建立應用程式套件時，可以從遠端將它安裝到您的裝置。 在 Visual Studio 中建置後，會產生輸出資料夾。
+1. 當您已建立應用程式套件時，可以從遠端將它安裝到您的裝置。 在 Visual Studio 中建置後，會產生輸出資料夾。
 
-  ![App 安裝](images/device-portal/iot-installapp0.png)
+    ![App 安裝](images/device-portal/iot-installapp0.png)
 
 2. 在 Windows Device Portal 中，瀏覽至**Apps manager**頁面。
 
@@ -108,9 +113,10 @@ Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 5. 如果裝置正在執行 Windows 10 S 模式，而且它是第一次在裝置上已安裝指定的憑證，請重新啟動裝置。
 
 #### <a name="uninstall-an-app"></a>解除安裝 App
-1.  請確定您的應用程式不在執行中。 
-2.  如果是，請移至**執行應用程式**並關閉它。 如果您嘗試解除安裝應用程式執行時，它會造成問題，當您嘗試重新安裝應用程式。 
-3.  從下拉式清單中，按一下 選取應用程式**移除**。
+
+1. 請確定您的應用程式不在執行中。
+2. 如果是，請移至**執行應用程式**並關閉它。 如果您嘗試解除安裝應用程式執行時，它會造成問題，當您嘗試重新安裝應用程式。
+3. 從下拉式清單中，按一下 選取應用程式**移除**。
 
 ### <a name="running-processes"></a>執行處理程序
 
@@ -120,7 +126,7 @@ Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 
 ### <a name="file-explorer"></a>檔案總管
 
-此頁面可讓您檢視和管理任何側載應用程式所儲存的檔案。 請參閱[使用應用程式檔案總管](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)部落格文章以深入了解 [檔案總管] 中，以及如何使用它。 
+此頁面可讓您檢視和管理任何側載應用程式所儲存的檔案。 請參閱[使用應用程式檔案總管](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)部落格文章以深入了解 [檔案總管] 中，以及如何使用它。
 
 ![裝置入口網站檔案總管 頁面](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
@@ -129,12 +135,12 @@ Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 [效能] 頁面顯示的系統診斷資訊，例如電源使用量，畫面播放速率的即時圖形，CPU 負載。
 
 下列為可用的衡量標準：
+
 - **CPU**:可用 CPU 總使用率百分比
 - **記憶體**:總計，在使用中，可用性、 認可、 分頁和非分頁
 - **I/O**:讀取和寫入的資料數量
 - **網路**：接收及傳送資料
 - **GPU**:%的總可用的 GPU 引擎使用率
-
 
 ![裝置入口網站 [效能] 頁面](images/device-portal/mob-device-portal-perf.png)
 
@@ -144,7 +150,8 @@ ETW 記錄頁面管理此裝置上的即時事件追蹤的 Windows (ETW) 資訊�
 
 ![裝置入口網站 ETW 記錄頁面](images/device-portal/mob-device-portal-etw.png)
 
-選取 [隱藏提供者] 以只顯示 [事件] 清單。
+選取 [隱藏提供者] 以只顯示 [事件] 清單。 
+
 - **註冊提供者**:選取的事件提供者 」 和 「 追蹤層級。 追蹤層級可以是下列值之一：
   1. 異常結束或終止
   2. 嚴重錯誤
@@ -154,24 +161,24 @@ ETW 記錄頁面管理此裝置上的即時事件追蹤的 Windows (ETW) 資訊�
 
   按一下或點選 [啟用] 以開始追蹤。 提供者已新增到 [啟用的提供者] 下拉式清單中。
 - **自訂提供者**:選取自訂的 ETW 提供者 」 和 「 追蹤層級。 依 GUID 識別提供者。 不包含括號的 guid。
-- **啟用的提供者**:這會列出啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用] 以停止追蹤。 按一下或點選 [全部停止] 以暫停所有追蹤。
-- **提供者記錄**:這會顯示目前的工作階段期間啟用啟用的 ETW 提供者。 按一下或點選 [啟用] 以啟用已停用的提供者。 按一下或點選 [清除] 以清除歷程記錄。
+- **啟用的提供者**:這會列出啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用] 以停止追蹤。  按一下或點選 [全部停止] 以暫停所有追蹤。 
+- **提供者記錄**:這會顯示目前的工作階段期間啟用啟用的 ETW 提供者。 按一下或點選 [啟用] 以啟用已停用的提供者。  按一下或點選 [清除] 以清除歷程記錄。 
 - **篩選條件 / 事件**:**事件**區段會列出所選的提供者，以資料表格式的 ETW 事件。 資料表會即時更新。 使用**篩選器**功能表來設定自訂篩選器會顯示事件。 按一下 [**清除**] 按鈕，從資料表中刪除所有 ETW 事件。 這不會停用任何提供者。 您可以按一下**儲存至檔案**，將目前所收集的 ETW 事件匯出至本機 CSV 檔案。
 
-如需使用 ETW 記錄的詳細資訊，請參閱 <<c0> [ 使用裝置的入口網站，檢視偵錯記錄檔](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)部落格文章。 
+如需使用 ETW 記錄的詳細資訊，請參閱 <<c0> [ 使用裝置的入口網站，檢視偵錯記錄檔](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)部落格文章。
 
 ### <a name="performance-tracing"></a>效能追蹤
 
-效能追蹤 頁面可讓您檢視[Windows 效能記錄程式 (WPR)](https://msdn.microsoft.com/library/hh448205.aspx)追蹤從主機裝置。
+效能追蹤 頁面可讓您檢視[Windows 效能記錄程式 (WPR)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10))追蹤從主機裝置。
 
 ![裝置入口網站效能追蹤頁面](images/device-portal/mob-device-portal-perf-tracing.png)
 
 - **可用的設定檔**:從下拉式清單中，然後按一下或點選 選取 WPR 設定檔**啟動**若要開始追蹤。
-- **自訂設定檔**:按一下或點選**瀏覽**選擇 WPR 設定檔從您的電腦。 按一下或點選 [上傳並開始] 以開始追蹤。
+- **自訂設定檔**:按一下或點選**瀏覽**選擇 WPR 設定檔從您的電腦。 按一下或點選 [上傳並開始] 以開始追蹤。 
 
-若要停止追蹤，請按一下 [停止]。 停留在此頁面，直到追蹤檔案 (。ETL) 已完成下載。
+若要停止追蹤，請按一下 [停止]。  停留在此頁面，直到追蹤檔案 (。ETL) 已完成下載。
 
-擷取。ETL 檔案可以開啟進行分析[Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/desktop/hh448170.aspx)。
+擷取。ETL 檔案可以開啟進行分析[Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))。
 
 ### <a name="device-manager"></a>裝置管理員
 
@@ -182,6 +189,7 @@ ETW 記錄頁面管理此裝置上的即時事件追蹤的 Windows (ETW) 資訊�
 ### <a name="networking"></a>網路功能
 
 網路功能 頁面管理的裝置上的網路連線。 除非您連線到透過 USB 裝置入口網站中，變更這些設定將可能中斷裝置入口網站。
+
 - **可用的網路**:顯示提供給裝置的 WiFi 網路。 按一下或點選網路可讓您與它連線，而且您必須視需要提供密碼。 裝置入口網站尚未支援企業驗證。 您也可以使用**設定檔**下拉式清單，以嘗試連線到任何已知裝置的 WiFi 設定檔。
 - **IP 組態**:顯示處理每個主機裝置的網路連接埠的相關資訊。
 
@@ -193,25 +201,25 @@ ETW 記錄頁面管理此裝置上的即時事件追蹤的 Windows (ETW) 資訊�
 
 Device Portal 會使用 DNS-SD 在區域網路上公告其目前狀態。 所有的 Device Portal 執行個體都會在 "WDP._wdp._tcp.local" 底下公告，不論其裝置類型為何。 服務執行個體的 TXT 記錄會提供下列項目：
 
-索引鍵 | 類型 | 描述 
+Key | 類型 | 描述
 ----|------|-------------
-S | 整數 | Device Portal 的安全連接埠。 如果為 0 (零)，Device Portal 不會接聽 HTTPS 連線。 
+S | ssNoversion | Device Portal 的安全連接埠。 如果為 0 (零)，Device Portal 不會接聽 HTTPS 連線。
 D | 字串 | 裝置類型。 格式將為 "Windows.*"，例如 Windows.Xbox 或 Windows.Desktop
-A | 字串 | 裝置架構。 這將是 ARM、x86 或 AMD64。  
+A  | 字串 | 裝置架構。 這將是 ARM、x86 或 AMD64。  
 T | null 字元字串分隔清單 | 裝置的使用者套用標記。 請參閱＜標記 REST API＞以了解如何使用。 清單是以兩個 NULL 結束。  
 
-建議連接 HTTPS 連接埠，因為並非所有的裝置都會接聽由 DNS-SD 記錄公告的 HTTP 埠。 
+建議連接 HTTPS 連接埠，因為並非所有的裝置都會接聽由 DNS-SD 記錄公告的 HTTP 埠。
 
 ### <a name="csrf-protection-and-scripting"></a>CSRF 保護和指令碼處理
 
 為了防止 [CSRF 攻擊](https://wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 要求都需要唯一權杖。 這個 X-CSRF-Token 要求標頭的權杖是衍生自工作階段 Cookie，CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 會複製到各個要求的 X-CSRF-Token 標頭中。
 
 > [!IMPORTANT]
-> 這項保護可防止從獨立用戶端 （例如命令列公用程式） 的 REST api 的使用方式。 這可以 3 種方式解決： 
-> - 使用 「 自動-」 的使用者名稱。 使用者名稱前面加上 "auto-" 的用戶端將略過 CSRF 保護。 請務必注意，不可以透過瀏覽器使用此使用者名稱來登入 Device Portal，因為它會將服務開放給 CSRF 攻擊。 範例：如果裝置入口網站的使用者名稱為"admin"，```curl -u auto-admin:password <args>```應該用來略過 CSRF 防護。 
-> - 在用戶端中實作 cookie-to-header 配置。 這需要 GET 要求建立工作階段 Cookie，然後在所有後續要求同時包含標頭與 Cookie。 
-> - 停用驗證，並使用 HTTP。 CSRF 保護僅適用於 HTTPS 端點，因此 HTTP 端點上的連線不需要執行上述各項。 
+> 這項保護可防止從獨立用戶端 （例如命令列公用程式） 的 REST api 的使用方式。 這可以 3 種方式解決：
+> - 使用 「 自動-」 的使用者名稱。 使用者名稱前面加上 "auto-" 的用戶端將略過 CSRF 保護。 請務必注意，不可以透過瀏覽器使用此使用者名稱來登入 Device Portal，因為它會將服務開放給 CSRF 攻擊。 範例：如果裝置入口網站的使用者名稱為"admin"，```curl -u auto-admin:password <args>```應該用來略過 CSRF 防護。
+> - 在用戶端中實作 cookie-to-header 配置。 這需要 GET 要求建立工作階段 Cookie，然後在所有後續要求同時包含標頭與 Cookie。
+> - 停用驗證，並使用 HTTP。 CSRF 保護僅適用於 HTTPS 端點，因此 HTTP 端點上的連線不需要執行上述各項。
 
 #### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>跨網站 WebSocket 攔截 (CSWSH) 保護
 
-若要防止 [CSWSH 攻擊](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)，開啟 WebSocket 連接到裝置入口網站的所有用戶端，必須也提供符合 Host 標頭的 Origin 標頭。 這可向裝置入口網站證明要求是來自裝置入口網站 UI 或有效的用戶端應用程式。 沒有 Origin 標頭您的要求將會被拒絕。 
+若要防止 [CSWSH 攻擊](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)，開啟 WebSocket 連接到裝置入口網站的所有用戶端，必須也提供符合 Host 標頭的 Origin 標頭。 這可向裝置入口網站證明要求是來自裝置入口網站 UI 或有效的用戶端應用程式。 沒有 Origin 標頭您的要求將會被拒絕。

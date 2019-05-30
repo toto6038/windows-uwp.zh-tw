@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 觸控, 控制項, directx, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: e8892219b485d320bb77f90ac0d172e8e2403392
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1f683f2d357057e33f3daa613e1b027a83776af
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618733"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367761"
 ---
 # <a name="touch-controls-for-games"></a>適用於遊戲的觸控控制項
 
@@ -119,7 +119,7 @@ public:
 
 最後，我們使用這些方法和屬性來初始化、存取以及更新相機控制器狀態資訊。
 
--   **Initialize** 是一個事件處理常式，app 會呼叫它來初始化控制項，並將它們附加到描述顯示視窗的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
+-   **Initialize** 是一個事件處理常式，app 會呼叫它來初始化控制項，並將它們附加到描述顯示視窗的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 物件。
 -   **SetPosition** 是 app 呼叫來設定場景區域中控制項的 x、y 以及 z 座標的方法。 請注意，這個教學課程中 z 座標會一直保持為 0。
 -   **取得\_位置**是我們的應用程式存取以取得觀景窗在場景空間中的目前位置的屬性。 您使用這個屬性做為告知 app 相機目前位置的方法。
 -   **取得\_FixedLookPoint**是我們的應用程式存取以取得目前的點到其對向控制器相機的屬性。 在這個範例中，它是鎖定與 x-y 平面垂直。
@@ -134,15 +134,15 @@ public:
 
 Windows 執行階段事件調派程式提供 3 個我們要應用程式處理的事件：
 
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
+-   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
 
-這些事件都在 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 類型上實作。 我們假設您有一個要使用的 **CoreWindow** 物件。 如需詳細資訊，請參閱[如何設定您的 UWP C++ app 來顯示 DirectX 檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
+這些事件都在 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 類型上實作。 我們假設您有一個要使用的 **CoreWindow** 物件。 如需詳細資訊，請參閱[如何設定您的 UWP C++ app 來顯示 DirectX 檢視](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10))。
 
 由於我們的 app 會在執行時觸發這些事件，因此處理常式會更新我們在私用欄位中定義的相機控制器狀態資訊。
 
-首先，我們填入觸控指標事件處理常式。 在第一個事件處理常式 (**OnPointerPressed**) 中，當使用者觸碰螢幕或按一下滑鼠時，我們會取得指標的 x-y 座標 (從管理顯示的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 取得)。
+首先，我們填入觸控指標事件處理常式。 在第一個事件處理常式 (**OnPointerPressed**) 中，當使用者觸碰螢幕或按一下滑鼠時，我們會取得指標的 x-y 座標 (從管理顯示的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 取得)。
 
 **OnPointerPressed**
 
@@ -190,7 +190,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-最後，我們需要在玩家停止觸控螢幕時停用相機平移動作。 我們會使用**OnPointerReleased**，其中時，會呼叫[ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279)引發時，若要設定**m\_panInUse**為 FALSE，關閉相機取景位置調整移動，並將指標識別碼設為 0。
+最後，我們需要在玩家停止觸控螢幕時停用相機平移動作。 我們會使用**OnPointerReleased**，其中時，會呼叫[ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)引發時，若要設定**m\_panInUse**為 FALSE，關閉相機取景位置調整移動，並將指標識別碼設為 0。
 
 **OnPointerReleased**
 
@@ -239,7 +239,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** 會將 app 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 執行個體參考當作一個參數，並將我們已開發的事件處理常式登錄到該 **CoreWindow** 上的適當事件。
+**Initialize** 會將 app 的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 執行個體參考當作一個參數，並將我們已開發的事件處理常式登錄到該 **CoreWindow** 上的適當事件。
 
 ## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>取得和設定相機控制器的位置
 
@@ -339,7 +339,7 @@ void CameraPanController::Update( CoreWindow ^window )
         );  
 ```
 
-恭喜！ 您已經在遊戲中實作一組簡單的相機移動瀏覽觸控控制項。
+恭喜您！ 您已經在遊戲中實作一組簡單的相機移動瀏覽觸控控制項。
 
 
  

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
-ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ff47115c228e3cf6530e12aa4686c88660f16fcd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658013"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371553"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>將工作項目提交至執行緒集區
 
@@ -19,19 +19,19 @@ ms.locfileid: "57658013"
 
 <b>重要的 Api</b>
 
--   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
--   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
+-   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
+-   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
 
 了解如何透過將工作項目提交至執行緒集區，以使用個別的執行緒來執行工作。 工作若還要好一段時間才能完成，可使用這種方式讓 UI 保持回應，還可用來以並行方式完成多個工作。
 
 ## <a name="create-and-submit-the-work-item"></a>建立及提交工作項目
 
-透過呼叫 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 建立工作項目。 提供委派進行工作 (您可以使用 Lambda 或委派函式)。 請注意，**RunAsync** 會傳回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) 物件；請將這個物件儲存起來以在下個步驟中使用。
+透過呼叫 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 建立工作項目。 提供委派進行工作 (您可以使用 Lambda 或委派函式)。 請注意，**RunAsync** 會傳回 [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction) 物件；請將這個物件儲存起來以在下個步驟中使用。
 
-提供三個版本的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)，讓您可以選擇性地指定工作項目的優先順序，並控制是否與其他工作項目同時執行。
+提供三個版本的 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)，讓您可以選擇性地指定工作項目的優先順序，並控制是否與其他工作項目同時執行。
 
 >[!NOTE]
->使用[ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317)存取 UI 執行緒，並顯示工作項目中的進度。
+>使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows)存取 UI 執行緒，並顯示工作項目中的進度。
 
 下列範例會建立一個工作項目，並且提供 Lambda 來執行工作：
 
@@ -269,13 +269,13 @@ auto asyncAction = ThreadPool::RunAsync(workItem);
 m_workItem = asyncAction;
 ```
 
-呼叫 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 之後，工作項目會排入執行緒集區，然後在有執行緒可用時執行。 執行緒集區工作項目會以非同步方式執行，執行順序不拘，以確保工作項目可以獨立運作。
+呼叫 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 之後，工作項目會排入執行緒集區，然後在有執行緒可用時執行。 執行緒集區工作項目會以非同步方式執行，執行順序不拘，以確保工作項目可以獨立運作。
 
-請注意，工作項目會檢查 [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) 屬性，並在取消工作項目時結束。
+請注意，工作項目會檢查 [**IAsyncInfo.Status**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncinfo.status) 屬性，並在取消工作項目時結束。
 
 ## <a name="handle-work-item-completion"></a>處理工作項目的完成
 
-透過設定工作項目的 [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) 屬性，提供完成處理常式。 提供委派 (您可以使用 Lambda 或委派函式) 處理工作項目的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 存取 UI 執行緒及顯示結果。
+透過設定工作項目的 [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) 屬性，提供完成處理常式。 提供委派 (您可以使用 Lambda 或委派函式) 處理工作項目的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 存取 UI 執行緒及顯示結果。
 
 下列範例以在步驟 1 提交之工作項目的結果更新 UI：
 

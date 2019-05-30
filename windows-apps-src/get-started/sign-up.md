@@ -6,12 +6,12 @@ ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, uwp, 註冊, 開發人員帳戶
 ms.localizationpriority: medium
-ms.openlocfilehash: 75dc0bfdc1ae70ebb59743a54cc2b4ae0522f683
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1eac2ad42b277c8cea5d571e08018d62ba338011
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596043"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370644"
 ---
 # <a name="create-a-developer-account"></a>建立開發人員帳戶
 
@@ -25,5 +25,5 @@ ms.locfileid: "57596043"
 
 ## <a name="have-a-name-for-your-app"></a>替應用程式取個好名字了嗎？
 
-當您開啟您的開發人員帳戶時，您就能[透過保留名稱建立您的應用程式](https://msdn.microsoft.com/library/windows/apps/JJ657967)。
+當您開啟您的開發人員帳戶時，您就能[透過保留名稱建立您的應用程式](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 

@@ -6,12 +6,12 @@ ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp, 背景工作, 應用程式服務, 連線的裝置, 遠端系統
 ms.localizationpriority: medium
-ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 79f3f1d28294527d6987540a159baa31d663db4c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582397"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371727"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>啟動、繼續和背景工作
 
@@ -95,7 +95,7 @@ ms.locfileid: "57582397"
 | 主題 | 描述 |
 |-------|-------------|
 | [背景工作的指導方針](guidelines-for-background-tasks.md)                                       | 確保您的應用程式符合執行背景工作的需求。 |
-| [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 可讓您的通用 Windows 應用程式在背景存取感應器和周邊裝置，即使您的前景應用程式已暫停也一樣。 |
+| [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 可讓您的通用 Windows 應用程式在背景存取感應器和周邊裝置，即使您的前景應用程式已暫停也一樣。 |
 | [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)       | 建立及註冊與前景應用程式在相同處理序中執行的背景工作。 |
 | [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)           | 建立及註冊在與應用程式不同處理序中執行的背景工作，以便在應用程式不在前景時也能執行。 |
 | [將跨處理序背景工作移植到同處理序背景工作](convert-out-of-process-background-task.md) | 了解如何將跨處理序背景工作移植到在與前景應用程式相同的處理序中執行的同處理序背景工作。|
@@ -106,14 +106,14 @@ ms.locfileid: "57582397"
 | [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)       | 了解應用程式如何辨識背景工作的進度與完成度。 |
 | [最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) |了解如何減少背景中使用的能源，以及與背景活動的使用者設定互動。 |
 | [註冊背景工作](register-a-background-task.md)                                                 | 了解如何建立可重複用來安全登錄大多數背景工作的函式。 |
-| [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)         | 了解如何建立回應 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的背景工作。 |
+| [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)         | 了解如何建立回應 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 事件的背景工作。 |
 | [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)                                    | 了解如何排程一次性的背景工作，或執行定期的背景工作。 |
 | [在背景無限期執行](run-in-the-background-indefinetly.md)                                    | 使用在背景無限期執行背景工作或延伸執行工作階段的功能。 |
 | [從您的應用程式觸發背景工作](trigger-background-task-from-app.md) | 了解如何使用 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) 從您的應用程式啟動背景工作。|
 | [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)             | 了解如何設定條件以控制背景工作的執行時間。 |
-| [在背景傳輸資料](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | 使用背景傳輸 API 在背景中複製檔案。 |
+| [在背景傳輸資料](https://docs.microsoft.com/windows/uwp/networking/background-transfers)                 | 使用背景傳輸 API 在背景中複製檔案。 |
 | [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)                   | 使用背景工作來更新含有最新內容的應用程式動態磚。 |
-| [使用維護觸發程序](use-a-maintenance-trigger.md)                                                   | 了解如何在裝置使用 AC 電源時，使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 類別於背景中執行輕量型程式碼。 |
+| [使用維護觸發程序](use-a-maintenance-trigger.md)                                                   | 了解如何在裝置使用 AC 電源時，使用 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 類別於背景中執行輕量型程式碼。 |
 
 ## <a name="remote-systems"></a>遠端系統
 

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e07ac565fe2e223b2fb33573ad083edfdfbc888a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fd7071092a66f46a81095a5cb6aff8b623a774a5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610203"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366618"
 ---
 # <a name="edge-based-ui-animations"></a>以邊緣為基礎的 UI 動畫
 
@@ -23,7 +23,7 @@ ms.locfileid: "57610203"
 
 以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。 可透過使用者或 app 來起始顯示和隱藏動作。 這個 UI 可以與 app 重疊，或者成為主 app 表面的一部分。 如果 UI 是 app 表面的一部分，則可能需要重新調整 app 其餘部分的大小以容納它。
 
-> **重要的 Api**:[**EdgeUIThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **重要的 Api**:[**EdgeUIThemeTransition 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -45,13 +45,13 @@ ms.locfileid: "57610203"
 
 
 **適用於開發人員**
-* [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [以動畫顯示邊緣為基礎的 UI](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**EdgeUIThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh702324)
-* [**PaneThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [建立淡出動畫](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [以動畫顯示重新置放](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [以動畫顯示邊緣為基礎的 UI](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
+* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**EdgeUIThemeTransition 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+* [**PaneThemeTransition 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
+* [建立淡出動畫](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
+* [以動畫顯示重新置放](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
 
  
 

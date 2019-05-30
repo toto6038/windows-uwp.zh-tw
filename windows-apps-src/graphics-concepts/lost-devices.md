@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f0b42a10c2cdd61aef84e08d6bd4f6408a978c3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8a280d07ab7d715adaa7da941be641cd54e24443
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617313"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371009"
 ---
 # <a name="lost-devices"></a>遺失裝置
 
@@ -21,7 +21,7 @@ Direct3D 裝置可能在操作狀態或遺失狀態。 *操作*狀態是一般�
 
 經過設計，未指定可能會導致裝置遺失的整套案例。 一些常見的範例包括焦點，例如當使用者按下 ALT + TAB 或當初始化系統對話方塊時。 裝置也可能因電源管理事件而遺失，或在另一個應用程式繼續全螢幕作業時遺失。 此外，重設裝置的失敗致使裝置進入遺失狀態。
 
-所有衍生自[**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)的方法，保證在裝置遺失之後運作。 遺失裝置之後，每項功能通常具有以下三個選項︰
+所有衍生自[**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)的方法，保證在裝置遺失之後運作。 遺失裝置之後，每項功能通常具有以下三個選項︰
 
 -   因「裝置遺失」錯誤而失敗 - 這表示應用程式需要辨識該裝置已經遺失，以便應用程式識別未如預期的運作。
 -   以無訊息模式失敗，並傳回 S\_[確定] 或任何其他傳回碼-如果函式以無訊息模式失敗，應用程式通常無法分辨結果 「 成功 」 和 「 無訊息失敗 」。

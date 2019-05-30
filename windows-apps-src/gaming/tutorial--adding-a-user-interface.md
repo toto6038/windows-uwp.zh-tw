@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 使用者介面, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 09005eb12997126a9cad68c388beb0473b19fda3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ef966901534302c505ddad37bd277d9141b512a1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609053"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367867"
 ---
 # <a name="add-a-user-interface"></a>新增使用者介面
 
@@ -31,7 +31,7 @@ ms.locfileid: "57609053"
 ## <a name="the-user-interface-overlay"></a>使用者介面重疊
 
 
-雖然有許多方式來顯示文字和使用者介面項目中的 DirectX 遊戲，我們把重點放在使用[Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx)。 我們也會使用[DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)文字項目。
+雖然有許多方式來顯示文字和使用者介面項目中的 DirectX 遊戲，我們把重點放在使用[Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal)。 我們也會使用[DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal)文字項目。
 
 
 Direct2D 是一組的 2D 繪圖 Api 用來繪製像素為基礎的基本型別和效果。 當您開始使用 Direct2D，最好是為了簡單起見。 複雜的配置和介面行為會花費相當多的時間並需要長時間的規劃。 如果您的遊戲需要複雜的使用者介面，例如那些常見於模擬及策略遊戲，請考慮改為使用 XAML。
@@ -53,7 +53,7 @@ Direct2D 不被專為使用者介面或例如 HTML 和 XAML 的版面配置。 �
 ![遊戲重疊的螢幕擷取畫面](images/simple-dx-game-ui-overlay.png)
 
 覆疊是由下列的基本項目所組成。
-- [**DirectWrite** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038)通知的播放程式右上角的文字 
+- [**DirectWrite** ](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal)通知的播放程式右上角的文字 
     - 成功的點擊數
     - 數字，播放程式所做的擷取畫面
     - 層級中的剩餘時間
@@ -64,12 +64,12 @@ Direct2D 不被專為使用者介面或例如 HTML 和 XAML 的版面配置。 �
 
 繪製覆疊的遊戲中抬頭顯示器狀態[ **GameHud::Render** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358)方法[ **GameHud** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h)類別。 在此方法中，代表我們的 UI 在 Direct2D 重疊會更新以反映中叫用，時間其餘，和層級數目的數字的變更。
 
-如果已初始化遊戲，我們將新增`TotalHits()`， `TotalShots()`，並`TimeRemaining()`要[ **swprintf_s** ](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l)緩衝區，以及指定列印的格式。 我們可以再繪製它使用[ **DrawText** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd742848)方法。 我們這麼做為目前的層級指標中，繪製空的數字，以顯示等 ➀，未完成的層級和填滿的數字等 ➊ 以顯示 已完成在特定層級。
+如果已初始化遊戲，我們將新增`TotalHits()`， `TotalShots()`，並`TimeRemaining()`要[ **swprintf_s** ](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l)緩衝區，以及指定列印的格式。 我們可以再繪製它使用[ **DrawText** ](https://docs.microsoft.com/windows/desktop/Direct2D/id2d1rendertarget-drawtext)方法。 我們這麼做為目前的層級指標中，繪製空的數字，以顯示等 ➀，未完成的層級和填滿的數字等 ➊ 以顯示 已完成在特定層級。
 
 
 下列程式碼將逐步引導**GameHud::Render**方法的程序 
-- 建立點陣圖，使用[* * ID2D1RenderTarget::DrawBitmap * *](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371880)
-- 去除 UI 區域，到使用矩形[ **D2D1::RectF**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368184)
+- 建立點陣圖，使用[* * ID2D1RenderTarget::DrawBitmap * *](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-drawbitmap(id2d1bitmap_constd2d1_rect_f__float_d2d1_bitmap_interpolation_mode_constd2d1_rect_f_))
+- 去除 UI 區域，到使用矩形[ **D2D1::RectF**](https://docs.microsoft.com/windows/desktop/api/dcommon/ns-dcommon-d2d_rect_f)
 - 使用**DrawText**使文字項目
 
 ```cpp
@@ -171,7 +171,7 @@ void GameHud::Render(_In_ Simple3DGame^ game)
 }
 ```
 
-重大的方法，此外，這段下[ **GameHud::Render** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L320-L358)方法繪製我們移動並引發具有矩形[ **ID2D1RenderTarget::DrawRectangle**](https://msdn.microsoft.com/library/windows/desktop/dd371902)，並使用兩個呼叫的十字形[ **ID2D1RenderTarget::DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895)。
+重大的方法，此外，這段下[ **GameHud::Render** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L320-L358)方法繪製我們移動並引發具有矩形[ **ID2D1RenderTarget::DrawRectangle**](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-drawrectangle(constd2d1_rect_f__id2d1brush_float_id2d1strokestyle))，並使用兩個呼叫的十字形[ **ID2D1RenderTarget::DrawLine**](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-drawline)。
 
 ```cpp
         // Check if game is playing
@@ -219,7 +219,7 @@ void GameHud::Render(_In_ Simple3DGame^ game)
 auto windowBounds = m_deviceResources->GetLogicalSize();
 ```
 
- 取得在遊戲視窗的大小是不可或缺的 UI 程式設計。 稱為 Dip （裝置獨立像素為單位），其中定義 DIP 為 1/96 英吋為單位的度量單位提供的視窗大小。 Direct2D 會調整繪圖的單位，以實際的像素繪製時，這種方式使用 Windows 為 dots per inch (DPI) 設定。 同樣地，當您繪製文字使用[ **DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038)，您指定 Dip，而不是點字型的大小。 DIP 以浮點數表示。
+ 取得在遊戲視窗的大小是不可或缺的 UI 程式設計。 稱為 Dip （裝置獨立像素為單位），其中定義 DIP 為 1/96 英吋為單位的度量單位提供的視窗大小。 Direct2D 會調整繪圖的單位，以實際的像素繪製時，這種方式使用 Windows 為 dots per inch (DPI) 設定。 同樣地，當您繪製文字使用[ **DirectWrite**](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal)，您指定 Dip，而不是點字型的大小。 DIP 以浮點數表示。
 
  
 
@@ -251,7 +251,7 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 - 點選以利再次播放...」
 - 「 層級載入，請稍候...」
 - 「 點選以繼續...」
-- 無
+- None
 
 > [!NOTE]
 > 這兩種方法將會討論中進一步[代表遊戲狀態](#representing-game-state)一節。
@@ -271,11 +271,11 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
  
 
 #### <a name="gameinfooverlaygameinfooverlay"></a>GameInfoOverlay::GameInfoOverlay
-[ **GameInfoOverlay::GameInfoOverlay** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78)建構函式初始化覆疊，維護上顯示資訊給播放器，我們將使用的點陣圖介面。 建構函式會取得從原廠[ **ID2D1Device** ](https://msdn.microsoft.com/library/windows/desktop/hh404478)物件傳遞給它，用來建立[ **ID2D1DeviceContext** ](https://msdn.microsoft.com/library/windows/desktop/hh404479)若要可以繪製覆疊物件本身。 [IDWriteFactory::CreateTextFormat](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368203) 
+[ **GameInfoOverlay::GameInfoOverlay** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78)建構函式初始化覆疊，維護上顯示資訊給播放器，我們將使用的點陣圖介面。 建構函式會取得從原廠[ **ID2D1Device** ](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1device)物件傳遞給它，用來建立[ **ID2D1DeviceContext** ](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1devicecontext)若要可以繪製覆疊物件本身。 [IDWriteFactory::CreateTextFormat](https://docs.microsoft.com/windows/desktop/api/dwrite/nf-dwrite-idwritefactory-createtextformat) 
 
 
 #### <a name="gameinfooverlaycreatedevicedependentresources"></a>GameInfoOverlay::CreateDeviceDependentResources
-[**GameInfoOverlay::CreateDeviceDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104)是將用來繪製文字的筆刷建立我們的方法。 若要這樣做，我們會取得[ **ID2D1DeviceContext2** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dn890789)物件可讓您建立和繪製幾何，再加上功能，例如筆跡和漸層網格轉譯。 接著我們建立一系列使用彩色的筆刷[ **ID2D1SolidColorBrush** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd372207)繪製下列 UI 項目。
+[**GameInfoOverlay::CreateDeviceDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104)是將用來繪製文字的筆刷建立我們的方法。 若要這樣做，我們會取得[ **ID2D1DeviceContext2** ](https://docs.microsoft.com/windows/desktop/api/d2d1_3/nn-d2d1_3-id2d1devicecontext2)物件可讓您建立和繪製幾何，再加上功能，例如筆跡和漸層網格轉譯。 接著我們建立一系列使用彩色的筆刷[ **ID2D1SolidColorBrush** ](https://docs.microsoft.com/windows/desktop/api/d2d1/nn-d2d1-id2d1solidcolorbrush)繪製下列 UI 項目。
 - 黑色矩形背景的筆刷
 - 狀態文字的白色筆刷
 - 橘色動作文字的筆刷
@@ -309,9 +309,9 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
     ```
 
 - 點陣圖建立具名`m_levelBitmap`，納入帳戶使用的目前 DPI **CreateBitmap**。
-- `m_levelBitmap` 已設定為使用您建立我們 2D 轉譯目標[ **ID2D1DeviceContext::SetTarget**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh404533)。
-- 點陣圖已清除以進行黑使用每個像素[ **ID2D1RenderTarget::Clear**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371772)。
-- [**ID2D1RenderTarget::BeginDraw** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371768)呼叫以初始化繪圖。 
+- `m_levelBitmap` 已設定為使用您建立我們 2D 轉譯目標[ **ID2D1DeviceContext::SetTarget**](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-settarget)。
+- 點陣圖已清除以進行黑使用每個像素[ **ID2D1RenderTarget::Clear**](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-clear)。
+- [**ID2D1RenderTarget::BeginDraw** ](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw)呼叫以初始化繪圖。 
 - **DrawText**繪製文字儲存在稱為`m_titleString`， `m_bodyString`，和`m_actionString`中使用對應的 approperiate 矩形**ID2D1SolidColorBrush**。
 - [**ID2D1RenderTarget::EndDraw** ](ID2D1RenderTarget::EndDraw)呼叫來停止所有繪圖作業上`m_levelBitmap`。
 - 使用建立另一個點陣圖**CreateBitmap**名為`m_tooSmallBitmap`來做為後援，僅顯示顯示組態是否太小遊戲。
@@ -331,12 +331,12 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 
 遊戲狀態 | 狀態設定方法 | 狀態欄位
 :----- | :------- | :---------
-正在載入 | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**標題**</br>正在載入資源 </br>**內文**</br> 以累加方式列印 」。 「 暗示載入活動。
-初始的開始/高分數的統計資料 | [GameInfoOverlay::SetGameStats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**標題**</br>高的分數</br> **內文**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #
-層級開始 | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**標題**</br>層級的 #</br>**內文**</br>層級目標的描述。
-遊戲已暫停 | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**標題**</br>遊戲已暫停</br>**內文**</br>無
-遊戲結束 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**標題**</br>遊戲結束</br> **內文**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #</br>層級完成 #</br>高評分 #
-獲勝的遊戲 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**標題**</br>您贏了 ！</br> **內文**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #</br>層級完成 #</br>高評分 #
+正在載入 | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**標題**</br>正在載入資源 </br>**Body**</br> 以累加方式列印 」。 「 暗示載入活動。
+初始的開始/高分數的統計資料 | [GameInfoOverlay::SetGameStats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**標題**</br>高的分數</br> **Body**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #
+層級開始 | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**標題**</br>層級的 #</br>**Body**</br>層級目標的描述。
+遊戲已暫停 | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**標題**</br>遊戲已暫停</br>**Body**</br>None
+遊戲結束 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**標題**</br>遊戲結束</br> **Body**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #</br>層級完成 #</br>高評分 #
+獲勝的遊戲 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**標題**</br>您贏了 ！</br> **Body**</br> 層級完成 # </br>總計點 #</br>總計的各個畫面 #</br>層級完成 #</br>高評分 #
 
 
 

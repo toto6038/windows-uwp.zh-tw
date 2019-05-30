@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: e0ae12bbb2bad1fbcd663f5be8f26656d640afc8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 11ebd180ebc3bc08b418f3b22ebed190bf73c18d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599203"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366200"
 ---
 # <a name="debug-a-background-task"></a>偵錯背景工作
 
 
 **重要的 Api**
--   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
+-   [Windows.ApplicationModel.Background](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。
 
@@ -36,16 +36,16 @@ ms.locfileid: "57599203"
 
 您可以透過 Microsoft Visual Studio 手動觸發背景工作。 然後就可以逐步檢查程式碼並進行偵錯。
 
-1.  在 C# 中，請在背景類別的 Run 方法中設置中斷點 (若為同處理序背景工作，請在 App.OnBackgroundActivated() 設置中斷點)，和/或使用 [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx) 來撰寫偵錯輸出。
+1.  在 C# 中，請在背景類別的 Run 方法中設置中斷點 (若為同處理序背景工作，請在 App.OnBackgroundActivated() 設置中斷點)，和/或使用 [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics?view=netframework-4.7.2) 來撰寫偵錯輸出。
 
-    在 C++ 中，請在背景類別的 Run 類別中設置中斷點 (若為同處理序背景工作，請在 App.OnBackgroundActivated() 設置中斷點)，和/或使用 [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362) 來撰寫偵錯輸出。
+    在 C++ 中，請在背景類別的 Run 類別中設置中斷點 (若為同處理序背景工作，請在 App.OnBackgroundActivated() 設置中斷點)，和/或使用 [**OutputDebugString**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw) 來撰寫偵錯輸出。
 
 2.  在偵錯工具中執行您的應用程式，然後使用 **\[週期事件\]** 工具列來觸發背景工作。 這個下拉式清單會顯示可由 Visual Studio 啟用的背景工作名稱。
 
     若要能夠運作，背景工作必須已經註冊且必須仍在等候觸發程序。 例如，如果背景工作是以一次性的 TimeTrigger 註冊，且該觸發程序已經引發，則透過 Visual Studio 啟動工作將不會有作用。
 
 > [!Note]
-> 使用下列觸發程序的背景工作不能以這種方式啟動：[**應用程式觸發程序**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx)， [ **MediaProcessing 觸發程序**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx)， [ **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)， [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)，和使用的背景工作[ **Networkstatechange** ](https://msdn.microsoft.com/library/windows/apps/br224838)具有[ **SmsReceived** ](https://msdn.microsoft.com/library/windows/apps/br224839)觸發程序類型。  
+> 使用下列觸發程序的背景工作不能以這種方式啟動：[**應用程式觸發程序**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)， [ **MediaProcessing 觸發程序**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)， [ **ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)， [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)，和使用的背景工作[ **Networkstatechange** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger)具有[ **SmsReceived** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)觸發程序類型。  
 > **ApplicationTrigger** 與 **MediaProcessingTrigger** 可以使用 `trigger.RequestAsync()` 在程式碼中手動發送訊號。
 
 ![偵錯背景工作](images/debugging-activation.png)
@@ -69,9 +69,9 @@ ms.locfileid: "57599203"
 
 2.  使用資訊清單設計工具來檢查已在套件資訊清單中正確宣告背景工作：
 
-    -   在 C# 與 C++ 中，進入點屬性必須符合類別名稱後的背景工作命名空間。 例如：RuntimeComponent1.MyBackgroundTask。
+    -   在 C# 與 C++ 中，進入點屬性必須符合類別名稱後的背景工作命名空間。 例如: RuntimeComponent1.MyBackgroundTask.
     -   也必須指定與工作搭配使用的所有觸發程序類型。
-    -   除非您使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 或 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)，否則「切勿」指定可執行檔。
+    -   除非您使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 或 [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)，否則「切勿」指定可執行檔。
 
 3.  僅 Windows。 查看 Windows 使用的進入點來啟動背景工作、啟用偵錯追蹤，以及使用 Windows 事件記錄檔。
 
@@ -80,7 +80,7 @@ ms.locfileid: "57599203"
     1.  移至 [開始] 畫面並搜尋 eventvwr.exe，開啟事件檢視器。
     2.  移至**Application and Services Logs**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt;**BackgroundTaskInfrastructure**事件檢視器中。
     3.  在 [動作] 窗格中，選取**檢視** - &gt; **顯示分析與偵錯記錄檔**若要啟用診斷記錄。
-    4.  選取 **\[診斷記錄檔\]**，然後按一下 **\[啟用記錄\]**。
+    4.  選取 **\[診斷記錄檔\]** ，然後按一下 **\[啟用記錄\]** 。
     5.  現在嘗試使用應用程式再次註冊並啟動背景工作。
     6.  檢視診斷記錄檔，以取得詳細的錯誤資訊。 當中包含為背景工作註冊的進入點。
 
@@ -101,7 +101,7 @@ ms.locfileid: "57599203"
 -   如果背景工作需要鎖定畫面存取，請確定先將 app 置於鎖定畫面後，再嘗試偵錯背景工作。 如需為具有鎖定畫面功能的 App 指定資訊清單選項的詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
 -   背景工作登錄參數都是在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的應用程式能夠妥善處理背景工作註冊失敗的狀況；反之，如果應用程式需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 
-如需使用 VS 偵錯背景工作的詳細資訊，請參閱[如何觸發暫止、 繼續及背景事件 UWP 應用程式中的](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
+如需使用 VS 偵錯背景工作的詳細資訊，請參閱[如何觸發暫止、 繼續及背景事件 UWP 應用程式中的](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -110,8 +110,8 @@ ms.locfileid: "57599203"
 * [註冊背景工作](register-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [如何觸發暫止、 繼續及背景事件在 UWP 應用程式](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
-* [使用 Visual Studio 程式碼分析的 UWP 應用程式的程式碼品質](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+* [如何觸發暫止、 繼續及背景事件在 UWP 應用程式](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [使用 Visual Studio 程式碼分析的 UWP 應用程式的程式碼品質](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  
 

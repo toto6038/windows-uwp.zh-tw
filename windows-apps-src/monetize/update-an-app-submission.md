@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式提交, 更新
 ms.localizationpriority: medium
-ms.openlocfilehash: b61508edf2ebc2ab155110189fe67df63e2bab30
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 77c033ff09d56448f42d1f8084265ac0aa5d5212
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634613"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371434"
 ---
 # <a name="update-an-app-submission"></a>更新應用程式提交
 
@@ -19,7 +19,7 @@ ms.locfileid: "57634613"
 
 如需這個方法如何在使用 Microsoft Store 提交 API 建立 App 提交的程序中進行的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -47,7 +47,7 @@ ms.locfileid: "57634613"
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字串 | 必要。 您想要更新提交之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | 字串 | 必要。 您想要更新提交之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | submissionId | 字串 | 必要。 要更新之提交的識別碼。 在[建立 App 提交](create-an-app-submission.md)要求的回應資料中有提供此識別碼。 提交在合作夥伴中心所建立，此識別碼也會提供在合作夥伴中心內的 [提交] 頁面的 url。  |
 
 
@@ -57,25 +57,25 @@ ms.locfileid: "57634613"
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| applicationCategory           | 字串  |   指定 App [類別和/或子類別](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table)的字串。 類別與子類別會使用底線 '_' 字元結合為單一字串，例如 **BooksAndReference_EReader**。      |  
+| applicationCategory           | 字串  |   指定 App [類別和/或子類別](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table)的字串。 類別與子類別會使用底線 '_' 字元結合為單一字串，例如 **BooksAndReference_EReader**。      |  
 | 定價           |  物件  | 此物件包含 App 的定價資訊。 如需詳細資訊，請參閱[定價資源](manage-app-submissions.md#pricing-object)一節。       |   
 | 可見度           |  字串  |  應用程式的可見度。 這可以是下列其中一個值： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
 | targetPublishMode           | 字串  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |  
 | listings           |   物件  |  機碼和值組的字典，其中每個機碼都是國家/地區代碼，而每個值都是[清單資源](manage-app-submissions.md#listing-object)物件，其中包含 App 的清單資訊。       |   
-| hardwarePreferences           |  陣列  |   定義 App [硬體喜好設定](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences)的字串陣列。 這可以是下列其中一個值： <ul><li>觸控</li><li>鍵盤</li><li>滑鼠</li><li>相機</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
-| automaticBackupEnabled           |  布林值  |   指出 Windows 是否可以在自動備份至 OneDrive 時包含您應用程式的資料。 如需詳細資訊，請參閱[應用程式宣告](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。   |   
-| canInstallOnRemovableMedia           |  布林值  |   指出客戶是否可以將您的應用程式安裝到抽取式存放裝置。 如需詳細資訊，請參閱[應用程式宣告](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| isGameDvrEnabled           |  布林值 |   指出是否已針對應用程式啟用遊戲 DVR。    |   
+| hardwarePreferences           |  陣列  |   定義 App [硬體喜好設定](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)的字串陣列。 這可以是下列其中一個值： <ul><li>觸控</li><li>鍵盤</li><li>滑鼠</li><li>相機</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
+| automaticBackupEnabled           |  boolean  |   指出 Windows 是否可以在自動備份至 OneDrive 時包含您應用程式的資料。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。   |   
+| canInstallOnRemovableMedia           |  boolean  |   指出客戶是否可以將您的應用程式安裝到抽取式存放裝置。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| isGameDvrEnabled           |  boolean |   指出是否已針對應用程式啟用遊戲 DVR。    |   
 | gamingOptions           |  物件 |   包含一個[遊戲選項資源](manage-app-submissions.md#gaming-options-object)的陣列，其定義此 App 的遊戲相關設定。     |   
-| hasExternalInAppProducts           |     布林值          |   指出您的 App 是否允許使用者在 Microsoft Store 商務系統外部進行購買。 如需詳細資訊，請參閱[應用程式宣告](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| meetAccessibilityGuidelines           |    布林值           |  指出您的應用程式是否已經過測試，符合協助工具指導方針。 如需詳細資訊，請參閱[應用程式宣告](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
-| notesForCertification           |  字串  |   包含您 App 的[認證注意事項](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
+| hasExternalInAppProducts           |     boolean          |   指出您的 App 是否允許使用者在 Microsoft Store 商務系統外部進行購買。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| meetAccessibilityGuidelines           |    boolean           |  指出您的應用程式是否已經過測試，符合協助工具指導方針。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。      |   
+| notesForCertification           |  字串  |   包含您 App 的[認證注意事項](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
 | applicationPackages           |   陣列  | 包含可提供關於提交中每個套件之詳細資料的物件。 如需詳細資訊，請參閱[應用程式套件](manage-app-submissions.md#application-package-object)一節。 在呼叫這個方法以更新 App 提交時，要求主體中只需要這些物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 合作夥伴中心會填入其他值。   |    
 | packageDeliveryOptions    | 物件  | 包含提交的漸進式套件推出和強制更新設定。 如需詳細資訊，請參閱[套件交付選項物件](manage-app-submissions.md#package-delivery-options-object)。  |
 | enterpriseLicensing           |  字串  |  其中一個[企業授權值](manage-app-submissions.md#enterprise-licensing)，可指出 App 適用的企業授權行為。  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布林值   |  指出是否允許 Microsoft [讓 App 可供未來的 Windows 10 裝置系列使用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 布林值   |  指出是否允許您的 App [以未來的 Windows 10 裝置系列為目標](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |   
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  指出是否允許 Microsoft [讓 App 可供未來的 Windows 10 裝置系列使用](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。    |    
+| allowTargetFutureDeviceFamilies           | boolean   |  指出是否允許您的 App [以未來的 Windows 10 裝置系列為目標](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。     |   
 | trailers           |  陣列 |   包含最多 15 個[預告片資源](manage-app-submissions.md#trailer-object)的陣列，代表 App 清單的預告影片。   |   
 
 

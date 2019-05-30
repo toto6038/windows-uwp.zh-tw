@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp、 列印、 3dprinting，3d 列印
 ms.localizationpriority: medium
-ms.openlocfilehash: 99272c4e9ffd461901b4b2f2d2aa93b416a1b100
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 763fbc1c3cb7e969b2e932ded7cf32d7447a6e98
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605613"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369813"
 ---
 # <a name="printing-and-scanning"></a>列印與掃描
 
@@ -27,7 +27,7 @@ ms.locfileid: "57605613"
 
 ## <a name="related-topics"></a>相關主題
 
-* [列印的設計方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [列印的設計方針](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
 * [Build 2015 影片：開發 Windows 10 中列印的應用程式](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)
  

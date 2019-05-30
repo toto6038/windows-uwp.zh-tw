@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 意見反應中樞, 啟動
 ms.localizationpriority: medium
-ms.openlocfilehash: bfce2ed245a3bf4e9b1c8b1a70c8de905d7034a3
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 4190c8af5c8cb7db6b80b1149dff631a8454015b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334796"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371073"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>從您的應用程式啟動意見反應中樞
 
@@ -20,7 +20,7 @@ ms.locfileid: "58334796"
 若要從您的應用程式啟動意見反應中樞，請使用 [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) 所提供的 API。 建議您使用這個 API，在遵循我們設計指導方針的應用程式中，從 UI 元素啟動「意見反應中樞」。
 
 > [!NOTE]
-> 「意見反應中樞」僅適用於執行以傳統型和行動[裝置系列](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)為基礎之 Windows 10 OS 10.0.14271 版或更新版本的裝置。 建議您只在使用者裝置上可以使用「意見反應中樞」的情況下，才在您的應用程式中顯示意見反應控制項。 本主題中的程式碼示範操作方法。
+> 「意見反應中樞」僅適用於執行以傳統型和行動[裝置系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)為基礎之 Windows 10 OS 10.0.14271 版或更新版本的裝置。 建議您只在使用者裝置上可以使用「意見反應中樞」的情況下，才在您的應用程式中顯示意見反應控制項。 本主題中的程式碼示範操作方法。
 
 ## <a name="how-to-launch-feedback-hub-from-your-app"></a>如何從您的應用程式啟動意見反應中樞
 
@@ -28,9 +28,9 @@ ms.locfileid: "58334796"
 
 1. [安裝 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。
 2. 在 Visual Studio 中，開啟您的專案。
-3. 在 \[方案總管\] 中，於專案的 \[參考\] 節點上按一下滑鼠右鍵，然後按一下 \[加入參考\]。
-4. 在 \[參考管理員\] 中，展開 \[通用 Windows\]，然後按一下 \[擴充功能\]。
-5. 在 SDK 清單中，按一下 \[Microsoft Engagement Framework\] 旁邊的核取方塊，然後按一下 \[確定\]。
+3. 在 \[方案總管\] 中，於專案的 \[參考\] 節點上按一下滑鼠右鍵，然後按一下 \[加入參考\]。  
+4. 在 \[參考管理員\]  中，展開 \[通用 Windows\]  ，然後按一下 \[擴充功能\]  。
+5. 在 SDK 清單中，按一下 \[Microsoft Engagement Framework\] 旁邊的核取方塊，然後按一下 \[確定\]。  
 6. 在專案中，新增您想要向使用者顯示以啟動意見反應中樞的控制項 (例如按鈕)。 建議您設定控制項，如下所示︰
   * 將控制項中所顯示內容的字型設定為 **Segoe MDL2 Assets**。
   * 將控制項中的文字設定為十六進位 Unicode 字元碼 E939。 這是 **Segoe MDL2 Assets** 字型的建議意見反應圖示的字元碼。
@@ -44,9 +44,9 @@ ms.locfileid: "58334796"
     <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
     ```
 
-7. 在裝載意見反應控制項之 App 頁面的初始化程式碼中，使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 類別的靜態 [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) 方法來判斷是否可以在使用者裝置上使用「意見反應中樞」。 「意見反應中樞」僅適用於執行以傳統型和行動[裝置系列](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)為基礎之 Windows 10 OS 10.0.14271 版或更新版本的裝置。
+7. 在裝載意見反應控制項之 App 頁面的初始化程式碼中，使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 類別的靜態 [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) 方法來判斷是否可以在使用者裝置上使用「意見反應中樞」。 「意見反應中樞」僅適用於執行以傳統型和行動[裝置系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)為基礎之 Windows 10 OS 10.0.14271 版或更新版本的裝置。
 
-    如果這個屬性傳回 **true**，請將控制項設為可見。 下列程式碼示範適用於 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 的操作方法。
+    如果這個屬性傳回 **true**，請將控制項設為可見。 下列程式碼示範適用於 [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) 的操作方法。
 
     [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
       > [!NOTE]

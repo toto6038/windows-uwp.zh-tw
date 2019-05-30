@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de4b51687e152ef5d25a583f949cdd108f2f029
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 2cb91b37b1d2a6924a80bbe666129343ad778d8e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984214"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370471"
 ---
 # <a name="reveal-focus"></a>顯示焦點
 
@@ -74,7 +74,7 @@ ms.locfileid: "65984214"
 
 但在開始自訂之前，最好先稍微深入了解構成顯示焦點的元件。
 
-有三個部分的預設顯示焦點視覺效果： 主要框線、 次要的框線和發亮顯示。 主要框線的粗細為 **2px**，圍繞在次要框線「外」。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」*。 顯示焦點光暈成正比的主要的框線粗細的線條粗細作業，而且執行*外部*的主要的框線。
+有三個部分的預設顯示焦點視覺效果： 主要框線、 次要的框線和發亮顯示。 主要框線的粗細為 **2px**，圍繞在次要框線「外」  。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」* 。 顯示焦點光暈成正比的主要的框線粗細的線條粗細作業，而且執行*外部*的主要的框線。
 
 除了靜態項目，顯示焦點視覺效果的功能使用動畫的光線，pulsates 時將滑鼠停留，而會在焦點的方向移動，移動焦點時。
 
@@ -176,6 +176,6 @@ ms.locfileid: "65984214"
 - [針對 Xbox 和電視進行設計](/windows/uwp/design/devices/designing-for-tv)
 - [遊戲台和遠端控制的互動](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
 - [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
-- [撰寫效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [撰寫效果](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
 - [在系統中的科學：Fluent 設計和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [在系統中的科學：Fluent Design and 光線](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

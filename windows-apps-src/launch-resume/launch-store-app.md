@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cda37ee9964a3e7e02f4e4ce3829a8b55e823692
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fd0e7137f31a8f1620f7937b52efe1ca84a6b99a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660893"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370778"
 ---
 # <a name="launch-the-microsoft-store-app"></a>啟動 Microsoft Store 應用程式
 
 
 
-本主題描述**ms windows 市集：** URI 配置。 您的應用程式可以使用此 URI 配置，啟動 Microsoft Store 應用程式存放區中的特定頁面使用[ **LaunchUriAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701476)方法。
+本主題描述**ms windows 市集：** URI 配置。 您的應用程式可以使用此 URI 配置，啟動 Microsoft Store 應用程式存放區中的特定頁面使用[ **LaunchUriAsync** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)方法。
 
 此範例顯示如何將 Microsoft Store 開啟到 \[遊戲\] 頁面：
 
@@ -30,7 +30,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 <table>
 <tr><th>描述</th><th></th><th>URI 配置</th></tr>
 <tr><td>啟動市集的首頁。</td><td /><td>ms-windows-store://home</td></tr>
-<tr><td>啟動市集中的頂層類別。<p>注意：並非所有的使用者可以存取所有的縱向市場。</p>
+<tr><td>啟動市集中的頂層類別。<p>注意:並非所有的使用者可以存取所有的縱向市場。</p>
 </td><td /><td>
 <p>ms-windows-store://navigatetopage/?Id=Apps </p>
 <p>ms-windows-store://navigatetopage/?Id=Games</p>
@@ -41,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">啟動產品的產品詳細資料頁面 (PDP)。 <p>存放區識別碼建議用於 Windows 10 上的客戶，並將所有的作業系統版本，但這麼做的先前方式運作 (例如：PFN) 都仍受支援。</p>
-<p>這些值可在<a href="https://partner.microsoft.com/dashboard">合作夥伴中心</a>上<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">應用程式身分識別</a>每個應用程式的應用程式管理 區段中的頁面。</p>
+<p>這些值可在<a href="https://partner.microsoft.com/dashboard">合作夥伴中心</a>上<a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">應用程式身分識別</a>每個應用程式的應用程式管理 區段中的頁面。</p>
 </td>
 <td>
 Store 識別碼 <p>(建議使用)</p>

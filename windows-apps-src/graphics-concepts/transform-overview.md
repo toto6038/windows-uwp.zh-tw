@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a01814729e38668e05201b4b7c8876dc150c488e
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: fe97d689711202511dcfec023b718cd1ba9b0b1d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291766"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370937"
 ---
 # <a name="transform-overview"></a>轉換概觀
 
@@ -60,7 +60,7 @@ ms.locfileid: "58291766"
 
 ![統一縮放矩陣的方程式](images/matrix.png)
 
-在 C++，Direct3D 使用矩陣結構，宣告矩陣為二維陣列。 下列範例顯示如何初始化 [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573) 結構做為統一縮放矩陣（縮放比例 "s"）。
+在 C++，Direct3D 使用矩陣結構，宣告矩陣為二維陣列。 下列範例顯示如何初始化 [**D3DMATRIX**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dmatrix) 結構做為統一縮放矩陣（縮放比例 "s"）。
 
 ```cpp
 D3DMATRIX scale = {

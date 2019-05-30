@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f9f9a69c0e30459929d1e31084ea88b3f7ebbd0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c48b02de34bd37acced8ef65859708f31fd78ca2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612883"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370864"
 ---
 # <a name="tier-2"></a>第 2 層
 
@@ -42,7 +42,7 @@ ms.locfileid: "57612883"
 
 記憶體使用量供 **NULL** 與非 **NULL** 磚共用的紋理篩選，會為 **NULL** 磚上的材質，而將 0 (含遺失格式元件預設值) 提供至整體篩選作業。 如果任何材質 (含非零權數) 落在 **NULL** 磚上，某些舊版的硬體會不符合此需求，並讓完整篩選結果傳回 0 (含遺失格式元件預設值)。 不允許任何其他硬體遺漏將所有 (非零權數) 材質包含在篩選作業中的需求。
 
-存取 **NULL** 材質會造成狀態回應上 [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) (英文) 作業的紋理讀取傳回 False。 無論紋理存取結果如何在著色器內寫入遮罩，以及多少元件為紋理格式 (紋理格式的組合可能會造成不須存取其紋理的假象)，都會發生這項問題。
+存取 **NULL** 材質會造成狀態回應上 [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) (英文) 作業的紋理讀取傳回 False。 無論紋理存取結果如何在著色器內寫入遮罩，以及多少元件為紋理格式 (紋理格式的組合可能會造成不須存取其紋理的假象)，都會發生這項問題。
 
 ## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>對齊條件約束
 

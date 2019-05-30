@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 多重取樣, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c1634af8589a97f5070ff85909fe12ab16bf8d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b547e47b7d896ab818349dcc70ee9dc3c7078847
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610853"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368378"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> 多重取樣在通用 Windows 平台 (UWP) 應用程式
 
 
 
-了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。 多重取樣 (也稱為多重取樣消除鋸齒) 是一種用來減少鋸齒邊緣外觀的圖形技術。 這項技術的運作方式，是透過在最終的轉譯目標中繪製比實際更多的像素，然後將數值平均，以維持特定像素中「部分」邊緣的外觀。 如需多重取樣在 Direct3D 中的實際運作方式的詳細說明，請參閱[多重取樣消除鋸齒點陣化規則](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample)。
+了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。 多重取樣 (也稱為多重取樣消除鋸齒) 是一種用來減少鋸齒邊緣外觀的圖形技術。 這項技術的運作方式，是透過在最終的轉譯目標中繪製比實際更多的像素，然後將數值平均，以維持特定像素中「部分」邊緣的外觀。 如需多重取樣在 Direct3D 中的實際運作方式的詳細說明，請參閱[多重取樣消除鋸齒點陣化規則](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules)。
 
 ## <a name="multisampling-and-the-flip-model-swap-chain"></a>多重取樣與翻轉模型交換鏈結
 
@@ -28,9 +28,9 @@ ms.locfileid: "57610853"
 
 Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保證提供可支援多重取樣的某些緩衝區格式。 圖形裝置支援的格式和取樣計數範圍，通常比基本所需的要多。 多重取樣支援可以在執行階段決定，方法是檢查是否有以特定 DXGI 格式進行多重取樣的功能支援，然後檢查每種支援格式可用的取樣計數。
 
-1.  呼叫 [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) 以找出哪些 DXGI 格式可與多重取樣一起使用。 提供您的遊戲可用的轉譯目標格式。 在轉譯目標和解析目標必須使用相同的格式，因此請查看兩者[ **D3D11\_格式\_支援\_MULTISAMPLE\_RENDERTARGET** ](https://msdn.microsoft.com/library/windows/desktop/ff476134)並**D3D11\_格式\_支援\_MULTISAMPLE\_解決**。
+1.  呼叫 [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) 以找出哪些 DXGI 格式可與多重取樣一起使用。 提供您的遊戲可用的轉譯目標格式。 在轉譯目標和解析目標必須使用相同的格式，因此請查看兩者[ **D3D11\_格式\_支援\_MULTISAMPLE\_RENDERTARGET** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support)並**D3D11\_格式\_支援\_MULTISAMPLE\_解決**。
 
-    **功能層級 9:  **雖然功能層級 9 的裝置[保證紋理的呈現目標格式支援](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget)，多重取樣的解析目標不保證支援。 因此，嘗試使用本主題中描述的多重取樣技術之前，這項檢查是必須的。
+    **功能層級 9:  **雖然功能層級 9 的裝置[保證紋理的呈現目標格式支援](https://docs.microsoft.com/previous-versions//ff471324(v=vs.85))，多重取樣的解析目標不保證支援。 因此，嘗試使用本主題中描述的多重取樣技術之前，這項檢查是必須的。
 
     下列程式碼會檢查所有 dxgi 的多重取樣支援\_格式值：
 
@@ -55,7 +55,7 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     }
     ```
 
-2.  對於每種支援的格式，可呼叫 [**ID3D11Device::CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499) 以查詢取樣計數支援。
+2.  對於每種支援的格式，可呼叫 [**ID3D11Device::CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels) 以查詢取樣計數支援。
 
     下列程式碼會檢查支援的 DXGI 格式的取樣大小支援：
 
@@ -82,7 +82,7 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     }
     ```
 
-    > **附註**  使用[ **ID3D11Device2::CheckMultisampleQualityLevels1** ](https://msdn.microsoft.com/library/windows/desktop/dn280494)而是如果您需要檢查多重取樣支援並排的資源的緩衝區。
+    > **附註**  使用[ **ID3D11Device2::CheckMultisampleQualityLevels1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1)而是如果您需要檢查多重取樣支援並排的資源的緩衝區。
 
      
 
@@ -179,7 +179,7 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-6.  將每個框架轉譯為多重取樣的轉譯目標。 在轉譯完成後，先呼叫 [**ID3D11DeviceContext::ResolveSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476474) 再呈現框架。 這會指示 Direct3D 執行多重取樣作業、計算用於顯示的每個像素值，並將結果放在背景緩衝區。 背景緩衝區便會包含可呈現的最終消除鋸齒影像。
+6.  將每個框架轉譯為多重取樣的轉譯目標。 在轉譯完成後，先呼叫 [**ID3D11DeviceContext::ResolveSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-resolvesubresource) 再呈現框架。 這會指示 Direct3D 執行多重取樣作業、計算用於顯示的每個像素值，並將結果放在背景緩衝區。 背景緩衝區便會包含可呈現的最終消除鋸齒影像。
 
     下列程式碼會在呈現框架之前先解析子資源：
 

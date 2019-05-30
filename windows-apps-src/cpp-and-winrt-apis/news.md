@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 新聞、 什麼的 new
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b84736e41e039d350a849c55fead008cbab5fdea
-ms.sourcegitcommit: bc64db47b6ff326f15cac15fc2cfd709fa7f877b
+ms.openlocfilehash: a84e118d988d8bf6a7d26eba7d5dd009c7ad44f3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65626219"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360139"
 ---
 # <a name="whats-new-in-cwinrt"></a>什麼是新的 C + /cli WinRT
 
@@ -302,7 +302,7 @@ struct MainPage : PageT<MainPage>
 
 目前，唯一的例外狀況為 Windows SDK 標頭檔案隔離是內建函式和數字。 沒有任何已知的問題，這些最後一個剩餘的相依性。
 
-在專案中，您可以重新啟用的 Windows SDK 標頭的 interop 如果您需要。 您可能會比方說，要實作 COM 介面 (立[ **IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509))。 例如，包含`unknwn.h`包括任何之前C++/WinRT 標頭。 這麼做會導致C++/WinRT 啟用各種不同的攔截程序來支援傳統的 COM 介面的基底文件庫。 如需程式碼範例，請參閱 <<c0> [ 作者 COM 元件，與C++/WinRT](author-coclasses.md)。</c0> 同樣地，明確地包含宣告類型和/或您想要呼叫的函式的任何其他 Windows SDK 標頭。
+在專案中，您可以重新啟用的 Windows SDK 標頭的 interop 如果您需要。 您可能會比方說，要實作 COM 介面 (立[ **IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown))。 例如，包含`unknwn.h`包括任何之前C++/WinRT 標頭。 這麼做會導致C++/WinRT 啟用各種不同的攔截程序來支援傳統的 COM 介面的基底文件庫。 如需程式碼範例，請參閱 <<c0> [ 作者 COM 元件，與C++/WinRT](author-coclasses.md)。</c0> 同樣地，明確地包含宣告類型和/或您想要呼叫的函式的任何其他 Windows SDK 標頭。
 
 ### <a name="how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何將目標重定您C++/WinRT 專案至較新版的 Windows sdk
 
@@ -315,7 +315,7 @@ struct MainPage : PageT<MainPage>
 
 如果您遇到任何編譯器或連結器錯誤之後使用下列兩種方法，則您可以嘗試清除方案 (**建置** > **清除方案**及/或以手動方式刪除所有暫存資料夾和檔案） 然後再嘗試再次建置。
 
-如果C++編譯器會產生 「*錯誤 C2039:'IUnknown': 不是成員 '\`全域命名空間'*"，然後新增`#include <unknwn.h>`頂端您`pch.h`檔案 (包含任何之前C++/WinRT 標頭)。
+如果C++編譯器會產生 「*錯誤 C2039:'IUnknown': 不是成員 '\`全域命名空間'* "，然後新增`#include <unknwn.h>`頂端您`pch.h`檔案 (包含任何之前C++/WinRT 標頭)。
 
 您可能也需要新增`#include <hstring.h>`之後。
 

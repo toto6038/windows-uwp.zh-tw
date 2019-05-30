@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b30cd39a4440a1ade1ea0dda5a35d3f7c15f963
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 471c2851f72027c364fdd0c9c295c8c9babe17c5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615673"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366187"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在應用程式資訊清單中宣告背景工作
 
@@ -20,8 +20,8 @@ ms.locfileid: "57615673"
 
 **重要的 Api**
 
--   [**BackgroundTasks 結構描述**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+-   [**BackgroundTasks 結構描述**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。
 
@@ -90,7 +90,7 @@ ms.locfileid: "57615673"
 
 2.  變更 Task Type 屬性清單以表示使用這個背景工作的工作登錄類型。 如果使用多個觸發程序類型來登錄背景工作，請針對每一個觸發程序類型，新增其他 Task 元素與 Type 屬性。
 
-    **附註**  確定列出的每種觸發程序類型使用，或背景工作將不會註冊使用未宣告的觸發程序類型 ( [**註冊**](https://msdn.microsoft.com/library/windows/apps/br224772)方法將失敗並擲回例外狀況。）
+    **附註**  確定列出的每種觸發程序類型使用，或背景工作將不會註冊使用未宣告的觸發程序類型 ( [**註冊**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法將失敗並擲回例外狀況。）
 
     這個程式碼片段範例指出系統事件觸發程序和推播通知的用法：
 
@@ -171,7 +171,7 @@ ms.locfileid: "57615673"
 </Extensions>
 ```
 
-當您指定 **EntryPoint** 時，應用程式會在觸發程序引發時收到對指定之方法的回呼。 如果沒有指定 **EntryPoint**，應用程式則會透過 [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 收到回呼。  如需詳細資訊，請參閱[建立和註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)。
+當您指定 **EntryPoint** 時，應用程式會在觸發程序引發時收到對指定之方法的回呼。 如果沒有指定 **EntryPoint**，應用程式則會透過 [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) 收到回呼。  如需詳細資訊，請參閱[建立和註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)。
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>使用 ResourceGroup 屬性來指定背景工作執行所在的位置。
 

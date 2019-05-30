@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 33244391ca9f2ffcba21adacccebf2e9b1d73419
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612773"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363354"
 ---
 # <a name="toast-content-xml-schema"></a>快顯通知內容 XML 結構描述
 
@@ -79,15 +79,15 @@ scenario?
 
 lang?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 baseUri?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 addImageQuery?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 **中的屬性&lt;繫結&gt;**
 
@@ -99,27 +99,27 @@ template?
 
 lang?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 baseUri?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 addImageQuery?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 **中的屬性&lt;文字&gt;**
 
 lang?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 **中的屬性&lt;映像&gt;**
 
 src
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230844)，以了解此必要屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)，以了解此必要屬性的詳細資料。
 
 placement?
 
@@ -131,11 +131,11 @@ placement?
 
 alt?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230844)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)，以了解此選擇性屬性的詳細資料。
 
 addImageQuery?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230844)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)，以了解此選擇性屬性的詳細資料。
 
 hint-crop?
 
@@ -148,15 +148,15 @@ hint-crop?
 
 src?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230842)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)，以了解此選擇性屬性的詳細資料。
 
 loop?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230842)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)，以了解此選擇性屬性的詳細資料。
 
 silent?
 
--   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230842)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)，以了解此選擇性屬性的詳細資料。
 
 ## <a name="schemas-ltactiongt"></a>結構描述：&lt;action&gt;
 

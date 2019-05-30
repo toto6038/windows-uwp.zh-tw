@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 啟用您的裝置以用於開發
 description: 設定您的 Windows 10 裝置以進行開發和偵錯。
 keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用裝置
-ms.date: 05/30/2018
+ms.date: 4/9/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 90ff8e8c0d11e58d251e9c2f5bfb00f3b8aedf1a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f927d8bce1e59ba9a8ed9b0f3f08ce3575c6d7bd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618953"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367024"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -35,7 +35,7 @@ ms.locfileid: "57618953"
 若要啟用開發人員模式，或存取其他設定：
 
 1.  從 **\[開發人員專用\]** 設定對話方塊中，選擇您需要的存取層級。
-2.  閱讀您所選設定的免責聲明，然後按一下 [是] 來接受變更。
+2.  閱讀您所選設定的免責聲明，然後按一下 [是] 來接受變更。 
 
 > [!NOTE]
 > 啟用 Developer 模式需要系統管理員權限。 如果您的裝置是由組織所擁有，此選項可能會停用。
@@ -50,7 +50,7 @@ ms.locfileid: "57618953"
 
 -   *Microsoft Store 應用程式*是預設設定。 如果您不開發應用程式，或使用您的公司所發行的特殊內部應用程式，請讓此設定保持作用中狀態。
 -   *「側載」* 是安裝並執行或測試未經 Microsoft Store 認證的應用程式。 例如，僅供公司內部使用的 app。
--   「開發人員模式」可讓您側載應用程式，也可從 Visual Studio 以偵錯模式執行應用程式。
+-   「開發人員模式」可讓您側載應用程式，也可從 Visual Studio 以偵錯模式執行應用程式。 
 
 根據預設，您只能從 Microsoft Store 安裝通用 Windows 平台 (UWP) app。 變更這些設定來使用開發人員功能，可以變更裝置的安全性層級。 您不應該從未驗證的來源安裝 app。
 
@@ -65,7 +65,7 @@ ms.locfileid: "57618953"
 -   在行動裝置系列上：如果已安裝所需的憑證，您可以點選以安裝任何傳送給您，透過電子郵件或 sd 記憶卡上的.appx 檔案。
 
 
-因為您無法在不具受信任憑證的裝置上安裝應用程式，所以 [側載應用程式] 會是比 [開發人員模式] 更安全的選項。
+因為您無法在不具受信任憑證的裝置上安裝應用程式，所以 [側載應用程式] 會是比 [開發人員模式] 更安全的選項。 
 
 > [!NOTE]
 > 如果您要側載應用程式，您應該仍然只安裝來自受信任來源的應用程式。 當您安裝未經 Microsoft Store 認證的側載應用程式時，即表示您同意您已具備側載該應用程式所需的一切權限，並且為安裝和執行該應用程式所造成的任何損害負全責。 請參閱這份[隱私權聲明](https://go.microsoft.com/fwlink/?LinkId=521839)的 Windows &gt; Microsoft Store 小節。
@@ -76,8 +76,8 @@ ms.locfileid: "57618953"
 [開發人員模式] 取代了 Windows 8.1 對開發人員授權的需求。  除了側載功能，[開發人員模式] 設定還會啟用偵錯和其他部署選項。 這包括啟動 SSH 服務來允許此裝置成為部署目標。 若要停用此服務，您必須停用 [開發人員模式]。
 
 當您在桌面上啟用開發人員模式時，系統會安裝一套功能，包括︰
-- Windows 裝置入口網站。 只有在已開啟 [啟用 Device Portal] 選項時，才會啟用 Device Portal 並為其設定防火牆規則。
-- 為 SSH 服務安裝及設定允許遠端安裝應用程式的防火牆規則。 啟用 [裝置探索] 將會開啟 SSH 伺服器。
+- Windows 裝置入口網站。 只有在已開啟 [啟用 Device Portal] 選項時，才會啟用 Device Portal 並為其設定防火牆規則。 
+- 為 SSH 服務安裝及設定允許遠端安裝應用程式的防火牆規則。 啟用 [裝置探索]  將會開啟 SSH 伺服器。
 
 
 ## <a name="additional-developer-mode-features"></a>其他開發人員模式功能
@@ -93,11 +93,11 @@ ms.locfileid: "57618953"
 若要深入了解裝置入口網站，請參閱 [Windows 裝置入口網站概觀](../debug-test-perf/device-portal.md)。
 
 如需裝置特定的安裝指示，請參閱︰
-- [適用於桌面裝置入口網站](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
+- [適用於桌面裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
 - [HoloLens 裝置入口網站](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [Iot 裝置入口網站](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [行動裝置的裝置入口網站](../debug-test-perf/device-portal-mobile.md)
-- [Xbox 裝置入口網站](../debug-test-perf/device-portal-xbox.md)
+- [Xbox 裝置入口網站](../xbox-apps/device-portal-xbox.md)
 
 如果您遇到啟用開發人員模式或裝置入口網站方面的問題，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)論壇，以尋找這些問題的因應措施，或造訪[無法安裝開發人員模式套件或啟動裝置入口網站](#failure-to-install-developer-mode-package) ，以取得其他詳細資訊及了解要允許哪些 WSUS KB 才能將開發人員模式套件解除封鎖。
 
@@ -125,7 +125,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>Windows Explorer、遠端桌面及 PowerShell 的最佳化 (僅限傳統型裝置)
 
- 在傳統型裝置系列上，[開發人員專用] 設定頁面含有您可用來將電腦最佳化以進行開發工作的設定捷徑。 針對每個設定，您都可以選取核取方塊並按一下 [套用]，或按一下 [顯示設定] 連結來開啟該選項的設定頁面。
+ 在傳統型裝置系列上，[開發人員專用] 設定頁面含有您可用來將電腦最佳化以進行開發工作的設定捷徑。  針對每個設定，您都可以選取核取方塊並按一下 [套用]，或按一下 [顯示設定] 連結來開啟該選項的設定頁面。  
 
 
 ## <a name="notes"></a>附註
@@ -133,7 +133,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
 有數個工具可讓您用來將應用程式從 Windows 10 電腦部署到 Windows 10 裝置。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。 列出的方法都只會安裝應用程式套件 (.appx/.appxbundle)；它們不會安裝憑證。
 
--   使用 Windows 10 應用程式部署 (WinAppDeployCmd) 工具。 深入了解 [WinAppDeployCmd 工具](https://msdn.microsoft.com/library/windows/apps/mt203806.aspx)。
+-   使用 Windows 10 應用程式部署 (WinAppDeployCmd) 工具。 深入了解 [WinAppDeployCmd 工具](https://docs.microsoft.com/previous-versions/windows/apps/mt203806(v=vs.140))。
 -   您可以使用[裝置入口網站](../debug-test-perf/device-portal.md)，從您的瀏覽器部署到執行 Windows 10 版本 1511 或更新版本的行動裝置。 使用 Device Portal 中的 **[App](../debug-test-perf/device-portal.md#apps-manager)** 頁面來上傳應用程式套件 (.appx)，並將它安裝在裝置上。
 
 ## <a name="failure-to-install-developer-mode-package"></a>無法安裝開發人員模式套件
@@ -154,7 +154,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
 1. 確認您的電腦是否已連線至網際網路。
 2. 若您位於加入網域的電腦上，請說出您的網路系統管理員。 在 WSUS 中預設會封鎖開發人員模式套件，如所有的「功能隨選安裝」。
-2.1. 若要解除封鎖開發人員模式套件，在目前和先前版本中的，應該在 WSUS 中允許下列 Kb:4016509 3180030、 3197985  
+2.1. 若要解除封鎖開發人員模式套件，在目前和先前版本中的，應該在 WSUS 中允許下列 Kb:4016509, 3180030, 3197985  
 3. 在 \[設定\] &gt; \[更新與安全性\] &gt; Windows Updates 中，檢查 Windows 更新。
 4. 確認 Windows 開發人員模式套件顯示於 [設定] &gt; [系統] &gt; [應用程式與功能] &gt; 管理選用功能 &gt; [新增功能]。 若該套件遺失，Windows 即無法找到適用於您電腦的正確套件。
 
@@ -201,20 +201,20 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 1.  執行 **regedit**。
 2.  若要啟用側載功能，請將此 DWORD 的值設定為 1：
 
-    -   **HKLM\\軟體\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
     - 或 -
 
     若要啟用開發人員模式，請將此 DWORD 的值設定為 1：
 
-    -   **HKLM\\軟體\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **使用 PowerShell 來啟用您的裝置**
 
 1.  使用系統管理員權限執行 PowerShell。
 2.  若要啟用側載功能，請執行下列命令：
 
-    -   **PS c:\\WINDOWS\\system32&gt; reg 新增"HKEY\_本機\_機器\\軟體\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock"/t REG\_DWORD /f /v"AllowAllTrustedApps"/d"1"**
+    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
 
     - 或 -
 

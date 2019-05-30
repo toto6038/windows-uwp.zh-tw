@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 移植, 遊戲迴圈, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2087959bc29d2b2b02cdc9a2f373a8b62ea8c25a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bd6a17b5e1684fbee21965158295dba123737bd6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627983"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367917"
 ---
 # <a name="port-the-game-loop"></a>移植遊戲迴圈
 
@@ -24,20 +24,20 @@ ms.locfileid: "57627983"
 -   第 3 部分：移植遊戲迴圈
 
 
-說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 以控制全螢幕的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)。 [將簡單的 Direct3D 9 app 移植到 DirectX 11 和 UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 逐步解說的第三部分。
+說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) 以控制全螢幕的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)。 [將簡單的 Direct3D 9 app 移植到 DirectX 11 和 UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 逐步解說的第三部分。
 
 ## <a name="create-a-window"></a>建立視窗
 
 
 若要使用 Direct3D 9 檢視區來設定桌面視窗，必須針對傳統型應用程式實作傳統視窗架構。 我們過去必須建立 HWND、設定視窗大小、提供視窗處理回呼、讓它變成可見，以及其他動作等等。
 
-UWP 環境現在提供一個更簡單的系統。 使用 DirectX 的 Microsoft Store 遊戲會實作 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)，而不是設定傳統視窗。 為了 DirectX app 與遊戲存在的這個介面，可直接在 app 容器內的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 中執行。
+UWP 環境現在提供一個更簡單的系統。 使用 DirectX 的 Microsoft Store 遊戲會實作 [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView)，而不是設定傳統視窗。 為了 DirectX app 與遊戲存在的這個介面，可直接在 app 容器內的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 中執行。
 
-> **附註**   Windows 提供的資源，例如來源應用程式物件的 managed 的指標和[ **CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)。 請參閱 [**物件控制代碼運算子 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
+> **附註**   Windows 提供的資源，例如來源應用程式物件的 managed 的指標和[ **CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)。 請參閱 [**物件控制代碼運算子 (^)** ]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
 
  
 
-您的 「 主要 」 類別必須繼承自[ **IFrameworkView** ](https://msdn.microsoft.com/library/windows/apps/hh700478)並實作五**IFrameworkView**方法：[**初始化**](https://msdn.microsoft.com/library/windows/apps/hh700495)， [ **SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)， [**負載**](https://msdn.microsoft.com/library/windows/apps/hh700501)， [**執行**](https://msdn.microsoft.com/library/windows/apps/hh700505)，並[**解除初始化**](https://msdn.microsoft.com/library/windows/apps/hh700523)。 除了建立 **IFrameworkView** (這 (基本上) 將是您遊戲所在的位置)，您還需要實作 Factory 類別，以建立 **IFrameworkView** 的執行個體。 您的遊戲仍含有名稱為 **main()** 方法的可執行檔，但是所有的 main 都會使用 Factory 來建立 **IFrameworkView** 執行個體。
+您的 「 主要 」 類別必須繼承自[ **IFrameworkView** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView)並實作五**IFrameworkView**方法：[**初始化**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)， [ **SetWindow**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow)， [**負載**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load)， [**執行**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run)，並[**解除初始化**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize)。 除了建立 **IFrameworkView** (這 (基本上) 將是您遊戲所在的位置)，您還需要實作 Factory 類別，以建立 **IFrameworkView** 的執行個體。 您的遊戲仍含有名稱為 **main()** 方法的可執行檔，但是所有的 main 都會使用 Factory 來建立 **IFrameworkView** 執行個體。
 
 Main 函式
 
@@ -103,9 +103,9 @@ while(WM_QUIT != msg.message)
 
 在遊戲的 UWP 版本中，遊戲迴圈很類似 - 但更簡單：
 
-遊戲迴圈會在 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中執行 (而非 **main()**)，因為我們的遊戲會在 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 類別中運作。
+遊戲迴圈會在 [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) 方法中執行 (而非 **main()** )，因為我們的遊戲會在 [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) 類別中運作。
 
-我們可以呼叫內建於應用程式視窗的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 的 [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 方法，而不需實作訊息處理架構並呼叫 [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943)。 遊戲迴圈不需要有分支和處理訊息 - 只需呼叫 **ProcessEvents** 並繼續。
+我們可以呼叫內建於應用程式視窗的 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 的 [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) 方法，而不需實作訊息處理架構並呼叫 [**PeekMessage**](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-peekmessagea)。 遊戲迴圈不需要有分支和處理訊息 - 只需呼叫 **ProcessEvents** 並繼續。
 
 Direct3D 11 Microsoft Store 遊戲中的遊戲迴圈
 

@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 範例, DirectX, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f915ad9cf200a5c2c762976ab3c39c2ef85410
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f287110584c02a5d7822f6b1d84cd332d4d6199d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662463"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368908"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>使用 C++ 和 DirectX 開發 Marble Maze (UWP 遊戲)
 
@@ -39,11 +39,11 @@ Marble Maze 提供許多方式讓使用者與遊戲板互動。 如果您有觸�
 
 ![Marble Maze 遊戲的螢幕擷取畫面。](images/marblemaze-2.png)
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 
 -   Windows 10 Creators Update
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
 -   C++ 程式設計知識
 -   認識 DirectX 和 DirectX 詞彙
 -   COM 基本知識
@@ -61,9 +61,9 @@ Marble Maze 提供許多方式讓使用者與遊戲板互動。 如果您有觸�
 本文件教導您如何：
 
 -   使用 Windows 執行階段 API 和 DirectX 來建立 UWP 遊戲。
--   使用 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080) 和 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) 來處理視覺化內容，例如模型、紋理、頂點和像素著色器，以及 2D 重疊。
+-   使用 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) 和 [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) 來處理視覺化內容，例如模型、紋理、頂點和像素著色器，以及 2D 重疊。
 -   整合輸入機制，例如觸控、加速計及 Xbox One 控制器。
--   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) 納入音樂和音效。
+-   使用 [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) 納入音樂和音效。
 
 ## <a name="what-this-documentation-does-not-cover"></a>本文件未涵蓋的內容
 
@@ -77,7 +77,7 @@ Marble Maze 提供許多方式讓使用者與遊戲板互動。 如果您有觸�
 -   如何讓遊戲可在全球其他區域使用。
 -   如何讓遊戲通過認證並發佈到 Microsoft Store。
 
-Marble Maze 也會使用 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) 程式庫來處理 3D 幾何和執行物理運算，例如碰撞。 本節不深入探討 DirectXMath。 如需 Marble Maze 如何使用 DirectXMath 的詳細資訊，請參閱原始程式碼。
+Marble Maze 也會使用 [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal) 程式庫來處理 3D 幾何和執行物理運算，例如碰撞。 本節不深入探討 DirectXMath。 如需 Marble Maze 如何使用 DirectXMath 的詳細資訊，請參閱原始程式碼。
 
 雖然 Marble Maze 提供許多可重複使用的元件，但這並非完整的遊戲開發架構。 當我們認為某個 Marble Maze 元件可在遊戲中重複使用時，會在文件中加以強調。
 

@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 21a6c698fa0e07587e2c25ae827dc6654a8ced9d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 297b907191dfa07084e5e4ada0e3468733e47090
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618623"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363124"
 ---
 # <a name="combo-box"></a>下拉式方塊
 
@@ -173,13 +173,13 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 - SelectedItem = null
 - SelectedValue = null
-- SelectedIndex =-1
+- SelectedIndex = -1
 
 Sdk 17763 及更新版本、 SelectedItem 屬性的值 (因此 SelectedValue 和 SelectedIndex) 不需要在下拉式方塊的項目集合。 使用上述範例中，設定`colorComboBox.SelectedItem = "Pink"`導致：
 
 - SelectedItem = 粉紅
-- SelectedValue = 粉紅
-- SelectedIndex =-1
+- SelectedValue = Pink
+- SelectedIndex = -1
 
 ### <a name="text-search"></a>文字搜尋
 
@@ -305,6 +305,6 @@ bool IsValid(string Text)
 - [文字控制項](text-controls.md)
 - [拼字檢查](text-controls.md)
 - [搜尋](search.md)
-- [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Windows.UI.Xaml.Controls PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [String.Length 屬性](https://msdn.microsoft.com/library/system.string.length.aspx)
+- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)

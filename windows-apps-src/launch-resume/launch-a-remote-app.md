@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10 uwp，連線裝置、 遠端系統、 羅馬、 project rome
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a67816195105572d9f690599b9a880ece90c98
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ac4a5783250f3bd21cb8a3b96a579715830e687d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658413"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371708"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的應用程式
 
@@ -25,7 +25,7 @@ ms.locfileid: "57658413"
 
 ### <a name="add-the-remotesystem-capability"></a>新增 remoteSystem 功能
 
-為了讓您的 app 能夠啟動遠端裝置上的 app，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 \[功能\] 索引標籤上選取 \[遠端系統\] 來新增此功能，或手動將下列程式碼行新增至專案的 _Package.appxmanifest_ 檔案。
+為了讓您的 app 能夠啟動遠端裝置上的 app，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 \[功能\]  索引標籤上選取 \[遠端系統\]  來新增此功能，或手動將下列程式碼行新增至專案的 _Package.appxmanifest_ 檔案。
 
 ``` xml
 <Capabilities>
@@ -62,7 +62,7 @@ ms.locfileid: "57658413"
 
 ## <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的應用程式
 
-將您想要連線的裝置傳送至 [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx) API，從遠端啟動 app。 這個方法有三個多載。 簡單來說，這個範例會示範如何指定 URI，以啟用遠端裝置上的 app。 在這個範例中，URI 會在遠端電腦上開啟地圖 app，以 3D 方式檢視太空針塔。
+將您想要連線的裝置傳送至 [**RemoteLauncher.LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotelauncher.launchuriasync) API，從遠端啟動 app。 這個方法有三個多載。 簡單來說，這個範例會示範如何指定 URI，以啟用遠端裝置上的 app。 在這個範例中，URI 會在遠端電腦上開啟地圖 app，以 3D 方式檢視太空針塔。
 
 其他 **RemoteLauncher.LaunchUriAsync** 多載可讓您指定選項，例如，無法在遠端裝置上啟動適當的 app 時，可用以檢視的網站 URI，以及可用來在遠端裝置上啟動 URI 的選擇性套件系列名稱清單。 您也能以索引鍵/值組的形式提供資料。 您可能會將資料傳遞至您啟用的 app，以便將內容提供給遠端 app，例如，當您要將一部裝置的播放工作交由另一部裝置進行時，會提供要播放的歌曲名稱和目前的播放位置。
 
@@ -70,11 +70,11 @@ ms.locfileid: "57658413"
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
 
-從 **RemoteLauncher.LaunchUriAsync()** 傳回的 [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelaunchuristatus.aspx) 物件，會提供遠端啟動是否成功以及為什麼不成功的相關資訊。
+從 **RemoteLauncher.LaunchUriAsync()** 傳回的 [**RemoteLaunchUriStatus**](https://docs.microsoft.com/uwp/api/windows.system.remotelaunchuristatus) 物件，會提供遠端啟動是否成功以及為什麼不成功的相關資訊。
 
 ## <a name="related-topics"></a>相關主題
 
-[遠端系統的 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[遠端系統的 API 參考](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)  
 [已連線的應用程式和裝置 (Project Rome) 概觀](connected-apps-and-devices.md)  
 [探索遠端裝置](discover-remote-devices.md)  
 [遠端系統範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)示範如何探索遠端系統、啟動遠端系統上的 app，以及使用應用程式服務在兩個系統上執行的應用程式之間傳送訊息。

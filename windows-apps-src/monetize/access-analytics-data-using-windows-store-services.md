@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10 , UWP, Microsoft Store 服務, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ab3e223c99a13e4520d5bc603454881803a3cb64
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 14a1b73a2c82beea746d40c25bfa18ddf6171203
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334856"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372004"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用 Microsoft Store 服務存取分析資料
 
@@ -44,7 +44,7 @@ ms.locfileid: "58334856"
 
 3.  返回 **\[使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
-4. 按一下 \[加入新的金鑰\]。 在下列畫面中，複製 \[金鑰\] 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[管理 Azure AD 應用程式的金鑰](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
+4. 按一下 \[加入新的金鑰\]。  在下列畫面中，複製 \[金鑰\] 的值。  您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[管理 Azure AD 應用程式的金鑰](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
 <span id="obtain-an-azure-ad-access-token" />
 
@@ -95,7 +95,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-desktop-applications"></a>傳統型應用程式的方法
 
-下列分析方法可供隸屬於 [Windows 傳統型應用程式計畫](https://msdn.microsoft.com/library/windows/desktop/mt826504)的開發人員帳戶使用。
+下列分析方法可供隸屬於 [Windows 傳統型應用程式計畫](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的開發人員帳戶使用。
 
 | 狀況       | 方法      |
 |---------------|--------------------|
@@ -125,7 +125,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-hardware-and-drivers"></a>硬體與驅動程式的方法
 
-開發人員帳戶隸屬於[Windows 硬體儀表板 程式](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)享有一組額外的方法，用於擷取硬體和驅動程式的分析資料。 如需詳細資訊，請參閱 <<c0> [ 硬體儀表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
+開發人員帳戶隸屬於[Windows 硬體儀表板 程式](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)享有一組額外的方法，用於擷取硬體和驅動程式的分析資料。 如需詳細資訊，請參閱 <<c0> [ 硬體儀表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
 
 ## <a name="code-example"></a>程式碼範例
 
