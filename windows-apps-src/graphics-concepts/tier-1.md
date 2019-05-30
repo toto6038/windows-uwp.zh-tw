@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae76111f6feefa0bb63fd18516e033050cc06fc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3aeb30fca8e9fbad21f274162aab3106afcf2e45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589883"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370844"
 ---
 # <a name="tier-1"></a>第 1 層
 
@@ -52,7 +52,7 @@ Mipmap 在所有維度中都並非標準磚大小之倍數的串流資源，其�
 
 若要切換參考透過並排顯示集區中的磚[緩衝區](introduction-to-buffers.md)資源，以參考相同的圖格，透過[材質](introduction-to-textures.md)資源，或反之亦然、 最新的圖格對應更新或複製集區並排顯示 圖格的對應，定義對應至這些磚必須是相同的資源維度 (與材質的緩衝區\*) 做為資源維度會用以存取磚。 否則，行為未定義，這包括裝置重設的機會。
 
-舉例來說，更新磚對應來定義緩衝區的磚對應，並透過 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 資源將磚對應更新為和磚集區中的某些磚相同，接著透過緩衝區存取磚是無效的方式。 您可以在切換緩衝區和紋理 (反之亦然) 之間分享的磚時為資源重新定義磚，或是不在緩衝區資源和紋理資源之間分享磚集區中的磚，以避免這種情形。
+舉例來說，更新磚對應來定義緩衝區的磚對應，並透過 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 資源將磚對應更新為和磚集區中的某些磚相同，接著透過緩衝區存取磚是無效的方式。 您可以在切換緩衝區和紋理 (反之亦然) 之間分享的磚時為資源重新定義磚，或是不在緩衝區資源和紋理資源之間分享磚集區中的磚，以避免這種情形。
 
 ### <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大減少篩選
 

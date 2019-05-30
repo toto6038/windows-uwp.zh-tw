@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fe9a6fe94fa388c35f181341972211b9ed6c03f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654773"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371926"
 ---
 # <a name="share-certificates-between-apps"></a>在應用程式之間共用憑證
 
@@ -27,15 +27,15 @@ app 可使用憑證來向 Web 服務驗證，而且多個 app 可使用憑證存
 
 本文使用 Microsoft 網際網路資訊服務 (IIS)，例如用途。 預設不會啟用 IIS。 您可以使用控制台來啟用 IIS。
 
-1.  開啟 [控制台]，然後選取 [程式集]。
-2.  選取 [開啟或關閉 Windows 功能]。
-3.  展開 [Internet Information Services]，然後展開 [World Wide Web 服務]。 展開 [應用程式開發功能]，選取 **ASP.NET 3.5** 與 **ASP.NET 4.5**。 選擇這些項目會自動啟用 **Internet Information Services**。
-4.  按一下 [確定] 套用變更。
+1.  開啟 [控制台]，然後選取 [程式集]  。
+2.  選取 [開啟或關閉 Windows 功能]  。
+3.  展開 [Internet Information Services]  ，然後展開 [World Wide Web 服務]  。 展開 [應用程式開發功能]  ，選取 **ASP.NET 3.5** 與 **ASP.NET 4.5**。 選擇這些項目會自動啟用 **Internet Information Services**。
+4.  按一下 [確定]  套用變更。
 
 ## <a name="create-and-publish-a-secured-web-service"></a>建立與發行受保護的 Web 服務
 
 
-1.  以系統管理員的身分執行 Microsoft Visual Studio，然後從起始畫面選取 [新增專案]。 必須要有系統管理員存取權才能將 Web 服務發行到 IIS 伺服器。 在 [新增專案] 對話方塊中，將 Framework 變更為 [.NET Framework 3.5]。 選取  **Visual C#**   - &gt; **Web**  - &gt; **Visual Studio**  - &gt; **ASP.NET Web 服務應用程式**。 將應用程式命名為 "FirstContosoBank"。 按一下 \[確定\] 來建立專案。
+1.  以系統管理員的身分執行 Microsoft Visual Studio，然後從起始畫面選取 [新增專案]  。 必須要有系統管理員存取權才能將 Web 服務發行到 IIS 伺服器。 在 [新增專案] 對話方塊中，將 Framework 變更為 [.NET Framework 3.5]  。 選取  **Visual C#**   - &gt; **Web**  - &gt; **Visual Studio**  - &gt; **ASP.NET Web 服務應用程式**。 將應用程式命名為 "FirstContosoBank"。 按一下 \[確定\] 來建立專案。 
 2.  在 **Service1.asmx.cs** 檔案中，將預設的 **HelloWorld** Web 方法取代為下列 "Login" 方法。
     ```cs
             [WebMethod]
@@ -50,19 +50,19 @@ app 可使用憑證來向 Web 服務驗證，而且多個 app 可使用憑證存
     ```
 
 3.  儲存 **Service1.asmx.cs** 檔案。
-4.  在 \[方案總管\] 中，用滑鼠右鍵按一下 "FirstContosoBank" app，然後選取 \[發行\]。
-5.  在 \[發行 Web\] 對話方塊中建立新的設定檔，將它命名為 "ContosoProfile"。 按 **[下一步]**。
-6.  在下一頁中，輸入 IIS 伺服器的伺服器名稱，然後指定網站名稱為 "Default Web Site/FirstContosoBank"。 按一下 [發行] 以發行您的 Web 服務。
+4.  在 \[方案總管\] 中，用滑鼠右鍵按一下 "FirstContosoBank" app，然後選取 \[發行\]。  
+5.  在 \[發行 Web\] 對話方塊中建立新的設定檔，將它命名為 "ContosoProfile"。  按 **[下一步]** 。
+6.  在下一頁中，輸入 IIS 伺服器的伺服器名稱，然後指定網站名稱為 "Default Web Site/FirstContosoBank"。 按一下 [發行]  以發行您的 Web 服務。
 
 ## <a name="configure-your-web-service-to-use-client-certificate-authentication"></a>設定您的 Web 服務以使用用戶端憑證驗證
 
 
-1.  執行 [網際網路資訊服務 (IIS) 管理員]。
-2.  展開 IIS 伺服器的網站。 在 \[預設的網站\] 底下選取新的 \[FirstContosoBank\] Web 服務。 在 \[動作\] 區段中，選取 \[進階設定\]。
-3.  將 \[應用程式集區\] 設為 \[.NET v2.0\]，然後按一下 \[確定\]。
-4.  在 \[網際網路資訊服務 (IIS) 管理員\] 中選取您的 IIS 伺服器，然後按兩下 \[伺服器憑證\]。 在 \[動作\] 區段中，選取 \[建立自我簽署憑證\]。輸入 "ContosoBank" 做為憑證的易記名稱，然後按一下 \[確定\]。 這樣會建立下列格式的新憑證供 IIS 伺服器使用："&lt;伺服器名稱&gt;.&lt;網域名稱&gt;"。
-5.  在 \[網際網路資訊服務 (IIS) 管理員\] 中選取預設網站。 在 \[動作\] 區段中，選取 \[繫結\]，然後按一下 \[加入\]。選取 \[https\] 做為類型，將連接埠設為 "443"，然後輸入 IIS 伺服器的完整主機名稱 ("伺服器名稱.網域名稱")。&lt;&gt;&lt;&gt; 將 SSL 憑證設為 "ContosoBank"。 按一下 [確定] 。 在 \[站台繫結\] 視窗中按一下 \[關閉\]。
-6.  在 \[網際網路資訊服務 (IIS) 管理員\] 中，選取 \[FirstContosoBank\] Web 服務。 按兩下 \[SSL 設定\]。 選取 [需要 SSL]。 選取 [用戶端憑證] 下方的 [需要]。 在 [動作] 區段中，按一下 [套用]。
+1.  執行 [網際網路資訊服務 (IIS) 管理員]  。
+2.  展開 IIS 伺服器的網站。 在 \[預設的網站\] 底下選取新的 \[FirstContosoBank\] Web 服務。  在 \[動作\] 區段中，選取 \[進階設定\]。  
+3.  將 \[應用程式集區\] 設為 \[.NET v2.0\]，然後按一下 \[確定\]。   
+4.  在 \[網際網路資訊服務 (IIS) 管理員\] 中選取您的 IIS 伺服器，然後按兩下 \[伺服器憑證\]。   在 \[動作\] 區段中，選取 \[建立自我簽署憑證\]。   輸入 "ContosoBank" 做為憑證的易記名稱，然後按一下 \[確定\]。  這樣會建立下列格式的新憑證供 IIS 伺服器使用："&lt;伺服器名稱&gt;.&lt;網域名稱&gt;"。
+5.  在 \[網際網路資訊服務 (IIS) 管理員\] 中選取預設網站。  在 \[動作\] 區段中，選取 \[繫結\]，然後按一下 \[加入\]。    選取 \[https\] 做為類型，將連接埠設為 "443"，然後輸入 IIS 伺服器的完整主機名稱 ("伺服器名稱.網域名稱")。&lt;&gt;&lt;&gt; 將 SSL 憑證設為 "ContosoBank"。 按一下 [確定]  。 在 \[站台繫結\] 視窗中按一下 \[關閉\]。  
+6.  在 \[網際網路資訊服務 (IIS) 管理員\] 中，選取 \[FirstContosoBank\] Web 服務。  按兩下 \[SSL 設定\]。  選取 [需要 SSL]  。 選取 [用戶端憑證]  下方的 [需要]  。 在 [動作]  區段中，按一下 [套用]  。
 7.  您可以開啟網頁瀏覽器並輸入下列網址，以確認 Web 服務是否已正確設定："https://&lt;伺服器名稱&gt;.&lt;網域名稱&gt;/FirstContosoBank/Service1.asmx"。 例如，"https://myserver.example.com/FirstContosoBank/Service1.asmx"。 如果您的 Web 服務已正確設定，系統會提示您選取用戶端憑證以存取 Web 服務。
 
 您可以重複上述步驟來建立多個 Web 服務，並使用相同的用戶端憑證來存取這些服務。
@@ -70,15 +70,15 @@ app 可使用憑證來向 Web 服務驗證，而且多個 app 可使用憑證存
 ## <a name="create-a-uwp-app-that-uses-certificate-authentication"></a>建立使用憑證驗證的 UWP app
 
 
-現在您已有一或多個受保護的 Web 服務後，您的 app 可以使用憑證向那些 Web 服務進行驗證。 當您使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 物件向驗證的 Web 服務提出要求時，初始要求將不會包含用戶端憑證。 已驗證的 Web 服務將以用戶端驗證要求回應。 發生此情況時，Windows 用戶端將自動查詢憑證存放區是否有可用的用戶端憑證。 您的使用者可從這些憑證選取以向 Web 服務驗證。 某些憑證受密碼保護，因此您必須提供使用者輸入密碼的方式以取得憑證。
+現在您已有一或多個受保護的 Web 服務後，您的 app 可以使用憑證向那些 Web 服務進行驗證。 當您使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 物件向驗證的 Web 服務提出要求時，初始要求將不會包含用戶端憑證。 已驗證的 Web 服務將以用戶端驗證要求回應。 發生此情況時，Windows 用戶端將自動查詢憑證存放區是否有可用的用戶端憑證。 您的使用者可從這些憑證選取以向 Web 服務驗證。 某些憑證受密碼保護，因此您必須提供使用者輸入密碼的方式以取得憑證。
 
 如果沒有可用的用戶端憑證，則使用者必須新增憑證到憑證存放區。 您可以在 app 中包含程式碼，讓使用者選取包含用戶端憑證的 PFX 檔案，然後將該憑證匯入用戶端憑證存放區。
 
-**祕訣**  您可以使用 makecert.exe 來建立 PFX 檔案，才能使用本快速入門。 如需使用 makecert.exe 的資訊，請參閱 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
+**祕訣**  您可以使用 makecert.exe 來建立 PFX 檔案，才能使用本快速入門。 如需使用 makecert.exe 的資訊，請參閱 [MakeCert](https://docs.microsoft.com/windows/desktop/SecCrypto/makecert)。
 
  
 
-1.  開啟 Visual Studio，然後從開始頁面建立新專案。 將新專案命名為 "FirstContosoBankApp"。 按一下 \[確定\] 以建立新的專案。
+1.  開啟 Visual Studio，然後從開始頁面建立新專案。 將新專案命名為 "FirstContosoBankApp"。 按一下 \[確定\] 以建立新的專案。 
 2.  在 MainPage.xaml 檔案中，將下列 XAML 新增至預設的 **Grid** 元素。 這個 XAML 包含一個瀏覽要匯入之 PFX 檔案的按鈕、一個輸入受密碼保護之 PFX 檔案的密碼的文字方塊、一個匯入所選 PFX 檔案的按鈕、一個登入受保護的 Web 服務的按鈕，以及一個顯示目前動作狀態的文字區塊。
     ```xml
     <Button x:Name="Import" Content="Import Certificate (PFX file)" HorizontalAlignment="Left" Margin="352,305,0,0" VerticalAlignment="Top" Height="77" Width="260" Click="Import_Click" FontSize="16"/>

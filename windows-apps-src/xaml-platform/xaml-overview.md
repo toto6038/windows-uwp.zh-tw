@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 639f552a240cf8d28d1a2a0ce530315671128746
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ee2891de5f2f55b1e96759fda970cca58dd11019
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599803"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371368"
 ---
 # <a name="xaml-overview"></a>XAML 概觀
 
@@ -32,7 +32,7 @@ XAML 語言可支援開發程序中不同工具和角色之間的原始碼交換
 
 ## <a name="basic-xaml-syntax"></a>基本 XAML 語法
 
-XAML 具備以 XML 為依據的基本語法。 根據定義，有效的 XAML 也必須是有效的 XML。 但是 XAML 也有一些指派不同且更完整意義的語法概念，根據 XML 1.0 規格，在 XML 仍然有效。 例如，XAML 支援「屬性元素語法」，其中的屬性值可以在元素內 (而不是當成屬性中的字串值或內容) 來設定。 如果是一般 XML，XAML 屬性元素就是其名稱內有一個點的元素，如此一來，它對純 XML 就是有效的，但不會有相同的意義。
+XAML 具備以 XML 為依據的基本語法。 根據定義，有效的 XAML 也必須是有效的 XML。 但是 XAML 也有一些指派不同且更完整意義的語法概念，根據 XML 1.0 規格，在 XML 仍然有效。 例如，XAML 支援「屬性元素語法」  ，其中的屬性值可以在元素內 (而不是當成屬性中的字串值或內容) 來設定。 如果是一般 XML，XAML 屬性元素就是其名稱內有一個點的元素，如此一來，它對純 XML 就是有效的，但不會有相同的意義。
 
 ## <a name="xaml-and-microsoft-visual-studio"></a>XAML 和 Microsoft Visual Studio
 
@@ -50,7 +50,7 @@ Microsoft Visual Studio 可以在 XAML 文字編輯器與更多圖形導向的 X
 
 XAML 檔案幾乎永遠在它的根元素中宣告預設的 XAML 命名空間。 預設 XAML 命名空間定義您可以宣告但不必使用前置詞來限定的元素。 對於典型的 Windows 執行階段 app 專案，這個預設命名空間包含適用於 Windows 執行階段且可用於 UI 定義的所有內建 XAML 詞彙：預設控制項、文字元素、XAML 圖形和動畫、資料繫結與樣式支援類型等。 您針對 Windows 執行階段應用程式所撰寫的多數 XAML 從而能在參考常見的 UI 元素時，避免使用 XAML 命名空間和前置詞。
 
-下列程式碼片段會展示範本為 app 初始頁面建立的 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 根 (只顯示簡化的開頭標記)。 它宣告預設的命名空間，以及 **x** 命名空間 (我們將在下段加以說明)。
+下列程式碼片段會展示範本為 app 初始頁面建立的 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 根 (只顯示簡化的開頭標記)。 它宣告預設的命名空間，以及 **x** 命名空間 (我們將在下段加以說明)。
 
 ```xml
 <Page
@@ -68,11 +68,11 @@ XAML 檔案幾乎永遠在它的根元素中宣告預設的 XAML 命名空間。
 
 | 詞彙 | 描述 |
 |------|-------------|
-| [x： 索引鍵](x-key-attribute.md) | 為 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的每個資源設定唯一的使用者定義索引鍵。 索引鍵的權杖字串是 **StaticResource** 標記延伸的引數，而您稍後可以使用這個索引鍵，從位於 app XAML 任一處的其他 XAML 用法中抓取 XAML 資源。 |
-| [x： 類別](x-class-attribute.md) | 指定類別的程式碼命名空間和程式碼類別名稱，該類別提供 XAML 頁面的程式碼後置。 這會在您建置應用程式時，為組建動作所建立或加入的類別命名。 這些組建動作支援 XAML 標記編譯器，並且可以在編譯應用程式時組合您的標記和程式碼後置。 您必須擁有這類類別，才能支援 XAML 頁面的程式碼後置。 [**Window.Content** ](https://msdn.microsoft.com/library/windows/apps/br209051)以預設的 Windows 執行階段啟用模型。 |
-| [x： 名稱](x-name-attribute.md) | 為處理完 XAML 中定義的物件元素後而存在執行階段程式碼中的執行個體，指定執行階段物件名稱。 您可以將在 XAML 中設定 **x:Name** 想像成在程式碼中宣告具名變數。 之後您就會了解，當您的 XAML 載入為 Windows 執行階段 app 的元件時所發生的狀況。 <br/><div class="alert">**注意**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是架構中的類似屬性，但並非所有的元素都支援它。 因此，每當該元素類型不支援 **FrameworkElement.Name** 時，您就可以將 **x:Name** 用於元素識別。 |
-| [x: Uid](x-uid-directive.md) | 識別應該為某些屬性值使用當地語系化資源的元素。 如需使用方式詳細資訊**X:uid**，請參閱[快速入門：將 UI 資源轉譯](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
-| [XAML 內建資料類型](xaml-intrinsic-data-types.md) | 這些類型可以針對屬性或資源要求的簡單值類型指定值。 這些內建類型會對應到通常是針對每種程式設計語言內建定義所定義的簡單值類型。 例如，您可能需要一個物件以表示要在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 腳本視覺狀態中使用的 **true** 布林值。 對於 XAML 中的值，您可以使用**x： 布林值**內建類型的物件項目，像這樣： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
+| [x:Key](x-key-attribute.md) | 為 XAML [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中的每個資源設定唯一的使用者定義索引鍵。 索引鍵的權杖字串是 **StaticResource** 標記延伸的引數，而您稍後可以使用這個索引鍵，從位於 app XAML 任一處的其他 XAML 用法中抓取 XAML 資源。 |
+| [x:Class](x-class-attribute.md) | 指定類別的程式碼命名空間和程式碼類別名稱，該類別提供 XAML 頁面的程式碼後置。 這會在您建置應用程式時，為組建動作所建立或加入的類別命名。 這些組建動作支援 XAML 標記編譯器，並且可以在編譯應用程式時組合您的標記和程式碼後置。 您必須擁有這類類別，才能支援 XAML 頁面的程式碼後置。 [**Window.Content** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content)以預設的 Windows 執行階段啟用模型。 |
+| [x:Name](x-name-attribute.md) | 為處理完 XAML 中定義的物件元素後而存在執行階段程式碼中的執行個體，指定執行階段物件名稱。 您可以將在 XAML 中設定 **x:Name** 想像成在程式碼中宣告具名變數。 之後您就會了解，當您的 XAML 載入為 Windows 執行階段 app 的元件時所發生的狀況。 <br/><div class="alert">**注意**  [**FrameworkElement.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.name) 是架構中的類似屬性，但並非所有的元素都支援它。 因此，每當該元素類型不支援 **FrameworkElement.Name** 時，您就可以將 **x:Name** 用於元素識別。 |
+| [x:Uid](x-uid-directive.md) | 識別應該為某些屬性值使用當地語系化資源的元素。 如需使用方式詳細資訊**X:uid**，請參閱[快速入門：將 UI 資源轉譯](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))。 |
+| [XAML 內建資料類型](xaml-intrinsic-data-types.md) | 這些類型可以針對屬性或資源要求的簡單值類型指定值。 這些內建類型會對應到通常是針對每種程式設計語言內建定義所定義的簡單值類型。 例如，您可能需要一個物件以表示要在 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 腳本視覺狀態中使用的 **true** 布林值。 對於 XAML 中的值，您可以使用**x： 布林值**內建類型的物件項目，像這樣： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
 XAML 語言 XAML 命名空間中的其他程式設計建構雖然存在，但比較少見。
 
@@ -82,13 +82,13 @@ XAML 語言 XAML 命名空間中的其他程式設計建構雖然存在，但比
 
 如果您針對 Windows 執行階段核心程式庫和中繼資料以外的程式庫隨附的類型使用 XAML，就必須宣告並對應含有前置詞的 XAML 命名空間。 請在元素用法中使用該前置詞，以參考您的程式庫中已定義的類型。 您通常會在根元素以及其他 XAML 命名空間定義中，將前置詞對應宣告為 **xmlns** 屬性。
 
-若要建立您自己的命名空間定義來參考自訂類型，首先要指定關鍵字 **xmlns:**，接著是您想要的前置詞。 該屬性的值必須包含關鍵字 **using:** 做為值的第一個部分。 此值的其餘部分為字串語彙基元，依名稱參考特定程式碼支援命名空間 (其中包含您自訂的類型)。
+若要建立您自己的命名空間定義來參考自訂類型，首先要指定關鍵字 **xmlns:** ，接著是您想要的前置詞。 該屬性的值必須包含關鍵字 **using:** 做為值的第一個部分。 此值的其餘部分為字串語彙基元，依名稱參考特定程式碼支援命名空間 (其中包含您自訂的類型)。
 
 前置詞定義了標記語彙基元，這個標記語彙基元是用來參考該 XAML 檔案中標記剩餘部分的那個 XAML 命名空間。 冒號字元 (:) 是放在前置詞以及 XAML 命名空間內要參考的實體之間。
 
 例如，前置詞對應的屬性語法`myTypes`命名空間`myCompany.myTypes`是： `    xmlns:myTypes="using:myCompany.myTypes"`，和具代表性的項目使用方式是： `<myTypes:CustomButton/>`
 
-如需自訂類型的對應 XAML 命名空間的詳細資訊，包括 Visual c + + 元件擴充功能的特殊考量 (C + + /CX)，請參閱[XAML 命名空間和命名空間對應](xaml-namespaces-and-namespace-mapping.md)。
+如需自訂類型的對應 XAML 命名空間的詳細資訊，包括 視覺效果的特殊考量C++元件擴充功能 (C++/CX)，請參閱 < [XAML 命名空間和命名空間對應](xaml-namespaces-and-namespace-mapping.md)。
 
 ## <a name="other-xaml-namespaces"></a>其他 XAML 命名空間
 
@@ -104,21 +104,21 @@ Windows 執行階段 XAML 支援下列標記延伸，它們定義在預設的 XA
 
 -   [{xBind}](x-bind-markup-extension.md)：支援資料繫結，執行在編譯階段產生的特殊用途程式碼，將屬性評估延後到執行階段。 這個標記延伸可支援大範圍的引數。
 -   [{Binding}](binding-markup-extension.md)：支援資料繫結，執行一般用途的執行階段物件檢查，將屬性評估延後到執行階段。 這個標記延伸可支援大範圍的引數。
--   [{StaticResource}](staticresource-markup-extension.md)：支援參考定義在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的資源值。 這些資源可以位於不同的 XAML 檔案中，但最終必須能夠讓 XAML 剖析器在載入時找到。 `{StaticResource}` 用法的引數會識別 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中有索引鍵資源的索引鍵 (名稱)。
+-   [{StaticResource}](staticresource-markup-extension.md)：支援參考定義在 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中的資源值。 這些資源可以位於不同的 XAML 檔案中，但最終必須能夠讓 XAML 剖析器在載入時找到。 `{StaticResource}` 用法的引數會識別 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中有索引鍵資源的索引鍵 (名稱)。
 -   [{ThemeResource}](themeresource-markup-extension.md)：類似 [{StaticResource}](staticresource-markup-extension.md)，但可回應執行階段佈景主題變更。 {ThemeResource} 經常出現在 Windows 執行階段預設 XAML 範本中，因為大部分的這類範本其設計目的是為了提供相容性給在 app 執行時切換佈景主題的使用者。
 -   [{TemplateBinding}](templatebinding-markup-extension.md)：[{Binding}](binding-markup-extension.md) 的一種特殊情況，可支援 XAML 中的控制項範本及其在執行階段的最終用法。
 -   [{RelativeSource}](relativesource-markup-extension.md)：啟用特定格式的範本繫結，其中的值是來自範本化的父系。
 -   [{CustomResource}](customresource-markup-extension.md)：用於進階資源查詢案例。
 
-Windows 執行階段也支援 [{x:Null} 標記延伸](x-null-markup-extension.md)。 您可以在 XAML 中使用這個標記延伸，將 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) 值設定為 **null**。 例如，在 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 的控制項範本使用這個標記延伸，會將 **null** 解譯為不確定的檢查狀態 (觸發 "Indeterminate" 視覺狀態)。
+Windows 執行階段也支援 [{x:Null} 標記延伸](x-null-markup-extension.md)。 您可以在 XAML 中使用這個標記延伸，將 [**Nullable**](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN) 值設定為 **null**。 例如，在 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的控制項範本使用這個標記延伸，會將 **null** 解譯為不確定的檢查狀態 (觸發 "Indeterminate" 視覺狀態)。
 
 標記延伸通常會從 app 物件圖形的一些其他部分傳回現有的執行個體，或將值延遲到執行階段。 因為您可以使用標記延伸做為屬性值，這也是典型的用法，所以您通常會看到標記延伸為參考類型屬性提供值，這些參考類型屬性可能需要其他屬性元素語法。
 
-例如，以下是從 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 參考可重複使用的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 的語法：`<Button Style="{StaticResource SearchButtonStyle}"/>`。 [  **Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 是參考類型，而非簡單值，所以如果沒有 `{StaticResource}` 用法，您就需要 `<Button.Style>` 屬性元素和其中的 `<Style>` 定義，才能設定 [**FrameworkElement.Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 屬性。
+例如，以下是從 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 參考可重複使用的 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 的語法：`<Button Style="{StaticResource SearchButtonStyle}"/>`。 [  **Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 是參考類型，而非簡單值，所以如果沒有 `{StaticResource}` 用法，您就需要 `<Button.Style>` 屬性元素和其中的 `<Style>` 定義，才能設定 [**FrameworkElement.Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) 屬性。
 
 透過使用標記延伸，可以在 XAML 中設定的每一個屬性可能都可以在屬性語法中設定。 即使屬性不支援直接物件具現化的屬性語法，您還是可以使用屬性語法提供屬性的參考值。 或者，您可以啟用延遲一般需求的特定行為，讓值類型或最新建立的參考類型填入 XAML 屬性。
 
-舉例來說，下一個 XAML 範例會使用屬性語法設定 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 屬性值。 [  **Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 屬性會接受 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 類別的執行個體 (一個預設無法使用屬性語法字串建立的參考類型)。 但是，在此案例中，屬性參考特定的標記延伸 [StaticResource](staticresource-markup-extension.md)。 在處理該標記延伸時，它會傳回對 **Style** 元素的參考，該元素是稍早在資源字典中定義為索引鍵資源的元素。
+舉例來說，下一個 XAML 範例會使用屬性語法設定 [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 的 [**Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) 屬性值。 [  **Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) 屬性會接受 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 類別的執行個體 (一個預設無法使用屬性語法字串建立的參考類型)。 但是，在此案例中，屬性參考特定的標記延伸 [StaticResource](staticresource-markup-extension.md)。 在處理該標記延伸時，它會傳回對 **Style** 元素的參考，該元素是稍早在資源字典中定義為索引鍵資源的元素。
 
 ```xml
 <Canvas.Resources>
@@ -141,13 +141,13 @@ Windows 執行階段也支援 [{x:Null} 標記延伸](x-null-markup-extension.md
 
 XAML 是物件與物件屬性的宣告式語言，但也包含將事件處理常式附加到標記物件的語法。 XAML 事件語法可以接著透過 Windows 執行階段的程式撰寫模型，整合 XAML 宣告的事件。 您可以在處理事件的物件中指定事件名稱做為屬性名稱。 對於屬性值，您可以指定在程式碼定義的事件處理函式名稱。 XAML 處理器會使用這個名稱在載入的物件樹中建立委派表示法，並將指定的處理常式新增到內部處理常式清單。 幾乎所有的 Windows 執行階段應用程式都是由標記與程式碼後置來源所定義。
 
-以下是一個簡單範例。 [  **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 類別支援一個名為 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 的事件。 您可以為 **Click** 撰寫一個處理常式，執行在使用者按一下 **Button** 後應該叫用的程式碼。 在 XAML 中，指定 **Click** 做為 **Button** 上的屬性。 針對屬性值提供一個字串，此字串是您處理常式的方法名稱。
+以下是一個簡單範例。 [  **Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 類別支援一個名為 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 的事件。 您可以為 **Click** 撰寫一個處理常式，執行在使用者按一下 **Button** 後應該叫用的程式碼。 在 XAML 中，指定 **Click** 做為 **Button** 上的屬性。 針對屬性值提供一個字串，此字串是您處理常式的方法名稱。
 
 ```xml
 <Button Click="showUpdatesButton-Click">Show updates</Button>
 ```
 
-當您編譯時，現在編譯器會預期在程式碼後置檔案中以及在 XAML 頁面之 [x:Class](x-class-attribute.md) 值所宣告的命名空間中，將定義一個名為 `showUpdatesButton-Click` 的方法。 此外，該方法必須符合 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的委派協定。 例如：
+當您編譯時，現在編譯器會預期在程式碼後置檔案中以及在 XAML 頁面之 [x:Class](x-class-attribute.md) 值所宣告的命名空間中，將定義一個名為 `showUpdatesButton-Click` 的方法。 此外，該方法必須符合 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件的委派協定。 例如: 
 
 ```csharp
 namespace App1
@@ -198,15 +198,15 @@ namespace App1
 
 在專案中，XAML 會寫成 .xaml 檔案，您可以使用偏好的語言 (C#、Visual Basic、C++/CX) 來撰寫程式碼後置檔案。 當某個 XAML 檔案以標記編譯成專案建置動作的一部分時，是透過將命名空間與類別指定為 XAML 頁面根元素的 [x:Class](x-class-attribute.md) 屬性，以識別每個 XAML 頁面的 XAML 程式碼後置檔案位置。 如需這些機制在 XAML 中如何運作與它們和程式撰寫模型及 app 模型的關聯的相關資訊，請參閱[事件與路由事件概觀](events-and-routed-events-overview.md)。
 
-**附註**  For c + + /CX 有兩個程式碼後置檔案，其中一個是標頭 (。 xaml.h)，另一個是實作 (。 xaml.cpp)。 實作會參考標頭，技術上來說，它是代表程式碼後置連線進入點的標頭。
+**附註**  的C++/CX 有兩個程式碼後置檔案，其中一個是標頭 (。 xaml.h)，另一個是實作 (。 xaml.cpp)。 實作會參考標頭，技術上來說，它是代表程式碼後置連線進入點的標頭。
 
 ## <a name="resource-dictionaries"></a>資源字典
 
-建立 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 是一般的工作，通常透過將資源字典編寫為 XAML 頁面的區域或個別的 XAML 檔案來完成。 資源字典及其使用方式是一個大範圍的概念，不在本主題的討論範圍內。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。
+建立 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 是一般的工作，通常透過將資源字典編寫為 XAML 頁面的區域或個別的 XAML 檔案來完成。 資源字典及其使用方式是一個大範圍的概念，不在本主題的討論範圍內。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
 
 ## <a name="xaml-and-xml"></a>XAML 與 XML
 
-XAML 語言基本上是以 XML 語言為基礎。 但 XAML 大幅擴充了 XML。 具體來說，由於它與支援類型概念的關係，因此處理結構描述概念的方式相當不同，並且會新增語言元素，像是附加的成員與標記延伸。 **xml:lang** 在 XAML 中有效，但會影響執行階段而非剖析行為，並且通常會產生別名到架構層級屬性。 如需詳細資訊，請參閱 [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066)。 **xml:base** 在標記中有效，但剖析器會忽略它。 **xml:space** 有效，但只與 [XAML 與空格](xaml-and-whitespace.md)主題中描述的案例有關。 **encoding** 屬性在 XAML 中有效。 僅支援 UTF-8 與 UTF-16 編碼。 不支援 UTF-32 編碼。
+XAML 語言基本上是以 XML 語言為基礎。 但 XAML 大幅擴充了 XML。 具體來說，由於它與支援類型概念的關係，因此處理結構描述概念的方式相當不同，並且會新增語言元素，像是附加的成員與標記延伸。 **xml:lang** 在 XAML 中有效，但會影響執行階段而非剖析行為，並且通常會產生別名到架構層級屬性。 如需詳細資訊，請參閱 [**FrameworkElement.Language**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.language)。 **xml:base** 在標記中有效，但剖析器會忽略它。 **xml:space** 有效，但只與 [XAML 與空格](xaml-and-whitespace.md)主題中描述的案例有關。 **encoding** 屬性在 XAML 中有效。 僅支援 UTF-8 與 UTF-16 編碼。 不支援 UTF-32 編碼。
 
 ###  <a name="case-sensitivity-in-xaml"></a>XAML 中的區分大小寫功能
 
@@ -222,7 +222,7 @@ XAML 在應用程式開發程序中扮演了數個重要的角色。
 
 -   如果您是使用 C#、Visual Basic 或 C++/CX 進行程式設計，XAML 是宣告應用程式 UI 以及該 UI 中元素的主要格式。 通常您的專案至少會有一個 XAML 檔案來表示應用程式最初顯示 UI 的頁面隱喻。 其他的 XAML 檔案可以為瀏覽 UI 宣告其他頁面。 其他 XAML 檔案可以宣告資源，如範本或樣式。
 -   您使用 XAML 格式來宣告套用到應用程式中控制項和 UI 的樣式和範本。
--   為了將現有控制項範本化，或如果您定義的控制項會提供預設範本做為控制項套件的一部分，您可能會使用樣式和範本。 當您使用 XAML 定義樣式與範本時，通常會將相關的 XAML 宣告為具有 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 根的個別 XAML 檔案。
+-   為了將現有控制項範本化，或如果您定義的控制項會提供預設範本做為控制項套件的一部分，您可能會使用樣式和範本。 當您使用 XAML 定義樣式與範本時，通常會將相關的 XAML 宣告為具有 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 根的個別 XAML 檔案。
 -   XAML 是設計工具支援的常見格式，可以在不同的設計工具應用程式之間建立應用程式 UI 和交換 UI 設計。 最特別的是，應用程式的 XAML 可以在不同的 XAML 設計工具 (或工具內的設計視窗) 之間交換使用。
 -   有數種其他技術也可以在 XAML 中定義基本 UI。 和 Windows Presentation Foundation (WPF) XAML 與 Microsoft Silverlight XAML 類似，Windows 執行階段的 XAML 會使用其共用預設 XAML 命名空間的相同 URI。 Windows 執行階段的 XAML 詞彙與 Silverlight 也會使用的 UI XAML 詞彙大幅重疊，而 WPF 使用的 UI XAML 詞彙重疊程度則較低。 因此，XAML 會為 UI 升級原先定義前導技術 (也使用 XAML) 的有效移轉路徑。
 -   XAML 定義 UI 的視覺外觀，而關聯的程式碼後置檔案定義邏輯。 您不用變更程式碼後置中的邏輯就可以調整 UI 設計。 XAML 簡化了設計人員與開發人員之間的工作流程。
@@ -232,15 +232,15 @@ XAML 在應用程式開發程序中扮演了數個重要的角色。
 
 ## <a name="optimize-your-xaml-for-load-performance"></a>針對載入效能將您的 XAML 最佳化
 
-以下是使用效能最佳做法定義 XAML 中 UI 元素的一些祕訣。 這些祕訣中有許多與使用 XAML 資源相關，但是基於方便性，所以在一般 XAML 概觀這裡列出。 如需有關 XAML 資源的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。 如需更多有關效能的提示，包含特意示範一些您應該在 XAML 中避免的不良效能做法的 XAML，請參閱[最佳化您的 XAML 標記](https://msdn.microsoft.com/library/windows/apps/mt204779)。
+以下是使用效能最佳做法定義 XAML 中 UI 元素的一些祕訣。 這些祕訣中有許多與使用 XAML 資源相關，但是基於方便性，所以在一般 XAML 概觀這裡列出。 如需有關 XAML 資源的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。 如需更多有關效能的提示，包含特意示範一些您應該在 XAML 中避免的不良效能做法的 XAML，請參閱[最佳化您的 XAML 標記](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-xaml-loading)。
 
--   如果您經常在 XAML 中使用相同的色彩筆刷，可定義 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 做為資源，而不要每次都使用具名的色彩做為屬性。
--   如果您在一個以上的 UI 頁面使用相同的資源，可考慮在 [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338) 中定義該資源，而不要在每一個頁面上定義。 相反地，如果只有一個頁面使用某個資源，就不要在 **Application.Resources** 中定義該資源，而是只針對需要使用的頁面定義。 這在設計 app 期間用來分解 XAML 非常好用，同時對於剖析 XAML 期間的效能非常有助益。
+-   如果您經常在 XAML 中使用相同的色彩筆刷，可定義 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 做為資源，而不要每次都使用具名的色彩做為屬性。
+-   如果您在一個以上的 UI 頁面使用相同的資源，可考慮在 [**Application.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resources) 中定義該資源，而不要在每一個頁面上定義。 相反地，如果只有一個頁面使用某個資源，就不要在 **Application.Resources** 中定義該資源，而是只針對需要使用的頁面定義。 這在設計 app 期間用來分解 XAML 非常好用，同時對於剖析 XAML 期間的效能非常有助益。
 -   針對您應用程式封裝的資源檢查未使用的資源 (具有索引鍵，但是在使用它的應用程式中並沒有 [StaticResource](staticresource-markup-extension.md) 參考的資源)。 請先從您的 XAML 中移除這些資源，然後再發行您的應用程式。
--   如果您使用個別的 XAML 檔案提供設計資源 ([**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801))，可考慮將未使用的資源加上註解，或從這些檔案中移除。 即使您在一個以上的應用程式中使用共用的 XAML 起點或是使用共用的 XAML 起點來為所有應用程式提供常見資源，每次仍是由您的應用程式封裝 XAML 資源，而且可能必須載入它們。
+-   如果您使用個別的 XAML 檔案提供設計資源 ([**MergedDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries))，可考慮將未使用的資源加上註解，或從這些檔案中移除。 即使您在一個以上的應用程式中使用共用的 XAML 起點或是使用共用的 XAML 起點來為所有應用程式提供常見資源，每次仍是由您的應用程式封裝 XAML 資源，而且可能必須載入它們。
 -   不要定義組合項目中不需要的 UI 元素，盡可能使用預設的控制項範本 (這些範本已經針對載入效能進行測試與驗證)。
--   使用容器 (例如，[**Border**](https://msdn.microsoft.com/library/windows/apps/br209250))，而不要刻意過度使用 UI 元素。 基本上，請不要多次繪製同一個像素。 如需過度繪製及如何測試它的詳細資訊，請參閱 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/hh701823)。
--   針對 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 使用預設項目範本；這些範本具備特殊的 **Presenter** 邏輯，可解決在為大量清單項目建置視覺化樹狀結構時發生的效能問題。
+-   使用容器 (例如，[**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border))，而不要刻意過度使用 UI 元素。 基本上，請不要多次繪製同一個像素。 如需過度繪製及如何測試它的詳細資訊，請參閱 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled)。
+-   針對 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 或 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 使用預設項目範本；這些範本具備特殊的 **Presenter** 邏輯，可解決在為大量清單項目建置視覺化樹狀結構時發生的效能問題。
 
 ## <a name="debugging-xaml"></a>偵錯 XAML
 
@@ -250,8 +250,8 @@ XAML 在應用程式開發程序中扮演了數個重要的角色。
 
 XAML 通常是在 IDE 內 (如 Visual Studio) 以及它的其中一個 XAML 設計表面內進行編輯。 Visual Studio 通常可在您編輯的時候提供設計階段驗證及 XAML 來源的錯誤檢查。 例如，當您輸入錯誤的屬性值時，它會立即在 XAML 文字編輯器中顯示「波浪線」，您甚至不用等 XAML 編譯傳送，就能看到 UI 定義中有錯誤。
 
-一旦 app 實際執行之後，如果設計階段未偵測到任何 XAML 剖析錯誤，通用語言執行階段 (CLR) 就會將它們報告為 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 如需可在執行階段 **XamlParseException** 執行哪些動作的詳細資訊，請參閱 [C# 或 Visual Basic 中 Windows 執行階段 app 的例外狀況處理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
+一旦 app 實際執行之後，如果設計階段未偵測到任何 XAML 剖析錯誤，通用語言執行階段 (CLR) 就會將它們報告為 [**XamlParseException**](https://docs.microsoft.com/dotnet/api/windows.ui.xaml.markup.xamlparseexception?view=dotnet-uwp-10.0)。 如需可在執行階段 **XamlParseException** 執行哪些動作的詳細資訊，請參閱 [C# 或 Visual Basic 中 Windows 執行階段 app 的例外狀況處理](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10))。
 
-**附註**  應用程式，使用 C + + /CX 程式碼不會取得特定[ **XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是，例外狀況中的訊息可清楚說明錯誤來源是與 XAML 相關，而且其中包含內容資訊，例如 XAML 檔案中的行號，就像 **XamlParseException** 一樣。
+**附註**  使用的應用程式C++/CX 程式碼不會取得特定[ **XamlParseException**](https://docs.microsoft.com/dotnet/api/windows.ui.xaml.markup.xamlparseexception?view=dotnet-uwp-10.0)。 但是，例外狀況中的訊息可清楚說明錯誤來源是與 XAML 相關，而且其中包含內容資訊，例如 XAML 檔案中的行號，就像 **XamlParseException** 一樣。
 
-如需偵錯 Windows 執行階段 app 的詳細資訊，請參閱[啟動偵錯工作階段](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)。
+如需偵錯 Windows 執行階段 app 的詳細資訊，請參閱[啟動偵錯工作階段](https://docs.microsoft.com/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml?view=vs-2015)。

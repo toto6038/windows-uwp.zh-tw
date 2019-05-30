@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de5ba146c8241598527dd268d604fcc9bb97d6d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a29fbe49e45b819ddf4ffc3172445996d3622360
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662353"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370621"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>浮點數的規則
 
@@ -59,7 +59,7 @@ Direct3D 支援數個浮點表示法。 所有浮點數計算運作都在 IEEE 7
 -   運算的 NaN 輸入一律會在輸出產生 NaN。 但 NaN 的精確位元模式不必保持不變 (除非運算操作是原始移動指示 - 不會修改資料)。
 -   只有一個運算元是 NaN 的最小值或最大值運算，會傳回其他運算元做為結果 (與我們前面所說的比較規則相反)。 這是 IEEE 754R 規則。
 
-    浮點最小值和最大值運算的 IEEE-754R 規格指出，如果其中一個最小值或最大值的輸入是 quiet QNaN 值，運算結果就是另一個參數。 例如：
+    浮點最小值和最大值運算的 IEEE-754R 規格指出，如果其中一個最小值或最大值的輸入是 quiet QNaN 值，運算結果就是另一個參數。 例如: 
 
     ```ManagedCPlusPlus
     min(x,QNaN) == min(QNaN,x) == x (same for max)
@@ -82,13 +82,13 @@ Direct3D 支援數個浮點表示法。 所有浮點數計算運作都在 IEEE 7
 -   x +/- 0.0f 一律產生 x (除了會排清 denorm)。 但是 -0 + 0 = +0。
 -   合併運算 (例如 mad、dp3) 產生的結果肯定比非合併擴展運算可能最差的序列評估順序精確。 可能最差順序的定義 (基於誤差目的) 對於特定合併運算來說並非固定的定義；它取決於特殊的輸入值。 對於非合併擴展的個別步驟，每一個允許 1 ULP 誤差 (或對於 Direct3D 呼叫的任何指令，若 lax 誤差多於 1 ULP，則允許越大 lax 誤差)。
 -   合併運算遵循與非合併運算相同的 NaN 規則。
--   sqrt 和 rcp 有 1 ULP 誤差。 著色器倒數和倒數平方根指令 [**rcp**](https://msdn.microsoft.com/library/windows/desktop/hh447205) 和 [**rsq**](https://msdn.microsoft.com/library/windows/desktop/hh447221) 各有自己較寬鬆的精確需求。
+-   sqrt 和 rcp 有 1 ULP 誤差。 著色器倒數和倒數平方根指令 [**rcp**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh447205(v=vs.85)) 和 [**rsq**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/rsq--sm4---asm-) 各有自己較寬鬆的精確需求。
 -   乘和除各在 32 位元浮點精準度運算 (乘積的精準度為 0.5 ULP，倒數的精準度為 1.0 ULP)。 如果直接實作 x/y，結果必須大於或等於比兩步驟方法的精準度。
 
 ## <a name="span-iddoubleprec64bitspanspan-iddoubleprec64bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64 位元 （雙精確度） 浮動點規則
 
 
-硬體和顯示器驅動程式選擇性支援雙精確度浮點。 若要表示支援，當您呼叫[ **ID3D11Device::CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497)具有[ **D3D11\_功能\_雙精度浮點數**](https://msdn.microsoft.com/library/windows/desktop/ff476124#d3d11-feature-doubles)，驅動程式集**DoublePrecisionFloatShaderOps**的[ **D3D11\_功能\_資料\_雙精度浮點數**](https://msdn.microsoft.com/library/windows/desktop/ff476127)設為 TRUE。 驅動程式和硬體必須支援所有雙精確度浮點指令。
+硬體和顯示器驅動程式選擇性支援雙精確度浮點。 若要表示支援，當您呼叫[ **ID3D11Device::CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport)具有[ **D3D11\_功能\_雙精度浮點數**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_feature)，驅動程式集**DoublePrecisionFloatShaderOps**的[ **D3D11\_功能\_資料\_雙精度浮點數**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_doubles)設為 TRUE。 驅動程式和硬體必須支援所有雙精確度浮點指令。
 
 雙精確度指令遵循 IEEE 754R 行為需求。
 
@@ -148,9 +148,9 @@ float11/float10 值 (v) 遵循下列規則：
 
 [附錄](appendix.md)
 
-[資源](https://msdn.microsoft.com/library/windows/desktop/ff476894)
+[資源](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources)
 
-[紋理](https://msdn.microsoft.com/library/windows/desktop/ff476902)
+[紋理](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 
