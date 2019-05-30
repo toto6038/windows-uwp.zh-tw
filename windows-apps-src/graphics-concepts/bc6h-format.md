@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f147f4c30d2a662806df5928fc79178522b9b6a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 50c8fa623130412688f14307fa46540c81f38554
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633093"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370478"
 ---
 # <a name="bc6h-format"></a>BC6H 格式
 
@@ -28,7 +28,7 @@ BC6H 由下列的 DXGI\_格式的列舉值：
 
 -   **DXGI\_格式\_BC6H\_TYPELESS**。
 -   **DXGI\_格式\_BC6H\_UF16**。 此 BC6H 格式在 16 位元浮點數的色彩通道數值中，不會使用正負號位元。
--   **DXGI\_格式\_BC6H\_SF16**。 此 BC6H 格式在 16 位元浮點數的色彩通道數值中，使用正負號位元。
+-   **DXGI\_FORMAT\_BC6H\_SF16**. 此 BC6H 格式在 16 位元浮點數的色彩通道數值中，使用正負號位元。
 
 **附註**  浮動點格式，色頻的 16 位元通常稱為 「 半"浮點格式。 此格式以下列位元配置︰
 |                       |                                                 |
@@ -40,7 +40,7 @@ BC6H 由下列的 DXGI\_格式的列舉值：
 
  
 
-BC6H 格式可用於 [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (包括陣列)、Texture3D，或 TextureCube (包括陣列) 紋理資源。 同樣地，此格式適用於任何與這些資源建立關聯的 Mipmap 表面。
+BC6H 格式可用於 [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (包括陣列)、Texture3D，或 TextureCube (包括陣列) 紋理資源。 同樣地，此格式適用於任何與這些資源建立關聯的 Mipmap 表面。
 
 BC6H 使用固定的 16 位元組 (128 位元) 區塊大小，以及固定之 4x4 材質的磚大小。 與之前的 BC 格式一樣，大於支援之磚大小 (4x4) 的紋理影像，程式會使用多重區塊對其進行壓縮。 此定址身分識別也適用於 3D 影像、Mipmap、立方體貼圖，以及紋理陣列。 所有影像磚都必須格式相同。
 
@@ -143,18 +143,18 @@ decompress_bc6h(x, y, block)
 |-------|-------------------|
 | m     | mode              |
 | d     | 圖形索引       |
-| rw    | endpt\[0\]。A\[0\] |
-| rx    | endpt\[0\]。B\[0\] |
-| ry    | endpt\[1\]。A\[0\] |
-| rz    | endpt\[1\]。B\[0\] |
-| gw    | endpt\[0\]。A\[1\] |
-| gx    | endpt\[0\]。B\[1\] |
+| rw    | endpt\[0\].A\[0\] |
+| rx    | endpt\[0\].B\[0\] |
+| ry    | endpt\[1\].A\[0\] |
+| rz    | endpt\[1\].B\[0\] |
+| gw    | endpt\[0\].A\[1\] |
+| gx    | endpt\[0\].B\[1\] |
 | gy    | endpt\[1\]。A\[1\] |
-| gz    | endpt\[1\]。B\[1\] |
-| bw    | endpt\[0\]。A\[2\] |
-| bx    | endpt\[0\]。B\[2\] |
-| 由    | endpt\[1\]。A\[2\] |
-| bz    | endpt\[1\]。B\[2\] |
+| gz    | endpt\[1\].B\[1\] |
+| bw    | endpt\[0\].A\[2\] |
+| bx    | endpt\[0\].B\[2\] |
+| 由    | endpt\[1\].A\[2\] |
+| bz    | endpt\[1\].B\[2\] |
 
  
 

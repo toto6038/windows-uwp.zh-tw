@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立正式發行前小眾測試版
 ms.localizationpriority: medium
-ms.openlocfilehash: af5ffe0dd72f0c3aae21a2dc522b469358626bab
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0c71dfc05bf2f283652087620848396b731871cd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603453"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371967"
 ---
 # <a name="create-a-package-flight"></a>建立套件正式發行前小眾測試版
 
@@ -20,7 +20,7 @@ ms.locfileid: "57603453"
 > [!NOTE]
 > 這個方法會建立一個套件正式發行前小眾測試版但不含任何提交。 若要為套件正式發行前小眾測試版建立提交，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)中的方法。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -47,18 +47,18 @@ ms.locfileid: "57603453"
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字串 | 必要。 您想要建立套件正式發行前小眾測試版之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | 字串 | 必要。 您想要建立套件正式發行前小眾測試版之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 
 
 ### <a name="request-body"></a>要求本文
 
 要求本文包含下列參數。
 
-|  參數  |  類型  |  描述  |  必要  |
+|  參數  |  類型  |  描述  |  必要項  |
 |------|------|------|------|
 |  friendlyName  |  字串  |  開發人員指定的套件正式發行前小眾測試版名稱。  |  否  |
-|  groupIds  |  陣列  |  此字串陣列包含與套件正式發行前小眾測試版相關聯的正式發行前小眾測試版群組的識別碼。 如需有關正式發行前小眾測試版群組的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |  否  |
-|  rankHigherThan  |  字串  |  排名位於目前套件正式發行前小眾測試版之下的套件正式發行前小眾測試版易記名稱。 如果您未設定此參數，新的套件正式發行前小眾測試版在所有套件正式發行前小眾測試版當中會排在最高排名。 如需有關正式發行前小眾測試版群組排名的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。    |  否  |
+|  groupIds  |  陣列  |  此字串陣列包含與套件正式發行前小眾測試版相關聯的正式發行前小眾測試版群組的識別碼。 如需有關正式發行前小眾測試版群組的詳細資訊，請參閱[套件正式發行前小眾測試版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。  |  否  |
+|  rankHigherThan  |  字串  |  排名位於目前套件正式發行前小眾測試版之下的套件正式發行前小眾測試版易記名稱。 如果您未設定此參數，新的套件正式發行前小眾測試版在所有套件正式發行前小眾測試版當中會排在最高排名。 如需有關正式發行前小眾測試版群組排名的詳細資訊，請參閱[套件正式發行前小眾測試版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。    |  否  |
 
 
 ### <a name="request-example"></a>要求範例
@@ -100,8 +100,8 @@ Content-Type: application/json
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | flightId            | 字串  | 套件正式發行前小眾測試版的識別碼。 這個值是由合作夥伴中心提供。  |
 | friendlyName           | 字串  | 要求中指定的套件正式發行前小眾測試版名稱。   |  
-| groupIds           | 陣列  | 此字串陣列包含要求中指定，與套件正式發行前小眾測試版相關聯的正式發行前小眾測試版群組的識別碼。 如需有關正式發行前小眾測試版群組的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。   |
-| rankHigherThan           | 字串  | 要求中指定，排名位於目前套件正式發行前小眾測試版之下的套件正式發行前小眾測試版易記名稱。 如需有關正式發行前小眾測試版群組排名的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |
+| groupIds           | 陣列  | 此字串陣列包含要求中指定，與套件正式發行前小眾測試版相關聯的正式發行前小眾測試版群組的識別碼。 如需有關正式發行前小眾測試版群組的詳細資訊，請參閱[套件正式發行前小眾測試版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。   |
+| rankHigherThan           | 字串  | 要求中指定，排名位於目前套件正式發行前小眾測試版之下的套件正式發行前小眾測試版易記名稱。 如需有關正式發行前小眾測試版群組排名的詳細資訊，請參閱[套件正式發行前小眾測試版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。  |
 
 
 ## <a name="error-codes"></a>錯誤碼

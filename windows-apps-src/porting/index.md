@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8805f03f8476bcae8404395c27d9d78952f782
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 937d165d9305a3f4909383e872f49fcf08a3115c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984232"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371594"
 ---
 # <a name="porting-apps-to-windows10"></a>將應用程式移植到 Windows 10
 
 
 本節說明如何將您現有的應用程式移植到通用 Windows 平台 (UWP)，以便您在其中建立單一 Windows 10 應用程式套件，讓客戶安裝於各種不同裝置上。 您的 App 將可受益於令人興奮的新硬體、絕佳的賺錢機會、現代化 API 集、彈性 UI 控制項，以及各種輸入形式 (包括滑鼠/鍵盤、觸控及語音)。
 
-Windows 執行階段 (WinRT) 是可讓您建置通用 Windows 平台 (UWP) app 的一種技術。 您可以參考[何謂通用 Windows 平台 (UWP) app？](https://msdn.microsoft.com/library/windows/apps/dn726767)，了解 WinRT 和 UWP app 的詳細背景。
+Windows 執行階段 (WinRT) 是可讓您建置通用 Windows 平台 (UWP) app 的一種技術。 您可以參考[何謂通用 Windows 平台 (UWP) app？](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp)，了解 WinRT 和 UWP app 的詳細背景。
 
-本移植指南說明您目前 app 的技術與通用 Windows 平台 (UWP) 之間的差異。 一旦了解技術之間的途徑之後，您將能夠鑽研「開發人員中心」的其餘部分，這是一套適用於開發 UWP app 的完整資源。 當您準備好時，從[如何開發市集 app](https://msdn.microsoft.com/library/windows/apps/dn726537) 開始會是個不錯的方式。
+本移植指南說明您目前 app 的技術與通用 Windows 平台 (UWP) 之間的差異。 一旦了解技術之間的途徑之後，您將能夠鑽研「開發人員中心」的其餘部分，這是一套適用於開發 UWP app 的完整資源。 當您準備好時，從[如何開發市集 app](https://docs.microsoft.com/previous-versions/windows/apps/dn726537(v=win.10)) 開始會是個不錯的方式。
 
 | 主題 | 描述 |
 |-------|-------------|
@@ -33,6 +33,6 @@ Windows 執行階段 (WinRT) 是可讓您建置通用 Windows 平台 (UWP) app �
 
 ## <a name="related-topics"></a>相關主題
 
-* [從 WPF 和 Silverlight 移至 WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
-* [從 Android 移至 WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
-* [從 Web 移至 WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
+* [從 WPF 和 Silverlight 移至 WinRT](https://docs.microsoft.com/previous-versions/windows/apps/dn263237(v=win.10))
+* [從 Android 移至 WinRT](https://docs.microsoft.com/previous-versions/windows/apps/jj945421(v=win.10))
+* [從 Web 移至 WinRT](https://docs.microsoft.com/previous-versions/windows/apps/hh465151(v=win.10))

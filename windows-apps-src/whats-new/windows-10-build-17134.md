@@ -5,12 +5,12 @@ keywords: 新功能, 最新動向, 更新, 多項更新, 功能, 新, Windows 10
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d880b2167e718b1ff66aa349c32329e6c19e5b5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b7fe830e07c1daf95928ab747259cb57aaa7a9f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592983"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371344"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>適用於開發人員的 Windows 10 (組建 17134) 的新功能
 
@@ -42,7 +42,7 @@ Fluent Design 更新 | 我們使用新的資訊及指引，更新了許多 Fluen
 功能 | 描述
  :------ | :------
 遊戲開發入門 | 對開發 Windows 10 遊戲感興趣？ 新的[遊戲開發入門](../gaming/getting-started.md)頁面提供您自行完成設定、註冊，以及準備好提交應用程式與遊戲所需執行之動作的完整概觀。
-圖形卡 | 已新增與圖形卡喜好設定及移除作業相關的下列 DXGI API： </br> * [IDXGIFactory6](https://msdn.microsoft.com/library/windows/desktop/mt814823) 介面啟用根據指定之 GPU 喜好設定列舉圖形卡的單一方法。 </br> * [DXGIDeclareAdapterRemovalSupport](https://msdn.microsoft.com/library/windows/desktop/mt814821) 函式可讓處理序指出其任何即將移除的圖形裝置可復原。 </br> * [DXGI_GPU_PREFERENCE](https://msdn.microsoft.com/library/windows/desktop/mt814822) 列舉描述 App 用來執行的 GPU 喜好設定。
+圖形卡 | 已新增與圖形卡喜好設定及移除作業相關的下列 DXGI API： </br> * [IDXGIFactory6](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 介面啟用根據指定之 GPU 喜好設定列舉圖形卡的單一方法。 </br> * [DXGIDeclareAdapterRemovalSupport](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-dxgideclareadapterremovalsupport) 函式可讓處理序指出其任何即將移除的圖形裝置可復原。 </br> * [DXGI_GPU_PREFERENCE](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_gpu_preference) 列舉描述 App 用來執行的 GPU 喜好設定。
 
 ## <a name="develop-windows-apps"></a>開發 Windows 應用程式
 
@@ -114,7 +114,7 @@ Xbox Live 創作者計畫可讓開發人員快速將 UWP 遊戲發行至 Xbox On
 
 ### <a name="one-dev-question---why-was-docments-and-settings-renamed-users"></a>One Dev Question - Documents and Settings 重新命名為 Users 的原因是什麼？
 
-想知道為什麼重新命名 Documents and Settings 目錄嗎？ [Raymond Chen 說明名稱由來，以及變更的原因](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)。 如需有關 Windows 的開發詳細資料及其歷史，請查看 [Raymond 的部落格](https://blogs.msdn.microsoft.com/oldnewthing/)。
+想知道為什麼重新命名 Documents and Settings 目錄嗎？ [Raymond Chen 說明名稱由來，以及變更的原因](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)。 如需有關 Windows 的開發詳細資料及其歷史，請查看 [Raymond 的部落格](https://devblogs.microsoft.com/oldnewthing/)。
 
 
 ## <a name="samples"></a>範例

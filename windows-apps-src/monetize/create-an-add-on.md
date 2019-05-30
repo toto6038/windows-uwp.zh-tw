@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: b358eecd1799e76573cf6d254a80e7a7971bc123
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 00eb1a865631ce51cfa065d27ed00b44c66a6757
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334166"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371261"
 ---
 # <a name="create-an-add-on"></a>建立附加元件
 
@@ -20,7 +20,7 @@ ms.locfileid: "58334166"
 > [!NOTE]
 > 這個方法會建立一個附加元件但不含任何提交。 若要為附加元件建立提交，請參閱[管理附加元件提交](manage-add-on-submissions.md)中的方法。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -50,7 +50,7 @@ ms.locfileid: "58334166"
 |  參數  |  類型  |  描述  |  必要項  |
 |------|------|------|------|
 |  applicationIds  |  陣列  |  此陣列包含此附加元件相關聯之 App 的市集識別碼。 此陣列只支援一個項目。   |  是  |
-|  productId  |  字串  |  附加元件的產品識別碼。 這是可在程式碼中用來參考附加元件的識別碼。 如需詳細資訊，請參閱[設定您的產品類型和產品識別碼](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。  |  是  |
+|  productId  |  字串  |  附加元件的產品識別碼。 這是可在程式碼中用來參考附加元件的識別碼。 如需詳細資訊，請參閱[設定您的產品類型和產品識別碼](https://docs.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。  |  是  |
 |  productType  |  字串  |  附加元件的產品類型。 支援下列值：**永久性**並**可取用**。  |  是  |
 
 

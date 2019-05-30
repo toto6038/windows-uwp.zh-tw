@@ -8,29 +8,29 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d2c80fd30d158f0890ed70311cdf83dce2058e5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: aef21bc72c7458aecc3ea8f0a3cae275a22d9f08
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644903"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365608"
 ---
 # <a name="manage-issues-with-audio-input"></a>管理音訊輸入的問題
 
 
 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。
 
-> **重要的 Api**:[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)， [ **RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)， [ **SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+> **重要的 Api**:[**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)， [ **RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)， [ **SpeechRecognitionAudioProblem**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
 
 
 ## <a name="assess-audio-input-quality"></a>評定音訊輸入品質
 
 
-在啟用語音辨識功能的情況下，使用您語音辨識器的 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件，以判斷是否有一或多個音訊問題可能在干擾語音輸入。 事件引數 ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) 會提供 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 屬性，用來描述偵測到的音訊輸入問題。
+在啟用語音辨識功能的情況下，使用您語音辨識器的 [**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) 事件，以判斷是否有一或多個音訊問題可能在干擾語音輸入。 事件引數 ([**SpeechRecognitionQualityDegradingEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)) 會提供 [**Problem**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem) 屬性，用來描述偵測到的音訊輸入問題。
 
 太多背景噪音、麥克風靜音，以及說話者的音量或速度，都可能會影響辨識。
 
-我們將在此處設定語音辨識器，並開始接聽 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件。
+我們將在此處設定語音辨識器，並開始接聽 [**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) 事件。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -65,9 +65,9 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 ## <a name="manage-the-speech-recognition-experience"></a>管理語音辨識體驗
 
 
-使用 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 屬性所提供的說明，來協助使用者改善辨識的條件。
+使用 [**Problem**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem) 屬性所提供的說明，來協助使用者改善辨識的條件。
 
-我們將在此處建立 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件的處理常式，這個處理常式會檢查音量大小過低的情況。 然後使用 [**SpeechSynthesizer**](https://msdn.microsoft.com/library/windows/apps/dn298152) 物件，建議使用者嘗試調高說話音量。
+我們將在此處建立 [**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) 事件的處理常式，這個處理常式會檢查音量大小過低的情況。 然後使用 [**SpeechSynthesizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechSynthesis.SpeechSynthesizer) 物件，建議使用者嘗試調高說話音量。
 
 ```CSharp
 private async void speechRecognizer_RecognitionQualityDegrading(

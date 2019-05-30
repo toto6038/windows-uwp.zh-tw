@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fcbaa0a3db826ef971878acd6a553dd7a836508
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b63c9191489ecae54b17cb75b8aa1af32f09fcb8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594963"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363594"
 ---
 # <a name="optical-zoom-and-resizing"></a>視覺化縮放和調整大小
 
@@ -21,7 +21,7 @@ ms.locfileid: "57594963"
 
 本文說明 Windows 縮放和調整元素大小的方式，並提供在應用程式中使用這些互動機制時的使用者經驗指導方針。
 
-> **重要的 Api**:[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [**輸入 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 Api**:[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [**輸入 (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 視覺化縮放可以讓使用者將內容區域內的內容檢視放大 (執行對象是內容區域本身)，而調整大小則可以讓使用者變更一或多個物件的相對大小，卻不變更對該內容區域的檢視 (執行對象是內容區域內的物件)。
 
@@ -49,7 +49,7 @@ ms.locfileid: "57594963"
 -   如果定義了最大和最小大小限制或界限，可以在使用者達到或超出這些界限時，使用視覺化回饋作為顯示。
 -   使用貼齊點來影響縮放和大小調整行為，方法為提供停止操作的邏輯點，並確保檢視區中顯示特定內容子集。 提供一般縮放比例或邏輯檢視的貼齊點，讓使用者可以比較容易選取這些比例。 例如，相片應用程式會提供 100% 比例的大小調整貼齊點，或如果是地圖應用程式，貼齊點對於城市、省以及國家/地區檢視有可能會相當有用。
 
-    貼齊點可以讓使用者不需要太精準就能達到他們的目標。 如果使用的是 XAML，請參閱 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的貼齊點屬性。 若為 JavaScript 和 HTML，請使用 [**-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895)。
+    貼齊點可以讓使用者不需要太精準就能達到他們的目標。 如果使用的是 XAML，請參閱 [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 的貼齊點屬性。 若為 JavaScript 和 HTML，請使用 [ **-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895)。
 
     貼齊點有兩種類型：
 
@@ -85,7 +85,7 @@ ms.locfileid: "57594963"
 * [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [輸入：簡化的手寫範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [輸入：Windows 8 筆勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 （c + +） 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 觸控的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 

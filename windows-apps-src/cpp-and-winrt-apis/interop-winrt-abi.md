@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eee6b75d3ea86c183293ffc27289e9cae2929ce
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: a1745f9ad98ed8dac2e54e17d18467981eafdcec
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291676"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360231"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>C++/WinRT 與 ABI 之間的互通性
 
@@ -104,7 +104,7 @@ int main()
 }
 ```
 
-**as** 函式的實作會呼叫 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 如果您想要僅呼叫 [**AddRef**](https://msdn.microsoft.com/library/windows/desktop/ms691379) 的較低層級轉換，您可以使用 [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) 和 [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) 協助程式函式。 下一個程式碼範例將這些較低層級轉換新增至上述的程式碼範例。
+**as** 函式的實作會呼叫 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 如果您想要僅呼叫 [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 的較低層級轉換，您可以使用 [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) 和 [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) 協助程式函式。 下一個程式碼範例將這些較低層級轉換新增至上述的程式碼範例。
 
 ```cppwinrt
 int main()
@@ -173,7 +173,7 @@ T convert_from_abi(::IUnknown* from)
 }
 ```
 
-函式簡單呼叫 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) 來為要求的 C++/WinRT 類型的預設介面詢問。
+函式簡單呼叫 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 來為要求的 C++/WinRT 類型的預設介面詢問。
 
 如我們所了解，協助程式函式不需要從 C++/WinRT 物件轉換至對等 ABI 介面指標。 只要使用 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (或[**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) 成員函式為要求的介面詢問。 **as** 和 **try_as** 函式傳回一個 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 包裝要求的 ABI 類型的物件。
 
@@ -244,8 +244,8 @@ int main()
 ```
 
 ## <a name="important-apis"></a>重要 API
-* [AddRef 函式](https://msdn.microsoft.com/library/windows/desktop/ms691379)
-* [QueryInterface 函式](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [AddRef 函式](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
+* [QueryInterface 函式](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)

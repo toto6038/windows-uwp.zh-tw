@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c12acd2148c8c85d69354a71c016d7a7230e590b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 07707160846f3d63c7d0c097fb7b84def08be9e7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605453"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366697"
 ---
 # <a name="drag-animations"></a>拖曳動畫
 
@@ -22,7 +22,7 @@ ms.locfileid: "57605453"
 
 在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。
 
-> **重要的 Api**:[**DragItemThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br243174)
+> **重要的 Api**:[**DragItemThemeAnimation 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -57,12 +57,12 @@ ms.locfileid: "57605453"
 ## <a name="related-articles"></a>相關文章
 
 **適用於開發人員**
-* [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [以動畫顯示拖放序列](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**DragItemThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br243174)
-* [**DropTargetItemThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br243186)
-* [**DragOverThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br243180)
+* [動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [以動畫顯示拖放序列](https://docs.microsoft.com/previous-versions/windows/apps/jj649427(v=win.10))
+* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**DragItemThemeAnimation 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
+* [**DropTargetItemThemeAnimation 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.droptargetitemthemeanimation.)
+* [**DragOverThemeAnimation 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation.)
 
 
  

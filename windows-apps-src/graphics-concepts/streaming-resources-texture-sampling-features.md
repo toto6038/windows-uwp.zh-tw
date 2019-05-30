@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b6290fba9d4194df78c39902b8d96e952134682
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: eb0e870aa467641f82d24f03278a199ab56d0c8d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607413"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370977"
 ---
 # <a name="streaming-resources-texture-sampling-features"></a>串流資源紋理取樣功能
 
@@ -27,12 +27,12 @@ ms.locfileid: "57607413"
 ## <a name="span-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanshader-status-feedback-about-mapped-areas"></a><span id="Shader_status_feedback_about_mapped_areas"></span><span id="shader_status_feedback_about_mapped_areas"></span><span id="SHADER_STATUS_FEEDBACK_ABOUT_MAPPED_AREAS"></span>有關對應的區域著色器狀態的意見反應
 
 
-讀取和/或寫入串流資源的任何著色器指令，會導致狀態被記錄。 這個狀態公開為進入 32 位元暫時暫存器之每個資源存取指令的選擇性額外傳回值。 傳回值的內容是不透明。 也就是，不允許著色器程式直接讀取。 但是，您可以使用[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 函式來擷取狀態資訊。
+讀取和/或寫入串流資源的任何著色器指令，會導致狀態被記錄。 這個狀態公開為進入 32 位元暫時暫存器之每個資源存取指令的選擇性額外傳回值。 傳回值的內容是不透明。 也就是，不允許著色器程式直接讀取。 但是，您可以使用[**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) 函式來擷取狀態資訊。
 
 ## <a name="span-idfullymappedcheckspanspan-idfullymappedcheckspanspan-idfullymappedcheckspanfully-mapped-check"></a><span id="Fully_mapped_check"></span><span id="fully_mapped_check"></span><span id="FULLY_MAPPED_CHECK"></span>完全對應的核取
 
 
-[  **CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 函式解譯從記憶體存取傳回的狀態，並指出存取的所有資料是否都在資源中對應。 如果資料已對應，**CheckAccessFullyMapped** 傳回 true (0xFFFFFFFF)，如果資料未對應則傳回 false (0x00000000)。
+[  **CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) 函式解譯從記憶體存取傳回的狀態，並指出存取的所有資料是否都在資源中對應。 如果資料已對應，**CheckAccessFullyMapped** 傳回 true (0xFFFFFFFF)，如果資料未對應則傳回 false (0x00000000)。
 
 在篩選作業時，有時候特定紋素的加權會變成 0.0。 材質座標落在材質中心直接的線性範例是範例：3 （它們是的哪些可能會因硬體） 其他材質參與的篩選條件，但為 0 的加權。 這些 0 加權紋素完全不會貢獻到篩選結果，如果它們恰巧落在 **NULL** 磚，它們不算是未對應的存取。 請注意，相同的保證適用於包括多個 mip 層級的紋理篩選；如果其中一個 mipmap 的紋素未對應，但在那些紋素的加權是 0，那些紋素不算是未對應的存取。
 
@@ -40,7 +40,7 @@ ms.locfileid: "57607413"
 
 著色器可以檢查狀態，並在失敗時追求任何您想要的動作過程。 例如，動作過程可以是記錄「遺漏」(例如透過 UAV 寫入) 和/或發出另一個讀取 (鉗制到已知對應的更粗略 LOD)。 應用程式可能也要追蹤成功存取，以了解對應磚集的哪個部分被存取。
 
-記錄的一個複雜問題是沒有機制存在回報一組確切的磚被存取。 應用程式可做保守猜測，根據了解它用來存取的座標，以及使用 LOD 指令。例如，[**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680) 傳回硬體 LOD 計算。
+記錄的一個複雜問題是沒有機制存在回報一組確切的磚被存取。 應用程式可做保守猜測，根據了解它用來存取的座標，以及使用 LOD 指令。例如，[**tex2Dlod**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-tex2dlod) 傳回硬體 LOD 計算。
 
 另一個問題是，許多存取會到同一個磚，所以會發生許多重複記錄和可能記憶體競爭。 如果硬體有選項，在之前其他地方有報告時，不需要為了報告磚存取而擔心，則可能很便利。 或許這類追蹤的狀態可能從 API 重設 (可能在畫面界限)。
 
@@ -49,11 +49,11 @@ ms.locfileid: "57607413"
 
 為了協助著色器避免 mipmap 串流資源中已知為非對應的區域，大部分包含使用取樣器 (篩選) 的著色器指令都有允許著色器傳遞其他 float32 MinLOD clamp 參數至紋理樣本的模式。 這個值位於檢視的 mipmap 數字空間，而不是基礎資源。
 
-硬體在 LOD 計算的同一個位置，也就是發生每個資源 MinLOD 鉗制的位置，執行` max(fShaderMinLODClamp,fComputedLOD) `，這也是 [**max**](https://msdn.microsoft.com/library/windows/desktop/bb509624)()。
+硬體在 LOD 計算的同一個位置，也就是發生每個資源 MinLOD 鉗制的位置，執行` max(fShaderMinLODClamp,fComputedLOD) `，這也是 [**max**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-max)()。
 
 如果套用每個範例 LOD clamp 和取樣器中所定義的任何其他 LOD clamps 的結果會是空的集合，結果會是相同超出界限存取的結果為每個資源 minLOD clamp:元件介面的格式和遺漏的元件的預設值為 0。
 
-LOD 指令 (例如，[**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680)) (其日期早於這裡所述的每個樣本 minLOD 鉗制) 會傳回鉗制和未鉗制的 LOD。 從這個 LOD 指令傳回的鉗制 LOD 反映所有鉗制，包括每個資源鉗制，但不是每個樣本鉗制。 每個樣本鉗制是由著色器控制和所知，因此著色器作者如有需要可以手動將該鉗制套用至 LOD 指令的傳回值。
+LOD 指令 (例如，[**tex2Dlod**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-tex2dlod)) (其日期早於這裡所述的每個樣本 minLOD 鉗制) 會傳回鉗制和未鉗制的 LOD。 從這個 LOD 指令傳回的鉗制 LOD 反映所有鉗制，包括每個資源鉗制，但不是每個樣本鉗制。 每個樣本鉗制是由著色器控制和所知，因此著色器作者如有需要可以手動將該鉗制套用至 LOD 指令的傳回值。
 
 ## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大減少篩選
 

@@ -5,20 +5,20 @@ ms.date: 03/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下載 CAB, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e3535f18b8127ea18bca234cdcc9b695e89ebfd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7a0c6203b3a55ecf8ca5e9473a41a7e6fb233000
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607783"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371288"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-desktop-application"></a>下載傳統型應用程式中錯誤的 CAB 檔案
 
-在 Microsoft Store 分析 API 使用此方法，下載與傳統型應用程式之特殊錯誤相關聯的 CAB 檔案，而您已將其加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)。 這個方法只可以下載最近 30 天發生之應用程式錯誤的 CAB 檔案。 封包檔下載中也會有[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)在合作夥伴中心內的桌面應用程式。
+在 Microsoft Store 分析 API 使用此方法，下載與傳統型應用程式之特殊錯誤相關聯的 CAB 檔案，而您已將其加入到 [Windows 傳統型應用程式](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)。 這個方法只可以下載最近 30 天發生之應用程式錯誤的 CAB 檔案。 封包檔下載中也會有[健康情況報告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)在合作夥伴中心內的桌面應用程式。
 
 使用此方法之前，您必須先使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法，擷取要下載之 CAB 檔案的識別碼雜湊。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 
 若要使用這個方法，您必須先進行下列動作：
@@ -46,9 +46,9 @@ ms.locfileid: "57607783"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  |
+| 參數        | 類型   |  描述      |  必要項  |
 |---------------|--------|---------------|------|
-| applicationId | 字串 | 您想要下載 CAB 檔案之傳統型應用程式的產品識別碼。 若要取得桌面應用程式的產品識別碼，請開啟任何[桌面應用程式的合作夥伴中心分析回報](https://msdn.microsoft.com/library/windows/desktop/mt826504)(例如**健康情況報告**)，並從 URL 擷取產品識別碼。 |  是  |
+| applicationId | 字串 | 您想要下載 CAB 檔案之傳統型應用程式的產品識別碼。 若要取得桌面應用程式的產品識別碼，請開啟任何[桌面應用程式的合作夥伴中心分析回報](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)(例如**健康情況報告**)，並從 URL 擷取產品識別碼。 |  是  |
 | cabIdHash | 字串 | 要下載之 CAB 檔案的唯一識別碼雜湊。 若要取得此值，請使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法，以擷取您的應用程式中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabIdHash** 值。 |  是  |
 
 

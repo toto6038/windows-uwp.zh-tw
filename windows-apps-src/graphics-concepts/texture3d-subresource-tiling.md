@@ -7,21 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c9c232bc60bbbb3cccc16618d82ec23452c58ee8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5b63fdeeffd4b95afab6556b6f0318732ff988b0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645953"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370898"
 ---
 # <a name="texture3d-subresource-tiling"></a>Texture3D 子資源拼貼
 
 
-下表顯示了 [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) 子資源的拼接方式。 此表格中的數值並未計入結尾 mip 包裝。
+下表顯示了 [**Texture3D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d) 子資源的拼接方式。 此表格中的數值並未計入結尾 mip 包裝。
 
-此表格利用了 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 拼接，將 x 及 y 維度各除以 4，並且增加了 16 層的深度。 所有第一個平面的磚 (2D 磚的平面定義了前 16 層深度) 都會在後續平面之前顯示。
+此表格利用了 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 拼接，將 x 及 y 維度各除以 4，並且增加了 16 層的深度。 所有第一個平面的磚 (2D 磚的平面定義了前 16 層深度) 都會在後續平面之前顯示。
 
-**請注意：** 串流資源中針對   [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) 的支援並未在初始串流資源實作中公開，但所需要磚的形狀仍在此列出，作為未來版本可能的支援使用。
+**請注意：** 串流資源中針對   [**Texture3D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d) 的支援並未在初始串流資源實作中公開，但所需要磚的形狀仍在此列出，作為未來版本可能的支援使用。
 
  
 

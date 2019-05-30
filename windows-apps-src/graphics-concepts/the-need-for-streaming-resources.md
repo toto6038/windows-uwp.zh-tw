@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e0354b0e727e84d562bf63779e74be72f87198f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f5b44e60e3490f39a91724bf038aa8066de11bf0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632173"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370894"
 ---
 # <a name="the-need-for-streaming-resources"></a>串流資源的需求
 
@@ -22,9 +22,9 @@ ms.locfileid: "57632173"
 ## <a name="span-idstreamingresourcesorsparsetexturesspanspan-idstreamingresourcesorsparsetexturesspanspan-idstreamingresourcesorsparsetexturesspanstreaming-resources-or-sparse-textures"></a><span id="Streaming_resources_or_sparse_textures"></span><span id="streaming_resources_or_sparse_textures"></span><span id="STREAMING_RESOURCES_OR_SPARSE_TEXTURES"></span>資料流的資源或疏鬆的紋理
 
 
-*「串流資源」* (在 Direct3D 11 中稱為 *「並排資源」*)，為使用少量實體記憶體的大型邏輯資源。
+*「串流資源」* (在 Direct3D 11 中稱為 *「並排資源」* )，為使用少量實體記憶體的大型邏輯資源。
 
-串流資源的另一個名稱為 *「疏鬆紋理」*。 「疏鬆」表達了並排資源的本質，以及並排它們的主要原因，也就是說這些資源並非會一次對應完畢。 事實上，可想而知應用程式可以刻意撰寫一種串流資源，其中沒有針對資源之所有區域和 Mip 撰寫的資料。 因此，內容本身應該為疏鬆的，而特定時間內圖形處理器 (GPU) 記憶體中的內容對應將會是該資源的子集 (更疏鬆)。
+串流資源的另一個名稱為 *「疏鬆紋理」* 。 「疏鬆」表達了並排資源的本質，以及並排它們的主要原因，也就是說這些資源並非會一次對應完畢。 事實上，可想而知應用程式可以刻意撰寫一種串流資源，其中沒有針對資源之所有區域和 Mip 撰寫的資料。 因此，內容本身應該為疏鬆的，而特定時間內圖形處理器 (GPU) 記憶體中的內容對應將會是該資源的子集 (更疏鬆)。
 
 ## <a name="span-idwithouttilingmemoryallocationsaremanagedatsubresourcegranularityspanspan-idwithouttilingmemoryallocationsaremanagedatsubresourcegranularityspanspan-idwithouttilingmemoryallocationsaremanagedatsubresourcegranularityspanwithout-tiling-memory-allocations-are-managed-at-subresource-granularity"></a><span id="Without_tiling__memory_allocations_are_managed_at_subresource_granularity"></span><span id="without_tiling__memory_allocations_are_managed_at_subresource_granularity"></span><span id="WITHOUT_TILING__MEMORY_ALLOCATIONS_ARE_MANAGED_AT_SUBRESOURCE_GRANULARITY"></span>並排顯示，沒有記憶體配置管理子資源的資料粒度
 
@@ -33,7 +33,7 @@ ms.locfileid: "57632173"
 
 對於[緩衝區](introduction-to-buffers.md)而言，整個緩衝區都是子資源。
 
-對於[紋理](textures.md)而言，(例如 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) (英文))，每個 MIP 層級都是子資源。對於紋理陣列而言，(例如 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) (英文)) 每個特定陣列切割上的 MIP 層級都是子資源。 圖形系統只會公開在此子資源資料粒度上管理配置之對應的功能。 在串流資源的內容中，「對應」是指讓 GPU 能夠看到資料。
+對於[紋理](textures.md)而言，(例如 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) (英文))，每個 MIP 層級都是子資源。對於紋理陣列而言，(例如 [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) (英文)) 每個特定陣列切割上的 MIP 層級都是子資源。 圖形系統只會公開在此子資源資料粒度上管理配置之對應的功能。 在串流資源的內容中，「對應」是指讓 GPU 能夠看到資料。
 
 ## <a name="span-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanspan-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanspan-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanwithout-tiling-cant-access-only-a-small-portion-of-mipmap-chain"></a><span id="Without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="WITHOUT_TILING__CAN_T_ACCESS_ONLY_A_SMALL_PORTION_OF_MIPMAP_CHAIN"></span>沒有並排顯示，無法存取只有一小部分的 mipmap 鏈結
 
@@ -47,7 +47,7 @@ ms.locfileid: "57632173"
 
 軟體分頁可將表面分解為硬體能夠處理的較小磚。
 
-Direct3D 支援在特定邊上使用最多 16384 像素的 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 表面。 長寬為 16384 x 16384 且每像素 4 個位元組的影像會消耗 1 GB 的視訊記憶體 (新增 Mipmap 則會消耗加倍的量)。 在實際應用上，幾乎不需要在單一轉譯作業中參照完整 1GB 的大小。
+Direct3D 支援在特定邊上使用最多 16384 像素的 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 表面。 長寬為 16384 x 16384 且每像素 4 個位元組的影像會消耗 1 GB 的視訊記憶體 (新增 Mipmap 則會消耗加倍的量)。 在實際應用上，幾乎不需要在單一轉譯作業中參照完整 1GB 的大小。
 
 有些遊戲開發人員會用最大至 128k x 128K 的大小塑造地型表面。 讓這種作法能在現有 GPU 上運作的方式，是將表面分解為硬體能夠處理的小型磚。 應用程式必須了解需要將哪個磚載入 GPU 上紋理的快取內，這也就是軟體分頁系統的作用。
 

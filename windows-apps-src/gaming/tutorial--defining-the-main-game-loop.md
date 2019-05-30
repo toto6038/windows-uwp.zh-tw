@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 主要物件
 ms.localizationpriority: medium
-ms.openlocfilehash: 96aefc8b053dd7490f47910ca5bb79989855e1a3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a3c47f3c22c41e7ca73c8a8b5d4e26dc27fab343
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651493"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367655"
 ---
 # <a name="define-the-main-game-object"></a>定義主要遊戲物件
 
@@ -54,7 +54,7 @@ __Simple3DGame__類別物件：
 
 * 已建立新的視訊播放物件。
 * 已建立遊戲的圖形基本型別陣列，包括關卡基本型別、彈藥及障礙物陣列。
-* 已建立儲存遊戲狀態資料的位置 (名為 *Game*)，並放在 [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619) 指定的應用程式資料設定儲存位置。
+* 已建立儲存遊戲狀態資料的位置 (名為 *Game*)，並放在 [**ApplicationData::Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current) 指定的應用程式資料設定儲存位置。
 * 已建立遊戲計時器與初始的遊戲內重疊點陣圖。
 * 已使用一組特定的檢視與投射參數建立新的相機。
 * 輸入裝置 (控制器) 設定為與相機相同的起始傾斜度與偏航角，因此玩家在起始控制位置與相機位置之間是 1 對 1 的對應。
@@ -128,7 +128,7 @@ void GameMain::Update()
 
 遊戲迴圈應該永遠保持更新遊戲的世界，不論是它根據遊戲邏輯實體的演算法，，或是否只是單純的隨機的除了遊戲是否特別暫停。 
 
-在遊戲範例中，這個原則就稱為「動態」，它包含柱型障礙物的升起和落下，還有子彈發射時的動作及物理行為。 
+在遊戲範例中，這個原則就稱為「動態」  ，它包含柱型障礙物的升起和落下，還有子彈發射時的動作及物理行為。 
 
 ### <a name="simple3dgameupdatedynamics-method"></a>Simple3DGame::UpdateDynamics 方法 
 
@@ -245,8 +245,8 @@ void GameRenderer::Render()
 
 -   **初始化**:設定全域變數的起始值以及初始化遊戲物件。 說明這一點[初始化並啟動遊戲](#initialize-and-start-the-game)一節。
 -   **LoadGame**:初始化新的關卡並開始載入。
--   **LoadLevelAsync**:啟動一項非同步工作 (如果您不熟悉非同步工作，請參閱[平行模式程式庫](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)) 初始化層級，然後再叫用一項非同步工作上所載入的裝置特定層級資源的轉譯器。 這個方法在另一個執行緒中執行；因此，從這個執行緒只能呼叫 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 方法 (與 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 方法相反)。 任何裝置內容方法都是在 **FinalizeLoadLevel** 方法中呼叫的。
--   **FinalizeLoadLevel**:在主執行緒上完成載入關卡時需要完成的所有工作。 這包括任何呼叫 Direct3D 11 裝置內容 ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) 方法。
+-   **LoadLevelAsync**:啟動一項非同步工作 (如果您不熟悉非同步工作，請參閱[平行模式程式庫](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)) 初始化層級，然後再叫用一項非同步工作上所載入的裝置特定層級資源的轉譯器。 這個方法在另一個執行緒中執行；因此，從這個執行緒只能呼叫 [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) 方法 (與 [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) 方法相反)。 任何裝置內容方法都是在 **FinalizeLoadLevel** 方法中呼叫的。
+-   **FinalizeLoadLevel**:在主執行緒上完成載入關卡時需要完成的所有工作。 這包括任何呼叫 Direct3D 11 裝置內容 ([**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) 方法。
 -   **StartLevel**:以新關卡開始遊戲。
 -   **PauseGame**:暫停遊戲。
 -   **RunGame**:反覆執行遊戲迴圈。 如果遊戲狀態為 **Active**，那麼每次反覆執行遊戲迴圈時就會從 **App::Update** 呼叫它一次。

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 51c2435c8edeac2431198b7b5f3d9b1a307b5b78
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4aeba58af61cffa33626c64cebcbade272af109b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648843"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368607"
 ---
 # <a name="how-to-activate-an-app-directx-and-c"></a>如何啟用應用程式 (DirectX 和 C++)
 
@@ -22,9 +22,9 @@ ms.locfileid: "57648843"
 ## <a name="register-the-app-activation-event-handler"></a>登錄應用程式啟用事件處理常式
 
 
-首先，登錄以處理 [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，這個事件會在作業系統啟動並初始化您的 app 時引發。
+首先，登錄以處理 [**CoreApplicationView::Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件，這個事件會在作業系統啟動並初始化您的 app 時引發。
 
-將這個程式碼新增到檢視提供者 (在這個範例中為 **MyViewProvider**) 的 [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) 方法實作中：
+將這個程式碼新增到檢視提供者 (在這個範例中為 **MyViewProvider**) 的 [**IFrameworkView::Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) 方法實作中：
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -42,7 +42,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 ## <a name="activate-the-corewindow-instance-for-the-app"></a>啟用 app 的 CoreWindow 執行個體
 
 
-當您的 app 啟動時，您必須取得 app 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 參照。 **CoreWindow** 包含您的 app 用來處理視窗事件的視窗事件訊息發送器。 請呼叫 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 以在您 app 啟用事件的回呼中取得這項參照。 一旦取得這項參照之後，呼叫 [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254) 啟用主 app 視窗。
+當您的 app 啟動時，您必須取得 app 的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 參照。 **CoreWindow** 包含您的 app 用來處理視窗事件的視窗事件訊息發送器。 請呼叫 [**CoreWindow::GetForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.getforcurrentthread) 以在您 app 啟用事件的回呼中取得這項參照。 一旦取得這項參照之後，呼叫 [**CoreWindow::Activate**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.activate) 啟用主 app 視窗。
 
 ```cpp
 void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^ args)
@@ -55,7 +55,7 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 ## <a name="start-processing-event-message-for-the-main-app-window"></a>開始處理主 app 視窗的事件訊息
 
 
-您的回呼會以 app [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 所處理之事件訊息的形式發生。 如果您未從 app 的主迴圈 (實作於檢視提供者的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中) 呼叫 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)，就不會叫用這個回呼。
+您的回呼會以 app [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 的 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 所處理之事件訊息的形式發生。 如果您未從 app 的主迴圈 (實作於檢視提供者的 [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) 方法中) 呼叫 [**CoreDispatcher::ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)，就不會叫用這個回呼。
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -85,8 +85,8 @@ void App::Run()
 ## <a name="related-topics"></a>相關主題
 
 
-* [如何暫停應用程式 （DirectX 和 c + +）](how-to-suspend-an-app-directx-and-cpp.md)
-* [如何繼續應用程式 （DirectX 和 c + +）](how-to-resume-an-app-directx-and-cpp.md)
+* [如何暫停應用程式 (DirectX 和C++)](how-to-suspend-an-app-directx-and-cpp.md)
+* [如何繼續應用程式 (DirectX 和C++)](how-to-resume-an-app-directx-and-cpp.md)
 
  
 

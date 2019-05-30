@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d6fd8f194a3c9c98fb969034cab5a3e9e2f0de
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0589249c65d301e3e74b305b92842fe4d3f61929
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619623"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372281"
 ---
 # <a name="xnull-markup-extension"></a>{x:Null} 標記延伸
 
@@ -30,11 +30,11 @@ ms.locfileid: "57619623"
 
 不同相依性屬性的初始預設值可能會不同，且不一定是 **null**。 此外，許多相依性屬性因為內部實作的緣故，不接受以 **null** 做為值 (無論是透過標記或程式碼)。 在這種情況下，以 **{x:Null}** 設定 XAML 屬性值可能導致發生剖析器例外狀況。
 
-一些 Windows 執行階段類型，是可為 null 的類型。 在可為 null 的類型尚未使用 **null** 做為預設值的情況下，您可以使用 **{x:Null}**，在 XAML 中設為 **null** 值。 如果使用 Visual c + + 元件擴充功能 (C + + /CX)，可為 null 的類型以[ **platform:: ibox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx)。 如果使用的是 Microsoft .NET 語言，可為 null 的類型會以 [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) 來表示。
+一些 Windows 執行階段類型，是可為 null 的類型。 在可為 null 的類型尚未使用 **null** 做為預設值的情況下，您可以使用 **{x:Null}** ，在 XAML 中設為 **null** 值。 如果使用視覺效果C++元件擴充功能 (C++/CX)，可為 null 的類型以[ **platform:: ibox<T>** ](https://docs.microsoft.com/cpp/cppcx/platform-ibox-interface)。 如果使用的是 Microsoft .NET 語言，可為 null 的類型會以 [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN) 來表示。
 
 ## <a name="related-topics"></a>相關主題
 
-* [**可為 null<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
-* [**IReference<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)
+* [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN)
+* [**IReference<T>** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)
  
 

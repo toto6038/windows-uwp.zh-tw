@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ddadde2502e8512ba38dc30c6ac24d22631d62c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657013"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372639"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>使用 Windows Hello 隨附 (IoT) 裝置的 Windows 解除鎖定
 
@@ -50,7 +50,7 @@ Windows Hello 隨附裝置架構會實作為在 Windows 上執行的服務 (本�
 
 與 Windows Hello 隨附裝置架構整合需要︰
 
-- 適用於隨附裝置的[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) Windows Hello 隨附裝置 app 可從 Windows app 市集下載。 
+- 適用於隨附裝置的[通用 Windows 平台 (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) Windows Hello 隨附裝置 app 可從 Windows app 市集下載。 
 - 能夠在 Windows Hello 隨附裝置上建立兩個 256 位元的 HMAC 金鑰，並使用它 (使用 SHA-256) 來產生 HMAC。
 - 正確設定 Windows 10 Desktop 上的安全性設定。 隨附驗證服務需要先設定這個 PIN，才能將任何 Windows Hello 隨附裝置插入它。 使用者必須透過 [設定] &gt; [帳戶] &gt; [登入選項] 來設定 PIN。
 
@@ -187,7 +187,7 @@ Windows Hello 隨附裝置架構不支援從遠端移除特定 Windows 10 Deskto
 
 ## <a name="windows-hello-companion-device-framework-api-model"></a>Windows Hello 隨附裝置架構 API 模型
 
-### <a name="overview"></a>概觀
+### <a name="overview"></a>總覽
 
 Windows Hello 隨附裝置 app 應該包含兩個元件︰具有 UI 的前景 app 負責註冊和取消註冊裝置，而背景工作會負責處理驗證。
 
@@ -346,7 +346,7 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>驗證
 
 驗證所需隨附驗證服務的兩個 API 呼叫：StartAuthenticationAsync 和 FinishAuthencationAsync。
 
@@ -383,7 +383,7 @@ Windows Hello 隨附裝置架構可藉由提供使用者在驗證流程中的全
 
 這其中每一個狀態的詳細資料如下所示︰
 
-| 狀態                         | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| State                         | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
 | WaitingForUserConfirmation    | 出現鎖定畫面時 (例如，使用者按下 Windows + L 鍵)，即會觸發此狀態變更通知事件。 由於很難找到處於此狀態的裝置，因此我們建議不要請求任何與之相關的錯誤訊息。 我們通常建議只在有意圖訊號可用時，才顯示訊息。 如果隨附裝置會收集意圖訊號 (例如，在 NFC 讀取器上點選、按隨附裝置上的按鈕，或像是拍手的特定手勢)，Windows Hello 隨附裝置 app 就應該進行第一個 API 呼叫以便在此狀態中進行驗證，而 Windows Hello 隨附裝置 app 背景工作會接收來自偵測到該意圖訊號之隨附裝置的指示。 否則，如果 Windows Hello 裝置隨附 app 依賴電腦來啟動驗證流程 (讓使用者向上撥動解除鎖定畫面，或者按空格鍵)，則 Windows Hello 隨附裝置 app 就需要等待下一個狀態 (CollectingCredential)。     |
 | CollectingCredential          | 當使用者開啟膝上型電腦的上蓋、按鍵盤上的任何按鍵，或者向上撥動至解除鎖定畫面時，即會觸發此狀態變更通知事件。 如果 Windows Hello 隨附裝置依賴上述動作以開始收集意圖訊號，則 Windows Hello 隨附裝置 app 應該會開始收集它 (例如，透過隨附裝置上的快顯視窗，詢問使用者是否想要解除鎖定電腦)。 如果 Windows Hello 隨附裝置 app 需要使用者在隨附裝置上提供使用者存在訊號 (例如，在 Windows Hello 隨附裝置上輸入 PIN)，則這是提供錯誤案例的好時機。                                                                                                                                                                                                                                                                                                                                            |

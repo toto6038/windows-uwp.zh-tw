@@ -8,20 +8,20 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff3f89887235fc9c8d9d7afbbdea3d79bace810
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 671f33cf106eabf11b317b00d5c2a6cd9abcf3d0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630793"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363042"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控制項和模式的簡介
 
-在 UWP 應用程式開發中，「控制項」是顯示內容或啟用互動的 UI 元素。 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。
+在 UWP 應用程式開發中，「控制項」  是顯示內容或啟用互動的 UI 元素。 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。
 
-> **重要的 Api**:[Windows.UI.Xaml.Controls 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **重要的 Api**:[Windows.UI.Xaml.Controls 命名空間](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
-「模式」是可修改控制項或結合數個控制項以創造新項目的方法。 例如，[主版/詳細資料](master-details.md)模式是您可以使用的方式[SplitView](split-view.md)應用程式瀏覽的控制項。 同樣地，您可以自訂的範本[NavigationView](navigationview.md)控制項來實作 索引標籤模式。
+「模式」  是可修改控制項或結合數個控制項以創造新項目的方法。 例如，[主版/詳細資料](master-details.md)模式是您可以使用的方式[SplitView](split-view.md)應用程式瀏覽的控制項。 同樣地，您可以自訂的範本[NavigationView](navigationview.md)控制項來實作 索引標籤模式。
 
 在許多情況下，您可以直接使用控制項。 但 XAML 控制項將功能和結構與外觀分開處理，因此您可以依據需求做出不同程度的修改。 在[樣式](../style/index.md)一節中，您會了解如何使用 [XAML 樣式](xaml-styles.md)與[控制項範本](control-templates.md)來修改控制項。
 
@@ -144,7 +144,7 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 ## <a name="related-topics"></a>相關主題
 
 -   [依功能排序的控制項索引](controls-by-function.md)
--   [Windows.UI.Xaml.Controls 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
--   [配置](../layout/index.md)
+-   [Windows.UI.Xaml.Controls 命名空間](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+-   [版面配置](../layout/index.md)
 -   [樣式](../style/index.md)
 -   [可用性](../usability/index.md)

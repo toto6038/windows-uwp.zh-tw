@@ -6,26 +6,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4733edba06b7042c436918e882556f86dfa00071
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72a7a7d4bbe6987781c538a7276bf3942f10cf5b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646563"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372198"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>診斷 Windows 執行階段元件錯誤狀況
 
 
 
 
-本文提供關於以 Managed 程式碼撰寫之 Windows 執行階段元件有何限制的其他資訊。 其中詳述 [Winmdexp.exe (Windows 執行階段中繼資料匯出工具)](https://msdn.microsoft.com/library/hh925576.aspx) 中錯誤訊息所提供的資訊，並補充[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中提供的限制相關資訊。
+本文提供關於以 Managed 程式碼撰寫之 Windows 執行階段元件有何限制的其他資訊。 其中詳述 [Winmdexp.exe (Windows 執行階段中繼資料匯出工具)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) 中錯誤訊息所提供的資訊，並補充[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中提供的限制相關資訊。
 
 本文並未涵蓋所有錯誤。 本文討論的錯誤會依照一般類別分門別類，而每個類別都有一個相關錯誤訊息的表格。 請搜尋訊息文字 (省略預留位置的特定值) 或訊息編號。 如果您在此處找不到所需的資訊，請使用本文結尾處的意見反應按鈕來協助我們改善本文。 請納入錯誤訊息。 或者，您也可以將 Bug 歸檔在 Microsoft Connect 網站上。
 
 ## <a name="error-message-for-implementing-async-interface-provides-incorrect-type"></a>實作非同步介面提供不正確類型的錯誤訊息
 
 
-Managed Windows 執行階段元件無法實作表示非同步動作或作業 ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) 或 [IAsyncOperationWithProgress&lt;TResult、TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)) 的通用 Windows 平台 (UWP) 介面。 相反地，.NET Framework 會提供 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 類別，用來在 Windows 執行階段元件中產生非同步作業。 當您嘗試以不正確的方式實作非同步介面時，Winmdexp.exe 顯示的錯誤訊息會根據這個類別的舊名稱 AsyncInfoFactory 指出這個類別， 因為 .NET Framework 不再包含 AsyncInfoFactory 類別。
+Managed Windows 執行階段元件無法實作表示非同步動作或作業 ([IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions//br205784(v=vs.85))、[IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_) 或 [IAsyncOperationWithProgress&lt;TResult、TProgress&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)) 的通用 Windows 平台 (UWP) 介面。 相反地，.NET Framework 會提供 [AsyncInfo](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN) 類別，用來在 Windows 執行階段元件中產生非同步作業。 當您嘗試以不正確的方式實作非同步介面時，Winmdexp.exe 顯示的錯誤訊息會根據這個類別的舊名稱 AsyncInfoFactory 指出這個類別， 因為 .NET Framework 不再包含 AsyncInfoFactory 類別。
 
 | 錯誤代碼 | 訊息文字|       
 |--------------|-------------|
@@ -124,13 +124,13 @@ Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
 
 元件的公用介面必須只公開 UWP 類型。 但是，.NET Framework 針對許多在 .NET Framework 與 UWP 中只有些許差異的通用類型提供了對應。 這可讓 .NET Framework 開發人員使用熟悉的類型，而不用學習新的類型。 您可以在元件的公用介面中使用這些對應的 .NET Framework 類型。 請參閱[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)與 [Windows 執行階段類型的 .NET Framework 對應](net-framework-mappings-of-windows-runtime-types.md)中的＜在 Windows 執行階段元件中宣告類型＞與＜將 Windows 執行階段類型傳遞至 Managed 程式碼＞。
 
-其中有許多對應都是介面。 例如，[IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) 會對應至 UWP 介面 [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx)。 若您使用 List&lt;string&gt; (在 Visual Basic 中為 `List(Of String)`)，而非使用 IList &lt;string&gt; 做為參數類型，則 Winmdexp.exe 會提供包含所有由 List&lt;T&gt; 實作之對應介面的替代項目清單。 若您使用 List&lt;Dictionary&lt;int, string&gt;&gt; 之類的巢狀泛型類型 (在 Visual Basic 中為 List(Of Dictionary(Of Integer, String)))，則 Winmdexp.exe 會提供適用於各個巢狀層級的選項。 這些清單可能會變得相當長。
+其中有許多對應都是介面。 例如，[IList&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1?redirectedfrom=MSDN) 會對應至 UWP 介面 [IVector&lt;T&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVector_T_)。 若您使用 List&lt;string&gt; (在 Visual Basic 中為 `List(Of String)`)，而非使用 IList &lt;string&gt; 做為參數類型，則 Winmdexp.exe 會提供包含所有由 List&lt;T&gt; 實作之對應介面的替代項目清單。 若您使用 List&lt;Dictionary&lt;int, string&gt;&gt; 之類的巢狀泛型類型 (在 Visual Basic 中為 List(Of Dictionary(Of Integer, String)))，則 Winmdexp.exe 會提供適用於各個巢狀層級的選項。 這些清單可能會變得相當長。
 
 一般而言，最接近類型的介面就是最好的選擇。 以 Dictionary&lt;int, string&gt; 為例，IDictionary&lt;int, string&gt; 最有可能是最佳選擇。
 
 > **重要**  JavaScript 會使用 managed 的類型實作的介面清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
 
-> **請小心**  請避免使用非泛型[IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx)並[IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx)介面如果 javascript 會使用您的元件。 這兩個介面會分別對應至 [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) 和 [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx)。 它們支援 XAML 控制項的繫結，且不會對 JavaScript 顯示。 JavaScript 會發出執行階段錯誤「函式 'X' 具有無效簽章，無法呼叫」。
+> **請小心**  請避免使用非泛型[IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN)並[IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable?redirectedfrom=MSDN)介面如果 javascript 會使用您的元件。 這兩個介面會分別對應至 [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) 和 [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator)。 它們支援 XAML 控制項的繫結，且不會對 JavaScript 顯示。 JavaScript 會發出執行階段錯誤「函式 'X' 具有無效簽章，無法呼叫」。
 
  
 
@@ -200,7 +200,7 @@ Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
 ## <a name="array-parameters-must-specify-whether-array-contents-are-readable-or-writable"></a>陣列參數必須指定陣列的內容是否可讀取或寫入
 
 
-在 UWP 中，參數必須是唯讀或唯寫的。 參數不可標示 **ref** (在 Visual Basic 中為不含 [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 屬性的 **ByRef**)。 這適用於陣列的內容，因此陣列參數必須指出陣列內容是否為唯讀或唯寫。 這項指示對於 **out** 參數是明確的 (在 Visual Basic 中為具有 OutAttribute 屬性的 **ByRef** 參數)，但是以傳值方式傳遞的陣列參數 (在 Visual Basic 中為 ByVal) 則必須標示。 請參閱[將陣列傳遞到 Windows 執行階段元件](passing-arrays-to-a-windows-runtime-component.md)。
+在 UWP 中，參數必須是唯讀或唯寫的。 參數不可標示 **ref** (在 Visual Basic 中為不含 [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute?redirectedfrom=MSDN) 屬性的 **ByRef**)。 這適用於陣列的內容，因此陣列參數必須指出陣列內容是否為唯讀或唯寫。 這項指示對於 **out** 參數是明確的 (在 Visual Basic 中為具有 OutAttribute 屬性的 **ByRef** 參數)，但是以傳值方式傳遞的陣列參數 (在 Visual Basic 中為 ByVal) 則必須標示。 請參閱[將陣列傳遞到 Windows 執行階段元件](passing-arrays-to-a-windows-runtime-component.md)。
 
 | 錯誤代碼 | 訊息文字         |
 |--------------|----------------------|
@@ -238,7 +238,7 @@ Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
 
 > **附註**  如果您變更傳回值的名稱和新的名稱與另一個參數的名稱衝突，就會發生 wme1091 錯誤。
 
-JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在內。 如需範例，請參閱 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 屬性。
+JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在內。 如需範例，請參閱 [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute?redirectedfrom=MSDN) 屬性。
 
 | 錯誤代碼 | 訊息文字 |
 |--------------|--------------|
@@ -251,4 +251,4 @@ JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在
 ## <a name="related-topics"></a>相關主題
 
 * [使用 C# 和 Visual Basic 建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Winmdexp.exe （Windows 執行階段中繼資料匯出工具）](https://msdn.microsoft.com/library/hh925576.aspx)
+* [Winmdexp.exe （Windows 執行階段中繼資料匯出工具）](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool)

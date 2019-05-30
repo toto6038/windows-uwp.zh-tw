@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6a4fef72206058874edf845d5fbbe0768c53ec
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 5cb076de6cd9c44280bf7030a59c645f601487bd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984216"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370436"
 ---
 # <a name="reveal-highlight"></a>顯示反白顯示
 
@@ -288,7 +288,7 @@ ms.locfileid: "65984216"
 
 - [RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
 - [Acrylic](acrylic.md)
-- [撰寫效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [撰寫效果](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
 - [適用於 UWP 的 Fluent 設計](/windows/apps/fluent-design-system)
 - [在系統中的科學：Fluent 設計和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [在系統中的科學：Fluent Design and 光線](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0b8ffbebdca920bc6cc584dd735062a364d1d9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fad621eb9b6ef9ef863240644ae0fa46d41baacc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627933"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371598"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 執行階段 8.x 至 UWP 案例研究：Bookstore1
 
 
-本主題提供的簡單 Universal 8.1 應用程式移植到 Windows 10 通用 Windows 平台 (UWP) 應用程式的個案研究。 Universal 8.1 應用程式是建置一個應用程式套件的 Windows 8.1 和 Windows Phone 8.1 的是不同的應用程式套件。 使用 Windows 10，您可以建立單一應用程式封裝，您的客戶可以將安裝到各種不同的裝置，以及這是我們要在此案例研究。 請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+本主題提供的簡單 Universal 8.1 應用程式移植到 Windows 10 通用 Windows 平台 (UWP) 應用程式的個案研究。 Universal 8.1 應用程式是建置一個應用程式套件的 Windows 8.1 和 Windows Phone 8.1 的是不同的應用程式套件。 使用 Windows 10，您可以建立單一應用程式封裝，您的客戶可以將安裝到各種不同的裝置，以及這是我們要在此案例研究。 請參閱 [UWP app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
-我們將移植的 app 包含繫結到檢視模型的 **ListBox**。 此檢視模型有一個顯示書名、作者及封面的書籍清單。 書籍封面影像的 [建置動作] 是設定為 [內容]，而 [複製到輸出目錄] 是設定為 [不要複製]。
+我們將移植的 app 包含繫結到檢視模型的 **ListBox**。 此檢視模型有一個顯示書名、作者及封面的書籍清單。 書籍封面影像的 [建置動作] 是設定為 [內容]，而 [複製到輸出目錄] 是設定為 [不要複製]。    
 
 本節之前的主題說明平台之間的差異，並針對 app 各個方面 (從 XAML 標記、經過繫結到檢視模型，再到存取資料) 的移植程序，提供深入的詳細資料和指導方針。 案例研究旨在藉由真實範例中的運作示範，來為該指導方針提供補充。 這些案例研究是假設您已看過指導方針，因此不會重複其內容。
 
@@ -56,7 +56,7 @@ Bookstore1\_81 解決方案是 8.1 通用應用程式專案，並包含這些專
 
 **從共用專案**
 
--   複製包含書封面影像 PNG 檔案的資料夾 (資料夾\\資產\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次您複製檔案或資料夾時，請在每次複製時，按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書封面影像 PNG 檔案的資料夾 (資料夾\\資產\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。  該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次您複製檔案或資料夾時，請在每次複製時，按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。   不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含檢視模型的原始程式檔的資料夾 (資料夾是\\ViewModel)。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 

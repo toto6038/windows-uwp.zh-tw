@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 156c4cc62e1997f5d647c06c87e226fe519de168
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: abe151bd78a0340b91aa1600ad34282b94b6d216
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650363"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372588"
 ---
 # <a name="cryptography"></a>密碼編譯
 
@@ -34,7 +34,7 @@ ms.locfileid: "57650363"
 | 雜湊                     | 將可變長度資料轉換成固定長度 (值一般比較小) 的程序。 透過比較雜湊，您可以合理地相信二個或多個資料是相同的。            |
 | 簽名                   | 數位資料的加密雜湊，通常被用來驗證資料傳送者或確定資料在傳送時未被竄改。                                               |
 | 演算法                   | 加密資料的逐步程序。                                                                                                                                                         |
-| 索引鍵                         | 隨機或虛擬隨機的數字，可用來做為密碼編譯演算法的輸入項目，以加密和解密資料。                                                                                               |
+| Key                         | 隨機或虛擬隨機的數字，可用來做為密碼編譯演算法的輸入項目，以加密和解密資料。                                                                                               |
 | 對稱金鑰密碼編譯  | 一種密碼編譯方法，使用相同的金鑰進行加密和解密。 這也稱為祕密金鑰密碼編譯。                                                                                      |
 | 非對稱金鑰密碼編譯 | 一種密碼編譯方法，使用不同但數學上相關的金鑰進行加密和解密。 這也稱為公開金鑰密碼編譯。                                                          |
 | 編碼                    | 為數位訊息 (包括憑證) 進行編碼以便在網路上傳輸的程序。                                                                                                     |
@@ -93,7 +93,7 @@ ms.locfileid: "57650363"
 
 ### <a name="cryptography-support"></a>密碼編譯支援
 
-您可以執行下列密碼編譯工作。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547) 命名空間。
+您可以執行下列密碼編譯工作。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core) 命名空間。
 
 -   建立對稱金鑰
 -   執行對稱式加密
@@ -104,18 +104,18 @@ ms.locfileid: "57650363"
 -   雜湊內容
 -   數位簽署內容
 
-SDK 也針對以密碼為基礎的資料保護提供簡化的介面。 您可以用它來執行下列工作。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空間。
+SDK 也針對以密碼為基礎的資料保護提供簡化的介面。 您可以用它來執行下列工作。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 命名空間。
 
 -   靜態資料的非同步保護
 -   資料流的非同步保護
 
 ### <a name="encoding-support"></a>編碼支援
 
-應用程式可以編碼密碼編譯的資料，以便在網路上傳送，也可以解碼從網路來源收到的資料。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) 命名空間可用的靜態方法。
+應用程式可以編碼密碼編譯的資料，以便在網路上傳送，也可以解碼從網路來源收到的資料。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography) 命名空間可用的靜態方法。
 
 ### <a name="pki-support"></a>PKI 支援
 
-應用程式可以執行下列 PKI 工作。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476) 命名空間。
+應用程式可以執行下列 PKI 工作。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography.Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates) 命名空間。
 
 -   建立憑證
 -   建立自我簽署憑證
@@ -143,7 +143,7 @@ SDK 也針對以密碼為基礎的資料保護提供簡化的介面。 您可以
 |-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [憑證](certificates.md)                                               | 本文討論 UWP app 中的憑證使用方式。 數位憑證用於公開金鑰密碼編譯，將公開金鑰繫結至個人、電腦或組織。 這種繫結身分常被用來在實體之間互相驗證。 例如，憑證通常是用來向使用者驗證網頁伺服器，或是向網頁伺服器驗證使用者。 您可以建立憑證要求並安裝或匯入已發出的憑證。 您也可以在憑證階層中註冊憑證。 |
 | [密碼編譯金鑰](cryptographic-keys.md)                                   | 本文說明如何使用標準金鑰衍生函式來衍生金鑰，以及如何使用對稱和非對稱金鑰來加密內容。                                                                                                                                                                                                                                                                                                                                                                             |
-| [資料保護](data-protection.md)                                         | 本文說明如何使用 [Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空間中的 [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559) 類別，來加密和解密 UWP 應用程式中的數位資料。                                                                                                                                                                                                                  |
+| [資料保護](data-protection.md)                                         | 本文說明如何使用 [Windows.Security.Cryptography.DataProtection](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 命名空間中的 [DataProtectionProvider](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 類別，來加密和解密 UWP 應用程式中的數位資料。                                                                                                                                                                                                                  |
 | [MAC、雜湊以及簽章](macs-hashes-and-signatures.md)               | 本文討論如何在 UWP app 中使用訊息驗證碼 (MAC)、雜湊及簽章來偵測訊息是否遭竄改。                                                                                                                                                                                                                                                                                                                                                                                |
 | [密碼編譯的匯出限制](export-restrictions-on-cryptography.md) | 使用這項資訊判斷您的 app 使用密碼編譯的方式，是否會使它無法被刊登於 Microsoft Store 中。                                                                                                                                                                                                                                                                                                                                                                                            |
 | [常見的密碼編譯工作](common-cryptography-tasks.md)                     | 下列文章提供常見的 UWP 密碼編譯工作範例程式碼，例如建立隨機數字、比較緩衝區、在字串與二進位資料間轉換、複製到位元組陣列和從位元組陣列中複製，以及編碼和解碼資料。                                                                                                                                                                                                                                                                                    |

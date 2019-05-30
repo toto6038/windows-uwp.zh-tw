@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, directx, package, 遊戲, 套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 631ba2c278c72f406a0fdd8a6d6d8d8a14c9eb05
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 27ea422982ce991de20e67649bc0925a60547cd8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635403"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368309"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>封裝您的通用 Windows 平台 (UWP) DirectX 遊戲
 
@@ -22,7 +22,7 @@ ms.locfileid: "57635403"
 -   app 套件包含平台專屬的可執行檔與程式庫。 一般來說，UWP 遊戲最多可擁有三個 app 套件，分別為適用於 x86、x64 與 ARM CPU 架構的套件。 該硬體平台專用的所有程式碼與資料都必須包含在其 app 套件中。 app 套件也應該包含遊戲的所有核心資產，才能擁有基本的逼真度與效能。
 -   資源套件包含選用或擴充的平台中立性資料，例如遊戲資產 (紋理、網格、聲音、文字)。 UWP 遊戲可擁有一或多個資源套件，包含的資源套件適用於高解析度資產或紋理、DirectX 功能層級 11 以上的資源，或特定語言的資產與資源。
 
-如需 app 組合套件與 app 套件的詳細資訊，請閱讀[定義 app 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。
+如需 app 組合套件與 app 套件的詳細資訊，請閱讀[定義 app 資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10))。
 
 雖然您可將所有內容放置於 app 套件中，但這麼做既沒有效率又是多餘的。 為何要針對每個平台將同樣大小的紋理檔案複製三次呢？特別是 ARM 平台可能用不到。 最好是嘗試將客戶需要下載的項目減到最少，這樣他們才能越快開始遊戲、節省裝置空間並避免可能的計量付費頻寬費用。
 
@@ -83,7 +83,7 @@ ms.locfileid: "57635403"
 
      
 
--   使用 [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 與 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中的 API 為您的 app 指定並載入地區設定特定資源。 此外，請使用不包含特定地區設定的資產參考，因為這些 API 會根據使用者的設定判斷正確的地區設定，然後為使用者擷取正確的資源。
+-   使用 [**Windows.ApplicationModel.Resources**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources) 與 [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) 中的 API 為您的 app 指定並載入地區設定特定資源。 此外，請使用不包含特定地區設定的資產參考，因為這些 API 會根據使用者的設定判斷正確的地區設定，然後為使用者擷取正確的資源。
 -   在 Microsoft Visual Studio 2015 中，選取 **專案-> 市集-> 建立應用程式封裝...** 和建立封裝。
 
 ## <a name="defining-scaling-factor-resource-packs"></a>定義縮放尺寸資源套件
@@ -100,7 +100,7 @@ Windows 10 提供三種使用者介面縮放比例：1.0 x 1.4 x 和 1.8 x。 �
 
      
 
--   使用 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中的 API 載入資產。 系統應該將資產參考一般化 (無尾碼)，省去特定的縮放變化。 系統將會針對顯示器和使用者的設定，擷取適當的縮放資產。
+-   使用 [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) 中的 API 載入資產。 系統應該將資產參考一般化 (無尾碼)，省去特定的縮放變化。 系統將會針對顯示器和使用者的設定，擷取適當的縮放資產。
 -   在 Visual Studio 2015 中，選取 **專案-> 市集-> 建立應用程式封裝...** 和建立封裝。
 
 ## <a name="defining-directx-feature-level-resource-packs"></a>定義 DirectX 功能層級資源套件
@@ -110,7 +110,7 @@ DirectX 功能層級對應到針對前版與目前 DirectX 版本 (特別是，D
 
 基準的應用程式組件應該使用的基準紋理壓縮的格式：BC1、 BC2 或 BC3。 任何 UWP 裝置，從低階的 ARM 平台到專用的多重 GPU 工作站與媒體電腦，都能使用這些格式。
 
-DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源套件中，以節省本機磁碟空間與下載頻寬。 這樣就能為 11 使用更進階的壓縮配置，如 BC6H 與 BC7 (如需詳細資訊，請參閱 < [Direct3D 11 中的紋理區塊壓縮](https://msdn.microsoft.com/library/windows/desktop/hh308955)。)這些格式會更有效率的現代 Gpu，支援高解析度的紋理資產並使用這些改善外觀、 效能和高階的平台上遊戲的空間需求。
+DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源套件中，以節省本機磁碟空間與下載頻寬。 這樣就能為 11 使用更進階的壓縮配置，如 BC6H 與 BC7 (如需詳細資訊，請參閱 < [Direct3D 11 中的紋理區塊壓縮](https://docs.microsoft.com/windows/desktop/direct3d11/texture-block-compression-in-direct3d-11)。)這些格式會更有效率的現代 Gpu，支援高解析度的紋理資產並使用這些改善外觀、 效能和高階的平台上遊戲的空間需求。
 
 | DirectX 功能層級 | 支援的紋理壓縮 |
 |-----------------------|-------------------------------|
@@ -163,7 +163,7 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
     );
     ```
 
--   使用 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中的 API 載入資源。 系統應該將資產參考一般化 (無尾碼)，省去功能層級。 不過，和語言及縮放不同的是，系統不會自動判斷對指定顯示器最佳的功能層級；也就是會讓您根據程式碼邏輯加以判斷。 一旦您做出判斷之後，使用 API 將慣用的功能層級通知作業系統。 接著，系統就能夠根據該喜好設定，擷取正確的資產。 以下程式碼範例會示範如何將平台目前的 DirectX 功能層級通知您的 app：
+-   使用 [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) 中的 API 載入資源。 系統應該將資產參考一般化 (無尾碼)，省去功能層級。 不過，和語言及縮放不同的是，系統不會自動判斷對指定顯示器最佳的功能層級；也就是會讓您根據程式碼邏輯加以判斷。 一旦您做出判斷之後，使用 API 將慣用的功能層級通知作業系統。 接著，系統就能夠根據該喜好設定，擷取正確的資產。 以下程式碼範例會示範如何將平台目前的 DirectX 功能層級通知您的 app：
     
     ```cpp
     // Set the current UI thread's MRT ResourceContext's DXFeatureLevel with the right DXFL. 
@@ -191,7 +191,7 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
 
      
 
--   現在，使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) 來尋找符合目前的 DirectX 功能層級的檔案。 **ResourceManager** 會傳回一個 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/br206089) (可以使用 [**ResourceMap::GetValue**](https://msdn.microsoft.com/library/windows/apps/br206098) 或 [**ResourceMap::TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj655438) 查詢)，還有一個提供的 [**ResourceContext**](https://msdn.microsoft.com/library/windows/apps/br206064)。 這會傳回最符合透過呼叫 [**SetGlobalQualifierValue**](https://msdn.microsoft.com/library/windows/apps/mt622101) 所指定之 DirectX 功能層級的 [**ResourceCandidate**](https://msdn.microsoft.com/library/windows/apps/br206051)。
+-   現在，使用 [**ResourceManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) 來尋找符合目前的 DirectX 功能層級的檔案。 **ResourceManager** 會傳回一個 [**ResourceMap**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) (可以使用 [**ResourceMap::GetValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap.getvalue) 或 [**ResourceMap::TryGetValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap.trygetvalue) 查詢)，還有一個提供的 [**ResourceContext**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext)。 這會傳回最符合透過呼叫 [**SetGlobalQualifierValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) 所指定之 DirectX 功能層級的 [**ResourceCandidate**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceCandidate)。
     
     ```cpp
     // An explicit ResourceContext is needed to match the DirectX feature level for the display on which the current view is presented.
@@ -216,9 +216,9 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
 ## <a name="related-topics"></a>相關主題
 
 
-* [定義應用程式資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
-* [封裝應用程式](https://msdn.microsoft.com/library/windows/apps/mt270969)
-* [應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+* [定義應用程式資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10))
+* [封裝應用程式](https://docs.microsoft.com/windows/uwp/packaging/index)
+* [App packager (MakeAppx.exe)](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)
 
  
 

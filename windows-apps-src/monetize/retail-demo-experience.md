@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, 零售示範應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b1323f048c1b420a2cf0b239cd9f1a9fb63ff7
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 4c9f31da8e2509c41715a13fbc0bb0322782340a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334876"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366529"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>將零售示範 (RDX) 功能加入至您的應用程式
 
@@ -45,11 +45,11 @@ ms.locfileid: "58334876"
 
 將從所有零售示範裝置儘速移除 RDX 感知的應用程式不符合這些重要的需求。
 
-* **不要再問個人識別資訊 (PII)**。 這包括登入資訊、 Microsoft 帳戶資訊或連絡詳細資料。
+* **不要再問個人識別資訊 (PII)** 。 這包括登入資訊、 Microsoft 帳戶資訊或連絡詳細資料。
 
 * **無錯誤體驗**。 您的 App 必須在執行時不發生任何錯誤。 此外，不應向使用零售示範裝置的客戶顯示任何錯誤快顯畫面或通知。 錯誤反思造成負面的應用程式本身、 品牌、 裝置的品牌、 裝置製造商的品牌和 Microsoft 的品牌。
 
-* **付費應用程式必須有試用模式**。 您的應用程式可能需要一套免費或包含[試用版模式](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)。 客戶不會想要為零售商店中的體驗支付費用。
+* **付費應用程式必須有試用模式**。 您的應用程式可能需要一套免費或包含[試用版模式](https://docs.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)。 客戶不會想要為零售商店中的體驗支付費用。
 
 ### <a name="high-priority-requirements"></a>高優先順序的需求
 
@@ -233,7 +233,7 @@ namespace Windows.System.Profile
 
 步驟 1：Cleanup
 * 所有 Win32 和市集 App 都會被關閉
-* 在已知資料夾 (例如 \[圖片\]、\[影片\]、\[音樂\]、\[文件\]、\[已儲存的相片\]、\[手機相簿\]、\[桌面\] 及 \[下載\] 資料夾) 中的所有檔案都會被刪除 
+* 在已知資料夾 (例如 \[圖片\]、\[影片\]、\[音樂\]、\[文件\]、\[已儲存的相片\]、\[手機相簿\]、\[桌面\] 及 \[下載\] 資料夾) 中的所有檔案都會被刪除        
 * 非結構化和結構化漫遊狀態都會被刪除
 * 結構化本機狀態會被刪除
 
@@ -359,7 +359,7 @@ namespace MyCompany.MyApp
 
 ## <a name="related-links"></a>相關連結
 
-* [儲存和擷取應用程式資料](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [如何建立和使用應用程式服務](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-* [當地語系化應用程式內容](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
+* [儲存和擷取應用程式資料](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [如何建立和使用應用程式服務](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [當地語系化應用程式內容](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
 * [零售示範體驗 (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)

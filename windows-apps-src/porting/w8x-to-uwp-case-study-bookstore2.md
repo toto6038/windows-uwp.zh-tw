@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a81980bc03a272cb2be0e66772591f4e395d7722
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 14504626e433ed18ed6c7425a94679a64c9502ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662203"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372938"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Windows 執行階段 8.x 至 UWP 案例研究：Bookstore2
 
 
-這個案例研究—根據 [Bookstore1](w8x-to-uwp-case-study-bookstore1.md) 中所提供的資訊來建置—是從在 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項中顯示分組資料的通用 8.1 app 開始著手。 在檢視模型中，每個 **Author** 類別執行個體都代表該作者所著之書籍的群組，而在 **SemanticZoom** 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 與捲動書籍清單相比，捷徑清單可提供更快速的瀏覽。 我們會逐步的應用程式移植到 Windows 10 通用 Windows 平台 (UWP) 應用程式的步驟。
+這個案例研究—根據 [Bookstore1](w8x-to-uwp-case-study-bookstore1.md) 中所提供的資訊來建置—是從在 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控制項中顯示分組資料的通用 8.1 app 開始著手。 在檢視模型中，每個 **Author** 類別執行個體都代表該作者所著之書籍的群組，而在 **SemanticZoom** 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 與捲動書籍清單相比，捷徑清單可提供更快速的瀏覽。 我們會逐步的應用程式移植到 Windows 10 通用 Windows 平台 (UWP) 應用程式的步驟。
 
 **附註**  時開啟 Bookstore2Universal\_10，以 Visual Studio 中，如果您看到訊息 「 Visual Studio 需要更新 」，然後依照中的步驟[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)。
 
@@ -28,7 +28,7 @@ ms.locfileid: "57662203"
 
 ## <a name="the-universal-81-app"></a>通用 8.1 應用程式
 
-以下是哪些 Bookstore2\_81 — 我們將連接埠的應用程式，看起來像。 這會以水平捲動方式 (在 Windows Phone 上為垂直捲動) [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 來顯示依作者分組的書籍。 您可以縮小範圍至捷徑清單，然後從該處往回瀏覽至任何群組。 此應用程式有兩個主要部分：提供分組資料來源的檢視模型，以及繫結至該檢視模型的使用者介面。 如我們所見，這兩個組件輕鬆地從 WinRT 8.1 技術為 Windows 10 的連接埠。
+以下是哪些 Bookstore2\_81 — 我們將連接埠的應用程式，看起來像。 這會以水平捲動方式 (在 Windows Phone 上為垂直捲動) [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 來顯示依作者分組的書籍。 您可以縮小範圍至捷徑清單，然後從該處往回瀏覽至任何群組。 此應用程式有兩個主要部分：提供分組資料來源的檢視模型，以及繫結至該檢視模型的使用者介面。 如我們所見，這兩個組件輕鬆地從 WinRT 8.1 技術為 Windows 10 的連接埠。
 
 ![bookstore2\-81 在 windows 中，放大檢視](images/w8x-to-uwp-case-studies/c02-01-win81-zi-how-the-app-looks.png)
 
@@ -57,7 +57,7 @@ Bookstore2\_81 解決方案是 8.1 通用應用程式專案。 Bookstore2\_81.Wi
 
 **從共用專案**
 
--   複製包含書封面影像 PNG 檔案的資料夾 (資料夾\\資產\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次您複製檔案或資料夾時，請在每次複製時，按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書封面影像 PNG 檔案的資料夾 (資料夾\\資產\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。  該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次您複製檔案或資料夾時，請在每次複製時，按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。   不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含檢視模型的原始程式檔的資料夾 (資料夾是\\ViewModel)。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
@@ -78,13 +78,13 @@ Windows 10 應用程式，在電腦的裝置時，放大的檢視上執行的初
 
 Windows 10 應用程式，在電腦的裝置時，縮小檢視上執行的初始來源的程式碼變更
 
-儘管會產生難以察覺的問題，但是檢視模型與放大和縮小檢視還是可以正確地一同運作。 有一個問題是 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 不會捲動。 這是因為在 Windows 10 中的預設樣式[ **GridView** ](https://msdn.microsoft.com/library/windows/apps/br242705)會導致它以垂直方式配置 （和 Windows 10 設計指導方針建議我們這樣一來，在新的和移轉的應用程式中）。 但是，水平捲動，我們從 Bookstore2 複製自訂的項目面板範本中設定\_81 專案 (這專為 8.1 的應用程式) 會與在 Windows 10 預設樣式的垂直捲動設定衝突由於我們套用具有移植到 Windows 10 應用程式。 第二點是 app 還不會調整它的使用者介面，以便在不同大小的視窗中及小型裝置上提供最佳體驗。 而第三點是還無法使用正確的樣式和筆刷，因而導致許多文字無法顯示 (包括您可以按一下來放大的群組標題)。 因此，在接下來的三個小節 ([SemanticZoom 和 GridView 設計變更](#semanticzoom-and-gridview-design-changes)、[彈性 UI](#adaptive-ui) 及[通用樣式](#universal-styling)) 中，我們將會解決這三個問題。
+儘管會產生難以察覺的問題，但是檢視模型與放大和縮小檢視還是可以正確地一同運作。 有一個問題是 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 不會捲動。 這是因為在 Windows 10 中的預設樣式[ **GridView** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)會導致它以垂直方式配置 （和 Windows 10 設計指導方針建議我們這樣一來，在新的和移轉的應用程式中）。 但是，水平捲動，我們從 Bookstore2 複製自訂的項目面板範本中設定\_81 專案 (這專為 8.1 的應用程式) 會與在 Windows 10 預設樣式的垂直捲動設定衝突由於我們套用具有移植到 Windows 10 應用程式。 第二點是 app 還不會調整它的使用者介面，以便在不同大小的視窗中及小型裝置上提供最佳體驗。 而第三點是還無法使用正確的樣式和筆刷，因而導致許多文字無法顯示 (包括您可以按一下來放大的群組標題)。 因此，在接下來的三個小節 ([SemanticZoom 和 GridView 設計變更](#semanticzoom-and-gridview-design-changes)、[彈性 UI](#adaptive-ui) 及[通用樣式](#universal-styling)) 中，我們將會解決這三個問題。
 
 ## <a name="semanticzoom-and-gridview-design-changes"></a>SemanticZoom 和 GridView 設計變更
 
-Windows 10 的設計變更[ **SemanticZoom** ](https://msdn.microsoft.com/library/windows/apps/hh702601)一節中說明控制[SemanticZoom 變更](w8x-to-uwp-porting-xaml-and-ui.md)。 我們不需在本節中執行任何動作來回應這些變更。
+Windows 10 的設計變更[ **SemanticZoom** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)一節中說明控制[SemanticZoom 變更](w8x-to-uwp-porting-xaml-and-ui.md)。 我們不需在本節中執行任何動作來回應這些變更。
 
-對於 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 所做的變更，請參閱 [GridView/ListView 變更](w8x-to-uwp-porting-xaml-and-ui.md)中的說明。 我們必須進行一些非常細微的調整以適應這些變更，如下所述。
+對於 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 所做的變更，請參閱 [GridView/ListView 變更](w8x-to-uwp-porting-xaml-and-ui.md)中的說明。 我們必須進行一些非常細微的調整以適應這些變更，如下所述。
 
 -   在 SeZoUC.xaml 的 `ZoomedInItemsPanelTemplate` 中，設定 `Orientation="Horizontal"` 和 `GroupPadding="0,0,0,20"`。
 -   在 SeZoUC.xaml 中，刪除 `ZoomedOutItemsPanelTemplate`，並從縮小檢視中移除 `ItemsPanel` 屬性。
@@ -101,15 +101,15 @@ Windows 10 的設計變更[ **SemanticZoom** ](https://msdn.microsoft.com/librar
 
 因此，我們需要使用哪些屬性來設定—及變更—以實現這兩個不同的配置？ 有兩個替代方案，每個都需要不同的方法。
 
-1.  我們會在標記中放置兩個 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項。 其中就是一份我們在 Windows 執行階段 8.x 應用程式中使用的標記 (使用[ **GridView** ](https://msdn.microsoft.com/library/windows/apps/br242705)其內的控制項)，並依預設摺疊。 另一個則是在 Windows Phone 市集應用程式中使用的標記複本 (在其內部使用 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 控制項)，且預設會顯示。 視覺狀態會切換兩個 **SemanticZoom** 控制項的可見度屬性。 這不需要花費太多心力就能達成，但一般而言，這並非高效能技術。 因此，如果您使用它，就應該分析您的應用程式，並確認它仍然符合您的效能目標。
-2.  我們可以使用包含 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 控制項的單一 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601)。 為了實現這兩個配置，我們會在寬型視覺狀態中，變更 **ListView** 控制項的屬性 (包括套用到它們的範本)，讓它們能夠以 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 所做的相同方式進行配置。 這可能會執行地更好，但是在 **GridView** 和 **ListView** 的各種樣式和範本間，以及在其各種項目類型 (這是更難達成的方案) 之間，有很多細微差異。 這個方案也會與目前設計預設樣式和範本的方式緊密結合，提供精細且敏感的解決方案，以便未來對預設值進行任何變更。
+1.  我們會在標記中放置兩個 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控制項。 其中就是一份我們在 Windows 執行階段 8.x 應用程式中使用的標記 (使用[ **GridView** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)其內的控制項)，並依預設摺疊。 另一個則是在 Windows Phone 市集應用程式中使用的標記複本 (在其內部使用 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項)，且預設會顯示。 視覺狀態會切換兩個 **SemanticZoom** 控制項的可見度屬性。 這不需要花費太多心力就能達成，但一般而言，這並非高效能技術。 因此，如果您使用它，就應該分析您的應用程式，並確認它仍然符合您的效能目標。
+2.  我們可以使用包含 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項的單一 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)。 為了實現這兩個配置，我們會在寬型視覺狀態中，變更 **ListView** 控制項的屬性 (包括套用到它們的範本)，讓它們能夠以 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 所做的相同方式進行配置。 這可能會執行地更好，但是在 **GridView** 和 **ListView** 的各種樣式和範本間，以及在其各種項目類型 (這是更難達成的方案) 之間，有很多細微差異。 這個方案也會與目前設計預設樣式和範本的方式緊密結合，提供精細且敏感的解決方案，以便未來對預設值進行任何變更。
 
 在這個案例研究中，我們即將使用第一個替代方案。 但是，您可以視需要嘗試第二個替代方案，並查看它的運作方式是否更適合您。 以下是要實作的第一個替代方案所採取的步驟。
 
--   在新專案中，於標記中的 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 上設定 `x:Name="wideSeZo"` 和 `Visibility="Collapsed"`。
--   返回至 Bookstore2\_81.WindowsPhone 專案，然後開啟 SeZoUC.xaml。 複製該檔案的 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 元素標記，並將它貼到新專案中緊接在 `wideSeZo` 之後。 在您剛貼上的元素上設定 `x:Name="narrowSeZo"`。
+-   在新專案中，於標記中的 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 上設定 `x:Name="wideSeZo"` 和 `Visibility="Collapsed"`。
+-   返回至 Bookstore2\_81.WindowsPhone 專案，然後開啟 SeZoUC.xaml。 複製該檔案的 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 元素標記，並將它貼到新專案中緊接在 `wideSeZo` 之後。 在您剛貼上的元素上設定 `x:Name="narrowSeZo"`。
 -   但是 `narrowSeZo` 需要幾個我們尚未複製的樣式。 再次在 Bookstore2\_81.WindowsPhone、 複製這兩個樣式 (`AuthorGroupHeaderContainerStyle`和`ZoomedOutAuthorItemContainerStyle`) 的 SeZoUC.xaml，並貼到 BookstoreStyles.xaml 在新專案。
--   您目前在新的 SeZoUC.xaml 中有兩個 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 元素。 在 **Grid** 中將這兩個元素自動換行。
+-   您目前在新的 SeZoUC.xaml 中有兩個 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 元素。 在 **Grid** 中將這兩個元素自動換行。
 -   在新專案的 BookstoreStyles.xaml 中，將文字 `Wide` 附加到下列三個資源索引鍵 (以及它們在 SeZoUC.xaml 中的參考，但僅限 `wideSeZo` 內部的參考)： `AuthorGroupHeaderTemplate`、`ZoomedOutAuthorTemplate` 及 `BookTemplate`。
 -   在 Bookstore2\_81.WindowsPhone 的專案，開啟 BookstoreStyles.xaml。 從這個檔案，複製那些相同的三個資源 （如上方所述），和兩個跳躍清單項目轉換器和 Windows 的命名空間前置詞宣告\_UI\_Xaml\_控制項\_基本項目，並貼上它們全部到 BookstoreStyles.xaml 在新專案。
 -   最後，在新專案的 SeZoUC.xaml 中，將適當的 Visual State Manager 標記新增到您在上方新增的 **Grid**。

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4138fd7275f7e1f9addb7685ff0846e756701003
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9712b4498b03460568d20d4c8e27172ad5c14360
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661983"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362210"
 ---
 # <a name="resource-types"></a>資源類型
 
@@ -34,11 +34,11 @@ ms.locfileid: "57661983"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>型別</p></td>
+<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typed</p></td>
 <td align="left"><p>建立資源時完整指定類型。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>無類型</p></td>
+<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>Typeless</p></td>
 <td align="left"><p>資源繫結到管線時完整指定類型。</p></td>
 </tr>
 </tbody>
@@ -110,12 +110,12 @@ Direct3D 具有緩衝區，以提供稱為著色器常數衝緩區或只是常�
 
 使用常數緩衝區來儲存資料流輸出階段的結果。
 
-如需在著色器中宣告常數緩衝區的範例，請參閱[著色器常數 (DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)。
+如需在著色器中宣告常數緩衝區的範例，請參閱[著色器常數 (DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)。
 
 ## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>材質資源
 
 
-紋理資源是設計來儲存紋素的結構化資料集合。 和緩衝區不同的是，紋理可依紋理樣本篩選，由著色器單位讀取。 紋理類型會影響篩選紋理的方式。 紋素代表管線可讀取或寫入的最小紋理單位。 每個材質包含 1 到 4 的元件，以其中一種 DXGI 格式排列 (請參閱[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059))。
+紋理資源是設計來儲存紋素的結構化資料集合。 和緩衝區不同的是，紋理可依紋理樣本篩選，由著色器單位讀取。 紋理類型會影響篩選紋理的方式。 紋素代表管線可讀取或寫入的最小紋理單位。 每個材質包含 1 到 4 的元件，以其中一種 DXGI 格式排列 (請參閱[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format))。
 
 紋裡會建立結構化資源，以便得知其大小。 不過，每個紋理在建立資源時可能具有類型或是無類型，只要在紋理與管線繫結時使用檢視完整指定類型。
 

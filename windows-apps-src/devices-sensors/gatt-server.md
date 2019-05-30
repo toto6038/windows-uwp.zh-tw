@@ -5,19 +5,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 551f8b925ffd56950ba893da7b81fefb4579f558
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f59ae45486ee72f9d901898f6b03674e6b3e299c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635133"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370096"
 ---
 # <a name="bluetooth-gatt-server"></a>藍牙 GATT 伺服器
 
 
 **重要的 Api**
-- [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
-- [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
+- [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+- [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 
 本文示範適用於通用 Windows 平台 (UWP) app 的藍牙泛型屬性 (GATT) 伺服器 API，以及常見 GATT 伺服器工作的範例程式碼︰ 
@@ -27,7 +27,7 @@ ms.locfileid: "57635133"
 - 回應讀取和寫入要求
 - 將通知傳送給訂閱的用戶端
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 Windows 通常以用戶端角色操作。 不過，許多案例也都需要 Windows 作為藍牙 LE GATT 伺服器。 幾乎 IoT 裝置的所有案例，以及大部分跨平台 BLE 通訊，都需要 Windows 作為 GATT 伺服器。 此外，將通知傳送至附近的穿戴式裝置會變成也需要這項技術的常見案例。  
 > 請確定清楚[GATT 用戶端文件](gatt-client.md)中的所有概念後，再繼續進行。  
 
@@ -40,7 +40,7 @@ Windows 通常以用戶端角色操作。 不過，許多案例也都需要 Wind
 每個服務、特性和描述元都是透過其專屬唯一 128 位元 UUID 所定義。
 > Windows API 都會使用 GUID 這個詞彙，但藍牙標準將它們定義為 UUID。 基於我們的目的，這兩個詞彙可交換使用，因此我們將會繼續使用 UUID 這個詞彙。 
 
-如果屬性是標準並且透過藍牙 SIG 定義所定義，則也會有對應的 16 位元簡短識別碼 (例如，電池電量 UUID 是 0000**2A19**-0000-1000-8000-00805F9B34FB，而簡短識別碼為 0x2A19)。 在 [GattServiceUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids.aspx)和[GattCharacteristicUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids.aspx)中可以看到這些標準 UUID。
+如果屬性是標準並且透過藍牙 SIG 定義所定義，則也會有對應的 16 位元簡短識別碼 (例如，電池電量 UUID 是 0000**2A19**-0000-1000-8000-00805F9B34FB，而簡短識別碼為 0x2A19)。 在 [GattServiceUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids)和[GattCharacteristicUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids)中可以看到這些標準 UUID。
 
 如果您的應用程式要實作其專屬自訂服務，則必須產生自訂 UUID。 這在 Visual Studio 中透過 [工具] -> [CreateGuid] 很容易就可以完成 (使用選項 5 即可取得 "xxxxxxxx-xxxx-...xxxx" 格式的 UUID)。 這個 uuid 現在可以用來宣告新的本機服務、特性或描述元。
 

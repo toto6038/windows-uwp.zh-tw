@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, 協助工具, 遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: 38060d0a6bead360ef8a682902a433670c79b495
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: a3ef82db2d0ddb7883179279fd7e48c1acf38dd3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162776"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369168"
 ---
 #  <a name="making-games-accessible"></a>設計無障礙遊戲
 
@@ -35,7 +35,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 如果您製作了令人驚嘆的遊戲，但是內容過於複雜難懂，以致於只有少數玩家可以進行，您就限制了您的銷售。 同樣地，如果您製作的遊戲不適合有肢體障礙、感官障礙或認知障礙的玩家進行，您也會錯過潛在的銷售。 例如，考慮到在[美國有 19% 的人口有某種形式的身心障礙](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)，[預估美國 14% 的成人有閱讀困難](https://nces.ed.gov/naal/estimates/overview.aspx)，並且[預估 10% 的男性有某種形式的色覺辨認障礙](https://www.aao.org/eye-health/diseases/color-blindness-risk)，這對於您作品的收益可能會有很大的影響。 
 
-如需更詳細的商業理由，請參閱[如何設計無障礙遊戲](https://msdn.microsoft.com/library/windows/desktop/ee415219)。
+如需更詳細的商業理由，請參閱[如何設計無障礙遊戲](https://docs.microsoft.com/windows/desktop/DxTechArts/accessibility-best-practices)。
 
 ### <a name="better-games"></a>更棒的遊戲
 
@@ -185,7 +185,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 *   選取簡單易於閱讀的字型。
 *   選取夠大的字型大小，或考慮使用可調整字型大小選項以提供更多彈性。 (理想的字型大小取決於螢幕大小、和螢幕之間的檢視距離等等)。
-*   在背景與字型色彩之間建立高對比。 文字使用強調外框和陰影。 標題使用深色背景重疊字並請記得提供可將其開啟或關閉的選項。 (如需詳細資訊，請參閱[對比率資訊](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements))。
+*   在背景與字型色彩之間建立高對比。 文字使用強調外框和陰影。 標題使用深色背景重疊字並請記得提供可將其開啟或關閉的選項。 (如需詳細資訊，請參閱[對比率資訊](https://docs.microsoft.com/windows/uwp/accessibility/accessible-text-requirements))。
 * 在畫面上顯示簡短句子，一次每行最長 38 個字元且最多 2-3 行。 (請記住不要在事件發生前顯示文字，以避免洩漏遊戲劇情)。
 *   區別發出聲音或說話的對象。 (範例："Daniel:大家好 ！"）
 *   提供開啟和關閉隱藏式輔助字幕和字幕的選項。 (其他功能：能夠選取多少聲音的資訊會顯示根據重要性。）
@@ -243,7 +243,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 使用自動化系統檢查遊戲可能會觸發光敏性癲癇的刺激。 (範例：[Harding 測試](https://www.hardingtest.com/index.php?page=test)並[Harding Flash 和模式分析器 (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/)康橋研究系統 Ltd 和教授 Graham Harding 所開發。) 
 
-包含做為設定選項的 **\[閃爍開啟/關閉\]**，預設是將 **\[閃爍\]** 設為 **\[關閉\]**。 如此一來，您即保護還不知道他們很容易癲癇發作的玩家。
+包含做為設定選項的 **\[閃爍開啟/關閉\]** ，預設是將 **\[閃爍\]** 設為 **\[關閉\]** 。 如此一來，您即保護還不知道他們很容易癲癇發作的玩家。
 
 在遊戲關卡間設計中斷點，鼓勵玩家休息以避免不停地進行遊戲。
 
@@ -271,5 +271,5 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 ## <a name="related-links"></a>相關連結
 * [內含的設計](https://www.microsoft.com/design/inclusive)
 * [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
-* [開發可存取的 UWP 應用程式](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
+* [開發可存取的 UWP 應用程式](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
 * [工程軟體的協助工具電子書](https://www.microsoft.com/download/details.aspx?id=19262)

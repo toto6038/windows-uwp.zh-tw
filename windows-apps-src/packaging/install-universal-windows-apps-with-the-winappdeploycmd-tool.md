@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 479c4410384613b22ba86bc976a360125bb73c3a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 06107691a4551ae2af05e63c1db810485273dc9b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632803"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372808"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安裝應用程式
 
@@ -20,7 +20,7 @@ Windows 應用程式部署 (WinAppDeployCmd.exe) 是命令列工具，可用來�
 
 您只需要從命令提示字元或指令碼檔案執行 WinAppDeployCmd 工具安裝的 Windows 10 SDK。 當您使用 WinAppDeployCmd.exe 安裝應用程式時，這會使用.appx/.msix 檔案或 p （適用於鬆散式檔案） 來側載到 Windows 10 裝置上的應用程式。 此命令不會安裝您 App 所需的憑證。 若要執行應用程式，Windows 10 裝置必須處於開發人員模式，或已安裝的憑證。
 
-若要部署到行動裝置，您必須先建立套件。 如需詳細資訊，請參閱[此處](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
+若要部署到行動裝置，您必須先建立套件。 如需詳細資訊，請參閱[此處](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
 **WinAppDeployCmd.exe**工具位於您 Windows 10 電腦上：**C:\\Program Files (x86)\\Windows 套件\\10\\bin\\&lt;SDK 版本&gt;\\x86\\WinAppDeployCmd.exe** (根據您的安裝路徑 sdk）。 
 > [!NOTE]
@@ -99,7 +99,7 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 | **引數**           | **描述**                                                              |
 |------------------------|------------------------------------------------------------------------------|
 | &lt;x&gt;              | 逾時 (秒)。 (預設值為 10)                                          |
-| &lt;位址&gt;        | 目標裝置的 IP 位址或唯一識別碼。                        |
+| &lt;address&gt;        | 目標裝置的 IP 位址或唯一識別碼。                        |
 | &lt;a&gt;&lt;b&gt; ... | 每個應用程式套件相依性的相依性路徑。                    |
 | &lt;p&gt;              | 裝置設定中顯示用於建立連線的英數字元 PIN。 |
 | &lt;path&gt;           | 檔案系統路徑。                                                            |

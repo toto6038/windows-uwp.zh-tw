@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 063106362a36aa32d0874be15dd589b5fb573409
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 291c16d14428f8c6476b12fbadf00f84c26a4235
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214942"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359475"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>整合 Windows 10 和 UWP 的傳統型應用程式封裝
 
@@ -99,7 +99,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 您可以確定使用者開啟新的已封裝應用程式，預設會針對特定類型的檔案，而不是開啟您的應用程式的桌面版本。
 
-若要完成這項工作，您可以指定您想要繼承檔案關聯的每個應用程式的[程式設計識別碼 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。
+若要完成這項工作，您可以指定您想要繼承檔案關聯的每個應用程式的[程式設計識別碼 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。
 
 #### <a name="xml-namespaces"></a>XML 命名空間
 
@@ -123,8 +123,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |名稱 |描述 |
 |-------|-------------|
 |Category |總是 ``windows.fileTypeAssociation``。
-|名稱 |您應用程式的唯一識別碼。 此識別碼係供內部用於產生與檔案類型關聯相關聯的雜湊[程式設計識別碼 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。 您可使用此識別碼來管理您應用程式未來版本中的變更。 |
-|MigrationProgId |[程式設計識別項 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) ，描述應用程式、 元件和您要從中繼承檔案關聯的桌面應用程式版本。|
+|名稱 |您應用程式的唯一識別碼。 此識別碼係供內部用於產生與檔案類型關聯相關聯的雜湊[程式設計識別碼 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。 您可使用此識別碼來管理您應用程式未來版本中的變更。 |
+|MigrationProgId |[程式設計識別項 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) ，描述應用程式、 元件和您要從中繼承檔案關聯的桌面應用程式版本。|
 
 #### <a name="example"></a>範例
 
@@ -182,7 +182,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |名稱 |描述 |
 |-------|-------------|
 |Category |總是 ``windows.fileTypeAssociation``。
-|名稱 |您應用程式的唯一識別碼。 此識別碼係供內部用於產生與檔案類型關聯相關聯的雜湊[程式設計識別碼 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。 您可使用此識別碼來管理您應用程式未來版本中的變更。   |
+|名稱 |您應用程式的唯一識別碼。 此識別碼係供內部用於產生與檔案類型關聯相關聯的雜湊[程式設計識別碼 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。 您可使用此識別碼來管理您應用程式未來版本中的變更。   |
 |FileType |您應用程式支援的檔案副檔名。 |
 
 #### <a name="example"></a>範例
@@ -410,7 +410,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 
 使用延伸模組來識別這些資料夾。 如此一來，系統可以找出並載入您放置的檔案。 將此延伸模組視為 _%PATH%_ 環境變數的替代。
 
-如果您未使用此延伸模組，系統會依序搜尋程序的套件相依性圖形、套件根資料夾，然後搜尋系統目錄 ( _%SystemRoot%\system32_)。 若要深入了解，請參閱 [Windows 應用程式的搜尋順序](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps)。
+如果您未使用此延伸模組，系統會依序搜尋程序的套件相依性圖形、套件根資料夾，然後搜尋系統目錄 ( _%SystemRoot%\system32_)。 若要深入了解，請參閱 [Windows 應用程式的搜尋順序](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order)。
 
 每個套件只可以包含下列其中一個延伸模組。 這表示您可以將其中一個新增到您的主要套件，並在每個[選用套件及相關集合](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)中新增一個。
 
@@ -673,7 +673,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 在檔案總管中，使用者可以使用該欄位群組這些檔案。 系統元件也會根據不同用途使用此欄位，例如：編製索引。
 
-如需有關**種類**欄位以及您可以使用於此欄位中的詳細資訊，請參閱[使用種類名稱](https://msdn.microsoft.com/library/windows/desktop/cc144136.aspx)。
+如需有關**種類**欄位以及您可以使用於此欄位中的詳細資訊，請參閱[使用種類名稱](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
 
 #### <a name="xml-namespaces"></a>XML 命名空間
 
@@ -702,7 +702,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |Category |總是 ``windows.fileTypeAssociation``。
 |名稱 |您應用程式的唯一識別碼。 |
 |FileType |相關的檔案副檔名。 |
-|value |一個有效的 [Kind 值](https://msdn.microsoft.com/en-us/library/windows/desktop/cc144136.aspx#kind_hierarchy) |
+|value |一個有效的 [Kind 值](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### <a name="example"></a>範例
 
@@ -1069,8 +1069,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |DropTargetHandler |應用程式實作的類別識別碼[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 抽取式媒體中的檔案將會傳遞至[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)實作的[Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)方法。  |
 |參數 |您不需要為所有內容事件實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對於任何內容事件，您可以提供命令列參數，而不實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 這些事件，[自動播放] 會使用這些命令列參數來啟動您的應用程式。 您可以在應用程式的初始化程式碼中剖析這些參數，以判斷自動播放是否啟動應用程式，然後提供您的自訂實作。 |
 |DeviceEvent |裝置事件的名稱，該事件導致向使用者提示您的``ActionDisplayName``與``ProviderDisplayName``。 將裝置連接到電腦時，就會引發裝置事件。 裝置事件以字串``WPD``開頭，[這裡](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)列出這些裝置事件。 |
-|HWEventHandler |實作應用程式的類別識別碼[IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx)介面。 |
-|InitCmdLine |您想要傳遞到[IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx)介面的[Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx)方法的字串參數。 |
+|HWEventHandler |實作應用程式的類別識別碼[IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)介面。 |
+|InitCmdLine |您想要傳遞到[IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)介面的[Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize)方法的字串參數。 |
 
 ### <a name="example"></a>範例
 
@@ -1101,14 +1101,14 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 如果當使用者安裝更新時，開啟您的應用程式，應用程式就會關閉。
 
-如果您想要該應用程式更新之後重新啟動完成，請呼叫[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)中您想要重新啟動每個處理序的函式。
+如果您想要該應用程式更新之後重新啟動完成，請呼叫[RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart)中您想要重新啟動每個處理序的函式。
 
-在您的應用程式中每個使用中視窗會收到[WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)訊息。 此時，您的應用程式可以呼叫[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函式，以視需要更新命令列。
+在您的應用程式中每個使用中視窗會收到[WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession)訊息。 此時，您的應用程式可以呼叫[RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart)函式，以視需要更新命令列。
 
-當您的應用程式中每個使用中視窗收到[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)訊息，您的應用程式應該會將資料儲存並關閉。
+當您的應用程式中每個使用中視窗收到[WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)訊息，您的應用程式應該會將資料儲存並關閉。
 
 >[!NOTE]
-作用中的 windows 也會收到[WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx)萬一應用程式不會處理訊息[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)訊息。
+作用中的 windows 也會收到[WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close)萬一應用程式不會處理訊息[WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)訊息。
 
 到目前為止，您的應用程式有 30 秒來關閉它本身的處理程序，或平台強制終止它們。
 

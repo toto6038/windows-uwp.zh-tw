@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 210cca8a4b17b77e8c1f9cb490a79bcd1a53b6c7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6c8cc237dec082096eb235237490e4f5d29cc6dd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627613"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364323"
 ---
 # <a name="semantic-zoom"></a>語意式縮放
 
@@ -29,7 +29,7 @@ ms.locfileid: "57627613"
 
 例如，使用者檢視通訊錄時，可縮小以快速跳到字母 "W"，然後放大該字母以查看與其相關的名稱。 
 
-> **重要的 Api**:[SemanticZoom 類別](https://msdn.microsoft.com/library/windows/apps/hh702601)， [ListView 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)， [GridView 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
+> **重要的 Api**:[SemanticZoom 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)， [ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)， [GridView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 
 **功能**：
 
@@ -41,7 +41,7 @@ ms.locfileid: "57627613"
 
 當您需要顯示的分組資料集大到無法全部顯示在一或兩個頁面上時，請使用 **SemanticZoom** 控制項。
 
-請勿混淆語意式縮放與視覺化縮放。 雖然它們共用相同的互動和基本行為 (根據縮放係數顯示較多或較少的詳細資料)，但視覺化縮放是指內容區域或物件 (例如相片) 的倍率調整。 如需執行視覺化縮放的控制項相關資訊，請參閱 [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) 控制項。
+請勿混淆語意式縮放與視覺化縮放。 雖然它們共用相同的互動和基本行為 (根據縮放係數顯示較多或較少的詳細資料)，但視覺化縮放是指內容區域或物件 (例如相片) 的倍率調整。 如需執行視覺化縮放的控制項相關資訊，請參閱 [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) 控制項。
 
 ## <a name="examples"></a>範例
 
@@ -73,7 +73,7 @@ ms.locfileid: "57627613"
 
 ## <a name="create-a-semantic-zoom"></a>建立語意式縮放
 
-**SemanticZoom** 控制項不具有屬於自己的任何視覺化呈現方式。 它是可管理另外 2 個提供內容檢視的控制項 (通常是 **ListView** 或 **GridView** 控制項) 之間轉換的主控制項。  您會將檢視控制項設定為 SemanticZoom 的 [ZoomedInView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedinview.aspx) 與 [ZoomedOutView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedoutview.aspx) 屬性。
+**SemanticZoom** 控制項不具有屬於自己的任何視覺化呈現方式。 它是可管理另外 2 個提供內容檢視的控制項 (通常是 **ListView** 或 **GridView** 控制項) 之間轉換的主控制項。  您會將檢視控制項設定為 SemanticZoom 的 [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) 與 [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) 屬性。
 
 語意式縮放需要的 3 個元素為︰
 - 分組的資料來源
@@ -82,7 +82,7 @@ ms.locfileid: "57627613"
 
 使用語意式縮放之前，您應該了解如何使用具有分組資料的清單檢視。 如需詳細資訊，請參閱 <<c0> [ 清單檢視和格線檢視](listview-and-gridview.md)。 
 
-> **注意**&nbsp;&nbsp;若要定義 SemanticZoom 控制項的放大檢視和縮小檢視，您可以使用實作 [ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx) 介面的任兩個控制項。 XAML 架構還提供實作此介面的 3 個控制項：ListView、 GridView 和中樞。
+> **注意**&nbsp;&nbsp;若要定義 SemanticZoom 控制項的放大檢視和縮小檢視，您可以使用實作 [ISemanticZoomInformation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) 介面的任兩個控制項。 XAML 架構還提供實作此介面的 3 個控制項：ListView、 GridView 和中樞。
  
  這個 XAML 會顯示 SemanticZoom 控制項的結構。 您會將其他控制項指派給 ZoomedInView 與 ZoomedOutView 屬性。
  
@@ -163,11 +163,11 @@ ms.locfileid: "57627613"
 
 **同步處理檢視**
 
-放大檢視與縮小檢視應該同步，讓使用者在縮小檢視中選取群組時，該群組的詳細資料能夠顯示在放大檢視中。 您可以使用 [CollectionViewSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) 或新增程式碼來同步檢視。
+放大檢視與縮小檢視應該同步，讓使用者在縮小檢視中選取群組時，該群組的詳細資料能夠顯示在放大檢視中。 您可以使用 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 或新增程式碼來同步檢視。
 
-繫結到相同 CollectionViewSource 的任何控制項將永遠具有相同的目前項目。 如果兩種檢視都使用相同的 CollectionViewSource 做為資料來源，CollectionViewSource 就會自動同步檢視。 如需詳細資訊，請參閱 [CollectionViewSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx)。
+繫結到相同 CollectionViewSource 的任何控制項將永遠具有相同的目前項目。 如果兩種檢視都使用相同的 CollectionViewSource 做為資料來源，CollectionViewSource 就會自動同步檢視。 如需詳細資訊，請參閱 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。
 
-如果您不使用 CollectionViewSource 來同步檢視，則應該處理 [ViewChangeStarted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.viewchangestarted.aspx) 事件，並在事件處理常式中同步項目，如下所示。
+如果您不使用 CollectionViewSource 來同步檢視，則應該處理 [ViewChangeStarted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.viewchangestarted) 事件，並在事件處理常式中同步項目，如下所示。
 
 ```xaml
 <SemanticZoom x:Name="semanticZoom" ViewChangeStarted="SemanticZoom_ViewChangeStarted">

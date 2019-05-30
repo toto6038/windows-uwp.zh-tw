@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cfbe8df46f51b41ccdd840f609caf2c593735e1f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598893"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372140"
 ---
 # <a name="get-app-data"></a>取得應用程式資料
 
@@ -26,7 +26,7 @@ ms.locfileid: "57598893"
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [取得附加元件的應用程式](get-add-ons-for-an-app.md)         |
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [取得應用程式封裝的航班](get-flights-for-an-app.md) |
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 如果您尚未完成，請先完成 Microsoft Store 提交 API 的所有[必要條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然後再嘗試使用這其中的任何方法。
 
@@ -64,15 +64,15 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 
 | 值           | 類型    | 描述       |
 |-----------------|---------|---------------------|
-| id            | 字串  | 應用程式的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
+| id            | 字串  | 應用程式的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
 | primaryName   | 字串  | 應用程式的主要名稱。      |
 | packageFamilyName | 字串  | 應用程式的套件系列名稱      |
 | packageIdentityName          | 字串  | 應用程式的套件識別資料名稱。                       |
-| publisherName       | 字串  | 與應用程式相關聯的 Windows 發行者識別碼。 這會對應至**套件/身分識別/發行者**值，會出現在[應用程式身分識別](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)在合作夥伴中心內應用程式頁面。       |
+| publisherName       | 字串  | 與應用程式相關聯的 Windows 發行者識別碼。 這會對應至**套件/身分識別/發行者**值，會出現在[應用程式身分識別](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)在合作夥伴中心內應用程式頁面。       |
 | firstPublishedDate      | 字串  | 第一次發佈應用程式的日期 (格式為 ISO 8601)。   |
 | lastPublishedApplicationSubmission       | 物件 | [提交資源](#submission_object)，其提供應用程式最新發行提交的資訊。    |
 | pendingApplicationSubmission        | 物件  |  [提交資源](#submission_object)，其提供應用程式目前擱置提交的資訊。   |   
-| hasAdvancedListingPermission        | 布林值  |  指出您是否可以為應用程式的提交設定 [gamingOptions](manage-app-submissions.md#gaming-options-object) 或 [trailers](manage-app-submissions.md#trailer-object)。 這個值對 2017 年 5 月後建立的提交，設為提交。 |  |
+| hasAdvancedListingPermission        | boolean  |  指出您是否可以為應用程式的提交設定 [gamingOptions](manage-app-submissions.md#gaming-options-object) 或 [trailers](manage-app-submissions.md#trailer-object)。 這個值對 2017 年 5 月後建立的提交，設為提交。 |  |
 
 
 <span id="add-on-object" />
@@ -127,8 +127,8 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 | friendlyName           | 字串  | 開發人員指定的套件正式發行前小眾測試版名稱。   |
 | lastPublishedFlightSubmission       | 物件 | [提交資源](#submission_object)，其提供套件正式發行前小眾測試版最新發行提交的資訊。   |
 | pendingFlightSubmission        | 物件  |  [提交資源](#submission_object)，其提供套件正式發行前小眾測試版目前擱置提交的資訊。  |    
-| groupIds           | 陣列  | 此字串陣列包含與套件正式發行前小眾測試版相關聯的正式發行前小眾測試版群組的識別碼。 如需有關正式發行前小眾測試版群組的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。   |
-| rankHigherThan           | 字串  | 排名位於目前套件正式發行前小眾測試版之下的套件正式發行前小眾測試版易記名稱。 如需有關正式發行前小眾測試版群組排名的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |
+| groupIds           | 陣列  | 此字串陣列包含與套件正式發行前小眾測試版相關聯的正式發行前小眾測試版群組的識別碼。 如需有關正式發行前小眾測試版群組的詳細資訊，請參閱[套件正式發行前小眾測試版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。   |
+| rankHigherThan           | 字串  | 排名位於目前套件正式發行前小眾測試版之下的套件正式發行前小眾測試版易記名稱。 如需有關正式發行前小眾測試版群組排名的詳細資訊，請參閱[套件正式發行前小眾測試版](https://docs.microsoft.com/windows/uwp/publish/package-flights)。  |
 
 
 <span id="submission_object" />

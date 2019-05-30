@@ -6,29 +6,29 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 26eb371e767f0c1e7f3d5855cf68728958c0cda3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: effb28fa453ec884152dbc404245f00f4893ef5a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608933"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369419"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>判斷 Microsoft OneDrive 檔案的可用性
 
 
 **重要的 Api**
 
--   [**FileIO 類別**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
--   [**StorageFile 類別**](https://msdn.microsoft.com/library/windows/apps/BR227171)
--   [**StorageFile.IsAvailable 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
+-   [**FileIO 類別**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)
+-   [**StorageFile 類別**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
+-   [**StorageFile.IsAvailable 屬性**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable)
 
-使用 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
+使用 [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 -   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/Mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187334)。
+    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
 -   **應用程式 capabilty 宣告**
 
@@ -38,7 +38,7 @@ ms.locfileid: "57608933"
 
 使用者可以將 OneDrive 檔案標示為可離線使用 (預設值) 或僅限線上存取。 這個功能可以讓使用者將大型檔案 (例如圖片或影片) 移到他們的 OneDrive、將檔案標示為僅限線上存取，以及節省磁碟空間 (本機保存的項目僅限中繼資料檔案)。
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)，用來判斷檔案是否為目前可用。 下表顯示 **StorageFile.IsAvailable** 屬性在各種案例中的值。
+[**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable)，用來判斷檔案是否為目前可用。 下表顯示 **StorageFile.IsAvailable** 屬性在各種案例中的值。
 
 | 檔案類型                              | Online | 計量付費網路        | 離線 |
 |-------------------------------------------|--------|------------------------|---------|
@@ -52,11 +52,11 @@ ms.locfileid: "57608933"
 下列步驟說明如何判斷檔案目前是否可用。
 
 1.  宣告某項功能適用於您想要存取的媒體櫃。
-2.  包含 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空間。 這個命名空間包含管理檔案、資料夾及應用程式設定的類型。 其中也會包含所需的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 類型。
-3.  針對所需的檔案取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件。 如果您正在列舉媒體櫃，通常可呼叫 [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252) 方法，然後呼叫所產生之 [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) 物件的 [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) 方法，來完成這個步驟。 **GetFilesAsync** 方法會傳回 **StorageFile** 物件的 [IReadOnlyList](https://go.microsoft.com/fwlink/p/?LinkId=324970) 集合。
-4.  一旦您具備代表所需檔案之 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件的存取權後，[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性的值就會反映檔案是否可供使用。
+2.  包含 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空間。 這個命名空間包含管理檔案、資料夾及應用程式設定的類型。 其中也會包含所需的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 類型。
+3.  針對所需的檔案取得 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件。 如果您正在列舉媒體櫃，通常可呼叫 [**StorageFolder.CreateFileQuery**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery) 方法，然後呼叫所產生之 [**StorageFileQueryResult**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.StorageFileQueryResult) 物件的 [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 方法，來完成這個步驟。 **GetFilesAsync** 方法會傳回 **StorageFile** 物件的 [IReadOnlyList](https://go.microsoft.com/fwlink/p/?LinkId=324970) 集合。
+4.  一旦您具備代表所需檔案之 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件的存取權後，[**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 屬性的值就會反映檔案是否可供使用。
 
-下列泛型方法說明如何列舉任意資料夾，並傳回該資料夾的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件集合。 接著，呼叫方法會在參考每個檔案之 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性的傳回集合上重複執行。
+下列泛型方法說明如何列舉任意資料夾，並傳回該資料夾的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件集合。 接著，呼叫方法會在參考每個檔案之 [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 屬性的傳回集合上重複執行。
 
 ```cs
 /// <summary>

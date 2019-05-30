@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 深度, 效果, 基本類型, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 02911338da858e3718235736cee7969a7bdebae2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 63af04475e897dfade3afec91b2a0fa0d9790f84
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646583"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367507"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>在基本型別上使用深度和效果
 
@@ -21,7 +21,7 @@ ms.locfileid: "57646583"
 
 **目標：** 若要建立 3D 物件，並套用基本頂點光源及著色給它。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 
 我們假設您熟悉 C++。 您還需要圖形程式設計概念的基本經驗。
@@ -34,7 +34,7 @@ ms.locfileid: "57646583"
 ------------
 ### <a name="1-defining-cube-variables"></a>1.定義 cube 變數
 
-首先，我們需要為立方體定義 **SimpleCubeVertex** 和 **ConstantBuffer** 結構。 這些結構指定了立方體的頂點位置和色彩，以及檢視立方體的方式。 我們會使用 [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 來宣告 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 和 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351)，並宣告 **ConstantBuffer** 的執行個體。
+首先，我們需要為立方體定義 **SimpleCubeVertex** 和 **ConstantBuffer** 結構。 這些結構指定了立方體的頂點位置和色彩，以及檢視立方體的方式。 我們會使用 [**ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class) 來宣告 [**ID3D11DepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview) 和 [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer)，並宣告 **ConstantBuffer** 的執行個體。
 
 ```cpp
 struct SimpleCubeVertex
@@ -66,7 +66,7 @@ private:
 
 ### <a name="2-creating-a-depth-stencil-view"></a>2.建立深度樣板檢視
 
-除了建立轉譯目標檢視之外，我們也會建立深度樣板檢視。 深度樣板檢視可以讓 Direct3D 有效地將較靠近相機的物件轉譯在離相機較遠的物件前面。 我們必須先建立深度樣板緩衝區，才能建立深度樣板緩衝區的檢視。 我們會填入[ **D3D11\_TEXTURE2D\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476253)描述深度樣板緩衝區，然後呼叫[ **ID3D11Device::CreateTexture2D** ](https://msdn.microsoft.com/library/windows/desktop/ff476521)建立深度樣板緩衝區。 若要建立深度樣板檢視，我們會填入[ **D3D11\_深度\_樣板\_檢視\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476112)描述深度樣板檢視，並傳遞深度樣板檢視描述和深度樣板緩衝區[ **ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507)。
+除了建立轉譯目標檢視之外，我們也會建立深度樣板檢視。 深度樣板檢視可以讓 Direct3D 有效地將較靠近相機的物件轉譯在離相機較遠的物件前面。 我們必須先建立深度樣板緩衝區，才能建立深度樣板緩衝區的檢視。 我們會填入[ **D3D11\_TEXTURE2D\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_texture2d_desc)描述深度樣板緩衝區，然後呼叫[ **ID3D11Device::CreateTexture2D** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d)建立深度樣板緩衝區。 若要建立深度樣板檢視，我們會填入[ **D3D11\_深度\_樣板\_檢視\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_view_desc)描述深度樣板檢視，並傳遞深度樣板檢視描述和深度樣板緩衝區[ **ID3D11Device::CreateDepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createdepthstencilview)。
 
 ```cpp
         // Once the render target view is created, create a depth stencil view.  This
@@ -148,15 +148,15 @@ private:
 
 在這個 app 中，我們會建立比先前[建立著色器及繪製基本型別](creating-shaders-and-drawing-primitives.md)教學課程中所述還要複雜的頂點和像素著色器。 這個 app 的頂點著色器會將每個頂點位置轉換成投影空間，並將頂點色彩傳送給像素著色器。
 
-應用程式的一連串[ **D3D11\_輸入\_項目\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180)結構描述的頂點著色器程式碼配置具有兩個版面配置項目： 一個項目定義頂點位置和其他項目定義的色彩。
+應用程式的一連串[ **D3D11\_輸入\_項目\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc)結構描述的頂點著色器程式碼配置具有兩個版面配置項目： 一個項目定義頂點位置和其他項目定義的色彩。
 
 我們會建立頂點緩衝區、索引緩衝區及常數緩衝區來定義環繞移動的立方體。
 
 **若要定義 orbiting cube**
 
 1.  首先，我們定義立方體。 除了位置之外，我們也會為每個頂點指派顏色。 這樣可以讓像素著色器在每一面填上不同的色彩，以便能夠分辨這些面。
-2.  接下來，我們會說明端點和索引緩衝區 ([**D3D11\_緩衝區\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092)並[ **D3D11\_SUBRESOURCE\_資料**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) 使用的 cube 定義。 我們會為每個緩衝區呼叫 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 一次。
-3.  接下來，我們建立常數緩衝區 ([**D3D11\_緩衝區\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) 將傳給端點著色器模型、 檢視和投影矩陣。 我們可以稍後使用常數緩衝區來旋轉立方體，並在立方體上套用透視投影。 我們會呼叫 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 來建立常數緩衝區。
+2.  接下來，我們會說明端點和索引緩衝區 ([**D3D11\_緩衝區\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)並[ **D3D11\_SUBRESOURCE\_資料**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) 使用的 cube 定義。 我們會為每個緩衝區呼叫 [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 一次。
+3.  接下來，我們建立常數緩衝區 ([**D3D11\_緩衝區\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)) 將傳給端點著色器模型、 檢視和投影矩陣。 我們可以稍後使用常數緩衝區來旋轉立方體，並在立方體上套用透視投影。 我們會呼叫 [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 來建立常數緩衝區。
 4.  接著，我們會指定對應 X = 0、Y = 1、Z = 2 相機位置的檢視轉換。
 5.  最後，我們會宣告一個 *degree* 變數，我們將使用這個變數藉由在每個畫面旋轉立方體來製作動畫。
 
@@ -336,20 +336,20 @@ private:
 
 ### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5.旋轉和繪製 cube 和呈現所呈現的影像
 
-我們會進入一個無限迴圈來不斷轉譯並顯示場景。 我們會呼叫 **rotationY** 內嵌函式 (BasicMath.h) 搭配一個旋轉量，以設定將會把立方體的模型矩陣繞著 Y 軸旋轉的值。 然後我們會呼叫 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) 來更新常數緩衝區並旋轉立方體模型。 我們會呼叫 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)，以將轉譯目標指定為輸出目標。 在這個 **OMSetRenderTargets** 呼叫中，我們會傳送深度樣板檢視。 我們會呼叫 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) 來將轉譯目標清除成純藍色，並且呼叫 [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) 來清除深度緩衝區。
+我們會進入一個無限迴圈來不斷轉譯並顯示場景。 我們會呼叫 **rotationY** 內嵌函式 (BasicMath.h) 搭配一個旋轉量，以設定將會把立方體的模型矩陣繞著 Y 軸旋轉的值。 然後我們會呼叫 [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) 來更新常數緩衝區並旋轉立方體模型。 我們會呼叫 [**ID3D11DeviceContext::OMSetRenderTargets**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets)，以將轉譯目標指定為輸出目標。 在這個 **OMSetRenderTargets** 呼叫中，我們會傳送深度樣板檢視。 我們會呼叫 [**ID3D11DeviceContext::ClearRenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) 來將轉譯目標清除成純藍色，並且呼叫 [**ID3D11DeviceContext::ClearDepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview) 來清除深度緩衝區。
 
 在無限迴圈中，我們也會在藍色表面上繪製立方體。
 
 **若要繪製的 cube**
 
-1.  首先，我們會呼叫 [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 來描述頂點緩衝區資料如何串流處理到輸入組合器階段。
-2.  接著，我們會呼叫 [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 來將頂點和索引緩衝區繫結到輸入組合階段。
-3.  接下來，我們會呼叫[ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455)具有[ **D3D11\_基本\_拓樸\_TRIANGLESTRIP** ](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP)值來指定輸入組譯工具階段解譯為三角形區域的頂點資料。
-4.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 以使用頂點著色器程式碼起始頂點著色階段，並且呼叫 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 以使用像素著色器程式碼起始像素著色階段。
-5.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) 來設定頂點著色器管線階段所使用的常數緩衝區。
-6.  最後，我們會呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 來繪製立方體並將它提交給轉譯管線。
+1.  首先，我們會呼叫 [**ID3D11DeviceContext::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) 來描述頂點緩衝區資料如何串流處理到輸入組合器階段。
+2.  接著，我們會呼叫 [**ID3D11DeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) 來將頂點和索引緩衝區繫結到輸入組合階段。
+3.  接下來，我們會呼叫[ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology)具有[ **D3D11\_基本\_拓樸\_TRIANGLESTRIP** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85))值來指定輸入組譯工具階段解譯為三角形區域的頂點資料。
+4.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) 以使用頂點著色器程式碼起始頂點著色階段，並且呼叫 [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) 以使用像素著色器程式碼起始像素著色階段。
+5.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetConstantBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers) 來設定頂點著色器管線階段所使用的常數緩衝區。
+6.  最後，我們會呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) 來繪製立方體並將它提交給轉譯管線。
 
-我們會呼叫 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)，以將轉譯的影像呈現到視窗。
+我們會呼叫 [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present)，以將轉譯的影像呈現到視窗。
 
 ```cpp
             // Update the constant buffer to rotate the cube model.

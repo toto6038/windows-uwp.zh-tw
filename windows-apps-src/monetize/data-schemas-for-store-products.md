@@ -5,18 +5,18 @@ ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, Microsoft Store 產品, 結構描述
 ms.localizationpriority: medium
-ms.openlocfilehash: 344052c18178a121fd9c8d133bdd1abe5a4ad886
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 77f63ce409a576b3c873d95df0d2e8d0f0933808
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334837"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372529"
 ---
 # <a name="data-schemas-for-store-products"></a>Microsoft Store 產品的資料結構描述
 
-當您提交產品 (例如應用程式或附加元件) 至 Microsoft Store 時，Microsoft Store 會為產品及其授權維護一份完整的資料。 在您應用程式的程式碼中，您可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中的屬性，以程式設計方式存取此資料的某部分。 例如，您可以使用 [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) 和 [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) 屬性，擷取目前應用程式或目前應用程式之附加元件的描述和價格。
+當您提交產品 (例如應用程式或附加元件) 至 Microsoft Store 時，Microsoft Store 會為產品及其授權維護一份完整的資料。 在您應用程式的程式碼中，您可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中的屬性，以程式設計方式存取此資料的某部分。 例如，您可以使用 [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) 和 [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) 屬性，擷取目前應用程式或目前應用程式之附加元件的描述和價格。
 
-不過，Microsoft Store 中產品的大部分資料不會由 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的預先定義屬性公開。 若要在程式碼中存取產品的完整資料，您可以改用下列一般屬性：
+不過，Microsoft Store 中產品的大部分資料不會由 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間的預先定義屬性公開。 若要在程式碼中存取產品的完整資料，您可以改用下列一般屬性：
 
 * [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData)
 * [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData)

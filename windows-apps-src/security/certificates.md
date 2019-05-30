@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28419df1a37ff640db7246b54e50da5bfce9fedb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624353"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372624"
 ---
 # <a name="intro-to-certificates"></a>憑證簡介
 
@@ -53,18 +53,18 @@ X.509 公開金鑰憑證標準已隨著時間不斷修訂。 每個後續的資�
 
 ![x.509 憑證版本 1、2 及 3](images/x509certificateversions.png)
 
-部分欄位和延伸可以在使用 [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) 類別建立憑證要求時直接指定。 但大部分無法直接指定。 這些欄位可由發行授權單位填寫或留白。 如需欄位的詳細資訊，請參閱下列各節：
+部分欄位和延伸可以在使用 [**CertificateRequestProperties**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) 類別建立憑證要求時直接指定。 但大部分無法直接指定。 這些欄位可由發行授權單位填寫或留白。 如需欄位的詳細資訊，請參閱下列各節：
 
 ### <a name="version-1-fields"></a>版本 1 欄位
 
 | 欄位 | 描述 |
 |-------|-------------|
-| 版本 | 指定編碼憑證的版本編號。 目前，此欄位可以接受的值為 0、1 或 2。 |
+| Version | 指定編碼憑證的版本編號。 目前，此欄位可以接受的值為 0、1 或 2。 |
 | 序號 | 包含一個由憑證授權單位 (CA) 指派給憑證的唯一正整數。 |
 | 簽章演算法 | 包含一個物件識別碼 (OID)，指定 CA 用來簽署憑證時使用的演算法。 例如，1.2.840.113549.1.1.5 指定 SHA-1 雜湊演算法結合來自 RSA Laboratories 制定的 RSA 加密演算法。 |
 | 簽發者 | 包含建立並簽署憑證之 CA 的 X.500 辨別名稱 (DN)。 |
 | 有效性 | 指定憑證有效的時間間隔。 直至 2049 年底的日期都使用國際標準時間 (格林威治標準時間) 格式 (yymmddhhmmssz)。 從 2050 年 1 月 1 日開始的日期則使用一般時間格式 (yyyymmddhhmmssz)。 |
-| 主體 | 包含實體的 X.500 辨別名稱，該實體與憑證中包含的公開金鑰相關聯。 |
+| Subject | 包含實體的 X.500 辨別名稱，該實體與憑證中包含的公開金鑰相關聯。 |
 | 公開金鑰 | 包含公開金鑰和相關聯的演算法資訊。 |
 
 ### <a name="version-2-fields"></a>版本 2 欄位

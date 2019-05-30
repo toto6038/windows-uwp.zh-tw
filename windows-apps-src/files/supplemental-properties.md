@@ -5,16 +5,16 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10 uwp、 WinRT API，索引子搜尋
 localizationpriority: medium
-ms.openlocfilehash: b2ac43c9aa2d27f8745e9075abc13d8feaba2370
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592683"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369259"
 ---
 # <a name="using-supplemental-properties"></a>使用的補充屬性  
 
-## <a name="summary"></a>摘要  
+## <a name="summary"></a>總結  
 - 補充屬性允許屬性的標記檔案的應用程式，而不需要變更檔案 
 - 幫助的情況下造成難以進行計算的屬性或檔案不能修改 
 - 使用的補充屬性就是使用 Windows 屬性系統上的任何其他屬性  
@@ -27,7 +27,7 @@ ms.locfileid: "57592683"
 數十年來，在 Windows 上的快速搜尋解決方案已經過索引子，以及 Creators update 它已更新為支援這些新的案例。 應用程式現在已能夠與其他屬性以外，系統會擷取標記檔案。 這些屬性會被視為第一級公民  
 
 ## <a name="windows-properties"></a>Windows 屬性 
-[Windows 屬性系統](https://msdn.microsoft.com/library/windows/desktop/ff728898)已與檔案互動，多年來的重要部分。 它可讓應用程式，以讀取檔案中的屬性，而不需要了解所有不同的檔案格式或語言的檔案可能會在內部運作。 所有的抽象化為您身為開發人員，您只需要要求清單，並指定遞增或遞減。  
+[Windows 屬性系統](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system)已與檔案互動，多年來的重要部分。 它可讓應用程式，以讀取檔案中的屬性，而不需要了解所有不同的檔案格式或語言的檔案可能會在內部運作。 所有的抽象化為您身為開發人員，您只需要要求清單，並指定遞增或遞減。  
 
 使用 Windows 索引子密不可分屬性系統，它從其範圍內的檔案讀取所有屬性，並將它們儲存。 稍後當應用程式會要求一份依修改日期排序資料夾中的所有.docx 但不包括作者 John Smith 索引子可以傳回清單，立即。  
 

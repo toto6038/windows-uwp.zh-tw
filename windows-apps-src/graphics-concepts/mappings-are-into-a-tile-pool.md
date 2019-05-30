@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a0474345e21161e76fbfeebe0086e5d433b2d219
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a68623b0a61672426c9b6eef85cb7d1ddc990a19
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607353"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370995"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>對應在磚集區中
 
@@ -31,13 +31,13 @@ ms.locfileid: "57607353"
 
 假設每個分頁表項目是 64 位元。
 
-對於最壞情況的分頁表叫用單一的介面，並指定在 Direct3D 11 中的資源限制，假設資料流的資源會透過 128 位元每-項目格式 （例如，RGBA 浮點數），因此 64 KB 的圖格的大小會包含只有 4096 的像素為單位。 支援的最大[ **Texture2DArray** ](https://msdn.microsoft.com/library/windows/desktop/ff471526)大小 16384\*16384\*2048 （但只有單一 mipmap） 需要約 1 GB 的儲存體頁面資料表中，如果完全擴展（不包括 mipmap) 使用 64 位元資料表項目。 新增 Mipmap 會增加完全對應 (最糟情況) 分頁表儲存空間約 1.3GB 的三分之一。
+對於最壞情況的分頁表叫用單一的介面，並指定在 Direct3D 11 中的資源限制，假設資料流的資源會透過 128 位元每-項目格式 （例如，RGBA 浮點數），因此 64 KB 的圖格的大小會包含只有 4096 的像素為單位。 支援的最大[ **Texture2DArray** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)大小 16384\*16384\*2048 （但只有單一 mipmap） 需要約 1 GB 的儲存體頁面資料表中，如果完全擴展（不包括 mipmap) 使用 64 位元資料表項目。 新增 Mipmap 會增加完全對應 (最糟情況) 分頁表儲存空間約 1.3GB 的三分之一。
 
 這種情形存取約 10.6 TB 可定址記憶體。 但可能會限制可定址記憶體數量，這會使數量減少至約 TB 範圍。
 
-要考量的另一種情況是單一[ **Texture2D** ](https://msdn.microsoft.com/library/windows/desktop/ff471525)串流 16384 資源\*使用 32 位元為個別項目格式，包括 mipmap 16384。 完整填入分頁表所需的空間約 170 KB，具有 64 位元資料表項目。
+要考量的另一種情況是單一[ **Texture2D** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)串流 16384 資源\*使用 32 位元為個別項目格式，包括 mipmap 16384。 完整填入分頁表所需的空間約 170 KB，具有 64 位元資料表項目。
 
-最後，請考慮使用 BC 格式的範例，例如 BC7 含每個磚 128 位元 4x4 像素。 這是每個像素一個位元組。 A [ **Texture2DArray** ](https://msdn.microsoft.com/library/windows/desktop/ff471526)的 16384\*16384\*2048年包括 mipmap 需要完整填入此頁面資料表中的記憶體大約 85 MB。 也可以考慮讓一項串流資源跨越 550 gigapixels (在本案例 512 GB 以上)。
+最後，請考慮使用 BC 格式的範例，例如 BC7 含每個磚 128 位元 4x4 像素。 這是每個像素一個位元組。 A [ **Texture2DArray** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)的 16384\*16384\*2048年包括 mipmap 需要完整填入此頁面資料表中的記憶體大約 85 MB。 也可以考慮讓一項串流資源跨越 550 gigapixels (在本案例 512 GB 以上)。
 
 實際上，如果實體可用記憶體數量不允許每次都對應和參考，便不定義這些完整對應。 但若有磚集區，應用程式便可以選擇重複使用動態磚 (例如，重複使用「黑」色磚針對影像中大型塊黑色區域) - 有效使用磚集區 (也就是分頁表對應) 當做記憶體壓縮工具。
 

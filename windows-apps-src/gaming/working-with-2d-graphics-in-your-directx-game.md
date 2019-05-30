@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, 2d, 圖形
 ms.localizationpriority: medium
-ms.openlocfilehash: 1154abc4305307d87f15fbe0c0e5461e3a15e27e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e3a843c00d28d83157cf35a0bd9527be8c6b62f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632653"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367349"
 ---
 # <a name="2d-graphics-for-directx-games"></a>適用於 DirectX 遊戲的 2D 圖形
 
@@ -21,7 +21,7 @@ ms.locfileid: "57632653"
 
 2D 圖形是 3D 圖形的子集，可處理 2D 基本類型或點陣圖。 較普遍的說法是，2D 圖形不使用 3D 遊戲中會使用的 z 座標，因為遊戲通常是限定在 x-y 平面上。 它們偶爾會使用 3D 圖形技術來建立自己的視覺元件，而且它們的開發通常也比較簡單。 如果您是遊戲的初學者，2D 遊戲是很好的起點，而且 2D 圖形開發也是適合您學習處理 DirectX 的好方法。
 
-您可以使用 Direct2D 或 Direct3D 或將兩者組合，在 DirectX 中開發 2D 遊戲圖形。 2D 遊戲開發中許多較為實用的類別是在 Direct3D 中，如 [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601) 類別。 Direct2D 是一組 API，主要針對需要支援繪圖基本類型 (例如圓形、線條和平面多邊形等) 的使用者介面和應用程式。 雖然如此，它仍然提供一組強大和高效能的類別和方法，可用來建立遊戲圖形，特別是建立遊戲重疊、介面以及抬頭顯示器 (HUD)，或是用來建立從簡單到適度詳細的各種 2D 遊戲。 不過，建立 2D 遊戲最有效的方式，是使用這兩種類別庫中的元素，而這就是我們在這個主題中開發 2D 圖形的方式。
+您可以使用 Direct2D 或 Direct3D 或將兩者組合，在 DirectX 中開發 2D 遊戲圖形。 2D 遊戲開發中許多較為實用的類別是在 Direct3D 中，如 [**Sprite**](https://docs.microsoft.com/windows/desktop/direct3d10/id3dx10sprite) 類別。 Direct2D 是一組 API，主要針對需要支援繪圖基本類型 (例如圓形、線條和平面多邊形等) 的使用者介面和應用程式。 雖然如此，它仍然提供一組強大和高效能的類別和方法，可用來建立遊戲圖形，特別是建立遊戲重疊、介面以及抬頭顯示器 (HUD)，或是用來建立從簡單到適度詳細的各種 2D 遊戲。 不過，建立 2D 遊戲最有效的方式，是使用這兩種類別庫中的元素，而這就是我們在這個主題中開發 2D 圖形的方式。
 
 ## <a name="concepts-at-a-glance"></a>概念簡介
 
@@ -53,9 +53,9 @@ ms.locfileid: "57632653"
 
 出色的作品變成視覺化呈現時，是您最大的資產。 雖然您的點陣圖圖形在使用最新的著色器模型功能時不一定具有 3D 照相寫實視覺效果的震撼力，但是絕佳的高解析度作品，通常能夠表達更多風格和個性，而且不會耗用太多效能。
 
-## <a name="reference"></a>參考
+## <a name="reference"></a>參考資料
 
 
--   [Direct2D 概觀](https://msdn.microsoft.com/library/windows/desktop/dd370987)
--   [Direct2D 快速入門](https://msdn.microsoft.com/library/windows/desktop/dd535473)
--   [Direct2D 和 Direct3D 的互通性概觀](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+-   [Direct2D 概觀](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview)
+-   [Direct2D 快速入門](https://docs.microsoft.com/windows/desktop/Direct2D/getting-started-with-direct2d)
+-   [Direct2D 和 Direct3D 的互通性概觀](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-and-direct3d-interoperation-overview)

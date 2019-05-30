@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c55a12dfa7757a48874b6857c95af592e818c2b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25ee9960e55100eaf743d73d7007e9bcf51342ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590763"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370727"
 ---
 # <a name="bc7-format"></a>BC7 格式
 
 
 BC7 格式是用於高品質 RGB 和 RGBA 資料壓縮的紋理壓縮格式。
 
-如需 BC7 格式的區塊模式資訊，請參閱 [BC7 格式模式參考](https://msdn.microsoft.com/library/windows/desktop/hh308954) (英文)。
+如需 BC7 格式的區塊模式資訊，請參閱 [BC7 格式模式參考](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format-mode-reference) (英文)。
 
 ## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>關於 BC7/DXGI\_格式\_BC7
 
@@ -30,7 +30,7 @@ BC7 由下列的 DXGI\_格式的列舉值：
 -   **DXGI\_格式\_BC7\_UNORM**。
 -   **DXGI\_格式\_BC7\_UNORM\_SRGB**。
 
-BC7 格式可用於 [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (包括陣列)、Texture3D，或 TextureCube (包括陣列) 紋理資源。 同樣地，此格式適用於任何與這些資源建立關聯的 Mipmap 表面。
+BC7 格式可用於 [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (包括陣列)、Texture3D，或 TextureCube (包括陣列) 紋理資源。 同樣地，此格式適用於任何與這些資源建立關聯的 Mipmap 表面。
 
 BC7 使用固定的 16 位元組 (128 位元) 區塊大小，以及固定之 4x4 材質的磚大小。 與之前的 BC 格式一樣，大於支援之磚大小 (4x4) 的紋理影像，程式會使用多重區塊對其進行壓縮。 此位址身分識別也適用於 3D 圖片和 Mipmap、立方體貼圖，以及紋理陣列。 所有影像磚都必須格式相同。
 
@@ -57,9 +57,9 @@ BC7 區塊可能包含多個端點配對。 對應至端點配對的索引集可
 
 | BC7 區塊包含...     | 模式位元 | 旋轉位元 | 索引選取器位元 | 分割位元 | 壓縮端點 | P 位元    | 壓縮索引 |
 |---------------------------|-----------|---------------|--------------------|----------------|----------------------|----------|--------------------|
-| 僅限色彩元件     | 必要  | 無           | 無                | 必要       | 必要             | 選用 | 必要           |
-| 色彩 + Alpha 合併    | 必要  | 無           | 無                | 選用       | 必要             | 選用 | 必要           |
-| 色彩和 Alpha 分隔 | 必要  | 必要      | 選用           | 無            | 必要             | 無      | 必要           |
+| 僅限色彩元件     | 必要  | N/A           | N/A                | 必要       | 必要             | 選用 | 必要           |
+| 色彩 + Alpha 合併    | 必要  | N/A           | N/A                | 選用       | 必要             | 選用 | 必要           |
+| 色彩和 Alpha 分隔 | 必要  | 必要      | 選用           | N/A            | 必要             | N/A      | 必要           |
 
  
 

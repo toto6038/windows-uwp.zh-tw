@@ -6,25 +6,25 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: a8d94f43edbdc3ec410ae7f878b38d41cddf5145
-ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
-ms.translationtype: HT
+ms.openlocfilehash: 1476410c96900eff7ba4b8d0ad34c9d7b5599434
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58358603"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372729"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>建立套件簽署的憑證
 
 
-本文章將說明如何使用 PowerShell 工具，以建立和匯出應用程式套件簽署的憑證。 建議您使用適用於[封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps) 的 Visual Studio，但如果您未使用 Visual Studio 開發應用程式，仍然可以手動封裝可在市集上架的應用程式。
+本文章將說明如何使用 PowerShell 工具，以建立和匯出應用程式套件簽署的憑證。 建議您使用適用於[封裝 UWP app](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps) 的 Visual Studio，但如果您未使用 Visual Studio 開發應用程式，仍然可以手動封裝可在市集上架的應用程式。
 
 > [!IMPORTANT] 
-> 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈匯入憑證並簽署應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
+> 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈匯入憑證並簽署應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
 ## <a name="prerequisites"></a>先決條件
 
 - **封裝或未封裝的應用程式**  
-包含 AppxManifest.xml 檔案的應用程式。 在建立用來簽署最終應用程式套件的憑證時，您會需要參考資訊清單檔。 如需如何手動封裝應用程式的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
+包含 AppxManifest.xml 檔案的應用程式。 在建立用來簽署最終應用程式套件的憑證時，您會需要參考資訊清單檔。 如需如何手動封裝應用程式的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
 
 - **公開金鑰基礎結構 (PKI) Cmdlet**  
 您需要 PKI cmdlet 來建立和匯出您的簽署憑證。 如需詳細資訊，請參閱 [Public Key Infrastructure Cmdlets](https://docs.microsoft.com/powershell/module/pkiclient/)。
@@ -32,6 +32,9 @@ ms.locfileid: "58358603"
 ## <a name="create-a-self-signed-certificate"></a>建立自我簽署憑證
 
 自我簽署的憑證可用於測試您的應用程式，您即可將它發佈至市集之前。 請遵循本節中建立自我簽署的憑證中所述的步驟。
+
+> [!NOTE]
+> 自我簽署的憑證適合嚴格測試。 當您準備好要將應用程式發行至存放區，或是從其他地點時，切換聲譽良好的來源憑證。 若要這樣做可能會導致無法取得您的客戶所安裝的應用程式。
 
 ### <a name="determine-the-subject-of-your-packaged-app"></a>判斷您經過封裝之應用程式的主旨  
 
@@ -63,9 +66,9 @@ New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso 
 
 - **TextExtension**:此參數包含下列延伸模組的設定：
 
-  - 擴充金鑰使用方法 (EKU):此擴充功能指出可能使用檢定的公開金鑰的其他用途。 針對自我簽署憑證，此參數應包含副檔名字串 **"2.5.29.37={text}1.3.6.1.5.5.7.3.3"**，表示憑證来用於程式碼簽署。
+  - 擴充金鑰使用方法 (EKU):此擴充功能指出可能使用檢定的公開金鑰的其他用途。 針對自我簽署憑證，此參數應包含副檔名字串 **"2.5.29.37={text}1.3.6.1.5.5.7.3.3"** ，表示憑證来用於程式碼簽署。
 
-  - 基本限制：此延伸模組會指出憑證為憑證授權單位 (CA)。 針對自我簽署憑證，此參數應包含副檔名字串 **"2.5.29.19={text}"**，這表示憑證是否為終端實體 (而不 CA)。
+  - 基本限制：此延伸模組會指出憑證為憑證授權單位 (CA)。 針對自我簽署憑證，此參數應包含副檔名字串 **"2.5.29.19={text}"** ，這表示憑證是否為終端實體 (而不 CA)。
 
 執行此命令之後，憑證將會依照 "-CertStoreLocation" 參數新增至本機憑證存放區中。 命令的結果也會產生憑證的指紋。  
 
@@ -97,8 +100,8 @@ Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -Fi
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
-在您建立和匯出憑證之後，就可以使用 **SignTool** 登入您的應用程式套件。 如需手動封裝過程的下一個步驟，請參閱[使用 SignTool 簽署應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool) (英文)。
+在您建立和匯出憑證之後，就可以使用 **SignTool** 登入您的應用程式套件。 如需手動封裝過程的下一個步驟，請參閱[使用 SignTool 簽署應用程式套件](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool) (英文)。
 
 ## <a name="security-considerations"></a>安全性考量
 
-藉由將認證新增至[本機電腦憑證存放區](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores) (英文)，您會對電腦上所有使用者的憑證信任造成影響。 建議您移除不再需要的憑證，以避免它們危害系統信任。
+藉由將認證新增至[本機電腦憑證存放區](https://docs.microsoft.com/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) (英文)，您會對電腦上所有使用者的憑證信任造成影響。 建議您移除不再需要的憑證，以避免它們危害系統信任。

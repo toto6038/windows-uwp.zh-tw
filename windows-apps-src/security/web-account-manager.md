@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: a0a16ac9a2d810f7f4cbe2be403713b5cec4997b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: f20179b03461f2b7746cc6d0f4330bbf45c10427
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641023"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371948"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 
@@ -24,7 +24,7 @@ ms.locfileid: "57641023"
 
 首先，在 Visual Studio 中建立新的空白應用程式。 
 
-其次，為了要連線到身分識別提供者，您必須將應用程式與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下專案，選擇 [市集] >  [將應用程式與市集建立關聯]，然後遵循精靈的指示進行。 
+其次，為了要連線到身分識別提供者，您必須將應用程式與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下專案，選擇 [市集] >  [將應用程式與市集建立關聯]，然後遵循精靈的指示進行。   
 
 接下來，建立非常基本的 UI，並在其中包含一個簡單的 XAML 按鈕以及兩個文字方塊。
 
@@ -76,7 +76,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 窗格之所以為空白，是因為系統僅提供 UI 殼層 - 開發人員必須以程式設計方式將身分識別提供者填入窗格。 
 
 > [!TIP]
-> 或者，您可以使用 **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而非 **[顯示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，這會傳回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**、 查詢作業的狀態。 
+> 或者，您可以使用 **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而非 **[顯示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** ，這會傳回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** 、 查詢作業的狀態。 
 
 ## <a name="register-for-accountcommandsrequested"></a>註冊 AccountCommandsRequested
 
@@ -133,7 +133,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 請注意，我們也會傳送字串「consumers」到選擇性的 *authority* 參數。 這是因為 Microsoft 提供兩種不同類型的驗證 - 針對「consumers (消費者)」的 Microsoft 帳戶 (MSA)，針對「organizations (組織)」的 Azure Active Directory (AAD)。 「consumers (消費者)」授權表示我們想要 MSA 選項。 如果您是在開發企業應用程式，請改為使用「organizations (組織)」字串。
 
-最後，建立新的 **[WebAccountProviderCommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)**，將提供者新增到 **AccountsSettingsPane**，如下所示： 
+最後，建立新的 **[WebAccountProviderCommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** ，將提供者新增到 **AccountsSettingsPane**，如下所示： 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -174,7 +174,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 在此範例中，我們傳送「wl.basic」字串到 _scope_ 參數。 範圍代表您從特定使用者提供的服務要求所要求的資訊類型。 某些範圍僅提供使用者基本資訊的存取，例如姓名和電子郵件地址，有些範圍可能授與敏感資訊的存取權，像是使用者的相片或電子郵件收件匣。 一般而言，您的 app 應該使用達成其功能所需的最低權限範圍。 服務提供者會提供文件，說明需要哪些範圍以取得權杖來使用他們的服務。 
 
-* 針對 Office 365 和 Outlook.com 範圍，請參閱[使用 v2.0 驗證端點驗證 Office 365 和 Outlook.com API](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)。 
+* 針對 Office 365 和 Outlook.com 範圍，請參閱[使用 v2.0 驗證端點驗證 Office 365 和 Outlook.com API](https://developer.microsoft.com/graph/docs/concepts/auth_overview)。 
 * 若為 OneDrive 範圍，請參閱 [OneDrive 驗證與登入](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
@@ -214,7 +214,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 > [!NOTE]
 > 如果您在要求權杖時收到錯誤，請確定您已將應用程式與 Store 產生關聯，如步驟一所述。 如果您略過此步驟，您的應用程式將無法取得權杖。 
 
-一旦您擁有權杖之後，就可以使用它來呼叫您提供者的 API。 在下列程式碼中，我們將呼叫 [使用者資訊 Microsoft Live API](https://msdn.microsoft.com/library/hh826533.aspx) 以取得關於使用者的基本資訊，然後將資訊顯示在我們的 UI 中。 不過請注意，大多數情況下建議您在取得權杖後立即將它儲存，然後以不同的方法使用它。
+一旦您擁有權杖之後，就可以使用它來呼叫您提供者的 API。 在下列程式碼中，我們將呼叫 [使用者資訊 Microsoft Live API](https://docs.microsoft.com/office/) 以取得關於使用者的基本資訊，然後將資訊顯示在我們的 UI 中。 不過請注意，大多數情況下建議您在取得權杖後立即將它儲存，然後以不同的方法使用它。
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -398,7 +398,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 您可以將自訂命令加入到 AccountsSettingsPane，該命令在支援的 WebAccountProviders 底下會顯示為連結。 自訂命令非常適合用於與使用者關連的簡單工作，例如顯示隱私權原則，或針對遇到問題的使用者啟動支援頁面。 
 
-以下是範例： 
+以下為範例： 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -420,13 +420,13 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 理論上，您可以使用 settings 命令來做任何事情。 不過，我們建議僅將它們使用在直覺、與帳戶相關的案例上，例如上述的案例。 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
-[Windows.Security.Authentication.Web.Core 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.core.aspx)
+[Windows.Security.Authentication.Web.Core 命名空間](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
-[Windows.Security.Credentials 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.aspx)
+[Windows.Security.Credentials 命名空間](https://docs.microsoft.com/uwp/api/windows.security.credentials)
 
-[AccountsSettingsPane 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.applicationsettings.accountssettingspane)
+[AccountsSettingsPane 類別](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
 
 [Web 驗證代理人](web-authentication-broker.md)
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ce91b47d2846f945a0e4a15f705491ab22e9dea
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 9d6a3b1eb64c89f231d0334a3cbe8e58d11c58ae
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291666"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370958"
 ---
 # <a name="rectangles"></a>矩形
 
@@ -21,7 +21,7 @@ ms.locfileid: "58291666"
 ## <a name="span-idboundingrectanglesspanspan-idboundingrectanglesspanspan-idboundingrectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>週框矩形
 
 
-大部分的應用程式使用 [**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897) 結構 (或 typedef 別名) 來具備在傳輸到畫面或執行命中偵測時要使用的週框相關資訊。 在 C++ 中，**RECT** 結構具有下列定義。
+大部分的應用程式使用 [**RECT**](https://docs.microsoft.com/previous-versions//dd162897(v=vs.85)) 結構 (或 typedef 別名) 來具備在傳輸到畫面或執行命中偵測時要使用的週框相關資訊。 在 C++ 中，**RECT** 結構具有下列定義。
 
 ```cpp
 typedef struct tagRECT { 

@@ -6,16 +6,16 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10 uwp，連線裝置、 遠端系統、 羅馬、 project rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd23603df1f1c3fac151da2aea2f8435b3ee423
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4787b6c14408dc8ee35e26764caafc5b6e7fbdc9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633413"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371880"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>透過遠端工作階段連接裝置
 
-「遠端工作階段」功能可讓應用程式透過工作階段連接到其他裝置，以進行明確的應用程式傳訊，或進行系統管理資料代理交換，例如在 Windows 全像攝影版裝置之間用於全像攝影共用的 **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)**。
+「遠端工作階段」功能可讓應用程式透過工作階段連接到其他裝置，以進行明確的應用程式傳訊，或進行系統管理資料代理交換，例如在 Windows 全像攝影版裝置之間用於全像攝影共用的 **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** 。
 
 任何 Windows 裝置都可以建立遠端工作階段，而且任何 Windows 裝置都可以要求加入其中 (雖然工作階段可能只在受邀之後才看得到)，包括其他使用者登入的裝置。 本指南針對所有會使用遠端工作階段的主要案例來提供基本範例程式碼。 您可以將此程式碼納入現有的應用程式專案，並視需要進行修改。 如需端對端實作，請參閱[測驗遊戲範例應用程式](https://github.com/microsoft/Windows-appsample-remote-system-sessions))。
 
@@ -23,7 +23,7 @@ ms.locfileid: "57633413"
 
 ### <a name="add-the-remotesystem-capability"></a>新增 remoteSystem 功能
 
-為了讓您的 app 能夠啟動遠端裝置上的 app，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 \[功能\] 索引標籤上選取 \[遠端系統\] 來新增此功能，或手動將下列程式碼行新增至專案的 _Package.appxmanifest_ 檔案。
+為了讓您的 app 能夠啟動遠端裝置上的 app，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 \[功能\]  索引標籤上選取 \[遠端系統\]  來新增此功能，或手動將下列程式碼行新增至專案的 _Package.appxmanifest_ 檔案。
 
 ``` xml
 <Capabilities>
@@ -42,7 +42,7 @@ if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anony
 }
 ```
 
-若要變更此設定，使用者必須開啟 **\[設定\]** App。 在 **\[系統\]** > **\[共用體驗\]** > **\[在裝置間共用\]** 功能表中有下拉式方塊，使用者可以在那裡指定其系統可以與哪些裝置共用。
+若要變更此設定，使用者必須開啟 **\[設定\]** App。 在 **\[系統\]**  >  **\[共用體驗\]**  >  **\[在裝置間共用\]** 功能表中有下拉式方塊，使用者可以在那裡指定其系統可以與哪些裝置共用。
 
 ![共用體驗設定頁面](images/shared-experiences-settings.png)
 
@@ -322,4 +322,4 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 
 ## <a name="related-topics"></a>相關主題
 * [已連線的應用程式和裝置 (Project Rome)](connected-apps-and-devices.md)
-* [遠端系統的 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [遠端系統的 API 參考](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)

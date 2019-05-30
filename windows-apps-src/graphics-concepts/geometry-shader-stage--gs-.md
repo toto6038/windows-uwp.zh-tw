@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 63c678f4b2dde1a5e35c0131b5154493c9703951
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ea3e7ec73b042eeef560af3d88754afdfa5b441
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623373"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370465"
 ---
 # <a name="geometry-shader-gs-stage"></a>幾何著色器 (GS) 階段
 
@@ -28,7 +28,7 @@ ms.locfileid: "57623373"
 
 幾何著色器也支援有限的幾何放大以及取消放大。 即使有輸入基本類型，幾何著色器可捨棄基本類型，或發出一種或多種新的基本類型。
 
-幾何著色器 (GS) 階段是可程式化的著色器階段。它在[圖形管線](graphics-pipeline.md)圖表中顯示為圓角區塊。 這個著色器階段會公開自己的獨特功能，以著色器模型建置 (請參閱[通用著色器核心](https://msdn.microsoft.com/library/windows/desktop/bb509580))。
+幾何著色器 (GS) 階段是可程式化的著色器階段。它在[圖形管線](graphics-pipeline.md)圖表中顯示為圓角區塊。 這個著色器階段會公開自己的獨特功能，以著色器模型建置 (請參閱[通用著色器核心](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core))。
 
 幾何著色器階段非常適合演算法，包括：
 
@@ -59,10 +59,10 @@ ms.locfileid: "57623373"
 
  
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
-幾何著色器 (GS) 階段能夠輸出多個頂點，以形成選取的單一拓撲。 可用的幾何著色器輸出拓撲包括 **tristrip**、**linestrip** 和 **pointlist**。 發出的基本類型數目可在幾何著色器的任何叫用內自由改變，雖然可發出的頂點最大數目必須以靜態方式宣告。 從幾何著色器叫用發出的連環長度可以是任意的，而新的連環可以透過 [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL 功能建立。
+幾何著色器 (GS) 階段能夠輸出多個頂點，以形成選取的單一拓撲。 可用的幾何著色器輸出拓撲包括 **tristrip**、**linestrip** 和 **pointlist**。 發出的基本類型數目可在幾何著色器的任何叫用內自由改變，雖然可發出的頂點最大數目必須以靜態方式宣告。 從幾何著色器叫用發出的連環長度可以是任意的，而新的連環可以透過 [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL 功能建立。
 
 從其他叫用執行幾何著色器執行個體是不可部分完成的，除非新增至資料流的資料為序列。 特定幾合著色器叫用的輸出與其他叫用無關 (雖然會遵循順序)。 產生三角形連環的幾何著色易會在每次叫用時開始新的連環。
 

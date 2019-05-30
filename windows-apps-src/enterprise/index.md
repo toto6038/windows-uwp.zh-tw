@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fae4d5b57ac5cfb5c47fca1a2f3476cd16a56534
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a44a1adb8685ad182620b4c68024176628b9204d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582260"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369661"
 ---
 # <a name="enterprise"></a>企業
 
@@ -102,9 +102,9 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 
 | 主題 | 描述 |
 |-------|-------------|
-| [安全開發 Windows 應用程式的簡介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 這篇簡介文章說明不同驗證階段 (包括傳輸中資料和靜態資料) 的各種 Windows 安全功能。 它也描述如何將這些階段整合到您的 app。 本文涵蓋大範圍的主題，主要目的是協助應用程式設計人員更充分地了解可快速且輕易地建立通用 Windows 平台應用程式的 Windows 功能。 |
-| [驗證和使用者識別](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP app 有本文所述的數個使用者驗證選項。 若要用於企業，則強烈建議選用新的 Microsoft Passport 功能。 Microsoft Passport 以增強式雙因素驗證 (2FA) 取代密碼，方法是驗證現有的認證，以及建立以生物識別或 PIN 式使用者手勢所保護的裝置特定認證，以產生方便且高度安全的使用經驗。 |
-| [密碼編譯](https://msdn.microsoft.com/library/windows/apps/mt270191) | 密碼編譯一節概述 UWP app 所提供的密碼編譯功能。 文章的範圍包括從如何輕鬆加密機密商業資料的簡介逐步解說，到操作密碼編譯金鑰，以及使用 MAC、雜湊和簽章這類進階主題。 |
+| [安全開發 Windows 應用程式的簡介](https://docs.microsoft.com/windows/uwp/security/intro-to-secure-windows-app-development) | 這篇簡介文章說明不同驗證階段 (包括傳輸中資料和靜態資料) 的各種 Windows 安全功能。 它也描述如何將這些階段整合到您的 app。 本文涵蓋大範圍的主題，主要目的是協助應用程式設計人員更充分地了解可快速且輕易地建立通用 Windows 平台應用程式的 Windows 功能。 |
+| [驗證和使用者識別](https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity) | UWP app 有本文所述的數個使用者驗證選項。 若要用於企業，則強烈建議選用新的 Microsoft Passport 功能。 Microsoft Passport 以增強式雙因素驗證 (2FA) 取代密碼，方法是驗證現有的認證，以及建立以生物識別或 PIN 式使用者手勢所保護的裝置特定認證，以產生方便且高度安全的使用經驗。 |
+| [密碼編譯](https://docs.microsoft.com/windows/uwp/security/cryptography) | 密碼編譯一節概述 UWP app 所提供的密碼編譯功能。 文章的範圍包括從如何輕鬆加密機密商業資料的簡介逐步解說，到操作密碼編譯金鑰，以及使用 MAC、雜湊和簽章這類進階主題。 |
 | [Windows 資訊保護 (WIP)](wip-hub.md) | 這是一個中樞主題，從開發人員角度來探討 Windows 資訊保護 (WIP) 與檔案、緩衝區、剪貼簿、網路、背景工作的關聯，以及資料鎖定時的保護。 |
 
 ## <a name="data-binding-and-databases"></a>資料繫結和資料庫
@@ -113,8 +113,8 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 
 | 主題 | 描述 |
 |-------|-------------|
-| [資料繫結概觀](https://msdn.microsoft.com/library/windows/apps/mt269383) | 本主題說明如何在通用 Windows 平台 (UWP) 應用程式中將控制項 (或其他 UI 元素) 繫結到單一項目，或將項目控制項繫結到項目集合。 此外，還會示範如何控制項目的呈現、根據選擇來實作詳細資料檢視，以及轉換資料以供顯示。 |
-| [Entity Framework 7 for UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | 對大型資料集執行複雜查詢，可使用支援 UWP 的 Entity Framework 7 進行大幅簡化。 在這個逐步解說中，您將建置 UWP 應用程式，以使用 Entity Framework 對本機 SQLite 資料庫執行基本資料存取。 |
+| [資料繫結概觀](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart) | 本主題說明如何在通用 Windows 平台 (UWP) 應用程式中將控制項 (或其他 UI 元素) 繫結到單一項目，或將項目控制項繫結到項目集合。 此外，還會示範如何控制項目的呈現、根據選擇來實作詳細資料檢視，以及轉換資料以供顯示。 |
+| [Entity Framework 7 for UWP](https://docs.microsoft.com/windows/uwp/data-access/entity-framework-7-with-sqlite-for-csharp-apps) | 對大型資料集執行複雜查詢，可使用支援 UWP 的 Entity Framework 7 進行大幅簡化。 在這個逐步解說中，您將建置 UWP 應用程式，以使用 Entity Framework 對本機 SQLite 資料庫執行基本資料存取。 |
 | [SQLite 本機資料庫](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | 這個影片是使用 SQLite 的完整開發人員指南，而 SQLite 是本機 app 資料庫的建議方案。 請瀏覽 [SQLite](https://www.sqlite.org/download.html) 以下載 UWP 的最新版本，或使用 Windows 10 SDK 已隨附的版本。 |
 
 ## <a name="networking-and-data-serialization"></a>網路功能和資料序列化
@@ -123,10 +123,10 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 
 | 主題 | 描述 |
 |-------|-------------|
-| [網路功能基本知識](https://msdn.microsoft.com/library/windows/apps/mt280233) | 這個逐步解說說明與所有 UWP app 相關的基本網路概念，而不管使用中的通訊協定為何。  |
-| [哪一種網路功能技術？](https://msdn.microsoft.com/library/windows/apps/mt280235) | 適用於 UWP app 的網路功能技術快速概觀，並建議您如何選擇最適合您的 app 的技術。 |
-| [XML 和 SOAP 序列化](https://msdn.microsoft.com/library/90c86ass.aspx) | XML 序列化會將物件轉換成符合特定 XML 結構描述定義語言 (XSD) 的 XML 資料流。 若要在 XML 與強型別類別之間進行轉換，您可以使用原生 [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) 類別或外部程式庫。 |
-| [JSON 序列化](https://msdn.microsoft.com/library/windows/apps/br240639) | JSON (JavaScript 物件標記法) 序列化是與 REST API 進行通訊的常用格式。 UWP app 完全支援的 [Newtonsoft Json.NET](https://www.newtonsoft.com/json)。 |
+| [網路功能基本知識](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | 這個逐步解說說明與所有 UWP app 相關的基本網路概念，而不管使用中的通訊協定為何。  |
+| [哪一種網路功能技術？](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | 適用於 UWP app 的網路功能技術快速概觀，並建議您如何選擇最適合您的 app 的技術。 |
+| [XML 和 SOAP 序列化](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | XML 序列化會將物件轉換成符合特定 XML 結構描述定義語言 (XSD) 的 XML 資料流。 若要在 XML 與強型別類別之間進行轉換，您可以使用原生 [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument?redirectedfrom=MSDN) 類別或外部程式庫。 |
+| [JSON 序列化](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | JSON (JavaScript 物件標記法) 序列化是與 REST API 進行通訊的常用格式。 UWP app 完全支援的 [Newtonsoft Json.NET](https://www.newtonsoft.com/json)。 |
 
 ## <a name="devices"></a>裝置
 
@@ -134,9 +134,9 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 
 | 主題  | 描述 |
 |--------|-------------|
-| [列舉裝置](https://msdn.microsoft.com/library/windows/apps/mt187355) | 本文說明如何使用 [Windows.Devices.Enumeration](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空間尋找內部連接到系統、外部連接或者可透過無線或網路通訊協定偵測到的裝置。 如果您是建置任何與裝置搭配運作的 app，請從這裡開始。 |
-| [列印與掃描](https://msdn.microsoft.com/library/windows/apps/mt204544) | 說明如何從您的應用程式進行列印和掃描，包括連接和使用企業裝置，例如銷售點 (POS) 系統、收據印表機，以及高容量送紙器掃描器。 |
-| [藍牙](https://msdn.microsoft.com/library/windows/apps/mt270288) | 除了使用傳統藍牙連線來傳送和接收資料或控制裝置，Windows 10 還可使用藍牙低功耗 (BTLE) 在背景傳送或接收指標。 使用這個項目，以在使用者接近或離開特定位置時顯示通知或啟用功能。 |
+| [列舉裝置](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices) | 本文說明如何使用 [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 命名空間尋找內部連接到系統、外部連接或者可透過無線或網路通訊協定偵測到的裝置。 如果您是建置任何與裝置搭配運作的 app，請從這裡開始。 |
+| [列印與掃描](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning) | 說明如何從您的應用程式進行列印和掃描，包括連接和使用企業裝置，例如銷售點 (POS) 系統、收據印表機，以及高容量送紙器掃描器。 |
+| [藍牙](https://docs.microsoft.com/windows/uwp/devices-sensors/bluetooth) | 除了使用傳統藍牙連線來傳送和接收資料或控制裝置，Windows 10 還可使用藍牙低功耗 (BTLE) 在背景傳送或接收指標。 使用這個項目，以在使用者接近或離開特定位置時顯示通知或啟用功能。 |
 | [企業共用存放裝置](enterprise-shared-storage.md) | 在裝置鎖定案例中，了解如何在相同的應用程式內、應用程式執行個體之間或甚至應用程式之間共用資料。 |
 
 ## <a name="device-targeting"></a>裝置目標
@@ -145,7 +145,7 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 
 | 主題 | 描述 |
 |-------|-------------|
-| [UWP 應用程式指南](https://msdn.microsoft.com/library/windows/apps/dn894631) | 在本簡介指南中，您將了解 Windows 10UWP 平台，包括︰裝置系列為何以及如何決定要設為目標的裝置系列、新的 UI 控制項和面板以讓您將 UI 調整為不同的裝置板型規格，以及如何了解與控制可供您的 app 使用的 API 表面。 |
+| [UWP 應用程式指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | 在本簡介指南中，您將了解 Windows 10UWP 平台，包括︰裝置系列為何以及如何決定要設為目標的裝置系列、新的 UI 控制項和面板以讓您將 UI 調整為不同的裝置板型規格，以及如何了解與控制可供您的 app 使用的 API 表面。 |
 | [彈性 XAML UI 程式碼範例](https://go.microsoft.com/fwlink/p/?LinkId=619992) | 這個程式碼範例說明應用程式的所有可能版面配置選項和控制項 (不論裝置類型為何)，並可讓您與面板互動以顯示如何達成您要尋找的任何版面配置。 除了顯示每個控制項如何回應不同的板型規格之外，app 本身也具有回應，並顯示達成彈性 UI 的各種方法。 |
 | [Xamarin 主題](/xamarin/) | 以手機為目標的 Xamarin |
 
@@ -155,7 +155,7 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 
 | 主題 | 描述 |
 |-------|-------------|
-| [將 LOB 應用程式發佈到企業](https://msdn.microsoft.com/library/windows/apps/mt608995) | 您可以透過商務用 Microsoft Store，將企業營運應用程式直接發佈到企業來進行大量取得，而不需要讓大眾廣泛取得應用程式。 |
+| [將 LOB 應用程式發佈到企業](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | 您可以透過商務用 Microsoft Store，將企業營運應用程式直接發佈到企業來進行大量取得，而不需要讓大眾廣泛取得應用程式。 |
 | [側載應用程式](https://technet.microsoft.com/library/mt269549) | 當您側載 app 時，您要將簽署的 app 套件部署到裝置。 您要維護這些 app 的簽署、裝載和部署。 用於側載 app 的程序已經簡化成適用於 Windows 10。             |
 | [將應用程式發佈至 Microsoft Store](https://dev.windows.com/publish) | 整合的 Windows Store 可讓您發佈與管理您為所有 Windows 裝置開發的所有應用程式。 透過每個市場價格、發佈和可見性控制項，以及其他選項來自訂您應用程式的可用性。 |
 

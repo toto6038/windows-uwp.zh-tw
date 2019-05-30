@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8edb38b8ae91d836e283a8eb37830850bf504db4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661303"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364544"
 ---
 # <a name="nested-ui-in-list-items"></a>清單項目中的巢狀 UI
 
@@ -26,18 +26,18 @@ ms.locfileid: "57661303"
 
 您可以使用巢狀 UI 來向使用者顯示其他可協助加快執行重要動作的選項。 不過公開越多動作，將會使 UI 變得越加複雜。 請務必在選擇使用此 UI 模式時額外注意此狀況。 本文提供可協助您針對您特定的 UI 判斷最佳動作的指導方針。
 
-> **重要的 Api**:[ListView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)， [GridView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+> **重要的 Api**:[ListView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)， [GridView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
 
-在本文中，我們將會針對在 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 項目中建立巢狀 UI 進行討論。 雖然本節不會討論其他的巢狀 UI 情況，但這些概念都是共通的。 在您開始前，請先熟悉在 UI 中使用 ListView 或 GridView 控制項的一般指導方針，這些指導方針可以在[清單](lists.md)和[清單檢視和方格檢視](listview-and-gridview.md)文章中找到。
+在本文中，我們將會針對在 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 和 [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) 項目中建立巢狀 UI 進行討論。 雖然本節不會討論其他的巢狀 UI 情況，但這些概念都是共通的。 在您開始前，請先熟悉在 UI 中使用 ListView 或 GridView 控制項的一般指導方針，這些指導方針可以在[清單](lists.md)和[清單檢視和方格檢視](listview-and-gridview.md)文章中找到。
 
-在本文中，我們所使用的「清單」、「清單項目」及「巢狀 UI」等詞彙的定義如下：
-- 「清單」指的是包含在清單檢視或方格檢視中的項目集合。
-- 「清單項目」指的是清單上使用者可以採取動作的個別項目。
-- 「巢狀 UI」指的是位於清單項目內，可以獨立於項目清單本身讓使用者採取動作的 UI 元素。
+在本文中，我們所使用的「清單」  、「清單項目」  及「巢狀 UI」  等詞彙的定義如下：
+- 「清單」  指的是包含在清單檢視或方格檢視中的項目集合。
+- 「清單項目」  指的是清單上使用者可以採取動作的個別項目。
+- 「巢狀 UI」  指的是位於清單項目內，可以獨立於項目清單本身讓使用者採取動作的 UI 元素。
 
 ![巢狀 UI 組件](images/nested-ui-example-1.png)
 
-> 注意&nbsp;&nbsp; ListView 和 GridView 都是衍生自 [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單時，其中的資訊將同時適用於 ListView 和 GridView 控制項。
+> 注意&nbsp;&nbsp; ListView 和 GridView 都是衍生自 [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單時，其中的資訊將同時適用於 ListView 和 GridView 控制項。
 
 ## <a name="primary-and-secondary-actions"></a>主要和次要動作
 
@@ -50,9 +50,9 @@ ms.locfileid: "57661303"
 - 動作應該以何種方式向使用者公開？
     - 請考慮到所有輸入類型。 某些巢狀 UI 的形式可能很適合某種輸入方法，但卻無法搭配其他方法使用。  
 
-「主要動作」為使用者按下清單項目時所預期發生的情況。
+「主要動作」  為使用者按下清單項目時所預期發生的情況。
 
-「次要動作」通常是與清單項目相關聯的加速器。 這些加速器可以是用於清單管理，或是與清單項目相關的動作。
+「次要動作」  通常是與清單項目相關聯的加速器。 這些加速器可以是用於清單管理，或是與清單項目相關的動作。
 
 ## <a name="options-for-secondary-actions"></a>次要動作的選項
 
@@ -109,7 +109,7 @@ ms.locfileid: "57661303"
 
 ![巢狀 UI 組件](images/nested-ui-navigation.png)
 
-**遊戲台**
+**Gamepad**
 
 當輸入是來自控制器時，將會提供此使用者體驗：
 
@@ -137,7 +137,7 @@ ms.locfileid: "57661303"
 - 如果焦點位於清單項目左方的 UI 元素上，Tab 鍵會將焦點放到 **A** 上。
 - 如果焦點位於清單項目右方的 UI 元素上，Shift+Tab 鍵會將焦點放到 **C** 上。
 
-如果要達成此 UI，請在清單上將 [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) 設為 **true**。 [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) 可以是任何值。
+如果要達成此 UI，請在清單上將 [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) 設為 **true**。 [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) 可以是任何值。
 
 如需實作此項目的程式碼，請參閱本文的[範例](#example)一節。
 
@@ -151,9 +151,9 @@ ms.locfileid: "57661303"
 
 
 如果要達成此 UI，請在清單上設定下列屬性：
-- 將 [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) 設為 **None**。
-- 將 [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) 設為 **false**。
-- 將 [IsFocusEngagementEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isfocusengagementenabled.aspx) 設為 **true**。
+- 將 [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) 設為 **None**。
+- 將 [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) 設為 **false**。
+- 將 [IsFocusEngagementEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isfocusengagementenabled) 設為 **true**。
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="False" >
@@ -167,7 +167,7 @@ ms.locfileid: "57661303"
 
 當清單項目不會執行動作時，我們建議使用本指導方針來處理使用控制器或鍵盤的瀏覽。
 
-**遊戲台**
+**Gamepad**
 
 當輸入是來自控制器時，將會提供此使用者體驗：
 

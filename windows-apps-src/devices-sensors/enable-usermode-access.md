@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 442b3b9328212a5115384b5175b519b76286dd28
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f41bf9f56b63f59844bec976e9d6e5e3d650b271
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620303"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370277"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>啟用使用者模式存取 GPIO、I2C 和 SPI
 
@@ -41,7 +41,7 @@ Device(RHPX)
 * _CID – 相容識別碼。必須為「MSFT8000」。
 * _UID – 唯一識別碼。設為 1。
 
-接下來我們會宣告應對使用者模式公開的所有 GPIO 與 SPB 資源。 資源宣告的順序非常重要，因為系統會使用資源索引將屬性與資源產生關聯。 若公開多個 I2C 或 SPI 匯流排，則系統會將第一個宣告的匯流排視為該類型的「預設」匯流排，且其將為 [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) 與 [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) 之 `GetDefaultAsync()` 方法傳回的執行個體。
+接下來我們會宣告應對使用者模式公開的所有 GPIO 與 SPB 資源。 資源宣告的順序非常重要，因為系統會使用資源索引將屬性與資源產生關聯。 若公開多個 I2C 或 SPI 匯流排，則系統會將第一個宣告的匯流排視為該類型的「預設」匯流排，且其將為 [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) 與 [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller) 之 `GetDefaultAsync()` 方法傳回的執行個體。
 
 ### <a name="spi"></a>SPI
 
@@ -156,10 +156,10 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 #### <a name="spi-driver-requirements"></a>SPI 驅動程式需求
 
 * 必須使用 `SpbCx` 或具有 SpbCx 相容性
-* 必須通過 [MITT SPI 測試](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
+* 必須通過 [MITT SPI 測試](https://docs.microsoft.com/windows-hardware/drivers/spb/spi-tests-in-mitt)
 * 必須支援 4Mhz 時脈速度
 * 必須支援 8 位元資料長度
-* 必須支援所有的 SPI 模式：0、 1、 2、 3
+* 必須支援所有的 SPI 模式：0, 1, 2, 3
 
 ### <a name="i2c"></a>I2C
 
@@ -201,7 +201,7 @@ I2CSerialBus() 描述元的下列欄位會固定：
 #### <a name="i2c-driver-requirements"></a>I2C 驅動程式需求
 
 * 必須使用 SpbCx 或具有 SpbCx 相容性
-* 必須通過 [MITT I2C 測試](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx)
+* 必須通過 [MITT I2C 測試](https://docs.microsoft.com/windows-hardware/drivers/spb/run-mitt-tests-for-an-i2c-controller-)
 * 必須支援 7 位元定址
 * 必須支援 100kHz 時脈速度
 * 必須支援 400kHz 時脈速度
@@ -228,7 +228,7 @@ GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 }
 
 宣告 GPIO 針腳時，必須遵守下列需求︰
 
-* 僅支援記憶體對應的 GPIO 控制器。 不支援透過 I2C/SPI 連接介面的 GPIO 控制器。 控制器驅動程式若在 [CLIENT_CONTROLLER_BASIC_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/hh439358.aspx) 架構中設定 [MemoryMappedController](https://msdn.microsoft.com/library/windows/hardware/hh439449.aspx) 旗標來回應 [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) 回呼，則它是記憶體對應控制器。
+* 僅支援記憶體對應的 GPIO 控制器。 不支援透過 I2C/SPI 連接介面的 GPIO 控制器。 控制器驅動程式若在 [CLIENT_CONTROLLER_BASIC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information) 架構中設定 [MemoryMappedController](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags) 旗標來回應 [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) 回呼，則它是記憶體對應控制器。
 * 每個針腳皆需要 GpioIO 和 GpioInt 資源。 GpioInt 資源必須緊接著 GpioIO 資源，且必須參考相同的針腳編號。
 * GPIO 資源必須依照遞增針腳編號排序。
 * 每個 GpioIO 和 GpioInt 資源在針腳清單中，皆必須僅包含一個完整針腳編號。
@@ -282,7 +282,7 @@ Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
 Package (2) { “GPIO-PinCount”, 54 },
 ```
 
-**PinCount** 屬性應符合透過 `GpioClx` 驅動程式 [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) 回呼中之 **TotalPins** 屬性所傳回的值。
+**PinCount** 屬性應符合透過 `GpioClx` 驅動程式 [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) 回呼中之 **TotalPins** 屬性所傳回的值。
 
 選擇與您電路板現有發佈文件最相容的編號配置。 例如 Raspberry Pi 會使用原生的針腳編號，這是因為許多現有的針腳輸出電路圖使用 BCM2835 針腳編號。 MinnowBoardMax 會使用序列式針腳編號，這是因為其中使用的現有針腳輸出電路圖極少，且由於在超過 200 個以上的針腳中僅會公開 10 個針腳，因此使用序列式針腳編號可精簡開發人員的使用體驗。 應以減輕開發人員工作負擔，做為決定使用序列式或原生針腳編號的關鍵。
 
@@ -331,9 +331,9 @@ Package(2) { "bus-UART-UART2", Package() { 2 }},
 
 針腳多工處理可針對不同功能使用相同的實體針腳。 數個不同的晶片上周邊裝置 (例如 I2C 控制器、SPI 控制器 和 GPIO 控制器) 可能會路由至 SOC 上相同的實體針腳。 多工區塊會控制任何指定時間位於針腳上的使用中功能。 就以往而言，韌體負責建立開機時的功能指派，而此指派作業在整個開機工作階段維持靜態。 執行階段針腳多工處理新增了可於執行階段重新設定針腳功能指派的功能。 這讓使用者可透過快速重新設定電路板針腳，在執行階段選擇針腳功能以加速開發工作，同時可讓硬體支援較靜態設定更為廣泛的應用程式。
 
-使用者可運用針對 GPIO、I2C、SPI 和 UART 的支援，而無須額外撰寫任何程式碼。 使用者使用 [OpenPin()](https://msdn.microsoft.com/library/dn960157.aspx) 或 [FromIdAsync()](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync) 開啟 GPIO 或匯流排時，基礎實體針腳會自動針對要求的功能執行多工處理。 若已有其他功能使用針腳，則 OpenPin() 或 FromIdAsync() 呼叫會失敗。 若使用者藉由處置 [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx)、[I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx)、[SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx) 或 [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx) 物件來關閉裝置，則系統會釋放針腳使其之後可供其他功能開啟。
+使用者可運用針對 GPIO、I2C、SPI 和 UART 的支援，而無須額外撰寫任何程式碼。 使用者使用 [OpenPin()](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiocontroller.openpin) 或 [FromIdAsync()](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice.fromidasync) 開啟 GPIO 或匯流排時，基礎實體針腳會自動針對要求的功能執行多工處理。 若已有其他功能使用針腳，則 OpenPin() 或 FromIdAsync() 呼叫會失敗。 若使用者藉由處置 [GpioPin](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiopin)、[I2cDevice](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice)、[SpiDevice](https://docs.microsoft.com/uwp/api/windows.devices.spi.spidevice) 或 [SerialDevice](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication.serialdevice) 物件來關閉裝置，則系統會釋放針腳使其之後可供其他功能開啟。
 
-Windows 包含適用於 [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439515.aspx)、[SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh406203.aspx) 和 [SerCx](https://msdn.microsoft.com/library/windows/hardware/dn265349.aspx) 架構針腳多工處理的內建支援。 這些架構可彼此搭配運作，在存取 GPIO 針腳或匯流排時將針腳自動切換至正確的功能。 針腳的存取採用仲裁式處理，以避免在多個用戶端之間發生衝突。 除了此內建支援外，適用於針腳多工處理的介面與通訊協定為一般用途，且可延伸用來支援其他裝置和案例。
+Windows 包含適用於 [GpioClx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、[SpbCx](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension) 和 [SerCx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) 架構針腳多工處理的內建支援。 這些架構可彼此搭配運作，在存取 GPIO 針腳或匯流排時將針腳自動切換至正確的功能。 針腳的存取採用仲裁式處理，以避免在多個用戶端之間發生衝突。 除了此內建支援外，適用於針腳多工處理的介面與通訊協定為一般用途，且可延伸用來支援其他裝置和案例。
 
 本文件會先說明關於針腳多工處理的基礎介面與通訊協定，接著再說明如何將針腳多工處理支援新增至 GpioClx、SpbCx 以及 SerCx 控制器驅動程式。
 
@@ -353,8 +353,8 @@ Windows 包含適用於 [GpioClx](https://msdn.microsoft.com/library/windows/har
 
 ![針腳多工處理用戶端伺服器互動](images/usermode-access-diagram-1.png)
 
-1. 用戶端在其 [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回呼中，接收來自 ACPI 韌體的 MsftFunctionConfig 資源。
-2. 用戶端使用資源中樞協助程式函式 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 自資源識別碼建立路徑，然後開啟路徑控制代碼 (使用 [ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) 或 [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx))。
+1. 用戶端在其 [EvtDevicePrepareHardware()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回呼中，接收來自 ACPI 韌體的 MsftFunctionConfig 資源。
+2. 用戶端使用資源中樞協助程式函式 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 自資源識別碼建立路徑，然後開啟路徑控制代碼 (使用 [ZwCreateFile()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)、[IoGetDeviceObjectPointer()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer) 或 [WdfIoTargetOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen))。
 3. 伺服器使用資源中樞協助程式函式 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 從檔案路徑擷取資源中樞識別碼，然後查詢資源中樞以取得資源描述元。
 4. 伺服器針對描述元中的每個針腳執行共用仲裁，並完成 IRP_MJ_CREATE 要求。
 5. 用戶端針對接收的控制代碼發出 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求。
@@ -369,7 +369,7 @@ Windows 包含適用於 [GpioClx](https://msdn.microsoft.com/library/windows/har
 
 #### <a name="parsing-resources"></a>剖析資源
 
-WDF 驅動程式在其 [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 常式中接收 `MsftFunctionConfig()` 資源。 可透過下列欄位識別 MsftFunctionConfig 資源：
+WDF 驅動程式在其 [EvtDevicePrepareHardware()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 常式中接收 `MsftFunctionConfig()` 資源。 可透過下列欄位識別 MsftFunctionConfig 資源：
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -504,7 +504,7 @@ NTSTATUS AcquireFunctionConfigResource (
 }
 ```
 
-驅動程式應將 WDFIOTARGET 存放於其中一個內容區域，以便稍後關閉。 驅動程式準備好發行多工處理設定時，應該呼叫 [WdfObjectDelete()](https://msdn.microsoft.com/library/windows/hardware/ff548734.aspx) 以關閉資源控制代碼，或如果您要重複使用 WDFIOTARGET，則呼叫 [WdfIoTargetClose()](https://msdn.microsoft.com/library/windows/hardware/ff548586.aspx)。
+驅動程式應將 WDFIOTARGET 存放於其中一個內容區域，以便稍後關閉。 驅動程式準備好發行多工處理設定時，應該呼叫 [WdfObjectDelete()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) 以關閉資源控制代碼，或如果您要重複使用 WDFIOTARGET，則呼叫 [WdfIoTargetClose()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetclose)。
 
 ```cpp
     WdfObjectDelete(resourceHandle);
@@ -532,7 +532,7 @@ NTSTATUS AcquireFunctionConfigResource (
 
 若共用仲裁作業失敗，則應使用 *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE* 完成要求。 若共用仲裁作業成功，則應使用 *STATUS_SUCCESS* 完成要求。
 
-請注意，傳入要求的共用模式應取自 MsftFunctionConfig 描述元，而非 [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx)。
+請注意，傳入要求的共用模式應取自 MsftFunctionConfig 描述元，而非 [IrpSp-&gt;Parameters.Create.ShareAccess](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)。
 
 #### <a name="handling-ioctlgpiocommitfunctionconfigpins-requests"></a>處理 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 要求
 
@@ -614,7 +614,7 @@ Device(I2C1)
 * CLIENT_ConnectFunctionConfigPins – 由 `GpioClx` 呼叫，命令迷你連接埠驅動程式套用指定的多工處理設定。
 * CLIENT_DisconnectFunctionConfigPins – 由 `GpioClx` 呼叫，命令迷你連接埠驅動程式回復多工處理設定。
 
-如需這些常式的說明，請參閱 [GpioClx 事件的回呼函式](https://msdn.microsoft.com/library/windows/hardware/hh439464.aspx)。
+如需這些常式的說明，請參閱 [GpioClx 事件的回呼函式](https://docs.microsoft.com/previous-versions//hh439464(v=vs.85))。
 
 除了這兩個新 DDI 外，應稽核現有 DDI 的針腳多工處理相容性：
 
@@ -633,11 +633,11 @@ Device(I2C1)
 
 執行裝置初始化時，`SpbCx` 與 `SerCx` 架構會剖析所有提供作為裝置之硬體資源的 `MsftFunctionConfig()` 資源。 隨後 SpbCx/SerCx 會依需求取得和釋放針腳多工處理資源。
 
-`SpbCx` 適用於在釘選 muxing 設定其*IRP_MJ_CREATE*處理常式，呼叫用戶端驅動程式之前，只要[EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx)回呼。 若無法套用多工處理設定，則不會呼叫控制器驅動程式的 `EvtSpbTargetConnect()` 回呼。 因此，SPB 控制器驅動程式可能會依據呼叫 `EvtSpbTargetConnect()` 的時間，假設針腳已多工處理至 SPB 功能。
+`SpbCx` 適用於在釘選 muxing 設定其*IRP_MJ_CREATE*處理常式，呼叫用戶端驅動程式之前，只要[EvtSpbTargetConnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect)回呼。 若無法套用多工處理設定，則不會呼叫控制器驅動程式的 `EvtSpbTargetConnect()` 回呼。 因此，SPB 控制器驅動程式可能會依據呼叫 `EvtSpbTargetConnect()` 的時間，假設針腳已多工處理至 SPB 功能。
 
-`SpbCx` 還原中的 pin muxing 設定其*IRP_MJ_CLOSE*處理常式中的，叫用控制器驅動程式後，只要[EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx)回呼。 最後，針腳會在周邊裝置驅動程式開啟 SPB 控制器驅動程式控制代碼時多工處理至 SPB 功能，並在周邊裝置驅動程式關閉控制代碼時結束多工處理。
+`SpbCx` 還原中的 pin muxing 設定其*IRP_MJ_CLOSE*處理常式中的，叫用控制器驅動程式後，只要[EvtSpbTargetDisconnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect)回呼。 最後，針腳會在周邊裝置驅動程式開啟 SPB 控制器驅動程式控制代碼時多工處理至 SPB 功能，並在周邊裝置驅動程式關閉控制代碼時結束多工處理。
 
-`SerCx` 操作方式類似。 `SerCx` 取得所有`MsftFunctionConfig()`中的資源及其*IRP_MJ_CREATE*處理常式之前叫用控制器驅動程式[EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx)回呼，並釋放其 IRP_MJ_CLOSE 中的所有資源處理常式中的，叫用控制器驅動程式後，只要[EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx)回呼。
+`SerCx` 操作方式類似。 `SerCx` 取得所有`MsftFunctionConfig()`中的資源及其*IRP_MJ_CREATE*處理常式之前叫用控制器驅動程式[EvtSerCx2FileOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen)回呼，並釋放其 IRP_MJ_CLOSE 中的所有資源處理常式中的，叫用控制器驅動程式後，只要[EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose)回呼。
 
 針對 `SerCx` 與 `SpbCx` 控制器驅動程式的動態針腳多工處理產生的影響，在於它們必須能夠容忍針腳於特定時間自 SPB/UART 功能結束多工處理。 控制器驅動程式必須假設在呼叫 `EvtSpbTargetConnect()` 或 `EvtSerCx2FileOpen()` 前，不會多工處理針腳。 執行下列回呼時，並不必然要將針腳多工處理至 SPB/UART。 下列並非完整的清單，但代表控制器驅動程式最常實作的 PNP 常式。
 
@@ -800,7 +800,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 使用下列範例驗證 UWP 的裝置可運作。
 
-| 範例 | Link |
+| 範例 | 連結 |
 |------|------|
 | IoT-GPIO | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-GPIO |
 | IoT-I2C | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-I2C |
@@ -835,7 +835,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 ## <a name="resources"></a>資源
 
-| Destination | Link |
+| 目的地 | 連結 |
 |-------------|------|
 | ACPI 5.0 規格 | http://acpi.info/spec.htm |
 | Asl.exe (Microsoft ASL 編譯器) | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |

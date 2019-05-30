@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72b7f168c9f4e812b1cfb459ebea91f61a988122
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593973"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371298"
 ---
 # <a name="create-a-windows-hello-login-app"></a>建立 Windows Hello 登入應用程式
 
@@ -415,7 +415,7 @@ ms.locfileid: "57593973"
     }
     ```
 
--   您可能已經注意到參考 MicrosoftPassportHelper 中之方法的已加上註解標記的程式碼。 請在 MicrosoftPassportHelper.cs 中，加入名為 CreatePassportKeyAsync 的新方法。 這個方法在 [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043) 中使用 Windows Hello API。 呼叫 [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 將會建立 *accountId* 及本機電腦專屬的 Passport 金鑰。 如果您想在真實世界的案例中實作 Switch 陳述式，請留意 Switch 陳述式中的註解。
+-   您可能已經注意到參考 MicrosoftPassportHelper 中之方法的已加上註解標記的程式碼。 請在 MicrosoftPassportHelper.cs 中，加入名為 CreatePassportKeyAsync 的新方法。 這個方法在 [**KeyCredentialManager**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialManager) 中使用 Windows Hello API。 呼叫 [**RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) 將會建立 *accountId* 及本機電腦專屬的 Passport 金鑰。 如果您想在真實世界的案例中實作 Switch 陳述式，請留意 Switch 陳述式中的註解。
 
     ```cs
     /// <summary>
@@ -624,7 +624,7 @@ ms.locfileid: "57593973"
 
     ![Windows Hello 歡迎畫面](images/passport-login-9.png)
 
--   在 [Views] 資料夾中，建立名為 "UserSelection.xaml" 的新空白頁，並加入下列 XAML 來定義使用者介面。 此頁面將包含會顯示本機帳戶清單中的所有使用者的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)，以及會瀏覽至登入頁面來讓使用者加入另一個帳戶的按鈕。
+-   在 [Views] 資料夾中，建立名為 "UserSelection.xaml" 的新空白頁，並加入下列 XAML 來定義使用者介面。 此頁面將包含會顯示本機帳戶清單中的所有使用者的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)，以及會瀏覽至登入頁面來讓使用者加入另一個帳戶的按鈕。
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

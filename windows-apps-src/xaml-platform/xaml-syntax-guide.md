@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e988582877a6aa4ca3cf88ba0a5d98aceb56939e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d1e2cf92f30881d4d9fe150b92ba310b3f4f3e75
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595053"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372648"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 語法指南
 
@@ -24,7 +24,7 @@ Extensible Application Markup Language (XAML) 具有以 XML 為基礎的語法�
 
 ## <a name="xaml-vocabularies"></a>XAML 詞彙
 
-XAML 與大部分 XML 用法不同的一點是，通常不會使用結構描述 (例如 XSD 檔案) 強制執行 XAML。 這是因為 XAML 預期是可延伸的，這就是 XAML 縮寫中的 "X" 所代表的意義。 剖析 XAML 之後，您在 XAML 中參考的元素和屬性預期會存在於部分負責支援的程式碼表示法中，可能是在 Windows 執行階段所定義的核心類型中，或者是在延伸或採用 Windows 執行階段的類型中。 SDK 文件有時會參考已經內建於 Windows 執行階段的類型，並且可以在 XAML 中用來做為 Windows 執行階段的「XAML 詞彙」。 Microsoft Visual Studio 可以協助您在此 XAML 詞彙中產生有效的標記。 Visual Studio 也可以包含您針對 XAML 用法自訂的類型，只要您在專案中正確參考這些類型的來源即可。 如需 XAML 和自訂類型的詳細資訊，請參閱 [XAML 命名空間與命名空間對應](xaml-namespaces-and-namespace-mapping.md)。
+XAML 與大部分 XML 用法不同的一點是，通常不會使用結構描述 (例如 XSD 檔案) 強制執行 XAML。 這是因為 XAML 預期是可延伸的，這就是 XAML 縮寫中的 "X" 所代表的意義。 剖析 XAML 之後，您在 XAML 中參考的元素和屬性預期會存在於部分負責支援的程式碼表示法中，可能是在 Windows 執行階段所定義的核心類型中，或者是在延伸或採用 Windows 執行階段的類型中。 SDK 文件有時會參考已經內建於 Windows 執行階段的類型，並且可以在 XAML 中用來做為 Windows 執行階段的「XAML 詞彙」  。 Microsoft Visual Studio 可以協助您在此 XAML 詞彙中產生有效的標記。 Visual Studio 也可以包含您針對 XAML 用法自訂的類型，只要您在專案中正確參考這些類型的來源即可。 如需 XAML 和自訂類型的詳細資訊，請參閱 [XAML 命名空間與命名空間對應](xaml-namespaces-and-namespace-mapping.md)。
 
 ##  <a name="declaring-objects"></a>宣告物件
 
@@ -43,7 +43,7 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 
 ### <a name="declaring-an-object-by-using-object-element-syntax"></a>使用物件元素語法宣告物件
 
-如果要使用物件元素語法來宣告物件，您可以依照下列方式撰寫標記：`<objectName>  </objectName>`，其中 *objectName* 是您要具現化之物件的類型名稱。 以下是宣告 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 物件的物件元素用法：
+如果要使用物件元素語法來宣告物件，您可以依照下列方式撰寫標記：`<objectName>  </objectName>`，其中 *objectName* 是您要具現化之物件的類型名稱。 以下是宣告 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 物件的物件元素用法：
 
 ```xml
 <Canvas>
@@ -54,7 +54,7 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 
 ### <a name="containers"></a>容器
 
-許多做為 UI 元素使用的物件 (像是 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)) 可以包含其他物件。 這些有時稱為容器。 下列範例顯示只包含一個元素 ([**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)) 的 **Canvas** 容器。
+許多做為 UI 元素使用的物件 (像是 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)) 可以包含其他物件。 這些有時稱為容器。 下列範例顯示只包含一個元素 ([**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)) 的 **Canvas** 容器。
 
 ```xml
 <Canvas>
@@ -68,11 +68,11 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 
 ### <a name="initialization-text"></a>初始化文字
 
-對於某些物件，您可以使用被當作建構初始化值的內部文字來宣告新值。 在 XAML 中，這個方法與語法稱為「初始化文字」。 在概念上，初始化文字類似於呼叫含有參數的建構函式。 為某些結構設定初始值時，初始化文字就很有用。
+對於某些物件，您可以使用被當作建構初始化值的內部文字來宣告新值。 在 XAML 中，這個方法與語法稱為「初始化文字」  。 在概念上，初始化文字類似於呼叫含有參數的建構函式。 為某些結構設定初始值時，初始化文字就很有用。
 
-當您希望結構值含有 **x:Key** 以便讓它存在於 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中時，通常就會使用物件元素語法搭配初始化文字。 如果您將該結構值在多個目標屬性之間共用，就可以這麼做。 對某些結構來說，您無法使用屬性語法來設定結構值：初始化文字是可以產生有用且可共用的 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/br242343)、[**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864)、[**GridLength**](https://msdn.microsoft.com/library/windows/apps/br208754) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 資源的唯一方法。
+當您希望結構值含有 **x:Key** 以便讓它存在於 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中時，通常就會使用物件元素語法搭配初始化文字。 如果您將該結構值在多個目標屬性之間共用，就可以這麼做。 對某些結構來說，您無法使用屬性語法來設定結構值：初始化文字是可以產生有用且可共用的 [**CornerRadius**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.CornerRadius)、[**Thickness**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Thickness)、[**GridLength**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.GridLength) 或 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 資源的唯一方法。
 
-下列的簡短範例使用初始化文字指定 [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) 的值，這個案例指定的值將 **Left** 與 **Right** 設為 20，而 **Top** 與 **Bottom** 設為 10。 這個範例顯示建立為索引鍵來源的 **Thickness**，和該資源的參考。 如需 [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) 初始化文字的詳細資訊，請參閱 [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864)。
+下列的簡短範例使用初始化文字指定 [**Thickness**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Thickness) 的值，這個案例指定的值將 **Left** 與 **Right** 設為 20，而 **Top** 與 **Bottom** 設為 10。 這個範例顯示建立為索引鍵來源的 **Thickness**，和該資源的參考。 如需 [**Thickness**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Thickness) 初始化文字的詳細資訊，請參閱 [**Thickness**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Thickness)。
 
 ```xml
 <UserControl ...>
@@ -87,7 +87,7 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 </UserControl ...>
 ```
 
-**附註**  一些結構不可以宣告為物件項目。 初始化文字不受支援並且不能當作資源使用。 您必須使用屬性語法，以便在 XAML 中將屬性設成這些值。 這些類型包括：[**持續時間**](https://msdn.microsoft.com/library/windows/apps/br242377)， [ **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411)， [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)， [ **Rect** ](https://msdn.microsoft.com/library/windows/apps/br225994)並[**大小**](https://msdn.microsoft.com/library/windows/apps/br225995)。
+**附註**  一些結構不可以宣告為物件項目。 初始化文字不受支援並且不能當作資源使用。 您必須使用屬性語法，以便在 XAML 中將屬性設成這些值。 這些類型包括：[**持續時間**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration)， [ **RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior)， [**點**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)， [ **Rect** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)並[**大小**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)。
 
 ## <a name="setting-properties"></a>設定屬性
 
@@ -99,7 +99,7 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 -   使用集合語法 (通常是隱含集合語法)。
 
 和在物件宣告一樣，這份清單並不表示每一項方法都可用來設定任何屬性。 某些屬性僅支援其中一種方法。
-某些屬性支援一種以上的格式；例如，有的屬性可以使用屬性元素語法或屬性語法。 使用哪一種語法，取決於屬性及該屬性所使用的物件類型。 在 Windows 執行階段 API 參考中，您將會在 [語法] 區段中看見可使用的 XAML 用法。 有時會提供可運作但更詳細的替代用法。 這些詳細的用法不一定會顯示，因為我們正嘗試為您顯示在 XAML 中使用該屬性的最佳做法或真實案例。 參考頁面的 [XAML 用法] 區段中提供了可在 XAML 中設定之屬性的 XAML 語法指導方針。
+某些屬性支援一種以上的格式；例如，有的屬性可以使用屬性元素語法或屬性語法。 使用哪一種語法，取決於屬性及該屬性所使用的物件類型。 在 Windows 執行階段 API 參考中，您將會在 [語法]  區段中看見可使用的 XAML 用法。 有時會提供可運作但更詳細的替代用法。 這些詳細的用法不一定會顯示，因為我們正嘗試為您顯示在 XAML 中使用該屬性的最佳做法或真實案例。 參考頁面的 [XAML 用法]  區段中提供了可在 XAML 中設定之屬性的 XAML 語法指導方針。
 
 有一些物件屬性無法以任何方式在 XAML 中設定，只能使用程式碼來設定。 這些通常是較適合在程式碼後置而不是在 XAML 中使用的屬性。
 
@@ -111,7 +111,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 設定屬性值是在標記語言 (如 XML 或 HTML) 中設定屬性值的典型方法。 XAML 屬性的設定方式與在 XML 中設定屬性值的方式類似。 屬性名稱是在元素名稱之後標記內的任何一個點指定，與元素名稱之間至少間隔一個空格。 屬性名稱後面跟著等號。 屬性值是包含在一組引號內。 引號可以是雙引號或單引號，只要引號是成對的並且括住值即可。 屬性值本身需以字串表示。 這個字串通常包含數字，但對 XAML 來說，在 XAML 剖析器參與並且執行一些基本值轉換之前，所有屬性值都是字串值。
 
-下列範例使用四個屬性的屬性語法設定 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 物件的 [**Name**](https://msdn.microsoft.com/library/windows/apps/br208735)、[**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 以及 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)。
+下列範例使用四個屬性的屬性語法設定 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 物件的 [**Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.name)、[**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 以及 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)。
 
 ```xml
 <Rectangle Name="rectangle1" Width="100" Height="100" Fill="Blue" />
@@ -125,7 +125,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 在下列文法中，*property* 是您要設定之屬性的名稱，*propertyValueAsObjectElement* 是一個要用來滿足該屬性的值類型需求的單一物件元素。
 
-`<`*物件*`>`
+`<`*object*`>`
 
 `<`*object*`.`*property*`>`
 
@@ -133,9 +133,9 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 `</`*object*`.`*property*`>`
 
-`</`*物件*`>`
+`</`*object*`>`
 
-下列範例使用屬性元素語法來設定含有 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 物件元素之 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) (在**SolidColorBrush**， [**色彩**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)設為屬性。)這個 XAML 剖析的結果等同於先前的 XAML 範例設定**填滿**使用屬性語法。
+下列範例使用屬性元素語法來設定含有 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 物件元素之 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) (在**SolidColorBrush**， [**色彩**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)設為屬性。)這個 XAML 剖析的結果等同於先前的 XAML 範例設定**填滿**使用屬性語法。
 
 ```xml
 <Rectangle
@@ -151,7 +151,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 ### <a name="xaml-vocabularies-and-object-oriented-programming"></a>XAML 詞彙和物件導向程式設計
 
-當屬性和事件顯示為 Windows 執行階段 XAML 類型的 XAML 成員時，通常是繼承自基底類型。 請思考這個範例：`<Button Background="Blue" .../>`。 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 屬性不是一個在 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 類別上立即宣告的屬性。 反而，**Background** 是繼承自基底 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 類別。 事實上，如果您查看的參考主題**按鈕**您會看到 [成員] 清單，包含至少一個繼承的成員，從每個後續基底類別鏈結：[**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)， [**控制**](https://msdn.microsoft.com/library/windows/apps/br209390)， [ **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706)， [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)， [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 在 [屬性] 清單中，以 XAML 詞彙來說，所有讀寫屬性和集合屬性都是繼承而來的。 事件 (例如各種 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件) 也是繼承而來的。
+當屬性和事件顯示為 Windows 執行階段 XAML 類型的 XAML 成員時，通常是繼承自基底類型。 請思考這個範例：`<Button Background="Blue" .../>`。 [**Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background) 屬性不是一個在 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 類別上立即宣告的屬性。 反而，**Background** 是繼承自基底 [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 類別。 事實上，如果您查看的參考主題**按鈕**您會看到 [成員] 清單，包含至少一個繼承的成員，從每個後續基底類別鏈結：[**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)， [**控制**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)， [ **FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement)， [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)， [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)。 在 [屬性]  清單中，以 XAML 詞彙來說，所有讀寫屬性和集合屬性都是繼承而來的。 事件 (例如各種 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 事件) 也是繼承而來的。
 
 如果您使用 Windows 執行階段參考做為 XAML 指導，語法中或甚至是程式碼範例中顯示的元素名稱有時會用於原先定義屬性的類型，因為從基底類別繼承該參考主題的所有可能類型都會共用該參考主題。 如果您在 XML 編輯器中針對 XAML 使用 Visual Studio 的 IntelliSense，IntelliSense 及其下拉式清單在聯合繼承項目和提供精確的屬性清單上都有傑出的表現，這些屬性是一旦您已經開始著手於某個類別執行個體的物件元素時即可供設定的屬性。
 
@@ -159,7 +159,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 某些類型會定義它們的其中一個屬性，讓該屬性啟用 XAML 內容語法。 對於類型的 XAML 內容屬性，您可以在 XAML 中指定該屬性時，省略該屬性的屬性元素。 或者，您可以將該屬性設定到內部文字值，方法是直接在擁有者類型的物件元素標記內提供該內部文字。 XAML 內容屬性針對該屬性支援直接標記語法，透過減少巢狀結構的方式，讓一般人更容易看懂 XAML。
 
-如果有可用的 XAML 內容語法，該語法就會顯示在 Windows 執行階段參考文件裡該屬性之 [語法] 的 [XAML] 區段中。 例如，[**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 的 [**Child**](https://msdn.microsoft.com/library/windows/apps/br209258) 屬性頁會顯示 XAML 內容語法，而非設定 **Border** 的單一物件 **Border.Child** 值的屬性元素語法，如下：
+如果有可用的 XAML 內容語法，該語法就會顯示在 Windows 執行階段參考文件裡該屬性之 [語法]  的 [XAML] 區段中。 例如，[**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 的 [**Child**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.child) 屬性頁會顯示 XAML 內容語法，而非設定 **Border** 的單一物件 **Border.Child** 值的屬性元素語法，如下：
 
 ```xml
 <Border>
@@ -167,13 +167,13 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 </Border>
 ```
 
-如果宣告為 XAML 內容屬性的屬性是 **Object** 類型或 **String** 類型，則 XAML 內容語法就能支援 XML 文件模型中基本上視為內部文字的字串：開頭與結尾物件標記之間的字串。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209676) 的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209652) 屬性頁會顯示含有要設定 **Text** 的內部文字值的 XAML 內容語法，但是標記中從未出現 "Text" 這個字串。 這裡提供一個範例用法：
+如果宣告為 XAML 內容屬性的屬性是 **Object** 類型或 **String** 類型，則 XAML 內容語法就能支援 XML 文件模型中基本上視為內部文字的字串：開頭與結尾物件標記之間的字串。 例如，[**TextBlock**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 的 [**Text**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 屬性頁會顯示含有要設定 **Text** 的內部文字值的 XAML 內容語法，但是標記中從未出現 "Text" 這個字串。 這裡提供一個範例用法：
 
 ```xml
 <TextBlock>Hello!</TextBlock>
 ```
 
-如果某個類別有 XAML 內容屬性，在＜屬性＞小節裡該類別的參考主題中就會指出該內容屬性。 請尋找 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) 的值。 這個屬性使用具名欄位 "Name"。 "Name" 的值是身為 XAML 內容屬性的該類別屬性的名稱。 例如，在[**框線**](https://msdn.microsoft.com/library/windows/apps/br209250)參考頁面上，您會看到這個：ContentProperty("Name=Child").
+如果某個類別有 XAML 內容屬性，在＜屬性＞小節裡該類別的參考主題中就會指出該內容屬性。 請尋找 [**ContentPropertyAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.ContentPropertyAttribute) 的值。 這個屬性使用具名欄位 "Name"。 "Name" 的值是身為 XAML 內容屬性的該類別屬性的名稱。 例如，在[**框線**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)參考頁面上，您會看到這個：ContentProperty("Name=Child").
 
 其中一個我們應該提到的重要 XAML 語法規則就是，您不能將 XAML 內容屬性與您在元素上設定的其他屬性元素混合使用。 XAML 內容屬性必須在任何屬性元素之前或之後以整體方式設定。 例如，下列是無效的 XAML：
 
@@ -191,7 +191,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 目前為止顯示的所有語法，都是將屬性設定為單一物件。 但是，許多 UI 案例卻需要指定的父元素可以包含多個子元素。 例如，某個輸入表單的 UI 需要數個文字方塊元素、一些標籤，或者是一個 "Submit" 按鈕。 然而，如果您要使用程式撰寫物件模型來存取這些多重元素，它們通常是單一集合屬性中的項目，而非每個項目各為不同屬性的值。 XAML 可以透過將使用集合類型的屬性視為隱含屬性，並為一個集合類型的任何子元素執行特殊處理，支援多重子元素以及支援一般的支援集合模型。
 
-許多集合屬性也會被識別為類別的 XAML 內容屬性。 隱含集合處理與 XAML 內容語法的組合在用於控制項組合的類型中很常見，例如面板、檢視或項目控制項。 例如，下列範例顯示在 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 內組合兩個對等 UI 元素可能使用的最簡單 XAML。
+許多集合屬性也會被識別為類別的 XAML 內容屬性。 隱含集合處理與 XAML 內容語法的組合在用於控制項組合的類型中很常見，例如面板、檢視或項目控制項。 例如，下列範例顯示在 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 內組合兩個對等 UI 元素可能使用的最簡單 XAML。
 
 ```xml
 <StackPanel>
@@ -212,7 +212,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 所有支援在 XAML 中設定的屬性，都會支援用於直接值設定的屬性或屬性元素語法，但可能不支援交替使用上述任一種語法。 某些屬性確實支援上述任一種語法，而某些屬性則支援其他的語法選項，例如 XAML 內容屬性。 屬性所支援的 XAML 語法類型取決於該屬性當作其屬性類型使用的物件類型。 如果屬性類型是基本類型 (例如雙精準數 (浮點數或十進位數)、整數、布林值或字串)，則該屬性一律支援屬性語法。
 
-如果可以透過處理字串建立您用來設定屬性的物件類型，您也可以使用屬性語法來設定該屬性。 以基本類型來說，一律是這樣的情況，類型轉換是內建在剖析器中。 不過，某些其他物件類型也可以透過使用指定為屬性值的字串 (而不是屬性元素內的物件元素) 來建立。 如果要讓這個方法能夠運作，必須使用基礎類型轉換，這項轉換是由該特定屬性支援，或普遍對使用該屬性類型的所有值支援。 屬性的字串值會用來設定對新物件值初始化來說重要的屬性。 依據轉換器如何唯一處理字串中的資訊而定，特定的類型轉換器可能也可以建立常見屬性類型的不同子類別。 在這個參考文件的語法章節中，將列出支援這個行為的物件類型的特殊文法。 舉例來說，[**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 的 XAML 語法顯示如何使用屬性語法，為任何類型為 **Brush** 的屬性建立新的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 值 (Windows 執行階段 XAML 中有許多 **Brush** 屬性)。
+如果可以透過處理字串建立您用來設定屬性的物件類型，您也可以使用屬性語法來設定該屬性。 以基本類型來說，一律是這樣的情況，類型轉換是內建在剖析器中。 不過，某些其他物件類型也可以透過使用指定為屬性值的字串 (而不是屬性元素內的物件元素) 來建立。 如果要讓這個方法能夠運作，必須使用基礎類型轉換，這項轉換是由該特定屬性支援，或普遍對使用該屬性類型的所有值支援。 屬性的字串值會用來設定對新物件值初始化來說重要的屬性。 依據轉換器如何唯一處理字串中的資訊而定，特定的類型轉換器可能也可以建立常見屬性類型的不同子類別。 在這個參考文件的語法章節中，將列出支援這個行為的物件類型的特殊文法。 舉例來說，[**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 的 XAML 語法顯示如何使用屬性語法，為任何類型為 **Brush** 的屬性建立新的 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 值 (Windows 執行階段 XAML 中有許多 **Brush** 屬性)。
 
 ## <a name="xaml-parsing-logic-and-rules"></a>XAML 剖析邏輯與規則
 
@@ -240,11 +240,11 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 **附註**  XAML 設計工具通常升階排序慣例，如果您使用 XML 編輯器中，以外的設計介面，但您可以自由編輯該 XAML 之後，重新排列屬性，或引進新的。
 
-## <a name="attached-properties"></a>附加屬性
+## <a name="attached-properties"></a>附加的屬性
 
-XAML 透過新增名為「附加屬性」的語法元素延伸了 XML 的功能。 附加屬性語法與屬性元素語法類似，它也包含點，而且這個點對於 XAML 剖析來說有特殊的意義。 具體地說，點分隔了附加屬性的擁有者提供者以及屬性名稱。
+XAML 透過新增名為「附加屬性」  的語法元素延伸了 XML 的功能。 附加屬性語法與屬性元素語法類似，它也包含點，而且這個點對於 XAML 剖析來說有特殊的意義。 具體地說，點分隔了附加屬性的擁有者提供者以及屬性名稱。
 
-在 XAML 中，您使用語法 *AttachedPropertyProvider*.*PropertyName* 來設定附加屬性。 這裡是如何在 XAML 中設定附加屬性 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 的範例：
+在 XAML 中，您使用語法 *AttachedPropertyProvider*.*PropertyName* 來設定附加屬性。 這裡是如何在 XAML 中設定附加屬性 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) 的範例：
 
 ```xml
 <Canvas>
@@ -256,39 +256,39 @@ XAML 透過新增名為「附加屬性」的語法元素延伸了 XML 的功能�
 
 在 Windows 執行階段 XAML 中，您會看到支援下列案例的附加屬性：
 
--   子項目通知父容器面板這些配置中的行為方式：[**畫布**](https://msdn.microsoft.com/library/windows/apps/br209267)， [**方格**](https://msdn.microsoft.com/library/windows/apps/br242704)， [ **VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227651)。
--   控制使用方式可能會影響的重要的控制項組件來自控制項範本的行為：[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)， [ **VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/br227689)。
--   使用服務和使用它的類別不共用繼承所相關的類別中可用的服務：[**印刷樣式**](https://msdn.microsoft.com/library/windows/apps/hh702143)， [ **VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021)， [ **AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081)， [**ToolTipService**](https://msdn.microsoft.com/library/windows/apps/br227609)。
--   動畫目標：[**分鏡腳本**](https://msdn.microsoft.com/library/windows/apps/br210490)。
+-   子項目通知父容器面板這些配置中的行為方式：[**畫布**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)， [**方格**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)， [ **VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)。
+-   控制使用方式可能會影響的重要的控制項組件來自控制項範本的行為：[**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)， [ **VirtualizingStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VirtualizingStackPanel)。
+-   使用服務和使用它的類別不共用繼承所相關的類別中可用的服務：[**印刷樣式**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)， [ **VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager)， [ **AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties)， [**ToolTipService**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTipService)。
+-   動畫目標：[**分鏡腳本**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)。
 
 如需詳細資訊，請參閱[附加屬性概觀](attached-properties-overview.md)。
 
 ## <a name="literal--values"></a>常值 "{" 的值
 
-因為左括號符號\{為開頭的標記延伸模組序列中，您必須使用逸出序列來指定常值字串開頭的"\{」。 逸出序列是 「\{\}"。 例如，若要指定單一的左大括號的字串值，指定屬性值為"\{\}\{"。 您也可以使用替代的引號 (比方說， **'** 屬性值內，以分隔 **"」**) 來提供"\{」 做為字串的值。
+因為左括號符號\{為開頭的標記延伸模組序列中，您必須使用逸出序列來指定常值字串開頭的"\{」。 逸出序列是 「\{\}"。 例如，若要指定單一的左大括號的字串值，指定屬性值為"\{\}\{"。 您也可以使用替代的引號 (比方說， **'** 屬性值內，以分隔 **"」** ) 來提供"\{」 做為字串的值。
 
 **附註**  "\\} 」 也適用於在加上引號的屬性內時。
  
 ## <a name="enumeration-values"></a>列舉值
 
-Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成員是讀寫屬性，您就可以提供屬性值來設定這樣的屬性。 您可以透過使用常數名稱的不完整名稱，識別要使用哪個列舉值做為屬性的值。 例如，以下是如何在 XAML 中設定 [**UIElement.Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992)：`<Button Visibility="Visible"/>`。 這裡的 "Visible" 是當作字串使用，可直接對應到 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006) 列舉的具名常數 **Visible**。
+Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成員是讀寫屬性，您就可以提供屬性值來設定這樣的屬性。 您可以透過使用常數名稱的不完整名稱，識別要使用哪個列舉值做為屬性的值。 例如，以下是如何在 XAML 中設定 [**UIElement.Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility)：`<Button Visibility="Visible"/>`。 這裡的 "Visible" 是當作字串使用，可直接對應到 [**Visibility**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Visibility) 列舉的具名常數 **Visible**。
 
 -   請勿使用完整格式，這會沒有作用。 例如，下列是無效的 XAML：`<Button Visibility="Visibility.Visible"/>`。
 -   不要使用常數的值。 換句話說，無論列舉定義為明確或隱含，都不要依賴列舉整數值。 儘管看起來可行，但是這在 XAML 或程式碼中都是一個不好的做法，因為您會依賴可能是暫時性實作的詳細資料。 例如，不要這樣做：`<Button Visibility="1"/>`。
 
 **附註**  Api，使用 XAML，和使用列舉的參考主題，在中，按一下 連結中的列舉型別**屬性值**一節**語法**。 這會連結到列舉頁面，您可以在這裡探索該列舉的具名常數。
 
-列舉可以是旗標的形式，這表示列舉具備 **FlagsAttribute** 屬性。 如果您需要為旗標形式的列舉指定一個值組合來做為 XAML 屬性值，請使用每個列舉常數的名稱，在每個名稱之間加上逗號 (,)，中間不要有空格字元。 旗標形式的屬性在 Windows 執行階段的 XAML 詞彙中並不常用，但是，[**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) 是在 XAML 中設定旗標形式列舉值的支援範例。
+列舉可以是旗標的形式，這表示列舉具備 **FlagsAttribute** 屬性。 如果您需要為旗標形式的列舉指定一個值組合來做為 XAML 屬性值，請使用每個列舉常數的名稱，在每個名稱之間加上逗號 (,)，中間不要有空格字元。 旗標形式的屬性在 Windows 執行階段的 XAML 詞彙中並不常用，但是，[**ManipulationModes**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationModes) 是在 XAML 中設定旗標形式列舉值的支援範例。
 
 ## <a name="interfaces-in-xaml"></a>XAML 中的介面
 
-在少數情況下，您會看到屬性類型為介面的 XAML 語法。 在 XAML 類型系統中，分析時可以接受實作該介面的類型做為值。 必須要有這種類型已建立的例項可用，才能做為值。 您會在 [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736) 的 [**Command**](https://msdn.microsoft.com/library/windows/apps/br227740) 和 [**CommandParameter**](https://msdn.microsoft.com/library/windows/apps/br227741) 屬性的 XAML 語法中看到用來做為類型的介面。 這些屬性支援 Model-View-ViewModel (MVVM) 設計模式，其中 **ICommand** 介面是檢視和模型互動方式的協定。
+在少數情況下，您會看到屬性類型為介面的 XAML 語法。 在 XAML 類型系統中，分析時可以接受實作該介面的類型做為值。 必須要有這種類型已建立的例項可用，才能做為值。 您會在 [**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) 的 [**Command**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) 和 [**CommandParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.commandparameter) 屬性的 XAML 語法中看到用來做為類型的介面。 這些屬性支援 Model-View-ViewModel (MVVM) 設計模式，其中 **ICommand** 介面是檢視和模型互動方式的協定。
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Windows 執行階段參考中的 XAML 預留位置慣例
 
-如果您仔細看過可使用 XAML 的 Windows 執行階段 API 參考主題的任何 [語法] 區段，可能會看到語法包含非常多的預留位置。 XAML 語法是不同於C#，Microsoft Visual Basic 或 Visual c + + 元件擴充功能 (C + + /CX) 語法因為 XAML 語法是使用語法。 這是在您自己的 XAML 檔案中給予提示的最終用法，但是不要過度限制您可以使用的值。 所以通常用法會描述一種混合常值和預留位置的文法，並在 [XAML 值] 區段中定義部分預留位置。
+如果您仔細看過可使用 XAML 的 Windows 執行階段 API 參考主題的任何 [語法]  區段，可能會看到語法包含非常多的預留位置。 XAML 語法是不同於C#，Microsoft Visual Basic 或 Visual c + + 元件擴充功能 (C + + /CX) 語法因為 XAML 語法是使用語法。 這是在您自己的 XAML 檔案中給予提示的最終用法，但是不要過度限制您可以使用的值。 所以通常用法會描述一種混合常值和預留位置的文法，並在 [XAML 值]  區段中定義部分預留位置。
 
-當您在屬性的 XAML 語法中看到類型名稱/元素名稱時，顯示的名稱是原來定義屬性的類型名稱。 但是 Windows 執行階段 XAML 支援以 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 為基礎之類別的類別繼承模型。 因此，您通常可以在類別上使用屬性，該類別並非實際定義類別，而是改為從最初定義屬性 (Property)/屬性 (Attribute) 的類別衍生。 例如，您可以在任何使用深度繼承的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 衍生類別上，將 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 設定為屬性。 例如：`<Button Visibility="Visible" />`。 因此，不要照字面解釋任何 XAML 用法語法中顯示的元素名稱；此語法或許能供代表該類別的元素使用，同時也可供代表衍生類別的元素使用。 如果類型在實際用法中極少或不可能顯示為定義元素，該類型名稱在語法中會特別以小寫顯示。 例如，您看到的 **UIElement.Visibility** 語法為：
+當您在屬性的 XAML 語法中看到類型名稱/元素名稱時，顯示的名稱是原來定義屬性的類型名稱。 但是 Windows 執行階段 XAML 支援以 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 為基礎之類別的類別繼承模型。 因此，您通常可以在類別上使用屬性，該類別並非實際定義類別，而是改為從最初定義屬性 (Property)/屬性 (Attribute) 的類別衍生。 例如，您可以在任何使用深度繼承的 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 衍生類別上，將 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 設定為屬性。 例如：`<Button Visibility="Visible" />`。 因此，不要照字面解釋任何 XAML 用法語法中顯示的元素名稱；此語法或許能供代表該類別的元素使用，同時也可供代表衍生類別的元素使用。 如果類型在實際用法中極少或不可能顯示為定義元素，該類型名稱在語法中會特別以小寫顯示。 例如，您看到的 **UIElement.Visibility** 語法為：
 
 ``` syntax
 <uiElement Visibility="Visible"/>
@@ -296,25 +296,25 @@ Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成
 <uiElement Visibility="Collapsed"/>
 ```
 
-許多 XAML 語法區段都會在「用法」中包含預留位置，然後在 [語法] 區段之下的 [XAML 值] 區段定義用法。
+許多 XAML 語法區段都會在「用法」中包含預留位置，然後在 [語法]  區段之下的 [XAML 值]  區段定義用法。
 
-XAML 用法區段也使用各種一般化的預留位置。 這些預留位置不會每次在 [XAML 值] 中重新定義，因為您可以猜想到或是最後都能了解它們所代表的意義。 我們認為大部分的讀者應該都不想在 [XAML 值] 中重複看到它們出現，所以定義中予以省略。 如果需要參考資料，以下是部分預留位置及它們以廣義來說所代表的意義：
+XAML 用法區段也使用各種一般化的預留位置。 這些預留位置不會每次在 [XAML 值]  中重新定義，因為您可以猜想到或是最後都能了解它們所代表的意義。 我們認為大部分的讀者應該都不想在 [XAML 值]  中重複看到它們出現，所以定義中予以省略。 如果需要參考資料，以下是部分預留位置及它們以廣義來說所代表的意義：
 
 -   *object*：理論上是任何物件值，但實際上通常限制為特定的物件類型，例如，string-or-object 選項，詳細資訊請參閱參考頁面的＜備註＞。
 -   *物件* *屬性*: *物件* *屬性*搭配使用的情況，所顯示的語法可用來當做類型的語法許多屬性的屬性值。 例如， **Xaml 屬性使用方式**所示[**筆刷**](/uwp/api/Windows.UI.Xaml.Media.Brush)包括： <*物件* *屬性*="*predefinedColorName*"/ >
--   *事件處理常式*:這會顯示為每個事件屬性顯示的 XAML 語法的屬性值。 您在這裡所提供的資訊，就是事件處理常式函式的函式名稱。 該函式必須定義在 XAML 頁面的程式碼後置中。 在程式設計層級，該函式必須符合您所處理事件的委派簽章，否則無法編譯應用程式程式碼。 不過這實際上是程式設計方面的考量，而非 XAML 的考量，所以我們不會嘗試提示任何關於 XAML 語法中的委派類型。 如果您想要知道應該為事件實作的委派，請參閱事件參考主題的 [事件資訊] 區段中標示為**委派**的表格列。
--   *enumMemberName*：顯示在所有列舉的屬性語法中。 使用列舉值的屬性也有類似的預留位置，但通常會在預留位置加上列舉名稱提示的首碼。 例如，針對 [**FrameworkElement.FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 顯示的語法為 <*frameworkElement* **FlowDirection** ="* flowDirectionMemberName*"/>。 如果您正位於其中一個屬性參考頁面，按一下顯示在 [屬性值] 區段中 [類型:] 旁的列舉類型連結。 對於使用該列舉之屬性的屬性值，您可以使用列於 [成員] 清單的 [成員] 欄中的任何字串。
--   *雙精度浮點*， *int*，*字串*， *bool*:這些是已知的 XAML 語言基本類型。 如果您使用 C# 或 Visual Basic 進行程式設計，這些類型可對應 Microsoft .NET 的等同類型，例如 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)、[**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) 和 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)，當您在 .NET 程式碼後置中使用 XAML 定義的值時，可以使用這些 .NET 類型的任何成員。 如果您使用 C++/CX 進行程式設計，可以使用 C++ 基本類型，也可以考慮使用等同於 [**Platform**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 命名空間所定義類型的這些項目，例如 [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx)。 針對特定的屬性值有時會有額外的限制。 但您通常會在 [屬性值] 區段或 [備註] 區段而不會在 XAML 區段中看到這些註解，因為這些限制同時適用於程式碼用法和 XAML 用法。
+-   *事件處理常式*:這會顯示為每個事件屬性顯示的 XAML 語法的屬性值。 您在這裡所提供的資訊，就是事件處理常式函式的函式名稱。 該函式必須定義在 XAML 頁面的程式碼後置中。 在程式設計層級，該函式必須符合您所處理事件的委派簽章，否則無法編譯應用程式程式碼。 不過這實際上是程式設計方面的考量，而非 XAML 的考量，所以我們不會嘗試提示任何關於 XAML 語法中的委派類型。 如果您想要知道應該為事件實作的委派，請參閱事件參考主題的 [事件資訊]  區段中標示為**委派**的表格列。
+-   *enumMemberName*：顯示在所有列舉的屬性語法中。 使用列舉值的屬性也有類似的預留位置，但通常會在預留位置加上列舉名稱提示的首碼。 例如，針對 [**FrameworkElement.FlowDirection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.flowdirection) 顯示的語法為 <*frameworkElement* **FlowDirection** ="* flowDirectionMemberName*"/>。 如果您正位於其中一個屬性參考頁面，按一下顯示在 [屬性值]  區段中 [類型:]  旁的列舉類型連結。 對於使用該列舉之屬性的屬性值，您可以使用列於 [成員]  清單的 [成員]  欄中的任何字串。
+-   *雙精度浮點*， *int*，*字串*， *bool*:這些是已知的 XAML 語言基本類型。 如果您使用 C# 或 Visual Basic 進行程式設計，這些類型可對應 Microsoft .NET 的等同類型，例如 [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)、[**Int32**](https://docs.microsoft.com/dotnet/api/system.int32?redirectedfrom=MSDN)、[**String**](https://docs.microsoft.com/dotnet/api/system.string?redirectedfrom=MSDN) 和 [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean?redirectedfrom=MSDN)，當您在 .NET 程式碼後置中使用 XAML 定義的值時，可以使用這些 .NET 類型的任何成員。 如果您使用 C++/CX 進行程式設計，可以使用 C++ 基本類型，也可以考慮使用等同於 [**Platform**](https://docs.microsoft.com/cpp/cppcx/platform-namespace-c-cx) 命名空間所定義類型的這些項目，例如 [**Platform::String**](https://docs.microsoft.com/cpp/cppcx/platform-string-class)。 針對特定的屬性值有時會有額外的限制。 但您通常會在 [屬性值]  區段或 [備註] 區段而不會在 XAML 區段中看到這些註解，因為這些限制同時適用於程式碼用法和 XAML 用法。
 
 ## <a name="tips-and-tricks-notes-on-style"></a>祕訣與技巧，樣式附註
 
--   標記延伸一般是在主要 [XAML 概觀](xaml-overview.md)中加以描述。 但是，對本主題中提供的指導方針影響最大的標記延伸則是 [StaticResource](staticresource-markup-extension.md) 標記延伸 (和相關的 [ThemeResource](themeresource-markup-extension.md))。 StaticResource 標記延伸的功能是將您的 XAML 分解成來自 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的可重複使用資源。 您幾乎都是在 **ResourceDictionary** 中定義控制項範本和相關的樣式。 通常也會在 **ResourceDictionary** 中定義較小部分的控制項範本定義或 app 特定樣式，例如，app 針對不同 UI 部分使用一次以上的色彩 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962)。 透過使用 StaticResource，任何需要使用屬性元素才能設定的屬性，現在可以在屬性語法中設定。 但是，分解 XAML 以供重複使用的好處並不僅僅是簡化頁面層級語法而已。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。
+-   標記延伸一般是在主要 [XAML 概觀](xaml-overview.md)中加以描述。 但是，對本主題中提供的指導方針影響最大的標記延伸則是 [StaticResource](staticresource-markup-extension.md) 標記延伸 (和相關的 [ThemeResource](themeresource-markup-extension.md))。 StaticResource 標記延伸的功能是將您的 XAML 分解成來自 XAML [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的可重複使用資源。 您幾乎都是在 **ResourceDictionary** 中定義控制項範本和相關的樣式。 通常也會在 **ResourceDictionary** 中定義較小部分的控制項範本定義或 app 特定樣式，例如，app 針對不同 UI 部分使用一次以上的色彩 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)。 透過使用 StaticResource，任何需要使用屬性元素才能設定的屬性，現在可以在屬性語法中設定。 但是，分解 XAML 以供重複使用的好處並不僅僅是簡化頁面層級語法而已。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
 -   您會在 XAML 範例中，看到數種有關如何套用空格和換行字元的不同慣例。 特別是針對如何拆開設定了許多不同屬性的物件元素，也有各種不同的慣例可供套用。 那些都只是樣式上的偏好。 當您編輯 XAML 時，Visual Studio XML 編輯器會套用一些預設樣式規則，但是您可以在設定中變更這些規則。 在少數情況下，XAML 檔案中的空格會被視為有意義的；如需詳細資訊，請參閱 [XAML 與空格](xaml-and-whitespace.md)。
 
 ## <a name="related-topics"></a>相關主題
 
 * [XAML 概觀](xaml-overview.md)
 * [XAML 命名空間和命名空間對應](xaml-namespaces-and-namespace-mapping.md)
-* [資源字典和 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [資源字典和 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
  
 

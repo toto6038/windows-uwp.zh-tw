@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
-ms.openlocfilehash: a382fd879ce656a81e1de4ae2d91180f622cd730
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 40cf41df4ccf15206e5855f989bc46c599baa473
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334738"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372071"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>適用於 Xbox One 上 UWP 應用程式和遊戲的系統資源
 
@@ -23,7 +23,7 @@ ms.locfileid: "58334738"
 
 在背景執行之 App 的最大可用記憶體是 128 MB。 背景模式僅適用於並行應用程式，例如背景音樂播放程式。  遊戲將暫時停用，並在背景中終止。
 
-超過這些限制會導致記憶體配置失敗。 如需監視記憶體使用的詳細資訊，請參閱 [MemoryManager 類別](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)參考。
+超過這些限制會導致記憶體配置失敗。 如需監視記憶體使用的詳細資訊，請參閱 [MemoryManager 類別](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)參考。
     
     > [!NOTE]
     > When running your app or game from the Visual Studio debugger, these memory constraints do not apply. This limit is only applicable when not running in debugging mode.
@@ -44,7 +44,7 @@ ms.locfileid: "58334738"
 
 對於**應用程式開發**，相較於標準電腦，資源可能有限且會因系統上執行的應用程式和遊戲數目而異。
 
-對於 **「遊戲開發」**，Xbox One (如同其他遊戲主機) 是需要特定硬體型開發套件來存取其完整功能的特殊化硬體。 如果您正在處理需要存取 Xbox One 硬體的最大潛力的遊戲，請考慮向 [ID@Xbox](https://www.xbox.com/Developers/id) 計畫註冊來存取該 Xbox One 開發套件。
+對於 **「遊戲開發」** ，Xbox One (如同其他遊戲主機) 是需要特定硬體型開發套件來存取其完整功能的特殊化硬體。 如果您正在處理需要存取 Xbox One 硬體的最大潛力的遊戲，請考慮向 [ID@Xbox](https://www.xbox.com/Developers/id) 計畫註冊來存取該 Xbox One 開發套件。
 
 
 如需稍多一些關於 Xbox One 上 UWP app 系統資源的詳細資訊，請觀看這部影片的第一部分。
@@ -55,5 +55,5 @@ ms.locfileid: "58334738"
 ## <a name="see-also"></a>另請參閱
 - [在 Xbox One UWP](index.md)
 - [開始使用 Xbox Live 創作者計劃。](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-program)
-- [DirectX 和 Xbox One 上的 UWP](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
+- [DirectX 和 Xbox One 上的 UWP](https://walbourn.github.io/)
 

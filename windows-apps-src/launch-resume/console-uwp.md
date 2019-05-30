@@ -5,18 +5,18 @@ keywords: 主控台 uwp
 ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 111ef4d5e8830485a5de3b44d69826df256d1c4d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c2dba15d78301c84f4064bcd6548d44e3c17beb2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592103"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366348"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>建立通用 Windows 平台主控台應用程式
 
-本主題描述如何建立[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + /CX 通用 Windows 平台 (UWP) 主控台應用程式。
+本主題描述如何建立[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或C++/CX 通用 Windows 平台 (UWP) 主控台應用程式。
 
-從 Windows 10 版本 1803，您可以撰寫 C + + /cli WinRT 或 C + + /CX 的 UWP 主控台應用程式在主控台視窗中，例如 DOS 或 PowerShell 主控台視窗中執行。 主控台應用程式的輸入和輸出，使用 [主控台] 視窗，而且可以使用[通用 C 執行階段](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)函式，如**printf**並**getchar**。 UWP 主控台應用程式可發佈至 Microsoft Store。 這些應用程式均列於應用程式清單中，且皆有可釘選到 \[開始\] 功能表的主要磚。 可以從 [開始] 功能表中，啟動 UWP 主控台應用程式，但您通常會啟動它們從命令列。
+從 Windows 10 版本 1803，您可以撰寫C++/WinRT 或C++/CX UWP 主控台的主控台視窗，例如 DOS 或 PowerShell 主控台視窗中執行的應用程式。 主控台應用程式的輸入和輸出，使用 [主控台] 視窗，而且可以使用[通用 C 執行階段](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)函式，如**printf**並**getchar**。 UWP 主控台應用程式可發佈至 Microsoft Store。 這些應用程式均列於應用程式清單中，且皆有可釘選到 \[開始\] 功能表的主要磚。 可以從 [開始] 功能表中，啟動 UWP 主控台應用程式，但您通常會啟動它們從命令列。
 
 若要查看作用中的其中一個，以下是建立 UWP 主控台應用程式的影片。
 
@@ -24,13 +24,13 @@ ms.locfileid: "57592103"
 
 ## <a name="use-a-uwp-console-app-template"></a>使用 UWP 主控台應用程式範本 
 
-若要建立 UWP 應用程式主控台，請先安裝**主控台應用程式 (通用) 專案範本** (可從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) 取得)。 已安裝的範本可再底下**新的專案** > **已安裝** > **其他語言** >  **Visual c + +** > **Windows Universal**作為**主控台應用程式 C + + /cli WinRT (通用 Windows)** 和**主控台應用程式 C + + /CX (通用 Windows)**.
+若要建立 UWP 應用程式主控台，請先安裝**主控台應用程式 (通用) 專案範本** (可從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) 取得)。 已安裝的範本可再底下**新的專案** > **已安裝** > **其他語言** >  **視覺化C++**   >  **Windows Universal**作為**主控台應用程式C++/WinRT (通用 Windows)** 並**主控台應用程式C++/CX (通用 Windows)** 。
 
 ## <a name="add-your-code-to-main"></a>將您的程式碼新增至 main()
 
 範本會新增 **Program.cpp**，其中包含 `main()` 函數。 這是在 UWP 主控台應用程式中執行開始的位置。 存取具有 `__argc` 與 `__argv` 參數的命令列引數。 當控制項從 `main()` 傳回時，會有 UWP 主控台應用程式存取。
 
-下列範例**Program.cpp**加入**主控台應用程式的 c + + /cli WinRT**範本：
+下列範例**Program.cpp**加入**主控台應用程式C++/WinRT**範本：
 
 ```cppwinrt
 #include "pch.h"
@@ -60,7 +60,7 @@ int __cdecl main()
 
 UWP 主控台應用程式可從其執行目錄中或之下存取檔案系統。 這可能是因為範本將 [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) 延伸模組新增至您應用程式的 Package.appxmanifest 檔案。 此延伸模組也讓使用者能夠從主控台視窗輸入別名以啟動應用程式。 應用程式不必在系統路徑中就能啟動。
 
-您可以額外將檔案系統的廣泛存取權授與您的 UWP 主控台應用程式，做法是新增受限制的功能 `broadFileSystemAccess`，如[檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)中所述。 此功能在 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空間中搭配 API 使用。
+您可以額外將檔案系統的廣泛存取權授與您的 UWP 主控台應用程式，做法是新增受限制的功能 `broadFileSystemAccess`，如[檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)中所述。 此功能在 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空間中搭配 API 使用。
 
 UWP 主控台應用程式同一時間可以有多個執行個體執行，因為範本將 [SupportsMultipleInstances](multi-instance-uwp.md) 功能新增至您應用程式的 Package.appxmanifest 檔案。
 
@@ -99,7 +99,7 @@ UWP 主控台應用程式同一時間可以有多個執行個體執行，因為�
 
 ## <a name="additional-considerations-for-uwp-console-apps"></a>UWP 主控台應用程式的其他考量事項
 
-- 只有 C + + /cli WinRT 和 C + + /CX 的 UWP 應用程式可能是主控台應用程式。
+- 只有C++/WinRT 和C++/CX UWP 應用程式可能是主控台應用程式。
 - UWP 主控台應用程式必須以桌面或 IoT 專案類型為目標。
 - UWP 主控台應用程式可能無法建立視窗。 它們無法使用 MessageBox()，Location() 或因為任何原因，可能會建立視窗的任何其他 API，例如使用者同意提示。
 - UWP 主控台應用程式不可以取用背景工作，也不能作為背景工作。

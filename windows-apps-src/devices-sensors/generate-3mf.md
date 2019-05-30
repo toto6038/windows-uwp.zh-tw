@@ -9,33 +9,33 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a3615dac98c5bc8469c8c8ebc47ef718c0131844
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f7cc27df92329157f2987d8d02eb59039534d166
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653393"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370100"
 ---
 # <a name="generate-a-3mf-package"></a>產生 3MF 套件
 
 **重要的 Api**
 
--   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
+-   [**Windows.Graphics.Printing3D**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
 
-本指南描述 3D 製造格式文件的結構以及如何使用 [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API 來建立和操作文件。
+本指南描述 3D 製造格式文件的結構以及如何使用 [**Windows.Graphics.Printing3D**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d) API 來建立和操作文件。
 
 ## <a name="what-is-3mf"></a>什麼是 3MF？
 
 3D 製造格式 (3MF) 是一組慣例，基於製造 (3D 列印) 而使用 XML 來描述 3D 模型的外觀和結構。 它定義一組組件 (一些是必要組件，一些是選用組件) 與其關係，目標是將所有必要資訊提供給 3D 製造裝置。 遵守 3D 製造格式的資料集可以儲存為副檔名為 .3mf 的檔案。
 
-在 Windows 10、windows [ **Printing3D3MFPackage** ](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx)類別**Windows.Graphics.Printing3D**命名空間相當於單一.3mf 檔案，以及其他類別對應至在檔案中的特定 XML 項目。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，以及 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](https://3mf.io/what-is-3mf/3mf-specification/)。
+在 Windows 10、windows [ **Printing3D3MFPackage** ](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3d3mfpackage)類別**Windows.Graphics.Printing3D**命名空間相當於單一.3mf 檔案，以及其他類別對應至在檔案中的特定 XML 項目。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，以及 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](https://3mf.io/what-is-3mf/3mf-specification/)。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
 
 ## <a name="core-classes-in-the-3mf-structure"></a>3MF 結構中的核心類別
 
-**Printing3D3MFPackage** 類別代表完整 3MF 文件，而 3MF 文件的核心是其模型組件 (以 [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx) 類別表示)。 大部分我們希望指定的 3D 模型相關資訊，都將透過設定 **Printing3DModel** 類別屬性和其基本類別屬性來加以儲存。
+**Printing3D3MFPackage** 類別代表完整 3MF 文件，而 3MF 文件的核心是其模型組件 (以 [**Printing3DModel**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dmodel) 類別表示)。 大部分我們希望指定的 3D 模型相關資訊，都將透過設定 **Printing3DModel** 類別屬性和其基本類別屬性來加以儲存。
 
 [!code-cs[InitClasses](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetInitClasses)]
 
@@ -49,7 +49,7 @@ ms.locfileid: "57653393"
 
 ## <a name="mesh-data"></a>網格資料
 
-在本指南的內容中，網格是透過一組頂點所建構的 3D 幾何主體 (但它不需要顯示為單一純色)。 網格部分是以 [**Printing3DMesh**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmesh.aspx) 類別表示。 有效的網格物件必須包含其所有頂點位置的資訊，以及存在於某些組頂點之間的所有三角形表面位置的資訊。
+在本指南的內容中，網格是透過一組頂點所建構的 3D 幾何主體 (但它不需要顯示為單一純色)。 網格部分是以 [**Printing3DMesh**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dmesh) 類別表示。 有效的網格物件必須包含其所有頂點位置的資訊，以及存在於某些組頂點之間的所有三角形表面位置的資訊。
 
 下列方法會新增網格的頂點，然後提供它們在 3D 空間中的位置︰
 
@@ -118,7 +118,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 ## <a name="components-and-build"></a>元件和建置
 
-元件結構可讓使用者在可列印的 3D 模型中放入多個網格物件。 [  **Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 物件包含單一網格以及其他元件的參考清單。 這實際上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 物件的清單。 **Printing3DComponentWithMatrix** 物件各包含一個 **Printing3DComponent**，而且重要的是套用至網格的轉換矩陣以及 **Printing3DComponent** 的內含元件。
+元件結構可讓使用者在可列印的 3D 模型中放入多個網格物件。 [  **Printing3DComponent**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dcomponent) 物件包含單一網格以及其他元件的參考清單。 這實際上是 [**Printing3DComponentWithMatrix**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dcomponentwithmatrix) 物件的清單。 **Printing3DComponentWithMatrix** 物件各包含一個 **Printing3DComponent**，而且重要的是套用至網格的轉換矩陣以及 **Printing3DComponent** 的內含元件。
 
 例如，汽車模型可能包含保留汽車主體網格的 "Body" **Printing3DComponent**。 "Body" 元件接著可能會包含對四個不同 **Printing3DComponentWithMatrix** 物件的參考，這四個物件都參考具有 "Wheel" 網格的相同 **Printing3DComponent**，並且包含四個不同的轉換矩陣 (將車輪對應到汽車主體的四個不同位置)。 在這個案例中，"Body" 網格和 "Wheel" 網格各只需要儲存一次，即使最終產品共具備五個網格也是一樣。
 
@@ -131,7 +131,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 [!code-cs[SavePackage](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
 
-接下來，我們可以起始應用程式內的列印工作 (請參閱[從應用程式進行 3D 列印](https://msdn.microsoft.com/library/windows/apps/mt204541.aspx))，或將此 **Printing3D3MFPackage** 儲存為 .3mf 檔案。
+接下來，我們可以起始應用程式內的列印工作 (請參閱[從應用程式進行 3D 列印](https://docs.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app))，或將此 **Printing3D3MFPackage** 儲存為 .3mf 檔案。
 
 下列方法採用已完成的 **Printing3D3MFPackage**，並將其資料儲存至 .3mf 檔案。
 
@@ -139,7 +139,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 ## <a name="related-topics"></a>相關主題
 
-[從您的應用程式的 3D 列印](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
+[從您的應用程式的 3D 列印](https://docs.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
 [3D 列印的 UWP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 

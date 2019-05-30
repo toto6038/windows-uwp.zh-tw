@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 控制項, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: 369aa076184f79aa1e43c3aac11706982a6be268
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ff7088ec4062973d0b9d1ff6d20d7992e4135c3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595413"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367948"
 ---
 # <a name="add-controls"></a>新增控制項
 
@@ -41,13 +41,13 @@ ms.locfileid: "57595413"
 
 在遊戲範例中初始化 **MoveLookController** 類別時，它會登錄四個指標專用的事件以及一個滑鼠專用的事件：
 
-事件 | 描述
+Event - 事件 | 描述
 :------ | :-------
-[**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) | 按下 (或按住) 滑鼠左鍵或右鍵，或觸碰觸控式螢幕。
-[**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) |移動滑鼠，或在觸控式螢幕上進行拖曳動作。
-[**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) |放開滑鼠左鍵，或是讓與觸控式螢幕接觸的物件離開觸控式螢幕。
-[**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275) |指標移出主視窗。
-[**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) | 滑鼠移動了特定距離。 請注意，我們只對滑鼠移動差異值有興趣，而不關心目前的 X-Y 位置。
+[**CoreWindow::PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | 按下 (或按住) 滑鼠左鍵或右鍵，或觸碰觸控式螢幕。
+[**CoreWindow::PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |移動滑鼠，或在觸控式螢幕上進行拖曳動作。
+[**CoreWindow::PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) |放開滑鼠左鍵，或是讓與觸控式螢幕接觸的物件離開觸控式螢幕。
+[**CoreWindow::PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerexited) |指標移出主視窗。
+[**Windows::Devices::Input::MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) | 滑鼠移動了特定距離。 請注意，我們只對滑鼠移動差異值有興趣，而不關心目前的 X-Y 位置。
 
 
 只要 **MoveLookController** 在應用程式視窗中初始化，這些事件處理常式會設定為開始收聽使用者的輸入。
@@ -82,7 +82,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 若要判定何時遊戲應該收聽特定輸入，**MoveLookController** 類別提供三種控制器專用的狀態，無論控制項類型為何：
 
-狀態 | 描述
+State | 描述
 :----- | :-------
 **無** | 這是控制器的初始化狀態。 遊戲還沒有預期任何控制器輸入，所以會忽略所有輸入。
 **WaitForInput** | 控制器正在等候玩家確認來自遊戲的訊息，可使用滑鼠左鍵、觸控事件或遊戲台上的選單鍵。
@@ -105,7 +105,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 
 所有指標輸入在 \[**使用中**\] 狀態中都會被追蹤，不同的指標 ID 會對應到個別的指標動作。
-收到 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) 事件時，**MoveLookController** 會取得視窗建立的指標 ID 值。 指標 ID 代表特定的輸入類型。 例如，多點觸控裝置可以同時有多個不同的作用中輸入。 ID 可追蹤玩家目前使用哪一種輸入。 如果單一事件發生在觸控式螢幕的移動矩形中，就會指派一個指標 ID 來追蹤移動矩形中的任何指標事件。 而其他射擊矩形中的指標事件則會使用不同的指標 ID 另外追蹤。
+收到 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) 事件時，**MoveLookController** 會取得視窗建立的指標 ID 值。 指標 ID 代表特定的輸入類型。 例如，多點觸控裝置可以同時有多個不同的作用中輸入。 ID 可追蹤玩家目前使用哪一種輸入。 如果單一事件發生在觸控式螢幕的移動矩形中，就會指派一個指標 ID 來追蹤移動矩形中的任何指標事件。 而其他射擊矩形中的指標事件則會使用不同的指標 ID 另外追蹤。
 
 
 > [!NOTE]
@@ -160,7 +160,7 @@ bool MoveLookController::IsFiring()
 
 如果偵測到滑鼠的動作，我們要使用這個動作來決定相機的新上下移動和左右偏移。 我們執行的方式是透過實作相對滑鼠控制項，處理滑鼠已經移動的相對距離 (即移動開始與停止之間的差異值)，而不是記錄移動的絕對 x-y 像素座標。
 
-若要這樣做，我們檢查 [**MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) 事件傳回的 [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://msdn.microsoft.com/library/windows/apps/hh758358) 引數物件上的 [**MouseDelta::X**](https://msdn.microsoft.com/library/windows/apps/hh758353) 和 **MouseDelta::Y** 欄位，獲取 X (水平移動) 與 Y (垂直移動) 座標。
+若要這樣做，我們檢查 [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) 事件傳回的 [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta) 引數物件上的 [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) 和 **MouseDelta::Y** 欄位，獲取 X (水平移動) 與 Y (垂直移動) 座標。
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -220,8 +220,8 @@ void MoveLookController::OnMouseMoved(
 
 **MoveLookController** 會檢查指標 ID，判斷事件發生的位置，並且採取下列其中一個動作：
 
--   如果 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 事件是在移動或射擊矩形中發生，請更新控制器的指標位置。
--   如果 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 事件是在螢幕的其他位置發生 (定義為視角控制項)，就會計算視角方向向量的上下和左右偏移變化。
+-   如果 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 事件是在移動或射擊矩形中發生，請更新控制器的指標位置。
+-   如果 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 事件是在螢幕的其他位置發生 (定義為視角控制項)，就會計算視角方向向量的上下和左右偏移變化。
 
 
 一旦我們實作我們的觸控控制項，我們之前使用 Direct2D 繪製的矩形也會向玩家指出移動、射擊和查看區域的位置。
@@ -401,7 +401,7 @@ window->PointerReleased +=
 
 以下 **MoveLookController** 指派指標 ID 給觸發事件到對應至視角區域的特定變數的指標。 在 [查詢] 區域中發生觸控**m\_lookPointerID**變數會設為引發事件的指標識別碼。 布林值變數， **m\_lookInUse**，也指出控制項是否未設定但已經發行。
 
-現在，我們再來看看遊戲範例如何處理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 觸控螢幕事件。
+現在，我們再來看看遊戲範例如何處理 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 觸控螢幕事件。
 
 
 在 **MoveLookController::OnPointerMoved** 方法中，我們查看何種指標 ID 已指派給事件。 如果這是 **m_lookPointerID**，我們會計算指標位置的變動。
@@ -435,9 +435,9 @@ window->PointerReleased +=
 
 
 
-我們最後看的是遊戲範例如何處理 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 觸控螢幕事件。
+我們最後看的是遊戲範例如何處理 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) 觸控螢幕事件。
 之後，使用者已完成觸控手勢，並將他們手指從螢幕移開，[**MoveLookController::OnPointerReleased**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L441-L500) 便會起始。
-如果引發  [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 事件的指標 ID 是先前記錄移動指標的 ID，**MoveLookController** 會將速度設為 `0`，因為玩家已經停止觸碰視角區域。
+如果引發  [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) 事件的指標 ID 是先前記錄移動指標的 ID，**MoveLookController** 會將速度設為 `0`，因為玩家已經停止觸碰視角區域。
 
 ```cpp
     else if (pointerID == m_lookPointerID)
@@ -459,7 +459,7 @@ window->PointerReleased +=
 使用者輸入 | 動作
 :------- | :--------
 W | 將玩家向前移動
-A | 將玩家向左移動
+A  | 將玩家向左移動
 S | 將玩家向後移動
 D | 將玩家向右移動
 X | 將檢視向上移動
@@ -469,7 +469,7 @@ P | 暫停遊戲
 滑鼠左鍵 | 射擊球體
 
 
-若使用鍵盤，遊戲範例會在 [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88) 方法中登錄兩個新的事件，分別為 [**CoreWindow::KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271) 和 [**CoreWindow::KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270)。 這些事件會處理按鍵的按下和釋放。
+若使用鍵盤，遊戲範例會在 [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88) 方法中登錄兩個新的事件，分別為 [**CoreWindow::KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup) 和 [**CoreWindow::KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown)。 這些事件會處理按鍵的按下和釋放。
 
 ```cpp
 window->KeyDown +=

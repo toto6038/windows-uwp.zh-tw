@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, Direct3D, 深度緩衝區
 ms.localizationpriority: medium
-ms.openlocfilehash: f5ce1ec522a194111e175e41f82c4275cda4fbf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dfd45f620addcf7a3f6292ed2257bdfccc862cd3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613693"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368896"
 ---
 # <a name="create-depth-buffer-device-resources"></a>建立深度緩衝區裝置資源
 
@@ -38,7 +38,7 @@ ms.locfileid: "57613693"
 ## <a name="check-feature-support"></a>檢查功能支援
 
 
-建立深度地圖之前, 呼叫[ **CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497)方法在 Direct3D 裝置上，要求**D3D11\_功能\_D3D9\_陰影\_支援**，並提供[ **D3D11\_功能\_資料\_D3D9\_陰影\_支援**](https://msdn.microsoft.com/library/windows/desktop/jj247569)結構。
+建立深度地圖之前, 呼叫[ **CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport)方法在 Direct3D 裝置上，要求**D3D11\_功能\_D3D9\_陰影\_支援**，並提供[ **D3D11\_功能\_資料\_D3D9\_陰影\_支援**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_d3d9_shadow_support)結構。
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -82,7 +82,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-接著建立資源檢視。 在深度樣板檢視上將 MIP 圖塊設成零，在著色器資源檢視上將 MIP 層級設為 1。 兩者都有的 TEXTURE2D，紋理維度，而且兩者都必須使用相符[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。
+接著建立資源檢視。 在深度樣板檢視上將 MIP 圖塊設成零，在著色器資源檢視上將 MIP 層級設為 1。 兩者都有的 TEXTURE2D，紋理維度，而且兩者都必須使用相符[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)。
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;

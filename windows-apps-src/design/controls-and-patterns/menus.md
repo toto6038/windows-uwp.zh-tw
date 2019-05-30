@@ -3,8 +3,9 @@ Description: 功能表和操作功能表會在使用者要求命令或選項時�
 title: 功能表和操作功能表
 label: Menus and context menus
 template: detail.hbs
-ms.date: 01/08/2019
+ms.date: 04/19/2019
 ms.topic: article
+ms.custom: RS5, 19H1
 keywords: Windows 10, UWP
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
 pm-contact: yulikl
@@ -12,13 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.custom: RS5
-ms.openlocfilehash: d3ea8e2bff2455340a1183dbe5c1840fdb599d46
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.openlocfilehash: 10e91e8098f232d2875c802567674c9feacb2af9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59247186"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364623"
 ---
 # <a name="menus-and-context-menus"></a>功能表和操作功能表
 
@@ -26,13 +26,13 @@ ms.locfileid: "59247186"
 
 ![一般操作功能表的範例](images/contextmenu_rs2_icons.png)
 
-| **取得 Windows UI 程式庫** |
+| **取得 Windows 的 UI 程式庫** |
 | - |
 | 此控制項是包含 Windows UI 程式庫，包含新的控制項和 UWP 應用程式的 UI 功能的 NuGet 套件的過程。 如需詳細資訊，包括安裝指示，請參閱 < [Windows 的 UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 | **平台 Api** | **Windows UI 程式庫 Api** |
 | - | - |
-| [MenuFlyout 類別](/uwp/api/windows.ui.xaml.controls.menuflyout)， [MenuBar 類別](/uwp/api/windows.ui.xaml.controls.menubar)， [ContextFlyout 屬性](/uwp/api/windows.ui.xaml.uielement.contextflyout)， [FlyoutBase.AttachedFlyout 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [功能表列類別](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout 類別](/uwp/api/windows.ui.xaml.controls.menuflyout)， [MenuBar 類別](/uwp/api/windows.ui.xaml.controls.menubar)， [ContextFlyout 屬性](/uwp/api/windows.ui.xaml.uielement.contextflyout)， [FlyoutBase.AttachedFlyout 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [功能表列類別](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -70,7 +70,7 @@ ms.locfileid: "59247186"
 
 ## <a name="menus-vs-context-menus"></a>功能表與操作功能表
 
-功能表和內容功能表會在它們的外觀，而且它們可以包含類似。 事實上，您可以使用相同的控制項[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)，來建立它們。 差別在於您要如何讓使用者存取它。
+功能表和內容功能表會在它們的外觀，而且它們可以包含類似。 事實上，您可以使用相同的控制項[MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)，來建立它們。 差別在於您要如何讓使用者存取它。
 
 您何時應該使用功能表或操作功能表？
 
@@ -90,13 +90,13 @@ ms.locfileid: "59247186"
 - 具有一律顯示的單一進入點 (例如，位於畫面頂端的 [檔案] 功能表)。
 - 通常會附加到按鈕或父功能表項目。
 - 是透過按一下滑鼠左鍵 (或對等的動作，例如使用手指點選) 來叫用。
-- 相關聯的項目，透過其[飛出視窗](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx)或[FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)屬性，或在功能表列頂端的 [應用程式] 視窗中分組。
+- 相關聯的項目，透過其[飛出視窗](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout)或[FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout)屬性，或在功能表列頂端的 [應用程式] 視窗中分組。
 
 ### <a name="context-menus"></a>操作功能表
 
 - 已連結至單一元素，並會顯示次要命令。
 - 是透過按一下滑鼠右鍵 (或對等的動作，例如使用您的手指長按) 來叫用。
-- 透過其 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 屬性來與元素產生關聯。
+- 透過其 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 屬性來與元素產生關聯。
 
 ## <a name="icons"></a>圖示
 
@@ -140,7 +140,7 @@ ms.locfileid: "59247186"
 - [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)— 互斥功能表項目之間切換。
 - [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) - 在視覺上分隔功能表項目。
 
-這個範例會建立[MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)並用[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)屬性，可用於大部分的控制項，以顯示操作功能表為 MenuFlyout 屬性。
+這個範例會建立[MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)並用[ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)屬性，可用於大部分的控制項，以顯示操作功能表為 MenuFlyout 屬性。
 
 ````xaml
 <Rectangle
@@ -171,7 +171,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-下一個範例幾乎完全相同，但不會使用 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 屬性來將 [MenuFlyout 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)顯示為操作功能表，這個範例改用 [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 屬性來將它顯示為功能表。
+下一個範例幾乎完全相同，但不會使用 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 屬性來將 [MenuFlyout 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)顯示為操作功能表，這個範例改用 [FlyoutBase.ShowAttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 屬性來將它顯示為功能表。
 
 ````xaml
 <Rectangle
@@ -210,7 +210,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ### <a name="light-dismiss"></a>正常關閉
 
-正常關閉功能表、 操作功能表和其他延伸顯示等控制項，設陷在暫時性 UI 之前關閉鍵盤及遊戲台焦點。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的可見度變暗。 您可以使用新的 [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) 屬性來修改此行為。 根據預設，暫時性的 Ui 會在 Xbox 上繪製淺解除覆疊 (**自動**)，但不是其他裝置系列。 您可以強制覆疊可讓您隨時**上**或 alwayson**關閉**。
+正常關閉功能表、 操作功能表和其他延伸顯示等控制項，設陷在暫時性 UI 之前關閉鍵盤及遊戲台焦點。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的可見度變暗。 您可以使用新的 [LightDismissOverlayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) 屬性來修改此行為。 根據預設，暫時性的 Ui 會在 Xbox 上繪製淺解除覆疊 (**自動**)，但不是其他裝置系列。 您可以強制覆疊可讓您隨時**上**或 alwayson**關閉**。
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />
@@ -269,7 +269,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
 - [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
-- [XAML 操作功能表範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
+- [XAML 內容功能表範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
 
 ## <a name="related-articles"></a>相關文章
 

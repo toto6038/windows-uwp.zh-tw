@@ -6,28 +6,28 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7748ff7d5acf8a94c92e2b51953299131910d63e
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: 71544129480cb55432c222a0481c2a49934cb658
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320571"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372338"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 簽署應用程式套件
 
 **SignTool** 是使用憑證以數位方式簽署應用程式套件或套件組合的命令列工具。 憑證可以由使用者建立 (適用於測試目的) 或由公司發行 (適用於發佈)。 簽署應用程式套件，為使用者提供驗證：在簽署之後應用程式的資料尚未修改，同時也確認簽署使用者或公司的身分識別。 **SignTool** 可以簽署加密或未加密的應用程式套件和套件組合。
 
 > [!IMPORTANT] 
-> 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈建立並簽署應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
+> 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈建立並簽署應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-如需有關程式碼簽署以及憑證的一般資訊，請參閱[程式碼簽署簡介](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing)。
+如需有關程式碼簽署以及憑證的一般資訊，請參閱[程式碼簽署簡介](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools)。
 
 ## <a name="prerequisites"></a>先決條件
 - **已封裝應用程式**  
-    若要深入了解手動建立應用程式套件，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 
+    若要深入了解手動建立應用程式套件，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 
 
 - **有效的簽署憑證**  
-    如需有關建立或匯入有效簽署的憑證的詳細資訊，請參閱[建立或匯入要用於套件簽署的憑證](https://msdn.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)。
+    如需有關建立或匯入有效簽署的憑證的詳細資訊，請參閱[建立或匯入要用於套件簽署的憑證](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)。
 
 - **SignTool.exe**  
     根據 SDK 的安裝路徑，這就是 **SignTool** 在您的 Windows 10 電腦上的位置：
@@ -36,12 +36,12 @@ ms.locfileid: "58320571"
 
 ## <a name="using-signtool"></a>使用 SignTool
 
-**SignTool** 可以用來簽署檔案、驗證簽章或時間戳記、移除簽章，以及更多。 為了簽署應用程式套件，我們會著重於 **sign** 命令。 如需有關 **SignTool** 的完整資訊，請參閱 [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx) 參考頁面。 
+**SignTool** 可以用來簽署檔案、驗證簽章或時間戳記、移除簽章，以及更多。 為了簽署應用程式套件，我們會著重於 **sign** 命令。 如需有關 **SignTool** 的完整資訊，請參閱 [SignTool](https://docs.microsoft.com/windows/desktop/SecCrypto/signtool) 參考頁面。 
 
 ### <a name="determine-the-hash-algorithm"></a>判斷雜湊演算法
 使用 **SignTool** 簽署應用程式套件或套件組合，用於 **SignTool** 的雜湊演算法必須是用來封裝應用程式的相同演算法。 例如，如果您使用 **MakeAppx.exe** 以預設設定來建立您的應用程式套件，使用 **SignTool** 時必須指定 SHA256，因為這是 **MakeAppx.exe** 所使用的預設演算法。
 
-若要了解封裝應用程式時使用哪種雜湊演算法，請解壓縮應用程式套件並檢查 AppxBlockMap.xml 檔案。 若要了解如何解開/解壓縮應用程式套件，請參閱[從套件或套件組合解壓縮檔案](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool#extract-files-from-a-package-or-bundle)。 雜湊方法在 BlockMap 元素中，而且採用此格式：
+若要了解封裝應用程式時使用哪種雜湊演算法，請解壓縮應用程式套件並檢查 AppxBlockMap.xml 檔案。 若要了解如何解開/解壓縮應用程式套件，請參閱[從套件或套件組合解壓縮檔案](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 雜湊方法在 BlockMap 元素中，而且採用此格式：
 
 ```xml
 <BlockMap xmlns="http://schemas.microsoft.com/appx/2010/blockmap" 
@@ -106,7 +106,7 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 
 請注意，某些憑證不使用密碼。 如果您的憑證不使用密碼，請省略命令範例中的 "/p &lt;Your Password&gt;"。
 
-一旦使用有效的憑證來簽署您的應用程式套件，您可以將套件上傳至Microsoft Store。 如需上傳與提交應用程式至Microsoft Store的更多指引，請參閱[提交應用程式](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
+一旦使用有效的憑證來簽署您的應用程式套件，您可以將套件上傳至Microsoft Store。 如需上傳與提交應用程式至Microsoft Store的更多指引，請參閱[提交應用程式](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 
 ## <a name="common-errors-and-troubleshooting"></a>常見的錯誤以及疑難排解
 使用 **SignTool** 最常見的錯誤類型是內部錯誤，通常看起來像這樣：
@@ -137,4 +137,4 @@ SignTool sign /debug [options]
 |--------------|--------------------------|----------------|
 | 150          | 錯誤發生於 hresult:0x8007000b:應用程式資訊清單的發行者名稱 (CN = Contoso) 必須符合簽章憑證的主體名稱 (CN = Contoso，C = US)。 | 應用程式資訊清單發行者名稱必須完全符合簽署的主體名稱。               |
 | 151          | 錯誤發生於 hresult:0x8007000b:簽章雜湊方法指定 (SHA512) 必須符合應用程式封裝區塊對應 (SHA256) 所使用的雜湊方法。     | 在 /fd 參數中指定的 hashAlgorithm 不正確。 使用符合應用程式套件區塊對應的 hashAlgorithm (用來建立應用程式套件)，重新執行 **SignTool**  |
-| 152          | 錯誤發生於 hresult:0x8007000b:應用程式套件的內容必須驗證其區塊的對應。                                                           | 應用程式套件損壞，需要重建產生新區塊對應。 如需有關手動建立應用程式套件的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 |
+| 152          | 錯誤發生於 hresult:0x8007000b:應用程式套件的內容必須驗證其區塊的對應。                                                           | 應用程式套件損壞，需要重建產生新區塊對應。 如需有關手動建立應用程式套件的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 |

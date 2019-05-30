@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a162d992390e8fc7d05d52303ec292fcf8e920a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a409c4b940ad0e194428981f536823d880e56302
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634423"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364484"
 ---
 # <a name="progress-controls"></a>進度控制項
 
@@ -25,15 +25,15 @@ ms.locfileid: "57634423"
 
 進度控制項為使用者提供回饋，告知正在進行長時間執行的操作。 根據所使用的指示器，它可以表示在進度指示器可見的時候，使用者無法與 App 互動，也可以指示可能需要等待多久的時間。
 
-> **重要的 Api**:[ProgressBar 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)， [IsIndeterminate 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)， [ProgressRing 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)， [IsActive 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+> **重要的 Api**:[ProgressBar 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)， [IsIndeterminate 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)， [ProgressRing 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)， [IsActive 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 ## <a name="types-of-progress"></a>進度的類型
 
 有兩種控制項會向使用者顯示操作正在進行中：ProgressBar 或 ProgressRing。
 
--   ProgressBar 的「確定」 (determinate) 狀態會顯示工作已完成的百分比。 此控制項應用於已知持續時間的作業，但其進度不應封鎖使用者與 App 的互動。
--   ProgressBar 的「不確定」 (indeterminate) 狀態會顯示操作正在進行中，它不會封鎖使用者與 App 的互動，且無法得知完成的時間。
--   ProgressRing 只有「不確定」 (indeterminate) 狀態，且應用於直到作業完成前，任何進一步使用者互動都會被封鎖的情況。
+-   ProgressBar 的「確定」  (determinate) 狀態會顯示工作已完成的百分比。 此控制項應用於已知持續時間的作業，但其進度不應封鎖使用者與 App 的互動。
+-   ProgressBar 的「不確定」  (indeterminate) 狀態會顯示操作正在進行中，它不會封鎖使用者與 App 的互動，且無法得知完成的時間。
+-   ProgressRing 只有「不確定」  (indeterminate) 狀態，且應用於直到作業完成前，任何進一步使用者互動都會被封鎖的情況。
 
 此外，進度控制項是唯讀的，無法互動。 表示使用者無法叫用或直接使用這些控制項。
 
@@ -65,7 +65,7 @@ ms.locfileid: "57634423"
 
 發生中的事要使用何種控制項或狀態來顯示不一定總是明確。 有時候工作本身已足夠明顯，因此完全不需要進度控制項 – 而有時候即使用了進度控制項，卻仍需要文字來向使用者說明進行中的作業。
 
-### <a name="progressbar"></a>ProgressBar
+### <a name="progressbar"></a>進度列
 -   **控制項是否有已定義的持續時間或可預測的結束？**
 
     如果有，則使用「確定」的 ProgressBar，並據此更新其百分比或值。
@@ -123,7 +123,7 @@ ms.locfileid: "57634423"
 
 第一個範例是「確定」的 ProgressBar。 當作業的持續時間是已知時 (如正在安裝、下載、設定等時候)，ProgressBar 是最佳的選項。
 
-**ProgressBar-不定**
+**ProgressBar - Indeterminate**
 
 ![「不確定」的 ProgressBar 範例](images/PB_IndeterminateExample.png)
 
@@ -187,9 +187,9 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## <a name="related-articles"></a>相關文章
 
-- [ProgressBar 類別](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [ProgressRing 類別](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [ProgressBar 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [ProgressRing 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
 
 **適用於開發人員 (XAML)**
-- [新增進度控制項](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
+- [新增進度控制項](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
 - [如何建立自訂不確定的進度列適用於 Windows Phone](https://go.microsoft.com/fwlink/p/?LinkID=392426)

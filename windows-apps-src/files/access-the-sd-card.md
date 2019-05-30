@@ -6,12 +6,12 @@ ms.date: 03/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sd 記憶卡, 儲存空間
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
-ms.translationtype: HT
+ms.openlocfilehash: 4573e0959cf9d4af9b3cef8ffbbce14847a9e521
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63800226"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369488"
 ---
 # <a name="access-the-sd-card"></a>存取 SD 記憶卡
 
@@ -23,7 +23,7 @@ ms.locfileid: "63800226"
 
 您可以藉由使用下列方法，在選用的 SD 記憶卡上儲存和存取檔案：
 - 檔案選擇器。
-- [  **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
+- [  **Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) API。
 
 ## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>SD 記憶卡上可存取和不可存取的項目
 
@@ -36,7 +36,7 @@ ms.locfileid: "63800226"
 
 - 您的應用程式看不到也不能存取系統資料夾以及其中包含的檔案。
 - 您的應用程式看不到已標記隱藏屬性的檔案。 隱藏屬性一般用來降低意外刪除資料的風險。
-- 您的應用程式無法使用 [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) 來查看或存取 [文件] 媒體櫃。 不過，您可以藉由周遊檔案系統來存取 SD 記憶卡上的 [文件] 媒體櫃。
+- 您的應用程式無法使用 [**KnownFolders.DocumentsLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary) 來查看或存取 [文件] 媒體櫃。 不過，您可以藉由周遊檔案系統來存取 SD 記憶卡上的 [文件] 媒體櫃。
 
 ## <a name="security-and-privacy-considerations"></a>安全性和隱私權考量
 
@@ -45,7 +45,7 @@ ms.locfileid: "63800226"
 - 裝置中有 SD 記憶卡時，已登錄可處理相同檔案類型的其他 app 可以存取您的檔案。
 - 從裝置移除 SD 記憶卡並從電腦開啟時，可以在檔案總管中看到您的檔案，其他應用程式也可以存取它們。
 
-不過，當安裝在 SD 記憶卡上的應用程式將檔案儲存在其 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 中時，這些檔案會受到加密，而無法供其他應用程式存取。
+不過，當安裝在 SD 記憶卡上的應用程式將檔案儲存在其 [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) 中時，這些檔案會受到加密，而無法供其他應用程式存取。
 
 ## <a name="requirements-for-accessing-files-on-the-sd-card"></a>存取 SD 記憶卡上檔案的需求
 
@@ -62,9 +62,9 @@ ms.locfileid: "63800226"
 
 ### <a name="getting-a-reference-to-the-sd-card"></a>取得 SD 記憶卡的參照
 
-[  **KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 資料夾是目前與裝置連接之一組卸除式裝置的邏輯根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果有 SD 記憶卡，**KnownFolders.RemovableDevices** 資料夾下的第一個 (也是唯一一個) **StorageFolder** 代表 SD 記憶卡。
+[  **KnownFolders.RemovableDevices**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) 資料夾是目前與裝置連接之一組卸除式裝置的邏輯根 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder)。 如果有 SD 記憶卡，**KnownFolders.RemovableDevices** 資料夾下的第一個 (也是唯一一個) **StorageFolder** 代表 SD 記憶卡。
 
-使用與下面類似的程式碼，判斷是否有 SD 記憶卡，並取得它的參照當做 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。
+使用與下面類似的程式碼，判斷是否有 SD 記憶卡，並取得它的參照當做 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder)。
 
 ```csharp
 using Windows.Storage;
@@ -90,16 +90,16 @@ else
 
 ### <a name="querying-the-contents-of-the-sd-card"></a>查詢 SD 記憶卡的內容
 
-SD 記憶卡可能包含許多無法被辨識為已知資料夾，也無法使用來自 [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 之位置進行查詢的資料夾和檔案。 若要尋找檔案，您的 App 必須以遞迴方式周遊檔案系統，以列舉記憶卡的內容。 使用 [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) 與 [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) 可有效率地取得 SD 記憶卡的內容。
+SD 記憶卡可能包含許多無法被辨識為已知資料夾，也無法使用來自 [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) 之位置進行查詢的資料夾和檔案。 若要尋找檔案，您的 App 必須以遞迴方式周遊檔案系統，以列舉記憶卡的內容。 使用 [**GetFilesAsync (CommonFileQuery.DefaultQuery)** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 與 [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync) 可有效率地取得 SD 記憶卡的內容。
 
 建議您使用背景執行緒來周遊 SD 記憶卡。 SD 記憶卡可以包含許多 GB 的檔案。
 
 您的 app 也可以要求使用者使用資料夾選擇器來選擇特定資料夾。
 
-當您使用衍生自 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 的路徑來存取 SD 記憶卡上的檔案系統時，下列方法會以下列方式運作。
+當您使用衍生自 [**KnownFolders.RemovableDevices**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) 的路徑來存取 SD 記憶卡上的檔案系統時，下列方法會以下列方式運作。
 
--   [  **GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法會傳回一個聯集，這個聯集是由您登錄為可處理的副檔名以及與您已指定之任何媒體櫃功能關聯的副檔名所組成。
--   如果您尚未將您嘗試存取之檔案的副檔名登錄為可處理，[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) 方法將會失敗。
+-   [  **GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 方法會傳回一個聯集，這個聯集是由您登錄為可處理的副檔名以及與您已指定之任何媒體櫃功能關聯的副檔名所組成。
+-   如果您尚未將您嘗試存取之檔案的副檔名登錄為可處理，[**GetFileFromPathAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) 方法將會失敗。
 
 ## <a name="identifying-the-individual-sd-card"></a>識別個別的 SD 記憶卡
 

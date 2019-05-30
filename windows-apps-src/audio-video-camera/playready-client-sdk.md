@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 40df746d89757b481a47cefeaeda3f8a34091014
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e82a0ffc0ddcf2ac1973ba446ec50dfc61a7cd1a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636843"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361564"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -34,7 +34,7 @@ PlayReady DRM 讓開發人員可以建立 UWP app，能夠為使用者提供 Pla
 
     硬體式內容保護支援能夠在多個裝置的平台上安全播放高畫質 (HD) 和超高畫質 (UHD) 的內容。 金鑰內容 (包括私密金鑰、內容金鑰，以及其他用來衍生或解除鎖定上述金鑰的金鑰內容)，以及已解密的壓縮和未壓縮的視訊範例會利用硬體安全性來進行保護。 使用硬體 DRM 時，由於 HWDRM 管線一定知道要使用的輸出，因此未知的啟用器 (播放到未知裝置 / 使用 downres 播放到未知裝置) 是不具意義的。 如需詳細資訊，請參閱[硬體 DRM](hardware-drm.md)。
 
--   PlayReady 不再是 appX 架構元件，而是內建的作業系統元件。 命名空間已從 **Microsoft.Media.PlayReadyClient** 變更為 [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454)。
+-   PlayReady 不再是 appX 架構元件，而是內建的作業系統元件。 命名空間已從 **Microsoft.Media.PlayReadyClient** 變更為 [**Windows.Media.Protection.PlayReady**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady)。
 -   下列定義 PlayReady 錯誤代碼的標頭現在是 Windows 軟體開發套件 (SDK) 的一部分：Windows.Media.Protection.PlayReadyErrors.h 和 Windows.Media.Protection.PlayReadyResults.h。
 -   提供主動取得非永久性授權。
 
@@ -69,13 +69,13 @@ PlayReady DRM 讓開發人員可以建立 UWP app，能夠為使用者提供 Pla
 
 已將下列的新介面、類別及列舉新增到 PlayReady DRM：
 
--   [**IPlayReadyLicenseAcquisitionServiceRequest** ](https://msdn.microsoft.com/library/windows/apps/dn986077)介面
--   [**IPlayReadyLicenseSession** ](https://msdn.microsoft.com/library/windows/apps/dn986080)介面
--   [**IPlayReadySecureStopServiceRequest** ](https://msdn.microsoft.com/library/windows/apps/dn986090)介面
--   [**PlayReadyLicenseSession** ](https://msdn.microsoft.com/library/windows/apps/dn986309)類別
--   [**PlayReadySecureStopIterable** ](https://msdn.microsoft.com/library/windows/apps/dn986371)類別
--   [**PlayReadySecureStopIterator** ](https://msdn.microsoft.com/library/windows/apps/dn986375)類別
--   [**PlayReadyHardwareDRMFeatures** ](https://msdn.microsoft.com/library/windows/apps/dn986265)列舉值
+-   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest) interface
+-   [**IPlayReadyLicenseSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession) interface
+-   [**IPlayReadySecureStopServiceRequest**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest) interface
+-   [**PlayReadyLicenseSession** ](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseSession)類別
+-   [**PlayReadySecureStopIterable**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable) class
+-   [**PlayReadySecureStopIterator**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator) class
+-   [**PlayReadyHardwareDRMFeatures**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) enumerator
 
 已建立新的範例來示範如何使用 PlayReady DRM 的新功能。 您可以從 [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670) 下載範例。
 
@@ -118,7 +118,7 @@ PlayReady DRM 僅允許在 PlayReady 相容性規則中指定的輸出連接器�
 
 下表概述 PlayReady 授權中各個 OPL 間的對應，以及適用於 Windows 10 的 PlayReady DRM 如何強制執行這些對應。
 
-#### <a name="video"></a>影片
+#### <a name="video"></a>視訊
 
 <table>
     <tr>
@@ -287,7 +287,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，立即透過 Mira
 
 <table>
     <tr>
-        <th>案例</th>
+        <th>狀況</th>
         <th>GUID</th>
         <th>如果...</th>
         <th>則...</th>
@@ -319,7 +319,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，立即透過 Mira
 
 <table>
     <tr>
-        <th>案例</th>
+        <th>狀況</th>
         <th>GUID</th>
         <th>如果...</th>
         <th colspan="2">則...</th>
@@ -371,7 +371,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，立即透過 Mira
 
 <table>
     <tr>
-        <th>案例</th>
+        <th>狀況</th>
         <th>GUID</th>
         <th>如果...</th>
         <th colspan="2">則...</th>
@@ -407,7 +407,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，立即透過 Mira
 
 此章節包含如何將您現有的 PlayReady Windows 8.x 市集應用程式移轉至 Windows 10 上的資訊。
 
-在 Windows 10 上的 PlayReady UWP 應用程式的命名空間已從變更**Microsoft.Media.PlayReadyClient**要[ **Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454)。 這表示您必須在程式碼中搜尋舊的命名空間，並取代為新的命名空間。 您仍將參考 winmd 檔案。 它是 windows.media.winmd Windows 10 作業系統的一部分。 它屬於 Windows SDK 中的 windows.winmd。 對於 UWP，會在 windows.foundation.univeralappcontract.winmd 中參照它。
+在 Windows 10 上的 PlayReady UWP 應用程式的命名空間已從變更**Microsoft.Media.PlayReadyClient**要[ **Windows.Media.Protection.PlayReady**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady)。 這表示您必須在程式碼中搜尋舊的命名空間，並取代為新的命名空間。 您仍將參考 winmd 檔案。 它是 windows.media.winmd Windows 10 作業系統的一部分。 它屬於 Windows SDK 中的 windows.winmd。 對於 UWP，會在 windows.foundation.univeralappcontract.winmd 中參照它。
 
 若要播放 PlayReady 保護的高畫質 (HD) 內容 (1080p) 及超高畫質 (UHD) 內容，您需要實作 PlayReady 硬體 DRM。 如需如何實作 PlayReady 硬體 DRM 的相關資訊，請參閱[硬體 DRM](hardware-drm.md)。
 
@@ -435,7 +435,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 
 在舊版的 PlayReady DRM 中，非永久性授權只能在播放期間被動取得。 在這個版本中，您可以在開始播放之前，主動取得非永久性授權。
 
-1.  主動建立播放工作階段，讓非永久性授權可儲存於其中。 例如：
+1.  主動建立播放工作階段，讓非永久性授權可儲存於其中。 例如: 
 
     ```cs
     var cpsystems = new Windows.Foundation.Collections.PropertySet();       
@@ -447,7 +447,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
     var pmpServer = new Windows.Media.Protection.MediaProtectionPMPServer( pmpSystemInfo );
     ```
 
-2.  將該播放工作階段繫結到授權取得類別。 例如：
+2.  將該播放工作階段繫結到授權取得類別。 例如: 
 
     ```cs
     var licenseSessionProperties = new Windows.Foundation.Collections.PropertySet();
@@ -455,14 +455,14 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
     var licenseSession = new Windows.Media.Protection.PlayReady.PlayReadyLicenseSession( licenseSessionProperties );
     ```
 
-3.  建立授權服務要求。 例如：
+3.  建立授權服務要求。 例如: 
 
     ```cs
     var laSR = licenseSession.CreateLAServiceRequest();
     ```
 
 4.  使用從步驟 3 所建立的服務要求來執行授權取得。 授權會儲存在播放工作階段中。
-5.  將該播放工作階段繫結到媒體來源，以進行播放。 例如：
+5.  將該播放工作階段繫結到媒體來源，以進行播放。 例如: 
 
     ```cs
     licenseSession.configureMediaProtectionManager( mediaProtectionManager );
@@ -536,7 +536,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 請使用最適合您公司和產品的方法。
 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 - [媒體播放](media-playback.md)
 
 

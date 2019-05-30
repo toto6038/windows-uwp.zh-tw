@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, directx, 載入資源
 ms.localizationpriority: medium
-ms.openlocfilehash: 478c61713dfcf5bc8a420aa71b0dced81ed6a169
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ae3d6bb4b7360119e1b6e3b793380c8270b70688
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633353"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368541"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 遊戲中載入資源
 
@@ -77,11 +77,11 @@ ms.locfileid: "57633353"
 
 非同步載入使用平行模式程式庫 (PPL) 中的 **task** 範本進行處理。 **task** 包含一個後面跟著 Lambda 的方法呼叫，可以在完成後處理非同步呼叫的結果，格式通常如下：
 
-`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`。
+`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`.
 
 使用 **.then()** 語法可以將多個工作鏈結在一起，因此，當一個作業完成後，便可執行相依於前一作業之結果的另一個非同步操作。 如此一來，您就能以玩家幾乎看不見的方式，載入、轉換及管理個別執行緒上的複雜資產。
 
-如需詳細資訊，請閱讀 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
+如需詳細資訊，請閱讀 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
 現在，我們來看看宣告和建立非同步檔案載入方法 **ReadDataAsync** 的基本結構。
 
@@ -112,7 +112,7 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 }
 ```
 
-在這個程式碼中，當您的程式碼呼叫上述定義的 **ReadDataAsync** 方法時，會建立一個從檔案系統讀取緩衝區的工作。 完成這個工作後，鏈結的工作會擷取緩衝區，並使用靜態的 [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) 類型將該緩衝區中的位元組串流處理到陣列。
+在這個程式碼中，當您的程式碼呼叫上述定義的 **ReadDataAsync** 方法時，會建立一個從檔案系統讀取緩衝區的工作。 完成這個工作後，鏈結的工作會擷取緩衝區，並使用靜態的 [**DataReader**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 類型將該緩衝區中的位元組串流處理到陣列。
 
 ```cpp
 m_basicReaderWriter = ref new BasicReaderWriter();
@@ -126,7 +126,7 @@ return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Arr
 
 下列是您對 **ReadDataAsync** 進行的呼叫。 呼叫完成後，您的程式碼會收到讀取自提供的檔案的位元組陣列。 由於 **ReadDataAsync** 本身定義為工作，因此當位元組陣列傳回時，您可以使用 Lambda 來執行特定的作業，像是將該位元組資料傳送到可使用該資料的 DirectX 函式。
 
-如果您的遊戲夠簡單，請在使用者開始遊戲時，使用類似這個的方法來載入您的資源。 您可以在 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 實作的呼叫順序中開始主要遊戲迴圈之前，先執行此動作。 再次提醒您以非同步方式呼叫資源載入方法，如此可讓遊戲更快速地開始，而玩家不需等到載入完成，就能提早開始與遊戲互動。
+如果您的遊戲夠簡單，請在使用者開始遊戲時，使用類似這個的方法來載入您的資源。 您可以在 [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) 實作的呼叫順序中開始主要遊戲迴圈之前，先執行此動作。 再次提醒您以非同步方式呼叫資源載入方法，如此可讓遊戲更快速地開始，而玩家不需等到載入完成，就能提早開始與遊戲互動。
 
 但是，不要在所有非同步載入完成之前就開始遊戲！ 建立一些方法在載入完成後通知使用者 (例如特定的欄位)，並在完成時使用載入方法中的 Lambda 來設定該通知。 啟動使用那些載入資源的任一元件之前，請先檢查變數。
 
@@ -239,7 +239,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**CreateMesh**會從檔案載入的位元組資料的解譯，並建立頂點緩衝區和索引緩衝區為該網格傳遞的端點和索引的清單，以分別[ **ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)並指定任一 D3D11\_繫結\_頂點\_緩衝區或 D3D11\_繫結\_索引\_緩衝區。 下列是 **BasicLoader** 中使用的程式碼：
+**CreateMesh**會從檔案載入的位元組資料的解譯，並建立頂點緩衝區和索引緩衝區為該網格傳遞的端點和索引的清單，以分別[ **ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)並指定任一 D3D11\_繫結\_頂點\_緩衝區或 D3D11\_繫結\_索引\_緩衝區。 下列是 **BasicLoader** 中使用的程式碼：
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -302,7 +302,7 @@ void BasicLoader::CreateMesh(
 
 您通常會為遊戲所使用的每個網格建立一個頂點/索引緩衝區組。 您可以自行決定載入網格的位置和時機。 如果您有許多網格，則可能只想在遊戲的某些特定時間點從磁碟中載入一些網格，例如在特定的預先定義載入狀態期間。 對於大型網格 (如地形資料)，您可以從快取中串流處理頂點，但那是更複雜的程序，不在本主題的範圍內。
 
-再次提醒您，請了解您的頂點資料格式！ 在用來建立模型的許多工具中，有非常多的方法可以呈現頂點資料。 也有許多不同的方法可以將頂點資料的輸入配置呈現為 Direct3D，像是三角形清單和寬帶。 如需頂點資料的詳細資訊，請閱讀 [Direct3D 11 中的緩衝區簡介](https://msdn.microsoft.com/library/windows/desktop/ff476898)與[基元](https://msdn.microsoft.com/library/windows/desktop/bb147291)。
+再次提醒您，請了解您的頂點資料格式！ 在用來建立模型的許多工具中，有非常多的方法可以呈現頂點資料。 也有許多不同的方法可以將頂點資料的輸入配置呈現為 Direct3D，像是三角形清單和寬帶。 如需頂點資料的詳細資訊，請閱讀 [Direct3D 11 中的緩衝區簡介](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro)與[基元](https://docs.microsoft.com/windows/desktop/direct3d9/primitives)。
 
 接下來，讓我們來看看載入紋理。
 
@@ -310,7 +310,7 @@ void BasicLoader::CreateMesh(
 
 遊戲中最常見的資產 (和組成磁碟和記憶體中大多數檔案的資產) 就是紋理。 紋理和網格一樣也有多種格式，您會在載入它們時將它們轉換成 Direct3D 可以使用的格式。 紋理也有多種類型，並可用來建立不同的效果。 紋理的 MIP 層級可用來改善距離物件的外觀與效能；污漬貼圖和光照貼圖可用來層疊效果，而細節可放在基本紋理上層；一般貼圖則用於每一像素光源計算。 在新型的遊戲中，一個典型的場景可能有數千種個別的紋理，您的程式碼必須有效地管理所有的紋理！
 
-也和網格一樣，有多種特定格式可用來節省記憶體使用量。 由於紋理很容易便會耗用大量的 GPU (和系統) 記憶體，因此通常會以某些方式壓縮。 您不需在遊戲的紋理中使用壓縮，只要您提供 Direct3D 著色器可以理解之格式 (像是 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 點陣圖) 的資料，就可以使用您想要的任何壓縮/解壓縮演算法。
+也和網格一樣，有多種特定格式可用來節省記憶體使用量。 由於紋理很容易便會耗用大量的 GPU (和系統) 記憶體，因此通常會以某些方式壓縮。 您不需在遊戲的紋理中使用壓縮，只要您提供 Direct3D 著色器可以理解之格式 (像是 [**Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 點陣圖) 的資料，就可以使用您想要的任何壓縮/解壓縮演算法。
 
 Direct3D 可為 DXT 紋理壓縮演算法提供支援，然而玩家的圖形硬體未必能夠支援每種 DXT 格式。 DDS 檔案包含 DXT 紋理 (還有其他紋理壓縮格式)，尾碼為 .dds。
 
@@ -320,14 +320,14 @@ DDS 檔案是包含下列資訊的二進位檔案：
 
 -   檔案中的資料描述。
 
-    資料描述標頭的描述使用[ **DDS\_標頭**](https://msdn.microsoft.com/library/windows/desktop/bb943982); 使用定義的像素格式[ **DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984). 請注意， **DDS\_標頭**並**DDS\_PIXELFORMAT**結構取代已被取代的 DDSURFACEDESC2、 DDSCAPS2 和 DDPIXELFORMAT DirectDraw 7 結構。 **DDS\_標頭**DDSURFACEDESC2 和 DDSCAPS2 二進位對等項目。 **DDS\_PIXELFORMAT** DDPIXELFORMAT 二進位對等用法。
+    資料描述標頭的描述使用[ **DDS\_標頭**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header); 使用定義的像素格式[ **DDS\_PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat). 請注意， **DDS\_標頭**並**DDS\_PIXELFORMAT**結構取代已被取代的 DDSURFACEDESC2、 DDSCAPS2 和 DDPIXELFORMAT DirectDraw 7 結構。 **DDS\_標頭**DDSURFACEDESC2 和 DDSCAPS2 二進位對等項目。 **DDS\_PIXELFORMAT** DDPIXELFORMAT 二進位對等用法。
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    如果值**dwFlags**中[ **DDS\_PIXELFORMAT** ](https://msdn.microsoft.com/library/windows/desktop/bb943984)設為 DDPF\_FOURCC 及**dwFourCC**設為「 DX10 」 的額外[ **DDS\_標頭\_DXT10** ](https://msdn.microsoft.com/library/windows/desktop/bb943983)結構將會出現以容納材質陣列或不能表示為 RGB 的 DXGI 格式像素格式例如浮點格式，sRGB 格式等。當**DDS\_標頭\_DXT10**結構存在，則整個資料描述會看起來像這樣。
+    如果值**dwFlags**中[ **DDS\_PIXELFORMAT** ](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat)設為 DDPF\_FOURCC 及**dwFourCC**設為「 DX10 」 的額外[ **DDS\_標頭\_DXT10** ](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10)結構將會出現以容納材質陣列或不能表示為 RGB 的 DXGI 格式像素格式例如浮點格式，sRGB 格式等。當**DDS\_標頭\_DXT10**結構存在，則整個資料描述會看起來像這樣。
 
     ```cpp
     DWORD               dwMagic;
@@ -340,13 +340,13 @@ DDS 檔案是包含下列資訊的二進位檔案：
     BYTE bdata[]
     ```
 
--   包含其餘的表面 (如 Mipmap 層級、立方體貼圖中的面及容積紋理中的深度) 的位元組陣列指標。 請點選下列連結，以了解下列的 DDS 檔案配置相關資訊：[紋理](https://msdn.microsoft.com/library/windows/desktop/bb205578)、[立方體貼圖](https://msdn.microsoft.com/library/windows/desktop/bb205577)或[容積紋理](https://msdn.microsoft.com/library/windows/desktop/bb205579)。
+-   包含其餘的表面 (如 Mipmap 層級、立方體貼圖中的面及容積紋理中的深度) 的位元組陣列指標。 請點選下列連結，以了解下列的 DDS 檔案配置相關資訊：[紋理](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-file-layout-for-textures)、[立方體貼圖](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-file-layout-for-cubic-environment-maps)或[容積紋理](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-file-layout-for-volume-textures)。
 
     ```cpp
     BYTE bdata2[]
     ```
 
-許多工具會匯出 DDS 格式。 如果您沒有可將紋理匯出為這個格式的工具，請考慮建立一個工具。 如需 DDS 格式和如何在您的程式碼中使用它的詳細資訊，請閱讀 [DDS 的程式設計指南](https://msdn.microsoft.com/library/windows/desktop/bb943991)。 在我們的範例中，我們將使用 DDS。
+許多工具會匯出 DDS 格式。 如果您沒有可將紋理匯出為這個格式的工具，請考慮建立一個工具。 如需 DDS 格式和如何在您的程式碼中使用它的詳細資訊，請閱讀 [DDS 的程式設計指南](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide)。 在我們的範例中，我們將使用 DDS。
 
 和其他資源類型一樣，您會從檔案中以位元組串流的形式讀取此資料。 在您的載入工作完成後，Lambda 呼叫會執行程式碼 (**CreateTexture** 方法)，以將位元組的串流處理為 Direct3D 可使用的格式。
 
@@ -371,7 +371,7 @@ task<void> BasicLoader::LoadTextureAsync(
 }
 ```
 
-在先前的程式碼片段中，Lambda 會查看檔案名稱是否包含副檔名 "dds"。 如果包含，假設其為 DDS 紋理。 如果不包含，則使用 Windows 影像處理元件 (WIC) API 來探索格式，並將資料解碼為點陣圖。 無論是何種方法，結果都會是 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 點陣圖 (或錯誤)。
+在先前的程式碼片段中，Lambda 會查看檔案名稱是否包含副檔名 "dds"。 如果包含，假設其為 DDS 紋理。 如果不包含，則使用 Windows 影像處理元件 (WIC) API 來探索格式，並將資料解碼為點陣圖。 無論是何種方法，結果都會是 [**Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 點陣圖 (或錯誤)。
 
 ```cpp
 void BasicLoader::CreateTexture(
@@ -511,7 +511,7 @@ void BasicLoader::CreateTexture(
 }
 ```
 
-當此程式碼完成後，您的記憶體中就會有從影像檔載入的 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)。 和網格一樣，您的遊戲和任一個場景中都會包含很多紋理。 請考慮為經常存取的每一場景或每一關卡紋理建立快取，而不要在遊戲或關卡開始時全部載入它們。
+當此程式碼完成後，您的記憶體中就會有從影像檔載入的 [**Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)。 和網格一樣，您的遊戲和任一個場景中都會包含很多紋理。 請考慮為經常存取的每一場景或每一關卡紋理建立快取，而不要在遊戲或關卡開始時全部載入它們。
 
 (上述範例中呼叫的 **CreateDDSTextureFromMemory** 方法將在 [DDSTextureLoader 的完整程式碼](complete-code-for-ddstextureloader.md)中完整探討。)
 
@@ -551,7 +551,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-在此範例中，您可以使用**BasicReaderWriter**執行個體 (**m\_basicReaderWriter**) 來提供已編譯的著色器物件 (.cso) 檔案，以位元組資料流中讀取。 在該工作完成後，Lambda 會以從檔案載入的位元組資料呼叫 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)。 您的回呼必須設定一些旗標以指示載入完成，而您的程式碼必須在執行著色器之前檢查此旗標。
+在此範例中，您可以使用**BasicReaderWriter**執行個體 (**m\_basicReaderWriter**) 來提供已編譯的著色器物件 (.cso) 檔案，以位元組資料流中讀取。 在該工作完成後，Lambda 會以從檔案載入的位元組資料呼叫 [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)。 您的回呼必須設定一些旗標以指示載入完成，而您的程式碼必須在執行著色器之前檢查此旗標。
 
 頂點著色器就比較複雜一些。 在頂點著色器中，您也必須載入定義頂點資料的個別輸入配置。 您可以使用下列程式碼，以非同步方式載入頂點著色器和自訂的頂點輸入配置。 請確定此輸入配置可以正確地呈現您從網格載入的頂點資訊！
 
@@ -601,7 +601,7 @@ void BasicLoader::CreateInputLayout(
 -   頂點的一般向量，也是以三個 32 位元浮點數值表示。
 -   轉換的 2D 紋理座標值 (u, v)，以一對 32 位元的浮點數值表示。
 
-這些每一頂點的輸入元素稱為 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)，它們是一組定義的登錄，用於傳送資料到您編譯的著色器物件，或從您編譯的著色器物件傳送資料。 您的管線會為您載入的每個網格頂點執行一次頂點著色器。 語意會在頂點著色器執行時定義它的輸入 (和輸出)，並為著色器的 HLSL 程式碼中的每一頂點運算提供此資料。
+這些每一頂點的輸入元素稱為 [HLSL 語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)，它們是一組定義的登錄，用於傳送資料到您編譯的著色器物件，或從您編譯的著色器物件傳送資料。 您的管線會為您載入的每個網格頂點執行一次頂點著色器。 語意會在頂點著色器執行時定義它的輸入 (和輸出)，並為著色器的 HLSL 程式碼中的每一頂點運算提供此資料。
 
 現在，請載入頂點著色器物件。
 
@@ -688,7 +688,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-在此程式碼中，一旦您讀取頂點著色器 CSO 檔案的位元組資料，就會呼叫 [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 來建立頂點著色器。 在這之後，您要在相同的 Lambda 中建立著色器的輸入配置。
+在此程式碼中，一旦您讀取頂點著色器 CSO 檔案的位元組資料，就會呼叫 [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) 來建立頂點著色器。 在這之後，您要在相同的 Lambda 中建立著色器的輸入配置。
 
 其他著色器類型 (例如輪廓和幾何著色器) 可能也需要進行特定的設定。 在 [BasicLoader 的完整程式碼](complete-code-for-basicloader.md)和 [Direct3D 資源載入範例]( https://go.microsoft.com/fwlink/p/?LinkID=265132)中，提供了多種著色器載入方法的完整程式碼。
 

@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 407ceeb4964e616bdbcacb14620ed1a488a0072b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cb42fcb17cfcad76989732b1a1482d9fbc85be5e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618213"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372319"
 ---
 # <a name="xkey-attribute"></a>x:Key 屬性
 
 
-唯一識別建立和參照為資源的元素，存在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中。
+唯一識別建立和參照為資源的元素，存在 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中。
 
 ## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
@@ -38,7 +38,7 @@ ms.locfileid: "57618213"
 
 | 詞彙 | 描述 |
 |------|-------------|
-| 物件 | 可共用的任何物件。 請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。 |
+| 物件 | 可共用的任何物件。 請參閱 [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。 |
 | stringKeyValue | 做為索引鍵的合法字串，必須符合 _XamlName_ 文法。 請參閱下面的＜XamlName 文法＞。 | 
 
 ##  <a name="xamlname-grammar"></a>XamlName 文法
@@ -60,13 +60,13 @@ CombiningCharacter::= none
 
 ## <a name="remarks"></a>備註
 
-[  **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的子元素通常包含 **x:Key** 屬性，該屬性會指定該字典內的唯一索引鍵值。 XAML 處理器在載入期間會強制執行索引鍵唯一性。 非唯一的 **x:Key** 值將導致 XAML 剖析例外狀況。 如果是 [{StaticResource} 標記延伸](staticresource-markup-extension.md)所要求，任何未解析的索引鍵也會導致 XAML 剖析例外狀況。
+[  **ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的子元素通常包含 **x:Key** 屬性，該屬性會指定該字典內的唯一索引鍵值。 XAML 處理器在載入期間會強制執行索引鍵唯一性。 非唯一的 **x:Key** 值將導致 XAML 剖析例外狀況。 如果是 [{StaticResource} 標記延伸](staticresource-markup-extension.md)所要求，任何未解析的索引鍵也會導致 XAML 剖析例外狀況。
 
-**x:Key** 與 [x:Name](x-name-attribute.md) 並非相同的概念。 **x:Key** 專門用在資源字典中。 x:Name 則用於 XAML 的所有區域。 使用索引鍵值的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 呼叫將不會擷取索引資源。 資源字典中定義的物件可能會有 **x:Key**、**x:Name** 或是兩者。 金鑰和名稱不需要符合。
+**x:Key** 與 [x:Name](x-name-attribute.md) 並非相同的概念。 **x:Key** 專門用在資源字典中。 x:Name 則用於 XAML 的所有區域。 使用索引鍵值的 [**FindName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.findname) 呼叫將不會擷取索引資源。 資源字典中定義的物件可能會有 **x:Key**、**x:Name** 或是兩者。 金鑰和名稱不需要符合。
 
-請注意，在顯示的隱含語法中，[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 物件在 XAML 處理器如何產生新物件以填入 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 集合方面是隱含的。
+請注意，在顯示的隱含語法中，[**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 物件在 XAML 處理器如何產生新物件以填入 [**Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) 集合方面是隱含的。
 
-等同於指定 **x:Key** 的程式碼，是使用含有基礎 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的索引鍵的任何作業。 例如，當您新增資源到 **ResourceDictionary** 時，在資源的標記中套用的 **x:Key** 等同於 **Insert** 的 *key* 參數值。
+等同於指定 **x:Key** 的程式碼，是使用含有基礎 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的索引鍵的任何作業。 例如，當您新增資源到 **ResourceDictionary** 時，在資源的標記中套用的 **x:Key** 等同於 **Insert** 的 *key* 參數值。
 
-如果資源字典中的項目為目標的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 或 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)，則可以忽略 **x:Key** 的值；不管是哪一種情況，資源項目的隱含索引鍵都是會解譯為字串的 **TargetType** 值。 如需詳細資訊，請參閱[快速入門：設定控制項的樣式](https://msdn.microsoft.com/library/windows/apps/hh465498)和 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。
+如果資源字典中的項目為目標的 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 或 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)，則可以忽略 **x:Key** 的值；不管是哪一種情況，資源項目的隱含索引鍵都是會解譯為字串的 **TargetType** 值。 如需詳細資訊，請參閱[快速入門：設定控制項的樣式](https://docs.microsoft.com/previous-versions/windows/apps/hh465498(v=win.10))和 [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
 

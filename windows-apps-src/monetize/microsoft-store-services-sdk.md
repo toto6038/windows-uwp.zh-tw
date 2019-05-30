@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: b74cb2b23b5fbfc7487d18be0531ff26170cbe3f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 48a19b2fc32733e13cb9a7b730bad7741307c328
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334507"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372802"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>透過 Microsoft Store Services SDK 與客戶互動
 
@@ -31,7 +31,7 @@ Microsoft Store Services SDK 目前支援下列 UWP app 案例。 如需 API 參
 |  [執行實驗，在您的 UWP 應用程式，以 A / B 測試](run-app-experiments-with-a-b-testing.md)    |  在「通用 Windows 平台」(UWP) app 中執行 A/B 測試，以在將功能釋出給每個人之前，先對部分客戶測量功能是否有效。 在合作夥伴中心內定義的實驗之後，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)類別，即可取得您的實驗，在您的應用程式中使用此資料來修改您要測試，此功能的行為變化，然後使用[LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)檢視事件和轉換事件傳送給合作夥伴中心的方法。 最後，使用合作夥伴中心來檢視結果，並管理實驗。  |
 |  [啟動從 UWP 應用程式的意見反應中樞](launch-feedback-hub-from-your-app.md)    |  在您的 UWP app 中使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 類別將您的 Windows 10 客戶引導至「意見反應中樞」，以便他們在其中提交問題、建議及附議。 然後，在「合作夥伴中心」的[意見反應報告](../publish/feedback-report.md)中管理此意見反應。 |
 |  [設定您的 UWP 應用程式，以接收合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)    |  使用[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)在 UWP 應用程式註冊您的應用程式，以接收您傳送給客戶使用合作夥伴中心的目標推播通知的類別。  |
-|   [在您的 UWP 應用程式，在合作夥伴中心內的 [使用量] 報表的記錄自訂事件](log-custom-events-for-dev-center.md)   |  使用[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)在 UWP 應用程式與您在合作夥伴中心內的應用程式相關聯的自訂事件記錄中的類別。 接著，檢閱 在您的自訂事件的發生次數總計**自訂事件**一節[使用量報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)在合作夥伴中心。  |
+|   [在您的 UWP 應用程式，在合作夥伴中心內的 [使用量] 報表的記錄自訂事件](log-custom-events-for-dev-center.md)   |  使用[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)在 UWP 應用程式與您在合作夥伴中心內的應用程式相關聯的自訂事件記錄中的類別。 接著，檢閱 在您的自訂事件的發生次數總計**自訂事件**一節[使用量報告](https://docs.microsoft.com/windows/uwp/publish/usage-report)在合作夥伴中心。  |
 
 <span id="prerequisites" />
 
@@ -72,7 +72,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
 
 4.  重新啟動 Visual Studio。
 
-5.  如果您現有的專案參考來自任何舊版 Microsoft Store Services SDK, Microsoft Advertising SDK、Universal Ad Client SDK 或 Microsoft Store Engagement and Monetization SDK 的程式庫，建議您在 Visual Studio 中開啟您的專案，然後清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]**，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]**)。
+5.  如果您現有的專案參考來自任何舊版 Microsoft Store Services SDK, Microsoft Advertising SDK、Universal Ad Client SDK 或 Microsoft Store Engagement and Monetization SDK 的程式庫，建議您在 Visual Studio 中開啟您的專案，然後清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]** ，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]** )。
 
   否則，如果您是第一次在專案中使用 SDK，您現在便已準備好[將組件參考新增至專案](#references)。
 
@@ -95,7 +95,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
     > [!NOTE]
     > 如果您的專案已經包含來自先前 MSI 安裝之 SDK 的程式庫參考，請從您的專案中移除這些參考。 這些參考的旁邊將會有警告圖示，因為在先前的步驟中已移除它們所參考的程式庫。
 
-4. 在 Visual Studio 中，按一下 [專案] 和 [管理 NuGet 套件]。
+4. 在 Visual Studio 中，按一下 [專案]  和 [管理 NuGet 套件]  。
 
 5. 在搜尋方塊中，輸入 **Microsoft.Services.Store.Engagement** 並安裝 Microsoft.Services.Store.Engagement 套件。 套件完成安裝後，儲存您的方案。
     > [!NOTE]
@@ -103,7 +103,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
 
 6. 關閉包含您專案的 Visual Studio 方案，然後重新開啟方案。
 
-7.  如果您的專案已經參考來自透過 NuGet 安裝之舊版 Microsoft Store Services SDK 的程式庫，而您已將專案更新至新版 SDK，建議您清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]**，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]**)。
+7.  如果您的專案已經參考來自透過 NuGet 安裝之舊版 Microsoft Store Services SDK 的程式庫，而您已將專案更新至新版 SDK，建議您清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]** ，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]** )。
 
   否則，如果您是第一次在專案中使用 SDK，您現在便已準備好[將組件參考新增至專案](#references)。
 
@@ -117,11 +117,11 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
     > [!NOTE]
     > 如果您的專案是以**任何 CPU** 為目標的 JavaScript App，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。
 
-2. 在 **\[方案總管\]** 中的 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入參考\]**。
+2. 在 **\[方案總管\]** 中的 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入參考\]** 。
 
-3. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**、按一下 **\[擴充功能\]**，然後選取 **\[Microsoft Engagement Framework\]** 旁邊的核取方塊。 這可讓您使用 [Microsoft.Services.Store.Engagement](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement) 命名空間中的 API。
+3. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]** 、按一下 **\[擴充功能\]** ，然後選取 **\[Microsoft Engagement Framework\]** 旁邊的核取方塊。 這可讓您使用 [Microsoft.Services.Store.Engagement](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement) 命名空間中的 API。
 
-3. 按一下 [確定] 。
+3. 按一下 [確定]  。
 
 > [!NOTE]
 > 如果您已透過 NuGet 安裝 SDK 程式庫，您的專案將會包含 **Microsoft.Services.Store.Engagement** 參考。 **Microsoft.Services.Store.Engagement** 參考代表 NuGet 套件 (而不是它當中的程式庫)，您可以忽略它。

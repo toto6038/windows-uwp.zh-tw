@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 耳機
 ms.localizationpriority: medium
-ms.openlocfilehash: b3de68cc59c9928a52eba5caeb840e9e825eecf0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 73815fb3f1b732537e9f08932639a1eccd7ed1b0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627953"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368620"
 ---
 # <a name="headset"></a>耳機
 
@@ -65,7 +65,7 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 [Headset][] 類別是由兩個代表 XAudio 端點識別碼的字串組成，一個用於音訊擷取 (從耳麥式麥克風錄製)，另一個用於音訊轉譯 (透過耳機播放)。
 
-使用 XAudio 的詳細資料不在此做討論，如需詳細資訊，請參閱 [XAudio2 程式設計指南](https://msdn.microsoft.com/library/windows/desktop/ee415737.aspx) (英文) 和 [XAudio2 API 參考](https://msdn.microsoft.com/library/windows/desktop/ee415899.aspx) (英文)。
+使用 XAudio 的詳細資料不在此做討論，如需詳細資訊，請參閱 [XAudio2 程式設計指南](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide) (英文) 和 [XAudio2 API 參考](https://docs.microsoft.com/windows/desktop/xaudio2/programming-reference) (英文)。
 
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
@@ -73,4 +73,4 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 [igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
 [igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
 [igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[Headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
+[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx

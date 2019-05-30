@@ -6,12 +6,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 範例, DirectX, 圖形
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cde3738c6fd30433ad6137bf151cad0b811aa8d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ce62e065170349523062fbd42d867edfed63f47c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640073"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369087"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入視覺化內容
 
@@ -50,20 +50,20 @@ ms.locfileid: "57640073"
 ## <a name="getting-started-with-directx-graphics"></a>DirectX 圖形入門
 
 
-當我們計劃滾珠迷宮通用 Windows 平台 (UWP) 遊戲時，我們選擇 c + + 和 Direct3D 11.1 因為它們是絕佳的建立需要最大可能控制呈現且高效能的 3D 遊戲。 DirectX 11.1 支援 DirectX 9 到 DirectX 11 的硬體，因此您不需要為過去的每一版 DirectX 重寫程式碼，所以能協助您更有效率地吸引更多的客戶。
+當我們計劃滾珠迷宮通用 Windows 平台 (UWP) 遊戲時，我們選擇C++和 Direct3D 11.1 選項來建立 3D 遊戲，因為它們是絕佳需要呈現且高效能的最大控制。 DirectX 11.1 支援 DirectX 9 到 DirectX 11 的硬體，因此您不需要為過去的每一版 DirectX 重寫程式碼，所以能協助您更有效率地吸引更多的客戶。
 
 滾珠迷宮 」 使用 Direct3D 11.1 來呈現 3D 遊戲的資產，也就是 「 彈珠和迷宮 」。 滾珠迷宮也使用 Direct2D、 DirectWrite 和 Windows Imaging Component (WIC)，來繪製 2D 遊戲資產，例如功能表和計時器。
 
 遊戲開發需要規劃。 如果您不熟悉 DirectX 圖形，我們建議您先閱讀[DirectX:開始使用](directx-getting-started.md)熟悉建立 UWP DirectX 遊戲的基本概念。 當您閱讀這份文件，並逐步執行 「 彈珠迷宮 」 來源的程式碼，您可以參考下列資源以取得更多深入資訊 DirectX 圖形：
 
--   [Direct3D 11 的圖形](https://msdn.microsoft.com/library/windows/desktop/ff476080):描述 Direct3D 11 中，功能強大、 硬體加速 3D 圖形 API 來呈現在 Windows 平台上的 3D 幾何圖形。
--   [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990):描述 Direct2D，硬體加速、 2D 圖形 API，提供高效能和高品質的呈現 2D 幾何、 點陣圖和文字。
--   [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038):描述 DirectWrite，支援高品質文字轉譯。
--   [Windows 影像處理元件](https://msdn.microsoft.com/library/windows/desktop/ee719902):描述 WIC，可擴充的平台，提供低階 API，數位映像。
+-   [Direct3D 11 的圖形](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11):描述 Direct3D 11 中，功能強大、 硬體加速 3D 圖形 API 來呈現在 Windows 平台上的 3D 幾何圖形。
+-   [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal):描述 Direct2D，硬體加速、 2D 圖形 API，提供高效能和高品質的呈現 2D 幾何、 點陣圖和文字。
+-   [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal):描述 DirectWrite，支援高品質文字轉譯。
+-   [Windows 影像處理元件](https://docs.microsoft.com/windows/desktop/wic/-wic-lh):描述 WIC，可擴充的平台，提供低階 API，數位映像。
 
 ### <a name="feature-levels"></a>功能層級
 
-Direct3D 11 導入了名為的典範*功能層級*。 功能層級是一組妥善定義的 GPU 功能。 使用功能層級將遊戲的目標設定在舊版 Direct3D 硬體上執行。 Marble Maze 支援功能層級 9.1，原因是它不需要較高層級的進階功能。 建議您盡可能擴大硬體支援範圍，並調整遊戲內容，讓使用高階或低階電腦的客戶，都能盡情享受您的遊戲。 如需功能層級的詳細資訊，請參閱[舊版硬體上的 Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476872)。
+Direct3D 11 導入了名為的典範*功能層級*。 功能層級是一組妥善定義的 GPU 功能。 使用功能層級將遊戲的目標設定在舊版 Direct3D 硬體上執行。 Marble Maze 支援功能層級 9.1，原因是它不需要較高層級的進階功能。 建議您盡可能擴大硬體支援範圍，並調整遊戲內容，讓使用高階或低階電腦的客戶，都能盡情享受您的遊戲。 如需功能層級的詳細資訊，請參閱[舊版硬體上的 Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel)。
 
 ## <a name="initializing-direct3d-and-direct2d"></a>初始化 Direct3D 和 Direct2D
 
@@ -144,7 +144,7 @@ void DX::DeviceResources::CreateDeviceIndependentResources()
 
 ###  <a name="creating-the-direct3d-and-direct2d-devices"></a>建立 Direct3D 和 Direct2D 裝置
 
-**DeviceResources::CreateDeviceResources**方法呼叫[D3D11CreateDevice](https://msdn.microsoft.com/library/windows/desktop/ff476082)來建立裝置物件，表示 Direct3D 顯示配接器。 因為 「 彈珠迷宮 」 支援的功能層級 9.1 和更新版本， **DeviceResources::CreateDeviceResources**方法指定中的層級 9.1 透過 11.1 **featureLevels**陣列。 Direct3D 會依序瀏覽清單，並將第一個可用的功能層級提供給 App。 因此**D3D\_功能\_層級**陣列會列出項目從最高到最低，讓應用程式取得可用的最高功能層級。 **DeviceResources::CreateDeviceResources** 方法會查詢從 **D3D11CreateDevice** 傳回的 Direct3D 11 裝置，以取得 Direct3D 11.1 裝置。
+**DeviceResources::CreateDeviceResources**方法呼叫[D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice)來建立裝置物件，表示 Direct3D 顯示配接器。 因為 「 彈珠迷宮 」 支援的功能層級 9.1 和更新版本， **DeviceResources::CreateDeviceResources**方法指定中的層級 9.1 透過 11.1 **featureLevels**陣列。 Direct3D 會依序瀏覽清單，並將第一個可用的功能層級提供給 App。 因此**D3D\_功能\_層級**陣列會列出項目從最高到最低，讓應用程式取得可用的最高功能層級。 **DeviceResources::CreateDeviceResources** 方法會查詢從 **D3D11CreateDevice** 傳回的 Direct3D 11 裝置，以取得 Direct3D 11.1 裝置。
 
 ```cpp
 // This flag adds support for surfaces with a different color channel ordering
@@ -244,11 +244,11 @@ DX::ThrowIfFailed(
     );
 ```
 
-如需 DXGI 及 Direct2D 和 Direct3D 之間互通性的詳細資訊，請參閱 [DXGI 概觀](https://msdn.microsoft.com/library/windows/desktop/bb205075)與 [Direct2D 和 Direct3D 互通性概觀](https://msdn.microsoft.com/library/windows/desktop/dd370966)。
+如需 DXGI 及 Direct2D 和 Direct3D 之間互通性的詳細資訊，請參閱 [DXGI 概觀](https://docs.microsoft.com/windows/desktop/direct3ddxgi/d3d10-graphics-programming-guide-dxgi)與 [Direct2D 和 Direct3D 互通性概觀](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-and-direct3d-interoperation-overview)。
 
 ### <a name="associating-direct3d-with-the-view"></a>建立 Direct3D 與檢視的關聯
 
-**DeviceResources::CreateWindowSizeDependentResources** 方法會建立依存於特定視窗大小的圖形資源，例如交換鏈結，以及 Direct3D 和 Direct2D 呈現目標。 DirectX UWP app 與傳統型應用程式間有個重要差異，就是交換鏈結與輸出視窗建立關聯的方式。 交換鏈結負責顯示裝置要在監視器上呈現的緩衝區。 [滾珠迷宮應用程式結構](marble-maze-application-structure.md)說明 UWP 應用程式的視窗化系統與不同之桌面應用程式。 因為 UWP 應用程式不適用於[HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751)物件，必須使用 「 彈珠迷宮 」 [IDXGIFactory2::CreateSwapChainForCoreWindow](https://msdn.microsoft.com/library/windows/desktop/hh404559)關聯至檢視的 [裝置] 輸出的方法。 下列範例顯示 **DeviceResources::CreateWindowSizeDependentResources** 方法中負責建立交換鏈結的部分。
+**DeviceResources::CreateWindowSizeDependentResources** 方法會建立依存於特定視窗大小的圖形資源，例如交換鏈結，以及 Direct3D 和 Direct2D 呈現目標。 DirectX UWP app 與傳統型應用程式間有個重要差異，就是交換鏈結與輸出視窗建立關聯的方式。 交換鏈結負責顯示裝置要在監視器上呈現的緩衝區。 [滾珠迷宮應用程式結構](marble-maze-application-structure.md)說明 UWP 應用程式的視窗化系統與不同之桌面應用程式。 因為 UWP 應用程式不適用於[HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types)物件，必須使用 「 彈珠迷宮 」 [IDXGIFactory2::CreateSwapChainForCoreWindow](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)關聯至檢視的 [裝置] 輸出的方法。 下列範例顯示 **DeviceResources::CreateWindowSizeDependentResources** 方法中負責建立交換鏈結的部分。
 
 ```cpp
 // Obtain the final swap chain for this window from the DXGI factory.
@@ -263,7 +263,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-若要將功率耗用量，請務必在電池電源的裝置，例如膝上型電腦和平板電腦上執行，降至最低**DeviceResources::CreateWindowSizeDependentResources**方法呼叫[IDXGIDevice1::SetMaximumFrameLatency](https://msdn.microsoft.com/library/windows/desktop/ff471334)方法，以確保遊戲垂直的空白後才轉譯。 垂直空白與同步處理一節中的更詳細地說明[呈現場景](#presenting-the-scene)本文件中。
+若要將功率耗用量，請務必在電池電源的裝置，例如膝上型電腦和平板電腦上執行，降至最低**DeviceResources::CreateWindowSizeDependentResources**方法呼叫[IDXGIDevice1::SetMaximumFrameLatency](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice1-setmaximumframelatency)方法，以確保遊戲垂直的空白後才轉譯。 垂直空白與同步處理一節中的更詳細地說明[呈現場景](#presenting-the-scene)本文件中。
 
 ```cpp
 // Ensure that DXGI does not queue more than one frame at a time. This both 
@@ -278,8 +278,8 @@ DX::ThrowIfFailed(
 
 > [!NOTE]
 > 詞彙*檢視*比它具有在 Direct3D 中，Windows 執行階段中有不同的意義。 在 Windows 執行階段中，檢視是指應用程式使用者介面設定的集合，包括顯示區域和輸入行為及用來處理的執行緒。 當您建立檢視時，您可以指定所需的組態和設定。 [Marble Maze 應用程式結構](marble-maze-application-structure.md)中會說明設定 App 檢視的程序。
-> 在 Direct3D 中，「檢視」一詞有多種意義。 資源檢視定義的資源可存取子。 例如，當紋理物件與著色器資源檢視相關聯時，該著色器稍後可存取紋理。 資源檢視的一項優點是在呈現管線的不同階段中，您可以採取不同的方式來解譯資料。 如需資源檢視的詳細資訊，請參閱[資源檢視](https://msdn.microsoft.com/library/windows/desktop/ff476900#Views)。
-> 在檢視轉換或檢視轉換矩陣的環境下使用時，檢視是指相機的位置和方向。 檢視轉換會依相機的位置和方向來重新定位全世界的物件。 如需檢視轉換的詳細資訊，請參閱[檢視轉換 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342)。 本主題會進一步說明 Marble Maze 如何使用資源和矩陣檢視。
+> 在 Direct3D 中，「檢視」一詞有多種意義。 資源檢視定義的資源可存取子。 例如，當紋理物件與著色器資源檢視相關聯時，該著色器稍後可存取紋理。 資源檢視的一項優點是在呈現管線的不同階段中，您可以採取不同的方式來解譯資料。 如需資源檢視的詳細資訊，請參閱[資源檢視](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-intro)。
+> 在檢視轉換或檢視轉換矩陣的環境下使用時，檢視是指相機的位置和方向。 檢視轉換會依相機的位置和方向來重新定位全世界的物件。 如需檢視轉換的詳細資訊，請參閱[檢視轉換 (Direct3D 9)](https://docs.microsoft.com/windows/desktop/direct3d9/view-transform)。 本主題會進一步說明 Marble Maze 如何使用資源和矩陣檢視。
 
  
 
@@ -294,7 +294,7 @@ DX::ThrowIfFailed(
 
 在 Marble Maze 中，覆疊是出現在螢幕最上面的影像。 覆疊一律出現在場景的最前面。 「 彈珠迷宮 」，在覆疊會包含 Windows 標誌和文字字串**DirectX 滾珠迷宮遊戲範例**。 重疊的管理由執行**SampleOverlay**類別，其定義於**SampleOverlay.h**。 雖然我們在 Direct3D 範例中使用覆疊，但您可以調整這段程式碼，在場景最前面顯示任何影像。
 
-重疊的一個重要層面是，因為其內容不會變更， **SampleOverlay**類別繪製，或快取，其內容至[ID2D1Bitmap1](https://msdn.microsoft.com/library/windows/desktop/hh404349)在初始化期間的物件。 在繪製階段，**SampleOverlay** 類別只需要將點陣圖繪製到螢幕。 如此一來，就不必為每一個畫面執行高度耗費資源的常式 (例如文字繪製)。
+重疊的一個重要層面是，因為其內容不會變更， **SampleOverlay**類別繪製，或快取，其內容至[ID2D1Bitmap1](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1bitmap1)在初始化期間的物件。 在繪製階段，**SampleOverlay** 類別只需要將點陣圖繪製到螢幕。 如此一來，就不必為每一個畫面執行高度耗費資源的常式 (例如文字繪製)。
 
 2D 的元件，例如功能表和場景前方會出現的抬頭顯示器 (HUDs)，包含使用者介面 (UI)。 Marble Maze 會定義下列 UI 元素：
 
@@ -345,13 +345,13 @@ protected:
 
 Marble Maze 使用 **BasicLoader::LoadShader** 方法從檔案載入著色器。
 
-著色器是現今遊戲中 GPU 程式設計的基本單位。 幾乎所有的 3D 圖形處理是透過著色器，它是模型轉換和光源的場景或更複雜的幾何從蒙皮鑲嵌式處理，來驅動。 如需著色器程式設計模型的相關資訊，請參閱 [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)。
+著色器是現今遊戲中 GPU 程式設計的基本單位。 幾乎所有的 3D 圖形處理是透過著色器，它是模型轉換和光源的場景或更複雜的幾何從蒙皮鑲嵌式處理，來驅動。 如需著色器程式設計模型的相關資訊，請參閱 [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl)。
 
 Marble Maze 使用頂點和像素著色器。 頂點著色器一律在一個輸入頂點上運算，然後產生一個頂點做為輸出。 像素著色器接受數值、紋理資料、內插的各頂點值和其他資料，以產生像素色彩做為輸出。 因為著色器一次只轉換一個元素，如果圖形硬體提供多個著色器管線，則可以平行處理多組元素。 GPU 可用的平行管線數目可能明顯大於 CPU 可用的數目。 因此，即使是基本著色器，也可以大幅改進輸送量。
 
 **MarbleMazeMain::LoadDeferredResources**方法會載入一個頂點著色器和一個像素著色器之後載入重疊。 中所定義的這些著色器設計階段版本**BasicVertexShader.hlsl**並**BasicPixelShader.hlsl**分別。 Marble Maze 在呈現階段會將這些著色器套用至彈珠和迷宮。
 
-Marble Maze 專案包含 .hlsl (設計階段格式) 和 .cso (執行階段格式) 版本的著色器檔案。 在建置時，Visual Studio 會使用 fxc.exe 效果編譯器，將 .hlsl 原始程式檔編譯成 .cso 二進位著色器。 如需效果編譯器工具的詳細資訊，請參閱[效果編譯器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919)。
+Marble Maze 專案包含 .hlsl (設計階段格式) 和 .cso (執行階段格式) 版本的著色器檔案。 在建置時，Visual Studio 會使用 fxc.exe 效果編譯器，將 .hlsl 原始程式檔編譯成 .cso 二進位著色器。 如需效果編譯器工具的詳細資訊，請參閱[效果編譯器工具](https://docs.microsoft.com/windows/desktop/direct3dtools/fxc)。
 
 頂點著色器使用提供的模型、檢視和投影矩陣，轉換輸入幾何。 輸入幾何的位置資料會進行兩次轉換和輸出：一次是在螢幕空間 (為了呈現)，第二次是在世界空間 (為了讓像素著色器執行光源計算)。 表面標準向量會轉換成世界空間，像素著色器也會使用此空間來提供光源。 紋理座標會原封不動地傳遞至像素著色器。
 
@@ -414,7 +414,7 @@ float4 main(sPSInput input) : SV_TARGET
 
  
 
-**MarbleMazeMain::LoadDeferredResources**方法會使用**BasicLoader::LoadShader**方法來載入著色器。 下列範例載入的是頂點著色器。 這個著色器的執行時間格式**BasicVertexShader.cso**。 **m\_vertexShader**成員變數[ID3D11VertexShader](https://msdn.microsoft.com/library/windows/desktop/ff476641)物件。
+**MarbleMazeMain::LoadDeferredResources**方法會使用**BasicLoader::LoadShader**方法來載入著色器。 下列範例載入的是頂點著色器。 這個著色器的執行時間格式**BasicVertexShader.cso**。 **m\_vertexShader**成員變數[ID3D11VertexShader](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11vertexshader)物件。
 
 ```cpp
 BasicLoader^ loader = ref new BasicLoader(m_deviceResources->GetD3DDevice());
@@ -438,9 +438,9 @@ loader->LoadShader(
     );
 ```
 
-**m\_inputLayout**成員變數[ID3D11InputLayout](https://msdn.microsoft.com/library/windows/desktop/ff476575)物件。 輸入配置物件會封裝輸入組合語言 (IA) 階段的輸入狀態。 IA 階段有一項工作是使用系統產生的值 (也稱為「語意」)，只處理尚未處理的基本類別或頂點，以提高著色器的效率。
+**m\_inputLayout**成員變數[ID3D11InputLayout](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout)物件。 輸入配置物件會封裝輸入組合語言 (IA) 階段的輸入狀態。 IA 階段有一項工作是使用系統產生的值 (也稱為「語意」)，只處理尚未處理的基本類別或頂點，以提高著色器的效率。 
 
-使用 [ID3D11Device::CreateInputLayout](https://msdn.microsoft.com/library/windows/desktop/ff476512) 方法，從輸入元素描述的陣列來建立輸入配置。 這個陣列包含一或多個輸入元素，每個輸入元素描述來自一個端點緩衝區的一個頂點資料元素。 整組輸入元素描述會描述所有將繫結至 IA 階段的端點緩衝區中的所有頂點資料元素。 
+使用 [ID3D11Device::CreateInputLayout](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) 方法，從輸入元素描述的陣列來建立輸入配置。 這個陣列包含一或多個輸入元素，每個輸入元素描述來自一個端點緩衝區的一個頂點資料元素。 整組輸入元素描述會描述所有將繫結至 IA 階段的端點緩衝區中的所有頂點資料元素。 
 
 **layoutDesc**將上述程式碼片段顯示版面配置描述 「 彈珠迷宮 」 使用。 配置描述會描述包含四個頂點資料元素的頂點緩衝區。 陣列中每一個項目最重要的部分就是語意名稱、日期格式和位元組位移。 例如，**POSITION** 元素指定物件空間中的頂點位置。 它以位元組位移 0 為起點，且包含三個浮點元件 (總計 12 個位元組)。 **NORMAL** 元素指定標準向量。 它以位元組位移 12 為起點，因為在配置中它會緊接著 **POSITION** 出現，而這需要 12 個位元組。 **NORMAL** 元素包含一個四元件、32 位元不帶正負號的整數。
 
@@ -477,14 +477,14 @@ sPSInput main(sVSInput input)
 }
 ```
 
-[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)文件會進一步說明每一種可用的語意。
+[語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)文件會進一步說明每一種可用的語意。
 
 > [!NOTE]
-> 在配置中，您可以指定不會用來啟用多個共用相同的配置的著色器的其他元件。 例如，著色器不使用 **TANGENT** 元素。 如果您想要試用標準貼圖這類技術，可以使用 **TANGENT** 元素。 您可以使用標準貼圖，也稱為「凹凸貼圖」，在物件的表面建立凹凸效果。 如需凹凸貼圖的詳細資訊，請參閱[凹凸貼圖 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb172379)。
+> 在配置中，您可以指定不會用來啟用多個共用相同的配置的著色器的其他元件。 例如，著色器不使用 **TANGENT** 元素。 如果您想要試用標準貼圖這類技術，可以使用 **TANGENT** 元素。 您可以使用標準貼圖，也稱為「凹凸貼圖」，在物件的表面建立凹凸效果。 如需凹凸貼圖的詳細資訊，請參閱[凹凸貼圖 (Direct3D 9)](https://docs.microsoft.com/windows/desktop/direct3d9/bump-mapping)。
 
  
 
-如需輸入組件階段的詳細資訊，請參閱[輸入組譯工具階段](https://msdn.microsoft.com/library/windows/desktop/bb205116)並[Getting Started with 輸入組譯工具階段](https://msdn.microsoft.com/library/windows/desktop/bb205117)。
+如需輸入組件階段的詳細資訊，請參閱[輸入組譯工具階段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)並[Getting Started with 輸入組譯工具階段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started)。
 
 本文件稍後的[呈現場景](#rendering-the-scene)一節描述使用頂點和像素著色器來呈現場景的程序。
 
@@ -492,7 +492,7 @@ sPSInput main(sVSInput input)
 
 Direct3D 緩衝區會將一組資料集合起來。 常數緩衝區是可將資料傳遞給著色器的一種緩衝區。 Marble Maze 使用常數緩衝區來保留模型 (或「世界」) 檢視，以及作用中場景物件的投影矩陣。
 
-下列範例示範如何**MarbleMazeMain::LoadDeferredResources**方法會建立稍後將會保留矩陣資料的常數緩衝區。 此範例會建立**D3D11\_緩衝區\_DESC**使用的結構**D3D11\_繫結\_常數\_緩衝區**旗標設為指定為常數緩衝區的使用方式。 這個範例接著會將該結構傳遞給 [ID3D11Device::CreateBuffer](https://msdn.microsoft.com/library/windows/desktop/ff476501) 方法。 **m\_constantBuffer**變數[ID3D11Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476351)物件。
+下列範例示範如何**MarbleMazeMain::LoadDeferredResources**方法會建立稍後將會保留矩陣資料的常數緩衝區。 此範例會建立**D3D11\_緩衝區\_DESC**使用的結構**D3D11\_繫結\_常數\_緩衝區**旗標設為指定為常數緩衝區的使用方式。 這個範例接著會將該結構傳遞給 [ID3D11Device::CreateBuffer](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 方法。 **m\_constantBuffer**變數[ID3D11Buffer](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer)物件。
 
 ```cpp
 // Create the constant buffer for updating model and camera data.
@@ -550,7 +550,7 @@ cbuffer ConstantBuffer : register(b0)
 
 **ConstantBuffer** 結構的配置符合 **cbuffer** 物件。 **cbuffer** 變數指定暫存器 b0，這表示常數緩衝區資料儲存在暫存器 0。 **MarbleMazeMain::Render**方法可讓您指定註冊 0 時便會啟用常數緩衝區。 本文件稍後會進一步說明此程序。
 
-如需常數緩衝區的詳細資訊，請閱讀 [Direct3D 11 的緩衝區簡介](https://msdn.microsoft.com/library/windows/desktop/ff476898)。 如需 register 關鍵字的相關資訊，請參閱 [register](https://msdn.microsoft.com/library/windows/desktop/dd607359)。
+如需常數緩衝區的詳細資訊，請閱讀 [Direct3D 11 的緩衝區簡介](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro)。 如需 register 關鍵字的相關資訊，請參閱 [register](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-register)。
 
 ###  <a name="loading-meshes"></a>載入網格
 
@@ -764,7 +764,7 @@ m_marbleConstantBufferData.view = view;
 
 在呈現場景之前，您必須設定目前呈現目標深度樣板緩衝區。 如果場景不一定會繪製螢幕上的每個像素，也請清除呈現檢視和樣板檢視。 Marble Maze 會清除每個畫面的呈現檢視和樣板檢視，以確保沒有前一個畫面殘留下來的任何可見成品。
 
-下列範例示範如何**MarbleMazeMain::Render**方法呼叫[ID3D11DeviceContext::OMSetRenderTargets](https://msdn.microsoft.com/library/windows/desktop/ff476464)方法來設定與目前的呈現目標和深度樣板緩衝區項目。
+下列範例示範如何**MarbleMazeMain::Render**方法呼叫[ID3D11DeviceContext::OMSetRenderTargets](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets)方法來設定與目前的呈現目標和深度樣板緩衝區項目。
 
 ```cpp
 auto context = m_deviceResources->GetD3DDeviceContext();
@@ -791,7 +791,7 @@ context->ClearDepthStencilView(
     0);
 ```
 
-[ID3D11RenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476582)並[ID3D11DepthStencilView](https://msdn.microsoft.com/library/windows/desktop/ff476377)支援 Direct3D 10 和更新版本提供的紋理檢視機制的介面。 如需紋理檢視的詳細資訊，請參閱[紋理檢視 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 [OMSetRenderTargets](https://msdn.microsoft.com/library/windows/desktop/ff476464)方法準備 Direct3D 管線的輸出合併階段。 如需輸出合併階段的詳細資訊，請參閱[輸出合併階段](https://msdn.microsoft.com/library/windows/desktop/bb205120)。
+[ID3D11RenderTargetView](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)並[ID3D11DepthStencilView](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview)支援 Direct3D 10 和更新版本提供的紋理檢視機制的介面。 如需紋理檢視的詳細資訊，請參閱[紋理檢視 (Direct3D 10)](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-access-views)。 [OMSetRenderTargets](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets)方法準備 Direct3D 管線的輸出合併階段。 如需輸出合併階段的詳細資訊，請參閱[輸出合併階段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)。
 
 ### <a name="preparing-the-vertex-and-pixel-shaders"></a>準備頂點著色器和像素著色器
 
@@ -806,13 +806,13 @@ context->ClearDepthStencilView(
 
  
 
-本文件的[載入著色器](#loading-shaders)一節描述建立頂點著色器時如何建立輸入配置。 下列範例示範如何**MarbleMazeMain::Render**方法會使用[ID3D11DeviceContext::IASetInputLayout](https://msdn.microsoft.com/library/windows/desktop/ff476454)方法來設定這個版面配置做為目前的配置。
+本文件的[載入著色器](#loading-shaders)一節描述建立頂點著色器時如何建立輸入配置。 下列範例示範如何**MarbleMazeMain::Render**方法會使用[ID3D11DeviceContext::IASetInputLayout](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout)方法來設定這個版面配置做為目前的配置。
 
 ```cpp
 m_deviceResources->GetD3DDeviceContext()->IASetInputLayout(m_inputLayout.Get());
 ```
 
-下列範例示範如何**MarbleMazeMain::Render**方法會使用[ID3D11DeviceContext::VSSetShader](https://msdn.microsoft.com/library/windows/desktop/ff476493)並[ID3D11DeviceContext::PSSetShader](https://msdn.microsoft.com/library/windows/desktop/ff476472)分別設定為目前的著色器的端點和像素著色器的方法。
+下列範例示範如何**MarbleMazeMain::Render**方法會使用[ID3D11DeviceContext::VSSetShader](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader)並[ID3D11DeviceContext::PSSetShader](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader)分別設定為目前的著色器的端點和像素著色器的方法。
 
 ```cpp
 // Set the vertex shader stage state.
@@ -832,7 +832,7 @@ m_deviceResources->GetD3DDeviceContext()->PSSetSamplers(
     m_sampler.GetAddressOf());  // to use this sampler
 ```
 
-在後**MarbleMazeMain::Render**設定著色器和其輸入的版面配置，它會使用[ID3D11DeviceContext::UpdateSubresource](https://msdn.microsoft.com/library/windows/desktop/ff476486)方法，以使用模型、 檢視、 更新常數緩衝區和在迷宮的投影矩陣。 **UpdateSubresource** 方法會將 CPU 記憶體中的矩陣資料複製到 GPU 記憶體。 請注意，模型和檢視元件**ConstantBuffer**結構會在更新**MarbleMazeMain::Update**方法。 **MarbleMazeMain::Render**然後方法會呼叫[ID3D11DeviceContext::VSSetConstantBuffers](https://msdn.microsoft.com/library/windows/desktop/ff476491)並[ID3D11DeviceContext::PSSetConstantBuffers](https://msdn.microsoft.com/library/windows/desktop/ff476470)方法設定與目前的這個常數緩衝區。
+在後**MarbleMazeMain::Render**設定著色器和其輸入的版面配置，它會使用[ID3D11DeviceContext::UpdateSubresource](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource)方法，以使用模型、 檢視、 更新常數緩衝區和在迷宮的投影矩陣。 **UpdateSubresource** 方法會將 CPU 記憶體中的矩陣資料複製到 GPU 記憶體。 請注意，模型和檢視元件**ConstantBuffer**結構會在更新**MarbleMazeMain::Update**方法。 **MarbleMazeMain::Render**然後方法會呼叫[ID3D11DeviceContext::VSSetConstantBuffers](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers)並[ID3D11DeviceContext::PSSetConstantBuffers](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetconstantbuffers)方法設定與目前的這個常數緩衝區。
 
 ```cpp
 // Update the constant buffer with the new data.
@@ -871,7 +871,7 @@ m_mazeMesh.Render(
 
 **MarbleMazeMain::Render**方法會執行類似的步驟，來呈現 marble。
 
-如本文件先前所述，提供 **SDKMesh** 類別是為了便於示範，但我們不建議將它用於正式的遊戲中。 但是，請注意**SDKMesh::RenderMesh**方法，它會呼叫**SDKMesh::Render**，使用[ID3D11DeviceContext::IASetVertexBuffers](https://msdn.microsoft.com/library/windows/desktop/ff476456)和[ID3D11DeviceContext::IASetIndexBuffer](https://msdn.microsoft.com/library/windows/desktop/ff476453)方法來設定目前的端點和索引緩衝區定義網格，而[ID3D11DeviceContext::DrawIndexed](https://msdn.microsoft.com/library/windows/desktop/ff476410)来繪製之緩衝區的方法。 如需如何使用頂點和索引緩衝區的詳細資訊，請參閱 [Direct3D 11 的緩衝區簡介](https://msdn.microsoft.com/library/windows/desktop/ff476898)。
+如本文件先前所述，提供 **SDKMesh** 類別是為了便於示範，但我們不建議將它用於正式的遊戲中。 但是，請注意**SDKMesh::RenderMesh**方法，它會呼叫**SDKMesh::Render**，使用[ID3D11DeviceContext::IASetVertexBuffers](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers)和[ID3D11DeviceContext::IASetIndexBuffer](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer)方法來設定目前的端點和索引緩衝區定義網格，而[ID3D11DeviceContext::DrawIndexed](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexedinstanced)来繪製之緩衝區的方法。 如需如何使用頂點和索引緩衝區的詳細資訊，請參閱 [Direct3D 11 的緩衝區簡介](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro)。
 
 ### <a name="drawing-the-user-interface-and-overlay"></a>繪製使用者介面和覆疊
 
@@ -888,7 +888,7 @@ m_sampleOverlay->Render();
 m_deviceResources->GetD3DDeviceContext()->EndEvent();
 ```
 
-**UserInterface::Render**方法會使用[ID2D1DeviceContext](https://msdn.microsoft.com/library/windows/desktop/hh404479)物件来繪製的 UI 項目。 這個方法會設定繪圖狀態、繪製所有作用中的 UI 元素，然後還原先前的繪圖狀態。
+**UserInterface::Render**方法會使用[ID2D1DeviceContext](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1devicecontext)物件来繪製的 UI 項目。 這個方法會設定繪圖狀態、繪製所有作用中的 UI 元素，然後還原先前的繪圖狀態。
 
 ```cpp
 void UserInterface::Render(D2D1::Matrix3x2F orientation2D)
@@ -923,7 +923,7 @@ void UserInterface::Render(D2D1::Matrix3x2F orientation2D)
 
 之後繪製所有的 2D 和 3D 場景物件，「 彈珠迷宮 」 會顯示已轉譯的影像的監視器。 它會將繪圖同步處理到垂直空白，以確定不浪費時間繪製事實上永遠不會出現在顯示器上的畫面。 Marble Maze 在顯示場景時也會處理裝置變更。
 
-在後**MarbleMazeMain::Render**方法傳回時，遊戲迴圈呼叫**DX::DeviceResources::Present**方法來將轉譯的影像傳送到監視或顯示。 **DX::DeviceResources::Present**方法呼叫[IDXGISwapChain::Present](https://msdn.microsoft.com/library/windows/desktop/bb174576)執行存在的作業，如下列範例所示：
+在後**MarbleMazeMain::Render**方法傳回時，遊戲迴圈呼叫**DX::DeviceResources::Present**方法來將轉譯的影像傳送到監視或顯示。 **DX::DeviceResources::Present**方法呼叫[IDXGISwapChain::Present](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present)執行存在的作業，如下列範例所示：
 
 ```cpp
 // The first argument instructs DXGI to block until VSync, putting the application
@@ -932,11 +932,11 @@ void UserInterface::Render(D2D1::Matrix3x2F orientation2D)
 HRESULT hr = m_swapChain->Present(1, 0);
 ```
 
-在此範例中， **m\_swapChain**是[IDXGISwapChain1](https://msdn.microsoft.com/library/windows/desktop/hh404631)物件。 本文件的[初始化 Direct3D 和 Direct2D](#initializing-direct3d-and-direct2d) 一節會描述這個物件的初始化。
+在此範例中， **m\_swapChain**是[IDXGISwapChain1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)物件。 本文件的[初始化 Direct3D 和 Direct2D](#initializing-direct3d-and-direct2d) 一節會描述這個物件的初始化。
 
-第一個參數[IDXGISwapChain::Present](https://msdn.microsoft.com/library/windows/desktop/hh446797)， *SyncInterval*，指定等候呈現畫面格的垂直空白數目。 Marble Maze 指定 1，所以會等待到下一個垂直空白。
+第一個參數[IDXGISwapChain::Present](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1)， *SyncInterval*，指定等候呈現畫面格的垂直空白數目。 Marble Maze 指定 1，所以會等待到下一個垂直空白。
 
-[IDXGISwapChain::Present](https://msdn.microsoft.com/library/windows/desktop/bb174576)方法會傳回表示裝置已移除或失敗，否則為錯誤碼。 在此情況下，Marble Maze 會重新初始化裝置。
+[IDXGISwapChain::Present](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present)方法會傳回表示裝置已移除或失敗，否則為錯誤碼。 在此情況下，Marble Maze 會重新初始化裝置。
 
 ```cpp
 // If the device was removed either by a disconnection or a driver upgrade, we
@@ -961,7 +961,7 @@ else
 
 * [加入輸入和互動功能至滾珠迷宮範例](adding-input-and-interactivity-to-the-marble-maze-sample.md)
 * [滾珠迷宮應用程式結構](marble-maze-application-structure.md)
-* [「 彈珠迷宮 」、 UWP c + + 和 DirectX 遊戲開發](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [開發滾珠迷宮中 UWP 遊戲C++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

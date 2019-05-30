@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e273b1b3bb84929005cfbe4a205397fa298ea1c8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3c1a67936a403edc718ca5a38e7bcb8af02e042f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657123"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372078"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -30,7 +30,7 @@ Xbox 使用者愛上它們控制站。 控制器輸入最佳化[停用滑鼠模�
 
 ### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*執行動作：* 整合與 SystemMediaTransportControls 類別
 
-Xbox 使用者希望透過 Xbox Media Remote、Cortana (特別是「播放」和「暫停」語音命令) 及 Xbox SmartGlass 控制媒體 App。 若要免費取得這些功能，您的 App 應該使用 [SystemMediaTransportControls](https://msdn.microsoft.com/library/windows/apps/windows.media.systemmediatransportcontrols.aspx) 類別，這個類別會自動包含在 Xbox 媒體控制項中。 如果您的 App 有自訂的媒體控制項，請務必整合 **SystemMediaTransportControls** 類別以將這些功能提供給您的使用者。 如果您正在建立背景音樂 App，請整合 **SystemMediaTransportControls** 類別以確保背景音樂控制項在 Xbox 多工處理索引標籤中能正常運作。
+Xbox 使用者希望透過 Xbox Media Remote、Cortana (特別是「播放」和「暫停」語音命令) 及 Xbox SmartGlass 控制媒體 App。 若要免費取得這些功能，您的 App 應該使用 [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols) 類別，這個類別會自動包含在 Xbox 媒體控制項中。 如果您的 App 有自訂的媒體控制項，請務必整合 **SystemMediaTransportControls** 類別以將這些功能提供給您的使用者。 如果您正在建立背景音樂 App，請整合 **SystemMediaTransportControls** 類別以確保背景音樂控制項在 Xbox 多工處理索引標籤中能正常運作。
 
 <!-- ### *Do:* Use adaptive UI to account for snapped apps
 One of the unique features of Xbox One is that users can snap apps such as Cortana next to any other app, so your app should respond gracefully when it runs in *fill mode*. Implement [adaptive UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) and make sure to test your app during development by snapping an app next to it. -->
@@ -70,7 +70,7 @@ UWP App 會自動縮放，以確保 UI 元素 (例如控制項與字型) 可在�
 * [觀賞錄製的議程](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [閱讀部落格文章](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [在 Xbox One UWP](index.md)
 - [針對 Xbox 和電視進行設計](../design/devices/designing-for-tv.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3212128a5fda9f6c5c811b2725b97f64655588b1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c53d93735d097aed3fe6e6f24912e659ad7d28a7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617623"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66358695"
 ---
 # <a name="getting-started-with-uwp-for-ios-developers"></a>開始使用適用於 iOS 開發人員的 UWP
 
@@ -32,10 +32,10 @@ Windows 10 導入了新的平台，建立更吸引人的應用程式在桌上型
 | [開始使用：選擇程式設計語言](getting-started-choosing-a-programming-language.md) | 在我們繼續進行之前，您必須了解開發 UWP app 時可以選用的程式設計語言。 |
 | [開始使用：在 Visual Studio 中瀏覽](getting-started-getting-around-in-visual-studio.md) | 現在讓我們回到先前建立的專案，並看看如何使用 Visual Studio 整合式開發環境 (IDE)。 |
 | [開始使用：通用控制項](getting-started-common-controls.md) | 以下是一些您會在 app 及其 iOS 對等項目中使用的常用控制項。 |
-| [開始使用：瀏覽](getting-started-navigation.md) | 在 Windows 10 app 中管理這類瀏覽的其中一種方式是使用 [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) 類別。 下列逐步解說會說明如何嘗試使用這種方式。 |
+| [開始使用：瀏覽](getting-started-navigation.md) | 在 Windows 10 app 中管理這類瀏覽的其中一種方式是使用 [Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 類別。 下列逐步解說會說明如何嘗試使用這種方式。 |
 | [開始使用：動畫](getting-started-animation.md) | Windows 應用程式中的動畫也可以透過程式設計的方式建立，但是也可以透過 Extensible Application Markup Language (XAML) 以宣告的方式進行定義。 |
 | [開始使用：接下來呢？](getting-started-what-next.md) | 利用這個基本資訊，您現在可以開始撰寫更多好玩的通用 Windows 平台 (UWP) app。 在後續步驟中，請仔細閱讀下列主題，然後啟動 Visual Studio 並開始撰寫一些程式碼！ |
-| [Windows 應用程式概念對應](https://msdn.microsoft.com//windows/uwp/porting/android-ios-uwp-map) | 如何以 iOS 概念思考 Windows (與 Android) 功能 |
+| [Windows 應用程式概念對應](https://docs.microsoft.com/windows/uwp/porting/android-ios-uwp-map) | 如何以 iOS 概念思考 Windows (與 Android) 功能 |
 
  
 

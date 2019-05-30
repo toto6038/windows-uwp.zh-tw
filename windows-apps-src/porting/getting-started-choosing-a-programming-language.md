@@ -6,33 +6,33 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 48cea8c1a3a3c35a53a3376c48e3192c94caf709
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f5605c115c409771ce8dc9ddfeb1a4922e04aece
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620773"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372839"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>開始使用：選擇程式設計語言
 
 
 ## <a name="choosing-a-programming-language"></a>選擇程式設計語言
 
-在我們繼續進行之前，您必須知道開發通用 Windows 平台 (UWP) app 時可以選用的程式設計語言。 雖然本文中的逐步解說是使用 C#，但是您可以使用一或多種程式設計語言來開發 UWP app (請參閱[語言、工具及架構](https://msdn.microsoft.com/library/windows/apps/dn465799))。
+在我們繼續進行之前，您必須知道開發通用 Windows 平台 (UWP) app 時可以選用的程式設計語言。 雖然本文中的逐步解說是使用 C#，但是您可以使用一或多種程式設計語言來開發 UWP app (請參閱[語言、工具及架構](https://docs.microsoft.com/previous-versions/windows/apps/dn465799(v=win.10)))。
 
 您可以使用 C++、C#、Microsoft Visual Basic 以及 JavaScript 進行開發。 JavaScript 使用 HTML5 標記設定 UI 配置，而其他語言則使用稱為 *Extensible Application Markup Language (XAML)* 的標記語言來描述其 UI。
 
 雖然在本文中，我們將焦點放在 C# 上，但是您可能想要探索其他語言提供的獨特優點。 例如，如果您應用程式最主要的考量是效能，特別是處理大量圖形，那麼 C++ 可能是正確的選擇。 Microsoft .NET 版本的 Visual Basic 非常適合 Visual Basic 應用程式開發人員。 JavaScript 搭配 HTML5 則適合具有網路開發背景的開發人員。 如需詳細資訊，請參閱下列各個主題：
 
--   [建立第一個 UWP 應用程式使用 c + +](../get-started/create-a-basic-windows-10-app-in-cpp.md)
+-   [建立您第一次的 UWP 應用程式使用C++](../get-started/create-a-basic-windows-10-app-in-cpp.md)
 -   [建立您第一次的 UWP 應用程式使用C#或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
 -   [建立第一個 UWP 應用程式使用 JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
 
 **附註**  使用 3D 圖形的應用程式，OpenGL 和 OpenGL ES 標準也不以原生方式適用於 UWP 應用程式。 如果您不希望將您的 OpenGL ES 程式碼重新撰寫成 Microsoft DirectX，則您可能會想要了解 **Angle**。 Angle 是一個正在進行中的專案，設計目的是透過將 OpenGL API 呼叫轉譯成 DirectX API 呼叫，來將 OpenGL 轉換成 DirectX。 若要深入了解，請參閱下列主題：
--   [角度](https://code.google.com/p/angleproject/)
--   [建立第一個 UWP 應用程式使用 DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [Angle](https://code.google.com/p/angleproject/)
+-   [建立第一個 UWP 應用程式使用 DirectX](https://docs.microsoft.com/previous-versions/windows/apps/br229580(v=win.10))
 -   [使用 DirectX 的 UWP 應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=263603)
--   [DirectX SDK 位於何處？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
+-   [DirectX SDK 位於何處？](https://docs.microsoft.com/windows/desktop/directx-sdk--august-2009-)
 
 ## <a name="giving-c-a-go"></a>試看看使用 C#
 

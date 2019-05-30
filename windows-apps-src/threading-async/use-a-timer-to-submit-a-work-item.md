@@ -6,28 +6,28 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, timer, threads, Windows 10, uwp, 計時器, 執行緒
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ee5142997e3d4824152adf6d0b26bccb8a30f7f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7a1a7a161734a142b5f1399798394494d05c6a49
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613303"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371514"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用計時器提交工作項目
 
 
 <b>重要的 Api</b>
 
--   [**Windows.UI.Core 命名空間**](https://msdn.microsoft.com/library/windows/apps/BR208383)
--   [**Windows.System.Threading 命名空間**](https://msdn.microsoft.com/library/windows/apps/BR229642)
+-   [**Windows.UI.Core namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+-   [**Windows.System.Threading 命名空間**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
 
 了解如何建立在計時器過後執行的工作項目。
 
 ## <a name="create-a-single-shot-timer"></a>建立單次計時器
 
-使用 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 方法建立工作項目的計時器。 提供完成工作的 Lambda，以及使用 *delay* 參數指定執行緒集區需要等待多久的時間，才能將工作項目指派給可用的執行緒。 延遲使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 結構指定。
+使用 [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) 方法建立工作項目的計時器。 提供完成工作的 Lambda，以及使用 *delay* 參數指定執行緒集區需要等待多久的時間，才能將工作項目指派給可用的執行緒。 延遲使用 [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) 結構指定。
 
-> **附註**  您可以使用[ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317)存取 UI，並顯示工作項目中的進度。
+> **附註**  您可以使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows)存取 UI，並顯示工作項目中的進度。
 
 下列範例會建立一個在三分鐘內執行的工作項目：
 
@@ -87,7 +87,7 @@ ms.locfileid: "57613303"
 
 ## <a name="provide-a-completion-handler"></a>提供完成處理常式
 
-如有需要，可使用 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) 處理取消及完成工作項目。 使用 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 超載提供其他 Lambda。 這會在取消計時器或工作項目完成時執行。
+如有需要，可使用 [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler) 處理取消及完成工作項目。 使用 [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) 超載提供其他 Lambda。 這會在取消計時器或工作項目完成時執行。
 
 下列範例會建立一個提交工作項目的計時器，並且在工作項目完成或取消計時器時呼叫方法：
 
@@ -207,7 +207,7 @@ ms.locfileid: "57613303"
 
 ## <a name="cancel-the-timer"></a>取消計時器
 
-如果計時器仍在倒數計時，但已不再需要該工作項目，可呼叫 [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588)。 就會取消計時器，而且不會將工作項目提交至執行緒集區。
+如果計時器仍在倒數計時，但已不再需要該工作項目，可呼叫 [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel)。 就會取消計時器，而且不會將工作項目提交至執行緒集區。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -219,7 +219,7 @@ ms.locfileid: "57613303"
 
 ## <a name="remarks"></a>備註
 
-通用 Windows 平台 (UWP) app 無法使用 **Thread.Sleep**，因為它會封鎖 UI 執行緒。 您可以改為使用 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 來建立工作項目，這將會延遲由該工作項目完成的工作，而且不會封鎖 UI 執行緒。
+通用 Windows 平台 (UWP) app 無法使用 **Thread.Sleep**，因為它會封鎖 UI 執行緒。 您可以改為使用 [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) 來建立工作項目，這將會延遲由該工作項目完成的工作，而且不會封鎖 UI 執行緒。
 
 如需示範工作項目、計時器工作項目以及定期工作項目的完整程式碼範例，請參閱[執行緒集區範例](https://go.microsoft.com/fwlink/p/?linkid=255387)。 範例程式碼原先針對 Windows 8.1 中編寫，但程式碼可以在 Windows 10 中重複使用。
 

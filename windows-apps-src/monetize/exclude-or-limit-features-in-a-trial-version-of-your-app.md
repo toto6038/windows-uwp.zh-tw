@@ -6,19 +6,19 @@ keywords: Windows 10, UWP, 試用版, app 內購買, IAP, Windows.ApplicationMod
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38590282a95e29ab240486e9c4a3f9cb9afe229c
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 868f9f5742122df861f5c7c62bc147372307033f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335096"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371798"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>在試用版本中排除或限制某些功能
 
 如果您讓客戶在試用期間免費使用 app，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 app。 開始撰寫程式碼之前應先決定要受到限制的功能，然後確定應用程式只有在購買完整授權後，才允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的應用程式之前的試用期間顯示。
 
 > [!IMPORTANT]
-> 這篇文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來實作試用版功能。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間。 **Windows.Services.Store**命名空間支援最新的附加元件類型，例如存放區管理需求的可取用的附加元件和訂用帳戶，而且設計成與未來的產品和協力廠商所支援功能的類型相容Center 和存放區。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需使用 **Windows.Services.Store** 命名空間實作試用功能的詳細資訊，請參閱[本文](implement-a-trial-version-of-your-app.md)。
+> 這篇文章示範如何使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 命名空間的成員來實作試用版功能。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間。 **Windows.Services.Store**命名空間支援最新的附加元件類型，例如存放區管理需求的可取用的附加元件和訂用帳戶，而且設計成與未來的產品和協力廠商所支援功能的類型相容Center 和存放區。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需使用 **Windows.Services.Store** 命名空間實作試用功能的詳細資訊，請參閱[本文](implement-a-trial-version-of-your-app.md)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -26,7 +26,7 @@ ms.locfileid: "58335096"
 
 ## <a name="step-1-pick-the-features-you-want-to-enable-or-disable-during-the-trial-period"></a>步驟 1：挑選您想要啟用或停用在試用期間的功能
 
-App 目前的授權狀態會儲存為 [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) 類別的屬性。 一般而言，您會將依存於授權狀態的函式放在條件性區塊中，如下個步驟所述。 考量這些功能時，請確定您實作功能的方式，可在所有授權狀態下運作。
+App 目前的授權狀態會儲存為 [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) 類別的屬性。 一般而言，您會將依存於授權狀態的函式放在條件性區塊中，如下個步驟所述。 考量這些功能時，請確定您實作功能的方式，可在所有授權狀態下運作。
 
 此外，決定您在應用程式執行時要如何處理應用程式授權的變更。 您的試用版應用程式可具備完整功能，但應用程式內會有付費版本所沒有的廣告橫幅。 或者，試用版應用程式可以停用特定功能，或是定期顯示訊息，詢問使用者是否要購買。
 
@@ -61,9 +61,9 @@ App 目前的授權狀態會儲存為 [LicenseInformation](https://msdn.microsof
 
 ## <a name="step-2-initialize-the-license-info"></a>步驟 2：初始化授權資訊
 
-當您的 App 初始化時，為您的 App 取得 [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) 物件，如此範例中所示。 我們假設 **licenseInformation** 是類型 **LicenseInformation** 的全域變數或欄位。
+當您的 App 初始化時，為您的 App 取得 [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) 物件，如此範例中所示。 我們假設 **licenseInformation** 是類型 **LicenseInformation** 的全域變數或欄位。
 
-現在，您將要使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 而不是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) 取得模擬的授權資訊。 將 App 的發行版本提交到**市集**之前，您必須將程式碼中所有的 **CurrentAppSimulator** 參考取代為 **CurrentApp**。
+現在，您將要使用 [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 而不是 [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 取得模擬的授權資訊。 將 App 的發行版本提交到**市集**之前，您必須將程式碼中所有的 **CurrentAppSimulator** 參考取代為 **CurrentApp**。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
@@ -111,14 +111,14 @@ App 目前的授權狀態會儲存為 [LicenseInformation](https://msdn.microsof
 
 務必對客戶說明您的 App 在免費試用期間或到期之後的行為，客戶才不會對 App 的行為感到意外。
 
-如需有關描述 app 的詳細資訊，請參閱[建立 app 描述](https://msdn.microsoft.com/library/windows/apps/mt148529)。
+如需有關描述 app 的詳細資訊，請參閱[建立 app 描述](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)。
 
 ## <a name="related-topics"></a>相關主題
 
 * [（示範試用版，以及在應用程式內購買） 的存放區範例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-* [設定應用程式的價格與可用性](https://msdn.microsoft.com/library/windows/apps/mt148548)
-* [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765)
-* [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766)
+* [設定應用程式的價格與可用性](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)
+* [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp)
+* [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator)
  
 
  

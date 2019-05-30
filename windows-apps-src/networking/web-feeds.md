@@ -6,23 +6,23 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b5312614c7060118fdb4678aa80ae51d6734486
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660303"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372778"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 摘要
 
 
 **重要的 Api**
 
--   [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819)
--   [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)
--   [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632)
+-   [**Windows.Data.Xml.Dom**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom)
+-   [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)
+-   [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication)
 
-使用 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。
+使用 [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。
 
 ## <a name="what-is-a-feed"></a>何謂摘要？
 
@@ -30,11 +30,11 @@ ms.locfileid: "57660303"
 
 ## <a name="which-feed-format-standards-are-supported"></a>支援哪些摘要格式標準？
 
-通用 Windows 平台 (UWP) 支援從 0.91 到 RSS 2.0 的 RSS 格式標準以及從 0.3 到 1.0 的 Atom 標準的摘要抓取。 [  **Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空間中的類別可定義能夠代表 RSS 以及 Atom 元素的摘要和摘要項目。
+通用 Windows 平台 (UWP) 支援從 0.91 到 RSS 2.0 的 RSS 格式標準以及從 0.3 到 1.0 的 Atom 標準的摘要抓取。 [  **Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) 命名空間中的類別可定義能夠代表 RSS 以及 Atom 元素的摘要和摘要項目。
 
-此外，Atom 1.0 和 RSS 2.0 格式皆允許它們的摘要文件包含官方規格未定義的元素或屬性。 經過一段時間後，這些自訂元素與屬性已經變成一種方法，用以定義由其他 Web 服務資料格式 (如 GData 與 OData) 所取用的網域特定資訊。 為了支援此新增功能，[**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) 類別代表一般 XML 元素。 使用 **SyndicationNode** 搭配 [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) 命名空間中的類別，可允許應用程式存取屬性、延伸以及任何可能包含的內容。
+此外，Atom 1.0 和 RSS 2.0 格式皆允許它們的摘要文件包含官方規格未定義的元素或屬性。 經過一段時間後，這些自訂元素與屬性已經變成一種方法，用以定義由其他 Web 服務資料格式 (如 GData 與 OData) 所取用的網域特定資訊。 為了支援此新增功能，[**SyndicationNode**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationNode) 類別代表一般 XML 元素。 使用 **SyndicationNode** 搭配 [**Windows.Data.Xml.Dom**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom) 命名空間中的類別，可允許應用程式存取屬性、延伸以及任何可能包含的內容。
 
-請注意，對於同步發佈的內容，Atom 發佈通訊協定 ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) 的 UWP 實作僅根據 Atom 與 Atom 發佈標準支援摘要內容作業。
+請注意，對於同步發佈的內容，Atom 發佈通訊協定 ([**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)) 的 UWP 實作僅根據 Atom 與 Atom 發佈標準支援摘要內容作業。
 
 ## <a name="using-syndicated-content-with-network-isolation"></a>使用具有網路隔離的同步發佈內容
 
@@ -42,7 +42,7 @@ ms.locfileid: "57660303"
 
 網路隔離可讓開發人員為每個應用程式定義所需網路存取權的範圍。 沒有定義適當範圍的應用程式在於防止存取指定類型的網路，以及特定類型的網路要求 (對外用戶端起始的要求，或是對內未經同意的要求以及對外用戶端起始的要求)。 設定和強制網路隔離的功能可確保如果應用程式確實受到威脅，它只能存取已明確授與應用程式存取權的網路。 這將可大幅減少對其他應用程式和 Windows 的影響範圍。
 
-網路隔離會影響 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 和 [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) 命名空間中任何想存取網路的類別元素。 Windows 會主動強制網路隔離。 如果未啟用適當的網路功能，則在 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空間中呼叫類別元素會因為網路隔離而導致網路存取失敗。
+網路隔離會影響 [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) 和 [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub) 命名空間中任何想存取網路的類別元素。 Windows 會主動強制網路隔離。 如果未啟用適當的網路功能，則在 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空間中呼叫類別元素會因為網路隔離而導致網路存取失敗。
 
 建立應用程式時，會在應用程式資訊清單中設定應用程式的網路功能。 網路功能通常會加入開發應用程式時，使用 Microsoft Visual Studio 2015。 也可以使用文字編輯器在應用程式資訊清單檔案中手動設定網路功能。
 
@@ -50,7 +50,7 @@ ms.locfileid: "57660303"
 
 ## <a name="how-to-access-a-web-feed"></a>如何存取網頁摘要
 
-本節說明如何在以 C# 或 Javascript 撰寫的 UWP 應用程式中使用 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空間的類別來抓取和顯示網頁摘要。
+本節說明如何在以 C# 或 Javascript 撰寫的 UWP 應用程式中使用 [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) 命名空間的類別來抓取和顯示網頁摘要。
 
 **必要條件**
 
@@ -58,9 +58,9 @@ ms.locfileid: "57660303"
 
 **擷取 web 摘要的新聞訂閱的內容**
 
-現在我們要檢閱一些示範如何抓取摘要的程式碼，然後顯示摘要所包含的每一個個別項目。 設定和傳送要求之前，我們會先定義一些要在作業期間使用的變數，然後初始化 [**SyndicationClient**](https://msdn.microsoft.com/library/windows/apps/br243456) 的執行個體，這可定義要用來抓取和顯示摘要的方法和屬性。
+現在我們要檢閱一些示範如何抓取摘要的程式碼，然後顯示摘要所包含的每一個個別項目。 設定和傳送要求之前，我們會先定義一些要在作業期間使用的變數，然後初始化 [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient) 的執行個體，這可定義要用來抓取和顯示摘要的方法和屬性。
 
-如果傳遞給建構函式的 *uriString* 不是有效 URI，[**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) 建構函式會擲回例外狀況。 所以我們要使用 try/catch 區塊來驗證 *uriString*。
+如果傳遞給建構函式的 *uriString* 不是有效 URI，[**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 建構函式會擲回例外狀況。 所以我們要使用 try/catch 區塊來驗證 *uriString*。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -93,13 +93,13 @@ try {
 }
 ```
 
-接下來，我們會透過設定所需的任何伺服器認證 ([**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) 屬性)、Proxy 認證 ([**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) 屬性) 及 HTTP 標頭 ([**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462) 方法) 來設定要求。 設定好基本的要求參數之後，會使用應用程式提供的摘要 URI 字串建立有效的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) 物件。 然後，將 **Uri** 物件傳遞到 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 函式以要求摘要。
+接下來，我們會透過設定所需的任何伺服器認證 ([**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) 屬性)、Proxy 認證 ([**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) 屬性) 及 HTTP 標頭 ([**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader) 方法) 來設定要求。 設定好基本的要求參數之後，會使用應用程式提供的摘要 URI 字串建立有效的 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 物件。 然後，將 **Uri** 物件傳遞到 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 函式以要求摘要。
 
 假設傳回所需的摘要內容，範例程式碼會逐一查看每個摘要項目，呼叫 **displayCurrentItem** (我們將在稍後定義)，以便透過 UI 以清單方式顯示項目及其內容。
 
 您必須撰寫程式碼，以處理在呼叫大多數非同步網路方法時的例外狀況。 您的例外狀況處理常式可以抓取例外狀況發生原因的更詳細資訊，更清楚地了解失敗的情況並作出適當的決定。
 
-如果無法與 HTTP 伺服器建立連線或 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br243460) 物件未指向有效的 AtomPub 或 RSS 摘要，[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br226017) 方法會擲回例外狀況。 如果發生錯誤，Javascript 範例程式碼會使用 **onError** 函式來擷取例外狀況，然後列印出例外狀況中的詳細訊息。
+如果無法與 HTTP 伺服器建立連線或 [**Uri**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 物件未指向有效的 AtomPub 或 RSS 摘要，[**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 方法會擲回例外狀況。 如果發生錯誤，Javascript 範例程式碼會使用 **onError** 函式來擷取例外狀況，然後列印出例外狀況中的詳細訊息。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -157,7 +157,7 @@ function retreiveFeed(uri) {
 }
 ```
 
-在上一個步驟中，[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 已傳回要求的摘要內容，而範例程式碼也順利地逐一查看可用的摘要項目。 這些項目都會使用 [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) 物件來表示，而這個物件包含相關同步發佈標準 (RSS 或 Atom) 提供的所有項目屬性和內容。 在下列範例中，我們觀察到 **displayCurrentItem** 函式透過每個項目運作，且透過各種指定 UI 元素來顯示其內容。
+在上一個步驟中，[**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 已傳回要求的摘要內容，而範例程式碼也順利地逐一查看可用的摘要項目。 這些項目都會使用 [**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) 物件來表示，而這個物件包含相關同步發佈標準 (RSS 或 Atom) 提供的所有項目屬性和內容。 在下列範例中，我們觀察到 **displayCurrentItem** 函式透過每個項目運作，且透過各種指定 UI 元素來顯示其內容。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -199,7 +199,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-如同稍早的建議，[**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) 物件所代表的內容類型會隨著發佈摘要所採用的摘要標準 (RSS 或 Atom) 而異。 例如，Atom 摘要能夠提供 [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540) 的清單，但是 RSS 摘要則否。 不過，您可以使用 [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543) 屬性，存取和顯示兩個標準都不支援的摘要項目所包含的延伸元素 (例如，Dublin Core 延伸元素)，如下列範例程式碼所示範：
+如同稍早的建議，[**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) 物件所代表的內容類型會隨著發佈摘要所採用的摘要標準 (RSS 或 Atom) 而異。 例如，Atom 摘要能夠提供 [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors) 的清單，但是 RSS 摘要則否。 不過，您可以使用 [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions) 屬性，存取和顯示兩個標準都不支援的摘要項目所包含的延伸元素 (例如，Dublin Core 延伸元素)，如下列範例程式碼所示範：
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

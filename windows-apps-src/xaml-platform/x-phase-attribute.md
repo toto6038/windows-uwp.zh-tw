@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6def088b3e7f6410f12d1b2e411bcb547c90a09a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dc1ec762e5c6f69db608805ac58cfb9469114beb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613283"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372275"
 ---
 # <a name="xphase-attribute"></a>x:Phase 屬性
 
 
-搭配使用 **x:Phase** 與 [{x:Bind} 標記延伸](x-bind-markup-extension.md)，可用遞增方式轉譯 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 項目，並改善移動瀏覽體驗。 **x:Phase** 可讓您以宣告方式，達成與使用 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件手動控制清單項目的呈現相同的效果。 另請參閱[以遞增方式更新 ListView 與 GridView 項目](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
+搭配使用 **x:Phase** 與 [{x:Bind} 標記延伸](x-bind-markup-extension.md)，可用遞增方式轉譯 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 項目，並改善移動瀏覽體驗。 **x:Phase** 可讓您以宣告方式，達成與使用 [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件手動控制清單項目的呈現相同的效果。 另請參閱[以遞增方式更新 ListView 與 GridView 項目](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
 
 ## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
@@ -69,15 +69,15 @@ ms.locfileid: "57613283"
 3.  顯示 prettyFileSize 和 prettyImageSize 文字區塊。
 4.  顯示影像。
 
-分段是 [{x:Bind}](x-bind-markup-extension.md) 的功能之一，可與衍生自 [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 的控制項搭配運作，並可用遞增方式處理資料繫結的項目範本。 轉譯清單項目時，**ListViewBase** 會在單一階段中轉譯檢視中的所有項目，再移至下一個階段。 轉譯工作會以分時段的批次執行，因此在清單捲動時可以重新評估所需的工作，且對於不再顯示的項目將不會執行轉譯。
+分段是 [{x:Bind}](x-bind-markup-extension.md) 的功能之一，可與衍生自 [**ListViewBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase) 的控制項搭配運作，並可用遞增方式處理資料繫結的項目範本。 轉譯清單項目時，**ListViewBase** 會在單一階段中轉譯檢視中的所有項目，再移至下一個階段。 轉譯工作會以分時段的批次執行，因此在清單捲動時可以重新評估所需的工作，且對於不再顯示的項目將不會執行轉譯。
 
-**x:Phase** 屬性可以對資料範本中任何使用 [{x:Bind}](x-bind-markup-extension.md) 的元素指定。 當元素的階段不是 0 時，該元素將會隱藏於檢視中 (透過 **Opacity**，而非 **Visibility**)，直到該階段處理完成且繫結更新為止。 [  **ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 衍生的控制項在捲動時，將會從已不在畫面上的項目回收項目範本，以轉譯新的可見項目。 範本中的 UI 元素會保留其舊值，直到再次完成資料繫結為止。 分段會造成資料繫結步驟延遲，因此在分段時必須隱藏 UI 元素，以免它們過時。
+**x:Phase** 屬性可以對資料範本中任何使用 [{x:Bind}](x-bind-markup-extension.md) 的元素指定。 當元素的階段不是 0 時，該元素將會隱藏於檢視中 (透過 **Opacity**，而非 **Visibility**)，直到該階段處理完成且繫結更新為止。 [  **ListViewBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase) 衍生的控制項在捲動時，將會從已不在畫面上的項目回收項目範本，以轉譯新的可見項目。 範本中的 UI 元素會保留其舊值，直到再次完成資料繫結為止。 分段會造成資料繫結步驟延遲，因此在分段時必須隱藏 UI 元素，以免它們過時。
 
 每個 UI 元素可能只有一個指定的階段。 若是如此，將會套用到元素的所有繫結。 若未指定階段，將會使用階段 0。
 
-階段號碼不需要是連續的，且會與 [**ContainerContentChangingEventArgs.Phase**](https://msdn.microsoft.com/library/windows/apps/dn298493) 的值相同。 在處理 **x:Phase** 繫結之前，將會為每個階段引發 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件。
+階段號碼不需要是連續的，且會與 [**ContainerContentChangingEventArgs.Phase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.containercontentchangingeventargs.phase) 的值相同。 在處理 **x:Phase** 繫結之前，將會為每個階段引發 [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件。
 
 分段只會對 [{x:Bind}](x-bind-markup-extension.md) 繫結造成影響，不會影響到 [{Binding}](binding-markup-extension.md) 繫結。
 
-只有使用可辨識分段功能的控制項轉譯項目範本時，才可使用分段。 適用於 Windows 10，這表示[ **ListView** ](https://msdn.microsoft.com/library/windows/apps/br242878)並[ **GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 分段不會套用至其他項目控制項中使用的資料範本，或是其他案例 (如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 區段)，而在大多數的情況下，所有的 UI 元素會同時進行資料繫結。
+只有使用可辨識分段功能的控制項轉譯項目範本時，才可使用分段。 適用於 Windows 10，這表示[ **ListView** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)並[ **GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)。 分段不會套用至其他項目控制項中使用的資料範本，或是其他案例 (如 [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) 或 [**Hub**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) 區段)，而在大多數的情況下，所有的 UI 元素會同時進行資料繫結。
 

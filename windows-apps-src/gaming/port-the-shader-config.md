@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, port, shader, direct3d, opengl, 遊戲, 連接埠, 著色器, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b800a32149011376e1d97e0da44d32c733ddfb93
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618743"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368229"
 ---
 # <a name="port-the-shader-objects"></a>移植著色器物件
 
@@ -20,8 +20,8 @@ ms.locfileid: "57618743"
 
 **重要的 Api**
 
--   [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)
--   [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)
+-   [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)
+-   [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)
 
 從 OpenGL ES 2.0 移植簡單的轉譯器時，第一個步驟是在 Direct3D 11 中設定對等的頂點和片段著色器物件，以及確定主程式可以在著色器物件編譯完成之後與這些物件通訊。
 
@@ -29,7 +29,7 @@ ms.locfileid: "57618743"
 
  
 
-與 OpenGL ES 2.0 非常類似，在 Direct3D 中編譯好的著色器必須和繪圖內容產生關聯。 但是，Direct3D 本身並未提供著色器程式物件的概念；而是必須由您直接將著色器指派給 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)。 這個步驟遵循可用來建立和繫結著色器物件的 OpenGL ES 2.0 程序，並為您提供 Direct3D 中相對應的 API 行為。
+與 OpenGL ES 2.0 非常類似，在 Direct3D 中編譯好的著色器必須和繪圖內容產生關聯。 但是，Direct3D 本身並未提供著色器程式物件的概念；而是必須由您直接將著色器指派給 [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)。 這個步驟遵循可用來建立和繫結著色器物件的 OpenGL ES 2.0 程序，並為您提供 Direct3D 中相對應的 API 行為。
 
 <a name="instructions"></a>指示
 ------------
@@ -168,7 +168,7 @@ GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *frag
 glUseProgram(renderer->programObject);
 ```
 
-Direct3D 沒有著色器程式物件的概念； 而是會在呼叫 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 介面 (例如 [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 或 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)) 上的其中一個著色器建立方法時建立著色器。 為了針對目前繪製內容設定著色器，我們使用一組著色器方法，提供著色器給對應的 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)，例如，適用於頂點著色器的 [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493)，或是適用於片段著色器的 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)。
+Direct3D 沒有著色器程式物件的概念； 而是會在呼叫 [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) 介面 (例如 [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) 或 [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)) 上的其中一個著色器建立方法時建立著色器。 為了針對目前繪製內容設定著色器，我們使用一組著色器方法，提供著色器給對應的 [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)，例如，適用於頂點著色器的 [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader)，或是適用於片段著色器的 [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader)。
 
 Direct3D 11:設定著色器圖形裝置的繪圖內容。
 
@@ -227,7 +227,7 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 
 Direct3D 沒有相同意義的「屬性」或 "uniform" 概念 (或者至少它不會共用此語法)； 而是提供以 Direct3D 子資源表示的常數緩衝區 -- 在主程式與著色器程式之間共用的資源。 這其中的部分子資源 (例如，頂點位置與色彩) 會使用 HLSL 語意來說明。 如需關於常數緩衝區與 HLSL 語意 (當它們與 OpenGL ES 2.0 概念相關時) 的詳細資訊，請參閱[移植框架緩衝區物件、Uniform 及屬性](porting-uniforms-and-attributes.md)。
 
-將這個程序移至 Direct3D 時，我們會將 Uniform 轉換成 Direct3D 常數緩衝區 (cbuffer)，並為它指派暫存器，以使用 **register** HLSL 語意進行查詢。 這兩個頂點屬性會被處理成著色器管線階段的輸入元素，同時也會被指派可通知著色器的 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION 與 COLOR0)。 像素著色器會採用 SV\_SV 的位置，\_前置詞表示它產生 GPU 的系統值。 （在此情況下，它會掃描轉換期間所產生的像素位置。）VertexShaderInput 和 PixelShaderInput 未宣告為常數緩衝處理，因為前者會用來定義頂點緩衝區 (請參閱[連接埠的端點緩衝區和資料](port-the-vertex-buffers-and-data-config.md))，而且後者的資料會產生的結果在管線中，在此情況下是端點著色器的上一個階段。
+將這個程序移至 Direct3D 時，我們會將 Uniform 轉換成 Direct3D 常數緩衝區 (cbuffer)，並為它指派暫存器，以使用 **register** HLSL 語意進行查詢。 這兩個頂點屬性會被處理成著色器管線階段的輸入元素，同時也會被指派可通知著色器的 [HLSL 語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps) (POSITION 與 COLOR0)。 像素著色器會採用 SV\_SV 的位置，\_前置詞表示它產生 GPU 的系統值。 （在此情況下，它會掃描轉換期間所產生的像素位置。）VertexShaderInput 和 PixelShaderInput 未宣告為常數緩衝處理，因為前者會用來定義頂點緩衝區 (請參閱[連接埠的端點緩衝區和資料](port-the-vertex-buffers-and-data-config.md))，而且後者的資料會產生的結果在管線中，在此情況下是端點著色器的上一個階段。
 
 Direct3D:HLSL 常數緩衝區和頂點資料定義
 
@@ -275,7 +275,7 @@ struct VertexPositionColor
 
 使用 DirectXMath XM\*您常數的類型會緩衝項目，因為它們提供適當的封裝和內容的對齊方式傳送至著色器管線時。 如果您使用標準的 Windows 平台浮點數類型與陣列，就必須自行執行封裝與對齊。
 
-要繫結常數緩衝區，建立 版面配置描述作為[ **CD3D11\_緩衝區\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/jj151620)結構，並將它傳遞給[ **ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)。 接著，在您的轉譯方法中，先將常數緩衝區傳送到 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486)，再進行繪製。
+要繫結常數緩衝區，建立 版面配置描述作為[ **CD3D11\_緩衝區\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-cd3d11_buffer_desc)結構，並將它傳遞給[ **ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)。 接著，在您的轉譯方法中，先將常數緩衝區傳送到 [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource)，再進行繪製。
 
 Direct3D 11:常數緩衝區繫結
 

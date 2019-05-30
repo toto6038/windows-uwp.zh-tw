@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, timer, threads, Windows 10, uwp, 計時器, 執行緒
 ms.localizationpriority: medium
-ms.openlocfilehash: f11207a774b1ffcebde95e316634592020e6ed49
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3afa1720ede9728e9cc25af434a431300faf26d6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631213"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371213"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>在多執行緒環境中使用 Windows 執行階段物件
 本文討論 .NET Framework 如何處理從 C# 與 Visual Basic 程式碼對 Windows 執行階段或 Windows 執行階段元件所提供物件的呼叫。
@@ -20,7 +20,7 @@ ms.locfileid: "57631213"
 
 如果可行，Common Language Runtime (CLR) 會將其他來源 (例如 Windows 執行階段) 的物件視為 .NET Framework 物件：
 
-- 如果物件實作 [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) 介面，或有具有 [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023) 的 [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) 屬性，則 CLR 會將該物件視為 agile。
+- 如果物件實作 [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) 介面，或有具有 [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023) 的 [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) 屬性，則 CLR 會將該物件視為 agile。
 
 - 如果 CLR 會封送處理來自執行緒的呼叫，且該執行緒是對目標物件的執行緒內容進行此呼叫之處，則系統會以透明的方式進行。
 
@@ -34,7 +34,7 @@ ms.locfileid: "57631213"
 > [!NOTE]
 >  敏捷性並不代表執行緒是安全的。 在 Windows 執行階段與 .NET Framework 中，大多數的類別都不是安全執行緒，因為執行緒安全性具有效能成本，且大多數的物件從未由多個執行緒存取過。 只有在需要時才同步處理對個別物件的存取 (或使用安全執行緒類別)，這種做法會更有效率。
 
-當您撰寫 Windows 執行階段元件時，您可以覆寫預設值。 查看 [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) 介面與 [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) 介面。
+當您撰寫 Windows 執行階段元件時，您可以覆寫預設值。 查看 [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) 介面與 [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) 介面。
 
 ## <a name="objects-from-the-windows-runtime"></a>來自 Windows 執行階段的物件
 Windows 執行階段中大多數的類別是 agile，CLR 會將這些類別視為 agile。 這些類別的文件會列出類別屬性之間的 "MarshalingBehaviorAttribute(Agile)"。 但是，如果未在 UI 執行緒上呼叫這些 agile 類別中的成員，例如 XAML 控制項，則這些成員會擲回例外狀況。 例如，下列程式碼嘗試使用背景執行緒，來設定已按下按鈕的屬性。 按鈕的 [Content](https://go.microsoft.com/fwlink/p/?LinkId=256025) 屬性擲回例外狀況。

@@ -7,17 +7,17 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6efe7aa27721f519ba93052abf2d0e8189f58941
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 87d4be69d9a7869f5331d30225e93a22ad9e959c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622313"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371256"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>使用系統產生的值
 
 
-系統產生的值由[輸入組合語言 (IA) 階段](input-assembler-stage--ia-.md)產生 (根據使用者提供輸入[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)) 允許特定著色器作業效率。 藉由附加像執行個體識別碼 (顯現於[頂點著色器 (VS) 階段](vertex-shader-stage--vs-.md))、頂點識別碼 (顯現於 VS) 或基本識別碼 (顯現於[幾何著色器 (GS) 階段](geometry-shader-stage--gs-.md)/[像素著色器 (PS) 階段](pixel-shader-stage--ps-.md))，後續著色器階段可能會尋找這些系統值，以在該階段進行最佳化處理。
+系統產生的值由[輸入組合語言 (IA) 階段](input-assembler-stage--ia-.md)產生 (根據使用者提供輸入[語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)) 允許特定著色器作業效率。 藉由附加像執行個體識別碼 (顯現於[頂點著色器 (VS) 階段](vertex-shader-stage--vs-.md))、頂點識別碼 (顯現於 VS) 或基本識別碼 (顯現於[幾何著色器 (GS) 階段](geometry-shader-stage--gs-.md)/[像素著色器 (PS) 階段](pixel-shader-stage--ps-.md))，後續著色器階段可能會尋找這些系統值，以在該階段進行最佳化處理。
 
 例如，VS 階段可能會尋找執行個體識別碼，為著色器抓取每個頂點其他資料或執行其他作業；GS 和 PS 階段可能使用基本類型識別碼，以相同方式抓取每個基本類型資料。
 
@@ -41,7 +41,7 @@ IA 階段會將基本類型識別碼新增到每個基本類型以供[幾何著�
 
 不支援自動產生相鄰基本類型的基本類型識別碼。 對於有相鄰關係的基本類型（例如有相鄰關係的三角形連環），僅保留內部基本類型（非相鄰基本類型）的基本類型識別碼，就像是沒有相鄰關係的三角形連環中的基本類型集合。
 
-## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>執行個體識別碼
+## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>InstanceID
 
 
 每個著色器階段使用執行個體識別碼，來辨識目前處理中幾何的執行個體。 它是預設值為 0 的 32 位元不帶正負號整數。
@@ -62,7 +62,7 @@ IA 階段會將基本類型識別碼新增到每個基本類型以供[幾何著�
 | 頂點資料    | C,U | D,U | E,U | F,U | G,U | H,U | I,U | J,U | K,U | L,U |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **執行個體識別碼** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
  
 
@@ -71,7 +71,7 @@ IA 階段會將基本類型識別碼新增到每個基本類型以供[幾何著�
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **執行個體識別碼**  | 0   | 0   | 0   |
+| **InstanceID**  | 0   | 0   | 0   |
 
  
 
@@ -80,7 +80,7 @@ IA 階段會將基本類型識別碼新增到每個基本類型以供[幾何著�
 | 頂點資料    | C,V | D,V | E,V | F,V | G,V | H,V | I,V | J,V | K,V | L,V |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **執行個體識別碼** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
+| **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
  
 
@@ -89,7 +89,7 @@ IA 階段會將基本類型識別碼新增到每個基本類型以供[幾何著�
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **執行個體識別碼**  | 1   | 1   | 1   |
+| **InstanceID**  | 1   | 1   | 1   |
 
  
 

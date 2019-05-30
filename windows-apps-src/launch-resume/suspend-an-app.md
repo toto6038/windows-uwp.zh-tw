@@ -11,24 +11,24 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: e440812861cf853810f9fee597c807b439dda426
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6d1b97e76dc1bf15bded6f44c38a67f40babf7b6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599043"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370528"
 ---
 # <a name="handle-app-suspend"></a>處理應用程式暫停
 
 **重要的 Api**
 
-- [**暫止**](https://msdn.microsoft.com/library/windows/apps/br242341)
+- [**暫止**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
 
-了解如何在系統暫停您的應用程式時，儲存重要的應用程式資料。 這個範例會為 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件登錄一個事件處理常式，並將一個字串儲存至檔案。
+了解如何在系統暫停您的應用程式時，儲存重要的應用程式資料。 這個範例會為 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件登錄一個事件處理常式，並將一個字串儲存至檔案。
 
 ## <a name="register-the-suspending-event-handler"></a>登錄暫停事件處理常式
 
-登錄以處理 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件，它會指示 app 必須在系統暫停 app 之前，儲存自己的應用程式資料。
+登錄以處理 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件，它會指示 app 必須在系統暫停 app 之前，儲存自己的應用程式資料。
 
 ```csharp
 using System;
@@ -82,7 +82,7 @@ MainPage::MainPage()
 
 ## <a name="save-application-data-before-suspension"></a>暫停之前，先儲存應用程式資料
 
-當您的 app 處理 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件時，它有機會在處理常式函式中儲存自己的重要應用程式資料。 App 必須使用 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 儲存 API 來同步儲存簡單的應用程式資料。
+當您的 app 處理 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件時，它有機會在處理常式函式中儲存自己的重要應用程式資料。 App 必須使用 [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) 儲存 API 來同步儲存簡單的應用程式資料。
 
 ```csharp
 partial class MainPage
@@ -133,11 +133,11 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 當使用者切換至另一個 app、桌面或 [開始] 畫面時，系統會暫停您的 app。 當使用者切換回您的 app 時，系統就會繼續執行 app。 當系統繼續執行您的 app 時，您的變數和資料結構內容和系統暫停 app 之前一樣，沒有變化。 系統會將 app 回復成暫停之前的相同狀態，如此使用者會以為 app 一直在背景中執行。
 
-當 app 暫停時，系統會嘗試讓 app 及其資料保留在記憶體中。 不過，如果系統沒有資源可將 app 保存在記憶體中，系統將終止您的 app。 當使用者切換回已被終止的暫停 app 時，系統會傳送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，且必須在它的 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中復原應用程式資料。
+當 app 暫停時，系統會嘗試讓 app 及其資料保留在記憶體中。 不過，如果系統沒有資源可將 app 保存在記憶體中，系統將終止您的 app。 當使用者切換回已被終止的暫停 app 時，系統會傳送 [**Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件，且必須在它的 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 方法中復原應用程式資料。
 
 系統不會在 app 終止時提供通知，所以 app 必須在暫停時儲存應用程式資料並釋放獨占資源及檔案控制代碼，並在終止狀態結束後重新啟用時還原這些項目。
 
-如果您在處理常式內進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至下一個狀態。 針對會傳送給事件處理常式的 [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) 物件使用 [**GetDeferral**](https://aka.ms/Kt66iv) 方法以延遲暫停，一直到您針對傳回的 [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 物件呼叫 [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) 方法之後。
+如果您在處理常式內進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至下一個狀態。 針對會傳送給事件處理常式的 [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) 物件使用 [**GetDeferral**](https://aka.ms/Kt66iv) 方法以延遲暫停，一直到您針對傳回的 [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) 物件呼叫 [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) 方法之後。
 
 延遲不會提高在應用程式終止之前所需執行的程式碼數量。 其只會延遲終止，直到呼叫延遲的 *Complete* 方法或期限到期 (*視何者先發生*) 為止。 若要延長暫停狀態的時間，請使用 [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
@@ -151,7 +151,7 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 * [應用程式生命週期](app-lifecycle.md)
 * [處理應用程式啟用](activate-an-app.md)
 * [處理應用程式繼續執行](resume-an-app.md)
-* [UX 指導方針，以便啟動，暫止和繼續](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [UX 指導方針，以便啟動，暫止和繼續](https://docs.microsoft.com/windows/uwp/launch-resume/index)
 * [延伸的執行](run-minimized-with-extended-execution.md)
 
  

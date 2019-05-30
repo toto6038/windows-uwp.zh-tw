@@ -5,12 +5,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fa0f12779ad56d57c92f667443644851dc3d5e5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d85051aabdb7631c5bdb84e08d6d10a0f70d6ede
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629363"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372289"
 ---
 # <a name="xload-attribute"></a>x:Load 屬性
 
@@ -21,7 +21,7 @@ ms.locfileid: "57629363"
 XAML 架構為了追蹤延遲元素，會針對每一個帶有 x:Load 屬性的元素增加 600 位元組的記憶體使用量，作為其預留位置使用。 因此，過度使用此屬性可能反而會導致效能降低。 我們建議您只針對需要隱藏的項目使用此屬性。 若您在一個容器上使用 x:Load，則系統只需要針對帶有 x:Load 屬性的元素承擔額外負荷。
 
 > [!IMPORTANT]
-> X： 負載屬性是可用以啟動 Windows 10 版本 1703 (Creators Update)。 Visual Studio 專案設為目標的版本必須至少是 *Windows 10 Creators Update (10.0，組建 15063)*，才能使用 x:Load。
+> X： 負載屬性是可用以啟動 Windows 10 版本 1703 (Creators Update)。 Visual Studio 專案設為目標的版本必須至少是 *Windows 10 Creators Update (10.0，組建 15063)* ，才能使用 x:Load。
 
 ## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
@@ -36,16 +36,16 @@ XAML 架構為了追蹤延遲元素，會針對每一個帶有 x:Load 屬性的�
 有幾種不同的方式可用來載入元素：
 
 - 使用 [x:Bind](x-bind-markup-extension.md) 運算式指定載入狀態。 運算式應該會傳回 **true** 以進行載入，以及 **false** 以取消載入。
-- 使用您在元素上定義的名稱呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)。
-- 使用您在元素上定義的名稱呼叫 [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416)。
-- 在 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 中，使用以 x:Load 元素為目標的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 **Storyboard** 動畫。
+- 使用您在元素上定義的名稱呼叫 [**FindName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.findname)。
+- 使用您在元素上定義的名稱呼叫 [**GetTemplateChild**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.gettemplatechild)。
+- 在 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 中，使用以 x:Load 元素為目標的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 或 **Storyboard** 動畫。
 - 在任何一個 **Storyboard** 中以取消載入的元素做為目標。
 
 > 注意：一旦啟動項目的具現化，則會建立在 UI 執行緒，因此可能會導致多如果太多一次建立 UI。
 
 以任何前述方法建立延遲的元素後，將會發生幾件事：
 
-- 引發元素的 [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) 事件。
+- 引發元素的 [**Loaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.loaded) 事件。
 - 設定 x:Name 欄位。
 - 任何正繫結在元素上的 x:Bind 都會受到評估。
 - 如果您已登錄而會接收包含延遲元素之屬性的屬性變更通知，通知將會引發。
@@ -67,21 +67,21 @@ XAML 架構為了追蹤延遲元素，會針對每一個帶有 x:Load 屬性的�
 **x:Load** 的使用限制如下：
 
 - 您必須定義[X:name](x-name-attribute.md) 讓項目，與必須設法稍後尋找項目。
-- 您只能在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 或 [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) 衍生的類型上使用 x:Load。
-- 您不能在 [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)，或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中的根元素上使用 x:Load。
-- 您不能在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的元素上使用 x:Load。
-- 您無法在與 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 一同載入的鬆散 XAML 上使用 x:Load。
+- 您只能在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 或 [**FlyoutBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase) 衍生的類型上使用 x:Load。
+- 您不能在 [**Page**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)、[**UserControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)，或 [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) 中的根元素上使用 x:Load。
+- 您不能在 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中的元素上使用 x:Load。
+- 您無法在與 [**XamlReader.Load**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlreader.load) 一同載入的鬆散 XAML 上使用 x:Load。
 - 移動父元素將會清除任何尚未載入的元素。
 
 ## <a name="remarks"></a>備註
 
 您可以在巢狀元素上使用 x:Load，但必須從最外層元素開始辨識這些元素。  如果您嘗試在辨識父元素之前辨識子元素，將會引發例外狀況。
 
-一般而言，我們建議您延後不會出現在第一個畫面中的元素。 在尋找要延遲的候選項目時，建議您尋找以摺疊的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 建立的元素。 此外，使用者互動所觸發的 UI 也是您尋找延遲元素的理想之處。
+一般而言，我們建議您延後不會出現在第一個畫面中的元素。 在尋找要延遲的候選項目時，建議您尋找以摺疊的 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 建立的元素。 此外，使用者互動所觸發的 UI 也是您尋找延遲元素的理想之處。
 
-請留意 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 中的延遲元素，因為它雖然可減少您的啟動時間，但也可能隨著您所建立的項目而導致移動瀏覽效能下降。 如果您想要提升移動瀏覽效能，請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)和 [x:Phase 屬性](x-phase-attribute.md)文件。
+請留意 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 中的延遲元素，因為它雖然可減少您的啟動時間，但也可能隨著您所建立的項目而導致移動瀏覽效能下降。 如果您想要提升移動瀏覽效能，請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)和 [x:Phase 屬性](x-phase-attribute.md)文件。
 
-如果 [x:Phase 屬性](x-phase-attribute.md)結合 **x:Load** 使用，則當元素或元素樹狀結構實現之後，繫結會向上套用且包含目前階段。 針對 **x:Phase** 指定的階段將會影響或控制元素的載入狀態。 當清單項目被視為移動瀏覽的一部分回收時，實現的元素會與其他作用中元素的行為相同，而已編譯的繫結 (**{x:Bind}** 繫結) 會使用相同的規則處理 (包括階段處理)。
+如果 [x:Phase 屬性](x-phase-attribute.md)結合 **x:Load** 使用，則當元素或元素樹狀結構實現之後，繫結會向上套用且包含目前階段。 針對 **x:Phase** 指定的階段將會影響或控制元素的載入狀態。 當清單項目被視為移動瀏覽的一部分回收時，實現的元素會與其他作用中元素的行為相同，而已編譯的繫結 ( **{x:Bind}** 繫結) 會使用相同的規則處理 (包括階段處理)。
 
 一般會建議您在之前或之後測量您應用程式的執行效能，以確保您得到想要的效能。
 

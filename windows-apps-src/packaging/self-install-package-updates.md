@@ -6,12 +6,12 @@ ms.date: 04/04/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fc5fca95ca475444792fb0209a936bdfc64cb3c6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604443"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372354"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>從 Microsoft Store 下載與安裝套件更新
 
@@ -30,10 +30,10 @@ ms.locfileid: "57604443"
 
 此程式碼範例假設：
 
-* 程式碼會在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的內容中執行。
-* **Page** 包含名為 ```downloadProgressBar``` 的 [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx)，可提供下載作業的狀態。
+* 程式碼會在 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 的內容中執行。
+* **Page** 包含名為 ```downloadProgressBar``` 的 [ProgressBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar)，可提供下載作業的狀態。
 * 程式碼檔案含有使用 **Windows.Services.Store**、**Windows.Threading.Tasks** 及 **Windows.UI.Popups** 命名空間的 **using** 陳述式。
-* App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 針對[多使用者應用程式](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法。
+* App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 針對[多使用者應用程式](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法。
 
 ```csharp
 private StoreContext context = null;
@@ -93,13 +93,13 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 
 ## <a name="download-and-install-package-updates-silently"></a>以無訊息方式下載及安裝套件更新
 
-從 Windows 10 版本 1803 起，您可以使用[TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync)和[TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync)方法以無訊息方式下載及安裝套件更新（不向使用者顯示 UI 通知）。 只有在使用者已在 Microsoft Store 中啟用**\[自動更新 App\]** 設定，而且使用者不是在計量付費網路上，這項作業才會成功。 呼叫這些方法之前，您可以先查看[CanSilentlyDownloadStorePackageUpdates](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.cansilentlydownloadstorepackageupdates)屬性，判斷目前是否符合這些條件。
+從 Windows 10 版本 1803 起，您可以使用[TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync)和[TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync)方法以無訊息方式下載及安裝套件更新（不向使用者顯示 UI 通知）。 只有在使用者已在 Microsoft Store 中啟用 **\[自動更新 App\]** 設定，而且使用者不是在計量付費網路上，這項作業才會成功。 呼叫這些方法之前，您可以先查看[CanSilentlyDownloadStorePackageUpdates](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.cansilentlydownloadstorepackageupdates)屬性，判斷目前是否符合這些條件。
 
 此程式碼範例示範如何使用[GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync)方法來探索所有可用的套件更新，然後呼叫[TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) 和 [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) 方法以無訊息方式下載並安裝更新。
 
 此程式碼範例假設：
 * 程式碼檔案含有 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空間的 **using** 陳述式。
-* App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 針對[多使用者應用程式](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法。
+* App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 針對[多使用者應用程式](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法。
 
 > [!NOTE]
 > 此範例程式碼所呼叫的**IsNowAGoodTimeToRestartApp**、**RetryDownloadAndInstallLater**和**RetryInstallLater**方法是預留位置方法，用來依據您自己的應用程式設計視需要實作。
@@ -202,7 +202,7 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 1. 登入[合作夥伴中心](https://partner.microsoft.com/dashboard)並瀏覽至您的應用程式的 [概觀] 頁面。
 2. 按一下提交的名稱，其中包含您想要變成強制性的套件更新。
-3. 瀏覽到提交的 **\[套件\]** 頁面。 在此頁面底部附近選取 **\[使此更新變成強制性\]**，然後選擇套件更新變成強制性的日期和時間。 這個選項適用於提交中的所有 UWP 套件。
+3. 瀏覽到提交的 **\[套件\]** 頁面。 在此頁面底部附近選取 **\[使此更新變成強制性\]** ，然後選擇套件更新變成強制性的日期和時間。 這個選項適用於提交中的所有 UWP 套件。
 
 如需詳細資訊，請參閱[上傳應用程式套件](../publish/upload-app-packages.md)。
 
@@ -330,7 +330,7 @@ private void HandleMandatoryPackageError()
 
 下列程式碼範例示範如何呼叫 [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync)。 此範例假設：
 * 程式碼檔案含有 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空間的 **using** 陳述式。
-* App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 針對[多使用者應用程式](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法。
+* App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 針對[多使用者應用程式](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法。
 
 ```csharp
 public async Task UninstallPackage(Windows.ApplicationModel.Package package)
@@ -373,7 +373,7 @@ public async Task UninstallPackage(Windows.ApplicationModel.Package package)
 
 下列程式碼範例示範如何呼叫[GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync)，針對目前的應用程式取得進行中套件更新的清單中，並擷取每個套件的狀態資訊。 此範例假設：
 * 程式碼檔案含有 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空間的 **using** 陳述式。
-* App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 針對[多使用者應用程式](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法。
+* App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 針對[多使用者應用程式](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法。
 
 > [!NOTE]
 > 此範例程式碼所呼叫的**MarkUpdateInProgressInUI**、**RemoveItemFromUI**、**MarkInstallCompleteInUI**、**MarkInstallErrorInUI**和**MarkInstallPausedInUI**方法是預留位置方法，用來依據您自己的應用程式設計視需要實作。

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5847553bed563b724bb142f7abe62403fa8ec097
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d30554c22fbd40a555f51b25011b128072a16165
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645183"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372236"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP
 
@@ -27,17 +27,17 @@ ms.locfileid: "57645183"
 
 當應用程式變成非使用中，而系統即將引發暫停事件之前，通用 8.1 應用程式會有兩秒鐘的「防反彈空檔」。 使用這個防反彈空檔當成額外的暫停狀態時間並不安全，因為通用 Windows 平台 (UWP) 應用程式完全沒有防反彈空檔。當 應用程式變成非使用中時，隨即會引發暫停事件。
 
-如需詳細資訊，請參閱[應用程式週期](https://msdn.microsoft.com/library/windows/apps/mt243287)。
+如需詳細資訊，請參閱[應用程式週期](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)。
 
 ## <a name="background-audio"></a>背景音訊
 
 
-針對[ **MediaElement.AudioCategory** ](https://msdn.microsoft.com/library/windows/apps/br227352)屬性， **ForegroundOnlyMedia**並**BackgroundCapableMedia**中被取代Windows 10 應用程式。 請改用 Windows Phone 市集應用程式模型。 如需詳細資訊，請參閱 [背景音效](https://msdn.microsoft.com/library/windows/apps/mt282140)。
+針對[ **MediaElement.AudioCategory** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement.audiocategory)屬性， **ForegroundOnlyMedia**並**BackgroundCapableMedia**中被取代Windows 10 應用程式。 請改用 Windows Phone 市集應用程式模型。 如需詳細資訊，請參閱 [背景音效](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)。
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>偵測執行您 app 的平台
 
 
-應用程式為目標的變更，與 Windows 10 的思考方式。 新的概念性模型是針對通用 Windows 平台 (UWP) 設計應用程式，然後在所有 Windows 裝置上執行。 接下來可以決定要啟用的特定裝置系列專屬功能。 如有需要，app 也有選項可供限制其特別針對一或多個裝置系列進行設計。 如需有哪些裝置系列以及如何決定要針對哪個裝置系列進行設計的詳細資訊，請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+應用程式為目標的變更，與 Windows 10 的思考方式。 新的概念性模型是針對通用 Windows 平台 (UWP) 設計應用程式，然後在所有 Windows 裝置上執行。 接下來可以決定要啟用的特定裝置系列專屬功能。 如有需要，app 也有選項可供限制其特別針對一或多個裝置系列進行設計。 如需有哪些裝置系列以及如何決定要針對哪個裝置系列進行設計的詳細資訊，請參閱 [UWP app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
 如果在您的通用 8.1 應用程式中有程式碼可偵測出其執行所在的作業系統，您可能必須根據邏輯原因來加以變更。 如果應用程式會不停傳送值卻不加以處理，您可能想要繼續收集作業系統資訊。
 
@@ -45,9 +45,9 @@ ms.locfileid: "57645183"
 
  
 
-有數項建議技術可用來針對不同的裝置量身打造您的應用程式 UI。 繼續使用自動調整大小元素與動態配置面板。 在 XAML 標記中，繼續使用以有效像素 (前身為檢視像素) 為單位的大小，讓您的 UI 可隨不同的解析度與縮放比例調整 (請參閱[有效像素、檢視距離及縮放係數](w8x-to-uwp-porting-xaml-and-ui.md))。 還有使用 Visual State Manager 的調適型觸發程序與 Setter 讓您的 UI 可隨視窗大小調整 (請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631))。
+有數項建議技術可用來針對不同的裝置量身打造您的應用程式 UI。 繼續使用自動調整大小元素與動態配置面板。 在 XAML 標記中，繼續使用以有效像素 (前身為檢視像素) 為單位的大小，讓您的 UI 可隨不同的解析度與縮放比例調整 (請參閱[有效像素、檢視距離及縮放係數](w8x-to-uwp-porting-xaml-and-ui.md))。 還有使用 Visual State Manager 的調適型觸發程序與 Setter 讓您的 UI 可隨視窗大小調整 (請參閱 [UWP app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide))。
 
-不過，如果有無法避免的情況，使您不得不偵測裝置系列時，才能那樣做。 在這個範例中，我們使用 [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) 類別來瀏覽到專為行動裝置系列量身訂做的適當頁面，然後確保其會切換回預設頁面。
+不過，如果有無法避免的情況，使您不得不偵測裝置系列時，才能那樣做。 在這個範例中，我們使用 [**AnalyticsVersionInfo**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.AnalyticsVersionInfo) 類別來瀏覽到專為行動裝置系列量身訂做的適當頁面，然後確保其會切換回預設頁面。
 
 ```csharp
    if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
@@ -56,7 +56,7 @@ ms.locfileid: "57645183"
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ```
 
-您的應用程式也能從作用中的資源選擇因素來判斷其正在哪個裝置系列上執行。 下列範例說明如何以命令方式來判斷，而 [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主題還會根據裝置系列因素，針對載入裝置系列特定資源中的類別說明較常見的使用案例。
+您的應用程式也能從作用中的資源選擇因素來判斷其正在哪個裝置系列上執行。 下列範例說明如何以命令方式來判斷，而 [**ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) 主題還會根據裝置系列因素，針對載入裝置系列特定資源中的類別說明較常見的使用案例。
 
 ```csharp
 var qualifiers = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;

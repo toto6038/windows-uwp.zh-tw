@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 ms.localizationpriority: medium
-ms.openlocfilehash: 293c755ecaf81ce80fab148a8aca92a7e3a8fa48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 78ed118ba15f38f8914cf2046344d782cd0df71b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618583"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370788"
 ---
 # <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a>使用 ms-tonepicker URI 配置來選擇及儲存音調
 
@@ -23,7 +23,7 @@ ms.locfileid: "57618583"
 
 ## <a name="ms-tonepicker-uri-scheme-reference"></a>ms-tonepicker:URI 配置參考
 
-這個 URI 配置不會透過 URI 配置字串傳遞引數，而是會透過 [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) 傳遞引數。 所有字串皆有區分大小寫。
+這個 URI 配置不會透過 URI 配置字串傳遞引數，而是會透過 [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) 傳遞引數。 所有字串皆有區分大小寫。
 
 下列各節會指出應該傳遞哪些引數來完成指定的工作。
 
@@ -43,18 +43,18 @@ if (status != LaunchQuerySupportStatus.Available)
 
 您可以傳遞來顯示音調選擇器的引數如下︰
 
-| 參數 | 類型 | 必要 | 可能值 | 描述 |
+| 參數 | 類型 | 必要項 | 可能值 | 描述 |
 |-----------|------|----------|-------|-------------|
 | 動作 | 字串 | 是 | "PickRingtone" | 開啟音調選擇器。 |
 | CurrentToneFilePath | 字串 | 否 | 現有的音調語彙基元。 | 要顯示為音調選擇器中目前音調的音調。 如果未設定此值，預設會選取清單中的第一個音調。<br>嚴格說來，這並不是一個檔案路徑。 您可以從音調選擇器所傳回的 `ToneToken` 值中取得適當的 `CurrenttoneFilePath` 值。  |
 | TypeFilter | 字串 | 否 | "Ringtones"、"Notifications"、"Alarms"、"None" | 選取要將哪些音調新增到選擇器。 如果未指定任何篩選，則會顯示所有音調。 |
 
-在 [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) 中傳回的值：
+在 [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) 中傳回的值：
 
 | 傳回值 | 類型 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
 | 結果 | Int32 | 0 - 成功。 <br>1 - 已取消。 <br>7 - 無效的參數。 <br>8 - 沒有任何音調符合篩選條件。 <br>255 - 未實作指定的動作。 | 選擇器作業的結果。 |
-| ToneToken | 字串 | 所選音調的語彙基元。 <br>如果使用者在選擇器中選取 [預設]，則此字串為空白。 | 這個語彙基元可以用在快顯通知承載中，或是指派為連絡人的鈴聲或簡訊鈴聲。 只有當 **Result** 為 0 時，才會在 ValueSet 中傳回此參數。 |
+| ToneToken | 字串 | 所選音調的語彙基元。 <br>如果使用者在選擇器中選取 [預設]  ，則此字串為空白。 | 這個語彙基元可以用在快顯通知承載中，或是指派為連絡人的鈴聲或簡訊鈴聲。 只有當 **Result** 為 0 時，才會在 ValueSet 中傳回此參數。 |
 | DisplayName | 字串 | 所指定音調的易記名稱。 | 可對使用者顯示來代表所選的音調的字串。 只有當 **Result** 為 0 時，才會在 ValueSet 中傳回此參數。 |
 
 
@@ -90,13 +90,13 @@ if (result.Status == LaunchUriStatus.Success)
 
 您可以傳遞來顯示音調儲存程式的引數如下︰
 
-| 參數 | 類型 | 必要 | 可能值 | 描述 |
+| 參數 | 類型 | 必要項 | 可能值 | 描述 |
 |-----------|------|----------|-------|-------------|
 | 動作 | 字串 | 是 | "SaveRingtone" | 開啟選擇器以儲存鈴聲。 |
-| ToneFileSharingToken | 字串 | 是 | 要儲存之鈴聲檔的 [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) 檔案共用語彙基元。 | 將特定的音效檔儲存為鈴聲。 支援的檔案內容類型為 mpeg 音訊和 x-ms-wma 音訊。 |
+| ToneFileSharingToken | 字串 | 是 | 要儲存之鈴聲檔的 [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager) 檔案共用語彙基元。 | 將特定的音效檔儲存為鈴聲。 支援的檔案內容類型為 mpeg 音訊和 x-ms-wma 音訊。 |
 | DisplayName | 字串 | 否 | 所指定音調的易記名稱。 | 設定儲存指定的鈴聲時要使用的顯示名稱。 |
 
-在 [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) 中傳回的值：
+在 [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) 中傳回的值：
 
 | 傳回值 | 類型 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
@@ -154,12 +154,12 @@ if (result.Status == LaunchUriStatus.Success)
 
 您可以傳遞來取得音調易記名稱的引數如下︰
 
-| 參數 | 類型 | 必要 | 可能值 | 描述 |
+| 參數 | 類型 | 必要項 | 可能值 | 描述 |
 |-----------|------|----------|-------|-------------|
 | 動作 | 字串 | 是 | "GetToneName" | 指出您想要取得音調的易記名稱。 |
 | ToneToken | 字串 | 是 | 音調語彙基元 | 要從中取得顯示名稱的音調語彙基元。 |
 
-在 [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) 中傳回的值：
+在 [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) 中傳回的值：
 
 | 傳回值 | 類型 | 可能值 | 描述 |
 |--------------|------|-------|-------------|

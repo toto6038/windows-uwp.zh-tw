@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1b0c272af5939deba73ff7a07797207d7caaa4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e3b6ab53e5e9f0b36e6bdeb047b48766cda7a2a5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651003"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372395"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>Windows Phone Silverlight UWP 案例研究：Bookstore2
 
@@ -36,7 +36,7 @@ ms.locfileid: "57651003"
 
 這是一項快速的工作，可在 Visual Studio 中建立新專案、從 Bookstore2WPSL8 將檔案複製到其中，以及在新專案中包含複製的檔案。 一開始先建立新的空白應用程式 (Windows 通用) 專案。 它命名為 Bookstore2Universal\_10。 這些都是透過從 Bookstore2WPSL8 複製到 Bookstore2Universal 檔案\_10。
 
--   複製包含書封面影像 PNG 檔案的資料夾 (資料夾\\資產\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書封面影像 PNG 檔案的資料夾 (資料夾\\資產\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。  該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。   不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含檢視模型的原始程式檔的資料夾 (資料夾是\\ViewModel)。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
@@ -44,9 +44,9 @@ ms.locfileid: "57651003"
 
 編輯您剛才複製的來源的程式碼和標記檔案，並將 Bookstore2WPSL8 命名空間的任何參考變更為 Bookstore2Universal\_10。 執行此作業的快速方法是使用 [**檔案中取代**] 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更。
 
--   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 [解析] 命令。 刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
--   對 `ImageSource` 使用 [解析] 命令。
--   對 `BitmapImage` 使用 [解析] 命令。
+-   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 [解析] 命令。  刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
+-   對 `ImageSource` 使用 [解析] 命令。 
+-   對 `BitmapImage` 使用 [解析] 命令。 
 -   刪除 `using System.Windows.Media;` 和 `using System.Windows.Media.Imaging;`。
 -   變更所傳回的值**Bookstore2Universal\_10.BookstoreViewModel.AppName**屬性從"BOOKSTORE2WPSL8"為"BOOKSTORE2UNIVERSAL 」。
 -   正如同我們對 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 的做法，更新 **BookSku.CoverImage** 屬性的實作 (請參閱[將映像繫結至檢視模型](wpsl-to-uwp-case-study-bookstore1.md))。
@@ -58,7 +58,7 @@ ms.locfileid: "57651003"
 -   將其餘命名空間前置字元宣告中的 "clr-namespace" 變更為 "using"。
 -   刪除 `SupportedOrientations="Portrait"` 和 `Orientation="Portrait"`，並在新專案之 app 套件資訊清單中設定 [**縱向**]。
 -   刪除 `shell:SystemTray.IsVisible="True"`。
--   捷徑清單項目轉換器 (在標記中是以資源形式存在) 的類型已移至 [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空間中。 因此，新增 命名空間前置詞宣告 Windows\_UI\_Xaml\_控制項\_基本項目並將它對應至**Windows.UI.Xaml.Controls.Primitives**。 在捷徑清單項目轉換器資源上，將前置字元從 `phone:` 變更為 `Windows_UI_Xaml_Controls_Primitives:`。
+-   捷徑清單項目轉換器 (在標記中是以資源形式存在) 的類型已移至 [**Windows.UI.Xaml.Controls.Primitives**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives) 命名空間中。 因此，新增 命名空間前置詞宣告 Windows\_UI\_Xaml\_控制項\_基本項目並將它對應至**Windows.UI.Xaml.Controls.Primitives**。 在捷徑清單項目轉換器資源上，將前置字元從 `phone:` 變更為 `Windows_UI_Xaml_Controls_Primitives:`。
 -   正如同我們對 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 的做法，以 `SubtitleTextBlockStyle` 的參考取代 `PhoneTextExtraLargeStyle` **TextBlock** 樣式的所有參考、以 `SubtitleTextBlockStyle` 取代 `PhoneTextSubtleStyle`、以 `CaptionTextBlockStyle` 取代 `PhoneTextNormalStyle`，並以 `HeaderTextBlockStyle` 取代 `PhoneTextTitle1Style`。
 -   `BookTemplate` 中的一個例外狀況。 第二個 **TextBlock** 的樣式應該參考 `CaptionTextBlockStyle`。
 -   從 `AuthorGroupHeaderTemplate` 內的 **TextBlock** 移除 FontFamily 屬性，並將 **Border** 的背景設定為參考 `SystemControlBackgroundAccentBrush` 而非 `PhoneAccentBrush`。
@@ -67,7 +67,7 @@ ms.locfileid: "57651003"
 ## <a name="replacing-the-longlistselector"></a>取代 LongListSelector
 
 
-以 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項取代 **LongListSelector** 將需要數個步驟，因此讓我們開始進行這項操作。 **LongListSelector** 會直接繫結至分組資料來源，但是 **SemanticZoom** 包含 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 控制項，這些控制項會透過 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 配接器間接繫結至資料。 **CollectionViewSource** 必須在標記中做為資源，因此讓我們從將它新增至 MainPage.xaml 之 `<Page.Resources>` 內的標記中開始著手。
+以 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控制項取代 **LongListSelector** 將需要數個步驟，因此讓我們開始進行這項操作。 **LongListSelector** 會直接繫結至分組資料來源，但是 **SemanticZoom** 包含 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 或 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 控制項，這些控制項會透過 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 配接器間接繫結至資料。 **CollectionViewSource** 必須在標記中做為資源，因此讓我們從將它新增至 MainPage.xaml 之 `<Page.Resources>` 內的標記中開始著手。
 
 ```xml
     <CollectionViewSource
@@ -142,7 +142,7 @@ ms.locfileid: "57651003"
 
 在解決彈性 Visual State Manager 片段之前，首先我們必須設計寬度狀態，這代表將新的視覺元素和範本新增到我們的標記中。 這些步驟說明如何執行這個動作。 透過視覺元素和範本的命名慣例，我們會將文字「寬度」包含在任何用於寬度狀態的元素與範本名稱中。 如果元素或範本不包含「寬度」這個字，則您可以假設元素或範本適用於縮小狀態，這會是預設狀態且其屬性值會設定為頁面中視覺元素的本機值。 只有寬度狀態的屬性值是透過標記中實際的「視覺狀態」進行設定。
 
--   製作標記中 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項的複本，並在複本上設定 `x:Name="narrowSeZo"`。 在原始檔案上設定 `x:Name="wideSeZo"` 與 `Visibility="Collapsed"`，如此預設才不會顯示包含文字「寬度」的元素或範本。
+-   製作標記中 [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控制項的複本，並在複本上設定 `x:Name="narrowSeZo"`。 在原始檔案上設定 `x:Name="wideSeZo"` 與 `Visibility="Collapsed"`，如此預設才不會顯示包含文字「寬度」的元素或範本。
 -   在 `wideSeZo` 中，同時在放大檢視和縮小檢視中將 **ListView** 變更為 **GridView**。
 -   製作 `AuthorGroupHeaderTemplate`、`ZoomedOutAuthorTemplate` 和 `BookTemplate` 這三個資源的複本，並將文字 `Wide` 附加到這些複本的索引鍵。 也將 `wideSeZo` 更新為參考這些新資源的索引鍵。
 -   然後將 `AuthorGroupHeaderTemplateWide` 的內容取代成 `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`。
@@ -220,7 +220,7 @@ ms.locfileid: "57651003"
 
 -   在 `AuthorGroupHeaderTemplate` 中，於 **TextBlock** 上設定 `Foreground="White"`，讓它在行動裝置系列上執行時的外觀正確。
 -   將 `FontWeight="SemiBold"` 同時新增到 `AuthorGroupHeaderTemplate` 與 `ZoomedOutAuthorTemplate` 中的 **TextBlock**。
--   在 `narrowSeZo` 中，群組標頭和縮小檢視中的作者是靠左對齊，而不是自動縮放，讓我們來處理這個問題。 為放大檢視建立 [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841)，其中將 [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) 設定為 `Stretch`。 然後為縮小檢視建立包含該相同 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817)。 以下是看起來的樣子。
+-   在 `narrowSeZo` 中，群組標頭和縮小檢視中的作者是靠左對齊，而不是自動縮放，讓我們來處理這個問題。 為放大檢視建立 [**HeaderContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.groupstyle.headercontainerstyle)，其中將 [**HorizontalContentAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment) 設定為 `Stretch`。 然後為縮小檢視建立包含該相同 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 的 [**ItemContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)。 以下是看起來的樣子。
 
 ```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
@@ -268,18 +268,18 @@ ms.locfileid: "57651003"
 
 ## <a name="making-the-view-model-more-flexible"></a>讓檢視模型更具彈性
 
-本節包含因將 app 移轉成使用 UWP 而得以利用之功能的範例。 在這裡，我們將說明在透過 **CollectionViewSource** 存取檢視模型的情況下，您可依循以使檢視模型更具彈性的選擇性步驟。 檢視模型 (來源檔案是在 ViewModel\\BookstoreViewModel.cs)，我們將移植從 Windows Phone Silverlight 應用程式 Bookstore2WPSL8 包含名為作者，可以衍生自類別**清單&lt;T&gt;**，其中**T**是 BookSku。 這表示 Author 類別「是」一個 BookSku 群組。
+本節包含因將 app 移轉成使用 UWP 而得以利用之功能的範例。 在這裡，我們將說明在透過 **CollectionViewSource** 存取檢視模型的情況下，您可依循以使檢視模型更具彈性的選擇性步驟。 檢視模型 (來源檔案是在 ViewModel\\BookstoreViewModel.cs)，我們將移植從 Windows Phone Silverlight 應用程式 Bookstore2WPSL8 包含名為作者，可以衍生自類別**清單&lt;T&gt;** ，其中**T**是 BookSku。 這表示 Author 類別「是」一個 BookSku 群組。 
 
-當我們將 **CollectionViewSource.Source** 繫結至 Authors 時，我們唯一要傳達的就是 Authors 中的每個 Author 都是一個「某種東西」的群組。 我們將它留給 **CollectionViewSource** 去判斷，而在此案例中，Author 是一個 BookSku 群組。 這樣行得通：但是不具彈性。 如果我們希望 Author 能夠「既是」一個 BookSku 群組「也是」該作者居住過之地址的群組，該怎麼辦？ Author 無法同時「是」這兩個群組。 但是 Author 可以「有」任何數目的群組。 而這就是方案：使用「有一個群組」模式來取代或補充我們目前使用的「是一個群組」模式。 方法如下：
+當我們將 **CollectionViewSource.Source** 繫結至 Authors 時，我們唯一要傳達的就是 Authors 中的每個 Author 都是一個「某種東西」的群組。  我們將它留給 **CollectionViewSource** 去判斷，而在此案例中，Author 是一個 BookSku 群組。 這樣行得通：但是不具彈性。 如果我們希望 Author 能夠「既是」一個 BookSku 群組「也是」該作者居住過之地址的群組，該怎麼辦？   Author 無法同時「是」這兩個群組。  但是 Author 可以「有」任何數目的群組。  而這就是方案：使用「有一個群組」模式來取代或補充我們目前使用的「是一個群組」模式。   方法如下：
 
--   變更 Author，讓它不再衍生自 **List&lt;T&gt;**。
+-   變更 Author，讓它不再衍生自 **List&lt;T&gt;** 。
 -   加入至這個欄位 
 -   將此屬性，加入 
 -   當然，我們可以重複上述兩個步驟，依所需的數目將多個群組新增至 Author。
 -   將 AddBookSku 方法的實作變更為 `this.BookSkus.Add(bookSku);`。
--   既然 Author 已至少「有」一個群組，我們需要向 **CollectionViewSource** 傳達它應該使用這些群組當中的哪一個群組。 若要這樣做，請將新增這個屬性，以**CollectionViewSource**: `ItemsPath="BookSkus"`
+-   既然 Author 已至少「有」一個群組，我們需要向 **CollectionViewSource** 傳達它應該使用這些群組當中的哪一個群組。  若要這樣做，請將新增這個屬性，以**CollectionViewSource**: `ItemsPath="BookSkus"`
 
-這些變更會讓這個 app 在功能上保持不變，但您現在已了解可如何延伸 Author 以及 **CollectionViewSource** (如果需要的話)。 讓我們對 Author 進行最後一個變更，以便在使用它但「不」指定 **CollectionViewSource.ItemsPath** 的情況下，會使用我們所選擇的預設群組：
+這些變更會讓這個 app 在功能上保持不變，但您現在已了解可如何延伸 Author 以及 **CollectionViewSource** (如果需要的話)。 讓我們對 Author 進行最後一個變更，以便在使用它但「不」指定 **CollectionViewSource.ItemsPath** 的情況下，會使用我們所選擇的預設群組： 
 
 ```csharp
     public class Author : IEnumerable<BookSku>

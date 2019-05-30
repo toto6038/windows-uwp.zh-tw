@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9f8de488ad0baea1de9aea5c911f2519385d25
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 02337d02472b7215f0fb9be47419caf52420e0f2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653863"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372411"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight UWP 案例研究：Bookstore1
 
 
-本主題提供可移植到 Windows 10 通用 Windows 平台 (UWP) 應用程式非常簡單的 Windows Phone Silverlight 應用程式的個案研究。 使用 Windows 10，您可以建立單一應用程式封裝，您的客戶可以將安裝到各種不同的裝置，以及這是我們要在此案例研究。 請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+本主題提供可移植到 Windows 10 通用 Windows 平台 (UWP) 應用程式非常簡單的 Windows Phone Silverlight 應用程式的個案研究。 使用 Windows 10，您可以建立單一應用程式封裝，您的客戶可以將安裝到各種不同的裝置，以及這是我們要在此案例研究。 請參閱 [UWP app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
-我們將移植的 app 包含繫結到檢視模型的 **ListBox**。 此檢視模型有一個顯示書名、作者及封面的書籍清單。 書籍封面影像的 [建置動作] 是設定為 [內容]，而 [複製到輸出目錄] 是設定為 [不要複製]。
+我們將移植的 app 包含繫結到檢視模型的 **ListBox**。 此檢視模型有一個顯示書名、作者及封面的書籍清單。 書籍封面影像的 [建置動作] 是設定為 [內容]，而 [複製到輸出目錄] 是設定為 [不要複製]。    
 
 本節之前的主題說明平台之間的差異，並針對 app 各個方面 (從 XAML 標記、經過繫結到檢視模型，再到存取資料) 的移植程序，提供深入的詳細資料和指導方針。 案例研究旨在藉由真實範例中的運作示範，來為該指導方針提供補充。 這些案例研究是假設您已看過指導方針，因此不會重複其內容。
 
@@ -40,7 +40,7 @@ ms.locfileid: "57653863"
 
 這是一項非常快速的工作，可在 Visual Studio 中建立新專案、從 Bookstore1WPSL8 將檔案複製到其中，以及在新專案中包含複製的檔案。 一開始先建立新的空白應用程式 (Windows 通用) 專案。 它命名為 Bookstore1Universal\_10。 這些都是透過從 Bookstore1WPSL8 複製到 Bookstore1Universal 檔案\_10。
 
--   複製包含書封面影像 PNG 檔案的資料夾 (資料夾\\資產\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書封面影像 PNG 檔案的資料夾 (資料夾\\資產\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。  該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。   不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含檢視模型的原始程式檔的資料夾 (資料夾是\\ViewModel)。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
@@ -48,9 +48,9 @@ ms.locfileid: "57653863"
 
 編輯您剛才複製的來源的程式碼和標記檔案，並將 Bookstore1WPSL8 命名空間的任何參考變更為 Bookstore1Universal\_10。 執行此作業的快速方法是使用 [**檔案中取代**] 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更：
 
--   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 [解析] 命令。 刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
--   對 `ImageSource` 使用 [解析] 命令。
--   對 `BitmapImage` 使用 [解析] 命令。
+-   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 [解析] 命令。  刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
+-   對 `ImageSource` 使用 [解析] 命令。 
+-   對 `BitmapImage` 使用 [解析] 命令。 
 -   刪除 using `System.Windows.Media;` 和 `using System.Windows.Media.Imaging;`。
 -   變更所傳回的值**Bookstore1Universal\_10.BookstoreViewModel.AppName**屬性從"BOOKSTORE1WPSL8"為"BOOKSTORE1UNIVERSAL 」。
 
@@ -87,7 +87,7 @@ ms.locfileid: "57653863"
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-若要設定這些樣式，您可以直接在標記編輯器中輸入它們，或是使用 Visual Studio XAML 工具並設定它們，而不需要輸入任何內容。 若要這樣做，您以滑鼠右鍵按一下**TextBlock**然後按一下**編輯樣式** &gt; **套用資源**。 若要這樣做，使用**TextBlock**中的項目範本，以滑鼠右鍵按一下**ListBox** ，按一下 **編輯其他樣板** &gt; **編輯產生的項目 (ItemTemplate)**。
+若要設定這些樣式，您可以直接在標記編輯器中輸入它們，或是使用 Visual Studio XAML 工具並設定它們，而不需要輸入任何內容。 若要這樣做，您以滑鼠右鍵按一下**TextBlock**然後按一下**編輯樣式** &gt; **套用資源**。 若要這樣做，使用**TextBlock**中的項目範本，以滑鼠右鍵按一下**ListBox** ，按一下 **編輯其他樣板** &gt; **編輯產生的項目 (ItemTemplate)** 。
 
 項目後方有 80% 不透明的白色背景，因為 **ListBox** 控制項的預設樣式將其背景設定為 `ListBoxBackgroundThemeBrush` 系統資源。 在 **ListBox** 上設定 `Background="Transparent"` 以清除該背景。 若要將項目範本中的 **TextBlock** 靠左對齊，請以上述方式再次編輯它，然後將兩個 **TextBlock** 上的 **Margin** 都設定為 `"9.6,0"`。
 
@@ -104,7 +104,7 @@ ms.locfileid: "57653863"
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-在 Bookstore1Universal，我們將使用 ms-appx [URI 配置](https://msdn.microsoft.com/library/windows/apps/jj655406)。 如此，我們便可以讓程式碼的其餘部分保持不變，我們可以使用不同的 **System.Uri** 建構函式多載將 ms-appx URI 配置放在基底 URI 中，然後將路徑的其餘部分附加至其上。 就像這樣：
+在 Bookstore1Universal，我們將使用 ms-appx [URI 配置](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10))。 如此，我們便可以讓程式碼的其餘部分保持不變，我們可以使用不同的 **System.Uri** 建構函式多載將 ms-appx URI 配置放在基底 URI 中，然後將路徑的其餘部分附加至其上。 就像這樣：
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".

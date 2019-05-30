@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f2638e93ecbe346cc5dccb503d94d926ddcdae
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e8e7653174eaf31f11341a5c8e21b69ec54a6189
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335146"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371284"
 ---
 # <a name="create-and-manage-submissions"></a>建立及管理提交
 
@@ -46,15 +46,15 @@ ms.locfileid: "58335146"
 
 * 準備您的 App 與 Microsoft Store 提交 API 搭配使用︰
 
-  * 如果您的應用程式不在合作夥伴中心尚未存在，您必須[建立您的應用程式，並保留其名稱在合作夥伴中心](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 您無法使用 Microsoft Store 提交 API 來建立應用程式在合作夥伴中心;您必須在合作夥伴中心，來建立它，工作，然後之後，您可以使用 API 來存取應用程式和以程式設計方式建立它的提交。 不過，您可以使用 API 以程式設計方式建立附加元件和套件正式發行前小眾測試版，再建立提交。
+  * 如果您的應用程式不在合作夥伴中心尚未存在，您必須[建立您的應用程式，並保留其名稱在合作夥伴中心](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 您無法使用 Microsoft Store 提交 API 來建立應用程式在合作夥伴中心;您必須在合作夥伴中心，來建立它，工作，然後之後，您可以使用 API 來存取應用程式和以程式設計方式建立它的提交。 不過，您可以使用 API 以程式設計方式建立附加元件和套件正式發行前小眾測試版，再建立提交。
 
-  * 您可以建立指定的應用程式使用此 API 在送出之前，您必須先[在合作夥伴中心建立的應用程式的一個提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，包括回答[年齡分級](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)問卷。 執行這個動作之後，您就能夠使用 API 以程式設計方式建立此 App 的新提交。 您不需要先建立附加元件提交或套件正式發行前小眾測試版提交，才能使用 API 進行這些類型的提交。
+  * 您可以建立指定的應用程式使用此 API 在送出之前，您必須先[在合作夥伴中心建立的應用程式的一個提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，包括回答[年齡分級](https://docs.microsoft.com/windows/uwp/publish/age-ratings)問卷。 執行這個動作之後，您就能夠使用 API 以程式設計方式建立此 App 的新提交。 您不需要先建立附加元件提交或套件正式發行前小眾測試版提交，才能使用 API 進行這些類型的提交。
 
-  * 如果您要建立或更新 App 提交，而且必須包含 App 套件，請[準備 App 套件](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)。
+  * 如果您要建立或更新 App 提交，而且必須包含 App 套件，請[準備 App 套件](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。
 
-  * 如果您要建立或更新 App 提交，而且必須包含市集清單的螢幕擷取畫面或影像，請[準備 App 螢幕擷取畫面與影像](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。
+  * 如果您要建立或更新 App 提交，而且必須包含市集清單的螢幕擷取畫面或影像，請[準備 App 螢幕擷取畫面與影像](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。
 
-  * 如果您要建立或更新附加元件提交，而且必須包含圖示，請[準備圖示](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon)。
+  * 如果您要建立或更新附加元件提交，而且必須包含圖示，請[準備圖示](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions)。
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
@@ -71,7 +71,7 @@ ms.locfileid: "58335146"
 
 3.  返回 **\[使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
-4. 按一下 \[加入新的金鑰\]。 在下列畫面中，複製 \[金鑰\] 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[管理 Azure AD 應用程式的金鑰](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
+4. 按一下 \[加入新的金鑰\]。  在下列畫面中，複製 \[金鑰\] 的值。  您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[管理 Azure AD 應用程式的金鑰](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
 <span id="obtain-an-azure-ad-access-token" />
 

@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac5ca785eab39612bb3a9c6ccd58779c6241059
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e30140a60906cb350940cc5ebd87347878845986
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596863"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365879"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推播通知精靈產生的程式碼
  
@@ -216,20 +216,20 @@ sendNotifications 函式會以快顯通知的方式傳送單一通知。 您也�
 
 Windows 可支援推播通知以外的通知。 如需有關通知的一般資訊，請參閱[選擇通知傳遞方法](choosing-a-notification-delivery-method.md)。
 
-快顯通知的使用方式非常簡單，您可以檢閱通道表上的 Insert.js 程式碼中為您產生的範例。 如果您計劃使用磚或徽章通知，必須為磚和徽章建立 XML 範本，也必須指定範本中的封裝資訊編碼方式。 請參閱[使用磚、徽章以及快顯通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)。
+快顯通知的使用方式非常簡單，您可以檢閱通道表上的 Insert.js 程式碼中為您產生的範例。 如果您計劃使用磚或徽章通知，必須為磚和徽章建立 XML 範本，也必須指定範本中的封裝資訊編碼方式。 請參閱[使用磚、徽章以及快顯通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10))。
 
 因為 Windows 會回應推播通知，所以能在應用程式未執行時處理大部分的這類通知。 例如，即使本機郵件應用程式並未執行，推播通知也能讓使用者得知有新的郵件訊息。 Windows 處理快顯通知的方式是顯示訊息，例如文字訊息的第一行。 Windows 處理磚或徽章通知的方式是更新應用程式的動態磚，以反映新郵件訊息數。 您可以利用這種方式提示應用程式使用者檢查新資訊。 您的應用程式可以在執行時收到原始通知，而您可以使用這類通知將資料傳送給應用程式。 如果應用程式未執行，您可以設定背景工作來監視推播通知。
 
-您應該根據通用 Windows 平台 (UWP) 應用程式的指導方針來使用推播通知，因為這些通知會用盡使用者的資源，而且過度使用也可能造成困擾。 請參閱[推播通知的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh761462)。
+您應該根據通用 Windows 平台 (UWP) 應用程式的指導方針來使用推播通知，因為這些通知會用盡使用者的資源，而且過度使用也可能造成困擾。 請參閱[推播通知的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)。
 
-如果您利用推播通知更新動態磚，也應該遵循[磚與徽章的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh465403)中的指導方針。
+如果您利用推播通知更新動態磚，也應該遵循[磚與徽章的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)中的指導方針。
 
 ## <a name="next-steps"></a>後續步驟
 
 
 ### <a name="using-the-windows-push-notification-services-wns"></a>使用 Windows 推播通知服務 (WNS)
 
-若行動服務提供的彈性不足、您想要以 C# 或 Visual Basic 撰寫伺服器程式碼，或是您已經有雲端服務並想要透過它傳送推播通知，則可以直接呼叫 Windows 推播通知服務 (WNS)。 直接呼叫 WNS 時，可以從您自己的雲端服務 (例如，監視來自資料庫或其他 Web 服務之資料的工作者角色) 傳送推播通知。 您的雲端服務必須透過 WNS 進行驗證，才能將推播通知傳送到您的應用程式。 請參閱[如何使用 Windows 推播通知服務進行驗證 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) 或 [(C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206)。
+若行動服務提供的彈性不足、您想要以 C# 或 Visual Basic 撰寫伺服器程式碼，或是您已經有雲端服務並想要透過它傳送推播通知，則可以直接呼叫 Windows 推播通知服務 (WNS)。 直接呼叫 WNS 時，可以從您自己的雲端服務 (例如，監視來自資料庫或其他 Web 服務之資料的工作者角色) 傳送推播通知。 您的雲端服務必須透過 WNS 進行驗證，才能將推播通知傳送到您的應用程式。 請參閱[如何使用 Windows 推播通知服務進行驗證 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)) 或 [(C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/hh868206(v=win.10))。
 
 您也可以在行動服務中執行排定的工作，以傳送推播通知。 請參閱[在行動服務中排程週期性工作](https://go.microsoft.com/fwlink/p/?linkid=301694)。
 
@@ -242,9 +242,9 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 * [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
 * [原始通知概觀](raw-notification-overview.md)
-* [連接到 Windows Azure 行動服務 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
-* [連接到 Windows Azure 行動服務 (C#/C+ + VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
-* [快速入門：新增推播通知的行動服務 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
+* [連接到 Windows Azure 行動服務 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
+* [連接到 Windows Azure 行動服務 (C#/C+ + VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
+* [快速入門：新增推播通知的行動服務 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  

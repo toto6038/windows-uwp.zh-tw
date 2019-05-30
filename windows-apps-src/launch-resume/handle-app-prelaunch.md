@@ -6,22 +6,22 @@ ms.date: 07/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f68d9dd912c92ff7de8b861f576e8f0c4b4dde
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4029bcdd554b05363397f6a6946b8ebc2bbdd1de
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658703"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371653"
 ---
 # <a name="handle-app-prelaunch"></a>處理應用程式預先啟動
 
-了解如何透過覆寫 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法來處理 App 預先啟動。
+了解如何透過覆寫 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 方法來處理 App 預先啟動。
 
 ## <a name="introduction"></a>簡介
 
 當可用的系統資源允許時，會將桌面裝置系列裝置上的 UWP 應用程式的啟動效能改進主動啟動在背景中的使用者最常使用的應用程式。 預先啟動的 App 在啟動不久後就會立即進入暫停狀態。 然後，當使用者叫用 App 時，App 會從暫停狀態切換到執行中狀態來繼續執行，這比 App 冷啟動快。 使用者所體驗到的就是 App 啟動非常快速。
 
-在 Windows 10 之前，App 並未自動利用預先啟動。 於 Windows 10 1511年版中，所有的通用 Windows 平台 (UWP) 應用程式的是候選項目正在預先啟動。 在 Windows 10 版本 1607 中，您必須透過呼叫 [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)，才能加入預先啟動行為。 在 `OnLaunched()` 內靠近進行 `if (e.PrelaunchActivated == false)` 檢查的位置就是放置這個呼叫的好地方。
+在 Windows 10 之前，App 並未自動利用預先啟動。 於 Windows 10 1511年版中，所有的通用 Windows 平台 (UWP) 應用程式的是候選項目正在預先啟動。 在 Windows 10 版本 1607 中，您必須透過呼叫 [CoreApplication.EnablePrelaunch(true)](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch)，才能加入預先啟動行為。 在 `OnLaunched()` 內靠近進行 `if (e.PrelaunchActivated == false)` 檢查的位置就是放置這個呼叫的好地方。
 
 是否會預先啟動 App，取決於系統資源。 如果系統感到資源壓力，就不會預先啟動應用程式。
 
@@ -35,7 +35,7 @@ XAML 專案 (C#、VB、C++) 及 WinJS 的預設範本皆納入了 Visual Studio 
 
 ## <a name="detect-and-handle-prelaunch"></a>偵測和處理預先啟動
 
-App 在啟動期間會收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 旗標。 若要執行應該只執行當使用者明確地啟動應用程式，如下列修改所示的程式碼中使用這個旗標[ **Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)。
+App 在啟動期間會收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.prelaunchactivated) 旗標。 若要執行應該只執行當使用者明確地啟動應用程式，如下列修改所示的程式碼中使用這個旗標[ **Application.OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -116,7 +116,7 @@ private void TryEnablePrelaunch()
 
 ## <a name="use-the-visibilitychanged-event"></a>使用 VisibilityChanged 事件
 
-使用者看不到預先啟動所啟動的應用程式。 當使用者切換到它們時，才會顯示。 您可能會想要將某些操作延遲到應用程式主視窗顯示之後才進行。 例如，如果您的 App 會從摘要中顯示最新動向項目清單，您可以在 [**VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) 事件期間更新該清單，而不用使用預先啟動 App 時所建置的清單，因為等到使用者啟用 App 時該清單可能已過時。 下列程式碼會處理 **MainPage** 的 **VisibilityChanged** 事件：
+使用者看不到預先啟動所啟動的應用程式。 當使用者切換到它們時，才會顯示。 您可能會想要將某些操作延遲到應用程式主視窗顯示之後才進行。 例如，如果您的 App 會從摘要中顯示最新動向項目清單，您可以在 [**VisibilityChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.visibilitychanged) 事件期間更新該清單，而不用使用預先啟動 App 時所建置的清單，因為等到使用者啟用 App 時該清單可能已過時。 下列程式碼會處理 **MainPage** 的 **VisibilityChanged** 事件：
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -138,7 +138,7 @@ public sealed partial class MainPage : Page
 
 ## <a name="directx-games-guidance"></a>DirectX 遊戲指導方針
 
-DirectX 遊戲通常不應該啟用預先啟動，因為許多 DirectX 遊戲是在系統能夠偵測到預先啟動之前就進行其初始化。 從 Windows 1607 (年度版) 開始，預設將不會預先啟用您的遊戲。  如果您確實希望您的遊戲利用預先啟動，請呼叫 [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)。
+DirectX 遊戲通常不應該啟用預先啟動，因為許多 DirectX 遊戲是在系統能夠偵測到預先啟動之前就進行其初始化。 從 Windows 1607 (年度版) 開始，預設將不會預先啟用您的遊戲。  如果您確實希望您的遊戲利用預先啟動，請呼叫 [CoreApplication.EnablePrelaunch(true)](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch)。
 
 如果您的遊戲是以舊版 Windows 10 為目標，則您可以處理預先啟動條件來結束應用程式：
 
@@ -180,7 +180,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 
 ## <a name="winjs-app-guidance"></a>WinJS 應用程式指導方針
 
-如果您的 WinJS 應用程式是以舊版 Windows 10 為目標，則您可以在 [onactivated](https://msdn.microsoft.com/library/windows/apps/br212679.aspx) 處理常式中處理預先啟動條件：
+如果您的 WinJS 應用程式是以舊版 Windows 10 為目標，則您可以在 [onactivated](https://docs.microsoft.com/previous-versions/windows/apps/br212679(v=win.10)) 處理常式中處理預先啟動條件：
 
 ```javascript
     app.onactivated = function (args) {
@@ -196,7 +196,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 ## <a name="general-guidance"></a>一般指導方針
 
 -   App 不應該在預先啟動期間執行長時間執行的操作，因為如果無法快速暫停 App，App 就會終止。
--   當預先啟動應用程式時，應用程式不應初始化 [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 的音訊播放，因為將會看不到應用程式，所以無法知道為什麼會播放音訊。
+-   當預先啟動應用程式時，應用程式不應初始化 [**Application.OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 的音訊播放，因為將會看不到應用程式，所以無法知道為什麼會播放音訊。
 -   假設使用者可以看見應用程式，或假設應用程式是由使用者明確啟動，那麼應用程式在啟動期間不應該執行任何操作。 由於應用程式現在不需明確的使用者動作即可在背景中啟動，因此開發人員應該考量隱私權、使用者體驗及可能的效能影響。
     -   隱私權考量舉例：社交應用程式應該在何時將使用者狀態變更為線上。 它應該等到使用者切換到應用程式，而不是在預先啟動應用程式時變更狀態。
     -   使用者體驗考量舉例：如果您的應用程式 (例如遊戲) 會在啟動時顯示一個開場片段，則您可以將開場片段延遲到使用者切換到該應用程式之後才顯示。
@@ -208,4 +208,4 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 ## <a name="related-topics"></a>相關主題
 
 * [應用程式生命週期](app-lifecycle.md)
-* [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)
+* [CoreApplication.EnablePrelaunch](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch)

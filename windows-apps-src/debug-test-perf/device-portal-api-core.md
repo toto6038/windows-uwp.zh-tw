@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 910e3108009704d444fb81b195f9dd9eae3daa9d
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: b2e1e2dfdb1dd52e1dd07a146badd78a6bb809fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63798185"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359925"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 參考資料
 
@@ -1373,7 +1373,7 @@ ms.locfileid: "63798185"
 | URI 參數 | 描述 |
 | :---          | :--- |
 | autoreboot   | (**選用**) True 或 False。 這指出系統失敗或遭鎖定之後，是否會自動重新啟動。 |
-| dumptype   | (**選用**) 傾印類型。 如需支援的值，請參閱 [CrashDumpType 列舉](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx)。|
+| dumptype   | (**選用**) 傾印類型。 如需支援的值，請參閱 [CrashDumpType 列舉](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100))。|
 | maxdumpcount   | (**選用**) 要儲存的傾印數目上限。 |
 | overwrite   | (**選用**) True 或 False。 這指出在達到 *maxdumpcount* 指定的傾印計數器限制時，是否會覆寫舊的傾印。 |
 
@@ -2003,7 +2003,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 | URI 參數 | 描述 |
 | :------          | :------ |
-| name | (**必要**) 電腦的新名稱。 |
+| NAME | (**必要**) 電腦的新名稱。 |
 
 **要求標頭**
 
@@ -2362,7 +2362,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
  
 | 方法      | 要求 URI |
 | :------     | :----- |
-| GET | /api/power/cfg/*<power scheme path>* |
+| GET | /api/power/cfg/ *<power scheme path>* |
 
 選項:
 - SCHEME_CURRENT
@@ -2500,7 +2500,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
  
 | 方法      | 要求 URI |
 | :------     | :----- |
-| POST | /api/power/cfg/*<power scheme path>* |
+| POST | /api/power/cfg/ *<power scheme path>* |
 
 
 **URI 參數**
@@ -3326,8 +3326,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | URI 參數 | 描述 |
 | :------          | :------ |
 | 使用者   | (**必要**) 與報告關聯的使用者名稱。 |
-| 型別   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。 |
-| name   | (**必要**) 報告的名稱。 此應為 base64 編碼。 |
+| type   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。 |
+| NAME   | (**必要**) 報告的名稱。 此應為 base64 編碼。 |
 | file   | (**必要**) 要從報告下載之檔案的名稱。 此應為 base64 編碼。 |
 
 **要求標頭**
@@ -3378,8 +3378,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | URI 參數 | 描述 |
 | :------          | :------ |
 | 使用者   | (**必要**) 與報告關聯的使用者。 |
-| 型別   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。 |
-| name   | (**必要**) 報告的名稱。 此應為 base64 編碼。 |
+| type   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。 |
+| NAME   | (**必要**) 報告的名稱。 此應為 base64 編碼。 |
 
 **要求標頭**
 

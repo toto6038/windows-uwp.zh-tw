@@ -6,24 +6,24 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 973091926ddff312b20002f7b535d34a3b7d2bc4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bbb40dc9fa65515a2b01d7a2c92145b27e04f075
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650333"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372559"
 ---
 # <a name="fingerprint-biometrics"></a>指紋生物識別技術
 
 
 
 
-本文將說明如何將指紋生物識別技術新增到您的通用 Windows 平台 (UWP) 應用程式。 包括使用者必須同意特定動作時的指紋驗證要求，以增強 app 的安全性。 例如，您可以在授權 app 內購買之前或授與限制資源的存取權之前要求指紋驗證。 指紋驗證是使用 [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) 命名空間中的 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) 類別所管理。
+本文將說明如何將指紋生物識別技術新增到您的通用 Windows 平台 (UWP) 應用程式。 包括使用者必須同意特定動作時的指紋驗證要求，以增強 app 的安全性。 例如，您可以在授權 app 內購買之前或授與限制資源的存取權之前要求指紋驗證。 指紋驗證是使用 [**Windows.Security.Credentials.UI**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI) 命名空間中的 [**UserConsentVerifier**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier) 類別所管理。
 
 ## <a name="check-the-device-for-a-fingerprint-reader"></a>檢查裝置是否有指紋辨識器
 
 
-若要查明裝置是否具有指紋辨識器，請呼叫 [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138)。 即使裝置支援指紋驗證，您的 app 仍應在 [設定] 中為使用者提供啟用或停用指紋驗證的選項。
+若要查明裝置是否具有指紋辨識器，請呼叫 [**UserConsentVerifier.CheckAvailabilityAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.ui.userconsentverifier.checkavailabilityasync)。 即使裝置支援指紋驗證，您的 app 仍應在 [設定] 中為使用者提供啟用或停用指紋驗證的選項。
 
 ```cs
 public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
@@ -70,9 +70,9 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 ## <a name="request-consent-and-return-results"></a>要求同意並傳回結果
 
 
-若要要求使用者同意指紋掃描，請呼叫 [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) 方法。 為了讓指紋驗證能運作，使用者必須先將指紋「簽章」加到指紋資料庫。
+若要要求使用者同意指紋掃描，請呼叫 [**UserConsentVerifier.RequestVerificationAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync) 方法。 為了讓指紋驗證能運作，使用者必須先將指紋「簽章」加到指紋資料庫。
 
-當您呼叫 [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) 時，使用者會看到一個要求指紋掃描的強制回應對話方塊。 您可以提供一個訊息給 **UserConsentVerifier.RequestVerificationAsync** 方法，使用者會在強制回應對話方塊中看見該訊息，如下列影像所示。
+當您呼叫 [**UserConsentVerifier.RequestVerificationAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync) 時，使用者會看到一個要求指紋掃描的強制回應對話方塊。 您可以提供一個訊息給 **UserConsentVerifier.RequestVerificationAsync** 方法，使用者會在強制回應對話方塊中看見該訊息，如下列影像所示。
 
 ```cs
 private async System.Threading.Tasks.Task<string> RequestConsent(string userMessage)

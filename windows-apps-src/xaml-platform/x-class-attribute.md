@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eb1238499355cf37b3f5113dbb10c456de55961
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dcda1677a8b5d289fd4c5e86db69212004f00824
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624763"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371107"
 ---
 # <a name="xclass-attribute"></a>x:Class 屬性
 
@@ -31,12 +31,12 @@ ms.locfileid: "57624763"
 
 | 詞彙 | 描述 |
 |------|-------------|
-| 命名空間 | 選用。 指定包含 _classname_ 識別的部分類別的命名空間。 如果指定 _namespace_，則會使用點 (.) 分隔 _namespace_ 與 _classname_。 如果省略 _namespace_，會假設 _classname_ 沒有命名空間。 |
+| 命名空間 | 選擇性。 指定包含 _classname_ 識別的部分類別的命名空間。 如果指定 _namespace_，則會使用點 (.) 分隔 _namespace_ 與 _classname_。 如果省略 _namespace_，會假設 _classname_ 沒有命名空間。 |
 | classname | 必要。 指定連接載入的 XAML 與該 XAML 的程式碼後置的部分類別的名稱。 | 
 
 ## <a name="remarks"></a>備註
 
-**x:Class** 可以宣告為建置動作正在編譯的 XAML 檔案/物件樹根目錄的任一元素的屬性，或宣告為已編譯應用程式的應用程式定義中的 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根目錄的屬性。 在任何情況下，為未使用 [頁面] 建置動作編譯的 XAML 檔案在根節點外的任何元素中宣告 **x:Class**，會導致編譯時期錯誤。
+**x:Class** 可以宣告為建置動作正在編譯的 XAML 檔案/物件樹根目錄的任一元素的屬性，或宣告為已編譯應用程式的應用程式定義中的 [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) 根目錄的屬性。 在任何情況下，為未使用 [頁面]  建置動作編譯的 XAML 檔案在根節點外的任何元素中宣告 **x:Class**，會導致編譯時期錯誤。
 
 做為 **x:Class** 的類別不可以是巢狀類別。
 

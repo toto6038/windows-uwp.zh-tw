@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cc1bafb90b20083d55a622873dea7be5efbf5b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72e45f8ef0f5684b3a712056eb367975f8e6103a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633483"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370354"
 ---
 # <a name="bluetooth-developer-faq"></a>藍牙開發人員常見問題集
 
@@ -63,7 +63,7 @@ RFCOMM API 提供通訊端，讓開發人員執行雙向序列埠樣式通訊。
 
 若為藍牙 RFCOMM (傳統) 裝置則不需要。 從 Windows 10 版本 1607 開始，您可以直接查詢附近的裝置並和它們連接。 已更新的 [RFCOMM 聊天範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) (英文) 說明這個功能。 
 
-**(14393 和以下)** 藍牙低功耗 (GATT 用戶端) 不適用這項功能，因此您還是需要透過 [設定] 頁面，或使用 [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) API 來配對，才能存取這類裝置。
+**(14393 和以下)** 藍牙低功耗 (GATT 用戶端) 不適用這項功能，因此您還是需要透過 [設定] 頁面，或使用 [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) API 來配對，才能存取這類裝置。
 
 **(15030 和以上)** 不再需要配對藍牙裝置。 使用新的 Async API，例如 GetGattServicesAsync and GetCharacteristicsAsync，以查詢遠端裝置的目前狀態。 如需詳細資料，請參閱[用戶端文件](gatt-client.md)。 
 
@@ -77,10 +77,10 @@ RFCOMM API 提供通訊端，讓開發人員執行雙向序列埠樣式通訊。
 ## <a name="can-i-access-these-apis-from-win32"></a>我可以從 Win32 存取這些 API 嗎？
 
 是，所有這些 API 應該都會運作。 這個部落格詳述呼叫[傳統型應用程式中的 Windows API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/) 的方式。 
-## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>「-在這裡插入 SKU-」 上具有這項功能嗎？
+## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>「-在這裡插入 SKU-」  上具有這項功能嗎？
 
 **藍牙 LE**:是，所有的功能是 OneCore 中，而且應該搭配運作的 Bluetooth LE 堆疊的最新裝置上使用。 
 > 警告：週邊角色硬體相依，而且某些 Windows Server 版本不支援藍芽。 
 
-**藍芽 b R/EDR （傳統）**:有一些變化，但一般來說，有非常類似的設定檔層級的支援。 請參閱 [RFCOMM](send-or-receive-files-with-rfcomm.md)上的文件，以及[電腦](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles)和[手機](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)的這些受支援設定檔文件
+**藍芽 b R/EDR （傳統）** :有一些變化，但一般來說，有非常類似的設定檔層級的支援。 請參閱 [RFCOMM](send-or-receive-files-with-rfcomm.md)上的文件，以及[電腦](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles)和[手機](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)的這些受支援設定檔文件
 

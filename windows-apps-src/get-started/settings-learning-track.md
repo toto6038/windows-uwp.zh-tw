@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始設定, uwp, windows 10, 了解曲目, 設定, 儲存設定, 載入設定
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614633"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370490"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 中儲存和載入設定
 
@@ -86,7 +86,7 @@ if (composite != null)
 
 | API | 描述 |
 |------|---------------|
-| [ApplicationData.LocalSettings](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.temporaryfolder) | 從本機應用程式資料存放區中取得應用程式設定容器。 |
+| [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | 從本機應用程式資料存放區中取得應用程式設定容器。 |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | 從漫遊應用程式資料存放區中取得應用程式設定容器。 |
 | [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | 應用程式設定的容器，支援建立、移除、列舉，與周遊容器階層。 |
 | [Windows.UI.ApplicationSettings 命名空間](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | 提供您會用來定義應用程式設定的類別，其顯示在 Windows 殼層的設定窗格中。 |
