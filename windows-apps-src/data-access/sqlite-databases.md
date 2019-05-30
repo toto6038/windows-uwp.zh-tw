@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 552de1ccb8f8e69a4ad716e54557ae0b5cd3a3f4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 465376214f1bf1b390ec6db8609783e4e7872196
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635663"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362790"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP app 中使用 SQLite 資料庫
 您可以使用 SQLite 在使用者的裝置上儲存和擷取輕量資料庫中的資料。 本指南會示範怎麼做。
@@ -39,7 +39,7 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 ### <a name="sqlite-library"></a>SQLite 程式庫
 
-[Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) 程式庫會在 [System.Data.Common](https://msdn.microsoft.com/library/system.data.common.aspx) 命名空間中實作介面。 Microsoft 會主動維護這些實作，並提供直覺的包裝函式來處理低階原生 SQLite API。
+[Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) 程式庫會在 [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common?redirectedfrom=MSDN) 命名空間中實作介面。 Microsoft 會主動維護這些實作，並提供直覺的包裝函式來處理低階原生 SQLite API。
 
 本指南的其餘部分可協助您使用此程式庫。
 
@@ -55,13 +55,13 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 ### <a name="the-minimum-version-of-your-project-does-not-target-the-fall-creators-update"></a>您專案的最低版本不是以 Fall Creators Update 為目標
 
-如果您使用 Visual Studio 2015，請按一下 **\[說明\]**->**\[關於 Microsoft Visual Studio\]**。 然後在已安裝的程式清單中，確定您有 NuGet 套件管理員 **3.5** 版或更新版本。 如果您的版本號碼較低，請在[這裡](https://www.nuget.org/downloads)安裝較新版的 NuGet。 在該頁面上，您會看見所有 Nuget 版本列於 **Visual Studio 2015** 標題下。
+如果您使用 Visual Studio 2015，請按一下 **\[說明\]** -> **\[關於 Microsoft Visual Studio\]** 。 然後在已安裝的程式清單中，確定您有 NuGet 套件管理員 **3.5** 版或更新版本。 如果您的版本號碼較低，請在[這裡](https://www.nuget.org/downloads)安裝較新版的 NuGet。 在該頁面上，您會看見所有 Nuget 版本列於 **Visual Studio 2015** 標題下。
 
 接下來，新增類別庫至您的解決方案。 您不必使用類別庫包含您的資料存取碼，但我們會在範例中使用一個。 我們會將程式庫命名為 **DataAccessLibrary**，並將程式庫中的類別命名為 **DataAccess**。
 
 ![類別庫](images/class-library.png)
 
-以滑鼠右鍵按一下解決方案，然後按一下 **\[管理解決方案的 NuGet 套件\]**。
+以滑鼠右鍵按一下解決方案，然後按一下 **\[管理解決方案的 NuGet 套件\]** 。
 
 ![管理 NuGet 套件](images/manage-nuget.png)
 
@@ -95,7 +95,7 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 ![類別庫](images/dot-net-standard.png)
 
-以滑鼠右鍵按一下解決方案，然後按一下 **\[管理解決方案的 NuGet 套件\]**。
+以滑鼠右鍵按一下解決方案，然後按一下 **\[管理解決方案的 NuGet 套件\]** 。
 
 ![管理 NuGet 套件](images/manage-nuget-2.png)
 

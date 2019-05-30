@@ -5,12 +5,12 @@ ms.date: 6/1/2018
 ms.topic: article
 keywords: windows 10、 uwp、 裝置入口網站、 應用程式管理員、 部署、 sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 928c07bd23228f0fefd78be6019a0d116b2e6e4b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: adc944f3e84e2ea7ba3dacd2021bc2e141bf8cdd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635423"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362322"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>透過鬆散檔案註冊部署應用程式 
 
@@ -34,7 +34,7 @@ ms.locfileid: "57635423"
 Windows 提供多個開發人員工具，以註冊在本機和遠端裝置上的鬆散式檔案配置。 您可以從中`WinDeployAppCmd`（Windows SDK 工具），Windows Device Portal，PowerShell，並[Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network)。 下面我們將介紹如何註冊使用這些工具的鬆散式檔案。 但首先，請確定您有下列設定：
 
 - 您的裝置必須在 Windows 10 Creators Update (建置 14965) 或更新版本。
-- 您必須啟用[開發人員模式](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)並[裝置探索](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#device-discovery)在所有裝置上。
+- 您必須啟用[開發人員模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)並[裝置探索](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#device-discovery)在所有裝置上。
 
 > [!IMPORTANT]
 > 鬆散式檔案註冊才可以使用支援的網路共用 (SMB) 通訊協定的裝置：桌面和 Xbox。 

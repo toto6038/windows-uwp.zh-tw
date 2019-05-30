@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d10dbf52f0ed01d46f9e5cba83cd14d48bfc88d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d4910a514c9fc1f16c29056319043393506a9e2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639173"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366910"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
@@ -43,15 +43,15 @@ ms.locfileid: "57639173"
 這個專案利用 CreateJS JavaScript 架構。 CreateJS 是一套免費工具，根據 MIT 授權，可讓您輕鬆地建立以 Sprite 為基礎的遊戲。 CreateJS 程式庫已存在專案中 (在方案總管檢視中尋找 *js/easeljs-0.8.2.min.js*，以及 *js/preloadjs-0.6.2.min.js*)。 您可以在 [CreateJS 首頁](https://www.createjs.com)找到有關 CreateJS 的資訊。
 
 
-## <a name="getting-started"></a>開始使用
+## <a name="getting-started"></a>使用者入門
 
 app 的完整原始碼儲存在 [GitHub](https://github.com/Microsoft/Windows-appsample-get-started-js2d)。
 
-瀏覽 GitHub、按一下綠色 **\[Clone or download\]** (複製或下載) 按鈕，然後選取 **\[在 Visual Studio 中開啟\]**，是最簡單的入門使用方式。 
+瀏覽 GitHub、按一下綠色 **\[Clone or download\]** (複製或下載) 按鈕，然後選取 **\[在 Visual Studio 中開啟\]** ，是最簡單的入門使用方式。 
 
 ![複製存放庫](images/JS2D_2.png)
 
-您也可以下載專案為 zip 檔案，或使用任何可搭配 [GitHub 專案](https://msdn.microsoft.com/en-us/windows/uwp/get-started/get-uwp-app-samples) 的其他標準方式。
+您也可以下載專案為 zip 檔案，或使用任何可搭配 [GitHub 專案](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples) 的其他標準方式。
 
 一旦方案載入到 Visual Studio 之後，您會看到數個檔案，包括：
 
@@ -214,7 +214,7 @@ function animate_clouds()
     stage.on("stagemousedown", mouseClicked);
 ```
 
-現在，我們有兩個函式，當玩家按下鍵盤按鍵或按一下滑鼠時呼叫它們。 這兩個事件都會呼叫 **userDidSomething()**，這個函式會查看 gamestate 變數，決定遊戲目前執行的動作，以及因此接下來需要發生的動作。
+現在，我們有兩個函式，當玩家按下鍵盤按鍵或按一下滑鼠時呼叫它們。 這兩個事件都會呼叫 **userDidSomething()** ，這個函式會查看 gamestate 變數，決定遊戲目前執行的動作，以及因此接下來需要發生的動作。
 
 Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都是在 ticker 計時器所呼叫的 **gameLoop()** 函式中發生。 gameLoop() 追蹤正在玩遊戲狀態中、處於「遊戲結束狀態」或「準備玩遊戲狀態」或作者使用變數定義的其他狀態。 這個 state 變數在切換陳述式中進行測試，它會定義要呼叫哪些其他的功能。 因此如果狀態設定為 "playing"，就會呼叫可讓恐龍跳躍以及讓桶子移動的函式。 如果恐龍被殺死，gamestate 變數將設為 "game over state"，而且「遊戲結束！」 訊息將會顯示。 如果您對遊戲設計模式感興趣，[遊戲程式設計模式](https://gameprogrammingpatterns.com/)這本書非常有幫助。
 
@@ -261,8 +261,8 @@ Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都
 程序有幾個步驟。
 
 1. 您必須[註冊](https://developer.microsoft.com/en-us/store/register)為 Windows 開發人員。
-2. 您必須使用 App 提交[檢查清單](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
-3. 必須提交 App 以取得[認證](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
+2. 您必須使用 App 提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+3. 必須提交 App 以取得[認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 
 如需詳細資訊，請參閱 <<c0> [ 發佈您的 UWP 應用程式](https://developer.microsoft.com/en-us/store/publish-apps)。
 

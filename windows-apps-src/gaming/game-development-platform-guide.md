@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 技術, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c5c6bb9bc2dadc89811c18c0aa844b899e52cf1
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: ba15a4f965dc582a8bd4eaeca211367ea1fcb5cb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162703"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368694"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>適用於 UWP app 的遊戲技術
 
@@ -47,7 +47,7 @@ ms.locfileid: "58162703"
 ## <a name="getting-started-with-directx-game-project-templates"></a>開始使用 DirectX 遊戲專案範本
 
 
-設定開發您的環境之後，您可以使用其中一個 DirectX 相關專案範本來建立 UWP DirectX 遊戲。 Visual Studio 2015 有三個範本可用於建立新的 UWP DirectX 專案：**DirectX 11 App (通用 Windows)**、 **DirectX 12 App (通用 Windows)** 以及 **DirectX 11 和 XAML App (通用 Windows)**。 如需詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
+設定開發您的環境之後，您可以使用其中一個 DirectX 相關專案範本來建立 UWP DirectX 遊戲。 Visual Studio 2015 有三個範本可用於建立新的 UWP DirectX 專案：**DirectX 11 App (通用 Windows)** 、 **DirectX 12 App (通用 Windows)** 以及 **DirectX 11 和 XAML App (通用 Windows)** 。 如需詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
 
 ## <a name="windows-10-apis"></a>Windows 10 API
 
@@ -58,7 +58,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
 
 ![遊戲平台技術](images/gameplatformtechnologies.png)
 
--   3D 圖形 - Windows 10 支援兩個 3D 圖形 API 集合：Direct3D 11 和 [Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn899121)。 這兩種 API 均提供建立 3D 和 2D 圖形的功能。 Direct3D 11 與 Direct3D 12 不會一起使用，但任一種都可以搭配任何 2D 圖形與 UI 群組中的 API 使用。 如需在您的遊戲中使用圖形 API 的詳細資訊，請參閱 [DirectX 遊戲的基本 3D 圖形](an-introduction-to-3d-graphics-with-directx.md)。
+-   3D 圖形 - Windows 10 支援兩個 3D 圖形 API 集合：Direct3D 11 和 [Direct3D 12](https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-guide)。 這兩種 API 均提供建立 3D 和 2D 圖形的功能。 Direct3D 11 與 Direct3D 12 不會一起使用，但任一種都可以搭配任何 2D 圖形與 UI 群組中的 API 使用。 如需在您的遊戲中使用圖形 API 的詳細資訊，請參閱 [DirectX 遊戲的基本 3D 圖形](an-introduction-to-3d-graphics-with-directx.md)。
 
     <table>
     <colgroup>
@@ -78,7 +78,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p>當您需要將遊戲效能最大化且您的遊戲佔用龐大 CPU 資源時，請使用 Direct3D 12。</p>
     <p><strong>如需詳細資訊</strong></p>
-    <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/dn899121">Direct3d 12</a> 文件。</p></td>
+    <p>請參閱 <a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-guide">Direct3d 12</a> 文件。</p></td>
     </tr>
     <tr class="even">
     <td align="left">Direct3D 11</td>
@@ -86,7 +86,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p>如果您有現有的 Direct3D 11 程式碼、您的遊戲沒有佔用龐大 CPU 資源，或您想要擁有為您管理資源的優勢，請使用 Direct3D 11。</p>
     <p><strong>如需詳細資訊</strong></p>
-    <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/ff476080">Direct3D 11</a> 文件。</p></td>
+    <p>請參閱 <a href="https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11">Direct3D 11</a> 文件。</p></td>
     </tr>
     </tbody>
     </table>
@@ -113,7 +113,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p>Direct2D (而非 Direct3D) 可用於提供純 2D 遊戲的圖形，例如側捲動或棋盤遊戲，或可搭配 Direct3D 使用來簡化在 3D 遊戲中建立 2D 圖形，例如使用者介面或抬頭顯示器。</p>
     <p><strong>如需詳細資訊</strong></p>
-    <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/dd370990">Direct2D</a> 文件。</p></td>
+    <p>請參閱 <a href="https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal">Direct2D</a> 文件。</p></td>
     </tr>
     <tr class="even">
     <td align="left">DirectWrite</td>
@@ -121,7 +121,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p></p>
     <p><strong>如需詳細資訊</strong></p>
-    <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/dd368038">DirectWrite</a> 文件。</p></td>
+    <p>請參閱 <a href="https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal">DirectWrite</a> 文件。</p></td>
     </tr>
     <tr class="odd">
     <td align="left">DirectComposition</td>
@@ -129,7 +129,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p>DirectComposition 設計用來簡化撰寫視覺效果及建立動畫轉換的程序。 如果您的遊戲需要複雜的使用者介面，您可以使用 DirectComposition 來簡化 UI 的建立和管理。</p>
     <p><strong>如需詳細資訊</strong></p>
-    <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371">DirectComposition</a> 文件。</p></td>
+    <p>請參閱 <a href="https://docs.microsoft.com/windows/desktop/directcomp/directcomposition-portal">DirectComposition</a> 文件。</p></td>
     </tr>
     </tbody>
     </table>
@@ -156,7 +156,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p>當您的遊戲需要以最低的負荷和延遲來播放音效時，請使用 XAudio2。</p>
     <p><strong>如需詳細資訊</strong></p>
-    <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/hh405049">XAudio2</a> 文件。</p></td>
+    <p>請參閱 <a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal">XAudio2</a> 文件。</p></td>
     </tr>
     <tr class="even">
     <td align="left">媒體基礎</td>
@@ -164,7 +164,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p>媒體基礎對於遊戲中的電影場景或非互動式元件特別實用。 媒體基礎也很適合用於解碼音訊檔案以便使用 XAudio2 播放。</p>
     <p><strong>如需詳細資訊</strong></p>
-    <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/ms694197">Microsoft 媒體基礎</a>概觀。</p></td>
+    <p>請參閱 <a href="https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk">Microsoft 媒體基礎</a>概觀。</p></td>
     </tr>
     </tbody>
     </table>
@@ -191,7 +191,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p>如果您的遊戲需要支援 gampad 輸入，而且您有現有的 XInput 程式碼，即可繼續使用 XInput。 UWP 的 Windows.Gaming.Input 已取代 XInput，而如果您正在撰寫新的輸入程式碼，則應該使用 Windows.Gaming.Input 而不是 XInput。</p>
     <p><strong>如需詳細資訊</strong></p>
-    <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/hh405053">XInput</a> 文件。</p></td>
+    <p>請參閱 <a href="https://docs.microsoft.com/windows/desktop/xinput/xinput-game-controller-apis-portal">XInput</a> 文件。</p></td>
     </tr>
     <tr class="even">
     <td align="left">Windows.Gaming.Input</td>
@@ -207,7 +207,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p>如果您的遊戲需要支援遊戲板輸入但不是使用現有的 XInput 程式碼或您需要以上所列的其中一個優勢，則應使用 Windows.Gaming.Input。</p>
     <p><strong>如需詳細資訊</strong></p>
-    <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/apps/dn707817">Windows.Gaming.Input</a> 文件。</p></td>
+    <p>請參閱 <a href="https://docs.microsoft.com/uwp/api/Windows.Gaming.Input">Windows.Gaming.Input</a> 文件。</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
@@ -242,7 +242,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p>使用 DirectXMath 是選擇性的，可簡化一般數學運算。</p>
     <p><strong>如需詳細資訊</strong></p>
-    <p>請參閱 <a href="https://msdn.microsoft.com/library/windows/desktop/hh437833">DirectXMath</a> 文件。</p></td>
+    <p>請參閱 <a href="https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal">DirectXMath</a> 文件。</p></td>
     </tr>
     </tbody>
     </table>

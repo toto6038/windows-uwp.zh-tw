@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, visual studio, 工具, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f4ff471ae4c45761a1c1dad5819e97c8245746a1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653473"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368128"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>用來進行遊戲程式設計的 Visual Studio 工具
 
@@ -43,7 +43,7 @@ ms.locfileid: "57653473"
 
 建立[組建自訂檔](#build-customizations-for-3d-assets)，在建置期間將這些檔案新增到 .dds 檔案。
 
-如需詳細資訊，請參閱[使用紋理與影像](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)。
+如需詳細資訊，請參閱[使用紋理與影像](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015)。
 
 > **附註**  影像編輯器不是要編輯應用程式的完整功能映像的取代項目，但適用於許多簡單的檢視和編輯案例。
 
@@ -62,7 +62,7 @@ ms.locfileid: "57653473"
 
 ![茶壺](images/modeleditor.png)
 
-如需詳細資訊，請參閱[使用 3D 模型](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx)。
+如需詳細資訊，請參閱[使用 3D 模型](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015)。
 
 > **附註**  模型編輯器並不打算編輯應用程式的完整功能模型取代，但適用於許多簡單的檢視和編輯案例。
 
@@ -109,20 +109,20 @@ float3 LambertLighting(
 }
 ```
 
-如需相關資訊，請參閱[使用著色器](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx)。
+如需相關資訊，請參閱[使用著色器](https://docs.microsoft.com/visualstudio/designers/working-with-shaders?view=vs-2015)。
 
 ## <a name="build-customizations-for-3d-assets"></a>適用於 3D 資產的組建自訂
 
 
 您可以將組建自訂新增到專案，如此一來，Visual Studio 便能將資源轉換成可使用的格式。 在此之後，您就可以將資產載入 App， 並藉由建立並填入 DirectX 資源 (就像您在任何其他 DirectX App 中所做的動作) 來使用它們。
 
-若要新增組建自訂，您可以在 \[方案總管\] 中以滑鼠右鍵按一下專案，然後選取 \[組建自訂\]。您可以將下列組建自訂類型新增到專案。
+若要新增組建自訂，您可以在 \[方案總管\] 中以滑鼠右鍵按一下專案，然後選取 \[組建自訂\]。   您可以將下列組建自訂類型新增到專案。
 
 -   影像內容管線會取得影像檔做為輸入並輸出 DirectDraw 表面 (.dds) 檔案。
 -   網格內容管線會取得網格檔 (例如 .fbx) 並輸出 .cmo 網格檔。
 -   著色器內容管線會從 Visual Studio 著色器編輯器中取得視覺著色器圖形 (.dgsl)，並輸出編譯過的著色器輸出 (.cso) 檔案。
 
-如需詳細資訊，請參閱[在遊戲或應用程式中使用 3D 資產](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)。
+如需詳細資訊，請參閱[在遊戲或應用程式中使用 3D 資產](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015)。
 
 ## <a name="debugging-directx-graphics"></a>偵錯 DirectX 圖形
 
@@ -139,7 +139,7 @@ Visual Studio 提供圖形特定的偵錯工具。 使用這些工具進行諸�
 -   有限的 Direct2D 支援。
 -   作業系統與 SDK 需求。
 
-如需詳細資訊，請參閱[偵錯 DirectX 圖形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
+如需詳細資訊，請參閱[偵錯 DirectX 圖形](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015)。
 
 
  

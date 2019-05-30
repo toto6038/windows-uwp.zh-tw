@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp，連線裝置、 遠端系統、 羅馬、 project rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 7788cb546eddf77292210b5b1e8268239504a843
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 665a40cf69b7518643390abddc3895be07c63c5c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592133"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366188"
 ---
 # <a name="discover-remote-devices"></a>探索遠端裝置
 您的 App 可以使用和探索裝置相同的 Microsoft 帳戶登入，使用無線網路、藍牙及雲端連線來探索 Windows 裝置。 遠端裝置不需要安裝任何特殊的軟體即可以搜尋。
@@ -20,7 +20,7 @@ ms.locfileid: "57592133"
 > 本指南假設您已經依照[啟動遠端 app](launch-a-remote-app.md) 中的步驟，將存取權授與遠端系統功能。
 
 ## <a name="filter-the-set-of-discoverable-devices"></a>篩選一組可搜尋的裝置
-您可以使用 [**RemoteSystemWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher) 搭配篩選器，縮小一組可搜尋裝置的範圍。 篩選器可以偵測探索類型 (近端、本機網路和雲端連線)、裝置類型 (桌上型電腦、行動裝置、Xbox、中樞和全像攝影) 以及可用性狀態 (使用遠端系統功能的裝置可用性狀態)。
+您可以使用 [**RemoteSystemWatcher**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystemWatcher) 搭配篩選器，縮小一組可搜尋裝置的範圍。 篩選器可以偵測探索類型 (近端、本機網路和雲端連線)、裝置類型 (桌上型電腦、行動裝置、Xbox、中樞和全像攝影) 以及可用性狀態 (使用遠端系統功能的裝置可用性狀態)。
 
 因為物件會當成參數傳遞到其建構函式，所以必須在初始化 **RemoteSystemWatcher** 物件期間或之前建構篩選物件。 下列程式碼可建立每種可用類型的篩選器，並新增至清單中。
 
@@ -31,24 +31,24 @@ ms.locfileid: "57592133"
 
 > [!NOTE]
 > 「近端」篩選值無法保證實體鄰近程度。 對於需要可靠實體鄰近性的案例，請在篩選器中使用 [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) 值。 此篩選器目前只允許藍牙找到的裝置。 由於保證實體鄰近性的新探索機制及通訊協定已在支援之列，因此也包含在其中。  
-另外還有中的屬性[ **RemoteSystem** ](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem)指出探索到的裝置實際上是實體附近內的類別：[**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity)。
+另外還有中的屬性[ **RemoteSystem** ](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem)指出探索到的裝置實際上是實體附近內的類別：[**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity)。
 
 > [!NOTE]
 > 如果您想要探索 (由您探索的類型篩選條件選擇) 區域網路上的裝置，您的網路需要使用「私人」或「網域」設定檔。 您的裝置不會透過「公用」網路探索其他裝置。
 
-建立 [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) 物件的清單之後，即可傳遞至 **RemoteSystemWatcher** 的建構函式。
+建立 [**IRemoteSystemFilter**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.IRemoteSystemFilter) 物件的清單之後，即可傳遞至 **RemoteSystemWatcher** 的建構函式。
 
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
 
-呼叫這個監控程式的 [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.Start) 方法時，只有偵測到符合下列所有條件的裝置時，才會引發 [**RemoteSystemAdded**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.RemoteSystemAdded) 事件︰
+呼叫這個監控程式的 [**Start**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemwatcher.start) 方法時，只有偵測到符合下列所有條件的裝置時，才會引發 [**RemoteSystemAdded**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemwatcher.remotesystemadded) 事件︰
 * 可透過近端連線搜尋
 * 其是桌面或電話
 * 其歸類為可用
 
-從該處開始，處理事件、擷取 [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) 物件，以及連線到遠端裝置的程序，和[啟動遠端 app](launch-a-remote-app.md) 完全相同。 簡單說，**RemoteSystem** 物件會儲存為 [**RemoteSystemAddedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) 物件 (透過每個 **RemoteSystemAdded** 事件傳入) 的屬性。
+從該處開始，處理事件、擷取 [**RemoteSystem**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem) 物件，以及連線到遠端裝置的程序，和[啟動遠端 app](launch-a-remote-app.md) 完全相同。 簡單說，**RemoteSystem** 物件會儲存為 [**RemoteSystemAddedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) 物件 (透過每個 **RemoteSystemAdded** 事件傳入) 的屬性。
 
 ## <a name="discover-devices-by-address-input"></a>藉輸入的位址探索裝置
-有些裝置可能無法透過掃描來與使用者關聯或搜尋到，但如果探索的 app 直接使用位址，仍然可以到達。 [  **HostName**](https://msdn.microsoft.com/library/windows/apps/windows.networking.hostname.aspx) 類別可用來表示遠端裝置的位址。 這通常會以 IP 位址的形式儲存，但也允許數個其他格式 (如需詳細資訊，請參閱 [**HostName 建構函式**](https://msdn.microsoft.com/library/windows/apps/br207118.aspx))。
+有些裝置可能無法透過掃描來與使用者關聯或搜尋到，但如果探索的 app 直接使用位址，仍然可以到達。 [  **HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname) 類別可用來表示遠端裝置的位址。 這通常會以 IP 位址的形式儲存，但也允許數個其他格式 (如需詳細資訊，請參閱 [**HostName 建構函式**](https://docs.microsoft.com/uwp/api/windows.networking.hostname.))。
 
 如果提供有效的 **HostName** 物件，就可以擷取**RemoteSystem** 物件。 如果位址資料無效，則會傳回 `null` 物件參照。
 
@@ -88,12 +88,12 @@ if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anony
 }
 ```
 
-若要變更此設定，使用者必須開啟 **\[設定\]** App。 在 **\[系統\]** > **\[共用體驗\]** > **\[在裝置間共用\]** 功能表中有下拉式方塊，使用者可以在那裡指定其系統可以與哪些裝置共用。
+若要變更此設定，使用者必須開啟 **\[設定\]** App。 在 **\[系統\]**  >  **\[共用體驗\]**  >  **\[在裝置間共用\]** 功能表中有下拉式方塊，使用者可以在那裡指定其系統可以與哪些裝置共用。
 
 ![共用體驗設定頁面](images/shared-experiences-settings.png)
 
 ## <a name="related-topics"></a>相關主題
 * [已連線的應用程式和裝置 (Project Rome)](connected-apps-and-devices.md)
 * [啟動遠端應用程式](launch-a-remote-app.md)
-* [遠端系統的 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [遠端系統的 API 參考](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)
 * [遠端系統範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

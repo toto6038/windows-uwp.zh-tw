@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 14f5fa06cfa0a6a7e393f3e2d513af0898d1f822
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624853"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360934"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概觀
  
@@ -34,14 +34,14 @@ ms.locfileid: "57624853"
 
 定期通知要求應用程式要裝載雲端服務。 安裝應用程式的所有使用者將會定期輪詢服務。 在每個輪詢間隔 (如每小時一次)，Windows 會傳送一個 HTTP GET 要求到 URI，下載回應要求時提供的要求磚或徽章內容 (使用 XML 格式)，然後在應用程式磚上顯示內容。
 
-請注意，定期更新不可以與快顯通知搭配使用。 最適合提供快顯通知的方式是透過[排程](https://msdn.microsoft.com/library/windows/apps/hh465417)或[推播](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)通知。
+請注意，定期更新不可以與快顯通知搭配使用。 最適合提供快顯通知的方式是透過[排程](https://docs.microsoft.com/previous-versions/windows/apps/hh465417(v=win.10))或[推播](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))通知。
 
 ## <a name="uri-location-and-xml-content"></a>URI 位置和 XML 內容
 
 
 任何有效的 HTTP 或 HTTPS 網址都可以做為 URI 進行輪詢。
 
-雲端伺服器的回應包括下載的內容。 從 URI 傳回的內容必須符合[磚](adaptive-tiles-schema.md)或[徽章](https://msdn.microsoft.com/library/windows/apps/br212851) XML 結構描述規格，而且必須使用 UTF-8 編碼。 您可以使用已定義的 HTTP 標頭來指定通知的[到期時間](#expiration-of-tile-and-badge-notifications)或標記。
+雲端伺服器的回應包括下載的內容。 從 URI 傳回的內容必須符合[磚](adaptive-tiles-schema.md)或[徽章](https://docs.microsoft.com/uwp/schemas/tiles/badgeschema/schema-root) XML 結構描述規格，而且必須使用 UTF-8 編碼。 您可以使用已定義的 HTTP 標頭來指定通知的[到期時間](#expiration-of-tile-and-badge-notifications)或標記。
 
 ## <a name="polling-behavior"></a>輪詢行為
 
@@ -84,13 +84,13 @@ ms.locfileid: "57624853"
 ## <a name="periodic-notifications-in-the-notification-queue"></a>通知佇列中的定期通知
 
 
-您可以使用定期磚更新搭配[通知循環](https://msdn.microsoft.com/library/windows/apps/hh781199)。 根據預設，[開始] 畫面上的磚會顯示單一通知的內容，直到新通知取代目前的通知為止。 啟用循環後，佇列最多可以保留 5 個通知，而磚會循環顯示這些通知。
+您可以使用定期磚更新搭配[通知循環](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10))。 根據預設，[開始] 畫面上的磚會顯示單一通知的內容，直到新通知取代目前的通知為止。 啟用循環後，佇列最多可以保留 5 個通知，而磚會循環顯示這些通知。
 
-如果佇列達到 5 個通知的容量，下一個新通知將會取代佇列中最舊的通知。 不過，您可以在通知設定標記，影響佇列的取代原則。 標記是應用程式專用、無大小寫之分的字串，最多可有 16 個英數字元，在回應承載的 [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP 標頭中指定。 Windows 會將傳入通知上的標記與已經在佇列中所有通知的標記相比較。 如果找到相符的標記，新的通知會取代具有相同標記的佇列通知。 如果沒有找到相符的標記，會套用預設的取代規則，由新的通知取代佇列中最舊的通知。
+如果佇列達到 5 個通知的容量，下一個新通知將會取代佇列中最舊的通知。 不過，您可以在通知設定標記，影響佇列的取代原則。 標記是應用程式專用、無大小寫之分的字串，最多可有 16 個英數字元，在回應承載的 [X-WNS-Tag](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) HTTP 標頭中指定。 Windows 會將傳入通知上的標記與已經在佇列中所有通知的標記相比較。 如果找到相符的標記，新的通知會取代具有相同標記的佇列通知。 如果沒有找到相符的標記，會套用預設的取代規則，由新的通知取代佇列中最舊的通知。
 
 您可以使用通知佇列和標記來實作各種不同的通知情形。 例如，股票應用程式可以傳送 5 個通知，每個通知各與不同的股票有關，並使用股票名稱做標記。 這樣可以避免佇列包含 2 則相同股票的通知，而且其中較舊的是已過期的通知。
 
-如需詳細資訊，請參閱[使用通知佇列](https://msdn.microsoft.com/library/windows/apps/hh781199)。
+如需詳細資訊，請參閱[使用通知佇列](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10))。
 
 ### <a name="enabling-the-notification-queue"></a>啟用通知佇列
 
@@ -103,7 +103,7 @@ ms.locfileid: "57624853"
 ## <a name="related-topics"></a>相關主題
 
 
-* [定期通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [如何設定定期通知徽章](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [如何設定磚的定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [定期通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
+* [如何設定定期通知徽章](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [如何設定磚的定期通知](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
  

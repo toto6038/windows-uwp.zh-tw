@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 363ea5728b94d6b42f29299e8d240bcfc6242b4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5fc43d5229ecd2bd9502fd74fef7f5197f758c62
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625113"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363584"
 ---
 # <a name="guidelines-for-panning"></a>移動瀏覽的指導方針
 
 
 移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
 
-> **重要的 Api**:[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)， [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要的 Api**:[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [ **Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -79,10 +79,9 @@ ms.locfileid: "57625113"
 利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非是要區隔是在 API 中進行，或一些裝置特有的 Windows UI 所需的只是我們將這兩個互動，以移動瀏覽。
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update-行為變更</strong>
-> </div>
-> 根據預設，主動式手寫筆現在可在 UWP 應用程式中捲動/移動瀏覽 (例如觸控、觸控板和被動式手寫筆)，而不用選取文字。  
+> <strong>Windows 10 Fall Creators Update-行為變更</strong>根據預設，而不是文字選取範圍中，使用中的畫筆現在捲動/計劃在 UWP 應用程式 （例如觸控、 觸控板和被動畫筆）。  
 > 如果您的應用程式取決於先前的行為，您可以覆寫手寫筆捲動並還原回先前的行為。 如需詳細資訊，請參閱 API 參考主題<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a>。
+> </div>
 
 根據輸入裝置，使用者會透過下列其中一種方式，在可移動瀏覽的區域內移動瀏覽：
 
@@ -172,9 +171,9 @@ Windows 8 支援三種類型的移動瀏覽：
 ## <a name="related-articles"></a>相關文章
 
 
-* [自訂的使用者互動](https://msdn.microsoft.com/library/windows/apps/mt185599)
-* [最佳化 ListView 和 GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
-* [鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/mt244347)
+* [自訂的使用者互動](https://developer.microsoft.com/windows/design/inputs-devices)
+* [最佳化 ListView 和 GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
+* [鍵盤協助工具](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
 
 **範例**
 * [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
@@ -189,7 +188,7 @@ Windows 8 支援三種類型的移動瀏覽：
 * [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [輸入：簡化的手寫範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [輸入：Windows 8 筆勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 （c + +） 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 觸控的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 

@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a51705b1e74508d89328ce5ace3d7fd869aa0940
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1b8e03683d38b382d74bd6defbf7732578878960
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606393"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362834"
 ---
 # <a name="date-picker"></a>日期選擇器
 
@@ -26,7 +26,7 @@ ms.locfileid: "57606393"
 
 日期選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選當地語系化的日期值。 
 
-> **重要的 Api**:[DatePicker 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)，[日期屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
+> **重要的 Api**:[DatePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker)，[日期屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？

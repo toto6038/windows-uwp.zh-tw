@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, directx, 移植, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: c7569c6b2f041f5535e0eabe934a91da86b60b9a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d4aef73b9b28d631a492436ff90761541134220
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634223"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367419"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>逐步解說：簡單 Direct3D 9 應用程式移植到 DirectX 11 和通用 Windows 平台 (UWP)
 
@@ -41,7 +41,7 @@ ms.locfileid: "57634223"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">連接埠遊戲迴圈</a></p></td>
-<td align="left"><p>說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 <a href="https://msdn.microsoft.com/library/windows/apps/hh700478"><strong>IFrameworkView</strong></a> 以控制全螢幕的 <a href="https://msdn.microsoft.com/library/windows/apps/br208225"><strong>CoreWindow</strong></a>。</p></td>
+<td align="left"><p>說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> 以控制全螢幕的 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,11 +61,11 @@ ms.locfileid: "57634223"
 -   裝置、裝置內容和圖形基礎結構的區隔。
 -   編譯著色器的程序以及在執行階段載入著色器位元組程式碼。
 -   如何為輸入組合語言 (IA) 階段設定每個頂點資料。
--   如何使用 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 建立 CoreWindow 檢視。
+-   如何使用 [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) 建立 CoreWindow 檢視。
 
-請注意，為了簡單起見，本逐步解說使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，而且不涵蓋 XAML 互通性。
+請注意，為了簡單起見，本逐步解說使用 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)，而且不涵蓋 XAML 互通性。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 
 您應[為 UWP DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您不需要的範本，但您將需要 Microsoft Visual Studio 2015 載入這個逐步解說的程式碼範例。
@@ -76,11 +76,11 @@ ms.locfileid: "57634223"
 
 **Direct3D**
 
-* [在 Direct3D 中撰寫 HLSL 著色器 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [在 Direct3D 中撰寫 HLSL 著色器 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [DirectX 遊戲專案範本](user-interface.md)
 
 **Microsoft 網上商店**
 
-* [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
-* [**物件控制代碼運算子 (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
+* [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class)
+* [**物件控制代碼運算子 (^)** ](https://docs.microsoft.com/cpp/windows/handle-to-object-operator-hat-cpp-component-extensions)
 

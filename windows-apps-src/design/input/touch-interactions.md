@@ -8,12 +8,12 @@ keywords: 觸控、指標、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b889fede67c7e32ff48c0e48a516f389afda820a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d5de2af483ca000909e60e94fc41d2a88a405219
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649233"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365176"
 ---
 # <a name="touch-interactions"></a>觸控互動
 
@@ -22,7 +22,7 @@ ms.locfileid: "57649233"
 
 不過，請記住，針對觸控最佳化的 UI 未必優於傳統 UI。 兩者對技術和應用程式而言各有優缺點。 在設計觸控優先的 UI 之前，了解觸控 (包含觸控板)、畫筆/手寫筆、滑鼠以及鍵盤輸入之間的核心差異是很重要的。
 
-> **重要的 Api**:[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)， [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)， [ **Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
+> **重要的 Api**:[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)， [ **Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)， [ **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 
 
 許多裝置都配備多點觸控螢幕，支援使用一或多根手指 (或觸控點) 進行輸入。 觸控點及其移動方式都會解譯為觸控手勢與操作，以支援各種不同的使用者互動。
@@ -163,30 +163,30 @@ ms.locfileid: "57649233"
 
 透過應用程式檢視的移動瀏覽/捲動和縮放設定，調整使用者互動方式。 應用程式檢視指示使用者如何存取並操作應用程式與其內容。 檢視也提供如慣性、內容界限彈回及貼齊點等行為。
 
-當檢視區無法容納整個檢視內容時， [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控制項的移動瀏覽和捲動設定可以規定使用者在單一檢視內的瀏覽方式。 例如，單一檢視可以是雜誌或書籍的其中一頁、電腦的資料夾結構、文件庫或者相簿。
+當檢視區無法容納整個檢視內容時， [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 控制項的移動瀏覽和捲動設定可以規定使用者在單一檢視內的瀏覽方式。 例如，單一檢視可以是雜誌或書籍的其中一頁、電腦的資料夾結構、文件庫或者相簿。
 
-縮放設定可套用至視覺化縮放 (透過 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控制項來支援) 和 [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項。 語意式縮放是一種觸控最佳化技術，適合在單一檢視中顯示及瀏覽大量的相關資料或內容。 它的運作方式是使用兩種不同的分類模式 (或縮放比例)。 這就類似在單一檢視內的移動瀏覽和捲動。 移動瀏覽和捲動可以和語意式縮放搭配使用。
+縮放設定可套用至視覺化縮放 (透過 [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 控制項來支援) 和 [**Semantic Zoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控制項。 語意式縮放是一種觸控最佳化技術，適合在單一檢視中顯示及瀏覽大量的相關資料或內容。 它的運作方式是使用兩種不同的分類模式 (或縮放比例)。 這就類似在單一檢視內的移動瀏覽和捲動。 移動瀏覽和捲動可以和語意式縮放搭配使用。
 
 您可以使用應用程式檢視與事件，來修改移動瀏覽/捲動和縮放行為。 與處理指標和手勢事件相比，它可以提供更順暢的互動體驗。
 
-如需有關 app 檢視的詳細資訊，請參閱[控制項、配置及文字](https://msdn.microsoft.com/library/windows/apps/mt228348)。
+如需有關 app 檢視的詳細資訊，請參閱[控制項、配置及文字](https://docs.microsoft.com/windows/uwp/design/basics/)。
 
 ## <a name="custom-touch-interactions"></a>自訂觸控互動
 
 
 如果您實作自己的互動支援，請牢記使用者所期待的是與應用程式 UI 元素直接互動的直覺式體驗。 建議您在平台控制項程式庫上將您的自訂互動模型化，以保持一致且可探索的 UI 體驗。 這些程式庫中的控制項提供完整的使用者互動體驗，包含標準互動、動畫物理效果、視覺化回饋及協助工具。 只有在需求明確且定義清楚，而且沒有基本的互動可以支援您的情況時，才能建立自訂互動。
 
-若要提供自訂的觸控支援，您可以處理各種不同的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件。 這些事件會分成三個等級的抽象概念。
+若要提供自訂的觸控支援，您可以處理各種不同的 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 事件。 這些事件會分成三個等級的抽象概念。
 
--   靜態手勢事件會在互動完成之後觸發。 手勢事件包含 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)、[**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)、[**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) 及 [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928)。
+-   靜態手勢事件會在互動完成之後觸發。 手勢事件包含 [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)、[**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)、[**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped) 及 [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)。
 
-    您可以透過將 [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939)、[**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931)、[**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937) 及 [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) 設定為 **false**，來停用特定元素的手勢事件。
+    您可以透過將 [**IsTapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.istapenabled)、[**IsDoubleTapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled)、[**IsRightTapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.isrighttapenabled) 及 [**IsHoldingEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.isholdingenabled) 設定為 **false**，來停用特定元素的手勢事件。
 
--   指標事件 (例如 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 和 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)) 會針對每個觸控點提供低階詳細資料，包括指標移動以及區分按下和放開事件的能力。
+-   指標事件 (例如 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)) 會針對每個觸控點提供低階詳細資料，包括指標移動以及區分按下和放開事件的能力。
 
     指標是含有統一事件機制的泛型輸入類型。 它會公開作用中輸入來源 (觸控、觸控板、滑鼠或手寫筆) 的基本資訊 (例如螢幕位置)。
 
--   操作手勢事件 (例如 [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950)) 會指出進行中的互動。 當使用者觸控元素並繼續進行，直到該使用者舉起手指或操作取消為止，就會開始引發它們。
+-   操作手勢事件 (例如 [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)) 會指出進行中的互動。 當使用者觸控元素並繼續進行，直到該使用者舉起手指或操作取消為止，就會開始引發它們。
 
     操作事件包括多點觸控互動 (例如縮放、移動瀏覽或旋轉)，以及使用慣性和速度資料的互動 (例如拖曳)。 操作事件所提供的資訊不會識別已執行的互動形式，而是會包括像是位置、平移量及速度等資料。 您可以使用這個觸控資料來判斷應該執行的互動類型。
 
@@ -211,7 +211,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 ## <a name="gesture-events"></a>手勢事件
 
 
-如需個別控制項的詳細資訊，請參閱[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)。
+如需個別控制項的詳細資訊，請參閱[控制項清單](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/)。
 
 ## <a name="pointer-events"></a>指標事件
 
@@ -224,19 +224,19 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 
 | 事件或類別                                                       | 描述                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
-| [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)             | 單指觸碰螢幕時就會發生。               |
-| [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)           | 在相同的觸控點上提起時就會發生。                |
-| [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)                 | 在螢幕上拖曳指標時就會發生。         |
-| [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)             | 當指標進入元素的界限區域時就會發生。 |
-| [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)               | 當指標離開元素的界限區域時就會發生。  |
-| [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)           | 當觸控點異常遺失時就會發生。               |
-| [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)     | 若有另一個元素採用指標擷取時就會發生。    |
-| [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | 當滑鼠滾輪的差異值變更時發生。         |
-| [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | 提供所有指標事件的資料。                         |
+| [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)             | 單指觸碰螢幕時就會發生。               |
+| [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)           | 在相同的觸控點上提起時就會發生。                |
+| [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)                 | 在螢幕上拖曳指標時就會發生。         |
+| [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)             | 當指標進入元素的界限區域時就會發生。 |
+| [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)               | 當指標離開元素的界限區域時就會發生。  |
+| [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)           | 當觸控點異常遺失時就會發生。               |
+| [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)     | 若有另一個元素採用指標擷取時就會發生。    |
+| [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | 當滑鼠滾輪的差異值變更時發生。         |
+| [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) | 提供所有指標事件的資料。                         |
 
  
 
-下列範例示範如何使用 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 及 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 物件上的點選互動。
+下列範例示範如何使用 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 及 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 物件上的點選互動。
 
 首先，在 Extensible Application Markup Language (XAML) 中建立名為 `touchRectangle` 的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。
 
@@ -246,7 +246,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
            Height="100" Width="200" Fill="Blue" />
 </Grid>
 ```
-接下來，指定 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 及 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件的接聽程式。
+接下來，指定 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 及 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件的接聽程式。
 
 ```cpp
 MainPage::MainPage()
@@ -286,7 +286,7 @@ Public Sub New()
 End Sub
 ```
 
-最後，當 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件處理常式再次將 **Height** 和 **Width** 設定為它們的開始值時，[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件處理常式會提高 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)。
+最後，當 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件處理常式再次將 **Height** 和 **Width** 設定為它們的開始值時，[**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件處理常式會提高 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)。
 
 ```cpp
 // Handler for pointer exited event.
@@ -418,29 +418,29 @@ End Sub
 
 | 事件或類別                                                                                               | 描述                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [**ManipulationStarting 事件**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | 第一次建立操作處理器時發生。                                                                                  |
-| [**ManipulationStarted 事件**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | 當輸入裝置開始在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 進行操作時發生。                                            |
-| [**ManipulationDelta 事件**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | 當輸入裝置在操作期間變更位置時發生。                                                                      |
-| [**ManipulationInertiaStarting 事件**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | 在操作和慣性開始的時候，只要輸入裝置不與 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 物件接觸便發生。 |
-| [**ManipulationCompleted 事件**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | 當在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 進行的操作和慣性互動完成時發生。                                          |
-| [**ManipulationStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702132)               | 提供 [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951) 事件的資料。                                         |
-| [**ManipulationStartedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702101)                 | 提供 [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 事件的資料。                                           |
-| [**ManipulationDeltaRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702051)                     | 提供 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件的資料。                                               |
-| [**ManipulationInertiaStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702074) | 提供 [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947) 事件的資料。                           |
-| [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | 描述發生操作的速度。                                                                                         |
-| [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | 提供 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件的資料。                                       |
+| [**ManipulationStarting 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | 第一次建立操作處理器時發生。                                                                                  |
+| [**ManipulationStarted 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | 當輸入裝置開始在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 進行操作時發生。                                            |
+| [**ManipulationDelta 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)                                         | 當輸入裝置在操作期間變更位置時發生。                                                                      |
+| [**ManipulationInertiaStarting 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastartingevent)                | 在操作和慣性開始的時候，只要輸入裝置不與 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 物件接觸便發生。 |
+| [**ManipulationCompleted 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)                                 | 當在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 進行的操作和慣性互動完成時發生。                                          |
+| [**ManipulationStartingRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs)               | 提供 [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting) 事件的資料。                                         |
+| [**ManipulationStartedRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs)                 | 提供 [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted) 事件的資料。                                           |
+| [**ManipulationDeltaRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs)                     | 提供 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件的資料。                                               |
+| [**ManipulationInertiaStartingRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs) | 提供 [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting) 事件的資料。                           |
+| [**ManipulationVelocities**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.ManipulationVelocities)                                              | 描述發生操作的速度。                                                                                         |
+| [**ManipulationCompletedRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)             | 提供 [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) 事件的資料。                                       |
 
  
 
-手勢是由一系列操作事件所組成。 每個手勢都是以 [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 事件開始，例如當使用者觸碰螢幕。
+手勢是由一系列操作事件所組成。 每個手勢都是以 [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted) 事件開始，例如當使用者觸碰螢幕。
 
-接著觸發一或多個 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件。 例如，當您觸碰螢幕，然後將手指劃過螢幕時。 最後，當互動完成時，就會引發 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件。
+接著觸發一或多個 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件。 例如，當您觸碰螢幕，然後將手指劃過螢幕時。 最後，當互動完成時，就會引發 [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) 事件。
 
 **附註**  如果您沒有觸控式螢幕監視，您可以使用滑鼠和滑鼠滾輪介面在模擬器中測試操作事件的程式碼。
 
  
 
-下列範例示範如何使用 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 上的滑動互動，並在螢幕上移動它。
+下列範例示範如何使用 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 上的滑動互動，並在螢幕上移動它。
 
 首先，在 XAML 中建立了一個名為 `touchRectangle` 且 [**Height**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 為 200 的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)。
 
@@ -452,7 +452,7 @@ End Sub
 </Grid>
 ```
 
-接著，建立一個名為 `dragTranslation` 的全域 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) 來轉譯 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。 在 **Rectangle** 上指定 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件接聽程式，並將 `dragTranslation` 新增到 **Rectangle** 的 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980)。
+接著，建立一個名為 `dragTranslation` 的全域 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 來轉譯 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。 在 **Rectangle** 上指定 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件接聽程式，並將 `dragTranslation` 新增到 **Rectangle** 的 [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)。
 
 ```cpp
 // Global translation transform used for changing the position of 
@@ -523,7 +523,7 @@ Public Sub New()
 End Sub
 ```
 
-最後，在 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件處理常式中，使用 [**Delta**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 屬性上的 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) 來更新 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/hh702058) 的位置。
+最後，在 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件處理常式中，使用 [**Delta**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 屬性上的 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 來更新 [**Rectangle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.manipulationdeltaroutedeventargs.delta) 的位置。
 
 ```cpp
 // Handler for the ManipulationDelta event.
@@ -570,7 +570,7 @@ End Sub
 ## <a name="routed-events"></a>路由事件
 
 
-本文中所述的所有指標事件、手勢事件和操控事件都會做為「路由事件」來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 的父容器或應用程式的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/hh758286)。
+本文中所述的所有指標事件、手勢事件和操控事件都會做為「路由事件」  來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的父容器或應用程式的根 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10))。
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 

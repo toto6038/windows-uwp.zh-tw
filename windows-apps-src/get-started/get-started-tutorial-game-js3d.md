@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7d40765e0d12e3543f198aebd5acd15ed3aff3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2e1eba68d1046892a67d779d353fd9b2e6bf224e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595493"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366946"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 建立 3D JavaScript 遊戲
 
@@ -38,7 +38,7 @@ ms.locfileid: "57595493"
 -   一份 Visual Studio 複本。 您可以從 [Visual Studio 首頁](https://visualstudio.com/)下載免費的 Visual Studio Community Edition。
 這個專案使用 **three.js** JavaScript 程式庫。 **three.js** 是根據 MIT 授權發行。 這個程式庫已經在專案中 (在方案總管檢視中尋找 `js/libs`)。 您可以在 [**three.js**](https://threejs.org/) 首頁找到這個程式庫的詳細資訊。
 
-## <a name="getting-started"></a>開始使用
+## <a name="getting-started"></a>使用者入門
 
 app 的完整原始碼儲存在 [GitHub](https://github.com/Microsoft/Windows-appsample-get-started-js3d)。
 
@@ -638,7 +638,7 @@ function animatePlayer(delta) {
 
 ---
 
-恭喜！ 您現在擁有可以四處移動且查看、玩家控制的相機。 我們仍然會穿牆，但稍後擔心那件事。 接著我們會新增恐龍。
+恭喜您！ 您現在擁有可以四處移動且查看、玩家控制的相機。 我們仍然會穿牆，但稍後擔心那件事。 接著我們會新增恐龍。
 
 <iframe height='300' scrolling='no' title='四處移動' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱畫筆<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>四處移動</a>透過 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 上<a href='https://codepen.io'>CodePen</a>。
 </iframe>
@@ -1075,7 +1075,7 @@ function lockChange() {
 
 ---
 
-這樣就完成了！ 這是漫長歷程，但我們已經使用 **three.js** 製作遊戲。
+就這麼容易！ 這是漫長歷程，但我們已經使用 **three.js** 製作遊戲。
 
 返回頁面頂端，可查看[遊戲完稿 CodePen](#introduction)！
 
@@ -1084,7 +1084,7 @@ function lockChange() {
 現在您可以在 UWP 應用程式時，就可以將它發行到 （假設您已在第一次改進 ！） 的 Microsoft Store程序有幾個步驟。
 
 1.  您必須[註冊](https://developer.microsoft.com/store/register)為 Windows 開發人員。
-2.  您必須使用 App 提交[檢查清單](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
-3.  必須提交 App 以取得[認證](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
+2.  您必須使用 App 提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+3.  必須提交 App 以取得[認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 如需詳細資訊，請參閱 <<c0> [ 發佈您的 UWP 應用程式](https://developer.microsoft.com/store/publish-apps)。
 

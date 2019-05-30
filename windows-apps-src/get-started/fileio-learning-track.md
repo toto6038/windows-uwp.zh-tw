@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取檔案, 撰寫檔案, 建立檔案, 寫入文字, 閱讀文字
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e0abc146820ca27ee83662ba5f8b79a1daf90bab
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5480638e201dca8a5eb5363d7a5944422c626f67
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662503"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366894"
 ---
 # <a name="work-with-files"></a>使用檔案
 
@@ -130,7 +130,7 @@ UWP 應用程式必須宣告它要透過將對應功能新增至資訊清單來�
 | [建立、寫入和讀取檔案](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | 涵蓋建立、讀取和寫入文字、二進位資料以及串流。 |
 | [取得開始使用儲存應用程式資料儲存在本機](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | 除了涵蓋儲存本機資料的最佳做法，還涵蓋了 LocalSettings 和 LocalCache 資料夾的用途。 |
 | [Getting Started with 漫遊應用程式資料](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | 有關如何使用漫遊應用程式資料的兩個系列。 |
-| [漫遊應用程式資料的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465094) | 設計應用程式時，請遵循這些資料漫遊指導方針。 |
+| [漫遊應用程式資料的指導方針](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | 設計應用程式時，請遵循這些資料漫遊指導方針。 |
 | [儲存和擷取設定和其他應用程式資料](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | 提供各種應用程式資料存放區的概觀，例如本機、漫遊，以及暫存資料夾。 如需指導方針與寫入裝置間漫遊的資料的其他相關資訊，請參閱 [漫遊資料](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data) 章節。 |
 | [檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | 應用程式可以存取的檔案系統位置之相關資訊。 |
 | [使用選擇器開啟檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | 透過讓使用者藉由選擇器 UI 決定，來示範如何存取檔案和資料夾。 |

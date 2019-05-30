@@ -10,12 +10,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3d516343798b7d8c221a5af12210a4897a3124a9
-ms.sourcegitcommit: 358abe22243da4592c30e18d6fc322778f091c8d
+ms.openlocfilehash: 1c764eeb57ec8046a93e7fb58e156fa68daea8df
+ms.sourcegitcommit: 13fe5d04bdb43c75d0fc4de18c2c3d4ae58ff982
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58362948"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "64564519"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -29,17 +29,17 @@ ms.locfileid: "58362948"
     :::column:::
         ![navigation example 1](images/nav/nav-1.svg)
 
-        Require users to go through a series of pages in order.
+要求使用者通過一連串的頁面順序。
     :::column-end:::
     :::column:::
         ![navigation example 2](images/nav/nav-2.svg)
 
-        Provide a menu that allows users to jump directly to any page.
+提供可讓使用者直接跳到任何頁面的功能表。
     :::column-end:::
     :::column:::
         ![navigation example 3](images/nav/nav-3.svg)
 
-        Place everything on a single page and provide filtering mechanisms for viewing content.
+將所有項目放在單一頁面上，並提供篩選的機制，可檢視內容。
     :::column-end:::
 :::row-end:::
 
@@ -71,14 +71,14 @@ ms.locfileid: "58362948"
 
         ![navview good](images/nav/navview-good.svg)
 
-        Present navigation items in a familiar navigation menu.
+提供熟悉的瀏覽功能表中的導覽項目。
     :::column-end:::
     :::column:::
         ![don't example](images/nav/dont.svg)
 
         ![navview bad](images/nav/navview-bad.svg)
 
-        Overwhelm users with many navigation options.
+具有許多導覽選項的使用者會拖垮。
     :::column-end:::
 :::row-end:::
 
@@ -111,14 +111,14 @@ ms.locfileid: "58362948"
     :::column span="2":::
         ### Flat/lateral
 
-        In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
+在單層式/側面結構中，頁面是並排存在。 您可以依任何順序從一個頁面瀏覽到另一個。
 
-        We recommend using a flat structure when:
+我們建議使用單層式結構的狀況是︰
 
-        - 頁面可以用任何順序瀏覽。
-        - 頁面之間有清楚的區別，且沒有明顯的父系/子系關係。
-        - 在群組中有少於 8 個的頁面。 <br>
-        (有多個頁面時，使用者可能會難以了解頁面的獨特性，或難以了解他們目前在群組中的位置。 如果您認為這對您的應用程式不構成問題，那請將頁面以對等方式排列。 否則，請考慮使用階層結構將頁面分成兩組，或分成多個較小的群組。)
+- 頁面可以用任何順序瀏覽。
+- 頁面之間有清楚的區別，且沒有明顯的父系/子系關係。
+- 在群組中有少於 8 個的頁面。 <br>
+(有多個頁面時，使用者可能會難以了解頁面的獨特性，或難以了解他們目前在群組中的位置。 如果您認為這對您的應用程式不構成問題，那請將頁面以對等方式排列。 否則，請考慮使用階層結構將頁面分成兩組，或分成多個較小的群組。)
 
     :::column-end:::
 :::row-end:::
@@ -130,15 +130,15 @@ ms.locfileid: "58362948"
     :::column span="2":::
         ### Hierarchical
 
-        In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
+在階層式結構中，頁面是組織成類似樹狀的結構。 每個子頁面都有一個父頁面，但父頁面可以有一或多個子頁面。 若要進入子頁面，您必須經過父頁面。
 
-        Hierarchical structures are good for organizing complex content that spans lots of pages. The downside is some navigation overhead: the deeper the structure, the more clicks it takes to get from page to page.
+階層結構對於組織跨多個頁面的複雜內容來說很實用。 缺點是會有一些瀏覽負荷︰結構越深層，就需要多按幾下才能在頁面間瀏覽。
 
-        We recommend a hierarchical structure when:
+我們建議一個階層式結構的時機：
         
-        - 頁面應以特定順序周遊。
-        - 頁面之間有清楚的父-子關係。
-        - 群組中的頁面數超過 7 個。
+- 頁面應以特定順序周遊。
+- 頁面之間有清楚的父-子關係。
+- 群組中的頁面數超過 7 個。
         
     :::column-end:::
 :::row-end:::
@@ -150,12 +150,12 @@ ms.locfileid: "58362948"
     :::column span="2":::
         ### Combining structures
 
-        You don't have choose to one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
+您沒有選擇一個結構或其他;同時使用許多格式設計應用程式。 App 可在最上層頁面使用單層式結構，可以任何順序檢視頁面，而具有較複雜關係的頁面則採用階層式結構。
 
-        If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
+如果您的瀏覽結構有多個層級，我們建議讓對等瀏覽元素只連結到其目前所在子樹系中的對等元素。 請考慮相鄰的圖例中，有兩個層級的導覽結構會顯示：
 
-        - 於層級 1，對等瀏覽元素應提供對頁面 A、B、C 和 D 的存取功能。
-        - 在層級 2 中，A2 頁面的對等瀏覽元素應只連結到其他 A2 頁面。 它們不應連結到 C 子樹系中的層級 2 頁面。
+- 於層級 1，對等瀏覽元素應提供對頁面 A、B、C 和 D 的存取功能。
+- 在層級 2 中，A2 頁面的對等瀏覽元素應只連結到其他 A2 頁面。 它們不應連結到 C 子樹系中的層級 2 頁面。
     :::column-end:::
 :::row-end:::
 
@@ -170,7 +170,7 @@ ms.locfileid: "58362948"
     :::column span="2":::
         [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
-        With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
+有幾個例外，即任何有多個頁面的 App 都會使用框架。 一般來說，App 會有主要頁面，包含框架和主要瀏覽元素，例如瀏覽檢視控制項。 當使用者選取頁面時，框架會載入並且顯示。
 :::row-end:::
 
 :::row:::
@@ -180,18 +180,18 @@ ms.locfileid: "58362948"
     :::column span="2":::
         [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
 
-        Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
+顯示相同層級中水平的頁面連結清單。 [NavigationView](../controls-and-patterns/navigationview.md)控制實作頂端導覽列與索引標籤模式。
         
-        Use top navigation when:
+使用上方導覽時：
 
-        - 您想要顯示在螢幕上的所有導覽選項。
-        - 您想要為您的應用程式內容的更多空間。
-        - 圖示無法清楚地描述您的瀏覽類別。
+- 您想要顯示在螢幕上的所有導覽選項。
+- 您想要為您的應用程式內容的更多空間。
+- 圖示無法清楚地描述您的瀏覽類別。
         
-        使用索引標籤的時機：
+使用索引標籤的時機：
 
-        - 您想要保留瀏覽歷程記錄和網頁的狀態。
-        - 您預期使用者經常索引標籤之間切換。
+- 您想要保留瀏覽歷程記錄和網頁的狀態。
+- 您預期使用者經常索引標籤之間切換。
 
 :::row-end:::
 
@@ -202,11 +202,12 @@ ms.locfileid: "58362948"
         :::column span="2":::
     [**Pivot**](../controls-and-patterns/pivot.md)
     
-    類似於[瀏覽檢視](../controls-and-patterns/navigationview.md)，但僅提供針對觸控和稍有不同的瀏覽行為的其他支援。
+類似於[瀏覽檢視](../controls-and-patterns/navigationview.md)，但僅提供針對觸控和稍有不同的瀏覽行為的其他支援。
     
-    使用 pivot 時:-您想要允許兩個類別之間撥動觸控應用程式
-        - 您要旋轉木馬 infintely 瀏覽選項
-        - 您不需要有效掌控類別之間的導覽行為
+使用 pivot 時：
+- 您想要允許兩個類別之間撥動觸控應用程式
+- 您要旋轉木馬 infintely 瀏覽選項
+- 您不需要有效掌控類別之間的導覽行為
 
 :::row-end:::
 
@@ -217,11 +218,11 @@ ms.locfileid: "58362948"
     :::column span="2":::
         [**Left navigation**](../controls-and-patterns/navigationview.md)
 
-        Displays a vertical list of links to top-level pages. Use when:
+顯示連結到最上層頁面的垂直清單。 使用時機：
         
-        - 頁面位於最上層。
-        - 有許多的導覽項目 (超過 5)
-        - 您預期使用者不會在頁面之間頻繁切換。
+- 頁面位於最上層。
+- 有許多的導覽項目 (超過 5)
+- 您預期使用者不會在頁面之間頻繁切換。
 
 :::row-end:::
         
@@ -232,12 +233,12 @@ ms.locfileid: "58362948"
     :::column span="2":::
         [**Master/details**](../controls-and-patterns/master-details.md)
 
-        Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
+顯示項目的清單 (主要檢視)。 選取在詳細區段中顯示其相對應頁面的項目。 使用時機：
         
-        - 您預期使用者會在子項目之間頻繁切換。
-        - 您想讓使用者對個別項目或項目群組執行高層級操作 (例如刪除或排序)，並且也想讓使用者能夠檢視或更新每個項目的詳細資料。
+- 您預期使用者會在子項目之間頻繁切換。
+- 您想讓使用者對個別項目或項目群組執行高層級操作 (例如刪除或排序)，並且也想讓使用者能夠檢視或更新每個項目的詳細資料。
 
-        主要/詳細資料適合電子郵件收件匣、連絡人清單及資料項目。
+主要/詳細資料適合電子郵件收件匣、連絡人清單及資料項目。
 :::row-end:::
 
 :::row:::
@@ -247,7 +248,7 @@ ms.locfileid: "58362948"
     :::column span="2":::
         [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
 
-        Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
+內嵌瀏覽元素可顯示在頁面的內容中。 不同於其他瀏覽元素在頁面間皆須保持一致，內嵌於內容的瀏覽元素會隨頁面不同而改變。
 :::row-end:::
 
 ## <a name="next-add-navigation-code-to-your-app"></a>下一步:將巡覽程式碼新增至您的應用程式

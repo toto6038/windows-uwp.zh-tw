@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯
 ms.localizationpriority: medium
-ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2b44558232247de969f22d5767a16d921cfbf252
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610503"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367574"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>轉譯架構 II:遊戲的轉譯
 
@@ -37,7 +37,7 @@ ms.locfileid: "57610503"
 轉譯負責器建立及維護所有用於產生遊戲視覺效果之 D3D11 和 D2D 物件。 __GameRenderer__ 類別是此範例遊戲的轉譯器，其設計目的是為符合遊戲的轉譯需求。
 
 以下是可以應用在設計遊戲轉譯器的一些概念：
-* 因為 Direct3D 11 API 會定義為 [COM](https://msdn.microsoft.com/library/windows/desktop/ms694363.aspx) API，所以您必須提供這些 API 所定義之物件的 [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) 參考。 當 app 終止時，這些物件會在最後一個參考超出範圍時，自動被釋放。 如需詳細資訊，請參閱 [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr)。 這些物件的範例：常數緩衝區、著色器物件 - [頂點著色器](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders)、[像素著色器](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders)，以及著色器資源物件。
+* 因為 Direct3D 11 API 會定義為 [COM](https://docs.microsoft.com/windows/desktop/com/the-component-object-model) API，所以您必須提供這些 API 所定義之物件的 [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) 參考。 當 app 終止時，這些物件會在最後一個參考超出範圍時，自動被釋放。 如需詳細資訊，請參閱 [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr)。 這些物件的範例：常數緩衝區、著色器物件 - [頂點著色器](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders)、[像素著色器](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders)，以及著色器資源物件。
 * 常數緩衝區定義於此類別以保留各種轉譯所需的資料。
     * 使用採用不同頻率的多個常數緩衝區，以減少每個畫面必須傳送到 GPU 的資料量。 此範例會根據必須更新的頻率，將常數分成不同的緩衝區。 這是 Direct3D 程式設計的最佳做法。 
     * 在這個遊戲範例中，已定義 4 個常數緩衝區。
@@ -46,7 +46,7 @@ ms.locfileid: "57610503"
         3. __m\_constantBufferChangesEveryFrame__包含檢視矩陣。 這個矩陣取決於相機位置和觀看方向 (與投影垂直)，而且以 __Render__ 方法在每個畫面變更一次。 這稍早在討論__轉譯架構 i:轉譯為您簡介__底下[ __GameRenderer::Render__方法](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)。
         4. __m\_constantBufferChangesEveryPrim__包含的模型矩陣及資料屬性的每個基本型別。 模型矩陣會將頂點從區域座標轉換成全局座標。 這些常數為每個基本類型專用，而且會針對每次繪圖呼叫進行更新。 這稍早在討論__轉譯架構 i:轉譯為您簡介__底下[基本轉譯](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering)。
 * 在此類別中還會定義保存基本類型紋理的著色器資源物件。
-    * 某些紋理已預先定義 ([DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991.aspx) 是可以用來儲存已壓縮和解壓縮紋理的檔案格式。 DDS 紋理用於世界各地的牆與地板，以及子彈)。
+    * 某些紋理已預先定義 ([DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide) 是可以用來儲存已壓縮和解壓縮紋理的檔案格式。 DDS 紋理用於世界各地的牆與地板，以及子彈)。
     * 在這個遊戲的範例中，是著色器資源的物件： __m\_sphereTexture__， __m\_cylinderTexture__， __m\_ceilingTexture__， __m\_floorTexture__， __m\_wallsTexture__。
 * 著色器物件定義於此類別來計算我們的基本類型和紋理。 
     * 在這個遊戲的範例中，著色器物件是__m\_vertexShader__， __m\_vertexShaderFlat__，以及__m\_pixelShader__，__m\_pixelShaderFlat__。

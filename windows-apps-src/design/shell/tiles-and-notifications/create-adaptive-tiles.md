@@ -8,21 +8,21 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 08a7ca0b08a9df57d3c496f33f963fcd9d0ebfe2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639603"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367154"
 ---
 # <a name="create-adaptive-tiles"></a>建立彈性磚
 
 自適性磚範本是在 Windows 10 中，可讓您設計您自己使用適應不同螢幕密度的簡單及富彈性的標記語言的圖格通知內容的新功能。 本文會告訴您如何為通用 Windows 平台 (UWP) app 建立彈性動態磚。 如需彈性元素和屬性的完整清單，請參閱[彈性磚結構描述](../tiles-and-notifications/tile-schema.md)。
 
-(如果您想要您仍然可以使用的預設的範本[Windows 8 磚範本類別目錄](https://msdn.microsoft.com/library/windows/apps/hh761491)設計適用於 Windows 10 的通知時。)
+(如果您想要您仍然可以使用的預設的範本[Windows 8 磚範本類別目錄](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10))設計適用於 Windows 10 的通知時。)
 
 
-## <a name="getting-started"></a>開始使用
+## <a name="getting-started"></a>使用者入門
 
 **安裝通知程式庫。** 如果您想要使用 C# 而不是 XML 產生通知，請安裝名稱為 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 套件 (搜尋 "notifications uwp")。 本文中所提供的 C# 範例使用該 NuGet 套件 1.0.0 版本。
 
@@ -284,7 +284,7 @@ TileContent content = new TileContent()
 
  
 
-## <a name="display-name"></a>顯示名稱
+## <a name="display-name"></a>Display name
 
 
 您可以使用 **displayName** 屬性來輸入您所選擇的文字字串，來覆寫通知的顯示名稱。 和商標一樣，您可以在 [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual) 元素上指定此顯示名稱，這會影響整個通知承載，您也可以在 [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) 元素上指定此顯示名稱，這將只會影響個別的磚。
@@ -335,7 +335,7 @@ TileContent content = new TileContent()
 
 ![彈性磚顯示名稱](images/adaptive-tiles-displayname.png)
 
-## <a name="text"></a>文字
+## <a name="text"></a>Text
 
 
 [AdaptiveText](../tiles-and-notifications/tile-schema.md#adaptivetext) 元素用來顯示文字。 您可以使用此提示修改文字的顯示方式。
@@ -414,7 +414,7 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;文字提示 style ="\*"/&gt; | 字型高度               | 字型寬度 |
+| &lt;text hint-style="\*" /&gt; | 字型高度               | 字型寬度 |
 | caption                        | 12 個有效像素 (epx) | 標準     |
 | body                           | 15 epx                    | 標準     |
 | base                           | 15 epx                    | Semibold    |

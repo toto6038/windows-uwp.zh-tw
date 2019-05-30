@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6578ddfd077e121e0eca5a5fcc8c06cdec26aa42
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e401e700728e1d481fd2142281fe81524d146f94
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656053"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364433"
 ---
 # <a name="scroll-viewer-controls"></a>捲動檢視器控制項
 
@@ -25,7 +25,7 @@ ms.locfileid: "57656053"
 
 當您要顯示的 UI 內容多到超過一個區域所能容納的範圍時，請使用捲動檢視器控制項。
 
-> **重要的 Api**:[ScrollViewer 類別](https://msdn.microsoft.com/library/windows/apps/br209527)， [ScrollBar 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
+> **重要的 Api**:[ScrollViewer 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)， [ScrollBar 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
 
 捲動檢視器控制項可讓內容延伸超出檢視區範圍 (可見區域)。 使用者透過觸控、滑鼠滾輪、鍵盤或遊戲台操縱捲動檢視器介面，或是使用滑鼠或手寫筆游標與捲動檢視器捲軸進行互動，以到達此內容的延伸部分。 下圖顯示幾個捲動檢視器控制項的範例。
 
@@ -99,9 +99,9 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 
 ## <a name="scrollviewer-in-a-control-template"></a>控制項範本中的 ScrollViewer
 
-對於 ScrollViewer 控制項而言，當做其他控制項的複合部分存在很獨特。 只有在主控制項的配置空間限制小於展開的內容大小時，ScrollViewer 組件以及用於支援的 [ScrollContentPresenter](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) 類別才會將檢視區連同捲軸一起顯示。 這種情況通常發生在清單中，因此 [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) 範本一律包含 ScrollViewer。 [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 和 [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 也在其範本中包含一個 ScrollViewer。
+對於 ScrollViewer 控制項而言，當做其他控制項的複合部分存在很獨特。 只有在主控制項的配置空間限制小於展開的內容大小時，ScrollViewer 組件以及用於支援的 [ScrollContentPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollContentPresenter) 類別才會將檢視區連同捲軸一起顯示。 這種情況通常發生在清單中，因此 [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 範本一律包含 ScrollViewer。 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 和 [RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 也在其範本中包含一個 ScrollViewer。
 
-當 **ScrollViewer** 部分存在於控制項中時，主控制項對於讓內容捲動的某些輸入事件以及操作，通常都有內建的事件處理方式。 例如，GridView 會解譯撥動手勢，這會導致水平捲動內容。 主控制項所收到的輸入事件與原始操作都會被視為由控制項處理，因此將不會引發較低層級的事件 (例如 [PointerPressed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx))，也不會產生任何父容器。 您可以透過覆寫事件的控制項類別和 **On*** 虛擬方法，或透過重製控制項的範本，來變更部分內建的控制項處理。 但在任一種情況下，重現通常就在那裡的原始預設行為，讓控制項以預期的方式回應事件和使用者的輸入動作與手勢並不容易。 因此，您應該考慮您是否真的需要引發該輸入事件。 您可能會想要調查是否有不是由控制項處理的其他輸入事件或手勢，並在您的 app 中使用那些輸入事件或手勢，或控制互動設計。
+當 **ScrollViewer** 部分存在於控制項中時，主控制項對於讓內容捲動的某些輸入事件以及操作，通常都有內建的事件處理方式。 例如，GridView 會解譯撥動手勢，這會導致水平捲動內容。 主控制項所收到的輸入事件與原始操作都會被視為由控制項處理，因此將不會引發較低層級的事件 (例如 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed))，也不會產生任何父容器。 您可以透過覆寫事件的控制項類別和 **On*** 虛擬方法，或透過重製控制項的範本，來變更部分內建的控制項處理。 但在任一種情況下，重現通常就在那裡的原始預設行為，讓控制項以預期的方式回應事件和使用者的輸入動作與手勢並不容易。 因此，您應該考慮您是否真的需要引發該輸入事件。 您可能會想要調查是否有不是由控制項處理的其他輸入事件或手勢，並在您的 app 中使用那些輸入事件或手勢，或控制互動設計。
 
 為了能夠讓包含 ScrollViewer 的控制項影響來自 ScrollViewer 組件內的部分行為和屬性，ScrollViewer 會定義一些可以在樣式中設定，並在範本繫結中使用的 XAML 附加屬性。 如需有關附加屬性的詳細資訊，請參閱[附加屬性概觀](../../xaml-platform/attached-properties-overview.md)。
 
@@ -109,20 +109,20 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 
 ScrollViewer 會定義下列 XAML 附加屬性︰
 
-- [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx)
-- [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx)
-- [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
-- [ScrollViewer.IsDeferredScrollingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isdeferredscrollingenabled.aspx)
-- [ScrollViewer.IsHorizontalRailEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalrailenabled.aspx)
-- [ScrollViewer.IsHorizontalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalscrollchainingenabled.aspx)
-- [ScrollViewer.IsScrollInertiaEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isscrollinertiaenabled.aspx)
-- [ScrollViewer.IsVerticalRailEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalrailenabled.aspx)
-- [ScrollViewer.IsVerticalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled.aspx)
-- [ScrollViewer.IsZoomChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
-- [ScrollViewer.IsZoomInertiaEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
-- [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty.aspx)
-- [ScrollViewer.VerticalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx)
-- [ScrollViewer.ZoomMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
+- [ScrollViewer.BringIntoViewOnFocusChange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange)
+- [ScrollViewer.HorizontalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility)
+- [ScrollViewer.HorizontalScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode)
+- [ScrollViewer.IsDeferredScrollingEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.isdeferredscrollingenabled)
+- [ScrollViewer.IsHorizontalRailEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.ishorizontalrailenabled)
+- [ScrollViewer.IsHorizontalScrollChainingEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.ishorizontalscrollchainingenabled)
+- [ScrollViewer.IsScrollInertiaEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.isscrollinertiaenabled)
+- [ScrollViewer.IsVerticalRailEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.isverticalrailenabled)
+- [ScrollViewer.IsVerticalScrollChainingEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled)
+- [ScrollViewer.IsZoomChainingEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled)
+- [ScrollViewer.IsZoomInertiaEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled)
+- [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty)
+- [ScrollViewer.VerticalScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode)
+- [ScrollViewer.ZoomMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.zoommode)
 
 這些 XAML 附加屬性適用於 ScrollViewer 是隱含的情況，例如當 ScrollViewer 存在於 ListView 或 GridView 的預設範本中，而且您希望能夠在不存取範本組件的情況下，影響控制項的捲動行為時。
 
@@ -153,4 +153,4 @@ ScrollViewer 會定義下列 XAML 附加屬性︰
 
 **適用於開發人員 (XAML)**
 
-* [ScrollViewer 類別](https://msdn.microsoft.com/library/windows/apps/br209527)
+* [ScrollViewer 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)

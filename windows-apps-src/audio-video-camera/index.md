@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6aecc5b9a43d6cb00b42b1535a196afd8a138af9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 98bc1e93c918310b902c70709df1c2cc1b38a238
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582223"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360849"
 ---
 # <a name="audio-video-and-camera"></a>音訊、視訊和相機
 
@@ -22,16 +22,16 @@ ms.locfileid: "57582223"
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [相機](camera.md) | 列出適用於 UWP app 的相機功能，以及示範如何使用它們的操作說明文章的連結。 |
 | [媒體播放](media-playback.md) | 提供建立使用音訊和視訊播放的 UWP app 的相關資訊。 |
-| [偵測影像或影片中的臉部](detect-and-track-faces-in-an-image.md) | 示範如何使用 [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150)，在一連串視訊畫面中追蹤隨著時間改變的臉部。 |
-| [媒體組合和編輯](media-compositions-and-editing.md) | 說明如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間中的 API 來快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。 |
+| [偵測影像或影片中的臉部](detect-and-track-faces-in-an-image.md) | 示範如何使用 [FaceTracker](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceTracker)，在一連串視訊畫面中追蹤隨著時間改變的臉部。 |
+| [媒體組合和編輯](media-compositions-and-editing.md) | 說明如何使用 [**Windows.Media.Editing**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing) 命名空間中的 API 來快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。 |
 | [自訂視訊效果](custom-video-effects.md) | 說明如何建立能實作 **IBasicVideoEffect** 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。 |
 | [自訂音訊效果](custom-audio-effects.md) | 描述如何建立能實作 **IBasicAudioEffect** 介面以允許您為音訊串流建立自訂效果的 Windows 執行階段元件。 |
-| [建立、編輯和儲存點陣圖影像](imaging.md) | 說明如何使用 [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件來載入及儲存影像檔，以代表點陣圖影像。  |
+| [建立、編輯和儲存點陣圖影像](imaging.md) | 說明如何使用 [SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 物件來載入及儲存影像檔，以代表點陣圖影像。  |
 | [音訊裝置資訊屬性](audio-device-information-properties.md)  | 列出與音訊裝置有關的裝置資訊屬性。 |
 | [偵測及回應音訊狀態變更](detect-and-respond-to-audio-state-changes.md)  | 說明 UWP 應用程式如何偵測及回應音訊資料流層級的系統起始變更。 |
-| [轉碼媒體檔案](transcode-media-files.md) | 說明如何使用 [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) API，將視訊檔案從一種格式轉碼成另一種格式。 |
-| [在背景處理媒體檔案](process-media-files-in-the-background.md) | 示範如何使用 [MediaProcessingTrigger](https://msdn.microsoft.com/library/windows/apps/dn806005) 和背景工作，在背景處理媒體檔案。 |
-| [音訊圖](audio-graphs.md) | 示範如何使用 [Windows.Media.Audio](https://msdn.microsoft.com/library/windows/apps/dn914341) 命名空間中的 API 來建立音訊路由傳送、混音及處理案例的音訊圖。 |
+| [轉碼媒體檔案](transcode-media-files.md) | 說明如何使用 [Windows.Media.Transcoding](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding) API，將視訊檔案從一種格式轉碼成另一種格式。 |
+| [在背景處理媒體檔案](process-media-files-in-the-background.md) | 示範如何使用 [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger) 和背景工作，在背景處理媒體檔案。 |
+| [音訊圖](audio-graphs.md) | 示範如何使用 [Windows.Media.Audio](https://docs.microsoft.com/uwp/api/Windows.Media.Audio) 命名空間中的 API 來建立音訊路由傳送、混音及處理案例的音訊圖。 |
 | [MIDI](midi.md) | 示範如何列舉 MIDI (樂器數位介面) 裝置，並且從 UWP app 傳送及接收 MIDI 訊息。 |
 | [從裝置匯入媒體](import-media-from-a-device.md) | 描述從裝置匯入媒體的方式，包括搜尋可用媒體來源、匯入如影片、相片和側車檔案的檔案，以及從來源裝置上刪除已匯入的檔案。 |
 | [相機獨立閃光燈](camera-independent-flashlight.md) | 說明如何存取和使用裝置的燈光 (如果有的話)。 燈光功能分別從裝置的相機和閃光燈功能來管理。 |

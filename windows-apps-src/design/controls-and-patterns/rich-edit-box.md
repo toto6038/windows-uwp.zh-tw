@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: fea636f78f4430d5bf8917c1ed720faeac7c4017
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 78f6fe36fb8955b6234cdf3cb42e4db02a602f4a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651733"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364350"
 ---
 # <a name="rich-edit-box"></a>Rich Edit 方塊
 
@@ -24,7 +24,7 @@ ms.locfileid: "57651733"
 
 您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 **true**，使 RichEditBox 變成唯讀。
 
-> **重要的 Api**:[RichEditBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)，[文件屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)， [IsReadOnly 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)， [IsSpellCheckEnabled 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
+> **重要的 Api**:[RichEditBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)，[文件屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document)， [IsReadOnly 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly)， [IsSpellCheckEnabled 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -58,9 +58,9 @@ ms.locfileid: "57651733"
 
 ## <a name="create-a-rich-edit-box"></a>建立 Rich Edit 方塊
 
-根據預設，RichEditBox 支援拼字檢查。 若要停用拼字檢查工具，請將 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) 屬性設為 **false**。 如需詳細資訊，請參閱[拼字檢查的指導方針](text-controls.md)文章。
+根據預設，RichEditBox 支援拼字檢查。 若要停用拼字檢查工具，請將 [IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) 屬性設為 **false**。 如需詳細資訊，請參閱[拼字檢查的指導方針](text-controls.md)文章。
 
-您可以使用 RichEditBox 的 [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) 屬性取得其內容。 RichEditBox 的內容是 [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx) 物件，與使用[Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) 物件做為其內容的 RichTextBlock 控制項不同。 ITextDocument 介面提供的方法可載入文件並儲存為資料流、抓取文字範圍、取得使用中的選取項目、復原和重做變更、設定預設格式化屬性等等。
+您可以使用 RichEditBox 的 [Document](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document) 屬性取得其內容。 RichEditBox 的內容是 [Windows.UI.Text.ITextDocument](https://docs.microsoft.com/windows/desktop/api/tom/nn-tom-itextdocument) 物件，與使用[Windows.UI.Xaml.Documents.Block](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Block) 物件做為其內容的 RichTextBlock 控制項不同。 ITextDocument 介面提供的方法可載入文件並儲存為資料流、抓取文字範圍、取得使用中的選取項目、復原和重做變更、設定預設格式化屬性等等。
 
 這個範例說明如何在 RichEditBox 中編輯、載入和儲存 RTF 格式 (rtf) 檔案。
 
@@ -205,7 +205,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。 預設鍵盤配置通常適用於處理 RTF 文件。
 
-如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://msdn.microsoft.com/library/windows/apps/mt280229)。
+如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)。
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -226,5 +226,5 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [拼字檢查的指導方針](text-controls.md)
 - [新增搜尋](search.md)
 - [文字輸入的指導方針](text-controls.md)
-- [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Windows.UI.Xaml.Controls PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)

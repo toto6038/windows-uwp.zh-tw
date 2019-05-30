@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e7c026d336507b1a82badba770ac3bb50e19f8
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: d1d459ab10614ddf9186275b1a6b66e8fa5703ec
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984122"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364963"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>UWP 應用程式適用的連接動畫
 
@@ -63,7 +63,7 @@ ms.locfileid: "65984122"
 
 ## <a name="when-to-use-connected-animation"></a>連接動畫使用時機
 
-雖然當您變更 UI 內容及想要使用者維持脈絡時可應用動畫，但連接動畫一般用於變更頁面時。 只要來源檢視與目的地檢視之間有共用影像或其他的 UI 部分，您應考慮使用連接動畫，而非[向下切入的瀏覽轉換](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx)。
+雖然當您變更 UI 內容及想要使用者維持脈絡時可應用動畫，但連接動畫一般用於變更頁面時。 只要來源檢視與目的地檢視之間有共用影像或其他的 UI 部分，您應考慮使用連接動畫，而非[向下切入的瀏覽轉換](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition)。
 
 ## <a name="configure-connected-animation"></a>設定已連線的動畫
 
