@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3344230bc52013825d94cfbe3668acfa0d7a2e13
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913998"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364761"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -22,7 +22,7 @@ ms.locfileid: "58913998"
 
 您可以想像[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)在概念上為資料導向的面板，而不是像 ListView 的完整控制權。 您指定要顯示的資料項目的集合、 項目範本產生的每個資料項目，UI 項目和配置，決定如何調整大小及定位項目。 然後，ItemsRepeater 會產生資料來源為基礎的子元素，並顯示所指定的項目範本和版面配置。 顯示的項目不需要是同質性的因為 ItemsRepeater 可以載入內容來表示的資料項目，根據您在資料範本選取器中指定的準則。
 
-| **取得 Windows UI 程式庫** |
+| **取得 Windows 的 UI 程式庫** |
 | - |
 | 此控制項是包含 Windows UI 程式庫，包含新的控制項和 UWP 應用程式的 UI 功能的 NuGet 套件的過程。 如需詳細資訊，包括安裝指示，請參閱 < [Windows 的 UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
@@ -59,17 +59,30 @@ ItemsRepeater 並沒有內建的項目集合。 如果您需要直接提供的�
 
 ## <a name="scrolling-with-itemsrepeater"></a>捲動與 ItemsRepeater
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)不是衍生自[控制](/uwp/api/windows.ui.xaml.controls.control)，使其不含控制項範本。 因此，它不包含任何類似 ListView 捲動的內建或其他集合控制項。
+[**ItemsRepeater** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)不是衍生自[**控制**](/uwp/api/windows.ui.xaml.controls.control)，使其不含控制項範本。 因此，它不包含任何類似 ListView 捲動的內建或其他集合控制項。
 
-當您使用 ItemsRepeater 時，您還應該提供捲動功能，藉由包裝在[ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)控制項。
+當您使用**ItemsRepeater**，您應該提供捲動功能，藉由包裝在[ **ScrollViewer** ](/uwp/api/windows.ui.xaml.controls.scrollviewer)控制項。
+
+> [!NOTE]
+> 如果您的應用程式將執行舊版 Windows-這些都已釋出*之前*Windows 10，版本 1809-就也必須將裝載**ScrollViewer**內[ **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost)。 
+> ```xaml
+> <muxc:ItemsRepeaterScrollHost>
+>     <ScrollViewer>
+>         <muxc:ItemsRepeater ... />
+>     </ScrollViewer>
+> </muxc:ItemsRepeaterScrollHost>
+> ```
+> 如果您的應用程式只會在最新版本的 Windows 10 版本 1809年及更新版本-上執行，則不需要使用[ **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost)。
+>
+> 在 Windows 10 版本 1809 之前, **ScrollViewer**未實作[ **IScrollAnchorProvider** ](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)介面**ItemsRepeater**需要。  **ItemsRepeaterScrollHost**可讓**ItemsRepeater**協調**ScrollViewer**有關較早的版本，以正確保留顯示的項目位置使用者在檢視。  否則，項目可能會出現要移動或變更清單中的項目或調整大小的應用程式突然消失。
 
 ## <a name="create-an-itemsrepeater"></a>建立 ItemsRepeater
 
-若要使用[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，您需要提供要藉由設定 ItemsSource 屬性顯示的資料。 然後，告訴它如何藉由設定顯示的項目[ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)屬性。
+若要使用[ **ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，您需要提供要藉由設定顯示的資料**ItemsSource**屬性。 然後，告訴它如何藉由設定顯示的項目[ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)屬性。
 
 ### <a name="itemssource"></a>ItemsSource
 
-若要填入的檢視，將[ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource)資料項目集合的屬性。 在這裡，ItemsSource 會直接對集合的執行個體的程式碼中設定。
+若要填入的檢視，將[ **ItemsSource** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource)資料項目集合的屬性。 在這裡， **ItemsSource**直接對集合的執行個體的程式碼中設定。
 
 ```csharp
 ObservableCollection<string> Items = new ObservableCollection<string>();
@@ -78,21 +91,23 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-您也可以將 ItemsSource 屬性繫結到 XAML 中的集合。 如需資料繫結的詳細資訊，請參閱[資料繫結概觀](https://msdn.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
+您也可以繫結**ItemsSource**屬性至 XAML 中的集合。 如需資料繫結的詳細資訊，請參閱[資料繫結概觀](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
 
 
 ```xaml
 <ItemsRepeater ItemsSource="{x:Bind Items}"/>
 ```
 
-### <a name="data-template"></a>資料範本
+### <a name="itemtemplate"></a>ItemTemplate
+若要指定資料的項目視覺化的方式，設定[ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)屬性設[ **DataTemplate** ](/uwp/api/windows.ui.xaml.datatemplate)或[ **DataTemplateSelector** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector)已定義。 資料範本會定義將資料視覺化的方式。 根據預設，項目會顯示在檢視**TextBlock**使用資料物件的字串表示。
 
-項目的資料範本會定義資料視覺化的方式。 根據預設，項目是檢視中顯示為資料物件，它會繫結至使用 TextBlock 的字串表示。 但是，您通常會想要以更多樣化的表示方式來顯示資料。 若要指定確切的項目顯示的方式，您定義[DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)。 在 DataTemplate 中的 XAML 會定義用來顯示個別項目之控制項的配置和外觀。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義靜態內容。 您指派至 DataTemplate [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) ItemsRepeater 屬性。
+不過，您通常想要使用範本所定義的配置和要顯示的個別項目，您將使用的一或多個控制項的外觀顯示您的資料更豐富的呈現。 您在範本中使用的控制項可以繫結至資料物件的屬性，或具有靜態內容內嵌定義。
 
-在此範例中，資料物件會是一個簡單的字串。 您使用 DataTemplate 來將影像加入文字左側，並設定樣式的 TextBlock 中藍綠色顯示字串。
+#### <a name="datatemplate"></a>DataTemplate
+在此範例中，資料物件會是一個簡單的字串。 **DataTemplate**包含左邊的文字和樣式影像**TextBlock**藍綠色色彩顯示字串。
 
 > [!NOTE]
-> 當您在 DataTemplate 中使用 [x:Bind 標記延伸](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)時，必須在 DataTemplate 上指定 DataType (`x:DataType`)。
+> 當您使用[x： 繫結標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)中**DataTemplate**，您必須指定資料類型 (`x:DataType`) 上的 DataTemplate。
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -109,23 +124,46 @@ itemsRepeater1.ItemsSource = Items;
 </DataTemplate>
 ```
 
-以下是顯示使用此資料範本時，項目會如何顯示。
+以下是 顯示與這個項目會如何顯示**DataTemplate**。
 
 ![使用資料範本顯示的項目](images/listview-itemstemplate.png)
 
-項目的資料範本中使用的項目數目可以對效能有重大影響，如果您的檢視會顯示大量項目。 如需詳細資訊和範例，示範如何使用資料範本來定義您的清單中的項目的外觀，請參閱 <<c0> [ 項目容器和範本](item-containers-templates.md)。
+使用中項目數**DataTemplate**針對您的檢視會顯示大量項目項目對效能有重大影響。 如需詳細資訊和範例，示範如何使用**DataTemplate**來定義項目的外觀，在清單中，請參閱[項目容器和範本](item-containers-templates.md)。
 
 > [!TIP]
-> ItemsRepeater 不換行 DataTemplate ListView 和其他集合控制項等項目容器中的內容。 相反地，ItemsRepeater 呈現只 DataTemplate 中所定義。 如果您想您的項目擁有相同的外觀，做為清單檢視項目時，您可以使用容器，例如 ListViewItem，在您的資料範本。 ItemsRepeater 會顯示 ListViewItem 視覺效果，但不使用的其他功能，例如選取項目，或顯示的多重選取的核取方塊。
+> 為了方便起見，當您想要宣告內嵌的範本，而不是當做靜態資源參考，您可以指定**DataTemplate**或是**DataTemplateSelector**做的直接子系**ItemsRepeater**。  將值指派給**ItemTemplate**屬性。 比方說，這是有效的：
+> ```xaml
+> <ItemsRepeater ItemsSource="{x:Bind Items}">
+>     <DataTemplate>
+>         <!-- ... -->
+>     </DataTemplate>
+> </ItemsRepeater>
+> ```
+
+> [!TIP]
+> 不同於**ListView**和其他集合的控制項， **ItemsRepeater**不換行中的項目**DataTemplate**與包含額外的項目容器預設原則，例如邊界、 邊框距離、 選取視覺效果或透過視覺狀態的指標。 相反地， **ItemsRepeater**只會呈現中所定義**DataTemplate**。 如果您想您的項目擁有相同的外觀，做為清單檢視項目時，您可以明確地包含容器，例如**ListViewItem**，在您的資料範本。 **ItemsRepeater**會顯示**ListViewItem**視覺效果，但不會自動進行的其他功能，例如選取項目，或顯示的多重選取的核取方塊使用。
 >
-> 同樣地，如果您的資料收集是實際的控制項集合，例如按鈕 (`List<Button>`)，您可以將 ContentPresenter 放在您的 DataTemplate 來顯示控制項。
+> 同樣地，如果您的資料收集是實際的控制項集合，例如 **按鈕**(`List<Button>`)，您可以將放**ContentPresenter**中您**DataTemplate**至顯示控制項。
 
 #### <a name="datatemplateselector"></a>DataTemplateSelector
 
-您在檢視中顯示的項目不需要為相同的型別。 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)可以使用**DataTemplateSelector**載入資料範本來表示的資料項目，根據您指定的準則。 如需詳細資訊和範例，請參閱 < [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector)。
+您在檢視中顯示的項目不需要為相同的型別。 您可以提供[ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)屬性[ **DataTemplateSelector** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector)選取不同**DataTemplate**根據您指定的準則。
+
+這個範例假設**DataTemplateSelector**已定義，決定之間兩個不同**DataTemplate**來代表大型和小型的項目。
+
+```xaml
+<ItemsRepeater ...>
+    <ItemsRepeater.ItemTemplate>
+        <local:VariableSizeTemplateSelector Large="{StaticResource LargeItemTemplate}" 
+                                            Small="{StaticResource SmallItemTemplate}"/>
+    </ItemsRepeater.ItemTemplate>
+</ItemsRepeater>
+```
+
+定義時**DataTemplateSelector**搭配**ItemsRepeater**您只需要實作的覆寫[ **SelectTemplateCore(Object)** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_)方法。 如需詳細資訊和範例，請參閱 < [ **DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)。
 
 > [!NOTE]
-> 使用 DataTemplate 或 DataTemplateSelector 的替代方法是實作您自己的類別衍生自[Microsoft.UI.Xaml.Controls.ElementFactory](/uwp/api/microsoft.ui.xaml.controls.elementfactory) ，負責產生要求時的內容。
+> 替代**DataTemplate**來管理項目在更進階的案例中的建立方式的 s 是實作您自己[ **Windows.UI.Xaml.Controls.IElementFactory** ](/uwp/api/windows.ui.xaml.controls.ielementfactory)將用作**ItemTemplate**。  它會負責產生要求時的內容。
 
 ## <a name="configure-the-data-source"></a>設定資料來源
 
@@ -632,6 +670,7 @@ public sealed class MediaCollectionView : Control
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<!-- Include the <muxc:ItemsRepeaterScrollHost> if targeting Windows 10 versions earlier than 1809. -->
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind Categories}"
                       Background="LightGreen">
@@ -639,6 +678,7 @@ public sealed class MediaCollectionView : Control
       <DataTemplate x:DataType="local:Category">
         <StackPanel Margin="12,0">
           <TextBlock Text="{x:Bind Name}" Style="{ThemeResource TitleTextBlockStyle}"/>
+          <!-- Include the <muxc:ItemsRepeaterScrollHost> if targeting Windows 10 versions earlier than 1809. -->
           <ScrollViewer HorizontalScrollMode="Enabled"
                                           VerticalScrollMode="Disabled"
                                           HorizontalScrollBarVisibility="Auto" >
@@ -730,7 +770,7 @@ ItemsRepeater 提供的焦點移動的最小 keyboarding 支援根據 XAML 的[K
 
 ![方向導覽](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-ItemsRepeater [XYFocusKeyboardNavigation 模式](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)是_已啟用_預設。 根據預期的體驗，請考慮將常見[鍵盤互動](/windows/uwp/design/input/keyboard-interactions)Home、 End、 PageUp，璅欞擩  等。
+ItemsRepeater [XYFocusKeyboardNavigation 模式](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)是_已啟用_預設。 根據預期的體驗，請考慮將常見[鍵盤互動](/windows/uwp/design/input/keyboard-interactions)Home、 End、 PageUp，等。
 
 ItemsRepeater 自動確保，預設的定位順序，其項目 （不論是虛擬化與否） 如下所示的相同順序來提供資料的項目。 依預設具有 ItemsRepeater 及其[TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation)屬性設定為[一次](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode)而不是常見的預設值是_本機_。
 

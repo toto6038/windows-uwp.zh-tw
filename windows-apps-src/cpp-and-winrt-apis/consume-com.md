@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 COM、 元件、 類別、 介面
 ms.localizationpriority: medium
-ms.openlocfilehash: dc4acd288496d83d5d91f1bdf206be19fe2fbb06
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2c36c7b896b4d08240f08e85570110b45e0a9f3c
+ms.sourcegitcommit: ba24a6237355119ef3e36687417f390c8722bd67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361151"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66421256"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>使用 C++/WinRT 來使用 COM 元件
 
@@ -171,6 +171,8 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 如果您想要建置並執行此原始程式碼範例，則第一個，在 Visual Studio 中，建立新**Core 應用程式 (C++/WinRT)** 。 `Direct2D` 合理專案名稱，但它可以隨意命名。 開啟`App.cpp`、 刪除整個內容，並貼上下列清單中。
 
+使用下列程式碼[winrt::com_ptr::capture 函式](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function)盡可能。
+
 ```cppwinrt
 #include "pch.h"
 #include <d2d1_1.h>
@@ -263,7 +265,7 @@ namespace
         winrt::check_hresult(dxdevice->GetAdapter(adapter.put()));
 
         winrt::com_ptr<IDXGIFactory2> factory;
-        winrt::check_hresult(adapter->GetParent(__uuidof(factory), factory.put_void()));
+        factory.capture(adapter, &IDXGIAdapter::GetParent);
         return factory;
     }
 
@@ -275,7 +277,7 @@ namespace
         WINRT_ASSERT(target);
 
         winrt::com_ptr<IDXGISurface> surface;
-        winrt::check_hresult(swapchain->GetBuffer(0, __uuidof(surface), surface.put_void()));
+        surface.capture(swapchain, &IDXGISwapChain1::GetBuffer, 0);
 
         D2D1_BITMAP_PROPERTIES1 const props{ D2D1::BitmapProperties1(
             D2D1_BITMAP_OPTIONS_TARGET | D2D1_BITMAP_OPTIONS_CANNOT_DRAW,
@@ -483,7 +485,9 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="working-with-com-types-such-as-bstr-and-variant"></a>使用 COM 類型，例如 BSTR 和 VARIANT
 
-如您所見， C++/WinRT 提供實作和呼叫 COM 介面的支援。 使用 COM 類型，例如 BSTR 和 VARIANT，總是有要在其原始形式 （搭配適當的 Api) 中使用這些選項。 或者，您可以使用例如 framework 所提供的包裝函式[Active Template Library (ATL)](/cpp/atl/active-template-library-atl-concepts)，或視覺效果C++編譯器[COM 支援](/cpp/cpp/compiler-com-support)，或甚至您自己的包裝函式。
+如您所見， C++/WinRT 提供實作和呼叫 COM 介面的支援。 使用 COM 類型，例如 BSTR 和 VARIANT，我們建議您使用所提供的包裝函式[Windows 實作的程式庫 （將）](https://github.com/Microsoft/wil)，例如**wil::unique_bstr**和**wil::unique_variant** （管理資源存留期）。
+
+[將會](https://github.com/Microsoft/wil)會取代架構，例如 Active Template Library (ATL) 和視覺效果C++編譯器 COM 支援。 我們建議透過撰寫自己的包裝函式，或使用例如 BSTR 和 VARIANT 以原始形式 （搭配適當的 Api) 的 COM 型別。
 
 ## <a name="important-apis"></a>重要 API
 * [winrt::check_hresult 函式](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
