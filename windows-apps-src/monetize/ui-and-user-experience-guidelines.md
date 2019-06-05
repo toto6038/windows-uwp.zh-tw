@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 指導方針, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f044890e49f4631abf710764bc2f9746a1306f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7bb187092158386c503b91973d8d63ce291b4760
+ms.sourcegitcommit: c62b260eecd373e57b19a623bae77e29180e0f3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639143"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66565519"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 
@@ -76,6 +76,8 @@ ms.locfileid: "57639143"
 * 撰寫或散發的程式碼透過您應用程式中執行的 Microsoft 廣告程式庫以外的方式呼叫廣告服務。
 
 * 與 Microsoft 廣告程式庫建立的未記載介面或子物件互動，例如 **WebView** 或 **MediaElement**。
+
+* 置於 viewbox 以降低的廣告大小以便比一般頁面上的多個廣告的廣告。
 
 <span id="interstitialbestpractices10" />
 
