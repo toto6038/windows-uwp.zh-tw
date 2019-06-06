@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ac7f8e46974b7c12b42f6d6f94052e61902b240
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 914cf884b97d14af523cc61b0fcce719104783ba
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360244"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721693"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 您很可能會有關於撰寫和使用 Windows 執行階段 Api 的問題的答案[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -22,7 +22,7 @@ ms.locfileid: "66360244"
 請參閱[如何將目標重定您C++/WinRT 專案至較新版的 Windows sdk](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。
 
 ## <a name="why-wont-my-new-project-compile-now-that-ive-moved-to-cwinrt-20"></a>為什麼無法我的新專案編譯，既然我已經移至C++WinRT 2.0？
-完整的 （包括重大變更） 的變更集，請參閱 <<c0> [ 新聞和變更，在C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)。</c0> 例如，針對協同程式支援 (包括協同程式協助程式，例如**winrt::resume_background**， **winrt::resume_foreground**，並**winrt::resume_on_signal**)，您將需要`#include <winrt/coroutine.h>`。 如果您使用範圍架構`for`在 Windows 執行階段集合，然後您現在必須`#include <winrt/Windows.Foundation.Collections.h>`。
+完整的 （包括重大變更） 的變更集，請參閱 <<c0> [ 新聞和變更，在C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)。</c0> 例如，如果您使用範圍架構`for`在 Windows 執行階段集合，然後您現在必須`#include <winrt/Windows.Foundation.Collections.h>`。
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>為什麼我的新專案將無法編譯？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 版本 17134
 如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，與目標 Windows SDK 版本 10.0.17134.0 (Windows 10 1803年版)，然後在新建立C++/WinRT 專案可能無法編譯錯誤 」*錯誤 c3861:: 'from_abi':找不到識別項*"，且其他錯誤源自*base.h*。 解決方法是其中一個目標更新版本 （更一致） 版本的 Windows SDK 或將專案屬性**C /C++**  > **語言** >  **一致性模式：否**(此外，如果 **/permissive--** 會顯示在專案屬性**C /C++**  > **命令列**下**其他選項**，再將它刪除)。

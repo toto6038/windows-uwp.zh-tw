@@ -2,16 +2,16 @@
 description: 使用 HttpClient 和其餘 Windows.Web.Http 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
-ms.date: 02/08/2017
+ms.date: 6/5/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 988cd2fafbb0cd632711dc2eaa5f6a6db8eed7e4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bb098aae346c7a81771262793f5f6a042d62d5a3
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371387"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721605"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -229,6 +229,49 @@ int main()
 若要張貼的內容，實際的二進位檔案 （而不是上述範例中使用明確的二進位資料），您會發現這使用的工作變得更容易[HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)物件。 建構，並為其建構函式的引數，傳遞從呼叫傳回的值[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)。 該方法會傳回資料流以供您的二進位檔內的資料。
 
 此外，如果您上傳大型檔案 （大於大約 10 MB），則我們建議您使用 Windows 執行階段[背景傳送](/uwp/api/windows.networking.backgroundtransfer)Api。
+
+## <a name="post-json-data-over-http"></a>透過 HTTP POST JSON 資料
+
+下列範例會張貼到端點，某些 JSON，然後寫出回應主體。
+
+```cs
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Windows.Storage.Streams;
+using Windows.Web.Http;
+
+private async Task TryPostJsonAsync()
+{
+    try
+    {
+        // Construct the HttpClient and Uri. This endpoint is for test purposes only.
+        HttpClient httpClient = new HttpClient();
+        Uri uri = new Uri("https://www.contoso.com/post");
+
+        // Construct the JSON to post.
+        HttpStringContent content = new HttpStringContent(
+            "{ \"firstName\": \"Eliot\" }",
+            UnicodeEncoding.Utf8,
+            "application/json");
+
+        // Post the JSON and wait for a response.
+        HttpResponseMessage httpResponseMessage = await httpClient.PostAsync(
+            uri,
+            content);
+
+        // Make sure the post succeeded, and write out the response.
+        httpResponseMessage.EnsureSuccessStatusCode();
+        var httpResponseBody = await httpResponseMessage.Content.ReadAsStringAsync();
+        Debug.WriteLine(httpResponseBody);
+    }
+    catch (Exception ex)
+    {
+        // Write out any exceptions.
+        Debug.WriteLine(ex);
+    }
+}
+```
 
 ## <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http 中的例外狀況
 
