@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bee954cba446ac7dc7eb41622d9275b3b73af6ee
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
+ms.sourcegitcommit: f47620e72ff8127fae9b024c70ddced3a5c45d91
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621833"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748451"
 ---
 # <a name="dialog-controls"></a>對話方塊控制項
 
@@ -250,9 +250,37 @@ private async void DisplaySubscribeDialog()
 
 > 某些平台將確認按鈕放在右邊，而非左邊。 那麼，為什麼建議將它放在左邊？  如果您假設大部分使用者習慣使用右手，而且是以右手拿手機，那麼確認按鈕位於左邊時實際上會更好按，因為它更有可能在使用者的拇指弧形內。按鈕位於螢幕右邊時，使用者必須將其拇指向內扣入到不太舒適的姿勢。
 
+## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>ContentDialog AppWindow 或 Xaml 群島
 
+> 注意：本節僅適用於 Windows 10，1903年或更新版本為目標的應用程式。 AppWindow 及 XAML 群島不適用於舊版。 如需版本控制的詳細資訊，請參閱[版本的自適性應用程式](../../../debug-test-perf/version-adaptive-apps.md)。
 
+根據預設，內容對話方塊要強制顯示相對於根目錄[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)。 當您使用 ContentDialog 內其中一個[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)或[XAML 島](/apps/desktop/modernize/xaml-islands)，您需要手動設定[XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot)上根目錄的 XAML 主應用程式 對話方塊。
 
+若要這樣做，請將 ContentDialog XamlRoot 屬性設定為相同的 XamlRoot 已經中 AppWindow 或 XAML 島的項目，如下所示。
+
+```csharp
+private async void DisplayNoWifiDialog()
+{
+    ContentDialog noWifiDialog = new ContentDialog
+    {
+        Title = "No wifi connection",
+        Content = "Check your connection and try again.",
+        CloseButtonText = "Ok"
+    };
+
+    // Use this code to associate the dialog to the appropriate AppWindow by setting
+    // the dialog's XamlRoot to the same XamlRoot as an element that is already present in the AppWindow.
+    if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+    {
+        noWifiDialog.XamlRoot = elementAlreadyInMyAppWindow.XamlRoot;
+    }
+
+    ContentDialogResult result = await noWifiDialog.ShowAsync();
+}
+```
+
+> [!WARNING]
+> 只能有一個 ContentDialog 開啟每個執行緒，一次。 嘗試開啟兩個 ContentDialogs 會擲回例外狀況，即使它們嘗試在不同的 AppWindows 中開啟。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
