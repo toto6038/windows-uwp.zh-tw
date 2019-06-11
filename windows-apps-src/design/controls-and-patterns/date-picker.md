@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b8e03683d38b382d74bd6defbf7732578878960
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7e0a7d1732833f8e6fc750f8ee481fa3c1116b50
+ms.sourcegitcommit: 0d6110cd3d868612bee347566f5b85b724cb57df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362834"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66823594"
 ---
 # <a name="date-picker"></a>日期選擇器
 
@@ -59,7 +59,7 @@ ms.locfileid: "66362834"
 這個範例示範如何建立含有標頭的簡單日期選擇器。
 
 ```xaml
-<DatePicker x:Name=birthDatePicker Header="Date of birth"/>
+<DatePicker x:Name="birthDatePicker" Header="Date of birth"/>
 ```
 
 ```csharp

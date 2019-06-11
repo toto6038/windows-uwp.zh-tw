@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
 ms.localizationpriority: medium
-ms.openlocfilehash: a27763d76d2be65c7e0d2c6ccaeb0cd13123bdae
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 3f1931a15b5517264cd11dca8d8086dda7094b93
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244304"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826161"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 
@@ -128,7 +128,7 @@ ms.locfileid: "59244304"
 
 另外也須遵循下列需求。
 
-**若要新增預告片至清單：**
+**若要新增您的清單結尾：**
 1. 在指定的方塊中上傳預告片 [**視訊檔案**]。 下拉式方塊也會顯示，方便您重複使用已上傳的預告片 (可能是其他語言的Microsoft Store清單)。
 2. 上傳預告片之後，您將需要上傳與它搭配的 [**縮圖影像**]。 這必須是 1920 x 1080 像素的 .png 檔案，通常是取自預告片的靜態影像。
 3. 按一下鉛筆圖示新增預告片的 [**標題**] (255 個字元以內)。
@@ -137,7 +137,7 @@ ms.locfileid: "59244304"
 > [!TIP]
 > 如果您已建立多種語言的 Microsoft Store 清單，您可以選取 **\[從現有預告片中選擇\]** 以重複使用已上傳的預告片。 您不需要為每一種語個別上傳預告片。
 
-若要從清單中移除預告片，請按一下其檔案名稱旁的 **\[X\]**。 您可以選擇是否要移除僅目前存放區清單中，您會使用，還是要移除所有產品的存放區清單 （以每一種語言）。
+若要從清單中移除預告片，請按一下其檔案名稱旁的 **\[X\]** 。 您可以選擇是否要移除僅目前存放區清單中，您會使用，還是要移除所有產品的存放區清單 （以每一種語言）。
 
 
 ### <a name="trailer-requirements"></a>預告片需求
@@ -152,7 +152,7 @@ ms.locfileid: "59244304"
 - 標題不可超過 255 個字元。 
 - 不要在您的預告片中包含年齡分級。
 
-就像 Store 清單頁面上的其他欄位一樣，預告片必須通過認證，才能發行至 Microsoft Store。 確定您的預告片遵循 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
+就像 Store 清單頁面上的其他欄位一樣，預告片必須通過認證，才能發行至 Microsoft Store。 確定您的預告片遵循 [Microsoft Store 原則](store-policies.md)。
 
 根據檔案類型，可能有其他需求。
 
@@ -223,7 +223,7 @@ ms.locfileid: "59244304"
 
 如果您先前提交的應用程式支援舊版作業系統 (Windows 8.x 和/或 Windows Phone 8.x)，讓我們考量 （雖然它們不保證您的應用程式將會成為精選），提供您促銷的版面配置中的應用程式中必須提供這些映像。 如果您的應用程式不支援這些先前的作業系統版本，請略過本節。 (本節先前稱為「**選用宣傳影像**」。)
 
-**適用於 Windows Phone 8.1 及更早版本**、 兩個促銷的版面配置中可用的影像大小：**1000 x 800 像素為單位 (5:4)** 並**358 x 358 個像素 (1:1)**。 如果您的應用程式執行 Windows Phone 8.1 或更早版本，建議您提供在兩個下列大小的映像。  
+**適用於 Windows Phone 8.1 及更早版本**、 兩個促銷的版面配置中可用的影像大小：**1000 x 800 像素為單位 (5:4)** 並**358 x 358 個像素 (1:1)** 。 如果您的應用程式執行 Windows Phone 8.1 或更早版本，建議您提供在兩個下列大小的映像。  
 
 > [!TIP]
 > 請務必在[Microsoft Store標誌](#store-logos)區段中提供 300 x 300 應用程式磚圖示，針對任何支援 Windows Phone 8.1 或較舊版本的任何提交。 這樣可確保您的應用程式在Microsoft Store中不會顯示空白圖示。  

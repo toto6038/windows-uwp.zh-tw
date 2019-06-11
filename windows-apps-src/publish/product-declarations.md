@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bab1d6bd629aa85351e28a907d4b5ad705fb377
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 47011a22353f26361a392690d857bde1fc180c03
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788366"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826112"
 ---
 # <a name="product-declarations"></a>產品宣告
 
@@ -21,7 +21,7 @@ ms.locfileid: "63788366"
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此應用程式可讓使用者以進行購買，但不會使用 Microsoft Store 商務系統。
 
-幾乎每次提交中，您應該核取此方塊，因為這會提供機會來購買的應用程式已或可以取用或應用程式中使用的項目必須使用 Microsoft Store 應用程式內購買程序 API 來建立並提交的附加元件。 每個[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，建立並在 2015 年 6 月 29 日之前提交應用程式無法繼續而不需購買功能，因此長時間使用 Microsoft 的商務引擎，提供應用程式內購買功能遵守[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
+幾乎每次提交中，您應該核取此方塊，因為這會提供機會來購買的應用程式已或可以取用或應用程式中使用的項目必須使用 Microsoft Store 應用程式內購買程序 API 來建立並提交的附加元件。 每個[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，建立並在 2015 年 6 月 29 日之前提交應用程式無法繼續而不需購買功能，因此長時間使用 Microsoft 的商務引擎，提供應用程式內購買功能遵守[Microsoft Store 原則](store-policies.md#108-financial-transactions)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>這個應用程式已經過測試，符合協助工具指導方針。
 

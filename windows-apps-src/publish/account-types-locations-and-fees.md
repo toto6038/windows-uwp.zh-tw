@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 開發人員帳戶, 個人, 公司, 商務
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b35f95556a13d880992a12d7434af76feed4334
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 7556ca526ecfa28b1d97346501ec1875f938ca35
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63770891"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826221"
 ---
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
@@ -31,22 +31,22 @@ Windows 程式中[合作夥伴中心](https://partner.microsoft.com/dashboard)�
 
 | 個人帳戶 | 公司帳戶 |
 |--------------------|-----------------|
-| <ul><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>較短的帳戶驗證程序</li></ul> | <ul><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>要求較高的帳戶驗證</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>能夠提交有限功能的應用程式 (如[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)中所述)</li></ul> |
+| <ul><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>較短的帳戶驗證程序</li></ul> | <ul><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>要求較高的帳戶驗證</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>能夠提交有限功能的應用程式 (如[Microsoft Store 原則](store-policies.md#1014-account-type)中所述)</li></ul> |
 
-公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 每個[存放區原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)、 使用特定功能，例如存取財務應用程式的帳戶資訊，或需要驗證 （而不使用安全的專用第三方存取的主要功能驗證提供者），可以只發行公司帳戶。
+公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 每個[存放區原則](store-policies.md#1014-account-type)、 使用特定功能，例如存取財務應用程式的帳戶資訊，或需要驗證 （而不使用安全的專用第三方存取的主要功能驗證提供者），可以只發行公司帳戶。
 
 ## <a name="account-verification"></a>帳戶驗證
 
 完成註冊程序之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 針對公司帳戶，我們的驗證合作夥伴 Dun & Bradstreet 會確認您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時提供的所有連絡人資訊是最新的)。 您無法提交應用程式的公司帳戶，直到它經過驗證，但是當您於等待，您可以[將應用程式名稱保留](create-your-app-by-reserving-a-name.md)繼續建置和測試應用程式，並準備好您的提交工作。
 
-您可以在 [帳戶設定] 頁面查看您的驗證狀態。 
+您可以在 [帳戶設定] 頁面查看您的驗證狀態。  
 
 
 ## <a name="developer-account-and-app-submission-markets"></a>開發人員帳戶與 App 提交市場
 
 如果您在以下列出的國家或地區居住或經商，將可以註冊開發人員帳戶以及送出應用程式。
 
-在下表中，\[註冊費用\] 是目前註冊開發人員帳戶所需的花費。 這是一次性註冊費用，沒有續約費用。 請注意，以下價格可能會有所變動。
+在下表中，\[註冊費用\] 是目前註冊開發人員帳戶所需的花費。  這是一次性註冊費用，沒有續約費用。 請注意，以下價格可能會有所變動。
 
 > [!NOTE]
 > 我們將在您註冊時，對註冊費用加上任何相關稅賦與費用。 此外，當我們支付款項給您時，您的銀行可能會收取收款手續費。
@@ -56,7 +56,7 @@ Windows 程式中[合作夥伴中心](https://partner.microsoft.com/dashboard)�
 > [!NOTE]
 > 有些市場不支援付費應用程式 (**支付**)。 在這些市場中，只能提交免費 App。
 
-\[PayPal\] 欄指出 PayPal 是否為可適用於您[支付帳戶](setting-up-your-payout-account-and-tax-forms.md)的支援付款方法 (且除非另有說明，也適用於開發人員帳戶註冊費用)。
+\[PayPal\] 欄指出 PayPal 是否為可適用於您[支付帳戶](setting-up-your-payout-account-and-tax-forms.md)的支援付款方法 (且除非另有說明，也適用於開發人員帳戶註冊費用)。 
 
 | 國家/地區                    | 個人註冊費用 | 公司註冊費用 | 支出           | PayPal |
 |-----------------------------------|---------------------|------------------|------------------|--------|
@@ -252,4 +252,4 @@ Windows 程式中[合作夥伴中心](https://partner.microsoft.com/dashboard)�
 | 尚比亞                            | 19 美元              | 99 美元           | 尚比亞克瓦查 (已支付給銀行) | 否     |  
 | 辛巴威                          | 19 美元              | 99 美元           | 美元 (已支付給銀行) | 否     |
 
-\*  PayPal 可用來當做這個市場，支出帳戶付款方法，但不能用來支付 fo 是開發人員帳戶的註冊費。
+\*  PayPal 可用來當做這個市場，支出帳戶付款方法，但無法用來支付開發人員帳戶的註冊費。

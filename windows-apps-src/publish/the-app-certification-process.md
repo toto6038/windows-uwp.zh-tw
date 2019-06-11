@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10 uwp，發行，前置處理、 憑證、 發行，暫止，提交，發佈，狀態時間
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9df9ce95c6b17bcd3d702bf09ac57b9f205e0c
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: d88d8deeb467f186f120fb8c1e579d5c9222aaf1
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790582"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826224"
 ---
 # <a name="the-app-certification-process"></a>應用程式認證程序
 
@@ -29,7 +29,7 @@ ms.locfileid: "63790582"
 -   **技術相容性測試：** Windows 應用程式認證套件被測試技術相容性。 (將 app 提交至市集之前，請務必記得[使用 Windows 應用程式認證套件測試 app](../debug-test-perf/windows-app-certification-kit.md))。
 -   **內容的合規性：** 這樣所花費的時間量是依複雜應用程式是多少，將視覺內容，最近已提交多少個應用程式而有所不同。 請務必在[認證注意事項](notes-for-certification.md)頁面中提供測試人員應該注意的任何資訊。
 
-認證程序完成之後，您會收到一份認證報告，告知您的應用程式是否通過認證。 若 app 未通過認證，報告將指出哪個測試失敗或不符合哪個[原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。 您修正問題之後，可以重新提交應用程式，再次進行認證程序。
+認證程序完成之後，您會收到一份認證報告，告知您的應用程式是否通過認證。 若 app 未通過認證，報告將指出哪個測試失敗或不符合哪個[原則](store-policies.md)。 您修正問題之後，可以重新提交應用程式，再次進行認證程序。
 
 ## <a name="release"></a>發行
 
@@ -51,10 +51,10 @@ ms.locfileid: "63790582"
 
 ## <a name="in-the-store"></a>在市集中 
 
-成功進行上述步驟之後，提交的狀態會從 [發行中] 變成 [在市集內]。 客戶就能在 Microsoft Store 下載您的提交項目 (除非您選擇了其他[可搜尋性](choose-visibility-options.md#discoverability)選項)。 
+成功進行上述步驟之後，提交的狀態會從 [發行中]  變成 [在市集內]  。 客戶就能在 Microsoft Store 下載您的提交項目 (除非您選擇了其他[可搜尋性](choose-visibility-options.md#discoverability)選項)。 
 
 > [!NOTE]
-> 我們也會在應用程式發佈之後進行抽樣檢查以找出潛在的問題，並且確保您的應用程式符合所有的 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。 如果我們發現任何問題，將會通知您相關問題和修正方式 (如果有)，或者問題是否已從市集移除。
+> 我們也會在應用程式發佈之後進行抽樣檢查以找出潛在的問題，並且確保您的應用程式符合所有的 [Microsoft Store 原則](store-policies.md)。 如果我們發現任何問題，將會通知您相關問題和修正方式 (如果有)，或者問題是否已從市集移除。
 
  
 

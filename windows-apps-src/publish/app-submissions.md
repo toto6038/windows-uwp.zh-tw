@@ -6,12 +6,12 @@ keywords: 檢查清單, windows, uwp, 提交項目, 提交, 遊戲, 應用程式
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b98ea7f1d28c4fcd63cd2d4706905578b240e126
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 24d3c99636009ebf65f3e24d39d657297b105150
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643283"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826114"
 ---
 # <a name="app-submissions"></a>應用程式提交
 
@@ -41,10 +41,10 @@ ms.locfileid: "57643283"
 | 欄位名稱                    | 附註                                       | 如需詳細資訊                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **市場**                   | Default：所有可能的市場  | [定義定價和市場的選取範圍](define-pricing-and-market-selection.md)         |
-| **對象**                | Default：公開對象 | [對象](choose-visibility-options.md#audience) |
+| **Audience**                | Default：公開對象 | [Audience](choose-visibility-options.md#audience) |
 | **可搜尋性**                | Default：在市集中可用且可探索製作此應用程式 | [可搜尋性](choose-visibility-options.md#discoverability) |
-| **排程**                  | Default：儘速版本        | [設定精確的發行排程](configure-precise-release-scheduling.md) |
-| **基本價格**                | 必要                                    | [設定和排程應用程式的定價](set-and-schedule-app-pricing.md)              |
+| **[排程]**                  | Default：儘速版本        | [設定精確的發行排程](configure-precise-release-scheduling.md) |
+| **基本價格**                | 必要項                                    | [設定和排程應用程式的定價](set-and-schedule-app-pricing.md)              |
 | **免費試用**                | Default：沒有免費試用                      | [免費試用](set-app-pricing-and-availability.md#free-trial)              |
 | **銷售定價**              | 選擇性                                    | [促銷 App 和附加元件](put-apps-and-add-ons-on-sale.md)           |
 | **組織的授權**    | Default：允許組織的大量擷取 | [組織的授權選項](organizational-licensing.md)        |
@@ -55,8 +55,8 @@ ms.locfileid: "57643283"
 
 | 欄位名稱                    | 附註                                       | 如需詳細資訊                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **類別目錄和子類別目錄**  | 必要                                    | [類別目錄和子類別目錄的資料表](category-and-subcategory-table.md)       |
-| **隱私權原則 URL**            | 對許多應用程式為必要項目。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 原則](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies#105-personal-information) | [隱私權原則 URL](enter-app-properties.md#privacy-policy-url)        |
+| **類別目錄和子類別目錄**  | 必要項                                    | [類別目錄和子類別目錄的資料表](category-and-subcategory-table.md)       |
+| **隱私權原則 URL**            | 對許多應用程式為必要項目。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 原則](store-policies.md#105-personal-information) | [隱私權原則 URL](enter-app-properties.md#privacy-policy-url)        |
 | **網站**                   | 選擇性                                    | [網站](enter-app-properties.md#website)                   |
 | **支援連絡資訊**      | 如果您的產品要在 Xbox 上提供則為必要項目，否則為選用 (但建議使用)                                   | [支援連絡資訊](enter-app-properties.md#support-contact-info)              |
 | **遊戲的設定**             | 選用 (僅適用於遊戲)         | [遊戲的設定](enter-app-properties.md#game-settings) |
@@ -70,7 +70,7 @@ ms.locfileid: "57643283"
 
 | 欄位名稱                    | 附註                                       | 如需詳細資訊                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
-| **年齡分級**               | 必要                                    | [年齡分級](age-ratings.md)          |
+| **年齡分級**               | 必要項                                    | [年齡分級](age-ratings.md)          |
 
 <span/>
 
@@ -90,16 +90,16 @@ ms.locfileid: "57643283"
 
 | 欄位名稱                    | 附註                                       | 如需詳細資訊                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **描述**               | 必要                                    | [寫入的絕佳應用程式的描述](write-a-great-app-description.md) |
+| **描述**               | 必要項                                    | [寫入的絕佳應用程式的描述](write-a-great-app-description.md) |
 | **在這個版本中最新消息**   | 選擇性                                 | [版本資訊](create-app-store-listings.md#whats-new-in-this-version)       |
 | **應用程式功能**              | 選擇性                                    | [產品功能](create-app-store-listings.md#product-features)         |
 | **螢幕擷取畫面**               | 必要 (至少一個螢幕擷取畫面，建議提供四個或更多)          | [螢幕擷取畫面](app-screenshots-and-images.md#screenshots)          |
 | **市集標誌**               | 建議使用；某些 OS 版本為必要 | [市集標誌](app-screenshots-and-images.md#store-logos)             |
 | **結尾**                  | 選擇性                                    | [結尾](app-screenshots-and-images.md#trailers)                | 
-| **Windows 10 和 Xbox 的映像 （16:9 進階 hero 圖案）**     | 推薦項目        | [Windows 10 和 Xbox 映像 （16:9 進階 hero 圖案）
-] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Windows 10 和 Xbox 的映像 （16:9 進階 hero 圖案）**     | 建議        | [Windows 10 和 Xbox 映像 （16:9 進階 hero 圖案）
+](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Xbox 映像**     | 如果您發行至 Xbox，需要正確地顯示        | [Xbox 映像
-] (應用程式-螢幕擷取畫面-和-images.md #xbox 映像) |
+](app-screenshots-and-images.md#xbox-images) |
 | **補充的欄位**  | 選擇性                                    | [補充的欄位](create-app-store-listings.md#supplemental-fields) 
 | **搜尋字詞**              | 選擇性                                    | [搜尋字詞](create-app-store-listings.md#search-terms)         |
 | **著作權及商標資訊** | 選擇性                                 | [著作權及商標資訊](create-app-store-listings.md#copyright-and-trademark-info) |
@@ -114,7 +114,7 @@ ms.locfileid: "57643283"
 | 欄位名稱                    | 附註                                       | 如需詳細資訊                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **發行的保留選項**     | Default：發行此提交作業，只要它會傳遞認證 （或您選取 [排程] 區段中每個日期）      | [發行的保留選項](manage-submission-options.md#publishing-hold-options)    
-| **憑證的相關資訊**     | 推薦項目          | [憑證的相關資訊](notes-for-certification.md)             |
+| **憑證的相關資訊**     | 建議          | [憑證的相關資訊](notes-for-certification.md)             |
 | **受限制的功能**     | 如果您的產品會宣告任何所需[限制功能](../packaging/app-capability-declarations.md#restricted-capabilities)    | [受限制的功能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
