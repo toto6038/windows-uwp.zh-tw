@@ -2,19 +2,19 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: 封裝 UWP 應用程式
 description: 若要發佈或銷售您的通用 Windows 平台 (UWP) 應用程式，您必須為其建立應用程式套件。
-ms.date: 03/18/2019
+ms.date: 06/10/2019
 ms.topic: article
 keywords: Windows 10, UWP
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: ba1e09a3819b2c22de52760519f352adc36d6362
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 265e034b264cf82bacfa5a32141eb5d999d57108
+ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372377"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66825031"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
@@ -54,7 +54,7 @@ ms.locfileid: "66372377"
 
 Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而不需要編輯檔案的原始 XML。
 
-**使用資訊清單設計工具設定套件**
+### <a name="configure-a-package-with-the-manifest-designer"></a>使用資訊清單設計工具設定套件
 
 1.  在 [方案總管] 中，展開您的 UWP app 的專案節點。 
 2.  按兩下 [Package.appxmanifest] 檔案。  如果資訊清單檔案已在 XML 程式碼檢視中開啟，Visual Studio 會提示您關閉檔案。
@@ -81,7 +81,7 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 >[!NOTE]
 > 如果您想要以手動方式建立應用程式套件 （.appx 或.msix） 或應用程式配套 （.appxbundle 或.msixbundle），請參閱[MakeAppx.exe 工具建立應用程式套件](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
 
-### <a name="to-create-your-app-package-upload-file-using-visual-studio"></a>若要建立您使用 Visual Studio 的應用程式套件上傳檔案
+### <a name="create-your-app-package-upload-file-using-visual-studio"></a>建立您使用 Visual Studio 的應用程式套件上傳檔案
 
 1.  在 [方案總管] 中，開啟您的 UWP app 專案的方案。 
 2.  在專案上按一下滑鼠右鍵，然後選擇 **\[Microsoft Store\]** -> **\[建立應用程式套件\]** 。 如果此選項停用或未顯示，請確定專案是通用 Windows 專案。  
@@ -100,11 +100,10 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
     ![使用封裝組態顯示建立應用程式封裝 視窗](images/packaging-screen5.jpg)
 7.  包含完整的 PDB 符號檔才能[分析應用程式效能](https://docs.microsoft.com/windows/uwp/publish/analytics)從已發行您的應用程式之後，合作夥伴中心。 設定任何其他詳細資料，例如版本編號或套件輸出位置。
 8.  按一下 **\[建立\]** 產生應用程式套件。 如果您選取其中一個**我想要建立套件以上傳到 Microsoft Store**步驟 3 中的選項，並建立合作夥伴中心提交套件，精靈會建立封裝上傳 （.appxupload 或.msixupload） 檔案。 如果您選取**我想要建立封裝以側載**在步驟 3 中，精靈會建立單一應用程式套件或應用程式套件組合，根據您在步驟 6 中的選取項目。
-9. 當您的應用程式封裝成功時，您會看到這個對話方塊，您可以從指定的輸出位置來擷取您的應用程式套件上傳檔案。 此時，您可以[驗證您的應用程式套件，在本機電腦或遠端電腦上](#validate-your-app-package)並[自動化市集提交](#automate-store-submission)。
+9. 當您的應用程式封裝成功時，您會看到這個對話方塊，您可以從指定的輸出位置來擷取您的應用程式套件上傳檔案。 此時，您可以[驗證您的應用程式套件，在本機電腦或遠端電腦上](#validate-your-app-package)並[自動化存放區提交](#automate-store-submissions)。
     ![封裝建立完成視窗所顯示的驗證選項](images/packaging-screen6.jpg)
 
-
-### <a name="to-create-your-app-package-upload-file-manually"></a>若要手動建立您的應用程式套件上傳檔案
+### <a name="create-your-app-package-upload-file-manually"></a>以手動方式建立您的應用程式套件上傳檔案
 
 1. 將下列檔案放在資料夾中：
     - 一或多個應用程式套件 （.msix 則為.appx） 或應用程式套件組合 （.msixbundle 或.appxbundle）。
@@ -112,46 +111,74 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 2. 壓縮資料夾。
 3. 將 zip 的資料夾中副檔名從.zip.msixupload 或.appxupload。
 
-### <a name="validate-your-app-package"></a>驗證您的應用程式套件
+## <a name="validate-your-app-package"></a>驗證您的應用程式套件
 
 驗證您的應用程式，再提交到合作夥伴中心為本機或遠端電腦上的認證。 您只能驗證您的應用程式套件的發行組建，而非偵錯組建。 如需有關應用程式提交至合作夥伴中心的詳細資訊，請參閱[提交應用程式時](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 
-**若要驗證您的應用程式套件在本機**
+### <a name="validate-your-app-package-locally"></a>驗證您的應用程式套件在本機
 
 1. 在最終**套件建立完成**頁**建立應用程式套件**精靈 中，保留**本機**選取的選項，然後按一下**啟動Windows 應用程式認證套件**。 如需使用 Windows 應用程式認證套件測試應用程式的詳細資訊，請參閱[Windows 應用程式認證套件](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)。
 
-    Windows 應用程式認證套件會執行各種測試並傳回結果。 如需更具體的資訊，請參閱 [Windows 應用程式認證套件測試](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
+    Windows 應用程式認證套件 (WACK) 執行各種測試，並傳回結果。 如需更具體的資訊，請參閱 [Windows 應用程式認證套件測試](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
 
     如果您有想要用於測試的遠端 Windows 10 裝置時，您必須手動安裝該裝置上的 Windows 應用程式認證套件。 下一節會帶您逐步完成下列步驟。 完成此動作之後，接著您可以選取 **\[遠端電腦\]** ，按一下 **\[啟動 Windows 應用程式認證套件\]** 以連線到遠端裝置並執行驗證測試。
 
 2. WACK 已完成，而您的應用程式已通過認證後，您就能夠應用程式提交到合作夥伴中心。 請確定您上傳的是正確的檔案。 檔案的預設位置可以找到您的解決方案的根資料夾中`\[AppName]\AppPackages`和它的副檔名為.appxupload 或.msixupload 檔案結尾。 名稱會是表單的`[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`或`[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`若所有選取的套件架構選擇應用程式套件組合。
 
-**若要驗證遠端的 Windows 10 裝置上的應用程式套件**
+### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>驗證遠端的 Windows 10 裝置上的應用程式套件
 
-1.  啟用 Windows 10 裝置，以進行開發[啟用您的裝置進行開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)指示。
+1. 啟用 Windows 10 裝置，以進行開發[啟用您的裝置進行開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)指示。
     >[!IMPORTANT]
     > 您無法驗證遠端 ARM 裝置上的應用程式套件，適用於 Windows 10。
-2.  下載和安裝 Visual Studio 遠端工具。 這些工具可用來以遠端方式執行 Windows 應用程式認證套件。 您可以瀏覽[在遠端電腦上執行 UWP app](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015)，以取得關於這些工具的詳細資訊 (包括下載位置)。
-3.  下載所需[Windows 應用程式認證套件](https://go.microsoft.com/fwlink/p/?LinkID=309666)然後在您的遠端 Windows 10 裝置上進行安裝。
-4.  在精靈的 **\[套件建立完成\]** 頁面上，選擇 **\[遠端電腦\]** 選項按鈕，然後選擇 **\[測試連線\]** 按鈕旁的省略符號按鈕。
+2. 下載和安裝 Visual Studio 遠端工具。 這些工具可用來以遠端方式執行 Windows 應用程式認證套件。 您可以瀏覽[在遠端電腦上執行 UWP app](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015)，以取得關於這些工具的詳細資訊 (包括下載位置)。
+3. 下載所需[Windows 應用程式認證套件](https://go.microsoft.com/fwlink/p/?LinkID=309666)然後在您的遠端 Windows 10 裝置上進行安裝。
+4. 在精靈的 **\[套件建立完成\]** 頁面上，選擇 **\[遠端電腦\]** 選項按鈕，然後選擇 **\[測試連線\]** 按鈕旁的省略符號按鈕。
     >[!NOTE]
     > **遠端機器**選項按鈕已選取至少一個支援驗證的方案組態時，才提供使用。 如需使用 WACK 測試 app 的詳細資訊，請參閱 [Windows 應用程式認證套件](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)。
-5.  指定您的子網路內的裝置種類，或提供子網路以外的裝置的網域名稱伺服器 (DNS) 名稱或 IP 位址。
-6.  如果您的裝置不需要您使用 Windows 認證登入，請在 **\[驗證模式\]** 清單中選擇 **\[無\]** 。
-7.  選擇 **\[選取\]** 按鈕，然後再選擇 **\[啟動 Windows 應用程式認證套件\]** 按鈕。 如果遠端工具在該裝置上執行，Visual Studio 會與裝置連線，接著執行驗證測試。 請參閱 [Windows 應用程式認證套件測試](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
+5. 指定您的子網路內的裝置種類，或提供子網路以外的裝置的網域名稱伺服器 (DNS) 名稱或 IP 位址。
+6. 如果您的裝置不需要您使用 Windows 認證登入，請在 **\[驗證模式\]** 清單中選擇 **\[無\]** 。
+7. 選擇 **\[選取\]** 按鈕，然後再選擇 **\[啟動 Windows 應用程式認證套件\]** 按鈕。 如果遠端工具在該裝置上執行，Visual Studio 會與裝置連線，接著執行驗證測試。 請參閱 [Windows 應用程式認證套件測試](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
 
-### <a name="automate-store-submission"></a>自動化市集提交
+## <a name="automate-store-submissions"></a>自動化存放區提交
 
-從 Visual Studio 2019 開始，您可以送出產生的.appxupload 檔案至 Microsoft Store 直接從 IDE 選取**自動在 Windows 應用程式認證套件驗證之後，以提交至 Microsoft Store**選項。 您必須指定用來提交的認證。 這些認證由三個部分組成： **Azure 租用戶識別碼**，則**用戶端識別碼**並**用戶端祕密**。 請遵循下列步驟來取得它們：
+從 Visual Studio 2019 開始，您可以送出產生的.appxupload 檔案至 Microsoft Store 直接從 IDE 選取**自動在 Windows 應用程式認證套件驗證之後，以提交至 Microsoft Store**在結尾的選項[建立應用程式套件精靈](#create-your-app-package-upload-file-using-visual-studio)。 這項功能會利用 Azure Active Directory 來存取發行您的應用程式所需的合作夥伴中心帳戶資訊。 若要使用這項功能，您將需要合作夥伴中心帳戶相關聯 Azure Active Directory，並擷取數個提交時所需的認證。
 
-1. 在合作夥伴中心，請移至您**開發人員設定**，按一下**使用者**，並將您的組織開發人員中心帳戶與貴組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://docs.microsoft.com/windows/uwp/publish/manage-account-users)。
-2. 在 **使用者**頁面上，按一下**加入 Azure AD 應用程式**、 新增 Azure AD 應用程式，表示應用程式或服務，您會使用存取提交您的開發人員中心帳戶，並將它指派管理員角色。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 \[新增 Azure AD 應用程式\] 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 **\[新增 Azure AD 應用程式\]** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱 <<c0> [ 新增使用者、 群組和 Azure AD 應用程式，您的合作夥伴中心帳戶](/windows/uwp/publish/add-users-groups-and-azure-ad-applications)。
-3. 返回**管理的使用者**頁面上，按一下您的 Azure AD 應用程式，請移至應用程式設定，並複製名稱**租用戶識別碼**並**用戶端識別碼**值。
-4. 按一下 \[加入新的金鑰\]。  接下來的畫面中，複製金鑰值，其對應至用戶端祕密。 您無法存取這項資訊之後您離開此頁面中，, 以確保不會遺失。 如需詳細資訊，請參閱 < 管理中的索引鍵的相關資訊[新增使用者、 群組和 Azure AD 應用程式，您的合作夥伴中心帳戶](/windows/uwp/publish/add-users-groups-and-azure-ad-applications)。
-    ![驗證和發佈進度](images/packaging-screen8.jpg)
-    > [!Important] 
+### <a name="associate-azure-active-directory-with-your-partner-center-account"></a>將 Azure Active Directory 與您的合作夥伴中心帳戶產生關聯
+
+您可以擷取所需的自動存放區提交認證之前，必須先遵循這些步驟[夥伴中心儀表板](https://partner.microsoft.com/dashboard)如果您有不這麼做。
+
+1. [將您的合作夥伴中心帳戶與貴組織的 Azure Active Directory 產生關聯](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center)。 如果您的組織已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經具備 Azure AD。 否則，您可以建立新的 Azure AD 租用戶從合作夥伴中心內，不另收費。
+
+2. [新增 Azure AD 應用程式到您的合作夥伴中心帳戶](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account)。 此 Azure AD 應用程式會代表應用程式或您將會用來存取您的開發人員中心帳戶的服務。 您必須將此應用程式指派**Manager**角色。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 **\[新增 Azure AD 應用程式\]** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 **\[新增 Azure AD 應用程式\]** 頁面建立新的 Azure AD 應用程式。
+
+### <a name="retrieve-the-credentials-required-for-submissions"></a>擷取提交時所需的認證
+
+接下來，您可以在其中擷取提交所需的合作夥伴中心認證： **Azure 租用戶識別碼**，則**用戶端識別碼**並**用戶端金鑰**。
+
+1. 移至[夥伴中心儀表板](https://partner.microsoft.com/dashboard)並使用您的 Azure AD 認證登入。
+
+2. 在合作夥伴中心儀表板中，選取 齒輪圖示 （附近的儀表板右上角），然後選取**開發人員設定**。
+
+3. 在 **設定**功能表，在左窗格中，按一下 **使用者**。
+
+4. 按一下您的 Azure AD 應用程式，請移至應用程式的設定名稱。 在此頁面上，複製**租用戶識別碼**並**用戶端識別碼**值。
+
+5. 在 **按鍵**區段中，按一下**新增新的金鑰**。 在下一個畫面上，複製**金鑰**對應至用戶端祕密的值。 您無法存取這項資訊之後您離開此頁面中，, 以確保不會遺失。 如需詳細資訊，請參閱[管理 Azure AD 應用程式的金鑰](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application)。
+
+### <a name="configure-automatic-store-submissions-in-visual-studio"></a>在 Visual Studio 中設定自動存放區提交
+
+完成上述步驟之後，您可以設定自動的存放區提交在 Visual Studio 2019。
+
+1. 在結尾[建立應用程式套件] 精靈](#create-your-app-package-upload-file-using-visual-studio)，選取**會自動在 Windows 應用程式認證套件驗證之後，以提交至 Microsoft Store** ，按一下 [**重新設定**.
+
+2. 在 [**設定的 Microsoft Store 提交設定**] 對話方塊中，輸入 Azure 租用戶識別碼、 用戶端識別碼和用戶端金鑰。
+
+    ![設定 Microsoft Store 提交設定](images/packaging-screen8.jpg)
+
+    > [!Important]
     > 您的認證可以儲存至您的設定檔，以供未來的提交內容
-5. 按一下 [確定]  。
+
+3. 按一下 [確定]  。
 
 WACK 已完成測試之後，會開始提交。 您可以提交中追蹤進度**驗證 」 及 「 發行**視窗。
 
