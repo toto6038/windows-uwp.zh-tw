@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d720b256ae528192d694f98877126a6df087a18e
-ms.sourcegitcommit: 26bd7953ee5c5e625d4ed8f93df0391511c76f23
+ms.openlocfilehash: 9ce2024131035e77e7d8140c047e37979c6ac490
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66491146"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67040136"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
@@ -239,7 +239,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 相機 | ms-settings:privacy-webcam |
 | 連絡人 | ms-settings:privacy-contacts |
 | 文件 | ms-settings:privacy-documents |
-| 電子郵件 | ms-settings:privacy-email |
+| Email | ms-settings:privacy-email |
 | [眼球追蹤器] | ms-settings:privacy-eyetracker (需要眼球追蹤器硬體) |
 | 意見反應與診斷 | ms-settings:privacy-feedback |
 | 檔案系統 | ms-settings:privacy-broadfilesystemaccess |
@@ -251,7 +251,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 通知 | ms-settings:privacy-notifications |
 | 其他裝置 | ms-settings:privacy-customdevices |
 | 圖片 | ms-settings:privacy-pictures |
-| 通話 | ms-設定： 隱私權-phonecall (**Windows 10，1809年和更新版本中淘汰**) |
+| 通話 | ms-設定： 隱私權-的通話 (**Windows 10，1809年和更新版本中淘汰**) |
 | 無線通訊 | ms-settings:privacy-radios |
 | 語音、筆跡與輸入 |ms-settings:privacy-speechtyping |
 | 工作 | ms-settings:privacy-tasks |
