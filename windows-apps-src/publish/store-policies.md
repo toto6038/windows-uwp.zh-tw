@@ -8,10 +8,10 @@ keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 ms.openlocfilehash: 3511fb221e1e087f7ced5ce11aca8d53bd027079
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826475"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 原則
@@ -467,7 +467,7 @@ Xbox Live 遊戲產品必須符合下列服務使用方式的需求︰
 ---
 <sup>1</sup>"Store" 或 "Microsoft Store" 係指 Microsoft 擁有或運作，透過其提供或供客戶取得應用程式之平台 (無論其命名為何)。 除非有另作說明，否則文中所稱之「Microsoft Store」包括 Microsoft Store、Windows 10 上的 Microsoft Store、Xbox One 上的 Microsoft Store、商務用 Microsoft Store 和教育用 Microsoft Store。
 
-### <a name="see-also"></a>另請參閱
+### <a name="see-also"></a>請參閱
 
 - [Microsoft Store 原則變更歷程記錄](store-policies-change-history.md)
 - [Microsoft Store 原則與管理辦法](store-policies-and-code-of-conduct.md)

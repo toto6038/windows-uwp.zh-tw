@@ -8,10 +8,10 @@ keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 ms.openlocfilehash: a846b48565a6029656ecfdd21763931df74b5375
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826455"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Microsoft Store 原則變更歷程記錄
@@ -25,7 +25,7 @@ ms.locfileid: "66826455"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Date</th>
+<th>日期</th>
 <th>文件版本</th>
 <th>變更描述</th>
 </tr>
@@ -184,7 +184,7 @@ ms.locfileid: "66826455"
 </table>
 
 
-### <a name="see-also"></a>另請參閱
+### <a name="see-also"></a>請參閱
 
 - [Microsoft Store 原則與管理辦法](store-policies-and-code-of-conduct.md)
 - [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

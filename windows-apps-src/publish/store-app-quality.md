@@ -8,10 +8,10 @@ keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
 ms.openlocfilehash: 550ffeac8912769fc7e319d819f4de67f6d36cf1
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826415"
 ---
 # <a name="app-quality"></a>應用程式品質
@@ -66,7 +66,7 @@ Microsoft Store 頁面的中繼資料 (圖示、標題、螢幕擷取畫面及�
 
 如果您希望下載項目有優異的表現，請做出真正很棒、有趣或有用的東西。
 
-- 提供長遠價值。 例如:
+- 提供長遠價值。 例如：
     - 您的烹飪應用程式包含夠多的食譜來吸引客戶多次使用嗎？
     - 您球隊應用程式會定期以最新統計資料進行更新，還是只提供靜態收集的比賽結果？
     - 您的遊戲會提供有趣的遊戲方式和別出心裁的結局嗎？
@@ -86,7 +86,7 @@ Microsoft Store 頁面的中繼資料 (圖示、標題、螢幕擷取畫面及�
 - 如需詳細資訊，請參閱[與您的客戶互動](https://developer.microsoft.com/store/engage)。
 
 
-### <a name="see-also"></a>另請參閱
+### <a name="see-also"></a>請參閱
 
 - [Microsoft Store 原則與管理辦法](store-policies-and-code-of-conduct.md)
 - [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

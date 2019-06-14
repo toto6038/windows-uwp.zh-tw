@@ -8,10 +8,10 @@ keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: 2B84B877-794A-468F-A478-DA09E4694513
 ms.openlocfilehash: a9e96431594cf1a046741659011e546807294f7a
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826445"
 ---
 # <a name="developer-code-of-conduct"></a>開發人員管理辦法
@@ -34,7 +34,7 @@ ms.locfileid: "66826445"
 您不得在 Microsoft Store 或合作夥伴中心從事任何詐騙或不誠實的活動。 這包括 (但不限於) 嘗試操縱您的應用程式或任何其他應用程式的排行、搜尋結果、評等或評論；干擾其他人使用 Microsoft Store 服務 (或 Microsoft 提供的任何相關服務)；嘗試任何形式的金融舞弊 (包括但不限於任何廣告曝光或點擊詐欺)；從事任何與您的應用程式中廣告庫存或廣告創意有關的詐欺行為；或者使用直接或間接方式，未經授權存取或嘗試存取個人資訊，以及任何其他類似資訊。
 
 
-### <a name="see-also"></a>另請參閱
+### <a name="see-also"></a>請參閱
 
 - [Microsoft Store 原則與管理辦法](store-policies-and-code-of-conduct.md)
 - [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
