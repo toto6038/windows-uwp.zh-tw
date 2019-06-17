@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1aa424fe038a50a5e29364c7f8246e324dc07c
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 45d298aca60155915900f494654dce8e89fb1ee0
+ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215004"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131909"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>將傳統型應用程式封裝
 
@@ -57,12 +57,6 @@ ms.locfileid: "66215004"
 若要使用的憑證來簽署應用程式，請參閱[登入使用 SignTool 應用程式封裝](/windows/uwp/packaging/sign-app-package-using-signtool)。
 
 若要側載您的應用程式，到其他裝置，請參閱[Windows 10 中的 側載 LOB 應用程式](/windows/application-management/sideload-apps-in-windows-10)。
-
-**影片**
-
-|發佈到 Microsoft Store 應用程式 |散發企業應用程式  |
-|---|---|
-|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Windows-Store-Publication-3cWyG5WhD_5506218965"      width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Distribution-for-Enterprise-Apps-XJ5Hd5WhD_1106218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
 <a id="transition-users" />
 
@@ -167,10 +161,6 @@ private void RemoveDesktopApp()
 
 }
 ```
-
-### <a name="video"></a>視訊
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Transition-Taskbar-Pins-Start-Tiles-File-Type-Associations-and-Protocol-Handlers-MD5mv5WhD_2406218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="next-steps"></a>後續步驟
 
