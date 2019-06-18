@@ -169,7 +169,7 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
 完成上述步驟之後，您可以設定自動的存放區提交在 Visual Studio 2019。
 
-1. 在結尾[建立應用程式套件] 精靈](#create-your-app-package-upload-file-using-visual-studio)，選取**會自動在 Windows 應用程式認證套件驗證之後，以提交至 Microsoft Store** ，按一下 [**重新設定**.
+1. 在結尾[建立應用程式套件精靈](#create-your-app-package-upload-file-using-visual-studio)，選取**會自動在 Windows 應用程式認證套件驗證之後，以提交至 Microsoft Store** ，按一下 **重新設定**.
 
 2. 在 [**設定的 Microsoft Store 提交設定**] 對話方塊中，輸入 Azure 租用戶識別碼、 用戶端識別碼和用戶端金鑰。
 
