@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10 uwp 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f979edbd49699447040880964dd1378bc7c94c0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 38c9a40dbe1a46aa125c76cd1fcc88a84685c8cc
+ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362077"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67235165"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
@@ -30,7 +30,7 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 測試會掃描套件中的所有可攜式執行檔，並檢查其標頭是否有簽章。 建議對所有 PE 檔案進行數位簽署。 如果未簽署任何 PE 檔案，則會產生警告。
  
 **更正動作**  
-一律建議具有數位簽署的檔案。 如需詳細資訊，請參閱[程式碼簽署簡介](https://msdn.microsoft.com/en-us/library/ms537361(v=vs.85).aspx)。
+一律建議具有數位簽署的檔案。 如需詳細資訊，請參閱[程式碼簽署簡介](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85))。
 
 ### <a name="2-file-association-verbs"></a>2.檔案關聯的動詞命令 
 **背景**  
