@@ -8,12 +8,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2848b22c69960075297546d401689d4c51c637aa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dc13b53450c97ffcd3d44b58d564c813344abf0a
+ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361933"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67253054"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>儲存及擷取設定和其他 app 資料
 
@@ -430,7 +430,7 @@ localSettings.DeleteContainer("exampleContainer");
 ## <a name="versioning-your-app-data"></a>管理應用程式資料的版本
 
 
-您可以根據您的需求，為應用程式建立應用程式資料版本。 如此一來，您就能建立應用程式資料格式會改變的應用程式後續版本，而不會造成與應用程式舊版本的相容性問題。 應用程式會檢查資料存放區中的應用程式資料版本，如果版本低於應用程式預期的版本，應用程式會將應用程式資料更新成新格式並更新版本。 如需詳細資訊，請參閱 [**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) 屬性與 [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.) 方法。
+您可以根據您的需求，為應用程式建立應用程式資料版本。 如此一來，您就能建立應用程式資料格式會改變的應用程式後續版本，而不會造成與應用程式舊版本的相容性問題。 應用程式會檢查資料存放區中的應用程式資料版本，如果版本低於應用程式預期的版本，應用程式會將應用程式資料更新成新格式並更新版本。 如需詳細資訊，請參閱 [**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) 屬性與 [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.setversionasync) 方法。
 
 ## <a name="related-articles"></a>相關文章
 

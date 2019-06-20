@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fb292ad5cba892275709fbc89d5d53fa136144f3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ef8cdad247a57ce5fab461e70c2725fda4231efd
+ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365302"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67253068"
 ---
 # <a name="speech-interactions"></a>語音互動
 
@@ -200,7 +200,7 @@ TTS 從純文字或 SSML 產生語音輸出。
 -   將字詞或說話部分的數字或標點符號以不常用的順序串連，可能會導致片語變得無法理解。
 -   當語調或抑揚頓挫不同於母語使用者說出片語的方式，語音聽起來可能會不自然。
 
-只要改用 SSML 而不是純文字輸入到語音合成程式，即可解決這兩個問題。 如需有關 SSML 的詳細資訊，請參閱[使用 SSML 控制合成語音](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14))和[語音合成標記語言參考](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14))。
+這兩個問題都無法使用而不是純文字的 SSML，做為語音合成器的輸入。 如需有關 SSML 的詳細資訊，請參閱[使用 SSML 控制合成語音](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14))和[語音合成標記語言參考](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14))。
 
 ## <a name="other-articles-in-this-section"></a>本節中的其他文章 
 
