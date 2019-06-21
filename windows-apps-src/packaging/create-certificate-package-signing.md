@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: 1476410c96900eff7ba4b8d0ad34c9d7b5599434
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1b9a538dc36818c065e790170f693576650f5024
+ms.sourcegitcommit: 34671182c26f5d0825c216a6cededc02b0059a9e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372729"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286934"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>建立套件簽署的憑證
 
@@ -21,7 +21,7 @@ ms.locfileid: "66372729"
 > [!IMPORTANT] 
 > 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈匯入憑證並簽署應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 - **封裝或未封裝的應用程式**  
 包含 AppxManifest.xml 檔案的應用程式。 在建立用來簽署最終應用程式套件的憑證時，您會需要參考資訊清單檔。 如需如何手動封裝應用程式的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
@@ -57,7 +57,7 @@ ms.locfileid: "66372729"
 根據先前範例的 AppxManifest.xml 檔案，您應該使用下列語法來建立憑證。 在提升權限的 PowerShell 提示字元內︰
 
 ```powershell
-New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\LocalMachine\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
+New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\CurrentUser\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
 ```
 
 請注意下列詳細資料相關的一些參數：
@@ -75,7 +75,7 @@ New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso 
 您可以使用下列命令在 PowerShell 視窗中檢視您的憑證︰
 
 ```powershell
-Set-Location Cert:\LocalMachine\My
+Set-Location Cert:\CurrentUser\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 ```
 
@@ -91,13 +91,13 @@ Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 
 ```powershell
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
-Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
+Export-PfxCertificate -cert "Cert:\CurrentUser\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
 ### <a name="protectto-usage"></a>ProtectTo 使用方式
 
 ```powershell
-Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
+Export-PfxCertificate -cert Cert:\CurrentUser\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
 在您建立和匯出憑證之後，就可以使用 **SignTool** 登入您的應用程式套件。 如需手動封裝過程的下一個步驟，請參閱[使用 SignTool 簽署應用程式套件](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool) (英文)。
