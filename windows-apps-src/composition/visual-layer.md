@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c61f6580039b9fe3da915491acd84c939088370
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bf9cc4f97cdfcb02eb725b81163f215b22b259e4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361390"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318059"
 ---
 # <a name="visual-layer"></a>視覺層
 
@@ -71,7 +71,7 @@ Windows UWP app 已經使用透過其中一個 UI 架構的視覺層。 您也�
 ## <a name="additional-resources"></a>其他資源
 
 * [**API 的完整參考文件**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
-* [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 有進階的 UI 和組合範例
+* [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples) 有進階的 UI 和組合範例
 * [Windows.UI.Composition 範例庫](https://aka.ms/winuiapp)
 * [@windowsui Twitter 摘要 ](https://twitter.com/windowsui)
 * 請閱讀此 api 的 Kenny Kerr 的 MSDN 文章：[圖形與動畫-Windows 程式撰寫已升級 10](https://msdn.microsoft.com/magazine/mt590968)

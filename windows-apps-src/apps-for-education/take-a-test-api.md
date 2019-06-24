@@ -6,18 +6,18 @@ ms.date: 08/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
-ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 31672ff989da7d72f751a33ec3df3d8d528e22ec
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627593"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317815"
 ---
 # <a name="take-a-test-javascript-api"></a>進行測驗 JavaScript API
 
-[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)呈現鎖定線上評量高風險測試，讓教職人員將焦點放在評估內容，而不是如何提供安全的瀏覽器為基礎 UWP 應用程式測試環境。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
+[進行測驗](https://docs.microsoft.com/education/windows/take-tests-in-windows-10)呈現鎖定線上評量高風險測試，讓教職人員將焦點放在評估內容，而不是如何提供安全的瀏覽器為基礎 UWP 應用程式測試環境。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
 
-如需有關 App 本身的詳細資訊，請參閱[進行測驗 App 技術參考](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 如需疑難排解協助，請參閱[使用事件檢視器對「Microsoft 進行測驗」進行疑難排解](troubleshooting.md)。
+如需有關 App 本身的詳細資訊，請參閱[進行測驗 App 技術參考](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 如需疑難排解協助，請參閱[使用事件檢視器對「Microsoft 進行測驗」進行疑難排解](troubleshooting.md)。
 
 ## <a name="reference-documentation"></a>參考文件
 進行測驗 API 存在於下列命名空間。 請注意，所有的 API 都相依於全域 `SecureBrowser` 物件。
@@ -32,17 +32,17 @@ ms.locfileid: "57627593"
 
 | 方法 | 描述   |
 |--------|---------------|
-|[鎖定](#lockDown) | 鎖定裝置以進行考試。 |
+|[lockDown](#lockDown) | 鎖定裝置以進行考試。 |
 |[isEnvironmentSecure](#isEnvironmentSecure) | 判斷鎖定內容是否仍已套用到裝置。 |
-|[GetDeviceInfo](#getDeviceInfo) | 取得有關考試應用程式執行所在平台的詳細資訊。 |
+|[getDeviceInfo](#getDeviceInfo) | 取得有關考試應用程式執行所在平台的詳細資訊。 |
 |[examineProcessList](#examineProcessList)|取得執行中使用者及系統處理程序的清單。|
-|[關閉](#close) | 關閉瀏覽器並將裝置解除鎖定。 |
+|[close](#close) | 關閉瀏覽器並將裝置解除鎖定。 |
 |[getPermissiveMode](#getPermissiveMode)|檢查寬鬆模式是開啟還是關閉。|
 |[setPermissiveMode](#setPermissiveMode)|將寬鬆模式切換為開啟或關閉。|
 |[emptyClipBoard](#emptyClipBoard)|清除系統剪貼簿。|
 |[getMACAddress](#getMACAddress)|取得裝置 MAC 位址的清單。|
 |[getStartTime](#getStartTime) | 取得啟動考試應用程式的時間。 |
-|[GetCapability](#getCapability) | 查詢功能已啟用還是已停用。 |
+|[getCapability](#getCapability) | 查詢功能已啟用還是已停用。 |
 |[setCapability](#setCapability)|啟用或停用指定的功能。| 
 |[isRemoteSession](#isRemoteSession) | 檢查目前的工作階段是否已在遠端登入。 |
 |[isVMSession](#isVMSession) | 檢查目前的工作階段是否正在虛擬機器中執行。 |
@@ -58,7 +58,7 @@ ms.locfileid: "57627593"
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **參數**  
-* `enable` - **真**執行在鎖定畫面上進行的測試應用程式，並套用在此討論的原則[文件](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 **false** 會在鎖定畫面上停止執行 [進行測驗] 並將其關閉 (除非未將 App 鎖定)；在這種情況下沒有任何作用。  
+* `enable` - **真**執行在鎖定畫面上進行的測試應用程式，並套用在此討論的原則[文件](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 **false** 會在鎖定畫面上停止執行 [進行測驗] 並將其關閉 (除非未將 App 鎖定)；在這種情況下沒有任何作用。  
 * `onSuccess` -[選擇性] 要呼叫後已成功啟用或停用鎖定的函式。 這必須是 `Function(Boolean currentlockdownstate)` 的格式。  
 * `onError` -[選擇性] 鎖定作業失敗時所要呼叫的函式。 這必須是 `Function(Boolean currentlockdownstate)` 的格式。  
 
@@ -184,7 +184,7 @@ Windows 10 版本 1709
 <span id="emptyClipBoard"/>
 
 ### <a name="emptyclipboard"></a>emptyClipBoard
-清除系統剪貼簿。 考試應用程式應該叫用此方法，強制清除任何可能儲存在系統剪貼簿中的資料。  **[lockDown](#lockDown)** 函數也會執行此作業。
+清除系統剪貼簿。 考試應用程式應該叫用此方法，強制清除任何可能儲存在系統剪貼簿中的資料。 **[lockDown](#lockDown)** 函數也會執行此作業。
 
 **語法**  
 `void SecureBrowser.security.emptyClipBoard();`
@@ -205,7 +205,7 @@ Windows 10 版本 1709
 **參數**  
 * `callback` -此呼叫完成時要叫用的函式。 這必須使用下列格式：`Function(String addressArray)`，其中 `addressArray` 的格式為：`"['00:11:22:33:44:55','etc']"`。
 
-**註解**  
+**備註**  
 依賴來源 IP 位址區分考試伺服器內的終端使用者電腦並不容易，因為學校的防火牆/NAT/Proxy 通常都在使用中。 MAC 位址可讓應用程式區分一般診斷用防火牆後方的終端用戶端電腦。
 
 **需求**  
@@ -261,7 +261,7 @@ Windows 10 版本 1709
 * `onSuccess` -[選擇性] 要設定作業已順利完成之後呼叫的函式。 這必須使用 `Function(String jsonValue)` 的格式：其中 *jsonValue* 的格式為：`{<feature>:true|false|undefined}`。  
 * `onError` -[選用] 設定作業失敗時所要呼叫的函式。 這必須使用 `Function(String jsonValue)` 的格式：其中 *jsonValue* 的格式為：`{<feature>:true|false|undefined}`。
 
-**註解**  
+**備註**  
 如果目標功能是瀏覽器未知的功能，則此函式會將 `undefined` 的值傳遞給回呼函式。
 
 **需求**Windows 10 版本 1703
@@ -295,7 +295,7 @@ Windows 10 版本 1709
 **傳回值**  
 如果目前的工作階段正在虛擬機器中執行，則為 **true**，否則為 **false**。
 
-**註解**  
+**備註**  
 此 API 檢查只能偵測實作適當 API 之特定 Hypervisor 內正在執行的 VM 工作階段
 
 **需求**  

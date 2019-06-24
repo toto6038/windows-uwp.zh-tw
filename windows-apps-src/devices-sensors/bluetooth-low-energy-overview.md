@@ -5,15 +5,15 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 藍牙, 藍牙 LE, 低功耗, gatt, gap, 中央, 周邊, 用戶端, 伺服器, 監看員, 發行者
 ms.localizationpriority: medium
-ms.openlocfilehash: 1714a4c21852a7582325fc26f7e6a1f0f969126e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3f23bdc658d2a82e3edeefd0a7be471ca9620d33
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629033"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321608"
 ---
 # <a name="bluetooth-low-energy"></a>藍牙低功耗
-藍牙低功耗 (LE) 是一種規格，定義通訊協定來進行探索以及在省電裝置之間進行通訊。 透過泛型存取設定檔 (間隔) 通訊協定完成裝置探索。 在探索之後，透過泛型屬性 (GATT) 通訊協定完成裝置間的通訊。 本主題提供 UWP app 中藍牙 LE 的快速概觀。 若要查看藍牙 LE 的詳細資料，請參閱引進藍牙 LE 的[藍牙核心規格](https://www.bluetooth.com/specifications/bluetooth-core-specification)版本 4.0。 
+藍牙低功耗 (LE) 是一種規格，定義通訊協定來進行探索以及在省電裝置之間進行通訊。 透過泛型存取設定檔 (間隔) 通訊協定完成裝置探索。 在探索之後，透過泛型屬性 (GATT) 通訊協定完成裝置間的通訊。 本主題提供 UWP app 中藍牙 LE 的快速概觀。 若要查看藍牙 LE 的詳細資料，請參閱引進藍牙 LE 的[藍牙核心規格](https://www.bluetooth.com/specifications/bluetooth-core-specification/)版本 4.0。 
 
 ![藍牙 LE 角色](images/gatt-roles.png)
 
@@ -42,4 +42,4 @@ ms.locfileid: "57629033"
 ## <a name="see-also"></a>另請參閱
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
 - [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [藍芽核心規格](https://www.bluetooth.com/specifications/bluetooth-core-specification)
+- [藍芽核心規格](https://www.bluetooth.com/specifications/bluetooth-core-specification/)

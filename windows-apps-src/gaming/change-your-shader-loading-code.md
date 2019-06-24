@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, OpenGL, Direct3D, 著色器管線
 ms.localizationpriority: medium
-ms.openlocfilehash: 8793ef8b44df1ca1d93133383666434f525f2d07
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fc5e1eb9c261a4397d83c833591f2497521aa1c6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368969"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321376"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>OpenGL ES 2.0 著色器管線與 Direct3D 的比較
 
@@ -21,8 +21,8 @@ ms.locfileid: "66368969"
 **重要的 Api**
 
 -   [輸入組譯工具階段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)
--   [頂點著色器階段](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
--   [像素著色器階段](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
+-   [頂點著色器階段](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
+-   [像素著色器階段](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
 
 在概念上來說，Direct3D 11 著色器管線與 OpenGL ES 2.0 中的著色器管線非常相似。 不過在 API 設計方面，建立與管理著色器階段的主要元件則分為兩個主要的介面，[**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 和 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)。 本主題嘗試將常見的 OpenGL ES 2.0 著色器管線 API 模式對應到這些介面中的 Direct3D 11 對應項。
 
@@ -34,10 +34,10 @@ ms.locfileid: "66368969"
 Direct3D 11 圖形管線由 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 介面的執行個體管理，並具有下列階段：
 
 -   [輸入組合階段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)。 輸入組合階段提供資料 (三角形、線與點) 給管線。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支援此階段的方法前面會加上"IA"。
--   [頂點著色器階段](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)) - 頂點著色器階段處理頂點，通常執行轉換、貼圖與光照等作業。 頂點著色器一律採用單一輸入頂點，並產生單一輸出頂點。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支援此階段的方法前面會加上"與"。
+-   [頂點著色器階段](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)) - 頂點著色器階段處理頂點，通常執行轉換、貼圖與光照等作業。 頂點著色器一律採用單一輸入頂點，並產生單一輸出頂點。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支援此階段的方法前面會加上"與"。
 -   [資料流輸出階段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage) - 資料流輸出階段會在點陣化的過程中，將基本型別資料從管線串流到記憶體。 資料可串流輸出及/或傳遞進入點陣化。 串流輸出到記憶體的資料可重新循環回管線，做為輸入資料或從 CPU 讀回。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支援此階段的方法前面會加上 「 等等 」。
 -   [點陣化階段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage) - 點陣化會裁剪基本型別、準備像素著色器的基本型別，以及決定如何叫用像素著色器。 您可以停用點陣化，告訴管線沒有任何像素著色器 (將像素著色器階段設定為 NULL，且[ **ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader))，和深度和樣板測試 （停用設為 FALSE，在設定 DepthEnable 和 StencilEnable [ **D3D11\_深度\_樣板\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_desc))。 停用時，不會更新與點陣化相關的管線計數器。
--   [像素著色器階段](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)) - 像素著色器階段會接收基本型別的插補資料，並產生每一像素資料，如色彩。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支援此階段的方法前面會加上"PS"。
+-   [像素著色器階段](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)) - 像素著色器階段會接收基本型別的插補資料，並產生每一像素資料，如色彩。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支援此階段的方法前面會加上"PS"。
 -   [輸出合併階段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage) - 輸出合併階段將不同類型的輸出資料 (像素著色器值、深度與樣板資訊) 與轉譯目標和深度/樣板緩衝區的內容結合，以產生最終的管線結果。 [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)支援此階段的方法前面會加上"OM"。
 
 （另外還有適用於幾何著色器、 輪廓著色器、 tesselators 和網域著色器階段，但因為它們會不有任何雷同 OpenGL ES 2.0 中，我們將不會在這裡討論它們）。如需這些階段之方法的完整清單，請參閱[ **ID3D11DeviceContext** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)並[ **ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)參考頁面。 **ID3D11DeviceContext1** 擴充了 Direct3D 11 的 **ID3D11DeviceContext**。

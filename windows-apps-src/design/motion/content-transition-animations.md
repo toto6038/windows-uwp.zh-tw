@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ec8778f590ba9b50c67209eaf4b80e2cbed2f16
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7703f2dfac2eed6df1f59b8e1cdfa6371e240eb4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364805"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317105"
 ---
 # <a name="content-transition-animations"></a>內容轉換動畫
 
@@ -23,7 +23,7 @@ ms.locfileid: "66364805"
 
 內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。
 
-> **重要的 Api**:[**ContentThemeTransition 類別 (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
+> **重要的 Api**:[**ContentThemeTransition 類別 (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -44,7 +44,7 @@ ms.locfileid: "66364805"
 * [動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
 * [以動畫顯示的內容轉換](https://docs.microsoft.com/previous-versions/windows/apps/jj649426(v=win.10))
 * [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**ContentThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
+* [**ContentThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
  
 

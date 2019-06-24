@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10、 uwp、 列印
 ms.localizationpriority: medium
-ms.openlocfilehash: 68f8f990209a66a8677afbd1913c95bfd2fce187
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8d13f67ecff5c670707ca1832ea44b85ca8319d9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370296"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321559"
 ---
 # <a name="customize-the-print-preview-ui"></a>自訂預覽列印 UI
 
@@ -54,9 +54,9 @@ ms.locfileid: "66370296"
 
 ### <a name="define-the-options-to-display"></a>定義要顯示的選項
 
-App 的畫面載入時，會登錄列印協定。 該登錄包含定義 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件處理常式。 自訂預覽列印 UI 中所顯示選項的程式碼會新增到 **PrintTaskRequested** 事件處理常式中。
+App 的畫面載入時，會登錄列印協定。 該登錄包含定義 [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) 事件處理常式。 自訂預覽列印 UI 中所顯示選項的程式碼會新增到 **PrintTaskRequested** 事件處理常式中。
 
-修改 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件處理常式以包含 [**printTask.options**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.options) 指示，這些指示可用來設定您要在預覽列印 UI 中顯示的列印設定。對於要顯示自訂列印選項清單的 app 畫面，請覆寫協助程式類別中的 **PrintTaskRequested** 事件處理常式以加入程式碼，這個程式碼會指定列印畫面時要顯示的選項。
+修改 [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) 事件處理常式以包含 [**printTask.options**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.options) 指示，這些指示可用來設定您要在預覽列印 UI 中顯示的列印設定。對於要顯示自訂列印選項清單的 app 畫面，請覆寫協助程式類別中的 **PrintTaskRequested** 事件處理常式以加入程式碼，這個程式碼會指定列印畫面時要顯示的選項。
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -109,7 +109,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 
 ## <a name="add-new-print-options"></a>新增列印選項
 
-本節顯示如何建立新的列印選項、定義選項支援的值清單，以及將選項新增至預覽列印。 如同上一節，在 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件處理常式中加入新的列印選項。
+本節顯示如何建立新的列印選項、定義選項支援的值清單，以及將選項新增至預覽列印。 如同上一節，在 [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) 事件處理常式中加入新的列印選項。
 
 首先，取得 [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails) 物件。 此物件用來將新列印選項加入至預覽列印 UI。 然後清除預覽列印 UI 中顯示的選項清單，並且新增當使用者想要從 app 列印時所要顯示的選項。 接著，建立新的列印選項並初始化選項值的清單。 最後，加入新選項並指派 **OptionChanged** 事件的處理常式。
 

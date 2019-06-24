@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, templates, tools, directx, 遊戲, 範本, 工具
 ms.localizationpriority: medium
-ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 090cb13faa00f55f5c611abc20f4ee9e90977113
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653763"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321185"
 ---
 # <a name="project-templates-and-tools-for-games"></a>適用於遊戲的專案範本與工具
 
@@ -25,7 +25,7 @@ ms.locfileid: "57653763"
 ## <a name="get-visual-studio"></a>取得 Visual Studio
 
 
-[下載並安裝 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。
+[下載並安裝 Microsoft Visual Studio 2015](https://visualstudio.microsoft.com/vs/)。
 
 <table>
 <colgroup>
@@ -67,7 +67,7 @@ ms.locfileid: "57653763"
 如果您要建立新的 DirectX 遊戲，請參閱以下主題。
 
 -   [使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-uwp-directx-game.md)
--   [開發通用 Windows 平台遊戲，c + + 和 DirectX 滾珠迷宮](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [開發滾珠迷宮這個通用 Windows 平台遊戲C++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

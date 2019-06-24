@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 雲端服務
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a7e3bed746a31ce2d8f458045cdd1126b71b8c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b1b63c6eb3c803b26ead85332affe1fc4f20e314
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368997"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321328"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>針對 UWP 遊戲使用雲端服務
 
@@ -111,7 +111,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.crimecoast.com/">像素警察局的刑事組</a></td>
+        <td><a href="http://www.crimecoast.com/">像素警察局的刑事組</a></td>
         <td>Pixel Squad 使用 Unity 遊戲引擎與 Azure 開發 <b>Crime Coast</b>。 <b>Crime Coast</b> 是一款社交策略遊戲，可在 Android、iOS 和 Windows 平台上取得。 他們在遊戲中使用 Azure Blob 儲存體、受管理的 Azure Redis Cache、負載平衡的 IIS VM 陣列，以及 Microsoft 通知中樞。 了解他們如何管理調整，並處理同時湧入的 5000 名玩家。
         </td>
         <td>
@@ -182,7 +182,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 | 收集與分析遊戲資料| 大量平行處理來自關聯式與非關聯式資料庫的資料 | [Azure 資料倉儲](https://azure.microsoft.com/services/sql-data-warehouse/)| 彈性資料倉儲即服務與企業級功能   |
 | 吸引使用者以增加使用量和留客率| 從任何後端傳送目標式推播通知至任何平台，以激發興趣並鼓勵特定遊戲活動 | [Azure 通知中樞](https://azure.microsoft.com/services/notification-hubs/)| 快速廣播推送，使接觸範圍擴及所有主要平台上的數百萬行動裝置 &mdash; iOS、Android、Windows、Kindle、Baidu。 您的遊戲可以裝載於任何後端 &mdash; 雲端或內部部署。|
 | 串流媒體內容至您當地與全球的目標對象，同時保護您的內容| 可以從所有裝置上廣播高品質的遊戲預告片及電影短片| [Azure 媒體服務](https://azure.microsoft.com/services/media-services/)| 使用整合式內容傳遞網路功能的隨選及直播視訊串流。 使用一個播放器滿足您所有的播放需求，包括內容保護與加密。| 
-| 開發、散發和 Beta 測試您的行動應用程式 | 測試和散發您的行動應用程式。 應用程式效能及使用者體驗管理。 | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| 將當機報告及使用者計量與應用程式散發及使用者意見反應平台整合。 支援 Android、Cordova、iOS、OS X、Unity、Windows 及 Xamarin 應用程式。 此外，請考慮[Visual Studio Mobile Center](https://www.visualstudio.com/vs/mobile-center/) &mdash;的任務控制的應用程式，結合了豐富的分析、 損毀報告、 推播通知、 應用程式散發和更多功能。 |
+| 開發、散發和 Beta 測試您的行動應用程式 | 測試和散發您的行動應用程式。 應用程式效能及使用者體驗管理。 | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| 將當機報告及使用者計量與應用程式散發及使用者意見反應平台整合。 支援 Android、Cordova、iOS、OS X、Unity、Windows 及 Xamarin 應用程式。 此外，請考慮[Visual Studio Mobile Center](https://visualstudio.microsoft.com/app-center/) &mdash;的任務控制的應用程式，結合了豐富的分析、 損毀報告、 推播通知、 應用程式散發和更多功能。 |
 | 建立行銷活動以增加使用量與留存率  | 根據資料分析傳送推播通知給目標玩家，以產生興趣並鼓勵特定遊戲活動 | [Mobile Engagement](https://azure.microsoft.com/services/mobile-engagement/) - 將於 2018 年 3 月淘汰，目前僅供現有客戶使用 |  增加所有主要平台 (iOS、Android、Windows、Windows Phone) 上的遊戲時間與使用者留存率 |
 
 
@@ -206,7 +206,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 ## <a name="tools-and-other-useful-links"></a>工具及其他實用連結
 
 * [MSDN 論壇&mdash;Azure 平台](https://social.msdn.microsoft.com/Forums/azure/home?category=windowsazureplatform)
-* [雲端架構負載測試工具](https://www.visualstudio.com/team-services/cloud-load-testing/)
+* [雲端架構負載測試工具](https://visualstudio.microsoft.com/team-services/cloud-load-testing/)
 * [Sdk 和命令列工具](https://azure.microsoft.com/downloads/)
     
 ## <a name="software-as-a-service-for-game-backend"></a>適用於遊戲後端的軟體即服務

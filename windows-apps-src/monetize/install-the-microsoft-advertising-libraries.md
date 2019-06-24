@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 安裝, SDK, 廣告庫
 ms.localizationpriority: medium
-ms.openlocfilehash: baf70cc6df7b0683f3dc362436c63eb1e688e678
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: d348b1b7a7b057388b437fab9952bb8eaffe9957
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334696"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320235"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安裝 Microsoft Advertising SDK
 
@@ -39,7 +39,7 @@ ms.locfileid: "58334696"
 
 4.  重新啟動 Visual Studio。
 
-5.  如果您現有的專案參考來自任何舊版 Microsoft Advertising SDK、通用廣告用戶端 SDK 或 Microsoft Store Engagement and Monetization SDK 的廣告庫，建議您在 Visual Studio 中開啟您的專案，然後清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]**，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]**)。
+5.  如果您現有的專案參考來自任何舊版 Microsoft Advertising SDK、通用廣告用戶端 SDK 或 Microsoft Store Engagement and Monetization SDK 的廣告庫，建議您在 Visual Studio 中開啟您的專案，然後清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]** ，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]** )。
 
   否則，如果您是第一次在專案中使用 Microsoft Advertising SDK，您現在便已準備好[新增 Microsoft Advertising SDK 的參考](#reference)。
 
@@ -62,15 +62,15 @@ ms.locfileid: "58334696"
     > [!NOTE]
     > 如果您的專案已經包含來自先前 MSI 安裝之 SDK 的程式庫參考，請從您的專案中移除這些參考。 這些參考的旁邊將會有警告圖示，因為在先前的步驟中已移除它們所參考的程式庫。
 
-4. 在 Visual Studio 中，按一下 [專案] 和 [管理 NuGet 套件]。
+4. 在 Visual Studio 中，按一下 [專案]  和 [管理 NuGet 套件]  。
 
 5. 在搜尋方塊中，輸入 **Microsoft.Advertising.XAML** (適用於 XAML 專案) 或 **Microsoft.Advertising.JS** (適用於 JavaScript/HTML 專案) 並安裝對應的套件。 套件完成安裝後，儲存您的方案。
     > [!NOTE]
-    > 如果 **\[輸出\]** 視窗回報 *Install-Package* 錯誤，指出指定的路徑太長，您可能需要設定讓 NuGet 將套件解壓縮至路徑比預設位置短的替代位置。 若要這樣做，請將 `repositoryPath` 值新增到您電腦上的 nuget.config 檔案中，然後將它指派至可解壓縮 NuGet 套件的較短資料夾路徑。 如需詳細資訊，請參閱 NuGet 文件中的[這篇文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，您也可以嘗試將您的 Visual Studio 專案移至路徑較短的替代資料夾。
+    > 如果 **\[輸出\]** 視窗回報 *Install-Package* 錯誤，指出指定的路徑太長，您可能需要設定讓 NuGet 將套件解壓縮至路徑比預設位置短的替代位置。 若要這樣做，請將 `repositoryPath` 值新增到您電腦上的 nuget.config 檔案中，然後將它指派至可解壓縮 NuGet 套件的較短資料夾路徑。 如需詳細資訊，請參閱 NuGet 文件中的[這篇文章](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior)。 或者，您也可以嘗試將您的 Visual Studio 專案移至路徑較短的替代資料夾。
 
 6. 關閉您的方案，然後重新開啟它。
 
-7.  如果您的專案已經參考來自透過 NuGet 安裝之舊版 Microsoft Advertising SDK 的程式庫，而您已將專案更新至新版 SDK，建議您清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]**，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]**)。
+7.  如果您的專案已經參考來自透過 NuGet 安裝之舊版 Microsoft Advertising SDK 的程式庫，而您已將專案更新至新版 SDK，建議您清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]** ，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]** )。
 
   否則，如果您是第一次在專案中使用 SDK，您現在便已準備好[新增 Microsoft Advertising SDK 的參考](#reference)。
 
@@ -82,13 +82,13 @@ ms.locfileid: "58334696"
 
 1. 在 Visual Studio 中，開啟您的專案。
     > [!NOTE]
-    > 如果專案的目標是 [任何 CPU]，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86])。 如果專案的目標是 **\[任何 CPU\]**，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+    > 如果專案的目標是 [任何 CPU]  ，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86]  )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
-2. 在 [方案總管] 中的 [參考] 上按一下滑鼠右鍵，然後選取 [加入參考]。
+2. 在 [方案總管] 中的 [參考] 上按一下滑鼠右鍵，然後選取 [加入參考]。   
 
-3. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**，按一下 **\[擴充功能\]**，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK\]** 旁邊的核取方塊 (適用於 XAML app) 或 **\[適用於 JavaScript 的 Microsoft Advertising SDK\]** 旁邊的核取方塊 (適用於使用 JavaScript 和 HTML 建置的應用程式)。
+3. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]** ，按一下 **\[擴充功能\]** ，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK\]** 旁邊的核取方塊 (適用於 XAML app) 或 **\[適用於 JavaScript 的 Microsoft Advertising SDK\]** 旁邊的核取方塊 (適用於使用 JavaScript 和 HTML 建置的應用程式)。
 
-4.  在 [參考管理員] 中，按一下 [確定]。
+4.  在 [參考管理員]  中，按一下 [確定]。
 
 如需示範如何開始使用廣告 API 的逐步解說，請參閱下列文章：
 

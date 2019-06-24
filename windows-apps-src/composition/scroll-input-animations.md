@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25b0732b7c29653d18f0e018698ab4b6398d402a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635063"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318067"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>美化現有的 ScrollViewer 體驗
 
 本文說明如何使用 XAML ScrollViewer 和 ExpressionAnimations 來建立動態輸入導向的動作體驗。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
@@ -61,7 +61,7 @@ ScrollManipulationPropertySet 包含單一 Vector3 屬性，稱為 Translation�
 
 ## <a name="example"></a>範例
 
-讓我們來看看上述視差範例如何組合呈現。 如需參考資料，此應用程式的所有原始碼都能在[GitHub 上的 Window UI 開發人員實驗室存放庫](https://github.com/Microsoft/WindowsUIDevLabs)中找到。
+讓我們來看看上述視差範例如何組合呈現。 如需參考資料，此應用程式的所有原始碼都能在[GitHub 上的 Window UI 開發人員實驗室存放庫](https://github.com/microsoft/WindowsCompositionSamples)中找到。
 
 首先，取得 ScrollManipulationPropertySet 的參考。
 

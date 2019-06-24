@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ac96354fa1752f655307a5dfd18678233e59c724
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a72a4e7349a5d72b7081873814389c0924ca9308
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372441"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322290"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>移植的 Windows Phone Silverlight XAML 和 UWP 的 UI
 
@@ -201,7 +201,7 @@ Windows Phone Silverlight 應用程式使用中定義的控制項**Microsoft.Pho
 
 **附註**   PointerOver 視覺狀態無關的自訂樣式/範本在 Windows 10 應用程式，但不是在 Windows Phone Silverlight 應用程式中。 還有其他原因，為什麼您現有的自訂樣式/範本可能無法適用於 Windows 10 應用程式，包括系統資源的索引鍵使用，將使用的視覺狀態和效能改進的 Windows 10 預設樣式所做的變更 /範本。 我們建議您編輯適用於 Windows 10 的全新的控制項的預設範本，並再重新套用樣式和範本的自訂。
 
-如需 UWP 控制項的詳細資訊，請參閱[依功能分類的控制項](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function)、[控制項清單](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/)，以及[控制項的指導方針](https://developer.microsoft.com/windows/design/controls-patterns)。
+如需 UWP 控制項的詳細資訊，請參閱[依功能分類的控制項](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function)、[控制項清單](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/)，以及[控制項的指導方針](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index)。
 
 ##  <a name="design-language-in-windows10"></a>在 Windows 10 的設計語言
 
@@ -211,7 +211,7 @@ Windows Phone Silverlight 應用程式使用中定義的控制項**Microsoft.Pho
 
 做為當地語系化的字串，您可以重新將.resx 檔從您的 Windows Phone Silverlight 專案使用 UWP 應用程式專案中。 請將檔案複製過去、將它新增到專案中，然後將它重新命名為 Resources.resw，以便讓查詢機制預設會尋找它。 將 [**建置動作**] 設定為 [**PRIResource**]，將 [**複製到輸出目錄**] 設定為 [**不要複製**]。 然後，您便可以藉由在 XAML 元素上指定 **X:uid** 屬性，在標記中使用這些字串。 請參閱[快速入門：使用字串資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))。
 
-Windows Phone Silverlight 應用程式會使用**CultureInfo**類別來協助全球化應用程式。 UWP app 使用 MRT (現代資源技術)，不論是在執行階段和 Visual Studio 設計介面中，都能動態載入 app 資源 (當地語系化、縮放及佈景主題)。 如需詳細資訊，請參閱[檔案、資料和全球化的指導方針](https://developer.microsoft.com/windows/design/usability)。
+Windows Phone Silverlight 應用程式會使用**CultureInfo**類別來協助全球化應用程式。 UWP app 使用 MRT (現代資源技術)，不論是在執行階段和 Visual Studio 設計介面中，都能動態載入 app 資源 (當地語系化、縮放及佈景主題)。 如需詳細資訊，請參閱[檔案、資料和全球化的指導方針](https://docs.microsoft.com/windows/uwp/design/usability/index)。
 
 [  **ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) 主題說明如何根據裝置系列資源選擇因素載入裝置系列特定資源。
 

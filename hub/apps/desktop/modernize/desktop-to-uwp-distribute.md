@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 45d298aca60155915900f494654dce8e89fb1ee0
-ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
+ms.openlocfilehash: 2d10836da46cce4d862f7f727890b0c9c107df5a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131909"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317065"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>將傳統型應用程式封裝
 
@@ -26,7 +26,7 @@ ms.locfileid: "67131909"
 
 [Microsoft Store](https://www.microsoft.com/store/apps)是讓客戶取得您應用程式的一種簡便方式。
 
-應用程式發佈至 Microsoft Store 連線到廣泛的觀眾。 此外，組織的客戶可以取得您的應用程式散發給組織的內部[Microsoft Store for Business](https://www.microsoft.com/business-store)。
+應用程式發佈至 Microsoft Store 連線到廣泛的觀眾。 此外，組織的客戶可以取得您的應用程式散發給組織的內部[Microsoft Store for Business](https://businessstore.microsoft.com/store)。
 
 如果您打算發佈至 Microsoft Store，提交程序中您會被要求詢問一些額外的問題。 這是因為您的封裝資訊清單宣告名為 **runFullTrust** 的受限功能，以及我們需要核准您的應用程式使用該功能。 您可以深入了解這項需求：[限制功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 

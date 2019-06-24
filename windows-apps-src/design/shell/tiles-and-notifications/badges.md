@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b41069f1ca964f978ba0cff73f5c34a9db133a10
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e0c3802f0b6163ad5f0e179d90148bae543aeab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649083"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320851"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>UWP 應用程式的徽章通知
 
@@ -100,7 +100,7 @@ ms.locfileid: "57649083"
     <td>`<badge value="busy"/>`</td>
 </tr>
 <tr>
-    <td>錯誤 (error)</td>
+    <td>error</td>
     <td><img src="images/badges/badge-error.png" alt="Glyph" /></td>
     <td>`<badge value="error"/>`</td>
 </tr>
@@ -196,7 +196,7 @@ private void clearBadge()
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-* [通知範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> 說明如何建立動態磚、傳送徽章更新，以及顯示快顯通知。 
+* [通知範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> 說明如何建立動態磚、傳送徽章更新，以及顯示快顯通知。 
 
 ## <a name="related-articles"></a>相關文章
 

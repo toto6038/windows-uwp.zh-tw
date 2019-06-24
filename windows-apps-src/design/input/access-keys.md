@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c13ac8f1421fe785ebce70789c8ea6d0bf6c068
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b27c5a0446bc9b329b09855f06d58a13723ece1c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364021"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317387"
 ---
 # <a name="access-keys"></a>便捷鍵
 
@@ -241,7 +241,7 @@ _英文和西班牙文資源字串資料夾_
 
 _指定 resources.resw 檔案中指定的 AccessKey 屬性_
 
-如需詳細資訊，請參閱[翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965329(v=win.10).aspx)
+如需詳細資訊，請參閱[翻譯 UI 資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
 
 ## <a name="key-tip-positioning"></a>按鍵提示位置
 
@@ -259,7 +259,7 @@ _按鍵提示的自動放置的範例_
 
     a.  Key Tip 應該**接近**擁有便捷鍵的項目（擁有者）。  
     b.  按鍵提示應該**避免遮蔽具有便捷鍵的已啟用元素**。   
-    c.   如果按鍵提示無法接近擁有者放置，它應該與擁有者重疊。 
+    c.  如果按鍵提示無法接近擁有者放置，它應該與擁有者重疊。 
 
 2.  **可搜尋性**:使用者可以快速地探索具有按鍵提示的控制項。
 

@@ -5,12 +5,12 @@ ms.date: 05/17/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 579f92cc51ed5f9eeea522d81cfdb030f85ef0da
-ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
+ms.openlocfilehash: b947d0b6cc83dc6bca45efb7103a933e79972e3b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852269"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317455"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>自適性應用程式版本：使用新的 Api，同時維持與舊版的相容性
 
@@ -24,7 +24,7 @@ ms.locfileid: "65852269"
 
 ## <a name="configure-your-visual-studio-project"></a>設定您的 Visual Studio 專案
 
-支援多個 Windows 10 版本的第一個步驟，是在您的 Visual Studio 專案中指定「目標」與「最低」支援的 OS/SDK 版本。
+支援多個 Windows 10 版本的第一個步驟，是在您的 Visual Studio 專案中指定「目標」  與「最低」  支援的 OS/SDK 版本。
 
 - *目標*：Visual Studio 會編譯應用程式程式碼，並執行所有的工具，對 SDK 版本。 於編譯期間，此 SDK 版本中所有的 API 與資源，都會在您的 App 程式碼中提供使用。
 - *最低需求*：SDK 版本，可支援您的應用程式可以在上執行 （並將部署至存放區） 的最舊 OS 版本和 Visual Studio 會編譯您的應用程式標記的程式碼的版本。 
@@ -59,9 +59,9 @@ ms.locfileid: "65852269"
 | 2018 年 10 月更新 | 1809 | 17763 |
 | 2019 年更新 | 1903 | 18362 |
 
-您可以從 [Windows SDK 與模擬器封存](https://developer.microsoft.com/downloads/sdk-archive)下載任何已發行版本的 SDK 。 您可以從 [Windows 測試人員](https://insider.windows.com/Home/BuildWithWindows)網站的開發人員區段下載最新的 Windows Insider Preview SDK。
+您可以從 [Windows SDK 與模擬器封存](https://developer.microsoft.com/windows/downloads/sdk-archive)下載任何已發行版本的 SDK 。 您可以從 [Windows 測試人員](https://insider.windows.com/for-developers/)網站的開發人員區段下載最新的 Windows Insider Preview SDK。
 
- 如需 Windows 10 更新的詳細資訊，請參閱[Windows 10 版本資訊](https://technet.microsoft.com/windows/release-info)。 重要的 Windows 10 的支援生命週期的詳細資訊，請參閱[生命週期概要說明 Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
+ 如需 Windows 10 更新的詳細資訊，請參閱[Windows 10 版本資訊](https://www.microsoft.com/itpro/windows-10/release-information)。 重要的 Windows 10 的支援生命週期的詳細資訊，請參閱[生命週期概要說明 Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
 
 ## <a name="perform-api-checks"></a>執行 API 檢查
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c4b796c8af493508328730c2b958a0beb38bf60c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a50ca6eaeecd2528eaa0d8558ef70552ae49944a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361963"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317295"
 ---
 # <a name="expose-basic-accessibility-information"></a>公開基本的協助工具資訊  
 
@@ -97,7 +97,7 @@ XAML
 <span id="LABELS"/>
 
 ## <a name="labels-and-labeledby"></a>標籤和 LabeledBy  
-將標籤與表單元素建立關聯的較好做法是使用 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 搭配 **x:Name** 來表示標籤文字，然後在表單元素上設定 [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v%3Dvs.95)) 附加屬性以根據 XAML 名稱參照標籤 **TextBlock**。 如果您使用這種模式，則當使用者按一下標籤時，焦點會移至相關的控制項，然後輔助技術可以將標籤文字當作表單欄位的無障礙名稱。 以下範例示範這種技術。
+將標籤與表單元素建立關聯的較好做法是使用 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 搭配 **x:Name** 來表示標籤文字，然後在表單元素上設定 [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) 附加屬性以根據 XAML 名稱參照標籤 **TextBlock**。 如果您使用這種模式，則當使用者按一下標籤時，焦點會移至相關的控制項，然後輔助技術可以將標籤文字當作表單欄位的無障礙名稱。 以下範例示範這種技術。
 
 XAML
 ```xml

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 68260cadd4322d51c528bf6c6af7f5c8472f2199
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 23cb51ec6b2c6c2560c0a1f6d583ba916768254c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361855"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318566"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>建立、排程與管理媒體中斷
 
@@ -66,7 +66,7 @@ ms.locfileid: "66361855"
 
 [!code-cs[RegisterMediaBreakEvents](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetRegisterMediaBreakEvents)]
 
-[  **BreakStarted**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakmanager.breakstarted) 會在媒體中斷啟動時引發。 您可能想要更新 UI，讓使用者知道正在播放媒體中斷內容。 這個範例使用傳入處理常式的 [**MediaBreakStartedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakStartedEventArgs)，來取得啟動媒體中斷的參照。 接著，使用 [**CurrentItemIndex**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.currentitemindex) 屬性，來判斷正在播放媒體中斷播放清單中的哪一個媒體項目。 然後更新 UI，以便向使用者顯示目前的廣告索引，以及中斷內剩餘的廣告數目。 請記住，更新 UI 必須在 UI 執行緒上進行，因此，您應該在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 內進行此呼叫。 
+[  **BreakStarted**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakmanager.breakstarted) 會在媒體中斷啟動時引發。 您可能想要更新 UI，讓使用者知道正在播放媒體中斷內容。 這個範例使用傳入處理常式的 [**MediaBreakStartedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakStartedEventArgs)，來取得啟動媒體中斷的參照。 接著，使用 [**CurrentItemIndex**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.currentitemindex) 屬性，來判斷正在播放媒體中斷播放清單中的哪一個媒體項目。 然後更新 UI，以便向使用者顯示目前的廣告索引，以及中斷內剩餘的廣告數目。 請記住，更新 UI 必須在 UI 執行緒上進行，因此，您應該在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 內進行此呼叫。 
 
 [!code-cs[BreakStarted](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakStarted)]
 

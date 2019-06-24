@@ -6,12 +6,12 @@ ms.date: 4/8/2019
 ms.topic: article
 keywords: Windows 10, UWP, 偵錯, 測試, 效能
 ms.localizationpriority: medium
-ms.openlocfilehash: 3263f7a0f1c353cfd15bf83e6fe1b0004b3bcc94
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 96e6f712f1a9882a10cf0706452628329c0c085d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362678"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317947"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和偵錯 UWP 應用程式
 
@@ -41,7 +41,7 @@ Visual Studio 也可以依序選取 [偵錯]、[附加至處理序]，來附加�
 
 選取 [不啟動，但在我的程式碼啟動時進行偵錯] 會在您於自訂時間啟動 UWP app 時，讓 Visual Studio 偵錯工具附加到您的 UWP app。  這是偵錯來自[不同啟動方法](../xbox-apps/automate-launching-uwp-apps.md)之控制路徑的有效方式，例如使用自訂參數的通訊協定啟用。  
 
-UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows 10 才能執行。 如果您在 Windows 8.1 電腦上開發 UWP app，而假設主機和目標電腦在相同的 LAN 上，您就可以遠端偵錯在另一部 Windows 10 裝置上執行的 UWP app。 若要這樣做，請在兩部電腦上都下載並安裝 [Visual Studio 遠端工具](https://www.visualstudio.com/downloads/)。 安裝的版本必須符合您已安裝的現有 Visual Studio 版本，且所選取的架構 (x86、x64) 也必須與您目標 App 的架構相符。
+UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows 10 才能執行。 如果您在 Windows 8.1 電腦上開發 UWP app，而假設主機和目標電腦在相同的 LAN 上，您就可以遠端偵錯在另一部 Windows 10 裝置上執行的 UWP app。 若要這樣做，請在兩部電腦上都下載並安裝 [Visual Studio 遠端工具](https://visualstudio.microsoft.com/downloads/)。 安裝的版本必須符合您已安裝的現有 Visual Studio 版本，且所選取的架構 (x86、x64) 也必須與您目標 App 的架構相符。
 
 ## <a name="package-layout"></a>封裝配置
 
@@ -94,7 +94,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 若要將它變更為**沒有驗證**，請在**遠端偵錯工具**，請移至**工具** - &gt; **選項**，及然後將它設定為**不需要驗證**。 設定遠端偵錯工具之後，您也必須確定已將主機裝置設定為 [開發人員模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。 之後，您便可以從您的開發電腦進行部署。
 
-如需詳細資訊，請參閱 [Visual Studio 下載中心](https://www.visualstudio.com/downloads/)頁面。
+如需詳細資訊，請參閱 [Visual Studio 下載中心](https://visualstudio.microsoft.com/downloads/)頁面。
 
 ## <a name="passing-command-line-debug-arguments"></a>傳遞命令列偵錯引數
 

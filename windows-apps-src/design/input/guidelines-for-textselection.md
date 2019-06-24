@@ -8,12 +8,12 @@ keywords: 鍵盤、文字、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fc227904e57577a30eb2d171a060fb69d39b71f0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8dab8d26436d312601b749bed7e97048ed5805bb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363503"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317279"
 ---
 # <a name="selecting-text-and-images"></a>選取文字和影像
 
@@ -109,7 +109,7 @@ Windows 會辨識選取項目互動，可以讓您編輯和不可編輯的兩個
 
 
 **適用於開發人員**
-* [自訂的使用者互動](https://developer.microsoft.com/windows/design/inputs-devices)
+* [自訂的使用者互動](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **範例**
 * [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)

@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d0f6cdf4818743e3b5a3cc7c5a6b13f69f40afa
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597823"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318463"
 ---
 # <a name="my-people-sharing"></a>朋友圈分享
 
@@ -23,13 +23,13 @@ ms.locfileid: "57597823"
 + Windows 10 和 Microsoft Visual Studio 2017。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
 + C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 您必須採取三個步驟，才能讓您的應用程式成為朋友圈分享目標：
 
 1. [宣告支援 shareTarget 啟用合約，在您的應用程式資訊清單。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
 2. [加上註解的使用者可以使用您的應用程式共用的連絡人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3. 支援同時執行應用程式的多個執行個體。  使用者亦將您應用程式的完整版與他人分享時，必須能夠與該版本互動。 他們可以同時將該版本用於多個分享視窗中。 若要支援此功能，您的應用程式必須能夠同時執行多個檢視。 若要了解做法，請參閱[顯示應用程式的多重檢視](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views) (英文) 一文。
+3. 支援同時執行應用程式的多個執行個體。  使用者亦將您應用程式的完整版與他人分享時，必須能夠與該版本互動。 他們可以同時將該版本用於多個分享視窗中。 若要支援此功能，您的應用程式必須能夠同時執行多個檢視。 若要了解做法，請參閱[顯示應用程式的多重檢視](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views) (英文) 一文。
 
 當您已完成此作業時，您的應用程式將在 \[朋友圈分享\] 視窗中顯示成分享目標，該視窗的啟動方式有兩種：
 1. 透過分享共用鍵選擇連絡人。
@@ -37,7 +37,7 @@ ms.locfileid: "57597823"
 
 ## <a name="declaring-support-for-the-share-contract"></a>宣告支援分享協定
 
-若要宣告支援您的應用程式成為分享目標，請先在 Visual Studio 中開啟您的應用程式。 在 \[方案總管\] 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]，然後選取 \[開啟方式\]。 從功能表中，選取 \[XML (文字) 編輯器\]，然後按一下 \[確定\]。 接著，對資訊清單進行以下變更：
+若要宣告支援您的應用程式成為分享目標，請先在 Visual Studio 中開啟您的應用程式。 在 \[方案總管\]  中，以滑鼠右鍵按一下 \[Package.appxmanifest\]  ，然後選取 \[開啟方式\]  。 從功能表中，選取 \[XML (文字) 編輯器\]  ，然後按一下 \[確定\]  。 接著，對資訊清單進行以下變更：
 
 
 **之前**
@@ -50,7 +50,7 @@ ms.locfileid: "57597823"
 </Applications>
 ```
 
-**之後**
+**After**
 
 ```xml
 <Applications>
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 + [新增我的個人支援](my-people-support.md)
 + [ShareTarget 類別](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

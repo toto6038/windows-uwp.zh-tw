@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 001f7cb641b7bb210897ef9406c2324bbc20a2bd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e5ff5d8e1a63522a70b37c3226b01a2fc680c368
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362071"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318977"
 ---
 # <a name="accessibility-overview"></a>協助工具概觀  
 
@@ -195,4 +195,4 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 * [協助工具的設計](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
 * [XAML 的協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [協助工具](accessibility.md)
-* [開始使用 [朗讀程式]](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [開始使用 [朗讀程式]](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

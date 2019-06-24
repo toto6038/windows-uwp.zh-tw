@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dfdc0c8a888890d4052dda1ac7cbf0ed2b6a667
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 996cc797ff46bd7eb9a172d66ffbb1fd6fe621bc
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362378"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317534"
 ---
 # <a name="improve-garbage-collection-performance"></a>改善記憶體回收效能
 
 
 使用 C# 和 Visual Basic 撰寫的通用 Windows 平台 (UWP) app 會從 .NET 記憶體回收行程自動管理記憶體。 本節摘要說明 UWP app 中的 .NET 記憶體回收行程的行為和效能最佳做法。 如需 .NET 記憶體回收行程如何運作，以及用於偵錯和分析記憶體回收行程效能之工具的詳細資訊，請參閱[記憶體回收](https://docs.microsoft.com/dotnet/standard/garbage-collection/index)。
 
-**附註**  需要介入的記憶體回收行程的預設行為是與您的應用程式的一般記憶體問題的強烈指標。 如需詳細資訊，請參閱[在 Visual Studio 2015 偵錯時的記憶體使用量工具](https://blogs.msdn.microsoft.com/devops/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015/)。 本主題僅適用於 C# 和 Visual Basic。
+**附註**  需要介入的記憶體回收行程的預設行為是與您的應用程式的一般記憶體問題的強烈指標。 如需詳細資訊，請參閱[在 Visual Studio 2015 偵錯時的記憶體使用量工具](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/)。 本主題僅適用於 C# 和 Visual Basic。
 
  
 

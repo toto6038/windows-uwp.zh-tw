@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 聲音
 ms.localizationpriority: medium
-ms.openlocfilehash: 945270247b8a288554e1910ac1c6f8e5c1ec1619
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 06c06e1ffe52cae37a000f748076d78ebf6afff4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367847"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318857"
 ---
 # <a name="add-sound"></a>加入聲音
 
@@ -478,7 +478,7 @@ __AudioX2__是低階 API，提供訊號處理和混合的基礎。 如需詳細�
 ### <a name="additional-reading"></a>其他閱讀資料
 
 * [如何：Initialize XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2)
-* [如何：載入 XAudio2 中的音訊資料檔案](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
+* [如何：載入 XAudio2 中的音訊資料檔案](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--load-audio-data-files-in-xaudio2)
 * [如何：播放使用 XAudio2 音效](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--play-a-sound-with-xaudio2)
 
 ## <a name="key-audio-h-files"></a>索引鍵的音訊.h 檔案

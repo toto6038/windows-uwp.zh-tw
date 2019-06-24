@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a7ca0b08a9df57d3c496f33f963fcd9d0ebfe2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a3fa029c5046b1c3f20058275aec0ff901706e65
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367154"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320937"
 ---
 # <a name="create-adaptive-tiles"></a>建立彈性磚
 
@@ -1393,7 +1393,7 @@ TileWide = new TileBinding()
 * [磚內容結構描述](../tiles-and-notifications/tile-schema.md)
 * [通知區域的圖格](sending-a-local-tile-notification.md)
 * [特殊的磚範本](special-tile-templates-catalog.md)
-* [UWP 社群工具組-通知](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [UWP 社群工具組-通知](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [在 GitHub 上的 Windows 通知](https://github.com/WindowsNotifications)
 
  

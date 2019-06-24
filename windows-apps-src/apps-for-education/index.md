@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 教育
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c2333d960ba91b1d1c3d3030481108407909594
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3d68fd78a7da3f1b98f61225f3aad8ca1590140e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359210"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317612"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>開發教育用通用 Windows App
 ![測試應用程式螢幕擷取畫面](images/take-a-test-screen-small.png)
@@ -23,7 +23,7 @@ ms.locfileid: "66359210"
 
 
 ### <a name="secure-assessments"></a>安全的評量
-評量/測驗 App 通常需要產生*鎖定*環境，以避免學生在測驗期間使用其他電腦或網際網路資源。 這項功能僅能透過[ API](take-a-test-api.md) 使用。 請參閱 Windows IT 中心中的[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) Web App，來取得針對高度利害攸關測驗鎖定線上存取的測驗環境範例。
+評量/測驗 App 通常需要產生*鎖定*環境，以避免學生在測驗期間使用其他電腦或網際網路資源。 這項功能僅能透過[ API](take-a-test-api.md) 使用。 請參閱 Windows IT 中心中的[進行測驗](https://docs.microsoft.com/education/windows/take-tests-in-windows-10) Web App，來取得針對高度利害攸關測驗鎖定線上存取的測驗環境範例。
 
 ### <a name="user-input"></a>使用者輸入
 使用者輸入是教育用 App 的重要部分；UI 控制項必須具備回應性且直覺化，才不會干擾使用者的注意力。 如需通用 Windows App 中可用輸入選項的一般概觀，請參閱＜設計與 UI＞一節中 [輸入基本資訊](https://docs.microsoft.com/windows/uwp/design/input/input-primer) 與其底下的主題。 此外，以下範例 App 也示範了通用 Windows 平台中基本 UI 的處理方式。
@@ -41,4 +41,4 @@ Windows Ink 平台可以融入學生熟悉的輸入模式來讓教育用 App 更
 教育用 App 通常是在特殊情況下向特定組織發行。 請參閱[向企業散發企業營運應用程式](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)以取得相關詳細資訊。
 
 ## <a name="related-topics"></a>相關主題
-- Windows IT 中心中的[教育用 Windows 10](https://technet.microsoft.com/edu/windows/index)
+- Windows IT 中心中的[教育用 Windows 10](https://docs.microsoft.com/education/windows/index)

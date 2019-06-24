@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 829755f6ccba7a076096e4a03555458b98a4b670
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5fcc4312cd238279e01e275d2525c9ac8df98190
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372240"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322359"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
 
@@ -86,7 +86,7 @@ Universal 8.1 應用程式、 Windows 執行階段 8.x 應用程式和 Windows P
 
 ## <a name="controls-and-control-styles-and-templates"></a>控制項，以及控制項樣式和範本
 
-8.1 的外觀和控制項而言，行為，將會保留在 Windows 10 上執行 Universal 8.1 應用程式。 但是，當您的應用程式移植到 Windows 10 應用程式，有的外觀和行為，要注意的一些差異。 架構和設計的控制項是基本上不變，針對 Windows 10 應用程式，因此變更大部分周圍設計語言、 簡化方式和使用性增強功能。
+8\.1 的外觀和控制項而言，行為，將會保留在 Windows 10 上執行 Universal 8.1 應用程式。 但是，當您的應用程式移植到 Windows 10 應用程式，有的外觀和行為，要注意的一些差異。 架構和設計的控制項是基本上不變，針對 Windows 10 應用程式，因此變更大部分周圍設計語言、 簡化方式和使用性增強功能。
 
 **附註**   PointerOver 視覺狀態無關的自訂樣式/範本在 Windows 10 應用程式和 Windows 執行階段 8.x 應用程式，但不是在 Windows Phone 市集應用程式中。 基於這個理由 （和系統資源索引鍵支援的 Windows 10 應用程式因為），我們建議您重新使用自訂的樣式/範本從您的 Windows 執行階段 8.x 應用程式時要移植到 Windows 10 的應用程式。
 如果您想要確定您的自訂樣式/範本會使用最新的視覺狀態和會受益於預設樣式/範本，所做的效能改進編輯新的 Windows 10 預設範本的複本然後重新套用您自訂的。 效能改進的其中一個範例是，已移除先前括住 **ContentPresenter** 的任何 **Border** 或面板，而且子元素現在會呈現框線。
@@ -110,7 +110,7 @@ Universal 8.1 應用程式、 Windows 執行階段 8.x 應用程式和 Windows P
 | **ListPickerFlyout**、**PickerFlyout**  | **ListPickerFlyout**並**PickerFlyout** for Windows 10 應用程式已被取代。 如需單一選擇飛出視窗，請使用 [**MenuFlyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)；如需更複雜的體驗，請使用 [**Flyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)。 |
 | [**PasswordBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | [ **PasswordBox.IsPasswordRevealButtonEnabled** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled)屬性已被取代，在 Windows 10 應用程式，並將它設定沒有任何作用。 使用[ **PasswordBox.PasswordRevealMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)相反地，預設為**查看**（在眼睛圖像 （glyph） 會顯示，例如在 Windows 執行階段 8.x 應用程式）。 另請參閱[密碼方塊的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/password-box)。 |
 | [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) | [  **Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) 控制項現在是通用的，不再受限於只能在行動裝置上使用。 |
-| [**SearchBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SearchBox) | 雖然 [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox.) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請參閱 [SearchBox 已取代為 AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox)。 |
+| [**SearchBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SearchBox) | 雖然 [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請參閱 [SearchBox 已取代為 AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox)。 |
 | **SemanticZoom** | 針對 **SemanticZoom**，請參閱 [SemanticZoom 變更](#semanticzoom-changes)。 |
 | [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)  | [  **ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 的某些預設屬性已經變更。 [**HorizontalScrollMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode)是**自動**， [ **VerticalScrollMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode)是**自動**，與[ **ZoomMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.zoommode)是**已停用**。 如果新的預設值不適用於您的 app，則您可以在樣式上進行變更，或當做控制項本身的本機值變更。  |
 | [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 在 Windows 執行階段 8.x 應用程式中，拼字檢查是關閉的預設[ **TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)。 在 Windows Phone 市集應用程式和 Windows 10 應用程式，它預設為開啟。 |
@@ -118,7 +118,7 @@ Universal 8.1 應用程式、 Windows 執行階段 8.x 應用程式和 Windows P
 | [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | [  **TextBox.TextReadingOrder**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) 的預設值已從 **Default** 變更為 **DetectFromContent**。 如果不適當，則使用 **UseFlowDirection**。 **Default** 已過時。 |
 | 各種 | 輔色適用於 Windows Phone 市集應用程式和 Windows 10 應用程式，但不是屬於 Windows 執行階段 8.x 應用程式。  |
 
-如需 UWP app 控制項的詳細資訊，請參閱[依功能分類的控制項](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function)、[控制項清單](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/)，以及[控制項的指導方針](https://developer.microsoft.com/windows/design/controls-patterns)。
+如需 UWP app 控制項的詳細資訊，請參閱[依功能分類的控制項](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function)、[控制項清單](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/)，以及[控制項的指導方針](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index)。
 
 ##  <a name="design-language-in-windows10"></a>在 Windows 10 的設計語言
 
@@ -410,7 +410,7 @@ Universal 8.1 應用程式、 Windows 執行階段 8.x 應用程式和 Windows P
 
 ## <a name="searchbox-deprecated-in-favor-of-autosuggestbox"></a>SearchBox 已取代為 AutoSuggestBox
 
-雖然 [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox.) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請將 [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) 用在您的通用搜尋經驗。 以下說明在一般情況下如何透過 **AutoSuggestBox** 實作搜尋經驗。
+雖然 [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請將 [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) 用在您的通用搜尋經驗。 以下說明在一般情況下如何透過 **AutoSuggestBox** 實作搜尋經驗。
 
 使用者開始輸入後即會引發 **TextChanged** 事件，原因為 **UserInput**。 接著，您可以填入建議清單，並設定 [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) 的 **ItemsSource**。 使用者瀏覽清單時會引發 **SuggestionChosen** 事件 (且如果您已設定 **TextMemberDisplayPath**，文字方塊將會自動填入指定的屬性)。 當使用者以 Enter 鍵提交選擇時，會引發 **QuerySubmitted** 事件，此時您可以採取該建議動作 (在此情況下，很可能是瀏覽至其他含有指定內容之詳細資料的其他頁面)。 請注意，**SearchBoxQuerySubmittedEventArgs** 的 **LinguisticDetails** 和 **Language** 屬性已不再受支援 (有對等的 API 可支援該功能)。 **KeyModifiers** 也不再受支援。
 

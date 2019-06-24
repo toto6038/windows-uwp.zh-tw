@@ -6,26 +6,26 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ba28fb49accc213f570e470142e259c08122b704
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e9567e06f80035bbcf811b5aaeaf8058ffee41a3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334576"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320033"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
-您可以管理及檢視您的應用程式中的每個相關的詳細資料[合作夥伴中心](https://partner.microsoft.com/dashboard/)，並設定服務，例如通知、 A / B 測試，並將對應。
+您可以管理及檢視您的應用程式中的每個相關的詳細資料[合作夥伴中心](https://partner.microsoft.com/dashboard)，並設定服務，例如通知、 A / B 測試，並將對應。
 
 當使用合作夥伴中心中的應用程式，您會看到的左側的導覽功能表中的章節**Services**並**應用程式管理**。 您可以展開這些區段來存取如下所述的功能。
 
 ## <a name="services"></a>服務
 
-\[服務\] 區段可讓您管理您 app 的數個不同服務。
+\[服務\] 區段可讓您管理您 app 的數個不同服務。 
 
 ## <a name="xbox-live"></a>Xbox Live
 
-如果您要發行的遊戲，您可以啟用[Xbox Live 創作者計劃](https://xbox.com/developers/creators-program)此頁面上。 這可讓您啟動設定及測試 Xbox Live 功能，並最終發佈您的 Xbox Live 創作者計劃的遊戲。
+如果您要發行的遊戲，您可以啟用[Xbox Live 創作者計劃](https://www.xbox.com/developers/creators-program)此頁面上。 這可讓您啟動設定及測試 Xbox Live 功能，並最終發佈您的 Xbox Live 創作者計劃的遊戲。
 
 如需詳細資訊，請參閱 <<c0> [ 開始使用 Xbox Live 創作者計劃](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)並[建立新的 Xbox Live 創作者計劃標題並發行至測試環境](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title)。
 
@@ -51,7 +51,7 @@ ms.locfileid: "58334576"
 
 如果您的產品與 Azure AD 整合，並呼叫其中一個要求的 Api[應用程式權限或委派的權限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要系統管理員同意，請輸入您的 Azure AD 用戶端識別碼。 這可讓系統管理員取得其組織授與同意，為您的產品，代表租用戶中的所有使用者的應用程式。
 
-如需詳細資訊，請參閱 <<c0> [ 要求對整個租用戶的同意](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
+如需詳細資訊，請參閱 <<c0> [ 要求對整個租用戶的同意](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#requesting-consent-for-an-entire-tenant)。
 
 ## <a name="app-management"></a>應用程式管理
 
@@ -76,9 +76,9 @@ ms.locfileid: "58334576"
 > [!NOTE]
 > 在您發行應用程式之前，將無法在此處看見任何資訊。
 
-系統會顯示每個套件的名稱、版本及架構。 按一下 \[詳細資料\]，以顯示支援的語言、應用程式功能及檔案大小等其他資訊。 您看到的每個套件資訊，可能會因其目標作業系統以及其他因素有所不同。 
+系統會顯示每個套件的名稱、版本及架構。 按一下 \[詳細資料\]，以顯示支援的語言、應用程式功能及檔案大小等其他資訊。  您看到的每個套件資訊，可能會因其目標作業系統以及其他因素有所不同。 
 
-具備 OEM 權限的開發人員也可以從 \[目前的套件\] 頁面[產生預先安裝的套件](generate-preinstall-packages-for-oems.md)。
+具備 OEM 權限的開發人員也可以從 \[目前的套件\] 頁面[產生預先安裝的套件](generate-preinstall-packages-for-oems.md)。 
 
 ## <a name="wnsmpns"></a>WNS/MPNS
 

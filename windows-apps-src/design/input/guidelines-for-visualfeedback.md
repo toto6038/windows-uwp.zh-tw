@@ -8,12 +8,12 @@ keywords: 視覺化回饋、焦點回饋、觸控回饋、觸控點視覺效果�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f716b930a4d8b96a55a5741e5a520be624526fa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9ab5d8b12539b7669f3459e62159177bfd95269d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363534"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317149"
 ---
 # <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
@@ -112,7 +112,7 @@ ms.locfileid: "66363534"
 * [移動瀏覽的指導方針](guidelines-for-panning.md)
 
 **適用於開發人員**
-* [自訂的使用者互動](https://developer.microsoft.com/windows/design/inputs-devices)
+* [自訂的使用者互動](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **範例**
 * [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)

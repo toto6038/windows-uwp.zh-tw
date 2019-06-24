@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 匯入 Store 清單, 匯出 Store 清單, 匯入匯出, Store 清單 csv
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d98795d6ab43f92ad2927553b037524e2fc1ec7
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: b45f12a9ef7212ddb23b647894189491bfa73549
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63784779"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320630"
 ---
 # <a name="import-and-export-store-listings"></a>匯入及匯出市集清單
 
@@ -27,7 +27,7 @@ ms.locfileid: "63784779"
 
 在應用程式提交概觀頁面上，按一下 **\[匯出清單\]** (在 **\[Store 清單\]** 區段) 來建立 UTF-8 編碼的 .csv 檔案。 將此檔案儲存到您電腦上的位置。
 
-您可以使用 Microsoft Excel 或其他編輯器來編輯這個檔案。 請注意，Office 365 版本的 Excel 會讓您將 .csv 檔案儲存為 **CSV UTF-8 (逗號分隔) (*.csv)**，但其他版本可能不支援此功能。 您可以在 [Excel 2016 新功能公告](https://support.office.com/en-us/article/What-s-new-in-Excel-2016-for-Windows-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73)找到哪些版本的 Excel 支援這項功能的詳細資料，並在[這裡](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16)找到使用各種不同編輯器編碼為 UTF-8 的詳細資訊。
+您可以使用 Microsoft Excel 或其他編輯器來編輯這個檔案。 請注意，Office 365 版本的 Excel 會讓您將 .csv 檔案儲存為 **CSV UTF-8 (逗號分隔) (*.csv)** ，但其他版本可能不支援此功能。 您可以在 [Excel 2016 新功能公告](https://support.office.com/article/what-s-new-in-excel-for-office-365-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73?ui=en-US&rs=en-001&ad=US)找到哪些版本的 Excel 支援這項功能的詳細資料，並在[這裡](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16)找到使用各種不同編輯器編碼為 UTF-8 的詳細資訊。
       
 如果您尚未建立產品的任何清單，匯出的 .csv 檔案不會包含任何自訂資料。 您會看到 **Field**、**ID**、**Type** 和 **default** 欄，以及對應至可能會出現在 Store 清單中每個項目的列。
 
@@ -36,7 +36,7 @@ ms.locfileid: "63784779"
 以下是匯出的 .csv 檔案中各欄內容的概觀：
 - **Field** 欄包含 Store 清單中每個部分的相關名稱。 這些會對應至相同的項目，您可以建立時提供存放區清單在合作夥伴中心，雖然某些名稱會稍有不同。 對於您可以輸入多個類型相同的項目，您會看到多列，直到可提供的列數上限。 例如，對於 **App features**，您會看到 **Feature1**、**Feature2** 等等，直到 **Feature20**（因為最多可提供 20 個功能）。
 - **識別碼**資料行包含數字與每個欄位產生關聯的合作夥伴中心。 
-- **型別**資料行提供一般指引是有關何種類型的資訊以提供該欄位，例如**文字**或是**相對路徑 （或在合作夥伴中心內的檔案 URL）**。 
+- **型別**資料行提供一般指引是有關何種類型的資訊以提供該欄位，例如**文字**或是**相對路徑 （或在合作夥伴中心內的檔案 URL）** 。 
 - **default** 欄（及任何標示語言-地區設定代碼的欄）代表 Store 清單中每個部分的相關聯文字或資產。 您可以編輯這些欄中的欄位，對您的 Store 清單進行更新。
 
 >[!IMPORTANT]
@@ -65,7 +65,7 @@ ms.locfileid: "63784779"
 
 您匯出清單中的許多欄位需要文字項目，例如上面範例中的 **Description** 和 **ReleaseNotes** 欄位。 這些類型的欄位中，只要將適當的文字輸入每一種語言的欄位中。 請務必遵循每個欄位的長度與其他需求。 如需這些需求的詳細資訊，請參閱[建立應用程式 Store 清單](create-app-store-listings.md)。
 
-為對應到影像和預告片等資產的欄位提供資訊，更加複雜一點。 而非**文字**，則**型別**對於這些資產**相對路徑 （或在合作夥伴中心內的檔案 URL）**。 
+為對應到影像和預告片等資產的欄位提供資訊，更加複雜一點。 而非**文字**，則**型別**對於這些資產**相對路徑 （或在合作夥伴中心內的檔案 URL）** 。 
      
 如果您已經為 Store 清單上傳資產，這些資產就會由 URL 表示。 這些 URL 可以重複使用在產品的多個描述中，或甚至在相同開發人員帳戶內不同產品的描述中，所以如果您要的話，可以複製這些 URL 以重複使用在不同的欄位中。
 
@@ -84,9 +84,9 @@ ms.locfileid: "63784779"
 
 ## <a name="import-listings"></a>匯入清單
 
-一旦您將所有變更輸入到 .csv 檔案（並包含您想要上傳的任何資產），上傳之前需要儲存檔案。 如果您使用支援 UTF-8 編碼的 Microsoft Excel 版本，請務必選取 **\[另存新檔\]**，並使用 **CSV UTF-8 (逗號分隔) (*.csv)** 格式。 如果您使用不同的編輯器檢視和編輯 .csv 檔案，上傳之前請確認 .csv 檔案是 UTF-8 編碼。
+一旦您將所有變更輸入到 .csv 檔案（並包含您想要上傳的任何資產），上傳之前需要儲存檔案。 如果您使用支援 UTF-8 編碼的 Microsoft Excel 版本，請務必選取 **\[另存新檔\]** ，並使用 **CSV UTF-8 (逗號分隔) (*.csv)** 格式。 如果您使用不同的編輯器檢視和編輯 .csv 檔案，上傳之前請確認 .csv 檔案是 UTF-8 編碼。
 
-當您準備上傳更新的 .csv 檔案與匯入清單資料，請選取提交概觀頁面上的 **\[匯入清單\]**。 如果您只匯入.csv 檔案，請選擇 **\[匯入 .csv\]**，瀏覽至您的檔案，然後按一下 **\[開啟\]**。 如果您要匯入具有影像檔案的資料夾，請選擇匯入資料夾，瀏覽至您的資料夾，按一下 **\[選取資料夾\]**。 請確定資料夾中只有一個 .csv 檔案，以及要上傳的任何資產。 
+當您準備上傳更新的 .csv 檔案與匯入清單資料，請選取提交概觀頁面上的 **\[匯入清單\]** 。 如果您只匯入.csv 檔案，請選擇 **\[匯入 .csv\]** ，瀏覽至您的檔案，然後按一下 **\[開啟\]** 。 如果您要匯入具有影像檔案的資料夾，請選擇匯入資料夾，瀏覽至您的資料夾，按一下 **\[選取資料夾\]** 。 請確定資料夾中只有一個 .csv 檔案，以及要上傳的任何資產。 
 
 當我們處理匯入的 .csv 檔案，顯示的進度列會反映匯入和驗證狀態。 這可能需要花費一些時間，尤其是當您有許多清單及/或影像檔案。 
 

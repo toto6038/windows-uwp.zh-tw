@@ -5,12 +5,12 @@ keywords: user activity, user activities, timeline, cortana pick up where you le
 ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e98f5d73cf2d1afb26a823ed417c8980d118485c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b2ad2e68c21167df7b0210a04b62e161fd264ab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589903"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318701"
 ---
 # <a name="user-activities-best-practices"></a>使用者活動最佳做法
 
@@ -46,7 +46,7 @@ ms.locfileid: "57589903"
 使用者活動是由三個元件所組成： 啟用 URI、 視覺化資料和內容的中繼資料。
 * 啟用 URI 是可以傳遞至應用程式或經驗才能繼續執行應用程式使用特定內容的 URI。 一般而言，這些連結形式的配置 (例如，"my-app://page2?action=edit") 的通訊協定處理常式。 它是由開發人員判斷其應用程式如何處理 URI 參數。 請參閱[處理 URI 啟用](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)如需詳細資訊。
 * 視覺化資料，其中包含一組必要和選擇性的屬性 (例如： 標題、 描述或自適性卡片項目)，讓使用者以視覺方式識別活動。 如需有關建立自適性卡片視覺效果，為您的活動的指導方針，請參閱下方內容。
-* 內容的中繼資料是可用來分組，並擷取特定的內容下的活動的 JSON 資料。 一般而言，這會採用的格式 http://schema.org資料。 如需在填妥這項資料的指導方針，請參閱下方內容。
+* 內容的中繼資料是可用來分組，並擷取特定的內容下的活動的 JSON 資料。 一般而言，這會採用的格式 http://schema.org 資料。 如需在填妥這項資料的指導方針，請參閱下方內容。
 
 ### <a name="adaptive-card-design-guidelines"></a>自適性卡片設計指導方針
 
@@ -104,4 +104,4 @@ ms.locfileid: "57589903"
 * [自適性卡片視覺化檢視範例](https://adaptivecards.io/)
 * [處理 URI 啟用](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [與您在任何平台上使用 Microsoft Graph、 活動摘要，以及自適性卡片上的客戶](https://channel9.msdn.com/Events/Connect/2017/B111)
-* [Microsoft Graph](https://developer.microsoft.com/graph/)
+* [Microsoft Graph](https://developer.microsoft.com/graph)

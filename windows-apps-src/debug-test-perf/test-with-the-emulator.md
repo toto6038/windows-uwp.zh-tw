@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6850a5d2458c29c81bacc195106af697b37dd23b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dfe6a8b7efd358640e59445c2f8fa9cb49ff6a67
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359897"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317568"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
@@ -661,6 +661,6 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 ## <a name="related-topics"></a>相關主題
 
 * [在模擬器中執行 Windows Phone 應用程式](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
-* [Windows 和 Windows Phone SDK 封存](https://dev.windows.com/downloads/sdk-archive)
+* [Windows 和 Windows Phone SDK 封存](https://developer.microsoft.com/windows/downloads/sdk-archive)
  
 

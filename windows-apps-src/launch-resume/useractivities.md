@@ -5,12 +5,12 @@ keywords: user activity, user activities, timeline, cortana pick up where you le
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ed268dd4ba07604db468ee24e5ea348acf806b39
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641153"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321805"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>繼續使用者活動，甚至是在各個裝置之間
 
@@ -32,7 +32,7 @@ ms.locfileid: "57641153"
 
 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity) 是使用者參與 Windows 的單位。 它有三個部分，分別是：用於啟用活動所屬應用程式的 URI、視覺效果，以及描述活動的中繼資料。
 
-1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用於以特定的內容繼續應用程式。 一般而言，此連結所採用的格式為配置的通訊協定處理常式 (例如「my-app://page2?action=edit」) 或 AppUriHandler (例如 http://constoso.com/page2?action=edit)。
+1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用於以特定的內容繼續應用程式。 一般而言，此連結所採用的格式為配置的通訊協定處理常式 (例如「my-app://page2?action=edit」) 或 AppUriHandler (例如 http://constoso.com/page2?action=edit) 。
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) 會公開一個類別，讓使用者能夠依照標題、描述或調適型卡片元素目測識別活動。
 3. 最後，[Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) 是您可以儲存活動中繼資料的位置，可用於群組與擷取特定內容下的活動。 通常，會採用 [https://schema.org](https://schema.org) 資料的格式。
 
@@ -73,11 +73,11 @@ private async Task GenerateActivityAsync()
 
 在取得或建立 **UserActivity** 後，請指定另外兩個必填欄位：`UserActivity.VisualElements.DisplayText` 和 `UserActivity.ActivationUri`。
 
-接著，透過呼叫 [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync)，最後呼叫 [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession)，以儲存 **UserActivity** 中繼資料，這會傳回 [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession)。 **UserActivitySession** 是當使用者真正與 **UserActivity** 互動時用於管理的物件。 例如，當使用者離開網頁時，我們應在 **UserActivitySession** 上呼叫 `Dispose()`。 在上述範例中，我們也會先在 `_currentActivity` 上呼叫 `Dispose()`，再呼叫 `CreateSession()`。 這是因為我們讓 `_currentActivity` 成為我們網頁的成員欄位，而且我們想要先停止任何現有的活動，再開始新的活動 (注意：`?` 是 [null 條件式運算子](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-conditional-operators)，會先測試是否為 null 值，再執行成員存取)。
+接著，透過呼叫 [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync)，最後呼叫 [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession)，以儲存 **UserActivity** 中繼資料，這會傳回 [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession)。 **UserActivitySession** 是當使用者真正與 **UserActivity** 互動時用於管理的物件。 例如，當使用者離開網頁時，我們應在 **UserActivitySession** 上呼叫 `Dispose()`。 在上述範例中，我們也會先在 `_currentActivity` 上呼叫 `Dispose()`，再呼叫 `CreateSession()`。 這是因為我們讓 `_currentActivity` 成為我們網頁的成員欄位，而且我們想要先停止任何現有的活動，再開始新的活動 (注意：`?` 是 [null 條件式運算子](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-)，會先測試是否為 null 值，再執行成員存取)。
 
 因此在此狀況下， `ActivationUri` 是自訂配置，我們也必須在應用程式資訊清單中登錄通訊協定。 這會在 Package.appmanifest XML 檔案中完成，或使用設計工具完成。
 
-若要使用設計工具進行變更，請按兩下專案中的 Package.appmanifest 檔案啟動設計工具，選取 \[宣告\] 索引標籤，然後新增 \[通訊協定\] 定義。 目前唯一需要填寫的屬性為 \[名稱\]。 它應該符合我們上述指定的 URI，`my-app`。
+若要使用設計工具進行變更，請按兩下專案中的 Package.appmanifest 檔案啟動設計工具，選取 \[宣告\]  索引標籤，然後新增 \[通訊協定\]  定義。 目前唯一需要填寫的屬性為 \[名稱\]  。 它應該符合我們上述指定的 URI，`my-app`。
 
 現在我們需要撰寫一些程式碼告訴應用程式在由通訊協定啟用後該執行的動作。 我們將覆寫 App.xaml.cs 中的 `OnActivated` 方法，將 URI 傳遞至主要網頁，如下所示：
 
@@ -149,16 +149,16 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="cross-platform-and-service-to-service-integration"></a>跨平台與服務對服務整合
 
-如果您的應用程式跨平台執行 (例如在 Android 與 iOS 上)，或在雲端中維護使用者狀態，您可以透過 [Microsoft Graph](https://developer.microsoft.com/graph/) 發佈 UserActivity。
-在透過 Microsoft 帳戶驗證應用程式或服務後，只要兩個簡單的 REST 呼叫，就能使用與上述相同的資料產生[活動](https://developer.microsoft.com/graph/docs/api-reference/beta/api/projectrome_put_activity)與[歷程記錄](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/projectrome_historyitem)物件。
+如果您的應用程式跨平台執行 (例如在 Android 與 iOS 上)，或在雲端中維護使用者狀態，您可以透過 [Microsoft Graph](https://developer.microsoft.com/graph) 發佈 UserActivity。
+在透過 Microsoft 帳戶驗證應用程式或服務後，只要兩個簡單的 REST 呼叫，就能使用與上述相同的資料產生[活動](https://docs.microsoft.com/graph/api/resources/projectrome-activity)與[歷程記錄](https://docs.microsoft.com/graph/api/resources/projectrome-historyitem)物件。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 您可以使用 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API 讓您的應用程式顯示在時間軸與 Cortana 中。
 * 深入了解[ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 請查看[範例程式碼](https://github.com/Microsoft/project-rome)。
 * 請參閱[更複雜的調適型卡片](https://adaptivecards.io/)。
-* 透過 [Microsoft Graph](https://developer.microsoft.com/graph/) 從 iOS、Android 或您的 Web 服務發佈 **UserActivity**。
+* 透過 [Microsoft Graph](https://developer.microsoft.com/graph) 從 iOS、Android 或您的 Web 服務發佈 **UserActivity**。
 * 深入了解 [GitHub 上的 Project Rome](https://github.com/Microsoft/project-rome)。
 
 ## <a name="key-apis"></a>重要 API
@@ -172,4 +172,4 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 * [自適性卡片視覺化檢視範例](https://adaptivecards.io/)
 * [處理 URI 啟用](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [與您在任何平台上使用 Microsoft Graph、 活動摘要，以及自適性卡片上的客戶](https://channel9.msdn.com/Events/Connect/2017/B111)
-* [Microsoft Graph](https://developer.microsoft.com/graph/)
+* [Microsoft Graph](https://developer.microsoft.com/graph)

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, lob, 企業營運, 企業應用程式, 商務用 store, 教育用 store, 企業
 ms.localizationpriority: medium
-ms.openlocfilehash: d44d2b248ddc2bff6ffa91860621fe315fb22c47
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: cf970c1812b4200cea4e4902ad883ef8b0b5e141
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826145"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320004"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>將 LOB 應用程式發佈到企業
 
@@ -71,7 +71,7 @@ ms.locfileid: "66826145"
 按一下 [提交到市集]  之後，app 將進入認證程序。 一旦準備好之後，企業的系統管理員就必須在商務用 Microsoft 網上商店或教育用 Microsoft 網上商店入口網站中將它新增到私人市集。 企業接著可將該 app 部署到它的使用者。
 
 > [!NOTE]
-> 若要取得 LOB 應用程式，組織必須位於[支援的市場](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)，且提交您的應用程式時不能[排除該市場](define-pricing-and-market-selection.md)。 
+> 若要取得 LOB 應用程式，組織必須位於[支援的市場](https://docs.microsoft.com/windows/whats-new/windows-store-for-business-overview#supported-markets)，且提交您的應用程式時不能[排除該市場](define-pricing-and-market-selection.md)。 
 
 如需詳細資訊，請參閱[使用企業營運 App](https://go.microsoft.com/fwlink/p/?LinkId=698846) 和[使用您的私人市集發佈 App](https://go.microsoft.com/fwlink/p/?LinkId=698847)。
 

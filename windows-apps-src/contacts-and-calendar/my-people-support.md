@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 58bf8df4551c8bcfc663d2c832bef3a879ff6350
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611533"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317969"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>新增朋友圈支援至應用程式
 
@@ -23,19 +23,19 @@ ms.locfileid: "57611533"
 + Windows 10 和 Microsoft Visual Studio 2017。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
 + C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 若要讓您的應用程式能夠使用 \[朋友圈\] 功能時，您必須完成三件事：
 
 1. [宣告支援 shareTarget 啟用合約，在您的應用程式資訊清單。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
 2. [加上註解的使用者可以使用您的應用程式共用的連絡人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3.  支援同時執行您應用程式的多個執行個體。 使用者將您應用程式的完整版用於連絡人面板中時，必須能夠與該版本互動。  他們甚至可以同時將該版本用於多個連絡人面板中。  若要支援此功能，您的應用程式必須能夠同時執行多個檢視。 若要了解做法，請參閱[顯示應用程式的多重檢視](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views) (英文) 一文。
+3.  支援同時執行您應用程式的多個執行個體。 使用者將您應用程式的完整版用於連絡人面板中時，必須能夠與該版本互動。  他們甚至可以同時將該版本用於多個連絡人面板中。  若要支援此功能，您的應用程式必須能夠同時執行多個檢視。 若要了解做法，請參閱[顯示應用程式的多重檢視](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views) (英文) 一文。
 
 當您完成時，您的應用程式將出現在所註解連絡人的連絡人面板中。
 
 ## <a name="declaring-support-for-the-contract"></a>宣告合約的支援
 
-若要宣告支援朋友圈合約，請以 Visual Studio 開啟您的應用程式。 在 \[方案總管\] 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]，然後選取 \[開啟方式\]。 從功能表中，選取 \[XML (文字) 編輯器\]，然後按一下 \[確定\]。 對資訊清單進行以下變更：
+若要宣告支援朋友圈合約，請以 Visual Studio 開啟您的應用程式。 在 \[方案總管\]  中，以滑鼠右鍵按一下 \[Package.appxmanifest\]  ，然後選取 \[開啟方式\]  。 從功能表中，選取 \[XML (文字) 編輯器\]  ，然後按一下 \[確定\]  。 對資訊清單進行以下變更：
 
 **之前**
 
@@ -53,7 +53,7 @@ ms.locfileid: "57611533"
 
 ```
 
-**之後**
+**After**
 
 ```xml
 <Package
@@ -121,7 +121,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 </Applications>
 ```
 
-**之後**
+**After**
 
 ```Csharp
 <Applications>
@@ -179,7 +179,7 @@ ContactPanel 物件也允許您設定連絡人面板標頭的背景色彩 (若�
 
 ## <a name="supporting-notification-badging"></a>支援通知徽章
 
-如果您希望有來自您應用程式且與該連絡人相關的新通知時，釘選到工作列的連絡人可以收到徽章通知，則您必須在 [快顯通知](https://docs.microsoft.com/en-us/windows/uwp/shell/tiles-and-notifications/adaptive-interactive-toasts)和易懂的[朋友圈通知](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications)中包含 **hint-people** 參數。
+如果您希望有來自您應用程式且與該連絡人相關的新通知時，釘選到工作列的連絡人可以收到徽章通知，則您必須在 [快顯通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)和易懂的[朋友圈通知](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications)中包含 **hint-people** 參數。
 
 ![朋友圈通知徽章](images/my-people-badging.png)
 
@@ -248,7 +248,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **注意：** 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 + [朋友圈分享](my-people-sharing.md)
 + [我的使用者通知](my-people-notifications.md)
 + [Channel 9 影片新增至應用程式支援的我的人員](https://channel9.msdn.com/Events/Build/2017/P4056)

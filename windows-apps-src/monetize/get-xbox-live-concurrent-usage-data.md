@@ -5,20 +5,20 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、並行使用
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ac2208ca5eca02e3007a88209aa26735e29612
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: a1ceef92a533a230c2dca54a835578b56ceb809f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162864"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321758"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>取得 Xbox Live 並行使用資料
 
 
-在 Microsoft Store 分析 API 中使用此方法可以取得有關在指定時間範圍內每分鐘、每小時或每天玩您的 [已啟用 Xbox Live 遊戲](https://docs.microsoft.com/gaming/xbox-live//index.md) 的平均客戶數量的即時使用量資料 (延遲 5-15 分鐘)。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
+在 Microsoft Store 分析 API 中使用此方法可以取得有關在指定時間範圍內每分鐘、每小時或每天玩您的 [已啟用 Xbox Live 遊戲](https://docs.microsoft.com/gaming/xbox-live/index.md) 的平均客戶數量的即時使用量資料 (延遲 5-15 分鐘)。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
 
 > [!IMPORTANT]
-> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
+> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -51,8 +51,8 @@ ms.locfileid: "58162864"
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取 Xbox Live 並行使用資料之遊戲的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | metricType | 字串 | 指定要擷取之 Xbox Live 分析資料類型的字串。 對於此方法，請指定 **並行**值。  |  是  |
-| startDate | 日期 | 要擷取並行使用資料之日期範圍的開始日期。 有關預設行為，請參閱 *aggregationLevel* 說明。 |  否  |
-| endDate | 日期 | 要擷取並行使用資料之日期範圍的結束日期。 有關預設行為，請參閱 *aggregationLevel* 說明。 |  否  |
+| startDate | date | 要擷取並行使用資料之日期範圍的開始日期。 有關預設行為，請參閱 *aggregationLevel* 說明。 |  否  |
+| endDate | date | 要擷取並行使用資料之日期範圍的結束日期。 有關預設行為，請參閱 *aggregationLevel* 說明。 |  否  |
 | aggregationLevel | 字串 | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：**分鐘**、**小時** 或  **天**。 如果沒有指定，則預設為 **day**。 <p/><p/>如果您不指定 *startDate* 或 *endDate*，回應主體預設如下： <ul><li>**分鐘**:可用的資料上次 60 的記錄。</li><li>**小時**:可用的資料最近的 24 個記錄。</li><li>**天**:可用的資料最後 7 的記錄。</li></ul><p/>下列彙總層級對可以傳回的記錄數量有大小限制。 如果要求的時間範圍太大，記錄將會被截斷。 <ul><li>**分鐘**:最多為 1440年記錄 （24 小時的資料）。</li><li>**小時**:最多 720 記錄 （30 天的資料）。</li><li>**天**:最多 60 記錄 （60 天的資料）。</li></ul>  |  否  |
 
 
@@ -71,7 +71,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述                  |
 |------------|--------|-------------------------------------------------------|
-| 計數      | 數字  | 在指定的分鐘、小時或天內玩已啟用 Xbox Live 的客戶的平均數量。 <p/><p/>**注意**&nbsp;&nbsp; 值為 0 表示在指定的時間間隔內沒有並行使用者，或者在指定的時間間隔內為遊戲收集並行使用者資料時發生錯誤。 |
+| Count      | 數字  | 在指定的分鐘、小時或天內玩已啟用 Xbox Live 的客戶的平均數量。 <p/><p/>**注意**&nbsp;&nbsp; 值為 0 表示在指定的時間間隔內沒有並行使用者，或者在指定的時間間隔內為遊戲收集並行使用者資料時發生錯誤。 |
 | Date  | 字串 | 並行使用資料發生期間其詳列了分鐘、小時或天的日期。  |
 | SeriesName | 字串    | 這總有 **UserConcurrency** 的值。 |
 

@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ebc87c685d92fa4dbc1a954e2fc6f0cf549a5554
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 62f603a6ff5aadc1c3e5342db6a7d771f8c37a7b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366071"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320835"
 ---
 # <a name="storyboarded-animations"></a>腳本動畫
 
@@ -70,7 +70,7 @@ ms.locfileid: "66366071"
 
 ### <a name="targeting-the-dependency-property-to-animate"></a>針對相依性屬性設定動畫效果
 
-您在動畫中設定 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)) 的值。 這會決定要針對哪一個目標物件的特定屬性設定動畫效果。
+您在動畫中設定 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) 的值。 這會決定要針對哪一個目標物件的特定屬性設定動畫效果。
 
 有時您需要將不是目標物件之直接屬性的屬性設成目標，該目標屬性巢狀於物件屬性關係的較深處。 您通常需要這麼做才能向下切入到一組參與物件和屬性值，直到可以參考可設定動畫效果的屬性類型 ([**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color))。 這個概念稱為「間接目標」  ，而使用這種方式設定目標屬性的語法稱為「屬性路徑」  。
 
@@ -101,7 +101,7 @@ ms.locfileid: "66366071"
 
 您也可以讓 XAML 附加屬性產生動畫效果。 一律將完整的附加屬性名稱放在括號內，例如 `(Canvas.Left)`。 如需詳細資訊，請參閱[讓 XAML 附加屬性產生動畫效果](./storyboarded-animations.md#animating-xaml-attached-properties)。
 
-如需如何使用屬性路徑讓屬性的間接目標產生動畫效果的詳細資訊，請參閱 [Property-path 語法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)或 [**Storyboard.TargetProperty 附加屬性**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95))。
+如需如何使用屬性路徑讓屬性的間接目標產生動畫效果的詳細資訊，請參閱 [Property-path 語法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)或 [**Storyboard.TargetProperty 附加屬性**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))。
 
 ### <a name="animation-types"></a>動畫類型
 
@@ -323,7 +323,7 @@ myStoryBoard.Begin()
 
 ## <a name="animating-xaml-attached-properties"></a>讓 XAML 附加屬性產生動畫效果
 
-這不是常見的案例，但是您可以將動畫值套用到 XAML 附加屬性。 如需何謂附加屬性及其運作方式的詳細資訊，請參閱[附加屬性概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview)。 設定附加屬性目標需要使用 [property-path 語法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)，此語法可將屬性名稱包在括號內。 您可以使用套用不連續整數值的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95))，讓 [**Canvas.ZIndex**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 之類的內建附加屬性產生動畫效果。 不過，目前 Windows 執行階段 XAML 實作的侷限是您無法讓自訂附加屬性產生動畫效果。
+這不是常見的案例，但是您可以將動畫值套用到 XAML 附加屬性。 如需何謂附加屬性及其運作方式的詳細資訊，請參閱[附加屬性概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview)。 設定附加屬性目標需要使用 [property-path 語法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)，此語法可將屬性名稱包在括號內。 您可以使用套用不連續整數值的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95))，讓 [**Canvas.ZIndex**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 之類的內建附加屬性產生動畫效果。 不過，目前 Windows 執行階段 XAML 實作的侷限是您無法讓自訂附加屬性產生動畫效果。
 
 ## <a name="more-animation-types-and-next-steps-for-learning-about-animating-your-ui"></a>其他動畫類型以及了解設定 UI 動畫效果的後續步驟
 
@@ -337,7 +337,7 @@ myStoryBoard.Begin()
 * [建立圖片敘述視覺狀態的動畫](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
 * [控制項範本](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
 * [**分鏡腳本**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
-* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95))
+* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  
 
  

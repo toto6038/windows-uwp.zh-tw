@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 1026bd153f43d5e956fbacdcc33728d890f34e34
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6e69d3489bcc41f40eca07aff628425d34819c4b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371974"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320594"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
 這篇文章描述的新 Windows Hello 技術，隨附於 Windows 10 作業系統，並討論如何開發人員可以在其中實作這項技術能夠保護其通用 Windows 平台 (UWP) 應用程式和後端服務。 文章強調該技術的幾個特定功能，以協助您減少因使用傳統認證所帶來的威脅；它還提供指南來引導您設計及部署該技術，來做為您 Windows 10 首度發行的一部分。
 
-請注意，本文著重在應用程式開發上。 如需 Windows Hello 的結構與實作的詳細資訊，請參閱 [TechNet 上的 Windows Hello 指南](https://technet.microsoft.com/library/mt589441.aspx)。
+請注意，本文著重在應用程式開發上。 如需 Windows Hello 的結構與實作的詳細資訊，請參閱 [TechNet 上的 Windows Hello 指南](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)。
 
 如需完整的程式碼範例，請參閱 [GitHub 上的 Windows Hello 程式碼範例](https://go.microsoft.com/fwlink/?LinkID=717812)。
 
@@ -62,7 +62,7 @@ Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也
 
 ### <a name="22-how-windows-hello-works"></a>2.2 Windows Hello 的運作方式
 
-當使用者在自己的電腦上設定 Windows Hello 之後，它會在裝置上產生新的公開/私密金鑰組。 [信賴平台模組](https://technet.microsoft.com/itpro/windows/keep-secure/trusted-platform-module-overview) (TPM) 會產生並保護這個私密金鑰。 如果裝置沒有 TPM 晶片，私密金鑰則由軟體來加密並保護。 此外，已啟用 TPM 的裝置會產生可用來證明金鑰已繫結至 TPM 的資料區塊。 舉例來說，此證明資訊可以用在您的解決方案中，來決定是否要授與使用者不同的授權層級。
+當使用者在自己的電腦上設定 Windows Hello 之後，它會在裝置上產生新的公開/私密金鑰組。 [信賴平台模組](https://docs.microsoft.com/windows/keep-secure/trusted-platform-module-overview) (TPM) 會產生並保護這個私密金鑰。 如果裝置沒有 TPM 晶片，私密金鑰則由軟體來加密並保護。 此外，已啟用 TPM 的裝置會產生可用來證明金鑰已繫結至 TPM 的資料區塊。 舉例來說，此證明資訊可以用在您的解決方案中，來決定是否要授與使用者不同的授權層級。
 
 如要啟用裝置上的 Windows Hello，使用者在 Windows 設定中必須已與 Azure Active Directory 帳戶連接，或是已與 Microsoft 帳戶連接。
 
@@ -407,8 +407,8 @@ Windows 10 引進較高的安全性層級，實行方法也很簡單。 Windows 
 
 ### <a name="61-articles-and-sample-code"></a>6.1 文章與範例程式碼
 
-- [Windows Hello 概觀](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
-- [Windows hello 的實作詳細資料](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide)
+- [Windows Hello 概觀](https://support.microsoft.com/help/17215)
+- [Windows hello 的實作詳細資料](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)
 - [Windows Hello 的程式碼範例在 GitHub 上](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 詞彙

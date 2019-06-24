@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 228fec1571ab3f9c01b4a8dd4084e19bc28dbfe7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d0dc449c0134799f3de675fff4bdbbda66046be8
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366747"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317090"
 ---
 # <a name="add-and-delete-animations"></a>新增和刪除動畫
 
@@ -21,7 +21,7 @@ ms.locfileid: "66366747"
 
 清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
 
-> **重要的 Api**:[**AddDeleteThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition.)
+> **重要的 Api**:[**AddDeleteThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -41,7 +41,7 @@ ms.locfileid: "66366747"
 * [動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
 * [以動畫顯示清單中新增及刪除](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
 * [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**AddDeleteThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition.)
+* [**AddDeleteThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
  
 

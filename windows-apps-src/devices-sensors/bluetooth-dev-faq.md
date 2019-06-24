@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e45f8ef0f5684b3a712056eb367975f8e6103a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f61f2a0889cd5a2b2b95063e6009530951b49cbd
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370354"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321598"
 ---
 # <a name="bluetooth-developer-faq"></a>藍牙開發人員常見問題集
 
@@ -82,5 +82,5 @@ RFCOMM API 提供通訊端，讓開發人員執行雙向序列埠樣式通訊。
 **藍牙 LE**:是，所有的功能是 OneCore 中，而且應該搭配運作的 Bluetooth LE 堆疊的最新裝置上使用。 
 > 警告：週邊角色硬體相依，而且某些 Windows Server 版本不支援藍芽。 
 
-**藍芽 b R/EDR （傳統）** :有一些變化，但一般來說，有非常類似的設定檔層級的支援。 請參閱 [RFCOMM](send-or-receive-files-with-rfcomm.md)上的文件，以及[電腦](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles)和[手機](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)的這些受支援設定檔文件
+**藍芽 b R/EDR （傳統）** :有一些變化，但一般來說，有非常類似的設定檔層級的支援。 請參閱 [RFCOMM](send-or-receive-files-with-rfcomm.md)上的文件，以及[電腦](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles)和[手機](https://support.microsoft.com/products/windows?os=windows-10-mobile)的這些受支援設定檔文件
 

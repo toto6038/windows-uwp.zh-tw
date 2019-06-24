@@ -5,19 +5,19 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析
 ms.localizationpriority: medium
-ms.openlocfilehash: dd10fadea415bd769061e198fcf29f8edf0f3124
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 5ab41001f7331defc6d37b0561e2844392ccca3c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162666"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321845"
 ---
 # <a name="get-xbox-live-analytics-data"></a>取得 Xbox Live 分析資料
 
-在 Microsoft Store 分析 API 中使用此方法可取得玩 [Xbox Live-enabled game](https://docs.microsoft.com/gaming/xbox-live//index.md) 的客戶的過去 30 天的一般分析資料，包括裝置配件使用量、網際網路連接類型、玩家分數分佈情況、遊戲統計資料以及朋友和追隨者資料。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
+在 Microsoft Store 分析 API 中使用此方法可取得玩 [Xbox Live-enabled game](https://docs.microsoft.com/gaming/xbox-live/index.md) 的客戶的過去 30 天的一般分析資料，包括裝置配件使用量、網際網路連接類型、玩家分數分佈情況、遊戲統計資料以及朋友和追隨者資料。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
 
 > [!IMPORTANT]
-> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
+> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
 
 可透過下列方法取得支援已啟用 Xbox Live 遊戲的其他分析資料：
 * [取得 Xbox Live 的成就資料](get-xbox-live-achievements-data.md)

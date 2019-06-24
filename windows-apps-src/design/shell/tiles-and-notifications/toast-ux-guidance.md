@@ -7,12 +7,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10、 uwp、 通知、 集合、 群組、 ux、 ux 指導方針，指導方針、 動作、 快顯通知、 行動作業中心、 noninterruptive、 有效的通知、 非干擾式的通知，可採取動作，管理，組織
 ms.localizationpriority: medium
-ms.openlocfilehash: 878df85db9ab0e33db06a86ddb726f07dc28f013
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 327a2add84343be3b972f7bb1f232298e7ef92ad
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615763"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320733"
 ---
 # <a name="toast-notification-ux-guidance"></a>快顯通知的 UX 指導方針
 通知是現代生活; 不可或缺的一部分它們可以協助使用者更具生產力、 參與應用程式和網站，以及掌握最新消息與任何更新。 不過，通知可以快速開啟從實用張牙舞爪和具侵入性，如果不是設計以使用者為中心的方式。 您的通知離開正在關閉，一個以滑鼠右鍵按一下，而且不太可能會關閉之後，它們將會開啟一次。  因此請確定您的通知會令人尊敬使用者的螢幕空間和時間，因此您可以保留此 engagement 通道開啟。
@@ -65,4 +65,4 @@ ms.locfileid: "57615763"
 * [快顯內容](adaptive-interactive-toasts.md)
 * [原始通知](raw-notification-overview.md)
 * [暫止更新](toast-pending-update.md)
-* [GitHub （Windows 社群工具組的一部分） 上的通知程式庫](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [GitHub （Windows 社群工具組的一部分） 上的通知程式庫](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

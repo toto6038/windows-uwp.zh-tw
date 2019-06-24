@@ -5,19 +5,19 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10 s, 永遠連線, ARM 上的 ARM32 應用程式, ARM 上的 windows 10, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: ddf28627838ebc8cb2df620c398f3803c026cb17
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b93a4a3bdf4a6abd12a0df8bfc1871cb38647f63
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366828"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319746"
 ---
 # <a name="troubleshooting-arm-uwp-apps"></a>疑難排解 ARM UWP 應用程式
 
 如果 ARM32 或 ARM64 UWP 應用程式無法正常運作，在 ARM 上，以下是一些可以幫助的指引。
 
 >[!NOTE]
-> 若要建置您的 UWP 應用程式原生 ARM64 平台為目標，您必須擁有 Visual Studio 2017 15.9 或更新版本。 如需詳細資訊，請參閱 <<c0> [ 此部落格文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)。
+> 若要建置您的 UWP 應用程式原生 ARM64 平台為目標，您必須擁有 Visual Studio 2017 15.9 或更新版本。 如需詳細資訊，請參閱 <<c0> [ 此部落格文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/)。
 
 ## <a name="common-issues"></a>常見問題
 以下是一些常見的問題進行疑難排解 ARM32 和 ARM64 應用程式時，請記住。

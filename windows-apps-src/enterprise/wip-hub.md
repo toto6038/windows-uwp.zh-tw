@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, uwp, Windows 資訊保護, 企業資料, 企業資料保護, edp, 啟發式應用程式
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6938118b3a9041eea27367c3916e94ce34d468e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 42f08127567704b1c8623ac64857cc5afe0ef882
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595473"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321386"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 資訊保護 (WIP)
 
@@ -42,12 +42,12 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 ![WIP 週期](images/wip-lifecycle.png)
 
 > **深入的了解 WIP** <br>
-* [簡介 Windows 資訊保護](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
-* [保護您的企業資料使用 Windows 資訊保護 (WIP)](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
+* [簡介 Windows 資訊保護](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [保護您的企業資料使用 Windows 資訊保護 (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
 
 如果您的應用程式在允許清單中，則應用程式產生的所有資料都會受到原則限制。 這表示如果系統管理員撤銷使用者的企業資料存取權，這些使用者就會失去應用程式產生的所有資料的存取權。
 
-如果您的應用程式只是設計成供企業使用就無所謂。 但如果您的應用程式建立的資料對使用者來說是個人資料，您會想要您的應用程式，以明智地分辨企業資料和個人資料。 我們稱這種類型的應用程式為*企業啟發式應用程式*，因為它可以順利地強制執行企業原則，又同時保留使用者個人資料的完整性。
+如果您的應用程式只是設計成供企業使用就無所謂。 但如果您的應用程式建立的資料對使用者來說是個人資料，您會想要您的應用程式，以明智地分辨企業資料和個人資料。  我們稱這種類型的應用程式為*企業啟發式應用程式*，因為它可以順利地強制執行企業原則，又同時保留使用者個人資料的完整性。
 
 ## <a name="create-an-enterprise-enlightened-app"></a>建立企業啟發式應用程式
 
@@ -65,7 +65,7 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 
 [Windows 資訊保護 (WIP) 開發人員指南](wip-dev-guide.md)。
 
-**針對您建置使用 c + + 的桌面應用程式**
+**使用您建立的傳統型應用程式C++**
 
 [Windows 資訊保護 (WIP) 開發人員指南 (C++)](https://go.microsoft.com/fwlink/?LinkId=822192)。
 

@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 提交 API、App 提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 65e8599a73a196ebb72fe3cc45ea984f82057741
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 52aeb590e7672ccfd3fe74232575f008c132d9fd
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371502"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320167"
 ---
 # <a name="manage-app-submissions"></a>管理應用程式提交
 
@@ -98,7 +98,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
     回應主體包含 [App 提交](#app-submission-object)資源，其中包含新提交的識別碼、用於上傳提交至 Azure Blob 儲存體的任何相關檔案 (例如應用程式套件、清單影像和預告片檔案) 的共用存取簽章 (SAS) URI，以及新提交的所有資料 (例如清單和定價資訊)。
 
     > [!NOTE]
-    > SAS URI 提供 Azure 儲存體中安全資源的存取權，完全不需要帳戶金鑰。 如需 SAS Uri 和其與搭配使用 Azure Blob 儲存體的背景資訊，請參閱[共用存取簽章，第 1 部分：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[共用存取簽章，第 2 部分：建立及使用 Blob 儲存體的 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
+    > SAS URI 提供 Azure 儲存體中安全資源的存取權，完全不需要帳戶金鑰。 如需 SAS Uri 和其與搭配使用 Azure Blob 儲存體的背景資訊，請參閱[共用存取簽章，第 1 部分：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[共用存取簽章，第 2 部分：建立及使用 Blob 儲存體的 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
 4. 如果您要新增提交的新套件、清單影像或預告片檔案，請[準備應用程式套件](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)並[準備應用程式螢幕擷取畫面、影像與預告片](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。 將所有這些檔案新增到 ZIP 封存。
 
@@ -394,7 +394,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 | 值           | 類型    | 描述    |
 |-----------------|---------|------|
-|  NAME               |    字串     |   銷售的名稱。    |     
+|  name               |    字串     |   銷售的名稱。    |     
 |  basePriceId               |   字串      |  用於銷售基本價格的[價格區間](#price-tiers)。    |     
 |  startDate               |   字串      |   ISO 8601 格式的銷售開始日期。  |     
 |  endDate               |   字串      |  ISO 8601 格式的銷售結束日期。      |     

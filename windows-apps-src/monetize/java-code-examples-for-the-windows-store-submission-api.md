@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, java
 ms.localizationpriority: medium
-ms.openlocfilehash: db87b1f8f3fdf039fe6e8ee8ca8a0bc91d26b428
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 94dc87bbbf734e2cfc2f25bd06b7d4fb59a4e4de
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334496"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320193"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java 範例：提交應用程式、附加元件與正式發行前小眾測試版
 
@@ -30,7 +30,7 @@ ms.locfileid: "58334496"
 
 這些範例使用下列程式庫：
 
-* [Apache Commons Logging 1.2](https://commons.apache.org/proper/commons-logging) (commons-logging-1.2.jar)。
+* [Apache Commons Logging 1.2](https://commons.apache.org/proper/commons-logging/) (commons-logging-1.2.jar)。
 * [Apache HttpComponents Core 4.4.5 和 Apache HttpComponents Client 4.5.2](https://hc.apache.org/) (httpcore-4.4.5.jar 和 httpclient-4.5.2.jar)。
 * [JSR 353 JSON Processing API 1.0](https://mvnrepository.com/artifact/javax.json/javax.json-api/1.0) 和 [JSR 353 JSON Processing Default Provider API 1.0.4](https://mvnrepository.com/artifact/org.glassfish/javax.json/1.0.4) (javax.json-api-1.0.jar 和 javax.json-1.0.4.jar)。
 

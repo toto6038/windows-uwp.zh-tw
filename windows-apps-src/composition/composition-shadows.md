@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4a47a5f8ffca1d9ca2ddab05fe0baf2f85977d7f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630833"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318186"
 ---
 # <a name="shadows-in-windows-ui"></a>Windows UI 中的陰影
 
@@ -113,9 +113,9 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 如果您想要為更複雜的架構元素加上陰影，有幾種方式，與 XAML 和組合之間的陰影互通：
 
-1. 使用[DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs)可用 Windows 社群工具組中。 請參閱[DropShadowPanel 文件](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel)如需有關如何使用它。
+1. 使用[DropShadowPanel](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs)可用 Windows 社群工具組中。 請參閱[DropShadowPanel 文件](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel)如需有關如何使用它。
 1. 建立視覺效果，以做為陰影主應用程式和繫結到 XAML 講義視覺效果。
-1. 使用組合範例圖庫[SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon) CompositionShadow 的自訂控制項。 請參閱此處的範例使用方式。
+1. 使用組合範例圖庫[SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) CompositionShadow 的自訂控制項。 請參閱此處的範例使用方式。
 
 ## <a name="performance"></a>效能
 
@@ -132,4 +132,4 @@ CompositionDropShadowSourcePolicy.InheritFromVisualContent | 高
 ## <a name="additional-resources"></a>其他資源
 
 - [撰寫 DropShadow API](/uwp/api/Windows.UI.Composition.DropShadow)
-- [WindowsUIDevLabs GitHub 存放庫](https://github.com/Microsoft/WindowsUIDevLabs)
+- [WindowsUIDevLabs GitHub 存放庫](https://github.com/microsoft/WindowsCompositionSamples)

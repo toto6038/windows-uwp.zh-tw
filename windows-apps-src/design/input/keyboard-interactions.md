@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: e3fcf6b792990fad9cb0071aece878cac31f5420
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 20cb1e3162f0c852a60c620be92afd37ad9f8232
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662913"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317276"
 ---
 # <a name="keyboard-interactions"></a>鍵盤互動
 
@@ -59,7 +59,7 @@ ms.locfileid: "57662913"
 |-----------------------------------|-----------------|
 |鍵盤 (硬體與軟體)   |除了標準的硬體鍵盤，UWP 應用程式支援兩個軟體鍵盤：[觸控 （或軟體） 的鍵盤](#software-keyboard)並[螢幕小鍵盤](#on-screen-keyboard)。|
 |遊戲台與遙控器         |Xbox 遊戲台與遙控器是[10 英呎經驗](../devices/designing-for-tv.md)中的基本輸入裝置。 如需 UWP 支援遊戲台與遙控器的特定詳細資訊，請參閱[遊戲台與遙控器的互動](gamepad-and-remote-interactions.md)。|
-|螢幕助讀程式（朗讀程式）          |「朗讀程式」是 Windows 內建螢幕助讀程式，提供唯一互動體驗和功能，但仍依賴基本鍵盤瀏覽和輸入。 如需朗讀程式詳細資訊，請參閱[開始使用朗讀程式](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)。|
+|螢幕助讀程式（朗讀程式）          |「朗讀程式」是 Windows 內建螢幕助讀程式，提供唯一互動體驗和功能，但仍依賴基本鍵盤瀏覽和輸入。 如需朗讀程式詳細資訊，請參閱[開始使用朗讀程式](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)。|
 
 ## <a name="custom-experiences-and-efficient-keyboarding"></a>自訂體驗與有效的鍵盤
 如前所述，若要確定應用程式能適用於不同技能、能力及期望的使用者，鍵盤支援是不可或缺的一部分。 建議您優先進行以下作業。
@@ -133,7 +133,7 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 請參閱[專注導覽](focus-navigation.md)如需詳細資訊覆寫 索引標籤順序。
 
-### <a name="navigation"></a>瀏覽
+### <a name="navigation"></a>巡覽
 
 鍵盤瀏覽通常是透過 Tab 鍵和方向鍵來支援。
 
@@ -203,7 +203,7 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
     -   **Enter** 鍵為清單及方格項目執行選取動作，如同**空格**鍵，除非這些項目另有相關聯的其他動作（開啟新視窗）。
     -   如果與控制項有相關的其他動作，**Enter** 鍵執行其他動作，而**空格**鍵執行選取動作。
 
-**注意****Enter** 鍵和**空格**鍵不一定執行相同的動作，但通常大致相同。
+**注意** **Enter** 鍵和**空格**鍵不一定執行相同的動作，但通常大致相同。
 
 ![Enter 鍵](images/keyboard/enter-key.png)
 
@@ -320,7 +320,7 @@ UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>對話方塊按鈕</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>選項按鈕</sup></p>     
+      <p><sup>RadioButtons</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
@@ -364,7 +364,7 @@ UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組
 
 ### <a name="keyboard-and-narrator"></a>鍵盤與朗讀程式
 
-「朗讀程式」是一個針對鍵盤使用者（也會支援其他輸入類型）設計的 UI 協助工具。 不過，「朗讀程式」功能超出 UWP app 支援的鍵盤互動，為朗讀程式設計 UWP app 時須特別留意。 ([朗讀程式基本資訊頁面](https://support.microsoft.com/help/22808/windows-10-narrator-learning-basics)會引導您完成朗讀程式的使用者體驗。)
+「朗讀程式」是一個針對鍵盤使用者（也會支援其他輸入類型）設計的 UI 協助工具。 不過，「朗讀程式」功能超出 UWP app 支援的鍵盤互動，為朗讀程式設計 UWP app 時須特別留意。 ([朗讀程式基本資訊頁面](https://support.microsoft.com/help/22808/windows-10-narrator-basics)會引導您完成朗讀程式的使用者體驗。)
 
 UWP 鍵盤行為以及「朗讀程式」支援的鍵盤行為之間的一些差異包括：
 -   額外的按鍵組合，用來瀏覽到未透過標準鍵盤瀏覽所公開的 UI 元素，例如 Caps lock + 方向鍵來朗讀控制項標籤。
@@ -405,8 +405,8 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 | 空格鍵         | A 按鈕                            | 選取按鈕       |
 | Enter         | A 按鈕                            | 選取按鈕       |
 | ESC        | B 按鈕                            | 返回按鈕         |
-| Home/End      | 無                                 | 無                 |
-| Page Up/Down  | 發射鍵用於垂直捲動，緩衝鍵用於水平捲動   | 無                 |
+| Home/End      | N/A                                 | N/A                 |
+| Page Up/Down  | 發射鍵用於垂直捲動，緩衝鍵用於水平捲動   | N/A                 |
 
 設計 UWP 應用程式使用於遊戲台與遙控器時，應該留意的一些重要差異包括：
 -   文字輸入需要使用者按 A 啟動文字控制項。
@@ -534,11 +534,11 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 -   下拉式方塊
 -   選項按鈕
 -   捲軸
--   樹狀目錄
--   樹狀目錄項目
--   Menu
+-   樹狀結構
+-   樹狀結構項目
+-   功能表
 -   功能表列
--   功能表項目
+-   Menu item
 -   工具列
 -   清單
 -   清單項目

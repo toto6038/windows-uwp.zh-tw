@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 指導方針, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb187092158386c503b91973d8d63ce291b4760
-ms.sourcegitcommit: c62b260eecd373e57b19a623bae77e29180e0f3d
+ms.openlocfilehash: cf7f61f427ef0b1a0ff5b6f3b66d02d13d02e4ab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66565519"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320678"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 
@@ -25,10 +25,10 @@ ms.locfileid: "66565519"
 檢閱本文中不同廣告類型的指導方針之前，請先查看這些一般最佳做法，以提升您的廣告收益。
 
 * [仔細計劃您的廣告位置](https://blogs.windows.com/buildingapps/2017/04/10/monetizing-app-advertisement-placement/)。 參閱[最佳化您的廣告單元的可見性](optimize-ad-unit-viewability.md)的相關指導方針。
-* [作為插播式廣告做為插播式影片廣告的後援](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video)。
+* [作為插播式廣告做為插播式影片廣告的後援](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video/)。
 * [了解您的使用者以提供更好的目標廣告](https://blogs.windows.com/buildingapps/2017/05/17/monetize-app-know-user-serve-better-targeted-ads/)。
 * [使用最新的廣告程式庫](https://blogs.windows.com/buildingapps/2017/05/22/earn-money-moving-latest-advertising-libraries/)。
-* [為您的應用程式設定正確的 COPPA 設定](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app)。
+* [為您的應用程式設定正確的 COPPA 設定](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app/)。
 
 
 ## <a name="guidelines-for-banner-ads"></a>橫幅廣告指南
@@ -39,7 +39,7 @@ ms.locfileid: "66565519"
 
 建議您在應用程式中實作橫幅廣告時，依照這些最佳做法：
 
-* [使用美國互動廣告局大小](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes)以容納於裝置的配置。
+* [使用美國互動廣告局大小](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes/)以容納於裝置的配置。
 
 * 將您應用程式多數 UI 用於功能控制項及內容。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: ee386199fbee7d2f9b839d6b1805c6181e4d70a9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c9b4060fbd2e59a545451c9c8ebe103c9bb527a0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371389"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320598"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows app 的簡介
 
@@ -175,7 +175,7 @@ app 的註冊工作流程可能如下：
 
 您所收集註冊資訊中的身分辨識資訊，可能比這簡單案例中所收集的多出許多。 舉例來說，如果您的應用程式存取某個受保護的服務 (例如銀行服務)，您必須要求身分識別證明及其他項目，做為註冊程序的一部分。 當所有條件都符合之後，這位使用者的公開金鑰將會儲存在後端，讓該使用者下次使用服務時可用來進行驗證。
 
-如需 Windows Hello 的詳細資訊，請參閱 [Windows Hello 指南](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide)和[Windows Hello 開發人員指南](microsoft-passport.md)。
+如需 Windows Hello 的詳細資訊，請參閱 [Windows Hello 指南](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)和[Windows Hello 開發人員指南](microsoft-passport.md)。
 
 ## <a name="3-data-in-flight-security-methods"></a>3 傳輸中資料的安全性方法
 
@@ -478,14 +478,14 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 
 ### <a name="62-code-samples"></a>6.2 程式碼範例
 
--   [認證保險箱](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
--   [認證選擇器](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
--   [使用 Azure 登入的裝置鎖定](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
--   [企業資料保護](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/EnterpriseDataProtection)
--   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/KeyCredentialManager)
--   [智慧卡](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SmartCard)
--   [Web 帳戶管理](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
--   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
+-   [認證保險箱](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
+-   [認證選擇器](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
+-   [使用 Azure 登入的裝置鎖定](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
+-   [企業資料保護](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
+-   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
+-   [智慧卡](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
+-   [Web 帳戶管理](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
+-   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
 
 ### <a name="63-api-reference"></a>6.3 API 參考
 

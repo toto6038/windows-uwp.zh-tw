@@ -5,22 +5,22 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、多人遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f470abdf7cbf0770bf01dd123a8fdfd2c2cbea
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: b80a9dc8828459e7734370061e960fad64ab7015
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162993"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321769"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>取得 Xbox Live 多人遊戲資料
 
 
-在 Microsoft Store 分析 API 中使用此方法，可以在每日或每月取得[已啟用 Xbox Live 遊戲](https://docs.microsoft.com/gaming/xbox-live//index.md) 的多人遊戲資料。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
+在 Microsoft Store 分析 API 中使用此方法，可以在每日或每月取得[已啟用 Xbox Live 遊戲](https://docs.microsoft.com/gaming/xbox-live/index.md) 的多人遊戲資料。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
 
 > [!IMPORTANT]
-> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
+> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -51,10 +51,10 @@ ms.locfileid: "58162993"
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取 Xbox Live 多人遊戲資料之遊戲的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | metricType | 字串 | 指定要擷取之 Xbox Live 分析資料類型的字串。 對於此方法，請指定值 **multiplayerdaily** 以取得每日多人遊戲資料或指定值 **multiplayermonthly** 以取得每月多人遊戲資料。  |  是  |
-| startDate | 日期 | 要擷取多人遊戲資料之日期範圍的開始日期。 對於 **multiplayerdaily**，預設為目前日期的前 3 個月。 對於 **multiplayermonthly**，預設為目前日期的前 1 年。 |  否  |
-| endDate | 日期 | 要擷取多人遊戲資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
-| top | 整數 | 要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
-| skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
+| startDate | date | 要擷取多人遊戲資料之日期範圍的開始日期。 對於 **multiplayerdaily**，預設為目前日期的前 3 個月。 對於 **multiplayermonthly**，預設為目前日期的前 1 年。 |  否  |
+| endDate | date | 要擷取多人遊戲資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
+| top | ssNoversion | 要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
+| skip | ssNoversion | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
 | filter | 字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 您可以在回應本文中指定下列欄位：<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul> | 否   |
 | groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以在回應本文中指定下列欄位：<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul><p/>如果您指定一個或多個 *groupby* 欄位，則您未指定的任何其他 *groupby* 欄位將在回應本文中有 **All** 值。 |  否  |
 
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 |------------|--------|-------------------------------------------------------|
 | 值      | 陣列  | 包含多人遊戲資料的物件陣列，其中每個物件代表指定的每日或每月期間的一組資料，並按指定的 **篩選** 和 **groupby** 值整理。 如需每個物件中的資料的詳細資訊，請參閱[每日多人遊戲分析](#daily-multiplayer-analytics) 和[每月多人遊戲分析](#monthly-multiplayer-analytics) 部分。     |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串會包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢有超過 10000 個資料列，就會傳回此值。 |
-| TotalCount | 整數    | 查詢之資料結果的資料列總數。 |
+| TotalCount | ssNoversion    | 查詢之資料結果的資料列總數。 |
 
 
 ### <a name="daily-multiplayer-analytics"></a>每日多人遊戲分析
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 
 | 值               | 類型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| 日期                | 字串 | 多人遊戲資料的日期。 |
+| date                | 字串 | 多人遊戲資料的日期。 |
 | applicationId       | 字串 | 您正在擷取多人遊戲資料之遊戲的 Store 識別碼。     |
 | applicationName       | 字串 |  您正在擷取多人遊戲資料之遊戲名稱。     |
 | market       | 字串 | 多人資料是來自 Microsoft Store 的兩個字母 ISO 3166 國碼 (地區碼)。       |
@@ -107,7 +107,7 @@ Authorization: Bearer <your access token>
 
 | 值               | 類型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| 日期                | 字串 | 多人遊戲資料之月份中的第一個日期。 |
+| date                | 字串 | 多人遊戲資料之月份中的第一個日期。 |
 | applicationId       | 字串 | 您正在擷取多人遊戲資料之遊戲的 Store 識別碼。     |
 | applicationName       | 字串 |  您正在擷取多人遊戲資料之遊戲名稱。     |
 | market       | 字串 | 多人資料是來自 Microsoft Store 的兩個字母 ISO 3166 國碼 (地區碼)。       |

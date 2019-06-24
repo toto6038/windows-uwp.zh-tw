@@ -6,12 +6,12 @@ ms.date: 01/3/2019
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 2561f18e2ac054c8b378b0c7c0a9689bebcc4140
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3b25283dbe8feff74ba994efba31c542f59171d9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611253"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317884"
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 的 Device Portal
 
@@ -21,12 +21,12 @@ ms.locfileid: "57611253"
 ### <a name="enable-device-portal"></a>啟用 Device Portal
 
 1. 開啟您的 HoloLens 並將裝置戴上。
-2. 做出[盛開](https://dev.windows.com/holographic/Gestures.html#Bloom)手勢來啟動主功能表。
-3. 凝視 [設定] 磚，並做出[空中點選](https://dev.windows.com/holographic/Gestures.html#Press_and_release)手勢。 做出第二次的空中點選，來將 App 放置於您的環境中。 當您放置 [設定] App 之後，該 App 便會啟動。
-4. 選取 [更新] 功能表項目。
-5. 選取 [適用於開發人員] 功能表項目。
-6. 啟用 [開發人員模式]。
-7. [向下捲動](https://dev.windows.com/holographic/Gestures.html#Navigation)並啟用 Device Portal。
+2. 做出[盛開](https://developer.microsoft.com/mixed-reality#Bloom)手勢來啟動主功能表。
+3. 凝視 [設定]  磚，並做出[空中點選](https://developer.microsoft.com/mixed-reality#Press_and_release)手勢。 做出第二次的空中點選，來將 App 放置於您的環境中。 當您放置 [設定] App 之後，該 App 便會啟動。
+4. 選取 [更新]  功能表項目。
+5. 選取 [適用於開發人員]  功能表項目。
+6. 啟用 [開發人員模式]  。
+7. [向下捲動](https://developer.microsoft.com/mixed-reality#Navigation)並啟用 Device Portal。
 
 
 ### <a name="pair-your-device"></a>配對您的裝置
@@ -51,7 +51,7 @@ ms.locfileid: "57611253"
 #### <a name="connect-to-an-emulator"></a>連線到模擬器 
 
 您也可以透過模擬器使用 Device Portal。 若要連線到 Device Portal，請使用工具列。 按一下這個圖示：
-- 開啟裝置入口網站：開啟 Windows Device Portal HoloLens os 在模擬器中。
+- 開啟裝置入口網站：在模擬器中開啟 HoloLens OS 的 Windows 裝置入口網站。
 
 #### <a name="create-a-username-and-password"></a>建立使用者名稱和密碼。 
 
@@ -100,7 +100,7 @@ ms.locfileid: "57611253"
 首頁將顯示下列資訊：
 - **裝置**狀態：監視裝置的健康狀況並報告嚴重錯誤。
 - **Windows 資訊**：顯示 HoloLens 的名稱，以及目前安裝的 Windows 版本。
-- [喜好設定] 區段包含下列設定：
+- [喜好設定]  區段包含下列設定：
     - **IPD**:設定 interpupillary 距離 (IPD)，也就是之間的距離，以公釐，使用者的 pupils 時直接長遠的中央之間。 此設定會立即生效。 預設值會在您設定裝置時自動計算。
     - **裝置名稱**:指派名稱給 HoloLens。 在變更此值之後，必須重新啟動裝置才能生效。 按一下 [儲存] 之後，將會有對話方塊詢問您是否要立即重新啟動裝置，或稍後再重新啟動。
     - **睡眠設定**:設定裝置進入睡眠狀態時它已插入電源之前，並在使用電池時的等待時間長度。
@@ -174,7 +174,7 @@ HoloLens 上的 [系統效能] 工具有額外 3 個可記錄的衡量標準。
 
 按一下或點選 [虛擬鍵盤] 下方的區域，來啟用傳送按鍵輸入到 HoloLens。 在 [輸入文字] 文字方塊中輸入，然後按一下或點選 [傳送] 來將按鍵輸入傳送到使用中的 App。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Windows Device Portal 概觀](device-portal.md)
 * [裝置入口網站核心 API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core) (所有 Windows 10 裝置通用的 API)

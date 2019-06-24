@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc9a6d89a143d8fd03d73dbd83b832ed9513ee2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9692a8ef21e9f62114b38c6bb5d15199b8c0e04a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644413"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318155"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>量身訂做的效果與使用 Windows UI 體驗
 
@@ -112,13 +112,13 @@ API 可以將現有的程式碼，以幾個簡單的步驟。
     }
     ```
 
-完整的範例程式碼都位於[Windows UI Github 儲存機制](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities)。
+完整的範例程式碼都位於[Windows UI Github 儲存機制](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 15063/CompCapabilities)。
 
 ## <a name="fast-vs-slow-effects"></a>快速與緩慢的效果
 
 根據從提供的意見反應[AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported)並[AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) CompositionCapabilities API 中的方法，應用程式可以決定要交換的昂貴或不受支援的效果他們選擇其他效果專為裝置進行最佳化。 已知是較大量的資源比其他部份效果，以及應該謹慎使用，並可以更自由地使用其他效果。 所有的效果，不過，照護應該時使用鏈結，而且在某些情況下為組合以動畫顯示可能會變更影響圖形的效能特性。 以下是一些經驗法則效能特性之個別的效果：
 
-- 已知有高的效能影響的效果如下所示-高斯模糊，陰影的遮罩、 BackDropBrush、 HostBackDropBrush，和圖層視覺化。 這些不建議使用低階裝置[（功能層級 9.1 9.3）](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)，並應該謹慎使用高階裝置上。
+- 已知有高的效能影響的效果如下所示-高斯模糊，陰影的遮罩、 BackDropBrush、 HostBackDropBrush，和圖層視覺化。 這些不建議使用低階裝置[（功能層級 9.1 9.3）](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)，並應該謹慎使用高階裝置上。
 - 與中度的效能影響的影響包括色彩矩陣，（亮度、 色彩、 飽和度和 Hue） 特定 Blend 效果 BlendModes 焦點、 SceneLightingEffect，和 （視案例而定） BorderEffect。 這些效果可能低結束裝置上時使用特定案例，但鏈結和製作動畫時，就應該使用照護。 建議您限制使用兩個或更少，並以動畫顯示轉換只。
 - 所有其他的效果很低的效能的影響，而且在所有的合理案例時建立動畫，並將鏈結中運作。
 

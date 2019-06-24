@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98bc1e93c918310b902c70709df1c2cc1b38a238
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e3e29dabf074eab59f6c788c139524f7dc2474df
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360849"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318323"
 ---
 # <a name="audio-video-and-camera"></a>音訊、視訊和相機
 
@@ -40,7 +40,7 @@ ms.locfileid: "66360849"
 | [螢幕擷取](screen-capture.md) | 說明如何使用 [Windows.Graphics.Capture 命名空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)，從顯示畫面或應用程式視窗取得畫面格來建立要建置共同作業及互動體驗的視訊串流或快照。 |
 
 ## <a name="see-also"></a>請參閱
-- [開發 UWP 應用程式](https://developer.microsoft.com/windows/develop)
+- [開發 UWP 應用程式](https://docs.microsoft.com/windows/uwp/develop/)
 
  
 

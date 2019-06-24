@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: b6fdc59e8a7203a3bb8c6ad79adabd446b884639
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bfed00cf4866d79d4ac3097026cc09c70f9327cd
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597713"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318172"
 ---
 # <a name="relation-based-animations"></a>關聯式動畫
 
@@ -55,7 +55,7 @@ Expressions 也支援一組關鍵字 - 只有在 ExpressionAnimation 系統中�
 有兩個選項可在 UWP 應用程式中建立 Expressions：
 
 1. 透過正式、公用 API 將方程式建置為字串。
-1. 透過開放原始碼 ExpressionBuilder 工具，在型別安全物件模型中建置方程式。 請參閱 [Github 來源和文件](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/ExpressionBuilder)。
+1. 透過開放原始碼 ExpressionBuilder 工具，在型別安全物件模型中建置方程式。 請參閱 [Github 來源和文件](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder)。
 
 針對本文的目的，我們將使用 ExpressionBuilder 定義 Expressions。
 

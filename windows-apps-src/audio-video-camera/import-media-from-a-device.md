@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ec16f9810a0802fc319b3ebac679cc4cb2f8334
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a4302568b398c76198e241aeb37980165e1bb864
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361717"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318360"
 ---
 # <a name="import-media-from-a-device"></a>從裝置匯入媒體
 
@@ -50,7 +50,7 @@ ms.locfileid: "66361717"
 
 在一般的媒體匯入案例中，您會向使用者顯示可匯入媒體項目的清單。清單上可選擇的媒體數目可能會很龐大，且您通常會想要顯示每個媒體項目的縮圖。 因此，此範例會使用三個協助程式類別，來隨著使用者向下捲動清單以累加的方式將項目載入 ListView 控制項。
 
-* **IncrementalLoadingBase** 類別 - 實作 [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN)、[**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading) 及 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx) 以提供基礎累加載入行為。
+* **IncrementalLoadingBase** 類別 - 實作 [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN)、[**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading) 及 [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN) 以提供基礎累加載入行為。
 * **GeneratorIncrementalLoadingClass** 類別 - 提供累加載入基底類別的實作。
 * **ImportableItemWrapper** 類別 - 包覆 [**PhotoImportItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Import.PhotoImportItem) 類別的精簡型包裝函式，以為每個已匯入項目的縮圖影像新增可繫結的 [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 屬性。
 

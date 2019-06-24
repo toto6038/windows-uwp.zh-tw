@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fb07dd9aec475566940dbf98ae6bd1c5f9c1337
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604393"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317331"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP 應用程式中的注視互動與眼球追蹤
 
@@ -29,7 +29,7 @@ ms.locfileid: "57604393"
 
 **重要的 Api**:[Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)， [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview)， [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview)， [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 注視輸入是一種互動與使用 Windows 和 UWP 應用程式的強大方式，對於患有神經肌肉疾病（如 ALS）和其他肌肉或神經功能受損的使用者來說，它是特別有用的輔助技術。
 
@@ -44,7 +44,7 @@ ms.locfileid: "57604393"
 
 此外，如果您的應用程式收集、儲存或傳輸眼球追蹤資料，則您必須在應用程式的隱私權聲明中說明，並遵守 [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) 和 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies) 中 **個人資訊** 的所有其他需求。
 
-## <a name="setup"></a>設定
+## <a name="setup"></a>安裝程式
 
 若要在 UWP 應用程式中使用注視輸入 API，您會需要： 
 
@@ -66,7 +66,7 @@ ms.locfileid: "57604393"
 
 在此範例中，我們會示範如何在 UWP 應用程式中追蹤使用者的注視，以及使用基本點擊測試的計時函式來表示他們如何維持他們的注視集中在特定元素上。
 
-小橢圓形用來顯示應用程式檢視區中的注視點所在位置，而 [Windows 社群工具組](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/) 的 [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar) 是隨機放置在畫布上。 在進度列上偵測到注視焦點時，開始使用計時器，且進度列達到 100% 時隨機將進度列移至畫布上。
+小橢圓形用來顯示應用程式檢視區中的注視點所在位置，而 [Windows 社群工具組](https://docs.microsoft.com/windows/communitytoolkit/) 的 [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) 是隨機放置在畫布上。 在進度列上偵測到注視焦點時，開始使用計時器，且進度列達到 100% 時隨機將進度列移至畫布上。
 
 ![使用計時器範例的注視追蹤](images/gaze/gaze-input-timed2.gif)
 
@@ -405,7 +405,7 @@ ms.locfileid: "57604393"
 
     分別在 `GazeEntered` 與 `GazeExited` 顯示或隱藏注視追蹤橢圓形。
 
-    在 `GazeMoved` 中，我們根據 [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) 的 [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) 所提供的 [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) 移除注視追蹤橢圓形。 我們也在 [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar) 上管理注視焦點計時器，其觸發重新放置進度列。 如需詳細資訊，請參閱下一步。
+    在 `GazeMoved` 中，我們根據 [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) 的 [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) 所提供的 [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) 移除注視追蹤橢圓形。 我們也在 [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) 上管理注視焦點計時器，其觸發重新放置進度列。 如需詳細資訊，請參閱下一步。
 
     ```csharp
     /// <summary>
@@ -596,11 +596,11 @@ ms.locfileid: "57604393"
     }
     ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 ### <a name="resources"></a>資源
 
-- [Windows 社群工具組視線程式庫](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
+- [Windows 社群工具組視線程式庫](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>主題範例
 

@@ -4,21 +4,21 @@ title: 使用付款要求 API 簡化付款
 ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10 uwp，付款要求
-ms.openlocfilehash: a40b8265e3445319bd7baa530df0f9e9eaae0f31
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: f055bacbddae88cdbd100b460d933682b3c78a13
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63804501"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320055"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>使用付款要求 API 簡化付款
 付款所要求的 API 用於 UWP 應用程式依據[W3C 付款要求 API 規格](https://w3c.github.io/browser-payment-api/)。它可讓您能夠簡化您的 UWP 應用程式中的簽出程序。 使用者可以透過簽出加快速度，藉由使用付款選項，以及送貨地址已儲存以 Microsoft 帳戶。 您可以增加轉換率，並減少資料外洩的風險，因為付款資訊會 token 化。 從 Windows 10 Creators Update 開始，使用者可以使用他們的已儲存的付款選項，輕鬆地支付跨 UWP 應用程式中的體驗。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 在您開始使用付款要求 API 之前，有幾件事，您必須執行或的注意。
 
 ### <a name="getting-a-merchant-id"></a>取得商家識別碼
-付款要求程序的一部分，Microsoft 會從您的服務提供者要求代表您的付款語彙基元。 因此您可以開始使用 API 之前，我們需要您的授權，來要求這些權杖。  您必須遵循幾個步驟來註冊賣方帳戶，並提供必要的授權。 若要這樣做，請前往[Microsoft 賣方 Center](https://seller.microsoft.com/en-us/dashboard/registration/seller/?accountprogram=uwp)。 之後您已經這樣做，請將複製產生的 merchant ID，從您的應用程式建構付款要求時的合作夥伴中心。 然後，當您的應用程式提交付款要求時，您會收到付款的語彙基元從您提交您的付款，您將需要的處理器。
+付款要求程序的一部分，Microsoft 會從您的服務提供者要求代表您的付款語彙基元。 因此您可以開始使用 API 之前，我們需要您的授權，來要求這些權杖。  您必須遵循幾個步驟來註冊賣方帳戶，並提供必要的授權。 若要這樣做，請前往[Microsoft 賣方 Center](https://partner.microsoft.com/dashboard/registration/seller?accountprogram=uwp)。 之後您已經這樣做，請將複製產生的 merchant ID，從您的應用程式建構付款要求時的合作夥伴中心。 然後，當您的應用程式提交付款要求時，您會收到付款的語彙基元從您提交您的付款，您將需要的處理器。
 
 ### <a name="geographic-restrictions-and-language-support"></a>地理限制和語言支援
 付款要求 API 僅供美國為基礎的企業在美國境內的處理交易。
@@ -80,5 +80,5 @@ ms.locfileid: "63804501"
 - [Windows.ApplicationModel.Payments 參考文件](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.payments)
 - [在 GitHub 上 UWP 購物應用程式範例](https://github.com/Microsoft/Windows-appsample-shopping)
 - [W3C 付款要求 API 規格](https://www.w3.org/TR/payment-request/)
-- [付款要求 API ](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/device/payment-request-api)
+- [付款要求 API ](https://docs.microsoft.com/microsoft-edge/dev-guide/windows-integration/payment-request-api)
 

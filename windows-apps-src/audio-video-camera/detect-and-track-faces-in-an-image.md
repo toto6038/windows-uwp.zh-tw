@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f1be694be412bbf0a4e076e8ac5753eefda74c55
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: be6780851c05f59abc373318f0746c8e436b74ac
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360904"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318411"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>偵測影像或影片中的臉部
 
@@ -45,7 +45,7 @@ ms.locfileid: "66360904"
 
 [!code-cs[Decode](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
 
-在目前版本中，**FaceDetector** 類別僅支援 Gray8 或 Nv12 的影像。 **SoftwareBitmap** 類別提供 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) 方法，可將點陣圖從某一種格式轉換成其他格式。 這個範例會將來源影像轉換為 Gray8 像素格式 (如果還不是這種格式)。 如有需要，您可以使用 [**GetSupportedBitmapPixelFormats**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.getsupportedbitmappixelformats) 和 [**IsBitmapPixelFormatSupported**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.isbitmappixelformatsupported) 方法，在執行階段判斷是否支援某種像素格式 (假設將在未來版本中擴充支援的格式組合)。
+在目前版本中，**FaceDetector** 類別僅支援 Gray8 或 Nv12 的影像。 **SoftwareBitmap** 類別提供 [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 方法，可將點陣圖從某一種格式轉換成其他格式。 這個範例會將來源影像轉換為 Gray8 像素格式 (如果還不是這種格式)。 如有需要，您可以使用 [**GetSupportedBitmapPixelFormats**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.getsupportedbitmappixelformats) 和 [**IsBitmapPixelFormatSupported**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.isbitmappixelformatsupported) 方法，在執行階段判斷是否支援某種像素格式 (假設將在未來版本中擴充支援的格式組合)。
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
@@ -91,7 +91,7 @@ ms.locfileid: "66360904"
 
 如同 **FaceDetector**，**FaceTracker** 支援一組有限的像素格式。 這個範例會在提供的畫面格式不是 Nv12 格式時放棄臉部偵測。
 
-呼叫 [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) 來抓取 [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) 物件清單，這類物件代表畫面中的臉部。 具備臉部清單之後，就可以使用上述針對臉部偵測所說明的相同方式來顯示它們。 請注意，由於臉部追蹤協助程式方法不會在 UI 執行緒上呼叫，因此，您必須在呼叫 [**CoredDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 中進行任何 UI 更新。
+呼叫 [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) 來抓取 [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) 物件清單，這類物件代表畫面中的臉部。 具備臉部清單之後，就可以使用上述針對臉部偵測所說明的相同方式來顯示它們。 請注意，追蹤 helper 方法的圖面不是在 UI 執行緒上呼叫，您必須進行的呼叫中的任何 UI 更新[ **CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)。
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 

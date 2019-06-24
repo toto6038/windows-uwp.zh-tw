@@ -7,16 +7,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d3f72e563f6463d55af40acae74d061b5030aa9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d66962971844f1983b527c6cea436dba03d63b8b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371614"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322335"
 ---
 # <a name="move-from-ios-to-uwp"></a>從 iOS 移到 UWP
 
-如果您是 iOS 開發人員，並想知道如何擴展您的使用者基礎以包含 Windows 10 和通用 Windows 平台 (UWP)，有一系列與日俱增的工具可以協助您。 您可以採取的方式，將視您正在處理的 App 類型 (遊戲、生活型態、企業等等)，以及您開發程序的進度而定。 例如，一個已經完成或快要完成，且非常依賴 OpenGL 或 Cocos2D 的遊戲，非常適合使用[適用於 iOS 的 Windows 橋接器](https://dev.windows.com/bridges/ios)，而如果您正在計畫針對小型企業的跨平台 App，您應該考慮使用 [Xamarin.Forms](https://www.xamarin.com/forms)。 如果您已在跨平台工具 (例如 Unity) 中撰寫 App，[發佈到 Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) 的流程將會非常直覺。
+如果您是 iOS 開發人員，並想知道如何擴展您的使用者基礎以包含 Windows 10 和通用 Windows 平台 (UWP)，有一系列與日俱增的工具可以協助您。 您可以採取的方式，將視您正在處理的 App 類型 (遊戲、生活型態、企業等等)，以及您開發程序的進度而定。 例如，一個已經完成或快要完成，且非常依賴 OpenGL 或 Cocos2D 的遊戲，非常適合使用[適用於 iOS 的 Windows 橋接器](https://developer.microsoft.com/windows/bridges/ios)，而如果您正在計畫針對小型企業的跨平台 App，您應該考慮使用 [Xamarin.Forms](https://docs.microsoft.com/xamarin/xamarin-forms/)。 如果您已在跨平台工具 (例如 Unity) 中撰寫 App，[發佈到 Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) 的流程將會非常直覺。
 
 ## <a name="why-windows"></a>為什麼使用 Windows？
 
@@ -34,4 +34,4 @@ ms.locfileid: "66371614"
 
 **設計人員和開發人員**
 * [建置適用於所有 Windows 裝置的通用 Windows 應用程式](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [下載設計資產以供 UWP 應用程式](https://dev.windows.com/design/assets)
+* [下載設計資產以供 UWP 應用程式](https://docs.microsoft.com/windows/uwp/design/downloads/index)

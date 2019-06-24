@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 26378473803b8963c0ca85eb414bae798f9607e4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 63772a4ee9ea98ca6a45dde45b728d4fedd988d7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371571"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320491"
 ---
 # <a name="asynchronous-programming"></a>非同步程式設計
 本主題描述非同步程式設計在通用 Windows 平台 (UWP) 和其表示在C#，Microsoft Visual Basic.NET C++，和 JavaScript。
@@ -71,5 +71,5 @@ Promise 物件代表會在未來完成的值。 在 UWP 中，您會從 Factory 
 
 ## <a name="related-topics"></a>相關主題
 * [在 C# 或 Visual Basic 中呼叫非同步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)
-* [非同步程式設計使用 Async 和 Await （C# 和 Visual Basic）](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
+* [非同步程式設計使用 Async 和 Await （C# 和 Visual Basic）](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hh191443(v=vs.110))
 * [棋功能案例範例： 非同步程式碼](https://docs.microsoft.com/previous-versions/windows/apps/jj712233(v=win.10))

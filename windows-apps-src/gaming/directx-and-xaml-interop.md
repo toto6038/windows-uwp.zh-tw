@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, XAML 互通性
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a7b9800bbcc9746db03eae50a99b701bfbfa815
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad03a86ba18f11d8d63c2c98649e7f159f3d4f52
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368872"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321291"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 與 XAML 互通性
 
@@ -32,7 +32,7 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
 若要實作自訂 XAML 和 DirectX 互通性，您需要了解這兩個概念：
 
 -   共用表面是可調整大小的顯示區域，由 XAML 所定義，您可以使用 DirectX 直接在表面繪圖 (使用 [Windows::UI::Xaml::Media::ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagesource) 類型)。 針對共用表面，您不需控制新內容出現在畫面上的確切時間。 反之，共用表面的更新會同步處理至 XAML 架構的更新。
--   [交換鏈結](https://msdn.microsoft.com/library/windows/desktop/bb206356(v=vs.85).aspx)代表以最低延遲來顯示圖形的一組緩衝區。 一般來說，交換鏈結會以有別於 UI 執行序的方式，以每秒 60 畫面格的速度更新。 不過，交換鏈結會使用更多記憶體和 CPU 資源來支援快速更新，且較不易於使用，因為您必須管理多個執行序。
+-   [交換鏈結](https://docs.microsoft.com/windows/desktop/direct3d9/what-is-a-swap-chain-)代表以最低延遲來顯示圖形的一組緩衝區。 一般來說，交換鏈結會以有別於 UI 執行序的方式，以每秒 60 畫面格的速度更新。 不過，交換鏈結會使用更多記憶體和 CPU 資源來支援快速更新，且較不易於使用，因為您必須管理多個執行序。
 
 請考量您使用 DirectX 的目的。 用來繪製或以動畫製作在顯示視窗範圍內的單一控制項？ 是否會包含需要即時轉譯和控制的輸出，就像在遊戲中一樣？ 如果是這樣，您可能需要實作交換鏈結。 否則，使用共用表面應該就足夠。
 
@@ -53,7 +53,7 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
 
 1.  藉由傳遞 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 建構函式的高度和寬度，以定義共用表面的大小。 您也可以指出表面是否需要 Alpha (不透明度) 支援。
 
-    例如: 
+    例如:
 
     `SurfaceImageSource^ surfaceImageSource = ref new SurfaceImageSource(400, 300);`
 
@@ -72,12 +72,12 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
         (void **)&m_sisNativeWithD2D);
     ```
 
-3.  藉由先呼叫 [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 和 [D2D1CreateDevice](https://msdn.microsoft.com/library/windows/desktop/hh404272(v=vs.85).aspx)，接著將裝置和內容傳遞到 [ISurfaceImageSourceNativeWithD2D::SetDevice](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice)，以建立 DXGI 和 D2D 裝置。 
+3.  藉由先呼叫 [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 和 [D2D1CreateDevice](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nf-d2d1_1-d2d1createdevice)，接著將裝置和內容傳遞到 [ISurfaceImageSourceNativeWithD2D::SetDevice](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice)，以建立 DXGI 和 D2D 裝置。 
 
     > [!NOTE]
     > 如果您將會從背景執行緒繪製到 **SurfaceImageSource**，您也需要確保 DXGI 裝置已啟用多執行緒存取。 基於效能考量，只有在從背景執行緒繪圖時，才必須執行此動作。
 
-    例如: 
+    例如:
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
@@ -180,7 +180,7 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
 
 下列是在程式碼後置中建立和更新 [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 物件的基本處理程序：
 
-1.  根據您要的大小建立 [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 執行個體。 例如: 
+1.  根據您要的大小建立 [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 執行個體。 例如:
 
     ```cpp
     VirtualSurfaceImageSource^ virtualSIS = 
@@ -212,7 +212,7 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
     > [!NOTE]
     > 如果您將會從背景執行緒繪製到 **VirtualSurfaceImageSource**，您也需要確保 DXGI 裝置已啟用多執行緒存取。 基於效能考量，只有在從背景執行緒繪圖時，才必須執行此動作。
 
-    例如: 
+    例如:
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;

@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e177f4715d549ce3ef64534e0fc28d2fc3a9fe0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: aacf51cc320a0835f906e91806b686a88907640e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359944"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317623"
 ---
 # <a name="optimize-your-xaml-markup"></a>最佳化您的 XAML 標記
 
@@ -350,7 +350,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 ### <a name="borders"></a>框線
 
-使用 [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.) 元素以在物件周圍繪製框線。 在這個範例中，[Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 是做為 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 周圍的臨時框線。 但是會過度繪製中心儲存格中的所有像素。
+使用 [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) 元素以在物件周圍繪製框線。 在這個範例中，[Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 是做為 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 周圍的臨時框線。 但是會過度繪製中心儲存格中的所有像素。
 
 **效率不佳。**
 

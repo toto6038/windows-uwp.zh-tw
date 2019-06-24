@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d4150e7296badd3d31a9aacc7becd3d849f6affd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4cfd970b3ca070218adcea86612016e567df3879
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360416"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318014"
 ---
 # <a name="my-people-notifications"></a>朋友圈通知
 
@@ -76,9 +76,9 @@ experienceType=”shoulderTap”
 
 > [!NOTE]
 > 如果您的應用程式使用 [ContactStore API](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) 並使用 [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 屬性將儲存在 PC 上的連絡人與遠端儲存的連絡人連結在一起，則 RemoteId 屬性的值必須是固定且唯一的。 這表示遠端識別碼必須能一致地識別單一使用者帳戶，且應包含唯一的標記以保證不會與 PC 上其他連絡人的遠端識別碼衝突，包括其他應用程式擁有的連絡人。
-> 如果您應用程式使用的遠端識別碼不保證固定且唯一，您可以使用 [RemoteIdHelper 類別](https://msdn.microsoft.com/en-us/library/windows/apps/jj207024(v=vs.105).aspx#BKMK_UsingtheRemoteIdHelperclass)，先將唯一標記新增至您所有的遠端識別碼，再新增到系統。 或者您可以選擇完全不使用 RemoteId 屬性，而是建立自訂延伸屬性，讓連絡人的遠端識別碼儲存在此屬性中。
+> 如果您應用程式使用的遠端識別碼不保證固定且唯一，您可以使用 [RemoteIdHelper 類別](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass)，先將唯一標記新增至您所有的遠端識別碼，再新增到系統。 或者您可以選擇完全不使用 RemoteId 屬性，而是建立自訂延伸屬性，讓連絡人的遠端識別碼儲存在此屬性中。
 
-除了第二個繫結與裝載外，您必須在第一個繫結包含另一個裝載，以做為遞補快顯通知  若強制還原回一般通知時將使用該通知 (在 [這份文件的結尾](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)進一步解釋)。
+除了第二個繫結與裝載外，您必須在第一個繫結包含另一個裝載，以做為遞補快顯通知 若強制還原回一般通知時將使用該通知 (在 [這份文件的結尾](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)進一步解釋)。
 
 ## <a name="creating-the-notification"></a>建立通知
 您可以如同建立[快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)般的建立朋友圈通知範本。

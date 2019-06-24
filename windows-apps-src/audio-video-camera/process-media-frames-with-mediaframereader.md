@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e9db0960070c77485fbe8b2f3231f7ce8035b5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2b77fb147ab614b19993700d5d99572f0247d54e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361486"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318274"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理媒體畫面
 
@@ -93,7 +93,7 @@ ms.locfileid: "66361486"
 ## <a name="set-the-preferred-format-for-the-frame-source"></a>針對畫面來源設定慣用的格式
 若要設定畫面來源的慣用格式，您必須取得代表來源的 [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) 物件。 您可以透過存取已初始化 **MediaCapture** 物件的 [**Frames**](https://docs.microsoft.com/previous-versions/windows/apps/phone/jj207578(v=win.10)) 字典，指定您想要使用的畫面來源的識別碼來取得此物件。 這就是為什麼我們在選取畫面來源群組時會儲存 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 物件的原因。
 
-[  **MediaFrameSource.SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) 屬性包含一份 [**MediaFrameFormat**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat) 物件的清單，其中說明了畫面來源的支援格式。 使用 **Where** Linq 延伸方法，根據所需的屬性選取格式。 在這個範例中，會選取一個寬度為 1080 像素，並且可提供 32 位元 RGB 格式畫面的格式。 **FirstOrDefault** 延伸方法會選取清單中的第一個項目。 如果選取的格式為 null，那麼畫面來源就不支援要求的格式。 如果是支援的格式，您可透過呼叫 [**SetFormatAsync**](https://developer.microsoft.com/windows/apps/develop)，要求來源使用此格式。
+[  **MediaFrameSource.SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) 屬性包含一份 [**MediaFrameFormat**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat) 物件的清單，其中說明了畫面來源的支援格式。 使用 **Where** Linq 延伸方法，根據所需的屬性選取格式。 在這個範例中，會選取一個寬度為 1080 像素，並且可提供 32 位元 RGB 格式畫面的格式。 **FirstOrDefault** 延伸方法會選取清單中的第一個項目。 如果選取的格式為 null，那麼畫面來源就不支援要求的格式。 如果是支援的格式，您可透過呼叫 [**SetFormatAsync**](https://docs.microsoft.com/windows/uwp/develop/)，要求來源使用此格式。
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
@@ -125,13 +125,13 @@ ms.locfileid: "66361486"
 
 [!code-cs[ImageElementSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetImageElementSource)]
 
-現在就可以實作 **FrameArrived** 事件處理常式。 呼叫這個處理常式時，*sender* 參數包含對引發事件的 **MediaFrameReader** 物件的參考。 在此物件上呼叫 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) 以嘗試取得最新畫面。 如同名稱所示，**TryAcquireLatestFrame** 可能無法成功傳回畫面。 因此，當您存取 VideoMediaFrame 和 SoftwareBitmap 屬性時，請確定針對 null 進行測試。 這個範例是 null 條件式運算子嗎 ?  是用來存取 **SoftwareBitmap**，然後會檢查擷取的物件是否為 null。
+現在就可以實作 **FrameArrived** 事件處理常式。 呼叫這個處理常式時，*sender* 參數包含對引發事件的 **MediaFrameReader** 物件的參考。 在此物件上呼叫 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) 以嘗試取得最新畫面。 如同名稱所示，**TryAcquireLatestFrame** 可能無法成功傳回畫面。 因此，當您存取 VideoMediaFrame 和 SoftwareBitmap 屬性時，請確定針對 null 進行測試。 這個範例是 null 條件式運算子嗎 ? 是用來存取 **SoftwareBitmap**，然後會檢查擷取的物件是否為 null。
 
-**Image** 控制項可以僅顯示預乘或無 Alpha 的 BRGA8 格式影像。 如果送達的畫面不是該格式，會使用靜態方法 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) 將軟體點陣圖轉換成正確的格式。
+**Image** 控制項可以僅顯示預乘或無 Alpha 的 BRGA8 格式影像。 如果送達的畫面不是該格式，會使用靜態方法 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 將軟體點陣圖轉換成正確的格式。
 
 接下來，[**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange?redirectedfrom=MSDN#System_Threading_Interlocked_Exchange__1___0____0_) 方法會用來交換送達點陣圖的參考與後端緩衝區點陣圖。 這個方法會在安全執行緒的不可部分完成作業中交換這些參考。 交換之後，會處置舊的後端緩衝區影像 (現在在 *softwareBitmap* 變數中) 以清除其資源。
 
-接下來，會使用與 **Image** 元素相關聯的 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 來建立將透過呼叫 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 在 UI 執行緒上執行的工作。 因為非同步工作將會在工作中執行，所以 lambda 運算式會傳遞到使用 *async* 關鍵字宣告的 **RunAsync**。
+接下來，會使用與 **Image** 元素相關聯的 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 來建立將透過呼叫 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 在 UI 執行緒上執行的工作。 因為非同步工作將會在工作中執行，所以 lambda 運算式會傳遞到使用 *async* 關鍵字宣告的 **RunAsync**。
 
 在工作中，會檢查 *_taskRunning* 變數以確定一次只執行工作的一個執行個體。 如果工作尚未執行， *_taskRunning* 會設為 true，以避免再次執行工作。 在 *while* 迴圈中，會呼叫 **Interlocked.Exchange** 來從後端緩衝區複製到暫存 **SoftwareBitmap** 中，直到後端緩衝區影像為 null。 每次填入暫存點陣圖，**Image** 的　**Source** 屬性會轉換成 **SoftwareBitmapSource**，然後呼叫 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 來設定影像來源。
 

@@ -6,21 +6,21 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 類別, 子類別, 內容類型, 分類, 類型
 ms.localizationpriority: medium
-ms.openlocfilehash: 227119c265565e6f2f7965e53bb57f74a5c619f1
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 4d7f3d01122bf4311e8f7b3a4a166478d5ba0ea6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787167"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320046"
 ---
 # <a name="category-and-subcategory-table"></a>類別與子類別表格
 
 
 將您的 app 列在正確的類別與子類別中，可協助客戶找到您的 app，並對 app 有更深入的了解。
 
-您必須選擇最能說明您 app 的類別。 您可以選擇子類別 (如果有的話)  如果您不確定要使用哪個類別或子類別，或找不到完全符合的類別，請選擇您認為客戶在嘗試搜尋類似您的 app 時最可能搜尋的類別。
+您必須選擇最能說明您 app 的類別。 您可以選擇子類別 (如果有的話) 如果您不確定要使用哪個類別或子類別，或找不到完全符合的類別，請選擇您認為客戶在嘗試搜尋類似您的 app 時最可能搜尋的類別。
 
-如果您選擇**遊戲**分類中，您必須選取至少一個子類別目錄 (稱為*內容類型*遊戲)。 您可以選擇適合您的遊戲的多個內容類型。 請注意，為了發佈遊戲給 Xbox 上的客戶，您必須啟用 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators)或通過[概念核准](../gaming/concept-approval.md)程序)。 
+如果您選擇**遊戲**分類中，您必須選取至少一個子類別目錄 (稱為*內容類型*遊戲)。 您可以選擇適合您的遊戲的多個內容類型。 請注意，為了發佈遊戲給 Xbox 上的客戶，您必須啟用 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)或通過[概念核准](../gaming/concept-approval.md)程序)。 
 
 > [!IMPORTANT] 
 > 如果您以 **\[遊戲\]** 類別發佈應用程式，您將無法在新提交中選擇不同的類別，必須繼續以 **\[遊戲\]** 類別發佈 (不過您可以在新提交中變更內容類型選項)。 同樣地，更新先前以不同類別發佈的應用程式時，您也不能選擇 **\[遊戲\]** 類別。
@@ -47,7 +47,7 @@ Microsoft Store 可以組織應用程式，分成下列類別與子類別。
   </tr>
   <tr>
     <td>商務</td>
-    <td>會計 + 財務 <br> 共同作業 <br> CRM <br> 資料 + 分析 <br> 檔案管理 <br> 庫存 + 物流  <br> 法務 + 人力資源 <br> 專案管理 <br> 遠端桌面 <br> 銷售 + 行銷 <br> 時間 + 費用</td>
+    <td>會計 + 財務 <br> 共同作業 <br> CRM <br> 資料 + 分析 <br> 檔案管理 <br> 庫存 + 物流 <br> 法務 + 人力資源 <br> 專案管理 <br> 遠端桌面 <br> 銷售 + 行銷 <br> 時間 + 費用</td>
   </tr>
   <tr>
     <td>開發人員工具</td>

@@ -6,16 +6,16 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10 uwp 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: 38c9a40dbe1a46aa125c76cd1fcc88a84685c8cc
-ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
+ms.openlocfilehash: a28c344ed7c8645f3788719185aac71c7a036d5c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67235165"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317409"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
-[傳統型橋接器應用程式](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)是的 Windows 桌面應用程式轉換成使用的通用 Windows 平台 (UWP) 應用程式[傳統型橋接器](https://developer.microsoft.com/en-us/windows/bridges/desktop)。 轉換之後，Windows 傳統型應用程式就會以目標為 Windows 10 Desktop 的 UWP app 套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
+[傳統型橋接器應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)是的 Windows 桌面應用程式轉換成使用的通用 Windows 平台 (UWP) 應用程式[傳統型橋接器](https://developer.microsoft.com/en-us/windows/bridges/desktop)。 轉換之後，Windows 傳統型應用程式就會以目標為 Windows 10 Desktop 的 UWP app 套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
 
 ## <a name="required-versus-optional-tests"></a>必要與選擇性測試
 Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，並不會用來評估您的應用程式在 Microsoft Store 上架期間。 我們建議您調查這些測試結果，以產生更佳品質的應用程式。 市集上架的整體成功/失敗條件是由必要測試所決定，而非這些選擇性測試。
@@ -40,7 +40,7 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 運用各式各樣的通用 Windows 平台 API，可以增強已轉換的傳統型應用程式。 此測試會檢查應用程式中的 UWP 二進位檔案未呼叫非 UWP API。 UWP 二進位檔案已設定**AppContainer**旗標。
 
 **更正動作**  
-請參閱[UWP bridge 桌面：應用程式擴充功能](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-extensions)以了解這些延伸模組，以及如何正確使用它們。 
+請參閱[UWP bridge 桌面：應用程式擴充功能](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions)以了解這些延伸模組，以及如何正確使用它們。 
 
 ### <a name="3-debug-configuration-test"></a>3.偵錯設定測試
 這項測試會確認 appx 不是偵錯組建。
@@ -118,14 +118,14 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 影像 {image name} 不是有效的影像檔。  | 確認所有應用程式影像都遵守適當的檔案格式類型限制。 在實際訊息中，{image name} 包含無效的影像名稱。 
 影像 "BadgeLogo" 在位置 (x, y) 的 ABGR 值 {value} 無效。 像素必須是白色 (##FFFFFF) 或透明 (00######)  | 徽章標誌是出現在徽章通知旁邊的影像，用以在鎖定畫面識別應用程式。 這個影像必須為單色 (只能包含白色和透明像素)。 在實際訊息中，{value} 包含影像中無效的色彩值。 
 影像 "BadgeLogo" 在位置 (x, y) 的 ABGR 值 {value} 對於高對比白色影像無效。 像素必須是 (##2A2A2A) 或較深，或透明 (00######)。  | 徽章標誌是出現在徽章通知旁邊的影像，用以在鎖定畫面識別應用程式。 因為在高對比白色中，徽章標誌會出現在白色背景上，所以它必須是正常徽章標誌的深色版本。 在高對比白色中，徽章標誌只能包含比 (##2A2A2A) 深的像素或透明。 在實際訊息中，{value} 包含影像中無效的色彩值。 
-影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。  | 如需詳細資訊，請參閱[回應式設計](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)和[應用程式資源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
+影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。  | 如需詳細資訊，請參閱[回應式設計](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)和[應用程式資源](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)的指南。 
 套件缺少 "resources.pri" 檔案。  | 如果您的 app 資訊清單中有可當地語系化的內容，app 套件中務必包含有效的 resources.pri 檔案。 
 "resources.pri" 檔案必須包含資源對應，且名稱符合套件名稱 {package full name}  | 如果資訊清單已變更，而 resources.pri 中的資源對應名稱不再符合資訊清單中的套件名稱，就會發生這個錯誤。 在實際訊息中，{package full name} 包含 resources.pri 必須包含的套件名稱。 若要更正此錯誤，您需要重建 resources.pri，最簡單的方式就是重建 app 的套件。 
 "resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這對於您要透過 Microsoft Store 散發的應用程式。 Resources.pri 透過 Microsoft Store 散發的應用程式根目錄中的應用程式的套件，並包含應用程式支援的所有語言參考。 
 字串 {string} 不符合 {number} 個字元的長度上限限制。  | 請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。 
 字串 {string} 的開頭/結尾不得具有空白字元。  | 應用程式資訊清單中的元素結構描述不允許前後有空白字元。 在實際訊息中，{string} 會以有錯誤的字串取代。 確定 resources.pri 中的資訊清單欄位沒有任何當地語系化的值前後有空白字元。 
 字串必須為非空白 (長度大於零)  | 如需詳細資訊，請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
-"resources.pri" 檔案中沒有指定預設資源。  | 如需詳細資訊，請參閱 [應用程式資源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 在預設建置組態中，當產生套件組合、將其他資源放在資源套件中時，Visual Studio 只會在 app 套件中包含縮放比例-200 影像資源。 請確定您包含縮放比例-200 影像資源，或將您的專案設定為包含您所擁有的資源。 
+"resources.pri" 檔案中沒有指定預設資源。  | 如需詳細資訊，請參閱 [應用程式資源](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)的指南。 在預設建置組態中，當產生套件組合、將其他資源放在資源套件中時，Visual Studio 只會在 app 套件中包含縮放比例-200 影像資源。 請確定您包含縮放比例-200 影像資源，或將您的專案設定為包含您所擁有的資源。 
 "resources.pri" 檔案中沒有指定資源值。  | 請確定 app 資訊清單會在 resource.pri 中定義有效的資源。 
 影像檔 {filename} 必須小於 204800 個位元組。  | 請降低所指示之影像的大小。 
 {filename} 檔案不應包含反向對應區段。  | 若呼叫 makepri.exe 時在 Visual Studio「F5 偵錯」期間產生反向對應，則可藉由在產生 pri 檔案時，執行 makepri.exe 但不加上 /m 參數來移除它。 

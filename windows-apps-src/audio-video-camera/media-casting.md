@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2318d873a55b4134cf36eda91b57866e14b6b3a7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 50f588caaf36d9a2a74222029e17785663cf3953
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361724"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318301"
 ---
 # <a name="media-casting"></a>媒體傳播
 
@@ -66,14 +66,14 @@ ms.locfileid: "66361724"
 
 [!code-xml[CastPickerButton](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetCastPickerButton)]
 
-在按鈕的 **Click** 事件處理常式中，呼叫 [**TransformToVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.)，以取得相對於另一個元素的 UI 元素轉換。 在這個範例中，轉換是指傳播選擇器按鈕的位置，相對於應用程式視窗的視覺化根目錄。 呼叫 [**CastingDevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Media.Casting.CastingDevicePicker) 物件的 [**Show**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevicepicker.show) 方法，以啟動傳播選擇器對話方塊。 指定傳播選擇器按鈕的位置和尺寸，讓系統可以從使用者按下的按鈕帶出對話方塊。
+在按鈕的 **Click** 事件處理常式中，呼叫 [**TransformToVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transformtovisual)，以取得相對於另一個元素的 UI 元素轉換。 在這個範例中，轉換是指傳播選擇器按鈕的位置，相對於應用程式視窗的視覺化根目錄。 呼叫 [**CastingDevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Media.Casting.CastingDevicePicker) 物件的 [**Show**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevicepicker.show) 方法，以啟動傳播選擇器對話方塊。 指定傳播選擇器按鈕的位置和尺寸，讓系統可以從使用者按下的按鈕帶出對話方塊。
 
 [!code-cs[CastPickerButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
 
 在 **CastingDeviceSelected** 事件處理常式中，呼叫事件引數的 [**SelectedCastingDevice**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdeviceselectedeventargs.selectedcastingdevice) 屬性 (代表使用者選取的傳播裝置) 的 [**CreateCastingConnection**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.createcastingconnection) 方法。 註冊 [**ErrorOccurred**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.erroroccurred) 和 [**StateChanged**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.statechanged) 事件的處理常式。 最後，呼叫 [**RequestStartCastingAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.requeststartcastingasync) 以開始傳播，並將結果傳入 **MediaPlayerElement** 控制項的 **MediaPlayer** 物件的 [**GetAsCastingSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement.getascastingsource) 方法，以指定要傳播的媒體是與 **MediaPlayerElement** 關聯的 **MediaPlayer** 的內容。
 
 > [!NOTE] 
-> 傳播連線必須在 UI 執行緒上起始。 因為UI 執行緒上不會呼叫 **CastingDeviceSelected**，您必須將這些呼叫放在 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 的呼叫內，才能在 UI 執行緒上呼叫它們。
+> 傳播連線必須在 UI 執行緒上起始。 因為UI 執行緒上不會呼叫 **CastingDeviceSelected**，您必須將這些呼叫放在 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 的呼叫內，才能在 UI 執行緒上呼叫它們。
 
 [!code-cs[CastingDeviceSelected](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
@@ -112,7 +112,7 @@ ms.locfileid: "66361724"
 
 當監控程式發現新的裝置時會引發 **Added** 事件。 在這個事件的處理常式中，呼叫 [**CastingDevice.FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.fromidasync)，並傳入已發現的傳播裝置的識別碼 (包含在傳給處理常式的 **DeviceInformation** 物件中)，以建立新的 [**CastingDevice**](https://docs.microsoft.com/uwp/api/Windows.Media.Casting.CastingDevice) 物件。
 
-將 **CastingDevice** 新增到傳播裝置 **ListBox**，供使用者選取。 根據 XAML 中定義的 [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)，[**FriendlyName**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.friendlyname) 屬性會當做清單方塊中的項目文字。 因為 UI 執行緒上不會呼叫這個事件處理常式，您必須從 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 的呼叫內更新 UI。
+將 **CastingDevice** 新增到傳播裝置 **ListBox**，供使用者選取。 根據 XAML 中定義的 [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)，[**FriendlyName**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.friendlyname) 屬性會當做清單方塊中的項目文字。 因為 UI 執行緒上不會呼叫這個事件處理常式，您必須從 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 的呼叫內更新 UI。
 
 [!code-cs[WatcherAdded](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherAdded)]
 
@@ -149,7 +149,7 @@ ms.locfileid: "66361724"
 
 [!code-cs[ErrorOccurred](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 
-最後，實作中斷連線按鈕的處理常式。 呼叫 **CastingConnection** 物件的 [**DisconnectAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.disconnectasync) 方法，停止媒體傳播並中斷連接傳播裝置。 必須呼叫 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows)，將這個呼叫分派至 UI 執行緒。
+最後，實作中斷連線按鈕的處理常式。 呼叫 **CastingConnection** 物件的 [**DisconnectAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.disconnectasync) 方法，停止媒體傳播並中斷連接傳播裝置。 必須呼叫 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)，將這個呼叫分派至 UI 執行緒。
 
 [!code-cs[DisconnectButton](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDisconnectButton)]
 

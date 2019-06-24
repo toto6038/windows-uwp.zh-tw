@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 定期工作項目, 執行緒, 計時器
 ms.localizationpriority: medium
-ms.openlocfilehash: cf3a5817e459c7089eafb8f2c38d58b0e8eef03c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8e045c12f96cc9404abb4ba9be395eb49b1ab850
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371566"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322003"
 ---
 # <a name="create-a-periodic-work-item"></a>建立定期工作項目
 
@@ -31,7 +31,7 @@ ms.locfileid: "66371566"
 
 > **附註**  避免指定的值為零 （或任何值小於一毫秒） 的間隔。 這會讓定期計時器變得像是單次計時器。
 
-> **附註**  您可以使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows)存取 UI，並顯示工作項目中的進度。
+> **附註**  您可以使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)存取 UI，並顯示工作項目中的進度。
 
 下列範例會建立一個每隔 60 秒執行一次的工作項目：
 

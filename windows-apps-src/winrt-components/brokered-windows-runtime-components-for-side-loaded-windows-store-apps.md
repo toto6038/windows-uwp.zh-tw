@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b6c6fc7a7e3ddfab70fe289a41bb4d436e9722
-ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
+ms.openlocfilehash: 24878d3c63de7df9c55f48571984b7d60d1ea240
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377308"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320365"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>側載 UWP app 的代理 Windows 執行階段元件
 
@@ -19,7 +19,7 @@ ms.locfileid: "66377308"
 
 ## <a name="introduction"></a>簡介
 
->**附註**  隨附這份文件的範例程式碼可能會下載用於 [Visual Studio 2015 和 2017年](https://aka.ms/brokeredsample)。 Microsoft Visual Studio 範本建置代理 Windows 執行階段元件可以在這裡下載：[以通用 Windows 應用程式適用於 Windows 10 為目標的 visual Studio 2015 範本](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**附註**  隨附這份文件的範例程式碼可能會下載用於 [Visual Studio 2015 和 2017年](https://aka.ms/brokeredsample)。 Microsoft Visual Studio 範本建置代理 Windows 執行階段元件可以在這裡下載：[以通用 Windows 應用程式適用於 Windows 10 為目標的 visual Studio 2015 範本](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 Windows 包含新功能，稱為 *側載應用程式的代理 Windows 執行階段元件*。 我們使用 IPC (處理程序間通訊) 一詞來說明在一個處理程序 (桌面元件) 執行現有桌面軟體資產，同時在 UWP App 中與此程式碼進行互動的能力。 這對企業開發人員來說是很熟悉的模型，因為資料庫應用程式和使用 Windows NT 服務的應用程式共用很類似的多個處理程序架構。
 
@@ -164,7 +164,7 @@ namespace Fabrikam
 參考 **winmd** 建立後 (在專案的 [目標] 資料夾底下的 [參考] 資料夾中)，會帶到 (複製到) 每個使用的側載應用程式專案並加以參考。 下節會有更詳盡的說明。 上述建置規則內含的專案結構可確保實作和參考 **winmd** 會位在建置階層完全不同的目錄中，以避免混淆。
 
 ## <a name="side-loaded-applications-in-detail"></a>側載應用程式詳細資料
-如上所述，側載應用程式的建置方式與任何其他 UWP app 相同，但還有一個額外的細節：在側載應用程式資訊清單中宣告 RuntimeClass 的可用性。 這可讓應用程式只要寫新項目就能存取桌面元件中的功能。 <Extension> 區段中的新資訊清單項目說明桌面元件中實作的 RuntimeClass，以及其所在位置的資訊。 在應用程式資訊清單中的這些宣告內容與針對 Windows 10 的 App 是相同的。 例如: 
+如上所述，側載應用程式的建置方式與任何其他 UWP app 相同，但還有一個額外的細節：在側載應用程式資訊清單中宣告 RuntimeClass 的可用性。 這可讓應用程式只要寫新項目就能存取桌面元件中的功能。 <Extension> 區段中的新資訊清單項目說明桌面元件中實作的 RuntimeClass，以及其所在位置的資訊。 在應用程式資訊清單中的這些宣告內容與針對 Windows 10 的 App 是相同的。 例如:
 
 ```XML
 <Extension Category="windows.activatableClass.inProcessServer">
@@ -553,7 +553,7 @@ MyWinRTComponent.Proxies
 
 -   大量傳輸結果會降低跨處理程序的交談功能。 這通常是使用 Windows 執行階段陣列建構來執行。
 
--   傳回 *清單<T>*  位置 *T* 是來自非同步作業或屬性擷取的物件，會導致大量的跨處理序的對話。 例如，假設您返回*清單&lt;人&gt;*  物件。 每個反覆運算傳輸都是一個跨處理程序呼叫。 每個 *人* 傳回的物件由 proxy 和每個呼叫的方法，或在該個別物件上的屬性將會導致跨處理序呼叫。 因此 「 無害 」 *清單&lt;人&gt;*  物件位置 *計數* 大會導致大量的慢速呼叫。 大量傳輸陣列中的內容結構會產生較佳的效能。 例如: 
+-   傳回 *清單<T>*  位置 *T* 是來自非同步作業或屬性擷取的物件，會導致大量的跨處理序的對話。 例如，假設您返回*清單&lt;人&gt;*  物件。 每個反覆運算傳輸都是一個跨處理程序呼叫。 每個 *人* 傳回的物件由 proxy 和每個呼叫的方法，或在該個別物件上的屬性將會導致跨處理序呼叫。 因此 「 無害 」 *清單&lt;人&gt;*  物件位置 *計數* 大會導致大量的慢速呼叫。 大量傳輸陣列中的內容結構會產生較佳的效能。 例如:
 
 ```csharp
 struct PersonStruct
@@ -590,7 +590,7 @@ struct PersonStruct
 
 ## <a name="resources"></a>資源
 
--   [適用於 Windows 10 和 VS 2015 的代理的 WinRT 元件專案範本](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+-   [適用於 Windows 10 和 VS 2015 的代理的 WinRT 元件專案範本](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 -   [NorthwindRT 代理的 WinRT 元件範例](https://go.microsoft.com/fwlink/p/?LinkID=397349)
 

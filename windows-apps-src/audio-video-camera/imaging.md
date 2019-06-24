@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c61a35f0ad35cf85afcba564eb676aa171b0243
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c25fc09d606c0f143f357dd7f89026fa94b80922
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360836"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318350"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>建立、編輯和儲存點陣圖影像
 
@@ -65,7 +65,7 @@ ms.locfileid: "66360836"
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-目前，**Image** 控制項只支援使用 BGRA8 編碼、預乘或無 Alpha 色板的影像。 嘗試顯示影像之前，請先測試以確定它具有正確的格式，如果沒有，請使用 **SoftwareBitmap** 靜態[**轉換**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows)方法，將影像轉換成支援的格式。
+目前，**Image** 控制項只支援使用 BGRA8 編碼、預乘或無 Alpha 色板的影像。 嘗試顯示影像之前，請先測試以確定它具有正確的格式，如果沒有，請使用 **SoftwareBitmap** 靜態[**轉換**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert)方法，將影像轉換成支援的格式。
 
 建立新的 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 物件。 呼叫 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync)，同時傳入 **SoftwareBitmap**，以設定來源物件的內容。 然後，您就可以將 **Image** 控制項的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 屬性，設定為新建立的 **SoftwareBitmapSource**。
 
@@ -89,7 +89,7 @@ ms.locfileid: "66360836"
 
 [!code-cs[InteropNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetInteropNamespace)]
 
-在您的命名空間內新增下列程式碼，以初始化 [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions//mt297505(v=vs.85)) COM 介面。
+在您的命名空間內新增下列程式碼，以初始化 [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85)) COM 介面。
 
 [!code-cs[COMImport](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCOMImport)]
 
@@ -111,7 +111,7 @@ ms.locfileid: "66360836"
 
 ## <a name="convert-a-softwarebitmap-to-a-different-pixel-format"></a>將 SoftwareBitmap 轉換成不同的像素格式
 
-**SoftwareBitmap** 類別提供靜態方法 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows)，可讓您從現有的 **SoftwareBitmap**，使用您指定的像素格式和 Alpha 模式，輕鬆地建立新的 **SoftwareBitmap**。 請注意，新建立的點陣圖有個別的影像資料複本。 修改新的點陣圖不會影響原始點陣圖。
+**SoftwareBitmap** 類別提供靜態方法 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert)，可讓您從現有的 **SoftwareBitmap**，使用您指定的像素格式和 Alpha 模式，輕鬆地建立新的 **SoftwareBitmap**。 請注意，新建立的點陣圖有個別的影像資料複本。 修改新的點陣圖不會影響原始點陣圖。
 
 [!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 

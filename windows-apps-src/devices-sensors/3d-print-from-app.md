@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 3dprinting，3d 列印
 ms.localizationpriority: medium
-ms.openlocfilehash: 712efde0293edff6134309ac2d6d9105413a2877
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e2ed99720afdccef297d46853d4a2445b497195e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370419"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321700"
 ---
 # <a name="3d-printing-from-your-app"></a>從 app 進行 3D 列印
 
@@ -54,7 +54,7 @@ ms.locfileid: "66370419"
 ## <a name="get-the-3d-data"></a>取得 3D 資料
 
 
-您的 app 取得 3D 幾何資料的方法會有差異。 您 App 擷取資料的方式可能是 3D 掃描、從網路資源下載模型資料，或以程式設計方式使用數學公式或使用者輸入來產生 3D 網格。 為了簡單起見，本指南會示範從裝置存放空間將 3D 資料檔案 (任何常見的檔案類型) 載入程式記憶體。 [3D Builder 模型庫](https://developer.microsoft.com/windows/hardware/3d-builder-model-library)提供您輕鬆就能下載到裝置上的各種模型。
+您的 app 取得 3D 幾何資料的方法會有差異。 您 App 擷取資料的方式可能是 3D 掃描、從網路資源下載模型資料，或以程式設計方式使用數學公式或使用者輸入來產生 3D 網格。 為了簡單起見，本指南會示範從裝置存放空間將 3D 資料檔案 (任何常見的檔案類型) 載入程式記憶體。 [3D Builder 模型庫](https://developer.microsoft.com/windows/hardware/3d-print/windows-3d-printing)提供您輕鬆就能下載到裝置上的各種模型。
 
 在 `OnLoadClick` 方法中，使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 類別將單一檔案載入至 app 記憶體。
 

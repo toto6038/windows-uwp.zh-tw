@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, 協助工具, 遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: a3ef82db2d0ddb7883179279fd7e48c1acf38dd3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 74ff2c25d38f20b94f50cc05a548778ee212bad0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369168"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321357"
 ---
 #  <a name="making-games-accessible"></a>設計無障礙遊戲
 
@@ -19,11 +19,11 @@ ms.locfileid: "66369168"
 
 ## <a name="gaming-for-everyone"></a>開發普及大眾的遊戲
 
-Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更加努力創造一個普及大眾的遊戲環境。 我們深信我們為粉絲打造以及我們展現的方式，不論 Microsoft 的裡外都實實在在反映我們的真我。 我們設計的程式反映我們做為一個組織的核心價值，也相信該程式可能會產生正面的改變，不只在我們的工作地點也在我們為玩家打造的產品中。」 ([部落格文章](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone)來自 Phil Spencer)
+Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更加努力創造一個普及大眾的遊戲環境。 我們深信我們為粉絲打造以及我們展現的方式，不論 Microsoft 的裡外都實實在在反映我們的真我。 我們設計的程式反映我們做為一個組織的核心價值，也相信該程式可能會產生正面的改變，不只在我們的工作地點也在我們為玩家打造的產品中。」 ([部落格文章](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/)來自 Phil Spencer)
 
-我們想要打造一個有趣、多樣且每個人都可以在裡面玩樂的多元環境。 「若要真正擁有持續的影響，需要進行文化轉變，而這不是一夜之間就能實現。 不過，我們的團隊會努力讓一天比一天更好，彼此教導在決策過程中暫停一下並思考世界各地玩家的需求多樣性、能力和興趣。」 ([部落格文章](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone)來自 Phil Spencer)
+我們想要打造一個有趣、多樣且每個人都可以在裡面玩樂的多元環境。 「若要真正擁有持續的影響，需要進行文化轉變，而這不是一夜之間就能實現。 不過，我們的團隊會努力讓一天比一天更好，彼此教導在決策過程中暫停一下並思考世界各地玩家的需求多樣性、能力和興趣。」 ([部落格文章](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/)來自 Phil Spencer)
 
-希望您能加入這個旅程，一同實現[開發普及大眾的遊戲](https://news.microsoft.com/gamingforeveryone)。 
+希望您能加入這個旅程，一同實現[開發普及大眾的遊戲](https://news.microsoft.com/gamingforeveryone/)。 
 
 ##  <a name="why-make-games-accessible"></a>為什麼要設計無障礙遊戲？
 
@@ -69,7 +69,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 ## <a name="defining-disability"></a>定義障礙
 
-「障礙」的定義為「提供的服務、產品或環境不符合個人需求」。 ([內含影片](https://www.microsoft.com/design/inclusive)，Microsoft.com。)這表示，任何人都可以體驗傷殘保險，而且它可以是短期或環境的條件。 請思考擁有這些狀態的玩家在進行您的遊戲時可能遭遇到的挑戰，並思考如何設計使遊戲的能更加適合他們。 以下是一些需要考量的障礙：
+「障礙」的定義為「提供的服務、產品或環境不符合個人需求」。 ([內含影片](https://www.microsoft.com/design/inclusive/)，Microsoft.com。)這表示，任何人都可以體驗傷殘保險，而且它可以是短期或環境的條件。 請思考擁有這些狀態的玩家在進行您的遊戲時可能遭遇到的挑戰，並思考如何設計使遊戲的能更加適合他們。 以下是一些需要考量的障礙：
 
 ### <a name="vision"></a>視力
 
@@ -196,7 +196,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 沒有麥克風連接到其遊戲裝置的人，仍然可與正在說話的某人用語音交談。 他們可以在聊天視窗中輸入文字，而這些訊息會轉換為語音。 也可以讓聽力不太好的人，閱讀其正用語音交談之對象的對話轉譯後的文字訊息。
 
-對於 ID@Xbox 的開發人員和受管理的合作夥伴計畫，在 Xbox Live 服務中，文字轉換語音和語音轉換文字功能可做為[遊戲聊天 2 協助工具功能](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/using-game-chat-2.md#accessibility)的一部分。 如需詳細資訊，請參閱[遊戲交談 2 概觀](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/game-chat-2-overview.md)。
+對於 ID@Xbox 的開發人員和受管理的合作夥伴計畫，在 Xbox Live 服務中，文字轉換語音和語音轉換文字功能可做為[遊戲聊天 2 協助工具功能](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility)的一部分。 如需詳細資訊，請參閱[遊戲交談 2 概觀](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md)。
 
 ### <a name="sound-feedback"></a>音訊回饋
 
@@ -225,7 +225,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 ### <a name="photosensitivity-epilepsy-testing"></a>光敏性癲癇症測試
 
-光敏性癲癇症 (PSE) 是由視覺刺激 (包括閃爍的光線，或特定的活動式視覺形式與模式) 觸發而導致的症狀。 大約有三個百分比的人會發生這種症狀，並在兒童和青少年族群中較為常見。 就數字來說的話，大約是[ 4000 位年齡在 5 到 24 歲的人當中有 1 位](https://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3)。
+光敏性癲癇症 (PSE) 是由視覺刺激 (包括閃爍的光線，或特定的活動式視覺形式與模式) 觸發而導致的症狀。 大約有三個百分比的人會發生這種症狀，並在兒童和青少年族群中較為常見。 就數字來說的話，大約是[ 4000 位年齡在 5 到 24 歲的人當中有 1 位](https://www.epilepsy.com/learn/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-0)。
 
 進行電玩遊戲時，有許多的因素可能造成光敏性反應，包括遊戲的持續期間、閃光的頻率、光線強度、背景與光線的對比、螢幕與玩家之間的距離，以及光線的波長。
 
@@ -253,7 +253,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 ### <a name="game-accessibility-guidelines"></a>遊戲協助工具指導方針
 * [遊戲的協助工具方針](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation 指導方針](https://www.includification.com/)
+* [AbleGamers Foundation 指導方針](https://accessible.games/accessible-player-experiences/)
 * [設計普遍可存取 (UA) 遊戲](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>自訂輸入控制器
@@ -262,14 +262,14 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 ## <a name="references-used"></a>引用參考資料
 * [遊戲的協助工具方針](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation 指導方針](https://www.includification.com/)
+* [AbleGamers Foundation 指導方針](https://accessible.games/accessible-player-experiences/)
 * [色彩盲目感知，社群感興趣公司](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
 * [如何進行字幕格式-Gamasutra Ian Hamilton 的部落格文章](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
 * [所有取得的創新](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 * [敏感性 foundation](https://www.epilepsy.com/)
 
 ## <a name="related-links"></a>相關連結
-* [內含的設計](https://www.microsoft.com/design/inclusive)
+* [內含的設計](https://www.microsoft.com/design/inclusive/)
 * [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
 * [開發可存取的 UWP 應用程式](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
 * [工程軟體的協助工具電子書](https://www.microsoft.com/download/details.aspx?id=19262)

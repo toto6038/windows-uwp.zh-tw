@@ -6,12 +6,12 @@ ms.date: 4/9/2019
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 39715dc3f4b88a2e9a91a7cb659208f8370f16f2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 59e7e46ea68f6bb5fe7fd63e6ac35b9256103c38
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362420"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317904"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 
@@ -159,7 +159,7 @@ ETW 記錄頁面管理此裝置上的即時事件追蹤的 Windows (ETW) 資訊�
   4. 非錯誤警告
   5. 詳細的追蹤
 
-  按一下或點選 [啟用] 以開始追蹤。 提供者已新增到 [啟用的提供者] 下拉式清單中。
+  按一下或點選 [啟用] 以開始追蹤。  提供者已新增到 [啟用的提供者] 下拉式清單中。 
 - **自訂提供者**:選取自訂的 ETW 提供者 」 和 「 追蹤層級。 依 GUID 識別提供者。 不包含括號的 guid。
 - **啟用的提供者**:這會列出啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用] 以停止追蹤。  按一下或點選 [全部停止] 以暫停所有追蹤。 
 - **提供者記錄**:這會顯示目前的工作階段期間啟用啟用的 ETW 提供者。 按一下或點選 [啟用] 以啟用已停用的提供者。  按一下或點選 [清除] 以清除歷程記錄。 
@@ -205,14 +205,14 @@ Key | 類型 | 描述
 ----|------|-------------
 S | ssNoversion | Device Portal 的安全連接埠。 如果為 0 (零)，Device Portal 不會接聽 HTTPS 連線。
 D | 字串 | 裝置類型。 格式將為 "Windows.*"，例如 Windows.Xbox 或 Windows.Desktop
-A  | 字串 | 裝置架構。 這將是 ARM、x86 或 AMD64。  
+A | 字串 | 裝置架構。 這將是 ARM、x86 或 AMD64。  
 T | null 字元字串分隔清單 | 裝置的使用者套用標記。 請參閱＜標記 REST API＞以了解如何使用。 清單是以兩個 NULL 結束。  
 
 建議連接 HTTPS 連接埠，因為並非所有的裝置都會接聽由 DNS-SD 記錄公告的 HTTP 埠。
 
 ### <a name="csrf-protection-and-scripting"></a>CSRF 保護和指令碼處理
 
-為了防止 [CSRF 攻擊](https://wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 要求都需要唯一權杖。 這個 X-CSRF-Token 要求標頭的權杖是衍生自工作階段 Cookie，CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 會複製到各個要求的 X-CSRF-Token 標頭中。
+為了防止 [CSRF 攻擊](https://en.wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 要求都需要唯一權杖。 這個 X-CSRF-Token 要求標頭的權杖是衍生自工作階段 Cookie，CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 會複製到各個要求的 X-CSRF-Token 標頭中。
 
 > [!IMPORTANT]
 > 這項保護可防止從獨立用戶端 （例如命令列公用程式） 的 REST api 的使用方式。 這可以 3 種方式解決：

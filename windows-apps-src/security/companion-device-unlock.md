@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ddadde2502e8512ba38dc30c6ac24d22631d62c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f653ebe874bfa4d4ad8bb608acf9495f02191de7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372639"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320620"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>使用 Windows Hello 隨附 (IoT) 裝置的 Windows 解除鎖定
 
@@ -38,7 +38,7 @@ Windows Hello 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以�
 
 ### <a name="biometric-enabled-windows-hello-companion-devices"></a>啟用生物特徵辨識技術的 Windows Hello 隨附裝置
 
-如果隨附裝置支援生物特徵辨識技術，在某些情況下 [Windows 生物特徵辨識架構](https://msdn.microsoft.com/library/windows/hardware/mt608302(v=vs.85).aspx)可能是比 Windows Hello 隨附裝置架構更好的解決方案。 請連絡 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)，我們將協助您挑選正確的方法。
+如果隨附裝置支援生物特徵辨識技術，在某些情況下 [Windows 生物特徵辨識架構](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello)可能是比 Windows Hello 隨附裝置架構更好的解決方案。 請連絡 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)，我們將協助您挑選正確的方法。
 
 ### <a name="components-of-the-solution"></a>解決方案的元件
 

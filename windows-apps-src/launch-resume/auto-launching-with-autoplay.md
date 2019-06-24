@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f139ca4cf134ff8515a4da1134da16c338a4a8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1cc13470c1f07d1ee420253c8a147ff7a5c3fc40
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371329"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318773"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>使用 [自動播放] 自動啟動
 
@@ -225,7 +225,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 您可以登錄 app 做為「自動播放」  裝置事件的選項。 將裝置連接到電腦時，就會引發「自動播放」  裝置事件。
 
-我們將在此處示範如何在將相機連接到電腦時，將您的 app 識別為 [自動播放]  選項。 應用程式註冊為處理常式**WPD\\ImageSourceAutoPlay**事件。 當相機及其他影像裝置通知 Windows 可攜式裝置 (WPD) 系統它們是使用 MTP 的 ImageSource 時，該系統常會引發這個事件。 如需詳細資訊，請參閱 [Windows 可攜式裝置](https://docs.microsoft.com/previous-versions//ff597729(v=vs.85))。
+我們將在此處示範如何在將相機連接到電腦時，將您的 app 識別為 [自動播放]  選項。 應用程式註冊為處理常式**WPD\\ImageSourceAutoPlay**事件。 當相機及其他影像裝置通知 Windows 可攜式裝置 (WPD) 系統它們是使用 MTP 的 ImageSource 時，該系統常會引發這個事件。 如需詳細資訊，請參閱 [Windows 可攜式裝置](https://docs.microsoft.com/previous-versions/ff597729(v=vs.85))。
 
 **重要**   [ **Windows.Devices.Portable.StorageDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) Api 屬於[桌面裝置系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。 應用程式可以只在桌上型裝置家族中，例如電腦的 Windows 10 裝置上使用這些 Api。
 

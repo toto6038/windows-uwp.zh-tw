@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 23d4a4e0159fc18ac524937326e69d6fbc3a627e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 64a093ddd8a53d72ccb6780b73f280e7b2874612
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370714"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320947"
 ---
 # <a name="launch-an-app-for-results"></a>啟動應用程式以取得結果
 
@@ -20,10 +20,10 @@ ms.locfileid: "66370714"
 
 **重要的 Api**
 
--   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+-   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)
 -   [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
-了解如何從某個應用程式啟動另一個應用程式，以及在這兩者間交換資料的方式。 這稱為「啟動 App 以取得結果」  。 下列範例示範如何使用 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) 來啟動 App 以取得結果。
+了解如何從某個應用程式啟動另一個應用程式，以及在這兩者間交換資料的方式。 這稱為「啟動 App 以取得結果」  。 下列範例示範如何使用 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) 來啟動 App 以取得結果。
 
 新的應用程式-應用程式通訊在 Windows 10 中的 Api 可讓您可使用 Windows 應用程式 （和 Windows Web 應用程式） 來啟動應用程式和 exchange 資料和檔案。 這讓您能夠從多個 App 建置混搭式解決方案。 使用這些新的 API，就能流暢地立即處理需要使用者使用多個 App 的複雜工作。 例如，您的 App 可以啟動社交網路 App 來選擇連絡人，或啟動結帳 App 來完成付款程序。
 
@@ -36,8 +36,8 @@ ms.locfileid: "66370714"
 
 通訊協定延伸模組中的 **ReturnResults** 屬性會接受下列其中一個值：
 
--   **optional**—您可以使用 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) 方法來啟動 app 以取得結果，或者使用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 來啟動 app 而不取得結果。 當您使用 **optional** 時，啟動的 app 必須判斷是否要啟動它來取得結果。 您可以藉由檢查 [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) 事件引數來執行這個動作。 如果引數的 [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) 屬性傳回 [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)，或者事件引數的類型是 [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)，則 app 會透過 **LaunchUriForResultsAsync** 來啟動。
--   **always**—可以只為了取得結果來啟動 app，也就是它只會回應 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)。
+-   **optional**—您可以使用 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) 方法來啟動 app 以取得結果，或者使用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 來啟動 app 而不取得結果。 當您使用 **optional** 時，啟動的 app 必須判斷是否要啟動它來取得結果。 您可以藉由檢查 [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) 事件引數來執行這個動作。 如果引數的 [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) 屬性傳回 [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)，或者事件引數的類型是 [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)，則 app 會透過 **LaunchUriForResultsAsync** 來啟動。
+-   **always**—可以只為了取得結果來啟動 app，也就是它只會回應 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)。
 -   **none**—無法啟動 app 來取得結果；它只會回應 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)。
 
 在這個通訊協定延伸模組範例中，可以只為了取得結果來啟動 app。 這會簡化 **OnActivated** 方法內部的邏輯 (如下所述)，因為我們只需處理「啟動以取得結果」的案例，而且沒有其他方法可用以啟動 app。
@@ -186,7 +186,7 @@ string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ## <a name="remarks"></a>備註
 
 
-此做法中的範例提供可用來啟動 app 以取得結果的 "hello world" 簡介。 要注意的重點是新的 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) API 讓您能夠以非同步方式啟動 app，並透過 [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) 類別進行通訊。 透過 **ValueSet** 傳送的資料大小上限為 100KB。 如果需要傳送更大量的資料，可使用 [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 類別來共用檔案，以建立可在 app 之間傳送的檔案權杖。 例如，假設有一個名為 `inputData` 的 **ValueSet**，您可以將權杖儲存到想要與啟動的 app 共用的檔案中：
+此做法中的範例提供可用來啟動 app 以取得結果的 "hello world" 簡介。 要注意的重點是新的 [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) API 讓您能夠以非同步方式啟動 app，並透過 [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) 類別進行通訊。 透過 **ValueSet** 傳送的資料大小上限為 100KB。 如果需要傳送更大量的資料，可使用 [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 類別來共用檔案，以建立可在 app 之間傳送的檔案權杖。 例如，假設有一個名為 `inputData` 的 **ValueSet**，您可以將權杖儲存到想要與啟動的 app 共用的檔案中：
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
@@ -198,7 +198,7 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 * [**LaunchUri**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
-* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)
 * [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
  

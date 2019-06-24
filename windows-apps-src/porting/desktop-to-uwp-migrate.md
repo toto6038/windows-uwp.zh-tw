@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 16b75226d6b79b19978ddf7e37231b15ac7a4e3e
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 344ee7060edcee3376e271fc21e104490d8724d7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984172"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319714"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>移至 UWP 的桌面應用程式
 
@@ -18,15 +18,15 @@ ms.locfileid: "65984172"
 
 ## <a name="package-your-desktop-application-in-an-msix-package"></a>封裝您 MSIX 封裝中的傳統型應用程式
 
-您可以封裝 MSIX 封裝中您的桌面應用程式以存取許多 Windows 10 功能。 MSIX 是針對所有的 Windows 應用程式，包括 UWP、 WPF、 Windows Form 和 Win32 應用程式提供通用的封裝體驗的新式 Windows 應用程式封裝格式。 封裝 MSIX 封裝中的您傳統型 Windows 應用程式可讓您存取強大的安裝和更新體驗，受管理的安全性模型具有彈性的功能系統、 支援 Microsoft Store、 企業管理和許多自訂散發模型。 您可以封裝您的應用程式是否有原始程式碼，或如果您只需要現有的安裝程式檔案 （例如 MSI 或 APP-V 安裝程式）。 封裝您的應用程式之後，您可以整合 UWP 功能，例如封裝擴充功能和其他 UWP 元件。
+您可以封裝 MSIX 封裝中您的桌面應用程式以存取許多 Windows 10 功能。 MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式提供通用封裝體驗，包括 UWP、WPF、Windows Forms 及 Win32 應用程式。 將您的傳統型 Windows 應用程式封裝在 MSIX 套件中，可讓您存取強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。 您可以封裝您的應用程式是否有原始程式碼，或如果您只需要現有的安裝程式檔案 （例如 MSI 或 APP-V 安裝程式）。 封裝您的應用程式之後，您可以整合 UWP 功能，例如封裝擴充功能和其他 UWP 元件。
 
 如需詳細資訊，請參閱 <<c0> [ 桌面應用程式 （傳統型橋接器） 封裝](/windows/msix/desktop/desktop-to-uwp-root)並[需要的套件識別功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
 
 ## <a name="use-uwp-apis"></a>使用 UWP Api
 
-您可以直接在您的 WPF、 Windows Form 中呼叫許多 UWP Api 或C++來整合新式體驗也淺註冊 Windows 10 使用者的 Win32 桌面應用程式。 例如，您可以呼叫 UWP Api 來將快顯通知新增至您的桌面應用程式。
+您可以在您的 WPF、Windows Forms 或 C++ Win32 傳統型應用程式中直接呼叫許多 UWP API，整合為 Windows 10 使用者帶來好處的新式體驗。 例如，您可以呼叫 UWP API 以將快顯通知新增至您的傳統型應用程式。
 
-如需詳細資訊，請參閱 <<c0> [ 桌面應用程式中使用 UWP Api](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
+如需詳細資訊，請參閱[在傳統型應用程式中使用 UWP API](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
 
 ## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>移轉 .NET Framework 應用程式的 UWP 應用程式
 
@@ -232,14 +232,14 @@ public sealed partial class MainPage : Page
 
 #### <a name="add-a-xamarin-project"></a>新增 Xamarin 專案
 
-首先，將 **\[Android\]**、**\[iOS\]** 或 **\[跨平台\]** 專案新增至您的方案。
+首先，將 **\[Android\]** 、 **\[iOS\]** 或 **\[跨平台\]** 專案新增至您的方案。
 
 您可以在 **\[加入新的專案\]** 對話方塊的 **\[Visual C#\]** 群組底下找到這些範本。
 
 ![Xamarin 應用程式](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->跨平台專案非常適合只有極少平台特定功能的應用程式。 您可以使用這些專案建立一個在 Android、iOS 及 Windows 上執行的原生 XAML 型 UI。 請按一下[這裡](https://www.xamarin.com/forms)進一步了解。
+>跨平台專案非常適合只有極少平台特定功能的應用程式。 您可以使用這些專案建立一個在 Android、iOS 及 Windows 上執行的原生 XAML 型 UI。 請按一下[這裡](https://docs.microsoft.com/xamarin/xamarin-forms/)進一步了解。
 
 接著，從 Android、iOS 或跨平台專案中新增類別庫專案的參考。
 
@@ -278,7 +278,7 @@ public class MainActivity : ListActivity
 }
 ```
 
-若要開始使用 Android、iOS 和跨平台專案，請參閱 [Xamarin 開發人員入口網站](https://developer.xamarin.com/)。
+若要開始使用 Android、iOS 和跨平台專案，請參閱 [Xamarin 開發人員入口網站](https://docs.microsoft.com/xamarin)。
 
 ## <a name="next-steps"></a>後續步驟
 

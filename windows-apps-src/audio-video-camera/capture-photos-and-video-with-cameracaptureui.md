@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 35eed8310b406a960334c90d6c359c0313b2660c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f23d80b4d2796b4d9c86648c09d6bece5e82d482
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358891"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317835"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 內建相機 UI 來擷取相片和視訊
 
@@ -36,7 +36,7 @@ ms.locfileid: "66358891"
 > [!NOTE]
 > 行動裝置系列中的裝置不支援在 **CameraCaptureUI** 中進行影像裁剪。 當您的 app 在這些裝置上執行時會忽略 [**AllowCropping**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureuiphotocapturesettings.allowcropping) 屬性的值。
 
-呼叫 [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.) 並指定 [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode)，來指定應該要擷取相片。 這個方法會傳回 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 包含影像的執行個體 (如果擷取成功的話)。 如果使用者取消擷取，則傳回的物件為 Null。
+呼叫 [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) 並指定 [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode)，來指定應該要擷取相片。 這個方法會傳回 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 包含影像的執行個體 (如果擷取成功的話)。 如果使用者取消擷取，則傳回的物件為 Null。
 
 [!code-cs[CapturePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
 
@@ -62,7 +62,7 @@ ms.locfileid: "66358891"
 
 [!code-cs[UsingSoftwareBitmapSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmapSource)]
 
-**Image** 控制項要求影像來源為 BGRA8 格式 (具有預乘的 Alpha 或沒有 Alpha)，所以呼叫靜態方法 [**SoftwareBitmap.Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) 以使用所需的格式建立新的軟體點陣圖。 接下來，建立新的 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 物件並呼叫 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 以將軟體點陣圖指派給來源。 最後，設定**Image** 控制項的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 屬性，以在 UI 中顯示所擷取的相片。
+**Image** 控制項要求影像來源為 BGRA8 格式 (具有預乘的 Alpha 或沒有 Alpha)，所以呼叫靜態方法 [**SoftwareBitmap.Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 以使用所需的格式建立新的軟體點陣圖。 接下來，建立新的 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 物件並呼叫 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 以將軟體點陣圖指派給來源。 最後，設定**Image** 控制項的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 屬性，以在 UI 中顯示所擷取的相片。
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
@@ -70,7 +70,7 @@ ms.locfileid: "66358891"
 
 若要擷取視訊，請建立新的 [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) 物件。 使用物件的 [**VideoSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) 屬性，可以指定所傳回視訊的屬性，例如視訊的影像格式。
 
-呼叫 [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.) 並指定 [**Video**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings)，以指定應該擷取視訊。 這個方法會傳回 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 包含視訊的執行個體 (如果擷取成功的話)。 如果使用者取消擷取，則傳回的物件為 Null。
+呼叫 [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) 並指定 [**Video**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings)，以指定應該擷取視訊。 這個方法會傳回 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 包含視訊的執行個體 (如果擷取成功的話)。 如果使用者取消擷取，則傳回的物件為 Null。
 
 [!code-cs[CaptureVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCaptureVideo)]
 

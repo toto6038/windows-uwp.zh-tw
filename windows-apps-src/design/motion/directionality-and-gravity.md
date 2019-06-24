@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ef005ffd018bf52d70067cdfedbb9c98b079bd89
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 3cdb20516d4f21933c7770f43701af322e09c886
+ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444201"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67325911"
 ---
 # <a name="directionality-and-gravity"></a>方向性和重力
 
@@ -30,7 +30,7 @@ ms.locfileid: "65444201"
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可<a href="xamlcontrolsgallery:/category/Motion">開啟應用程式，並觀看影片示範</a>。</p>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下此處以<a href="xamlcontrolsgallery:/category/Motion">開啟應用程式並查看動作運作情形</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -44,7 +44,6 @@ ms.locfileid: "65444201"
 :::row:::
     :::column:::
         Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
-
         When you move objects, avoid unnatural collisions. Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.
     :::column-end:::
     :::column:::
@@ -77,7 +76,6 @@ ms.locfileid: "65444201"
 :::row:::
     :::column:::
         **Forward-In**
-
         Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.
     :::column-end:::
     :::column:::
@@ -87,7 +85,6 @@ ms.locfileid: "65444201"
 :::row:::
     :::column:::
         **Forward-Out**
-
         Content exits quickly. Objects accelerate off screen.
     :::column-end:::
     :::column:::
@@ -97,7 +94,6 @@ ms.locfileid: "65444201"
 :::row:::
     :::column:::
         **Backward-In**
-
         Same as Forward-In, but reversed.
     :::column-end:::
     :::column:::
@@ -107,7 +103,6 @@ ms.locfileid: "65444201"
 :::row:::
     :::column:::
         **Backward-Out**
-
         Same as Forward-Out, but reversed.
     :::column-end:::
     :::column:::

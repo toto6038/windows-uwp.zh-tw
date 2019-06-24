@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af03b32453bcdacb3da95678cf23a988c375f1b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 60be53bfcb351866a0cf124fe4ef6f21ff889f88
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359637"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318959"
 ---
 # <a name="accessibility-testing"></a>協助工具測試  
 
@@ -95,7 +95,7 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 
 ## <a name="verify-your-app-with-display-settings"></a>使用顯示設定驗證應用程式  
 
-使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，您的 app UI 能夠正確縮放。 (某些使用者變更 dpi 值的協助工具選項，便可從**輕鬆存取**也做為顯示屬性。)如果您發現任何問題，請遵循[版面配置調整指導方針](https://developer.microsoft.com/windows/design)，並提供不同的縮放比例的其他資源。
+使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，您的 app UI 能夠正確縮放。 (某些使用者變更 dpi 值的協助工具選項，便可從**輕鬆存取**也做為顯示屬性。)如果您發現任何問題，請遵循[版面配置調整指導方針](https://developer.microsoft.com/windows/apps/design)，並提供不同的縮放比例的其他資源。
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -164,4 +164,4 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 * [應避免的做法](practices-to-avoid.md)
 * [使用者介面自動化](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [在 Windows 中的協助工具](https://go.microsoft.com/fwlink/p/?LinkId=320802)
-* [開始使用 [朗讀程式]](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [開始使用 [朗讀程式]](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

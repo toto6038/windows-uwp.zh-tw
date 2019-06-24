@@ -9,12 +9,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e0ae94b0f8631c88f48098f8c2f3df000c25252c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e4b919d42cb113c6ec9f2710baec6c9aa1765840
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359430"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317584"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>UWP Api 提供給桌面應用程式
 
@@ -50,7 +50,7 @@ ms.locfileid: "66359430"
 
 以下是支援桌面應用程式中的 UWP Api 的完整清單。 您可以檢視[只有在已封裝應用程式中支援的 Api](#new)或是[已封裝應用程式和桌面應用程式中支援的 Api](#both)。
 
-如需有關如何使用 UWP Api 的範例，請參閱 <<c0> [ 桌面橋接器範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)並[通用 Windows 平台 (UWP) 應用程式範例](https://github.com/Microsoft/Windows-universal-samples)GitHub 上。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)。
+如需有關如何使用 UWP Api 的範例，請參閱 <<c0> [ 桌面橋接器範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)並[通用 Windows 平台 (UWP) 應用程式範例](https://github.com/Microsoft/Windows-universal-samples)GitHub 上。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)。
 
 <a id="new" />
 

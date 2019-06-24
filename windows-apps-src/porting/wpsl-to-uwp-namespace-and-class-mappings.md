@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bb71a95de3f54cb62fa3d2cbc96e5c7935e5d945
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 649062c8d1901a7b0f24a69378e13a7725d7c84c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372455"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322321"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>UWP API 對應至 Windows Phone Silverlight
 
@@ -179,11 +179,11 @@ ms.locfileid: "66372455"
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.WebRequestExtensions** 類別 | 沒有直接的對等項目 |
 | **Microsoft.Phone.Networking.Voip** 命名空間 | 沒有直接的對等項目 |
 | **System.Net.CookieCollection** 類別 | 仍受支援，但缺少某些屬性 (例如 IsReadOnly) |
-| **System.Net.DownloadProgressChangedEventArgs** 類別，和與 **System.Net.WebClient** 相關的類似類別 | [**HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別 (或[System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx))。 衍生自 [System.Net.Http.StreamContent](https://docs.microsoft.com/previous-versions/visualstudio/hh138119(v=vs.118)) 以測量進度。 |
+| **System.Net.DownloadProgressChangedEventArgs** 類別，和與 **System.Net.WebClient** 相關的類似類別 | [**HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別 (或[System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118)))。 衍生自 [System.Net.Http.StreamContent](https://docs.microsoft.com/previous-versions/visualstudio/hh138119(v=vs.118)) 以測量進度。 |
 | **System.Net.DnsEndPoint**、**IPAddress** 類別 | 這些類別仍受支援，但缺少某些屬性。 或者，移植到 [**HostName**](https://docs.microsoft.com/uwp/api/Windows.Networking.HostName) 類別。 |
 | **System.Net.HttpUtility** 類別 | [**HtmlFormatHelper**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.HtmlFormatHelper) class |
-| **System.Net.HttpWebRequest** 類別 | 部分支援，但具前瞻性的建議替代方案為 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別 (或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx))。 這些 API 使用 [System.Net.Http.HttpRequestMessage](https://docs.microsoft.com/previous-versions/visualstudio/hh159020(v=vs.118)) 來代表 HTTP 要求。 |
-| **System.Net.HttpWebResponse** 類別 | 仍受支援，但使用 Dispose() 而不是 Close()。 但具前瞻性的建議替代方案為 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別 (或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx))。 這些 API 使用 [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage(v=vs.110).aspx) 來代表 HTTP 回應。 |
+| **System.Net.HttpWebRequest** 類別 | 部分支援，但具前瞻性的建議替代方案為 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別 (或 [System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118)))。 這些 API 使用 [System.Net.Http.HttpRequestMessage](https://docs.microsoft.com/previous-versions/visualstudio/hh159020(v=vs.118)) 來代表 HTTP 要求。 |
+| **System.Net.HttpWebResponse** 類別 | 仍受支援，但使用 Dispose() 而不是 Close()。 但具前瞻性的建議替代方案為 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別 (或 [System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118)))。 這些 API 使用 [System.Net.Http.HttpResponseMessage](https://docs.microsoft.com/dotnet/api/system.net.http.httpresponsemessage?redirectedfrom=MSDN) 來代表 HTTP 回應。 |
 | (SNN = **System.Net.NetworkInformation**) <br/> **SNN.NetworkChange** 類別 | 仍受支援，但建構函式除外。 |
 | **System.Net.OpenReadCompletedEventArgs** 類別，和與 **System.Net.WebClient** 相關的類似類別 | [**HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別 (或[System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118))) |
 | **System.Net.Sockets.Socket** 類別 | 仍受支援，但使用 Dispose() 而不是 Close()。 或者，移植到 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 類別。 |
@@ -191,8 +191,8 @@ ms.locfileid: "66372455"
 | **System.Net.Sockets.UdpAnySourceMulticastClient**、**UdpSingleSourceMulticastClient** 類別 | [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket) class |
 | **System.Net.UploadProgressChangedEventArgs** 類別，和與 **System.Net.WebClient** 相關的類似類別 | [**HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別 (或[System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118))) |
 | **System.Net.WebClient** 類別 | [**HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別 (或[System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118))) |
-| **System.Net.WebRequest** 類別 | 部分支援 (不同組的屬性)，但具前瞻性的建議替代方案為 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別 (或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx))。 這些 API 使用 [System.Net.Http.HttpRequestMessage](https://docs.microsoft.com/previous-versions/visualstudio/hh159020(v=vs.118)) 來代表 HTTP 要求。 |
-| **System.Net.WebResponse** 類別 | 仍受支援，但使用 Dispose() 而不是 Close()。 但具前瞻性的建議替代方案為 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別 (或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx))。 這些 API 使用 [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage(v=vs.110).aspx) 來代表 HTTP 回應。 |
+| **System.Net.WebRequest** 類別 | 部分支援 (不同組的屬性)，但具前瞻性的建議替代方案為 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別 (或 [System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118)))。 這些 API 使用 [System.Net.Http.HttpRequestMessage](https://docs.microsoft.com/previous-versions/visualstudio/hh159020(v=vs.118)) 來代表 HTTP 要求。 |
+| **System.Net.WebResponse** 類別 | 仍受支援，但使用 Dispose() 而不是 Close()。 但具前瞻性的建議替代方案為 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別 (或 [System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118)))。 這些 API 使用 [System.Net.Http.HttpResponseMessage](https://docs.microsoft.com/dotnet/api/system.net.http.httpresponsemessage?redirectedfrom=MSDN) 來代表 HTTP 回應。 |
 | (SN = **System.Net**) <br/> **SN.WriteStreamClosedEventArgs** 類別 | [**HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別 (或[System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118))) |
 | (SN = **System.Net**) <br/> **SN.WriteStreamClosedEventHandler** 類別 | [**HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別 (或[System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118))) |
 | **System.UriFormatException** 類別 | **System.FormatException** 類別 |
@@ -242,7 +242,7 @@ ms.locfileid: "66372455"
 | **System.IO.Stream** 類別 | 仍受支援，但使用 ReadAsync() 與 WriteAsync()，而不是 BeginRead()/EndRead() 與 BeginWrite()/EndWrite()。 |
 | 電子錢包 | |
 | **Microsoft.Phone.Wallet** 命名空間 | [**Windows.ApplicationModel.Wallet**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Wallet) namespace |
-| xml | |
+| Xml | |
 | (SX = **System.Xml**) | **SX.XmlConvert.ToDateTime** 方法 |
 | (SX = **System.Xml**) | **SX.XmlConvert.ToDateTimeOffset** 方法 |
 

@@ -5,19 +5,19 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 865c95fe5453a038a73b397fdcf32f77f9e8defb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: aa8bec12ca3920b1e273d8f2d98186f62a340016
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63828065"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321525"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支援的服務點週邊設備
 
 ## <a name="barcode-scanner"></a>條碼掃描器
 | 連線能力 | 支援 |
 | -------------|-------------|
-| USB          | <p>Windows 包含內建類別驅動程式連接的 USB 條碼掃描器所定義的 HID POS 掃描器使用量資料表 (8c) 規格為基礎[USB.org](https://www.usb.org/developers/hidpage/)。請查看下列表格，以了解已知相容裝置的清單。  請參閱條碼掃描器的手冊，或連絡製造商以決定如何在 **\[USB.HID.POS 掃描器\]** 模式下進行設定。 </p><p>Windows 也支援實作供應商特定驅動程式，以支援不支援 USB.HID.POS 掃描器標準的其他條碼掃描器。 請與條碼掃描器製造商連絡，以了解供應商特定驅動程式可用性。</p><p>條碼掃描器製造商如需有關建立自訂條碼掃描器驅動程式的資訊，請參閱[條碼掃描器驅動程式設計指南](https://aka.ms/pointofservice-drv)</p> |
+| USB          | <p>Windows 包含內建類別驅動程式連接的 USB 條碼掃描器所定義的 HID POS 掃描器使用量資料表 (8c) 規格為基礎[USB.org](https://www.usb.org/hid)。請查看下列表格，以了解已知相容裝置的清單。  請參閱條碼掃描器的手冊，或連絡製造商以決定如何在 **\[USB.HID.POS 掃描器\]** 模式下進行設定。 </p><p>Windows 也支援實作供應商特定驅動程式，以支援不支援 USB.HID.POS 掃描器標準的其他條碼掃描器。 請與條碼掃描器製造商連絡，以了解供應商特定驅動程式可用性。</p><p>條碼掃描器製造商如需有關建立自訂條碼掃描器驅動程式的資訊，請參閱[條碼掃描器驅動程式設計指南](https://aka.ms/pointofservice-drv)</p> |
 | 藍牙    | <p>Windows 支援序列埠通訊協定 - 簡單序列介面 (SPP SSI) 藍牙條碼掃描器。 請查看下列表格，以了解已知相容裝置的清單。 請參閱條碼掃描器的手冊，或連絡製造商以決定如何在 **\[SPP-SSI\]** 模式下進行設定。</p> |
 | Webcam       | <p>從 Windows 10 版本 1803 開始，您可以從通用 Windows 應用程式透過標準攝影機鏡頭讀取條碼。 建議您使用支援自動對焦的相機，並且最低解析度為 1920 x 1440。  如果條碼列印夠大的話，部分解析度較低的相機可讀取標準條碼。  元素較細的條碼可能需要解析度較高的相機。</p>| 
 |
@@ -68,8 +68,8 @@ ms.locfileid: "63828065"
 
 
 若要支援透過 Honeywell 2D 條碼 ¹ Upgradable <br/>
-² 的最小值韌體 009 (2018.07.09) 所需。 使用色彩可升級[123Scan](http://www.zebra.com/123Scan)。<br/>
-³ 的最小值韌體 016 (2018.01.18) 所需。 使用色彩可升級[123Scan](http://www.zebra.com/123Scan)。 
+² 的最小值韌體 009 (2018.07.09) 所需。 使用色彩可升級[123Scan](http://www.zebra.com/123scan)。<br/>
+³ 的最小值韌體 016 (2018.01.18) 所需。 使用色彩可升級[123Scan](http://www.zebra.com/123scan)。 
 
 
 <hr>

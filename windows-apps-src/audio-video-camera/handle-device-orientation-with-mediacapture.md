@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8554a50a7bca54aa2acca5129dc140995d7b3527
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0e49bd31ff005799e1c3fc7f0bc44be8bd7c216c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361753"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318420"
 ---
 # <a name="handle-device-orientation-with-mediacapture"></a>使用 MediaCapture 處理裝置方向
 當您的 app 擷取要在 app 以外檢視的相片或影片時 (例如，儲存到使用者裝置上的檔案或線上分享)，請務必使用正確的方向中繼資料來為影像編碼，如此一來，當其他 app 或裝置顯示該影像時，就能以正確方向顯示它。 判斷要在媒體檔案中包含的正確方向資料是一項複雜的工作，因為有數個變數需要考量，包括裝置底座的方向、顯示器的方向，以及相機在底座上的位置 (其為前方或後方相機)。 
@@ -65,13 +65,13 @@ ms.locfileid: "66361753"
 
 若要設定中繼資料，藉由呼叫 [**VideoDeviceController.GetMediaStreamProperties**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.getmediastreamproperties) 來擷取預覽資料流屬性。 接著，建立代表視訊資料流旋轉的媒體基礎轉換 (MFT) 屬性的 GUID。 在 C++ 中，您可以使用常數 [**MF_MT_VIDEO_ROTATION**](https://docs.microsoft.com/windows/desktop/medfound/mf-mt-video-rotation)，但在 C# 中，您必須手動指定 GUID 值。 
 
-將屬性值新增到資料流屬性物件，指定 GUID 做為機碼並指定預覽旋轉做為值。 這個屬性預期值是以逆時針旋轉度數的單位來表示，因此可使用 **CameraRotationHelper** 方法 **ConvertSimpleOrientationToClockwiseDegrees** 來轉換簡單的方向值。 最後，呼叫 [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.SetEncodingPropertiesAsync(Windows.Media.Capture.MediaStreamType,Windows.Media.MediaProperties.IMediaEncodingProperties,Windows.Media.MediaProperties.MediaPropertySet))，將新的旋轉屬性套用到資料流。
+將屬性值新增到資料流屬性物件，指定 GUID 做為機碼並指定預覽旋轉做為值。 這個屬性預期值是以逆時針旋轉度數的單位來表示，因此可使用 **CameraRotationHelper** 方法 **ConvertSimpleOrientationToClockwiseDegrees** 來轉換簡單的方向值。 最後，呼叫 [**SetEncodingPropertiesAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture#Windows_Media_Capture_MediaCapture_SetEncodingPropertiesAsync_Windows_Media_Capture_MediaStreamType_Windows_Media_MediaProperties_IMediaEncodingProperties_Windows_Media_MediaProperties_MediaPropertySet_)，將新的旋轉屬性套用到資料流。
 
 [!code-cs[SetPreviewRotationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSetPreviewRotationAsync)]
 
 接下來，新增適用於 **CameraRotationHelper.OrientationChanged** 事件的處理常式。 此事件會傳入引數，可讓您知道是否需要旋轉預覽資料流。 如果裝置的方向已變更為朝上或朝下，則這個值將會是 false。 如果需要預覽旋轉，請呼叫 **SetPreviewRotationAsync** (已於先前定義)。
 
-接著，在 **OrientationChanged** 事件處理常式中，視需要更新您的 UI。 藉由呼叫 **GetUIOrientation**，來取得協助程式類別目前建議的 UI 方向，並將值轉換為順時針旋轉度數，這適用於 XAML 轉換。 從方向值建立 [**RotateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.RotateTransform)，並設定 XAML 控制項的 [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) 屬性。 根據您的 UI 配置，除了簡單旋轉控制項之外，您可能還需要在此處進行額外調整。 此外請記住，UI 的所有更新都必須在 UI 執行緒上進行，因此，您應該將這個程式碼放置於 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority,Windows.UI.Core.DispatchedHandler)) 的呼叫內。  
+接著，在 **OrientationChanged** 事件處理常式中，視需要更新您的 UI。 藉由呼叫 **GetUIOrientation**，來取得協助程式類別目前建議的 UI 方向，並將值轉換為順時針旋轉度數，這適用於 XAML 轉換。 從方向值建立 [**RotateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.RotateTransform)，並設定 XAML 控制項的 [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) 屬性。 根據您的 UI 配置，除了簡單旋轉控制項之外，您可能還需要在此處進行額外調整。 此外請記住，UI 的所有更新都必須在 UI 執行緒上進行，因此，您應該將這個程式碼放置於 [**RunAsync**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher#Windows_UI_Core_CoreDispatcher_RunAsync_Windows_UI_Core_CoreDispatcherPriority_Windows_UI_Core_DispatchedHandler_) 的呼叫內。  
 
 [!code-cs[HelperOrientationChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetHelperOrientationChanged)]
 
@@ -80,16 +80,16 @@ ms.locfileid: "66361753"
 
 在下列範例中，會呼叫 [**CapturePhotoToStreamAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.capturephototostreamasync) 來將相片擷取到 [**InMemoryRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.InMemoryRandomAccessStream)，並從資料流中建立 [**BitmapDecoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapDecoder)。 接下來，建立並開啟 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 以擷取 [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream) 來寫入檔案。 
 
-進行檔案轉碼之前，會從協助程式類別方法 **GetCameraCaptureOrientation** 擷取相片的方向。 這個方法會傳回 [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation) 物件，其會利用協助程式方法 **ConvertSimpleOrientationToPhotoOrientation** 轉換為 [**PhotoOrientation**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.PhotoOrientation) 物件。 接著，建立新的 **BitmapPropertySet** 物件，以及新增機碼為 "System.Photo.Orientation" 且值為相片方向的屬性 (以 **BitmapTypedValue** 表示)。 "System.Photo.Orientation" 可以中繼資料形式新增到影像檔案的數個 Windows 屬性之一。 如需所有相片相關的屬性清單，請參閱 [**Windows 屬性 - 相片**](https://docs.microsoft.com/previous-versions//ff516600(v=vs.85))。 如需在影像中使用中繼資料的詳細資訊，請參閱[**影像中繼資料**](image-metadata.md)。
+進行檔案轉碼之前，會從協助程式類別方法 **GetCameraCaptureOrientation** 擷取相片的方向。 這個方法會傳回 [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation) 物件，其會利用協助程式方法 **ConvertSimpleOrientationToPhotoOrientation** 轉換為 [**PhotoOrientation**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.PhotoOrientation) 物件。 接著，建立新的 **BitmapPropertySet** 物件，以及新增機碼為 "System.Photo.Orientation" 且值為相片方向的屬性 (以 **BitmapTypedValue** 表示)。 "System.Photo.Orientation" 可以中繼資料形式新增到影像檔案的數個 Windows 屬性之一。 如需所有相片相關的屬性清單，請參閱 [**Windows 屬性 - 相片**](https://docs.microsoft.com/previous-versions/ff516600(v=vs.85))。 如需在影像中使用中繼資料的詳細資訊，請參閱[**影像中繼資料**](image-metadata.md)。
 
-最後，藉由呼叫 [**SetPropertiesAsync**](https://developer.microsoft.com/windows/apps/develop) 來為編碼器設定包含方向資料的屬性集，並呼叫 [**FlushAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.flushasync) 來為影像轉碼。
+最後，藉由呼叫 [**SetPropertiesAsync**](https://docs.microsoft.com/windows/uwp/develop/) 來為編碼器設定包含方向資料的屬性集，並呼叫 [**FlushAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.flushasync) 來為影像轉碼。
 
 [!code-cs[CapturePhotoWithOrientation](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCapturePhotoWithOrientation)]
 
 ## <a name="capture-a-video-with-orientation-data"></a>使用方向資料擷取視訊
 基本的視訊擷取說明請參閱[**使用 MediaCapture 進行基本相片、視訊和音訊的擷取**](basic-photo-video-and-audio-capture-with-mediacapture.md)。 將方向資料新增到所擷取視訊的編碼，是使用先前將方向資料新增到預覽資料流的相關章節中所述的相同方式來完成。
 
-在下列範例中，會建立一個檔案來寫入所擷取的視訊。 使用靜態方法 [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4) 來建立 MP4 編碼設定檔。 藉由呼叫 **GetCameraCaptureOrientation**，從 **CameraRotationHelper** 類別取得視訊的正確方向。由於旋轉屬性需要以逆時針旋轉度數表示方向，因此，會呼叫 **ConvertSimpleOrientationToClockwiseDegrees** 協助程式方法來轉換方向值。 接著，建立代表視訊資料流旋轉的媒體基礎轉換 (MFT) 屬性的 GUID。 在 C++ 中，您可以使用常數 [**MF_MT_VIDEO_ROTATION**](https://docs.microsoft.com/windows/desktop/medfound/mf-mt-video-rotation)，但在 C# 中，您必須手動指定 GUID 值。 將屬性值新增到資料流屬性物件，指定 GUID 做為機碼並指定旋轉做為值。 最後會呼叫 [**StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile,Windows.Storage.IStorageFile))，開始利用方向資料來為錄製的視訊編碼。
+在下列範例中，會建立一個檔案來寫入所擷取的視訊。 使用靜態方法 [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4) 來建立 MP4 編碼設定檔。 藉由呼叫 **GetCameraCaptureOrientation**，從 **CameraRotationHelper** 類別取得視訊的正確方向。由於旋轉屬性需要以逆時針旋轉度數表示方向，因此，會呼叫 **ConvertSimpleOrientationToClockwiseDegrees** 協助程式方法來轉換方向值。 接著，建立代表視訊資料流旋轉的媒體基礎轉換 (MFT) 屬性的 GUID。 在 C++ 中，您可以使用常數 [**MF_MT_VIDEO_ROTATION**](https://docs.microsoft.com/windows/desktop/medfound/mf-mt-video-rotation)，但在 C# 中，您必須手動指定 GUID 值。 將屬性值新增到資料流屬性物件，指定 GUID 做為機碼並指定旋轉做為值。 最後會呼叫 [**StartRecordToStorageFileAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture#Windows_Media_Capture_MediaCapture_StartRecordToStorageFileAsync_Windows_Media_MediaProperties_MediaEncodingProfile_Windows_Storage_IStorageFile_)，開始利用方向資料來為錄製的視訊編碼。
 
 [!code-cs[StartRecordingWithOrientationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartRecordingWithOrientationAsync)]
 

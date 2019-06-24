@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: f20179b03461f2b7746cc6d0f4330bbf45c10427
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5c1a7de0e9e6817fc4b0bf1ada113f49e798641e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371948"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320541"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 
@@ -192,7 +192,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-本文其餘部分會繼續說明 MSA 案例，但 AAD 的程式碼是非常類似的。 如需 AAD/Graph 的詳細資訊，包括 GitHub 的完整範例，請參閱 [Microsoft Graph 文件](https://graph.microsoft.io/docs/platform/get-started)。
+本文其餘部分會繼續說明 MSA 案例，但 AAD 的程式碼是非常類似的。 如需 AAD/Graph 的詳細資訊，包括 GitHub 的完整範例，請參閱 [Microsoft Graph 文件](https://developer.microsoft.com/graph)。
 
 ## <a name="use-the-token"></a>使用權杖
 

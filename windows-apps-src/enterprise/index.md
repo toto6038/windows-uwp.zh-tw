@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a44a1adb8685ad182620b4c68024176628b9204d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 087192160fd098d63042f3d1ad16fe7a811de337
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369661"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321514"
 ---
 # <a name="enterprise"></a>企業
 
@@ -156,8 +156,8 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 | 主題 | 描述 |
 |-------|-------------|
 | [將 LOB 應用程式發佈到企業](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | 您可以透過商務用 Microsoft Store，將企業營運應用程式直接發佈到企業來進行大量取得，而不需要讓大眾廣泛取得應用程式。 |
-| [側載應用程式](https://technet.microsoft.com/library/mt269549) | 當您側載 app 時，您要將簽署的 app 套件部署到裝置。 您要維護這些 app 的簽署、裝載和部署。 用於側載 app 的程序已經簡化成適用於 Windows 10。             |
-| [將應用程式發佈至 Microsoft Store](https://dev.windows.com/publish) | 整合的 Windows Store 可讓您發佈與管理您為所有 Windows 裝置開發的所有應用程式。 透過每個市場價格、發佈和可見性控制項，以及其他選項來自訂您應用程式的可用性。 |
+| [側載應用程式](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | 當您側載 app 時，您要將簽署的 app 套件部署到裝置。 您要維護這些 app 的簽署、裝載和部署。 用於側載 app 的程序已經簡化成適用於 Windows 10。             |
+| [將應用程式發佈至 Microsoft Store](https://developer.microsoft.com/store/publish-apps) | 整合的 Windows Store 可讓您發佈與管理您為所有 Windows 裝置開發的所有應用程式。 透過每個市場價格、發佈和可見性控制項，以及其他選項來自訂您應用程式的可用性。 |
 
 ## <a name="enterprise-uwp-samples"></a>企業 UWP 範例
 

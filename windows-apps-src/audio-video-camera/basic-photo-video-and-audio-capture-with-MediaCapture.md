@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 21743f588fa26fcab424a67d6befdd720a891688
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 47134c951fe0351966a34b4a58fe657a6aeeb602
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359104"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317574"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 進行基本相片、視訊和音訊的擷取
 
@@ -104,7 +104,7 @@ ms.locfileid: "66359104"
 ### <a name="play-and-edit-captured-video-files"></a>播放和編輯擷取的視訊檔案
 您將視訊擷取至檔案後，可能會想要載入檔案並在應用程式的 UI 中播放。 您可以使用 **[MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** XAML 控制項和相關 **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** 進行這項作業。 如需在 XAML 頁面中播放媒體的相關資訊，請參閱[使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)。
 
-您也可以透過呼叫 **[CreateFromFileAsync](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync)** ，從視訊檔案建立 **[MediaClip](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip)** 物件。   **[MediaComposition](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition)** 提供基本的視訊編輯功能，例如排列 **MediaClip** 物件的順序、修剪視訊長度、建立層級、增加背景音樂和套用視訊效果。 如需操作媒體組合的詳細資訊，請參閱[媒體組合和編輯](media-compositions-and-editing.md)。
+您也可以透過呼叫 **[CreateFromFileAsync](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync)** ，從視訊檔案建立 **[MediaClip](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip)** 物件。  **[MediaComposition](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition)** 提供基本的視訊編輯功能，例如排列 **MediaClip** 物件的順序、修剪視訊長度、建立層級、增加背景音樂和套用視訊效果。 如需操作媒體組合的詳細資訊，請參閱[媒體組合和編輯](media-compositions-and-editing.md)。
 
 ## <a name="pause-and-resume-video-recording"></a>暫停和繼續視訊錄製
 您可以藉由呼叫 [**PauseAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pauseasync)，然後呼叫 [**ResumeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.resumeasync)，來暫停視訊錄製，然後再繼續錄製，而不需建立個別的輸出檔案。
@@ -113,7 +113,7 @@ ms.locfileid: "66359104"
 
 [!code-cs[ResumeRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeRecordingSimple)]
 
-從 Windows 10 版本 1607 開始，您可以暫停視訊錄製，並且會接收到在暫停錄製之前所擷取到的最後一個畫面。 然後，您可以在相機預覽中重疊此畫面，讓使用者能夠在繼續錄製之前，使用暫停的畫面來校準相機。 呼叫 [**PauseWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) 會傳回 [**MediaCapturePauseResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapturePauseResult) 物件。 [  **LastFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) 屬性是代表最後一個畫面的 [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame) 物件。 若要在 XAML 中顯示此畫面，請取得視訊畫面的 **SoftwareBitmap** 表示法。 目前，僅支援含有預乘或空的 Alpha 色板且格式為 BGRA8 的影像，因此，請視需要呼叫 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) 來取得正確的格式。  建立新的 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 物件並呼叫 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 進行初始化。 最後，設定 XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 控制項的 **Source** 屬性來顯示影像。 若要使用這個祕訣，您的影像必須與 **CaptureElement** 控制項對齊，而且透明度值應小於 1。 別忘了，您只能修改 UI 執行緒上的 UI，因此請在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) 內部進行此呼叫。
+從 Windows 10 版本 1607 開始，您可以暫停視訊錄製，並且會接收到在暫停錄製之前所擷取到的最後一個畫面。 然後，您可以在相機預覽中重疊此畫面，讓使用者能夠在繼續錄製之前，使用暫停的畫面來校準相機。 呼叫 [**PauseWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) 會傳回 [**MediaCapturePauseResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapturePauseResult) 物件。 [  **LastFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) 屬性是代表最後一個畫面的 [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame) 物件。 若要在 XAML 中顯示此畫面，請取得視訊畫面的 **SoftwareBitmap** 表示法。 目前，僅支援含有預乘或空的 Alpha 色板且格式為 BGRA8 的影像，因此，請視需要呼叫 [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 來取得正確的格式。  建立新的 [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 物件並呼叫 [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 進行初始化。 最後，設定 XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 控制項的 **Source** 屬性來顯示影像。 若要使用這個祕訣，您的影像必須與 **CaptureElement** 控制項對齊，而且透明度值應小於 1。 別忘了，您只能修改 UI 執行緒上的 UI，因此請在 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 內部進行此呼叫。
 
 **PauseWithResultAsync** 也會傳回前一段錄製的視訊持續時間，以防您需要追蹤總錄製時間。
 

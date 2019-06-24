@@ -4,12 +4,12 @@ description: 本文章提供通用 Windows 平台 (UWP) 新功能 CPUSets API �
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: 49662d476d6d022ca05d53e9358fc547fda92a32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 693abe68fcc7e4a341d773c6fa1af0d777c60c15
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625663"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322160"
 ---
 # <a name="cpusets-for-game-development"></a>CPUSets 遊戲開發
 
@@ -186,12 +186,12 @@ for (size_t i = 0; i < count; ++i)
 
 ![Lumia 950 快取](images/cpusets-lumia950cache.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 適用於 UWP 開發的 CPUSets API 提供大量的資訊和控制多執行緒處理的選項。 相較於之前適用於 Windows 開發的多執行緒 API，新增的彈性具有一些學習曲線，但增加的彈性最終可在各種消費者電腦和其他硬體目標上有更佳的效能。
 
 ## <a name="additional-resources"></a>其他資源
-- [CPU 集合 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
+- [CPU 集合 (MSDN)](https://docs.microsoft.com/windows/desktop/ProcThread/cpu-sets)
 - [提供 ATG CPUSets 範例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
 - [在 Xbox One UWP](index.md)
 

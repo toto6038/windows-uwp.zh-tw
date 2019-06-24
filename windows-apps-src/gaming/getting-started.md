@@ -6,12 +6,12 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: windows 10、 uwp、 遊戲，開始使用
 localizationpriority: medium
-ms.openlocfilehash: 596d0b1eb371fec98825b23a214683421e388506
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: c0d819322e7e9479772f8ca3d72bbdcdb4d192b8
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162653"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321273"
 ---
 # <a name="getting-started"></a>使用者入門
 
@@ -31,7 +31,7 @@ ms.locfileid: "58162653"
 
 請確定您已安裝在您的裝置上的 Windows 10，且有最新安裝的更新。
 
-安裝適當的 IDE，例如 Visual Studio。 Visual Studio Community 2017 可供免費下載。 如需詳細資訊，請參閱 < [Visual Studio 下載](https://www.visualstudio.com/downloads/)。
+安裝適當的 IDE，例如 Visual Studio。 Visual Studio Community 2017 可供免費下載。 如需詳細資訊，請參閱 < [Visual Studio 下載](https://visualstudio.microsoft.com/downloads/)。
 
 如果您打算使用的遊戲引擎和其他中介軟體，請參閱[橋接器、 遊戲引擎和中介軟體](e2e.md#bridges-game-engines-and-middleware)一節[Windows 10 遊戲開發指南](e2e.md)。 如需開發使用特定的遊戲引擎的 Windows 和 Xbox 遊戲，您必須移至遊戲引擎的文件。
 
@@ -54,7 +54,7 @@ ms.locfileid: "58162653"
 
 如果您想要開發 Xbox 遊戲，或在您的遊戲中使用 Xbox Live 功能，將其中一個[Xbox Live 創作者計劃](https://developer.microsoft.com/games/xbox/xboxlive/creator)或是[ ID@Xbox ](https://www.xbox.com/Developers/id)程式。 
 
-若要深入了解可用於每個程式的 Xbox Live 功能，請參閱[特徵資料表](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table)。 如需詳細資訊，請參閱 <<c0> [ 開發人員計劃](e2e.md#developer-programs)。
+若要深入了解可用於每個程式的 Xbox Live 功能，請參閱[特徵資料表](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table)。 如需詳細資訊，請參閱 <<c0> [ 開發人員計劃](e2e.md#developer-programs)。
 
 > [!Note]
 > Xbox Live 創作者計劃是所有開發人員可使用。 **任何人**可以發行 Xbox 遊戲。 若要讓您標題的一部分 Xbox Live 創作者計劃，您只需要啟用此選項，從合作夥伴中心。 如需有關登入合作夥伴中心帳戶的詳細資訊，請參閱[步驟 5](#step-5-sign-up-for-a-partner-center-account)如下。

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp，連線裝置、 遠端系統、 羅馬、 project rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 665a40cf69b7518643390abddc3895be07c63c5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 83230e17548f022767dcdde6b17fa9a93d6d9304
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366188"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320960"
 ---
 # <a name="discover-remote-devices"></a>探索遠端裝置
 您的 App 可以使用和探索裝置相同的 Microsoft 帳戶登入，使用無線網路、藍牙及雲端連線來探索 Windows 裝置。 遠端裝置不需要安裝任何特殊的軟體即可以搜尋。
@@ -48,7 +48,7 @@ ms.locfileid: "66366188"
 從該處開始，處理事件、擷取 [**RemoteSystem**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem) 物件，以及連線到遠端裝置的程序，和[啟動遠端 app](launch-a-remote-app.md) 完全相同。 簡單說，**RemoteSystem** 物件會儲存為 [**RemoteSystemAddedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) 物件 (透過每個 **RemoteSystemAdded** 事件傳入) 的屬性。
 
 ## <a name="discover-devices-by-address-input"></a>藉輸入的位址探索裝置
-有些裝置可能無法透過掃描來與使用者關聯或搜尋到，但如果探索的 app 直接使用位址，仍然可以到達。 [  **HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname) 類別可用來表示遠端裝置的位址。 這通常會以 IP 位址的形式儲存，但也允許數個其他格式 (如需詳細資訊，請參閱 [**HostName 建構函式**](https://docs.microsoft.com/uwp/api/windows.networking.hostname.))。
+有些裝置可能無法透過掃描來與使用者關聯或搜尋到，但如果探索的 app 直接使用位址，仍然可以到達。 [  **HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname) 類別可用來表示遠端裝置的位址。 這通常會以 IP 位址的形式儲存，但也允許數個其他格式 (如需詳細資訊，請參閱 [**HostName 建構函式**](https://docs.microsoft.com/uwp/api/windows.networking.hostname.-ctor))。
 
 如果提供有效的 **HostName** 物件，就可以擷取**RemoteSystem** 物件。 如果位址資料無效，則會傳回 `null` 物件參照。
 

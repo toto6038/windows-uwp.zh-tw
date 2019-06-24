@@ -5,19 +5,19 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 套件, 上傳, 裝置系列可用性
 ms.localizationpriority: medium
-ms.openlocfilehash: af2152eb8d174f6d2e40e20c8cdaccd0e87605bb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 088fb859ae38e608182b22b94300b9c27063054e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787099"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320023"
 ---
 # <a name="device-family-availability"></a>裝置系列可用性
 
-在 **\[套件\]** 頁面成功上傳套件之後，**\[裝置系列可用性\]** 區段會顯示一個依排名順序顯示將會提供哪些套件給特定 Windows 10 裝置系列 (以及舊版 OS，如果適用的話) 的表格。 本區段也可讓您選擇是否要針對特定 Windows 10 裝置系列的客戶提供提交。
+在 **\[套件\]** 頁面成功上傳套件之後， **\[裝置系列可用性\]** 區段會顯示一個依排名順序顯示將會提供哪些套件給特定 Windows 10 裝置系列 (以及舊版 OS，如果適用的話) 的表格。 本區段也可讓您選擇是否要針對特定 Windows 10 裝置系列的客戶提供提交。
 
 > [!NOTE]
-> 如果您尚未上傳套件，**\[裝置系列可用性\]** 區段將會顯示 Windows 10 裝置系列，並有核取方塊讓您表示是否要將提交提供給那些裝置系列上的客戶。 表格會在您上傳一個或多個套件之後出現。
+> 如果您尚未上傳套件， **\[裝置系列可用性\]** 區段將會顯示 Windows 10 裝置系列，並有核取方塊讓您表示是否要將提交提供給那些裝置系列上的客戶。 表格會在您上傳一個或多個套件之後出現。
 
 此區段也包含核取方塊，您可以用來表示是否要允許 Microsoft 將 App 提供給任何未來的 Windows 10 裝置系列。 我們建議您保持選取此方塊，讓您的 App 在新裝置系列引入時可供更多潛在客戶使用。
 
@@ -30,19 +30,19 @@ ms.locfileid: "63787099"
 
 如果您不希望將您的提交提供給該裝置類型上的使用者，您可以取消選取任何 Windows 10 裝置系列的方塊。 如果未選取裝置系列的方塊，該裝置類型上的新客戶就無法取得 App (雖然已經有 App 的客戶仍然可以使用，且取得您所提交的任何更新)。
 
-如果您的 App 支援那些裝置，除非有特定原因必須限制可以取得這些 App 的 Windows 10 裝置類型，建議您讓所有的方塊保持選取狀態。 例如，如果已知您的 App 無法在 [Surface Hub](https://developer.microsoft.com/windows/surfacehub) 和/或 [Microsoft HoloLens](https://developer.microsoft.com/windows/mixed-reality) 上提供良好體驗，您可以取消選取 **\[Windows 10 團隊版\]** 和/或 **\[Windows 10 全像攝影版\]** 方塊。 如此即可防止任何新客戶在這些裝置上取得該 App。 如果您後來決定要提供給那些客戶，則可以建立新的提交並核取該方塊。
+如果您的 App 支援那些裝置，除非有特定原因必須限制可以取得這些 App 的 Windows 10 裝置類型，建議您讓所有的方塊保持選取狀態。 例如，如果已知您的 App 無法在 [Surface Hub](https://developer.microsoft.com/windows/surfacehub) 和/或 [Microsoft HoloLens](https://developer.microsoft.com/mixed-reality) 上提供良好體驗，您可以取消選取 **\[Windows 10 團隊版\]** 和/或 **\[Windows 10 全像攝影版\]** 方塊。 如此即可防止任何新客戶在這些裝置上取得該 App。 如果您後來決定要提供給那些客戶，則可以建立新的提交並核取該方塊。
 
 <span id="xbox" />
 
-Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 **\[Windows 10 Xbox\]**。 如果您的 App 不是遊戲 (或者是遊戲，但您已啟用 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)或完成[概念核准](../gaming/concept-approval.md)程序)，且您的提交包含使用 Windows 10 SDK 版本 14393 或更新版本編譯的中性和/或 x64 UWP 套件，您可以選取 **\[Windows 10 Xbox\]** 方塊來提供 App 給 Xbox One 上的客戶。
+Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 **\[Windows 10 Xbox\]** 。 如果您的 App 不是遊戲 (或者是遊戲，但您已啟用 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)或完成[概念核准](../gaming/concept-approval.md)程序)，且您的提交包含使用 Windows 10 SDK 版本 14393 或更新版本編譯的中性和/或 x64 UWP 套件，您可以選取 **\[Windows 10 Xbox\]** 方塊來提供 App 給 Xbox One 上的客戶。
 
 > [!IMPORTANT]
-> 為了讓您的 App 在 Xbox 裝置上啟動，您必須包含使用 Windows SDK 版本 14393 或更新版本編譯的中性或 x64 套件。 不過，如果您選取 **\[Windows 10 Xbox\]**，您可用於 Xbox 的最高版本套件 (也就是以 Xbox 或通用裝置系列為目標的中性或 x64 套件) 將一律提供給 Xbox 上的客戶，即使套件是以舊版 SDK 編譯。 基於這個原因，確保適用於 Xbox 的最高版本套件是以 Windows SDK 版本 14393 或更高版本進行編譯非常重要。 如果不是，您會看到錯誤訊息，指出 Xbox 客戶不能啟動您的 App。 
+> 為了讓您的 App 在 Xbox 裝置上啟動，您必須包含使用 Windows SDK 版本 14393 或更新版本編譯的中性或 x64 套件。 不過，如果您選取 **\[Windows 10 Xbox\]** ，您可用於 Xbox 的最高版本套件 (也就是以 Xbox 或通用裝置系列為目標的中性或 x64 套件) 將一律提供給 Xbox 上的客戶，即使套件是以舊版 SDK 編譯。 基於這個原因，確保適用於 Xbox 的最高版本套件是以 Windows SDK 版本 14393 或更高版本進行編譯非常重要。 如果不是，您會看到錯誤訊息，指出 Xbox 客戶不能啟動您的 App。 
 > 
 > 若要解決這個錯誤，您可以執行下列其中一項：
 > - 以使用 Windows SDK 版本 14393 或更高版本編譯的套件取代適用的套件。
 > - 如果您已經有支援 Xbox 且以 Windows SDK 版本 14393 或更高版本編譯的套件，請增加其版本號碼，這樣才能是提交中最高版本的套件。
-> - 取消選取 [Windows 10 Xbox] 方塊。
+> - 取消選取 [Windows 10 Xbox]  方塊。
 >   
 > 如果您仍然無法解決問題，請連絡支援服務。
 

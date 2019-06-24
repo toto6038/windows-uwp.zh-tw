@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cb02e9c332ab1c27886520c0a9c95a312a8c395d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cc613177f7cdd57691fa261519127e8bbf03e3ad
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372741"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319893"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -51,7 +51,7 @@ ms.locfileid: "66372741"
 | **VoIP 撥號** | **VoipCall**功能可讓應用程式能夠存取呼叫 Api 的 VoIP [ **Windows.ApplicationModel.Calls** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls)命名空間。<br /><br />在您的 app 套件資訊清單中宣告 **voipCall** 功能時，它必須包含 **uap** 命名空間，如下所示。<br /><br />```<Capabilities><uap:Capability Name="voipCall"/></Capabilities>```
 | **3D 物件** | **objects3D** 功能讓 app 能以程式設計的方式存取 3D 物件檔案。 這項功能通常用於必須存取整個 3D 物件庫的 3D 應用程式和遊戲。<br /><br />需要具備這個功能，才能使用 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空間中的 API 存取包含 3D 物件的資料夾。<br /><br />在您的 app 套件資訊清單中宣告 **objects3D** 功能時，它必須包含 **uap** 命名空間，如下所示。<br /><br />```<Capabilities><uap:Capability Name="objects3D"/></Capabilities>```
 | **讀取已封鎖訊息**\* | **blockedChatMessages** 功能讓 app 能夠讀取已由垃圾郵件篩選 app 封鎖的簡訊和多媒體簡訊訊息。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat) 命名空間中的 API 存取已封鎖的訊息。<br /><br />在您的 app 套件資訊清單中宣告 **blockedChatMessages** 功能時，它必須包含 **uap** 命名空間，如下所示。<br /><br />```<Capabilities><uap:Capability Name="blockedChatMessages"/></Capabilities>```
-| **自訂裝置** | **LowLevelDevices**功能可讓應用程式，以符合一些額外的需求時，存取自訂的裝置。 這項功能不應該與混淆**lowLevel**裝置功能，可讓 GPIO、 I2C、 SPI 和 PWM 裝置的存取權。<br /><br /> 如果您要開發自訂的驅動程式會公開[裝置介面](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)和您想要開啟此裝置的控制代碼，並傳送 Ioctl，您必須： <ul><li>啟用**lowLevelDevices**應用程式資訊清單中的功能： ```<Capabilities><iot:Capability Name="lowLevelDevices"/></Capabilities>```</li><li>啟用[內嵌的模式](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)</li><li>標記裝置介面[受限](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)，在您[INF](https://msdn.microsoft.com/library/windows/desktop/hh404264(v=vs.85).aspx)或藉由呼叫[WdfDeviceAssignInterfaceProperty()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)驅動程式中。</ul>然後您可以使用[ **Windows.Devices.Custom.CustomDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)開啟您裝置的控制代碼。 如需詳細資訊，請參閱 < [UWP 內部裝置的裝置應用程式](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)。
+| **自訂裝置** | **LowLevelDevices**功能可讓應用程式，以符合一些額外的需求時，存取自訂的裝置。 這項功能不應該與混淆**lowLevel**裝置功能，可讓 GPIO、 I2C、 SPI 和 PWM 裝置的存取權。<br /><br /> 如果您要開發自訂的驅動程式會公開[裝置介面](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)和您想要開啟此裝置的控制代碼，並傳送 Ioctl，您必須： <ul><li>啟用**lowLevelDevices**應用程式資訊清單中的功能： ```<Capabilities><iot:Capability Name="lowLevelDevices"/></Capabilities>```</li><li>啟用[內嵌的模式](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)</li><li>標記裝置介面[受限](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)，在您[INF](https://docs.microsoft.com/previous-versions/windows/desktop/deviceaccess/register-the-device-interface-class-as-privileged)或藉由呼叫[WdfDeviceAssignInterfaceProperty()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)驅動程式中。</ul>然後您可以使用[ **Windows.Devices.Custom.CustomDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)開啟您裝置的控制代碼。 如需詳細資訊，請參閱 < [UWP 內部裝置的裝置應用程式](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)。
 | **IoT 系統管理** | **systemManagement** 功能讓 app 具備基本的系統管理權限，例如關機或重新啟動、地區設定和時區。<br /><br />需要具備這個功能，才能存取 [**Windows.System**](https://docs.microsoft.com/uwp/api/Windows.System) 命名空間中的某些 API。<br /><br />在您的 app 套件資訊清單中宣告 **systemManagement** 功能時，它必須包含 **iot** 命名空間，如下所示。<br /><br />```<Capabilities><iot:Capability Name="systemManagement"/></Capabilities>```
 | **背景媒體播放** | **backgroundMediaPlayback** 功能會變更媒體特定 API (例如 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) 和 [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph) 類別) 的行為，以便在您的 app 位於背景時啟用媒體播放。 所有作用中的音訊資料流將不再設為靜音，但在 app 轉換到背景時仍可繼續聽到聲音。 此外，進行播放時，將會自動延伸應用程式存留期。
 | **遠端系統** | **remoteSystem** 功能讓 app 能夠存取與使用者 Microsoft 帳戶相關聯的裝置清單。 需要存取裝置清單，才能執行任何保留在裝置上的操作。 需要具備這個功能，才能存取下列各項的所有成員。<ul><li>[Windows.System.RemoteSystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)命名空間</li><li>[Windows.System.RemoteLauncher](https://docs.microsoft.com/uwp/api/Windows.System.RemoteLauncher)類別</li><li>[AppServiceConnection.OpenRemoteAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.openremoteasync)方法</li></ul> |
@@ -110,7 +110,7 @@ ms.locfileid: "66372741"
 
 ### <a name="restricted-capability-approval-process"></a>受限制的功能核准程序
 
-在過去，我們要求您連絡支援服務以取得使用功能的核准。 我們現在可讓您提供此資訊[合作夥伴中心](https://partner.microsoft.com/dashboard/)一部分[提交程序](../publish/app-submissions.md)。
+在過去，我們要求您連絡支援服務以取得使用功能的核准。 我們現在可讓您提供此資訊[合作夥伴中心](https://partner.microsoft.com/dashboard)一部分[提交程序](../publish/app-submissions.md)。
 
 當您將套件上傳您的提交時，我們將會偵測是否已宣告任何受限的功能。 如果我們這樣做，您將需要在[提交選項](../publish/manage-submission-options.md#restricted-capabilities)頁面提供有關您的產品如何使用每項功能的詳細資訊。 請務必提供詳細資料以協助我們了解您的產品需要宣告功能的原因。 請注意，提交可能需要更多時間以完成認證程序。
 

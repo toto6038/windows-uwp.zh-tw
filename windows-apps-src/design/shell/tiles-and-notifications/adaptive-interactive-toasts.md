@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 互動式快顯通知, 調適性快顯通知, 快顯通知內容, 快顯通知裝載
 ms.localizationpriority: medium
-ms.openlocfilehash: 75e5ea7e83a1a274b90b14588f7d809a4aa91269
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7bef6874b7855a321c4e5a9153faa96d432d2dea
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366871"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320924"
 ---
 # <a name="toast-content"></a>快顯通知內容
 
@@ -880,5 +880,5 @@ ToastContent content = new ToastContent()
 ## <a name="related-topics"></a>相關主題
 
 * [傳送快顯通知及控制代碼的本機啟動](send-local-toast.md)
-* [GitHub （UWP Community Toolkit 的一部分） 上的通知程式庫](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [GitHub （UWP Community Toolkit 的一部分） 上的通知程式庫](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [磚與快顯通知的通知支援的語言、 規模和高對比](tile-toast-language-scale-contrast.md)

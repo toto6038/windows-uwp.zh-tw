@@ -5,19 +5,19 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、俱樂部
 ms.localizationpriority: medium
-ms.openlocfilehash: aef7f17a2c6371a13a2eeb57b5f3dc4ee4889435
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: e5fc116c2b868ddf093aabea09d59934301f49ec
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162667"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321860"
 ---
 # <a name="get-xbox-live-club-data"></a>取得 Xbox Live 俱樂部資料
 
-在 Microsoft Store 分析 API 中使用此方法取得[已啟用 Xbox Live 遊戲](https://docs.microsoft.com/gaming/xbox-live//index.md) 的俱樂部資料。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
+在 Microsoft Store 分析 API 中使用此方法取得[已啟用 Xbox Live 遊戲](https://docs.microsoft.com/gaming/xbox-live/index.md) 的俱樂部資料。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
 
 > [!IMPORTANT]
-> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
+> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -50,10 +50,10 @@ ms.locfileid: "58162667"
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取 Xbox Live 俱樂部資料之遊戲的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | metricType | 字串 | 指定要擷取之 Xbox Live 分析資料類型的字串。 對於此方法，請指定 **communitymanagerclub**值。  |  是  |
-| startDate | 日期 | 要擷取俱樂部資料之日期範圍的開始日期。 預設為目前日期的前 30 天。 |  否  |
-| endDate | 日期 | 要擷取俱樂部資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
-| top | 整數 | 要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
-| skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
+| startDate | date | 要擷取俱樂部資料之日期範圍的開始日期。 預設為目前日期的前 30 天。 |  否  |
+| endDate | date | 要擷取俱樂部資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
+| top | ssNoversion | 要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
+| skip | ssNoversion | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
 
 
 ### <a name="request-example"></a>要求範例
@@ -71,7 +71,7 @@ Authorization: Bearer <your access token>
 |------------|--------|-------------------------------------------------------|
 | 值      | 陣列  | 包含一個 [ProductData](#productdata) 物件的陣列，其中包含與您的遊戲相關的俱樂部的資料以及一個包含所有 Xbox Live 客戶的俱樂部資料的 [XboxwideData](#xboxwidedata) 物件。 包含這些資料是為了與遊戲資料作比較。  |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串會包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢有超過 10000 個資料列，就會傳回此值。 |
-| TotalCount | 整數    | 查詢之資料結果的資料列總數。 |
+| TotalCount | ssNoversion    | 查詢之資料結果的資料列總數。 |
 
 
 ### <a name="productdata"></a>ProductData
@@ -80,10 +80,10 @@ Authorization: Bearer <your access token>
 
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
-| 日期            |  字串 |   俱樂部資料的日期。   |
+| date            |  字串 |   俱樂部資料的日期。   |
 |  applicationId               |    字串     |  用於擷取俱樂部資料的遊戲的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。   |
-|  clubsWithTitleActivity               |    整數     |  和您的遊戲有社交關聯的俱樂部數目。   |     
-|  clubsExclusiveToGame               |   整數      |  只與您的遊戲有社交關聯的俱樂部數目。   |     
+|  clubsWithTitleActivity               |    ssNoversion     |  和您的遊戲有社交關聯的俱樂部數目。   |     
+|  clubsExclusiveToGame               |   ssNoversion      |  只與您的遊戲有社交關聯的俱樂部數目。   |     
 |  clubFacts               |   陣列      |   包含一個或多個關於與您的遊戲有社交關聯的每個俱樂部的 [ClubFacts](#clubfacts) 物件。   |
 
 
@@ -93,10 +93,10 @@ Authorization: Bearer <your access token>
 
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
-| 日期            |  字串 |   俱樂部資料的日期。   |
+| date            |  字串 |   俱樂部資料的日期。   |
 |  applicationId  |    字串     |   在 **XboxwideData** 物件，這個字串總是 **XBOXWIDE** 值。  |
-|  clubsWithTitleActivity               |   整數     |  平均而言，客戶與已啟用的 Xbox Live 遊戲有社交關聯的俱樂部數目。    |     
-|  clubsExclusiveToGame               |   整數      |  平均而言，只與已啟用的 Xbox Live 遊戲有社交關聯的俱樂部數目。   |     
+|  clubsWithTitleActivity               |   ssNoversion     |  平均而言，客戶與已啟用的 Xbox Live 遊戲有社交關聯的俱樂部數目。    |     
+|  clubsExclusiveToGame               |   ssNoversion      |  平均而言，只與已啟用的 Xbox Live 遊戲有社交關聯的俱樂部數目。   |     
 |  clubFacts               |   物件      |  包含一個 [ClubFacts](#clubfacts) 物件。 此物件在 **XboxwideData** 物件的內容中沒有意義，並有預設值。  |
 
 
@@ -107,8 +107,8 @@ Authorization: Bearer <your access token>
 | 值           | 類型    | 描述        |
 |-----------------|---------|--------------------|
 |  name            |  字串  |   在 **ProductData** 物件，這是俱樂部的名稱。 在 **XboxwideData** 物件，這總是 **XBOXWIDE** 值。           |
-|  memberCount               |    整數     | 在 **ProductData** 物件，這是俱樂部會員的數目，不包括只瀏覽俱樂部的非會員。 在 **XboxwideData** 物件，這總是 0。    |
-|  titleSocialActionsCount               |    整數     |  在 **ProductData** 物件，這是俱樂部成員所執行的與您的遊戲相關的社交動作次數。 在 **XboxwideData** 物件，這總是 0   |
+|  memberCount               |    ssNoversion     | 在 **ProductData** 物件，這是俱樂部會員的數目，不包括只瀏覽俱樂部的非會員。 在 **XboxwideData** 物件，這總是 0。    |
+|  titleSocialActionsCount               |    ssNoversion     |  在 **ProductData** 物件，這是俱樂部成員所執行的與您的遊戲相關的社交動作次數。 在 **XboxwideData** 物件，這總是 0   |
 |  isExclusiveToGame               |    布林值     |  在 **ProductData** 物件，這表示目前俱樂部是否只與您的遊戲有社交關聯。 在 **XboxwideData** 物件，這總是 True。  |
 
 

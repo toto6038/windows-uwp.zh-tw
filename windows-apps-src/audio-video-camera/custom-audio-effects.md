@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: f34b2cdbb538d121c1c6182b2c02042d6c0047ed
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6bebf9533ab045822902d44f87f68eec55c11074
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360932"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318567"
 ---
 # <a name="custom-audio-effects"></a>自訂音訊效果
 
@@ -51,7 +51,7 @@ ms.locfileid: "66360932"
 
 ### <a name="setencodingproperties-method"></a>SetEncodingProperties 方法
 
-系統會在您的效果上呼叫 [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows) 來讓您知道效果正在運作之音訊串流的編碼屬性。 為了實作回音效果，本範例會使用緩衝區以儲存一秒的音訊資料。 這個方法能根據音訊編碼的取樣率，提供針對一秒音訊中的範例數目初始化緩衝區大小的機會。 延遲效果也會使用整數計數器以追蹤延遲緩衝區中的目前位置。 由於系統會在效果新增到音訊管道時呼叫 **SetEncodingProperties**，這是將該值初始化為 0 的好時機。 您也可以擷取傳遞到此方法的 **AudioEncodingProperties** 物件，以用於效果中的其他地方。
+系統會在您的效果上呼叫 [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) 來讓您知道效果正在運作之音訊串流的編碼屬性。 為了實作回音效果，本範例會使用緩衝區以儲存一秒的音訊資料。 這個方法能根據音訊編碼的取樣率，提供針對一秒音訊中的範例數目初始化緩衝區大小的機會。 延遲效果也會使用整數計數器以追蹤延遲緩衝區中的目前位置。 由於系統會在效果新增到音訊管道時呼叫 **SetEncodingProperties**，這是將該值初始化為 0 的好時機。 您也可以擷取傳遞到此方法的 **AudioEncodingProperties** 物件，以用於效果中的其他地方。
 
 [!code-cs[DeclareEchoBuffer](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetDeclareEchoBuffer)]
 [!code-cs[SetEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetEncodingProperties)]

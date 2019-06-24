@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fe9805bfd754c050371b41ff091b1b2edf47891
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: da0031dbb87bffb457786170494140dbee0b2a6e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364924"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317111"
 ---
 # <a name="transforms-overview"></a>轉換概觀
 
@@ -46,7 +46,7 @@ ms.locfileid: "66364924"
 
 每當您使用以[ **UIElement.RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)，請記住，有另一個屬性[ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) ，會影響轉換的運作方式：[**RenderTransformOrigin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransformorigin)。 **RenderTransformOrigin** 所宣告的是整個轉換應該要套用到元素的預設 (0,0) 點，還是要套用到該元素之相對座標空間中的某個其他原始點。 就一般元素來說，(0,0) 會將轉換置於左上角。 視您想要獲得的效果而定，可以選擇變更 **RenderTransformOrigin**，而不是調整轉換上的 **CenterX** 與 **CenterY** 值。 請注意，如果您同時套用了 **RenderTransformOrigin** 與 **CenterX** / **CenterY** 值，結果可能會相當混淆，尤其是當您以動畫顯示這當中任何一個值的時候。
 
-基於點擊測試目的，已套用轉換的物件會在 x-y 空間中以和其視覺外觀一致的預期方式，繼續回應輸入。 例如，如果您已使用 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 將 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 在 UI 中橫向移動 400 像素，當使用者按下 **Rectangle** 以視覺方式出現的點時，該 **Rectangle** 會回應 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 如果使用者按下 **Rectangle** 在轉譯前的區域，您並不會收到錯誤事件。 對任何影響點擊測試的 z-index 考量來說，套用轉換並不會帶來任何不同；規範哪個元素處理在 x-y 空間點的輸入事件的 z-index 仍然使用容器中宣告的子系順序進行評估。 雖然對於 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 物件的子元素而言，您可以透過將 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) 附加屬性套用到子元素以調整順序，但該順序通常會與您在 XAML 中宣告元素的順序相同。
+基於點擊測試目的，已套用轉換的物件會在 x-y 空間中以和其視覺外觀一致的預期方式，繼續回應輸入。 例如，如果您已使用 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 將 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 在 UI 中橫向移動 400 像素，當使用者按下 **Rectangle** 以視覺方式出現的點時，該 **Rectangle** 會回應 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 如果使用者按下 **Rectangle** 在轉譯前的區域，您並不會收到錯誤事件。 對任何影響點擊測試的 z-index 考量來說，套用轉換並不會帶來任何不同；規範哪個元素處理在 x-y 空間點的輸入事件的 z-index 仍然使用容器中宣告的子系順序進行評估。 雖然對於 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 物件的子元素而言，您可以透過將 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) 附加屬性套用到子元素以調整順序，但該順序通常會與您在 XAML 中宣告元素的順序相同。
 
 ## <a name="span-idothertransformpropertiesspanspan-idothertransformpropertiesspanspan-idothertransformpropertiesspanother-transform-properties"></a><span id="Other_transform_properties"></span><span id="other_transform_properties"></span><span id="OTHER_TRANSFORM_PROPERTIES"></span>其他轉換屬性
 
@@ -95,7 +95,7 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 ## <a name="span-idaccountingforcoordinateframesofreferenceatruntimespanspan-idaccountingforcoordinateframesofreferenceatruntimespanspan-idaccountingforcoordinateframesofreferenceatruntimespanaccounting-for-coordinate-frames-of-reference-at-run-time"></a><span id="Accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="ACCOUNTING_FOR_COORDINATE_FRAMES_OF_REFERENCE_AT_RUN_TIME"></span>在執行階段負責座標的參考框架
 
-[**UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)方法，名為[ **TransformToVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.)，可以產生[**轉換**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Transform)相互關聯的兩個 UI 項目座標的畫面格的參考。 如果您將根視覺項目當做第一個參數來傳遞，便可以使用這個方法將元素與應用程式的預設參考座標框架做比較。 如果您已經從不同元素擷取輸入事件，或正嘗試在不實際要求版面配置階段的情況下預測配置行為，這就有用處。
+[**UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)方法，名為[ **TransformToVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transformtovisual)，可以產生[**轉換**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Transform)相互關聯的兩個 UI 項目座標的畫面格的參考。 如果您將根視覺項目當做第一個參數來傳遞，便可以使用這個方法將元素與應用程式的預設參考座標框架做比較。 如果您已經從不同元素擷取輸入事件，或正嘗試在不實際要求版面配置階段的情況下預測配置行為，這就有用處。
 
 從指標事件取得的事件資料可提供 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpoint.getcurrentpoint) 方法的存取權，您可以在該方法指定 *relativeTo* 參數，以將參考的座標框架變更成特定的元素，而非應用程式預設值。 這種方法只是在內部套用轉譯轉換，並在建立傳回的 [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 物件時，為您轉換 x-y 座標資料。
 

@@ -5,12 +5,12 @@ ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: da0379109dcf56de505f2a56317258e0ab597f94
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 7db48b610d5bdf256d6a44d4786b8642d984c0b0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244364"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321541"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>啟用或停用隨附於 Windows 10 的軟體解碼器
 
@@ -43,7 +43,7 @@ Windows Registry Editor Version 5.00
 ```  
 
 > [!Warning]
-> 如果您未正確修改登錄，可能會發生嚴重問題。  若要增加保護，請在修改前備份登錄。  之後如果發生問題，您還可以還原登錄。  如需如何備份和還原登錄的詳細資訊，請按一下以下文章編號，以檢視 Microsoft 知識庫中的文章： <br/><br/> [322756](https://support.microsoft.com/kb/322756)如何備份及還原 Windows 中的登錄。
+> 如果您未正確修改登錄，可能會發生嚴重問題。  若要增加保護，請在修改前備份登錄。  之後如果發生問題，您還可以還原登錄。  如需如何備份和還原登錄的詳細資訊，請按一下以下文章編號，以檢視 Microsoft 知識庫中的文章： <br/><br/> [322756](https://support.microsoft.com/help/322756/how-to-back-up-and-restore-the-registry-in-windows)如何備份及還原 Windows 中的登錄。
 
 > [!NOTE]
 > 內建於 Windows 10 的軟體解碼器由 [**Digimarc Corporation**](https://www.digimarc.com/) 提供。

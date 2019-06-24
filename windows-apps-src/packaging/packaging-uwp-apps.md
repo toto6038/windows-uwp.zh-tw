@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 265e034b264cf82bacfa5a32141eb5d999d57108
-ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
+ms.openlocfilehash: 3f24d91231b4da1a4a456846faceb604d9ee450d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66825031"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319846"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
@@ -46,7 +46,7 @@ ms.locfileid: "66825031"
 
 1.  **測試您的應用程式。** 封裝您的應用程式合作夥伴中心提交之前，請確定它如預期般在您打算支援的所有裝置系列上運作。 這些裝置系列可能包含桌上型電腦、行動裝置、Surface Hub、Xbox、IoT 裝置或其他等。 如需有關部署和測試您的應用程式使用 Visual Studio 的詳細資訊，請參閱[部署和偵錯 UWP 應用程式](../debug-test-perf/deploying-and-debugging-uwp-apps.md)。
 2.  **最佳化您的應用程式。** 您可以使用 Visual Studio 的分析與偵錯工具來最佳化您的 UWP 應用程式的效能。 例如，UI 回應性時間軸工具、記憶體使用量工具及 CPU 使用量工具等。 如需這些工具的詳細資訊，請參閱[程式碼剖析功能之旅](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)主題。
-3.  **檢查.NET 原生相容性 (若為 VB 和C#應用程式)。** 在通用 Windows 平台中，有原生編譯器可改善您的應用程式的執行階段效能。 由於這項變更，您應該在此編譯環境中測試您的 app。 根據預設，**Release** 組建組態可啟用 .NET 原生工具鏈，因此請務必使用這個 **Release** 組態測試您的 app，確認您的 app 是否如預期般運作。 [偵錯 .NET Native Windows 通用 app](https://blogs.msdn.microsoft.com/devops/2015/07/29/debugging-net-native-windows-universal-apps/)詳細說明一些使用 .NET Native 可能會發生的常見偵錯問題。
+3.  **檢查.NET 原生相容性 (若為 VB 和C#應用程式)。** 在通用 Windows 平台中，有原生編譯器可改善您的應用程式的執行階段效能。 由於這項變更，您應該在此編譯環境中測試您的 app。 根據預設，**Release** 組建組態可啟用 .NET 原生工具鏈，因此請務必使用這個 **Release** 組態測試您的 app，確認您的 app 是否如預期般運作。 [偵錯 .NET Native Windows 通用 app](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/)詳細說明一些使用 .NET Native 可能會發生的常見偵錯問題。
 
 ## <a name="configure-an-app-package"></a>設定 app 套件
 
@@ -96,7 +96,7 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 4.  在下一步 頁面上，使用您開發人員帳戶登入合作夥伴中心。 如果您還沒有開發人員帳戶，精靈會幫助您建立一個。
     ![建立應用程式封裝 視窗以顯示選取的應用程式名稱](images/packaging-screen4.jpg)
 5.  從目前已註冊您的帳戶，應用程式清單中選取您封裝應用程式的名稱，或保留新的如果您有保留一個在合作夥伴中心。  
-6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 [產生應用程式套件組合] 清單方塊中，選取 [一律]。 應用程式配套 （.appxbundle 或.msixbundle） 建議，透過單一的應用程式套件檔案因為它包含每種類型的處理器架構所設定的應用程式套件的集合。 當您選擇要產生應用程式套件組合時，應用程式套件組合會包含在最終的應用程式封裝上傳 （.appxupload 或.msixupload） 檔案以及偵錯和當機分析的資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
+6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 **\[產生應用程式套件組合\]** 清單方塊中，選取 **\[一律\]** 。 應用程式配套 （.appxbundle 或.msixbundle） 建議，透過單一的應用程式套件檔案因為它包含每種類型的處理器架構所設定的應用程式套件的集合。 當您選擇要產生應用程式套件組合時，應用程式套件組合會包含在最終的應用程式封裝上傳 （.appxupload 或.msixupload） 檔案以及偵錯和當機分析的資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
     ![使用封裝組態顯示建立應用程式封裝 視窗](images/packaging-screen5.jpg)
 7.  包含完整的 PDB 符號檔才能[分析應用程式效能](https://docs.microsoft.com/windows/uwp/publish/analytics)從已發行您的應用程式之後，合作夥伴中心。 設定任何其他詳細資料，例如版本編號或套件輸出位置。
 8.  按一下 **\[建立\]** 產生應用程式套件。 如果您選取其中一個**我想要建立套件以上傳到 Microsoft Store**步驟 3 中的選項，並建立合作夥伴中心提交套件，精靈會建立封裝上傳 （.appxupload 或.msixupload） 檔案。 如果您選取**我想要建立封裝以側載**在步驟 3 中，精靈會建立單一應用程式套件或應用程式套件組合，根據您在步驟 6 中的選取項目。

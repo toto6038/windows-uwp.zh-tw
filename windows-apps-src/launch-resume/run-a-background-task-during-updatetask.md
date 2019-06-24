@@ -5,12 +5,12 @@ ms.date: 04/21/2017
 ms.topic: article
 keywords: windows 10、 uwp、 更新、 背景工作、 updatetask、 背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 3683595926f20fdd9f9af5929db65396b0001bcc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d943623a9978d39fd3930edc07e7524fe1cadf55
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371480"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321785"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在更新 UWP 應用程式時執行背景工作
 
@@ -27,7 +27,7 @@ ms.locfileid: "66371480"
 - 將 Windows 執行階段元件專案至您的方案。
 - 從 App 建立元件的參考。
 - 在實作 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 的元件中建立公用密封類別。
-- 實作 [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) 方法，這是在執行「更新工作」時呼叫的必要進入點。 如果您要從背景工作進行非同步呼叫，[建立和註冊跨處理序背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) 會說明如何在 **Run** 方法中使用延遲。
+- 實作 [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法，這是在執行「更新工作」時呼叫的必要進入點。 如果您要從背景工作進行非同步呼叫，[建立和註冊跨處理序背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) 會說明如何在 **Run** 方法中使用延遲。
 
 您不需要註冊此背景工作 ( **「建立和註冊跨處理序背景工作」** 主題中的「註冊要執行的背景工作」一節)，就能使用「更新工作」。 這就是使用「更新工作」的主要原因，因為您不需要新增任何程式碼至 App 來註冊背景工作，而且 App 不必在更新之前至少執行一次，也能註冊背景工作。
 

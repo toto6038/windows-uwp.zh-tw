@@ -5,12 +5,12 @@ ms.date: 08/24/2017
 ms.topic: article
 keywords: windows 10, uwp, App 內購買, IAP, 附加元件, 錯誤碼
 ms.localizationpriority: medium
-ms.openlocfilehash: ba505b30076c356a39ae195e1d187cbc49d8a66a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e887e5fec2a2e04658332a25a3a6c8e23fe2550c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662873"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321721"
 ---
 # <a name="error-codes-for-store-operations"></a>Microsoft Store 作業的錯誤碼
 
@@ -53,7 +53,7 @@ ms.locfileid: "57662873"
 | 0x803F8009<br/>0x803F800A   | 應用程式的試用期間已到期。   |
 | 0x803F8190   |  授權不允許在您裝置目前的國家/地區使用產品。  |
 | 0x803F81F5<br/>0x803F81F6<br/>0x803F81F7<br/>0x803F81F8<br/>0x803F81F9   |  您已經達到可使用 Microsoft Store 中遊戲與應用程式的裝置數目上限。 若要在目前裝置上使用此遊戲或應用程式，請先從您的帳戶移除其他裝置。  |
-| 0x803F9000<br/>0x803F9001    |  授權已過期或損壞。 若要解決這個錯誤，請嘗試在執行[針對 Windows 應用程式進行疑難排解](https://support.microsoft.com/help/4027498/windows-run-the-troubleshooter-for-windows-apps)重設存放區快取。     |
+| 0x803F9000<br/>0x803F9001    |  授權已過期或損壞。 若要解決這個錯誤，請嘗試在執行[針對 Windows 應用程式進行疑難排解](https://support.microsoft.com/help/4027498/microsoft-store-fix-problems-with-apps)重設存放區快取。     |
 | 0x803F9006    |  由於有權使用此產品的使用者未使用其 Microsoft 帳戶登入裝置，因此無法完成作業。            |
 | 0x803F9008<br/>0x803F9009    |  您的裝置已離線。 您的裝置需要連線才能使用此產品。            |
 | 0x803F900A    |  訂閱已到期。            |

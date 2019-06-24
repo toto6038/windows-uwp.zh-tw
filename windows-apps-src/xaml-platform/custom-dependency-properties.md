@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: c4aa46f38b7b98f8dc4963938082aa1dd9ed8973
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ba56464cb30a8bacecae8a2347332c0c36be55ea
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366467"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322116"
 ---
 # <a name="custom-dependency-properties"></a>自訂相依性屬性
 
@@ -441,7 +441,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 集合類型相依性屬性需要考慮一些其他的實作問題。
 
-集合類型相依性屬性在 Windows 執行階段 API 中相對是較為少見的。 在大多數情況下，您可以在項目是 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 子類別的地方使用集合，但是集合屬性本身會被當作傳統的 CLR 或 C++ 屬性來實作。 因為使用相依性屬性時，一些典型案例可能不適合使用集合。 例如: 
+集合類型相依性屬性在 Windows 執行階段 API 中相對是較為少見的。 在大多數情況下，您可以在項目是 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 子類別的地方使用集合，但是集合屬性本身會被當作傳統的 CLR 或 C++ 屬性來實作。 因為使用相依性屬性時，一些典型案例可能不適合使用集合。 例如:
 
 - 您通常不會為集合建立動畫效果。
 - 您通常不會使用樣式或範本在集合中預先填入項目。
@@ -472,7 +472,7 @@ Windows 執行階段不提供將自訂相依性屬性登錄為唯讀的方法。
 
 ### <a name="registering-the-dependency-properties-for-ccx-apps"></a>針對 C++/CX 應用程式登錄相依性屬性
 
-在 C++/CX 中登錄屬性的實作比 C# 更需要技巧，這是因為兩者都需要分成標頭和實作檔，同時也因為在實作檔案的根範圍內進行初始化就是一個不良做法所致 (VisualC++元件擴充功能 (C++/CX) 會將從直接在根範圍的靜態初始設定式程式碼放**DllMain**，而C#編譯器將類別的靜態初始設定式，並因此避免**DllMain**載入鎖定問題。)。 此處的最佳做法是宣告一個協助程式函式，為類別進行所有的相依性屬性登錄，而且每個類別都需要一個函式。 然後，針對應用程式取用的每個自訂類別，您必須參照每個想要使用的自訂類別所公開的協助程式登錄函式。 在 `InitializeComponent` 之前，於 [**Application 建構函式**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.) (`App::App()`) 中呼叫每個協助程式登錄函式一次。 例如，該建構函式只會在第一次真正參照應用程式時執行，如果是暫停的應用程式繼續執行，它將不會再次執行。 此外，如先前的 C++ 登錄範例所示，在每個 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 呼叫周圍的 **nullptr** 檢查非常重要：這可保證函式中不會有其他呼叫者可以登錄該屬性兩次。 如果沒有這類檢查，第二個登錄呼叫可能會因為屬性名稱重複而毀損您的應用程式。 如果您需要查看範例程式碼的 C++/CX 版本，可以在 [XAML 使用者和自訂控制項範例](https://go.microsoft.com/fwlink/p/?linkid=238581)中查看這個實作模式。
+在 C++/CX 中登錄屬性的實作比 C# 更需要技巧，這是因為兩者都需要分成標頭和實作檔，同時也因為在實作檔案的根範圍內進行初始化就是一個不良做法所致 (VisualC++元件擴充功能 (C++/CX) 會將從直接在根範圍的靜態初始設定式程式碼放**DllMain**，而C#編譯器將類別的靜態初始設定式，並因此避免**DllMain**載入鎖定問題。)。 此處的最佳做法是宣告一個協助程式函式，為類別進行所有的相依性屬性登錄，而且每個類別都需要一個函式。 然後，針對應用程式取用的每個自訂類別，您必須參照每個想要使用的自訂類別所公開的協助程式登錄函式。 在 `InitializeComponent` 之前，於 [**Application 建構函式**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) (`App::App()`) 中呼叫每個協助程式登錄函式一次。 例如，該建構函式只會在第一次真正參照應用程式時執行，如果是暫停的應用程式繼續執行，它將不會再次執行。 此外，如先前的 C++ 登錄範例所示，在每個 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 呼叫周圍的 **nullptr** 檢查非常重要：這可保證函式中不會有其他呼叫者可以登錄該屬性兩次。 如果沒有這類檢查，第二個登錄呼叫可能會因為屬性名稱重複而毀損您的應用程式。 如果您需要查看範例程式碼的 C++/CX 版本，可以在 [XAML 使用者和自訂控制項範例](https://go.microsoft.com/fwlink/p/?linkid=238581)中查看這個實作模式。
 
 ## <a name="related-topics"></a>相關主題
 

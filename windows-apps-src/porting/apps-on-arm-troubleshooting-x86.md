@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, always connected, x86 emulation on ARM, troubleshooting, 永遠連線, ARM 上的 x86 模擬, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 396bb0bf2c5ba5236e0e46e7b474867ffacb8c75
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5f40c53c70a457057f678cdc227a98fc694e2273
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589853"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319674"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>疑難排解 x86 傳統型應用程式
 >[!IMPORTANT]
@@ -18,11 +18,11 @@ ms.locfileid: "57589853"
 
 如果 x86 傳統型應用程式無法像在 x86 電腦上一樣運作，以下是一些可協助您疑難排解的指引。
 
-|問題|解決方案|
+|問題|方案|
 |-----|--------|
 | 您的應用程式依賴不是針對 ARM 所設計的驅動程式。 | 將 x86 驅動程式編譯為 ARM64。 查看[使用 WDK 建置 ARM64 驅動程式](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)。 |
 | 您的應用程式僅適用於 x64。 | 如果您針對 Microsoft Store 開發，請提交應用程式的 ARM 版本。 如需詳細資訊，請參閱[應用程式套件架構](../packaging/device-architecture.md)。 如果您是 Win32 開發人員，建議您編譯您的應用程式為 ARM64。 如需詳細資訊，請參閱[早期預覽 ARM 開發上 Windows 10 的 Visual Studio 支援](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。 |
-| 您的應用程式使用比 OpenGL 1.1 更新的版本或需要硬體加速 OpenGL。 | 如果有的話，請使用應用程式的 DirectX 模式。 使用 DirectX 9、DirectX 10、DirectX 11 和 DirectX 12 的 x86 應用程式可在 ARM 上正常運作。 如需詳細資訊，請參閱[DirectX 圖形與遊戲](https://msdn.microsoft.com/en-us/library/windows/desktop/ee663274(v=vs.85).aspx)。 |
+| 您的應用程式使用比 OpenGL 1.1 更新的版本或需要硬體加速 OpenGL。 | 如果有的話，請使用應用程式的 DirectX 模式。 使用 DirectX 9、DirectX 10、DirectX 11 和 DirectX 12 的 x86 應用程式可在 ARM 上正常運作。 如需詳細資訊，請參閱[DirectX 圖形與遊戲](https://docs.microsoft.com/windows/desktop/directx)。 |
 | 您的 x86 應用程式無法如預期運作。 | 請依照[ARM 上的程式相容性疑難排解員](apps-on-arm-program-compat-troubleshooter.md)中的指引，嘗試使用相容性疑難排解員。 如需一些其他疑難排解步驟，請查看[疑難排解 ARM 上的 x86 應用程式](apps-on-arm-troubleshooting-x86.md)文章。 |
 
 ## <a name="best-practices-for-wow"></a>WOW 最佳做法
@@ -34,7 +34,7 @@ ms.locfileid: "57589853"
 
 一般而言，當已決定應用程式在 WOW 中執行時，應用程式不應該對主機系統做相關假設。 盡可能避免與作業系統的原生元件互動。
 
-應用程式可能會在原生登錄檢視中放置登錄機碼，或根據有無 WOW 執行功能。 原始**IsWow64Process**只表示應用程式是否正在 x64 電腦上執行。 App 現在應該使用[IsWow64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318(v=vs.85).aspx)判斷它們是否正在支援 WOW 的系統上執行。 
+應用程式可能會在原生登錄檢視中放置登錄機碼，或根據有無 WOW 執行功能。 原始**IsWow64Process**只表示應用程式是否正在 x64 電腦上執行。 App 現在應該使用[IsWow64Process2](https://docs.microsoft.com/windows/desktop/api/wow64apiset/nf-wow64apiset-iswow64process2)判斷它們是否正在支援 WOW 的系統上執行。 
 
 ## <a name="drivers"></a>驅動程式 
 所有核心模式驅動程式、[使用者模式驅動程式架構 (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)驅動程式和印表機驅動程式必須編譯以符合作業系統的架構。 如果 x86 應用程式有驅動程式，則必須針對 ARM64 重新編譯該驅動程式。 x86 應用程式在模擬下可能會正常執行，不過它的驅動程式會需要針對 ARM64 重新編譯，並將不提供任何依賴驅動程式的應用程式體驗。 針對 ARM64 編譯驅動程式的詳細資訊，請查看[使用 WDK 建置 ARM64 驅動程式](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)。

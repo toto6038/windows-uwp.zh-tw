@@ -7,18 +7,18 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2c7332a3e1097a8e62576ae5920eb82c2bd5d2a6
-ms.sourcegitcommit: 423ff8f1fd791445e21cca534bcefe407251acf1
+ms.openlocfilehash: 20980562f73bca2087d4c0a6ee049c848404d6a6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251604"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319418"
 ---
 ![設計基本知識](../images/downloads-2x.png)
 
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>設計 UWP 應用程式的工具組和範例
  
-Fluent 設計/UWP 應用程式的設計與 UI 相關下載。 如需其他工具 (例如 Visual Studio)，請參閱<a href="https://developer.microsoft.com/downloads">我們的主要下載頁面</a>。 
+Fluent 設計/UWP 應用程式的設計與 UI 相關下載。 如需其他工具 (例如 Visual Studio)，請參閱<a href="https://developer.microsoft.com/windows/downloads">我們的主要下載頁面</a>。 
 
 
 ## <a name="design-toolkits"></a>設計工具組
@@ -131,4 +131,4 @@ BuildCast 是一個用來展示 Fluent Design 系統和 UWP 的端對端範例�
 
 ## <a name="want-more-code"></a>想要更多程式碼嗎？
 
-瀏覽 Windows 範本頁面取得所有我們的 UWP 應用程式範本的清單。 <a href="https://developer.microsoft.com/samples">移至範本入口網站</a>
+瀏覽 Windows 範本頁面取得所有我們的 UWP 應用程式範本的清單。 <a href="https://developer.microsoft.com/windows/samples">移至範本入口網站</a>

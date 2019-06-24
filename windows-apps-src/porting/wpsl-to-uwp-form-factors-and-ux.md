@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: efd024838194876532dc3a1925f9c43430513cda
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 03a994930e956cb3c2e775c32e77c6e62b526a17
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370729"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322318"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>板型規格和 UX 移植到 UWP 的 Windows Phone Silverlight
 
@@ -30,7 +30,7 @@ Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相�
 
 客觀來說，螢幕是以英吋與實體 (原始) 像素的單位來測量。 知道這兩個計量，您就可以知道一英吋能夠容納多少像素。 這就是像素密度，也稱為 DPI (每英吋點數) 或 PPI (每英吋像素數)。 而 DPI 的倒數就是像素的實體大小 (以英吋的分數表示)。 像素密度也稱為「解析度」，雖然此詞彙通常被寬鬆地用來表示像素計數。 
 
-隨著檢視距離增加，所有這些客觀計量也就「看起來」變得較小，它們會解析成螢幕的「有效大小」與其「有效解析度」。    與您眼睛保持的距離最接近的通常是您的手機，其次是您的平板電腦，接著是您的電腦監視器，而最遠的是 [Surface Hub](https://www.microsoft.com/microsoft-surface-hub) 裝置與電視。 為了做為補償，裝置傾向於隨著檢視距離的增加而在客觀上變得較大。 當您設定 UI 元素大小時，您是使用稱為有效像素 (epx) 的單位設定大小。 和 Windows 10 時，會考慮到帳戶 DPI 和一般檢視距離，從裝置上，若要計算您的 UI 項目，以便獲得最佳的體驗的實體像素的最佳大小。 請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md)。
+隨著檢視距離增加，所有這些客觀計量也就「看起來」變得較小，它們會解析成螢幕的「有效大小」與其「有效解析度」。    與您眼睛保持的距離最接近的通常是您的手機，其次是您的平板電腦，接著是您的電腦監視器，而最遠的是 [Surface Hub](https://www.microsoft.com/surface/devices/surface-hub) 裝置與電視。 為了做為補償，裝置傾向於隨著檢視距離的增加而在客觀上變得較大。 當您設定 UI 元素大小時，您是使用稱為有效像素 (epx) 的單位設定大小。 和 Windows 10 時，會考慮到帳戶 DPI 和一般檢視距離，從裝置上，若要計算您的 UI 項目，以便獲得最佳的體驗的實體像素的最佳大小。 請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
 即便如此，我們還是建議您使用多種不同的裝置測試您的 app，以親自確認各種體驗。
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: f41bf9f56b63f59844bec976e9d6e5e3d650b271
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3dbb06f53f760724da312e00f545d799d6a24200
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370277"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321575"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>啟用使用者模式存取 GPIO、I2C 和 SPI
 
@@ -614,7 +614,7 @@ Device(I2C1)
 * CLIENT_ConnectFunctionConfigPins – 由 `GpioClx` 呼叫，命令迷你連接埠驅動程式套用指定的多工處理設定。
 * CLIENT_DisconnectFunctionConfigPins – 由 `GpioClx` 呼叫，命令迷你連接埠驅動程式回復多工處理設定。
 
-如需這些常式的說明，請參閱 [GpioClx 事件的回呼函式](https://docs.microsoft.com/previous-versions//hh439464(v=vs.85))。
+如需這些常式的說明，請參閱 [GpioClx 事件的回呼函式](https://docs.microsoft.com/previous-versions/hh439464(v=vs.85))。
 
 除了這兩個新 DDI 外，應稽核現有 DDI 的針腳多工處理相容性：
 
@@ -744,7 +744,7 @@ devcon status *msft8000
 
 現在 rhproxy 正在執行中，它應該已建立使用者模式可以存取的裝置介面。 我們會使用數個命令列工具來列舉裝置，並查看他們是否出現。
 
-複製品[ https://github.com/ms-iot/samples ](https://github.com/ms-iot/samples)存放庫和建置`GpioTestTool`， `I2cTestTool`， `SpiTestTool`，和`Mincomm`範例。 複製工具到進行測試的裝置，並使用下列命令列舉裝置。
+複製品[ https://github.com/ms-iot/samples ](https://github.com/ms-iot/samples)存放庫和建置`GpioTestTool` ， `I2cTestTool` ， `SpiTestTool` ，和`Mincomm` 範例。 複製工具到進行測試的裝置，並使用下列命令列舉裝置。
 
 ```ps
 I2cTestTool.exe -list

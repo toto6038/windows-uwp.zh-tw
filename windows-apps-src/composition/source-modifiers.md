@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 87e4eb90b4801d01ecb85c91b5e64ccc9155d199
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649863"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318090"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>使用來源修飾詞執行拖動以重新整理
 
 在本文中，我們將深入探討如何使用 InteractionTracker 的 SourceModifier 功能，並示範使用它來建立自訂的拖動以重新整理控制項。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
@@ -48,7 +48,7 @@ ms.locfileid: "57649863"
 
 ![使用拖動以重新整理的清單](images/animation/city-list.gif)
 
-此體驗的有效程式碼可在 [GitHub 上的 Window UI 開發人員實驗室存放庫](https://github.com/Microsoft/WindowsUIDevLabs)中找到。 以下逐步解說建置體驗。
+此體驗的有效程式碼可在 [GitHub 上的 Window UI 開發人員實驗室存放庫](https://github.com/microsoft/WindowsCompositionSamples)中找到。 以下逐步解說建置體驗。
 在 XAML 標記程式碼中，有下列項目：
 
 ```xaml

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd84d5e0e41f07b53be0c0afce4b881a8a75d59
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4a171df5312d6c4613dfca1215f5ddd948153a8f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359222"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317865"
 ---
 # <a name="receive-data"></a>接收資料
 
@@ -47,7 +47,7 @@ ms.locfileid: "66359222"
 
 ## <a name="handle-share-activation"></a>處理分享啟用
 
-當使用者選取您的 app 時 (通常是從分享 UI 中可用的目標 app 清單中選取)，會引發 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) 事件。 您的 app 必須處理此事件，才能處理使用者想要分享的資料。
+當使用者選取您的 app 時 (通常是從分享 UI 中可用的目標 app 清單中選取)，會引發 [**OnShareTargetActivated**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) 事件。 您的 app 必須處理此事件，才能處理使用者想要分享的資料。
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -87,7 +87,7 @@ shareOperation.ReportStarted();
 shareOperation.ReportSubmittedBackgroundTask(); 
 ```
 
-如果出現錯誤，可以呼叫 [**ReportError**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportError(System.String)) 傳送錯誤訊息給系統。 當使用者檢查分享狀態時就會看到這個訊息。 在這個時候，您的 app 會關閉並結束分享。 使用者需要再次啟動並分享內容到您的 app。 根據您的情況，您可以決定特定錯誤沒有嚴重到需要結束分享作業。 在這個情況中，您可以選擇不要呼叫 **ReportError** 而繼續分享。
+如果出現錯誤，可以呼叫 [**ReportError**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation#Windows_ApplicationModel_DataTransfer_ShareTarget_ShareOperation_ReportError_System_String_) 傳送錯誤訊息給系統。 當使用者檢查分享狀態時就會看到這個訊息。 在這個時候，您的 app 會關閉並結束分享。 使用者需要再次啟動並分享內容到您的 app。 根據您的情況，您可以決定特定錯誤沒有嚴重到需要結束分享作業。 在這個情況中，您可以選擇不要呼叫 **ReportError** 而繼續分享。
 
 ```cs
 shareOperation.ReportError("Could not reach the server! Try again later."); 

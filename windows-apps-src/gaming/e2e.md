@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: 6729711a424bfdcf9af2da92d60f12a066500256
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 950f9415e63a31a5204a15f4f72b968535489cfa
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368778"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321247"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 遊戲開發指南
 
@@ -50,15 +50,15 @@ ms.locfileid: "66368778"
     </colgroup>
     <tr>
         <td>Windows 開發人員中心主要入口網站</td>
-        <td><a href="https://dev.windows.com">Windows 開發人員中心</a></td>
+        <td><a href="https://developer.microsoft.com/windows">Windows 開發人員中心</a></td>
     </tr>
     <tr>
         <td>開發 Windows 應用程式</td>
-        <td><a href="https://dev.windows.com/develop">開發 Windows 應用程式</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">開發 Windows 應用程式</a></td>
     </tr>
     <tr>
         <td>通用 Windows 平台 app 開發</td>
-        <td><a href="https://developer.microsoft.com/windows/apps/">Windows 10 應用程式的使用說明指南</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps">Windows 10 應用程式的使用說明指南</a></td>
     </tr>
     <tr>
         <td>UWP 遊戲使用方法指南</td>
@@ -169,7 +169,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
 
 ### <a name="game-samples"></a>遊戲範例
 
-有許多 Windows 10 遊戲與應用程式範例可協助您了解 Windows 10 遊戲功能，並在遊戲開發上快速入門。 將會有更多範例以定期方式開發及發行，因此請別忘了偶爾回到範例入口網站上查看有什麼最新內容。 您也可以[查看](https://help.github.com/articles/watching-repositories/) GitHub 存放庫以獲知變更和新內容。
+有許多 Windows 10 遊戲與應用程式範例可協助您了解 Windows 10 遊戲功能，並在遊戲開發上快速入門。 將會有更多範例以定期方式開發及發行，因此請別忘了偶爾回到範例入口網站上查看有什麼最新內容。 您也可以[查看](https://help.github.com/en/articles/watching-and-unwatching-repositories) GitHub 存放庫以獲知變更和新內容。
 
 <table>
     <colgroup>
@@ -306,7 +306,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Visual Studio 開發人員工具部落格</td>
-        <td><a href="https://devblogs.microsoft.com/">開發人員工具部落格</a></td>
+        <td><a href="https://devblogs.microsoft.com/visualstudio/">開發人員工具部落格</a></td>
     </tr>
     <tr>
         <td>Somasegar 開發人員工具部落格</td>
@@ -619,11 +619,11 @@ Direct3D 11.3 是低層級圖形 API，使用常見的 Direct3D 程式設計模�
     </colgroup>
     <tr>
         <td>UWP 橋接</td>
-        <td><a href="https://dev.windows.com/bridges/">將您的程式碼帶到 Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges">將您的程式碼帶到 Windows</a></td>
     </tr>
     <tr>
         <td>適用於 iOS 的 Windows 橋接器</td>
-        <td><a href="https://dev.windows.com/bridges/ios">將您的 iOS 應用程式帶到 Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges/ios">將您的 iOS 應用程式帶到 Windows</a></td>
     </tr>
     <tr>
         <td>適用於傳統型應用程式 (.NET 和 Win32) 的 Windows 橋接器</td>
@@ -688,11 +688,11 @@ Unity 提供一個平台建立美麗而吸引人的 2D、3D、VR 和 AR 遊戲�
     </colgroup>
     <tr>
         <td>Unity 遊戲引擎</td>
-        <td><a href="https://unity3d.com/">Unity 的遊戲引擎</a></td>
+        <td><a href="https://unity.com/">Unity 的遊戲引擎</a></td>
     </tr>
     <tr>
         <td>取得 Unity</td>
-        <td><a href="https://unity3d.com/get-unity">取得 Unity</a></td>
+        <td><a href="https://store.unity.com/">取得 Unity</a></td>
     </tr>
     <tr>
         <td>適用於 Windows 的 Unity 文件</td>
@@ -756,7 +756,7 @@ Havok 的工具與技術模組套件可協助遊戲建立者達到新的互動�
     </tr>
     <tr>
         <td>Havok 支援論壇</td>
-        <td><a href="https://support.havok.com">Havok</a></td>
+        <td><a href="https://www.havok.com/">Havok</a></td>
     </tr>
 </table>
  
@@ -957,7 +957,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     </colgroup>
     <tr>
         <td>UWP 開發入門</td>
-        <td><a href="https://dev.windows.com/getstarted">Windows 應用程式入門</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/getstarted">Windows 應用程式入門</a></td>
     </tr>
     <tr>
         <td>開始 UWP 開發設定</td>
@@ -991,7 +991,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     </colgroup>
     <tr>
         <td>通用 Windows 平台 app 開發概觀</td>
-        <td><a href="https://dev.windows.com/develop">開發 Windows 應用程式</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">開發 Windows 應用程式</a></td>
     </tr>
     <tr>
         <td>UWP 的網路程式設計概觀</td>
@@ -1347,7 +1347,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
     </tr>
     <tr>
         <td>適用於 Visual Studio 的 UWP Tile Generator 擴充功能</td>
-        <td><a href="https://marketplace.visualstudio.com/vsgallery/09611e90-f3e8-44b7-9c83-18dba8275bb2">用來建立所有必要工具圖格使用單一映像</a></td>
+        <td><a href="https://marketplace.visualstudio.com/items?itemName=shenchauhan.UWPTileGenerator">用來建立所有必要工具圖格使用單一映像</a></td>
     </tr>
     <tr>
         <td>適用於 Visual Studio 的 UWP Tile Generator 擴充功能 (部落格文章)</td>
@@ -1397,7 +1397,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </colgroup>
     <tr>
         <td>測試您的程式碼效能</td>
-        <td><a href="https://www.visualstudio.com/team-services/cloud-load-testing/">雲端負載測試</a></td>
+        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">雲端負載測試</a></td>
     </tr>
     <tr>
         <td>使用遊戲裝置資訊取得 Xbox 主機類型</td>
@@ -1530,7 +1530,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </colgroup>
     <tr>
         <td>合作夥伴中心應用程式發佈</td>
-        <td><a href="https://dev.windows.com/publish">發佈 Windows 應用程式</a></td>
+        <td><a href="https://developer.microsoft.com/store/publish-apps">發佈 Windows 應用程式</a></td>
     </tr>
     <tr>
         <td>合作夥伴中心進階發行 (GDN)</td>
@@ -1658,7 +1658,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </tr>
     <tr>
         <td>推銷您遊戲的方式</td>
-        <td><a href="https://dev.windows.com/store-promotion">宣傳您的 App</a></td>
+        <td><a href="https://developer.microsoft.com/store/promote-your-apps">宣傳您的 App</a></td>
     </tr>
 </table>
  
@@ -1692,7 +1692,7 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
     </colgroup>
     <tr>
         <td>了解使用 GameAnalytics 的播放程式行為</td>
-        <td><a href="https://www.gameanalytics.com/">GameAnalytics</a></td>
+        <td><a href="https://gameanalytics.com/">GameAnalytics</a></td>
     </tr>
     <tr>
         <td>將 UWP 遊戲與 Google Analytics 連接</td>
@@ -1712,7 +1712,7 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
     </tr>
     <tr>
         <td>使用 Vungle 將視訊廣告新增至您的遊戲</td>
-        <td><a href="https://v.vungle.com/sdk">取得 Vungle Windows SDK</a></td>
+        <td><a href="https://publisher.vungle.com/sdk/">取得 Vungle Windows SDK</a></td>
     </tr>
 </table>
  

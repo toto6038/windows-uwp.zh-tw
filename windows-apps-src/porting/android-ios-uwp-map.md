@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e54e843369299ccfa5208c373d76099f3ffb959
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ba17b8a63d169f2d232930b209bfadd5a2fbdff5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372329"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319780"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
@@ -48,7 +48,7 @@ ms.locfileid: "66372329"
 <td align="left"><strong>使用者介面標記語言。</strong> <br><br>轉譯和描述 UI 及其元件的標記語言。 每個平台都為視覺與標記編輯提供編輯器。<br/></td>
 <td align="left"><strong>XML 版面配置</strong>，使用 <strong>Android Studio</strong> 或 <strong>Eclipse</strong> 編輯。</td>
 <td align="left"><strong>XIB</strong> 和 <strong>Storyboard (腳本)</strong>，使用 Xcode 內的 <strong>Interface Builder (介面建立器)</strong> 編輯。</td>
-<td align="left"><strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview">XAML</a></strong>、 使用編輯過<strong><a href="https://www.visualstudio.com/">Microsoft Visual Studio</a></strong>並 <strong><a href="https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for Visual Studio</a></strong>。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/index">XAML 平台</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">使用 XAML 建立 UI</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml">定義與 XAML 的版面配置</a></td>
+<td align="left"><strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview">XAML</a></strong>、 使用編輯過<strong><a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a></strong>並 <strong><a href="https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for Visual Studio</a></strong>。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/index">XAML 平台</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">使用 XAML 建立 UI</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml">定義與 XAML 的版面配置</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>內建的使用者介面控制項。</strong> <br><br>平台提供的可重複使用的 UI 元素，例如按鈕、清單控制項與文字控制項。</td>
@@ -96,7 +96,7 @@ ms.locfileid: "66372329"
 <td align="left"><strong>內建的觸控筆勢。</strong> <br><br>透過處理高階抽象手勢事件 (例如在檢視和控制項中點選和點兩下)，可提供自訂的觸控支援。</td>
 <td align="left"><strong>Gesture detector (手勢偵測器)</strong> 會偵測常用觸控手勢，包括捲動、長按、點選、點兩下和丟擲。</td>
 <td align="left">UIKit 架構提供內建 <strong>gesture recognizer (手勢辨識器)</strong>，它會偵測觸控手勢，包括點選、捏合、移動瀏覽、撥動、旋轉和長按。</td>
-<td align="left"><strong>UI 元素</strong>可讓您處理<strong>靜態手勢事件</strong>，包括點選、點兩下、右鍵點選和按住不放，以及<strong>操作手勢事件</strong>，包括滑動、撥動、轉動、捏合和伸展。 手勢事件是<strong>路由事件</strong>，而且可以由包含子 UIElement 的父物件處理。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions">觸控式互動</a><br/><br/><a href="https://developer.microsoft.com/windows/design/inputs-devices">自訂的使用者互動-筆勢、 操作，以及互動</a></td>
+<td align="left"><strong>UI 元素</strong>可讓您處理<strong>靜態手勢事件</strong>，包括點選、點兩下、右鍵點選和按住不放，以及<strong>操作手勢事件</strong>，包括滑動、撥動、轉動、捏合和伸展。 手勢事件是<strong>路由事件</strong>，而且可以由包含子 UIElement 的父物件處理。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions">觸控式互動</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/design/layout/index">自訂的使用者互動-筆勢、 操作，以及互動</a></td>
 </tr>
 </tbody>
 </table>
@@ -127,7 +127,7 @@ ms.locfileid: "66372329"
 <td align="left"><strong>對等瀏覽。</strong> <br><br>向使用者顯示在階層同等重要的頁面之間瀏覽的方法。</td>
 <td align="left"><strong>Tab (索引標籤)</strong>、<strong>swipe view (撥動檢視)</strong> 和 <strong>navigation drawer (瀏覽選單)</strong> 提供<strong>橫式瀏覽</strong>。</td>
 <td align="left"><strong>Tab bar controller (索引標籤列控制器)</strong>、<strong>split view controller (分割檢視控制器)</strong> 和 <strong>page view controller (頁面檢視控制器)</strong> 允許相同階層的檢視之間的瀏覽。</td>
-<td align="left">您可以使用<strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。  <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/split-view">瀏覽窗格/分割檢視</a></strong>可讓您在內容旁顯示連結的清單。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">兩個頁面之間巡覽</a></td>
+<td align="left">您可以使用<strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/split-view">瀏覽窗格/分割檢視</a></strong>可讓您在內容旁顯示連結的清單。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">兩個頁面之間巡覽</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>階層式導覽。</strong> <br><br>在階層的父項與子項頁面之間瀏覽。</td>
@@ -176,7 +176,7 @@ ms.locfileid: "66372329"
 <td align="left"><strong>自訂的使用者輸入。</strong> <br><br>處理鍵盤、滑鼠、手寫筆及其他輸入方式。</td>
 <td align="left">對互動的支援包括<strong>觸控</strong>、<strong>觸控板</strong>、<strong>手寫筆</strong>、<strong>滑鼠</strong>和<strong>鍵盤</strong>。 移動和輸入的報告方式與觸控相同，但是可能會偵測到有關<strong>輸入裝置</strong>的更多資訊。</td>
 <td align="left">提供對<strong>觸控</strong>、<strong>Apple Pencil</strong> 和硬體<strong>鍵盤</strong>的支援。</td>
-<td align="left">支援各種互動方式，包括<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions">觸控</a></strong>、<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touchpad-interactions">觸控板</a></strong>、使用數位筆跡的<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions">畫筆/手寫筆</a></strong>、<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions">滑鼠</a></strong>和<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions">鍵盤</a></strong>。 您的 app 可以處理資料，不需要知道使用了哪種輸入裝置，如有需要，也可以存取原始輸入裝置資料。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/handle-pointer-input">處理指標輸入</a><br/><br/><a href="https://developer.microsoft.com/windows/design/inputs-devices">自訂的使用者互動</a></td>
+<td align="left">支援各種互動方式，包括<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions">觸控</a></strong>、<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/touchpad-interactions">觸控板</a></strong>、使用數位筆跡的<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions">畫筆/手寫筆</a></strong>、<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions">滑鼠</a></strong>和<strong><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions">鍵盤</a></strong>。 您的 app 可以處理資料，不需要知道使用了哪種輸入裝置，如有需要，也可以存取原始輸入裝置資料。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/input-and-devices/handle-pointer-input">處理指標輸入</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/design/layout/index">自訂的使用者互動</a></td>
 </tr>
 </tbody>
 </table>
@@ -201,7 +201,7 @@ ms.locfileid: "66372329"
 <td align="left"><strong>本機應用程式資料。</strong> <br><br>將與 app 相關的設定和檔案儲存在本機。</td>
 <td align="left">使用 <strong>openFileOutput</strong> 和 <strong>openFileInput</strong> 可以儲存本機檔案。 使用 <strong>getSharedPreferences</strong> 可存取<strong>共用喜好設定檔案</strong>中的設定。</td>
 <td align="left">本機檔案可以儲存在 <strong>application support (應用程式支援)</strong> 目錄中，並透過 <strong>NSFileManager</strong> 類別存取。 <strong>Preferences (喜好設定)</strong> 檔案中的設定可以透過 <strong>NSUserDefaults</strong> 類別存取。</td>
-<td align="left"> <strong><a href="https://docs.microsoft.com/uwp/api/Windows.Storage">Windows.Storage</a></strong> 類別可利用統一的方式為您處理本機資料儲存區。 您可將設定儲存為 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer">ApplicationDataContainer</a></strong> 物件，並透過 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings">ApplicationData.LocalSettings</a></strong> 屬性存取。 您可將檔案儲存在 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder">StorageFolder</a></strong> 物件中，並透過 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder">ApplicationData.LocalFolder</a></strong> 屬性存取。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">儲存和擷取設定和其他應用程式資料</a></td>
+<td align="left"><strong><a href="https://docs.microsoft.com/uwp/api/Windows.Storage">Windows.Storage</a></strong> 類別可利用統一的方式為您處理本機資料儲存區。 您可將設定儲存為 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer">ApplicationDataContainer</a></strong> 物件，並透過 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings">ApplicationData.LocalSettings</a></strong> 屬性存取。 您可將檔案儲存在 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder">StorageFolder</a></strong> 物件中，並透過 <strong><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder">ApplicationData.LocalFolder</a></strong> 屬性存取。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">儲存和擷取設定和其他應用程式資料</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>本機資料庫儲存體。</strong> <br><br>將 app 資料儲存在關聯式資料庫，如果適用，請使用具有物件關聯式對應程式 (ORM) 功能的關聯式資料庫。</td>
@@ -225,7 +225,7 @@ ms.locfileid: "66372329"
 <td align="left"><strong>HTTP 檔案下載。</strong> <br><br>透過 HTTP 下載大型和小型檔案。</td>
 <td align="left"><strong>URLConnection</strong> 和 <strong>HTTPURLConnection</strong> 可用來透過 HTTP 和 FTP 下載，也可以使用系統的 <strong>download manager (下載管理員)</strong> 在背景下載。</td>
 <td align="left"><strong>NSURLSession</strong> 和 <strong>NSURLConnection</strong> 可用來透過 HTTP 和 FTP 下載檔案。</td>
-<td align="left"> <strong><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer">背景傳輸 API</a></strong> 可讓您透過 HTTP(S) 和 FTP 可靠地傳輸檔案，顧及 app 暫停、連線中斷，並根據連線能力和電池使用時間進行調整。 您也可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.web.http.httpclient">HttpClient</a></strong>，它非常適用於較小的檔案。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/networking/which-networking-technology">哪一種網路功能技術？</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/networking/background-transfers">背景傳輸</a></td>
+<td align="left"><strong><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer">背景傳輸 API</a></strong> 可讓您透過 HTTP(S) 和 FTP 可靠地傳輸檔案，顧及 app 暫停、連線中斷，並根據連線能力和電池使用時間進行調整。 您也可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.web.http.httpclient">HttpClient</a></strong>，它非常適用於較小的檔案。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/networking/which-networking-technology">哪一種網路功能技術？</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/networking/background-transfers">背景傳輸</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>通訊端。</strong> <br><br>建立低層級的 UDP 資料包和 TCP 通訊端，使用您自己的通訊協定與其他裝置通訊。</td>
@@ -243,7 +243,7 @@ ms.locfileid: "66372329"
 <td align="left"><strong>OAuth 程式庫。</strong> <br><br>OAuth 程式庫允許存取第三方 OAuth 提供者，以及平台中內建的任何帳戶管理。</td>
 <td align="left">不提供一般的 OAuth 程式庫。 針對 Google Play 服務的 OAuth 驗證提供 <strong>GoogleAuthUtil</strong> 類別。<br/></td>
 <td align="left">不提供一般的 OAuth 程式庫。 <strong>帳戶架構</strong> 提供對裝置上已經儲存之使用者帳戶 (例如 Facebook 和 Twitter) 的存取權。</td>
-<td align="left">一般 OAuth 程式庫 <strong><a href="https://docs.microsoft.com/windows/uwp/security/web-authentication-broker">Web 驗證代理人</a></strong>可讓您連線到第三方身分識別提供者服務。  <strong><a href="https://docs.microsoft.com/windows/uwp/security/credential-locker">認證保險箱</a></strong>可讓使用者儲存他們的登入並在多個裝置上使用。  <strong><a href="https://docs.microsoft.com/previous-versions/office/developer/onedrive-live-sdk-reference/dn896755(v=office.15)">Microsoft.Live</a></strong> 命名空間可以讓您輕鬆地存取 Live SDK OAuth 以存取 Microsoft 服務。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity">驗證和使用者識別</a><br/><br/><a href="https://docs.microsoft.com/uwp/api/windows.security.authentication.web">Windows.Security.Authentication.Web API 文件</a><br/><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker">WebAuthenticationBroker 程式碼範例</a></td>
+<td align="left">一般 OAuth 程式庫 <strong><a href="https://docs.microsoft.com/windows/uwp/security/web-authentication-broker">Web 驗證代理人</a></strong>可讓您連線到第三方身分識別提供者服務。 <strong><a href="https://docs.microsoft.com/windows/uwp/security/credential-locker">認證保險箱</a></strong>可讓使用者儲存他們的登入並在多個裝置上使用。 <strong><a href="https://docs.microsoft.com/previous-versions/office/developer/onedrive-live-sdk-reference/dn896755(v=office.15)">Microsoft.Live</a></strong> 命名空間可以讓您輕鬆地存取 Live SDK OAuth 以存取 Microsoft 服務。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity">驗證和使用者識別</a><br/><br/><a href="https://docs.microsoft.com/uwp/api/windows.security.authentication.web">Windows.Security.Authentication.Web API 文件</a><br/><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker">WebAuthenticationBroker 程式碼範例</a></td>
 </tr>
 </tbody>
 </table>
@@ -268,7 +268,7 @@ ms.locfileid: "66372329"
 <td align="left"><strong>IDE。</strong> <br><br>用來建立 app 的工具組。</td>
 <td align="left"><strong>Android Studio</strong> 和 <strong>Eclipse</strong> 與 Google 一起推動開發人員朝向使用 Android Studio。</td>
 <td align="left"><strong>Xcode</strong></td>
-<td align="left"><strong><a href="https://www.visualstudio.com/features/universal-windows-platform-vs.aspx">Visual Studio</a></strong> 並<strong><a href="https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for Visual Studio</a></strong>具有您要撰寫程式碼、 設計、 連接、 偵錯、 分析、 最佳化和測試 UWP 應用程式的所有工具。 Visual Studio 也為您提供適用於 Windows 10 裝置的<strong><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/test-with-the-emulator">模擬器</a></strong>，以便您在各種模擬的裝置上測試 app。<br/><br/><a href="https://dev.windows.com/downloads">下載與工具，適用於 UWP</a></td>
+<td align="left"><strong><a href="https://visualstudio.microsoft.com/features/universal-windows-platform-vs">Visual Studio</a></strong> 並<strong><a href="https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for Visual Studio</a></strong>具有您要撰寫程式碼、 設計、 連接、 偵錯、 分析、 最佳化和測試 UWP 應用程式的所有工具。 Visual Studio 也為您提供適用於 Windows 10 裝置的<strong><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/test-with-the-emulator">模擬器</a></strong>，以便您在各種模擬的裝置上測試 app。<br/><br/><a href="https://developer.microsoft.com/windows/downloads">下載與工具，適用於 UWP</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>程式碼的組織。</strong> <br><br>App 的基本資料夾結構 (通常從初始範本建立)。</td>
@@ -662,7 +662,7 @@ ms.locfileid: "66372329"
 <td align="left"><strong>軟體設計模式。</strong> <br><br>適用於平台的建議模式或常用模式。</td>
 <td align="left">對於 Android 開發沒有建議或提供官方模式，不過搶鮮版 (Beta) 的「資料繫結架構」可能會讓 <strong>Model-View-ViewModel (MVVM)</strong> 模式更廣泛地使用。 許多協力廠商文章和架構建議 <strong>Model-View-Presenter (MVP)</strong> 和 <strong>MVVM</strong> 方法。</td>
 <td align="left"><strong>Model-View-Controller (MVC)</strong> 是與 iOS 搭配的常用模式，而且已整合到平台中。</td>
-<td align="left">針對 UWP 進行建置時，並沒有限制您必須使用特定模式。<br/><br/>您可以使用內建<a href="https://docs.microsoft.com/windows/uwp/data-binding/index">資料繫結</a>模式以確保清楚區分資料和 UI 的考量，而且無需撰寫稍後會更新屬性值之 UI 事件處理常式的程式碼。<br/><br/>您可以延伸資料繫結以遵循 <strong>Model-View-ViewModel (MVVM)</strong> 模式，方法是使用第三方 MVVM 程式庫 (例如 <a href="https://mvvmlight.codeplex.com/">MVVM Light Toolkit</a>)，或是啟動您自己的而不使用程式碼後置的邏輯。<br/><br/><a href="https://docs.microsoft.com/previous-versions/msp-n-p/hh848246(v=pandp.10)">MVVM 模式</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">範本 10 Visual Studio 專案範本</a></td>
+<td align="left">針對 UWP 進行建置時，並沒有限制您必須使用特定模式。<br/><br/>您可以使用內建<a href="https://docs.microsoft.com/windows/uwp/data-binding/index">資料繫結</a>模式以確保清楚區分資料和 UI 的考量，而且無需撰寫稍後會更新屬性值之 UI 事件處理常式的程式碼。<br/><br/>您可以延伸資料繫結以遵循 <strong>Model-View-ViewModel (MVVM)</strong> 模式，方法是使用第三方 MVVM 程式庫 (例如 <a href="https://archive.codeplex.com/?p=mvvmlight">MVVM Light Toolkit</a>)，或是啟動您自己的而不使用程式碼後置的邏輯。<br/><br/><a href="https://docs.microsoft.com/previous-versions/msp-n-p/hh848246(v=pandp.10)">MVVM 模式</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">範本 10 Visual Studio 專案範本</a></td>
 </tr>
 </tbody>
 </table>

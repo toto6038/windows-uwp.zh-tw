@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 88d2377f95efbe79853b1416213a25e22ed7d5f0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e9cc88792e6cfdc581a4c7dc27ecc060cc0000c3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639693"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317340"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>設計適用於 Windows 10 的通用軟體  
 
@@ -23,7 +23,7 @@ ms.locfileid: "57639693"
 
 這個新的設計哲學稱為全人設計。 我們的想法是在一開始設計軟體時就融入每個人的需求。 這相較於在開發程序結尾才匆忙加上檢視協助工具以滿足一小群使用者的技術完全不同。
 
-「我們如果將提供的服務、產品或環境不符合個人需求定義為一種限制。 那麼任何人都有可能體驗到這個限制。 我們想要排除這個常見的人性特點。」  \- 從[Inclusive](https://www.microsoft.com/design/inclusive)影片  
+「我們如果將提供的服務、產品或環境不符合個人需求定義為一種限制。 那麼任何人都有可能體驗到這個限制。 我們想要排除這個常見的人性特點。」  \- 從[Inclusive](https://www.microsoft.com/design/inclusive/)影片  
 
 通用設計可以為所有人創造更好的產品。 這牽涉到要考慮完整而多樣化的人性。 您現在會在大多數街道的人行道上看到路緣坡。 這些一開始是為了讓輪椅人士使用。 但是現在幾乎每個人都使用它們，包括使用嬰兒車的人、單車族與滑板族。 甚至行人也經常使用路緣坡，因為它們就在那兒且提供更好的體驗。 電視遙控器可以被視為是一項針對身體受限的人所使用的輔助技術 (AT)。 但是現在，購買電視幾乎不可能沒有遙控器。 在孩童學習如何綁鞋帶之前，他們可以穿著容易穿脫或繫牢的鞋子。 容易穿脫的鞋子通常較受進家門前需脫鞋的文化所喜愛。 它們也比較適合有敏捷性問題 (例如關節炎或甚至是暫時性手腕骨折) 的人們。
 
@@ -50,7 +50,7 @@ Microsoft 委託 Forrester Research 在 2003 到 2004 年進行的研究發現�
 
 除了永久的殘疾，個人使用經驗的問題嚴重性和類型會隨著年紀而變化。 沒有所謂正常人這件事。 我們的能力一直在變化。 Margaret Meade 說：「我們每個人都是唯一的。 所有人都是唯一而讓我們有了共通性。」  
 
-Microsoft 致力於進行電腦科學及軟體工程研究，目標是要增強運算體驗，以及創造全新的運算技術。 請參閱[目前的 Microsoft 研究和開發專案](https://www.microsoft.com/enable/microsoft/research.aspx)，目的在於讓電腦更容易存取，且更容易地觀看、聆聽和互動。  
+Microsoft 致力於進行電腦科學及軟體工程研究，目標是要增強運算體驗，以及創造全新的運算技術。 請參閱[目前的 Microsoft 研究和開發專案](https://www.microsoft.com/accessibility/)，目的在於讓電腦更容易存取，且更容易地觀看、聆聽和互動。  
 
 ## <a name="practical-design-steps"></a>實用的設計步驟  
 如果您全心投入，那麼本節就很適合您。 它說明了在您的 app 中實作全人設計時，要考慮的實用設計步驟。  
@@ -104,7 +104,7 @@ Windows 的其中一個內建協助工具功能便是高對比模式，此模式
 7.  將您完成的產品與實作文件提供給之後可能會處理專案的人員。  
 
 ## <a name="related-topics"></a>相關主題  
-* [內含的設計](https://design.microsoft.com/inclusive)
+* [內含的設計](https://www.microsoft.com/design/inclusive/)
 * [工程軟體，協助工具](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 協助工具開發人員中心](https://developer.microsoft.com/windows/accessible-apps)
 * [開發全人 Windows 應用程式](developing-inclusive-windows-apps.md) 
