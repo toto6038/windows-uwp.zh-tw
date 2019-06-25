@@ -5,12 +5,12 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 藍牙, 藍牙 LE, 低功耗, gatt, gap, 中央, 周邊, 用戶端, 伺服器, 監看員, 發行者
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f23bdc658d2a82e3edeefd0a7be471ca9620d33
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7921094c55944b4cfed4fdb3f3e6d895eb7fe0a4
+ms.sourcegitcommit: 58d35b89662d4ad240650933e43fee0b00e9a962
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321608"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67344505"
 ---
 # <a name="bluetooth-low-energy"></a>藍牙低功耗
 藍牙低功耗 (LE) 是一種規格，定義通訊協定來進行探索以及在省電裝置之間進行通訊。 透過泛型存取設定檔 (間隔) 通訊協定完成裝置探索。 在探索之後，透過泛型屬性 (GATT) 通訊協定完成裝置間的通訊。 本主題提供 UWP app 中藍牙 LE 的快速概觀。 若要查看藍牙 LE 的詳細資料，請參閱引進藍牙 LE 的[藍牙核心規格](https://www.bluetooth.com/specifications/bluetooth-core-specification/)版本 4.0。 
@@ -21,7 +21,7 @@ ms.locfileid: "67321608"
 
 使用下列命名空間，即可在 UWP app 中實作 GATT 和 GAP 通訊協定。
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
+- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement)
 
 ## <a name="central-and-peripheral"></a>中央和周邊
 探索的兩個主要角色稱為「中央」和「周邊」。 一般而言，Windows 會以中央模式運作，並連線至不同的周邊裝置。 
@@ -41,5 +41,5 @@ ms.locfileid: "67321608"
 
 ## <a name="see-also"></a>另請參閱
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [藍芽核心規格](https://www.bluetooth.com/specifications/bluetooth-core-specification/)
+- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement)
+- [藍芽核心規格](https://www.bluetooth.com/specifications/bluetooth-core-specification)

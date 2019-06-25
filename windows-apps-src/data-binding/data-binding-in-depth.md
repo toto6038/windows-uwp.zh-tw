@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 150ea5fc9f5e91171f29cc985351856487e91d4a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f3cdb9cbb1aa3f62fb711be747c44a0df10fb1ee
+ms.sourcegitcommit: f7e3782e24d46b2043023835c5b59d12d3b4ed4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318761"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67345726"
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
 
@@ -526,6 +526,18 @@ public class DateToStringConverter : IValueConverter
 {x:Bind} 讓繫結路徑中的最後一個步驟可以是函式。 這可以用來執行轉換，以及執行和一個以上屬性相依的繫結。 請參閱[ **x： 繫結中的函式**](function-bindings.md)
 
 <span id="resource-dictionaries-with-x-bind"/>
+
+## <a name="element-to-element-binding"></a>項目繫結
+
+您可以將一個 XAML 項目屬性繫結至另一個 XAML 元素的屬性。 以下是範例，在標記中的結果。
+
+```xaml
+<TextBox x:Name="myTextBox" />
+<TextBlock Text="{x:Bind myTextBox.Text, Mode=OneWay}" />
+```
+
+> [!IMPORTANT]
+> 必要的工作流程項目繫結使用的C++/WinRT，請參閱[項目繫結](/windows/uwp/cpp-and-winrt-apis/binding-property#element-to-element-binding)。
 
 ## <a name="resource-dictionaries-with-xbind"></a>使用 {x:Bind} 的資源字典
 

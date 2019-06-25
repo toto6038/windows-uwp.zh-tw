@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, always connected, x86 emulation on ARM, troubleshooting, 永遠連線, ARM 上的 x86 模擬, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f40c53c70a457057f678cdc227a98fc694e2273
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3c29151ae2823aa70711bf002e8954148cc0861b
+ms.sourcegitcommit: f7e3782e24d46b2043023835c5b59d12d3b4ed4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319674"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67345668"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>疑難排解 x86 傳統型應用程式
 >[!IMPORTANT]
@@ -47,3 +47,8 @@ ms.locfileid: "67319674"
 
 ## <a name="virtual-machines"></a>虛擬機器
 Qualcomm Snapdragon 835 行動裝置版電腦平台上不支援 Windows Hypervisor 平台。 因此使用 Hyper-V 執行虛擬電腦將會無法運作。 我們會持續投資在未來 Qualcomm 晶片組的這些技術。 
+
+## <a name="dynamic-code-generation"></a>動態程式碼產生
+傳統型應用程式所產生 ARM64 指示在執行階段系統模擬 ARM64 的 X86。 這表示如果 x86 傳統型應用程式可防止動態程式碼產生，或在其處理序，該應用程式的修改無法支援 ARM64 上執行為 x86。 
+
+這是在其處理程序使用的某些應用程式啟用的安全性風險降低[SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API 與`ProcessDynamicCodePolicy`旗標。 若要在 ARM64 為 x86 上順利執行程序，這項風險降低原則必須停用。 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e26908839204c67a4746f602acc08c6776e889c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7223123ef6f71a45acc967aa60feffa1003b66d1
+ms.sourcegitcommit: 58d35b89662d4ad240650933e43fee0b00e9a962
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370248"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67344532"
 ---
 # <a name="device-information-properties"></a>裝置資訊屬性
 
@@ -101,6 +101,15 @@ ms.locfileid: "66370248"
 
  
 
+## <a name="devicepanel-properties"></a>DevicePanel 屬性
+
+| 名稱                                            | 類型    | 描述                                                                                                      |
+|-------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------|
+| **System.Devices.Panel.PanelId**                | 字串  | 識別項**DevicePanel**物件。                                                                    |
+| **System.Devices.Panel.PanelGroup**             | 字串  | 父系的識別碼**PanelGroup**。                                                                      |
+ 
+ 
+ 
 ## <a name="associationendpoint-properties"></a>AssociationEndpoint 屬性
 
 | 名稱                                  | 類型       | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -155,9 +164,3 @@ ms.locfileid: "66370248"
 | **System.Devices.AepService.ServiceClassId**    | GUID    | 此裝置所代表的服務身分識別。                                                             |
 | **System.Devices.AepService.ServiceId**         | 字串  | 此服務的身分識別。 這也會是 [**DeviceInformation.Id**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) 的值。 |
 | **System.ItemNameDisplay**                      | 字串  | 服務的最佳顯示名稱。                                                                           |
-
- 
-
- 
-
- 
