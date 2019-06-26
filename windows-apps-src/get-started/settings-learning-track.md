@@ -1,5 +1,5 @@
 ---
-title: 在 UWP 中儲存和載入設定
+title: 在 UWP 應用程式中儲存和載入設定
 description: 了解如何在通用 Windows 平台應用程式中儲存和載入應用程式設定。
 ms.date: 05/07/2018
 ms.topic: article
@@ -7,13 +7,13 @@ keywords: 開始設定, uwp, windows 10, 了解曲目, 設定, 儲存設定, 載
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66370490"
 ---
-# <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 中儲存和載入設定
+# <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 應用程式中儲存和載入設定
 
 本主題涵蓋您需要了解在通用 Windows 平台 (UWP) 應用程式中開始設定載入與儲存、設定的資訊。 介紹了主要 API，並提供連結有助於您了解更多資訊。
 
@@ -96,7 +96,7 @@ if (composite != null)
 | 主題 | 描述 |
 |-------|----------------|
 | [應用程式設定的指導方針](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | 描述建立和顯示應用程式設定的最佳做法。 |
-| [儲存和擷取設定和其他應用程式資料](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | 逐步解說儲存和擷取的設定，包括漫遊設定。 |
+| [儲存及擷取設定和其他應用程式資料](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | 逐步解說儲存和擷取的設定，包括漫遊設定。 |
 
 ## <a name="useful-code-samples"></a>實用的程式碼範例
 

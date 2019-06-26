@@ -4,18 +4,18 @@ title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 ms.date: 6/5/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bb098aae346c7a81771262793f5f6a042d62d5a3
-ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66721605"
 ---
 # <a name="httpclient"></a>HttpClient
 
-**重要的 Api**
+**重要 API**
 
 -   [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)
 -   [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)
@@ -45,11 +45,11 @@ ms.locfileid: "66721605"
 
 -   [**HttpBufferContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpBufferContent)。 緩衝區形式的內容
 -   [**HttpFormUrlEncodedContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpFormUrlEncodedContent)。 形式為以 **application/x-www-form-urlencoded** MIME 類型編碼之名稱/值 Tuple 的內容
--   [**HttpMultipartContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpMultipartContent)。 內容的形式**multipart /\***  MIME 類型。
+-   [**HttpMultipartContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpMultipartContent)。 格式為 **multipart/\*** MIME 類型的內容。
 -   [**HttpMultipartFormDataContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpMultipartFormDataContent)。 以 **multipart/form-data** MIME 類型編碼的內容。
 -   [**HttpStreamContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpStreamContent)。 串流形式的內容 (HTTP GET 方法用來接收資料以及 HTTP POST 方法用來上傳資料的內部類型)
 -   [**HttpStringContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpStringContent)。 字串形式的內容
--   [**IHttpContent** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.IHttpContent) -開發人員建立自己的內容物件的基底介面
+-   [**IHttpContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.IHttpContent) - 開發人員用來建立他們自己的內容物件的基底介面
 
 在 [透過 HTTP 傳送簡單 GET 要求] 一節的程式碼片段中，會使用 [**HttpStringContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpStringContent) 類別，以字串形式表示來自 HTTP GET 要求的 HTTP 回應。
 
@@ -57,7 +57,7 @@ ms.locfileid: "66721605"
 
 ## <a name="send-a-simple-get-request-over-http"></a>透過 HTTP 傳送簡單 GET 要求
 
-如本文先前所述，[**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何將傳送 GET 要求 http://www.contoso.com使用[ **Windows.Web.Http.HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別並[ **Windows.Web.Http.HttpResponseMessage** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage)類別以讀取自 GET 要求的回應。
+如本文先前所述，[**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何使用 [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別將 GET 要求傳送至 http://www.contoso.com ，以及使用 [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 類別讀取 GET 要求的回應。
 
 ```csharp
 //Create an HTTP client object
@@ -156,12 +156,12 @@ int main()
 }
 ```
 
-## <a name="post-binary-data-over-http"></a>透過 HTTP POST 二進位資料
+## <a name="post-binary-data-over-http"></a>透過 HTTP 的 POST 二進位資料
 
-[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis)下列程式碼範例說明使用表單資料和 POST 要求傳送至 web 伺服器，檔案上傳為少量的二進位資料。 程式碼會使用[ **HttpBufferContent** ](/uwp/api/windows.web.http.httpbuffercontent)類別來代表二進位資料，而[ **HttpMultipartFormDataContent** ](/uwp/api/windows.web.http.httpmultipartformdatacontent)類別代表多部分表單資料。
+下方 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis)程式碼範例說明如何使用表單資料和 POST 要求，以檔案上傳方式將少量的二進位資料傳送至 Web 伺服器。 此程式碼使用 [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent) 類別來代表二進位資料，而 [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent) 類別代表多部分表單資料。
 
 > [!NOTE]
-> 呼叫**取得**（如下列程式碼範例所示） 並不適合用於 UI 執行緒。 若要在此情況下使用正確的技術，請參閱[並行和非同步作業C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+> 呼叫 **get** (如下方程式碼範例瑣事) 不適合用於 UI 執行緒。 若要在該情況下使用的正確技巧，請參閱[透過 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 ```cppwinrt
 // pch.h
@@ -226,13 +226,13 @@ int main()
 }
 ```
 
-若要張貼的內容，實際的二進位檔案 （而不是上述範例中使用明確的二進位資料），您會發現這使用的工作變得更容易[HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)物件。 建構，並為其建構函式的引數，傳遞從呼叫傳回的值[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)。 該方法會傳回資料流以供您的二進位檔內的資料。
+若要 POST 實際二進位檔案的內容 (而不是上面使用的明確二進位資料)，您會發現使用 [HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent) 物件比較容易。 建構一個物件作為其建構函式的引數，將從呼叫傳回的值傳遞至 [StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)。 該方法會針對您二進位檔內的資料傳回資料流。
 
-此外，如果您上傳大型檔案 （大於大約 10 MB），則我們建議您使用 Windows 執行階段[背景傳送](/uwp/api/windows.networking.backgroundtransfer)Api。
+此外，如果您正在上傳大型檔案 (大於大約 10MB)，我們建議您使用 Windows 執行階段[背景傳輸](/uwp/api/windows.networking.backgroundtransfer) API。
 
-## <a name="post-json-data-over-http"></a>透過 HTTP POST JSON 資料
+## <a name="post-json-data-over-http"></a>透過 HTTP 的 POST JSON 資料
 
-下列範例會張貼到端點，某些 JSON，然後寫出回應主體。
+下列範例會將某些 JSON 張貼到端點，然後寫出回應本文。
 
 ```cs
 using System;
@@ -277,7 +277,7 @@ private async Task TryPostJsonAsync()
 
 如果傳送到 [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 物件建構函式的統一資源識別項 (URI) 字串無效時，即會擲回例外狀況。
 
-**.NET:**    [ **Windows.Foundation.Uri** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri)類型會顯示為[ **System.Uri** ](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)中C#和VB。
+**.NET：**   [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 類型在 C# 和 VB 中顯示為 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)。
 
 在 C# 和 Visual Basic 中，可在建構 URI 之前，於 .NET 4.5 中使用 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) 類別和其中一個 [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate?redirectedfrom=MSDN#overloads) 方法來測試接收自使用者的字串，以避免發生這個錯誤。
 
@@ -285,9 +285,9 @@ private async Task TryPostJsonAsync()
 
 [  **Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 缺少便利的函式。 所以使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
 
-使用.NET Framework 4.5 中的應用程式C#、 VB.NET [System.Exception](https://docs.microsoft.com/dotnet/api/system.exception?redirectedfrom=MSDN)例外狀況發生時，表示應用程式執行期間的錯誤。 [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult?redirectedfrom=MSDN#System_Exception_HResult) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message?redirectedfrom=MSDN#System_Exception_Message) 屬性會傳回描述例外狀況的訊息。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
+在使用 C#、VB.NET 之 .NET Framework 4.5 的應用程式中，[System.Exception](https://docs.microsoft.com/dotnet/api/system.exception?redirectedfrom=MSDN) 代表例外狀況發生時應用程式執行期間的錯誤。 [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult?redirectedfrom=MSDN#System_Exception_HResult) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message?redirectedfrom=MSDN#System_Exception_Message) 屬性會傳回描述例外狀況的訊息。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
 在使用 Managed C++ 的 app 中，[Platform::Exception](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) 代表例外狀況發生時 app 執行期間的錯誤。 [Platform::Exception::HResult](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [Platform::Exception::Message](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
-對於大多數的參數驗證錯誤， **HRESULT**傳回**E\_INVALIDARG**。 有些不合法的方法呼叫，如**HRESULT**傳回**E\_不合法\_方法\_呼叫**。
+針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。 針對某些不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**.。
 

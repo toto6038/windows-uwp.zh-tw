@@ -1,18 +1,18 @@
 ---
-title: 2017 年 8 月 Windows 文件的最新動向 - 開發 UWP app
+title: 2017 年 8 月 Windows 文件的新增功能 - 開發 UWP 應用程式
 description: 新功能、影片及開發人員指引已加入 2017 年 8 月的 Windows 10 開發人員文件中
-keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10, 1708
+keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 1708
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 53bd11950d30e3924d6d196e911fa05208d0f5ec
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66371910"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 開發人員文件的最新動向
+# <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 最近已有下列功能概觀、開發人員指引和影片可以使用，包含提供給 Windows 開發人員的全新及更新資訊。
 
@@ -22,13 +22,13 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-使用新的適用於 Visual Studio 2017 的 [Windows Template Studio](https://aka.ms/wtsinstall) 擴充功能，快速建置包含您所需頁面、架構及功能的 UWP app。 這個以精靈為主的使用體驗實作經證實有效的模式及最佳做法，可節省新增功能至應用程式的時間並且避開相關問題。
+使用新的適用於 Visual Studio 2017 的 [Windows Template Studio](https://aka.ms/wtsinstall) 擴充功能，快速建置包含您所需頁面、架構及功能的 UWP 應用程式。 這個以精靈為主的使用體驗實作經證實有效的模式及最佳做法，可節省新增功能至應用程式的時間並且避開相關問題。
 
 ![Windows Template Studio](images/template-studio.png)
 
 ### <a name="conditional-xaml"></a>條件式 XAML
 
-您現在可以預覽[條件式 XAML](../debug-test-perf/conditional-xaml.md) 來建立[版本調適型應用程式](../debug-test-perf/version-adaptive-apps.md)。 條件式 XAML 可讓您在 XAML 標記中使用 ApiInformation.IsApiContractPresent method，因此可以根據 API 是否存在來設定屬性和具現化物件，而不必使用程式碼後置。
+您現在可以預覽[條件式 XAML](../debug-test-perf/conditional-xaml.md) 來建立[版本調適型應用程式](../debug-test-perf/version-adaptive-apps.md)。 條件式 XAML 可讓您在 XAML 標記中使用 ApiInformation.IsApiContractPresent 方法，因此可以根據 API 是否存在來設定屬性和具現化物件，而不必使用程式碼後置。
 
 ### <a name="game-mode"></a>遊戲模式
 
@@ -38,14 +38,14 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="submission-api-supports-video-trailers-and-gaming-options"></a>提交 API 支援預告片和遊戲選項
 
-[Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 現在可讓您使用 App 提交來包含[預告片](../monetize/manage-app-submissions.md#trailer-object)和[遊戲選項](../monetize/manage-app-submissions.md#gaming-options-object)。
+[Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 現在可讓您使用應用程式提交來包含[預告片](../monetize/manage-app-submissions.md#trailer-object)和[遊戲選項](../monetize/manage-app-submissions.md#gaming-options-object)。
 
 
 ## <a name="developer-guidance"></a>開發人員指引
 
 ### <a name="data-schemas-for-store-products"></a>Microsoft Store 產品的資料結構描述
 
-我們新增了[市集產品的資料結構描述](../monetize/data-schemas-for-store-products.md)文章。 此文章針對 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中的幾個物件 (包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)) 提供其市集相關資料的結構描述。
+我們新增了 [Store 產品的資料結構描述](../monetize/data-schemas-for-store-products.md)文章。 此文章針對 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中的幾個物件 (包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)) 提供其 Store 相關資料的結構描述。
 
 ### <a name="desktop-bridge"></a>傳統型橋接器
 
@@ -53,7 +53,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 請參閱[增強您的 Windows 10 傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance)以尋找和參考正確的檔案，然後撰寫程式碼來增強 UWP 體驗，讓 Windows 10 使用者眼睛為之一亮。  
 
-請參閱[使用現代化 UWP 元件擴充您的傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend)，以結合現代化 XAML UI 與其他必須在 UWP app 容器中執行的 UWP 體驗。
+請參閱[使用現代化 UWP 元件擴充您的傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend)，以結合現代化 XAML UI 與其他必須在 UWP 應用程式容器中執行的 UWP 體驗。
 
 ### <a name="getting-started-with-point-of-service"></a>開始使用服務點
 
@@ -77,7 +77,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="narrator-and-dev-mode"></a>朗讀程式和開發人員模式
 
-您可能已經知道您可以使用[[朗讀程式]](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)來測試應用程式的螢幕助讀使用體驗。 不過，朗讀程式還有開發人員模式，為您提供很好的視覺化呈現方式來展示顯露給朗讀程式的資訊。 [觀看影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode)，然後深入了解[朗讀程式開發人員模式](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode)。
+您可能已經知道您可以使用[朗讀程式](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)來測試應用程式的螢幕助讀使用體驗。 不過，朗讀程式還有開發人員模式，為您提供很好的視覺化呈現方式來展示顯露給朗讀程式的資訊。 [觀看影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode)，然後深入了解[朗讀程式開發人員模式](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode)。
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 

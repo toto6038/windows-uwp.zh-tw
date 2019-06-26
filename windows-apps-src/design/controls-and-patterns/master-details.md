@@ -6,14 +6,14 @@ label: Master/details
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601253"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63773354"
 ---
 # <a name="masterdetails-pattern"></a>主要/詳細資料模式
 
@@ -21,7 +21,7 @@ ms.locfileid: "57601253"
 
 主要/詳細資料模式具有一個主要窗格 (通常會有一個[清單檢視](lists.md)) 和內容的詳細資料窗格。 當選取主要清單中的項目時，會更新詳細資料窗格。 這個模式經常用於電子郵件和通訊錄。
 
-> **重要的 Api**:[ListView 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)， [SplitView 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **重要 API**：[ListView 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![主要/詳細資料模式的範例](images/HIGSecOne_MasterDetail.png)
 
@@ -57,11 +57,11 @@ ms.locfileid: "57601253"
 
 ![堆疊樣式主要詳細資料的組件](images/patterns-md-stacked-parts.png)
 
-對於主要檢視頁面，[清單檢視](lists.md)非常適合用來呈現可以包含影像及文字的清單。 
+對於主要檢視頁面，[清單檢視](lists.md)控制項很適合用來呈現可以包含影像及文字的清單。 
 
-對於詳細資料檢視頁面，請使用最適合的[內容元素](../layout/layout-panels.md)。 如果您有許多個別的欄位，請考慮使用**格線**配置將元素排列成表單。
+對於詳細資料檢視頁面，請使用最適合的[內容元素](../layout/layout-panels.md)。 如果您有許多個別的欄位，請考慮使用**格線**配置來將元素排列成表單。
 
-如需在頁面之間瀏覽，請參閱[適用於 UWP app 的瀏覽歷程記錄和向後瀏覽](../basics/navigation-history-and-backwards-navigation.md)。
+如需在頁面之間瀏覽，請參閱[適用於 UWP 應用程式的瀏覽歷程記錄和向後瀏覽](../basics/navigation-history-and-backwards-navigation.md)。
 
 ## <a name="side-by-side-style"></a>並排樣式
 
@@ -79,7 +79,7 @@ ms.locfileid: "57601253"
 
 針對主要窗格，[清單檢視](lists.md)能夠用於呈現可以包含影像和文字的清單。
 
-對於詳細資料內容，請使用最適合的[內容元素](../layout/layout-panels.md)。 如果您有許多個別的欄位，請考慮使用**格線**配置將元素排列成表單。
+對於詳細資料內容，請使用最適合的[內容元素](../layout/layout-panels.md)。 如果您有許多個別的欄位，請考慮使用**格線**配置來將元素排列成表單。
 
 ## <a name="adaptive-layout"></a>調適型配置
 
@@ -92,17 +92,17 @@ ms.locfileid: "57601253"
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-下列範例使用調適型配置實作主要/詳細資訊模式，並示範靜態、資料庫及離線資源的資料繫結： 
+下列範例使用調適型配置實作主要/詳細資訊模式，並示範靜態、資料庫及線上資源的資料繫結： 
 - [主要/詳細資料範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [主版/詳細資料，再加上選取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Windows 範本 Studio 主版/詳細範例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
+- [主要/詳細資料以及選取項目範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Windows Template Studio 主要/詳細資料範例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
-- [RSS 讀取器範例](https://github.com/Microsoft/Windows-appsample-rssreader)
+- [RSS 閱讀程式範例](https://github.com/Microsoft/Windows-appsample-rssreader)
 
 ## <a name="related-articles"></a>相關文章
 
 - [清單](lists.md)
 - [搜尋](search.md)
-- [應用程式和命令列](app-bars.md)
+- [應用程式列和命令列](app-bars.md)
 - [ListView 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [SplitView 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)

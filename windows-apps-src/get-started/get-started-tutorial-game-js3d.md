@@ -1,23 +1,23 @@
 ---
 title: 入門教學課程 - 以 JavaScript 撰寫的 3D UWP 遊戲
-description: 遊戲的 Microsoft Store，three.js 具有以 JavaScript 撰寫的 UWP
+description: 適用於 Microsoft Store 的 UWP 遊戲，以 JavaScript 搭配 three.js 撰寫
 ms.date: 03/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e1eba68d1046892a67d779d353fd9b2e6bf224e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66366946"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 建立 3D JavaScript 遊戲
 
 ## <a name="introduction"></a>簡介
 
-對於 Web 開發人員或 JavaScript 技術達人 (Tinkerer)，以 JavaScript 開發 UWP app 可輕鬆向世人展示您的應用程式。 不用擔心學習 C# 或 C++ 等語言！
+對於 Web 開發人員或 JavaScript 技術達人 (Tinkerer)，以 JavaScript 開發 UWP 應用程式可輕鬆向世人展示您的應用程式。 不用擔心學習 C# 或 C++ 等語言！
 
 在這個範例，我們會利用 **three.js** 程式庫。 從 WebGL (用於針對網頁瀏覽器轉譯 2D 與 3D 圖形的 API) 建置這個程式庫。 **three.js** 將此複雜的 API 簡化，讓 3D 開發變得更簡單。 
 
@@ -28,49 +28,49 @@ ms.locfileid: "66366946"
 </iframe>
 
 > [!NOTE] 
-> 這不是完整的遊戲;它是設計用來示範使用 JavaScript 和協力廠商程式庫來建立準備要發行至 Microsoft Store 應用程式。
+> 這並非完整的遊戲；設計目的是示範使用 JavaScript 和第三方程式庫，建立可發佈至 Microsoft Store 的應用程式。
 
 
 ## <a name="requirements"></a>需求
 
 若要試用這個專案，您將需要下列各項：
--   執行 Windows 10 目前版本的 Windows 的電腦（或虛擬機器）。
+-   執行目前 Windows 10 版本的 Windows 電腦 (或虛擬機器)。
 -   一份 Visual Studio 複本。 您可以從 [Visual Studio 首頁](https://visualstudio.com/)下載免費的 Visual Studio Community Edition。
 這個專案使用 **three.js** JavaScript 程式庫。 **three.js** 是根據 MIT 授權發行。 這個程式庫已經在專案中 (在方案總管檢視中尋找 `js/libs`)。 您可以在 [**three.js**](https://threejs.org/) 首頁找到這個程式庫的詳細資訊。
 
-## <a name="getting-started"></a>使用者入門
+## <a name="getting-started"></a>開始使用
 
-app 的完整原始碼儲存在 [GitHub](https://github.com/Microsoft/Windows-appsample-get-started-js3d)。
+應用程式的完整原始碼儲存在 [GitHub](https://github.com/Microsoft/Windows-appsample-get-started-js3d)。
 
-瀏覽 GitHub、按一下綠色 \[Clone or download\] (複製或下載) 按鈕，然後選取 \[在 Visual Studio 中開啟\]，是最簡單的入門使用方式。 
+瀏覽 GitHub、按一下綠色 [複製或下載] 按鈕，然後選取 [在 Visual Studio 中開啟]，是最簡單的入門使用方式。 
 
 ![複製或下載按鈕](images/3dclone.png)
 
 如果您不想複製專案，您可以 zip 檔案形式下載它。
 一旦方案載入到 Visual Studio 之後，您會看到數個檔案，包括：
--   Images/ - 包含 UWP app 所需各種圖示的資料夾。
+-   Images/ - 包含 UWP 應用程式所需各種圖示的資料夾。
 - css/ - 包含要使用之 CSS 的資料夾。
--   js/ - 包含 JavaScript 檔案的資料夾。 main.js 檔案是我們的遊戲，其他檔案則是協力廠商程式庫。
+-   js/ - 包含 JavaScript 檔案的資料夾。 main.js 檔案是我們的遊戲，其他檔案則是第三方程式庫。
 -   models/ - 包含 3D 模型的資料夾。 在這個遊戲，我們只有一個用於恐龍的模型。
 -   index.html - 裝載遊戲轉譯器的網頁。
 
 現在您可以執行遊戲！
 
-按 F5 來啟動 app。 您應該會看到視窗開啟，提示您按一下螢幕。 您也會看到恐龍在背景中四處移動。 關閉遊戲，我們將開始檢查 App 及其關鍵元件。
+按 F5 來啟動應用程式。 您應該會看到視窗開啟，提示您按一下螢幕。 您也會看到恐龍在背景中四處移動。 關閉遊戲，我們將開始檢查應用程式及其關鍵元件。
 
 > [!NOTE] 
-> 出現錯誤？ 請務必安裝有 Web 支援的 Visual Studio。 您可以建立新的專案進行檢查，如果沒有 JavaScript 支援，您必須重新安裝 Visual Studio，並核取 \[Microsoft Web Developer Tools\] 方塊。
+> 出現錯誤？ 請務必安裝有 Web 支援的 Visual Studio。 您可以建立新的專案進行檢查，如果沒有 JavaScript 支援，您必須重新安裝 Visual Studio，並核取 [Microsoft Web Developer Tools] 方塊。
 
 ## <a name="walkthrough"></a>逐步解說
 
 當您開始這個遊戲時，您會看到按一下螢幕的提示。 [指標鎖定 API](https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API) 可讓您用滑鼠四處查看。 按 W、A、S、D/方向鍵來進行移動。
 此遊戲的目標是遠離恐龍。 一旦恐龍夠靠近，它就會開始追您，直到您在範圍之外或太接近並輸掉遊戲。
 
-### <a name="1-setting-up-your-initial-html-file"></a>1.設定初始的 HTML 檔案
+### <a name="1-setting-up-your-initial-html-file"></a>1.設定您的初始 HTML 檔案
 
-在 **index.html**，您將需要新增一些 HTML 開始。 這個檔案是包含我們的 app 的預設網頁。
+在 **index.html**，您將需要新增一些 HTML 開始。 這個檔案是包含我們的應用程式的預設網頁。
 
-現在，我們將會以要使用的程式庫和用來將圖形轉譯到的 `div` (名為 `container`) 來設定它。 我們也會將它設為指向 **main.js**（遊戲程式碼）。
+現在，我們將會以要使用的程式庫和用來將圖形轉譯到的 `div` (名為 `container`) 來設定它。 我們也會將它設為指向 **main.js** (遊戲程式碼)。
 
 
 ```html
@@ -94,13 +94,13 @@ app 的完整原始碼儲存在 [GitHub](https://github.com/Microsoft/Windows-ap
 
 我們已經擁有準備就緒的簡易版 HTML，讓我們前往 **main.js**，建立一些圖形！
 
-### <a name="2-creating-your-scene"></a>2.建立場景
+### <a name="2-creating-your-scene"></a>2.建立您的場景
 
 在逐步解說一節中，我們要新增遊戲的基礎。
 
 我們將會從實現 `scene` 開始。 **three.js** 中的 `scene` 是相機、物件和燈號將加入的位置。 您也需要轉譯器，取得相機看到的場景，並讓它顯示。
 
-在 **main.js**，我們建立會執行這一切的函式，稱為 `init()`，它在一些其他函式上呼叫：
+在 **main.js** 中，我們建立會執行這一切的函式，稱為 `init()`，它在一些其他函式上呼叫：
 
 ```javascript
 var UNITWIDTH = 90; // Width of a cubes in the maze
@@ -219,7 +219,7 @@ function onWindowResize() {
 
 #### <a name="animate"></a>animate()
 
-最後一個需要的是 `animate()` 函式，它也會呼叫 `render()` 函式。 [`requestAnimationFrame()`  ](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame) 函式用來不斷地更新我們的轉譯器。 稍後，我們會使用這些函式，以很酷的動畫更新轉譯器，像是在迷宮四處移動。
+最後一個需要的是 `animate()` 函式，它也會呼叫 `render()` 函式。 [`requestAnimationFrame()`](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame) 函式用來不斷地更新我們的轉譯器。 稍後，我們會使用這些函式，以很酷的動畫更新轉譯器，像是在迷宮四處移動。
 
 ```javascript
 function animate() {
@@ -252,15 +252,15 @@ function radiansToDegrees(radians) {
 
 ___
 
-不少要吸收的程式碼，但現在有美麗的不少轉譯到我們的 `container`！ 請查看 CodePen 中的結果。
+有不少要吸收的程式碼，但現在有美麗的立方體轉譯到我們的 `container`！ 請查看 CodePen 中的結果。
 
 您可以複製和貼上此 CodePen 的所有 JavaScript，捲入到所產生的問題中，或編輯調整一些燈號以及變更某些色彩。 
 
-<iframe height='300' scrolling='no' title='號誌、 相機、 cube ！' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱畫筆<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>號誌，數位相機、 cube ！</a> 由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 上<a href='https://codepen.io'>CodePen</a>。
+<iframe height='300' scrolling='no' title='燈號、相機、立方體！' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>燈號、相機、立方體！</a> (由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a>)。
 </iframe>
 
 
-### <a name="3-making-the-maze"></a>3.使迷宮程式
+### <a name="3-making-the-maze"></a>3.製作迷宮
 
 雖然盯著立方體讓人屏息以待，更好的是整個迷宮由立方體組成！ 建立關卡最快的方式是以 2D 陣列四處放置立方體，這在遊戲社群中是個公開秘密。
  
@@ -338,7 +338,7 @@ function createMazeCubes() {
 
 ```
 
-現在，我們知道正在使用多少立方體（以及它們有多大），我們現在可以使用計算的 `mapSize` 變數來設定地面平面的尺寸：
+現在，我們知道正在使用多少立方體 (以及它們有多大)，我們現在可以使用計算的 `mapSize` 變數來設定地面平面的尺寸：
 
 ```javascript
 var mapSize;    // The width/depth of the maze
@@ -356,7 +356,7 @@ function createGround() {
 }
 ```
 
-我們要加入迷宮的最後一個項目是周邊牆壁，圈住所有項目。 我們會使用迴圈，同時製作兩個平面（我們的牆壁），使用在 `createGround()` 中計算的 `mapSize` 變動以決定其寬度。 新牆壁也會新增到我們的 `collidableObjects` 陣列，以供未來碰撞偵測使用：
+我們要加入迷宮的最後一個項目是周邊牆壁，圈住所有項目。 我們會使用迴圈一次製作兩個平面 (我們的牆壁)，並使用在 `createGround()` 中計算的 `mapSize` 變動來決定其寬度。 新牆壁也會新增到我們的 `collidableObjects` 陣列，以供未來碰撞偵測使用：
 
 ```javascript
 function createPerimWalls() {
@@ -402,13 +402,13 @@ ___
 <iframe height='300' scrolling='no' title='迷宮建置' src='//codepen.io/MicrosoftEdgeDocumentation/embed/JWKYzG/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/JWKYzG/'>迷宮建置</a>。
 </iframe>
 
-### <a name="4-allowing-the-player-to-look-around"></a>4.讓播放器來看一下
+### <a name="4-allowing-the-player-to-look-around"></a>4.允許玩家四處查看
 
 現在是進入迷宮並開始四處查看的時候了。 若要這樣做，我們將會使用 **PointerLockControls.js** 程式庫與我們的相機。
 
 **PoinerLockControls.js** 程式庫使用滑鼠，以滑鼠移動方向來旋轉相機，允許玩家四處查看。 
 
-首先，我們將一些新的項目加入到 **index.html** 檔案：
+首先，我們將一些新元素新增到 **index.html** 檔案：
 
 ```html
 <div id="blocker">
@@ -422,7 +422,7 @@ ___
 
 您也需要在本節底部 CodePen 中的所有 CSS。 它應該貼到 **stylesheet.css** 檔案。
 
-切換回 **main.js**、加入一些新的全域變數；`controls` 用來儲存控制器，`controlsEnabled` 用來追蹤控制器狀態，而 `blocker` 用來抓取 **index.html** 中的 `blocker` 項目：
+切換回 **main.js**、加入一些新的全域變數；`controls` 用來儲存控制器，`controlsEnabled` 用來追蹤控制器狀態，而 `blocker` 用來抓取 **index.html** 中的 `blocker` 元素：
 
 ```javascript
 var controls;
@@ -444,7 +444,7 @@ scene.add(controls.getObject());
 
 對於這種情形，[指標鎖定 API](https://docs.microsoft.com/microsoft-edge/dev-guide/dom/pointer-lock) 能解救這個問題，讓我們連接滑鼠移動與相機。 指標鎖定 API 也可以讓滑鼠消失，提供更沈浸式的體驗。 藉由按下 ESC，我們結束滑鼠與相機連接，讓滑鼠重新出現。 新增 `getPointerLock()` 和 `lockChange()` 函式可協助我們執行該動作。
 
-`getPointerLock()` 函式會接聽何時發生滑鼠點選作業。 按一下後，我們轉譯的遊戲 (在 `container` 項目中) 會嘗試控制滑鼠。 我們也加入事件接聽程式，偵測何時玩家啟動或停用鎖定，然後事件接聽程式會呼叫 `lockChange()`。 
+`getPointerLock()` 函式會接聽何時發生滑鼠點選作業。 按一下後，我們轉譯的遊戲 (在 `container` 元素中) 會嘗試控制滑鼠。 我們也加入事件接聽程式，偵測何時玩家啟動或停用鎖定，然後事件接聽程式會呼叫 `lockChange()`。 
 
 ```javascript
 function getPointerLock() {
@@ -456,7 +456,7 @@ function getPointerLock() {
 
 ```
 
-我們的 `lockChange()` 函式需要停用或啟用控制項和 `blocker` 項目。 我們可以判斷指標鎖定的狀態，方法是檢查滑鼠事件的 [`pointerLockElement`](https://developer.mozilla.org/docs/Web/API/Document/pointerLockElement) 屬性目標是否設定為我們的 `container`。
+我們的 `lockChange()` 函式需要停用或啟用控制項和 `blocker` 元素。 我們可以判斷指標鎖定的狀態，方法是檢查滑鼠事件的 [`pointerLockElement`](https://developer.mozilla.org/docs/Web/API/Document/pointerLockElement) 屬性目標是否設定為我們的 `container`。
 
 ```javascript
 function lockChange() {
@@ -486,13 +486,13 @@ animate();
 
 我們現在有四處**查看**的功能，但是真實的「哇」因素是能夠四處**移動**。 接下來的內容使用向量，會變得有點數學化，但沒有一點數學，3D 圖形還算是什麼？
 
-<iframe height='300' scrolling='no' title='看一下' src='//codepen.io/MicrosoftEdgeDocumentation/embed/gmwbMo/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/gmwbMo/'>四處查看</a>。
+<iframe height='300' scrolling='no' title='四處查看' src='//codepen.io/MicrosoftEdgeDocumentation/embed/gmwbMo/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/gmwbMo/'>四處查看</a>。
 </iframe>
 
 
 ### <a name="5-adding-player-movement"></a>5.新增玩家移動
 
-若要深入探討如何讓玩家移動，我們要回到微積分。 我們想要沿著特定向量（方向）將速度（移動）套用到 `camera`。
+若要深入探討如何讓玩家移動，我們要回到微積分。 我們想要沿著特定向量 (方向) 將速度 (移動) 套用到 `camera`。
 
 我們新增一些其他全域變數，以追蹤玩家移動的方向，並設定初始速度向量：
 
@@ -512,7 +512,7 @@ var PLAYERSPEED = 800.0;
 var clock;
 ```
 
-在 `init()` 函數開頭，將 `clock` 設定為新的 `Clock` 物件。 我們會使用此物件，追蹤轉譯新框架所花費的時間變更（差異）。 您也需要新增對 `listenForPlayerMovement()` 的呼叫，這會收集使用者輸入。 
+在 `init()` 函數開頭，將 `clock` 設定為新的 `Clock` 物件。 我們會使用此物件，追蹤轉譯新框架所花費的時間變更 (差異)。 您也需要新增對 `listenForPlayerMovement()` 的呼叫，這會收集使用者輸入。 
 
 ```
 clock = new THREE.Clock();
@@ -634,19 +634,19 @@ function animatePlayer(delta) {
 }
 ```
 
-最後，我們將任何已更新的 `x` 和 `y` 值套用至相機做為轉譯，讓玩家實際移動。
+最後，我們將任何已更新的 `x` 和 `y` 值套用至相機作為轉譯，讓玩家實際移動。
 
 ---
 
-恭喜您！ 您現在擁有可以四處移動且查看、玩家控制的相機。 我們仍然會穿牆，但稍後擔心那件事。 接著我們會新增恐龍。
+恭喜！ 您現在擁有可以四處移動且查看、玩家控制的相機。 我們仍然會穿牆，但稍後擔心那件事。 接著我們會新增恐龍。
 
-<iframe height='300' scrolling='no' title='四處移動' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱畫筆<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>四處移動</a>透過 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 上<a href='https://codepen.io'>CodePen</a>。
+<iframe height='300' scrolling='no' title='四處移動' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>四處移動</a>。
 </iframe>
 
 > [!NOTE]
-> 如果您在 UWP app 中使用這些控制項，可能會遇到移動延遲和未登錄的 `keyUp` 活動。 我們正在調查此問題，並希望很快修正此部分範例！
+> 如果您在 UWP 應用程式中使用這些控制項，可能會遇到移動延遲和未登錄的 `keyUp` 事件。 我們正在調查此問題，並希望很快修正此部分範例！
 
-### <a name="6-load-that-dino"></a>6.載入該 dino ！
+### <a name="6-load-that-dino"></a>6.載入該隻恐龍！
 
 如果您複製或下載此專案存放庫，您會看到內含 `dino.json` 的 `models` 資料夾。 這個 JSON 檔案是從 Blender 製作並匯出的恐龍 3D 模型。
 
@@ -664,9 +664,9 @@ var instructions = document.getElementById('instructions');
 ```
 
 我們已經建立 `JSONLoader`，現在我們將會傳入 **dino.json** 的路徑及回呼 (具有從檔案中收集的幾何和資料)。
-載入恐龍是非同步工作，這表示完全載入恐龍之前，不會轉譯任何項目。 在我們的 **index.html**，我們將 `instructions` 項目中的字串變更為 `"Loading..."`，讓玩家知道遊戲進行中。
+載入恐龍是非同步工作，這表示完全載入恐龍之前，不會轉譯任何項目。 在我們的 **index.html**，我們將 `instructions` 元素中的字串變更為 `"Loading..."`，讓玩家知道遊戲進行中。
 
-載入恐龍之後，以遊戲的實際指示更新 `instructions` 項目，以及從 `init()` 函式結尾移動 `animate()` 函式到函式回呼結尾，如下所示：
+載入恐龍之後，以遊戲的實際指示更新 `instructions` 元素，以及從 `init()` 函式結尾移動 `animate()` 函式到函式回呼結尾，如下所示：
 
 ```javascript
    // load the dino JSON model and start animating once complete
@@ -696,12 +696,12 @@ var instructions = document.getElementById('instructions');
 
 ---
 
-我們現在已經載入恐龍模型。 快來一探究竟！
+我們現在已經載入恐龍模型。 一探究竟！
 
-<iframe height='300' scrolling='no' title='新增 dino' src='//codepen.io/MicrosoftEdgeDocumentation/embed/xqOwBw/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/xqOwBw/'>新增恐龍</a>。
+<iframe height='300' scrolling='no' title='新增恐龍' src='//codepen.io/MicrosoftEdgeDocumentation/embed/xqOwBw/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/xqOwBw/'>新增恐龍</a>。
 </iframe>
 
-### <a name="7-move-that-dino"></a>7.移動該 dino ！
+### <a name="7-move-that-dino"></a>7.移動該隻恐龍！
 
 建立遊戲 AI 會變得非常複雜，所以針對這個範例，我們會讓這隻恐龍簡單移動。 我們的恐龍會直線移動，穿牆並消失在遠方濃霧中。
 
@@ -729,10 +729,10 @@ function animateDino(delta) {
 
 觀看恐龍走開不是很有趣，但加入碰撞偵測之後，遊戲會變得更有趣。
 
-<iframe height='300' scrolling='no' title='移動 dino-沒有衝突' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/jBMbbL/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/jBMbbL/'>移動恐龍 - 無碰撞</a>。
+<iframe height='300' scrolling='no' title='移動恐龍 - 無碰撞' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/jBMbbL/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/jBMbbL/'>移動恐龍 - 無碰撞</a>。
 </iframe>
 
-### <a name="8-collision-detection-for-the-player"></a>8.播放程式的衝突偵測
+### <a name="8-collision-detection-for-the-player"></a>8.玩家碰撞偵測
 
 我們現在可以讓玩家和恐龍四處移動，但仍有穿牆的擾人問題。 在本教學課程稍早，當我們一開始加入立方體和牆壁時，我們將其推入 `collidableObjects` 陣列。 這個陣列是我們用來得知玩家是否太接近不可穿越的項目。
 
@@ -742,7 +742,7 @@ function animateDino(delta) {
 var PLAYERCOLLISIONDISTANCE = 20;
 ```
 
-我們會建立新函式，稱為 `detectPlayerCollision()`，如果玩家太接近可碰撞的物件，它會傳回 `true`。
+我們會建立稱為 `detectPlayerCollision()` 的新函式，如果玩家太接近可碰撞的物件，它會傳回 `true`。
 為玩家，我們將套用一個射線偵測器給此物件，根據玩家移動方向來變更指向方向。
 
 若要這樣做，我們建立 `rotationMatrix`，未定義的矩陣。 檢查移動方向時，我們會得到已定義的 `rotationMatrix`，或如果正在向前移動則為未定義。
@@ -844,11 +844,11 @@ function animatePlayer(delta) {
 
 我們現在有玩家碰撞偵測，請嘗試撞上一些牆壁！
 
-<iframe height='300' scrolling='no' title='移動玩家-衝突' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/qraOeO/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qraOeO/'>移動玩家 - 碰撞</a>。
+<iframe height='300' scrolling='no' title='移動玩家 - 碰撞' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/qraOeO/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qraOeO/'>移動玩家 - 碰撞</a>。
 </iframe>
 
 
-### <a name="9-collision-detection-and-animation-for-dino"></a>9.衝突偵測與 dino 的動畫
+### <a name="9-collision-detection-and-animation-for-dino"></a>9.恐龍碰撞偵測和動畫
 
 現在是該防止恐龍穿牆，並在它太接近可碰撞的物件時，讓它以隨機方向移動的時候了。
 
@@ -923,7 +923,7 @@ function getRandomInt(min, max) {
 }
 ```
 
-完成之後，我們會將陣列的隨機索引乘以 90，來取得旋轉角度（轉換成弧度）。
+完成之後，我們會將陣列的隨機索引乘以 90，來取得旋轉角度 (轉換成弧度)。
 透過使用 `dino.rotation.y += randomDirection;` 將這個值新增至恐龍的 `y` 旋轉，恐龍現在於碰撞時可隨機轉向。
 
 
@@ -931,10 +931,10 @@ function getRandomInt(min, max) {
 
 我們完成了！ 我們的恐龍現在有 AI，可在迷宮中四處移動！
 
-<iframe height='300' scrolling='no' title='移動 dino-衝突' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/bqwMXZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱畫筆<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/bqwMXZ/'>移動 dino-衝突</a>透過 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 上<a href='https://codepen.io'>CodePen</a>。
+<iframe height='300' scrolling='no' title='移動恐龍 - 碰撞' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/bqwMXZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/bqwMXZ/'>移動恐龍 - 碰撞</a>。
 </iframe>
 
-### <a name="10-starting-the-chase"></a>10.正在啟動追趕
+### <a name="10-starting-the-chase"></a>10.開始追逐
 
 恐龍在玩家的特定距離內時，我們想要讓恐龍開始追逐玩家。 因為這只是範例，所以沒有套用恐龍追蹤玩家的任何進階演算法。 相反地，恐龍會看著玩家並走向他們。 在迷宮的開放空間部分，這個效果很好，但在牆壁擋路時恐龍會受困在現場。
 
@@ -985,7 +985,7 @@ function triggerChase() {
 }
 ```
 
-`triggerChase` 的另一半處理文字顯示，可讓玩家知道恐龍的距離。 我們也引入 `CATCHOFFSET` 指定 `0` 應該是多遠。 如果我們沒有位移，`0`將會在玩家的正上方，這並非完美結局。
+`triggerChase` 的另一半處理文字顯示，可讓玩家知道恐龍的距離。 我們也引入 `CATCHOFFSET` 指定 `0` 應該是多遠。 如果我們沒有位移，`0` 將會在玩家的正上方，這並非完美結局。
 
 
 
@@ -999,7 +999,7 @@ dinoAlert.style.display = 'none';
 這時，當玩家太接近，瘋狂的恐龍會開始追蹤玩家，直到恐龍的位置在玩家上方才會停止。
 最後一個步驟是，在恐龍距離 `CATCHOFFSET` 個單位遠時，新增某些遊戲結束條件。
 
-<iframe height='300' scrolling='no' title='Chase' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpRBqR/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpRBqR/'>追逐</a>。
+<iframe height='300' scrolling='no' title='追逐' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpRBqR/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 發佈到 <a href='https://codepen.io'>CodePen</a> 的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpRBqR/'>追逐</a>。
 </iframe>
 
 
@@ -1015,7 +1015,7 @@ var gameOver = false;
 ```
 
 現在我們需要更新 `animate()` 函式最後一次，以檢查恐龍是否太接近玩家。
-如果恐龍太接近，我們將開始新的函式，稱為 `caught()`，並停止玩家和恐龍移動，如果不接近，我們將會照常繼續讓玩家和恐龍四處移動。
+如果恐龍太接近，我們將開始稱為 `caught()` 的新函式，並停止玩家和恐龍移動，如果不接近，我們將會照常繼續讓玩家和恐龍四處移動。
 
 ```javascript
 function animate() {
@@ -1040,7 +1040,7 @@ function animate() {
 }
 ```
 
-如果恐龍捕捉到玩家，`caught()` 將會顯示 `blocker` 項目並更新文字以表示已輸掉遊戲。
+如果恐龍捕捉到玩家，`caught()` 將會顯示 `blocker` 元素並更新文字以表示已輸掉遊戲。
 `gameOver` 變數也設定為 `true`，現在可讓我們知道遊戲已結束。  
 
 
@@ -1075,16 +1075,16 @@ function lockChange() {
 
 ---
 
-就這麼容易！ 這是漫長歷程，但我們已經使用 **three.js** 製作遊戲。
+這樣就完成了！ 這是漫長歷程，但我們已經使用 **three.js** 製作遊戲。
 
 返回頁面頂端，可查看[遊戲完稿 CodePen](#introduction)！
 
 
-## <a name="publishing-to-the-microsoft-store"></a>發行至 Microsoft Store
-現在您可以在 UWP 應用程式時，就可以將它發行到 （假設您已在第一次改進 ！） 的 Microsoft Store程序有幾個步驟。
+## <a name="publishing-to-the-microsoft-store"></a>發佈至 Microsoft Store
+現在您擁有 UWP 應用程式，可以將它發行至 Microsoft Store (假設您已先將它改進！)程序有幾個步驟。
 
 1.  您必須[註冊](https://developer.microsoft.com/store/register)為 Windows 開發人員。
-2.  您必須使用 App 提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
-3.  必須提交 App 以取得[認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
-如需詳細資訊，請參閱 <<c0> [ 發佈您的 UWP 應用程式](https://developer.microsoft.com/store/publish-apps)。
+2.  您必須使用應用程式提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+3.  必須提交應用程式以取得[認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
+如需詳細資訊，請參閱[發佈 UWP 應用程式](https://developer.microsoft.com/store/publish-apps)。
 

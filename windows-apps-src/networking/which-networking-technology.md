@@ -4,13 +4,13 @@ description: 適用於 UWP 開發人員的網路功能技術快速概觀，並�
 title: 哪一種網路功能技術？
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: db2e444b9f13ba41127b362483774c92d45f1f77
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66372749"
 ---
 # <a name="which-networking-technology"></a>哪一種網路功能技術？
@@ -22,7 +22,7 @@ ms.locfileid: "66372749"
 
 當您與另一個裝置通訊，並想要使用自己的通訊協定時，請使用[通訊端](sockets.md)。
 
-兩個通訊端實作可供通用 Windows 平台 (UWP) 開發人員：[**Windows.Networking.Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)，並[Winsock](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)。 如果您要撰寫新的程式碼，請善加利用 Windows.Networking.Sockets，因為它是針對 UWP 開發人員設計的新型 API。 如果您要使用跨平台的網路程式庫或其他現有的 Winsock 程式碼，或偏好 Winsock API，請逕行使用。
+通用 Windows 平台 (UWP) 開發人員有兩種通訊端實作可使用：[**Windows.Networking.Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) 和 [Winsock](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)。 如果您要撰寫新的程式碼，請善加利用 Windows.Networking.Sockets，因為它是針對 UWP 開發人員設計的新型 API。 如果您要使用跨平台的網路程式庫或其他現有的 Winsock 程式碼，或偏好 Winsock API，請逕行使用。
 
 ### <a name="when-to-use-sockets"></a>使用通訊端的時機
 
@@ -69,7 +69,7 @@ ms.locfileid: "66372749"
 
 當您想要可靠地透過網路傳輸檔案時，請使用[背景傳輸 API](background-transfers.md)。 背景傳輸 API 提供進階的上傳和下載功能，這些功能會在 app 暫停期間於背景執行，並在 app 終止後保留。 API 會監視網路狀態，並自動在連線中斷時暫停和繼續傳輸，傳輸作業會是數據用量感知和電池用量感知，這表示下載活動會根據您目前的連線能力與裝置電池狀態進行調整。 當您的應用程式執行於行動裝置或電池供電的裝置時，會用到這些功能。 API 適用於上傳和下載使用 HTTP(S) 的大型檔案。 也支援 FTP，但只限於下載項目。
 
-Windows 10 的新背景傳輸功能是能夠完成檔案傳輸，以便您可以更新本機目錄、 啟用其他應用程式，或下載完成時通知使用者時，觸發程序的後續處理。
+Windows 10 中新增的背景傳輸功能，是能夠在檔案傳輸完成時觸發後續處理，以便您更新本機目錄、啟用其他應用程式，或在下載完成時通知使用者。
 
 ### <a name="when-to-use-background-transfers"></a>使用背景傳輸的時機
 
@@ -127,7 +127,7 @@ Windows 10 的新背景傳輸功能是能夠完成檔案傳輸，以便您可以
 
 ### <a name="mobile-operators"></a>電信業者
 
-Windows 10 公開給各種開發人員的對象有先前只有未公開給裝置製造商和行動通訊業者某些 Api。 請注意，雖然這些 API 現已公開，但仍受控於在應用程式發行之前必須先由 Microsoft 核准的特定應用程式功能。 這些 API 的實際使用，主要仍將受限於裝置製造商和電信業者。
+Windows 10 為廣泛的開發人員對象公開了一些先前僅公開給裝置製造商和電信業者的 API。 請注意，雖然這些 API 現已公開，但仍受控於在應用程式發行之前必須先由 Microsoft 核准的特定應用程式功能。 這些 API 的實際使用，主要仍將受限於裝置製造商和電信業者。
 
 ### <a name="network-operations"></a>網路作業
 

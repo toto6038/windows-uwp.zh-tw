@@ -4,29 +4,29 @@ title: 背景網路通訊
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 ms.date: 06/14/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b0246e338c13027f8afc8da4aa919faa0911b39c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66371626"
 ---
 # <a name="network-communications-in-the-background"></a>背景網路通訊
-若要繼續網路通訊，雖然它不在前景，背景工作，以及其中一個這兩個選項，可以使用您的應用程式。
-- 通訊端代理程式。 如果您的應用程式使用通訊端長期的連線然後，當它離開前景時，它可以委派通訊端擁有的權給系統通訊端訊息代理程式。 訊息代理程式接著： 通訊端; 上的流量到達時，就會啟動您的應用程式將擁有權轉移給您的應用程式;然後，您的應用程式再處理抵達的流量。
-- 控制通道的觸發程序。 
+若要繼續網路通訊 (雖然它不在前景)，您的應用程式可以使用背景工作及這兩個選項之一。
+- 通訊端代理程式。 如果您的應用程式使用通訊端進行長期連線，當它離開前景時，即可將通訊端的擁有權委派給系統通訊端代理程式。 當流量抵達通訊端時，代理程式就會啟動應用程式，將擁有權移轉回應用程式，接著應用程式會處理抵達的流量。
+- 控制通道觸發程序。 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>在背景工作中執行網路作業
-- 收到封包且需要執行短期工作時，可使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 來啟動背景工作。 執行工作之後, 應該終止背景工作，才能節省電源。
+- 收到封包且需要執行短期工作時，可使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 來啟動背景工作。 執行完工作後，背景工作應該會終止以節省電源。
 - 收到封包且需要執行長期工作時，可使用 [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 來啟動背景工作。
 
-**網路相關的條件和旗標**
+**網路相關條件和旗標**
 
 - 新增 **InternetAvailable** 條件至您的背景工作 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 可延遲觸發背景工作，直到網路堆疊執行。 這個條件可以節省電源，因為直到網路連線前，背景工作都不會執行。 這個條件不提供即時啟動。
 
-無論使用哪種觸發程序，在背景工作上設定 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) 可確保在背景工作執行時保持網路連線。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。 如果您的背景工作不會使用**IsNetworkRequested**，然後將您的背景工作將無法存取網路時 （例如，手機的螢幕關閉時） 的連線待命模式。
+無論使用哪種觸發程序，在背景工作上設定 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) 可確保在背景工作執行時保持網路連線。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。 如果您的背景工作不使用 **IsNetworkRequested**，則處於 [連線待命] 模式時 (例如，當手機螢幕關閉時) 背景工作將無法存取網路。
 
 ## <a name="socket-broker-and-the-socketactivitytrigger"></a>通訊端代理程式和 SocketActivityTrigger
 如果 app 使用 [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 連線，則應使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) 和通訊端代理程式，這樣 app 的流量於 app 不在前景時抵達就會收到通知。
@@ -150,14 +150,14 @@ case SocketActivityTriggerReason.SocketClosed:
   deferral.Complete();
 ```
 
-如需示範使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) 和通訊端代理程式的範例，請參閱 [SocketActivityStreamSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620606)。 通訊端初始化會執行在 Scenario1\_Connect.xaml.cs，以及背景工作的實作便 SocketActivityTask.cs。
+如需示範使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) 和通訊端代理程式的範例，請參閱 [SocketActivityStreamSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620606)。 通訊端初始化在 Scenario1\_Connect.xaml.cs 中執行，而背景作業實作是在 SocketActivityTask.cs 中。
 
 您可能會注意到範例一旦建立新的通訊端或取得現有通訊端就會呼叫 **TransferOwnership**，而不是像本主題所描述使用 **OnSuspending** 事件處理常式。 這是因為範例著重在示範 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)，且在執行時沒有任何其他活動使用通訊端。 您的 app 可能更複雜，且應使用 **OnSuspending** 來決定呼叫 **TransferOwnership** 的時機。
 
 ## <a name="control-channel-triggers"></a>控制通道觸發程序
-首先，請確認正確地使用控制通道 (CCT) 觸發程序。 如果您使用[ **DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)， [ **StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)，或[ **StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener)連線，則我們建議您改用[ **SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。 您可以為 **StreamSocket** 使用 CCT，但它們使用更多資源，且可能無法在連線待命模式中運作。
+首先，請確認正確地使用控制通道 (CCT) 觸發程序。 如果您使用 [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 連線，建議使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。 您可以為 **StreamSocket** 使用 CCT，但它們使用更多資源，且可能無法在連線待命模式中運作。
 
-如果您使用 Websocket [ **IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2)， [ **System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)，或[ **Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient)，則您必須使用[ **ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
+如果使用 WebSockets、[**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2)、[**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 或 [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient)，您必須使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
 
 ## <a name="controlchanneltrigger-with-websockets"></a>ontrolChannelTrigger 搭配 WebSockets
 使用 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，有一些特殊考量。 在使用 **MessageWebSocket** 或 **StreamWebSocket** 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 **StreamWebSocket** 接收封包要求的處理方式。 在 **MessageWebSocket** 接收封包的要求不會受到影響。
@@ -259,7 +259,7 @@ public void OnDataReadCompletion(uint bytesRead, DataReader readPacket)
 
 WebSocket 的額外細節是持續連線處理常式。 WebSocket 通訊協定會定義持續連線訊息的標準模型。
 
-在使用 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 時，請針對 KeepAliveTrigger 將 [**WebSocketKeepAlive**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.WebSocketKeepAlive) 類別執行個體登錄為 [**TaskEntryPoint**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.taskentrypoint)，以允許取消暫停應用程式並定期將持續連線訊息傳送至伺服器 (遠端端點)。 這應該在背景登錄應用程式程式碼以及套件資訊清單中完成。
+使用 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 時，請針對 KeepAliveTrigger 將 [**WebSocketKeepAlive**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.WebSocketKeepAlive) 類別登錄為 [**TaskEntryPoint**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.taskentrypoint)，以允許取消暫停應用程式並定期將持續連線訊息傳送至伺服器 (遠端端點)。 這應該在背景登錄應用程式程式碼以及套件資訊清單中完成。
 
 [  **Windows.Sockets.WebSocketKeepAlive**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.WebSocketKeepAlive) 的這個工作進入點必須在下列兩個地方指定：
 

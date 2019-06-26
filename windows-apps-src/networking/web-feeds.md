@@ -4,19 +4,19 @@ title: RSS/Atom 摘要
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66372778"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 摘要
 
 
-**重要的 Api**
+**重要 API**
 
 -   [**Windows.Data.Xml.Dom**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom)
 -   [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)
@@ -44,7 +44,7 @@ ms.locfileid: "66372778"
 
 網路隔離會影響 [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) 和 [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub) 命名空間中任何想存取網路的類別元素。 Windows 會主動強制網路隔離。 如果未啟用適當的網路功能，則在 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空間中呼叫類別元素會因為網路隔離而導致網路存取失敗。
 
-建立應用程式時，會在應用程式資訊清單中設定應用程式的網路功能。 網路功能通常會加入開發應用程式時，使用 Microsoft Visual Studio 2015。 也可以使用文字編輯器在應用程式資訊清單檔案中手動設定網路功能。
+建立應用程式時，會在應用程式資訊清單中設定應用程式的網路功能。 開發應用程式時，通常會使用 Microsoft Visual Studio 2015 來新增網路功能。 也可以使用文字編輯器在應用程式資訊清單檔案中手動設定網路功能。
 
 如需網路隔離和網路功能的詳細資訊，請參閱[網路功能基本知識](networking-basics.md)主題中的＜功能＞一節。
 
@@ -56,7 +56,7 @@ ms.locfileid: "66372778"
 
 若要確保 UWP 應用程式的網路可正常運作，您必須在專案 **Package.appxmanifest** 檔案中設定所需的所有網路功能。 如果 app 需要以用戶端的形式連線到網際網路上的遠端服務，則需要 **internetClient** 功能。 如需詳細資訊，請參閱[網路功能基本知識](networking-basics.md)主題中的＜功能＞一節。
 
-**擷取 web 摘要的新聞訂閱的內容**
+**從網頁摘要抓取同步發佈內容**
 
 現在我們要檢閱一些示範如何抓取摘要的程式碼，然後顯示摘要所包含的每一個個別項目。 設定和傳送要求之前，我們會先定義一些要在作業期間使用的變數，然後初始化 [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient) 的執行個體，這可定義要用來抓取和顯示摘要的方法和屬性。
 

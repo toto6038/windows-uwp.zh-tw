@@ -4,13 +4,13 @@ title: 網路功能基本知識
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ms.date: 06/01/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a22b583f4da59af5694156b57ede3c6a353cef5a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66371638"
 ---
 # <a name="networking-basics"></a>網路功能基本知識
@@ -31,12 +31,12 @@ ms.locfileid: "66371638"
 
 | 功能 | 描述 |
 |------------|-------------|
-| **enterpriseAuthentication** | 允許 app 連線至需要網域認證的網路資源。 例如，應用程式從私人內部網路上的 SharePoint 伺服器擷取資料。 透過此功能，您的認證可用來在需要認證的網路上存取網路資源。 具有此功能的應用程式可在網路上模擬您。 您不需要這項功能，以便在您的應用程式透過驗證的 proxy 存取網際網路。<br/><br/>如需詳細資訊，請參閱文件*企業*中的功能案例[限制功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。 |
+| **enterpriseAuthentication** | 允許 app 連線至需要網域認證的網路資源。 例如，從私人內部網路上的 SharePoint 伺服器擷取資料的應用程式。 透過此功能，您的認證可用來在需要認證的網路上存取網路資源。 具有此功能的應用程式可在網路上模擬您。 若要允許應用程式透過驗證 Proxy 來存取網際網路，您並不需要這項功能。<br/><br/>如需詳細資訊，請參閱文件中有關[受限制的功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)中的「企業」  功能案例。 |
 | **proximity** | 與非常靠近電腦的裝置進行近距離鄰近性通訊時所需。 近距離鄰近性可用來傳送或與鄰近裝置上的應用程式連線。 <br/><br/> 這個功能可讓 app 存取網路以連線至非常靠近的裝置，只要使用者同意傳送邀請或是接受邀請即可。 |
 | **sharedUserCertificates** | 這個功能可讓 app 存取軟體和硬體憑證，例如智慧卡憑證。 在執行階段叫用這個功能時，使用者必須採取行動，例如插入卡片或是選取憑證。 <br/><br/> 透過這個功能，您的軟體與硬體憑證或智慧卡可供應用程式識別身分。 您的員工、銀行或政府服務單位可使用這個功能來識別身分。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>App 不在前景時進行通訊
-[使用背景工作支援應用程式](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)包含當 app 不在前景時，使用背景工作執行工作的一般資訊。 具體而言，如果 app 不是目前的前景 app，您的程式碼必須執行特殊步驟，才可在資料透過網路送達時接收通知。 控制通道的觸發程序用於此目的，在 Windows 8 和 Windows 10 中仍然支援它們。 如需使用控制通道觸發程序的完整資訊，請參閱 [**here**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。 Windows 10 的新技術提供更佳的功能使用，請在某些情況下，例如啟用推播的資料流通訊端的額外負荷較低： 通訊端訊息代理程式和通訊端活動觸發程序。
+[使用背景工作支援應用程式](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)包含當 app 不在前景時，使用背景工作執行工作的一般資訊。 具體而言，如果 app 不是目前的前景 app，您的程式碼必須執行特殊步驟，才可在資料透過網路送達時接收通知。 在 Windows 8 中，您使用「控制通道觸發程序」來達到此目的，這在 Windows 10 中仍受支援。 如需使用控制通道觸發程序的完整資訊，請參閱 [**here**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。 在某些情況下，Windows 10 的新技術可提供更好的功能與較低的額外負荷，例如啟用推播的資料流通訊端：通訊端代理程式與通訊端活動觸發程序。
 
 如果您的 app 使用 [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener)，則您的 app 可以將開啟之通訊端的擁有權轉換給系統所提供的通訊端代理程式，然後離開前景，或甚至終止。 當轉換的通訊端建立連線，或流量到達該通訊端時，表示您的 app 或其指定的背景工作已啟用。 如果您的 app 未執行，將在此時啟動。 接著，通訊端代理程式會使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) 通知您的 app 有新流量到達。 您的 app 會從通訊端代理程式回收通訊端，並處理通訊端上的流量。 這表示當您的 app 未主動處理網路流量時，所耗用的系統資源會大幅降低。
 
@@ -60,21 +60,21 @@ ms.locfileid: "66371638"
 
 有兩種方式可使用 SSL/TLS 保護 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 連線：
 
--   [**ConnectAsync** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) -進行初始連線至網路服務，然後立即交涉要使用 SSL/TLS 的所有通訊。
--   [**UpgradeToSslAsync** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) -一開始連接到未加密的網路服務。 應用程式可能會傳送或接收資料。 然後為所有進一步的通訊將連線升級成使用 SSL/TLS。
+-   [**ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) - 建立連至網路服務的初始連線，並立即交涉讓所有通訊使用 SSL/TLS。
+-   [**UpgradeToSslAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) - 在不加密的情況下初次連線至網路服務。 應用程式可能會傳送或接收資料。 然後為所有進一步的通訊將連線升級成使用 SSL/TLS。
 
 SocketProtectionLevel 指定應用程式想用來建立或升級連線的所需通訊端保護層級。 不過，已建立的連線的最終保護層級取決於連線的這兩個端點之間的交涉程序。 如果其他端點要求較低的層級，結果可能是比您指定的要更低的保護層級。 
 
  順利完成非同步作業後，您可以透過 [**StreamSocketinformation.ProtectionLevel**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocketinformation.protectionlevel) 屬性擷取 [**ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 或 [**UpgradeToSslAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) 呼叫中使用的要求保護層級。 不過，這不會反映連線所使用的實際保護層級。
 
 > [!NOTE]
-> 您的程式碼不應該以隱含方式依賴使用特定的保護層級，或是依預設使用提供的安全性層級的假設。 安全性概況經常變更，為避免使用含有已知弱點的通訊協定，通訊協定和預設保護層級會隨著時間變更。 依據個別的電腦設定或安裝的軟體及套用的修補程式而定，預設值可能會有所不同。 如果您的應用程式需要使用特定的安全性層級，那麼您必須明確地指定層級，並確定它實際上已在建立的連線中使用。
+> 您的程式碼不應該以隱含方式依賴使用特定的保護層級，或是依預設使用提供的安全性層級的假設。 安全性概況經常變更，為避免使用含有已知弱點的通訊協定，通訊協定和預設保護層級會隨著時間變更。 依據個別的電腦設定或安裝的軟體及套用的修補程式而定，預設值可能會有所不同。 如果您的應用程式需要使用特定的安全性層級，則必須明確地指定層級，並確定它實際上已在建立的連線中使用。
 
 ### <a name="use-connectasync"></a>使用 ConnectAsync
-[**ConnectAsync** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync)可用來建立初始連接以網路服務，然後再立即使用 SSL/TLS 的所有通訊。 有兩種 **ConnectAsync** 方法可支援傳遞 *protectionLevel* 參數：
+[**ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 可用來建立具有網路服務的初始連線，然後為所有通訊立即交涉以使用 SSL/TLS。 有兩種 **ConnectAsync** 方法可支援傳遞 *protectionLevel* 參數：
 
--   [ **（EndpointPair、 SocketProtectionLevel） ConnectAsync** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) -上啟動非同步作業[ **StreamSocket** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)物件來連接至遠端網路目的地指定為[ **EndpointPair** ](https://docs.microsoft.com/uwp/api/Windows.Networking.EndpointPair)物件並[ **SocketProtectionLevel**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketProtectionLevel)。
--   [ **(主機名稱、 字串、 SocketProtectionLevel) ConnectAsync** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) -上啟動非同步作業[ **StreamSocket** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)物件來連接至遠端目的地指定遠端主機名稱、 遠端服務名稱，以及[ **SocketProtectionLevel**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketProtectionLevel)。
+-   [**ConnectAsync(EndpointPair, SocketProtectionLevel)** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) - 在 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 物件上啟動非同步操作，以連線至指定為 [**EndpointPair**](https://docs.microsoft.com/uwp/api/Windows.Networking.EndpointPair) 物件與 [**SocketProtectionLevel**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketProtectionLevel)的遠端網路目的地。
+-   [**ConnectAsync(HostName, String, SocketProtectionLevel)** ](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) - 在 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 物件上啟動非同步操作，以連線至遠端主機名稱、遠端服務名稱以及 [**SocketProtectionLevel**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketProtectionLevel) 所指定的遠端目的地。
 
 如果在呼叫上面的 [**ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 方法時，將 *protectionLevel* 參數設定為 **Windows.Networking.Sockets.SocketProtectionLevel.Ssl**，則必須建立 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 以使用 SSL/TLS 來加密。 這個值需要加密而且絕不允許使用 NULL 密碼。
 
@@ -452,7 +452,7 @@ using Windows::Storage::Streams;
 ```
 
 ### <a name="creating-secure-websocket-connections"></a>建立安全的 WebSocket 連線
-如同傳統型的通訊端連線，在使用 UWP app 中的 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 和 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 功能時，也可以使用傳輸層安全性 (TLS)/安全通訊端層 (SSL) 加密 WebSocket 連線。 在大部分情況下，您會想使用安全的 WebSocket 連線。 這將會增加連線成功的機率，因為許多 Proxy 都會拒絕未加密的 WebSocket 連線。
+如同傳統型的通訊端連線，在使用 UWP 應用程式中的 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 和 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 功能時，也可以使用傳輸層安全性 (TLS)/安全通訊端層 (SSL) 加密 WebSocket 連線。 在大部分情況下，您會想使用安全的 WebSocket 連線。 這將會增加連線成功的機率，因為許多 Proxy 都會拒絕未加密的 WebSocket 連線。
 
 如需如何建立 (或升級至) 連線到網路服務的安全通訊端連線的範例，請參閱[如何使用 TLS/SSL 保護 WebSocket 連線](https://docs.microsoft.com/previous-versions/windows/apps/hh994399(v=win.10))。
 
@@ -460,11 +460,11 @@ using Windows::Storage::Streams;
 
 如果來自用戶端的起始要求不包含這個值，或提供的值不符合伺服器所期待，當發生 WebSocket 交握錯誤時，預期的值就會從伺服器傳送到用戶端。
 
-## <a name="authentication"></a>驗證
+## <a name="authentication"></a>Authentication
 如何在透過網路連線時提供驗證認證。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>提供具有 StreamSocket 類別的用戶端憑證
-[  **Windows.Networking.StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 類別支援使用 SSL/TLS 來驗證與 app 交談的伺服器。 在某些情況下，app 也必須使用 TLS 的用戶端憑證向伺服器驗證本身。 在 Windows 10 中，您可以在提供用戶端憑證[ **StreamSocket.Control** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) （這必須設定啟動 TLS 交握之前） 的物件。 如果伺服器要求用戶端憑證，Windows 會使用提供的憑證來回應。
+[  **Windows.Networking.StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 類別支援使用 SSL/TLS 來驗證與 app 交談的伺服器。 在某些情況下，app 也必須使用 TLS 的用戶端憑證向伺服器驗證本身。 在 Windows 10 中，您可以在 [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) 物件上提供用戶端憑證 (這必須在 TLS 交握啟動之前設定)。 如果伺服器要求用戶端憑證，Windows 會使用提供的憑證來回應。
 
 以下程式碼片段說明其實作方式：
 
@@ -483,11 +483,11 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 |  | [**MessageWebSocketControl.ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.messagewebsocketcontrol.proxycredential) |
 |  | [**StreamWebSocketControl.ServerCredential**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocketcontrol.servercredential) |
 |  | [**StreamWebSocketControl.ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocketcontrol.proxycredential) |
-| **背景傳送** | [**BackgroundDownloader.ServerCredential**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.servercredential) |
+| **背景傳輸** | [**BackgroundDownloader.ServerCredential**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.servercredential) |
 |  | [**BackgroundDownloader.ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.proxycredential) |
 |  | [**BackgroundUploader.ServerCredential**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounduploader.servercredential) |
 |  | [**BackgroundUploader.ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounduploader.proxycredential) |
-| **Syndication** | [**SyndicationClient(PasswordCredential)** ](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.) |
+| **同步發佈** | [**SyndicationClient(PasswordCredential)** ](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.) |
 |  | [**SyndicationClient.ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) |
 |  | [**SyndicationClient.ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) |
 | **AtomPub** | [**AtomPubClient(PasswordCredential)** ](https://docs.microsoft.com/uwp/api/windows.web.atompub.atompubclient.) |
@@ -507,4 +507,4 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 -   其他 API 則提供擷取實際 **HRESULT** 值的方法。
 
 ## <a name="related-topics"></a>相關主題
-* [Windows 10 中的網路功能 API 增強功能](https://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+* [Windows 10 中的網路 API 改進](https://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)

@@ -1,52 +1,52 @@
 ---
 title: 追蹤在背景中的檔案系統變更
-description: 說明如何追蹤檔案中的變更，並在背景中的資料夾，當使用者會將它們移動系統。
+description: 說明當使用者在系統中移動檔案和資料夾時，如何在背景中追蹤其變更。
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b0ec7762fd64f0f0b8de65faa1aaf079bdaba3a3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621573"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63807034"
 ---
 # <a name="track-file-system-changes-in-the-background"></a>追蹤在背景中的檔案系統變更
 
-**重要的 Api**
+**重要 API**
 
 -   [**StorageLibraryChangeTracker**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibraryChangeTracker)
 -   [**StorageLibraryChangeReader**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader)
 -   [**StorageLibraryChangedTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger)
 -   [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary)
 
-[ **StorageLibraryChangeTracker** ](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibraryChangeTracker)類別可讓應用程式，以追蹤使用者會將它們移動系統的檔案及資料夾中的變更。 使用**StorageLibraryChangeTracker**類別，可以追蹤應用程式：
+當使用者在系統中移動檔案和資料夾時，[**StorageLibraryChangeTracker**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibraryChangeTracker) 類別可讓應用程式在背景中追蹤其變更。 使用 **StorageLibraryChangeTracker** 類別，應用程式可以追蹤：
 
-- 檔案作業包括新增、 刪除、 修改。
+- 檔案作業包括新增、刪除、修改。
 - 資料夾作業，例如重新命名和刪除。
-- 檔案和資料夾的磁碟機上移動。
+- 在磁碟機上移動的檔案和資料夾。
 
-使用本指南來了解使用變更追蹤程式的程式設計模型、 檢視一些範例程式碼，並了解不同類型的所追蹤的檔案作業**StorageLibraryChangeTracker**。
+使用本指南來了解使用變更追蹤器的程式設計模型、檢視一些範例程式碼，以及了解 **StorageLibraryChangeTracker** 所追蹤的不同檔案作業類型。
 
-**StorageLibraryChangeTracker**運作在本機電腦上的使用者程式庫，或任何資料夾。 這包括次要磁碟機或抽取式磁碟機，但不包括 NAS 磁碟機或網路磁碟機。
+**StorageLibraryChangeTracker** 適用於使用者程式庫，或本機電腦上的任何資料夾。 這包括次要磁碟機或抽取式磁碟機，但不包括 NAS 磁碟機或網路磁碟機。
 
-## <a name="using-the-change-tracker"></a>使用變更追蹤程式
+## <a name="using-the-change-tracker"></a>使用變更追蹤器
 
-變更追蹤做為系統上儲存最後一個循環緩衝區*N*檔案系統作業。 應用程式可讀取的緩衝區上的變更，然後將它們處理至它們自己的經驗。 一旦應用程式已完成的變更，它標記為已處理的變更，並永遠不會再次看到它們。
+變更追蹤器會在系統上當作循環緩衝區實作，以供儲存最後 *N* 個檔案系統作業。 應用程式能夠讀取緩衝區的變更，然後將它們處理成自己的經驗。 應用程式完成變更後，它會將變更標示為已處理，且永遠不再看到它們。
 
-若要使用變更追蹤程式的資料夾，請遵循下列步驟：
+若要在資料夾上使用變更追蹤器，請遵循下列步驟：
 
-1. 啟用變更追蹤資料夾。
+1. 啟用資料夾的變更追蹤。
 2. 等候變更。
 3. 讀取變更。
 4. 接受變更。
 
-下一節中一一介紹一些程式碼範例的步驟。 在本文結尾會提供完整的程式碼範例。
+後續幾節會使用一些程式碼範例逐步說明每個步驟。 本文結尾會提供完整的程式碼範例。
 
-### <a name="enable-the-change-tracker"></a>啟用變更追蹤程式
+### <a name="enable-the-change-tracker"></a>啟用變更追蹤器
 
-應用程式必須進行第一件事是告訴系統它所需要的變更追蹤給定程式庫。 其做法是呼叫[**啟用**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable)上變更追蹤程式感興趣的程式庫的方法。
+應用程式必須進行第一件事就是告知系統，它對給定程式庫的追蹤變更有興趣。 其做法是針對感興趣的程式庫，在變更追蹤器上呼叫 [**Enable**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable)方法。
 
 ```csharp
 StorageLibrary videosLib = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
@@ -54,22 +54,22 @@ StorageLibraryChangeTracker videoTracker = videosLib.ChangeTracker;
 videoTracker.Enable();
 ```
 
-少數的重要注意事項：
+一些重要注意事項：
 
-- 請確定您的應用程式的正確的程式庫中的資訊清單有權建立之前[ **StorageLibrary** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary)物件。 請參閱[檔案的存取權限](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions)如需詳細資訊。
-- [**啟用**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable)是執行緒安全，不會重設您的指標，而且可以呼叫嗎 （更詳細的更新版本） 的次數。
+- 在建立 [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) 物件之前，請確定應用程式具有資訊清單中正確程式庫的權限。 如需詳細資訊，請參閱[檔案存取權限](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions)。
+- [**Enable**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable)為執行緒安全，不會重設您的指標，而且可以視需要呼叫許多次 (稍後有更詳細的說明)。
 
-![啟用空的變更追蹤程式](images/changetracker-enable.png)
+![啟用空的變更追蹤器](images/changetracker-enable.png)
 
 ### <a name="wait-for-changes"></a>等候變更
 
-變更追蹤程式初始化之後，它就會開始記錄的所有作業時所發生內程式庫，即使應用程式未執行。 應用程式可註冊來註冊有所變更隨時啟用[ **StorageLibraryChangedTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger)事件。
+在變更追蹤器初始化之後，它就會開始記錄程式庫內發生的所有作業，即使應用程式不在執行中。 應用程式可以註冊 [**StorageLibraryChangedTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger) 事件，註冊為要在有變更時隨時啟動。
 
-![未讀取這些應用程式新增至變更追蹤的變更](images/changetracker-waiting.png)
+![這些應用程式未讀取新增至變更追蹤器的變更](images/changetracker-waiting.png)
 
-### <a name="read-the-changes"></a>讀取所做的變更
+### <a name="read-the-changes"></a>讀取變更
 
-應用程式可以輪詢有變更，從 變更追蹤然後其簽入最後一次收到變更的清單。 下列程式碼示範如何從 變更追蹤程式取得變更的清單。
+應用程式可接著從變更追蹤器輪詢變更，並收到上次檢查後的變更清單。 以下程式碼示範如何從變更追蹤器取得變更清單。
 
 ```csharp
 StorageLibrary videosLibrary = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
@@ -78,58 +78,58 @@ StorageLibraryChangeReader videoChangeReader = videosLibrary.ChangeTracker.GetCh
 IReadOnlyList changeSet = await changeReader.ReadBatchAsync();
 ```
 
-應用程式還負責處理將變更存入它自己的經驗或所需的資料庫。
+應用程式會接著負責將變更處理為自己的體驗或資料庫 (視需要而定)。
 
-![在應用程式資料庫中讀取變更追蹤所做的變更](images/changetracker-reading.png)
+![將變更追蹤器中的變更讀取到應用程式資料庫中](images/changetracker-reading.png)
 
 > [!TIP]
-> 若要啟用第二個呼叫的是防範競爭條件，如果使用者會新增至程式庫的另一個資料夾時您的應用程式會讀取變更。 而沒有額外的呼叫**啟用**如果使用者變更其文件庫中的資料夾，將會失敗並 ecSearchFolderScopeViolation (0x80070490) 的程式碼
+> 如果使用者將另一個資料夾新增到程式庫，而您的應用程式同時在讀取變更，第二次呼叫 Enable 是要防範競爭情況。 如果使用者正在變更其程式庫中的資料夾，若沒有額外的 **Enable** 呼叫，此程式碼將會失敗並出現 ecSearchFolderScopeViolation (0x80070490)。
 
-### <a name="accept-the-changes"></a>接受所做的變更
+### <a name="accept-the-changes"></a>接受變更
 
-完成應用程式之後處理的變更，它應該會告知系統永遠不會顯示這些變更藉由呼叫[ **AcceptChangesAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync)方法。
+應用程式完成變更處理之後，它應該呼叫 [**AcceptChangesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync)方法，告知系統永遠不再顯示這些變更。
 
 ```csharp
 await changeReader.AcceptChangesAsync();
 ```
 
-![標記變更為讀取，讓它們將永遠不會再顯示](images/changetracker-accepting.png)
+![將變更標示為已讀取，使其永遠不再顯示](images/changetracker-accepting.png)
 
-應用程式現在只會收到新的變更讀取在未來的變更追蹤時。
+應用程式現在只會收到未來讀取變更追蹤器時的新變更。
 
-- 如果變更發生錯誤的呼叫之間[ **ReadBatchAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.readbatchasync)並[AcceptChangesAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync)，指標會變成僅限進階應用程式從未見過最新變更。 這些其他的變更仍然可以在下一次，它會呼叫**ReadBatchAsync**。
-- 不接受所做的變更會導致系統傳回的相同一組變更下一個時間執行的應用程式呼叫**ReadBatchAsync**。
+- 如果變更發生於呼叫 [**ReadBatchAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.readbatchasync) 和 [AcceptChangesAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync) 之間，則指標會變成只前進到應用程式所看見的最近變更。 其他變更仍可在下一次呼叫 **ReadBatchAsync** 時取得。
+- 不接受變更會導致應用程式下一次呼叫 **ReadBatchAsync** 時，系統傳回同一組變更。
 
-## <a name="important-things-to-remember"></a>重要的注意事項
+## <a name="important-things-to-remember"></a>重要注意事項
 
-當使用變更追蹤程式，有幾件事您應該謹記在心，以確定一切運作正常。
+在使用變更追蹤器時，有幾件事您應該謹記在心，以確保一切運作正常。
 
 ### <a name="buffer-overruns"></a>緩衝區溢位
 
-雖然我們嘗試將保留足夠的空間來保存發生在系統上，直到您的應用程式可以讀取它們的所有作業的變更追蹤，就很容易就能想像的案例，其中應用程式不會讀取所做的變更之前的循環緩衝區會覆寫本身。 特別是如果使用者是從備份還原資料，或同步處理來自其照相手機圖片的大型集合。
+雖然我們嘗試在變更追蹤器中保留足夠的空間來保存系統上發生的所有作業，直到您的應用程式可以讀取它們為止，但很容易就可以想像以下案例：應用程式不會讀取循環緩衝區覆寫本身之前的變更。 尤其是在使用者從備份還原資料，或同步處理來自其照相手機的大型相片集合時。
 
-在此情況下， **ReadBatchAsync**會傳回錯誤碼[ **StorageLibraryChangeType.ChangeTrackingLost**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetype)。 如果您的應用程式收到此錯誤的程式碼，它會表示幾件事：
+在此情況下，**ReadBatchAsync** 會傳回錯誤碼 [ **StorageLibraryChangeType.ChangeTrackingLost**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetype)。 如果您的應用程式收到此錯誤碼，則表示下列幾件事：
 
-* 緩衝區，已覆寫本身您查看最後一次。 最好是做法的重新編目程式庫，因為追蹤程式之任何資訊將會不完整。
-* 變更追蹤程式不會傳回任何其他變更，直到您呼叫[**重設**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.reset)。 這個應用程式會重設之後，指標將會移至最新的變更，並追蹤將會繼續正常運作。
+* 自從您最後一次查看緩衝區，緩衝區本身已覆寫。 最好的行動方案是將程式庫重新編目，因為來自追蹤器的任何資訊會不完整。
+* 在您呼叫 [**Reset**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.reset)前，變更追蹤器不會傳回任何其他變更。 在應用程式呼叫 Reset 之後，指標將會移至最近的變更，且追蹤會繼續正常運作。
 
-它應該很少見，若要取得這些情況下，但在使用者移動大量的檔案其磁碟上的案例中，我們不想變更 tracker 快速擴充，不會佔用太多的儲存體。 這樣應該可讓大量的檔案系統作業回應時不會破壞 Windows 中的客戶體驗的應用程式。
+這些情況應該很少見，但是是在使用者在其磁碟上移動大量檔案的案例中，我們不希望變更追蹤器快速膨脹並用掉太多儲存體。 這應該可讓應用程式因應大量檔案系統作業，同時不會破壞 Windows 中的客戶體驗。
 
-### <a name="changes-to-a-storagelibrary"></a>StorageLibrary 的變更
+### <a name="changes-to-a-storagelibrary"></a>StorageLibrary 變更
 
-[ **StorageLibrary** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary)虛擬群組包含其他資料夾的根資料夾的形式存在的類別。 若要協調這與檔案系統的變更追蹤程式，我們可以進行下列選擇：
+[**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) 類別是以根資料夾的虛擬群組形式存在，其中包含其他資料夾。 為了協調此類型與檔案系統變更追蹤器，我們進行了下列選擇：
 
-- 變更追蹤程式中，將表示子系的根文件庫資料夾的任何變更。 可以使用找到的根文件庫資料夾[**資料夾**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders)屬性。
-- 新增或移除根資料夾，從**StorageLibrary** (透過[ **RequestAddFolderAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync)並[ **RequestRemoveFolderAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync)) 將不會在變更追蹤器中建立項目。 這些變更可以透過追蹤[ **DefinitionChanged** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged)事件或列舉中的程式庫使用的根資料夾[**資料夾**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders)屬性。
-- 如果已在其中的內容的資料夾新增至程式庫時，將不會有變更產生的通知，或是變更追蹤程式項目。 該資料夾的子系的任何後續變更會產生通知，並變更追蹤程式項目。
+- 根程式庫資料夾子系的任何變更都會表現在變更追蹤器中。 您可以使用 [**Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 屬性找到根程式庫資料夾。
+- 從 **StorageLibrary** 新增或移除根資料夾 (透過 [**RequestAddFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync) 和 [**RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync))，並不會在變更追蹤器中建立項目。 您可以透過 [**DefinitionChanged**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged) 事件，或使用 [**Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 屬性列舉程式庫中的根資料夾，藉此追蹤這些變更。
+- 如果具有內容的資料夾已新增至程式庫，則不會產生變更通知或變更追蹤器項目。 該資料夾子系的任何後續變更都會產生通知和變更追蹤器項目。
 
 ### <a name="calling-the-enable-method"></a>呼叫 Enable 方法
 
-應用程式應該呼叫[**啟用**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable)當他們開始追蹤的檔案系統，以及之前變更的每個列舉型別。 這可確保所有變更將會都擷取藉由變更追蹤程式。  
+應用程式應在開始追蹤檔案系統時且每次列舉變更之前，立即呼叫 [**Enable**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) 。 這可確保變更追蹤器會擷取所有的變更。  
 
 ## <a name="putting-it-together"></a>將它放在一起
 
-以下是用來註冊影片庫的變更並啟動提取所做的變更，從 變更追蹤程式的所有程式碼。
+以下是用來註冊影片庫中的變更並開始從變更追蹤器提取變更的所有程式碼。
 
 ```csharp
 private async void EnableChangeTracker()

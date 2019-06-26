@@ -1,18 +1,18 @@
 ---
-title: 2017 年 7 月 Windows 文件的最新動向 - 開發 UWP app
+title: 2017 年 7 月 Windows 文件的新增功能 - 開發 UWP 應用程式
 description: 新功能、範例及開發人員指引已加入 2017 年 7 月的 Windows 10 開發人員文件中
-keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10
+keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 03bc41ca76f6c6b20f06c98b0e71e2bc5a361992
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65984196"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 開發人員文件的最新動向
+# <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 最近已有下列功能概觀、開發人員指引和程式碼範例可以使用，包含提供給 Windows 開發人員的全新及更新資訊。
 
@@ -22,7 +22,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="fluent-design"></a>Fluent 設計
 
-SDK 預覽組建中有新的效果提供給 [Windows 測試人員](https://insider.windows.com/)，這些效果使用深度、透視和動作來協助使用者專注於重要的 UI 項目。
+SDK 預覽組建中有新的效果提供給 [Windows 測試人員](https://insider.windows.com/)，這些效果使用深度、透視和動作來協助使用者專注於重要的 UI 元素。
 
 [壓克力材質](../design/style/acrylic.md)是一種建立透明紋理的筆刷。 
 
@@ -32,7 +32,7 @@ SDK 預覽組建中有新的效果提供給 [Windows 測試人員](https://insid
 
 ![一個帶有背景影像和清單的視差範例](../design/style/images/_Parallax_v2.gif)
 
-[顯色](../design/style/reveal.md)會顯目提示您應用程式中的重要項目。 
+[顯色](../design/style/reveal.md)會顯目提示您應用程式中的重要元素。 
 
 ![顯色視覺效果](../design/style/images/Nav_Reveal_Animation.gif)
 
@@ -58,27 +58,27 @@ SDK 預覽組建中有新的控制項提供給 [Windows 測試人員](https://in
 
 ### <a name="design-toolkits"></a>設計工具組
 
-[UWP app 的設計工具組和資源](../design/downloads/index.md)已藉由新增 Sketch 及 Adobe XD 工具組進行擴充。 先前既有的工具組也已更新並修訂，為您的 UWP app 提供更強固的控制項與版面配置範本。
+[UWP 應用程式的設計工具組和資源](../design/downloads/index.md)已藉由新增 Sketch 及 Adobe XD 工具組進行擴充。 先前既有的工具組也已更新並修訂，為您的 UWP 應用程式提供更強固的控制項與版面配置範本。
 
-### <a name="dashboard-monetization-and-store-services"></a>儀表板、創造營收和市集服務
+### <a name="dashboard-monetization-and-store-services"></a>儀表板、創造營收和 Store 服務
 
 現已提供下列新功能：
 
 * Microsoft Advertising SDK 現已可讓您在應用程式中顯示[原生廣告](../monetize/native-ads.md)。 原生廣告是以元件為基礎的廣告格式，其中每一項廣告創意 (例如標題、影像、描述和喚起行動文字) 都會當做個別元素傳送到您的應用程式。 原生廣告則目前僅供加入試驗計劃的開發人員使用，但我們很快就要將這項功能提供給所有的開發人員。
 
-* [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 現在提供一個方法，您可用來[下載 CAB 檔案以取得 App 中的錯誤](../monetize/download-the-cab-file-for-an-error-in-your-app.md)。
+* [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 現在提供一個方法，您可用來[下載 CAB 檔案以取得應用程式中的錯誤](../monetize/download-the-cab-file-for-an-error-in-your-app.md)。
 
 * [針對性優惠](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)讓您以特定客戶區隔為目標，透過有吸引力的個人化內容提高吸引力、留住客戶並創造營收。 
 
-* App 的市集清單現在可以包含[預告片](../publish/app-screenshots-and-images.md#trailers)。
+* 應用程式的 Store 清單現在可以包含[預告片](../publish/app-screenshots-and-images.md#trailers)。
 
 * 新的價格與可用性選項可讓您[排程價格變更](../publish/set-and-schedule-app-pricing.md)和[設定精確的發行日期](..//publish/configure-precise-release-scheduling.md)。
 
-* 您可以[匯入和匯出市集清單](../publish/import-and-export-store-listings.md)來加快更新，尤其是在您的清單有許多語言版本時。
+* 您可以[匯入和匯出 Store 清單](../publish/import-and-export-store-listings.md)來加快更新，尤其是在您的清單有許多語言版本時。
 
 ### <a name="my-people"></a>朋友圈
 
-SDK 預覽組建中有即將推出的朋友圈功能提供給 [Windows 測試人員](https://insider.windows.com/)，這項功能可讓使用者將連絡人直接從應用程式中釘選到他們的工作列。 [了解如何將我的人支援新增至您的應用程式。](../contacts-and-calendar/my-people-support.md)
+SDK 預覽組建中有即將推出的朋友圈功能提供給 [Windows 測試人員](https://insider.windows.com/)，這項功能可讓使用者將連絡人直接從應用程式中釘選到他們的工作列。 [了解如何將朋友圈支援加入您的應用程式。](../contacts-and-calendar/my-people-support.md)
 
 ![朋友圈連絡人面板](images/my-people.png)
 
@@ -116,21 +116,21 @@ SDK 預覽組建中有新的 TaskbarManager 類別提供給 [Windows 測試人�
 
 ## <a name="samples"></a>範例
 
-### <a name="annotated-audio-app-sample"></a>Annotated audio (標註語音) 應用程式範例
+### <a name="annotated-audio-app-sample"></a>Annotated Audio (標註語音) 應用程式範例
 
-[一個示範語音、筆跡及 OneDrive 資料漫遊案例的迷你 app 範例](https://github.com/Microsoft/Windows-appsample-annotated-audio)。 這個範例程式碼會在允許同步擷取筆跡註解時錄製音訊，讓您稍後可以回憶做筆記時所討論的內容。
+[一個示範語音、筆跡及 OneDrive 資料漫遊案例的迷你應用程式範例](https://github.com/Microsoft/Windows-appsample-annotated-audio)。 這個範例程式碼會在允許同步擷取筆跡註解時錄製音訊，讓您稍後可以回憶做筆記時所討論的內容。
 
 ![標註語音範例的螢幕擷取畫面](images/Playback.png)  
 
 ### <a name="shopping-app-sample"></a>Shopping Cart (購物車) 範例
 
-[一個展示使用者可以購買 Emoji 之基本購物體驗的迷你 app 範例](https://github.com/Microsoft/Windows-appsample-shopping)。 此 app 如何使用[付款要求 API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments) 來實作結帳體驗。
+[一個展示使用者可以購買 Emoji 之基本購物體驗的迷你應用程式範例](https://github.com/Microsoft/Windows-appsample-shopping)。 此應用程式如何使用[付款要求 API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments) 來實作結帳體驗。
 
 ![購物應用程式範例的螢幕擷取畫面](images/shoppingcart.png)  
 
 ## <a name="videos"></a>影片
 
-### <a name="accessibility"></a>協助工具選項
+### <a name="accessibility"></a>協助工具
 
 將協助工具建置在您的應用程式中，將應用程式推廣至更廣大的客群。 [觀看影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility)，然後深入了解[開發無障礙應用程式](https://developer.microsoft.com/en-us/windows/accessible-apps)。
 

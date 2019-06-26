@@ -5,7 +5,7 @@ label: Dialogs
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
@@ -13,26 +13,26 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
-ms.sourcegitcommit: f47620e72ff8127fae9b024c70ddced3a5c45d91
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66748451"
 ---
 # <a name="dialog-controls"></a>對話方塊控制項
 
-對話方塊控制項是提供內容相關的應用程式資訊的強制回應 UI 重疊。 它們之前明確正在解除封鎖應用程式視窗的互動。 而且它們通常會需要使用者執行某種動作。
+對話方塊控制項是提供內容相關應用程式資訊的強制回應 UI 重疊項目。 這些項目會阻擋與應用程式視窗的互動，直到對話方塊確實關閉為止， 而且它們通常會需要使用者執行某種動作。
 
 ![對話方塊範例](../images/dialogs/dialog_RS2_delete_file.png)
 
 
-> **重要的 Api**:[ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> **重要 API**：[ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 使用對話方塊來通知使用者重要的資訊，或是在完成動作之前要求確認或其他資訊。
 
-如需建議關於何時應該使用的對話方塊與何時使用飛出視窗 （類似控制項），請參閱[對話方塊和延伸顯示](index.md)。 
+如需使用對話方塊和使用飛出視窗 (類似的控制項) 之時機的建議，請參閱[對話方塊和飛出視窗](index.md)。 
 
 ## <a name="examples"></a>範例
 
@@ -62,13 +62,13 @@ ms.locfileid: "66748451"
     -   使用對話方塊標題時，請利用內容區域提供更多詳細資料或定義詞彙。 不要以只有些微差異的用字重複標題。
 -   至少必須顯示一個對話方塊按鈕。
     -   確保對話方塊至少有一個對應於安全、非破壞性動作的按鈕，例如 [了解!]、[關閉] 或 [取消]。 使用 CloseButton API 來新增此按鈕。
-    -   使用對主要指示或內容的明確回應做為按鈕文字。 例如，「是否允許 AppName 存取您的位置?」，後面接 [允許] 和 [封鎖] 按鈕。 明確的回應讓人更快速理解，可以更有效率地做出決定。
+    -   使用對主要指示或內容的明確回應作為按鈕文字。 例如，「是否允許 AppName 存取您的位置?」，後面接 [允許] 和 [封鎖] 按鈕。 明確的回應讓人更快速理解，可以更有效率地做出決定。
     - 確保動作按鈕的文字簡潔扼要。 簡短字串可讓使用者快速且放心地進行選擇。
     - 除了安全、不具破壞性的動作之外，還可以選擇性地向使用者顯示一個或兩個與主要指示相關的動作按鈕。 這些「執行」動作按鈕可確認對話方塊的要點。 使用 PrimaryButton 和 SecondaryButton API 來新增這些「執行」動作。
     - 「執行」動作按鈕應該顯示為最左側按鈕。 安全、不具破壞性的動作應該顯示為最右側按鈕。
     - 您可以隨意選擇將三個按鈕其中之一區分為對話方塊的預設按鈕。 使用 DefaultButton API 來區分其中一個按鈕。  
 -   針對頁面上特定位置的內容相關錯誤，例如 (密碼欄位中的) 驗證錯誤，請使用 App 本身的畫布顯示內嵌錯誤，而不要使用對話方塊。
-- 使用 [ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) 建置您的對話方塊體驗。 請勿使用已過時的 MessageDialog API。
+- 使用 [ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)建置您的對話方塊體驗。 請勿使用已過時的 MessageDialog API。
 
 ## <a name="how-to-create-a-dialog"></a>如何建立對話方塊
 若要建立對話方塊，請使用 [ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)。 您可以利用程式碼或標記建立對話方塊。 雖然在 XAML 中定義 UI 元素通常會比較容易，但針對簡單的對話方塊，單純使用程式碼會較為容易。 這個範例會建立一個對話方塊，以通知使用者沒有 WiFi 連線，然後使用 [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) 方法來加以顯示。
@@ -119,7 +119,7 @@ private async void DisplayDeleteFileDialog()
 ```
 
 ## <a name="provide-a-safe-action"></a>提供安全的動作
-因為對話方塊會封鎖使用者互動，又因為按鈕是使用者關閉對話方塊的主要機制，所以務必在對話方塊中包含至少一個「安全」且不具破壞性的按鈕，例如 [關閉] 或 [了解!]。 **所有對話都應該都包含至少一個安全的動作按鈕，以關閉對話方塊。** 這可確保使用者放心地在不執行動作的情況下關閉對話方塊。<br>![是一個按鈕的對話方塊](../images/dialogs/dialog_RS2_one_button.png)
+因為對話方塊會封鎖使用者互動，又因為按鈕是使用者關閉對話方塊的主要機制，所以務必在對話方塊中包含至少一個「安全」且不具破壞性的按鈕，例如 [關閉] 或 [了解!]。 **所有對話方塊都必須至少包含一個要關閉對話方塊的安全動作按鈕。** 這可確保使用者放心地在不執行動作的情況下關閉對話方塊。<br>![單按鈕對話方塊](../images/dialogs/dialog_RS2_one_button.png)
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -199,7 +199,7 @@ ContentDialog 有三個不同類型的按鈕，您可以用來建置對話方塊
 ### <a name="primarybutton-and-secondarybutton"></a>PrimaryButton 和 SecondaryButton
 除了 CloseButton 之外，還可以選擇性地向使用者顯示一個或兩個與主要指示相關的動作按鈕。
 將 PrimaryButton 運用在第一個「執行」動作，並將 SecondaryButton 運用在第二個「執行」動作。 在三按鈕對話方塊中，PrimaryButton 通常表示肯定「執行」動作，而 SecondaryButton 通常表示中性或次要「執行」動作。
-例如，App 可能會提示使用者訂閱一項服務。 負責肯定「執行」動作的 PrimaryButton 會主控「訂閱」文字，而負責中性「執行」動作的 SecondaryButton 則主控「試用」文字。 CloseButton 可讓使用者不執行任一動作就取消。
+例如，應用程式可能會提示使用者訂閱一項服務。 負責肯定「執行」動作的 PrimaryButton 會主控「訂閱」文字，而負責中性「執行」動作的 SecondaryButton 則主控「試用」文字。 CloseButton 可讓使用者不執行任一動作就取消。
 
 當使用者按一下 PrimaryButton 時，[ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) 方法會傳回 ContentDialogResult.Primary。
 當使用者按一下 SecondaryButton 時，[ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) 方法會傳回 ContentDialogResult.Secondary。
@@ -250,13 +250,13 @@ private async void DisplaySubscribeDialog()
 
 > 某些平台將確認按鈕放在右邊，而非左邊。 那麼，為什麼建議將它放在左邊？  如果您假設大部分使用者習慣使用右手，而且是以右手拿手機，那麼確認按鈕位於左邊時實際上會更好按，因為它更有可能在使用者的拇指弧形內。按鈕位於螢幕右邊時，使用者必須將其拇指向內扣入到不太舒適的姿勢。
 
-## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>ContentDialog AppWindow 或 Xaml 群島
+## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>ContentDialog AppWindow 或 Xaml Islands
 
-> 注意：本節僅適用於 Windows 10，1903年或更新版本為目標的應用程式。 AppWindow 及 XAML 群島不適用於舊版。 如需版本控制的詳細資訊，請參閱[版本的自適性應用程式](../../../debug-test-perf/version-adaptive-apps.md)。
+> 注意：這一節僅適用於目標為 Windows 10 版本 1903 或更新版本的應用程式。 AppWindow 和 XAML Islands 不適用於舊版。 如需版本設定的詳細資訊，請參閱[版本調適型應用程式](../../../debug-test-perf/version-adaptive-apps.md)。
 
-根據預設，內容對話方塊要強制顯示相對於根目錄[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)。 當您使用 ContentDialog 內其中一個[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)或[XAML 島](/apps/desktop/modernize/xaml-islands)，您需要手動設定[XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot)上根目錄的 XAML 主應用程式 對話方塊。
+根據預設，內容對話方塊顯示強制相對於根目錄 [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)。 當您使用 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 或 [XAML Island](/apps/desktop/modernize/xaml-islands) 內的 ContentDialog 時，您需要在對話方塊上將 [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) 手動設為 XAML 主機的根目錄。
 
-若要這樣做，請將 ContentDialog XamlRoot 屬性設定為相同的 XamlRoot 已經中 AppWindow 或 XAML 島的項目，如下所示。
+若要這麼做，請將 ContentDialog 的 XamlRoot 屬性設定為與 AppWindow 或 XAML Island 中現有元素相同的 XamlRoot，如下所示。
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -280,7 +280,7 @@ private async void DisplayNoWifiDialog()
 ```
 
 > [!WARNING]
-> 只能有一個 ContentDialog 開啟每個執行緒，一次。 嘗試開啟兩個 ContentDialogs 會擲回例外狀況，即使它們嘗試在不同的 AppWindows 中開啟。
+> 每個執行緒一次只能開啟一個 ContentDialog。 嘗試開啟兩個 ContentDialogs 會擲回例外狀況，即使它們嘗試在不同的 AppWindows 中開啟。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
@@ -289,5 +289,5 @@ private async void DisplayNoWifiDialog()
 ## <a name="related-articles"></a>相關文章
 - [工具提示](../tooltips.md)
 - [功能表和操作功能表](../menus.md)
-- [飛出視窗類別](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [Flyout 類別](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

@@ -3,26 +3,26 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: 揮擊命令為觸控加速器的操作功能表。
+Description: 撥動命令是操作功能表的觸控快速操作。
 title: Swipe
 label: Swipe
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d575eb25d9a013aa999cf304db6d83faeb87765
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626653"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63774719"
 ---
 # <a name="swipe"></a>Swipe
 
 撥動命令是操作功能表的快速操作，讓使用者不需要在應用程式中變更狀態，即可透過觸控輕鬆存取常用的功能表動作。
 
-> **重要的 Api**:[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)， [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)， [ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **重要 API**：[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)、[SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)、[ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![執行並顯示淺色佈景主題](images/LightThemeSwipe.png)
 
@@ -59,11 +59,11 @@ ms.locfileid: "57626653"
 
 ## <a name="how-does-swipe-work"></a>撥動如何運作？
 
-UWP 撥動命令有兩種模式：[揭露](/uwp/api/windows.ui.xaml.controls.swipemode)並[執行](/uwp/api/windows.ui.xaml.controls.swipemode)。 同時還支援四個不同的撥動方向：向上、向下、向左和向右。
+UWP 撥動命令有兩種模式：[顯示](/uwp/api/windows.ui.xaml.controls.swipemode)及[執行](/uwp/api/windows.ui.xaml.controls.swipemode)。 同時還支援四個不同的撥動方向：向上、向下、向左和向右。
 
 ### <a name="reveal-mode"></a>顯示模式
 
-在顯示模式下，使用者撥動項目以開啟包含一個或多個命令的功能表，而且必須明確點選要執行的命令。 當使用者撥動並放開某個項目，功能表會保持開啟，直到選取了一個命令，或透過往回撥動、點選 \[關閉\] 或將開啟的撥動項目捲動到螢幕外面而再次關閉功能表。
+在顯示模式下，使用者撥動項目以開啟包含一個或多個命令的功能表，而且必須明確點選要執行的命令。 當使用者撥動並放開某個項目，功能表會保持開啟，直到選取了一個命令，或透過往回撥動、點選關閉，或將開啟的撥動項目捲動到螢幕外面而再次關閉功能表。
 
 ![撥動以顯示](images/SwipeCommand-Reveal_v2.gif)
 
@@ -73,7 +73,7 @@ UWP 撥動命令有兩種模式：[揭露](/uwp/api/windows.ui.xaml.controls.swi
 
 ### <a name="execute-mode"></a>執行模式
 
-在執行模式下，使用者撥動開啟的項目，以透過這一個撥動來顯示和動作執行單一命令。 如果使用者在撥動超過閾值之前放開所撥動的項目，則會關閉功能表，並且不執行命令。 如果使用者撥動超過閾值然後放開項目，則立即執行命令。
+在執行模式下，使用者撥動開啟的項目，以透過這一個撥動來顯示和執行單一命令。 如果使用者在撥動超過閾值之前放開所撥動的項目，則會關閉功能表，並且不執行命令。 如果使用者撥動超過閾值然後放開項目，則立即執行命令。
 
 ![撥動以執行](images/SwipeCommand_Delete_v2.gif)
 
@@ -93,10 +93,10 @@ UWP 撥動命令有兩種模式：[揭露](/uwp/api/windows.ui.xaml.controls.swi
 
 ## <a name="how-to-create-a-swipe-command"></a>如何建立撥動命令
 
-撥動命令有兩個您需要定義的元件：
+撥動命令有兩個需要定義的元件：
 
 - [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)，這會包裝您的內容。 在集合 (例如 ListView) 中，這會置於 DataTemplate 內。
-- 揮擊功能表項目，也就是一或多個[SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)物件置於撥動控制項的方向容器：[LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems)， [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems)， [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems)，或[BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
+- 撥動功能表項目 (這是放在撥動控制項方向容器中的一個或多個 [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) 物件)：[LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems)、[RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems)、[TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems)或 [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
 
 撥動內容可以用內嵌方式放置，或定義於頁面或應用程式的 [資源] 區段。
 
@@ -182,7 +182,7 @@ UWP 撥動命令有兩種模式：[揭露](/uwp/api/windows.ui.xaml.controls.swi
 
 ## <a name="handle-an-invoked-swipe-command"></a>處理叫用的撥動命令
 
-若要因應撥動命令執行動作，請處理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件  (如需如何詳細資訊，使用者可以叫用命令，檢閱_撥動如何運作？_ 稍早在本文中的一節。)一般而言，撥動命令，就是 ListView 或清單類似的案例中。 在該情況下，當叫用命令時，您會想要對這個撥動項目執行動作。
+若要因應撥動命令執行動作，請處理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件 (如需使用者如何叫用命令的詳細資訊，請檢閱稍早在本文中的_撥動如何運作？_ 一節。)一般而言，撥動命令是在 ListView 或類似清單的案例中。 在該情況下，當叫用命令時，您會想要對這個撥動項目執行動作。
 
 以下說明如何在您先前建立的_刪除_撥動項目上處理叫用事件。
 
@@ -205,7 +205,7 @@ UWP 撥動命令有兩種模式：[揭露](/uwp/api/windows.ui.xaml.controls.swi
 > [!NOTE]
 > 為了簡單起見，這裡已直接將項目新增至 ListView.Items 集合，因此項目也是以同樣方式來刪除。 如果您改以較常見的方式將 ListView.ItemsSource 設定為集合，就必須從來源集合中刪除項目。
 
-在這個特定範例中，您已從清單移除項目，因此撥動項目的最終視覺狀態不是很重要。 不過，如果您只是要執行動作，然後讓撥動再次摺疊時，您可以將 [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) 屬性設定為其中一個 [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked) 列舉值。
+在這個特定範例中，您已從清單移除項目，因此撥動項目的最終視覺狀態不是很重要。 不過，如果您只是要執行動作，然後讓撥動再次摺疊時，則可以將 [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) 屬性設定為其中一個 [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked) 列舉值。
 
 - **Auto**
   - 在執行模式中，開啟的撥動項目仍然會在進行叫用時保持開啟。
@@ -226,7 +226,7 @@ UWP 撥動命令有兩種模式：[揭露](/uwp/api/windows.ui.xaml.controls.swi
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
 - 不要在 FlipView、中心或樞紐中使用撥動。 這種組合可能會因為撥動方向衝突而造成使用者的困惑。
-- 不要同時進行水平撥動和水平瀏覽，或同時進行垂直撥動和垂直瀏覽
+- 不要同時進行水平撥動和水平瀏覽，或同時進行垂直撥動和垂直瀏覽。
 - 務必確定使用者撥動的是相同動作，且在所有可撥動的相關項目中保持一致。
 - 務必使用撥動進行使用者想要執行的主要動作。
 - 務必在會重複相同動作多次的項目上使用撥動。
@@ -239,6 +239,6 @@ UWP 撥動命令有兩種模式：[揭露](/uwp/api/windows.ui.xaml.controls.swi
 
 ## <a name="related-articles"></a>相關文章
 
-- [清單檢視和格線檢視](listview-and-gridview.md)
-- [項目容器和範本](item-containers-templates.md)
+- [清單檢視和方格檢視](listview-and-gridview.md)
+- [項目容器與範本](item-containers-templates.md)
 - [拖動以重新整理](pull-to-refresh.md)

@@ -4,7 +4,7 @@ title: 建立、寫入和讀取檔案
 description: 使用 StorageFile 物件讀取和寫入檔案。
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,15 +12,15 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 6ff7b37eee4f2b9228a635a117e164d7d9859629
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610993"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63803626"
 ---
 # <a name="create-write-and-read-a-file"></a>建立、寫入和讀取檔案
 
-**重要的 Api**
+**重要 API**
 
 -   [**StorageFolder 類別**](/uwp/api/windows.storage.storagefolder)
 -   [**StorageFile 類別**](/uwp/api/windows.storage.storagefile)
@@ -29,15 +29,15 @@ ms.locfileid: "57610993"
 使用 [**StorageFile**](/uwp/api/windows.storage.storagefile) 物件讀取和寫入檔案。
 
 > [!NOTE]
-> 如需完整範例，請參閱 <<c0> [ 檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 如需完整範例，請參閱[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
 
 ## <a name="prerequisites"></a>必要條件
 
 -   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何撰寫非同步應用程式，在 C + + /cli WinRT，請參閱[並行和非同步作業以 C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何撰寫非同步應用程式，在 C + + /CX 中，請參閱[非同步程式設計 C + /CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++/WinRT 撰寫非同步應用程式，請參閱[透過 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何使用 C++/CX 撰寫非同步的應用程式，請參閱 [C++/CX 的非同步程式設計](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
--   **了解如何取得您想要讀取、 寫入、 檔案或兩者**
+-   **了解如何取得想要讀取、寫入或進行兩者的檔案**
 
     您可以在[使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md)中了解如何使用檔案選擇器取得檔案。
 
@@ -114,9 +114,9 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-**寫入文字至檔案**
+**將文字寫入檔案**
 
-將文字寫入至您的檔案，藉由呼叫[ **FileIO.WriteTextAsync** ](/uwp/api/windows.storage.fileio.writetextasync)方法。
+呼叫 [**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync)方法，將文字寫入您的檔案。
 
 ```csharp
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
@@ -148,9 +148,9 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 ```
 
-**使用緩衝區 （2 個步驟） 將位元組寫入檔案**
+**使用緩衝區將位元組寫入檔案 (2 個步驟)**
 
-1.  首先，呼叫[ **CryptographicBuffer.ConvertStringToBinary** ](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary)取得緩衝區的位元組 （以字串為基礎），您想要寫入至您的檔案。
+1.  首先，呼叫 [**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary)以取得您要寫入檔案的位元組緩衝區 (根據字串)。
 
     ```csharp
     var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -191,7 +191,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
         Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
     ```
 
-2.  然後將位元組寫入從緩衝區至您的檔案藉由呼叫[ **FileIO.WriteBufferAsync** ](/uwp/api/windows.storage.fileio.writebufferasync)方法。
+2.  然後呼叫 [**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync) 方法，將緩衝區的位元組寫入您的檔案。
 
     ```csharp
     await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
@@ -217,7 +217,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
     ```
 
-**將文字寫入至檔案中，使用資料流 （4 個步驟）**
+**使用串流將文字寫入檔案 (4 個步驟)**
 
 1.  首先，呼叫 [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) 方法來開啟檔案。 當開啟作業完成時，會傳回檔案內容的資料流。
 
@@ -254,7 +254,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  接下來，呼叫以取得輸出資料流[ **IRandomAccessStream.GetOutputStreamAt** ](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)方法，從`stream`。 如果您使用C#，然後將這**使用**陳述式來管理輸出資料流的存留期。 如果您使用[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後您可以控制其存留期住在區塊中，或將它設定為`nullptr`當您完成使用它。
+2.  接著從 `stream` 呼叫 [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) 方法，以取得輸出資料流。 如果您使用 C#，則它放入 **using** 陳述式中以管理輸出資料流的存留期。 如果您使用 [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，將它放入區塊中，或在使用完畢時將它設為 `nullptr`，即可控制其存留期。
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))
@@ -280,7 +280,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     End Using
     ```
 
-3.  現在加入此程式碼 (如果您使用C#，在現有**使用**陳述式) 寫入輸出資料流建立新[**資料寫入元**](/uwp/api/windows.storage.streams.datawriter)物件並呼叫[ **DataWriter.WriteString** ](/uwp/api/windows.storage.streams.datawriter.writestring)方法。
+3.  現在，新增此程式碼 (如果您使用 C#，則在現有的 **using** 陳述式內) 來寫入輸出資料流，方法是建立新的 [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) 物件並呼叫 [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring) 方法。
 
     ```csharp
     using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -306,7 +306,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
     ```
 
-4.  最後，新增下列程式碼 (如果您使用C#，在內部**使用**陳述式)，將文字儲存到您使用的檔案[ **DataWriter.StoreAsync** ](/uwp/api/windows.storage.streams.datawriter.storeasync)並關閉資料流具有[ **IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)。
+4.  最後，新增此程式碼 (如果您使用 C#，則在內部 **using** 陳述式內) 以使用 [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) 將文字儲存至您的檔案，以及使用 [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)關閉資料流。
 
     ```csharp
     await dataWriter.StoreAsync();
@@ -329,9 +329,9 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Await outputStream.FlushAsync()
     ```
 
-**寫入檔案的最佳作法**
+**寫入檔案的最佳做法**
 
-如需其他詳細資料和最佳作法指引，請參閱[最佳做法，以寫入檔案](best-practices-for-writing-to-files.md)。
+如需其他詳細資料和最佳做法指引，請參閱[寫入檔案的最佳做法](best-practices-for-writing-to-files.md)。
     
 ## <a name="reading-from-a-file"></a>讀取檔案
 
@@ -365,7 +365,7 @@ Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 
 **從檔案讀取文字**
 
-從您的檔案讀取文字，藉由呼叫[ **FileIO.ReadTextAsync** ](/uwp/api/windows.storage.fileio.readtextasync)方法。
+呼叫 [**FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync) 方法，即可從檔案讀取文字。
 
 ```csharp
 string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
@@ -392,9 +392,9 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**從檔案讀取文字所使用的緩衝區 （2 個步驟）**
+**使用緩衝區從檔案讀取文字 (2 個步驟)**
 
-1.  首先，呼叫[ **FileIO.ReadBufferAsync** ](/uwp/api/windows.storage.fileio.readbufferasync)方法。
+1.  首先，呼叫 [**FileIO.ReadBufferAsync**](/uwp/api/windows.storage.fileio.readbufferasync) 方法。
 
     ```csharp
     var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
@@ -448,7 +448,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim text As String = dataReader.ReadString(buffer.Length)
     ```
 
-**從檔案讀取文字，使用資料流 （4 個步驟）**
+**使用串流從檔案讀取文字 (4 個步驟)**
 
 1.  呼叫 [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) 方法，開啟您檔案上的串流。 當作業完成時，會傳回檔案內容的串流。
 
@@ -498,7 +498,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim size = stream.Size
     ```
 
-3.  藉由呼叫取得輸入資料流[ **IRandomAccessStream.GetInputStreamAt** ](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat)方法。 將它放在 **using** 陳述式中，即可管理資料流的存留期。 當您呼叫 **GetInputStreamAt** 時請指定 0，以將位置設定在資料流的開頭。
+3.  呼叫 [**IRandomAccessStream.GetInputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat) 方法，以取得輸入資料流。 將它放在 **using** 陳述式中，即可管理資料流的存留期。 當您呼叫 **GetInputStreamAt** 時請指定 0，以將位置設定在資料流的開頭。
 
     ```csharp
     using (var inputStream = stream.GetInputStreamAt(0))

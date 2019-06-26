@@ -1,18 +1,18 @@
 ---
-title: 2017 年 9 月 Windows 文件的最新動向 - 開發 UWP app
+title: 2017 年 9 月 Windows 文件的新增功能 - 開發 UWP 應用程式
 description: 新功能、影片及開發人員指引已加入 2017 年 9 月的 Windows 10 開發人員文件中
-keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10, 1709
+keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 1709
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5001e907d7d38cbf05fd6863b192337fe365f
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162884"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63801095"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>2017 年 9 月 Windows 開發人員文件的最新動向
+# <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>2017 年 9 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 最近已有下列功能概觀、開發人員指引和範例可以使用，包含提供給 Windows 開發人員的全新及更新資訊。
 
@@ -24,7 +24,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="xbox-live-creators-program"></a>Xbox Live 創作者計畫
 
-Xbox Live 創作者計畫現在已上線，可讓您輕鬆地建立並發行能在 Windows 10 電腦和 Xbox One 主機上執行的 UWP 遊戲。 如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)。
+Xbox Live 創作者計畫現在已上線，可讓您輕鬆地建立並發行能在 Windows 10 電腦和 Xbox One 主控台上執行的 UWP 遊戲。 如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)。
 
 ## <a name="developer-guidance"></a>開發人員指引
 
@@ -36,10 +36,10 @@ Xbox Live 創作者計畫現在已上線，可讓您輕鬆地建立並發行能�
 
 以下是新文章的快速概觀：
 
-+ [**建立使用者介面**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui)示範如何建立基本的相片圖庫介面。
-+ [**建立資料繫結**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding)示範如何將資料繫結新增至相片圖庫，實際的映像資料填入其中。
-+ [**建立自訂的樣式**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style)示範如何將複雜的自訂樣式加入相片編輯功能表。
-+ [**建立彈性的版面配置**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout)示範如何讓資源庫版面配置的彈性，讓它看起來沒問題，每個裝置和螢幕大小。
++ [**建立使用者介面**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui)示範如何建立基本影像中心介面。
++ [**建立資料繫結**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding)示範如何將資料繫結新增至影像中心，並以實際影像資料填入其中。
++ [**建立自訂樣式**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style)示範如何將花俏的自訂樣式新增至相片編輯功能表。
++ [**建立調適型配置**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout)示範如何讓圖庫版面配置變得可彈性調整，以便在所有裝置和螢幕大小上都看起來都很適當。
 
 ### <a name="get-started-tutorials"></a>入門教學課程
 
@@ -47,7 +47,7 @@ UWP 文件的「入門」章節已更新為使用[教學課程章節的全新登
 
 ### <a name="voice-and-tone"></a>語氣和語調
 
-我們新增新的 [UWP app 中的語氣和語調指導方針](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone)，提供撰寫應用程式中文字的建議。 無論您要創造什麼，請切記您使用的語言必須平易近人、友善且具有資訊性。
+我們新增新的 [UWP 應用程式中的語氣和語調指引](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone)，提供撰寫應用程式中文字的建議。 無論您要創造什麼，請切記您使用的語言必須平易近人、友善且具有資訊性。
 
 ## <a name="samples"></a>範例
 
