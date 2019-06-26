@@ -11,18 +11,20 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10 uwp、 WNS，windows 通知服務、 通知、 windows、 防火牆、 疑難排解、 IP、 流量、 enterprise、 網路、 IPv4、 VIP、 FQDN、 公用 IP 位址
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed4ad6ed828abda9d487ef96beca9b655c92421
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 23a9b11cd961e03217aba8ca3d1d988447a2f80b
+ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366673"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67349862"
 ---
 # <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>透過企業防火牆允許 Windows 通知流量
 
 ## <a name="background"></a>背景
 許多企業會使用防火牆來封鎖不必要的網路流量;不幸的是，這也可以封鎖重要的事項，例如 Windows 通知服務通訊。 這表示透過 WNS 傳送的所有通知皆會予以都捨棄。 若要避免這個問題，網路系統管理員可以將已核准的 WNS 通道的清單，加入其豁免清單，以允許通過防火牆的 WNS 流量。 以下是更多詳細資料，而要新增的項目。 
 
+> [!Note] 
+自 6/24/2019，Windows 用戶端**沒有**第 proxy 支援給 WNS 的連接必須是直接連線。
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>應是何種資訊新增至允許清單
 以下是清單，其中包含的 Fqdn、 Vip 及與 IP 位址 Windows 通知服務所使用的範圍。 

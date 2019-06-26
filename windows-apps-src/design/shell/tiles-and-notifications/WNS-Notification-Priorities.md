@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10 uwp、 WinRT API WNS
 localizationpriority: medium
-ms.openlocfilehash: 2719c3228c95075eb2a940d12b6c91049b67f524
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: f5c4b9f1db58a091dc4f9389888ad3739c4439e5
+ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291785"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67349864"
 ---
 # <a name="wns-notification-priorities"></a>WNS 通知優先順序
 通知的優先順序，以簡單的標頭設為 WNS 張貼訊息，您可以控制在電池敏感的情況下傳遞通知的方式。
@@ -41,7 +41,7 @@ Windows 不知道哪一個通知是任何使用者或應用程式，非常重要
 
 ## <a name="setting-the-priority"></a>設定優先權
 
-通知要求上設定的優先順序透過額外的標頭的 POST 要求， `X-WNS-PRIORITY`。 這是介於 0 到 3 之間整數值對應到優先順序： 
+通知要求上設定的優先順序透過額外的標頭的 POST 要求， `X-WNS-PRIORITY`。 這是介於 1 到 4 之間整數值對應到優先順序： 
 
 | 優先權名稱 | X WNS 優先順序值 | 預設值： |
 |---------------|----------------------|------------------|
