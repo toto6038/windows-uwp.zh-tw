@@ -7,13 +7,13 @@ ms.topic: article
 ms.assetid: d1f6739d-eaea-4c5d-b79a-9f7214e42727
 ms.localizationpriority: medium
 ms.openlocfilehash: fb258c23e38fb2aee5f6f5194371bb72940e51b5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661393"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63780436"
 ---
-# <a name="new-apis-in-windows-10-build-15063"></a>Windows 10 組建 15063 的新 API
+# <a name="new-apis-in-windows-10-build-15063"></a>Windows 10 組建 15063 中的新 API
 
 Windows 10 組建 15063 (又稱為 Creators Update 或版本 1703) 為開發人員帶來了全新和更新的 API 命名空間。 以下是針對在這個版本中新增或修改之命名空間所提供的文件完整清單。
 

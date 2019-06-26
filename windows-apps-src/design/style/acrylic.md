@@ -1,29 +1,29 @@
 ---
-description: 一種建立半透明材質的筆刷。
+description: 能建立半透明紋理的筆刷類型。
 title: 壓克力素材
 template: detail.hbs
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4731ab089189a8a03656281d1a9a6da6e4d24e89
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65984265"
 ---
 # <a name="acrylic-material"></a>壓克力素材
 
 ![主角圖像](images/header-acrylic.svg)
 
-Acrylic 是一種[筆刷](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)建立半透明的紋理。 您可以將壓克力套用到應用程式表面來增加深度，並協助建立視覺階層。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic 是一種能建立半透明紋理的 [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush) \(英文\) 類型。 您可以將壓克力套用到應用程式表面來增加深度，並協助建立視覺階層。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **重要的 Api**:[AcrylicBrush 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)，[背景屬性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
+> **重要 API**：[AcrylicBrush 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush) \(英文\)、[Background 屬性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background) \(英文\)
 
 :::row:::
     :::column:::
@@ -36,9 +36,9 @@ Acrylic 是一種[筆刷](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
     :::column-end:::
 :::row-end:::
 
-## <a name="acrylic-and-the-fluent-design-system"></a>壓克力和 Fluent Design 系統
+## <a name="acrylic-and-the-fluent-design-system"></a>Acrylic 和 Fluent Design 系統
 
- Fluent Design 系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 壓克力是將實體紋理 (材質) 與深度加入應用程式中的 Fluent Design 系統元件。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](/windows/apps/fluent-design-system)。
+ Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 Acrylic 是 Fluent Design 系統元件，其能將實體紋理 (材質) 與深度加入應用程式。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](/windows/apps/fluent-design-system)。
 
  ## <a name="video-summary"></a>影片摘要
 
@@ -48,11 +48,11 @@ Acrylic 是一種[筆刷](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 
 :::row:::
     :::column span:::
-![有些映像](images/XAML-controls-gallery-app-icon.png)
+![一些影像](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span="2":::
-**XAML 控制項陳列庫**<br>
-如果您安裝的 XAML 控制項陳列庫應用程式，請按一下<a href="xamlcontrolsgallery:/item/Acrylic">此處</a>開啟應用程式，並查看 acrylic 作用中的。
+**XAML 控制項庫**<br>
+如果您已安裝 XAML 控制項庫應用程式，請按一下<a href="xamlcontrolsgallery:/item/Acrylic">此處</a>以開啟該應用程式並查看壓克力的運作方式。
 
 <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a><br>
 <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a>
@@ -60,152 +60,152 @@ Acrylic 是一種[筆刷](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 :::row-end:::
 
 ## <a name="acrylic-blend-types"></a>壓克力混合類型
-壓克力最明顯的特徵就是透明度。 有兩種壓克力類型能改變可穿透此材質顯示的項目：
- - **背景壓克力**會顯示在目前使用中應用程式背後的桌面底色圖案及其他視窗，以增加應用程式視窗之間的深度，並呈現使用者個人化的喜好設定。
- - **應用程式內壓克力**可增加應用程式框架內的深度感，讓應用程式能夠聚焦並有層次。
+Acrylic 最明顯的特徵就是它的透明度。 有兩種壓克力混合類型能改變可穿透此材質顯示的項目：
+ - **背景壓克力**會顯示位於目前作用中應用程式背後的桌面背景及其他視窗，以增加應用程式視窗之間的深度，並呈現使用者個人化的喜好設定。
+ - **應用程式內壓克力**能增加應用程式框架內的深度感，讓應用程式能夠聚焦並有層次。
 
  ![背景壓克力](images/BackgroundAcrylic_DarkTheme.png)
 
  ![應用程式內壓克力](images/AppAcrylic_DarkTheme.png)
 
- 謹慎使用多個壓克力表面的圖層： 多層的背景 acrylic 可以建立令人分心光學高度的假象。
+ 請謹慎堆疊多個壓克力表面：多層背景壓克力可能會產生令人分心的視覺錯覺。
 
 ## <a name="when-to-use-acrylic"></a>使用壓克力的時機
 
-* 您可以使用 應用程式內 acrylic 支援的 UI，例如，可能會重疊的內容時捲動或與之互動的介面上。
-* 使用背景 acrylic 暫時性的 UI 項目，例如操作功能表、 延伸顯示，以及 light 可解除的 UI。<br />在暫時性的案例中使用 Acrylic 有助於維護的內容來觸發暫時性的 UI 視覺化關聯性。
+* 將應用程式內壓克力用來支援 UI，例如在捲動或互動時可能會使內容重疊的表面上。
+* 將背景壓克力用於暫時性的 UI 元素，例如操作功能表、飛出視窗，以及可消失關閉的 UI。<br />在暫時性案例中使用 Acrylic 可協助維持與觸發暫時性 UI 的內容之間的視覺關聯性。
 
-如果您使用應用程式內 acrylic 瀏覽介面，請考慮擴充來改善您的應用程式上的流程壓克力窗格下的內容。 使用 NavigationView 將會為您自動。 不過，若要避免建立等量效果，不嘗試放置多段壓克力邊緣到邊緣-這可以建立不必要的接合線之間的兩個套用模糊效果的介面。 Acrylic 工具以視覺化的完美帶入您的設計，但當使用不正確，可能會導致視覺干擾也。
+如果您在瀏覽表面上使用應用程式內壓克力，請考慮將內容延伸至壓克力窗格下，以改善應用程式上的流程。 使用 NavigationView 將能自動為您做到這點。 不過，為了避免產生分割效果，請試著不要將多個壓克力組件以相連的方式放置在一起，因為這可能會在兩個模糊表面之間產生不必要的接合。 Acrylic 是一個能讓您的設計賞心悅目的工具，但若使用方式不正確，便可能會產生視覺上的干擾。
 
-請考慮下列的使用模式，來決定如何將 acrylic 併入您的應用程式：
+請考慮採用下列使用模式來決定將壓克力融入應用程式的最佳方式：
 
-### <a name="horizontal-navigation-or-commanding"></a>水平導覽或命令
+### <a name="horizontal-navigation-or-commanding"></a>水平瀏覽或命令
 
-如果您的應用程式能夠運用 NavigationView 並不打算新增 acrylic，建議您使用相對半透明 acrylic 60%濃淡的不透明度。
+如果您的應用程式無法利用 NavigationView，且您打算自行新增壓克力，建議您使用色調不透明度為 60% 的相對透明壓克力。
  - 當窗格以重疊於其他應用程式內容之上的方式開啟時，則應為 [60% 應用程式內壓克力](#acrylic-theme-resources)
 
-![使用應用程式內的水平命令的對應應用程式](images/Maps_In_App_Acrylic_1.png)
+![使用應用程式內水平命令來對應應用程式](images/Maps_In_App_Acrylic_1.png)
 
-此外，讓您的內容擴充或捲軸下 acrylic 頂端可讓您的應用程式更沈浸式且順暢的體驗。
+此外，讓上方的內容延伸或捲動至壓克力之下，將能為應用程式帶來更加沉浸且順暢的體驗。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-針對垂直窗格或介面，協助您的應用程式關閉內容區段，我們建議您使用不透明的背景，而不是 acrylic。 如果在內容上，開啟您垂直窗格，如同在 NavigationView 的**Compact**或是**最少**模式中，我們建議您使用應用程式內 acrylic 以確保使用者具有此窗格中開啟時，維護頁面的內容。
+針對能協助區隔應用程式內容的垂直窗格或表面，我們建議使用不透明的背景，而非壓克力。 如果您的垂直窗格會在內容上方開啟 (例如 NavigationView 的 **Compact** 或 **Minimal** 模式)，我們建議您使用應用程式內壓克力來協助在使用者開啟此窗格時維持頁面的內容。
 
-### <a name="transient-surfaces"></a>暫時性的介面
+### <a name="transient-surfaces"></a>暫時性表面
 
-使用功能表延伸顯示，非強制回應快顯視窗中，針對應用程式或淺關閉窗格，建議使用背景 acrylic。
+針對具有功能表飛出視窗、非強制回應快顯示窗，或是消失關閉窗格的應用程式，建議使用背景壓克力。
 
-![使用參考的飛出視窗的郵件應用程式模式](images/Mail_TransientContextMenu.png)
+![使用資訊飛出視窗的郵件應用程式模式](images/Mail_TransientContextMenu.png)
 
-許多控制項預設會使用 acrylic。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)， [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)， [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和類似的控制，與光線關閉快顯全部都會使用暫時性 acrylic 時叫用這些。
+我們的許多控制項預設都會使用壓克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus) \(部分機器翻譯\)、[AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box) \(部分機器翻譯\)、[ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) \(英文\) 及具有消失關閉快顯示窗的類似控制項，都會在被叫用時使用暫時性壓克力。
 
 > [!Note]
-> 轉譯壓克力介面是 GPU 密集，這可能會增加裝置的功率耗用量，並縮短電池壽命。 壓克力的效果會自動停用裝置進入省電模式，和使用者可以停用所有的應用程式，壓克力效果時，若其選擇。
+> 呈現壓克力表面會大量佔用 GPU，這可能會提升裝置耗電量並縮短電池使用時間。 當電池進入省電模式時，壓克力效果會自動停用，使用者也可以選擇停用所有應用程式的壓克力效果。
 
 ## <a name="usability-and-adaptability"></a>可用性與適應性
-壓克力會自動針對各種不同的裝置與內容調適其外觀。
+壓克力會自動針對各種不同的裝置與內容調整其外觀。
 
-在高對比模式中，使用者會繼續看見其所選熟悉的背景色彩取代壓克力。 此外，背景 acrylic 和應用程式內 acrylic 會顯示為純色中：
- - 當使用者關閉透明效果，在 設定 > 個人化 > 色彩
- - 何時啟動省電模式
+在高對比模式中，使用者會繼續看見其所選擇的熟悉背景色彩，而非壓克力效果。 此外，背景壓克力與應用程式內壓克力都會在下列狀況中顯示為純色：
+ - 當使用者在 [設定] > [個人化] > [色彩] 中關閉透明度時
+ - 當省電模式啟動時
  - 當應用程式在低階硬體上執行時
 
-此外，只有背景 acrylic 將會取代其半透明和紋理使用純色：
- - 當桌面上的應用程式視窗啟用時
+此外，在下列狀況中，只有背景壓克力會以純色取代其透明度與紋理：
+ - 當桌面上的應用程式視窗停用時
  - 當 UWP 應用程式正在電話、Xbox、HoloLens 或平板電腦模式中執行時
 
-### <a name="legibility-considerations"></a>可讀性考量事項
-請務必確定您應用程式呈現給使用者的任何文字皆[符合對比率](../accessibility/accessible-text-requirements.md)。 我們已最佳化壓克力配方，讓高彩的黑色、白色，甚或是中彩的灰色文字，皆符合壓克力上面的對比率。 由平台提供的佈景主題資源預設為不透明度 80% 的對比色調色彩。 將高彩內文文字放置在壓克力上時，您可以降低色調不透明度，同時保持可讀性。 在夜間模式中，色調不透明度可以是 70%，同時淺色模式壓克力將符合 50% 不透明度的對比率。
+### <a name="legibility-considerations"></a>可讀性考量
+請務必確定您應用程式呈現給使用者的任何文字皆[符合對比率](../accessibility/accessible-text-requirements.md)。 我們已最佳化壓克力的配方，來使高彩黑色、白色，或甚至中彩的灰色文字都能在壓克力上方符合對比率。 由平台所提供的佈景主題資源預設為不透明度 80% 的對比色調色彩。 將高彩本文在壓克力上顯示時，您可以在降低色調不透明度的情況下保持可讀性。 在深色模式中，色調不透明度可以是 70%，而淺色模式壓克力將能在 50% 不透明度時符合對比率。
 
-不建議將輔色文字放置在壓克力表面，因為這些組合可能無法以 15px 字型大小通過最小對比率需求。 嘗試避免將[超連結](../controls-and-patterns/hyperlinks.md)放置在壓克力元素上。 此外，如果您選擇自訂由佈景主題資源所提供平台預設值之外的壓克力色調色彩或不透明度，請記住對可讀性的影響。
+我們不建議將輔色文字放置在壓克力表面上，因為這些組合很可能無法在 15px 字型大小的情況下通過最低對比率需求。 請嘗試避免將[超連結](../controls-and-patterns/hyperlinks.md)放置在壓克力元素上。 此外，如果您選擇不按照由佈景主題資源所提供的平台預設值並自訂壓克力色調色彩或不透明度，請牢記其對可讀性的影響。
 
 ## <a name="acrylic-theme-resources"></a>壓克力佈景主題資源
-您可以使用新的 XAML AcrylicBrush 或預先定義的 AcrylicBrush 佈景主題資源，輕鬆地將壓克力套用到應用程式表面。 首先，您必須決定要使用應用程式內壓克力或背景壓克力。 務必檢閱本文先前所述的通用應用程式模式以了解建議。
+您可以使用新的 XAML AcrylicBrush 或預先定義的 AcrylicBrush 佈景主題資源，輕鬆地將壓克力套用到應用程式表面。 首先，您必須決定要使用應用程式內壓克力或背景壓克力。 請務必檢閱本文先前所述的常見應用程式模式以取得建議。
 
-我們已為背景和應用程式內壓克力類型建立筆刷佈景主題資源的集合，這兩種壓克力類型與應用程式的佈景主題有關，並可視需要回復為單色。 命名為 *AcrylicWindow* 的資源代表背景壓克力，*AcrylicElement* 則是指應用程式內壓克力。
+我們已針對背景和應用程式內壓克力類型建立筆刷佈景主題資源集合，這些資源會採用應用程式的佈景主題，並會視需求切換回純色。 命名為 *AcrylicWindow* 的資源代表背景壓克力，而 *AcrylicElement* 則是指應用程式內壓克力。
 
 <table>
     <tr>
         <th align="center">資源索引鍵</th>
         <th align="center">色調不透明度</th>
-        <th align="center"><a href="color.md">後援的色彩</a> </th>
+        <th align="center"><a href="color.md">回復色彩</a> </th>
     </tr>
     <tr>
-        <td> SystemControlAcrylicWindowBrush, SystemControlAcrylicElementBrush <br/> SystemControlChromeLowAcrylicWindowBrush, SystemControlChromeLowAcrylicElementBrush <br/> SystemControlBaseHighAcrylicWindowBrush, SystemControlBaseHighAcrylicElementBrush <br/> SystemControlBaseLowAcrylicWindowBrush, SystemControlBaseLowAcrylicElementBrush <br/> SystemControlAltHighAcrylicWindowBrush, SystemControlAltHighAcrylicElementBrush <br/> SystemControlAltLowAcrylicWindowBrush, SystemControlAltLowAcrylicElementBrush </td>
+        <td> SystemControlAcrylicWindowBrush、SystemControlAcrylicElementBrush <br/> SystemControlChromeLowAcrylicWindowBrush、SystemControlChromeLowAcrylicElementBrush <br/> SystemControlBaseHighAcrylicWindowBrush、SystemControlBaseHighAcrylicElementBrush <br/> SystemControlBaseLowAcrylicWindowBrush、SystemControlBaseLowAcrylicElementBrush <br/> SystemControlAltHighAcrylicWindowBrush、SystemControlAltHighAcrylicElementBrush <br/> SystemControlAltLowAcrylicWindowBrush、SystemControlAltLowAcrylicElementBrush </td>
         <td align="center"> 80% </td>
         <td> ChromeMedium <br/> ChromeLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltHigh <br/><br/> AltLow </td>
     </tr>
     </tr>
-        <td> <b>建議的使用方式：</b>這些是適用於各種不同的使用方式的一般用途壓克力資源。 如果您的應用程式使用色彩為 AltMedium 且文字大小小於 18px 的次要文字，請將 80% 壓克力資源放置在文字之後，以<a href="../accessibility/accessible-text-requirements.md">符合對比率需求</a>。 </td>
+        <td> <b>建議的使用方式：</b>這些是能在眾多使用方式中正常運作的一般用途壓克力資源。 如果您的應用程式使用色彩為 AltMedium 且文字大小小於 18px 的次要文字，請將 80% 壓克力資源放置在文字之後以<a href="../accessibility/accessible-text-requirements.md">符合對比率需求</a>。 </td>
     </tr>
     <tr>
-        <td> SystemControlAcrylicWindowMediumHighBrush, SystemControlAcrylicElementMediumHighBrush <br/> SystemControlBaseHighAcrylicWindowMediumHighBrush, SystemControlBaseHighAcrylicElementMediumHighBrush </td>
+        <td> SystemControlAcrylicWindowMediumHighBrush、SystemControlAcrylicElementMediumHighBrush <br/> SystemControlBaseHighAcrylicWindowMediumHighBrush、SystemControlBaseHighAcrylicElementMediumHighBrush </td>
         <td align="center"> 70% </td>
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建議的使用方式：</b>如果您的應用程式會使用次要文字 AltMedium 色彩的文字大小或更高的 18px，您可以將這些更半透明 70%壓克力資源的文字後面。 建議在應用程式的頂端水平瀏覽與命令區中使用這些資源。  </td>
+        <td> <b>建議的使用方式：</b>如果您的應用程式使用色彩為 AltMedium 且文字大小為 18px 或以上的次要文字，您可以將這些更加透明的 70% 壓克力資源放在文字後面。 建議在應用程式的頂端水平瀏覽與命令區中使用這些資源。  </td>
     </tr>
     <tr>
-        <td> SystemControlChromeHighAcrylicWindowMediumBrush, SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush, SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush, SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush, SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush, SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush, SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
+        <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
         <td align="center"> 60% </td>
         <td> ChromeHigh <br/><br/> ChromeMedium <br/><br/> ChromeMediumLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltMediumLow </td>
     </tr>
     <tr>
-        <td> <b>建議的使用方式：</b>透過 acrylic 放置只主要文字的 AltHigh 色彩時, 您的應用程式可以利用這些 60%的資源。 建議以 60% 壓克力繪製您應用程式的<a href="../controls-and-patterns/navigationview.md">垂直瀏覽窗格</a>，亦即漢堡式功能表。 </td>
+        <td> <b>建議的使用方式：</b>僅將色彩為 AltHigh 的主要文字放置在壓克力之上時，您的應用程式可以利用這些 60% 的資源。 建議以 60% 壓克力繪製您應用程式的<a href="../controls-and-patterns/navigationview.md">垂直瀏覽窗格</a>，亦即漢堡式功能表。 </td>
     </tr>
 </table>
 
-除了非色彩相關壓克力外，我們也已新增會以使用者指定的輔色將壓克力上色的資源。 我們建議謹慎使用彩色的壓克力。 對於提供的 dark1 與 dark2 變化，將與深色佈景主題文字一致的白色或淺色文字放置在這些資源上。
+除了色彩中性壓克力之外，我們也已新增會以使用者指定的輔色將壓克力上色的資源。 我們建議謹慎使用彩色的壓克力。 針對所提供的 dark1 與 dark2 變化，請將與深色佈景主題文字色彩一致的白色或淺色文字放置在這些資源上。
 <table>
     <tr>
         <th align="center">資源索引鍵</th>
         <th align="center">色調不透明度</th>
-        <th align="center"><a href="color.md">濃淡和後援色彩</a> </th>
+        <th align="center"><a href="color.md">色調與回復色彩</a> </th>
     </tr>
     <tr>
-        <td> SystemControlAccentAcrylicWindowAccentMediumHighBrush, SystemControlAccentAcrylicElementAccentMediumHighBrush  </td>
+        <td> SystemControlAccentAcrylicWindowAccentMediumHighBrush、SystemControlAccentAcrylicElementAccentMediumHighBrush  </td>
         <td align="center"> 70% </td>
         <td> SystemAccentColor </td>
     </tr>
     <tr>
-        <td> SystemControlAccentDark1AcrylicWindowAccentDark1Brush, SystemControlAccentDark1AcrylicElementAccentDark1Brush  </td>
+        <td> SystemControlAccentDark1AcrylicWindowAccentDark1Brush、SystemControlAccentDark1AcrylicElementAccentDark1Brush  </td>
         <td align="center"> 80% </td>
         <td> SystemAccentColorDark1 </td>
     </tr>
     <tr>
-        <td> SystemControlAccentDark2AcrylicWindowAccentDark2MediumHighBrush, SystemControlAccentDark2AcrylicElementAccentDark2MediumHighBrush  </td>
+        <td> SystemControlAccentDark2AcrylicWindowAccentDark2MediumHighBrush、SystemControlAccentDark2AcrylicElementAccentDark2MediumHighBrush  </td>
         <td align="center"> 70% </td>
         <td> SystemAccentColorDark2 </td>
     </tr>
 </table>
 
 
-若要繪製特定的表面，請將其中一個上述的佈景主題資源套用到元素背景，就如同您套用任何其他筆刷資源。
+若要繪製特定的表面，請將其中一個上述的佈景主題資源套用到元素背景，如同您套用任何其他筆刷資源一般。
 
 ```xaml
 <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
 ```
 
 ## <a name="custom-acrylic-brush"></a>自訂壓克力筆刷
-您可以選擇將色彩色調新增到您的應用程式壓克力，以顯示品牌或與頁面上的其他元素產生視覺平衡。 若要顯示彩色而非灰階，您必須使用下列屬性定義自己的壓克力筆刷。
- - **TintColor**︰色彩/色調重疊層。 考慮指定 RGB 色彩值與 Alpha 色板不透明度。
- - **TintOpacity**︰色調層不透明度。 雖然不同的色彩看起來可能更令人在其他 translucencies，我們建議作為起點，80%的不透明度。
- - **TintLuminosityOpacity**： 控制的允許透過壓克力介面與背景的飽和度。
- - **BackgroundSource**︰此旗標可指定您要背景壓克力或應用程式內壓克力。
- - **FallbackColor**： 取代 acrylic 省電模式中的純色。 對於背景壓克力，當您的應用程式不是使用中桌面視窗，或當應用程式在手機與 Xbox 上執行時，回復色彩也會取代壓克力。
+您可以選擇將色彩色調新增到您應用程式的壓克力來顯示品牌，或與頁面上的其他元素產生視覺平衡。 若要顯示彩色而非灰階，您必須使用下列屬性定義自己的壓克力筆刷。
+ - **TintColor**︰色彩/色調重疊層。 請考慮指定 RGB 色彩值與 Alpha 色板不透明度。
+ - **TintOpacity**︰色調層的不透明度。 建議一開始設定 80% 不透明度，儘管不同的色彩在其他透明度下可能看起來更具吸引力。
+ - **TintLuminosityOpacity**：控制背景透過壓克力表面所顯示的飽和度。
+ - **BackgroundSource**︰此旗標可指定是否要背景壓克力或應用程式內壓克力。
+ - **FallbackColor**︰在省電模式中會取代表壓克力的純色。 對於背景壓克力，當您的應用程式不是作用中的桌面視窗時，或當應用程式是在手機與 Xbox 上執行時，回復色彩也會取代壓克力。
 
-![淺色佈景主題壓克力色樣](images/CustomAcrylic_Swatches_LightTheme.png)
+![淺色佈景主題壓克力樣本](images/CustomAcrylic_Swatches_LightTheme.png)
 
-![深色佈景主題壓克力色樣](images/CustomAcrylic_Swatches_DarkTheme.png)
+![深色佈景主題壓克力樣本](images/CustomAcrylic_Swatches_DarkTheme.png)
 
-![相較於濃淡的不透明度的亮度 opactity](images/LuminosityVersusTint.png)
+![與色調不透明度相比的亮度不透明度](images/LuminosityVersusTint.png)
 
-若要新增壓克力筆刷，請為深色、淺色及高對比佈景主題定義三個資源。 請注意在高對比中，我們建議使用 x:Key 與深色/淺色 AcrylicBrush 相同的 SolidColorBrush。
+若要新增壓克力筆刷，請針對深色、淺色及高對比佈景主題定義三個資源。 請注意，在高對比中，我們建議使用 SolidColorBrush 並搭配與深色/淺色 AcrylicBrush 相同的 x:Key。
 
 > [!Note] 
-> 如果您未指定 TintLuminosityOpacity 值，系統會自動調整以根據您 TintColor 和 TintOpacity 其值。
+> 如果您不指定 TintLuminosityOpacity 值，系統將會根據您的 TintColor 和 TintOpacity 自動調整其值。
 
 ```xaml
 <ResourceDictionary.ThemeDictionaries>
@@ -234,7 +234,7 @@ Acrylic 是一種[筆刷](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 </ResourceDictionary.ThemeDictionaries>
 ```
 
-以下範例示範如何在程式碼中宣告 AcrylicBrush。 如果您的應用程式支援多個作業系統目標，請確定檢查使用者的電腦上是否有此 API。
+以下範例示範如何在程式碼中宣告 AcrylicBrush。 如果您的應用程式支援多個作業系統目標，請務必檢查使用者電腦上是否有此 API。
 
 ```csharp
 if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.Xaml.Media.XamlCompositionBrushBase"))
@@ -257,7 +257,7 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>將壓克力延伸至標題列
 
-若要讓您的應用程式視窗呈現順暢的外觀，您可以在標題列區域中使用壓克力風格。 此範例透過設定 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 物件的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) 以及 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) 屬性為 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent)，將壓克力風格延伸到標題列。
+若要讓您的應用程式視窗呈現順暢的外觀，您可以在標題列區域中使用壓克力。 此範例透過將 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) \(英文\) 物件的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) \(英文\) 及 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) \(英文\) 屬性設定為 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent) \(英文\)，來將壓克力延伸到標題列。
 
 ```csharp
 private void ExtendAcrylicIntoTitleBar()
@@ -269,7 +269,7 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-您可以將這段程式碼放在應用程式的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (_App.xaml.cs_) 中，對 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的呼叫之後 (如這裡所示)，或放在應用程式的第一個頁面中。
+您可以在對 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) \(英文\) 的呼叫之後 (如這裡所示)，將此程式碼置於您應用程式的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) \(英文\) 方法 (_App.xaml.cs_) 中，或是將它置於您應用程式的第一個頁面。
 
 ```csharp
 // Call your extend acrylic code in the OnLaunched event, after
@@ -314,22 +314,22 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-此外，您必須使用 `CaptionTextBlockStyle` 來繪製採用 TextBlock 的應用程式標題，此標題通常會自動顯示在標題列中。 如需詳細資訊，請參閱[標題列自訂](../shell/title-bar.md)。
+此外，您必須使用 `CaptionTextBlockStyle` 搭配 TextBlock 繪製您應用程式的標題，其通常會自動顯示在標題列中。 如需詳細資訊，請參閱[標題列自訂](../shell/title-bar.md)。
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 * 請使用壓克力作為非主要應用程式表面 (如瀏覽窗格) 的背景材質。
-* 請將壓克力延伸至應用程式的至少一個邊緣，藉此與應用程式背景巧妙地混合以呈現無縫的效果。
-* 不要將桌面 acrylic 放在您的應用程式的大型背景表面-這會中斷主要是用於暫時性表面的 acrylic 心智模型。
+* 請至少將壓克力延伸至應用程式的其中一個邊緣，來與應用程式的週遭巧妙混合，以呈現順暢的體驗。
+* 請勿將桌面壓克力置於應用程式的大型背景表面上，這會干擾壓克力主要是用於暫時性表面的心智模型。
 * 請勿將應用程式內壓克力與背景壓克力直接相鄰放置，以避免在接縫處產生視覺壓力。
-* 請勿將多個色調與不透明度相同的壓克力窗格彼此相鄰，因為這會產生不想要讓人看到的接縫。
-* 請勿將輔色文字放置在壓克力表面。
+* 請勿將具有相同色調與不透明度的多個壓克力窗格彼此相鄰，因為這會產生不理想的可見接縫。
+* 請勿將輔色文字放置在壓克力表面上。
 
-## <a name="how-we-designed-acrylic"></a>我們如何設計壓克力
+## <a name="how-we-designed-acrylic"></a>我們設計壓克力的方式
 
-我們將壓克力的重要元件微調至讓壓克力有獨特的外觀與屬性。 我們已開始半透明、 模糊與雜訊，加入一般介面的視覺化的深度和維度。 我們新增了排除混合模式層，以確保放置在壓克力背景上的對比與可讀性。 最後，我們加入了色彩色調讓壓克力個人化。 這些圖層最後一齊產生全新、可使用的材質。
+我們對壓克力的重要元件進行微調，以締造出壓克力獨特的外觀與屬性。 我們從透明度、模糊與雜訊開始，以增加平面表面的深度與維度。 我們加入排除混合模式層，以確保放置在壓克力背景上之 UI 的對比與可讀性。 最後，我們加入色彩色調來提供個人化的可能性。 這些層面會相互搭配，並產生全新且可使用的材質。
 
 ![壓克力配方](images/AcrylicRecipe_Diagram.jpg)
-<br/>壓克力配方：背景、排除混合、色彩/色調重疊、雜訊
+<br/>壓克力配方：背景、模糊、排除混合、色彩/色調重疊、雜訊
 
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
@@ -338,4 +338,4 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
-[**顯示反白顯示**](reveal.md)
+[**顯示顯目提示**](reveal.md)

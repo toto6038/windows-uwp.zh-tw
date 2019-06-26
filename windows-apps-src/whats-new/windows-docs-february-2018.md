@@ -1,16 +1,16 @@
 ---
-title: 2018 年 2 月 Windows 文件的最新動向 - 開發 UWP app
+title: 2018 年 2 月 Windows 文件的最新動向 - 開發 UWP 應用程式
 description: 新功能、影片及開發人員指引已加入 2018 年 2 月的 Windows 10 開發人員文件中
 keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10, 2 月
 ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632863"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63780322"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>2018 年 2 月 Windows 開發人員文件的最新動向
 
@@ -23,7 +23,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="adaptive-and-interactive-toast-notifications"></a>調適型和互動式快顯通知
 
-使用調適型和互動式通知增強您的 App 開始使用我們[更新的快顯通知相關指引](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)，並探索有關影像大小限制、進度列以及新增輸入選項的新資訊。
+使用調適型和互動式通知增強您的應用程式。 開始使用我們[更新的快顯通知相關指引](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)，並探索有關影像大小限制、進度列以及新增輸入選項的新資訊。
 
 使用[自訂時間戳記](../design/shell/tiles-and-notifications/custom-timestamps-on-toasts.md)、[自訂音效](../design/shell/tiles-and-notifications/custom-audio-on-toasts.md)或[進度列](../design/shell/tiles-and-notifications/toast-progress-bar.md)進一步自訂快顯通知
 
@@ -41,13 +41,13 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="subscription-add-ons-are-now-available-to-all-developers"></a>訂閱附加元件現在可提供給所有開發人員
 
-建立和發佈訂閱附加元件，透過自動化固定計費週期在您的 App 和遊戲中銷售數位產品 (例如應用程式功能或數位內容)。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。
+建立和發佈訂閱附加元件，透過自動化固定計費週期在您的應用程式和遊戲中銷售數位產品 (例如應用程式功能或數位內容)。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
 ## <a name="developer-guidance"></a>開發人員指引
 
 ### <a name="design-basics"></a>設計基本知識
 
-我們的 [UWP app 設計簡介](../design/basics/design-and-ui-intro.md)已使用大量新的視覺效果範例進行增強。 每個 UWP 中的通用設計功能概觀現在特別強調如何開始實作 Fluent Design 系統的功能。
+我們的 [UWP 應用程式設計簡介](../design/basics/design-and-ui-intro.md)已使用大量新的視覺效果範例進行增強。 每個 UWP 中的通用設計功能概觀現在特別強調如何開始實作 Fluent Design 系統的功能。
 
 我們已將一般頁面模式的展示工具新增至[內容設計基本知識](../design/basics/content-basics.md)，並提供 App 如何顯示不同類型內容的範例資源庫。
 
@@ -55,7 +55,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="writing-style"></a>撰寫樣式
 
-我們已針對有關語音與音調的文章提升品質並擴充內容，並將其轉換成[撰寫方式指引](../design/style/writing-style.md)。 這項新資訊提供關於在 App 中建立有效文字的原則，並建議撰寫控制項 (例如錯誤訊息或對話方塊) 的最佳做法。
+我們已針對有關語音與音調的文章提升品質並擴充內容，並將其轉換成[撰寫方式指引](../design/style/writing-style.md)。 這項新資訊提供關於在應用程式中建立有效文字的原則，並建議撰寫控制項 (例如錯誤訊息或對話方塊) 的最佳做法。
 
 ### <a name="getting-started-for-game-development"></a>遊戲開發入門
 
@@ -69,8 +69,8 @@ Xbox Live 創作者計畫可讓開發人員將其 UWP 遊戲快速發佈至 Xbox
 
 ### <a name="creating-3d-app-launchers-for-windows-mixed-reality"></a>建立 Windows Mixed Reality 的 3D 應用程式啟動器
 
-3D 啟動器提供獨特方式，讓使用者將您的 App 的真實體積測量表示法放置在混合實境主要環境中。 [觀看影片](https://www.youtube.com/watch?v=TxIslHsEXno)了解如何準備 3D 模型，並指派其做為您的 App 的啟動器，然後[閱讀開發人員文件](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers)和[查看我們的設計指引](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance)以取得詳細資訊。
+3D 啟動器提供獨特方式，讓使用者將您應用程式的真實體積測量表示法放置在其混合實境主要環境中。 [觀看影片](https://www.youtube.com/watch?v=TxIslHsEXno)了解如何準備 3D 模型，並指派其作為您的應用程式的啟動器，然後[閱讀開發人員文件](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers) \(部分機器翻譯\) 和[查看我們的設計指引](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance) \(部分機器翻譯\) 以取得詳細資訊。
 
 ### <a name="motion-controller-tracking"></a>運動控制器追蹤
 
-運動控制器在 Windows Mixed Reality 中代表使用者的雙手。 [觀看影片](https://www.youtube.com/watch?v=rkDpRllbLII)了解運動控制器處於混合實境頭戴式裝置視野範圍內外的運作方式，並[在這裡閱讀更多有關控制器追蹤的資訊](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)。
+運動控制器在 Windows Mixed Reality 中代表使用者的雙手。 [觀看影片](https://www.youtube.com/watch?v=rkDpRllbLII)了解運動控制器處於混合實境頭戴式裝置視野範圍內外的運作方式，並[在這裡閱讀更多有關控制器追蹤的資訊](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D) \(部分機器翻譯\)。

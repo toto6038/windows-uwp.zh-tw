@@ -4,13 +4,13 @@ title: 音樂、圖片及影片媒體櫃中的檔案和資料夾
 description: 將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。
 ms.date: 06/18/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9dba57d8e75ba105a2154be5add5b101a4a6aa4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369328"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音樂、圖片及影片媒體櫃中的檔案和資料夾
@@ -19,7 +19,7 @@ ms.locfileid: "66369328"
 
 媒體櫃是一個虛擬資料夾集合，依預設會包含已知的資料夾，外加使用者透過您的 app 或其中一個內建 app 新增至媒體櫃的任何其他資料夾。 例如，圖片媒體櫃依預設會包含 [圖片] 這個已知資料夾。 使用者可以透過您的 app 或內建的 [相片] app，在圖片媒體櫃中新增或移除資料夾。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
 -   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
@@ -28,25 +28,25 @@ ms.locfileid: "66369328"
 
 -   **位置的存取權限**
 
-    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 [功能] 頁面上，選取您應用程式所管理的媒體櫃。 
+    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 [功能]  頁面上，選取您應用程式所管理的媒體櫃。
 
     -   **音樂媒體櫃**
     -   **圖片媒體櫃**
-    -   **視訊媒體櫃**
+    -   **影片媒體櫃**
 
     若要深入了解，請參閱[檔案存取權限](file-access-permissions.md)。
 
 ## <a name="get-a-reference-to-a-library"></a>取得對媒體櫃的參考
 
 > [!NOTE]
-> 請記得宣告適當的功能。 如需詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+> 請記得宣告適當的功能。 如需詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) \(部分機器翻譯\)。
  
 
 若要取得對使用者的 [音樂]、[圖片] 或 [影片] 媒體櫃的參考，請呼叫 [**StorageLibrary.GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync) 方法。 從 [**KnownLibraryId**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownLibraryId) 列舉提供對應的值。
 
--   [**KnownLibraryId.Music**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary)
--   [**KnownLibraryId.Pictures**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary)
--   [**KnownLibraryId.Videos**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary)
+-   [**KnownLibraryId.Music**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary) \(英文\)
+-   [**KnownLibraryId.Pictures**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary) \(英文\)
+-   [**KnownLibraryId.Videos**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary) \(英文\)
 
 ```cs
 var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Pictures);
@@ -173,7 +173,7 @@ private async void getSongs()
 
 [手機相簿] 和 [儲存的圖片] 資料夾不支援深層查詢。
 
-**開啟應用程式中擷取它的相片**
+**在拍攝相片的應用程式中開啟該相片**
 
 如果您想要讓使用者稍後可以在拍攝相片的 app 中再次開啟該相片，您可以使用與下列範例類似的程式碼，將 **CreatorAppId** 與相片的中繼資料儲存在一起。 在此範例中，**testPhoto** 是 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)。
 

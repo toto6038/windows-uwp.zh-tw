@@ -4,30 +4,30 @@ title: 追蹤最近使用的檔案和資料夾
 description: 將使用者經常存取的檔案新增到您 app 的最近使用清單 (MRU) 中，以追蹤這些檔案。
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 97ad2485abab0bd4733699bc4ffcf29e17a22844
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369442"
 ---
 # <a name="track-recently-used-files-and-folders"></a>追蹤最近使用的檔案和資料夾
 
-**重要的 Api**
+**重要 API**
 
-- [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist)
-- [**FileOpenPicker**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-fileopenpicker)
+- [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) \(英文\)
+- [**FileOpenPicker**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-fileopenpicker) \(英文\)
 
 將使用者經常存取的檔案新增到您 app 的最近使用清單 (MRU) 中，以追蹤這些檔案。 平台會根據項目上次存取的時間來排序項目，並在達到清單的 25 個項目數限制時移除最舊的項目，為您管理 MRU。 所有 app 都有自己的 MRU。
 
 從靜態 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) 屬性取得的 [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList) 類別，代表您的 app 的 MRU。 MRU 項目會儲存為 [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem) 物件，所以 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件 (代表檔案) 和 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 物件 (代表資料夾) 都可以新增到 MRU。
 
 > [!NOTE]
-> 如需完整範例，請參閱[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994)並[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 如需完整範例，請參閱[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994) \(英文\) 和[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995) \(英文\)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 -   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
@@ -52,10 +52,10 @@ ms.locfileid: "66369442"
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add)多載。 在這個範例中，我們使用 [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add)，以便將中繼資料與檔案建立關聯。 設定中繼資料可讓您記錄項目的用途，例如「個人檔案圖片」。 您也可以藉由呼叫 [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add)，在沒有中繼資料的情況下，將檔案新增到 MRU 中。 當您將項目新增到 MRU 時，該方法會傳回唯一的識別字串 (稱為權杖)，可用來擷取該項目。
+    [**StorageItemMostRecentlyUsedList.Add**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) \(英文\) 是多載。 在這個範例中，我們使用 [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add)，以便將中繼資料與檔案建立關聯。 設定中繼資料可讓您記錄項目的用途，例如「個人檔案圖片」。 您也可以藉由呼叫 [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add)，在沒有中繼資料的情況下，將檔案新增到 MRU 中。 當您將項目新增到 MRU 時，該方法會傳回唯一的識別字串 (稱為權杖)，可用來擷取該項目。
 
 > [!TIP]
-> 您需要此權杖才能從 MRU 擷取項目，請保存在別處。 如需 app 資料的詳細資訊，請參閱[管理應用程式資料](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10))。
+> 您需要此權杖才能從 MRU 擷取項目，因此請將它保存在別處。 如需 app 資料的詳細資訊，請參閱[管理應用程式資料](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10))。
 
 ## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>使用權杖從 MRU 擷取項目
 

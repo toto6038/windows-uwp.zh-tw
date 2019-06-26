@@ -1,32 +1,32 @@
 ---
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: 取得檔案屬性
-description: 取得屬性 （& s)\#8212; 最上層、 基本和擴充 &\#8212; StorageFile 所表示的檔案物件。
+description: 取得由 StorageFile 物件所代表之檔案的屬性&\#8212;最上層、基本及延伸&\#8212;。
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 01eda8eefea7e1b3b1102ef154a019e1630e80c2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369310"
 ---
 # <a name="get-file-properties"></a>取得檔案屬性
 
-**重要的 Api**
+**重要 API**
 
--   [**StorageFile.GetBasicPropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getbasicpropertiesasync)
--   [**StorageFile.Properties**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties)
--   [**StorageItemContentProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.retrievepropertiesasync)
+-   [**StorageFile.GetBasicPropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getbasicpropertiesasync) \(英文\)
+-   [**StorageFile.Properties**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties) \(英文\)
+-   [**StorageItemContentProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.retrievepropertiesasync) \(英文\)
 
 取得由 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件所表示檔案的屬性 (最上層、基本及延伸)。
 
 > [!NOTE]
-> 如需完整範例，請參閱 <<c0> [ 檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 如需完整範例，請參閱[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995) \(英文\)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 -   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
@@ -88,11 +88,11 @@ foreach (Windows.Storage.StorageFile file in files)
 
 ## <a name="getting-a-files-extended-properties"></a>取得檔案的延伸屬性
 
-除了最上層和基本檔案屬性之外，還提供許多與檔案內容相關聯的屬性。 這些延伸屬性可藉由呼叫 [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync) 方法來存取 (A [ **BasicProperties** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.BasicProperties)物件透過呼叫取自[ **StorageFile.Properties** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties)屬性。)類別的屬性為可存取最上層和最基本的檔案內容時 —[**StorageFile** ](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)並**BasicProperties**分別 — 擴充的屬性是取得傳遞[IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091)的集合[字串](https://go.microsoft.com/fwlink/p/?LinkID=325032)物件，代表要擷取到的屬性名稱**BasicProperties.RetrievePropertiesAsync**方法。 這個方法接著會傳回 [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) 集合。 然後，系統會從集合中依名稱或索引擷取每個延伸屬性。
+除了最上層和基本檔案屬性之外，還提供許多與檔案內容相關聯的屬性。 這些延伸屬性可藉由呼叫 [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync) 方法來存取 ([**BasicProperties**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.BasicProperties) \(英文\) 物件是透過呼叫 [**StorageFile.Properties**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties) \(英文\) 屬性來取得。)當最上層和基本檔案屬性可以分別當成類別屬性 ([**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) \(英文\) 和 **BasicProperties**) 來存取時，您可以將 [String](https://go.microsoft.com/fwlink/p/?LinkID=325032) \(部分機器翻譯\) 物件 (代表要擷取之屬性的名稱) 的 [IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091) \(部分機器翻譯\) 集合傳送到 **BasicProperties.RetrievePropertiesAsync** 方法，來取得延伸屬性。 這個方法接著會傳回 [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) 集合。 然後，系統會從集合中依名稱或索引擷取每個延伸屬性。
 
 此範例會列舉圖片媒體櫃中的所有檔案、指定 [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) 物件中所需屬性 (**DataAccessed** 和 **FileOwner**) 的名稱、將該 [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) 物件傳送到 [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync) 以擷取這些屬性，然後從傳回的 [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) 物件中依名稱擷取這些屬性。
 
-請查看 [Windows 核心屬性](https://docs.microsoft.com/windows/desktop/properties/core-bumper) 以取得檔案延伸屬性的完整清單。
+請查看 [Windows 核心屬性](https://docs.microsoft.com/windows/desktop/properties/core-bumper) \(英文\) 以取得檔案延伸屬性的完整清單。
 
 ```csharp
 const string dateAccessedProperty = "System.DateAccessed";

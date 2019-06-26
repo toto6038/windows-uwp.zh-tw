@@ -1,10 +1,10 @@
 ---
 Description: 對話方塊和飛出視窗會在使用者要求暫時性 UI 元素，或發生需要通知或核准的情況時顯示暫時性 UI 元素。
-title: 彈出式視窗控制項
+title: 飛出視窗控制項
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
@@ -12,25 +12,25 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625013"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63793772"
 ---
 # <a name="flyouts"></a>飛出視窗
 
-飛出視窗是一個會消失關閉的容器，可顯示任意 UI 做為其內容。 飛出視窗可包含其他飛出視窗或操作功能，以建立巢狀體驗。
+飛出視窗是一個會消失關閉的容器，可顯示任意 UI 作為其內容。 飛出視窗可包含其他飛出視窗或操作功能表，以建立巢狀體驗。
 
 ![巢狀內嵌於飛出視窗內的操作功能表](../images/flyout-nested.png)
 
-> **重要的 Api**:[飛出視窗類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **重要 API**：[Flyout 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 * 不要使用飛出視窗來取代[工具提示](../tooltips.md)或[操作功能表](../menus.md)。 使用工具提示來顯示會在特定時間之後隱藏的簡短說明。 使用操作功能表來執行與 UI 元素相關聯的內容相關動作，例如複製和貼上。
 
-如關於何時應該使用與時使用的對話方塊 （類似控制項），飛出視窗的建議，請參閱[對話方塊和延伸顯示](index.md)。 
+如需使用飛出視窗和使用對話方塊 (類似的控制項) 之時機的建議，請參閱[對話方塊和飛出視窗](index.md)。 
 
 ## <a name="examples"></a>範例
 
@@ -51,7 +51,7 @@ ms.locfileid: "57625013"
 ##  <a name="how-to-create-a-flyout"></a>如何建立飛出視窗
 
 
-飛出視窗會附加至特定的控制項。 您可以使用[放置](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement)屬性來指定飛出視窗出現的位置：頂端、 左邊、 底部，右側或全文。 如果您選取[「Full」位置模式](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)，App 會延展飛出視窗，並將它置於 App 視窗的中央。 有些控制項 (例如 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)) 會提供可用來與飛出視窗或[操作功能表](../menus.md)產生關聯的 [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) 屬性。
+飛出視窗會附加至特定的控制項。 您可以使用 [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) 屬性來指定飛出視窗的顯示位置︰Top、Left、Bottom、Right 或 Full。 如果您選取[「Full」位置模式](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)，App 會延展飛出視窗，並將它置於 App 視窗的中央。 有些控制項 (例如，[Button](/uwp/api/Windows.UI.Xaml.Controls.Button)) 會提供可用來與飛出視窗或[操作功能表](../menus.md)產生關聯的 [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) 屬性。
 
 這個範例會建立簡單的飛出視窗，並在按下按鈕時顯示一些文字。
 ````xaml
@@ -145,9 +145,9 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 </Flyout>
 ````
 
-## <a name="styling-flyouts-for-10-foot-experiences"></a>設定 10 英呎的使用體驗的延伸顯示樣式
+## <a name="styling-flyouts-for-10-foot-experiences"></a>設定 10 英呎體驗的飛出視窗樣式
 
-像飛出視窗這樣的消失關閉控制項會將鍵盤和遊戲台焦點圈限在暫時性 UI 內，直到其關閉為止。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的對比度和可見度變暗。 此行為可以使用 [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) 屬性進行修改。 根據預設，飛出視窗將會在 Xbox 上繪製消失關閉重疊，但不會在其他裝置系列上繪製，不過應用程式可以選擇將重疊強制為一律 **\[開啟\]** 或一律 **\[關閉\]**。
+像飛出視窗這樣的消失關閉控制項會將鍵盤和遊戲台焦點圈限在暫時性 UI 內，直到控制項關閉為止。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的對比度和可見度變暗。 此行為可以使用 [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) 屬性進行修改。 根據預設，飛出視窗將會在 Xbox 上繪製消失關閉重疊，但不會在其他裝置系列上繪製，不過應用程式可以選擇將重疊強制為一律為 **On** 或一律為 **Off**。
 
 ![包含變暗重疊的飛出視窗](../images/flyout-smoke.png)
 
@@ -156,19 +156,19 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 ```
 
 ## <a name="light-dismiss-behavior"></a>消失關閉行為
-飛出視窗可以使用快速消失關閉動作來關閉，動作包括：
+飛出視窗可以使用快速消失關閉動作來關閉，動作包括
 -   點選飛出視窗外部
 -   按下 Esc 鍵盤按鍵
--   按下硬體或軟體系統返回按鈕
+-   按下硬體或軟體系統 [上一頁] 按鈕
 -   按下遊戲台 B 按鈕
 
-以點選來關閉時，這個手勢通常會沒入而無法傳遞至下面的 UI。 舉例說，如果有按鈕隱現於已開啟的飛出視窗背後，使用者的第一個點選動作會關閉飛出視窗，但不會啟用此按鈕。 按下按鈕需要第二次點選。
+以點選來關閉時，這個手勢通常會沒入而無法傳遞至下面的 UI。 舉例說，如果已開啟的飛出視窗後面有可見的按鈕，使用者的第一個點選動作會關閉飛出視窗，但不會啟動此按鈕。 按下按鈕需要第二次點選。
 
-您可以指定按鈕做為飛出視窗的輸入傳遞元素，來變更此行為。 飛出視窗將會因為上述消失關閉動作而關閉，還會將點選事件傳遞至其所指定的`OverlayInputPassThroughElement`。 請考慮採用此行為，在功能類似的項目上加速使用者互動。 如果 App 有我的最愛集合，而且集合中的每個項目都包含附加飛出視窗時，您可以合理預料使用者可能會希望與接連多個飛出視窗進行互動。
+您可以指定按鈕作為飛出視窗的輸入傳遞元素，來變更此行為。 飛出視窗將會因為上述消失關閉動作而關閉，還會將點選事件傳遞至其所指定的 `OverlayInputPassThroughElement`。 請考慮採用此行為，在功能類似的項目上加速使用者互動。 如果您的應用程式有我的最愛集合，而且集合中的每個項目都包含附加飛出視窗時，您可以合理預料使用者可能會希望與接連多個飛出視窗進行互動。
 
-[!NOTE] 請小心，不要指定會產生破壞性動作的重疊輸入傳遞元素。 使用者已經習慣於不會啟用主要 UI 的慎重消失關閉動作。 不能讓 [關閉]、[刪除] 或類似具破壞性的按鈕在消失關閉時啟動，以免發生非預期和破壞性的行為。
+[!NOTE] 請小心，不要指定會產生破壞性動作的重疊輸入傳遞元素。 使用者已經習慣於不會啟用主要 UI 的慎重消失關閉動作。 不應讓 [關閉]、[刪除] 或類似具破壞性的按鈕在消失關閉時啟動，以免發生非預期和破壞性的行為。
 
-在下列範例中，FavoritesBar 所有的三個按鈕都會在第一次點選時啟動。
+在下列範例中，FavoritesBar 中所有三個按鈕都會在第一次點選時啟動。
 
 ````xaml
 <Page>
@@ -215,5 +215,5 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>相關文章
 - [工具提示](../tooltips.md)
 - [功能表和操作功能表](../menus.md)
-- [飛出視窗類別](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [Flyout 類別](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

@@ -4,33 +4,33 @@ title: 判斷 Microsoft OneDrive 檔案的可用性
 description: 使用 StorageFile.IsAvailable 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: effb28fa453ec884152dbc404245f00f4893ef5a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369419"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>判斷 Microsoft OneDrive 檔案的可用性
 
 
-**重要的 Api**
+**重要 API**
 
--   [**FileIO 類別**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)
--   [**StorageFile 類別**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
--   [**StorageFile.IsAvailable 屬性**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable)
+-   [**FileIO 類別**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) \(英文\)
+-   [**StorageFile 類別**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) \(英文\)
+-   [**StorageFile.IsAvailable 屬性**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) \(英文\)
 
 使用 [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 -   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
     您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
--   **應用程式 capabilty 宣告**
+-   **App 功能宣告**
 
     請參閱[檔案存取權限](file-access-permissions.md)。
 
@@ -38,7 +38,7 @@ ms.locfileid: "66369419"
 
 使用者可以將 OneDrive 檔案標示為可離線使用 (預設值) 或僅限線上存取。 這個功能可以讓使用者將大型檔案 (例如圖片或影片) 移到他們的 OneDrive、將檔案標示為僅限線上存取，以及節省磁碟空間 (本機保存的項目僅限中繼資料檔案)。
 
-[**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable)，用來判斷檔案是否為目前可用。 下表顯示 **StorageFile.IsAvailable** 屬性在各種案例中的值。
+[**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) \(英文\)，可用來判斷檔案目前是否可用。 下表顯示 **StorageFile.IsAvailable** 屬性在各種案例中的值。
 
 | 檔案類型                              | Online | 計量付費網路        | 離線 |
 |-------------------------------------------|--------|------------------------|---------|
