@@ -6,12 +6,12 @@ ms.date: 07/06/2018
 ms.topic: article
 keywords: windows 10 uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f163fb660ad158694f925467711e4d62bf8217
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4eaff7142c3c14f04b780b93a7e98e1447f068d8
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371457"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399602"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在計時器上執行背景工作
 
@@ -33,7 +33,7 @@ ms.locfileid: "66371457"
 
 > [!NOTE]
 > 如果*FreshnessTime*設定為小於 15 分鐘內，嘗試註冊背景工作時，會擲回例外狀況。
- 
+
 例如，此觸發程序會導致背景工作，以執行一小時一次。
 
 ```cs

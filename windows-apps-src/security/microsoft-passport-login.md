@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b7f168c9f4e812b1cfb459ebea91f61a988122
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 24ae3fb7442ac955b5edf4127dfdf66176c81a43
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371298"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399625"
 ---
 # <a name="create-a-windows-hello-login-app"></a>建立 Windows Hello 登入應用程式
 
@@ -224,10 +224,14 @@ ms.locfileid: "66371298"
     }
     ```
 
--   您將需要處理帳戶的方法。 這個實習實驗室沒有伺服器或資料庫，因此您必須讓系統在本機上儲存及載入使用者清單。 請用滑鼠右鍵按一下 \[Utils\] 資料夾，然後加入名為「AccountHelper.cs」的新類別。 並將類別定義變更為 Public Static。 AccountHelper 是靜態類別，它將包含所有儲存及載入本機帳戶清單的必要方法。 您可以利用 XmlSerializer 來儲存及載入清單， 但您也必須記住您儲存的檔案名稱及儲存位置。 您還需要提供對其他命名空間的參考。
+-   您將需要處理帳戶的方法。 這個實習實驗室沒有伺服器或資料庫，因此您必須讓系統在本機上儲存及載入使用者清單。 請用滑鼠右鍵按一下 \[Utils\] 資料夾，然後加入名為「AccountHelper.cs」的新類別。 並將類別定義變更為 Public Static。 AccountHelper 是靜態類別，它將包含所有儲存及載入本機帳戶清單的必要方法。 您可以利用 XmlSerializer 來儲存及載入清單， 但您也必須記住您儲存的檔案名稱及儲存位置。
     
     ```cs
+    using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Text;
+    using System.Threading.Tasks;
     using System.Xml.Serialization;
     using Windows.Storage;
     using PassportLogin.Models;
