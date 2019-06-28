@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 62dc89b9e17f1ae9c2394629100e0bd54606594b
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: e6074202a05c80a9dc759cdf81b2c20c7cc17d07
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215119"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414095"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>主機 UWP XAML 控制項在傳統型應用程式 （XAML 群島）
 
 從 Windows 10 版本 1903，您可以裝載在非 UWP 桌面應用程式使用稱為 UWP 控制項*XAML 群島*。 這項功能可讓您加強的外觀、 風格和您現有的傳統型應用程式最新的 Windows 10 UI 功能才可透過 UWP 控制項的功能。 這表示您可以使用 UWP 功能這類[Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions)並控制該支援[Fluent Design System](/windows/uwp/design/fluent-design-system/index)在您現有的 WPF、 Windows Form 和C++Win32 應用程式。
 
-我們提供數種方式使用您的 WPF、 Windows Form 中的 XAML 群島和C++Win32 應用程式的技術或您使用的架構而定。
+我們提供數種方式使用您的 WPF、 Windows Form 中的 XAML 群島和C++Win32 應用程式的技術或您使用的架構而定。 
 
 > [!NOTE]
 > 如果您有意見反應的相關 XAML 群島，建立新的問題，在[Microsoft.Toolkit.Win32 存放庫](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)和那里留下您的意見。 如果您想要私下提交您的意見反應，您可以傳送到XamlIslandsFeedback@microsoft.com。 您的深入解析和案例會對我們非常重要。
@@ -35,7 +35,7 @@ ms.locfileid: "66215119"
 > [!NOTE]
 > C++Win32 桌面應用程式必須使用裝載 API 來裝載 UWP 控制項 UWP XAML。 Windows 社群工具組中的 XAML 島控制項沒有可用的C++Win32 桌面應用程式。
 
-有兩種類型的 WPF 和 Windows Form 應用程式針對 Windows 社群工具組所提供的 XAML 島控制項：*包裝控制項*並*主控制項*。
+有兩種類型的 WPF 和 Windows Form 應用程式針對 Windows 社群工具組所提供的 XAML 島控制項：*包裝控制項*並*主控制項*。 
 
 ### <a name="wrapped-controls"></a>已包裝的控制項
 
@@ -67,14 +67,6 @@ XAML 島已包裝控制項，除了 Windows 社群工具組也提供下列控制
 ![裝載控制項架構](images/xaml-islands/host-controls.png)
 
 隨附於 Windows SDK 的此圖表底部會出現 API。 已包裝的控制項和主控制項可透過 Windows 社群工具組中的 Nuget 套件。
-
-## <a name="feature-roadmap"></a>功能藍圖
-
-在版本的 Windows 10 版本 1903，包裝的控制項和 Windows 社群工具組中的主控制項是仍在開發人員指南預覽中有可用的控制項的 1.0 版發行為止。
-
-* 1.0 版的.NET Framework 4.6.2 中的控制項和更新版本已計劃將於發行[6.0 版的工具組](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones)。
-* 以較新版的工具組 1.0 版的.NET Core 3 的控制項已計劃。
-* 如果您想要嘗試最新預覽版本 1.0 發行版本，這些控制項的.NET Framework 和.NET Core 3，請參閱**6.0.0-preview3** NuGet 套件中[UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit)資源庫。
 
 ## <a name="requirements"></a>需求
 
@@ -112,8 +104,19 @@ XAML 群島需要 Windows 10 版本 1903，及更新版本。 若要在您的應
     </assembly>
     ```
 
+## <a name="feature-roadmap"></a>功能藍圖
+
+在版本的 Windows 10 版本 1903，包裝的控制項和 Windows 社群工具組中的主控制項是仍在開發人員指南預覽中有可用的控制項的 1.0 版發行為止。
+
+* 1\.0 版的.NET Framework 4.6.2 中的控制項和更新版本已計劃將於發行[6.0 版的工具組](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones)。
+* 以較新版的工具組 1.0 版的.NET Core 3 的控制項已計劃。
+* 如果您想要嘗試最新預覽版本 1.0 發行版本，這些控制項的.NET Framework 和.NET Core 3，請參閱**6.0.0-preview3** NuGet 套件中[UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit)資源庫。
+
+如需詳細資訊，請參閱 <<c0> [ 此部落格文章](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap)。
+
 ## <a name="additional-resources"></a>其他資源
 
 如需詳細背景資訊和教學課程，需使用 XAML 群島，請參閱下列文章和資源：
 
-* [XAML 群島實驗室](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn)。 這個完整的實驗室提供 Windows 社群工具組中使用的已包裝的控制項和主控制項，將 UWP 控制項新增至現有的 WPF 特定業務應用程式的逐步指示。 此實驗室包括[WPF 應用程式的完整程式碼](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn/Lab)，以及[詳細指示](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/blob/microsoftlearn/Manual/README.md)程序中的每個步驟。
+* [現代化的 WPF 應用程式教學課程](modernize-wpf-tutorial.md):本教學課程提供在 Windows 社群工具組中使用的已包裝的控制項和主控制項，將 UWP 控制項新增至現有的 WPF 特定業務應用程式的逐步指示。 本教學課程包含程序中的 WPF 應用程式的完整程式碼，以及每個步驟的詳細的指示。
+* [XAML 群島 v1-更新和藍圖](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap):此部落格文章會討論有關 XAML 群島的許多常見問題，並提供詳細的開發藍圖。

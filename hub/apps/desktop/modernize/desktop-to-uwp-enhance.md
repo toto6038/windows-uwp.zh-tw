@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4846a29e914ffed15e4c3dea938cc51cefd566e0
-ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
+ms.openlocfilehash: 0545ea525b96d3a9310f3a761fd60a644f21baeb
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131940"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414075"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>在傳統型應用程式中呼叫 UWP Api
 
@@ -29,20 +29,46 @@ ms.locfileid: "67131940"
 
 ### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>.NET 專案修改成使用 Windows 執行階段 Api
 
+有兩個.NET 專案的選項：
+
+* 如果您的應用程式的目標 Windows 10 1803年 （含） 以後版本，您可以安裝的 NuGet 套件可提供所有必要的參考。
+* 或者，您也可以手動加入的參考。
+
+#### <a name="to-use-the-nuget-option"></a>若要使用 NuGet 選項
+
+1. 請確定[的套件參考](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)啟用：
+
+    1. 在 Visual Studio 中，按一下**工具]-> [NuGet 套件管理員]-> [套件管理員設定**。
+    2. 請確定**PackageReference**選取**預設套件管理格式**。
+
+2. 在 Visual Studio 中開啟專案，以滑鼠右鍵按一下您的專案中**方案總管**，然後選擇**管理 NuGet 套件**。
+
+3. 在  **NuGet 套件管理員**視窗中，選取**瀏覽**索引標籤，然後搜尋`Microsoft.Windows.SDK.Contracts`。
+
+4. 在後`Microsoft.Windows.SDK.Contracts`找到套件，在右窗格中**NuGet 套件管理員**視窗中選取**版本**您想要安裝的版本為目標的 Windows 10 為基礎的封裝：
+
+    * **10.0.18362.xxxx-preview**:針對 Windows 10 版本 1903，選擇此選項。
+    * **10.0.17763.xxxx-preview**:選擇此選項適用於 Windows 10，版本 1809年。
+    * **10.0.17134.xxxx-preview**:選擇此選項適用於 Windows 10，1803年版。
+
+5. 按一下 **\[安裝\]** 。
+
+#### <a name="to-add-the-required-references-manually"></a>若要手動新增所需的參考
+
 1. 開啟 **\[參考管理員\]** 對話方塊，選擇 **\[瀏覽\]** 按鈕，然後選取 **\[所有檔案\]** 。
 
     ![新增參考對話方塊](images/desktop-to-uwp/browse-references.png)
 
 2. 新增這些檔案的參考。
 
-  |檔案|Location|
-  |--|--|
-  |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
-  |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-  |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+    |檔案|Location|
+    |--|--|
+    |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
+    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
+    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
 3. 在 **\[屬性\]** 視窗中，將每個 *.winmd* 檔案的 **\[複製本機\]** 欄位設定為 **\[False\]** 。
 
