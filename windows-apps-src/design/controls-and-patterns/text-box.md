@@ -6,16 +6,16 @@ label: Text box
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2db08cc577a82ddf6973cb33e41f9bdb39fdffde
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364226"
 ---
 # <a name="text-box"></a>文字方塊
@@ -24,7 +24,7 @@ TextBox 控制項可讓使用者在應用程式中輸入文字。 其通常用�
 
 TextBox 具有眾多可精簡文字輸入的實用功能。 其提供熟悉的內建操作功能表，支援複製與貼上文字。 「全部清除」按鈕可讓使用者快速刪除所有已輸入的文字。 其亦具備預設啟用的內建拼字檢查功能。
 
-> **重要的 Api**:[TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)， [Text 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+> **重要 API**：[TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -83,7 +83,7 @@ rootGrid.Children.Add(textBox);
 
 常見的做法是使用文字方塊支援在表單上輸入資料，並使用 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 屬性從文字方塊取得完整的文字字串。 您通常會使用諸如按一下提交按鈕等事件存取 Text 屬性，不過若您需要在文字變更時執行某些工作，則可處理 [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) 或 [TextChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanging) 事件。
 
-此範例示範如何取得和設定的文字方塊中目前的內容。
+此範例示範如何取得和設定文字方塊中目前的內容。
 
 ```xaml
 <TextBox name="SampleTextBox" Text="Sample Text"/>
@@ -111,7 +111,7 @@ SampleTextBox.Text = "Sample text retrieved";
 - **AcceptsReturn** 為 **true**
 - **TextWrap** 具有非 **NoWrap** 的值
 
-此範例示範如何取得和設定的文字方塊中目前的內容。
+此範例示範如何取得和設定文字方塊中目前的內容。
 
 ```xaml
 <TextBox name="SampleTextBox" Text="Sample Text"/>
@@ -314,9 +314,9 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>相關文章
 
 - [文字控制項](text-controls.md)
-- [拼字檢查的指導方針](text-controls.md)
+- [拼字檢查指導方針](text-controls.md)
 - [新增搜尋](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
 - [文字輸入的指導方針](text-controls.md)
 - [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 屬性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [String.Length 屬性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx) \(部分機器翻譯\)

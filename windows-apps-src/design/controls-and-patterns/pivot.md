@@ -1,27 +1,27 @@
 ---
-Description: 樞紐分析控制項啟用 touch 撥動之間較少的內容區段。
+Description: Pivot 控制項可讓使用者在一小組內容區段之間進行觸控撥動。
 title: 樞紐分析
 template: detail.hbs
 ms.date: 06/19/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 232da8afeccf5d82f65b51ae0a40905b3433d412
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364537"
 ---
 # <a name="pivot"></a>樞紐分析
 
-[Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)控制項啟用 touch 撥動之間較少的內容區段。
+[Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\) 控制項可讓使用者在一小組內容區段之間進行觸控撥動。
 
-> **重要的 Api**:[樞紐類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)， [NavigationView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **重要 API**：[Pivot 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)、[NavigationView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView) \(英文\)
 
 ## <a name="examples"></a>範例
 
@@ -30,7 +30,7 @@ ms.locfileid: "66364537"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可<a href="xamlcontrolsgallery:/item/Pivot">開啟 應用程式，並查看作用中的樞紐分析控制項</a>。</p>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/Pivot">開啟應用程式並查看 Pivot 控制項的運作情形</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -39,26 +39,26 @@ ms.locfileid: "66364537"
 </tr>
 </table>
 
-樞紐分析控制項，如同[NavigationView](navigationview.md)，選取的項目會加上底線。
+Pivot 控制項和 [NavigationView](navigationview.md) 一樣，都會為所選取的項目加上底線。
 
 ![預設焦點底線選取的標頭](images/pivot_focus_selectedHeader.png)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-若要達到常見的上方導覽和索引標籤模式，我們建議您使用[NavigationView](navigationview.md)，其自動適應不同螢幕大小，並可讓您更高的自訂。
+為了達成常見的頂端瀏覽及索引標籤模式，我們建議使用 [NavigationView](navigationview.md)，期能自動適應不同的畫面大小，並允許進行更大幅度的自訂。
 
-不過，如果您瀏覽需要觸控撥動，我們建議使用 Pivot。
+不過，如果您的瀏覽需要觸控撥動，我們建議使用 Pivot。
 
-NavigationView 及樞紐分析表控制項之間的其他主要差異是預設的溢位行為和瀏覽 API:
+NavigationView 和 Pivot 控制項的另一個差異，在於其預設溢位行為和瀏覽 API：
 
-- 樞紐分析項目，而 NavigationView 使用功能表的下拉式清單中的溢位，讓使用者能夠看到所有項目可提領轉盤溢位。
-- 樞紐處理而 NavigationView 允許更充分掌控導覽行為的內容區段之間的巡覽。
+- Pivot 會浮動切換溢位項目，而 NavigationView 會使用功能表下拉式清單溢位，來讓使用者能夠看見所有項目。
+- Pivot 會處理內容區段之間的瀏覽，而 NavigationView 能讓您對瀏覽行為取得進一步的控制。
 
-## <a name="use-navigationview-instead-of-pivot"></a>使用 NavigationView，而不是樞紐分析
+## <a name="use-navigationview-instead-of-pivot"></a>使用 NavigationView 而非 Pivot
 
-如果您的應用程式的 UI 使用樞紐分析控制項，然後您可以將轉換 Pivot NavigationView 下列程式碼。
+如果您應用程式的 UI 使用 Pivot 控制項，您可以使用下列程式碼將 Pivot 轉換為 NavigationView。
 
-此 XAML 會建立 3 個區段的內容，如範例樞紐 NavigationView 中[建立樞紐分析控制項](#create-a-pivot-control)。
+此 XAML 會建立具有 3 個內容區段的 NavigationView，如同[建立 Pivot 控制項](#create-a-pivot-control)中所提供的範例 Pivot。
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -83,7 +83,7 @@ NavigationView 及樞紐分析表控制項之間的其他主要差異是預設�
 </Page>
 ```
 
-NavigationView 提供更充分掌控瀏覽自訂，而且需要對應的程式碼後置。 若要搭配上述 XAML，使用下列程式碼後置：
+NavigationView 能針對瀏覽自訂提供更大幅度的控制，並需要相對應的程式碼後置。 若要搭配上述 XAML，請使用下列程式碼後置：
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -112,11 +112,11 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-此程式碼會模擬樞紐分析控制項的內建的瀏覽體驗，減去觸控撥動體驗之間的內容區段。 不過，如您所見，您也可以自訂數個點，包括動畫的轉換、 瀏覽參數和堆疊功能。
+此程式碼能模擬 Pivot 控制項的內建瀏覽體驗，但無法提供內容區段之間的觸控撥動體驗。 不過正如您所見，您也可以自訂數個點，包括動畫轉換、瀏覽參數，以及堆疊功能。
 
 ## <a name="create-a-pivot-control"></a>建立 Pivot 控制項
 
-此程式碼會建立基本的樞紐分析控制項具有 3 個區段的內容。
+此程式碼會建立具有 3 個內容區段的基本 Pivot 控制項。
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Category Title">
@@ -145,7 +145,7 @@ Pivot 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 您可以使用 [LeftHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.leftheader) 和 [RightHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.rightheader) 屬性來將其他控制項新增到樞紐標頭。
 
-例如，您可以在樞紐 RightHeader 中新增 [CommandBar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/app-bars)。
+例如，您可以在 Pivot 的 RightHeader 中加入 [CommandBar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/app-bars)。
 
 ```xaml
 <Pivot>
@@ -172,7 +172,7 @@ Pivot 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 此控制項有兩種模式：
 
-**「 定態**
+**靜止**
 
 - 當所有的樞紐標頭大小符合允許的空間時，樞紐會靜止。
 - 雖然樞紐本身不會移動，但點選樞紐標籤會瀏覽到對應的頁面。 使用中的樞紐會反白顯示。
@@ -183,7 +183,7 @@ Pivot 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 - 點選樞紐標籤會瀏覽到對應的頁面，且使用中的樞紐標籤會浮動切換到第一個位置。
 - 各樞紐項目會浮動循環切換，從最後一個接到第一個樞紐區段。
 
-> **注意** 樞紐標頭不可在 [10 英呎環境](../devices/designing-for-tv.md)中浮動切換。 如果 App 會在 Xbox 上執行，請將 [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) 屬性設為 **false**。
+> **注意** Pivot 標頭不應在 [10 英呎環境](../devices/designing-for-tv.md)中進行浮動切換。 如果您的應用程式會在 Xbox 上執行，請將 [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) \(英文\) 屬性設為 **false**。
 
 ## <a name="recommendations"></a>建議
 
@@ -191,9 +191,9 @@ Pivot 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) \(英文\) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-topics"></a>相關主題
 
-- [Pivot 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
-- [瀏覽設計基本概念](../basics/navigation-basics.md)
+- [Pivot 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)
+- [瀏覽設計基本知識](../basics/navigation-basics.md)

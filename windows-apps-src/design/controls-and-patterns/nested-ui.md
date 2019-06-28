@@ -5,17 +5,17 @@ label: Nested UI in list items
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
 pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364544"
 ---
 # <a name="nested-ui-in-list-items"></a>清單項目中的巢狀 UI
@@ -26,7 +26,7 @@ ms.locfileid: "66364544"
 
 您可以使用巢狀 UI 來向使用者顯示其他可協助加快執行重要動作的選項。 不過公開越多動作，將會使 UI 變得越加複雜。 請務必在選擇使用此 UI 模式時額外注意此狀況。 本文提供可協助您針對您特定的 UI 判斷最佳動作的指導方針。
 
-> **重要的 Api**:[ListView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)， [GridView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
+> **重要 API**：[ListView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) \(英文\)、[GridView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) \(英文\)
 
 在本文中，我們將會針對在 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 和 [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) 項目中建立巢狀 UI 進行討論。 雖然本節不會討論其他的巢狀 UI 情況，但這些概念都是共通的。 在您開始前，請先熟悉在 UI 中使用 ListView 或 GridView 控制項的一般指導方針，這些指導方針可以在[清單](lists.md)和[清單檢視和方格檢視](listview-and-gridview.md)文章中找到。
 
@@ -37,7 +37,7 @@ ms.locfileid: "66364544"
 
 ![巢狀 UI 組件](images/nested-ui-example-1.png)
 
-> 注意&nbsp;&nbsp; ListView 和 GridView 都是衍生自 [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單時，其中的資訊將同時適用於 ListView 和 GridView 控制項。
+> 注意&nbsp;&nbsp; ListView 和 GridView 都是衍生自 [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) \(英文\) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單時，其中的資訊將同時適用於 ListView 和 GridView 控制項。
 
 ## <a name="primary-and-secondary-actions"></a>主要和次要動作
 
@@ -109,7 +109,7 @@ ms.locfileid: "66364544"
 
 ![巢狀 UI 組件](images/nested-ui-navigation.png)
 
-**Gamepad**
+**遊戲台**
 
 當輸入是來自控制器時，將會提供此使用者體驗：
 
@@ -167,7 +167,7 @@ ms.locfileid: "66364544"
 
 當清單項目不會執行動作時，我們建議使用本指導方針來處理使用控制器或鍵盤的瀏覽。
 
-**Gamepad**
+**遊戲台**
 
 當輸入是來自控制器時，將會提供此使用者體驗：
 

@@ -6,24 +6,24 @@ label: Split view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364182"
 ---
 # <a name="split-view-control"></a>分割檢視控制項
 
 分割檢視控制項有一個可展開/可摺疊的窗格和內容區域。
 
-> **重要的 Api**:[SplitView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
+> **重要 API**：[SplitView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 以下是 Microsoft Edge app 使用 SplitView 顯示其「中心」的範例。
 
@@ -52,7 +52,7 @@ ms.locfileid: "66364182"
 
 分割檢視控制項可以用來建立任何「抽屜」體驗，讓使用者可以開啟和關閉補充的窗格。 例如，您可以使用 SplitView 建置[主要/詳細資料](master-details.md)模式。
 
-如果您想要使用展開/摺疊按鈕及瀏覽項目清單來建置瀏覽功能表並瀏覽項目清單，請使用 [NavigationView](navigationview.md) 控制項。
+如果您想要使用展開/摺疊按鈕及瀏覽項目清單來建置瀏覽功能表，請使用 [NavigationView](navigationview.md) 控制項。
 
 ## <a name="examples"></a>範例
 
@@ -98,6 +98,6 @@ ms.locfileid: "66364182"
 - [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-topics"></a>相關主題
-- [瀏覽窗格中的模式](navigationview.md)
+- [瀏覽窗格模式](navigationview.md)
 - [清單檢視](lists.md)
 - [主要/詳細資料](master-details.md)

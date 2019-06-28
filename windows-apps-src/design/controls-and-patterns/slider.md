@@ -6,17 +6,17 @@ label: Sliders
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 841903f9bc998af5ead2a3486c500487cb070855
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364297"
 ---
 # <a name="sliders"></a>滑桿
@@ -25,7 +25,7 @@ ms.locfileid: "66364297"
 
 滑桿是一個控制項，透過讓使用者沿著軌跡移動 Thumb 控制項，從一定範圍內選取值。
 
-> **重要的 Api**:[滑桿類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)， [Value 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)， [ValueChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
+> **重要 API**：[Slider 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)、[Value 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)、[ValueChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ![滑桿控制項](images/controls/slider.png)
 
@@ -40,11 +40,11 @@ ms.locfileid: "66364297"
 
 以下是決定是否使用滑桿時的一些其他考量因素：
 
--   **此設定看起來像是相對的數量中？** 如果不是，請使用[選項按鈕](radio-button.md)或[清單方塊](lists.md)。
--   **是設定完全相符、 已知的數值嗎？** 如果是，請使用數字[文字方塊](text-box.md)。
--   **使用者獲益的設定變更影響的即時意見反應嗎？** 如果是，請使用滑桿。 例如，藉由立即看到色調、飽和或光度值變更後的效果，能讓使用者更易於選擇色彩。
--   **設定是否擁有四個或多個值的範圍？** 如果不是，請使用[選項按鈕](radio-button.md)。
--   **使用者可以變更此值？** 滑桿的用意是提供使用者互動。 如果使用者無法變更值，請改用唯讀文字。
+-   **設定看起來是否像相對數量？** 如果不是，請使用[選項按鈕](radio-button.md)或[清單方塊](lists.md)。
+-   **該設定是否為已知的確切數值？** 如果是，請使用數字[文字方塊](text-box.md)。
+-   **在變更設定時，獲得即時回應的效果是否為使用者帶來益處？** 如果是，請使用滑桿。 例如，藉由立即看到色調、飽和或光度值變更後的效果，能讓使用者更易於選擇色彩。
+-   **設定的範圍是否包含四個或更多值？** 如果不是，請使用[選項按鈕](radio-button.md)。
+-   **使用者是否能變更該值？** 滑桿的用意是提供使用者互動。 如果使用者無法變更值，請改用唯讀文字。
 
 如果您正在決定使用滑桿或數值文字方塊，則在下列情況下請使用數值文字方塊：
 
@@ -117,7 +117,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 -   調整控制項的大小，方便使用者設定想要的值。 設定分散值時，確定使用者可輕鬆地使用滑鼠選取任何值。 確定滑桿的端點永遠在檢視邊界內。
 -   在使用者選取時或選取後提供立即回饋 (可行的話)。 例如，Windows 音量控制項發出嗶聲，指示所選取的音訊音量。
--   使用標籤顯示值的範圍。 例外狀況：如果滑桿是垂直方向的最上層的標籤是最大值，最高，較多或同等權限，您可以省略其他標籤因為意義很清楚。
+-   使用標籤顯示值的範圍。 例外狀況：如果滑桿是垂直方向，而頂端標籤為最大、高、多或對等值，則您可以省略其他標籤，因為意思已經很清楚了。
 -   停用滑桿時，也會停用所有相關聯的標籤或視覺回饋。
 -   設定滑桿的滑動方向和 (或) 方向時，請考慮文字的閱讀方向。 有些語言中的指令碼是從左至右閱讀，有些語言則是右至左。
 -   不要使用滑桿做為進度指示器。
@@ -154,7 +154,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ### <a name="labels"></a>標籤
 
--   **滑動軸標籤**
+-   **滑桿標籤**
 
     滑桿標籤指示滑桿的用途。
 
@@ -169,7 +169,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
     -   在滑桿範圍的兩端建立標籤，如果是垂直方向，則不需要建立標籤。
     -   如果可能的話，每個標籤僅使用一個字。
     -   請勿使用結束標點符號。
-    -   確定這些標籤為描述性文字，而且平行放置。 範例：最大值/最小、 更多/較無、 低/高、 虛/大聲。
+    -   確定這些標籤為描述性文字，而且平行放置。 範例：最大/最小、多/少、低/高、小聲/大聲。
 -   **值標籤**
 
     值標籤顯示滑桿目前的值。
@@ -192,4 +192,4 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## <a name="related-topics"></a>相關主題
 - [切換開關](toggles.md)
-- [滑桿類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)
+- [Slider 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)

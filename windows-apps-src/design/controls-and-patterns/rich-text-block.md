@@ -6,16 +6,16 @@ label: Rich text block
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e671c61058ec1c048fbb1b547cc79060a7cd0d0a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364340"
 ---
 # <a name="rich-text-block"></a>RTF 區塊
@@ -24,7 +24,7 @@ ms.locfileid: "66364340"
 
 RTF 區塊提供數個適用於進階文字配置的功能，當您需要支援段落、內嵌的 UI 元素或複雜的文字配置時，可以使用 RTF 區塊。
 
-> **重要的 Api**:[RichTextBlock 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)， [RichTextBlockOverflow 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)，[段落類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)，[印刷樣式類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
+> **重要 API**：[RichTextBlock 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) \(英文\)、[RichTextBlockOverflow 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow) \(英文\)、[Paragraph 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph) \(英文\)、[Typography 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography) \(英文\)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -41,7 +41,7 @@ RTF 區塊提供數個適用於進階文字配置的功能，當您需要支援�
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/RichTextBlock">開啟應用程式並查看 RichTextBlock 運作情形</a>。</p>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/RichTextBlock">開啟應用程式並查看 RichTextBlock 的運作情形</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -151,21 +151,21 @@ RichTextBlock 支援：
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) \(英文\) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 
 [文字控制項](text-controls.md)
 
-**設計工具**
-- [拼字檢查的指導方針](text-controls.md)
+**適用於設計人員**
+- [拼字檢查指導方針](text-controls.md)
 - [新增搜尋](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
 - [文字輸入的指導方針](text-controls.md)
 
 **適用於開發人員 (XAML)**
-- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) \(英文\)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) \(英文\)
 
 
-**適用於開發人員 （其他）**
-- [String.Length 屬性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+**適用於開發人員 (其他)**
+- [String.Length 屬性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx) \(部分機器翻譯\)

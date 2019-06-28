@@ -6,16 +6,16 @@ label: Semantic zoom
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c8cc237dec082096eb235237490e4f5d29cc6dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364323"
 ---
 # <a name="semantic-zoom"></a>語意式縮放
@@ -29,7 +29,7 @@ ms.locfileid: "66364323"
 
 例如，使用者檢視通訊錄時，可縮小以快速跳到字母 "W"，然後放大該字母以查看與其相關的名稱。 
 
-> **重要的 Api**:[SemanticZoom 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)， [ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)， [GridView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+> **重要 API**：[SemanticZoom 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)、[ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 
 **功能**：
 
@@ -80,9 +80,9 @@ ms.locfileid: "66364323"
 - 可顯示項目層級資料的放大檢視。
 - 可顯示群組層級資料的縮小檢視。
 
-使用語意式縮放之前，您應該了解如何使用具有分組資料的清單檢視。 如需詳細資訊，請參閱 <<c0> [ 清單檢視和格線檢視](listview-and-gridview.md)。 
+使用語意式縮放之前，您應該了解如何使用具有分組資料的清單檢視。 如需詳細資訊，請參閱[清單檢視和方格檢視](listview-and-gridview.md)。 
 
-> **注意**&nbsp;&nbsp;若要定義 SemanticZoom 控制項的放大檢視和縮小檢視，您可以使用實作 [ISemanticZoomInformation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) 介面的任兩個控制項。 XAML 架構還提供實作此介面的 3 個控制項：ListView、 GridView 和中樞。
+> **注意**&nbsp;&nbsp;若要定義 SemanticZoom 控制項的放大檢視和縮小檢視，您可以使用實作 [ISemanticZoomInformation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) 介面的任兩個控制項。 XAML 架構提供 3 個實作此介面的控制項︰ListView、GridView 及 Hub。
  
  這個 XAML 會顯示 SemanticZoom 控制項的結構。 您會將其他控制項指派給 ZoomedInView 與 ZoomedOutView 屬性。
  
@@ -100,7 +100,7 @@ ms.locfileid: "66364323"
  
 這裡的範例取自 [XAML UI 基本知識範例](https://go.microsoft.com/fwlink/p/?LinkId=619992)的 SemanticZoom 頁面。 您可以下載範例以查看包括資料來源的完整程式碼。 此語意式縮放使用 GridView 來提供放大檢視，並使用 ListView 來提供縮小檢視。
   
-**定義的放大檢視**
+**定義放大檢視**
 
 以下是用於放大檢視的 GridView 控制項。 放大檢視應會顯示群組中的個別資料項目。 這個範例顯示如何在格線內以影像與文字顯示項目。 
 
@@ -140,7 +140,7 @@ ms.locfileid: "66364323"
 </DataTemplate>
 ```
 
-**定義拉遠檢視**
+**定義縮小檢視**
 
 此 XAML 定義用於縮小檢視的 ListView 控制項。 這個範例說明如何在清單中將群組標頭顯示為文字。
 
@@ -161,7 +161,7 @@ ms.locfileid: "66364323"
 </DataTemplate>
 ```
 
-**同步處理檢視**
+**同步檢視**
 
 放大檢視與縮小檢視應該同步，讓使用者在縮小檢視中選取群組時，該群組的詳細資料能夠顯示在放大檢視中。 您可以使用 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 或新增程式碼來同步檢視。
 
@@ -200,9 +200,9 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 ## <a name="related-articles"></a>相關文章
 
-- [瀏覽設計基本概念](../basics/navigation-basics.md)
-- [清單檢視和格線檢視](listview-and-gridview.md)
-- [項目容器和範本](item-containers-templates.md)
+- [瀏覽設計基本知識](../basics/navigation-basics.md)
+- [清單檢視和方格檢視](listview-and-gridview.md)
+- [項目容器與範本](item-containers-templates.md)
 
 
 
