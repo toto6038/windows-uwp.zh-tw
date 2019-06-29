@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bf71e5f6dd77da025a50866d32caca2870d3525b
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: cfab93064cf2fa2edd91798167a2c2fbc368ecb1
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788426"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468903"
 ---
 # <a name="package-version-numbering"></a>套件版本編號
 
@@ -64,7 +64,7 @@ Windows 10 可讓您撰寫單一程式碼基底，可隨處執行。 如此一�
 ## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>版本編號 Windows 8.1 （及更早版本） 和 Windows Phone 8.1 的套件
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標 Windows 8.x/Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標 Windows 8.x/Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 對於以 Windows Phone 8.1 為目標的 .appx 套件，新提交套件的版本號碼必須一律高於最後提交 (或任何先前的提交) 中包含的套件的版本號碼。
 

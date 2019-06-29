@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 搶鮮版 (Beta) 測試, 限量發行, 搶鮮版, beta, 測試, 測試人員
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0a4d1053c35a831458c832131659b9cb888259
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 6cf7fb20129c0b616fcdb537ff8e612aec9b94a4
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787172"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468920"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>搶鮮版 (Beta) 測試和特定對象的發佈
 
@@ -55,7 +55,7 @@ ms.locfileid: "63787172"
 
 若要使用此選項：
 
-- 在 **\[定價和可用性\]** 頁面的 **\[可見度\]** 區段，選取 [\[可搜尋性\]](choose-visibility-options.md#discoverability) 下方的 **\[在 Microsoft Store 推出此產品，但不供搜尋\]**。 選擇**停止擷取：任何具有直接連結的客戶可以看到產品的存放區清單，但他們可以只在下載如果他們擁有的產品之前，或有促銷代碼，而且使用 Windows 10 裝置**。 
+- 在 **\[定價和可用性\]** 頁面的 **\[可見度\]** 區段，選取 [\[可搜尋性\]](choose-visibility-options.md#discoverability) 下方的 **\[在 Microsoft Store 推出此產品，但不供搜尋\]** 。 選擇**停止擷取：任何具有直接連結的客戶可以看到產品的存放區清單，但他們可以只在下載如果他們擁有的產品之前，或有促銷代碼，而且使用 Windows 10 裝置**。 
 - 在應用程式通過認證之後，為應用程式[產生促銷碼](generate-promotional-codes.md)並提供給您的測試人員。 在六個月內您可以為單一應用程式產生最多允許 1600 次兌換的促銷碼。 這些代碼會提供測試者 app 清單的直接連結，並讓他們免費下載，即使在您建立提交時已經為它設定價格。
 - 當您準備好公開提供您的應用程式時，請建立新的提交，並將 **\[可見度\]** 選項變更為 **\[在 Microsoft Store 推出此產品並可供搜尋\]** (以及您想要的其他任何變更) 即可。
 
@@ -65,12 +65,12 @@ ms.locfileid: "63787172"
 與上述選項不同的是，此選項適用於 Windows Phone 8.1 以及 Windows 10 的客戶 (但不適用於 Windows 8.x)。 沒有客戶可以透過搜尋或瀏覽 Microsoft Store 找到應用程式，但具備 Store 清單直接連結的任何人，都可以在執行 Windows Phone 8.1 或較舊版本或 Windows 10 的裝置上下載它。 請記住，為了讓測試人員可以免費下載應用程式，您必須將價格設為 [**免費**]。
 
 若要使用此選項：
-- 在 **\[定價和可用性\]** 頁面的 **\[可見度\]** 區段，選取 [\[可搜尋性\]](choose-visibility-options.md#discoverability) 下方的 **\[在 Microsoft Store 推出此產品，但不供搜尋\]**。 選擇**只直接連結：任何使用產品的清單的直接連結的客戶可以下載它，除了在 Windows 上 8.x.**。
+- 在 **\[定價和可用性\]** 頁面的 **\[可見度\]** 區段，選取 [\[可搜尋性\]](choose-visibility-options.md#discoverability) 下方的 **\[在 Microsoft Store 推出此產品，但不供搜尋\]** 。 選擇**只直接連結：任何使用產品的清單的直接連結的客戶可以下載它，除了在 Windows 上 8.x.** 。
 - 在您發佈產品之後，將連結 ([應用程式身分識別頁面](view-app-identity-details.md)上的 **URL**) 散發給您的測試人員，讓他們可以試用。
 - 當您準備好公開提供您的應用程式時，請建立新的提交，並將 **\[可見度\]** 選項變更為 **\[在 Microsoft Store 推出此產品並可供搜尋\]** (以及您想要的其他任何變更) 即可。
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標設為 Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標設為 Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 ## <a name="targeted-distribution-to-windows-phone-customers-with-specified-email-addresses"></a>以具備指定的電子郵件地址的 Windows Phone 客戶為散佈目標
 

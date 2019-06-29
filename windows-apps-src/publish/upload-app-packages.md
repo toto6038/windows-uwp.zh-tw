@@ -6,19 +6,19 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10、 uwp、 封裝、 上傳、 封裝上傳
 ms.localizationpriority: medium
-ms.openlocfilehash: 07643b42a4c897c3af1865b895fb174e0eee4a3e
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 97735a8e860f7c941cc35d77a21496696683640f
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787934"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468883"
 ---
 # <a name="upload-app-packages"></a>上傳應用程式套件
 
 **封裝**頁面是您上傳的所有上傳您的應用程式套件檔案 （.msix、.msixupload、.msixbundle、.appx、.appxupload，及/或.appxbundle）。 您可以上傳您的所有套件的這個頁面上，相同的應用程式，當客戶下載您的應用程式時，存放區將會自動提供每個客戶與封裝最適合他們的裝置。 在您上傳套件之後，您會看到一個資料表以排序方式指出[哪個套件將提供給特定的 Windows 10 裝置系列](#device-family-availability) (以及舊版 OS，如果適用的話)。
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標 Windows 8.x/Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標 Windows 8.x/Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 如需有關套件內容及其建構方式的詳細資訊，請參閱[應用程式套件需求](app-package-requirements.md)。 您也會想要深入了解[如何版本號碼以影響哪些封裝傳遞至特定客戶](package-version-numbering.md)並[如何管理封裝各種案例](guidance-for-app-package-management.md)。
 
@@ -37,16 +37,16 @@ ms.locfileid: "63787934"
 
 ## <a name="device-family-availability"></a>裝置系列可用性
 
-在您的套件成功上傳之後，[裝置系列可用性] 區段會顯示一個資料表以排序方式指出哪個套件將提供給特定的 Windows 10 裝置系列 (以及舊版 OS，如果適用的話)。 本區段也可讓您選擇是否要針對特定 Windows 10 裝置系列的客戶提供提交。
+在您的套件成功上傳之後，[裝置系列可用性]  區段會顯示一個資料表以排序方式指出哪個套件將提供給特定的 Windows 10 裝置系列 (以及舊版 OS，如果適用的話)。 本區段也可讓您選擇是否要針對特定 Windows 10 裝置系列的客戶提供提交。
 
 如需詳細資訊，請參閱[裝置系列可用性](device-family-availability.md)。
 
 
 ## <a name="package-details"></a>套件詳細資料
 
-您已上傳的套件會列出在這裡，依目標作業系統分組。 系統將會顯示套件的名稱、版本及架構。 如需有關如每個套件支援的語言、App 功能，以及檔案大小的詳細資訊，可以按一下 [顯示詳細資料]。
+您已上傳的套件會列出在這裡，依目標作業系統分組。 系統將會顯示套件的名稱、版本及架構。 如需有關如每個套件支援的語言、App 功能，以及檔案大小的詳細資訊，可以按一下 [顯示詳細資料]  。
 
-如果您需要移除您提交的某個套件，可以按一下每個套件的 \[詳細資料\] 區段底部的 \[移除\] 連結。
+如果您需要移除您提交的某個套件，可以按一下每個套件的 \[詳細資料\] 區段底部的 \[移除\] 連結。  
 
 
 ## <a name="removing-redundant-packages"></a>移除重複的套件
@@ -58,14 +58,14 @@ ms.locfileid: "63787934"
 
 ## <a name="gradual-package-rollout"></a>漸進式套件推出
 
-如果您的提交是先前已發佈之 App 的更新，您會看到 [發佈此提交後漸進式推出更新 (僅限 Windows 10 客戶)] 核取方塊。 這可讓您選擇可從提交取得套件之客戶的百分比，這樣您就能監視意見反應與分析資料，以確保您在更廣泛地推出更新之前更有信心。 您隨時可以增加百分比 (或停止更新)，而不必建立新的提交。 
+如果您的提交是先前已發佈之 App 的更新，您會看到 [發佈此提交後漸進式推出更新 (僅限 Windows 10 客戶)]  核取方塊。 這可讓您選擇可從提交取得套件之客戶的百分比，這樣您就能監視意見反應與分析資料，以確保您在更廣泛地推出更新之前更有信心。 您隨時可以增加百分比 (或停止更新)，而不必建立新的提交。 
 
 如需詳細資訊，請參閱[漸進式套件推出](gradual-package-rollout.md)。
 
 
 ## <a name="mandatory-update"></a>強制更新
 
-如果您的提交是先前已發佈之 App 的更新，您會看到 [進行這項強制更新] 核取方塊。 這可讓您設定強制更新的日期與時間，假設您已經使用 Windows.Services.Store API 來讓您的 App 以程式設計方式檢查套件更新，以及下載和安裝已更新套件。 您的 App 必須以 Windows 10 版本 1607 或更新版本為目標，才能使用此選項。
+如果您的提交是先前已發佈之 App 的更新，您會看到 [進行這項強制更新]  核取方塊。 這可讓您設定強制更新的日期與時間，假設您已經使用 Windows.Services.Store API 來讓您的 App 以程式設計方式檢查套件更新，以及下載和安裝已更新套件。 您的 App 必須以 Windows 10 版本 1607 或更新版本為目標，才能使用此選項。
 
 如需詳細資訊，請參閱[下載與安裝 App 的套件更新](../packaging/self-install-package-updates.md)。
 

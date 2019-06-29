@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: df7c1bbbc77374b8afb4272e1d9618c8294a4b6e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1df93195578c1e7c6fd87ab7403375a1a3dcc825
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591853"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468904"
 ---
 # <a name="resolve-submission-errors"></a>解決提交錯誤
 
@@ -30,9 +30,9 @@ ms.locfileid: "57591853"
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 和更早版本
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標設為 Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標設為 Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
-在前置處理期間，當偵測到 Windows Phone 套件有問題時，您可能會看到**錯誤 2001**。 在大部分的情況下，您必須重建您的 app 套件來更正錯誤。 一旦完成，在您再次按一下 [提交至市集] 前，請先在提交的 [[套件](upload-app-packages.md)] 頁面上使用新套件取代舊套件。
+在前置處理期間，當偵測到 Windows Phone 套件有問題時，您可能會看到**錯誤 2001**。 在大部分的情況下，您必須重建您的 app 套件來更正錯誤。 一旦完成，在您再次按一下 [提交至市集]  前，請先在提交的 [[套件](upload-app-packages.md)] 頁面上使用新套件取代舊套件。
 
 造成此錯誤的問題有幾種。 請檢閱下列清單，判斷可能適用於您套件的問題。
 
@@ -49,7 +49,7 @@ ms.locfileid: "57591853"
 是否您看到錯誤指出**中封裝的名稱不是其中一個保留的應用程式名稱。請保留應用程式名稱及/或更新您的套件具有正確的應用程式名稱，此語言**，可能是因為您在套件中輸入的名稱不正確。 如果您使用應用程式名稱，您還沒有保留在合作夥伴中心，也會發生此錯誤。 您通常可以依照下列步驟解決這個錯誤：
 
 - 移至您 App 的 [應用程式身分識別](view-app-identity-details.md) 頁面 (在 **應用程式管理** 下)，確認您的 App 是否有指派的身分識別。 如果沒有，您會看到建立選項。 您必須保留您的應用程式名稱，才能建立身分識別。 請確定這是您在您的套件中使用的名稱。
-- 如果您的 App 已經有身分識別，您可能仍需要保留您想在您的套件中使用的名稱。 在 **應用程式管理** 下，按一下 [管理應用程式名稱](manage-app-names.md)。 輸入您想要使用的名稱，然後按一下 [保留應用程式名稱]。
+- 如果您的 App 已經有身分識別，您可能仍需要保留您想在您的套件中使用的名稱。 在 **應用程式管理** 下，按一下 [管理應用程式名稱](manage-app-names.md)。 輸入您想要使用的名稱，然後按一下 [保留應用程式名稱]  。
 
 > [!IMPORTANT]
 >  如果您想要使用的名稱無法使用，表示另一個 App 可能已經保留該名稱。 如果您的 App 已經使用該名稱發行，或如果您認為您有權使用該名稱，請[連絡客戶支援](https://go.microsoft.com/fwlink/p/?LinkId=331509)。  

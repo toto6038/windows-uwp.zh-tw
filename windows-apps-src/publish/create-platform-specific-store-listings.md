@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 自訂, 清單, 描述, 舊版
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c14ed3fa7f7f5f7d1b4c80bb8165b3f27e522a
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 2d9a9e86397ca5e85697543f99481b43f438a063
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63777702"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468971"
 ---
 # <a name="create-platform-specific-store-listings"></a>建立平台專屬的市集清單
 
@@ -21,7 +21,7 @@ ms.locfileid: "63777702"
 在 Windows 10 （包括 Xbox） 上的客戶一律會看到預設[存放區清單](create-app-store-listings.md)。 您不會看到建立平台專屬存放區清單，除非您已發佈您的應用程式，以支援一或多個較早的作業系統版本的套件的選項。 
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標 Windows 8.x/Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標 Windows 8.x/Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 如果您想要提及一個作業系統版本，只會出現的功能，或想要提供專屬於特定的作業系統 （而不是裝置型別） 的螢幕擷取畫面，平台專屬存放區清單相當實用。
 
@@ -49,7 +49,7 @@ ms.locfileid: "63777702"
 
 如果您建立平台專屬的 Microsoft Store 清單，並稍後決定您傾向在該作業系統上向客戶顯示您的預設 Microsoft Store 清單，請選取該清單旁的 **\[刪除\]** 連結。
 
-在確認您想要為這些客戶顯示預設 Microsoft Store 清單之後，選取 **\[確定\]**。 將會移除平台專屬的 Microsoft Store 清單 (針對其適用的所有語言)，該作業系統版本的客戶現在將會看到您的預設 Microsoft Store 清單。 如果您改變心意，可以依照上述步驟，為該作業系統建立另一個平台專屬的 Microsoft Store 清單。
+在確認您想要為這些客戶顯示預設 Microsoft Store 清單之後，選取 **\[確定\]** 。 將會移除平台專屬的 Microsoft Store 清單 (針對其適用的所有語言)，該作業系統版本的客戶現在將會看到您的預設 Microsoft Store 清單。 如果您改變心意，可以依照上述步驟，為該作業系統建立另一個平台專屬的 Microsoft Store 清單。
  
 
  

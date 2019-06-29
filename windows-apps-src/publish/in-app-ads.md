@@ -6,12 +6,12 @@ ms.date: 03/25/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bdcb8132052cd12444c192c93170fb2f8e94113a
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 989aecdd6c33599b38a53b68439dbf0f0d925040
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215219"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468938"
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -21,7 +21,7 @@ ms.locfileid: "66215219"
 * 舊版 Windows 8.x 和 Windows Phone 8.x 應用程式，使用[Microsoft Advertising SDK for Windows 和 Windows Phone 8.x](https://aka.ms/store-8-sdk)。
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標 Windows 8.x/Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標 Windows 8.x/Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 如需有關如何將這些 SDK 與應用程式整合來顯示廣告的詳細資訊，請參閱[使用 Microsoft Advertising SDK 在您的應用程式中顯示廣告](../monetize/display-ads-in-your-app.md)。
 
@@ -48,7 +48,7 @@ ms.locfileid: "66215219"
     * 如果為橫幅廣告單元選取 **\[電腦/平板電腦 (Windows 8.1)\]** 或 **\[行動裝置 (Windows Phone 8.x)\]** 裝置系列，您可以選擇性選取 **\[在應用程式中顯示社群廣告\]** 以選擇加入[社群廣告](about-community-ads.md)。
 
 7.  如果您尚未設定所選應用程式的 COPPA 合規性，請選擇 [COPPA 合規性](#coppa)區段中的選項。
-8.  按一下 [建立廣告單元]。
+8.  按一下 [建立廣告單元]  。
 
 建立新的 ad 單位之後，它會顯示可用的廣告單元，在資料表中**Monetize** &gt; **應用程式內廣告**頁面。
 

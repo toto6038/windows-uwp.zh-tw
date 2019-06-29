@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c75eb1a4b28b015b83557f74957a3370f478a26e
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: f514177ad5de7774e6926165435fd3b2d7b5e1f7
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790773"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468940"
 ---
 # <a name="guidance-for-app-package-management"></a>應用程式套件管理指導方針
 
@@ -31,7 +31,7 @@ ms.locfileid: "63790773"
 一般而言，較新的作業系統版本可以針對相同的裝置系列，執行以之前作業系統版本為目標的套件。 Windows 10 裝置可以執行所有先前支援的 OS 版本 （每個裝置系列）。 Windows 10 desktop 裝置可執行針對 Windows 8.1 或 Windows 8; 所建置的應用程式Windows 10 行動裝置可以執行應用程式建置的 Windows Phone 8.1、 Windows Phone 8 和甚至是 Windows Phone 7.x。 不過，在 Windows 10 上的客戶只會收到這些套件，如果應用程式不會包含以適用的裝置系列為目標的 UWP 套件。
 
 > [!IMPORTANT]
-> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標 Windows 8.x/Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/)。
+> 自 2018 年 10 月 31 日起，新建立的產品不能包含封裝目標 Windows 8.x/Windows Phone 8.x 或更早版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 
 ## <a name="removing-an-app-from-the-store"></a>從市集移除 App
@@ -45,7 +45,7 @@ ms.locfileid: "63790773"
 
 請注意，任何已擁有此 app 的客戶仍可使用它並可再次下載 (甚至可以在您於稍後提交新的套件時取得更新)。
 
-完成之後應用程式無法使用，您還是會看到它在合作夥伴中心。 如果您決定再次為客戶提供該 app，就可以按一下 [App 概觀] 頁面上的 [提供 App]。 當您確認之後，該 app 即可在數小時內提供給新的客戶使用 (除非受到您在最新提交中的設定所限制)。
+完成之後應用程式無法使用，您還是會看到它在合作夥伴中心。 如果您決定再次為客戶提供該 app，就可以按一下 [App 概觀] 頁面上的 [提供 App]  。 當您確認之後，該 app 即可在數小時內提供給新的客戶使用 (除非受到您在最新提交中的設定所限制)。
 
 > [!NOTE]
 > 如果您想保持應用程式的可用性，但不想繼續提供給使用特定作業系統版本的新客戶，您可以建立新的提交，並針對您想要在其上防止新取得的作業系統版本移除所有套件。 例如，如果您先前已有套件的 Windows Phone 8.1 和 Windows 10，且您不想要保留給 Windows Phone 8.1 上的新客戶提供應用程式，移除所有 Windows Phone 8.1 封裝提交。 更新發行之後，Windows Phone 8.1 上的任何新客戶將不能夠取得應用程式，但已經有它的客戶可以繼續使用它）。 不過，應用程式仍會適用於 Windows 10 上的新客戶。

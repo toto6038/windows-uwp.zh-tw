@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 749466e8ebce798f68295df28ad9f11a15e46702
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 69facfe9b1cdac408fe1fd63dfa144de072dfdfd
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365016"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468982"
 ---
 # <a name="responsive-layouts-with-xaml"></a>搭配 XAML 的回應式版面配置
 
@@ -22,7 +22,7 @@ XAML 版面配置系統提供自動調整大小、版面配置面板、視覺狀
 
 XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中，您提供控制項明確的像素大小與位置。 當使用者變更裝置的解析度或方向時，UI 不會變更。 靜態版面配置在不同的硬體規格、畫面大小中會遭到裁剪。 相反的，流暢的版面配置可縮小、放大和自動重排，以回應裝置上的可用視覺空間。 
 
-實際上，可以使用靜態與流暢元素的組合來建立 UI。 您仍然會在某些地方使用靜態元素與值，但請確定整體 UI 是否回應不同的解析度、螢幕大小及檢視。
+實際上，可以使用靜態與流暢元素的組合來建立 UI。 您仍然在某些地方，使用靜態項目和值，但請務必整體的 UI 會回應不同的解析度、 螢幕大小和檢視。
 
 我們將在此處討論如何使用 XAML 屬性和版面配置面板，建立流暢版面配置。
 
