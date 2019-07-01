@@ -6,18 +6,18 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 6153a0a094d03081388c15ec31696ef277ef7081
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 47cb292b1f5aeed9473cac0f27074f449dc67032
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215208"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414112"
 ---
 # <a name="modernize-your-desktop-apps"></a>讓您的傳統型應用程式現代化
 
 Windows 10 和通用 Windows 平台 (UWP) 提供許多功能，您可以用來在您的傳統型應用程式中傳遞新式體驗。 這些功能大部分都可作為模組化元件，您可以依照您自己的步調在傳統型應用程式中採用，不需要為了不同的平台而重新撰寫您的應用程式。 您可以藉由選擇要採用哪些部分的 Windows 10 和 UWP，來增強您現有的傳統型應用程式。
 
-本文說明您現在可以在您的傳統型應用程式中使用的 Windows 10 和 UWP 功能。
+本文說明您現在可以在您的傳統型應用程式中使用的 Windows 10 和 UWP 功能。 有關示範如何將現有的應用程式現代化，以使用本文中所述許多功能的教學課程，請參閱[將 WPF 應用程式現代化](modernize-wpf-tutorial.md)教學課程。
 
 > [!NOTE]
 > 您是否需要將傳統型應用程式遷移到 Windows 10 方面的協助？ [桌面應用程式保證](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure)服務為將應用程式移植到 Windows 10 的開發人員提供直接、無成本的支援。 這個方案適用於所有 ISV 和符合資格的企業。 如需方案本身資格的詳細資訊，請造訪 [https://aka.ms/DesktopAppAssure](https://aka.ms/DesktopAppAssure)。 若要立即開始使用，請[提交您的要求](https://aka.ms/DesktopAppAssureRequest)。
@@ -50,7 +50,7 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 
 ## <a name="host-uwp-controls-xaml-islands"></a>主機 UWP 控制項 (XAML Islands)
 
-從 Windows 10 1903 版開始，您可以直接將 [UWP XAML 控制項](/windows/uwp/design/controls-and-patterns/controls-by-function)新增至 WPF、Windows Forms 或 C++ Win32 應用程式的任何 UI 元素 (與視窗控制代碼 (HWND) 相關聯)。 這表示您可以將最新的 UWP 功能 (例如 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions))，與支援 [Fluent Design 系統](/windows/uwp/design/fluent-design-system/index)的控制項，完全整合至傳統型應用程式中的視窗和其他顯示表面。 此開發人員案例有時候稱為 XAML islands。
+從 Windows 10 1903 版開始，您可以直接將 [UWP XAML 控制項](/windows/uwp/design/controls-and-patterns/controls-by-function)新增至 WPF、Windows Forms 或 C++ Win32 應用程式的任何 UI 元素 (與視窗控制代碼 (HWND) 相關聯)。 這表示您可以將最新的 UWP 功能 (例如 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions))，與支援 [Fluent Design 系統](/windows/uwp/design/fluent-design-system/index)的控制項，完全整合至傳統型應用程式中的視窗和其他顯示表面。 此開發人員案例有時候稱為 XAML islands  。
 
 如需詳細資訊，請參閱[傳統型應用程式中的 UWP 控制項](xaml-islands.md)
 
