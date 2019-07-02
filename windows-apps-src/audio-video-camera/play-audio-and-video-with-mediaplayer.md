@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d25cd3f8a963d85f704e32482475827462ddba58
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3d2d95711196a9bf2ab113527e5fc8f44459dc3d
+ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318267"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486435"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>使用 MediaPlayer 播放音訊和視訊
 
@@ -189,7 +189,7 @@ ms.locfileid: "67318267"
 ## <a name="play-spherical-video-with-mediaplayer"></a>使用 MediaPlayer 播放球面視訊
 從 Windows 10 版本 1703 開始，**MediaPlayer**支援進行球面視訊播放的等距長方投影。 球面視訊內容與一般視訊不同，差異在於**MediaPlayer**只要支援視訊編碼，就會轉譯視訊。 如果球面視訊包含指定視訊使用等距長方投影的中繼資料標記，則**MediaPlayer**可以使用指定的視野範圍和檢視方向來轉譯視訊。 這會啟用具有頭戴式顯示器的虛擬實境視訊播放這類案例，或是只讓使用者透過滑鼠或鍵盤輸入移動瀏覽球面視訊內容。
 
-若要播放球面視訊，請使用用於播放本文先前所述視訊內容的步驟。 一個額外的步驟是註冊 [**MediaPlayer.MediaOpened**])https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) 事件的處理常式。 這個事件可讓您啟用和控制球面視訊播放參數。
+若要播放球面視訊，請使用用於播放本文先前所述視訊內容的步驟。 一個額外的步驟是註冊的處理常式[ **MediaPlayer.MediaOpened** ](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened)事件。 這個事件可讓您啟用和控制球面視訊播放參數。
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 

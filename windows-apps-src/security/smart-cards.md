@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 5498480e0dbe2c8be96d92df766b15676a3e6b7b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ff17facbb22e4e336b302415b0b64d0dffda93e0
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371928"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498890"
 ---
 # <a name="smart-cards"></a>智慧卡
 
@@ -82,6 +82,9 @@ SmartCardProvisioning provisioning = await
 ```
 
 在 [**RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync) 傳回關聯的 [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) 物件後，虛擬智慧卡便已佈建完成並可供使用。
+
+>[!NOTE]
+>若要建立虛擬智慧卡使用 UWP 應用程式，執行應用程式的使用者必須是 administrators 群組的成員。 如果使用者不是 administrators 群組的成員，虛擬智慧卡建立會失敗。
 
 ## <a name="handle-authentication-challenges"></a>因應驗證挑戰
 

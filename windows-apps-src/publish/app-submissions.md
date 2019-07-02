@@ -6,12 +6,12 @@ keywords: 檢查清單, windows, uwp, 提交項目, 提交, 遊戲, 應用程式
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe5d44823821208a2384aec9d66037c4da3865f
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 7c535b77c68f4375f70fe344165f96d66a551eaf
+ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468922"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486417"
 ---
 # <a name="app-submissions"></a>應用程式提交
 
@@ -96,10 +96,8 @@ ms.locfileid: "67468922"
 | **螢幕擷取畫面**               | 必要 (至少一個螢幕擷取畫面，建議提供四個或更多)          | [螢幕擷取畫面](app-screenshots-and-images.md#screenshots)          |
 | **市集標誌**               | 建議使用；某些 OS 版本為必要 | [市集標誌](app-screenshots-and-images.md#store-logos)             |
 | **結尾**                  | 選擇性                                    | [結尾](app-screenshots-and-images.md#trailers)                | 
-| **Windows 10 和 Xbox 的映像 （16:9 進階 hero 圖案）**     | 建議        | [Windows 10 和 Xbox 映像 （16:9 進階 hero 圖案）
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
-| **Xbox 映像**     | 如果您發行至 Xbox，需要正確地顯示        | [Xbox 映像
-](app-screenshots-and-images.md#xbox-images) |
+| **Windows 10 和 Xbox 的映像 （16:9 進階 hero 圖案）**     | 建議        | [Windows 10 和 Xbox 的映像 （16:9 進階 hero 圖案）](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Xbox 映像**     | 如果您發行至 Xbox，需要正確地顯示        | [Xbox 映像](app-screenshots-and-images.md#xbox-images) |
 | **補充的欄位**  | 選擇性                                    | [補充的欄位](create-app-store-listings.md#supplemental-fields) 
 | **搜尋字詞**              | 選擇性                                    | [搜尋字詞](create-app-store-listings.md#search-terms)         |
 | **著作權及商標資訊** | 選擇性                                 | [著作權及商標資訊](create-app-store-listings.md#copyright-and-trademark-info) |
