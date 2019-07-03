@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dbb06f53f760724da312e00f545d799d6a24200
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 991d86dd61c660553e5b0a3fdbbdec0336c7fb8b
+ms.sourcegitcommit: d63e5a4fd24434068067cae5b8fb3bed4931247e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321575"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67515158"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>啟用使用者模式存取 GPIO、I2C 和 SPI
 
@@ -268,7 +268,7 @@ SupportedDriveModes 屬性會指出 GPIO 控制器支援的驅動模式。 在�
 Windows 支援兩種針腳編號配置︰
 
 * 連續針腳編號 – 使用者可見的數字 0、1、2...至多不超過已公開針腳的數目。 0 為 ASL 中宣告的第一個 GpioIo 資源，1 為 ASL 中宣告的第二個 GpioIo 資源，以下類推。
-* 原生針腳編號 – 使用者會看見在 GpioIo 描述元中指定的針腳編號，例如 4、5、12、13...。
+* 原生的 Pin 編號 – 使用者看到中 GpioIo 描述元，例如 4，5，12，13，指定的 pin 號碼...
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
