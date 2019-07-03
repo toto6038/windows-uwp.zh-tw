@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bc879e43d7e117a4e61e8b6de4bb5437d126e84b
-ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
+ms.openlocfilehash: 8cf010533d2d62559bb8dc0d214e04ab917e62bd
+ms.sourcegitcommit: d534f81590d881a18d677a648c59913029837a84
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67325848"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67535440"
 ---
 # <a name="bringing-it-together"></a>組合在一起
 
@@ -26,16 +26,13 @@ ms.locfileid: "67325848"
 
 :::row:::
     :::column:::
-        **Implicit animation**
-        Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.
+**隱含的動畫**自動 tween 和參數變更以達到非常簡單 Fluent 運行時使用的標準化的值的值之間的時間。
     :::column-end:::
     :::column:::
-        **Built-in animation**
-        System components, such as common controls and shared motion, are "Fluent by default". Fundamentals have been applied in a manner consistent with their implied usage.
+**內建動畫**系統元件，例如通用控制項和共用的影片是 「 預設的 Fluent"。 已在其隱含的使用方式與一致的方式套用基本概念。
     :::column-end:::
     :::column:::
-        **Custom animation following guidance recommendations**
-        There may be times when the system does not yet provide an exact motion solution for your scenario. In those cases, use the baseline fundamental recommendations as a starting point for your experiences.
+**下列指引建議的自訂動畫**有時候可能會當系統尚未提供的確切動作解決方案針對您的案例。 在這些情況下，使用做為起點的基準基本建議用於您的體驗。
     :::column-end:::
 :::row-end:::
 
@@ -45,16 +42,14 @@ ms.locfileid: "67325848"
 
 :::row:::
     :::column:::
-        <b>Direction Forward Out:</b><br>
-        Fade out: 150m; Easing: Default Accelerate
-        <b>Direction Forward In:</b><br>
-        Slide up 150px: 300ms; Easing: Default Decelerate
+<b>正向外方向：</b><br>
+淡出：150 m;簡化：預設加速<b>邁向中的方向：</b><br>
+投影片 150px 組成：300 毫秒。簡化：預設減速
     :::column-end:::
     :::column:::
-         <b>Direction Backward Out:</b><br>
-        Slide down 150px: 150ms; Easing: Default Accelerate
-        <b>Direction Backward In:</b><br>
-        Fade in: 300ms; Easing: Default Decelerate
+<b>回溯時的方向：</b><br>
+投影片 150px 下：150ms;簡化：預設加速<b>回溯中的方向：</b><br>
+淡入：300 毫秒。簡化：預設減速
     :::column-end:::
 :::row-end:::
 
@@ -64,12 +59,12 @@ ms.locfileid: "67325848"
 
 :::row:::
     :::column:::
-        <b>Direction Expand:</b><br>
-        Grow: 300ms; Easing: Standard
+<b>展開的方向：</b><br>
+增加：300 毫秒。簡化：Standard
     :::column-end:::
     :::column:::
-        <b>Direction Contract:</b><br>
-        Grow: 150ms; Easing: Default Accelerate
+<b>方向合約：</b><br>
+增加：150ms;簡化：預設加速
     :::column-end:::
 :::row-end:::
 
