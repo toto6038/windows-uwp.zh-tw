@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 20cb1e3162f0c852a60c620be92afd37ad9f8232
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: eef1c3dd50f06d38023102122cc7fc63a36df25c
+ms.sourcegitcommit: 3ec8c1d0ea3798cdb2745e7a941a025cf3cf21c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317276"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650789"
 ---
 # <a name="keyboard-interactions"></a>鍵盤互動
 
@@ -369,7 +369,7 @@ UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組
 UWP 鍵盤行為以及「朗讀程式」支援的鍵盤行為之間的一些差異包括：
 -   額外的按鍵組合，用來瀏覽到未透過標準鍵盤瀏覽所公開的 UI 元素，例如 Caps lock + 方向鍵來朗讀控制項標籤。
 -   瀏覽到停用的項目。 根據預設，停用的項目不會透過標準鍵盤瀏覽公開。
-    -   根據 UI 細微度，更快速地瀏覽的控制項「檢視」。 使用者可以瀏覽到項目、字元、字詞、行、段落、連結、標題、表格、地標及建議。 標準鍵盤瀏覽將這些物件公開為一般清單，這可能會使瀏覽變得麻煩，除非您提供快速鍵。
+-   根據 UI 細微度，更快速地瀏覽的控制項「檢視」。 使用者可以瀏覽到項目、字元、字詞、行、段落、連結、標題、表格、地標及建議。 標準鍵盤瀏覽將這些物件公開為一般清單，這可能會使瀏覽變得麻煩，除非您提供快速鍵。
 
 #### <a name="case-study--autosuggestbox-control"></a>案例研究 – AutoSuggestBox 控制項
 
@@ -485,16 +485,21 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 如所述，您應該嘗試確保方向式巡覽對應至您的應用程式 UI 中的控制項順序。
 
-某些控制項，例如 ContextMenu、 AppBarOverflowMenu，以及自動建議，包括位置和方向相對於主要控制項 （根據可用的螢幕空間） 中顯示快顯功能表。 例如，當空間不足以讓功能表向下開啟時（預設方向），它會向上開啟。 並不保證功能表每一次都會以相同方向開啟。
+某些控制項 （例如操作功能表 CommandBar 溢位功能表和自動建議功能表），會顯示快顯功能表中的位置和方向 （向下依預設） 相對於主要的控制項和可用的螢幕空間。 請注意，開啟方向可能會受到各種因素在執行階段。
 
 <table>
   <td><img src="images/keyboard/command-bar-open-down.png" alt="command bar opens down with down arrow key" /></td>
   <td><img src="images/keyboard/command-bar-open-up.png" alt="command bar opens up with down arrow key" /></td>
 </table>
 
-對於這些控制項，當功能表已先開啟（而且使用者尚未選取任何項目），向下鍵永遠將焦點設定在第一個項目，而向上鍵永遠將焦點設定在功能表中的最後一個項目。 同樣地，當已選取最後一個項目並按下向下鍵時，焦點移至功能表中的第一個項目，當已選取第一個項目並按下向上鍵時，焦點移至功能表中的最後一個項目。
+這些控制項中，功能表第一次開啟 （與使用者已不選取任何項目），向下鍵一律將焦點設第一個項目時向上鍵一律焦點設定到最後一個項目在功能表上。 
 
-您應該嘗試在自訂控制項中模擬這些相同行為。 如何實作此行為的程式碼範例可在[程式設計的焦點瀏覽](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element)文件。
+如果最後一個項目擁有焦點且按下向下鍵，焦點會移至第一個項目在功能表上。 同樣地，如果第一個項目擁有焦點且按下向上鍵，焦點會移到最後一個項目在功能表上。 此行為指*循環*和適合用來瀏覽可以在無法預期的方向中開啟的快顯功能表。
+
+> [!NOTE]
+> 使用者可能會覺得送交永無止盡的迴圈中的非快顯 Ui 中應避免循環。 
+
+我們建議您在您的自訂控制項，模擬這些相同的行為。 如何實作此行為的程式碼範例可在[程式設計的焦點瀏覽](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element)文件。
 
 ## <a name="test-your-app"></a>測試您的應用程式
 
@@ -504,7 +509,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 * [鍵盤事件](keyboard-events.md)
 * [識別輸入裝置](identify-input-devices.md)
 * [回應觸控式鍵盤的目前狀態](respond-to-the-presence-of-the-touch-keyboard.md)
-* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895) \(英文\)
 
 ## <a name="appendix"></a>附錄
 
@@ -540,7 +545,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 -   功能表列
 -   Menu item
 -   工具列
--   清單
+-   List
 -   清單項目
 
 以下是觸控式鍵盤各種模式的範例。 第一個影像是預設版面配置，第二個是拇指版面配置 (不是所有語言都有提供)。
