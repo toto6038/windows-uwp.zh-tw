@@ -7,7 +7,7 @@ keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ae65d13f92f5ab28f2f5eda468032bb7f83793
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57594663"
@@ -58,7 +58,7 @@ MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.msix
 ```
 請注意，此處的 AppxManifest（商標檔案）中所參照的所有檔案無法移到資產套件 – 必須在架構套件上複製這些檔案。 資產套件也不應該包含 resources.pri；MRT 不能用來存取資產套件檔案。 若要了解更多有關如何存取資產套件檔案和資產套件需要應用程式安裝到 NTFS 磁碟機的原因，請查看[使用資產套件與套件摺疊進行開發](Package-Folding.md)。
 
-若要控制是否允許資產套件執行，您可以使用 AppxManifest 的**Properties**元素中的**[uap6:AllowExecution](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution)**。您必須也新增**uap6**至最上層 **Package** 元素，變得下列項目： 
+若要控制是否允許資產套件執行，您可以使用 AppxManifest 的**Properties**元素中的 **[uap6:AllowExecution](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution)** 。您必須也新增 **uap6** 至最上層 **Package** 元素，變得下列項目： 
 
 ```XML
 <Package IgnorableNamespaces="uap uap6" 
