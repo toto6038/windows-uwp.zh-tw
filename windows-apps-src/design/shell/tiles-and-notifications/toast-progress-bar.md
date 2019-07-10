@@ -3,16 +3,16 @@ Description: 了解如何使用進度列在您的快顯通知。
 title: 快顯通知進度列和資料繫結
 label: Toast progress bar and data binding
 template: detail.hbs
-ms.date: 12/7/2017
+ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 進度列, 快顯通知進度列, 通知, 快顯通知資料繫結
 ms.localizationpriority: medium
-ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 742270a4cdc6cbbc9eed0879e30b3e7066722f05
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624823"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714107"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>快顯通知進度列和資料繫結
 
@@ -32,7 +32,7 @@ ms.locfileid: "57624823"
 
 <img alt="Toast with progress bar properties labeled" src="images/toast-progressbar-annotated.png" width="626"/>
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | type | 必要項 | 描述 |
 |---|---|---|---|
 | **標題** | string 或 [BindableString](toast-schema.md#bindablestring) | false | 取得或設定選用標題字串。 支援資料繫結。 |
 | **值** | double 或 [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 取得或設定進度列的值。 支援資料繫結。 預設為 0。 可以是之間 0.0 和 1.0 之間的 double、`AdaptiveProgressBarValue.Indeterminate` 或 `new BindableProgressBarValue("myProgressValue")`。 |

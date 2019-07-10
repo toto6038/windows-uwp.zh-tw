@@ -5,20 +5,20 @@ title: 全球化與當地語系化
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.date: 12/7/2018
+ms.date: 12/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e9e0f6305a99b6e3ab83cb3b560754f2e4d310f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 91396051ec822f469e300f51217191fc4e704cac
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648223"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714043"
 ---
 # <a name="globalization-and-localization"></a>全球化與當地語系化
 
-全球不同語言、地區和文化的對象都使用 Windows。 您的使用者使用各種不同的語言，居住在各種不同的國家和地區。 有些使用者甚至會說一種以上的語言。 因此，您的應用程式是根據包含許多語言、地區及文化系統設定變更的設定執行的。 您可以藉由使用「全球化」和「當地語系化」來設計您的應用程式，使其能做出調整，提升應用程式的潛在市場。
+全球不同語言、地區和文化的對象都使用 Windows。 您的使用者使用各種不同的語言，居住在各種不同的國家和地區。 有些使用者甚至會說一種以上的語言。 因此，您的應用程式是根據包含許多語言、地區及文化系統設定變更的設定執行的。 您可以藉由使用「全球化」  和「當地語系化」  來設計您的應用程式，使其能做出調整，提升應用程式的潛在市場。
 
 這段影片中有關如何準備您的應用程式的世界提供簡短的簡介：[全球化和當地語系化簡介](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)。
 
@@ -29,7 +29,7 @@ ms.locfileid: "57648223"
 - 使用全球化 API 顯示針對國家或地區適當格式化的資料，例如數字、日期、時間和貨幣。
 - 考慮不同文化在整理 (排序) 文字和其他資料時有不同的規則。
 
-您的程式碼必須在任何您應用程式決定支援的文化中都能正常運作。 理想情況下，您的程式碼會在「任何」語言、地區或文化內容中正常運作。 全球化您應用程式功能最有效率的方法，便是使用文化/地區設定概念。 文化/地區設定是一組規則和一組資料，專屬於特定語言和地理區域。 這些規則和資料包括下列資訊。
+您的程式碼必須在任何您應用程式決定支援的文化中都能正常運作。 理想情況下，您的程式碼會在「任何」  語言、地區或文化內容中正常運作。 全球化您應用程式功能最有效率的方法，便是使用文化/地區設定概念。 文化/地區設定是一組規則和一組資料，專屬於特定語言和地理區域。 這些規則和資料包括下列資訊。
 
 - 字元分類
 - 書寫系統

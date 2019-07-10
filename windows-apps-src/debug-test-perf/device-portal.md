@@ -2,16 +2,16 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal 概觀
 description: 了解 Windows Device Portal 如何讓您從遠端透過網路或 USB 連線來設定及管理您的裝置。
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 59e7e46ea68f6bb5fe7fd63e6ac35b9256103c38
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1f776a9d0ffe15f4bec26fbf8a26ce52a73345e9
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317904"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713870"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 
@@ -45,11 +45,11 @@ Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 
 如需裝置特定的安裝指示，請參閱︰
 
-- [HoloLens 裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [Iot 裝置入口網站](https://go.microsoft.com/fwlink/?LinkID=616499)
-- [行動裝置的裝置入口網站](device-portal-mobile.md)
-- [Xbox 裝置入口網站](../xbox-apps/device-portal-xbox.md)
-- [適用於桌面裝置入口網站](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
+- [HoloLens 的裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
+- [IoT 的裝置入口網站](https://go.microsoft.com/fwlink/?LinkID=616499)
+- [行動裝置的行動裝置](device-portal-mobile.md)
+- [Xbox 的裝置入口網站](../xbox-apps/device-portal-xbox.md)
+- [傳統型裝置的裝置入口網站](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
 ## <a name="features"></a>功能
 
@@ -201,7 +201,7 @@ ETW 記錄頁面管理此裝置上的即時事件追蹤的 Windows (ETW) 資訊�
 
 Device Portal 會使用 DNS-SD 在區域網路上公告其目前狀態。 所有的 Device Portal 執行個體都會在 "WDP._wdp._tcp.local" 底下公告，不論其裝置類型為何。 服務執行個體的 TXT 記錄會提供下列項目：
 
-Key | 類型 | 描述
+Key | type | 描述
 ----|------|-------------
 S | ssNoversion | Device Portal 的安全連接埠。 如果為 0 (零)，Device Portal 不會接聽 HTTPS 連線。
 D | 字串 | 裝置類型。 格式將為 "Windows.*"，例如 Windows.Xbox 或 Windows.Desktop

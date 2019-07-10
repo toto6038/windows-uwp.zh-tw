@@ -3,12 +3,13 @@ description: ''
 title: 做為物件的內容
 template: detail.hbs
 ms.localizationpriority: medium
-ms.openlocfilehash: ed2ac8530d69929cc0e0e921cfb1cc5368058cd2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.date: 04/18/2019
+ms.openlocfilehash: b73e595454121fa34b536f3672c75a5c554ee0f3
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593113"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714023"
 ---
 # <a name="content-as-objects"></a>做為物件的內容
 
@@ -16,7 +17,7 @@ ms.locfileid: "57593113"
 
 您可以操控元素的深度，或圖層順序，建立視覺階層，其協助有助於您更容易使用應用程式。  
 
-> 注意：這篇文章是針對 Windows 10 RS2 新功能的早期草稿。 功能名稱、詞彙和功能尚未定案。 
+> 注意:這篇文章是針對 Windows 10 RS2 新功能的早期草稿。 功能名稱、詞彙和功能尚未定案。 
 
 ## <a name="why-visual-hierarchy-is-important"></a>視覺階層很重要的原因
 

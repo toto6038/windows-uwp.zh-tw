@@ -2,16 +2,16 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Windows 桌面的裝置入口網站
 description: 了解 Windows Device Portal 如何在 Windows 桌面上開啟診斷與自動化功能。
-ms.date: 02/6/2019
+ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe1f2a51199dd12cd1d285c17c5d48c9a25b969
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 00cf497d5d57f5a3cdc5c52ecfeead7885ff7d56
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654523"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713804"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows 桌面的裝置入口網站
 
@@ -115,9 +115,9 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 
 1. 瀏覽至**設定 > 更新與安全性 > Windows 測試人員計畫**並確認**Windows 測試人員帳戶**區段具有正確的帳戶資訊。 如果您沒有看到該區段，選取**連結 Windows 測試人員帳戶**中，新增您的電子郵件帳戶，並確認它在底下會出現**Windows 測試人員帳戶**標題 (您可能需要選取**Windows 測試人員帳戶連結**實際連結時間第二個新增的帳戶)。
  
-2. 底下**您要接收何種內容？**，請確定**進行開發的 Windows**已選取。
+2. 底下**您要接收何種內容？** ，請確定**進行開發的 Windows**已選取。
  
-3. 底下**您想要取得新的組建步調為何？**，請確定**快速 Windows Insider**已選取。
+3. 底下**您想要取得新的組建步調為何？** ，請確定**快速 Windows Insider**已選取。
  
 4. 您現在應該能夠安裝 FoDs。 如果您已確認，在 快速 Windows 測試人員和仍然無法安裝 FoDs、 請提供意見反應和附加記錄檔底下**C:\Windows\Logs\CBS**。
 
@@ -129,7 +129,7 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 
 如果您是在計量付費網際網路連線，您可能會發生此錯誤。 您將無法下載付費連線上的開發人員套件。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Windows Device Portal 概觀](device-portal.md)
 * [裝置入口網站 core API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

@@ -2,16 +2,16 @@
 title: 遊戲控制器的登錄資料
 description: 深入了解您可以新增至 PC 登錄的資料，讓控制器可用於 UWP 遊戲中。
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, games, input, registry, custom, 遊戲, 輸入, 登錄, 自訂
 ms.localizationpriority: medium
-ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 30c1f0d8c9fac09d071d158563c964c6a598e073
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244394"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714055"
 ---
 # <a name="registry-data-for-game-controllers"></a>遊戲控制器的登錄資料
 
@@ -31,7 +31,7 @@ ms.locfileid: "59244394"
 <table>
     <tr>
         <th>名稱</th>
-        <th>類型</th>
+        <th>type</th>
         <th>必要項？</th>
         <th>資訊</th>
     </tr>
@@ -60,7 +60,7 @@ ms.locfileid: "59244394"
 
 ### <a name="gamepad"></a>遊戲台
 
-下表列出 \[Gamepad\] 子機碼下方的必要與選擇性子機碼：
+下表列出 \[Gamepad\]  子機碼下方的必要與選擇性子機碼：
 
 <table>
     <tr>
@@ -173,7 +173,7 @@ ms.locfileid: "59244394"
 
 ### <a name="racingwheel"></a>RacingWheel
 
-下表列出 \[RacingWheel\] 子機碼下方的必要與選擇性子機碼：
+下表列出 \[RacingWheel\]  子機碼下方的必要與選擇性子機碼：
 
 <table>
     <tr>
@@ -332,7 +332,7 @@ ms.locfileid: "59244394"
 
 ### <a name="arcadestick"></a>ArcadeStick
 
-下表列出 \[ArcadeStick\] 子機碼下方的必要與選擇性子機碼：
+下表列出 \[ArcadeStick\]  子機碼下方的必要與選擇性子機碼：
 
 <table>
     <tr>
@@ -393,7 +393,7 @@ ms.locfileid: "59244394"
 
 ### <a name="flightstick"></a>FlightStick
 
-下表列出 \[FlightStick\] 子機碼下方的必要與選擇性子機碼：
+下表列出 \[FlightStick\]  子機碼下方的必要與選擇性子機碼：
 
 <table>
     <tr>
@@ -436,7 +436,7 @@ ms.locfileid: "59244394"
 
 ### <a name="uinavigation"></a>UINavigation
 
-下表列出 \[UINavigation\] 子機碼下方的必要與選擇性子機碼：
+下表列出 \[UINavigation\]  子機碼下方的必要與選擇性子機碼：
 
 <table>
     <tr>
@@ -547,15 +547,15 @@ ms.locfileid: "59244394"
 
 ## <a name="keys"></a>按鍵
 
-以下幾節說明 \[Gamepad\]、\[RacingWheel\]、\[ArcadeStick\]、\[FlightStick\] 及 \[UINavigation\] 機碼下方每個子機碼的內容。
+以下幾節說明 \[Gamepad\]  、\[RacingWheel\]  、\[ArcadeStick\]  、\[FlightStick\]  及 \[UINavigation\]  機碼下方每個子機碼的內容。
 
 ### <a name="button-mapping"></a>按鈕對應
 
-下表列出必須對應按鈕的值。 例如，如果按下遊戲控制器上的 \[DPadUp\]，\[DPadUp\] 的對應則應包含 \[ButtonIndex\] 值 (\[Source\] 為 \[Button\])。 如果 \[DPadUp\] 必須從切換位置對應，\[DPadUp\] 對應則應包含 \[SwitchIndex\] 與 \[SwitchPosition\] 值 (\[Source\] 為 \[Switch\])。
+下表列出必須對應按鈕的值。 例如，如果按下遊戲控制器上的 \[DPadUp\]  ，\[DPadUp\]  的對應則應包含 \[ButtonIndex\]  值 (\[Source\]  為 \[Button\]  )。 如果 \[DPadUp\]  必須從切換位置對應，\[DPadUp\]  對應則應包含 \[SwitchIndex\]  與 \[SwitchPosition\]  值 (\[Source\]  為 \[Switch\]  )。
 
 <table>
     <tr>
-        <th>原始程式檔</th>
+        <th>Source</th>
         <th>值名稱</th>
         <th>值類型</th>
         <th>必要項？</th>
@@ -635,7 +635,7 @@ ms.locfileid: "59244394"
 
 <table>
     <tr>
-        <th>原始程式檔</th>
+        <th>Source</th>
         <th>值名稱</th>
         <th>值類型</th>
         <th>必要項？</th>
@@ -802,11 +802,11 @@ ms.locfileid: "59244394"
 
 ### <a name="switch-mapping"></a>切換對應
 
-可從 \[RawGameController\] 其按鈕陣列中的一組按鈕或從切換陣列中的索引來對應切換位置。 無法從軸對應切換位置。
+可從 \[RawGameController\]  其按鈕陣列中的一組按鈕或從切換陣列中的索引來對應切換位置。 無法從軸對應切換位置。
 
 <table>
     <tr>
-        <th>原始程式檔</th>
+        <th>Source</th>
         <th>值名稱</th>
         <th>值類型</th>
         <th>值資訊</th>
@@ -820,7 +820,7 @@ ms.locfileid: "59244394"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>、<b>FourWay</b> 或 <b>EightWay</b>
+        <td><b>TwoWay</b>，<b>通訊組織十字路</b>，或<b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -1047,11 +1047,11 @@ ms.locfileid: "59244394"
 
 ## <a name="labels"></a>標籤
 
-標籤應出現在裝置根位置下方 \[Labels\] 鍵值之下。 **標籤**可以有 3 個子機碼：**按鈕**，**軸**，以及**交換器**。
+標籤應出現在裝置根位置下方 \[Labels\]  鍵值之下。 **標籤**可以有 3 個子機碼：**按鈕**，**軸**，以及**交換器**。
 
 ### <a name="button-labels"></a>按鈕標籤
 
-\[Buttons\] 機碼會將 \[RawGameController\] 其按鈕陣列中的每個按鈕位置對應至字串。 系統會在內部將每個字串對應至對應的 [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) 列舉值。 例如，如果遊戲台上有十個按鈕，且 **RawGameController** 剖析出按鈕並在按鈕報告中呈現按鈕的順序為：
+\[Buttons\]  機碼會將 \[RawGameController\]  其按鈕陣列中的每個按鈕位置對應至字串。 系統會在內部將每個字串對應至對應的 [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) 列舉值。 例如，如果遊戲台上有十個按鈕，且 **RawGameController** 剖析出按鈕並在按鈕報告中呈現按鈕的順序為：
 
 ```cpp
 Menu,               // Index 0
@@ -1066,7 +1066,7 @@ LeftBumper,         // Index 8
 RightBumper         // Index 9
 ```
 
-標籤應在 \[Buttons\] 機碼下方以此順序顯示：
+標籤應在 \[Buttons\]  機碼下方以此順序顯示：
 
 <table>
     <tr>
@@ -1117,11 +1117,11 @@ RightBumper         // Index 9
 
 ### <a name="axis-labels"></a>軸標籤
 
-\[Axes\] 機碼會將 \[RawGameController\] 其軸陣列中的每個軸位置對應至在 [GameControllerButtonLabel 列舉](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) (英文) 中所列的其中一個標籤，就如同按鈕標籤。 請參閱[按鈕標籤](#button-labels)中的範例。
+\[Axes\]  機碼會將 \[RawGameController\]  其軸陣列中的每個軸位置對應至在 [GameControllerButtonLabel 列舉](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) (英文) 中所列的其中一個標籤，就如同按鈕標籤。 請參閱[按鈕標籤](#button-labels)中的範例。
 
 ### <a name="switch-labels"></a>切換標籤
 
-\[Switches\] 機碼會將切換位置對應至標籤。 這些值遵循此命令慣例：若要將其索引在 \[RawGameController\] 的切換陣列中為 \[x\] 的切換位置設定標籤，則在 \[Switches\] 子機碼下方新增這些值：
+\[Switches\]  機碼會將切換位置對應至標籤。 這些值遵循此命令慣例：若要將其索引在 \[RawGameController\]  的切換陣列中為 \[x\]  的切換位置設定標籤，則在 \[Switches\]  子機碼下方新增這些值：
 
 * SwitchxUp
 * SwitchxUpRight
@@ -1132,7 +1132,7 @@ RightBumper         // Index 9
 * SwitchxUpLeft
 * SwitchxLeft
 
-下表顯示 4 向切換其切換位置的一組範例標籤，該切換會在 \[RawGameController\] 的索引 0 處顯示：
+下表顯示 4 向切換其切換位置的一組範例標籤，該切換會在 \[RawGameController\]  的索引 0 處顯示：
 
 <table>
     <tr>
@@ -1230,7 +1230,7 @@ RightBumper         // Index 9
 
 ## <a name="example-registry-file"></a>範例登錄檔案
 
-為了顯示這些對應與值如何全部集結在一起，以下是一般 \[RacingWheel\] 的範例登錄檔案：
+為了顯示這些對應與值如何全部集結在一起，以下是一般 \[RacingWheel\]  的範例登錄檔案：
 
 ```text
 Windows Registry Editor Version 5.00

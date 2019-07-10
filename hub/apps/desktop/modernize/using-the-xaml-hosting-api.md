@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 16f61c1f950583ee0fef7f30b7e17939df7ea538
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fa38c952d4d46d83ea9b4e9f0db5f516fe09ce59
+ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317762"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690894"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用桌面應用程式中裝載 API UWP XAML
 
-從 Windows 10 版本 1903年、 非 UWP 桌面應用程式 (包括 WPF、 Windows Form 和C++Win32 應用程式) 可以使用*UWP XAML 裝載 API*來裝載任何相關聯的 UI 項目中的 UWP 控制項視窗控制代碼 (HWND)。 此 API 可讓非 UWP 桌面應用程式使用最新的 Windows 10 UI 功能，只可透過 UWP 控制項。 例如，非 UWP 桌面應用程式可以使用此 API 使用的主機 UWP 控制項[Fluent Design System](/windows/uwp/design/fluent-design-system/index)且支援[Windows Ink](/windows/uwp/design/pen-and-stylus-interactions)。
+從 Windows 10 版本 1903年、 非 UWP 桌面應用程式 (包括 WPF、 Windows Form 和C++Win32 應用程式) 可以使用*UWP XAML 裝載 API*來裝載任何相關聯的 UI 項目中的 UWP 控制項視窗控制代碼 (HWND)。 此 API 可讓非 UWP 桌面應用程式使用最新的 Windows 10 UI 功能，只可透過 UWP 控制項。 例如，非 UWP 桌面應用程式可以使用此 API 使用的主機 UWP 控制項[Fluent Design System](/windows/uwp/design/fluent-design-system/index)且支援[Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions)。
 
 裝載 API UWP XAML 提供廣泛的控制項，我們會提供可讓開發人員將 Fluent UI 帶到非 UWP 桌面應用程式的基礎。 這項功能稱為*XAML 群島*。 如需這項功能的概觀，請參閱 <<c0> [ 桌面應用程式中的 UWP 控制項](xaml-islands.md)。
 
@@ -34,7 +34,7 @@ ms.locfileid: "67317762"
 
 本文說明如何使用裝載 API，直接在您的應用程式，而不是 Windows 社群工具組所提供之控制項中的 UWP XAML。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 裝載 API UWP XAML 有下列先決條件：
 
