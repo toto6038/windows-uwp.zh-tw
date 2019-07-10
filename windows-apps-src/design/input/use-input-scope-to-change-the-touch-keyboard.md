@@ -35,7 +35,7 @@ ms.locfileid: "66365359"
 
 ## <a name="changing-the-input-scope-of-a-text-control"></a>變更文字控制項的輸入範圍
 
-您的應用程式中可用的輸入範圍是 **[InputScopeNameValue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)** 列舉的成員。 您可以將 ****TextBox**** 或 **[RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)** 的 [InputScope](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 屬性設定成這些值的其中之一。
+您的應用程式中可用的輸入範圍是 **[InputScopeNameValue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)** 列舉的成員。 您可以設定**InputScope**屬性 **[文字方塊](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)** 或是 **[RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)** 至其中一個值。
 
 > [!IMPORTANT]
 > **[InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope)** 屬性 **[PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)** 僅支援 **密碼**與 **NumericPin** 值。 會略過其他任何值。
@@ -117,7 +117,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 ## <a name="text-prediction-spell-checking-and-auto-correction"></a>文字預測、拼字檢查及自動校正
 
-[  **TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 和 [**RichEditBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 控制項有數個影響 SIP 行為的屬性。 若要為使用者提供最佳的體驗，了解這些屬性如何影響使用觸控進行的文字輸入，就相當重要。
+[**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 和 [**RichEditBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 控制項有數個影響 SIP 行為的屬性。 若要為使用者提供最佳的體驗，了解這些屬性如何影響使用觸控進行的文字輸入，就相當重要。
 
 -   [**IsSpellCheckEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled)— 啟用拼字檢查時，文字控制項，控制項互動時使用系統的拼字檢查引擎標示無法辨識的字。 您可以點選單字以查看建議的校正清單。 預設會啟用拼字檢查功能。
 

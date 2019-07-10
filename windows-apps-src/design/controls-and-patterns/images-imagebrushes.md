@@ -6,20 +6,20 @@ label: Images and image brushes
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 61fa4f8afa0404591831be4136c16672503274f2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362779"
 ---
 # <a name="images-and-image-brushes"></a>影像與影像筆刷
 
 若要顯示影像，您可以使用 **Image** 物件或 **ImageBrush** 物件。 Image 物件會轉譯影像，而 ImageBrush 物件會以影像繪製另一個物件。 
 
-> **重要的 Api**:[映像類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)， [Source 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source)， [ImageBrush 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)， [ImageSource 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
+> **重要 API**：[Image 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)[Source 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source)[ImageBrush 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)[ImageSource 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
 
 ## <a name="are-these-the-right-elements"></a>這些是正確的元素嗎？
 使用 **Image** 元素，以在您的應用程式中顯示獨立影像。
@@ -33,7 +33,7 @@ ms.locfileid: "66362779"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/Image">開啟應用程式並查看 Image 運作情形</a>。</p>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/Image">開啟應用程式，並查看 Image 運作情形</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -56,7 +56,7 @@ ms.locfileid: "66362779"
 
 ![影像元素範例](images/Image_Licorice.jpg)
 
-在這個範例中，[Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 屬性會指定影像的顯示位置。 您可以將來源設定所指定的絕對 URL (例如 http://contoso.com/myPicture.jpg)或藉由指定相對於您的應用程式封裝結構的 URL。 例如，我們是將 "licorice.jpg" 影像檔放在專案的根資料夾中，然後宣告將影像檔納入做為內容的專案設定。
+在這個範例中，[Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 屬性會指定影像的顯示位置。 您可以指定絕對 URL (例如 http://contoso.com/myPicture.jpg) 或指定相對於應用程式封裝結構的 URL，以設定 Source。 例如，我們是將 "licorice.jpg" 影像檔放在專案的根資料夾中，然後宣告將影像檔納入做為內容的專案設定。
 
 ### <a name="imagebrush"></a>ImageBrush
 
@@ -80,10 +80,10 @@ ms.locfileid: "66362779"
 
 如果未設定 **Image** 的 [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) 或 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 值，則會以 **Source** 指定的影像維度顯示。 設定 **Width** 和 **Height** 會建立一個包含矩形的區域，其中顯示影像。 您可以使用 [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.stretch) 屬性，指定影像填滿這個包含區域的方式。 Stretch 屬性接受以下由 [Stretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch) 列舉所定義的值：
 
--   **無**：映像不伸展以填滿輸出大小。 使用這個 Stretch 設定時請小心：如果來源影像大於要包含的區域，影像會被裁剪，而且這不像您可以小心處理 [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) 一樣，您完全無法控制檢視區，所以結果通常無法讓人滿意。
--   **統一**:影像會縮放以符合輸出大小。 但是，內容的長寬比保持不變。 這是預設值。
--   **UniformToFill**:影像會縮放以完全填滿輸出區域，但會保留其原始外觀比例。
--   **填滿**:影像會縮放以符合輸出大小。 因為內容的高度和寬度會單獨調整，所以可能不會保留影像的原始長寬比。 也就是說，必須讓影像失真才能完全放入輸出區域中。
+-   **無**：影像不會伸展以填滿整個輸出尺寸。 使用這個 Stretch 設定時請小心：如果來源影像大於要包含的區域，影像會被裁剪，而且這不像您可以小心處理 [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) 一樣，您完全無法控制檢視區，所以結果通常無法讓人滿意。
+-   **Uniform**：影像縮放到適合輸出尺寸。 但是，內容的長寬比保持不變。 這是預設值。
+-   **UniformToFill**：縮放影像以完全填滿整個輸出區域，但仍保留原始的外觀比例。
+-   **Fill**：影像縮放到適合輸出尺寸。 因為內容的高度和寬度會單獨調整，所以可能不會保留影像的原始長寬比。 也就是說，必須讓影像失真才能完全放入輸出區域中。
 
 ![伸展設定範例。](images/Image_Stretch.jpg)
 
@@ -133,13 +133,13 @@ ms.locfileid: "66362779"
 
 從 Windows 10 版本 1607 開始，**Image** 元素支援動畫 GIF 影像。 當您使用 **BitmapImage** 做為影像的 **Source** 時，您可以存取 BitmapImage API 來控制動畫 GIF 影像的播放。 如需詳細資訊，請參閱 [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 類別頁面的＜備註＞。
 
-> **注意**&nbsp;&nbsp;當您的應用程式是針對 Windows 10 版本 1607 進行編譯，並在版本 1607 (或更新版本) 上執行時，便能獲得動畫 GIF 支援。 當您的應用程式是針對較舊版本進行編譯並在其上執行時，系統會顯示 GIF 的第一個畫面，但不會產生動畫效果。
+> **注意**&nbsp;&nbsp;當您的應用程式是針對 Windows 10 版本 1607 進行編譯，並在版本 1607 (或更新版本) 上執行時，即可支援動畫 GIF。 當您的應用程式是針對較舊版本進行編譯並在其上執行時，系統會顯示 GIF 的第一個畫面，但不會產生動畫效果。
 
 如需應用程式資源以及如何封裝應用程式影像來源的詳細資訊，請參閱[定義應用程式資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10))。
 
 ### <a name="writeablebitmap"></a>WriteableBitmap
 
-[WriteableBitmap](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap) 會提供可修改且不會使用來自 WIC 的基本檔案型解碼的 [BitmapSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapSource)。 您可以動態更改影像以及重新轉譯更新後的影像。 若要定義 **WriteableBitmap** 的緩衝內容，可使用 [PixelBuffer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer) 屬性存取緩衝，然後使用資料流或語言特定緩衝類型填滿。 如需範例程式碼，請參閱 [WriteableBitmap](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap)。
+[WriteableBitmap](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap) 會提供可修改且不會使用來自 WIC 的基本檔案型解碼的 [BitmapSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapSource)。 您可以動態更改影像以及重新轉譯更新後的影像。 若要定義 **WriteableBitmap** 的緩衝內容，可使用 [PixelBuffer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer) 屬性存取緩衝，然後使用資料流或特定語言緩衝類型填滿。 如需範例程式碼，請參閱 [WriteableBitmap](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap)。
 
 ### <a name="rendertargetbitmap"></a>RenderTargetBitmap
 
@@ -147,7 +147,7 @@ ms.locfileid: "66362779"
 
 ### <a name="image-sources-and-scaling"></a>影像來源和縮放
 
-您應該以建議的數種大小來建立影像來源，以確保當 Windows 縮放您的應用程式時，仍能保持很棒的外觀。 為 **Image** 指定 **Source** 時，您可以使用命名慣例來根據目前的縮放情形，自動參考正確的資源。 如需具體的命名慣例的詳細資訊，請參閱[快速入門：使用檔案或影像資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965325(v=win.10))。
+您應該以建議的數種大小來建立影像來源，以確保當 Windows 縮放您的應用程式時，仍能保持很棒的外觀。 為 **Image** 指定 **Source** 時，您可以使用命名慣例來根據目前的縮放情形，自動參考正確的資源。 如需命名慣例的細節及其他資訊，請參閱[快速入門：使用檔案或影像資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965325(v=win.10))。
 
 如需如何針對縮放進行設計的詳細資訊，請參閱[版面配置和縮放的 UX 指導方針](https://developer.microsoft.com/windows/design)。
 
@@ -155,17 +155,17 @@ ms.locfileid: "66362779"
 
 通常都會使用 XAML 指定 Image 和 ImageBrush 元素，而不是程式碼。 這是因為這些元素通常是設計工具的輸出，而且是 XAML UI 定義的一部分。
 
-如果使用程式碼定義 Image 或 ImageBrush，請使用預設建構函式，然後設定相關來源屬性 ([Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 或 [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource))。 當您使用程式碼設定來源屬性時，來源屬性需要一個 [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (不是 URI)。 如果您的來源是資料流，請使用 [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法來初始化該值。 如果您的來源是 URI，包含 app 中使用 **ms-appx** 或 **ms-resource** 配置的內容，則使用採用 URI 的 [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.) 建構函式。 如果有任何與影像來源的抓取或解碼相關的時機問題，您也可以考慮處理 [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。 如需範例程式碼，請參閱 [XAML 影像範例](https://go.microsoft.com/fwlink/p/?linkid=238575)。
+如果使用程式碼定義 Image 或 ImageBrush，請使用預設建構函式，然後設定相關來源屬性 ([Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 或 [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource))。 當您使用程式碼設定來源屬性時，來源屬性需要一個 [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (不是 URI)。 如果您的來源是資料流，請使用 [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法來初始化該值。 如果您的來源是 URI，包含應用程式中使用 **ms-appx** 或 **ms-resource** 配置的內容，配置的內容，則使用採用 URI 的 [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.) 建構函式。 如果有任何與影像來源的抓取或解碼相關的時機問題，您也可以考慮處理 [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。 如需範例程式碼，請參閱 [XAML 影像範例](https://go.microsoft.com/fwlink/p/?linkid=238575)。
 
 > [!NOTE]
-> 如果您使用程式碼建立影像，可以使用自動處理，以目前的比例和文化限定詞存取不合格的資源，或是使用 [ResourceManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) 和 [ResourceMap](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) 搭配文化和比例限定詞來直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))。
+> 如果您使用程式碼建立影像，可以使用自動處理，以目前的比例和文化限定詞存取不完整的資源，或使用 [ResourceManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) 和 [ResourceMap](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) 搭配文化和比例的限定詞，以直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 
 -   [音訊、視訊和相機](https://docs.microsoft.com/windows/uwp/audio-video-camera/index)
--   [映像類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)
+-   [Image 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)
 -   [ImageBrush 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)

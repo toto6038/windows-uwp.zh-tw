@@ -7,13 +7,13 @@ label: Media player
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b212ff435e58bdb8766972d1832bbf0690db3ed1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364737"
 ---
 # <a name="media-player"></a>媒體播放器
@@ -24,7 +24,7 @@ ms.locfileid: "66364737"
 
 ![具有傳輸控制項的媒體播放器元素](images/controls/mtc_double_video_inprod.png)
 
-> **重要的 Api**:[MediaPlayerElement 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)， [MediaTransportControls 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
+> **重要 API**：[MediaPlayerElement 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)、[MediaTransportControls 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
 
 
 > [!NOTE]
@@ -41,7 +41,7 @@ ms.locfileid: "66364737"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡開啟應用程式並查看 <a href="xamlcontrolsgallery:/item/MediaPlayerElement">MediaPlayerElement</a> 或 <a href="xamlcontrolsgallery:/item/MediaPlayer">MediaPlayer</a> 運作情形。</p>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以開啟應用程式，並查看 <a href="xamlcontrolsgallery:/item/MediaPlayerElement">MediaPlayerElement</a> or <a href="xamlcontrolsgallery:/item/MediaPlayer">MediaPlayer</a> 運作情形。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -57,7 +57,7 @@ Windows 10 入門 app 中的媒體播放器。
 ## <a name="create-a-media-player"></a>建立媒體播放器
 在 XAML 中建立 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 物件，並將 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 設定成指向音訊或視訊檔案的 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)，來將媒體到新增您的 app。
 
-此 XAML 會建立 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 並將其 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定成指向 app 的本機視訊檔案 URI。 **MediaPlayerElement** 會在頁面載入之後開始播放。 若要抑制媒體立即播放，您可以將 [AutoPlay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.autoplay) 屬性設定成 **false**。
+此 XAML 會建立 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 並將其 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定成指向 app 的本機視訊檔案 URI。 **MediaPlayerElement** 會在頁面載入之後開始播放。 若要抑制媒體立即播放，您可以將 [AutoPlay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.autoplay) 屬性設為 **false**。
 
 ```xaml
 <MediaPlayerElement x:Name="mediaSimple"
@@ -77,7 +77,7 @@ Windows 10 入門 app 中的媒體播放器。
 ```
 
 ### <a name="media-transport-controls"></a>媒體傳輸控制項
-[MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 已建置傳輸控制項可處理播放、停止、暫停、音量、靜音、搜尋/進度、隱藏式輔助字幕及曲目選取。 若要啟用這些控制項，請將 [AreTransportControlsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled) 設定為 **true**。 若要停用，請將 **AreTransportControlsEnabled** 設定為 **false**。 傳輸控制項是由 [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 類別來表示。 您可以依原樣使用傳輸控制項，或是以各種方式自訂它們。 如需詳細資訊，請參閱 [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 類別參考和[建立自訂傳輸控制項](custom-transport-controls.md)。
+[MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 具有內建傳輸控制項，可處理播放、停止、暫停、音量、靜音、搜尋/進度、隱藏式輔助字幕及曲目選取。 若要啟用這些控制項，請將 [AreTransportControlsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled) 設定為 **true**。 若要停用，請將 **AreTransportControlsEnabled** 設定為 **false**。 傳輸控制項是由 [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 類別來表示。 您可以依原樣使用傳輸控制項，或是以各種方式自訂它們。 如需詳細資訊，請參閱 [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 類別參考和[建立自訂傳輸控制項](custom-transport-controls.md)。
 
 傳輸控制項支援單列與雙列配置。 這裡的第一個範例是單列配置，播放/暫停按鈕位於媒體時間軸左邊。 此配置最適合保留給內嵌媒體播放與小型螢幕使用。
 
@@ -87,17 +87,17 @@ Windows 10 入門 app 中的媒體播放器。
 
 ![手機上雙列 MTC 控制項範例](images/controls/mtc_double_inprod.png)
 
-**系統媒體傳輸控制**
+**系統媒體傳輸控制項**
 
 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 會自動與系統媒體傳輸控制項整合。 系統媒體傳輸控制項是指當使用者按下硬體媒體鍵 (例如鍵盤上的媒體按鈕) 時，會以快顯方式顯示的控制項。 如需詳細資訊，請參閱 [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)。
 
-> **附註**&nbsp; &nbsp; [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)不會自動整合與媒體傳輸控制項，您必須將它們連接您自己的系統。 如需詳細資訊，請參閱[系統媒體傳輸控制項](https://docs.microsoft.com/windows/uwp/audio-video-camera/system-media-transport-controls)。
+> **注意：** &nbsp;&nbsp; [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 不會自動與系統媒體傳輸控制項整合，因此您必須自行加以連接。 如需詳細資訊，請參閱[系統媒體傳輸控制項](https://docs.microsoft.com/windows/uwp/audio-video-camera/system-media-transport-controls)。
 
 
 ### <a name="set-the-media-source"></a>設定媒體來源
 若要播放位於網路上的檔案或內嵌於 app 的檔案，請將 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) 的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定為檔案的路徑。
 
-**祕訣**  若要從網際網路開啟檔案，您需要宣告**網際網路 （用戶端）** 在您的應用程式資訊清單 (Package.appxmanifest) 的功能。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+**提示：**   若要從網際網路開啟檔案，您需要在應用程式資訊清單 (Package.appxmanifest) 中宣告**網際網路 (用戶端)** 功能。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
  
 
@@ -143,9 +143,9 @@ private void LoadMediaFromString(string path)
 }
 ```
 
-若要將媒體來源設定為內嵌於 app 中的媒體檔案，請初始化具有 ms-appx:/// 為開頭之路徑的 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.)，以此 Uri 建立 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)，然後將 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 設定為該 Uri。 例如，如果檔案名為 **video1.mp4** 並且位於 **Videos** 子資料夾中，則路徑應該看起來如下：**ms-appx:///Videos/video1.mp4**
+若要將媒體來源設定為內嵌於應用程式中的媒體檔案，請初始化其路徑開頭為 **ms-appx:///** 的 [Uri](https://docs.microsoft.com/uwp/api/windows.foundation.uri.)，以此 Uri 建立 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)，然後將 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 設定為該 Uri。 例如，如果檔案名為 **video1.mp4** 並且位於 **Videos** 子資料夾中，則路徑應該看起來如下：**ms-appx:///Videos/video1.mp4**
 
-此程式碼會將先前在 XAML 中定義之 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定為 **ms-appx:///Videos/video1.mp4**。
+此程式碼會將先前在 XAML 中定義之 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設為 **ms-appx:///Videos/video1.mp4**。
 
 ```csharp
 private void LoadEmbeddedAppFile()
@@ -171,13 +171,13 @@ private void LoadEmbeddedAppFile()
 
 如果您的 app 需要不藉助使用者互動就能存取 [音樂]  或 [影片]  資料夾 (例如，如果您要列舉使用者收藏中的所有音樂或影片檔案並將它們顯示在 app 中)，您就必須宣告「音樂媒體櫃」  和「影片媒體櫃」  功能。 如需詳細資訊，請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries)。
 
-[FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 不需要特殊功能來存取本機檔案系統 (例如，使用者的 **\[音樂\]** 或 **\[影片\]** 資料夾) 上的檔案，因為使用者可以完全控制存取的檔案。 從安全性與隱私權的立場看，最佳做法是將 app 使用的「功能」數降到最小。
+[FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 不需要特殊功能來存取本機檔案系統 (例如，使用者的 [音樂]  或 [影片]  資料夾) 上的檔案，因為使用者可以完全控制存取的檔案。 從安全性與隱私權的立場看，最佳做法是將 app 使用的「功能」數降到最小。
 
-**若要開啟本機媒體使用 FileOpenPicker**
+**使用 FileOpenPicker 開啟本機媒體**
 
 1.  呼叫 [FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)，讓使用者挑選媒體檔案。
 
-    使用 [FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 類別選取媒體檔案。 設定 [FileTypeFilter](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter)，來指定 **FileOpenPicker** 顯示的檔案類型。 呼叫 [PickSingleFileAsync](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync)，以啟動檔案選擇器並取得檔案。
+    使用 [FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 類別選取媒體檔案。 設定 [FileTypeFilter](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter)，以指定 **FileOpenPicker** 顯示的檔案類型。 呼叫 [PickSingleFileAsync](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync)，以啟動檔案選擇器並取得檔案。
 
 2.  使用 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)，將所選的媒體檔案設定為 [MediaPlayerElement.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source)。
 
@@ -246,7 +246,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 
 > **注意**&nbsp;&nbsp; 如果 [MediaPlayerElement.IsFullWindow](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow) 設為 true，且媒體正在播放，系統將會自動防止顯示器停用。
 
-**為了保持畫面的作用中**
+**讓螢幕保持使用中**
 
 1.  建立全域 [DisplayRequest](https://docs.microsoft.com/uwp/api/Windows.System.Display.DisplayRequest) 變數。 將變數初始化為 null。
 ```csharp
@@ -258,7 +258,7 @@ private DisplayRequest appDisplayRequest = null;
 
 3.  每當影片播放停止、暫停或因播放錯誤而中斷時，呼叫 [RequestRelease](https://docs.microsoft.com/uwp/api/windows.system.display.displayrequest.requestrelease) 以釋放顯示要求。 當 App 不再有任何啟用的顯示要求時，Windows 會在沒有使用裝置時將顯示器畫面變暗 (最後將它關閉) 以延長電池壽命。
 
-    每個 [MediaPlayerElement.MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 都有一個 [MediaPlaybackSession](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession) 類型 的 [PlaybackSession](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.playbacksession)，可控制媒體播放的各種方面，例如 [PlaybackRate](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.playbackrate)、[PlaybackState](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.playbackstate) 及 [Position](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position)。 這裡會使用 [MediaPlayer.PlaybackSession](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.playbacksession) 上的 [PlaybackStateChanged](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.playbackstatechanged) 事件來偵測您必須釋放顯示器要求時的情況。 然後，使用 [NaturalVideoHeight](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.naturalvideoheight) 屬性來判斷是否正在播放音訊或視訊檔案，並只在播放視訊時才讓螢幕保持使用中狀態。
+    每個 [MediaPlayerElement.MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 都有一個 [MediaPlaybackSession](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession) 類型 的 [PlaybackSession](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.playbacksession)，可控制媒體播放的各種方面，例如 [PlaybackRate](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.playbackrate)、[PlaybackState](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.playbackstate) 及 [Position](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position)。 在這裡，您將使用 [MediaPlayer.PlaybackSession](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.playbacksession) 上的 [PlaybackStateChanged](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.playbackstatechanged) 事件，來偵測何時應該釋放顯示器要求。 然後，使用 [NaturalVideoHeight](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.naturalvideoheight) 屬性來判斷是否正在播放音訊或視訊檔案，並只在播放視訊時才讓螢幕保持使用中狀態。
 
     ```xaml
     <MediaPlayerElement x:Name="mpe" Source="ms-appx:///Media/video1.mp4"/>
@@ -303,7 +303,7 @@ private DisplayRequest appDisplayRequest = null;
 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 提供許多屬性、方法和事件，來透過 [MediaPlayerElement.MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 屬性控制音訊和視訊播放。 如需完整的屬性、方法及事件清單，請參閱 [MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) 參考頁面。
 
 ### <a name="advanced-media-playback-scenarios"></a>進階的媒體播放案例
-針對如播放播放清單、在音訊語言之間切換，或是建立自訂的中繼資料曲目等較為複雜的媒體播放案例，請將 [MediaPlayerElement.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 設定為 [MediaPlaybackItem](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem) 或 [MediaPlaybackList](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist)。 請參閱[媒體播放](https://docs.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)頁面，如需有關如何啟用各種進階的媒體功能。
+針對如播放播放清單、在音訊語言之間切換，或是建立自訂的中繼資料曲目等較為複雜的媒體播放案例，請將 [MediaPlayerElement.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 設定為 [MediaPlaybackItem](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem) 或 [MediaPlaybackList](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist)。 如需如何啟用各種進階媒體功能的詳細資訊，請參閱[媒體播放](https://docs.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)頁面。
 
 ### <a name="enable-full-window-video-rendering"></a>啟用完整視窗視訊呈現
 
@@ -368,9 +368,9 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 
 ### <a name="enable-low-latency-playback"></a>啟用低延遲播放
 
-在 [MediaPlayerElement.MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 上將 [RealTimePlayback](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.realtimeplayback) 屬性設定為 **true**，以讓媒體元素減少播放的初始延遲。 這對於雙向通訊的 app 而言非常重要，也很適用於部分遊戲案例。 請注意，這個模式需要更大量的資源，而且比較耗電。
+在 [MediaPlayerElement.MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 上將 [RealTimePlayback](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.realtimeplayback) 屬性設定為 **true**，以讓媒體播放器元素減少播放的初始延遲。 這對於雙向通訊的 app 而言非常重要，也很適用於部分遊戲案例。 請注意，這個模式需要更大量的資源，而且比較耗電。
 
-這個範例會建立一個 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)，並將 [RealTimePlayback](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.realtimeplayback) 設定為 **true**。
+這個範例會建立 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)，並將 [RealTimePlayback](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.realtimeplayback) 設定為 **true**。
 
 
 ```csharp
@@ -386,15 +386,15 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 如果您有螢幕實際可用空間，或是正在設計 10 呎體驗，請使用雙列配置。 它能比精簡的單列配置提供更多的控制項空間，而且能夠針對 10 呎體驗提供更佳的控制器瀏覽支援。
 
-> **注意**&nbsp;&nbsp; 如需針對 10 呎體驗最佳化應用程式的詳細資訊，請造訪[針對 Xbox 和電視進行設計](../devices/designing-for-tv.md)文章。
+> **注意**&nbsp;&nbsp; 如需了解 10 英呎體驗最佳化應用程式的詳細資訊，請造訪[專為 Xbox 和電視設計](../devices/designing-for-tv.md)一文。
 
 預設控制項已針對媒體播放最佳化，不過，您可以將所需的自訂選項新增至媒體播放器，以為您的 app 提供最佳體驗。 若要深入了解新增自訂控制項，請造訪[建立自訂傳輸控制項](custom-transport-controls.md)。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 
-- [命令用於 UWP 應用程式的設計基本概念](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-- [UWP 應用程式的內容設計基本概念](https://docs.microsoft.com/windows/uwp/layout/content-basics)
+- [UWP 應用程式的命令設計基本知識](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+- [UWP 應用程式的內容設計基本知識](https://docs.microsoft.com/windows/uwp/layout/content-basics)
