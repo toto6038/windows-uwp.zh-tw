@@ -1,45 +1,45 @@
 ---
-Description: ItemsRepeater 是輕量級控制項產生，並呈現項目的集合。
+Description: ItemsRepeater 是輕量型控制項，以產生並呈現項目集合。
 title: ItemsRepeater
 label: ItemsRepeater
 template: detail.hbs
 ms.date: 02/01/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364761"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
-使用[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)利用有彈性的版面配置系統、 自訂檢視和虛擬化建立自訂收集體驗。
+使用 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，即可使用靈活的版面配置系統、自訂檢視畫面、進行模擬，藉以建立自訂的集合體驗。
 
-不同於[ListView](/uwp/api/windows.ui.xaml.controls.listview)， [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)不提供完整的經驗 – 它沒有預設值的 UI，並不提供焦點，選取項目或使用者互動的任何原則。 相反地，它是您可用來建立您自己的唯一集合為基礎的體驗和自訂控制項的建置組塊。 雖然它有沒有內建的原則時，它可讓您附加原則以建置您所需要的體驗。 比方說，您可以定義要使用 keyboarding 原則選取原則等的配置。
+與 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 不同，[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 並未提供全面的使用者體驗，無預設的 UI，也未提供焦點、選取或使用者互動的相關原則。 然而，它是一個建置組塊，您可用來建立自己的唯一集合型體驗和自訂控制項。 雖然沒有內建原則，但可讓您附加原則以建置所需的體驗。 例如，您可以定義要使用的配置、鍵盤輸入原則、選取原則等。
 
-您可以想像[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)在概念上為資料導向的面板，而不是像 ListView 的完整控制權。 您指定要顯示的資料項目的集合、 項目範本產生的每個資料項目，UI 項目和配置，決定如何調整大小及定位項目。 然後，ItemsRepeater 會產生資料來源為基礎的子元素，並顯示所指定的項目範本和版面配置。 顯示的項目不需要是同質性的因為 ItemsRepeater 可以載入內容來表示的資料項目，根據您在資料範本選取器中指定的準則。
+您可以在概念上將 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 視為以資料為主的窗格，而非 ListView 那種完整的控制項。 您可以指定要顯示的資料項目集合，產生每個資料項目的 UI 元素項目範本，以及決定元素大小和位置方式的配置。 然後，ItemsRepeater 會根據資料來源，產生出子元素，並依照項目範本和配置的指定方式加以顯示。 顯示的項目不需要同質性，因為 ItemsRepeater 可以根據您在資料範本選取器中指定的條件，載入內容來呈現資料項目。
 
-| **取得 Windows 的 UI 程式庫** |
+| **取得 Windows UI 程式庫** |
 | - |
-| 此控制項是包含 Windows UI 程式庫，包含新的控制項和 UWP 應用程式的 UI 功能的 NuGet 套件的過程。 如需詳細資訊，包括安裝指示，請參閱 < [Windows 的 UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| 此控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/) \(英文\)。 |
 
-> **重要的 Api**:[ItemsRepeater 類別](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)， [ScrollViewer 類別](/uwp/api/windows.ui.xaml.controls.scrollviewer)
+> **重要 API**：[ItemsRepeater 類別](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)[ScrollViewer 類別](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-使用[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)以顯示資料的集合。 雖然它可以用來呈現一組基本的項目，您可能會經常使用它做為自訂控制項範本中顯示項目。
+使用 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 建立資料集合的自訂顯示畫面。 雖然這可以用來呈現一組基本項目，但較可能經常用來做為自訂控制項範本中的顯示元素。
 
-如果您需要的立即可用控制項清單或具有最低程度的自訂方格中顯示資料，請考慮使用[ListView](/uwp/api/windows.ui.xaml.controls.listview)或是[GridView](/uwp/api/windows.ui.xaml.controls.gridview)。
+如果需要立即可用的控制項，以清單或格線的形式來呈現資料，且想要盡可能減少自訂需求，就推薦使用 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 或 [GridView](/uwp/api/windows.ui.xaml.controls.gridview)。
 
-ItemsRepeater 並沒有內建的項目集合。 如果您需要直接提供的項目集合，而不是繫結到個別的資料來源，則您可能需要更高原則的體驗，也應該採用[ListView](/uwp/api/windows.ui.xaml.controls.listview)或是[GridView](/uwp/api/windows.ui.xaml.controls.gridview)。
+ItemsRepeater 沒有內建的項目集合。 如果需要直接提供項目集合，而不是繫結至個別的資料來源，則可能需要更高原則的體驗，建議使用 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 或 [GridView](/uwp/api/windows.ui.xaml.controls.gridview)。
 
-[ItemsControl](/uwp/api/windows.ui.xaml.controls.itemscontrol)和 ItemsRepeater 這兩個提供可自訂的集合使用經驗，但 ItemsRepeater 支援此虛擬化的 UI 版面配置，而 ItemsControl 則否。 我們建議是否使用 ItemsRepeater 而不 itemscontrol 為例，其只是呈現資料的一些項目，或建置自訂集合控制項。
+[ItemsControl](/uwp/api/windows.ui.xaml.controls.itemscontrol) 和 ItemsRepeater 皆支援可自訂的集合體驗，但 ItemsRepeater 支援虛擬化的 UI 配置，ItemsControl 則不支援。 無論是僅用於顯示資料中的一些項目，還是建置自訂集合控制項，都建議使用 ItemsRepeater，而不是 ItemsControl。
 
 > [!NOTE]
-> 如果您有的情況下，您覺得 ItemsControl 是否符合您的需求，以及 ItemsRepeater 不，歡迎留下意見反應上[Windows UI 程式庫的 GitHub 專案](https://github.com/Microsoft/microsoft-ui-xaml/issues)，讓我們知道。
+> 如果您認為 ItemsControl 符合您的需求，而 ItemsRepeater 不符合，請在 [Windows UI 程式庫 GitHub 專案](https://github.com/Microsoft/microsoft-ui-xaml/issues)上留下意見反應，讓我們知道。
 
 ## <a name="examples"></a>範例
 
@@ -48,7 +48,7 @@ ItemsRepeater 並沒有內建的項目集合。 如果您需要直接提供的�
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可開啟應用程式，並查看<a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a>作用中。</p>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/ItemsRepeater">開啟應用程式並查看 ItemsRepeater 的運作情形</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始程式碼 (GitHub)</a></li>
@@ -57,14 +57,14 @@ ItemsRepeater 並沒有內建的項目集合。 如果您需要直接提供的�
 </tr>
 </table>
 
-## <a name="scrolling-with-itemsrepeater"></a>捲動與 ItemsRepeater
+## <a name="scrolling-with-itemsrepeater"></a>以 ItemsRepeater 捲動
 
-[**ItemsRepeater** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)不是衍生自[**控制**](/uwp/api/windows.ui.xaml.controls.control)，使其不含控制項範本。 因此，它不包含任何類似 ListView 捲動的內建或其他集合控制項。
+[**ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不是衍生自 [**Control**](/uwp/api/windows.ui.xaml.controls.control)，因此沒有控制項範本。 所以，並未包含任何類似於 ListView 或其他集合控制項的內建捲動功能。
 
-當您使用**ItemsRepeater**，您應該提供捲動功能，藉由包裝在[ **ScrollViewer** ](/uwp/api/windows.ui.xaml.controls.scrollviewer)控制項。
+當您使用 **ItemsRepeater** 時，請將其包裝在 [**ScrollViewer**](/uwp/api/windows.ui.xaml.controls.scrollviewer) 控制項內，以此方式提供捲動功能。
 
 > [!NOTE]
-> 如果您的應用程式將執行舊版 Windows-這些都已釋出*之前*Windows 10，版本 1809-就也必須將裝載**ScrollViewer**內[ **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost)。 
+> 如果您的應用程式會以舊版 Windows 執行 (Windows 10 版本 1809 之前  推出的版本)，則也需要將 **ScrollViewer** 裝載在 [**ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost) 內。 
 > ```xaml
 > <muxc:ItemsRepeaterScrollHost>
 >     <ScrollViewer>
@@ -72,17 +72,17 @@ ItemsRepeater 並沒有內建的項目集合。 如果您需要直接提供的�
 >     </ScrollViewer>
 > </muxc:ItemsRepeaterScrollHost>
 > ```
-> 如果您的應用程式只會在最新版本的 Windows 10 版本 1809年及更新版本-上執行，則不需要使用[ **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost)。
+> 如果您的應用程式只會在最新版本的 Windows 10 版本 1809 及更高版本上執行，則不需要使用 [**ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost)。
 >
-> 在 Windows 10 版本 1809 之前, **ScrollViewer**未實作[ **IScrollAnchorProvider** ](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)介面**ItemsRepeater**需要。  **ItemsRepeaterScrollHost**可讓**ItemsRepeater**協調**ScrollViewer**有關較早的版本，以正確保留顯示的項目位置使用者在檢視。  否則，項目可能會出現要移動或變更清單中的項目或調整大小的應用程式突然消失。
+> 在 Windows 10 版本 1809 之前，**ScrollViewer** 並未實作 **ItemsRepeater** 所需的 [**IScrollAnchorProvider**](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) 介面。  **ItemsRepeaterScrollHost** 可讓 **ItemsRepeater** 能與早期版本中的 **ScrollViewer** 彼此協調，如此才能正確保存使用者檢視項目的可見位置。  否則，當清單中的項目有所變更，或是應用程式調整大小時，項目可能會突然移動或消失。
 
 ## <a name="create-an-itemsrepeater"></a>建立 ItemsRepeater
 
-若要使用[ **ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，您需要提供要藉由設定顯示的資料**ItemsSource**屬性。 然後，告訴它如何藉由設定顯示的項目[ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)屬性。
+若要使用 [**ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，則需設定 **ItemsSource** 屬性，以此方式提供要顯示的資料。 然後，藉由設定 [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) 屬性，即可知道如何顯示項目。
 
 ### <a name="itemssource"></a>ItemsSource
 
-若要填入的檢視，將[ **ItemsSource** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource)資料項目集合的屬性。 在這裡， **ItemsSource**直接對集合的執行個體的程式碼中設定。
+若要填入視圖，請將 [**ItemsSource**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) 屬性設為資料項目的集合。 在這裡，**ItemsSource** 會在程式碼中直接設定為集合的執行個體。
 
 ```csharp
 ObservableCollection<string> Items = new ObservableCollection<string>();
@@ -91,7 +91,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-您也可以繫結**ItemsSource**屬性至 XAML 中的集合。 如需資料繫結的詳細資訊，請參閱[資料繫結概觀](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
+您也可以將 **ItemsSource** 屬性繫結到 XAML 中的集合。 如需資料繫結的詳細資訊，請參閱[資料繫結概觀](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
 
 
 ```xaml
@@ -99,15 +99,15 @@ itemsRepeater1.ItemsSource = Items;
 ```
 
 ### <a name="itemtemplate"></a>ItemTemplate
-若要指定資料的項目視覺化的方式，設定[ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)屬性設[ **DataTemplate** ](/uwp/api/windows.ui.xaml.datatemplate)或[ **DataTemplateSelector** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector)已定義。 資料範本會定義將資料視覺化的方式。 根據預設，項目會顯示在檢視**TextBlock**使用資料物件的字串表示。
+若要指定資料項目視覺化的方式，請將 [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) 屬性設為您已定義的 [**DataTemplate**](/uwp/api/windows.ui.xaml.datatemplate) 或 [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)。 資料範本會定義資料視覺化的方式。 根據預設，項目會透過 **TextBlock** 顯示在視圖中，其使用字串來顯示資料物件。
 
-不過，您通常想要使用範本所定義的配置和要顯示的個別項目，您將使用的一或多個控制項的外觀顯示您的資料更豐富的呈現。 您在範本中使用的控制項可以繫結至資料物件的屬性，或具有靜態內容內嵌定義。
+不過通常會想要使用範本，由範本定義一個或多個控制項的配置和外觀，以控制項來顯示個別的項目，如此就能以更家豐富的方式來呈現資料。 您在範本中使用的控制項可以繫結至資料物件的屬性，或以內嵌方式定義靜態內容。
 
 #### <a name="datatemplate"></a>DataTemplate
-在此範例中，資料物件會是一個簡單的字串。 **DataTemplate**包含左邊的文字和樣式影像**TextBlock**藍綠色色彩顯示字串。
+在此範例中，資料物件是一個簡單字串。 **DataTemplate** 在文字左側有個影像，且會設定 **TextBlock** 的樣式，以顯示出藍綠色的字串。
 
 > [!NOTE]
-> 當您使用[x： 繫結標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)中**DataTemplate**，您必須指定資料類型 (`x:DataType`) 上的 DataTemplate。
+> 當您在 **DataTemplate**中使用 [x:Bind markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 時，必須在 DataTemplate 上指定 DataType (`x:DataType`)。
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -124,14 +124,14 @@ itemsRepeater1.ItemsSource = Items;
 </DataTemplate>
 ```
 
-以下是 顯示與這個項目會如何顯示**DataTemplate**。
+以下是使用此 **DataTemplate** 顯示項目時的呈現方式。
 
 ![使用資料範本顯示的項目](images/listview-itemstemplate.png)
 
-使用中項目數**DataTemplate**針對您的檢視會顯示大量項目項目對效能有重大影響。 如需詳細資訊和範例，示範如何使用**DataTemplate**來定義項目的外觀，在清單中，請參閱[項目容器和範本](item-containers-templates.md)。
+如果視圖顯示了大量項目，則項目的 **DataTemplate** 中使用的元素數量會對效能產生重大影響。 如需如何如何使用 **DataTemplate** 以定義清單中項目外觀的更多資訊和範例，請參閱[項目容器與範本](item-containers-templates.md)。
 
 > [!TIP]
-> 為了方便起見，當您想要宣告內嵌的範本，而不是當做靜態資源參考，您可以指定**DataTemplate**或是**DataTemplateSelector**做的直接子系**ItemsRepeater**。  將值指派給**ItemTemplate**屬性。 比方說，這是有效的：
+> 為了方便起見，如果要宣告範本內嵌，而不是作為靜態資源參考，可以將 **DataTemplate** 或 **DataTemplateSelector** 指定為 **ItemsRepeater** 的直接子項。  會將其指派為 **ItemTemplate** 屬性的值。 例如，以下為有效：
 > ```xaml
 > <ItemsRepeater ItemsSource="{x:Bind Items}">
 >     <DataTemplate>
@@ -141,15 +141,15 @@ itemsRepeater1.ItemsSource = Items;
 > ```
 
 > [!TIP]
-> 不同於**ListView**和其他集合的控制項， **ItemsRepeater**不換行中的項目**DataTemplate**與包含額外的項目容器預設原則，例如邊界、 邊框距離、 選取視覺效果或透過視覺狀態的指標。 相反地， **ItemsRepeater**只會呈現中所定義**DataTemplate**。 如果您想您的項目擁有相同的外觀，做為清單檢視項目時，您可以明確地包含容器，例如**ListViewItem**，在您的資料範本。 **ItemsRepeater**會顯示**ListViewItem**視覺效果，但不會自動進行的其他功能，例如選取項目，或顯示的多重選取的核取方塊使用。
+> 與 **ListView** 和其他集合控制項不同，**ItemsRepeater** 不會將 **DataTemplate** 的元素與含有預設原則 (例如邊界、邊框間距、選項視覺效果，或視覺狀態指標) 的其他項目容器包裝在一起。 相反地，**ItemsRepeater** 僅會顯示 **DataTemplate** 中定義的內容。 如果希望項目與清單檢視項目具有相同的外觀，可以在資料範本中明確包含容器，例如 **ListViewItem**。 **ItemsRepeater** 會顯示 **ListViewItem** 視覺效果，但不會自動使用其他功能，例如選擇或顯示多重選取的核取方塊。
 >
-> 同樣地，如果您的資料收集是實際的控制項集合，例如 **按鈕**(`List<Button>`)，您可以將放**ContentPresenter**中您**DataTemplate**至顯示控制項。
+> 同樣地，如果您的資料集合是實際控制項的集合，例如 **Button** (`List<Button>`)，則可將 **ContentPresenter** 放在 **DataTemplate** 中，以顯示控制項。
 
 #### <a name="datatemplateselector"></a>DataTemplateSelector
 
-您在檢視中顯示的項目不需要為相同的型別。 您可以提供[ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)屬性[ **DataTemplateSelector** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector)選取不同**DataTemplate**根據您指定的準則。
+您在視圖中顯示的項目不需要是相同類型。 您可以使用 [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector) 提供 [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) 屬性，以根據您指定的準則來選取不同的 **DataTemplate**。
 
-這個範例假設**DataTemplateSelector**已定義，決定之間兩個不同**DataTemplate**來代表大型和小型的項目。
+此範例假設已定義 **DataTemplateSelector**，其決定在兩個不同的 **DataTemplate** 之間表示 Large 和 Small 項目。
 
 ```xaml
 <ItemsRepeater ...>
@@ -160,72 +160,72 @@ itemsRepeater1.ItemsSource = Items;
 </ItemsRepeater>
 ```
 
-定義時**DataTemplateSelector**搭配**ItemsRepeater**您只需要實作的覆寫[ **SelectTemplateCore(Object)** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_)方法。 如需詳細資訊和範例，請參閱 < [ **DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)。
+定義 **DataTemplateSelector** 與 **ItemsRepeater** 搭配使用時，您只需要為 [**SelectTemplateCore(Object)** ](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_) 方法實作覆寫。 如需詳細資訊和範例，請參閱 [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)。
 
 > [!NOTE]
-> 替代**DataTemplate**來管理項目在更進階的案例中的建立方式的 s 是實作您自己[ **Windows.UI.Xaml.Controls.IElementFactory** ](/uwp/api/windows.ui.xaml.controls.ielementfactory)將用作**ItemTemplate**。  它會負責產生要求時的內容。
+> 管理在更進階的情況下建立元素的 **DataTemplate** 替代方法是實作您自己的 [**Windows.UI.Xaml.Controls.IElementFactory**](/uwp/api/windows.ui.xaml.controls.ielementfactory)，以做為 **ItemTemplate**。  其負責在要求時產生內容。
 
 ## <a name="configure-the-data-source"></a>設定資料來源
 
-使用  [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource)屬性來指定要使用產生的項目內容的集合。 您可以將 ItemsSource 設可實作任何型別**IEnumerable**。 藉由將您的資料來源的其他集合介面，判斷哪些功能可供您的資料進行互動 ItemsRepeater。
+使用 [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) 屬性以指定要用來產生項目內容的集合。 您可以將 ItemsSource 設為實作 **IEnumerable** 的任何類型。 資料來源實作的其他集合介面決定可供 ItemsRepeater 與您的資料進行互動的功能。
 
-此清單會顯示可用的介面，以及何時考慮使用每個。
+此清單顯示可用的介面，以及何時使用每個介面。
 
 - [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/uwp/api/windows.foundation.collections.iiterable_t_)
 
-  - 可以用於小型的靜態資料集。
+  - 可用於小型的靜態資料集。
 
-    最少的資料來源必須實作 IEnumerable / IIterable 介面。 如果這是所有受到然後控制項會逐一查看所有項目一次建立複本，它可用來存取透過索引值的項目。
+    資料來源至少必須實作 IEnumerable / IIterable 介面。 如果這是所有支援的項目，那麼控制項將逐一查看所有內容，以建立可用於透過索引值存取項目的複本。
 
 - [IReadonlyList](/dotnet/api/system.collections.generic.ireadonlylist-1)(.NET) / [IVectorView](/uwp/api/windows.foundation.collections.ivectorview_t_)
 
-  - 可用的靜態、 唯讀的資料集。
+  - 可用於靜態、唯讀的資料集。
 
-    啟用索引來存取項目控制項，並避免多餘的內部副本。
+    可讓控制項依索引來存取項目，並避免多餘的內部複本。
 
 - [IList](/dotnet/api/system.collections.generic.ilist-1)(.NET) / [IVector](/uwp/api/windows.foundation.collections.ivector_t_)
 
-  - 可以用於靜態資料集。
+  - 可用於靜態資料集。
 
-    啟用索引來存取項目控制項，並避免多餘的內部副本。
+    可讓控制項依索引來存取項目，並避免多餘的內部複本。
 
-    **警告**：變更而不需要實作清單/向量[INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged)並不會反映在 UI 中。
+    **警告**：在未實作 [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) 的情況下，對於清單/向量所做的變更，並不會反映在 UI 中。
 
 - [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged)(.NET)
 
-  - 建議使用以支援變更通知。
+  - 建議支援變更通知。
 
-    啟用的控制項，來觀察和回應資料來源中的變更以及在 UI 中反映這些變更。
+    讓控制項能夠觀察並回應資料來源中的變更，並在 UI 中反映這些變更。
 
 - [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
 
   - 支援變更通知
 
-    像是**INotifyCollectionChanged**介面，這可讓觀察，並對資料來源中的變更做出回應的控制項。
+    就像 **INotifyCollectionChanged** 介面，如此可讓控制項觀察並回應資料來源中的變更。
 
-    **警告**：Windows.Foundation.IObservableVector\<T > 不支援 [移動]' 動作。 這會造成的 UI 項目失去其視覺狀態。  例如，目前選取及 （或） 具有焦點，移動之後，即可後面接著 'Add' 'Remove' 的項目就會失去焦點，而不再處於選取狀態。
+    **警告**：Windows.Foundation.IObservableVector\<T> 不支援「移動」動作。 這可能導致項目的 UI 失去可見狀態。  例如，目前已選取的項目及/或該項目的焦點，是在「移除」後接著「新增」來進行移動，這類項目會失去焦點，而且無法再選取。
 
-    Platform.Collections.Vector\<T > 使用 IObservableVector\<T > 且具有此相同的限制。 如果支援不需要將 [移動]' 動作然後使用**INotifyCollectionChanged**介面。  .NET ObservableCollection\<T > 類別會使用**INotifyCollectionChanged**。
+    Platform.Collections.Vector\<T> 使用 IObservableVector\<T>，而且具有此相同限制。 如果需要支援「移動」動作，請使用 **INotifyCollectionChanged** 介面。  .NET ObservableCollection\<T> 類別使用 **INotifyCollectionChanged**。
 
 - [IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping)
 
-  - 當可以與每個項目相關聯的唯一識別碼。  建議使用 '重設' 做為集合變更動作時。
+  - 當唯一識別碼可以與每個項目相關聯時。  使用「重設」作為集合變更動作時，建議使用。
 
-    可讓控制項非常有效率的方式復原之後接收硬碟 [重設] 動作，做為一部分的現有 UI **INotifyCollectionChanged**或是**IObservableVector**事件。 接收的重設後控制項將使用提供的唯一識別碼，它已建立的項目相關聯的目前資料。 沒有索引對應到索引鍵的控制者必須假設需要從頭建立 UI 的資料。
+    收到強制「重設」動作做為 **INotifyCollectionChanged** 或 **IObservableVector** 事件的一部分時，可讓控制項非常有效率地復原現有 UI。 收到重設後，控制項將使用提供的唯一識別碼，將目前資料與其建立的元素建立關聯。 如果沒有索引鍵以編製索引對應，控制項必須假設它需要從頭開始為資料建立 UI。
 
-ListView 和 GridView 中所顯示的一樣，上面所列以外 IKeyIndexMapping，介面會提供 ItemsRepeater 中相同的行為。
+以上列出的介面 (IKeyIndexMapping 除外) 在 ItemsRepeater 中提供與在 ListView 和 GridView 中相同的行為。
 
 
-啟用特殊功能，在 ListView 和 GridView 控制項中，ItemsSource 中的下列介面，但目前不影響 ItemsRepeater:
+在 ItemsSource 的下列介面在 ListView 和 GridView 控制項中啟用特殊功能，但目前對 ItemsRepeater 沒有影響：
 
 - [ISupportIncrementalLoading](/uwp/api/windows.ui.xaml.data.isupportincrementalloading)
 - [IItemsRangeInfo](/uwp/api/windows.ui.xaml.data.iitemsrangeinfo)
 - [ISelectionInfo](/uwp/api/windows.ui.xaml.data.iselectioninfo)
 
 > [!TIP]
-> 歡迎您隨時提供您的寶貴意見！ 讓我們知道您在上的想法[Windows UI 程式庫的 GitHub 專案](https://github.com/Microsoft/microsoft-ui-xaml/issues)。 請考慮將您的想法上現有的提案，這類[#374](https://github.com/Microsoft/microsoft-ui-xaml/issues/374):新增 ItemsRepeater 的累加式載入支援。
+> 歡迎您隨時提供您的寶貴意見！ 請讓我們知道您對 [Windows UI 程式庫 GitHub 專案](https://github.com/Microsoft/microsoft-ui-xaml/issues) (英文) 的想法。 歡迎新增您對現有提案的想法，例如 [#374](https://github.com/Microsoft/microsoft-ui-xaml/issues/374)：為 ItemsRepeater 新增累加式載入支援。
 
-當使用者捲動時增加或相應減少，以累加方式載入資料的替代方法是觀察 ScrollViewer 的檢視區的位置，並載入更多的資料，當檢視區接近程度。
+當使用者向上或向下捲動時，累加式載入資料的另一種方式是觀察 ScrollViewer 檢視區的位置，並在檢視區接近範圍時載入更多資料。
 
 ```xaml
 <ScrollViewer ViewChanged="ScrollViewer_ViewChanged">
@@ -258,17 +258,17 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 ## <a name="change-the-layout-of-items"></a>變更項目的配置
 
-所顯示的項目[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)將會依照排列[版面配置](/uwp/api/microsoft.ui.xaml.controls.layout)管理的大小及位置其子元素的物件。 ItemsRepeater 搭配使用時，此配置物件啟用 UI 虛擬化。 提供的版面配置都會[StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout)並[UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout)。 根據預設，ItemsRepeater 會使用垂直方向 StackLayout。
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 顯示的項目是依照 [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) 物件排列，該物件管理的是其子元素的大小和位置。 與 ItemsRepeater 搭配使用時，Layout 物件會啟用 UI 模擬。 提供的配置為 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) 和 [UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout)。 依預設，ItemsRepeater 會使用垂直方向的 StackLayout。
 
 ### <a name="stacklayout"></a>StackLayout
 
-[StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout)項目排列成單一行，您可以設定水平或垂直。
+[StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) 會將元素排成一行，可設定水平或垂直方向。
 
-您可以設定[間距](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing)調整項目之間的空間數量的屬性。 間距已套用的版面配置方向[方向](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation)。
+您可以設定 [Spacing](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) 屬性，以調整項目之間的間距。 間距會套用在配置 [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) 的方向。
 
 ![堆疊配置間距](images/stack-layout.png)
 
-此範例示範如何將 ItemsRepeater.Layout 屬性設定為使用水平方向和 8 個像素的間距 StackLayout。
+此範例示範如何將 ItemsRepeater.Layout 屬性設定為 StackLayout，其使用水平方向和 8 像素間距。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -281,52 +281,52 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 ### <a name="uniformgridlayout"></a>UniformGridLayout
 
-[UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout)文繞圖版面配置中會以循序方式將元素。 項目是從左到右的順序配置時[方向](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.orientation)是**水平**，和配置上到下方向時**垂直**。 每個項目比例縮放。
+[UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout) 會以換行配置的方式依序放置元素。 當 [Orientation](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.orientation) 為 **Horizontal** 時，項目依照從左到右的順序排列，當 Orientation 為 **Vertical** 時，則從上到下排列。 每個項目的大小相同。
 
-![統一的格線版面配置間距](images/uniform-grid-layout.png)
+![統一的格線配置間距](images/uniform-grid-layout.png)
 
-水平版面配置的每個資料列中的項目數會受到最小的項目寬度。 在垂直版面配置的每個資料行中的項目數會受到最小的項目高度。
+水平配置的每列項目數會受到最小項目寬度的影響。 垂直配置的每欄項目數會受到最小項目高度的影響。
 
-- 您可以明確提供要藉由設定使用的最小大小[MinItemHeight](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minitemheight)並[MinItemWidth](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minitemwidth)屬性。
-- 如果您未指定最小的大小，第一個項目的測量的大小會被視為最小的大小，每個項目。
+- 您可以藉由設定 [MinItemHeight](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minitemheight) 和 [MinItemWidth](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minitemwidth) 屬性，明確提供要使用的大小下限。
+- 如果未指定大小下限，第一個項目的測量大小會視為每個項目的大小下限。
 
-您也可以設定版面配置，以藉由設定包含資料列和資料行之間的最小間距[MinColumnSpacing](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.mincolumnspacing)並[MinRowSpacing](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minrowspacing)屬性。
+您也可以藉由設定 [MinColumnSpacing](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.mincolumnspacing) 和 [MinRowSpacing](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.minrowspacing) 屬性，將配置的最小間距設為包含在列和欄之間。
 
-![統一的格線大小和間距](images/uniform-grid-sizing-spacing.png)
+![統一格線大小和間距](images/uniform-grid-sizing-spacing.png)
 
-如果尚未決定資料列或資料行中的項目數目會根據項目的最小大小和間距之後，可能會有未使用 （如先前的映像所示），資料列或資料行中的最後一個項目之後剩餘的空間。 您可以指定任何額外的空間會忽略，用來放大每個項目，或用來建立項目之間的額外空間。 這由控制[ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch)並[ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification)屬性。
+在數字之後，如果資料列或資料欄中的項目，已根據項目的大小下限和間距而確定，則在資料列或資料欄中的最後一個項目之後，可能會留下未使用的空間 (如上圖所示)。 您可以指定是否要忽略額外的空間，或是用於增加每個項目的大小，或用於建立項目之間的額外空間。 這是由 [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) 和 [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) 屬性控制。
 
-您可以設定[ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch)屬性來指定如何將項目大小增加以填滿未使用的空間。
+您可以設定 [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) 屬性，以指定如何增加項目大小以填滿未使用的空間。
 
-此清單會顯示可用的值。 定義假設使用預設**方向**的**水平**。
+此清單顯示可用的值。 此定義假設預設的 **Orientation** 為 **Horizontal**。
 
-- **無**：額外的空間會保持未使用的資料列結尾。 這是預設值。
-- **填滿**:項目會提供額外的寬度，以用完可用空間 （高度如果垂直）。
-- **統一**:項目會提供額外的寬度，以用完可用空間，並提供額外的高度維持外觀比例 （高度和寬度切換如果垂直）。
+- **無**：在列的最後留下未使用的額外空間。 這是預設值。
+- **Fill**：項目會獲得額外的寬度，將可用空間用完 (如果是垂直方向，則是指高度)。
+- **Uniform**：項目會獲得額外的寬度，將可用空間用完，且會獲得有額外的高度，以維持外觀比例 (如果是垂直方向，則交換上述高度和寬度)。
 
-下圖顯示的效果**ItemsStretch**水平版面配置中的值。
+此影像顯示在水平配置中 **ItemsStretch** 值的效果。
 
-![統一的方格項目延伸](images/uniform-grid-item-stretch.png)
+![統一的格線項目伸展](images/uniform-grid-item-stretch.png)
 
-當**ItemsStretch**是**無**，您可以設定[ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification)屬性來指定如何額外空間用來對齊項目。
+當 **ItemsStretch** 為 **None**，您可以設定 [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) 屬性以指定如何使用額外空間以對齊項目。
 
-此清單會顯示可用的值。 定義假設使用預設**方向**的**水平**。
+此清單顯示可用的值。 此定義假設預設的 **Orientation** 為 **Horizontal**。
 
-- **啟動**:項目會對齊資料列的開頭。 額外的空間會保持未使用的資料列結尾。 這是預設值。
-- **Center**:項目是資料列的置中對齊。 開始和結束的資料列平均分配額外的空間。
-- **結束**:與資料列結尾對齊項目。 額外的空間保留未使用的資料列的開頭。
-- **SpaceAround**:項目會平均分散。 等量的空間會加入之前和之後每個項目。
-- **SpaceBetween**:項目會平均分散。 每個項目之間會加上等量的空間。 開始和結束的資料列加入沒有空格。
-- **SpaceEvenly**:使用等量的空間，每個項目間以及開始和結束的資料列平均分散的項目。
+- **Start**：項目與列齊頭對齊。 在列的最後留下未使用的額外空間。 這是預設值。
+- **Center**：項目與列置中對齊。 額外的空間在列的頭尾平均分配。
+- **End**：項目與列齊尾對齊。 在列的開頭留下未使用的額外空間。
+- **SpaceAround**：項目平均分佈。 在每個項目的前後加入等量的空間。
+- **SpaceBetween**：項目平均分佈。 在每個項目之間加入等量的空間。 在列的前後沒有加入空間。
+- **SpaceEvenly**：項目平均分佈，每個項目之間以及列的開頭和結尾都有相等的空間。
 
-下圖顯示的效果**ItemsStretch** （套用至資料行，而非資料列） 的垂直版面配置中的值。
+此影像顯示在垂直配置中 **ItemsStretch** 值的效果 (套用到欄，而非套用到列)。
 
 ![統一的格線項目對齊](images/uniform-grid-item-justification.png)
 
 > [!TIP]
-> **ItemsStretch**屬性會影響_量值_的版面配置傳遞。 **ItemsJustification**屬性會影響_排列_的版面配置傳遞。
+> **ItemsStretch** 屬性影響配置的_測量_傳遞。 **ItemsJustification** 屬性影響配置的_排列_傳遞。
 
-此範例示範如何設定**ItemsRepeater.Layout**屬性設**UniformGridLayout**。
+此範例示範如何將 **ItemsRepeater.Layout** 屬性設為 **UniformGridLayout**。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -340,20 +340,20 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 </muxc:ItemsRepeater>
 ```
 
-## <a name="lifecycle-events"></a>生命週期事件
+## <a name="lifecycle-events"></a>週期事件
 
-當您裝載中的項目[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)、 您可能需要採取某些動作，會顯示，或停止所顯示的項目時，例如當開始非同步下載一些內容，使項目與機制，以追蹤選取範圍，或停止某個背景工作。
+當您在 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 中託管項目時，在顯示項目或停止顯示項目時，可能需要採取某些動作，例如啟動某些內容的非同步下載作業、將元素與機制建立關聯以追蹤選取項目，或是停止某項背景工作。
 
-在虛擬化的控制項中，您不能依賴載入/卸載事件因為它已回收時，項目可能會移除從即時視覺化樹狀結構。 相反地，若要管理的項目生命週期提供其他事件。 ItemsRepeater，並引發相關的事件時，此圖表會顯示項目生命的週期。
+在虛擬化的控制項中，無法依賴載入/卸載事件，因為回收時，可能無法將元素從即時視覺化樹狀結構中移除。 而是改為提供其他事件，來管理元素的生命週期。 此圖顯示了 ItemsRepeater 中的元素生命週期，以及引發相關事件的時間。
 
-![生命週期事件的圖表](images/items-repeater-lifecycle.png)
+![生命週期事件圖](images/items-repeater-lifecycle.png)
 
-- [**ElementPrepared** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementprepared)會在每次項目可供使用。 這是新建立的項目以及已經存在，而且正在回收佇列中重新使用的項目。
-- [**ElementClearing** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementclearing)元素已傳送至資源回收佇列中，例如當它超出範圍的每次發現的項目立即發生。
-- [**ElementIndexChanged** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementindexchanged
-)針對每個發現它所代表的項目索引已變更的 UIElement，就會發生。 比方說，當新增或移除資料來源中另一個項目，項目之後的排序索引就會收到此事件。
+- 每次準備好使用元素時，都會發生 [**ElementPrepared**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementprepared)。 對於新建立的元素，以及已存在且正在從回收佇列重新使用的元素，都會發生這種情況。
+- 每次將元素傳送至回收佇列時 (例如當元素超出具現化項目的範圍時)，會立即發生 [**ElementClearing**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementclearing)。
+- 每個具現化的 UIElement (其代表的項目索引已變更) 都會發生 [**ElementIndexChanged**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.elementindexchanged
+)。 例如，在資料來源中新增或移除另一個項目時，依序排列之後的項目索引會收到此事件。
 
-這個範例會示範如何使用這些事件將自訂的選取項目服務，來追蹤中顯示的項目使用 ItemsRepeater 的自訂控制項的項目選取項目。
+此範例示範如何使用這些事件來附加自訂選擇服務，以追蹤使用 ItemsRepeater 顯示項目之自訂控制項的項目選擇。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -415,21 +415,21 @@ private void OnElementClearing(ItemsRepeater sender, ElementClearingEventArgs ar
 }
 ```
 
-## <a name="sorting-filtering-and-resetting-the-data"></a>排序、 篩選及重設資料
+## <a name="sorting-filtering-and-resetting-the-data"></a>排序、篩選和重設資料
 
-當您執行動作，例如篩選或排序資料集時，您傳統上可能會有比先前的一組資料至新的資料，則發出透過細微的變更通知[INotifyCollectionChanged](/uwp/api/windows.ui.xaml.interop.inotifycollectionchanged)。 不過，通常會完全取代舊的資料，以新的資料，並觸發程序集合變更通知使用變得更加容易[重設](/uwp/api/windows.ui.xaml.interop.notifycollectionchangedaction)動作改。
+當您執行篩選或排序資料集之類的動作時，習慣上可能會將先前的資料集與新資料比較，然後透過 [INotifyCollectionChanged](/uwp/api/windows.ui.xaml.interop.inotifycollectionchanged) 發出細微變更通知。 但是，改用[重設](/uwp/api/windows.ui.xaml.interop.notifycollectionchangedaction)動作，將舊資料完全取代為新資料，並觸發集合變更通知，通常更加容易。
 
-一般而言，重設會導致發行現有的子項目並重頭開始，建置在捲軸位置 0 開始的 UI，因為它具有不知道到底如何資料有所變更時重設控制項。
+通常，重設會導致控制項釋出現有子元素，並從捲動位置 0 重新開始建置 UI，因為它無法確切知道資料在重設期間的變化。
 
-不過，如果集合已指派為 ItemsSource 支援唯一的識別項藉由實作[IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping)介面，則可以快速識別 ItemsRepeater:
+但是，如果指派為 ItemsSource 的集合藉由實作 [IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping) 介面以支援唯一的識別碼，則 ItemsRepeater 可以快速識別：
 
-- 針對存在於之前和之後重設資料的可重複使用 UIElements
-- 先前顯示的項目已移除
-- 加入新項目，將會顯示
+- 重設前後已存在資料的可重複使用 UIElements
+- 已移除的先前可見項目
+- 可看見的新增項目
 
-這可讓 ItemsRepeater 避免從頭開始從捲軸位置為 0。 它也可讓它快速還原的 Uielement，重設，在未變更的資料產生更好的效能。
+這可讓 ItemsRepeater 避免從捲軸位置 0 從頭開始。 也可以針對重設時未變更的資料以快速還原 UIElements，進而產生更好的效能。
 
-此範例示範如何顯示垂直堆疊中的項目清單何處_MyItemsSource_是包裝的項目基礎清單的自訂資料來源。 它會公開_資料_可用來重新指派新的清單，以做為項目來源，再觸發重設的屬性。
+此範例示範如何在垂直堆疊中顯示項目清單，其中 _MyItemsSource_ 是包裝基礎項目清單的自訂資料來源。 其會公開 _Data_ 屬性，該屬性可用於將新清單重新指派為項目來源，然後觸發重設。
 
 ```xaml
 <ScrollViewer x:Name="sv">
@@ -561,14 +561,14 @@ public class MyItemsSource : IReadOnlyList<ItemBase>, IKeyIndexMapping, INotifyC
 
 ```
 
-## <a name="create-a-custom-collection-control"></a>建立自訂集合的控制項
+## <a name="create-a-custom-collection-control"></a>建立自訂集合控制項
 
-您可以使用[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)建立完成，但它自己的控制項來呈現每個項目類型的自訂集合控制項。
+您可以使用 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 以建立自訂集合控制項，配有自己的控制項類型以顯示每個項目。
 
 > [!NOTE]
-> 這是類似於使用**ItemsControl**，但而不是衍生自**ItemsControl**放**ItemsPresenter**在控制項範本中，您會衍生自**控制項**，並插入**ItemsRepeater**控制項範本中。 自訂集合控制項 」 具有" **ItemsRepeater**與 「 是 」 **ItemsControl**。 這表示您必須明確地選擇哪些屬性，以公開，而不是其繼承屬性，以不支援。
+> 這與使用 **ItemsControl** 類似，但不是衍生自 **ItemsControl**，並將 **ItemsPresenter** 放在控制項範本中，而是衍生自 **Control**，並會插入 **ItemsRepeater** 控制項範本中。 自訂集合控制項「具有」**ItemsRepeater** 而且「是」**ItemsControl**。 這表示您也必須明確選擇要公開的屬性，而不是未支援的繼承屬性。
 
-此範例示範如何將放[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)名為自訂控制項範本中_MediaCollectionView_並公開其屬性。
+此範例示範如何在名稱為 _MediaCollectionView_ 的自訂控制項範本中放置 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，並公開其屬性。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -634,11 +634,11 @@ public sealed class MediaCollectionView : Control
 }
 ```
 
-## <a name="display-grouped-items"></a>顯示群組的項目
+## <a name="display-grouped-items"></a>顯示分組項目
 
-您可以巢狀[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)中[ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)的另一個 ItemsRepeater 建立巢狀虛擬化版面配置。 架構會藉由減少不必要的實現，看不到的項目，或接近目前檢視區讓有效率地使用資源。
+您可以在另一個 ItemsRepeater 的 [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) 中，巢狀 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 以建立巢狀的虛擬化配置。 該架構會盡量減少不必要的元素實現 (無法檢視或在目前檢視區附近的元素)，以此方式善加運用資源。
 
-這個範例會示範如何顯示的群組項目清單，以及在垂直堆疊中。 外部 ItemsRepeater 會產生每個群組。 在範本中的每個群組，另一個 ItemsRepeater 會產生項目。
+此範例會示範如何在垂直堆疊中顯示分組的項目清單。 外部 ItemsRepeater 會產生每個群組。 在每個群組的範本中，另一個 ItemsRepeater 會產生項目。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -664,9 +664,9 @@ public sealed class MediaCollectionView : Control
 </ScrollViewer>
 ```
 
-這個範例會示範已隨著使用者喜好設定，並會顯示為水平捲動清單，如下所示的各種類別的應用程式的配置。
+這個範例示範應用程式的配置，此配置有各種類別，可以根據使用者偏好設定進行變更，並以水平捲動清單顯示，如下所示。
 
-![巢狀的版面配置與項目重複項](images/items-repeater-nested-layout.png)
+![透過項目重複器巢狀配置](images/items-repeater-nested-layout.png)
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -707,16 +707,16 @@ public sealed class MediaCollectionView : Control
 </ScrollViewer>
 ```
 
-## <a name="bringing-an-element-into-view"></a>項目帶入檢視
+## <a name="bringing-an-element-into-view"></a>將元素帶入檢視
 
-XAML 架構已處理 1） 接收到鍵盤焦點或 2） 取得焦點 [朗讀程式] 時 FrameworkElement 帶入檢視。 可能有其他情況下，您需要明確地將項目帶入檢視。 比方說，以回應使用者動作，或在網頁巡覽後還原 UI 狀態。
+當 XAML 架構 1) 接收鍵盤焦點或 2) 接收朗讀程式焦點時，XAML 架構已將 FrameworkElement 帶入檢視。 可能還有其他情況需要明確地將元素帶入檢視中。 例如，回應使用者動作，或在頁面導覽後還原 UI 狀態。
 
-虛擬化的項目帶入檢視涉及下列工作：
-1. 了解的 UIElement 項目
-2. 執行版面配置，以確保項目具有有效的位置
-3. 起始要求來具現化的項目帶入檢視
+將虛擬化的項目帶入檢視涉及以下內容：
+1. 實現項目的 UIElement
+2. 執行配置，以確保元素具有有效位置
+3. 初始化要求以將實現的元素帶入檢視
 
-下列範例示範在網頁巡覽後還原的一般、 垂直清單中的項目捲軸位置的這些步驟。 在使用巢狀的 ItemsRepeaters 的階層式資料的情況下，方法基本上相同，但是必須在每個階層層級執行。
+以下範例示範在頁面導覽之後，還原一般、垂直清單中項目的捲動位置的步驟。 對於使用巢狀 ItemsRepeaters 的階層資料，方法基本上相同，但必須在每個階層層級執行。
 
 ```xaml
 <ScrollViewer x:Name="scrollviewer">
@@ -763,29 +763,29 @@ public class MyPage : Page
 
 ## <a name="enable-accessibility"></a>啟用協助工具
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)不會提供預設的協助工具體驗。 上的文件[UWP 應用程式的使用性](/windows/uwp/design/usability)提供豐富的資訊可協助您確保您的應用程式提供內含使用者體驗。 如果您用來建立自訂控制項 ItemsRepeater 請務必查看文件上[自訂自動化對等](/windows/uwp/design/accessibility/custom-automation-peers)。
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 未提供預設的協助工具體驗。 [UWP 應用程式的可用性](/windows/uwp/design/usability)上的文件提供大量資訊，可幫助您確保應用程式提供包容性的使用者體驗。 如果您使用 ItemsRepeater 以建立自訂控制項，請務必查看[自訂自動化對等](/windows/uwp/design/accessibility/custom-automation-peers)上的文件。
 
 ### <a name="keyboarding"></a>鍵盤輸入
-ItemsRepeater 提供的焦點移動的最小 keyboarding 支援根據 XAML 的[Keyboarding 的 2D 方向式巡覽](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard)。
+ItemsRepeater 所提供焦點移動的最小鍵盤支援是根據 XAML 的[鍵盤輸入的 2D 方向導航](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard)。
 
-![方向導覽](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
+![瀏覽方向](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-ItemsRepeater [XYFocusKeyboardNavigation 模式](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)是_已啟用_預設。 根據預期的體驗，請考慮將常見[鍵盤互動](/windows/uwp/design/input/keyboard-interactions)Home、 End、 PageUp，等。
+ItemsRepeater 的 [XYFocusKeyboardNavigation 模式](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)預設為_已啟用_。 根據預期的體驗，請考慮對常用的[鍵盤輸入互動](/windows/uwp/design/input/keyboard-interactions)新增支援，例如 Home、End、PageUp 和 PageDown。
 
-ItemsRepeater 自動確保，預設的定位順序，其項目 （不論是虛擬化與否） 如下所示的相同順序來提供資料的項目。 依預設具有 ItemsRepeater 及其[TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation)屬性設定為[一次](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode)而不是常見的預設值是_本機_。
+ItemsRepeater 會自動確保其項目的預設 Tab 鍵順序 (無論是否虛擬化)，遵循與資料中項目相同的順序。 依預設，ItemsRepeater 已將其 [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation) 屬性設為[一次](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode)，而不是常見的預設值_本機_。
 
 > [!NOTE]
-> ItemsRepeater 自動不記得最後一個焦點的項目。  這表示當使用者正在使用 Shift + Tab 便可能到最後一個進入實現項目。
+> ItemsRepeater　不會自動記住最後一個焦點項目。  這表示當使用者使用 Shift + Tab 鍵時，他們可能會進入最後一個實現的項目。
 
-### <a name="announcing-item-x-of-y-in-screen-readers"></a>宣布 「 項目_X_的_Y_」 在螢幕助讀程式
+### <a name="announcing-item-x-of-y-in-screen-readers"></a>在螢幕助讀程式中宣告「_Y_ 的項目 _X_」
 
-您需要管理設定適當的自動化屬性，例如值**PositionInSet**並**SizeOfSet**，並確保它們保持最新狀態的項目新增時，移動、 移除、 等等。
+您需要管理設定適當的自動化屬性，例如r **PositionInSet** 和 **SizeOfSet** 的值，並確保在新增、移動、刪除項目等等動作時，保持最新狀態。
 
-某些自訂的版面配置中可能不會有明顯的順序，以視覺化的順序。  使用者以最低限度應該由螢幕助讀員 PositionInSet 和 SizeOfSet 屬性的值會符合的項目 （1，以符合自然計數與 0 為基礎的位移） 的資料中出現的順序。
+在某些自訂配置中，視覺順序可能沒有明顯的順序。  使用者最低限度地期望螢幕助讀程式使用的 PositionInSet 和 SizeOfSet 屬性值將與項目在資料中出現的順序相符 (位移 1 以符合自然計數與以 0 為基礎的順序)。
 
-若要達到此目的，最好是讓項目控制項實作自動化對等個體[GetPositionInSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpositioninsetcore)並[GetSizeOfSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getsizeofsetcore)方法和報表資料集中項目的位置表示控制項。 在執行階段時存取的輔助技術只計算的值，並讓它保持在最新狀態會變成問題。 值必須符合的資料順序。
+達成此目的的最佳方法是讓項目控制項的自動化對等實作 [GetPositionInSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpositioninsetcore) 和 [GetSizeOfSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getsizeofsetcore) 方法，並報告控制項所代表的資料集中的項目位置。 只有在輔助技術存取時，才會在執行階段計算該值，而且使其保持在最新狀態已經不成問題。 值符合資料順序。
 
-此範例示範如何可以這麼做時顯示自訂控制項稱為_CardControl_。
+此範例示範出現名稱為 _CardControl_ 的自訂控制項時，如何執行此操作。
 
 ```xaml
 <ScrollViewer >

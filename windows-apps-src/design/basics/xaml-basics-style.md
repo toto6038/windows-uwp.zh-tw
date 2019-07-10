@@ -6,21 +6,21 @@ ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66361226"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 
 本教學課程告訴您如何自訂 XAML 應用程式的 UI。 警告：本教學課程不一定會涉及獨角獸。 (確實如此！)  
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 * [Visual Studio 2017 和 Windows 10 SDK (10.0.15063.468 或更新版本)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>第 0 部分：取得程式碼
-本實習課程的起始點位置是在 [xaml-basics-starting-points/style/ 資料夾](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style)中的 PhotoLab 範例存放庫。 複製/下載存放庫之後，您可以使用 Visual Studio 2017 開啟 PhotoLab.sln 來編輯專案。
+本實驗室的起始點位於 [xxaml-basics-starting-points/style/ 資料夾](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style)中的 PhotoLab 範例存放庫。 複製/下載存放庫之後，您可以使用 Visual Studio 2017 開啟 PhotoLab.sln 來編輯專案。
 
 PhotoLab 應用程式有兩個主要頁面：
 
@@ -32,13 +32,13 @@ PhotoLab 應用程式有兩個主要頁面：
 
 ## <a name="part-1-create-a-fancy-slider-control"></a>第 1 部分：建立美觀的滑桿控制項  
 
-通用 Windows 平台 (UWP) 提供幾個用來自訂應用程式外觀的方法。 從字型和印刷樣式設定到色彩和漸層，再到模糊效果，您有許多種方式可以選擇。 
+通用 Windows 平台 (UWP) 提供幾個用來自訂應用程式外觀的方法。 從字型和印刷樣式設定到色彩和漸層，再到模糊效果，有許多方式可供選擇。 
 
-在本教學課程的第一個部分，讓我們來翻新一些相片編輯控制項。 
+在本教學課程的第一個部分，讓我們來x靈活運用一些相片編輯控制項。 
 
 <figure>
     <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*具有預設樣式的 humble 滑桿。*</figure>
+    <figure>*使用預設樣式的平常滑桿。*</figure>
 </figure>
 
 這些滑桿是不錯，滑桿該有的功能全都有，就是不太有型。 我們來修整一下。 
@@ -50,9 +50,9 @@ PhotoLab 應用程式有兩個主要頁面：
 <!-- TODO: Update folder -->
 1. 下載存放庫之後，開啟 xaml-basics-starting-points/style/ 資料夾中的 **PhotoLab.sln**，並將 [方案平台] 設定為 x86 或 x64 (而非 ARM)。 
 
-    按 F5 來編譯並執行應用程式。 第一個畫面顯示影像的圖庫。 按一下影像以移至詳細資料頁面。 到了那裡後，按一下編輯按鈕來查看我們即將處理的編輯控制項。 結束應用程式，回到 Visual Studio。  
+    按 F5 來編譯並執行應用程式。 第一個畫面顯示影像的圖庫。 按一下影像以移至影像詳細資料頁面。 進入後，按一下編輯按鈕以查看我們即將處理的編輯控制項。 結束應用程式，返回 Visual Studio。  
 
-2. 在 [方案總管] 面板中，按兩下 **\[DetailPage.xaml\]** 將其開啟。 
+2. 在 [方案總管] 面板中，按兩下 [DetailPage.xaml]  將其開啟。 
 
     ![Visual Studio 2017 方案總管中的 DetailPage.xaml 檔案。](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
@@ -61,17 +61,17 @@ PhotoLab 應用程式有兩個主要頁面：
     [Windows.XAML.Ui.Shapes 命名空間](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)提供七個可以選擇的圖形。 有橢圓形、矩形，以及所謂「路徑」的項目，這可建立任何類型的圖形；是的，甚至獨角獸都行！ 
     
     <!-- TODO reduce size -->
-    ![Unicorn](../basics/images/xaml-basics/unicorn.png)
+    ![獨角獸](../basics/images/xaml-basics/unicorn.png)
     
-    > **了解它：** [繪製圖案](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章會告訴您想要知道有關 XAML 圖形的所有項目。 
+    > **請參閱：** [繪製圖形](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章告訴您一切您需要知道關於 XAML 圖形的所有內容。 
     
-    我們想要建立三角形外觀的介面控件，就像在立體音響音量控制上看到的圖形一樣。
+    我們想要建立三角形外觀的 Widget，就像在立體音響音量控制上看到的圖形一樣。
     
     ![音量滑桿](../basics/images/xaml-basics/style-volume-slider.png)
     
-    聽起來像是處理多邊形的工作！ 若要定義多邊形，請指定一組點集並指定填滿。 我們來建立一個約 200 像素寬、20 像素高且使用漸層填滿的多邊形。
+    聽起來像是處理多邊形的工作！ 若要定義多邊形，請指定一組點並指定填滿。 我們來建立一個約 200 像素寬、20 像素高且使用漸層填滿的多邊形。
     
-    在 DetailPage.xaml 中，尋找曝光滑桿的程式碼，然後直接它之前建立 Polygon 元素： 
+    在 DetailPage.xaml 中，尋找曝光滑桿的程式碼，然後在下列事項之前，建立 Polygon 元素： 
 
     * 將 **Grid.Row** 設定為 "2"，將多邊形與曝光滑桿放在同一列。 
     * 將 **Points** 屬性設定為 "0,20 200,20 200,0"，以定義三角形圖形。
@@ -88,7 +88,7 @@ PhotoLab 應用程式有兩個主要頁面：
         Minimum="-2"
         Maximum="2" />
     ```
-    **After**
+    **之後**
     ```xaml
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -118,9 +118,9 @@ PhotoLab 應用程式有兩個主要頁面：
 
     ![美觀的曝光滑桿](../basics/images/xaml-basics/style-exposure-slider-done.png)
 
-5. 給下一個滑桿 (溫度滑桿) 做升級。 溫度滑桿變更影像的色溫。向左推使影像更偏藍色，向右推使影像更偏黃色。
+5. 為下一個滑桿 (溫度滑桿) 進行升級。 溫度滑桿變更影像的色溫。向左推使影像更偏藍色，向右推使影像更偏黃色。
 
-    這個背景圖形使用另一個多邊形，尺寸與前一個相同，但此時會將填滿設定為由藍色變到黃色的漸層，而不是黑白。 
+    我們將為此背景圖形使用另一個多邊形，其尺寸與前一個相同，但這次我們將填滿設定為由藍色變到黃色的漸層，而不是黑色和白色。 
 
     **之前**
     ```xaml
@@ -135,7 +135,7 @@ PhotoLab 應用程式有兩個主要頁面：
             Minimum="-1"
             Maximum="1" />
     ```
-    **After**
+    **之後**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -165,26 +165,26 @@ PhotoLab 應用程式有兩個主要頁面：
 
     ![兩個美觀的滑桿](../basics/images/xaml-basics/style-2sliders-done.png)
 
-7. **額外的信用額度**
+7. **額外加分**
 
     為濃淡滑桿新增具有由綠色變紅色漸層的背景圖形。 
 
     ![3 個美觀的滑桿](../basics/images/xaml-basics/style-3sliders-done.png)
 
 
-恭喜，您已完成 1 部分！ 如果遇到困難或想要查看最終方案，您可以在 **UWP Academy\XAML\Styling\Part1\Finish** 中找到完成的程式碼。
+恭喜，您已完成第 1 部分！ 如果遇到困難或想要查看最終方案，您可以在 **UWP Academy\XAML\Styling\Part1\Finish** 中找到完成的程式碼。
 
  
     
-## <a name="part-2-create-basic-styles"></a>第 2 部分：建立基本的樣式
+## <a name="part-2-create-basic-styles"></a>第 2 部分：建立基本樣式
 
-XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式碼數量，而且可以讓您更新應用程式外觀更加輕鬆得多。
+XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式碼數量，而且可以讓您更輕鬆地更新應用程式外觀。
 
 若要定義樣式，請將 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素新增至包含需要設定樣式之控制項的元素的 [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) 屬性。  如果將樣式新增至 **Page.Resources** 屬性，整個頁面都可以存取您的樣式。 如果將樣式新增至 App.xaml 檔案中的 **Application.Resources** 屬性，整個應用程式都可以存取該樣式。
 
 您可以建立具名樣式和一般樣式。 具名樣式必須明確套用至特定控制項；一般樣式則套用至任何符合指定之 **TargetType** 的控制項。 
 
-在此範例中，第一個樣式具有 **x:Key** 屬性，其目標類型為 **Button**。 第一個按鈕的 **Style** 屬性設為此索引鍵，所以此樣式為具名樣式，必須明確進行套用。 第二種樣式是自動套用至第二個按鈕，因為其目標類型是 **Button**，而且該樣式並沒有 **x:Key** 屬性。
+在這個範例中，第一個樣式具有 **x:Key** 屬性，其目標類型為 **Button**。 第一個按鈕的 **Style** 屬性設為此索引鍵，所以此樣式為具名樣式，必須明確進行套用。 第二種樣式是自動套用至第二個按鈕，因為其目標類型是 **Button**，而且該樣式並沒有 **x:Key** 屬性。
 
 
 ```XAML
@@ -207,7 +207,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
 </Grid>
 ```
 
-讓我們將樣式新增至應用程式。 在 DetailsPage.xaml 中，看一下分別挨著曝光、溫度及濃淡滑桿旁邊的文字區塊。 每個這些文字區塊各自顯示一個滑桿的值。 以下是曝光滑桿的文字方塊。 請注意，**Margin**、**VerticalAlignment** 和 **Padding** 屬性已設定。
+讓我們將樣式新增至應用程式。 在 DetailsPage.xaml 中，看一下曝光、溫度及濃淡滑桿旁邊的文字區塊。 每個文字區塊各自顯示一個滑桿值。 以下是曝光滑桿的文字方塊。 請注意，**Margin**、**VerticalAlignment** 和 **Padding** 屬性已設定。
 
 ```XAML
 <TextBlock Grid.Row="2"
@@ -243,7 +243,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             </Style>
         </Grid.Resources>    
     ```
-3. 為 **TextBlock** 建立會將 **Margin** 設為 "10,8,0,0"、將 **VerticalAlignment** 設為 [置中] 以及將 **Padding** 設為 "0" 的樣式。
+3. 為 **TextBlock** 建立一個樣式，該樣式會將 **Margin** 設為 "10,8,0,0"、將 **VerticalAlignment** 設為 [置中] 以及將 **Padding** 設為 "0"。
 
     **之前**
     ```XAML
@@ -263,7 +263,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Grid.Resources>
     ```
 
-    **After**
+    **之後**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -303,7 +303,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             </Style>                            
     ```    
 
-    **After**
+    **之後**
     ```XAML
             <Style TargetType="TextBlock"
                    x:Key="ValueTextBox">
@@ -316,7 +316,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             </Style>                            
     ```    
 
-5. 移除每個 **TextBlock** 的 **Margin**、**VerticalAlignment** 及 **Padding** 屬性，並將其 **Style** 屬性設定為 "{StaticResource ValueTextBox}"。
+5. 對於每個 **TextBlock**，移除其 **Margin**、**VerticalAlignment** 及 **Padding** 屬性，並將其 **Style** 屬性設定為 "{StaticResource ValueTextBox}"。
 
     **之前**
     ```XAML
@@ -326,7 +326,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```
 
-    **After**
+    **之後**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -334,24 +334,24 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```    
 
-    對所有共 6 個與滑桿相關聯的 TextBlock 控制項進行此變更。
+    對與滑桿相關聯的所有 6 個 TextBlock 控制項進行此變更。
 
-6. 編譯和執行應用程式。 應該看起來... 都一樣。 但您會有美妙滿意成就感撰寫有效率可維護的程式碼。
+6. 編譯和執行應用程式。 應該看起來...都一樣。 但是，您應該感受到撰寫有效率、可維護的程式碼所帶來的美妙滿足感和成就感。
 
 <!-- TODO add new start/end points -->
-恭喜，您已完成 2 部分！
+恭喜，您已完成第 2 部分！
 
 
-## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>第 3 部分：使用控制項範本來製作花俏的滑桿
+## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>第 3 部分：使用控制項範本建立美觀的滑桿
 
 記得我們如何在第 1 部分新增了滑桿後面的圖形，讓它看起來更酷嗎？
 
 嗯，工作是完成了，但還有更好的方式來達到相同的效果：建立控制項範本。 
 
 <!-- TODO add new starting points -->
-1. 在 [方案總管] 面板中，按兩下 **\[DetailPage.xaml\]** 。
+1. 在 [方案總管] 面板中，按兩下 [DetailPage.xaml]  。
 
-2. 接下來，將預設控制範本用於滑桿做為我們的起始點。 將此 XAML 新增至 **Page.Resources** 元素  (**Page.Resources** 元素較靠近頁面開頭)。
+2. 接下來，我們將使用滑桿的預設控制項範本做為起點。 將此 XAML 新增至 **Page.Resources** 元素。 (**Page.Resources** 元素較靠近頁面開頭)。
 
     ```XAML
     <ControlTemplate x:Key="FancySliderControlTemplate" TargetType="Slider">
@@ -648,7 +648,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Grid.RowDefinitions>        
     ```
 
-    **After**
+    **之後**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -693,7 +693,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Polygon>           
     ```
     
-    **After**
+    **之後**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -702,7 +702,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
         </Polygon>           
     ```    
 
-7. 就在您新增的多邊形後面，有一個名為 **HorizontalTrackRect** 的矩形。 移除矩形的 **Fill** 設定，讓矩形無法顯示，以免擋住我們的多邊形圖形  (我們並不想要完全移除矩形，因為控制項範本還會用它來產生互動視覺效果，例如滑鼠指標暫留)。
+7. 就在您新增的多邊形後面，有一個名為 **HorizontalTrackRect** 的矩形。 移除矩形的 **Fill** 設定，讓矩形無法顯示，以免擋住我們的多邊形圖形。 (我們並不想要完全移除矩形，因為控制項範本還會用它來產生互動視覺效果，例如滑鼠指標暫留。)
 
     **之前**
     ```XAML
@@ -713,7 +713,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
                     Grid.ColumnSpan="3" />          
     ```
     
-    **After**
+    **之後**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Height="{ThemeResource SliderTrackThemeHeight}"
@@ -725,9 +725,9 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
     
 8. 這就來更新我們的曝光滑桿。
 
-    * 將捲軸的 **Template** 屬性設定為 "{StaticResource FancySliderControlTemplate}"。
+    * 將滑桿的 **Template** 屬性設定為 "{StaticResource FancySliderControlTemplate}"。
     * 移除滑桿的 Background="Transparent" 設定。 
-    * 將滑桿的 Background 設定為由黑色變到白色的線性漸層。
+    * 將滑桿的 Background 設定為由黑色到白色的線性漸層。
     * 移除我們在第 1 部分建立的背景多邊形。
         
     **之前**
@@ -752,7 +752,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Template="{StaticResource FancySliderControlTemplate}"/>    
     ```
     
-    **After**
+    **之後**
     ```XAML
     <Slider Header="Exposure" 
             Grid.Row="2"  Foreground="Transparent"
@@ -793,7 +793,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Maximum="1" />
     ```
     
-    **After**
+    **之後**
     ```XAML
     <Slider Header="Temperature"
             Grid.Row="3" Foreground="Transparent"
@@ -835,7 +835,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Maximum="1" />
     ```
     
-    **After**
+    **之後**
     ```XAML
     <Slider Header="Tint"
             Grid.Row="4" Foreground="Transparent"
@@ -856,9 +856,9 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
 
 11. 編譯和執行應用程式。 
 
-    ![世界最好的滑桿](../basics/images/xaml-basics/style-sliders-templates.png)
+    ![世界上最好的滑桿](../basics/images/xaml-basics/style-sliders-templates.png)
     
-    如您所見，我們更新改善了多邊形的置放方式；現在多邊形的底部已對齊滑桿縮圖的底部。
+    如您所見，我們的更新改善了多邊形的置放方式；現在多邊形的底部已對齊滑桿縮圖的底部。
     
 <!-- TODO correct folder -->
-恭喜，您已經完成教學課程了！ 如果遇到困難或想要查看最終方案，您可以在 [UWP app 範例存放庫](https://github.com/Microsoft/Windows-universal-samples)中找到完整的範例。
+恭喜，您已經完成教學課程了！ 如果遇到困難或想要查看最終方案，您可以在 [UWP 應用程式範例存放庫](https://github.com/Microsoft/Windows-universal-samples)中找到完整的範例。

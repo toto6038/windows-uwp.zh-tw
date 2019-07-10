@@ -1,25 +1,25 @@
 ---
-description: 本主題示範如何使用 C++/WinRT API，無論 Windows、第三方元件廠商或您自己是否實作它們。
-title: 使用 C++/WinRT 來使用 API
+description: 本主題示範如何取用 C++/WinRT API，無論 Windows、第三方元件廠商或您自己是否實作它們。
+title: 使用 C++/WinRT 取用 API
 ms.date: 04/23/2019
 ms.topic: article
-keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影的、投影、實作、執行階段類別、啟用
+keywords: windows 10, uwp, 標準, c++, cpp, winrt, 已投影, 投影, 實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
 ms.openlocfilehash: e6bf1e7fb32533aa9d7b865ac7c8afc374290e54
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66360344"
 ---
-# <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 來使用 API
+# <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 取用 API
 
-本主題說明如何使用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api，不論它們是屬於 Windows，藉由將協力廠商元件的廠商，或自行實作。
+本主題示範如何取用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API，不管是否為 Windows 的一部分，皆由第三方元件廠商或您自己來實作。
 
-## <a name="if-the-api-is-in-a-windows-namespace"></a>如果 API 在 Windows 命名空間中
-這是您使用 Windows 執行階段 API 最常見的案例。 適用於中繼資料中定義的 Windows 命名空間裡每一類型，C++/WinRT 定義 C++ 適用的對等項目 (稱為 *投影類型*)。 投影類型有相同的完整名稱做為 Windows 類型，但它放在使用 C++ syntax 的 C++ **winrt** 命名空間。 例如，將 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 投影到 C++/WinRT 做為 **winrt::Windows::Foundation::Uri**。
+## <a name="if-the-api-is-in-a-windows-namespace"></a>如果 API 位在 Windows 命名空間中
+這是取用 Windows 執行階段 API 最常見的案例。 對於中繼資料中定義的 Windows 命名空間的每種類型，C++/WinRT 定義 C++ 適用的對等項目 (稱為*投影類型*)。 投影類型有相同的完整名稱做為 Windows 類型，但它放在使用 C++ 語法的 C++ **winrt** 命名空間。 例如，將 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 投影到 C++/WinRT 做為 **winrt::Windows::Foundation::Uri**。
 
-以下是一個簡單的程式碼範例。 如果您想要複製-貼上下列程式碼範例直接到的主要原始程式碼檔案**Windows 主控台應用程式 (C++/WinRT)** 專案，則第一組**未使用先行編譯標頭**在 專案屬性。
+以下是簡單的程式碼範例。 如果您想要將下列程式碼範例直接複製並貼到 **Windows 主控台應用程式 (C++/WinRT)** 專案的主要原始程式碼檔，請先在專案屬性中設定 [不使用預先編譯的標頭]  。
 
 ```cppwinrt
 // main.cpp
@@ -39,34 +39,34 @@ int main()
 包含的標頭 `winrt/Windows.Foundation.h` 屬於 SDK 的一部分，可在資料夾 `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt\` 中找到。 資料夾中的標頭包含投影到 C++/WinRT 的 Windows 命名空間類型。 在此範例中，`winrt/Windows.Foundation.h` 包含 **winrt::Windows::Foundation::Uri**，其適用於執行階段類別 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 的投影類型。
 
 > [!TIP]
-> 每當您要使用從 Windows 命名空間投影到 C++/WinRT，請包含對應到該命名空間的 C++/WinRT 標頭。 `using namespace` 指示詞是選擇性的，但很便利。
+> 每當您要使用來自 Windows 命名空間的類型時，請包含對應到該命名空間的 C++/WinRT 標頭。 `using namespace` 指示詞是選擇性的，但很便利。
 
 上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，[**Uri(String)** ](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) 堆疊配置 **winrt::Windows::Foundation::Uri** 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
 
-事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為，**Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下圖所示，預估的值的成員呼叫實際委派，透過智慧型指標，以支援的物件;這是狀態變更發生的位置。
+事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為 **Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下所示，您投影值成員的呼叫透過智慧型指標確實委派至支援物件；其為狀態發生變更的位置。
 
 ![投影 Windows::Foundation::Uri 類型](images/uri.png)
 
 當 `contosoUri` 值超出範圍時，會解構並將其參考資料發行至預設介面。 如果該參考是支援 Windows 執行階段 **Windows.Foundation.Uri** 物件的最後一個參考，則支援物件也會解構。
 
 > [!TIP]
-> *投影類型*是以使用其 API 為目的透過執行階段類別的包裝程式。 *投影介面*是透過 Windows 執行階段介面的包裝程式。
+> *投影類型*是一種透過執行階段類別為媒介的包裝函式，目的是取用其 API。 *投影介面*是一種透過 Windows 執行階段介面為媒介的包裝函式。
 
 ## <a name="cwinrt-projection-headers"></a>C++/WinRT 投影標頭
-若要從 C++/WinRT 使用 Windows 命名空間 API，請您包含 `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt` 資料夾的標頭。 附屬命名空間中的類型通常在其直接父系命名空間中參考類型。 因此，每個 C++/WinRT 投影標頭自動包含其父系命名空間標頭檔案；讓您不 *需要* 明確包含它。 不過，如果您這麼做，也不會有任何錯誤。
+若要從 C++/WinRT 取用 Windows 命名空間 API，請包含 `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt` 資料夾的標頭。 附屬命名空間中的類型通常在其直接父系命名空間中參考類型。 因此，每個 C++/WinRT 投影標頭自動包含其父系命名空間標頭檔案；讓您不「需要」  明確包含它。 不過，如果您這麼做，也不會有任何錯誤。
 
-例如，針對 [**Windows::Security::Cryptography::Certificates**](/uwp/api/windows.security.cryptography.certificates) 命名空間，對等項目 C++/WinRT 類型定義位於 `winrt/Windows.Security.Cryptography.Certificates.h`。 **Windows::Security::Cryptography::Certificates** 中的類型需要父系 **Windows::Security::Cryptography** 命名空間中的類型；且命名空間中的類型可能需要其本身父系中的類型，**Windows::Security**。
+例如，針對 [**Windows::Security::Cryptography::Certificates**](/uwp/api/windows.security.cryptography.certificates) 命名空間，對等項目 C++/WinRT 類型定義位於 `winrt/Windows.Security.Cryptography.Certificates.h`。 **Windows::Security::Cryptography::Certificates** 中的類型需要父系 **Windows::Security::Cryptography** 命名空間中的類型；且該命名空間中的類型可能需要其本身父系中的類型，**Windows::Security**。
 
-因此，當您包含 `winrt/Windows.Security.Cryptography.Certificates.h`，該檔案依序包含 `winrt/Windows.Security.Cryptography.h`；以及 `winrt/Windows.Security.Cryptography.h` 包含 `winrt/Windows.Security.h`。 便是記錄停止的位置，因為沒有 `winrt/Windows.h`。 此轉移包含程序會在第二層級命名空間停止。
+因此，當您包含 `winrt/Windows.Security.Cryptography.Certificates.h` 時，該檔案依序包含 `winrt/Windows.Security.Cryptography.h`；以及 `winrt/Windows.Security.Cryptography.h` 包含 `winrt/Windows.Security.h`。 這是記錄停止的位置，因為沒有 `winrt/Windows.h`。 此可轉移的包含處理序會在第二層命名空間停止。
 
-此程序間接包括提供在父系命名空間裡定義的必要類別*宣告*和*實作*標頭檔案。
+此處理序會透過可轉移的方式包含標頭檔案，這些標頭檔案為父系命名空間中定義的類別提供必要的「宣告」  和「實作」  。
 
-在一個命名空間中的類型成員可以參考在其他、無關的命名空間中一個或多個類型。 為了讓編譯器成功編譯這些成員定義，需要看到適用於所有這些類型關閉的類型宣告。 因此，每個 C++/WinRT 投影標頭包含需要*宣告*任何相關類型的命名空間標頭。 與父系命名空間不同，此程序*未*引進參考類型的*實作*。
+某個命名空間中的類型成員可以參考在其他無關的命名空間中一個或多個類型。 為了讓編譯器成功編譯這些成員定義，編譯器需要查看所有這些類型的關閉類型宣告。 因此，每個 C++/WinRT 投影標頭包含需要「宣告」  任何相關類型的命名空間標頭。 與父系命名空間不同，此處理序「未」  提取參考類型的「實作」  。
 
 > [!IMPORTANT]
-> 當您想要實際*使用*在不相關的命名空間裡宣告的類型（初始化、呼叫方法等）時，您必須包含該類型適當的命名空間標頭檔案。 僅自動包含*宣告*，而無*實作*。
+> 當您想要實際「使用」  在不相關的命名空間裡宣告的類型 (初始化、呼叫方法等)，必須包含該類型適當的命名空間標頭檔案。 僅自動包含「宣告」  ，而無「實作」  。
 
-例如，如果您只包含 `winrt/Windows.Security.Cryptography.Certificates.h`，則會導致要從這些命名空間（等項目，轉移性的）引進宣告。
+例如，如果只包含 `winrt/Windows.Security.Cryptography.Certificates.h`，則會造成從這些命名空間提取宣告 (以可轉移的方式進行，依此類推)。
 
 - Windows.Foundation
 - Windows.Foundation.Collections
@@ -74,17 +74,17 @@ int main()
 - Windows.Storage.Streams
 - Windows.Security.Cryptography
 
-亦即，在您包含的標頭中轉送宣告一些 API。 但其定義在您未包含的標頭裡。 因此，如果您接著呼叫 [**Windows::Foundation::Uri::RawUri**](/uwp/api/windows.foundation.uri.rawuri)，則您會收到連結器錯誤，指出成員未定義。 解決方案是明確地 `#include <winrt/Windows.Foundation.h>`。 一般而言，當您看到如下的連結器錯誤時，請包含為 API 命名空間命名的標頭並重建。
+亦即，在您包含的標頭中轉送宣告一些 API。 但其定義在您未包含的標頭裡。 因此，如果您接著呼叫 [**Windows::Foundation::Uri::RawUri**](/uwp/api/windows.foundation.uri.rawuri)，則您會收到連結器錯誤，指出成員未定義。 解決方案是明確 `#include <winrt/Windows.Foundation.h>`。 一般而言，當您看到如下的連結器錯誤時，請包含為 API 命名空間命名的標頭並重建。
 
-## <a name="accessing-members-via-the-object-via-an-interface-or-via-the-abi"></a>透過物件、或透過介面，或透過 ABI 存取成員
-使用 C++/WinRT 投影，Windows 執行階段類別的執行階段呈現方式是不超過基礎 ABI 介面。 不過，為了方便使用，您可以按照作者希望的方式對類別進行編碼。 例如，您可以呼叫 [**Uri**](/uwp/api/windows.foundation.uri) 的 **ToString** 方法，就像類別的方法一樣（事實上，背後的運作方式，這是一種在獨立 **IStringable** 介面上的方法）。
+## <a name="accessing-members-via-the-object-via-an-interface-or-via-the-abi"></a>透過物件、透過介面，或透過 ABI 存取成員
+使用 C++/WinRT 投影，Windows 執行階段類別的執行階段呈現方式是不超過基礎 ABI 介面。 不過，為了方便使用，您可以按照作者希望的方式對類別撰寫程式碼。 例如，您可以呼叫 [**Uri**](/uwp/api/windows.foundation.uri) 的 **ToString** 方法，就像類別的方法一樣 (事實上，藉由此做法，這是一種在個別 **IStringable** 介面上的方法)。
 
 ```cppwinrt
 Uri contosoUri{ L"http://www.contoso.com" };
 WINRT_ASSERT(contosoUri.ToString() == L"http://www.contoso.com/"); // QueryInterface is called at this point.
 ```
 
-透過查詢適當的介面達成此便利。 但是，您隨時可以控制。 您可以透過自我擷取 IStringable 介面並直接使用，來選擇放棄一點方便以獲得一點效能。 在下列程式碼範例中，您可以在執行階段取得實際 IStringable 介面指標（透過一次性查詢）。 之後，您便直接呼叫 **ToString**，並避免任何進一步呼叫 **QueryInterface**。
+透過查詢適當的介面以實現此便利。 但是，您隨時可以控制。 您可以透過自我擷取 IStringable 介面並直接使用，來選擇放棄一點方便以獲得一點效能。 在下列程式碼範例中，您可以在執行階段取得實際 IStringable 介面指標 (透過一次性查詢)。 之後，您對 **ToString** 的呼叫是直接的，並且可避免任何進一步呼叫 **QueryInterface**。
 
 ```cppwinrt
 ...
@@ -92,9 +92,9 @@ IStringable stringable = contosoUri; // One-off QueryInterface.
 WINRT_ASSERT(stringable.ToString() == L"http://www.contoso.com/");
 ```
 
-如果您知道會在相同的介面呼叫幾種方法，您可以選擇這個技巧。
+如果您知道會在相同的介面呼叫數種方法，可以選擇這個技巧。
 
-順帶一提，如果您想要存取 ABI 層級的成員，接著您便可以存取。 下列程式碼範例顯示執行的方式，以及 [C++/WinRT 和 ABI 間的互通性](interop-winrt-abi.md) 裡的更多詳細資料和程式碼範例。
+順帶一提，如果您想要存取 ABI 層級的成員，您便可以這麼做。 下列程式碼範例顯示執行的方式，而且 [C++/WinRT 和 ABI 之間的互通性](interop-winrt-abi.md)中有更多詳細資料和程式碼範例。
 
 ```cppwinrt
 #include <Windows.Foundation.h>
@@ -115,7 +115,7 @@ int main()
 ```
 
 ## <a name="delayed-initialization"></a>延遲初始化
-即使投影類型的預設建構函式導致建立支援 Windows 執行階段物件。 如果您想要建構投影類型的變數，而不要依序建構 Windows 執行階段物件（讓您可以延遲之後才執行該工作），那麼您可以這麼做。 宣告您的變數或使用投影類型特殊 C++/WinRT `nullptr_t` 建構函式的欄位。
+即使是投影類型的預設建構函式，也會導致建立支援 Windows 執行階段物件。 如果您想要建構投影類型的變數，而不要依序建構 Windows 執行階段物件 (以便可延遲到之後才執行該工作)，那麼您可以這麼做。 使用投影類型的特殊 C++/WinRT `nullptr_t` 建構函式來宣告您的變數或欄位。
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -144,31 +144,31 @@ int main()
 }
 ```
 
-所有投影類型的預設建構函式*除了*`nullptr_t` 建構函式，皆導致建立支援 Windows 執行階段物件。 `nullptr_t` 建構函式基本上是沒有選項。 它預期在後續次數會初始化投影物件。 因此，不管執行階段類別是否有預設建構函式，您都可以使用這項技術有效地延遲初始化。
+投影類型的所有建構函式 (*除了*`nullptr_t` 建構函式以外) 皆導致建立支援 Windows 執行階段物件。 `nullptr_t` 建構函式基本上是沒有選項。 預期之後會初始化投影物件。 因此，不管執行階段類別是否有預設建構函式，您都可以使用這項技術有效地延遲初始化。
 
-這項考量會影響其他位置叫用預設建構函式，例如在向量和對應的位置。 請考慮此程式碼範例中，您將需要**空白應用程式 (C++/WinRT)** 專案。
+此考量會影響您叫用預設建構函數的其他位置，例如向量和地圖。 考量此程式碼範例，您需要**空白的應用程式 (C++/WinRT)** 專案。
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
 lookup[2] = value;
 ```
 
-建立新的指派**TextBlock**，然後立即覆寫它與`value`。 以下是補救方法。
+此指派會建立新的 **TextBlock**，然後立即使用 `value` 覆寫。 解決方式如下。
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
 ```
 
-## <a name="if-the-api-is-implemented-in-a-windows-runtime-component"></a>如果在 Windows 執行階段元件中實作 API
+## <a name="if-the-api-is-implemented-in-a-windows-runtime-component"></a>如果 API 是在 Windows 執行階段元件中實作
 不論您是自己撰寫元件，或由廠商提供，本節皆適用。
 
 > [!NOTE]
-> 如需安裝和使用的資訊C++WinRT Visual Studio 擴充功能 (VSIX) 和 NuGet 套件 （其同時提供專案範本，並建置支援），請參閱[Visual Studio 支援C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
-您的應用程式專案中，參考 Windows 執行階段元件的 Windows 執行階段中繼資料 (`.winmd`) 檔案，並建置。 在建置期間，`cppwinrt.exe` 工具產生完整描述的標準 C++ 程式庫&mdash;或 *投影*&mdash;適用於元件的 API 介面。 換言之，產生的程式庫包含適用於元件的投影類型。
+在您的應用程式專案中，參考 Windows 執行階段元件的 Windows 執行階段中繼資料 (`.winmd`) 檔案，並建置。 在建置期間，`cppwinrt.exe` 工具產生標準的 C++ 程式庫，完整描述 &mdash; 或*投影*&mdash;適用於元件的 API 介面。 換言之，產生的程式庫包含適用於元件的投影類型。
 
-然後，就像 Windows 命名空間類型一樣，您包含標頭並透過其中一個建構函式建構投影類型。 您的應用程式專案啟動程式碼註冊執行階段類別，且投影類別的建構函式呼叫 [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)，從參考的元件啟動執行階段類別。
+然後，就像 Windows 命名空間類型一樣，您包含標頭並透過其中一個建構函式建構投影類型。 您的應用程式專案啟動程式碼註冊執行階段類別，且投影類別的建構函式呼叫 [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)，以從參考的元件啟動執行階段類別。
 
 ```cppwinrt
 #include <winrt/BankAccountWRC.h>
@@ -180,14 +180,14 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-如需更多詳細資料、程式碼和使用 Windows 執行階段元件中實作的 API 的逐步解說，請查閱 [C++/WinRT 中的撰寫事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)。
+如需在 Windows 執行階段元件中實作取用 API 的更多詳細資料、程式碼和逐步解說，請參閱[以 C++/WinRT 撰寫事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)。
 
-## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>如果在使用的專案中實作 API
-從 XAML UI 使用的類型必須是執行階段類別，即使是在像 XAML 一樣的專案。
+## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>如果 API 是在取用的專案中實作
+從 XAML UI 使用的類型必須是執行階段類別，即使它與 XAML 位於相同專案中。
 
-針對這個案例，您從執行階段類別的 Windows 執行階段中繼資料 (`.winmd`) 產生一個投影類別。 同樣地，您包含標頭，但這次透過其 `nullptr` 建構函式建構投影類型。 該建構函式不執行任何初始設定，因此您接下來必須透過 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 協助程式函式將一個值指派給執行個體，傳遞任何必要的建構函式引數。 在如同使用程式碼相同的專案中實作執行階段類別不需要註冊，也不用透過 Windows 執行階段/COM 啟用初始化。
+針對這個案例，您可以從執行階段類別的 Windows 執行階段中繼資料 (`.winmd`) 產生投影類型。 同樣地，包含標頭，但這次透過其 `nullptr` 建構函式建構投影類型。 該建構函式不執行任何初始化，因此您接下來必須透過 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 輔助函式將一個值指派給執行個體，傳遞任何必要的建構函式引數。 在與取用程式碼相同的專案中實作的執行階段類別不需要登錄，也不需要透過 Windows 執行階段/COM 啟動來進行具現化。
 
-您將需要**空白應用程式 (C++/WinRT)** 此程式碼範例的專案。
+您需要適用於此程式碼範例的**空白應用程式 (C++/WinRT)** 專案。
 
 ```cppwinrt
 // MainPage.h
@@ -212,17 +212,17 @@ MainPage::MainPage()
 }
 ```
 
-如需更多詳細資料、程式碼以及在使用專案中實做使用執行階段類別的逐步解說，請參閱 [XAML 控制項。繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
+如需在取用專案中實作取用執行階段類別的更多詳細資料、程式碼，以及逐步解說，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
-## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>初始化並傳回投影類型與介面
-以下是在您使用專案中的投影類型和介面可能會有的外觀範例。 請記住投影的型別 （例如一個在此範例中），是由工具產生，而不是您會撰寫您自己的項目。
+## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>具現化並傳回投影類型與介面
+以下是在您使用專案中的投影類型和介面可能會有的外觀範例。 請記住，投影的類型 (例如此範例中的類型) 是由工具產生，而不是您自己撰寫的。
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,
     Windows::Foundation::IStringable, Windows::Foundation::IClosable>
 ```
 
-**MyRuntimeClass** 是一個投影類型；投影介面包含 **IMyRuntimeClass**、**IStringable**，與 **IClosable**。 本主題示範您可以初始化投影類型的不同方式。 以下是使用 **MyRuntimeClass** 做為範例的提醒和摘要。
+**MyRuntimeClass** 是投影類型；投影介面包含 **IMyRuntimeClass** **IStringable**，以及 **IClosable**。 本主題示範您可以具現化投影類型的不同方式。 以下是使用 **MyRuntimeClass** 做為範例的提醒和摘要。
 
 ```cppwinrt
 // The runtime class is implemented in another compilation unit (it's either a Windows API,
@@ -236,7 +236,7 @@ myrc2 = winrt::make<MyProject::implementation::MyRuntimeClass>();
 
 - 您可以存取所有投影類型介面的成員。
 - 您可以將投影類型傳回給呼叫者。
-- 投影類型與介面從 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 衍生。 因此，您可以在投影類型或介面上呼叫 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)，查詢其他投影介面，您可以也可以使用或將其傳回給呼叫者。 **as** 成員函式如同 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 一樣運作。
+- 投影類型與介面衍生自 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)。 因此，您可以在投影類型或介面上呼叫 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)，以查詢其他投影介面，您也可以使用或將其傳回給呼叫者。 **as** 成員函式的運作方式類似 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。
 
 ```cppwinrt
 void f(MyProject::MyRuntimeClass const& myrc)
@@ -249,7 +249,7 @@ void f(MyProject::MyRuntimeClass const& myrc)
 ```
 
 ## <a name="activation-factories"></a>啟用 Factory
-建立 C++/WinRT 物件直接方便的方法如下。
+建立 C++/WinRT 物件的簡便方法如下。
 
 ```cppwinrt
 using namespace winrt::Windows::Globalization::NumberFormatting;
@@ -257,7 +257,7 @@ using namespace winrt::Windows::Globalization::NumberFormatting;
 CurrencyFormatter currency{ L"USD" };
 ```
 
-但有時，您可能會想要自己建立啟用 Factory，並在適當時從其建立物件。 以下是顯示如何操作的範例，請使用 [**winrt::get_activation_factory**](/uwp/cpp-ref-for-winrt/get-activation-factory) 函式範本。
+但有時，您可能會想要自己建立啟用 Factory，並在適當時從中建立物件。 以下範例示範如何使用 [**winrt::get_activation_factory**](/uwp/cpp-ref-for-winrt/get-activation-factory) 函式範本。
 
 ```cppwinrt
 using namespace winrt::Windows::Globalization::NumberFormatting;
@@ -283,13 +283,13 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ## <a name="important-apis"></a>重要 API
 * [QueryInterface 介面](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [RoActivateInstance 函式](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)
-* [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
-* [winrt::get_activation_factory 函式樣板](/uwp/cpp-ref-for-winrt/get-activation-factory)
-* [winrt::make 函式樣板](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [Windows::Foundation::Uri 類別](/uwp/api/windows.foundation.uri)
+* [winrt::get_activation_factory 函式範本](/uwp/cpp-ref-for-winrt/get-activation-factory)
+* [winrt::make 函式範本](/uwp/cpp-ref-for-winrt/make)
+* [winrt::Windows::Foundation::IUnknown 結構](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相關主題
-* [撰寫中的事件C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [以 C++/WinRT 撰寫事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
 * [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md)
 * [C++/WinRT 的簡介](intro-to-using-cpp-with-winrt.md)
 * [XAML 控制項；繫結至一個 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

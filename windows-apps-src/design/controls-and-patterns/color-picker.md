@@ -5,33 +5,33 @@ label: Color Picker
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 215a15e3a8e1b0264987adcf6228ec52a696f50c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654473"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63801330"
 ---
 # <a name="color-picker"></a>色彩選擇器
 
-色彩選擇器可用來瀏覽和選取色彩。 其預設可讓使用者瀏覽色彩頻譜上的顏色，或在 [紅綠藍 (RGB)]、[色調飽值 (HSV)] 或 [十六進位] 文字方塊中指定色彩。
+色彩選擇器可用來瀏覽和選取色彩。 預設狀態下，使用者可在色彩頻譜上瀏覽各種顏色，或以 [紅綠藍 (RGB)]、[色調飽和值 (HSV)] 或 [十六進位] 文字方塊來指定色彩。
 
-> **重要的 Api**:[ColorPicker 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)，[色彩屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)， [ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **重要 API**：[ColorPicker 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)、[Color 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ![預設色彩選擇器](images/color-picker-default.png)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-使用色彩選擇器，讓使用者在您的 App 中選取色彩。 例如，用來變更字型色彩、背景或 App 佈景主題色彩等色彩設定。
+使用色彩選擇器，即可讓使用者在您的應用程式中選取色彩。 例如，可用來變更字型色彩、背景或應用程式佈景主題色彩等色彩設定。
 
-如果您的 App 適合使用手寫筆繪圖或進行類似工作，請考慮搭配色彩選擇器來使用[筆跡控制項](inking-controls.md)。
+如果您的應用程式是專門用來繪圖，或是其他適合使用手寫筆的類似工作，建議在使用[手寫筆跡控制項](inking-controls.md)時，搭配色彩選擇器。
 
 ## <a name="examples"></a>範例
 
@@ -40,7 +40,7 @@ ms.locfileid: "57654473"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/ColorPicker">開啟應用程式並查看 ColorPicker 運作情形</a>。</p>
+    <p>如果已經安裝了 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/ColorPicker">開啟應用程式，並查看 ColorPicker 運作情形</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -57,13 +57,13 @@ ms.locfileid: "57654473"
 <ColorPicker x:Name="myColorPicker"/>
 ```
 
-色彩選擇器預設會在色彩頻譜旁邊的矩形列上顯示所選色彩的預覽。 您可以使用 [ColorChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged) 事件或 [Color](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color) 屬性來存取選取的色彩，並在 App 中使用此色彩。 如需詳細程式碼，請參閱下列範例。
+在預設狀態下，色彩選擇器會在色彩頻譜旁的矩形列上，預覽顯示所選色彩。 可以使用 [ColorChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged) 事件或 [Color](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color) 屬性來取得所選的色彩，並在應用程式中使用。 如需詳細程式碼，請參閱下列範例。
 
 ### <a name="bind-to-the-chosen-color"></a>繫結至選擇的色彩
 
-當色彩選擇需要立即生效時，您可以使用資料繫結來繫結至 Color 屬性，或處理 ColorChanged 事件以在程式碼中存取選取的色彩。
+當色彩選擇動作需要立即生效時，請使用資料繫結來繫結至 Color 屬性，或處理 ColorChanged 事件，以在程式碼中取得所選的色彩。
 
-在此範例中，您可以將 SolidColorBrush 用於做為矩形填滿色彩的 Color 屬性直接繫結至色彩選擇器的所選色彩直接矩形。 色彩選擇器的任何變更都會對繫結的屬性造成即時變更。
+在此範例中，SolidColorBrush 用於做為矩形填滿色彩的 Color 屬性，會直接繫結至色彩選擇器所選的色彩。 色彩選擇器的任何變更，都會對繫結屬性產生即時變更。
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
@@ -79,13 +79,13 @@ ms.locfileid: "57654473"
 </Rectangle>
 ```
 
-此範例使用只有圓圈和滑桿的簡化色彩選擇器，也就是一般「隨性」的色彩挑選體驗。 當色彩變更可以即時顯現在受影響的物件時，您不需要顯示色彩預覽列。 如需詳細資訊，請參閱*自訂色彩選擇器*一節。
+此範例使用的是簡單的色彩選擇器，只有圓圈和滑桿，也就是常見的「隨意」挑選色彩的方式。 當色彩變更可以即時顯現在受影響的物件上時，就不需要顯示色彩預覽列。 如需詳細資訊，請參閱〈自訂色彩選擇器〉  一節。
 
 ### <a name="save-the-chosen-color"></a>儲存選擇的色彩
 
-在某些情況下，您並不想要立即套用色彩變更。 例如，在飛出視窗中裝載色彩選擇器時，我們會建議您只有在使用者確認選取項目或關閉飛出視窗之後，才要套用選取的色彩。 您也可以儲存選取的色彩值以供稍後使用。
+在某些案例中，並不需要立即套用色彩變更。 舉例來說，在飛出視窗中裝載色彩選擇器時，建議在使用者確認選取項目或關閉飛出視窗之後，再套用選取的色彩。 您也可以儲存選取的色彩值，以供稍後使用。
 
-在此範例中，您色彩選擇器裝載於具有 [確認] 和 [取消] 按鈕的飛出視窗中。 當使用者確認其色彩選擇時，您會在 App 中儲存選取的色彩以供稍後使用。
+在此範例中，色彩選擇器是裝載於具有 [確認] 和 [取消] 按鈕的飛出視窗中。 當使用者確定所選色彩時，您要在應用程式中儲存選取的色彩，以供稍後使用。
 
 ```xaml
 <Page.Resources>
@@ -140,15 +140,15 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 ### <a name="configure-the-color-picker"></a>設定色彩選擇器
 
-並非所有的欄位都需要讓使用者挑選色彩，因此色彩選擇器很有彈性。 其中提供各種讓您配合個人需求設定控制項的不同選項。
+並非所有的欄位都需要讓使用者挑選色彩，因此色彩選擇器很有彈性。 色彩選擇器提供了豐富的選項，可讓您配合需求來設定控制項。
 
-例如，當使用者不需要精準控制時 (像是在做筆記的 App 中挑選螢光筆色彩時)，您可以使用簡化的 UI。 您可以隱藏文字輸入欄位，並將色彩頻譜變更為圓形。
+舉例來說，如果使用者不需要精準控制 (例如在筆記應用程式中挑選螢光筆色彩)，就可以使用簡化版的 UI。 您可以隱藏文字輸入欄位，並將色彩頻譜變更為圓形。
 
-當使用者確實需要精準控制時 (像是在圖形設計 App 中使用時)，您可以針對色彩的各方面特性顯示滑桿及文字輸入欄位。
+當使用者確實需要精準控制時 (例如平面設計應用程式)，就可以顯示色各項特性的滑桿和文字輸入欄位。
 
 #### <a name="show-the-circle-spectrum"></a>顯示圓形頻譜
 
-此範例示範如何使用 [ColorSpectrumShape](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorSpectrumShape) 屬性，將色彩選擇器設定為使用圓形頻譜，而不使用預設的方形頻譜。
+此範例會示範如何使用 [ColorSpectrumShape](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorSpectrumShape) 屬性，將色彩選擇器設為使用圓形頻譜，而非使用預設的方形頻譜。
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
@@ -157,11 +157,11 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 ![使用圓形頻譜的色彩選擇器](images/color-picker-ring.png)
 
-當您必須在方形和圓形色彩頻譜之間選擇時，主要的考量是準確度。 當使用者使用方形頻譜選取特定色彩時，使用者因為顯示的色域圖範圍較大而對色彩控制得更好 若要提供更濃厚的「隨性」色彩選擇體驗，您應該考慮使用圓形頻譜。
+當必須選擇要使用方形還是圓形的色彩頻譜時，最主要的考量在於準確度。 使用者使用方形頻譜選取特定色彩時，因為顯示的色域圖範圍較大，使用者較能精準控制色彩。 若要讓使用者更加「隨意」地選擇色彩，建議使用圓形頻譜。
 
 #### <a name="show-the-alpha-channel"></a>顯示 Alpha 色板
 
-在此範例中，您可以色彩選擇器上啟用透明度滑桿和文字方塊。
+在此範例中，要啟用色彩選擇器上的透明度滑桿和文字方塊。
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
@@ -170,9 +170,9 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 ![IsAlphaEnabled 設定為 true 的色彩選擇器](images/color-picker-alpha.png)
 
-#### <a name="show-a-simple-picker"></a>顯示簡單選擇器
+#### <a name="show-a-simple-picker"></a>顯示簡易選擇器
 
-此範例示範如何設定包含簡單 UI 的色彩選擇器，以便「隨性」使用。 您會顯示圓形頻譜，並隱藏預設輸入方塊。 當色彩變更可以即時顯現在受影響的物件時，您不需要顯示色彩預覽列。 否則應該讓色彩預覽顯示。
+此範例會說明如何設定採用簡易 UI 的色彩選擇器，以供「隨意」使用。 您要顯示圓形頻譜，並隱藏預設的文字輸入方塊。 當色彩變更可以即時顯現在受影響的物件上時，就不需要顯示色彩預覽列。 若非如此，就應顯示色彩預覽功能。
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
@@ -182,11 +182,11 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
              IsHexInputVisible="False"/>
 ```
 
-![簡單色彩選擇器](images/color-picker-casual.png)
+![簡易色彩選擇器](images/color-picker-casual.png)
 
 #### <a name="show-or-hide-additional-features"></a>顯示或隱藏其他功能
 
-下表顯示所有可用來設定 ColorPicker 控制項的選項。
+下表列出了可用於設定 ColorPicker 控制項的所有選項。
 
 功能 | 屬性
 --------|-----------
@@ -197,24 +197,24 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 十六進位值 | IsHexInputVisible
 
 > [!NOTE]
-> IsAlphaEnabled 必須為 **true**，才能顯示不透明度文字方塊或滑桿。 然後，您可以使用 IsAlphaTextInputVisible 和 IsAlphaSliderVisible 屬性來修改輸入控制項的可見度。 如需詳細資訊，請參閱 API 文件。
+> IsAlphaEnabled 必須為 **true**，才能顯示不透明度文字方塊或滑桿。 然後，您可以使用 IsAlphaTextInputVisible 和 IsAlphaSliderVisible 屬性，來修改輸入控制項的可見度。 如需詳細資訊，請參閱 API 文件。
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
-- 想想看哪一種色彩挑選體驗適合您的 App。 有些案例可能不需要精細挑選色彩，簡化的選擇器反而更實惠
-- 如需最準確的色彩挑選體驗，請使用方形頻譜並確定其至少為 256x256px，或是加入文字輸入欄位，讓使用者精細調整其選取的色彩。
-- 在飛出視窗中使用時，僅止是輕觸頻譜或是調整滑桿並不能認可色彩選擇。 若要認可選取的色彩：
-  - 提供 [認可] 和 [取消] 按鈕，以便套用或取消選擇。 按 [返回] 按鈕 或點選飛出視窗外部會將其關閉，但不儲存使用者的選擇。
+- 請多加思考您的應用程式適合採用何種色彩選擇方式。 有些情境下，可能並不需要精準地挑選色彩，因此簡易版的選擇器反而更加實用
+- 如需提供最精準的色彩挑選體驗，請使用方形頻譜，並確保大小至少達 256x256px，或是加入文字輸入欄位，讓使用者可以精細調整選取的色彩。
+- 在飛出視窗中使用色彩選擇器時，單單點選頻譜或調整滑桿，並不會確定選擇色彩。 如何確定選取色彩：
+  - 請提供確定及取消功能的按鈕，以便套用或取消選擇。 點擊 [返回] 按鈕，或是點選飛出視窗以外的地方，即會關閉視窗，但不儲存使用者的選擇。
   - 或者，藉由點選飛出視窗外部或按 [返回] 按鈕，在關閉飛出視窗時認可選擇。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 
-- [畫筆和手寫筆在 UWP 應用程式的互動](../input/pen-and-stylus-interactions.md)
-- [筆跡](inking-controls.md)
+- [UWP app 中的手寫筆互動與 Windows Ink](../input/pen-and-stylus-interactions.md)
+- [手寫筆跡控制項](inking-controls.md)
 
 <!--
 <div class=”microsoft-internal-note”>

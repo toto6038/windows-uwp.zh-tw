@@ -1,25 +1,25 @@
 ---
-description: 本主題示範可用於 C++/CX 與 C++/WinRT 物件之間轉換的協助程式函式。
+description: 本主題示範可用於 C++/CX 與 C++/WinRT 物件之間轉換的輔助函式。
 title: C++/WinRT 與 C++/CX 之間的互通性
 ms.date: 10/09/2018
 ms.topic: article
-keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、C++/CX
+keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, 互通性, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 5394443b4832864e5b46bfbf917c04f0af6d8a19
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66360222"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT 與 C++/CX 之間的互通性
 
-策略逐漸移植程式碼，在您[ C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)專案加入[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)討論[移至C++/WinRT 從C++/CX](move-to-winrt-from-cx.md)。
+將 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 專案中的程式碼逐漸移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的策略在[從 C++/CX 移至 C++/WinRT](move-to-winrt-from-cx.md) 中探討。
 
-本主題說明您可以使用之間進行轉換的兩個協助程式函式C++/CX 和C++/WinRT 相同專案中的物件。 您可以使用它們來使用兩個語言、 預測的程式碼的互通，或從您程式碼，您可以使用函式C++以 /CX C++/WinRT。
+本主題示範可用於 C++/CX 和 C++/WinRT 物件之間轉換的兩個輔助函式。 您可以使用它們在使用兩種語言投影的程式碼之間互通，或您可以使用函式，將程式碼從 C++/CX 逐漸移植到 C++/WinRT。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx 和 to_cx 函式
-下述的協助程式函式將 C++/CX 物件轉換為對等 C++/WinRT 物件。 函式將 C++/CX 物件轉換為其基礎 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)介面指標。 然後它在該指標上呼叫 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 為 C++/WinRT 物件的預設介面詢問。 **QueryInterface** 是 Windows 執行階段應用程式二進位介面 (ABI) 相當於 C++/CX safe_cast 擴充功能。 且，[**Winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函式擷取 C++/WinRT 物件的基礎 **IUnknown** 介面指標的位址，讓它可以設定另一個值。
+下列輔助函式將 C++/CX 物件轉換為對等的 C++/WinRT 物件。 函式將 C++/CX 物件轉換為其基礎 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) 介面指標。 然後它在該指標上呼叫 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))，以查詢 C++/WinRT 物件的預設介面。 **QueryInterface** 是 Windows 執行階段應用程式二進位介面 (ABI)，相當於 C++/CX safe_cast 擴充功能。 而且，[**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函式會擷取 C++/WinRT 物件之基礎 **IUnknown** 介面指標的位址，使其可設為另一個值。
 
 ```cppwinrt
 template <typename T>
@@ -35,7 +35,7 @@ T from_cx(Platform::Object^ from)
 }
 ```
 
-下述的協助程式函式將 C++/WinRT 物件轉換為對等 C++/CX 物件。 [  **Winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi) 函式將指標擷取至 C++/WinRT 物件的基礎 **IUnknown** 介面。 函式將該指標轉換為 C++/CX 物件之後，使用 C++/CX safe_cast 擴充功能來查詢要求的 C++/CX 類型。
+下列輔助函式將 C++/WinRT 物件轉換為對等的 C++/CX 物件。 [**winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi) 函式將指標擷取至 C++/WinRT 物件的基礎 **IUnknown** 介面。 函式將該指標轉換為 C++/CX 物件之後，使用 C++/CX safe_cast 擴充功能來查詢要求的 C++/CX 類型。
 
 ```cppwinrt
 template <typename T>
@@ -45,15 +45,15 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 }
 ```
 
-## <a name="example-project-showing-the-two-helper-functions-in-use"></a>顯示使用中的兩個協助程式函式的範例專案
+## <a name="example-project-showing-the-two-helper-functions-in-use"></a>顯示正在使用之兩個輔助函式的範例專案
 
-若要重現，簡單的方式，逐漸移植的程式碼中的案例C++/CX 專案C++/WinRT，您可以開始建立新的專案在 Visual Studio 中使用的其中一個C++/WinRT 專案範本 (請參閱[Visual Studio支援C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。
+若想要以簡單的方式，重現將 C++/CX 專案中的程式碼逐漸移植到 C++/WinRT 的情況，您可以先使用其中一個 C++/WinRT 專案範本，在 Visual Studio 中建立新專案 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。
 
-此範例專案也會說明如何使用命名空間別名為不同的資料島，程式碼，以處理否則可能發生之間的命名空間衝突C++/WinRT 投影和C++/CX 投影。
+此範例專案也說明您可以如何對不同的程式碼孤立區使用命名空間別名，以處理 C++/WinRT 投影與 C++/CX 投影之間可能產生的命名空間衝突。
 
-- 建立**Visual C++**  \> **Windows Universal** > **Core 應用程式 (C++/WinRT)** 專案。
-- 在 專案屬性**C /C++**  \> **一般** \> **使用 Windows 執行階段延伸模組** \> **是 (/ZW)** 。 這會開啟專案支援 C + /CX。
-- 內容取代`App.cpp`下方列出的程式碼。
+- 建立 **Visual C++** \> **Windows 通用** > **核心應用程式 (C++/WinRT)** 專案。
+- 在專案屬性中：[C/C++]  \> [一般]  \> [使用 Windows 執行階段擴充功能]  \> [是 \(/ZW\)\]  。 如此會開啟適用於 C++/CX 的專案支援。
+- 將 `App.cpp` 的內容取代為下方的程式碼清單。
 
 ```cppwinrt
 // App.cpp
@@ -255,8 +255,8 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ## <a name="important-apis"></a>重要 API
 * [IUnknown 介面](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 * [QueryInterface 函式](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
-* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
-* [winrt::put_abi function](/uwp/cpp-ref-for-winrt/put-abi)
+* [winrt::get_abi 函式](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::put_abi 函式](/uwp/cpp-ref-for-winrt/put-abi)
 
 ## <a name="related-topics"></a>相關主題
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

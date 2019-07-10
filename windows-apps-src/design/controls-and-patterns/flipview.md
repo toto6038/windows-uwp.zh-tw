@@ -6,16 +6,16 @@ label: Flip view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7942839b43739ca5fb15106abbfa1877ead81dc2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362764"
 ---
 # <a name="flip-view"></a>翻轉檢視
@@ -24,7 +24,7 @@ ms.locfileid: "66362764"
 
 針對瀏覽集合中的影像或其他項目 (一次一個項目) 使用翻轉檢視，例如相簿中的相片或是產品詳細資料頁面中的項目。 如果是觸控式裝置，可撥動項目以在集合中移動。 如果是滑鼠，在滑鼠暫留時會顯示瀏覽按鈕。 如果是鍵盤，可使用方向鍵在集合中移動。
 
-> **重要的 Api**:[FlipView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)， [ItemsSource 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)， [ItemTemplate 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+> **重要 API**：[FlipView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)[ItemsSource 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)[ItemTemplate 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -126,7 +126,7 @@ stackPanel1.Children.Add(flipView1);
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**注意**&nbsp;&nbsp;填入翻轉檢視有兩種方法，您可以將項目新增到它的 Items 集合，或是設定它的 ItemsSource 屬性，但是不可以同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
+>**注意：** &nbsp;&nbsp;填入翻轉檢視有兩種方法，您可以將項目新增到它的 Items 集合，或是設定它的 ItemsSource 屬性，但是不可以同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
 
 ### <a name="specify-the-look-of-the-items"></a>指定項目的外觀
 
@@ -227,9 +227,9 @@ stackPanel1.Children.Add(flipView1);
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 
-- [如需清單的指導方針](lists.md)
+- [清單的指導方針](lists.md)
 - [**FlipView 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
