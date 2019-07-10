@@ -4,24 +4,24 @@ title: 評分控制項
 template: detail.hbs
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644923"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63787415"
 ---
 # <a name="rating-control"></a>評分控制項
 
 評分控制項可讓使用者檢視並設定反映其對內容與服務滿意度的評分。 使用者可以使用觸控、手寫筆、滑鼠、遊戲台或鍵盤，與評分控制項互動。 下列指導方針示範如何使用評分控制項的功能來提供彈性和自訂。
 
-> **重要的 Api**:[RatingControl 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> **重要 API**：[RatingControl 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ![評分控制項範例](images/rating_rs2_doc_ratings_intro.png)
 
@@ -87,7 +87,7 @@ private void RatingChanged(RatingControl sender, object args)
 ## <a name="additional-functionality"></a>其他功能
 
 評分控制項還有許多可用的其他功能。 您可以在 MSDN 參考文件中找到有關如何使用這些功能的詳細資訊。
-以下是其他功能的清單，但並非詳盡無遺。
+以下是其他功能的清單，但並非詳盡無遺：
 -   優異長清單處理效能
 -   精簡調整緊湊 UI 案例
 -   連續值填寫和評分

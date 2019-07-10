@@ -1,11 +1,11 @@
 ---
-Description: 使用提取以重新整理控制項，以取得新的內容清單。
+Description: 使用拖動以重新整理控制項，將新內容放入清單中。
 title: 拖動以重新整理
 label: Pull-to-refresh
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 pm-contact: predavid
 design-contact: kimsea
@@ -13,17 +13,17 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2efd091d90a856e45d76c0b1357f30417812160a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659253"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63791501"
 ---
 # <a name="pull-to-refresh"></a>拖動以重新整理
 
 「拖動以重新整理」讓使用者以觸控方式向下拖動資料清單來擷取更多資料。 「拖動以重新整理」已在有觸控式螢幕的裝置上廣泛使用。 您可以使用這裡顯示的 API，實作您的應用程式中的「拖動以重新整理」。
 
-> **重要的 Api**:[RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer)， [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
+> **重要 API**：[RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer)、[RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
 
 ![拖動以重新整理 gif](images/Pull-To-Refresh.gif)
 
@@ -101,7 +101,7 @@ ms.locfileid: "57659253"
 
 使用預設會由上而下拖動清單來起始重新整理。 如果您的清單或方格使用不同的方向，您應該變更重新整理容器的拖動方向來配合。
 
-[PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection)屬性會採用其中一種[RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection)值：**BottomToTop**， **TopToBottom**， **RightToLeft**，或**LeftToRight**。
+[PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection)屬性會採用其中一種[RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection)值：**BottomToTop**、**TopToBottom**、**RightToLeft** 或 **LeftToRight**。
 
 當您變更拖動方向時，視覺化檢視進度環的開始位置會自動旋轉，使箭頭開始指到拖動方向的適當位置。 如有需要，您可以變更 [RefreshVisualizer.Orientation](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.Orientation) 屬性來覆寫此自動行為。 在大部分情況下，我們建議您保留 **Auto** 的預設值。
 
@@ -116,7 +116,7 @@ ms.locfileid: "57659253"
 > [!NOTE]
 > 您可以讓 RefreshVisualizer 獨自具現化。 不過，我們建議您將內容包裝在 RefreshContainer 中，並使用 RefreshContainer.Visualizer 屬性所提供的 RefreshVisualizer，即使對非觸控案例，也是這樣。 在本文中，我們假設視覺化檢視一律是從重新整理容器中取得。
 
-> 此外，為了方便，還要使用重新整理容器的 RequestRefresh 和 RefreshRequested 成員。 `refreshContainer.RequestRefresh()` 相當於`refreshContainer.Visualizer.RequestRefresh()`，且可能會引發 RefreshContainer.RefreshRequested 事件和 RefreshVisualizer.RefreshRequested 事件。
+> 此外，為了方便，還要使用重新整理容器的 RequestRefresh 和 RefreshRequested 成員。 `refreshContainer.RequestRefresh()` 相當於 `refreshContainer.Visualizer.RequestRefresh()`，而任何一個都會引發 RefreshContainer.RefreshRequested 事件和 RefreshVisualizer.RefreshRequested 事件。
 
 ### <a name="request-a-refresh"></a>要求重新整理
 
@@ -333,7 +333,7 @@ public class ListItemData
 
 ## <a name="related-articles"></a>相關文章
 
-- [觸控式互動](../input/touch-interactions.md)
-- [清單檢視和格線檢視](listview-and-gridview.md)
-- [項目容器和範本](item-containers-templates.md)
-- [運算式的動畫](../../composition/composition-animation.md)
+- [觸控互動](../input/touch-interactions.md)
+- [清單檢視和方格檢視](listview-and-gridview.md)
+- [項目容器與範本](item-containers-templates.md)
+- [Expression 動畫](../../composition/composition-animation.md)

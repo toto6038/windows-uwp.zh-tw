@@ -6,13 +6,13 @@ label: Create custom media transport controls
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c42a058398539701cc1df003717eec99d1b2cd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362861"
 ---
 # <a name="create-custom-transport-controls"></a>建立自訂傳輸控制項
@@ -21,7 +21,7 @@ ms.locfileid: "66362861"
 
 MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Windows 平台 (UWP) app 內的音訊和視訊內容的控制項。 在這裡，我們將示範如何自訂 MediaTransportControls 範本。 我們將說明如何使用溢位功能表、新增自訂按鈕，以及修改滑桿。
 
-> **重要的 Api**:[MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)， [MediaPlayerElement.AreTransportControlsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled)， [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)
+> **重要 API**：[MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)、[MediaPlayerElement.AreTransportControlsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled)、[MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)
 
 開始之前，您應該先熟悉 MediaPlayerElement 和 MediaTransportControls 類別。 如需詳細資訊，請參閱＜MediaPlayerElement 控制項指南＞。
 
@@ -57,11 +57,11 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 - 第三個區段包含 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)，其可一併容納各種 MediaTransportControls 元素，並定義元件的版面配置方式。
 
 > [!NOTE]
-> 如需修改範本的詳細資訊，請參閱[控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)。 您可以在 IDE 中使用文字編輯器或類似的編輯器，開啟中的 XAML 檔案\( *Program Files*) \Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*的SDK版本*)\Generic。 每個控制項的預設樣式與範本都是在 **generic.xaml** 檔案中定義。 您可以在 generic.xaml 中搜尋 "MediaTransportControls"，以尋找 MediaTransportControls 範本。
+> 如需修改範本的詳細資訊，請參閱[控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)。 您可以使用文字編輯器或 IDE 中的類似編輯器，來開啟 (\(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 檔案。 每個控制項的預設樣式與範本都是在 **generic.xaml** 檔案中定義。 您可以在 generic.xaml 中搜尋 "MediaTransportControls"，以尋找 MediaTransportControls 範本。
 
 在下列各節中，您將了解如何為傳輸控制項自訂數個主要元素：
-- [**滑桿**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)： 可讓使用者透過其媒體清除，也會顯示進度
-- [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)： 包含所有的按鈕。
+- [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)：允許使用者拖曳他們的媒體，同時顯示進度
+- [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)：包含所有按鈕。
 如需詳細資訊，請參閱 MediaTransportControls 參考主題的＜剖析＞一節。
 
 ## <a name="customize-the-transport-controls"></a>自訂傳輸控制項
@@ -70,7 +70,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 
 ### <a name="re-template-the-control"></a>重新設定控制項範本
 
-**若要自訂 MediaTransportControls 預設樣式和範本**
+**自訂 MediaTransportControls 預設樣式與範本**
 1. 將預設樣式從 MediaTransportControls 樣式與範本複製到您專案中的 ResourceDictionary。
 2. 為 Style 提供 x:Key 值來識別它，如下。
 
@@ -97,7 +97,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 
 若要新增或修改傳輸控制項的功能，您必須建立衍生自 MediaTransportControls 的新類別。 名為 `CustomMediaTransportControls` 的衍生類別，會顯示於[媒體傳輸控制項範例](https://go.microsoft.com/fwlink/p/?LinkId=620023)和本頁的其餘範例中。
 
-**若要建立新的類別衍生自 MediaTransportControls**
+**建立衍生自 MediaTransportControls 的新類別**
 1. 將新的類別檔案新增到您的專案。
     - 在 Visual Studio 中，選取 [專案] &gt; [加入類別]。 隨即會開啟 [加入新項目] 對話方塊。
     - 在 [加入新項目] 對話方塊中，輸入類別檔案的名稱，然後按一下 [加入]。 (在＜媒體傳輸控制項範例＞中，類別名為 `CustomMediaTransportControls`)。
@@ -159,7 +159,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 若要將某個元素從命令列主要命令移到溢位功能表，您需要編輯 XAML 控制項範本。
 
-**若要將命令移至 溢位功能表：**
+**將命令移至溢位功能表：**
 1. 在控制項範本中，尋找名為 `MediaControlsCommandBar` 的 CommandBar 元素。
 2. 將 [**SecondaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands) 區段新增到 CommandBar 的 XAML 中。 將其放置於 [**PrimaryCommands**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands) 的結尾標記後面。
 
@@ -204,7 +204,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 您可能想要自訂 MediaTransportControls 的其中一個理由是將自訂命令新增到控制項。 不論您將它新增為主要命令或次要命令，建立命令按鈕和修改其行為的程序都一樣。 在[媒體傳輸控制項範例](https://go.microsoft.com/fwlink/p/?LinkId=620023)中，會將 [評等] 按鈕新增到主要命令。
 
-**若要新增自訂命令按鈕**
+**新增自訂命令按鈕**
 1. 建立 AppBarButton 物件，並將它新增到控制項範本中的 CommandBar。
 
 ```xaml
@@ -215,9 +215,9 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
               VerticalAlignment="Center" />
 ```
 
-您必須將它加入 CommandBar 中適當的位置。 （如需詳細資訊，請參閱使用溢位功能表一節）。如何將它放置在 UI 取決於其中的按鈕都是在標記中。 比方說，如果您想要顯示主要命令中的最後一個元素為此按鈕，將它新增在主要的命令清單的最尾端。
+您必須將它新增至適當位置的 CommandBar。 (如需詳細資訊，請參閱「使用溢位功能表」一節)。其置於 UI 的方式取決於此按鈕在標記中的位置。 比方說，如果您想要此按鈕顯示為主要命令中的最後一個元素，則將它新增於主要命令清單的最尾端。
 
-您也可以自訂按鈕的圖示。 如需詳細資訊，請參閱 < <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"> <b>AppBarButton</b> </a>參考。
+您也可以自訂此按鈕的圖示。 如需詳細資訊，請參閱 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a> 參考。
     
 
 2. 在 [**OnApplyTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate) 覆寫中，從範本中取得按鈕，並註冊適用於其 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件的處理常式。 這個程式碼位於 `CustomMediaTransportControls` 類別中。
@@ -272,8 +272,8 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-**自訂媒體傳輸控制與新增的 「 按讚 」 按鈕**
-![具有額外的自訂媒體傳輸控制項希望按鈕](images/controls/mtc_double_custom_inprod.png)
+**新增「讚」按鈕的自訂媒體傳輸控制項**
+![多了讚按鈕的自訂媒體傳輸控制項](images/controls/mtc_double_custom_inprod.png)
 
 ### <a name="modifying-the-slider"></a>修改滑桿
 

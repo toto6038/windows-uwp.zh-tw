@@ -1,68 +1,68 @@
 ---
-Description: 在 UWP 應用程式的表單的版面配置指導方針。
+Description: UWP 應用程式中表單的版面配置指導方針。
 title: 表單
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
 ms.openlocfilehash: 8a57f13e168a248569bca1beeceed7b4f6c89f69
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658153"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63794308"
 ---
 # <a name="forms"></a>表單
-表單是一組控制項來收集並送出使用者的資料。 表單通常會用於設定 頁面中，建立帳戶和其他更多的問卷。 
+表單是一組控制項，會收集和提交使用者的資料。 表單通常用於 [設定] 頁面、問卷調查、建立帳戶等等。 
 
-這篇文章討論建立 XAML 配置表單的設計方針。
+本文討論用於建立表單 XAML 版面配置的設計方針。
 
-![表單的範例](images/PivotHeader.png)
+![表單範例](images/PivotHeader.png)
 
-## <a name="when-should-you-use-a-form"></a>您應該在何時使用表單？
-表單是將專用的頁面來收集會清楚地彼此相關的資料輸入。 當您需要明確地從使用者收集資料時，您應該使用表單。 您可以建立使用者的表單：
+## <a name="when-should-you-use-a-form"></a>何時應該使用表單？
+表單是一個專用頁面，用於收集彼此清楚相關的資料輸入。 當您需要明確地從使用者收集資料時，您應該使用表單。 您可以為使用者建立表單，以便：
 - 登入帳戶
 - 註冊帳戶
 - 變更應用程式設定，例如隱私權或顯示選項
-- 填寫調查問卷
-- 購買項目
+- 進行調查問卷
+- 購買物品
 - 提供意見反應
 
-## <a name="types-of-forms"></a>類型的表單
+## <a name="types-of-forms"></a>表單類型
 
-當考慮如何提交並顯示使用者輸入，有兩種類型的表單：
+在考慮如何提交並顯示使用者輸入時，有兩種類型的表單：
 
 ### <a name="1-instantly-updating"></a>1.立即更新
 ![設定頁面](images/control-examples/toggle-switch-news.png)
 
-當您想要立即查看結果，變更表單中的值的使用者時，請使用立即更新的表單。 比方說，在 [設定] 頁面中，會顯示目前的選取項目，並選取項目所做的變更會立即套用。 若要確認您的應用程式中的變更，您必須[加入事件處理常式](controls-and-events-intro.md)每個輸入的控制項。 如果使用者變更輸入的控制項，然後能夠適當地回應您的應用程式。
+當您希望使用者立即查看變更表單值的結果時，請使用立即更新的表單。 比方說，[設定] 頁面中會顯示目前的選取項目，而對選取項目所做的變更都會立即套用。 若要確認您應用程式中的變更，您必須在每個輸入控制項中[新增事件處理常式](controls-and-events-intro.md)。 如果使用者變更輸入控制項，您的應用程式即可適當地回應。
 
-### <a name="2-submitting-with-button"></a>2.提交按鈕
-另一種格式可讓使用者選擇何時要送出 按鈕按一下的資料。
+### <a name="2-submitting-with-button"></a>2.透過按鈕提交
+另一種類型的表單可讓使用者選擇何時透過按一下按鈕來提交資料。
 
-![行事曆新增新的事件 頁面](images/calendar-form.png)
+![行事曆新增新的事件頁面](images/calendar-form.png)
 
-這種類型的形式提供回應的使用者彈性。 一般而言，這種類型的形式包含更多的自由格式輸入的欄位，而因此接收的回應。 若要確保有效的使用者輸入和格式正確的資料，在提交時，請考慮下列建議：
+這類型的表單讓使用者具備回應彈性。 一般而言，這類型的表單包含更多自由表單輸入欄位，因此可接收更多樣的回應。 若要在提交時確保有效的使用者輸入和正格式確的資料，請考慮下列建議：
 
-- 讓它無法使用正確的控制項送出無效的資訊 （亦即，使用 CalendarDatePicker，而不是文字方塊的行事曆日期）。 查看更多有關在您稍後輸入控制項一節中的表單中選取適當的輸入的控制項。
-- 當使用文字方塊控制項，提供使用者的所需的輸入格式與提示[PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText)屬性。
-- 提供具有適當的使用者螢幕小鍵盤所指出預期的輸入控制項的[InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope)屬性。
-- 標記所需的輸入，將以星號 * 標籤上。
-- 停用 [提交] 按鈕，直到所有必要的資訊填入。
-- 如果有無效的資料，提交後，將標記與反白顯示的欄位或框線，無效的輸入控制項，並要求使用者重新提交表單。
-- 對於其他錯誤，例如網路連線失敗，請務必向使用者顯示適當的錯誤訊息。 
+- 使用正確的控制項 (也就是，使用 CalendarDatePicker，而不是行事曆日期的 TextBox)，讓使用者無法提交無效的資訊。 在稍後的「輸入控制項」一節中，查看更多關於在表單中選取適當輸入控制項的資訊。
+- 使用 TextBox 控制項時，利用 [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText) 屬性提供使用者所需輸入格式的提示。
+- 以 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope) 屬性陳述預期的控制項輸入，以提供使用者適當的螢幕小鍵盤。
+- 以標籤上的星號 * 標記必要的輸入。
+- 停用提交按鈕，直到填入所有必要資訊為止。
+- 如果提交時有無效的資料，請以亮顯的欄位或框線標記具有無效輸入的控制項，並要求使用者重新提交表單。
+- 對於其他錯誤 (例如網路連線失敗)，請務必向使用者顯示適當的錯誤訊息。 
 
 
 ## <a name="layout"></a>配置
 
-若要簡化使用者體驗並確保使用者能夠輸入正確的輸入，考慮下列建議設計的表單的版面配置。 
+若要輔助使用者體驗並確保使用者能夠輸入正確的輸入，請考慮下列建議來設計表單的版面配置。 
 
 ### <a name="labels"></a>標籤
-[標籤](labels.md)應該靠左對齊，並放置在輸入控制項上方。 許多控制項都有內建的標頭屬性，來顯示標籤。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
+[標籤](labels.md)應該靠左對齊且置於輸入控制項上方。 許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
-若要[協助工具設計](../accessibility/accessibility.md)，加上標籤的所有個人和群組的這兩種人類看得清楚和螢幕助讀程式的控制項。 
+若要[進行協助工具設計](../accessibility/accessibility.md)，請標記所有個別控制項和控制項群組，讓人類讀者和螢幕助讀程式都能清楚明確地使用。 
 
-對 字型樣式，使用預設[UWP 型別 ramp](../style/typography.md)。 使用`TitleTextBlockStyle`的頁面標題`SubtitleTextBlockStyle`群組標題和`BodyTextBlockStyle`控制項標籤。
+對於字型樣式，請使用預設 [UWP 字體坡形](../style/typography.md)。 將 `TitleTextBlockStyle` 使用於頁面標題，將 `SubtitleTextBlockStyle` 使用於群組標題，以及將 `BodyTextBlockStyle` 使用於控制項標籤。
 
 <div class="mx-responsive-img">
 <table>
@@ -75,12 +75,12 @@ ms.locfileid: "57658153"
 </div>
 
 ### <a name="spacing"></a>間距
-若要以視覺化方式彼此分隔控制項群組，請使用[對齊、 邊界和邊框距離](../layout/alignment-margin-padding.md)。 個別的輸入的控制項高度的 80px 而且應該是等間距的 24px 分開的。 輸入的控制項群組應該是等間距的 48px 分開。
+若要以視覺化方式讓控制項群組彼此分隔，請使用[對齊、邊界及邊框距離](../layout/alignment-margin-padding.md)。 個別輸入控制項的高度為 80px，且間距應該是 24px。 輸入控制項群組的間距應該是 48px。
 
 ![表單群組](images/forms-groups.png)
 
 ### <a name="columns"></a>欄
-建立資料行，可以減少不必要的泛空白字元，在表單中，特別是使用較大的螢幕大小。 不過，如果您想要建立多重資料行的表單，資料行數目的動作就應該取決於頁面上的輸入控制項的數目和應用程式視窗的螢幕大小。 而不會拖垮含有許多輸入控制項的畫面，請考慮建立多個頁面，為您的表單。  
+建立欄可減少表單中不必要的空格，特別是在使用的畫面較大時。 不過，如果您想要建立多欄的表單，欄數應該取決於頁面上的輸入控制項數目和應用程式視窗的畫面大小。 請考慮為您的表單建立多個頁面，而不要以許多輸入控制項淹沒畫面。  
 
 <div class="mx-responsive-img">
 <table>
@@ -94,66 +94,66 @@ ms.locfileid: "57658153"
 
 </div>
 
-### <a name="responsive-layout"></a>回應式配置
-表單應調整大小在螢幕或視窗大小變更，因此使用者不會忽略任何輸入的欄位。 如需詳細資訊，請參閱 <<c0> [ 回應式設計技術](../layout/responsive-design.md)。 比方說，您可能要在檢視中，不論螢幕大小一律保留在表單的特定區域。
+### <a name="responsive-layout"></a>回應式版面配置
+表單應隨著畫面或視窗大小變更來調整大小，使用者才不會忽略任何輸入欄位。 如需詳細資訊，請參閱[回應式設計技術](../layout/responsive-design.md)。 例如，不論畫面大小為何，您可能都想要在檢視中一律保留特定的表單區域。
 
-![form 焦點](images/forms-focus2.png)
+![表單焦點](images/forms-focus2.png)
 
 ### <a name="tab-stops"></a>定位停駐點
-使用者可以使用鍵盤來瀏覽控制項[定位停駐點](../input/keyboard-interactions.md#tab-stops)。 根據預設，控制項的定位順序會反映在 XAML 中建立的順序。 若要覆寫預設行為，請變更**IsTabStop**或是**TabIndex**控制項的屬性。 
+使用者可以使用鍵盤來瀏覽具有[定位停駐點](../input/keyboard-interactions.md#tab-stops)的控制項。 根據預設，控制項的定位順序會反映其在 XAML 中建立的順序。 若要覆寫預設行為，請變更控制項的 **IsTabStop** 或 **TabIndex** 屬性。 
 
-![控制項在表單上的索引標籤焦點](images/forms-focus1.png)
+![表單中控制項的定位焦點](images/forms-focus1.png)
 
-## <a name="input-controls"></a>輸入的控制項
-輸入的控制項是允許使用者將資訊輸入表單的 UI 項目。 表單可以加入一些通用控制項下方列出的以及何時使用它們的相關資訊。
+## <a name="input-controls"></a>輸入控制項
+輸入控制項是允許使用者在表單中輸入資訊的 UI 元素。 以下列出可新增到表單的一些通用控制項，以及何時使用它們的相關資訊。
 
 ### <a name="text-input"></a>文字輸入
 控制項 | 用法 | 範例
  - | - | -
-[文字方塊](text-box.md) | 擷取一或多個文字行 | 名稱、 自由格式的回應或意見反應
-[PasswordBox](password-box.md) | 藉由隱藏字元收集私人資料 | 社會安全號碼 (SSN) 的密碼 Pin，信用卡資訊 
-[AutoSuggestBox](auto-suggest-box.md) | 輸入一組對應的資料從建議清單顯示使用者 | 資料庫搜尋，郵寄給： 行，先前的查詢
-[RichEditBox](rich-edit-box.md) | 編輯格式化的文字、 超連結與映像的文字檔 | 上傳檔案、 預覽及應用程式中編輯
+[TextBox](text-box.md) | 擷取一或多個文字行 | 名稱、自由格式回應或意見反應
+[PasswordBox](password-box.md) | 藉由隱藏字元來收集私人資料 | 密碼、社會安全號碼 (SSN)、PIN、信用卡資訊 
+[AutoSuggestBox](auto-suggest-box.md) | 當使用者輸入資料時，從一組對應的資料中顯示建議清單 | 資料庫搜尋、「收件者:」行、先前的查詢
+[RichEditBox](rich-edit-box.md) | 編輯包含格式化文字、超連結及影像的文字檔 | 在應用程式中上傳檔案、預覽及編輯
 
 ### <a name="selection"></a>選項
 控制項 | 用法 | 範例
 - | - | - 
-| [核取方塊](checkbox.md) | 選取或取消選取一或多個動作項目 | 同意條款及條件、 新增選用項目、 選取所有適用
-[選項按鈕](radio-button.md) | 從兩個或多個選項中選取其中一個選項 | 挑選出貨等方法的類型。
-[ToggleSwitch](toggles.md) | 選擇其中兩個互斥的選項 | 開啟/關閉
+| [CheckBox](checkbox.md) | 選取或取消選取一或多個動作項目 | 同意條款及條件、新增選用項目、選取所有適用的項目
+[RadioButton](radio-button.md) | 從兩個以上的選項中選取一個選項 | 挑選類型、出貨方法等。
+[ToggleSwitch](toggles.md) | 選擇兩個互斥選項之一 | 開啟/關閉
 
-> **注意**：如果有五個或多個選取項目，請使用清單控制項。
+> **注意**：如果有五個或更多選取項目，請使用清單控制項。
 
 ### <a name="lists"></a>清單
 控制項 | 用法 | 範例
 - | - | -
-[下拉式方塊](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | 壓縮的狀態啟動，並展開以顯示可選取的項目清單 | 選取 從一長串的項目，例如州或國家/地區
-[ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | 分類項目，並指派群組標頭、 拖放項目、 規劃內容，並重新排列項目 | Rank 選項
-[GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | 排列，並瀏覽映像為基礎的集合 | 挑選一張照片，色彩、 顯示佈景主題
+[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | 一開始為精簡狀態，展開可顯示可選取的項目清單 | 從一長串的項目中選取，例如州或國家/地區
+[ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | 將項目分類並指派群組標頭、拖放項目、規劃內容，以及重新排序項目 | 排名選項
+[GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | 排列並瀏覽以影像為基礎的集合 | 挑選相片、色彩、顯示佈景主題
 
-### <a name="numeric-input"></a>輸入數字
+### <a name="numeric-input"></a>數字輸入
 控制項 | 用法 | 範例
 - | - | -
-[滑桿](slider.md) | 連續的數字值的範圍從選取的數字 | 百分比、 磁碟區、 播放速度
-[評等](rating.md) | 使用顆星評分 | 客戶回函
+[滑桿](slider.md) | 從連續數值範圍中選取數字 | 百分比、音量、播放速度
+[評分](rating.md) | 使用星星評分 | 客戶回函
 
 ### <a name="date-and-time"></a>日期和時間
 
 控制項 | 用法 
 - | - 
-[CalendarView](calendar-view.md) | 挑選單一日期或從最上層顯示的行事曆的日期範圍 
-[CalendarDatePicker](calendar-date-picker.md) | 挑選單一內容行事曆的日期 
-[日期選擇器](date-picker.md) | 挑選單一當地語系化的日期時內容的資訊並不重要
+[CalendarView](calendar-view.md) | 從一律顯示的行事曆中挑選單一日期或日期範圍 
+[CalendarDatePicker](calendar-date-picker.md) | 從關聯式行事曆中挑選單一日期 
+[DatePicker](date-picker.md) | 如果關聯式資訊不重要，請挑選當地語系化的單一日期
 [TimePicker](time-picker.md) | 挑選單一時間值
 
 ### <a name="additional-controls"></a>其他控制項 
-為 UWP 控制項的完整清單，請參閱[函式的控制項索引](controls-by-function.md)。
+如需 UWP 控制項的完整清單，請參閱[依函式排序的控制項索引](controls-by-function.md)。
 
-對於更複雜和自訂 UI 控制項，看看可從公司的 UWP 資源這類[Telerik](https://www.telerik.com/)， [SyncFusion](https://www.syncfusion.com/products/uwp)， [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)， [Infragistics](https://www.infragistics.com/products/universal-windows-platform)， [ComponentOne](https://www.componentone.com/Studio/Platform/UWP)，以及[ActiPro](https://www.actiprosoftware.com/products/controls/universal)。
+如需更多複雜和自訂 UI 控制項，請查看各家公司所提供的 UWP 資源，例如 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/products/uwp)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP) 及 [ActiPro](https://www.actiprosoftware.com/products/controls/universal)。
 
-## <a name="one-column-form-example"></a>一個資料行表單範例
-這個範例會使用 Acrylic[主從式](master-details.md)[清單檢視](lists.md)並[NavigationView](navigationview.md)控制項。
-![另一個 「 表單 」 範例的螢幕擷取畫面](images/FormExample2.png)
+## <a name="one-column-form-example"></a>一欄表單範例
+這個範例會使用 Acrylic [主要/詳細資料](master-details.md)[清單檢視](lists.md)和 [NavigationView](navigationview.md) 控制項。
+![另一個表單範例的螢幕擷取畫面](images/FormExample2.png)
 ```xaml
 <StackPanel>
     <TextBlock Text="New Customer" Style="{StaticResource TitleTextBlockStyle}"/>
@@ -177,9 +177,9 @@ ms.locfileid: "57658153"
 </StackPanel>
 ```
 
-## <a name="two-column-form-example"></a>表單的兩個資料行範例
-這個範例會使用[Pivot](pivot.md)控制項， [Acrylic](../style/acrylic.md)背景，以及[CommandBar](app-bars.md)除了輸入控制項。
-![Form 範例的螢幕擷取畫面](images/FormExample.png)
+## <a name="two-column-form-example"></a>兩欄表單範例
+除了輸入控制項以外，這個範例會使用 [Pivot](pivot.md) 控制項、[Acrylic](../style/acrylic.md) 背景以及 [CommandBar](app-bars.md)。
+![表單範例的螢幕擷取畫面](images/FormExample.png)
 ```xaml
 <Grid>
     <Pivot Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}" >
@@ -234,8 +234,8 @@ ms.locfileid: "57658153"
 ```
 
 ## <a name="customer-orders-database-sample"></a>客戶訂單資料庫範例
-![客戶訂單資料庫螢幕擷取畫面](images/customerorderform.png)以了解如何將表單輸入以連接**Azure**資料庫中，請參閱完全實作的表單中，請參閱[客戶訂單資料庫](https://github.com/Microsoft/Windows-appsample-customers-orders-database)應用程式範例。
+![客戶訂單資料庫螢幕擷取畫面](images/customerorderform.png) 若要了解如何將表單輸入連線到 **Azure** 資料庫並查看完全實作的表單，請參閱[客戶訂單資料庫](https://github.com/Microsoft/Windows-appsample-customers-orders-database)應用程式範例。
 
 ## <a name="related-topics"></a>相關主題
-- [輸入的控制項](controls-and-events-intro.md)
+- [輸入控制項](controls-and-events-intro.md)
 - [印刷樣式](../style/typography.md)

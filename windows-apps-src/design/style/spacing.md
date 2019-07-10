@@ -1,64 +1,64 @@
 ---
 title: 間距和大小
-description: 新的 Fluent 標準和 Compact 控制項樣式確保舒適的使用者體驗，不論他們的裝置和輸入的方法。
-keywords: UWP、 Windows 10、 控制項、 大小、 高密度、 標準、 compact
-ms.date: 4/4/2019
+description: 不論裝置和輸入方法為何，新的 Fluent 標準和精簡控制項樣式都可確保舒適的使用者體驗。
+keywords: UWP, Windows 10, 控制項, 大小, 密度, 標準, 精簡
+ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7b74e3dc2ad047d9e52509b71ef00b829ad63a0d
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
-ms.translationtype: MT
+ms.openlocfilehash: ff88332e0b44749bcd86e06adafeb596ca8678b3
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59249450"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63820649"
 ---
 # <a name="control-size-and-density"></a>控制項大小和密度
 
-您可以使用控制項大小和密度的組合來最佳化您的通用 Windows 平台 (UWP) 應用程式，並提供最適合您的應用程式功能和互動需求的使用者體驗。
+使用控制項大小和密度的組合來最佳化您的通用 Windows 平台 (UWP) 應用程式，並提供最適合您應用程式功能和互動需求的使用者體驗。
 
-根據預設，UWP 應用程式要用來呈現之低密度 (或`Standard`) 配置。 不過，開頭為 WinUI 2.1，高密度 (或`Compact`) 版面配置選項資訊豐富的 UI 和類似的特殊情況下，也支援。 這可以指定透過基本的樣式資源 （請參閱以下範例）。
+根據預設，UWP 應用程式會以低密度 (或 `Standard`) 配置。 不過，從 WinUI 2.1 開始，也支援高密度 (或 `Compact`) 版面配置選項 (適用於資訊豐富的 UI 和類似的特殊情況)。 這可透過基本樣式資源指定 (請參閱以下範例)。
 
-在功能和行為尚未變更，且兩者間保持一致的大小和密度的選項，預設主體字型大小已更新為 14px 所有控制項，以支援這些兩個密度選項。 這個字型大小跨區域和裝置的運作方式，並可確保您的應用程式保持平衡且方便的使用者。
+雖然功能和行為尚未變更，並且在兩個大小和密度選項之間保持一致，但所有控制項的預設主體字型大小已更新為 14px，以支援這兩個密度選項。 這個字型大小適用於各個區域和裝置，確保您的應用程式保持平衡且方便使用者使用。
 
-## <a name="fluent-standard-sizing"></a>Fluent 標準的調整大小
+## <a name="fluent-standard-sizing"></a>Fluent 標準大小調整
 
-*Fluent 的標準規模*建立提供資訊密度和使用者緩和之間取得平衡。 實際上，在螢幕上的所有項目會對齊 40 x 40 有效像素 (epx) 目標，這可讓 UI 項目貼齊格線和調整適當地根據系統層級調整。
+「Fluent 標準大小調整」  旨在提供資訊密度和使用者舒適度之間平衡。 實際上，畫面上所有的項目都會對齊 40x40 有效像素 (epx) 目標，其可讓 UI 元素貼齊格線並根據系統層級縮放適度調整。
 
-**標準的調整大小被設計來容納觸控和輸入的指標。**
+**大小調整的設計訴求是要適應觸控和指標輸入。**
 
 > [!NOTE]
->如需有效的像素與調整規模的詳細資訊，請參閱[UWP 應用程式的設計簡介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>如需有效像素與縮放規模的詳細資訊，請參閱 [UWP 應用程式設計簡介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
-> 如需系統層級調整的詳細資訊，請參閱[對齊、 邊界、 邊框距離](../layout/alignment-margin-padding.md)。
+> 如需系統層級縮放的詳細資訊，請參閱[對齊、邊界、邊框距離](../layout/alignment-margin-padding.md)。
 
-適用於 Windows 10 年 10 月 2018 Update （版本 1809年） 標準，所有 UWP 控制項的預設大小已減少跨所有使用案例提高使用性。
+對於 Windows 10 2018 年 10 月更新 (1809 版)，所有 UWP 控制項的標準、預設大小已縮小，以提高所有使用案例的可用性。
 
-下圖顯示一些控制項的版面配置變更後使用 Windows 10 年 10 月 2018年的更新。 具體而言，標頭和控制項的頂端之間的邊界從 8epx 減少 4epx，，和 44epx 格線已變更為 40epx 方格。
+下圖顯示 Windows 10 2018 年 10 月更新所引進的一些控制項版面配置變更。 具體而言，控制項的標頭與頂端之間的邊界從 8epx 縮小為 4epx，且 44epx 格線已變更為 40epx 格線。
 
-![標準控制項的版面配置範例](images/standarddensity.png)
+![標準控制項版面配置範例](images/standarddensity.png)
 
-*標準控制項的版面配置範例*
+*控制項版面配置範例*
 
-下一步 下圖顯示變更控制項大小適用於 Windows 10 年 10 月 2018年的更新。 具體來說，40epx 格線對齊。
+下圖顯示對 Windows 10 2018 年 10 月更新的控制項大小所做的變更。 具體來說，對齊 40epx 格線。
 
-![標準的命令範例](images/standarddensitycommanding.png)
+![標準命令範例](images/standarddensitycommanding.png)
 
-## <a name="fluent-compact-sizing"></a>Fluent Compact 的調整大小
+## <a name="fluent-compact-sizing"></a>Fluent 精簡大小調整
 
-Compact 的調整大小啟用密集、 資訊豐富的控制項群組，並可使用下列協助：
+精簡大小調整讓密集、資訊豐富的控制項群組對下列作業有所幫助：
 
-- 瀏覽大量的內容。
-- 最大化在網頁上可見的內容。
-- 瀏覽並與其互動的控制項和內容
+- 瀏覽大量內容。
+- 將頁面上可見的內容最大化。
+- 瀏覽控制項和內容並與其互動
 
-**Compact 的調整大小主要被設計來容納指標輸入。**
+**大小調整的主要設計訴求是要適應指標輸入。**
 
 ### <a name="examples"></a>範例
 
-Compact 縮放是透過特殊的資源字典可指定您在頁面層級，或在特定的版面配置上的應用程式中實作。 資源字典可用於[WinUI](https://docs.microsoft.com/en-us/uwp/toolkits/winui/) Nuget 套件。
+精簡大小調整是透過特殊資源字典實作，您可以在應用程式中的頁面層級或特定版面配置上指定該字典。 在 [WinUI](https://docs.microsoft.com/en-us/uwp/toolkits/winui/) Nuget 套件中可取得資源字典。
 
-下列範例會顯示如何`Compact`頁面和個別的方格控制項，可以套用樣式。
+下列範例顯示頁面和個別格線控制項如何才能套用 `Compact` 樣式。
 
 #### <a name="page-level"></a>頁面層級
 
@@ -68,7 +68,7 @@ Compact 縮放是透過特殊的資源字典可指定您在頁面層級，或在
 </Page.Resources>
 ```
 
-#### <a name="grid-level"></a>方格層級
+#### <a name="grid-level"></a>格線層級
 
 ```xaml
 <Grid>

@@ -6,17 +6,17 @@ label: Time picker
 template: detail.hbs
 ms.date: 05/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 58321c6c32536c07d3a56a05ce26b353ec32a982
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364163"
 ---
 # <a name="time-picker"></a>時間選擇器
@@ -24,7 +24,7 @@ ms.locfileid: "66364163"
 
 時間選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選時間值。 
 
-> **重要的 Api**:[TimePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker)，[時間屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
+> **重要 API**：[TimePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、[Time 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？

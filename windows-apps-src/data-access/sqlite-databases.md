@@ -1,29 +1,29 @@
 ---
-title: 在 UWP app 中使用 SQLite 資料庫
-description: 在 UWP app 中使用 SQLite 資料庫。
+title: 在 UWP 應用程式中使用 SQLite 資料庫
+description: 在 UWP 應用程式中使用 SQLite 資料庫。
 ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 資料庫
 ms.localizationpriority: medium
 ms.openlocfilehash: 465376214f1bf1b390ec6db8609783e4e7872196
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362790"
 ---
-# <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP app 中使用 SQLite 資料庫
+# <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 應用程式中使用 SQLite 資料庫
 您可以使用 SQLite 在使用者的裝置上儲存和擷取輕量資料庫中的資料。 本指南會示範怎麼做。
 
 ## <a name="some-benefits-of-using-sqlite-for-local-storage"></a>使用 SQLite 進行本機儲存的一些優點
 
-:heavy_check_mark:SQLite 是輕量且獨立。 它是不需要任何其他相依性的程式庫。 不需進行任何設定。
+:heavy_check_mark:SQLite 輕量且獨立。 它是不需要任何其他相依性的程式庫。 不需進行任何設定。
 
 :heavy_check_mark:沒有資料庫伺服器。 用戶端和伺服器以相同程序執行。
 
-:heavy_check_mark:SQLite 是公用網域，因此您可以自由使用，並將它散發您的應用程式。
+:heavy_check_mark:SQLite 位於公用網域，您可以自由使用並隨您的應用程式散發。
 
-:heavy_check_mark:SQLite 適用於跨平台和架構。
+:heavy_check_mark:SQLite 可跨平台和架構運作。
 
 您也可以在[這裡](https://sqlite.org/about.html)閱讀更多有關 SQLite 的資訊。
 
@@ -33,7 +33,7 @@ ms.locfileid: "66362790"
 
 ### <a name="entity-framework-core"></a>Entity Framework Core
 
-Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特定物件處理關聯式資料。 如果您已使用此架構處理其他 .NET app 中的資料，可將該程式碼移轉到 UWP app，適當變更連接字串之後就能運作。
+Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特定物件處理關聯式資料。 如果您已使用此架構處理其他 .NET 應用程式中的資料，可將該程式碼移轉到 UWP 應用程式，適當變更連接字串之後就能運作。
 
 若要試試看，請參閱[在使用新資料庫的通用 Windows 平台 (UWP) 上開始使用 EF Core](https://docs.microsoft.com/ef/core/get-started/uwp/getting-started)。
 
@@ -47,7 +47,7 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 我們會從基本 UWP 專案開始，新增類別庫，然後安裝適當的 Nuget 套件。
 
-您新增至解決方案的類別程式庫類型以及安裝的特定套件，取決於您的 app 做為目標的最低 Windows SDK 版本。 您可以在 UWP 專案的屬性頁面中找到該資訊。
+您新增至解決方案的類別程式庫類型以及安裝的特定套件，取決於您的應用程式做為目標的最低 Windows SDK 版本。 您可以在 UWP 專案的屬性頁面中找到該資訊。
 
 ![Windows SDK 的最低版本](images/min-version.png)
 
@@ -55,23 +55,23 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 ### <a name="the-minimum-version-of-your-project-does-not-target-the-fall-creators-update"></a>您專案的最低版本不是以 Fall Creators Update 為目標
 
-如果您使用 Visual Studio 2015，請按一下 **\[說明\]** -> **\[關於 Microsoft Visual Studio\]** 。 然後在已安裝的程式清單中，確定您有 NuGet 套件管理員 **3.5** 版或更新版本。 如果您的版本號碼較低，請在[這裡](https://www.nuget.org/downloads)安裝較新版的 NuGet。 在該頁面上，您會看見所有 Nuget 版本列於 **Visual Studio 2015** 標題下。
+如果您使用 Visual Studio 2015，請按一下 [說明]  ->[關於 Microsoft Visual Studio]  。 然後在已安裝的程式清單中，確定您有 NuGet 套件管理員 **3.5** 版或更新版本。 如果您的版本號碼較低，請在[這裡](https://www.nuget.org/downloads)安裝較新版的 NuGet。 在該頁面上，您會看見所有 Nuget 版本列於 **Visual Studio 2015** 標題下。
 
 接下來，新增類別庫至您的解決方案。 您不必使用類別庫包含您的資料存取碼，但我們會在範例中使用一個。 我們會將程式庫命名為 **DataAccessLibrary**，並將程式庫中的類別命名為 **DataAccess**。
 
 ![類別庫](images/class-library.png)
 
-以滑鼠右鍵按一下解決方案，然後按一下 **\[管理解決方案的 NuGet 套件\]** 。
+以滑鼠右鍵按一下解決方案，然後按一下 [管理解決方案的 NuGet 套件]  。
 
 ![管理 NuGet 套件](images/manage-nuget.png)
 
-如果您使用 Visual Studio 2015，請選擇 **\[已安裝\]** 索引標籤，並確認 **Microsoft.NETCore.UniversalWindowsPlatform** 套件的版本號碼為 **5.2.2** 或更新版本。
+如果您使用 Visual Studio 2015，請選擇 [已安裝]  索引標籤，並確認 **Microsoft.NETCore.UniversalWindowsPlatform** 套件的版本號碼為 **5.2.2** 或更新版本。
 
 ![.NETCore 版本](images/package-version.png)
 
 如果不是的話，請將套件更新到較新版本。
 
-選擇 **\[瀏覽\]** 索引標籤，然後搜尋 **Microsoft.Data.SQLite** 套件。 安裝該套件的 **1.1.1** 版 (或更低版本)
+選擇 [瀏覽]  索引標籤，然後搜尋 **Microsoft.Data.SQLite** 套件。 安裝該套件的 **1.1.1** 版 (或更低版本)。
 
 ![SQLite 套件](images/sqlite-package.png)
 
@@ -81,21 +81,21 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 將 UWP 專案的最低版本提升為 Fall Creators Update 有幾個優點。
 
-首先，您可以使用 .NET Standard 2.0 程式庫，而非一般類別庫。 這表示，您可以與任何其他 .NET app 共用您的資料存取碼，例如 WPF、Windows Forms、Android、iOS 或 ASP.NET app。
+首先，您可以使用 .NET Standard 2.0 程式庫，而非一般類別庫。 這表示，您可以與任何其他 .NET 應用程式共用您的資料存取碼，例如 WPF、Windows Forms、Android、iOS 或 ASP.NET 應用程式。
 
-其次，您的應用程式沒有 SQLite 的程式庫封裝。 您的 app 可以改用隨 Windows 安裝的 SQLite 版本。 這可為您提供幾個方面的協助。
+其次，您的應用程式沒有套件 SQLite 程式庫。 您的應用程式可以改用隨 Windows 安裝的 SQLite 版本。 這可為您提供幾個方面的協助。
 
-:heavy_check_mark:因為您不必下載 SQLite 二進位檔，然後再封裝您的應用程式的一部分，可減少您的應用程式的大小。
+:heavy_check_mark:縮減應用程式的大小，因為您不需要下載 SQLite 二進位檔，然後將它封裝為應用程式的一部分。
 
-:heavy_check_mark:會防止您不需要將新版應用程式推送給使用者，SQLite 將重大修正程式發佈到 bug 和 SQLite 中的安全性弱點。 Windows 版 SQLite 是由 Microsoft 與 SQLite.org 共同維護。
+:heavy_check_mark:您不需要推送應用程式的新版本給使用者，在 SQLite 發佈 SQLite 中錯誤和安全性弱點的重大修正時。 Windows 版 SQLite 是由 Microsoft 與 SQLite.org 共同維護。
 
-:heavy_check_mark:應用程式載入時有可能會比較快，因為最有可能的 SQLite SDK 版本已經載入到記憶體。
+:heavy_check_mark:應用程式載入時間可能更快，因為 SDK 版的 SQLite 很可能已載入記憶體中。
 
 讓我們從新增 .NET Standard 2.0 類別庫至您的解決方案開始著手。 您不需使用類別庫包含您的資料存取碼，但我們會在範例中使用一個。 我們會將程式庫命名為 **DataAccessLibrary**，並將程式庫中的類別命名為 **DataAccess**。
 
 ![類別庫](images/dot-net-standard.png)
 
-以滑鼠右鍵按一下解決方案，然後按一下 **\[管理解決方案的 NuGet 套件\]** 。
+以滑鼠右鍵按一下解決方案，然後按一下 [管理解決方案的 NuGet 套件]  。
 
 ![管理 NuGet 套件](images/manage-nuget-2.png)
 
@@ -105,7 +105,7 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 #### <a name="to-use-the-version-of-sqlite-that-is-installed-with-windows"></a>若要使用隨 Windows 安裝的 SQLite 版本
 
-選擇 **\[瀏覽\]** 索引標籤，然後搜尋 **Microsoft.Data.SQLite.core** 套件，再進行安裝。
+選擇 [瀏覽]  索引標籤，然後搜尋 **Microsoft.Data.SQLite.core** 套件，再進行安裝。
 
 ![SQLite Core 套件](images/sqlite-core-package.png)
 
@@ -113,9 +113,9 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 ![SQLite PCL Raw 套件](images/sqlite-raw-package.png)
 
-#### <a name="to-include-sqlite-with-your-app"></a>在您的 app 中包含 SQLite
+#### <a name="to-include-sqlite-with-your-app"></a>在您的應用程式中包含 SQLite
 
-您不必這樣做。 但如果您因故需要在 app 中包括特定版本的 SQLite，請選擇 **\[瀏覽\]** 索引標籤，然後搜尋 **Microsoft.Data.SQLite** 套件。 安裝該套件的 **2.0** 版 (或更低版本)
+您不必這樣做。 但如果您因故需要在應用程式中包括特定版本的 SQLite，請選擇 [瀏覽]  索引標籤，然後搜尋 **Microsoft.Data.SQLite** 套件。 安裝該套件的 **2.0** 版 (或更低版本)。
 
 ![SQLite 套件](images/sqlite-package-v2.png)
 
@@ -125,15 +125,15 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 我們將執行下列工作︰
 
-： 一個：準備資料存取類別。
+:one:準備資料存取類別。
 
-： 兩個：初始化 SQLite 資料庫。
+:two:初始化 SQLite 資料庫。
 
-： 三個：將資料插入 SQLite 資料庫。
+:three:將資料插入 SQLite 資料庫。
 
-： 四個：SQLite 資料庫中擷取資料。
+:four:從 SQLite 資料庫擷取資料。
 
-： 五個：新增基本使用者介面。
+:five:新增基本使用者介面。
 
 ### <a name="prepare-the-data-access-class"></a>準備資料存取類別
 
@@ -163,7 +163,7 @@ namespace DataAccessLibrary
 
 ```
 
-新增下列 using 陳述式至這個檔案的頂端。
+將下列 using 陳述式新增到此檔案的頂端。
 
 ```csharp
 using Microsoft.Data.Sqlite;
@@ -199,7 +199,7 @@ public static void InitializeDatabase()
 
 在此範例中，我們將資料庫命名為 ``sqlliteSample.db``，但您可以使用任意名稱，只要您將該名稱用於您具現化的所有 [SqliteConnection](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) 物件。
 
-在 UWP 專案地 **App.xaml.cs** 檔案建構函式中，呼叫 **DataAccess** 類別的 ``InitializeDatabase`` 方法。
+在 UWP 專案的 **App.xaml.cs** 檔案建構函式中，呼叫 **DataAccess** 類別的 ``InitializeDatabase`` 方法。
 
 ```csharp
 public App()
@@ -313,18 +313,18 @@ private void AddData(object sender, RoutedEventArgs e)
 }
 ```
 
-這樣就完成了。 探索 [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0)，了解還可以利用 SQLite 資料庫做什麼。 查看下列連結，了解在您的 UWP app 中使用資料的其他方式。
+就這麼簡單。 探索 [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0)，了解還可以利用 SQLite 資料庫做什麼。 查看下列連結，了解在您的 UWP 應用程式中使用資料的其他方式。
 
 ## <a name="next-steps"></a>後續步驟
 
-**您的應用程式直接連接到 SQL Server 資料庫**
+**將您的應用程式直接連接至 SQL Server 資料庫**
 
 請參閱[在 UWP app 中使用 SQL Server 資料庫](sql-server-databases.md)。
 
-**跨不同的平台的不同應用程式之間共用程式碼**
+**在不同平台的不同應用程式之間共用程式碼**
 
 請參閱[在傳統型與 UWP 之間共用程式碼](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)。
 
-**新增包含 Azure SQL 後端的主版詳細資料頁面**
+**在 Azure SQL 後端新增主要詳細資料頁面**
 
-請參閱[客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
+請參閱[客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。

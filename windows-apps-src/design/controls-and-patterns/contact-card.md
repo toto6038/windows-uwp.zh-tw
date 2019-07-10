@@ -3,28 +3,28 @@ Description: 按鈕讓使用者得以觸發立即動作。
 title: 連絡人卡片
 ms.date: 03/07/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kele
 design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c227629ace1f3fdbb2af8582401f9273cf11c2e
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913978"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63799628"
 ---
 # <a name="contact-card"></a>連絡人卡片
 
 連絡人卡片會顯示[連絡人](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (UWP 用來代表人員和企業的機制) 的連絡資訊，例如姓名、電話號碼和地址。  連絡人卡片也可讓使用者編輯連絡資訊。 您可以選擇顯示精簡的連絡人卡片，或是包含額外資訊的完整連絡人卡片。
 
-> **重要的 Api**:[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)， [ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard)， [IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)，[連絡類別](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **重要 API**：[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)、[ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard)、[IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[Contact 類別](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 有兩種顯示連絡人卡片的方式：  
 * 做為標準連絡人卡片，出現在的飛出視窗中，並且可消失關閉 (在使用者按一下連絡人卡片外部時消失)。 
-* 做為完整連絡人卡片，佔用大部分空間，但無法消失關閉 (使用者必須按一下 **\[關閉\]** 才能將其關閉)。 
+* 做為完整連絡人卡片，佔用大部分空間，但無法消失關閉 (使用者必須按一下 [關閉]  才能將其關閉)。 
 
 
 <figure>
@@ -78,7 +78,7 @@ ms.locfileid: "58913978"
 
     ```
 
-2. 呼叫 [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported) 方法，以判斷您是否可以顯示連絡人卡片。 如果不支援，則會顯示錯誤訊息  (此範例假設您要顯示連絡人卡片來回應按一下事件)。
+2. 呼叫 [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported) 方法，以判斷您是否可以顯示連絡人卡片。 如果不支援，則會顯示錯誤訊息 (此範例假設您要顯示連絡人卡片來回應按一下事件)。
     ```csharp
     // Contact and Contact Managers are existing classes 
     private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 

@@ -6,11 +6,11 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b444a11ab032034976d2f1b269bd10a89bf339e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593073"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63798606"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教學課程：建立調適型配置
 
@@ -28,34 +28,34 @@ ms.locfileid: "57593073"
 
 ## <a name="prerequisites"></a>必要條件
 
-* Visual Studio 2017:[下載 Visual Studio 2017 Community （免費）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
-* Windows 10 SDK (10.0.15063.468 或更新版本):[下載最新的 Windows SDK （免費）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Windows 行動裝置模擬器：[下載 Windows 10 行動模擬器 （免費）](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Visual Studio 2017：[下載 Visual Studio 2017 社群 (免費)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Windows 10 SDK (10.0.15063.468 或更新版本)：[下載最新 Windows SDK (免費)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Windows 行動裝置版模擬器：[下載 Windows 10 行動裝置版模擬器 (免費)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：從 github 取得起始程式碼
 
 針對此教學課程，您將從簡化版的 PhotoLab 範例開始著手。 
 
-1. 移至[ https://github.com/Microsoft/Windows-appsample-photo-lab ](https://github.com/Microsoft/Windows-appsample-photo-lab)。 這會將您帶到 GitHub 頁面以取得範例。 
-2. 下一步，您將需要複製或下載範例。 按一下 **\[複製或下載\]** 按鈕。 子功能表會出現。
+1. 移至 [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)。 這會將您帶到 GitHub 頁面以取得範例。 
+2. 下一步，您將需要複製或下載範例。 按一下 [複製或下載]  按鈕。 子功能表會出現。
     <figure>
         <img src="../basics/images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
         <figcaption>Photolab 範例的 GitHub 頁面上的<b>複製或下載</b>功能表。</figcaption>
     </figure>
 
-    **如果您不熟悉 GitHub:**
+    **如果您不熟悉 GitHub：**
     
-    a. 按一下**下載 ZIP**，然後在本機儲存此檔案。 這個下載的 .zip 檔案，包含您所需要的所有專案檔案。
-    b. 將檔案解壓縮。 使用 [檔案總管] 瀏覽至您下載的 .zip 檔案，滑鼠右鍵按一下它，然後選取**解壓縮全部...**。c. 瀏覽至您範例的本機複製，並前往 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` 目錄。    
+    a. 按一下 [下載 ZIP]  ，然後在本機儲存此檔案。 這個下載的 .zip 檔案，包含您所需要的所有專案檔案。
+    b. 將檔案解壓縮。 使用 [檔案總管] 瀏覽至您下載的 .zip 檔案，滑鼠右鍵按一下它，然後選取 [解壓縮全部...]  。c. 瀏覽至您範例的本機複製，並前往 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` 目錄。    
 
-    **如果您熟悉 GitHub:**
+    **如果您熟悉 GitHub：**
 
     a. 在本機複製存放庫中的主要分支。
     b. 瀏覽至 `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` 目錄。
 
 3. 按一下 `Photolab.sln` 開啟專案。
 
-## <a name="part-1-run-the-mobile-emulator"></a>第 1 部分：執行行動裝置的模擬器
+## <a name="part-1-run-the-mobile-emulator"></a>第 1 部分：執行行動模擬器
 
 在 Visual Studio 工具列中，確認 [方案平台] 已設定為 x86 或 x64 (而非 ARM)，然後將目標裝置從本機電腦變更為您已安裝的其中一個行動擬器 (例如 Mobile Emulator 10.0.15063 WVGA 5 吋 1GB)。 按下 **F5**，嘗試在您所選取的行動模擬器中執行 [影像中心] 應用程式。
 
@@ -63,7 +63,7 @@ ms.locfileid: "57593073"
 
 ![行動版面配置：之後](../basics/images/xaml-basics/adaptive-layout-mobile-before.png)
 
-## <a name="part-2-build-a-tailored-mobile-layout"></a>第 2 部分：建置量身訂做的行動配置
+## <a name="part-2-build-a-tailored-mobile-layout"></a>第 2 部分：建置量身打造的行動版面配置
 為了讓這個應用程式在較小型裝置上變得美觀，我們將會 XAML 頁面中建立不同的一組只會在偵測到行動裝置時使用的樣式。
 
 ### <a name="create-a-new-datatemplate"></a>建立新的 DataTemplate
@@ -211,7 +211,7 @@ ms.locfileid: "57593073"
 
 ![行動版面配置：之後](../basics/images/xaml-basics/adaptive-layout-mobile-after.png)
 
-## <a name="part-3-adapt-to-multiple-window-sizes-on-a-single-device"></a>第 3 部分：若要在單一裝置上的多個視窗大小調整
+## <a name="part-3-adapt-to-multiple-window-sizes-on-a-single-device"></a>第 3 部分：適應單一裝置上的多個視窗大小做調整
 建立新的量身打造的版面配置解決了行動裝置的回應式設計難題，但在桌上型電腦和平板電腦上又會如何？ 應用程式可能顯示在全螢幕上的效果還不錯，但要是使用者縮小視窗，得到的結果或許是很難看的介面。 我們可以使用 **VisualStateManager** 配合單一裝置上的多個視窗大小進行調整，確保始終都能在外觀和風格上提供良好的使用者體驗。
 
 ![小型視窗：之前](../basics/images/xaml-basics/adaptive-layout-small-before.png)
@@ -311,7 +311,7 @@ ms.locfileid: "57593073"
 
 ### <a name="run-the-app"></a>執行應用程式
 
-在 Visual Studio 工具列中，將目標裝置設定為 **\[本機電腦\]** 並執行應用程式。 當應用程式載入時，嘗試變更視窗的大小。 將視窗縮減成小型大小時，您應該會看到應用程式切換至您在第 2 部分建立的行動版面配置。
+在 Visual Studio 工具列中，將目標裝置設定為 [本機電腦]  並執行應用程式。 當應用程式載入時，嘗試變更視窗的大小。 將視窗縮減成小型大小時，您應該會看到應用程式切換至您在第 2 部分建立的行動版面配置。
 
 ![小型視窗：之後](../basics/images/xaml-basics/adaptive-layout-small-after.png)
 
@@ -321,8 +321,8 @@ ms.locfileid: "57593073"
 
 如果遇到困難，您可以在[使用 XAML 定義頁面版面配置](../layout/layouts-with-xaml.md)的下列各節中找到更多指引。
 
-+ [視覺狀態和狀態觸發程序](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [量身訂做的配置](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
++ [視覺狀態與狀態觸發程序](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
++ [量身訂做的版面配置](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
 
 或者，如果您想要深入了解最初的編輯相片應用程式是如何建置，請參閱 XAML [使用者介面](../basics/xaml-basics-ui.md)及[資料繫結](../../data-binding/xaml-basics-data-binding.md)的那些教學課程。
 

@@ -6,17 +6,17 @@ label: Tooltips
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dabfee25df08d933fc892c3ed6e46f3cc6f4513
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364026"
 ---
 # <a name="tooltips"></a>工具提示
@@ -25,7 +25,7 @@ ms.locfileid: "66364026"
 
 ![工具提示](images/controls/tool-tip.png)
 
-> **重要的 Api**:[工具提示類別](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)， [ToolTipService 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
+> **重要 API**：[ToolTip 類別](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -33,25 +33,25 @@ ms.locfileid: "66364026"
 
 什麼時候應該使用工具提示？ 若要決定使用時機，請考量下列問題：
 
-- **應該依指標暫留時顯示出來的資訊？**
+- **資訊是否應隨著指標的暫留而變得可見？**
     如果不是，請使用其他控制項。 提示僅顯示為使用者互動的結果時，一律不應獨立顯示。
 
 - **控制項是否有文字標籤？**
     如果沒有，請使用工具提示提供標籤。 理想的 UX 設計做法，是標記大部分的內嵌控制項以及不需要工具提示的控制項。 僅顯示圖示的工具列控制項和命令按鈕需要工具提示。
 
-- **沒有物件受益於描述或進一步的資訊嗎？**
+- **說明或進一步的資訊對了解物件有沒有幫助？**
     如果有，請使用工具提示。 不過，文字必須是補充性質的，也就是說，並非主要工作所必要的。 如果是必要的文字，請將它直接放入 UI 中，使用者就不必到處尋找這些文字。
 
-- **錯誤、 警告或狀態，請為補充資訊嗎？**
+- **補充資訊是否為錯誤、警告或狀態？**
     如果是，請使用其他 UI 元素，例如飛出視窗。
 
-- **使用者需要互動的秘訣嗎？**
+- **使用者是否需要與提示互動？**
     如果是，請使用其他控制項。 使用者無法與提示互動，因為移動滑鼠會讓提示消失。
 
-- **使用者需要列印的補充資訊嗎？**
+- **使用者是否需要列印補充資訊？**
     如果是，請使用其他控制項。
 
-- **使用者將會發現惱人的或轉移的提示？**
+- **使用者是否覺得提示會造成困擾或干擾？**
     如果是，請考慮使用其他解決方案，包括不執行任何動作。 如果您要在可能造成干擾的地方使用提示，請允許使用者將其關閉。
 
 ## <a name="example"></a>範例
@@ -76,15 +76,15 @@ Bing 地圖服務應用程式中的工具提示。
 
 ## <a name="create-a-tooltip"></a>建立工具提示
 
-[工具提示](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)必須指派給其擁有者的另一個 UI 元素。 [ToolTipService](/uwp/api/windows.ui.xaml.controls.tooltipservice) 類別提供顯示工具提示的靜態方法。
+[ToolTip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) 必須指派給其擁有者的另一個 UI 元素。 [ToolTipService](/uwp/api/windows.ui.xaml.controls.tooltipservice) 類別提供顯示 ToolTip 的靜態方法。
 
-在 XAML 中，使用 **ToolTipService.Tooltip** 連接的屬性，指定工具提示給擁有者。
+在 XAML 中，使用 **ToolTipService.Tooltip** 連接的屬性，將 ToolTip 指定給擁有者。
 
 ```xaml
 <Button Content="Submit" ToolTipService.ToolTip="Click to submit"/>
 ```
 
-在程式碼中，使用 [ToolTipService.SetToolTip](/uwp/api/windows.ui.xaml.controls.tooltipservice.settooltip) 方法，指定工具提示給擁有者。
+在程式碼中，使用 [ToolTipService.SetToolTip](/uwp/api/windows.ui.xaml.controls.tooltipservice.settooltip) 方法，將 ToolTip 指派給擁有者。
 
 ```xaml
 <Button x:Name="submitButton" Content="Submit"/>
@@ -98,7 +98,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ### <a name="content"></a>內容
 
-您可以使用任何物件做為工具提示的[內容](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)。 以下是在工具提示中使用[影像](/uwp/api/windows.ui.xaml.controls.image)的範例。
+您可以使用任何物件作為 ToolTip 的[內容](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)。 以下是在 ToolTip 中使用[影像](/uwp/api/windows.ui.xaml.controls.image)的範例。
 
 ```xaml
 <TextBlock Text="store logo">
@@ -110,9 +110,9 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ### <a name="placement"></a>放置
 
-根據預設，工具提示會顯示在指標上的置中位置。 位置並不受應用程式視窗的限制，因此工具提示可能會超出應用程式視窗範圍部分顯示或完整顯示。
+根據預設，ToolTip 會顯示在指標上的置中位置。 位置並不受應用程式視窗的限制，因此 ToolTip 可能會超出應用程式視窗範圍部分顯示或完整顯示。
 
-針對廣泛的調整，使用[放置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性或**ToolTipService.Placement**附加屬性來指定工具提示是否應繪製上方、 下方左，或權限的指標。 您可以設定[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或是[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)屬性來變更指標和工具提示之間的距離。 只有其中兩個位移的值會影響最後的位置-VerticalOffset 時放置時，頂端或底部，HorizontalOffset 放置處於或權限。
+如需廣泛調整，請使用 [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) 屬性或 **ToolTipService.Placement** 附加屬性，指定應將 ToolTip 拖曳到指標的上、下、左或右。 您可以設定 [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) 或 [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) 屬性來變更指標與 ToolTip 之間的距離。 兩個位移值當中只有一個值會影響最終位置 - Placement 是 Top 或 Bottom 時為 VerticalOffset，Placement 是 Left 或 Right 時為 HorizontalOffset。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -125,7 +125,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-如果工具提示會遮蔽它所參考的內容，您可以調整它精確地使用 新的位置**PlacementRect**屬性。 PlacementRect 錨定的工具提示的位置，並提供足夠的螢幕空間，此區域外部繪製工具提示時，也作為工具提示會不 occlude，區域。 您可以指定相對於工具提示的擁有者，以及高度的矩形的來源與在排除區域的寬度。 [放置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性會定義如果上方、 下方左側或右側 PlacementRect，應繪製工具提示。 
+如果 ToolTip 遮蔽它所參考的內容，您可以使用新的 **PlacementRect** 屬性精確地調整其位置。 PlacementRect 會固定 ToolTip 的位置，也可作為 ToolTip 不會遮蓋的區域，但前提是有足夠的螢幕空間可將 ToolTip 拖曳到此區域外部。 您可以指定 ToolTip 擁有者的相關矩形來源，以及排除區域的高度和寬度。 [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性會定義 ToolTip 應拖曳到 PlacementRect. 的上、下、左或右。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->
@@ -153,4 +153,4 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ## <a name="related-articles"></a>相關文章
 
-- [工具提示類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)
+- [ToolTip 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)

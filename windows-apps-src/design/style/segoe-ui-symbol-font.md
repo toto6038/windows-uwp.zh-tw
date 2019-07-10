@@ -7,14 +7,14 @@ label: Segoe MDL2 icons
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649053"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63843104"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 圖示
 
@@ -22,11 +22,11 @@ ms.locfileid: "57649053"
 
 本文列出 Segoe MDL2 Assets 字型所提供的圖示。 
 
-> **重要的 Api**:[**符號列舉**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)， [ **FontIcon 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **重要 API**：[**Symbol 列舉**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)、[**FontIcon 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>關於 Segoe MDL2 Assets
 
-自從發行 Windows 10 後，Segoe MDL2 Assets 字型就取代了 Windows 8/8.1 Segoe UI Symbol 圖示字型。 <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI 符號**仍然可做為 「 舊版 」 的資源，但我們建議您更新您的應用程式，以使用新**Segoe MDL2 資產**。)
+自從發行 Windows 10 後，Segoe MDL2 Assets 字型就取代了 Windows 8/8.1 Segoe UI Symbol 圖示字型。 <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** 仍然以「傳統」資源的形式可供使用，但建議您更新應用程式以使用新的 **Segoe MDL2 Assets**。)
 
 **Segoe MDL2 Assets** 字型中包含的大部分圖示和 UI 控制項會對應到 Unicode 專用區 (PUA)。 PUA 可讓字型開發人員將私人 Unicode 值指派給沒有對應到現有字碼指標的字符。 這在建立符號字型時很有用，但這會產生互通性問題。 如果無法使用字型，則不會顯示字符。 請只有在您可以指定 **Segoe MDL2 Assets** 字型時，才使用這些字符。
 
@@ -43,7 +43,7 @@ ms.locfileid: "57649053"
 許多圖示也提供鏡像的形式，可在文字方向由右至左的語言 (例如阿拉伯文、波斯文及希伯來文) 中使用。
 
 ## <a name="using-the-icons"></a>使用圖示
-如果您正在開發中的應用程式C#/VB/c + + 和 XAML，您可以使用指定的字符從 Segoe MDL2 資產[符號列舉](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)。 
+如果您使用 C#/VB/C++ 和 XAML 來開發應用程式，您可以使用 [Symbol 列舉](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol) 來使用來自 Segoe MDL2 Assets 的指定字符。 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
@@ -55,15 +55,15 @@ ms.locfileid: "57649053"
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-您也可以使用靜態資源`SymbolThemeFontFamily`若要存取**Segoe MDL2 資產**，而不是依名稱指定字型：
+您也可以使用靜態資源 `SymbolThemeFontFamily` 來存取 **Segoe MDL2 資產**，而不是依名稱指定字型：
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
 
 ## <a name="how-do-i-get-this-font"></a>如何取得此字型？
-* 在 Windows 10:您只需要執行任何動作，字型隨附於 Windows。
-* 在 Mac 上，您需要下載並安裝字型：<a href="https://aka.ms/SegoeFonts">取得 Segoe UI 和 MDL2 的圖示字型</a>
+* 在 Windows 10 上：您不需要執行任何動作，Windows 會隨附字型。
+* 在 Mac 上，您需要下載並安裝字型：<a href="https://aka.ms/SegoeFonts">取得 Segoe UI 和 MDL2 圖示字型</a>
 
 ## <a name="icon-list"></a>圖示清單
 請記住，**Segoe MDL2 Assets** 字型包含比我們在此處所展示的更多圖示。 許多圖示用於專門用途，通常不會用於其他地方。
@@ -2378,7 +2378,7 @@ ms.locfileid: "57649053"
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F5.png" width="32" height="32" alt="Processing" /></td>
   <td>E9F5</td>
-  <td>正在處理</td>
+  <td>處理中</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F9.png" width="32" height="32" alt="ReportDocument" /></td>
   <td>E9F9</td>
@@ -3842,7 +3842,7 @@ ms.locfileid: "57649053"
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE3.png" width="32" height="32" alt="ButtonMenu" /></td>
   <td>EDE3</td>
-  <td>按鈕功能表</td>
+  <td>ButtonMenu</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE4.png" width="32" height="32" alt="CloudSeach" /></td>
   <td>EDE4</td>
@@ -3974,11 +3974,11 @@ ms.locfileid: "57649053"
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3B.png" width="32" height="32" alt="Replay" /></td>
   <td>EF3B</td>
-  <td>重新執行</td>
+  <td>重播</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3C.png" width="32" height="32" alt="Eyedropper" /></td>
   <td>EF3C</td>
-  <td>滴管</td>
+  <td>色彩選擇工具</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3D.png" width="32" height="32" alt="LineDisplay" /></td>
   <td>EF3D</td>
@@ -4078,14 +4078,14 @@ ms.locfileid: "57649053"
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B4.png" width="32" height="32" alt="Protractor" /></td>
   <td>F0B4</td>
-  <td>量角器</td>
+  <td>Protractor</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B5.png" width="32" height="32" alt="ChecklistMirrored" /></td>
   <td>F0B5</td>
   <td>ChecklistMirrored</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B6.png" width="32" height="32" alt="StatusCircle7" /></td>
-  <td>F0B6</td>
+  <td>F0B3=6</td>
   <td>StatusCircle7</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B7.png" width="32" height="32" alt="StatusCheckmark7" /></td>
@@ -4734,7 +4734,7 @@ ms.locfileid: "57649053"
  </tr>
 <tr><td><img src="images/segoe-mdl/F4C0.png" width="32" height="32" alt="Earbud" /></td>
   <td>F4C0</td>
-  <td>Earbud</td>
+  <td>耳塞式耳機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F4C3.png" width="32" height="32" alt="MixVolumes" /></td>
   <td>F4C3</td>
@@ -4742,7 +4742,7 @@ ms.locfileid: "57649053"
  </tr>
 <tr><td><img src="images/segoe-mdl/F540.png" width="32" height="32" alt="Safe" /></td>
   <td>F540</td>
-  <td>安全</td>
+  <td>保險箱</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F552.png" width="32" height="32" alt="LaptopSecure" /></td>
   <td>F552</td>
@@ -5167,7 +5167,7 @@ ms.locfileid: "57649053"
 ## <a name="related-articles"></a>相關文章
 
 * [圖示的指導方針](../style/icons.md)
-* [符號列舉](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [Symbol 列舉](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
 * [FontIcon 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 

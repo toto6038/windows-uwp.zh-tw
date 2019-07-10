@@ -6,17 +6,17 @@ label: Check boxes
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3905ef8786a06d4221ce42511f786927c3173ba6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363173"
 ---
 # <a name="check-boxes"></a>核取方塊
@@ -25,7 +25,7 @@ ms.locfileid: "66363173"
 
 核取方塊可用於選取或取消選取動作項目。 它可以用於單一項目或使用者可從中選擇的多個項目清單。 這個控制項有三個選項狀態：未選取、已選取，以及不確定。 當子選項集合同時含有未選取和已選取狀態時，請使用不確定狀態。
 
-> **重要的 Api**:[核取方塊類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)，[核取的事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)， [IsChecked 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
+> **重要 API**：[ 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 ![核取方塊狀態範例](images/templates-checkbox-states-default.png)
 
@@ -36,7 +36,7 @@ ms.locfileid: "66363173"
 
 ![針對個別選項使用單一核取方塊](images/checkbox1.png)
 
-對於二元選項，將主要之間的差異 **核取方塊** 和 [切換開關](toggles.md) 核取方塊針對狀態而切換開關是針對動作。 您可以延遲認可核取方塊互動 (例如，作為表格提交的一部分)，此時應該立即認可切換開關互動。 此外，多個選項僅允許使用核取方塊。
+對於二元選項，**核取方塊**和[切換開關](toggles.md)之間的主要差異為核取方塊適用於狀態，而切換開關適用於動作。 您可以延遲認可核取方塊互動 (例如，作為表格提交的一部分)，此時應該立即認可切換開關互動。 此外，多個選項僅允許使用核取方塊。
 
 針對使用者從不會互斥的選項群組中，選擇一個或多個項目的複選案例，請使用**多個核取方塊**。
 
@@ -185,7 +185,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 CheckBox 控制項是繼承自 [ToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)，且可以有三種狀態︰ 
 
-State | 屬性 | 值
+狀態 | 屬性 | 值
 ------|----------|------
 已核取 | IsChecked | **true** 
 未核取 | IsChecked | **false** 
@@ -294,9 +294,9 @@ private void SetCheckedState()
 
     ![不確定核取方塊](images/checkbox4_spicy.png)
 
-    相反地，使用具有三個選項的選項按鈕群組：不辣味、 辣味，以及額外辣味。
+    改用含三個選項的選項按鈕群組：「不辣」、「辣」以及「非常辣」。
 
-    ![選項按鈕群組，有三種選項：不辣味、 辣味，以及額外辣味](images/spicyoptions.png)
+    ![選項按鈕群組有三種選項：「不辣」、「辣」以及「非常辣」](images/spicyoptions.png)
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
@@ -304,6 +304,6 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>相關文章
 
-- [核取方塊類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
+- [CheckBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
 - [選項按鈕](radio-button.md)
 - [切換開關](toggles.md)

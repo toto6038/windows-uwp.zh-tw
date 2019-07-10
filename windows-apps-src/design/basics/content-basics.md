@@ -1,5 +1,5 @@
 ---
-Description: 常見的頁面模式和 UWP 應用程式中顯示內容的 UI 元素的概觀。
+Description: 在 UWP 應用程式中用於顯示內容的常見頁面模式和 UI 元素的概觀。
 title: 通用 Windows 平台 (UWP) 應用程式的內容設計基本知識
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
@@ -7,30 +7,30 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 12/01/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913958"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63796334"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP app 的內容設計基本知識
 
-任何一種 app 的主要用途都是讓使用者存取內容。 由於 App 因多種不同的目的而存在，因此內容會有多種形式：在相片編輯 app 中，內容是相片；在旅遊 app 中，內容是地圖與旅遊地點的相關資訊；以此類推。 
+任何一種 app 的主要用途都是讓使用者存取內容。 由於應用程式因多種不同的目的而存在，因此內容會有多種形式：在相片編輯應用程式中，內容是相片；在旅遊應用程式中，內容是地圖與旅遊地點的相關資訊；以此類推。 
 
-本文提供如何在 App 中呈現內容的概觀。 我們描述常見的頁面模式和 UI 元素，這些可用來顯示您的內容，無論是任何形式。
+本文提供如何在應用程式中呈現內容的概觀。 我們描述常見的頁面模式和 UI 元素，這些可用來顯示您的內容，無論是任何形式。
 
 ## <a name="common-page-patterns"></a>常見的頁面模式
 
-許多 App 會使用這些常見頁面模式的一部分或全部，來顯示不同類型的內容。 同樣地，這些模式可以混搭使用，創造出最佳的 App 內容。
+許多應用程式會使用這些常見頁面模式的一部分或全部，來顯示不同類型的內容。 同樣地，這些模式可以混搭使用，創造出最佳的應用程式內容。
 
 ### <a name="landing"></a>登陸
 
 ![登陸頁面](images/content-basics/hero-screen.png)
 
-登陸頁面，也就是主題畫面，通常出現在 App 體驗的最上層。 大型介面區域做為 App 的舞台，強調出使用者會想要瀏覽和使用的內容。
+登陸頁面，也就是主題畫面，通常出現在應用程式體驗的最上層。 大型介面區域做為應用程式的舞台，強調出使用者會想要瀏覽和使用的內容。
 
 ### <a name="collections"></a>集合
 
@@ -56,7 +56,7 @@ ms.locfileid: "58913958"
 ### <a name="forms"></a>表單
 ![表單](images/content-basics/forms.png)
 
-[表單](../controls-and-patterns/forms.md)是一組控制項，會收集和提交使用者的資料。 大多數 (即使不是全部) App 都會在設定頁面上、登入入口網站、意見反應中樞、帳戶建立或基於其他目的使用某種表單。 
+[表單](../controls-and-patterns/forms.md)是一組控制項，會收集和提交使用者的資料。 大多數 (即使不是全部) 應用程式都會在設定頁面上、登入入口網站、意見反應中樞、帳戶建立或基於其他目的使用某種表單。 
 
 ## <a name="common-content-elements"></a>常用內容元素
 

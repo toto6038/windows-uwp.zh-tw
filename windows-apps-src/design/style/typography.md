@@ -1,31 +1,31 @@
 ---
 description: 了解如何在您的應用程式中使用印刷樣式，以協助使用者輕鬆了解內容。
-title: UWP app 中的印刷樣式
+title: UWP 應用程式中的印刷樣式
 ms.date: 04/06/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244384"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63820581"
 ---
 # <a name="typography"></a>印刷樣式
 
 ![主角圖像](images/header-typography.svg)
 
-作為語言的視覺表示，印刷格式的主要工作是溝通資訊。 其樣式絕對不能阻礙這項目標。 在這篇文章中，我們將會討論如何在您的 UWP app 中設定印刷樣式，以協助使用者輕鬆且有效地了解內容。
+作為語言的視覺表示，印刷格式的主要工作是溝通資訊。 其樣式絕對不能阻礙這項目標。 在這篇文章中，我們將會討論如何在您的 UWP 應用程式中設定印刷樣式，以協助使用者輕鬆且有效地了解內容。
 
 ## <a name="font"></a>Font
 
-您應該在整個應用程式 UI 中使用單一字型，我們建議您維持 UWP app 的預設字型 **Segoe UI**。 它設計成可維持不同大小和像素密度的最佳可讀性，並能提供輔助系統內容的乾淨、明亮、開放審美觀。
+您應該在整個應用程式 UI 中使用單一字型，我們建議您維持 UWP 應用程式的預設字型 **Segoe UI**。 它設計成可維持不同大小和像素密度的最佳可讀性，並能提供輔助系統內容的乾淨、明亮、開放審美觀。
 
 ![Segoe UI 字型的範例文字](images/type/segoe-sample.svg)
 
-若要顯示非英文語言或為應用程式選取不同字型，請參閱[語言](#Languages)和[字型](#Fonts)以了解我們對 UWP app 的建議使用字型。
+若要顯示非英文語言或為應用程式選取不同字型，請參閱[語言](#Languages)和[字型](#Fonts)以了解我們對 UWP 應用程式的建議使用字型。
 
 :::row:::
     :::column:::
@@ -40,7 +40,7 @@ ms.locfileid: "59244384"
 
 ## <a name="size-and-scaling"></a>大小和縮放比例
 
-UWP app 的字型大小會在所有裝置上自動縮放。 此縮放演算法可確保使用者在 10 英呎遠的 Surface Hub 上看到的 24 px 字型，就和在只有幾英吋遠的 5 吋手機上看到的 24 px 字型一樣清晰。
+UWP 應用程式的字型大小會在所有裝置上自動縮放。 此縮放演算法可確保使用者在 10 英呎遠的 Surface Hub 上看到的 24 px 字型，就和在只有幾英吋遠的 5 吋手機上看到的 24 px 字型一樣清晰。
 
 ![不同裝置的檢視距離](images/type/scaling-chart.svg)
 
@@ -70,7 +70,7 @@ UWP app 的字型大小會在所有裝置上自動縮放。 此縮放演算法�
 
 ### <a name="type-ramp"></a>字體坡形
 
-UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者輕鬆閱讀內容。 所有大小都是有效像素，會針對在所有裝置上執行的 UWP app 而最佳化。
+UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者輕鬆閱讀內容。 所有大小都是有效像素，會針對在所有裝置上執行的 UWP 應用程式而最佳化。
 
 ![字體坡形](images/type/type-ramp.png)
 
@@ -110,7 +110,7 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
     :::column-end:::
 :::row-end:::
 
-## <a name="alignment"></a>對齊
+## <a name="alignment"></a>對齊方式
 
 預設 [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) 是 Left，而在大部分情況下，靠左和不齊右方法可提供一致的內容錨定與統一的配置。 對於 RTL 語言，請參閱[調整配置和字型以支援全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
 
@@ -154,7 +154,7 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
     :::column-end:::
 :::row-end:::
 
-**注意**：如果容器不是妥善定義 （例如無區別背景色彩），或連結以查看更多的文字時，然後使用省略符號。
+**注意**：如果容器未明確定義 (例如，沒有區別的背景色彩)，或是有連結可顯示更多文字，則請使用省略符號。
 
 ## <a name="languages"></a>語言 
 
@@ -170,7 +170,7 @@ Segoe UI 是我們的英文、歐洲語言、希臘文、希伯來文、亞美�
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">樣式</th>
+<th align="left">Styles</th>
 <th align="left">附註</th>
 </tr>
 </thead>
@@ -243,7 +243,7 @@ Sans-serif 字型是標題和 UI 元素的絕佳選擇。
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">樣式</th>
+<th align="left">Styles</th>
 <th align="left">附註</th>
 </tr>
 </thead>
@@ -286,7 +286,7 @@ Serif 字型適合呈現大量的文字。
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">樣式</th>
+<th align="left">Styles</th>
 <th align="left">附註</th>
 </tr>
 </thead>
@@ -322,7 +322,7 @@ Serif 字型適合呈現大量的文字。
 <thead>
 <tr class="header">
 <th align="left">字型家族</th>
-<th align="left">樣式</th>
+<th align="left">Styles</th>
 <th align="left">附註</th>
 </tr>
 </thead>
@@ -350,4 +350,4 @@ Serif 字型適合呈現大量的文字。
 * [文字控制項](../controls-and-patterns/text-controls.md)
 * [XAML 佈景主題資源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML 樣式](../controls-and-patterns/xaml-styles.md)
-* [Microsoft 印刷樣式](https://docs.microsoft.com/typography/)
+* [Microsoft Typography](https://docs.microsoft.com/typography/)

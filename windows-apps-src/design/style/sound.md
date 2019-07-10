@@ -6,18 +6,18 @@ template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614373"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63789054"
 ---
 # <a name="sound"></a>音效
 
@@ -29,13 +29,13 @@ ms.locfileid: "57614373"
 
 UWP 提供一個可輕鬆存取的音效系統，您只要「撥動開關」，即可在整個應用程式體驗沈浸式音訊。
 
-[  **ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer) 是 XAML 中的整合式音效系統，當開啟所有預設控制項時，就會自動播放音效。
+[**ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer) 是 XAML 中的整合式音效系統，當開啟所有預設控制項時，就會自動播放音效。
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-**ElementSoundPlayer**有三種不同的狀態：**在 ** **關閉**並**自動**。
+**ElementSoundPlayer** 有三種不同的狀態︰[On]  、[Off]  和 [Auto]  。
 
-如果設定為 [Off]，不論您的 App 在何處執行，一律不會播放音效。 如果設定為 [On]，您的應用程式的音效將會在每個平台上播放。
+如果設定為 [Off]  ，不論您的 App 在何處執行，一律不會播放音效。 如果設定為 [On]  ，您的應用程式的音效將會在每個平台上播放。
 
 啟用 ElementSoundPlayer 將會自動啟用空間音訊 (3D 音效)。 若要停用 3D 音效 (但保持音效開啟)，請停用 ElementSoundPlayer 的 **SpatialAudioMode**： 
 
@@ -44,20 +44,20 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ```
 
 **SpatialAudioMode** 屬性可以具備下列值： 
-- **自動**：音效時，將會開啟的空間音訊上。 
-- **Off**：空間音訊一律會關閉，即使音效上。
-- **開啟**：一律會播放空間的音訊。
+- **自動**：當音效開啟時將會開啟空間音訊。 
+- **Off**：空間音訊一律關閉 (即使音訊開啟)。
+- **開啟**：一律播放空間音訊。
 
 若要深入了解空間音訊，以及 XAML 如何處理此功能，請參閱 [AudioGraph - 空間音訊](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio)。
 
 ### <a name="sound-for-tv-and-xbox"></a>電視和 Xbox 的音效
 
-音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 [Auto]，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
+音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 [Auto]  ，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
 若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](https://go.microsoft.com/fwlink/?LinkId=760736)文章。
 
 ## <a name="sound-volume-override"></a>音效音量覆寫
 
-應用程式內的所有音效都可以透過 **Volume** 控制項停用。 不過，應用程式內的音效不能「比系統音效大聲」。
+應用程式內的所有音效都可以透過 **Volume** 控制項停用。 不過，應用程式內的音效不能「比系統音效大聲」  。
 
 若要設定應用程式的音效層級，請呼叫︰
 ```C#
@@ -69,7 +69,7 @@ ElementSoundPlayer.Volume = 0.5;
 
 如果不需要控制項的預設音效，可予以停用。 這可透過控制項上的 **ElementSoundMode** 來達成。
 
-**ElementSoundMode**有兩種狀態：**關閉**並**預設**。 未設定時，則為 [Default]。 如果設定為 [Off]，則控制項所播放的每個音效都會是靜音，但「焦點除外」。
+**ElementSoundMode** 有兩種狀態︰[Off]  和 [Default]  。 未設定時，則為 [Default]  。 如果設定為 [Off]  ，則控制項所播放的每個音效都會是靜音，但「焦點除外」  。
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -118,18 +118,18 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### <a name="navigation-within-a-page"></a>頁面內的瀏覽
 
-面板或檢視內的應用程式頁面之間瀏覽時 (請參閱[索引標籤，然後之間進行切換](../controls-and-patterns/pivot.md))，通常是雙向移動。 這表示您可以移至下一個或上一個檢視/面板，而不需離開您目前所在的應用程式頁面。
+在應用程式頁面中的面板或檢視之間瀏覽時 (請參閱[索引標籤和樞紐](../controls-and-patterns/pivot.md))，通常是雙向移動。 這表示您可以移至下一個或上一個檢視/面板，而不需離開您目前所在的應用程式頁面。
 
 **MovePrevious** 和 **MoveNext** 音效可達成以此瀏覽概念為主的音訊體驗。
 
-移至清單中被視為「下一個項目」的檢視/面板時，呼叫︰
+移至清單中被視為「下一個項目」  的檢視/面板時，呼叫︰
 
 &lt;PageTransitionRight.mp3 音效剪輯在此&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```
-而移至清單中被視為「上一個項目」的上一個檢視/面板時，呼叫︰
+而移至清單中被視為「上一個項目」  的上一個檢視/面板時，呼叫︰
 
 &lt;PageTransitionLeft.mp3 音效剪輯在此&gt;
 
@@ -149,7 +149,7 @@ ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 
 **Focus** 音效我們的系統中唯一隱含的音效。 這表示使用者並未直接與任何項目互動，但仍會聽到音效。
 
-使用者瀏覽應用程式時會發生對焦，這可利用遊戲台/鍵盤/遙控器或 Kinect 進行。 **Focus** 音效通常不會在 PointerEntered 或滑鼠暫留事件播放。
+使用者瀏覽應用程式時會發生對焦，這可利用遊戲台/鍵盤/遙控器或 Kinect 進行。 **Focus** 音效通常不會在 PointerEntered 或滑鼠暫留事件  播放。
 
 若要設定控制項以在控制項取得焦點時播放 **Focus** 音效，請呼叫︰
 

@@ -5,7 +5,7 @@ label: Buttons
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
 pm-contact: kisai
 design-contact: kimsea
@@ -14,49 +14,49 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 210431928c5dd7c5d5dfb99855322f1560e91dd7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363224"
 ---
 # <a name="buttons"></a>按鈕
 
-按鈕讓使用者得以觸發立即動作。 某些按鈕專門用於特定的工作，例如巡覽、 重複的動作，或呈現功能表。
+按鈕讓使用者得以觸發立即動作。 某些按鈕專門用於特定工作，例如瀏覽、重複的動作，或呈現功能表。
 
 ![按鈕的範例](images/controls/button.png)
 
-XAML 架構提供的標準按鈕控制項，以及數個特製化的按鈕控制項。
+XAML 架構提供標準按鈕控制項，以及數個特製化的按鈕控制項。
 
 控制項 | 描述
 ------- | -----------
-[Button](/uwp/api/windows.ui.xaml.controls.button) | 起始立即採取行動。 可以搭配 Click 事件，或命令繫結。
-[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 會引發 Click 事件只有在按下時，持續按鈕。
-[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A 按鈕，已有像超連結，用於導覽的樣式。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 若要開啟附加的彈出式視窗的 > 形箭號按鈕。
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 具有兩個邊的按鈕。 一端會起始動作，並另一端可開啟功能表。
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 具有兩個邊的切換按鈕。 一端切換開啟/關閉，並另一端可開啟功能表。
+[Button](/uwp/api/windows.ui.xaml.controls.button) | 起始立即動作。 可以搭配 Click 事件或 Command 繫結使用。
+[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 按下時會接連引發 Click 事件的按鈕。
+[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | 樣式類似超連結且用於瀏覽的按鈕。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 用於開啟附加飛出視窗的按鈕 (具有＞形箭號)。
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 具有兩端的按鈕。 一端可起始動作，另一端可開啟功能表。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 具有兩端的切換按鈕。 一端可開啟/關閉，另一端可開啟功能表。
 
-| **取得 Windows 的 UI 程式庫** |
+| **取得 Windows UI 程式庫** |
 | - |
-| DropDownButton、 SplitButton，ToggleSplitButton 等 Windows UI 程式庫，包含新的控制項和 UWP 應用程式的 UI 功能的 NuGet 套件的一部分。 如需詳細資訊，包括安裝指示，請參閱 < [Windows 的 UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| DropDownButton、SplitButton 和 ToggleSplitButton 包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
-| **平台 Api** | **Windows UI 程式庫 Api** |
+| **平台 API** | **Windows UI 程式庫 API** |
 | - | - |
-| [按一下 事件](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)，[命令屬性](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton 類別](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)， [SplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.splitbutton)， [ToggleSplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| [Click 事件](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)、[Command 屬性](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton 類別](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)、[SplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.splitbutton)、[ToggleSplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-使用 **按鈕**，讓使用者起始立即採取行動，例如送出表單。
+使用 **Button** 讓使用者起始立即動作，例如提交表單。
 
-若要瀏覽至其他網頁則動作時，請勿使用按鈕使用 [按一下 HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton)改。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
-> 例外狀況：精靈導覽中，使用標示為 「 反向 」 的按鈕和 下一步 」。 對於其他類型的向後導覽或瀏覽到較高層級，使用[上一頁按鈕](../basics/navigation-history-and-backwards-navigation.md)。
+如果動作是瀏覽到另一個頁面，請不要使用按鈕，改為使用 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton)。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
+> 例外狀況：對於精靈瀏覽，請使用標籤為 [上一頁] 和 [下一頁] 的按鈕。 對於其他類型的反向瀏覽或瀏覽到上一層，請使用[返回按鈕](../basics/navigation-history-and-backwards-navigation.md)。
 
-使用**RepeatButton**當使用者可能會想要重複觸發動作。 例如，使用 RepeatButton 遞增或遞減計數器中的值。
+當使用者想要重複觸發動作時，請使用 **RepeatButton**。 例如，使用 RepeatButton 使計數器中的值遞增或遞減。
 
-使用**DropDownButton**當按鈕的飛出視窗，其中包含更多選項。 預設的 > 形箭號會提供按鈕包含飛出視窗的視覺指示。
+當按鈕具有包含更多選項的飛出視窗時，請使用 **DropDownButton**。 預設＞形箭號會提供按鈕包含飛出視窗的視覺指標。
 
-使用**SplitButton**當您想讓使用者能夠起始立即採取行動，或是獨立選擇其他選項。
+當您想讓使用者能夠起始立即動作，或獨立選擇其他選項時，請使用 **SplitButton**。
 
 ## <a name="examples"></a>範例
 
@@ -140,7 +140,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 <table>
 <tr>
-<td> <b>若要修正的需要：</b><br> 含溢位文字的按鈕。 </td>
+<td> <b>需要修正：</b><br> 含溢位文字的按鈕。 </td>
 <td> <img src="images/button-wraptext.png"/> </td>
 </tr>
 <tr>
@@ -207,20 +207,20 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>建立下拉式按鈕
 
-> DropDownButton 需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或有[Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> DropDownButton 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或是 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) > 形箭號顯示的視覺指標，它會有附加的彈出式視窗，其中包含更多選項按鈕。 它有標準的按鈕，飛出視窗上，使用相同的行為只有外觀不同。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) 是一個按鈕，其將＞形箭號顯示為視覺指標，具有包含許多選項的附加飛出視窗。 它的行為與具有飛出視窗的標準 Button 相同，只有外觀不同。
 
-下拉式按鈕繼承按一下事件，但您通常不會使用它。 相反地，您可以使用飛出視窗上的屬性來附加延伸顯示，並叫用動作使用延伸顯示中的功能表選項。 按一下按鈕時，會自動開啟飛出視窗。 請務必指定[放置](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement)您飛出視窗，以確保所需的位置相對於按鈕的屬性。 預設放置演算法可能不會產生預期的位置，在所有情況下。
+下拉式按鈕會繼承 Click 事件，但您通常不會使用它。 相反地，您可以使用 Flyout 屬性來附加飛出視窗，並使用飛出視窗中的功能表選項來叫用動作。 按一下此按鈕時，飛出視窗就會自動開啟。 請務必指定飛出視窗的 [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement)，以確保按鈕相關的所需放置方式。 預設放置演算法可能不會在所有情況下產生預計的放置方式。
 
 > [!TIP]
-> 如需延伸顯示的詳細資訊，請參閱[功能表和內容功能表](menus.md)。
+> 如需飛出視窗的詳細資訊，請參閱[功能表和操作功能表](menus.md)。
 
-### <a name="example---drop-down-button"></a>範例-下拉式按鈕
+### <a name="example---drop-down-button"></a>範例 - 下拉式按鈕
 
-此範例示範如何建立包含命令 RichEditBox 中的段落對齊飛出視窗的下拉式按鈕。 (如需詳細資訊和程式碼，請參閱 <<c0> [ 豐富的編輯方塊](rich-edit-box.md))。
+此範例示範如何建立具有飛出視窗的下拉式按鈕，其中包含 RichEditBox 中段落對齊的命令。 (如需詳細資訊和程式碼，請參閱 [Rich Edit 方塊](rich-edit-box.md))。
 
-![下拉式按鈕的對齊命令](images/drop-down-button-align.png)
+![具有對齊命令的下拉式按鈕](images/drop-down-button-align.png)
 
 ```xaml
 <DropDownButton ToolTipService.ToolTip="Alignment">
@@ -266,27 +266,27 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-split-button"></a>建立分割按鈕
 
-> SplitButton 需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或有[Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> SplitButton 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或是 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)有可以分別叫用的兩個部分。 一個組件的行為類似標準按鈕，並且會叫用立即動作。 另一個組件會叫用飛出視窗，其中包含使用者可以選擇的其他選項。
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)有可以分別叫用的兩個組件。 一個組件的行為類似標準按鈕，並且會叫用立即動作。 另一個組件會叫用飛出視窗，其中包含使用者可以選擇的其他選項。
 
 > [!NOTE]
-> 分割按鈕時叫用使用觸控，行為會如同下拉式按鈕，按鈕的兩部分叫用飛出視窗。 使用輸入的其他方法，使用者可以叫用按鈕的其中一個半分開。
+> 以觸控方式叫用時，分割按鈕時的行為如同下拉式按鈕，按鈕的兩半可叫用飛出視窗。 使用其他輸入方法，使用者可以分別叫用按鈕的任一半。
 
-分割按鈕的一般行為是：
+分割按鈕的典型行為如下：
 
-- 當使用者按一下的按鈕部分時，處理 Click 事件來叫用的下拉式清單中目前選取的選項。
-- 下拉式清單開啟時，控制代碼引動過程的這兩個變更下拉式清單中的項目選項已選取，然後再叫用它。 務必要叫用的飛出視窗項目，因為按鈕 Click 事件不會在使用觸控時發生。
+- 當使用者按一下按鈕組件時，處理 Click 事件以叫用下拉式清單中目前已選取的選項。
+- 當下拉式清單開啟時，處理下拉式清單中項目的引動過程，兩者均可變更已選取的選項，然後再叫用它。 務必叫用飛出視窗項目，因為按鈕 Click 事件不會在使用觸控時發生。
 
 > [!TIP]
-> 有許多種方式，寫下的下拉式清單中的項目，並處理其引動過程。 如果您使用 ListView 或 GridView，一種方式就是處理 SelectionChanged 事件。 如果這樣做，請設定[SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus)要**false**。 這可讓使用者巡覽而不叫用每個變更的項目中使用鍵盤的選項。
+> 有許多種方式可將項目放入下拉式清單並處理其引動過程。 如果您使用 ListView 或 GridView，其中一種方式就是處理 SelectionChanged 事件。 如果這樣做，請將 [SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus) 設定為 **false**。 這可讓使用者使用鍵盤來瀏覽選項，而不需在每次變更時叫用項目。
 
-### <a name="example---split-button"></a>範例-分割按鈕
+### <a name="example---split-button"></a>範例 - 分割按鈕
 
-此範例示範如何建立用來變更 RichEditBox 中選取文字的前景色彩的分隔按鈕。 (如需詳細資訊和程式碼，請參閱 <<c0> [ 豐富的編輯方塊](rich-edit-box.md))。
-分割按鈕的飛出視窗上使用[BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode)的預設值為其[放置](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement)屬性。 您無法覆寫此值。
+此範例示範如何建立一個分割按鈕，用來變更 RichEditBox 中所選文字的前景色彩。 (如需詳細資訊和程式碼，請參閱 [Rich Edit 方塊](rich-edit-box.md))。
+分割按鈕的飛出視窗使用 [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) 作為其 [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) 屬性的預設值。 您無法覆寫此值。
 
-![分割按鈕來選取前景色彩](images/split-button-rtb.png)
+![用來選取前景色彩的分割按鈕](images/split-button-rtb.png)
 
 ```xaml
 <SplitButton ToolTipService.ToolTip="Foreground color"
@@ -374,29 +374,29 @@ public sealed partial class MainPage : Page
 
 ## <a name="create-a-toggle-split-button"></a>建立切換分割按鈕
 
-> ToggleSplitButton 需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或有[Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> ToggleSplitButton 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或是 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)有可以分別叫用的兩個部分。 一個組件的行為類似可以開或關的切換按鈕。 另一個組件會叫用飛出視窗，其中包含使用者可以選擇的其他選項。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) 有兩個可以分別叫用的組件。 一個組件的行為類似可以開或關的切換按鈕。 另一個組件會叫用飛出視窗，其中包含使用者可以選擇的其他選項。
 
-切換分割按鈕通常用來啟用或停用功能，當功能有多個使用者可以選擇的選項。 例如，在文件編輯器，它可用來開啟清單，或關閉，而下拉式清單來選擇清單的樣式。
+如果功能有使用者可從中選擇的多個選項時，切換分割按鈕通常用來啟用或停用該功能。 例如，在文件編輯器中，它可用來開啟或關閉清單，而下拉式清單則用來選擇清單的樣式。
 
 > [!NOTE]
-> 當叫用使用觸控，切換分割按鈕行為會如同下拉按鈕。 使用輸入的其他方法，使用者可以切換，並分別叫用在這兩半的按鈕。 使用觸控、 兩部分按鈕叫用飛出視窗。 因此，您必須包含選項，在您飛出視窗的內容切換按鈕，開啟或關閉。
+> 以觸控方式叫用時，切換分割按鈕的行為如同下拉式按鈕。 使用其他輸入方法，使用者可以切換並分別叫用按鈕的兩半。 使用觸控，按鈕的兩半可叫用飛出視窗。 因此，您必須在飛出視窗內容中包含用以開啟或關閉的選項。
 
-### <a name="differences-with-togglebutton"></a>ToggleButton 差異
+### <a name="differences-with-togglebutton"></a>與 ToggleButton 的差異
 
-不同於[ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)，ToggleSplitButton 沒有不定狀態。 如此一來，您應該記住這些差異：
+不同於 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)，ToggleSplitButton 沒有不確定的狀態。 因此，您應該記住下列差異：
 
-- 沒有 ToggleSplitButton **IsThreeState**屬性或**未定**事件。
-- [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked)屬性就**bool**，而非**可為 null 的 bool**。
-- ToggleSplitButton 只有[IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged)事件，它並沒有個別**Checked**並**未核取**事件。
+- ToggleSplitButton 沒有 **IsThreeState** 屬性或 **Indeterminate** 事件。
+- [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) 屬性只是 **bool**，而不是 **可為 null 的 bool**。
+- ToggleSplitButton 只有 [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) 事件，並沒有個別的 **Checked** 和 **Unchecked** 事件。
 
-### <a name="example---toggle-split-button"></a>範例-切換分割按鈕
+### <a name="example---toggle-split-button"></a>範例 - 切換分割按鈕
 
-下列範例會示範如何分割按鈕切換可用來開啟清單格式開啟或關閉，並變更的清單中，在 RichEditBox 樣式。 (如需詳細資訊和程式碼，請參閱 <<c0> [ 豐富的編輯方塊](rich-edit-box.md))。
-切換分割按鈕的飛出視窗上使用[BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode)的預設值為其[放置](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement)屬性。 您無法覆寫此值。
+下列範例會示範切換分割按鈕如何用來開啟或關閉清單格式調整，以及變更 RichEditBox 中的樣式清單。 (如需詳細資訊和程式碼，請參閱 [Rich Edit 方塊](rich-edit-box.md))。
+切換分割按鈕的飛出視窗使用 [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) 作為其 [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) 屬性的預設值。 您無法覆寫此值。
 
-![切換分割按鈕的選取清單樣式](images/toggle-split-button-open.png)
+![用於選取清單樣式的切換分割按鈕](images/toggle-split-button-open.png)
 
 ```xaml
 <ToggleSplitButton x:Name="ListButton"

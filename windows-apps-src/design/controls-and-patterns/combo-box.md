@@ -1,31 +1,31 @@
 ---
 Description: 使用者輸入時提供建議的文字輸入方塊。
-title: 下拉式方塊 （下拉式清單）
+title: 下拉式方塊 (下拉式清單)
 label: Combo box
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 297b907191dfa07084e5e4ada0e3468733e47090
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363124"
 ---
 # <a name="combo-box"></a>下拉式方塊
 
-您可以使用下拉式方塊 （也稱為下拉式清單） 來呈現使用者可以從選取的項目清單。 下拉式方塊會以壓縮的狀態啟動，並展開以顯示一份可選取的項目。
+使用下拉式方塊 (也稱為下拉式清單) 來呈現使用者可以從中選取的項目清單。 下拉式方塊一開始為精簡狀態，展開可顯示可選取的項目清單。
 
-關閉下拉式方塊時，它會顯示目前的選取範圍或如果沒有選取的項目是空的。 當使用者展開下拉式方塊時，它會顯示可選取的項目清單。
+關閉下拉式方塊後，它會顯示目前的選取項目，若沒有已選取的項目則是空的。 當使用者展開下拉式方塊時，它會顯示可選取的項目清單。
 
-> **重要的 Api**:[ComboBox 類別](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)， [IsEditable 屬性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)，[文字屬性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)， [TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+> **重要 API**：[ComboBox 類別](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable 屬性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text 屬性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
-下拉式方塊的標頭壓縮狀態。
+精簡狀態下具有標頭的下拉式方塊。
 
 ![精簡狀態下的下拉式清單範例](images/combo_box_collapsed.png)
 
@@ -43,7 +43,7 @@ ms.locfileid: "66363124"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可<a href="xamlcontrolsgallery:/item/ComboBox">開啟 應用程式，並查看作用中的下拉式方塊</a>。</p>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/ComboBox">開啟應用程式並查看 ComboBox 運作情形</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -66,9 +66,9 @@ ms.locfileid: "66363124"
 
 ## <a name="create-a-combo-box"></a>建立下拉式方塊
 
-您填入下拉式方塊，直接將物件加入[項目](/uwp/api/windows.ui.xaml.controls.itemscontrol.items)集合或繫結[ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)到資料來源的屬性。 新增至下拉式方塊項目會包裝在[ComboBoxItem](/uwp/api/windows.ui.xaml.controls.comboboxitem)容器。
+直接將物件新增至 [Items](/uwp/api/windows.ui.xaml.controls.itemscontrol.items)集合，或將 [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設為資料來源，即可填入下拉式方塊。 新增至 ComboBox 的項目會包裝在 [ComboBoxItem](/uwp/api/windows.ui.xaml.controls.comboboxitem) 容器中。
 
-以下是在 XAML 中加入的項目與簡單的下拉式方塊。
+以下是在 XAML 中新增項目的簡單下拉式方塊。
 
 ```xaml
 <ComboBox Header="Colors" PlaceholderText="Pick a color" Width="200">
@@ -79,7 +79,7 @@ ms.locfileid: "66363124"
 </ComboBox>
 ```
 
-下列範例會示範繫結下拉式方塊 FontFamily 物件的集合。
+下列範例示範如何將下拉式方塊繫結至 FontFamily 物件集合。
 
 ```xaml
 <ComboBox x:Name="FontsCombo" Header="Fonts" Height="44" Width="296"
@@ -100,20 +100,20 @@ public MainPage()
 
 ### <a name="item-selection"></a>項目選取
 
-如同 ListView 和 GridView，ComboBox 衍生自[選取器](/uwp/api/windows.ui.xaml.controls.primitives.selector)，因此您可以在相同的標準方式取得使用者的選取項目。
+如同 ListView 和 GridView，ComboBox 衍生自[選取器](/uwp/api/windows.ui.xaml.controls.primitives.selector)，因此您可以用相同的標準方式取得使用者的選取項目。
 
-您可以取得或設定下拉式方塊的選取的項目利用[SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)屬性，並取得或設定使用選取的項目索引[SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)屬性。
+您可以使用 [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 屬性來取得或設定下拉式方塊的已選取項目，以及使用 [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) 屬性來取得或設定所選項目的索引。
 
-若要取得特定屬性的值在選取的資料項目上，您可以使用[SelectedValue](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue)屬性。 在此案例中，設定[SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath)上選取的項目，以取得此值從指定的屬性。
+若要在選取的資料項目上取得特定屬性的值，您可以使用 [SelectedValue](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue) 屬性。 在此情況下，設定 [SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath) 來指定要從所選項目上的哪個屬性取得此值。
 
 > [!TIP]
-> 如果您設定 SelectedItem 或 selectedindex 等都表示預設選取項目，如果此屬性設定才會填入下拉式方塊項目集合，就會發生例外狀況。 除非您在 XAML 中定義您的項目，最好是處理下拉式方塊 Loaded 的事件，並設定 SelectedItem 或 selectedindex 等都在 Loaded 的事件處理常式。
+> 如果您設定 SelectedItem 或 SelectedIndex 來表示預設選取項目，如果在填入下拉式方塊 Items 集合前設定此屬性，就會發生例外狀況。 除非您在 XAML 中定義您的 Items，否則最好要處理下拉式方塊 Loaded 事件，並在 Loaded 事件處理常式中設定 SelectedItem 或 SelectedIndex。
 
-您可以將繫結至 XAML，這些屬性，或處理[SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged)回應選取範圍變更事件。
+您可以在 XAML 中繫結至這些屬性，或處理 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged)事件來回應選取項目變更。
 
-在事件處理常式程式碼，您可以取得選取的項目，從[SelectionChangedEventArgs.AddedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems)屬性。 您可以從取得先前選取的項目 （如果有的話） [SelectionChangedEventArgs.RemovedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems)屬性。 AddedItems 和 RemovedItems 集合每個包含只有 1 個項目，因為下拉式方塊並不支援多個選取項目。
+在事件處理常式程式碼中，您可以從 [SelectionChangedEventArgs.AddedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems) 屬性取得所選的項目。 您可以從 [SelectionChangedEventArgs.RemovedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems) 屬性取得先前選取的項目 (如果有的話)。 AddedItems 和 RemovedItems 集合各自只包含 1 個項目，因為下拉式方塊並不支援多個選取項目。
 
-此範例示範如何處理 SelectionChanged 事件，以及如何繫結至選取的項目。
+這個範例示範如何處理 SelectionChanged 事件，以及如何繫結至選取的項目。
 
 ```xaml
 <StackPanel>
@@ -161,46 +161,46 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 #### <a name="selectionchanged-and-keyboard-navigation"></a>SelectionChanged 和鍵盤瀏覽
 
-根據預設，當使用者按一下、 點選，或按下的項目上的 Enter 鍵認可其選取項目，清單中，並關閉下拉式方塊時，就會發生 SelectionChanged 事件。 當使用者瀏覽開啟的下拉式方塊的清單，使用鍵盤方向鍵時，不會變更選取項目。
+根據預設，當使用者對清單中的項目按一下、點選或按 Enter 鍵來認可其選取項目時，就會發生 SelectionChanged 事件，且下拉式方塊會關閉。 當使用者使用鍵盤方向鍵瀏覽開啟的下拉式方塊清單時，選取項目不會變更。
 
-若要將下拉式方塊 「 即時更新 」，而使用者使用 （例如字型選擇下拉式選單） 使用方向鍵來巡覽開啟的清單，將[SelectionChangedTrigger](/uwp/api/windows.ui.xaml.controls.combobox.selectionchangedtrigger)要[永遠](/uwp/api/windows.ui.xaml.controls.comboboxselectionchangedtrigger)。 這會導致 SelectionChanged 事件發生時的焦點變更至開啟的清單中的另一個項目。
+若要製作一個在使用者使用方向鍵尋覽開啟的清單時能「即時更新」的下拉式方塊 (例如字型選取下拉式清單)，請將 [SelectionChangedTrigger](/uwp/api/windows.ui.xaml.controls.combobox.selectionchangedtrigger) 設定為 [Always](/uwp/api/windows.ui.xaml.controls.comboboxselectionchangedtrigger)。 當焦點變更為已開啟清單中的另一個項目時，這會導致 SelectionChanged 事件發生。
 
 #### <a name="selected-item-behavior-change"></a>選取的項目行為變更
 
-在 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本中，選取項目的行為會更新以支援可編輯的下拉式方塊。
+在 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本中，所選項目的行為會更新以支援可編輯的下拉式方塊。
 
-之前 SDK 17763，SelectedItem 屬性的值 (因此 SelectedValue 和 SelectedIndex) 必須在下拉式方塊的項目集合中。 使用上述範例中，設定`colorComboBox.SelectedItem = "Pink"`導致：
+在 SDK 17763 以前，SelectedItem 屬性的值 (因此 SelectedValue 和 SelectedIndex) 必須在下拉式方塊的 Items 集合中。 使用上述範例，設定 `colorComboBox.SelectedItem = "Pink"` 會導致：
 
 - SelectedItem = null
 - SelectedValue = null
 - SelectedIndex = -1
 
-Sdk 17763 及更新版本、 SelectedItem 屬性的值 (因此 SelectedValue 和 SelectedIndex) 不需要在下拉式方塊的項目集合。 使用上述範例中，設定`colorComboBox.SelectedItem = "Pink"`導致：
+在 SDK 17763 和更新版本中，SelectedItem 屬性的值 (因此 SelectedValue 和 SelectedIndex) 不一定要在下拉式方塊的 Items 集合中。 使用上述範例，設定 `colorComboBox.SelectedItem = "Pink"` 會導致：
 
-- SelectedItem = 粉紅
+- SelectedItem = Pink
 - SelectedValue = Pink
 - SelectedIndex = -1
 
 ### <a name="text-search"></a>文字搜尋
 
-下拉式方塊可自動支援在其集合內的搜尋。 當焦點在一個已開啟或關閉的下拉式方塊上時，如果使用者在實體鍵盤上輸入字元，就會顯示與使用者的字串相符的候選項目。 在瀏覽長清單時，這項功能特別有幫助。 比方說，當與下拉式清單包含一份狀態互動，使用者可以按"w"索引鍵來快速選取項目帶入檢視的 「 Washington 」。 搜尋文字不區分大小寫。
+下拉式方塊可自動支援在其集合內的搜尋。 當焦點在一個已開啟或關閉的下拉式方塊上時，如果使用者在實體鍵盤上輸入字元，就會顯示與使用者的字串相符的候選項目。 在瀏覽長清單時，這項功能特別有幫助。 例如，與包含狀態清單的下拉式清單進行互動時，使用者可以按 "w" 鍵來顯示 "Washington 以供快速選取。 文字搜尋不區分大小寫。
 
-您可以設定[IsTextSearchEnabled](/uwp/api/windows.ui.xaml.controls.combobox.istextsearchenabled)屬性設**false**停用這項功能。
+您可以將 [IsTextSearchEnabled](/uwp/api/windows.ui.xaml.controls.combobox.istextsearchenabled) 屬性設定為 **false**，以停用這項功能。
 
-## <a name="make-a-combo-box-editable"></a>製作可編輯的下拉式方塊
+## <a name="make-a-combo-box-editable"></a>讓下拉式方塊可進行編輯
 
 > [!IMPORTANT]
-> 這項功能需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。
+> 這項功能需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。
 
-根據預設，下拉式方塊可讓使用者從預先定義的選項清單中選取。 不過，有清單只包含一部分有效的值，而且使用者應該能夠輸入其他未列出的值。 若要支援此功能，您可以讓下拉式方塊可進行編輯。
+根據預設，下拉式方塊可讓使用者從預先定義的選項清單中選取。 不過，有時候清單只包含一部分的有效值，而且使用者應該能夠輸入其他未列出的值。 若要支援這項功能，您可以讓下拉式方塊可進行編輯。
 
-若要讓下拉式方塊可進行編輯，設定[IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)屬性設 **，則為 true**。 然後，處理[TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)事件來處理使用者輸入的值。
+若要讓下拉式方塊可進行編輯，請將 [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable) 屬性設定為 **true**。 然後，處理 [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 事件來處理使用者所輸入的值。
 
-根據預設，當使用者認可的自訂文字，會更新 SelectedItem 值。 您可以藉由設定覆寫這個行為**Handled**要 **，則為 true** TextSubmitted 事件引數中。 事件標記為已處理時，下拉式方塊會採取任何進一步的動作，在事件之後，並將維持編輯的狀態。 將不會更新 SelectedItem。
+根據預設，當使用者認可自訂文字時，就會更新 SelectedItem 值。 在 TextSubmitted 事件引數中將 **Handled**設定為 **true**，即可覆寫此行為。 當事件標記為已處理時，下拉式方塊不會在事件之後採取進一步動作，並將維持編輯中狀態。 將不會更新 SelectedItem。
 
-這個範例示範簡單的可編輯下拉式方塊。 此清單包含簡單的字串，並輸入，會使用使用者輸入任何值。
+這個範例顯示簡單的可編輯下拉式方塊。 此清單包含簡單的字串，並使用使用者所輸入的任何值。
 
-[最近使用的名稱] 選擇器可讓使用者輸入自訂的字串。 'RecentlyUsedNames' 清單包含使用者可供選擇，某些值，但使用者也可以加入新的自訂值。 'CurrentName' 屬性表示目前輸入的名稱。
+「最近使用的名稱」選擇器可讓使用者輸入自訂字串。 'RecentlyUsedNames' 清單包含可供使用者選擇的一些值，但使用者也可以新增自訂值。 'CurrentName' 屬性表示目前輸入的名稱。
 
 ```xaml
 <ComboBox IsEditable="true"
@@ -208,25 +208,25 @@ Sdk 17763 及更新版本、 SelectedItem 屬性的值 (因此 SelectedValue 和
           SelectedItem="{x:Bind CurrentName, Mode=TwoWay}"/>
 ```
 
-### <a name="text-submitted"></a>送出的文字
+### <a name="text-submitted"></a>提交的文字
 
-您可以處理[TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)事件來處理使用者輸入的值。 事件處理常式中，您會通常會驗證使用者輸入的值有效，然後使用您的應用程式中的值。 視情況而定，您也可能會將值加入供未來使用的選項下拉式方塊的清單。
+您可以處理 [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 事件，以處理使用者所輸入的值。 在事件處理常式中，您通常會驗證使用者所輸入的值是否有效，然後在您的應用程式中使用此值。 視情況而定，您也可以將此值新增至下拉式方塊的選項清單中，以供未來使用。
 
-符合這些條件時，就會發生 TextSubmitted 事件：
+符合下列條件時，就會發生 TextSubmitted 事件：
 
-- IsEditable 屬性是 **，則為 true**
-- 使用者輸入不符合現有的項目下拉式方塊清單中的文字
-- 使用者按下 Enter，或從下拉式方塊中移動焦點。
+- IsEditable 屬性為 **true**
+- 使用者在下拉式方塊清單中輸入不符合現有項目的文字
+- 使用者按 Enter 鍵，或從下拉式方塊移出焦點。
 
-如果使用者輸入文字，然後會向上或向下巡覽清單，則不會發生 TextSubmitted 事件。
+如果使用者輸入文字，然後向上或向下巡覽清單，則不會發生 TextSubmitted 事件。
 
-### <a name="sample---validate-input-and-use-locally"></a>範例-驗證輸入，並在本機上使用
+### <a name="sample---validate-input-and-use-locally"></a>範例 - 驗證輸入並在本機使用
 
-在此範例中，字型大小選擇器包含一組值對應至字型的大小遞增，但使用者可能輸入不在清單中的字型大小。
+在此範例中，字型大小選擇器包含一組對應至字型大小坡形的值，但使用者可以輸入不在清單中的字型大小。
 
-當使用者將不在清單中，字型的大小更新，但值的值不會加入至清單中的字型大小。
+當使用者新增不在清單中的值時，字型大小會更新，但此值不會新增至字型大小清單。
 
-如果新輸入的值不是有效的最後一個還原的 Text 屬性的情況下，您在使用 SelectedValue 已知良好的值。
+如果新輸入的值無效，您可使用 SelectedValue，將 Text 屬性還原為最後一個已知良好的值。
 
 ```xaml
 <ComboBox x:Name="fontSizeComboBox"
@@ -253,9 +253,9 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 }
 ```
 
-### <a name="sample---validate-input-and-add-to-list"></a>範例-驗證輸入，並新增至清單
+### <a name="sample---validate-input-and-add-to-list"></a>範例 - 驗證輸入並新增至清單
 
-在這裡，「 最愛的色彩選擇器 」 包含最常見最愛的色彩 （紅色、 藍色、 綠色、 橘色），但使用者可能輸入不在清單最愛的色彩。 當使用者將是有效的色彩 （例如粉紅色） 時，輸入新的色彩加入清單，並設定為使用 「 最愛的色彩 」。
+在此，「最愛色彩選擇器」包含最常見的最愛色彩 (紅色、藍色、綠色、橘色)，但使用者可以輸入不在清單中的最愛色彩。 當使用者新增有效的色彩 (例如粉紅色) 時，新輸入的色彩會新增到清單並設為有效的「最愛色彩」。
 
 ```xaml
 <ComboBox x:Name="favoriteColorComboBox"

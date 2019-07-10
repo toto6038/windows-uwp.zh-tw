@@ -6,17 +6,17 @@ label: Calendar, date, and time controls
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 54da5ea68dad0bbd2c7f00ae5fc4128f14d1ce43
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362876"
 ---
 # <a name="calendar-date-and-time-controls"></a>行事曆、日期和時間控制項
@@ -25,7 +25,7 @@ ms.locfileid: "66362876"
 
 日期和時間控制項為您提供一個標準、當地語系化的方式，讓使用者在您的 app 中檢視以及設定日期和時間值。 此文章提供設計指導方針，並協助您挑選適當的控制項。
 
-> **重要的 Api**:[CalendarView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)， [CalendarDatePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)， [DatePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker)， [TimePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker)
+> **重要 API**：[CalendarView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、[CalendarDatePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)、[DatePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、[TimePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker)
 
 <table>
 <th align="left">XAML 控制項庫<th>
@@ -108,7 +108,7 @@ ms.locfileid: "66362876"
 
 XAML 日期控制項支援 Windows 所支援的每個日曆系統。 這些行事曆是在 [Windows.Globalization.CalendarIdentifiers](https://docs.microsoft.com/uwp/api/Windows.Globalization.CalendarIdentifiers) 類別中指定。 每個控制項會針對您 app 的預設語言使用正確的行事曆，或者您也可以設定 **CalendarIdentifier** 屬性，以使用特定的行事曆系統。
 
-時間選擇器控制項支援 [Windows.Globalization.ClockIdentifiers](https://docs.microsoft.com/uwp/api/Windows.Globalization.ClockIdentifiers) 類別中指定的每個時鐘系統。 您可以設定 [ClockIdentifier](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) 屬性，以使用 12 小時制或 24 小時制的時鐘。 屬性的類型是字串，但您必須使用對應到 ClockIdentifiers 類別的靜態字串屬性的值。 這些是：TwelveHour （「 12HourClock"的字串） 和 TwentyFourHour （「 24HourClock"的字串）。 "12HourClock" 是預設值。
+時間選擇器控制項支援 [Windows.Globalization.ClockIdentifiers](https://docs.microsoft.com/uwp/api/Windows.Globalization.ClockIdentifiers) 類別中指定的每個時鐘系統。 您可以設定 [ClockIdentifier](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) 屬性，以使用 12 小時制或 24 小時制的時鐘。 屬性的類型是字串，但您必須使用對應到 ClockIdentifiers 類別的靜態字串屬性的值。 這些是：TwelveHour ("12HourClock" 字串) 和 TwentyFourHour ("24HourClock" 字串)。 "12HourClock" 是預設值。
 
 
 ### <a name="datetime-and-calendar-values"></a>DateTime 與 Calendar 值
@@ -121,10 +121,10 @@ XAML 日期和時間控制項中使用的日期物件有不同的呈現方式，
 
 .NET 亦支援名為 [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime?redirectedfrom=MSDN) 的類型，隱含可轉換為 [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN)。 因此，您可能會在 .NET 程式碼中看到用來設定值的 "DateTime" 類型，其實是 DateTimeOffset。 如需 DateTime 和 DateTimeOffset 之間差異的詳細資訊，請參閱 [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN) 類別中的「備註」。
 
-> **注意**&nbsp;&nbsp;採用日期物件的屬性不能設定為 XAML 屬性字串，因為 Windows 執行階段 XAML 剖析器沒有可將字串轉換為 DateTime/DateTimeOffset 物件形式之日期的轉換邏輯。 您通常會在程式碼中設定這些值。 另一個可能的方法是定義可當做資料物件，或在 資料內容，然後將屬性設定為 XAML 屬性所參考的日期[\{繫結\}標記延伸](../../xaml-platform/binding-markup-extension.md)運算式可存取做為資料的日期。
+> **注意**&nbsp;&nbsp;採用日期物件的屬性不能設定為 XAML 屬性字串，因為 Windows 執行階段 XAML 剖析器沒有可將字串轉換為 DateTime/DateTimeOffset 物件形式之日期的轉換邏輯。 您通常會在程式碼中設定這些值。 另一個可能的技術是定義可做為資料物件或在資料內容中使用的日期，然後將屬性設定為 XAML 屬性，參考可存取日期做為資料的 [\{Binding\}標記延伸](../../xaml-platform/binding-markup-extension.md)運算式。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
-* [XAML UI 基本概念的範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
 
 ## <a name="related-topics"></a>相關主題

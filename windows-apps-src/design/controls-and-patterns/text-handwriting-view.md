@@ -1,56 +1,56 @@
 ---
-Description: 自訂適用於 UWP 的文字控制項的文字方塊中，例如 RichEditBox （和控制項，如 AutoSuggestBox 提供類似的文字輸入的體驗） 所支援的文字輸入的筆墨的內建的手寫 檢視。
-title: 使用 [手寫] 檢視的文字輸入
+Description: 針對 TextBox、RichEditBox 之類的 UWP 文字控制項，以及可提供類似文字輸入體驗的 AutoSuggestBox 等控制項所支援的筆跡轉換文字輸入，自訂內建的手寫檢視。
+title: 含手寫檢視的文字輸入
 label: Text input with the handwriting view
 template: detail.hbs
 ms.date: 10/13/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: sewen
 design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f7b31898e6a90410e4edc73ee36f71a7e4d94155
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634913"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63774780"
 ---
-# <a name="text-input-with-the-handwriting-view"></a>使用 [手寫] 檢視的文字輸入
+# <a name="text-input-with-the-handwriting-view"></a>含手寫檢視的文字輸入
 
 ![文字方塊在使用手寫筆點選時展開](images/handwritingview/handwritingview2.gif)
 
-自訂內建的手寫檢視適用於 UWP 文字控制項，例如支援的文字輸入的筆墨[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox)， [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)，和控制項這類衍生自這些[AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)。
+針對 [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox)[RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) 之類的 UWP 文字控制項，以及可衍生自 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) 等控制項所支援的筆跡轉換文字輸入，自訂內建的手寫檢視。
 
 ## <a name="overview"></a>概觀
 
-XAML 文字輸入的方塊功能的手寫筆輸入 使用內嵌的支援來[Windows Ink](../input/pen-and-stylus-interactions.md)。 當使用者點選使用 Windows 畫筆的文字輸入方塊中時，文字方塊將轉換成手寫介面，而不用開啟個別的輸入的面板中。
+XAML 文字輸入方塊使用 [Windows Ink](../input/pen-and-stylus-interactions.md) 特別提供手寫筆輸入的內嵌支援。 當使用者使用 Windows 手寫筆點選文字輸入方塊時，文字方塊轉換成手寫介面，而不是開啟另一個輸入面板。
 
-當使用者撰寫的任何位置中的文字 方塊中，與候選視窗會顯示辨識結果，是已辨識文字。 使用者可以點選結果來選擇，或繼續書寫以接受建議的候選字。 候選字視窗會包含逐字 (逐個字母) 辨識結果，因此辨識範圍並不局限於字典中的單字。 當使用者書寫時，接受的文字輸入會轉換為保有自然書寫風格的書寫體字型。
+文字可隨著使用者在文字方塊任何位置書寫時進行辨識，而候選字視窗會顯示辨識結果。 使用者可以點選結果來選擇，或繼續書寫以接受建議的候選字。 候選字視窗會包含逐字 (逐個字母) 辨識結果，因此辨識範圍並不局限於字典中的單字。 當使用者書寫時，接受的文字輸入會轉換為保有自然書寫風格的書寫體字型。
 
 > [!NOTE]
-> 根據預設，啟用 [手寫] 檢視，但是您可以停用每個控制項為基礎，並改成文字輸入面板。
+> 預設會啟用手寫檢視，但是您可以按照每個控制項加以停用，並還原為文字輸入面板。
 
-![筆跡與建議的文字方塊](images/handwritingview/handwritingview-inksuggestion1.gif)
+![使用筆跡與建議的文字方塊](images/handwritingview/handwritingview-inksuggestion1.gif)
 
 使用者可以使用如下所示的標準手勢及動作來編輯他們的文字：
 
-- _刪除線_或_劃掉_：一筆劃過，可刪除一個字或字的一部分
-- _聯結_：在單字之間劃弧線，可刪除其間的空格
-- _插入_：劃插入號可插入空格
-- _覆寫_：在現有文字上面書寫，可加以取代
+- 刪除線  或劃掉  ：一筆劃過，可刪除一個字或字的一部分
+- 聯結  ：在單字之間劃弧線，可刪除其間的空格
+- 插入  ：劃插入號可插入空格
+- 覆寫  ：在現有文字上面書寫，可加以取代
 
-![包含筆墨更正的文字方塊](images/handwritingview/handwritingview-inkcorrection1.gif)
+![使用筆跡更正的文字方塊](images/handwritingview/handwritingview-inkcorrection1.gif)
 
-## <a name="disable-the-handwriting-view"></a>停用 [手寫] 檢視
+## <a name="disable-the-handwriting-view"></a>停用手寫檢視
 
-預設會啟用內建的手寫檢視。
+預設會啟用內建手寫檢視。
 
-您可能想要停用 [手寫] 檢視，如果您已在您的應用程式，提供對等的筆墨轉換文字功能，或您的文字輸入的體驗依賴某種類型的格式或特殊字元 （例如索引標籤） 無法提供的手寫。
+如果您已經在應用程式中提供同等的筆跡轉換文字功能，或您的文字輸入體驗依賴某種無法透過手寫提供的格式或特殊字元 (例如定位字元)，則可能會想停用手寫檢視。
 
-在此範例中，我們設定停用 [手寫] 檢視[IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled)屬性[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox)控制項設為 false。 支援 [手寫] 檢視的所有文字控制項都支援類似的屬性。
+在此範例中，我們將 [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) 控制項的 [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) 屬性設為 false，藉此停用手寫檢視。 支援手寫檢視的所有文字控制項都支援類似的屬性。
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -61,13 +61,13 @@ XAML 文字輸入的方塊功能的手寫筆輸入 使用內嵌的支援來[Wind
 </TextBox>
 ```
 
-## <a name="specify-the-alignment-of-the-handwriting-view"></a>指定 [手寫] 檢視的對齊方式
+## <a name="specify-the-alignment-of-the-handwriting-view"></a>指定手寫檢視的對齊方式
 
-手寫檢視位於基礎文字控制項上方，並調整大小以配合使用者的手寫喜好設定 (請參閱**設定]-> [裝置]-> [畫筆與 Windows Ink]-> [手寫]-> [字型的大小，直接寫入時文字欄位**)。  檢視相對於文字控制項和其應用程式內的位置也會自動對齊。
+手寫檢視位於基礎文字控制項上方，並調整大小以配合使用者的手寫喜好設定 (請參閱 [設定] -> [裝置] -> [畫筆與 Windows Ink] -> [手寫] -> [直接寫入文字欄位時的字型大小]  )。 相對於文字控制項及其在應用程式內的位置，此檢視也會自動對齊。
 
-應用程式 UI 不會不會自動重排以容納較大的控制，因此系統可能會造成要 occlude 重要 UI 的檢視。
+應用程式 UI 不會自動重排以容納較大的控制項，因此系統可能會導致檢視遮蔽重要的 UI。
 
-在這裡，我們示範如何使用[PlacementAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment)屬性[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)指定基礎文字控制項上的錨點用來對齊手寫 檢視中。
+在此，我們示範如何使用 [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 的 [PlacementAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment) 屬性，指定基礎文字控制項上的哪個錨點會用來對齊手寫檢視。
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -82,9 +82,9 @@ XAML 文字輸入的方塊功能的手寫筆輸入 使用內嵌的支援來[Wind
 
 ## <a name="disable-auto-completion-candidates"></a>停用自動完成候選項目
 
-預設會啟用文字建議快顯視窗，提供一份最上層的筆墨辨識使用者可以從中選取萬一前幾個候選不正確的候選項目。
+預設會啟用文字建議快顯視窗，以提供一份熱門筆跡辨識候選項目，以便使用者在最熱門的候選項目不正確時從中選取。
 
-如果您的應用程式中已提供強大的自訂辨識功能，您可以使用[AreCandidatesEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.arecandidatesenabled)停用的內建的建議，如下列範例所示的屬性。
+如果您的應用程式已經提供強大的自訂辨識功能，您可以使用 [AreCandidatesEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.arecandidatesenabled) 屬性來停用內建建議，如以下範例所示。
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -97,17 +97,17 @@ XAML 文字輸入的方塊功能的手寫筆輸入 使用內嵌的支援來[Wind
 </TextBox>
 ```
 
-## <a name="use-handwriting-font-preferences"></a>使用手寫字型的喜好設定
+## <a name="use-handwriting-font-preferences"></a>使用手寫字型喜好設定
 
-使用者可以選擇從預先定義的集合時要使用的手寫字型的轉譯文字為基礎的筆墨辨識 (請參閱**設定]-> [裝置]-> [畫筆與 Windows Ink]-> [手寫]-> [字型時使用手寫**).
+使用者可以從預先定義的手寫字型集合中選擇根據筆跡辨識轉譯文字所要使用的字型 (請參閱 [設定] -> [裝置] -> [畫筆與 Windows Ink]-> [手寫]-> [使用手寫時的字型]  )。
 
 > [!NOTE]
-> 使用者甚至可以建立根據他們自己的手寫字型。
+> 使用者甚至可以根據自己的手寫來建立字型。
 > [!VIDEO https://www.youtube.com/embed/YRR4qd4HCw8]
 
-您的應用程式可以存取這項設定，並使用已辨識的文字，文字控制項中選取的字型。
+您的應用程式可以存取此設定，並將選取的字型使用於文字控制項中已辨識的文字。
 
-在此範例中，我們接聽[TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)事件[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox)並套用使用者選取的字型，如果此文字變更源自 HandwritingView （或如果不是預設字型）。
+在此範例中，我們會接聽 [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox)的 [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) 事件，如果文字變更源自 HandwritingView 則套用使用者選取的字型 (如果不是，則套用預設字型)。
 
 ```csharp
 private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -119,13 +119,13 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 }
 ```
 
-## <a name="access-the-handwritingview-in-composite-controls"></a>複合控制項中 HandwritingView 的存取
+## <a name="access-the-handwritingview-in-composite-controls"></a>存取複合控制項中的 HandwritingView
 
-複合控制項，使用[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox)或是[RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)控制項，例如[AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)也支援[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)。
+使用 [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) 或 [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) 控制項的複合控制項 (例如 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)) 也支援 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)。
 
-若要存取[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)在複合控制項中，使用[VisualTreeHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper) API。
+若要存取複合控制項中的 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)，請使用 [VisualTreeHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper) API。
 
-下列 XAML 程式碼片段會顯示[AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)控制項。
+下列 XAML 程式碼片段會顯示 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) 控制項。
 
 ```xaml
 <AutoSuggestBox Name="SampleAutoSuggestBox" 
@@ -136,9 +136,9 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 </AutoSuggestBox>
 ```
 
-對應程式碼後置中，我們會示範如何停用[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)上[AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)。
+在對應的程式碼後置中，我們會示範如何停用 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)上的 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)。
 
-1. 首先，我們處理應用程式的載入的事件，我們呼叫來啟動視覺化樹狀結構周遊的 FindInnerTextBox 函式。
+1. 首先，我們會處理應用程式的 Loaded 事件，而我們在其中呼叫 FindInnerTextBox 函式來啟動視覺化樹狀結構周遊。
 
     ```csharp
     private void SampleAutoSuggestBox_Loaded(object sender, RoutedEventArgs e)
@@ -148,7 +148,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
     }
     ```
 
-2. 我們接著會開始逐一查看的視覺化樹狀結構 （起價 AutoSuggestBox） 藉由呼叫 FindVisualChildByName FindInnerTextBox 函式。
+2. 我們接著會呼叫 FindVisualChildByName，開始逐一查看 FindInnerTextBox 函式中的視覺化樹狀結構 (於 AutoSuggestBox 開始)。
 
     ```csharp
     private bool FindInnerTextBox(AutoSuggestBox autoSuggestBox)
@@ -163,7 +163,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
     }
     ```
 
-3. 最後，此函式逐一查看的視覺化樹狀結構之前擷取的文字方塊中。
+3. 最後，此函式會逐一查看視覺化樹狀結構，直到擷取 TextBox 為止。
 
     ```csharp
     private FrameworkElement FindVisualChildByName<T>(DependencyObject obj)
@@ -188,19 +188,19 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
     }
     ```
 
-## <a name="reposition-the-handwritingview"></a>重新定位 HandwritingView
+## <a name="reposition-the-handwritingview"></a>調整 HandwritingView 的位置
 
-在某些情況下，您可能需要以確保[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)涵蓋它否則可能不的 UI 項目。
+在某些情況下，您可能需要確保 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 涵蓋它可能沒有的 UI 元素。
 
-在這裡，我們會建立支援 （將文字方塊和聽寫按鈕放到 StackPanel 實作） 的聽寫的文字方塊。
+在此，我們會建立支援聽寫的 TextBox (實作方式為將 TextBox 和聽寫按鈕放入 StackPanel 中)。
 
-![使用聽寫的文字方塊](images/handwritingview/textbox-with-dictation.png)
+![使用聽寫的 TextBox](images/handwritingview/textbox-with-dictation.png)
 
-在 StackPanel 大於現在文字方塊中，如[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)可能不 occlude 所有複合 cotnrol。
+StackPanel 現在大於 TextBox，因此 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 可能完全不會遮蔽複合控制項。
 
-![使用聽寫的文字方塊](images/handwritingview/textbox-with-dictation-handwritingview.png)
+![使用聽寫的 TextBox](images/handwritingview/textbox-with-dictation-handwritingview.png)
 
-若要解決此問題，請將 PlacementTarget 的[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)至 UI 項目，它應該對齊。
+若要解決此問題，請將 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 的 PlacementTarget 屬性設定為它應該對齊的 UI 元素。
 
 ```xaml
 <StackPanel Name="DictationBox" 
@@ -225,19 +225,19 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 </StackPanel>
 ```
 
-## <a name="resize-the-handwritingview"></a>調整大小 HandwritingView
+## <a name="resize-the-handwritingview"></a>調整 HandwritingView 的大小
 
-您也可以設定的大小[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)，可能會很有用時您必須確定檢視不 occlude 重要的 UI。
+您也可以設定 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 的大小，當您必須確保檢視不會遮蔽重要 UI 時，這很有用。
 
-如上述範例中，我們會建立支援 （將文字方塊和聽寫按鈕放到 StackPanel 實作） 的聽寫的文字方塊。
+如同先前的範例，我們會建立支援聽寫的 TextBox (實作方式為將 TextBox 和聽寫按鈕放入 StackPanel 中)。
 
-![使用聽寫的文字方塊](images/handwritingview/textbox-with-dictation.png)
+![使用聽寫的 TextBox](images/handwritingview/textbox-with-dictation.png)
 
-在此情況下，我們想要確保聽寫按鈕為永遠可見。
+在此情況下，我們想要確保聽寫按鈕一律可見。
 
-![使用聽寫的文字方塊](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
+![使用聽寫的 TextBox](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
 
-若要這樣做，我們的屬性繫結 MaxWidth [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)它應該 occlude 的 UI 元素的寬度。
+若要這樣做，請將 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 的 MaxWidth 屬性繫結至它應該遮蔽的 UI 元素寬度。
 
 ```xaml
 <StackPanel Name="DictationBox" 
@@ -269,14 +269,14 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 </StackPanel>
 ```
 
-## <a name="reposition-custom-ui"></a>重新定位的自訂 UI
+## <a name="reposition-custom-ui"></a>調整自訂 UI 的位置
 
-如果您有自訂 UI，會出現在回應的文字輸入，例如資訊快顯視窗中，您可能需要重新定位該 UI，讓它不 occlude [手寫] 檢視。
+如果您有可回應文字輸入的自訂 UI (例如資訊快顯視窗)，您可能需要調整該 UI 的位置，使其不會遮蔽手寫檢視。
 
 ![具有自訂 UI 的 TextBox](images/handwritingview/textbox-with-customui.png)
 
-下列範例顯示如何接聽[Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened)， [Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed
-)，和[SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged)事件[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)設定位置[快顯](https://docs.microsoft.com/uwp/api/windows.ui.popups)。
+下列範例示範如何接聽 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)的 [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened)、[Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed
+)和 [SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) 事件，以設定 [Popup](https://docs.microsoft.com/uwp/api/windows.ui.popups) 的位置。
 
 ```csharp
 private void Search_HandwritingViewOpened(
@@ -312,11 +312,11 @@ private double GetPopupVerticalOffset()
 }
 ```
 
-## <a name="retemplate-the-handwritingview-control"></a>Retemplate HandwritingView 控制項
+## <a name="retemplate-the-handwritingview-control"></a>重新建立 HandwritingView 控制項的範本
 
-因為透過所有 XAML 架構的控制項，您可以自訂視覺結構和視覺化行為[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)針對您特定的需求。
+透過所有的 XAML 架構控制項，您可以針對您特定的需求來自訂 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 的視覺化結構和視覺化行為。
 
-若要查看建立的自訂範本簽出的完整範例[建立自訂的闇熁勂](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/custom-transport-controls)how-to 或[自訂編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)。
+若要查看建立自訂範本的完整範例，請查看[建立自訂傳輸控制項](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/custom-transport-controls)操作說明或[自訂編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)。
 
 
 

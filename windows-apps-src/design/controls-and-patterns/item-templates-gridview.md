@@ -6,17 +6,17 @@ ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
 ms.openlocfilehash: f1cc576bbc7fe7fc326d86072e22b7a385cfeb8b
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913948"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63794525"
 ---
 # <a name="item-templates-for-grid-view"></a>方格檢視的項目範本
 
 本節包含的項目範本，您可以用來搭配 [**GridView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView) 控制項。 使用這些範本可取得通用應用程式類型的外觀。
 
-為了示範資料繫結，這些範本繫結**GridViewItems**範例記錄類別，從[資料繫結概觀](../../data-binding/data-binding-quickstart.md)。
+為了示範資料繫結，這些範本會將 **ViewItems** 繫結至[資料繫結概觀](../../data-binding/data-binding-quickstart.md)的範例 Recording 類別。
 
 > [!NOTE] 
 > 目前，當 **DataTemplate** 包含多個控制 (例如不只一個 **TextBlock**)，螢幕助讀程式的預設可存取名稱來自項目的 .ToString()。 為了方便起見，您可以改為在 **DataTemplate** 的根元素上設定 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 如需協助工具的詳細資訊，請參閱[協助工具概觀](../accessibility/accessibility-overview.md)。

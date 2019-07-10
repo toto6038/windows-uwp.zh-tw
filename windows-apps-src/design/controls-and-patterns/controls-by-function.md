@@ -6,13 +6,13 @@ label: Controls by function
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6de5e9d8899a7f270d30438a0563b879ccdab898
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363134"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
@@ -26,7 +26,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡以<a href="xamlcontrolsgallery:/item/NavigationView">開啟應用程式，並查看動作中的 NavigationView</a> </p>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/NavigationView">開啟應用程式並查看 NavigationView 運作情形</a> 。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -50,9 +50,9 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 ![應用程式列按鈕圖示](images/controls/app-bar-buttons.png) 
 
-參考：[AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)， [SymbolIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SymbolIcon)， [BitmapIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.BitmapIcon)， [FontIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FontIcon)， [PathIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon) 
+參考：[AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)、[SymbolIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SymbolIcon)、[BitmapIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.BitmapIcon)、[FontIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FontIcon)、[PathIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon) 
 
-設計和操作說明：[應用程式列和命令列控制指南](app-bars.md) 
+設計和作法︰[應用程式列和命令列控制項指南](app-bars.md) 
 
 範例程式碼：[XAML 命令範例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
@@ -84,7 +84,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 ```
 參考：[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 
 
-設計和操作說明：[應用程式列和命令列控制指南](app-bars.md)
+設計和作法︰[應用程式列和命令列控制項指南](app-bars.md)
 
 範例程式碼：[XAML 命令範例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
@@ -102,9 +102,9 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 
 
-設計和操作說明：[按鈕控制指南](buttons.md) 
+設計和作法︰[按鈕控制項指南](buttons.md) 
 
-### <a name="hyperlink"></a>超連結
+### <a name="hyperlink"></a>Hyperlink
 請參閱＜超連結按鈕＞。
 
 ### <a name="hyperlink-button"></a>超連結按鈕
@@ -119,7 +119,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 
 
-設計和操作說明：[超連結控制指南](hyperlinks.md)
+設計和作法︰[超連結控制項指南](hyperlinks.md)
 
 ### <a name="repeat-button"></a>重複按鈕
 一個按鈕，從按下到放開的這段期間，會重複引發 **Click** 事件。 
@@ -133,7 +133,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[RepeatButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.RepeatButton) 
 
-設計和操作說明：[按鈕控制指南](buttons.md) 
+設計和作法︰[按鈕控制項指南](buttons.md) 
 
 ## <a name="collectiondata-controls"></a>集合/資料控制項
 
@@ -150,7 +150,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) 
 
-設計和操作說明：[翻轉檢視控制指南](flipview.md) 
+設計和作法︰[翻轉檢視控制項指南](flipview.md) 
 
 ### <a name="grid-view"></a>格線檢視
 在可以垂直捲動的列和欄中顯示項目集合的控制項。
@@ -164,7 +164,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 
 
-設計和操作說明：[清單](lists.md) 
+設計和作法︰[清單](lists.md) 
 
 範例程式碼：[ListView 範例](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
@@ -189,7 +189,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 
 
-設計和操作說明：[清單](lists.md) 
+設計和作法︰[清單](lists.md) 
 
 範例程式碼：[ListView 範例](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
@@ -206,7 +206,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[CalendarDatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker) 
 
-設計和操作說明：[行事曆、 日期和時間控制項](date-and-time.md)
+設計和作法︰[行事曆、日期和時間控制項](date-and-time.md)
  
 ### <a name="calendar-view"></a>行事曆檢視
 可讓使用者選取單一或多個日期的可設定式行事曆顯示畫面。
@@ -217,7 +217,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 
 
-設計和操作說明：[行事曆、 日期和時間控制項](date-and-time.md) 
+設計和作法︰[行事曆、日期和時間控制項](date-and-time.md) 
 
 ### <a name="date-picker"></a>日期選擇器
 讓使用者能夠選取日期的控制項。
@@ -230,7 +230,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[DatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker) 
 
-設計和操作說明：[行事曆、 日期和時間控制項](date-and-time.md)
+設計和作法︰[行事曆、日期和時間控制項](date-and-time.md)
  
 ### <a name="time-picker"></a>時間選擇器
 讓使用者能夠設定時間值的控制項。
@@ -243,7 +243,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[TimePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker) 
 
-設計和操作說明：[行事曆、 日期和時間控制項](date-and-time.md)
+設計和作法︰[行事曆、日期和時間控制項](date-and-time.md)
 
 ## <a name="flyouts"></a>飛出視窗
 
@@ -264,9 +264,9 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 </Flyout>
 ```
 
-參考：[Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout) 
+參考：[飛出視窗](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout) 
 
-設計和操作說明：[延伸顯示](dialogs-and-flyouts/flyouts.md) 
+設計和作法︰[飛出視窗](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>功能表飛出視窗
 暫時顯示與使用者目前正在執行之動作相關的命令或選項清單。
@@ -284,18 +284,18 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 </MenuFlyout>
 ```
 
-參考：[MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)， [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)， [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutSeparator)， [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem) 
+參考：[MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)、[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)、[MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutSeparator)、[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem) 
 
-設計和操作說明：[功能表和操作功能表](menus.md) 
+設計和作法︰[功能表和操作功能表](menus.md) 
 
-範例程式碼：[XAML 內容功能表範例](https://go.microsoft.com/fwlink/p/?LinkId=620021)
+範例程式碼：[XAML 操作功能表範例](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### <a name="popup-menu"></a>快顯功能表
 顯示您所指定命令的自訂功能表。
 
 參考：[PopupMenu](https://docs.microsoft.com/uwp/api/Windows.UI.Popups.PopupMenu) 
 
-設計和操作說明：[對話方塊](dialogs-and-flyouts/dialogs.md) 
+設計和作法︰[對話方塊](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>工具提示
 顯示元素資訊的快顯視窗。 
@@ -307,9 +307,9 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
         ToolTipService.ToolTip="Click to perform action" />
 ```
 
-參考：[工具提示](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)， [ToolTipService](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTipService) 
+參考：[ToolTip](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTipService) 
 
-設計和操作說明：工具提示的指導方針 
+設計和作法︰工具提示的指導方針 
 
 ## <a name="images"></a>映像
 
@@ -322,7 +322,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[影像](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 
 
-設計和操作說明：[映像和 ImageBrush](images-imagebrushes.md) 
+設計和作法︰[Image 和 ImageBrush](images-imagebrushes.md) 
 
 範例程式碼：[XAML 影像範例](https://go.microsoft.com/fwlink/p/?linkid=226867)
 
@@ -351,9 +351,9 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[形狀](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes.Shape) 
 
-HOW TO：[繪製圖案](../../graphics/drawing-shapes.md) 
+作法：[繪製形狀](../../graphics/drawing-shapes.md) 
 
-範例程式碼：[XAML 向量式繪圖範例](https://go.microsoft.com/fwlink/p/?linkid=226866)
+範例程式碼：[XAML 向量繪製範例](https://go.microsoft.com/fwlink/p/?linkid=226866)
 
 ## <a name="layout-controls"></a>配置控制項
 
@@ -391,7 +391,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[Canvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)
  
-### <a name="grid"></a>Grid
+### <a name="grid"></a>方格
 支援以列和欄排列子元素的配置面板。
 
 ![格線配置面板](images/controls/grid.png) 
@@ -413,7 +413,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 </Grid>
 ```
 
-參考：[格線](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
+參考：[Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
  
 ### <a name="panning-scroll-viewer"></a>移動瀏覽捲動檢視器
 請參閱＜捲動檢視器＞。
@@ -451,9 +451,9 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)
 
-設計和操作說明：[Scroll 和移動瀏覽控制項指南](scroll-controls.md) 
+設計和作法︰[捲動和移動瀏覽控制項指南](scroll-controls.md) 
 
-範例程式碼：[捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=238577)
+範例程式碼：[XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=238577)
 
 ### <a name="stack-panel"></a>堆疊面板
 可以將子元素按水平或垂直方向排列到單行中的配置面板。
@@ -527,7 +527,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 
 
-設計和操作說明：[媒體項目控制指南](media-playback.md)
+設計和作法︰[媒體元素控制項指南](media-playback.md)
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 為 MediaElement 提供播放控制項的控制項。
@@ -540,22 +540,22 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 
 
-設計和操作說明：[媒體項目控制指南](media-playback.md) 
+設計和作法︰[媒體元素控制項指南](media-playback.md) 
 
 範例程式碼：[媒體傳輸控制項範例](https://go.microsoft.com/fwlink/p/?LinkId=620023)
 
-### <a name="video"></a>視訊
+### <a name="video"></a>影片
 請參閱＜媒體元素＞。
 
-## <a name="navigation"></a>巡覽
+## <a name="navigation"></a>瀏覽
 
 ### <a name="navigationview"></a>NavigationView
 
-可調整的容器，並有彈性的瀏覽模型來實作左側瀏覽窗格頂端瀏覽，索引標籤模式。
+可調整的容器和有彈性的瀏覽模型，可實作左瀏覽窗格、上方瀏覽和索引標籤模式。
 
 參考：[NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-設計和操作說明：[NavigationView 控制項指南](navigationview.md)
+設計和作法︰[NavigationView 控制項指南](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
 
@@ -576,7 +576,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[SplitView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView) 
 
-設計和操作說明：[分割檢視控制指南](split-view.md)
+設計和作法︰[分割檢視控制項指南](split-view.md)
 
 ### <a name="web-view"></a>網頁檢視
 
@@ -589,7 +589,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 
 
-設計和操作說明：Web 檢視的方針 
+設計和作法︰網頁檢視的指導方針 
 
 範例程式碼：[XAML WebView 控制項範例](https://go.microsoft.com/fwlink/p/?linkid=238582)
 
@@ -610,7 +610,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 
 
-設計和操作說明：[語意縮放控制指南](semantic-zoom.md)
+設計和作法︰[語意式縮放控制項指南](semantic-zoom.md)
 
 範例程式碼：[XAML GridView 群組和 SemanticZoom 範例](https://go.microsoft.com/fwlink/p/?linkid=226564)
 
@@ -637,7 +637,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar) 
 
-設計和操作說明：[進度控制項指南](progress-controls.md) 
+設計和作法︰[進度控制項指南](progress-controls.md) 
 
 ### <a name="progress-ring"></a>進度環
 顯示一個環形來指示不確定進度的控制項。 
@@ -650,7 +650,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) 
 
-設計和操作說明：[進度控制項指南](progress-controls.md) 
+設計和作法︰[進度控制項指南](progress-controls.md) 
 
 ## <a name="text-controls"></a>文字控制項
 
@@ -661,7 +661,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[AutoSuggestBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
 
-設計和操作說明：[文字控制項](text-controls.md)，[自動建議方塊控制指南](auto-suggest-box.md)
+設計和作法︰[文字控制項](text-controls.md)、[自動建議方塊控制項指南](auto-suggest-box.md)
 
 範例程式碼：[AutoSuggestBox 移轉範例](https://go.microsoft.com/fwlink/p/?LinkId=619996)
 
@@ -680,9 +680,9 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) 
 
-設計和操作說明：[文字控制項](text-controls.md)，[密碼方塊控制指南](password-box.md) 
+設計和作法︰[文字控制項](text-controls.md)、[密碼方塊控制項指南](password-box.md) 
 
-範例程式碼：[XAML 文字顯示範例](https://go.microsoft.com/fwlink/p/?linkid=238579)， [XAML 文字編輯範例](https://go.microsoft.com/fwlink/p/?linkid=251417)
+範例程式碼：[XAML 文字顯示範例](https://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML 文字編輯範例](https://go.microsoft.com/fwlink/p/?linkid=251417)
 
 ### <a name="rich-edit-box"></a>Rich Edit 方塊
 讓使用者能夠編輯 RTF 文件 (內容包括格式化文字、超連結及影像等) 的控制項。
@@ -693,7 +693,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 
 
-設計和操作說明：[文字控制項](text-controls.md)，[豐富的編輯方塊控制指南](rich-edit-box.md)
+設計和作法︰[文字控制項](text-controls.md)、[Rich Edit 方塊控制項指南](rich-edit-box.md)
 
 範例程式碼：[XAML 文字範例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
@@ -715,9 +715,9 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 <TextBlock x:Name="textBlock1" Text="I am a TextBlock"/>
 ```
 
-參考：[TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)， [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 
+參考：[TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 
 
-設計和操作說明：[文字控制項](text-controls.md)，[文字區塊控制項指南](text-block.md)， [Rtf 文字區塊控制指南](rich-text-block.md)
+設計和作法︰[文字控制項](text-controls.md)、[文字區塊控制項指南](text-block.md)、[RTF 區塊控制項指南](rich-text-block.md)
 
 範例程式碼：[XAML 文字範例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
@@ -733,7 +733,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 
 
-設計和操作說明：[文字控制項](text-controls.md)，[文字 方塊控制指南](text-box.md) 
+設計和作法︰[文字控制項](text-controls.md)、[文字方塊控制項指南](text-box.md) 
 
 範例程式碼：[XAML 文字範例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
@@ -751,7 +751,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
 
-設計和操作說明：[核取方塊控制指南](checkbox.md) 
+設計和作法︰[核取方塊控制項指南](checkbox.md) 
 
 ### <a name="combo-box"></a>下拉式方塊
 使用者可以選取項目的下拉式清單。
@@ -769,7 +769,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 
 
-設計和操作說明：[清單](lists.md) 
+設計和作法︰[清單](lists.md) 
 
 ### <a name="list-box"></a>清單方塊
 顯示使用者可以選取項目的內嵌項目清單的控制項。 
@@ -787,7 +787,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) 
 
-設計和操作說明：[清單](lists.md) 
+設計和作法︰[清單](lists.md) 
 
 ### <a name="radio-button"></a>選項按鈕
 允許使用者從選項群組中選取單一選項的控制項。 當選項按鈕被群組在一起時，彼此是互斥的。
@@ -805,7 +805,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton) 
 
-設計和操作說明：[選項按鈕控制項指南](radio-button.md)
+設計和作法︰[選項按鈕控制項指南](radio-button.md)
  
 ### <a name="slider"></a>滑桿
 一個控制項，透過讓使用者沿著軌跡移動 Thumb 控制項，從一定範圍內選取值。
@@ -816,9 +816,9 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 <Slider x:Name="slider1" Width="100" ValueChanged="Slider_ValueChanged" />
 ```
 
-參考：[Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 
+參考：[滑桿](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 
 
-設計和操作說明：[滑桿控制指南](slider.md) 
+設計和作法︰[滑桿控制項指南](slider.md) 
 
 ### <a name="toggle-button"></a>切換按鈕
 可以在兩種狀態之間切換的按鈕。
@@ -830,7 +830,7 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)
 
-設計和操作說明：[切換控制指南](toggles.md) 
+設計和作法︰[切換控制項指南](toggles.md) 
 
 ### <a name="toggle-switch"></a>切換開關
 可以在兩種狀態之間切換的開關。
@@ -845,4 +845,4 @@ HOW TO：[繪製圖案](../../graphics/drawing-shapes.md)
 
 參考：[ToggleSwitch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToggleSwitch) 
 
-設計和操作說明：[切換控制指南](toggles.md) 
+設計和作法︰[切換控制項指南](toggles.md) 
