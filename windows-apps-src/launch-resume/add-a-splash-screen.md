@@ -6,12 +6,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 956e4050e3077ac827cf8107470698b42878a5e1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 182a2862589ef5b6b0bd5d76cb1b9ef9599b2ed6
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370868"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820627"
 ---
 # <a name="add-a-splash-screen"></a>新增啟動顯示畫面
 
@@ -27,7 +27,7 @@ ms.locfileid: "66370868"
 
     以下螢幕擷取畫面顯示 Visual Studio 中的「Package.appxmanifest」視窗。 根據專案類型，您會看到一組稍有不同的視覺資產。
 
-    ![顯示 visual studio 2017 中 [package.appxmanifest] 視窗的螢幕擷取畫面](images/appmanifest.png)
+    ![在 Visual Studio 2019"package.appxmanifest 」 視窗的螢幕擷取畫面](images/appmanifest.png)
 
     如果您在文字編輯器中開啟 Package.appxmanifest，[**SplashScreen**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen) 元素即會顯示為 [**VisualElements**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements) 元素的子項。 在文字編輯器中，資訊清單檔中的預設啟動顯示畫面標記看起來像這樣：
 

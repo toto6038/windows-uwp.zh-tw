@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 21a053934d7391d12f7cd987026524b9ff4c279d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 707c2ed110498f4ef18fea31ace87d1fd2434112
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639983"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820337"
 ---
 # <a name="create-data-bindings"></a>建立資料繫結
 
@@ -20,12 +20,12 @@ ms.locfileid: "57639983"
 
 您將會從簡化版的 PhotoLab 範例開始著手。 這個簡易使用包含完整的資料層以及基本的 XAML 頁面配置，但省去次要功能，讓程式碼更易於瀏覽。 本教學課程不會一直建置到完整的應用程式，因此請務必查看最終版本來了解各項功能，例如自訂動畫和電話支援。 您可以在 [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) 存放庫的根資料夾中找到最終版本。 
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
-* [Visual Studio 2017 和最新版 Windows 10 SDK](https://developer.microsoft.com/windows/downloads)。
+* [Visual Studio 2019 和最新版本的 Windows 10 SDK](https://developer.microsoft.com/windows/downloads)。
 
 ## <a name="part-0-get-the-code"></a>第 0 部分：取得程式碼
-本實習課程的起始點位置是在 [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding) 資料夾中的 PhotoLab 範例存放庫。 複製或下載存放庫之後，就可以使用 Visual Studio 2017 開啟 PhotoLab.sln 來編輯專案。
+本實習課程的起始點位置是在 [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding) 資料夾中的 PhotoLab 範例存放庫。 您已複製或下載存放庫之後，您可以開啟 Visual Studio 2019 PhotoLab.sln 編輯專案。
 
 PhotoLab 應用程式有兩個主要頁面：
 
@@ -160,7 +160,7 @@ PhotoLab 應用程式有兩個主要頁面：
               ItemsSource="{x:Bind Images}" 
     ```
 
-    **映像**屬性屬於型別**ObservableCollection\<ImageFileInfo\>**，所以個別項目以顯示**GridView**是型別的**ImageFileInfo**。 這符合第 1 部分中所述的 **x:DataType** 值。 
+    **映像**屬性屬於型別**ObservableCollection\<ImageFileInfo\>** ，所以個別項目以顯示**GridView**是型別的**ImageFileInfo**。 這符合第 1 部分中所述的 **x:DataType** 值。 
 
 到目前為止討論到的所有繫結都是一次性唯讀繫結，這是一般 **x:Bind** 運算式的預設行為。 資料只會在初始化時載入，這有助於高效能繫結，用來支援大型資料集的多個複雜檢視，再合適不過。 
 
@@ -171,13 +171,13 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-**映像**永遠不會變更屬性值，但因為屬性是型別的**ObservableCollection\<T\>**，則*內容*的集合可能會變更，並繫結會自動提高一點警覺，並更新 UI。 
+**映像**永遠不會變更屬性值，但因為屬性是型別的**ObservableCollection\<T\>** ，則*內容*的集合可能會變更，並繫結會自動提高一點警覺，並更新 UI。 
 
 為了測試這點，我們要暫時新增刪除目前所選影像的按鈕。 這個按鈕不在最終版本中，因為選取影像就會帶您前往詳細資料頁面。 不過，行為**ObservableCollection\<T\>** 很中最後一個範例中，PhotoLab 仍然重要，因為 XAML 頁面的建構函式中初始化 (透過**InitializeComponent**方法呼叫)，但**映像**稍後在填入集合**OnNavigatedTo**方法。 
 
 **新增 [刪除] 按鈕**
 
-1. 在 MainPage.xaml 中，尋找名為 **MainCommandBar** 的 **CommandBar**，並在縮放按鈕之前加入新的按鈕  (縮放控制項尚無法運作。 您將會在教學課程的下一個部分連結這些按鈕)。
+1. 在 MainPage.xaml 中，尋找名為 **MainCommandBar** 的 **CommandBar**，並在縮放按鈕之前加入新的按鈕 (縮放控制項尚無法運作。 您將會在教學課程的下一個部分連結這些按鈕)。
 
     ```xaml
     <AppBarButton Icon="Delete"
@@ -526,7 +526,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     <TextBlock ... Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />
     ```
 
-    因為您繫結到的是方法的傳回值，就稱之為函式繫結。 如果您使用資料範本，這個方法必須可以透過頁面的程式碼後置或 **x:DataType** 來存取。 在此範例中，方法即是熟悉的 .NET **ToString** 方法，這是透過頁面的項目屬性，然後再透過項目的 **Exposure** 屬性進行存取  (這示範如何繫結至連接鏈結中的深層巢狀方法及屬性)。
+    因為您繫結到的是方法的傳回值，就稱之為函式繫結。 如果您使用資料範本，這個方法必須可以透過頁面的程式碼後置或 **x:DataType** 來存取。 在此範例中，方法即是熟悉的 .NET **ToString** 方法，這是透過頁面的項目屬性，然後再透過項目的 **Exposure** 屬性進行存取 (這示範如何繫結至連接鏈結中的深層巢狀方法及屬性)。
 
     函式繫結是將值格式化用於顯示的理想方式，因為您可以傳入其他繫結來源做為方法引數，而且正如對單向模式的預期，繫結運算式也會接聽這些值的變更。 在本範例中，**culture** 引數是程式碼後置中實作之不變欄位的參考，但很容易就可以變成引發 **PropertyChanged** 事件的屬性。 在這種情況下，屬性值的任何變更都會導致 **x:Bind** 運算式以新的值來呼叫 **ToString**，然後再以結果更新 UI。 
 
@@ -583,7 +583,7 @@ public string ImageTitle
 }
 ```
 
-如您所見，setter 會更新 **ImageProperties.Title** 屬性，然後再呼叫 **SavePropertiesAsync** 以將新值寫入檔案  (這是非同步方法，但我們無法在屬性中使用 **await** 關鍵字，而您也不會想要這樣做，因為屬性 getter 及 setter 應該會立即完成。 因此，您反而會呼叫方法，並忽略其傳回的 **Task** 物件)。 
+如您所見，setter 會更新 **ImageProperties.Title** 屬性，然後再呼叫 **SavePropertiesAsync** 以將新值寫入檔案 (這是非同步方法，但我們無法在屬性中使用 **await** 關鍵字，而您也不會想要這樣做，因為屬性 getter 及 setter 應該會立即完成。 因此，您反而會呼叫方法，並忽略其傳回的 **Task** 物件)。 
 
 <!-- TODO more screenshots? -->
 

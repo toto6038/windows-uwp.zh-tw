@@ -6,28 +6,29 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: 02c33e0dbe1209f3c31937df800ceecb354475f5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 84818561e2f49827a1a76d446fa6a7cfcf2f9896
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322127"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820378"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>在 Xbox 開發環境上設定 UWP
 
 Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連線到 Xbox One 主機的開發電腦。
-開發電腦需具備 Windows 10、Visual Studio 2017 或 Visual Studio 2015 Update 3、Windows 10 SDK 組建 14393 或更新版本，以及一系列支援工具。
-
+開發電腦需要 Visual Studio 2015 Update 3，Visual Studio 2017 或 Visual Studio 2019。
+開發電腦也需要 Windows 10，Windows 10 SDK 組建 14393 或更新版本和各種支援工具。
 
 本文涵蓋設定並測試開發環境的步驟。
 
 ## <a name="visual-studio-setup"></a>Visual Studio 安裝
 
-1. 安裝 Visual Studio 2017，Visual Studio 2015 Update 3 或 Visual Studio 的最新版本。 如需詳細資訊及如何安裝，請參閱[適用於 Windows 10 的下載項目與工具](https://developer.microsoft.com/windows/downloads)。 我們建議您，讓您可以為開發人員和安全性接收最新的更新時，才使用最新版本的 Visual Studio。
+1. 安裝 Visual Studio 2015 Update 3，Visual Studio 2017 或 Visual Studio 2019。 如需詳細資訊及如何安裝，請參閱[適用於 Windows 10 的下載項目與工具](https://dev.windows.com/downloads)。 我們建議您，讓您可以為開發人員和安全性接收最新的更新時，才使用最新版本的 Visual Studio。
 
-2. 如果要安裝 Visual Studio 2017，請確定您選擇 **\[通用 Windows 平台開發\]** 工作負載。 如果您是 C++ 開發人員，請務必也選取右側 **[摘要]** 中的 **[C++ 通用 Windows 平台工具]** 核取方塊 (在 **[通用 Windows 平台開發]** 底下)。 這不是預設安裝的一部分。
 
-    ![安裝 Visual Studio 2017](images/development-environment-setup-1.png)
+2. 如果您要安裝 Visual Studio 2017 或 Visual Studio 2019，請確定您選擇**通用 Windows 平台開發**工作負載。 如果您是 C++ 開發人員，請務必也選取右側 **[摘要]** 中的 **[C++ 通用 Windows 平台工具]** 核取方塊 (在 **[通用 Windows 平台開發]** 底下)。 這不是預設安裝的一部分。
+
+    ![安裝 Visual Studio 2019](images/development-environment-setup-1.png)
 
     若要安裝 Visual Studio 2015 Update 3，請確保您已選取 **\[通用 Windows 應用程式開發工具\]** 核取方塊。
 

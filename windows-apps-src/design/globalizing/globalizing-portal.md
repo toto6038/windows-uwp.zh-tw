@@ -9,12 +9,12 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 91396051ec822f469e300f51217191fc4e704cac
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 466747cbbfe6f599f42a39f0d2766f78775ec6c8
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714043"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820593"
 ---
 # <a name="globalization-and-localization"></a>全球化與當地語系化
 
@@ -67,6 +67,6 @@ ms.locfileid: "67714043"
 | [可當地語系化，讓您的應用程式](prepare-your-app-for-localization.md) | 當地語系化的應用程式是可為其他市場、語言或地區當地語系化，而不會使應用程式產生任何功能缺失的應用程式。 可當地語系化應用程式最重要的屬性，便是其可執行的程式碼和可當地語系化的資源完全分離。 |
 | [國際字型](loc-international-fonts.md) | 本主題列出適用於 UWP 應用程式已當地語系化為美國以外的語言的字型英文版。 |
 | [設計您的應用程式的雙向文字](design-for-bidi-text.md) | 設計您的應用程式，使其提供雙向文字支援 (BiDi)，組合由左至右和由右至左書寫系統的文字。 |
-| [使用多國語言的應用程式工具組 4.0](use-mat.md) | 多語應用程式工具組 (MAT) 4.0 與 Microsoft Visual Studio 2017 整合，提供 UWP app 翻譯支援、翻譯檔案管理及編輯器工具。 |
+| [使用多國語言的應用程式工具組 4.0](use-mat.md) | 多語系應用程式工具組 (MAT) 4.0 進行整合以提供翻譯支援、 翻譯檔案管理和編輯器工具的 UWP 應用程式使用 Microsoft Visual Studio 2017 和更新版本。 |
 | [多語系應用程式工具組 4.0 常見問題集與疑難排解](mat-faq-troubleshooting.md) | 本主題提供與多語應用程式工具組 (MAT) 4.0 相關的常見問題解答。 |
 | [準備您的應用程式，以日文的紀元變更](japanese-era-change.md) | 了解 2019 年 5 月的日本紀元變更，以及如何準備您的應用程式。 |

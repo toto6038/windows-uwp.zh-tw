@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df93195578c1e7c6fd87ab7403375a1a3dcc825
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 8ec2b10b402db7398dad6643355e064c26318170
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468904"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820605"
 ---
 # <a name="resolve-submission-errors"></a>解決提交錯誤
 
@@ -25,7 +25,7 @@ ms.locfileid: "67468904"
 
 ## <a name="desktop-application"></a>桌面應用程式
 
-如果您計劃提交包含 Win32 與 UWP 的二進位檔的封裝，請確定您使用 Visual Studio 2017 Update 4 中提供 Windows 封裝專案來建立該套件。 如果您使用 UWP 專案範本建立封裝，您可能無法提交的封裝到市集或側載到其他電腦上。 即使封裝已成功發行，它可能會非預期的方式，在使用者的電腦上的行為。 如需詳細資訊，請參閱 <<c0> [ 使用 Visual Studio （傳統型橋接器） 封裝的應用程式]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
+如果您計劃提交包含 Win32 與 UWP 的二進位檔的封裝，請確定您使用適用於 Visual Studio 2017 Update 4 和更新版本的 Windows 封裝專案來建立該套件。 如果您使用 UWP 專案範本建立封裝，您可能無法提交的封裝到市集或側載到其他電腦上。 即使封裝已成功發行，它可能會非預期的方式，在使用者的電腦上的行為。 如需詳細資訊，請參閱 <<c0> [ 使用 Visual Studio （傳統型橋接器） 封裝的應用程式]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 和更早版本
 

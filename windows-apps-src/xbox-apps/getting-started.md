@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c94d27e87853b570268e3a39fe941c817b3eda6a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 19756730177485c6d16ad9a42ff1174eba8ca3b9
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590973"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820313"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>開始使用 Xbox One 上的 UWP 應用程式開發
 
@@ -20,20 +20,20 @@ ms.locfileid: "57590973"
 
 開始之前，您需要執行下列動作：
 -   設定 Windows 10 最新版本的電腦。
-<!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2017.
+<!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2019.
 
     > [!NOTE]
-    > Visual Studio 2017 is required if you are using the Windows 10, build 15063 SDK. -->
+    > Visual Studio 2019 is required if you are using the Windows 10, build 15063 SDK. -->
 
 - 在 Xbox One 主機上至少有 5 GB 的可用空間。
 
 ## <a name="setting-up-your-development-pc"></a>設定開發電腦
 
-1.  安裝 Visual Studio 2015 Update 3 或 Visual Studio 2017。
+1.  安裝 Visual Studio 2015 Update 3，Visual Studio 2017 或 Visual Studio 2019。
 
-    如果您要安裝 Visual Studio 2015 Update 3，請確定您選擇**自訂**安裝，並選取**通用 Windows App 開發工具**核取方塊 – 它不是預設的一部分安裝。 如果您是 C++ 開發人員，請務必選擇 [自訂安裝]，並選取 [C++]。
+    如果您要安裝 Visual Studio 2015 Update 3，請確定您選擇**自訂**安裝，並選取**通用 Windows App 開發工具**核取方塊 – 它不是預設的一部分安裝。 如果您是 C++ 開發人員，請務必選擇 [自訂安裝]  ，並選取 [C++]  。
 
-    如果要安裝 Visual Studio 2017，請確定您選擇 **\[通用 Windows 平台開發\]** 工作負載。 如果您在 c + + 開發人員**摘要**右邊的窗格底下**通用 Windows 平台開發**，請確定您選取**c + + 通用 Windows 平台工具**核取方塊。 它不是預設安裝的一部分。
+    如果您要安裝 Visual Studio 2017 或 Visual Studio 2019，請確定您選擇**通用 Windows 平台開發**工作負載。 如果您是C++開發人員，請在**摘要**右邊的窗格底下**通用 Windows 平台開發**，請確定您選取**C++通用 Windows平台工具**核取方塊。 它不是預設安裝的一部分。
 
     如需詳細資訊，請參閱 <<c0> [ 設定您在 Xbox 開發環境上的 UWP](development-environment-setup.md)。
 
@@ -66,7 +66,7 @@ ms.locfileid: "57590973"
 
     您可以透過啟動主機上的開發人員首頁 (位於首頁右側的大型磚)，並查看左上角來找到 Xbox One IP 位址。 如需開發人員首頁的詳細資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。  
 
-2.  **適用於 c + + 和 HTML/Javascript 專案**:請遵循類似的路徑C#專案，但在專案屬性中移至**偵錯**索引標籤上，選取**遠端機器**在偵錯工具若要開啟下拉式清單中，輸入 IP 位址或主機名稱到主控台**電腦名稱**欄位，然後選取**通用 （未加密的通訊協定）** 中**驗證類型**欄位。
+2.  **針對C++和 HTML/Javascript 專案**:請遵循類似的路徑C#專案，但在專案屬性中移至**偵錯**索引標籤上，選取**遠端機器**在偵錯工具若要開啟下拉式清單中，輸入 IP 位址或主機名稱到主控台**電腦名稱**欄位，然後選取**通用 （未加密的通訊協定）** 中**驗證類型**欄位。
 
 3. 選取  **x64**從頂端功能表列中的綠色的播放按鈕的左邊的下拉式清單。
    
@@ -74,15 +74,15 @@ ms.locfileid: "57590973"
   
 5.  第一次這樣做時，Visual Studio 會提示您輸入 Xbox One 的 PIN。 您可以取得 pin 碼以在您的 Xbox One 上開始開發人員的首頁，然後選取**顯示 Visual Studio pin**  按鈕。
   
-6.  配對之後，您的 App 就會開始部署。 第一次這樣做時，處理速度可能會有點慢 (我們必須將所有工具都複製到您的 Xbox)，但如果花費的時間超過數分鐘，則可能有發生錯誤。 請確定您已依照上述所有步驟進行 (特別您是否有將 [驗證模式] 設為 [通用]？)，並且使用有線網路連線來連線到 Xbox One。  
+6.  配對之後，您的 App 就會開始部署。 第一次這樣做時，處理速度可能會有點慢 (我們必須將所有工具都複製到您的 Xbox)，但如果花費的時間超過數分鐘，則可能有發生錯誤。 請確定您已依照上述所有步驟進行 (特別您是否有將 [驗證模式]  設為 [通用]  ？)，並且使用有線網路連線來連線到 Xbox One。  
 
 7. 請放鬆一下。 享受您在主機上執行的第一個 app！  
 
-## <a name="thats-it"></a>這樣就完成了！
+## <a name="thats-it"></a>就這麼容易！
 
 ![Hello World](images/getting-started-hello-world.png)
 
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 - [常見問題集](frequently-asked-questions.md)  
 - [在 Xbox 開發人員計劃上的 UWP 的已知的問題](known-issues.md)
 - [在 Xbox One UWP](index.md) 

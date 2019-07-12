@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5ba7ddb6ef37b4aa54584602fc890bbabc8998
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: db5ba7fb6e13d2a5aab4b74014458073aa88e7f4
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359346"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820220"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
@@ -61,7 +61,7 @@ ms.locfileid: "66359346"
 
 ## <a name="reference-a-string-or-image-resource-by-name"></a>依名稱參考字串或影像資源
 
-請參閱[從 XAML 標記參考字串資源識別碼](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml-markup)、[從程式碼參考字串資源識別碼](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code)和[從 XAML 標記和程式碼參考影像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)。
+請參閱[從 XAML 標記參考字串資源識別碼](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml)、[從程式碼參考字串資源識別碼](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code)和[從 XAML 標記和程式碼參考影像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)。
 
 ## <a name="actual-and-neutral-qualifier-matches"></a>實際和中性限定詞相符項目
 您不需要為*每個*限定詞值提供資源檔案。 例如，若您發現高對比和標準對比都分別只需使用一個視覺資產，您可以像這樣來命名這些資產。

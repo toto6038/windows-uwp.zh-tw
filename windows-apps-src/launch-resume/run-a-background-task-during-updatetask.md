@@ -5,12 +5,12 @@ ms.date: 04/21/2017
 ms.topic: article
 keywords: windows 10、 uwp、 更新、 背景工作、 updatetask、 背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: d943623a9978d39fd3930edc07e7524fe1cadf55
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fa5420b14d3d73f370031eed917e0e7c367c41c7
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321785"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820950"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在更新 UWP 應用程式時執行背景工作
 
@@ -86,12 +86,12 @@ namespace BackgroundTasks
 
 ![更新版本](images/bump-version.png)
 
-目前在 Visual Studio 2017 中按下 F5 時，將會更新您的 App，而且系統也會在背景中啟動 UpdateTask 元件。 偵錯工具會自動連結到背景處理程序。 觸及中斷點後，您即可逐步檢查更新程式碼邏輯。
+現在，在 Visual Studio 2019 當您按 f5 鍵，將會更新您的應用程式，系統將會啟動在背景中的 UpdateTask 元件。 偵錯工具會自動連結到背景處理程序。 觸及中斷點後，您即可逐步檢查更新程式碼邏輯。
 
 背景工作完成時，就可以在相同偵錯工作階段中，從 Windows [開始] 功能表啟動前景 App。 偵錯工具會再次自動連結，但這次是連結到前景處理程序，您可以逐步檢查 App 的邏輯。
 
 > [!NOTE]
-> Visual Studio 2015 使用者：上述的步驟適用於 Visual Studio 2017。 如果使用的是 Visual Studio 2015，除了 Visual Studio 不會連結到 UpdateTask 之外，您都可以使用相同的技術來觸發和測試它。 VS 2015 中的替代程序是設定 [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)，這會將 UpdateTask 設定為其進入點，並直接從前景 App 觸發執行。
+> Visual Studio 2015 使用者：上述的步驟適用於 Visual Studio 2017 或 Visual Studio 2019。 如果使用的是 Visual Studio 2015，除了 Visual Studio 不會連結到 UpdateTask 之外，您都可以使用相同的技術來觸發和測試它。 VS 2015 中的替代程序是設定 [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)，這會將 UpdateTask 設定為其進入點，並直接從前景 App 觸發執行。
 
 ## <a name="see-also"></a>另請參閱
 

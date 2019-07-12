@@ -6,12 +6,12 @@ keywords: dial, 轉盤, 弧形, 教學
 ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a16b455d692eaf9f73b7dc90200bd0f021025e52
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4cf27f6f9893b3d4cc68c899bf3ff1902320a910
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365662"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820566"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>教學課程：在您的 UWP app 中支援 Surface Dial (及其他轉盤裝置)
 
@@ -41,7 +41,7 @@ Dial 支援三個基本手勢︰
 ## <a name="prerequisites"></a>先決條件
 
 * 執行 Windows 10 Creators Update 或更新版本的電腦 (或虛擬機器)
-* [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 轉盤裝置 (這次僅限 [Surface Dial](https://aka.ms/purchasesurfacedial))
 * 如果您是使用 Visual Studio 開發通用 Windows 平台 (UWP) app 的新手，請在您開始本教學課程之前參閱這些主題︰  
@@ -330,7 +330,7 @@ Dial 支援三個基本手勢︰
     ```
 4. 選取 **\[移除項目\]** 按鈕，然後按住 \[Dial\] 以再次顯示功能表。
 
-    請注意，功能表現在包含工具的預設集合。 回想步驟 3，設定我們的自訂功能表時，我們已移除所有預設工具，並且只新增我們的自訂工具。 我們也注意到，當功能表設定為空白集合時，會恢復目前內容的預設項目  (我們在移除預設工具之前新增了我們的自訂工具)。
+    請注意，功能表現在包含工具的預設集合。 回想步驟 3，設定我們的自訂功能表時，我們已移除所有預設工具，並且只新增我們的自訂工具。 我們也注意到，當功能表設定為空白集合時，會恢復目前內容的預設項目 (我們在移除預設工具之前新增了我們的自訂工具)。
 
 5. 選取 **\[新增項目\]** 按鈕，然後按住 \[Dial\]。
 
@@ -641,6 +641,6 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
 #### <a name="other-samples"></a>其他範例
 [著色書範例](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
-[通用 Windows 平台的範例 (C#和C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+[通用 Windows 平台範例 (C# 和 C++)](https://go.microsoft.com/fwlink/?linkid=832713)
 
 [Windows 傳統桌面範例](https://aka.ms/radialcontrollerclassicsample)

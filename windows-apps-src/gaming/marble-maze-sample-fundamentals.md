@@ -6,12 +6,12 @@ ms.date: 08/22/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 樣本, directx, 基礎
 ms.localizationpriority: medium
-ms.openlocfilehash: 21dcbbcc1fde25877592fafe9e8372e269a72a42
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f04c17609976e8bd8f6c1c6143ed7b992b0bb3c5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368497"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820607"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze 範例基礎觀念
 
@@ -25,7 +25,7 @@ ms.locfileid: "66368497"
 
 以下是本文件所討論在規劃和開發通用 Windows 平台 (UWP) 遊戲時的一些重點。
 
--   在 Visual Studio 中使用 **\[DirectX 11 應用程式 (通用 Windows)\]** Visual C++ 範本來建立 DirectX UWP 遊戲。
+-   使用**DirectX 11 應用程式 (通用 Windows- C++/CX)** 在 Visual Studio 建立您的 DirectX UWP 遊戲中的範本。
 -   Windows 執行階段提供類別和介面，讓您以更現代的物件導向方式來開發 UWP app。
 -   使用物件參考） 致敬 (^) 符號，用來管理 Windows 執行階段變數的存留期[Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class)來管理 COM 物件的存留期並[std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class)或是[std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class)來管理其他所有堆積都配置的存留期C++物件。
 -   在大多數情況下，使用例外狀況處理 (而不是結果程式碼) 來處理意外的錯誤。
@@ -36,19 +36,19 @@ ms.locfileid: "66368497"
 
 如果您已經下載並解壓縮範例，則可以在 Visual Studio 中開啟 **MarbleMaze_VS2017.sln** 檔案 (在 **C++** 資料夾中)，程式碼會隨即顯示出來。
 
-我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 不過，如果您目前沒有專案可提供 DirectX UWP 遊戲所需的基本功能，建議您根據 Visual Studio **\[DirectX 11 應用程式 (通用 Windows)\]** 範本來建立專案，因為它提供一個可執行的基本 3D 應用程式。 若要這樣做，請執行下列步驟：
+我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 不過，如果您還沒有現有的專案提供 DirectX UWP 遊戲所需的基本功能，我們建議您建立 Visual Studio 的專案**DirectX 11 應用程式 (通用 Windows- C++/CX)** 範本因為它提供基本工作的 3D 應用程式。 若要這樣做，請執行下列步驟：
 
-1. 在 Visual Studio 2017 中，選取 **\[檔案\] > \[新增\] > \[專案...\]** 。
+1. 在 Visual Studio 2019，選取**檔案 > 新增 > 專案...**
 
-2. 在 **\[新專案\]** 視窗的左側資訊看板中，選取 **\[已安裝\] > \[範本\] > \[Visual C++\]** 。
+2. 在 **建立新的專案**視窗中，選取**DirectX 11 應用程式 (通用 Windows- C++/CX)** 。 如果您沒有看到此選項，您可能沒有必要的元件，安裝&mdash;請參閱 <<c2> [ 新增或移除工作負載和元件來修改 Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)如需有關如何安裝額外的元件資訊.
 
-3. 在中間的清單中，選取 **\[DirectX 11 應用程式 (通用 Windows)\]** 。 如果沒有看到這個選項，您可能尚未安裝必要的元件 &mdash; 如需有關如何安裝其他元件的詳細資訊，請參閱[新增或移除工作負載和元件以修改 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)。
+![新專案](images/vs2019-marble-maze-sample-fundamentals-1.png)
 
-4. 指定專案的 **\[名稱\]** 、要儲存之檔案的 **\[位置\]** 以及 **\[方案名稱\]** ，然後按一下 **\[確定\]** 。
+3. 選取**下一步]** ，然後輸入**專案名稱**，**位置**要儲存檔案和**方案名稱**，然後選取 [ **建立**。
 
-![新專案](images/marble-maze-sample-fundamentals-1.png)
 
-[DirectX 11 App (通用 Windows)]  範本中的一個重要專案設定是 **/ZW** 選項，它可讓程式使用 Windows 執行階段語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。 請參閱[設定編譯器選項](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options)，以取得如何在 Visual Studio 中設定編譯器選項的詳細資訊。
+
+中的一個重要的專案設定**DirectX 11 應用程式 (通用 Windows- C++/CX)** 範本 **/ZW**選項，可讓程式能夠使用 Windows 執行階段語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。 請參閱[設定編譯器選項](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options)，以取得如何在 Visual Studio 中設定編譯器選項的詳細資訊。
 
 > **請小心**   **/ZW**選項不相容的選項這類 **/clr**。 如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
 

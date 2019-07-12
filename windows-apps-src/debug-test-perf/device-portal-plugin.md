@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: debc4572a26db9e849dd31f17b114f15aa9ef055
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fe1c2130c3fae70f8aa5aa18acee83a6b6247ef5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362485"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820152"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>撰寫 Device Portal 的自訂外掛程式
 
@@ -22,7 +22,7 @@ ms.locfileid: "66362485"
 ## <a name="create-a-new-uwp-app-project"></a>建立新的 UWP app 專案
 在本手冊中，為了簡單起見，我們將在一個方案中建立所有項目。
 
-在 Microsoft Visual Studio 2017 中，建立新的 UWP app 專案。 移至 [檔案] > [新增專案]，並選取 [範本] > [Visual C#] > [Windows 通用] > [空白應用程式 (Windows 通用)]。 將它命名為 "DevicePortalProvider"。 這會是包含應用程式服務的應用程式。 確認您選擇要支援的 Creators Update SDK。  您可能需要更新 Visual Studio，或安裝新的 SDK - 如需詳細資料，請參閱[這裡](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/)。 
+在 Microsoft Visual Studio 2019，建立新的 UWP 應用程式專案。 前往 檔案 > 新增 > 專案並選取空白應用程式 （Windows 通用） 的C#，然後按一下 下一步。 在 設定您新的 專案 對話方塊中。 將專案命名為"DevicePortalProvider 」，然後按一下 建立。 這會是包含應用程式服務的應用程式。 請確定您選擇 「 Windows 10 Creators Update (10.0;組建 15063） 」 支援。  您可能需要更新 Visual Studio，或安裝新的 SDK - 如需詳細資料，請參閱[這裡](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/)。 
 
 ## <a name="add-the-deviceportalprovider-extension-to-your-packageappxmanifest-file"></a>將 devicePortalProvider 延伸模組新增至 package.appxmanifest 檔案
 您需要將某個程式碼新增至*package.appxmanifest*檔案，以讓應用程式作用為 Device Portal 外掛程式。 首先，請在檔案頂端新增下列命名空間定義。 也將它們新增至`IgnorableNamespaces`屬性。

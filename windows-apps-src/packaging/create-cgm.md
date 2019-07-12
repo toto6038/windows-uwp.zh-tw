@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, 內容群組對應, 串流安裝, uwp app 串流安裝, 來源內容群組對應
 ms.localizationpriority: medium
-ms.openlocfilehash: 882db0a6a97c5ee203a072156ca3eb82615607bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e25f30a2288f6be76ce108de2056ab6407187de
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647943"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821037"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>建立和轉換來源內容群組對應
 
@@ -143,7 +143,7 @@ ms.locfileid: "57647943"
 
 ## <a name="convert-sourceappxcontentgroupmapxml-to-appxcontentgroupmapxml"></a>將 SourceAppxContentGroupMap.xml 轉換為 AppxContentGroupMap.xml
 
-若要將 `SourceAppxContentGroupMap.xml` 轉換為最終版本的 `AppxContentGroupMap.xml`，您可以使用 Visual Studio 2017 或 **MakeAppx.exe** 命令列工具。
+要轉換`SourceAppxContentGroupMap.xml`最終版本中， `AppxContentGroupMap.xml`，您可以使用 Visual Studio 2019 或**MakeAppx.exe**命令列工具。
 
 若要使用 Visual Studio 轉換您的內容群組對應：
 1. 新增 `SourceAppxContentGroupMap.xml` 至您的專案資料夾

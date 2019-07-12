@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 58bf8df4551c8bcfc663d2c832bef3a879ff6350
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 67a96b8423d589036ef1c6896f056d097282dc33
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317969"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820231"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>新增朋友圈支援至應用程式
 
@@ -20,7 +20,7 @@ ms.locfileid: "67317969"
 
 ## <a name="requirements"></a>需求
 
-+ Windows 10 和 Microsoft Visual Studio 2017。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
++ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
 + C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="overview"></a>總覽
@@ -53,7 +53,7 @@ ms.locfileid: "67317969"
 
 ```
 
-**After**
+**之後**
 
 ```xml
 <Package
@@ -121,7 +121,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 </Applications>
 ```
 
-**After**
+**之後**
 
 ```Csharp
 <Applications>
@@ -185,7 +185,7 @@ ContactPanel 物件也允許您設定連絡人面板標頭的背景色彩 (若�
 
 若要將聯絡人加上徽章，最上層的快顯通知節點必須包含 hint-people 參數，以指出傳送或相關連絡人。 這個參數可以有以下任何的值：
 + **電子郵件地址** 
-    + 例如 mailto:johndoe@mydomain.com
+    + 例如 [https://doi.org/10.13012/J8PN93H8](mailto:johndoe@mydomain.com)
 + **電話號碼** 
     + 例如 tel:888-888-8888
 + **遠端識別碼** 

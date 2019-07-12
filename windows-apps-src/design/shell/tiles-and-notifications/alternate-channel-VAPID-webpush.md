@@ -1,26 +1,29 @@
 ---
-title: 在 UWP 中使用 Webpush 和 VAPID 替代的推播通道
+title: 在 UWP 中使用 VAPID 替代的推播通道
 description: 使用替代的推播通道 VAPID 的通訊協定，從 UWP 應用程式的說明
 ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10 uwp、 WinRT API WNS
 localizationpriority: medium
-ms.openlocfilehash: bf224b6c0997ce8af86ab2919a1d0513f619a8a3
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 6512eb891967b6c17bc4845d5e47639ae3c97d31
+ms.sourcegitcommit: 0c97c025d751082db3424cb9941bf6688d9b7381
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59067823"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835018"
 ---
-# <a name="alternate-push-channels-using-webpush-and-vapid-in-uwp"></a>在 UWP 中使用 Webpush 和 VAPID 替代的推播通道 
-從開始 Fall Creators Update，UWP 應用程式可以使用 web 推播 VAPID 驗證傳送推播通知。  
+# <a name="alternate-push-channels-using-vapid-in-uwp"></a>在 UWP 中使用 VAPID 替代的推播通道 
+從開始 Fall Creators Update，UWP 應用程式可以使用 VAPID 驗證，傳送推播通知。  
+
+> [!NOTE]
+> 這些 Api 是針對網頁瀏覽器裝載其他網站並建立代表他們執行的通道。  如果您想要將 webpush 通知新增至您的 web 應用程式，我們建議您遵循 W3C 和 WhatWG 標準來建立服務的背景工作角色及傳送通知。
 
 ## <a name="introduction"></a>簡介
 Web 推播標準的引進可讓網站可以像是更多應用程式，即使使用者不在網站傳送通知。
 
 以允許向供應商在推播伺服器的網站建立 VAPID 的驗證通訊協定無關的方式。 與使用 VAPID 的通訊協定的所有廠商，網站可以傳送推播通知，而不需要知道它執行所在的瀏覽器。 這是重大的改進實作每個平台不同的推播通訊協定。 
 
-UWP 應用程式可以使用 webpush 和 VAPID 傳送這些優點，以及使用推播通知。 這些通訊協定可以儲存為新的應用程式的開發時間，並簡化現有應用程式的跨平台支援。 此外，企業應用程式或側載應用程式現在可以傳送通知而不需註冊 Microsoft Store 中。 希望這會開啟新的方式，跨所有平台與使用者互動。  
+UWP 應用程式可以使用 VAPID 傳送這些優點，以及與推播通知。 這些通訊協定可以儲存為新的應用程式的開發時間，並簡化現有應用程式的跨平台支援。 此外，企業應用程式或側載應用程式現在可以傳送通知而不需註冊 Microsoft Store 中。 希望這會開啟新的方式，跨所有平台與使用者互動。  
 
 ## <a name="alternate-channels"></a>替代通道 
 在 UWP，這些 VAPID 通道稱為替代的通道，並提供類似的功能給 web 推播通道。 它們可以觸發應用程式的背景工作執行，請啟用訊息加密，並允許從單一應用程式的多個通道。 如需有關不同的通道型別之間的差異的詳細資訊，請參閱[選擇正確的通道](channel-types.md)。
@@ -106,7 +109,7 @@ protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 如果您想要使用其他加密形式，關鍵在於將未經處理。標頭屬性。 它包含所有已納入推播伺服器的 POST 要求的加密標頭。 從該處，您的應用程式可以使用的金鑰來解密訊息。  
 
 ## <a name="related-topics"></a>相關主題
-- [通知通道類型](channel-types.md)
+- [通知的通道型別](channel-types.md)
 - [Windows 推播通知服務 (WNS)](windows-push-notification-services--wns--overview.md)
 - [PushNotificationChannel 類別](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
 - [PushNotificationChannelManager 類別](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)

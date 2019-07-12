@@ -5,12 +5,12 @@ ms.date: 07/13/2017
 ms.topic: article
 keywords: Windows 10, uwp, 封裝, 架構, 套件設定
 ms.localizationpriority: medium
-ms.openlocfilehash: c691605ad121ee1e218bfe7947a9026a46fc5234
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 12de19b78c3aab27a7fbc29dd5e8183de1a0c0be
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319796"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821014"
 ---
 # <a name="app-package-architectures"></a>應用程式套件架構
 
@@ -44,7 +44,8 @@ ms.locfileid: "67319796"
 ARM 上的 Windows 10 設定包含桌上型電腦、行動裝置和某些 IoT 核心版裝置 (Rasperry Pi 2、Raspberry Pi 3 和 DragonBoard)。 ARM 上的 Windows 10 桌上型電腦是 Windows 系列的新成員，因此如果您是 UWP app 開發人員，您應該提交 ARM 套件至市集，以便為這些電腦提供最佳使用體驗。
 
 >[!NOTE]
-> 若要建置您的 UWP 應用程式原生 ARM64 平台為目標，您必須擁有 Visual Studio 2017 15.9 或更新版本。 如需詳細資訊，請參閱 <<c0> [ 此部落格文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/)。
+> 若要建置您的 UWP 應用程式原生 ARM64 平台為目標，您必須 15.9 或更新版本的 Visual Studio 2017 版或 Visual Studio 2019。 如需詳細資訊，請參閱 <<c0> [ 此部落格文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)。
+
 
 如需詳細資訊，請參閱 < [ARM 上的 Windows 10](../porting/apps-on-arm.md)。 請查看此 //Build 討論，獲得 [ARM 上的 Windows 10](https://channel9.msdn.com/Events/Build/2017/P4171) 示範並了解其運作方式。
 

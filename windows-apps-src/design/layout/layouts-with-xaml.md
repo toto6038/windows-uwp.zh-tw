@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 69facfe9b1cdac408fe1fd63dfa144de072dfdfd
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 480029fd98a302fcc166067cbb383d7e9f8d1829
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468982"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820539"
 ---
 # <a name="responsive-layouts-with-xaml"></a>搭配 XAML 的回應式版面配置
 
@@ -132,7 +132,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 若要從程式碼套用視覺狀態，您可以呼叫 [**VisualStateManager.GoToState**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstatemanager.gotostate) 方法。 例如，若要在 app 視窗為特定大小時套用某個狀態，請處理 [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) 事件並呼叫 **GoToState** 以套用適當的狀態。
 
-此處的 [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 包含二個 VisualState 定義。 第一個是 `DefaultState`，是空的。 套用時，即會套用 XAML 頁面中定義的值。 第二個是 `WideState`，它會將 [**SplitView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView) [**的 DisplayMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview.displaymode) 屬性變更為 **Inline** 並開啟窗格。 如果視窗寬度比 640 個有效像素來得大，即會在 SizeChanged 事件處理常式中套用此狀態。
+此處的 [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 包含二個 VisualState 定義。 第一個是 `DefaultState`，是空的。 套用時，即會套用 XAML 頁面中定義的值。 第二個是 `WideState`，它會將 [**SplitView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)[**的 DisplayMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview.displaymode) 屬性變更為 **Inline** 並開啟窗格。 如果視窗寬度比 640 個有效像素來得大，即會在 SizeChanged 事件處理常式中套用此狀態。
 
 > [!NOTE]
 > Windows 不會針對您的應用程式提供一個偵測執行您應用程式之特定裝置的方法。 它能夠告知您執行應用程式的裝置系列 (行動、桌面等)、實際解析度，以及應用程式可用的螢幕空間量 (應用程式的視窗大小)。 我們建議為 [螢幕大小與中斷點](screen-sizes-and-breakpoints-for-responsive-design.md)定義視覺狀態。
@@ -207,7 +207,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
                 <VisualState>
                     <VisualState.StateTriggers>
                         <!-- VisualState to be triggered when the
-                             window width is >=720 effective pixels. -->
+                             window width is >=640 effective pixels. -->
                         <AdaptiveTrigger MinWindowWidth="640" />
                     </VisualState.StateTriggers>
 

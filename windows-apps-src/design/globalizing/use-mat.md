@@ -1,21 +1,21 @@
 ---
-Description: 多語應用程式工具組 (MAT) 4.0 與 Microsoft Visual Studio 2017 整合，提供 UWP app 翻譯支援、翻譯檔案管理及編輯器工具。
+Description: 多語系應用程式工具組 (MAT) 4.0 可與 Microsoft Visual Studio 2019 的 UWP 應用程式提供的翻譯支援、 翻譯檔案管理和編輯器工具整合。
 title: 使用多語應用程式工具組
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 49f03a1ae5ed0ea1a602103e2181c252c8c29c2f
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 428238f9d8a3468ab308841850ac13e8da22961f
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319324"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820578"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多語應用程式工具組 4.0
 
-多語應用程式工具組 (MAT) 4.0 與 Microsoft Visual Studio 2017 整合，提供 UWP app 翻譯支援、翻譯檔案管理及編輯器工具。 以下是一些工具組的價值主張。
+多語系應用程式工具組 (MAT) 4.0 可與 Microsoft Visual Studio 2019 的 UWP 應用程式提供的翻譯支援、 翻譯檔案管理和編輯器工具整合。 以下是一些工具組的價值主張。
 
 - 可協助您在開發期間管理資源變更與翻譯狀態。
 - 提供根據設定的翻譯提供者選擇語言的 UI。
@@ -38,10 +38,10 @@ ms.locfileid: "67319324"
 
 多語應用程式工具組 4.0 (MAT 4.0) 有兩個部分，每個部分都有自己的安裝程式。
 
-- [Visual Studio 2017 多語應用程式工具組 4.0 延伸模組](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)。 其中包含適用於 Visual Studio 2017 的 MAT 4.0 延伸模組，其形式為 .vsix 安裝程式。
+- [多語系應用程式工具組 4.0 擴充功能適用於 Visual Studio 2017 和更新版本](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)。 這會包含 Visual Studio 2019.vsix 安裝程式的形式的 MAT 4.0 延伸模組。
 - [多語應用程式工具組 4.0 編輯器](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)。 其中包含 MAT 4.0 獨立多語編輯器工具，其形式為 .msi 安裝程式。 它同時也包含適用於 Visual Studio 2015 和 Visual Studio 2013 的 MAT 4.0 延伸模組。
 
-若您是使用 Visual Studio 2017，請接連下載並執行這兩種安裝程式。 若您是使用 Visual Studio 2015 或 Visual Studio 2013，請下載並執行 .msi 安裝程式。
+如果您使用 Visual Studio 2017 或 Visual Studio 2019，然後下載並執行兩種安裝程式，一個接著一個。 若您是使用 Visual Studio 2015 或 Visual Studio 2013，請下載並執行 .msi 安裝程式。
 
 ### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步驟 3。 為您的專案啟用多語應用程式工具組
 

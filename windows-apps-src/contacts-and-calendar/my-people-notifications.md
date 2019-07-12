@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cfd970b3ca070218adcea86612016e567df3879
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: bd9071eaaea0dd88a3dad06de78eff82b29725ec
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318014"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820233"
 ---
 # <a name="my-people-notifications"></a>朋友圈通知
 
@@ -20,7 +20,7 @@ ms.locfileid: "67318014"
 
 ## <a name="requirements"></a>需求
 
-+ Windows 10 和 Microsoft Visual Studio 2017。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
++ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
 + C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="how-it-works"></a>運作方式

@@ -5,12 +5,12 @@ keywords: 應用程式延伸模組, 應用程式服務, 背景
 ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a7bb6f719f95766c07c1e5f92b50148cf0f2cce
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2cfb3be556cb681bc9ed2d9d46bb86304182e5ca
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642363"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821022"
 ---
 # <a name="create-and-host-an-app-extension"></a>建立和裝載應用程式延伸模組
 
@@ -18,7 +18,7 @@ ms.locfileid: "57642363"
 
 本文附有程式碼範例：
 - 下載並解壓縮[數學延伸模組程式碼範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)。
-- 在 Visual Studio 2017 中，開啟 MathExtensionSample.sln。 將組建類型設定為 x86 (**\[建置\]** > **\[組態管理員\]**，然後將兩個專案的 **\[平台\]** 變更為 **\[x86\]**)。
+- 在 Visual Studio 2019，開啟 [MathExtensionSample.sln]。 將組建類型設定為 x86 ( **\[建置\]**  >  **\[組態管理員\]** ，然後將兩個專案的 **\[平台\]** 變更為 **\[x86\]** )。
 - 部署方案：**建置** > **部署解決方案**。
 
 ## <a name="introduction-to-app-extensions"></a>應用程式延伸模組簡介
@@ -41,7 +41,7 @@ UWP 應用程式延伸模組是具有延伸宣告的 UWP app，此宣告可讓�
 4. 定義主機與其延伸模組通訊的方式。
 5. 在主機應用程式中使用 [Windows.ApplicationModel.AppExtensions](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppExtensions) API 來存取延伸模組。
 
-我們來仔細查看實作假想小算盤的[數學延伸模組程式碼範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)，看看如何完成這項工作，您可以使用延伸模組來加入新功能。 在 Microsoft Visual Studio 2017 中，從程式碼範例載入 **MathExtensionSample.sln**。
+我們來仔細查看實作假想小算盤的[數學延伸模組程式碼範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)，看看如何完成這項工作，您可以使用延伸模組來加入新功能。 在 Microsoft Visual Studio 2019，載入**MathExtensionSample.sln**程式碼範例。
 
 ![數學延伸模組程式碼範例](images/mathextensionhost-calctab.png)
 
@@ -120,13 +120,13 @@ _Package.appxmanifest MathExtension 專案中：_
 
 `<uap3:AppExtension>` 屬性的意義如下：
 
-|屬性|描述|必要|
+|屬性|描述|必要項|
 |---------|-----------|:------:|
 |**名稱**|這是延伸協定名稱。 符合主機中宣告的 **Name** 時，該主機將可找到此延伸模組。| :heavy_check_mark: |
 |**ID**| 唯一識別此延伸模組。 由於可能會有多個使用相同延伸協定的延伸模組 (試想支援數個延伸模組的繪圖應用程式)，您可以使用 ID 來加以區分。 應用程式延伸主機可以使用 ID 推斷一些關於延伸模組類型的資訊。 例如，您可能會有一個延伸模組針對傳統型設計，另一個則針對行動裝置設計，此 ID 即為區分方法。 您也可以使用 **Properties** 元素進行區分，如下所述。| :heavy_check_mark: |
 |**DisplayName**| 可以從主機應用程式中用來讓使用者認明延伸模組。 此屬性可查詢 (而且可以使用) [新資源管理系統](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 進行當地語系化。 當地語系化內容是從應用程式延伸套件 (而非主機應用程式) 載入。 | |
-|**描述** | 可以從主機應用程式中用來向使用者描述延伸模組。 此屬性可查詢 (而且可以使用) [新資源管理系統](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 進行當地語系化。 當地語系化內容是從應用程式延伸套件 (而非主機應用程式) 載入。 | |
-|**公用資料夾**|與封裝根目錄相關之資料夾的名稱，您可以透過此資料夾與延伸主機共用內容。 依慣例，名稱是「Public」，但您可以使用任何符合延伸模組中資料夾的名稱。| :heavy_check_mark: |
+|**說明** | 可以從主機應用程式中用來向使用者描述延伸模組。 此屬性可查詢 (而且可以使用) [新資源管理系統](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 進行當地語系化。 當地語系化內容是從應用程式延伸套件 (而非主機應用程式) 載入。 | |
+|**PublicFolder**|與封裝根目錄相關之資料夾的名稱，您可以透過此資料夾與延伸主機共用內容。 依慣例，名稱是「Public」，但您可以使用任何符合延伸模組中資料夾的名稱。| :heavy_check_mark: |
 
 `<uap3:Properties>` 是選擇性的項目，其中包含自訂主機可以在執行階段讀取的中繼資料。 程式碼範例將延伸模組實作為應用程式服務，因此主機需要一個取得該應用程式服務名稱的方式，以便呼叫該服務。 應用程式服務的名稱是在我們已定義的 <Service> 中定義 (我們可以隨意命名)。 程式碼範例中的主機於執行階段尋找此屬性，以得知應用程式服務的名稱。
 
@@ -337,20 +337,20 @@ public ExtensionManager(string extensionContractName)
 1. 在 Visual Studio 的一個執行個體中載入主機專案。
 2. 在 Visual Studio 的另一個執行個體中載入延伸模組。
 3. 在偵錯工具中啟動主機應用程式。
-4. 在偵錯工具中啟動延伸模組  (如果您想要部署而非偵錯延伸模組，以測試主機的套件安裝事件時，請改為執行 **\[建置\] &gt; \[部署方案\]**)。
+4. 在偵錯工具中啟動延伸模組 (如果您想要部署而非偵錯延伸模組，以測試主機的套件安裝事件時，請改為執行 **\[建置\] &gt; \[部署方案\]** )。
 
 現在您可以在主機和延伸模組中叫用中斷點。
-如果開始偵延伸模組應用程式本身，您將會看到應用程式的空白視窗。 如果不想看到空白視窗，您可以將延伸模組專案的偵錯設定變更為不要在開始偵錯時啟動應用程式而是進行偵錯 (以滑鼠右鍵按一下延伸模組專案、**\[屬性\]** > **\[偵錯\]** > 選取 **\[不啟動，但在我的程式碼啟動時進行偵錯\]**)。您依舊需要對延伸模組專案啟動偵錯 (**F5**)，但會等候直到主機啟動延伸模組後，才叫用延伸模組中的中斷點。
+如果開始偵延伸模組應用程式本身，您將會看到應用程式的空白視窗。 如果不想看到空白視窗，您可以將延伸模組專案的偵錯設定變更為不要在開始偵錯時啟動應用程式而是進行偵錯 (以滑鼠右鍵按一下延伸模組專案、 **\[屬性\]**  >  **\[偵錯\]** > 選取 **\[不啟動，但在我的程式碼啟動時進行偵錯\]** )。您依舊需要對延伸模組專案啟動偵錯 (**F5**)，但會等候直到主機啟動延伸模組後，才叫用延伸模組中的中斷點。
 
 **偵錯的程式碼範例**
 
 在程式碼範例中，主機與延伸模組位於相同的方案。 執行下列動作以進行偵錯：
 
-1. 確認 **MathExtensionHost** 是啟始專案 (以滑鼠右鍵按一下 **MathExtensionHost** 專案，按一下 **\[設定為啟始專案\]**)。
+1. 確認 **MathExtensionHost** 是啟始專案 (以滑鼠右鍵按一下 **MathExtensionHost** 專案，按一下 **\[設定為啟始專案\]** )。
 2. 在 **MathExtensionHost** 專案中 ExtensionManager.cs 的 `Invoke` 上放置中斷點。
 3. 按下 **F5** 以執行 **MathExtensionHost** 專案。
 4. 在 **MathExtension** 專案中 App.xaml.cs 的 `OnAppServiceRequestReceived` 上放置中斷點。
-5. 開始偵錯 **MathExtension** 專案 (以滑鼠右鍵按一下 **MathExtension** 專案，**\[偵錯\] > \[開始新執行個體\]**)，這樣將會進行部署，並在主機中觸發套件安裝事件。
+5. 開始偵錯 **MathExtension** 專案 (以滑鼠右鍵按一下 **MathExtension** 專案， **\[偵錯\] > \[開始新執行個體\]** )，這樣將會進行部署，並在主機中觸發套件安裝事件。
 6. 在 **MathExtensionHost** 應用程式中，瀏覽至 **\[Calculation\]** 頁面，然後按一下 **\[x^y\]** 以啟動延伸模組。 首先會叫用 `Invoke()`中斷點，您可以看到正在進行延伸模組應用程式服務呼叫。 接著叫用延伸模組中的 `OnAppServiceRequestReceived()` 方法，您可以看到應用程式服務計算結果並將結果傳回。
 
 **實作為應用程式服務的擴充功能疑難排解**

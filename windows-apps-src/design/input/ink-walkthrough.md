@@ -6,12 +6,12 @@ keywords: 筆跡, 教學
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be7005e64a431d65006315fbee551e5c6c3a2a6f
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 929d72da46c52cfdb510f1e1b6a97ddcbbe066d5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343277"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820576"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>教學課程：UWP 應用程式中的支援連結
 
@@ -36,7 +36,7 @@ ms.locfileid: "58343277"
 ## <a name="prerequisites"></a>先決條件
 
 * 執行目前版本的 Windows 10 的電腦 (或虛擬機器)
-* [Visual Studio 2017 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 根據您的設定，您可能必須安裝[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 套件，並啟用**開發人員模式**(設定-> [更新您系統設定] 中（& s) 開發人員使用開發人員功能-> [安全性]->)。
 * 如果您是使用 Visual Studio 開發通用 Windows 平台 (UWP) app 的新手，請在您開始本教學課程之前參閱這些主題︰  
@@ -52,10 +52,10 @@ ms.locfileid: "58343277"
 
 從 [GitHub](https://github.com/) 的 [windows-appsample-get-started-ink sample](https://aka.ms/appsample-ink) 下載此 Visual Studio 範例和原始程式碼：
 
-1. 選取綠色的 **\[Clone or download\]**(複製或下載) 按鈕  
+1. 選取綠色的 **\[Clone or download\]** (複製或下載) 按鈕  
 ![複製存放庫](images/ink/ink-clone.png)
 2. 如果您有 GitHub 帳戶，您可以選擇 **\[在 Visual Studio 中開啟\]** 將存放庫複製到您的本機電腦 
-3. 如果您沒有 GitHub 帳戶，或者您只想要專案的本機複本，請選擇 **\[下載 ZIP\]**(您必須定期返回以下載最新的更新)
+3. 如果您沒有 GitHub 帳戶，或者您只想要專案的本機複本，請選擇 **\[下載 ZIP\]** (您必須定期返回以下載最新的更新)
 
 > [!IMPORTANT]
 > 範例中大部分的程式碼已標示註解。當我們逐步進行每個步驟時，您會被要求取消註解各個不同區段的程式碼。 在 Visual studio 中，只要反白顯示程式碼行，並按 CTRL-K 然後按 CTRL-U。
@@ -79,7 +79,7 @@ ms.locfileid: "58343277"
 3. 按下 F5 進行編譯、部署和執行。  
 
    > [!NOTE]
-   > 或者，您可以選取 **\[偵錯\]** > **\[開始偵錯\]** 功能表項目，或選取此處顯示的 **\[本機電腦**執行\] 按鈕。
+   > 或者，您可以選取 **\[偵錯\]**  >  **\[開始偵錯\]** 功能表項目，或選取此處顯示的 **\[本機電腦**執行\] 按鈕。
    > ![Visual Studio 建置專案的按鈕](images/ink/ink-vsrun-small.png)
 
 應用程式視窗隨即開啟，並在啟動顯示畫面出現幾秒後，您會看到這個初始畫面。
@@ -211,8 +211,8 @@ ms.locfileid: "58343277"
 
 > [!NOTE]
 > 手寫辨識可以透過**手寫筆和 Windows Ink** 設定改進︰
-> 1. 開啟 [開始] 功能表，然後選取 **\[設定\]**。
-> 2. 從 [\設定\] 畫面，選取 **\[裝置\]** > **\[手寫筆和 Windows Ink\]**。
+> 1. 開啟 [開始] 功能表，然後選取 **\[設定\]** 。
+> 2. 從 [\設定\] 畫面，選取 **\[裝置\]**  >  **\[手寫筆和 Windows Ink\]** 。
 > ![從 Ink 工作區中的素描板 InkToolbar](images/ink/ink-settings-small.png)
 > 3. 選取 **\[了解我的手寫內容\]** 以開啟 **\[個人化手寫\]** 對話方塊。
 > ![從 Ink 工作區中的素描板 InkToolbar](images/ink/ink-settings-handwritingpersonalization-small.png)
@@ -464,7 +464,7 @@ Windows 筆跡也支援從剪貼簿複製並貼上筆墨筆劃或複製並貼到
 
 ## <a name="related-articles"></a>相關文章
 
-* [畫筆互動和 UWP 應用程式中的 Windows 筆跡](pen-and-stylus-interactions.md)
+* [UWP 應用程式中的手寫筆互動與 Windows Ink](pen-and-stylus-interactions.md) \(部分機器翻譯\)
 
 ### <a name="samples"></a>範例
 

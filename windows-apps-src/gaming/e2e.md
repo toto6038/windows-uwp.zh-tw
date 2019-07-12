@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: 950f9415e63a31a5204a15f4f72b968535489cfa
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 53e977e07337c11036916c2087a00e9ec7a95118
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321247"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821121"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 遊戲開發指南
 
@@ -521,7 +521,7 @@ C++/CX 是一種高效能、低額外負荷的語言，可提供結合速度、�
     </tr>
     <tr>
         <td>Visual C++ 程式設計指南與參考</td>
-        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">視覺化C++在 Visual Studio 2017</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">視覺化C++在 Visual Studio 2019</a></td>
     </tr>
 </table>
  
@@ -1046,7 +1046,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     </colgroup>
     <tr>
         <td>處理應用程式週期轉換</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle">應用程式生命週期</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle">應用程式週期</a></td>
     </tr>
     <tr>
         <td>使用 Microsoft Visual Studio 觸發應用程式轉換</td>
