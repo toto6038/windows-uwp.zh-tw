@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, 偵錯, 測試, 效能
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bd1c15a971beca0b0015e774865808310138fd0
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: c75eec01a41d31270e55b0da6f11ed38c971e8cb
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713822"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820334"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和偵錯 UWP 應用程式
 
@@ -25,10 +25,10 @@ Microsoft Visual Studio 可讓您部署和偵錯您的通用 Windows 平台 (UWP
 
 ![偵錯裝置目標清單](images/debug-device-target-list.png)
 
-- [模擬器] 會將 App 部署到您目前開發電腦上的模擬環境。  此選項才可用如果您的應用程式**目標平台最小值。版本**小於或等於您的開發電腦上的作業系統。
-- [本機電腦] 會將 App 部署到您目前的開發電腦。  此選項才可用如果您的應用程式**目標平台最小值。版本**小於或等於您的開發電腦上的作業系統。
-- [遠端電腦] 會讓您指定用來部署 App 的遠端目標。  如需有關部署到遠端電腦的詳細資訊，請參閱[指定遠端裝置](#specifying-a-remote-device)。
-- [裝置] 會將 App 部署到已透過 USB 連接的裝置。  裝置必須已由開發人員解除鎖定，並且畫面已解除鎖定。
+- **\[模擬器\]** 會將 App 部署到您目前開發電腦上的模擬環境。 此選項才可用如果您的應用程式**目標平台最小值。版本**小於或等於您的開發電腦上的作業系統。
+- **\[本機電腦\]** 會將 App 部署到您目前的開發電腦。 此選項才可用如果您的應用程式**目標平台最小值。版本**小於或等於您的開發電腦上的作業系統。
+- **\[遠端電腦\]** 會讓您指定用來部署 App 的遠端目標。 如需有關部署到遠端電腦的詳細資訊，請參閱[指定遠端裝置](#specifying-a-remote-device)。
+- **\[裝置\]** 會將 App 部署到已透過 USB 連接的裝置。 裝置必須已由開發人員解除鎖定，並且畫面已解除鎖定。
 - [模擬器] 目標會開機，並以名稱中指定的設定將 App 部署到模擬器。  模擬器是只有在 HYPER-V 上的可用啟用執行 Windows 8.1 機器，或超出。
 
 ## <a name="debugging-deployed-apps"></a>偵錯已部署的 App
@@ -65,7 +65,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 ![[遠端連線] 對話方塊](images/debug-remote-connections.png)
 
-若要返回這個對話方塊，您可以開啟專案屬性並移至 [偵錯] 索引標籤。  從該處選取 [遠端電腦:] 旁的 [尋找]  
+若要返回這個對話方塊，您可以開啟專案屬性並移至 [偵錯] 索引標籤。  從該處選取 [遠端電腦:] 旁的 [尋找] 
 
 ![[偵錯] 索引標籤](images/debug-remote-machine-config.png)
 
@@ -98,10 +98,10 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 ## <a name="passing-command-line-debug-arguments"></a>傳遞命令列偵錯引數
 
-在 Visual Studio 2017 中，您可以在開始偵錯 UWP app 時傳遞命令列偵錯引數。 您可以從 *args* 參數存取命令列偵錯引數，而此參數位於 [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) 類別的 **OnLaunched** 方法中。 若要指定命令列偵錯引數，請開啟專案屬性，並導覽至 **\[偵錯\]** 索引標籤。
+在 Visual Studio 2019，您可以在您開始偵錯 UWP 應用程式時，傳遞命令列偵錯引數。 您可以從 *args* 參數存取命令列偵錯引數，而此參數位於 [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) 類別的 **OnLaunched** 方法中。 若要指定命令列偵錯引數，請開啟專案屬性，並導覽至 **\[偵錯\]** 索引標籤。
 
 > [!NOTE]
-> 這是在 Visual Studio 2017 (版本 15.1) for C#、VB 和 C++ 中提供。 較新的 Visual Studio 2017 版本提供 JavaScript。 命令列偵錯引數適用於所有部署類型，但模擬器除外。
+> 這是在 Visual Studio 2017 (版本 15.1) for C#、VB 和 C++ 中提供。 JavaScript 是在較新版本。 命令列偵錯引數適用於所有部署類型，但模擬器除外。
 
 針對 C# 和 VB UWP 專案，您會在 **\[開始選項\]** 下方看到 **\[命令列引數:\]** 欄位。
 
@@ -153,7 +153,7 @@ C++ UWP app 的屬性頁面會看起來如下。
 
 ### <a name="copy-files-to-device"></a>將檔案複製到裝置
 
-[將檔案複製到裝置] 會將檔案實際透過網路傳輸到遠端裝置。  它會將已建置的封裝配置複製並註冊到 [配置資料夾路徑]。  Visual Studio 會讓複製到裝置的檔案與您 Visual Studio 專案中的檔案保持同步；不過，還有一個 [保留裝置上的所有檔案，包括不再屬於您的配置者] 選項。  選取這個選項意謂著任何先前複製到遠端裝置上但已不再屬於您專案的檔案，將會保留在遠端裝置上。
+**\[將檔案複製到裝置\]** 會將檔案實際透過網路傳輸到遠端裝置。 它會將已建置的封裝配置複製並註冊到 [配置資料夾路徑]。  Visual Studio 會讓複製到裝置的檔案與您 Visual Studio 專案中的檔案保持同步；不過，還有一個 [保留裝置上的所有檔案，包括不再屬於您的配置者] 選項。  選取這個選項意謂著任何先前複製到遠端裝置上但已不再屬於您專案的檔案，將會保留在遠端裝置上。
 
 您在 [將檔案複製到裝置] 時指定的 [封裝註冊路徑] 是作為檔案複製目的地之遠端裝置上的實體位置。   此路徑可以指定為任何相對路徑。 部署檔案的位置會是開發檔案根目錄的相對位置，此根目錄會依目標裝置而有不同。 如果多位開發人員共用相同裝置並處理含有一些組建差異的封裝，則指定此路徑會相當有用。
 
@@ -197,7 +197,7 @@ C++ UWP app 的屬性頁面會看起來如下。
 
 - **允許區域網路回送**
 
-  基於安全性考量，系統不允許以標準方式安裝的 UWP app 對其安裝所在的裝置進行網路呼叫。 根據預設，Visual Studio 部署會從這個已部署的應用程式規則建立免套用原則。 這個免套用原則可讓您在單一電腦上測試通訊程序。 再提交至 Microsoft Store 應用程式，您應該測試您的應用程式，而不需要豁免。
+  基於安全性考量，系統不允許以標準方式安裝的 UWP app 對其安裝所在的裝置進行網路呼叫。 根據預設，Visual Studio 部署會針對部署應用程式建立此規則的豁免。 此豁免可讓您測試在單一機器上的通訊程序。 再提交至 Microsoft Store 應用程式，您應該測試您的應用程式，而不需要豁免。
 
   從 App 移除網路回送豁免：
 
@@ -250,5 +250,5 @@ WinDbg 當中最常用的其中一個命令是 `!analyze -v`，這是用來擷�
 
 ## <a name="related-topics"></a>相關主題
 
-- [測試和偵錯工具的程序生命週期管理 (PLM)](testing-debugging-plm.md)
+- [處理程序生命週期管理 (PLM) 的測試與偵錯工具](testing-debugging-plm.md)
 - [偵錯、測試及效能](index.md)
