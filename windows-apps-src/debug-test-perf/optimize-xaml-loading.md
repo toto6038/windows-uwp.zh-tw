@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: aacf51cc320a0835f906e91806b686a88907640e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f46967cd26f10510e2620229fee0eec13ca7f52a
+ms.sourcegitcommit: 7bbc24d770bf23a8d7e2b234503aad743eb354f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317623"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67852060"
 ---
 # <a name="optimize-your-xaml-markup"></a>最佳化您的 XAML 標記
 
@@ -159,7 +159,7 @@ ListView 及其子系未載入記憶體中。
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>UserControl 中的 ResourceDictionary
 
-在 [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) 內定義的 ResourceDictionary 會受到不利影響。 平台會針對 UserControl 的每個執行個體建立這類 ResourceDictionary 的複本。 如果您有一個使用頻率很高的 UserControl，則請將 ResourceDictionary 從 UserControl 中移出，然後將它放到頁面層級。
+在 [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) 內定義的 ResourceDictionary 會受到不利影響。 平台會針對 UserControl 的每個執行個體建立這類 ResourceDictionary 的複本。 如果您有許多使用 UserControl，然後移出 UserControl ResourceDictionary，並將它放在頁面層級。
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Resource 和 ResourceDictionary 領域
 
