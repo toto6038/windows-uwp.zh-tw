@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 商務用 store, 教育用 store, 組織, 大量授權, 企業版, 教育 store, 商務 store, 大量購買, 大量
 localizationpriority: high
-ms.openlocfilehash: b7f0ecc1eb7faec39eaad925ccd6c9d501d39749
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8cfa4d4a18112ef1cad793048399d04835ff4633
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63788398"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320577"
 ---
 # <a name="organizational-licensing-options"></a>組織授權選項
 
@@ -59,7 +59,7 @@ ms.locfileid: "63788398"
 目前，位於特定市場中的開發人員帳戶都能透過商務用 Microsoft 網上商店提供大量取得付費應用程式。 
 
 > [!NOTE]
-> 在某些市場中，針對相同的價格區間，商務用 Microsoft Store 或教育用 Microsoft Store 中顯示的應用程式價格可能會不同於 Microsoft Store 中顯示零售客戶價格。 組織購買的收益支付與消費者購買您 app 的運作方式相同。 如需詳細資訊，請參閱[獲得報酬](getting-paid-apps.md)和[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 如需可提供商務用 Microsoft 網上商店和教育用 Microsoft 網上商店的市場清單，請參閱[商務用 Microsoft 網上商店和教育用 Microsoft 網上商店概觀](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets) \(部分機器翻譯\)。
+> 在某些市場中，針對相同的價格區間，商務用 Microsoft Store 或教育用 Microsoft Store 中顯示的應用程式價格可能會不同於 Microsoft Store 中顯示零售客戶價格。 組織購買的收益支付與消費者購買您 app 的運作方式相同。 如需詳細資訊，請參閱[獲得報酬](getting-paid-apps.md)和[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 如需可提供商務用 Microsoft 網上商店和教育用 Microsoft 網上商店的市場清單，請參閱[商務用 Microsoft 網上商店和教育用 Microsoft 網上商店概觀](https://docs.microsoft.com/windows/manage/windows-store-for-business-overview#supported-markets) \(部分機器翻譯\)。
 
 如果以下未列出您的國家或地區，您的付費應用程式目前不會在商務用 Microsoft 網上商店和教育用 Microsoft 網上商店中提供使用。 如果是這種情況，您針對您的付費應用程式所做的組織授權選項可能會稍後套用，因為我們未來可能會新增從其他開發人員帳戶市場支援付費應用程式提交。
 

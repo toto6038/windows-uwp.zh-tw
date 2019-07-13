@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e42f627624cb559a84b7da73958f7aa93b0fee2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c6f66d90e96b0dfe941e4311ebf79cd3b9b5f4ae
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564554"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318754"
 ---
 # <a name="create-your-first-app"></a>建立您的第一個 App
 
@@ -65,7 +65,7 @@ ms.locfileid: "64564554"
 
 Web 應用程式很容易就可以在 UWP 架構中封裝成 Web 應用程式，並在 Microsoft Store 上推廣。
 
-* [託管的 Web 應用程式](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+* [託管的 Web 應用程式](https://developer.microsoft.com/windows/pwa)
 * [將您的 Web 應用程式轉換成 UWP 應用程式](../porting/hwa-create-windows.md)
 
 

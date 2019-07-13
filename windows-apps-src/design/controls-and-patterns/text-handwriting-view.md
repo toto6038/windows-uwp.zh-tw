@@ -11,12 +11,12 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f7b31898e6a90410e4edc73ee36f71a7e4d94155
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 262e033c8393544e3b5b8394d0e9a5be410cd080
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63774780"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319481"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>含手寫檢視的文字輸入
 
@@ -275,8 +275,7 @@ StackPanel 現在大於 TextBox，因此 [HandwritingView](https://docs.microsof
 
 ![具有自訂 UI 的 TextBox](images/handwritingview/textbox-with-customui.png)
 
-下列範例示範如何接聽 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)的 [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened)、[Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed
-)和 [SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) 事件，以設定 [Popup](https://docs.microsoft.com/uwp/api/windows.ui.popups) 的位置。
+下列範例示範如何接聽 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)的 [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened)、[Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed)和 [SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) 事件，以設定 [Popup](https://docs.microsoft.com/uwp/api/windows.ui.popups) 的位置。
 
 ```csharp
 private void Search_HandwritingViewOpened(

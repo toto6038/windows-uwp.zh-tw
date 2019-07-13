@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 232da8afeccf5d82f65b51ae0a40905b3433d412
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e975c47ae783fe9984950cf30cc82844b344aa7c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364537"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319267"
 ---
 # <a name="pivot"></a>樞紐分析
 
@@ -145,7 +145,7 @@ Pivot 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 您可以使用 [LeftHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.leftheader) 和 [RightHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.rightheader) 屬性來將其他控制項新增到樞紐標頭。
 
-例如，您可以在 Pivot 的 RightHeader 中加入 [CommandBar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/app-bars)。
+例如，您可以在 Pivot 的 RightHeader 中加入 [CommandBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/app-bars)。
 
 ```xaml
 <Pivot>
@@ -191,7 +191,7 @@ Pivot 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) \(英文\) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-topics"></a>相關主題
 

@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d0f3e7ca98f01750d7d05cc06b56783e3b32359
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 30ffec0f2a5e771e649eda6240d9e7ef90f50890
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564456"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318799"
 ---
 # <a name="get-set-up"></a>開始設定
 
@@ -34,7 +34,7 @@ Microsoft Visual Studio 2019 可協助您設計、撰寫、測試您的應用程
 
 ![其他 UWP 的 Visual Studio 工具](images/vs-2017-community-setup.png)
 
-需要 Visual Studio 上的協助嗎？ 請參閱[開始使用 Visual Studio](https://www.visualstudio.com/vs/getting-started)。
+需要 Visual Studio 上的協助嗎？ 請參閱[開始使用 Visual Studio](https://visualstudio.microsoft.com/vs/getting-started/)。
 
 如果您已經開始使用 Visual Studio，但發現您遺失部分元件，則可以從 [新增專案]  對話方塊再次啟動安裝程式：
 

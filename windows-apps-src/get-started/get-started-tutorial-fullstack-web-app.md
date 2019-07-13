@@ -5,12 +5,12 @@ keywords: 託管的 Web 應用程式, HWA, REST API, 單頁應用程式, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c38a7182cd27abcfb0de66c721f0e06b95b695d5
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b1b837d6585507311dc2246d42f3094ce8b07421
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366979"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321170"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 
@@ -233,7 +233,7 @@ Swagger 檔案 (config\swagger.json) 會指示我們的伺服器如何處理各�
  - 此 [guess.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/guess.js?token=ACEfkvY69Zr1AZQ4iXgfCgDxeinT21bBks5ZFhYBwA%3D%3D) 程式碼到您的 **data\guess.js** 檔案
  - 此 [new.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/new.js?token=ACEfkiqeDN0HjZ4-gIKRh3wfVZPSlEmgks5ZFhYPwA%3D%3D) 程式碼到您的 **data\new.js** 檔案
 
-為清楚明瞭，我們將我們的遊戲板儲存在我們的 Node 伺服器上的全域變數 (`global.board`) 中。 但實際上，您會使用雲端儲存空間 (像是 Google [Cloud Datastore](https://cloud.google.com/datastore/) 或 Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/))，讓此加入同時支援多個遊樂和玩家的可用記憶遊戲 API 服務。
+為清楚明瞭，我們將我們的遊戲板儲存在我們的 Node 伺服器上的全域變數 (`global.board`) 中。 但實際上，您會使用雲端儲存空間 (像是 Google [Cloud Datastore](https://cloud.google.com/datastore/) 或 Azure [DocumentDB](https://azure.microsoft.com/services/cosmos-db/))，讓此加入同時支援多個遊樂和玩家的可用記憶遊戲 API 服務。
 
 請確定您已儲存 VS Code 中的所有變更，再次啟動您的伺服器 (VS Code 中的 F5 或殼層的 `npm start`，然後瀏覽至 [https://localhost:8000](https://localhost:8000)) 來測試遊戲 API。
 
@@ -284,7 +284,7 @@ Azure 文件將逐步引導您完成：
 
 ### <a name="going-further"></a>更進一步
 
-為了讓記憶遊戲 API 成為生產應用程式可用的後端服務，您會想要將程式碼擴充為支援多個玩家和遊戲。 因此，您可能需要為您的 API 探查[驗證](https://swagger.io/docs/specification/authentication/) (用於管理玩家身分識別)、[NoSQL 資料庫](https://docs.microsoft.com/en-us/azure/documentdb/) (用於追蹤遊戲和玩家)，以及一些基本[單元測試](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis)。
+為了讓記憶遊戲 API 成為生產應用程式可用的後端服務，您會想要將程式碼擴充為支援多個玩家和遊戲。 因此，您可能需要為您的 API 探查[驗證](https://swagger.io/docs/specification/authentication/) (用於管理玩家身分識別)、[NoSQL 資料庫](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/) (用於追蹤遊戲和玩家)，以及一些基本[單元測試](https://apigee.com/about/blog/api-technology/swagger-test-templates-test-your-apis)。
 
 以下是一些可讓您更進一步的實用資源︰
 
@@ -292,7 +292,7 @@ Azure 文件將逐步引導您完成：
 
  - [Azure Web + 行動裝置版文件](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
 
- - [Azure DocumentDB 文件](https://docs.microsoft.com/en-us/azure/documentdb/index)
+ - [Azure DocumentDB 文件](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
 ## <a name="part-ii-build-a-single-page-web-application"></a>部分 II：建置單頁 Web 應用程式
 
@@ -575,7 +575,7 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
 ### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5.使用 CSS 轉換新增卡片翻轉動畫
 使用 [開始] 資料夾的 style.css 檔取代 memory\public\stylesheets 中的 style.css 檔。
 
-使用 [CSS 轉換](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/css/transforms)新增翻轉動作可提供卡片逼真的 3D 翻轉動作。 遊戲中的卡片是使用下列 HTML 結構建立並以程式設計方式新增到遊戲板 (在之前顯示的`drawGameBoard()` 函式中)。
+使用 [CSS 轉換](https://developer.mozilla.org/docs/Web/CSS/CSS_Transforms)新增翻轉動作可提供卡片逼真的 3D 翻轉動作。 遊戲中的卡片是使用下列 HTML 結構建立並以程式設計方式新增到遊戲板 (在之前顯示的`drawGameBoard()` 函式中)。
 
 ``` html
 <div class="flipContainer">
@@ -642,6 +642,6 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
 
  - [將您的應用程式開發專案部署至 Azure 網站](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [將您的 Web 應用程式轉換為通用 Windows 平台 (UWP) 應用程式](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
+ - [將您的 Web 應用程式轉換為通用 Windows 平台 (UWP) 應用程式](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)
 
- - [發佈 Windows 應用程式](https://developer.microsoft.com/en-us/store/publish-apps)
+ - [發佈 Windows 應用程式](https://docs.microsoft.com/windows/uwp/publish/)

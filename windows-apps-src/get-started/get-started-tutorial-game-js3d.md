@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1eba68d1046892a67d779d353fd9b2e6bf224e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b4ce91e32b14bdf81b40b24e810e0bd86bcaa99b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366946"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321082"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 建立 3D JavaScript 遊戲
 
@@ -1086,5 +1086,5 @@ function lockChange() {
 1.  您必須[註冊](https://developer.microsoft.com/store/register)為 Windows 開發人員。
 2.  您必須使用應用程式提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 3.  必須提交應用程式以取得[認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
-如需詳細資訊，請參閱[發佈 UWP 應用程式](https://developer.microsoft.com/store/publish-apps)。
+如需詳細資訊，請參閱[發佈 Windows 應用程式與遊戲](https://docs.microsoft.com/windows/uwp/publish/)。
 

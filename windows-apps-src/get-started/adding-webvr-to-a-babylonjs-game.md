@@ -5,12 +5,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: webvr, edge, web development, babylon, babylonjs, babylon.js, javascript, web 開發
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d8029752790e19adc5eb4266615372fb346e001
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 5f212e4e06035134b0ac5b5ea69381ed0d985783
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63798205"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321158"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>新增 WebVR 支援至 3D Babylon.js 遊戲
 
@@ -23,7 +23,7 @@ ms.locfileid: "63798205"
 </iframe>
 
 這是在平面螢幕上運作不錯的 3D 遊戲，但是在 VR 中如何呢？
-在此教學課程中，我們會逐步進行幾個步驟建立並使用 WebVR 執行。 我們將使用 [Windows Mixed Reality](https://developer.microsoft.com/en-us/windows/mixed-reality) 頭戴式裝置，可在 Microsoft Edge 中點選進入新增的 WebVR 支援。 在我們套用這些變更到遊戲後，您可以預期它也可在支援 WebVR 的其他瀏覽器/頭戴式裝置組合中運作。
+在此教學課程中，我們會逐步進行幾個步驟建立並使用 WebVR 執行。 我們將使用 [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) 頭戴式裝置，可在 Microsoft Edge 中點選進入新增的 WebVR 支援。 在我們套用這些變更到遊戲後，您可以預期它也可在支援 WebVR 的其他瀏覽器/頭戴式裝置組合中運作。
 
 
 
@@ -132,12 +132,12 @@ navigator.getVRDisplays().then(function (displays) {
 
 ## <a name="creating-and-selecting-the-initial-camera"></a>建立並選取初始相機
 
-使用 Babylon.js，WebVR 可透過使用 [`WebVRFreeCamera`](https://doc.babylonjs.com/classes/3.1/webvrfreecamera) 快速加入。 此相機可以接受鍵盤輸入並可讓您使用 VR 頭戴式裝置控制您的「頭部」旋轉。
+使用 Babylon.js，WebVR 可透過使用 [`WebVRFreeCamera`](https://doc.babylonjs.com/api/classes/babylon.webvrfreecamera) 快速加入。 此相機可以接受鍵盤輸入並可讓您使用 VR 頭戴式裝置控制您的「頭部」旋轉。
 
 
 ### <a name="step-1-checking-for-headsets"></a>步驟 1：檢查頭戴式裝置
 
-對於我們的遞補相機，我們會目前原始遊戲中使用的 [`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera)。
+對於我們的遞補相機，我們會目前原始遊戲中使用的 [`UniversalCamera`](https://doc.babylonjs.com/api/classes/babylon.universalcamera)。
 
 我們將會檢查我們 `headset` 變數，以判斷是否可以使用 `WebVRFreeCamera` 相機。
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始使用, uwp, windows 10, 了解追蹤, 版面配置, 表單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cd3fb1c294ac81f42bb53c23d307eed49a6708fd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2e64392e1de5f6061b802acc0a2eed81c3e750fb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564584"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318801"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 
@@ -148,7 +148,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ## <a name="useful-apis-and-docs"></a>實用的 API 和文件
 
-以下是 API 的快速摘要，以及其他實用的文件，有助於您開始使用資料繫結。
+以下是 API 的快速摘要及其他實用的文件，以協助您開始使用資料繫結。
 
 ### <a name="useful-apis"></a>實用的 API
 
@@ -182,4 +182,4 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 | [調適型版面配置的教學課程](../design/basics/xaml-basics-adaptive-layout.md) | 透過調適型版面配置和回應式設計的逐步引導體驗。 |
 | [客戶訂單資料庫](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | 請參閱多頁面企業範例中的版面配置和表單的實際運作。 |
 | [XAML 控制項庫](https://github.com/Microsoft/Xaml-Controls-Gallery) | 請參閱 XAML 控制項的選取和實作方式。 |
-| [其他程式碼範例](https://developer.microsoft.com//windows/samples) | 在類別下拉式清單中選擇 [控制項、版面配置和文字]  以參閱相關的程式碼範例。 |
+| [其他程式碼範例](https://developer.microsoft.com/windows/samples) | 在類別下拉式清單中選擇 [控制項、版面配置和文字]  以參閱相關的程式碼範例。 |

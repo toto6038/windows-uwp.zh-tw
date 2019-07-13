@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 67ba9f5c9bc4a5e723eb2696d88804df5300eda0
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66748451"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468990"
 ---
 # <a name="dialog-controls"></a>對話方塊控制項
 
@@ -254,7 +254,7 @@ private async void DisplaySubscribeDialog()
 
 > 注意：這一節僅適用於目標為 Windows 10 版本 1903 或更新版本的應用程式。 AppWindow 和 XAML Islands 不適用於舊版。 如需版本設定的詳細資訊，請參閱[版本調適型應用程式](../../../debug-test-perf/version-adaptive-apps.md)。
 
-根據預設，內容對話方塊顯示強制相對於根目錄 [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)。 當您使用 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 或 [XAML Island](/apps/desktop/modernize/xaml-islands) 內的 ContentDialog 時，您需要在對話方塊上將 [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) 手動設為 XAML 主機的根目錄。
+根據預設，內容對話方塊顯示強制相對於根目錄 [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)。 當您使用 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 或 [XAML Island](/windows/apps/desktop/modernize/xaml-islands) 內的 ContentDialog 時，您需要在對話方塊上將 [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) 手動設為 XAML 主機的根目錄。
 
 若要這麼做，請將 ContentDialog 的 XamlRoot 屬性設定為與 AppWindow 或 XAML Island 中現有元素相同的 XamlRoot，如下所示。
 
@@ -284,7 +284,7 @@ private async void DisplayNoWifiDialog()
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 - [工具提示](../tooltips.md)

@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 7 月
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a3a9614a4488791a36f81a3d4dedac572111b4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4030796e942c76ccf32e04dbf951cac68718a6a5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780275"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320391"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>2018 年 7 月 Windows 開發人員文件的新增功能
 
@@ -22,7 +22,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="progressive-web-apps-on-windows"></a>Windows 上的漸進式 Web 應用程式
 
-[漸進式 Web 應用程式 (PWA)](https://developer.microsoft.com/windows/pwa) 只是在支援平台和瀏覽器引擎上，使用類似原生應用程式功能 (例如從主螢幕安裝啟動、離線支援與推播通知) [漸進式增強](https://wikipedia.org/wiki/Progressive_enhancement)的 Web 應用程式。 在使用 Microsoft Edge (EdgeHTML) 引擎的 Windows 10上，PWA 享有額外的優點，即[作為 UWP 應用程式獨立於瀏覽器視窗以外執行](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)。
+[漸進式 Web 應用程式 (PWA)](https://developer.microsoft.com/windows/pwa) 只是在支援平台和瀏覽器引擎上，使用類似原生應用程式功能 (例如從主螢幕安裝啟動、離線支援與推播通知) [漸進式增強](https://www.wikipedia.org/wiki/Progressive_enhancement)的 Web 應用程式。 在使用 Microsoft Edge (EdgeHTML) 引擎的 Windows 10上，PWA 享有額外的優點，即[作為 UWP 應用程式獨立於瀏覽器視窗以外執行](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)。
 
 ![作用中 PWA 的影像](images/progressive-web-apps.jpg)
 
@@ -48,11 +48,9 @@ Adobe XD 和 Adobe Illustrator 工具組已更新了新功能。 這些設計工
 
 ### <a name="webvr"></a>WebVR
 
-我們在 [WebVR 文件](https://docs.microsoft.com/microsoft-edge/webvr/
-)中新增了幾個新主題：
+我們在 [WebVR 文件](https://docs.microsoft.com/microsoft-edge/webvr/)中新增了幾個新主題：
 
-* [什麼是 WebVR？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
-) \(英文\) 說明何謂 WebVR、為什麼您應該使用它，以及如何開始針對它進行開發。
+* [什麼是 WebVR？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) \(英文\) 說明何謂 WebVR、為什麼您應該使用它，以及如何開始針對它進行開發。
 
 * [漸進式 Web 應用程式中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas) \(英文\)：了解如何將 WebVR 新增至漸進式 Web 應用程式 (PWA)。
 

@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 12 月
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a79edb39cc4bfa5794d79d68f4fb8d5b0e976105
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c715a48e0f9d6dea5939e6363441b0300544c252
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63806050"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321910"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 開發人員文件的新增功能
 
@@ -44,7 +44,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Microsoft Collaborate 入口網站提供工具和服務，透過啟用工程系統工作項目 (錯誤、功能要求等) 的共用以及內容發佈 (組建、文件、規格) 來簡化 Microsoft 生態系統內的工程共同作業。 [進一步瞭解](https://docs.microsoft.com/en-us/collaborate)。
+Microsoft Collaborate 入口網站提供工具和服務，透過啟用工程系統工作項目 (錯誤、功能要求等) 的共用以及內容發佈 (組建、文件、規格) 來簡化 Microsoft 生態系統內的工程共同作業。 [進一步瞭解](https://docs.microsoft.com/collaborate/)。
 
 ![在合作夥伴中心的 Microsoft 共同作業](images/microsoft_collaborate_screenshot.PNG)
 
@@ -52,7 +52,7 @@ Microsoft Collaborate 入口網站提供工具和服務，透過啟用工程系�
 
 Visual Studio 2017 版本 15.5 已經更新 **Windows 應用程式封裝專案**範本，現在納入 UWP 專案更簡單。 您不再需要使用 JavaScript 型封裝專案，接著還要手動調整套件資訊清單。  
 
-如需如何使用這個新範本來封裝傳統型應用程式的指引，請參閱[使用 Visual Studio 封裝應用程式](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
+如需如何使用這個新範本來封裝傳統型應用程式的指引，請參閱[使用 Visual Studio 封裝應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。
 
 如需如何將 UWP 專案加入套件的指引，請參閱[使用現代化 UWP 元件擴充您的傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend)。
 

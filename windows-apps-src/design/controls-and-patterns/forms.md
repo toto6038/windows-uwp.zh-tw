@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 8a57f13e168a248569bca1beeceed7b4f6c89f69
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: ff071a2a98c533ad7c089b28165f026de00ba68f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794308"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319098"
 ---
 # <a name="forms"></a>表單
 表單是一組控制項，會收集和提交使用者的資料。 表單通常用於 [設定] 頁面、問卷調查、建立帳戶等等。 
@@ -149,7 +149,7 @@ ms.locfileid: "63794308"
 ### <a name="additional-controls"></a>其他控制項 
 如需 UWP 控制項的完整清單，請參閱[依函式排序的控制項索引](controls-by-function.md)。
 
-如需更多複雜和自訂 UI 控制項，請查看各家公司所提供的 UWP 資源，例如 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/products/uwp)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP) 及 [ActiPro](https://www.actiprosoftware.com/products/controls/universal)。
+如需更多複雜和自訂 UI 控制項，請查看各家公司所提供的 UWP 資源，例如 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/uwp-ui-controls)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP) 及 [ActiPro](https://www.actiprosoftware.com/products/controls/universal)。
 
 ## <a name="one-column-form-example"></a>一欄表單範例
 這個範例會使用 Acrylic [主要/詳細資料](master-details.md)[清單檢視](lists.md)和 [NavigationView](navigationview.md) 控制項。

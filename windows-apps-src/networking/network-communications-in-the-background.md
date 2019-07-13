@@ -6,12 +6,12 @@ ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0246e338c13027f8afc8da4aa919faa0911b39c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4fcf2e1fa39ae1e40edc07c9ca3df81386c17823
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371626"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319927"
 ---
 # <a name="network-communications-in-the-background"></a>背景網路通訊
 若要繼續網路通訊 (雖然它不在前景)，您的應用程式可以使用背景工作及這兩個選項之一。
@@ -169,7 +169,7 @@ case SocketActivityTriggerReason.SocketClosed:
 
 有些特殊考量會影響在 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 接收封包要求的處理方式。 特別是在使用 **StreamWebSocket** 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，您的 app 必須使用原始非同步模式來處理讀取，而非 C# 與 VB.NET 中的 **await** 模型或 C++ 中的工作。 稍後在本節的程式碼範例中會說明原始非同步模式。
 
-使用原始非同步模式可讓 Windows 同步處理 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 背景工作上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) 方法與傳回的接收完成回呼。 當傳回完成回呼之後，就會叫用 **Run** 方法。 這可確保 app 可以在叫用 **Run** 方法之前收到資料/錯誤。
+使用原始非同步模式可讓 Windows 同步處理 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 背景工作上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法與傳回的接收完成回呼。 當傳回完成回呼之後，就會叫用 **Run** 方法。 這可確保 app 可以在叫用 **Run** 方法之前收到資料/錯誤。
 
 請注意，app 必須發出另一個讀取，才能從完成回呼傳回控制項，這一點很重要。 請注意，還有一點也很重要，就是 [**DataReader**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 不能直接搭配 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 傳輸使用，因為那會中斷上述的同步處理。 不支援直接在傳輸上使用 [**DataReader.LoadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.loadasync) 方法。 相反地，[**StreamWebSocket.InputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocket.inputstream) 屬性上 [**IInputStream.ReadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.iinputstream.readasync) 方法傳回的 [**IBuffer**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IBuffer) 可在稍後傳送至 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.frombuffer) 方法，以便進一步處理。
 
@@ -216,7 +216,7 @@ void PostSocketRead(int length)
 }
 ```
 
-讀取完成處理常式一定會在叫用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 背景工作的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) 方法之前觸發。 Windows 的內部同步處理要等候從讀取完成回呼傳回 app。 App 通常會在讀取完成回呼快速處理從 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 收到的資料或錯誤。 訊息本身會在 **IBackgroundTask.Run** 方法的內容中處理。 在下列範例中，會使用讀取完成處理常式插入訊息且背景工作稍後要處理的訊息佇列來說明這一點。
+讀取完成處理常式一定會在叫用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 背景工作的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法之前觸發。 Windows 的內部同步處理要等候從讀取完成回呼傳回 app。 App 通常會在讀取完成回呼快速處理從 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 收到的資料或錯誤。 訊息本身會在 **IBackgroundTask.Run** 方法的內容中處理。 在下列範例中，會使用讀取完成處理常式插入訊息且背景工作稍後要處理的訊息佇列來說明這一點。
 
 下列範例顯示搭配原始非同步模式在 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 上處理讀取時要使用的讀取完成處理常式。
 
@@ -483,7 +483,7 @@ private void SetupHttpRequestAndSendToHttpServer()
 
 有些特殊考量會影響在 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 上要求傳送 HTTP 要求以起始接收已處理的回應的方式。 特別是當使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，您的 app 必須使用 Task 來處理傳送，而非使用 **await** 模型。
 
-使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 時，針對 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 背景工作上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) 方法與接收完成回呼的傳回並沒有同步。 基於這個原因，app 只能使用 **Run** 方法中的封鎖 HttpResponseMessage 技術，並等候接收整個回應。
+使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 時，針對 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 背景工作上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法與接收完成回呼的傳回並沒有同步。 基於這個原因，app 只能使用 **Run** 方法中的封鎖 HttpResponseMessage 技術，並等候接收整個回應。
 
 使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 顯然與 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)、[**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 傳輸不同。 因為 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 程式碼，[HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 接收回呼是透過 Task 傳遞至 app。 這表示當資料或錯誤分派至 app 時，會立即觸發 **ControlChannelTrigger** 推播通知工作。 在下列範例中，程式碼會將 [HttpClient.SendAsync](https://go.microsoft.com/fwlink/p/?linkid=241637) 方法傳回的 responseTask 儲存到全域儲存區，推播通知工作會提取並內嵌處理這個傳回值。
 

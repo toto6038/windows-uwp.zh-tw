@@ -10,18 +10,18 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea4dc1d77c5cf7199d084d4646b5862599a1d54
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dc696c9a57e84e2caade6a2623a72a6048b65621
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794377"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319102"
 ---
 # <a name="teaching-tip"></a>教學提示
 
 教學提示是半持續性的內容豐富飛出視窗，可提供內容資訊。 它通常用於通知、提醒，以及教導使用者有關可能增強使用者體驗的重要功能和新功能。
 
-**重要 API：** [TeachingTip 類別](https://docs.microsoft.com/en-us/uwp/api/microsoft.ui.xaml.controls.teachingtip)
+**重要 API：** [TeachingTip 類別](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.teachingtip?view=winui-2.2)
 
 教學提示可以是消失關閉，或是需要明確動作來關閉。 教學提示可以用其尾端將特定 UI 元素作為目標，也可以使用它但不包含尾端或目標。
 

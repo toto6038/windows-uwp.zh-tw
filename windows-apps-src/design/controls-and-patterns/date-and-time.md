@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 54da5ea68dad0bbd2c7f00ae5fc4128f14d1ce43
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0c980acc3b9887dac68712bd65de96e8f3a327a5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362876"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319057"
 ---
 # <a name="calendar-date-and-time-controls"></a>行事曆、日期和時間控制項
 
@@ -124,7 +124,7 @@ XAML 日期和時間控制項中使用的日期物件有不同的呈現方式，
 > **注意**&nbsp;&nbsp;採用日期物件的屬性不能設定為 XAML 屬性字串，因為 Windows 執行階段 XAML 剖析器沒有可將字串轉換為 DateTime/DateTimeOffset 物件形式之日期的轉換邏輯。 您通常會在程式碼中設定這些值。 另一個可能的技術是定義可做為資料物件或在資料內容中使用的日期，然後將屬性設定為 XAML 屬性，參考可存取日期做為資料的 [\{Binding\}標記延伸](../../xaml-platform/binding-markup-extension.md)運算式。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
-* [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
 
 
 ## <a name="related-topics"></a>相關主題

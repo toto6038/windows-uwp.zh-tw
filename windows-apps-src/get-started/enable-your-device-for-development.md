@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 啟用您的裝置以用於開發
 description: 設定您的 Windows 10 裝置以進行開發和偵錯。
 keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用裝置
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f927d8bce1e59ba9a8ed9b0f3f08ce3575c6d7bd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9c1979f8e8232ee3bfd2e2961307608bf8da7836
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367024"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714151"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -56,7 +56,7 @@ ms.locfileid: "66367024"
 
 ### <a name="sideload-apps"></a>側載 app
 
-通常是需要在受管理裝置上安裝自訂應用程式而不透過 Microsoft Store 的公司或學校，或是需要執行的應用程式並非來自 Microsoft 的人員，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用「UWP 應用程式」  設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx) 和[在 Microsoft Intune 中開始使用 App 部署](https://technet.microsoft.com/library/dn646955.aspx)。
+通常是需要在受管理裝置上安裝自訂應用程式而不透過 Microsoft Store 的公司或學校，或是需要執行的應用程式並非來自 Microsoft 的人員，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用「UWP 應用程式」  設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) 和[在 Microsoft Intune 中開始使用 App 部署](https://docs.microsoft.com/intune/deploy-use/add-apps)。
 
 裝置系列特定的資訊
 
@@ -94,7 +94,7 @@ ms.locfileid: "66367024"
 
 如需裝置特定的安裝指示，請參閱︰
 - [傳統型裝置的裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [HoloLens 的裝置入口網站](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
+- [HoloLens 的裝置入口網站](https://developer.microsoft.com/mixed-reality)
 - [IoT 的裝置入口網站](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [行動裝置的行動裝置](../debug-test-perf/device-portal-mobile.md)
 - [Xbox 的裝置入口網站](../xbox-apps/device-portal-xbox.md)
@@ -238,8 +238,8 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 ## <a name="see-also"></a>另請參閱
 
 * [您的第一個應用程式](your-first-app.md)
-* [發佈您的 UWP 應用程式](https://developer.microsoft.com/store/publish-apps)。
-* [開發 UWP 應用程式的操作說明文章](https://developer.microsoft.com/windows/apps/develop)
+* [發佈您的 UWP 應用程式](https://docs.microsoft.com/windows/uwp/publish/)。
+* [開發 UWP 應用程式的操作說明文章](https://docs.microsoft.com/windows/uwp/develop/)
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
 * [什麼是 UWP app？](universal-application-platform-guide.md)
 * [註冊 Windows 帳戶](sign-up.md)

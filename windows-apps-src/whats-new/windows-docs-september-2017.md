@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 1709
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae5001e907d7d38cbf05fd6863b192337fe365f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1312c55d98d3e1df2c9e583422df7938c994c2b5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63801095"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320384"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>2017 年 9 月 Windows 開發人員文件的新增功能
 
@@ -24,22 +24,22 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="xbox-live-creators-program"></a>Xbox Live 創作者計畫
 
-Xbox Live 創作者計畫現在已上線，可讓您輕鬆地建立並發行能在 Windows 10 電腦和 Xbox One 主控台上執行的 UWP 遊戲。 如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)。
+Xbox Live 創作者計畫現在已上線，可讓您輕鬆地建立並發行能在 Windows 10 電腦和 Xbox One 主控台上執行的 UWP 遊戲。 如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)。
 
 ## <a name="developer-guidance"></a>開發人員指引
 
 ### <a name="xaml-basics-tutorials"></a>XAML 基本知識教學課程
 
-我們已撰寫四份 [XAML 基本知識教學課程](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-intro)並伴隨新的 [PhotoLab 範例](https://github.com/Microsoft/Windows-appsample-photo-lab)，涵蓋四個 XAML 程式設計的主要層面：使用者介面、資料繫結，自訂樣式和調適型配置。 每個教學課程科目都是從部分完成版本的 PhotoLab 範例開始，然後逐步建置應用程式缺少的一個元件。 
+我們已撰寫四份 [XAML 基本知識教學課程](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui)並伴隨新的 [PhotoLab 範例](https://github.com/Microsoft/Windows-appsample-photo-lab)，涵蓋四個 XAML 程式設計的主要層面：使用者介面、資料繫結，自訂樣式和調適型配置。 每個教學課程科目都是從部分完成版本的 PhotoLab 範例開始，然後逐步建置應用程式缺少的一個元件。 
 
 ![顯示影像中心頁面的 PhotoLab 範例螢幕擷取畫面](images/PhotoLab-gallery-page.png)  
 
 以下是新文章的快速概觀：
 
-+ [**建立使用者介面**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui)示範如何建立基本影像中心介面。
-+ [**建立資料繫結**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding)示範如何將資料繫結新增至影像中心，並以實際影像資料填入其中。
-+ [**建立自訂樣式**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style)示範如何將花俏的自訂樣式新增至相片編輯功能表。
-+ [**建立調適型配置**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout)示範如何讓圖庫版面配置變得可彈性調整，以便在所有裝置和螢幕大小上都看起來都很適當。
++ [**建立使用者介面**](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui)示範如何建立基本影像中心介面。
++ [**建立資料繫結**](https://docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding)示範如何將資料繫結新增至影像中心，並以實際影像資料填入其中。
++ [**建立自訂樣式**](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style)示範如何將花俏的自訂樣式新增至相片編輯功能表。
++ [**建立調適型配置**](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-adaptive-layout)示範如何讓圖庫版面配置變得可彈性調整，以便在所有裝置和螢幕大小上都看起來都很適當。
 
 ### <a name="get-started-tutorials"></a>入門教學課程
 

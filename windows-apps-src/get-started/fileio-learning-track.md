@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取檔案, 撰寫檔案, 建立檔案, 寫入文字, 閱讀文字
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5480638e201dca8a5eb5363d7a5944422c626f67
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 29cfeef852f240548f1cd961f73766346da7afa4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366894"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321136"
 ---
 # <a name="work-with-files"></a>使用檔案
 
@@ -145,4 +145,4 @@ UWP 應用程式必須宣告它要透過將對應功能新增至資訊清單來�
 | [檔案存取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | 示範如何建立、讀取、寫入、複製和刪除檔案。 |
 | [檔案選擇器範例](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | 透過讓使用者使用 UI 選擇，來示範如何存取檔案和資料夾，以及如何儲存檔案，讓使用者可以指定要儲存的名稱、檔案類型和檔案的位置。 |
 | [JSON 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | 使用 [Windows.Data.Json 命名空間](https://docs.microsoft.com/uwp/api/Windows.Data.Json) 來示範如何編碼和解碼 JavaScript 物件標記法 (JSON) 物件、陣列、字串、數字和布林。 |
-| [其他程式碼範例](https://developer.microsoft.com//windows/samples) | 在分類下拉式清單中選擇 [檔案、資料夾和媒體櫃]  。 |
+| [其他程式碼範例](https://developer.microsoft.com/windows/samples) | 在分類下拉式清單中選擇 [檔案、資料夾和媒體櫃]  。 |

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bc422f57cdc268ea517aff729a9c3e57c80acf69
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66372778"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320616"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 摘要
 
@@ -60,7 +60,7 @@ ms.locfileid: "66372778"
 
 現在我們要檢閱一些示範如何抓取摘要的程式碼，然後顯示摘要所包含的每一個個別項目。 設定和傳送要求之前，我們會先定義一些要在作業期間使用的變數，然後初始化 [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient) 的執行個體，這可定義要用來抓取和顯示摘要的方法和屬性。
 
-如果傳遞給建構函式的 *uriString* 不是有效 URI，[**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 建構函式會擲回例外狀況。 所以我們要使用 try/catch 區塊來驗證 *uriString*。
+如果傳遞給建構函式的 *uriString* 不是有效 URI，[**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) 建構函式會擲回例外狀況。 所以我們要使用 try/catch 區塊來驗證 *uriString*。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -93,13 +93,13 @@ try {
 }
 ```
 
-接下來，我們會透過設定所需的任何伺服器認證 ([**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) 屬性)、Proxy 認證 ([**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) 屬性) 及 HTTP 標頭 ([**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader) 方法) 來設定要求。 設定好基本的要求參數之後，會使用應用程式提供的摘要 URI 字串建立有效的 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 物件。 然後，將 **Uri** 物件傳遞到 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 函式以要求摘要。
+接下來，我們會透過設定所需的任何伺服器認證 ([**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) 屬性)、Proxy 認證 ([**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) 屬性) 及 HTTP 標頭 ([**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader) 方法) 來設定要求。 設定好基本的要求參數之後，會使用應用程式提供的摘要 URI 字串建立有效的 [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) 物件。 然後，將 **Uri** 物件傳遞到 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 函式以要求摘要。
 
 假設傳回所需的摘要內容，範例程式碼會逐一查看每個摘要項目，呼叫 **displayCurrentItem** (我們將在稍後定義)，以便透過 UI 以清單方式顯示項目及其內容。
 
 您必須撰寫程式碼，以處理在呼叫大多數非同步網路方法時的例外狀況。 您的例外狀況處理常式可以抓取例外狀況發生原因的更詳細資訊，更清楚地了解失敗的情況並作出適當的決定。
 
-如果無法與 HTTP 伺服器建立連線或 [**Uri**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 物件未指向有效的 AtomPub 或 RSS 摘要，[**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) 方法會擲回例外狀況。 如果發生錯誤，Javascript 範例程式碼會使用 **onError** 函式來擷取例外狀況，然後列印出例外狀況中的詳細訊息。
+如果無法與 HTTP 伺服器建立連線或 [**Uri**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 物件未指向有效的 AtomPub 或 RSS 摘要，[**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) 方法會擲回例外狀況。 如果發生錯誤，Javascript 範例程式碼會使用 **onError** 函式來擷取例外狀況，然後列印出例外狀況中的詳細訊息。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

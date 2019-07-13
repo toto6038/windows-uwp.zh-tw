@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 0629201b695f6df6f7f3e2084a73d72b10b82be5
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 478c4a16902329e1dd9267e0339dca0e0dcf3539
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63813606"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321973"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>「Windows 即服務」應用程式開發
 
@@ -160,4 +160,4 @@ Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解�
 [Ready for Windows](https://go.microsoft.com/fwlink/?LinkID=780580) 網站是支援 Windows 10 之軟體的目錄。 這是針對全世界正在考慮為公司和組織部署 Windows 10 的 IT 系統管理員所設計。 IT 系統管理員可以查看該網站，以了解 Windows 10 是否支援他們企業中所部署的軟體。
 
 ## <a name="related-topics"></a>相關主題
-[Windows 10 更新與升級維護選項](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
+[Windows 10 更新與升級維護選項](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
