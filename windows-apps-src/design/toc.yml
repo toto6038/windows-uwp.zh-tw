@@ -562,6 +562,8 @@
           href: globalizing/use-mat.md
         - name: 多語應用程式工具組 4.0 常見問題與疑難排解
           href: globalizing/mat-faq-troubleshooting.md
+        - name: 使用 UTF-8 字碼頁
+          href: globalizing/use-utf8-code-page.md
         - name: 針對日本紀元變更準備您的應用程式
           href: globalizing/japanese-era-change.md
     - name: 應用程式說明的指導方針

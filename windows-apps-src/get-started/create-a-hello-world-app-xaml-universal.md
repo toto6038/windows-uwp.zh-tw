@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, first app, hello world, 第一個應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a7f0302dfdc9f9fa980f0fe93a3371328f9e5c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 65dfc7b5f9a870f3ccdd5c0c046b996a01c06a00
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367428"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321211"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world App (XAML)
 
@@ -57,7 +57,7 @@ ms.locfileid: "66367428"
     ![[新增專案] 視窗](images/win10-cs-01.png)
 
 > [!NOTE]
-> 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]  。 開發人員模式是啟用某些功能的特殊設定，例如能夠直接執行應用程式，而非只能從 Microsoft Store 執行的權限。 如需詳細資訊，請參閱[啟用您的裝置以用於開發](enable-your-device-for-development.md)。 若要繼續進行本指南的內容，請選取 [開發人員模式]  ，按一下 [是]  ，並關閉對話方塊。
+> 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]  。 開發人員模式是啟用某些功能的特殊設定，例如，直接執行應用程式的權限，而非只執行來自 Microsoft Store 的。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](enable-your-device-for-development.md)。 若要繼續使用此指南，請選取 [開發人員模式]  ，按一下 [是]  ，並關閉對話方塊。
 
  ![啟用開發人員模式對話方塊](images/win10-cs-00.png)
 
@@ -240,8 +240,8 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 ## <a name="see-also"></a>另請參閱
 
 * [您的第一個應用程式](your-first-app.md)
-* [發佈您的 UWP 應用程式](https://developer.microsoft.com/store/publish-apps)。
-* [開發 UWP 應用程式的操作說明文章](https://developer.microsoft.com/windows/apps/develop)
+* [發佈您的 UWP 應用程式](https://docs.microsoft.com/windows/uwp/publish/)。
+* [開發 UWP 應用程式的操作說明文章](https://docs.microsoft.com/windows/uwp/develop/)
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
 * [什麼是 Windows 通用應用程式？](universal-application-platform-guide.md)
 * [註冊 Windows 帳戶](sign-up.md)
