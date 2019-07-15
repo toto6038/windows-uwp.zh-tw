@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b212ff435e58bdb8766972d1832bbf0690db3ed1
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 5e93a1806d1d2add4b3b1c3ee02417a43d574d3c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364737"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319395"
 ---
 # <a name="media-player"></a>媒體播放器
 
@@ -143,7 +143,7 @@ private void LoadMediaFromString(string path)
 }
 ```
 
-若要將媒體來源設定為內嵌於應用程式中的媒體檔案，請初始化其路徑開頭為 **ms-appx:///** 的 [Uri](https://docs.microsoft.com/uwp/api/windows.foundation.uri.)，以此 Uri 建立 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)，然後將 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 設定為該 Uri。 例如，如果檔案名為 **video1.mp4** 並且位於 **Videos** 子資料夾中，則路徑應該看起來如下：**ms-appx:///Videos/video1.mp4**
+若要將媒體來源設定為內嵌於應用程式中的媒體檔案，請初始化其路徑開頭為 **ms-appx:///** 的 [Uri](https://docs.microsoft.com/uwp/api/windows.foundation.uri)，以此 Uri 建立 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)，然後將 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 設定為該 Uri。 例如，如果檔案名為 **video1.mp4** 並且位於 **Videos** 子資料夾中，則路徑應該看起來如下：**ms-appx:///Videos/video1.mp4**
 
 此程式碼會將先前在 XAML 中定義之 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設為 **ms-appx:///Videos/video1.mp4**。
 

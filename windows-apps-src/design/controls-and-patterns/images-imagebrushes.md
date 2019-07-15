@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 61fa4f8afa0404591831be4136c16672503274f2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 59678dc5eca7dec0857cadd9249dd19e25b3430b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362779"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319050"
 ---
 # <a name="images-and-image-brushes"></a>影像與影像筆刷
 
@@ -35,7 +35,7 @@ ms.locfileid: "66362779"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/Image">開啟應用程式，並查看 Image 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -149,13 +149,13 @@ ms.locfileid: "66362779"
 
 您應該以建議的數種大小來建立影像來源，以確保當 Windows 縮放您的應用程式時，仍能保持很棒的外觀。 為 **Image** 指定 **Source** 時，您可以使用命名慣例來根據目前的縮放情形，自動參考正確的資源。 如需命名慣例的細節及其他資訊，請參閱[快速入門：使用檔案或影像資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965325(v=win.10))。
 
-如需如何針對縮放進行設計的詳細資訊，請參閱[版面配置和縮放的 UX 指導方針](https://developer.microsoft.com/windows/design)。
+如需如何針對縮放進行設計的詳細資訊，請參閱[版面配置和縮放的 UX 指導方針](https://developer.microsoft.com/windows/apps/design)。
 
 ### <a name="image-and-imagebrush-in-code"></a>程式碼中的 Image 和 ImageBrush
 
 通常都會使用 XAML 指定 Image 和 ImageBrush 元素，而不是程式碼。 這是因為這些元素通常是設計工具的輸出，而且是 XAML UI 定義的一部分。
 
-如果使用程式碼定義 Image 或 ImageBrush，請使用預設建構函式，然後設定相關來源屬性 ([Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 或 [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource))。 當您使用程式碼設定來源屬性時，來源屬性需要一個 [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (不是 URI)。 如果您的來源是資料流，請使用 [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法來初始化該值。 如果您的來源是 URI，包含應用程式中使用 **ms-appx** 或 **ms-resource** 配置的內容，配置的內容，則使用採用 URI 的 [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.) 建構函式。 如果有任何與影像來源的抓取或解碼相關的時機問題，您也可以考慮處理 [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。 如需範例程式碼，請參閱 [XAML 影像範例](https://go.microsoft.com/fwlink/p/?linkid=238575)。
+如果使用程式碼定義 Image 或 ImageBrush，請使用預設建構函式，然後設定相關來源屬性 ([Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 或 [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource))。 當您使用程式碼設定來源屬性時，來源屬性需要一個 [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (不是 URI)。 如果您的來源是資料流，請使用 [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法來初始化該值。 如果您的來源是 URI，包含應用程式中使用 **ms-appx** 或 **ms-resource** 配置的內容，配置的內容，則使用採用 URI 的 [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) 建構函式。 如果有任何與影像來源的抓取或解碼相關的時機問題，您也可以考慮處理 [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。 如需範例程式碼，請參閱 [XAML 影像範例](https://go.microsoft.com/fwlink/p/?linkid=238575)。
 
 > [!NOTE]
 > 如果您使用程式碼建立影像，可以使用自動處理，以目前的比例和文化限定詞存取不完整的資源，或使用 [ResourceManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) 和 [ResourceMap](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) 搭配文化和比例的限定詞，以直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))。
