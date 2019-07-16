@@ -6,14 +6,14 @@ ms.date: 06/12/2019
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 453d58b0d52aaa24461784b6f393b26b93e572a1
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: a9386b31d16796c68d41a27ab48a5b2c9a9a342b
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67827374"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141810"
 ---
-# <a name="use-the-utf-8-code-page"></a>使用 utf-8 字碼頁
+# <a name="use-the-utf-8-code-page"></a>使用 UTF-8 字碼頁
 
 使用[utf-8](http://www.utf-8.com/)字元編碼之間的 web 應用程式和其他最佳相容性 * nix 基礎平台 （Unix、 Linux 和變體），當地語系化的錯誤降至最低並減少額外負荷測試。
 
@@ -23,15 +23,15 @@ Utf-8 是國際化的通用的字碼頁，並支援所有的 Unicode 字碼指�
   
 Win32 Api 通常會支援-和-W 變體。
 
--A 變體辨識-W 的變體採 8、UTF-16 和的支援時，在 系統及支援 char *，設定的 ANSI 字碼頁`WCHAR`。
+-A 變體辨識設定上的系統和支援的 ANSI 字碼頁`char*`，而-W 的 variant 操作 8、UTF-16 和支援`WCHAR`。
 
 直到最近，Windows 便-Api 透過強調"Unicode"-W 變體。 不過，最新版本已使用的 ANSI 字碼頁，而-導入 utf-8 做為 Api 應用程式支援。 如果設定的 ANSI 字碼頁 utf-8，-Api 操作 utf-8。 此模型的好處是能夠支援使用-A Api 而不需要變更任何程式碼所建置的現有程式碼。
 
 ## <a name="set-a-process-code-page-to-utf-8"></a>處理程序的字碼頁設定為 utf-8
 
-您可以強制使用 utf-8 為透過，appxmanifest 已封裝應用程式或使用 ActiveCodePage 屬性未封裝的應用程式的融合資訊清單的程序字碼頁的程序。
+從 Windows 版 1903 （可能 2019年更新），您可以使用 ActiveCodePage 屬性中，appxmanifest 已封裝應用程式，或未封裝的應用程式，fusion 資訊清單來強制執行的程序的處理程序的字碼頁為使用 utf-8。
 
-您可以宣告這個屬性和目標/執行舊版 Windows 上建置，但您必須如往常般處理舊版程式碼頁偵測和轉換 （19 小時 1 的最小的目標版本，程序字碼頁會一律是 utf-8）。
+您可以宣告這個屬性和目標/執行舊版 Windows 上建置，但您必須如往常般處理舊版程式碼頁偵測和轉換。 最小的目標版本的 Windows 版本 1903年，程序的字碼頁一律為 utf-8 可以避免舊版程式碼頁面偵測和轉換。
 
 ## <a name="examples"></a>範例
 
@@ -75,12 +75,12 @@ Win32 Api 通常會支援-和-W 變體。
 
 ## <a name="code-page-conversion"></a>字碼頁轉換
 
-與 Windows 原生的 utf-16 (WCHAR)，您可能需要為 utf-16 （反之亦然） 的 utf-8 資料轉換成與 Windows Api 交互操作。
+與 Windows 原生方式在 utf-16 (`WCHAR`)，您可能需要為 utf-16 （反之亦然） 的 utf-8 資料轉換成與 Windows Api 交互操作。
 
-[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar)並[WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte)可讓您 utf-8 和 utf-16 (WCHAR) （和其他字碼頁） 之間進行轉換。 在舊版的 Win32 API 可能只了解 WCHAR，這會特別有用。 這些函式可讓您 utf-8 將輸入轉換成 WCHAR 傳入 -W API，並只有在必要時回復，然後將轉換的任何結果。
-在 Windows 與字碼頁 CP_UTF8 這些函式時，使用 dwFlags 0 或 MB_ERR_INVALID_CHARS，否則 ERROR_INVALID_FLAGS 就會發生。
+[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar)並[WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte)可讓您將轉換 utf-8 與 utf-16 之間 (`WCHAR`) （和其他字碼頁）。 這會特別有用，在舊版 Win32 API 可能只了解`WCHAR`。 這些函式可讓您轉換至 utf-8 輸入`WCHAR`傳入 -W API，並只有在必要時回復，然後將轉換的任何結果。
+使用這些函式時`CodePage`設為`CP_UTF8`，使用`dwFlags`任一`0`或是`MB_ERR_INVALID_CHARS`，否則為`ERROR_INVALID_FLAGS`，就會發生。
 
-注意:CP_ACP 等於 CP_UTF8 （可能 2019年更新） 的 Windows 版本 1903年上執行時，才與上面所述的 ActiveCodePage 屬性設定為 utf-8。 否則，它會接受舊有系統字碼頁。 我們建議使用 CP_UTF8 明確。
+注意︰`CP_ACP`等同於`CP_UTF8`前提 （可能 2019年更新） 的 Windows 版本 1903年上執行或更新版本，且上述 ActiveCodePage 屬性設定為 utf-8。 否則，它會接受舊有系統字碼頁。 我們建議使用`CP_UTF8`明確。
 
 ## <a name="related-topics"></a>相關主題
 

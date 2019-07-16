@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8ceb314424ae2611e141ef866a84c08e55b0ba2d
-ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
+ms.openlocfilehash: 52338ef4d3850b5cf4a2caa0e2d6f93341897285
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67690881"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141822"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>主機 UWP XAML 控制項在傳統型應用程式 （XAML 群島）
 
@@ -84,12 +84,12 @@ XAML 群島需要 Windows 10 版本 1903，及更新版本。 若要在您的應
 
 安裝 Windows 10，版本 1903 SDK （或更新版本）。 然後，藉由新增封裝 MSIX 封裝中的應用程式[Windows 應用程式封裝專案](https:/docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)到您的解決方案，並將參考加入您的 WPF 或 Windows Form 專案。
 
-#### <a name="option-2-set-the-maxversiontested-value-in-your-assembly-manifest"></a>選項 2：設定您的組件資訊清單中 maxVersionTested 值
+#### <a name="option-2-set-the-maxversiontested-value-in-your-assembly-manifest"></a>選項 2：設定您的組件資訊清單中 maxversiontested 值
 
-如果您不想在 MSIX 封裝中的應用程式封裝，您可以新增[應用程式資訊清單](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)至您的專案，並新增**maxVersionTested**指定資訊清單的項目您應用程式是與 Windows 10 版本 1903年或更新版本相容。
+如果您不想在 MSIX 封裝中的應用程式封裝，您可以新增[應用程式資訊清單](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)至您的專案，並新增**maxversiontested**指定資訊清單的項目您應用程式是與 Windows 10 版本 1903年或更新版本相容。
 
 1. 如果您還沒有應用程式資訊清單中您的專案，專案中加入新的 XML 檔案並將它命名**app.manifest**。 針對 WPF 或 Windows Form 應用程式，請確定您也將指派**Manifest**屬性設 **。 app.manifest**中**應用程式**頁面您[專案屬性](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources)。
-2. 在您的應用程式資訊清單，包括**相容性**項目和子項目，在下列範例所示。 取代**識別碼**屬性**maxVersionTested**與您設為目標的 Windows 10 的版本號碼的項目 （必須是 Windows 10 版本 1903 或更新版本）。
+2. 在您的應用程式資訊清單，包括**相容性**項目和子項目，在下列範例所示。 取代**識別碼**屬性**maxversiontested**與您設為目標的 Windows 10 的版本號碼的項目 （必須是 Windows 10 版本 1903 或更新版本）。
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -105,7 +105,7 @@ XAML 群島需要 Windows 10 版本 1903，及更新版本。 若要在您的應
     ```
 
 > [!NOTE]
-> 當您將加入**maxVersionTested**應用程式資訊清單中的項目C++Win32 專案 （在 Visual Studio 中使用的 Windows 桌面應用程式專案範本） 中，您可能會在您的專案中看到下列的建置警告： `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. 這個警告不表示任何項目是在專案中，錯誤，並可以忽略它。
+> 當您將加入**maxversiontested**應用程式資訊清單的項目，您可能會看到下列警告您專案中的組建： `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`。 這個警告不表示任何項目是在專案中，錯誤，並可以忽略它。
 
 ## <a name="feature-roadmap"></a>功能藍圖
 
