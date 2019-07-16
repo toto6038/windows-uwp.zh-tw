@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 移植, 遊戲迴圈, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6a17b5e1684fbee21965158295dba123737bd6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b3a18d9ee63a2ecded07f8b779195d5274b6210
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367917"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141825"
 ---
 # <a name="port-the-game-loop"></a>移植遊戲迴圈
 
@@ -33,7 +33,7 @@ ms.locfileid: "66367917"
 
 UWP 環境現在提供一個更簡單的系統。 使用 DirectX 的 Microsoft Store 遊戲會實作 [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView)，而不是設定傳統視窗。 為了 DirectX app 與遊戲存在的這個介面，可直接在 app 容器內的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 中執行。
 
-> **附註**   Windows 提供的資源，例如來源應用程式物件的 managed 的指標和[ **CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)。 請參閱 [**物件控制代碼運算子 (^)** ]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
+> **附註**   Windows 提供的資源，例如來源應用程式物件的 managed 的指標和[ **CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)。 請參閱[**物件控制代碼運算子 (^)** ](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)。
 
  
 

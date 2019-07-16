@@ -1,6 +1,6 @@
 ---
 description: 本教學課程會示範如何新增 UWP XAML 使用者介面，建立 MSIX 套件，以及您的 WPF 應用程式中納入其他現代的元件。
-title: 將 Contoso 的移轉到.NET Core 3 費用報銷應用程式
+title: 將 Contoso Expenses 應用程式移轉到 .NET Core 3
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
@@ -8,14 +8,14 @@ author: mcleanbyron
 keywords: windows 10、 uwp、 windows form、 wpf、 xaml 群島
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: e718de7a22873ccf347e60c661f724ce3abdd2cf
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.openlocfilehash: 6e303e7059edd72fcdeb5455f450e6ece9d58e02
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67420132"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141852"
 ---
-# <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>第 1 部分：將 Contoso 的移轉到.NET Core 3 費用報銷應用程式
+# <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>第 1 部分：將 Contoso Expenses 應用程式移轉到 .NET Core 3
 
 這是示範如何將範例 WPF 傳統型應用程式現代化名為 Contoso 費用的教學課程的第一個部分。 如需教學課程、 必要條件和指示，下載範例應用程式的概觀，請參閱[教學課程：將 WPF 應用程式現代化](modernize-wpf-tutorial.md)。
   
@@ -162,7 +162,7 @@ ms.locfileid: "67420132"
 
 5. 搜尋`MvvmLightLibsStd10`套件並加以安裝。 這是.NET Standard 版本`MvvmLightLibs`封裝。 此套件中，作者選擇封裝中使用不同的套件，.NET Framework 版本的程式庫的.NET Standard 版本。
 
-    !MvvmLightsLibs package[](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
+    ![MvvmLightsLibs 封裝](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
 
 6. 在  **ContosoExpenses.Core**專案中，以滑鼠右鍵按一下**相依性**節點，然後選擇 **加入參考**。
 

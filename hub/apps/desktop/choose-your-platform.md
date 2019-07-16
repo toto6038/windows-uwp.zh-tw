@@ -7,12 +7,12 @@ ms.date: 03/18/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 996bbaf4dd05ce5b24e536459c6d7d009a53fa19
-ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
+ms.openlocfilehash: 2a4de1a43e60250e7efc2faf70f3c49e8253beb3
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266410"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141793"
 ---
 # <a name="choose-your-app-platform"></a>選擇您的應用程式平台
 
@@ -20,7 +20,7 @@ ms.locfileid: "66266410"
 
 * [通用 Windows 平台 (UWP)](#uwp)
 * [WPF (.NET)](#wpf)
-* [Windows Forms (.NET)](#windows-forms)
+* [Windows Form (.NET)](#windows-forms)
 * [Win32](#win32)
 
 所有這些應用程式平台可讓您建立傳統 Windows 桌面和 take 充分善用該環境的特定功能在執行像是 Word、 Excel 和 Photoshop 傳統型應用程式。 不過，部分這些平台共用某些特性，而且更適合特定類型的應用程式：
@@ -36,7 +36,7 @@ ms.locfileid: "66266410"
 
 ## <a name="uwp"></a>UWP
 
-UWP 是 Windows 10 應用程式和遊戲的頂尖平台。 它是高度可自訂的平台 UX (presentation) 分開 （商務邏輯） 的程式碼中使用 XAML 標記。 UWP 是適用於桌面應用程式，需要複雜的 UI、 樣式自訂和使用大量圖形的案例。 UWP 也有內建支援[Fluent Design System](/windows/uwp/design/fluent-design-system/)預設 UX 體驗並提供存取權[Windows 執行階段 (WinRT) Api](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis)。 藉由採用 Fluent，UWP 會自動支援常見的輸入的法，如筆墨、 觸控、 遊戲台、 鍵盤和滑鼠。
+UWP 是 Windows 10 應用程式和遊戲的頂尖平台。 它是高度可自訂的平台 UX (presentation) 分開 （商務邏輯） 的程式碼中使用 XAML 標記。 UWP 是適用於桌面應用程式的需要複雜的 UI、 樣式自訂及圖形密集的案例。 UWP 也有內建支援[Fluent Design System](/windows/uwp/design/fluent-design-system/)預設 UX 體驗並提供存取權[Windows 執行階段 (WinRT) Api](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis)。 藉由採用 Fluent，UWP 會自動支援常見的輸入的法，如筆墨、 觸控、 遊戲台、 鍵盤和滑鼠。
 
 您可以使用 UWP 方式，來建立適用於 Windows 電腦的桌面應用程式不僅 UWP 也是唯一支援的平台為 Xbox、 HoloLens、 和 Surface Hub 應用程式。 UWP 是我們的最新、 最新的應用程式平台。
 

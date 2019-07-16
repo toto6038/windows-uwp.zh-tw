@@ -1,6 +1,6 @@
 ---
 description: 本教學課程會示範如何新增 UWP XAML 使用者介面，建立 MSIX 套件，以及您的 WPF 應用程式中納入其他現代的元件。
-title: 新增 UWP InkCanvas 控制項使用 XAML 群島
+title: 使用 XAML Islands 新增 UWP InkCanvas 控制項
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
@@ -8,14 +8,14 @@ author: mcleanbyron
 keywords: windows 10、 uwp、 windows form、 wpf、 xaml 群島
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 2f8cf18bce7bec880a2cb0bef298c0b565e20208
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.openlocfilehash: 35b6886389640c7960c4120772c169161779ab68
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67420092"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141833"
 ---
-# <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：新增 UWP InkCanvas 控制項使用 XAML 群島
+# <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：使用 XAML Islands 新增 UWP InkCanvas 控制項
 
 這是示範如何將範例 WPF 傳統型應用程式現代化名為 Contoso 費用的教學課程的第二個部分。 如需教學課程、 必要條件和指示，下載範例應用程式的概觀，請參閱[教學課程：將 WPF 應用程式現代化](modernize-wpf-tutorial.md)。 本文假設您已完成[第 1 部分](modernize-wpf-tutorial-1.md)。
 
@@ -38,14 +38,14 @@ ms.locfileid: "67420092"
 
 4. 選取**應用程式資訊清單檔**，其命名**app.manifest**，然後按一下**新增**。
 
-5. 在開啟資訊清單檔案中，找出**相容性**區段，然後找出下列加上註解的項目。
+5. 在開啟資訊清單檔案中，找出**相容性**區段，然後找出下列加上註解**加入 supportedOS**適用於 Windows 10 的項目。
 
     ```xml
     <!-- Windows 10 -->
     <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
     ```
 
-6. 此項目，下方新增下列項目。
+6. 這個項目下方新增下列**maxversiontested**項目。
 
     ```xml
     <maxversiontested Id="10.0.18362.0"/>
@@ -60,7 +60,7 @@ ms.locfileid: "67420092"
     ```
 
     > [!NOTE]
-    > 這個項目可讓您指定的應用程式需要 Windows 10 版本 1903年 （組建 18362） 或更新版本。 這是支援 XAML 群島的 Windows 10 的第一個版本。 沒有此應用程式資訊清單中的項目，應用程式將會擲回執行階段例外狀況。
+    > **Maxversiontested**項目會指定應用程式需要 Windows 10 版本 1903年 （組建 18362） 或更新版本。 這是支援 XAML 群島的 Windows 10 的第一個版本。 沒有此應用程式資訊清單中的項目，應用程式將會擲回執行階段例外狀況。 加入這個項目之後您可能會看到下列的建置警告您專案中： `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`。 這個警告不表示任何項目是在專案中，錯誤，並可以忽略它。
 
 8. 在資訊清單檔案中，找出下列加上註解**應用程式**一節。
 
