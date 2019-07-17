@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 23cd899a196fbe3d28b7156890d65e90ac88cdad
-ms.sourcegitcommit: 9f097438937539f94b6a14a09ee65d30f71da9c6
-ms.translationtype: HT
+ms.openlocfilehash: 6412416fe2d73c4fc313a32fdc2929fff9dc51c4
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68223959"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270092"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>當地語系化您 UI 及應用程式封裝資訊清單中的字串
 
@@ -303,7 +303,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 1. 使用[GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse)而不是[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)時解析從程式碼的資源，因為沒有任何*目前檢視*非封裝的案例中。 如果您呼叫，就會發生下列例外狀況[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)非封裝的案例中：*在沒有 corewindow 物件的執行緒上時，可能未建立資源內容。*
 1. 使用[MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri)以手動方式產生您的應用程式 resources.pri 檔案。
-    - 執行 `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
+    - 執行 `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
     - &lt;PRICONFIG&gt;必須省略"&lt;封裝&gt;」 區段，讓所有的資源配套在單一 resources.pri 檔案中。 如果使用預設[MakePri.exe 組態檔](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)由[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)，您需要刪除 「&lt;封裝&gt;"建立後以手動方式一節。
     - &lt;PRICONFIG&gt;必須包含所有相關的索引子，才能合併成單一 resources.pri 檔的專案中的所有資源。 預設值[MakePri.exe 組態檔](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)由[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)包括所有索引子。
     - 如果您未使用預設組態，請確定已啟用 PRI 索引子 （檢閱如何執行此動作的預設設定） 合併 PRIs 從 UWP 專案參考、 NuGet 參考，並依此類推，找到位於專案根目錄中。
