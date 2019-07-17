@@ -834,6 +834,8 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
         - name: 從 WRL 移到 C++/WinRT
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: '從 C# 移到 C++/WinRT'
+          href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: 與 ABI 的互通性
           href: ../cpp-and-winrt-apis/interop-winrt-abi.md
         - name: 強式和弱式參考

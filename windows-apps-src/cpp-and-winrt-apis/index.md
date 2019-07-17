@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: a55f543aae5efae101590bd892278a30b3ca9907
-ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
+ms.openlocfilehash: 7be1fe8f23d51ecff6dbee30ad6ebecc6d65b4d8
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2019
-ms.locfileid: "67870314"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270030"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -61,6 +61,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md) | 本主題示範如何將 C++/CX 程式碼移植到其在 C++/WinRT 中的對等項目。 |
 | [C++/WinRT 與 C++/CX 之間的互通性](interop-winrt-cx.md) | 本主題示範可用於 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 與 C++/WinRT 物件之間轉換的協助程式函式。 |
 | 從 WRL 移到 [C++/WinRT](move-to-winrt-from-wrl.md) | 本主題示範如何將 [Windows 執行階段 C++ 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 程式碼移植到其在 C++/WinRT 中的對等項目。 |
+| [從 C# 移到 C++/WinRT](move-to-winrt-from-csharp.md) | 本主題示範如何將 C# 程式碼移植到其在 C++/WinRT 中的對等項目。 |
 | [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md) | 本主題示範如何在應用程式二進位介面 (ABI) 與 C++/WinRT 物件之間轉換。 |
 | [C++/WinRT 中的強式和弱式參考](weak-references.md) | Windows 執行階段是參考計數式系統；在這樣的系統中，請務必了解強式和弱式參考的重要性以及之間的區別。 |
 | [敏捷式物件](agile-objects.md) | 敏捷式物件是可以從任何執行緒中存取的一個。 C++/WinRT 預設為敏捷式，但您可以選擇退出。 |
