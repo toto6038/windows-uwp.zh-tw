@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: b6caf2de67b72c01391d47037150d76500a1cb42
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
-ms.translationtype: MT
+ms.openlocfilehash: 23cd899a196fbe3d28b7156890d65e90ac88cdad
+ms.sourcegitcommit: 9f097438937539f94b6a14a09ee65d30f71da9c6
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820298"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68223959"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>當地語系化您 UI 及應用程式封裝資訊清單中的字串
 
@@ -301,23 +301,21 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 若要使用的資源在非包裝的應用程式中，您應該做幾件事：
 
-1. 若要支援非封裝的情況下，使用[GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse)而不是[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)因為沒有任何*目前檢視*非封裝的案例中。 如果您呼叫，就會發生下列例外狀況[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)非封裝的案例中：*在沒有 corewindow 物件的執行緒上時，可能未建立資源內容。*
+1. 使用[GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse)而不是[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)時解析從程式碼的資源，因為沒有任何*目前檢視*非封裝的案例中。 如果您呼叫，就會發生下列例外狀況[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview)非封裝的案例中：*在沒有 corewindow 物件的執行緒上時，可能未建立資源內容。*
 1. 使用[MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri)以手動方式產生您的應用程式 resources.pri 檔案。
     - 執行 `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
-    - <PRICONFIG>必須省略"<packaging>」 區段，讓所有的資源配套在單一 resources.pri 檔案中。 如果使用預設[MakePri.exe 組態檔](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)由[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)，您需要刪除 「<packaging>"建立後以手動方式一節。
-    - <PRICONFIG>必須包含所有相關的索引子，才能合併成單一 resources.pri 檔的專案中的所有資源。 預設值[MakePri.exe 組態檔](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)由[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)包括所有索引子。
+    - &lt;PRICONFIG&gt;必須省略"&lt;封裝&gt;」 區段，讓所有的資源配套在單一 resources.pri 檔案中。 如果使用預設[MakePri.exe 組態檔](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)由[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)，您需要刪除 「&lt;封裝&gt;"建立後以手動方式一節。
+    - &lt;PRICONFIG&gt;必須包含所有相關的索引子，才能合併成單一 resources.pri 檔的專案中的所有資源。 預設值[MakePri.exe 組態檔](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)由[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)包括所有索引子。
     - 如果您未使用預設組態，請確定已啟用 PRI 索引子 （檢閱如何執行此動作的預設設定） 合併 PRIs 從 UWP 專案參考、 NuGet 參考，並依此類推，找到位於專案根目錄中。
         > [!NOTE]
-        > 藉由略過`/IndexName`，並不需要應用程式資訊清單專案，PRI 檔案的 m/根命名空間會自動設為*應用程式*，執行階段了解非包裝的應用程式 (這會移除先前硬式相依性套件識別碼）。 不過，您可以如下所示明確指定根命名空間：
-        > - ResourceLoader.GetForViewIndependentUse("ControlName\Resources").GetStringForUri(new Uri("ms-resource:///ManagedWinRT/Resources/Header"))
-        > - ResourceLoader.GetForViewIndependentUse("ControlName\Resources").GetStringForUri(new Uri("ms-resource://Application/ManagedWinRT/Resources/Header"))
+        > 藉由略過`/IndexName`，並不需要應用程式資訊清單專案，PRI 檔案的 m/根命名空間會自動設為*應用程式*，執行階段了解非包裝的應用程式 (這會移除先前硬式相依性套件識別碼）。 在指定的資源 Uri，ms 資源: / / 省略的根命名空間的參考推斷*應用程式*為非封裝的應用程式的根命名空間 (或者您可以指定*應用程式*明確地在 ms-resource://Application/)。
 1. 將 PRI 檔案複製到組建輸出目錄的.exe
 1. 執行.exe 
     > [!NOTE]
     > 資源管理系統會使用系統顯示語言，而不是解析資源時，才會進行使用者慣用的語言清單會依據非包裝的應用程式中的語言。 使用者的慣用的語言 清單中只用於 UWP 應用程式。
 
 > [!Important]
-> 如果資源檔的內容變更，例如處理的建置後指令碼，您必須手動重建 PRI 檔案[MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri)命令，並將 resources.pri 輸出複製至.exe 的目錄。
+> 資源會進行修改時，您必須手動重建 PRI 檔案。 我們建議使用建置後指令碼處理[MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri)命令，並將 resources.pri 輸出複製至.exe 的目錄。
 
 ## <a name="important-apis"></a>重要 API
 * [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
@@ -326,7 +324,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 ## <a name="related-topics"></a>相關主題
 * [移植的 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [x:Uid directive](../xaml-platform/x-uid-directive.md)
+* [X:uid 指示詞](../xaml-platform/x-uid-directive.md)
 * [附加的屬性](../xaml-platform/attached-properties-overview.md)
 * [可當地語系化資訊清單的項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)

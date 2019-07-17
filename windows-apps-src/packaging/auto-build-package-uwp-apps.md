@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 61525e2a4a088e37184bb93526722e0bf23fbd56
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5837674f2cb20710a59eeac0af59498bf28b197e
+ms.sourcegitcommit: a86d0bd1c2f67e5986cac88a98ad4f9e667cfec5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319814"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68229387"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP 應用程式的自動化組建
 
@@ -64,25 +64,40 @@ steps:
 
 預設範本會嘗試在.csproj 檔案中指定的憑證簽署封裝。 如果您想要在建置期間簽署您的套件必須有私用金鑰的存取權。 否則，您可以停用簽章加上參數`/p:AppxPackageSigningEnabled=false`至`msbuildArgs`YAML 檔案中的一節。
 
-## <a name="add-your-project-certificate-to-a-repository"></a>將您專案的憑證新增至存放庫
+## <a name="add-your-project-certificate-to-the-secure-files-library"></a>將您專案的憑證新增至 安全檔案程式庫
 
-管線會搭配 Azure 儲存機制的 Git 和 TFVC 存放庫。 如果您使用 Git 儲存機制，請將您專案的憑證檔案新增到儲存機制，這樣一來組建代理程式就可以簽署應用程式套件。 如果您沒有這麼做，Git 儲存機制會略過憑證檔案。 將憑證檔案新增至存放庫，以滑鼠右鍵按一下中的憑證檔案**方案總管**，然後在捷徑功能表，選擇**忽略檔案新增至原始檔控制**命令。
+您應該避免送出至如果可能的話，存放庫的憑證，git 會忽略它們的預設值。 若要管理安全處理的敏感性檔案，如憑證，支援 Azure DevOps[保護的檔案](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)。
 
-![如何包含憑證](images/building-screen1.png)
+若要上傳您的自動化建置的憑證：
+
+1. 在 Azure 管線中，依序展開**管線**瀏覽窗格中按一下**程式庫**。
+2. 按一下 **保護的檔案**索引標籤，然後按一下 **+ 安全檔案**。
+
+    ![如何上傳安全檔案](images/secure-file1.png)
+
+3. 瀏覽憑證檔案，然後按一下**確定**。
+4. 上傳憑證之後，選取以檢視其屬性。 底下**管線的權限**，讓**在所有管線中使用的授權**切換。
+
+    ![如何上傳安全檔案](images/secure-file2.png)
 
 ## <a name="configure-the-build-solution-build-task"></a>設定建置方案建置工作
 
 這項工作會編譯二進位檔的工作資料夾中，並產生輸出的應用程式套件檔案的任何解決方案。
 此工作會使用 MSBuild 引數。 您必須指定那些引數的值。 使用下表做為指引。
 
-|**MSBuild 引數**|**值**|**說明**|
+|**MSBuild 引數**|**值**|**描述**|
 |--------------------|---------|---------------|
 | AppxPackageDir | $(Build.ArtifactStagingDirectory)\AppxPackages | 定義要儲存所產生構件的資料夾。 |
 | AppxBundlePlatforms | $(Build.BuildPlatform) | 可讓您定義要包含在組合中的平台。 |
 | AppxBundle | 永遠 | 使用指定的平台的.msix/.appx 檔案中建立.msixbundle/.appxbundle。 |
 | UapAppxPackageBuildMode | StoreUpload | 產生.msixupload/.appxupload 檔案和 **_Test**側載的資料夾。 |
 | UapAppxPackageBuildMode | CI | 產生僅.msixupload/.appxupload 檔案。 |
-| UapAppxPackageBuildMode | SideloadOnly | 會產生 **_Test**只側載的資料夾 |
+| UapAppxPackageBuildMode | SideloadOnly | 會產生 **_Test**只側載的資料夾。 |
+| AppxPackageSigningEnabled | true | 可讓封裝簽章。 |
+| PackageCertificateThumbprint | 憑證指紋 | 此值**必須**比對中簽署憑證的指紋，或可以是空字串。 |
+| PackageCertificateKeyFile | `Path` | 若要使用憑證的路徑。 這被擷取自安全的檔案中繼資料。 |
+
+### <a name="configure-the-build"></a>設定組建
 
 如果您想要使用命令列中，或使用任何其他組建系統建置您的解決方案，請使用這些引數執行 MSBuild。
 
@@ -92,6 +107,41 @@ steps:
 /p:AppxBundlePlatforms="$(Build.BuildPlatform)"
 /p:AppxBundle=Always
 ```
+
+### <a name="configure-package-signing"></a>設定封裝簽章
+
+若要簽署 MSIX （或 APPX） 套件管線必須擷取簽署的憑證。 若要這樣做，請加入 DownloadSecureFile 工作之前 VSBuild 工作。
+這可讓您存取的簽署憑證透過```signingCert```。
+
+```yml
+- task: DownloadSecureFile@1
+  name: signingCert
+  displayName: 'Download CA certificate'
+  inputs:
+    secureFile: '[Your_Pfx].pfx'
+```
+
+接下來，更新參考的簽章憑證的 VSBuild 工作：
+
+```yml
+- task: VSBuild@1
+  inputs:
+    platform: 'x86'
+    solution: '$(solution)'
+    configuration: '$(buildConfiguration)'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" 
+                  /p:AppxPackageDir="$(appxPackageDir)" 
+                  /p:AppxBundle=Always 
+                  /p:UapAppxPackageBuildMode=StoreUpload 
+                  /p:AppxPackageSigningEnabled=true
+                  /p:PackageCertificateThumbprint="" 
+                  /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)"'
+```
+
+> [!NOTE]
+> 為求安全起見刻意 PackageCertificateThumbprint 引數設定為空字串。 如果憑證指紋在專案中設定，但不符合簽署憑證，建置將會失敗並出現錯誤： `Certificate does not match supplied signing thumbprint`。
+
+### <a name="review-parameters"></a>檢閱參數
 
 定義使用參數`$()`語法會在組建定義中，所定義的變數，而且將會變更其他建置系統。
 
@@ -131,9 +181,9 @@ steps:
 
 會顯示此錯誤是因為在方案層級，仍不清楚套件組合中應顯示哪個 App。 若要解決此問題，開啟每個專案檔，並在第一個結尾處新增下列屬性`<PropertyGroup>`項目。
 
-|**Project**|**屬性**|
+|**專案**|**屬性**|
 |-------|----------|
-|應用程式|`<AppxBundle>Always</AppxBundle>`|
+|App|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
 
 然後，移除`AppxBundle`MSBuild 引數，從建置步驟。
