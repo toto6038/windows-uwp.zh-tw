@@ -5,16 +5,18 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 資料, 類型
 ms.localizationpriority: medium
-ms.openlocfilehash: 83d2c0c2c544d63d2806dc71bfc367613d34e23a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a87ba48a0853058ba1259e079c586b97af551656
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745287"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844335"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>標準 C++ 資料類型與 C++/WinRT
 
 使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，您可以標準 C++ 資料類型呼叫 Windows 執行階段 API，包括部分 C++ 標準程式庫資料類型。 您可以將標準字串傳遞至 API (請參閱 [C++/WinRT 中的字串處理](strings.md))，而且您可以將初始設定式清單和標準容器傳遞至預期語意相等集合的 API。
+
+另請參閱[將參數傳入 ABI 界限](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi)。
 
 ## <a name="standard-initializer-lists"></a>標準初始設定式清單
 初始設定式清單 (**std::initializer_list**) 是 C++ 標準程式庫建構。 您呼叫某些 Windows 執行階段建構函式與方法時，可以使用初始設定式清單。 例如，您可以使用一個來呼叫 [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes)。
@@ -68,7 +70,7 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
 此處執行兩個因素。 第一個，被呼叫者從初始設定式清單建構一個 **std::vector** (此被呼叫者必須為非同步，如此才能有該物件)。 第二個，C++/WinRT 明確地 (且不使用複製) 繫結 **std::vector** 做為 Windows 執行階段集合參數。
 
 ## <a name="standard-arrays-and-vectors"></a>標準陣列和向量
-[**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) 也有s conversion constructors from **std::vector** 和 **std::array** 的轉換建構函式。
+[**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) 也有 **std::vector** 和 **std::array** 的轉換建構函式。
 
 ```cppwinrt
 template <typename C, size_type N> winrt::array_view(std::array<C, N>& value) noexcept

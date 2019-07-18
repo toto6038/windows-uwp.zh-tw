@@ -1,17 +1,17 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: 使用 C++/CX 建立 Hello World 應用程式 (Windows 10)
-description: 透過 Microsoft Visual Studio 2017，您可以使用 C++/CX 來開發在 Windows 10 上執行的應用程式，包括在執行 Windows 10 的手機上執行。 這些應用程式具有使用 Extensible Application Markup Language (XAML) 所定義的 UI。
+description: 透過 Microsoft Visual Studio 2019，您可以使用 C++/CX 來開發在 Windows 10 上執行的應用程式，包括在執行 Windows 10 的手機上執行。 這些應用程式具有使用 Extensible Application Markup Language (XAML) 所定義的 UI。
 ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7e2c56f7d059a164d94bd608fbb8c179d5125f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 65436d7efd1de6e9c3649ad27b29b925bc632d95
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367381"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820647"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 建立 "Hello world" 應用程式
 
@@ -21,7 +21,7 @@ ms.locfileid: "66367381"
 在 Microsoft Visual Studio 2017，您可以使用 C++/CX 開發在 Windows 10 上執行且具有使用 Extensible Application Markup Language (XAML) 定義之 UI 的應用程式。
 
 > [!NOTE]
-> 本教學課程使用 Visual Studio Community 2017。 如果您使用不同版本的 Visual Studio，它的外觀可能會略有不同。
+> 本教學課程使用 Visual Studio Community 2019。 如果您使用不同版本的 Visual Studio，它的外觀可能會略有不同。
 
 ## <a name="before-you-start"></a>開始之前
 
@@ -73,25 +73,18 @@ ms.locfileid: "66367381"
 
 **首先，在 Visual Studio 中建立方案**
 
-1.  在 Visual Studio 的功能表列上，選擇 [檔案]   > [新增]   > [專案]  。
+1.  在 Visual Studio 的功能表列上，選擇 [檔案]   > [新增]   > [專案...]  。
 
-2.  在 [新增專案]  對話方塊的左窗格中，展開 [已安裝]   > [Visual C++]   > [Windows 通用]  。
+2.  在 [建立新專案]  對話方塊中，選取 [空白應用程式 (通用 Windows- C++/CX)]  。  如果您沒有看到這些選項，請確定您已經安裝「通用 Windows 應用程式開發工具」。 如需詳細資訊，請參閱[開始設定](get-set-up.md)。
 
-> [!NOTE]
-> 系統可能會提示您安裝適用於 C++ 開發的 Windows 通用工具。
+![[建立新專案] 對話方塊中的 C++/CX 專案範本 ](images/vs2019-uwp-01.png)
 
-3.  在中央窗格中，選取 [空白應用程式 (通用 Windows)]  。
+3.  選擇 [下一步]  ，然後輸入專案的名稱。 我們將它命名為 HelloWorld。
 
-   (如果您沒有看到這些選項，請確定您已經安裝「通用 Windows 應用程式開發工具」。 如需詳細資訊，請參閱[開始設定](get-set-up.md)。)
-
-4.  輸入專案的名稱。 我們將它命名為 HelloWorld。
-
- ![[新增專案] 對話方塊中的 C++/CX 專案範本 ](images/vs2017-uwp-01.png)
-
-5.  選擇 [確定]  按鈕。
+4.  選擇 [建立]  按鈕。
 
 > [!NOTE]
-> 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]  。 開發人員模式是啟用某些功能的特殊設定，例如直接執行應用程式的權限，而非只執行來自於 Microsoft Store。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](enable-your-device-for-development.md)。 若要繼續使用此指南，請選取 [開發人員模式]  ，按一下 [是]  ，並關閉對話方塊。
+> 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]  。 開發人員模式是啟用某些功能的特殊設定，例如，直接執行應用程式的權限，而非只執行來自 Microsoft Store 的。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](enable-your-device-for-development.md)。 若要繼續使用此指南，請選取 [開發人員模式]  ，按一下 [是]  ，並關閉對話方塊。
 
    您的專案檔案已成功建立。
 

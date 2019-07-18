@@ -3,16 +3,16 @@ Description: 了解如何實作向後瀏覽，以便周遊 UWP 應用程式內�
 title: 瀏覽歷程記錄和向後瀏覽 (Windows 應用程式)
 template: detail.hbs
 op-migration-status: ready
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e3ab6760ed3eff1d284e51205de261796db0fb2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: de2e70a09f75ed5380a47bed225c0689eb029e89
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63799105"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713792"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>適用於 UWP app 的瀏覽歷程記錄和向後瀏覽
 
@@ -31,7 +31,17 @@ ms.locfileid: "63799105"
 ![應用程式 UI 左上角的返回按鈕](images/back-nav/BackEnabled.png)
 
 ```xaml
-<Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+
+    </Grid>
+</Page>
 ```
 
 如果您的應用程式有頂端 [CommandBar](../controls-and-patterns/app-bars.md)，則高度 44px 的 Button 控制項將不會精準對齊 48px AppBarButtons。 不過，為避免不一致，請在 48px 界限內部對齊 Button 控制項的頂端。
@@ -39,8 +49,23 @@ ms.locfileid: "63799105"
 ![頂端命令列上的返回按鈕](images/back-nav/CommandBar.png)
 
 ```xaml
-<Button VerticalAlignment="Top" HorizontalAlignment="Left" 
-Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <CommandBar>
+            <CommandBar.Content>
+                <Button Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top"/>
+            </CommandBar.Content>
+        
+            <AppBarButton Icon="Delete" Label="Delete"/>
+            <AppBarButton Icon="Save" Label="Save"/>
+        </CommandBar>
+    </Grid>
+</Page>
 ```
 
 為了將 UI 元素最小化，以便在應用程式中四處移動，請在返回堆疊中沒有內容時顯示已停用的返回按鈕 (請參閱下方程式碼範例)。 不過，如果您預期您的應用程式絕對不會有向後堆疊，則完全不需要顯示返回按鈕。
@@ -284,20 +309,9 @@ bool App::On_BackRequested()
 
 之前UWP 應用程式使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 提供向後瀏覽。 API 將繼續受到支援以確保回溯相容性，但我們不再建議依賴 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 您的應用程式應設置自己的應用程式內返回按鈕。
 
-如果您的應用程式繼續使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，則系統 UI 會呈現系統背面標題列內的按鈕。 (返回按鈕的外觀和使用者互動方式與先前的組建相同)。
+如果您的應用程式繼續使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，則系統 UI 會呈現標題列內部的系統上一頁按鈕的。 (返回按鈕的外觀和使用者互動方式與先前的組建相同)。
 
 ![標題列返回按鈕](images/nav-back-pc.png)
-
-### <a name="system-back-bar"></a>系統背面列
-
-> [!NOTE]
-> 「系統背面列」是只個描述，不是官方名稱。
-
-系統背面列是「色調」，在索引標籤色調和應用程式內容區域間插入。 色調跨越了整個應用程式的寬度，與左邊緣的返回按鈕。 色調有可確保返回按鈕適當觸控目標大小的垂直高度 32 像素。
-
-根據返回按鈕可見度，動態顯示系統背面列。 可看見返回按鈕時，插入系統背面列，將應用程式內容轉移到索引標籤色調以下 32 像素。 隱藏返回按鈕時，動態移除系統背面列，向上轉移應用程式內容 32 像素以符合索引標籤色調。 若要避免您應用程式的 UI 向上或向下轉移，我們建議您拖曳[應用程式內的返回按鈕](#back-button)。
-
-應用程式索引標籤與系統背面列沿用[標題列自訂](../shell/title-bar.md)。 如果您的應用程式指定 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)的背景和前景色彩屬性，則索引標籤和系統背面列會套用此色彩。
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>自訂返回瀏覽行為的指導方針
 

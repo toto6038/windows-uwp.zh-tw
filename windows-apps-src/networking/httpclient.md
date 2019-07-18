@@ -2,16 +2,16 @@
 description: 使用 HttpClient 和其餘 Windows.Web.Http 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
-ms.date: 6/5/2019
+ms.date: 06/05/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb098aae346c7a81771262793f5f6a042d62d5a3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 877901deeec4da7674c6c8431e5b11f5eae075ed
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721605"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714127"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -57,7 +57,7 @@ ms.locfileid: "66721605"
 
 ## <a name="send-a-simple-get-request-over-http"></a>透過 HTTP 傳送簡單 GET 要求
 
-如本文先前所述，[**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何使用 [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別將 GET 要求傳送至 http://www.contoso.com ，以及使用 [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 類別讀取 GET 要求的回應。
+如本文先前所述，[**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何使用 [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別將 GET 要求傳送至 http:\//www.contoso.com，以及使用 [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 類別讀取 GET 要求的回應。
 
 ```csharp
 //Create an HTTP client object

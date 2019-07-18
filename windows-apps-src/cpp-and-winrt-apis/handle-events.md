@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 一般, c++, cpp, winrt, 投影, 投射, 控點, 事件, 委派
 ms.localizationpriority: medium
-ms.openlocfilehash: 00870a196517f975d2736298513be7567f3dd29e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 194fd9041b76acb1ef76288fed21c8098462b406
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745051"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844341"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 
@@ -18,6 +18,15 @@ ms.locfileid: "64745051"
 
 > [!NOTE]
 > 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+
+## <a name="using-visual-studio-2019-to-add-an-event-handler"></a>使用 Visual Studio 2019 來新增事件處理常式
+
+若要將事件處理常式新增至您的專案，最方便的方式是使用 Visual Studio 2019 中的 XAML 設計工具使用者介面 (UI)。 在 XAML 設計工具中開啟 XAML 頁面，然後選取您想要在其中處理事件的控制項。 在該控制項中的屬性頁上，按一下閃電圖示，即可列出源自該控制項的所有事件。 然後，連按兩下您想要處理的事件，例如：OnClicked  。
+
+XAML 設計工具會將適當的事件處理常式函式原型 (以及虛設常式實作) 新增至您的來源檔案，方便您以自有的實作加以取代。
+
+> [!NOTE]
+> 一般而言，事件處理常式不需要在 Midl 檔 (`.idl`) 中描述。 因此，XAML 設計工具不會將事件處理常式函式原型新增至 Midl 檔。 只會將這些原型新增至您的 `.h` 和 `.cpp` 檔案。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>註冊委派以處理事件
 
@@ -49,7 +58,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> 註冊委派時，上述程式碼範例會傳遞原始「this」  指標 (指向目前物件)。 若要了解如何對目前物件建立強式或弱式參考，請參閱[使用事件處理委派安全地存取「this」  指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)一節中，**如果您使用成員函式做為委派**此小節。
+> 註冊委派時，上述程式碼範例會傳遞原始「this」  指標 (指向目前物件)。 若要了解如何為目前物件建立強式或弱式參考，請參閱[如果您使用成員函式作為委派](weak-references.md#if-you-use-a-member-function-as-a-delegate)。
 
 有其他方式可建構 **RoutedEventHandler**。 以下是從文件主題取得的語法區塊適用於 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (從網頁右上角中 [語言]  下拉式清單選擇 [C++/WinRT]  )。 請注意各種不同的建構函式：一種使用的是 lambda，另一種使用可用函式，還有一種 (上述中我們使用的) 是使用物件和指標成員函式。
 
@@ -177,8 +186,11 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 > [!NOTE]
 > 在上述程式碼範例中，`Button::Click_revoker` 是 `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>` 的類型別名。 有個類似的模式適用於所有 C++/WinRT 事件。 每個 Windows 執行階段事件均有 revoke 函式多載，其會傳回事件撤銷，而且該撤銷的類型是事件來源的成員。 因此，再舉另一個例子，[**CoreWindow::SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) 事件有註冊函式多載傳回類型 **CoreWindow::SizeChanged_revoker** 的值。
 
-
 您可能會考慮在網頁瀏覽的案例中撤銷處理常式。 如果您要重複瀏覽網頁並返回，您離開網頁時，可以撤銷任何處理常式。 或者，如果您重新使用相同的網頁執行個體，則檢查預付碼值，而且只要在尚未設定 (`if (!m_token){ ... }`) 時才註冊。 第三個選項，是將事件撤銷儲存在網頁上做為資料成員。 本主題稍後會說明第四個選項，即是在 lambda 函式中擷取「this」  物件的強式或弱式參考。
+
+### <a name="if-your-auto-revoke-delegate-fails-to-register"></a>如果您的自動撤銷委派無法註冊
+
+如果您嘗試在註冊委派時指定 [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t)，且結果是 [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) 例外狀況，這通常表示事件來源不支援弱式參考。 這在 [**Windows.UI.Composition**](/uwp/api/windows.ui.composition) 命名空間等案例中是常見的狀況。 在此情況下，您無法使用自動撤銷功能。 您必須改回以手動撤銷您的事件處理常式。
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>非同步動作和作業的委派類型
 
@@ -254,7 +266,7 @@ winrt::hstring f(ListView listview)
 如果您使用物件的成員函式，或是從物件成員函式裡的 lambda 函式中處理一個事件，您會需要考量事件 (處理事件的物件) 和事件來源 (引發事件的物件) 的相對存留時間。 如需詳細資訊以及程式碼範例，請參閱 [C++/WinRT 中的強式和弱式參考](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要 API
-* [winrt::auto_revoke_t marker struct](/uwp/cpp-ref-for-winrt/auto-revoke-t)
+* [winrt::auto_revoke_t 標記結構](/uwp/cpp-ref-for-winrt/auto-revoke-t)
 * [winrt::implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
 * [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 

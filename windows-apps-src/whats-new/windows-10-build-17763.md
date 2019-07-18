@@ -6,18 +6,18 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2b172844e75d9af3d0112e03f155708af3ca6bed
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d393ee92be8768861da0fb0783372c8bafc6f815
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780347"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821115"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員的 Windows 10 (組建 17763) 的新功能
 
-Windows 10 組建 17763 (也稱為 2018 年 10 月更新或版本 1809) 搭配 Visual Studio 2017 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 17763 (也稱為 2018 年 10 月更新或版本 1809) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
-這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指導方針的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 17763 API 變更](windows-10-build-17763-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
+這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指引的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 17763 API 變更](windows-10-build-17763-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
 
 ## <a name="design--ui"></a>設計與 UI
 
@@ -51,7 +51,7 @@ Microsoft Learn | 全新的 [Microsoft Learn 網站](https://www.microsoft.com/l
 記事本 | [[記事本] 已更新](https://aka.ms/ant-man) \(英文\)，新增了縮放、循環尋找/取代，以及 Unix/Linux (LF) 和 Mac (CR) 行尾結束符號的支援。
 Project Rome | [Project Rome](https://docs.microsoft.com/windows/project-rome/) 現在可以在支援的平台和 SDK 之間提供一致的程式設計體驗。 </br>  新的 [Microsoft Graph 通知](https://developer.microsoft.com/graph/docs/concepts/notifications-concept-overview)使用 Project Rome 為您的應用程式提供以人為中心的跨平台通知平台。
 螢幕剪取 | 新的 [URI 配置](../launch-resume/launch-screen-snipping.md)允許您的應用程式以程式設計方式開啟新的剪取，或針對註釋啟動帶有特定影像的剪取與繪圖應用程式。
-傳統型應用程式中的 UWP 控制項 | Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用程式中使用 UWP 控制項。 這表示您可以使用只能透過 UWP 控制項 (例如 Windows Ink) 和支援 Fluent Design 系統的控制項存取的最新 Windows 10 UI 功能，來增強現有傳統型應用程式的外觀與風格和功能。 這項功能稱為 *XAML Islands*。 </br> 我們提供了幾種在應用程式中使用 XAML Islands 的方法，具體取決於您使用的應用程式平台。 WPF 和 Windows Forms 應用程式可以使用 [Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中的一組控制項，這些控制項提供設計導向的開發經驗。 C++ Win32 應用程式必須使用 [Windows.UI.Xaml.Hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting) 命名空間中的 *UWP XAML 裝載 API* 。 如需詳細資訊，請參閱[傳統型應用程式中的 UWP 控制項](../xaml-platform/xaml-host-controls.md)。 </br> **注意：** 啟用 XAML Islands 的 API 和控制項目前可作為開發人員預覽提供使用。 雖然我們鼓勵您現在在自己的原型程式碼中試用它們，但我們不建議您此時在實際程式碼中使用它們。
+傳統型應用程式中的 UWP 控制項 | Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用程式中使用 UWP 控制項。 這表示您可以使用只能透過 UWP 控制項 (例如 Windows Ink) 和支援 Fluent Design 系統的控制項存取的最新 Windows 10 UI 功能，來增強現有傳統型應用程式的外觀與風格和功能。 這項功能稱為 *XAML Islands*。 </br> 我們提供了幾種在應用程式中使用 XAML Islands 的方法，具體取決於您使用的應用程式平台。 WPF 和 Windows Forms 應用程式可以使用 [Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中的一組控制項，這些控制項提供設計導向的開發經驗。 C++ Win32 應用程式必須使用 [Windows.UI.Xaml.Hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting) 命名空間中的 *UWP XAML 裝載 API*。 如需詳細資訊，請參閱[傳統型應用程式中的 UWP 控制項](../xaml-platform/xaml-host-controls.md)。 </br> **注意：** 啟用 XAML Islands 的 API 和控制項目前可作為開發人員預覽提供使用。 雖然我們鼓勵您現在在自己的原型程式碼中試用它們，但我們不建議您此時在實際程式碼中使用它們。
 Windows Machine Learning | [Windows Machine Learning](https://docs.microsoft.com/windows/ai/) 已正式推出，可為尖端機器學習模型提供更快速的評估和支援。 為了支援想要將其整合到應用程式中的開發人員，我們建立了一個新的文件網站，其中包含幾個全新和更新的資源： </br> * [教學課程：建立 Windows Machine Learning 傳統型應用程式 (C++)](https://docs.microsoft.com/windows/ai/get-started-desktop)：本教學課程會示範如何建置簡單的 Windows ML 傳統型應用程式。 </br> * [教學課程：建立 Windows Machine Learning UWP 應用程式 (C#)](https://docs.microsoft.com/windows/ai/get-started-uwp)：在此逐步教學課程中使用 Windows ML 建立您的第一個 UWP 應用程式。 </br> * [Windows.AI.MachineLearning 命名空間](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)：API 參考已針對最新版本的 Windows 10 SDK 進行更新，開發人員現在可以將此 API 用於 Win32 與 UWP 應用程式。
 Windows Mixed Reality | 如果顯示器硬體支援，開發人員現在可以要求硬體保護的後端緩衝區紋理，允許應用程式使用來自 PlayReady 等來源的硬體保護內容。 透過使用 [Windows.Graphics.Holographic.HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera) 的新屬性以及透過 [Windows.Graphics.Holographic.HolographicQuadLayerUpdateParameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicquadlayerupdateparameters) 的 Quad 圖層，可以為主要圖層提供硬體保護支援及設定。
 
@@ -97,7 +97,7 @@ C++/WinRT 是撰寫與使用 Windows 執行階段 API 的新方法。 它僅在�
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>開發人員入門：在 Window 10 上建立和自訂表單
 
-我們針對 Windows 開發人員的[入門文件](../get-started/index.md)現在提供了基本應用程式開發工作的實際操作經驗。 這段影片將向您逐步說明其中一個主題，並說明如何在您的應用程式中建立表單 UI 的基本概念。 [觀看影片](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看實際操作的程式碼，然後[自行查看主題](https://aka.ms/CreateForms)。
+我們針對 Windows 開發人員的[入門文件](../get-started/index.md)現在提供了基本應用程式開發工作的實際操作經驗。 這段影片將向您逐步說明其中一個主題，並說明如何在您的應用程式中建立表單 UI 的基本概念。 [觀看影片](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看實際操作的程式碼，然後[自行查看主題](https://aka.ms/CreateForms) \(部分機器翻譯\)。
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>使用個人化聊天專案增強您的機器人
 
@@ -111,7 +111,7 @@ Windows 現在允許您執行 UWP 應用程式的多個執行個體，而每個�
 
 Unity 的 Xbox Live 外掛程式包含對您的標題加入 Xbox Live 簽章、統計資料、朋友清單、雲端儲存空間和排行榜。 [觀看影片](https://youtu.be/fVQZ-YgwNpY)以深入了解，然後[下載 GitHub 套件](https://aka.ms/UnityPlugin)即可開始著手。
 
-### <a name="one-dev-question"></a>一個開發人員問題
+### <a name="one-dev-question"></a>One Dev Question
 
 在 One Dev Question 影片系列中，資深的 Microsoft 開發人員會談論一系列關於 Windows 開發、團隊文化和歷史的問題。
 

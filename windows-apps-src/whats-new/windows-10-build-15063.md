@@ -6,16 +6,16 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf7c5d8d0f788fb37150ae348d60e61d34753d5
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 83c1952a3cb21945a3e4c22aaa6ffe9f7f55c8f8
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66372898"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821090"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>適用於開發人員的 Windows 10 (組建 15063) 最新動向
 
-Windows 10 組建 15063 (也稱為 Creators Update 或 1703 版本) 搭配 Visual Studio 2017 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 15063 (也稱為 Creators Update 或 1703 版本) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 這是開發人員會感興趣的新功能和改良功能集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 15063 API 變更](windows-10-build-15063-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
 
@@ -32,7 +32,7 @@ Composition | Windows.UI.Composition 命名空間有許多新的或已更新的 
 Direct3D | 新的 API 已新增至 [Direct3D 12](https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics) 中，以支援不可部分完成的緩衝複本 (啟用晚期閂鎖技術)、可程式化樣本位置、深度範圍測試，以及常駐優先順序等。 </br></br> 新增 Fence API 以支援 [Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) 中的多重裝置狀況，以及 Direct3D 11 和 Direct3D 12 間的 Interop 狀況。 執行階段現在支援 OS 管理的著色器快取，以改善應用程式的載入時間和效能。
 EdgeHTML 15 | 為 Microsoft Edge 和 JS 型通用 Windows 平台應用程式提供動力的 Web 平台已更新至 EdgeHTML 15，並且現在支援付款要求 API、WebVR，以及內容安全性原則 2 等。 請參閱 [Microsoft Edge 開發人員指南](https://docs.microsoft.com/microsoft-edge/dev-guide) 以取得完整的變更清單。
 FlightStick 和 RawGameController | 新的 API 已新增至 [Windows.Gaming.Input 命名空間](https://docs.microsoft.com/uwp/api/windows.gaming.input)，包括[飛行桿支援](https://docs.microsoft.com/windows/uwp/gaming/flight-stick)，以及[原始遊戲控制器](https://docs.microsoft.com/windows/uwp/gaming/raw-game-controller)，可讓您從任何類型的控制器收集輸入資訊，並讓玩家選擇自訂輸入配置。
-Win32 中的高 DPI | [新的「個別監視器 v2」DPI 感知內容](https://msdn.microsoft.com/library/mt791579(v=vs.85))已新增至傳統型應用程式。 個別監視器 v2 仍然會在每次相關 DPI 變更時自動調整 Windows 的縮放比例，但它也可以讓應用程式存取每個最上層視窗的新縮放比例行為。
+Win32 中的高 DPI | [新的「個別監視器 v2」DPI 感知內容](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context)已新增至傳統型應用程式。 個別監視器 v2 仍然會在每次相關 DPI 變更時自動調整 Windows 的縮放比例，但它也可以讓應用程式存取每個最上層視窗的新縮放比例行為。
 筆跡 | [Ink](https://docs.microsoft.com/uwp/api/windows.ui.input.inking) 增加了量角器、尺規樣版、筆跡輸入的時間戳記、精緻高對比螢光筆，以及以程式建立筆墨筆劃的額外支援。 </br></br> [Ink 分析](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)可為 Windows Ink 應用程式提供筆墨筆劃的分析，包括圖案偵測及辨識、手寫辨識，以及配置解譯和分類。 </br></br> [Ink 工具列](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)的一般性改善，包括樣板按鈕 (適用於尺規和量角器)、飛出視窗控制類型，以及飛出視窗的位置/方向。 </br></br> 現在，您可以在 [Ink 工作區](https://docs.microsoft.com/uwp/api/windows.applicationmodel.preview.inkworkspace)中指定筆跡應用程式。
 輸入插入 | [輸入插入](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)提供了以程式產生及自動化來自各種不同裝置輸入資訊的支援。
 IoT | [Windows IoT 核心版](https://developer.microsoft.com/windows/iot/Explore/IoTCore)的更新包括 Cortana 的支援、IoT 儀表板的改善、Azure 裝置管理支援，以及適用於 IoT 的 Device Guard。 如需最新功能的完整概觀，請參閱 [Windows 10 IoT 核心版的新功能](https://developer.microsoft.com/windows/iot/Docs/WhatsNew)。

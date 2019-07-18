@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 1708
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 53bd11950d30e3924d6d196e911fa05208d0f5ec
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 52b929f2b6f95c2be2feb68a6221a606ca3715e5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371910"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821136"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 開發人員文件的新增功能
 
@@ -22,7 +22,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-使用新的適用於 Visual Studio 2017 的 [Windows Template Studio](https://aka.ms/wtsinstall) 擴充功能，快速建置包含您所需頁面、架構及功能的 UWP 應用程式。 這個以精靈為主的使用體驗實作經證實有效的模式及最佳做法，可節省新增功能至應用程式的時間並且避開相關問題。
+使用新的適用於 Visual Studio 2019 的 [Windows Template Studio](https://aka.ms/wtsinstall) 擴充功能，快速建置包含您所需頁面、架構及功能的 UWP 應用程式。 這個以精靈為主的使用體驗實作經證實有效的模式及最佳做法，可節省新增功能至應用程式的時間並且避開相關問題。
 
 ![Windows Template Studio](images/template-studio.png)
 
@@ -63,11 +63,11 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 我們已經為 Xbox Live 開發人員新增關於 UWP 遊戲和 Xbox 開發人員套件 (XDK) 遊戲的文件。
 
-請參閱 [Xbox Live 開發人員指南](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/)，以了解如何使用 Xbox Live API 將您的遊戲連線至 Xbox Live 社交遊戲網路。
+請參閱 [Xbox Live 開發人員指南](https://docs.microsoft.com//gaming/xbox-live/index)，以了解如何使用 Xbox Live API 將您的遊戲連線至 Xbox Live 社交遊戲網路。
 
-任何 UWP 遊戲開發人員都可以利用 [Xbox Live 創作者計畫](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)，在電腦和 Xbox One 上開發並發行支援 Xbox Live 的遊戲。
+任何 UWP 遊戲開發人員都可以利用 [Xbox Live 創作者計畫](https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)，在電腦和 Xbox One 上開發並發行支援 Xbox Live 的遊戲。
 
-請參閱 [Xbox Live 開發人員計畫概觀](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/developer-program-overview)，以取得提供給 Xbox Live 開發人員的程式和功能的相關資訊。
+請參閱 [Xbox Live 開發人員計畫概觀](https://docs.microsoft.com//gaming/xbox-live/developer-program-overview)，以取得提供給 Xbox Live 開發人員的程式和功能的相關資訊。
 
 ## <a name="videos"></a>影片
 
@@ -77,7 +77,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="narrator-and-dev-mode"></a>朗讀程式和開發人員模式
 
-您可能已經知道您可以使用[朗讀程式](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)來測試應用程式的螢幕助讀使用體驗。 不過，朗讀程式還有開發人員模式，為您提供很好的視覺化呈現方式來展示顯露給朗讀程式的資訊。 [觀看影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode)，然後深入了解[朗讀程式開發人員模式](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode)。
+您可能已經知道您可以使用[朗讀程式](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)來測試應用程式的螢幕助讀使用體驗。 不過，朗讀程式還有開發人員模式，為您提供很好的視覺化呈現方式來展示顯露給朗讀程式的資訊。 [觀看影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode)，然後深入了解[朗讀程式開發人員模式](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode)。
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 

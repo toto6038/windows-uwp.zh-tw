@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 7669c6536f28d5f979567f5b433dbf614800bec3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 999238d72017b92f1eb64c2e3089305166f993f2
+ms.sourcegitcommit: bf32c7ea6ca94b60dbd01cae279b31c6e0e5f338
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65627681"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348635"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 項目控制項；繫結至一個 C++/WinRT 集合
 
@@ -19,7 +19,7 @@ ms.locfileid: "65627681"
 如果您想要按照本主題的步驟進行，建議先建立 [XAML 控制項；繫結一個 C++/WinRT 屬性](binding-property.md)一文所述的專案。 本主題會將更多程式碼加入至該專案，且能進一步輔助本主題所介紹的概念。
 
 > [!IMPORTANT]
-> 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
+> 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
 ## <a name="what-does-observable-mean-for-a-collection"></a>對一個集合來說，「可觀察」  有何意義？
 如果代表集合的執行階段類別，每當將元素新增至該類別或從中移除時，會選擇引發 [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) 事件，則該執行階段類別便是可觀察的集合。 XAML 項目控制項藉由擷取更新的集合並且更新其本身以顯示目前的元素，可繫結至以及處理這些事件。
@@ -39,13 +39,16 @@ ms.locfileid: "65627681"
 runtimeclass BookstoreViewModel
 {
     BookSku BookSku{ get; };
-    Windows.Foundation.Collections.IObservableVector<IInspectable> BookSkus{ get; };
+    Windows.Foundation.Collections.IObservableVector<BookSku> BookSkus{ get; };
 }
 ...
 ```
 
-> [!IMPORTANT]
-> 在上述的 MIDL 3.0 清單中，請注意，**BookSkus** 屬性的類別是 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 的 [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_)。 在本主題的下一節中，我們會將 [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) 的項目來源繫結至 **BookSkus**。 清單方塊是項目控制項，若要正確設定 [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性，您需要將它設定為 **IInspectable**類型 **IObservableVector** (或 **IVector**) 值，或互通性類型值，例如 [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。
+> [!NOTE]
+> 在上述的 MIDL 3.0 清單中，請注意，**BookSkus** 屬性的類別是 **BookSku** 的 [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_)。 在本主題的下一節中，我們會將 [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) 的項目來源繫結至 **BookSkus**。 清單方塊是項目控制項，若要正確設定 [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性，您需要將它設定為 **IObservableVector** 或 **IVector** 類型的值，或互通性類型值，例如 [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。
+
+> [!WARNING]
+> 本主題中所顯示的程式碼適用於 C++/WinRT 版本2.0.190530.8 和更新版本。 如果您使用較早版本，則需要對顯示的程式碼進行一些微幅調整。 在上述的 MIDL 3.0 清單中，將 **BookSkus** 屬性變更為 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 的 [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_)。 然後在您的實作中也使用 **IInspectable** (而非 **BookSku**)。
 
 儲存並建置。 複製 `\Bookstore\Bookstore\Generated Files\sources` 資料夾之中 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 的存取子虛設常式 (如需詳細資訊，請參閱先前的主題 [XAML 控制項，繫結至 C++/WinRT 屬性](binding-property.md))。 實作像這樣的這些存取子虛設常式。
 
@@ -58,11 +61,11 @@ struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 
     Bookstore::BookSku BookSku();
 
-    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookSkus();
+    Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> BookSkus();
 
 private:
     Bookstore::BookSku m_bookSku{ nullptr };
-    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> m_bookSkus;
+    Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> m_bookSkus;
 };
 ...
 ```
@@ -73,7 +76,7 @@ private:
 BookstoreViewModel::BookstoreViewModel()
 {
     m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
-    m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
+    m_bookSkus = winrt::single_threaded_observable_vector<Bookstore::BookSku>();
     m_bookSkus.Append(m_bookSku);
 }
 
@@ -82,7 +85,7 @@ Bookstore::BookSku BookstoreViewModel::BookSku()
     return m_bookSku;
 }
 
-Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
+Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> BookstoreViewModel::BookSkus()
 {
     return m_bookSkus;
 }
@@ -115,7 +118,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 ...
 ```
 
-現在請建置並執行專案。 按一下按鈕執行 **Click** 事件處理常式。 我們所見 **Append** 的實作引發一個事件，讓 UI 知道集合已變更；且 **ListBox** 重新查詢集合，更新其自己的 **Items** 值。 就像以前一樣，變更書籍其中之一的標題；且同時在按鈕與清單方塊上反映該標題的變更。
+現在建置並執行專案。 按一下按鈕執行 [按一下]  事件處理常式。 我們所見 **Append** 的實作引發一個事件，讓 UI 知道集合已變更；且 **ListBox** 重新查詢集合，更新其自己的 **Items** 值。 就像以前一樣，變更書籍其中之一的標題；且同時在按鈕與清單方塊上反映該標題的變更。
 
 ## <a name="important-apis"></a>重要 API
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)

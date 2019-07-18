@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f6fe36fb8955b6234cdf3cb42e4db02a602f4a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 00a65324b799b0cf974271da23fdbcb36aa6c8e2
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364350"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399619"
 ---
 # <a name="rich-edit-box"></a>Rich Edit 方塊
 
@@ -29,8 +29,7 @@ ms.locfileid: "66364350"
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 使用 **RichEditBox** 來顯示和編輯文字檔案。 您不會透過您使用其他標準文字輸入方塊的方式，使用 RichEditBox 取得針對您應用程式的使用者輸入內容。 更確切地說，您會使用它來處理與應用程式分開的文字檔案。 您通常會將輸入到 RichEditBox 的文字儲存為 .rtf 檔案。
--   如果多行文字方塊的主要目的為建立文件 (例如部落格文章或電子郵件內容)，而且這些文件需要 RTF，則使用 RTF 方塊。
--   如果您希望使用者能夠格式化文字，請使用 RTF 方塊。
+-   如果多行文字方塊的主要目的為建立唯讀文件 (例如部落格文章或電子郵件內容)，而且這些文件需要 RTF，則改為使用 [RTF 方塊](/windows/uwp/design/controls-and-patterns/rich-text-block)。
 -   擷取只會消耗且不會再對使用者顯示的文字時，請使用純文字輸入控制項。
 -   針對所有其他案例，請使用純文字輸入控制項。
 
@@ -218,7 +217,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) \(英文\) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 
@@ -226,5 +225,5 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [拼字檢查指導方針](text-controls.md)
 - [新增搜尋](search.md)
 - [文字輸入的指導方針](text-controls.md)
-- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) \(英文\)
+- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) \(英文\)

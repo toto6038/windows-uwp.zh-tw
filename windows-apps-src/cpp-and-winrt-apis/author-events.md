@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3c834a1696b65099549aa001338a8a02f60e50
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: fc3b07848215699afe971674acfa7606ffb21bce
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745234"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660170"
 ---
 # <a name="author-events-in-cwinrt"></a>以 C++/WinRT 撰寫事件
 
@@ -24,7 +24,7 @@ ms.locfileid: "64745234"
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>建立 Windows 執行階段元件 (BankAccountWRC)
 
-在 Microsoft Visual Studio 中，從建立新的專案開始。 建立 **Windows 執行階段元件 (C++/WinRT)** 專案，並將它命名為 *BankAccountWRC* (適用於「銀行帳戶 Windows 執行階段元件」)。 尚未建置專案。
+從在 Microsoft Visual Studio 中建立新的專案開始。 建立 **Windows 執行階段元件 (C++/WinRT)** 專案，並將它命名為 *BankAccountWRC* (適用於「銀行帳戶 Windows 執行階段元件」)。 尚未建置專案。
 
 新建立的專案中包含一個名為 `Class.idl` 的檔案。 將該檔案 `BankAccount.idl` 重新命名 (重新命名 `.idl` 檔案也會自動將相依的 `.h` 和 `.cpp` 檔案重新命名)。 以下面的清單取代 `BankAccount.idl` 的內容。
 
@@ -91,7 +91,10 @@ namespace winrt::BankAccountWRC::implementation
 }
 ```
 
-您不需要實作事件撤銷的多載 (如需詳細資訊，請參閱[撤銷已註冊的委派](handle-events.md#revoke-a-registered-delegate)) &mdash;透過 C++/WinRT 投影為您處理。 為了提供您彈性以針對您的案例進行最佳實作，其他多載不會納入投影。 呼叫 [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) 和 [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function)，如同這是有效率且並行/執行緒安全的預設值。 但若您有大量的事件，則您可能不想要每一個都有事件欄位，而寧願改用一些疏鬆的實作。
+> [!NOTE]
+> 如需有關事件撤銷的詳細資訊，請參閱[撤銷已註冊的委派](handle-events.md#revoke-a-registered-delegate)。 您可以免費為您的事件取得自動事件撤銷實作。 換句話說，您不需要實作事件撤銷的多載&mdash;C++/WinRT 投影會為您提供。
+
+其他多載 (註冊和手動撤銷多載) 則「不會」  在投影中內建。 這是為了讓您能夠彈性地以最佳方式在案例中進行實作。 呼叫 [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) 和 [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function)(如同這些實作所示) 是有效率且並行/執行緒安全的預設值。 但若您有大量的事件，則您可能不想要每一個都有事件欄位，而寧願改用一些疏鬆的實作。
 
 如果餘額為負數的話，您也可能看到以上 **AdjustBalance** 函式的實作引發 **AccountIsInDebit** 事件。
 
@@ -112,6 +115,8 @@ namespace winrt::BankAccountWRC::implementation
 ```
 
 也在 `App.cpp` 中，新增下列程式碼起始一個 BankAccount (使用投影類型的預設建構函式)，註冊事件處理常式，然後導致帳戶進入借方。
+
+`WINRT_ASSERT` 是巨集定義，而且會發展為 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
 ```cppwinrt
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>

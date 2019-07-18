@@ -1,16 +1,16 @@
 ---
 description: 本主題示範的方式，您可以使用 C++/WinRT，同時建立及使用 Windows 執行階段非同步物件。
 title: 透過 C++/WinRT 的並行和非同步作業
-ms.date: 04/24/2019
+ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 910d7a7ca2aaebac6dd462d7104b26a989cf8814
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: cbabf38f41ae940f5c92944154638eae7016e043
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721663"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660091"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
@@ -230,12 +230,16 @@ IASyncAction DoWorkAsync(Param const& value)
 }
 ```
 
-在協同程式中，執行是同步的，直到第一個暫停點，其傳回控制項至呼叫端。 協同程式恢復時，參考參數參考的來源值可能發生任何事情。 從協同程式的觀點，參考參數有不受控制的存留期。 因此，上述範例中，我們安全存取 *值* 直到 `co_await`，但不是在其之後。 我們也不能安全的將 *值* 傳遞至 **DoOtherWorkAsync** 如果存在任何風險，該函式將會暫停，然後在其恢復後嘗試使用 *值*。 若要讓參數在暫停與恢復之後安全使用，您的協同程式必須使用預設的透過值傳遞，以確保他們透過值擷取並避免存留期問題。 如果您確定可以安全執行此操作，那麼您幾乎不會偏離該指導方針。
+在協同程式中，執行是同步的，直到第一個暫停點，其傳回控制項至呼叫端。 協同程式恢復時，參考參數參考的來源值可能發生任何事情。 從協同程式的觀點，參考參數有不受控制的存留期。 因此，上述範例中，我們安全存取 *值* 直到 `co_await`，但不是在其之後。 如果呼叫端將「值」  解構，應在導致記憶體損毀之後，嘗試在協同程式內部存取該值。 我們也不能安全的將 *值* 傳遞至 **DoOtherWorkAsync** 如果存在任何風險，該函式將會暫停，然後在其恢復後嘗試使用 *值*。
+
+若要讓參數在暫停與恢復之後安全使用，您的協同程式必須使用預設的透過值傳遞，以確保他們透過值擷取並避免存留期問題。 如果您確定可以安全執行此操作，那麼您幾乎不會偏離該指導方針。
 
 ```cppwinrt
 // Coroutine
-IASyncAction DoWorkAsync(Param value);
+IASyncAction DoWorkAsync(Param value); // not const&
 ```
+
+若要以值的形式傳遞，引數必須以不耗費資源的方式移動或複製，而這通常是智慧指標的情況。
 
 透過 const 值來傳遞也是一個很好的做法 (除非您想要移動該值)。 它不會對您製作複本的來源值有任何影響，但它意圖明確，且有助於您無意中修改複本。
 
@@ -245,6 +249,38 @@ IASyncAction DoWorkAsync(Param const value);
 ```
 
 也請參閱[標準陣列和向量](std-cpp-data-types.md#standard-arrays-and-vectors)，處理如何將標準向量傳遞至非同步被呼叫者。
+
+如果您不能變更協同程式的簽章，但您可以變更實作，則您可以在第一個 `co_await` 之前建立本機複本。
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_value = value;
+    // It's ok to access both safe_value and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_value here (not value).
+}
+```
+
+如果 `Param` 需要耗費很多資源才能複製，則只擷取您在第一個 `co_await` 之前需要的部分。
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_data = value.data;
+    // It's ok to access safe_data, value.data, and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_data here (not value.data, nor value).
+}
+```
+
+## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>安全地存取類別成員協同程式中的 this  指標
+
+請參閱 [C++/WinRT 中的強式和弱式參考](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)。
 
 ## <a name="offloading-work-onto-the-windows-thread-pool"></a>卸載工作至 Windows 執行緒集區
 
@@ -723,6 +759,23 @@ int main()
     // Do other work here.
 }
 ```
+
+當您要在事件處理常式中執行非同步作業時，**winrt::fire_and_forget** 也適合用來作為事件處理常式的傳回類型。 以下是一個範例 (也請參閱 [C++/WinRT 中的強式和弱式參考](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine))。
+
+```cppwinrt
+winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)
+{
+    auto lifetime{ get_strong() }; // Prevent *this* from prematurely being destructed.
+    auto ensure_completion{ unique_deferral(args.GetDeferral()) }; // Take a deferral, and ensure that we complete it.
+
+    auto file{ co_await StorageFile::GetFileFromApplicationUriAsync(Uri(L"ms-appx:///video_file.mp4")) };
+    args.SetStorageFile(file);
+
+    // The destructor of unique_deferral completes the deferral here.
+}
+```
+
+第一個引數 (sender  ) 保留未命名，因為我們永遠不會用到。 因此，我們可以安全地將其保留以作為參考。 但會看到 args  以值的形式傳遞。 請參閱上述的[參數傳遞](#parameter-passing)一節。
 
 ## <a name="important-apis"></a>重要 API
 * [concurrency::task 類別](/cpp/parallel/concrt/reference/task-class)

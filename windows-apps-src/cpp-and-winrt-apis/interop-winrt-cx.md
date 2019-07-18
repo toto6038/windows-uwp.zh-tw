@@ -5,12 +5,12 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, 互通性, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 5394443b4832864e5b46bfbf917c04f0af6d8a19
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a6b57627cbf9021732a8a66818250ffc1fca915f
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360222"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660119"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT 與 C++/CX 之間的互通性
 
@@ -54,6 +54,8 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 - 建立 **Visual C++** \> **Windows 通用** > **核心應用程式 (C++/WinRT)** 專案。
 - 在專案屬性中：[C/C++]  \> [一般]  \> [使用 Windows 執行階段擴充功能]  \> [是 \(/ZW\)\]  。 如此會開啟適用於 C++/CX 的專案支援。
 - 將 `App.cpp` 的內容取代為下方的程式碼清單。
+
+`WINRT_ASSERT` 是巨集定義，而且會發展為 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
 ```cppwinrt
 // App.cpp

@@ -6,18 +6,20 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 強式, 弱式, 參考
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 46a0e21295ba430671be4e36ab213e182c2b1737
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 77fcd8369b2df3fdb42facf9d2b2a1d93188322b
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721626"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844316"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的強式和弱式參考
 
 Windows 執行階段是參考計數式系統；在這樣的系統中，請務必了解強式和弱式參考 (以及不是這兩者的參考，例如隱含 this  指標) 的重要性以及之間的區別。 您將在本主題中了解，針對順利執行的可靠系統和針對會意外當機的系統，正確管理這些參考的方式可能會有差異。 藉由提供可深入支援語言投影的協助程式函式，[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 可讓您輕鬆且正確地建置更複雜的系統。
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>安全地存取類別成員協同程式中的 this  指標
+
+如需有關協同程式的詳細資訊和程式碼範例，請參閱[使用 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 下方列出的程式碼會示範典型的協同程式範例，其中一個類別有一個成員函式。 您可以複製此範例並貼到新 **Windows 主控台應用程式 (C++/WinRT)** 專案中的指定檔案。
 
@@ -59,14 +61,16 @@ int main()
 
 **MyClass::RetrieveValueAsync** 會花一些時間運作，並在最終傳回一份 `MyClass::m_value` 資料成員。 呼叫 **RetrieveValueAsync** 會建立非同步物件，而該物件具有隱含的 this  指標 (最終可透過此指標存取 `m_value`)。
 
+請記住，在協同程式中，執行是同步的，直到在第一個暫停點上將控制項傳回呼叫端為止。 在 **RetrieveValueAsync** 中，第一個 `co_await` 是第一個暫停點。 協同程式恢復之前 (在此案例中，大約是五秒之後)，隱含的 this  指標 (可透過該指標存取 `m_value`) 上可能會發生任何事。
+
 以下是完整的事件順序。
 
 1. **MyClass** 的執行個體會在  之中建立 (`myclass_instance`)。
 2. `async` 物件建立，並指向 (透過其中的 this  ) `myclass_instance`。
-3. **winrt::Windows::Foundation::IAsyncAction::get** 函式會封鎖幾秒鐘的時間，然後傳回 **RetrieveValueAsync** 的結果。
+3. **winrt::Windows::Foundation::IAsyncAction::get** 函式會觸及其第一個暫停點、封鎖幾秒鐘的時間，然後傳回 **RetrieveValueAsync** 的結果。
 4. **RetrieveValueAsync** 傳回 `this->m_value` 的值。
 
-只要 this  有效，步驟 4 就是安全的。
+只要 this  仍有效，步驟 4 就是安全的。
 
 但是，如果在非同步作業完成之前，類別執行個體就損毀了呢？ 有各種狀況會造成類別執行個體在非同步方法完成之前脫離範圍。 但是，我們可以藉由將類別執行個體設定為 `nullptr` 來模擬此狀況。
 
@@ -130,7 +134,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 
 在上述範例中，在未保留強式參考的情況下，弱式參考並不能避免類別執行個體發生損毀。 但可以讓您確認是否能在存取成員變數之前取得強式參考。
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>使用事件處理委派安全地存取 this  指標
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>使用事件處理委派安全地存取「this」  指標
 
 ### <a name="the-scenario"></a>案例
 
@@ -193,7 +197,9 @@ int main()
 }
 ```
 
-模式是事件收件者會有相依於其 this  指標的 lambda 事件處理常式。 只要事件收件者的存留期比事件來源長，處理常式的存留期就會超過這些相依性的存留期。 而且在這些情況下，該模式通常會順利運作。 這些案例中有些很明顯，例如，UI 網頁藉由頁面上的控制項處理事件時。 頁面存留期會超過按鈕存留期&mdash;因此，處理常式的存留期也會超過按鈕。 任何時候都是如此，收件者擁有來源 (例如，做為資料成員)，或收件者與來源屬同層級，且由其他物件擁有。 如果您確定有一個案例，其中處理常式不會超越其所依賴的 this  ，您便可以正常擷取 this  ，而不需要考量強式或弱式存留時間。
+模式是事件收件者會有相依於其 this  指標的 lambda 事件處理常式。 只要事件收件者的存留期比事件來源長，處理常式的存留期就會超過這些相依性的存留期。 而且在這些情況下，該模式通常會順利運作。 這些案例中有些很明顯，例如，UI 網頁藉由頁面上的控制項處理事件時。 頁面存留期會超過按鈕存留期&mdash;因此，處理常式的存留期也會超過按鈕。 任何時候都是如此，收件者擁有來源 (例如，做為資料成員)，或收件者與來源屬同層級，且由其他物件擁有。 另一個安全案例是事件來源以同步方式引發其事件時；您可以接著撤銷處理常式，並且確定不會再收到事件。
+
+如果您確定有一個案例，其中處理常式不會超越其所依賴的 this  ，您便可以正常擷取 this  ，而不需要考量強式或弱式存留時間。
 
 但仍有案例，其中 this  的存留期不會超過其在處理常式中的使用時間 (包括由非同步動作與作業引發的完成和進行中事件的處理常式)，而您必須知道如何處理這些狀況。
 

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 914cf884b97d14af523cc61b0fcce719104783ba
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 01ff6fb443550287330d6fe503c3d49d81e2142c
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721693"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717647"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -54,6 +54,24 @@ ms.locfileid: "66721693"
 ```
 
 請務必藉由連結 **WindowsApp.lib** (而非連結替代的靜態連結程式庫) 來解決可以解決的連結器錯誤，否則應用程式將不會傳遞 Visual Studio 和 Microsoft Store 用來驗證提交的 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)測試 (亦即，應用程式將因此無法成功內嵌到 Microsoft Store)。
+
+## <a name="why-am-i-getting-a-class-not-registered-exception"></a>為什麼我會收到「類別未註冊」的例外狀況？
+
+此情況的徵兆是&mdash;建構執行階段類別或存取靜態成員時&mdash;您看到執行階段上擲回例外狀況，且其中包含 REGDB_E_CLASSNOTREGISTERED 的 HRESULT 值。
+
+其中一個原因是無法載入您的 Windows 執行階段元件。 請確定元件的 Windows 執行階段中繼資料檔 (`.winmd`) 與元件二進位檔 (`.dll`) 具有相同名稱，這也是專案名稱以及根命名空間的名稱。 也請確定，Windows 執行階段中繼資料和二進位檔已由建置程序正確複製到使用中應用程式的 `Appx` 資料夾。 並且確認使用中應用程式的 `AppxManifest.xml` (也在 `Appx` 資料夾中) 包含正確宣告可啟動類別與二進位檔案名稱的 **&lt;InProcessServer&gt;** 元素。
+
+### <a name="uniform-construction"></a>統一建構
+
+如果您嘗試透過任何投影類型的建構函式(而非其 **std::nullptr_t** 建構函式) 具現化本機上實作的執行階段類別，也可能會發生此錯誤。 若要執行此操作，您將需要通常稱為統一建構的 C++/WinRT 2.0 功能。 但是，如您想以「不」  需要統一建構的方式具現化本機上實作的執行階段類別，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md)。
+
+如果您「想要」  使用統一建構，則該功能會針對新專案預設為啟用。 針對現有專案，您必須藉由設定 `cppwinrt.exe` 工具來加入統一建構。 在 Visual Studio 中，將 [通用屬性]   > [C++/WinRT]   > [最佳化]  設為 [是]  。 此動作會將 `<CppWinRTOptimized>true</CppWinRTOptimized>` 新增至您的專案檔。 而且這與從命令列叫用 `cppwinrt.exe` 時，新增 `-opt[imize]` 參數的效果一樣。
+
+如果您在「沒有」  該設定的情況下建置專案，您產生的 C++/WinRT 投影會呼叫 [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory)，以存取執行階段類別的建構函式和靜態成員。 而這需要註冊類別，您的模組也需實作 [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) 進入點。
+
+如果您在「包含」  `-opt[imize]` 參數的情況下建置專案，這會使專案略過您元件中類別的 **RoGetActivationFactory**，因此，如果類別在您元件外面，您也可以使用完全相同的方式來建構這些元件 (無須註冊)。
+
+若要使用統一建構，您也必須在包含實作標頭檔之後，將每個實作的 `.cpp` 檔案編輯為 `#include <Sub/Namespace/ClassName.g.cpp>`。
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>我是否應該實作 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，該如何進行？
 如果在其解構程式中您有釋出資源的執行階段類別，且設計該執行階段類別從其實作編譯單位之外使用 (它是 Windows 執行階段元件，旨在供給 Windows 執行階段用戶端應用程式的一般使用)，我們建議您也實作 **IClosable** 以便支援不確定完成的語言使用您的執行階段類別。 請確定不論是否解構函式都會釋出您的資源，[**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close)，或兩者都呼叫。 可以任意呼叫 **IClosable::Close** 數次。
@@ -154,6 +172,25 @@ a.f();
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>如何讓字串變為類型 &mdash; 舉例來說，為了瀏覽？
 [瀏覽檢視程式碼範例](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (大部分使用 C#) 結尾有 C++/WinRT 程式碼片段會示範如何執行這項操作。
+
+## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>如何解決 GetCurrentTime 和/或 TRY 意義不明的狀況？
+
+標頭檔 `winrt/Windows.UI.Xaml.Media.Animation.h` 會宣告名為 **GetCurrentTime** 的方法，而 `windows.h` (透過 `winbase.h`) 會定義名為 **GetCurrentTime** 的巨集。 當兩者發生衝突時，C++ 編譯器會產生「*錯誤 C4002：函式類巨集引動過程 GetCurrentTime 有太多引數*」。
+
+同樣地，`winrt/Windows.Globalization.h` 會宣告名為 **TRY** 的方法，而 `afx.h` 會定義名為 **GetCurrentTime** 的巨集。 當這些有所衝突時，C++編譯器會產生「錯誤 C2334：'{' 前面有非預期的權杖；略過顯示的函式主體  」。
+
+若要解決其中一個問題，或同時解決這兩個問題，您可以執行此操作。
+
+```cppwinrt
+#pragma push_macro("GetCurrentTime")
+#pragma push_macro("TRY")
+#undef GetCurrentTime
+#undef TRY
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#pragma pop_macro("TRY")
+#pragma pop_macro("GetCurrentTime")
+```
 
 > [!NOTE]
 > 如果本主題無法解答您的問題，則您可藉由造訪 [Visual Studio C++ 開發人員社群](https://developercommunity.visualstudio.com/spaces/62/index.html)，或[在 Stack Overflow 上使用 `c++-winrt` 標籤](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)來尋找說明。

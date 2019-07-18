@@ -1,20 +1,23 @@
 ---
-description: 本主題示範如何直接或間接使用 **winrt::implements** 基礎結構撰寫 C++/WinRT API。
+description: 本主題示範如何直接或間接使用 **winrt::implements** 基底結構撰寫 C++/WinRT API。
 title: 使用 C++/WinRT 撰寫 API
-ms.date: 04/23/2019
+ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 526c6fba76539a5d43231c29479621478b2dde59
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 74d15b517c5ec6547115bc8ffdb44a2b742c68d6
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65821082"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717667"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
 本主題示範如何直接或間接使用 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基底結構撰寫 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API。 在此內容中「撰寫」  的同義字有「產生」  或「實作」  。 本主題以此順序涵蓋下列 C++/WinRT 類型的實作 API 案例。
+
+> [!NOTE]
+> 本主題與 Windows 執行階段元件的主體有關，但僅限與 C++/WinRT 環境有關的部分。 如果您想尋找的內容是涵蓋所有 Windows 執行階段語言的 Windows 執行階段元件，請參閱 [Windows 執行階段元件](/windows/uwp/winrt-components/)。
 
 - 您「不」  撰寫 Windows 執行階段類別 (執行階段類別)；您只想針對您應用程式內的區域取用，實作一或多個 Windows 執行階段介面。 在此案例中，您直接從 **winrt::implements** 衍生並實作函式。
 - 您「正」  撰寫執行階段類別。 您可能在撰寫供應用程式取用的元件。 或您可能在撰寫供 XAML 使用者介面 (UI) 取用的類型，在此情況下，您在相同編譯單位中，同時實作和取用執行階段類別。 在這些案例中，您讓工具為您產生從 **winrt::implements** 衍生的類別。
@@ -25,6 +28,7 @@ ms.locfileid: "65821082"
 > 請務必區分實作類型和投影類型的概念。 投影類型在[使用 C++/WinRT 取用 API](consume-apis.md) 中描述。
 
 ## <a name="if-youre-not-authoring-a-runtime-class"></a>如果您「不」  撰寫執行階段類別
+
 最簡單的案例是，您在實作供區域取用的 Windows 執行階段介面。 您不需要執行階段類別；只需要一般 C++ 類別。 例如，您可能在撰寫以 [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) 為基礎的應用程式。
 
 > [!NOTE]
@@ -121,6 +125,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果您正在 Windows 執行階段元件中撰寫執行階段類別
+
 如果您的類型為了取用一個應用程式，已封裝在 Windows 執行階段元件中，則它必須是執行階段類別。
 
 > [!TIP]
@@ -142,7 +147,9 @@ namespace MyProject
 }
 ```
 
-此 IDL 宣告 Windows 執行階段 (執行階段) 類別。 執行階段類別是可透過現代化 COM 介面啟動與使用的類型 (通常是跨可執行檔邊界的)。 當您將 IDL 檔案新增至專案並建置時，C++/WinRT 工具鏈 (`midl.exe` 和 `cppwinrt.exe`) 會為您產生實作類型。 使用上述範例 IDL，實作類型是 C++ 結構虛設常式名為 **winrt::MyProject::implementation::MyRuntimeClass**，在名為 `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` 和 `MyRuntimeClass.cpp` 的原始程式碼檔案中。
+此 IDL 宣告 Windows 執行階段 (執行階段) 類別。 執行階段類別是可透過現代化 COM 介面啟動與使用的類型 (通常是跨可執行檔邊界的)。 當您將 IDL 檔案新增至專案並建置時，C++/WinRT 工具鏈 (`midl.exe` 和 `cppwinrt.exe`) 會為您產生實作類型。 如需作用中的 IDL 檔案工作流程範例，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md)。
+
+使用上述範例 IDL，實作類型是 C++ 結構虛設常式名為 **winrt::MyProject::implementation::MyRuntimeClass**，在名為 `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` 和 `MyRuntimeClass.cpp` 的原始程式碼檔案中。
 
 實作類型如下所示。
 
@@ -175,6 +182,7 @@ struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 如需更多詳細資料、程式碼和 Windows 執行階段元件中撰寫 API 的逐步解說，請參閱[在 C++/WinRT 中撰寫事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)。
 
 ## <a name="if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui"></a>如果您正在撰寫要在 XAML UI 中參考的執行階段類別
+
 如果您的類型是要由您的 XAML UI 參照，它則需要是一個執行階段類別，即使它與 XAML 在同一個專案中也是。 雖然執行階段類別通常是跨可執行檔邊界來啟動，但執行階段類別也可以在實作它的編譯單位中使用。
 
 在此案例中，您同時撰寫「和」  取用 API。 實作您執行階段類別的程序，基本上與 Windows 執行階段元件的相同。 因此，請查閱上一節&mdash;[如果您正在 Windows 執行階段元件中撰寫執行階段類別](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)。 唯一不同的細節是，C + + / WinRT 工具鏈不僅從 IDL 產生執行類型，也產生投影類型。 請務必了解，在此案例中只說 "**MyRuntimeClass**" 可能會模稜兩可；有數個不同種類相同名字的實體。
@@ -205,10 +213,11 @@ namespace winrt::MyProject
 在此案例中使用您執行階段類別的程序，在 [C++/WinRT 使用 APS](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project) 中描述。
 
 ## <a name="runtime-class-constructors"></a>執行階段類別建構函式
+
 上列內容的重點如下。
 
 - 您在 IDL 中宣告的每個建構函式，都導致在實作類型與投影類型上產生一個建構函示。 從「不同」  編譯單位使用 IDL 已宣告的建構函式取用執行階段類型。
-- 不論您是否有 IDL 已宣告的建構函式，都會在您的投影類型上產生接受 `nullptr_t` 的建構函式多載。 呼叫 `nullptr_t` 建構函式是從「相同」  編譯單位取用執行階段類別的「首兩個步驟」  。 如需詳細資料和程式碼範例，請參閱[使用 C++/WinRT 取用 API](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project)。
+- 不論您是否有 IDL 已宣告的建構函式，都會在您的投影類型上產生接受 **std::nullptr_t** 的建構函式多載。 呼叫 **std::nullptr_t** 建構函式是從「相同」  編譯單位取用執行階段類別的「首兩個步驟」  。 如需詳細資料和程式碼範例，請參閱[使用 C++/WinRT 取用 API](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project)。
 - 如果您正從「相同」  編譯單位取用執行階段類別，您也可以直接在實作類型 (請記住，是在 `MyRuntimeClass.h`) 上實作非預設建構函式。
 
 > [!NOTE]
@@ -218,7 +227,20 @@ namespace winrt::MyProject
 > 
 > 如果您想要只在相同的編譯單位中撰寫與取用您的執行階段類別，且您需要建構函式參數，則直接在您的實作類型上直接撰寫您需要的建構函式。
 
+## <a name="runtime-class-methods-properties-and-events"></a>執行階段類別方法、屬性和事件
+
+我們已了解工作流程會使用 IDL 宣告您的執行階段類別和其成員，然後由工具為您產生原型和虛設常式實作。 至於這些針對您執行階段類別成員自動產生的原型，您「可以」  對其進行編輯，讓其傳遞您在 IDL 中宣告的不同類型。 但是，若要這麼做，您在 IDL 中宣告的類型必須要能夠轉送到您在實作版本中宣告的類型。
+
+以下是一些範例。
+
+- 您可以放寬參數類型的限制。 例如，如果您的方法在 IDL 中採用 **SomeClass**，則在實作中，您可以選擇將其變更成 **IInspectable**。 之所以可以這麼做，是因為任何 **SomeClass** 都可轉送到 **IInspectable** (但反過來則不行)。
+- 您可以接受值形式的可複製參數，而不是參考形式。 例如，將 `SomeClass const&` 變更為 `SomeClass const&`。 如果您需要避免將參考擷取到協同程式，則這是必要的 (請參閱[參數傳遞](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing))。
+- 您可以放寬傳回值的限制。 例如，您可以將 **void** 變更為 [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget)。
+
+最後兩項非常適合用來撰寫非同步的事件處理常式。
+
 ## <a name="instantiating-and-returning-implementation-types-and-interfaces"></a>初始化並傳回實作類型與介面
+
 本節中，作為範例的執行類型名為 **MyType**，實作 [**IStringable**](/uwp/api/windows.foundation.istringable) 和 [**IClosable**](/uwp/api/windows.foundation.iclosable) 介面。
 
 您可以直接從 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) (不是執行階段類別) 衍生 **MyType**。
@@ -249,7 +271,7 @@ namespace MyProject
 }
 ```
 
-若要從 **MyType** 移至 **IStringable** 或 **IClosable** 物件 (您可以使用或傳回作為您投影的一部分)，您可以呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函式範本。 **make** 傳回實作類型的預設介面。
+若要從 **MyType** 移至 **IStringable** 或 **IClosable** 物件 (您可以使用或傳回作為您投影的一部分)，您應呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函式範本。 **make** 傳回實作類型的預設介面。
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
@@ -335,6 +357,7 @@ void MyType::MemberFunction(MyProject::MyOtherType const& ot)
 ```
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>從有非預設建構函式的類型衍生
+
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)** ](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)是非預設建構函式的範例。 它沒有預設建構函式，若要建構 **ToggleButtonAutomationPeer**，您必須傳遞 *owner*。 因此，如果您從 **ToggleButtonAutomationPeer** 衍生，則您需要提供一個接受 *owner* 的建構函式，並將它傳遞給基底。 讓我們看看實際上看起來如何。
 
 ```idl
@@ -390,7 +413,48 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 
 基底類別建構函式預期一個 **ToggleButton**。 而且 **MySpecializedToggleButton**「是」  一個**ToggleButton**。
 
-除非您進行上述的編輯 (將建構函式參數傳遞給基底類別)，否則編譯器會標幟您的建構函式，並指出在稱為 (此案例中) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** 的類型中，無法取得適當的預設建構函式。 這是您實作類型的基礎類別的實際基底類別。
+除非您進行上述的編輯 (將建構函式參數傳遞給基底類別)，否則編譯器會標幟您的建構函式，並指出在稱為 (此案例中) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** 的類型中，無法取得適當的預設建構函式。 這是您實作類型的基底類別的實際基底類別。
+
+## <a name="namespaces-projected-types-implementation-types-and-factories"></a>命名空間：投影的類型、實作類型及處理站
+
+如您先前在本主題中看到的，C++/WinRT 執行階段類別會以多個 C++ 類別的形式存在於多個命名空間中。 因此，**MyRuntimeClass** 名稱在 **winrt::MyProject** 命名空間中有一個意義，而在 **winrt::MyProject::implementation** 命名空間中則有不同的意義。 請留意您目前環境中具有的命名空間，並在需要從不同命名空間中取得名稱時，使用命名空間前置詞。 讓我們更仔細地看看這些命名空間。
+
+- **winrt::MyProject**。 此命名空間包含投影類型。 投影類型的物件是 Proxy；其本質是支援物件的智慧指標，而該支援物件可能會在此實作到您的專案中，或可能實作到另一個編譯單位中。
+- **winrt::MyProject::implementation**。 此命名空間包含實作類型。 實作類型的物件不是指標；而是值 &mdash; 完整的 C++ 堆疊物件。 請勿直接建構實作類型，而是呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)，將實作類型作為範本參數來傳遞。 在此主題中，我們先前已示範作用中的 **winrt::make** 範例，而另一個範例位在 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)中。
+- **winrt::MyProject::factory_implementation**。 此命名空間包含處理站。 此命名空間中的物件支援 [**IActivationFactory**](/windows/win32/api/activation/nn-activation-iactivationfactory)。
+
+下表列出在不同環境中必須使用的最低命名空間條件。
+
+|環境中的命名空間|指定投影類型|指定投影類型|
+|-|-|-|
+|**winrt::MyProject**|`MyRuntimeClass`|`implementation::MyRuntimeClass`|
+|**winrt::MyProject::implementation**|`MyProject::MyRuntimeClass`|`MyRuntimeClass`|
+
+> [!IMPORTANT]
+> 如果您想要從實作中傳回投影類型，請不要透過撰寫 `MyRuntimeClass myRuntimeClass;` 來具現化實作類型。 適用於該案例的正確技術和程式碼位在本主題前面的[具現化並傳回實作類型與介面](#instantiating-and-returning-implementation-types-and-interfaces)一節。
+>
+> 在該案例中，`MyRuntimeClass myRuntimeClass;` 的問題是其在堆疊上建立了 **winrt::MyProject::implementation::MyRuntimeClass** 物件。 該物件 (屬於實作類型) 的行為在某些方面類似投影類型 &mdash; 您可以透過相同方式在其中叫用方法，其甚至可以轉換成投影類型。 但物件會在有範圍限制時遭到解構 (根據一般的 C++ 規則)。 因此，如果您已將投影類型 (以智慧指標的形式) 傳回給該物件，則該指標現在是懸空狀態。
+>
+> 這種記憶體損毀的錯誤類型很難診斷。 因此，針對偵錯組建，C++/WinRT 判斷提示會使用堆疊偵測器協助您找出這種錯誤。 但協同程式會配置到堆積上，因此，如果將其放到協同程式中，則無法取得此錯誤的協助。
+
+## <a name="using-projected-types-and-implementation-types-with-various-cwinrt-features"></a>搭配各種 C++/WinRT 功能使用投影類型與實作類型
+
+以下是各種位置和其中預期有類型的 C++/WinRT 功能，以及這些功能預期的類型種類 (投影類型、實作類型或兩者皆是)。
+
+|功能|接受|附註|
+|-|-|-|
+|`T` (代表智慧指標)|投影|請參閱[命名空間：投影類型、實作類型及處理站](#namespaces-projected-types-implementation-types-and-factories)中有關意外使用實作類型的注意事項。|
+|`agile_ref<T>`|兩者|如果您使用實作類型，則建構函式引數必須是 `com_ptr<T>`。|
+|`com_ptr<T>`|實作|使用投影類型會產生錯誤：`'Release' is not a member of 'T'`。|
+|`default_interface<T>`|兩者|如果您使用實作類型，則會傳回第一次實作的介面。|
+|`get_self<T>`|實作|使用投影類型會產生錯誤：`'_abi_TrustLevel': is not a member of 'T'`。|
+|`guid_of<T>()`|兩者|傳回預設介面的 GUID。|
+|`IWinRTTemplateInterface<T>`<br>|投影|使用實作類型編譯，但這是錯誤的 &mdash; 請參閱[命名空間：投影類型、實作類型及處理站](#namespaces-projected-types-implementation-types-and-factories)中的注意事項。|
+|`make<T>`|實作|使用投影類型會產生錯誤：`'implements_type': is not a member of any direct or indirect base class of 'T'`|
+| `make_agile(T const&amp;)`|兩者|如果您使用實作類型，則引數必須是 `com_ptr<T>`。|
+| `make_self<T>`|實作|使用投影類型會產生錯誤：`'Release': is not a member of any direct or indirect base class of 'T'`|
+| `name_of<T>`|投影|如果您使用實作類型，您會取得轉換為字串 (stringify) 的預設介面 GUID。|
+| `weak_ref<T>`|兩者|如果您使用實作類型，則建構函式引數必須是 `com_ptr<T>`。|
 
 ## <a name="important-apis"></a>重要 API
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)

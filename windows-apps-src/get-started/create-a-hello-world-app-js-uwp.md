@@ -6,24 +6,24 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 682a69726b20be52a3217f49bed4947b8b621230
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0b5423c9aae607d4f6ffe14b755c8f73e013d8b6
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564514"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820972"
 ---
 # <a name="create-a-hello-world-app-js"></a>建立 "Hello, world" 應用程式 (JS)
 
-本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 "Hello, world" 應用程式。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
+本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 "Hello, world" 應用程式。 透過 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的應用程式。
 
 > [!NOTE]
-> 本教學課程使用 Visual Studio Community 2017。 如果您使用不同版本的 Visual Studio，它的外觀可能會略有不同。
+> 本教學課程使用 Visual Studio Community 2019。 如果您使用不同版本的 Visual Studio，它的外觀可能會略有不同。
 
 
 您將在此處了解如何：
 
--   建立目標是 **Windows 10** 和 **UWP** 的新 **Visual Studio** 專案。
+-   建立目標是 **Windows 10** 和 **UWP** 的新 **Visual Studio 2019** 專案。
 -   新增 HTML 和 JavaScript 內容
 -   在本機桌面上使用 Visual Studio 執行專案
 
@@ -35,24 +35,22 @@ ms.locfileid: "64564514"
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步驟 1：在 Visual Studio 中建立新專案。
 
-1.  啟動 Visual Studio。
+1.  啟動 Visual Studio 2019。
 
-2.  從 [檔案]  功能表中，選取 [新增] > [專案]  來開啟 [新增專案]  對話方塊。
+2.  從 [檔案]  功能表，選取 [新增] > [專案...]  來開啟 [建立新專案]  對話方塊。
 
-3.  從左邊的範本清單中，開啟 [已安裝] > [範本] > [JavaScript]  ，然後選擇 [Windows 通用]  來查看 UWP 專案範本的清單。
+3.  選取 [空白應用程式 (通用 Windows) JavaScript]  ，然後選取 [下一步]  。
 
-    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP 應用程式 的元件。 您可以重複安裝程序並新增 UWP 支援，方法是按一下 [新增專案]  對話方塊上的 [開啟 Visual Studio 安裝程式]  。 請參閱[開始設定](get-set-up.md)
+    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP 應用程式的元件。 您可以重複安裝程序並加入 UWP 支援，方法是按一下 [建立新專案]  對話方塊上的 [開啟 Visual Studio 安裝程式]  。 請參閱[開始設定](get-set-up.md)
 
-4.  選擇 [空白應用程式 (通用 Windows)]  範本，然後輸入 "HelloWorld" 作為 [名稱]  。 選取 [確定]  。
-
-    ![[新增專案] 視窗](images/win10-js-01.png)
+4.  在 [設定新專案]  對話方塊中，輸入 "HelloWorld" 作為**專案名稱**，然後選取 [建立]  。
 
 > [!NOTE]
 > 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]  。 開發人員模式是啟用某些功能的特殊設定，例如，直接執行應用程式的權限，而非只執行來自 Microsoft Store 的。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](enable-your-device-for-development.md)。 若要繼續使用此指南，請選取 [開發人員模式]  ，按一下 [是]  ，並關閉對話方塊。
 
  ![啟用開發人員模式對話方塊](images/win10-cs-00.png)
 
-5.  [目標版本/最小版本] 對話方塊隨即出現。 在這個教學課程中可使用預設設定，因此請選取 [確定]  來建立專案。
+5.  [目標版本/最小版本] 對話方塊隨即出現。 在這個教學課程中使用預設設定即可，因此請選取 [確定]  來建立專案。
 
     ![[方案總管] 視窗](images/win10-cs-02.png)
 

@@ -5,22 +5,22 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361226"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820505"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 
 本教學課程告訴您如何自訂 XAML 應用程式的 UI。 警告：本教學課程不一定會涉及獨角獸。 (確實如此！)  
 
 ## <a name="prerequisites"></a>必要條件
-* [Visual Studio 2017 和 Windows 10 SDK (10.0.15063.468 或更新版本)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 和 Windows 10 SDK (10.0.15063.468 或更新版本)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>第 0 部分：取得程式碼
-本實驗室的起始點位於 [xxaml-basics-starting-points/style/ 資料夾](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style)中的 PhotoLab 範例存放庫。 複製/下載存放庫之後，您可以使用 Visual Studio 2017 開啟 PhotoLab.sln 來編輯專案。
+本實驗室的起始點位於 [xxaml-basics-starting-points/style/ 資料夾](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style)中的 PhotoLab 範例存放庫。 複製/下載存放庫之後，您可以使用 Visual Studio 2019 開啟 PhotoLab.sln 來編輯專案。
 
 PhotoLab 應用程式有兩個主要頁面：
 
@@ -54,7 +54,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
 2. 在 [方案總管] 面板中，按兩下 [DetailPage.xaml]  將其開啟。 
 
-    ![Visual Studio 2017 方案總管中的 DetailPage.xaml 檔案。](../basics/images/xaml-basics/style-detail-page-explorer.png)
+    ![Visual Studio 2019 方案總管中的 DetailPage.xaml 檔案。](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
 3. 使用 Polygon 元素建立曝光滑桿的背景圖形。
 
@@ -63,7 +63,7 @@ PhotoLab 應用程式有兩個主要頁面：
     <!-- TODO reduce size -->
     ![獨角獸](../basics/images/xaml-basics/unicorn.png)
     
-    > **請參閱：** [繪製圖形](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章告訴您一切您需要知道關於 XAML 圖形的所有內容。 
+    > **請參閱：** [繪製圖形](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes)文章告訴您一切您需要知道關於 XAML 圖形的所有內容。 
     
     我們想要建立三角形外觀的 Widget，就像在立體音響音量控制上看到的圖形一樣。
     
@@ -111,7 +111,7 @@ PhotoLab 應用程式有兩個主要頁面：
     ```
 
     注意：
-    * 如果查看 XAML 周圍，您會看到這些元素是在 Grid 中。 我們將多邊形放在曝光滑桿的的同一列 (Grid.Row="2")，因此這些元素會出現在相同位置。 我們將多邊形放在滑桿之前，讓滑桿顯示在圖形的最上方。
+    * 如果查看 XAML 周圍，您會看到這些元素是在 Grid 中。 我們將多邊形放在曝光滑桿的同一列 (Grid.Row="2")，因此這些元素會出現在相同位置。 我們將多邊形放在滑桿之前，讓滑桿顯示在圖形的最上方。
     * 我們在多邊形上設定 Stretch="Fill" 和 HorizontalAlignment="Stretch"，讓三角形調整以填滿可用空間。 如果滑桿寬度變小或變大，多邊形也會縮小或擴大，與之相配合。 
 
 4. 編譯和執行應用程式。 滑桿現在看起來超棒：

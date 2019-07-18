@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fbe10e41da1b330d6f5042bea109a8a0e04f8ad
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d2b92bf5e265c2d596a7fc7eb54b127010cee897
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360154"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717606"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
@@ -28,7 +28,7 @@ ms.locfileid: "66360154"
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 以及根命名空間 **Windows** 的 Windows SDK 宣告類型。 投影到 C++/WinRT 的 Windows 類型有與 Windows 類型相同的完整名稱，但它放在 C++ **winrt** 命名空間。 這些不同的命名空間，可讓您以自己的速度從 C++/CX 移植至 C++/WinRT。
 
-請記住上述例外狀況，將 C++/CX 專案移植到 C++/WinRT 的第一個步驟是手動新增 C++/WinRT 支援 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 若要這麼做，請將 [Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)安裝到您的專案中。 在 Visual Studio 中開啟專案，按一下 [專案]  \> [管理 NuGet 套件...]  \>[瀏覽]  、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝]  以安裝適用於該專案的套件。 該變更的其中一個效果，是會關閉專案中支援的 C++/CX。 最好關閉支援，這樣組建訊息有助於找出 (並移植) C++/CX 上所有的相依性，或您可以重新開啟支援 (在專案屬性中，**C/C++** \> **一般** \> **使用 Windows 執行階段擴充功能** \> **是 (/ZW)** )，請逐漸移植。
+請記住上述例外狀況，將 C++/CX 專案移植到 C++/WinRT 的第一個步驟是手動新增 C++/WinRT 支援 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 若要這麼做，請將 [Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)安裝到您的專案中。 在 Visual Studio 中開啟專案，按一下 [專案]  \>[管理 NuGet 套件...]  \>[瀏覽]  、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝]  以安裝適用於該專案的套件。 該變更的其中一個效果，是會關閉專案中支援的 C++/CX。 最好關閉支援，這樣組建訊息有助於找出 (並移植) C++/CX 上所有的相依性，或您可以重新開啟支援 (在專案屬性中，**C/C++** \> **一般** \> **使用 Windows 執行階段擴充功能** \> **是 (/ZW)** )，請逐漸移植。
 
 請務必將專案屬性 [一般]  \>[目標平台版本]  設為 10.0.17134.0 (Windows 10，版本 1803) 或更高版本。
 
@@ -181,7 +181,7 @@ private:
 };
 ```
 
-已將相同的程式碼移植至 C++/WinRT。 請注意 `nullptr` 建構函式的使用方式。 如需該建構函式的詳細資訊，請參閱[使用 C++/WinRT 取用 API](consume-apis.md)。
+已將相同的程式碼移植至 C++/WinRT。 請注意 **std:: nullptr_t** 建構函式的實作。 如需該建構函式的詳細資訊，請參閱[使用 C++/WinRT 取用 API](consume-apis.md#delayed-initialization)。
 
 ```cppwinrt
 using namespace winrt::Windows::Storage::Streams;
@@ -365,7 +365,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 ### <a name="port-platformstring-to-winrthstring"></a>將 **Platform::String\^** 移植到 **winrt::hstring**
 **Platform::String\^** 等同於 Windows 執行階段 HSTRING ABI 類型。 對於 C++/WinRT，對等項目是 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。 但使用 C++/WinRT，您可以使用 C++ 標準程式庫寬字串類型 (例如 **std::wstring**) 來呼叫 Windows 執行階段 API，及/或寬字串常值。 如需詳細資訊和程式碼範例，請參閱 [C++/WinRT 中的字串處理](strings.md)。
 
-使用 C++/CX，您可以存取 [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) 屬性來擷取字串做為 C-style **const wchar_t\*** 陣列 (例如，將它傳遞至 **std::wcout**)。
+使用 C++/CX，您可以存取 [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) 屬性來擷取字串做為 C-style **const wchar_t\*** 陣列 (例如，將它傳遞至 **std::wcout**)。
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };
@@ -415,9 +415,9 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 ```
 
 ## <a name="important-apis"></a>重要 API
-* [winrt::delegate struct template](/uwp/cpp-ref-for-winrt/delegate)
-* [winrt::hresult_error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
-* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::delegate 結構範本](/uwp/cpp-ref-for-winrt/delegate)
+* [winrt::hresult_error 結構](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt 命名空間](/uwp/cpp-ref-for-winrt/winrt)
 
 ## <a name="related-topics"></a>相關主題

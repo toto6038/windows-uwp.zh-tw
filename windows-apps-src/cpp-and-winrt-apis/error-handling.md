@@ -1,16 +1,16 @@
 ---
-description: 本主題討論使用 C++/WinRT 程式設計時處理錯誤的策略。
+description: 本主題討論使用 C++/WinRT 進行程式設計時處理錯誤的策略。
 title: 使用 C++/WinRT 處理錯誤
 ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, error, handling, exception, 標準, 投影, 錯誤, 處理, 例外狀況
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b72bb3cb2527585c114d386981e02d4730614a2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c75cf8763b5f47772a138c15049155458772eeb5
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721636"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660139"
 ---
 # <a name="error-handling-with-cwinrt"></a>使用 C++/WinRT 處理錯誤
 
@@ -112,7 +112,7 @@ HRESULT DoWork() noexcept
 [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 處理衍生自 **std::exception** 和 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 及其衍生型別的例外狀況。 在實作中，您應該慣用 **winrt::hresult_error** 或衍生型別，如此一來，您 API 的取用者便能接收豐富的錯誤資訊。 如果使用標準範本庫出現例外狀況，系統也支援 **std::exception** (對應至 E_FAIL)。
 
 ## <a name="assertions"></a>判斷提示
-針對您應用程式中的內部假設，可使用判斷提示。 盡可能優先選擇 **static_assert** 進行編譯階段驗證。 針對執行階段條件，請搭配使用 WINRT_ASSERT 和布林運算式。
+針對您應用程式中的內部假設，可使用判斷提示。 盡可能優先選擇 **static_assert** 進行編譯階段驗證。 針對執行階段條件，請搭配使用 `WINRT_ASSERT` 和布林運算式。 `WINRT_ASSERT` 是巨集定義，而且會發展為 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
 ```cppwinrt
 WINRT_ASSERT(pos < size());

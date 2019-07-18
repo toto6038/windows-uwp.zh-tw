@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d4da7e661b0a9c1f389ae93fe4da4782629014f4
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794810"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820518"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教學課程：建立使用者介面
 
@@ -32,7 +32,7 @@ ms.locfileid: "63794810"
 
 ## <a name="prerequisites"></a>必要條件
 
-* Visual Studio 2017：[下載 Visual Studio 2017 社群 (免費)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Visual Studio 2019：[下載 Visual Studio 2019 Community (免費)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10 SDK (10.0.15063.468 或更新版本)：[下載最新 Windows SDK (免費)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：從 github 取得起始程式碼
@@ -137,7 +137,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
                Style="{StaticResource TitleTextBlockStyle}"/>
     ```
 
-9. 在 [屬性] 面板中，在搜尋方塊中輸入 **textwrapping**，即可輕鬆找到 **TextWrapping** 屬性。 按一下 **TextWrapping** 屬性的_屬性標記_以開啟其功能表 (_屬性標記_是小方塊符號，位於每個屬性值右邊。 _屬性標記_是黑色的，表示屬性設定為非預設值)。在 [屬性]  功能表上，選取 [重設]  來重設 TextWrapping 屬性。
+9. 在 [屬性] 面板中，在搜尋方塊中輸入 **textwrapping**，即可輕鬆找到 **TextWrapping** 屬性。 按一下 **TextWrapping** 屬性的_屬性標記_以開啟其功能表。 (_屬性標記_是小方塊符號，位於每個屬性值右邊。 _屬性標記_是黑色的，表示屬性設定為非預設值)。在 [屬性]  功能表上，選取 [重設]  來重設 TextWrapping 屬性。
 
     Visual Studio 會新增此屬性，但這已經在您套用的樣式中設定，因此這裡不需要該屬性。
 
@@ -514,7 +514,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 
 5. 在對話方塊中，將 [名稱 (索引碼)] 值變更為 **ImageGridView_ItemsPanelTemplate**，然後按一下 [確定]  。
 
-    預設 **ItemsPanelTemplate** 的複本會新增至 XAML 的 **Page.Resources** 區段 (像之前一樣，**GridView** 會更新以參考此資源)。
+    預設 **ItemsPanelTemplate** 的複本會新增至 XAML 的 **Page.Resources** 區段。 (像之前一樣，**GridView** 會更新以參考此資源)。
 
     ```xaml
     <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">

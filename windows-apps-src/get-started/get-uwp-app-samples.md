@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, sample code, code samples, 範例程式碼, 程式碼範例
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 7f56b0f9e4cb7f89b8bc929015ecdf6d5c64d42e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63772225"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321071"
 ---
 # <a name="get-uwp-app-samples"></a>取得 UWP 應用程式範例
 
-通用 Windows 平台 (UWP) 應用程式範例可透過 GitHub 上的存放庫取得。 如需可搜尋的分類清單，請參閱[範例](https://developer.microsoft.com/windows/samples "開發人員中心範例")，或是瀏覽 [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "通用 Windows 平台應用程式範例 GitHub 存放庫") \(英文\) 存放庫，其包含示範所有 UWP 功能及其 API 使用模式的範例。  
+通用 Windows 平台 (UWP) 應用程式範例可透過 GitHub 上的存放庫取得。 如需可搜尋的分類清單，請參閱[範例](https://developer.microsoft.com/windows/samples%20%22Dev%20Center%20samples%22)，或是瀏覽 [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "通用 Windows 平台應用程式範例 GitHub 存放庫") \(英文\)，其包含示範所有 UWP 功能及其 API 使用模式的範例。  
 ![GitHub UWP 範例存放庫](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>下載程式碼

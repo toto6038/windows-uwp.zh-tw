@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b444a11ab032034976d2f1b269bd10a89bf339e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 67d5861e65a85a07cdda486ddb9c9634c388e819
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63798606"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820460"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教學課程：建立調適型配置
 
@@ -28,7 +28,7 @@ ms.locfileid: "63798606"
 
 ## <a name="prerequisites"></a>必要條件
 
-* Visual Studio 2017：[下載 Visual Studio 2017 社群 (免費)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Visual Studio 2019：[下載 Visual Studio 2019 Community (免費)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10 SDK (10.0.15063.468 或更新版本)：[下載最新 Windows SDK (免費)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Windows 行動裝置版模擬器：[下載 Windows 10 行動裝置版模擬器 (免費)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 
@@ -321,8 +321,8 @@ ms.locfileid: "63798606"
 
 如果遇到困難，您可以在[使用 XAML 定義頁面版面配置](../layout/layouts-with-xaml.md)的下列各節中找到更多指引。
 
-+ [視覺狀態與狀態觸發程序](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [量身訂做的版面配置](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
++ [視覺狀態與狀態觸發程序](https://docs.microsoft.com/windows/uwp/design/layout/layouts-with-xaml#visual-states-and-state-triggers)
++ [量身訂做的版面配置](https://docs.microsoft.com/windows/uwp/design/layout/layouts-with-xaml#tailored-layouts)
 
 或者，如果您想要深入了解最初的編輯相片應用程式是如何建置，請參閱 XAML [使用者介面](../basics/xaml-basics-ui.md)及[資料繫結](../../data-binding/xaml-basics-data-binding.md)的那些教學課程。
 

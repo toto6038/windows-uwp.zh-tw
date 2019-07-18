@@ -5,22 +5,22 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 5 月, b
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 69df2bbe8bc91fcf4a2631c0f257fc44851c24f2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9adf5a80595e00a30098044536d1ecfe4fd62279
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63805875"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820488"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>2018 年 5 月 Windows 開發人員文件的新增功能
 
-Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、開發人員指引、影片和範例已經在 5 月份與 [Microsoft Build 2018](https://www.microsoft.com/build) 開發人員會議同步提供。
+Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、開發人員指引、影片和範例已經在 5 月份與 [Microsoft Build 2018](https://www.microsoft.com/build/) 開發人員會議同步提供。
 
 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
-### <a name="motion-in-fluent-design"></a>Fluent Design 動作
+### <a name="motion-in-fluent-design"></a>Fluent Design 中的動作
 
 Fluent Design 動作系統的使用正在不斷發展，建立在時間、簡化、方向性和重力基本概念之上。 套用這些基本概念將有助於引導使用者使用您的應用程式，並通過反映自然世界將他們其與數位體驗連結。 深入了解下列文章：
 
@@ -55,7 +55,7 @@ Fluent Design 動作系統的使用正在不斷發展，建立在時間、簡化
 
 ### <a name="app-installer-files-in-visual-studio"></a>Visual Studio 中的應用程式安裝程式檔案
 
-現在可以使用 Visual Studio 2017 Update 15.7 建立應用程式安裝程式檔案。 [了解如何使用 Visual Studio 建立應用程式安裝程式檔案](../packaging/create-appinstallerfile-vs.md)並啟用應用程式的自動更新。 如果您遇到問題，請參閱[針對應用程式安裝程式檔案的安裝問題進行疑難排解](../packaging/troubleshoot-appinstaller-issues.md)，以檢視常見的問題和解決方案。
+現在可以使用 Visual Studio 2017 Update 15.7 或更新版本建立應用程式安裝程式檔案。 [了解如何使用 Visual Studio 建立應用程式安裝程式檔案](../packaging/create-appinstallerfile-vs.md)並啟用應用程式的自動更新。 如果您遇到問題，請參閱[針對應用程式安裝程式檔案的安裝問題進行疑難排解](../packaging/troubleshoot-appinstaller-issues.md)，以檢視常見的問題和解決方案。
 
 ### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Windows Forms 和 WPF 應用程式的 Edge WebView 控制項
 
@@ -99,7 +99,7 @@ Sets 功能適用於 Windows 測試人員預覽組建。 使用 Sets 功能時�
 
 ## <a name="developer-guidance"></a>開發人員指引
 
-### <a name="get-started"></a>立即開始
+### <a name="get-started"></a>開始使用
 
 我們已使用新的學習途徑來重振我們的開始使用內容。 這些新主題旨在為新的 Windows 10 開發人員提供其想完成的一些常見工作的相關資訊。 這些主題不是教學課程，並不會提供隨手可得的逐步解說，但會指出現有文件的位置及其使用方式。 請查看全新面貌的[開始撰寫程式碼](../get-started/create-uwp-apps.md)頁面，或瀏覽每個個別的學習途徑：
 
@@ -124,7 +124,7 @@ Sets 功能適用於 Windows 測試人員預覽組建。 使用 Sets 功能時�
 
 C++/WinRT 是撰寫與使用 Windows 執行階段 API 的新方法。 它僅在標頭檔案中實作，以及設計用來提供您現代化應用程式功能的第一級存取。 [觀看影片](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be)以了解其運作方式，然後[閱讀開發人員文件](../cpp-and-winrt-apis/index.md)以取得詳細資訊。
 
-### <a name="multi-instance-uwp-apps"></a>多執行個體的 UWP 應用程式
+### <a name="multi-instance-uwp-apps"></a>多執行個體 UWP 應用程式
 
 Windows 現在允許您執行 UWP 應用程式的多個執行個體，而每個執行個體在其自己的個別處理序中執行。 [觀看影片](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be)以了解如何建立支援這項功能的新應用程式，然後[閱讀開發人員文件](../launch-resume/multi-instance-uwp.md)，以取得如何及為何使用這項功能的詳細指引。
 

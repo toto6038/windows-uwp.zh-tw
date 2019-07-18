@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, boxing, 純量, 數值
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bd69e07f2285b6c05581a60ddbaf4b394d0b6d0
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b50a0d6b231b9c526fc619a98c37f81520db3ff2
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361197"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660109"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>使用 C++/WinRT，Boxing 和 unboxing 純量數值到 IInspectable
  
@@ -55,6 +55,8 @@ void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 ## <a name="determine-the-type-of-a-boxed-value"></a>判斷 Boxed 實值的類型
 如果您收到 Boxed 實值，但不確定它包含哪些類型 (需要知道其類型以便 Unbox)，您可以查詢 Boxed 實值的 [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue) 介面，然後呼叫其**類型**。 以下是程式碼範例。
 
+`WINRT_ASSERT` 是巨集定義，而且會發展為 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
+
 ```cppwinrt
 float pi = 3.14f;
 auto piInspectable = winrt::box_value(pi);
@@ -65,6 +67,6 @@ WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType:
 ## <a name="important-apis"></a>重要 API
 * [IInspectable 介面](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
 * [winrt::box_value 函式範本](/uwp/cpp-ref-for-winrt/box-value)
-* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt::unbox_value 函式範本](/uwp/cpp-ref-for-winrt/unbox-value)
 * [winrt::unbox_value_or 函式範本](/uwp/cpp-ref-for-winrt/unbox-value-or)

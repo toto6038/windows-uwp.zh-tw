@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f8e74688d0f7048276b12680237b85663d7e2b81
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a91c080805bca5d536aad3755ca7edf052d1fe0e
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66214740"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414053"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>參與 UWP 概念文件編輯
 
@@ -48,7 +48,7 @@ ms.locfileid: "66214740"
 
 在內部存放庫中建立提取要求時，請確定要將您的個人分支合併至其建立來源的分支。
 
-提交提取要求之後，會針對[內容品質檢查清單](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master)進行評估，以確保其符合我們的基本標準。 如果通過，則會將其指派給 UWP 文件小組的成員，以進行進一步的審查。 如果失敗，會告知您需進行哪些變更。
+提交提取要求之後，我們會使用 [PR 合併](https://review.docs.microsoft.com/help/contribute/prmerger-overview?branch=master)進行評估，以確保其符合我們的基本標準。 如果通過，您可以使用 `#sign-off` 註解將其傳送給 UWP 文件小組的成員，以進行進一步的審查。 如果失敗，我們會在您登出前，告知您需進行哪些變更。
 
 指派的檢閱者可能會核准或拒絕提取要求，或與您合作以進一步變更。 在您核准之前，檢閱者不會合併提取要求。
 

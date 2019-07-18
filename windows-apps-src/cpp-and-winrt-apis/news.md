@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 11249335f9d29d37bb0824fa779d3ae151c74799
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 537150f6fc000794b11ef9236bfd88469d3f6b19
+ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721648"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67800589"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
 
@@ -144,13 +144,13 @@ C++/WinRT 本身為每個實作的 API 產生此模式。 有了數千個 API �
 
 #### <a name="component-optimizations"></a>元件最佳化
 
-此更新新增對 C++/WinRT 幾個其他選擇加入最佳化的支援，如下列章節所述。 由於這些最佳化是重大變更 (您可能需要對支援進行微幅變更)，因此，您需要使用 `cppwinrt.exe` 工具的 `-opt` 標誌，才能明確啟用這些最佳化。
+此更新新增對 C++/WinRT 幾個其他選擇加入最佳化的支援，如下列章節所述。 由於這些最佳化是重大變更 (您可能需要對支援進行微幅變更)，因此，您需要明確啟用這些最佳化。 在 Visual Studio 中，將 [通用屬性]   > [C++/WinRT]   > [最佳化]  設為 [是]  。 此動作會將 `<CppWinRTOptimized>true</CppWinRTOptimized>` 新增至您的專案檔。 而且這與從命令列叫用 `cppwinrt.exe` 時，新增 `-opt[imize]` 參數的效果一樣。
 
 依預設，新專案 (來自專案範本) 將使用 `-opt`。
 
 ##### <a name="uniform-construction-and-direct-implementation-access"></a>統一建構，以及直接實作存取
 
-這些兩種最佳化可讓您的元件直接存取其實作類型，即使它只使用投影的類型。 如果您只是想要使用公用 API 表面，則不需要使用 [**make**](/uwp/cpp-ref-for-winrt/make)[**make_self**](/uwp/cpp-ref-for-winrt/make-self)，也不需要 [**get_self**](/uwp/cpp-ref-for-winrt/get-self)。 您的呼叫將編譯成直接呼叫實作，甚至可能完全內嵌。
+這些兩種最佳化可讓您的元件直接存取其實作類型，即使它只使用投影的類型。 如果您只是想要使用公用 API 表面，則不需要使用 [**make**](/uwp/cpp-ref-for-winrt/make)[**make_self**](/uwp/cpp-ref-for-winrt/make-self)，也不需要 [**get_self**](/uwp/cpp-ref-for-winrt/get-self)。 您的呼叫將編譯成直接呼叫實作，甚至可能完全內嵌。 如需有關統一建構的詳細資訊，請參閱常見問題集：[為什麼我會收到「類別未註冊」的例外狀況？](faq.md#why-am-i-getting-a-class-not-registered-exception)。
 
 ##### <a name="type-erased-factories"></a>已清除類型的處理站
 
@@ -198,9 +198,13 @@ fire_and_forget Async(DispatcherQueueController controller)
 
 #### <a name="support-for-deferred-destruction-and-safe-qi-during-destruction"></a>在解構期間支援遞延解構和安全 QI
 
-XAML 應用程式本身可能會陷入困難，因為其需要在解構函式中執行 [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) (QI)，以便在階層中向上或向下呼叫某些清除實作。 但是，在物件的參照計數已達到零之後，該呼叫涉及 QI。 此更新新增對消除彈跳引用計數的支援，確保一旦達到零之後，就永遠無法重新啟動；同時仍然允許 QI 用於解構期間所需的任何暫存。 在某些 XAML 應用程式/控制項中，無法避免此過程，而 C++/WinRT 現在具有彈性。
+在執行階段類別物件的解構函式中，呼叫可暫時壓縮參考計數的方法並不稀奇。 當參考計數會回到零時，物件會第二次解構。 在 XAML 應用程式中，您可能需要在解構函式中執行 [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) (QI)，以便在階層中向上或向下呼叫某些清除實作。 但是，物件的參考計數已經達到零，因此 QI 也會構成參考計數反彈。
 
-可以藉由提供靜態 **final_release** 函式，並將 **unique_ptr** 的擁有權移動到某些其他內容來遞延解構。
+此更新新增對消除彈跳引用計數的支援，確保一旦達到零之後，就永遠無法重新啟動；同時仍然允許將 QI 用於解構期間所需的任何暫存。 在某些 XAML 應用程式/控制項中，無法避免此過程，而 C++/WinRT 現在具有彈性。
+
+您可以藉由在您的實作類型上提供靜態 **final_release** 函式來延遲解構。 物件的最後一個剩餘指標 (**std::unique_ptr**形式) 會傳遞至您的 **final_release**。 然後，您可以選擇將該指標的擁有權移至其他某些內容。 您可以安全地對指標使用 QI，而不觸發雙重解構。 但參考計數的淨變更在解構物件之處必須是零。
+
+**final_release**的傳回值可以是 `void`，也就是 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) 或 **winrt::fire_and_forget** 等非同步作業物件。
 
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
@@ -215,14 +219,16 @@ struct Sample : implements<Sample, IStringable>
         // Called when the unique_ptr below is reset.
     }
 
-    static void final_release(std::unique_ptr<Sample> ptr) noexcept
+    static void final_release(std::unique_ptr<Sample> self) noexcept
     {
-        // Move 'ptr' as needed to delay destruction.
+        // Move 'self' as needed to delay destruction.
     }
 };
 ```
 
-在以下範例中，(最後一次) 釋出 **MainPage** 之後，會呼叫 **final_release**。 該函式花費五秒鐘等待 (在執行緒集區上)，然後使用頁面的 **Dispatcher** (需要 QI/AddRef/Release 進行運作) 以繼續進行。 接著，清除 **unique_ptr**，這會導致實際呼叫 **MainPage** 解構函式。 即使在這裡，也會呼叫 **DataContext**，其需要適用於 **IFrameworkElement** 的 QI。 顯然，您不需要實作 **final_release** 做為協同程式。 但這確實有效，而且可輕鬆地將解構移動到不同的執行緒。
+在以下範例中，(最後一次) 釋出 **MainPage** 之後，會呼叫 **final_release**。 該函式花費五秒鐘等待 (在執行緒集區上)，然後使用頁面的 **Dispatcher** (需要 QI/AddRef/Release 進行運作) 以繼續進行。 接著，函式會清除該 UI 執行緒上的資源。 最後，清除 **unique_ptr**，這會導致實際呼叫 **MainPage** 解構函式。 即使在該解構函式中，也會呼叫 **DataContext**，其需要適用於 **IFrameworkElement** 的 QI。
+
+您不需要實作 **final_release** 做為協同程式。 但這確實有效，而且可輕鬆地將解構移動到不同的執行緒，也就是此範例中的狀況。
 
 ```cppwinrt
 struct MainPage : PageT<MainPage>
@@ -236,13 +242,17 @@ struct MainPage : PageT<MainPage>
         DataContext(nullptr);
     }
 
-    static IAsyncAction final_release(std::unique_ptr<MainPage> ptr)
+    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
     {
         co_await 5s;
 
-        co_await resume_foreground(ptr->Dispatcher());
+        co_await resume_foreground(self->Dispatcher());
+        co_await self->resource.CloseAsync();
 
-        ptr = nullptr;
+        // The object is destructed normally at the end of final_release,
+        // when the std::unique_ptr<MyClass> destructs. If you want to destruct
+        // the object earlier than that, then you can set *self* to `nullptr`.
+        self = nullptr;
     }
 };
 ```
@@ -275,17 +285,17 @@ struct MainPage : PageT<MainPage>
 | 您可以將 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) 標記延伸與 C++/WinRT 執行階段類別搭配使用。 | 如需更多資訊與程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart)。 |
 | 支持取消協同程式可讓您註冊取消回呼。 | 如需更多資訊和程式碼範例，請參閱[取消非同步作業，以及取消回呼](concurrency.md#canceling-an-asychronous-operation-and-cancellation-callbacks)。 |
 | 建立指向成員函式的委派時，可以在註冊處理常式的位置建立對目前物件 (而不是原始的「this」  指標) 的強式參考或弱式參考。 | 如需更多資訊和程式碼範例，請參閱[使用事件處理委派安全地存取「this」  指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)小節的**如果您使用成員函式作為委派**子小節。 |
-| 修正 Visual Studio 對於 C++ 標準改善一致性未涵蓋的錯誤。 LLVM 和 Clang 工具鏈也可以更好地用於驗證 C++/WinRT 的標準一致性。 | 您將不再遇到[為什麼無法編譯我的新專案？我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) 中描述的問題 |
+| 修正 Visual Studio 對於 C++ 標準改善一致性未涵蓋的錯誤。 LLVM 和 Clang 工具鏈也可以更好地用於驗證 C++/WinRT 的標準一致性。 | 您將不再遇到[為什麼無法編譯我的新專案？我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) |
 
 其他變更。
 
-- **重大變更**。 [**winrt::get_abi(winrt::hstring const&)** ](/uwp/cpp-ref-for-winrt/get-abi) 現在會傳回 `void*`，而不是 `HSTRING`。 您可以使用 `static_cast<HSTRING>(get_abi(my_hstring));` 以取得 HSTRING。
-- **重大變更**。 [**winrt::put_abi(winrt::hstring&)** ](/uwp/cpp-ref-for-winrt/put-abi) 現在會傳回 `void**`，而不是 `HSTRING*`。 您可以使用 `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` 以取得 HSTRING*。
+- **重大變更**。 [**winrt::get_abi(winrt::hstring const&)** ](/uwp/cpp-ref-for-winrt/get-abi) 現在會傳回 `void*`，而不是 `HSTRING`。 您可以使用 `static_cast<HSTRING>(get_abi(my_hstring));` 以取得 HSTRING。 請參閱[交互操作 ABI 的 HSTRING](interop-winrt-abi.md#interoperating-with-the-abis-hstring)。
+- **重大變更**。 [**winrt::put_abi(winrt::hstring&)** ](/uwp/cpp-ref-for-winrt/put-abi) 現在會傳回 `void**`，而不是 `HSTRING*`。 您可以使用 `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` 以取得 HSTRING*。 請參閱[交互操作 ABI 的 HSTRING](interop-winrt-abi.md#interoperating-with-the-abis-hstring)。
 - **重大變更**。 HRESULT 現在投影為 **winrt::hresult**。 如果您需要 HRESULT (以進行類別檢查，或支援類型特性)，您可以 `static_cast` **winrt::hresult**。 否則，只要您在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h`，**winrt::hresult** 會轉換成 HRESULT。
-- **重大變更**。 GUID 現在投影為 **winrt::guid**。 對於您實作的 API，必須為 GUID 參數使用 **winrt::guid**。 否則，只要您在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h`，**winrt::guid** 會轉換成 GUID。
+- **重大變更**。 GUID 現在投影為 **winrt::guid**。 對於您實作的 API，必須為 GUID 參數使用 **winrt::guid**。 否則，只要您在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h`，**winrt::guid** 會轉換成 GUID。 請參閱[交互操作 ABI 的 GUID 結構](interop-winrt-abi.md#interoperating-with-the-abis-guid-struct)。
 - **重大變更**。 [**winrt::handle_type 建構函式**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor)已透過明確宣告而強化 (現在很難使用它撰寫錯誤的程式碼)。 如果需要指派原始的控制碼值，請改由呼叫 [**handle_type::attach 函式**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function)。
 - **重大變更**。 **WINRT_CanUnloadNow** 和 **WINRT_GetActivationFactory** 的簽章已變更。 您不得宣告這些函式。 相反，加入 `winrt/base.h` (如果包含任何 C++/WinRT Windows 命名空間標頭檔案，則會自動包含)，以包含這些函式的宣告。
-- 對於 [**winrt::clock struct**](/uwp/cpp-ref-for-winrt/clock)，**from_FILETIME/to_FILETIME** 已過時，建議使用 **from_file_time/to_file_time**。
+- 對於 [**winrt::clock 結構**](/uwp/cpp-ref-for-winrt/clock)，**from_FILETIME/to_FILETIME** 已過時，建議使用 **from_file_time/to_file_time**。
 - 預期使用 **IBuffer** 參數的 API 已經過簡化。 雖然大多數 API 更偏好使用集合或陣列，但是足夠的 API 依賴於 **IBuffer**，它需要更輕鬆地使用來自 C++ 的此類 API。 此更新使用 C++ 標準程式庫容器使用的相同資料命名慣例，提供 **IBuffer** 實作背後的資料直接存取權。 這也避免了慣例以大寫字母開頭的中繼資料名稱產生衝突。
 - 改善的程式碼產生：各種改善項目可縮減程式碼大小、改善內嵌，並最佳化處理站快取。
 - 已移除不必要的遞迴。 當命令列指向資料夾而非特定的 `.winmd` 時，`cppwinrt.exe` 工具不會再以遞迴方式搜尋 `.winmd` 檔案。 `cppwinrt.exe` 工具現在也可以更有智慧的方式處理重複項目，使其更容易復原使用者錯誤，以及格式錯誤的 `.winmd` 檔案。

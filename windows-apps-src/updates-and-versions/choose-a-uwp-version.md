@@ -7,12 +7,12 @@ keywords: windows 10, uwp, 版本, 組建, windows, 選擇, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e7e086cbe87ea146703ad2661de95a92dbc0e172
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: f691a0d600fd6508f1f8ec2bbffec9bf02a98da7
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371528"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821055"
 ---
 # <a name="choose-a-uwp-version"></a>選擇 UWP 版本
 
@@ -26,10 +26,10 @@ ms.locfileid: "66371528"
 | 版本 | 描述 |
 | --- | --- |
 | 組建 18362 (版本 1903) | 這是 2019 年 4 月發行的最新 Windows 10 版本。 此版本的一些重點功能包括： </br> \* **XAML Islands：** Windows 10 現在可讓您在非 UWP 傳統型應用程式中使用 UWP 控制項。 如果您正在開發的 WPF、Windows Forms 或 C++Win32，[請查看如何將最新的 Windows 10 UI 功能新增至現有的應用程式](../xaml-platform/xaml-host-controls.md)。 </br> \* **適用於 Linux 的 Windows 子系統：** 您現在可以直接從 Windows 存取 Linux 檔案，並使用數個新的命令列選項。 請參閱[關於 WSL](https://docs.microsoft.com/windows/wsl/about.md) 的最新資訊。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-build-18362.md)頁面。
-| 組建 17763 (版本 1809) | 此版本的 Windows 10 於 2018 年 11 月發行。 **請注意，您「必須」  使用 Visual Studio 2017，才能以這個版本的 Windows 為目標。** 此版本的一些重點功能包括： </br> \* **Windows Machine Learning：** Windows Machine Learning 已正式推出，可為尖端機器學習模型提供更快速的評估和支援。 若要深入了解此平台，請參閱 [Windows Machine Learning](https://docs.microsoft.com/windows/ai/)。 </br> \* **Fluent Design：** Windows 10 已新增一些新功能，例如功能表列、命令列飛出視窗和 XAML 屬性動畫。 請至 [Fluent Design 概觀](../design/fluent-design-system/index.md)查看最新消息。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-build-17763.md)頁面。
-| 組建 17134 (版本 1803) | 此版本的 Windows 10 於 2018 年 4 月發行。 **請注意，您「必須」  使用 Visual Studio 2017，才能以這個版本的 Windows 為目標。** 此版本的一些重點功能包括： </br> \* **Fluent Design：** Windows 10 中已新增樹狀檢視、拖動重新整理及瀏覽檢視等新功能。 請至 [Fluent Design 概觀](../design/fluent-design-system/index.md)查看最新消息。 </br> \* **主控台 UWP 應用程式：** 您現在可以撰寫執行於主控台視窗 (例如 DOS 或 PowerShell 主控台視窗) 中的 C++ /WinRT 或 /CX UWP 主控台應用程式。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-build-17134.md)頁面。
-| 組建 16299 (Fall Creators Update，版本 1709) | 此版本的 Windows 10 於 2017 年 10 月發行。 **請注意，您「必須」  使用 Visual Studio 2017，才能以這個版本的 Windows 為目標。** 此版本的一些重點功能包括： </br> \* **.NET Standard 2.0：** 包含大量增加的 .NET API 並將您最愛的 NuGet 套件和第三方程式庫納入 .NET Standard。 請至[這裡](https://docs.microsoft.com/dotnet/standard/net-standard)查看更多詳細資料並瀏覽文件。 請注意，您必須將**最小版本**設定為組建 16299，才能存取這些新的 API。 </br> \* **Fluent Design：** 使用光線、深度、透視以及移動來增強您的應用程式，並協助使用者專注於重要的 UI 元素。 </br> \* **條件式 XAML：** 輕鬆設定屬性，並根據執行階段是否存在 API 來起始物件，讓您的應用程式在各裝置和版本間順暢執行。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-build-16299.md)頁面。
-| 組建 15063 (Creators Update，版本 1703) | 此版本的 Windows 10 於 2017 年 3 月發行。 **請注意，您_必須_使用 Visual Studio 2017，才能以這個版本的 Windows 為目標**。 此版本的一些重點功能包括：  </br> \* **筆跡分析：** Windows Ink 現在可以將筆墨筆劃分類為書寫或繪圖筆劃，並辨識文字、形狀和基本配置結構。 </br> \* **Windows.Ui.Composition API：** 輕鬆地結合並套用您的應用程式之間的動畫。 </br> \* **即時編輯：** 在應用程式執行時同時編輯 XAML，並即時看見所套用的變更。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-build-15063.md)頁面。  |
+| 組建 17763 (版本 1809) | 此版本的 Windows 10 於 2018 年 11 月發行。 **請注意，您「必須」  使用 Visual Studio 2017 或 Visual Studio 2019，才能以這個版本的 Windows 為目標。** 此版本的一些重點功能包括： </br> \* **Windows Machine Learning：** Windows Machine Learning 已正式推出，可為尖端機器學習模型提供更快速的評估和支援。 若要深入了解此平台，請參閱 [Windows Machine Learning](https://docs.microsoft.com/windows/ai/)。 </br> \* **Fluent Design：** Windows 10 已新增一些新功能，例如功能表列、命令列飛出視窗和 XAML 屬性動畫。 請至 [Fluent Design 概觀](../design/fluent-design-system/index.md)查看最新消息。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-build-17763.md)頁面。
+| 組建 17134 (版本 1803) | 此版本的 Windows 10 於 2018 年 4 月發行。 **請注意，您「必須」  使用 Visual Studio 2017 或 Visual Studio 2019，才能以這個版本的 Windows 為目標。** 此版本的一些重點功能包括： </br> \* **Fluent Design：** Windows 10 中已新增樹狀檢視、拖動重新整理及瀏覽檢視等新功能。 請至 [Fluent Design 概觀](../design/fluent-design-system/index.md)查看最新消息。 </br> \* **主控台 UWP 應用程式：** 您現在可以撰寫執行於主控台視窗 (例如 DOS 或 PowerShell 主控台視窗) 中的 C++ /WinRT 或 /CX UWP 主控台應用程式。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-build-17134.md)頁面。
+| 組建 16299 (Fall Creators Update，版本 1709) | 此版本的 Windows 10 於 2017 年 10 月發行。 **請注意，您「必須」  使用 Visual Studio 2017 或 Visual Studio 2019，才能以這個版本的 Windows 為目標。** 此版本的一些重點功能包括： </br> \* **.NET Standard 2.0：** 包含大量增加的 .NET API 並將您最愛的 NuGet 套件和第三方程式庫納入 .NET Standard。 請至[這裡](https://docs.microsoft.com/dotnet/standard/net-standard)查看更多詳細資料並瀏覽文件。 請注意，您必須將**最小版本**設定為組建 16299，才能存取這些新的 API。 </br> \* **Fluent Design：** 使用光線、深度、透視以及移動來增強您的應用程式，並協助使用者專注於重要的 UI 元素。 </br> \* **條件式 XAML：** 輕鬆設定屬性，並根據執行階段是否存在 API 來起始物件，讓您的應用程式在各裝置和版本間順暢執行。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-build-16299.md)頁面。
+| 組建 15063 (Creators Update，版本 1703) | 此版本的 Windows 10 於 2017 年 3 月發行。 **請注意，您「必須」  使用 Visual Studio 2017 或 Visual Studio 2019，才能以這個版本的 Windows 為目標。** 此版本的一些重點功能包括：  </br> \* **筆跡分析：** Windows Ink 現在可以將筆墨筆劃分類為書寫或繪圖筆劃，並辨識文字、形狀和基本配置結構。 </br> \* **Windows.Ui.Composition API：** 輕鬆地結合並套用您的應用程式之間的動畫。 </br> \* **即時編輯：** 在應用程式執行時同時編輯 XAML，並即時看見所套用的變更。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-build-15063.md)頁面。  |
 | 組建 14393 (年度更新版，版本 1607) | 此版本的 Windows 10 於 2016 年 7 月發行。 此版本的一些重點功能包括： </br> \* **Windows Ink：** 新的 InkCanvas 和 InkToolbar 控制項。 </br> \* **Cortana API：** 使用新的 Cortana 動作來將 Cortana 支援與您應用程式的特定功能整合。 </br> \* **Windows Hello：** Microsoft Edge 現在支援 Windows Hello，提供網頁開發人員存取生物識別驗證。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-build-14393.md)頁面。  |
 | 組建 10586 (11 月更新，版本 1511) | 此版本的 Windows 10 發行於 2015 年 11 月。 重點功能包括為 Microsoft Edge 和提供者 API 中的影片通訊推出 ORTC (物件即時通訊) API，讓 App 可以使用 Windows Hello 臉部驗證。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-build-10586.md) |
 | Build 10240 (Windows 10，版本 1507) | 這是 2015 年 7 月發行的初始 Windows 10 版本。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-build-10240.md) |
@@ -44,7 +44,7 @@ ms.locfileid: "66371528"
 
 ## <a name="net-api-availability-in-uwp-versions"></a>在 UWP 版本的 .NET API 可用性
 
-UWP 支援有限的 .NET API 子集，不論您專案的**目標版本**或**最低版本**為何都可使用。 [此頁面提供有關可用類型的詳細資訊](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
+UWP 支援有限的 .NET API 子集，不論您專案的**目標版本**或**最低版本**為何都可使用。 [此頁面提供有關可用類型的詳細資訊](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)。
 
 如果您想要建立可重複使用的跨平台程式庫，則 UWP 支援 .NET Standard。 [.NET Standard 文件](https://docs.microsoft.com/dotnet/standard/net-standard)提供哪些 UWP 版本支援 .NET Standard 的資訊。
 

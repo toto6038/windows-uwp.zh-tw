@@ -5,16 +5,16 @@ keywords: 新功能, 新增功能, 更新, 多項更新, 功能, 新, Windows 10
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b7fe830e07c1daf95928ab747259cb57aaa7a9f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dc35dc50b8dc523aff5478b3ec19c3daeed9dafb
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371344"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820456"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>適用於開發人員的 Windows 10 (組建 17134) 最新動向
 
-Windows 10 組建 17134 (也稱為 4 月更新或版本 1803) 搭配 Visual Studio 2017 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 17134 (也稱為 4 月更新或版本 1803) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指引的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 17134 API 變更](windows-10-build-17134-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
 
@@ -35,7 +35,7 @@ Fluent Design 更新 | 我們使用新的資訊及指引，更新了許多 Fluen
 顯色焦點 | 新的[顯色焦點](../design/style/reveal-focus.md)效果提供體驗 (例如 Xbox One 和電視螢幕) 的光源效果。 這會在使用者將遊戲台或鍵盤焦點移近可設定焦點元素 (例如按鈕) 時，以動畫方式呈現這些元素的框線。
 音效 | XAML 現在使用 **SpatialAudioMode** 屬性支援 3D 音訊。 如需其設定方式的詳細資訊，請參閱[音效](../design/style/sound.md)。
 磚 | [可追蹤式磚通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)現可在 JavaScript 為主的 UWP 應用程式中支援。<br><br>[傳統型橋接器應用程式現在支援](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)次要磚與徽章通知。
-樹狀目錄檢視 | [TreeView](../design/controls-and-patterns/tree-view.md) 控制項啟用提供包含巢狀項目的展開及摺疊節點的階層式清單。 此控制項可以用來說明 UI 中的資料夾結構或巢狀關聯性。
+樹狀檢視 | [TreeView](../design/controls-and-patterns/tree-view.md) 控制項啟用提供包含巢狀項目的展開及摺疊節點的階層式清單。 此控制項可以用來說明 UI 中的資料夾結構或巢狀關聯性。
 撰寫樣式 | 我們已針對有關語音與音調的文章提升品質並擴充內容，並將其轉換成[撰寫方式指引](../design/style/writing-style.md)。 這項新資訊提供關於在應用程式中建立有效文字的原則，並建議撰寫控制項 (例如錯誤訊息或對話方塊) 的最佳做法。
 
 ## <a name="gaming"></a>遊戲
@@ -102,7 +102,7 @@ Windows Machine Learning 可讓您建置透過 Windows 10 裝置本機預先訓�
 
 ### <a name="motion-controller-tracking"></a>運動控制器追蹤
 
-運動控制器在 Windows Mixed Reality 中代表使用者的雙手。 [觀看影片](https://www.youtube.com/watch?v=rkDpRllbLII)了解運動控制器處於混合實境頭戴式裝置視野範圍內外的運作方式，並[在這裡閱讀更多有關控制器追蹤的資訊](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)。
+運動控制器在 Windows Mixed Reality 中代表使用者的雙手。 [觀看影片](https://www.youtube.com/watch?v=rkDpRllbLII)了解運動控制器處於混合實境頭戴式裝置視野範圍內外的運作方式，並[在這裡閱讀更多有關控制器追蹤的資訊](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)。
 
 ### <a name="package-a-net-app-in-visual-studio"></a>在 Visual Studio 中封裝 .NET 應用程式
 

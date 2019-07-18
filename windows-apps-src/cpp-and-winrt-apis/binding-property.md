@@ -1,19 +1,19 @@
 ---
 description: 可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 本主題示範如何實作和使用可觀察屬性，以及如何將 XAML 控制項繫結至它。
 title: XAML 控制項；繫結至一個 C++/WinRT 屬性
-ms.date: 04/24/2019
+ms.date: 06/21/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe5c03eebd2b68e98ae908ea4624471fbd2b3d2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 25ce3164ece443c8c1d95bccbc2bfb57e3347a55
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65627662"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717650"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
-可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作和可觀察屬性的方法，以及如何將 XAML 控制項繫結至它們。
+可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 這個主意是以軟體設計模式為基礎稱為「觀察者模式」  。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作和可觀察屬性的方法，以及如何將 XAML 控制項繫結至它們。
 
 > [!IMPORTANT]
 > 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請參閱[使用 C++/WinRT 使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
@@ -27,11 +27,11 @@ XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯
 > 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="create-a-blank-app-bookstore"></a>建立空白的應用程式 (Bookstore)
-在 Microsoft Visual Studio 中，從建立新的專案開始。 建立 **空白的應用程式 (C++/WinRT)** 專案，並將它命名為 *Bookstore*。
+從在 Microsoft Visual Studio 中建立新的專案開始。 建立 **空白的應用程式 (C++/WinRT)** 專案，並將它命名為 *Bookstore*。
 
 我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 我們在相同的編譯單位裡撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且我們會使用 C++/WinRT 撰寫和使用它。
 
-撰寫新執行階段類別的第一個步驟是將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。 將它命名為 `BookSku.idl`。 刪除 `BookSku.idl`的預設內容，並在此執行階段類別宣告中貼上。
+撰寫新執行階段類別的第一個步驟，要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。 請命名為 `BookSku.idl`。 刪除 `BookSku.idl`的預設內容，並在此執行階段類別宣告中貼上。
 
 ```idl
 // BookSku.idl
@@ -51,7 +51,7 @@ namespace Bookstore
 >
 > 檢視模型是檢視的抽取，所以會直接繫結至檢視 (XAML 標記)。 資料模型是資料的抽取，而且只能從您的檢視模型取用，並不會直接繫結至 XAML。 因此，您可以宣告您的資料模型不是執行階段類別，而是 C++ 結構或類別。 它們不需在 MIDL 中宣告，而且您可以隨意使用您喜歡的任何繼承階層。
 
-儲存檔案並建置專案。 在建置程序期間，執行 `midl.exe` 工具建立描述執行階段類別的 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)。 然後，執行 `cppwinrt.exe` 工具產生原始碼檔案在撰寫和使用執行階段類別中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
+儲存檔案並建置專案。 在建置程序期間，會執行 `midl.exe` 工具，以建立 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)，其會描述執行階段類別。 然後，執行 `cppwinrt.exe` 工具產生原始碼檔案在撰寫和使用執行階段類別中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
 
 以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]  。 這會在檔案總管中開啟專案資料夾。 在那裏，從 `\Bookstore\Bookstore\Generated Files\sources\` 資料夾將虛設常式檔案 `BookSku.h` 和 `BookSku.cpp` 複製到專案資料夾中，也就是 `\Bookstore\Bookstore\`。 在 方案總管  中，選取專案資料夾後，確定 顯示所有檔案  已切換成開啟。 按一下滑鼠右鍵您複製的虛設常式檔案，然後按一下 [加入至專案]  。
 
@@ -210,7 +210,7 @@ namespace Bookstore
 
 若要解決我們預期會看見的錯誤，您現在必須從所產生的檔案 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和 `MainPage.cpp`) 複製 **MainViewModel** 屬性的存取子虛設常式，並貼到 `\Bookstore\Bookstore\MainPage.h` 和 `MainPage.cpp` 中。 接下來說明這麼做的步驟。
 
-在 `\Bookstore\Bookstore\MainPage.h` 中包含 `BookstoreViewModel.h`，其會宣告 **BookstoreViewModel** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookstoreViewModel**)。 新增私用成員以儲存檢視模型。 請注意，按照 **BookstoreViewModel** (這是 **Bookstore::BookstoreViewModel**) 的投影類型，實作屬性存取子函式 (以及成員 m_mainViewModel)。 實作類型是在與應用程式相同的專案 (編譯單位) 中，因此我們透過採用 `nullptr_t` 的建構函式多載建構 m_mainViewModel。 也會移除 **MyProperty** 屬性。
+在 `\Bookstore\Bookstore\MainPage.h` 中包含 `BookstoreViewModel.h`，其會宣告 **BookstoreViewModel** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookstoreViewModel**)。 新增私用成員以儲存檢視模型。 請注意，按照 **BookstoreViewModel** (這是 **Bookstore::BookstoreViewModel**) 的投影類型，實作屬性存取子函式 (以及成員 m_mainViewModel)。 實作類型是在與應用程式相同的專案 (編譯單位) 中，因此我們透過採用 **std::nullptr_t** 的建構函式多載建構 m_mainViewModel。 也會移除 **MyProperty** 屬性。
 
 ```cppwinrt
 // MainPage.h
@@ -276,6 +276,28 @@ namespace winrt::Bookstore::implementation
 
 ## <a name="using-the-binding-markup-extension-with-cwinrt"></a>使用 {Binding} 標記延伸搭配 C++/WinRT
 對於目前發行的 C++/WinRT 版本，為了能夠使用 {Binding} 標記延伸，您必須實作 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) 和 [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面。
+
+## <a name="element-to-element-binding"></a>元素繫結
+
+您可以將一個 XAML 元素的屬性繫結至另一個 XAML 元素的屬性。 以下是其在標記中的作法範例。
+
+```xaml
+<TextBox x:Name="myTextBox" />
+<TextBlock Text="{x:Bind myTextBox.Text, Mode=OneWay}" />
+```
+
+您必須將具名的 XAML 實體 `myTextBox` 宣告為 Midl 檔 (.idl) 中的唯讀屬性。
+
+```idl
+// MainPage.idl
+runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+{
+    MainPage();
+    Windows.UI.Xaml.Controls.TextBox myTextBox{ get; };
+}
+```
+
+以下是這項必要性的原因。 所有 XAML 編譯器需要驗證的類型 (包括用於 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 的類型)，都會從 Windows 中繼資料 (WinMD) 進行讀取。 您只需要將唯讀屬性新增至 Midl 檔即可。 無須進行實作，因為自動產生的 XAML 後方程式碼會為您提供實作。
 
 ## <a name="important-apis"></a>重要 API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

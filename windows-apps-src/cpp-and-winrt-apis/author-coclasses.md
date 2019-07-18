@@ -6,16 +6,64 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, COM, 元件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3badcd59155bc4bb5ef8d9e29271b853c245c24e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 7e3101147f31f630ed6d7d23916eb675f8bc2d21
+ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360317"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67800523"
 ---
 # <a name="author-com-components-with-cwinrt"></a>使用 C++/WinRT 撰寫 COM 元件
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 可協助您撰寫傳統的元件物件模型 (COM) 元件 (或 coclass)，因為有助於撰寫 Windows 執行階段類別。 以下是簡單的說明範例，如果將以下程式碼貼到新 **Windows 主控台應用程式 (C++/WinRT)** 專案的 `pch.h` 和 `main.cpp` 中，即可加以測試。
+[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 可協助您撰寫傳統的元件物件模型 (COM) 元件 (或 coclass)，因為有助於撰寫 Windows 執行階段類別。 本主題會說明作法。
+
+## <a name="how-cwinrt-behaves-by-default-with-respect-to-com-interfaces"></a>搭配 COM 介面的 C++/WinRT 有什麼預設行為
+
+C++/ WinRT 的 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 範本是直接或間接衍生您執行階段類別和啟用處理站的基底。
+
+根據預設，**winrt::implements** 僅支援 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 架構的介面，並會以無訊息方式忽略傳統 COM 介面。 任何針對傳統 COM 介面發出的 **QueryInterface** (QI) 呼叫都會因為 **E_NOINTERFACE** 而失敗。
+
+稍後您會看到如何克服該情況，但以下程式碼範例會先說明預設行為。
+
+```idl
+// Sample.idl
+runtimeclass Sample
+{
+    Sample();
+    void DoWork();
+}
+
+// Sample.h
+#include "pch.h"
+#include <shobjidl.h> // Needed only for this file.
+
+namespace winrt::MyProject
+{
+    struct Sample : implements<Sample, IInitializeWithWindow>
+    {
+        IFACEMETHOD(Initialize)(HWND hwnd);
+        void DoWork();
+    }
+}
+```
+
+而以下是用來取用 **Sample** 類別的用戶端程式碼。
+
+```cppwinrt
+// Client.cpp
+Sample sample; // Construct a Sample object via its projection.
+
+// This next line crashes, because the QI for IInitializeWithWindow fails.
+sample.as<IInitializeWithWindow>()->Initialize(hwnd); 
+```
+
+好消息是，若要讓 **winrt::implements** 支援傳統 COM 介面，只需在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h` 即可。
+
+您可能可以明確地執行該動作，或藉由包括一些其他標頭檔 (例如 `ole2.h`) 來間接執行。 其中一個建議方法是加入 `wil\cppwinrt.h`標頭檔，這是 [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil) 的一部分。 `wil\cppwinrt.h` 標頭檔不只可確保 `unknwn.h` 在 `winrt/base.h` 之前加入，還可以設定項目，讓 C++/WinRT 和 WIL 了解彼此的例外狀況和錯誤代碼。
+
+## <a name="a-simple-example-of-a-com-component"></a>COM 元件的簡單範例
+
+以下是使用 C++/WinRT 撰寫 COM 元件的簡單範例。 這是微型應用程式的完整清單，如果將程式碼貼到新 **Windows 主控台應用程式 (C++/WinRT)** 專案的 `pch.h` 和 `main.cpp` 中，即可移出程式碼。
 
 ```cppwinrt
 // pch.h
@@ -74,7 +122,7 @@ int main()
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>建立 Windows Console Application 專案 (ToastAndCallback)
 
-請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **Windows 主控台應用程式 (C++/WinRT)** 專案，並將其命名為 *ToastAndCallback*。
+從在 Microsoft Visual Studio 中建立新的專案開始。 建立 **Windows 主控台應用程式 (C++/WinRT)** 專案，並將其命名為 *ToastAndCallback*。
 
 開啟 `pch.h`，並在括住的任何 C++/WinRT 標頭之前加上 `#include <unknwn.h>`。 結果顯示如下；您可以將 `pch.h` 的內容取代為此清單。
 
@@ -116,7 +164,7 @@ int main() { }
 
 ## <a name="implement-the-coclass-and-class-factory"></a>實作 coclass 和 class factory
 
-在 C++/WinRT 中，可藉由衍生自 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎結構的方式，來實作 coclass 和 class factory。 緊接在上述的三個 using 指令詞之後 (且在 `main`之前)，請貼上此程式碼，即可實作您的快顯通知 COM 啟動器元件。
+在 C++/WinRT 中，可藉由衍生自 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基底結構的方式，來實作 coclass 和 class factory。 緊接在上述的三個 using 指令詞之後 (且在 `main`之前)，請貼上此程式碼，即可實作您的快顯通知 COM 啟動器元件。
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -526,7 +574,7 @@ HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** r
 
 另請參閱 [C++/WinRT 中的弱式參考](weak-references.md#weak-references-in-cwinrt)。
 
-如果您的類型實作的是 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (或衍生自 **IInspectable** 的任何介面)，則 C++/WinRT (具體來說，是 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎架構範本) 會實作 [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource)。
+如果您的類型實作的是 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (或衍生自 **IInspectable** 的任何介面)，則 C++/WinRT (具體來說，是 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基底結構範本) 會實作 [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource)。
 
 這是因為 **IWeakReferenceSource** 和 [**IWeakReference**](/windows/desktop/api/weakreference/nn-weakreference-iweakreference) 是專為 Windows 執行階段類型所設計的。 因此，只要將 **winrt::Windows::Foundation::IInspectable** (或衍生自 **IInspectable** 的介面) 加入實作，即可開啟您的 coclass 的弱式參考支援。
 
