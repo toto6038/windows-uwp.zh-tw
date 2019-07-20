@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d118633d9d0d9b7007c94ec4d5053db34b09e29
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: c11a812aaa62e9fa4d27fddc1d55739fe491bd20
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318041"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340842"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>使用視覺層搭配 XAML
 
@@ -25,7 +25,7 @@ XAML 與視覺層互通性功能可用來建立單獨使用 XAML API 所無法�
 - 完美像素陰影
 
 這些效果和動畫可以套用至現有的 XAML 內容，因此您不需要大幅重組您的 XAML 應用程式即可利用新的功能。
-配置動畫、陰影和模糊效果，涵蓋在以下的＜做法＞一節中 如需實作視差的程式碼範例，請參閱 [ParallaxingListItems 範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems)。 [WindowsUIDevLabs 存放機制](https://github.com/microsoft/WindowsCompositionSamples) 也已經有實作動畫、陰影和效果的數個其他範例。
+配置動畫、陰影和模糊效果，涵蓋在以下的＜做法＞一節中 如需實作視差的程式碼範例，請參閱 [ParallaxingListItems 範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)。 [WindowsUIDevLabs 存放機制](https://github.com/microsoft/WindowsCompositionSamples) 也已經有實作動畫、陰影和效果的數個其他範例。
 
 ## <a name="the-xamlcompositionbrushbase-class"></a>XamlCompositionBrushBase 類別
 
@@ -45,12 +45,12 @@ XAML 與視覺層互通性功能可用來建立單獨使用 XAML API 所無法�
 
 ## <a name="the-elementcompositionpreview-class"></a>ElementCompositionPreview 類別
 
-[**ElementCompositionPreview** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview)是靜態類別，提供 XAML 和視覺分層 interop 的功能。 如需視覺層及其功能的概觀，請參閱[視覺層](https://docs.microsoft.com/windows/uwp/graphics/visual-layer)。 **ElementCompositionPreview** 類別會提供下列方法︰
+[**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview)是靜態類別, 提供 XAML 和視覺化層 interop 功能。 如需視覺層及其功能的概觀，請參閱[視覺層](https://docs.microsoft.com/windows/uwp/graphics/visual-layer)。 **ElementCompositionPreview** 類別會提供下列方法︰
 
--   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual):取得"講義 」 用來呈現此元素的視覺效果
--   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual):設定 「 handin"做為最後一個子系的視覺效果的這個項目的視覺化樹狀結構。 這個 Visual 將會在其餘元素的頂端繪製。 
--   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual):擷取視覺組使用**SetElementChildVisual**
--   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual):取得物件，可用來建立根據中的捲軸位移的 60 fps 動畫**ScrollViewer**
+-   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual):取得用來呈現此元素的「講義」視覺效果
+-   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual):將 "handin" 視覺效果設定為這個專案之視覺化樹狀結構的最後一個子系。 這個 Visual 將會在其餘元素的頂端繪製。 
+-   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual):使用**SetElementChildVisual**取出視覺效果集合
+-   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual):取得物件, 可用來根據**ScrollViewer**中的捲軸位移來建立60fps 動畫
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>ElementCompositionPreview.GetElementVisual 備註
 
@@ -96,7 +96,7 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## <a name="getalphamask-methods"></a>**GetAlphaMask** 方法
 
-[**映像**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)， [ **TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)，以及[**圖形**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)實作呼叫方法時，每個**GetAlphaMask**會傳回**CompositionBrush**代表項目的圖形的灰階映像。 這個 **CompositionBrush** 可做為組合 **DropShadow** 的輸入，如此陰影就可以反映元素的形狀而不是矩形。 這可讓您使用 Alpah 和形狀，針對文字和影像建立完美像素、以輪廓為主的陰影。 如需 API 的範例，請參閱下方的＜陰影＞  。
+[**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)、 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)和[**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)分別會執行一個稱為**GetAlphaMask**的方法, 它會傳回代表具有元素形狀之灰階影像的**CompositionBrush** 。 這個 **CompositionBrush** 可做為組合 **DropShadow** 的輸入，如此陰影就可以反映元素的形狀而不是矩形。 這可讓您使用 Alpah 和形狀，針對文字和影像建立完美像素、以輪廓為主的陰影。 如需 API 的範例，請參閱下方的＜陰影＞  。
 
 ## <a name="recipes"></a>做法
 
@@ -362,8 +362,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## <a name="additional-resources"></a>其他資源
 
-- [視覺圖層的概觀](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
+- [視覺分層總覽](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
 - [**ElementCompositionPreview**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
 - [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples) 有進階的 UI 和組合範例
-- [BasicXamlInterop 範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/BasicXamlInterop)
-- [ParallaxingListItems 範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems)
+- [BasicXamlInterop 範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
+- [ParallaxingListItems 範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

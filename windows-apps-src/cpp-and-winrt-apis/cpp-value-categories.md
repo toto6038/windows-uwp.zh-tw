@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移動, 轉送, 值類別, 移動語意, 完美轉送, lvalue, rvalue, glvalue, prvalue, xvalue
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1860f562233ceefa6d9ebb3741378b3265b4c3a9
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a11d7763c33df6733a8dbf78392d27417e7cf18d
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63797065"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270211"
 ---
 # <a name="value-categories-and-references-to-them"></a>值類別，以及其參考
 本主題說明 C++ 中存在的各種值類別 (以及值參考)。 您一定曾聽過 *lvalues* 和 *rvalues*，但您可能不認為它們如本主題所呈現。 而且還有其他種類的值。

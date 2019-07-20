@@ -1,5 +1,5 @@
 ---
-Description: 探索不同的選項傳送快顯通知的桌面的 Win32 應用程式
+Description: 探索桌面 Win32 應用程式傳送快顯通知所需的不同選項
 title: 傳統型應用程式的快顯通知
 label: Toast notifications from desktop apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast, 桌面, 快顯通知, 傳統型橋接器, 傳送快顯通知的選項, com 伺服器, com 啟動器, 假 com, 無 com, 沒有 com, 傳送快顯通知
 ms.localizationpriority: medium
-ms.openlocfilehash: bab89962bdc7986f7653e39c7e5967a493421f05
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ef4810ec594173f3cc4da35d63143909f4859e3c
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636083"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340810"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>傳統型應用程式的快顯通知
 
@@ -30,8 +30,8 @@ ms.locfileid: "57636083"
 
 | 選項 | 視覺效果 | 動作 | 輸入 | 在處理程序中啟用 |
 | -- | -- | -- | -- | -- |
-| [COM 啟動程式](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
-| [沒有 COM / 虛設常式的 CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
+| [COM 啟動項](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
+| [沒有 COM/存根 CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
 
 
 ## <a name="preferred-option---com-activator"></a>偏好的選項 - COM 啟動器
@@ -74,13 +74,13 @@ ms.locfileid: "57636083"
 | ToastGeneric 通訊協定 | ✔️ | ✔️ |
 | 舊版範本 | ✔️ | ❌ |
 
-我們將在未來發佈文件以展示此選項的使用方式。 基本上，對於傳統型橋接器應用程式，只會傳送快顯通知，如同 UWP app。 當使用者按下您的快顯通知時，您的 App 將會以您在快顯通知中指定的啟動引述啟動命令列。
+針對桌面橋接器應用程式, 只要傳送像是 UWP 應用程式的快顯通知就可以了。 當使用者按下您的快顯通知時，您的 App 將會以您在快顯通知中指定的啟動引述啟動命令列。
 
 對於傳統型 Win32 應用程式，請設定 AUMID，讓您可以傳送快顯通知，然後在您的快速鍵也指定 CLSID。 這可以是任何隨機 GUID。 切勿新增 COM 伺服器/啟動器。 您將新增的「stub」COM CLSID，這會導致控制中心保存通知。 請注意，您只可以使用通訊協定啟用的快顯通知，因為 stub CLSID 將會中斷任何其他快顯通知的啟用。 因此，您必須更新您的 App 為支援通訊協定啟用，而且讓快顯通知通訊協定啟動您自己的 App。
 
 
 ## <a name="resources"></a>資源
 
-* [從桌面傳送本機的快顯通知C#應用程式](send-local-toast-desktop.md)
-* [從桌面 c + + WRL 應用程式傳送本機的快顯通知](send-local-toast-desktop-cpp-wrl.md)
-* [快顯通知內容的文件](adaptive-interactive-toasts.md)
+* [從桌面C# apps 傳送本機快顯通知](send-local-toast-desktop.md)
+* [從桌面C++ WRL apps 傳送本機快顯通知](send-local-toast-desktop-cpp-wrl.md)
+* [快顯內容檔](adaptive-interactive-toasts.md)

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, boxing, 純量, 數值
 ms.localizationpriority: medium
-ms.openlocfilehash: b50a0d6b231b9c526fc619a98c37f81520db3ff2
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 431230d3b67d7a380b4f0b20fdef1e0f918c3aa2
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660109"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270156"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>使用 C++/WinRT，Boxing 和 unboxing 純量數值到 IInspectable
  
@@ -67,6 +67,6 @@ WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType:
 ## <a name="important-apis"></a>重要 API
 * [IInspectable 介面](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
 * [winrt::box_value 函式範本](/uwp/cpp-ref-for-winrt/box-value)
-* [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt::unbox_value 函式範本](/uwp/cpp-ref-for-winrt/unbox-value)
 * [winrt::unbox_value_or 函式範本](/uwp/cpp-ref-for-winrt/unbox-value-or)

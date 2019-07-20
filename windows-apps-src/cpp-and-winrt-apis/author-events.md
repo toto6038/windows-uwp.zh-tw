@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: fc3b07848215699afe971674acfa7606ffb21bce
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 4499b2191734c6ae66131ce92aa2654188313d5e
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660170"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270181"
 ---
 # <a name="author-events-in-cwinrt"></a>以 C++/WinRT 撰寫事件
 
@@ -24,7 +24,7 @@ ms.locfileid: "67660170"
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>建立 Windows 執行階段元件 (BankAccountWRC)
 
-從在 Microsoft Visual Studio 中建立新的專案開始。 建立 **Windows 執行階段元件 (C++/WinRT)** 專案，並將它命名為 *BankAccountWRC* (適用於「銀行帳戶 Windows 執行階段元件」)。 尚未建置專案。
+在 Microsoft Visual Studio 中，從建立新的專案開始。 建立 **Windows 執行階段元件 (C++/WinRT)** 專案，並將它命名為 *BankAccountWRC* (適用於「銀行帳戶 Windows 執行階段元件」)。 尚未建置專案。
 
 新建立的專案中包含一個名為 `Class.idl` 的檔案。 將該檔案 `BankAccount.idl` 重新命名 (重新命名 `.idl` 檔案也會自動將相依的 `.h` 和 `.cpp` 檔案重新命名)。 以下面的清單取代 `BankAccount.idl` 的內容。
 

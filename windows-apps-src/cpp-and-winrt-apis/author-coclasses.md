@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, COM, 元件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7e3101147f31f630ed6d7d23916eb675f8bc2d21
-ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
+ms.openlocfilehash: 8da62908d33c053cee4ba3f55645be9dbdcaada9
+ms.sourcegitcommit: b9268ca84af56ee1c4f4ac0314e2452193369f01
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800523"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68293367"
 ---
 # <a name="author-com-components-with-cwinrt"></a>使用 C++/WinRT 撰寫 COM 元件
 
@@ -122,7 +122,7 @@ int main()
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>建立 Windows Console Application 專案 (ToastAndCallback)
 
-從在 Microsoft Visual Studio 中建立新的專案開始。 建立 **Windows 主控台應用程式 (C++/WinRT)** 專案，並將其命名為 *ToastAndCallback*。
+請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **Windows 主控台應用程式 (C++/WinRT)** 專案，並將其命名為 *ToastAndCallback*。
 
 開啟 `pch.h`，並在括住的任何 C++/WinRT 標頭之前加上 `#include <unknwn.h>`。 結果顯示如下；您可以將 `pch.h` 的內容取代為此清單。
 
@@ -164,7 +164,7 @@ int main() { }
 
 ## <a name="implement-the-coclass-and-class-factory"></a>實作 coclass 和 class factory
 
-在 C++/WinRT 中，可藉由衍生自 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基底結構的方式，來實作 coclass 和 class factory。 緊接在上述的三個 using 指令詞之後 (且在 `main`之前)，請貼上此程式碼，即可實作您的快顯通知 COM 啟動器元件。
+在 C++/WinRT 中，可藉由衍生自 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎結構的方式，來實作 coclass 和 class factory。 緊接在上述的三個 using 指令詞之後 (且在 `main`之前)，請貼上此程式碼，即可實作您的快顯通知 COM 啟動器元件。
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -510,8 +510,7 @@ struct __declspec(uuid("85d6672d-0606-4389-a50a-356ce7bded09"))
     {
         try
         {
-            *ppvObject = winrt::make<MyCoclass>().get();
-            return S_OK;
+            return winrt::make<MyCoclass>()->QueryInterface(riid, ppvObject);
         }
         catch (...)
         {
@@ -574,7 +573,7 @@ HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** r
 
 另請參閱 [C++/WinRT 中的弱式參考](weak-references.md#weak-references-in-cwinrt)。
 
-如果您的類型實作的是 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (或衍生自 **IInspectable** 的任何介面)，則 C++/WinRT (具體來說，是 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基底結構範本) 會實作 [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource)。
+如果您的類型實作的是 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (或衍生自 **IInspectable** 的任何介面)，則 C++/WinRT (具體來說，是 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎架構範本) 會實作 [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource)。
 
 這是因為 **IWeakReferenceSource** 和 [**IWeakReference**](/windows/desktop/api/weakreference/nn-weakreference-iweakreference) 是專為 Windows 執行階段類型所設計的。 因此，只要將 **winrt::Windows::Foundation::IInspectable** (或衍生自 **IInspectable** 的介面) 加入實作，即可開啟您的 coclass 的弱式參考支援。
 

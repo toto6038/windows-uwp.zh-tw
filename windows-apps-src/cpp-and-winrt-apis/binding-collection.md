@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 999238d72017b92f1eb64c2e3089305166f993f2
-ms.sourcegitcommit: bf32c7ea6ca94b60dbd01cae279b31c6e0e5f338
+ms.openlocfilehash: 258ec5e0690753c8ad9c3b0648867666397039a5
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348635"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270167"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 項目控制項；繫結至一個 C++/WinRT 集合
 
@@ -19,7 +19,7 @@ ms.locfileid: "67348635"
 如果您想要按照本主題的步驟進行，建議先建立 [XAML 控制項；繫結一個 C++/WinRT 屬性](binding-property.md)一文所述的專案。 本主題會將更多程式碼加入至該專案，且能進一步輔助本主題所介紹的概念。
 
 > [!IMPORTANT]
-> 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
+> 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
 ## <a name="what-does-observable-mean-for-a-collection"></a>對一個集合來說，「可觀察」  有何意義？
 如果代表集合的執行階段類別，每當將元素新增至該類別或從中移除時，會選擇引發 [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) 事件，則該執行階段類別便是可觀察的集合。 XAML 項目控制項藉由擷取更新的集合並且更新其本身以顯示目前的元素，可繫結至以及處理這些事件。
@@ -118,7 +118,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 ...
 ```
 
-現在建置並執行專案。 按一下按鈕執行 [按一下]  事件處理常式。 我們所見 **Append** 的實作引發一個事件，讓 UI 知道集合已變更；且 **ListBox** 重新查詢集合，更新其自己的 **Items** 值。 就像以前一樣，變更書籍其中之一的標題；且同時在按鈕與清單方塊上反映該標題的變更。
+現在請建置並執行專案。 按一下按鈕執行 **Click** 事件處理常式。 我們所見 **Append** 的實作引發一個事件，讓 UI 知道集合已變更；且 **ListBox** 重新查詢集合，更新其自己的 **Items** 值。 就像以前一樣，變更書籍其中之一的標題；且同時在按鈕與清單方塊上反映該標題的變更。
 
 ## <a name="important-apis"></a>重要 API
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
