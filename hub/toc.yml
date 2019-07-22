@@ -1,6 +1,7 @@
 - name: 建置適用於 Windows 的應用程式
-  href: apps/index.md
   items:
+    - name: 概觀
+      href: apps/index.md
     - name: 建置傳統型應用程式
       items:
         - name: 概觀
@@ -63,3 +64,19 @@
       href: apps/accessibility.md
     - name: 功能和技術
       href: apps/features-and-technologies.md
+- name: 使用 Windows 裝置
+  items:
+    - name: 使用 Python 進行開發
+      items:
+        - name: 概觀
+          href: python/index.md
+        - name: 初學者入門
+          href: python/get-started/python-for-education.md
+        - name: 開始使用 Web 開發
+          href: python/get-started/python-for-web.md
+        - name: 開始使用自動化
+          href: python/get-started/python-for-scripting.md
+        - name: 常見問題集
+          href: python/faqs.md
+        - name: 資源
+          href: python/resources.md
