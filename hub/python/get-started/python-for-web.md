@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: python、windows 10、microsoft、python on windows、python web 和 wsl、python web 應用程式、適用于 linux 的 windows 子系統、windows 上的 python 網頁程式開發、windows 上的 flask 應用程式、windows 上的 django 應用程式、python web 上的 flask web dev、windows 上的 django web dev、windows web dev 搭配 python, vs code python web dev, 遠端 wsl 擴充功能, ubuntu, wsl, venv, pip, microsoft python 擴充功能, 在 windows 上執行 python, 在 windows 上使用 python, 在 windows 上以 python 建立
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: dfef049c40b5f1578a75d4e78c566f5049607e36
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.openlocfilehash: eafe85ac7e954d1a76708b059a191c14526afff8
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349408"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473686"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>開始在 Windows 上使用 Python 進行網頁程式開發
 
@@ -23,10 +23,9 @@ ms.locfileid: "68349408"
 
 ## <a name="set-up-your-development-environment"></a>設定您的開發環境
 
-我們建議您先透過 WSL 安裝 Python, 專門用來建立 web 應用程式。 Python 網頁程式開發的許多教學課程和指示都是針對 Linux 使用者所撰寫, 並使用以 Linux 為基礎的封裝和安裝工具。 大部分的 web 應用程式也會部署在 Linux 上, 因此這可確保您的開發與生產環境之間具有一致性。
+我們建議您在建立 web 應用程式時, 在 WSL 上安裝 Python。 Python 網頁程式開發的許多教學課程和指示都是針對 Linux 使用者所撰寫, 並使用以 Linux 為基礎的封裝和安裝工具。 大部分的 web 應用程式也會部署在 Linux 上, 因此這可確保您的開發與生產環境之間具有一致性。
 
-> [!IMPORTANT]
-> 如果您使用 Python 做為 網頁程式開發以外的專案, 建議您使用 Microsoft Store 直接在 Windows 10 上安裝 Python。 WSL 不支援 GUI 桌面或應用程式 (例如 PyGame、Gnome、KDE 等)。 在這些情況下, 直接在 Windows 上安裝和使用 Python。 如果您不熟悉 Python, 請參閱我們的指南:[開始在 Windows 上使用適用于初學者的 Python](./python-for-education.md)。 如果您想要將作業系統上的一般工作自動化, 請參閱我們的指南:[開始在 Windows 上使用 Python 進行腳本處理和自動化](./python-for-scripting.md)。 <br>針對某些先進的案例, 您可能會想要考慮直接從[python.org](https://www.python.org/downloads/windows/)下載特定的 Python 版本, 或考慮安裝[替代](https://www.python.org/download/alternatives)方案, 例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是更先進的 Python 程式設計人員, 並具有選擇替代執行方式的特定原因時, 才建議使用此方法。
+如果您使用 Python 做為 網頁程式開發以外的專案, 建議您使用 Microsoft Store 直接在 Windows 10 上安裝 Python。 WSL 不支援 GUI 桌面或應用程式 (例如 PyGame、Gnome、KDE 等)。 在這些情況下, 直接在 Windows 上安裝和使用 Python。 如果您不熟悉 Python, 請參閱我們的指南:[開始在 Windows 上使用適用于初學者的 Python](./python-for-education.md)。 如果您想要將作業系統上的一般工作自動化, 請參閱我們的指南:[開始在 Windows 上使用 Python 進行腳本處理和自動化](./python-for-scripting.md)。 針對某些先進的案例, 您可能會想要考慮直接從[python.org](https://www.python.org/downloads/windows/)下載特定的 Python 版本, 或考慮安裝[替代](https://www.python.org/download/alternatives)方案, 例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是更先進的 Python 程式設計人員, 並具有選擇替代執行方式的特定原因時, 才建議使用此方法。
 
 ## <a name="enable-windows-subsystem-for-linux"></a>啟用適用于 Linux 的 Windows 子系統
 
@@ -46,26 +45,20 @@ WSL 可讓您執行 GNU/Linux 環境 (包括大部分的命令列工具、公用
 
 2. 下載完成之後, 從 [**開始**] 功能表中, 選取 [從 Microsoft Store**啟動**] 或 [啟動], 方法是輸入 "Ubuntu 18.04 LTS"。
 
-3. 當您第一次執行散發套件時, 系統會要求您建立帳戶名稱和密碼。 在此之後, 預設會自動以此使用者身分登入。 您可以選擇任何使用者名稱和密碼。 它們不會影響您的 Windows 使用者名稱。 您可以藉由輸入下列內容來檢查您目前使用的 Linux `lsb_release -d`散發套件:。
+3. 當您第一次執行散發套件時, 系統會要求您建立帳戶名稱和密碼。 在此之後, 預設會自動以此使用者身分登入。 您可以選擇任何使用者名稱和密碼。 它們不會影響您的 Windows 使用者名稱。
 
-如需 Microsoft Store 中可用的其他 Linux 發行版本連結、替代安裝方法或疑難排解, 請參閱適用于[windows 10 的 Windows 子系統 For Linux 安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。
-
-> [!NOTE]
-> 建議您定期更新您的 Linux 散發套件。 大部分的 Linux 發行版本都隨附空的或最少的封裝目錄。 更新會確保它具有最新的套件。 Windows 不會自動更新或升級您的 Linux 發行版本。 Linux 使用者通常會想要自行控制此工作。 若要更新 Ubuntu 散發套件, 請使用 APT 套件管理員, 方法是將此命令貼入`sudo apt update && sudo apt upgrade`終端機:。
+您可以藉由輸入下列內容來檢查您目前使用的 Linux `lsb_release -d`散發套件:。 若要更新您的 Ubuntu 散發套件`sudo apt update && sudo apt upgrade`, 請使用:。 我們建議定期更新, 以確保您擁有最新的套件。 Windows 不會自動處理這種更新。 如需 Microsoft Store 中可用的其他 Linux 發行版本連結、替代安裝方法或疑難排解, 請參閱適用于[windows 10 的 Windows 子系統 For Linux 安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。
 
 ## <a name="set-up-visual-studio-code"></a>設定 Visual Studio Code
 
-VS Code 與適用于 Linux 的 Windows 子系統完美整合, 提供[內建的終端](https://code.visualstudio.com/docs/editor/integrated-terminal)機, 讓您在程式碼編輯器與命令列之間建立順暢的工作流程, 以及支援 git 以搭配一般 git[進行版本控制](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)直接內建在 UI 中的命令 (新增、認可、推送、提取)。
-
-> [!NOTE]
-> 利用[IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)、 [Linting](https://code.visualstudio.com/docs/python/linting)、 [Debug 支援](https://code.visualstudio.com/docs/python/debugging)、[程式碼片段](https://code.visualstudio.com/docs/editor/userdefinedsnippets)和[單元測試](https://code.visualstudio.com/docs/python/unit-testing), 方法是使用 VS Code .。。但是, 您也必須安裝遠端 WSL 擴充功能, 才能在 Windows 上使用 Linux 工具時適當地設定 VS Code。  
+藉由使用 VS Code, 利用[IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)、 [Linting](https://code.visualstudio.com/docs/python/linting)、[偵錯工具支援](https://code.visualstudio.com/docs/python/debugging)、[程式碼片段](https://code.visualstudio.com/docs/editor/userdefinedsnippets)和[單元測試](https://code.visualstudio.com/docs/python/unit-testing)。 VS Code 與適用于 Linux 的 Windows 子系統完美整合, 提供[內建的終端](https://code.visualstudio.com/docs/editor/integrated-terminal)機, 讓您在程式碼編輯器與命令列之間建立順暢的工作流程, 以及支援 git 以搭配一般 git[進行版本控制](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)直接內建在 UI 中的命令 (新增、認可、推送、提取)。
 
 1. [下載並安裝適用于 Windows 的 VS Code](https://code.visualstudio.com)。 VS Code 也適用于 Linux, 但適用于 Linux 的 Windows 子系統不支援 GUI 應用程式, 因此我們需要將它安裝在 Windows 上。 別擔心, 您仍然可以使用遠端 WSL 擴充功能, 與您的 Linux 命令列和工具整合。
 
 2. 在 VS Code 上安裝[遠端 WSL 擴充功能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 這可讓您使用 WSL 做為整合式開發環境, 並為您處理相容性和路徑。 [進一步瞭解](https://code.visualstudio.com/docs/remote/remote-overview)。
 
 > [!IMPORTANT]
-> 如果您已安裝 VS Code, 則必須確定您有[1.35 版](https://code.visualstudio.com/updates/v1_35)或更新版本, 才能安裝[遠端 WSL 擴充功能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 不建議在沒有遠端 WSL 擴充功能的 VS Code 中使用 WSL。 若沒有此延伸模組, 您的 WSL 專案將不支援自動完成、偵錯工具、linting、測試等。有趣的事實:安裝至 WSL 的工作區延伸模組 $HOME/.vscode-server/extensions。
+> 如果您已安裝 VS Code, 則必須確定您有[1.35 版](https://code.visualstudio.com/updates/v1_35)或更新版本, 才能安裝[遠端 WSL 擴充功能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 不建議您在沒有遠端 WSL 擴充功能的 VS Code 中使用 WSL, 因為您會失去自動完成、偵錯工具、linting 等的支援。有趣的事實:此 WSL 延伸模組安裝在 $HOME/.vscode-server/extensions。
 
 ## <a name="create-a-new-project"></a>建立新專案
 
@@ -78,27 +71,21 @@ VS Code 與適用于 Linux 的 Windows 子系統完美整合, 提供[內建的�
 ![Ubuntu 終端機](../../images/ubuntu-terminal.png)
 
 > [!TIP]
-> 使用適用于 Linux 的 Windows 子系統 (WSL) 時必須記住的重要事項是,**您現在可以在兩個不同的檔案系統之間運作**:1) 您的 Windows 檔案系統, 以及 2) 您的 Linux 檔案系統 (WSL), 這是適用于我們範例的 Ubuntu。 您必須注意安裝封裝和儲存檔案的位置。 您可以在 Windows 檔案系統中安裝一個或多個版本的工具或套件, 以及 Linux 檔案系統中完全不同的版本。 更新 Windows 檔案系統中的工具將不會影響 Linux 檔案系統中的工具, 反之亦然。 WSL 會將您電腦上的固定磁片磁碟機掛接<drive>在 Linux 散發套件的于/mnt/資料夾底下。 例如, 您的 Windows C: 磁片磁碟機會裝載`/mnt/c/`在底下。 您可以從 Ubuntu 終端機存取 Windows 檔案, 並在這些檔案上使用 Linux 應用程式和工具, 反之亦然。 我們建議您在適用于 Python 網頁程式開發的 Linux 檔案系統中工作, 這是因為大部分的 web 工具原本是針對 Linux 所撰寫, 並部署在 Linux 生產環境中。 它也可避免混用檔案系統的語義 (例如, Windows 在檔案名方面並不區分大小寫)。 話雖如此, WSL 現在支援在 Linux 和 Windows 檔案系統之間進行跳躍, 因此您可以在其中一個檔案上裝載您的檔案。 [進一步瞭解](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。 <br> 我們很高興能分享[WSL2 即將推出 Windows](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) , 並提供一些絕佳的改良功能。 您可以[在 Windows 測試人員組建18917上立即試用](https://docs.microsoft.com/windows/wsl/wsl2-install)。
+> 使用適用于 Linux 的 Windows 子系統 (WSL) 時必須記住的重要事項是,**您現在可以在兩個不同的檔案系統之間運作**:1) 您的 Windows 檔案系統, 以及 2) 您的 Linux 檔案系統 (WSL), 這是適用于我們範例的 Ubuntu。 您必須注意安裝封裝和儲存檔案的位置。 您可以在 Windows 檔案系統中安裝一個或多個版本的工具或套件, 以及 Linux 檔案系統中完全不同的版本。 更新 Windows 檔案系統中的工具將不會影響 Linux 檔案系統中的工具, 反之亦然。 WSL 會將您電腦上的固定磁片磁碟機掛接<drive>在 Linux 散發套件的于/mnt/資料夾底下。 例如, 您的 Windows C: 磁片磁碟機會裝載`/mnt/c/`在底下。 您可以從 Ubuntu 終端機存取 Windows 檔案, 並在這些檔案上使用 Linux 應用程式和工具, 反之亦然。 我們建議您在適用于 Python 網頁程式開發的 Linux 檔案系統中工作, 這是因為大部分的 web 工具原本是針對 Linux 所撰寫, 並部署在 Linux 生產環境中。 它也可避免混用檔案系統的語義 (例如, Windows 在檔案名方面並不區分大小寫)。 話雖如此, WSL 現在支援在 Linux 和 Windows 檔案系統之間進行跳躍, 因此您可以在其中一個檔案上裝載您的檔案。 [進一步瞭解](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。 我們也很高興分享該[WSL2 即將推出 Windows](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) , 並提供一些絕佳的改良功能。 您可以[在 Windows 測試人員組建18917上立即試用](https://docs.microsoft.com/windows/wsl/wsl2-install)。
 
 ## <a name="install-python-pip-and-venv"></a>安裝 Python、pip 和 venv
 
 Ubuntu 18.04 LTS 隨附已安裝的 Python 3.6, 但不包含您可能會預期會透過其他 Python 安裝取得的一些模組。 我們仍然需要安裝**pip**、適用于 Python 的標準套件管理員, 以及**venv**, 這是用來建立和管理輕量虛擬環境的標準模組。  
 
-1. 開啟您的 Ubuntu 終端機並輸入: `python3 --version`, 確認已安裝 Python3。 這應該會傳回您的 Python 版本號碼。
+1. 開啟您的 Ubuntu 終端機並輸入: `python3 --version`, 確認已安裝 Python3。 這應該會傳回您的 Python 版本號碼。 如果您需要更新您的 Python 版本, 請先輸入下列內容以更新您的`sudo apt update && sudo apt upgrade`Ubuntu 版本:, 然後`sudo apt upgrade python3`使用更新 Python。
 
-    > [!NOTE]
-    > 如果您需要更新您的 Python 版本, 請先輸入下列內容以更新您的`sudo apt update && sudo apt upgrade`Ubuntu 版本:, 然後`sudo apt upgrade python3`使用更新 Python。
+2. 輸入下列內容以安裝`sudo apt install python3-pip`pip:。 Pip 可讓您安裝和管理不屬於 Python 標準程式庫的其他套件。
 
-2. 輸入  下列內容以安裝`sudo apt install python3-pip`pip:。 Pip 可讓您安裝和管理不屬於 Python 標準程式庫的其他套件。
-
-3. 輸入  下列內容以安裝`sudo apt install python3-venv`venv:。
+3. 輸入下列內容以安裝`sudo apt install python3-venv`venv:。
 
 ## <a name="create-a-virtual-environment"></a>建立虛擬環境
 
-在 Python 中, 虛擬環境可用來隔離您的專案, 以避免發生衝突。 現在就來設定一個。
-
-> [!NOTE]
-> 使用虛擬環境是 Python 開發專案的建議最佳作法。 藉由建立虛擬環境, 我們可以安裝 網頁程式開發架構, 但請避免將該架構安裝到全域 Python 環境中。 當您處理多個專案時, 在隔離的虛擬環境中安裝 web 架構會非常有説明。 一個 web 應用程式專案可能需要較舊版本的架構, 例如 Django 1.2, 如果您使用 Django 2.2 啟動新的 Web 專案, 則不想要覆寫。 除了防止意外的版本變更或升級, 虛擬環境可讓您在沒有系統管理許可權的情況下安裝和管理套件。
+使用虛擬環境是 Python 開發專案的建議最佳作法。 藉由建立虛擬環境, 您可以隔離您的專案工具, 並避免與其他專案的工具進行版本設定衝突。 例如, 您可能會維護需要 Django 1.2 web 架構的舊版 Web 專案, 但接著會使用 Django 2.2 來提供令人興奮的新專案。 如果您全域更新 Django, 在虛擬環境之外, 您稍後可能會遇到一些版本設定問題。 除了防止意外的版本控制衝突以外, 虛擬環境可讓您在沒有系統管理許可權的情況下, 安裝和管理套件。
 
 1. 開啟您的終端機, 並在您的*HelloWorld*專案資料夾內, 使用下列命令來建立名為的虛擬`python3 -m venv .venv`環境**venv**:。
 
@@ -107,11 +94,11 @@ Ubuntu 18.04 LTS 隨附已安裝的 Python 3.6, 但不包含您可能會預期�
     ![建立虛擬環境](../../images/wsl-venv.png)
 
 > [!TIP]
-> 建議您在想要擁有專案的目錄內建立虛擬環境。 因為每個專案都應該有自己的個別目錄, 每個都有自己的虛擬環境, 因此不需要唯一的命名。 我們的建議是針對您的虛擬環境使用**venv**名稱, 以遵循 Python 慣例。 如果您將安裝在您的專案目錄中, 某些工具 (例如 pipenv) 也會預設為此名稱。 您不想要使用**env**做為與環境變數定義檔衝突的。 我們通常不建議以非點符開頭的名稱, 因為您不需要`ls`持續提醒您該目錄存在。 我們也建議您將**venv**新增至您的 .gitignore 檔案。 (這裡是適用于[Python 的 GitHub 預設 .gitignore 範本](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106), 供您參考)。如需在 VS Code 中使用虛擬環境的詳細資訊, 請參閱[在 VS Code 中使用 Python 環境](https://code.visualstudio.com/docs/python/environments)。
+> 建議您在想要擁有專案的目錄內建立虛擬環境。 因為每個專案都應該有自己的個別目錄, 每個都有自己的虛擬環境, 因此不需要唯一的命名。 我們的建議是使用**venv**來遵循 Python 慣例。 如果您將安裝在您的專案目錄中, 某些工具 (例如 pipenv) 也會預設為此名稱。 您不想要使用**env**做為與環境變數定義檔衝突的。 我們通常不建議以非點符開頭的名稱, 因為您不需要`ls`持續提醒您該目錄存在。 我們也建議您將**venv**新增至您的 .gitignore 檔案。 (這裡是適用于[Python 的 GitHub 預設 .gitignore 範本](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106), 供您參考)。如需在 VS Code 中使用虛擬環境的詳細資訊, 請參閱[在 VS Code 中使用 Python 環境](https://code.visualstudio.com/docs/python/environments)。
 
 ## <a name="open-a-wsl---remote-window"></a>開啟 WSL-遠端視窗
 
-VS Code 使用遠端 WSL 擴充功能 (先前已安裝) 將您的 Linux 子系統視為遠端伺服器。 這可讓您使用 WSL 做為整合式開發環境, 並為您處理相容性和路徑。 [進一步瞭解](https://code.visualstudio.com/docs/remote/wsl)。
+VS Code 使用遠端 WSL 擴充功能 (先前已安裝) 將您的 Linux 子系統視為遠端伺服器。 這可讓您使用 WSL 做為整合式開發環境。 [進一步瞭解](https://code.visualstudio.com/docs/remote/wsl)。 
 
 1. 輸入下列內容, 在您的 Ubuntu 終端機 VS Code 中開啟`code .`您的專案資料夾: ("." 會告訴 VS Code 開啟目前的資料夾)。
 
@@ -124,9 +111,6 @@ VS Code 使用遠端 WSL 擴充功能 (先前已安裝) 將您的 Linux 子系�
 4. 按**Ctrl + '** (使用倒引號字元) 或選取 [ **View**  >  **terminal**], 在 VS Code 中開啟 WSL 終端機。 這會開啟一個 bash (WSL) 命令列, 並開啟您在 Ubuntu 終端機中建立的專案資料夾路徑。
 
     ![使用 WSL 終端機 VS Code](../../images/vscode-bash-remote.png)
-
-> [!NOTE]
-> 如果您需要在 VS Code 中變更您正在使用的終端機類型, 請使用**Ctrl + Shift + P**輸入命令面板。 輸入**終端機:選取 [預設** Shell], 系統會顯示包含 PowerShell、命令提示字元、WSL 等的終端機選項清單。選取您想要使用的參數, 然後輸入**Ctrl + Shift + '** (使用倒引號) 來建立新的終端機。 *我們建議您不要使用適用于 Python 網頁程式開發的 WSL 終端機。*
 
 ## <a name="install-the-microsoft-python-extension"></a>安裝 Microsoft Python 擴充功能
 
@@ -142,10 +126,9 @@ VS Code 使用遠端 WSL 擴充功能 (先前已安裝) 將您的 Linux 子系�
 
 ## <a name="run-a-simple-python-program"></a>執行簡單的 Python 程式
 
-讓我們建立並執行簡單的 Python 程式作為測試, 並確定已選取正確的 Python 解譯器。
+Python 是一種轉譯的語言, 支援不同類型的 interpretors (Python2、Anaconda、PyPy 等)。 VS Code 應該預設為與專案相關聯的解譯器。 如果您有需要變更它的原因, 請選取目前顯示在 VS Code 視窗底部藍色列中的解譯器, 或開啟**命令**選擇區 (Ctrl + Shift + P), 然後輸入**Python:選取 [** 解譯器]。 這會顯示您目前已安裝的 Python 解譯器清單。 [深入瞭解如何設定 Python 環境](https://code.visualstudio.com/docs/python/environments)。
 
-> [!NOTE]
-> Python 是一種轉譯的語言, 這表示它會作為虛擬機器, 模擬實體電腦。 有不同類型的 Python 解譯器可供您使用:Python 2、Anaconda、PyPy 等。為了執行 Python 程式碼並取得 Python IntelliSense, 您必須告訴 VS Code 要使用哪個解譯器。 我們建議您不要使用 VS Code 已預設為的解譯器 (在我們的案例中為 Python 3.6.8), 除非您有特定的原因要選擇不同的專案。 若要變更 Python 解譯器, 請選取 VS Code 視窗底部藍色列中目前顯示的解譯器, 或開啟**命令**選擇區 (Ctrl + Shift + P), 然後輸入命令**Python:選取 [** 解譯器]。 這會顯示您目前已安裝的 Python 解譯器清單。 [深入瞭解如何設定 Python 環境](https://code.visualstudio.com/docs/python/environments)。
+讓我們建立並執行簡單的 Python 程式作為測試, 並確定已選取正確的 Python 解譯器。
 
 1. 輸入**Ctrl + Shift + E** (或使用功能表來流覽至**View**  >  **Explorer**), 以開啟 [VS Code 檔案瀏覽器] 視窗。
 
@@ -187,7 +170,7 @@ VS Code 使用遠端 WSL 擴充功能 (先前已安裝) 將您的 Linux 子系�
 
 8. 為您的 Python 程式碼建立新的檔案:`touch app.py`
 
-9. 在 VS Code  的檔案瀏覽器中開啟您的`Ctrl+Shift+E`app.py 檔案 (, 然後選取您的 app.py 檔案)。 這會啟動 Python 延伸模組來選擇解譯器。 它應該預設為**Python 3.6.8 64 位 ('. venv ': venv)** 。 請注意, 它也偵測到您的虛擬環境。
+9. 在 VS Code 的檔案瀏覽器中開啟您的`Ctrl+Shift+E`app.py 檔案 (, 然後選取您的 app.py 檔案)。 這會啟動 Python 延伸模組來選擇解譯器。 它應該預設為**Python 3.6.8 64 位 ('. venv ': venv)** 。 請注意, 它也偵測到您的虛擬環境。
 
     ![已啟用虛擬環境](../../images/virtual-environment.png)
 

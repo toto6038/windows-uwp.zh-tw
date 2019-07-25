@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: python, windows 10, microsoft, 學習 python, windows 上適用于初學者的 python, 使用 microsoft store 安裝 python, 使用 vs code 的 python, 在 windows 上 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 9bc9a75b11e90b53f46e8a2b267921078b27ad36
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.openlocfilehash: 9ef2349b296e5518d6bbb85a035526d7de25ea5c
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349491"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473673"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>開始在 Windows 上使用適用于初學者的 Python
 
@@ -23,10 +23,9 @@ ms.locfileid: "68349491"
 
 ## <a name="set-up-your-development-environment"></a>設定您的開發環境
 
-對於 Python 新手的新手, 建議您[從 Microsoft Store 安裝 python](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 如果您是在教育環境中, 或是組織中限制了電腦上的許可權或系統管理存取權, 這就特別重要。 使用 Microsoft Store 安裝 Python, 會將它放在目前使用者的作業系統路徑上 (不需要系統管理員存取權)。
+對於 Python 新手的新手, 建議您[從 Microsoft Store 安裝 python](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 透過 Microsoft Store 安裝會使用基本 Python3 解譯器, 但會處理為目前使用者設定的路徑設定 (不需要系統管理員存取權), 除了提供自動更新之外。 如果您是在教育環境中, 或是組織中限制了電腦上的許可權或系統管理存取權, 這項功能特別有用。
 
-> [!IMPORTANT]
-> 如果您在 Windows 上使用 Python 進行**網頁程式開發**, 建議您針對開發環境採用不同的設定。 我們建議您透過適用于 Linux 的 Windows 子系統來安裝和使用 Python, 而不是直接在 Windows 上安裝。 如需協助, 請參閱:[開始在 Windows 上使用 Python 進行網頁程式開發](./python-for-web.md)。 如果您想要將作業系統上的一般工作自動化, 請參閱我們的指南:[開始在 Windows 上使用 Python 進行腳本處理和自動化](./python-for-scripting.md)。 <br>針對某些先進的案例, 您可能會想要考慮直接從[python.org](https://www.python.org/downloads/windows/)下載特定的 Python 版本, 或考慮安裝[替代](https://www.python.org/download/alternatives)方案, 例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是更先進的 Python 程式設計人員, 並具有選擇替代執行方式的特定原因時, 才建議使用此方法。
+如果您在 Windows 上使用 Python 進行**網頁程式開發**, 建議您針對開發環境採用不同的設定。 我們建議您透過適用于 Linux 的 Windows 子系統來安裝和使用 Python, 而不是直接在 Windows 上安裝。 如需協助, 請參閱:[開始在 Windows 上使用 Python 進行網頁程式開發](./python-for-web.md)。 如果您想要將作業系統上的一般工作自動化, 請參閱我們的指南:[開始在 Windows 上使用 Python 進行腳本處理和自動化](./python-for-scripting.md)。 針對某些先進的案例 (例如需要存取/修改 Python 的已安裝檔案、複製二進位檔, 或直接使用 Python Dll), 您可能會想要考慮直接從[python.org](https://www.python.org/downloads/)下載特定的 Python 版本, 或考慮安裝[另一個替代方法](https://www.python.org/download/alternatives), 例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是更先進的 Python 程式設計人員, 並具有選擇替代執行方式的特定原因時, 才建議使用此方法。
 
 ## <a name="install-python"></a>安裝 Python
 

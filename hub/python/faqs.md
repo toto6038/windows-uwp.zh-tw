@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: python, windows 10, microsoft, pip, .py, 檔案路徑, PYTHONPATH, python 部署, python 封裝
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4f7f5c325dfd114093e1434259489459a8c78151
-ms.sourcegitcommit: 161eac985af11faaff78797d86343d4fa7d6a05f
+ms.openlocfilehash: fd08061858fc97f1427e94c6a92a4c3a9511967d
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68366736"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473653"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>在 Windows 上使用 Python 的常見問題
 
@@ -29,9 +29,11 @@ ms.locfileid: "68366736"
 
 [請遵循 StackOverflow 上的討論](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)。
 
-## <a name="what-is-pyexe"></a>什麼是 .py？
+### <a name="what-is-pyexe"></a>什麼是 .py？
 
-您的電腦上可能會安裝多個版本的 Python, 因為您正在處理不同類型的 Python 專案。 因為這些全都使用命令`python` , 所以您可能不會察覺到您使用的是哪一個。 [.Py 啟動器](https://docs.python.org/3/using/windows.html#launcher)會自動選取您已安裝的最新 Python 版本。 您也可以使用命令 ( `py -3.7`例如) 來選取特定版本, `py --list`或查看可以使用的版本。 **不過**, 只有在您使用從[Python.org](https://www.python.org/downloads/windows/)安裝的 Python 版本時, .py 啟動器才會生效。當您從 Microsoft Store 安裝 Python 時, `py` **不會包含**命令。 針對 Linux、macOS、WSL 和 Microsoft Store 版本的 Python, 您應該使用`python3`命令。
+您的電腦上可能會安裝多個版本的 Python, 因為您正在處理不同類型的 Python 專案。 因為這些全都使用`python`命令, 所以您所使用的 Python 版本可能不明顯。 作為標準, 建議使用`python3`命令 (或`python3.7`選取特定版本)。
+
+[.Py 啟動器](https://docs.python.org/3/using/windows.html#launcher)會自動選取您已安裝的最新 Python 版本。 您也可以使用命令 ( `py -3.7`例如) 來選取特定版本, `py --list`或查看可以使用的版本。 **不過**, 只有在您使用從[Python.org](https://www.python.org/downloads/windows/)安裝的 Python 版本時, .py 啟動器才會生效。當您從 Microsoft Store 安裝 Python 時, `py` **不會包含**命令。 針對 Linux、macOS、WSL 和 Microsoft Store 版本的 Python, 您應該使用`python3` (或`python3.7`) 命令。
 
 ## <a name="why-dont-file-paths-work-in-python-when-i-copy-paste-them"></a>當我複製並貼上檔案路徑時, 為何不能在 Python 中使用它們？
 
