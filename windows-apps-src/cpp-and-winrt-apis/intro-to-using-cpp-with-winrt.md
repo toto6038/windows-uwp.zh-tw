@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: da8452329e353c0bbb4b0cedbfe269fd239f9c78
-ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
+ms.openlocfilehash: 87ab033ddd9de92922f043a069b793ca101307d0
+ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800562"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68308449"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 簡介
 &nbsp;
@@ -27,7 +27,7 @@ C++/WinRT 是 Microsoft 針對 [C++/CX](/cpp/cppcx/visual-c-language-reference-c
 > 最重要的一些 C++/WinRT 項目會在 [C++/WinRT 的 SDK 支援](#sdk-support-for-cwinrt)和 [C++/WinRT、XAML、VSIX 擴充功能和 NuGet 套件的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)等章節中說明。
 
 ## <a name="language-projections"></a>語言投影
-Windows 執行階段根據元件物件模型 (COM) API，且設計它透過「語言投影」  來存取。 投影會隱藏 COM 的詳細資訊，並針對特定語言提供更自然的程式設計體驗。
+Windows 執行階段根據元件物件模型 (COM) API，且設計它透過「語言投影」  來存取。 投影隱藏 COM 的詳細資訊，並針對特定語言提供更自然的程式設計體驗。
 
 ### <a name="the-cwinrt-language-projection-in-the-windows-uwp-api-reference-content"></a>Windows UWP API 參考內容中的 C++/WinRT 語言投影
 當您在瀏覽[Windows UWP Api](https://docs.microsoft.com/uwp/api/)，按一下右上方下拉式方塊中的 [**語言**]，然後選取**C++/WinRT**，當它們在 C++/WinRT 語言投影中顯示時，檢視 API 語法區塊。
@@ -62,7 +62,7 @@ Windows 執行階段根據元件物件模型 (COM) API，且設計它透過「�
 
 透過使用 C++/WinRT，您也可以使用標準 C++ 實作自己的執行階段類別，而不用求助於 COM 樣式程式設計。 對於執行階段類別，您只要在 IDL 檔案中描述您的類型，而 `midl.exe` 與 `cppwinrt.exe` 會為您產生實作重複使用的原始程式碼檔案。 或者您可以只要實作衍生自 C++/WinRT 基底類別的介面。 如需詳細資訊，請參閱[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
-如需適用於 `cppwinrt.exe` 工具的自訂選項清單，應透過專案屬性設定，請參閱 [https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing ]。
+如需適用於 `cppwinrt.exe` 工具的自訂選項清單 (透過專案屬性設定)，請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
 
 您可以依照專案中安裝的 **Microsoft.Windows.CppWinRT** NuGet 套件顯示狀態，找出使用 C++/WinRT MSBuild 支援的專案。
 
@@ -71,7 +71,7 @@ Windows 執行階段根據元件物件模型 (COM) API，且設計它透過「�
 ### <a name="blank-app-cwinrt"></a>空白的應用程式 (C++/WinRT)
 適用於擁有 XAML 使用者介面的通用 Windows 平台 (UWP) 的應用程式範本。
 
-Visual Studio 提供 XAML 編譯器支援，並從位於每個 XAML 標記檔案後面的介面定義語言 (IDL) (`.idl`) 產生實作與標頭虛設常式。 在 IDL 檔案中，定義任何您想要在應用程式 XAML 網頁中參考的本機執行階段類別，然後見一次專案，在 `Generated Files` 中產生實作範本，以及 `Generated Files\sources` 中的虛設常式類型定義。 然後使用這些適用於參考的虛設類型定義，實作您的本機執行階段類別。 我們建議您在其自身的 IDL 檔案中，宣告每個執行階段類別。
+Visual Studio 提供 XAML 編譯器支援，並從位於每個 XAML 標記檔案後面的介面定義語言 (IDL) (`.idl`) 產生實作與標頭虛設常式。 在 IDL 檔案中，定義任何您想要在應用程式 XAML 網頁中參考的本機執行階段類別，然後見一次專案，在 `Generated Files` 中產生實作範本，以及 `Generated Files\sources` 中的虛設常式類型定義。 然後使用這些適用於參考的虛設類型定義，實作您的本機執行階段類別。 請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)。
 
 Visual Studio 2019 中針對 C++/WinRT 的 XAML 設計介面支援即使用 C# 進行同位檢查。 在 Visual Studio 2019 中，您可以使用 [屬性]  視窗的 [事件]  索引標籤，在 C++/WinRT 專案內新增事件處理常式。 您也可以將事件處理常式手動新增到您的程式碼，&mdash;請參閱[在 C++/WinRT 中使用委派來處理事件](handle-events.md)，以取得詳細資訊。
 
@@ -91,7 +91,7 @@ Windows 傳統型 C++/WinRT 用戶端應用程式的專案範本，其在 Win32 
 
 此範本示範 `midl.exe` > `cppwinrt.exe` 工具鏈，其中從 IDL 產生 Windows 執行階段中繼資料 (`.winmd`)，然後從 Windows Runtime 中繼資料產生實作及標頭虛設常式。
 
-在 IDL 檔案中，在您的元件、其預設的介面，以及任何其實作的其他介面中，定義執行階段類別。 建置一次專案產生 `module.g.cpp`、`module.h.cpp`、`Generated Files` 中的實作範本，以及 `Generated Files\sources` 中的虛設常式類型定義。 然後使用這些適用於參考的虛設類型定義，實作您元件中的執行階段類別。 我們建議您在其自身的 IDL 檔案中，宣告每個執行階段類別。
+在 IDL 檔案中，在您的元件、其預設的介面，以及任何其實作的其他介面中，定義執行階段類別。 建置一次專案產生 `module.g.cpp`、`module.h.cpp`、`Generated Files` 中的實作範本，以及 `Generated Files\sources` 中的虛設常式類型定義。 然後使用這些適用於參考的虛設類型定義，實作您元件中的執行階段類別。 請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)。
 
 將已建置的 Windows 執行階段元件二進位與其 `.winmd` 和使用它們的 UWP 應用程式搭配一起。
 
