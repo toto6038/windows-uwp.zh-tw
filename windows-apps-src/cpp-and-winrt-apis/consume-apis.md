@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 已投影, 投影, 實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a4c65b20c2fb805baecb8a90498e8e4ec9b229
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 5a3d4b554fafeb2053e4e6af831c224b5eacd151
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717620"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328875"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 取用 API
 
@@ -119,7 +119,9 @@ int main()
 
 ## <a name="delayed-initialization"></a>延遲初始化
 
-即使是投影類型的預設建構函式，也會導致建立支援 Windows 執行階段物件。 如果您想要建構投影類型的變數，而不要依序建構 Windows 執行階段物件 (以便可延遲到之後才執行該工作)，那麼您可以這麼做。 使用投影類型的特殊 C++/WinRT **std::nullptr_t** 建構函式來宣告您的變數或欄位。 C++/WinRT 投影會將此建構函式插入每個執行階段類別。
+在 C++/WinRT 中，每個投影類型都有特殊的 C++/WinRT **std::nullptr_t** 建構函式。 其例外狀況是所有投影類型建構函式&mdash;包括預設處理常式&mdash;都會導致建立支援的 Windows 執行階段物件，並為您提供其智慧型指標。 所以，該規則適用於任何使用預設建構函式的位置，例如未初始化的區域變數、未初始化的全域變數，以及未初始化的成員變數。
+
+另一方面，如果您想要建構投影類型的變數，而不要依序建構支援 Windows 執行階段物件 (以便可延遲到之後才執行該工作)，那麼您可以這麼做。 使用特殊 C++/WinRT **std::nullptr_t** 建構函式 (C++/WinRT 投影會插入每個執行階段類別中)，宣告您的變數或欄位。 我們在下面的程式碼範例中使用該特殊建構函式搭配 *m_gamerPicBuffer*。
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -163,6 +165,8 @@ lookup[2] = value;
 std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
 ```
+
+另請參閱[預設建構函式對於集合的影響](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#how-the-default-constructor-affects-collections)。
 
 ### <a name="dont-delay-initialize-by-mistake"></a>不要意外造成延遲初始化
 
@@ -376,6 +380,66 @@ auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
 BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
 ```
 
+## <a name="membertype-ambiguities"></a>成員/類型意義不明確
+
+當成員函式具有與類型相同的名稱時，意義就會不明確。 成員函式中 C++ 不合格名稱查閱的規則會使它在命名空間中搜尋之前，先搜尋類別。 「替代失敗不是錯誤」  (SFINAE) 規則不適用 (它適用於函式樣板的多載解析期間)。 因此如果類別內的名稱沒有意義，則編譯器不會持續尋找更好的相符項目&mdash;只會回報錯誤。
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // This doesn't compile. You get the error
+        // "'winrt::Windows::Foundation::IUnknown::as':
+        // no matching overloaded function found".
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Style>() };
+    }
+}
+```
+
+在上述情況下，編譯器會認為您要將 [**FrameworkElement.Style()** ](/uwp/api/windows.ui.xaml.frameworkelement.style) (在 C++/WinRT 中為成員函式) 當作範本參數傳遞至 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 解決方法是強制將名稱 `Style` 解譯為類型 [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style)。
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // One option is to fully-qualify it.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Windows::UI::Xaml::Style>() };
+
+        // Another is to force it to be interpreted as a struct name.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<struct Style>() };
+
+        // If you have "using namespace Windows::UI;", then this is sufficient.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Xaml::Style>() };
+
+        // Or you can force it to be resolved in the global namespace (into which
+        // you imported the Windows::UI::Xaml namespace when you did
+        // "using namespace Windows::UI::Xaml;".
+        auto style = Application::Current().Resources().
+            Lookup(L"MyStyle").as<::Style>();
+    }
+}
+```
+
+如果名稱後面接著 `::`，不合格的名稱查閱會有特殊的例外狀況，在此情況下，它會忽略函式、變數和列舉值。 這可讓您執行這類工作。
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoSomething()
+    {
+        Visibility(Visibility::Collapsed); // No ambiguity here (special exception).
+    }
+}
+```
+
+對 `Visibility()` 的呼叫會解析為 [**UIElement.Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) 成員函式名稱。 但是參數 `Visibility::Collapsed` 在 `Visibility` 後面加上 `::`，因此會忽略方法名稱，而編譯器會找到列舉類別。
+
 ## <a name="important-apis"></a>重要 API
 * [QueryInterface 介面](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [RoActivateInstance 函式](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)
@@ -387,5 +451,5 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ## <a name="related-topics"></a>相關主題
 * [以 C++/WinRT 撰寫事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
 * [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md)
-* [C++/WinRT 簡介](intro-to-using-cpp-with-winrt.md)
+* [C++/WinRT 的簡介](intro-to-using-cpp-with-winrt.md)
 * [XAML 控制項；繫結至一個 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

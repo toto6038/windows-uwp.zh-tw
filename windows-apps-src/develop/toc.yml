@@ -816,6 +816,8 @@
           href: ../cpp-and-winrt-apis/collections.md
         - name: 並行和非同步作業
           href: ../cpp-and-winrt-apis/concurrency.md
+        - name: 更進階的並行和非同步
+          href: ../cpp-and-winrt-apis/concurrency-2.md
         - name: XAML 控制項；繫結到屬性
           href: ../cpp-and-winrt-apis/binding-property.md
         - name: XAML 項目控制項；繫結到集合

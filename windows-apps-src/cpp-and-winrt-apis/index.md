@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a65fe882057370f9d0ca603157279b3aa7429fb
-ms.sourcegitcommit: 02cc7aaa408efe280b089ff27484e8bc879adf23
+ms.openlocfilehash: ba8576402165f2d36d048eb3d214cb1dad601d76
+ms.sourcegitcommit: 8179902299df0f124dd770a09a5a332397970043
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387025"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68428625"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -52,6 +52,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [撰寫事件](author-events.md) | 本主題示範如何撰寫包含引發事件的執行階段類別的 Windows 執行階段元件。 也示範使用元件和處理事件的應用程式。 |
 | [使用 C++/WinRT 的集合](collections.md) | C++/WinRT 提供函式和基底類別，讓您想要實作及/或傳遞集合時省下許多的時間和精力。 |
 | [並行和非同步作業](concurrency.md) | 本主題示範的方式，您可以使用 C++/WinRT，同時建立及使用 Windows 執行階段非同步物件。 |
+| [更進階的並行和非同步](concurrency-2.md) | C++/WinRT 中具有並行和非同步的更進階案例。 |
 | [XAML 控制項；繫結至一個 C++/WinRT 屬性](binding-property.md) | 可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 本主題示範如何實作和使用可觀察屬性，以及如何將 XAML 控制項繫結至它。 |
 | [XAML 項目控制項；繫結至一個 C++/WinRT 集合](binding-collection.md) | 可有效地繫結至 XAML 項目控制項的集合稱為「可觀察的」  集合。 本主題示範實作和使用可觀察集合的方法，以及如何將 XAML 項目控制項繫結至它。 |
 | [使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項](xaml-cust-ctrl.md) | 本主題會逐步引導您完成使用 C++/WinRT 建立簡單自訂控制項。 您可以根據這裡的資訊，替自己建立功能豐富且可自訂的 UI 控制項。 |

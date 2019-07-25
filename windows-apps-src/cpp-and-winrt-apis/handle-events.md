@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 一般, c++, cpp, winrt, 投影, 投射, 控點, 事件, 委派
 ms.localizationpriority: medium
-ms.openlocfilehash: 194fd9041b76acb1ef76288fed21c8098462b406
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: b64fbe93198af95402161873c1d68d0da41f33f7
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844341"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270107"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 
@@ -126,7 +126,9 @@ MainPage::MainPage()
 
 ## <a name="revoke-a-registered-delegate"></a>撤銷已註冊的委派
 
-當您註冊委派時，通常會將權杖傳回給您。 您後續可以使用該權杖撤銷委派；這表示從事件中取消委派的註冊，且不會被呼叫，事件必須重新產生。 為了簡潔，上述的程式碼範例均不會示範如何執行。 但在下個程式碼範例中，會將權杖儲存於結構的私用資料成員中，並在解構函式中撤銷其處理常式。
+當您註冊委派時，通常會將權杖傳回給您。 您後續可以使用該權杖撤銷委派；這表示從事件中取消委派的註冊，且不會被呼叫，事件必須重新產生。
+
+為了簡潔，上述的程式碼範例均不會示範如何執行。 但在下個程式碼範例中，會將權杖儲存於結構的私用資料成員中，並在解構函式中撤銷其處理常式。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -150,6 +152,9 @@ private:
 ```
 
 如上面的範例，而不是穩固參考資料，您可以將弱式參考而不是強式參考保存到按鈕 (請參閱 [C++/WinRT 中的強式和弱式參考](weak-references.md))。
+
+> [!NOTE]
+> 當事件來源同步引發其事件時，您可以撤銷您的處理常式並確信您不會再收到任何事件。 但針對非同步事件，即使在撤銷 (尤其是在建構函式內撤銷) 之後，執行中的事件可能會在開始解構之後到達您的物件。 在解構之前尋找取消訂閱的位置可減輕問題，或如需健全的解決方案，請參閱[使用事件處理委派安全地存取 this  指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 或者，您註冊委派時，可以指定 **winrt::auto_revoke** (即類型為 [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t) 的值) 來要求事件撤銷 (類型為 [**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker))。 事件撤銷為您保留事件來源 (引發事件的物件) 的弱式參考。 您可以呼叫 **event_revoker::revoke** 成員函式，以此方式手動撤銷；但是事件撤銷會在其超出範圍時自動呼叫該函式本身。 **revoke** 函式會檢查事件來源是否仍然存在，如果存在，就會撤銷您的委派。 在此範例中，不需要儲存事件來源，並且也不需要解構函式。
 
@@ -266,7 +271,7 @@ winrt::hstring f(ListView listview)
 如果您使用物件的成員函式，或是從物件成員函式裡的 lambda 函式中處理一個事件，您會需要考量事件 (處理事件的物件) 和事件來源 (引發事件的物件) 的相對存留時間。 如需詳細資訊以及程式碼範例，請參閱 [C++/WinRT 中的強式和弱式參考](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要 API
-* [winrt::auto_revoke_t 標記結構](/uwp/cpp-ref-for-winrt/auto-revoke-t)
+* [winrt::auto_revoke_t marker struct](/uwp/cpp-ref-for-winrt/auto-revoke-t)
 * [winrt::implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
 * [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 

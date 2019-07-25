@@ -1,16 +1,16 @@
 ---
-description: 本主題示範如何直接或間接使用 **winrt::implements** 基底結構撰寫 C++/WinRT API。
+description: 本主題示範如何直接或間接使用 **winrt::implements** 基礎結構撰寫 C++/WinRT API。
 title: 使用 C++/WinRT 撰寫 API
 ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 74d15b517c5ec6547115bc8ffdb44a2b742c68d6
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: e6b1b443a847fd8d7af3ad46d5263fd6ae2675a4
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717667"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328894"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
@@ -126,12 +126,11 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果您正在 Windows 執行階段元件中撰寫執行階段類別
 
-如果您的類型為了取用一個應用程式，已封裝在 Windows 執行階段元件中，則它必須是執行階段類別。
+如果您的類型為了取用一個應用程式，已封裝在 Windows 執行階段元件中，則它必須是執行階段類別。 您可以在 Microsoft 介面定義語言 (IDL) (.idl) 檔案中宣告執行階段類別 (請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](#factoring-runtime-classes-into-midl-files-idl)。
 
-> [!TIP]
-> 為了在您編輯 IDL 檔案時最佳化建置效能，以及將 IDL 檔案邏輯對應到其產生的原始程式碼檔案，建議您在個別的介面定義語言 (IDL) (.idl) 檔案中宣告每個執行階段類別。 Visual Studio 會合併所有產生的 `.winmd` 檔案為單一檔案，檔案名稱與根命名空間相同。 最終 `.winmd` 檔案將會是您的元件取用者將參照的檔案。
+每個 IDL 檔案都會產生 `.winmd` 檔案，而 Visual Studio 會將這些檔案合併為單一檔案，其名稱與根命名空間相同。 最終 `.winmd` 檔案將會是您的元件取用者將參照的檔案。
 
-這裡提供一個範例。
+以下是在 IDL 檔案中宣告執行階段類別的範例。
 
 ```idl
 // MyRuntimeClass.idl
@@ -211,6 +210,12 @@ namespace winrt::MyProject
 如需執行階段類別中的實作 **INotifyPropertyChanged** 介面逐步說明範例，請參閱 [XAML 控制項；繫結至一個 C++/WinRT 屬性](binding-property.md)。
 
 在此案例中使用您執行階段類別的程序，在 [C++/WinRT 使用 APS](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project) 中描述。
+
+## <a name="factoring-runtime-classes-into-midl-files-idl"></a>將執行階段類別分解成 Midl 檔案 (.idl)
+
+Visual Studio 專案和項目範本會針對每個執行階段類別產生個別的 IDL 檔案。 這會在 IDL 檔案與其產生的原始程式碼檔案之間提供邏輯對應。
+
+不過，如果您將專案的所有執行階段類別合併為單一 IDL 檔案，則可大幅改善建置時間。 此外，如果您希望兩者之間有複雜的 (或循環) `import` 相依性，則可能需要實際進行合併。 您可能會發現，如果兩者在一起，則可更輕鬆地撰寫及檢閱執行階段類別。
 
 ## <a name="runtime-class-constructors"></a>執行階段類別建構函式
 
@@ -413,7 +418,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 
 基底類別建構函式預期一個 **ToggleButton**。 而且 **MySpecializedToggleButton**「是」  一個**ToggleButton**。
 
-除非您進行上述的編輯 (將建構函式參數傳遞給基底類別)，否則編譯器會標幟您的建構函式，並指出在稱為 (此案例中) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** 的類型中，無法取得適當的預設建構函式。 這是您實作類型的基底類別的實際基底類別。
+除非您進行上述的編輯 (將建構函式參數傳遞給基底類別)，否則編譯器會標幟您的建構函式，並指出在稱為 (此案例中) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** 的類型中，無法取得適當的預設建構函式。 這是您實作類型的基礎類別的實際基底類別。
 
 ## <a name="namespaces-projected-types-implementation-types-and-factories"></a>命名空間：投影的類型、實作類型及處理站
 
@@ -455,6 +460,49 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 | `make_self<T>`|實作|使用投影類型會產生錯誤：`'Release': is not a member of any direct or indirect base class of 'T'`|
 | `name_of<T>`|投影|如果您使用實作類型，您會取得轉換為字串 (stringify) 的預設介面 GUID。|
 | `weak_ref<T>`|兩者|如果您使用實作類型，則建構函式引數必須是 `com_ptr<T>`。|
+
+## <a name="overriding-base-class-virtual-methods"></a>覆寫基底類別虛擬方法
+
+如果基底和衍生類別都是應用程式定義的類別，則衍生類別可能有虛擬方法相關問題，但虛擬方法是定義於祖系 Windows 執行階段類別中。 實際上，如果您衍生自 XAML 類別，就會發生這種情況。 本節的其餘部分會從[衍生類別](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#derived-classes)中的範例繼續進行。
+
+```cppwinrt
+namespace winrt::MyNamespace::implementation
+{
+    struct BasePage : BasePageT<BasePage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+
+    struct DerivedPage : DerivedPageT<DerivedPage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+}
+```
+
+階層為 [**Windows::UI::Xaml::Controls::Page**](/uwp/api/windows.ui.xaml.controls.page) \<- **BasePage** \<- **DerivedPage**。 **BasePage::OnNavigatedFrom** 方法會正確覆寫 [**Page::OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom)，但 **DerivedPage::OnNavigatedFrom** 不會覆寫 **BasePage::OnNavigatedFrom**。
+
+在此，**DerivedPage** 會重複使用 **BasePage**中的 **IPageOverrides** vtable，這表示它無法覆寫 **IPageOverrides::OnNavigatedFrom**方法。 其中一個可能解決方案要求 **BasePage** 本身是範本類別，且完全在標頭檔中實作，但這會讓事情變得出奇的複雜。
+
+因應措施是在基底類別中將 **OnNavigatedFrom** 方法宣告為明確虛擬。 如此一來，當 **DerivedPage::IPageOverrides::OnNavigatedFrom** 的 vtable 項目呼叫 **BasePage::IPageOverrides::OnNavigatedFrom**時，生產者會呼叫 **BasePage::OnNavigatedFrom**(由於其虛擬程度)，最後會呼叫 **DerivedPage::OnNavigatedFrom**。
+
+```cppwinrt
+namespace winrt::MyNamespace::implementation
+{
+    struct BasePage : BasePageT<BasePage>
+    {
+        // Note the `virtual` keyword here.
+        virtual void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+
+    struct DerivedPage : DerivedPageT<DerivedPage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+}
+```
+
+這要求類別階層的所有成員都同意 **OnNavigatedFrom** 方法的傳回值和參數類型。 如果它們不同意，則您應該使用上述版本作為虛擬方法，並包裝替代項。
 
 ## <a name="important-apis"></a>重要 API
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)

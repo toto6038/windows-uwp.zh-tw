@@ -5,15 +5,15 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ce3164ece443c8c1d95bccbc2bfb57e3347a55
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 5ff15e9b86d90aa14fd56e4e7015e949e2742bf6
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717650"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328877"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
-可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 這個主意是以軟體設計模式為基礎稱為「觀察者模式」  。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作和可觀察屬性的方法，以及如何將 XAML 控制項繫結至它們。
+可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作和可觀察屬性的方法，以及如何將 XAML 控制項繫結至它們。
 
 > [!IMPORTANT]
 > 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請參閱[使用 C++/WinRT 使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
@@ -27,7 +27,7 @@ XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯
 > 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="create-a-blank-app-bookstore"></a>建立空白的應用程式 (Bookstore)
-從在 Microsoft Visual Studio 中建立新的專案開始。 建立 **空白的應用程式 (C++/WinRT)** 專案，並將它命名為 *Bookstore*。
+在 Microsoft Visual Studio 中，從建立新的專案開始。 建立 **空白的應用程式 (C++/WinRT)** 專案，並將它命名為 *Bookstore*。
 
 我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 我們在相同的編譯單位裡撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且我們會使用 C++/WinRT 撰寫和使用它。
 
@@ -127,7 +127,7 @@ namespace winrt::Bookstore::implementation
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>宣告和實作 **BookstoreViewModel**
 我們的主要 XAML 頁面會繫結至主要檢視模型。 且檢視模型會有幾個屬性，包括類型之一的 **BookSku**。 在此步驟，我們會宣告並實作主要檢視模型執行階段類別。
 
-新增一個 **Midl 檔案 (.idl)** 項目名為 `BookstoreViewModel.idl`。
+新增一個 **Midl 檔案 (.idl)** 項目名為 `BookstoreViewModel.idl`。 另請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)。
 
 ```idl
 // BookstoreViewModel.idl
@@ -298,6 +298,55 @@ runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
 ```
 
 以下是這項必要性的原因。 所有 XAML 編譯器需要驗證的類型 (包括用於 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 的類型)，都會從 Windows 中繼資料 (WinMD) 進行讀取。 您只需要將唯讀屬性新增至 Midl 檔即可。 無須進行實作，因為自動產生的 XAML 後方程式碼會為您提供實作。
+
+## <a name="consuming-objects-from-xaml-markup"></a>取用 XAML 標記中的物件
+
+使用 XAML [ **{x:Bind} 標記延伸**](/windows/uwp/xaml-platform/x-bind-markup-extension) 取用的所有實體都必須公開於 IDL 中。 此外，如果 XAML 標記包含另一個也在標記中的元素參考，則該標記的 getter 必須存在於 IDL 中。
+
+```xaml
+<Page x:Name="MyPage">
+    <StackPanel>
+        <CheckBox x:Name="UseCustomColorCheckBox" Content="Use custom color"
+             Click="UseCustomColorCheckBox_Click" />
+        <Button x:Name="ChangeColorButton" Content="Change color"
+            Click="{x:Bind ChangeColorButton_OnClick}"
+            IsEnabled="{x:Bind UseCustomColorCheckBox.IsChecked.Value, Mode=OneWay}"/>
+    </StackPanel>
+</Page>
+```
+
+ChangeColorButton  元素會透過繫結參考 *UseCustomColorCheckBox* 元素。 因此，此頁面的 IDL 必須宣告名為 *UseCustomColorCheckBox* 的唯讀屬性，以便可供繫結存取。
+
+*UseCustomColorCheckBox* 的 Click 事件處理常式委派會使用傳統 XAML 委派語法，因此不需要 IDL 中的項目；它只需在您的實作類別中是公用的。 另一方面，*ChangeColorButton* 也有 `{x:Bind}` Click 事件處理常式，其也必須放入 IDL 中。
+
+```idl
+runtimeclass MyPage : Windows.UI.Xaml.Controls.Page
+{
+    MyPage();
+
+    // These members are consumed by binding.
+    void ChangeColorButton_OnClick();
+    Windows.UI.Xaml.Controls.CheckBox UseCustomColorCheckBox{ get; };
+}
+```
+
+您不需要提供 **UseCustomColorCheckBox** 屬性的實作。 XAML 程式碼產生器會為您執行此動作。
+
+### <a name="binding-to-boolean"></a>繫結至布林值
+
+您可以在診斷模式下執行此動作。
+
+<syntaxhighlight lang="xml">
+<TextBlock Text="{Binding CanPair}"/>
+</syntaxhighlight>
+
+這會在 C++/CX 中顯示 `true` 或 `false`，但在 C++/WinRT 中顯示 **Windows.Foundation.IReference`1<Boolean>** 。
+
+繫結至布林值時使用 `x:Bind`。
+
+```xaml
+<TextBlock Text="{x:Bind CanPair}"/>
+```
 
 ## <a name="important-apis"></a>重要 API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

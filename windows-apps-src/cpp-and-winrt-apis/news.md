@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 537150f6fc000794b11ef9236bfd88469d3f6b19
-ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
+ms.openlocfilehash: 524d0f2d9e428e87187ca27747fbd1c54406d345
+ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800589"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68308434"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
 
@@ -28,7 +28,7 @@ ms.locfileid: "67800589"
 
 - `cppwinrt.exe` 工具目前包含在 Microsoft.Windows.CppWinRT NuGet 封裝中，此工具可視需要為每個專案產生平台投影標頭。 因此，`cppwinrt.exe` 工具不再依賴 Windows SDK (儘管基於相容性原因，此工具仍隨附 SDK)。
 - `cppwinrt.exe` 現在會在每個平台/特定設定的中繼資料夾 ($IntDir) 之下產生投影標頭，以啟用平行組建。
-- 如果您想要手動自訂專案檔案，C++/WinRT 組件支援 (屬性/目標) 現在已完整記載。 請參閱 [Microsoft.Windows.CppWinRT NuGet 封裝](https://github.com/Microsoft/xlang/blob/master/src/package/cppwinrt/nuget/readme.md)。
+- 如果您想要手動自訂專案檔案，C++/WinRT 組件支援 (屬性/目標) 現在已完整記載。 請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
 - 已進行許多錯誤修正。
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>C++/WinRT 2.0 版的變更
@@ -285,7 +285,7 @@ struct MainPage : PageT<MainPage>
 | 您可以將 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) 標記延伸與 C++/WinRT 執行階段類別搭配使用。 | 如需更多資訊與程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart)。 |
 | 支持取消協同程式可讓您註冊取消回呼。 | 如需更多資訊和程式碼範例，請參閱[取消非同步作業，以及取消回呼](concurrency.md#canceling-an-asychronous-operation-and-cancellation-callbacks)。 |
 | 建立指向成員函式的委派時，可以在註冊處理常式的位置建立對目前物件 (而不是原始的「this」  指標) 的強式參考或弱式參考。 | 如需更多資訊和程式碼範例，請參閱[使用事件處理委派安全地存取「this」  指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)小節的**如果您使用成員函式作為委派**子小節。 |
-| 修正 Visual Studio 對於 C++ 標準改善一致性未涵蓋的錯誤。 LLVM 和 Clang 工具鏈也可以更好地用於驗證 C++/WinRT 的標準一致性。 | 您將不再遇到[為什麼無法編譯我的新專案？我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) |
+| 修正 Visual Studio 對於 C++ 標準改善一致性未涵蓋的錯誤。 LLVM 和 Clang 工具鏈也可以更好地用於驗證 C++/WinRT 的標準一致性。 | 您將不再遇到[為什麼無法編譯我的新專案？我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) 中描述的問題 |
 
 其他變更。
 
@@ -295,7 +295,7 @@ struct MainPage : PageT<MainPage>
 - **重大變更**。 GUID 現在投影為 **winrt::guid**。 對於您實作的 API，必須為 GUID 參數使用 **winrt::guid**。 否則，只要您在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h`，**winrt::guid** 會轉換成 GUID。 請參閱[交互操作 ABI 的 GUID 結構](interop-winrt-abi.md#interoperating-with-the-abis-guid-struct)。
 - **重大變更**。 [**winrt::handle_type 建構函式**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor)已透過明確宣告而強化 (現在很難使用它撰寫錯誤的程式碼)。 如果需要指派原始的控制碼值，請改由呼叫 [**handle_type::attach 函式**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function)。
 - **重大變更**。 **WINRT_CanUnloadNow** 和 **WINRT_GetActivationFactory** 的簽章已變更。 您不得宣告這些函式。 相反，加入 `winrt/base.h` (如果包含任何 C++/WinRT Windows 命名空間標頭檔案，則會自動包含)，以包含這些函式的宣告。
-- 對於 [**winrt::clock 結構**](/uwp/cpp-ref-for-winrt/clock)，**from_FILETIME/to_FILETIME** 已過時，建議使用 **from_file_time/to_file_time**。
+- 對於 [**winrt::clock struct**](/uwp/cpp-ref-for-winrt/clock)，**from_FILETIME/to_FILETIME** 已過時，建議使用 **from_file_time/to_file_time**。
 - 預期使用 **IBuffer** 參數的 API 已經過簡化。 雖然大多數 API 更偏好使用集合或陣列，但是足夠的 API 依賴於 **IBuffer**，它需要更輕鬆地使用來自 C++ 的此類 API。 此更新使用 C++ 標準程式庫容器使用的相同資料命名慣例，提供 **IBuffer** 實作背後的資料直接存取權。 這也避免了慣例以大寫字母開頭的中繼資料名稱產生衝突。
 - 改善的程式碼產生：各種改善項目可縮減程式碼大小、改善內嵌，並最佳化處理站快取。
 - 已移除不必要的遞迴。 當命令列指向資料夾而非特定的 `.winmd` 時，`cppwinrt.exe` 工具不會再以遞迴方式搜尋 `.winmd` 檔案。 `cppwinrt.exe` 工具現在也可以更有智慧的方式處理重複項目，使其更容易復原使用者錯誤，以及格式錯誤的 `.winmd` 檔案。

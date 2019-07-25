@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: cbabf38f41ae940f5c92944154638eae7016e043
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: f7db1e5810de478f1c6198860100409d79d4f5d5
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660091"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270135"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
@@ -224,13 +224,13 @@ IASyncAction DoWorkAsync(Param const& value)
 {
     // While it's ok to access value here...
 
-    co_await DoOtherWorkAsync();
+    co_await DoOtherWorkAsync(); // (this is the first suspension point)...
 
     // ...accessing value here carries no guarantees of safety.
 }
 ```
 
-在協同程式中，執行是同步的，直到第一個暫停點，其傳回控制項至呼叫端。 協同程式恢復時，參考參數參考的來源值可能發生任何事情。 從協同程式的觀點，參考參數有不受控制的存留期。 因此，上述範例中，我們安全存取 *值* 直到 `co_await`，但不是在其之後。 如果呼叫端將「值」  解構，應在導致記憶體損毀之後，嘗試在協同程式內部存取該值。 我們也不能安全的將 *值* 傳遞至 **DoOtherWorkAsync** 如果存在任何風險，該函式將會暫停，然後在其恢復後嘗試使用 *值*。
+在協同程式中，執行是同步的，直到在第一個暫停點上將控制項傳回呼叫端且呼叫框架超出範圍為止。 協同程式恢復時，參考參數參考的來源值可能發生任何事情。 從協同程式的觀點，參考參數有不受控制的存留期。 因此，上述範例中，我們安全存取 *值* 直到 `co_await`，但不是在其之後。 如果呼叫端將「值」  解構，應在導致記憶體損毀之後，嘗試在協同程式內部存取該值。 我們也不能安全的將 *值* 傳遞至 **DoOtherWorkAsync** 如果存在任何風險，該函式將會暫停，然後在其恢復後嘗試使用 *值*。
 
 若要讓參數在暫停與恢復之後安全使用，您的協同程式必須使用預設的透過值傳遞，以確保他們透過值擷取並避免存留期問題。 如果您確定可以安全執行此操作，那麼您幾乎不會偏離該指導方針。
 
@@ -776,6 +776,68 @@ winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, Medi
 ```
 
 第一個引數 (sender  ) 保留未命名，因為我們永遠不會用到。 因此，我們可以安全地將其保留以作為參考。 但會看到 args  以值的形式傳遞。 請參閱上述的[參數傳遞](#parameter-passing)一節。
+
+## <a name="awaiting-a-kernel-handle"></a>等候核心控制碼
+
+C++/WinRT 提供 **resume_on_signal** 類別，您可以將其用於暫止，直到核心事件收到信號為止。 您需負責確保控制碼在 `co_await resume_on_signal(h)` 傳回前保持有效。 **resume_on_signal** 本身無法為您執行這項操作，因為即使在 **resume_on_signal** 開始前，您都可能遺失控制碼，如第一個範例所示。
+
+```cppwinrt
+IAsyncAction Async(HANDLE event)
+{
+    co_await DoWorkAsync();
+    co_await resume_on_signal(event); // The incoming handle is not valid here.
+}
+```
+
+傳入的 **HANDLE** 只有在函式傳回前有效，且此函式 (也就是協同程式) 會在第一個暫停點傳回 (此案例中的第一個 `co_await`)。 在等候 **DoWorkAsync** 時，控制權已交回給呼叫端、呼叫框架已超出範圍，且您不再得知當協同程式繼續時，控制碼是否有效。
+
+就技術上而言，我們的協同程式會以值的形式接收其參數 (請參閱上述的[參數傳遞](#parameter-passing))。 但在此情況，我們需要更進一步，才能遵守該指引的「精神」  (而不只是字面意義)。 我們需要傳遞強式參考 (也就是擁有權) 和控制碼。 方法如下。
+
+```cppwinrt
+IAsyncAction Async(winrt::handle event)
+{
+    co_await DoWorkAsync();
+    co_await resume_on_signal(event); // The incoming handle *is* not valid here.
+}
+```
+
+以值的方式傳遞 [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) 可提供擁有權語意，以確保核心控制碼在協同程式的存留期內保持有效。
+
+以下是您可呼叫該協同程式的方式。
+
+```cppwinrt
+namespace
+{
+    winrt::handle duplicate(winrt::handle const& other, DWORD access)
+    {
+        winrt::handle result;
+        if (other)
+        {
+            winrt::check_bool(::DuplicateHandle(::GetCurrentProcess(),
+                other.get(), ::GetCurrentProcess(), result.put(), access, FALSE, 0));
+        }
+        return result;
+    }
+
+    winrt::handle make_manual_reset_event(bool initialState = false)
+    {
+        winrt::handle event{ ::CreateEvent(nullptr, true, initialState, nullptr) };
+        winrt::check_bool(static_cast<bool>(event));
+        return event;
+    }
+}
+
+IAsyncAction SampleCaller()
+{
+    handle event{ make_manual_reset_event() };
+    auto async{ Async(duplicate(event)) };
+
+    ::SetEvent(event.get());
+    event.close(); // Our handle is closed, but Async still has a valid handle.
+
+    co_await async; // Will wake up when *event* is signaled.
+}
+```
 
 ## <a name="important-apis"></a>重要 API
 * [concurrency::task 類別](/cpp/parallel/concrt/reference/task-class)

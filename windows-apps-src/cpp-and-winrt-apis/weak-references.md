@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 強式, 弱式, 參考
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77fcd8369b2df3fdb42facf9d2b2a1d93188322b
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: 3ad6bb9a98b0fe2a699580001698740e44cea14f
+ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844316"
+ms.lasthandoff: 07/14/2019
+ms.locfileid: "67870328"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的強式和弱式參考
 
@@ -134,7 +134,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 
 在上述範例中，在未保留強式參考的情況下，弱式參考並不能避免類別執行個體發生損毀。 但可以讓您確認是否能在存取成員變數之前取得強式參考。
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>使用事件處理委派安全地存取「this」  指標
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>使用事件處理委派安全地存取 this  指標
 
 ### <a name="the-scenario"></a>案例
 
@@ -197,12 +197,13 @@ int main()
 }
 ```
 
-模式是事件收件者會有相依於其 this  指標的 lambda 事件處理常式。 只要事件收件者的存留期比事件來源長，處理常式的存留期就會超過這些相依性的存留期。 而且在這些情況下，該模式通常會順利運作。 這些案例中有些很明顯，例如，UI 網頁藉由頁面上的控制項處理事件時。 頁面存留期會超過按鈕存留期&mdash;因此，處理常式的存留期也會超過按鈕。 任何時候都是如此，收件者擁有來源 (例如，做為資料成員)，或收件者與來源屬同層級，且由其他物件擁有。 另一個安全案例是事件來源以同步方式引發其事件時；您可以接著撤銷處理常式，並且確定不會再收到事件。
+模式是事件收件者會有相依於其 this  指標的 lambda 事件處理常式。 只要事件收件者的存留期比事件來源長，處理常式的存留期就會超過這些相依性的存留期。 而且在這些情況下，該模式通常會順利運作。 這些案例中有些很明顯，例如，UI 網頁藉由頁面上的控制項處理事件時。 頁面存留期會超過按鈕存留期&mdash;因此，處理常式的存留期也會超過按鈕。 任何時候都是如此，收件者擁有來源 (例如，做為資料成員)，或收件者與來源屬同層級，且由其他物件擁有。
 
 如果您確定有一個案例，其中處理常式不會超越其所依賴的 this  ，您便可以正常擷取 this  ，而不需要考量強式或弱式存留時間。
 
 但仍有案例，其中 this  的存留期不會超過其在處理常式中的使用時間 (包括由非同步動作與作業引發的完成和進行中事件的處理常式)，而您必須知道如何處理這些狀況。
 
+- 當事件來源「同步」  引發其事件時，您可以撤銷您的處理常式並確信您不會再收到任何事件。 但針對非同步事件，即使在撤銷 (尤其是在建構函式內撤銷) 之後，執行中的事件可能會在開始解構之後到達您的物件。 在解構前找到可取消訂閱的地方可能會減輕問題，但要繼續閱讀以取得健全的解決方案。
 - 如果您正撰寫協同程式來實作非同步方法，就有可能發生此狀況。
 - 在少數使用特定 XAML UI 架構物件 (例如，[**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel)) 的案例中有可能發生 (如果收件者不需要從事件來源取消註冊，便能完成的話)。
 
@@ -252,7 +253,7 @@ event_source.Event([this](auto&& ...)
 
 ### <a name="the-solution"></a>解決方案
 
-解決方案是擷取強式參考。 強式參考「會」  累加參考計數，並且「會」  讓目前物件存留下來。 您只需宣告擷取變數 (在此範例中稱為 `strong_this`)，並藉由對 [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 發出呼叫來將其初始化，此呼叫會對我們的 this  指標擷取強式參考。
+解決方案是擷取強式參考 (或者，如我們所見，若弱式參考更為適當，則擷取之)。 強式參考「會」  累加參考計數，並且「會」  讓目前物件存留下來。 您只需宣告擷取變數 (在此範例中稱為 `strong_this`)，並藉由對 [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 發出呼叫來將其初始化，此呼叫會對我們的 this  指標擷取強式參考。
 
 > [!IMPORTANT]
 > 由於 **get_strong** 是 **winrt::implements** 結構範本的成員函式，因此您只能從直接或間接衍生自 **winrt::implements** 的類別 (例如 C++/WinRT 類別) 中呼叫該函式。 如需有關衍生自 **winrt::implements** 的資訊和範例，請參閱[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
@@ -273,7 +274,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-如果強式參考並不適合，您可以改為呼叫 [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) 來對 this  擷取弱式參考。 請在確認您仍可以從中擷取強式參考後，再存取成員。
+如果強式參考並不適合，您可以改為呼叫 [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) 來對 this  擷取弱式參考。 弱式參考「不會」  讓目前的物件保持運作。 所以，在確認您仍可以從弱式參考擷取強式參考後，再存取成員。
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -284,6 +285,8 @@ event_source.Event([weak_this{ get_weak() }](auto&& ...)
     }
 });
 ```
+
+如果您擷取原始指標，則必須確保讓指向的物件保持運作。
 
 ### <a name="if-you-use-a-member-function-as-a-delegate"></a>如果您使用成員函式作為委派
 
@@ -314,11 +317,15 @@ struct EventRecipient : winrt::implements<EventRecipient, IInspectable>
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
+擷取強式參考表示只有在取消註冊處理常式且所有未完成的回呼都已傳回後，您的物件才有資格解構。 不過，該保證只有在引發事件時才有效。 如果您的事件處理常式為非同步，您必須在第一個暫停點之前，為您的協同程式提供類別執行個體的強式參考 (如需詳細資訊以及程式碼，請參閱本主題稍早的[安全地存取類別成員協同程式中的 this  指標](#safely-accessing-the-this-pointer-in-a-class-member-coroutine)一節)。 但是，這會在事件來源與您的物件之間建立循環參考，因此您必須藉由撤銷事件來明確中斷。
+
 若要建立弱式參考，請呼叫 [**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)。 C++/ WinRT 可確保產生的委派會保留弱式參考。 在最後一刻，委派會在幕後嘗試讓弱式參考變成強式參考，並且只會在成功時呼叫成員函式。
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 ```
+
+如果委派「的確」  呼叫您的成員函式，則 C++/WinRT 會讓您的物件保持運作，直到您的處理常式傳回為止。 不過，如果您的處理常式為非同步，則它會在暫停點傳回，因此您必須在第一個暫停點之前，為您的協同程式提供類別執行個體的強式參考。 同樣地，如需詳細資訊，請參閱本主題稍早的[安全地存取類別成員協同程式中的 this  指標](#safely-accessing-the-this-pointer-in-a-class-member-coroutine)一節。
 
 ### <a name="a-weak-reference-example-using-swapchainpanelcompositionscalechanged"></a>弱式參考範例會使用 **SwapChainPanel::CompositionScaleChanged**
 

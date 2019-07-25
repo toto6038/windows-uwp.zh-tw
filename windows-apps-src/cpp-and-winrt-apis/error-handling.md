@@ -1,16 +1,16 @@
 ---
-description: 本主題討論使用 C++/WinRT 進行程式設計時處理錯誤的策略。
+description: 本主題討論使用 C++/WinRT 程式設計時處理錯誤的策略。
 title: 使用 C++/WinRT 處理錯誤
 ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, error, handling, exception, 標準, 投影, 錯誤, 處理, 例外狀況
 ms.localizationpriority: medium
-ms.openlocfilehash: c75cf8763b5f47772a138c15049155458772eeb5
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 37819d1626d3adc6f5647f447567a9273e72668d
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660139"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270134"
 ---
 # <a name="error-handling-with-cwinrt"></a>使用 C++/WinRT 處理錯誤
 
@@ -92,7 +92,9 @@ winrt::check_bool(::SetEvent(h.get()));
 您可以將這些協助程式函式用於一般傳回碼類型，或者您可以回應任何錯誤狀況並呼叫 [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 或 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)。 
 
 ## <a name="throwing-exceptions-when-authoring-an-api"></a>在撰寫 API 時擲回例外狀況
-跨 [Windows 執行階段 ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) 界限的例外狀況無效，因此在實作中出現的錯誤狀況，是以 HRESULT 錯誤碼格式跨 ABI 層傳回。 您使用 C++/WinRT 撰寫 API 時，系統會為您產生程式碼，將您在實作中「擲回」  的任何例外狀況轉換成 HRESULT。 所產生的程式碼中是以此模式使用 [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 函式。
+所有 [Windows 執行階段應用程式二進位介面](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types)界限 (或 ABI 界限) 都必須是 *noexcept*&mdash;這表示例外狀況絕對不能在該處逸出。 當您撰寫 API 時，您應該一律使用 C++ `noexcept` 關鍵字來標記 ABI 界限。 `noexcept` 在 C++ 中有特定行為。 如果 C++ 例外狀況命中 `noexcept` 界限，則此程序會因為 **std::terminate** 而立即失敗。 這種行為通常是理想的做法，因為未處理的例外狀況幾乎一律暗指程序中不明的狀態。
+
+例外狀況不得跨 ABI 界限，因此在實作中出現的錯誤狀況，是以 HRESULT 錯誤碼格式跨 ABI 層傳回。 您使用 C++/WinRT 撰寫 API 時，系統會為您產生程式碼，將您在實作中「擲回」  的任何例外狀況轉換成 HRESULT。 所產生的程式碼中是以此模式使用 [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 函式。
 
 ```cppwinrt
 HRESULT DoWork() noexcept
@@ -110,6 +112,48 @@ HRESULT DoWork() noexcept
 ```
 
 [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 處理衍生自 **std::exception** 和 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 及其衍生型別的例外狀況。 在實作中，您應該慣用 **winrt::hresult_error** 或衍生型別，如此一來，您 API 的取用者便能接收豐富的錯誤資訊。 如果使用標準範本庫出現例外狀況，系統也支援 **std::exception** (對應至 E_FAIL)。
+
+### <a name="debuggability-with-noexcept"></a>noexcept 的偵錯能力
+如先前所述，命中 `noexcept` 界限的 C++ 例外狀況會因為 **std::terminate** 而立即失敗。 這不適合用於偵錯，因為 **std::terminate** 通常會遺失太多數或所有擲回的錯誤或例外狀況內容，特別是在涉及協同程式時。
+
+因此，本節會處理您的 ABI 方法 (您已正確使用 `noexcept` 標註) 使用 `co_await` 來呼叫非同步C++/WinRT 投影程式碼的情況。 我們建議您將對 C++/WinRT 投影程式碼的呼叫包裝在 **winrt::fire_and_forget**內。 這麼做可提供適當的位置，讓未處理的例外狀況正確地記錄為 Stowed 例外狀況，進而大幅提高偵錯能力。
+
+```cppwinrt
+HRESULT MyWinRTObject::MyABI_Method() noexcept
+{
+    winrt::com_ptr<Foo> foo{ get_a_foo() };
+
+    [/*no captures*/](winrt::com_ptr<Foo> foo) -> winrt::fire_and_forget
+    {
+        co_await winrt::resume_background();
+
+        foo->ABICall();
+
+        AnotherMethodWithLotsOfProjectionCalls();
+    }(foo);
+
+    return S_OK;
+}
+```
+
+**winrt::fire_and_forget** 具有內建 `unhandled_exception` 方法協助程式，其會呼叫 **winrt::terminate**，而後會接著呼叫 **RoFailFastWithErrorContext**。 這保證會保留任何內容 (Stowed 例外狀況、錯誤碼、錯誤訊息、堆疊反向追蹤等等) 以便進行即時偵錯或事後剖析傾印。 為了方便起見，您可以將自主導引部分分解成個別的函式，該函式可傳回 **winrt::fire_and_forget**，然後呼叫該函式。
+
+### <a name="synchronous-code"></a>同步程式碼
+在某些情況下，您的 ABI 方法 (同樣地，您已使用 `noexcept` 正確標註) 只會呼叫同步程式碼。 換句話說，它絕不會使用 `co_await` 來呼叫非同步 Windows 執行階段方法，或是在前景與背景執行緒之間切換。 在這種情況下，fire_and_forget 技巧仍有作用，但沒有效果。 您可改為執行如下所似的動作。
+
+```cppwinrt
+HRESULT abi() noexcept try
+{
+    // ABI code goes here.
+} catch (...) { winrt::terminate(); }
+```
+
+### <a name="fail-fast"></a>立即失敗
+上一節中的程式碼仍會立即失敗。 如同所述，該程式碼不會處理任何例外狀況。 任何未處理的例外狀況都會導致程式終止。
+
+但是該形式較佳，因為它可確保偵錯能力。 在少數情況下，您可能想要 `try/catch`，以及處理特定例外狀況。 但這應該很少見，如本主題所述，我們不鼓勵針對您預期的狀況，使用例外狀況作為流程控制機制。
+
+請記住，讓未處理的例外狀況逸出暴露的 `noexcept` 內容並不是個好主意。 在這種情況下，C++ 執行階段會 **std::terminate** 程序，因而失去 C++/WinRT 小心記錄的任何 Stowed 例外狀況資訊。
 
 ## <a name="assertions"></a>判斷提示
 針對您應用程式中的內部假設，可使用判斷提示。 盡可能優先選擇 **static_assert** 進行編譯階段驗證。 針對執行階段條件，請搭配使用 `WINRT_ASSERT` 和布林運算式。 `WINRT_ASSERT` 是巨集定義，而且會發展為 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。

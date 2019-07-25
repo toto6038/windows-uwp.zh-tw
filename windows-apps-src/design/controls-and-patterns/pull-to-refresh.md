@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2efd091d90a856e45d76c0b1357f30417812160a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8fdde696a0bc1dc7706f89ede5d525194e5d2830
+ms.sourcegitcommit: f0e539359b9766db0339ddbae3f7ccf0069011e8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63791501"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67885658"
 ---
 # <a name="pull-to-refresh"></a>拖動以重新整理
 
@@ -183,6 +183,8 @@ private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshSta
 ## <a name="examples"></a>範例
 
 ### <a name="using-a-scrollviewer-in-a-refreshcontainer"></a>使用 RefreshContainer 中的 ScrollViewer
+> [!NOTE]
+> RefreshContainer 的內容必須是可捲動的控制項，例如 ScrollViewer、GridView、ListView 等等。將內容設定為方格之類的控制項會造成未定義的行為。
 
 此範例示範如何搭配捲動檢視器使用「拖動以重新整理」。
 
