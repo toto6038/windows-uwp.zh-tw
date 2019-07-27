@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d0955e7a018472141b137935c5bc87a9f75a5c6d
+ms.sourcegitcommit: 0c5f81100986cc4b74b54cd1ca2debd283c5b7f6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63789054"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68375267"
 ---
 # <a name="sound"></a>音效
 
@@ -91,7 +91,6 @@ ButtonName.ElementSoundState = ElementSoundMode.Off;
 
 通常，只有在使用者透過[輸入裝置](../input/index.md)明確地以簡單控制項或控制項部分為目標時，才會播放這個音效。
 
-&lt;SelectButtonClick.mp3 音效剪輯在此&gt;
 
 若要從任何控制項事件播放這個音效，只需從 **ElementSoundPlayer** 呼叫 Play 方法，然後傳入 **ElementSound.Invoke**：
 ```C#
@@ -104,14 +103,10 @@ XAML 中有許多飛出視窗、對話方塊及可解除的 UI，而任何觸發
 
 當重疊內容視窗出現時，應該呼叫 **Show** 音效︰
 
-&lt;OverlayIn.mp3 音效剪輯在此&gt;
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Show);
 ```
 相反地，當重疊內容視窗關閉 (或消失關閉) 時，應該呼叫 **Hide** 音效︰
-
-&lt;OverlayOut.mp3 音效剪輯在此&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Hide);
@@ -124,14 +119,10 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 
 移至清單中被視為「下一個項目」  的檢視/面板時，呼叫︰
 
-&lt;PageTransitionRight.mp3 音效剪輯在此&gt;
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```
 而移至清單中被視為「上一個項目」  的上一個檢視/面板時，呼叫︰
-
-&lt;PageTransitionLeft.mp3 音效剪輯在此&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
@@ -139,8 +130,6 @@ ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ### <a name="back-navigation"></a>向後巡覽
 
 從目前頁面瀏覽到應用程式中前一個頁面時，應呼叫 **GoBack** 音效︰
-
-&lt;BackButtonClick.mp3 音效剪輯在此&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.GoBack);
@@ -153,8 +142,6 @@ ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 
 若要設定控制項以在控制項取得焦點時播放 **Focus** 音效，請呼叫︰
 
-&lt;ElementFocus1.mp3 音效剪輯在此&gt;
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ```
@@ -166,5 +153,5 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 
 ## <a name="related-articles"></a>相關文章
 
-* [針對 Xbox 和電視進行設計](https://go.microsoft.com/fwlink/?LinkId=760736)
-* [ElementSoundPlayer 類別文件](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer)
+* [針對 Xbox 和電視進行設計](/windows/uwp/design/devices/designing-for-tv)
+* [ElementSoundPlayer 類別文件](/uwp/api/windows.ui.xaml.elementsoundplayer)
