@@ -6,14 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 524d0f2d9e428e87187ca27747fbd1c54406d345
-ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
+ms.openlocfilehash: e1fd738435b8622a2db2e849abf1c4984bb7ae64
+ms.sourcegitcommit: fccefde61a155a4a5a866acd1c4c9de42a14ddfd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68308434"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507721"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
+
+隨著 C++/WinRT 後續版本的發行，本主題說明新功能和變更內容。
 
 ## <a name="news-and-changes-in-cwinrt-20"></a>C++/WinRT 2.0 的新聞和變更
 
@@ -49,22 +51,14 @@ ms.locfileid: "68308434"
  
 以下為 `cppwinrt.exe` 2.0 的相依性。
  
-- api-ms-win-core-processenvironment-l1-1-0.dll
-- api-ms-win-core-libraryloader-l1-2-0.dll
-- XmlLite.dll
-- api-ms-win-core-memory-l1-1-0.dll
-- api-ms-win-core-handle-l1-1-0.dll
-- api-ms-win-core-file-l1-1-0.dll
-- SHLWAPI.dll
 - ADVAPI32.dll
 - KERNEL32.dll
-- api-ms-win-core-rtlsupport-l1-1-0.dll
-- api-ms-win-core-processthreads-l1-1-0.dll
-- api-ms-win-core-heap-l1-1-0.dll
-- api-ms-win-core-console-l1-1-0.dll
-- api-ms-win-core-localization-l1-2-0.dll
+- SHLWAPI.dll
+- XmlLite.dll
 
-與這些相依性相比，`cppwinrt.exe` 1.0 具有這些相依性。
+這些 DLL 不僅適用於 Windows 10，還能適用於 Windows 7，甚至適用於 Windows Vista。 如果您想要，執行 Windows 7 的舊組建伺服器現在可以執行 `cppwinrt.exe`，為您的專案產生 C++ 標頭。 透過少許工作，您甚至可以[在 Windows 7 上執行 C++/WinRT](https://github.com/kennykerr/win7) (如果您有興趣的話)。
+
+對照上述清單與 `cppwinrt.exe` 1.0 具備的下列相依性。
 
 - ADVAPI32.dll
 - SHELL32.dll
@@ -150,7 +144,9 @@ C++/WinRT 本身為每個實作的 API 產生此模式。 有了數千個 API �
 
 ##### <a name="uniform-construction-and-direct-implementation-access"></a>統一建構，以及直接實作存取
 
-這些兩種最佳化可讓您的元件直接存取其實作類型，即使它只使用投影的類型。 如果您只是想要使用公用 API 表面，則不需要使用 [**make**](/uwp/cpp-ref-for-winrt/make)[**make_self**](/uwp/cpp-ref-for-winrt/make-self)，也不需要 [**get_self**](/uwp/cpp-ref-for-winrt/get-self)。 您的呼叫將編譯成直接呼叫實作，甚至可能完全內嵌。 如需有關統一建構的詳細資訊，請參閱常見問題集：[為什麼我會收到「類別未註冊」的例外狀況？](faq.md#why-am-i-getting-a-class-not-registered-exception)。
+這些兩種最佳化可讓您的元件直接存取其實作類型，即使它只使用投影的類型。 如果您只是想要使用公用 API 表面，則不需要使用 [**make**](/uwp/cpp-ref-for-winrt/make)[**make_self**](/uwp/cpp-ref-for-winrt/make-self)，也不需要 [**get_self**](/uwp/cpp-ref-for-winrt/get-self)。 您的呼叫將編譯成直接呼叫實作，甚至可能完全內嵌。
+
+如需詳細資訊和程式碼範例，請參閱[加入統一建構和直接實作存取](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
 ##### <a name="type-erased-factories"></a>已清除類型的處理站
 
@@ -186,9 +182,11 @@ fire_and_forget Async(DispatcherQueueController controller)
 
 協同程式協助程式現在也用 `[[nodiscard]]` 裝置，藉此提高其可用性。 如果您忘記 `co_await` (或者不知道必須如此做)，以讓其得以運作，則由於 `[[nodiscard]]`，此類錯誤現在會產生編譯器警告。
 
-#### <a name="help-with-diagnosing-stack-allocations"></a>協助診斷堆疊配置
+#### <a name="help-with-diagnosing-direct-stack-allocations"></a>協助診斷直接 (堆疊) 配置
 
 由於投影和實作類別名稱 (依預設) 相同，而且只有命名空間不同，因此可能會誤用，並且可能會不小心在堆疊上建立實作，而不是使用協助程式的 [**make**](/uwp/cpp-ref-for-winrt/make) 系列。 在某些情況下，這可能很難診斷，因為物件可能會遭受破壞，而未完成的參照仍在執行中。 對於偵錯組件，判斷提示現在選擇此項目。 雖然判斷提示沒有偵測到協同程式中的堆疊配置，但它仍然有助於擷取大部分此類錯誤。
+
+如需詳細資訊，請參閱[診斷直接配置](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc)。
 
 #### <a name="improved-capture-helpers-and-variadic-delegates"></a>改善擷取協助程式，以及 variadic 委派
 
@@ -257,6 +255,8 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
+如需詳細資訊，請參閱[解構函式的詳細資料](/windows/uwp/cpp-and-winrt-apis/details-about-destructors)。
+
 #### <a name="improved-support-for-com-style-single-interface-inheritance"></a>已改善對 COM 樣式單一介面繼承的支援
 
 與 Windows 執行階段程式設計一樣， C++/WinRT 也用於撰寫和取用僅限 COM 的 API。 此更新可讓您實作存在介面階層的 COM 伺服器。 Windows 執行階段不需要這麼做；但它對於某些 COM 實作是必要的。
@@ -283,7 +283,7 @@ struct MainPage : PageT<MainPage>
 | Visual Studio 專案系統格式已變更。 | 請參閱下方[如何將 C++/WinRT 專案的目標重定為 Windows SDK 的較新版本](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 | 有一些新函式和基底類別有助於將集合物件傳遞給 Windows 執行階段函式，或者實作您自己的集合屬性和集合類別。 | 請參閱[使用 C++/WinRT 的集合](collections.md)。 |
 | 您可以將 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) 標記延伸與 C++/WinRT 執行階段類別搭配使用。 | 如需更多資訊與程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart)。 |
-| 支持取消協同程式可讓您註冊取消回呼。 | 如需更多資訊和程式碼範例，請參閱[取消非同步作業，以及取消回呼](concurrency.md#canceling-an-asychronous-operation-and-cancellation-callbacks)。 |
+| 支持取消協同程式可讓您註冊取消回呼。 | 如需更多資訊和程式碼範例，請參閱[取消非同步作業，以及取消回呼](concurrency-2.md#canceling-an-asychronous-operation-and-cancellation-callbacks)。 |
 | 建立指向成員函式的委派時，可以在註冊處理常式的位置建立對目前物件 (而不是原始的「this」  指標) 的強式參考或弱式參考。 | 如需更多資訊和程式碼範例，請參閱[使用事件處理委派安全地存取「this」  指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)小節的**如果您使用成員函式作為委派**子小節。 |
 | 修正 Visual Studio 對於 C++ 標準改善一致性未涵蓋的錯誤。 LLVM 和 Clang 工具鏈也可以更好地用於驗證 C++/WinRT 的標準一致性。 | 您將不再遇到[為什麼無法編譯我的新專案？我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) 中描述的問題 |
 

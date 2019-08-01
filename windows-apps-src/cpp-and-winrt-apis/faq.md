@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ff6fb443550287330d6fe503c3d49d81e2142c
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 6bac3fec34467f29d9cf2cc3f1ce4e3754187745
+ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717647"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485153"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -63,15 +63,9 @@ ms.locfileid: "67717647"
 
 ### <a name="uniform-construction"></a>統一建構
 
-如果您嘗試透過任何投影類型的建構函式(而非其 **std::nullptr_t** 建構函式) 具現化本機上實作的執行階段類別，也可能會發生此錯誤。 若要執行此操作，您將需要通常稱為統一建構的 C++/WinRT 2.0 功能。 但是，如您想以「不」  需要統一建構的方式具現化本機上實作的執行階段類別，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md)。
+如果您嘗試透過任何投影類型的建構函式(而非其 **std::nullptr_t** 建構函式) 具現化本機上實作的執行階段類別，也可能會發生此錯誤。 若要執行此操作，您將需要通常稱為統一建構的 C++/WinRT 2.0 功能。 如果您想要加入這項功能，請參閱[加入統一建構和直接實作存取。](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)，以取得詳細資訊和程式碼範例。
 
-如果您「想要」  使用統一建構，則該功能會針對新專案預設為啟用。 針對現有專案，您必須藉由設定 `cppwinrt.exe` 工具來加入統一建構。 在 Visual Studio 中，將 [通用屬性]   > [C++/WinRT]   > [最佳化]  設為 [是]  。 此動作會將 `<CppWinRTOptimized>true</CppWinRTOptimized>` 新增至您的專案檔。 而且這與從命令列叫用 `cppwinrt.exe` 時，新增 `-opt[imize]` 參數的效果一樣。
-
-如果您在「沒有」  該設定的情況下建置專案，您產生的 C++/WinRT 投影會呼叫 [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory)，以存取執行階段類別的建構函式和靜態成員。 而這需要註冊類別，您的模組也需實作 [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) 進入點。
-
-如果您在「包含」  `-opt[imize]` 參數的情況下建置專案，這會使專案略過您元件中類別的 **RoGetActivationFactory**，因此，如果類別在您元件外面，您也可以使用完全相同的方式來建構這些元件 (無須註冊)。
-
-若要使用統一建構，您也必須在包含實作標頭檔之後，將每個實作的 `.cpp` 檔案編輯為 `#include <Sub/Namespace/ClassName.g.cpp>`。
+如您想以「不」  需要統一建構的方式具現化本機上實作的執行階段類別，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md)。
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>我是否應該實作 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，該如何進行？
 如果在其解構程式中您有釋出資源的執行階段類別，且設計該執行階段類別從其實作編譯單位之外使用 (它是 Windows 執行階段元件，旨在供給 Windows 執行階段用戶端應用程式的一般使用)，我們建議您也實作 **IClosable** 以便支援不確定完成的語言使用您的執行階段類別。 請確定不論是否解構函式都會釋出您的資源，[**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close)，或兩者都呼叫。 可以任意呼叫 **IClosable::Close** 數次。

@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: e6b1b443a847fd8d7af3ad46d5263fd6ae2675a4
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 18dc65198d476204cfd54bd241fbd3c9ac401155
+ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328894"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485170"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
@@ -425,7 +425,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 如您先前在本主題中看到的，C++/WinRT 執行階段類別會以多個 C++ 類別的形式存在於多個命名空間中。 因此，**MyRuntimeClass** 名稱在 **winrt::MyProject** 命名空間中有一個意義，而在 **winrt::MyProject::implementation** 命名空間中則有不同的意義。 請留意您目前環境中具有的命名空間，並在需要從不同命名空間中取得名稱時，使用命名空間前置詞。 讓我們更仔細地看看這些命名空間。
 
 - **winrt::MyProject**。 此命名空間包含投影類型。 投影類型的物件是 Proxy；其本質是支援物件的智慧指標，而該支援物件可能會在此實作到您的專案中，或可能實作到另一個編譯單位中。
-- **winrt::MyProject::implementation**。 此命名空間包含實作類型。 實作類型的物件不是指標；而是值 &mdash; 完整的 C++ 堆疊物件。 請勿直接建構實作類型，而是呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)，將實作類型作為範本參數來傳遞。 在此主題中，我們先前已示範作用中的 **winrt::make** 範例，而另一個範例位在 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)中。
+- **winrt::MyProject::implementation**。 此命名空間包含實作類型。 實作類型的物件不是指標；而是值 &mdash; 完整的 C++ 堆疊物件。 請勿直接建構實作類型，而是呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)，將實作類型作為範本參數來傳遞。 在此主題中，我們先前已示範作用中的 **winrt::make** 範例，而另一個範例位在 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)中。 另請參閱[診斷直接配置](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc)。
 - **winrt::MyProject::factory_implementation**。 此命名空間包含處理站。 此命名空間中的物件支援 [**IActivationFactory**](/windows/win32/api/activation/nn-activation-iactivationfactory)。
 
 下表列出在不同環境中必須使用的最低命名空間條件。
@@ -440,7 +440,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 >
 > 在該案例中，`MyRuntimeClass myRuntimeClass;` 的問題是其在堆疊上建立了 **winrt::MyProject::implementation::MyRuntimeClass** 物件。 該物件 (屬於實作類型) 的行為在某些方面類似投影類型 &mdash; 您可以透過相同方式在其中叫用方法，其甚至可以轉換成投影類型。 但物件會在有範圍限制時遭到解構 (根據一般的 C++ 規則)。 因此，如果您已將投影類型 (以智慧指標的形式) 傳回給該物件，則該指標現在是懸空狀態。
 >
-> 這種記憶體損毀的錯誤類型很難診斷。 因此，針對偵錯組建，C++/WinRT 判斷提示會使用堆疊偵測器協助您找出這種錯誤。 但協同程式會配置到堆積上，因此，如果將其放到協同程式中，則無法取得此錯誤的協助。
+> 這種記憶體損毀的錯誤類型很難診斷。 因此，針對偵錯組建，C++/WinRT 判斷提示會使用堆疊偵測器協助您找出這種錯誤。 但協同程式會配置到堆積上，因此，如果將其放到協同程式中，則無法取得此錯誤的協助。 如需詳細資訊，請參閱[診斷直接配置](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc)。
 
 ## <a name="using-projected-types-and-implementation-types-with-various-cwinrt-features"></a>搭配各種 C++/WinRT 功能使用投影類型與實作類型
 
@@ -460,6 +460,199 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 | `make_self<T>`|實作|使用投影類型會產生錯誤：`'Release': is not a member of any direct or indirect base class of 'T'`|
 | `name_of<T>`|投影|如果您使用實作類型，您會取得轉換為字串 (stringify) 的預設介面 GUID。|
 | `weak_ref<T>`|兩者|如果您使用實作類型，則建構函式引數必須是 `com_ptr<T>`。|
+
+## <a name="opt-in-to-uniform-construction-and-direct-implementation-access"></a>加入統一建構，以及直接實作存取
+
+本節說明加入的 C++/WinRT 2.0 功能，雖然預設會針對新專案啟用。 對於現有專案，您必須藉由設定 `cppwinrt.exe` 工具來加入。 在 Visual Studio 中，將 [通用屬性]   > [C++/WinRT]   > [最佳化]  設為 [是]  。 此動作會將 `<CppWinRTOptimized>true</CppWinRTOptimized>` 新增至您的專案檔。 而且這與從命令列叫用 `cppwinrt.exe` 時，新增參數的效果一樣。
+
+`-opt[imize]`參數可啟用通常稱為「統一建構」  的項目。 透過統一 (或*聯合*) 建構，您可使用 C++/WinRT 語言投影本身來建立及使用您的實作類型 (由您的元件所實作的類型，以供應用程式取用)，而不會遇到任何載入器難題。
+
+在描述此功能之前，讓我們先展示「沒有」  統一建構的情況。 為了說明，我們將從這個範例 Windows 執行階段類別開始。
+
+```idl
+// MyClass.idl
+namespace MyProject
+{
+    runtimeclass MyClass
+    {
+        MyClass();
+        void Method();
+        static void StaticMethod();
+    }
+}
+```
+
+身為熟悉使用 C++/WinRT 程式庫的 C++ 開發人員，您可能想要使用如下所示的類別。
+
+```cppwinrt
+using namespace winrt::MyProject;
+
+MyClass c;
+c.Method();
+MyClass::StaticMethod();
+```
+
+而且，如果所顯示的取用程式碼不在實作此類別的相同元件內，這就完全合理。 作為語言投影，C++/WinRT 會從 ABI (Windows 執行階段定義的 COM 型應用程式二進位介面) 以開發人員的身分保護您。 C++/WinRT 不會直接在實作中呼叫，而會經歷整個 ABI。
+
+因此，在您要建構建立 **MyClass**物件 (`MyClass c;`) 的該行程式碼上，C++/WinRT 投影會呼叫 [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory)以擷取類別或啟用處理站，然後使用該處理站來建立物件。 最後一行程式碼同樣會使用處理站，讓它看起來像是靜態方法呼叫。 這需要註冊您的類別，而您的模組也需實作 [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) 進入點。 C++/WinRT 有非常快速的處理站快取，因此不會對取用您元件的應用程式造成問題。 問題在於，在您的元件中，您剛處理了有點問題的項目。
+
+首先，無論 C++/WinRT 處理站快取的速度為何，透過 **RoGetActivationFactory** 呼叫 (或甚至透過處理站快取的後續呼叫) 一律會比直接在實作中呼叫還要慢。 對於本機定義的類型，呼叫 **RoGetActivationFactory**，然後依序呼叫 [**IActivationFactory::ActivateInstance**](/windows/win32/api/activation/nf-activation-iactivationfactory-activateinstance) 和 [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void))，顯然不會像使用 C++ `new` 運算式一樣有效率。 因此，在元件內建立物件時，經驗豐富的 C++/WinRT 開發人員習慣使用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 或 [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self)協助程式函式。
+
+```cppwinrt
+// MyClass c;
+MyProject::MyClass c{ winrt::make<implementation::MyClass>() };
+```
+
+但如您所見，這幾乎不太方便，也不簡單。 您必須使用協助程式函式來建立物件，而且也必須在實作類型與投影類型之間釐清。
+
+其次，使用投影來建立類別，表示將會快取其啟用處理站。 一般來說，這就是您想要的，但如果處理站位於進行呼叫的相同模組 (DLL) 中，則您已有效地釘選 DLL 並防止它卸載。 在許多情況下，這無關緊要；但有些系統元件「必須」  支援卸載。
+
+這是「統一建構」  一詞的出處。 不論建立程式碼是否位於只使用類別的專案中，或它是否位於實際「實作」  類別的專案中，您都可以隨意使用相同的語法來建立物件。
+
+```cppwinrt
+// MyProject::MyClass c{ winrt::make<implementation::MyClass>() };
+MyClass c;
+```
+
+當您使用 `-opt[imize]` 參數建立元件專案時，透過語言投影呼叫會向下編譯至對 **winrt::make** 函式的相同有效呼叫，而該函式會直接建立實作類型。 這可讓您的語法變得簡單並可預測，藉此避免透過處理站呼叫所造成的任何效能衝擊，並且避免釘選處理中的元件。 除了元件專案，這也適用於 XAML 應用程式。 針對在相同應用程式中實作的類別略過 **RoGetActivationFactory**，如果這些類別在您的元件外部，您也可以使用完全相同的方式來建構這些元件 (無須註冊)。
+
+統一建構適用於處理站在幕後提供的「任何」  呼叫。 實際上，這表示最佳化會同時為建構函式和靜態成員服務。 以下是這個原始範例。
+
+```cppwinrt
+MyClass c;
+c.Method();
+MyClass::StaticMethod();
+```
+
+若沒有 `-opt[imize]`，第一個和最後一個陳述式都需要透過處理站物件呼叫。 若具有  `-opt[imize]`，兩者都不會這麼做。 這些呼叫會直接針對實作進行編譯，甚至有可能會內嵌。 在談論 `-opt[imize]` 時通常會使用另一個詞彙，也就是「直接實作」  存取。
+
+語言投影很方便，但是當您可直接存取此實作時，您可以且應該利用它來產生最有效率的程式碼。 C++/WinRT 可為您執行這項操作，而不會迫使您喪失投影的安全性和生產力。
+
+這是一項重大變更，因為元件必須共同合作，才能讓語言投影連入並直接存取其實作類型。 由於 C++/WinRT 是僅限標頭的程式庫，您可查看並了解發生什麼狀況。 如果沒有 `-opt[imize]`，**MyClass** 建構函式和 **StaticMethod** 成員就會由投影定義，如下所示。
+
+```cppwinrt
+namespace winrt::MyProject
+{
+    inline MyClass::MyClass() :
+        MyClass(impl::call_factory<MyClass>([](auto&& f){
+            return f.template ActivateInstance<MyClass>(); }))
+    {
+    }
+    inline void MyClass::StaticMethod()
+    {
+        impl::call_factory<MyClass, MyProject::IClassStatics>([&](auto&& f) {
+            return f.StaticMethod(); });
+    }
+}
+```
+
+您不需要遵循上述所有一切，其用意在於顯示兩個呼叫都涉及呼叫名為 **call_factory** 的函式。 因此，您可推斷這些呼叫都涉及處理站快取，而且不會直接存取實作。 若「具有」  `-opt[imize]`，則完全不會定義這些相同的函式。 它們會改由投影宣告，而其定義會留在元件上。
+
+元件接著可以提供直接在實作中呼叫的定義。 我們現在已達成重大變更。 當您使用 `-component` 與 `-opt[imize]` 時，系統會為您產生定義，而這些定義會出現在名為 `Type.g.cpp` 的檔案中，其中 *Type* 是正在實作的執行階段類別名稱。 這就是當您第一次在現有專案中啟用 `-opt[imize]`時，您為何會遇到各種連結器錯誤的原因。 您必須在實作中包含所產生的檔案，才能拼接起來。
+
+在我們的範例中，`MyClass.h` 可能如下所示 (不論 `-opt[imize]` 是否正在使用中)。
+
+```cppwinrt
+// MyClass.h
+#pragma once
+#include "MyClass.g.h"
+ 
+namespace winrt::MyProject::implementation
+{
+    struct MyClass : ClassT<MyClass>
+    {
+        MyClass() = default;
+ 
+        static void StaticMethod();
+        void Method();
+    };
+}
+namespace winrt::MyProject::factory_implementation
+{
+    struct MyClass : ClassT<MyClass, implementation::MyClass>
+    {
+    };
+}
+```
+
+`MyClass.cpp` 是所有項目匯集在一起的地方。
+
+```cppwinrt
+#include "pch.h"
+#include "MyClass.h"
+#include "MyClass.g.cpp" // !!It's important that you add this line!!
+ 
+namespace winrt::MyProject::implementation
+{
+    void MyClass::StaticMethod()
+    {
+    }
+ 
+    void MyClass::Method()
+    {
+    }
+}
+```
+
+因此，若要在現有的專案中使用統一建構，您需要編輯每項個實作的 `.cpp` 檔案，以便在實作類別的包含 (和定義) 之後 `#include <Sub/Namespace/Type.g.cpp>`。 該檔案會提供未定義投影的函式定義。 以下是這些定義在 `MyClass.g.cpp` 檔案中看起來的樣子。
+
+```cppwinrt
+namespace winrt::MyProject
+{
+    MyClass::MyClass() :
+        MyClass(make<MyProject::implementation::MyClass>())
+    {
+    }
+    void MyClass::StaticMethod()
+    {
+        return MyProject::implementation::MyClass::StaticMethod();
+    }
+}
+```
+
+直接在實作中進行有效呼叫可以精確地完成投影，而且避免呼叫處理站快取，以及滿足連結器。
+
+`-opt[imize]` 為您所做的最後一件事，就是變更專案的 `module.g.cpp`實作 (此檔案可協助您實作 DLL 的 **DllGetActivationFactory** 和 **DllCanUnloadNow** 匯出)，其做法為消除 C++/WinRT 1.0 所需的強式類型結合，讓累加建置的速度變得更快。 這通常稱為「已清除類型的處理站」  。 若沒有 `-opt[imize]`，為您的元件產生的 `module.g.cpp` 檔案一開始會包含所有實作類別的定義&mdash;在此範例中為 `MyClass.h`。 然後，它會直接為每個類別建立實作處理站，如下所示。
+
+```cppwinrt
+if (requal(name, L"MyProject.MyClass"))
+{
+    return winrt::detach_abi(winrt::make<winrt::MyProject::factory_implementation::MyClass>());
+}
+```
+
+同樣地，您不需要遵循所有的細節。 但請務必了解，這需要您的元件針對任何和所有類別實作的完整定義。 這可能會對您的內部迴圈造成顯著的影響，因為對單一實作進行任何變更都會導致 `module.g.cpp` 重新編譯。 使用 `-opt[imize]` 時不再是這種情況。 然而，所產生的 `module.g.cpp`檔案會發生兩件事。 第一件事就是它不再包含任何實作類別。 在此範例中，完全不包含 `MyClass.h`。 然而，它會在不了解實作的情況下建立實作處理站。
+
+```cppwinrt
+void* winrt_make_MyProject_MyClass();
+ 
+if (requal(name, L"MyProject.MyClass"))
+{
+    return winrt_make_MyProject_MyClass();
+}
+```
+
+顯然地，您不需要包含其定義，而是由連結器來解析 **winrt_make_Component_Class** 函式的定義。 當然，您不需要考量這點，因為為您產生的 `MyClass.g.cpp`檔案 (以及您先前包含以支援統一建構的檔案) 也會定義此函式。 以下是針對此範例所產生的完整 `MyClass.g.cpp` 檔案。
+
+```cppwinrt
+void* winrt_make_MyProject_MyClass()
+{
+    return winrt::detach_abi(winrt::make<winrt::MyProject::factory_implementation::MyClass>());
+}
+namespace winrt::MyProject
+{
+    MyClass::MyClass() :
+        MyClass(make<MyProject::implementation::MyClass>())
+    {
+    }
+    void MyClass::StaticMethod()
+    {
+        return MyProject::implementation::MyClass::StaticMethod();
+    }
+}
+```
+
+如您所見，**winrt_make_MyProject_MyClass** 函式會直接建立實作的處理站。 這表示您可以適度變更任何指定的實作，完全不需要重新編譯 `module.g.cpp`。 這僅限於您新增或移除將要更新並需要重新編譯 `module.g.cpp` 的 Windows 執行階段類別時。
 
 ## <a name="overriding-base-class-virtual-methods"></a>覆寫基底類別虛擬方法
 

@@ -4,13 +4,13 @@ description: 如何使用 XamlUICommand 和 StandardUICommand 類別 (連同 ICo
 author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
-ms.date: 03/11/2019
-ms.openlocfilehash: a85a101cd529bf487cbc97b93bb3905f28213c19
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.date: 07/23/2019
+ms.openlocfilehash: 338cae7b6238c3c773f409322600c8bee8c193f5
+ms.sourcegitcommit: 401c8ecaf74eee247f1ed0093028cc6558b4a605
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63793875"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68446373"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 的通用 Windows 平台 (UWP) 應用程式中的命令
 
@@ -36,9 +36,11 @@ ms.locfileid: "63793875"
 
 您可以在您應用程式內的特定內容上操作命令，例如刪除文字或復原動作，也可以進行免內容的操作，例如靜音音訊或調整亮度。
 
-下圖顯示兩個共用許多相同命令的命令介面 ([CommandBar](app-bars.md) 及浮動關聯式 [CommandBarFlyout](command-bar-flyout.md))。
+下圖顯示兩個共用一些相同命令的命令介面 ([CommandBar](app-bars.md) 及浮動關聯式 [CommandBarFlyout](command-bar-flyout.md))。
 
-![命令介面範例](images/commanding/command-interface-example.png)
+![Microsoft 相片中的命令列](images/control-examples/command-bar-photos.png)<br>*Microsoft 相片中的命令列*
+
+![Microsoft 相片圖庫中的內容功能表](images/ContextMenu_example.png)<br>*Microsoft 相片圖庫中的內容功能表*
 
 ## <a name="command-interactions"></a>命令互動
 

@@ -5,16 +5,16 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, Windows UI 程式庫, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: 082e7ca0684495e1f67c2fa79b448866f68a059c
-ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
+ms.openlocfilehash: 5d0066abb2a6eb15f1d31aaf930ed2c0f0faf81a
+ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2019
-ms.locfileid: "67870343"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372716"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>C++/WinRT Windows UI 程式庫簡單範例
 
-本主題將逐步引導您完成將 Windows UI (WinUI) 程式庫的簡單支援新增至 C++/WinRT 專案的程序。
+本主題將逐步引導您完成將 [Windows UI (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) 程式庫的簡單支援新增至 C++/WinRT 專案的程序。 順便一提，Windows UI 程式庫本身是以 C++/WinRT 撰寫。
 
 > [!NOTE]
 > Windows UI (WinUI) 程式庫工具組是以 NuGet 套件的形式提供，您可以使用 Visual Studio 將這些套件新增至任何現有或新的專案 (如我們將在本主題中所見)。 如需更多背景、安裝和支援資訊，請參閱[開始使用 Windows UI 程式庫](/uwp/toolkits/winui/getting-started)。
@@ -49,7 +49,9 @@ ms.locfileid: "67870343"
 
 ## <a name="edit-mainpageh-and-cpp-as-necessary"></a>視需要編輯 MainPage.h 和 .cpp
 
-在 `MainPage.h` 中，編輯您的 include 元素，使其看起來像這樣。
+當您將 NuGet 套件新增至 C++/WinRT 專案 (例如您稍早新增的**Microsoft.UI.Xaml** 套件) 時，工具會在專案的 `\Generated Files\winrt` 資料夾中產生一組預測標頭。 若要將這些標頭檔案帶入您的專案中，以便解析這些新類型的參考，您必須包含這些檔案。
+
+在 `MainPage.h` 中，編輯您的 include 元素，使其看起來像下面清單中的項目。 如果您要從一個以上的 XAML 頁面使用 WinUI，則可以移至預先編譯的標頭檔 (通常為 `pch.h`) 並改為將其包含在其中。
 
 ```cppwinrt
 #include "MainPage.g.h"
