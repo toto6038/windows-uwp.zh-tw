@@ -738,45 +738,15 @@
         - name: 使用付款要求 API 簡化付款
           href: ../monetize/payment-request.md
     - name: 封裝應用程式
-      href: ../packaging/index.md
       items:
-        - name: 使用 Visual Studio 封裝 UWP 應用程式
-          href: ../packaging/packaging-uwp-apps.md
-        - name: 手動應用程式封裝
-          href: ../packaging/manual-packaging-root.md
-          items:
-            - name: 使用 MakeAppx.exe 工具建立應用程式套件
-              href: ../packaging/create-app-package-with-makeappx-tool.md
-            - name: 建立套件簽署的憑證
-              href: ../packaging/create-certificate-package-signing.md
-            - name: 使用 SignTool 簽署應用程式套件
-              href: ../packaging/sign-app-package-using-signtool.md
-            - name: 使用資產套件與套件摺疊進行開發
-              href: ../packaging/package-folding.md
-            - name: 一般套件組合應用程式套件
-              href: ../packaging/flat-bundles.md
-            - name: 資產套件簡介
-              href: ../packaging/asset-packages.md
-            - name: 使用封裝配置的套件建立
-              href: ../packaging/packaging-layout.md
-        - name: 應用程式套件架構
-          href: ../packaging/device-architecture.md
-        - name: UWP 應用程式串流安裝
-          href: ../packaging/streaming-install.md
-          items:
-            - name: 建立和轉換來源內容群組對應
-              href: ../packaging/create-cgm.md
-        - name: 選用套件及相關集合的製作
-          href: ../packaging/optional-packages.md
-          items:
-            - name: 具可執行程式碼的選用套件
-              href: ../packaging/optional-packages-with-executable-code.md
-        - name: 使用 WinAppDeployCmd.exe 工具安裝應用程式
-          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
+        - name: 概觀
+          href: ../packaging/index.md
         - name: 應用程式功能宣告
           href: ../packaging/app-capability-declarations.md
         - name: 設定您的 UWP 應用程式的自動化組建
           href: ../packaging/auto-build-package-uwp-apps.md
+        - name: 使用 WinAppDeployCmd.exe 工具安裝應用程式
+          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
         - name: 從 Microsoft Store 下載與安裝套件更新
           href: ../packaging/self-install-package-updates.md
 - name: 平台
