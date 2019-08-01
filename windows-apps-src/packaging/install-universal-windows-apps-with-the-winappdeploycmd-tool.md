@@ -1,32 +1,32 @@
 ---
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: 使用 WinAppDeployCmd.exe 工具安裝應用程式
-description: Windows 應用程式部署 (WinAppDeployCmd.exe) 是命令列工具，可用來部署 Windows 10 電腦從任何 Windows 10 裝置的通用 Windows 平台 (UWP) 應用程式。
+description: Windows 應用程式部署 (Winappdeploycmd.exe) 是一種命令列工具, 可用來將通用 Windows 平臺 (UWP) 應用程式從 Windows 10 電腦部署到任何 Windows 10 裝置。
 ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 06107691a4551ae2af05e63c1db810485273dc9b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 79e92cd781a83295a8cbbee4fe4b25022295568a
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372808"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682647"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安裝應用程式
 
 
-Windows 應用程式部署 (WinAppDeployCmd.exe) 是命令列工具，可用來部署 Windows 10 電腦從任何 Windows 10 裝置的通用 Windows 平台 (UWP) 應用程式。 您可以使用這項工具來部署應用程式套件，Windows 10 裝置透過 USB 連線或提供時相同的子網路上而不需要該應用程式的 Microsoft Visual Studio 或解決方案。 您也可以不用封裝就將 App 部署到遠端的電腦或 Xbox One。 本文章說明如何使用此工具安裝 UWP app。
+Windows 應用程式部署 (Winappdeploycmd.exe) 是一種命令列工具, 可用來將通用 Windows 平臺 (UWP) 應用程式從 Windows 10 電腦部署到任何 Windows 10 裝置。 您可以使用此工具, 在 Windows 10 裝置以 USB 連接或可在相同的子網上使用, 而不需要該應用程式的 Microsoft Visual Studio 或解決方案時, 部署應用程式套件。 您也可以不用封裝就將 App 部署到遠端的電腦或 Xbox One。 本文章說明如何使用此工具安裝 UWP app。
 
-您只需要從命令提示字元或指令碼檔案執行 WinAppDeployCmd 工具安裝的 Windows 10 SDK。 當您使用 WinAppDeployCmd.exe 安裝應用程式時，這會使用.appx/.msix 檔案或 p （適用於鬆散式檔案） 來側載到 Windows 10 裝置上的應用程式。 此命令不會安裝您 App 所需的憑證。 若要執行應用程式，Windows 10 裝置必須處於開發人員模式，或已安裝的憑證。
+您只需要安裝 Windows 10 SDK, 即可從命令提示字元或腳本檔案執行 Winappdeploycmd.exe 工具。 當您使用 Winappdeploycmd.exe 安裝應用程式時, 這會使用 .appx/. msix 檔案或 Package.appxmanifest.xml (適用于鬆散檔案) 將您的應用程式側邊載入至 Windows 10 裝置。 此命令不會安裝您 App 所需的憑證。 若要執行應用程式, Windows 10 裝置必須處於開發人員模式, 或已安裝憑證。
 
-若要部署到行動裝置，您必須先建立套件。 如需詳細資訊，請參閱[此處](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
+若要部署到行動裝置，您必須先建立套件。 如需詳細資訊，請參閱[此處](/windows/msix/package/packaging-uwp-apps)。
 
-**WinAppDeployCmd.exe**工具位於您 Windows 10 電腦上：**C:\\Program Files (x86)\\Windows 套件\\10\\bin\\&lt;SDK 版本&gt;\\x86\\WinAppDeployCmd.exe** (根據您的安裝路徑 sdk）。 
+**Winappdeploycmd.exe**工具位於您的 WINDOWS 10 電腦上:**C:\\Program Files (x86)\\Windows 套件\\10\\bin\\SDK版本&gt; x86\\winappdeploycmd.exe.exe (依據\\ &lt;** SDK 的安裝路徑)。 
 > [!NOTE]
 > 在 SDK 15063 和更新版本，SDK 在版本特定的資料夾中並排安裝。  舊版 SDK（14393 之前版本）直接寫入上層資料夾。
 
-首先，您的 Windows 10 裝置連接到相同的子網路，或直接安裝到您的 Windows 10 電腦，使用 USB 連線。 然後使用下列語法與本文稍後此命令的範例來部署您的 UWP App：
+首先, 將您的 Windows 10 裝置連接到相同的子網, 或使用 USB 連線將它直接連接到您的 Windows 10 電腦。 然後使用下列語法與本文稍後此命令的範例來部署您的 UWP App：
 
 ## <a name="winappdeploycmd-syntax-and-options"></a>WinAppDeployCmd 語法和選項
 
@@ -77,7 +77,7 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 下表描述 **WinAppDeployCmd.exe** 的選項。
 
 
-| **命令**  | **描述**  |
+| **命令**  | **說明**  |
 |--------------|------------------|
 | -h (-help)       | 顯示命令、選項和引數。 |
 | -ip              | 目標裝置的 IP 位址 |
@@ -120,7 +120,7 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 WinAppDeployCmd devices 3
 ```
 
-在 Windows 10 裝置 IP 位址為 192.168.0.1 使用 A1B2C3 的 pin 建立與裝置連線到您的電腦 [下載] 目錄的 MyApp.appx 套件從安裝應用程式
+將應用程式從您電腦的下載目錄中的 MyApp 封裝, 安裝到 IP 位址為192.168.0.1 且 PIN 為 A1B2C3 的 Windows 10 裝置, 以建立與裝置的連線
 
 ``` syntax
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
@@ -132,7 +132,7 @@ WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
-更新 IP 位址為 192.168.0.1 使用指定的應用程式封裝的 Windows 10 裝置已安裝的應用程式。
+使用指定的應用程式套件, 更新已安裝在 Windows 10 裝置上的應用程式, IP 位址為192.168.0.1。
 
 ``` syntax
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1

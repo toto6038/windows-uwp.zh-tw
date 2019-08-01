@@ -6,23 +6,23 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 24326c19688a0fa6f2300da50e6d13308b79ee2e
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603393"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682473"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令列選項
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) 擁有命令集 `createconfig`、`dump`、`new`、`resourcepack` 和 `versioned`。 本主題詳述命令列選項的使用。
 
 > [!NOTE]
-> 檢查時，已安裝 MakePri.exe **UWP 管理的應用程式的 Windows SDK**安裝 Windows 軟體開發套件時的選項。 它會安裝到路徑`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他架構資料夾）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 當您在安裝 Windows 軟體發展工具組時, 檢查**UWP 受管理應用程式的 Windows SDK**選項時, 會安裝 MakePri。 它會安裝到路徑`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (以及針對其他架構命名的資料夾中)。 例如： `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` 。
 
-## <a name="getting-help-from-the-command-line"></a>取得說明從命令列
+## <a name="getting-help-from-the-command-line"></a>從命令列取得協助
 
-您可以執行`MakePri.exe help`或`MakePri.exe /?`若要查看可搭配 MakePri.exe 命令。 您也可以核發`MakePri.exe <command> /?`若要查看詳細資料相關的命令，並在極少數的情況下，甚至是`MakePri.exe <command> <option>`若要查看有關選項的詳細資訊。
+您可以執行`MakePri.exe help`或`MakePri.exe /?`來查看可與 MakePri 搭配使用的命令。 您也可以發出`MakePri.exe <command> /?`來查看命令的詳細資訊, 以及在極罕見的情況下`MakePri.exe <command> <option>` , 甚至是查看選項的相關細節。
 
 ## <a name="makepri-commands"></a>MakePri 命令
 
@@ -115,7 +115,7 @@ Help:
 `dump` 命令會輸出傾印的 xml 檔案，包含指定 PRI 檔案中的所有資源的清單。 執行 `MakePri.exe dump /?` 以查看此命令的詳細說明。
 
 > [!NOTE]
-> 無結構描述資源套件是在 PRI 設定檔中使用 *omitSchemaFromResourcePacks* 參數所建立的套件。 若要傾印無結構描述資源套件，請使用 `/es <main_package_PRI_file>` 參數。 如果您未指定的主要檔案，則您會看到錯誤訊息 「*封裝中的 resources.pri 已損毀以便加密失敗 (錯誤 PRI222:0xdef0000f-發生意外的錯誤）*"。
+> 無結構描述資源套件是在 PRI 設定檔中使用 *omitSchemaFromResourcePacks* 參數所建立的套件。 若要傾印無結構描述資源套件，請使用 `/es <main_package_PRI_file>` 參數。 如果您未指定主要檔案, 則會看到錯誤訊息 *「封裝中的 .resources 已損毀, 因此加密失敗 (錯誤 PRI222:0xdef0000f-發生未指定的*錯誤)」。
 
 ```console
 C:\>makepri dump /?
@@ -416,22 +416,22 @@ MakePri 可以在索引子中繼資料檔案中包含資源套件特定的資訊
 
 **FILEPATH** 是指定輸入 PRI 檔案或 PRI 結構描述檔案的位置的權杖。
 
-## <a name="47indexoptionsio-option"></a>&#47;IndexOptions(io) 選項
+## <a name="47indexoptionsio-option"></a>&#47;IndexOptions (io) 選項
 
-使用 [索引選項] 選項 (/ io) 與`new`， `resourcepack`，和`versioned`來指定提供細微地控制資源的索引子行為的選項。 根據預設，會停用索引選項。
+您可以使用索引選項選項 (/io) `new`搭配、 `resourcepack`和`versioned`來指定選項, 以對資源索引子的行為提供詳細的控制。 索引選項預設為停用。
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**選項**是以逗號分隔的清單，包含下列其中一個選項。
+**選項**是由下列選項群組成的逗號分隔清單。
 
-- + /-HiddenFiles(hf)。 編製索引 （+），或略過 （-） 隱藏檔案和資料夾。
-- + /-LinkedFiles(lf)。 編製索引 （+），或略過 （-） 連結的檔案和資料夾。
+- +/-HiddenFiles (hf)。 Index (+) 或忽略 (-) 隱藏的檔案和資料夾。
+- +/-LinkedFiles (lf)。 索引 (+) 或忽略 (-) 連結的檔案和資料夾。
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) 選項
 
-您使用的對應檔案選項 (/mf) 搭配 `new`、`resourcepack` 和 `versioned` 來產生對應檔案。 [MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) 使用對應檔案來產生應用程式套件。
+您使用的對應檔案選項 (/mf) 搭配 `new`、`resourcepack` 和 `versioned` 來產生對應檔案。 [MakeAppx.exe](/windows/msix/package/create-app-package-with-makeappx-tool) 使用對應檔案來產生應用程式套件。
 
 ```console
 /MappingFile(mf) <MAPPINGFILETYPE>
@@ -501,7 +501,7 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 | 錯誤條件 | 錯誤訊息 |
 | --------------- | ------------- |
-| 輸出檔案名稱與設定中的其中一個資源套件名稱相同。 | 無效的組態：資源組件名稱<resource pack name>不能是輸出檔 < outputfilename.pri > 相同。 |
+| 輸出檔案名稱與設定中的其中一個資源套件名稱相同。 | 不正確設定:資源套件名稱<resource pack name>不能與 < outputfilename 的輸出檔 > 相同。 |
 
 ## <a name="reversemaprm-option"></a>/ReverseMap(rm) 選項
 
@@ -551,4 +551,4 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 ## <a name="related-topics"></a>相關主題
 
-* [MakePri.exe](compile-resources-manually-with-makepri.md)
+* [MakePri .exe](compile-resources-manually-with-makepri.md)

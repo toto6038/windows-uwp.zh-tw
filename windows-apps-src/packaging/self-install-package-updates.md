@@ -1,23 +1,23 @@
 ---
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: 從 Microsoft Store 下載與安裝套件更新
-description: 了解如何將標記為必要項目在合作夥伴中心內的封裝，然後下載並安裝套件更新的應用程式中撰寫程式碼。
+description: 瞭解如何在合作夥伴中心將套件標示為必要, 並在您的應用程式中撰寫程式碼以下載及安裝套件更新。
 ms.date: 04/04/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fc5fca95ca475444792fb0209a936bdfc64cb3c6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cb1ac05bdc5dcaaf31074f1b89e5bbb35e4f850d
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372354"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682721"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>從 Microsoft Store 下載與安裝套件更新
 
-從 Windows 10 版本 1607 開始，您可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 類別的方法，以程式設計方式檢查 Microsoft Store 中目前 app 的套件更新，以及下載並安裝更新的套件。 您也可以查詢您已標記為必要項目，在合作夥伴中心，並在您的應用程式中停用功能，強制更新安裝之前的套件。
+從 Windows 10 版本 1607 開始，您可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 類別的方法，以程式設計方式檢查 Microsoft Store 中目前 app 的套件更新，以及下載並安裝更新的套件。 您也可以在合作夥伴中心查詢已標示為必要的套件, 並在安裝強制更新之前停用應用程式中的功能。
 
-在 Windows 10 版本 1803 中導入的其他[StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)方法可讓您下載及以無訊息方式安裝套件更新（不向使用者顯示 UI 通知）、解除安裝[選用套件](optional-packages.md)，以及取得 app 下載和安裝佇列中套件的資訊。
+在 Windows 10 版本 1803 中導入的其他[StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)方法可讓您下載及以無訊息方式安裝套件更新（不向使用者顯示 UI 通知）、解除安裝[選用套件](/windows/msix/package/optional-packages)，以及取得 app 下載和安裝佇列中套件的資訊。
 
 這些功能可協助您使用 Microsoft Store 中的 App 最新版本、選用套件及相關服務，自動讓您的使用者保持最新狀態。
 
@@ -26,7 +26,7 @@ ms.locfileid: "66372354"
 此程式碼範例示範如何使用[GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync)方法來探索 Microsoft Store 中的所有可用套件更新，然後呼叫[RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync)方法下載並安裝更新。 使用此方法來下載並安裝更新，作業系統會在下載更新之前顯示對話方塊，徵求使用者同意。
 
 > [!NOTE]
-> 這些方法支援應用程式的所需和[選用套件](optional-packages.md)。 選用套件相當適合用於附加可下載內容 (DLC)、根據大小限制將大型應用程式進行分割，或是傳送與您核心應用程式分離的額外內容。 請參閱 [Windows 開發人員支援](https://developer.microsoft.com/windows/support)，以取得將使用選用套件 (包括 DLC 附加內容) 的應用程式提交至 Microsoft Store 的權限。
+> 這些方法支援應用程式的所需和[選用套件](/windows/msix/package/optional-packages)。 選用套件相當適合用於附加可下載內容 (DLC)、根據大小限制將大型應用程式進行分割，或是傳送與您核心應用程式分離的額外內容。 請參閱 [Windows 開發人員支援](https://developer.microsoft.com/windows/support)，以取得將使用選用套件 (包括 DLC 附加內容) 的應用程式提交至 Microsoft Store 的權限。
 
 此程式碼範例假設：
 
@@ -193,14 +193,14 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>強制性套件更新
 
-當您在合作夥伴中心建立封裝提交應用程式為目標的 Windows 10 版本 1607年或更新版本，您可以[標示為強制性封裝](../publish/upload-app-packages.md#mandatory-update)以及日期和時間會變得必要。 當設定此屬性，且 App 發現有套件更新可供使用時，App 就可以判斷更新套件是否為強制，並變更其行為，直到安裝更新為止 (例如，App 可以停用功能)。
+當您在合作夥伴中心針對以 Windows 10 1607 版或更新版本為目標的應用程式建立套件提交時, 您可以[將套件標示為](../publish/upload-app-packages.md#mandatory-update)必要, 並將其變成強制的日期和時間。 當設定此屬性，且 App 發現有套件更新可供使用時，App 就可以判斷更新套件是否為強制，並變更其行為，直到安裝更新為止 (例如，App 可以停用功能)。
 
 > [!NOTE]
 > Microsoft 並未強迫建立套件更新的強制狀態，作業系統也不會提供 UI 來指示使用者必須安裝強制性應用程式更新。 開發人員必須刻意使用強制性設定，以便在程式碼中實施強制性應用程式更新。  
 
 將套件提交標記為強制性：
 
-1. 登入[合作夥伴中心](https://partner.microsoft.com/dashboard)並瀏覽至您的應用程式的 [概觀] 頁面。
+1. 登入[合作夥伴中心](https://partner.microsoft.com/dashboard), 並流覽至您應用程式的 [總覽] 頁面。
 2. 按一下提交的名稱，其中包含您想要變成強制性的套件更新。
 3. 瀏覽到提交的 **\[套件\]** 頁面。 在此頁面底部附近選取 **\[使此更新變成強制性\]** ，然後選擇套件更新變成強制性的日期和時間。 這個選項適用於提交中的所有 UWP 套件。
 
@@ -326,7 +326,7 @@ private void HandleMandatoryPackageError()
 
 ## <a name="uninstall-optional-packages"></a>解除安裝選用套件
 
-從 Windows 10 版本 1803 起，您可以使用[RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync)或[RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync)方法解除安裝目前應用程式的[選用套件](optional-packages.md)（包括 DLC 套件）。 例如，如果您有透過選用套件安裝內容的應用程式，可能會想要提供 UI，讓使用者解除安裝選用套件以釋放磁碟空間。
+從 Windows 10 版本 1803 起，您可以使用[RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync)或[RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync)方法解除安裝目前應用程式的[選用套件](/windows/msix/package/optional-packages)（包括 DLC 套件）。 例如，如果您有透過選用套件安裝內容的應用程式，可能會想要提供 UI，讓使用者解除安裝選用套件以釋放磁碟空間。
 
 下列程式碼範例示範如何呼叫 [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync)。 此範例假設：
 * 程式碼檔案含有 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空間的 **using** 陳述式。
@@ -463,4 +463,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## <a name="related-topics"></a>相關主題
 
-* [選用套件及相關集合的製作](optional-packages.md)
+* [選用套件及相關集合的製作](/windows/msix/package/optional-packages)
