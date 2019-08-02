@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml 群島
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 07d2c957dff61a8b1ec9f9541ffeb9706da8a0e9
-ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
+ms.openlocfilehash: 4d504686e2ff50700e3f4bf242ef5d16be814894
+ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303574"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729488"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：使用 XAML Islands 新增 UWP InkCanvas 控制項
 
@@ -29,7 +29,7 @@ ms.locfileid: "68303574"
 
     ![Visual Studio 中的 [管理 NuGet 套件] 功能表](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
 
-2. 在 [ **NuGet 套件管理員**] 視窗中, 按一下 **[流覽]** 。 選取 [**包含發行**前版本] 選項, `Microsoft.Toolkit.Wpf.UI.Controls`搜尋套件, 然後安裝結果中所顯示之套件的最新預覽版本。 請確定您安裝的是版本 6.0.0-preview 6.4 或更新版本。
+2. 在 [ **NuGet 套件管理員**] 視窗中, 按一下 **[流覽]** 。 選取 [**包含發行**前版本] 選項, `Microsoft.Toolkit.Wpf.UI.Controls`搜尋套件, 然後安裝結果中所顯示之套件的最新預覽版本。 請確定您安裝的是版本 6.0.0-preview7 或更新版本。
 
     > [!NOTE]
     > 此套件包含在 WPF 應用程式中裝載 UWP XAML Islands 的所有必要基礎結構, 包括**InkCanvas**包裝的 uwp 控制項。 名`Microsoft.Toolkit.Forms.UI.Controls`為的類似套件適用于 Windows Forms 應用程式。
