@@ -39,7 +39,13 @@
     - name: 使用 XAML 的版面配置
       href: layout/layouts-with-xaml.md
     - name: 顯示多重檢視
-      href: layout/show-multiple-views.md
+      items:
+        - name: 顯示多重檢視
+          href: layout/show-multiple-views.md
+        - name: 使用 AppWindow
+          href: layout/app-window.md
+        - name: 使用 ApplicationView
+          href: layout/application-view.md
     - name: 對齊、邊界及邊框間距
       href: layout/alignment-margin-padding.md
     - name: 窗格
@@ -163,7 +169,7 @@
           href: controls-and-patterns/navigationview.md
         - name: 樞紐分析
           href: controls-and-patterns/pivot.md
-    - name: People
+    - name: 人員
       items:
         - name: 連絡人卡片
           href: controls-and-patterns/contact-card.md
@@ -193,11 +199,11 @@
       href: controls-and-patterns/search.md
     - name: 狀態與資訊
       items:
-        - name: 進度
+        - name: 今日
           href: controls-and-patterns/progress-controls.md
         - name: 工具提示
           href: controls-and-patterns/tooltips.md
-    - name: 文字
+    - name: Text
       items:
         - name: 概觀
           href: controls-and-patterns/text-controls.md
@@ -283,7 +289,7 @@
           href: motion/storyboarded-animations.md
         - name: 主要畫面格和 Easing 函式動畫
           href: motion/key-frame-and-easing-function-animations.md
-- name: 命令介面
+- name: 殼層
   items:
     - name: 磚
       href: shell/tiles-and-notifications/creating-tiles.md
@@ -482,7 +488,7 @@
       href: input/guidelines-for-rotation.md
     - name: 選取文字和影像
       href: input/guidelines-for-textselection.md
-    - name: 目標預測
+    - name: 目標
       href: input/guidelines-for-targeting.md
     - name: 視覺化回饋
       href: input/guidelines-for-visualfeedback.md
