@@ -6,12 +6,12 @@ keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c1979f8e8232ee3bfd2e2961307608bf8da7836
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 09f115cad236582ccb0008c2274a7472ed4c0d55
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714151"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682660"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -60,7 +60,7 @@ ms.locfileid: "67714151"
 
 裝置系列特定的資訊
 
--   在傳統型裝置系列上：您可以執行使用套件 ("Add-AppDevPackage.ps1") 建立的 Windows PowerShell 指令碼，來安裝應用程式套件 (.appx) 以及執行該應用程式所需的任何憑證。 如需詳細資訊，請參閱[封裝 UWP app](../packaging/packaging-uwp-apps.md)。
+-   在傳統型裝置系列上：您可以執行使用套件 ("Add-AppDevPackage.ps1") 建立的 Windows PowerShell 指令碼，來安裝應用程式套件 (.appx) 以及執行該應用程式所需的任何憑證。 如需詳細資訊，請參閱[封裝 UWP app](/windows/msix/package/packaging-uwp-apps)。
 
 -   在行動裝置系列上：如果已經安裝所需的憑證，您便可以點選檔案來安裝任何透過電子郵件傳送給您或位於 SD 記憶卡上的 .appx。
 

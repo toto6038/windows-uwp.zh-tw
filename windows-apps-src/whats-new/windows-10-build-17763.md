@@ -6,18 +6,18 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d393ee92be8768861da0fb0783372c8bafc6f815
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: faf3cdc1a3fab3bd0332b995c25b081d296a55bb
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821115"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682773"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員的 Windows 10 (組建 17763) 的新功能
 
 Windows 10 組建 17763 (也稱為 2018 年 10 月更新或版本 1809) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
-這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指引的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 17763 API 變更](windows-10-build-17763-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
+這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指導方針的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 17763 API 變更](windows-10-build-17763-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
 
 ## <a name="design--ui"></a>設計與 UI
 
@@ -51,7 +51,7 @@ Microsoft Learn | 全新的 [Microsoft Learn 網站](https://www.microsoft.com/l
 記事本 | [[記事本] 已更新](https://aka.ms/ant-man) \(英文\)，新增了縮放、循環尋找/取代，以及 Unix/Linux (LF) 和 Mac (CR) 行尾結束符號的支援。
 Project Rome | [Project Rome](https://docs.microsoft.com/windows/project-rome/) 現在可以在支援的平台和 SDK 之間提供一致的程式設計體驗。 </br>  新的 [Microsoft Graph 通知](https://developer.microsoft.com/graph/docs/concepts/notifications-concept-overview)使用 Project Rome 為您的應用程式提供以人為中心的跨平台通知平台。
 螢幕剪取 | 新的 [URI 配置](../launch-resume/launch-screen-snipping.md)允許您的應用程式以程式設計方式開啟新的剪取，或針對註釋啟動帶有特定影像的剪取與繪圖應用程式。
-傳統型應用程式中的 UWP 控制項 | Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用程式中使用 UWP 控制項。 這表示您可以使用只能透過 UWP 控制項 (例如 Windows Ink) 和支援 Fluent Design 系統的控制項存取的最新 Windows 10 UI 功能，來增強現有傳統型應用程式的外觀與風格和功能。 這項功能稱為 *XAML Islands*。 </br> 我們提供了幾種在應用程式中使用 XAML Islands 的方法，具體取決於您使用的應用程式平台。 WPF 和 Windows Forms 應用程式可以使用 [Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中的一組控制項，這些控制項提供設計導向的開發經驗。 C++ Win32 應用程式必須使用 [Windows.UI.Xaml.Hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting) 命名空間中的 *UWP XAML 裝載 API*。 如需詳細資訊，請參閱[傳統型應用程式中的 UWP 控制項](../xaml-platform/xaml-host-controls.md)。 </br> **注意：** 啟用 XAML Islands 的 API 和控制項目前可作為開發人員預覽提供使用。 雖然我們鼓勵您現在在自己的原型程式碼中試用它們，但我們不建議您此時在實際程式碼中使用它們。
+傳統型應用程式中的 UWP 控制項 | Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用程式中使用 UWP 控制項。 這表示您可以使用只能透過 UWP 控制項 (例如 Windows Ink) 和支援 Fluent Design 系統的控制項存取的最新 Windows 10 UI 功能，來增強現有傳統型應用程式的外觀與風格和功能。 這項功能稱為 *XAML Islands*。 </br> 我們提供了幾種在應用程式中使用 XAML Islands 的方法，具體取決於您使用的應用程式平台。 WPF 和 Windows Forms 應用程式可以使用 [Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中的一組控制項，這些控制項提供設計導向的開發經驗。 C++ Win32 應用程式必須使用 [Windows.UI.Xaml.Hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting) 命名空間中的 *UWP XAML 裝載 API* 。 如需詳細資訊，請參閱[傳統型應用程式中的 UWP 控制項](../xaml-platform/xaml-host-controls.md)。 </br> **注意：** 啟用 XAML Islands 的 API 和控制項目前可作為開發人員預覽提供使用。 雖然我們鼓勵您現在在自己的原型程式碼中試用它們，但我們不建議您此時在實際程式碼中使用它們。
 Windows Machine Learning | [Windows Machine Learning](https://docs.microsoft.com/windows/ai/) 已正式推出，可為尖端機器學習模型提供更快速的評估和支援。 為了支援想要將其整合到應用程式中的開發人員，我們建立了一個新的文件網站，其中包含幾個全新和更新的資源： </br> * [教學課程：建立 Windows Machine Learning 傳統型應用程式 (C++)](https://docs.microsoft.com/windows/ai/get-started-desktop)：本教學課程會示範如何建置簡單的 Windows ML 傳統型應用程式。 </br> * [教學課程：建立 Windows Machine Learning UWP 應用程式 (C#)](https://docs.microsoft.com/windows/ai/get-started-uwp)：在此逐步教學課程中使用 Windows ML 建立您的第一個 UWP 應用程式。 </br> * [Windows.AI.MachineLearning 命名空間](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)：API 參考已針對最新版本的 Windows 10 SDK 進行更新，開發人員現在可以將此 API 用於 Win32 與 UWP 應用程式。
 Windows Mixed Reality | 如果顯示器硬體支援，開發人員現在可以要求硬體保護的後端緩衝區紋理，允許應用程式使用來自 PlayReady 等來源的硬體保護內容。 透過使用 [Windows.Graphics.Holographic.HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera) 的新屬性以及透過 [Windows.Graphics.Holographic.HolographicQuadLayerUpdateParameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicquadlayerupdateparameters) 的 Quad 圖層，可以為主要圖層提供硬體保護支援及設定。
 
@@ -83,7 +83,7 @@ WebVR | 我們對 [WebVR 開發人員指南](https://docs.microsoft.com/microsof
 MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview) 是新的 Windows 應用程式封裝格式，為所有 Windows 應用程式提供現代化的封裝體驗。 開放原始碼的 MSIX 格式保留現有的封裝功能，同時提供現代化的部署功能。
 MSIX 封裝工具 | 新的 [MSIX 封裝工具](https://docs.microsoft.com/windows/msix/mpt-overview)) 允許您以 MSIX 格式重新封裝您現有的傳統型應用程式，即使您無法存取其原始程式碼。 它可以在命令列中執行，也可以透過其互動式 UI 執行。
 適用於 MSIX 的 Desktop App Converter 支援 | 您可以使用 [Desktop App Converter](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)，藉由使用 `-MakeMSIX` 參數輸出 MSIX 套件。
-適用於 MSIX 的 MakeAppx.exe 工具支援 | 您可以使用 MakeAppx.exe 工具為 UWP 應用程式或傳統型應用程式建立 MSIX 套件。 此工具包含在 Windows 10 SDK，而且可以從命令提示字元或指令碼檔案使用。 </br> 針對 UWP 應用程式，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。 </br> 針對傳統型應用程式，請參閱[手動封裝傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)。
+適用於 MSIX 的 MakeAppx.exe 工具支援 | 您可以使用 MakeAppx.exe 工具為 UWP 應用程式或傳統型應用程式建立 MSIX 套件。 此工具包含在 Windows 10 SDK，而且可以從命令提示字元或指令碼檔案使用。 </br> 針對 UWP 應用程式，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](/windows/msix/package/create-app-package-with-makeappx-tool)。 </br> 針對傳統型應用程式，請參閱[手動封裝傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)。
 套件支援架構 | [套件支援架構](https://docs.microsoft.com/windows/msix/package-support-framework-overview)是開放原始碼套件，可在您無法存取原始碼時，協助將修正程式套用到現有的傳統型應用程式，使其可以在 MSIX 容器中執行。
 Store 分析 API | [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 現在包含下列新方法： </br> * [取得 UWP 應用程式的深入解析資料](../monetize/get-insights-data-for-your-app.md) </br> * [取得傳統型應用程式的深入解析資料](../monetize/get-insights-data-for-your-desktop-app.md) </br>* [取得傳統型應用程式的升級區塊](../monetize/get-desktop-block-data.md) </br> * [取得傳統型應用程式的升級區塊詳細資料](../monetize/get-desktop-block-data-details.md)
 

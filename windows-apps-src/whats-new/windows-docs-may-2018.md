@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 5 月, b
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9adf5a80595e00a30098044536d1ecfe4fd62279
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: d8b72501c298f3814092ec4567a5fb608c4bb88f
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820488"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682768"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>2018 年 5 月 Windows 開發人員文件的新增功能
 
@@ -20,7 +20,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ## <a name="features"></a>功能
 
-### <a name="motion-in-fluent-design"></a>Fluent Design 中的動作
+### <a name="motion-in-fluent-design"></a>Fluent Design 動作
 
 Fluent Design 動作系統的使用正在不斷發展，建立在時間、簡化、方向性和重力基本概念之上。 套用這些基本概念將有助於引導使用者使用您的應用程式，並通過反映自然世界將他們其與數位體驗連結。 深入了解下列文章：
 
@@ -83,7 +83,7 @@ MSIX 封裝格式是開放原始碼格式，讓合作夥伴能使用其工具和
 
 ### <a name="optional-packages-with-executable-code"></a>具可執行程式碼的選用套件
 
-您應用程式中的選擇性套件現在可以包含可執行檔 C# 程式碼。 [了解如何使用 Visual Studio 設定選擇性附加元件套件，以支援您的主要應用程式套件。](../packaging/optional-packages-with-executable-code.md)
+您應用程式中的選擇性套件現在可以包含可執行檔 C# 程式碼。 [了解如何使用 Visual Studio 設定選擇性附加元件套件，以支援您的主要應用程式套件。](/windows/msix/package/optional-packages)
 
 ### <a name="page-transitions"></a>頁面轉換
 
@@ -99,7 +99,7 @@ Sets 功能適用於 Windows 測試人員預覽組建。 使用 Sets 功能時�
 
 ## <a name="developer-guidance"></a>開發人員指引
 
-### <a name="get-started"></a>開始使用
+### <a name="get-started"></a>立即開始
 
 我們已使用新的學習途徑來重振我們的開始使用內容。 這些新主題旨在為新的 Windows 10 開發人員提供其想完成的一些常見工作的相關資訊。 這些主題不是教學課程，並不會提供隨手可得的逐步解說，但會指出現有文件的位置及其使用方式。 請查看全新面貌的[開始撰寫程式碼](../get-started/create-uwp-apps.md)頁面，或瀏覽每個個別的學習途徑：
 
@@ -124,7 +124,7 @@ Sets 功能適用於 Windows 測試人員預覽組建。 使用 Sets 功能時�
 
 C++/WinRT 是撰寫與使用 Windows 執行階段 API 的新方法。 它僅在標頭檔案中實作，以及設計用來提供您現代化應用程式功能的第一級存取。 [觀看影片](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be)以了解其運作方式，然後[閱讀開發人員文件](../cpp-and-winrt-apis/index.md)以取得詳細資訊。
 
-### <a name="multi-instance-uwp-apps"></a>多執行個體 UWP 應用程式
+### <a name="multi-instance-uwp-apps"></a>多執行個體的 UWP 應用程式
 
 Windows 現在允許您執行 UWP 應用程式的多個執行個體，而每個執行個體在其自己的個別處理序中執行。 [觀看影片](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be)以了解如何建立支援這項功能的新應用程式，然後[閱讀開發人員文件](../launch-resume/multi-instance-uwp.md)，以取得如何及為何使用這項功能的詳細指引。
 
