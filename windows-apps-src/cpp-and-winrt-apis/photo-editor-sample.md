@@ -5,19 +5,19 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 範例, 應用程式, 相片, 編輯器
 ms.localizationpriority: medium
-ms.openlocfilehash: bbac9d6a6d08d327bf1bf55de5e86cbb1edd51ea
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 92aff51b6e5ba98d0f5fd157dd3a2dd57e861821
+ms.sourcegitcommit: f8c354def02d5c82d195e4f629e6470110268223
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745193"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68623373"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>Photo Editor C++/WinRT 範例應用程式
 
 > [!NOTE]
 > 此範例是以 Windows 10 版本 1903 (10.0；Build 18362) 和 Visual Studio 2019 為目標並加以測試。 如果您想，您可以使用專案屬性將目標重定為 Windows 10 版本 1809 (10.0；Build 17763)，以及/或以 Visual Studio 2017 開啟範例。
 
-您可以從 [Photo Editor C++/WinRT 範例應用程式](https://github.com/Microsoft/Windows-appsample-photo-editor) GitHub 存放庫複製或下載範例應用程式。
+如需複製或下載範例應用程式，請參閱程式碼範例庫上的 [Photo Editor C++/WinRT 範例應用程式](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/)。
 
 Photo Editor 應用程式是通用 Windows 平台 (UWP) UWP 範例應用程式，展示使用 [C++/WinRT](intro-to-using-cpp-with-winrt.md) 語言投影進行開發。 範例應用程式可讓您從**圖片**庫擷取相片，然後以混合的相片效果編輯所選的影像。 在範例的原始程式碼中，您會看到一些常見的做法&mdash;例如使用 C++/WinRT 投影執行[資料繫結](binding-property.md)與[非同步動作和作業](concurrency.md)&mdash;。 以下是一些範例所展示的特定功能。
 
