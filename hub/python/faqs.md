@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: python, windows 10, microsoft, pip, .py, 檔案路徑, PYTHONPATH, python 部署, python 封裝
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: fd08061858fc97f1427e94c6a92a4c3a9511967d
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: d944e16dc96f78efdece715778a13cd3fb2d9dbd
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473653"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867351"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>在 Windows 上使用 Python 的常見問題
 
@@ -29,11 +29,21 @@ ms.locfileid: "68473653"
 
 [請遵循 StackOverflow 上的討論](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)。
 
-### <a name="what-is-pyexe"></a>什麼是 .py？
+## <a name="what-is-pyexe"></a>什麼是 .py？
 
 您的電腦上可能會安裝多個版本的 Python, 因為您正在處理不同類型的 Python 專案。 因為這些全都使用`python`命令, 所以您所使用的 Python 版本可能不明顯。 作為標準, 建議使用`python3`命令 (或`python3.7`選取特定版本)。
 
 [.Py 啟動器](https://docs.python.org/3/using/windows.html#launcher)會自動選取您已安裝的最新 Python 版本。 您也可以使用命令 ( `py -3.7`例如) 來選取特定版本, `py --list`或查看可以使用的版本。 **不過**, 只有在您使用從[Python.org](https://www.python.org/downloads/windows/)安裝的 Python 版本時, .py 啟動器才會生效。當您從 Microsoft Store 安裝 Python 時, `py` **不會包含**命令。 針對 Linux、macOS、WSL 和 Microsoft Store 版本的 Python, 您應該使用`python3` (或`python3.7`) 命令。
+
+## <a name="why-does-running-pythonexe-open-the-microsoft-store"></a>為什麼執行 python .exe 會開啟 Microsoft Store？
+
+為了協助新使用者尋找 Python 的良好安裝, 我們新增了 Windows 的快捷方式, 讓您直接前往 Microsoft Store 中發佈的最新社區套件版本。 此套件可以輕鬆地安裝, 而不需要系統管理員許可權, 且會`python`將`python3`預設值和命令取代為實際的。
+
+執行具有任何命令列引數的快捷方式可執行檔將會傳回錯誤碼, 表示尚未安裝 Python。 這是為了防止批次檔和腳本在可能非預期的情況下開啟存放區應用程式。
+
+如果您使用來自[python.org](https://www.python.org/downloads/windows/)的安裝程式來安裝 Python, 並選取 [新增至路徑] 選項, `python`新的命令會優先于快捷方式。 請注意, 其他安裝程式`python`可能會以比內建快捷方式_更低_的優先順序來新增。
+
+您可以停用快捷方式而不安裝 Python, 方法是從 [開始] 開啟 [管理應用程式執行別名], 尋找 [應用程式安裝程式] Python 專案, 並將其切換為 [關閉]。
 
 ## <a name="why-dont-file-paths-work-in-python-when-i-copy-paste-them"></a>當我複製並貼上檔案路徑時, 為何不能在 Python 中使用它們？
 

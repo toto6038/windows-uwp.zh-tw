@@ -1,26 +1,26 @@
 ---
 title: Windows 10 中的協助工具
-description: 此頁面提供您開始開發可存取的 Windows 應用程式的資訊。
+description: 本頁面提供的資訊可讓您開始開發可存取的 Windows 應用程式。
 ms.topic: article
 ms.date: 04/03/2019
 ms.localizationpriority: medium
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-keywords: 在 Windows 10 中，協助工具，建置可存取的 win32 應用程式，建置可存取的 UWP 應用程式，建置可存取的 WPF 應用程式，建置可存取的 WinForms 應用程式的協助工具
-ms.openlocfilehash: b818b99ebf896b2d2de219d2eedbfd101f3a5caa
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+keywords: Windows 10 中的協助工具、建立可存取的 win32 應用程式、建立可存取的 UWP 應用程式、建立可存取的 WPF 應用程式、建立可存取的 WinForms apps
+ms.openlocfilehash: bb82103c030c436655630a37678bbec11e588f61
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214999"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867419"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的協助工具
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![hero-accessibility-bar-smaller .png](images/hero-accessibility-bar-smaller.png)
 
-可存取的應用程式設計為內含的加強使用性的多人，做為可能，包括那些與行動不便、 個人喜好設定、 特定的工作風格，或環境 （例如推動烹飪、 探照燈，等等） 的條件約束。
+可存取的應用程式的設計目的, 是要藉由改善最多人的可用性, 包括殘障、個人喜好設定、特定的工作樣式, 或環境條件約束 (例如駕駛、烹飪、防眩等等)。
 
-此頁面提供各種不同的 Windows 開發架構適用於開發人員建置 Windows 應用程式，建置工具，例如螢幕助讀程式和放大鏡，以及軟體測試的輔助技術開發人員所支援的協助工具資訊建立用於測試應用程式的自動化指令碼的工程師。
+此頁面提供各種 Windows 開發架構如何為建立 Windows 應用程式的開發人員支援協助工具的相關資訊、輔助技術開發人員建立螢幕閱讀程式和放大鏡等工具, 以及軟體測試建立自動化腳本以測試應用程式的工程師。
 
 ## <a name="platform-specific-documentation"></a>特定平台的文件
 
@@ -28,7 +28,7 @@ ms.locfileid: "66214999"
     :::column:::
         ![Universal Windows Platform (UWP)](images/platform-uwp.png)
 
-        ### Universal Windows Platform (UWP)
+        **Universal Windows Platform (UWP)**
 
         Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
@@ -43,7 +43,7 @@ ms.locfileid: "66214999"
     :::column:::
         ![Win32 platform apps](images/platform-win32.png)
 
-        ### Win32 platform
+        **Win32 platform**
 
         Develop accessible apps and tools on the original platform for C/C++ Windows applications.
 
@@ -68,7 +68,7 @@ ms.locfileid: "66214999"
     :::column:::
         ![WPF platform](images/platform-wpf.png)
 
-        ### Windows Presentation Foundation (WPF)
+        **Windows Presentation Foundation (WPF)**
 
         Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
@@ -91,7 +91,7 @@ ms.locfileid: "66214999"
     :::column:::
         ![Windows Forms platform apps](images/platform-winforms.png)
 
-        ### Windows Forms (WinForms)
+        **Windows Forms (WinForms)**
 
         Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
 

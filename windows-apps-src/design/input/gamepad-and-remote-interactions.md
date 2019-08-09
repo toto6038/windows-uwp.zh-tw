@@ -1,5 +1,5 @@
 ---
-Description: 最佳化您的應用程式，從 Xbox 遊戲台和遠端控制的輸入。
+Description: 將您的應用程式優化, 以從 Xbox 遊戲台和遠端控制輸入。
 title: 遊戲台與遙控器的互動
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
@@ -9,49 +9,49 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1292051362b9751d41b530f6b47f226d36228252
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 440f758e5db8bd77d3f26290eb59d7684e5f87a3
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592803"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867655"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>遊戲台與遙控器的互動
 
 ![鍵盤與遊戲台影像](images/keyboard/keyboard-gamepad.jpg)
 
-***遊戲板、 遠端控制和鍵盤之間共用許多互動體驗***
+***許多互動體驗會在遊戲台、遠端控制和鍵盤之間共用***
 
-建置您的通用 Windows 平台 (UWP) 應用程式，請確定您的應用程式可用且可透過兩種傳統輸入的類型的電腦、 膝上型電腦和平板電腦 （滑鼠、 鍵盤、 觸控及等等），以及您在輸入型別中的互動體驗典型的電視及 Xbox *10 英呎*體驗，例如遊戲台和遠端控制。
+在您的通用 Windows 平臺 (UWP) 應用程式中建立互動體驗, 確保您的應用程式可供使用, 並可透過傳統輸入類型的電腦、膝上型電腦和平板電腦 (滑鼠、鍵盤、觸控等等) 以及輸入類型來存取電視和 Xbox *10 墊腳*的一般經驗, 例如遊戲台和遠端控制。
 
-請參閱[設計 Xbox 和電視節目](../devices/designing-for-tv.md)如需 UWP 應用程式中的一般設計指引*10 英呎*體驗。
+請參閱適用[于 Xbox 和電視的設計](../devices/designing-for-tv.md), 以取得在*10 英尺*體驗中 UWP 應用程式的一般設計指引。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
-在本主題中，我們會討論什麼您應該考慮在您的互動設計 （或什麼不是，為您的平台會尋找之後），並提供指引、 建議和建置 UWP 應用程式，進而順暢，不論使用的建議裝置、 輸入的類型，或使用者的能力和喜好設定。
+在本主題中, 我們將討論您在互動設計中應該考慮的事項 (或者, 如果平臺看起來不到的話), 並提供指引、建議和建議來建立可輕鬆使用的 UWP 應用程式, 而不論裝置、輸入類型或使用者能力和喜好設定。
 
-營收，您的應用程式應為直覺式且容易使用中*2 英呎*環境，因為它處於*10 英呎*環境 （反之亦然）。 支援使用者的慣用的裝置，讓 UI 專注清楚且 unmistakable、 排列內容，因此導覽是一致且可預測，並讓使用者有最短的路徑可能要做什麼動作。
+重點是, 您的應用程式在*2 英尺*的環境中應該是直覺且便於使用, 因為它是在*10 英尺*的環境中 (反之亦然)。 支援使用者慣用的裝置、讓 UI 焦點清楚並 unmistakable、排列內容, 讓導覽保持一致且可預測, 以及為使用者提供最短的路徑來進行想要的動作。
 
 > [!NOTE]
 > 本主題中大部分的程式碼片段都是以 XAML/C# 所撰寫，不過，原則和概念則適用於所有 UWP app。 如果您正在開發適用於 Xbox 的 HTML/JavaScript UWP app，請查看 GitHub 上絕佳的 [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki) 媒體櫃。
 
 
-## <a name="optimize-for-both-2-foot-and-10-foot-experiences"></a>2 英呎和 10 英呎的使用體驗最佳化
+## <a name="optimize-for-both-2-foot-and-10-foot-experiences"></a>針對2英尺和10英尺體驗優化
 
-最少，我們建議您測試您的應用程式，以確保它們在 2 英呎和 10 英呎案例中正常運作，而且所有功能都都可探索且可存取 Xbox[遊戲台和遠端控制](#gamepad-and-remote-control)。
+建議您至少測試應用程式, 以確保它們在2英尺和10英尺的案例中都能正常運作, 而且所有功能都可以探索並可供 Xbox[遊戲和遠端控制](#gamepad-and-remote-control)使用。
 
-以下是一些您可以最佳化您的應用程式，適用於 2 英呎和 10 英呎的體驗，以及與所有輸入裝置 （每個連結至本主題中的適當區段） 的方法。
+以下是一些其他方法, 可讓您將應用程式優化, 以用於2英尺和10英尺的體驗, 以及所有輸入裝置 (每個都連結到本主題的適當章節)。
 
 > [!NOTE]
-> 因為 Xbox 遊戲台和擃勂厞支援許多 UWP 鍵盤行為和體驗，這些建議是適用於這兩個輸入的類型。 請參閱[鍵盤互動](keyboard-interactions.md)如需詳細資訊鍵盤。
+> 由於 Xbox 遊戲台和遠端控制支援許多 UWP 鍵盤行為和經驗, 因此這些建議適用于這兩種輸入類型。 如需更詳細的鍵盤資訊, 請參閱[鍵盤互動](keyboard-interactions.md)。
 
 | 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
-| [Xy 圖的焦點瀏覽和互動](#xy-focus-navigation-and-interaction) | **Xy 圖的焦點瀏覽**可讓使用者在瀏覽您的應用程式 UI。 不過，這限制使用者只能向上、向下、向左和向右瀏覽。 本節概述處理此功能和其他考量的建議。 |
-| [滑鼠模式](#mouse-mode)|Xy 圖的焦點瀏覽並不實用，或甚至可以，針對某些類型的應用程式，例如對應或繪圖和繪製應用程式。 在這些情況下，**滑鼠模式**可讓使用者自由瀏覽與遊戲台或遠端控制，就像滑鼠的電腦上。|
-| [焦點視覺效果](#focus-visual)  | 焦點視覺效果會反白顯示目前焦點所在的 UI 元素的框線。 這可協助快速找出的 UI 瀏覽或互動的使用者。  |
-| [焦點 engagement](#focus-engagement) | 焦點 engagement 需要使用者按下**A/選取**遊戲台或 UI 項目有焦點才能與其互動時的遠端控制 按鈕。 |
-| [硬體按鈕](#hardware-buttons) | 遠端控制與遊戲台提供非常不同的按鈕和組態。 |
+| [XY 焦點導覽和互動](#xy-focus-navigation-and-interaction) | **XY 焦點導覽**可讓使用者流覽應用程式的 UI。 不過，這限制使用者只能向上、向下、向左和向右瀏覽。 本節概述處理此功能和其他考量的建議。 |
+| [滑鼠模式](#mouse-mode)|對於某些類型的應用程式 (例如地圖或繪製和繪製應用程式) 而言, XY 焦點導覽並不實用, 甚至可能。 在這些情況下,**滑鼠模式**可讓使用者自由流覽遊戲台或遙控器, 就像在電腦上的滑鼠一樣。|
+| [焦點視覺效果](#focus-visual)  | 焦點視覺效果是強調目前焦點 UI 元素的框線。 這可協助使用者快速地識別他們導覽的 UI, 或與其互動。  |
+| [專注參與](#focus-engagement) | 當 UI 元素具有焦點以與其互動時, 焦點參與需要使用者在遊戲台或遠端控制上按**A/Select**按鈕。 |
+| [硬體按鈕](#hardware-buttons) | 遊戲台和遠端控制提供非常不同的按鈕和設定。 |
 
 ## <a name="gamepad-and-remote-control"></a>遊戲台與遙控器
 
@@ -100,7 +100,7 @@ UWP 會自動將現有的鍵盤輸入行為對應到遊戲台與遙控器輸入�
 | Enter                 | A/選取按鈕                       |
 | ESC                | B/返回按鈕*                        |
 
-\*如果未[KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)也不[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) B 按鈕的事件由應用程式，處理[SystemNavigationManager.BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested)事件引發之後，它應該重新產生應用程式內的導覽。 不過，您必須自行實作此功能，如下列程式碼片段所示：
+\*當應用程式未處理 B 按鈕的[KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)或[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)事件時, 將會引發[SystemNavigationManager BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested)事件, 這應該會導致應用程式內的回溯導覽。 不過，您必須自行實作此功能，如下列程式碼片段所示：
 
 ```csharp
 // This code goes in the MainPage class
@@ -158,11 +158,11 @@ Xbox One 上的 UWP App 也支援透過按下 [功能表] 按鈕來開啟操作�
 | 互動   | 鍵盤/滑鼠   | 遊戲台      | 內建於︰  | 建議用於： |
 |---------------|------------|--------------|----------------|------------------|
 | 向上一頁/向下一頁  | 向上一頁/向下一頁 | LT 鍵/RT 鍵 | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支援垂直捲動的檢視
-| 向左一頁/向右一頁 | 無 | LB 鍵/RB 鍵 | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支援水平捲動的檢視
-| 放大/縮小        | CTRL +/- | LT 鍵/RT 鍵 | 無 | `ScrollViewer`支援放大和縮小的檢視 |
-| 開啟/關閉瀏覽窗格 | 無 | View | 無 | 瀏覽窗格​​ |
-| [搜尋](#search-experience) | 無 | Y 按鈕 | 無 | App 中主要搜尋功能的快速鍵 |
-| [開啟內容功能表](#commandbar-and-contextflyout) | 按一下滑鼠右鍵 | 功能表按鈕 | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | 操作功能表 |
+| 向左一頁/向右一頁 | None | LB 鍵/RB 鍵 | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支援水平捲動的檢視
+| 放大/縮小        | CTRL +/- | LT 鍵/RT 鍵 | None | `ScrollViewer`, 支援放大和縮小的視圖 |
+| 開啟/關閉瀏覽窗格 | None | View | None | 瀏覽窗格​​ |
+| 搜尋 | None | Y 按鈕 | None | App 中主要搜尋功能的快速鍵 |
+| [開啟內容功能表](#commandbar-and-contextflyout) | 按一下滑鼠右鍵 | 功能表按鈕 | [CoNtextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | 操作功能表 |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>XY 焦點瀏覽和互動
 
@@ -284,15 +284,15 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ### <a name="commandbar-and-contextflyout"></a>CommandBar 和 ContextFlyout
 
-使用時[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)，請記住捲動清單，如中所述的問題[問題：UI 項目位於長的捲動清單/方格之後](#problem-ui-elements-located-after-long-scrolling-list-grid)。 下列影像顯示一個 `CommandBar` 位於清單/格線下方的 UI 配置。 使用者必須一直向下捲動完整個清單/格線，才能到達 `CommandBar`。
+使用[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)時, 請記住透過清單進行滾動的問題, 如問題中[所述:位於長時間滾動清單/方格](#problem-ui-elements-located-after-long-scrolling-list-grid)後的 UI 元素。 下列影像顯示一個 `CommandBar` 位於清單/格線下方的 UI 配置。 使用者必須一直向下捲動完整個清單/格線，才能到達 `CommandBar`。
 
 ![CommandBar 位於清單/格線的底部](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
-如果您將放`CommandBar`*上述*清單/格線嗎？ 雖然使用者在向下捲動清單/格線後，必須捲動回去才能到達 `CommandBar`，但是比起前一種設定，這種設定的瀏覽程度會少一些。 請注意，這是假設您的 app 最初的焦點是放置在 `CommandBar` 旁邊或上方；如果最初的焦點是在清單/格線下方，此方法也同樣不佳。 如果這些 `CommandBar` 項目是不需要經常存取的全域動作項目 (例如 [同步] 按鈕)，則可接受將它們置於清單/格線的上方。
+如果您將放在`CommandBar`清單/方格*上方*, 該怎麼辦？ 雖然使用者在向下捲動清單/格線後，必須捲動回去才能到達 `CommandBar`，但是比起前一種設定，這種設定的瀏覽程度會少一些。 請注意，這是假設您的 app 最初的焦點是放置在 `CommandBar` 旁邊或上方；如果最初的焦點是在清單/格線下方，此方法也同樣不佳。 如果這些 `CommandBar` 項目是不需要經常存取的全域動作項目 (例如 [同步] 按鈕)，則可接受將它們置於清單/格線的上方。
 
 雖然您無法垂直堆疊 `CommandBar` 的項目，但是如果將這些項目依捲動方向放置 (例如，放在垂直捲動清單的左邊或右邊，或是放在水平捲動清單的頂端或底部) 對您的 UI 配置而言可行，則這可能會是您想要考慮使用的另一個選項。
 
-如果您的 App 有所含項目必須已可供使用者存取的 `CommandBar`，您可以考慮將這些項目放在 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 內而將它們從 `CommandBar` 中移除。 `ContextFlyout` 是的屬性[UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) ，而且[操作功能表](../controls-and-patterns/dialogs-and-flyouts/index.md)該項目與相關聯。 在電腦上，當您在具有 `ContextFlyout` 的元素上按一下滑鼠右鍵時，該操作功能表就會出現。 在 Xbox One 上，則是當您在焦點位於這類元素上的情況下按「功能表」按鈕時，會出現該操作功能表。
+如果您的 App 有所含項目必須已可供使用者存取的 `CommandBar`，您可以考慮將這些項目放在 [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) 內而將它們從 `CommandBar` 中移除。 `ContextFlyout`是[UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)的屬性, 而且是與該元素相關聯的[內容功能表](../controls-and-patterns/dialogs-and-flyouts/index.md)。 在電腦上，當您在具有 `ContextFlyout` 的元素上按一下滑鼠右鍵時，該操作功能表就會出現。 在 Xbox One 上，則是當您在焦點位於這類元素上的情況下按「功能表」按鈕時，會出現該操作功能表。
 
 ### <a name="ui-layout-challenges"></a>UI 配置挑戰
 
@@ -305,13 +305,13 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 以下是一個假想的房地產 App，此 App 顯示可供銷售的房屋清單、地圖、房地產描述，以及其他資訊。 這個 app 有三個挑戰，您可以使用下列技術克服︰
 
-- [UI 重新整理](#ui-rearrange)
-- [焦點 engagement](#engagement)
+- [UI 重新排列](#ui-rearrange)
+- [專注參與](#engagement)
 - [滑鼠模式](#mouse-mode)
 
 ![假造的房地產 app](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png)
 
-#### 問題：在長時間捲動清單/方格的 UI 項目 <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
+#### 問題：位於長時間滾動清單/格線之後的 UI 元素<a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
 下圖中所示的屬性 [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 是一份很長的捲動清單。 如果 `ListView` 上「不」需要[佔用](#focus-engagement)，當使用者瀏覽到清單，焦點會放在清單中的第一個項目。 如果使用者要到達 [上一個] 或 [下一個] 按鈕時，他們必須瀏覽通過清單中的所有項目。 要求使用者瀏覽整個清單會非常痛苦&mdash;如果清單夠短，這還算可以接受&mdash;，所以您可能要考慮其他方案。
 
@@ -319,7 +319,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 #### <a name="solutions"></a>解決方案
 
-**UI 重新整理 <a name="ui-rearrange"></a>**
+**UI 重新排列<a name="ui-rearrange"></a>**
 
 除非您最初的焦點是放在頁面底部，否則將 UI 元素放在長捲動清單上方比放在下方更容易存取。
 如果這個新的配置適用於其他裝置，請針對所有裝置系列變更配置，而不要只是針對 Xbox One 進行特殊的 UI 配置，這是比較經濟的方法。
@@ -327,20 +327,20 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ![房地產 app︰放置按鈕在長捲動清單上方](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
-**焦點 engagement <a name="engagement"></a>**
+**專注參與<a name="engagement"></a>**
 
 「需要」佔用時，整個 `ListView` 會變成單一的焦點目標。 使用者可以略過清單的內容，以取得下一個可設定焦點的元素。 請在[焦點佔用](#focus-engagement)中閱讀更多關於哪些控制項支援佔用，以及如何使用的內容。
 
 ![房地產 app︰設定需要佔用，只需按 1 次就可到達 [上一個/下一個] 按鈕](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
 
-#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>問題：沒有任何可焦點化項目的的 ScrollViewer
+#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>問題：沒有任何可設定焦點的元素 ScrollViewer
 
 由於 XY 焦點瀏覽仰賴一次僅瀏覽單一可設定 UI 元素的設計，因此沒有任何可設定焦點的元素的 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) (例如本範例所示的只包含文字) 可能會造成使用者無法檢視 `ScrollViewer` 中的所有內容。
 如需這個案例和其他相關案例的解決方案，請參閱[焦點佔用](#focus-engagement)。
 
-![不動產應用程式：只有文字的 ScrollViewer](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
+![房地產應用程式:只有文字的 ScrollViewer](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
-#### <a name="problem-free-scrolling-ui"></a>問題：免費捲動 UI
+#### <a name="problem-free-scrolling-ui"></a>問題：自由滾動 UI
 
 當您的 app 需要自由捲動 UI 時 (例如繪圖介面，或本範例中的地圖)，XY 焦點瀏覽就無法運作。
 在這種情況下，您可以開啟[滑鼠模式](#mouse-mode)以允許使用者自由地在 UI 元素內瀏覽。
@@ -485,7 +485,7 @@ public App()
 當 [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 物件上的屬性 `IsFocusEngagementEnabled` 設定為 `True` 時，它會將控制項標示為需要焦點佔用。 這表示，使用者必須按下 \[A/選取\] 按鈕來「佔住」控制項並與它互動。 完成動作時，使用者可以按 [B/返回] 按鈕來解除控制項佔用並瀏覽到其他位置。
 
 > [!NOTE]
-> `IsFocusEngagementEnabled` 是新的 API，但尚未記載。
+> `IsFocusEngagementEnabled`是新的 API, 尚未記載。
 
 ### <a name="focus-trapping"></a>焦點受困
 
@@ -514,10 +514,10 @@ public App()
 
 除了 [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 控制項，還有其他您需要佔用的控制項，例如︰
 
-- [清單方塊](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
 - [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
-- [FlipView]https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
+- [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
 
 這些控制項與 `Slider` 控制項不同，不會在自己本身內限制焦點，不過當它們包含大量資料時，可能會造成可用性問題。 以下是 `ListView` 包含大量資料的範例。
 
@@ -559,11 +559,11 @@ public App()
 
 當 `IsFocusEngagementEnabled="True"` 時，其他所有 UWP 控制項將不會導致任何行為或視覺變更。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
-您可以建置 UWP 應用程式，最適合用於特定裝置或體驗，但通用 Windows 平台也可讓您建置可用於裝置，2 英呎和 10 英呎的體驗，不論輸入為何的成功的應用程式裝置或使用者的能力。 這篇文章中使用的建議，可以確保您的應用程式是好，因為它可能會在電視和電腦上。
+您可以建立針對特定裝置或體驗優化的 UWP 應用程式, 但通用 Windows 平臺也可讓您建立可在不同裝置間成功使用的應用程式, 不論是2英尺還是10英尺的體驗, 以及無論輸入為何裝置或使用者的能力。 使用本文中的建議可確保您的應用程式在電視和電腦上都能正常進行。
 
 ## <a name="related-articles"></a>相關文章
 
 - [針對 Xbox 和電視進行設計](../devices/designing-for-tv.md)
-- [通用 Windows 平台 (UWP) 應用程式的裝置入門](index.md)
+- [通用 Windows 平臺 (UWP) 應用程式的裝置入門](index.md)
