@@ -6,12 +6,12 @@ ms.date: 03/07/2018
 ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
-ms.openlocfilehash: 33bb7aa6a5a244f1d7b9dcd178b036ac571032f8
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 7ab0344acc40103620da5164faa397c081a4a079
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065268"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867329"
 ---
 # <a name="layout"></a>配置
 
@@ -21,52 +21,52 @@ ms.locfileid: "65065268"
 
 :::row:::
     :::column:::
-        ### [Page layout](page-layout.md)
-        Walk through a basic page layout structure.
+### <a name="page-layoutpage-layoutmd"></a>[頁面配置](page-layout.md)
+逐步解說基本頁面配置結構。
     :::column-end:::
     :::column:::
-        ### [Screen sizes and breakpoints](screen-sizes-and-breakpoints-for-responsive-design.md)
-        Learn about screen sizes across the Windows 10 ecosystem and how to design for breakpoints.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ### [Responsive design techniques](responsive-design.md)
-        Learn about responsive design techniques that optimize your app's layout for breakpoints.
-    :::column-end:::
-    :::column:::
-        ### [Layouts with XAML](layouts-with-xaml.md)
-        Implement responsive UI in XAML with adaptive or tailored layouts.
+### <a name="screen-sizes-and-breakpointsscreen-sizes-and-breakpoints-for-responsive-designmd"></a>[螢幕大小與中斷點](screen-sizes-and-breakpoints-for-responsive-design.md)
+瞭解 Windows 10 生態系統中的螢幕大小，以及如何針對中斷點進行設計。
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ### [Multiple views](show-multiple-views.md)
-        Show independent parts of your app in separate windows.
+### <a name="responsive-design-techniquesresponsive-designmd"></a>[回應式設計技術](responsive-design.md)
+了解可以優化中斷點之應用程式版面配置的回應式設計技術。
     :::column-end:::
     :::column:::
-        ### [Alignment, margin, padding](alignment-margin-padding.md)
-        Use alignment, margin, and padding to influence layout behavior.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ### [Layout panels](layout-panels.md)
-        Learn about each type of layout panel an how to use them to arrange UI elements.
-    :::column-end:::
-    :::column:::
-        ### [Transforms](transforms.md)
-        Use transforms to rotate, skew, and scale elements.
+### <a name="layouts-with-xamllayouts-with-xamlmd"></a>[使用 XAML 的版面配置](layouts-with-xaml.md)
+使用調適型或量身訂做的版面配置，在 XAML 中實作回應式 UI。
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ### [Attached layouts](attached-layouts.md)
-        Learn advanced layout concepts in XAML and how to create a custom virtualizing layout.
+### <a name="multiple-viewsshow-multiple-viewsmd"></a>[多重檢視](show-multiple-views.md)
+在不同的視窗中顯示應用程式的獨立組件。
+    :::column-end:::
+    :::column:::
+### <a name="alignment-margin-paddingalignment-margin-paddingmd"></a>[對齊、邊界、邊框間距](alignment-margin-padding.md)
+使用對齊、邊界及邊框間距來改變版面配置行為。
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+### <a name="layout-panelslayout-panelsmd"></a>[版面配置面板](layout-panels.md)
+深入了解每個版面配置面板的類型，以及如何使用它們來排列 UI 元素。
+    :::column-end:::
+    :::column:::
+### <a name="transformstransformsmd"></a>[轉換](transforms.md)
+使用轉換來旋轉、傾斜及縮放元素。
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+### <a name="attached-layoutsattached-layoutsmd"></a>[附加的版面配置](attached-layouts.md)
+了解 XAML 中的進階版面配置概念，以及如何建立自訂虛擬化版面配置。
     :::column-end:::
     :::column:::
     :::column-end:::

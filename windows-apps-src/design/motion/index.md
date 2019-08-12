@@ -12,12 +12,12 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1096bdab340c3f0fef24b5815423f72b0f5c8219
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 31cf2134fb8f77809b75a5abf3e6980443452059
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444164"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867408"
 ---
 # <a name="motion-for-uwp-apps"></a>適用於 UWP app 的動作
 
@@ -74,21 +74,21 @@ Fluent 動作在您的應用程式中可以發揮作用。 它根據使用者的
 
 :::row:::
     :::column:::
-        ### [Timing and easing](timing-and-easing.md)
-        Timing and easing are important elements that make motion feel natural for objects entering, exiting, or moving within the UI.
+### <a name="timing-and-easingtiming-and-easingmd"></a>[計時和加/減速](timing-and-easing.md)
+計時和加/減速是在 UI 內當物件進入、離開或移動時使動態感覺自然的一項重要元素。
     :::column-end:::
     :::column:::
-        ### [Directionality and gravity](directionality-and-gravity.md)
-        Directional signals help provide a solid mental model of the journey a user takes across experiences. Directional movement is subject to forces like gravity, which reinforces the natural feel of the movement.
+### <a name="directionality-and-gravitydirectionality-and-gravitymd"></a>[方向性和重力](directionality-and-gravity.md)
+方向訊號有助於為使用者體驗期間提供堅實的心智模式。 方向移動受到重力等作用的影響，強調了移動的自然感覺。
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        ### [Page transitions](page-transitions.md)
-        Page transitions navigate users between pages in an app, providing feedback about the relationship between pages. They help users understand where they are in the navigation hierarchy.
+### <a name="page-transitionspage-transitionsmd"></a>[頁面轉換](page-transitions.md)
+使用者在應用程式裡的頁面間瀏覽，頁面轉換提供回饋做為頁面間的關係。 它們可協助使用者了解他們在瀏覽階層中的位置。
     :::column-end:::
     :::column:::
-        ### [Connected animation](connected-animation.md)
-        Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
+### <a name="connected-animationconnected-animationmd"></a>[連接動畫](connected-animation.md)
+連接動畫可讓兩個不同檢視之間元素的轉換有動畫效果，而產生動態且迷人的瀏覽體驗。
     :::column-end:::
 :::row-end:::

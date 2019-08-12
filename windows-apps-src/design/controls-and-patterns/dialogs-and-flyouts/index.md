@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 43d63b1831766ecdf65fe1c1d7fd15457f728f83
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582305"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867443"
 ---
 # <a name="dialogs-and-flyouts"></a>對話方塊和飛出視窗
 
@@ -29,20 +29,20 @@ ms.locfileid: "57582305"
 
 :::row:::
     :::column:::
-        **Dialogs**
-        
-        ![Example of a dialog](../images/dialogs/dialog_RS2_delete_file.png)
+**對話方塊**
 
-        Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.
+![對話方塊範例](../images/dialogs/dialog_RS2_delete_file.png)
+
+對話方塊是提供內容相關應用程式資訊的強制回應 UI 重疊項目。 對話方塊會阻擋與應用程式視窗的互動，直到對話方塊確實關閉為止， 而且它們通常會需要使用者執行某種動作。
     :::column-end:::
     :::column::: 
-        **Flyouts**
+**飛出視窗**
 
-        ![Example of a flyout](../images/flyout-example2.png)
+![飛出視窗的範例](../images/flyout-example2.png)
 
-        A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a secondary control or show more detail about an item.
+飛出視窗是一種輕量型的內容相關快顯視窗，會顯示與使用者動作相關的 UI。 其中包含位置和大小調整邏輯，並且可以用來顯示次要控制項或顯示更多有關項目的詳細資料。
 
-        Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
+與對話方塊不同的是，飛出視窗可以透過點選或按一下飛出視窗以外的地方、按 Esc 鍵或 [上一頁] 按鈕、重新調整 App 視窗的大小，或是變更裝置的方向，來快速將它關閉。
     :::column-end:::
 :::row-end:::
 
