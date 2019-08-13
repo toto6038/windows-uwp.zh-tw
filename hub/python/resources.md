@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: python, microsoft, windows 10, 教學課程, 線上課程, blog, 事件
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: a987043735dd433288fd53090cf3623b035fad7d
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: 28a77b9e936acddb6158d865aef933f27444c5c9
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473639"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959066"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>在 Windows 上使用 Python 進行開發的資源
 

@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: python、windows 10、microsoft、python on windows、python web 和 wsl、python web 應用程式、適用于 linux 的 windows 子系統、windows 上的 python 網頁程式開發、windows 上的 flask 應用程式、windows 上的 django 應用程式、python web 上的 flask web dev、windows 上的 django web dev、windows web dev 搭配 python, vs code python web dev, 遠端 wsl 擴充功能, ubuntu, wsl, venv, pip, microsoft python 擴充功能, 在 windows 上執行 python, 在 windows 上使用 python, 在 windows 上以 python 建立
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: eafe85ac7e954d1a76708b059a191c14526afff8
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: fa6da9f5151d9457aafd255c9d10c91e3d219cee
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473686"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959079"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>開始在 Windows 上使用 Python 進行網頁程式開發
 
@@ -170,7 +168,7 @@ Python 是一種轉譯的語言, 支援不同類型的 interpretors (Python2、A
 
 8. 為您的 Python 程式碼建立新的檔案:`touch app.py`
 
-9. 在 VS Code 的檔案瀏覽器中開啟您的`Ctrl+Shift+E`app.py 檔案 (, 然後選取您的 app.py 檔案)。 這會啟動 Python 延伸模組來選擇解譯器。 它應該預設為**Python 3.6.8 64 位 ('. venv ': venv)** 。 請注意, 它也偵測到您的虛擬環境。
+9. 在 VS Code的檔案瀏覽器中開啟您的`Ctrl+Shift+E`app.py 檔案 (, 然後選取您的 app.py 檔案)。 這會啟動 Python 延伸模組來選擇解譯器。 它應該預設為**Python 3.6.8 64 位 ('. venv ': venv)** 。 請注意, 它也偵測到您的虛擬環境。
 
     ![已啟用虛擬環境](../../images/virtual-environment.png)
 

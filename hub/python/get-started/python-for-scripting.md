@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: python, windows 10, microsoft, python 系統管理, python 檔案自動化, windows 上的 python 腳本, 在 windows 上設定 python, windows 上的 python 開發人員環境, windows 上的 python 開發環境, 使用 powershell 的 python 腳本檔案系統工作
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: b34bf61f4ce4d2157df572cfbbc9337fced6cf2f
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: 93fdea3347cc15aa6231ff90fb18eb2f7defb201
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473671"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959073"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>開始在 Windows 上使用 Python 進行腳本處理和自動化
 
