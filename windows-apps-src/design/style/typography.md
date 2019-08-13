@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1d162fcf9a0f1023c58792e8c9f7a0e22fac4440
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820581"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867751"
 ---
 # <a name="typography"></a>印刷樣式
 
@@ -25,16 +25,14 @@ ms.locfileid: "63820581"
 
 ![Segoe UI 字型的範例文字](images/type/segoe-sample.svg)
 
-若要顯示非英文語言或為應用程式選取不同字型，請參閱[語言](#Languages)和[字型](#Fonts)以了解我們對 UWP 應用程式的建議使用字型。
+若要顯示非英文語言或為應用程式選取不同字型，請參閱[語言](#languages)和[字型](#fonts)以了解我們對 UWP 應用程式的建議使用字型。
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Pick one font for your UI.
+![可行事項](images/do.svg)為 UI 選擇一種字型。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Don't mix multiple fonts.
+![禁止事項](images/dont.svg)請勿混合使用多個字型。
     :::column-end:::
 :::row-end:::
 
@@ -48,12 +46,10 @@ UWP 應用程式的字型大小會在所有裝置上自動縮放。 此縮放演
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Follow the UWP [type ramp](#type-ramp) sizing.
+![可行事項](images/do.svg)遵循 UWP [字體坡形](#type-ramp)調整大小。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use a font size smaller than 12 px.
+![禁止事項](images/dont.svg)使用小於 12 像素的字型大小。
     :::column-end:::
 :::row-end:::
 
@@ -61,10 +57,10 @@ UWP 應用程式的字型大小會在所有裝置上自動縮放。 此縮放演
 
 :::row:::
     :::column:::
-        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+使用者在掃描頁面時依賴視覺階層：標頭摘要顯示內容，本文提供更多詳細資料。 若要在應用程式中建立清楚的視覺階層，請遵循 UWP 字體坡形。
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/type-hierarchy.svg)
+![文字區塊樣式](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -78,10 +74,10 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
 
 :::row:::
     :::column:::
-        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+您可以存取 XAML [靜態資源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)形式的字體坡形層級。 此樣式遵循 `*TextBlockStyle` 命名慣例。
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/text-block-type-ramp.svg)
+![文字區塊樣式](images/type/text-block-type-ramp.svg)
     :::column-end:::
 :::row-end:::
 
@@ -97,16 +93,14 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Use "Body" for most text.
+![可行事項](images/do.svg)讓大部分文字使用「Body」。
 
-        Use "Base" for titles when space is constrained.
+標題在空間有限時使用「基準」。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use "Caption" for primary action or any long strings.
+![禁止事項](images/dont.svg)對於主要動作或任何長字串，使用「Caption」。
 
-        Use "Header" or "Subheader" if text needs to wrap.
+如果文字需要自動換行，請使用「標題」或「副標題」。
     :::column-end:::
 :::row-end:::
 
@@ -124,12 +118,10 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Keep to 50–60 letters per line for ease of reading.
+![可行事項](images/do.svg)每行維持 50–60 個字母以利閱讀。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Less than 20 characters or more than 60 characters per line is difficult to read.
+![禁止事項](images/dont.svg)每行少於 20 個字元或超過 60 個字元會阻礙閱讀。
     :::column-end:::
 :::row-end:::
 
@@ -145,12 +137,10 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Clip text, and wrap if multiple lines are enabled.
+![可行事項](images/do.svg)裁剪文字，如果啟用多行則換行。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use ellipses to avoid visual clutter.
+![禁止事項](images/dont.svg)使用省略符號以避免視覺干擾。
     :::column-end:::
 :::row-end:::
 

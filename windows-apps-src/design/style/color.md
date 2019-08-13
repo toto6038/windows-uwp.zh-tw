@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e5cd8ecafd3557719e70c50890da4c3eade18f52
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 5f040060b1c3931e9ef1634fddd65febb1be7dbc
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714141"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867721"
 ---
 # <a name="color"></a>色彩
 
@@ -26,23 +26,23 @@ ms.locfileid: "67714141"
 
 :::row:::
     :::column:::
-        **Use color meaningfully.**
-        When color is used sparingly to highlight important elements, it can help create a user interface that is fluid and intuitive.
+**以有意義的方式使用色彩。**
+謹慎使用色彩來醒目提示重要元素，可以協助建立流暢、直覺的使用者介面。
     :::column-end:::
     :::column:::
-        **Use color to indicate interactivity.**
-        It's a good idea to choose one color to indicate elements of your application that are interactive. For example, many web pages use blue text to denote a hyperlink.
+**使用色彩來表示互動性。**
+最好選擇一種色彩來表示您應用程式中的可互動元素。 例如，許多網頁使用藍色文字來表示超連結。
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        **Color is personal.**
-        In Windows, users can choose an accent color and a light or dark theme, which are reflected throughout their experience. You can choose how to incorporate the user's accent color and theme into your application, personalizing their experience.
+**色彩是個人的。**
+在 Windows 中，使用者可以選擇在他們的體驗中要反映的輔色和淺色或深色佈景主題。 您可以選擇如何將使用者的輔色及佈景主題整合到應用程式中，以提供個人化的體驗。
     :::column-end:::
     :::column:::
-        **Color is cultural.**
-        Consider how the colors you use will be interpreted by people from different cultures. For example, in some cultures the color blue is associated with virtue and protection, while in others it represents mourning.
+**色彩是與文化有關的。**
+請考慮您使用的色彩會如何被來自不同文化背景的人解讀。 例如，在某些文化中，藍色代表美德和保護，但在其他文化中代表服喪。
     :::column-end:::
 :::row-end:::
 
@@ -105,12 +105,12 @@ UWP 應用程式可以使用淺色或深色應用程式佈景主題。 佈景主
 
 :::row:::
     :::column:::
-        When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.
+建立自訂控制項的範本時，請使用佈景主題筆刷，而非硬式編碼色彩值。 如此一來，您的應用程式可以輕鬆地適應任何佈景主題。
 
-        For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
+例如，這些 [ListView 的項目範本](../controls-and-patterns/item-templates-listview.md)會示範如何在自訂範本中使用主題筆刷。
     :::column-end:::
     :::column:::
-         ![double line list item with icon example](images/color/list-view.svg)
+ ![具有圖示的雙行清單項目範例](images/color/list-view.svg)
     :::column-end:::
 :::row-end:::
 
@@ -144,12 +144,12 @@ UWP 應用程式可以使用淺色或深色應用程式佈景主題。 佈景主
 
 :::row:::
     :::column:::
-        ![user-selected accent header](images/color/user-accent.svg)
-        ![user-selected accent color](images/color/user-selected-accent.svg)
+![使用者選取的強調標題](images/color/user-accent.svg)
+ ![使用者選取的輔色](images/color/user-selected-accent.svg)
     :::column-end:::
     :::column:::
-        ![custom accent header](images/color/custom-accent.svg)
-        ![custom brand accent color](images/color/brand-color.svg)
+![自訂強調標題](images/color/custom-accent.svg)
+![自訂品牌輔色](images/color/brand-color.svg)
     :::column-end:::
 :::row-end:::
 
@@ -408,36 +408,36 @@ ColorPaletteResources 也允許以包裝函式的形式 (不是線性函式) 直
 
 :::row:::
     :::column:::
-        ![contrast illustration](images/color/illo-contrast.svg)
+![對比圖](images/color/illo-contrast.svg)
     :::column-end:::
     :::column span="2":::
-        **Contrast**
+**對比**
 
-        Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
+請確定不論輔色或主題為何，元素和影像都有足夠的對比來讓人區別這些項目。
 
-        When considering what colors to use in your application, accessibility should be a primary concern. Use the guidance below to make sure your application is accessible to as many users as possible.
+考慮要在應用程式中使用的色彩時，協助工具應是主要考慮。 請使用下列指導方針，確保應用程式可盡可能供越多使用者存取。
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![contrast illustration](images/color/illo-lighting.svg)
+![對比圖](images/color/illo-lighting.svg)
     :::column-end:::
     :::column span="2":::
-        **Lighting**
+**光源**
 
-        Be aware that variation in ambient lighting can affect the usability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
+請留意，環境光源中的變化可能會影響應用程式的可用性。 例如，可能會因為螢幕反光而無法在外閱讀背景為黑色的頁面，而在黑暗的房間查看背景為白色的頁面則可能會很痛苦。
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![contrast illustration](images/color/illo-colorblindness.svg)
+![對比圖](images/color/illo-colorblindness.svg)
     :::column-end:::
     :::column span="2":::
-        **Colorblindness**
+**色盲**
 
-        Be aware of how colorblindness could affect the usability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
+請留意，色盲可能會影響您應用程式的可用性。 例如，紅綠色盲的使用者將難以區別紅色和綠色元素。 大約 **8% 的**男性**和 0.5% 的**女性是紅綠色盲，因此請避免將這些色彩組合用做為應用程式元素之間的唯一區別方法。
     :::column-end:::
 :::row-end:::
 

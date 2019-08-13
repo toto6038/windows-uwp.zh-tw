@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8f8d4172389fc2778fda4e335a29b3bae7d90fd0
-ms.sourcegitcommit: 5fcd3a595efd3686009505602c34e10163fd0aa5
+ms.openlocfilehash: e454bed6dc1a9429fe313e305dc9ba818d86e765
+ms.sourcegitcommit: 802699ce8d21e7fa4639f0b19b1c5b6c46c2c727
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558761"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835637"
 ---
 # <a name="buttons"></a>按鈕
 
@@ -36,6 +36,7 @@ ms.locfileid: "67558761"
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 用於開啟附加飛出視窗的按鈕 (具有＞形箭號)。
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 具有兩端的按鈕。 一端可起始動作，另一端可開啟功能表。
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 具有兩端的切換按鈕。 一端可開啟/關閉，另一端可開啟功能表。
+[ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | 可以開啟或關閉的按鈕。
 
 | **取得 Windows UI 程式庫** |
 | - |
@@ -59,6 +60,8 @@ ms.locfileid: "67558761"
 當按鈕具有包含更多選項的飛出視窗時，請使用 **DropDownButton** 控制項。 預設＞形箭號會提供按鈕包含飛出視窗的視覺指標。
 
 當您想讓使用者能夠起始立即動作，或獨立選擇其他選項時，請使用 **SplitButton** 控制項。
+
+當您希望使用者能夠立即在兩個互斥的狀態之間切換，且按鈕最符合您的 UI 需求時，請使用 **ToggleButton** 控制項。 除非按鈕能為您的 UI 帶來幫助，否則使用 [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[CheckBox](checkbox.md)、[RadioButton](radio-button.md) 或 [ToggleSwitch](toggles.md)可能是更佳的選擇。
 
 ## <a name="examples"></a>範例
 

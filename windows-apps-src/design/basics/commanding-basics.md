@@ -11,12 +11,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ac2bd55d1cea25359c3c609148c7098532d76c46
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8b33fe420e93c9ce78c625ad365ec8dc10e343ad
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63796511"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867449"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>UWP 應用程式的命令設計基本知識
 
@@ -48,52 +48,52 @@ When designing a command interface, the most important decision is choosing what
 
 :::row:::
     :::column:::
-        ![button image](images/commanding/thumbnail-button.svg)
+![按鈕影像](images/commanding/thumbnail-button.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Buttons</b>
+<b>按鈕</b>
 
-        <a href="../controls-and-patterns/buttons.md" style="text-decoration:none">Buttons</a> trigger an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.
+<a href="../controls-and-patterns/buttons.md" style="text-decoration:none">按鈕</a>會觸發立即動作。 範例包括傳送電子郵件、提交表單資料，或確認對話方塊中的動作。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![list image](images/commanding/thumbnail-list.svg)
+![列出影像](images/commanding/thumbnail-list.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Lists</b>
+<b>清單</b>
 
-        <a href="../controls-and-patterns/lists.md" style="text-decoration:none">Lists</a> present items in a interactive list or a grid. Usually used for many options or display items. Examples include drop-down list, list box, list view and grid view.
+<a href="../controls-and-patterns/lists.md" style="text-decoration:none">清單</a>呈現互動式清單或是方格中的項目。 通常用於多個選項或顯示項目。 範例包含下拉式清單、清單方塊、清單檢視與方格檢視。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![selection control image](images/commanding/thumbnail-selection.svg)
+![選取控制項影像](images/commanding/thumbnail-selection.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Selection controls</b>
+<b>選取控制項</b>
 
-        Lets users choose from a few options, such as when completing a survey or configuring app settings. Examples include <a href="../controls-and-patterns/checkbox.md">check box</a>, <a href="../controls-and-patterns/radio-button.md">radio button</a>, and <a href="../controls-and-patterns/toggles.md">toggle switch</a>.
+可讓使用者選擇幾個選項，例如完成問卷或是進行 App 設定的時間。 範例包括<a href="../controls-and-patterns/checkbox.md">核取方塊</a>、<a href="../controls-and-patterns/radio-button.md">選項按鈕</a>和<a href="../controls-and-patterns/toggles.md">切換開關</a>。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Calendar  image](images/commanding/thumbnail-calendar.svg)
+![行事曆影像](images/commanding/thumbnail-calendar.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Calendar, date and time pickers</b>
+<b>行事曆、日期和時間選擇器</b>
 
-        <a href="../controls-and-patterns/date-and-time.md">Calendar, date and time pickers</a> enable users to view and modify date and time info, such as when creating an event or setting an alarm. Examples include calendar date picker, calendar view, date picker, time picker.
+<a href="../controls-and-patterns/date-and-time.md">行事曆、日期和時間選擇器</a>可讓使用者檢視與修改日期和時間資訊，例如建立事件或設定鬧鐘的時間。 範例包含行事曆日期選擇器、行事曆檢視、日期選擇器、時間選擇器。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Predictive text entry image](images/commanding/thumbnail-autosuggest.svg)
+![預測文字輸入影像](images/commanding/thumbnail-autosuggest.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Predictive text entry</b>
+<b>預測文字輸入</b>
 
-        Provides suggestions as users type, such as when entering data or performing queries. Examples include <a href="../controls-and-patterns/auto-suggest-box.md">auto-suggest box</a>.<br>
+在使用者輸入 (例如輸入資料或執行查詢) 時提供建議。 範例包括<a href="../controls-and-patterns/auto-suggest-box.md">自動建議方塊</a>。<br>
 :::row-end:::
 
 如需完整清單，請參閱[控制項與 UI 元素](../controls-and-patterns/index.md)
@@ -110,36 +110,36 @@ When designing a command interface, the most important decision is choosing what
 
 :::row:::
     :::column:::
-        ![app canvas image](images/commanding/thumbnail-canvas.svg)
+![應用程式畫布影像](images/commanding/thumbnail-canvas.svg)
     :::column-end:::
     :::column span="2":::
-        <b>App canvas (content area)</b>
+<b>應用程式畫布 (內容區域)</b>
 
-        If a command is constantly needed for users to complete core scenarios, put it on the canvas. Because you can put commands near (or on) the objects they affect, putting commands on the canvas makes them easy and obvious to use. However, choose the commands you put on the canvas carefully. Too many commands on the app canvas take up valuable screen space and can overwhelm the user. If the command won't be frequently used, consider putting it in another command surface.
+如果是使用者完成核心案例時經常需要的命令，請將它放在畫布上。 因為您可將命令放在靠近它們影響的物件 (或放在物件上)，將命令放在畫布上使它們更明顯、更易於使用。 然而，請仔細選擇要放在畫布上的命令。 應用程式畫布上過多的命令會佔去寶貴的螢幕空間，而且會妨礙使用者。 如果某個命令不常使用，請考慮將它放在其他命令介面。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![commandbar image](images/commanding/thumbnail-commandbar.svg)
+![CommandBar 影像](images/commanding/thumbnail-commandbar.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Command bars and menu bars</b>
+<b>命令列和功能表列</b>
 
-        <a href="../controls-and-patterns/app-bars.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a <a href="../controls-and-patterns/menus.md#create-a-menu-bar">MenuBar</a> can also be used when the functionality in your app is too complex for a command bar).
+<a href="../controls-and-patterns/app-bars.md">命令列</a>有助於組織命令，讓它們更容易存取。 命令列可以放在畫面頂端、畫面底部或同時放在畫面頂端和底部 (當應用程式中的功能對命令列而言太複雜時，也可以使用 <a href="../controls-and-patterns/menus.md#create-a-menu-bar">MenuBar</a>)。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![context menu image](images/commanding/thumbnail-contextmenu.svg)
+![操作功能表影像](images/commanding/thumbnail-contextmenu.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Menus and context menus</b>
+<b>功能表和操作功能表</b>
 
-        <p>Menus and context menus save space by organizing commands and hiding them until the user needs them. Users typically access a menu or context menu by clicking a button or right-clicking a control.</p> 
+<p>功能表和操作功能表可組織命令並在使用者不需要它們時加以隱藏，藉以節省空間。 使用者通常會藉由按一下按鈕或以滑鼠右鍵按一下控制項，來存取功能表或操作功能表。</p> 
 
-        <p>The <a href="../controls-and-patterns/command-bar-flyout.md">command bar flyout </a> is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
+<p><a href="../controls-and-patterns/command-bar-flyout.md">命令列飛出視窗</a>是一種內容相關的功能表，可將命令列和操作功能表的優點結合成單一控制項。 這個功能表可以提供常用動作的快速鍵，並提供存取只與特定內容相關的次要命令，例如剪貼簿或自訂命令。</p>
 
-        <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
+<p>UWP 也提供一組傳統功能表和操作功能表；如需詳細資訊，請參閱<a href="../controls-and-patterns/menus.md">功能表和操作功能表概觀</a>。</p>
 :::row-end:::
 
 ## <a name="provide-command-feedback"></a>提供命令意見反應 
@@ -153,32 +153,32 @@ When designing a command interface, the most important decision is choosing what
 
 :::row:::
     :::column:::
-        ![commandbar content area image](images/commanding/thumbnail-commandbar2.svg)
+![commandbar 內容區域影像](images/commanding/thumbnail-commandbar2.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Command bar</b>
+<b>命令列</b>
 
-        The content area of the <a href="../controls-and-patterns/app-bars.md">command bar</a> is an intuitive place to communicate status to users if they'd like to see feedback.
+如果使用者想要查看意見反應，<a href="../controls-and-patterns/app-bars.md">命令列</a>的內容區域是與使用者直接溝通狀態的位置。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Flyout image](images/commanding/thumbnail-flyout.svg)
+![飛出視窗影像](images/commanding/thumbnail-flyout.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Flyouts</b>
+<b>飛出視窗</b>
 
        <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">飛出視窗</a>是一種輕量型關聯式快顯視窗，只要點選或按一下飛出視窗外的地方就可以關閉。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Dialog image](images/commanding/thumbnail-dialog.svg)
+![對話方塊影像](images/commanding/thumbnail-dialog.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Dialog controls</b>
+<b>對話方塊控制項</b>
 
-        <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Dialog controls</a> are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user. Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.
+<a href="../controls-and-patterns/dialogs-and-flyouts/index.md">對話方塊控制項</a>是提供內容相關應用程式資訊的強制回應 UI 重疊項目。 大部分的狀況下，對話方塊會阻擋與應用程式視窗的互動，直到對話方塊確實關閉為止，而且通常需要使用者執行某種類型的動作來關閉對話方塊。 對話方塊具有破壞性，因此只應在特定情況下使用。 如需詳細資訊，請參閱 [When to confirm or undo actions](#when-to-confirm-or-undo-actions) (確認或復原動作的時機) 章節。
     :::column-end:::
 :::row-end:::
 
@@ -191,23 +191,23 @@ When designing a command interface, the most important decision is choosing what
 
 :::row:::
     :::column:::
-        ![do image](images/do.svg)
+![可行項目影像](images/do.svg)
 
-        For actions that can't be undone and have major consequences, we recommend using a confirmation dialog. Examples of such actions include:
-        -   Overwriting a file
-        -   Not saving a file before closing
-        -   Confirming permanent deletion of a file or data
-        -   Making a purchase (unless the user opts out of requiring a confirmation)
-        -   Submitting a form, such as signing up for something
+對於無法復原和有嚴重後果的動作，建議您使用確認對話方塊。 類似動作的範例包含：
+-   覆寫檔案
+-   關閉檔案前尚未存檔
+-   確認永久刪除檔案或資料
+-   進行線上購物 (除非使用者選擇不需要確認)
+-   提交表單，例如註冊
     :::column-end:::
     :::column:::
-        ![do image](images/do.svg)
+![可行項目影像](images/do.svg)
 
-        For actions that can be undone, offering a simple undo command is usually enough. Examples of such actions include:
-        -   Deleting a file
-        -   Deleting an email (not permanently)
-        -   Modifying content or editing text
-        -   Renaming a file
+對於可以復原的動作，提供簡單的復原命令即可。 類似動作的範例包含：
+-   刪除檔案
+-   刪除電子郵件 (非永久性)
+-   修改內容或編輯文字
+-   重新命名檔案
 :::row-end:::
 
 ##  <a name="optimize-for-specific-input-types"></a>最佳化特定的輸入類型

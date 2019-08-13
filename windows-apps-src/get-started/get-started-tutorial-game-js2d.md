@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d485e6e2926f0065e090e7ef9d2bfab0683f396
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 343fa50dbe9a0574914dc96b9fac450475a69b0a
+ms.sourcegitcommit: 87ddc67d31668a6351206bda3546ffbabb7b4551
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318810"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807841"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
@@ -134,7 +134,7 @@ EaselJS 為我們提供許多不同類型的圖形物件。 我們可以建立�
     ];
 ```
 
-JavaScript 在載入資源 (例如影像) 時需要一點協助，因此我們使用可以預先載入影像的 CreateJS 程式庫功能 (稱為 [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html))。 我們無法確定載入影像需要多久，所以我們使用 LoadQueue 來處理它。 當有可用的影像時，佇列會告訴我們影像已就緒。 若要這樣做，我們先建立可列出所有影像的新物件，然後我們建立 LoadQueue 物件。 在下面的程式碼，您會看到如何設定此物件，以便在一切已準備就緒時呼叫 **loadingComplete()** 函式。
+JavaScript 在載入資源 (例如影像) 時需要一點協助，因此我們使用可以預先載入影像的 CreateJS 程式庫功能 (稱為 [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html))。 我們無法確定載入影像需要多久，所以我們使用 LoadQueue 來進行處理。 當有可用的影像時，佇列會告訴我們影像已就緒。 若要這樣做，我們先建立可列出所有影像的新物件，然後我們建立 LoadQueue 物件。 在下面的程式碼，您會看到如何設定此物件，以便在一切已準備就緒時呼叫 **loadingComplete()** 函式。
 
 ```
     // Now we create a special queue, and finally a handler that is

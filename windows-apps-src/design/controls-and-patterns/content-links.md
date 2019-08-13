@@ -10,18 +10,18 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
+ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363063"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796722"
 ---
 # <a name="content-links-in-text-controls"></a>文字控制項中的內容連結
 
 內容連結提供可在文字控制項中嵌入豐富資料的方法，讓使用者不離開應用程式的內容也能尋找和使用有關個人或位置的詳細資訊。
 
-當使用者在 RichEditBox 中的項目開頭加上 @ 符號時，系統會向他們顯示符合該項目的連絡人和/或地點建議。 例如，使用者接著選擇某個地點時，這個地點的 ContentLink 將會插入文字中。 當使用者從 RichEditBox 叫用內容連結時，飛出視窗會出現，並顯示地圖以及該地點的其他資訊。
+當使用者在 RichEditBox 中的項目開頭加上 @ 符號時，系統會向他們顯示符合該項目的連絡人和/或地點建議清單。 例如，使用者接著選擇某個地點時，這個地點的 ContentLink 將會插入文字中。 當使用者從 RichEditBox 叫用內容連結時，飛出視窗會出現，並顯示地圖以及該地點的其他資訊。
 
 > **重要 API**：[ContentLink 類別](/uwp/api/windows.ui.xaml.documents.contentlink)、[ContentLinkInfo 類別](/uwp/api/windows.ui.text.contentlinkinfo)、[RichEditTextRange 類別](/uwp/api/windows.ui.text.richedittextrange)
 

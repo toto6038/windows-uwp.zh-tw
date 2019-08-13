@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: aaaf13c455d3d05d5ccfac6b2bd61418f3e8e5bb
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: f5f38fdfb3ba9fd32a6e06ec19cdbfb6c3b09f24
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820517"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867679"
 ---
 # <a name="writing-style"></a>撰寫樣式
 
@@ -41,12 +41,10 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        Select **filters** to add effects to your image.
+![可行事項](images/do.svg)選取**濾鏡**以將效果新增至影像。
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        If you want to add visual effects or alterations to your image, select **filters.**
+![禁止事項](images/dont.svg)如果您想要新增視覺效果或改變影像，請選取**濾鏡**。
     :::column-end:::
 :::row-end:::
 
@@ -56,12 +54,10 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        Restart the app to see your changes.
+![可行事項](images/do.svg)重新啟動應用程式以查看您的變更。
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        The changes will be applied when the app is restarted.
+![禁止事項](images/dont.svg)當應用程式重新啟動時，將會套用所做的變更。
     :::column-end:::
 :::row-end:::
 
@@ -71,12 +67,10 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        We couldn't upload the picture. If this happens again, try restarting the app. But don't worry — your picture will be waiting when you come back.
+![可行事項](images/do.svg)我們無法上傳圖片。 如果再度發生這種情況，請嘗試重新啟動應用程式。 但請不要擔心 — 當您回來時，您的圖片已經準備好了。
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        An error occured, and we weren't able to upload the picture. Please try again, and if you encounter this problem again, you may need to restart the app. But don't worry — we've saved your work locally, and it'll be waiting for you when you come back.
+![禁止事項](images/dont.svg)發生錯誤，我們無法上傳圖片。 請再試一次，如果再次遇到這個問題，您可能需要重新啟動應用程式。 但不用擔心 — 我們已經將您的工作儲存在本機上，當您回來時，它已經準備好了。
     :::column-end:::
 :::row-end:::
 
@@ -93,8 +87,7 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        We couldn't save your file to that location.
+![可行事項](images/do.svg)我們無法將您的檔案儲存到該位置。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -110,8 +103,7 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
+![可行事項](images/do.svg)通用 Windows 平台 (UWP) 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。 運用每個 UWP 應用程式中所包含的設計功能，您可以建置可在一系列裝置上縮放的使用者介面 (UI)。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -125,8 +117,7 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        When you're happy with your image, select **save** to add it to your gallery. From there, you'll be able to share it with friends.
+![可行事項](images/do.svg)當您對影像感到滿意時，請選取**儲存**，將它新增到您的圖庫。 在那裡，您可以將它分享給朋友。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -140,12 +131,12 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>You’re not connected.</b>
-        * Check that your network cables are plugged in.
-        * Make sure you're not in airplane mode.
-        * See if your wireless switch is turned on.
-        * Restart your router.
+![可行事項](images/do.svg)
+<b>您未連線。</b>
+* 請檢查網路纜線是否插上。
+* 請確定您不是處於飛航模式。
+* 查看無線開關是否已開啟。
+* 將路由器重新開機。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -159,11 +150,11 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>Which part is giving you trouble?</b>
-        * I forgot your password.
-        * It won't accept password.
-        * Someone else might be using my account.
+![可行事項](images/do.svg)
+<b>哪個部分發生問題？</b>
+* 我忘記密碼。
+* 系統不接受密碼。
+* 可能有其他人正在使用我的帳戶。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -183,12 +174,12 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>You’re not connected.</b>
-        * Check that your network cables are plugged in.
-        * Make sure you're not in airplane mode.
-        * See if your wireless switch is turned on.
-        * Restart your router.
+![可行事項](images/do.svg)
+<b>您未連線。</b>
+* 請檢查網路纜線是否插上。
+* 請確定您不是處於飛航模式。
+* 查看無線開關是否已開啟。
+* 將路由器重新開機。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -198,16 +189,16 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        Many of the same advice for writing error messages also applies when creating the text for any dialogs in your app. While dialogs are expected by the user, they still interrupt the normal flow of the app, and need to be helpful and concise so the user can get back to what they were doing.
+撰寫錯誤訊息的許多建議也同樣適用於為您的應用程式建立任何對話方塊的文字。 即使使用者已預期會出現對話方塊，但對話方塊仍會中斷應用程式的一般流程，因此內容必須精簡有幫助，讓使用者能夠返回原本所進行的活動。
 
-        But most important is the "call and response" between the title of a dialog and its buttons. Make sure that your buttons are clear answers to the question posed by the title, and that their format is consistent across your app.
+但最重要的是對話方塊的標題和其按鈕之間的「呼叫與回應」。 請確定您的按鈕是標題所張貼問題的明確答案，並且應用程式中所有按鈕的格式都一致。
     :::column-end:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>Which part is giving you trouble?</b>
-        1. I forgot my password
-        2. It won't accept my password
-        3. Someone else might be using my account
+![可行事項](images/do.svg)
+<b>哪個部分發生問題？</b>
+1. 我忘記密碼
+2. 系統不接受我的密碼
+3. 可能有其他人正在使用我的帳戶
     :::column-end:::
 :::row-end:::
 
@@ -215,13 +206,13 @@ ms.locfileid: "63820517"
 
 :::row:::
     :::column:::
-        Text on buttons needs to be concise enough that users can read it all at a glance and clear enough that the button's function is immediately obvious. The longest the text on a button should ever be is a couple short words, and many should be shorter than that.
-        When writing the text for buttons, remember that every button represents an action. Be sure to use the *active voice* in button text, to use words that represent actions rather than reactions.
+按鈕上的文字必須夠簡潔，讓使用者一眼就能讀完，也必須夠清楚，讓按鈕的功能顯而易見。 按鈕上文字的長度上限應該只是幾組簡短文字，大部分時候應該更短。
+撰寫按鈕的文字時，請記住每個按鈕代表一個動作。 按鈕的文字請務必使用*主動語態*，並使用代表動作 (而非反應) 的文字。
     :::column-end:::
     :::column:::
-        ![Do](images/do.svg)
-        * Install now
-        * Share
+![可行事項](images/do.svg)
+* 立即安裝
+* Share
     :::column-end:::
 :::row-end:::
 
