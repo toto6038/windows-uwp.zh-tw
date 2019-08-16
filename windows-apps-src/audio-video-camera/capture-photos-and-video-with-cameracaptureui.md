@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb8132e7b382ee801d83986261bf71d8fef490f
-ms.sourcegitcommit: 04a6e60c3b24d6efae0f0e2ada1d66a369471fb3
+ms.openlocfilehash: d582d4815b4fb2168b187a1efff3795cc98aca02
+ms.sourcegitcommit: 99595e4938213aafdb49635d684d8ba8eb3f697a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68830425"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69487799"
 ---
 # <a name="capture-photos-and-video-with-the-windows-built-in-camera-ui"></a>使用 Windows 內建攝影機 UI 來捕捉相片和影片
 
@@ -22,7 +22,7 @@ ms.locfileid: "68830425"
 如果您想提供自己的相機 UI 或您的案例需要更健全的擷取作業低階控制項，您應該使用 [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 物件並實作您自己的擷取體驗。 如需詳細資訊，請參閱[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
 > [!NOTE]
-> 如果您的應用程式只使用 CameraCaptureUI, 您不應該在應用程式資訊清單檔案中指定**網路**攝影機或**麥克風**功能。 如果您這樣做, 您的應用程式將會顯示在裝置的相機隱私權設定中, 但即使使用者拒絕相機存取您的應用程式, 也不會導致 CameraCaptureUI 無法捕獲媒體。 <p>原因是 Windows 內建相機應用程式是信任的第一方應用程式，需要使用者透過按下按鈕來起始相片、音訊和視訊擷取。 當您使用 CameraCaptureUI 作為唯一的相片捕捉機制時, 如果指定網路攝影機或麥克風功能, 您的應用程式可能會在提交到 Microsoft Store 時, 將 Windows 應用程式認證套件認證失敗。<p>
+> 如果您的應用程式只使用 CameraCaptureUI, 您就不應該在應用程式資訊清單檔中指定**網路**攝影機或**麥克風**功能。 如果您這樣做, 您的應用程式將會顯示在裝置的相機隱私權設定中, 但即使使用者拒絕相機存取您的應用程式, 也不會導致 CameraCaptureUI 無法捕獲媒體。 <p>原因是 Windows 內建相機應用程式是信任的第一方應用程式，需要使用者透過按下按鈕來起始相片、音訊和視訊擷取。 當您使用 CameraCaptureUI 作為唯一的相片捕捉機制時, 如果指定網路攝影機或麥克風功能, 您的應用程式可能會在提交到 Microsoft Store 時, 將 Windows 應用程式認證套件認證失敗。<p>
 如果您使用 MediaCapture 以程式設計方式來捕捉音訊、相片或影片, 您必須在應用程式資訊清單檔中指定網路攝影機或麥克風功能。
 
 ## <a name="capture-a-photo-with-cameracaptureui"></a>使用 CameraCaptureUI 擷取相片
@@ -46,7 +46,7 @@ ms.locfileid: "68830425"
 
 若要在您的 app 中使用相片，您可能想建立 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 物件，該物件可搭配數個不同的通用 Windows app 功能使用。
 
-首先, 您應該在專案中包含[**Windows. 影像處理**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging)命名空間。
+首先, 在您的專案中包含[**Windows. 影像處理**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging)命名空間。
 
 [!code-cs[UsingSoftwareBitmap](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmap)]
 
