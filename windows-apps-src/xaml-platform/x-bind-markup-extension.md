@@ -148,7 +148,7 @@ _注意：C#-樣式轉型的語法比附加的屬性語法，更有彈性，而�
 > [!NOTE]
 > 如果要將標記從 **{Binding}** 轉換成 **{x:Bind}** ，請留意 **Mode** 屬性的預設值不同。
  
-> [**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) 用來變更用於 X:bind 標記樹狀目錄的特定區段的預設模式。 選取的模式將會在該元素及其子系上，套用任何未明確指定模式做為繫結之一部分的 x:Bind 運算式。 OneTime 效能優於 OneWay，因為使用 OneWay 將會導致產生更多程式碼來連結和處理變更偵測。
+>  **[x:DefaultBindMode](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute)** 用來變更用於 X:bind 標記樹狀目錄的特定區段的預設模式。 選取的模式將會在該元素及其子系上，套用任何未明確指定模式做為繫結之一部分的 x:Bind 運算式。 OneTime 效能優於 OneWay，因為使用 OneWay 將會導致產生更多程式碼來連結和處理變更偵測。
 
 ## <a name="remarks"></a>備註
 
