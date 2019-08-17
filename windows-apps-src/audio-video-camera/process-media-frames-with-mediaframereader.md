@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b77fb147ab614b19993700d5d99572f0247d54e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3f2442647d39c4142b50c0a2a9b1fbc2c0eb66ca
+ms.sourcegitcommit: be519a7ecff53696b853754c879db32be9a53289
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318274"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69544922"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理媒體畫面
 
@@ -34,21 +34,21 @@ ms.locfileid: "67318274"
 
 **將功能新增至應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。 
-2.  選取 [功能] 索引標籤。 
-3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。  
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。  
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 [功能] 索引標籤。
+3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。
 
 除了預設專案範本所包含的 API 以外，這篇文章中的範例程式碼還會使用下列命名空間的 API。
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>選取畫面來源和畫面來源群組
-許多處理媒體畫面的 App 需要一次從多個來源取得畫面，例如裝置的色彩和深度相機。 [ **MediaFrameSourceGroup** ](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup)物件都代表一組可以同時使用的媒體框架來源。 呼叫靜態方法 [**MediaFrameSourceGroup.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync)，以取得目前裝置所支援之所有畫面來源群組的清單。
+許多處理媒體畫面的 App 需要一次從多個來源取得畫面，例如裝置的色彩和深度相機。 [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup)物件代表一組可同時使用的媒體框架來源。 呼叫靜態方法 [**MediaFrameSourceGroup.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync)，以取得目前裝置所支援之所有畫面來源群組的清單。
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-您也可以建立[ **DeviceWatcher** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)使用[ **DeviceInformation.CreateWatcher** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher) 從傳回的值和[ **MediaFrameSourceGroup.GetDeviceSelector** ](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)可用框架的來源群組的裝置變更，例如當外部的攝影機已插入電源時收到通知。 如需詳細資訊，請參閱[**列舉裝置**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+您也可以使用[**DeviceInformation. CreateWatcher**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher)和從[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)傳回的值來建立[**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) , 以在裝置上的可用畫面格來源群組時接收通知變更, 例如插入外部相機的時間。 如需詳細資訊，請參閱[**列舉裝置**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
 [  **MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 有一個 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 物件的集合，可描述群組中包含的畫面來源。 在擷取裝置上可用的畫面來源群組之後，您可以選取公開您感興趣的畫面來源群組。
 
@@ -79,12 +79,12 @@ ms.locfileid: "67318274"
 
 [!code-cs[DeclareMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-藉由呼叫建構函式，建立 **MediaCapture** 物件的執行個體。 接下來，建立將用來初始化 **MediaCapture** 物件的 [**MediaCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSettings) 物件。 在這個範例中，會使用下列設定︰
+藉由呼叫建構函式，建立 **MediaCapture** 物件的執行個體。 接下來, 建立將用來初始化**MediaCapture**物件的[**MediaCaptureInitializationSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings)物件。 在這個範例中，會使用下列設定︰
 
-* [**SourceGroup** ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sourcegroup) -這會告訴系統便會用來取得框架的來源群組。 請記住，來源群組會定義一組可同時使用的媒體畫面來源。
-* [**SharingMode** ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sharingmode) -這會告訴系統是否需要擷取來源裝置的專有控制權。 如果您將此設定為 [**ExclusiveControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，就表示您可以變更擷取裝置的設定 (像是裝置所產生的畫面格式)，但是這表示如果其他 App 已經有專屬控制項，當您的 App 嘗試初始化媒體擷取裝置時將會失敗。 如果您將此設定為 [**SharedReadOnly**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，即使畫面來源正由其他 App 使用，您也可以接收來自畫面來源的畫面，但您無法變更裝置的設定。
-* [**MemoryPreference** ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.memorypreference) -如果您指定[ **CPU**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)系統會使用 CPU 記憶體，以確保框架到達時，它們就可以為[ **SoftwareBitmap** ](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)物件。 如果您指定 [**Auto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)，系統會以動態方式選擇最佳的記憶體位置來儲存畫面。 如果系統選擇使用 GPU 記憶體，媒體畫面會以 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 物件的方式抵達，而不是 **SoftwareBitmap**。
-* [**StreamingCaptureMode** ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) -將此設為[**影片**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.StreamingCaptureMode)表示不需要該音訊串流。
+* [**SourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sourcegroup) -這會告訴系統您要使用哪個來源群組來取得畫面格。 請記住，來源群組會定義一組可同時使用的媒體畫面來源。
+* [**SharingMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sharingmode) -這會告訴系統您是否需要對 capture 來源裝置進行獨佔控制。 如果您將此設定為 [**ExclusiveControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，就表示您可以變更擷取裝置的設定 (像是裝置所產生的畫面格式)，但是這表示如果其他 App 已經有專屬控制項，當您的 App 嘗試初始化媒體擷取裝置時將會失敗。 如果您將此設定為 [**SharedReadOnly**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，即使畫面來源正由其他 App 使用，您也可以接收來自畫面來源的畫面，但您無法變更裝置的設定。
+* [**MemoryPreference**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.memorypreference) -如果您指定[**cpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference), 系統將會使用 cpu 記憶體, 以確保框架抵達時, 會以[**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)物件的形式提供。 如果您指定 [**Auto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)，系統會以動態方式選擇最佳的記憶體位置來儲存畫面。 如果系統選擇使用 GPU 記憶體，媒體畫面會以 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 物件的方式抵達，而不是 **SoftwareBitmap**。
+* [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) -將此設為[**Video**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.StreamingCaptureMode) , 表示不需要串流音訊。
 
 呼叫 [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync)，以使用您想要的設定將 **MediaCapture** 初始化。 請務必在 *try* 區塊中呼叫，以防初始化失敗。
 
