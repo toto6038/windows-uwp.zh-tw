@@ -8,23 +8,23 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml 群島
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 961157bc3d3429b56d3da24a46d71cbb5b84e7a3
-ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
+ms.openlocfilehash: 940a81d21e071558d510e565785d1f52ca0bb1a3
+ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68729493"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69643383"
 ---
 # <a name="part-5-package-and-deploy-with-msix"></a>第 5 部分：使用 MSIX 封裝和部署
 
 這是教學課程的最後一個部分, 示範如何將名為 Contoso 費用的範例 WPF 桌面應用程式現代化。 如需教學課程、必要條件和下載範例應用程式指示的總覽, 請參閱[教學課程:將 WPF 應用程式](modernize-wpf-tutorial.md)現代化。 本文假設您已完成[第4部分](modernize-wpf-tutorial-4.md)。
 
-在[第4部分](modernize-wpf-tutorial-4.md)中, 您已瞭解一些 WinRT api (包括通知 API) 需要套件身分識別, 才能在應用程式中使用。 您可以使用[MSIX](https://docs.microsoft.com/windows/msix)(Windows 10 中引進的封裝格式) 封裝和部署 windows 應用程式, 藉以取得套件身分識別。 MSIX 為開發人員和 IT 專業人員提供資料表的優點, 包括:
+在[第4部分](modernize-wpf-tutorial-4.md)中, 您已瞭解一些 WinRT api (包括通知 API) 需要套件身分識別, 才能在應用程式中使用。 您可以使用[MSIX](https://docs.microsoft.com/windows/msix)(Windows 10 中引進的封裝格式) 封裝和部署 windows 應用程式, 藉以取得套件身分識別。 MSIX 提供開發人員和 IT 專業人員的優點, 包括:
 
 - 優化網路使用量和儲存空間。
 - 請完成全新卸載, 因為執行應用程式的是輕量容器。 系統上不會保留任何登錄機碼和暫存檔案。
 - 將 OS 更新與應用程式更新和自訂分離。
-- 簡化安裝、更新和卸載程式。 
+- 簡化安裝、更新和卸載程式。
 
 在本教學課程的這個部分中, 您將瞭解如何在 MSIX 套件中封裝 Contoso 費用應用程式。
 
@@ -48,17 +48,17 @@ Visual Studio 2019 提供簡單的方法, 讓您使用 Windows 應用程式封�
 
 6. 在 [ **ContosoExpenses** ] 專案中, 以滑鼠右鍵按一下 [**應用程式**] 節點, 然後選擇 [**加入參考**]。 這個節點會指定解決方案中將包含哪些應用程式。
 
-7. 在專案清單中, 選取 [ **ContosoExpenses** ], 然後按一下 **[確定]** 。
+6. 在專案清單中, 選取 [ **ContosoExpenses** ], 然後按一下 **[確定]** 。
 
-8. 展開 [**應用程式**] 節點, 並確認已參考 [ **ContosoExpense** ] 專案, 並以粗體反白顯示。 這表示它會當做封裝的起點使用。
+7. 展開 [**應用程式**] 節點, 並確認已參考 [ **ContosoExpense** ] 專案, 並以粗體反白顯示。 這表示它會當做封裝的起點使用。
 
-9. 以滑鼠右鍵按一下 [ **ContosoExpenses** ] 專案, 然後選擇 [**設定為啟始專案**]。
+8. 以滑鼠右鍵按一下 [ **ContosoExpenses** ] 專案, 然後選擇 [**設定為啟始專案**]。
 
-10. 在方案總管中, 以滑鼠右鍵按一下 [ **ContosoExpenses** ] 專案節點, 然後選取 [**編輯專案檔案**]。
+9. 在方案總管中, 以滑鼠右鍵按一下 [ **ContosoExpenses** ] 專案節點, 然後選取 [**編輯專案檔案**]。
 
-11. 從檔案中找出 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。
+10. 從檔案中找出 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。
 
-12. 以下列 XML 取代此元素。
+11. 以下列 XML 取代此元素。
 
     ``` xml
     <ItemGroup>
@@ -82,9 +82,9 @@ Visual Studio 2019 提供簡單的方法, 讓您使用 Windows 應用程式封�
     </Target>
     ```
 
-13. 儲存專案檔案並將它關閉。
+12. 儲存專案檔案並將它關閉。
 
-14. 按**F5**以在偵錯工具中啟動已封裝的應用程式。
+13. 按**F5**以在偵錯工具中啟動已封裝的應用程式。
 
 此時, 您可能會注意到一些變更, 指出應用程式現在正在以封裝方式執行:
 

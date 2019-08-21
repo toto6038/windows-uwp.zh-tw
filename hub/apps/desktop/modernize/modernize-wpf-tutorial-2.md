@@ -2,18 +2,18 @@
 description: 本教學課程示範如何新增 UWP XAML 使用者介面、建立 MSIX 套件, 以及將其他現代化元件併入您的 WPF 應用程式中。
 title: 使用 XAML Islands 新增 UWP InkCanvas 控制項
 ms.topic: article
-ms.date: 07/17/2019
+ms.date: 08/15/2019
 ms.author: mcleans
 author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml 群島
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 4d504686e2ff50700e3f4bf242ef5d16be814894
-ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
+ms.openlocfilehash: fb7bb6d4e5af8992571f9740c1321e271b2e1672
+ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68729488"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69643420"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：使用 XAML Islands 新增 UWP InkCanvas 控制項
 
