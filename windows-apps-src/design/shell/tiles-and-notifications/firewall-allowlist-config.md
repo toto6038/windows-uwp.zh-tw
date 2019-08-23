@@ -9,20 +9,25 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10, uwp, WNS, windows 通知服務, 通知, windows, 防火牆, 疑難排解, IP, 流量, 企業, 網路, IPv4, VIP, FQDN, 公用 IP 位址
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f8a72eec46971fa27a4bd0dec112430f2eb3535
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 817dec616a88f0b374bc019cbbf23f56fad94484
+ms.sourcegitcommit: 820704a73174e81da3dc00cf0603c0c82471cdfe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867303"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69908456"
 ---
-# <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>透過企業防火牆允許 Windows 通知流量
+# <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支援 WNS 流量的企業防火牆和 Proxy 設定
 
 ## <a name="background"></a>背景
-許多企業都使用防火牆來封鎖不必要的網路流量;可惜的是, 這也會封鎖 Windows 通知服務通訊之類的重要事項。 這表示所有透過 WNS 傳送的通知都將遭到捨棄。 若要避免這種情況, 網路系統管理員可以將已核准的 WNS 通道清單新增至其豁免清單, 以允許 WNS 流量通過防火牆。 以下是有關如何和要新增之內容的詳細資訊。 
+許多企業都使用防火牆來封鎖不必要的網路流量;可惜的是, 這也會封鎖 Windows 通知服務通訊之類的重要事項。 這表示所有透過 WNS 傳送的通知都會放在特定網路設定之下。 若要避免這種情況, 網路系統管理員可以將已核准的 WNS 通道清單新增至其豁免清單, 以允許 WNS 流量通過防火牆。 以下是有關如何和如何新增的詳細資料, 以及對不同 proxy 類型的支援。
+
+## <a name="proxy-support"></a>Proxy 支援
 
 > [!Note] 
-從 6/24/2019, Windows 用戶端**不**支援 PROXY, WNS 的連接必須是直接連線。
+Windows 用戶端**不**支援所有 PROXY, WNS 的連接必須是直接連線。
+
+**即將推出！** 我們正積極調查不同的網路設定、proxy 和防火牆。 我們很快就會更新此頁面, 其中包含一般企業案例和 WNS 支援的更多詳細資料。
+
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>應該將哪些資訊新增至允許清單
 以下清單包含 Windows 通知服務所使用的 Fqdn、Vip 和 IP 位址範圍。 

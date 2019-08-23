@@ -8,16 +8,19 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系統管理, python 檔案自動化, windows 上的 python 腳本, 在 windows 上設定 python, windows 上的 python 開發人員環境, windows 上的 python 開發環境, 使用 powershell 的 python 腳本檔案系統工作
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 93fdea3347cc15aa6231ff90fb18eb2f7defb201
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: dbb7a60103c27f648ca8bf23f87dee06923f0cd9
+ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959073"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979332"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>開始在 Windows 上使用 Python 進行腳本處理和自動化
 
 以下是設定開發人員環境的逐步指南, 讓您開始使用 Python 進行腳本處理, 並將 Windows 上的檔案系統作業自動化。
+
+> [!NOTE]
+> 本文將說明如何設定您的環境, 以使用 Python 中一些有用的程式庫, 可跨平臺自動執行工作, 例如搜尋您的檔案系統、存取網際網路、剖析檔案類型等, 或從以 Windows 為中心的方法進行。 針對 Windows 特有的作業, 請參閱[ctypes](https://docs.python.org/3/library/ctypes.html), 這是適用于 Python 的 C 相容外部函式程式庫, [Winreg](https://docs.python.org/3/library/winreg.html), 將 Windows 登錄 API 公開至 python 的函式, 以及[python/WinRT](https://pypi.org/project/winrt/), 可讓您從存取 Windows 執行階段 apiPython.
 
 ## <a name="set-up-your-development-environment"></a>設定您的開發環境
 
