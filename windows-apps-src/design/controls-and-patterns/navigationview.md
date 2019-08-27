@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e00c9860ca2aa8661581de265fff106c45b30ab5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7431e9e41c008471fccdb955a64d44316855de0d
+ms.sourcegitcommit: 77df36d2a7391cbc588d44c47ac02d0701092264
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319404"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976207"
 ---
 # <a name="navigation-view"></a>瀏覽檢視
 
@@ -709,6 +709,29 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
     </Application.Resources>
 </Application>
 ```
+
+### <a name="top-whitespace"></a>前幾個空白字元
+有些應用程式選擇[自訂其視窗標題列](https://docs.microsoft.com/windows/uwp/design/shell/title-bar)，可能會將其應用程式內容延伸到標題列區域。 當 NavigationView 是**使用 [ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**，在應用程式中延伸至標題列的根元素時，控制項會自動調整其互動式元素的位置，以避免與[可拖曳的區域](https://docs.microsoft.com/windows/uwp/design/shell/title-bar#draggable-regions)重疊。 
+![延伸至標題列的應用程式](images/navigation-view-with-titlebar-padding.png)
+
+如果您的應用程式透過呼叫 [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar) 方法指定可拖曳的區域，而您想要讓 [上一頁] 和 [功能表] 按鈕更接近應用程式視窗的頂端，請將 `IsTitleBarAutoPaddingEnabled` 設定為 False。
+
+![應用程式延伸至標題列而不需額外填補](images/navigation-view-no-titlebar-padding.png)
+
+```Xaml
+<muxc:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False">
+```
+
+#### <a name="remarks"></a>備註
+若要進一步調整 NavigationView 標題區域的位置，請覆寫 *NavigationViewHeaderMargin* XAML 主題資源，例如在頁面資源中。
+
+```Xaml
+<Page.Resources>
+    <Thickness x:Key="NavigationViewHeaderMargin">12,0</Thickness>
+</Page.Resources>
+```
+
+此主題資源會修改 [NavigationView.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.header) 周圍的邊界。
 
 ## <a name="related-topics"></a>相關主題
 
