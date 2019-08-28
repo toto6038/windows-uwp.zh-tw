@@ -2,177 +2,177 @@
 Description: 支付摘要說明您透過 App 和附加元件所賺取金額的相關詳細資料。 也可以讓您了解何時會收到付款與付款金額。
 title: 支付摘要
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
-ms.date: 10/31/2018
+ms.date: 08/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 支付摘要, 聲明, 付款, 收入, 支付, 付帳, 收益
 ms.localizationpriority: medium
-ms.openlocfilehash: 90238360ecc48beb974546dc5b49ac09c01407eb
-ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
+ms.openlocfilehash: 777ee4201b435f17cdc4fc3650a2d33645ff56b9
+ms.sourcegitcommit: 769ec7811aaaa79fe521e3e984a2e1a2a9671caf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67495736"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70057828"
 ---
 # <a name="payout-summary"></a>支付摘要
 
-**支出摘要**顯示您已賺與 Microsoft money 的詳細資料。 也可以讓您了解何時會收到付款與付款金額。
+[付款**摘要**] 會顯示您在 Microsoft 所獲得之金錢的詳細資料。 也可以讓您了解何時會收到付款與付款金額。
 
 如果您在 Azure Marketplace 銷售產品，您也會在 **\[支付摘要\]** 中看到成功支付的相關資訊。 如需 Azure Marketplace 付款的相關詳細資料，請參閱 [Microsoft Azure Marketplace 參與原則](https://go.microsoft.com/fwlink/p/?LinkId=722436)及 [Microsoft Azure Marketplace 發行者合約](https://go.microsoft.com/fwlink/p/?LinkID=699560 )。
 
 > [!NOTE]
-> 若要才能進行付款，您會繼續進行必須觸達[付款閾值](payment-thresholds-methods-and-timeframes.md)為 $50 美金。 如需詳細資訊付款臨界值請參閱此頁面，並檢閱應用程式的開發人員合約。
+> 若要符合付款資格, 您的繼續作業必須達到 $50 的[付款閾值](payment-thresholds-methods-and-timeframes.md)。 如需付款閾值的詳細資訊, 請參閱此頁面並審查應用程式開發人員合約。
 
-## <a name="access-the-payout-summary-pages"></a>存取 [支出摘要] 頁面
+## <a name="access-the-payout-summary-pages"></a>存取支出摘要頁面
 
-若要開啟支出摘要頁面的其中一個：
+若要開啟其中一個支出摘要頁面:
 
-1. 在右上角選取 [Money] 圖示。
-2. 選取付款，交易記錄，或匯出資料。
+1. 選取右上角的 [Money] 圖示。
+2. 選取 [付款]、[交易歷程記錄] 或 [匯出資料]。
 
 ## <a name="payments-page"></a>付款頁面
 
-在此頁面上的總計會代表所有參與的程式。 您可以篩選參與者識別碼、 程式、 付款識別碼和 Earning 型別。 金額會提供以美元。 付費的值也會顯示為貨幣的薪資。
+此頁面上的總計代表您參與的所有程式。 您可以依 [參與者識別碼]、[程式]、[付款識別碼] 和 [賺取類型] 進行篩選。 金額會以美元為單位來提供。 付費值也會以 [付費貨幣] 顯示。
 
 | 區域                   | 描述                                                                                  |
 |------------------------|----------------------------------------------------------------------------------------------|
-| 付費的本年度的總計   | 合併的總計支付給您今年，以美元，所有應用程式。       |
-| 下一步 的預估的付款 | 單一即將到您的下一步 付款 (即使有其他即將推出)，以美元。 |
-| 最後一次付款           | 金額 （美元）、 程式名稱和程式的最新的付款方式。           |
-| 來源的付款     | 付款，以美元，由程式過去的 12 個月的數量。           |
-| 付款               | 選取 [付費] 或暫止然後任意的排序。 如需詳細資訊的特定付款選取 [檢視]。 若要下載一份付款匯款陳述式，選取 下載。 請注意，交易記錄資料可能需要 24 小時的時間才會出現，因此您可能不會立即看到相關聯的盈餘。 |
+| 今年總付費   | 所有程式的總金額, 以美元為單位向您收費。       |
+| 下一個估計付款 | 您的單一下一期付款 (即使有其他人即將推出), 以美元為單位。 |
+| 上次付款           | 您最近付款的數量 (以美元為單位)、計畫名稱和計畫。           |
+| 依來源的付款     | 過去12個月內由程式代表的付款金額 (以美元為單位)。           |
+| 付款               | 選取 [付費] 或 [暫止], 然後依您想要的方式排序。 如需特定付款的其他詳細資料, 請選取 [查看]。 若要下載付款匯款語句的複本, 請選取 [下載]。 請注意, 交易記錄資料最多可能需要24小時的時間才會出現, 因此您可能不會立即看到相關的收益。 |
 
-若要匯出的任何資料，在此頁面上，選取 匯出，然後遵循指示在 匯出資料 頁面上。
+若要匯出此頁面上的任何資料, 請選取 [匯出], 然後依照 [匯出資料] 頁面上的指示進行。
 
-## <a name="transaction-history-page"></a>交易記錄 頁面
+## <a name="transaction-history-page"></a>交易記錄頁面
 
-此頁面會顯示所有包含的日期類型，並取得每個您個別盈餘。 您可以選取檢視時，一段時間，您也可以根據註冊識別碼、 程式、 付款識別碼、 Earning 類型、 推桿和狀態篩選。 資料會提供目前會計年度 (7 月 1 日 – 6 月 30 日) 和先前兩個會計年度。
+此頁面會顯示您所有的個人收益, 包括每個的日期、類型和收益。 您可以選取要查看的時間週期, 也可以依註冊識別碼、程式、付款識別碼、賺取類型、杠杆和狀態進行篩選。 資料適用于目前的會計年度 (7 月1日至6月30日) 和前兩個會計年度。
 
-若要查看如何獲得更多詳細資料，請選取頁面右側的向下箭頭。 這會顯示推桿、 營收量和產品。 如果基於某些原因的任何此資料無法使用，但您需要存取權，請連絡[支援](https://developer.microsoft.com/en-us/windows/support)]。 如果獲得是調整，並不是交易的結果，將不會顯示 [產品] 欄位。
+若要查看收益的更多詳細資料, 請選取頁面右側的向下箭號。 這會顯示 [杠杆]、[收益金額] 和 [產品]。 如果因為某些原因而無法使用這項資料, 但您需要存取它, 請聯絡[支援](https://developer.microsoft.com/en-us/windows/support)人員。 如果收益是調整的結果, 而不是交易, 則不會顯示 [產品] 欄位。
 
-若要匯出的任何交易資料，在此頁面上，選取 匯出，然後遵循指示在 匯出資料 頁面上。 從交易記錄 頁面中匯出的檔案顯示的資料，以交易的貨幣交易的貨幣和美元，盈餘和中的付費的值用多少付多少為貨幣。
+若要匯出此頁面上的任何交易資料, 請選取 [匯出], 然後依照 [匯出資料] 頁面上的指示進行。 從 [交易記錄] 頁面匯出的檔案會顯示交易貨幣中的資料、交易貨幣和美元的收益, 以及付費貨幣值。
 
 ## <a name="payment-status"></a>[付款狀態]
 
-| 取得狀態           | `Reason`                                                                                                                                      | 協力廠商所需的動作嗎？                                   |
+| 賺取狀態           | `Reason`                                                                                                                                      | 需要合作夥伴動作嗎？                                   |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
-| 尚未處理              | 取得適合進行付款。 它會保持處於此狀態的冷卻期間獎勵方案的計畫指南中所定義。 | 否                                                         |
-| 即將推出                 | 產生暫止的內部審查，然後再處理付款的付款訂單。                                                               | 否                                                         |
-| 暫止的稅務發票      | 您的稅務發票不完整或無效。                                                                                                  | 您需要更新之前應支付您的稅務發票 |
-| 拒絕檢閱   | 付款已拒絕檢閱期間。                                                                                                     | 請連絡[Microsoft 支援服務](https://developer.microsoft.com/en-us/windows/support)如需詳細資訊                      |
-| Failed                   | 付款失敗，因為 Microsoft 的系統錯誤。                                                                                         | 請連絡[Microsoft 支援服務](https://developer.microsoft.com/en-us/windows/support)如需詳細資訊                      |
-| 進行中              | 付款正在進行中。                                                                                                                 | 否                                                         |
+| 尚未              | 收益符合付款資格。 如獎勵計畫的程式指南中所定義, 它會維持在此狀態的冷卻期間。 | 否                                                         |
+| 提交                 | 付款順序會在處理付款前產生擱置內部審核。                                                               | 否                                                         |
+| 待決的稅務發票      | 您的稅務發票不完整或無效。                                                                                                  | 您必須先更新您的稅務發票, 才能支付費用 |
+| 審查期間拒絕   | 付款在審查期間遭到拒絕。                                                                                                     | 請洽詢[Microsoft 支援服務](https://developer.microsoft.com/en-us/windows/support)以取得詳細資料                      |
+| 已失敗                   | 付款因 Microsoft 系統錯誤而失敗。                                                                                         | 請洽詢[Microsoft 支援服務](https://developer.microsoft.com/en-us/windows/support)以取得詳細資料                      |
+| 進行中              | 付款進行中。                                                                                                                 | 否                                                         |
 | 不正確的付款        | 付款 recouping 正在進行中。                                                                                                       | 否                                                         |
-| 傳送                     | 付款已傳送到您的銀行。                                                                                                     | 否                                                         |
-| 重新處理             | 付款遭遇到的 Microsoft 系統錯誤，並在重新處理。                                                                  | 否                                                         |
-| 反轉                 | 付款遭您的銀行已回復，且將在下一步 的付款週期中再次傳送。                                                     | 否                                                         |
-| 拒絕的稅務發票     | 您的稅務發票已拒絕檢閱期間。 所有暫止的付款將會保留，直到稅務發票檢閱完成為止。                 | 請連絡[Microsoft 支援服務](https://developer.microsoft.com/en-us/windows/support)如需詳細資訊                      |
-| 在 檢閱下的稅務發票 | 正在檢閱您的稅務發票。 一旦稅務發票核准後，將會發行您的付款。                                   | 否                                                         |
-| 已拒絕                 | 您的銀行拒絕付款。                                                                                                      | 如需詳細資訊，請連絡您的銀行。                             |
+| 發送                     | 付款已傳送到您的銀行。                                                                                                     | 否                                                         |
+| 重新處理             | 付款發生 Microsoft 系統錯誤, 正在進行重新處理。                                                                  | 否                                                         |
+| 反轉                 | 付款已由您的銀行反轉, 並將在下一個付款週期中再次傳送。                                                     | 否                                                         |
+| 已拒絕稅務發票     | 您的稅務發票在審查期間遭到拒絕。 所有暫止的付款都會保留, 直到稅務發票審核完成為止。                 | 請洽詢[Microsoft 支援服務](https://developer.microsoft.com/en-us/windows/support)以取得詳細資料                      |
+| 審查下的稅務發票 | 正在審核您的稅務發票。 當稅務發票核准之後, 您的付款就會釋出。                                   | 否                                                         |
+| 退回                 | 您的銀行已拒絕付款。                                                                                                      | 如需詳細資訊, 請洽詢您的銀行。                             |
 
-## <a name="export-data-page"></a>匯出資料 頁面
+## <a name="export-data-page"></a>[匯出資料] 頁面
 
-在此頁面上，您想要將資料匯出，請遵循指示。
+遵循此頁面上的指示, 匯出您想要的資料。
 
-注意：
+附註：
 
-- 當您存取此頁面上，從任一個的付款或交易記錄 頁面上時，不含您的篩選條件。 您必須在 [匯出資料] 頁面上的重做它們。
-- [匯出資料] 頁面不會自行重新整理。 您可能需要重新整理頁面，以手動方式，以查看最新的資料。
-- 您的篩選可能會導致沒有資料可用錯誤。 這可能表示您已保留預設值三個月，在選取的時段，然後選取 從這段時間內外部取得的 付款識別碼。 展開您的時間週期，然後再試一次。
+- 當您從 [付款] 或 [交易記錄] 頁面存取此頁面時, 您的篩選器不會執行。 您必須在 [匯出資料] 頁面上重做這些專案。
+- [匯出資料] 頁面不會自行重新整理。 您可能需要手動重新整理頁面, 才能看到最新的資料。
+- 您的篩選可能會導致資料無法使用錯誤。 這可能表示您已保留在三個月內選取的預設時間週期, 然後從該期間外的收益中選取付款識別碼。 請展開您的時間週期, 然後再試一次。
 
 ## <a name="payment-download-export"></a>付款下載匯出
 
-此選項提供的下載時，您收到您的銀行指定計劃相關聯的稅金，並彙總獲得量的付款。 此報表會使用許多的合作夥伴中心方案中，因此某些資料行可能不適用於您的報表。 這些資料行已標示如下。
+此選項可讓您針對指定的程式、相關聯的稅金和匯總的賺取金額, 下載您在銀行內收到的付款。 這份報告適用于許多合作夥伴中心方案, 因此某些資料行可能會不適用至您的報表。 這些資料行標示如下。
 
 | 資料行名稱              | 描述                                                                                                                             |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| participantID            | 主要的身分識別取得方案的夥伴                                                                           |
-| participantIDType        | 通常程式識別碼的獎勵程式 」 和 「 賣方識別碼存放區的程式                                                              |
-| participantName          | 獲得的夥伴名稱                                                                                                             |
-| programName              | 獎勵/儲存程式名稱                                                                                                            |
-| 所獲得的                   | 取得在該程式/participantID 用多少付多少以貨幣的數量                                                                     |
-| earnedUSD                | 所獲得的方案/參與者識別碼，以美元為單位的數量                                                                                    |
-| withheldTax              | 在程式/participantID 用多少付多少以貨幣預扣稅金的數量                                                             |
-| salesTax                 | 在程式/participantID 用多少付多少以貨幣的營業稅的總數量                                                          |
-| totalPayment             | 排除扣繳稅金，以及包括營業稅 （如果適用） 計劃/participantID 的本地貨幣的總付款 |
-| currencyCode             | 若要用多少付多少貨幣代碼                                                                                                                    |
-| paymentMethod            | 用來支付夥伴 （信用額度附註中的 電子銀行內傳送） 的方法                                                              |
-| paymentID                | 用於付款的唯一識別碼。 這個數字是通常顯示在您的銀行陳述式。                                               |
+| participantID            | 方案下合作夥伴賺取的主要身分識別                                                                           |
+| participantIDType        | 適用于商店計畫的獎勵計畫和賣方識別碼的程式識別碼通常為                                                              |
+| participantName          | 收益合作夥伴的名稱                                                                                                             |
+| programName              | 獎勵/商店計畫名稱                                                                                                            |
+| 盈餘                   | 該方案/participantID 的預付貨幣金額                                                                     |
+| earnedUSD                | 方案/參與者識別碼所獲的金額 (以美元為單位)                                                                                    |
+| withheldTax              | 方案/participantID 的付費貨幣所扣的稅金金額                                                             |
+| salesTax                 | 方案/participantID 的總銷售金額 (以付款貨幣計)                                                          |
+| totalPayment             | 以當地貨幣為單位的總付款, 不包括預繳稅金, 並包含方案/participantID 的銷售稅額 (如果適用) |
+| currencyCode             | 支付貨幣代碼                                                                                                                    |
+| paymentMethod            | 用來支付合作夥伴的方法 (電子銀行轉帳、點數注意事項)                                                              |
+| paymentID                | 付款的唯一識別碼。 這個數位通常會顯示在您的 bank 語句中。                                               |
 | paymentStatus            | [付款狀態]                                                                                                                          |
-| paymentStatusDescription | 付款狀態的好記的描述                                                                                                  |
-| paymentDate              | 從 Microsoft 傳送日期付款                                                                                                    |
+| paymentStatusDescription | 付款狀態的易記描述                                                                                                  |
+| paymentDate              | 從 Microsoft 傳送的日期付款                                                                                                    |
 
 ## <a name="transaction-history-download-export"></a>交易記錄下載匯出
 
-此選項提供的下載時，您會看到在 [交易記錄] 頁面中，取得型別、 日期、 相關聯的交易量、 客戶、 產品和其他異動的詳細資料適用於您的程式獲得每個明細項目。
+此選項提供您在 [交易歷程記錄] 頁面中看到的每個收益明細專案的下載、賺取類型、日期、相關聯的交易金額、客戶、產品, 以及適用于您程式的其他交易詳細資料。
 
 | 資料行名稱                    | 描述                                                                                                                              |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| earningId                      | 每個所獲得的唯一識別碼                                                                                                       |
-| participantId                  | 主要的身分識別取得方案的夥伴                                                                            |
-| participantIdType              | 銷售人員識別碼                                                                                                                                |
-| participantName                | 獲得的夥伴名稱                                                                                                              |
-| partnerCountryCode             | 位置/國家/地區的獲得的夥伴                                                                                                  |
-| programName                    | 獎勵/儲存程式名稱                                                                                                             |
+| earningId                      | 每個收益的唯一識別碼                                                                                                       |
+| participantId                  | 方案下合作夥伴賺取的主要身分識別                                                                            |
+| participantIdType              | 賣方識別碼                                                                                                                                |
+| participantName                | 收益合作夥伴的名稱                                                                                                              |
+| partnerCountryCode             | 賺取合作夥伴的地點/國家/地區                                                                                                  |
+| programName                    | 獎勵/商店計畫名稱                                                                                                             |
 | transactionId                  | 交易的唯一識別碼                                                                                                    |
 | transactionCurrency            | 發生原始客戶交易的貨幣                                                                             |
-| transactionDate                | 交易的日期。 適用於許多交易對一個獲得的程式                                           |
-| transactionExchangeRate        | 用來顯示相對應的美金數量的貨幣匯率日期                                                                             |
-| transactionAmount              | 交易量，以根據哪一個獲得產生的原始交易貨幣                                              |
-| transactionAmountUSD           | 以美元為單位的交易數量                                                                                                                |
-| 推桿                          | 表示獲得的商務規則                                                                                                  |
-| earningRate                    | 套用交易量來產生贏得獎勵的速率                                                                      |
-| quantity                       | 視程式。 表示交易式的程式數量計費                                                            |
-| earningType                    | 指出是否為費、 rebate、 coop、 銷售等。                                                                                          |
-| earningAmount                  | 取得原始交易貨幣的數量                                                                                      |
-| earningAmountUSD               | 取得以美元為單位的數量                                                                                                                    |
-| earningDate                    | 取得日期                                                                                                                      |
-| calculationDate                | 取得系統中計算的日期                                                                                            |
-| earningExchangeRate            | 用來顯示相對應的美金數量的貨幣匯率                                                                                  |
-| exchangeRateDate               | 用來計算 EarningAmount 美元匯率日期                                                                                   |
-| claimId                        | 一律會是空白                                                                                                                     |
-| paymentId                      | 用於付款的唯一識別碼。 這個數字是通常顯示在您的銀行陳述式                                                 |
+| transactionDate                | 交易的日期。 適用于許多交易貢獻給一個收益的程式                                           |
+| transactionExchangeRate        | 用來顯示對應美元金額的匯率日期                                                                             |
+| transactionAmount              | 原始交易貨幣中的交易數量 (根據產生的收益)                                              |
+| transactionAmountUSD           | 交易金額 (美元)                                                                                                                |
+| 向上                          | 表示獲得收益的商務規則                                                                                                  |
+| earningRate                    | 交易金額所套用的獎勵率, 以產生收益                                                                      |
+| quantity                       | 根據程式而有所不同。 表示交易式程式的計費數量                                                            |
+| earningType                    | 指出是否為費用、退款、合作基金、銷售等。                                                                                          |
+| earningAmount                  | 原始交易貨幣中的賺取金額                                                                                      |
+| earningAmountUSD               | 賺取金額 (美元)                                                                                                                    |
+| earningDate                    | 賺取的日期                                                                                                                      |
+| calculationDate                | 在系統中計算賺取的日期                                                                                            |
+| earningExchangeRate            | 用來顯示對應美元量的匯率                                                                                  |
+| exchangeRateDate               | 用來計算 EarningAmount 美元的匯率日期                                                                                   |
+| claimId                        | 永遠為空白                                                                                                                     |
+| paymentId                      | 付款的唯一識別碼。 此數位通常會顯示在您的 bank 語句中                                                 |
 | paymentStatus                  | [付款狀態]                                                                                                                           |
-| paymentStatusDescription       | 付款狀態的好記的描述                                                                                                   |
-| customerId                     | 一律會是空白                                                                                                                     |
-| customerName                   | 一律會是空白                                                                                                                     |
-| partNumber                     | 一律會是空白                                                                                                                     |
-| productName                    | 連結到交易的產品名稱                                                                                                       |
-| productId                      | 唯一產品識別碼                                                                                                                |
+| paymentStatusDescription       | 付款狀態的易記描述                                                                                                   |
+| Id                     | 永遠為空白                                                                                                                     |
+| customerName                   | 永遠為空白                                                                                                                     |
+| partNumber                     | 永遠為空白                                                                                                                     |
+| productName                    | 連結至交易的產品名稱                                                                                                       |
+| productId                      | 唯一的產品識別碼                                                                                                                |
 | parentProductId                | 唯一的父系產品識別碼。 請注意：如果該交易沒有父系產品，則父系產品識別碼 = 產品識別碼。 |
 | parentProductName              | 父系產品的名稱。 請注意：如果該交易沒有父系產品，則父系產品名稱 = 產品名稱。   |
 | productType                    | 產品類型 (例如應用程式、附加元件、遊戲等等)                                                                                        |
-| invoiceNumber                  | 一律會是空白                                                                                                                     |
-| subscriptionId                 | 一律會是空白                                                                                                                     |
-| subscriptionStartDate          | 一律會是空白                                                                                                                     |
-| subscriptionEndDate            | 一律會是空白                                                                                                                     |
-| resellerId                     | 一律會是空白                                                                                                                     |
-| resellerName                   | 一律會是空白                                                                                                                     |
-| distributorId                  | 一律會是空白                                                                                                                     |
-| distributorName                | 一律會是空白                                                                                                                     |
-| agreementNumber                | 一律會是空白                                                                                                                     |
-| agreementStartDate             | 一律會是空白                                                                                                                     |
-| agreementEndDate               | 一律會是空白                                                                                                                     |
-| 工作負載                       | 一律會是空白                                                                                                                     |
+| invoiceNumber                  | 永遠為空白                                                                                                                     |
+| 訂閱                 | 永遠為空白                                                                                                                     |
+| And subscription.subscriptionstartdate          | 永遠為空白                                                                                                                     |
+| Subscription.subscriptionenddate            | 永遠為空白                                                                                                                     |
+| resellerId                     | 永遠為空白                                                                                                                     |
+| resellerName                   | 永遠為空白                                                                                                                     |
+| distributorId                  | 永遠為空白                                                                                                                     |
+| distributorName                | 永遠為空白                                                                                                                     |
+| agreementNumber                | 永遠為空白                                                                                                                     |
+| agreementStartDate             | 永遠為空白                                                                                                                     |
+| agreementEndDate               | 永遠為空白                                                                                                                     |
+| 工作負載                       | 永遠為空白                                                                                                                     |
 | transactionType                | 交易類型 (例如購買、退貨、作廢、退款等等)                                                               |
-| localProviderSeller            | 記錄的本機提供者/銷售者                                                                                                          |
+| localProviderSeller            | 記錄的本機提供者/賣方                                                                                                          |
 | taxRemitted                    | 免稅金額 (銷售、使用或 VAT/GST 稅額)。                                                                                   |
 | taxRemitModel                  | 負責代繳稅額之一方 (銷售、使用或 VAT/GST 稅額)。                                                                    |
-| storeFee                       | Microsoft 保留的費用，讓應用程式或附加元件可使用存放區中為數量。                                           |
+| storeFee                       | Microsoft 保留的金額, 讓應用程式或附加元件可以在商店中使用。                                           |
 | transactionPaymentMethod       | 交易使用的客戶付款方式 (例如，卡片、行動裝置電信業者帳單、PayPal 等)。                                |
-| tpan                           | 代表第三方 ad 網路                                                                                                     |
-| purchaseTypeCode               | 一律會是空白                                                                                                                     |
-| purchaseOrderType              | 一律會是空白                                                                                                                     |
-| purchaseOrderCoverageStartDate | 一律會是空白                                                                                                                     |
-| purchaseOrderCoverageEndDate   | 一律會是空白                                                                                                                     |
-| externalReferenceId            | 一律會是空白                                                                                                                     |
-| externalReferenceIdLabel       | 一律會是空白                                                                                                                     |
+| tpan                           | 表示協力廠商 ad 網路                                                                                                     |
+| purchaseTypeCode               | 永遠為空白                                                                                                                     |
+| purchaseOrderType              | 永遠為空白                                                                                                                     |
+| purchaseOrderCoverageStartDate | 永遠為空白                                                                                                                     |
+| purchaseOrderCoverageEndDate   | 永遠為空白                                                                                                                     |
+| externalReferenceId            | 永遠為空白                                                                                                                     |
+| externalReferenceIdLabel       | 永遠為空白                                                                                                                     |
 
-## <a name="payout-statement-download-export-legacy"></a>支出陳述式下載匯出 （舊版）
+## <a name="payout-statement-download-export-legacy"></a>支出聲明下載匯出 (舊版)
 
-舊的支出摘要頁面中有限的時間，支出陳述式將可供下載。 該報表包含下列欄位。
+在 [舊支出摘要] 頁面中的有限時間內, 將會提供支出聲明供您下載。 該報表包含下欄欄位。
 
 > [!NOTE]
-> 舊版的交易歷程記錄具有名為 「 保留 」 對應到在現代的歷程記錄中的 「 收入 」 資料行的資料行不同之處在於它會排除所有的盈餘，狀態 = 付款已傳送。
+> 舊版交易記錄具有名為「已保留」的資料行, 其對應于新式歷程記錄中的「收益」資料行, 不同之處在于它會排除狀態 = 「已傳送付款」的所有收益。
 
 | 欄位名稱              | 描述                                                                                                                                                             |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
