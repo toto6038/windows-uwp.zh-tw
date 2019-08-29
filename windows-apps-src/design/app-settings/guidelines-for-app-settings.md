@@ -8,52 +8,47 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5c5e19c6e23f4c0094220a735a0c2a48c1cc34
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 72da3d17f3584d0c295926880b949591b83b47a7
+ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362060"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076403"
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
 
+應用程式設定是透過 [應用程式設定] 頁面存取的通用 Windows 平臺 (UWP) 應用程式的使用者自訂部分。 例如, 「新聞讀取者」應用程式可能會讓使用者指定要顯示的新聞來源, 或要在螢幕上顯示的資料行數目, 而氣象應用程式可讓使用者在攝氏和華氏之間進行選擇。 本文提供建立和顯示應用程式設定的建議和最佳作法。
 
-
-應用程式設定是應用程式中使用者可自訂的部分，存在於應用程式設定頁面中。 例如，新聞閱讀程式應用程式中的應用程式設定可讓使用者指定要顯示的新聞來源或畫面上顯示的欄數，而天氣應用程式設定可讓使用者選擇攝氏與華氏做為預設的度量單位。 本文說明建立和顯示應用程式設定的最佳做法。
-
-
-## <a name="should-i-include-a-settings-page-in-my-app"></a>我的應用程式應該包含設定頁面嗎？
+## <a name="when-to-provide-a-settings-page"></a>何時提供設定頁面
 
 以下為應用程式選項範例，其屬於應用程式設定頁面：
 
--   可影響應用程式行為且不須經常重新調整的設定選項，範例包括將攝氏或華氏設為天氣應用程式中氣溫的預設單位、變更郵件應用程式的帳戶設定、通知的設定或協助工具選項。
--   取決於使用者偏好的選項，例如音樂、音效或色彩佈景主題。
--   不常存取的應用程式資訊 (像是隱私權原則、說明、應用程式版本或版權資訊)。
+- 可影響應用程式行為且不須經常重新調整的設定選項，範例包括將攝氏或華氏設為天氣應用程式中氣溫的預設單位、變更郵件應用程式的帳戶設定、通知的設定或協助工具選項。
+- 取決於使用者偏好的選項，例如音樂、音效或色彩佈景主題。
+- 不常存取的應用程式資訊 (像是隱私權原則、說明、應用程式版本或版權資訊)。
 
 作為一般工作流程一部分的命令 (例如，變更美術應用程式的筆刷大小) 不應在設定頁面中。 若要深入了解命令的放置位置，請參閱[命令設計基本知識](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)。
 
 ## <a name="general-recommendations"></a>一般建議
 
-
--   讓設定頁面保持簡單，並使用二元 (開/關) 控制項。 [切換開關](../controls-and-patterns/toggles.md)通常是二元式設定的最佳控制項。
--   若需要讓使用者從一組最多可有 5 個的互斥相關選項中選擇一個項目的設定，請使用[選項按鈕](../controls-and-patterns/radio-button.md)。
--   為您應用程式設定頁面的所有應用程式設定建立進入點。
--   讓設定保持簡單。 盡可能定義智慧型預設值，保持最少的設定數目。
--   當使用者變更設定時，應用程式應立即反映變更。
--   不要包含屬於通用應用程式工作流程的命令。
+- 讓設定頁面保持簡單，並使用二元 (開/關) 控制項。 [切換開關](../controls-and-patterns/toggles.md)通常是二元式設定的最佳控制項。
+- 若需要讓使用者從一組最多可有 5 個的互斥相關選項中選擇一個項目的設定，請使用[選項按鈕](../controls-and-patterns/radio-button.md)。
+- 為您應用程式設定頁面的所有應用程式設定建立進入點。
+- 讓設定保持簡單。 盡可能定義智慧型預設值，保持最少的設定數目。
+- 當使用者變更設定時，應用程式應立即反映變更。
+- 不要包含屬於通用應用程式工作流程的命令。
 
 ## <a name="entry-point"></a>進入點
 
-
 使用者存取應用程式設定頁面的方式，應該以您應用程式的配置為依據。
 
-**瀏覽窗格**
+**流覽窗格**
 
 若為瀏覽窗格配置，應用程式設定應為瀏覽選項清單的最後一個項目，而且釘選到底部。
 
 ![瀏覽窗格的應用程式設定進入點](images/appsettings-entrypoint-navpane.png)
 
-**應用程式列**
+**應用程式行**
 
 如果您使用[應用程式列](../controls-and-patterns/app-bars.md)或工具列，將設定的進入點放在 [更多] 功能表中的最後一個項目。 如果更容易找到設定進入點對您的應用程式而言很重要，請將進入點直接放在應用程式列上，不要放在溢位內。
 
@@ -63,11 +58,11 @@ ms.locfileid: "66362060"
 
 如果您使用中樞配置，應用程式設定的進入點應放在應用程式列的 [更多] 溢位功能表內。
 
-**索引標籤/樞紐分析表**
+**索引標籤/透視表**
 
 對於索引標籤或樞紐配置，我們不建議放置應用程式設定的進入點做為瀏覽的前幾個項目之一。 而是應將應用程式設定的進入點放在應用程式列的 [更多] 溢位功能表內。
 
-**Master-details**
+**主版-詳細資料**
 
 不要將應用程式設定的進入點深藏在主要/詳細資料窗格內，而是使它成為主要窗格最上層的最後一個釘選項目。
 
@@ -117,35 +112,35 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 
 當您有一系列項目想包含在應用程式設定頁面時，請將這些方針列入考量：
 
--   群組類似或相關的設定放在一個設定標籤下。
--   嘗試將總設定數維持在最多四或五個。
--   不論應用程式內容為何，都要顯示相同的設定。 若某些設定在特定內容中不相關，請於應用程式設定飛出視窗加以停用。
--   為設定使用描述性的單詞標籤。 例如，如果是帳戶相關設定，將設定命名為「帳戶」而不是「帳戶設定」。 如果您想要讓設定只有一個選項，且設定沒有描述性標籤，請使用「選項」或「預設」。
--   如果設定直接連結到網站而不是飛出視窗，則使用視覺提示告知使用者，例如以[超連結](../controls-and-patterns/hyperlinks.md)樣式顯示「說明 (線上)」或「Web 論壇」。 考慮將網站的多個連結群組到含有單一設定的飛出視窗。 例如，「關於」設定可以開啟含有使用規定、隱私權原則和應用程式支援之連結的飛出視窗。
--   將較少使用的設定結合成單一項目，讓較常用的設定能有專屬的項目。 將僅包含資訊的內容或連結放入「關於」設定。
--   不要重複 [權限] 窗格中的功能。 Windows 預設會提供這個窗格，且您無法修改它。
+- 群組類似或相關的設定放在一個設定標籤下。
+- 嘗試將總設定數維持在最多四或五個。
+- 不論應用程式內容為何，都要顯示相同的設定。 若某些設定在特定內容中不相關，請於應用程式設定飛出視窗加以停用。
+- 為設定使用描述性的單詞標籤。 例如，如果是帳戶相關設定，將設定命名為「帳戶」而不是「帳戶設定」。 如果您想要讓設定只有一個選項，且設定沒有描述性標籤，請使用「選項」或「預設」。
+- 如果設定直接連結到網站而不是飛出視窗，則使用視覺提示告知使用者，例如以[超連結](../controls-and-patterns/hyperlinks.md)樣式顯示「說明 (線上)」或「Web 論壇」。 考慮將網站的多個連結群組到含有單一設定的飛出視窗。 例如，「關於」設定可以開啟含有使用規定、隱私權原則和應用程式支援之連結的飛出視窗。
+- 將較少使用的設定結合成單一項目，讓較常用的設定能有專屬的項目。 將僅包含資訊的內容或連結放入「關於」設定。
+- 不要重複 [權限] 窗格中的功能。 Windows 預設會提供這個窗格，且您無法修改它。
 
--   新增設定內容到 [設定] 飛出視窗
--   從頂端至底部以單欄呈現內容，如有必要，可讓它捲動。 捲動的上限設定為螢幕高度的兩倍。
--   為應用程式設定使用下列控制項：
+- 新增設定內容到 [設定] 飛出視窗
+- 從頂端至底部以單欄呈現內容，如有必要，可讓它捲動。 捲動的上限設定為螢幕高度的兩倍。
+- 為應用程式設定使用下列控制項：
 
-    -   [切換開關](../controls-and-patterns/toggles.md):若要讓使用者在開啟或關閉設定值。
-    -   [選項按鈕](../controls-and-patterns/radio-button.md):若要讓使用者從一組最多 5 互斥，選擇一個項目相關的選項。
-    -   [文字輸入的方塊](../controls-and-patterns/text-block.md):若要讓使用者輸入文字。 您使用的文字輸入方塊類型必須與要從使用者取得的文字類型對應，例如電子郵件或密碼。
-    -   [超連結](../controls-and-patterns/hyperlinks.md):若要將使用者帶至應用程式內的另一個頁面或外部網站。 當使用者按一下超連結的時候，[設定] 飛出視窗會關閉。
-    -   [按鈕](../controls-and-patterns/buttons.md):若要讓使用者起始立即採取行動，而不需要關閉目前的設定彈出式視窗。
--   如果停用其中一個控制項，請新增描述訊息。 請將此訊息置於已停用控制項的上方。
--   完成 [設定] 飛出視窗和標頭的動畫之後，以單一區塊的方式產生內容和控制項的動畫。 使用向左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 動畫，產生內容的動畫。
--   視需要使用區段標頭、段落及標籤協助整理及釐清內容。
--   如果您需要重複設定，可使用額外的 UI 層級或展開/摺疊模式，但避免使用超過兩層的階層。 例如，提供每個城市設定的氣象應用程式可列出城市，然後讓使用者點選城市以開啟新的飛出視窗或展開以顯示設定選項。
--   如果載入控制項或網頁內容需要時間，請使用不確定的進度控制項，向使用者指出資訊正在載入。 如需詳細資訊，請參閱[進度控制項的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)。
--   不要使用按鈕瀏覽或認可變更。 使用超連結瀏覽到其他頁面。與其使用按鈕來確認變更，不如在使用者關閉 [設定] 飛出視窗時，自動儲存對應用程式設定所做的變更。
+    - [切換參數](../controls-and-patterns/toggles.md):可讓使用者設定開啟或關閉值。
+    - [選項按鈕](../controls-and-patterns/radio-button.md):讓使用者從一組最多5個互斥的相關選項中選擇一個專案。
+    - [文字輸入](../controls-and-patterns/text-block.md)方塊:讓使用者輸入文字。 您使用的文字輸入方塊類型必須與要從使用者取得的文字類型對應，例如電子郵件或密碼。
+    - [超連結](../controls-and-patterns/hyperlinks.md):將使用者帶到應用程式內的另一個頁面或外部網站。 當使用者按一下超連結的時候，[設定] 飛出視窗會關閉。
+    - [按鈕](../controls-and-patterns/buttons.md):讓使用者起始立即動作, 而不關閉目前的設定飛出視窗。
+- 如果停用其中一個控制項，請新增描述訊息。 請將此訊息置於已停用控制項的上方。
+- 完成 [設定] 飛出視窗和標頭的動畫之後，以單一區塊的方式產生內容和控制項的動畫。 使用向左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 動畫，產生內容的動畫。
+- 視需要使用區段標頭、段落及標籤協助整理及釐清內容。
+- 如果您需要重複設定，可使用額外的 UI 層級或展開/摺疊模式，但避免使用超過兩層的階層。 例如，提供每個城市設定的氣象應用程式可列出城市，然後讓使用者點選城市以開啟新的飛出視窗或展開以顯示設定選項。
+- 如果載入控制項或網頁內容需要時間，請使用不確定的進度控制項，向使用者指出資訊正在載入。 如需詳細資訊，請參閱[進度控制項的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)。
+- 不要使用按鈕瀏覽或認可變更。 使用超連結瀏覽到其他頁面。與其使用按鈕來確認變更，不如在使用者關閉 [設定] 飛出視窗時，自動儲存對應用程式設定所做的變更。
 
 
 
 ## <a name="related-articles"></a>相關文章
 
 * [命令設計基本概念](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-* [進度控制項的方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
-* [儲存和擷取應用程式資料](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [進度控制項的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
+* [儲存和取出應用程式資料](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [**Entrancethemetransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

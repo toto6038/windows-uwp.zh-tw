@@ -8,39 +8,39 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dc13b53450c97ffcd3d44b58d564c813344abf0a
-ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
+ms.openlocfilehash: 3958d69dc3142702eb2d2a41d6dba5ebeb9fa8ce
+ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67253054"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076374"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>儲存及擷取設定和其他 app 資料
 
-*app 資料*是特定 app 特有的可變動資料。 它包含執行階段狀態、使用者喜好設定及其他設定。 app 資料不同於*使用者資料*，後者是使用者在使用 app 時建立和管理的資料。 使用者資料包括文件或媒體檔案、電子郵件或通訊記錄，或保存使用者建立之內容的資料庫記錄。 使用者資料可能對於多個 app 都是實用或有意義的。 使用者資料通常是使用者想要當做與應用程式本身無關之實體來操作或傳送的資料 (如文件)。
+*應用程式資料*是可變動的資料, 由特定應用程式所建立及管理。 其中包含執行時間狀態、應用程式設定、使用者喜好設定、參考內容 (例如字典應用程式中的字典定義), 以及其他設定。 app 資料不同於*使用者資料*，後者是使用者在使用 app 時建立和管理的資料。 使用者資料包括文件或媒體檔案、電子郵件或通訊記錄，或保存使用者建立之內容的資料庫記錄。 使用者資料可能對於多個 app 都是實用或有意義的。 使用者資料通常是使用者想要當做與應用程式本身無關之實體來操作或傳送的資料 (如文件)。
 
-**應用程式資料有關的重要注意事項：** App 資料的生命週期與 app 生命週期息息相關。 如果移除應用程式，所有應用程式資料也會隨之遺失。 請勿使用 app 資料來儲存使用者資料或使用者可能認為重要且無法取代的任何資料。 建議以使用者的媒體櫃和 Microsoft OneDrive 來儲存這類資訊。 app 資料適合儲存 app 特定的使用者喜好設定、各種設定值和我的最愛。
+**關於應用程式資料的重要注意事項:** App 資料的生命週期與 app 生命週期息息相關。 如果移除應用程式，所有應用程式資料也會隨之遺失。 請勿使用 app 資料來儲存使用者資料或使用者可能認為重要且無法取代的任何資料。 建議以使用者的媒體櫃和 Microsoft OneDrive 來儲存這類資訊。 app 資料適合儲存 app 特定的使用者喜好設定、各種設定值和我的最愛。
 
 ## <a name="types-of-app-data"></a>app 資料類型
 
-
 app 資料有兩種類型：設定和檔案。
 
--   **設定**
+### <a name="settings"></a>設定
 
-    您可以使用設定來儲存使用者喜好設定和 app 狀態資訊。 應用程式資料 API 可讓您輕鬆建立及擷取設定 (本文稍後將說明一些範例)。
+您可以使用設定來儲存使用者喜好設定和 app 狀態資訊。 應用程式資料 API 可讓您輕鬆建立及擷取設定 (本文稍後將說明一些範例)。
 
-    以下是可用於應用程式設定的資料類型：
+以下是可用於應用程式設定的資料類型：
 
-    -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
-    -   **Boolean**
-    -   **Char16**、**String**
-    -   [**日期時間**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime)， [ **TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
-    -   **GUID**、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
-    -   [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue):必須序列化和還原序列化以不可分割方式相關的應用程式設定的一組。 使用複合設定，可以輕鬆管理不可部分完成的互相依存設定更新。 在並行存取和漫遊期間，系統可確保複合設定的完整性。 複合設定是針對少量資料最佳化，如果針對大型資料集使用複合設定，可能會拖慢系統效能。
--   **檔案**
+- **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
+- **True**
+- **Char16**、**String**
+- [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime)、 [ **TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
+- **GUID**、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
+- [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue):一組相關的應用程式設定, 必須以不可部分完成的方式進行序列化和還原序列化。 使用複合設定，可以輕鬆管理不可部分完成的互相依存設定更新。 在並行存取和漫遊期間，系統可確保複合設定的完整性。 複合設定是針對少量資料最佳化，如果針對大型資料集使用複合設定，可能會拖慢系統效能。
 
-    使用檔案可儲存二進位資料，或啟用您自己的自訂序列化類型。
+### <a name="files"></a>檔案
+
+使用檔案可儲存二進位資料，或啟用您自己的自訂序列化類型。
 
 ## <a name="storing-app-data-in-the-app-data-stores"></a>將 app 資料儲存在 app 資料存放區
 
@@ -160,19 +160,19 @@ async void ReadTimestamp()
 
 ### <a name="roaming-data-dos-and-donts"></a>漫遊資料的可行與禁止事項
 
--   為使用者喜好設定和自訂、連結和小型資料檔案使用漫遊。 例如，使用漫遊在使用者的所有裝置上保留背景色彩喜好設定。
--   使用漫遊功能讓使用者可以繼續在不同的裝置完成工作。 例如，漫遊草稿電子郵件的內容或閱讀應用程式中最近檢視的頁面等應用程式資料。
--   透過更新應用程式資料的方式處理 [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) 事件。 當應用程式資料剛完成從雲端同步時，會發生此事件。
--   漫遊內容的參照而不是原始資料。 例如，漫遊 URL 而不是線上文章的內容。
--   對於重要且具時效性的設定，可使用與 [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) 關聯的 *HighPriority* 設定。
--   不要漫遊裝置專屬的 app 資料。 有些資訊只與本機相關，如本機檔案資源的路徑名稱。 如果您決定漫遊本機資訊，請確認如果資訊在第二個裝置上無效時，應用程式可以復原它。
--   不要漫遊大量應用程式資料。 應用程式可以漫遊的應用程式資料數量有限；請使用 [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) 屬性取得此最大值。 如果應用程式達到這個限制，必須等到應用程式資料存放區的大小不再超過此限制時才能漫遊資料。 設計應用程式時，請考量如何在較大型資料中放置界限，以免超過該限制。 例如，如果個別儲存遊戲狀態需要 10KB，則應用程式只能允許使用者儲存最多 10 個遊戲。
--   不要在依賴立即同步化的資料使用漫遊。 Windows 不保證立即同步化；如果使用者處於離線狀態或使用高延遲網路，可能會嚴重延遲漫遊。 請確定您的 UI 不需要立即同步化。
--   請勿使用漫遊經常變更的資料。 例如，如果您的應用程式追蹤經常變更的資訊，例如追蹤歌曲每秒的位置，請勿將它儲存為漫遊的應用程式資料。 請改為挑選較不頻繁但仍提供良好使用者體驗的表示法，像是目前正在播放的歌曲。
+- 為使用者喜好設定和自訂、連結和小型資料檔案使用漫遊。 例如，使用漫遊在使用者的所有裝置上保留背景色彩喜好設定。
+- 使用漫遊功能讓使用者可以繼續在不同的裝置完成工作。 例如，漫遊草稿電子郵件的內容或閱讀應用程式中最近檢視的頁面等應用程式資料。
+- 透過更新應用程式資料的方式處理 [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) 事件。 當應用程式資料剛完成從雲端同步時，會發生此事件。
+- 漫遊內容的參照而不是原始資料。 例如，漫遊 URL 而不是線上文章的內容。
+- 對於重要且具時效性的設定，可使用與 [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) 關聯的 *HighPriority* 設定。
+- 不要漫遊裝置專屬的 app 資料。 有些資訊只與本機相關，如本機檔案資源的路徑名稱。 如果您決定漫遊本機資訊，請確認如果資訊在第二個裝置上無效時，應用程式可以復原它。
+- 不要漫遊大量應用程式資料。 應用程式可以漫遊的應用程式資料數量有限；請使用 [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) 屬性取得此最大值。 如果應用程式達到這個限制，必須等到應用程式資料存放區的大小不再超過此限制時才能漫遊資料。 設計應用程式時，請考量如何在較大型資料中放置界限，以免超過該限制。 例如，如果個別儲存遊戲狀態需要 10KB，則應用程式只能允許使用者儲存最多 10 個遊戲。
+- 不要在依賴立即同步化的資料使用漫遊。 Windows 不保證立即同步化；如果使用者處於離線狀態或使用高延遲網路，可能會嚴重延遲漫遊。 請確定您的 UI 不需要立即同步化。
+- 請勿使用漫遊來進行經常變更的資料。 例如，如果您的應用程式追蹤經常變更的資訊，例如追蹤歌曲每秒的位置，請勿將它儲存為漫遊的應用程式資料。 請改為挑選較不頻繁但仍提供良好使用者體驗的表示法，像是目前正在播放的歌曲。
 
 ### <a name="roaming-pre-requisites"></a>漫遊的先決條件
 
-如果使用者使用 Microsoft 帳戶登入裝置，便能享有漫遊應用程式資料的好處。 不過，使用者和群組原則系統管理員可以隨時關閉裝置上的漫遊應用程式資料。 如果使用者選擇不使用 Microsoft 帳戶，或停用漫遊的資料功能，她仍然能夠使用您的應用程式，但應用程式資料是由每個裝置。
+如果使用者使用 Microsoft 帳戶登入裝置，便能享有漫遊應用程式資料的好處。 不過，使用者和群組原則系統管理員可以隨時關閉裝置上的漫遊應用程式資料。 如果使用者選擇不使用 Microsoft 帳戶或停用漫遊資料功能, 她仍然可以使用您的應用程式, 但應用程式資料會在每個裝置的本機上。
 
 只有在使用者將裝置設成「受信任」時，才會轉換儲存在 [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) 中的資料。 如果裝置不受信任，保存在此保存庫中的資料將不會漫遊。
 
@@ -198,9 +198,9 @@ async void ReadTimestamp()
 
 開發人員可以鎖定自己的裝置以觸發應用程式資料漫遊同步處理。 如果應用程式資料似乎未在某個時間範圍內轉換，請檢查並確定下列項目：
 
--   您的漫遊資料未超過大小上限 (如需詳細資訊，請參閱[**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota))。
--   您的檔案已正確關閉並釋放。
--   至少有兩個裝置執行相同的 app 版本。
+- 您的漫遊資料未超過大小上限 (如需詳細資訊，請參閱[**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota))。
+- 您的檔案已正確關閉並釋放。
+- 至少有兩個裝置執行相同的 app 版本。
 
 
 ### <a name="register-to-receive-notification-when-roaming-data-changes"></a>登錄以在漫遊資料變更時收到通知
@@ -434,8 +434,8 @@ localSettings.DeleteContainer("exampleContainer");
 
 ## <a name="related-articles"></a>相關文章
 
-* [**Windows.Storage.ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
-* [**Windows.Storage.ApplicationData.RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)
-* [**Windows.Storage.ApplicationData.RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder)
-* [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)
-* [**Windows.Storage.ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)
+* [**ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
+* [**ApplicationData. RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)
+* [**ApplicationData. RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder)
+* [**ApplicationData. RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)
+* [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)
