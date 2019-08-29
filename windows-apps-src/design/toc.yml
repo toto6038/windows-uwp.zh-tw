@@ -169,7 +169,7 @@
           href: controls-and-patterns/navigationview.md
         - name: 樞紐分析
           href: controls-and-patterns/pivot.md
-    - name: 人員
+    - name: People
       items:
         - name: 連絡人卡片
           href: controls-and-patterns/contact-card.md
@@ -199,11 +199,11 @@
       href: controls-and-patterns/search.md
     - name: 狀態與資訊
       items:
-        - name: 今日
+        - name: 進度
           href: controls-and-patterns/progress-controls.md
         - name: 工具提示
           href: controls-and-patterns/tooltips.md
-    - name: Text
+    - name: 文字
       items:
         - name: 概觀
           href: controls-and-patterns/text-controls.md
@@ -289,7 +289,7 @@
           href: motion/storyboarded-animations.md
         - name: 主要畫面格和 Easing 函式動畫
           href: motion/key-frame-and-easing-function-animations.md
-- name: 殼層
+- name: 命令介面
   items:
     - name: 磚
       href: shell/tiles-and-notifications/creating-tiles.md
@@ -488,7 +488,7 @@
       href: input/guidelines-for-rotation.md
     - name: 選取文字和影像
       href: input/guidelines-for-textselection.md
-    - name: 目標
+    - name: 目標預測
       href: input/guidelines-for-targeting.md
     - name: 視覺化回饋
       href: input/guidelines-for-visualfeedback.md
@@ -533,13 +533,11 @@
           href: accessibility/practices-to-avoid.md
         - name: 自訂自動化對等
           href: accessibility/custom-automation-peers.md
-          items:
-            - name: 控制項模式和介面
-              href: accessibility/control-patterns-and-interfaces.md
+        - name: 控制項模式和介面
+          href: accessibility/control-patterns-and-interfaces.md
     - name: 應用程式設定
-      href: app-settings/app-settings-and-data.md
       items:
-        - name: 指導方針
+        - name: 應用程式設定的指導方針
           href: app-settings/guidelines-for-app-settings.md
         - name: 儲存和擷取應用程式設定及資料
           href: app-settings/store-and-retrieve-app-data.md
@@ -572,9 +570,10 @@
           href: globalizing/use-utf8-code-page.md
         - name: 針對日本紀元變更準備您的應用程式
           href: globalizing/japanese-era-change.md
-    - name: 應用程式說明的指導方針
-      href: in-app-help/guidelines-for-app-help.md
+    - name: 應用程式內說明
       items:
+        - name: 應用程式說明的指導方針
+          href: in-app-help/guidelines-for-app-help.md
         - name: 指示性 UI
           href: in-app-help/instructional-ui.md
         - name: 應用程式內說明
