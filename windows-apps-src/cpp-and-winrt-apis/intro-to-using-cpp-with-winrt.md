@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: 87ab033ddd9de92922f043a069b793ca101307d0
-ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
+ms.openlocfilehash: 197f53df200026541a15120dfc97c187e5aa2e5b
+ms.sourcegitcommit: b186f70f0b1601b6b6a5db91d87d034f6b155e3b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68308449"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063792"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 簡介
 &nbsp;
@@ -33,7 +33,7 @@ Windows 執行階段根據元件物件模型 (COM) API，且設計它透過「�
 當您在瀏覽[Windows UWP Api](https://docs.microsoft.com/uwp/api/)，按一下右上方下拉式方塊中的 [**語言**]，然後選取**C++/WinRT**，當它們在 C++/WinRT 語言投影中顯示時，檢視 API 語法區塊。
 
 ## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>C++/WinRT、XAML、VSIX 擴充功能和 NuGet 套件的 Visual Studio 支援
-如需 Visual Studio 支援，您需要 Visual Studio 2019 或 Visual Studio 2017 (至少 15.6 版；我們建議至少 15.7 版)。 在 Visual Studio 安裝程式中，如果您您尚未安裝 (在 [安裝詳細資料]   > [通用 Windows 平台開發]  ) [C++ (v14x) 通用 Windows 平台工具]  選項，則也必須這麼做。 而在 Windows [設定]   > [更新與安全性]   > [針對開發人員]  中，選擇 [開發人員模式]  選項，而非 [側載應用程式]  選項。
+如需 Visual Studio 支援，您需要 Visual Studio 2019 或 Visual Studio 2017 (至少 15.6 版；我們建議至少 15.7 版)。 從 Visual Studio 安裝程式中，安裝**通用 Windows 平台開發**工作負載。 在 [安裝詳細資料]   > [通用 Windows 平台開發]  中，勾選 [C++ (v14x) 通用 Windows 平台工具]  選項 (如果尚未勾選)。 而在 Windows [設定]   > [更新與安全性]   > [針對開發人員]  中，選擇 [開發人員模式]  選項，而非 [側載應用程式]  選項。
 
 雖然我們建議您使用最新版的 Visual Studio 和 Windows SDK 進行開發，但如果您使用 10.0.17763.0 (Windows 10 版本 1809) 之前的 Windows SDK 之前隨附的 C++/WinRT 版本，若要使用上述的 Windows 命名空間標頭，您的 10.0.17134.0 (Windows 10 版本 1803) 專案中需要最小的 Windows SDK 目標版本。
 
