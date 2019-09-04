@@ -5,12 +5,12 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: da9934f29b1c9f73a76421c4dfa793c9c7f5fae9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4eed59e302bc34e93d21adef794de02427f2933e
+ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614033"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243276"
 ---
 # <a name="camera-barcode-scanner-system-requirements"></a>相機條碼掃描器系統需求
 從 Windows 10 版本 1803 開始，您可以從通用 Windows 應用程式透過標準攝影機鏡頭讀取條碼。
@@ -23,9 +23,14 @@ ms.locfileid: "57614033"
 
 
 ## <a name="webcam-requirements"></a>網路攝影機需求
-| 類別      | 建議           | 註解 |
+| Category      | 建議           | 註解 |
 | ------------- | ------------------------ | -------- |
 | 對焦         | 自動對焦               | 不建議使用固定焦點 |
 | 解析度    | 1920 x 1440 或更高    | 我們正解析度為 1920 x 1440 或更高的數位相機的最佳使用體驗。  如果條碼列印夠大的話，部分解析度較低的相機可讀取標準條碼。 元素較細的條碼可能需要解析度較高的相機。 |
 |
 
+## <a name="see-also"></a>另請參閱
+
+### <a name="samples"></a>範例
+
+- [條碼掃描器範例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)

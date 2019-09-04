@@ -5,15 +5,15 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 14cb42e0bd0f1bac307a9dfc1ac188d8b11d8cb8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cc2aaaf4e9779cb2be712119fb1dacdf946952c5
+ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610323"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243320"
 ---
 # <a name="symbologies"></a>碼制
-本主題提供範例的條碼，針對每個支援隨附於 Windows 10，包括軟體條碼解碼器的象徵意義：UPC/EAN、 程式碼 39、 條碼 128，交錯 5 之 2，資料橫條 Omnidirectional、 資料橫條堆疊，QR 代碼和 GS1DWCode。
+本主題提供 Windows 10 隨附的軟體條碼解碼器所支援之每個條碼符號表示的範例條碼, 包括:UPC/EAN, 程式碼 39, 程式碼 128, 交錯2之 5, 資料條形全方向, 資料條形堆疊, QR 代碼和 GS1DWCode。
 
 ## <a name="1d-symbologies"></a>1D 碼制
 
@@ -50,9 +50,15 @@ ms.locfileid: "57610323"
 ## <a name="digital-watermark"></a>數位浮水印
 ### <a name="gs1-dwcode"></a>GS1-DWCode
 
-使用您的相機條碼掃描器應用程式掃描以下包裝的影像，以查看 GS1DWCode 的動作。  影像編碼為 UPCA 856107006854。  如需 GS1DWCode 功能的詳細資訊，請瀏覽 http://www.digimarc.com。
+使用您的相機條碼掃描器應用程式掃描以下包裝的影像，以查看 GS1DWCode 的動作。  影像編碼為 UPCA 856107006854。  如需 GS1DWCode 功能的詳細資訊，請瀏覽 http://www.digimarc.com 。
 
 ![範例條碼 - GS1DWCode](images/pos/rice-box-v7.jpg)
 
 > [!NOTE]
 > 內建於 Windows 10 的軟體解碼器由 [*Digimarc Corporation*](https://www.digimarc.com/) 提供
+
+## <a name="see-also"></a>另請參閱
+
+### <a name="samples"></a>範例
+
+- [條碼掃描器範例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)

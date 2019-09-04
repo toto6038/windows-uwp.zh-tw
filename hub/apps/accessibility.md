@@ -7,12 +7,12 @@ ms.localizationpriority: medium
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
 keywords: Windows 10 中的協助工具、建立可存取的 win32 應用程式、建立可存取的 UWP 應用程式、建立可存取的 WPF 應用程式、建立可存取的 WinForms apps
-ms.openlocfilehash: bb82103c030c436655630a37678bbec11e588f61
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 63d9b321f71019c164fe4de238a618f2730b2052
+ms.sourcegitcommit: 81213db9de2c12400d2e4d176346b466ee0794c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867419"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70237785"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的協助工具
 
@@ -25,94 +25,82 @@ ms.locfileid: "68867419"
 ## <a name="platform-specific-documentation"></a>特定平台的文件
 
 :::row:::
-    :::column:::
-        ![Universal Windows Platform (UWP)](images/platform-uwp.png)
+   :::column:::
+      ![通用 Windows 平台 (UWP)](images/platform-uwp.png)
 
-        **Universal Windows Platform (UWP)**
+      **通用 Windows 平台 (UWP)**
 
-        Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
+      在適用于 Windows 10 應用程式和遊戲 (包括電腦、手機、Xbox One、HoloLens 等等) 的新式平臺上, 開發可存取的應用程式和工具, 並將其發佈至 Microsoft Store。
 
-        [Designing inclusive software](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
+      [設計全人軟體](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
 
-        [Developing inclusive Windows apps](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
+      [開發全人 Windows 應用程式](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
 
-        [Accessibility testing](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
+      [協助工具測試](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
 
-        [Accessibility in the Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
-    :::column-end:::
-    :::column:::
-        ![Win32 platform apps](images/platform-win32.png)
+      [市集中的協助工具](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+   :::column-end:::
+   :::column:::
+      ![Win32 平臺應用程式](images/platform-win32.png)
 
-        **Win32 platform**
+      **Win32 平臺**
 
-        Develop accessible apps and tools on the original platform for C/C++ Windows applications.
+      在適用于 C/C++ Windows 應用程式的原始平臺上, 開發可存取的應用程式和工具。
 
-        [What's new in Windows accessibility and automation](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
+      [Windows 協助工具和自動化的新功能](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
 
-        [Developing accessible applications for Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
+      [開發適用于 Windows 的可存取應用程式](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
 
-        [Developing accessible UI frameworks for Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
+      [開發適用于 Windows 的可存取 UI 架構](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
 
-        [Developing assistive technology for Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
+      [開發適用于 Windows 的輔助技術](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
 
-        [Testing for accessibility](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
+      [測試協助工具](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
 
-        [Legacy accessibility and automation technology - MSAA to UI Automation](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [舊版協助工具和自動化技術-MSAA 至 UI 自動化](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
 
-        [Windows Accessibility features](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
+      [Windows 協助工具功能](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
 
-        [Guidelines for designing accessible apps](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
-    :::column-end:::
+      [設計協助工具應用程式的指導方針](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
+   :::column-end:::
 :::row-end:::
 :::row:::
-    :::column:::
-        ![WPF platform](images/platform-wpf.png)
+   :::column:::
+      ![WPF 平臺](images/platform-wpf.png)
 
-        **Windows Presentation Foundation (WPF)**
+      **Windows Presentation Foundation (WPF)**
 
-        Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
+      使用 XAML UI 模型和 .NET Framework, 在已建立的平臺上為受控 Windows 應用程式開發可存取的應用程式和工具。
 
-        [Accessibility Best Practices](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [協助工具最佳做法](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
 
-        [UI Automation Fundamentals](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
+      [使用者介面自動化基礎觀念](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
 
-        [UI Automation Providers for Managed Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
+      [Managed 程式碼的 UI 自動化提供者](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
 
-        [UI Automation Clients for Managed Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
+      [Managed 程式碼的 UI 自動化用戶端](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
 
-        [UI Automation Control Patterns](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
+      [UI 自動化控制項模式](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-        [UI Automation Text Pattern](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [UI 自動化文字模式](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
-        [UI Automation Control Types](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
+      [使用者介面自動化控制項類型](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
 
-        [UI Automation Specification and Community Promise](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
-        :::column-end:::
-    :::column:::
-        ![Windows Forms platform apps](images/platform-winforms.png)
+      [使用者介面自動化規格和團體承諾](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
+      :::column-end:::
+   :::column:::
+      ![Windows Forms 平臺應用程式](images/platform-winforms.png)
 
-        **Windows Forms (WinForms)**
+      **Windows Forms (WinForms)**
 
-        Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
+      使用 XAML UI 模型和 .NET Framework, 為受控 Windows 應用程式開發可存取的應用程式和工具。
 
-        [Windows Forms Accessibility](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Windows Forms 協助工具](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-        [Creating an Accessible Windows Application](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [建立可存取的 Windows 應用程式](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-        [Properties on Windows Forms Controls That Support Accessibility Guidelines](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [支援協助工具方針之 Windows Forms 控制項的屬性](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-        [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
-    :::column-end:::
-<!--         
-    :::column:::
-![.NET platform](images/platform-dotnet.png)
-
-        ### .NET
-
-        Develop accessible apps and tools for managed Windows applications with the .NET Framework.
-    :::column-end:::
-    :::column:::
-
-    :::column-end:::
- -->    
+      [提供 Windows Form 上控制項的協助工具資訊](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+   :::column-end:::
 :::row-end:::

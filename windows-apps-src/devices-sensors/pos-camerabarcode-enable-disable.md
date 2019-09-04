@@ -5,12 +5,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4b11d6a360f09a9600961a3e50e3dd6701bf46
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 8394f79e9581101d6def0f1568cb000ffdee5987
+ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714018"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243309"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>啟用或停用隨附於 Windows 10 的軟體解碼器
 
@@ -47,3 +47,9 @@ Windows Registry Editor Version 5.00
 
 > [!NOTE]
 > 內建於 Windows 10 的軟體解碼器由 [**Digimarc Corporation**](https://www.digimarc.com/) 提供。
+
+## <a name="see-also"></a>另請參閱
+
+### <a name="samples"></a>範例
+
+- [條碼掃描器範例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
