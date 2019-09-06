@@ -6,27 +6,27 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fac31b773c2326f8a9e0ed50cdf876552fee5689
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1d398d1cb37bb57e39fc9202af36970aba3d8302
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372249"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393616"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>將 Windows 執行階段 8.x 專案移植到 UWP 專案
 
 
 
-當您開始移植程序時，會有兩個選項。 其中一個是編輯現有專案檔案的複本，包括應用程式套件資訊清單 (若要了解該選項，請參閱[將 app 移轉至通用 Windows 平台 (UWP)](https://docs.microsoft.com/visualstudio/misc/migrate-apps-to-the-universal-windows-platform-uwp?view=vs-2015) 中關於更新您專案檔案的資訊)。 另一個選項是在 Visual Studio 中建立新的 Windows 10 專案，並將檔案複製到它。 本主題的第一節會說明第二個選項，但本主題的其餘部分則會包含其他適用於這兩個選項的資訊。 您也可以選擇將新的 Windows 10 專案保留在與您現有的專案相同的方案，並分享使用共用的專案的原始程式檔。 或者，您可以在方案中保留新專案，並在 Visual Studio 中使用連結檔案的功能共用原始程式碼檔案。
+當您開始移植程序時，會有兩個選項。 其中一個是編輯現有專案檔案的複本，包括應用程式套件資訊清單 (若要了解該選項，請參閱[將 app 移轉至通用 Windows 平台 (UWP)](https://docs.microsoft.com/visualstudio/misc/migrate-apps-to-the-universal-windows-platform-uwp?view=vs-2015) 中關於更新您專案檔案的資訊)。 另一個選項是在 Visual Studio 中建立新的 Windows 10 專案，並將檔案複製到其中。 本主題的第一節會說明第二個選項，但本主題的其餘部分則會包含其他適用於這兩個選項的資訊。 您也可以選擇將新的 Windows 10 專案保留在與現有專案相同的方案中，並使用共用專案共用原始程式碼檔。 或者，您可以在方案中保留新專案，並在 Visual Studio 中使用連結檔案的功能共用原始程式碼檔案。
 
 ## <a name="create-the-project-and-copy-files-to-it"></a>建立專案並將檔案複製到其中
 
-這些步驟會著重在 Visual Studio 中建立新的 Windows 10 專案，並將檔案複製到其中的選項。 一些有關您建立的專案數量以及要複製哪些檔案的特定內容，取決於[如果您有通用 8.1 應用程式](w8x-to-uwp-root.md)與其中各小節中所述的因素與決策。 這些步驟假設最簡單的情況。
+這些步驟著重于在 Visual Studio 中建立新的 Windows 10 專案，並將檔案複製到其中的選項。 一些有關您建立的專案數量以及要複製哪些檔案的特定內容，取決於[如果您有通用 8.1 應用程式](w8x-to-uwp-root.md)與其中各小節中所述的因素與決策。 這些步驟假設最簡單的情況。
 
 1.  啟動 Microsoft Visual Studio 2015，並建立新的空白應用程式 （Windows 通用） 專案。 如需詳細資訊，請參閱 <<c0> [ 快速啟動您的 Windows 執行階段使用範本的 8.x 應用程式 (C#，c + +、 Visual Basic)](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10))。</c0> 新專案建置的應用程式套件 (appx 檔案) 將在所有裝置系列執行。
 2.  在通用 8.1 應用程式專案中，找出您想要重複使用的所有原始程式碼檔案及視覺資產檔案。 使用 [檔案總管]，將資料模型、檢視模型、視覺資產、資源字典、資料夾結構，以及任何您想要重複使用的其他項目複製到新專案。 視需要在磁碟上複製或建立子資料夾。
 3.  將檢視 (例如 MainPage.xaml 和 MainPage.xaml.cs) 一併複製到新專案。 同樣地，請視需要建立新的子資料夾，然後從專案移除現有的檢視。 但是在您覆寫或移除 Visual Studio 產生的檢視之前，請保留一份複本，因為可能稍後可用來供參考。 移植通用 8.1 應用程式的第一個階段著重在美化外觀以及能在裝置系列上運作良好。 稍後，您會將重點放在確認檢視能隨所有尺寸規格適當調整，也可以新增任何調適型程式碼，以充分利用特定的裝置系列。
-4.  在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 選取您複製的檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 [加入至專案]  。 這將會自動包含它們的容器資料夾。 然後您可以視需要將 [**顯示所有檔案**] 切換成關閉。 如果您想要的話，也可以選擇替代的工作流程，就是先在 Visual Studio [**方案總管**] 中建立任何必要的子資料夾，然後使用 [**加入現有項目**]命令。 仔細檢查您視覺資產的 [**建置動作**] 是否已設定為 [**內容**]，而 [**複製到輸出目錄**] 是否已設定為 [**不要複製**]。
+4.  在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 選取您複製的檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 [加入至專案]。 這將會自動包含它們的容器資料夾。 然後您可以視需要將 [**顯示所有檔案**] 切換成關閉。 如果您想要的話，也可以選擇替代的工作流程，就是先在 Visual Studio [**方案總管**] 中建立任何必要的子資料夾，然後使用 [**加入現有項目**]命令。 仔細檢查您視覺資產的 [**建置動作**] 是否已設定為 [**內容**]，而 [**複製到輸出目錄**] 是否已設定為 [**不要複製**]。
 5.  您在這個階段可能會看到一些建置錯誤。 但如果您知道需要變更什麼，就可以使用 Visual Studio 的 **Find and Replace** 命令針對原始碼進行大量變更；還可以在 Visual Studio 的命令式程式碼編輯器中使用內容功能表上的 **Resolve** 和 **Organize Usings** 命令，對更多目標項目做出變更。
 
 ## <a name="maximizing-markup-and-code-reuse"></a>儘可能重複使用標記與程式碼
@@ -36,10 +36,10 @@ ms.locfileid: "66372249"
 -   所有裝置系列都通用的檔案不需要特殊考量。 那些檔案將由所有裝置系列上執行的應用程式使用。 這包括 XAML 標記檔案、命令式原始程式碼檔案以及資產檔案。
 -   您的應用程式能夠偵測到執行的裝置系列，並瀏覽到專為該裝置系列設計的檢視。 如需詳細資訊，請參閱[偵測執行您 app 的平台](w8x-to-uwp-input-and-sensors.md)。
 -   有項可能很有用的類似技術，就是在別無他法時，為標記檔案或 **ResourceDictionary** 檔案 (或包含該檔案的資料夾) 指定特殊名稱，如此一來，只有在特定裝置系列執行您的 App 時，才會於執行階段自動載入。 此技術會在 [Bookstore1](w8x-to-uwp-case-study-bookstore1.md) 案例研究中說明。
--   您應該能夠 Universal 8.1 應用程式的原始程式碼中移除的條件式編譯指示詞很多，如果您只需要支援 Windows 10。 請參閱本主題中的[條件式編譯與調適型程式碼](#conditional-compilation-and-adaptive-code)。
+-   如果您只需要支援 Windows 10，您應該能夠在通用8.1 應用程式的原始程式碼中移除許多條件式編譯指示詞。 請參閱本主題中的[條件式編譯與調適型程式碼](#conditional-compilation-and-adaptive-code)。
 -   若要使用並非所有裝置系列都適用的功能 (例如，印表機、掃描器或相機按鈕)，您可以撰寫調適型程式碼。 請參閱本主題中[條件式編譯與調適型程式碼](#conditional-compilation-and-adaptive-code)的第三個範例。
--   如果您想要支援 Windows 8.1、 Windows Phone 8.1 和 Windows 10，然後您可以讓相同的方案中的三個專案並與使用共用專案共用程式碼。 或者，您可以在專案間共用原始程式碼檔案。 做法如下：在 Visual Studio 中，於 **\[方案總管\]** 中的專案上按一下滑鼠右鍵，選取 **\[加入現有項目\]** ，選取要共用的檔案，然後按一下 **\[加入做為連結\]** 。 將您的原始程式碼檔案儲存在檔案系統上的通用資料夾中，這是連結到那些檔案的專案可看見它們的資料夾。 同時別忘了將它們新增到原始檔控制。
--   若要在二進位層級重複使用，而不是在原始程式碼層級重複使用，請參閱[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140))。 另外還有可攜式類別庫，支援可用於.NET Framework for Windows 8.1、 Windows Phone 8.1 和 Windows 10 應用程式 (.NET Core)，以及完整的.NET Framework 的.NET Api 的子集。 「可攜式類別庫」組件與這些平台皆二進位相容。 請使用 Visual Studio 來建立針對「可攜式類別庫」設計的專案。 請參閱[使用可攜式類別庫進行跨平台開發](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)。
+-   如果您想要支援 Windows 8.1、Windows Phone 8.1 和 Windows 10，則可以在相同的方案中保留三個專案，並與共享專案共用程式碼。 或者，您可以在專案間共用原始程式碼檔案。 做法如下：在 Visual Studio 中，於 **\[方案總管\]** 中的專案上按一下滑鼠右鍵，選取 **\[加入現有項目\]** ，選取要共用的檔案，然後按一下 **\[加入做為連結\]** 。 將您的原始程式碼檔案儲存在檔案系統上的通用資料夾中，這是連結到那些檔案的專案可看見它們的資料夾。 同時別忘了將它們新增到原始檔控制。
+-   若要在二進位層級重複使用，而不是原始程式碼層級，請參閱[在C#和中建立 Windows 執行階段元件 Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140))。 也有可移植的類別庫，其支援適用于 Windows 8.1、Windows Phone 8.1 和 Windows 10 應用程式（.NET Core）的 .NET Framework 中的 .NET Api 子集，以及完整的 .NET Framework。 「可攜式類別庫」組件與這些平台皆二進位相容。 請使用 Visual Studio 來建立針對「可攜式類別庫」設計的專案。 請參閱[使用可攜式類別庫進行跨平台開發](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)。
 
 ## <a name="extension-sdks"></a>擴充功能 SDK
 
@@ -47,7 +47,7 @@ ms.locfileid: "66372249"
 
 如果您收到有關找不到命名空間或型別或成員的編譯錯誤，原因可能在此。 開啟 API 參考文件中的 API 主題，並瀏覽到＜需求＞一節：文中會告訴您實作裝置系列為何。 如果那不是您的目標裝置系列，則您必須擁有該裝置系列之擴充功能 SDK 的參考，您的專案才能使用 API。
 
-按一下 **專案** &gt; **加入參考** &gt; **Windows Universal** &gt; **延伸**和選取適當的擴充功能 SDK。 例如，如果您想要呼叫的 API 只能在行動裝置系列中使用且是在版本 10.0.x.y 引進，則選取 [適用於 UWP 的 Windows 行動擴充功能]。 
+按一下 [**專案** &gt; ] [**新增參考** &gt; ] [ **Windows 通用** &gt; **延伸**模組]，然後選取適當的擴充功能 SDK 例如，如果您想要呼叫的 API 只能在行動裝置系列中使用且是在版本 10.0.x.y 引進，則選取 [適用於 UWP 的 Windows 行動擴充功能]。
 
 如此便會將下列參考加入您的專案檔案：
 
@@ -69,9 +69,9 @@ ms.locfileid: "66372249"
 
 ## <a name="conditional-compilation-and-adaptive-code"></a>條件式編譯與調適型程式碼
 
-如果您使用條件式編譯 (使用C#前置處理器指示詞)，讓您的程式碼檔案會在 Windows 8.1 和 Windows Phone 8.1 工作，然後您現在可以檢閱完成 Windows 10 中的聚合工作根據該條件式編譯。 聚合表示，您的 Windows 10 應用程式，在某些情況可以將其完全移除。 其他有關執行階段檢查的變更，如下列範例所示。
+如果您使用條件式編譯（含C#預處理器指示詞），讓您的程式碼檔案同時在 Windows 8.1 和 Windows Phone 8.1 上執行，則您現在可以在 Windows 10 中的聚合工作中，檢查條件式編譯是否正常。 聚合表示在您的 Windows 10 應用程式中，某些條件可以完全移除。 其他有關執行階段檢查的變更，如下列範例所示。
 
-**附註**  如果您想要在單一程式碼檔案中，支援 Windows 8.1、 Windows Phone 8.1 和 Windows 10，則您可以這麼。 如果您查看 Windows 10 專案在專案的 [屬性] 頁面中，您會看到專案定義 WINDOWS\_UAP 為條件式編譯符號。 因此，您可以搭配 WINDOWS 使用所\_應用程式和 WINDOWS\_PHONE\_應用程式。 下列範例示範簡單的情況下，從 Universal 8.1 應用程式中移除條件式編譯和替代的 Windows 10 應用程式的對等程式碼。
+**注意：**   如果您想要在單一程式碼檔案中支援 Windows 8.1、Windows Phone 8.1 和 Windows 10，您也可以這麼做。 如果您查看 Windows 10 專案在專案的 [屬性] 頁面中，您會看到專案定義 WINDOWS\_UAP 為條件式編譯符號。 因此，您可以將其與 windows\_應用程式和 windows\_PHONE\_應用程式搭配使用。 這些範例示範從通用8.1 應用程式移除條件式編譯，並將對等程式碼取代為 Windows 10 應用程式的較簡單案例。
 
 第一個範例示範 **PickSingleFileAsync** API (這只適用於 Windows 8.1) 與 **PickSingleFileAndContinue** API (這只適用於 Windows Phone 8.1) 的使用模式。
 
@@ -83,7 +83,7 @@ ms.locfileid: "66372249"
 #endif // WINDOWS_APP
 ```
 
-Windows 10 聚合於[ **PickSingleFileAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) API，因此這會簡化您的程式碼：
+Windows 10 是以[**PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) API 為依據，因此您的程式碼可簡化為：
 
 ```csharp
     // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
@@ -162,18 +162,18 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 ## <a name="app-package-manifest"></a>應用程式套件資訊清單
 
-[Windows 10 中變更的項目](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10)主題適用於 Windows 10，包括已新增、 移除和變更的項目列出的套件資訊清單結構描述參考的變更。 如需結構描述中所有元素、屬性和類型的參考資訊，請參閱[元素階層](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/root-elements)。 如果您正在移植 Windows Phone 市集應用程式，或您的 app 是 Windows Phone 市集中 app 的更新，請確定 **pm:PhoneIdentity** 元素符合上一個 app (使用市集指派給 app 的相同 GUID) 的應用程式資訊清單中的元素。 這樣可確保應用程式使用者升級到 Windows 10 時，將會以更新方式 (而不是重複) 收到新的應用程式。 如需詳細資訊，請參閱 [**pm:PhoneIdentity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-pm-phoneidentity) 參考主題。
+[Windows 10 中的變更](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10)主題列出 windows 10 套件資訊清單架構參考的變更，包括已新增、移除和變更的元素。 如需結構描述中所有元素、屬性和類型的參考資訊，請參閱[元素階層](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/root-elements)。 如果您正在移植 Windows Phone 市集應用程式，或您的 app 是 Windows Phone 市集中 app 的更新，請確定 **pm:PhoneIdentity** 元素符合上一個 app (使用市集指派給 app 的相同 GUID) 的應用程式資訊清單中的元素。 這樣可確保應用程式使用者升級到 Windows 10 時，將會以更新方式 (而不是重複) 收到新的應用程式。 如需詳細資訊，請參閱 [**pm:PhoneIdentity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-pm-phoneidentity) 參考主題。
 
 您專案 (包括任何擴充功能 SDK 參考) 中的設定，會決定您應用程式能呼叫的 API 介面區。 但客戶實際上能夠透過市集安裝您應用程式的裝置集，是由您的應用程式套件資訊清單決定。 如需詳細資訊，請參閱 [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 中的範例。
 
-您可以編輯應用程式套件資訊清單，來設定各種宣告、功能及某些功能需要的其他設定。 您可以使用 Visual Studio 應用程式套件資訊清單編輯器來編輯它。 如果未顯示 [方案總管]，請從 [檢視] 功能表選擇它。   按兩下 [Package.appxmanifest]。  資訊清單編輯器視窗隨即開啟。 選取適當的索引標籤來進行變更，然後儲存。
+您可以編輯應用程式套件資訊清單，來設定各種宣告、功能及某些功能需要的其他設定。 您可以使用 Visual Studio 應用程式套件資訊清單編輯器來編輯它。 如果未顯示 [方案總管]，請從 [檢視] 功能表選擇它。 按兩下 [Package.appxmanifest]。 資訊清單編輯器視窗隨即開啟。 選取適當的索引標籤來進行變更，然後儲存。
 
 下一個主題是[疑難排解](w8x-to-uwp-troubleshooting.md)。
 
 ## <a name="related-topics"></a>相關主題
 
-* [適用於通用 Windows 平台開發應用程式](https://docs.microsoft.com/visualstudio/cross-platform/develop-apps-for-the-universal-windows-platform-uwp?view=vs-2015)
-* [快速啟動您的 Windows 執行階段使用範本的 8.x 應用程式 (C#， C++，Visual Basic)](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10))
+* [開發通用 Windows 平臺的應用程式](https://docs.microsoft.com/visualstudio/cross-platform/develop-apps-for-the-universal-windows-platform-uwp?view=vs-2015)
+* [使用範本（C#、 C++、Visual Basic）快速啟動您的 Windows 執行階段8.x 應用程式](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10))
 * [建立 Windows 執行階段元件](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
-* [使用可攜式類別庫的跨平台開發](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)
+* [使用可移植的類別庫進行跨平臺開發](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)
 

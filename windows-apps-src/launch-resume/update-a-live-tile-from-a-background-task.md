@@ -5,18 +5,18 @@ Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ms.date: 01/11/2018
 ms.topic: article
-keywords: windows 10 uwp，背景工作
+keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 280f2253fda7de816ee753798dcab754d58ae847
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: df2fad68fd1aab9b3b056e962736f3d37f749e63
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370556"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393539"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>從背景工作更新動態磚
 
-**重要的 Api**
+**重要 API**
 
 -   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
 -   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
@@ -29,11 +29,11 @@ ms.locfileid: "66370556"
 
 ## <a name="create-the-background-task-project"></a>建立背景工作專案  
 
-若要啟用應用程式的動態磚，請將新的 Windows 執行階段元件專案新增至您的方案。 這是使用者安裝應用程式時，OS 在背景載入和執行的個別組件。
+若要為您的應用程式啟用動態磚，請將新的 Windows 執行階段元件專案新增至您的方案。 這是使用者安裝應用程式時，OS 在背景載入和執行的個別組件。
 
 1.  在 \[方案總管\] 中，以滑鼠右鍵按一下方案，按一下 **\[新增\]** ，然後按一下 **\[新增專案\]** 。
 2.  在 **\[加入新的專案\]** 對話方塊中，選取 **\[已安裝\] &gt; \[其他語言\] &gt; \[Visual C#\] &gt; \[Windows 市集\]** 區段中的 **\[Windows 執行階段元件\]** 範本。
-3.  將專案命名為 BackgroundTasks，然後按一下或點選 [確定]  。 Microsoft Visual Studio 會將新專案新增至方案。
+3.  將專案命名為 BackgroundTasks，然後按一下或點選 [確定]。 Microsoft Visual Studio 會將新專案新增至方案。
 4.  在主要專案中，將參考新增至 BackgroundTasks 專案。
 
 ## <a name="implement-the-background-task"></a>實作背景工作
@@ -145,23 +145,23 @@ namespace BackgroundTasks
 若要設定套件資訊清單，請將它開啟然後新增背景工作宣告。 將工作的進入點設定為類別名稱，包括其命名空間。
 
 1.  在 [方案總管] 中，開啟 Package.appxmanifest。
-2.  按一下或點選 [宣告]  索引標籤。
-3.  在 [可用宣告]  下，選取 [BackgroundTasks]  ，然後按一下 [加入]  。 Visual Studio 會在 [支援的宣告]  下新增 [BackgroundTasks]  。
-4.  在 [支援的工作類型]  下，確定已選取 [計時器]  。
-5.  在 [應用程式設定]  下，將進入點設定成 [BackgroundTasks.BlogFeedBackgroundTask]  。
-6.  按一下或點選 [應用程式 UI]  索引標籤。
-7.  將 [鎖定畫面通知]  設定成 [徽章與文字並排]  。
-8.  在 [徽章標誌]  欄位中，設定 24x24 像素圖示的路徑。
-    **重要**  這個圖示必須使用單色和透明素。
-9.  在 [小標誌]  欄位中，設定 30x30 像素圖示的路徑。
-10. 在 [寬標誌]  欄位中，設定 310x150 像素圖示的路徑。
+2.  按一下或點選 [宣告] 索引標籤。
+3.  在 [可用宣告] 下，選取 [BackgroundTasks]，然後按一下 [加入]。 Visual Studio 會在 [支援的宣告] 下新增 [BackgroundTasks]。
+4.  在 [支援的工作類型] 下，確定已選取 [計時器]。
+5.  在 [應用程式設定] 下，將進入點設定成 [BackgroundTasks.BlogFeedBackgroundTask]。
+6.  按一下或點選 [應用程式 UI] 索引標籤。
+7.  將 [鎖定畫面通知] 設定成 [徽章與文字並排]。
+8.  在 [徽章標誌] 欄位中，設定 24x24 像素圖示的路徑。
+    **重要事項：**   此圖示必須僅使用單色和透明圖元。
+9.  在 [小標誌] 欄位中，設定 30x30 像素圖示的路徑。
+10. 在 [寬標誌] 欄位中，設定 310x150 像素圖示的路徑。
 
 ## <a name="register-the-background-task"></a>登錄背景工作
 
 
 建立 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 以登錄您的工作。
 
-> **附註**  從 Windows 8.1，背景工作註冊參數會在驗證註冊的時間。 如果有任一個登錄參數無效，就會傳回錯誤。 您的應用程式必須能夠處理背景工作登錄失敗的狀況，例如使用條件式陳述式來檢查登錄是否有錯誤，接著使用不同的參數值來重試已失敗的登錄。
+> **注意從 Windows 8.1**開始，在註冊時，會驗證背景工作註冊參數。   如果有任一個登錄參數無效，就會傳回錯誤。 您的應用程式必須能夠處理背景工作登錄失敗的狀況，例如使用條件式陳述式來檢查登錄是否有錯誤，接著使用不同的參數值來重試已失敗的登錄。
  
 
 在應用程式的主頁面中，新增 **RegisterBackgroundTask** 方法，然後在 **OnNavigatedTo** 事件處理常式中進行呼叫。
@@ -241,16 +241,16 @@ namespace ContosoApp
 ## <a name="debug-the-background-task"></a>偵錯背景工作
 
 
-若要偵錯背景工作，請在工作的 Run 方法中設定中斷點。 在 [偵錯位置]  工具列中，選取您的背景工作。 這會讓系統立即呼叫 Run 方法。
+若要偵錯背景工作，請在工作的 Run 方法中設定中斷點。 在 [偵錯位置] 工具列中，選取您的背景工作。 這會讓系統立即呼叫 Run 方法。
 
 1.  在工作的 Run 方法中設定中斷點。
-2.  按 F5 或點選 [偵錯] &gt; [開始偵錯]  ，部署和執行 App。
+2.  按 F5 或點選 [偵錯] &gt; [開始偵錯]，部署和執行 App。
 3.  App 啟動後，切換回 Visual Studio。
-4.  確定可看到 [偵錯位置]  工具列。 此工具列位於 [檢視] &gt; [工具列]  功能表。
-5.  在 [偵錯位置]  工具列，按一下 [暫停]  下拉式清單，然後選取 [BlogFeedBackgroundTask]  。
+4.  確定可看到 [偵錯位置] 工具列。 此工具列位於 [檢視] &gt; [工具列] 功能表。
+5.  在 [偵錯位置] 工具列，按一下 [暫停] 下拉式清單，然後選取 [BlogFeedBackgroundTask]。
 6.  Visual Studio 會在中斷點暫停執行。
-7.  按 F5 或點選 [偵錯] &gt; [繼續]  ，繼續執行 App。
-8.  按 Shift+F5 或點選 [偵錯] &gt; [停止偵錯]  ，停止偵錯。
+7.  按 F5 或點選 [偵錯] &gt; [繼續]，繼續執行 App。
+8.  按 Shift+F5 或點選 [偵錯] &gt; [停止偵錯]，停止偵錯。
 9.  回到 [開始] 畫面上 App 的磚。 數秒之後，磚通知會顯示在應用程式磚上。
 
 ## <a name="related-topics"></a>相關主題
@@ -259,8 +259,8 @@ namespace ContosoApp
 * [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 * [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
 * [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
-* [支援您的應用程式使用背景工作](support-your-app-with-background-tasks.md)
-* [指導方針和磚與徽章的檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
+* [使用背景工作支援您的應用程式](support-your-app-with-background-tasks.md)
+* [磚和徽章的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
 
  
 

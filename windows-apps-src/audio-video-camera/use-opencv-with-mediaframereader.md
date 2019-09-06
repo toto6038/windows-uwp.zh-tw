@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aee0ed5969d87cd5a9d8ef7a621b383d4078d38
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e5a1993ea4808cabf9f82640f03f0187d431f3d2
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360588"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393503"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>使用 Open Source Computer Vision Library (OpenCV) 搭配 MediaFrameReader
 
@@ -24,15 +24,15 @@ ms.locfileid: "66360588"
 
 * [使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md) - 這篇文章提供使用 **MediaFrameReader** 從一或多個取得媒體畫面來源取得畫面的詳細資訊，並詳細說明本文中的大部分的程式碼範例。 特別是 **〈使用 MediaFrameReader 處理媒體畫面〉** 提供 **FrameRenderer** 協助程式類別的程式碼清單，處理在 XAML **Image** 元素中的媒體畫面展示。 本文中的範例程式碼也使用這個協助程式類別。
 
-* [使用 OpenCV 處理點陣圖](process-software-bitmaps-with-opencv.md) - 這篇文章引導您建立原生程式碼 Windows 執行階段元件 **OpenCVBridge**，可協助在 **SoftwareBitmap** 物件 (由 OpenCV 程式庫所用的 **MediaFrameReader** 和 **Mat** 型別來使用) 之間轉換。 這篇文章中的範例程式碼假設您已依照步驟新增 **OpenCVBridge** 元件到您的 UWP app 方案。
+* [使用 OpenCV 處理軟體點陣圖](process-software-bitmaps-with-opencv.md)-這篇文章會逐步引導您建立原生程式碼，Windows 執行階段元件**OpenCVBridge**，這有助於在 MediaFrameReader 所使用的**SoftwareBitmap**物件之間進行轉換。和 OpenCV 程式庫所使用的**材料**類型。 這篇文章中的範例程式碼假設您已依照步驟新增 **OpenCVBridge** 元件到您的 UWP app 方案。
 
 除了這些文章，若要檢視及下載本文所述案例的完整端對端工作範例，請參閱 Windows 通用範例 GitHub 存放庫中的[相機畫面 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003) (英文)。
 
-若要開始快速開發，您可以包含 OpenCV 程式庫在 UWP 應用程式專案中使用 NuGet 套件，但這些套件可能無法通過應用程式 certficication 程序，當您送出您的應用程式存放區，因此建議您下載 OpenCV程式庫原始程式碼，並自行建置二進位檔，再提交您的應用程式。 使用 OpenCV 開發的相關資訊位於 [https://opencv.org](https://opencv.org)
+若要快速開始開發，您可以使用 NuGet 套件在 UWP 應用程式專案中包含 OpenCV 程式庫，但當您將應用程式提交至存放區時，這些套件可能不會通過應用程式 certficication 流程，因此建議您下載 OpenCV程式庫原始程式碼，並在提交應用程式之前自行建立二進位檔。 使用 OpenCV 開發的相關資訊位於 [https://opencv.org](https://opencv.org)
 
 
-## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>實作 OpenCVHelper 原生 Windows 執行階段元件
-請依照[使用 OpenCV 處理點陣圖](process-software-bitmaps-with-opencv.md)中的步驟來建立 OpenCV helper Windows 執行階段元件，以及新增元件專案的參考至您的 UWP app 方案。
+## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>執行 OpenCVHelper native Windows 執行階段元件
+遵循[使用 OpenCV 處理軟體點陣圖](process-software-bitmaps-with-opencv.md)中的步驟，建立 OpenCV helper Windows 執行階段元件，並將元件專案的參考新增至您的 UWP 應用程式解決方案。
 
 ## <a name="find-available-frame-source-groups"></a>尋找可用的畫面來源群組
 首先，您需要尋找可從哪個畫面來源群組取得媒體畫面。 藉由呼叫 **[MediaFrameSourceGroup.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)** ，取得目前裝置上可用的來源群組清單。 然後選取可提供您 app 案例所需感應器類型的來源群組。 針對此範例，我們只需要能從 RGB 相機提供畫面的來源群組。
@@ -52,7 +52,7 @@ ms.locfileid: "66360588"
 ## <a name="initialize-the-mediaframereader"></a>初始化 MediaFrameReader
 接下來，為上一個步驟中擷取的 RGB 畫面來源建立 [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader)。 為了維持良好的畫面播放速率，您可能會想讓所處理畫面的解析度低於感應器的解析度。 此範例提供 **[MediaCapture.CreateFrameReaderAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)** 方法的選用 **[BitmapSize](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapsize)** 引數，要求將畫面讀取程式提供的畫面大小調整為 640 x 480 像素。
 
-建立畫面讀取程式之後，登錄 **[FrameArrived](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)** 事件的處理常式。 接著建立新的 **[SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)** 物件，讓 **FrameRenderer** 協助程式類別用來呈現處理後的影像。 然後呼叫 **FrameRenderer** 的建構函式。 初始化 OpenCVBridge Windows 執行階段元件中定義之 **OpenCVHelper** 類別的執行個體。 此協助程式類別用於 **FrameArrived** 處理常式中，用來處理每個畫面。 最後，呼叫 **[StartAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)** 以啟動畫面讀取程式。
+建立畫面讀取程式之後，登錄 **[FrameArrived](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)** 事件的處理常式。 接著建立新的 **[SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)** 物件，讓 **FrameRenderer** 協助程式類別用來呈現處理後的影像。 然後呼叫 **FrameRenderer** 的建構函式。 初始化在 OpenCVBridge Windows 執行階段元件中定義之**OpenCVHelper**類別的實例。 此協助程式類別用於 **FrameArrived** 處理常式中，用來處理每個畫面。 最後，呼叫 **[StartAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)** 以啟動畫面讀取程式。
 
 [!code-cs[OpenCVFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameReader)]
 
@@ -67,7 +67,7 @@ ms.locfileid: "66360588"
 * [相機](camera.md)
 * [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [處理媒體與 MediaFrameReader 的畫面格](process-media-frames-with-mediaframereader.md)
-* [使用 OpenCV 的處理序的軟體點陣圖](process-software-bitmaps-with-opencv.md)
+* [使用 OpenCV 處理軟體點陣圖](process-software-bitmaps-with-opencv.md)
 * [相機框架範例](https://go.microsoft.com/fwlink/?LinkId=823230)
 * [相機框架 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003)
  

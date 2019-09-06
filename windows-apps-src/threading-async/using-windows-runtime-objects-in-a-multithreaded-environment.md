@@ -1,20 +1,20 @@
 ---
 title: 在多執行緒環境中使用 Windows 執行階段物件 | Microsoft Docs
-description: 本文討論 .NET Framework 如何處理從 C# 與 Visual Basic 程式碼對 Windows 執行階段或 Windows 執行階段元件所提供物件的呼叫。
+description: 本文討論 .NET Framework 處理從和 Visual Basic 程式碼到C# Windows 執行階段或 Windows 執行階段元件所提供之物件的呼叫方式。
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, timer, threads, Windows 10, uwp, 計時器, 執行緒
 ms.localizationpriority: medium
-ms.openlocfilehash: 3afa1720ede9728e9cc25af434a431300faf26d6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4fc4f704d8e9f53282ab09dbc61bc5e625d00da9
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371213"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393522"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>在多執行緒環境中使用 Windows 執行階段物件
-本文討論 .NET Framework 如何處理從 C# 與 Visual Basic 程式碼對 Windows 執行階段或 Windows 執行階段元件所提供物件的呼叫。
+本文討論 .NET Framework 處理從和 Visual Basic 程式碼到C# Windows 執行階段或 Windows 執行階段元件所提供之物件的呼叫方式。
 
 在 .NET Framework 中，您預設可從多執行緒中存取任何物件，無需特殊處理。 您只需要物件的參考即可。 在 Windows 執行階段中，這類物件稱做 *agile*。 大多數的 Windows 執行階段類別為 agile，但一些類別不是，agile 類別甚至可能需要特殊處理。
 
