@@ -933,11 +933,11 @@
     - name: Windows 執行階段元件
       href: ../winrt-components/index.md
       items:
-        - name: 在 C++/CX 中建立 Windows 執行階段元件
+        - name: Windows 執行階段元件與 C++/CX
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-        - name: '逐步解說：在 C++/CX 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C# 呼叫該元件'
+        - name: C++/Cx Windows 執行階段元件的逐步解說
           href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-        - name: '使用 C# 和 Visual Basic 建立 Windows 執行階段元件'
+        - name: 'Windows 執行階段元件與 C# 和 Visual Basic'
           href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
           items:
             - name: Windows 執行階段元件中的自訂事件和事件存取子
@@ -948,9 +948,9 @@
               href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
             - name: 發佈 Managed Windows 執行階段元件
               href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-            - name: Windows 執行階段類型的 .NET Framework 對應
+            - name: Windows 執行階段類型的 .NET 對應
               href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-        - name: 逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
+        - name: 'C# 或 Visual Basic Windows 執行階段元件的逐步解說'
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: 在 Windows 執行階段元件中引發事件
           href: ../winrt-components/raising-events-in-windows-runtime-components.md

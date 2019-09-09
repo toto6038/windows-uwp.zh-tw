@@ -5,18 +5,18 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ff15e9b86d90aa14fd56e4e7015e949e2742bf6
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
+ms.sourcegitcommit: eb683734801c1de5977db70e626609cf7e5b7654
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328877"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70304509"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
-可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作和可觀察屬性的方法，以及如何將 XAML 控制項繫結至它們。
+可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 這個主意是以軟體設計模式為基礎稱為「觀察者模式」  。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作可觀察屬性，以及將 XAML 控制項繫結至這些屬性的方法 (如需背景資訊，請參閱[資料繫結](/windows/uwp/data-binding))。
 
 > [!IMPORTANT]
-> 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請參閱[使用 C++/WinRT 使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
+> 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
 ## <a name="what-does-observable-mean-for-a-property"></a>對一個屬性來說，*可觀察*的意義是什麼？
 比方說一個名為 **BookSku** 的執行階段類別有個名為 **Title** 的屬性。 如果 **BookSku** 選擇引發 [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件，每當變更 **Title** 的值時，則 **Title** 是可觀察的屬性。 它是 **BookSku** 的行為 (引發或不引發事件)，判斷是哪一個，如果有的話，其屬性則為可觀察的。

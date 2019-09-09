@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 18dc65198d476204cfd54bd241fbd3c9ac401155
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: ae8aca92d7eb7bc93ba4be99449d5e813238d744
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485170"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393500"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
@@ -184,7 +184,7 @@ struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 
 如果您的類型是要由您的 XAML UI 參照，它則需要是一個執行階段類別，即使它與 XAML 在同一個專案中也是。 雖然執行階段類別通常是跨可執行檔邊界來啟動，但執行階段類別也可以在實作它的編譯單位中使用。
 
-在此案例中，您同時撰寫「和」  取用 API。 實作您執行階段類別的程序，基本上與 Windows 執行階段元件的相同。 因此，請查閱上一節&mdash;[如果您正在 Windows 執行階段元件中撰寫執行階段類別](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)。 唯一不同的細節是，C + + / WinRT 工具鏈不僅從 IDL 產生執行類型，也產生投影類型。 請務必了解，在此案例中只說 "**MyRuntimeClass**" 可能會模稜兩可；有數個不同種類相同名字的實體。
+在此案例中，您同時撰寫「和」  取用 API。 實作執行階段類別的程序，基本上與 Windows 執行階段元件的相同。 因此，請查閱上一節&mdash;[如果您正在 Windows 執行階段元件中撰寫執行階段類別](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)。 唯一不同的細節是，C + + / WinRT 工具鏈不僅從 IDL 產生執行類型，也產生投影類型。 請務必了解，在此案例中只說 "**MyRuntimeClass**" 可能會模稜兩可；有數個不同種類相同名字的實體。
 
 - **MyRuntimeClass** 是執行階段類別的名稱。 但這只是抽象概念：在 IDL 中宣告，並以某些程式語言實作。
 - **MyRuntimeClass** 是 C++ 結構 **winrt::MyProject::implementation::MyRuntimeClass** 的名字，也就是執行階段類別的 C++/WinRT 實作。 我們已經看過，如果有不同實作和取用專案，則此結構只存在實作專案中。 這是「實作類型」  ，或「實作」  。 此類型會在檔案 `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` 與 `MyRuntimeClass.cpp` 中產生 (藉由 `cppwinrt.exe` 工具)。

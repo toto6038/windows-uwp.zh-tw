@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 404a6985c95718363f3dbbc3b8f27a7793b28e86
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 92088906078a3a705e5fae052a50fc914561c77c
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328849"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393452"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
@@ -471,11 +471,11 @@ C++/CX 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT �
 | 操作 | C++/CX | C++/WinRT|
 |-|-|-|
 | 字串類型類別 | 參考類型 | 值類型 |
-| null  **HSTRING** 投影為 | `(String^)nullptr` | `hstring{ nullptr }` |
+| null  **HSTRING** 投影為 | `(String^)nullptr` | `hstring{}` |
 | Null 和 `""` 相同嗎？ | 是 | 是 |
 | Null 的有效性 | `s = nullptr;`<br>`s->Length == 0` (有效) | `s = nullptr;`<br>`s.size() == 0` (有效) |
 | 進行字串的 Box 處理 | `o = s;` | `o = box_value(s);` |
-| 如果 `s` 為 `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
+| 如果 `s` 為 `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
 | 如果 `s` 為 `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
 | 進行字串的 Box 處理並保留 null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
 | 強制進行字串的 Box 處理 | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
@@ -514,7 +514,7 @@ C++/CX 在**平台**命名空間中提供幾種資料類型。 這些類型不�
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
 | **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
-### <a name="port-platformagile-to-winrtagileref"></a>將 **Platform::Agile\^** 移植到 **winrt::agile_ref**
+### <a name="port-platformagile-to-winrtagile_ref"></a>將 **Platform::Agile\^** 移植到 **winrt::agile_ref**
 
 C++/CX 中的 **Platform::Agile\^** 類型代表可從任何執行緒存取的 Windows 執行階段類別。 C++/WinRT 對等項目是 [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)。
 
@@ -534,7 +534,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 您的選項包括使用初始化清單、**std::array** 或 **std::vector**。 如需詳細資訊以及程式碼範例，請參閱[標準初始化清單](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)和[標準陣列和向量](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)。
 
-### <a name="port-platformexception-to-winrthresulterror"></a>將 **Platform::Exception\^** 移植到 **winrt::hresult_error**
+### <a name="port-platformexception-to-winrthresult_error"></a>將 **Platform::Exception\^** 移植到 **winrt::hresult_error**
 
 Windows 執行階段 API 傳回非 S\_OK HRESULT 時，C++/CX 中產生 **Platform::Exception\^** 類型。 C++/WinRT 對等項目是 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)。
 
