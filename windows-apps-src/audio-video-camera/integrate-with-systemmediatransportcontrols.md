@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 81065c214cc2b0583a99ac88cf1c3e4cd784658a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d2c8e05d2b01b110085ed82c19cecd251c9c6971
+ms.sourcegitcommit: c95915f8a13736705eab74951a12b2cf528ea612
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361690"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876250"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>與系統媒體傳輸控制項整合
 
@@ -34,6 +34,11 @@ ms.locfileid: "66361690"
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
+
+
+> [!Note]
+> 應用程式應該設定[**Type**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaitemdisplayproperties.type)屬性的值，即使它們未提供系統媒體傳輸控制項所要顯示的其他媒體中繼資料也一樣。 此值可協助系統正確地處理您的媒體內容，包括防止螢幕保護裝置在播放期間啟用。
+
 
 ## <a name="use-commandmanager-to-modify-or-override-the-default-smtc-commands"></a>使用 CommandManager 修改或覆寫預設 SMTC 命令
 您的應用程式可以使用 [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) 類別修改或完全覆寫 SMTC 控制項的行為。 透過存取 [**CommandManager**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.commandmanager) 屬性，可以取得每個 **MediaPlayer** 類別執行個體的命令管理員執行個體。
@@ -77,9 +82,9 @@ ms.locfileid: "66361690"
 
 ## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)
-* [播放音訊和視訊與 MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [手動控制的系統媒體傳輸控制項](system-media-transport-controls.md)
-* [在 github 上的系統媒體傳輸站控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
+* [使用 MediaPlayer 播放音訊和影片](play-audio-and-video-with-mediaplayer.md)
+* [手動控制系統媒體傳輸控制項](system-media-transport-controls.md)
+* [Github 上的 System Media Tranport 控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
  
 
  

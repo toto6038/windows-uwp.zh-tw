@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e306cfe1ee03e9ef4a0688145c2db7b3addd68e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 0a4163105b934f5c1e2970fab9f51b76d69d1bd8
+ms.sourcegitcommit: c95915f8a13736705eab74951a12b2cf528ea612
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318498"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876229"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>系統媒體傳輸控制項的手動控制項
 
@@ -66,6 +66,11 @@ ms.locfileid: "67318498"
 
 [!code-cs[SystemMediaTransportControlsUpdaterManual](./code/SMTCWin10/cs/MainPage.xaml.cs#SystemMediaTransportControlsUpdaterManual)]
 
+> [!Note]
+> 應用程式應設定[SystemMediaTransportControlsDisplayUpdater](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.type#Windows_Media_SystemMediaTransportControlsDisplayUpdater_Type
+)屬性的值，即使它們未提供系統媒體傳輸控制項所要顯示的其他媒體中繼資料也一樣。 此值可協助系統正確地處理您的媒體內容，包括防止螢幕保護裝置在播放期間啟用。
+
+
 ## <a name="update-the-system-media-transport-controls-timeline-properties"></a>更新系統媒體傳輸控制項時間軸屬性
 
 系統傳輸控制項會顯示目前播放媒體項目之時間軸的相關資訊，包括媒體項目的目前播放位置、開始時間及結束時間。 若要更新系統傳輸控制項時間軸屬性，請建立新的 [**SystemMediaTransportControlsTimelineProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControlsTimelineProperties) 物件。 設定物件的屬性以反映正在播放的媒體項目的目前狀態。 呼叫 [**SystemMediaTransportControls.UpdateTimelineProperties**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.updatetimelineproperties) 讓控制項更新時間軸。
@@ -74,7 +79,7 @@ ms.locfileid: "67318498"
 
 -   您必須提供 [**StartTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.starttime)、[**EndTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.endtime) 和 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackpositionchangerequested) 的值，系統控制項才能為您正在播放的項目顯示時間軸。
 
--   [**MinSeekTime** ](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime)並[ **MaxSeekTime** ](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime)可讓您指定的範圍內的使用者可搜尋的時間表。 典型的案例是讓內容提供者在他們的媒體中包含廣告中斷。
+-   [**MinSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime)和[**MaxSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime)可讓您指定時間軸內使用者可以搜尋的範圍。 典型的案例是讓內容提供者在他們的媒體中包含廣告中斷。
 
     您必須設定 [**MinSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime) 和 [**MaxSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime)，才會引發 [**PositionChangeRequest**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackpositionchangerequested)。
 
@@ -111,8 +116,8 @@ ms.locfileid: "67318498"
 
 ## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)
-* [整合系統媒體傳輸控制項](integrate-with-systemmediatransportcontrols.md) 
-* [系統媒體傳輸站範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
+* [與系統媒體傳輸控制整合](integrate-with-systemmediatransportcontrols.md) 
+* [系統媒體 Tranport 範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 
