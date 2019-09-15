@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 傳送快顯通知, 通知, 傳送通知, 快顯通知, 如何, 快速入門, 開始使用, 程式碼範例, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 654c063b7c377023fef4b2dab3ddf5d7a755cb2d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ddb00ebc029ccbb15640938f01d14382e8fa273a
+ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320800"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987198"
 ---
 # <a name="send-a-local-toast-notification"></a>傳送本機快顯通知
 
@@ -39,14 +39,14 @@ ms.locfileid: "67320800"
 * 處理前景啟用
 * 處理背景啟用
 
-> **重要的 Api**:[ToastNotification 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)， [ToastNotificationActivatedEventArgs 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **重要 API**：[ToastNotification 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)， [ToastNotificationActivatedEventArgs 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 要完全了解本主題，下列項目將有所幫助...
 
-* 快顯通知詞彙與概念的作業知識。 如需詳細資訊，請參閱 <<c0>  [ 快顯通知及動作 center 概觀](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/)。
+* 快顯通知詞彙與概念的作業知識。 如需詳細資訊，請參閱快顯 [和操作中心總覽](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/)。
 * 熟悉 Windows 10 快顯通知內容。 如需詳細資訊，請參閱[快顯通知內容文件](adaptive-interactive-toasts.md)。
 * Windows 10 UWP app 專案
 
@@ -54,20 +54,20 @@ ms.locfileid: "67320800"
 > 不同於 Windows 8/8.1，您已不需要在 App 的資訊清單中宣告您的 App 能夠顯示快顯通知。 所有 App 都可以傳送和顯示快顯通知。
 
 > [!NOTE]
-> **Windows 8/8.1 應用程式**:請改用[封存的文件](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10))。
+> **Windows 8/8.1 應用程式**：請使用封存的[檔](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10))。
 
 
 ## <a name="install-nuget-packages"></a>安裝 NuGet 套件
 
 建議您將下列兩個 NuGet 套件安裝到您的專案。 我們程式碼範例將會使用這些套件。 文章最後會提供不使用任何 NuGet 套件的「Vanilla」程式碼片段。
 
-* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/):產生快顯通知承載透過物件，而不是原始的 XML。
-* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/):產生和剖析查詢字串C#
+* [Microsoft 工具組 Uwp. 通知](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)：透過物件（而不是原始的 XML）產生快顯承載。
+* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/)：使用來產生和剖析查詢字串C#
 
 
 ## <a name="add-namespace-declarations"></a>加入命名空間宣告
 
-`Windows.UI.Notifications` 包含快顯通知的 Api。
+`Windows.UI.Notifications`包含快顯通知 Api。
 
 ```csharp
 using Windows.UI.Notifications;
@@ -84,7 +84,7 @@ using Microsoft.QueryStringDotNET; // QueryString.NET
 
 我們這就開始建構內容的視覺部分，其中包括您想要讓使用者看到的文字及影像。
 
-由於通知程式庫中，產生的 XML 內容很簡單。 如果您未安裝 NuGet 提供的 Notifications 程式庫，就必須手動建構 XML，很有可能會發生錯誤。
+感謝您的通知程式庫，產生 XML 內容相當簡單。 如果您未安裝 NuGet 提供的 Notifications 程式庫，就必須手動建構 XML，很有可能會發生錯誤。
 
 > [!NOTE]
 > 您可以使用 App 套件、App 本機存放區或網頁中的影像。 從 Fall Creators Update 開始，一般連線的網頁影像可以高達 3 MB，而計量付費連線可以高達 1 MB。 在尚未執行 Fall Creators Update 的裝置上，網頁影像不得超過 200 KB。
@@ -238,9 +238,9 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 如果想以程式設計方式移除或取代您傳送的通知，您必須使用 Tag 屬性 (並選擇性使用 Group 屬性) 提供通知的主索引鍵。 那麼，日後就可以使用這個主索引鍵來移除或取代通知。
 
-若要查看更多有關取代/移除已傳遞的快顯通知，請參閱[快速入門：管理行動作業中心 (XAML) 中的快顯通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
+若要查看有關取代/移除已傳送快顯通知的詳細資訊[，請參閱快速入門：管理操作中心（XAML）](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))中的快顯通知。
 
-Tag 與 Group 結合可以做為主複合索引鍵。 群組為更泛用識別碼，您可以在其中指派群組，例如"wallPosts"、"messages"、"friendRequests 」 等。然後標記應專門用於識別通知本身從群組中。 然後可以使用一般群組，透過 [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 移除該群組中的所有通知。
+Tag 與 Group 結合可以做為主複合索引鍵。 群組是較通用的識別碼，您可以在其中指派群組，例如 "wallPosts"、"messages"、"friendRequests" 等等。然後，標記應該會從群組內唯一識別通知本身。 然後可以使用一般群組，透過 [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 移除該群組中的所有通知。
 
 ```csharp
 toast.Tag = "18365";
@@ -270,10 +270,10 @@ Windows 只有在使用者明確按一下通知時，才會自動移除通知。
 3. App 開啟交談，然後清除該交談的所有快顯通知 (方法是針對該交談在 App 提供的群組上使用 [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_))
 4. 使用者的控制中心現在會正確反映通知狀態，因為沒有該交談的任何過時通知留存在控制中心上。
 
-若要深入了解清除所有的通知，或移除特定的通知，請參閱[快速入門：管理行動作業中心 (XAML) 中的快顯通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
+若要瞭解如何清除所有通知或移除特定通知， [請參閱快速入門：管理操作中心（XAML）](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))中的快顯通知。
 
 
-## <a name="handling-activation"></a>處理啟用
+## <a name="activation-handling"></a>啟用處理
 
 在 Windows 10 中，當使用者按一下您的快顯通知時，有兩種方式可以讓快顯通知啟用您的 App...
 
@@ -501,7 +501,7 @@ var toast = new ToastNotification(toastXml);
 
 ## <a name="resources"></a>資源
 
-* [在 GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
-* [快顯通知內容的文件](adaptive-interactive-toasts.md)
+* [GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
+* [快顯內容檔](adaptive-interactive-toasts.md)
 * [ToastNotification 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 * [ToastNotificationActivatedEventArgs 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
