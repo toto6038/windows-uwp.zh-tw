@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cb076de6cd9c44280bf7030a59c645f601487bd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0810365eeb0023a31862d31213862e2b3bce8db8
+ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370436"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930352"
 ---
 # <a name="reveal-highlight"></a>顯示顯目提示
 
@@ -88,7 +88,7 @@ Reveal 能自動搭配一些控制項運作。 針對其他控制項，您可以
 若要套用這些樣式，只需設定控制項的 [Style](/uwp/api/Windows.UI.Xaml.Style) 屬性：
 
 ```xaml
-<Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
+<Button Content="Button Content" Style="{ThemeResource ButtonRevealStyle}"/>
 ```
 
 ### <a name="reveal-in-themes"></a>佈景主題中的 Reveal

@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3465d108fc725c45999782eff80593832208b5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 31371c2b2a4826939de428fb6d7c082b78d05843
+ms.sourcegitcommit: 6951827b7d0948618e1fbb082c28794c7f23f83c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319517"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923147"
 ---
 # <a name="menus-and-context-menus"></a>功能表和操作功能表
 
@@ -32,7 +32,7 @@ ms.locfileid: "67319517"
 
 | **平台 API** | **Windows UI 程式庫 API** |
 | - | - |
-| [MenuFlyout 類別](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 類別](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 屬性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) \(英文\) | [MenuBar 類別](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout 類別](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 類別](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 屬性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) \(英文\) | [MenuBar 類別](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -90,7 +90,7 @@ MenuBar 和 CommandBar 皆代表您可以用來向使用者公開命令的表面
 - 具有一律顯示的單一進入點 (例如，位於畫面頂端的 [檔案] 功能表)。
 - 通常會附加到按鈕或父功能表項目。
 - 是透過按一下滑鼠左鍵 (或對等的動作，例如使用手指點選) 來叫用。
-- 透過其 [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) \(英文\) 或 [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) \(英文\) 屬性來與元素產生關聯，或是分組在應用程式視窗頂端的功能表列中。
+- 透過其 [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) \(英文\) 或 [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) \(英文\) 屬性來與元素產生關聯，或是分組在應用程式視窗頂端的功能表列中。
 
 ### <a name="context-menus"></a>操作功能表
 
