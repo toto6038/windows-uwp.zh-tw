@@ -2,28 +2,30 @@
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: 建立 "Hello, world" 應用程式 (JS)
 description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 &\#0034;Hello, world&\#0034; app。
-ms.date: 03/06/2017
+ms.date: 09/12/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5423c9aae607d4f6ffe14b755c8f73e013d8b6
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 3f4ab5b177539bc286ce24d480cd949d43a51e17
+ms.sourcegitcommit: bd41fb6f59dfbd7021b14ff749b8b0f83f883c0f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820972"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70963627"
 ---
 # <a name="create-a-hello-world-app-js"></a>建立 "Hello, world" 應用程式 (JS)
 
-本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 "Hello, world" 應用程式。 透過 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的應用程式。
+本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 "Hello, world" 應用程式。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
 
 > [!NOTE]
-> 本教學課程使用 Visual Studio Community 2019。 如果您使用不同版本的 Visual Studio，它的外觀可能會略有不同。
+> 本教學課程使用 Visual Studio Community 2017。 如果您使用不同版本的 Visual Studio，它的外觀可能會略有不同。
 
+> [!WARNING]
+> Visual Studio 2019 不支援 Javascript UWP 應用程式開發。 您必須使用 Visual Studio 2017 來開發 Javascript UWP 應用程式。
 
 您將在此處了解如何：
 
--   建立目標是 **Windows 10** 和 **UWP** 的新 **Visual Studio 2019** 專案。
+-   建立目標是 **Windows 10** 和 **UWP** 的新 **Visual Studio 2017** 專案。
 -   新增 HTML 和 JavaScript 內容
 -   在本機桌面上使用 Visual Studio 執行專案
 
@@ -35,7 +37,7 @@ ms.locfileid: "67820972"
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步驟 1：在 Visual Studio 中建立新專案。
 
-1.  啟動 Visual Studio 2019。
+1.  啟動 Visual Studio 2017。
 
 2.  從 [檔案]  功能表，選取 [新增] > [專案...]  來開啟 [建立新專案]  對話方塊。
 
