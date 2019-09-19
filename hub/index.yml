@@ -1,0 +1,69 @@
+### YamlMime:Hub
+title: Windows 文件
+summary: 軟體開發人員、硬體工程師和 IT 專業人員的相關資訊。
+brand: windows
+metadata:
+  title: Windows Server 文件 | Microsoft Docs
+  titleSuffix: ''
+  author: tedhudek
+  ms.author: tedhudek
+  ms.topic: hub-page
+  uhfHeaderId: MSDocsHeader-DocsL1
+  ms.openlocfilehash: 0cdab14a7301cdb20ca6986854523c5b6e834b21
+  ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71100825"
+highlightedContent:
+  items:
+  - title: 取得 Visual Studio 與 Windows SDK
+    itemType: download
+    url: https://developer.microsoft.com/windows/downloads
+  - title: 下載 WDK
+    itemType: download
+    url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
+  - title: 加入測試人員計畫
+    itemType: overview
+    url: https://docs.microsoft.com/windows-insider
+  - title: 提升您的技能
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?products=m365%2Cwindows
+additionalContent:
+  sections:
+  - items:
+    - title: 應用程式開發
+      links:
+      - text: 開始撰寫 Windows 10 應用程式
+        url: https://docs.microsoft.com/windows/apps
+      - text: 將 Windows 10 功能新增至您的應用程式
+        url: https://docs.microsoft.com/windows/apps/desktop/modernize/
+      - text: 使用 Windows 上的 Python 進行開發
+        url: https://docs.microsoft.com/windows/python/index
+      - text: 設定適用於 Linux 的 Windows 子系統
+        url: https://docs.microsoft.com/windows/wsl/about
+      - text: 尋找程式碼範例
+        url: https://developer.microsoft.com/windows/samples
+    - title: 硬體開發
+      links:
+      - text: 瞭解如何建立裝置
+        url: https://docs.microsoft.com/windows-hardware/get-started/index
+      - text: 開發裝置驅動程式
+        url: https://docs.microsoft.com/windows-hardware/drivers
+      - text: 建立 Windows 映像
+        url: https://docs.microsoft.com/windows-hardware/manufacture/
+      - text: 效能和相容性的測試
+        url: https://docs.microsoft.com/windows-hardware/test
+      - text: 尋找驅動程式範例
+        url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
+    - title: IT 系統管理員
+      links:
+      - text: 設定及部署 Windows 10
+        url: https://docs.microsoft.com/windows/windows-10/
+      - text: 尋找 Windows 10 版本資訊
+        url: https://docs.microsoft.com/windows/release-information/
+      - text: 管理 Windows Server
+        url: https://docs.microsoft.com/windows-server/
+      - text: 開始使用商務用 Microsoft Store
+        url: https://docs.microsoft.com/microsoft-store/
+  footer: '[部落格](https://blogs.windows.com/) - [Twitter](https://twitter.com/windowsdocs) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows) - [開發人員社群](https://social.msdn.microsoft.com/Forums/windowsdesktop)'
