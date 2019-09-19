@@ -5,12 +5,12 @@ ms.date: 04/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 154271e455996bee15ac01c2e41f55b0d9c08fe0
-ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
+ms.openlocfilehash: 4fbda33e044880b263feafbcf88b041abdadc310
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039147"
+ms.locfileid: "71061966"
 ---
 # <a name="layout-panels"></a>版面配置面板
 
@@ -29,7 +29,7 @@ ms.locfileid: "71039147"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/RatingControl">開啟應用程式並查看 RatingControl 運作情形</a>。</p>
+    <p>如果您已安裝<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請參閱<a href="xamlcontrolsgallery:/item/RelativePanel">RelativePanel</a>、 <a href="xamlcontrolsgallery:/item/StackPanel">StackPanel</a>、 <a href="xamlcontrolsgallery:/item/Grid">Grid</a>、 <a href="xamlcontrolsgallery:/item/VariableSizedWrapGrid">VariableSizedWrapGrid</a>和<a href="xamlcontrolsgallery:/item/Canvas">Canvas</a>的實際操作。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
