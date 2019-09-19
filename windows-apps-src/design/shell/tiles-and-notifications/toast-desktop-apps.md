@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast, 桌面, 快顯通知, 傳統型橋接器, 傳送快顯通知的選項, com 伺服器, com 啟動器, 假 com, 無 com, 沒有 com, 傳送快顯通知
 ms.localizationpriority: medium
-ms.openlocfilehash: ef4810ec594173f3cc4da35d63143909f4859e3c
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 030f8b1380dc28a41e65989ccbda688523fad965
+ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340810"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71100821"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>傳統型應用程式的快顯通知
 
@@ -54,7 +54,7 @@ ms.locfileid: "68340810"
 > [!NOTE]
 > 如果您新增 COM 啟動器到現有的傳統型橋接器應用程式，前景/背景和舊版通知啟用現在將會啟用您的 COM 啟動器，而不是您的命令列。
 
-若要了解如何使用這個選項，請參閱[從傳統型 C# 應用程式傳送本機快顯通知](send-local-toast-desktop.md)或[從傳統型 C++ WRL 應用程式傳送本機快顯通知](send-local-toast-desktop-cpp-wrl.md)。
+若要瞭解如何使用此選項，請參閱[從桌面C#應用程式傳送本機](send-local-toast-desktop.md)快顯通知或[從桌面C++ WRL 應用程式傳送本機](send-local-toast-desktop-cpp-wrl.md)快顯通知。
 
 
 ## <a name="alternative-option---no-com--stub-clsid"></a>其他選項 - No COM / Stub CLSID
