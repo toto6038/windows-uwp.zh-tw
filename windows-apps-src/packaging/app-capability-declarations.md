@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bc591f66505fa6e7019cb37fed636700d8dec709
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 5905c494babfcbbe8dd93b85e30602ef490fcc81
+ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393592"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71141950"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -31,7 +31,10 @@ ms.locfileid: "70393592"
 
 ## <a name="general-use-capabilities"></a>一般用途功能
 
-一般用途功能適用於大部分常見的應用程式案例。
+一般-使用功能是使用應用程式套件資訊清單中的**功能**元素所指定。 這些功能適用于最常見的應用程式案例。
+
+> [!NOTE]
+> 所有的**功能**元素都必須在封裝資訊清單中 [**功能**] 節點下的任何[CustomCapability](#custom-capabilities)和[DeviceCapability](#device-capabilities)元素之前。
 
 | 功能案例 | 功能使用方式 |
 |---------------------|------------------|
@@ -59,10 +62,10 @@ ms.locfileid: "70393592"
 
 ## <a name="device-capabilities"></a>裝置功能
 
-裝置功能可以讓您的 app 存取周邊和內部裝置。 裝置功能是使用 app 套件資訊清單中的 **DeviceCapability** 元素來指定。 這個元素可能需要其他子元素，而且您必須手動將一些裝置功能新增到套件資訊清單。 如需詳細資訊，請參閱[如何在套件資訊清單中指定裝置功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)和 [**DeviceCapability 結構描述參考**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability)。
+裝置功能可以讓您的 app 存取周邊和內部裝置。 裝置功能是使用應用程式套件資訊清單中的**DeviceCapability**元素所指定。 這個元素可能需要其他子元素，而且您必須手動將一些裝置功能新增到套件資訊清單。 如需詳細資訊，請參閱[如何在套件資訊清單中指定裝置功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)和 [**DeviceCapability 結構描述參考**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability)。
 
 > [!NOTE]
-> **功能**元素底下可以有多個**DeviceCapability**和**功能**元素，但所有**DeviceCapability**元素都必須位於**功能**元素之後。
+> 封裝資訊清單中的**功能**元素底下可以有多個**DeviceCapability**元素。 所有的**DeviceCapability**元素都必須在任何**功能**和[CustomCapability](#custom-capabilities)元素之後。
 
 | 功能案例 | 功能使用方式 |
 |---------------------|------------------|
@@ -107,6 +110,9 @@ ms.locfileid: "70393592"
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> 所有限制的功能元素都必須在封裝資訊清單中 [**功能**] 節點下的任何[CustomCapability](#custom-capabilities)和[DeviceCapability](#device-capabilities)專案之前。
 
 ### <a name="restricted-capability-approval-process"></a>受限制的功能核准程序
 
@@ -243,6 +249,9 @@ ms.locfileid: "70393592"
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> 所有的**CustomCapability**專案都必須在任何**功能**元素之後，以及封裝資訊清單中 [**功能**] 節點底下的任何[DeviceCapability](#device-capabilities)專案之前。
 
 ## <a name="related-topics"></a>相關主題
 
