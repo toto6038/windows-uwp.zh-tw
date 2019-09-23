@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c85eaacd62de9a2efe380197ba467c5009cd0c5
-ms.sourcegitcommit: 9f8f431fcacdb519126a0d831ba93baab21459f8
+ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2019
+ms.lasthandoff: 09/20/2019
 ms.locfileid: "68757441"
 ---
 # <a name="launch-the-windows-maps-app"></a>啟動 Windows 地圖應用程式
@@ -18,7 +18,7 @@ ms.locfileid: "68757441"
 
 
 
-了解如何從您的應用程式啟動 Windows 地圖應用程式。 本主題說明**bingmaps:** 、 **ms 磁片磁碟機到:** 、 **ms-逐步解說:** 和**ms 設定:** 統一資源識別元 (URI) 配置。 使用這些 URI 配置，可針對特定的地圖、方向和搜尋結果啟動 Windows 地圖應用程式，或者從設定應用程式下載 Windows 地圖離線地圖。
+了解如何從您的應用程式啟動 Windows 地圖應用程式。 本主題說明**bingmaps：** 、 **ms 磁片磁碟機到：** 、 **ms-逐步解說：** 和**ms 設定：** 統一資源識別元（URI）配置。 使用這些 URI 配置，可針對特定的地圖、方向和搜尋結果啟動 Windows 地圖應用程式，或者從設定應用程式下載 Windows 地圖離線地圖。
 
 **提示** 若要深入了解如何從您的應用程式啟動 Windows 地圖應用程式，請從 GitHub 的 [Windows-universal-samples 儲存機制](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
@@ -26,9 +26,9 @@ ms.locfileid: "68757441"
 
 URI 配置可讓您按一下超連結 (或在 app 中以程式設計方式) 開啟 app。 就像您可以使用 **mailto:** 建立新的電子郵件，或使用 **http:** 開啟網頁瀏覽器一樣，您可以使用 **bingmaps:** 、**ms-drive-to:** 和 **ms-walk-to:** 來開啟 Windows 地圖 app。
 
--   **Bingmaps:** URI 提供位置、搜尋結果、方向和流量的對應。
--   **Ms 磁片磁碟機:** URI 提供您目前位置的輪流行車路線。
--   **Ms-逐步解說:** URI 會從您目前的位置提供輪流流覽方向。
+-   **Bingmaps：** URI 提供位置、搜尋結果、方向和流量的對應。
+-   **Ms 磁片磁碟機：** URI 提供您目前位置的輪流行車路線。
+-   **Ms-逐步解說：** URI 會從您目前的位置提供輪流流覽方向。
 
 例如，下列 URI 會開啟 Windows 地圖 app，並顯示以紐約市為中心的地圖。
 
@@ -40,7 +40,7 @@ URI 配置可讓您按一下超連結 (或在 app 中以程式設計方式) 開�
 
 以下是此 URI 配置的描述：
 
-**bingmaps:？ query**
+**bingmaps：？ query**
 
 在此 URI 配置中，*query* 是一系列的「參數名稱/值」組：
 
@@ -51,7 +51,7 @@ URI 配置可讓您按一下超連結 (或在 app 中以程式設計方式) 開�
 ## <a name="launch-a-uri-from-your-app"></a>從您的 app 啟動 URI
 
 
-若要從您的應用程式啟動 Windows Maps 應用程式, 請使用**bingmaps**來呼叫[**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)方法:、 **ms 磁片磁碟機至:** 或**ms--** ------to:URI. 下列範例會啟動與前一個範例中相同的 URI。 如需關於透過 URI 啟動 app 的詳細資訊，請參閱[啟動 URI 的預設 app](launch-default-app.md)。
+若要從您的應用程式啟動 Windows Maps 應用程式，請使用**bingmaps**來呼叫[**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)方法：、 **ms 磁片磁碟機至：** 或**ms--** ------to：URI. 下列範例會啟動與前一個範例中相同的 URI。 如需關於透過 URI 啟動 app 的詳細資訊，請參閱[啟動 URI 的預設 app](launch-default-app.md)。
 
 ```cs
 // Center on New York City
@@ -77,10 +77,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?                                                                 | 開啟地圖 app。                                                                                                                                                                            |
 | bingmaps:?cp=40.726966~-74.006076                                          | 顯示以紐約市為中心的地圖。                                                                                                                                                    |
 | bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | 顯示縮放比例 10 以紐約市為中心的地圖。                                                                                                                            |
-| bingmaps:？ bb = 39.719\_-74.52 ~ 41.71\_-73。5                                   | 顯示紐約市的地圖，這是 **bb** 引數中指定的區域。                                                                                                           |
-| bingmaps:？ bb = 39.719\_-74.52 ~ 41.71\_-73.5 & cp = 47 ~-122                        | 顯示紐約市地圖，這是週框方塊引數中指定的區域。 會略過以 **cp** 引數指定的西雅圖中心點，因為指定了 *bb*。 |
-| bingmaps:？ collection = point. 36.116584\_-115.176753\_Caesars% 20Palace & lvl = 16 | 將縮放比例設定為 16 來顯示含有 Caesar Palace (拉斯維加斯) 地點名稱的地圖。                                                                                                 |
-| bingmaps:？ collection = point. 40.726966\_-74.006076\_部分% 255FBusiness        | 顯示名為 [部分\_商務] (在內華達州) 之點的地圖。                                                                                                                               |
+| bingmaps：？ bb = 39.719\_-74.52 ~ 41.71\_-73。5                                   | 顯示紐約市的地圖，這是 **bb** 引數中指定的區域。                                                                                                           |
+| bingmaps：？ bb = 39.719\_-74.52 ~ 41.71\_-73.5 & cp = 47 ~-122                        | 顯示紐約市地圖，這是週框方塊引數中指定的區域。 會略過以 **cp** 引數指定的西雅圖中心點，因為指定了 *bb*。 |
+| bingmaps：？ collection = point. 36.116584\_-115.176753\_Caesars% 20Palace & lvl = 16 | 將縮放比例設定為 16 來顯示含有 Caesar Palace (拉斯維加斯) 地點名稱的地圖。                                                                                                 |
+| bingmaps：？ collection = point. 40.726966\_-74.006076\_部分% 255FBusiness        | 顯示名為 [部分\_商務] （在內華達州）之點的地圖。                                                                                                                               |
 | bingmaps:?cp=40.726966~-74.006076&amp;trfc=1&amp;sty=a                             | 顯示具有「交通」資訊和「空照圖」地圖樣式的紐約市地圖。                                                                                                                          |
 | bingmaps:?cp=47.6204~-122.3491&amp;sty=3d                                      | 顯示太空針塔的 3D 檢視。                                                                                                                                                        |
 | bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | 顯示半徑為 200 公尺、上下移動為 75 度、朝向為 165 度的太空針塔 3D 檢視。                                                                             |
@@ -97,7 +97,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?q=1600%20Pennsylvania%20Ave,%20Washington,%20DC     | 顯示地圖，並搜尋華盛頓特區白宮的地址。 |
 | bingmaps:?q=coffee&amp;where=Seattle                              | 搜尋西雅圖市的咖啡廳。                                                    |
 | bingmaps:?cp=40.726966~-74.006076&where=New%20York            | 搜尋靠近指定中心點的紐約。                             |
-| bingmaps:？ bb = 39.719\_-74.52 ~ 41.71\_-73.5 & q = 比薩              | 搜尋指定週框方塊 (亦即紐約市) 中的比薩店。      |
+| bingmaps：？ bb = 39.719\_-74.52 ~ 41.71\_-73.5 & q = 比薩              | 搜尋指定週框方塊 (亦即紐約市) 中的比薩店。      |
 
  
 ## <a name="display-multiple-points"></a>顯示多個點
@@ -107,11 +107,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | URI 範例 | 結果                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:？ collection = point. 36.116584\_-115.176753\_Caesars% 20Palace                                                                                                | 搜尋拉斯維加斯的 Caesar's Palace，然後以最佳的地圖檢視在地圖上顯示結果。                         |
-| bingmaps:？ collection = point. 36.116584\_-115.176753\_Caesars% 20Palace & lvl = 16                                                                                         | 將縮放比例設定為 16 來顯示位於拉斯維加斯名為 Caesars Palace 的圖釘。                                               |
-| bingmaps:？ collection = point. 36.116584\_-115.176753\_Caesars% 20Palace ~ point. 36.113126\_-115.175188\_the% 20Bellagio & lvl = 16 & cp = 36.114902 ~-115.176669                   | 將縮放比例設定為 16 來顯示位於拉斯維加斯名為 Caesars Palace 和名為 The Bellagio 的圖釘。              |
-| bingmaps:？ collection = point. 40.726966\_-74.006076\_虛設% 255FBusiness% 255Fwith% 255FUnderscore                                                                        | 以\_ \_底線顯示名為假 Business\_的紐約。                                                  |
-| bingmaps:？ collection = name。飯店% 20List ~ point. 36.116584\_-115.176753\_Caesars% 20Palace ~ point. 36.113126\_-115.175188\_% 20Bellagio & lvl = 16 & cp = 36.114902 ~-115.176669 | 將縮放比例設定為 16 來顯示名為 Hotel List 的清單，以及兩個代表位於拉斯維加斯之 Caesars Palace 和 The Bellagio 的圖釘。 |
+| bingmaps：？ collection = point. 36.116584\_-115.176753\_Caesars% 20Palace                                                                                                | 搜尋拉斯維加斯的 Caesar's Palace，然後以最佳的地圖檢視在地圖上顯示結果。                         |
+| bingmaps：？ collection = point. 36.116584\_-115.176753\_Caesars% 20Palace & lvl = 16                                                                                         | 將縮放比例設定為 16 來顯示位於拉斯維加斯名為 Caesars Palace 的圖釘。                                               |
+| bingmaps：？ collection = point. 36.116584\_-115.176753\_Caesars% 20Palace ~ point. 36.113126\_-115.175188\_the% 20Bellagio & lvl = 16 & cp = 36.114902 ~-115.176669                   | 將縮放比例設定為 16 來顯示位於拉斯維加斯名為 Caesars Palace 和名為 The Bellagio 的圖釘。              |
+| bingmaps：？ collection = point. 40.726966\_-74.006076\_虛設% 255FBusiness% 255Fwith% 255FUnderscore                                                                        | 以\_ \_底線顯示名為假 Business\_的紐約。                                                  |
+| bingmaps：？ collection = name。飯店% 20List ~ point. 36.116584\_-115.176753\_Caesars% 20Palace ~ point. 36.113126\_-115.175188\_% 20Bellagio & lvl = 16 & cp = 36.114902 ~-115.176669 | 將縮放比例設定為 16 來顯示名為 Hotel List 的清單，以及兩個代表位於拉斯維加斯之 Caesars Palace 和 The Bellagio 的圖釘。 |
 
  
 
@@ -124,10 +124,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | URI 範例                                                                                                              | 結果                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:？ rtp = pos. 44.9160\_-110.4158 ~ pos. 45.0475\_-109.4187                                                             | 顯示點對點的路線地圖。 由於未指定 *mode*，因此會以使用者的交通喜好設定模式提供路線指引。 |
+| bingmaps：？ rtp = pos. 44.9160\_-110.4158 ~ pos. 45.0475\_-109.4187                                                             | 顯示點對點的路線地圖。 由於未指定 *mode*，因此會以使用者的交通喜好設定模式提供路線指引。 |
 | bingmaps:?cp=43.0332~-87.9167&amp;trfc=1                                                                                    | 顯示以威斯康辛州密爾瓦基市為中心和交通的地圖。                                                                                                        |
-| bingmaps:？ rtp = adr。一種 Microsoft 的方式, Redmond, WA 98052 ~ pos\_. 39.0731-108.7238                                           | 顯示從指定地址到指定位置的路線地圖。                                                                            |
-| bingmaps:？ rtp = adr. 1% 20Microsoft% 20Way,% 20Redmond,% 20WA,% 2098052 ~ pos. 36.1223\_-111.9495\_總計% 20Canyon% 20northern% 20rim | 顯示從 1 Microsoft Way, Redmond, WA, 98052 到大峽谷北緣的路線。                                                                |
+| bingmaps：？ rtp = adr。一種 Microsoft 的方式，Redmond，WA 98052 ~ pos\_. 39.0731-108.7238                                           | 顯示從指定地址到指定位置的路線地圖。                                                                            |
+| bingmaps：？ rtp = adr. 1% 20Microsoft% 20Way，% 20Redmond，% 20WA，% 2098052 ~ pos. 36.1223\_-111.9495\_總計% 20Canyon% 20northern% 20rim | 顯示從 1 Microsoft Way, Redmond, WA, 98052 到大峽谷北緣的路線。                                                                |
 | bingmaps:?rtp=adr.Davenport, CA~adr.Yosemite Village                                                                    | 顯示從指定位置到指定地標的駕駛路線地圖。                                                                   |
 | bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=d                      | 顯示從加州山景城到加州舊金山國際機場的駕駛路線。                                                                  |
 | bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=w                      | 顯示從加州山景城到加州舊金山國際機場的步行路線。                                                                  |
@@ -136,9 +136,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## <a name="display-turn-by-turn-directions"></a>顯示轉向建議導航路線指引
 
 
-**Ms 磁片磁碟機到:** 和**ms 逐步解說:** URI 配置可讓您直接啟動路由的輪流查看。 這些 URI 配置只能提供從使用者目前所在位置出發的路線指引。 如果您必須在不包含使用者目前位置的點之間提供方向, 請使用**bingmaps:** URI 配置, 如上一節所述。 如需這些 URI 配置的詳細資訊，請參閱 [ms-drive-to:](#ms-drive-to-param-reference) 和 [ms-walk-to:](#ms-walk-to-param-reference) 參數參考。
+**Ms 磁片磁碟機到：** 和**ms 逐步解說：** URI 配置可讓您直接啟動路由的輪流查看。 這些 URI 配置只能提供從使用者目前所在位置出發的路線指引。 如果您必須在不包含使用者目前位置的點之間提供方向，請使用**bingmaps：** URI 配置，如上一節所述。 如需這些 URI 配置的詳細資訊，請參閱 [ms-drive-to:](#ms-drive-to-param-reference) 和 [ms-walk-to:](#ms-walk-to-param-reference) 參數參考。
 
-> **重要事項** 當**ms 磁片磁碟機到**: 或**ms-逐步解說:** URI 配置會啟動, Maps 應用程式會檢查裝置是否曾經有 GPS 位置修正。 如果有，地圖 app 就會前往轉向建議導航路線指引。 如果還未修正，app 將會顯示路線概觀，如[顯示路線指引和交通狀況](#display-directions-and-traffic)中所述。
+> **重要事項** 當**ms 磁片磁碟機到**：或**ms-逐步解說：** URI 配置會啟動，Maps 應用程式會檢查裝置是否曾經有 GPS 位置修正。 如果有，地圖 app 就會前往轉向建議導航路線指引。 如果還未修正，app 將會顯示路線概觀，如[顯示路線指引和交通狀況](#display-directions-and-traffic)中所述。
 
 ![轉向建議導航路線指引範例](images/windowsmapsappdirections.png)
 
@@ -150,7 +150,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="download-offline-maps"></a>下載離線地圖
 
-**毫秒-設定:** URI 配置可讓您直接啟動至 [設定] 應用程式中的特定頁面。 但**ms 設定:** URI 配置不會啟動至 Maps 應用程式, 它可讓您直接啟動 [設定] 應用程式中的 [離線對應] 頁面, 並顯示確認對話方塊, 以下載地圖應用程式所使用的離線地圖。 URI 配置接受緯度和經度所指定的值，並自動判斷是否有包含該點之地區可用的離線地圖。  如果緯度和經度剛好落在多個下載地區內，確認對話方塊會讓使用者挑選要下載其中哪一個區域。 如果包含該點的地區沒有離線地圖，則設定應用程式中的 [離線地圖] 頁面會顯示錯誤對話方塊。
+**毫秒-設定：** URI 配置可讓您直接啟動至 [設定] 應用程式中的特定頁面。 但**ms 設定：** URI 配置不會啟動至 Maps 應用程式，它可讓您直接啟動 [設定] 應用程式中的 [離線對應] 頁面，並顯示確認對話方塊，以下載地圖應用程式所使用的離線地圖。 URI 配置接受緯度和經度所指定的值，並自動判斷是否有包含該點之地區可用的離線地圖。  如果緯度和經度剛好落在多個下載地區內，確認對話方塊會讓使用者挑選要下載其中哪一個區域。 如果包含該點的地區沒有離線地圖，則設定應用程式中的 [離線地圖] 頁面會顯示錯誤對話方塊。
 
 | URI 範例  | 結果 |
 |-------------|---------|
@@ -241,13 +241,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>sty=a</p></td>
 <td align="left"><p>定義地圖樣式。 此參數的有效值包括：</p>
 <ul>
-<li><b>答</b>:顯示地圖的空中視圖。</li>
-<li><b>r</b>:顯示地圖的道路觀點。</li>
-<li><b>3d</b>:顯示地圖的3D 視圖。 與 <b>cp</b> 參數搭配使用，還可以選擇性地搭配 <b>rad</b> 參數。</li>
+<li><b>答</b>：顯示地圖的空中視圖。</li>
+<li><b>r</b>：顯示地圖的道路觀點。</li>
+<li><b>3d</b>：顯示地圖的3D 視圖。 與 <b>cp</b> 參數搭配使用，還可以選擇性地搭配 <b>rad</b> 參數。</li>
 </ul>
 <p>在 Windows 10 中，空照圖檢視和 3D 檢視樣式相同。</p>
 <div class="alert">
-<b>請</b>注意  , 省略<b>sty</b>參數會產生與 sty = r 相同的結果。
+<b>請</b>注意  ，省略<b>sty</b>參數會產生與 sty = r 相同的結果。
 </div>
 <div>
  
@@ -285,7 +285,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>ss=1</p></td>
 <td align="left"><p>指出當 <code>ss=1</code> 時就顯示街景圖。 省略 <b>ss</b> 參數會產生與 <code>ss=0</code> 相同的結果。 與 <b>cp</b> 參數搭配使用來指定街景檢視的位置。</p>
 <div class="alert">
-<b>請</b>注意  , 所有區域都無法使用街道層級的影像。
+<b>請</b>注意  ，所有區域都無法使用街道層級的影像。
 </div>
 <div>
  
@@ -299,7 +299,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>trfc=1</p></td>
 <td align="left"><p>指定是否要在地圖上包含交通資訊。 省略 trfc 參數會產生與 <code>trfc=0</code> 相同的結果。</p>
 <div class="alert">
-<b>請</b>注意  , 所有區域都無法使用流量資料。
+<b>請</b>注意  ，所有區域都無法使用流量資料。
 </div>
 <div>
  
@@ -328,7 +328,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>提供的路線不完整時，不會繪製任何路線圖。</p>
 <p>與 <b>mode</b> 參數搭配使用可指定交通模式 (開車、運輸工具或步行)。 若未指定 <b>mode</b>，則會以使用者的交通喜好設定模式提供路線指引。</p>
 <div class="alert">
-<b>請</b>注意  , 如果位置是由<b>pos</b>參數值所指定, 就可以將標題用於某個位置。 系統將顯示標題，而不是緯度和經度。
+<b>請</b>注意  ，如果位置是由<b>pos</b>參數值所指定，就可以將標題用於某個位置。 系統將顯示標題，而不是緯度和經度。
 </div>
 <div>
  
@@ -342,16 +342,16 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>mode=d</p></td>
 <td align="left"><p>定義交通模式。 此參數的有效值包括：</p>
 <ul>
-<li><b>d</b>:顯示駕駛方向的路線總覽</li>
-<li><b>t</b>:顯示傳輸方向的路線總覽</li>
-<li><b>w</b>:顯示導覽方向的路線總覽</li>
+<li><b>d</b>：顯示駕駛方向的路線總覽</li>
+<li><b>t</b>：顯示傳輸方向的路線總覽</li>
+<li><b>w</b>：顯示導覽方向的路線總覽</li>
 </ul>
 <p>與 <b>rtp</b> 參數搭配使用，提供交通路線指引。 若未指定 <b>mode</b>，則會以使用者的交通喜好設定模式提供路線指引。 <b>mode</b> 可以與 no route 參數一起提供，來輸入該模式從目前位置的路線指引輸入。</p></td>
 </tr>
 
 <tr class="even">
 <td align="left"><p><b>collection</b></p></td>
-<td align="left"><p>Collection</p></td>
+<td align="left"><p>集合</p></td>
 <td align="left"><p>collection = "collection="(name"~"/)point["~"point]</p>
 <p>name = "name." whereval </p>
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?") </p>
@@ -410,7 +410,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="ms-settings-parameter-reference"></a>ms-settings: 參數參考
 
-用於對應**ms 設定**之應用程式特定參數的語法:URI 配置的定義如下。 **對應-downloadmaps**與**ms 設定**一起指定:URI 的格式為**ms-settings: map-downloadmaps？** , 表示 [離線對應設定] 頁面。 
+用於對應**ms 設定**之應用程式特定參數的語法：URI 配置的定義如下。 **對應-downloadmaps**與**ms 設定**一起指定：URI 的格式為**ms-settings： map-downloadmaps？** ，表示 [離線對應設定] 頁面。 
 
 | 參數 | 定義 | 範例 | 詳細資料 |
 |-----------|------------|---------|----------|

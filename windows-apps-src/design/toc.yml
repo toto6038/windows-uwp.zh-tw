@@ -169,6 +169,8 @@
           href: controls-and-patterns/navigationview.md
         - name: 樞紐分析
           href: controls-and-patterns/pivot.md
+        - name: 索引標籤檢視
+          href: controls-and-patterns/tab-view.md
     - name: People
       items:
         - name: 連絡人卡片
