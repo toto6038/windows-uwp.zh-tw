@@ -12,18 +12,34 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d0955e7a018472141b137935c5bc87a9f75a5c6d
-ms.sourcegitcommit: 0c5f81100986cc4b74b54cd1ca2debd283c5b7f6
+ms.openlocfilehash: ce81088495716e43a32dab94d1d47d399dd6a309
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68375267"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061913"
 ---
 # <a name="sound"></a>音效
 
 ![主角圖像](images/header-sound.svg)
 
 有許多方式可以使用音效來增強您的 App。 您可以使用音效來補充其他 UI 元素，讓使用者能透過音效辨識事件。 針對視覺殘障人士而言，音效可以是有效的使用者介面元素。 您可以使用音效來建立一個讓使用者身歷其境的氛圍；例如，您可以在拼圖遊戲的背景中播放詭譎的音樂，或針對恐怖/求生遊戲使用具威脅性的音效。
+
+## <a name="examples"></a>範例
+
+<table>
+<th align="left">XAML 控制項庫<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下此處以<a href="xamlcontrolsgallery:/item/Sound">開啟應用程式並查看 Sound 的運作情形</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="sound-global-api"></a>音效全域 API
 
@@ -150,6 +166,10 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 音效系統預設會在每個瀏覽觸發程序循環播放 4 個不同的音效，這是呼叫 **ElementSound.Focus** 的新增功能。 這表示任意兩個焦點音效不會彼此接連播放。
 
 此循環功能背後的目的是為了避免焦點音效變單調，以及避免無法引起使用者的注意；焦點音效將會最常播放，因此應該最為精緻。
+
+## <a name="get-the-sample-code"></a>取得範例程式碼
+
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 

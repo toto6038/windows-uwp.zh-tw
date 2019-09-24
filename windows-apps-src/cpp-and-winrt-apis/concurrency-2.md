@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a275d5c91e03f9eb5b6348cda673d93e7132d7a
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: 1170b8e1291afd166f210feb291b644d1c7ed546
+ms.sourcegitcommit: e5a154c7b6c1b236943738febdb17a4815853de5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485138"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164820"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>採用 C++/WinRT 的更進階並行和非同步
 
@@ -219,7 +219,7 @@ co_await static_cast<no_switch>(async);
 
 然後，C++ 編譯器不會尋找那三個符合 **IAsyncXxx** 的 **await_xxx** 函式，而是會尋找符合 **no_switch** 的函式。
 
-## <a name="a-deeper-dive-into-winrtresumeforeground"></a>深入探討 **winrt::resume_foreground**
+## <a name="a-deeper-dive-into-winrtresume_foreground"></a>深入探討 **winrt::resume_foreground**
 
 從 [C++/WinRT 2.0](/windows/uwp/cpp-and-winrt-apis/newsnews#news-and-changes-in-cwinrt-20) 起，[**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) 函式會暫停，即使從發送器執行緒呼叫亦然 (在先前的版本中，它可能在某些案例中引進鎖死，因為它只會在尚未位於發送器執行緒時暫停)。
 
@@ -731,7 +731,7 @@ int main()
 
 **get** 函式會無限期地封鎖，而非同步物件會完成。 非同步物件的存留時間可能很短，因此您通常只需要這麼做。
 
-但在某些情況下，這並不足夠，而您必須在一段時間之後放棄等候。 幸虧有 Windows 執行階段所提供的建構元素，因此一律可撰寫該程式碼。 但現在 C++/WinRT 可讓您更輕鬆地提供 **wait_for** 函式。 它也會在 **IAsyncAction** 上實作，其同樣類似於 **std::function** 所提供的函式。
+但在某些情況下，這並不足夠，而您必須在一段時間之後放棄等候。 幸虧有 Windows 執行階段所提供的建構元素，因此一律可撰寫該程式碼。 但現在 C++/WinRT 提供 **wait_for** 函式，可讓一切更加輕鬆。 它也會在 **IAsyncAction** 上實作，其同樣類似於 **std::function** 所提供的函式。
 
 ```cppwinrt
 using namespace std::chrono_literals;
@@ -745,6 +745,9 @@ int main()
     }
 }
 ```
+
+> [!NOTE]
+> **wait_for** 在介面上使用 **std::chrono::duration**，但其限制為小於 **std::chrono::duration** 提供的範圍 (大約49.7 天)。
 
 下一個範例中的 **wait_for** 大約會等候五秒鐘，然後檢查是否完成。 如果順利比較，那麼您就知道非同步物件已順利完成，且您已完成作業。 如果您正在等候某種結果，之後只要呼叫 **get** 函式來擷取結果即可。
 

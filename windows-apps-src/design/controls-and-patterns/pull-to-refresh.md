@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fdde696a0bc1dc7706f89ede5d525194e5d2830
-ms.sourcegitcommit: f0e539359b9766db0339ddbae3f7ccf0069011e8
+ms.openlocfilehash: 2f276c1a4abb57c5505a39afc538cc6f7319a23d
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67885658"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061940"
 ---
 # <a name="pull-to-refresh"></a>拖動以重新整理
 
@@ -32,6 +32,22 @@ ms.locfileid: "67885658"
 當您提供使用者可能需要定期重新整理的資料清單或方格，且您的應用程式可能要在以觸控為主的裝置上執行時，請使用「拖動以重新整理」。
 
 您也可以使用 [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)，建立以其他方式 (例如透過 [重新整理] 按鈕) 叫用的一致重新整理體驗。
+
+## <a name="examples"></a>範例
+
+<table>
+<th align="left">XAML 控制項庫<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/PullToRefresh">開啟應用程式並查看 PullToRefresh 運作情形</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="refresh-controls"></a>重新整理控制項
 
@@ -332,6 +348,10 @@ public class ListItemData
     public string Body { get; set; }
 }
 ```
+
+## <a name="get-the-sample-code"></a>取得範例程式碼
+
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 

@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ff88332e0b44749bcd86e06adafeb596ca8678b3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1c535e4ea4ad3c93acb048de2050d5ae7a9c2c2b
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820649"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061931"
 ---
 # <a name="control-size-and-density"></a>控制項大小和密度
 
@@ -20,6 +20,22 @@ ms.locfileid: "63820649"
 根據預設，UWP 應用程式會以低密度 (或 `Standard`) 配置。 不過，從 WinUI 2.1 開始，也支援高密度 (或 `Compact`) 版面配置選項 (適用於資訊豐富的 UI 和類似的特殊情況)。 這可透過基本樣式資源指定 (請參閱以下範例)。
 
 雖然功能和行為尚未變更，並且在兩個大小和密度選項之間保持一致，但所有控制項的預設主體字型大小已更新為 14px，以支援這兩個密度選項。 這個字型大小適用於各個區域和裝置，確保您的應用程式保持平衡且方便使用者使用。
+
+## <a name="examples"></a>範例
+
+<table>
+<th align="left">XAML 控制項庫<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/Compact Sizing">開啟應用程式，並查看精簡大小調整的運作情形</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="fluent-standard-sizing"></a>Fluent 標準大小調整
 
@@ -77,6 +93,10 @@ ms.locfileid: "63820649"
     </Grid.Resources>
 </Grid>
 ```
+
+## <a name="get-the-sample-code"></a>取得範例程式碼
+
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 

@@ -8,15 +8,14 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cad33c0f1b72bbd379be9b8f13ed648231f1a1ca
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 799913688f04421cae6b47f0d4b7db2fb1074ed4
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319365"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061921"
 ---
 # <a name="web-view"></a>網頁檢視
- 
 
 網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容 。 超連結也可以在網頁檢視控制項中顯示和運作。
 
@@ -25,6 +24,22 @@ ms.locfileid: "67319365"
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 使用網頁檢視控制項，可在您的應用程式套件中顯示來自遠端網頁伺服器的豐富格式 HTML 內容、動態產生的程式碼或內容檔案。 豐富內容也能夠包含指令碼程式碼，並在指令碼與應用程式的程式碼之間通訊。
+
+## <a name="examples"></a>範例
+
+<table>
+<th align="left">XAML 控制項庫<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/WebView">開啟應用程式並查看 WebView 運作情形</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="create-a-web-view"></a>建立網頁檢視
 
@@ -319,15 +334,10 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 -   應該適當地調整輸入欄位的大小。 使用者可能不知道他們可以放大來輸入文字。
 -   如果網頁檢視在外觀上與應用程式的其他部分不像，請考慮採用替代控制項或方式來完成相關工作。 如果網頁檢視符合應用程式的其他部分，使用者會將其與其他部分視為一個整體，而獲得無縫式經驗。
 
+## <a name="get-the-sample-code"></a>取得範例程式碼
 
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-topics"></a>相關主題
 
-* [WebView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
- 
-
- 
-
-
-
-
+- [WebView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
