@@ -73,7 +73,7 @@
     - name: 使用 Python 進行開發
       items:
         - name: 概觀
-          href: python/index.md
+          href: python/index.yml
         - name: 初學者入門
           href: python/get-started/python-for-education.md
         - name: 開始使用 Web 開發

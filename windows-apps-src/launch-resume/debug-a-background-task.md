@@ -4,19 +4,19 @@ description: 了解如何偵錯背景工作，包括 Windows 事件記錄檔中�
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp，背景工作
+keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 11ebd180ebc3bc08b418f3b22ebed190bf73c18d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad133a9b1eb22695e6ce5d8b3edba9ad3a138b68
+ms.sourcegitcommit: f1261aa6f7eeb62bf770a08b58ec4357bdc20c7e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366200"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224768"
 ---
 # <a name="debug-a-background-task"></a>偵錯背景工作
 
 
-**重要的 Api**
+**重要 API**
 -   [Windows.ApplicationModel.Background](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。
@@ -42,10 +42,13 @@ ms.locfileid: "66366200"
 
 2.  在偵錯工具中執行您的應用程式，然後使用 **\[週期事件\]** 工具列來觸發背景工作。 這個下拉式清單會顯示可由 Visual Studio 啟用的背景工作名稱。
 
-    若要能夠運作，背景工作必須已經註冊且必須仍在等候觸發程序。 例如，如果背景工作是以一次性的 TimeTrigger 註冊，且該觸發程序已經引發，則透過 Visual Studio 啟動工作將不會有作用。
+> [!NOTE]
+> [生命週期事件] 工具列選項預設不會顯示在 Visual Studio 中。 若要顯示這些選項，請以滑鼠右鍵按一下 Visual Studio 中的目前工具列，並確定已啟用 [**調試位置**] 選項。
+
+    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
 
 > [!Note]
-> 使用下列觸發程序的背景工作不能以這種方式啟動：[**應用程式觸發程序**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)， [ **MediaProcessing 觸發程序**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)， [ **ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)， [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)，和使用的背景工作[ **Networkstatechange** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger)具有[ **SmsReceived** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)觸發程序類型。  
+> 使用下列觸發程式的背景工作無法以這種方式啟用：[**應用程式觸發程式**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)、 [**MediaProcessing 觸發**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)程式、 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)、 [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)和背景工作，使用具有[**SmsReceived**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)觸發程式類型的[**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) 。  
 > **ApplicationTrigger** 與 **MediaProcessingTrigger** 可以使用 `trigger.RequestAsync()` 在程式碼中手動發送訊號。
 
 ![偵錯背景工作](images/debugging-activation.png)
@@ -78,8 +81,8 @@ ms.locfileid: "66366200"
     如果您遵照此程序但事件日誌顯示背景工作發生錯誤進入點或觸發程序，表示您的 app 未正確註冊背景工作。 如需此工作的協助，請參閱[註冊背景工作](register-a-background-task.md)。
 
     1.  移至 [開始] 畫面並搜尋 eventvwr.exe，開啟事件檢視器。
-    2.  移至**Application and Services Logs**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt;**BackgroundTaskInfrastructure**事件檢視器中。
-    3.  在 [動作] 窗格中，選取**檢視** - &gt; **顯示分析與偵錯記錄檔**若要啟用診斷記錄。
+    2.  前往 [事件檢視器] 中的 [**應用程式和服務記錄** - &gt;檔] [&gt; **Microsoft**  - **Windows**  - &gt; **BackgroundTaskInfrastructure** ]。
+    3.  在 [動作] 窗格中 **，選取** - &gt; [**顯示分析和偵錯工具記錄**] 以啟用診斷記錄。
     4.  選取 **\[診斷記錄檔\]** ，然後按一下 **\[啟用記錄\]** 。
     5.  現在嘗試使用應用程式再次註冊並啟動背景工作。
     6.  檢視診斷記錄檔，以取得詳細的錯誤資訊。 當中包含為背景工作註冊的進入點。
@@ -101,7 +104,7 @@ ms.locfileid: "66366200"
 -   如果背景工作需要鎖定畫面存取，請確定先將 app 置於鎖定畫面後，再嘗試偵錯背景工作。 如需為具有鎖定畫面功能的 App 指定資訊清單選項的詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
 -   背景工作登錄參數都是在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的應用程式能夠妥善處理背景工作註冊失敗的狀況；反之，如果應用程式需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 
-如需使用 VS 偵錯背景工作的詳細資訊，請參閱[如何觸發暫止、 繼續及背景事件 UWP 應用程式中的](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)。
+如需使用 VS 來 debug 背景工作的詳細資訊，請參閱[如何在 UWP 應用程式中觸發暫止、繼續和背景事件](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -110,8 +113,8 @@ ms.locfileid: "66366200"
 * [註冊背景工作](register-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [如何觸發暫止、 繼續及背景事件在 UWP 應用程式](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
-* [使用 Visual Studio 程式碼分析的 UWP 應用程式的程式碼品質](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
+* [如何在 UWP 應用程式中觸發暫止、繼續和背景事件](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [使用 Visual Studio 程式碼分析，分析 UWP 應用程式的程式碼品質](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  
 

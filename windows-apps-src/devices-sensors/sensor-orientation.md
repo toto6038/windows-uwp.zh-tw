@@ -6,34 +6,37 @@ ms.date: 05/24/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e75ab94c6f1c8c4560854fd4f5264c313657ba9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bfd84cd2f2255138b738ecb6dd7f6dab824d7ec4
+ms.sourcegitcommit: d1ef530ef4dfa34db7bc429ab5a0c19fc405885f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369894"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71247451"
 ---
 # <a name="sensor-orientation"></a>感應器方向
 
-
-**重要的 Api**
-
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Windows.Devices.Sensors.Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
-
 取自 [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)、[**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)、[**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)、[**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer) 以及 [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的參照畫面定義，並在使用者轉動裝置時隨著旋轉。 如果您的 app 支援自動旋轉，而會隨著使用者旋轉時調整自己的方向來適應裝置，您就必須在使用前先行針對旋轉調整感應器資料。
+
+### <a name="important-apis"></a>重要 API
+
+- [**Windows 裝置。感應器**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+- [**Windows. 感應器。自訂**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
 
 ## <a name="display-orientation-vs-device-orientation"></a>顯示方向和裝置方向
 
-為了了解感應器的參考軸線，您必須區分顯示方向與裝置方向。 顯示方向就是螢幕上顯示的方向文字與影像，而裝置方向則是裝置的實際位置。 在下圖中，裝置和顯示方向都是**橫向** (請注意，顯示的感應器軸線只適用於橫向優先裝置)。
+為了了解感應器的參考軸線，您必須區分顯示方向與裝置方向。 顯示方向就是螢幕上顯示的方向文字與影像，而裝置方向則是裝置的實際位置。
+
+在下列圖表中，裝置和顯示方向都是[橫向](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)（顯示的感應器軸專屬於橫向方向），正 Z 軸會向外擴充裝置。
+
+此圖表顯示[橫向](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)的顯示和裝置方向。
 
 ![顯示方向與裝置方向為 Landscape](images/sensor-orientation-a.PNG)
 
-下圖說明顯示方向與裝置方向都是 **LandscapeFlipped**。
+下圖顯示[LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)中的顯示和裝置方向。
 
 ![顯示方向與裝置方向為 LandscapeFlipped](images/sensor-orientation-b.PNG)
 
-下一張圖說明顯示方向為 Landscape，而裝置方向為 LandscapeFlipped。
+這個最後的圖表會顯示裝置方向為[LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)時的橫向顯示方向。
 
 ![顯示方向為 Landscape，而裝置方向為 LandscapeFlipped](images/sensor-orientation-c.PNG)
 
@@ -45,7 +48,7 @@ ms.locfileid: "66369894"
 
 | Orientation | 橫向優先 | 直向優先 |
 |-------------|-----------------|----------------|
-| **Landscape** | ![方向為 Landscape 的橫向優先裝置](images/sensor-orientation-0.PNG) | ![方向為 Landscape 的直向優先裝置](images/sensor-orientation-1.PNG) |
+| **Sap** | ![方向為 Landscape 的橫向優先裝置](images/sensor-orientation-0.PNG) | ![方向為 Landscape 的直向優先裝置](images/sensor-orientation-1.PNG) |
 | **直向** | ![方向為 Portrait 的橫向優先裝置](images/sensor-orientation-2.PNG) | ![方向為 Portrait 的直向優先裝置](images/sensor-orientation-3.PNG) |
 | **LandscapeFlipped** | ![方向為 LandscapeFlipped 的橫向優先裝置](images/sensor-orientation-4.PNG) | ![方向為 LandscapeFlipped 的直向優先裝置](images/sensor-orientation-5.PNG) | 
 | **PortraitFlipped** | ![方向為 PortraitFlipped 的橫向優先裝置](images/sensor-orientation-6.PNG)| ![方向為 PortraitFlipped 的直向優先裝置](images/sensor-orientation-7.PNG) |
@@ -57,7 +60,6 @@ ms.locfileid: "66369894"
 此外，有些裝置沒有顯示畫面。 這些裝置的預設方向會設為直向。
 
 ## <a name="display-orientation-and-compass-heading"></a>顯示方向和指南針朝向
-
 
 指南針朝向取決於參考軸線，所以它會隨著裝置方向變更。 您要根據下表進行調整 (假設使用者面向北方)。
 
@@ -73,32 +75,31 @@ ms.locfileid: "66369894"
 ```csharp
 private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 {
-    double heading = e.Reading.HeadingMagneticNorth;        
+    double heading = e.Reading.HeadingMagneticNorth;
     double displayOffset;
-    
+
     // Calculate the compass heading offset based on
     // the current display orientation.
     DisplayInformation displayInfo = DisplayInformation.GetForCurrentView();
-    
-    switch (displayInfo.CurrentOrientation) 
-    { 
-        case DisplayOrientations.Landscape: 
-            displayOffset = 0; 
+
+    switch (displayInfo.CurrentOrientation)
+    {
+        case DisplayOrientations.Landscape:
+            displayOffset = 0;
             break;
-        case DisplayOrientations.Portrait: 
-            displayOffset = 270; 
-            break; 
-        case DisplayOrientations.LandscapeFlipped: 
-            displayOffset = 180; 
-            break; 
-        case DisplayOrientations.PortraitFlipped: 
-            displayOffset = 90; 
-            break; 
-     } 
-    
+        case DisplayOrientations.Portrait:
+            displayOffset = 270;
+            break;
+        case DisplayOrientations.LandscapeFlipped:
+            displayOffset = 180;
+            break;
+        case DisplayOrientations.PortraitFlipped:
+            displayOffset = 90;
+            break;
+     }
 
     double displayCompensatedHeading = (heading + displayOffset) % 360;
-    
+
     // Update the UI...
 }
 ```
@@ -109,7 +110,7 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 
 | 參考軸線        |  X |  Y | Z |
 |-----------------------|----|----|---|
-| **Landscape**         |  X |  Y | Z |
+| **Sap**         |  X |  Y | Z |
 | **直向**          |  Y | -X | Z |
 | **LandscapeFlipped**  | -X | -Y | Z |
 | **PortraitFlipped**   | -Y |  X | Z |
@@ -124,42 +125,41 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
     double z_Axis;
 
     GyrometerReading reading = e.Reading;  
-    
+
     // Calculate the gyrometer axes based on
     // the current display orientation.
     DisplayInformation displayInfo = DisplayInformation.GetForCurrentView();
-    switch (displayInfo.CurrentOrientation) 
-    { 
-        case DisplayOrientations.Landscape: 
+    switch (displayInfo.CurrentOrientation)
+    {
+        case DisplayOrientations.Landscape:
             x_Axis = reading.AngularVelocityX;
             y_Axis = reading.AngularVelocityY;
             z_Axis = reading.AngularVelocityZ;
             break;
-        case DisplayOrientations.Portrait: 
+        case DisplayOrientations.Portrait:
             x_Axis = reading.AngularVelocityY;
             y_Axis = -1 * reading.AngularVelocityX;
             z_Axis = reading.AngularVelocityZ;
-            break; 
-        case DisplayOrientations.LandscapeFlipped: 
+            break;
+        case DisplayOrientations.LandscapeFlipped:
             x_Axis = -1 * reading.AngularVelocityX;
             y_Axis = -1 * reading.AngularVelocityY;
             z_Axis = reading.AngularVelocityZ;
-            break; 
-        case DisplayOrientations.PortraitFlipped: 
+            break;
+        case DisplayOrientations.PortraitFlipped:
             x_Axis = -1 * reading.AngularVelocityY;
             y_Axis = reading.AngularVelocityX;
             z_Axis = reading.AngularVelocityZ;
-            break; 
-     } 
-    
-    
+            break;
+     }
+
     // Update the UI...
 }
 ```
 
 ## <a name="display-orientation-and-device-orientation"></a>顯示方向和裝置方向
 
-[  **OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) 資料必須以不同方式變更。 想像這些不同的方向，如逆時針旋轉到 Z 軸，所以我們需要讓旋轉反轉以回到使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
+[  **OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) 資料必須以不同方式變更。 請將這些不同的方向視為逆時針旋轉到 Z 軸，因此我們需要反轉旋轉以取回使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
 
 ![尤拉公式](images/eulers-formula.png)
 
@@ -169,11 +169,9 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 在前面的運算式中，絕對物件是由感應器資料傳回。
 
-
-| 顯示方向  | 延著 Z 軸逆時針旋轉 | 參考四元數 (反向旋轉) | 參考旋轉矩陣 (反向旋轉) | 
+| 顯示方向  | 延著 Z 軸逆時針旋轉 | 參考四元數 (反向旋轉) | 參考旋轉矩陣 (反向旋轉) |
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
-| **Landscape**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
+| **Sap**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
 | **直向**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
 | **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
-
