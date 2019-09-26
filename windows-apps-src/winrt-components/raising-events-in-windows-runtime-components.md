@@ -279,7 +279,7 @@ makeToast 函式必須連結至一個按鈕。 更新 default.html 以增加一�
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>為元件的介面產生 GUID (C# 及其他 .NET 程式語言)
 
-在功能表列上，依序選擇 \[工具\] &gt; \[建立 GUID\]。 在對話方塊中，選取 5. \[Guid （"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx .。。xxxx）\]。 選擇 \[新的 GUID\] 按鈕，然後選擇 \[複製\] 按鈕。
+在功能表列上，依序選擇 \[工具\] &gt; \[建立 GUID\]。 在對話方塊中，選取 5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. 選擇 \[新的 GUID\] 按鈕，然後選擇 \[複製\] 按鈕。
 
 ![GUID 產生器工具](./images/guidgeneratortool.png)
 

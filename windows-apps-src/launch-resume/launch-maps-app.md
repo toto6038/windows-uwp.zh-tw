@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c85eaacd62de9a2efe380197ba467c5009cd0c5
-ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
+ms.sourcegitcommit: ad2940a12a7ee59ee7696cd23a03743eef84ca31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/20/2019
+ms.lasthandoff: 09/26/2019
 ms.locfileid: "68757441"
 ---
 # <a name="launch-the-windows-maps-app"></a>啟動 Windows 地圖應用程式
@@ -81,9 +81,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps：？ bb = 39.719\_-74.52 ~ 41.71\_-73.5 & cp = 47 ~-122                        | 顯示紐約市地圖，這是週框方塊引數中指定的區域。 會略過以 **cp** 引數指定的西雅圖中心點，因為指定了 *bb*。 |
 | bingmaps：？ collection = point. 36.116584\_-115.176753\_Caesars% 20Palace & lvl = 16 | 將縮放比例設定為 16 來顯示含有 Caesar Palace (拉斯維加斯) 地點名稱的地圖。                                                                                                 |
 | bingmaps：？ collection = point. 40.726966\_-74.006076\_部分% 255FBusiness        | 顯示名為 [部分\_商務] （在內華達州）之點的地圖。                                                                                                                               |
-| bingmaps:?cp=40.726966~-74.006076&amp;trfc=1&amp;sty=a                             | 顯示具有「交通」資訊和「空照圖」地圖樣式的紐約市地圖。                                                                                                                          |
+| bingmaps:?cp=40.726966~-74.006076&trfc=1&amp;amp;sty=a                             | 顯示具有「交通」資訊和「空照圖」地圖樣式的紐約市地圖。                                                                                                                          |
 | bingmaps:?cp=47.6204~-122.3491&amp;sty=3d                                      | 顯示太空針塔的 3D 檢視。                                                                                                                                                        |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | 顯示半徑為 200 公尺、上下移動為 75 度、朝向為 165 度的太空針塔 3D 檢視。                                                                             |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&amp;amp;hdg=165               | 顯示半徑為 200 公尺、上下移動為 75 度、朝向為 165 度的太空針塔 3D 檢視。                                                                             |
 | bingmaps:?cp=47.6204~-122.3491&amp;ss=1                                        | 顯示太空針塔的街景檢視。                                                                                                                                                |
 
 
@@ -144,8 +144,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | URI 範例                                                                                                | 結果                                                                                       |
 |-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| ms-drive-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake | 顯示一個地圖，內含從您目前的所在位置到 Green Lake 的詳細行駛路線。 |
-| ms-walk-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake  | 顯示一個地圖，內含從您目前的所在位置到 Green Lake 的詳細步行路線。 |
+| ms-drive-to:?destination.latitude=47.680504&destination.longitude=-122.328262&amp;amp;destination.name=Green Lake | 顯示一個地圖，內含從您目前的所在位置到 Green Lake 的詳細行駛路線。 |
+| ms-walk-to:?destination.latitude=47.680504&destination.longitude=-122.328262&amp;amp;destination.name=Green Lake  | 顯示一個地圖，內含從您目前的所在位置到 Green Lake 的詳細步行路線。 |
 
 
 ## <a name="download-offline-maps"></a>下載離線地圖
@@ -171,7 +171,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">實參</th>
+<th align="left">參數</th>
 <th align="left">定義</th>
 <th align="left">ABNF 定義和範例</th>
 <th align="left">詳細資料</th>
@@ -318,7 +318,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 
 
-<p>範例：</p>
+<p>例如：</p>
 <p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
 <td align="left"><p>定義要在地圖上繪製的路線起點和終點，以波狀符號 (<b>~</b>) 分隔。 每個導航點都是由使用緯度、經度和選擇性標題或地址識別碼的位置來定義。</p>
@@ -351,7 +351,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 <tr class="even">
 <td align="left"><p><b>collection</b></p></td>
-<td align="left"><p>集合</p></td>
+<td align="left"><p>Collection</p></td>
 <td align="left"><p>collection = "collection="(name"~"/)point["~"point]</p>
 <p>name = "name." whereval </p>
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?") </p>
