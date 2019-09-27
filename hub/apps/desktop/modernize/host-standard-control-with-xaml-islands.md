@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2deae93f8a9706b2d5d6bebfa23b852c8d6d554f
-ms.sourcegitcommit: 8cbc9ec62a318294d5acfea3dab24e5258e28c52
+ms.openlocfilehash: cdaaa20b28a7f181467f6047bc93350ec40b366a
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70911559"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317077"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 群島在 WPF 應用程式中裝載標準 UWP 控制項
 
@@ -38,7 +38,7 @@ ms.locfileid: "70911559"
 
 開始使用之前，請遵循這些指示來建立 WPF 專案，並將其設定為裝載 XAML 島。 如果您有現有的 WPF 專案，您可以針對您的專案調整這些步驟和程式碼範例。
 
-1. 在 Visual Studio 2019 中，建立新的**Wpf 應用程式（[.NET Framework）** ] 或 [ **wpf 應用程式（.net Core）** ] 專案。 如果您想要建立**WPF 應用程式（.Net core）** 專案，您必須先安裝最新的可用預覽版本[.Net CORE 3 preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)。
+1. 在 Visual Studio 2019 中，建立新的**Wpf 應用程式（[.NET Framework）** ] 或 [ **wpf 應用程式（.net Core）** ] 專案。 如果您想要建立**WPF 應用程式（.Net core）** 專案，您必須先安裝最新版的[.NET Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)。
 
 2. 請確定已啟用[套件參考](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)：
 
