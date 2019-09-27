@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 47cb292b1f5aeed9473cac0f27074f449dc67032
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: b8ad9726397671bcb2b641d6769f014721a27a72
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414112"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317092"
 ---
 # <a name="modernize-your-desktop-apps"></a>讓您的傳統型應用程式現代化
 
@@ -32,15 +32,9 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 
 ## <a name="net-core-3"></a>.NET Core 3
 
-.NET Core 3 是 .NET Core 的下一個主要版本。 這個即將推出版本的亮點是支援 Windows 傳統型應用程式，包括 Windows Forms 和 WPF 應用程式。 您將能夠在 .NET Core 3 上執行新的和現有的 Windows 傳統型應用程式，並且享用 .NET Core 帶來的所有優點。 裝載於 [XAML Islands](xaml-islands.md) 中的 UWP 控制項，也可以在目標為 .NET Core 3 的 Windows Forms 和 WPF 應用程式中使用。
+.NET Core 3 是 .NET Core 的最新主要版本。 這個版本的重點是支援 Windows 傳統型應用程式，包括 Windows Forms 和 WPF 應用程式。 您可以在 .NET Core 3 上執行新的和現有的 Windows 傳統型應用程式，並享有 .NET Core 帶來的所有優點。 裝載於 [XAML Islands](xaml-islands.md) 中的 UWP 控制項，也可以在目標為 .NET Core 3 的 Windows Forms 和 WPF 應用程式中使用。
 
-如需詳細資訊，請參閱下列文章：
-
-* [.NET Core 3.0 Preview 1 公告](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/) (英文)
-* [.NET Core 3.0 Preview 2 公告](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-2/) (英文)
-* [.NET Core 3.0 Preview 2 公告](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-3/) (英文)
-* [.NET Core 3.0 Preview 4 公告](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-4/) (英文)
-* [.NET Core 3.0 (Preview 2) 的新功能](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)。
+如需詳細資訊，請參閱 [.NET Core 3.0 的新功能](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)。
 
 ## <a name="uwp-apis"></a>UWP API
 

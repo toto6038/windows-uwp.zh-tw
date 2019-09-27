@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 7554b635f76f7d00901ecb7936fdd0351d8dee75
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 61a54edc236f94bec44420471a176a2014fcdb0d
+ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393464"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71329569"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -67,7 +67,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [C++/WinRT 中的強式和弱式參考](weak-references.md) | Windows 執行階段是參考計數式系統；在這樣的系統中，請務必了解強式和弱式參考的重要性以及之間的區別。 |
 | [敏捷式物件](agile-objects.md) | 敏捷式物件是可以從任何執行緒中存取的一個。 C++/WinRT 預設為敏捷式，但您可以選擇退出。 |
 | [診斷直接配置](diag-direct-alloc.md) | 本主題深入探討 C++/WinRT 2.0 功能，該功能可協助您診斷在堆疊上建立實作類型物件的錯誤，而不是使用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 系列的協助程式。 |
-| [解構函式的詳細資料](details-about-destructors.md) | C++/WinRT 2.0 可讓您順延實作類型的損毀，並在損毀期間安全地進行查詢。 本主題將說明這些功能，並說明使用這些功能的時機。 |
+| [適用於實作類型的擴充點](details-about-destructors.md) | 使用 C++/WinRT 2.0 中的這些擴充點，可以讓您延遲實作類型的解構、在解構期間安全地查詢，以及將進入和退出投影的方法加以連結。 |
 | [C++/WinRT Windows UI 程式庫簡單範例](simple-winui-example.md) | 本主題將逐步引導您完成在 C++/WinRT 專案內新增 WinUI 簡單支援的程序。 |
 
 ### <a name="topics-about-the-c-language"></a>C++ 語言相關主題
