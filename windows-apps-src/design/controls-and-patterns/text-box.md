@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c607dca678a8be9ebb8d0128a84293910cf73fdc
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 82e05880dc8b0a983f4f8005b40939e5ffe0cbe4
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319296"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340391"
 ---
 # <a name="text-box"></a>文字方塊
 
@@ -319,4 +319,4 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [文字輸入的指導方針](text-controls.md)
 - [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length) \(部分機器翻譯\)
+- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length) \(部分機器翻譯\)

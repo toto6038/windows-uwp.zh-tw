@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: cdf361bfd993ce93e2c3b9eec4e66cb1417e36f8
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0c171a431180ee63956bae1c235224f64642601a
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364139"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340229"
 ---
 # <a name="text-controls"></a>文字控制項
 
@@ -206,6 +206,6 @@ TextBox 和 RichEditBox 控制項預設會開啟拼字檢查。 您可以將 **I
 - [新增搜尋](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
 
 **適用於開發人員 (XAML)**
-- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) \(英文\)
 - [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length) \(部分機器翻譯\)
+- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length)

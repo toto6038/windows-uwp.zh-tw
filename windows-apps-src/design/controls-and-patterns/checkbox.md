@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3905ef8786a06d4221ce42511f786927c3173ba6
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c69c5e64d75e03ce5bb2ef0d82c3b816fe78a770
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363173"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339429"
 ---
 # <a name="check-boxes"></a>核取方塊
 
@@ -85,7 +85,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>繫結到 IsChecked
 
-使用 [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 屬性，以判斷是否選取或清除核取方塊。 您可以將 IsChecked 屬性的值繫結到另一個二進位值。 不過，因為 IsChecked 是[可為 null](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN) 的布林值，所以您必須使用值轉換器，才能將它繫結到布林值。
+使用 [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 屬性，以判斷是否選取或清除核取方塊。 您可以將 IsChecked 屬性的值繫結到另一個二進位值。 不過，因為 IsChecked 是[可為 null](https://docs.microsoft.com/dotnet/api/system.nullable-1) 的布林值，所以您必須使用值轉換器，才能將它繫結到布林值。
 
 在這個範例中，用於同意服務條款之核取方塊的 **IsChecked** 屬性會繫結到 [提交] 按鈕的 [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) 屬性。 唯有當您同意服務條款時，才會啟用 \[提交\] 按鈕。
 
@@ -300,7 +300,7 @@ private void SetCheckedState()
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 

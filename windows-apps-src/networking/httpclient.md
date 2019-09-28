@@ -6,12 +6,12 @@ ms.date: 06/05/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 877901deeec4da7674c6c8431e5b11f5eae075ed
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 8dd1fce4e8a5c18af93df32b12ce8b20c8bc69f9
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714127"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340562"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -277,15 +277,15 @@ private async Task TryPostJsonAsync()
 
 如果傳送到 [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 物件建構函式的統一資源識別項 (URI) 字串無效時，即會擲回例外狀況。
 
-**.NET：**   [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 類型在 C# 和 VB 中顯示為 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)。
+**.NET：**   [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 類型在 C# 和 VB 中顯示為 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri)。
 
-在 C# 和 Visual Basic 中，可在建構 URI 之前，於 .NET 4.5 中使用 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) 類別和其中一個 [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate?redirectedfrom=MSDN#overloads) 方法來測試接收自使用者的字串，以避免發生這個錯誤。
+在 C# 和 Visual Basic 中，可在建構 URI 之前，於 .NET 4.5 中使用 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) 類別和其中一個 [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate#overloads) 方法來測試接收自使用者的字串，以避免發生這個錯誤。
 
 在 C++ 中，沒有可以嘗試將字串剖析為 URI 的方法。 如果應用程式取得使用者為 [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
 
 [  **Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 缺少便利的函式。 所以使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
 
-在使用 C#、VB.NET 之 .NET Framework 4.5 的應用程式中，[System.Exception](https://docs.microsoft.com/dotnet/api/system.exception?redirectedfrom=MSDN) 代表例外狀況發生時應用程式執行期間的錯誤。 [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult?redirectedfrom=MSDN#System_Exception_HResult) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message?redirectedfrom=MSDN#System_Exception_Message) 屬性會傳回描述例外狀況的訊息。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
+在使用 C#、VB.NET 之 .NET Framework 4.5 的應用程式中，[System.Exception](https://docs.microsoft.com/dotnet/api/system.exception) 代表例外狀況發生時應用程式執行期間的錯誤。 [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult#System_Exception_HResult) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message#System_Exception_Message) 屬性會傳回描述例外狀況的訊息。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
 在使用 Managed C++ 的 app 中，[Platform::Exception](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) 代表例外狀況發生時 app 執行期間的錯誤。 [Platform::Exception::HResult](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [Platform::Exception::Message](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 

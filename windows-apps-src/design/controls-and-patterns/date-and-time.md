@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c980acc3b9887dac68712bd65de96e8f3a327a5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1e489aa8cbf8b63885f039847b291404393444e9
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319057"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339384"
 ---
 # <a name="calendar-date-and-time-controls"></a>行事曆、日期和時間控制項
 
@@ -114,12 +114,12 @@ XAML 日期控制項支援 Windows 所支援的每個日曆系統。 這些行�
 ### <a name="datetime-and-calendar-values"></a>DateTime 與 Calendar 值
 
 XAML 日期和時間控制項中使用的日期物件有不同的呈現方式，取決於您的程式設計語言。 
-- C# 和 Visual Basic 使用屬於 .NET 一部分的 [System.DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN) 結構。 
+- C# 和 Visual Basic 使用屬於 .NET 一部分的 [System.DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset) 結構。 
 - C++/CX 使用 [Windows::Foundation::DateTime](https://docs.microsoft.com/windows/desktop/api/windows.foundation/ns-windows-foundation-datetime) 結構。 
 
-相關的概念是 Calendar 類別，這會影響在內容中如何解譯日期。 所有 Windows 執行階段應用程式都可以使用 [Windows.Globalization.Calendar](https://docs.microsoft.com/uwp/api/Windows.Globalization.Calendar) 類別。 C# 和 Visual Basic 應用程式也可以使用 [System.Globalization.Calendar](https://docs.microsoft.com/dotnet/api/system.globalization.calendar?redirectedfrom=MSDN) 類別，它包含非常類似的功能。 (Windows 執行階段 app 可使用.NET 行事曆的基底類別，但非特定的實作；例如：GregorianCalendar。)
+相關的概念是 Calendar 類別，這會影響在內容中如何解譯日期。 所有 Windows 執行階段應用程式都可以使用 [Windows.Globalization.Calendar](https://docs.microsoft.com/uwp/api/Windows.Globalization.Calendar) 類別。 C# 和 Visual Basic 應用程式也可以使用 [System.Globalization.Calendar](https://docs.microsoft.com/dotnet/api/system.globalization.calendar) 類別，它包含非常類似的功能。 (Windows 執行階段 app 可使用.NET 行事曆的基底類別，但非特定的實作；例如：GregorianCalendar。)
 
-.NET 亦支援名為 [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime?redirectedfrom=MSDN) 的類型，隱含可轉換為 [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN)。 因此，您可能會在 .NET 程式碼中看到用來設定值的 "DateTime" 類型，其實是 DateTimeOffset。 如需 DateTime 和 DateTimeOffset 之間差異的詳細資訊，請參閱 [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN) 類別中的「備註」。
+.NET 亦支援名為 [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime) 的類型，隱含可轉換為 [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset)。 因此，您可能會在 .NET 程式碼中看到用來設定值的 "DateTime" 類型，其實是 DateTimeOffset。 如需 DateTime 和 DateTimeOffset 之間差異的詳細資訊，請參閱 [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset) 類別中的「備註」。
 
 > **注意**&nbsp;&nbsp;採用日期物件的屬性不能設定為 XAML 屬性字串，因為 Windows 執行階段 XAML 剖析器沒有可將字串轉換為 DateTime/DateTimeOffset 物件形式之日期的轉換邏輯。 您通常會在程式碼中設定這些值。 另一個可能的技術是定義可做為資料物件或在資料內容中使用的日期，然後將屬性設定為 XAML 屬性，參考可存取日期做為資料的 [\{Binding\}標記延伸](../../xaml-platform/binding-markup-extension.md)運算式。
 

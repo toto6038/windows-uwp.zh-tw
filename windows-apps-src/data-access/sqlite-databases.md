@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 465376214f1bf1b390ec6db8609783e4e7872196
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1cc8cfe696d35872469d97dba24f5388ff6833b5
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362790"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339782"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 應用程式中使用 SQLite 資料庫
 您可以使用 SQLite 在使用者的裝置上儲存和擷取輕量資料庫中的資料。 本指南會示範怎麼做。
@@ -39,7 +39,7 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 ### <a name="sqlite-library"></a>SQLite 程式庫
 
-[Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) 程式庫會在 [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common?redirectedfrom=MSDN) 命名空間中實作介面。 Microsoft 會主動維護這些實作，並提供直覺的包裝函式來處理低階原生 SQLite API。
+[Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) 程式庫會在 [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common) 命名空間中實作介面。 Microsoft 會主動維護這些實作，並提供直覺的包裝函式來處理低階原生 SQLite API。
 
 本指南的其餘部分可協助您使用此程式庫。
 
@@ -323,8 +323,8 @@ private void AddData(object sender, RoutedEventArgs e)
 
 **在不同平台的不同應用程式之間共用程式碼**
 
-請參閱[在傳統型與 UWP 之間共用程式碼](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)。
+請參閱[在桌面應用程式與 UWP 之間共用程式碼](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)。
 
 **在 Azure SQL 後端新增主要詳細資料頁面**
 
-請參閱[客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。
+請參閱[客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database) (英文)。

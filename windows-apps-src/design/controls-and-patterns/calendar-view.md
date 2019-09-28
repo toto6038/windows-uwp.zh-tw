@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 02206d1f237eeeb113910aece7345ae35f22a80b
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 716f785ff6b2151913f57208068e783320292613
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363090"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339451"
 ---
 # <a name="calendar-view"></a>行事曆檢視
 
@@ -71,7 +71,7 @@ ms.locfileid: "66363090"
 
 根據預設，[SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode) 屬性是設定為 **Single**。 這可讓使用者在行事曆中挑選單一日期。 將 SelectionMode 設定為 **None** 以停用日期選取功能。 
 
-將 SelectionMode 設定為 **Multiple** 以讓使用者選取多個日期。 您可以將 [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime?redirectedfrom=MSDN)/[DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN) 物件新增至 [SelectedDates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selecteddates)集合，以選取多個日期，如下所示︰
+將 SelectionMode 設定為 **Multiple** 以讓使用者選取多個日期。 您可以將 [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime)/[DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset) 物件新增至 [SelectedDates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selecteddates)集合，以選取多個日期，如下所示︰
 
 ```csharp
 calendarView1.SelectedDates.Add(DateTimeOffset.Now);
@@ -210,7 +210,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 

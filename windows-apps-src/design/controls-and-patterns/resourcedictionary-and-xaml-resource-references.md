@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 317f373b64b1a15a9baa8310c06d6b8037ced745
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 662f23c5ab201a44669b2e4e4a454aa73ebd3b43
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364445"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340191"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 與 XAML 資源參考
 
@@ -449,9 +449,9 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 
 大部分適用於 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的案例都是專門使用 XAML 來處理。 您可以在 XAML 檔案內或 UI 定義檔案的一組 XAML 節點中宣告 **ResourceDictionary** 容器和資源。 然後，您可以使用 XAML 資源參考，從 XAML 的其他部分要求這些資源。 儘管如此，還是會有一些特定狀況，是您的 app 想要在執行時使用執行的程式碼來調整 **ResourceDictionary** 的內容，或者至少查詢 **ResourceDictionary** 的內容來查看是否已經定義某個資源。 這些程式碼呼叫是在 **ResourceDictionary** 執行個體上所進行，所以您必須先擷取一個，無論是透過取得 [FrameworkElement.Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) \(英文\) 來再物件樹狀中某處的立即 **ResourceDictionary**，或是 `Application.Current.Resources`。
 
-在 C\# 或 Microsoft Visual Basic 程式碼中，您可以使用索引子 ([Item](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item?view=netframework-4.8) \(部分機器翻譯\)) 來參考指定 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(英文\) 中的資源。 **ResourceDictionary** 是字串索引鍵字典，因此索引子會使用字串索引鍵而不是整數索引。 在 Visual C++ 元件延伸 (C++/CX) 程式碼中，請使用 [Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup) \(英文\)。
+在 C\# 或 Microsoft Visual Basic 程式碼中，您可以使用索引子 ([Item](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item) \(部分機器翻譯\)) 來參考指定 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(英文\) 中的資源。 **ResourceDictionary** 是字串索引鍵字典，因此索引子會使用字串索引鍵而不是整數索引。 在 Visual C++ 元件延伸 (C++/CX) 程式碼中，請使用 [Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup) \(英文\)。
 
-使用程式碼來檢查或變更 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 時，[Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup) 或 [Item](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item?view=netframework-4.8) 這類 API 的行為不會從直接資源周遊到 app 資源；那是只有在載入 XAML 頁面時才會發生的 XAML 剖析器行為。 在執行階段，索引鍵的範圍與您當時使用的 **ResourceDictionary** 執行個體完全無關。 但是該範圍卻會延伸到 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries)。
+使用程式碼來檢查或變更 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 時，[Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup) 或 [Item](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item) 這類 API 的行為不會從直接資源周遊到 app 資源；那是只有在載入 XAML 頁面時才會發生的 XAML 剖析器行為。 在執行階段，索引鍵的範圍與您當時使用的 **ResourceDictionary** 執行個體完全無關。 但是該範圍卻會延伸到 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries)。
 
 此外，如果您要求的索引鍵不存在於 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(英文\)，系統可能不會出現錯誤；傳回值可能只會提供為 **null**。 不過，如果您嘗試使用傳回的 **null** 做為值，則您還是會收到錯誤。 錯誤會來自屬性的 setter，並非您的 **ResourceDictionary** 呼叫。 如果屬性接受 **null** 為有效值，是唯一可以避免錯誤的的方法。 請注意，這個行為與 XAML 剖析期間的 XAML 查詢行為恰好相反；無法在剖析期間解析從 XAML 提供的索引鍵會造成 XAML 剖析錯誤，即使在屬性可以接受 **null** 的情況中也是一樣。
 
