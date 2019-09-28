@@ -12,12 +12,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 49de74fc1f4e3a233e5f3481bac86826a725d891
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 74d6d357cfd632c4adc04aed15c9e37aca9eaedb
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364981"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340089"
 ---
 # <a name="xaml-custom-panels-overview"></a>XAML 自訂面板概觀
 
@@ -26,7 +26,7 @@ ms.locfileid: "66364981"
 「*面板*」是一個物件，可在可延伸應用程式標記語言 (XAML) 配置系統執行和轉譯 app UI 時，為其所含的子元素提供配置行為。 
 
 
-> **重要的 Api**:[**面板**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)， [ **ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)， [ **MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
+> **重要 API**：[**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)、 [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)、 [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
 
 您可以從 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 類別衍生自訂類別，為 XAML 配置定義自訂面板。 透過覆寫 [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 與 [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)，提供可度量和排列子元素的邏輯，即可提供面板行為。
 
@@ -83,14 +83,14 @@ ms.locfileid: "66364981"
 
 配置系統得以運作，大部分是因為任何以 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 為基礎的元素，在做為容器的子系時，本身已有一些繼承而來的行為。 例如，**FrameworkElement** 的 API 有些是通知配置行為，也些是配置運作時不可或缺者。 它們包括：
 
--   [**DesiredSize** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) (實際上[ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)屬性)
--   [**ActualHeight** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)並[ **ActualWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth)
--   [**高度**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)並[**寬度**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)
--   [**Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin)
--   [**LayoutUpdated** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated)事件
--   [**HorizontalAlignment** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment)並[ **VerticalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment)
--   [**ArrangeOverride** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)並[ **MeasureOverride** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)方法
--   [**排列**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange)並[**量值**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)方法： 這些項目必須在定義的原生實作[ **FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement)層級，處理項目層級配置動作
+-   [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) （實際上是[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)屬性）
+-   [**ActualHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)和[ **ActualWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth)
+-   [**高度**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)和[**寬度**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)
+-   [**左邊**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin)
+-   [**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated)事件
+-   [**HorizontalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment)和[ **VerticalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment)
+-   [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)和[**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)方法
+-   [**排列**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange)和[**測量**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)方法：這些是在[**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement)層級定義的原生實值，其會處理元素層級的配置動作
 
 ## <a name="measureoverride"></a>**MeasureOverride**
 
@@ -119,7 +119,7 @@ protected override Size MeasureOverride(Size availableSize)
 
 元素在準備好進行配置時，通常是具有原始大小。 如果您為 [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) 傳送的 *availableSize* 較小，完成度量階段之後，[**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) 可能會指出該原始大小。 如果原始大小大於您為 **Measure** 傳送的 *availableSize*，**DesiredSize** 就會受限於 *availableSize*。 這就是 **Measure** 的內部實作行為，您的配置覆寫應該將該行為納入考量。
 
-有些元素沒有原始大小，因為它們的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 的值為 **Auto**。 因為 **Auto** 值代表將元素的大小調整為最大可用大小 (當前的配置父系利用 *availableSize* 呼叫 [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) 來傳達)，所以這些元素使用整個 *availableSize*。 在實務上，總是有一些度量，UI 會調整大小以 （即使是最上層視窗。）最後，測量行程會解析所有**自動**到父條件約束，而且所有的值**自動**值項目取得實際的度量單位 (您可以藉由檢查取得[ **ActualWidth** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth)並[ **ActualHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)配置完成之後)。
+有些元素沒有原始大小，因為它們的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 的值為 **Auto**。 因為 **Auto** 值代表將元素的大小調整為最大可用大小 (當前的配置父系利用 *availableSize* 呼叫 [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) 來傳達)，所以這些元素使用整個 *availableSize*。 在實務上，UI 的大小一律會調整為（即使是最上層的視窗也一樣）。最後，量值傳遞會將所有**自動**值解析為父條件約束，而所有**自動**值元素會取得實際的測量（您可以在配置完成後，藉由檢查[**ActualWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth)和[**ActualHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)來取得）。
 
 您可以將大小傳送到至少有一個無限維度的 [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)，表示該面板能嘗試調整本身的大小，以容納內容的大小。 每個接受測量的子元素會用它的原始大小設定 [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) 值。 然後，在排列階段期間，面板通常會使用該大小進行排列。
 
@@ -167,7 +167,7 @@ protected override Size ArrangeOverride(Size finalSize)
 
 [  **Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 的輸入採用 [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect) 值。 建構這個 **Rect** 最常見的方法是使用有 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 輸入與 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) 輸入的建構函式。 **Point** 是應該放置元素週框方塊左上角的點。 **Size** 是用來轉譯該特定元素的維度。 您通常會將該元素的 [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) 當成這個 **Size** 值使用，因為針對配置中涉及的所有元素建立 **DesiredSize** 就是配置的度量階段的目的。 (度量階段會以反覆進行的方式決定全部的元素大小，讓配置系統在進入排列階段時能夠以最佳的方式放置元素)。
 
-[  **ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 實作之間的差異通常在於面板用來判斷 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 元件如何排列每一子系的邏輯。 絕對位置面板 (例如 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)) 使用透過 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) 與 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) 值，從每個元素取得的明確位置資訊。 空間劃分面板 (例如 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)) 有將可用空間劃分給儲存格的數學運算，而每個儲存格都會有表明應在何處放置和排列其內容的 x-y 值。 彈性面板 (例如 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)) 可能會自行擴充，以容納其方向維度中的內容。
+[  **ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 實作之間的差異通常在於面板用來判斷 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 元件如何排列每一子系的邏輯。 絕對位置面板 (例如 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)) 使用透過 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 與 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 值，從每個元素取得的明確位置資訊。 空間劃分面板 (例如 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)) 有將可用空間劃分給儲存格的數學運算，而每個儲存格都會有表明應在何處放置和排列其內容的 x-y 值。 彈性面板 (例如 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)) 可能會自行擴充，以容納其方向維度中的內容。
 
 除了您直接控制和傳送給 [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 的項目之外，還有其他配置元素的位置影響。 這些來自於 **Arrange** 的內部原生實作，常見於所有 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 衍生類型，並可透過一些其他類型 (例如文字元素) 來增強。 例如，有些元素有邊界和對齊，有些則有邊框間距。 這些屬性通常會互相影響。 如需詳細資訊，請參閱[對齊、邊界及邊框間距](alignment-margin-padding.md)。
 
@@ -176,7 +176,7 @@ protected override Size ArrangeOverride(Size finalSize)
 
 避免將功能放入應該建立為自訂控制項的自訂面板。 面板的角色是呈現其中的所有子元素內容，做為自動執行的配置功能。 面板可以增加內容裝飾 (方法類似於 [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 在呈現的元素周圍加上框線)，或執行其他與配置相關的調整，例如邊框間距。 但除了報告和使用來自子系的資訊，在擴充視覺化樹狀結構輸出時，這大約就是您所進行的工作。
 
-如果有使用者可以存取的任何互動，您應撰寫自訂控制項，而不是面板。 例如，即使為了防止發生裁剪，面板也不應該針對其呈現的內容新增捲動檢視區，因為捲軸、縮圖等都屬於互動控制項 (內容可能會有捲軸，但您應該將它留給子邏輯決定。 不強制它藉由新增捲動以配置作業。）您可以建立控制項，並也撰寫一個自訂的面板，可呈現該控制項中的內容時，該控制項的視覺化樹狀結構中扮演重要的角色。 但控制項與面板應該是不同的程式碼物件。
+如果有使用者可以存取的任何互動，您應撰寫自訂控制項，而不是面板。 例如，即使為了防止發生裁剪，面板也不應該針對其呈現的內容新增捲動檢視區，因為捲軸、縮圖等都屬於互動控制項 (內容可能會有捲軸，但您應該將它留給子邏輯決定。 不要藉由將捲軸新增為版面配置作業來強制執行）。在呈現該控制項的內容時，您可能會建立控制項，也可以撰寫自訂面板，在該控制項的視覺化樹狀結構中扮演重要角色。 但控制項與面板應該是不同的程式碼物件。
 
 區別控制項和面板一個很重要的原因是 Microsoft 使用者介面自動化與協助工具。 面板提供視覺配置行為，但不提供邏輯行為。 UI 元素的視覺顯示方式與 UI 的關係不大，通常對協助工具案例很重要。 協助工具的目的是公開在邏輯上對了解 UI 很重要的應用程式部分。 需要互動時，控制項應向使用者介面自動化基礎結構公開互動可能性。 如需詳細資訊，請參閱[自訂自動化對等](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)。
 
@@ -185,17 +185,17 @@ protected override Size ArrangeOverride(Size finalSize)
 
 配置系統中還有一些其他 API，但並非由 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 宣告。 您可以將這些用於面板實作，或用於使用面板的自訂控制項。
 
--   [**UpdateLayout**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.updatelayout)， [ **InvalidateMeasure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.invalidatemeasure)，以及[ **InvalidateArrange** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.invalidatearrange)方法，起始配置傳遞。 **InvalidateArrange** 可能不會觸發度量階段，但其他兩種會。 永遠不要從配置方法覆寫內呼叫這些方法，因為幾乎可以確定它們會造成配置迴圈。 控制項程式碼通常也不需要呼叫它們。 大部分配置層面會藉由偵測架構定義的配置屬性 (例如 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 等) 的變更而自動觸發。
--   [**LayoutUpdated** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated)是變更版面配置項目的某些層面時，就會引發的事件。 這並非面板特有；此事件是由 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 所定義。
--   [**SizeChanged** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged)是引發之事件的配置階段完成，並指出之後，才[ **ActualHeight** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)或是[ **ActualWidth** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth)結果已變更。 這是另一個 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 事件。 有時候會觸發 [**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated)，但不會觸發 **SizeChanged**。 例如，內部內容可能已重新排列，但元素大小保持不變。
+-   [**System.windows.uielement.updatelayout**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.updatelayout)、 [**InvalidateMeasure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.invalidatemeasure)和[**InvalidateArrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.invalidatearrange)是起始版面配置傳遞的方法。 **InvalidateArrange** 可能不會觸發度量階段，但其他兩種會。 永遠不要從配置方法覆寫內呼叫這些方法，因為幾乎可以確定它們會造成配置迴圈。 控制項程式碼通常也不需要呼叫它們。 大部分配置層面會藉由偵測架構定義的配置屬性 (例如 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 等) 的變更而自動觸發。
+-   [**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated)是當元素版面配置的某些層面變更時，所引發的事件。 這並非面板特有；此事件是由 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 所定義。
+-   [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged)是只有在完成設定階段後才會引發的事件，表示[**ActualHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)或[**ActualWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth)已變更為結果。 這是另一個 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 事件。 有時候會觸發 [**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated)，但不會觸發 **SizeChanged**。 例如，內部內容可能已重新排列，但元素大小保持不變。
 
 
 ## <a name="related-topics"></a>相關主題
 
 **參考**
-* [**FrameworkElement.ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
-* [**FrameworkElement.MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
-* [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
+* [**FrameworkElement. ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
+* [**FrameworkElement. MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
+* [**面板**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 **概念**
-* [對齊、 邊界和邊框距離](alignment-margin-padding.md)
+* [對齊、邊界和填補](alignment-margin-padding.md)

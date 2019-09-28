@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e25b20943d73b303ea4aa674b8978f1517fcf15a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 685f862ea0b381195db2670de45c35df67b5fcb9
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359674"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339532"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 元件和最佳化 Interop
 
@@ -30,7 +30,7 @@ UWP 具有一個類型庫，這個類型庫可從任何可撰寫 UWP 應用程�
 
 當您在 C# 或 Visual Basic 中開發 UWP app 時，您使用的兩組最常見的 API 是 UWP API 與適用於 UWP app 的 .NET API。 一般來說，在 UWP 中定義的類型位於開頭為 "Windows." 的命名空間， 而 .NET 類型則位於開頭為 "System." 的命名空間， 但還是有些例外。 使用適用於 UWP app 的 .NET API 中所列的類型時，並不需要互通性。 如果您發現在使用 UWP 時效能不佳，可以改用適用於 UWP App 的 .NET，以獲得較佳的效能。
 
-**附註**  大多與 Windows 10 UWP 元件，隨附在中實作C++讓您跨互通性界限，當您使用從C#或 Visual Basic。 一如往常，請務必先評估您的應用程式以了解使用 UWP 元件是否會影響應用程式的效能，再花費時間和精力變更程式碼。
+**注意**   Windows 10 隨附的大部分 UWP 元件都是在中C++執行，因此您可以在使用C#或 Visual Basic 時，跨越互通性界限。 一如往常，請務必先評估您的應用程式以了解使用 UWP 元件是否會影響應用程式的效能，再花費時間和精力變更程式碼。
 
 在這個主題中，當我們提到「UWP 元件」時，是指以 C# 或 Visual Basic 以外的語言所撰寫的元件。
 
@@ -46,7 +46,7 @@ UWP 具有一個類型庫，這個類型庫可從任何可撰寫 UWP 應用程�
 
 ### <a name="consider-using-net-for-uwp-apps"></a>考慮使用適用於 UWP 應用程式的 .NET
 
-在某些情況下，您可以使用 UWP 或適用於 UWP 應用程式的 .NET 來完成工作。 建議您試著不要混合使用 .NET 類型與 UWP 類型。 試著只使用其中一種或其他種類型。 例如，您可以使用 [**Windows.Data.Xml.Dom.XmlDocument**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocument) 類型 (UWP 類型) 或是 [**System.Xml.XmlReader**](https://docs.microsoft.com/dotnet/api/system.xml.xmlreader?redirectedfrom=MSDN) 類型 (.NET 類型)，來分析 XML 的資料流。 使用來自與資料流相同技術的 API。 例如，如果您從 [**MemoryStream**](https://docs.microsoft.com/dotnet/api/system.io.memorystream?redirectedfrom=MSDN) 讀取 XML，請使用 **System.Xml.XmlReader** 類型，因為兩個類型都是 .NET 類型。 如果您從檔案讀取，請使用 **Windows.Data.Xml.Dom.XmlDocument** 類型，因為檔案 API 與 **XmlDocument** 是 UWP 元件。
+在某些情況下，您可以使用 UWP 或適用於 UWP 應用程式的 .NET 來完成工作。 建議您試著不要混合使用 .NET 類型與 UWP 類型。 試著只使用其中一種或其他種類型。 例如，您可以使用 [**Windows.Data.Xml.Dom.XmlDocument**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocument) 類型 (UWP 類型) 或是 [**System.Xml.XmlReader**](https://docs.microsoft.com/dotnet/api/system.xml.xmlreader) 類型 (.NET 類型)，來分析 XML 的資料流。 使用來自與資料流相同技術的 API。 例如，如果您從 [**MemoryStream**](https://docs.microsoft.com/dotnet/api/system.io.memorystream) 讀取 XML，請使用 **System.Xml.XmlReader** 類型，因為兩個類型都是 .NET 類型。 如果您從檔案讀取，請使用 **Windows.Data.Xml.Dom.XmlDocument** 類型，因為檔案 API 與 **XmlDocument** 是 UWP 元件。
 
 ### <a name="copy-window-runtime-objects-to-net-types"></a>將 Window 執行階段物件複製到 .NET 類型
 
@@ -80,7 +80,7 @@ UWP 可讓開發人員以選擇的語言編寫使用 XAML 的應用程式，這�
 
 您應該測量應用程式並判斷互通性是否佔用了應用程式大部分執行時間，然後再最佳化互通性成本。 使用 Visual Studio 分析 app 效能前，可以使用 [**功能**] 檢視並查看呼叫至 UWP 中的方法所耗費的時間，輕易取得互通性成本上限。
 
-如果您的 app 因互通性負荷而變慢，您可以在最忙碌的程式碼路徑中減少對 UWP API 的呼叫，以便提高 app 的效能。 例如，若要在不斷查詢 [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 位置和維度以執行大量物理計算的遊戲引擎中節省執行時間，您可以將來自 **UIElements** 的必要資訊儲存到區域變數，並在這些快取的值上進行計算，然後在計算完成後將最終結果指派回 **UIElements**。 另一個例子：如果 C# 或 Visual Basic 程式碼大量存取某個集合，則使用 [**System.Collections**](https://docs.microsoft.com/dotnet/api/system.collections?redirectedfrom=MSDN) 命名空間中的集合比使用 [**Windows.Foundation.Collections**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections) 命名空間中的集合更有效率。 您也可以考慮將 UWP 元件的呼叫結合起來；可以這樣做的其中一個範例就是使用 [**Windows.Storage.BulkAccess**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess) API。
+如果您的 app 因互通性負荷而變慢，您可以在最忙碌的程式碼路徑中減少對 UWP API 的呼叫，以便提高 app 的效能。 例如，若要在不斷查詢 [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 位置和維度以執行大量物理計算的遊戲引擎中節省執行時間，您可以將來自 **UIElements** 的必要資訊儲存到區域變數，並在這些快取的值上進行計算，然後在計算完成後將最終結果指派回 **UIElements**。 另一個例子：如果 C# 或 Visual Basic 程式碼大量存取某個集合，則使用 [**System.Collections**](https://docs.microsoft.com/dotnet/api/system.collections) 命名空間中的集合比使用 [**Windows.Foundation.Collections**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections) 命名空間中的集合更有效率。 您也可以考慮將 UWP 元件的呼叫結合起來；可以這樣做的其中一個範例就是使用 [**Windows.Storage.BulkAccess**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess) API。
 
 ### <a name="building-a-uwp-component"></a>建置 UWP 元件
 

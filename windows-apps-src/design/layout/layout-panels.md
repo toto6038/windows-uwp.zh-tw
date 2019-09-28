@@ -5,12 +5,12 @@ ms.date: 04/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fbda33e044880b263feafbcf88b041abdadc310
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061966"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340128"
 ---
 # <a name="layout-panels"></a>版面配置面板
 
@@ -46,7 +46,7 @@ ms.locfileid: "71061966"
 
 大多數 XAML 版面配置面板都是使用附加屬性，以讓其子元素通知父面板應該如何將它們放置在 UI 中。 附加屬性使用的語法是 *AttachedPropertyProvider.PropertyName*。 如果您的面板會巢串於其他面板內，則 UI 元素上為父項指定版面配置特性的附加屬性只會由最接近的父項面板來解譯。
 
-以下範例示範如何使用 XAML，在 Button 控制項上設定 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) 附加屬性。 這會通知父項 Canvas 應該將 Button 放置在從 Canvas 的左邊緣算起 50 個有效像素的位置。
+以下範例示範如何使用 XAML，在 Button 控制項上設定 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 附加屬性。 這會通知父項 Canvas 應該將 Button 放置在從 Canvas 的左邊緣算起 50 個有效像素的位置。
 
 ```xaml
 <Canvas>
@@ -147,9 +147,9 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 
 [  **Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 面板支援流暢版面配置並允許您在多列與多欄版面配置中排列控制項。 您使用 [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) 和 [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions) 屬性，來指定 Grid 的列與欄。
 
-使用 [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column?view=netframework-4.8) 和 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) 附加屬性，將物件放置在 Grid 的特定儲存格中。
+使用 [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column) 和 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) 附加屬性，將物件放置在 Grid 的特定儲存格中。
 
-使用 [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) 和 [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan?view=netframework-4.8) 附加屬性，將內容延伸到多個列與欄。
+使用 [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) 和 [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan) 附加屬性，將內容延伸到多個列與欄。
 
 這個 XAML 範例示範如何建立具有兩列兩欄的方格。
 
@@ -245,7 +245,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 ## <a name="canvas"></a>畫布
 
-[  **Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 面板使用固定座標點定位子元素且不支援流暢版面配置。 您可以在每個元素上設定 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) 附加屬性，以指定個別子元素上的點。 在版面配置的 [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 階段，父項 Canvas 會從其子系讀取這些附加屬性值。
+[  **Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 面板使用固定座標點定位子元素且不支援流暢版面配置。 您可以在每個元素上設定 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 附加屬性，以指定個別子元素上的點。 在版面配置的 [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 階段，父項 Canvas 會從其子系讀取這些附加屬性值。
 
 Canvas 中的物件可以重疊，將某一個物件繪製於另一個物件上方。 根據預設，Canvas 會以宣告子物件的順序來呈現它們，因此最後一個子系會呈現在最上方 (每個元素的預設 z 索引為 0)。 這等同於其他內建的面板。 但是，Canvas 也支援 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) 附加屬性，您可以在每一個子元素上設定它們。 您可以在程式碼中設定這個屬性，在執行階段期間變更元素的繪製順序。 含有最高 Canvas.ZIndex 值的元素是最後繪製的，因此會繪製於共用相同空間或以任何方式重疊的任何其他元素上。 請注意，因為會採用 Alpha 值 (透明度)，所以如果最上層元素的 Alpha 值不是最大的，即使元素重疊，重疊區域顯示的內容也可能會混合。
 

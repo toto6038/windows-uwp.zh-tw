@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, C#, Visual Basic, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: db0e3064cc64e6ffbafa50d045ced020ad30b460
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 92cded952f1d4d80290a121d038c57c356e5e206
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371547"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340540"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>在 C# 或 Visual Basic 中呼叫非同步 API
 
@@ -38,7 +38,7 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 這個範例有幾個重點。 首先，`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 程式行使用 **await** 運算子搭配對非同步方法 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 的呼叫。 您可以想像成 **await** 運算子告知編譯器您正在呼叫非同步方法，因而使編譯器代替您執行一些額外的工作。 其次，事件處理常式的宣告包含 **async** 關鍵字。 您必須在您使用 **await** 運算子的任何方法的方法宣告中包含這個關鍵字。
 
-在這個主題中，我們將不深入探討使用 **await** 運算子時編譯器所執行工作的細節，但將檢查 app 執行什麼工作，使得 app 具有非同步性質和回應能力。 以使用同步程式碼時所發生的情況為例。 例如，假設有一個稱為 `SyndicationClient.RetrieveFeed` 的同步方法 （沒有這類方法，但假設沒有）。如果您的應用程式包含線條`SyndicationFeed feed = client.RetrieveFeed(feedUri)`，而不是`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`，執行應用程式將會停止的傳回值直到`RetrieveFeed`可用。 而且，當您的 app 在等待方法完成時，不會回應任何其他事件 (另一個 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件)。 也就是說，您的 app 在 `RetrieveFeed` 傳回之前會被封鎖。
+在這個主題中，我們將不深入探討使用 **await** 運算子時編譯器所執行工作的細節，但將檢查 app 執行什麼工作，使得 app 具有非同步性質和回應能力。 以使用同步程式碼時所發生的情況為例。 例如，假設有一個稱為 `SyndicationClient.RetrieveFeed` 的同步方法 （沒有這種方法，但想像一下）。如果您的應用程式包含 `SyndicationFeed feed = client.RetrieveFeed(feedUri)` 的行，而不是 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`，則應用程式的執行會停止，直到 `RetrieveFeed` 的傳回值可供使用為止。 而且，當您的 app 在等待方法完成時，不會回應任何其他事件 (另一個 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件)。 也就是說，您的 app 在 `RetrieveFeed` 傳回之前會被封鎖。
 
 但是，如果您呼叫 `client.RetrieveFeedAsync`，該方法會起始擷取作業並立即傳回。 當您使用 **await** 搭配 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 時，app 會暫時結束事件處理常式。 接著，當 **RetrieveFeedAsync** 以非同步方式執行時，app 就可以處理其他事件。 這樣可以保持 app 對使用者的回應能力。 當 **RetrieveFeedAsync** 完成而且 [**SyndicationFeed**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed) 可用時，app 基本上會重新進入先前在 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 之後停止的事件處理常式，然後完成方法的其餘部分。
 
@@ -51,10 +51,10 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 當您使用非同步方法時，您可以檢查簽章以查看等待等待方法傳回的值之後會得到什麼項目。 UWP 中的所有非同步 API 會傳回下列其中一個類型：
 
--   [**IAsyncOperation&lt;TResult&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)
--   [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)
+-   [**Iasyncoperation<tresult> @ no__t-2TResult @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)
+-   [**IAsyncOperationWithProgress @ no__t-2TResult，TProgress @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)
 -   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction)
--   [**IAsyncActionWithProgress&lt;TProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)
+-   [**Iasyncactionwithprogress<tprogress> @ no__t-2TProgress @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)
 
 非同步方法的結果類型與 `      TResult` 類型參數相同。 不含 `TResult` 的類型將不會產生結果。 您可以將結果想像成是 **void**。 在 Visual Basic 中，[Sub](https://docs.microsoft.com/dotnet/articles/visual-basic/programming-guide/language-features/procedures/sub-procedures) 程序等同於含有 **void** 傳回類型的方法。
 
@@ -62,15 +62,15 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 | 非同步方法                                                                           | 傳回類型                                                                                                                                        | 結果類型                                       |
 |-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| [**SyndicationClient.RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed, RetrievalProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)                                 | [**SyndicationFeed**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed) |
-| [**FileOpenPicker.PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) | [**IAsyncOperation&lt;StorageFile&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                                                                                | [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)          |
-| [**XmlDocument.SaveToFileAsync**](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument.savetofileasync)                 | [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction)                                                                                                           | **void**                                          |
-| [**InkStrokeContainer.LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.loadasync)               | [**IAsyncActionWithProgress&lt;UInt64&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.loadasync)                            | [**DataReaderLoadOperation**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReaderLoadOperation)，自訂產生的類別可實作**IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                     |
+| [**SyndicationClient. RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)     | [**IAsyncOperationWithProgress @ no__t-2SyndicationFeed，RetrievalProgress @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)                                 | [**SyndicationFeed**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed) |
+| [**FileOpenPicker. PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) | [**Iasyncoperation<tresult> @ no__t-2StorageFile @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                                                                                | [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) \(英文\)          |
+| [**SaveToFileAsync**](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument.savetofileasync)                 | [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction)                                                                                                           | **空位**                                          |
+| [**InkStrokeContainer. LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.loadasync)               | [**Iasyncactionwithprogress<tprogress> @ no__t-2UInt64 @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)                                                                   | **空位**                                          |
+| [**DataReader. LoadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.loadasync)                            | [**DataReaderLoadOperation**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReaderLoadOperation)，這是實**iasyncoperation<tresult> @ no__t-3UInt32 @ no__t-4**的自訂結果類別 | [**UInt32**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                     |
 
  
 
-[  **.NET for UWP app**](https://dotnet.microsoft.com/apps/desktop) 中定義的非同步方法含有 [**Task**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task?redirectedfrom=MSDN) 或 [**Task&lt;TResult&gt;** ](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1?redirectedfrom=MSDN) 傳回類型。 傳回 **Task** 的方法與 UWP 中傳回 [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction) 的非同步方法類似。 在所有情況下，非同步方法的結果都是 **void**。 傳回類型 **Task&lt;TResult&gt;** 與 [**IAsyncOperation&lt;TResult&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_) 的相似處在於執行工作時非同步方法的結果與 `TResult` 類型參數的類型相同。 如需使用 **.NET for UWP apps** 和工作的詳細資訊，請參閱[適用於 Windows 執行階段應用程式的 .NET 概觀](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))。
+[  **.NET for UWP app**](https://dotnet.microsoft.com/apps/desktop) 中定義的非同步方法含有 [**Task**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 或 [**Task&lt;TResult&gt;** ](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1) 傳回類型。 傳回 **Task** 的方法與 UWP 中傳回 [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction) 的非同步方法類似。 在所有情況下，非同步方法的結果都是 **void**。 傳回類型 **Task&lt;TResult&gt;** 與 [**IAsyncOperation&lt;TResult&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_) 的相似處在於執行工作時非同步方法的結果與 `TResult` 類型參數的類型相同。 如需使用 **.NET for UWP apps** 和工作的詳細資訊，請參閱[適用於 Windows 執行階段應用程式的 .NET 概觀](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))。
 
 ## <a name="handling-errors"></a>處理錯誤
 
@@ -79,7 +79,7 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 當非同步方法呼叫其他非同步方法時，任何造成例外狀況的非同步方法都將被傳播到外部方法中。 這表示您可以在最外層的方法中放入 **try/catch** 區塊，以攔截巢狀非同步方法的錯誤。 這和您攔截同步方法錯誤的方式類似。 不過，在 **catch** 區塊中不能使用 **await**。
 
-**祕訣**  從C#在 Microsoft Visual Studio 2005 中，您可以使用**await**中**攔截**區塊。
+**秘訣**@no__t-使用C# Microsoft Visual Studio 2005 中的來1Starting，您可以在**catch**區塊中使用**await** 。
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 

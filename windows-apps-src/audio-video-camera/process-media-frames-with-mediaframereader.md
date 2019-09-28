@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f2442647d39c4142b50c0a2a9b1fbc2c0eb66ca
-ms.sourcegitcommit: be519a7ecff53696b853754c879db32be9a53289
+ms.openlocfilehash: ddd35e0365efcc8c224e717b66f53734af32123d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69544922"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339759"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理媒體畫面
 
@@ -34,10 +34,10 @@ ms.locfileid: "69544922"
 
 **將功能新增至應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
-2.  選取 [功能] 索引標籤。
-3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 **\[方案總管\]** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 **\[功能\]** 索引標籤。
+3.  核取 **\[網路攝影機\]** 方塊和 **\[麥克風\]** 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 **\[圖片媒體櫃\]** 方塊和 **\[視訊媒體櫃\]** 方塊。
 
 除了預設專案範本所包含的 API 以外，這篇文章中的範例程式碼還會使用下列命名空間的 API。
 
@@ -48,7 +48,7 @@ ms.locfileid: "69544922"
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-您也可以使用[**DeviceInformation. CreateWatcher**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher)和從[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)傳回的值來建立[**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) , 以在裝置上的可用畫面格來源群組時接收通知變更, 例如插入外部相機的時間。 如需詳細資訊，請參閱[**列舉裝置**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+您也可以使用[**DeviceInformation. CreateWatcher**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher)和從[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)傳回的值來建立[**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) ，以在裝置上的可用畫面格來源群組時接收通知變更，例如插入外部相機的時間。 如需詳細資訊，請參閱[**列舉裝置**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
 [  **MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 有一個 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 物件的集合，可描述群組中包含的畫面來源。 在擷取裝置上可用的畫面來源群組之後，您可以選取公開您感興趣的畫面來源群組。
 
@@ -79,12 +79,12 @@ ms.locfileid: "69544922"
 
 [!code-cs[DeclareMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-藉由呼叫建構函式，建立 **MediaCapture** 物件的執行個體。 接下來, 建立將用來初始化**MediaCapture**物件的[**MediaCaptureInitializationSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings)物件。 在這個範例中，會使用下列設定︰
+藉由呼叫建構函式，建立 **MediaCapture** 物件的執行個體。 接下來，建立將用來初始化**MediaCapture**物件的[**MediaCaptureInitializationSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings)物件。 在這個範例中，會使用下列設定︰
 
 * [**SourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sourcegroup) -這會告訴系統您要使用哪個來源群組來取得畫面格。 請記住，來源群組會定義一組可同時使用的媒體畫面來源。
 * [**SharingMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sharingmode) -這會告訴系統您是否需要對 capture 來源裝置進行獨佔控制。 如果您將此設定為 [**ExclusiveControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，就表示您可以變更擷取裝置的設定 (像是裝置所產生的畫面格式)，但是這表示如果其他 App 已經有專屬控制項，當您的 App 嘗試初始化媒體擷取裝置時將會失敗。 如果您將此設定為 [**SharedReadOnly**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode)，即使畫面來源正由其他 App 使用，您也可以接收來自畫面來源的畫面，但您無法變更裝置的設定。
-* [**MemoryPreference**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.memorypreference) -如果您指定[**cpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference), 系統將會使用 cpu 記憶體, 以確保框架抵達時, 會以[**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)物件的形式提供。 如果您指定 [**Auto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)，系統會以動態方式選擇最佳的記憶體位置來儲存畫面。 如果系統選擇使用 GPU 記憶體，媒體畫面會以 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 物件的方式抵達，而不是 **SoftwareBitmap**。
-* [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) -將此設為[**Video**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.StreamingCaptureMode) , 表示不需要串流音訊。
+* [**MemoryPreference**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.memorypreference) -如果您指定[**cpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)，系統將會使用 cpu 記憶體，以確保框架抵達時，會以[**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)物件的形式提供。 如果您指定 [**Auto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference)，系統會以動態方式選擇最佳的記憶體位置來儲存畫面。 如果系統選擇使用 GPU 記憶體，媒體畫面會以 [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 物件的方式抵達，而不是 **SoftwareBitmap**。
+* [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) -將此設為[**Video**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.StreamingCaptureMode) ，表示不需要串流音訊。
 
 呼叫 [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync)，以使用您想要的設定將 **MediaCapture** 初始化。 請務必在 *try* 區塊中呼叫，以防初始化失敗。
 
@@ -129,7 +129,7 @@ ms.locfileid: "69544922"
 
 **Image** 控制項可以僅顯示預乘或無 Alpha 的 BRGA8 格式影像。 如果送達的畫面不是該格式，會使用靜態方法 [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 將軟體點陣圖轉換成正確的格式。
 
-接下來，[**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange?redirectedfrom=MSDN#System_Threading_Interlocked_Exchange__1___0____0_) 方法會用來交換送達點陣圖的參考與後端緩衝區點陣圖。 這個方法會在安全執行緒的不可部分完成作業中交換這些參考。 交換之後，會處置舊的後端緩衝區影像 (現在在 *softwareBitmap* 變數中) 以清除其資源。
+接下來，[**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange#System_Threading_Interlocked_Exchange__1___0____0_) 方法會用來交換送達點陣圖的參考與後端緩衝區點陣圖。 這個方法會在安全執行緒的不可部分完成作業中交換這些參考。 交換之後，會處置舊的後端緩衝區影像 (現在在 *softwareBitmap* 變數中) 以清除其資源。
 
 接下來，會使用與 **Image** 元素相關聯的 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 來建立將透過呼叫 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 在 UI 執行緒上執行的工作。 因為非同步工作將會在工作中執行，所以 lambda 運算式會傳遞到使用 *async* 關鍵字宣告的 **RunAsync**。
 
@@ -169,7 +169,7 @@ ms.locfileid: "69544922"
 ## <a name="use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources"></a>使用 MultiSourceMediaFrameReader 從多個來源取得與時間相互關聯的畫面
 從 Windows 10 版本 1607 開始，您可以使用 [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader)，從多個來源接收與時間相互關聯的畫面。 此 API 可讓您更容易進行需要來自多個拍攝時間相近來源之畫面的處理，例如使用 [**DepthCorrelatedCoordinateMapper**](https://docs.microsoft.com/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper) 類別。 使用這個新方法有一項限制，就是只能以最慢擷取來源的速率來引發畫面已到達事件。 將會捨棄較快速來源的額外畫面。 此外，由於系統預期畫面以不同的速率從不同的來源抵達，因此也無法自動辨識來源是否已完全停止產生畫面。 本節的範例程式碼示範如何使用事件建立您自己的逾時邏輯，只要相互關聯的畫面未在應用程式定義的時間限制內抵達，就會叫用此邏輯。
 
-使用 [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) 的步驟和使用本文之前所述 [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) 的步驟相似。 此範例將會使用色彩來源和深度來源。 宣告一些字串變數來儲存媒體畫面來源識別碼，這些識別碼將用來選取每個來源的畫面。 接下來，宣告用於實作範例逾時邏輯的 [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim?view=netframework-4.7)、[**CancellationTokenSource**](https://docs.microsoft.com/dotnet/api/system.threading.cancellationtokensource?redirectedfrom=MSDN) 和 [**EventHandler**](https://docs.microsoft.com/dotnet/api/system.eventhandler?redirectedfrom=MSDN)。 
+使用 [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) 的步驟和使用本文之前所述 [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) 的步驟相似。 此範例將會使用色彩來源和深度來源。 宣告一些字串變數來儲存媒體畫面來源識別碼，這些識別碼將用來選取每個來源的畫面。 接下來，宣告用於實作範例逾時邏輯的 [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim)、[**CancellationTokenSource**](https://docs.microsoft.com/dotnet/api/system.threading.cancellationtokensource) 和 [**EventHandler**](https://docs.microsoft.com/dotnet/api/system.eventhandler)。 
 
 [!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
 
@@ -187,7 +187,7 @@ ms.locfileid: "69544922"
 
 呼叫 [**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createmultisourceframereaderasync) 並傳遞讀取器使用的畫面來源陣列，以建立和初始化 **MultiSourceMediaFrameReader**。 註冊 [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.FrameArrived) 事件的事件處理常式。 此範例會建立本文之前所述 **FrameRenderer** 協助程式類別的執行個體，將畫面呈現至 **Image** 控制項。 呼叫 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.StartAsync) 以啟動畫面讀取器。
 
-註冊範例先前宣告之 **CorellationFailed** 事件的事件處理常式。 我們會通知這個事件，正在使用的其中一個畫面來源是否停止產生畫面。 最後，呼叫 [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?redirectedfrom=MSDN#System_Threading_Tasks_Task_Run_System_Action_) 以呼叫不同執行緒上的逾時協助程式方法 **NotifyAboutCorrelationFailure**。 本文稍後會示範此方法的實作。
+註冊範例先前宣告之 **CorellationFailed** 事件的事件處理常式。 我們會通知這個事件，正在使用的其中一個畫面來源是否停止產生畫面。 最後，呼叫 [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run#System_Threading_Tasks_Task_Run_System_Action_) 以呼叫不同執行緒上的逾時協助程式方法 **NotifyAboutCorrelationFailure**。 本文稍後會示範此方法的實作。
 
 [!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
 
@@ -195,7 +195,7 @@ ms.locfileid: "69544922"
 
 呼叫 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.TryAcquireLatestFrame) 以取得與事件相關聯的 [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference)。 呼叫 [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference.trygetframereferencebysourceid) 並傳入初始化畫面讀取器時所儲存的識別碼字串，以取得與每個媒體畫面來源相關聯的 **MediaFrameReference**。
 
-呼叫 **ManualResetEventSlim** 物件的 [**Set**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim.set?redirectedfrom=MSDN#System_Threading_ManualResetEventSlim_Set) 方法以發出畫面已到達的通知訊號。 我們將會在執行於不同執行緒的 **NotifyCorrelationFailure** 方法中檢查這個事件。 
+呼叫 **ManualResetEventSlim** 物件的 [**Set**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim.set#System_Threading_ManualResetEventSlim_Set) 方法以發出畫面已到達的通知訊號。 我們將會在執行於不同執行緒的 **NotifyCorrelationFailure** 方法中檢查這個事件。 
 
 最後，在與時間相互關聯的媒體畫面上執行任何處理。 此範例只是顯示來自深度來源的畫面。
 
@@ -252,7 +252,7 @@ ms.locfileid: "69544922"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [具有 MediaCapture 的基本相片、影片和音訊捕獲](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [相機框架範例](https://go.microsoft.com/fwlink/?LinkId=823230)
  
 

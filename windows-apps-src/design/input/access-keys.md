@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b27c5a0446bc9b329b09855f06d58a13723ece1c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f73bb15d2746dbac4403ca6daffb603588cf7a58
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317387"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340091"
 ---
 # <a name="access-keys"></a>便捷鍵
 
@@ -44,7 +44,7 @@ Microsoft Office 應用程式為便捷鍵提供廣泛的支援。 下圖顯示 W
 
 ![在 Microsoft Word 中的便捷鍵按鍵提示徽章](images/accesskeys/keytip-badges-word.png)
 
-_存取金鑰，Microsoft Word 中的 KeyTip 徽章_
+_Microsoft Word 中的存取金鑰的 KeyTip 徽章_
 
 若要新增便捷鍵到控制項，請使用 **AccessKey 屬性**。 這個屬性指定便捷鍵順序、捷徑 (如果是一個英數字元) 和按鍵提示。
 
@@ -72,11 +72,9 @@ _存取金鑰，Microsoft Word 中的 KeyTip 徽章_
 
 下列影像示範 Word 中的兩個便捷鍵範圍。 第一個影像顯示主要便捷鍵，讓使用者選取索引標籤和其他最上層命令，而第二個影像顯示 [首頁] 索引標籤的次要便捷鍵。
 
-![在 Microsoft Word 中的主要存取金鑰](images/accesskeys/primary-access-keys-word.png)
-_Microsoft Word 中的主要存取金鑰_
+microsoft Word 中的 @no__t 0Primary 存取金鑰 no__t Microsoft Word 中的_主要存取金鑰_
 
-![在 Microsoft Word 中的次要存取金鑰](images/accesskeys/secondary-access-keys-word.png)
-_Microsoft Word 中的次要存取金鑰_
+microsoft Word 中的 @no__t 0Secondary 存取金鑰 @ no__t-1_次要存取金鑰_
 
 對於不同範圍中的項目，便捷鍵可以複製。 在先前的範例，“2”是主要範圍中 [復原] 的便捷鍵，也是次要範圍中 [斜體] 的便捷鍵。
 
@@ -239,7 +237,7 @@ _英文和西班牙文資源字串資料夾_
 
 ![在 resources.resw 檔案中指定 AccessKey 屬性](images/accesskeys/resource-resw-file.png)
 
-_指定 resources.resw 檔案中指定的 AccessKey 屬性_
+_指定 .resw 檔案中指定的 AccessKey 屬性_
 
 如需詳細資訊，請參閱[翻譯 UI 資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
 
@@ -251,21 +249,21 @@ _指定 resources.resw 檔案中指定的 AccessKey 屬性_
 
 ![自動按鍵提示位置的範例](images/accesskeys/auto-keytip-position.png)
 
-_按鍵提示的自動放置的範例_
+_自動按鍵提示位置的範例_
 
 但是，如果您需要對按鍵提示放置位置有更多的控制，我們建議下列方式：
 
-1.  **明顯的關聯原則**:使用者可以將控制項關聯的按鍵提示輕鬆。
+1.  **明顯關聯原則**：使用者可以輕鬆地將控制項與按鍵提示建立關聯。
 
     a.  Key Tip 應該**接近**擁有便捷鍵的項目（擁有者）。  
     b.  按鍵提示應該**避免遮蔽具有便捷鍵的已啟用元素**。   
     c.  如果按鍵提示無法接近擁有者放置，它應該與擁有者重疊。 
 
-2.  **可搜尋性**:使用者可以快速地探索具有按鍵提示的控制項。
+2.  **發現**性：使用者可以快速地探索具有關鍵提示的控制項。
 
     a.  按鍵提示絕不與其他按鍵提示**重疊**。  
 
-3.  **快速掃描：** 使用者可以輕鬆地瀏覽按鍵提示。
+3.  **輕鬆掃描：** 使用者可以輕鬆地流覽重要秘訣。
 
     a.  按鍵提示應該彼此**對齊**並與 UI 項目對齊。
     b.  按鍵提示應該盡可能**分組**。 
@@ -274,11 +272,11 @@ _按鍵提示的自動放置的範例_
 
 使用 **KeyTipPlacementMode** 屬性以每個項目或每個群組的方式，自訂按鍵提示的位置。
 
-放置模式包括：頂端、 底部、 右、 左、 隱藏、 置中與自動。
+放置模式如下：上、下、靠右、左、隱藏、置中和自動。
 
 ![按鍵提示位置模式](images/accesskeys/keytip-postion-modes.png)
 
-_索引鍵的小費放置模式_
+_主要秘訣放置模式_
 
 控制項的中心線用於計算按鍵提示的垂直及水平對齊。
 
@@ -303,7 +301,7 @@ KeyTipHorizontalOffset 屬性指示將按鍵提示向左或向右移動多遠。
 
 ![按鍵提示位置模式](images/accesskeys/keytip-offsets.png)
 
-_設定垂直和水平位移的按鍵提示_
+_設定按鍵提示的垂直和水準位移_
 
 ``` xaml
 <Button
@@ -320,7 +318,7 @@ _設定垂直和水平位移的按鍵提示_
 
 ![按鍵提示位置模式](images/accesskeys/keytips-screen-edge.png)
 
-_畫面邊緣造成的按鍵提示，要自動調整本身的位置_
+_螢幕邊緣會使重要秘訣自動重新置放_
 
 ## <a name="key-tip-style"></a>按鍵提示樣式
 
@@ -330,7 +328,7 @@ _畫面邊緣造成的按鍵提示，要自動調整本身的位置_
 
 ![按鍵提示位置模式](images/accesskeys/keytip-customization.png)
 
-_關鍵提示的自訂選項_
+_主要秘訣自訂選項_
 
 這個範例示範如何變更這些應用程式資源：
 
@@ -353,14 +351,14 @@ _關鍵提示的自訂選項_
 
 XAML 架構公開自動化屬性，可讓 UI 自動化用戶端探索使用者介面項目的相關資訊。
 
-如果您在 UIElement 或 TextElement 控制項上指定 AccessKey 屬性，可以使用 [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) 屬性取得這個值。 協助工具用戶端，例如「朗讀程式」，會在項目取得焦點時朗讀這個屬性的值。
+如果您在 UIElement 或 TextElement 控制項上指定 AccessKey 屬性，可以使用 [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) 屬性取得這個值。 協助工具用戶端，例如「朗讀程式」，會在項目取得焦點時朗讀這個屬性的值。
 
 ## <a name="related-articles"></a>相關文章
 
 * [鍵盤互動](keyboard-interactions.md)
-* [鍵盤快速鍵](keyboard-accelerators.md)
+* [鍵盤加速器](keyboard-accelerators.md)
 
 **範例**
-* [XAML 控制項陳列庫 (也稱為 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [XAML 控制項資源庫（也稱為 XamlUiBasics）](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 

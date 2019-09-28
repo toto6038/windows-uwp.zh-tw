@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 57532c45bdf6c2b8feb2af1277be74a0f8b2c759
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 34f315628af0ea181756f2456d4d0dfe70bf8377
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320296"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340559"
 ---
 # <a name="property-path-syntax"></a>Property-path 語法
 
@@ -50,11 +50,11 @@ ms.locfileid: "67320296"
 
 ### <a name="indexers"></a>索引子
 
-資料繫結的屬性路徑可以包含索引屬性的參考。 這樣便能繫結到已排序的清單/向量，或繫結到字典/對應。 使用方括號"\[\]"字元來表示索引的屬性。 這種括號中的內容可以是整數 (已排序的清單) 或未加引號的字串 (字典)。 您也可以繫結到索引鍵為整數的字典。 您可以在相同的路徑中使用不同的索引屬性，並使用點來分隔物件-屬性。
+資料繫結的屬性路徑可以包含索引屬性的參考。 這樣便能繫結到已排序的清單/向量，或繫結到字典/對應。 使用方括弧 "\[ @ no__t-1" 字元來表示索引的屬性。 這種括號中的內容可以是整數 (已排序的清單) 或未加引號的字串 (字典)。 您也可以繫結到索引鍵為整數的字典。 您可以在相同的路徑中使用不同的索引屬性，並使用點來分隔物件-屬性。
 
-例如，假設有一個含 "Teams" 清單 (已排序清單) 的商務物件，每一個清單都包含一個 "Players" 字典，其中每個玩家都以姓氏做為索引鍵。 第二個小組的特定玩家範例屬性路徑是：「 團隊\[1\]。玩家\[Smith\]"。 (您使用 1 來指出 "Teams" 中的第二個項目，因為這個清單是從 0 開始建立索引。)
+例如，假設有一個含 "Teams" 清單 (已排序清單) 的商務物件，每一個清單都包含一個 "Players" 字典，其中每個玩家都以姓氏做為索引鍵。 第二個小組的特定播放程式的範例屬性路徑為：< 小組 @ no__t-01 @ no__t-1。Player @ no__t-2Smith @ no__t-3 "。 (您使用 1 來指出 "Teams" 中的第二個項目，因為這個清單是從 0 開始建立索引。)
 
-**附註**  編製索引的支援C++資料來源會受到限制，請參閱[深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
+**注意**@no__t- C++資料來源的1Indexing 支援有限;[深入瞭解資料](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)系結。
 
 ### <a name="attached-properties"></a>附加的屬性
 
@@ -70,7 +70,7 @@ ms.locfileid: "67320296"
 
 ## <a name="property-path-for-animation-targeting"></a>動畫目標的屬性路徑
 
-動畫的目標是相依性屬性，動畫執行時會在相依性屬性套用腳本值。 為了識別含有動畫屬性的物件，動畫會使用名稱 ([x:Name 屬性](x-name-attribute.md)) 來設定目標元素。 通常必須定義以 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) 識別的物件開頭，並以應該套用動畫的特定相依性屬性值結束的屬性路徑。 這個屬性路徑可用來做為 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) 的值。
+動畫的目標是相依性屬性，動畫執行時會在相依性屬性套用腳本值。 為了識別含有動畫屬性的物件，動畫會使用名稱 ([x:Name 屬性](x-name-attribute.md)) 來設定目標元素。 通常必須定義以 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) 識別的物件開頭，並以應該套用動畫的特定相依性屬性值結束的屬性路徑。 這個屬性路徑可用來做為 [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) 的值。
 
 如需如何在 XAML 中定義動畫的詳細資訊，請參閱[腳本動畫](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)。
 
@@ -84,19 +84,19 @@ ms.locfileid: "67320296"
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>指定集合中的特定子項
 
-若要指定集合屬性中的子項目，可以使用數值索引子。 使用方括號"\[\]"字元周圍的整數索引值。 您只可以參考已排序的清單，不可以參考字典。 因為集合不是可以產生動畫效果的值，所以屬性路徑的結尾屬性永遠不可以使用索引子。
+若要指定集合屬性中的子項目，可以使用數值索引子。 使用方括弧 "\[ @ no__t-1" 字元括住整數索引值。 您只可以參考已排序的清單，不可以參考字典。 因為集合不是可以產生動畫效果的值，所以屬性路徑的結尾屬性永遠不可以使用索引子。
 
-例如，若要指定您想要以動畫顯示的第一個色彩停止中的色彩[ **LinearGradientBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)套用至控制項[**背景**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)屬性，這是屬性路徑:"(Control.Background)。(GradientBrush.GradientStops)\[0\]。 (GradientStop.Color) 」。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 屬性，以便套用 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 動畫值。
+例如，若要指定您想要在套用至控制項[**背景**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)屬性的[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)中建立第一個色彩停用色彩的動畫，這就是屬性路徑： "（控制背景）。（GradientBrush. GradientStops） \[0 @ no__t-5。（System.windows.media.gradientstop> Color） "。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 屬性，以便套用 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 動畫值。
 
 ## <a name="animating-an-attached-property"></a>讓附加屬性產生動畫效果
 
-這不是常見情況；不過，只要附加屬性具有符合動畫類型的屬性值，就可以讓它產生動畫效果。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定讓物件上 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) 附加屬性產生動畫效果的字串會使用屬性路徑 "(Grid.Row)"。
+這不是常見情況；不過，只要附加屬性具有符合動畫類型的屬性值，就可以讓它產生動畫效果。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定讓物件上 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) 附加屬性產生動畫效果的字串會使用屬性路徑 "(Grid.Row)"。
 
-**附註**  針對此範例中，值[ **Grid.Row** ](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8)是**Int32**屬性型別。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 元件的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)，其中 [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 會設定為 "0" 或 "1" 的整數。
+**注意**  For 此範例中， [**Grid**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row)的值是**Int32**屬性類型。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 元件的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)，其中 [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 會設定為 "0" 或 "1" 的整數。
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>動畫目標屬性路徑中的屬性規則
 
--   屬性路徑的假設起點是 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) 識別的物件。
+-   屬性路徑的假設起點是 [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) 識別的物件。
 -   屬性路徑中參考的所有物件及屬性必須是公開的。
 -   結尾屬性 (即路徑中最後一個具名屬性) 必須是公開、唯讀且必須是相依性屬性。
 -   結尾屬性必須具有能夠使用其中一個動畫類型廣泛類別產生動畫效果的屬性類型，這些動畫類型包括：[**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 動畫、**Double** 動畫、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 動畫、[**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)。
@@ -107,15 +107,15 @@ ms.locfileid: "67320296"
 
 您通常可以在 XAML 中直接套用 [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)，完全不需要使用任何程式碼。 但在某些情況下，您可能要使用程式碼來定義 **PropertyPath** 物件，並在執行階段將它指派給屬性。
 
-[**PropertyPath** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)已[ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor)建構函式，且沒有預設建構函式。 傳遞到這個建構函式的字串是使用屬性路徑語法定義的字串，如本文稍早的說明。 這也是用來將 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) 指派為 XAML 屬性的同一個字串。 **PropertyPath** 類別唯一的另一個 API 是唯讀的 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path) 屬性。 您可以使用這個屬性做為另一個 **PropertyPath** 執行個體的建構字串。
+[**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)有一個[**PropertyPath （String）** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor)的函式，而且沒有預設的函式。 傳遞到這個建構函式的字串是使用屬性路徑語法定義的字串，如本文稍早的說明。 這也是用來將 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) 指派為 XAML 屬性的同一個字串。 **PropertyPath** 類別唯一的另一個 API 是唯讀的 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path) 屬性。 您可以使用這個屬性做為另一個 **PropertyPath** 執行個體的建構字串。
 
 ## <a name="related-topics"></a>相關主題
 
 * [深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
-* [建立圖片敘述的動畫](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
+* [Storyboarded 動畫](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
 * [{Binding} 標記延伸](binding-markup-extension.md)
 * [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)
-* [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
-* [**繫結的建構函式**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.-ctor)
-* [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)
+* [**綁定**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
+* [**系結函式**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.-ctor)
+* [**DataCoNtext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)
 

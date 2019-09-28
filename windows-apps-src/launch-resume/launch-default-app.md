@@ -6,17 +6,17 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cf682a77f9010f71adc9d6709bb345ac02270e5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 48b4df662b990f64adcbfe2e7e03dc5303b2962e
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321823"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340421"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>啟動 URI 的預設應用程式
 
 
-**重要的 Api**
+**重要 API**
 
 - [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
 - [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
@@ -30,17 +30,17 @@ URI 配置可讓您按一下超連結來開啟 App。 就像您可以使用 **ma
 
 | URI 配置 | 啟動 |
 | ----------:|----------|
-|[bingmaps: ms 磁碟機來:、 和 ms 查核行程來： ](#maps-app-uri-schemes) | 地圖 App |
-|[http:](#http-uri-scheme) | 預設網頁瀏覽器 |
-|[mailto:](#email-uri-scheme) | 預設電子郵件 App |
-|[ms-call:](#call-app-uri-scheme) |  呼叫 App |
-|[ms-chat:](#messaging-app-uri-scheme) | 訊息中心 App |
-|[ms 人員：](#people-app-uri-scheme) | 連絡人 App |
-|[ms 相片：](#photos-app-uri-scheme) | 相片 App |
+|[bingmaps：、ms-磁片磁碟機到：和 ms-逐步解說：](#maps-app-uri-schemes) | 地圖 App |
+|[HTTP](#http-uri-scheme) | 預設網頁瀏覽器 |
+|[mailto](#email-uri-scheme) | 預設電子郵件 App |
+|[ms-呼叫：](#call-app-uri-scheme) |  呼叫 App |
+|[ms 交談：](#messaging-app-uri-scheme) | 訊息中心 App |
+|[ms-人員：](#people-app-uri-scheme) | 連絡人 App |
+|[ms-相片：](#photos-app-uri-scheme) | 相片 App |
 |[ms-設定：](#settings-app-uri-scheme) | 「設定」App |
-|[ms store:](#store-app-uri-scheme)  | 市集應用程式 |
-|[ms tonepicker:](#tone-picker-uri-scheme) | 音調選擇器 |
-|[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | 附近號碼 App |
+|[ms-store：](#store-app-uri-scheme)  | 市集應用程式 |
+|[tonepicker：](#tone-picker-uri-scheme) | 音調選擇器 |
+|[yellowpage：](#nearby-numbers-app-uri-scheme) | 附近號碼 App |
 |[msnweather:](#weather-app-uri-scheme) | 氣象應用程式 |
 
 <br>
@@ -56,7 +56,7 @@ URI 配置可讓您按一下超連結來開啟 App。 就像您可以使用 **ma
 
 使用 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法來啟動 URI。 呼叫此方法時，您的 app 必須是前景 app，也就是說，使用者必須看得到您的 app。 這項需求可讓使用者握有控制權。 為了滿足這項需求，請務必將所有 URI 啟動直接繫結到您的應用程式 UI。 使用者一律必須採取某些動作，才能起始 URI 啟動。 如果您嘗試啟動 URI，但您的 app 不在前景，則啟動將會失敗，並會叫用您的錯誤回呼。
 
-首先，建立 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) 物件來代表 URI，然後將它傳送到 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。 使用傳回結果查看呼叫是否成功，如下列範例所示。
+首先，建立 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) 物件來代表 URI，然後將它傳送到 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。 使用傳回結果查看呼叫是否成功，如下列範例所示。
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -119,7 +119,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 呼叫 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 的來源 app 可要求在 URI 啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理 URI 的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 您也可以使用 **DesiredRemainingView**，指示來源 app 在 URI 啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
 
-**附註**  Windows 會考量多個不同的因素來決定來源應用程式的最後一個視窗大小，例如當、 原始碼應用程式的喜好設定、 畫面、 螢幕方向等等的應用程式數目。 設定 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 並無法保證來源 app 的特定視窗行為。
+**注意**  Windows 在判斷來源應用程式的最終視窗大小時，會將多個不同的因素納入考慮，例如來源應用程式的喜好設定、螢幕上的應用程式數目、螢幕方向等等。 設定 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 並無法保證來源 app 的特定視窗行為。
 
 ```cs
 // Set the desired remaining view.
@@ -136,7 +136,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="call-app-uri-scheme"></a>撥號 App URI 配置
 
-使用**ms 呼叫：** 若要啟動呼叫應用程式的 URI 配置。
+使用**ms-call：** 用來啟動通話應用程式的 URI 配置。
 
 | URI 配置       | 結果                   |
 |------------------|--------------------------|
@@ -144,16 +144,16 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="email-uri-scheme"></a>電子郵件 URI 配置
 
-使用**mailto:** 若要啟動的預設郵件應用程式的 URI 配置。
+使用**mailto：** 用來啟動預設郵件應用程式的 URI 配置。
 
 | URI 配置 |結果                          |
 |------------|---------------------------------|
 | mailto:    | 啟動預設電子郵件 app。 |
-| mailto:\[電子郵件地址\] | 啟動電子郵件 app，並以指定於 [收件者] 行上的電子郵件地址建立新訊息。 請注意，在使用者點選「傳送」之後，才會傳送電子郵件。 |
+| mailto： \[email address @ no__t-1 | 啟動電子郵件 app，並以指定於 [收件者] 行上的電子郵件地址建立新訊息。 請注意，在使用者點選「傳送」之後，才會傳送電子郵件。 |
 
 ### <a name="http-uri-scheme"></a>HTTP URI 配置
 
-使用**http:** 若要啟動預設網頁瀏覽器的 URI 配置。
+使用**HTTP：** 用來啟動預設網頁瀏覽器的 URI 配置。
 
 | URI 配置 | 結果                           |
 |------------|-----------------------------------|
@@ -161,7 +161,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="maps-app-uri-schemes"></a>地圖 App URI 配置
 
-使用**bingmaps:** ， **ms 磁碟機至：** ，和**ms 查核行程來：** 若要配置的 URI[啟動對應的 Windows 應用程式](launch-maps-app.md)特定地圖、 方向，以及搜尋結果。 例如，下列 URI 會開啟 Windows 地圖 app，並顯示以紐約市為中心的地圖。
+使用**bingmaps：** ， **ms-chap**：，以及**ms--** ----------------：用來[啟動 Windows maps 應用程式](launch-maps-app.md)至特定對應、方向和搜尋結果的 URI 配置。 例如，下列 URI 會開啟 Windows 地圖 app，並顯示以紐約市為中心的地圖。
 
 `bingmaps:?cp=40.726966~-74.006076`
 
@@ -171,19 +171,19 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="messaging-app-uri-scheme"></a>訊息中心 App URI 配置
 
-使用**ms 對談：** 若要啟動的 Windows 訊息的應用程式的 URI 配置。
+使用**ms 交談：** 用來啟動 Windows 訊息應用程式的 URI 配置。
 
 | URI 配置 |結果 |
 |------------|--------|
 | ms-chat:   | 啟動訊息中心應用程式。 |
 | ms-chat:?ContactID={contacted}  |  允許以特定連絡人的資訊啟動訊息中心應用程式。   |
 | ms-chat:?Body={body} | 允許以用作訊息內容的字串啟動訊息中心應用程式|
-| ms-chat:?Addresses={address}&Body={body} | 允許以特定位址的資訊及用作訊息內容的字串，來啟動訊息中心應用程式。 注意:可以串連的位址。 |
+| ms-chat:?Addresses={address}&Body={body} | 允許以特定位址的資訊及用作訊息內容的字串，來啟動訊息中心應用程式。 注意：位址可以串連。 |
 | ms-chat:?TransportId={transportId}  | 允許以特定的傳輸識別碼啟動訊息中心應用程式。 |
 
 ### <a name="tone-picker-uri-scheme"></a>音調選擇器 URI 配置
 
-使用**ms tonepicker:** 若要選擇鈴聲、 警報及系統撥號音的 URI 配置。 您也可以儲存新鈴聲並取得音調的顯示名稱。
+使用**ms tonepicker：** 選擇鈴聲、警示和系統色調的 URI 配置。 您也可以儲存新鈴聲並取得音調的顯示名稱。
 
 | URI 配置 | 結果 |
 |------------|---------|
@@ -193,21 +193,21 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="nearby-numbers-app-uri-scheme"></a>附近號碼 App URI 配置
 
-使用**ms yellowpage:** 若要啟動附近的數字應用程式的 URI 配置。
+使用**ms yellowpage：** 用來啟動鄰近數位應用程式的 URI 配置。
 
 | URI 配置 | 結果 |
 |------------|---------|
-| ms yellowpage:？ 輸入 =\[關鍵字\]& 方法 =\[字串或 T9\] | 啟動「附近號碼 App」。<br>`input` 是指您想要搜尋的關鍵字。<br>`method` 是指搜尋 （字串或 T9 搜尋） 的類型。<br>如果 `method` 是 `T9` (一種鍵盤)，則 `keyword` 應該是與要搜尋之 T9 鍵盤字母對應的數值字串。<br>如果 `method` 是 `String`，則 `keyword` 是要搜尋的關鍵字。 |
+| yellowpage：？ input = \[keyword @ no__t-1 & method = \[String 或 T9 @ no__t-3 | 啟動「附近號碼 App」。<br>`input` 指的是您想要搜尋的關鍵字。<br>`method` 指的是搜尋的類型（字串或 T9 搜尋）。<br>如果 `method` 是 `T9` (一種鍵盤)，則 `keyword` 應該是與要搜尋之 T9 鍵盤字母對應的數值字串。<br>如果 `method` 是 `String`，則 `keyword` 是要搜尋的關鍵字。 |
 
 ### <a name="people-app-uri-scheme"></a>連絡人 App URI 配置
 
-使用**ms 人：** 若要啟動連絡人應用程式的 URI 配置。
+使用**ms-人員：** 用來啟動人員應用程式的 URI 配置。
 如需詳細資訊，請參閱[啟動連絡人 app](launch-people-apps.md)。
 
 ### <a name="photos-app-uri-scheme"></a>連絡人應用程式 URI 配置
 
-使用**ms 相片：** 若要啟動相片應用程式檢視影像或編輯影片的 URI 配置。 例如:  
-若要檢視映像： `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
+使用**ms 相片：** 用來啟動相片應用程式以觀看影像或編輯影片的 URI 配置。 例如:  
+若要觀看影像： `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
 或若要編輯影片： `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
 > [!NOTE]
@@ -217,12 +217,12 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 |------------|--------|
 | ms-photos:viewer?fileName={filename} | 啟動「相片」應用程式檢視指定的影像，其中 {filename} 是完整路徑名稱。 例如：`c:\users\userName\Pictures\ImageToView.jpg` |
 | ms-photos:videoedit?InputToken={input token} | 以影片編輯模式為由檔案語彙基元代表的檔案啟動「相片」應用程式。 **InputToken** 為必要。 使用 [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 取得檔案的語彙基元。 |
-| ms-photos:videoedit?Action={action} | 選擇性參數，其中 {action} 是其中一個指定視訊編輯模式中開啟相片應用程式：**SlowMotion**， **FrameExtraction**，**修剪**，**檢視**，**筆墨**。 若未指定，則預設為 **View** |
-| ms-photos:videoedit?StartTime={timespan} | 選擇性參數，可指定開始播放影片的位置。 `{timespan}` 必須是格式`"hh:mm:ss.ffff"`。 如果未指定，預設為 `00:00:00.0000` |
+| ms-photos:videoedit?Action={action} | 選擇性參數，會以指定的影片編輯模式開啟相片應用程式，其中 {action} 是下列其中一個：**SlowMotion**、 **FrameExtraction**、 **Trim**、 **View**、**筆墨**。 若未指定，則預設為 **View** |
+| ms-photos:videoedit?StartTime={timespan} | 選擇性參數，可指定開始播放影片的位置。 `{timespan}` 的格式必須是 `"hh:mm:ss.ffff"`。 如果未指定，預設值為 `00:00:00.0000` |
 
 ### <a name="settings-app-uri-scheme"></a>設定 App URI 配置
 
-使用**ms 設定：** URI 配置[啟動 [Windows 設定] 應用程式](launch-settings-app.md)。 啟動設定 app 是撰寫隱私權感知 app 的重要部分。 如果您的 app 無法存取敏感資源，建議讓使用者能夠方便地連結到該資源的隱私權設定。 例如，下列 URI 會開啟設定 app，並顯示相機隱私權設定。
+使用**ms-設定：** 用來[啟動 Windows 設定應用程式的](launch-settings-app.md)URI 配置。 啟動設定 app 是撰寫隱私權感知 app 的重要部分。 如果您的 app 無法存取敏感資源，建議讓使用者能夠方便地連結到該資源的隱私權設定。 例如，下列 URI 會開啟設定 app，並顯示相機隱私權設定。
 
 `ms-settings:privacy-webcam`
 
@@ -232,16 +232,16 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="store-app-uri-scheme"></a>市集 App URI 配置
 
-使用**ms windows 市集：** URI 配置[啟動 UWP 應用程式](launch-store-app.md)。 開啟產品詳細資料頁面、 產品檢閱頁面，並搜尋頁面等。例如，下列 URI 開啟 UWP 應用程式，並啟動存放區的 [首頁] 頁面。
+使用**ms-windows-store：** 用來[啟動 UWP 應用程式的](launch-store-app.md)URI 配置。 開啟產品詳細資料頁面、產品審核頁面和搜尋頁面等等。例如，下列 URI 會開啟 UWP 應用程式，並啟動存放區的首頁。
 
 `ms-windows-store://home/`
 
 如需詳細資訊，請參閱[啟動 UWP 應用程式](launch-store-app.md)。
 
-### <a name="weather-app-uri-scheme"></a>氣象應用程式的 URI 配置
+### <a name="weather-app-uri-scheme"></a>氣象應用程式 URI 配置
 
-使用**msnweather:** 若要啟動的氣象應用程式的 URI 配置。
+使用**msnweather：** 用來啟動氣象應用程式的 URI 配置。
 
 | URI 配置 | 結果 |
 |------------|---------|
-| msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | 啟動位置的地理座標為基礎的 [預測] 頁面中的氣象應用程式。<br>`latitude` 是指位置的緯度。<br> `longitude` 是指位置的經度。<br> |
+| msnweather：//forecast？ la = \[latitude @ no__t-1 & lo = \[longitude @ no__t-3 | 根據位置地理座標，啟動 [預測] 頁面中的氣象應用程式。<br>`latitude` 指的是位置的緯度。<br> `longitude` 指的是位置的經度。<br> |

@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: baac4498fcc6dd65d106166f73ca89db89cbfc6b
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: eec1de013efce7b23cd89e81f659a5cc530638c4
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821008"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339963"
 ---
 # <a name="enterprise"></a>企業
 
@@ -78,7 +78,7 @@ Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用�
 
 ### <a name="sql-server-connectivity"></a>SQL Server 連線
 
-您的應用程式可以直接連線到 SQL Server 資料庫，然後使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN&view=netframework-4.7.2) 命名空間中的類別儲存和擷取資料。
+您的應用程式可以直接連線到 SQL Server 資料庫，然後使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) 命名空間中的類別儲存和擷取資料。
 
 請參閱[在 UWP app 中使用 SQL Server 資料庫](https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases)。
 
@@ -125,7 +125,7 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 |-------|-------------|
 | [網路功能基本知識](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | 這個逐步解說說明與所有 UWP app 相關的基本網路概念，而不管使用中的通訊協定為何。  |
 | [哪一種網路功能技術？](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | 適用於 UWP app 的網路功能技術快速概觀，並建議您如何選擇最適合您的 app 的技術。 |
-| [XML 和 SOAP 序列化](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | XML 序列化會將物件轉換成符合特定 XML 結構描述定義語言 (XSD) 的 XML 資料流。 若要在 XML 與強型別類別之間進行轉換，您可以使用原生 [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument?redirectedfrom=MSDN) 類別或外部程式庫。 |
+| [XML 和 SOAP 序列化](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | XML 序列化會將物件轉換成符合特定 XML 結構描述定義語言 (XSD) 的 XML 資料流。 若要在 XML 與強型別類別之間進行轉換，您可以使用原生 [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument) 類別或外部程式庫。 |
 | [JSON 序列化](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | JSON (JavaScript 物件標記法) 序列化是與 REST API 進行通訊的常用格式。 UWP app 完全支援的 [Newtonsoft Json.NET](https://www.newtonsoft.com/json)。 |
 
 ## <a name="devices"></a>裝置

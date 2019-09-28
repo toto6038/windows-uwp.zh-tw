@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dd8bd8f80be068af92d679795431cf9a938fd5f6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 19f297e731225d28f92f63ad9359bba70f0f0b32
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372948"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340443"
 ---
 # <a name="xaml-intrinsic-data-types"></a>XAML 內建資料類型
 
@@ -24,25 +24,25 @@ Windows 執行階段的 XAML 提供下列類型的語言層級支援。
 
 | XAML 基本類型 | 描述 |
 |-------|-------------|
-| **x:Boolean**  | 以 CLR 支援來說，會對應到 [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean?redirectedfrom=MSDN)。 XAML 剖析 **x:Boolean** 的值時不區分大小寫。 請注意，"x:Bool" 不是可以接受的替代用法。 |
-| **x:String**   | 以 CLR 支援來說，會對應到 [**String**](https://docs.microsoft.com/dotnet/api/system.string?redirectedfrom=MSDN)。 字串的編碼會預設為周圍 XML 編碼。 |
-| **x:Double**   | 以 CLR 支援來說，會對應到 [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)。 除了數值外，**x:Double** 的文字語法也允許語彙基元 "NaN"，這是配置行為的 "Auto" 如何儲存為資源值的方式。 處理語彙基元時會區分大小寫。 您可以使用科學記號標記法，例如 "1+E06" 代表 `1,000,000`。 |
-| **x:Int32**    | 以 CLR 支援來說，會對應到 [**Int32**](https://docs.microsoft.com/dotnet/api/system.int32?redirectedfrom=MSDN)。 **x:Int32** 會視為已簽署，您可以包含減號 ("-") 符號以表示負數。 在 XAML 中，文字語法中沒有加號表示為正數的已簽署值。 |
+| **x:Boolean**  | 以 CLR 支援來說，會對應到 [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean)。 XAML 剖析 **x:Boolean** 的值時不區分大小寫。 請注意，"x:Bool" 不是可以接受的替代用法。 |
+| **x：String**   | 以 CLR 支援來說，會對應到 [**String**](https://docs.microsoft.com/dotnet/api/system.string)。 字串的編碼會預設為周圍 XML 編碼。 |
+| **x：Double**   | 以 CLR 支援來說，會對應到 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)。 除了數值外，**x:Double** 的文字語法也允許語彙基元 "NaN"，這是配置行為的 "Auto" 如何儲存為資源值的方式。 處理語彙基元時會區分大小寫。 您可以使用科學記號標記法，例如 "1+E06" 代表 `1,000,000`。 |
+| **x：Int32**    | 以 CLR 支援來說，會對應到 [**Int32**](https://docs.microsoft.com/dotnet/api/system.int32)。 **x:Int32** 會視為已簽署，您可以包含減號 ("-") 符號以表示負數。 在 XAML 中，文字語法中沒有加號表示為正數的已簽署值。 |
 
 通常您只有針對這些 XAML 語言基本類型，才會在 XAML 中定義使用 **x:** 前置詞的物件元素。 其他所有的 XAML 語言功能通常使用在屬性表單中，或是做為標記延伸。
 
-**附註**  依照慣例，語言基本類型，以 XAML 和所有其他 XAML 語言項目會顯示 「 x 」 前置詞。 這就是 XAML 語言元素在真實世界標記中的一般用法。 XAML 的文件與 XAML 規格會依循這個慣例。
+**請注意**  By 慣例，XAML 的語言基本專案和所有其他 xaml 語言元素會顯示 "x：" 前置詞。 這就是 XAML 語言元素在真實世界標記中的一般用法。 XAML 的文件與 XAML 規格會依循這個慣例。
 
 ## <a name="other-xaml-primitives"></a>其他 XAML 基本類型
 
 XAML 2009 規格有提到其他 XAML 語言層級的基本類型，如 **x:Uri** 和 **x:Single**。 除非在本主題的表格中另行列出，否則 Windows 執行階段的 XAML 目前不支援由其他 XAML 詞彙或 XAML 2009 規格所定義的其他 XAML 語言基本類型。
 
-**附註**  日期和時間 (使用屬性[ **DateTime** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime)或是[ **DateTimeOffset**](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN)， [**TimeSpan** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)或是[ **System.TimeSpan**](https://docs.microsoft.com/dotnet/api/system.timespan?redirectedfrom=MSDN)) 不是以 XAML 基本可設定。 因為在 Windows 執行階段 XAML 剖析器中沒有適用於日期和時間的預設 from-string 轉換行為，所以這些屬性在 XAML 中通常完全無法設定。 若要初始化任何日期和時間屬性的值，您必須使用在頁面或元素載入時執行的程式碼後置。
+**請注意**  Dates 和時間（使用[**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime)或[**DateTimeOffset**](https://docs.microsoft.com/dotnet/api/system.datetimeoffset)、 [**timespan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)或 system.string 的[**屬性）無法**](https://docs.microsoft.com/dotnet/api/system.timespan)使用 XAML 基本類型來設定。 因為在 Windows 執行階段 XAML 剖析器中沒有適用於日期和時間的預設 from-string 轉換行為，所以這些屬性在 XAML 中通常完全無法設定。 若要初始化任何日期和時間屬性的值，您必須使用在頁面或元素載入時執行的程式碼後置。
 
 ## <a name="related-topics"></a>相關主題
 
 * [XAML 概觀](xaml-overview.md)
 * [XAML 語法指南](xaml-syntax-guide.md)
-* [建立圖片敘述的動畫](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
+* [Storyboarded 動畫](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
  
 

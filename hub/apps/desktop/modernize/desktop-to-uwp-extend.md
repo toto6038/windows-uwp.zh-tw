@@ -7,12 +7,12 @@ keywords: Windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f1cc0e932a1dd413ed94e1fe5d9a3d1e6b0870c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 7359d28d968a2948e9f4049e2acc3c655edcfcb3
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393573"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339208"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>使用現代化的 UWP 元件擴充您的桌面應用程式
 
@@ -77,7 +77,7 @@ ms.locfileid: "70393573"
 
 ### <a name="build-your-solution"></a>建立您的解決方案
 
-建立您的解決方案，以確保不會出現任何錯誤。 如果您收到錯誤，請開啟**Configuration Manager** ，並確定您的專案以相同的平臺為目標。
+建立您的解決方案，以確保不會出現任何錯誤。 如果您收到錯誤, 請開啟**Configuration Manager** , 並確定您的專案以相同的平臺為目標。
 
 ![Config manager](images/desktop-to-uwp/config-manager.png)
 
@@ -175,7 +175,7 @@ ms.locfileid: "70393573"
 
 ### <a name="start-the-uwp-app"></a>啟動 UWP 應用程式。
 
-首先，從您的傳統型應用程式建立 [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)，包括通訊協定名稱以及您想要傳遞到 UWP 應用程式的任何參數。 然後，呼叫 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。
+首先，從您的傳統型應用程式建立 [Uri](https://docs.microsoft.com/dotnet/api/system.uri)，包括通訊協定名稱以及您想要傳遞到 UWP 應用程式的任何參數。 然後，呼叫 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。
 
 ```csharp
 
@@ -220,7 +220,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-在 XAML 的後置程式字碼頁面中， ``OnNavigatedTo``覆寫方法以使用傳入頁面的參數。 在這種情形下，我們會使用傳遞到此頁面的緯度和經度，以在地圖中顯示位置。
+在 XAML 的後置程式字碼頁面中，覆寫 ``OnNavigatedTo`` 方法，以使用傳入頁面的參數。 在這種情形下，我們會使用傳遞到此頁面的緯度和經度，以在地圖中顯示位置。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -295,9 +295,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </Extensions>  
 ```
 
-提供由 UWP 專案產生的可執行檔名稱，以及進入點類別的名稱。 此標記假設 UWP 應用程式的可執行檔名稱是`ShareTarget.exe`。
+提供由 UWP 專案產生的可執行檔名稱，以及進入點類別的名稱。 此標記假設 UWP 應用程式的可執行檔名稱為 `ShareTarget.exe`。
 
-您也需要指定您的應用程式可以分享哪些檔案類型。 在此範例中，我們會將[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面應用程式設為點陣圖影像的共用目標， `Bitmap`以便為支援的檔案類型指定。
+您也需要指定您的應用程式可以分享哪些檔案類型。 在此範例中，我們會將[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面應用程式設為點陣圖影像的共用目標，以便為支援的檔案類型指定 `Bitmap`。
 
 <a id="override" />
 
@@ -366,7 +366,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-對於已由使用者開啟的桌面應用程式實例，我們也可能會處理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件，並傳入檔案位置的路徑。 如此一來，任何開啟的桌面應用程式實例都會顯示共用相片。
+對於已由使用者開啟的桌面應用程式實例，我們也可能會處理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher)事件，並傳入檔案位置的路徑。 如此一來，任何開啟的桌面應用程式實例都會顯示共用相片。
 
 ```csharp
 ...
@@ -465,7 +465,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ![背景工作選項](images/desktop-to-uwp/background-task-option.png)
 
-然後，選擇您想要的屬性。 我們的範例使用 **[計時器\]** 屬性。
+然後，選擇您想要的屬性。 我們的範例使用 **\[計時器\]** 屬性。
 
 ![計時器屬性](images/desktop-to-uwp/timer-property.png)
 
@@ -503,7 +503,7 @@ public void RegisterBackgroundTask(String triggerName)
 
 ## <a name="support-and-feedback"></a>支援與意見反應
 
-**尋找問題的解答**
+**尋找您問題的解答**
 
 有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 

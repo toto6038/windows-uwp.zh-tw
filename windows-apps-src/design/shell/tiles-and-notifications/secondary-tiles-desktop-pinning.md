@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf, 傳統型橋接器, 次要磚, 釘選, 快速入門, 程式碼範例, 範例, 次要磚, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ca6471122ee1870a94ef0834a5eed8f83a4d4a7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cd6debb076aac4286c8cb9a33730ade4942b5030
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362623"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340409"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>從傳統型應用程式釘選次要磚
 
@@ -22,7 +22,7 @@ ms.locfileid: "66362623"
 ![次要磚螢幕擷取畫面](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> **需要 Fall Creators Update**:您必須為目標 SDK 16299 和執行組建 16299 或更新版本，以次要磚釘選從傳統型橋接器應用程式。
+> **需要秋季建立者更新**：您必須以 SDK 16299 為目標，並執行組建16299或更新版本，才能從桌面橋接器應用程式釘選次要磚。
 
 從 WPF 或 WinForms 應用程式新增次要磚的方式，與單純的 UWP 應用程式非常類似。 唯一的不同是，您必須指定您的主要視窗控制代碼 (HWND)。 這是因為當釘選磚時，Windows 會顯示強制回應對話方塊要求使用者確認是否要釘選磚。 如果傳統型應用程式未透過擁有者視窗設定 SecondaryTile 物件，則 Windows 不會知道要在何處繪製對話方塊，作業將會失敗。
 
@@ -34,7 +34,7 @@ ms.locfileid: "66362623"
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>允許存取 IInitializeWithWindow 介面
 
-如果您的應用程式是以受管理的語言 (例如 C# 或 Visual Basic) 撰寫的，請在您的應用程式程式碼中以 [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute?redirectedfrom=MSDN) 與 Guid 屬性宣告 IInitializeWithWindow 介面，如以下 C# 範例所示。 此範例假設您的程式碼檔案有 System.Runtime.InteropServices 命名空間的 using 陳述式。
+如果您的應用程式是以受管理的語言 (例如 C# 或 Visual Basic) 撰寫的，請在您的應用程式程式碼中以 [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) 與 Guid 屬性宣告 IInitializeWithWindow 介面，如以下 C# 範例所示。 此範例假設您的程式碼檔案有 System.Runtime.InteropServices 命名空間的 using 陳述式。
 
 ```csharp
 [ComImport]
@@ -90,15 +90,15 @@ bool isPinned = await tile.RequestCreateAsync();
 ## <a name="send-tile-notifications"></a>傳送磚通知
 
 > [!IMPORTANT]
-> **需要年 4 月 2018 17134.81 或更新版本**:您必須執行組建 17134.81 或更新版本，以將磚或徽章通知傳送至次要磚中，從傳統型橋接器應用程式。 這個 .81 維護更新之前，當從傳統型橋接器應用程式傳送磚或徽章通知至次要磚時，發生 0x80070490 *找不到元素* 例外。
+> **需要2018年4月17134.81 或更新版本**：您必須執行組建17134.81 或更新版本，才能將磚或徽章通知從 Desktop Bridge 應用程式傳送至次要磚。 這個 .81 維護更新之前，當從傳統型橋接器應用程式傳送磚或徽章通知至次要磚時，發生 0x80070490 *找不到元素* 例外。
 
 傳送磚或徽章通知與 UWP app 相同。 如需詳細資訊，請參閱[傳送本機磚通知](sending-a-local-tile-notification.md)以開始使用。
 
 
 ## <a name="resources"></a>資源
 
-* [完整的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
-* [次要磚概觀](secondary-tiles.md)
-* [釘選次要磚 (UWP)](secondary-tiles-pinning.md)
+* [完整程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
+* [次要磚總覽](secondary-tiles.md)
+* [釘選次要磚（UWP）](secondary-tiles-pinning.md)
 * [傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)
-* [傳統型橋接器程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+* [桌面橋接器程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

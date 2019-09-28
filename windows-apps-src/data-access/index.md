@@ -6,12 +6,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: Windows 10, UWP, 資料, 資料庫, 關聯式, 資料, sqlite
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ce2bbb1b72eaa33001e86c9aa81b334e338cb53
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 80cf97a7336fe912baf5cda151560dacfa12c2e2
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362604"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339710"
 ---
 # <a name="data-access"></a>資料存取
 
@@ -20,7 +20,7 @@ ms.locfileid: "66362604"
 | 主題 | 描述|
 |-------|------------|
 | [在 UWP 應用程式中使用 SQLite 資料庫](sqlite-databases.md) | 說明如何使用 SQLite 在使用者裝置上儲存和擷取輕量資料庫中的資料。 SQLite 是無伺服器的內嵌資料庫引擎。 |
-| [在 UWP 應用程式中使用 SQL Server 資料庫](sql-server-databases.md) | 說明如何直接連線到 SQL Server 資料庫，然後使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) 命名空間中的類別儲存和擷取資料。 不需要服務層級。 |
+| [在 UWP 應用程式中使用 SQL Server 資料庫](sql-server-databases.md) | 說明如何直接連線到 SQL Server 資料庫，然後使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) 命名空間中的類別儲存和擷取資料。 不需要服務層級。 |
 
 ## <a name="related-topics"></a>相關主題
 

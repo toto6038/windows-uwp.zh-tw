@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: ad133a9b1eb22695e6ce5d8b3edba9ad3a138b68
-ms.sourcegitcommit: f1261aa6f7eeb62bf770a08b58ec4357bdc20c7e
+ms.openlocfilehash: c337de2a1fc349cfa3965402848fbead51e61e83
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71224768"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340477"
 ---
 # <a name="debug-a-background-task"></a>偵錯背景工作
 
@@ -36,7 +36,7 @@ ms.locfileid: "71224768"
 
 您可以透過 Microsoft Visual Studio 手動觸發背景工作。 然後就可以逐步檢查程式碼並進行偵錯。
 
-1.  在 C# 中，請在背景類別的 Run 方法中設置中斷點 (若為同處理序背景工作，請在 App.OnBackgroundActivated() 設置中斷點)，和/或使用 [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics?view=netframework-4.7.2) 來撰寫偵錯輸出。
+1.  在 C# 中，請在背景類別的 Run 方法中設置中斷點 (若為同處理序背景工作，請在 App.OnBackgroundActivated() 設置中斷點)，和/或使用 [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics) 來撰寫偵錯輸出。
 
     在 C++ 中，請在背景類別的 Run 類別中設置中斷點 (若為同處理序背景工作，請在 App.OnBackgroundActivated() 設置中斷點)，和/或使用 [**OutputDebugString**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw) 來撰寫偵錯輸出。
 

@@ -6,18 +6,18 @@ ms.date: 08/11/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 圖釘
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aca8f4daea39a190af4dd1007a6b961198994dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b8e14693dd6ef23714da53d652b9083f202cd62d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370538"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340437"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>在地圖上顯示感興趣的地點
 
 藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。 POI 是地圖上代表感興趣項目的特定點。 例如，公司、城市或朋友的位置。
 
-若要深入了解您的應用程式上顯示 POI，下載下列的範例，從[Windows 通用範例儲存機制](https://go.microsoft.com/fwlink/p/?LinkId=619979)GitHub 上：[通用 Windows 平台 (UWP) 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
+若要深入瞭解如何在您的應用程式上顯示 POI，請從 GitHub 上的[Windows-通用範例](https://go.microsoft.com/fwlink/p/?LinkId=619979)存放庫下載下列範例：[通用 Windows 平臺（UWP）地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
 藉由將 [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)、 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)、[**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) 和 [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) 物件新增到 [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) 物件的 **MapElements** 集合，即可在地圖上顯示圖釘、影像及圖形。 然後，將該層物件新增到地圖控制項的 **層** 集錦中。
 
@@ -163,7 +163,7 @@ public void AddLandmarkPhoto()
 }
 ```
 
-沒有此程式碼必須檢查稍微深入討論的三個部分：映像、 參考相機，而[ **NormalizedAnchorPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint)屬性。
+這段程式碼有三個部分值得進一步檢查：影像、參考攝影機和[**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint)屬性。
 
 ### <a name="image"></a>Image
 
@@ -182,7 +182,7 @@ public void AddLandmarkPhoto()
 
 ### <a name="normalizedanchorpoint"></a>NormalizedAnchorPoint
 
-[  **NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 是錨定至 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 屬性的影像點。 0.5,1 點是影像的底部中央。 因為我們已將 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 屬性設定為地圖控制項的中央，所以影像的底部中央將錨定至地圖控制項的中央。 如果您希望影像直接位於某個點上，請將 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 設定為 0.5,0.5。  
+[  **NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 是錨定至 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 屬性的影像點。 0\.5,1 點是影像的底部中央。 因為我們已將 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 屬性設定為地圖控制項的中央，所以影像的底部中央將錨定至地圖控制項的中央。 如果您希望影像直接位於某個點上，請將 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 設定為 0.5,0.5。  
 
 ## <a name="add-a-shape"></a>加上圖形
 
@@ -352,7 +352,7 @@ public Geopoint BellevueLocation { get; set; }
 </maps:MapControl>
 ```
 
-上述範例中的 ``ItemsSource`` 屬性繫結至程式碼後置檔案中的 [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?view=netframework-4.70) 類型的内容。
+上述範例中的 ``ItemsSource`` 屬性繫結至程式碼後置檔案中的 [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) 類型的内容。
 
 ```csharp
 public sealed partial class Scenario1 : Page
@@ -474,10 +474,10 @@ public myMapPage()
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [對應的設計方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
+* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [地圖的設計指導方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows 應用程式中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 流量的應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 車流量應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
 * [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
 * [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)

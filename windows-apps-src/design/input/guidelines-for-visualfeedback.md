@@ -1,5 +1,5 @@
 ---
-Description: 要對使用者顯示時偵測到，解譯，並處理其互動的 UWP 應用程式中使用視覺化回饋。
+Description: 使用視覺效果意見反應，在使用者與 UWP 應用程式的互動受到偵測、解讀和處理時顯示。
 title: 視覺化回饋
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
@@ -8,18 +8,18 @@ keywords: 視覺化回饋、焦點回饋、觸控回饋、觸控點視覺效果�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab5d8b12539b7669f3459e62159177bfd95269d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 56260eb09bc834b2a71e9889b91f0bc439edaa30
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317149"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340469"
 ---
 # <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
 使用視覺化回饋以向使用者顯示系統已偵測到、解譯及處理他們的互動。 視覺化回饋可以透過激發互動意願來協助使用者。 它會指出互動是否成功來改善使用者的控制感應。 它也會轉送系統狀態並減少錯誤。
 
-> **重要的 Api**:[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [ **Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+> **重要 API**：[**Windows. input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、 [**windows. ui. input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、 [**windows. ui Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>建議
 
@@ -40,7 +40,7 @@ ms.locfileid: "67317149"
 > [!Important]
 > 建議您不要變更內建手勢的互動行為。
 
-**在裝置上的意見反應**
+**跨裝置的意見反應**
 
 視覺化回饋通常取決於輸入裝置 (觸控、觸控板、滑鼠、畫筆/手寫筆、鍵盤等等)。 例如，內建的滑鼠回饋通常涉及移動和變更游標，觸控和手寫筆需要的是接觸點視覺效果，而鍵盤輸入和瀏覽則是使用焦點矩形和醒目提示。
 
@@ -64,8 +64,8 @@ ms.locfileid: "67317149"
 
 **框線屬性**
 
-高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」  。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」* 。
-![高能見度焦點視覺效果紅線](images/FocusRectRedlines.png)
+高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」* 。
+@no__t 0High 可見度焦點視覺效果紅線 @ no__t-1
 
 若要變更框線類型 (主要或次要) 的粗細，請分別使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**︰
 ```XAML
@@ -73,15 +73,15 @@ ms.locfileid: "67317149"
 ```
 ![高可見度焦點視覺效果邊界粗細](images/FocusMargin.png)
 
-邊界是 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness?redirectedfrom=MSDN) 類型的屬性，因此可將邊界自訂成只出現在控制項的特定邊。 請參閱底下：![高能見度焦點視覺邊界僅用於粗細底端](images/FocusThicknessSide.png)
+邊界是 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness) 類型的屬性，因此可將邊界自訂成只出現在控制項的特定邊。 請參閱底下：![High 可見度焦點視覺邊界粗細只有 @ no__t-1
 
-邊界是控制項視覺界限與焦點視覺效果「次要框線」  起始位置之間的空間。 預設邊界是距離控制項界限 **1px**。 您可以編輯個別控制項的這個邊界，方法是變更 **FocusVisualMargin** 屬性︰
+邊界是控制項視覺界限與焦點視覺效果「次要框線」起始位置之間的空間。 預設邊界是距離控制項界限 **1px**。 您可以編輯個別控制項的這個邊界，方法是變更 **FocusVisualMargin** 屬性︰
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
 ![高可見度焦點視覺效果邊界差異](images/FocusPlusMinusMargin.png)
 
-*負數的邊界會從控制項的中央向外推送框線，正值的邊界會移至控制項的中央的更接近的框線。*
+*負值邊界會將框線從控制項的中央向外推，而正面邊界會將框線移到靠近控制項的中央。*
 
 若要將控制項上的焦點視覺效果完全關閉，只要停用 **UseSystemFocusVisuals** 即可：
 ```XAML
@@ -108,27 +108,27 @@ ms.locfileid: "67317149"
 
 ## <a name="related-articles"></a>相關文章
 
-**設計工具**
-* [移動瀏覽的指導方針](guidelines-for-panning.md)
+**適用於設計人員**
+* [移動的指導方針](guidelines-for-panning.md)
 
 **適用於開發人員**
-* [自訂的使用者互動](https://docs.microsoft.com/windows/uwp/design/layout/index)
+* [自訂使用者互動](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **範例**
-* [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895) \(英文\)
 
 **封存範例**
-* [輸入：XAML 使用者輸入的事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控的點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：簡化的手寫範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [輸入：Windows 8 筆勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 觸控的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Input：XAML 使用者輸入事件範例 @ no__t-0
+* [Input：裝置功能範例 @ no__t-0
+* [Input：觸控點擊測試範例 @ no__t-0
+* [XAML 捲軸、移動流覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input：簡化的筆跡範例 @ no__t-0
+* [Input：Windows 8 手勢範例 @ no__t-0
+* [Input：操作和手勢（C++）範例 @ no__t-1
+* [DirectX touch 輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

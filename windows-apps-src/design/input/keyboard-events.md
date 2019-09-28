@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef2007648c21e015aa2ae692d28efa56c922bf5
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 89257a4ec64458f5734c2b04c1e654a7c0c44f27
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660191"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339909"
 ---
 # <a name="keyboard-events"></a>鍵盤事件
 
@@ -94,10 +94,10 @@ void MyProject::MainPage::Grid_KeyUp(
 
 所有鍵盤事件都是使用 [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) 代表事件資料，**KeyRoutedEventArgs** 包含下列屬性：
 
--   [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**擊鍵**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
 -   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**處理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
--   [**OriginalSource** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (繼承自[ **RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
+-   [**Dps**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) （繼承自[**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs)）
 
 ### <a name="key"></a>Key
 
@@ -277,7 +277,7 @@ End Sub
 ```
 
 > [!NOTE]
-> 在 XAML 中設定 [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey?view=netframework-4.8) 或 [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) 可提供字串資訊，其中記載用於叫用該特定動作的快速鍵。 Microsoft UI 自動化用戶端 (例如朗讀程式) 會擷取此資訊，通常直接提供給使用者。
+> 在 XAML 中設定 [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey) 或 [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) 可提供字串資訊，其中記載用於叫用該特定動作的快速鍵。 Microsoft UI 自動化用戶端 (例如朗讀程式) 會擷取此資訊，通常直接提供給使用者。
 >
 > 設定 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 本身不會有任何動作。 您還是需要附加 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 或 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件的處理常式，才能實際在應用程式中實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline) 格式明確的為助憶鍵中的特定鍵加上文字底線。
 
@@ -319,7 +319,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler 和已處理的鍵盤事件
 
-您可以使用一項特別的技術，以附加可以在已標示為處理過的事件上作用的處理常式。 這項技術會使用[ **AddHandler** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)方法，以註冊處理常式，而不是使用 XAML 屬性或特定語言的語法，加入處理常式，例如以 C + =\#。
+您可以使用一項特別的技術，以附加可以在已標示為處理過的事件上作用的處理常式。 這項技術會使用[**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)方法來註冊處理常式，而不是使用 XAML 屬性或語言特定語法來新增處理常式，例如 C @ no__t-2 中的 + =。
 
 這項技術的一般限制在於 **AddHandler** API 是採用一個 [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent) 類型的參數來識別相關的路由事件。 並非所有路由事件都提供 **RoutedEvent** 識別項，因此這項考量也就影響到哪些路由事件仍然可以在 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 案例中處理。 [  **KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 與 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 上已有路由事件識別項 ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) 與 [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent))。 不過，其他事件 (例如 [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)) 並沒有路由事件識別項，因此也就不能與 **AddHandler** 技術搭配使用。
 
@@ -327,7 +327,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 您可以覆寫特定控制項 (例如 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)) 的按鍵事件，為各種輸入裝置 (包括鍵盤與遊戲台) 提供一致的焦點瀏覽。
 
-在下列範例中，我們子類別化控制項並覆寫 KeyDown 行為，將焦點移至 GridView 內容在按下任何鍵時。
+在下列範例中，我們會將控制項子類別化，並覆寫 KeyDown 行為，以在按下任何方向鍵時，將焦點移至 GridView 內容。
 
 ```csharp
   public class CustomGridView : GridView
@@ -383,25 +383,25 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
-**開發人員**
+**能夠**
 * [鍵盤互動](keyboard-interactions.md)
 * [識別輸入裝置](identify-input-devices.md)
-* [回應觸控式鍵盤的目前狀態](respond-to-the-presence-of-the-touch-keyboard.md)
+* [回應觸控鍵盤的存在](respond-to-the-presence-of-the-touch-keyboard.md)
 
-**設計工具**
-* [鍵盤設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+**設計師**
+* [鍵盤設計方針](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 
 **範例**
-* [觸控式鍵盤範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [觸控鍵盤範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895) \(英文\)
 
 **封存範例**
-* [輸入的範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控式鍵盤範例](https://go.microsoft.com/fwlink/p/?linkid=246019)
-* [回應到螢幕小鍵盤範例](https://go.microsoft.com/fwlink/p/?linkid=231633)
+* [輸入範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Input：裝置功能範例 @ no__t-0
+* [Input：觸控鍵盤範例 @ no__t-0
+* [回應螢幕小鍵盤的外觀範例](https://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML 文字編輯範例](https://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
