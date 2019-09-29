@@ -6,12 +6,12 @@ ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 06f5ce8ad7576114137adb862f89720e27d3802b
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e78fddf1a0dae39d4479a4a1786a36687337c75e
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364284"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340238"
 ---
 # <a name="draw-shapes"></a>繪製圖形
 
@@ -147,7 +147,7 @@ layoutRoot.Children.Add(polygon1);
 
 [  **Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 只是在座標空間中兩點之間繪製的線條。 **Line** 會忽略提供給 [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill) 的任何值，因為它沒有內部空間。 對於 **Line**，請務必指定 [**Stroke**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.stroke) 的值與 [**StrokeThickness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.strokethickness) 屬性，否則 **Line** 無法轉譯。
 
-您無法使用 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 值指定 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 圖形，而是必須使用 [**X1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x1)、[**Y1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y1)、[**X2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x2) 以及 [**Y2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y2) 的離散 [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) 值。 這樣就可以使用最簡潔的標記語言來繪製水平或垂直線。 例如，`<Line Stroke="Red" X2="400"/>` 定義了 400 個像素長的水平線。 另一個 X、Y 屬性預設為 0，因此這個 XAML 的點會繪製從 `(0,0)` 到 `(400,0)` 的線條。 然後，如果您希望它從 (0,0) 以外的點開始，可以使用 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 移動整個 **Line**。
+您無法使用 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 值指定 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 圖形，而是必須使用 [**X1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x1)、[**Y1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y1)、[**X2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x2) 以及 [**Y2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y2) 的離散 [**Double**](https://docs.microsoft.com/dotnet/api/system.double) 值。 這樣就可以使用最簡潔的標記語言來繪製水平或垂直線。 例如，`<Line Stroke="Red" X2="400"/>` 定義了 400 個像素長的水平線。 另一個 X、Y 屬性預設為 0，因此這個 XAML 的點會繪製從 `(0,0)` 到 `(400,0)` 的線條。 然後，如果您希望它從 (0,0) 以外的點開始，可以使用 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 移動整個 **Line**。
 
 ```xaml
 <Line Stroke="Red" X2="400"/>
@@ -165,7 +165,7 @@ line1.X2 = 400;
 layoutRoot.Children.Add(line1);
 ```
 
-## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> 聚合線條
+## <a name="span-id_polylinespanspan-id_polylinespanspan-id_polylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> 聚合線條
 
 [  **Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 與 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 類似，都是由一組點定義圖形的界限，不過 **Polyline** 的最後一點並不會連接第一個點。
 
