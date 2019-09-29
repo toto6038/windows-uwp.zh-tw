@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6c1f45b4bd3da74ea150c05800eba7ec10568894
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
+ms.openlocfilehash: cdcef66dc1f0026ff369eeb3f3c7881385d6e5ba
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643398"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339299"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>在 C++ Win32 應用程式中使用 UWP XAML 裝載 API
 
@@ -22,7 +22,7 @@ ms.locfileid: "69643398"
 UWP XAML 裝載 API 提供更廣泛的控制項集合的基礎，讓開發人員能夠將流暢的 UI 帶入非 UWP 桌面應用程式。 這項功能稱為「 *XAML 島*」。 如需這項功能的總覽，請參閱[在桌面應用程式中裝載 UWP XAML 控制項（Xaml 島）](xaml-islands.md)。
 
 > [!NOTE]
-> 如果您有關于 XAML Islands 的意見反應，請在[Microsoft 工具](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)組的 Win32 存放庫中建立新的問題，並在該處留下您的意見。 如果您想要私下提交意見反應，您可以將它傳送XamlIslandsFeedback@microsoft.com給。 您的深入解析和案例對我們而言非常重要。
+> 如果您有關于 XAML Islands 的意見反應, 請在[Microsoft 工具](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)組的 Win32 存放庫中建立新的問題, 並在該處留下您的意見。 如果您想要私下提交意見反應, 您可以將它傳送XamlIslandsFeedback@microsoft.com給。 您的深入解析和案例對我們而言非常重要。
 
 ## <a name="should-you-use-the-uwp-xaml-hosting-api"></a>您應該使用 UWP XAML 裝載 API 嗎？
 
@@ -30,7 +30,7 @@ UWP XAML 裝載 API 提供了在桌面應用程式中裝載 UWP 控制項的低�
 
 * 如果您有C++ Win32 桌面應用程式，而且想要在應用程式中裝載 uwp 控制項，則必須使用 UWP XAML 裝載 API。 這些類型的應用程式沒有任何替代方案。
 
-* 針對 WPF 和 Windows Forms 應用程式，強烈建議您在 Windows 社區工具組中使用[XAML 島 .net 控制項](xaml-islands.md#wpf-and-windows-forms-applications)，而不是直接使用 UWP XAML 裝載 API。 如果您直接使用 UWP XAML 裝載 API，包括鍵盤導覽和版面配置變更，這些控制項就會在內部使用 UWP XAML 裝載 API，並實作為您必須自行處理的所有行為。
+* 針對 WPF 和 Windows Forms 應用程式，強烈建議您在 Windows 社區工具組中使用[XAML 島 .net 控制項](xaml-islands.md#wpf-and-windows-forms-applications)，而不是直接使用 UWP XAML 裝載 API。 如果您直接使用 UWP XAML 裝載 API, 包括鍵盤導覽和版面配置變更, 這些控制項就會在內部使用 UWP XAML 裝載 API, 並實作為您必須自行處理的所有行為。
 
 因為我們建議只有C++ win32 應用程式使用 UWP XAML 裝載 API，本文主要會提供C++ Win32 應用程式的指示和範例。 不過，如果您選擇，您可以在 WPF 和 Windows Forms 應用程式中使用 UWP XAML 裝載 API。 本文指向適用于 WPF 的[主控制項](xaml-islands.md#host-controls)和 Windows Forms 在 Windows 社區工具組中的相關原始程式碼，讓您可以看到 UWP XAML 裝載 API 如何由這些控制項使用。
 
@@ -58,7 +58,7 @@ XAML Islands 需要 Windows 10 1903 版（或更新版本）和對應的 Windows
 * **安裝 Microsoft 工具組. SDK 套件**。 如果您不想要在 MSIX 套件中封裝您的應用程式，您可以安裝 6.0.0-preview7 或更新[版本。](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) 此套件提供數個組建和執行時間資產，讓 XAML 孤島可在您的應用程式中運作。 請確定已選取 [**包含發行**前版本] 選項，讓您可以查看此套件的最新預覽版。
 
 > [!NOTE]
-> 這些指示的舊版中，您會將`maxversiontested`元素新增至專案中的應用程式資訊清單。 只要您使用上述其中一個選項，就不再需要將此元素新增至資訊清單。
+> 這些指示的舊版中，您會將 `maxversiontested` 元素新增至專案中的應用程式資訊清單。 只要您使用上述其中一個選項，就不再需要將此元素新增至資訊清單。
 
 ### <a name="additional-requirements-for-custom-uwp-controls"></a>自訂 UWP 控制項的其他需求
 
@@ -146,7 +146,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
     1. 建立**DesktopWindowXamlSource**物件，並將它轉換成**IDesktopWindowXamlSourceNative**或**IDesktopWindowXamlSourceNative2** COM 介面。
         > [!NOTE]
-        > 這些介面是在 Windows SDK 中的**desktopwindowxamlsource**標頭檔中宣告的。 根據預設，此檔案位於% programfiles （x86）% \ Windows Kits\10\Include\\< 組建編號 \um.\>
+        > 這些介面是在 Windows SDK 中的**desktopwindowxamlsource**標頭檔中宣告的。 根據預設，此檔案位於% programfiles （x86）% \ Windows Kits\10\Include @ no__t-0 < 組建編號 @ no__t-1\um。
 
     2. 呼叫**IDesktopWindowXamlSourceNative**或**IDesktopWindowXamlSourceNative2**介面的**AttachToWindow**方法，並傳入應用程式中父 UI 元素的視窗控制碼。
 
@@ -156,7 +156,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 下列步驟和程式碼範例示範如何執行上述程式：
 
-1. 在專案的 [**來源**檔案] 資料夾中，開啟預設的**WindowsProject .cpp**檔案。 刪除檔案的整個內容，並加入下列`include`和`using`語句。 除了標準C++和 UWP 標頭和命名空間之外，這些語句還包含 XAML 島特定的數個專案。
+1. 在專案的 [**來源**檔案] 資料夾中，開啟預設的**WindowsProject .cpp**檔案。 刪除檔案的整個內容，並新增下列 `include` 和 `using` 語句。 除了標準C++和 UWP 標頭和命名空間之外，這些語句還包含 XAML 島特定的數個專案。
 
     ```cppwinrt
     #include <windows.h>
@@ -336,7 +336,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 5. 儲存程式碼檔案，並建立並執行應用程式。 確認您在應用程式視窗中看到 UWP **TextBlock**控制項。
     > [!NOTE]
-    > 您可能會看到數個組建警告， `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'`包括`manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`和。 這些警告是目前工具和 NuGet 套件的已知問題，而且可以忽略。
+    > 您可能會看到數個組建警告，包括 `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` 和 `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`。 這些警告是目前工具和 NuGet 套件的已知問題，而且可以忽略。
 
 如需示範這些工作的完整範例，請參閱下列程式碼檔案：
 
@@ -358,7 +358,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 * **自訂 UWP 控制項**。 您需要裝載的自訂 UWP 控制項的原始程式碼，才能使用您的應用程式進行編譯。 自訂控制項通常會定義在 UWP 類別庫專案中，而您會在與C++ Win32 專案相同的方案中參考它。
 
-* **定義 XamlApplication 物件的 UWP 應用程式專案**。 您C++的 Win32 專案必須能夠存取 Windows 社區工具組`Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`所提供之類別的實例。 這個型別會作為根中繼資料提供者，以便在應用程式目前目錄的元件中載入自訂 UWP XAML 類型的中繼資料。 建議的做法是將**空白應用程式（通用 Windows）** 專案新增至與您C++的 Win32 專案相同的方案，並修訂此專案中`App`的預設類別。
+* **定義 XamlApplication 物件的 UWP 應用程式專案**。 您C++的 Win32 專案必須能夠存取 Windows 社區工具組所提供之 @no__t 1 類別的實例。 這個型別會作為根中繼資料提供者，以便在應用程式目前目錄的元件中載入自訂 UWP XAML 類型的中繼資料。 建議的做法是將**空白應用程式（通用 Windows）** 專案新增至與您C++的 Win32 專案相同的方案，並修訂此專案中的預設 @no__t 2 類別。
   > [!NOTE]
   > 您的方案只能包含一個定義`XamlApplication`物件的專案。 應用程式中的所有自訂 UWP 控制項都會`XamlApplication`共用相同的物件。 定義`XamlApplication`物件的專案必須包含所有其他 UWP 程式庫的參考，以及在 XAML 島中主控 UWP 控制項的專案。
 
@@ -376,7 +376,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 如需C++ Win32 應用程式的完整範例，請參閱[使用自訂控制項的 XAML 島](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的下列專案範例：
 
-* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl)：此專案會執行名為`MyUserControl`的自訂 UWP XAML 控制項，其中包含文字方塊、數個按鈕和一個下拉式方塊。
+* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl)：此專案會實行名為 `MyUserControl` 的自訂 UWP XAML 控制項，其中包含文字方塊、數個按鈕和一個下拉式方塊。
 * [MyApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp)：這是具有上述變更的 UWP 應用程式專案。
 * [SampleCppApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp)：這是在C++ XAML 島中裝載自訂 UWP XAML 控制項的 Win32 應用程式專案。
 
@@ -395,9 +395,9 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
   * **C++ Win32：** ：應用程式可以直接在其主要訊息迴圈中呼叫**PreTranslateMessage** 。 如需範例，請參閱[ C++ Win32 範例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的[XamlBridge .cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6)檔案。
 
-  * **WPF**應用程式可以從[ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage?view=netframework-4.7.2)事件的事件處理常式呼叫**PreTranslateMessage** 。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177)檔案。
+  * **WPF**應用程式可以從[ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage)事件的事件處理常式呼叫**PreTranslateMessage** 。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177)檔案。
 
-  * **Windows Forms：** 應用程式可以從[system.windows.forms.control.preprocessmessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage?view=netframework-4.7.2)方法的覆寫呼叫**PreTranslateMessage** 。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100)檔案。
+  * **Windows Forms：** 應用程式可以從[system.windows.forms.control.preprocessmessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage)方法的覆寫呼叫**PreTranslateMessage** 。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100)檔案。
 
 ### <a name="keyboard-focus-navigation"></a>鍵盤焦點導覽
 
@@ -439,7 +439,7 @@ UWP XAML 裝載 API 提供數種類型和成員，可協助您完成這些工作
 
 UWP XAML 架構會自動處理所裝載 UWP 控制項的 DPI 變更（例如，當使用者在具有不同螢幕 DPI 的監視器之間拖曳視窗時）。 為了獲得最佳體驗，我們建議您將 Windows Forms、WPF 或C++ Win32 應用程式設定為每個監視器 DPI 感知。
 
-若要將應用程式設定為每個監視器 DPI 感知，請將[並存組件資訊清單](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)新增至您的專案，並將 **\<DPIAwareness\>** 專案設定為**PerMonitorV2**。 如需此值的詳細資訊，請參閱[DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context)的描述。
+若要將應用程式設定為每個監視器 DPI 感知，請將[並存組件資訊清單](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)新增至您的專案，並將 **\<DPIAwareness @ no__t-3**元素設定為**PerMonitorV2**。 如需此值的詳細資訊，請參閱[DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context)的描述。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
