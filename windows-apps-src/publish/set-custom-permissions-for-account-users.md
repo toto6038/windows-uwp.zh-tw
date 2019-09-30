@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
 ms.openlocfilehash: ead8012c6d4b9243e70dcc09f7ef174a3d907356
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.sourcegitcommit: 035b03f1247eae4e9359ee7db66429d4e1c1d09b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "68349215"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
@@ -95,13 +95,13 @@ ms.locfileid: "68349215"
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">許可權名稱</th>
+    <th align="left">權限名稱</th>
     <th align="left">唯讀</th>
     <th align="left">讀/寫</th>
     </tr>
     </thead>
     <tbody>
-<tr><td align="left">    <b>帳戶設定</b>                    </td><td align="left">  可檢視 \[帳戶設定\] 區段中的所有頁面，包括<a href="managing-your-profile.md">連絡資訊</a>。<b></b>       </td><td align="left">  可檢視 \[帳戶設定\] 區段中的所有頁面。<b></b> 可變更<a href="managing-your-profile.md">連絡資訊</a>和其他頁面，但不能變更支付帳戶或稅金設定檔 (除非另外授與該權限)。            </td></tr>
+<tr><td align="left">    <b>帳戶設定</b>                    </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 區段中的所有頁面，包括<a href="managing-your-profile.md">連絡資訊</a>。       </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 區段中的所有頁面。 可變更<a href="managing-your-profile.md">連絡資訊</a>和其他頁面，但不能變更支付帳戶或稅金設定檔 (除非另外授與該權限)。            </td></tr>
 <tr><td align="left">    <b>帳戶使用者</b>                       </td><td align="left">  可檢視已加入 <b>\[使用者\]</b> 區段中的帳戶的使用者。          </td><td align="left">  可在 <b>\[使用者\]</b> 區段中新增使用者到帳戶和變更現有使用者。             </td></tr>
 <tr><td align="left">    <b>帳戶層級的 ad 效能報告</b> </td><td align="left">  可檢視帳戶層級的<a href="advertising-performance-report.md">廣告績效報告</a>。      </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    <b>廣告活動</b>                        </td><td align="left">  可檢視帳戶中建立的<a href="create-an-ad-campaign-for-your-app.md">廣告活動</a>。      </td><td align="left">  可建立、管理和檢視帳戶中建立的<a href="create-an-ad-campaign-for-your-app.md">廣告活動</a>。          </td></tr>
@@ -120,14 +120,14 @@ ms.locfileid: "68349215"
 <tr><td align="left">    <b>新的應用程式</b>                            </td><td align="left">  可檢視新的 app 建立頁面，但實際上不能在帳戶中建立新的 app。    </td><td align="left">  可透過保留新的 app 名稱以在帳戶中<a href="create-your-app-by-reserving-a-name.md">建立新的 app</a>，並可建立提交內容，將 app 提交到市集。     </td></tr>
 <tr><td align="left">    <b>新的套件組合</b>&nbsp;*                       </td><td align="left">  可檢視新的套件組合建立頁面，但實際上不能在帳戶中建立新的套件組合。     </td><td align="left">  可建立新的產品套件組合。          </td></tr>
 <tr><td align="left">    <b>合作夥伴服務</b>&nbsp;*                  </td><td align="left">  可檢視安裝到服務以擷取 XTokens 的憑證。     </td><td align="left">  可管理和檢視安裝到服務以擷取 XTokens 的憑證。       </td></tr>
-<tr><td align="left">    <b>支出帳戶</b>                      </td><td align="left">  可檢視 \[帳戶設定\] 中的<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">支付帳戶資訊</a>。<b></b>     </td><td align="left">  可編輯和檢視 \[帳戶設定\] 中的<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">支付帳戶資訊</a>。<b></b>       </td></tr>
+<tr><td align="left">    <b>支出帳戶</b>                      </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 中的<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">支付帳戶資訊</a>。     </td><td align="left">  可編輯和檢視 <b>\[帳戶設定\]</b> 中的<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">支付帳戶資訊</a>。       </td></tr>
 <tr><td align="left">    <b>支出摘要</b>                      </td><td align="left">  可檢視<a href="payout-summary.md">支付摘要</a>以存取和下載支付報告資訊。       </td><td align="left">  可檢視<a href="payout-summary.md">支付摘要</a>以存取和下載支付報告資訊。   </td></tr>
 <tr><td align="left">    <b>信賴憑證者</b>&nbsp;*                   </td><td align="left">  可檢視信賴憑證者以擷取 XTokens。    </td><td align="left">  可管理和檢視信賴憑證者以擷取 XTokens。     </td></tr>
-<tr><td align="left">    <b>沙箱</b>&nbsp;*                         </td><td align="left">  可存取 \[沙箱\] 頁面，和檢視帳戶中的沙箱與這些沙箱適用的任何設定。<b></b> 除非被授與適當的產品層級權限，否則無法檢視每個沙箱的產品和提交內容。 </td><td align="left">  可存取 \[沙箱\] 頁面及檢視和管理帳戶中的沙箱，包括建立和刪除沙箱及管理其設定。<b></b> 除非被授與適當的產品層級權限，否則無法檢視每個沙箱的產品和提交內容。    </td></tr>
+<tr><td align="left">    <b>沙箱</b>&nbsp;*                         </td><td align="left">  可存取 <b>\[沙箱\]</b> 頁面，和檢視帳戶中的沙箱與這些沙箱適用的任何設定。 除非被授與適當的產品層級權限，否則無法檢視每個沙箱的產品和提交內容。 </td><td align="left">  可存取 <b>\[沙箱\]</b> 頁面及檢視和管理帳戶中的沙箱，包括建立和刪除沙箱及管理其設定。 除非被授與適當的產品層級權限，否則無法檢視每個沙箱的產品和提交內容。    </td></tr>
 <tr><td align="left">    <b>Microsoft Store 銷售事件</b>&nbsp;*                            </td><td align="left">  N/A    </td><td align="left">  可以設定自動將產品包含在 Microsoft Store 銷售事件中的選項。     </td></tr>
-<tr><td align="left">    <b>稅務設定檔</b>                         </td><td align="left">  可檢視 \[帳戶設定\] 中的<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">稅金設定檔資訊和表單</a>。<b></b>     </td><td align="left">  可在 \[帳戶設定\] 中填寫稅單並更新<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">稅金設定檔資訊</a>。<b></b>     </td></tr>
+<tr><td align="left">    <b>稅務設定檔</b>                         </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 中的<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">稅金設定檔資訊和表單</a>。     </td><td align="left">  可在 <b>\[帳戶設定\]</b> 中填寫稅單並更新<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">稅金設定檔資訊</a>。     </td></tr>
 <tr><td align="left">    <b>測試帳戶</b>&nbsp;*                     </td><td align="left">  可檢視用於測試 Xbox Live 設定的帳戶。      </td><td align="left">  可建立、管理和檢視用於測試 Xbox Live 設定的帳戶。      </td></tr>
-<tr><td align="left">    <b>Xbox 裝置</b>                        </td><td align="left">  可在 \[帳戶設定\] 區段中檢視為帳戶啟用的 Xbox 開發主機。<b></b>       </td><td align="left">  可在 \[帳戶設定\] 區段中新增、移除和檢視為帳戶啟用的 Xbox 開發主機 。<b></b>     </td></tr>
+<tr><td align="left">    <b>Xbox 裝置</b>                        </td><td align="left">  可在 <b>\[帳戶設定\]</b> 區段中檢視為帳戶啟用的 Xbox 開發主機。       </td><td align="left">  可在 <b>\[帳戶設定\]</b> 區段中新增、移除和檢視為帳戶啟用的 Xbox 開發主機 。     </td></tr>
     </tbody>
     </table>
 
@@ -145,9 +145,9 @@ ms.locfileid: "68349215"
 > [!TIP]
 > 對 **\[所有產品\]** 做的選擇將適用於目前帳戶中的每個產品，以及未來在帳戶建立的任何產品。 若要防止權限套用到未來的產品，請個別選取所有產品，而不要選擇 **\[所有產品\]** 。
 
-在 \[所有產品\] 列下方，您會看到帳戶中的每個產品列在不同的列中。  若只要授與特定產品的權限，請在該產品的列中針對該權限做選擇。
+在 **\[所有產品\]** 列下方，您會看到帳戶中的每個產品列在不同的列中。 若只要授與特定產品的權限，請在該產品的列中針對該權限做選擇。
 
-除了 \[所有附加元件\] 列外，每個附加元件會列在其父產品下方的個別列中。  針對 \[所有附加元件\] 所做的選擇將適用於該產品所有目前的附加元件，以及未來為該產品建立的任何附加元件。 
+除了 **\[所有附加元件\]** 列外，每個附加元件會列在其父產品下方的個別列中。 針對 **\[所有附加元件\]** 所做的選擇將適用於該產品所有目前的附加元件，以及未來為該產品建立的任何附加元件。
 
 請注意，附加元件無法設定一部分的權限。 這是因為它們不適用於附加元件 (例如**客戶回函**權限)，或因為在父產品層級授與的權限適用於該產品的所有附加元件 (例如**促銷碼**)。 但請注意，附加元件適用的任何權限都必須個別設定；附加元件不會繼承為父產品所做的選擇。 例如，如果您想允許使用者選擇附加元件的定價和可用性，則無論是否已授與父產品的**定價和可用性**權限，您都必須啟用附加元件 (或**所有附加元件**) 的**定價和可用性**權限。 
 
@@ -157,7 +157,7 @@ ms.locfileid: "68349215"
 <table>
     <thead>
     <tr class="header">
-    <th align="left">許可權&nbsp;名稱</th>
+    <th align="left">權限&nbsp;名稱</th>
     <th align="left">唯讀&nbsp;</th>
     <th align="left">讀/寫</th>
     <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
@@ -178,7 +178,7 @@ ms.locfileid: "68349215"
 <table>
     <thead>
     <tr class="header">
-    <th align="left">許可權&nbsp;名稱</th>
+    <th align="left">權限&nbsp;名稱</th>
     <th align="left">唯讀&nbsp;</th>
     <th align="left">讀/寫</th>
     <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
@@ -199,7 +199,7 @@ ms.locfileid: "68349215"
 <table>
     <thead>
     <tr class="header">
-    <th align="left">許可權&nbsp;名稱</th>
+    <th align="left">權限&nbsp;名稱</th>
     <th align="left">唯讀&nbsp;</th>
     <th align="left">讀/寫</th>
     <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
@@ -227,7 +227,7 @@ ms.locfileid: "68349215"
 <table>
     <thead>
     <tr class="header">
-    <th align="left">許可權&nbsp;名稱</th>
+    <th align="left">權限&nbsp;名稱</th>
     <th align="left">唯讀&nbsp;</th>
     <th align="left">讀/寫</th>
     <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
@@ -239,7 +239,7 @@ ms.locfileid: "68349215"
     <tr><td align="left">    <b>合作夥伴服務</b>&nbsp;*</td><td>    可以查看帳戶的 Web 服務頁面。  </td><td>    可以查看和編輯帳戶的 Web 服務頁面。      </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>Xbox Test 帳戶</b>&nbsp;*</td><td>    可以查看帳戶的 [Xbox Test 帳戶] 頁面。  </td><td>    可以查看和編輯帳戶的 [Xbox Test 帳戶] 頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>每個沙箱的 Xbox Test 帳戶</b>&nbsp;*</td><td>    只能針對帳戶的指定沙箱, 查看 [Xbox Test 帳戶] 頁面。  </td><td>    可以查看和編輯 Xbox 測試。   <tr><td align="left">    <b>僅限帳戶的指定沙箱的帳戶頁面    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>Xbox 裝置</b>&nbsp;*</td><td>    可以查看帳戶的 Xbox one 開發主控台頁面。  </td><td>    可以查看和編輯帳戶的 Xbox one 開發主控台頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
+    <tr><td align="left"><b>Xbox 裝置</b>&nbsp; @ no__t-3</td><td>    可以查看帳戶的 Xbox one 開發主控台頁面。  </td><td>    可以查看和編輯帳戶的 Xbox one 開發主控台頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>每個沙箱的 Xbox 裝置</b>&nbsp;*</td><td>    只能針對帳戶的指定沙箱, 查看 Xbox one 開發主控台頁面。  </td><td>    只能針對帳戶的指定沙箱, 查看和編輯 Xbox one 開發主控台頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>應用程式通道</b>&nbsp;*</td><td>    N/A  </td><td>    可將宣傳影片頻道發佈到 Xbox 主機，以透過OneGuide 檢視。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>服務設定</b>&nbsp;*</td><td>    可以查看產品的 [Xbox Live 服務設定] 頁面。  </td><td>    可以查看和編輯產品的 Xbox Live 服務設定頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
