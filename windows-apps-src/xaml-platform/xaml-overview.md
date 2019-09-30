@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 5c846d0e0110a1285e67f6f21e1eeb7a0d9c2624
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 6d45e70afa5b0dc6e903dbd253c09042bb2046c2
+ms.sourcegitcommit: f7ef7e894d7b7fc24483b4485605686abf8f2e93
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339276"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679216"
 ---
 # <a name="xaml-overview"></a>XAML 概觀
 
@@ -144,10 +144,10 @@ XAML 是物件與物件屬性的宣告式語言，但也包含將事件處理常
 以下是一個簡單範例。 @No__t 0 類別支援名為 <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click> 的事件。 您可以為 **Click** 撰寫一個處理常式，執行在使用者按一下 **Button** 後應該叫用的程式碼。 在 XAML 中，指定 **Click** 做為 **Button** 上的屬性。 針對屬性值提供一個字串，此字串是您處理常式的方法名稱。
 
 ```xml
-<Button Click="showUpdatesButton-Click">Show updates</Button>
+<Button Click="showUpdatesButton_Click">Show updates</Button>
 ```
 
-當您編譯時，現在編譯器會預期在程式碼後置檔案中以及在 XAML 頁面之 [x:Class](x-class-attribute.md) 值所宣告的命名空間中，將定義一個名為 `showUpdatesButton-Click` 的方法。 此外，該方法必須滿足 <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click> 事件的委派合約。 例如:
+當您編譯時，現在編譯器會預期在程式碼後置檔案中以及在 XAML 頁面之 [x:Class](x-class-attribute.md) 值所宣告的命名空間中，將定義一個名為 `showUpdatesButton_Click` 的方法。 此外，該方法必須滿足 <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click> 事件的委派合約。 例如:
 
 ```csharp
 namespace App1

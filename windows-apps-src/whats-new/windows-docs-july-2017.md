@@ -68,7 +68,7 @@ SDK 預覽組建中有新的控制項提供給 [Windows 測試人員](https://in
 
 * [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 現在提供一個方法，您可用來[下載 CAB 檔案以取得應用程式中的錯誤](../monetize/download-the-cab-file-for-an-error-in-your-app.md)。
 
-* [針對性優惠](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)讓您以特定客戶區隔為目標，透過有吸引力的個人化內容提高吸引力、留住客戶並創造營收。 
+* [針對性供應項目](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)讓您以特定客戶區隔為目標，透過有吸引力的個人化內容提高吸引力、留住客戶並創造營收。 
 
 * 應用程式的 Store 清單現在可以包含[預告片](../publish/app-screenshots-and-images.md#trailers)。
 

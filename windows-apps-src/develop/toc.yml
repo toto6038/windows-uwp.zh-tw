@@ -709,10 +709,10 @@
                       href: ../monetize/python-code-examples-for-the-windows-store-submission-api.md
                     - name: Python 範例：提交含遊戲選項與預告片的應用程式
                       href: ../monetize/python-code-examples-for-submissions-game-options-and-trailers.md
-            - name: 管理針對性優惠
+            - name: 管理針對性供應項目
               href: ../monetize/manage-targeted-offers-using-windows-store-services.md
               items:
-                - name: 取得針對性優惠
+                - name: 取得針對性供應項目
                   href: ../monetize/get-targeted-offers.md
             - name: 管理服務的產品權利
               href: ../monetize/view-and-grant-products-from-a-service.md

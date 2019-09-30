@@ -1,19 +1,19 @@
 ---
 ms.assetid: A4C6098B-6CB9-4FAF-B2EA-50B03D027FF1
 description: 在 Microsoft Store 針對性優惠 API 中使用此方法，在目前的應用程式的內容中，取得適用於目前使用者的針對性優惠。
-title: 取得針對性優惠
+title: 取得針對性供應項目
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10 uwp, Microsoft Store 服務, Microsoft Store 針對性優惠 API, 取得針對性優惠
 ms.localizationpriority: medium
 ms.openlocfilehash: 71cd6ce3b9736b812f8ccdf4d21d35357928c63c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57622763"
 ---
-# <a name="get-targeted-offers"></a>取得針對性優惠
+# <a name="get-targeted-offers"></a>取得針對性供應項目
 
 使用此方法，根據使用者是不是針對性優惠客戶區隔的一部分，取得適用於目前使用者的針對性優惠。 如需詳細資訊，請參閱[使用 Microsoft Store 服務管理針對性優惠](manage-targeted-offers-using-windows-store-services.md)。
 

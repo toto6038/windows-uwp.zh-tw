@@ -84,7 +84,7 @@ EdgeHTML 16 | 為 Microsoft Edge 和 JS 型通用 Windows 平台應用程式提�
 Store 分析 API | [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 現在提供一個方法，您可用來[下載 CAB 檔案以取得應用程式中的錯誤](../monetize/download-the-cab-file-for-an-error-in-your-app.md)。
 市集清單 | Store 清單已藉由新功能而獲得增強，用以吸引潛在使用者： </br>* 應用程式的 Store 清單現在可以包含[預告片](../publish/app-screenshots-and-images.md#trailers)。 </br></br>* 您可以[匯入和匯出 Store 清單](../publish/import-and-export-store-listings.md)來加快更新，尤其是在您的清單有許多語言版本時。
 提交 API | [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 現在可讓您使用應用程式提交來包含[預告片](../monetize/manage-app-submissions.md#trailer-object)和[遊戲選項](../monetize/manage-app-submissions.md#gaming-options-object)。
-針對性優惠 | [針對性優惠](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)讓您以特定客戶區隔為目標，透過有吸引力的個人化內容提高吸引力、留住客戶並創造營收。
+針對性優惠 | [針對性供應項目](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)讓您以特定客戶區隔為目標，透過有吸引力的個人化內容提高吸引力、留住客戶並創造營收。
 
 ## <a name="samples"></a>範例
 

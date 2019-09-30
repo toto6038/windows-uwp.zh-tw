@@ -139,7 +139,7 @@ ms.locfileid: "66826130"
                         <h3>與客戶接觸</h3>
                         <p><a href="create-customer-groups.md">建立客戶群組</a></p>
                         <p><a href="send-push-notifications-to-your-apps-customers.md">傳送推播通知</a></p>
-                        <p><a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">建立針對性優惠</a></p>
+                        <p><a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">建立針對性供應項目</a></p>
                     </div>
                 </div>
             </div>
