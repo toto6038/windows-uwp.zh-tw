@@ -1,20 +1,24 @@
 ---
-description: C++/WinRT 2.0 可讓您順延實作類型的損毀，並在損毀期間安全地進行查詢。 本主題將說明這些功能，並說明使用這些功能的時機。
-title: 解構函式的詳細資料
-ms.date: 07/19/2019
+description: 使用 C++/WinRT 2.0 中的這些擴充點，可以讓您延遲實作類型的解構、在解構期間安全地查詢，以及將進入和退出投影的方法加以連結。
+title: 適用於實作類型的擴充點
+ms.date: 09/26/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c+ +, cpp, winrt, 投影, 延遲解構, 安全查詢
 ms.localizationpriority: medium
-ms.openlocfilehash: 9806ea54665b24c246f2023714a14d94ec3bcc8e
-ms.sourcegitcommit: 02cc7aaa408efe280b089ff27484e8bc879adf23
+ms.openlocfilehash: 76068ffc655c20aa13b50cce9ac49af9afd50805
+ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387795"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71329563"
 ---
-# <a name="details-about-destructors"></a>解構函式的詳細資料
+# <a name="extension-points-for-your-implementation-types"></a>適用於實作類型的擴充點
 
-C++/WinRT 2.0 可讓您順延實作類型的損毀，並在損毀期間安全地進行查詢。 本主題將說明這些功能，並說明使用這些功能的時機。
+[winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)是您自己的 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 實作 (執行時間類別和啟用 Factory) 的直接或間接衍生基底。
+
+本主題討論 C++/WinRT 2.0 中 **winrt::implements** 的擴充點。 您可以選擇在執行類型上執行這些擴充點，以自訂可檢查物件的預設行為 ([IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 介面意義中的 *inspectable*)。
+
+這些擴充點可以讓您延遲實作類型的解構、在解構期間安全地查詢，以及將進入和退出投影的方法加以連結。 本主題將說明這些功能，並進一步說明使用這些功能的時機和使用方式。
 
 ## <a name="deferred-destruction"></a>延遲解構
 
@@ -89,7 +93,11 @@ struct Sample : implements<Sample, IStringable>
 };
 ```
 
-請將此視為更具決定性的記憶體回收程式。 或許功能更切實際且更加強大，您可以將 **final_release** 函式變成協同程式，並在一個位置處理其最終解構，同時能夠視需要暫停和切換執行緒。
+請將此視為更具決定性的記憶體回收程式。
+
+通常，物件在  **std::unique_ptr**  解構時會解構，但您可以透過呼叫  **std::unique_ptr::reset** 來加速其解構；或透過將  **std::unique_ptr**  儲存在某個位置來延後其解構。
+
+或許功能更切實際且更加強大，您可以將 **final_release** 函式變成協同程式，並在一個位置處理其最終解構，同時能夠視需要暫停和切換執行緒。
 
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
@@ -111,7 +119,7 @@ struct Sample : implements<Sample, IStringable>
 
 以延遲解構的概念為基礎，就能夠在解構期間安全地查詢介面。
 
-傳統 COM 是以兩個中央概念為基礎。 第一個概念是參考計數，第二個概念則是查詢介面。 除了 **AddRef** 和 **Release**以外，**IUnknown** 介面還提供 [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void)。 特定 UI 架構 (例如 XAML) 會大量使用該方法，以便在模擬其可組合的類型系統時周遊 XAML。 請考慮一個簡單範例。
+傳統 COM 是以兩個中央概念為基礎。 第一個概念是參考計數，第二個概念則是查詢介面。 除了 **AddRef** 和 **Release** 之外，**IUnknown** 介面還提供 [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void))。 特定 UI 架構 (例如 XAML) 會大量使用該方法，以便在模擬其可組合的類型系統時周遊 XAML。 請考慮一個簡單範例。
 
 ```cppwinrt
 struct MainPage : PageT<MainPage>
@@ -172,3 +180,59 @@ struct MainPage : PageT<MainPage>
 在解構函式內，我們會清除資料內容；;如我們所知，這需要查詢 **FrameworkElement** 基底類別。
 
 這可能是因為 C++/WinRT 2.0 所提供的參考計數防彈跳 (或參考計數穩定) 所致。
+
+## <a name="method-entry-and-exit-hooks"></a>方法進入和結束勾點
+
+較少使用的擴充點為  **abi_guard** 結構，和 **abi_enter**  和  **abi_exit** 函式。
+
+如果您的實作類型定義了一個函式 **abi_enter**，則會在進入每個投影介面方法呼叫該函式 (不計算  [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 的方法)。
+
+同樣地，如果定義 **abi_exit**，則會在結束每個該方法時呼叫該方法；但如果您的 **abi_enter**  擲回例外狀況，則不會進行呼叫。 如果您的投影介面方法本身擲回例外狀況，則*仍會*被呼叫。
+
+例如，如果用戶端在物件被置於無法使用狀態之後 (即在  **Shut­Down**  或  **Disconnect**  方法呼叫之後) 嘗試使用該物件，則可以使用 **abi_enter** 來擲回假設的  **invalid_state_error** 例外狀況。 如果基礎集合已變更，則 C++/WinRT 反覆運算器類別會在  **abi_enter** 函式中擲回無效狀態例外狀況。
+
+除了簡單的 **abi_enter**  和  **abi_exit** 函式之外，您還可以定義名為  **abi_guard** 的巢狀類型。 在這種情況下，會在進入每個投影介面方法 (非 **IInspectable**) 建立 **abi_guard** 執行個體，並以物件的參考作為其建構函式參數。  **abi_guard**  接著在方法結束時解構。 您可以將喜歡的任何額外狀態放入 **abi_guard** 類型。
+
+如果您未定義自己的 **abi_guard**，則預設在建構時呼叫 **abi_enter** ，並在解構時呼叫  **abi_exit**。
+
+只有在叫用方法時，才會*透過投影介面*使用這些防護。 如果您直接在實作物件上直接叫用方法，則這些呼叫會直接實作，而不會有任何防護。
+
+以下是程式碼範例。
+
+```cppwinrt
+struct Sample : SampleT<Sample, IClosable>
+{
+    void abi_enter();
+    void abi_exit();
+
+    void Close();
+};
+
+void example1()
+{
+    auto sampleObj1{ winrt::make<Sample>() };
+    sampleObj1.Close(); // Calls abi_enter and abi_exit.
+}
+
+void example2()
+{
+    auto sampleObj2{ winrt::make_self<Sample>() };
+    sampleObj2->Close(); // Doesn't call abi_enter nor abi_exit.
+}
+
+// A guard is used only for the duration of the method call.
+// If the method is a coroutine, then the guard applies only until
+// the IAsyncXxx is returned; not until the coroutine completes.
+
+IAsyncAction CloseAsync()
+{
+    // Guard is active here.
+    DoWork();
+
+    // Guard becomes inactive once DoOtherWorkAsync
+    // returns an IAsyncAction.
+    co_await DoOtherWorkAsync();
+
+    // Guard is not active here.
+}
+```

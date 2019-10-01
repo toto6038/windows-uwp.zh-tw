@@ -68,6 +68,8 @@
       href: apps/accessibility.md
     - name: 功能和技術
       href: apps/features-and-technologies.md
+    - name: 最新的文件更新
+      href: apps/whats-new/latest-doc-updates.md
 - name: 使用 Windows 裝置
   items:
     - name: 使用 Python 進行開發

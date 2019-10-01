@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8aca92d7eb7bc93ba4be99449d5e813238d744
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: eba0e6312bc22153d8cb62eb97d32635184f0fdc
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393500"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317116"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
@@ -430,7 +430,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 
 下表列出在不同環境中必須使用的最低命名空間條件。
 
-|環境中的命名空間|指定投影類型|指定投影類型|
+|環境中的命名空間|指定投影類型|若要指定實作類型|
 |-|-|-|
 |**winrt::MyProject**|`MyRuntimeClass`|`implementation::MyRuntimeClass`|
 |**winrt::MyProject::implementation**|`MyProject::MyRuntimeClass`|`MyRuntimeClass`|
