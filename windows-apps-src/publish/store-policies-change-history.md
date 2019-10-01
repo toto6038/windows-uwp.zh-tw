@@ -7,12 +7,12 @@ ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: a846b48565a6029656ecfdd21763931df74b5375
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 879a400d22b3032bb4ee3f3f378a85f04ad73355
+ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826455"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71705561"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Microsoft Store 原則變更歷程記錄
 
@@ -31,6 +31,18 @@ ms.locfileid: "66826455"
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td>2019 年 10 月 1 日</td>
+<td>7.12</td>
+<td><p>在新增的新原則 10.2.6 中，禁用在裝置上挖掘加密貨幣的應用程式。</p>
+<p>在 10.8.4 更新版本中，針對提供「戰利品箱」或其他隨機虛擬物品的產品，新增了揭露機率的要求。</p>
+<p>在 10.8.7 更新版本中，新增與定價規定相關的要求。</p>
+<p>在 10.10.1 更新版本中，新增與廣告真實性相關的要求。</p>
+<p>在 10.13.1 更新版本中闡明遊戲產品，包含主要提供遠端遊戲遊玩/控制功能的產品。</p>
+<p>已從 10.14 版本中移除特定類型應用程式的公司帳戶要求。 </p>
+<p>新增了 11.12 版本，其中包含使用者產生內容的需求。</p>
+</td>
+</tr>
 <tr class="even">
 <td>2019 年 3 月 5 日</td>
 <td>7.11</td>
