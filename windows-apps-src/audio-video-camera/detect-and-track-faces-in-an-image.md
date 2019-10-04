@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: be6780851c05f59abc373318f0746c8e436b74ac
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 2f9a253d8470407141c9ae56367d123d638d12c6
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318411"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339820"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>偵測影像或影片中的臉部
 
 
 
-\[某些資訊與相關預先發行的產品，這可能會在正式發行之前大幅修改。 Microsoft 不做任何明示明示或默示此處提供的資訊。\]
+@no__t 0Some 的資訊與預先發行的產品相關，這在正式發行之前可能會經過大幅修改。 Microsoft 對於此處提供的資訊不做任何明示或默示的擔保。 \]
 
 本主題說明如何使用 [**FaceDetector**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) 來偵測影像中的臉部。 [  **FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) 已進行最佳化，可在一連串視訊框架中用來追蹤隨著時間改變的臉部。
 
@@ -77,7 +77,7 @@ ms.locfileid: "67318411"
 
 [!code-cs[FaceTrackingUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceTrackingUsing)]
 
-宣告 **FaceTracker** 物件的類別變數。 這個範例會使用 [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer)，以定義的時間間隔來初始臉部追蹤。 [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim?redirectedfrom=MSDN) 可用來確定一次只會執行一個臉部追蹤作業。
+宣告 **FaceTracker** 物件的類別變數。 這個範例會使用 [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer)，以定義的時間間隔來初始臉部追蹤。 [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim) 可用來確定一次只會執行一個臉部追蹤作業。
 
 [!code-cs[ClassVariables3](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables3)]
 
@@ -91,15 +91,15 @@ ms.locfileid: "67318411"
 
 如同 **FaceDetector**，**FaceTracker** 支援一組有限的像素格式。 這個範例會在提供的畫面格式不是 Nv12 格式時放棄臉部偵測。
 
-呼叫 [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) 來抓取 [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) 物件清單，這類物件代表畫面中的臉部。 具備臉部清單之後，就可以使用上述針對臉部偵測所說明的相同方式來顯示它們。 請注意，追蹤 helper 方法的圖面不是在 UI 執行緒上呼叫，您必須進行的呼叫中的任何 UI 更新[ **CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)。
+呼叫 [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) 來抓取 [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) 物件清單，這類物件代表畫面中的臉部。 具備臉部清單之後，就可以使用上述針對臉部偵測所說明的相同方式來顯示它們。 請注意，因為不會在 UI 執行緒上呼叫臉部追蹤 helper 方法，所以您必須在呼叫 CoreDispatcher 中進行任何 UI 更新[ **。 RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)。
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
 ## <a name="related-topics"></a>相關主題
 
-* [媒體擷取的畫面分析](scene-analysis-for-media-capture.md)
-* [基本的臉部偵測範例](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [基本的臉部追蹤範例](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [媒體捕獲的場景分析](scene-analysis-for-media-capture.md)
+* [基本臉部偵測範例](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [基本臉部追蹤範例](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [相機](camera.md)
-* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [具有 MediaCapture 的基本相片、影片和音訊捕獲](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [媒體播放](media-playback.md)

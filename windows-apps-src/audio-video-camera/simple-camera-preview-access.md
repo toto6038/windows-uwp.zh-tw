@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fba78a619f18d7da2e190758d73ac7a56b12fb9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1f35cbab511912bd9cf6616330f3e9e7737189fd
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360660"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339746"
 ---
 # <a name="display-the-camera-preview"></a>顯示相機預覽
 
@@ -26,9 +26,9 @@ ms.locfileid: "66360660"
 
 **將功能新增至應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。 
-2.  選取 [功能] 索引標籤。 
-3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。  
+1.  在 Microsoft Visual Studio 中，按兩下 **\[方案總管\]** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 **\[功能\]** 索引標籤。
+3.  核取 **\[網路攝影機\]** 方塊和 **\[麥克風\]** 方塊。
 
 ## <a name="add-a-captureelement-to-your-page"></a>將 CaptureElement 新增到您的頁面
 
@@ -40,7 +40,7 @@ ms.locfileid: "66360660"
 
 ## <a name="use-mediacapture-to-start-the-preview-stream"></a>使用 MediaCapture 來開始預覽串流
 
-[  **MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 物件是您 app 對裝置相機的介面。 此類別是 Windows.Media.Capture 命名空間的成員。 本文中的範例除了使用包含在預設專案範本中的項目，也會使用 [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) 和 [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks?redirectedfrom=MSDN) 命名空間的 API。
+[  **MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 物件是您 app 對裝置相機的介面。 此類別是 Windows.Media.Capture 命名空間的成員。 本文中的範例除了使用包含在預設專案範本中的項目，也會使用 [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) 和 [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks) 命名空間的 API。
 
 新增 using 指示詞，在您的頁面的 .cs 檔案中包含下列命名空間。
 
@@ -99,5 +99,5 @@ ms.locfileid: "66360660"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [取得預覽框架](get-a-preview-frame.md)
+* [具有 MediaCapture 的基本相片、影片和音訊捕獲](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [取得預覽畫面](get-a-preview-frame.md)

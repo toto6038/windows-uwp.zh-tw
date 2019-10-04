@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a50ca6eaeecd2528eaa0d8558ef70552ae49944a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 77b2c76b446332ae78024618b04ffbc1b66ffb75
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317295"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339585"
 ---
 # <a name="expose-basic-accessibility-information"></a>公開基本的協助工具資訊  
 
@@ -32,9 +32,9 @@ ms.locfileid: "67317295"
 | 元素類型 | 描述 |
 |--------------|-------------|
 | 靜態文字 | 若為 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 元素，則會從可見的 (內部) 文字自動判斷無障礙名稱。 該元素中的所有文字都會當作名稱使用。 請參閱[來自內部文字的名稱](#name_from_inner_text)。 |
-| 映像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素與 **img** 及類似元素的 HTML **alt** 屬性沒有直接的相似項目。 請使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) 提供名稱，或使用輔助字幕技術。 請參閱[影像的無障礙名稱](#images)。 |
+| 映像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素與 **img** 及類似元素的 HTML **alt** 屬性沒有直接的相似項目。 請使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供名稱，或使用輔助字幕技術。 請參閱[影像的無障礙名稱](#images)。 |
 | 表單元素 | 表單元素的無障礙名稱應該和元素的顯示標籤相同。 請參閱 [Labels 和 LabeledBy](#labels)。 |
-| 按鈕和連結 | 根據預設值，按鈕或連結的無障礙名稱是以可見的文字為基礎，使用與[來自內部文字的名稱](#name_from_inner_text)中所述之規則相同的規則。 如果按鈕只包含一個影像，則使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) 提供與設計的按鈕動作相當的純文字。 |
+| 按鈕和連結 | 根據預設值，按鈕或連結的無障礙名稱是以可見的文字為基礎，使用與[來自內部文字的名稱](#name_from_inner_text)中所述之規則相同的規則。 如果按鈕只包含一個影像，則使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供與設計的按鈕動作相當的純文字。 |
 
 大部分的容器元素 (例如面板) 不會將它們的內容升級成無障礙名稱。 原因在於應該報告名稱和對應角色的是項目內容，而不是其容器。 容器元素可能會報告這個元素在 Microsoft 使用者介面自動化表示法中有子元素，因此輔助技術邏輯可以周遊這個元素。 但是使用輔助技術的使用者通常不需要知道容器為何，所以大部分的容器都沒有名稱。
 
@@ -47,7 +47,7 @@ ms.locfileid: "67317295"
 並不是所有控制項都有值。 沒有值的控制項會透過支援的對等和模式，向 UI 自動化報告此資訊。 例如，[**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 表單元素有值。 輔助技術可以是使用者介面自動化用戶端，因此能夠找到一個值並知道值是什麼。 在這個特殊案例中，**TextBox** 可透過 [**TextBoxAutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer) 定義來支援 [**IValueProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider) 模式。
 
 > [!NOTE]
-> 如果您是使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) 或其他技術明確提供無障礙名稱，則不要在無障礙名稱中包含控制項角色或類型資訊所使用的文字。 例如，名稱中不要有像是 "button" 或 "list" 此類字串。 角色和類型資訊來自不同的使用者介面自動化屬性 (**LocalizedControlType**) 而這些屬性是由使用者介面自動化支援的預設控制項所提供。 許多輔助技術會將 **LocalizedControlType** 附加到無障礙名稱，因此無障礙名稱中的角色如果重複，就會造成單字不必要的重複。 例如，如果您為 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 控制項提供的無障礙名稱為 "button"，或者在名稱的最後一部分包含 "button"，則螢幕助讀程式可能會將這個控制項讀做 "button button"。 您應該使用朗讀程式來測試這個層面的協助工具資訊。
+> 如果您是使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 或其他技術明確提供無障礙名稱，則不要在無障礙名稱中包含控制項角色或類型資訊所使用的文字。 例如，名稱中不要有像是 "button" 或 "list" 此類字串。 角色和類型資訊來自不同的使用者介面自動化屬性 (**LocalizedControlType**) 而這些屬性是由使用者介面自動化支援的預設控制項所提供。 許多輔助技術會將 **LocalizedControlType** 附加到無障礙名稱，因此無障礙名稱中的角色如果重複，就會造成單字不必要的重複。 例如，如果您為 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 控制項提供的無障礙名稱為 "button"，或者在名稱的最後一部分包含 "button"，則螢幕助讀程式可能會將這個控制項讀做 "button button"。 您應該使用朗讀程式來測試這個層面的協助工具資訊。
 
 <span id="Influencing_the_UI_Automation_tree_views"/>
 <span id="influencing_the_ui_automation_tree_views"/>
@@ -64,7 +64,7 @@ ms.locfileid: "67317295"
 ## <a name="name-from-inner-text"></a>來自內部文字的名稱  
 為了讓可見 UI 中已經存在的字串可以更容易當成無障礙名稱值，很多控制項和其他 UI 元素會根據元素的內部文字或來自內容屬性的字串值，自動判斷預設的無障礙名稱。
 
-* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)， [ **RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)， [**文字方塊**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)和**RichTextBlock**每個升級的值**文字**屬性做為預設可存取的名稱。
+* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、 [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)和**RichTextBlock**都會將**Text**屬性的值升階為預設的可存取名稱。
 * 任何 [**ContentControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 子類別都會使用反覆的 "ToString" 技術在它的 [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 值內尋找字串，然後將這些字串升級為預設的無障礙名稱。
 
 > [!NOTE]
@@ -74,7 +74,7 @@ ms.locfileid: "67317295"
 <span id="IMAGES"/>
 
 ## <a name="accessible-names-for-images"></a>影像的無障礙名稱
-為了支援螢幕助讀程式以及 UI 各個元素的基本識別資訊，您有時必須為影像和圖表 (不包括任何純裝飾或結構性元素) 這類的非文字資訊提供替代文字。 這些元素沒有內部文字，因此，無障礙名稱將不會有計算的值。 您可以按照以下範例，設定 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) 附加屬性，以直接設定無障礙名稱。
+為了支援螢幕助讀程式以及 UI 各個元素的基本識別資訊，您有時必須為影像和圖表 (不包括任何純裝飾或結構性元素) 這類的非文字資訊提供替代文字。 這些元素沒有內部文字，因此，無障礙名稱將不會有計算的值。 您可以按照以下範例，設定 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 附加屬性，以直接設定無障礙名稱。
 
 XAML
 ```xml
@@ -125,7 +125,7 @@ XAML
 
 只有使用者按 Caps Lock+F 要求元素的詳細資訊時，朗讀程式 (一種螢幕助讀程式) 才會朗讀元素的無障礙描述。
 
-無障礙名稱的用途為識別控制項，不是詳細記載它的行為。 如果簡要描述不足以說明控制項，則除了 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) 之外，您還可以設定 [**AutomationProperties.HelpText**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.helptext?view=netframework-4.8) 附加屬性。
+無障礙名稱的用途為識別控制項，不是詳細記載它的行為。 如果簡要描述不足以說明控制項，則除了 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 之外，您還可以設定 [**AutomationProperties.HelpText**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.helptext) 附加屬性。
 
 <span id="Testing_accessibility_early_and_often"/>
 <span id="testing_accessibility_early_and_often"/>
@@ -141,21 +141,21 @@ XAML
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>動態資料的無障礙名稱  
-Windows 支援許多控制項，而這些控制項可以透過名為「資料繫結」  的功能來顯示相關資料來源的值。 將資料項目填入清單時，您可能需要使用一種技術，在填入初始清單之後為這些資料繫結的清單項目設定無障礙名稱。 如需詳細資訊，請參閱 [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)的＜案例 4＞。
+Windows 支援許多控制項，而這些控制項可以透過名為「資料繫結」的功能來顯示相關資料來源的值。 將資料項目填入清單時，您可能需要使用一種技術，在填入初始清單之後為這些資料繫結的清單項目設定無障礙名稱。 如需詳細資訊，請參閱 [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)的＜案例 4＞。
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
 <span id="ACCESSIBLE_NAMES_AND_LOCALIZATION"/>
 
 ## <a name="accessible-names-and-localization"></a>無障礙名稱和當地語系化  
-為了確保無障礙名稱也是經過當地語系化的元素，應使用正確的技術將可當地語系化的字串儲存成資源，然後使用 [x:Uid directive](https://docs.microsoft.com/windows/uwp/xaml-platform/x-uid-directive) 值來參照資源關係。 如果無障礙名稱來自於明確設定的 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) 用法，請確定字串也可當地語系化。
+為了確保無障礙名稱也是經過當地語系化的元素，應使用正確的技術將可當地語系化的字串儲存成資源，然後使用 [x:Uid directive](https://docs.microsoft.com/windows/uwp/xaml-platform/x-uid-directive) 值來參照資源關係。 如果無障礙名稱來自於明確設定的 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 用法，請確定字串也可當地語系化。
 
-請注意，附加屬性 (例如 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 屬性) 會使用適用於資源名稱的特定合格語法，如此在套用到特定元素時資源便會參考附加屬性。 例如，在套用到名為 `MediumButton` 的 UI 元素時 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) 的資源名稱為：`MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`。
+請注意，附加屬性 (例如 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 屬性) 會使用適用於資源名稱的特定合格語法，如此在套用到特定元素時資源便會參考附加屬性。 例如，在套用到名為 `MediumButton` 的 UI 元素時 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 的資源名稱為：`MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`。
 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
-* [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8)
-* [XAML 的協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)
+* [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [協助工具測試](accessibility-testing.md)
