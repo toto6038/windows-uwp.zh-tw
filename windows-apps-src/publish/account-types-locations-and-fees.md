@@ -6,19 +6,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 開發人員帳戶, 個人, 公司, 商務
 ms.localizationpriority: medium
-ms.openlocfilehash: 92f657386c3a5d1ca6815b9b0a9e56b4d6f2578b
-ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
+ms.openlocfilehash: b8a02079e7589d7c92ececa03496600a82ef427e
+ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67495740"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71982236"
 ---
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
-Windows 程式中[合作夥伴中心](https://partner.microsoft.com/dashboard)提供這兩個個人和公司帳戶，在許多[國家和地區](#developer-account-and-app-submission-markets)。 任一種類型的帳戶可讓您存取應用程式發行至市集，以及參與其他 Microsoft 程式。
+[合作夥伴中心](https://partner.microsoft.com/dashboard)內的 Windows 程式在許多[國家和地區](#developer-account-and-app-submission-markets)都提供個人和公司帳戶。 任一類型的帳戶都可讓您存取將應用程式發佈至存放區，並參與其他 Microsoft 程式。
 
 > [!NOTE]
-> 當開啟開發人員帳戶，請確定登入[合作夥伴中心](https://partner.microsoft.com/dashboard)您想要使用您的開發人員帳戶的 Microsoft 帳戶。 您將可以選擇稍後[將其他使用者新增至帳戶](manage-account-users.md)。
+> 開啟開發人員帳戶時，請務必使用您想要用於開發人員帳戶的 Microsoft 帳戶來登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。 您將可以選擇稍後[將其他使用者新增至帳戶](manage-account-users.md)。
 
 當您[開始註冊程序](https://go.microsoft.com/fwlink/p/?LinkId=615100)時，必須選擇要建立個人帳戶或公司帳戶。 兩種帳戶類型都允許您提交應用程式、遊戲、增益集與服務。
 
@@ -33,30 +33,19 @@ Windows 程式中[合作夥伴中心](https://partner.microsoft.com/dashboard)�
 |--------------------|-----------------|
 | <ul><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>較短的帳戶驗證程序</li></ul> | <ul><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>要求較高的帳戶驗證</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>能夠提交有限功能的應用程式 (如[Microsoft Store 原則](store-policies.md#1014-account-type)中所述)</li></ul> |
 
-公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 每個[存放區原則](store-policies.md#1014-account-type)、 使用特定功能，例如存取財務應用程式的帳戶資訊，或需要驗證 （而不使用安全的專用第三方存取的主要功能驗證提供者），可以只發行公司帳戶。
+公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 根據[商店原則](store-policies.md#1014-account-type)，具有特定功能的應用程式（例如存取財務帳戶資訊或需要驗證才能存取主要功能的應用程式，不需使用安全的專用協力廠商驗證提供者），只能由公司帳戶發佈。
 
 ## <a name="account-verification"></a>帳戶驗證
 
-完成註冊程序之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 針對公司帳戶，我們的驗證合作夥伴 Dun & Bradstreet 會確認您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時提供的所有連絡人資訊是最新的)。 您無法提交應用程式的公司帳戶，直到它經過驗證，但是當您於等待，您可以[將應用程式名稱保留](create-your-app-by-reserving-a-name.md)繼續建置和測試應用程式，並準備好您的提交工作。
+完成註冊程序之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 針對公司帳戶，我們的驗證合作夥伴 Dun & Bradstreet 會確認您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時提供的所有連絡人資訊是最新的)。 您無法從公司帳戶提交應用程式，直到驗證完成為止，但當您在等候時，您可以[保留應用程式名稱](create-your-app-by-reserving-a-name.md)繼續建立和測試應用程式，並開始準備您的提交。
 
-您可以在 [帳戶設定] 頁面查看您的驗證狀態。  
-
+您可以在 **\[帳戶設定\]** 頁面查看您的驗證狀態。 
 
 ## <a name="developer-account-and-app-submission-markets"></a>開發人員帳戶與 App 提交市場
 
 如果您在以下列出的國家或地區居住或經商，將可以註冊開發人員帳戶以及送出應用程式。
 
-在下表中，\[註冊費用\] 是目前註冊開發人員帳戶所需的花費。  這是一次性註冊費用，沒有續約費用。 請注意，以下價格可能會有所變動。
-
-> [!NOTE]
-> 我們將在您註冊時，對註冊費用加上任何相關稅賦與費用。 此外，當我們支付款項給您時，您的銀行可能會收取收款手續費。
-
-**\[支付\]** 欄說明我們如何[支付您](getting-paid-apps.md)的 App 獲利。 您可以選擇要供我們存入這筆款項的[支付帳戶](setting-up-your-payout-account-and-tax-forms.md)。
-
-> [!NOTE]
-> 有些市場不支援付費應用程式 (**支付**)。 在這些市場中，只能提交免費 App。
-
-\[PayPal\] 欄指出 PayPal 是否為可適用於您[支付帳戶](setting-up-your-payout-account-and-tax-forms.md)的支援付款方法 (且除非另有說明，也適用於開發人員帳戶註冊費用)。 
+在下表中， **\[註冊費用\]** 是目前註冊開發人員帳戶所需的花費。 這是一次性註冊費用，沒有續約費用。 請注意，以下價格可能會有所變動。
 
 | 國家/地區                    | 個人註冊費用 | 公司註冊費用 |
 |-----------------------------------|---------------------|------------------|
