@@ -6,12 +6,12 @@ ms.date: 06/22/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 21477938b584e4fa66c815224f25af1f6e2a160c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 51fc077342694b9ddbdbc03863c0db3b8cd9e1c5
+ms.sourcegitcommit: 3f7432afaa73083cb9b8331e30c885068c6f6dbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360515"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72023272"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>組合 DirectX 與 Direct2D 的原生交互操作
 
@@ -39,11 +39,11 @@ Windows.UI.Composition API 提供可將內容直接移到撰寫器中的 [**ICom
 
 ## <a name="usage-example"></a>用法範例
 
-下列程式碼範例說明如何交互操作的案例。 此範例結合類型從 Windows 執行階段為基礎的介面區的 Windows 組合，以及從 interop 的標頭，並呈現文字使用以 COM 為基礎的 DirectWrite 和 Direct2D Api 的程式碼的類型。 此範例會使用[ **BeginDraw** ](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw)並[ **EndDraw** ](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw)讓這些技術之間交互運作順暢。 範例使用 DirectWrite 來配置文字，並接著使用 Direct2D 來呈現它。 組合圖形裝置會在初始化階段直接接受 Direct2D 裝置。 這可讓**BeginDraw**返回**ID2D1DeviceContext**介面指標，這是相當大更有效率，比建立包裝傳回的 Direct2D 內容的應用程式在每個繪圖作業的 ID3D11Texture2D 介面。
+下列程式碼範例說明交互操作案例。 此範例會結合來自 Windows 合成之 Windows 執行階段型介面區的型別，以及 interop 標頭中的型別，以及使用以 COM 為基礎的 DirectWrite 和 Direct2D Api 來呈現文字的程式碼。 此範例會使用[**BeginDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw)和[**EndDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw) ，讓它順暢地在這些技術之間相交互操作。 此範例會使用 DirectWrite 來配置文字，然後使用 Direct2D 來轉譯它。 組合圖形裝置會在初始化階段直接接受 Direct2D 裝置。 這可讓**BeginDraw**傳回**ID2D1DeviceCoNtext**介面指標，這比應用程式建立 Direct2D 內容以在每個繪製作業上包裝傳回的 ID3D11Texture2D 介面更有效率。
 
-有兩個以下的程式碼範例。 首先， [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)範例中 （這是完整），然後C++/CX 程式碼範例 （省略 DirectWrite 和 Direct2D 的部分範例）。
+以下有兩個程式碼範例。 首先是[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)範例（已完成），然後是C++/cx 程式碼範例（這會省略範例的 DirectWrite 和 Direct2D 部分）。
 
-若要使用C++/WinRT 程式碼範例所示，第一次建立新**Core 應用程式 (C++/WinRT)** Visual Studio 專案中的 (如需求，請參閱[Visual Studio 支援C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 在建立專案時，選取您的目標版本為**Windows 10 版本 1803 (10.0;組建 17134）** 。 這是針對此程式碼是建置和測試的版本。 內容取代您`App.cpp`原始程式碼檔使用的程式碼清單，然後建置並執行。 應用程式會呈現字串"Hello World ！" 以透明背景的黑色文字。
+若要使用C++下面的/WinRT 程式碼範例，請先在 Visual Studio 中建立新的**核心應用程式（C++/WinRT）** 專案（如需需求，請參閱[/WinRT 的C++Visual Studio 支援](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 建立專案時，請選取您的目標版本**Windows 10，版本1803（10.0;組建17134）** 。 這就是用來建立及測試此程式碼的版本。 以下面的程式代碼清單取代 @no__t 0 原始程式碼檔的內容，然後建立並執行。 應用程式會呈現字串 "Hello，World！" 在透明背景的黑色文字。
 
 ```cppwinrt
 // App.cpp
@@ -248,7 +248,7 @@ struct DeviceLostHelper
         m_onDeviceLostHandler = ::CreateThreadpoolWait(DeviceLostHelper::OnDeviceLost, (PVOID)this, nullptr);
 
         // Create a handle and a cookie.
-        m_eventHandle = ::CreateEvent(nullptr, false, false, nullptr);
+        m_eventHandle.attach(::CreateEvent(nullptr, false, false, nullptr));
         winrt::check_bool(bool{ m_eventHandle });
         m_cookie = 0;
 
@@ -523,7 +523,7 @@ private:
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(SampleApp());
+    CoreApplication::Run(winrt::make<SampleApp>());
 }
 ```
 
