@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 72da3d17f3584d0c295926880b949591b83b47a7
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
+ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
+ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076403"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163708"
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
 
-應用程式設定是透過 [應用程式設定] 頁面存取的通用 Windows 平臺 (UWP) 應用程式的使用者自訂部分。 例如, 「新聞讀取者」應用程式可能會讓使用者指定要顯示的新聞來源, 或要在螢幕上顯示的資料行數目, 而氣象應用程式可讓使用者在攝氏和華氏之間進行選擇。 本文提供建立和顯示應用程式設定的建議和最佳作法。
+應用程式設定是透過 [應用程式設定] 頁面存取的通用 Windows 平臺（UWP）應用程式的使用者自訂部分。 例如，「新聞讀取者」應用程式可能會讓使用者指定要顯示的新聞來源，或要在螢幕上顯示的資料行數目，而氣象應用程式可讓使用者在攝氏和華氏之間進行選擇。 本文提供建立和顯示應用程式設定的建議和最佳作法。
 
 ## <a name="when-to-provide-a-settings-page"></a>何時提供設定頁面
 
@@ -82,7 +82,7 @@ ms.locfileid: "70076403"
 ## <a name="color-mode-settings"></a>[色彩模式] 設定
 
 
-如果您的應用程式可讓使用者選擇應用程式的色彩模式，請使用[選項按鈕](../controls-and-patterns/radio-button.md)或[下拉式方塊](../controls-and-patterns/lists.md#drop-down-lists)與「選擇 app 模式」標題呈現這些選項。 選項看起來會像這樣
+如果您的應用程式可讓使用者選擇應用程式的色彩模式，請使用[選項按鈕](../controls-and-patterns/radio-button.md)或[下拉式方塊](../controls-and-patterns/combo-box.md)與「選擇 app 模式」標題呈現這些選項。 選項看起來會像這樣
 - 亮
 - 暗
 - Windows 預設
@@ -124,11 +124,11 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 - 從頂端至底部以單欄呈現內容，如有必要，可讓它捲動。 捲動的上限設定為螢幕高度的兩倍。
 - 為應用程式設定使用下列控制項：
 
-    - [切換參數](../controls-and-patterns/toggles.md):可讓使用者設定開啟或關閉值。
-    - [選項按鈕](../controls-and-patterns/radio-button.md):讓使用者從一組最多5個互斥的相關選項中選擇一個專案。
-    - [文字輸入](../controls-and-patterns/text-block.md)方塊:讓使用者輸入文字。 您使用的文字輸入方塊類型必須與要從使用者取得的文字類型對應，例如電子郵件或密碼。
-    - [超連結](../controls-and-patterns/hyperlinks.md):將使用者帶到應用程式內的另一個頁面或外部網站。 當使用者按一下超連結的時候，[設定] 飛出視窗會關閉。
-    - [按鈕](../controls-and-patterns/buttons.md):讓使用者起始立即動作, 而不關閉目前的設定飛出視窗。
+    - [切換參數](../controls-and-patterns/toggles.md)：可讓使用者設定開啟或關閉值。
+    - [選項按鈕](../controls-and-patterns/radio-button.md)：讓使用者從一組最多5個互斥的相關選項中選擇一個專案。
+    - [文字輸入](../controls-and-patterns/text-block.md)方塊：讓使用者輸入文字。 您使用的文字輸入方塊類型必須與要從使用者取得的文字類型對應，例如電子郵件或密碼。
+    - [超連結](../controls-and-patterns/hyperlinks.md)：將使用者帶到應用程式內的另一個頁面或外部網站。 當使用者按一下超連結的時候，[設定] 飛出視窗會關閉。
+    - [按鈕](../controls-and-patterns/buttons.md)：讓使用者起始立即動作，而不關閉目前的設定飛出視窗。
 - 如果停用其中一個控制項，請新增描述訊息。 請將此訊息置於已停用控制項的上方。
 - 完成 [設定] 飛出視窗和標頭的動畫之後，以單一區塊的方式產生內容和控制項的動畫。 使用向左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 動畫，產生內容的動畫。
 - 視需要使用區段標頭、段落及標籤協助整理及釐清內容。

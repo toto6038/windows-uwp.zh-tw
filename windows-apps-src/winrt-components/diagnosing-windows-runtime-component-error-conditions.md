@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 330cbaab4a1c8313fb0b298dea55176eb66d4803
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 55bf6360f09ba4ab6c7878543ecfa0c80c4558e3
+ms.sourcegitcommit: 74c674c70b86bafeac7c8c749b1662fae838c428
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340528"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252317"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>診斷 Windows 執行階段元件錯誤狀況
 
@@ -69,7 +69,7 @@ Managed Windows 執行階段元件無法執行代表非同步動作或作業的�
 
 在通用 Windows 平台中，Windows 中繼資料 (.winmd) 檔案中的所有公用類型必須位於共用 .winmd 檔案名稱的命名空間中，或位於該檔案名稱的子命名空間中。 例如，如果您的 Visual Studio 專案名稱為 A.B (也就是說，您的 Windows 執行階段元件為 A.B.winmd)，則此專案可包含公用類別 A.B.Class1 與 A.B.C.Class2，但不可包含 A.Class3 (WME0006) 或 D.Class4 (WME1044)。
 
-> **請注意**  These 限制僅適用于公用類型，而不適用於您的實作為執行所使用的私用類型。
+> **注意**  這些限制僅適用於公用類型，而不適用於您的實作所使用的私用類型。
 
 以 A.Class3 為例，您可以將 Class3 移至其他命名空間，或將 Windows 執行階段元件的名稱變更為 A.winmd。 雖然 WME0006 是警告，但您應將其視為錯誤。 在上述範例中，呼叫 A.B.winmd 的程式碼將找不到 A.Class3。
 
@@ -81,7 +81,7 @@ Managed Windows 執行階段元件無法執行代表非同步動作或作業的�
 
 Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
 
-> **注意**  If 您直接呼叫 Winmdexp，而不要使用/out 選項來指定 Windows 執行階段元件的名稱，Winmdexp 會嘗試產生一個包含元件中所有命名空間的名稱。 為命名空間重新命名，可變更元件的名稱。
+> **警告**  如果您直接呼叫 Winmdexp.exe，而未使用 /out 選項來為您的 Windows 執行階段元件指定名稱，Winmdexp.exe 即會嘗試產生包含元件中所有命名空間的名稱。 為命名空間重新命名，可變更元件的名稱。
 
  
 
@@ -102,9 +102,9 @@ Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
 
 一般而言，最接近類型的介面就是最好的選擇。 以 Dictionary&lt;int, string&gt; 為例，IDictionary&lt;int, string&gt; 最有可能是最佳選擇。
 
-> **重要**  JavaScript 會使用 managed 類型所實介面清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
+> **重要**：JavaScript 會使用 Managed 類型實作之介面清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
 
-> **注意**@no__t-如果 JavaScript 會使用您的元件，請使用非泛型[IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist)和[IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable)介面來1Avoid。 這兩個介面會分別對應至 [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) 和 [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator)。 它們支援 XAML 控制項的繫結，且不會對 JavaScript 顯示。 JavaScript 會發出執行階段錯誤「函式 'X' 具有無效簽章，無法呼叫」。
+> **警告**  如果 JavaScript 會使用您的元件，請避免使用非泛型 [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) 和 [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) 介面。 這兩個介面會分別對應至 [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) 和 [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator)。 它們支援 XAML 控制項的繫結，且不會對 JavaScript 顯示。 JavaScript 會發出執行階段錯誤「函式 'X' 具有無效簽章，無法呼叫」。
 
  
 
@@ -131,7 +131,7 @@ Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>方法 ' {0} ' 的簽章中有類型 ' {1} ' 的參數。 雖然這種泛型類型不是有效的 Windows 執行階段類型，但此類型或其泛型參數實作了有效 Windows 執行階段類型的介面。 {2}</p>
-> **Note @ no__t-1 @ no__t-2For {2}，Winmdexp 會附加替代專案清單，例如「考慮將方法簽章中的類型 ' @ no__t-4T @ no__t-5 ' 改成下列其中一種類型：' System.string @ no__t-0T @ no__t-1，system.string. IReadOnlyList @ no__t-2T @ no__t-3，System.object. @ no__t-4T @ no__t-5 '. "。
+> **Note @ no__t-1 For {2}，Winmdexp 會附加替代專案清單，例如「考慮將方法簽章中的類型 ' @ no__t-3T @ no__t-4 ' 改為下列其中一種類型：' System.string @ no__t-0T @ no__t-1，system.string. IReadOnlyList @ no__t-2T @ no__t-3，System.object. @ no__t-4T @ no__t-5 '. "。
 </td>
 </tr>
 <tr class="even">
@@ -210,7 +210,7 @@ Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **注意**  If 您變更傳回值的名稱，而新名稱與另一個參數的名稱衝突，您會收到錯誤 wme1091 錯誤。
+> **注意**  如果您變更傳回值的名稱，而新的名稱與另一個參數的名稱發生衝突，就會收到錯誤 WME1091。
 
 JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在內。 如需範例，請參閱 [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute) 屬性。
 
@@ -219,7 +219,7 @@ JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在
 | WME1091 | 方法 ' \{0} ' 具有名為 ' \{1} ' 的傳回值，這與參數名稱相同。 Windows 執行階段方法參數和傳回值必須具有唯一的名稱。 |
 | WME1092 | 方法 ' \{0} ' 具有名為 ' \{1} ' 的參數，其與預設傳回值名稱相同。 請考慮使用不同的參數名稱，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 明確指定傳回值的名稱。 |
 
-**請注意**  The 預設名稱為 "returnValue"，代表屬性存取子，而 "value" 則適用于所有其他方法。
+**注意**  屬性存取子的預設名稱為 "returnValue"，而其他所有方法的預設名稱為 "value"。
 
 ## <a name="related-topics"></a>相關主題
 

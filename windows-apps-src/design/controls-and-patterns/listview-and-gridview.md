@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1664da65beed21dededb481aadd56f793af20f01
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2ff5d0831e918c0399bccb1dac9bb4fca8a6d408
+ms.sourcegitcommit: c079388634cbd328d0d43e7a6185e09bb4bca65b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364679"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71939621"
 ---
 # <a name="list-view-and-grid-view"></a>清單檢視和方格檢視
 
@@ -25,19 +25,35 @@ ms.locfileid: "66364679"
 
 > **重要 API**：[ListView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) \(英文\)、[GridView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) \(英文\)、[ItemsSource 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) \(英文\)、[Items 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) \(英文\)
 
-ListView 和 GridView 都是衍生自 ListViewBase 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論 ListView 時，除非另外指定，否則該資訊適用於 ListView 和 GridView 控制項。 我們可能會參考像是 ListView 或 ListViewItem 等類別，但對於對應的方格對等項目 (GridView 或 GridViewItem)，“List” 首碼可使用 “Grid” 來取代。 
+> [!NOTE]
+> ListView 和 GridView 都是衍生自 [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單檢視時，除非另外指定，否則該資訊同時適用於 ListView 和 GridView 控制項。 我們可能會參考像是 ListView 或 ListViewItem 等類別，但對於對應的方格對等項目 (GridView 或 GridViewItem)，可使用 *Grid* 來取代 *List* 首碼。 
 
-## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
+ListView 和 GridView 提供許多處理集合的優點。 它們很容易實作，且提供基本 UI、互動性和捲動功能，而且可輕易自訂。 ListView 和 GridView 可繫結至現有的動態資料來源，或是 XAML 本身/程式碼後置中提供的硬式編碼資料。 
 
-ListView 會在單一欄中以垂直堆疊的方式顯示資料。 這常用於顯示已排序的項目清單，例如電子郵件清單或搜尋結果。 
+這兩個控制項在許多使用案例中都具有操作彈性，但在用於所有項目都應具有相同的基本結構和外觀，以及相同的互動行為 (也就是在按下時都應執行相同的動作，例如開啟連結、導覽等等) 的集合時，整體效果最好。
 
-![具有分組資料的清單檢視](images/simple-list-view-phone.png)
 
-GridView 會在可垂直捲動的列和欄中顯示項目集合。 資料會以水平方向進行堆疊，直到它填滿該欄為止，然後繼續進行下一列。 這常用於需要以豐富視覺效果顯示每個項目時，例如影像中心這類每個項目需要更多空間的情況。 
+## <a name="differences-between-listview-and-gridview"></a>ListView 與 GridView 之間的差異
 
-![內容庫範例](images/controls_list_contentlibrary.png)
+### <a name="listview"></a>ListView
+ListView 會在單一欄中以垂直堆疊的方式顯示資料。 ListView 較適用於以文字為焦點的項目，以及應從上往下讀取 (也就是依字母順序排列) 的集合。 ListView 的一些常見使用案例包括訊息清單和搜尋結果清單。
 
-如需進一步比較該使用哪個控制項以及指導方針，請參閱[清單](lists.md)。
+![具有分組資料的清單檢視](images/listview-grouped-example-resized-final.png)
+
+### <a name="gridview"></a>GridView
+GridView 會在可垂直捲動的列和欄中顯示項目集合。 資料會以水平方向進行堆疊，直到它填滿該欄為止，然後繼續進行下一列。 GridView 較適用於以影像為焦點的項目，以及可並列檢視或未依特定順序排序的集合。 GridView 的常見使用案例為相片或產品資源庫。
+
+![內容庫範例](images/gridview-simple-example-final.png)
+
+## <a name="which-collection-control-should-you-use-a-comparison-with-itemsrepeater"></a>您應使用哪個集合控制項？ 與 ItemsRepeater 的比較
+
+ListView 和 GridView 是立即可用的控制項，可用來顯示任何集合，且具有本身的內建 UI 和 UX。 [ItemsRepeater](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/items-repeater) 控制項也可用來顯示集合，但最初的設計宗旨是要作為建置組塊，用以建立符合個人確切 UI 需求的自訂控制項。 影響您最終使用的控制項最重要的差異應是：
+
+-   ListView 和 GridView 是功能豐富的控制項，需要進行的自訂極少，但卻提供齊備的功能。 ItemsRepeater 是供您自行建立版面配置控制項的建置組塊，並沒有相同的內建特性和功能 - 您必須實作任何必要的功能或互動。
+-   如果您具有無法使用 ListView 或 GridView 來建立的高度自訂 UI，或是您的資料來源針對每個項目需要高度不同的行為，則應使用 ItemsRepeater。
+
+
+若要深入了解 ItemsRepeater，請閱讀其[指引](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/items-repeater)和 [API 文件](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)頁面。
 
 ## <a name="examples"></a>範例
 
@@ -55,154 +71,223 @@ GridView 會在可垂直捲動的列和欄中顯示項目集合。 資料會以�
 </tr>
 </table>
 
-## <a name="create-a-list-view"></a>建立清單檢視
+## <a name="create-a-listview-or-gridview"></a>建立 ListView 或 GridView
 
-清單檢視是一個 [ItemsControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol)，因此可包含任何類型的項目集合。 在其 [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合中必須有項目，才能在畫面上顯示任何內容。 若要填入檢視，您可以直接將項目新增至 [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合，或將 [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設為資料來源。 
+ListView 和 GridView 皆屬於 [ItemsControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol) 類型，因此可包含任何類型的項目集合。 ListView 或 GridView 的 [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合中必須要有項目，才能在畫面上顯示任何內容。 若要填入檢視，您可以直接將項目新增至 [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合，或將 [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設為資料來源。 
 
-**重要**&nbsp;&nbsp;您可以使用 Items 或 ItemsSource 來填入清單，但無法同時使用這兩者。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
+> [!IMPORTANT]
+> 您可以使用 Items 或 ItemsSource 來填入清單，但無法同時使用這兩者。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
 
-> **注意**&nbsp;&nbsp;為了簡化起見，本文中的許多範例都會直接填入 **Items** 集合。 不過，清單中較常見的項目是來自動態來源，例如，來自線上資料庫的書籍清單。 您可以使用 **ItemsSource** 屬性來達到此目的。 
+為了方便說明，本文的許多範例都會直接填入 `Items` 集合。 不過，清單中較常見的項目是來自動態來源，例如，來自線上資料庫的書籍清單。 您可以使用 `ItemsSource` 屬性來達到此目的。 
 
-### <a name="add-items-to-the-items-collection"></a>新增項目到 Items 集合
+### <a name="add-items-to-a-listview-or-gridview"></a>將項目新增至 ListView 或 GridView
 
-您可以使用 XAML 或程式碼，將項目新增到 [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合。 如果您只有少量不會變更且很容易在 XAML 中定義的項目，或是如果您在執行階段於程式碼中產生項目，便通常會用這種方式新增項目。 
+您可以使用 XAML 將項目新增至 ListView 或 GridView 的 [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合，或使用程式碼產生相同的結果。 如果您只有少量不會變更且很容易定義的項目，或是如果您在執行階段於程式碼中產生項目，則通常會透過 XAML 新增項目。 
 
-以下的清單檢視含有 XAML 中以內嵌方式定義的項目。 在 XAML 中定義項目時，項目會自動新增到 Items 集合。
+<u>方法 1：將新增項目至 Items 集合</u>
+#### <a name="option-1-add-items-through-xaml"></a>選項 1：透過 XAML 新增項目
+```xml
+<!-- No corresponding C# code is needed for this example. -->
 
-**XAML**
-```xaml
-<ListView x:Name="listView1"> 
-   <x:String>Item 1</x:String> 
-   <x:String>Item 2</x:String> 
-   <x:String>Item 3</x:String> 
-   <x:String>Item 4</x:String> 
-   <x:String>Item 5</x:String> 
+<ListView x:Name="Fruits"> 
+   <x:String>Apricot</x:String> 
+   <x:String>Banana</x:String> 
+   <x:String>Cherry</x:String> 
+   <x:String>Orange</x:String> 
+   <x:String>Strawberry</x:String> 
 </ListView>  
 ```
 
-以下是在程式碼中建立的清單檢視。 產生的清單與先前在 XAML 中建立的一樣。
 
-**C#**
+#### <a name="option-2-add-items-through-c"></a>選項 2：透過 C# 新增項目
+
+##### <a name="c-code"></a>C# 程式碼：
 ```csharp
 // Create a new ListView and add content. 
-ListView listView1 = new ListView(); 
-listView1.Items.Add("Item 1"); 
-listView1.Items.Add("Item 2"); 
-listView1.Items.Add("Item 3"); 
-listView1.Items.Add("Item 4"); 
-listView1.Items.Add("Item 5");
+ListView Fruits = new ListView(); 
+Fruits.Items.Add("Apricot"); 
+Fruits.Items.Add("Banana"); 
+Fruits.Items.Add("Cherry"); 
+Fruits.Items.Add("Orange"); 
+Fruits.Items.Add("Strawberry");
  
-// Add the ListView to a parent container in the visual tree. 
-stackPanel1.Children.Add(listView1); 
+// Add the ListView to a parent container in the visual tree (that you created in the corresponding XAML file).
+FruitsPanel.Children.Add(Fruits); 
 ```
 
-ListView 看起來如下。
+##### <a name="corresponding-xaml-code"></a>對應的 XAML 程式碼：
+```xml
+<StackPanel Name="FruitsPanel"></StackPanel>
+```
+上述兩個選項會產生相同的 ListView，如下所示：
 
-![簡單的清單檢視](images/listview-simple.png)
+![簡單的清單檢視](images/listview-basic-code-example2.png)
+<br/>
+<u>方法 2：藉由設定 ItemsSource 來新增項目</u>
 
-### <a name="set-the-items-source"></a>設定項目來源
+您通常會使用 ListView 或 GridView 顯示來自資料庫或網際網路等來源的資料。 若要從資料來源填入 ListView/GridView，您應將其 [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設定為資料項目的集合。 如果您的 ListView 或 GridView 將會存放自訂類別物件，此方法會有更好的效用，如下列範例所示。
 
-您通常會使用清單檢視，以顯示來自資料庫或網際網路等來源的資料。 若要從資料來源填入清單檢視，您要將它的 [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設定為資料項目的集合。
+#### <a name="option-1-set-itemssource-in-c"></a>選項 1：在 C# 中設定 ItemsSource
+在這裡，清單檢視的 ItemsSource 會在程式碼中直接設定為集合的執行個體。 
 
-在這裡，清單檢視的 ItemsSource 會在程式碼中直接設定為集合的執行個體。
-
-**C#**
+##### <a name="c-code"></a>C# 程式碼：
 ```csharp 
-// Instead of hard coded items, the data could be pulled 
-// asynchronously from a database or the internet.
-ObservableCollection<string> listItems = new ObservableCollection<string>();
-listItems.Add("Item 1");
-listItems.Add("Item 2");
-listItems.Add("Item 3");
-listItems.Add("Item 4");
-listItems.Add("Item 5");
+// Class defintion should be provided within the namespace being used, outside of any other classes.
 
-// Create a new list view, add content, 
-ListView itemListView = new ListView();
-itemListView.ItemsSource = listItems;
+this.InitializeComponent();
 
-// Add the list view to a parent container in the visual tree.
-stackPanel1.Children.Add(itemListView);
+// Instead of adding hard coded items to an ObservableCollection as shown below, 
+//the data could be pulled asynchronously from a database or the internet.
+ObservableCollection<Contact> Contacts = new ObservableCollection<Contact>();
+
+// Contact objects are created by providing a first name, last name, and company for the Contact constructor.
+// They are then added to the ObservableCollection Contacts.
+Contacts.Add(new Contact("John", "Doe", "ABC Printers"));
+Contacts.Add(new Contact("Jane", "Doe", "XYZ Refridgerators"));
+Contacts.Add(new Contact("Santa", "Claus", "North Pole Toy Factory Inc."));
+
+// Create a new ListView (or GridView) for the UI, add content by setting ItemsSource
+ListView ContactsLV = new ListView();
+ContactsLV.ItemsSource = Contacts;
+
+// Add the ListView to a parent container in the visual tree (that you created in the corresponding XAML file)
+ContactPanel.Children.Add(ContactsLV);
 ```
 
-您也可以將 ItemsSource 屬性繫結到 XAML 中的集合。 如需資料繫結的詳細資訊，請參閱[資料繫結概觀](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
+##### <a name="xaml-code"></a>XAML 程式碼：
+```xml
+<StackPanel x:Name="ContactPanel"></StackPanel>
+```
 
-在這裡，ItemsSource 會繫結至名為 `Items` 的公用屬性，此屬性可公開頁面的私用資料集合。
+#### <a name="option-2-set-itemssource-in-xaml"></a>選項 2：在 XAML 中設定 ItemsSource
+您也可以將 ItemsSource 屬性繫結至 XAML 中的集合。 在此，ItemsSource 會繫結至名為 `Contacts` 的公用屬性，此屬性可公開頁面的私用資料集合 `_contacts`。
 
 **XAML**
-```xaml
-<ListView x:Name="itemListView" ItemsSource="{x:Bind Items}"/>
+```xml
+<ListView x:Name="ContactsLV" ItemsSource="{x:Bind Contacts}"/>
 ```
 
 **C#**
 ```csharp
-private ObservableCollection<string> _items = new ObservableCollection<string>();
+// Class defintion should be provided within the namespace being used, outside of any other classes.
+// These two declarations belong outside of the main page class.
+private ObservableCollection<Contact> _contacts = new ObservableCollection<Contact>();
 
-public ObservableCollection<string> Items
+public ObservableCollection<Contact> Contacts
 {
-    get { return this._items; }
+    get { return this._contacts; }
 }
 
+// This method should be defined within your main page class.
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     base.OnNavigatedTo(e);
 
     // Instead of hard coded items, the data could be pulled 
     // asynchronously from a database or the internet.
-    Items.Add("Item 1");
-    Items.Add("Item 2");
-    Items.Add("Item 3");
-    Items.Add("Item 4");
-    Items.Add("Item 5");
+    Contacts.Add(new Contact("John", "Doe", "ABC Printers"));
+    Contacts.Add(new Contact("Jane", "Doe", "XYZ Refridgerators"));
+    Contacts.Add(new Contact("Santa", "Claus", "North Pole Toy Factory Inc."));
 }
 ```
 
-如果您需要在清單檢視中顯示分組資料，就必須繫結到 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。 CollectionViewSource 會做為 XAML 中集合類別的 Proxy，並啟用貨幣和群組支援。 如需詳細資訊，請參閱 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。
+上述兩個選項會產生相同的 ListView，如下所示。 ListView 只會以字串形式顯示每個項目，因為我們並未提供資料範本。
 
-## <a name="data-template"></a>資料範本
+![設定了 ItemsSource 的簡單清單檢視](images/listview-basic-code-example-final.png)
 
-項目的資料範本會定義資料視覺化的方式。 根據預設，資料項目會在清單檢視中，以字串形式顯示所繫結的資料物件。 您可以將 [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) 設定為該屬性，以顯示資料項目之特定屬性的字串表示法。
+> [!IMPORTANT]
+> 在未定義資料範本的情況下，自訂類別物件將只會以其字串值形式出現在 ListView 中 (如果它們具有已定義的 [ToString()](https://docs.microsoft.com/uwp/api/windows.foundation.istringable.tostring) 方法)。
 
-但是，您通常會想要以更多樣化的表示方式來顯示資料。 為了明確指定項目在清單檢視中的顯示方式，您需要建立一個 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 在 DataTemplate 中的 XAML 會定義用來顯示個別項目之控制項的配置和外觀。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義靜態內容。 將 DataTemplate 指派給清單控制項的 [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 屬性。
+ 下一節將詳細說明如何在 ListView 或 GridView 中正確呈現簡單和自訂類別項目。
 
-在此範例中，資料項目是一個簡單字串。 您會使用 DataTemplate 來將影像新增到字串左邊，並以藍綠色顯示該字串。
+如需資料繫結的詳細資訊，請參閱[資料繫結概觀](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
 
-> **注意**&nbsp;&nbsp;當您在 DataTemplate 中使用 [x:Bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) \(部分機器翻譯\) 標記延伸時，您必須在 DataTemplate 上指定 DataType (`x:DataType`)。
+> [!NOTE]
+> 如果您需要在 ListView 中顯示分組資料，就必須繫結至 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。 CollectionViewSource 會做為 XAML 中集合類別的 Proxy，並啟用貨幣和群組支援。 如需詳細資訊，請參閱 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。
+
+## <a name="customizing-the-look-of-items-with-a-datatemplate"></a>使用 DataTemplate 自訂項目的外觀
+
+ListView 或 GridView 中的資料範本會定義項目/資料的視覺化方式。 根據預設，資料項目會在 ListView 中以字串形式顯示所繫結的資料物件。 您可以將 [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) 設定為該屬性，以顯示資料項目之特定屬性的字串表示法。
+
+但是，您通常會想要以更多樣化的表示方式來顯示資料。 為了明確指定項目在 ListView/GridView 中的顯示方式，您必須建立 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 在 DataTemplate 中的 XAML 會定義用來顯示個別項目之控制項的配置和外觀。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義靜態內容。 
+
+> [!NOTE]
+> 當您在 DataTemplate 中使用 [x:Bind 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)時，必須在 DataTemplate 上指定 DataType (`x:DataType`)。
+
+#### <a name="simple-listview-data-template"></a>簡單的 ListView 資料範本
+在此範例中，資料項目是一個簡單字串。 DataTemplate 會以內嵌方式定義於 ListView 定義內，以將影像新增至字串左側，並以藍綠色顯示字串。 這是使用前述的方法 1 和選項 1 建立的相同 ListView。
 
 **XAML**
-```XAML
-<ListView x:Name="listView1">
+```XML
+<!--No corresponding C# code is needed for this example.-->
+<ListView x:Name="FruitsList">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="47"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="Assets/placeholder.png" Width="32" Height="32"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Bind}" Foreground="Teal" FontSize="14" 
+                                Grid.Column="1" VerticalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <x:String>Apricot</x:String>
+                <x:String>Banana</x:String>
+                <x:String>Cherry</x:String>
+                <x:String>Orange</x:String>
+                <x:String>Strawberry</x:String>
+            </ListView>
+
+```
+
+以下是使用此資料範本在 ListView 中顯示資料項目的情形：
+
+![使用資料範本的 ListView 項目](images/listview-w-datatemplate1-final.png)
+
+#### <a name="listview-data-template-for-custom-class-objects"></a>自訂類別物件的 ListView 資料範本
+在此範例中，資料項目是一個 Contact 物件。 DataTemplate 會以內嵌方式定義於 ListView 定義內，以將連絡人影像新增至連絡人名稱和公司左側。 此 ListView 是使用前述的方法 2 和選項 2 建立的。
+```xml
+<ListView x:Name="ContactsLV" ItemsSource="{x:Bind Contacts}">
     <ListView.ItemTemplate>
-        <DataTemplate x:DataType="x:String">
+        <DataTemplate x:DataType="local:Contact">
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="47"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="Assets/placeholder.png" Width="32" Height="32" 
-                       HorizontalAlignment="Left"/>
-                <TextBlock Text="{x:Bind}" Foreground="Teal" 
-                           FontSize="14" Grid.Column="1"/>
-            </Grid> 
+                <Image Grid.Column="0" Grid.RowSpan="2" Source="Assets/grey-placeholder.png" Width="32"
+                    Height="32" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                <TextBlock Grid.Column="1" Text="{x:Bind Name}" Margin="12,6,0,0" 
+                    Style="{ThemeResource BaseTextBlockStyle}"/>
+                <TextBlock  Grid.Column="1" Grid.Row="1" Text="{x:Bind Company}" Margin="12,0,0,6" 
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+            </Grid>
         </DataTemplate>
     </ListView.ItemTemplate>
-    <x:String>Item 1</x:String>
-    <x:String>Item 2</x:String>
-    <x:String>Item 3</x:String>
-    <x:String>Item 4</x:String>
-    <x:String>Item 5</x:String>
 </ListView>
 ```
 
-以下是使用此資料範本顯示資料項目時的樣子。
+以下是使用此資料範本在 ListView 中顯示資料項目的情形：
 
-![使用資料範本的清單檢視項目](images/listview-itemstemplate.png)
+![使用資料範本的 ListView 自訂類別項目](images/listview-customclass-datatemplate-final.png)
 
-資料範本是您定義清單檢視外觀的主要方式。 如果您的清單會顯示大量項目，它們也會對效能產生顯著的影響。 本文中的大多數範例，我們都會使用簡單的字串資料，而且不會指定資料範本。 如需詳細資訊，以及如何使用資料範本和項目容器來在清單或方格中定義項目外觀的範例，請參閱[項目容器與範本](item-containers-templates.md)。 
+資料範本是您定義 ListView 外觀的主要方式。 如果您的清單含有大量項目，這些範本可能也會對效能產生顯著的影響。  
+
+您的資料範本可以內嵌方式定義於 ListView/GridView 定義內 (如上所示)，或個別定義於 [資源] 區段中。 如果定義於 ListView/GridView 本身以外，則必須為 DataTemplate 指定 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) 屬性，並將其指派給使用該索引鍵的 ListView 或 GridView 的 [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 屬性。
+
+如需詳細資訊，以及如何使用資料範本和項目容器來在清單或方格中定義項目外觀的範例，請參閱[項目容器與範本](item-containers-templates.md)。 
 
 ## <a name="change-the-layout-of-items"></a>變更項目的配置
 
-當您將項目新增到清單檢視或方格檢視時，控制項會在項目容器中將每個項目自動換行，接著配置所有項目容器。 這些項目容器的配置方式取決於控制項的 [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)。  
+當您將項目新增至 ListView 或 GridView 時，控制項會在項目容器中將每個項目自動換行，接著配置所有項目容器。 這些項目容器的配置方式取決於控制項的 [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)。  
 - 根據預設，**ListView** 會使用 [ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel) \(英文\)，其會產生垂直清單，如下所示。
 
 ![簡單的清單檢視](images/listview-simple.png)
@@ -213,7 +298,8 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 您可以藉由調整項目面板上的屬性來修改項目配置，或者可以使用另一個面板來取代預設面板。
 
-> 注意&nbsp;&nbsp;在變更 ItemsPanel 時，請小心不要停用虛擬化。 **ItemsStackPanel** 和 **ItemsWrapGrid** 都支援虛擬化，因此可放心使用這兩者。 如果您使用任何其他面板，您可能會停用虛擬化，並拖慢清單檢視的效能。 如需詳細資訊，請參閱[效能](https://docs.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui)下方的清單檢視文章。 
+> [!NOTE]
+> 如果您變更 ItemsPanel，切記不可停用虛擬化。 **ItemsStackPanel** 和 **ItemsWrapGrid** 都支援虛擬化，因此可放心使用這兩者。 如果您使用任何其他面板，您可能會停用虛擬化，並拖慢清單檢視的效能。 如需詳細資訊，請參閱[效能](https://docs.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui)下方的清單檢視文章。 
 
 這個範例示範如何藉由變更 **ItemsStackPanel** 的 [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.orientation) \(英文\) 屬性，讓 **ListView** 能夠在水平清單中列出其項目容器。
 因為清單檢視預設是垂直捲動，所以您也需要在清單檢視的內部 [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) 上調整一些屬性，讓它能夠水平捲動。
@@ -222,10 +308,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 - 將 [ScrollViewer.VerticalScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode) 設為 **Disabled** 
 - 將 [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) 設為 **Hidden** 
 
-> **注意**&nbsp;&nbsp;這些範例中的清單檢視寬度皆不受限制，因此不會顯示水平捲軸。 如果您執行這個程式碼，可在 ListView 上設定 `Width="180"` 來顯示捲軸。
+> [!IMPORTANT]
+> 這些範例所顯示的清單檢視寬度不受限制，因此不會顯示水平捲軸。 如果您執行這個程式碼，可在 ListView 上設定 `Width="180"` 來顯示捲軸。
 
 **XAML**
-```xaml
+```xml
 <ListView Height="60" 
           ScrollViewer.HorizontalScrollMode="Enabled" 
           ScrollViewer.HorizontalScrollBarVisibility="Auto"
@@ -236,24 +323,25 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
             <ItemsStackPanel Orientation="Horizontal"/>
         </ItemsPanelTemplate>
     </ListView.ItemsPanel>
-    <x:String>Item 1</x:String>
-    <x:String>Item 2</x:String>
-    <x:String>Item 3</x:String>
-    <x:String>Item 4</x:String>
-    <x:String>Item 5</x:String>
+    <x:String>Apricot</x:String>
+    <x:String>Banana</x:String>
+    <x:String>Cherry</x:String>
+    <x:String>Orange</x:String>
+    <x:String>Strawberry</x:String>
 </ListView>
 ```
 
 產生的清單外觀如下。
 
-![水平清單檢視](images/listview-horizontal.png)
+![水平清單檢視](images/listview-horizontal2-final.png)
 
  在下一個範例中，**ListView** 會使用 **ItemsWrapGrid** 而不是 **ItemsStackPanel**，在垂直換行清單中配置項目。 
  
-> **注意**&nbsp;&nbsp;清單檢視的高度必須受到限制，以強制控制項在容器中換行。
+> [!IMPORTANT]
+> 清單檢視的高度必須受到限制，才能強制控制項在容器中換行。
 
 **XAML**
-```xaml
+```xml
 <ListView Height="100"
           ScrollViewer.HorizontalScrollMode="Enabled" 
           ScrollViewer.HorizontalScrollBarVisibility="Auto"
@@ -264,17 +352,17 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
             <ItemsWrapGrid/>
         </ItemsPanelTemplate>
     </ListView.ItemsPanel>
-    <x:String>Item 1</x:String>
-    <x:String>Item 2</x:String>
-    <x:String>Item 3</x:String>
-    <x:String>Item 4</x:String>
-    <x:String>Item 5</x:String>
+    <x:String>Apricot</x:String>
+    <x:String>Banana</x:String>
+    <x:String>Cherry</x:String>
+    <x:String>Orange</x:String>
+    <x:String>Strawberry</x:String>
 </ListView>
 ```
 
 產生的清單外觀如下。
 
-![使用方格配置的清單檢視](images/listview-itemswrapgrid.png)
+![使用方格配置的清單檢視](images/listview-itemswrapgrid2-final.png)
 
 如果您在清單檢視中顯示分組資料，ItemsPanel 會決定配置項目群組的方式，而不是配置個別項目的方式。例如，如果使用先前所示的水平 ItemsStackPanel 來顯示分組資料，群組會呈現水平排列，但是每個群組中的項目仍然會以垂直方向進行堆疊，如下所示。
 
@@ -364,15 +452,15 @@ Shift | <li>使用者可以選取多個連續項目，方法是按一下或點�
 這個範例示範如何處理 **SelectionChanged** 事件，以及存取各種不同的項目集合。
 
 **XAML**
-```xaml
+```xml
 <StackPanel HorizontalAlignment="Right">
     <ListView x:Name="listView1" SelectionMode="Multiple" 
               SelectionChanged="ListView1_SelectionChanged">
-        <x:String>Item 1</x:String>
-        <x:String>Item 2</x:String>
-        <x:String>Item 3</x:String>
-        <x:String>Item 4</x:String>
-        <x:String>Item 5</x:String>
+        <x:String>Apricot</x:String>
+        <x:String>Banana</x:String>
+        <x:String>Cherry</x:String>
+        <x:String>Orange</x:String>
+        <x:String>Strawberry</x:String>
     </ListView>
     <TextBlock x:Name="selectedItem"/>
     <TextBlock x:Name="selectedIndex"/>
@@ -417,7 +505,7 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 以下是具有可點選項目的清單檢視。 ItemClick 事件處理常式中的程式碼會瀏覽到新頁面。
 
 **XAML**
-```xaml
+```xml
 <ListView SelectionMode="None"
           IsItemClickEnabled="True" 
           ItemClick="ListView1_ItemClick">
@@ -467,25 +555,26 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 
 [SelectAll](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectall)、[SelectRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectrange) 與 [DeselectRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.deselectrange) 方法提供比使用 SelectedItems 屬性更有效率的方式來修改選取項目。 這些方法會使用項目索引的範圍來選取或取消選取。 由於只使用索引，因此，已虛擬化的項目仍會維持虛擬化狀態。 指定範圍中的所有項目都會選取 (或取消選取)，而無論其原始選取狀態為何。 針對這些方法的每一個呼叫，SelectionChanged 事件只會發生一次。
 
-> **重要**&nbsp;&nbsp;您只應該在 SelectionMode 屬性被設定為 Multiple 或 Extended 時才呼叫這些方法。 如果您在 SelectionMode 為 Single 或 None 時呼叫 SelectRange，即會擲回例外狀況。
+> [!IMPORTANT]
+> 只有在 SelectionMode 屬性設為 Multiple 或 Extended 時，才能呼叫這些方法。 如果您在 SelectionMode 為 Single 或 None 時呼叫 SelectRange，即會擲回例外狀況。
 
 當您使用索引範圍選取項目時，請使用 [SelectedRanges](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectedranges) 屬性來取得清單中的所有選取範圍。
 
 如果 ItemsSource 實作 [IItemsRangeInfo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.iitemsrangeinfo) \(英文\)，且您使用這些方法來修改選取項目，系統將不會在 SelectionChangedEventArgs 中設定 **AddedItems** 和 **RemovedItems** 屬性。 設定這些屬性需要將項目物件取消虛擬化。 請改用 **SelectedRanges** 屬性來取得項目。
 
-您可以呼叫 SelectAll 方法來選取集合中的所有項目。 不過，沒有對應的方法來取消選取所有項目。 您可以呼叫 DeselectRange 並傳遞 [FirstIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange.firstindex) 值為 0 和 [Length](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange.length) 值等於集合中項目數目的 [ItemIndexRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange) 來取消所有項目。 
+您可以呼叫 SelectAll 方法來選取集合中的所有項目。 不過，沒有對應的方法來取消選取所有項目。 您可以呼叫 DeselectRange 並傳遞 [FirstIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange.firstindex) 值為 0 和 [Length](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange.length) 值等於集合中項目數目的 [ItemIndexRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange) 來取消所有項目。 這會連同選取所有項目的選項一起顯示在下列範例中。
 
 **XAML**
-```xaml
+```xml
 <StackPanel Width="160">
     <Button Content="Select all" Click="SelectAllButton_Click"/>
     <Button Content="Deselect all" Click="DeselectAllButton_Click"/>
     <ListView x:Name="listView1" SelectionMode="Multiple">
-        <x:String>Item 1</x:String>
-        <x:String>Item 2</x:String>
-        <x:String>Item 3</x:String>
-        <x:String>Item 4</x:String>
-        <x:String>Item 5</x:String>
+        <x:String>Apricot</x:String>
+        <x:String>Banana</x:String>
+        <x:String>Cherry</x:String>
+        <x:String>Orange</x:String>
+        <x:String>Strawberry</x:String>
     </ListView>
 </StackPanel>
 ```

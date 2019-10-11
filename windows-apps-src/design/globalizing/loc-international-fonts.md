@@ -1,21 +1,21 @@
 ---
-Description: 本主題列出適用於 UWP 應用程式已當地語系化為美國以外的語言的字型英文版。
+Description: 本主題列出適用于 UWP 應用程式的字型，這些字型會當地語系化成美國以外的語言英語。
 title: 國際字型
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 06284481ccecbc3c9cd7d7a78d83ccd6e97a49a7
+ms.sourcegitcommit: f3c1a81b50f4a372a15996ac71b3f408a8ee1409
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601133"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72237520"
 ---
 # <a name="international-fonts"></a>國際字型
 
-本主題列出適用於 UWP 應用程式已當地語系化為美國以外的語言的字型英文版。
+本主題列出適用于 UWP 應用程式的字型，這些字型會當地語系化成美國以外的語言英語。
 
 下表的「語言標記」欄列出語言的 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)。 如需查看 Microsoft Store 特別支援的語言標記清單，請參閱[支援的語言](../../publish/supported-languages.md)。
 
@@ -37,9 +37,9 @@ ms.locfileid: "57601133"
 | 卡達隆尼亞文 | ca-ES | Segoe UI |
 | 中部庫德文 (阿拉伯文) | ku-ARAB-IQ | Segoe UI |
 | 卻洛奇文 (卻洛奇) | chr-CHER-US | Gadugi |
-| 簡體中文 | zh-CN | MS YaHei UI |
-| 繁體中文 (香港特別行政區) | zh-HK | MS JhengHei UI |
-| 繁體中文 (台灣) | zh-TW | MS JhengHei UI |
+| 簡體中文 | zh-CN | Microsoft YaHei UI |
+| 繁體中文 (香港特別行政區) | zh-HK | Microsoft JhengHei UI |
+| 繁體中文 (台灣) | zh-TW | Microsoft JhengHei UI |
 | 克羅埃西亞文 | hr-HR | Segoe UI |
 | 捷克文 | cs-CZ | Segoe UI |
 | 丹麥文 | da-DK | Segoe UI |
@@ -56,8 +56,8 @@ ms.locfileid: "57601133"
 | 希臘文 | el-GR | Segoe UI |
 | 古吉拉特文 | gu-IN | Nirmala UI |
 | 豪沙文 (拉丁) | ha-Latn-NG | Segoe UI |
-| 希伯來文 | he-IL | Segoe UI |
-| 印度文 | hi-IN | Nirmala UI |
+| Hebrew | he-IL | Segoe UI |
+| Hindi | hi-IN | Nirmala UI |
 | 匈牙利文 | hu-HU | Segoe UI |
 | 冰島文 | is-IS | Segoe UI |
 | 伊布文 | ig-NG | Segoe UI |
@@ -66,7 +66,7 @@ ms.locfileid: "57601133"
 | 科薩文 | xh-ZA | Segoe UI |
 | 祖魯文 | zu-ZA | Segoe UI |
 | 義大利文 | it-IT | Segoe UI |
-| 日文 | ja-JP | Meiryo UI (請參閱下方「備註」) |
+| 日文 | ja-JP | Yu Gothic UI |
 | 坎那達文 | kn-IN | Nirmala UI |
 | 哈薩克文 | kk-KZ | Segoe UI |
 | 高棉文 | km-KH | Leelawadee UI |
@@ -88,7 +88,7 @@ ms.locfileid: "57601133"
 | 蒙古文 (斯拉夫) | mn-MN | Segoe UI |
 | 尼泊爾文 | ne-NP | Nirmala UI |
 | 挪威文 (巴克摩) | nb-NO | Segoe UI |
-| 挪威文 (耐諾斯克)  | nn-NO | Segoe UI |
+| 挪威文 (耐諾斯克) | nn-NO | Segoe UI |
 | 歐迪亞文 | or-IN | Nirmala UI |
 | 波斯文 | fa-IR | Segoe UI |
 | 波蘭文 | pl-PL | Segoe UI |
@@ -128,10 +128,6 @@ ms.locfileid: "57601133"
 | 威爾斯文 | cy-GB | Segoe UI |
 | 沃洛夫文 | wo-SN | Segoe UI |
 | 優魯巴文 | yo-NG | Segoe UI |
-
-## <a name="japanese-fonts"></a>日文字型
-
-Windows 中使用的 Meiryo UI 字型。 Windows 包含 Yu Gothic 與 Yu Mincho 這兩個字型家族來支援檢視和編輯日文文件。 不建議應用程式 UI 使用 Yu Gothic。
 
 ## <a name="related-topics"></a>相關主題
 

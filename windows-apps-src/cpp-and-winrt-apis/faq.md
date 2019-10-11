@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: a8da69f0041c71ecfc7429cae2ed51eee0f87d5e
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 5bb19e406df98a24a6d65fc774a29e44ef267272
+ms.sourcegitcommit: c079388634cbd328d0d43e7a6185e09bb4bca65b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393483"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71939591"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -25,10 +25,14 @@ ms.locfileid: "70393483"
 如需完整的變更集合 (包括重大變更)，請參閱 [C++/WinRT 2.0 中的新聞和變更](news.md#news-and-changes-in-cwinrt-20)。 例如，如果您在 Windows 執行階段集合上使用範圍型 `for`，則您現在必須 `#include <winrt/Windows.Foundation.Collections.h>`。
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>我的新專案為什麼不會編譯？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134
-如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，並將 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803) 設定為目標，則新建立的 C++/WinRT 專案可能無法完成，並出現錯誤「error C3861: 'from_abi': identifier not found」  ，以及其他源自 base.h  的錯誤。 解決辦法是將 Windows SDK 的較新 (更一致) 版本設定為目標，或將專案屬性設定為 [C/C++]   > [語言]   > [一致性模式:  否] (此外，如果 **/permissive-** 顯示在 [其他選項]  底下的專案屬性 [C/C++]   > [命令列]  中，請加以刪除)。
+如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，並將 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803) 設定為目標，則新建立的 C++/WinRT 專案可能無法完成，並出現錯誤「error C3861: 'from_abi': identifier not found」  ，以及其他源自 base.h  的錯誤。 解決辦法是將 Windows SDK 的較新 (更一致) 版本設定為目標，或將專案屬性設定為 [C/C++]   > [語言]   > [一致性模式：  否] (此外，如果 **/permissive-** 顯示在 [其他選項]  底下的專案屬性 [C/C++]   > [命令列]  中，請加以刪除)。
 
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>如何解決建置錯誤「C++/WinRT VSIX 不再提供專案建置支援。  請將專案參考新增至 Microsoft.Windows.CppWinRT Nuget 套件」？
 將 **Microsoft.Windows.CppWinRT** NuGet 套件安裝到您的專案中。 如需詳細資訊，請參閱[舊版 VSIX 擴充功能](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
+
+## <a name="how-do-i-customize-the-build-support-in-the-nuget-package"></a>如何自訂 NuGet 套件中的組建支援？
+
+C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGet 套件的[讀我檔案](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)中。
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>C++/WinRT Visual Studio 擴充功能 (VSIX) 有何需求？
 若為 VSIX 擴充功能的版本 1.0.190128.4 和更新版本，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。 若為其他版本，則請參閱[舊版 VSIX 擴充功能](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
