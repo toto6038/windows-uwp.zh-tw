@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始使用, uwp, windows 10, 了解追蹤, 版面配置, 表單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2e64392e1de5f6061b802acc0a2eed81c3e750fb
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 9542151a8104ade77d8311ed1f16eba2809ecf7a
+ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318801"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163682"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 
@@ -51,7 +51,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) 可讓使用者在兩個選項中選擇。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) 可讓使用者選取一個日期的值。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) 可讓使用者選取一個日期的值。
-* [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 可展開以顯示可選取項目的清單。 您也可以在[這裡](../design/controls-and-patterns/lists.md#drop-down-lists)了解更多資訊
+* [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 可展開以顯示可選取項目的清單。 您也可以在[這裡](../design/controls-and-patterns/combo-box.md)了解更多資訊
 
 您可能也會想要新增[按鈕](../design/controls-and-patterns/buttons.md)，讓使用者可以儲存或取消。
 
