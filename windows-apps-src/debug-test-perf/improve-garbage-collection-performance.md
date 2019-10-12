@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fdb4e80d7f8da022e2ceb5496cbad592d7d22716
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: f9e7cc16b65f4ee2727fae5a711da9372ee91c01
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339620"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282195"
 ---
 # <a name="improve-garbage-collection-performance"></a>改善記憶體回收效能
 
@@ -74,7 +74,7 @@ ms.locfileid: "71339620"
 
 ### <a name="avoid-reference-rich-objects"></a>避免太多參考的物件
 
-記憶體回收行程會依照物件之間 (從應用程式的根目錄開始)的參考，判斷哪些物件為作用中。 如需詳細資訊，請參閱[記憶體回收期間執行的動作](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals)。 如果物件包含許多參考，記憶體回收行程就需要執行較多的動作。 一個常見的技術 (通常用於大型物件) 是將大量參考的物件轉換為沒有參考的物件 (例如，不儲存參考，改為儲存索引)。 當然，這個技術只適用於邏輯上可以這麼做的物件。
+記憶體回收行程會依照物件之間 (從應用程式的根目錄開始)的參考，判斷哪些物件為作用中。 如需詳細資訊，請參閱[記憶體回收期間執行的動作](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals)。 如果物件包含許多參考，記憶體回收行程就需要執行較多的動作。 常見的技巧（尤其是大型物件）是將參考豐富的物件轉換成沒有參考的物件（例如，而不是儲存參考、儲存索引）。 當然，這個技術只適用於邏輯上可以這麼做的物件。
 
 以索引取代物件參考對您的應用程式來說會是一個具破壞性且複雜的變更，但是這種做法對於含有大量參考的大型物件非常有效。 請只在您發現應用程式中的大量記憶體回收與大量參考的物件有關時，才執行這個作業。
 

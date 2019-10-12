@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: ebfaab1c8fe3ec3cf8893022a8f4e8dae7deac63
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: f8ace0d56e6e647ed5f977cbe6860d8f91bb2b5f
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340589"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282363"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
@@ -87,7 +87,7 @@ ms.locfileid: "71340589"
 <td align="left">您可以建立可重複使用的<strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style">樣式</a></strong>，它可以套用至多個控制項並儲存在 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a></strong> 中，以便重複使用。<br/><br/><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh465381(v=win.10)">快速入門：樣式控制項 @ no__t-0</td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>編輯控制項的視覺結構。</strong> <br><br>自訂控制項的視覺結構，不只是修改屬性 (property) 或屬性 (attribute)，例如將核取方塊文字移到核取方塊的下方。</td>
+<td align="left"><strong>編輯控制項的視覺結構。</strong> <br><br>自訂控制項的視覺化結構，而不只是修改屬性或屬性，例如，將核取方塊的文字移到核取方塊下方。</td>
 <td align="left">Android 中沒有編輯控制項之視覺結構的簡單方法。</td>
 <td align="left">iOS 中沒有編輯控制項之視覺結構的簡單方法。</td>
 <td align="left">若要自訂控制項的視覺結構，您可以在 XAML 標記中複製並編輯其<strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate">控制項範本</a></strong>。<br/><br/><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh465374(v=win.10)">快速入門：控制項範本 @ no__t-0</td>
@@ -348,7 +348,7 @@ ms.locfileid: "71340589"
 <td align="left"><strong>非同步程式設計。</strong> <br><br>利用非同步程式設計模式避免執行緒處理的複雜度，以便讓 UI 執行緒保持回應。</td>
 <td align="left">建立您自己的非同步類別時，<strong>必須使用執行緒處理</strong>。 某些內建類別是非同步的。</td>
 <td align="left">建立您自己的非同步類別時，<strong>必須使用執行緒處理</strong>。 某些內建類別是非同步的。</td>
-<td align="left">建立您自己的 API 時，可以使用非同步模式來避免封鎖主要執行緒，例如，在 C# 和 Visual Basic 中使用 <strong>async</strong> 和 <strong>await</strong>。 您可以使用結尾為文字 <strong>Async</strong> 的非同步內建 API。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">非同步程式設計</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">在 C# 或 Visual Basic 中呼叫非同步 API</a></td>
+<td align="left">當您建立自己的 Api 時，您可以使用非同步模式來避免封鎖主執行緒，例如，在和 Visual Basic中C#使用<strong>async</strong>和 await。 您可以使用結尾為文字 <strong>Async</strong> 的非同步內建 API。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">非同步程式設計</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">在 C# 或 Visual Basic 中呼叫非同步 API</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>清單視圖優化。</strong> <br><br>用來協助將資料清單最佳化的內建模式，這種清單需要顯示大量資料時，通常會發生效能不佳的情況</td>

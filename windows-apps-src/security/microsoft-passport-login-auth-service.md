@@ -4,14 +4,14 @@ description: 這是一份完整逐步解說的第 2 部分，將說明如何在 
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 98251ecba05dd27cbe3112a94b6cfcd36440d380
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6d15173471b7f1ef3f1c6b042671eb85b7a53dc4
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371234"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282337"
 ---
 # <a name="create-a-windows-hello-login-service"></a>建立 Windows Hello 登入服務
 
@@ -19,7 +19,7 @@ ms.locfileid: "66371234"
 
 為了能順利建置這個專案，您需要有 C# 及 XAML 方面的經驗。 您也需要使用安裝在 Windows 10 電腦上的 Visual Studio 2015 (Community 版或更新版本)。
 
-## <a name="exercise-1-server-side-logic"></a>練習 1:伺服器端邏輯
+## <a name="exercise-1-server-side-logic"></a>練習1：伺服器端邏輯
 
 
 您將在這個練習中，從您在第一個實驗室所建置的 Windows Hello 應用程式開始，建立本機模擬伺服器和資料庫。 這個實習實驗室的目的，是要讓您了解如何將 Windows Hello 整合到現有的系統中。 由於我們使用模擬伺服器及模擬資料庫，因此會去除許多不相關的設定。 而在您自己的應用程式中，您必須用實際的服務及資料庫取代模擬的物件。
@@ -535,7 +535,7 @@ ms.locfileid: "66371234"
     }
     ```
 
-## <a name="exercise-2-client-side-logic"></a>練習 2:用戶端邏輯
+## <a name="exercise-2-client-side-logic"></a>練習2：用戶端邏輯
 
 您將在這個練習中，將第一個實驗室的用戶端 Views 及 Helper 類別，變更使用 AuthService 類別。 在真實世界中，AuthService 就是驗證伺服器，且您需要使用 Web API 來傳送及接收伺服器的資料。 對於這個實習實驗室來說，為了讓事情保持簡單，戶端和伺服器都在本機上。 而這個練習的目標，是了解如何使用 Windows Hello API。
 
@@ -661,7 +661,7 @@ ms.locfileid: "66371234"
             //If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             //would check the signed challenge. If it is correct it would allow the user access to the backend.
             //You would likely make a new method called RequestSignAsync to handle all this
-            //e.g. RequestSignAsync(openKeyResult);
+            //for example, RequestSignAsync(openKeyResult);
             //Refer to the second Windows Hello sample for information on how to do this.
 
             //For this sample there is not concept of a server implemented so just return true.
@@ -804,7 +804,7 @@ ms.locfileid: "66371234"
     }
     ```
 
--   當您將使用 AuthService 按鈕中移除帳戶 AccountHelper 的參考時\_略過\_使用者\_按一下可以移除方法。 現在方法看起來應該像下面這樣。
+-   由於您將在移除帳戶時使用 AuthService，因此可以移除按鈕 @ no__t-0Forget @ no__t-1User @ no__t-2Click 方法中 AccountHelper 的參考。 現在方法看起來應該像下面這樣。
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -1139,7 +1139,7 @@ ms.locfileid: "66371234"
             //If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             //would check the signed challenge. If it is correct it would allow the user access to the backend.
             //You would likely make a new method called RequestSignAsync to handle all this
-            //e.g. RequestSignAsync(openKeyResult);
+            //for example, RequestSignAsync(openKeyResult);
             //Refer to the second Windows Hello sample for information on how to do this.
 
             return await RequestSignAsync(account.UserId, openKeyResult);

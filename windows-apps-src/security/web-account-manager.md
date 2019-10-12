@@ -3,15 +3,15 @@ title: Web 帳戶管理員
 description: 本文章說明如何利用 Windows 10 Web 帳戶管理員 API，使用 AccountsSettingsPane 將您的通用 Windows 平台 (UWP) 應用程式連線到外部身份識別提供者 (例如 Microsoft 或 Facebook)。
 ms.date: 12/06/2017
 ms.topic: article
-keywords: windows 10 uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: f567637f3d38ce80c320bfe92fff392efadeda8d
-ms.sourcegitcommit: 7803f11ba4c9194c350217cc06069a4707f15ed6
+ms.openlocfilehash: 557f5c03bda68d11507ba3b3b3b12823dbe6fd9f
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69017427"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282397"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 
@@ -24,7 +24,7 @@ ms.locfileid: "69017427"
 
 首先，在 Visual Studio 中建立新的空白應用程式。 
 
-其次，為了要連線到身分識別提供者，您必須將應用程式與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下專案，選擇 [市集] >  [將應用程式與市集建立關聯]，然後遵循精靈的指示進行。 
+其次，為了要連線到身分識別提供者，您必須將應用程式與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下專案，選擇 **\[市集\]**  >  **\[將應用程式與市集建立關聯\]** ，然後遵循精靈的指示進行。 
 
 接下來，建立非常基本的 UI，並在其中包含一個簡單的 XAML 按鈕以及兩個文字方塊。
 
@@ -76,11 +76,11 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 窗格之所以為空白，是因為系統僅提供 UI 殼層 - 開發人員必須以程式設計方式將身分識別提供者填入窗格。 
 
 > [!TIP]
-> 或者，您可以使用 **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而非 **[顯示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** ，這會傳回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** 、 查詢作業的狀態。 
+> （選擇性）您可以使用 **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** ，而不是 **[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** ，這會傳回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** ，以查詢作業的狀態。 
 
 ## <a name="register-for-accountcommandsrequested"></a>註冊 AccountCommandsRequested
 
-若要將命令加入到窗格中，我們可以從註冊 AccountCommandsRequested 事件處理常式開始。 當使用者要求查看窗格時 (例如按一下 XAML 按鈕)，這會要求系統執行我們的建置邏輯。 
+若要將命令加入到窗格中，我們可以從註冊 AccountCommandsRequested 事件處理常式開始。 這會告訴系統在使用者要求查看窗格（例如，按一下我們的 XAML 按鈕）時，執行我們的組建邏輯。 
 
 在程式碼後置中，覆寫 OnNavigatedTo 和 OnNavigatedFrom 事件，然後將下列程式碼新增到它們︰ 
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-接下來，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法取得提供者。 提供者的 URL 會隨著提供者而有所不同，您可以在提供者的文件中找到。 若為 Microsoft 帳戶和 Azure Active Directory, 則為 "\:HTTPs//login.microsoft.com"。 
+接下來，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法取得提供者。 提供者的 URL 會隨著提供者而有所不同，您可以在提供者的文件中找到。 針對 Microsoft 帳戶和 Azure Active Directory，其為 "HTTPs @ no__t-0//login. Microsoft .com"。 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -178,7 +178,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * 若為 OneDrive 範圍，請參閱 [OneDrive 驗證與登入](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> （選擇性） 如果您的應用程式使用的登入提示 （填入 [使用者] 欄位的預設電子郵件地址） 或其他相關的登入體驗的特殊屬性，列出在 **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 屬性。 這會導致系統在快取 web 帳戶時忽略屬性, 這可防止快取中的帳戶不符。
+> 或者，如果您的應用程式使用登入提示（以預設的電子郵件地址填入使用者欄位）或其他與登入體驗相關的特殊屬性，請將它列在 **[WebTokenRequest. AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 屬性中。 這會導致系統在快取 web 帳戶時忽略屬性，這可防止快取中的帳戶不符。
 
 如果您是在開發企業應用程式，您可以連線 Azure Active Directory (AAD) 執行個體，並使用 Microsoft Graph API，而不是使用一般的 MSA 服務。 在這個案例中，請改為使用以下程式碼： 
 
@@ -338,7 +338,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>移除儲存的帳戶
 
-如果您保留 Web 帳戶，建議您讓使用者能夠將自己的帳戶與您的 app 解除關聯。 如此一來, 他們就可以有效地「登出」應用程式: 啟動時, 將不會再自動載入其帳戶資訊。 若要這樣做，請先移除儲存空間中的任何儲存的帳戶和提供者資訊。 接著呼叫 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 以清除快取，並使任何應用程式可能擁有的現有權杖無效。 
+如果您保留 Web 帳戶，建議您讓使用者能夠將自己的帳戶與您的 app 解除關聯。 如此一來，他們就可以有效地「登出」應用程式：啟動時，將不會再自動載入其帳戶資訊。 若要這樣做，請先移除儲存空間中的任何儲存的帳戶和提供者資訊。 接著呼叫 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 以清除快取，並使任何應用程式可能擁有的現有權杖無效。 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: 16996a8706018bde89d3eb08249ee496d7e25bb9
-ms.sourcegitcommit: e7c95c156f970fe9fdf7ff98ea81508360a64c12
+ms.openlocfilehash: f6eda179a3fea0c24f3a9de0d674800bd3d2015c
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172838"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282325"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>適用于側載 UWP 應用程式的代理 Windows 執行階段元件
 
@@ -181,7 +181,7 @@ namespace Fabrikam
 
 <ActivatableClass> 區段會和應用程式套件中 Windows 執行階段元件偏好的真正同處理序 RuntimeClass 相同。 <ActivatableClassAttribute> 是新的專案，且屬性 Name = "DesktopApplicationPath" 和 Type = "string" 是強制性和不變的。 值屬性指向桌面元件實作 winmd 所在的位置 (下節會有更詳盡的資訊)。 桌面元件偏好的每個 RuntimeClass 都應該有自己的 <ActivatableClass> 元素樹狀結構。 ActivatableClassId 必須符合 RuntimeClass 的完整命名空間名稱。
 
-如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 在範例中，它是 EnterpriseIPCApplication @ no__t-0EnterpriseIPCApplication。 手動將參考 **winmd** 複製到第二層目錄，然後使用 [專案參考] 對話方塊 (按一下 [瀏覽..] 按鈕) 尋找並參考此 **winmd**。 之後，桌面元件的最上層命名空間 (例如 Fabrikam) 應該在專案參考部分顯示為最上層節點。
+如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 在範例中，它是 EnterpriseIPCApplication @ no__t-0EnterpriseIPCApplication。 手動將參考 **winmd** 複製到第二層目錄，然後使用 [專案參考] 對話方塊 (按一下 [瀏覽..] 按鈕) 尋找並參考此 **winmd**。 在此之後，桌面元件（例如 Fabrikam）的最上層命名空間應該會在專案的 [參考] 部分中顯示為最上層節點。
 
 >**注意** 在側載應用程式中使用 **reference winmd** 非常重要。 如果您不小心將 **implementation winmd** 帶到側載應用程式目錄並參考它，很可能會收到與「找不到 IStringable」相關的錯誤。 這是參考錯誤 **winmd** 的明顯指標。 IPC 伺服器應用程式的建置後規則 (下節會有詳細說明) 很謹慎地將這兩個 **winmd** 隔離在兩個獨立的目錄中。
 
@@ -491,11 +491,11 @@ return Task<int>.Run(async () =>
 
 a) Dlldata.c
 
-b) 一個標頭檔 (例如 MyWinRTComponent.h)
+b）標頭檔（例如，MyWinRTComponent）
 
-c） \* @ no__t-1i. c 檔案（例如 MyWinRTComponent @ no__t-2i .c）
+c） \* @ no__t-1i. c 檔案（例如，MyWinRTComponent @ no__t-2i .c）
 
-d） A \* @ no__t-1 p. c 檔案（例如 MyWinRTComponent @ no__t-2p .c）
+d） \* @ no__t-1 p. c 檔案（例如 MyWinRTComponent @ no__t-2p .c）
 
 **步驟 5：** 將這四個產生的檔案新增至 "MyWinRTProxy" 專案。
 

@@ -5,14 +5,14 @@ description: 了解可用來存取資料並以程式設計方式控制裝置的 
 ms.custom: 19H1
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10 uwp，裝置入口網站
+keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e1e2dfdb1dd52e1dd07a146badd78a6bb809fa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2e6b505dfd24a57f03169df3ed38402e7b3e9bb0
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359925"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282119"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 參考資料
 
@@ -399,7 +399,7 @@ ms.locfileid: "66359925"
 
 **要求**
 
-您可以透過使用下列要求格式，以取得電腦上已安裝藍牙無線電的清單。 這可以升級為 WebSocket 連線，使用相同的 JSON 資料。
+您可以透過使用下列要求格式，以取得電腦上已安裝藍牙無線電的清單。 這也可以使用相同的 JSON 資料升級至 WebSocket 連線。
  
 | 方法        | 要求 URI |
 | :------          | :------ |
@@ -469,8 +469,8 @@ ms.locfileid: "66359925"
 
 | URI 參數 | 描述 |
 | :------          | :------ |
-| 識別碼            | (**需要**) 藍牙無線電的裝置 ID 而且必須是 Base-64 編碼。 |
-| State         | (**必要**) 這可以是`"On"`或`"Off"`。 |
+| id            | (**需要**) 藍牙無線電的裝置 ID 而且必須是 Base-64 編碼。 |
+| State         | （**必要**）這可以是 `"On"` 或 `"Off"`。 |
 
 **要求標頭**
 
@@ -499,11 +499,11 @@ ms.locfileid: "66359925"
 * IoT
 
 ---
-### <a name="get-a-list-of-paired-bluetooth-devices"></a>取得一份配對的藍牙裝置
+### <a name="get-a-list-of-paired-bluetooth-devices"></a>取得配對的藍牙裝置清單
 
 **要求**
 
-您可以使用下列的要求格式，以取得一份目前配對的藍牙裝置。 這可以升級為 WebSocket 連接，並使用相同的 JSON 資料。 在 WebSocket 連線的存留期內，可以變更 [裝置] 清單。 會透過 WebSocket 連線有可用更新的每次傳送裝置的完整清單。
+您可以使用下列要求格式來取得目前配對的藍牙裝置清單。 這可以升級至具有相同 JSON 資料的 WebSocket 連線。 在 WebSocket 連線的存留期內，裝置清單可能會變更。 每次有更新時，將會透過 WebSocket 連線傳送完整的裝置清單。
 
 | 方法        | 要求 URI       |
 | :---          | :---              |
@@ -524,7 +524,7 @@ ms.locfileid: "66359925"
 
 **回應**
 
-回應會包含目前配對的藍牙裝置的 JSON 陣列。
+回應包含目前配對的藍牙裝置的 JSON 陣列。
 ```json
 {"PairedDevices": [
     {
@@ -534,14 +534,14 @@ ms.locfileid: "66359925"
     },...
 ]}
 ```
-*AudioConnectionStatus*欄位才會出現在裝置可使用此系統上的音訊。 （原則和選用元件可能會影響此）。*AudioConnectionStatus*將會是 「 已連線 」 或 「 中斷連線 」。
+如果裝置可用於此系統上的音訊，則會出現 [ *AudioConnectionStatus* ] 欄位。 （原則和選用元件可能會影響此。）*AudioConnectionStatus*將會是「已連接」或「已中斷連線」。
 
 ---
-### <a name="get-a-list-of-available-bluetooth-devices"></a>取得一份可用的藍芽裝置
+### <a name="get-a-list-of-available-bluetooth-devices"></a>取得可用的藍牙裝置清單
 
 **要求**
 
-您可以取得一份可用的藍芽裝置進行配對使用下列的要求格式。 這可以升級為 WebSocket 連接，並使用相同的 JSON 資料。 在 WebSocket 連線的存留期內，可以變更 [裝置] 清單。 會透過 WebSocket 連線有可用更新的每次傳送裝置的完整清單。
+您可以使用下列要求格式，取得可供配對的藍牙裝置清單。 這可以升級至具有相同 JSON 資料的 WebSocket 連線。 在 WebSocket 連線的存留期內，裝置清單可能會變更。 每次有更新時，將會透過 WebSocket 連線傳送完整的裝置清單。
 
 | 方法        | 要求 URI          |
 | :---          | :---                 |
@@ -562,7 +562,7 @@ ms.locfileid: "66359925"
 
 **回應**
 
-回應會包含目前可供配對的藍牙裝置的 JSON 陣列。
+回應包含目前可用於配對的藍牙裝置的 JSON 陣列。
 ```json
 {"AvailableDevices": [
     {
@@ -573,11 +573,11 @@ ms.locfileid: "66359925"
 ```
 
 ---
-### <a name="connect-a-bluetooth-device"></a>連線到藍芽裝置
+### <a name="connect-a-bluetooth-device"></a>連接藍牙裝置
 
 **要求**
 
-如果在裝置可使用此系統上的音訊會連線到裝置。 （原則和選用元件可能會影響此）。
+如果裝置可用於此系統上的音訊，將會連接到裝置。 （原則和選用元件可能會影響此。）
 
 | 方法       | 要求 URI           |
 | :---         | :---                  |
@@ -587,7 +587,7 @@ ms.locfileid: "66359925"
 
 | URI 參數 | 描述 |
 | :---          | :--- |
-| 識別碼            | (**必要**) 藍芽裝置的關聯端點 ID，而且必須是 Base64 編碼。 |
+| id            | （**必要**）藍牙裝置的關聯端點識別碼，必須是 Base64 編碼。 |
 
 **要求標頭**
 
@@ -617,11 +617,11 @@ ms.locfileid: "66359925"
 
 
 ---
-### <a name="disconnect-a-bluetooth-device"></a>中斷連線的藍芽裝置
+### <a name="disconnect-a-bluetooth-device"></a>中斷藍牙裝置的連線
 
 **要求**
 
-如果在裝置可使用此系統上的音訊，則會中斷連線的裝置。 （原則和選用元件可能會影響此）。
+如果裝置可用於此系統上的音訊，將會中斷裝置的連線。 （原則和選用元件可能會影響此。）
 
 | 方法       | 要求 URI              |
 | :---         | :---                     |
@@ -631,7 +631,7 @@ ms.locfileid: "66359925"
 
 | URI 參數 | 描述 |
 | :---          | :--- |
-| 識別碼            | (**必要**) 藍芽裝置的關聯端點 ID，而且必須是 Base64 編碼。 |
+| id            | （**必要**）藍牙裝置的關聯端點識別碼，必須是 Base64 編碼。 |
 
 **要求標頭**
 
@@ -762,7 +762,7 @@ ms.locfileid: "66359925"
 }
 ```
 
-**範例傳回的資料**
+**範例傳回資料**
 ```json
 {
     "DeviceList": [{
@@ -1238,11 +1238,11 @@ ms.locfileid: "66359925"
 
 **傾印類型**
 
-0:已停用
+0已停用
 
-1：完整記憶體傾印 （會收集所有使用中記憶體）
+1：完整記憶體傾印（收集所有使用中的記憶體）
 
-2：核心記憶體傾印 （忽略使用者模式記憶體）
+2：核心記憶體傾印（忽略使用者模式記憶體）
 
 3：有限的核心小型傾印
 
@@ -2003,7 +2003,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 | URI 參數 | 描述 |
 | :------          | :------ |
-| NAME | (**必要**) 電腦的新名稱。 |
+| name | (**必要**) 電腦的新名稱。 |
 
 **要求標頭**
 
@@ -3011,11 +3011,11 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 <hr>
 
-### <a name="set-a-static-ip-address-ipv4-configuration"></a>設定靜態 IP 位址 （IPV4 組態）
+### <a name="set-a-static-ip-address-ipv4-configuration"></a>設定靜態 IP 位址（IPV4 設定）
 
 **要求**
 
-設定 IPV4 設定，使用靜態 IP 和 DNS。 如果未指定靜態 ip 位址，就會啟用 DHCP。 如果指定了靜態 ip 位址，然後 DNS 也必須指定。
+設定具有靜態 IP 和 DNS 的 IPV4 設定。 如果未指定靜態 IP，則會啟用 DHCP。 如果指定了靜態 IP，則也必須指定 DNS。
  
 | 方法      | 要求 URI |
 | :------     | :----- |
@@ -3026,14 +3026,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 | URI 參數 | 描述 |
 | :---          | :--- |
-| AdapterName | (**必要**) 網路介面的 GUID。 |
-| IPAddress | 若要設定靜態 IP 位址。 |
-| SubnetMask | (**必要**如果*IPAddress*不是 null) 的靜態的子網路遮罩。 |
-| DefaultGateway | (**必要**如果*IPAddress*不是 null) 的靜態預設閘道。 |
-| PrimaryDNS | (**必要**如果*IPAddress*不是 null) 來設定靜態的主要 DNS。 |
-| SecondayDNS | (**必要**如果*PrimaryDNS*不是 null) 來設定靜態的次要 DNS。 |
+| AdapterName | （**必要**）網路介面 GUID。 |
+| IPAddress | 要設定的靜態 IP 位址。 |
+| SubnetMask | （如果*IPAddress*不是 null，則為**必要**）靜態子網路遮罩。 |
+| DefaultGateway | （如果*IPAddress*不是 null，則為**必要**）靜態預設閘道。 |
+| PrimaryDNS | （如果*IPAddress*不是 null，則為**必要**）要設定的靜態主要 DNS。 |
+| SecondayDNS | （如果*PrimaryDNS*不是 null，則為**必要**）要設定的靜態次要 DNS。 |
 
-為了清楚起見，若要設定 dhcp 的介面，序列化只`AdapterName`在網路上：
+為了清楚起見，若要設定 DHCP 的介面，只會將網路上的 `AdapterName` 序列化：
 
 ```json
 {
@@ -3171,7 +3171,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
         "AlreadyConnected": bool,
         "AuthenticationAlgorithm": string, (WPA2, etc)
         "Channel": int,
-        "CipherAlgorithm": string, (e.g. AES)
+        "CipherAlgorithm": string, (for example, AES)
         "Connectable": int, (0 | 1)
         "InfrastructureType": string,
         "ProfileAvailable": bool,
@@ -3326,8 +3326,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | URI 參數 | 描述 |
 | :------          | :------ |
 | 使用者   | (**必要**) 與報告關聯的使用者名稱。 |
-| type   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。 |
-| NAME   | (**必要**) 報告的名稱。 此應為 base64 編碼。 |
+| 型別   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。 |
+| name   | (**必要**) 報告的名稱。 此應為 base64 編碼。 |
 | file   | (**必要**) 要從報告下載之檔案的名稱。 此應為 base64 編碼。 |
 
 **要求標頭**
@@ -3378,8 +3378,8 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | URI 參數 | 描述 |
 | :------          | :------ |
 | 使用者   | (**必要**) 與報告關聯的使用者。 |
-| type   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。 |
-| NAME   | (**必要**) 報告的名稱。 此應為 base64 編碼。 |
+| 型別   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。 |
+| name   | (**必要**) 報告的名稱。 此應為 base64 編碼。 |
 
 **要求標頭**
 

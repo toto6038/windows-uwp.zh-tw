@@ -4,14 +4,14 @@ title: Windows 桌面的裝置入口網站
 description: 了解 Windows Device Portal 如何在 Windows 桌面上開啟診斷與自動化功能。
 ms.date: 02/06/2019
 ms.topic: article
-keywords: windows 10 uwp，裝置入口網站
+keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cf497d5d57f5a3cdc5c52ecfeead7885ff7d56
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 0f25e882f53bb4f673aa5003495f37d553208721
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713804"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282000"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows 桌面的裝置入口網站
 
@@ -47,7 +47,7 @@ Windows 裝置入口網站可讓您檢視診斷資訊，並透過 HTTP 從瀏覽
 
 若要透過本機主機連接，開啟瀏覽器視窗並輸入此處所顯示您要用於連線的網址。
 
-* Localhost:`http://127.0.0.1:<PORT>`或 `http://localhost:<PORT>`
+* Localhost： `http://127.0.0.1:<PORT>` 或 `http://localhost:<PORT>`
 * 區域網路： `https://<IP address of the desktop>:<PORT>`
 
 HTTPS 需要進行驗證和安全通訊。
@@ -80,22 +80,22 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 
 若您想要選取 Device Portal 的連接埠號碼 (例如 80 和 443)，則可設定下列登錄機碼︰
 
-- 在 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
+- 低於 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
     - `UseDynamicPorts`:必要的 DWORD。 將此設為 0，以保留選擇的連接埠號碼。
     - `HttpPort`:必要的 DWORD。 包含 Device Portal 針對 HTTP 連線開啟接聽的連接埠號碼。    
     - `HttpsPort`:必要的 DWORD。 包含 Device Portal 用來接聽 HTTPS 連線的連接埠號碼。
     
 在相同的 regkey 路徑底下，您也可以關閉驗證需求：
-- `UseDefaultAuthorizer` - `0` 為停用，`1`啟用。  
+- `UseDefaultAuthorizer` @ no__t-1 @ no__t-2 表示已停用，已啟用 `1`。  
     - 這可控制每個連線以及從 HTTP 重新導向至 HTTPS 的基本驗證要求。  
     
 ### <a name="command-line-options-for-device-portal"></a>裝置入口網站的命令列選項
-從系統管理命令提示字元中，您可以啟用及設定裝置入口網站的幾個部分。 若要查看最新的組建上支援的命令集，您可以執行 `webmanagement /?`
+從系統管理命令提示字元中，您可以啟用及設定裝置入口網站的幾個部分。 若要查看您的組建所支援的最新命令集，您可以執行 `webmanagement /?`
 
 - `sc start webmanagement` 或 `sc stop webmanagement` 
     - 開啟或關閉服務。 這仍需要啟用開發人員模式。 
 - `-Credentials <username> <password>` 
-    - 設定裝置入口網站的使用者名稱和密碼。 使用者名稱必須符合基本驗證標準，因此不能包含冒號 (:) 且應使用標準 ASCII 字元建置，例如 [a-zA-Z0-9]，因為瀏覽器無法以標準方式剖析完整字元集。  
+    - 設定裝置入口網站的使用者名稱和密碼。 使用者名稱必須符合基本驗證標準，因此不能包含冒號（:)和應該以標準 ASCII 字元（例如 [Z0-9]）建立，因為瀏覽器不會以標準方式剖析完整字元集。  
 - `-DeleteSSL` 
     - 這樣會重設用於 HTTPS 連線的 SSL 憑證快取。 如果您遇到 TLS 連線錯誤，而無法略過 (與預期的憑證警告不同)，此選項可修正問題。 
 - `-SetCert <pfxPath> <pfxPassword>`
@@ -107,29 +107,29 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 
 ## <a name="common-errors-and-issues"></a>常見的錯誤和問題
 
-以下是設定裝置入口網站時，可能會遇到的一些常見錯誤。
+以下是您在設定裝置入口網站時可能會遇到的一些常見錯誤。
 
-### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch 傳回無效的更新數目 (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbs_e_invalid_windows_update_count"></a>WindowsUpdateSearch 傳回不正確更新數目（0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT）
 
-嘗試發行前組建的 Windows 10 上安裝開發人員套件時，可能會發生此錯誤。 這些功能 on Demand (FoD) 套件裝載於 Windows Update，並在發行前版本組建上下載它們需要您選擇加入試驗。 若您的安裝不選擇正確的組建和信號組合試驗，將無法下載承載。 再次檢查下列項目：
+當您嘗試在 Windows 10 的發行前版本上安裝開發人員套件時，可能會收到這個錯誤。 這些隨選功能（FoD）套件會裝載在 Windows Update 上，並在發行前版本的組建上下載，需要您選擇試驗。 如果您的安裝未加入宣告正確的組建和環形組合的試驗，將無法下載承載。 再次檢查下列各項：
 
-1. 瀏覽至**設定 > 更新與安全性 > Windows 測試人員計畫**並確認**Windows 測試人員帳戶**區段具有正確的帳戶資訊。 如果您沒有看到該區段，選取**連結 Windows 測試人員帳戶**中，新增您的電子郵件帳戶，並確認它在底下會出現**Windows 測試人員帳戶**標題 (您可能需要選取**Windows 測試人員帳戶連結**實際連結時間第二個新增的帳戶)。
+1. 流覽至 [**設定] > 更新 & 安全性 > Windows 測試人員方案**，並確認**Windows 測試人員帳戶**區段是否有正確的帳戶資訊。 如果您沒有看到該區段，請選取 [**連結 Windows 測試人員帳戶**]，並新增您的電子郵件帳戶，並確認它顯示在 [ **Windows 測試人員帳戶**] 標題下（您可能需要選取 [將**Windows 測試人員帳戶**第二個連結到]實際連結新加入的帳戶）。
  
-2. 底下**您要接收何種內容？** ，請確定**進行開發的 Windows**已選取。
+2. 在 [**您要接收何種內容？** ] 下，確定已選取 [使用中**的 Windows 開發**]。
  
-3. 底下**您想要取得新的組建步調為何？** ，請確定**快速 Windows Insider**已選取。
+3. 在 [**您要取得新組建的步調為何？** ] 下，確定已選取 [**快速 Windows 測試人員**]。
  
-4. 您現在應該能夠安裝 FoDs。 如果您已確認，在 快速 Windows 測試人員和仍然無法安裝 FoDs、 請提供意見反應和附加記錄檔底下**C:\Windows\Logs\CBS**。
+4. 您現在應該可以安裝 Fod。 如果您已確認您的 Windows 測試人員快速，而且仍然無法安裝 Fod，請提供意見反應，並將記錄檔附加至**C:\Windows\Logs\CBS**。
 
-### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC]StartService:OpenService 1060 失敗：指定的服務並不是已安裝的服務
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>SCStartServiceOpenService 失敗1060：指定的服務不是以已安裝的服務形式存在
 
-如果未安裝開發人員套件，您可能會發生此錯誤。 而不需要開發人員套件中，沒有任何 web 管理服務。 嘗試再次安裝開發人員套件。
+如果未安裝開發人員套件，您可能會收到這個錯誤。 沒有開發人員套件，就沒有 web 管理服務。 請嘗試再次安裝開發人員套件。
 
-### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>CBS 無法啟動下載，因為系統已在計量付費網路 (CBS_E_METERED_NETWORK)
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbs_e_metered_network"></a>CBS 無法開始下載，因為系統位於計量付費網路（CBS_E_METERED_NETWORK）
 
-如果您是在計量付費網際網路連線，您可能會發生此錯誤。 您將無法下載付費連線上的開發人員套件。
+如果您是在計量付費網際網路連線上，可能會出現此錯誤。 您無法在計量付費連線上下載開發人員套件。
 
 ## <a name="see-also"></a>另請參閱
 
-* [Windows Device Portal 概觀](device-portal.md)
-* [裝置入口網站 core API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Windows 裝置入口網站總覽](device-portal.md)
+* [裝置入口網站核心 API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

@@ -1,23 +1,23 @@
 ---
 title: 使用 Windows Hello 隨附 (IoT) 裝置的 Windows 解除鎖定
-description: Windows Hello 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過 Windows Hello 隨附裝置架構，即使無法使用生物特徵辨識技術 (例如，如果 Windows 10 Desktop 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Windows Hello 體驗。
+description: Windows Hello 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 使用 Windows Hello 隨附裝置架構，隨附的裝置即使無法使用生物識別功能，也可以為 Windows Hello 提供豐富的體驗（例如，如果 Windows 10 桌上型電腦缺少臉部驗證或指紋辨識器裝置的相機例如）。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bba51627445c553c67b2c02bd66d65486f9caf6
-ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
+ms.openlocfilehash: 416077d2f2e7fe5f98f2586eb7273602b8075982
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67498904"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281856"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>使用 Windows Hello 隨附 (IoT) 裝置的 Windows 解除鎖定
 
-Windows Hello 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過 Windows Hello 隨附裝置架構，即使無法使用生物特徵辨識技術 (例如，如果 Windows 10 Desktop 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Windows Hello 體驗。
+Windows Hello 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 使用 Windows Hello 隨附裝置架構，隨附的裝置即使無法使用生物識別功能，也可以為 Windows Hello 提供豐富的體驗（例如，如果 Windows 10 桌上型電腦缺少臉部驗證或指紋辨識器裝置的相機例如）。
 
-> **請注意**Microsoft 將會取代 Windows Hello 小幫手裝置架構在 2020 年上半年的 API。
+> **注意**Microsoft 將會在2020的前半部淘汰 Windows Hello 隨附裝置架構的 API。
 
 > **注意** Windows Hello 隨附裝置架構是無法供所有 app 開發人員使用的特殊功能。 若要使用這個架構，您的 app 必須由 Microsoft 特別佈建，並在其資訊清單中列出受限制的 *secondaryAuthenticationFactor* 功能。 若要取得核准，請連絡 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)。
 
@@ -66,9 +66,9 @@ Windows Hello 隨附裝置架構會實作為在 Windows 上執行的服務 (本�
 
 每個 Windows Hello 隨附裝置應該與支援三個使用者訊號的 app 相結合。 這些訊號的形式可以是動作或手勢。
 
-- **意圖訊號**:可讓使用者顯示其對應方式解除鎖定，例如按下按鈕，以在 Windows Hello 隨附裝置。 意圖訊號必須在 **Windows Hello 隨附裝置**端收集。
-- **使用者是否存在訊號**:證明使用者存在。 例如，Windows Hello 隨附裝置可能需要 PIN，才能用來解除鎖定電腦 (請不要與電腦 PIN 混淆)，或者可能需要按下按鈕。
-- **去除混淆訊號**:釐清哪些 Windows 10 桌面版使用者想要解除鎖定時 Windows Hello 小幫手裝置有多個選項。
+- **意圖信號**：允許使用者顯示他的解除鎖定意圖，例如，在 Windows Hello 隨附裝置上按下按鈕。 意圖訊號必須在 **Windows Hello 隨附裝置**端收集。
+- **使用者目前狀態的通知**：證明使用者是否存在。 例如，Windows Hello 隨附裝置可能需要 PIN，才能用來解除鎖定電腦 (請不要與電腦 PIN 混淆)，或者可能需要按下按鈕。
+- **消除混淆信號**：厘清當 Windows Hello 隨附裝置有多個選項可供使用時，使用者想要解除鎖定的 Windows 10 桌上型電腦。
 
 您可以將任意數目的這類使用者訊號合併成一個。 每次使用時都需要使用者存在訊號與意圖訊號。
 
@@ -92,7 +92,7 @@ Windows Hello 隨附裝置與 Windows 10 電腦 裝置間的關係可以是一�
 
 注意：
 
-- 我們建議簡化和自動化 (如果可行) Windows Hello 隨附裝置 app 的探索、下載及啟動 (例如，可在 Windows 10 Desktop 裝置端點選 NFC 讀取器上的 Windows Hello 隨附裝置 app 來下載 app)。 不過，這是由 Windows Hello 隨附裝置和 Windows Hello 隨附裝置 app 負責執行。
+- 我們建議您探索、下載和啟動 Windows Hello 隨附裝置應用程式已簡化，而且可能的話也會自動化（例如，可以在 Windows 10 desktop 裝置上的 NFC 讀取器上使用 Windows Hello 配套裝置時下載應用程式）側邊）。 不過，這是由 Windows Hello 隨附裝置和 Windows Hello 隨附裝置 app 負責執行。
 - 在企業環境中，可透過 MDM 部署 Windows Hello 隨附裝置 app。
 - Windows Hello 隨附裝置 app 負責向使用者顯示註冊過程中發生的任何錯誤訊息。
 
@@ -130,7 +130,7 @@ Windows Hello 隨附裝置 app 的協助程式程式庫將會接聽鎖定畫面�
 
 如果有多個 Windows Hello 隨附裝置背景工作，第一個完成驗證程序的背景工作將會解除鎖定電腦。 隨附裝置驗證服務將會忽略任何剩餘的驗證呼叫。
 
-Windows Hello 隨附裝置端上的體驗是由 Windows Hello 隨附裝置 app 所擁有和管理。 Windows Hello 隨附裝置架構無法控制這部分的使用者體驗。 更具體地說，隨附驗證提供者會通知 Windows Hello 隨附裝置 app (透過它的背景 app) 有關登入 UI 中的狀態變更 (例如，鎖定畫面剛剛呈現，或者使用者剛按下空格鍵來消除鎖定畫面)，而 Windows Hello 隨附裝置 app 會負責建置相關的體驗 (例如，在使用者按下空格鍵並消除解除鎖定畫面、透過 USB 開始查看裝置)。
+Windows Hello 隨附裝置端上的體驗是由 Windows Hello 隨附裝置 app 所擁有和管理。 Windows Hello 隨附裝置架構無法控制這部分的使用者體驗。 更明確地說，隨附的驗證提供者會通知 Windows Hello 隨附裝置應用程式（透過其背景應用程式）登入 UI 中的狀態變更（例如，鎖定畫面剛關閉，或使用者只要按空格鍵就 dispelled 鎖定畫面），而 Windows Hello 隨附裝置應用程式必須負責建立這方面的體驗（例如，當使用者按下空格鍵並解開解除鎖定畫面時，開始透過 USB 尋找裝置）。
 
 Windows Hello 隨附裝置架構將提供一組 (當地語系化的) 文字和錯誤訊息，以供 Windows Hello 隨附裝置 app 選擇。 這些將會顯示在鎖定畫面上方 (或在登入 UI 中)。 如需詳細資訊，請參閱＜訊息和錯誤＞一節。
 
@@ -178,10 +178,10 @@ Windows Hello 隨附裝置架構不支援從遠端移除特定 Windows 10 Deskto
 
 隨附裝置廠商可以實作可用於下列案例的 Web 服務︰
 
-- 適用於企業篩選服務：企業可以限制一組 Windows Hello 小幫手裝置能在其環境中進行選取一些特定的廠商。 例如，Contoso 公司可向廠商 X 訂購 10,000 個型號 Y 的隨附裝置，並確定只有這些裝置能在 Contoso 網域中運作 (由廠商 X 提供的所有其他裝置型號都不行)。
-- 清查：企業可以判斷在企業環境中使用的現有同系列裝置的清單。
-- 即時撤銷：如果某位員工報告，他的隨附裝置遺失或遭竊時，web 服務可用來撤銷該裝置。
-- 漫遊：使用者只有一次註冊他隨附的裝置，而且可在他的 Windows 10 桌上型電腦和行動。
+- 適用于企業的篩選服務：企業可以將可在其環境中工作的 Windows Hello 附屬裝置集合，限制為特定廠商的少數選擇。 例如，Contoso 公司可向廠商 X 訂購 10,000 個型號 Y 的隨附裝置，並確定只有這些裝置能在 Contoso 網域中運作 (由廠商 X 提供的所有其他裝置型號都不行)。
+- 進程企業可以決定企業環境中所使用的現有配套裝置清單。
+- 即時撤銷：如果員工回報其配套的裝置遺失或遭竊，則可以使用 web 服務來撤銷該裝置。
+- 可移動使用者只需註冊其配套的裝置一次，即可在他所有的 Windows 10 桌上型電腦和行動裝置上運作。
 
 實作這些功能會要求 Windows Hello 隨附裝置 app 在註冊和使用期間與 Web 服務聯繫。 Windows Hello 隨附裝置 app 可以針對快取登入案例最佳化，例如，一天只需要求與 Web 服務聯繫一次 (代價是最多可將撤銷時間延長為一天)。  
 
@@ -201,9 +201,9 @@ Windows Hello 隨附裝置 app 應該包含兩個元件︰具有 UI 的前景 ap
     * 確定 Windows Hello 隨附裝置 app 會儲存 HMAC 金鑰 (如果支援)，而且 Windows Hello 隨附裝置 app 會捨棄其複本
 2. 註冊您的背景工作
 3. 等待背景工作中產生正確的事件
-    * WaitingForUserConfirmation:等候這個事件，如果使用者動作/筆勢的 Windows Hello 小幫手裝置端上，才能開始驗證流程
-    * CollectingCredential:等候這個事件，如果 Windows Hello 小幫手裝置都需要使用者動作/筆勢開始驗證流程 （例如，藉由按下空格鍵） 在電腦端
-    * 其他觸發程序，例如智慧卡：請確定查詢目前的驗證狀態，來呼叫 Api 的權限。
+    * WaitingForUserConfirmation:如果需要 Windows Hello 隨附裝置端的使用者動作/手勢來啟動驗證流程，請等候此事件
+    * CollectingCredential:如果 Windows Hello 隨附裝置依賴電腦上的使用者動作/手勢來啟動驗證流程（例如，藉由按下空格鍵），請等候此事件
+    * 其他觸發程式，像是智慧卡：請務必查詢目前的驗證狀態以呼叫正確的 Api。
 4. 讓使用者藉由呼叫 ShowNotificationMessageAsync 來得知錯誤訊息或所需的下一個步驟。 只有在收集到意圖訊號之後才呼叫這個 API
 5. 解除鎖定
     * 確定已收集到意圖訊號和使用者存在訊號
@@ -216,7 +216,7 @@ Windows Hello 隨附裝置 app 應該包含兩個元件︰具有 UI 的前景 ap
 
 ### <a name="registration-and-de-registration"></a>註冊和取消註冊
 
-註冊會要求至同一系列文件驗證服務的兩個 API 呼叫：RequestStartRegisteringDeviceAsync 和 FinishRegisteringDeviceAsync。
+註冊需要對隨附驗證服務進行兩個 API 呼叫：RequestStartRegisteringDeviceAsync 和 FinishRegisteringDeviceAsync。
 
 進行這任一個呼叫之前，Windows Hello 隨附裝置 app 必須確定有可用的 Windows Hello 隨附裝置。 如果 Windows Hello 隨附裝置負責產生 HMAC 金鑰 (驗證和裝置金鑰)，則 Windows Hello 隨附裝置 app 應該也會要求隨附裝置先產生它們，然後才會呼叫任一個上述這兩個呼叫。 如果 Windows Hello 裝置隨附 app 負責產生 HMAC 金鑰，則它應該在呼叫上述兩個呼叫之前先執行此動作。
 
@@ -238,9 +238,9 @@ Windows Hello 隨附裝置 app 應該包含兩個元件︰具有 UI 的前景 ap
 
 第二個呼叫 (FinishRegisteringDeviceAsync) 會完成註冊。 在註冊程序期間，Windows Hello 隨附裝置 app 可以使用隨附驗證服務來儲存隨附裝置設定資料。 此資料的大小限制為 4K。 此資料在驗證期間可供 Windows Hello 隨附裝置 app 使用。 舉例來說，此資料可用來連線到 Windows Hello 隨附裝置 (例如 MAC 位址)，或者，如果 Windows Hello 隨附裝置沒有存放裝置且隨附裝置想要使用電腦做為存放裝置，則可使用設定資料。 請注意，儲存為設定資料一部分的所有敏感資料必須使用只有 Windows Hello 隨附裝置知道的金鑰來加密。 此外，假定設定資料是透過 Windows 服務來儲存，就能供使用者設定檔上的 Windows Hello 隨附裝置 app 使用。
 
-Windows Hello 隨附裝置 app 可以呼叫 AbortRegisteringDeviceAsync 來取消註冊，然後傳入錯誤碼。 隨附驗證服務會將錯誤記錄於遙測資料中。 這個呼叫的最佳範例就是當 Windows Hello 隨附裝置發生錯誤且無法完成註冊 (例如，它無法儲存 HMAC 金鑰或 BT 連線中斷) 時。
+Windows Hello 隨附裝置 app 可以呼叫 AbortRegisteringDeviceAsync 來取消註冊，然後傳入錯誤碼。 隨附驗證服務會將錯誤記錄於遙測資料中。 此呼叫的一個良好範例是，當 Windows Hello 隨附裝置發生問題，而且無法完成註冊時（例如，它無法儲存 HMAC 金鑰或 BT 連線已遺失）。
 
-Windows Hello 隨附裝置 app 必須為使用者提供選項，從其 Windows 10 Desktop 中取消註冊他們的 Windows Hello 隨附裝置 (例如，如果他們遺失了隨附裝置或購買了新版本)。 當使用者選取該選項時，則 Windows Hello 隨附裝置 app 必須呼叫 UnregisterDeviceAsync。 這個由 Windows Hello 隨附裝置 app 所做的呼叫將會觸發隨附裝置驗證服務，來刪除對應到電腦端上的特定裝置識別碼及呼叫者 app 的 AppId 的所有資料 (包括 HMAC 金鑰)。 此 API 呼叫不會嘗試從 Windows Hello 隨附裝置 app 或隨附裝置端刪除 HMAC 金鑰。 其會保留來讓 Windows Hello 隨附裝置 app 能夠進行實作。
+Windows Hello 隨附裝置應用程式必須提供選項，讓使用者從其 Windows 10 桌上型電腦（例如，如果他們遺失其隨附的裝置或購買較新的版本），將其 Windows Hello 隨附裝置取消註冊。 當使用者選取該選項時，則 Windows Hello 隨附裝置 app 必須呼叫 UnregisterDeviceAsync。 這個由 Windows Hello 隨附裝置 app 所做的呼叫將會觸發隨附裝置驗證服務，來刪除對應到電腦端上的特定裝置識別碼及呼叫者 app 的 AppId 的所有資料 (包括 HMAC 金鑰)。 此 API 呼叫不會嘗試從 Windows Hello 隨附裝置 app 或隨附裝置端刪除 HMAC 金鑰。 其會保留來讓 Windows Hello 隨附裝置 app 能夠進行實作。
 
 Windows Hello 隨附裝置 app 會負責顯示在註冊和取消註冊階段所產生的任何錯誤訊息。
 
@@ -348,7 +348,7 @@ namespace SecondaryAuthFactorSample
 
 ### <a name="authentication"></a>驗證
 
-驗證所需隨附驗證服務的兩個 API 呼叫：StartAuthenticationAsync 和 FinishAuthencationAsync。
+驗證需要對隨附驗證服務進行兩個 API 呼叫：StartAuthenticationAsync 和 FinishAuthencationAsync。
 
 第一個初始化 API 將會傳回第二個 API 所使用的控制代碼。  除此之外，第一個呼叫還會傳回一個 nonce (會立即串聯其他項目)，其需要使用儲存於 Windows Hello 隨附裝置上的裝置金鑰來設定 HMAC。 第二個呼叫會使用裝置金鑰傳回 HMAC 的結果，而且可能會在成功驗證時結束 (也就是使用者將會看到他們的桌面)。
 
@@ -375,7 +375,7 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-這兩個 API 呼叫 (StartAuthenticationAsync 和 FinishAuthencationAsync) 的時機需要配合 Windows Hello 隨附裝置收集意圖、使用者存在及去除混淆訊號的方式 (如需詳細資訊，請參閱＜使用者訊號＞)。 例如，必須先取得意圖訊號，才能提交第二個呼叫。 換句話說，如果使用者未表達解除鎖電腦的意圖，就不應將它解除鎖定。 更明確地說，假設您使用藍牙鄰近性來解除鎖定電腦，則必須收集明確的意圖訊號，否則，一旦使用者帶著他的電腦前往廚房途中，該電腦將會解除鎖定。 此外，從第一個呼叫傳回的 nonce 也會與時間繫結 (20 秒)，將會在特定期間之後到期。 因此，只有在 Windows Hello 隨附裝置 app 具有隨附裝置存在的良好指示時，才應進行第一個呼叫，例如，將隨附裝置插入 USB 連接埠或在 NFC 讀取器上點選它。 使用藍牙時，請小心謹慎，以避免影響電腦端的電池，或影響其他將在檢查 Windows Hello 隨附裝置是否存在的時點上發生的藍牙活動。 此外，如果需要提供使用者存在訊號 (例如，藉由輸入 PIN)，建議您只有在收集到該訊號之後，才能進行第一個驗證呼叫。
+這兩個 API 呼叫 (StartAuthenticationAsync 和 FinishAuthencationAsync) 的時機需要配合 Windows Hello 隨附裝置收集意圖、使用者存在及去除混淆訊號的方式 (如需詳細資訊，請參閱＜使用者訊號＞)。 例如，必須先取得意圖訊號，才能提交第二個呼叫。 換句話說，如果使用者未表達解除鎖電腦的意圖，就不應將它解除鎖定。 更明確地說，假設您使用藍牙鄰近性來解除鎖定電腦，則必須收集明確的意圖訊號，否則，一旦使用者帶著他的電腦前往廚房途中，該電腦將會解除鎖定。 此外，從第一個呼叫傳回的 nonce 也會與時間繫結 (20 秒)，將會在特定期間之後到期。 因此，第一次呼叫時，應該只在 Windows Hello 隨附裝置應用程式有良好的裝置出席狀態指示時，例如，配套的裝置會插入 USB 埠，或在 NFC 讀取器上進行點擊。 使用藍牙時，請小心謹慎，以避免影響電腦端的電池，或影響其他將在檢查 Windows Hello 隨附裝置是否存在的時點上發生的藍牙活動。 此外，如果需要提供使用者目前狀態的信號（例如，藉由輸入 PIN），建議您只在收集該信號之後才進行第一次驗證呼叫。
 
 Windows Hello 隨附裝置架構可藉由提供使用者在驗證流程中的全貌，來協助 Windows Hello 隨附裝置 app 做出何時應進行上述兩個呼叫的通知決定。 Windows Hello 隨附裝置架構會藉由為 app 背景工作提供鎖定狀態變更通知來提供此功能。
 
@@ -385,8 +385,8 @@ Windows Hello 隨附裝置架構可藉由提供使用者在驗證流程中的全
 
 | State                         | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
-| WaitingForUserConfirmation    | 出現鎖定畫面時 (例如，使用者按下 Windows + L 鍵)，即會觸發此狀態變更通知事件。 由於很難找到處於此狀態的裝置，因此我們建議不要請求任何與之相關的錯誤訊息。 我們通常建議只在有意圖訊號可用時，才顯示訊息。 如果隨附裝置會收集意圖訊號 (例如，在 NFC 讀取器上點選、按隨附裝置上的按鈕，或像是拍手的特定手勢)，Windows Hello 隨附裝置 app 就應該進行第一個 API 呼叫以便在此狀態中進行驗證，而 Windows Hello 隨附裝置 app 背景工作會接收來自偵測到該意圖訊號之隨附裝置的指示。 否則，如果 Windows Hello 裝置隨附 app 依賴電腦來啟動驗證流程 (讓使用者向上撥動解除鎖定畫面，或者按空格鍵)，則 Windows Hello 隨附裝置 app 就需要等待下一個狀態 (CollectingCredential)。     |
-| CollectingCredential          | 當使用者開啟膝上型電腦的上蓋、按鍵盤上的任何按鍵，或者向上撥動至解除鎖定畫面時，即會觸發此狀態變更通知事件。 如果 Windows Hello 隨附裝置依賴上述動作以開始收集意圖訊號，則 Windows Hello 隨附裝置 app 應該會開始收集它 (例如，透過隨附裝置上的快顯視窗，詢問使用者是否想要解除鎖定電腦)。 如果 Windows Hello 隨附裝置 app 需要使用者在隨附裝置上提供使用者存在訊號 (例如，在 Windows Hello 隨附裝置上輸入 PIN)，則這是提供錯誤案例的好時機。                                                                                                                                                                                                                                                                                                                                            |
+| WaitingForUserConfirmation    | 當鎖定畫面關閉（例如，使用者按下 Windows + L）時，就會引發此狀態變更通知事件。 由於很難找到處於此狀態的裝置，因此我們建議不要請求任何與之相關的錯誤訊息。 我們通常建議只在有意圖訊號可用時，才顯示訊息。 如果隨附裝置收集意圖信號（例如，在 NFC 讀取器上按下按鈕，然後在隨附的裝置上按下按鈕或特定手勢，例如鼓掌，則 Windows Hello 隨附裝置應用程式應該會在此狀態中進行第一個 API 呼叫以進行驗證。），而 Windows Hello 隨附裝置應用程式背景工作會從隨附裝置接收意圖信號的指示。 否則，如果 Windows Hello 裝置隨附 app 依賴電腦來啟動驗證流程 (讓使用者向上撥動解除鎖定畫面，或者按空格鍵)，則 Windows Hello 隨附裝置 app 就需要等待下一個狀態 (CollectingCredential)。   |
+| CollectingCredential          | 當使用者開啟膝上型電腦的上蓋、按鍵盤上的任何按鍵，或者向上撥動至解除鎖定畫面時，即會觸發此狀態變更通知事件。 如果 Windows Hello 隨附裝置依賴上述動作來開始收集意圖信號，則 Windows Hello 隨附裝置應用程式應該會開始收集它（例如，透過隨附裝置上的快顯，詢問使用者是否要將電腦解除鎖定）. 如果 Windows Hello 隨附裝置 app 需要使用者在隨附裝置上提供使用者存在訊號 (例如，在 Windows Hello 隨附裝置上輸入 PIN)，則這是提供錯誤案例的好時機。                                                                                                                                                                                                                                                                                                                                             |
 | SuspendingAuthentication      | 當 Windows Hello 隨附裝置 app 收到這個狀態時，表示隨附驗證服務已停止接受驗證要求。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | CredentialCollected           | 這表示另一個 Windows Hello 隨附裝置 app 已經呼叫第二個 API，而隨附驗證服務正在驗證提交的項目。 此時，除非目前提交的項目未通過驗證，否則隨附驗證服務不會接受任何其他驗證要求。 在到達下一個狀態之前，Windows Hello 隨附裝置 app 應持續關注。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | CredentialAuthenticated       | 這表示提交的認證是有效的。 CredentialAuthenticated 具備已成功之 Windows Hello 隨附裝置的裝置識別碼。 Windows Hello 隨附裝置 app 應該確定會在其上進行檢查，以查看與其相關聯的裝置是否會勝出。 如果沒有，則 Windows Hello 隨附裝置 app 應該避免顯示任何後續驗證流程 (例如，隨附裝置上的成功訊息，也可能是該裝置上的震動) 請注意，如果提交的認證無法運作，則狀態將變更為 CollectingCredential 狀態。                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -642,7 +642,7 @@ Windows Hello 隨附裝置 app 可以使用 ShowNotificationMessageAsync，為�
 - 「正在尋找*裝置名稱*...」
 - 「將*裝置名稱*插入 USB 連接埠來登入。」
 
-**錯誤**
+**出錯**
 
 - 「請參閱*裝置名稱*，以取得登入指示。」
 - 「開啟藍牙以使用*裝置名稱*來登入。」

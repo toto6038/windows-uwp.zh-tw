@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 316682ba136b5b3249d26abd0a5c5a877abbcf12
-ms.sourcegitcommit: 76357092f90b70bdb21ee43a5a416fe1fbfd9b89
+ms.openlocfilehash: c99d05a701f41e24663d116773b000017b805d81
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72257935"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281800"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>整合已封裝的桌面應用程式與 Windows 10 和 UWP
 
@@ -247,7 +247,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |動詞 |在檔案總管操作功能表中出現的名稱。 此字串可使用 ```ms-resource``` 進行當地語系化。|
 |Id |指令動詞的唯一識別碼。 如果您的應用程式是 UWP 應用程式，這會傳遞至您的應用程式做為其啟用事件引數的一部分，讓它可以適當地處理使用者的選取專案。 如果您的應用程式是完全信任的封裝應用程式，它會改為接收參數（請參閱下一個專案符號）。 |
 |參數 |與指令動詞關聯的引數參數與值清單。 如果您的應用程式是完全信任的封裝應用程式，則在應用程式啟動時，這些參數會當做事件引數傳遞至應用程式。 您可以根據不同的啟用動詞來自訂應用程式的行為。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 如果您的應用程式是 UWP 應用程式，則無法傳遞參數。 應用程式會改為接收識別碼 (請參閱上一個項目符號)。|
-|Extended |指定是否僅在使用者以滑鼠右鍵按一下檔案顯示操作功能表前按住 **Shift** 鍵，才會顯示指令動詞。 此屬性為選擇性，若未列出則其預設值為 **False** (一律顯示動詞)。 您會針對每個動詞個別指定此行為 (不包括「開啟」，其一律設定為 **False**)。|
+|Extended |指定是否僅在使用者以滑鼠右鍵按一下檔案顯示操作功能表前按住 **Shift** 鍵，才會顯示指令動詞。 這個屬性是選擇性的，而且預設為**False**的值（例如，一律顯示動詞）（如果未列出）。 您會針對每個動詞個別指定此行為 (不包括「開啟」，其一律設定為 **False**)。|
 
 #### <a name="example"></a>範例
 

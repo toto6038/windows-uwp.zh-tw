@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, directx, package, 遊戲, 套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ea422982ce991de20e67649bc0925a60547cd8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6b095eb63fc6913bc435cbed74fffa018d80cabb
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368309"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281825"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>封裝您的通用 Windows 平台 (UWP) DirectX 遊戲
 
 大型通用 Windows 平台 (UWP) 遊戲很容易會膨脹成更大型的遊戲，尤其是支援多國語言，並具有特定區域資產或功能選用高解析度資產的遊戲。 在這個主題中，您將了解如何使用應用程式套件與應用程式套件組合來自訂 app，讓客戶只收到他們實際所需的資源。
 
-應用程式封裝模型，除了 Windows 10 也支援群組在一起的兩種類型的組件的應用程式套件組合：
+除了應用程式套件模型，Windows 10 也支援將兩種類型的套件組成群組的應用程式組合：
 
 -   app 套件包含平台專屬的可執行檔與程式庫。 一般來說，UWP 遊戲最多可擁有三個 app 套件，分別為適用於 x86、x64 與 ARM CPU 架構的套件。 該硬體平台專用的所有程式碼與資料都必須包含在其 app 套件中。 app 套件也應該包含遊戲的所有核心資產，才能擁有基本的逼真度與效能。
 -   資源套件包含選用或擴充的平台中立性資料，例如遊戲資產 (紋理、網格、聲音、文字)。 UWP 遊戲可擁有一或多個資源套件，包含的資源套件適用於高解析度資產或紋理、DirectX 功能層級 11 以上的資源，或特定語言的資產與資源。
@@ -43,29 +43,29 @@ ms.locfileid: "66368309"
 
 以上所有項目皆定義於屬於 UWP 專案的 package.appxmanifest 中，以及最終套件的目錄結構中。 因為有了新的 Visual Studio UI，如果您按照此文件中的程序操作，應不需要手動進行編輯。
 
-> **重要**  的載入和管理這些資源透過處理**Windows.ApplicationModel.Resources** \* Api。 如果您使用這些應用程式模型資源 API 載入地區設定、縮放係數或 DirectX 功能層級的正確檔案，則不需使用明確檔案路徑載入資產；只要將您要的資產一般化檔案名稱提供給資源 API，讓資源管理系統為使用者目前的平台與地區設定 (您也可使用這些相同的 API 來直接指定) 取得正確的資源變數。
+> **重要**   這些資源的載入和管理是透過**ApplicationModel**\* api 來處理。 如果您使用這些應用程式模型資源 API 載入地區設定、縮放係數或 DirectX 功能層級的正確檔案，則不需使用明確檔案路徑載入資產；只要將您要的資產一般化檔案名稱提供給資源 API，讓資源管理系統為使用者目前的平台與地區設定 (您也可使用這些相同的 API 來直接指定) 取得正確的資源變數。
 
  
 
 有兩個基本方法可指定資源封裝的資源：
 
--   資產檔案擁有相同的檔案名稱、且資源套件特定版本放置於特定的已命名目錄中。 這些目錄名稱由系統保留。 例如， \\en-我們\\縮放比例 140， \\dxfl 刪除 dx11。
--   資產檔案儲存在任意名稱的資料夾中，但是檔案以一般標籤命名，該標籤會附加系統為表示語言或其他限定詞而保留的字串。 具體來說，限定詞字串會附加至一般化的檔案名稱後底線 ("\_」)。 比方說，\\資產\\ 功能表\_option1\_lang-en-us.png\\資產\\功能表\_option1\_擴展-140.png\\資產\\coolsign\_dxfl 刪除 dx11.dds。 您也可以組合這些字串。 例如，\\資產\\ 功能表\_option1\_縮放比例 140\_lang-en-us.png。
-    > **附註**  語言辨識符號中使用時在檔案名稱而非單獨的目錄名稱，必須採用格式"lang-<tag>"，例如 「 語言-en-我們的 」 中所述[量身訂做您的資源的語言，小數位數和其他限定詞](../app-resources/tailor-resources-lang-scale-contrast.md)。
+-   資產檔案擁有相同的檔案名稱、且資源套件特定版本放置於特定的已命名目錄中。 這些目錄名稱由系統保留。 例如，\\en-us，\\scale-140，\\dxfl-dx11。
+-   資產檔案儲存在任意名稱的資料夾中，但是檔案以一般標籤命名，該標籤會附加系統為表示語言或其他限定詞而保留的字串。 具體而言，限定詞字串會附加至底線（"\_"）後面的一般化檔案名。 例如，\\assets @ no__t-1menu @ no__t-2option1\_lang-en-us.png，\\assets @ no__t-5menu @ no__t-6option1\_scale-140.png，\\assets @ no__t-9coolsign\\0dxfl-dx11.dds。 您也可以組合這些字串。 例如，\\assets @ no__t-1menu @ no__t-2option1 @ no__t-3scale-140\_lang-en-us.png。
+    > **請注意**，在檔案名中（而不是在目錄名稱中）使用時，  ，語言辨識符號的格式必須是 "lang-<tag>"，例如 "lang-en-us"，如[針對語言、規模和其他限定詞量身打造您的資源](../app-resources/tailor-resources-lang-scale-contrast.md)中所述。
 
      
 
-資源封裝期間可以結合多個目錄名稱使其更具特異性。 不過，名稱不得重複。 例如， \\en-我們\\ 功能表\_option1\_lang-en-us.png 是冗餘。
+資源封裝期間可以結合多個目錄名稱使其更具特異性。 不過，名稱不得重複。 例如，@no__t 0en-us @ no__t-1menu @ no__t-2option1\_lang-en-us.png 是多餘的。
 
-您可以在資源目錄下指定任何您需要的未保留子目錄名稱，只要每個資源目錄中的目錄結構都相同即可。 例如， \\dxfl 刪除 dx10\\資產\\紋理\\coolsign.dds。 當您載入或參考資產時，必須將路徑名稱一般化，針對語言、縮放或 DirectX 功能層級移除資料夾節點或檔案名稱中的所有限定詞。 例如，參考程式碼中的哪一個 variant 的資產就\\dxfl 刪除 dx10\\資產\\紋理\\coolsign.dds，使用\\資產\\紋理\\coolsign.dds。 同樣地，參考的變數資產\\映像\\背景\_擴展-140.png，使用\\映像\\background.png。
+您可以在資源目錄下指定任何您需要的未保留子目錄名稱，只要每個資源目錄中的目錄結構都相同即可。 例如，\\dxfl-dx10 @ no__t-1assets @ no__t-2textures\\coolsign.dds。 當您載入或參考資產時，必須將路徑名稱一般化，針對語言、縮放或 DirectX 功能層級移除資料夾節點或檔案名稱中的所有限定詞。 例如，若要將程式碼參考到其中一個變體為 @no__t 0dxfl-dx10 @ no__t-1assets @ no__t-2textures\\coolsign.dds 的資產，請使用 \\assets @ no__t-5textures\\coolsign.dds。 同樣地，若要參考具有 variant \\images @ no__t-1background\_scale-140.png 的資產，請使用 \\images\\background.png。
 
 以下是保留的目錄名稱與檔案名稱底線首碼：
 
 | 資產類型                   | 資源套件目錄名稱                                                                                                                  | 資源套件檔案名稱尾碼                                                                                                    |
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| 當地語系化的資產             | 所有可能的語言或語言和地區設定的組合，適用於 Windows 10。 (在資料夾名稱中，不需要使用限定詞前置詞 "lang-")。 | 「\_"後面接著的語言、 地區設定或語言地區設定的規範。 比方說，「\_en"，"\_我們"，或"\_en-我們"，分別。 |
-| 縮放尺寸資產        | scale-100、scale-140、scale-180。 以上分別是針對 1.0x、1.4x 與 1.8x UI 縮放尺寸。                                     | 「\_"後面接著"比例 100"、"縮放比例 140，"或"比例 180"。                                                                    |
-| DirectX 功能層級資產 | dxfl-dx9、dxfl-dx10 以及 dxfl-dx11。 以上分別是針對 DirectX 9、10 與 11 功能層級。                                     | 「\_"後面接著"dxfl 刪除 dx9"、"dxfl 刪除-dx10"或"dxfl 刪除 dx11"。                                                                     |
+| 當地語系化的資產             | 適用于 Windows 10 的所有可能語言，或語言和地區設定組合。 (在資料夾名稱中，不需要使用限定詞前置詞 "lang-")。 | "@No__t-0" 後面接著語言、地區設定或語言地區設定規范。 例如，分別是 "@no__t 0en"、"@no__t 1us" 或 "\_en-us"。 |
+| 縮放尺寸資產        | scale-100、scale-140、scale-180。 以上分別是針對 1.0x、1.4x 與 1.8x UI 縮放尺寸。                                     | "@No__t-0" 後面接著 "scale-100"、"scale-140" 或 "scale-180"。                                                                    |
+| DirectX 功能層級資產 | dxfl-dx9、dxfl-dx10 以及 dxfl-dx11。 以上分別是針對 DirectX 9、10 與 11 功能層級。                                     | "@No__t-0" 後面接著 "dxfl-dx9"、"dxfl-dx10" 或 "dxfl-dx11"。                                                                     |
 
  
 
@@ -78,39 +78,39 @@ ms.locfileid: "66368309"
 
 -   為您支援的每個語言與地區設定 (例如，en-us、jp-jp、zh-cn、fr-fr 等等) 建立應用程式子目錄 (或檔案版本)。
 -   在開發期間，將所有資產 (例如，當地語系化音訊檔案、紋理與功能表圖形) 的複本放置在對應的語言地區設定子目錄中，即使每種語言或地區設定都一樣。 為取得最佳的使用者體驗，請務必在使用者尚未取得其所屬地區設定的可用語言資源套件 (如果有語言資源套件，或他們在下載與安裝語言資源套件後意外將其刪除) 時，警示使用者。
--   請確定每個目錄中的每個資產或字串資源檔案 (.resw) 都擁有相同的名稱。 例如，功能表\_option1.png 應該具有相同的名稱，在這兩\\en-我們和\\jp jp 目錄即使檔案的內容是針對不同的語言。 在此情況下，您會看到它們作為\\en-我們\\ 功能表\_option1.png 並\\jp jp\\功能表\_option1.png。
-    > **附註**  您可以選擇性地附加至檔案名稱的地區設定，並將它們儲存在相同的目錄; 例如，\\資產\\功能表\_option1\_lang-en-us.png、 \\資產\\ 功能表\_option1\_lang-jp-jp.png。
+-   請確定每個目錄中的每個資產或字串資源檔案 (.resw) 都擁有相同的名稱。 例如，menu\_option1.png 在 \\en 和 \\jp-jp 目錄中應該具有相同的名稱，即使檔案的內容是針對不同的語言也一樣。 在此情況下，您會看到它們是 \\en-us @ no__t-1menu\_option1.png 和 \\jp-jp @ no__t-4menu\_option1.png。
+    > **請注意**   您可以選擇性地將地區設定附加至檔案名，並將其儲存在相同的目錄中;例如，\\assets @ no__t-3menu @ no__t-4option1\_lang-en-us.png，\\assets @ no__t-7menu @ no__t-8option1\_lang-jp-jp.png。
 
      
 
 -   使用 [**Windows.ApplicationModel.Resources**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources) 與 [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) 中的 API 為您的 app 指定並載入地區設定特定資源。 此外，請使用不包含特定地區設定的資產參考，因為這些 API 會根據使用者的設定判斷正確的地區設定，然後為使用者擷取正確的資源。
--   在 Microsoft Visual Studio 2015 中，選取 **專案-> 市集-> 建立應用程式封裝...** 和建立封裝。
+-   在 Microsoft Visual Studio 2015 中，選取 [**專案-> 存放區] > [建立應用程式套件 ...** ]，然後建立封裝。
 
 ## <a name="defining-scaling-factor-resource-packs"></a>定義縮放尺寸資源套件
 
 
-Windows 10 提供三種使用者介面縮放比例：1.0 x 1.4 x 和 1.8 x。 使用者可變更這些縮放係數，且會根據以下數個組合係數在安裝期間設定預設值：螢幕大小、螢幕解析度，以及使用者與螢幕的假設平均距離。 使用者也可以調整縮放係數以提升可讀性。 您的遊戲應該要同時具備 DPI 感知與縮放尺寸感知，以獲得最佳體驗。 這類感知功能代表您要為這 3 個縮放尺寸個別建立不同的重要視覺資產版本。 這也包含指標互動與點擊測試！
+Windows 10 提供三種使用者介面調整因素：1.0 x、1.4 x 和 1.8 x。 使用者可變更這些縮放係數，且會根據以下數個組合係數在安裝期間設定預設值：螢幕大小、螢幕解析度，以及使用者與螢幕的假設平均距離。 使用者也可以調整縮放係數以提升可讀性。 您的遊戲應該要同時具備 DPI 感知與縮放尺寸感知，以獲得最佳體驗。 這類感知功能代表您要為這 3 個縮放尺寸個別建立不同的重要視覺資產版本。 這也包含指標互動與點擊測試！
 
 在設定您的 app 以支援不同 UWP app 縮放係數的資源套件時，您應該：
 
 -   為您將支援的每個縮放係數 (scale-100、scale-140 與 scale-180) 建立 app 子目錄 (或檔案版本)。
 -   在開發期間，將所有資產的適當縮放尺寸複本放置在每個縮放尺寸資源目錄中，即使它們還沒有縮放尺寸的分別也一樣。
--   請確定每個目錄中的每個資產都擁有相同的名稱。 例如，功能表\_option1.png 應該具有相同的名稱，在這兩\\擴展-100 和\\即使檔案的內容是以不同的縮放比例 180 目錄。 在此情況下，您會看到它們作為\\擴展-100\\ 功能表\_option1.png 並\\縮放比例 140\\功能表\_option1.png。
-    > **附註**  同樣地，您可以選擇性地將縮放因數後置字元附加至檔案名稱並將它們儲存在相同的目錄; 例如，\\資產\\功能表\_option1\_規模-100.png\\資產\\ 功能表\_option1\_擴展 140.png。
+-   請確定每個目錄中的每個資產都擁有相同的名稱。 例如，menu\_option1.png 在 \\scale-100 和 \\scale-180 目錄中應該具有相同的名稱，即使檔案的內容不同也一樣。 在此情況下，您會看到它們是 \\scale-100 @ no__t-1menu\_option1.png 和 \\scale-140 @ no__t-4menu\_option1.png。
+    > **請注意**，再次   ，您可以選擇性地將縮放比例尾碼附加至檔案名，並將它們儲存在相同的目錄中;例如，\\assets @ no__t-3menu @ no__t-4option1\_scale-100.png，\\assets @ no__t-7menu @ no__t-8option1\_scale-140.png。
 
      
 
 -   使用 [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) 中的 API 載入資產。 系統應該將資產參考一般化 (無尾碼)，省去特定的縮放變化。 系統將會針對顯示器和使用者的設定，擷取適當的縮放資產。
--   在 Visual Studio 2015 中，選取 **專案-> 市集-> 建立應用程式封裝...** 和建立封裝。
+-   在 Visual Studio 2015 中，選取 [**專案-> 存放區] > [建立應用程式套件 ...** ]，然後建立封裝。
 
 ## <a name="defining-directx-feature-level-resource-packs"></a>定義 DirectX 功能層級資源套件
 
 
 DirectX 功能層級對應到針對前版與目前 DirectX 版本 (特別是，Direct3D) 設定的 GPU 功能。 這包含著色器模型規格與功能、著色器語言支援、紋理壓縮支援，以及整體的圖形管線功能。
 
-基準的應用程式組件應該使用的基準紋理壓縮的格式：BC1、 BC2 或 BC3。 任何 UWP 裝置，從低階的 ARM 平台到專用的多重 GPU 工作站與媒體電腦，都能使用這些格式。
+您的基準應用程式套件應使用基準材質壓縮格式：BC1、BC2 或 BC3。 任何 UWP 裝置，從低階的 ARM 平台到專用的多重 GPU 工作站與媒體電腦，都能使用這些格式。
 
-DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源套件中，以節省本機磁碟空間與下載頻寬。 這樣就能為 11 使用更進階的壓縮配置，如 BC6H 與 BC7 (如需詳細資訊，請參閱 < [Direct3D 11 中的紋理區塊壓縮](https://docs.microsoft.com/windows/desktop/direct3d11/texture-block-compression-in-direct3d-11)。)這些格式會更有效率的現代 Gpu，支援高解析度的紋理資產並使用這些改善外觀、 效能和高階的平台上遊戲的空間需求。
+DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源套件中，以節省本機磁碟空間與下載頻寬。 這樣就能為 11 使用更進階的壓縮配置，如 BC6H 與 BC7 （如需詳細資訊，請參閱[Direct3D 11 中的材質區塊壓縮](https://docs.microsoft.com/windows/desktop/direct3d11/texture-block-compression-in-direct3d-11)）。這些格式對於新式 Gpu 支援的高解析度材質資產更有效率，而且使用它們可改善您的遊戲在高階平臺上的外觀、效能和空間需求。
 
 | DirectX 功能層級 | 支援的紋理壓縮 |
 |-----------------------|-------------------------------|
@@ -122,14 +122,14 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
 
 此外，每個 DirectX 功能層級支援不同的著色器模型版本。 編譯的著色器資源可以每個功能層級為基礎加以建立，且可包含在 DirectX 功能層級資源套件中。 此外，某些較新版本的著色器模型可使用舊版著色器模型無法使用的資產 (如一般貼圖)。 這些著色器模型特定資產也應該包含在 DirectX 功能層級資源套件中。
 
-資源機制主要著重在支援的資產紋理格式上，因此它只支援 3 個整體功能層級。 如果您需要有個別的著色器的子層級 （點版本），例如 DX9\_1 vs DX9\_3，您的資產管理和轉譯程式碼必須加以明確處理。
+資源機制主要著重在支援的資產紋理格式上，因此它只支援 3 個整體功能層級。 如果您需要子層級（點版本）的個別著色器（例如 DX9 @ no__t-01 vs DX9 @ no__t-13），您的資產管理和呈現程式碼必須明確地處理。
 
 在設定您的 app 以支援不同 DirectX 功能層級的資源套件時，您應該：
 
 -   為您將支援的每個 DirectX 功能層級 (dxfl-dx9、dxfl-dx10 與 dxfl-dx11) 建立應用程式子目錄 (或檔案版本)。
--   在開發期間，將功能層級特定資產放置於每個功能層級資源目錄。 與地區設定和縮放尺寸不同，您可能在遊戲的每個功能層級中擁有不同的轉譯程式碼分支，如果您的紋理、編譯的著色器或其他資產只用於其中一個支援的功能層級，或功能層級子集中，請將對應的資產只放置在會用到它們的功能層級目錄中。 針對所有功能層級皆會載入的資產，請確定每個功能層級資源目錄都有所屬版本，且名稱相同。 比方說，功能層級獨立紋理名為"coolsign.dds 」，將 BC3 壓縮版本中的\\dxfl 刪除 dx9 目錄和 BC7 壓縮版本中的\\dxfl 刪除 dx11 的目錄。
--   確定每個資產 (如果可供多個功能層級使用) 在每個目錄中的名稱都相同。 例如，coolsign.dds 應該有相同的名稱在這兩\\dxfl 刪除 dx9 和\\dxfl 刪除 dx11 即使檔案的內容是以不同的目錄。 在此情況下，您會看到它們作為\\dxfl 刪除 dx9\\coolsign.dds 並\\dxfl 刪除 dx11\\coolsign.dds。
-    > **附註**  同樣地，您可以選擇性地功能層級後置字元附加至檔案名稱並將它們儲存在相同的目錄; 例如，\\紋理\\coolsign\_dxfl 刪除-dx9.dds \\紋理\\coolsign\_dxfl 刪除 dx11.dds。
+-   在開發期間，將功能層級特定資產放置於每個功能層級資源目錄。 與地區設定和縮放尺寸不同，您可能在遊戲的每個功能層級中擁有不同的轉譯程式碼分支，如果您的紋理、編譯的著色器或其他資產只用於其中一個支援的功能層級，或功能層級子集中，請將對應的資產只放置在會用到它們的功能層級目錄中。 針對所有功能層級皆會載入的資產，請確定每個功能層級資源目錄都有所屬版本，且名稱相同。 例如，針對名為 "coolsign" 的功能層級獨立材質，請將 BC3 壓縮版本放在 \\dxfl-dx9 目錄中，並將 BC7 壓縮版本放在 \\dxfl-dx11 目錄中。
+-   確定每個資產 (如果可供多個功能層級使用) 在每個目錄中的名稱都相同。 例如，即使檔案內容不同，在 \\dxfl-dx9 @no__t 和 1dxfl-dx11 目錄中，coolsign 應該具有相同的名稱。 在此情況下，您會看到它們是 \\dxfl-dx9\\coolsign.dds 和 \\dxfl-dx11\\coolsign.dds。
+    > **請注意**，再次   ，您可以選擇性地將功能層級尾碼附加至檔案名，並將其儲存在相同的目錄中;例如，\\textures @ no__t-3coolsign\_dxfl-dx9.dds，\\textures @ no__t-6coolsign\_dxfl-dx11.dds。
 
      
 
@@ -187,7 +187,7 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
         ResourceContext::SetGlobalQualifierValue(L"DXFeatureLevel", dxFeatureLevel);
     ```
 
-    > **附註**  在您的程式碼中載入 直接依名稱 （或功能層級目錄的路徑） 的材質。 請勿包含功能層級目錄名稱或尾碼。 比方說，載入"紋理\\coolsign.dds"，而非"dxfl 刪除 dx11\\紋理\\coolsign.dds"或"紋理\\coolsign\_dxfl 刪除 dx11.dds"。
+    > **請注意**@no__t 1In 您的程式碼，請直接依名稱（或功能層級目錄下的路徑）載入材質。 請勿包含功能層級目錄名稱或尾碼。 例如，載入 "textures\\coolsign.dds"，而不是 "dxfl-dx11 @ no__t-1textures\\coolsign.dds" 或 "材質 @ no__t-3coolsign\_dxfl-dx11.dds"。
 
      
 
@@ -210,7 +210,7 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
     Platform::String^ resourceName = possibleResource->ValueAsString;
     ```
 
--   在 Visual Studio 2015 中，選取 **專案-> 市集-> 建立應用程式封裝...** 和建立封裝。
+-   在 Visual Studio 2015 中，選取 [**專案-> 存放區] > [建立應用程式套件 ...** ]，然後建立封裝。
 -   確定您在 package.appxmanifest 資訊清單設定中啟用應用程式組合套件。
 
 ## <a name="related-topics"></a>相關主題
@@ -218,7 +218,7 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
 
 * [定義應用程式資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10))
 * [封裝應用程式](https://docs.microsoft.com/windows/uwp/packaging/index)
-* [App packager (MakeAppx.exe)](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)
+* [應用程式封裝工具（Makeappx.exe .exe）](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)
 
  
 

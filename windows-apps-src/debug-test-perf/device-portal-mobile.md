@@ -4,14 +4,14 @@ title: 行動裝置的 Device Portal
 description: 了解 Windows Device Portal 如何讓您從遠端設定並管理行動裝置。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp，裝置入口網站
+keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 879f4b9fd8806565eedeabda95f0c24c5b7931d7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597223"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281887"
 ---
 # <a name="device-portal-for-mobile"></a>行動裝置的 Device Portal
 
@@ -31,17 +31,17 @@ ms.locfileid: "57597223"
 
 ![開發人員模式裝置探索設定](images/device-portal/mob-dev-mode-pairing.png)
 
-您可以選擇從連線至裝置入口網站的 3 種方式：USB、 本機主機，並透過區域網路 （包括 VPN 和網際網路共用功能）。
+您可以從三種連接到裝置入口網站的方式中選擇：USB、本機主機，以及透過區域網路（包括 VPN 和網際網路共用）。
 
-**連線至裝置入口網站**
+**連接至裝置入口網站**
 
 1. 在瀏覽器中，針對您使用的連接類型輸入位址 (如下所示)。
 
-    - USB: `http://127.0.0.1:10080`
+    - USB： `http://127.0.0.1:10080`
 
     當手機透過 USB 連線連接到電腦時，請使用這個位址。 這兩個裝置都必須具備 Windows 10 版本 1511或更新版本。
     
-    - Localhost: `http://127.0.0.1`
+    - Localhost： `http://127.0.0.1`
 
     使用這個位址來在手機上適用於 Windows 10 行動裝置版的 Microsoft Edge 中於本機檢視 Device Portal。
     
@@ -49,7 +49,7 @@ ms.locfileid: "57597223"
 
     使用這個位址來透過區域網路連線。
 
-    手機的 IP 位址會顯示於手機上的 Device Portal 設定中。 HTTPS 需要進行驗證和安全通訊。 主機名稱 (可在 [設定] > [系統] > [關於] 中編輯) 也可以用來在區域網路上存取裝置入口網站 (例如 http://Phone360))。這對於經常會變更網路或 IP 位址，或是需要與他人共用的裝置來說相當有用。 
+    手機的 IP 位址會顯示於手機上的 Device Portal 設定中。 HTTPS 需要進行驗證和安全通訊。 主機名稱（在系統 > 的設定 > 中可編輯）也可以用來存取區域網路上的裝置入口網站（例如， http://Phone360) ，這對於可能經常變更網路或 IP 位址或需要共用的裝置很有用。 
 
 2. 按下手機上的 [配對] 按鈕，來產生並顯示所需的安全性驗證碼
 
@@ -81,7 +81,7 @@ ms.locfileid: "57597223"
 - 裝置
 - 網路功能
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
-* [Windows Device Portal 概觀](device-portal.md)
-* [裝置入口網站 core API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Windows 裝置入口網站總覽](device-portal.md)
+* [裝置入口網站核心 API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

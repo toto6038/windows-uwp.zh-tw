@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 約會, 行事曆
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4eeaf486738996ce5a860f567fc18a7d41cca2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5fd4fc62a393e6439458ddc38f37bbb0680fb9b1
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361246"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282231"
 ---
 # <a name="manage-appointments"></a>管理約會
 
@@ -156,7 +156,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
         }
         else
         {
-            // Organizer Address (e.g. Email Address)
+            // Organizer Address (for example, Email Address)
             organizer.Address = OrganizerAddressTextBox.Text;
 
             if (organizer.Address.Length > 321)
@@ -192,7 +192,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
         }
         else
         {
-            // Invitee Address (e.g. Email Address)
+            // Invitee Address (for example, Email Address)
             invitee.Address = InviteeAddressTextBox.Text;
 
             if (invitee.Address.Length > 321)
@@ -282,7 +282,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**附註**  適用於 Windows Phone 市集應用程式[ **ShowAddAppointment** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)運作方式就像是[ **ShowEditNewAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) ，是可編輯的對話方塊中顯示加入約會。
+**請注意**  For Windows Phone 儲存應用程式， [**ShowAddAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)功能就像[**ShowEditNewAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)一樣，因為新增約會所顯示的對話方塊是可編輯的。
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>在使用者的行事曆替換約會
 
@@ -390,7 +390,7 @@ private async void Remove-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-a-time-span-for-the-appointments-provider"></a>顯示約會提供者的時間範圍
 
-如果使用者按一下 [顯示]  ，會呼叫 [**AppointmentManager.ShowTimeFrameAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) 方法以顯示預設約會提供者主要 UI 的特定時間範圍。 此範例會顯示預設約會提供者顯示在畫面上。
+如果使用者按一下 [顯示]，會呼叫 [**AppointmentManager.ShowTimeFrameAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) 方法以顯示預設約會提供者主要 UI 的特定時間範圍。 此範例會顯示預設約會提供者顯示在畫面上。
 
 ```cs
 private async void Show-Click(object sender, RoutedEventArgs e)
@@ -507,7 +507,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## <a name="add-a-new-editable-appointment"></a>新增可編輯的約會
 
-[**ShowEditNewAppointmentAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)運作方式就像[ **ShowAddAppointmentAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)不同之處在於，讓使用者可以修改，加入約會對話方塊是可編輯約會的資料，然後才將它儲存。
+[**ShowEditNewAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)的運作方式就像[**ShowAddAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) ，不同之處在于新增約會的對話方塊是可編輯的，讓使用者可以在儲存之前修改約會資料。
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -542,7 +542,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-appointment-details"></a>顯示約會詳細資料
 
-[**ShowAppointmentDetailsAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync)會導致系統顯示指定的約會的詳細資料。 您可以選擇啟用實作應用程式行事曆的應用程式，在行事曆中顯示它所擁有的約會詳細資料。 否則，系統將會顯示約會詳細資料。 有一個接受開始日期引數的方法多載，可顯示週期性約會的詳細資料。
+[**ShowAppointmentDetailsAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync)會使系統顯示指定之約會的詳細資料。 您可以選擇啟用實作應用程式行事曆的應用程式，在行事曆中顯示它所擁有的約會詳細資料。 否則，系統將會顯示約會詳細資料。 有一個接受開始日期引數的方法多載，可顯示週期性約會的詳細資料。
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)

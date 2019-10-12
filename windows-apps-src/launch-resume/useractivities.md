@@ -5,12 +5,12 @@ keywords: user activity, user activities, timeline, cortana pick up where you le
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ed268dd4ba07604db468ee24e5ea348acf806b39
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7ddceda3457ef5251cb2b1e384dbb880725103fa
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321805"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282316"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>繼續使用者活動，甚至是在各個裝置之間
 
@@ -32,14 +32,14 @@ ms.locfileid: "67321805"
 
 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity) 是使用者參與 Windows 的單位。 它有三個部分，分別是：用於啟用活動所屬應用程式的 URI、視覺效果，以及描述活動的中繼資料。
 
-1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用於以特定的內容繼續應用程式。 一般而言，此連結所採用的格式為配置的通訊協定處理常式 (例如「my-app://page2?action=edit」) 或 AppUriHandler (例如 http://constoso.com/page2?action=edit) 。
+1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用於以特定的內容繼續應用程式。 一般而言，此連結會採用配置的通訊協定處理常式（例如，「我的應用程式：//page2？ action = edit」）或 AppUriHandler （例如， http://constoso.com/page2?action=edit) 。
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) 會公開一個類別，讓使用者能夠依照標題、描述或調適型卡片元素目測識別活動。
 3. 最後，[Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) 是您可以儲存活動中繼資料的位置，可用於群組與擷取特定內容下的活動。 通常，會採用 [https://schema.org](https://schema.org) 資料的格式。
 
 若要將 **UserActivity** 新增至應用程式：
 
 1. 當您使用者的內容在應用程式內變更 (例如網頁瀏覽、新遊戲關卡等) 時，會產生 **UserActivity** 物件
-2. 填入**UserActivity**具有必要欄位的最小集合的物件：[ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId)， [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri)，以及[UserActivity.VisualElements.DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText)。
+2. 以必要欄位的最小集合填入**UserActivity**物件：[ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId)、 [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri)和[UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText)。
 3. 將自訂配置處理常式新增至您的應用程式，讓它可由 **UserActivity** 重新啟用。
 
 只要幾行程式碼，就能將 **UserActivity** 整合至應用程式。 例如，想像一下 MainPage 類別內部 MainPage.xaml.cs 中的這個程式碼 (注意：假設 `using Windows.ApplicationModel.UserActivities;`)：
@@ -77,7 +77,7 @@ private async Task GenerateActivityAsync()
 
 因此在此狀況下， `ActivationUri` 是自訂配置，我們也必須在應用程式資訊清單中登錄通訊協定。 這會在 Package.appmanifest XML 檔案中完成，或使用設計工具完成。
 
-若要使用設計工具進行變更，請按兩下專案中的 Package.appmanifest 檔案啟動設計工具，選取 \[宣告\]  索引標籤，然後新增 \[通訊協定\]  定義。 目前唯一需要填寫的屬性為 \[名稱\]  。 它應該符合我們上述指定的 URI，`my-app`。
+若要使用設計工具進行變更，請按兩下專案中的 Package.appmanifest 檔案啟動設計工具，選取 \[宣告\] 索引標籤，然後新增 \[通訊協定\] 定義。 目前唯一需要填寫的屬性為 \[名稱\]。 它應該符合我們上述指定的 URI，`my-app`。
 
 現在我們需要撰寫一些程式碼告訴應用程式在由通訊協定啟用後該執行的動作。 我們將覆寫 App.xaml.cs 中的 `OnActivated` 方法，將 URI 傳遞至主要網頁，如下所示：
 
@@ -99,7 +99,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-此程式碼的功能就是偵測是否是透過通訊協定啟用應用程式。 如果是，它會進一步瞭解應用程式應執行什麼動作，以繼續進行系統啟用此程式碼所針對的工作。 簡單的應用程式，只有此應用程式繼續執行的活動會讓您在第二個頁面上應用程式出現時。
+此程式碼的功能就是偵測是否是透過通訊協定啟用應用程式。 如果是，它會進一步瞭解應用程式應執行什麼動作，以繼續進行系統啟用此程式碼所針對的工作。 這是一個簡單的應用程式，此應用程式繼續的唯一活動，是讓您在應用程式啟動時放在次要頁面上。
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>使用調適型卡片改善時間軸體驗
 
@@ -155,7 +155,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 ## <a name="summary"></a>總結
 
 您可以使用 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API 讓您的應用程式顯示在時間軸與 Cortana 中。
-* 深入了解[ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* 深入瞭解[ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 請查看[範例程式碼](https://github.com/Microsoft/project-rome)。
 * 請參閱[更複雜的調適型卡片](https://adaptivecards.io/)。
 * 透過 [Microsoft Graph](https://developer.microsoft.com/graph) 從 iOS、Android 或您的 Web 服務發佈 **UserActivity**。
@@ -167,9 +167,9 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用者活動 （Project Rome 文件）](https://docs.microsoft.com/windows/project-rome/user-activities/)
-* [自適性卡片](https://docs.microsoft.com/adaptive-cards/)
-* [自適性卡片視覺化檢視範例](https://adaptivecards.io/)
+* [使用者活動（專案羅馬檔）](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [調適型卡片](https://docs.microsoft.com/adaptive-cards/)
+* [調適型卡片視覺化檢視，範例](https://adaptivecards.io/)
 * [處理 URI 啟用](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-* [與您在任何平台上使用 Microsoft Graph、 活動摘要，以及自適性卡片上的客戶](https://channel9.msdn.com/Events/Connect/2017/B111)
+* [使用 Microsoft Graph、活動摘要和調適型卡片，在任何平臺上與您的客戶互動](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph)

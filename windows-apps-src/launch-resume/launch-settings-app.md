@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4f44772a9e8b34bf7f19a3b14dc8efd3d16c792f
-ms.sourcegitcommit: e5ed95f8252ddc7f39055d8f7276e82167bb9891
+ms.openlocfilehash: 7dd8604d9c9f32c374161ec1478221ebee6972c6
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973704"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282499"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
@@ -28,7 +28,7 @@ ms.locfileid: "70973704"
 
 ## <a name="how-to-launch-the-settings-app"></a>如何啟動設定 App
 
-若要啟動 [設定] App，請使用 `ms-settings:` URI 配置，如下列範例所示。
+若要啟動 **\[設定\]** App，請使用 `ms-settings:` URI 配置，如下列範例所示。
 
 在這個範例中，會使用「超連結 XAML」控制項與 `ms-settings:privacy-microphone` URI 來啟動麥克風的隱私權設定頁面。
 
@@ -151,7 +151,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |設定頁面| URI |
 |-------------|-----|
-| 其他 | ms-settings:extras (僅適用於「設定應用程式」已安裝時，例如透過第三方) |
+| 其他 | ms-設定：額外專案（僅適用于已安裝「設定應用程式」，例如由協力廠商提供） |
 
 ## <a name="gaming"></a>遊戲
 
