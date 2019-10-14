@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ab2ed7bea6a353ae30bb3c245e00c77365fb5af
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: b70a3f9f9fad2d81716c22ab2f383e72ea363341
+ms.sourcegitcommit: cbd900f350569a3901086a44b2d5007bb6fb7bed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339913"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72276300"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 語法指南
 
@@ -105,7 +105,7 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 
 唯讀屬性不能在 XAML 中設定。 甚至在程式碼中，擁有者類型也必須支援某些其他方式才能設定它，例如建構函式多載、Helper 方法或計算屬性支援。 計算屬性有賴於其他可設定屬性的值，有時再加上含有內建處理的事件；在相依性屬性系統中都有提供這些功能。 如需相依性屬性對計算屬性支援如何有用的詳細資訊，請參閱[相依性屬性概觀](dependency-properties-overview.md)。
 
-XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上並非如此。 請參閱本主題中稍後的＜使用集合語法設定屬性＞一節。
+XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上並非如此。 請參閱本主題稍後的「[集合語法](#collection-syntax)」。
 
 ### <a name="setting-a-property-by-using-attribute-syntax"></a>使用屬性語法設定屬性
 
