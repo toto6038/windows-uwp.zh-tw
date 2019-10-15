@@ -6,12 +6,12 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: 037963109fd6f70a60c17dc1b6c1b4eef82fb080
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: b4b887ad49cfdbdea89397105809db0fe6a5ab57
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821099"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282332"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>適用於開發人員的 Windows 10 (組建 14393) 的新功能
 
@@ -60,5 +60,5 @@ Xbox One 上的 UWP | 這個更新包含 Xbox One 上通用 Windows 平台 (UWP)
 WebSocket | 已針對 [**MessageWebSockets**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.messagewebsocket) 和 [**StreamWebSockets**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocket) 新增支援以檢視伺服器憑證、檢視由伺服器在 SSL 交涉期間所傳送的中繼憑證、執行自訂伺服器憑證驗證，以及指定要忽略哪些特定的伺服器憑證錯誤。
 Windows 資訊保護 (WIP) API | [**WIP**](https://docs.microsoft.com/windows/uwp/enterprise/wip-hub) 是桌上型電腦、膝上型電腦、平板電腦與手機上的一組行動裝置管理 (MDM) 功能。 WIP 能讓企業針對其資料在企業管理裝置上的處理方式取得更大的控制。 <br/><br/>您可以使用 WIP API 來建立能尊重資料原則，並同時使員工個人資料不受那些原則所影響的 App。 原則系統管理員將會信任並允許您的 App 使用他們組織的資料。 而員工則會很高興得知，就算他們從組織的行動裝置管理 (MDM) 取消註冊，或是完全離該組織，他們的個人資料也能在裝置上保持不變。
 Windows IoT 核心版 | Windows IoT 核心版現已完全支援 Raspberry Pi 3 及遠端顯示體驗，讓使用者可以從遠端檢視並控制在 IoT 核心版裝置上執行的 UWP 應用程式。
-使用隨附 (IoT) 裝置的 Windows 解除鎖定 | 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過[隨附裝置架構](https://docs.microsoft.com/windows/uwp/security/companion-device-unlock)，即使在 Windows Hello 無法使用時 (例如，如果 Windows 10 桌面缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Microsoft Passport 體驗。
+使用隨附 (IoT) 裝置的 Windows 解除鎖定 | 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過[隨附裝置架構](https://docs.microsoft.com/windows/uwp/security/companion-device-unlock)，即使在 Windows Hello 無法使用時 (例如，如果 Windows 10 桌面缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Microsoft Passport 體驗。
 Winsock | TCP 通訊端現已可以透過 [Winsock](https://tools.ietf.org/html/rfc7413) 進行設定，以透過設定 TCP_FASTOPEN 通訊端選項來使用 [RFC 7413](https://tools.ietf.org/html/rfc7413) TCP 快速開啟。

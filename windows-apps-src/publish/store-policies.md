@@ -7,12 +7,12 @@ ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 26c7a7a123d8892bf1c3584685db49f2d86c654a
-ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
+ms.openlocfilehash: ba99abd906bd84a91fae5da1505ac8845dd5b99c
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71705559"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282467"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 原則
 
@@ -257,7 +257,7 @@ ms.locfileid: "71705559"
 
 ### <a name="109-notifications"></a>10.9 通知
 
-產品必須遵守通知的系統設定，即使停用這些通知，產品仍可正常運作。 這包括客戶可以看到的廣告和通知，必須和客戶的喜好設定一致，無論這些通知是由 Microsoft 推播通知服務 (MPNS)、Windows 推播通知服務或任何其他服務提供。 如果客戶停用通知 (無論是特定產品還是整個系統的通知功能)，您的產品必須仍可繼續正常運作。
+產品必須遵守通知的系統設定，即使停用這些通知，產品仍可正常運作。 這包括客戶可以看到的廣告和通知，必須和客戶的喜好設定一致，無論這些通知是由 Microsoft 推播通知服務 (MPNS)、Windows 推播通知服務 (WNS) 或任何其他服務提供。 如果客戶停用通知 (無論是特定產品還是整個系統的通知功能)，您的產品必須仍可繼續正常運作。
 
 如果您的產品使用 MPNS 或 WNS 來傳輸通知，它必須符合下列需求：
 

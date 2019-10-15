@@ -72,17 +72,65 @@
       href: apps/whats-new/latest-doc-updates.md
 - name: 使用 Windows 裝置
   items:
+    - name: 概觀
+      href: dev-environment/index.yml
     - name: 使用 Python 進行開發
       items:
         - name: 概觀
           href: python/index.yml
         - name: 初學者入門
-          href: python/get-started/python-for-education.md
+          href: python/beginners.md
         - name: 開始使用 Web 開發
-          href: python/get-started/python-for-web.md
+          href: python/web-frameworks.md
         - name: 開始使用自動化
-          href: python/get-started/python-for-scripting.md
+          href: python/scripting.md
+        - name: 開始使用資料庫
+          href: python/databases.md
         - name: 常見問題集
           href: python/faqs.md
         - name: 資源
           href: python/resources.md
+    - name: 使用 Node.js 進行開發
+      items:
+        - name: 概觀
+          href: nodejs/index.yml
+        - name: 設定開發環境
+          href: nodejs/setup-on-wsl2.md
+        - name: 初學者入門
+          href: nodejs/beginners.md
+        - name: 開始使用 Web 架構
+          href: nodejs/web-frameworks.md
+        - name: 開始使用資料庫
+          href: nodejs/databases.md
+        - name: 開始使用容器
+          href: nodejs/containers.md
+    - name: Mac 到 Windows 指南
+      items:
+        - name: 變更開發環境
+          href: dev-environment/mac-to-windows.md
+        - name: 鍵盤快速鍵
+          href: 'dev-environment/mac-to-windows.md#keyboard-shortcuts'
+        - name: 軌跡板快速鍵
+          href: 'dev-environment/mac-to-windows.md#trackpad-shortcuts'
+        - name: 終端機和殼層
+          href: 'dev-environment/mac-to-windows.md#terminal-and-shell'
+        - name: 應用程式和公用程式
+          href: 'dev-environment/mac-to-windows.md#apps-and-utilities'
+    - name: 適用於 Linux 的 Windows 子系統
+      items:
+        - name: 關於 WSL
+          href: 'https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context'
+        - name: 關於 WSL 2
+          href: 'https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context'
+        - name: WSL 1 和 WSL 2 的比較
+          href: 'https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context'
+        - name: 使用者帳戶和存取權限
+          href: 'https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context'
+    - name: Windows 終端機
+      items:
+        - name: 概觀
+          href: 'https://github.com/microsoft/terminal#terminal--console-overview'
+        - name: 使用者指南
+          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md'
+        - name: 自訂設定
+          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md'

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc422f57cdc268ea517aff729a9c3e57c80acf69
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6ac962476ace10e08ef92ed4fff9fb9bf48f0006
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320616"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282265"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 摘要
 
@@ -199,7 +199,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-如同稍早的建議，[**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) 物件所代表的內容類型會隨著發佈摘要所採用的摘要標準 (RSS 或 Atom) 而異。 例如，Atom 摘要能夠提供 [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors) 的清單，但是 RSS 摘要則否。 不過，您可以使用 [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions) 屬性，存取和顯示兩個標準都不支援的摘要項目所包含的延伸元素 (例如，Dublin Core 延伸元素)，如下列範例程式碼所示範：
+如同稍早的建議，[**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) 物件所代表的內容類型會隨著發佈摘要所採用的摘要標準 (RSS 或 Atom) 而異。 例如，Atom 摘要能夠提供 [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors) 的清單，但是 RSS 摘要則否。 不過，您可以使用 [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions) 屬性，存取和顯示兩個標準都不支援的摘要項目所包含的延伸元素 (例如，Dublin Core 延伸元素)，如下列範例程式碼所示範。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

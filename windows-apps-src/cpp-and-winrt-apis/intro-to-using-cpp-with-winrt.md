@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b6fd3f3085449c57dafdcedc60f63997e3ec807
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 1a9bb432ce7c856a6c54305f657f06a23dab14f1
+ms.sourcegitcommit: 805420bb7ec6850ec3576b21193a3681054c9754
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393444"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71976328"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 簡介
 &nbsp;

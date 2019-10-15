@@ -5,12 +5,12 @@ keywords: 託管的 Web 應用程式, HWA, REST API, 單頁應用程式, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b1b837d6585507311dc2246d42f3094ce8b07421
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3f5195cc3ed84116797c0b424a637c255b082386
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321170"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281860"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 
