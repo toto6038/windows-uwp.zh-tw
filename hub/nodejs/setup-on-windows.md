@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node.js、windows 10、原生 windows，直接在 windows 上
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: eaeee6e2d55bcb9221d88bd87ebeafc7c45d0a5d
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 18a8d07f790c391a6e10577ff512347106e1cf21
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315082"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517826"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>直接在 Windows 上設定 node.js 開發環境
 
@@ -70,30 +70,19 @@ ms.locfileid: "72315082"
 
 ## <a name="install-your-favorite-code-editor"></a>安裝您慣用的程式碼編輯器
 
-我們建議您[安裝 VS Code](https://code.visualstudio.com)和[Node.js 延伸模組套件](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)，以便在 Windows 上使用 node.js 進行開發。
-
-Node.js 延伸模組套件包含：
-
-- 不起毛-用來「linting」程式碼的工具。 Linting 會分析您的程式碼，並警告您可能發生的錯誤。
-- npm-從命令選擇區執行 npm 腳本，並驗證在 package. json 中定義的已安裝模組。
-- JavaScript （ES6）程式碼片段-在 ES6 語法中新增 JavaScript 開發的程式碼片段。
-- 搜尋 node_modules-在您的專案中快速搜尋節點模組。
-- NPM IntelliSense-在程式碼中新增 NPM 模組的 IntelliSense。
-- 路徑 IntelliSense-自動完成程式碼中的檔案名。
-
-全部安裝或挑選，然後選擇對您而言最有用的專案。
+我們建議您[安裝 VS Code](https://code.visualstudio.com)和[Node.js 延伸模組套件](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)，以便在 Windows 上使用 node.js 進行開發。 全部安裝或挑選，然後選擇對您而言最有用的專案。
 
 若要安裝 node.js 延伸模組套件：
 
 1. 開啟 VS Code 中的 [**擴充**功能] 視窗（Ctrl + Shift + X）。
-2. 在 [擴充功能] 視窗頂端的 [搜尋] 方塊中，輸入：「節點延伸模組套件」（或您要尋找之任何副檔名的名稱）。
+2. 在 [延伸模組] 視窗頂端的 [搜尋] 方塊中，輸入：「節點延伸模組套件」（或您要尋找的任何延伸模組名稱）。
 3. 選取 [**安裝**]。 安裝之後，您的擴充功能就會出現在 [**延伸**模組] 視窗的 [已啟用] 資料夾中。 您可以藉由選取新擴充功能的描述旁的齒輪圖示，來停用、卸載或設定設定。
 
 您可能想要考慮的幾個額外擴充功能包括：
 
-- [適用于 Chrome 的偵錯工具](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code)：當您使用 node.js 在伺服器端上完成開發作業之後，您必須開發並測試用戶端。 此延伸模組整合了您的 VS Code 編輯器與 Chrome 瀏覽器的偵錯工具服務，讓專案更有效率。
-- [從其他編輯器 Keymaps](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果您是從另一個文字編輯器（例如 Atom、Sublime、Vim、eMacs、Notepad + + 等）進行轉換，這些擴充功能可以協助您的環境直接在家裡。
-- [設定同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)：可讓您使用 GitHub 在不同安裝之間同步處理您的 VS Code 設定。 如果您在不同的電腦上工作，這有助於讓您的環境在其上保持一致。
+- [適用于 Chrome 的偵錯工具](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code)：當您使用 node.js 完成伺服器端的開發作業之後，您必須開發並測試用戶端。 此延伸模組整合了您的 VS Code 編輯器與 Chrome 瀏覽器的偵錯工具服務，讓專案更有效率。
+- [從其他編輯器 Keymaps](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果您要從另一個文字編輯器（例如 Atom、Sublime、Vim、EMacs、Notepad + + 等）進行轉換，這些延伸模組可協助您的環境直接在家裡。
+- [設定同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)：可讓您使用 GitHub 跨不同安裝同步處理您的 VS Code 設定。 如果您在不同的電腦上工作，這有助於讓您的環境在其上保持一致。
 
 ## <a name="install-git-optional"></a>安裝 Git （選擇性）
 

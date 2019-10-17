@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS，node.js，windows 10，microsoft，學習 NodeJS，windows 上的節點，wsl 上的節點，在 windows 上安裝節點，使用 vs code 的 NodeJS，在 windows 上以節點進行開發，在 windows 上使用 NodeJS 進行開發，在 windows 上的 wsl 上安裝節點適用于 Linux 的子系統
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: a3c1cd980884dc50107c05207665d0c1ef88938e
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: a8ce1d08136a74504e1b3bad26feadd61b72068f
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314952"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517785"
 ---
 # <a name="get-started-with-nodejs-web-frameworks-on-windows"></a>在 Windows 上開始使用 node.js web 架構
 
@@ -29,7 +29,7 @@ ms.locfileid: "72314952"
 - 請確定您的 Ubuntu 18.04 散發套件在 WSL 2 模式下執行。 （WSL 可以在 v1 或 v2 模式中執行散發）。您可以開啟 PowerShell 並輸入： `wsl -l -v` 來檢查此項
 - 使用 PowerShell，將 Ubuntu 18.04 設定為預設散發，並使用： `wsl -s ubuntu 18.04`
 
-## <a name="get-started-with-nextjs"></a>開始使用下一個 .js
+## <a name="get-started-with-nextjs"></a>開始使用 Node.js
 
 接下來的 .js 是一種架構，可根據回應 .js、node.js、Webpack 和 Babel 來建立伺服器呈現的 JavaScript 應用程式。 基本上，它是一種專案的重複使用方法，它會特別注意最佳做法，讓您以簡單且一致的方式建立「通用」 web 應用程式，幾乎不會有任何設定。 這些「通用」伺服器呈現的 web 應用程式有時也稱為「isomorphic」，這表示程式碼會在用戶端和伺服器之間共用。
 
@@ -61,13 +61,13 @@ ms.locfileid: "72314952"
 
 8. 我們來看一下，接下來的 .js 如何處理錯誤。 移除 `</h1>` 結束記號，讓您的標題程式碼現在看起來像這樣： `<h1 className='title'>This is my new Next.js app!`。 儲存這項變更，請注意，您的瀏覽器中會顯示「無法編譯」錯誤，而在您的終端機中，讓您知道應該會有 `<h1>` 的結束記號。 取代 `</h1>` 結束記號、儲存，且頁面將會重載。
 
-您可以使用 VS Code 的偵錯工具搭配您的下一個 .js 應用程式，方法是選取 F5 鍵，或移至 **> Debug** （Ctrl + Shift + D），並在功能表列中查看 **> 偵錯主控台**（Ctrl + shift + Y）。 如果您在 [偵錯工具] 視窗中選取齒輪圖示，將會為您建立啟動設定（`launch.json`）檔案，以儲存偵錯工具的安裝詳細資料。 若要深入瞭解，請參閱[VS Code 的調試](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)。
+您可以使用 VS Code 的偵錯工具搭配您的下一個 .js 應用程式，方法是選取 F5 鍵，或移至 **> Debug** （Ctrl + Shift + D），並在功能表列中查看 **> 偵錯主控台**（Ctrl + shift + Y）。 如果您在 [偵錯工具] 視窗中選取齒輪圖示，將會為您建立啟動設定（`launch.json`）檔案，以儲存偵錯工具的安裝詳細資料。 若要深入瞭解，請參閱[VS Code 的調試](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。
 
 ![VS Code 的 [debug] 視窗和 [啟動]。 json 設定圖示](../images/vscode-debug-launch-configuration.png)
 
 若要深入瞭解下一個 .js，請參閱[下一個 .js](https://nextjs.org/docs)檔。
 
-## <a name="get-started-with-nuxtjs"></a>開始使用 Nuxt
+## <a name="get-started-with-nuxtjs"></a>開始使用 Nuxt.js
 
 Nuxt 是一種架構，可用於根據 Vue、node.js、Webpack 和 Babel 建立伺服器呈現的 JavaScript 應用程式。 它是由下一個 .js 所啟發。 基本上，它是 Vue 的專案樣板。 就像下一的 .js 一樣，它會特別注意最佳做法，並可讓您以簡單且一致的方式建立「通用」 web 應用程式，幾乎不會有任何設定。 這些「通用」伺服器呈現的 web 應用程式有時也稱為「isomorphic」，這表示程式碼會在用戶端和伺服器之間共用。
 
@@ -82,13 +82,13 @@ Nuxt 是一種架構，可用於根據 Vue、node.js、Webpack 和 Babel 建立�
 4. Nuxt 安裝程式現在會詢問您下列問題：
     - 專案名稱：我的 nuxtjs-應用程式
     - 專案描述：我的 Nuxt 應用程式的描述。
-    - 作者姓名：我使用我的 GitHub 別名。
-    - 選擇 [套件管理員]：Yarn 或**Npm** -我們在範例中使用 Npm。
+    - 作者名稱：我使用我的 GitHub 別名。
+    - 選擇套件管理員： Yarn 或**Npm** -我們會在範例中使用 Npm。
     - 選擇 UI 架構：無、Ant 設計 Vue、啟動程式 Vue 等等。 在此範例中，我們將選擇**Vuetify** ，但是 Vue 的社區建立了一個比較好的[摘要](https://vue-community.org/guide/ecosystem/ui-libraries.html#summary-tldr)，以協助您選擇最適合您的專案。
-    - 選擇自訂伺服器架構：None、AdonisJs、Express、Fastify 等等。 讓我們在此範例中選擇 [**無**]，但您可以在 Dev.to 網站上找到[2019-2020 server framework 的比較](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm)。
-    - 選擇 [Nuxt] 模組（使用空格鍵選取模組，或只在您不想要的情況中輸入）：Axios （用於簡化 HTTP 要求）或[PWA 支援](https://pwa.nuxtjs.org/)（用於新增服務背景工作、資訊清單 json 檔案等）。 讓我們不要新增此範例的模組。
-    - 選擇 [linting 工具]：**ESLint**、美化、不起毛的分段檔案。 讓我們選擇 [ **ESLint** ] （用來分析程式碼的工具，並警告您可能發生的錯誤）。
-    - 選擇測試架構：**None**、JEST、AVA。 讓我們選擇 [**無**]，因為我們不會在本快速入門中討論測試。
+    - 選擇自訂伺服器架構： None、AdonisJs、Express、Fastify 等。 讓我們在此範例中選擇 [**無**]，但您可以在 Dev.to 網站上找到[2019-2020 server framework 的比較](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm)。
+    - 選擇 Nuxt （使用空格鍵來選取模組，或只在您不想要的情況下輸入）： Axios （用於簡化 HTTP 要求）或[PWA 支援](https://pwa.nuxtjs.org/)（用於新增服務背景工作、資訊清單 json 檔案等）。 讓我們不要新增此範例的模組。
+    - 選擇 [linting 工具： **ESLint**]、[美化]、[不起毛的分段檔案]。 讓我們選擇 [ **ESLint** ] （用來分析程式碼的工具，並警告您可能發生的錯誤）。
+    - 選擇測試架構： **None**、JEST、AVA。 讓我們選擇 [**無**]，因為我們不會在本快速入門中討論測試。
     - 選擇轉譯模式：**通用（SSR）** 或單一頁面應用程式（SPA）。 我們在範例中選擇**通用（SSR）** ，但是[Nuxt](https://nuxtjs.org/guide#server-rendered-universal-ssr-)檔指出一些差異--SSR 需要執行的 node.js 伺服器，以伺服器呈現您的應用程式和 SPA 以進行靜態裝載。
     - 選擇 [開發工具： **jsconfig** ] （建議 VS Code，讓 Intellisense 程式碼完成運作）
 
@@ -112,13 +112,13 @@ Nuxt 是一種架構，可用於根據 Vue、node.js、Webpack 和 Babel 建立�
 
 8. 讓我們看看 Nuxt 如何處理錯誤。 移除 `</v-card-title>` 結束記號，讓您的標題程式碼現在看起來像這樣： `<v-card-title class="headline">This is my new Nuxt.js app!`。 儲存這項變更，並請注意，編譯錯誤會顯示在您的瀏覽器中，而在您的終端機中，讓您知道 `<v-card-title>` 的結束記號遺失，以及可在程式碼中找到錯誤的行號。 取代 `</v-card-title>` 結束記號、儲存，且頁面將會重載。
 
-您可以藉由選取 F5 鍵，或移至 **> Debug** （Ctrl + Shift + D）並在功能表列中查看 **> 偵錯主控台**（Ctrl + shift + Y）來使用 VS Code 的偵錯工具與您的 Nuxt。 如果您在 [偵錯工具] 視窗中選取齒輪圖示，將會為您建立啟動設定（`launch.json`）檔案，以儲存偵錯工具的安裝詳細資料。 若要深入瞭解，請參閱[VS Code 的調試](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)。
+您可以藉由選取 F5 鍵，或移至 **> Debug** （Ctrl + Shift + D）並在功能表列中查看 **> 偵錯主控台**（Ctrl + shift + Y）來使用 VS Code 的偵錯工具與您的 Nuxt。 如果您在 [偵錯工具] 視窗中選取齒輪圖示，將會為您建立啟動設定（`launch.json`）檔案，以儲存偵錯工具的安裝詳細資料。 若要深入瞭解，請參閱[VS Code 的調試](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。
 
 ![VS Code 的 [debug] 視窗和 [啟動]。 json 設定圖示](../images/vscode-debug-launch-configuration.png)
 
 若要深入瞭解 Nuxt，請參閱[Nuxt 指南](https://nuxtjs.org/guide)。
 
-## <a name="get-started-with-gatsbyjs"></a>開始使用 Gatsby
+## <a name="get-started-with-gatsbyjs"></a>開始使用 Gatsby.js
 
 Gatsby 是以 Nuxt 為基礎的靜態網站產生器架構，而不是像下一個 .js 和的伺服器呈現。 靜態網站產生器會在組建時間產生靜態 HTML。 它不需要伺服器。 接下來的 .js 和 Nuxt 會在執行時間產生 HTML （每次新的要求都在中）。 他們需要執行伺服器。 Gatsby 也會決定如何處理您應用程式中的資料（使用 GraphQL），而下一個 .js 和 Nuxt 則留給您決定。
 
@@ -151,7 +151,7 @@ Gatsby 是以 Nuxt 為基礎的靜態網站產生器架構，而不是像下一�
 
 9. 我們來看一下，接下來的 .js 如何處理錯誤。 移除 `</h1>` 結束記號，讓您的標題程式碼現在看起來像這樣： `<h1>Hi (Your Name)!`。 儲存這項變更，請注意，您的瀏覽器中會顯示「無法編譯」錯誤，而在您的終端機中，讓您知道應該會有 `<h1>` 的結束記號。 取代 `</h1>` 結束記號、儲存，且頁面將會重載。
 
-您可以使用 VS Code 的偵錯工具搭配您的下一個 .js 應用程式，方法是選取 F5 鍵，或移至 **> Debug** （Ctrl + Shift + D），並在功能表列中查看 **> 偵錯主控台**（Ctrl + shift + Y）。 如果您在 [偵錯工具] 視窗中選取齒輪圖示，將會為您建立啟動設定（`launch.json`）檔案，以儲存偵錯工具的安裝詳細資料。 若要深入瞭解，請參閱[VS Code 的調試](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)。
+您可以使用 VS Code 的偵錯工具搭配您的下一個 .js 應用程式，方法是選取 F5 鍵，或移至 **> Debug** （Ctrl + Shift + D），並在功能表列中查看 **> 偵錯主控台**（Ctrl + shift + Y）。 如果您在 [偵錯工具] 視窗中選取齒輪圖示，將會為您建立啟動設定（`launch.json`）檔案，以儲存偵錯工具的安裝詳細資料。 若要深入瞭解，請參閱[VS Code 的調試](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。
 
 ![VS Code 的 [debug] 視窗和 [啟動]。 json 設定圖示](../images/vscode-debug-launch-configuration.png)
 

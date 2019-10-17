@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS，node.js，windows 10，microsoft，學習 NodeJS，windows 上的節點，wsl 上的節點，在 windows 上安裝節點，使用 vs code 的 NodeJS，在 windows 上以節點進行開發，在 windows 上使用 NodeJS 進行開發，在 windows 上的 wsl 上安裝節點適用于 Linux 的子系統
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 917192d782e0a44c6de7e549960161a003c646e5
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: e5875f0bf7ce73d3615aa131d57c2384c73dd8a1
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315062"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517844"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 設定您的 node.js 開發環境
 
@@ -28,7 +28,7 @@ ms.locfileid: "72315062"
 
     ![Windows Update 助理](../images/windows-update-assistant2019.png)
 
-2. **[移至 [開始] > 設定 > Windows 測試人員程式](ms-settings:windowsinsider)** ：在 [Windows 測試人員程式] 視窗中 **，選取 [開始**使用]，然後按一下 [**連結帳戶**]。
+2. **[移至 [開始] > 設定 > Windows 測試人員程式](ms-settings:windowsinsider)** ：在 [Windows 測試人員程式] 視窗中 **，選取 [開始使用**]，然後按一下 [**連結帳戶**]。
 
     ![Windows 測試人員程式設定](../images/windows-insider-program-settings.png)
 
@@ -96,11 +96,15 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
     ![顯示 LTS 和目前節點版本的 NVM 清單](../images/nvm-node-installed.png)
 
-9. 確認已安裝 node.js，且目前的預設版本為： `node --version`。 然後，使用下列程式來確認您的 npm 是否正確：`npm --version` （您也可以使用 `which node` 或 `which npm` 查看預設版本所使用的路徑）。
+9. 確認已安裝 node.js，且目前的預設版本為： `node --version`。 然後，使用： `npm --version` 來驗證您是否有 npm （您也可以使用 `which node` 或 `which npm` 查看預設版本所使用的路徑）。
 10. 若要變更專案要使用的 node.js 版本，請建立新的專案目錄 `mkdir NodeTest`，並輸入目錄 `cd NodeTest`，然後輸入 `nvm use node` 來切換至目前的版本，或 `nvm use --lts` 切換至 LTS 版本。 您也可以針對您已安裝的任何其他版本使用特定的數目，例如 `nvm use v8.2.1`。 （若要列出所有可用的 node.js 版本，請使用命令： `nvm ls-remote`）。
 
 > [!TIP]
 > 如果您使用 NVM 來安裝 node.js 和 NPM，您應該不需要使用 SUDO 命令來安裝新的套件。
+
+> [!NOTE]
+> 在發行時，NVM v 0.34.0 是最新的可用版本。 您可以查看[GitHub 專案頁面以取得最新版本的 NVM](https://github.com/nvm-sh/nvm)，並調整上述命令以包含最新版本。
+使用捲曲安裝較新版本的 NVM 將會取代舊版，而使您已使用 NVM 的節點版本原封不動地進行安裝。 例如：`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash`
 
 ## <a name="alternative-version-managers"></a>替代版本管理員
 
@@ -114,7 +118,7 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
 ## <a name="install-your-favorite-code-editor"></a>安裝您慣用的程式碼編輯器
 
-我們建議使用 [**Visual Studio Code**] 搭配 node.js 開發專案的**遠端 WSL 擴充功能**。 這會將 VS Code 分割為「用戶端伺服器」架構，其中用戶端（使用者介面）會在您的 Windows 電腦和伺服器（您的程式碼、Git、外掛程式等）上執行，並從遠端執行。
+我們建議使用**Visual Studio Code**搭配適用于 node.js 專案的**遠端 WSL 擴充功能**。 這會將 VS Code 分割為「用戶端伺服器」架構，其中用戶端（使用者介面）會在您的 Windows 電腦和伺服器（您的程式碼、Git、外掛程式等）上執行，並從遠端執行。
 
 - 支援以 Linux 為基礎的 Intellisense 和 linting。
 - 您的專案將會在 Linux 中自動建立。
@@ -136,37 +140,28 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
 ### <a name="helpful-vs-code-extensions"></a>有用的 VS Code 延伸模組
 
-雖然 VS Code 隨附許多現成可用的 node.js 開發功能，但是有一些實用的延伸可考慮在 node.js[延伸模組套件](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)中安裝。 它們包括：
-
-- 不起毛-用來「linting」程式碼的工具。 Linting 會分析您的程式碼，並警告您可能發生的錯誤。
-- npm-從命令選擇區執行 npm 腳本，並驗證在 package. json 中定義的已安裝模組。
-- JavaScript （ES6）程式碼片段-在 ES6 語法中新增 JavaScript 開發的程式碼片段。
-- 搜尋 node_modules-在您的專案中快速搜尋節點模組。
-- NPM IntelliSense-在程式碼中新增 NPM 模組的 IntelliSense。
-- 路徑 IntelliSense-自動完成程式碼中的檔案名。
-
-全部安裝或挑選，然後選擇對您而言最有用的專案。
+雖然 VS Code 隨附許多現成可用的 node.js 開發功能，但是有一些實用的延伸可考慮在 node.js[延伸模組套件](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)中安裝。 全部安裝或挑選，然後選擇對您而言最有用的專案。
 
 若要安裝 node.js 延伸模組套件：
 
 1. 開啟 VS Code 中的 [**擴充**功能] 視窗（Ctrl + Shift + X）。
 
     [延伸模組] 視窗現在分為三個區段（因為您安裝了遠端 WSL 擴充功能）。
-    - 「本機安裝」：安裝的擴充功能可與您的 Windows 作業系統搭配使用。
-    - "WSL： Ubuntu-18.04-已安裝"：安裝的延伸模組，可用於您的 Ubuntu 作業系統（WSL）。
-    - 「建議」：根據目前專案中的檔案類型，VS Code 所建議的延伸模組。
+    - 「本機安裝」：安裝的擴充功能，可與您的 Windows 作業系統搭配使用。
+    - "WSL： Ubuntu-18.04-已安裝"：安裝的擴充功能可與您的 Ubuntu 作業系統（WSL）搭配使用。
+    - 「建議」：根據您目前專案中的檔案類型，VS Code 所建議的延伸模組。
 
     ![本機與遠端 VS Code 擴充功能](../images/vscode-extensions-local-remote.png)
 
-2. 在 [擴充功能] 視窗頂端的 [搜尋] 方塊中，輸入：**節點延伸**模組元件（或您要尋找之任何副檔名的名稱）。 如果您 VS Code 的本機或 WSL 實例，將會根據您目前開啟專案的位置，安裝延伸模組（或副檔名為 pack）。 您可以選取 VS Code 視窗左下角的 [遠端] 連結（以綠色顯示）。 它會提供您開啟或關閉遠端連線的選項。 在 "WSL： Ubuntu-18.04" 環境中安裝您的 node.js 延伸模組。
+2. 在 [擴充功能] 視窗頂端的 [搜尋] 方塊中，輸入： **Node Extension Pack** （或您要尋找之任何副檔名的名稱）。 系統會根據您目前開啟專案的位置，為 VS Code 的本機或 WSL 實例安裝延伸模組。 您可以選取 VS Code 視窗左下角的 [遠端] 連結（以綠色顯示）。 它會提供您開啟或關閉遠端連線的選項。 在 "WSL： Ubuntu-18.04" 環境中安裝您的 node.js 延伸模組。
 
     ![VS Code 遠端連結](../images/wsl-remote-extension.png)
 
 您可能想要考慮的幾個額外擴充功能包括：
 
-- [適用于 Chrome 的偵錯工具](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code)：當您使用 node.js 在伺服器端上完成開發作業之後，您必須開發並測試用戶端。 此延伸模組整合了您的 VS Code 編輯器與 Chrome 瀏覽器的偵錯工具服務，讓專案更有效率。
-- [從其他編輯器 Keymaps](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果您是從另一個文字編輯器（例如 Atom、Sublime、Vim、eMacs、Notepad + + 等）進行轉換，這些擴充功能可以協助您的環境直接在家裡。
-- [設定同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)：可讓您使用 GitHub 在不同安裝之間同步處理您的 VS Code 設定。 如果您在不同的電腦上工作，這有助於讓您的環境在其上保持一致。
+- [適用于 Chrome 的偵錯工具](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code)：當您使用 node.js 完成伺服器端的開發作業之後，您必須開發並測試用戶端。 此延伸模組整合了您的 VS Code 編輯器與 Chrome 瀏覽器的偵錯工具服務，讓專案更有效率。
+- [從其他編輯器 Keymaps](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果您要從另一個文字編輯器（例如 Atom、Sublime、Vim、EMacs、Notepad + + 等）進行轉換，這些延伸模組可協助您的環境直接在家裡。
+- [設定同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)：可讓您使用 GitHub 跨不同安裝同步處理您的 VS Code 設定。 如果您在不同的電腦上工作，這有助於讓您的環境在其上保持一致。
 
 ## <a name="install-windows-terminal-optional"></a>安裝 Windows 終端機（選擇性）
 
@@ -190,7 +185,7 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
 您現在已設定 node.js 開發環境。 若要開始使用您的 node.js 環境，請考慮嘗試下列其中一個教學課程：
 
-- [開始使用適用于初學者的 node.js](./beginners.md)：這是一個逐步指南，可協助您開始使用 node.js 開發的新手。
-- [在 Windows 上開始使用 node.js web](./web-frameworks.md)架構：此逐步指南可協助您開始在 Windows 上使用 node.js web framworks，包括下一篇、Nuxt 和 Gatsby。
-- [開始將 node.js 應用程式連接到資料庫](./databases.md)：此逐步指南可協助您開始將 node.js 應用程式連接至資料庫，例如 MongoDB 或 Postgres。
-- [開始使用 Docker 容器搭配 node.js](./containers.md)：此逐步指南可協助您開始使用 Docker 容器搭配您的 node.js 應用程式。
+- [開始使用適用于初學者的 node.js](./beginners.md)
+- [在 Windows 上開始使用 node.js web 架構](./web-frameworks.md)
+- [開始將 node.js 應用程式連接到資料庫](./databases.md)
+- [開始在 node.js 中使用 Docker 容器](./containers.md)
