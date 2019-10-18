@@ -9,12 +9,12 @@ metadata:
   ms.author: tedhudek
   ms.topic: hub-page
   uhfHeaderId: MSDocsHeader-DocsL1
-  ms.openlocfilehash: 0cdab14a7301cdb20ca6986854523c5b6e834b21
-  ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+  ms.openlocfilehash: 2b0eee6f53445ce2f0a0bcc3f35b756ab231a888
+  ms.sourcegitcommit: 00cd8a6616e358479a63e56126c62ef02b8da75b
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 09/18/2019
-  ms.locfileid: "71100825"
+  ms.lasthandoff: 10/17/2019
+  ms.locfileid: "72548383"
 highlightedContent:
   items:
   - title: 取得 Visual Studio 與 Windows SDK
@@ -38,10 +38,10 @@ additionalContent:
         url: https://docs.microsoft.com/windows/apps
       - text: 將 Windows 10 功能新增至您的應用程式
         url: https://docs.microsoft.com/windows/apps/desktop/modernize/
-      - text: 使用 Windows 上的 Python 進行開發
-        url: https://docs.microsoft.com/windows/python/index
-      - text: 設定適用於 Linux 的 Windows 子系統
-        url: https://docs.microsoft.com/windows/wsl/about
+      - text: 建置傳統型應用程式
+        url: https://docs.microsoft.com/windows/apps/desktop/
+      - text: 設定開發環境
+        url: https://docs.microsoft.com/windows/dev-environment/
       - text: 尋找程式碼範例
         url: https://developer.microsoft.com/windows/samples
     - title: 硬體開發
