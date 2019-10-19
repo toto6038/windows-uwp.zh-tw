@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ff5d0831e918c0399bccb1dac9bb4fca8a6d408
-ms.sourcegitcommit: c079388634cbd328d0d43e7a6185e09bb4bca65b
+ms.openlocfilehash: a85edf0caa429d95d376af6fbc93bc7e8134340c
+ms.sourcegitcommit: 00cd8a6616e358479a63e56126c62ef02b8da75b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71939621"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72548453"
 ---
 # <a name="list-view-and-grid-view"></a>清單檢視和方格檢視
 
@@ -604,7 +604,7 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 ### <a name="drag-and-drop"></a>拖放
 
-ListView 和 GridView 控制項支援在項目本身內部，以及在本身和其他 ListView 與 GridView 控制項之間進行拖放。 如需有關實作拖放模式的詳細資訊，請參閱[拖放](https://docs.microsoft.com/windows/uwp/design/input/drag-and-drop)。 
+ListView 和 GridView 控制項支援在項目本身內部，以及在本身和其他 ListView 與 GridView 控制項之間進行拖放。 如需有關實作拖放模式的詳細資訊，請參閱[拖放](../input/drag-and-drop.md)。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
@@ -616,4 +616,4 @@ ListView 和 GridView 控制項支援在項目本身內部，以及在本身和�
 
 - [清單](lists.md)
 - [項目容器與範本](item-containers-templates.md)
-- [拖放功能](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [拖放功能](../input/drag-and-drop.md)

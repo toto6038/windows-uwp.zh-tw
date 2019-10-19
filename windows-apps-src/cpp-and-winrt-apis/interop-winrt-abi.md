@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, 互通性, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: d1def649772f94a03d5a1f352dcec1d32c7b0868
-ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
+ms.openlocfilehash: 91602c75cdaddc325407529ab4d231db46ecca39
+ms.sourcegitcommit: 412bf5bb90e1167d118699fbf71d0e6864ae79bd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800570"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72586712"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>C++/WinRT 與 ABI 之間的互通性
 
@@ -161,17 +161,17 @@ int main()
     WINRT_ASSERT(uri);
 ```
 
-## <a name="convertfromabi-function"></a>convert_from_abi 函式
+## <a name="convert_from_abi-function"></a>convert_from_abi 函式
 這項輔助函式以最低額外負荷將原始 ABI 介面指標轉換成對等 C++/WinRT 物件。
 
 ```cppwinrt
 template <typename T>
 T convert_from_abi(::IUnknown* from)
 {
-    T to{ nullptr };
+    T to{ nullptr }; // `T` is a projected type.
 
     winrt::check_hresult(from->QueryInterface(winrt::guid_of<T>(),
-        reinterpret_cast<void**>(winrt::put_abi(to))));
+        winrt::put_abi(to)));
 
     return to;
 }
@@ -181,7 +181,7 @@ T convert_from_abi(::IUnknown* from)
 
 如我們所了解，輔助函式不需要從 C++/WinRT 物件轉換至對等 ABI 介面指標。 只要使用 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (或 [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) 成員函式為要求的介面詢問。 **as** 和 **try_as** 函式傳回包裝要求 ABI 類型的 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 物件。
 
-## <a name="code-example-using-convertfromabi"></a>使用 convert_from_abi 的程式碼範例
+## <a name="code-example-using-convert_from_abi"></a>使用 convert_from_abi 的程式碼範例
 以下是示範實務上此輔助函式的程式碼範例。
 
 ```cppwinrt
@@ -213,10 +213,10 @@ namespace sample
     template <typename T>
     T convert_from_abi(::IUnknown* from)
     {
-        T to{ nullptr };
+        T to{ nullptr }; // `T` is a projected type.
 
         winrt::check_hresult(from->QueryInterface(winrt::guid_of<T>(),
-            reinterpret_cast<void**>(winrt::put_abi(to))));
+            winrt::put_abi(to)));
 
         return to;
     }
