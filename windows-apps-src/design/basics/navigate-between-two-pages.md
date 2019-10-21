@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 3bc377e87d01106a1a2e7157dbe08f1ab022f52a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c35795eeb6afa32e77acb507c687e334e454d0d5
+ms.sourcegitcommit: e0f6150c8f45b69a3e114d0556c2c3d5aed7238f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361061"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72560808"
 ---
 # <a name="implement-navigation-between-two-pages"></a>兩個頁面之間的實作瀏覽
 
@@ -452,5 +452,5 @@ Page1::Page1()
 
 ## <a name="related-articles"></a>相關文章
 * [UWP app 的瀏覽設計基本知識](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
-* [索引標籤和樞紐的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot)
-* [瀏覽窗格的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)
+* [樞紐分析](../controls-and-patterns/pivot.md)
+* [瀏覽檢視](../controls-and-patterns/navigationview.md)
