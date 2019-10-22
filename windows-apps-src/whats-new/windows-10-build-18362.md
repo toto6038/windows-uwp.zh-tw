@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 935d7f787d0cc23965c0fd51747b7687adb80a3f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4e92afd112ce7600bcfa650e0bb3bbeffabd7bd0
+ms.sourcegitcommit: f120968069702a7210756b508dabc4a1a8c20d53
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66468320"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72438224"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>適用於開發人員的 Windows 10 (組建 18362) 最新動向
 
@@ -30,7 +30,7 @@ ItemsRepeater | [ItemsRepeater](../design/controls-and-patterns/items-repeater.m
 UI 命令 | 透過 [UWP 應用程式中的命令](../design/controls-and-patterns/commanding.md)，使用 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 類別 (連同 ICommand 介面) 來共用及管理橫跨各種控制項類型的命令 (不論所使用的裝置和輸入類型為何)。
 Windows UI 程式庫 | Windows UI 程式庫的最新官方版本 – [WinUI 2.1](https://docs.microsoft.com/uwp/toolkits/winui/release-notes/winui-2.1) – 為您的 Windows 應用程式提供活躍的 XAML 控制項。 WinUI 程式庫 API 可在較舊版本的 Windows 10 上執行，因此您並不需要加入版本檢查或條件式 XAML 來支援沒有使用最新作業系統的使用者。
 傳統型應用程式中的視覺層 | 您現在可以[使用傳統型應用程式中的 UWP 視覺層 API](../composition/visual-layer-in-desktop-apps.md)。 這些 API 提供高效能、保留模式的 API 來處理圖形、效果和動畫，而且是各種 Windows 裝置的 UI 基礎。
-Z 深度和陰影 | 使用 [Z 深度和陰影](../design/layout/depth-shadow.md)在 UWP 應用程式中建立提高權限。 這項新功能可讓您的應用程式 UI 更容易進行掃描，且進一步傳達使用者要聚焦的最重要資訊。
+Z 深度和陰影 | 使用 [Z 深度和陰影](../design/layout/depth-shadow.md)在 UWP 應用程式中建立提高權限。 這些新功能可讓您的應用程式 UI 更容易進行掃描，且進一步傳達使用者要聚焦的最重要資訊。
 
 ## <a name="develop-windows-apps"></a>開發 Windows 應用程式
 

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: e900cdddaa86857554c11605d00f59fd45a7e5ee
-ms.sourcegitcommit: b186f70f0b1601b6b6a5db91d87d034f6b155e3b
+ms.openlocfilehash: ab582d0528d6af8c9a8ae97e43fda2714f8e2fe6
+ms.sourcegitcommit: 2442a5f5b0c4275204063162f0f379fa90ff13b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70063778"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72292779"
 ---
 # <a name="get-started-with-cwinrt"></a>開始使用 C++/WinRT
 
@@ -113,7 +113,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 以 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 物件的形式來取得摘要的標題文字 (如需詳細資訊，請參閱 [C++/WinRT 中的字串處理](strings.md))。 然後，透過 **c_str** 函式輸出 **Hstring**，其反映搭配使用 C++ 標準程式庫字串的模式。
 
-如您所見，C++/WinRT 鼓勵現代化、和類似類別、C++ 運算式例如 `syndicationItem.Title().Text()`。 這是與傳統 COM 程式設計不同，且更清楚的程式設計樣式。 您不需要直接初始化 COM，使用 COM 指標。
+如您所見，C++/WinRT 鼓勵現代化、和類似類別、C++ 運算式例如 `syndicationItem.Title().Text()`。 這是與傳統 COM 程式設計不同，且更清楚的程式設計樣式。 您不需要直接初始化 COM，也不需要使用 COM 指標。
 
 也不需要處理 HRESULT 傳回碼。 C++/WinRT 將錯誤 HRESULT 轉換為例外，例如 [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)，以擁有自然而現代化的程式設計樣式。 如需有關錯誤處理和程式碼範例的詳細資訊，請參閱[錯誤處理 C++/WinRT](error-handling.md)。
 
