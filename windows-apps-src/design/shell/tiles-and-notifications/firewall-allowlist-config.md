@@ -9,17 +9,17 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10，uwp，WNS，windows 通知服務，通知，windows，防火牆，疑難排解，IP，流量，企業，網路，IPv4，VIP，FQDN，公用 IP 位址
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ba6d2e678eee0d851b4f2e3897f9fc067b74580
-ms.sourcegitcommit: 3360db6bc975516e01913d3d73599c964a411052
+ms.openlocfilehash: c3774164d16e86a88f45eb50030beec099629d6f
+ms.sourcegitcommit: 738bab9a088a244a7a212dcac6fb3560c547b8d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70296986"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72695764"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支援 WNS 流量的企業防火牆和 Proxy 設定
 
 ## <a name="background"></a>背景
-許多企業都使用防火牆來封鎖不必要的網路流量;可惜的是，這也會封鎖 Windows 通知服務通訊之類的重要事項。 這表示所有透過 WNS 傳送的通知都會放在特定網路設定之下。 若要避免這種情況，網路系統管理員可以將已核准的 WNS 通道清單新增至其豁免清單，以允許 WNS 流量通過防火牆。 以下是有關如何和如何新增的詳細資料，以及對不同 proxy 類型的支援。
+許多企業都使用防火牆來封鎖不必要的網路流量;可惜的是，這也會封鎖 Windows 通知服務通訊之類的重要事項。 這表示所有透過 WNS 傳送的通知都會放在特定網路設定之下。 若要避免這種情況，網路系統管理員可以將已核准的 WNS Fqdn 或 Vip 清單新增至其豁免清單，以允許 WNS 流量通過防火牆。 以下是有關如何和如何新增的詳細資料，以及對不同 proxy 類型的支援。
 
 ## <a name="proxy-support"></a>Proxy 支援
 
@@ -36,11 +36,11 @@ ms.locfileid: "70296986"
 > 我們強烈建議您允許依 FQDN 列出，因為這些不會變更。 如果您允許依 FQDN 列出，則不需要同時允許 IP 位址範圍。
 
 > [!IMPORTANT]
-> IP 位址範圍會定期變更;因此，這些不包含在此頁面上。 如果您想要查看 IP 範圍的清單，您可以從下載中心下載檔案：[Windows 通知服務（WNS） VIP 和 IP 範圍](https://www.microsoft.com/download/details.aspx?id=44238)。 請定期回來查看，確定您有最新的資訊。 
+> IP 位址範圍會定期變更;因此，這些不包含在此頁面上。 如果您想要查看 IP 範圍的清單，您可以從下載中心下載檔案： [Windows 通知服務（WNS） VIP 和 IP 範圍](https://www.microsoft.com/download/details.aspx?id=44238)。 請定期回來查看，確定您有最新的資訊。 
 
 
 ### <a name="fqdns-vips-and-ips"></a>Fqdn、Vip 和 Ip
-下列 XML 檔中的每個元素都會在其後面的表格中說明（以[和標記法為依據](#terms-and-notations)）。 這些 IP 範圍被刻意排除在本檔中，以建議您只使用 Fqdn，因為 Fqdn 將維持不變。 不過，您可以從下載中心下載包含完整清單的 XML 檔案：[Windows 通知服務（WNS） VIP 和 IP 範圍](https://www.microsoft.com/download/details.aspx?id=44238)。 新的 Vip 或 IP 範圍將在**上傳後的一周內生效**。
+下列 XML 檔中的每個元素都會在其後面的表格中說明（以[和標記法](#terms-and-notations)表示）。 這些 IP 範圍被刻意排除在本檔中，以建議您只使用 Fqdn，因為 Fqdn 將維持不變。 不過，您可以從下載中心下載包含完整清單的 XML 檔案： [Windows 通知服務（WNS） VIP 和 IP 範圍](https://www.microsoft.com/download/details.aspx?id=44238)。 新的 Vip 或 IP 範圍將在**上傳後的一周內生效**。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,7 +78,7 @@ ms.locfileid: "70296986"
 
 
 ## <a name="microsoft-push-notifications-service-mpns-public-ip-ranges"></a>Microsoft 推播通知服務（MPNS）公用 IP 範圍
-如果您使用的是舊版通知服務 MPNS，您將需要新增至允許清單的 IP 位址範圍可從下載中心取得：[Microsoft 推播通知服務（MPNS）公用 IP 範圍](https://www.microsoft.com/download/details.aspx?id=44535)。
+如果您使用舊版通知服務 MPNS，您將需要新增至允許清單的 IP 位址範圍可從下載中心取得： [Microsoft 推播通知服務（MPNS）公用 IP 範圍](https://www.microsoft.com/download/details.aspx?id=44535)。
 
 
 ## <a name="related-topics"></a>相關主題

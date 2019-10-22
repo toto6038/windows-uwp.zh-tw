@@ -4,18 +4,18 @@ title: xBind 標記延伸
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eeb56dce1984afd67e7a44bbfce1453a1d9f531a
-ms.sourcegitcommit: 3360db6bc975516e01913d3d73599c964a411052
+ms.openlocfilehash: a25797f50ee76542b8f9543cb76453d2916368ac
+ms.sourcegitcommit: 82d202478ab4d3011c5ddd2e852958c34336830d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70296991"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72715861"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 標記延伸
 
-**注意：**   如需在應用程式中使用資料系結與 **{x:Bind}** （以及 **{x:Bind}** 與 **{binding}** 之間的整體比較）的一般資訊，請參閱[深入瞭解資料](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)系結。
+**請注意** For 有關在應用程式中使用資料系結的一般資訊，請參閱 **{x:Bind}** （以及 **{x:Bind}** 與 **{binding}** 之間的整體比較）。[深入瞭解資料](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)系結。
 
 **{X:Bind}** 標記延伸模組-適用于 Windows 10 的新功能，是 **{Binding}** 的替代方案。 **{x:Bind}** 的執行時間比 **{Binding}** 少，且記憶體較少，而且支援更佳的調試。
 
@@ -46,11 +46,11 @@ ms.locfileid: "70296991"
 <object property="{x:Bind pathToFunction.functionName(functionParameter1, functionParameter2, ...), bindingProperties}" .../>
 ```
 
-| 詞彙 | 描述 |
+| 詞彙 | 說明 |
 |------|-------------|
 | _propertyPath_ | 指定繫結屬性路徑的字串。 如需詳細資訊，請參閱下面[屬性路徑](#property-path)一節。 |
 | _bindingProperties_ |
-| _propName_值， _propName_值\[ = =\]* | 使用名稱/值對語法指定的一或多個繫結屬性。 |
+| _propName_ =_值_\[、 _propName_ =_值_\] * | 使用名稱/值對語法指定的一或多個繫結屬性。 |
 | _propName_ | 要在繫結物件上設定之屬性的字串名稱。 例如，"Converter"。 |
 | _值_ | 設定屬性使用的值。 引數的語法取決於目前設定的屬性。 以下為 _propName_=_value_ 用法的範例，其中的 value 本身是標記延伸：`Converter={StaticResource myConverterClass}`。 如需詳細資訊，請參閱以下的[您可以使用 {x:Bind} 設定的屬性](#properties-that-you-can-set-with-xbind)一節。 |
 
@@ -83,18 +83,18 @@ ms.locfileid: "70296991"
 
 例如：在頁面中，**Text="{x:Bind Employee.FirstName}"** 會先在頁面上尋找 **Employee** 成員，然後在 **Employee** 所傳回的物件上尋找 **FirstName** 成員。 如果您是要將項目控制項繫結到包含員工相依項的屬性，則您的屬性路徑可能會是 "Employee.Dependents"，而項目控制項的項目範本會負責顯示 "Dependents" 中的項目。
 
-針對 C++/CX， **{x:Bind}** 無法繫結至頁面或資料模型中的私用欄位和屬性；您必須使用公用屬性才可加以繫結。 繫結的表面區域必須公開為 CX 類別/介面，以便我們取得相關的中繼資料。 不需要可系結屬性。 **\[ \]**
+針對 C++/CX， **{x:Bind}** 無法繫結至頁面或資料模型中的私用欄位和屬性；您必須使用公用屬性才可加以繫結。 繫結的表面區域必須公開為 CX 類別/介面，以便我們取得相關的中繼資料。 不需要 **\[Bindable \]** 屬性。
 
 使用 **x:Bind** 時，您無須以 **ElementName=xxx** 做為繫結運算式的一部分。 相反地，您可以使用專案的名稱做為系結路徑的第一個部分，因為已命名的專案會成為頁面或使用者控制項中代表根系結來源的欄位。 
 
 
 ### <a name="collections"></a>集合
 
-如果資料來源是一個集合，則屬性路徑可以依據項目的位置或索引來指定集合中的項目。 例如，「團隊\[0。\]播放程式 "，其中常值\["\]"會括住" 0 "，以要求以零為索引的集合中的第一個專案。
+如果資料來源是一個集合，則屬性路徑可以依據項目的位置或索引來指定集合中的項目。 例如，"team \[0 \]. Player"，其中常值 "\[ \]" 會括住 "0"，以要求以零索引的集合中的第一個專案。
 
-若要使用索引子，模型必須對要編製索引的屬性類型實作 **IList&lt;T&gt;** 或 **IVector&lt;T&gt;** 。 （請注意，&lt;IReadOnlyList&gt; t 和&lt;IVectorView&gt; t 不支援索引子語法）。如果已編製索引的屬性類型支援 **INotifyCollectionChanged** 或 **IObservableVector**，且繫結為 OneWay 或 TwoWay，則會登錄並接聽這些介面的變更通知。 變更偵測邏輯會根據所有的集合變更進行更新，即使不會影響特定的索引值亦然。 這是因為所有集合執行個體的接聽邏輯是通用的。
+若要使用索引子，模型必須對要編製索引的屬性類型實作 **IList&lt;T&gt;** 或 **IVector&lt;T&gt;** 。 （請注意，IReadOnlyList &lt;T &gt; 和 IVectorView &lt;T &gt; 不支援索引子語法）。如果索引屬性的類型支援**INotifyCollectionChanged**或**IObservableVector** ，而且系結為單向或 TwoWay，則它會註冊並接聽這些介面上的變更通知。 變更偵測邏輯會根據所有的集合變更進行更新，即使不會影響特定的索引值亦然。 這是因為所有集合執行個體的接聽邏輯是通用的。
 
-如果資料目錄為字典或地圖，則屬性路徑可以依它們的字串名稱指定集合中的項目。 比方說 **&lt;TextBlock 的 Text ="{x： 繫結玩家\[' John Smith'\]"/&gt;** 會尋找名為"John Smith"的字典中的項目。 名稱必須加上引號，而且可以使用單引號或雙引號。 上標三角 (^) 可以用來逸出字串中的引號。 最簡單的方式是使用針對 XAML 屬性所使用的引號之外的替代引號。 （請注意，&lt;..ireadonlydictionary<string&gt; t 和&lt;IMapView&gt; t 不支援索引子語法）。
+如果資料目錄為字典或地圖，則屬性路徑可以依它們的字串名稱指定集合中的項目。 例如 **&lt;TextBlock Text = "{X:Bind player \[ ' John smith ' \]"/&gt;** 會尋找名為 "John Smith" 的字典中的專案。 名稱必須加上引號，而且可以使用單引號或雙引號。 上標三角 (^) 可以用來逸出字串中的引號。 最簡單的方式是使用針對 XAML 屬性所使用的引號之外的替代引號。 （請注意，..Ireadonlydictionary<string &lt;T &gt; 和 IMapView &lt;T &gt; 不支援索引子語法）。
 
 若要使用字串索引子，模型必須在要編製索引的屬性類型上實作 **IDictionary&lt;string, T&gt;** 或 **IMap&lt;string, T&gt;** 。 如果已編製索引的屬性類型支援 **IObservableMap**，且繫結為 OneWay 或 TwoWay，則它會登錄並接聽那些介面的變更通知。 變更偵測邏輯會根據所有的集合變更進行更新，即使不會影響特定的索引值亦然。 這是因為所有集合執行個體的接聽邏輯是通用的。
 
@@ -105,9 +105,9 @@ ms.locfileid: "70296991"
 ### <a name="casting"></a>轉型
 
 編譯的繫結屬於強式類型，會解析路徑中每個步驟的類型。 如果傳回的類型沒有成員，將會在編譯時失敗。 您可以指定轉換，以向繫結指出物件的真實類型。 在下列案例中，**obj** 是類型物件的屬性，但是包含文字方塊，因此我們可以使用 **Text="{x:Bind ((TextBox)obj).Text}"** 或 **Text="{x:Bind obj.(TextBox.Text)}"** 。
-**Text = "{x:Bind （（資料： SampleDataGroup） groups3\[0\]）中的 groups3 欄位。Title} "** 是物件的字典，因此您必須將它轉換成**資料： SampleDataGroup**。 請注意將物件類型對應至不屬於預設 XAML 命名空間的命名空間時，所使用的 xml **data:** 命名空間首碼。
+**Text = "{x:Bind （（data： SampleDataGroup） groups3 \[0 \]）中的 groups3 欄位。Title} "** 是物件的字典，因此您必須將它轉換成**資料： SampleDataGroup**。 請注意將物件類型對應至不屬於預設 XAML 命名空間的命名空間時，所使用的 xml **data:** 命名空間首碼。
 
-_注意：C#-樣式轉換語法比附加屬性語法更有彈性，而且是建議的語法。_
+_注意： C#-樣式轉換語法比附加屬性語法更有彈性，而且是建議的語法。_
 
 ## <a name="functions-in-binding-paths"></a>繫結路徑中的函式
 
@@ -115,7 +115,7 @@ _注意：C#-樣式轉換語法比附加屬性語法更有彈性，而且是建�
 
 ## <a name="event-binding"></a>事件繫結
 
-事件繫結是已編譯繫結的獨特功能。 它可讓您使用繫結指定事件的處理常式，而無須將它做為程式碼後置上的方法。 例如: **按一下 = "{X:Bind rootFrame. GoForward}"** 。
+事件繫結是已編譯繫結的獨特功能。 它可讓您使用繫結指定事件的處理常式，而無須將它做為程式碼後置上的方法。 例如：**Click="{x:Bind rootFrame.GoForward}"** 。
 
 事件的目標方法不可以多載，且必須：
 
@@ -133,22 +133,21 @@ _注意：C#-樣式轉換語法比附加屬性語法更有彈性，而且是建�
 
 這些屬性的運作方式與 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 類別的屬性十分類似。
 
-| 屬性 | 描述 |
+| 屬性 | 說明 |
 |----------|-------------|
 | **路徑** | 請參閱先前的[屬性路徑](#property-path)一節。 |
 | **轉換器** | 指定繫結引擎呼叫的轉換器物件。 轉換器可以在 XAML 中設定，但若您參考已在 [{StaticResource} 標記延伸](staticresource-markup-extension.md)中指派的物件執行個體，請在資源字典中參考該物件。 |
-| **ConverterLanguage** | 指定轉換器要使用的文化特性 （如果您要設定**ConverterLanguage** ，您也應該設定**轉換器**）。文化特性會設定為以標準為基礎的識別碼。 如需詳細資訊，請參閱 [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage)。 |
-| **ConverterParameter** | 指定可用於轉換器邏輯的轉換器參數 （如果您要設定**ConverterParameter** ，您也應該設定**轉換器**）。大部分的轉換器會使用簡單的邏輯，從傳遞的值取得所需的所有資訊以進行轉換，而不需要**ConverterParameter**值。 **ConverterParameter** 參數適用於中度進階轉換器實作，其中具備一個以上使用 **ConverterParameter** 傳遞內容的邏輯。 您可以撰寫一個使用字串以外的值的轉換器，但這並不常見，請參閱 [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter) 中的＜備註＞，以了解詳細資訊。 |
+| **ConverterLanguage** | 指定轉換器要使用的文化特性 (如果您要設定 **ConverterLanguage**，則也應該設定 **Converter**)。文化特性可以設定為標準式識別碼。 如需詳細資訊，請參閱 [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage)。 |
+| **ConverterParameter** | 指定可用於轉換器邏輯的轉換器參數 (如果您要設定 **ConverterParameter**，則也應該設定 **Converter**)。大多數轉換器都可以使用簡單邏輯，從傳遞的值中取得所需的所有資訊進行轉換，而且不需要 **ConverterParameter** 值。 **ConverterParameter** 參數適用於中度進階轉換器實作，其中具備一個以上使用 **ConverterParameter** 傳遞內容的邏輯。 您可以撰寫一個使用字串以外的值的轉換器，但這並不常見，請參閱 [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter) 中的＜備註＞，以了解詳細資訊。 |
 | **FallbackValue** | 指定當無法解析來源或路徑時，所要顯示的值。 |
-| **Mode** | 指定系結模式，做為下列其中一個字串："OneTime"、"單向" 或 "TwoWay"。 預設值是 "OneTime"。 請注意，此與 **{Binding}** 的預設值 (通常為 "OneWay") 不同。 |
+| **Mode** | 指定繫結模式，如下列其中一個字串："OneTime"、"OneWay" 或 "TwoWay"。 預設值是 "OneTime"。 請注意，此與 **{Binding}** 的預設值 (通常為 "OneWay") 不同。 |
 | **TargetNullValue** | 指定當來源值解析結果明確為 **null** 時，所要顯示的值。 |
 | **BindBack** | 指定要針對雙向繫結的相反方向使用的函式。 |
 | **UpdateSourceTrigger** | 指定何時將變更從控制項推送回 TwoWay 繫結中的模型。 除了 TextBox 以外，所有屬性的預設值為 PropertyChanged。TextBox。文字為 LostFocus。|
 
 > [!NOTE]
 > 如果要將標記從 **{Binding}** 轉換成 **{x:Bind}** ，請留意 **Mode** 屬性的預設值不同。
- 
->  **[x:DefaultBindMode](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute)** 用來變更用於 X:bind 標記樹狀目錄的特定區段的預設模式。 選取的模式將會在該元素及其子系上，套用任何未明確指定模式做為繫結之一部分的 x:Bind 運算式。 OneTime 效能優於 OneWay，因為使用 OneWay 將會導致產生更多程式碼來連結和處理變更偵測。
+> [**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute)可以用來針對標記樹狀結構的特定區段變更 x:Bind 的預設模式。 選取的模式將會在該元素及其子系上，套用任何未明確指定模式做為繫結之一部分的 x:Bind 運算式。 OneTime 效能優於 OneWay，因為使用 OneWay 將會導致產生更多程式碼來連結和處理變更偵測。
 
 ## <a name="remarks"></a>備註
 
@@ -167,7 +166,7 @@ _注意：C#-樣式轉換語法比附加屬性語法更有彈性，而且是建�
 > [!NOTE]
 > 從 Windows 10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible** 列舉值，並將 **false** 對應至 **Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 請注意，這不是函式繫結的功能，而是屬性繫結。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows 10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-**提示**  ：如果`\{`您需要為值指定單一大括弧（例如在 [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)或[**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter)中），請在其前面加上反斜線。 或者，將整個字串括起來，以包含需要在設定的第二個引號中逸出的括號，例如 `ConverterParameter='{Mix}'`。
+**提示**  如果您需要為值指定單一大括弧（例如在[**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)或[**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter)中），請在其前面加上反斜線： `\{`。 或者，將整個字串括起來，以包含需要在設定的第二個引號中逸出的括號，例如 `ConverterParameter='{Mix}'`。
 
 [**轉換器**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter)、 [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage)和**ConverterLanguage**都與將系結來源的值或類型轉換成與系結目標屬性相容的類型或值相關的情況。 如需詳細資訊和範例，請參閱[深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)中的＜資料轉換＞一節。
 

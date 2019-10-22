@@ -1,31 +1,31 @@
 ---
 Description: 了解如何儲存及擷取本機、漫遊和暫存的應用程式資料。
-title: 儲存及擷取設定和其他 app 資料
+title: 儲存和擷取設定及其他應用程式資料
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3958d69dc3142702eb2d2a41d6dba5ebeb9fa8ce
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
+ms.openlocfilehash: 0eb7ef49d0ce1876635dc36e84f43432c13e1791
+ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076374"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690361"
 ---
-# <a name="store-and-retrieve-settings-and-other-app-data"></a>儲存及擷取設定和其他 app 資料
+# <a name="store-and-retrieve-settings-and-other-app-data"></a>儲存和擷取設定及其他應用程式資料
 
-*應用程式資料*是可變動的資料, 由特定應用程式所建立及管理。 其中包含執行時間狀態、應用程式設定、使用者喜好設定、參考內容 (例如字典應用程式中的字典定義), 以及其他設定。 app 資料不同於*使用者資料*，後者是使用者在使用 app 時建立和管理的資料。 使用者資料包括文件或媒體檔案、電子郵件或通訊記錄，或保存使用者建立之內容的資料庫記錄。 使用者資料可能對於多個 app 都是實用或有意義的。 使用者資料通常是使用者想要當做與應用程式本身無關之實體來操作或傳送的資料 (如文件)。
+*應用程式資料*是可變動的資料，由特定應用程式所建立及管理。 其中包含執行時間狀態、應用程式設定、使用者喜好設定、參考內容（例如字典應用程式中的字典定義），以及其他設定。 app 資料不同於*使用者資料*，後者是使用者在使用 app 時建立和管理的資料。 使用者資料包括文件或媒體檔案、電子郵件或通訊記錄，或保存使用者建立之內容的資料庫記錄。 使用者資料可能對於多個 app 都是實用或有意義的。 使用者資料通常是使用者想要當做與應用程式本身無關之實體來操作或傳送的資料 (如文件)。
 
-**關於應用程式資料的重要注意事項:** App 資料的生命週期與 app 生命週期息息相關。 如果移除應用程式，所有應用程式資料也會隨之遺失。 請勿使用 app 資料來儲存使用者資料或使用者可能認為重要且無法取代的任何資料。 建議以使用者的媒體櫃和 Microsoft OneDrive 來儲存這類資訊。 app 資料適合儲存 app 特定的使用者喜好設定、各種設定值和我的最愛。
+**有關 app 資料的重要注意事項：** app 資料的存留期與 app 的存留期綁在一起。 如果移除應用程式，所有應用程式資料也會隨之遺失。 請勿使用 app 資料來儲存使用者資料或使用者可能認為重要且無法取代的任何資料。 建議以使用者的媒體櫃和 Microsoft OneDrive 來儲存這類資訊。 app 資料適合儲存 app 特定的使用者喜好設定、各種設定值和我的最愛。
 
 ## <a name="types-of-app-data"></a>app 資料類型
 
 app 資料有兩種類型：設定和檔案。
 
-### <a name="settings"></a>設定
+### <a name="settings"></a>[設定]
 
 您可以使用設定來儲存使用者喜好設定和 app 狀態資訊。 應用程式資料 API 可讓您輕鬆建立及擷取設定 (本文稍後將說明一些範例)。
 
@@ -34,11 +34,12 @@ app 資料有兩種類型：設定和檔案。
 - **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
 - **True**
 - **Char16**、**String**
-- [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime)、 [ **TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
+- [**DateTime**](/uwp/api/Windows.Foundation.DateTime)、 [ **TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)
+    - 若C#為/.NET，請使用： [**system.object**](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0)、 [**TimeSpan**](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)
 - **GUID**、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
-- [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue):一組相關的應用程式設定, 必須以不可部分完成的方式進行序列化和還原序列化。 使用複合設定，可以輕鬆管理不可部分完成的互相依存設定更新。 在並行存取和漫遊期間，系統可確保複合設定的完整性。 複合設定是針對少量資料最佳化，如果針對大型資料集使用複合設定，可能會拖慢系統效能。
+- [**ApplicationDataCompositeValue**](/uwp/api/Windows.Storage.ApplicationDataCompositeValue)：一組相關的應用程式設定，必須以不可部分完成的方式進行序列化和還原序列化。 使用複合設定，可以輕鬆管理不可部分完成的互相依存設定更新。 在並行存取和漫遊期間，系統可確保複合設定的完整性。 複合設定是針對少量資料最佳化，如果針對大型資料集使用複合設定，可能會拖慢系統效能。
 
-### <a name="files"></a>檔案
+### <a name="files"></a>Files
 
 使用檔案可儲存二進位資料，或啟用您自己的自訂序列化類型。
 
@@ -172,7 +173,7 @@ async void ReadTimestamp()
 
 ### <a name="roaming-pre-requisites"></a>漫遊的先決條件
 
-如果使用者使用 Microsoft 帳戶登入裝置，便能享有漫遊應用程式資料的好處。 不過，使用者和群組原則系統管理員可以隨時關閉裝置上的漫遊應用程式資料。 如果使用者選擇不使用 Microsoft 帳戶或停用漫遊資料功能, 她仍然可以使用您的應用程式, 但應用程式資料會在每個裝置的本機上。
+如果使用者使用 Microsoft 帳戶登入裝置，便能享有漫遊應用程式資料的好處。 不過，使用者和群組原則系統管理員可以隨時關閉裝置上的漫遊應用程式資料。 如果使用者選擇不使用 Microsoft 帳戶或停用漫遊資料功能，她仍然可以使用您的應用程式，但應用程式資料會在每個裝置的本機上。
 
 只有在使用者將裝置設成「受信任」時，才會轉換儲存在 [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) 中的資料。 如果裝置不受信任，保存在此保存庫中的資料將不會漫遊。
 
