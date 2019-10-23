@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: 使用 Windows 建置應用程式
+title: 使用 Windows 裝置
 summary: 設定您的開發環境以使用 Python、Node.js、適用於 Linux 的 Windows 子系統、Windows 終端機、Docker、MongoDB、PostgreSQL 等等。
 metadata:
   author: mattwojo
@@ -9,12 +9,12 @@ metadata:
   ms.date: 09/15/2019
   ms.prod: dev-environment
   ms.topic: landing-page
-  ms.openlocfilehash: 7a81abbac1ec6ec2d26c4897d3a04ba5993e39f0
-  ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+  ms.openlocfilehash: aaeb8b3818baf9b02d767222c2144a9066079362
+  ms.sourcegitcommit: 860e8303da3e36624f603ce3273d68911c696e5d
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 10/15/2019
-  ms.locfileid: "72314822"
+  ms.lasthandoff: 10/22/2019
+  ms.locfileid: "72777265"
 landingContent:
 - title: 開始使用 Python
   linkLists:
