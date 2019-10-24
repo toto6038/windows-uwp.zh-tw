@@ -50,7 +50,7 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 </Canvas>
 ```
 
-如果物件不包含其他物件，您可以使用一個自我結束記號來宣告物件元素，而不是開頭/結尾的配對： `<Canvas />`
+If the object does not contain other objects, you can declare the object element by using one self-closing tag instead of an opening/closing pair: <ph id="ph1">`&lt;Canvas /&gt;`</ph>
 
 ### <a name="containers"></a>容器
 
@@ -87,7 +87,7 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 </UserControl ...>
 ```
 
-**請注意**  Some 結構不能宣告為物件元素。 初始化文字不受支援並且不能當作資源使用。 您必須使用屬性語法，以便在 XAML 中將屬性設成這些值。 這些類型包含：[**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration)、[**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect) 以及 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept><ph id="ph1">  </ph>Some structures can't be declared as object elements. 初始化文字不受支援並且不能當作資源使用。 您必須使用屬性語法，以便在 XAML 中將屬性設成這些值。 這些類型包含：[**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration)、[**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect) 以及 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)。
 
 ## <a name="setting-properties"></a>設定屬性
 
@@ -101,11 +101,11 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 和在物件宣告一樣，這份清單並不表示每一項方法都可用來設定任何屬性。 某些屬性僅支援其中一種方法。
 某些屬性支援一種以上的格式；例如，有的屬性可以使用屬性元素語法或屬性語法。 使用哪一種語法，取決於屬性及該屬性所使用的物件類型。 在 Windows 執行階段 API 參考中，您將會在 **\[語法\]** 區段中看見可使用的 XAML 用法。 有時會提供可運作但更詳細的替代用法。 這些詳細的用法不一定會顯示，因為我們正嘗試為您顯示在 XAML 中使用該屬性的最佳做法或真實案例。 參考頁面的 **\[XAML 用法\]** 區段中提供了可在 XAML 中設定之屬性的 XAML 語法指導方針。
 
-在 XAML 中無法以任何方式設定物件的某些屬性，而且只能使用程式碼來設定。 這些通常是較適合在程式碼後置而不是在 XAML 中使用的屬性。
+Some properties on objects cannot be set in XAML by any means, and can only be set using code. 這些通常是較適合在程式碼後置而不是在 XAML 中使用的屬性。
 
 唯讀屬性不能在 XAML 中設定。 甚至在程式碼中，擁有者類型也必須支援某些其他方式才能設定它，例如建構函式多載、Helper 方法或計算屬性支援。 計算屬性有賴於其他可設定屬性的值，有時再加上含有內建處理的事件；在相依性屬性系統中都有提供這些功能。 如需相依性屬性對計算屬性支援如何有用的詳細資訊，請參閱[相依性屬性概觀](dependency-properties-overview.md)。
 
-XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上並非如此。 請參閱本主題稍後的「[集合語法](#collection-syntax)」。
+XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上並非如此。 See "<bpt id="p1">[</bpt>Collection Syntax<ept id="p1">](#collection-syntax)</ept>" later in this topic.
 
 ### <a name="setting-a-property-by-using-attribute-syntax"></a>使用屬性語法設定屬性
 
@@ -121,19 +121,19 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 物件的許多屬性可以使用屬性元素語法來設定。 屬性元素看起來如下：`<`*object*`.`*property*`>`.
 
-如果要使用屬性元素語法，您可以為要設定的屬性建立 XAML 屬性元素。 在標準 XML 中，這個元素只會被當做名稱中含有點的元素。 不過，在 XAML 中，元素名稱中的點會將元素識別為屬性專案，而*屬性*必須是支援物件模型實中*物件*的成員。 如果要使用屬性元素語法，就必須要能夠指定物件元素，才能「填滿」屬性元素標記。 屬性元素一律會有一些內容 (單一元素、多個元素或內部文字)；自我結尾屬性元素的存在並沒有任何意義。
+如果要使用屬性元素語法，您可以為要設定的屬性建立 XAML 屬性元素。 在標準 XML 中，這個元素只會被當做名稱中含有點的元素。 However, in XAML, the dot in the element name identifies the element as a property element, with <bpt id="p1">*</bpt>property<ept id="p1">*</ept> expected to be a member of <bpt id="p2">*</bpt>object<ept id="p2">*</ept> in a backing object model implementation. 如果要使用屬性元素語法，就必須要能夠指定物件元素，才能「填滿」屬性元素標記。 屬性元素一律會有一些內容 (單一元素、多個元素或內部文字)；自我結尾屬性元素的存在並沒有任何意義。
 
 在下列文法中，*property* 是您要設定之屬性的名稱，*propertyValueAsObjectElement* 是一個要用來滿足該屬性的值類型需求的單一物件元素。
 
-`<`*物件*`>`
+<ph id="ph1">`&lt;`</ph><bpt id="p1">*</bpt>object<ept id="p1">*</ept><ph id="ph2">`&gt;`</ph>
 
-`<`*物件*`.`*屬性*`>`
+<ph id="ph1">`&lt;`</ph><bpt id="p1">*</bpt>object<ept id="p1">*</ept><ph id="ph2">`.`</ph><bpt id="p2">*</bpt>property<ept id="p2">*</ept><ph id="ph3">`&gt;`</ph>
 
-*propertyValueAsObjectElement*
+<bpt id="p1">*</bpt>propertyValueAsObjectElement<ept id="p1">*</ept>
 
-`</`*物件*`.`*屬性*`>`
+<ph id="ph1">`&lt;/`</ph><bpt id="p1">*</bpt>object<ept id="p1">*</ept><ph id="ph2">`.`</ph><bpt id="p2">*</bpt>property<ept id="p2">*</ept><ph id="ph3">`&gt;`</ph>
 
-`</`*物件*`>`
+<ph id="ph1">`&lt;/`</ph><bpt id="p1">*</bpt>object<ept id="p1">*</ept><ph id="ph2">`&gt;`</ph>
 
 下列範例使用屬性元素語法來設定含有 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 物件元素之 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) (在 **SolidColorBrush** 內，[**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 設定為屬性)。這個 XAML 的剖析結果，與使用屬性語法設定 **Fill** 的上一個 XAML 範例相同。
 
@@ -191,7 +191,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 目前為止顯示的所有語法，都是將屬性設定為單一物件。 但是，許多 UI 案例卻需要指定的父元素可以包含多個子元素。 例如，某個輸入表單的 UI 需要數個文字方塊元素、一些標籤，或者是一個 "Submit" 按鈕。 然而，如果您要使用程式撰寫物件模型來存取這些多重元素，它們通常是單一集合屬性中的項目，而非每個項目各為不同屬性的值。 XAML 可以透過將使用集合類型的屬性視為隱含屬性，並為一個集合類型的任何子元素執行特殊處理，支援多重子元素以及支援一般的支援集合模型。
 
-許多集合屬性也會被識別為類別的 XAML 內容屬性。 隱含集合處理與 XAML 內容語法的組合在用於控制項組合的類型中很常見，例如面板、檢視或項目控制項。 例如，下列範例顯示在[**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)中撰寫兩個對等 UI 元素的最簡單可能 XAML。
+許多集合屬性也會被識別為類別的 XAML 內容屬性。 隱含集合處理與 XAML 內容語法的組合在用於控制項組合的類型中很常見，例如面板、檢視或項目控制項。 For example, the following example shows the simplest possible XAML for compositing two peer UI elements within a <bpt id="p1">[</bpt><bpt id="p2">**</bpt>StackPanel<ept id="p2">**</ept><ept id="p1">](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)</ept>.
 
 ```xml
 <StackPanel>
@@ -234,15 +234,15 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 任一種語法都可以宣告物件，並在該物件設定屬性。 雖然第一個範例是標記中的單一元素，但這裡有實際的不同步驟與 XAML 處理器如何剖析這個標記有關。
 
-首先，物件元素的顯示狀態指示必須具現化新的 *objectName* 物件。 只有在這類實例存在之後，才可以在其上設定實例屬性*propertyName* 。
+首先，物件元素的顯示狀態指示必須具現化新的 *objectName* 物件。 Only after such an instance exists can the instance property <bpt id="p1">*</bpt>propertyName<ept id="p1">*</ept> be set on it.
 
 另一個 XAML 規則是元素的屬性必須能以任何順序設定。 例如，`<Rectangle Height="50" Width="100" />` 和 `<Rectangle Width="100"  Height="50" />` 並無差別。 使用哪個順序只是樣式上的偏好。
 
-**請注意**，如果您使用 XML 編輯器以外的設計介面，  XAML 設計工具通常會升級順序慣例，但是您可以在稍後自由編輯該 XAML，以重新排列屬性或引進新的屬性。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept><ph id="ph1">  </ph>XAML designers often promote ordering conventions if you use design surfaces other than the XML editor, but you can freely edit that XAML later, to reorder the attributes or introduce new ones.
 
 ## <a name="attached-properties"></a>附加屬性
 
-XAML 透過新增名為「附加屬性」的語法元素延伸了 XML 的功能。 附加屬性語法與屬性元素語法類似，它也包含點，而且這個點對於 XAML 剖析來說有特殊的意義。 具體而言，這個點會分隔附加屬性的提供者和屬性名稱。
+XAML 透過新增名為「附加屬性」的語法元素延伸了 XML 的功能。 附加屬性語法與屬性元素語法類似，它也包含點，而且這個點對於 XAML 剖析來說有特殊的意義。 Specifically, the dot separates the provider of the attached property, and the property name.
 
 在 XAML 中，您使用語法 *AttachedPropertyProvider*.*PropertyName* 來設定附加屬性。 這裡是如何在 XAML 中設定附加屬性 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 的範例：
 
@@ -265,9 +265,9 @@ XAML 透過新增名為「附加屬性」的語法元素延伸了 XML 的功能�
 
 ## <a name="literal--values"></a>常值 "{" 的值
 
-因為左括弧符號 \{ 是開啟標記延伸序列，所以您可以使用 escape 序列來指定以 "\{" 開頭的常值字串值。 Escape 序列是 "\{ \}"。 例如，若要指定單一左大括弧的字串值，請將屬性值指定為 "\{ \} \{"。 您也可以使用替代引號（例如 **，在屬性值中以** **""** 分隔），以提供 "\{" 值做為字串。
+Because the opening brace symbol <ph id="ph1">\{</ph> is the opening of the markup extension sequence, you use an escape sequence to specify a literal string value that starts with "<ph id="ph2">\{</ph>". The escape sequence is "<ph id="ph1">\{</ph><ph id="ph2">\}</ph>". For example, to specify a string value that is a single opening brace, specify the attribute value as "<ph id="ph1">\{</ph><ph id="ph2">\}</ph><ph id="ph3">\{</ph>". You can also use the alternative quotation marks (for example, a <bpt id="p1">**</bpt>'<ept id="p1">**</ept> within an attribute value delimited by <bpt id="p2">**</bpt>""<ept id="p2">**</ept>) to provide a "<ph id="ph1">\{</ph>" value as a string.
 
-**注意**   "\\}" 也適用于引號屬性內。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept><ph id="ph1">  </ph>"<ph id="ph2">\\</ph>}" also works if it's inside a quoted attribute.
  
 ## <a name="enumeration-values"></a>列舉值
 
@@ -276,7 +276,7 @@ Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成
 -   請勿使用完整格式，這會沒有作用。 例如，下列是無效的 XAML：`<Button Visibility="Visibility.Visible"/>`。
 -   不要使用常數的值。 換句話說，無論列舉定義為明確或隱含，都不要依賴列舉整數值。 儘管看起來可行，但是這在 XAML 或程式碼中都是一個不好的做法，因為您會依賴可能是暫時性實作的詳細資料。 例如，不要這樣做：`<Button Visibility="1"/>`。
 
-**請注意**，  In 使用 XAML 並使用列舉之 api 的參考主題，請在**語法**的**屬性值**區段中，按一下列舉類型的連結。 這會連結到列舉頁面，您可以在這裡探索該列舉的具名常數。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept><ph id="ph1">  </ph>In reference topics for APIs that use XAML and use enumerations, click the link to the enumeration type in the <bpt id="p2">**</bpt>Property value<ept id="p2">**</ept> section of <bpt id="p3">**</bpt>Syntax<ept id="p3">**</ept>. 這會連結到列舉頁面，您可以在這裡探索該列舉的具名常數。
 
 列舉可以是旗標的形式，這表示列舉具備 **FlagsAttribute** 屬性。 如果您需要為旗標形式的列舉指定一個值組合來做為 XAML 屬性值，請使用每個列舉常數的名稱，在每個名稱之間加上逗號 (,)，中間不要有空格字元。 旗標形式的屬性在 Windows 執行階段的 XAML 詞彙中並不常用，但是，[**ManipulationModes**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationModes) 是在 XAML 中設定旗標形式列舉值的支援範例。
 
@@ -286,7 +286,7 @@ Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Windows 執行階段參考中的 XAML 預留位置慣例
 
-如果您仔細看過可使用 XAML 的 Windows 執行階段 API 參考主題的任何 **\[語法\]** 區段，可能會看到語法包含非常多的預留位置。 XAML 語法與C#、Microsoft Visual Basic 或 Visual C++ component extensions （C++/CX）語法不同，因為 xaml 語法是使用語法。 這是在您自己的 XAML 檔案中給予提示的最終用法，但是不要過度限制您可以使用的值。 所以通常用法會描述一種混合常值和預留位置的文法，並在 **\[XAML 值\]** 區段中定義部分預留位置。
+如果您仔細看過可使用 XAML 的 Windows 執行階段 API 參考主題的任何 **\[語法\]** 區段，可能會看到語法包含非常多的預留位置。 XAML syntax is different than the C#, Microsoft Visual Basic or Visual C++ component extensions (C++/CX) syntax because the XAML syntax is a usage syntax. 這是在您自己的 XAML 檔案中給予提示的最終用法，但是不要過度限制您可以使用的值。 所以通常用法會描述一種混合常值和預留位置的文法，並在 **\[XAML 值\]** 區段中定義部分預留位置。
 
 當您在屬性的 XAML 語法中看到類型名稱/元素名稱時，顯示的名稱是原來定義屬性的類型名稱。 但是 Windows 執行階段 XAML 支援以 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 為基礎之類別的類別繼承模型。 因此，您通常可以在類別上使用屬性，該類別並非實際定義類別，而是改為從最初定義屬性 (Property)/屬性 (Attribute) 的類別衍生。 例如，您可以在任何使用深度繼承的 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 衍生類別上，將 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 設定為屬性。 例如：`<Button Visibility="Visible" />`。 因此，不要照字面解釋任何 XAML 用法語法中顯示的元素名稱；此語法或許能供代表該類別的元素使用，同時也可供代表衍生類別的元素使用。 如果類型在實際用法中極少或不可能顯示為定義元素，該類型名稱在語法中會特別以小寫顯示。 例如，您看到的 **UIElement.Visibility** 語法為：
 
@@ -301,7 +301,7 @@ Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成
 XAML 用法區段也使用各種一般化的預留位置。 這些預留位置不會每次在 **\[XAML 值\]** 中重新定義，因為您可以猜想到或是最後都能了解它們所代表的意義。 我們認為大部分的讀者應該都不想在 **\[XAML 值\]** 中重複看到它們出現，所以定義中予以省略。 如果需要參考資料，以下是部分預留位置及它們以廣義來說所代表的意義：
 
 -   *object*：理論上是任何物件值，但實際上通常限制為特定的物件類型，例如，string-or-object 選項，詳細資訊請參閱參考頁面的＜備註＞。
--   *物件* *屬性*：組合中的*物件* *屬性*會用於所顯示的語法是可當做許多屬性之屬性值使用的類型語法。 例如，針對[**筆刷**](/uwp/api/Windows.UI.Xaml.Media.Brush)顯示的**Xaml 屬性用法**包括： <*物件* *屬性*= "*predefinedColorName*"/>
+-   <bpt id="p1">*</bpt>object<ept id="p1">*</ept> <bpt id="p2">*</bpt>property<ept id="p2">*</ept>: <bpt id="p3">*</bpt>object<ept id="p3">*</ept> <bpt id="p4">*</bpt>property<ept id="p4">*</ept> in combination is used for cases where the syntax being shown is the syntax for a type that can be used as an attribute value for many properties. For example, the <bpt id="p1">**</bpt>Xaml Attribute Usage<ept id="p1">**</ept> shown for <bpt id="p2">[</bpt><bpt id="p3">**</bpt>Brush<ept id="p3">**</ept><ept id="p2">](/uwp/api/Windows.UI.Xaml.Media.Brush)</ept> includes: &lt;<bpt id="p4">*</bpt>object<ept id="p4">*</ept> <bpt id="p5">*</bpt>property<ept id="p5">*</ept>="<bpt id="p6">*</bpt>predefinedColorName<ept id="p6">*</ept>"/&gt;
 -   *eventhandler*：這會顯示為事件屬性所顯示的每個 XAML 語法的屬性值。 您在這裡所提供的資訊，就是事件處理常式函式的函式名稱。 該函式必須定義在 XAML 頁面的程式碼後置中。 在程式設計層級，該函式必須符合您所處理事件的委派簽章，否則無法編譯應用程式程式碼。 不過這實際上是程式設計方面的考量，而非 XAML 的考量，所以我們不會嘗試提示任何關於 XAML 語法中的委派類型。 如果您想要知道應該為事件實作的委派，請參閱事件參考主題的 **\[事件資訊\]** 區段中標示為**委派**的表格列。
 -   *enumMemberName*：顯示在所有列舉的屬性語法中。 使用列舉值的屬性也有類似的預留位置，但通常會在預留位置加上列舉名稱提示的首碼。 例如，針對 [**FrameworkElement.FlowDirection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.flowdirection) 顯示的語法為 <*frameworkElement***FlowDirection**="* flowDirectionMemberName*"/>。 如果您正位於其中一個屬性參考頁面，按一下顯示在 **\[屬性值\]** 區段中 **\[類型:\]** 旁的列舉類型連結。 對於使用該列舉之屬性的屬性值，您可以使用列於 **\[成員\]** 清單的 **\[成員\]** 欄中的任何字串。
 -   *double*、*int*、*string*、*bool*：這些是 XAML 語言已知的基本類型。 如果您使用 C# 或 Visual Basic 進行程式設計，這些類型可對應 Microsoft .NET 的等同類型，例如 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)、[**Int32**](https://docs.microsoft.com/dotnet/api/system.int32)、[**String**](https://docs.microsoft.com/dotnet/api/system.string) 和 [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean)，當您在 .NET 程式碼後置中使用 XAML 定義的值時，可以使用這些 .NET 類型的任何成員。 如果您使用 C++/CX 進行程式設計，可以使用 C++ 基本類型，也可以考慮使用等同於 [**Platform**](https://docs.microsoft.com/cpp/cppcx/platform-namespace-c-cx) 命名空間所定義類型的這些項目，例如 [**Platform::String**](https://docs.microsoft.com/cpp/cppcx/platform-string-class)。 針對特定的屬性值有時會有額外的限制。 但您通常會在 **\[屬性值\]** 區段或 [備註] 區段而不會在 XAML 區段中看到這些註解，因為這些限制同時適用於程式碼用法和 XAML 用法。
@@ -314,7 +314,7 @@ XAML 用法區段也使用各種一般化的預留位置。 這些預留位置�
 ## <a name="related-topics"></a>相關主題
 
 * [XAML 概觀](xaml-overview.md)
-* [XAML 命名空間和命名空間對應](xaml-namespaces-and-namespace-mapping.md)
+* <bpt id="p1">[</bpt>XAML namespaces and namespace mapping<ept id="p1">](xaml-namespaces-and-namespace-mapping.md)</ept>
 * [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
  
 
