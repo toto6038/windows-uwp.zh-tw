@@ -6,28 +6,25 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, XAML 互通性
 ms.localizationpriority: medium
-ms.openlocfilehash: ad03a86ba18f11d8d63c2c98649e7f159f3d4f52
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 174cb7f2608c1da89ebacc21e5032d03f7701f15
+ms.sourcegitcommit: 0179e2ccb59a14abc1676da0662e2def54af24ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321291"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72796219"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 與 XAML 互通性
 
-
-
 您可以在通用 Windows 平台 (UWP) 遊戲或 App 中，同時使用 Extensible Application Markup Language (XAML) 與 Microsoft DirectX。 XAML 和 DirectX 的組合可讓您建置彈性的使用者介面架構，以便與 DirectX 轉譯的內容互通，而這對於具有大量圖形的 App 特別有用。 本主題說明使用 DirectX 的 UWP App 結構，並指出建置與 DirectX 搭配使用的 UWP App 時應使用的重要類型。
 
-如果您的 App 著重在 2D 轉譯，您可能想要使用 [Win2D](https://github.com/microsoft/win2d) Windows 執行階段程式庫。 此程式庫是由 Microsoft 維護，且採用 Direct2D 核心技術。 它能大幅簡化實作 2D 圖形的使用模式，且包含本文件中所提及之某些技術的實用抽象。 如需詳細資訊，請參閱專案頁面。 此文件涵蓋的指南適用於「沒有」  使用 Win2D 的 App 開發人員。
+如果您的 App 著重在 2D 轉譯，您可能想要使用 [Win2D](https://github.com/microsoft/win2d) Windows 執行階段程式庫。 此程式庫是由 Microsoft 維護，且採用 Direct2D 核心技術。 它能大幅簡化實作 2D 圖形的使用模式，且包含本文件中所提及之某些技術的實用抽象。 如需詳細資訊，請參閱專案頁面。 此文件涵蓋的指南適用於 *「沒有」* 使用 Win2D 的 App 開發人員。
 
-> **附註**  DirectX Api 並未定義為 Windows 執行階段類型，因此您通常使用視覺效果C++元件延伸模組 (C++/CX) 來開發與 DirectX 交互操作的 XAML UWP 元件。 此外，如果您將 DirectX 呼叫包裝在個別的 Windows 執行階段中繼資料檔中，您就可以使用 C# 和 XAML 建立使用 DirectX 的 UWP App。
-
- 
+> [!NOTE]
+> DirectX api 不會定義為 Windows 執行階段類型，但您通常可以使用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)來開發與 DirectX 互通的 XAML UWP 元件。 此外，如果您將 DirectX 呼叫包裝在個別的 Windows 執行階段中繼資料檔中，您就可以使用 C# 和 XAML 建立使用 DirectX 的 UWP App。
 
 ## <a name="xaml-and-directx"></a>XAML 和 DirectX
 
-DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D 和 Microsoft Direct3D。 雖然 XAML 可支援基本的 2D 基本形狀和效果，但許多應用程式 (例如模型和遊戲) 需要更複雜的圖形支援。 對於這類的應用程式，您可以使用 Direct2D 和 Direct3D 呈現局部或所有圖形，然後使用 XAML 處理其他作業。
+DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 Microsoft Direct3D。 雖然 XAML 可支援基本的 2D 基本形狀和效果，但許多應用程式 (例如模型和遊戲) 需要更複雜的圖形支援。 對於這類的應用程式，您可以使用 Direct2D 和 Direct3D 呈現局部或所有圖形，然後使用 XAML 處理其他作業。
 
 若要實作自訂 XAML 和 DirectX 互通性，您需要了解這兩個概念：
 
@@ -46,14 +43,13 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
 
 ## <a name="surfaceimagesource"></a>SurfaceImageSource
 
-
 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 提供用來繪圖的 DirectX 共用表面，然後將位元組合成應用程式內容。
 
 下列是在程式碼後置中建立和更新 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 物件的基本處理程序：
 
 1.  藉由傳遞 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 建構函式的高度和寬度，以定義共用表面的大小。 您也可以指出表面是否需要 Alpha (不透明度) 支援。
 
-    例如:
+    例如：
 
     `SurfaceImageSource^ surfaceImageSource = ref new SurfaceImageSource(400, 300);`
 
@@ -77,7 +73,7 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
     > [!NOTE]
     > 如果您將會從背景執行緒繪製到 **SurfaceImageSource**，您也需要確保 DXGI 裝置已啟用多執行緒存取。 基於效能考量，只有在從背景執行緒繪圖時，才必須執行此動作。
 
-    例如:
+    例如：
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
@@ -180,7 +176,7 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
 
 下列是在程式碼後置中建立和更新 [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 物件的基本處理程序：
 
-1.  根據您要的大小建立 [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 執行個體。 例如:
+1.  根據您要的大小建立 [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 執行個體。 例如：
 
     ```cpp
     VirtualSurfaceImageSource^ virtualSIS = 
@@ -212,7 +208,7 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
     > [!NOTE]
     > 如果您將會從背景執行緒繪製到 **VirtualSurfaceImageSource**，您也需要確保 DXGI 裝置已啟用多執行緒存取。 基於效能考量，只有在從背景執行緒繪圖時，才必須執行此動作。
 
-    例如:
+    例如：
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
@@ -369,9 +365,8 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
 為了確保最佳的效能，[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 類型有部分限制：
 
 -   每個 App 的 [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 執行個體不能超過 4 個。
--   您應該設定 DirectX 交換鏈結的高度和寬度 (在[DXGI\_交換\_鏈結\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) 目前維度的交換鏈結項目。 如果不這麼做，將會相應顯示內容 (使用**DXGI\_調整\_STRETCH**) 以符合。
--   您必須設定 DirectX 交換鏈結的縮放模式 (在[DXGI\_交換\_鏈結\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) 來**DXGI\_調整\_STRETCH**。
--   您不能設定 DirectX 交換鏈結的 alpha 模式 (在[DXGI\_交換\_鏈結\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) 來**DXGI\_ALPHA\_模式\_預乘**。
+-   您應該將 DirectX 交換鏈的高度和寬度（在[DXGI \_SWAP \_CHAIN \_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)）設定為交換鏈元素的目前維度。 如果不這麼做，將會調整顯示內容（使用**DXGI \_SCALING \_STRETCH**）以配合。
+-   您必須將 DirectX 交換鏈的縮放模式（在[DXGI \_SWAP \_CHAIN \_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)）設定為**dxgi \_SCALING \_STRETCH**。
 -   您必須呼叫 [IDXGIFactory2::CreateSwapChainForComposition](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcomposition) 來建立 DirectX 交換鏈結。
 
 請根據應用程式的需求更新 [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)，不是根據 XAML 架構的更新。 如果您需要將 **SwapChainPanel** 的更新與 XAML 架構的更新同步，請登錄 [Windows::UI::Xaml::Media::CompositionTarget::Rendering](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositiontarget.rendering) 事件。 否則，您必須在嘗試從 (更新 **SwapChainPanel** 的執行緒以外的) 其他執行緒更新 XAML 元素時，考量會發生的跨執行緒問題。
@@ -462,15 +457,7 @@ DirectX 會提供兩個功能強大的程式庫的 2D 和 3D 圖形：Direct2D �
 
 * [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)
-* [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource)
+* [Virtualsurfaceimagesource 這是](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource)
 * [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)
 * [ISwapChainPanelNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative)
-* [程式設計手冊為 Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)
-
- 
-
- 
-
-
-
-
+* [Direct3D 11 程式設計指南](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)

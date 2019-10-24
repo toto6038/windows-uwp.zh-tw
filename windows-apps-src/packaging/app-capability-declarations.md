@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f12a83a2ad31972f344d95aa9dcfe1914eeb2b3b
-ms.sourcegitcommit: 82d202478ab4d3011c5ddd2e852958c34336830d
+ms.openlocfilehash: 167b388130ea02cc0613dc9638e93f0cde38eb46
+ms.sourcegitcommit: 860e8303da3e36624f603ce3273d68911c696e5d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/22/2019
-ms.locfileid: "72715880"
+ms.locfileid: "72777269"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -59,6 +59,7 @@ ms.locfileid: "72715880"
 | **背景媒體播放** | **backgroundMediaPlayback** 功能會變更媒體特定 API (例如 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) 和 [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph) 類別) 的行為，以便在您的 app 位於背景時啟用媒體播放。 所有作用中的音訊資料流將不再設為靜音，但在 app 轉換到背景時仍可繼續聽到聲音。 此外，進行播放時，將會自動延伸應用程式存留期。
 | **遠端系統** | **remoteSystem** 功能讓 app 能夠存取與使用者 Microsoft 帳戶相關聯的裝置清單。 需要存取裝置清單，才能執行任何保留在裝置上的操作。 需要具備這個功能，才能存取下列各項的所有成員。<ul><li>[RemoteSystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)命名空間</li><li>[RemoteLauncher](https://docs.microsoft.com/uwp/api/Windows.System.RemoteLauncher)類別</li><li>[AppServiceConnection. OpenRemoteAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.openremoteasync)方法</li></ul> |
 | **空間感知** | **spatialPerception** 功能提供空間對應資料的程式設計存取，並提供有關使用者附近空間的應用程式指定區域中表面的混合實境應用程式資訊。  只有在應用程式明確使用這些表面網格時，才要宣告 spatialPerception 功能，因為混合實境應用程式根據使用者頭部姿勢執行全像轉譯時並不需要此功能。 |
+| **全域媒體控制** | **GlobalMediaControl**功能可讓應用程式存取整個系統中已與[**SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)整合的播放會話，以提供播放資訊並允許遠端控制。 需要有這項功能，才能在[**Windows. Media. Control**](https://docs.microsoft.com/uwp/api/windows.media.control)命名空間中使用某些 api。 這項功能是在[uap7：功能](/uwp/schemas/appxpackage/uapmanifestschema/element-uap7-capability)元素中定義。  |
 
 ## <a name="device-capabilities"></a>裝置功能
 
@@ -84,7 +85,7 @@ ms.locfileid: "72715880"
 | **序列通訊** | **Serialcommunication** 裝置功能提供 Windows.Devices.SerialCommunication 命名空間中 API 的存取權，可讓 Windows 應用程式與公開序列埠或序列埠部分抽象概念的裝置進行通訊。 需要具備這個功能，才能使用 [**Windows.Devices.SerialCommnication**](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication) 命名空間中的 API。 |
 | **目視追蹤器** | 相容眼球追蹤裝置已連接時，**gazeInput**功能可讓應用程式偵測使用者在應用程式範圍內注視的位置。 需要有這項功能，才能在[**Windows. 輸入. Preview**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview)命名空間中使用某些 api。 |
 | **GPIO、I2C、SPI 和 PWM** | **LowLevel**裝置功能可讓您存取 GPIO、I2C、SPI 和 PWM 裝置。 這項功能是在下列命名空間中使用 Api 的必要條件： [**windows. Gpio**](https://docs.microsoft.com/uwp/api/windows.devices.gpio)、 [**windows. I2c**](https://docs.microsoft.com/uwp/api/windows.devices.i2c)、 [**windows**](https://docs.microsoft.com/uwp/api/windows.devices.spi)、[**Pwm**](https://docs.microsoft.com/uwp/api/windows.devices.pwm)。<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
-| **全域媒體控制** | **GlobalMediaControl**功能可讓應用程式存取整個系統中已與[**SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)整合的播放會話，以提供播放資訊並允許遠端控制。 需要有這項功能，才能在[**Windows. Media. Control**](https://docs.microsoft.com/uwp/api/windows.media.control)命名空間中使用某些 api。 |
+
 
 <span id="special-and-restricted-capabilities" />
 
