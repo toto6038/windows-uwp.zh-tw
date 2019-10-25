@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a1993ea4808cabf9f82640f03f0187d431f3d2
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: e8f4fd041eae30269e8b876c108151e4aae45d91
+ms.sourcegitcommit: e189166dea855ce330bd0634cc158b51cb4fbd69
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393503"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72811652"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>使用 Open Source Computer Vision Library (OpenCV) 搭配 MediaFrameReader
 
 本文說明如何使用 Open Source Computer Vision Library (OpenCV，這是一個原生程式碼程式庫，提供廣泛的影像處理演算法) 來搭配 [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) 類別，此類別可同時從多種來源讀取媒體畫面。 本文中的範例程式碼會引導您建立簡單的應用程式，從色彩感應器取得畫面、使用 OpenCV 程式庫模糊每個畫面，然後在 XAML **Image** 控制項中顯示處理過的影像。 
 
 >[!NOTE]
->OpenCV.Win.Core 和 OpenCV.Win.ImgProc 會不定期更新，但仍建議建立本頁所述的 OpenCVHelper。
+>OpenCV 和 OpenCV 不會定期更新，且不會通過存放區合規性檢查，因此這些套件僅適用于實驗。
 
 本文以其他兩篇文章的內容為基礎：
 
@@ -65,8 +65,8 @@ ms.locfileid: "70393503"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [處理媒體與 MediaFrameReader 的畫面格](process-media-frames-with-mediaframereader.md)
+* [具有 MediaCapture 的基本相片、影片和音訊捕獲](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [使用 MediaFrameReader 處理媒體框架](process-media-frames-with-mediaframereader.md)
 * [使用 OpenCV 處理軟體點陣圖](process-software-bitmaps-with-opencv.md)
 * [相機框架範例](https://go.microsoft.com/fwlink/?LinkId=823230)
 * [相機框架 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003)
