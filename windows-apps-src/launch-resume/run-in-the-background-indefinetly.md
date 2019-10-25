@@ -2,16 +2,16 @@
 title: 在背景無限期執行
 description: 使用 extendedExecutionUnconstrained 功能，在背景無限期執行背景工作或延伸執行工作階段。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: 背景工作中，擴充執行、 資源、 限制、 背景工作
+keywords: 背景工作，延伸執行，資源，限制，背景工作
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: faac1d8d47ddcff4e5ec32d35f2e46bab7a3f4aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dee95e02e43f3a541bd332f5150765ca76bb0955
+ms.sourcegitcommit: 234dce5fb67e435ae14eb0052d94ab01611ac5e4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630243"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72822450"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在背景無限期執行
 
@@ -27,34 +27,34 @@ UWP app 不在前景執行時，會進入暫停狀態。 在桌面上，當使�
 
 `extendedExecutionUnconstrained` 功能在應用程式資訊清單中會當做受限功能加入。 如需受限功能的詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
-_Package.appxmanifest_
+「Package.appxmanifest」
 ```xml
 <Package ...>
 ...
-  <Capabilities>  
-    <rescap:Capability Name="extendedExecutionUnconstrained"/>  
-  </Capabilities>  
+  <Capabilities>
+    <rescap:Capability Name="extendedExecutionUnconstrained"/>
+  </Capabilities>
 </Package>
 ```
 
 當您使用 `extendedExecutionUnconstrained` 功能時，使用的會是 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason)，而不是 [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 和 [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason)。 建立工作階段、設定成員以及非同步要求延伸的同樣模式仍然適用： 
 
 ```cs
-var newSession = new ExtendedExecutionForegroundSession();  
-newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;  
-newSession.Description = "Long Running Processing";  
-newSession.Revoked += SessionRevoked;  
-ExtendedExecutionResult result = await newSession.RequestExtensionAsync();  
-switch (result)  
-{  
-    case ExtendedExecutionResult.Allowed:  
-        DoLongRunningWork();  
-        break;  
+var newSession = new ExtendedExecutionForegroundSession();
+newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;
+newSession.Description = "Long Running Processing";
+newSession.Revoked += SessionRevoked;
+ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
+switch (result)
+{
+    case ExtendedExecutionResult.Allowed:
+        DoLongRunningWork();
+        break;
 
-    default:  
-    case ExtendedExecutionResult.Denied:  
-        DoShortRunningWork();  
-        break;  
+    default:
+    case ExtendedExecutionResult.Denied:
+        DoShortRunningWork();
+        break;
 }
 ```
 
@@ -66,16 +66,16 @@ switch (result)  
 
 在通用 Windows 平台中，背景工作是不使用任何形式的使用者介面在背景中執行的處理序。 背景工作在遭到取消後，通常可能最多再執行 25 秒。 有些執行較久的工作還會進行檢查以確保背景工作不會閒置或佔用記憶體。 在 Windows Creators Update (版本 1703) 中，引進了 [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) 受限功能來移除這些限制。 **extendedBackgroundTaskTime** 功能在應用程式資訊清單中會當做受限功能加入。
 
-_Package.appxmanifest_
+「Package.appxmanifest」
 ```xml
 <Package ...>
-   <Capabilities>  
-       <rescap:Capability Name="extendedBackgroundTaskTime"/>  
-   </Capabilities>  
+  <Capabilities>
+    <rescap:Capability Name="extendedBackgroundTaskTime"/>
+  </Capabilities>
 </Package>
 ```
 
-這項功能會移除執行時間限制和閒置工作看門狗。 背景工作啟動後，無論是由觸發程序或應用程式服務呼叫所啟動，一旦對 **Run** 方法提供的 [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 執行延遲，就可以無限期執行。 如果應用程式設定已設定為 **\[由 Windows 管理\]**，仍然可能會套用能源配額，當 \[省電模式\] 為啟用狀態時，便無法啟動其背景工作。 這可以變更作業系統設定。 詳細資訊可在[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)中取得。
+這項功能會移除執行時間限制和閒置工作看門狗。 背景工作啟動後，無論是由觸發程序或應用程式服務呼叫所啟動，一旦對 **Run** 方法提供的 [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 執行延遲，就可以無限期執行。 如果應用程式設定已設定為 **\[由 Windows 管理\]** ，仍然可能會套用能源配額，當 \[省電模式\] 為啟用狀態時，便無法啟動其背景工作。 這可以使用 OS 設定進行變更。 詳細資訊可在[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)中取得。
 
 通用 Windows 平台會監視背景工作執行，以確保正常的電池使用時間和順暢的前景應用程式體驗。 不過，個人應用程式和企業營運應用程式可以使用延伸執行和 **extendedBackgroundTaskTime**，建立不考慮裝置資源可用性而執行任意長時間的應用程式。
 
