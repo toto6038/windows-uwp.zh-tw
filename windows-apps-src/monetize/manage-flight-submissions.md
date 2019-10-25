@@ -1,30 +1,30 @@
 ---
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: 在 Microsoft Store 提交 API 中使用這些方法，來管理已註冊至合作夥伴中心帳戶之應用程式的套件航班提交。
-title: 管理套件正式發行前小眾測試版提交
+title: 管理封裝航班提交
 ms.date: 04/16/2018
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版提交
+keywords: windows 10，uwp，Microsoft Store 提交 API，航班提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 813b1375b3bdba42f0568cb7d961f8108d5828a1
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 50596fdadae2ac4a0625687e7c8acaf985ccfaa7
+ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340410"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690380"
 ---
-# <a name="manage-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交
+# <a name="manage-package-flight-submissions"></a>管理封裝航班提交
 
-Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套件正式發行前小眾測試版，包括漸進式套件推出。 如需 Microsoft Store 提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
+Microsoft Store 提交 API 提供的方法可讓您用來管理應用程式的套件航班提交，包括逐步封裝的推出。 如需 Microsoft Store 提交 API 的簡介，包括使用 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 > [!IMPORTANT]
-> 如果您使用 Microsoft Store 提交 API 來建立套件航班的提交，請務必使用 API （而不是合作夥伴中心）對提交進行進一步變更。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
+> 如果您使用 Microsoft Store 提交 API 來建立套件航班的提交，請務必使用 API （而不是合作夥伴中心）對提交進行進一步變更。 如果您使用儀表板來變更原本使用 API 所建立的提交，就無法再使用 API 來變更或認可該提交。 在某些情況下，提交可能處於無法在提交程式中繼續進行的錯誤狀態。 如果發生這種情況，您必須刪除提交，並建立新的提交。
 
 <span id="methods-for-package-flight-submissions" />
 
-## <a name="methods-for-managing-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交的方法
+## <a name="methods-for-managing-package-flight-submissions"></a>管理封裝航班提交的方法
 
-使用下列方法取得、建立、更新、認可或刪除套件正式發行前小眾測試版提交。 在您可以使用這些方法之前，套件飛行必須已經存在於合作夥伴中心。 您可以[在合作夥伴中心](https://docs.microsoft.com/windows/uwp/publish/package-flights)建立套件飛行，或使用 [[管理封裝航班](manage-flights.md)] 中所述的 Microsoft Store 提交 API 方法。
+使用下列方法來取得、建立、更新、認可或刪除封裝航班提交。 在您可以使用這些方法之前，套件飛行必須已經存在於合作夥伴中心。 您可以[在合作夥伴中心](https://docs.microsoft.com/windows/uwp/publish/package-flights)建立套件飛行，或使用 [[管理封裝航班](manage-flights.md)] 中所述的 Microsoft Store 提交 API 方法。
 
 <table>
 <colgroup>
@@ -36,7 +36,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 <tr class="header">
 <th align="left">方法</th>
 <th align="left">URI</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +66,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 <td align="left"><a href="commit-a-flight-submission.md">認可新的或更新的套件航班提交</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">刪除</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-a-flight-submission.md">刪除套件航班提交</a></td>
 </tr>
@@ -75,42 +75,42 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 <span id="create-a-package-flight-submission">
 
-## <a name="create-a-package-flight-submission"></a>建立套件正式發行前小眾測試版提交
+## <a name="create-a-package-flight-submission"></a>建立套件航班提交
 
-若要建立套件正式發行前小眾測試版的提交，請遵循此程序。
+若要建立封裝航班的提交，請遵循此程式。
 
-1. 如果您尚未這麼做，請完成[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)中所述的必要條件，包括將 Azure AD 應用程式與您的合作夥伴中心帳戶產生關聯，以及取得您的用戶端識別碼和金鑰。 您只需執行此動作一次；有了用戶端識別碼和金鑰之後，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。  
+1. 如果您尚未這麼做，請完成[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)中所述的必要條件，包括將 Azure AD 應用程式與您的合作夥伴中心帳戶產生關聯，以及取得您的用戶端識別碼和金鑰。 您只需要執行此動作一次，擁有用戶端識別碼和金鑰之後，您就可以在需要建立新的 Azure AD 存取權杖時重複使用它們。  
 
-2. [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 您必須將此存取權杖傳遞至 Microsoft Store 提交 API 中的方法。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+2. [取得 Azure AD 的存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 您必須將此存取權杖傳遞給 Microsoft Store 提交 API 中的方法。 取得存取權杖之後，您會有60分鐘的時間，可以在到期前使用。 權杖到期之後，您可以取得新的權杖。
 
-3. 在 Microsoft Store 提交 API 中執行下列方法來[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)。 這個方法會建立新的處理中提交，這是最後一個已發佈提交的複本。
+3. 在 Microsoft Store 提交 API 中執行下列方法，以[建立套件航班提交](create-a-flight-submission.md)。 這個方法會建立新的進行中提交，這是您上次發行提交的複本。
 
     ```json
-    POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
+    POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions
     ```
 
-    回應主體包含[正式發行前小眾測試版提交](#flight-submission-object)資源，其中包括新提交的識別碼、用於上傳提交至 Azure Blob 儲存體的任何套件的共用存取簽章 (SAS) URI，以及新提交的資料 (包含所有清單和定價資訊)。
+    回應主體包含[航班提交](#flight-submission-object)資源，其中包含新提交的識別碼、共用存取簽章（SAS） URI，用於上傳提交至 Azure Blob 儲存體的任何套件，以及新提交的資料（包括全部清單和定價資訊）。
 
     > [!NOTE]
-    > SAS URI 提供 Azure 儲存體中安全資源的存取權，完全不需要帳戶金鑰。 如需有關 SAS Uri 及其搭配 Azure Blob 儲存體使用的背景資訊，請參閱 @no__t 0Shared 存取簽章，第1部分：瞭解 SAS 模型 @ no__t-0 和 @no__t 1Shared 存取簽章，第2部分：建立並使用具有 Blob 儲存體 @ no__t-0 的 SAS。
+    > SAS URI 可讓您存取 Azure 儲存體中的安全資源，而不需要帳戶金鑰。 如需有關 SAS Uri 及其搭配 Azure Blob 儲存體使用的背景資訊，請參閱[共用存取簽章，第1部分：瞭解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[共用存取簽章，第2部分：建立和使用 sas 與 Blob 儲存體](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
-4. 如果您要為提交新增新的套件，請[準備套件](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)並將它們新增到 ZIP 封存。
+4. 如果您要為提交新增新的封裝，請[準備封裝](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)，並將它們新增到 ZIP 封存。
 
-5. 以新提交的任何所需變更來修訂[正式發行前小眾測試版提交](#flight-submission-object)資料，然後執行下列方法來[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)。
+5. 使用新提交的任何必要變更修訂[航班提交](#flight-submission-object)資料，並執行下列方法來[更新套件航班提交](update-a-flight-submission.md)。
 
     ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
     ```
       > [!NOTE]
-      > 如果您要新增提交的新套件，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
+      > 如果您要新增提交的新套件，請務必更新提交資料，以參照 ZIP 封存中這些檔案的名稱和相對路徑。
 
-4. 如果您要新增提交的新套件，請使用您稍早呼叫之 POST 方法回應主體中提供的 SAS URI，將 ZIP 封存上傳至 [Azure Blob 儲存體](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage)。 您可在各種不同的平台上使用不同的 Azure Libraries 來執行，包括：
+4. 如果您要為提交新增套件，請使用您稍早呼叫的 POST 方法回應本文中提供的 SAS URI，將 ZIP 封存上傳至[Azure Blob 儲存體](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage)。 您可以使用不同的 Azure 程式庫在各種平臺上執行這項操作，包括：
 
-    * [適用于 .NET 的 Azure 儲存體用戶端程式庫](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
-    * [適用于 JAVA 的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
-    * [適用于 Python 的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
+    * [適用於 .NET 的 Azure 儲存體用戶端程式庫](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+    * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+    * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    下列 C# 程式碼範例示範如何在適用於 .NET 的 Azure 儲存體用戶端程式庫中，使用 [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) 類別上傳 ZIP 封存。 此範例假設已將 ZIP 封存寫入串流物件。
+    下列C#程式碼範例示範如何使用適用于 .net 的 Azure 儲存體用戶端程式庫中的[CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob)類別，將 ZIP 封存上傳至 Azure Blob 儲存體。 這個範例假設 ZIP 封存已寫入資料流程物件。
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -119,27 +119,27 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 執行下列方法來[認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)。 這會通知合作夥伴中心您已完成提交，且您的更新現在應套用至您的帳戶。
+5. 藉由執行下列方法來[認可封裝航班提交](commit-a-flight-submission.md)。 這會通知合作夥伴中心您已完成提交，且您的更新現在應套用至您的帳戶。
 
     ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
     ```
 
-6. 執行下列方法來[取得套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)，以檢查認可狀態。
+6. 藉由執行下列方法來檢查認可狀態，以[取得封裝航班提交的狀態](get-status-for-a-flight-submission.md)。
 
     ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
     ```
 
-    若要確認提交狀態，請檢閱回應主體中的「狀態」值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
+    若要確認提交狀態，請檢查回應主體中的*狀態值*。 如果要求成功，此值應從**CommitStarted**變更為前置處理，或在要求中有錯誤時 **，才會**進行**CommitFailed** 。 如果發生錯誤， *statusDetails*欄位會包含有關錯誤的進一步詳細資料。
 
-7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以使用先前的方法或造訪合作夥伴中心，繼續監視提交進度。
+7. 認可順利完成之後，提交會傳送至存放區進行內嵌。 您可以使用先前的方法或造訪合作夥伴中心，繼續監視提交進度。
 
 <span/>
 
 ## <a name="code-examples"></a>程式碼範例
 
-下列文章提供詳細的程式碼範例，示範如何以數種不同的程式設計語言來建立套件正式發行前小眾測試版：
+下列文章提供詳細的程式碼範例，示範如何以數種不同的程式設計語言建立封裝航班提交：
 
 * [C#程式碼範例](csharp-code-examples-for-the-windows-store-submission-api.md)
 * [JAVA 程式碼範例](java-code-examples-for-the-windows-store-submission-api.md)
@@ -147,23 +147,23 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 ## <a name="storebroker-powershell-module"></a>StoreBroker PowerShell 模組
 
-另一種直接呼叫 Microsoft Store 提交 API 的方法，我們也提供了開放原始碼 PowerShell 模組，該模組在 API 上方實作命令列介面。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以使用此模組從命令列來管理您的應用程式、正式發行前小眾測試版和附加元件提交，而不是直接直接呼叫 Microsoft Store 提交 API，也可以簡單瀏覽來源以檢視有關如何呼叫此 API 的更多範例。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至 Microsoft Store 的主要方式。
+除了直接呼叫 Microsoft Store 提交 API 之外，我們也提供開放原始碼 PowerShell 模組，以在 API 之上執行命令列介面。 此模組稱為[StoreBroker](https://aka.ms/storebroker)。 您可以使用此模組從命令列管理您的應用程式、航班和附加元件提交，而不是直接呼叫 Microsoft Store 提交 API，或者只要流覽來源，即可查看更多如何呼叫此 API 的範例。 StoreBroker 模組會在 Microsoft 中主動使用，做為許多第一方應用程式提交至存放區的主要方式。
 
-如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
+如需詳細資訊，請參閱[GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
 
 <span id="manage-gradual-package-rollout">
 
-## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理套件正式發行前小眾測試版提交的漸進式套件推出
+## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理封裝航班提交的逐步封裝推出
 
-您可以將套件正式發行前小眾測試版提交中的已更新套件，以漸進方式推出給 Windows 10 上的一部分應用程式客戶。 這可讓您監視特定套件的意見反應和分析資料，以確保您在更廣泛地推出更新之前，就已經信心滿滿。 您可以變更所發佈之提交的推出百分比 (或停止更新)，而不需建立新的提交。 如需更多詳細資料，包括如何在合作夥伴中心啟用和管理逐步封裝推出的指示，請參閱[這篇文章](../publish/gradual-package-rollout.md)。
+您可以將套件航班提交中已更新的套件逐漸推出至 Windows 10 上的應用程式客戶百分比。 這可讓您監視特定套件的意見反應和分析資料，以確保您在更廣泛地推出更新之前，先安心。 您可以變更已發行提交的推出百分比（或終止更新），而不需要建立新的提交。 如需更多詳細資料，包括如何在合作夥伴中心啟用和管理逐步封裝推出的指示，請參閱[這篇文章](../publish/gradual-package-rollout.md)。
 
-若要以程式設計方式啟用和管理套件正式發行前小眾測試版提交的漸進式套件推出，請使用 Microsoft Store 提交 API 中的方法，遵照此程序執行。
+若要以程式設計方式啟用封裝航班提交的逐步封裝推出，請遵循此程式，使用 Microsoft Store 提交 API 中的方法：
 
-  1. [建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)或[取得套件正式發行前小眾測試版提交](get-a-flight-submission.md)。
-  2. 在回應資料中，找出 [packageRollout](#package-rollout-object) 資源，將 *isPackageRollout* 欄位設定為 true，然後將 *packageRolloutPercentage* 欄位設定為應該取得已更新套件的應用程式客戶百分比。
-  3. 將已更新的套件正式發行前小眾測試版提交資料傳遞給[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法。
+  1. [建立套件航班提交](create-a-flight-submission.md)或[取得套件航班提交](get-a-flight-submission.md)。
+  2. 在回應資料中，找出[packageRollout](#package-rollout-object)資源，將*isPackageRollout*欄位設定為 True，並將*packageRolloutPercentage*欄位設定為應用程式客戶的百分比，應取得更新的套件。
+  3. 將更新的套件航班提交資料傳遞至[更新套件航班提交](update-a-flight-submission.md)方法。
 
-在為套件正式發行前小眾測試版提交啟用漸進式套件推出之後，您可使用下列方法，以程式設計方式取得、更新、中斷或完成漸進式推出。
+在啟用封裝航班提交的漸進式封裝推出之後，您可以使用下列方法，以程式設計方式取得、更新、停止或完成逐步推出。
 
 <table>
 <colgroup>
@@ -175,7 +175,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 <tr class="header">
 <th align="left">方法</th>
 <th align="left">URI</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -206,13 +206,13 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 ## <a name="data-resources"></a>資料資源
 
-用於管理套件正式發行前小眾測試版提交的 Microsoft Store 提交 API 方法，使用下列 JSON 資料資源。
+用於管理封裝航班提交的 Microsoft Store 提交 API 方法會使用下列 JSON 資料資源。
 
 <span id="flight-submission-object" />
 
-### <a name="flight-submission-resource"></a>正式發行前小眾測試版提交資源
+### <a name="flight-submission-resource"></a>航班提交資源
 
-此資源描述套件正式發行前小眾測試版提交。
+此資源描述套件航班提交。
 
 ```json
 {
@@ -255,61 +255,61 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 此資源具有下列值。
 
-| 值      | Type   | 描述              |
+| 值      | 類型   | 說明              |
 |------------|--------|------------------------------|
-| id            | string  | 提交的識別碼。  |
-| flightId           | string  |  包含要與提交產生關聯之套件正式發行前小眾測試版的識別碼。  |  
-| status           | string  | 提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | object  |  [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。  |
-| flightPackages           | array  | 包含可提供關於提交中每個套件之詳細資料的[正式發行前小眾測試版套件資源](#flight-package-object)。   |
-| packageDeliveryOptions    | object  | [套件交付選項資源](#package-delivery-options-object)包含提交的漸進式套件推出和強制更新設定。   |
-| fileUploadUrl           | string  | 共用存取簽章 (SAS) URI，可用於上傳任何適用於提交的套件。 如果您要新增提交的新套件，請將包含套件的 ZIP 封存上傳至這個 URI。 如需詳細資訊，請參閱[建立套件正式發行前小眾測試版提交](#create-a-package-flight-submission)。  |
-| targetPublishMode           | string  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>立即</li><li>手動</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | string  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
-| notesForCertification           | string  |  為認證測試人員提供其他資訊，例如測試帳戶認證，以及存取和確認功能的步驟。 如需詳細資訊，請參閱[認證注意事項](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification)。 |
+| id            | 字串  | 提交的識別碼。  |
+| flightId           | 字串  |  與提交相關聯之封裝航班的識別碼。  |  
+| status           | 字串  | 提交的狀態。 此屬性可為下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>發佈</li><li>Published</li><li>PublishFailed</li><li>預處理</li><li>PreProcessingFailed</li><li>認證</li><li>CertificationFailed</li><li>版本</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | 物件  |  [狀態詳細資料資源](#status-details-object)，其中包含有關提交狀態的其他詳細資料，包括任何錯誤的相關資訊。  |
+| flightPackages           | array  | 包含[航班封裝資源](#flight-package-object)，可提供提交中每個套件的詳細資料。   |
+| packageDeliveryOptions    | 物件  | [封裝傳遞選項資源](#package-delivery-options-object)，包含逐步封裝推出和提交的強制更新設定。   |
+| fileUploadUrl           | 字串  | 用於上傳提交之任何封裝的共用存取簽章（SAS） URI。 如果您要為提交新增封裝，請將包含封裝的 ZIP 封存上傳至此 URI。 如需詳細資訊，請參閱[建立套件航班提交](#create-a-package-flight-submission)。  |
+| targetPublishMode           | 字串  | 提交的發佈模式。 此屬性可為下列其中一個值： <ul><li>立即</li><li>手動</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | 字串  | 如果*targetPublishMode*設定為 SpecificDate，則為 ISO 8601 格式提交的發行日期。  |
+| notesForCertification           | 字串  |  為憑證測試人員提供其他資訊，例如測試帳號憑證和存取和驗證功能的步驟。 如需詳細資訊，請參閱[認證的注意事項](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification)。 |
 
 <span id="status-details-object" />
 
 ### <a name="status-details-resource"></a>狀態詳細資料資源
 
-此資源包含關於提交狀態的其他詳細資料。 此資源具有下列值。
+此資源包含提交狀態的其他詳細資料。 此資源具有下列值。
 
-| 值           | Type    | 描述                   |
+| 值           | 類型    | 說明                   |
 |-----------------|---------|------|
-|  errors               |    object     |   包含提交的錯誤詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。   |     
-|  warnings               |   object      | 包含提交的警告詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。     |
-|  certificationReports               |     object    |   提供提交認證報告資料存取的[認證報告資源](#certification-report-object)陣列。 如果認證失敗，您可以檢查這些報告來取得詳細資訊。    |  
+|  錯誤               |    物件     |   [狀態詳細資料資源](#status-detail-object)的陣列，其中包含提交的錯誤詳細資料。   |     
+|  消息               |   物件      | [狀態詳細資料資源](#status-detail-object)的陣列，其中包含提交的警告詳細資料。     |
+|  certificationReports               |     物件    |   [認證報告資源](#certification-report-object)的陣列，可讓您存取認證報告資料以進行提交。 如果認證失敗，您可以檢查這些報告以取得詳細資訊。    |  
 
 
 <span id="status-detail-object" />
 
 ### <a name="status-detail-resource"></a>狀態詳細資料資源
 
-此資源包含有關提交的任何相關錯誤或警告的其他資訊。 此資源具有下列值。
+此資源包含有關提交之任何相關錯誤或警告的其他資訊。 此資源具有下列值。
 
-| 值           | Type    | 描述       |
+| 值           | 類型    | 說明       |
 |-----------------|---------|------|
-|  code               |    string     |   描述錯誤或警告類型的[提交狀態碼](#submission-status-code)。 |  
-|  details               |     string    |  含有更多關於問題之詳細資料的訊息。     |
+|  code               |    字串     |   描述錯誤或警告類型的[提交狀態碼](#submission-status-code)。 |  
+|  詳細資料               |     字串    |  包含有關問題詳細資料的訊息。     |
 
 
 <span id="certification-report-object" />
 
-### <a name="certification-report-resource"></a>認證報告資源
+### <a name="certification-report-resource"></a>認證報表資源
 
-此資源提供提交認證報告資料的存取。 此資源具有下列值。
+此資源可讓您存取認證報告資料以進行提交。 此資源具有下列值。
 
-| 值           | Type    | 描述         |
+| 值           | 類型    | 說明         |
 |-----------------|---------|------|
-|     date            |    string     |  產生報告的日期和時間，格式為 ISO 8601。    |
-|     reportUrl            |    string     |  您可以存取報告的 URL。    |
+|     日期            |    字串     |  產生報告的日期和時間，格式為 ISO 8601。    |
+|     reportUrl            |    字串     |  您可以存取報表的 URL。    |
 
 
 <span id="flight-package-object" />
 
-### <a name="flight-package-resource"></a>正式發行前小眾測試版套件資源
+### <a name="flight-package-resource"></a>航班封裝資源
 
-此資源提供關於提交中套件的詳細資料。
+此資源會提供有關提交中套件的詳細資料。
 
 ```json
 {
@@ -331,26 +331,26 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 此資源具有下列值。
 
 > [!NOTE]
-> 在呼叫[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值會由合作夥伴中心填入。
+> 呼叫[更新套件航班提交](update-a-flight-submission.md)方法時，要求主體中只需要這個物件的*fileName*、 *fileStatus*、 *minimumDirectXVersion*和*minimumSystemRam*值。 其他值會由合作夥伴中心填入。
 
-| 值           | Type    | 描述              |
+| 值           | 類型    | 說明              |
 |-----------------|---------|------|
-| fileName   |   string      |  套件的名稱。    |  
-| fileStatus    | string    |  套件的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  string   |  唯一識別套件的識別碼。 合作夥伴中心會使用此值。   |     
-| 版本    |  string   |  應用程式套件的版本。 如需詳細資訊，請參閱[套件版本編號](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
-| 架構    |  string   |  應用程式套件的架構 (例如，ARM)。   |     
-| languages    | array    |  應用程式所支援之語言的語言代碼陣列。 如需詳細資訊，請參閱[支援的語言](https://docs.microsoft.com/windows/uwp/publish/supported-languages)。    |     
-| capabilities    |  array   |  套件所需的功能陣列。 如需功能的詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
-| minimumDirectXVersion    |  string   |  應用程式套件所支援的最低 DirectX 版本。 這只能針對目標為 Windows 8.x 的應用程式進行設定；對於目標為其他版本的應用程式則會加以忽略。 這可以是下列其中一個值： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | string    |  應用程式套件所需的最小 RAM。 這只能針對目標為 Windows 8.x 的應用程式進行設定；對於目標為其他版本的應用程式則會加以忽略。 這可以是下列其中一個值： <ul><li>None</li><li>Memory2GB</li></ul>   |    
+| fileName   |   字串      |  封裝的名稱。    |  
+| fileStatus    | 字串    |  封裝的狀態。 此屬性可為下列其中一個值： <ul><li>None</li><li>PendingUpload</li><li>已上傳</li><li>PendingDelete</li></ul>    |  
+| id    |  字串   |  可唯一識別封裝的識別碼。 合作夥伴中心會使用此值。   |     
+| 版本    |  字串   |  應用程式套件的版本。 如需詳細資訊，請參閱[套件版本編號](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
+| 架構    |  字串   |  應用程式套件（例如 ARM）的架構。   |     
+| 語言    | array    |  應用程式所支援語言的語言代碼陣列。 如需詳細資訊，請參閱[支援的語言](https://docs.microsoft.com/windows/uwp/publish/supported-languages)。    |     
+| capabilities    |  array   |  封裝所需的功能陣列。 如需功能的詳細資訊，請參閱[應用程式功能聲明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
+| minimumDirectXVersion    |  字串   |  應用程式套件支援的最低 DirectX 版本。 這只能針對以 Windows 8.x 為目標的應用程式進行設定;以其他版本為目標的應用程式會忽略它。 此屬性可為下列其中一個值： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | 字串    |  應用程式套件所需的最小 RAM。 這只能針對以 Windows 8.x 為目標的應用程式進行設定;以其他版本為目標的應用程式會忽略它。 此屬性可為下列其中一個值： <ul><li>None</li><li>Memory2GB</li></ul>   |    
 
 
 <span id="package-delivery-options-object" />
 
-### <a name="package-delivery-options-resource"></a>套件交付選項資源
+### <a name="package-delivery-options-resource"></a>封裝傳遞選項資源
 
-此資源包含提交的漸進式套件推出和強制更新設定。
+此資源包含逐步封裝推出和提交的強制更新設定。
 
 ```json
 {
@@ -369,27 +369,27 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 此資源具有下列值。
 
-| 值           | Type    | 描述        |
+| 值           | 類型    | 說明        |
 |-----------------|---------|------|
-| packageRollout   |   object      |   [套件推出資源](#package-rollout-object)包含用於提交的漸進式套件推出設定。    |  
-| isMandatoryUpdate    | boolean    |  指出您是否要將這項提交中的套件視為自我安裝應用程式更新的強制項目。 如需有關自我安裝 App 更新的強制套件詳細資訊，請參閱[下載與安裝 App 的套件更新](../packaging/self-install-package-updates.md)。    |  
-| mandatoryUpdateEffectiveDate    |  date   |  這項提交中的套件變成強制項目的日期和時間，採用 ISO 8601 格式和 UTC 時區。   |        
+| packageRollout   |   物件      |   [封裝首](#package-rollout-object)度發行資源，包含提交的逐步封裝推出設定。    |  
+| isMandatoryUpdate    | 布林值    |  指出您是否要將此提交中的套件視為自動安裝應用程式更新的必要元件。 如需有關自行安裝應用程式更新之強制套件的詳細資訊，請參閱[下載並安裝應用程式的套件更新](../packaging/self-install-package-updates.md)。    |  
+| mandatoryUpdateEffectiveDate    |  日期   |  這項提交中的封裝變成必要時的日期和時間，採用 ISO 8601 格式和 UTC 時區。   |        
 
 <span id="package-rollout-object" />
 
-### <a name="package-rollout-resource"></a>套件推出資源
+### <a name="package-rollout-resource"></a>套件首度發行資源
 
-此資源包含提交的漸進式[套件推出設定](#manage-gradual-package-rollout)。 此資源具有下列值。
+此資源包含提交的逐步[封裝推出設定](#manage-gradual-package-rollout)。 此資源具有下列值。
 
-| 值           | Type    | 描述        |
+| 值           | 類型    | 說明        |
 |-----------------|---------|------|
-| isPackageRollout   |   boolean      |  指出是否已為提交啟用漸進式套件推出。    |  
-| packageRolloutPercentage    | float    |  將接收漸進式推出中套件的使用者百分比。    |  
-| packageRolloutStatus    |  string   |  下列其中一個字串，這些字串指出漸進式套件推出的狀態： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
-| fallbackSubmissionId    |  string   |  未取得漸進式推出套件的客戶將收到的提交識別碼。   |          
+| isPackageRollout   |   布林值      |  指出是否已啟用逐步封裝推出以進行提交。    |  
+| packageRolloutPercentage    | float    |  會在逐步推出中接收封裝的使用者百分比。    |  
+| packageRolloutStatus    |  字串   |  下列其中一個字串，表示漸進式封裝推出的狀態： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| fallbackSubmissionId    |  字串   |  未取得逐步推出套件的客戶所收到的提交識別碼。   |          
 
 > [!NOTE]
-> *PackageRolloutStatus*和*fallbackSubmissionId*值是由合作夥伴中心指派，並不適合由開發人員設定。 如果您將這些值包含在要求本文中，則會忽略這些值。
+> *PackageRolloutStatus*和*fallbackSubmissionId*值是由合作夥伴中心指派，並不適合由開發人員設定。 如果您在要求主體中包含這些值，將會忽略這些值。
 
 <span/>
 
@@ -403,22 +403,22 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 下列代碼代表提交的狀態。
 
-| 程式碼           |  描述      |
+| 代碼           |  說明      |
 |-----------------|---------------|
-|  None            |     未指定任何代碼。         |     
-|      InvalidArchive        |     包含該套件的 ZIP 封存無效，或具有無法辨識的封存格式。  |
-| MissingFiles | ZIP 封存沒有您提交資料中列出的所有檔案，或者它們位於封存中的錯誤位置。 |
-| PackageValidationFailed | 提交中有一或多個套件無法驗證。 |
-| InvalidParameterValue | 要求主體中有一個參數不正確。 |
-| InvalidOperation | 您嘗試執行的操作無效。 |
-| InvalidState | 您嘗試針對套件正式發行前小眾測試版的目前狀態執行的操作不正確。 |
-| ResourceNotFound | 找不到指定的套件正式發行前小眾測試版。 |
-| ServiceError | 內部服務錯誤已防止要求成功。 請重試要求。 |
-| ListingOptOutWarning | 開發人員已從先前提交中移除清單，或者未包含該套件支援的清單資訊。 |
-| ListingOptInWarning  | 開發人員已新增清單。 |
-| UpdateOnlyWarning | 開發人員正嘗試插入某些只有更新支援的項目。 |
+|  None            |     未指定任何程式碼。         |     
+|      InvalidArchive        |     包含封裝的 ZIP 封存無效，或具有無法辨識的封存格式。  |
+| MissingFiles | ZIP 封存並未包含提交資料中列出的所有檔案，或其位於封存檔案錯誤的位置。 |
+| PackageValidationFailed | 提交中的一或多個套件無法驗證。 |
+| InvalidParameterValue | 要求主體中的其中一個參數無效。 |
+| InvalidOperation | 您嘗試的操作無效。 |
+| InvalidState | 您嘗試的作業對封裝航班的目前狀態無效。 |
+| ResourceNotFound | 找不到指定的封裝航班。 |
+| ServiceError | 發生內部服務錯誤，導致要求無法成功。 請重試一次要求。 |
+| ListingOptOutWarning | 開發人員已從先前的提交中移除清單，或未包含套件所支援的清單資訊。 |
+| ListingOptInWarning  | 開發人員已加入清單。 |
+| UpdateOnlyWarning | 開發人員嘗試插入只有更新支援的東西。 |
 | 其他  | 提交處於無法辨識或未分類的狀態。 |
-| PackageValidationWarning | 套件驗證程序產生了警告。 |
+| PackageValidationWarning | 封裝驗證程式造成警告。 |
 
 <span/>
 

@@ -18,7 +18,7 @@ ms.locfileid: "72695764"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支援 WNS 流量的企業防火牆和 Proxy 設定
 
-## <a name="background"></a>背景
+## <a name="background"></a>背景資訊
 許多企業都使用防火牆來封鎖不必要的網路流量;可惜的是，這也會封鎖 Windows 通知服務通訊之類的重要事項。 這表示所有透過 WNS 傳送的通知都會放在特定網路設定之下。 若要避免這種情況，網路系統管理員可以將已核准的 WNS Fqdn 或 Vip 清單新增至其豁免清單，以允許 WNS 流量通過防火牆。 以下是有關如何和如何新增的詳細資料，以及對不同 proxy 類型的支援。
 
 ## <a name="proxy-support"></a>Proxy 支援
@@ -68,7 +68,7 @@ ms.locfileid: "72695764"
 ### <a name="terms-and-notations"></a>詞彙和標記法
 以下是上述 XML 程式碼片段中所使用之標記法和元素的說明。
 
-| 詞彙 | 說明 |
+| 條款 | 說明 |
 |---|---|
 | **點-十進位標記法（例如 64.4.28.0/26）** | 點十進位標記法是描述 IP 位址範圍的方式。 例如，64.4.28.0/26 表示64.4.28.0 的前26位是固定的，而最後6個位則是可變的。  在此情況下，IPv4 範圍是 64.4.28.0-64.4.28.63。 |
 | **ClientDNS** | 這些是從 WNS 接收通知之用戶端裝置（Windows 電腦、桌面）的完整功能變數名稱（FQDN）篩選器。 這些必須通過防火牆，才能讓 WNS 用戶端使用 WNS 功能。  建議您依 Fqdn 而不是 IP/VIP 範圍來允許清單，因為這些永遠不會變更。 |
