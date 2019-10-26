@@ -1,37 +1,37 @@
 ---
-Description: 使用 utf-8 字元編碼的 web 應用程式之間的最佳相容性和 * nix 基礎平台 （Unix、 Linux 和變體），當地語系化的錯誤降至最低並減少額外負荷測試。
-title: 使用 Windows utf-8 字碼頁
+Description: 使用 UTF-8 字元編碼，以達到 web 應用程式與其他 * nix 平臺（Unix、Linux 和變體）之間的最佳相容性、將當地語系化錯誤降至最低，並減少測試負擔。
+title: 使用 Windows UTF-8 字碼頁
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: a9386b31d16796c68d41a27ab48a5b2c9a9a342b
-ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
+ms.openlocfilehash: be3aade0289911f878d960fb62bde49b8ef840a8
+ms.sourcegitcommit: 3a06cf3f8bd00e5e6eac3b38ee7e3c7cf4bc5197
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68141810"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72888740"
 ---
 # <a name="use-the-utf-8-code-page"></a>使用 UTF-8 字碼頁
 
-使用[utf-8](http://www.utf-8.com/)字元編碼之間的 web 應用程式和其他最佳相容性 * nix 基礎平台 （Unix、 Linux 和變體），當地語系化的錯誤降至最低並減少額外負荷測試。
+使用[utf-8](http://www.utf-8.com/)字元編碼，以達到 web 應用程式與其他 * nix 平臺（Unix、Linux 和變體）之間的最佳相容性、將當地語系化錯誤降至最低，並減少測試負擔。
 
-Utf-8 是國際化的通用的字碼頁，並支援所有的 Unicode 字碼指標，使用 1 至 4 位元組變動寬度的編碼方式。 它在 web 上，pervasively 使用，而且是預設值 * nix 為基礎的平台。
+UTF-8 是國際化的通用字碼頁，並支援使用1-6 位元組可變寬度編碼的所有 Unicode 程式碼點。 它是在 web 上使用 pervasively，而且是 * nix 架構平臺的預設值。
 
-## <a name="-a-vs--w-apis"></a>-W Api 與-A
+## <a name="-a-vs--w-apis"></a>-A 與-W Api
   
-Win32 Api 通常會支援-和-W 變體。
+Win32 Api 通常支援-A 和-W 變體。
 
--A 變體辨識設定上的系統和支援的 ANSI 字碼頁`char*`，而-W 的 variant 操作 8、UTF-16 和支援`WCHAR`。
+-變數會辨識系統上設定的 ANSI 字碼頁，並支援 `char*`，而-W 變體會以 UTF-16 運作並支援 `WCHAR`。
 
-直到最近，Windows 便-Api 透過強調"Unicode"-W 變體。 不過，最新版本已使用的 ANSI 字碼頁，而-導入 utf-8 做為 Api 應用程式支援。 如果設定的 ANSI 字碼頁 utf-8，-Api 操作 utf-8。 此模型的好處是能夠支援使用-A Api 而不需要變更任何程式碼所建置的現有程式碼。
+到目前為止，Windows 已強調「Unicode」-W variant over-A Api。 不過，最新的版本已使用 ANSI 字碼頁和-Api 做為對應用程式引進 UTF-8 支援的方法。 如果 ANSI 字碼頁是針對 UTF-8 所設定，則 Api 會以 UTF-8 運作。 此模型的優點是可支援使用建立的現有程式碼，而不需要變更任何程式碼。
 
-## <a name="set-a-process-code-page-to-utf-8"></a>處理程序的字碼頁設定為 utf-8
+## <a name="set-a-process-code-page-to-utf-8"></a>將處理常式字碼頁設定為 UTF-8
 
-從 Windows 版 1903 （可能 2019年更新），您可以使用 ActiveCodePage 屬性中，appxmanifest 已封裝應用程式，或未封裝的應用程式，fusion 資訊清單來強制執行的程序的處理程序的字碼頁為使用 utf-8。
+從 Windows 1903 版（可能是2019更新），您可以在 package.appxmanifest.xml 中使用已封裝應用程式的 ActiveCodePage 屬性，或針對未封裝應用程式的融合資訊清單，強制程式使用 UTF-8 做為進程程式字碼頁面。
 
-您可以宣告這個屬性和目標/執行舊版 Windows 上建置，但您必須如往常般處理舊版程式碼頁偵測和轉換。 最小的目標版本的 Windows 版本 1903年，程序的字碼頁一律為 utf-8 可以避免舊版程式碼頁面偵測和轉換。
+您可以在舊版 Windows 組建上宣告此屬性和目標/執行，但您必須照常處理舊版字碼頁偵測和轉換。 使用 Windows 1903 版的最低目標版本時，程式字碼頁一律為 UTF-8，因此可以避免使用舊版字碼頁偵測和轉換。
 
 ## <a name="examples"></a>範例
 
@@ -56,7 +56,7 @@ Win32 Api 通常會支援-和-W 變體。
 </Package>
 ```
 
-**解除封裝的 Win32 應用程式的融合資訊清單：**
+**未封裝之 Win32 應用程式的融合資訊清單：**
 
 ``` xaml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -71,18 +71,18 @@ Win32 Api 通常會支援-和-W 變體。
 ```
 
 > [!NOTE]
-> 加入現有的可執行檔中的資訊清單，從命令列 `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
+> 從命令列將資訊清單新增至現有的可執行檔，並 `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
 
 ## <a name="code-page-conversion"></a>字碼頁轉換
 
-與 Windows 原生方式在 utf-16 (`WCHAR`)，您可能需要為 utf-16 （反之亦然） 的 utf-8 資料轉換成與 Windows Api 交互操作。
+當 Windows 在 UTF-16 （`WCHAR`）中以原生方式運作時，您可能需要將 UTF-8 資料轉換成 UTF-16 （反之亦然），才能與 Windows Api 互通。
 
-[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar)並[WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte)可讓您將轉換 utf-8 與 utf-16 之間 (`WCHAR`) （和其他字碼頁）。 這會特別有用，在舊版 Win32 API 可能只了解`WCHAR`。 這些函式可讓您轉換至 utf-8 輸入`WCHAR`傳入 -W API，並只有在必要時回復，然後將轉換的任何結果。
-使用這些函式時`CodePage`設為`CP_UTF8`，使用`dwFlags`任一`0`或是`MB_ERR_INVALID_CHARS`，否則為`ERROR_INVALID_FLAGS`，就會發生。
+[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar)和[WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte)可讓您在 utf-8 和 utf-16 （`WCHAR`）之間轉換（以及其他字碼頁）。 當舊版 WIN32 API 可能只瞭解 `WCHAR`時，這特別有用。 這些函式可讓您將 UTF-8 輸入轉換成 `WCHAR` 以傳入-W API，並在必要時將任何結果轉換回來。
+當使用這些函式時，`CodePage` 設定為 `CP_UTF8`時，請使用 `0` 或 `MB_ERR_INVALID_CHARS`的 `dwFlags`，否則會發生 `ERROR_INVALID_FLAGS`。
 
-注意︰`CP_ACP`等同於`CP_UTF8`前提 （可能 2019年更新） 的 Windows 版本 1903年上執行或更新版本，且上述 ActiveCodePage 屬性設定為 utf-8。 否則，它會接受舊有系統字碼頁。 我們建議使用`CP_UTF8`明確。
+注意：只有在 Windows 1903 版（可能是2019更新）或更新版本上執行，且上述 ActiveCodePage 屬性設定為 UTF-8 時，`CP_ACP` 等同于 `CP_UTF8`。 否則，它會接受舊版系統字碼頁。 我們建議您明確使用 `CP_UTF8`。
 
 ## <a name="related-topics"></a>相關主題
 
 - [字碼頁](https://docs.microsoft.com/windows/desktop/Intl/code-pages)
-- [字碼頁識別項](https://docs.microsoft.com/windows/desktop/Intl/code-page-identifiers)
+- [字碼頁識別碼](https://docs.microsoft.com/windows/desktop/Intl/code-page-identifiers)
