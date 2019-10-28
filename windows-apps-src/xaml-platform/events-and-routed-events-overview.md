@@ -168,7 +168,7 @@ ref new PointerEventHandler(this, &BlankPage::textBlock1_PointerEntered);
 
 通常不需要在程式碼中移除事件處理常式，即使您已在程式碼中新增它們也一樣。 大部分 Windows 執行階段物件（例如頁面和控制項）的物件存留期行為，會在物件與主[**視窗**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window)及其視覺化樹狀結構中斷連接時損毀，而且任何委派參考也會終結。 .NET 會透過垃圾收集來執行這項C++處理，而/cx Windows 執行階段預設會使用弱式參考。
 
-在某些罕見的情況下，您會想要明確地移除事件處理常式。 這些區域包括：
+在某些罕見的情況下，您會想要明確地移除事件處理常式。 其中包含：
 
 - 您為靜態事件新增的處理常式，無法以傳統方式進行垃圾收集。 Windows 執行階段 API 中的靜態事件範例是[**CompositionTarget**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CompositionTarget)和[**剪貼**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.Clipboard)簿類別的事件。
 - 測試程式碼，您想要立即移除處理常式，或是在執行時間將事件的舊/新事件處理常式交換至何處。
