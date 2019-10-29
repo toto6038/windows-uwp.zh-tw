@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fb869f4705210ab1fec28186b377ad68068b5877
-ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+ms.openlocfilehash: 525110a09c56f48f9f9ce3d2521c98e2297a8372
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329586"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816712"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
 
@@ -283,7 +283,7 @@ struct MainPage : PageT<MainPage>
 | Visual Studio 專案系統格式已變更。 | 請參閱下方[如何將 C++/WinRT 專案的目標重定為 Windows SDK 的較新版本](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 | 有一些新函式和基底類別有助於將集合物件傳遞給 Windows 執行階段函式，或者實作您自己的集合屬性和集合類別。 | 請參閱[使用 C++/WinRT 的集合](collections.md)。 |
 | 您可以將 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) 標記延伸與 C++/WinRT 執行階段類別搭配使用。 | 如需更多資訊與程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart)。 |
-| 支持取消協同程式可讓您註冊取消回呼。 | 如需更多資訊和程式碼範例，請參閱[取消非同步作業，以及取消回呼](concurrency-2.md#canceling-an-asychronous-operation-and-cancellation-callbacks)。 |
+| 支持取消協同程式可讓您註冊取消回呼。 | 如需更多資訊和程式碼範例，請參閱[取消非同步作業，以及取消回呼](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks)。 |
 | 建立指向成員函式的委派時，可以在註冊處理常式的位置建立對目前物件 (而不是原始的「this」  指標) 的強式參考或弱式參考。 | 如需更多資訊和程式碼範例，請參閱[使用事件處理委派安全地存取「this」  指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)小節的**如果您使用成員函式作為委派**子小節。 |
 | 修正 Visual Studio 對於 C++ 標準改善一致性未涵蓋的錯誤。 LLVM 和 Clang 工具鏈也可以更好地用於驗證 C++/WinRT 的標準一致性。 | 您將不再遇到[為什麼無法編譯我的新專案？我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) 中描述的問題 |
 

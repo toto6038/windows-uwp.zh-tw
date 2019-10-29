@@ -1,16 +1,16 @@
 ---
-title: Windows 10 中適合開發人員的新功能、工具與特色
+title: Windows 10 (組建 16299) 的新功能
 description: Windows 10 組建 16299 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。
 keywords: 新功能, 更新, 功能, 全新, Windows 10, 1709, 10 月, 最新版, 開發人員, 16299, Fall Creators
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0172246c14459113ae1952f5db880ecf44e9d9
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 56061fa30e9581be278c710c29b19f0f90ea99cb
+ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820980"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893010"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>適用於開發人員的 Windows 10 (組建 16299) 最新動向
 
@@ -84,7 +84,7 @@ EdgeHTML 16 | 為 Microsoft Edge 和 JS 型通用 Windows 平台應用程式提�
 Store 分析 API | [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 現在提供一個方法，您可用來[下載 CAB 檔案以取得應用程式中的錯誤](../monetize/download-the-cab-file-for-an-error-in-your-app.md)。
 市集清單 | Store 清單已藉由新功能而獲得增強，用以吸引潛在使用者： </br>* 應用程式的 Store 清單現在可以包含[預告片](../publish/app-screenshots-and-images.md#trailers)。 </br></br>* 您可以[匯入和匯出 Store 清單](../publish/import-and-export-store-listings.md)來加快更新，尤其是在您的清單有許多語言版本時。
 提交 API | [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 現在可讓您使用應用程式提交來包含[預告片](../monetize/manage-app-submissions.md#trailer-object)和[遊戲選項](../monetize/manage-app-submissions.md#gaming-options-object)。
-針對性優惠 | [針對性供應項目](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)讓您以特定客戶區隔為目標，透過有吸引力的個人化內容提高吸引力、留住客戶並創造營收。
+針對性優惠 | [針對性優惠](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)讓您以特定客戶區隔為目標，透過有吸引力的個人化內容提高吸引力、留住客戶並創造營收。
 
 ## <a name="samples"></a>範例
 

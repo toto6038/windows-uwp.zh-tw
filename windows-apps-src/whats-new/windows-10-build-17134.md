@@ -1,16 +1,16 @@
 ---
-title: Windows 10 中適合開發人員的新功能、工具與特色
+title: Windows 10 (組建 17134) 的新功能
 description: Windows 10 組建 17134 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。
 keywords: 新功能, 新增功能, 更新, 多項更新, 功能, 新, Windows 10, 最新, 開發人員, 17134
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dc35dc50b8dc523aff5478b3ec19c3daeed9dafb
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 797129b62217b9deb74781638b302c59192b7e9a
+ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820456"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893026"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>適用於開發人員的 Windows 10 (組建 17134) 最新動向
 
@@ -35,7 +35,7 @@ Fluent Design 更新 | 我們使用新的資訊及指引，更新了許多 Fluen
 顯色焦點 | 新的[顯色焦點](../design/style/reveal-focus.md)效果提供體驗 (例如 Xbox One 和電視螢幕) 的光源效果。 這會在使用者將遊戲台或鍵盤焦點移近可設定焦點元素 (例如按鈕) 時，以動畫方式呈現這些元素的框線。
 音效 | XAML 現在使用 **SpatialAudioMode** 屬性支援 3D 音訊。 如需其設定方式的詳細資訊，請參閱[音效](../design/style/sound.md)。
 磚 | [可追蹤式磚通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)現可在 JavaScript 為主的 UWP 應用程式中支援。<br><br>[傳統型橋接器應用程式現在支援](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)次要磚與徽章通知。
-樹狀檢視 | [TreeView](../design/controls-and-patterns/tree-view.md) 控制項啟用提供包含巢狀項目的展開及摺疊節點的階層式清單。 此控制項可以用來說明 UI 中的資料夾結構或巢狀關聯性。
+樹狀目錄檢視 | [TreeView](../design/controls-and-patterns/tree-view.md) 控制項啟用提供包含巢狀項目的展開及摺疊節點的階層式清單。 此控制項可以用來說明 UI 中的資料夾結構或巢狀關聯性。
 撰寫樣式 | 我們已針對有關語音與音調的文章提升品質並擴充內容，並將其轉換成[撰寫方式指引](../design/style/writing-style.md)。 這項新資訊提供關於在應用程式中建立有效文字的原則，並建議撰寫控制項 (例如錯誤訊息或對話方塊) 的最佳做法。
 
 ## <a name="gaming"></a>遊戲

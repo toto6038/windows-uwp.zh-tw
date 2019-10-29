@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d5861e65a85a07cdda486ddb9c9634c388e819
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 71c04725fed4ab9d5d2158f2f892af038aefc8fd
+ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820460"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680756"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教學課程：建立調適型配置
 
@@ -46,11 +46,15 @@ ms.locfileid: "67820460"
     **如果您不熟悉 GitHub：**
     
     a. 按一下 [下載 ZIP]  ，然後在本機儲存此檔案。 這個下載的 .zip 檔案，包含您所需要的所有專案檔案。
-    b. 將檔案解壓縮。 使用 [檔案總管] 瀏覽至您下載的 .zip 檔案，滑鼠右鍵按一下它，然後選取 [解壓縮全部...]  。c. 瀏覽至您範例的本機複製，並前往 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` 目錄。    
+
+    b. 將檔案解壓縮。 使用 [檔案總管] 瀏覽至您下載的 .zip 檔案，以滑鼠右鍵按一下，然後選取 [解壓縮全部...]  。 
+
+    c. 瀏覽至您範例的本機複製，並前往 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` 目錄。    
 
     **如果您熟悉 GitHub：**
 
     a. 在本機複製存放庫中的主要分支。
+
     b. 瀏覽至 `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` 目錄。
 
 3. 按一下 `Photolab.sln` 開啟專案。

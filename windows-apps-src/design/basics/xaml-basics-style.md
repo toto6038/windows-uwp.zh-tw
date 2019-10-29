@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: f2c63c90170a633ae718db618c502efa41fb3f7d
+ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820505"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680759"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 
@@ -36,10 +36,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
 在本教學課程的第一個部分，讓我們來x靈活運用一些相片編輯控制項。 
 
-<figure>
-    <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*使用預設樣式的平常滑桿。*</figure>
-</figure>
+![使用預設樣式的平常滑桿。](../basics/images/xaml-basics/slider-start.png)
 
 這些滑桿是不錯，滑桿該有的功能全都有，就是不太有型。 我們來修整一下。 
 
@@ -111,7 +108,7 @@ PhotoLab 應用程式有兩個主要頁面：
     ```
 
     注意：
-    * 如果查看 XAML 周圍，您會看到這些元素是在 Grid 中。 我們將多邊形放在曝光滑桿的同一列 (Grid.Row="2")，因此這些元素會出現在相同位置。 我們將多邊形放在滑桿之前，讓滑桿顯示在圖形的最上方。
+    * 如果查看 XAML 周圍，您會看到這些元素是在 Grid 中。 我們將多邊形放在曝光滑桿的的同一列 (Grid.Row="2")，因此這些元素會出現在相同位置。 我們將多邊形放在滑桿之前，讓滑桿顯示在圖形的最上方。
     * 我們在多邊形上設定 Stretch="Fill" 和 HorizontalAlignment="Stretch"，讓三角形調整以填滿可用空間。 如果滑桿寬度變小或變大，多邊形也會縮小或擴大，與之相配合。 
 
 4. 編譯和執行應用程式。 滑桿現在看起來超棒：
@@ -748,8 +745,7 @@ XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式
             Grid.Row="2" Background="Transparent" Foreground="Transparent"
             Value="{x:Bind item.Exposure, Mode=TwoWay}"
             Minimum="-2"
-            Maximum="2"
-            Template="{StaticResource FancySliderControlTemplate}"/>    
+            Maximum="2" />    
     ```
     
     **之後**

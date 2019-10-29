@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 348d563322baf03aabc0e30fd9b39ee11673f271
-ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
+ms.openlocfilehash: bb6cc29260f5891cda74879618b59bb3762b7f18
+ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039111"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690414"
 ---
 # <a name="rating-control"></a>評分控制項
 
@@ -86,7 +86,7 @@ private void RatingChanged(RatingControl sender, object args)
 
 ## <a name="additional-functionality"></a>其他功能
 
-評分控制項還有許多可用的其他功能。 您可以在 MSDN 參考文件中找到有關如何使用這些功能的詳細資訊。
+評分控制項還有許多可用的其他功能。 您可以在參考文件中找到有關如何使用這些功能的詳細資訊。
 以下是其他功能的清單，但並非詳盡無遺：
 -   優異長清單處理效能
 -   精簡調整緊湊 UI 案例

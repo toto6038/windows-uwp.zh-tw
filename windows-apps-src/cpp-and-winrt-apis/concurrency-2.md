@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 9484b61aae91ae426efb1963cd37ebf276ef7c6c
-ms.sourcegitcommit: f8634aad3a3675c2f0eac62f56df3def4285a7b0
+ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71720439"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816668"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>採用 C++/WinRT 的更進階並行和非同步
 
@@ -359,7 +359,7 @@ winrt::fire_and_forget RunAsync(DispatcherQueue queue)
 
 因此，若結合 C++/WinRT 與協同程式，您就有許多隨時可供使用的功能；特別是在進行一些舊式 Petzold 樣式傳統型應用程式開發時。
 
-## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>取消非同步作業，以及取消回呼
+## <a name="canceling-an-asynchronous-operation-and-cancellation-callbacks"></a>取消非同步作業，以及取消回呼
 
 Windows 執行階段的非同步程式設計功能可讓您取消進行中的非同步動作或作業。 以下範例會呼叫 [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) 來擷取可能很大的檔案集合，並將產生的非同步作業物件儲存在資料成員中。 使用者可選擇取消該作業。
 
