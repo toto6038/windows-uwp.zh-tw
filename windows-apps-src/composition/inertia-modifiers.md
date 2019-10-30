@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: f99ebc4b98c87a4bc6d77fd2c626f481563e50c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 196c6d98b0944bbc22c3d0f652853ecab28bd3c6
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639633"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061913"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>使用慣性修飾詞建立貼齊點
 
@@ -20,13 +20,13 @@ ms.locfileid: "57639633"
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
-- [輸入驅動動畫](input-driven-animations.md)
-- [InteractionTracker 自訂操作經驗](interaction-tracker-manipulations.md)
-- [關聯型動畫](relation-animations.md)
+- [輸入導向的動畫](input-driven-animations.md)
+- [InteractionTracker 的自訂操作體驗](interaction-tracker-manipulations.md)
+- [以關聯性為基礎的動畫](relation-animations.md)
 
 ## <a name="what-are-snap-points-and-why-are-they-useful"></a>貼齊點是什麼？為什麼很實用？
 
-建置自訂操作體驗時，在 InteractionTracker 一律會停靠的可捲動/可縮放畫布中建立專用_定位點_，有時候很有用。 它們通常稱為 _「貼齊點」_。
+建置自訂操作體驗時，在 InteractionTracker 一律會停靠的可捲動/可縮放畫布中建立專用_定位點_，有時候很有用。 它們通常稱為 _「貼齊點」_ 。
 
 請注意下列範例中，捲動如何將 UI 停留在不同影像之間的怪異位置：
 
@@ -93,11 +93,13 @@ var snapDownModifier = InteractionTrackerInertiaRestingValue.Create(_compositor)
 ```csharp
 // Is NaturalRestingPosition less than the halfway point between Snap Points?
 snapUpModifier.Condition = _compositor.CreateExpressionAnimation(
-"this.Target.NaturalRestingPosition.y < (this.StartingValue – ” + “mod(this.StartingValue, prop.snapDistance) + prop.snapDistance / 2)");
+"this.Target.NaturalRestingPosition.y < (this.StartingValue – " + 
+"mod(this.StartingValue, prop.snapDistance) + prop.snapDistance / 2)");
 snapUpModifier.Condition.SetReferenceParameter("prop", _propSet);
 // Is NaturalRestingPosition greater than the halfway point between Snap Points?
 snapDownModifier.Condition = _compositor.CreateExpressionAnimation(
-"this.Target.NaturalRestingPosition.y >= (this.StartingValue – ” + “mod(this.StartingValue, prop.snapDistance) + prop.snapDistance / 2)");
+"this.Target.NaturalRestingPosition.y >= (this.StartingValue – " + 
+"mod(this.StartingValue, prop.snapDistance) + prop.snapDistance / 2)");
 snapDownModifier.Condition.SetReferenceParameter("prop", _propSet);
 ```
 
@@ -112,7 +114,8 @@ snapUpModifier.RestingValue = _compositor.CreateExpressionAnimation(
 "this.StartingValue - mod(this.StartingValue, prop.snapDistance)");
 snapUpModifier.RestingValue.SetReferenceParameter("prop", _propSet);
 snapForwardModifier.RestingValue = _compositor.CreateExpressionAnimation(
-"this.StartingValue + prop.snapDistance - mod(this.StartingValue, ” + “prop.snapDistance)");
+"this.StartingValue + prop.snapDistance - mod(this.StartingValue, " + 
+"prop.snapDistance)");
 snapForwardModifier.RestingValue.SetReferenceParameter("prop", _propSet);
 ```
 

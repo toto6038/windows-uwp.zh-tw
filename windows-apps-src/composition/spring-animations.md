@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e00aa383bcce17b7cd6b67514647c2f6137cc32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f86ab8b3e55b7680c5ba3e47c37d1cda8c42cebb
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601943"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061998"
 ---
 # <a name="spring-animations"></a>彈簧動畫
 
@@ -20,14 +20,14 @@ ms.locfileid: "57601943"
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
-- [自然移動動畫](natural-animations.md)
+- [自然動作動畫](natural-animations.md)
 
 ## <a name="why-springs"></a>為何使用彈簧？
 
 我們在生活中經常可以遇到彈簧運動，從彈簧玩具到物理教室的彈簧掛鉤塊。 彈簧的擺動通常讓人產生俏皮和輕鬆的情緒反應。 因此，彈簧的動作可在應用程式 UI 中創造出比傳統三次方貝茲更輕快的「彈出」感。 在這些案例中，彈簧動作不僅建立更生動的運動體驗，也有助於吸引使用者注意新的或目前的動畫內容。 取決於應用程式品牌或動作語言，有時候擺動更明顯可見，有時候更隱晦點。
 
-![使用 spring 動畫的影片](images/animation/offset-spring.gif)
-![三次方貝茲動畫的影片](images/animation/offset-cubic-bezier.gif)
+具有彈簧動畫的 ![動作](images/animation/offset-spring.gif)
+使用三次方貝塞爾動畫的![動作](images/animation/offset-cubic-bezier.gif)
 
 ## <a name="using-springs-in-your-ui"></a>在您的 UI 中使用彈簧
 
@@ -48,7 +48,7 @@ ms.locfileid: "57601943"
 
 - DampingRatio – 表達動畫中使用的彈簧動作的阻尼程度。
 
-| 阻尼比值 | 描述 |
+| 阻尼比值 | 說明 |
 | ------------------- | ----------- |
 | DampingRatio = 0 | 無阻尼 - 彈簧會擺動很長時間 |
 | 0 < DampingRatio < 1 | 阻尼不足 – 彈簧從一點點到擺動很多。 |
@@ -92,12 +92,12 @@ private void Button_Clicked(object sender, RoutedEventArgs e)
  {
  _expanded = true;
  _propSet.InsertBoolean("expanded", true);
- _springAnimation.InitialValueExpression[“FinalValue”] = “this.StartingValue + 250”;
+ _springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue + 250";
  } else
  {
  _expanded = false;
  _propSet.InsertBoolean("expanded", false);
-_springAnimation.InitialValueExpression[“FinalValue”] = “this.StartingValue - 250”;
+_springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue - 250";
  }
  _naviPane.StartAnimation("Offset.X", _springAnimation);
 }
@@ -152,9 +152,9 @@ StartAnimation("Translation.X", exp);
 1. 從 Compositor 建立 SpringAnimation。
 1. 如果您想使用非預設值，請定義 SpringAnimation 的屬性︰
     - DampingRatio
-    - 期間
+    - Period
     - Final Value
-    - 初始值
+    - Initial Value
     - Initial Velocity
 1. 指派給目標。
     - 如果您要讓 CompositionObject 屬性產生動畫效果，請以參數傳遞 SpringAnimation 給 StartAnimation。

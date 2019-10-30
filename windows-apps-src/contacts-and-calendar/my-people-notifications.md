@@ -3,14 +3,14 @@ title: 朋友圈通知
 description: 說明如何建立與使用朋友圈通知；朋友圈通知是一種新的快顯通知。
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd9071eaaea0dd88a3dad06de78eff82b29725ec
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 41f1c19f62482dc28bc067adb2e60b2c6fafa509
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820233"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061889"
 ---
 # <a name="my-people-notifications"></a>朋友圈通知
 
@@ -42,14 +42,14 @@ ms.locfileid: "67820233"
 朋友圈通知使用 [快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) 架構，但在快顯通知裝載中必須有額外的繫結節點。 第二個繫結必須包含下列參數：
 
 ```xml
-experienceType=”shoulderTap”
+experienceType="shoulderTap"
 ```
 
 這表示應將快顯通知視為朋友圈通知。
 
 繫結內的影像節點應包含下列參數：
 
-+ **src**
++ **原始檔案**
     + 資產的 URI。 這可以是 HTTP/HTTPS Web URI、msappx URI，或本機檔案的路徑。
 + **spritesheet-src**
     + 資產的 URI。 這可以是 HTTP/HTTPS Web URI、msappx URI，或本機檔案的路徑。 僅 Spritesheet 動畫需要。
@@ -59,7 +59,7 @@ experienceType=”shoulderTap”
     + 每秒畫面數 (FPS)。 僅 Spritesheet 動畫需要。 僅支援值 1-120。
 + **spritesheet-startingFrame**
     + 動畫開始的畫面編號。 僅用於 Spritesheet 動畫，若未提供則預設為 0。
-+ **alt**
++ **同時**
     + 用於螢幕助讀程式旁白的文字字串。
 
 > [!NOTE]
@@ -150,8 +150,8 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 如果朋友圈通知遞補快顯通知，則會忽略第二個朋友圈特有的繫結，並只使用第一個繫結來顯示快顯通知。 這就是在第一個快顯通知繫結中提供遞補裝載如此重要的原因。
 
-## <a name="see-also"></a>另請參閱
-+ [我的使用者通知範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [新增我的個人支援](my-people-support.md)
-+ [調適性的快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
+## <a name="see-also"></a>請參閱
++ [我的人員通知範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [新增我的人員支援](my-people-support.md)
++ [調適型快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 + [ToastNotification 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)

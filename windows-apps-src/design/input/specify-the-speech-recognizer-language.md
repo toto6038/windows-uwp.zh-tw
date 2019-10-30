@@ -8,24 +8,24 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 778aa04861fa7704f4235763a429bb77f92a8b65
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1aa57af7e51fd7d6ef151909eccc444da2c44707
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365332"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062050"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>指定語音辨識器語言
 
 
 了解如何選取已安裝的語言以用於語音辨識。
 
-> **重要的 Api**:[**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)， [ **SupportedGrammarLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)， [**語言**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language)
+> **重要 API**：[**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)、[**SupportedGrammarLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)、[**Language**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language)
 
 
 我們將在此處列舉已安裝於系統上的語言、識別哪一個是預設語言，並選取不同的辨識語言。
 
-**必要條件：**
+**要求**
 
 本主題以[語音辨識](speech-recognition.md)為基礎。
 
@@ -56,15 +56,15 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 已安裝的語言會隨著裝置而不同。 如果您要針對特定限制式來使用它，就應該確認該語言是否存在。
 
-**附註**  安裝新的語言套件之後，所以需要重新開機。 例外狀況的錯誤碼 SPERR\_不\_如果指定的語言不支援或尚未完成安裝，則會引發找到 (0x8004503a)。
+**請注意**  在安裝新的語言套件之後，需要重新開機。 如果指定的語言不受支援或尚未完成安裝，則會引發錯誤碼為 SPERR\_未\_找到（0x8004503a）的例外狀況。
 
  
 
 勾選 [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) 類別的這兩個靜態屬性之一，來判斷裝置上支援的語言：
 
--   [**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)— 收集[**語言**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language)搭配預先定義的聽寫和 web 的搜尋文法的物件。
+-   [**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)—[**語言**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language)物件的集合，搭配預先定義的聽寫和 web 搜尋語法使用。
 
--   [**SupportedGrammarLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)— 收集[**語言**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language)搭配清單的條件約束或語音辨識文法規格 (SRGS) 檔案的物件。
+-   [**SupportedGrammarLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)-搭配清單條件約束或語音辨識文法規格（SRGS）檔案使用的[**語言**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language)物件集合。
 
 ## <a name="specify-a-language"></a>指定語言
 
@@ -75,7 +75,7 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 
 ```CSharp
-var language = new Windows.Globalization.Language(“en-US”); 
+var language = new Windows.Globalization.Language("en-US"); 
 var recognizer = new SpeechRecognizer(language); 
 ```
 
@@ -86,21 +86,21 @@ var recognizer = new SpeechRecognizer(language);
 
 您可以藉由將 [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) 新增到 [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) 的 [**Constraints**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) 集合，然後呼叫 [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync)，來設定清單限制式。 您無法直接指定自訂清單的語言， 而是改用辨識器的語言來處理清單。
 
-SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint) 類別呈現的開放式標準 XML 格式。 與自訂清單不同，您可以在 SRGS 標記中指定文法的語言。 [**CompileConstraintsAsync** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync)因[ **SpeechRecognitionResultStatus** ](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus)的**TopicLanguageNotSupported**如果辨識器不會初始化成相同的語言為 SRGS 標記。
+SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint) 類別呈現的開放式標準 XML 格式。 與自訂清單不同，您可以在 SRGS 標記中指定文法的語言。 如果辨識器未初始化為與 SRGS 標記相同的語言，則[**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync)會失敗並具有**TopicLanguageNotSupported**的[**SpeechRecognitionResultStatus**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) 。
 
 ## <a name="related-articles"></a>相關文章
 
-**開發人員**
+**能夠**
 
 * [語音互動](speech-interactions.md)
 
-**設計工具**
+**設計師**
 
 * [語音設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
 
 **範例**
 
-* [語音辨識和語音合成器範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音辨識和語音合成範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

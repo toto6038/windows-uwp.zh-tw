@@ -4,20 +4,20 @@ ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 了解如何在背景執行緒中引發使用者定義委派型別的事件，使 JavaScript 能接收到該事件。
 ms.date: 07/19/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6af0df62b3f9b305778460a53e2247e76cce3d97
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 78bc43c26a73a6184e5788ad7d003813e567a8d0
+ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393674"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73052014"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 執行階段元件中引發事件
 > [!NOTE]
 > 若要瞭解如何在[ C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows 執行階段元件中引發事件，請參閱[在/WinRT C++中撰寫事件](../cpp-and-winrt-apis/author-events.md)。
 
-如果您的 Windows 執行階段元件會在背景執行緒 (背景工作執行緒) 上引發使用者定義的委派類型事件，而您希望 JavaScript 能夠接收該事件，您可以透過下列其中一種方式來實作和 (或) 引發此事件：
+如果您的 Windows 執行階段元件會在背景執行緒 (背景工作執行緒) 上引發使用者定義之委派類型的事件，而您希望 JavaScript 可以接收該事件，則可透過下列其中一種方式來實作和 (或) 引發此事件：
 
 -   (選項 1) 透過 [Windows.UI.Core.CoreDispatcher](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher) 引發事件，將事件封送處理至 JavaScript 執行緒內容。 雖然這通常是最佳選擇，但在某些情況下卻無法提供最佳效能。
 -   (選項 2) 使用 [Windows.Foundation.EventHandler](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)&lt;Object&gt;，不過會遺失類型資訊 (但會遺失事件類型資訊)。 如果選項 1 不可行或其效能不足，而且您可以接受遺失類型資訊的缺點，那麼選項 2 也是不錯的選擇。
@@ -120,7 +120,7 @@ toastCompletedEventHandler: function (event) {
 
 如需激發使用者定義之事件類型的潛在效能並完整保留類型資訊，您必須建立自己的 Proxy 和虛設常式物件，並將其內嵌於 app 封裝中。 通常，只有另外兩個選項不適用時才必須使用這個選項，但這是極少見的情況。 此外，這個選項也不保證能提供比其他兩個選項更佳的效能。 實際效能取決於諸多因素。 請使用 Visual Studio 分析工具或其他程式碼剖析工具來測量應用程式中的實際效能，並判斷事件是否確實為效能瓶頸。
 
-本文的剩餘部分說明如何使用 C# 來建立基本 Windows 執行階段元件，然後使用 C++ 來為 Proxy 和虛設常式建立 DLL，讓 JavaScript 能夠取用非同步作業中元件所引發的 Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt; 事件。 (您也可以使用 C++ 或 Visual Basic 來建立元件。 建立 proxy 和存根的相關步驟都相同）。本逐步解說是以建立 Windows 執行階段同進程元件範例（C++/cx）為基礎，並協助說明其用途。
+本文的剩餘部分說明如何使用 C# 來建立基本 Windows 執行階段元件，然後使用 C++ 來為 Proxy 和虛設常式建立 DLL，讓 JavaScript 能夠取用非同步作業中元件所引發的 Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt; 事件。 (您也可以使用 C++ 或 Visual Basic 來建立元件。 建立 Proxy 和虛設常式的相關步驟都一樣)。這個逐步解說會以＜建立 Windows 執行階段同處理序元件範例 (C++/CX)＞為基礎，協助說明其用途。
 
 這個逐步解說包含下列部分：
 
@@ -134,11 +134,11 @@ toastCompletedEventHandler: function (event) {
 
 在 Visual Studio 的功能表列上，依序選擇 [檔案] &gt; [新增專案]。 在 [新增專案] 對話方塊中，展開 [JavaScript] &gt; [通用 Windows]，然後選取 [空白應用程式]。 將專案命名為 ToasterApplication，然後選擇 [確定] 按鈕。
 
-將C# Windows 執行階段元件新增至方案：在方案總管中，開啟方案的快捷方式功能表，然後選擇 **[ &gt;加入新專案**]。 展開 **[ C# &gt; Visual Microsoft Store** ]，然後選取 [ **Windows 執行階段元件**]。 將專案命名為 ToasterComponent，然後選擇 [確定] 按鈕。 ToasterComponent 將是您在後續步驟中建立之元件的根命名空間。
+將 C# Windows 執行階段元件加入至方案：在 [方案總管] 中開啟方案的捷徑功能表，然後選擇 [加入] &gt; [新增專案]。 展開 **[ C# Visual&gt;] Microsoft Store**然後選取 [ **Windows 執行階段元件**]。 將專案命名為 ToasterComponent，然後選擇 [確定] 按鈕。 ToasterComponent 將是您在後續步驟中建立之元件的根命名空間。
 
 在 [方案總管] 中，開啟方案的捷徑功能表，然後選擇 [屬性]。 在 [屬性頁] 對話方塊的左窗格中選取 [組態屬性]，然後將對話方塊頂端的 [組態] 設定為 [偵錯]，並將 [平台] 設定為 [x86]、[x64] 或 [ARM]。 選擇 [確定] 按鈕。
 
-**重要的平臺**= 任何 CPU 都無法使用，因為它不適用於您稍後會加入至方案的機器碼 Win32 DLL。 
+**重要** Platform = 任何 CPU 都無法使用，因為它對您稍後將加入至方案的機器碼 Win32 DLL 無效。
 
 在 [方案總管] 中，將 class1.cs 重新命名為 ToasterComponent.cs，使其符合專案的名稱。 Visual Studio 會自動重新命名檔案中的類別，以符合新的檔案名稱。
 
@@ -146,7 +146,7 @@ toastCompletedEventHandler: function (event) {
 
 需要 Proxy 和虛設常式時，您的元件必須使用介面來公開它的公用成員。 在 ToasterComponent.cs 中，分別為快顯通知程式及其產生的 Toast 定義介面。
 
-**注意：**  在中C# ，您可以略過此步驟。 改為先建立類別，然後開啟其捷徑功能表並選擇 [重構] &gt; [擷取介面]。 在產生的程式碼中，手動為介面提供公用存取範圍。
+**請注意** C#在中，您可以略過此步驟。 改為先建立類別，然後開啟其捷徑功能表並選擇 [重構] &gt; [擷取介面]。 在產生的程式碼中，手動為介面提供公用存取範圍。
 
 ```csharp
     public interface IToaster
@@ -214,7 +214,7 @@ IToast 介面包含可擷取來描述快顯通知類型的字串。 IToaster 介
 
 在上述程式碼中，我們建立了快顯通知，然後備妥執行緒集區工作項目來引發通知。 雖然 IDE 可能會建議您將 await 關鍵字套用至非同步呼叫，但在這種情況下不必這麼做，因為方法不會執行任何取決於作業結果的工作。
 
-**請注意** ，上述程式碼中的非同步呼叫只會使用 ThreadPool. RunAsync 來示範在背景執行緒上引發事件的簡單方式。 您可以撰寫這個特殊的方法 (如下列範例所示)，因為 .NET 工作排程器會自動將 async/await 呼叫封送處理回 UI 執行緒，因此這個方法可正常運作。
+**請注意** 上述程式碼中的非同步呼叫會使用 RunAsync，只是為了示範在背景執行緒上引發事件的簡單方式。 您可以撰寫這個特殊的方法 (如下列範例所示)，因為 .NET 工作排程器會自動將 async/await 呼叫封送處理回 UI 執行緒，因此這個方法可正常運作。
   
 ```csharp
     public async void MakeToast(string message)
@@ -279,7 +279,7 @@ makeToast 函式必須連結至一個按鈕。 更新 default.html 以增加一�
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>為元件的介面產生 GUID (C# 及其他 .NET 程式語言)
 
-在功能表列上，依序選擇 \[工具\] &gt; \[建立 GUID\]。 在對話方塊中，選取 5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. 選擇 \[新的 GUID\] 按鈕，然後選擇 \[複製\] 按鈕。
+在功能表列上，依序選擇 \[工具\] &gt; \[建立 GUID\]。 在對話方塊中，選取 5. \[Guid （"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx .。。xxxx "）\]。 選擇 \[新的 GUID\] 按鈕，然後選擇 \[複製\] 按鈕。
 
 ![GUID 產生器工具](./images/guidgeneratortool.png)
 
@@ -326,10 +326,10 @@ winmdidl /outdir:output "$(TargetPath)"
 midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid "$(ProjectDir)$(TargetName)_i.c" /env win32 /h "$(ProjectDir)$(TargetName).h" /winmd "Output\$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(ProjectDir)dlldata.c" /proxy "$(ProjectDir)$(TargetName)_p.c" "Output\$(TargetName).idl"
 ```
 
-**重要事項**  ：若要使用 ARM 或 x64 專案設定，請將 MIDL/env 參數變更為 x64 或 arm32。
+**重要**  ARM 或 x64 專案設定，請將 MIDL/env 參數變更為 x64 或 arm32。
 
 若要確保每次 .winmd 檔案變更時都會重新產生 IDL 檔案，請將 **\[執行 post-build 事件\]** 變更為 **\[當組建更新專案輸出時\]**
-[組建事件] 屬性頁應該與下列![類似：組建事件](./images/buildevents.png)
+[組建事件] 屬性頁看起來應該像這樣： ![組建事件](./images/buildevents.png)
 
 重建方案以產生並編譯 IDL。
 
@@ -337,11 +337,11 @@ midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid 
 
 ## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>將 Proxy 和虛設常式程式碼編譯為 DLL
 
-您現在已經擁有所需的所有檔案，接著您就可以將他們編譯為一個由 C++ 構成的 DLL 檔案。 若要以最簡單的方式完成這項工作，請新增一個專案以支援建置 Proxy。 開啟 ToasterApplication 方案的捷徑功能表，然後依序選擇 **\[加入\] > \[新增專案\]** 。 在 [**新增專案**] 對話方塊的左窗格中，展開 **[ C++ &gt; Visual &gt; Windows 通用視窗**]，然後在中間窗格中選取 **[DLL （UWP 應用程式）** ]。 （請注意，這不是C++ Windows 執行階段元件專案）。將專案命名為 proxy，然後選擇 [**確定]** 按鈕。 當 C# 類別發生變更時，這些檔案會由 post-build 事件進行更新。
+您現在已經擁有所需的所有檔案，接著您就可以將他們編譯為一個由 C++ 構成的 DLL 檔案。 若要以最簡單的方式完成這項工作，請新增一個專案以支援建置 Proxy。 開啟 ToasterApplication 方案的捷徑功能表，然後依序選擇 **\[加入\] > \[新增專案\]** 。 在 [**新增專案**] 對話方塊的左窗格中，展開 **[ C++ Visual&gt;windows&gt;通用視窗**]，然後在中間窗格中選取 **[DLL （UWP 應用程式）** ]。 (請注意這不是 C++ Windows 執行階段元件專案。) 將專案名稱命名為「Proxies」，然後選擇 **\[確定\]** 按鈕。 當 C# 類別發生變更時，這些檔案會由 post-build 事件進行更新。
 
 根據預設值，Proxy 專案會產生標頭 .h 檔案以及 C++ .cpp 檔案。 由於 DLL 是利用 MIDL 產生的檔案進行建置的，因此不需要 .h 和 .cpp 檔案。 在 \[方案總管\] 中，開啟他們的捷徑功能表，選擇 **\[移除\]** ，然後確認刪除。
 
-專案清空後，現在您就可以將 MIDL 產生的檔案加回。 開啟 Proxy 專案的捷徑功能表，然後選擇 **\[新增\] > \[現有的項目\]。** 在對話方塊中，流覽至 ToasterComponent 專案目錄，然後選取下列檔案：ToasterComponent .h、ToasterComponent_i、ToasterComponent_p 和 dlldata.c. c 檔案。 選擇 **\[新增\]** 按鈕。
+專案清空後，現在您就可以將 MIDL 產生的檔案加回。 開啟 Proxy 專案的捷徑功能表，然後選擇 **\[新增\] > \[現有的項目\]。** 在對話方塊中，移至 ToasterComponent 專案目錄並選取這些檔案︰ToasterComponent.h、ToasterComponent_i.c、ToasterComponent_p.c，以及 dlldata.c 檔案。 選擇 **\[新增\]** 按鈕。
 
 在 Proxy 專案中，建立一個 .def 檔案來定義 dlldata.c 中所描述的 DLL 匯出檔。 開啟專案的捷徑功能表，然後依序選擇 **\[加入\] > \[新增項目\]** 。 在對話方塊的左側窗格中，選取 \[程式碼\]，然後在中央窗格中，選取 \[模組定義檔案\]。 將檔案命名為 proxies.def，然後選擇 **\[新增\]** 按鈕。 開啟此 .def 檔案，並修改為包含了 dlldata.c 中所定義的 EXPORTS︰
 
@@ -413,7 +413,7 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA
 -   ProxyStub 的 ClassId 會設定為 ToasterComponent\_i. c 檔案中的第一個 GUID。 使用這個檔案中定義的第一個 GUID 作為 classId 使用。 (這可能會跟 ITypedEventHandler2 的 GUID 一樣。)
 -   Path 已設定為 Proxy 二進位檔案的相對路徑。 (在此逐步解說中，proxies.dll 位於與 ToasterApplication.winmd 相同的資料夾中。)
 -   GUID 已設定為正確的格式。 (這部分很容易發生錯誤。)
--   資訊清單中的介面識別碼符合 ToasterComponent\_i. c 檔案中的 iid。
+-   資訊清單中的介面識別碼符合 ToasterComponent\_i. c 檔案中的 Iid。
 -   資訊清單中的介面名稱都是唯一的。 由於系統並不會使用到這些，您可以選擇使用數值來命名。 通常選擇與您定義的介面明確相符的介面名稱是一個很好的作法。 針對產生的介面，名稱應該要能夠指示產生的介面。 您可以使用 ToasterComponent\_i. c 檔案來協助您產生介面名稱。
 
 若您嘗試現在就執行方案，您將會收到一則錯誤，告知您 proxies.dll 並非承載的一部分。 在 ToasterApplication 專案中開啟 **\[參考\]** 資料夾的捷徑功能表，然後選擇 **\[加入參考\]** 。 選取 Proxies 專案旁的核取方塊。 同時，請確定 ToasterComponent 旁邊的核取方塊也已選取。 選擇 [確定] 按鈕。
@@ -422,4 +422,4 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用C++/cx Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md)
+* [Windows 執行階段元件與 C++/CX](creating-windows-runtime-components-in-cpp.md)

@@ -4,24 +4,24 @@ description: 在應用程式資訊清單中，透過宣告背景工作為延伸�
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp，背景工作
+keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 471c2851f72027c364fdd0c9c295c8c9babe17c5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cf114ed3d2ffce95f9e9aba6ceb222029d23819c
+ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366187"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73052032"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在應用程式資訊清單中宣告背景工作
 
 
 
 
-**重要的 Api**
+**重要 API**
 
--   [**BackgroundTasks 結構描述**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**BackgroundTasks 架構**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**ApplicationModel 背景**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。
 
@@ -90,7 +90,7 @@ ms.locfileid: "66366187"
 
 2.  變更 Task Type 屬性清單以表示使用這個背景工作的工作登錄類型。 如果使用多個觸發程序類型來登錄背景工作，請針對每一個觸發程序類型，新增其他 Task 元素與 Type 屬性。
 
-    **附註**  確定列出的每種觸發程序類型使用，或背景工作將不會註冊使用未宣告的觸發程序類型 ( [**註冊**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法將失敗並擲回例外狀況。）
+    **請注意**  請務必列出您所使用的每個觸發程式類型，否則背景工作不會向未宣告的觸發程式類型註冊（ [**register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法將會失敗並擲回例外狀況）。
 
     這個程式碼片段範例指出系統事件觸發程序和推播通知的用法：
 
@@ -105,9 +105,9 @@ ms.locfileid: "66366187"
 
 ### <a name="add-multiple-background-task-extensions"></a>新增多個背景工作擴充功能
 
-針對每一個由應用程式登錄的額外背景工作類別，請重複步驟 2。
+針對每一個由應用程式註冊的其他背景工作類別，重複步驟 2。
 
-下列範例是取自[背景工作範例]( https://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 請複製這個範例的 Extensions 區段，並視需要修改它，以在應用程式資訊清單中宣告背景工作。
+下列範例是取自[背景工作範例]( https://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 複製此範例的 Extensions 區段，並視需要進行修改，以在應用程式資訊清單中宣告背景工作。
 
 ```xml
 <Applications>
@@ -159,7 +159,7 @@ ms.locfileid: "66366187"
 
 ### <a name="run-in-the-same-process-as-your-foreground-application"></a>在前景應用程式所在的那個處理序中執行
 
-以下是一個範例 XML，當中宣告與前景應用程式在相同處理程序中執行的背景工作。
+以下是宣告背景工作的範例 XML，這個背景工作與前景應用程式在相同處理序中執行。
 
 ```xml
 <Extensions>
@@ -175,7 +175,7 @@ ms.locfileid: "66366187"
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>使用 ResourceGroup 屬性來指定背景工作執行所在的位置。
 
-以下是一個範例 XML，當中宣告在 BackgroundTaskHost.exe 處理程序中執行的背景工作，但該處理程序是與其他來自相同 App 的背景工作執行個體不同的執行個體。 請注意 `ResourceGroup` 屬性，此屬性可識別哪些背景工作會一起執行。
+以下是一個範例 XML，當中宣告在 BackgroundTaskHost.exe 處理程序中執行的背景工作，但該處理程序是與其他來自相同 App 的背景工作執行個體不同的執行個體。 注意 `ResourceGroup` 屬性，此屬性可識別哪些背景工作會在一起執行。
 
 ```xml
 <Extensions>
@@ -209,7 +209,7 @@ ms.locfileid: "66366187"
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>每次觸發程序透過 SupportsMultipleInstances 屬性引發時，在新的處理序中執行
 
-此範例會宣告在新處理序中執行的背景工作，這個新的處理序在每次引發新的觸發程序時取得本身的資源限制 (記憶體、CPU)。 注意啟用此行為的 `SupportsMultipleInstances` 使用方式。 若要使用這個屬性中，您必須目標 SDK 版本 '10.0.15063' (Windows 10 Creators Update) 或更高版本。
+此範例會宣告在新處理序中執行的背景工作，這個新的處理序在每次引發新的觸發程序時取得本身的資源限制 (記憶體、CPU)。 注意啟用此行為的 `SupportsMultipleInstances` 使用方式。 若要使用此屬性，您必須以 SDK ' 10.0.15063 ' （Windows 10 建立者更新）或更高版本為目標。
 
 ```xml
 <Package
@@ -220,7 +220,7 @@ ms.locfileid: "66366187"
             ...
             <Extensions>
                 <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask">
-                    <BackgroundTasks uap4:SupportsMultipleInstances=“True”>
+                    <BackgroundTasks uap4:SupportsMultipleInstances="True">
                         <Task Type="timer" />
                     </BackgroundTasks>
                 </Extension>
