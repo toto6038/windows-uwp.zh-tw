@@ -48,6 +48,8 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: 散發您的封裝應用程式
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+        - name: 將身分識別授與非封裝的傳統型應用程式
+          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: 教學課程：將 WPF 應用程式現代化
           items:
             - name: 概觀
