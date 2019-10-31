@@ -3,58 +3,55 @@ Description: 已封裝的傳統型應用程式可以使用各種不同的通用 
 title: UWP API 適用於已封裝的傳統型應用程式 (傳統型橋接器)
 ms.date: 04/19/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3deb89a8eba60e5c4f67b18091d78d24d9179aa3
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 481b326c3f4b3608d0d3f5f7a8cec943f1d6c437
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979335"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142533"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>適用于桌面應用程式的 UWP Api
 
-桌面應用程式可以使用各式各樣的通用 Windows 平臺 (UWP) Api, 即使它們尚未完全轉換成 UWP 應用程式也一樣。 本文列出桌面應用程式可使用的可用類別。
+桌面應用程式可以使用各式各樣的通用 Windows 平臺（UWP） Api，即使它們尚未完全轉換成 UWP 應用程式也一樣。 本文列出桌面應用程式可使用的可用類別。
 
-> [!NOTE]
-> 許多 UWP Api 都需要在桌面應用程式中使用[套件身分識別](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。 當桌面應用程式封裝在[MSIX 套件](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)中時, 可以使用套件身分識別。 在本文中, 這些應用程式稱為「已*封裝的應用程式*」。
-
-大部分的 UWP Api 都適用于封裝的應用程式。 不過，部分功能區域尚未經過完整測試或目前未如預期般運作。
+許多 UWP Api 都需要在桌面應用程式中使用[套件身分識別](modernize-packaged-apps.md)。 大部分的 UWP Api 都適用具有套件識別的良好應用程式。 不過，部分功能區域尚未經過完整測試或目前未如預期般運作。
 
 | 功能區域 | 詳細資料 |
 |--------------|---------|
-| 約會、連絡人和電子郵件 | 已封裝的應用程式目前並未支援所有的 API。 |
-| 驗證和使用者識別 | 已封裝的應用程式目前並未支援所有的 API。 |
-| 背景工作 | 雖然已封裝的應用程式可以登錄背景工作，但只有完整的 UWP app 可以<i>做為</i>背景工作執行。 如需詳細資訊，請參閱 [GitHub 上的背景工作範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)。 |
-| 藍牙 | 已封裝的應用程式目前並未支援所有的 API。 |
-| 聊天和通話 | 已封裝的應用程式在完全移植到 UWP 之前，無法在行動裝置上執行。 |
+| 約會、連絡人和電子郵件 | 目前不支援所有 Api。 |
+| 驗證和使用者識別 | 目前不支援所有 Api。 |
+| 背景工作 | 雖然桌面應用程式可以註冊背景工作，但只有完全 UWP 應用程式可以當做<i>背景工作執行</i>。 如需詳細資訊，請參閱 [GitHub 上的背景工作範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)。 |
+| [藍牙] | 目前不支援所有 Api。 |
+| 聊天和通話 | 桌面應用程式無法在行動裝置上執行，直到它們完全移植到 UWP 為止。 |
 | 協定啟用 | 合約僅能啟用完整的 UWP 應用程式。 |
-| 密碼編譯 | 已封裝的應用程式目前並未支援所有的 API。 |
-| 地理位置 | 已封裝的應用程式目前並未支援所有的 API。 |
-| 檔案和資料夾選擇器 | 已封裝的應用程式具有完整的檔案系統存取權，因此不需要 UWP 選擇器。 |
-| Media | 已封裝的應用程式目前並未支援所有的 API。 |
-| 服務點 | 已封裝的應用程式目前並未支援所有的 API。 |
-| 智慧卡 | 已封裝的應用程式目前並未支援所有的 API。 |
-| PlayReady | 已封裝的應用程式目前並未支援所有的 API。 |
-| VPN | 已封裝的應用程式目前並未支援所有的 API。 |
-| 電子錢包 | 已封裝的應用程式在完全移植到 UWP 之前，無法在行動裝置上執行。 |
-| XAML UI | Windows 10 版本1809和舊版不支援將 UWP XAML 內容裝載于桌面應用程式中。 從 Windows 10 版本1903開始, 您可以使用[XAML Islands](xaml-islands.md)來裝載 UWP XAML 內容。  |
+| 密碼編譯 | 目前不支援所有 Api。 |
+| 地理位置 | 目前不支援所有 Api。 |
+| 檔案和資料夾選擇器 | 具有身分識別的應用程式具有完整的檔案系統存取權，且不需要 UWP 選擇器。 |
+| [Media] | 目前不支援所有 Api。 |
+| 服務點 | 目前不支援所有 Api。 |
+| 智慧卡 | 目前不支援所有 Api。 |
+| PlayReady | 目前不支援所有 Api。 |
+| [VPN] | 目前不支援所有 Api。 |
+| 電子錢包 | 桌面應用程式無法在行動裝置上執行，直到它們完全移植到 UWP 為止。 |
+| XAML UI | Windows 10 版本1809和舊版不支援將 UWP XAML 內容裝載于桌面應用程式中。 從 Windows 10 版本1903開始，您可以使用[XAML Islands](xaml-islands.md)來裝載 UWP XAML 內容。  |
 
 有時候，這些區域中的 API 可能會正常運作。 不過，如果 API 並未被明確列出為支援的 API，您應該避免使用，因為它可能會有非預期的副作用或行為。 未來版本中可能會支援這些 API。 在過渡期間，您的 App 應該改用相關的 Win32 或 .NET API。
 
 ## <a name="list-of-apis"></a>API 清單
 
-以下是桌面應用程式中支援的 UWP Api 完整清單。 您只能在已封裝的應用程式[中, 或在已封裝應用程式和桌面應用程式支援的 api](#both)中, 查看[支援的 api](#new)
+以下是桌面應用程式中支援的 UWP Api 完整清單。 您只能[在應用程式中，使用](#new)[所有桌面應用程式支援](#both)的套件身分識別或 api，來查看支援的 api。
 
-如需如何使用 UWP Api 的範例, 請參閱 GitHub 上的[桌面橋接器範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平臺 (UWP) 應用程式範例](https://github.com/Microsoft/Windows-universal-samples)。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)。
+如需如何使用 UWP Api 的範例，請參閱 GitHub 上的[桌面橋接器範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平臺（UWP）應用程式範例](https://github.com/Microsoft/Windows-universal-samples)。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)。
 
 <a id="new" />
 
-### <a name="apis-supported-only-in-packaged-apps"></a>僅在已封裝應用程式中支援的 Api
+### <a name="apis-supported-only-in-apps-with-package-identity"></a>僅在具有套件身分識別的應用程式中支援 Api
 
 * [Windows. ApplicationModel. DataTransfer. DataProviderHandler](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [Windows. ApplicationModel. DataTransfer. DataRequest](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -137,7 +134,7 @@ ms.locfileid: "69979335"
 * [AsyncActionProgressHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionProgressHandler<TProgress>)
 * [AsyncActionWithProgressCompletedHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>)
 * [AsyncOperationCompletedHandler<TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationCompletedHandler<TResult>)
-* [VectorChangedEventHandler。<T>](https://docs.microsoft.com/uwp/api/windows.foundation.collections.vectorchangedeventhandler)
+* [VectorChangedEventHandler<T> 的](https://docs.microsoft.com/uwp/api/windows.foundation.collections.vectorchangedeventhandler)
 * [DeferralCompletedHandler](https://docs.microsoft.com/uwp/api/windows.foundation.deferralcompletedhandler)
 * [FileLoggingSession。](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession)
 * [LogFileGeneratedEventArgs。](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)
@@ -380,13 +377,13 @@ ms.locfileid: "69979335"
 
 <a id="both" />
 
-### <a name="apis-supported-in-both-packaged-apps-and-desktop-applications"></a>已封裝應用程式與傳統型應用程式都支援的 API
+### <a name="apis-supported-in-all-desktop-applications"></a>所有桌面應用程式中支援的 Api
 
-已封裝的應用程式和未封裝的桌面應用程式都支援具有[DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute)的 api。 若要判斷是否支援您想要從桌面應用程式呼叫的 API, 請在[WinRT 命名空間的參考檔](https://docs.microsoft.com/uwp/api/)中尋找您感興趣的類別或成員的參考文章。 然後, 檢查參考文章中的**屬性**區段是否包含[DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute)屬性。
+所有桌面應用程式都支援具有[DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute)的 api，包括具有套件身分識別的 api，以及沒有套件身分識別的 api。 若要判斷是否支援您想要從桌面應用程式呼叫的 API，請在[WinRT 命名空間的參考檔](https://docs.microsoft.com/uwp/api/)中尋找您感興趣的類別或成員的參考文章。 然後，檢查參考文章中的**屬性**區段是否包含[DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute)屬性。
 
 ## <a name="next-steps"></a>後續步驟
 
-**尋找問題的解答**
+**尋找您問題的解答**
 
 有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 

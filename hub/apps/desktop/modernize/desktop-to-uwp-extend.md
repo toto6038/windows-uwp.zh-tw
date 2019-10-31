@@ -3,16 +3,16 @@ Description: 使用 Windows UI 和元件擴充您的傳統型應用程式
 title: 使用 Windows UI 和元件擴充您的傳統型應用程式
 ms.date: 06/08/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7359d28d968a2948e9f4049e2acc3c655edcfcb3
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0a404f2d9f58fc283cf47f47860362c0f5bc8164
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339208"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142551"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>使用現代化的 UWP 元件擴充您的桌面應用程式
 
@@ -21,7 +21,7 @@ ms.locfileid: "71339208"
 在許多情況下，您可以直接從您的桌面應用程式呼叫 Windows 執行階段 Api，因此在閱讀本指南之前，請參閱[Windows 10 的增強](desktop-to-uwp-enhance.md)功能。
 
 > [!NOTE]
-> 本文中所述的功能需要您為桌面應用程式建立 Windows 應用程式套件。 如果您還沒有這麼做，請參閱[封裝桌面應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
+> 本文所述的功能要求您的桌面應用程式必須具有[套件識別](modernize-packaged-apps.md)，方法是將[桌面應用程式封裝在 MSIX 套件中](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)，或[使用 sparse 封裝來授與應用程式識別](grant-identity-to-nonpackaged-apps.md)。
 
 當您準備好時，我們就可以開始進行操作。
 
@@ -77,7 +77,7 @@ ms.locfileid: "71339208"
 
 ### <a name="build-your-solution"></a>建立您的解決方案
 
-建立您的解決方案，以確保不會出現任何錯誤。 如果您收到錯誤, 請開啟**Configuration Manager** , 並確定您的專案以相同的平臺為目標。
+建立您的解決方案，以確保不會出現任何錯誤。 如果您收到錯誤，請開啟**Configuration Manager** ，並確定您的專案以相同的平臺為目標。
 
 ![Config manager](images/desktop-to-uwp/config-manager.png)
 
@@ -100,15 +100,15 @@ ms.locfileid: "71339208"
 
 若要顯示 XAML 型 UI，請執行下列動作：
 
-:one:[設定您的解決方案](#solution-setup)
+:one: [設定您的解決方案](#solution-setup)
 
-:two:[建立 XAML UI](#xaml-UI)
+:two: [建立 XAML UI](#xaml-UI)
 
-:three:[將通訊協定擴充功能新增至 UWP 專案](#add-a-protocol-extension)
+:three: [新增通訊協定延伸模組至 UWP 專案](#add-a-protocol-extension)
 
-:four:[從您的桌面應用程式啟動 UWP 應用程式](#start)
+:four: [從您的傳統型應用程式啟動 UWP app](#start)
 
-:five:[在 UWP 專案中，顯示您想要的頁面](#parse)
+:five: [在 UWP 專案中，顯示您要的頁面](#parse)
 
 <a id="solution-setup" />
 
@@ -253,7 +253,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 例如，使用者可以選擇您的應用程式，從 Microsoft Edge （相片應用程式）共用圖片。 以下是具有該功能的 WPF 範例應用程式。
 
-![分享目標](images/desktop-to-uwp/share-target.png).
+![分享目標](images/desktop-to-uwp/share-target.png)。
 
 請參閱[這裡](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)的完整範例
 
@@ -261,15 +261,15 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 若要讓您的應用程式成為分享目標，請進行下列項目：
 
-:one:[新增共用目標延伸模組](#share-extension)
+:one: [新增分享目標擴充功能](#share-extension)
 
-:two:[覆寫 OnShareTargetActivated 事件處理常式](#override)
+：二：覆[寫 OnShareTargetActivated 事件處理常式](#override)
 
-:three:[將桌面擴充功能新增至 UWP 專案](#desktop-extensions)
+：三：[將桌面擴充功能新增至 UWP 專案](#desktop-extensions)
 
-:four:[新增完全信任進程延伸模組](#full-trust)
+：四個：[新增完全信任進程延伸](#full-trust)模組
 
-:five:[修改桌面應用程式以取得共用檔案](#modify-desktop)
+：五個：[修改桌面應用程式以取得共用](#modify-desktop)檔案
 
 <a id="share-extension" />
 
@@ -408,11 +408,11 @@ private void Watcher_Created(object sender, FileSystemEventArgs e)
 
 若要建立背景服務，請執行下列動作：
 
-:one:[執行背景工作](#implement-task)
+:one: [實作背景工作](#implement-task)
 
-:two:[設定背景工作](#configure-background-task)
+:two: [設定背景工作](#configure-background-task)
 
-:three:[註冊背景工作](#register-background-task)
+:three: [註冊背景工作](#register-background-task)
 
 <a id="implement-task" />
 
@@ -475,7 +475,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 <a id="register-background-task" />
 
-### <a name="register-the-background-task"></a>登錄背景工作
+### <a name="register-the-background-task"></a>註冊背景工作
 
 在註冊背景工作的傳統型應用程式專案中加入程式碼。
 
