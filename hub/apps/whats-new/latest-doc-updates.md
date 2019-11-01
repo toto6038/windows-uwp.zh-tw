@@ -6,42 +6,39 @@ ms.date: 10/13/2019
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: e90d1239b48c91583dbe47f1e345a4acd7fa629c
-ms.sourcegitcommit: 8923daa8b930f4d01c772c14a1f159332c4a5ba5
+ms.openlocfilehash: 19028ca868c05ac0a1de39b3187a30f95567d915
+ms.sourcegitcommit: c7e10793cbef55ace959ac8fc6ddd08e683602bd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72303922"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329497"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 開發人員檔的最新更新
 
 
-Windows 開發人員檔會定期更新，並提供新的和改良的資訊和內容。 下列檔是在2019年10月11日結束的最後一周內發現重大更新的一些檔：
+Windows 開發人員檔會定期更新，並提供新的和改良的資訊和內容。 下列檔是在上個月（2019年10月31日結束）中看到重大更新的一些檔：
 
 
-## <a name="uwp-conceptual"></a>UWP 概念
+## <a name="winrt-conceptual"></a>WinRT 概念
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">使用 C++/WinRT 撰寫 API</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/faq">C++/WinRT 的常見問題</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index">C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/app-resources/uri-schemes">URI 配置</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/inertia-modifiers">使用慣性修飾詞來建立貼齊點</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/spring-animations">彈簧動畫</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/concurrency">透過 C++/WinRT 的並行和非同步作業</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">C++/WinRT 的新功能</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/data-access/index">資料存取</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/data-access/sqlite-databases">在 UWP 應用程式中使用 SQLite 資料庫</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/input/access-keys">存取金鑰設計指導方針</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/input/keyboard-events">鍵盤事件</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/layout-panels">通用 Windows 平臺（UWP）應用程式的版面配置面板</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/transforms">轉換總覽</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/generate-3mf">產生 3MF 套件</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/index">企業</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/display-poi">在地圖上顯示興趣點 (POI)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/networking/httpclient">HttpClient</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/porting/android-ios-uwp-map">適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Microsoft Store 原則</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview">XAML 概觀</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/app-analysis">應用程式分析</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/pgo-for-uwp">在通用 Windows 平臺（UWP）應用程式上執行特性指引優化（PGO）</a></li>
 </ul>
 
 
+
+## <a name="winrt-api-reference"></a>WinRT API 參考
+
+<ul>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence （d3d12 .h）</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 （d3d12 .h）</a></li>
+</ul>
 
 ## <a name="win32-conceptual"></a>Win32 概念
 
@@ -89,19 +86,10 @@ Windows 開發人員檔會定期更新，並提供新的和改良的資訊和內
 ## <a name="win32-api-reference"></a>WIN32 API 參考
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence （d3d12 .h）</a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 （d3d12 .h）</a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/index_bkp">Windows API 的程式設計參考</a></li>
-</ul>
-
-## <a name="winrt-api-reference"></a>WinRT API 參考
-
-<ul>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparraykind">Windows. LampArrayKind</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamppurposes">Windows. LampPurposes</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.usb.usbdeviceclass">Windows UsbDeviceClass</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.numerics.matrix3x2">Windows Matrix3x2</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">Windows Direct3D11. IDirect3DDevice</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.directxpixelformat">DirectXPixelFormat。</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegetpropertystatus">Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus</a></li>
-
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.textreadingorder">TextReadingOrder。</a></li>
 </ul>

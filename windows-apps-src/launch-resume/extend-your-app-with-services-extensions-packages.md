@@ -5,18 +5,18 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 延伸, 組件化, app 服務, 套件, 擴充功能
 ms.localizationpriority: medium
-ms.openlocfilehash: a72b175e672b44d0dace0b4bf04956792edfadd0
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: d9a98ef8e0ec53668277face05d83c08f6421cb7
+ms.sourcegitcommit: c7e10793cbef55ace959ac8fc6ddd08e683602bd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282508"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329516"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>透過服務、延伸模組和套件擴充您的應用程式
 
 Windows 10 中有許多技術可擴充及搭配您的應用程式。 此表格應協助您根據需求來判斷應該使用哪一種技術。 接著是案例與技術的簡短描述。
 
-| 狀況                           | 資源套件   | 資產套件      | 選用套件   | 一般套件組合        | 應用程式延伸模組      | 應用程式服務        | 串流安裝  |
+| 案例                           | 資源套件   | 資產套件      | 選用套件   | 一般套件組合        | 應用程式延伸模組      | 應用程式服務        | 串流安裝  |
 |------------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
 | 協力廠商程式碼外掛程式            |                    |                    |                    |                    | :heavy_check_mark: |                    |                    |
 | 同處理序程式碼外掛程式              |                    |                    | :heavy_check_mark: |                    |                    |                    |                    |
@@ -37,7 +37,7 @@ Windows 10 中有許多技術可擴充及搭配您的應用程式。 此表格�
 
 **進程內程式碼外掛程式**  
 
-與您的 App 同在一個處理序中執行的程式碼。 僅支援 C++。 可能還包括內容。 程式碼在同一個處理序中執行，因此假設有較高階的信任層級。 您可以選擇不要向協力廠商公開這種擴充性。
+與您的 App 同在一個處理序中執行的程式碼。 可能還包括內容。 程式碼在同一個處理序中執行，因此假設有較高階的信任層級。 您可以選擇不要向協力廠商公開這種擴充性。
 
 **UX 資產（字串/影像）**  
 
@@ -98,7 +98,7 @@ Windows 應用程式服務可讓您的 UWP 應用程式將服務提供給另一�
 
 串流安裝是一種盡可能使您的 App 有效地傳遞給使用者的方式。 只要所需的部分下載完成，使用者即可投入與 App 的互動，而不是等待下載了整個 App 才來開始使用。 身為開發人員，您可以決定將 App 分割為用於基本啟用與啟動的必要區段和用於 App 其餘部分的其他內容。 如需詳細資訊和實作詳細資料，請參閱 [UWP app 串流安裝](/windows/msix/package/streaming-install)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [建立和使用應用程式服務](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
 [資產封裝簡介](/windows/msix/package/asset-packages)  
