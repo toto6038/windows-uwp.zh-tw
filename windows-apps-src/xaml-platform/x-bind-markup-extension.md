@@ -50,7 +50,7 @@ ms.locfileid: "72715861"
 |------|-------------|
 | _propertyPath_ | 指定繫結屬性路徑的字串。 如需詳細資訊，請參閱下面[屬性路徑](#property-path)一節。 |
 | _bindingProperties_ |
-| _propName_ =_值_\[、 _propName_ =_值_\] * | 使用名稱/值對語法指定的一或多個繫結屬性。 |
+| _propName_=_值_\[、 _propName_=_值_\]* | 使用名稱/值對語法指定的一或多個繫結屬性。 |
 | _propName_ | 要在繫結物件上設定之屬性的字串名稱。 例如，"Converter"。 |
 | _值_ | 設定屬性使用的值。 引數的語法取決於目前設定的屬性。 以下為 _propName_=_value_ 用法的範例，其中的 value 本身是標記延伸：`Converter={StaticResource myConverterClass}`。 如需詳細資訊，請參閱以下的[您可以使用 {x:Bind} 設定的屬性](#properties-that-you-can-set-with-xbind)一節。 |
 
@@ -83,18 +83,18 @@ ms.locfileid: "72715861"
 
 例如：在頁面中，**Text="{x:Bind Employee.FirstName}"** 會先在頁面上尋找 **Employee** 成員，然後在 **Employee** 所傳回的物件上尋找 **FirstName** 成員。 如果您是要將項目控制項繫結到包含員工相依項的屬性，則您的屬性路徑可能會是 "Employee.Dependents"，而項目控制項的項目範本會負責顯示 "Dependents" 中的項目。
 
-針對 C++/CX， **{x:Bind}** 無法繫結至頁面或資料模型中的私用欄位和屬性；您必須使用公用屬性才可加以繫結。 繫結的表面區域必須公開為 CX 類別/介面，以便我們取得相關的中繼資料。 不需要 **\[Bindable \]** 屬性。
+針對 C++/CX， **{x:Bind}** 無法繫結至頁面或資料模型中的私用欄位和屬性；您必須使用公用屬性才可加以繫結。 繫結的表面區域必須公開為 CX 類別/介面，以便我們取得相關的中繼資料。 不需要\[可系結的 **\]** 屬性。
 
 使用 **x:Bind** 時，您無須以 **ElementName=xxx** 做為繫結運算式的一部分。 相反地，您可以使用專案的名稱做為系結路徑的第一個部分，因為已命名的專案會成為頁面或使用者控制項中代表根系結來源的欄位。 
 
 
 ### <a name="collections"></a>集合
 
-如果資料來源是一個集合，則屬性路徑可以依據項目的位置或索引來指定集合中的項目。 例如，"team \[0 \]. Player"，其中常值 "\[ \]" 會括住 "0"，以要求以零索引的集合中的第一個專案。
+如果資料來源是一個集合，則屬性路徑可以依據項目的位置或索引來指定集合中的項目。 例如，「團隊\[0\]。「播放程式」，其中常值「\[\]」會括住「0」，以要求以零索引的集合中的第一個專案。
 
 若要使用索引子，模型必須對要編製索引的屬性類型實作 **IList&lt;T&gt;** 或 **IVector&lt;T&gt;** 。 （請注意，IReadOnlyList &lt;T &gt; 和 IVectorView &lt;T &gt; 不支援索引子語法）。如果索引屬性的類型支援**INotifyCollectionChanged**或**IObservableVector** ，而且系結為單向或 TwoWay，則它會註冊並接聽這些介面上的變更通知。 變更偵測邏輯會根據所有的集合變更進行更新，即使不會影響特定的索引值亦然。 這是因為所有集合執行個體的接聽邏輯是通用的。
 
-如果資料目錄為字典或地圖，則屬性路徑可以依它們的字串名稱指定集合中的項目。 例如 **&lt;TextBlock Text = "{X:Bind player \[ ' John smith ' \]"/&gt;** 會尋找名為 "John Smith" 的字典中的專案。 名稱必須加上引號，而且可以使用單引號或雙引號。 上標三角 (^) 可以用來逸出字串中的引號。 最簡單的方式是使用針對 XAML 屬性所使用的引號之外的替代引號。 （請注意，..Ireadonlydictionary<string &lt;T &gt; 和 IMapView &lt;T &gt; 不支援索引子語法）。
+如果資料目錄為字典或地圖，則屬性路徑可以依它們的字串名稱指定集合中的項目。 例如 **&lt;TextBlock Text = "{X:Bind player\[' John smith '\]"/&gt;** 會尋找名為 "John Smith" 的字典中的專案。 名稱必須加上引號，而且可以使用單引號或雙引號。 上標三角 (^) 可以用來逸出字串中的引號。 最簡單的方式是使用針對 XAML 屬性所使用的引號之外的替代引號。 （請注意，..Ireadonlydictionary<string &lt;T &gt; 和 IMapView &lt;T &gt; 不支援索引子語法）。
 
 若要使用字串索引子，模型必須在要編製索引的屬性類型上實作 **IDictionary&lt;string, T&gt;** 或 **IMap&lt;string, T&gt;** 。 如果已編製索引的屬性類型支援 **IObservableMap**，且繫結為 OneWay 或 TwoWay，則它會登錄並接聽那些介面的變更通知。 變更偵測邏輯會根據所有的集合變更進行更新，即使不會影響特定的索引值亦然。 這是因為所有集合執行個體的接聽邏輯是通用的。
 
@@ -105,7 +105,7 @@ ms.locfileid: "72715861"
 ### <a name="casting"></a>轉型
 
 編譯的繫結屬於強式類型，會解析路徑中每個步驟的類型。 如果傳回的類型沒有成員，將會在編譯時失敗。 您可以指定轉換，以向繫結指出物件的真實類型。 在下列案例中，**obj** 是類型物件的屬性，但是包含文字方塊，因此我們可以使用 **Text="{x:Bind ((TextBox)obj).Text}"** 或 **Text="{x:Bind obj.(TextBox.Text)}"** 。
-**Text = "{x:Bind （（data： SampleDataGroup） groups3 \[0 \]）中的 groups3 欄位。Title} "** 是物件的字典，因此您必須將它轉換成**資料： SampleDataGroup**。 請注意將物件類型對應至不屬於預設 XAML 命名空間的命名空間時，所使用的 xml **data:** 命名空間首碼。
+**Text = "{x:Bind （（資料： SampleDataGroup） groups3 中的 groups3 欄位\[0\]）。Title} "** 是物件的字典，因此您必須將它轉換成**資料： SampleDataGroup**。 請注意將物件類型對應至不屬於預設 XAML 命名空間的命名空間時，所使用的 xml **data:** 命名空間首碼。
 
 _注意： C#-樣式轉換語法比附加屬性語法更有彈性，而且是建議的語法。_
 
