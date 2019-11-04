@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, first app, hello world, 第一個應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 65dfc7b5f9a870f3ccdd5c0c046b996a01c06a00
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: b0d2ad6f0370867159054d77c7e68201d4799037
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321211"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062881"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world App (XAML)
 
@@ -36,9 +36,7 @@ ms.locfileid: "67321211"
 
 ## <a name="video-summary"></a>影片摘要
 
-<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
-
-
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player]
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步驟 1：在 Visual Studio 中建立新專案。
 

@@ -1,5 +1,5 @@
 ---
-Description: 您可以定義附加的版面配置容器，例如 ItemsRepeater 控制項搭配。
+Description: 您可以定義附加配置以用於容器，例如 ItemsRepeater 控制項。
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
@@ -7,64 +7,64 @@ ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ff73b13acb5f5970bb79755b0bf5706fb12545a
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.openlocfilehash: dc23e86f85c5db3dd10c5cec152047be387d4513
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913988"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282287"
 ---
 # <a name="attached-layouts"></a>附加的版面配置
 
-委派 (delegate) 到另一個物件其版面配置邏輯的容器 （例如面板） 依賴為其子系的項目提供的版面配置行為附加的配置物件。  附加的版面配置模型提供變更的項目，在執行階段，版面配置的應用程式的彈性或更輕鬆地共用使用者介面 （例如項目會對齊資料行內顯示資料表的資料列中） 的不同部分之間的版面配置的層面。
+將其配置邏輯委派給另一個物件的容器（例如面板），會依賴附加的設定物件來提供其子專案的版面配置行為。  附加的版面配置模型可讓應用程式在執行時間改變專案配置的彈性，或更輕鬆地在 UI 的不同部分之間共用版面配置的層面（例如，資料表的資料列中顯示的專案會在資料行中對齊）。
 
-在本主題中，我們將討論牽涉哪些步驟建立附加版面配置 （虛擬化和非虛擬化） 的概念和類別，您必須了解，並需要它們之間做決定時要考慮的取捨。
+在本主題中，我們將討論如何建立附加的配置（虛擬化和非虛擬化）、您需要瞭解的概念和類別，以及在兩者之間進行決定時所需考慮的取捨。
 
 | **取得 Windows UI 程式庫** |
 | - |
-| 此控制項是包含 Windows UI 程式庫，包含新的控制項和 UWP 應用程式的 UI 功能的 NuGet 套件的過程。 如需詳細資訊，包括安裝指示，請參閱 < [Windows 的 UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| 此控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/) \(英文\)。 |
 
-> **重要的 Api**:
+> **重要 API**：
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 > * [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)
-> * [配置](/uwp/api/microsoft.ui.xaml.controls.layout)
+> * [版面配置](/uwp/api/microsoft.ui.xaml.controls.layout)
 >     * [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 >     * [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
-> * [LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)
->     * [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)
->     * [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)
+> * [LayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)
+>     * [NonVirtualizingLayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)
+>     * [VirtualizingLayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)
 > * [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) （預覽）
 
 ## <a name="key-concepts"></a>重要概念
 
-執行配置時，需要兩個問題要回答每個項目：
+執行版面配置需要針對每個元素回答兩個問題：
 
-1. 什麼***大小***將這個項目是？
+1. 此元素的***大小***為何？
 
-2. 項目有哪些***位置***這個項目是？
+2. 此元素的***位置***為何？
 
-XAML 的版面配置系統，回答上述問題，簡短說明的討論內容的一部分[自訂面板](/windows/uwp/design/layout/custom-panels-overview)。
+XAML 的版面配置系統（回答這些問題）會在[自訂面板](/windows/uwp/design/layout/custom-panels-overview)討論中簡短涵蓋。
 
 ### <a name="containers-and-context"></a>容器和內容
 
-就概念而言，XAML 的[面板](/uwp/api/windows.ui.xaml.controls.panel)填滿 framework 中的兩個重要角色：
+在概念上，XAML 的[面板](/uwp/api/windows.ui.xaml.controls.panel)會在架構中填入兩個重要角色：
 
-1. 它可以包含子項目，並導入的項目樹狀結構中的分支。
-2. 它適用於這些子系的特定版面配置策略。
+1. 它可以包含子專案，並在專案的樹狀結構中引進分支。
+2. 它會將特定的版面配置策略套用至這些子系。
 
-基於這個理由，XAML 中的面板時，通常是同義詞版面配置，但就技術上而言，不只是版面配置。
+基於這個理由，XAML 中的面板通常與版面配置同義，但是在技術上來說，不只是配置。
 
-[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)行為也像窗格中，但，不同於面板，它不會公開允許以程式設計方式新增或移除的 UIElement 子系的子系屬性。  相反地，以對應至一組資料的項目架構會自動管理其子系的存留期。  雖然它不衍生自面板，它的行為，並處理架構，例如工作面板。
+[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)也有類似的面板，但是與 panel 不同的是，它不會公開允許以程式設計方式新增或移除 UIElement 子系的子屬性。  相反地，其子系的存留期會由架構自動管理，以對應至資料項目的集合。  雖然它不是衍生自 Panel，但它會運作，並由像是面板的架構來處理。
 
 > [!NOTE]
-> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel)都是容器，衍生自面板中，會委派其邏輯，以附加[版面配置](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout)物件。  LayoutPanel 處於*Preview*和目前僅適用於*發行前版本*WinUI 封裝的卸除。
+> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel)是衍生自 Panel 的容器，它會將其邏輯委派給附加的[版面](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout)設定物件。  LayoutPanel 處於*預覽*狀態，目前僅適用于 WinUI 套件的*發行*前版本。
 
 #### <a name="containers"></a>容器
 
-就概念而言，[面板](/uwp/api/windows.ui.xaml.controls.panel)是容器的項目，也能夠呈現的像素[背景](/uwp/api/windows.ui.xaml.controls.panel.background)。  面板會提供用來封裝易於使用的封裝中常見的配置邏輯。
+就概念而言， [Panel](/uwp/api/windows.ui.xaml.controls.panel)是專案的容器，也能夠呈現[背景](/uwp/api/windows.ui.xaml.controls.panel.background)的圖元。  面板提供一種方法，可將通用版面配置邏輯封裝在便於使用的封裝中。
 
-概念**附加配置**可更清楚的版面配置容器的兩個角色之間的差異。  如果容器委派 (delegate) 到另一個物件其版面配置邏輯我們會呼叫該物件附加的版面配置下列程式碼片段所示。 容器繼承自[FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)，例如 LayoutPanel，自動公開提供輸入 XAML 的版面配置程序 （例如高度和寬度） 的通用屬性。
+**附加**配置的概念讓容器和版面配置的兩個角色之間的區別更為清楚。  如果容器將其版面配置邏輯委派給另一個物件，我們會呼叫該物件附加的配置，如下列程式碼片段所示。 繼承自[FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)的容器（例如 LayoutPanel）會自動公開可提供輸入給 XAML 版面配置進程的通用屬性（例如，高度和寬度）。
 
 ```xaml
 <LayoutPanel>
@@ -77,11 +77,11 @@ XAML 的版面配置系統，回答上述問題，簡短說明的討論內容的
 </LayoutPanel>
 ```
 
-在版面配置程序期間容器依賴附加*UniformGridLayout*測量和排列子系。
+在版面配置處理期間，容器會依賴附加的*UniformGridLayout*來測量和排列其子系。
 
 #### <a name="per-container-state"></a>每個容器狀態
 
-具有附加的配置，可能會配置物件的單一執行個體相關聯*許多*容器是由下列程式碼片段所示; 因此，它必須不依賴或直接參考的主應用程式容器。  例如: 
+使用附加的版面配置，版面設定物件的單一實例可能會與*許多*容器相關聯，如下列程式碼片段所示。因此，它不能相依于或直接參考主機容器。  例如:
 
 ```xaml
 <!-- ... --->
@@ -94,73 +94,73 @@ XAML 的版面配置系統，回答上述問題，簡短說明的討論內容的
 <!-- ... --->
 ```
 
-這種情況下*ExampleLayout*必須仔細考慮它會在其版面配置計算和儲存該狀態使用，以免影響無與另一個面板中的項目配置的狀態。  它會是類似的 MeasureOverride 和 ArrangeOverride 邏輯取決於值的自訂面板及其*靜態*屬性。
+在這種情況下， *ExampleLayout*必須仔細考慮它在版面配置計算中所使用的狀態，以及該狀態的儲存位置，以避免影響某個面板中專案的配置。  它類似于自訂面板，其 MeasureOverride 和 ArrangeOverride 邏輯會依賴其*靜態*屬性的值。
 
-#### <a name="layoutcontext"></a>LayoutContext
+#### <a name="layoutcontext"></a>LayoutCoNtext
 
-目的[LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)是來克服這些挑戰。  它提供附加的版面配置與主應用程式容器，例如擷取子項目，且不會造成直接的相依性，兩者之間互動的能力。 內容也可讓版面配置，以儲存它需要與容器的子系項目相關的任何狀態。
+[LayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)的目的是要處理這些挑戰。  它提供連接的配置與主機容器互動的能力，例如，抓取子專案，而不會在兩者之間引入直接相依性。 內容也可以讓配置儲存其所需的任何狀態，這可能與容器的子項目相關。
 
-簡單、 非虛擬化的版面配置通常不需要維護任何狀態，因此問題。 不過，更複雜的配置，例如方格中，可以選擇維護此量值之間的狀態，以及排列呼叫，以避免重新計算值。
+簡單、非虛擬化的版面配置通常不需要維護任何狀態，因此不會發生問題。 不過，更複雜的版面配置（例如 Grid）可能會選擇在量值和排列呼叫之間維護狀態，以避免重新計算值。
 
-虛擬化版面配置*通常*需要維護兩個量值之間的某些狀態，並反覆進行的配置階段之間以及排列。
+虛擬化版面配置*通常*需要在量值和排列之間，以及反復的版面設定階段之間維護一些狀態。
 
-#### <a name="initializing-and-uninitializing-per-container-state"></a>初始化並取消初始化每個容器狀態
+#### <a name="initializing-and-uninitializing-per-container-state"></a>針對每個容器狀態初始化和取消初始化
 
-當版面配置附加至容器，其[InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)方法呼叫，並提供機會來初始化物件以儲存狀態。
+當版面配置附加至容器時，會呼叫其[InitializeForCoNtextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)方法，並提供將物件初始化以儲存狀態的機會。
 
-同樣地，當配置正在移除容器，從[UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)會呼叫方法。  這會讓版面配置來清除它有與該容器相關聯的任何狀態有機會。
+同樣地，從容器中移除版面配置時，將會呼叫[UninitializeForCoNtextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)方法。  這可讓配置有機會清除與該容器相關聯的任何狀態。
 
-版面配置的狀態物件可以與一起儲存，而且從容器擷取[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)內容上的屬性。
+版面配置的狀態物件可以與內容中的[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)屬性一起儲存並從容器中取出。
 
 ### <a name="ui-virtualization"></a>UI 虛擬化
 
-UI 虛擬化表示延遲的 UI 物件，直到建立_它會在需要時_。  它是一種效能最佳化。  非捲動的案例，判斷_視_可能根據任意數目的應用程式特定的項目。  在這些情況下，應用程式應該考慮使用[X:load](../../xaml-platform/x-load-attribute.md)。 它不需要任何特殊處理，在您的配置。
+UI 虛擬化表示在_需要時，會_延遲建立 UI 物件。  這是效能優化。  針對非滾動案例，判斷_需要_的時機可能是以應用程式特定的任何數目為依據。  在這些情況下，應用程式應該考慮使用[x:Load](../../xaml-platform/x-load-attribute.md)。 它不需要在您的版面配置中進行任何特殊處理。
 
-在捲動為基礎的案例，例如清單中，判斷_視_通常取決於"會是向使用者顯示 「 主要取決於它放置在版面配置程序期間，並且需要進行特殊考量。  此案例是本文的焦點。
+在以滾動為基礎的案例（例如清單）中，決定_需要的時間_通常是以「使用者看得見」，而這主要取決於在版面配置過程中放置的位置，而且需要特殊的考慮。  此案例是本檔的焦點。
 
 > [!NOTE]
-> 雖然未涵蓋在本文中，在非捲動的情況下套用相同的功能，可讓 UI 虛擬化捲動案例。  例如，資料驅動工具列控制項所管理的命令，它呈現，並以回應變更可用空間回收 / 可見的區域和溢位功能表之間移動項目存留期。
+> 雖然本檔未涵蓋，但可在非滾動案例中套用在滾動案例中啟用 UI 虛擬化的相同功能。  例如，資料驅動的工具列控制項，它會管理它所呈現之命令的存留期，並藉由在可見區域和溢位功能表之間回收/移動元素，來回應可用空間中的變更。
 
-## <a name="getting-started"></a>開始使用
+## <a name="getting-started"></a>快速入門
 
-首先，決定您要建立版面配置是否應支援 UI 虛擬化。
+首先，決定您需要建立的版面配置是否應支援 UI 虛擬化。
 
-**要牢記在心的幾件事...**
+**請記住一些事項 。**
 
-1. 非虛擬化的配置是容易撰寫。 如果項目數目一律為小型然後撰寫非虛擬化的版面配置建議。
-2. 此平台提供一組的連接使用的版面配置[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items)並[LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel)涵蓋常見的需求。  熟悉這些之前決定您需要定義自訂版面配置。
-3. 虛擬化的版面配置一定會有一些額外的 CPU 和記憶體成本/複雜性/額外負荷相較於非虛擬化的版面配置。  依照一般經驗法則如果子系的版面配置將會需要管理將可能的區域中，是 3 倍的檢視區的大小，則不能有太多倍的虛擬化的版面配置。 3 倍大小會在此文件中，稍後更詳細地討論，但由於 Windows 和虛擬化其影響捲動的非同步本質。
+1. 非虛擬化的版面配置比較容易撰寫。 如果專案數一律會很小，則建議您撰寫非虛擬化版面配置。
+2. 平臺提供一組附加的配置，可與[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items)和[LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel)搭配使用，以涵蓋常見的需求。  在決定需要定義自訂版面配置之前，先熟悉這些需求。
+3. 相較于非虛擬化的配置，虛擬化配置一律會有一些額外的 CPU 和記憶體成本/複雜性/負擔。  以一般經驗法則而言，如果配置需要管理的子系可能會放在圖格中大小3倍的區域中，則虛擬化配置可能不會有太大的增益。 本檔稍後將更詳細地討論過3倍的大小，但這是因為在 Windows 上滾動的非同步本質及其對虛擬化的影響。
 
 > [!TIP]
-> 參考的預設設定成[ListView](/uwp/api/windows.ui.xaml.controls.listview) (並[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)) 都不會開始回收，直到項目數目便足以填滿 3 倍的目前檢視區大小。
+> 就參考的觀點而言， [ListView](/uwp/api/windows.ui.xaml.controls.listview) （和[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)）的預設設定是，直到專案數足以填滿目前的視口大小的3倍為止，回收才會開始。
 
 **選擇您的基底類型**
 
 ![附加的版面配置階層](images/xaml-attached-layout-hierarchy.png)
 
-基底[版面配置](/uwp/api/microsoft.ui.xaml.controls.layout)類型有兩個衍生的型別做為起點來撰寫附加的版面配置：
+基底[版面](/uwp/api/microsoft.ui.xaml.controls.layout)配置類型具有兩種衍生類型，做為撰寫附加配置的起點：
 
 1. [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 2. [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
 
-## <a name="non-virtualizing-layout"></a>非虛擬化的版面配置
+## <a name="non-virtualizing-layout"></a>非虛擬化版面配置
 
-建立非虛擬化的版面配置的方法應該不陌生，已建立的任何人[自訂面板](/windows/uwp/design/layout/custom-panels-overview)。  適用相同概念。  主要差異在於[NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)用來存取[子系](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children)集合和版面配置，可以選擇儲存狀態。
+建立[自訂面板](/windows/uwp/design/layout/custom-panels-overview)的任何人都應該熟悉建立非虛擬化配置的方法。  適用相同的概念。  主要的差異在於[NonVirtualizingLayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)是用來存取[子](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children)集合，而 layout 則可以選擇儲存狀態。
 
-1. 衍生自基底型別[NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) （而不是面板）。
-2. *（選擇性）* 定義相依性屬性，當變更會使配置失效。
-3. _(**的新**/選用)_ 初始化所需的版面配置，做為一部分的任何狀態物件[InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)。 它使用隱藏與主應用程式容器[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)提供內容。
-4. 覆寫[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride) ，並呼叫[量值](/uwp/api/windows.ui.xaml.uielement.measure)方法上的所有子系。
-5. 覆寫[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) ，並呼叫[排列](/uwp/api/windows.ui.xaml.uielement.arrange)方法上的所有子系。
-6. *(**的新**/選用)* 清除任何已儲存狀態的一部分[UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)。
+1. 衍生自基底類型[NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) （而不是 Panel）。
+2. *（選擇性）* 定義在變更時將會使配置失效的相依性屬性。
+3. _（**新**的/Optional）_ 將版面配置所需的任何狀態物件初始化，做為[InitializeForCoNtextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)的一部分。 使用與內容一起提供的[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) ，將它與主機容器一起隱藏。
+4. 覆寫[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride) ，並在所有子系上呼叫[Measure](/uwp/api/windows.ui.xaml.uielement.measure)方法。
+5. 覆寫[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) ，並在所有子系上呼叫[排列](/uwp/api/windows.ui.xaml.uielement.arrange)方法。
+6. *（**新**的/Optional）* 清除任何已儲存的狀態，做為[UninitializeForCoNtextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)的一部分。
 
-### <a name="example-a-simple-stack-layout-varying-sized-items"></a>範例：簡單的堆疊配置 （不同大小的項目）
+### <a name="example-a-simple-stack-layout-varying-sized-items"></a>範例：簡單的堆疊版面配置（大小不同的專案）
 
 ![MyStackLayout](images/xaml-attached-layout-mystacklayout.png)
 
-以下是非常基本非虛擬化堆疊配置的不同大小的項目。 它沒有任何屬性，以調整的版面配置行為。 下列實作會說明如何配置仰賴提供容器的內容物件：
+以下是一個非常基本的非虛擬化堆疊版面配置，其大小不同的專案。 它缺少任何屬性來調整版面配置的行為。 以下的執行說明配置如何依賴容器所提供的內容物件來執行下列動作：
 
-1. 取得子系的計數和
+1. 取得子系的計數，以及
 2. 依索引存取每個子項目。
 
 ```csharp
@@ -207,99 +207,99 @@ public class MyStackLayout : NonVirtualizingLayout
 </LayoutPanel>
 ```
 
-## <a name="virtualizing-layouts"></a>虛擬化的版面配置
+## <a name="virtualizing-layouts"></a>虛擬化版面配置
 
-類似於非虛擬化的版面配置，虛擬化的版面配置的高階步驟都相同。  複雜度是主要在決定什麼項目將會落在檢視區和應該實現。
+類似于非虛擬化配置，虛擬化配置的高階步驟也一樣。  複雜度主要在於判斷哪些元素會落在視口中，而且應該實現。
 
-1. 衍生自基底型別[VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)。
-2. （選擇性）定義相依性屬性，當變更會使配置失效。
-3. 初始化會做為一部分的 版面配置所需的任何狀態物件[InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)。 它使用隱藏與主應用程式容器[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)提供內容。
-4. 覆寫[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) ，並呼叫[量值](/uwp/api/windows.ui.xaml.uielement.measure)應該實現每個子系的方法。
-   1. [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法用來擷取已備妥由架構 （例如資料繫結套用） 的 UIElement。
-5. 覆寫[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) ，並呼叫[排列](/uwp/api/windows.ui.xaml.uielement.arrange)方法之每個具現化的子系。
-6. （選擇性）清除任何儲存狀態的一部分[UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)。
+1. 衍生自基底類型[VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)。
+2. 選擇性定義在變更時將會使配置失效的相依性屬性。
+3. 將版面配置所需的任何狀態物件初始化，做為[InitializeForCoNtextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)的一部分。 使用與內容一起提供的[LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) ，將它與主機容器一起隱藏。
+4. 覆寫[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) ，並針對應該實現的每個子系呼叫[Measure](/uwp/api/windows.ui.xaml.uielement.measure)方法。
+   1. [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法是用來抓取已由架構（例如，套用的資料系結）所準備的 UIElement。
+5. 覆寫[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) ，並針對每個已實現的子系呼叫[排列](/uwp/api/windows.ui.xaml.uielement.arrange)方法。
+6. 選擇性清除任何已儲存的狀態，做為[UninitializeForCoNtextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)的一部分。
 
 > [!TIP]
-> 所傳回的值[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)做為虛擬化的內容的大小。
+> [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)傳回的值會用來做為虛擬化內容的大小。
 
-有兩個一般的方法，可以考慮撰寫虛擬化的版面配置時。  是否要選擇其中一種主要取決於 「 如何將決定項目大小 」。  如果其足以知道資料集或資料本身中項目的索引會指定其最終大小，則我們會考慮它**視資料而定**。  這些是比較容易建立。  如果，不過，決定大小的項目來建立量值的 UI，則我們會假設它是唯一的辦法**內容相依**。  這些是更複雜。
+撰寫虛擬化版面配置時，有兩個一般的考慮方法。  是否選擇其中一種主要取決於「您要如何判斷元素的大小」。  如果它足以知道資料集中專案的索引，或資料本身會決定其最終大小，則我們會將它視為**資料相依**。  這些是更直接建立的。  不過，如果要判斷專案大小的唯一方式是建立並測量 UI，則我們會假設它是**內容相關**的。  這些比較複雜。
 
-### <a name="the-layout-process"></a>版面配置程序
+### <a name="the-layout-process"></a>版面配置流程
 
-無論您建立資料或內容相關的版面配置，務必了解版面配置程序和 Windows 的非同步捲動的影響。
+不論您是建立資料或內容相依的配置，請務必瞭解版面配置程式以及 Windows 非同步滾動的影響。
 
-（使用量） 是簡化的檢視，由啟動顯示畫面上的 UI 架構執行的步驟：
+從啟動到螢幕上顯示 UI 所執行的步驟（透過）簡化的觀點，如下所示：
 
 1. 它會剖析標記。
 
-2. 產生項目樹狀的結構。
+2. 產生元素的樹狀結構。
 
-3. 執行配置傳遞。
+3. 執行版面設定階段。
 
-4. 執行呈現階段。
+4. 執行轉譯階段。
 
-UI 虛擬化，在步驟 2 中建立，通常會來完成的項目會延遲或結束提早一次其已決定該足夠已建立內容以填滿檢視區。 虛擬化的容器 (例如 ItemsRepeater) 會將它附加的版面配置，來驅動此程序來延後。 它會提供具有附加的版面配置[VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)所呈現的虛擬化的版面配置所需的其他資訊。
+使用 UI 虛擬化，建立通常在步驟2中完成的專案，會在判斷是否已建立足夠的內容以填滿視口之後，提早延遲或結束。 虛擬化容器（例如，ItemsRepeater）會延遲其附加的配置，以驅動此進程。 它提供附加的版面配置，其中包含[VirtualizingLayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) ，可呈現虛擬化配置所需的其他資訊。
 
-**RealizationRect （也就是檢視區）**
+**RealizationRect （亦即視口）**
 
-Windows 上捲動會發生非同步至 UI 執行緒。 它不會受到架構的版面配置。  相反地，互動和移動，就會發生在系統的複合項中。 這種方法的優點是，移動瀏覽內容永遠可為 60 fps。  不過，挑戰是 「 檢視區 」，所看到的版面配置可能稍微過期的時間相對於實際在螢幕上看見的功能。 如果使用者快速捲動時，它們可能會落在 UI 執行緒，來產生新的內容和 「 設為黑色取景位置調整 」 的速度。 基於這個理由，它通常是所需的虛擬化的版面配置，來產生額外的緩衝區，已備妥的項目，足以填滿大於檢視區的區域。 當您捲動使用者期間較重負載下仍看到的內容。
+Windows 上的滾動會在 UI 執行緒上非同步執行。 它不是由架構的版面配置所控制。  相反地，互動和移動會發生在系統的組合器中。 這種方法的優點是，移動流覽內容一律可以在60fps 上完成。  不過，這項挑戰是，如配置所看到的「視口」，相對於螢幕上實際顯示的內容，可能會略有不同。 如果使用者快速地滾動，他們可能會超過 UI 執行緒的速度，以產生新的內容和「平移至黑色」。 基於這個理由，虛擬化配置通常需要產生額外的備妥元素緩衝區，足以填滿一個大於此區的區域。 在滾動期間的負載較大時，使用者仍會看到內容。
 
-![實現 rect](images/xaml-attached-layout-realizationrect.png)
+![實現矩形](images/xaml-attached-layout-realizationrect.png)
 
-項目建立為高成本，因為虛擬化容器 (例如[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) 一開始會提供具有附加的版面配置[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)符合檢視區。 在閒置時容器可以藉由使用日漸變大實現就是 rect 版面配置的重複的呼叫增長之緩衝區的已備妥的內容 此行為是嘗試快速的啟動時間和良好的移動體驗之間取得平衡的效能最佳化。 ItemsRepeater 會產生最大緩衝區大小由控制其[VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength)並[HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength)屬性。
+因為建立專案的成本很高，所以虛擬化容器（例如， [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)）一開始會以符合此區的[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)提供附加的配置。 在閒置時間，容器可能會使用越來越大的實現矩形重複呼叫配置，來擴大已備妥內容的緩衝區。 這種行為是一種效能優化，會嘗試在快速啟動時間和良好的移動體驗之間取得平衡。 ItemsRepeater 將產生的緩衝區大小上限是由其[VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength)和[HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength)屬性所控制。
 
-**（回收） 重複使用的項目**
+**重複使用元素（回收）**
 
-版面配置預期的大小和位置的項目，以填滿[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)每次執行時。 依預設[VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)就會回收結尾的每個配置傳遞任何未使用項目。
+版面配置應該會在每次執行時，調整專案的大小和位置，以填滿[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) 。 根據預設， [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)會在每個版面設定階段結束時回收任何未使用的元素。
 
-[VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)一部分傳遞至版面配置[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)並[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride)提供其他資訊需要虛擬化的版面配置。 它提供最常使用的項目包括能夠：
+當做[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)和[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride)之一部分傳遞至配置的[VirtualizingLayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)會提供虛擬化配置所需的其他資訊。 它所提供的部分最常使用的專案，就是能夠執行下列動作：
 
-1. 查詢資料中的項目數 ([ItemCount](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.itemcount))。
-2. 擷取項目使用特定[GetItemAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getitemat)方法。
-3. 擷取[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)表示檢視區和版面配置中應填入的緩衝區實現項目。
-4. 要求特定的項目與 UIElement [GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法。
+1. 查詢資料中的專案數（[ItemCount](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.itemcount)）。
+2. 使用[GetItemAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getitemat)方法來取出特定專案。
+3. 取出[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) ，其代表配置應該填入已實現專案的視口和緩衝區。
+4. 使用[GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法來要求特定專案的 UIElement。
 
-要求的指定索引的項目可能會造成該元素標示為 「 使用中 」 的版面配置該階段。 如果項目不存在，然後將可實現並會自動備妥供使用 （例如擴張 UI 樹狀目錄中定義 datatemplate 的範圍，處理任何資料繫結等。）。  否則，它會擷取從現有的執行個體的集區。
+針對指定的索引要求元素，會導致該元素在該配置的階段中標示為「使用中」。 如果專案不存在，則會實現並自動備妥以供使用（例如，因而誇大 DataTemplate 中定義的 UI 樹狀結構、處理任何資料系結等）。  否則，它將會從現有實例的集區中取出。
 
-在每個量值階段結束時，任何現有的、 發現未標示 「 使用中 」 的項目會自動被視為可供重複使用除非選擇[SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions)透過已擷取的項目時所使用[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法。 架構會自動將它移至資源回收集區，並使其可。 它可能會隨後提取使用由不同的容器。 此架構會嘗試時避免這可能因為一些與重設父代的項目相關聯的成本。
+在每個測量階段結束時，任何未標示為「使用中」的現有、已實現的專案，都會自動視為可供重複使用，除非透過下列專案抓取專案時，使用 [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) 的選項[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法。 架構會自動將它移至回收集區，並讓它可供使用。 之後可能會提取以供不同的容器使用。 架構會嘗試避免這種情況，因為可能會有一些成本與重新父元素的相關聯。
 
-如果虛擬化的版面配置會在每個量值的項目將不會再落在實現 rect 開頭知道它可以最佳化其重複使用。 而不是依賴架構的預設行為。 配置可以事先項目使用移至資源回收集區[RecycleElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement)方法。  要求新的項目之前呼叫這個方法會導致這些配置稍後問題時才能使用現有的項目[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)索引尚未與項目相關聯的要求。
+如果虛擬化配置知道每個量值的開頭，哪些元素不會再落在實現矩形內，則可以將其重複使用優化。 而不是依賴架構的預設行為。 版面配置可以使用[RecycleElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement)方法事先將專案移至回收集區。  在要求新專案之前呼叫這個方法，會在配置稍後針對尚未與專案相關聯的索引發出[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)要求時，讓這些現有的元素可供使用。
 
-VirtualizingLayoutContext 提供專為建立的內容相依版面配置的版面配置作者而設計的兩個額外屬性。 它們是稍後討論更多詳細資料。
+VirtualizingLayoutCoNtext 提供兩個額外的屬性，專為版面配置作者建立與內容相依的配置所設計。 稍後將更詳細地討論它們。
 
-1. A [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)提供選擇性_輸入_版面配置。
-2. A [LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin)也就是一個選擇性_輸出_版面配置。
+1. 提供版面配置選擇性_輸入_的[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) 。
+2. [LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) ，這是版面配置的選擇性_輸出_。
 
-## <a name="data-dependent-virtualizing-layouts"></a>視資料而定的虛擬化版面配置
+## <a name="data-dependent-virtualizing-layouts"></a>資料相依的虛擬化版面配置
 
-虛擬化的版面配置是如果您知道每個項目的大小應該是不需要以量值要顯示的內容更容易。  在本文件中只是我們會以這個類別的虛擬化做為版面配置**的資料配置**因為通常涉及檢查資料。  根據應用程式可能會挑選與已知的大小-的視覺表示法可能是因為資料其資料的一部分或先前已判斷所設計。
+如果您知道每個專案的大小為何，而不需要測量要顯示的內容，則虛擬化配置會變得更容易。  在本檔中，我們只是將這類虛擬化版面配置稱為**資料**配置，因為它們通常會包含檢查資料。  根據資料，應用程式可能會挑選已知大小的視覺標記法，可能是因為它的資料部分或先前已由設計決定。
 
-一般方法是針對至版面配置：
+一般的方法是將版面配置用於：
 
-1. 計算的大小和位置的每個項目。
-2. 做為一部分[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride):
-   1. 使用[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)來判斷哪些項目應該出現在檢視區。
-   2. 擷取應該代表的項目的 UIElement [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法。
-   3. [量值](/uwp/api/windows.ui.xaml.uielement.measure)的 UIElement 預先計算的大小。
-3. 做為一部分[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride)，[排列](/uwp/api/windows.ui.xaml.uielement.arrange)每個發現 UIElement 與預先計算的位置。
+1. 計算每個專案的大小和位置。
+2. 做為[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)的一部分：
+   1. 使用[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)來判斷哪些專案應該出現在視口中。
+   2. 使用[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法，抓取應代表該專案的 UIElement。
+   3. 使用預先計算的大小來[測量](/uwp/api/windows.ui.xaml.uielement.measure)UIElement。
+3. 做為[ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride)的一部分，請使用預先計算的位置來[排列](/uwp/api/windows.ui.xaml.uielement.arrange)每個已實現的 UIElement。
 
 > [!NOTE]
-> 資料的版面配置方法通常是與不相容_資料虛擬化_。  具體來說，唯一的資料載入到記憶體是什麼使用者可以看見，填入該資料。  資料虛擬化不指延遲或累加式載入的資料，當使用者捲動時關閉該資料保持常駐的位置。  相反地，它所參考時從記憶體釋放項目，是因為它們捲動到檢視。  遇到資料版面配置，其會檢查每個資料項目，因為資料配置的一部分會防止無法運作的資料虛擬化，如預期般運作。  例外狀況是 UniformGridLayout 假設所有項目具有相同的大小類似的版面配置。
+> 資料配置方法通常與_資料虛擬化_不相容。  具體而言，唯一載入記憶體中的資料就是填入使用者可以看到的內容所需的資料。  資料虛擬化不會在使用者于資料持續的位置向下滾動時，參考延遲或累加式資料載入。  相反地，它會在從記憶體中的專案被顯示為無法查看時，參考它們。  擁有資料配置來檢查每個資料項目做為資料配置的一部分，會使資料虛擬化無法如預期般運作。  例外狀況是 UniformGridLayout 這類配置，其假設所有專案的大小都相同。
 
 > [!TIP]
-> 如果您要建立自訂控制項程式庫將可供其他人在各種情況下，控制項的資料配置可能不會是您選項。
+> 如果您要建立控制項程式庫的自訂控制項，讓其他人在各種情況下使用，則資料配置可能不適合您的選擇。
 
-### <a name="example-xbox-activity-feed-layout"></a>範例：Xbox 活動摘要的版面配置
+### <a name="example-xbox-activity-feed-layout"></a>範例：Xbox 活動摘要版面配置
 
-Xbox 活動摘要的 UI 使用重複的模式，其中每一行都有寬形磚，在後續的行後面兩個已反轉的窄磚。 在此配置中，每個項目大小會是項目的位置在資料集和已知的圖格大小 （寬 vs 縮小） 的函式。
+Xbox 活動摘要的 UI 會使用重複模式，其中每一行都有寬磚，後面接著兩個在後續行上反轉的窄磚。 在此配置中，每個專案的大小是資料集中專案位置的函式，以及磚的已知大小（寬和窄）。
 
 ![Xbox 活動摘要](images/xaml-attached-layout-activityfeedscreenshot.png)
 
-以下會逐步哪些自訂虛擬化的活動摘要的 UI 可能要說明的一般接近您的程式碼可能需要**的資料配置**。
+下列程式碼會逐步解說活動摘要的自訂虛擬化 UI 如何說明您可能會對**資料**配置採取的一般方法。
 
 <table>
 <td>
-    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可開啟應用程式，並查看<a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a>中使用此範例版面配置的動作。</p>
+    <p>如果您已安裝<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以開啟應用程式，並使用此範例版面配置查看<a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a>的作用。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始程式碼 (GitHub)</a></li>
@@ -582,13 +582,13 @@ internal class ActivityFeedLayoutState
 }
 ```
 
-### <a name="optional-managing-the-item-to-uielement-mapping"></a>（選擇性）管理要 UIElement 對應的項目
+### <a name="optional-managing-the-item-to-uielement-mapping"></a>選擇性管理專案與 UIElement 的對應
 
-根據預設， [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)維護實現的項目與它們所代表的資料來源中的索引之間的對應。  配置可以選擇來管理此對應本身一律要求的選項，藉以[SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions)擷取透過項目時[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法可避免預設值自動回收行為。  如果它將只用於捲動僅限於單一方向，並將它視為項目一律會連續 （也就知道第一個和最後一個項目的索引，就足以知道應該反應的所有項目時，若要這樣做，比方說，可以選擇配置lized)。
+根據預設， [VirtualizingLayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)會維護已實現的專案與其所代表之資料來源中的索引之間的對應。  版面配置可以選擇透過[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法（可防止預設的自動回收行為），在抓取專案時，一律要求[SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions)選項來管理此對應。  版面配置可以選擇執行這項操作，例如，只有在將滾動限制為一個方向，而且它所考慮的專案一律是連續的（亦即，知道第一個和最後一個元素的索引足以知道所有應該反應的元素時，才會使用它）。lized).
 
-#### <a name="example-xbox-activity-feed-measure"></a>範例：Xbox 活動摘要中的量值
+#### <a name="example-xbox-activity-feed-measure"></a>範例：Xbox 活動摘要量值
 
-下列程式碼片段會顯示可以加入在先前的範例 MeasureOverride，來管理對應的額外邏輯。
+下列程式碼片段顯示可新增至先前範例中的 MeasureOverride 以管理對應的其他邏輯。
 
 ```csharp
     protected override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
@@ -660,59 +660,59 @@ internal class ActivityFeedLayoutState
 }
 ```
 
-## <a name="content-dependent-virtualizing-layouts"></a>內容相關的虛擬化版面配置
+## <a name="content-dependent-virtualizing-layouts"></a>內容相依的虛擬化版面配置
 
-如果您必須先測量項目來找出確切的大小的 UI 內容，則很**內容相依配置**。  您可以也將它視為配置，其中每個項目必須本身自行調整大小，而不是告訴項目大小的版面配置。 屬於此分類的虛擬化版面配置是更為複雜。
+如果您必須先測量專案的 UI 內容，以找出它的確切大小，則它是**內容相依的版面**配置。  您也可以將它視為一個版面配置，其中每個專案都必須自行調整大小，而不是告訴專案大小的版面配置。 將屬於此類別的配置虛擬化更牽涉。
 
 > [!NOTE]
-> 內容相關的版面配置不 （不得） 中斷資料虛擬化。
+> 內容相依的版面配置不會中斷資料虛擬化。
 
 ### <a name="estimations"></a>估計
 
-內容相關的版面配置依賴估計猜測實現內容的大小和具現化內容的位置。 隨著這些估計值的變更會導致要定期轉移可捲動區域內的位置的具現化的內容。 這可能會導致非常令人沮喪且突兀的使用者體驗如果不降低。 潛在的問題與緩解方式進行討論。
+內容相依的版面配置會依賴估計，以猜測未實現內容的大小和所實現內容的位置。 當這些估計值變更時，會導致內容在可捲動區域內定期轉移位置。 如果不緩和，這可能會導致非常令人沮喪的 jarring 使用者體驗。 這裡會討論潛在的問題和緩和措施。
 
 > [!NOTE]
-> 請考慮每個項目，並知道確切的大小，實現的所有項目和其位置的資料配置可以完全避免這些問題。
+> 資料配置會考慮每個專案，並知道所有專案的確切大小、已實現或不存在，而且其位置可以完全避免這些問題。
 
-**捲軸錨定**
+**滾動錨定**
 
-XAML 會提供一個機制，讓捲動控制項支援緩和突然的檢視區排班[捲錨定](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)藉由實作[IScrollAnchorPovider](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)介面。 使用者管理內容，捲動控制項就會持續從候選項目中選擇加入追蹤的一組選取的項目。 如果錨點元素的位置會在配置期間轉移再捲動控制項會自動移其維護檢視區的檢視區。
+XAML 提供了一種機制，可讓您藉由執行[IScrollAnchorPovider](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)介面來支援[滾動](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)控制項，藉此減輕突然的視口移位 當使用者操作內容時，滾動控制項會持續從一組選擇要追蹤的候選項目中選取元素。 如果錨點專案的位置在版面配置期間轉移，則捲軸控制項會自動移動其視口，以維護此區。
 
-值[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)提供給版面配置可能會反映該選擇透過捲動控制項的目前選取的錨定項目。 或者，如果開發人員明確要求的項目來實現與索引[GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.getorcreateelement)方法[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，則為指定該索引[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)在下一步 的配置傳遞。 這可讓版面配置，以做好開發人員發現項目，以及後續要求，其帶入檢視透過可能的案例[StartBringIntoView](/uwp/api/windows.ui.xaml.uielement.startbringintoview)方法。
+提供給配置的[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)值可能會反映出滾動控制項所選擇的目前選取的錨定元素。 或者，如果開發人員明確要求使用[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)上的[GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.getorcreateelement)方法來實現某個索引的元素，則會在下一個設定階段將該索引指定為[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) 。 這可讓您在可能的情況下準備配置，以供開發人員瞭解專案，並隨後要求透過[StartBringIntoView](/uwp/api/windows.ui.xaml.uielement.startbringintoview)方法將其納入觀看。
 
-[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)是內容相關的版面配置在估計其項目的位置時，應該先定位的資料來源中項目的索引。 它應該做為起點來定位實現的其他項目。
+[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex)是資料來源中專案的索引，內容相依的配置在估計其專案的位置時，應該先定位。 它應該作為定位其他已實現專案的起點。
 
-**在 捲軸上的影響**
+**捲軸的影響**
 
-即使使用捲軸錨定，如果版面配置的估計值會因許多，可能是重大的變化，內容的大小則捲軸的捲動方塊的位置可能會跳至其他位置。  如果捲動方塊看起來並追蹤其滑鼠指標的位置，當它們將它拖曳，這可以是使用者突兀。
+即使使用 scroll 錨定，如果配置的估計值變化很大，也許是因為內容大小有明顯的變化，則捲軸的捲動方塊位置可能會出現跳躍。  如果捲動方塊不會在拖曳滑鼠指標時追蹤其位置，則可以 jarring 使用者。
 
-更精確配置可以是在其估計，然後就比較不可能的使用者會看到包含在跳躍的捲軸的捲動方塊。
+配置可以在其估計中更精確，因此使用者不太可能看到捲軸捲動方塊的跳躍。
 
-### <a name="layout-corrections"></a>版面配置的修正
+### <a name="layout-corrections"></a>版面配置更正
 
-內容相關的版面配置應該準備好將其預估合理化配合實務範例。  例如，當使用者捲動至頂端的內容和版面配置中發現的第一個項目，它可能會發現的項目預期的位置，相對於從中啟動項目會使它出現的原點 (x: 0 以外的某處y:0)。 當發生這種情況時，可以使用版面配置[LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin)設定做為新的版面配置原點的位置而計算的屬性。  最後結果就是類似於捲動錨定在其中捲動控制項的檢視區會自動調整的內容位置的帳戶所報告的版面配置。
+內容相依的配置應該做好準備，以合理化其預估的實際情況。  例如，當使用者滾動到內容的頂端，而且配置發現第一個專案時，它可能會發現專案相對於其啟動專案的預期位置，會使其出現在來源以外的地方（x:0, y:0). 發生這種情況時，配置可以使用[LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin)屬性，將它所計算的位置設定為新的版面配置來源。  最終結果類似于滾動錨定，其中滾動控制項的視口會自動調整，以考慮配置所報告的內容位置。
 
 ![更正 LayoutOrigin](images/xaml-attached-layout-origincorrection.png)
 
-### <a name="disconnected-viewports"></a>已中斷連線的檢視區
+### <a name="disconnected-viewports"></a>中斷連線的區
 
-傳回與配置的大小[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)方法代表最佳猜測，這可能會隨每個後續的版面配置變更內容的大小。  當使用者捲動的版面配置將會持續重新評估，以更新[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)。
+從配置的[MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)方法傳回的大小，代表可能會隨著每個連續版面配置而變更的內容大小最佳猜測。  當使用者滾動時，將會持續以更新的[RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)重新評估版面配置。
 
-如果使用者將非常快速地拖曳捲動方塊是可能的檢視區的版面配置，讓大型出現觀點跳會以先前的位置不重疊的目前位置的地方。  這是因為捲動的非同步本質。 您也可針對應用程式正在使用的配置要求的項目帶入檢視目前不會構成，並預估用以追蹤配置的範圍目前配置的項目。
+如果使用者非常快速地拖曳捲動方塊，則從配置的角度來看，它可能會變得很大跳躍，而先前的位置並不會重迭目前的位置。  這是因為滾動的非同步本質所致。 使用配置的應用程式也可能會要求將元素帶入目前尚未實現的專案，並估計在配置所追蹤的目前範圍之外進行配置。
 
-當版面配置會發現其猜測不正確和/或看到非預期的檢視區 shift 鍵時，它需要重新調整其起始位置。  因為它們會顯示內容的本質上放置較少的限制會隨附於 XAML 控制項的虛擬化配置被開發成內容相關的版面配置。
+當版面配置發現其猜測不正確，且/或看到未預期的區域移位時，它必須重新置放其開始位置。  隨附在 XAML 控制項中的虛擬化配置會作為內容相依的配置而開發，因為它們會對將要顯示的內容特性提供較少的限制。
 
 
-### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>範例：簡單的虛擬化堆疊配置的可變大小的項目
+### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>範例：可變大小專案的簡單虛擬化堆疊配置
 
-可變大小的項目，如下列範例會示範簡單的堆疊配置：
+下列範例示範簡單的堆疊配置，適用于變數大小的專案：
 
 * 支援 UI 虛擬化，
-* 用以估計猜測的未實現的項目大小
-* 了解潛在的不連續的檢視區便會轉移，以及
-* 適用於負責這些排班的版面配置更正。
+* 會使用估計來猜測未使用專案的大小，
+* 瞭解潛在的非連續的視口移位，以及
+* 套用版面配置更正以考慮這些轉移。
 
-**使用方式：標記**
+**Usage：標記 @ no__t-0
 
 ```xaml
 <ScrollViewer>
@@ -741,7 +741,7 @@ XAML 會提供一個機制，讓捲動控制項支援緩和突然的檢視區排
 </ScrollViewer>
 ```
 
-**程式碼後置：Main.cs**
+**Codebehind：Main .cs @ no__t-0
 
 ```csharp
 string _lorem = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus.";
@@ -757,7 +757,7 @@ var data = new ObservableCollection<Recipe>(Enumerable.Range(0, 300).Select(k =>
 repeater.ItemsSource = data;
 ```
 
-**程式碼：VirtualizingStackLayout.cs**
+**Code：VirtualizingStackLayout .cs @ no__t-0
 
 ```csharp
 // This is a sample layout that stacks elements one after

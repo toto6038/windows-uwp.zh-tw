@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bcdeafc3f30f5b385c6feeddee78cf31635177a0
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: ca9e91233206f0e97d17fdbdd7b0fd09a2897cd8
+ms.sourcegitcommit: 3710117f24adb8555aa94b372db814e5d30ae45a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142543"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73427090"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>在桌面應用程式中呼叫 UWP Api
 
@@ -43,13 +43,13 @@ ms.locfileid: "73142543"
 
 2. 在 Visual Studio 中開啟專案時，在**方案總管**中以滑鼠右鍵按一下您的專案，然後選擇 [**管理 NuGet 封裝**]。
 
-3. 在 [ **NuGet 套件管理員**] 視窗中，確認已選取 [**包含發行**前版本]。 然後，選取 [**流覽**] 索引標籤，並搜尋 `Microsoft.Windows.SDK.Contracts`。
+3. 在 [ **NuGet 套件管理員**] 視窗中，選取 [**流覽**] 索引標籤，然後搜尋 `Microsoft.Windows.SDK.Contracts`。
 
 4. 找到 `Microsoft.Windows.SDK.Contracts` 套件之後，在 [ **NuGet 套件管理員**] 視窗的右窗格中，根據您想要設為目標的 Windows 10 版本，選取您想要安裝的套件**版本**：
 
-    * **10.0.18362. xxxx-preview**：針對 Windows 10 版本1903選擇此元件。
-    * **10.0.17763. xxxx-preview**：針對 Windows 10 版本1809選擇此元件。
-    * **10.0.17134. xxxx-preview**：針對 Windows 10 版本1803選擇此元件。
+    * **10.0.18362**：針對 Windows 10 版本1903選擇此內容。
+    * **10.0.17763**：針對 Windows 10 版本1809選擇此內容。
+    * **10.0.17134**：針對 Windows 10 版本1803選擇此內容。
 
 5. 按一下 **\[安裝\]** 。
 

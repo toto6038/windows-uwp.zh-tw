@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 662f23c5ab201a44669b2e4e4a454aa73ebd3b43
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340191"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061976"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 與 XAML 資源參考
 
@@ -77,7 +77,7 @@ XAML 資源是從標記參考多次的物件。 資源是在 [ResourceDictionary
 </Page>
 ```
 
-所有資源都必須有一個索引鍵。 該索引鍵通常是以 `x:Key=”myString”` 定義的字串。 不過，指定索引鍵有其他幾個方式：
+所有資源都必須有一個索引鍵。 該索引鍵通常是以 `x:Key="myString"` 定義的字串。 不過，指定索引鍵有其他幾個方式：
 
 -   [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) \(英文\) 和 [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) \(英文\) 需要 **TargetType**，且將會在未指定 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) \(部分機器翻譯\) 的情況下使用 **TargetType** 作為索引鍵。 在此情況下，索引鍵是實際的 Type 物件，而不是字串。 (請參閱以下範例)
 -   具有 **TargetType** 的 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) \(英文\) 資源將會在未指定 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) \(部分機器翻譯\) 的情況下使用 **TargetType** 作為索引鍵。 在此情況下，索引鍵是實際的 Type 物件，而不是字串。

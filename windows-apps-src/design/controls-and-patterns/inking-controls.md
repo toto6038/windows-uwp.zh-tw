@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b34f88d198ec80c67e5aac7b57001e42fe5c516
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b665145eac8599bae69aaf4b1951d267bf79f7a7
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66825026"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062104"
 ---
 # <a name="inking-controls"></a>手寫筆跡控制項
 
@@ -80,7 +80,7 @@ InkCanvas 與 InkToolbar 也會用於 **Windows Ink 工作區**中的**繪圖板
 將 InkCanvas 新增到您的應用程式只需要一行的標記︰
 
 ```xaml
-<InkCanvas x:Name=“myInkCanvas”/>
+<InkCanvas x:Name="myInkCanvas"/>
 ```
 
 > [!NOTE]
@@ -89,7 +89,7 @@ InkCanvas 與 InkToolbar 也會用於 **Windows Ink 工作區**中的**繪圖板
 InkToolbar 控制項必須與 InkCanvas 搭配使用。 將 InkToolbar (與所有內建工具) 併入您的應用程式時需要額外的一行標記︰
 
  ```xaml
-<InkToolbar TargetInkCanvas=“{x:Bind myInkCanvas}”/>
+<InkToolbar TargetInkCanvas="{x:Bind myInkCanvas}"/>
  ```
 
 這會顯示下列 InkToolbar：
