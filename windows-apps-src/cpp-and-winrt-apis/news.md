@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 525110a09c56f48f9f9ce3d2521c98e2297a8372
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: 24abdb26cf884367d9a9521d30b09b443d2e4e00
+ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816712"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72998619"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
 
@@ -269,7 +269,7 @@ struct MainPage : PageT<MainPage>
 
 [**winrt::event**](/uwp/cpp-ref-for-winrt/event) 實作現在可以依正常程序處理使用無效權杖值 (陣列中不存在的值) 來呼叫其 **remove** 方法的情況。
 
-#### <a name="coroutine-locals-are-now-destroyed-before-the-coroutine-returns"></a>協同程式區域變數會在協同程式傳回之前終結
+#### <a name="coroutine-local-variables-are-now-destroyed-before-the-coroutine-returns"></a>協同程式區域變數現在會在協同程式傳回之前終結
 
 實作協同程式類型的傳統方式可能會讓協同程式內的區域變數在協同程式傳回/完成*之後* (而不是在最終暫停之前) 終結。 現在必須延遲到最後暫停，才能重新恢復任何等候程序，以避免這個問題並產生其他好處。
 
@@ -296,7 +296,7 @@ struct MainPage : PageT<MainPage>
 - **重大變更**。 [**winrt::handle_type 建構函式**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor)已透過明確宣告而強化 (現在很難使用它撰寫錯誤的程式碼)。 如果需要指派原始的控制碼值，請改由呼叫 [**handle_type::attach 函式**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function)。
 - **重大變更**。 **WINRT_CanUnloadNow** 和 **WINRT_GetActivationFactory** 的簽章已變更。 您不得宣告這些函式。 相反，加入 `winrt/base.h` (如果包含任何 C++/WinRT Windows 命名空間標頭檔案，則會自動包含)，以包含這些函式的宣告。
 - 對於 [**winrt::clock struct**](/uwp/cpp-ref-for-winrt/clock)，**from_FILETIME/to_FILETIME** 已過時，建議使用 **from_file_time/to_file_time**。
-- 預期使用 **IBuffer** 參數的 API 已經過簡化。 雖然大多數 API 更偏好使用集合或陣列，但是足夠的 API 依賴於 **IBuffer**，它需要更輕鬆地使用來自 C++ 的此類 API。 此更新使用 C++ 標準程式庫容器使用的相同資料命名慣例，提供 **IBuffer** 實作背後的資料直接存取權。 這也避免了慣例以大寫字母開頭的中繼資料名稱產生衝突。
+- 預期使用 **IBuffer** 參數的簡化 API。 大部分的 API 偏好集合或陣列。 但我們認為應該讓您更輕鬆地呼叫依賴 **IBuffer** 的 API。 此更新可讓您直接存取 **IBuffer** 實作背後的資料。 其使用與 C++ 標準程式庫容器所用相同的資料命名慣例。 該慣例也避免了通常以大寫字母開頭的中繼資料名稱產生衝突。
 - 改善的程式碼產生：各種改善項目可縮減程式碼大小、改善內嵌，並最佳化處理站快取。
 - 已移除不必要的遞迴。 當命令列指向資料夾而非特定的 `.winmd` 時，`cppwinrt.exe` 工具不會再以遞迴方式搜尋 `.winmd` 檔案。 `cppwinrt.exe` 工具現在也可以更有智慧的方式處理重複項目，使其更容易復原使用者錯誤，以及格式錯誤的 `.winmd` 檔案。
 - 強化的智慧型指標。 之前，當移動指派新值時，事件撤銷無法撤銷。 這有助於揭露智慧型指標類別無法可靠地處理自我指派的問題；植根於 [**winrt::com_ptr 結構範本**](/uwp/cpp-ref-for-winrt/com-ptr)。 **winrt::com_ptr** 已修正，而且事件撤銷已修正為正確處理移動語意，以便在指派時撤銷。
