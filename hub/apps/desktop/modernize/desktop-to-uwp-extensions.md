@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: f51fc081c5cc18132a386197feb2ae76a22d2088
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: 65724a7524f68535f4ac917c5527ae8de8f2c6fb
+ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142497"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73560684"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將桌面應用程式與 Windows 10 和 UWP 整合
 
@@ -502,7 +502,7 @@ ms.locfileid: "73142497"
 |MultiSelectModel |請參閱下方。 |
 |FileType |相關的檔案副檔名。 |
 
-**MultSelectModel**
+**MultiSelectModel**
 
 已封裝的傳統型應用程式具有與一般傳統型應用程式相同的三個選項。
 
@@ -1200,7 +1200,7 @@ ms.locfileid: "73142497"
 
 應用程式中的每個使用中視窗都會收到[WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession)訊息。 此時，您的應用程式可以再次呼叫[RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart)函式，以視需要更新命令列。
 
-當應用程式中的每個使用中視窗收到[WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)訊息時，您的應用程式應該儲存資料並關閉。
+當應用程式中的每個使用中視窗收到[WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)訊息時，您的應用程式應該儲存資料並加以關閉。
 
 >[!NOTE]
 當應用程式未處理[WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)訊息時，您的使用中視窗也會收到[WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close)訊息。

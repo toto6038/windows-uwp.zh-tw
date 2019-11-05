@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast, 桌面, 快顯通知, 傳統型橋接器, 傳送快顯通知的選項, com 伺服器, com 啟動器, 假 com, 無 com, 沒有 com, 傳送快顯通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 030f8b1380dc28a41e65989ccbda688523fad965
-ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+ms.openlocfilehash: 31501d2dc3ac255897e374ca81b05558be7bc2fc
+ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71100821"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73560652"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>傳統型應用程式的快顯通知
 
@@ -74,13 +74,13 @@ ms.locfileid: "71100821"
 | ToastGeneric 通訊協定 | ✔️ | ✔️ |
 | 舊版範本 | ✔️ | ❌ |
 
-針對桌面橋接器應用程式, 只要傳送像是 UWP 應用程式的快顯通知就可以了。 當使用者按下您的快顯通知時，您的 App 將會以您在快顯通知中指定的啟動引述啟動命令列。
+針對桌面橋接器應用程式，只要傳送像是 UWP 應用程式的快顯通知就可以了。 當使用者按下您的快顯通知時，您的 App 將會以您在快顯通知中指定的啟動引述啟動命令列。
 
 對於傳統型 Win32 應用程式，請設定 AUMID，讓您可以傳送快顯通知，然後在您的快速鍵也指定 CLSID。 這可以是任何隨機 GUID。 切勿新增 COM 伺服器/啟動器。 您將新增的「stub」COM CLSID，這會導致控制中心保存通知。 請注意，您只可以使用通訊協定啟用的快顯通知，因為 stub CLSID 將會中斷任何其他快顯通知的啟用。 因此，您必須更新您的 App 為支援通訊協定啟用，而且讓快顯通知通訊協定啟動您自己的 App。
 
 
 ## <a name="resources"></a>資源
 
-* [從桌面C# apps 傳送本機快顯通知](send-local-toast-desktop.md)
-* [從桌面C++ WRL apps 傳送本機快顯通知](send-local-toast-desktop-cpp-wrl.md)
+* [從桌面C#應用程式傳送本機快顯通知](send-local-toast-desktop.md)
+* [從 desktop C++ WRL 應用程式傳送本機快顯通知](send-local-toast-desktop-cpp-wrl.md)
 * [快顯內容檔](adaptive-interactive-toasts.md)
