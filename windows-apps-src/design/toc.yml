@@ -114,6 +114,8 @@
           items:
             - name: 項目容器與範本
               href: controls-and-patterns/item-containers-templates.md
+            - name: 選取資料範本
+              href: controls-and-patterns/data-template-selector.md
             - name: 清單檢視的項目範本
               href: controls-and-patterns/item-templates-listview.md
             - name: 方格檢視的項目範本
