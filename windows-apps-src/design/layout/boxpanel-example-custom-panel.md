@@ -125,7 +125,7 @@ protected override Size MeasureOverride(Size availableSize)
 }
 ```
 
-[  **MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 實作的必要模式是循環顯示 [**Panel.Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 中的每一個元素。 一律在每一個元素上呼叫 [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) 方法。 **Measure** 有一個 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) 類型的參數。 這裡傳送的是面板可供特定子元素使用的大小。 因此，在您執行迴圈並開始呼叫 **Measure** 之前，必須先知道每個儲存格所能提供的空間。 您可以從 **MeasureOverride** 方法本身得知 *availableSize* 值。 那就是面板的父系呼叫 **Measure** 時使用的大小，它會在呼叫這個 **MeasureOverride** 時立即觸發。 一般邏輯就是制定一個配置，讓每個子元素藉以劃分面板整體 *availableSize* 的空間。 接下來，您可以將所劃分的大小傳遞至每個子元素的 **Measure**。
+[**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 實作的必要模式是循環顯示 [**Panel.Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 中的每一個元素。 一律在每一個元素上呼叫 [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) 方法。 **Measure** 有一個 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) 類型的參數。 這裡傳送的是面板可供特定子元素使用的大小。 因此，在您執行迴圈並開始呼叫 **Measure** 之前，必須先知道每個儲存格所能提供的空間。 您可以從 **MeasureOverride** 方法本身得知 *availableSize* 值。 那就是面板的父系呼叫 **Measure** 時使用的大小，它會在呼叫這個 **MeasureOverride** 時立即觸發。 一般邏輯就是制定一個配置，讓每個子元素藉以劃分面板整體 *availableSize* 的空間。 接下來，您可以將所劃分的大小傳遞至每個子元素的 **Measure**。
 
 `BoxPanel` 劃分大小的方式很簡單：它將空間劃分為主要由項目數量控制的一些方塊。 方塊的大小是根據列與欄的計數和可用大小來劃分。 有時候會因不需要方形的其中一列或一欄，而將它捨棄，而使得面板在列與欄的比例上變成矩形而不是方形。 如需有關如何得出這個邏輯的詳細資訊，請直接跳到[BoxPanel 的案例](#the-scenario-for-boxpanel)。
 
@@ -174,7 +174,7 @@ protected override Size ArrangeOverride(Size finalSize)
 }
 ```
 
-[  **ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 實作的必要模式是循環顯示 [**Panel.Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 中的每一個元素。 一律在每一個元素上呼叫 [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 方法。
+[**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 實作的必要模式是循環顯示 [**Panel.Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 中的每一個元素。 一律在每一個元素上呼叫 [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 方法。
 
 您是否注意到，執行計算的次數不如 [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 中頻繁；一般就是如此。 您已經從面板本身的 **MeasureOverride** 邏輯中，或從在度量階段期間所設定各個子系的 [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) 值中，得知子系的大小。 不過，我們仍然需要決定各個子系在面板內的顯示位置。 在一般面板中，每個子系都應在不同的位置轉譯。 一般案例並不希望有會建立重疊元素的面板 (但如果那確實是您屬意的案例，還是可以建立有目的的重疊面板)。
 
