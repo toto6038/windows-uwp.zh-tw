@@ -6,12 +6,12 @@ keywords: 背景工作，延伸執行，資源，限制，背景工作
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dee95e02e43f3a541bd332f5150765ca76bb0955
-ms.sourcegitcommit: 234dce5fb67e435ae14eb0052d94ab01611ac5e4
+ms.openlocfilehash: 55025d0348abdf311ebf020c70ccf9029bf7ec5a
+ms.sourcegitcommit: ebd35887b00d94f1e76f7d26fa0d138ec4abe567
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72822450"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73888660"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在背景無限期執行
 
@@ -27,17 +27,22 @@ UWP app 不在前景執行時，會進入暫停狀態。 在桌面上，當使�
 
 `extendedExecutionUnconstrained` 功能在應用程式資訊清單中會當做受限功能加入。 如需受限功能的詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
+> **注意：** 新增*xmlns： rescap* XML 命名空間宣告，並使用*rescap*前置詞來宣告功能。
+
 「Package.appxmanifest」
 ```xml
-<Package ...>
-...
+<Package
+    ...
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+  ...
   <Capabilities>
     <rescap:Capability Name="extendedExecutionUnconstrained"/>
   </Capabilities>
 </Package>
 ```
 
-當您使用 `extendedExecutionUnconstrained` 功能時，使用的會是 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason)，而不是 [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 和 [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason)。 建立工作階段、設定成員以及非同步要求延伸的同樣模式仍然適用： 
+當您使用 `extendedExecutionUnconstrained` 功能時，使用的會是 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason)，而不是 [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 和 [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason)。 建立工作階段、設定成員以及非同步要求延伸的同樣模式仍然適用： 
 
 ```cs
 var newSession = new ExtendedExecutionForegroundSession();
@@ -66,9 +71,15 @@ switch (result)
 
 在通用 Windows 平台中，背景工作是不使用任何形式的使用者介面在背景中執行的處理序。 背景工作在遭到取消後，通常可能最多再執行 25 秒。 有些執行較久的工作還會進行檢查以確保背景工作不會閒置或佔用記憶體。 在 Windows Creators Update (版本 1703) 中，引進了 [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) 受限功能來移除這些限制。 **extendedBackgroundTaskTime** 功能在應用程式資訊清單中會當做受限功能加入。
 
+> **注意：** 新增*xmlns： rescap* XML 命名空間宣告，並使用*rescap*前置詞來宣告功能。
+
 「Package.appxmanifest」
 ```xml
-<Package ...>
+<Package
+    ... 
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+...
   <Capabilities>
     <rescap:Capability Name="extendedBackgroundTaskTime"/>
   </Capabilities>

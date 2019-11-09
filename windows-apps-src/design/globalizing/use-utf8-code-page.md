@@ -1,23 +1,26 @@
 ---
-Description: 使用 UTF-8 字元編碼，以達到 web 應用程式與其他 * nix 平臺（Unix、Linux 和變體）之間的最佳相容性、將當地語系化錯誤降至最低，並減少測試負擔。
+Description: 使用 UTF-8 字元編碼，以達到 web 應用程式和其他 \*nix 平臺（Unix、Linux 和變體）之間的最佳相容性、將當地語系化錯誤降至最低，並減少測試負擔。
 title: 使用 Windows UTF-8 字碼頁
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: be3aade0289911f878d960fb62bde49b8ef840a8
-ms.sourcegitcommit: 3a06cf3f8bd00e5e6eac3b38ee7e3c7cf4bc5197
+ms.openlocfilehash: 4b4050dfea1589fbe79db08061bcc56e392173f1
+ms.sourcegitcommit: 13ce25364201223e21e2e5e89f99bc7aa4d93f56
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72888740"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847593"
 ---
 # <a name="use-the-utf-8-code-page"></a>使用 UTF-8 字碼頁
 
-使用[utf-8](http://www.utf-8.com/)字元編碼，以達到 web 應用程式與其他 * nix 平臺（Unix、Linux 和變體）之間的最佳相容性、將當地語系化錯誤降至最低，並減少測試負擔。
+使用[utf-8](http://www.utf-8.com/)字元編碼，以達到 web 應用程式和其他 \*nix 平臺（Unix、Linux 和變體）之間的最佳相容性、將當地語系化錯誤降至最低，並減少測試負擔。
 
-UTF-8 是國際化的通用字碼頁，並支援使用1-6 位元組可變寬度編碼的所有 Unicode 程式碼點。 它是在 web 上使用 pervasively，而且是 * nix 架構平臺的預設值。
+UTF-8 是國際化的通用字碼頁，而且能夠將整個 Unicode 字元集編碼。 它是在 web 上使用 pervasively，而且是 * nix 架構平臺的預設值。
+
+> [!NOTE]
+> 編碼的字元需要1到4個位元組。 UTF-8 編碼支援較長的位元組序列，最多6個位元組，但 Unicode 6.0 的最大程式碼點（U + 10FFFF 且）只需要4個位元組。
 
 ## <a name="-a-vs--w-apis"></a>-A 與-W Api
   
@@ -80,7 +83,8 @@ Win32 Api 通常支援-A 和-W 變體。
 [MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar)和[WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte)可讓您在 utf-8 和 utf-16 （`WCHAR`）之間轉換（以及其他字碼頁）。 當舊版 WIN32 API 可能只瞭解 `WCHAR`時，這特別有用。 這些函式可讓您將 UTF-8 輸入轉換成 `WCHAR` 以傳入-W API，並在必要時將任何結果轉換回來。
 當使用這些函式時，`CodePage` 設定為 `CP_UTF8`時，請使用 `0` 或 `MB_ERR_INVALID_CHARS`的 `dwFlags`，否則會發生 `ERROR_INVALID_FLAGS`。
 
-注意：只有在 Windows 1903 版（可能是2019更新）或更新版本上執行，且上述 ActiveCodePage 屬性設定為 UTF-8 時，`CP_ACP` 等同于 `CP_UTF8`。 否則，它會接受舊版系統字碼頁。 我們建議您明確使用 `CP_UTF8`。
+> [!NOTE]
+> `CP_ACP` 等同于在 Windows 1903 版（5月2019更新）或更新版本上執行，且上述的 ActiveCodePage 屬性設定為 UTF-8 的 `CP_UTF8`。 否則，它會接受舊版系統字碼頁。 我們建議您明確使用 `CP_UTF8`。
 
 ## <a name="related-topics"></a>相關主題
 
