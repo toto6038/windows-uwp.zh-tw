@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cc8cfe696d35872469d97dba24f5388ff6833b5
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 5b9c26710dfc5f71a9709fa93de4b369f6281e8c
+ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339782"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73560693"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 應用程式中使用 SQLite 資料庫
 您可以使用 SQLite 在使用者的裝置上儲存和擷取輕量資料庫中的資料。 本指南會示範怎麼做。
@@ -177,10 +177,12 @@ using System.Collections.Generic;
 新增方法至 **DataAccess** 類別，以初始化 SQLite 資料庫。
 
 ```csharp
-public static void InitializeDatabase()
-{
-    using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+public async static void InitializeDatabase()
+{ 
+     await ApplicationData.Current.LocalFolder.CreateFileAsync("sqliteSample.db", CreationCollisionOption.OpenIfExists);
+     string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+     using (SqliteConnection db =
+        new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
@@ -221,8 +223,9 @@ public App()
 ```csharp
 public static void AddData(string inputText)
 {
+    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
     using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+      new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
@@ -252,8 +255,9 @@ public static List<String> GetData()
 {
     List<String> entries = new List<string>();
 
-    using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+   string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+   using (SqliteConnection db =
+      new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
