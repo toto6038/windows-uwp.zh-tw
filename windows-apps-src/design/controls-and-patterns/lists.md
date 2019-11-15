@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e1167a57da6a3f54cabcc946cfbf7a592f301d2c
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: d309ce7e18a8dc62a24bc0e7f51f0015042a5f84
+ms.sourcegitcommit: 3bb982f35c057e30c742ab9f1eea119bae627a5f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163727"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74086868"
 ---
 # <a name="collections-and-lists"></a>集合和清單
 
@@ -38,11 +38,11 @@ ms.locfileid: "72163727"
 
 > **重要 API**：[ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater 類別](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
 
-> <div id="main">
-> <strong>Windows 10 Fall Creators Update - 行為變更</strong>
-> </div>
-> 根據預設，主動式手寫筆現在會在 UWP 應用程式中捲動/移動瀏覽清單 (如同觸控、觸控板和被動式手寫筆)，而不會執行選取。
-> 如果您的應用程式需仰賴先前的行為，則可以覆寫手寫筆捲動並還原至先前的行為。 如需詳細資料，請參閱針對 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a> \(英文\) 的 API 參考主題。
+> <div id="main">  
+> <strong>Windows 10 Fall Creators Update - 行為變更</strong>  
+> </div>  
+> 根據預設，主動式手寫筆現在會在 UWP 應用程式中捲動/移動瀏覽清單 (如同觸控、觸控板和被動式手寫筆)，而不會執行選取。  
+> 如果您的應用程式需仰賴先前的行為，則可以覆寫手寫筆捲動並還原至先前的行為。 如需詳細資料，請參閱針對 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a> 的 API 參照主題。  
 
 ## <a name="examples"></a>範例
 
