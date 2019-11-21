@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 59678dc5eca7dec0857cadd9249dd19e25b3430b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: a07fc5c669d3c9cd374a4a031fba2ee6ef6d5756
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319050"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257282"
 ---
 # <a name="images-and-image-brushes"></a>影像與影像筆刷
 
@@ -155,7 +155,7 @@ ms.locfileid: "67319050"
 
 通常都會使用 XAML 指定 Image 和 ImageBrush 元素，而不是程式碼。 這是因為這些元素通常是設計工具的輸出，而且是 XAML UI 定義的一部分。
 
-如果使用程式碼定義 Image 或 ImageBrush，請使用預設建構函式，然後設定相關來源屬性 ([Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 或 [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource))。 當您使用程式碼設定來源屬性時，來源屬性需要一個 [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (不是 URI)。 如果您的來源是資料流，請使用 [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法來初始化該值。 如果您的來源是 URI，包含應用程式中使用 **ms-appx** 或 **ms-resource** 配置的內容，配置的內容，則使用採用 URI 的 [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) 建構函式。 如果有任何與影像來源的抓取或解碼相關的時機問題，您也可以考慮處理 [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。 如需範例程式碼，請參閱 [XAML 影像範例](https://go.microsoft.com/fwlink/p/?linkid=238575)。
+如果使用程式碼定義 Image 或 ImageBrush，請使用預設建構函式，然後設定相關來源屬性 ([Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 或 [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource))。 當您使用程式碼設定來源屬性時，來源屬性需要一個 [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (不是 URI)。 如果您的來源是資料流，請使用 [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法來初始化該值。 如果您的來源是 URI，包含應用程式中使用 **ms-appx** 或 **ms-resource** 配置的內容，配置的內容，則使用採用 URI 的 [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) 建構函式。 如果有任何與影像來源的抓取或解碼相關的時機問題，您也可以考慮處理 [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。 如需範例程式碼，請參閱 [XAML 影像範例](https://code.msdn.microsoft.com/windowsapps/0f5d56ae-5e57-48e1-9cd9-993115b027b9)。
 
 > [!NOTE]
 > 如果您使用程式碼建立影像，可以使用自動處理，以目前的比例和文化限定詞存取不完整的資源，或使用 [ResourceManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) 和 [ResourceMap](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) 搭配文化和比例的限定詞，以直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))。
