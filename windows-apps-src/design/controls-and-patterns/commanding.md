@@ -5,12 +5,12 @@ author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 1d176f90af4a3d601e44ce7e3e0ac708bcb7dd45
-ms.sourcegitcommit: e5ed95f8252ddc7f39055d8f7276e82167bb9891
+ms.openlocfilehash: cd34c9444c68b8e959f449124fe4ae294ec14fc4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973699"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257714"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 的通用 Windows 平台 (UWP) 應用程式中的命令
 
@@ -1114,5 +1114,5 @@ namespace UICommand1
 
 #### <a name="other-samples"></a>其他範例
 
-- [通用 Windows 平台範例 (C# 和 C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+- [通用 Windows 平台範例 (C# 和 C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
 - [XAML 控制項庫](https://github.com/Microsoft/Xaml-Controls-Gallery)

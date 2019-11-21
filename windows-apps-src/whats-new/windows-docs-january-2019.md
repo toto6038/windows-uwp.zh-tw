@@ -5,18 +5,18 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 1 月
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: beb80c28866b8f8207f203b70cb504dcd034098d
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: ac5f7e058a616117e73defde2c48bf4c66f68d2e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63800601"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259745"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>2019 年 1 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、開發人員指引和影片已在 1 月份提供使用。
 
-在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -70,7 +70,7 @@ WPF、Windows Forms 和 WinUI UX 架構現在可用於在 GitHub 上貢獻開放
 
 ### <a name="progressive-web-apps"></a>漸進式 Web 應用程式
 
-漸進式 Web 應用程式是一個網站，其作用如同橫跨不同瀏覽器和各種 Windows 10 裝置的原生應用程式。 [觀看影片](https://youtu.be/ugAewC3308Y)進一步了解，然後[查看文件](https://aka.ms/Windows-PWA)以開始使用。
+漸進式 Web 應用程式是一個網站，其作用如同橫跨不同瀏覽器和各種 Windows 10 裝置的原生應用程式。 [觀看影片](https://youtu.be/ugAewC3308Y)進一步了解，然後[查看文件](https://developer.microsoft.com/windows/pwa)以開始使用。
 
 ### <a name="vs-code-series"></a>VS Code 系列
 

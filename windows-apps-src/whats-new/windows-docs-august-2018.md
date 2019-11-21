@@ -5,18 +5,18 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 8 月
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9922aa1ad2442153dcc2c13d05520c05c3b56d31
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 723cae783ba16fe5be9bb2076f96d4a5f823d733
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780232"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258840"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>2018 年 8 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、開發人員指引和影片已在 8 月份提供使用。
 
-在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -24,7 +24,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 Windows Insider Preview 組建中已加入下列功能，可透過 [Windows 測試人員](https://insider.windows.com/)程式取得。
 
-* [Windows UI 程式庫](https://aka.ms/winui-docs)是一組 NuGet 套件，可提供 UWP 應用程式的控制項和其他使用者介面元素。 這些套件也提供對舊版 Windows 10 的向下相容性，因此即便您的使用者沒有最新版本的作業系統，您的應用程式仍可運作。
+* [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)是一組 NuGet 套件，可提供 UWP 應用程式的控制項和其他使用者介面元素。 這些套件也提供對舊版 Windows 10 的向下相容性，因此即便您的使用者沒有最新版本的作業系統，您的應用程式仍可運作。
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、[SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button) 和 [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) 提供了具有專門功能的按鈕控制項，以增強您的應用程式使用者介面。
 

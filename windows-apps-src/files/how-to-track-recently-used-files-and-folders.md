@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 97ad2485abab0bd4733699bc4ffcf29e17a22844
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 318c58b393a33916df7bab51a4ef2690494d14fb
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369442"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259611"
 ---
 # <a name="track-recently-used-files-and-folders"></a>追蹤最近使用的檔案和資料夾
 
@@ -25,7 +25,7 @@ ms.locfileid: "66369442"
 從靜態 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) 屬性取得的 [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList) 類別，代表您的 app 的 MRU。 MRU 項目會儲存為 [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem) 物件，所以 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件 (代表檔案) 和 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 物件 (代表資料夾) 都可以新增到 MRU。
 
 > [!NOTE]
-> 如需完整範例，請參閱[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994) \(英文\) 和[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995) \(英文\)。
+> 如需完整範例，請參閱[檔案選擇器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker) \(英文\) 和[檔案存取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) \(英文\)。
 
 ## <a name="prerequisites"></a>必要條件
 

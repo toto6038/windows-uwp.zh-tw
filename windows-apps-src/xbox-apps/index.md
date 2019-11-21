@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: f8f31630fed64e2a22b21e4572eaba76440a82fc
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 0b5ca136b969ca238226d6f6b63b8e2fcff3207f
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334766"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259733"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One 上的 UWP
 
@@ -31,7 +31,7 @@ Xbox One 上的 UWP 支援開發 App 和遊戲。 您要實驗、建立和測試
 |[範例](samples.md)| GitHub 位置指標 (TVHelpers)，您將在其中找到有用的 XAML 和 JavaScript 範例以開始針對 Xbox 進行開發。 範例包括完整的 XAML 媒體 App 範本，以及針對網路技術的自動控制器瀏覽、多媒體播放及搜尋。 |
 |[已知問題](known-issues.md)| Xbox One 上的 UWP 已知問題。 |
 |[常見問題集](frequently-asked-questions.md)| 與 Xbox One 上的 UWP 相關的常見問題集。 |
-|[工具](introduction-to-xbox-tools.md)| 說明 Xbox One 專屬的工具「開發人員首頁」、如何使用 Windows Device Portal，和如何針對開發設定 Visual Studio。 本節也會引導新的開發人員完成第一個 Xbox UWP 應用程式範例，並說明 Fiddler 工具的使用方式以檢視網路流量。 |
+|[工具](introduction-to-xbox-tools.md)| 說明 Xbox One 專屬的工具「開發人員首頁」  、如何使用 Windows Device Portal，和如何針對開發設定 Visual Studio。 本節也會引導新的開發人員完成第一個 Xbox UWP 應用程式範例，並說明 Fiddler 工具的使用方式以檢視網路流量。 |
 | [Xbox 事件上的應用程式開發](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event) | Xbox 事件上的應用程式開發是開發人員在 Xbox 上建置應用程式的絕佳起點。 觀賞錄製工作階段，閱讀事件部落格貼文。 |
 |[針對 Xbox 和電視進行設計](../design/devices/designing-for-tv.md)| 描述設計將在 TV 上檢視並使用控制器進行輸入之 App 的最佳做法。 |
 |[Xbox 最佳做法](tailoring-for-xbox.md)| 如何關閉滑鼠模式、繪製到螢幕邊緣，以及停用縮放。 |
@@ -40,7 +40,7 @@ Xbox One 上的 UWP 支援開發 App 和遊戲。 您要實驗、建立和測試
 |[多使用者應用程式的簡介](multi-user-applications.md)| 描述 Xbox One 上的多使用者應用程式 (MUA)。 |
 | [自動化 Xbox One 開發工作](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | GitHub 上的 WindowsDevicePortalWrapper 專案提供程式庫，可讓您將部署或啟動應用程式等常見的開發工作自動化。 專案包括範例 XboxWdpDriver.exe，示範如何使用 API 進行一般工作。 |
 |[將現有的遊戲移到 Xbox](development-lanes-landing.md)|根據您建置遊戲時所使用的技術，我們可以引導您使用逐步指示，以加快使用 UWP 將遊戲移到 Xbox 的程序。|
-|[Xbox One 上尚未支援的 UWP 功能](https://go.microsoft.com/fwlink/p/?LinkId=760755)|  描述 Xbox One 上尚未完全運作的 UWP 功能區域。|
+|[Xbox One 上尚未支援的 UWP 功能](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)|  描述 Xbox One 上尚未完全運作的 UWP 功能區域。|
 
 ## <a name="videos"></a>影片
 

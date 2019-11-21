@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 地圖服務
 ms.localizationpriority: medium
-ms.openlocfilehash: b35fcca29089e366817889757254531ff243159f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6a27eeeb9aa7349e532dcd76e5b7a7176ac20c08
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371701"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259343"
 ---
 # <a name="maps-and-location-overview"></a>地圖和位置概觀
 
@@ -21,9 +21,9 @@ ms.locfileid: "66371701"
 本節說明如何在您的 app 中顯示地圖、使用地圖服務、尋找位置，以及設定地理柵欄。 本節也示範如何將 Windows 地圖 app 啟動到特定地圖、路線或一組轉向建議導航路線指引。
 
 > [!TIP]
-> 若要深入了解如何在應用程式中使用地圖和位置，請從 GitHub 上的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
--   [通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
--   [UWP 地理位置範例](https://go.microsoft.com/fwlink/p/?linkid=533278)
+> 若要深入了解如何在應用程式中使用地圖和位置，請從 GitHub 上的 [Windows-universal-samples 存放庫](https://github.com/Microsoft/Windows-universal-samples)下載下列範例：
+-   [通用 Windows 平台 (UWP) 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
+-   [UWP 地理位置範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
 
  
 
@@ -51,7 +51,7 @@ ms.locfileid: "66371701"
 | [在地圖上顯示興趣點 (POI)](display-poi.md) | 藉由使用圖釘、影像、形狀及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。 |
 | [顯示路線和路線指引](routes-and-directions.md) | 要求路線和路線指引，並將它們顯示在您的 app 中。 |
 | [執行地理編碼和反向地理編碼](geocoding.md) | 呼叫 [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) 命名空間中 [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。 |
-| [尋找並下載地圖套件以供離線使用](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 在過去，您的應用程式必須將使用者導向 [設定] 應用程式才能下載離線地圖。 現在，您可以使用 [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) 命名空間中的類別，在指定區域中尋找下載的套件 (根據 [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、[GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox) 等)。 <br> 您也可以在使用者不需退出應用程式的情況下，檢查和接聽地圖套件的下載狀態，並開始下載。 <br> 您可找到如何在參考內容和[通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)中執行此作業的範例。
+| [尋找並下載地圖套件以供離線使用](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 在過去，您的應用程式必須將使用者導向 [設定] 應用程式才能下載離線地圖。 現在，您可以使用 [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) 命名空間中的類別，在指定區域中尋找下載的套件 (根據 [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、[GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox) 等)。 <br> 您也可以在使用者不需退出應用程式的情況下，檢查和接聽地圖套件的下載狀態，並開始下載。 <br> 您可找到如何在參考內容和[通用 Windows 平台 (UWP) 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)中執行此作業的範例。
 
 ## <a name="get-the-users-location"></a>取得使用者的位置
 
@@ -74,12 +74,12 @@ ms.locfileid: "66371701"
 
 ## <a name="related-topics"></a>相關主題
 
-* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [UWP 地理位置範例](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
+* [UWP 地理位置範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
 * [取得目前的位置](get-location.md)
 * [定位感知應用程式的設計指導方針](guidelines-and-checklist-for-detecting-location.md)
 * [地圖的設計指導方針](controls-map.md)
 * [隱私權感知應用程式的設計指導方針](https://docs.microsoft.com/windows/uwp/security/index)
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows 應用程式中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 車流量應用程式範例](https://github.com/Microsoft/Windows-appsample-trafficapp)

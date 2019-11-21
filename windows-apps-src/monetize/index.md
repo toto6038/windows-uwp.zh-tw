@@ -6,12 +6,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: Windows 10, UWP, 營利, 參與, 促銷, Microsoft Store 服務
 ms.localizationpriority: medium
-ms.openlocfilehash: 460179f7f57e17f78fdb3fd3bd289e761a8a7b4f
-ms.sourcegitcommit: 2dba9b4e81151d14ca90d36341274a3b59926197
+ms.openlocfilehash: 7beee974bceceab02984ae6499a9c5db0b0281b9
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057492"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259295"
 ---
 # <a name="monetization-engagement-and-store-services"></a>營利、參與和 Microsoft Store 服務
 
@@ -72,7 +72,7 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 我們支援各式各樣符合大多數人需求的廣告體驗，包括橫幅廣告、插播式廣告 (橫幅與影片)、線性影片廣告、播放式廣告以及原生廣告。 我們的平台符合 OpenRTB、VAST 2.x、MRAID 2 及 VPAID 3 等標準，而且與 MOAT 及 IAS 相容。
 
 [探索廣告選項](../publish/create-an-ad-campaign-for-your-app.md)
-[安裝廣告 SDK](https://aka.ms/ads-sdk-uwp)
+[安裝廣告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
     :::column-end:::
 :::row-end:::
 
@@ -85,7 +85,7 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 
 利用 Microsoft 廣告流量分配服務，提供取材自各大廣告網路的廣告，讓您從應用程式內的廣告獲得最大收益。 您可以由合作夥伴中心進行流量分配設定，而無須更動任何程式碼。 如果您交給我們代為設定流量分配，我們的機器學習演算法將能協助您從應用程式支援的所有市場獲取最高的廣告收益。
 
-[使用廣告服務](https://aka.ms/admediationblog)
+[使用廣告服務](https://blogs.windows.com/windowsdeveloper/2017/05/08/announcing-microsofts-ad-mediation-service/)
     :::column-end:::
 :::row-end:::
 
@@ -110,8 +110,8 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 
  主題                | 描述                 |
 |--------------------|-----------------------------|
-| [Microsoft 聯盟計畫](https://go.microsoft.com/fwlink/p/?LinkId=617665) | 從您的應用程式、部落格、網頁或其他通訊設備連結至 Microsoft 產品以賺取佣金。 您可以連結至 Microsoft Store 中銷售的應用程式、遊戲、音樂、電影、硬體、配件及其他商品。
-| [A/B 實驗](https://go.microsoft.com/fwlink/p/?LinkId=722784) | 在您為所有使用者啟用變更前，以部分客戶為對象，由應用程式中執行 A/B 測試來衡量功能變更的有效性。
+| [Microsoft 聯盟計畫](https://www.microsoftaffiliates.com/) | 從您的應用程式、部落格、網頁或其他通訊設備連結至 Microsoft 產品以賺取佣金。 您可以連結至 Microsoft Store 中銷售的應用程式、遊戲、音樂、電影、硬體、配件及其他商品。
+| [A/B 實驗](https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing) | 在您為所有使用者啟用變更前，以部分客戶為對象，由應用程式中執行 A/B 測試來衡量功能變更的有效性。
 | [透過 Microsoft Store Services SDK 與客戶互動](microsoft-store-services-sdk.md) | Microsoft Store Services SDK 提供一些可讓您在應用程式中新增功能的程式庫和工具，以協助您吸引客戶。 這些功能包括目標式通知、A/B 測試，以及從您的應用程式啟動「意見反應中樞」。
 | [從您的 App 啟動意見反應中樞](launch-feedback-hub-from-your-app.md) | 在您的 UWP 應用程式中新增程式碼來將您的 Windows 10 客戶引導至「意見反應中樞」，以便他們在其中提交問題、建議及附議。 然後，在「合作夥伴中心」的[意見反應報告](../publish/feedback-report.md)中管理此意見反應。 這個功能需要 Microsoft Store Services SDK。 
 | [設定您的應用程式以接收合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md) | 為您的 UWP 應用程式註冊通知通道，以便讓應用程式能夠接收[合作夥伴中心推播通知](../publish/send-push-notifications-to-your-apps-customers.md)，以及追蹤由推播通知產生的應用程式啟動率。 這個功能需要 Microsoft Store Services SDK。

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 478c4a16902329e1dd9267e0339dca0e0dcf3539
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1a2b22df2610191636d258dc48838e0bc5be6ee4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321973"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259788"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>「Windows 即服務」應用程式開發
 
@@ -50,7 +50,7 @@ Microsoft 會發行「正式發行前小眾測試版」給 Windows 測試人員�
 
 在「Windows 即服務」模型中，Microsoft 承諾維護基礎作業系統的相容性。 這表示 Microsoft 會致力於確保不會有對於 app 生態系統造成負面影響的重大變更。 在此案例中，當 Windows 組建發行時，大部分的 app (不具備核心相依性) 將會繼續運作。
 
-基於此變更，Microsoft 建議我們的 ISV 合作夥伴將他們 app 的發行與支援從特定的 Windows 組建中分離。 我們彼此的客戶能夠透過應用程式生命週期方法得到更好的服務。 這表示當應用程式版本發行時，該版本將在某一段期間內受到支援，無論那段期間內有多少 Windows 組建發行。 ISV 承諾只要 app 在生命週期中受到支援，就提供該特定版本的 app 支援。 Microsoft 對於 Windows 也遵循類似的生命週期方法，可在[這裡](https://go.microsoft.com/fwlink/?LinkID=780549)參考。
+基於此變更，Microsoft 建議我們的 ISV 合作夥伴將他們 app 的發行與支援從特定的 Windows 組建中分離。 我們彼此的客戶能夠透過應用程式生命週期方法得到更好的服務。 這表示當應用程式版本發行時，該版本將在某一段期間內受到支援，無論那段期間內有多少 Windows 組建發行。 ISV 承諾只要 app 在生命週期中受到支援，就提供該特定版本的 app 支援。 Microsoft 對於 Windows 也遵循類似的生命週期方法，可在[這裡](https://support.microsoft.com/hub/4095338/microsoft-lifecycle-policy?C2=14019)參考。
 
 這個方法會減少將 app 排程與 Windows 版本維持一致的負擔。 ISV 合作夥伴應該可以自由地以他們本身的步調來發行功能或更新。 我們認為我們的合作夥伴可透過和 Windows 版本無關的最新 app 更新讓他們的客戶維持在最新狀態。 此外，我們的客戶不需要在 Windows 組建發行時尋找明確的支援聲明。 以下是支援聲明的範例，涵蓋 app 可能受不同版本作業系統支援的方式：
 
@@ -90,7 +90,7 @@ Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解�
 -   如果 app 依存於特定的 API 功能，請確定您有將正確的 API 版本做為目標。
 -   請確定您是透過 APISet 或另一個公用 API 偵測變更，並且不要使用版本做為某些功能或修正的代表。 如果有重大變更，且並未適當檢查，該變更就會變成是錯誤。
 -   請確定 app「不會」以奇特的方法檢查版本，例如透過登錄、檔案版本、位移、核心模式、驅動程式或其他方法。 如果 app 一定要檢查版本，請使用 GetVersion API，這應該會傳回主要、次要與組建編號。
--   如果您正在使用 [GetVersion](https://go.microsoft.com/fwlink/?LinkID=780555) API，請記住這個 API 的行為自 Windows 8.1 後已經變更。
+-   如果您正在使用 [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN) API，請記住這個 API 的行為自 Windows 8.1 後已經變更。
 
 如果您擁有像反惡意程式碼軟體或防火牆應用程式這樣的 app，您應該透過平常使用的意見反應管道和 Windows 測試人員計畫進行。
 
@@ -100,9 +100,9 @@ Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解�
 
 ### <a name="develop-universal-windows-platform-uwp-and-centennial-apps"></a>開發通用 Windows 平台 (UWP) 與 Centennial app
 
-我們鼓勵所有的 Win32 app ISV 開發[通用 Windows 平台 (UWP)](https://go.microsoft.com/fwlink/?LinkID=780560) 以及，日後的 [Centennial](https://go.microsoft.com/fwlink/?LinkID=780562) app。 比起使用傳統的 Win32 安裝程式，開發這些應用程式套件有許多絕佳好處。 [Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=780563) 中也支援 UWP 應用程式，這可讓您更容易地將使用者自動更新至一致的版本，減低您的支援成本。
+我們鼓勵所有的 Win32 app ISV 開發[通用 Windows 平台 (UWP)](https://blogs.windows.com/windowsdeveloper/2016/02/25/an-update-on-the-developer-opportunity-and-windows-10/) 以及，日後的 [Centennial](https://channel9.msdn.com/Events/Build/2015/2-692) app。 比起使用傳統的 Win32 安裝程式，開發這些應用程式套件有許多絕佳好處。 [Microsoft Store](https://blogs.windows.com/windowsdeveloper/2016/02/04/windows-store-trends-february-2016/) 中也支援 UWP 應用程式，這可讓您更容易地將使用者自動更新至一致的版本，減低您的支援成本。
 
-如果您的 Win32 App 類型無法與 Centennial 模型搭配運作，強烈建議您使用正確的安裝程式並確定已經過完整測試。 安裝程式是您的使用者或客戶使用您的 app 時的第一項體驗，因此請確定它運作良好。 很多時候安裝程式無法正常運作，或未經過所有案例的完整測試。 [Windows 應用程式認證套件](https://go.microsoft.com/fwlink/?LinkID=780565)可協助您測試 Win32 app 的安裝與解除安裝，並協助您比使用者先識別出未記載的 API 使用，以及其他基本效能相關的最佳做法問題。
+如果您的 Win32 App 類型無法與 Centennial 模型搭配運作，強烈建議您使用正確的安裝程式並確定已經過完整測試。 安裝程式是您的使用者或客戶使用您的 app 時的第一項體驗，因此請確定它運作良好。 很多時候安裝程式無法正常運作，或未經過所有案例的完整測試。 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)可協助您測試 Win32 app 的安裝與解除安裝，並協助您比使用者先識別出未記載的 API 使用，以及其他基本效能相關的最佳做法問題。
 
 **最佳做法：**
 -   使用可在 32 位元及 64 位元版本 Windows 中運作的安裝程式。
@@ -117,7 +117,7 @@ Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解�
 如果您的 app 在市集中，您可以透過市集發行您的 app 正式發行前小眾測試版，這表示您的 app 將可提供給我們的 Windows 測試人員安裝。 在您將 app 發行給大眾之前，使用者可安裝您的 app，且您可以收到 app 的初步意見反應。 以下章節說明針對 Windows 正式發行前小眾測試組建測試您 app 的步驟。
 
 ### <a name="step-1-become-a-windows-insider-and-participate-in-flighting"></a>步驟 1：成為 Windows 測試人員，並參與正式發行前小眾測試
-身為 [Windows 測試人員](https://go.microsoft.com/fwlink/p/?LinkId=521639)，您可以協助我們打造未來的 Windows—您的意見反應將會協助我們改進平台特色的功能。 這是充滿活力的社群，您可以與其他愛好者連繫、加入論壇、交換建議，並了解即將到來的測試人員專屬活動。
+身為 [Windows 測試人員](https://insider.windows.com/)，您可以協助我們打造未來的 Windows—您的意見反應將會協助我們改進平台特色的功能。 這是充滿活力的社群，您可以與其他愛好者連繫、加入論壇、交換建議，並了解即將到來的測試人員專屬活動。
 
 既然您已經可以存取 Windows 10 和 Windows 10 行動裝置版預覽版，及最新的 Windows SDK 與模擬器，您就擁有所有的工具且任您使用以開發優秀的應用程式，並探索通用 Windows 平台和 Microsoft Store 的新功能。
 
@@ -157,7 +157,7 @@ Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解�
 讓我們知道您的 app 正針對正式發行前小眾測試組建執行的狀況。 當您在測試期間發現您的 app 有問題時，請透過合作伙伴入口網站記錄錯誤 (如果您擁有存取權限，或透過您的 Microsoft 代表)。 我們鼓勵這項資訊，讓我們可以為使用者一同建置高品質的體驗。
 
 ### <a name="step-4-register-on-ready-for-windows"></a>步驟 4：在 Ready For Windows 上註冊
-[Ready for Windows](https://go.microsoft.com/fwlink/?LinkID=780580) 網站是支援 Windows 10 之軟體的目錄。 這是針對全世界正在考慮為公司和組織部署 Windows 10 的 IT 系統管理員所設計。 IT 系統管理員可以查看該網站，以了解 Windows 10 是否支援他們企業中所部署的軟體。
+[Ready for Windows](https://docs.microsoft.com/configmgr/desktop-analytics/ready-for-windows) 網站是支援 Windows 10 之軟體的目錄。 這是針對全世界正在考慮為公司和組織部署 Windows 10 的 IT 系統管理員所設計。 IT 系統管理員可以查看該網站，以了解 Windows 10 是否支援他們企業中所部署的軟體。
 
 ## <a name="related-topics"></a>相關主題
 [Windows 10 更新與升級維護選項](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)

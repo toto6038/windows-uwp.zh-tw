@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ffec0f2a5e771e649eda6240d9e7ef90f50890
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7c95d915c8906e2052243fee509e260fc8864454
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318799"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258362"
 ---
 # <a name="get-set-up"></a>開始設定
 
@@ -28,7 +28,7 @@ Microsoft Visual Studio 2019 可協助您設計、撰寫、測試您的應用程
 
 如果您還沒有 Visual Studio 2019，則可以安裝免費的 Microsoft Visual Studio Community 2019。 此下載包含可用來測試應用程式的裝置模擬器：
 
--   [下載 Windows 10 開發人員工具](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+-   [下載 Windows 10 開發人員工具](https://developer.microsoft.com/windows/downloads)
 
 您在安裝 Visual Studio 的時候，請務必選取 [通用 Windows 應用程式開發工具] 選項，如下所示：
 
@@ -67,7 +67,7 @@ Microsoft Visual Studio 2019 可協助您設計、撰寫、測試您的應用程
 
 ## <a name="want-more-tools-and-downloads"></a>想要更多工具和下載？
 
-如需工具和下載的完整清單，請參閱[下載](https://go.microsoft.com/fwlink/p/?linkid=285935)。
+如需工具和下載的完整清單，請參閱[下載](https://developer.microsoft.com/windows/downloads)。
 
 ## <a name="see-also"></a>另請參閱
 

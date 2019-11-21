@@ -6,12 +6,12 @@ ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fcf2e1fa39ae1e40edc07c9ca3df81386c17823
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8db29561afa06a2f6a2be67565d59e9387240d1c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319927"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259198"
 ---
 # <a name="network-communications-in-the-background"></a>背景網路通訊
 若要繼續網路通訊 (雖然它不在前景)，您的應用程式可以使用背景工作及這兩個選項之一。
@@ -150,7 +150,7 @@ case SocketActivityTriggerReason.SocketClosed:
   deferral.Complete();
 ```
 
-如需示範使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) 和通訊端代理程式的範例，請參閱 [SocketActivityStreamSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620606)。 通訊端初始化在 Scenario1\_Connect.xaml.cs 中執行，而背景作業實作是在 SocketActivityTask.cs 中。
+如需示範使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) 和通訊端代理程式的範例，請參閱 [SocketActivityStreamSocket 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SocketActivityStreamSocket)。 通訊端初始化在 Scenario1\_Connect.xaml.cs 中執行，而背景作業實作是在 SocketActivityTask.cs 中。
 
 您可能會注意到範例一旦建立新的通訊端或取得現有通訊端就會呼叫 **TransferOwnership**，而不是像本主題所描述使用 **OnSuspending** 事件處理常式。 這是因為範例著重在示範 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)，且在執行時沒有任何其他活動使用通訊端。 您的 app 可能更複雜，且應使用 **OnSuspending** 來決定呼叫 **TransferOwnership** 的時機。
 
@@ -425,21 +425,21 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 }
 ```
 
-如需使用 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的詳細資訊，請參閱 [ControlChannelTrigger StreamWebSocket 範例](https://go.microsoft.com/fwlink/p/?linkid=251232)。
+如需使用 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的詳細資訊，請參閱 [ControlChannelTrigger StreamWebSocket 範例](https://code.msdn.microsoft.com/windowsapps/ControlChannelTrigger-91f6bed8)。
 
 ## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger 搭配 HttpClient
-使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，有一些特殊考量。 在使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 接收封包要求的處理方式。
+使用 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，有一些特殊考量。 在使用 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 接收封包要求的處理方式。
 
-**注意** 目前不支援使用 SSL 的   [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 使用網路觸發程序功能和 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
+**注意** 目前不支援使用 SSL 的   [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 使用網路觸發程序功能和 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
  
-在使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，應遵循下列使用模式與最佳做法：
+在使用 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，應遵循下列使用模式與最佳做法：
 
--   App 可能需要先在 [System.Net.Http](https://go.microsoft.com/fwlink/p/?linkid=227894) 命名空間中的 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 或 [HttpClientHandler](https://go.microsoft.com/fwlink/p/?linkid=241638) 物件上設定各種屬性及標頭，然後才能將要求傳送到特定 URI。
--   App 需要先執行一個起始要求來測試並正確地設定傳輸，然後再建立與 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 搭配使用的 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 傳輸。 一旦 app 判斷傳輸已正確設定之後，就可以將 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 物件設定為與 **ControlChannelTrigger** 物件搭配使用的傳輸物件。 設計這個處理程序的目的是為了避免中斷透過傳輸所建立的連線。 使用 SSL 搭配憑證時，應用程式可能需要顯示一個對話方塊來輸入 PIN 或顯示可以從多個憑證進行選擇的選項。 可能需要 Proxy 驗證和伺服器驗證。 如果 Proxy 或伺服器驗證已到期，就可能會關閉連線。 應用程式因應這些驗證到期的其中一個方法是設定計時器。 需要使用 HTTP 重新導向時，無法保證能夠建立穩定的第二個連線。 起始測試要求將會確保 app 可以先使用最新的重新導向 URL，然後才使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 物件當作傳輸與 **ControlChannelTrigger** 物件搭配使用。
+-   App 可能需要先在 [System.Net.Http](https://msdn.microsoft.com/library/system.net.http(VS.110).aspx) 命名空間中的 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 或 [HttpClientHandler](https://msdn.microsoft.com/library/system.net.http.httpclienthandler(VS.110).aspx) 物件上設定各種屬性及標頭，然後才能將要求傳送到特定 URI。
+-   App 需要先執行一個起始要求來測試並正確地設定傳輸，然後再建立與 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 搭配使用的 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 傳輸。 一旦 app 判斷傳輸已正確設定之後，就可以將 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 物件設定為與 **ControlChannelTrigger** 物件搭配使用的傳輸物件。 設計這個處理程序的目的是為了避免中斷透過傳輸所建立的連線。 使用 SSL 搭配憑證時，應用程式可能需要顯示一個對話方塊來輸入 PIN 或顯示可以從多個憑證進行選擇的選項。 可能需要 Proxy 驗證和伺服器驗證。 如果 Proxy 或伺服器驗證已到期，就可能會關閉連線。 應用程式因應這些驗證到期的其中一個方法是設定計時器。 需要使用 HTTP 重新導向時，無法保證能夠建立穩定的第二個連線。 起始測試要求將會確保 app 可以先使用最新的重新導向 URL，然後才使用 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 物件當作傳輸與 **ControlChannelTrigger** 物件搭配使用。
 
-與其他網路傳輸不同的是，[HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 物件無法直接傳送至 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 物件的 [**UsingTransport**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.controlchanneltrigger.usingtransport) 方法。 相反地，必須特別建構 [HttpRequestMessage](https://go.microsoft.com/fwlink/p/?linkid=259153) 物件，以搭配 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 物件和 **ControlChannelTrigger** 使用。 [HttpRequestMessage](https://go.microsoft.com/fwlink/p/?linkid=259153) 物件是使用 [RtcRequestFactory.Create](https://go.microsoft.com/fwlink/p/?linkid=259154) 方法建立的。 然後，所建立的 [HttpRequestMessage](https://go.microsoft.com/fwlink/p/?linkid=259153) 物件會傳送到 **UsingTransport** 方法。
+與其他網路傳輸不同的是，[HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 物件無法直接傳送至 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 物件的 [**UsingTransport**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.controlchanneltrigger.usingtransport) 方法。 相反地，必須特別建構 [HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage) 物件，以搭配 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 物件和 **ControlChannelTrigger** 使用。 [HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage) 物件是使用 [RtcRequestFactory.Create](https://msdn.microsoft.com/library/system.net.http.rtcrequestfactory.create) 方法建立的。 然後，所建立的 [HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage) 物件會傳送到 **UsingTransport** 方法。
 
-下列範例顯示如何建構 [HttpRequestMessage](https://go.microsoft.com/fwlink/p/?linkid=259153) 物件以便搭配 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 物件與 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 使用。
+下列範例顯示如何建構 [HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage) 物件以便搭配 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 物件與 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 使用。
 
 ```csharp
 using System;
@@ -481,13 +481,13 @@ private void SetupHttpRequestAndSendToHttpServer()
 }
 ```
 
-有些特殊考量會影響在 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 上要求傳送 HTTP 要求以起始接收已處理的回應的方式。 特別是當使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，您的 app 必須使用 Task 來處理傳送，而非使用 **await** 模型。
+有些特殊考量會影響在 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 上要求傳送 HTTP 要求以起始接收已處理的回應的方式。 特別是當使用 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，您的 app 必須使用 Task 來處理傳送，而非使用 **await** 模型。
 
-使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 時，針對 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 背景工作上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法與接收完成回呼的傳回並沒有同步。 基於這個原因，app 只能使用 **Run** 方法中的封鎖 HttpResponseMessage 技術，並等候接收整個回應。
+使用 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 時，針對 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 背景工作上的 [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法與接收完成回呼的傳回並沒有同步。 基於這個原因，app 只能使用 **Run** 方法中的封鎖 HttpResponseMessage 技術，並等候接收整個回應。
 
-使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 顯然與 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)、[**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 傳輸不同。 因為 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 程式碼，[HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 接收回呼是透過 Task 傳遞至 app。 這表示當資料或錯誤分派至 app 時，會立即觸發 **ControlChannelTrigger** 推播通知工作。 在下列範例中，程式碼會將 [HttpClient.SendAsync](https://go.microsoft.com/fwlink/p/?linkid=241637) 方法傳回的 responseTask 儲存到全域儲存區，推播通知工作會提取並內嵌處理這個傳回值。
+使用 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 顯然與 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)、[**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 傳輸不同。 因為 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 程式碼，[HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 接收回呼是透過 Task 傳遞至 app。 這表示當資料或錯誤分派至 app 時，會立即觸發 **ControlChannelTrigger** 推播通知工作。 在下列範例中，程式碼會將 [HttpClient.SendAsync](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 方法傳回的 responseTask 儲存到全域儲存區，推播通知工作會提取並內嵌處理這個傳回值。
 
-下列範例顯示當搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 使用時，如何處理 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 上的傳送要求。
+下列範例顯示當搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 使用時，如何處理 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 上的傳送要求。
 
 ```csharp
 using System;
@@ -532,7 +532,7 @@ private void SendHttpRequest()
 }
 ```
 
-下列範例顯示當搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 時，如何讀取接收到的回應。
+下列範例顯示當搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 使用 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 時，如何讀取接收到的回應。
 
 ```csharp
 using System.Net;
@@ -573,7 +573,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 }
 ```
 
-如需使用 [HttpClient](https://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的詳細資訊，請參閱 [ControlChannelTrigger HttpClient 範例](https://go.microsoft.com/fwlink/p/?linkid=258323)。
+如需使用 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的詳細資訊，請參閱 [ControlChannelTrigger HttpClient 範例](https://code.msdn.microsoft.com/windowsapps/ControlChannelTrigger-HTTP-9d7a6b3d)。
 
 ## <a name="controlchanneltrigger-with-ixmlhttprequest2"></a>ControlChannelTrigger 搭配 IXMLHttpRequest2
 使用 [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，有一些特殊考量。 在使用 **IXMLHTTPRequest2** 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 使用 **ControlChannelTrigger** 不會影響在 **IXMLHTTPRequest2** 要求傳送或接收 HTTP 要求的處理方式。
@@ -584,7 +584,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 -   App 可能需在呼叫 [**Send**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-send) 方法之前，先呼叫 [**SetProperty**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-setproperty) 和 [**SetRequestHeader**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-setrequestheader) 方法來設定 HTTP 傳輸。
 -   App 需要先執行一個起始 [**Send**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-send) 要求來測試並正確地設定傳輸，然後再建立與 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 搭配使用的傳輸。 一旦 app 判斷傳輸已正確設定之後，就可以將 [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) 物件設定為與 **ControlChannelTrigger** 搭配使用的傳輸物件。 設計這個處理程序的目的是為了避免中斷透過傳輸所建立的連線。 使用 SSL 搭配憑證時，應用程式可能需要顯示一個對話方塊來輸入 PIN 或顯示可以從多個憑證進行選擇的選項。 可能需要 Proxy 驗證和伺服器驗證。 如果 Proxy 或伺服器驗證已到期，就可能會關閉連線。 應用程式因應這些驗證到期的其中一個方法是設定計時器。 需要使用 HTTP 重新導向時，無法保證能夠建立穩定的第二個連線。 起始測試要求將會確保 app 可以先使用最新的重新導向 URL，然後才使用 **IXMLHTTPRequest2** 物件當作傳輸與 **ControlChannelTrigger** 物件搭配使用。
 
-如需使用 [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的詳細資訊，請參閱 [ControlChannelTrigger 搭配 IXMLHTTPRequest2 範例](https://go.microsoft.com/fwlink/p/?linkid=258538)。
+如需使用 [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 的詳細資訊，請參閱 [ControlChannelTrigger 搭配 IXMLHTTPRequest2 範例](https://code.msdn.microsoft.com/windowsapps/ControlChannelTrigger-HTTP-9d7a6b3d/)。
 
 ## <a name="important-apis"></a>重要 API
 * [SocketActivityTrigger](/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)

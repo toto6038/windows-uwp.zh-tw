@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: c6f66d90e96b0dfe941e4311ebf79cd3b9b5f4ae
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f386de7ebf9aae2f49a2709d8c1c8ce2595cbf1d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318754"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260529"
 ---
 # <a name="create-your-first-app"></a>建立您的第一個 App
 
@@ -27,9 +27,9 @@ ms.locfileid: "67318754"
 
 如果您想要了解基本概念，或只是恢復您的學習記憶，請嘗試下列資料︰
 
-* [適用於初學者的 C# 基礎知識](https://go.microsoft.com/fwlink/?linkid=850801)
-* [適用於初學者的 VB 基礎知識](https://go.microsoft.com/fwlink/?linkid=850802)
-* [Windows 10 開發人員指南](https://go.microsoft.com/fwlink/?linkid=850804)
+* [適用於初學者的 C# 基礎知識](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners?l=Lvld4EQIC_2706218949)
+* [適用於初學者的 VB 基礎知識](https://docs.microsoft.com/learn/?l=jqMOvLKbC_9206218965)
+* [Windows 10 開發人員指南](https://docs.microsoft.com/learn/)
 
 如果您已準備好要嘗試比 "Hello, World!" 更有趣的內容，請嘗試下列教學課程︰
 

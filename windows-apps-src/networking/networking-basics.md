@@ -6,12 +6,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c1c23bc205c5f9e2ad24e201e9583e19f2d6ec35
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8d6bafc9a21e3950974615078af24989aab7da9e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320666"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259185"
 ---
 # <a name="networking-basics"></a>網路功能基本知識
 您對於任何具備網路功能的 app 所需執行的動作。
@@ -45,7 +45,7 @@ ms.locfileid: "67320666"
 ### <a name="choosing-a-network-trigger"></a>選擇網路觸發程序
 在某些情況下，任一觸發程序均適用。 當您選擇要在您的 app 中使用的觸發程序時，請考量下列建議。
 
--   如果您使用 [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2)、[**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 或 [System.Net.Http.HttpClientHandler](https://go.microsoft.com/fwlink/p/?linkid=241638)，您必須使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
+-   如果您使用 [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2)、[**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 或 [System.Net.Http.HttpClientHandler](https://msdn.microsoft.com/library/system.net.http.httpclienthandler(VS.110).aspx)，您必須使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
 -   如果使用啟用推播的 **StreamSockets**，您可以使用控制通道觸發程序，但應優先選擇使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。 後者可讓系統在連線未積極使用時釋出記憶體並降低電源需求。
 -   如果您想要讓 app 在不主動處理網路要求時將其記憶體使用量降到最低，您應盡可能使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。
 -   如果您想要讓應用程式能夠在系統處於「連線待命」模式時接收資料、請使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。

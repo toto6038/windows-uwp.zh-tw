@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 65436d7efd1de6e9c3649ad27b29b925bc632d95
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 13e6f4ac59a99463cd891e936f51449baf4ea7c2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820647"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259534"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 建立 "Hello world" 應用程式
 
@@ -25,7 +25,7 @@ ms.locfileid: "67820647"
 
 ## <a name="before-you-start"></a>開始之前
 
--   若要完成這個教學課程，您必須在執行 Windows 10 的電腦上，使用 Visual Studio Community，或是某一個非 Community 版本的 Visual Studio。 若要下載，請參閱[取得工具](https://go.microsoft.com/fwlink/p/?LinkId=532666)。
+-   若要完成這個教學課程，您必須在執行 Windows 10 的電腦上，使用 Visual Studio Community，或是某一個非 Community 版本的 Visual Studio。 若要下載，請參閱[取得工具](https://visualstudio.microsoft.com/downloads/)。
 -   我們假設您對 [XAML 概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)中的 C++/CX、XAML 及概念有基本的了解。
 -   我們假設您在 Visual Studio 中使用預設的視窗配置。 若要重設為預設配置，在功能表列上選擇 [視窗]   >  [重設視窗配置]  。
 
@@ -231,7 +231,7 @@ MainPage::MainPage()
 
 若要停止偵錯並關閉 app，請返回 Visual Studio 並按 Shift+F5。
 
-如需詳細資訊，請參閱[從 Visual Studio 執行市集 app](https://go.microsoft.com/fwlink/p/?LinkId=619619)。
+如需詳細資訊，請參閱[從 Visual Studio 執行市集 app](https://msdn.microsoft.com/library/windows/apps/xaml/Hh441477(v=VS.140).aspx)。
 
 您可以在應用程式的 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 輸入文字，但按一下 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 不會有任何反應。 在之後的步驟中，您要為按鈕的 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件建立事件處理常式，以顯示個人化的問候語。
 
@@ -397,6 +397,6 @@ MainPage::MainPage()
 
 ## <a name="next-steps"></a>後續步驟
 
-如果您擁有目標為 Windows 8.1 和 (或) Windows Phone 8.1 的 Windows 通用應用程式專案時，可將它移植到 Windows 10。 沒有任何自動處理程序可用來進行此動作，但您可以手動完成此動作。 開始使用新的 Windows 通用專案，以取得最新的專案系統結構與資訊清單檔案、將程式碼檔案複製到專案的目錄結構、將項目新增到專案，然後根據本主題中的指導方針，使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 重新撰寫您的 XAML。 如需詳細資訊，請參閱[將 Windows Runtime 8 專案移植到通用 Windows 平台 (UWP) 專案](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project)和[移植到通用 Windows 平台 (C++)](https://go.microsoft.com/fwlink/p/?LinkId=619525)。
+如果您擁有目標為 Windows 8.1 和 (或) Windows Phone 8.1 的 Windows 通用應用程式專案時，可將它移植到 Windows 10。 沒有任何自動處理程序可用來進行此動作，但您可以手動完成此動作。 開始使用新的 Windows 通用專案，以取得最新的專案系統結構與資訊清單檔案、將程式碼檔案複製到專案的目錄結構、將項目新增到專案，然後根據本主題中的指導方針，使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 重新撰寫您的 XAML。 如需詳細資訊，請參閱[將 Windows Runtime 8 專案移植到通用 Windows 平台 (UWP) 專案](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project)和[移植到通用 Windows 平台 (C++)](https://msdn.microsoft.com/library/mt186164.aspx)。
 
-如果您有想要與 UWP 應用程式整合的現有 C++ 程式碼，例如為現有應用程式建立新的 UWP UI，請參閱[如何：在通用 Windows 專案中使用現有的 C++ 程式碼](https://go.microsoft.com/fwlink/p/?LinkId=619623)。
+如果您有想要與 UWP 應用程式整合的現有 C++ 程式碼，例如為現有應用程式建立新的 UWP UI，請參閱[如何：在通用 Windows 專案中使用現有的 C++ 程式碼](https://msdn.microsoft.com/library/mt186162.aspx)。

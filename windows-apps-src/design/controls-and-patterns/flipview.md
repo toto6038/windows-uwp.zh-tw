@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7942839b43739ca5fb15106abbfa1877ead81dc2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: ff6031878b9189ca3794e2a9c68c85b76e5d21a7
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362764"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257447"
 ---
 # <a name="flip-view"></a>翻轉檢視
 
@@ -204,7 +204,7 @@ stackPanel1.Children.Add(flipView1);
 
 ![內容指示器的範例](images/controls_contextindicator.jpg)
 
-如需示範如何將內容指示器新增至 FlipView 的範例程式碼，請參閱 [XAML FlipView 範例](https://go.microsoft.com/fwlink/p/?LinkID=311760)。
+如需示範如何將內容指示器新增至 FlipView 的範例程式碼，請參閱 [XAML FlipView 範例](https://code.msdn.microsoft.com/windowsapps/XAML-FlipView-control-0ae45312)。
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 

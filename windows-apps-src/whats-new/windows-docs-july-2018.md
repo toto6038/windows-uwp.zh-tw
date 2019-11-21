@@ -5,18 +5,18 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 7 月
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4030796e942c76ccf32e04dbf951cac68718a6a5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3c92de1901c9cc67a30f495e34289bac5d7d2b94
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320391"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258800"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>2018 年 7 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、開發人員指引、影片和範例已在 7 月份提供使用。
 
-在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -34,7 +34,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="notepad"></a>記事本
 
-Windows 10 Insider Preview Build 17713 中已提供使用，[[記事本] 已更新許多新功能](https://aka.ms/ant-man)。 [Windows 測試人員](https://insider.windows.com/)現在可以使用縮放、循環尋找/取代，以及 Unix/Linux (LF) 和 Mac (CR) 行尾結束符號的支援。 
+Windows 10 Insider Preview Build 17713 中已提供使用，[[記事本] 已更新許多新功能](https://blogs.windows.com/windowsexperience/2018/07/11/announcing-windows-10-insider-preview-build-17713/)。 [Windows 測試人員](https://insider.windows.com/)現在可以使用縮放、循環尋找/取代，以及 Unix/Linux (LF) 和 Mac (CR) 行尾結束符號的支援。 
 
 ## <a name="developer-guidance"></a>開發人員指引
 
@@ -70,11 +70,11 @@ Adobe XD 和 Adobe Illustrator 工具組已更新了新功能。 這些設計工
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>開發人員入門：在 Window 10 上建立和自訂表單
 
-我們針對 Windows 開發人員的[入門文件](../get-started/index.md)現在提供了基本應用程式開發工作的實際操作經驗。 這段影片將向您逐步說明其中一個主題，並說明如何在您的應用程式中建立表單 UI 的基本概念。 [觀看影片](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看實際操作的程式碼，然後[自行查看主題](https://aka.ms/CreateForms) \(部分機器翻譯\)。
+我們針對 Windows 開發人員的[入門文件](../get-started/index.md)現在提供了基本應用程式開發工作的實際操作經驗。 這段影片將向您逐步說明其中一個主題，並說明如何在您的應用程式中建立表單 UI 的基本概念。 [觀看影片](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看實際操作的程式碼，然後[自行查看主題](https://docs.microsoft.com/windows/uwp/get-started/construct-form-learning-track) \(部分機器翻譯\)。
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>使用個人化聊天專案增強您的機器人
 
-個人化聊天專案允許您為聊天機器人新增可自訂的角色。 藉由與 Microsoft Bot Framework SDK 整合，您可以新增閒聊功能，以更交談式的方式與客戶互動。 [觀看影片](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)以了解如何實作它，然後[試用互動式示範](https://aka.ms/PersonalityChat)以取得實際操作體驗。
+個人化聊天專案允許您為聊天機器人新增可自訂的角色。 藉由與 Microsoft Bot Framework SDK 整合，您可以新增閒聊功能，以更交談式的方式與客戶互動。 [觀看影片](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)以了解如何實作它，然後[試用互動式示範](https://www.microsoft.com/research/project/personality-chat/)以取得實際操作體驗。
 
 ### <a name="one-dev-question"></a>One Dev Question
 

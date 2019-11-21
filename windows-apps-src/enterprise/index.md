@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eec1de013efce7b23cd89e81f659a5cc530638c4
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 152a1bf2a751c2d2c78818b85868bfea3be911ac
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339963"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259648"
 ---
 # <a name="enterprise"></a>企業
 
@@ -146,7 +146,7 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 | 主題 | 描述 |
 |-------|-------------|
 | [UWP 應用程式指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | 在本簡介指南中，您將了解 Windows 10UWP 平台，包括︰裝置系列為何以及如何決定要設為目標的裝置系列、新的 UI 控制項和面板以讓您將 UI 調整為不同的裝置板型規格，以及如何了解與控制可供您的 app 使用的 API 表面。 |
-| [彈性 XAML UI 程式碼範例](https://go.microsoft.com/fwlink/p/?LinkId=619992) | 這個程式碼範例說明應用程式的所有可能版面配置選項和控制項 (不論裝置類型為何)，並可讓您與面板互動以顯示如何達成您要尋找的任何版面配置。 除了顯示每個控制項如何回應不同的板型規格之外，app 本身也具有回應，並顯示達成彈性 UI 的各種方法。 |
+| [彈性 XAML UI 程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) | 這個程式碼範例說明應用程式的所有可能版面配置選項和控制項 (不論裝置類型為何)，並可讓您與面板互動以顯示如何達成您要尋找的任何版面配置。 除了顯示每個控制項如何回應不同的板型規格之外，app 本身也具有回應，並顯示達成彈性 UI 的各種方法。 |
 | [Xamarin 主題](/xamarin/) | 以手機為目標的 Xamarin |
 
 ## <a name="deployment"></a>部署

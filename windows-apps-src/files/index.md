@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c7296923b3e991a56fed115527b28a6b62b3ffd6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 15e6ebd45d4f7069e09169a437476b0f785ea959
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369464"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259594"
 ---
  # <a name="files-folders-and-libraries"></a>檔案、資料夾和媒體櫃
 
@@ -36,11 +36,11 @@ ms.locfileid: "66369464"
 | [快速存取 UWP 中的檔案屬性](fast-file-properties.md) | 有效收集程式庫的檔案和其屬性清單以便用於 UWP 應用程式。 |
 
 ## <a name="related-samples"></a>相關範例
-[資料夾列舉範例](https://go.microsoft.com/fwlink/p/?linkid=619993)
+[資料夾列舉範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration)
 
-[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)
+[檔案存取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)
 
-[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994)
+[檔案選擇器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker)
  
 
  

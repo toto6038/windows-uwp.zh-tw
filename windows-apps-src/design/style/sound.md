@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce81088495716e43a32dab94d1d47d399dd6a309
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: 31f527cff7588ccf6da2594566cfa3cf13a214f1
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061913"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258674"
 ---
 # <a name="sound"></a>音效
 
@@ -69,7 +69,7 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ### <a name="sound-for-tv-and-xbox"></a>電視和 Xbox 的音效
 
 音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 [Auto]  ，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
-若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](https://go.microsoft.com/fwlink/?LinkId=760736)文章。
+若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)文章。
 
 ## <a name="sound-volume-override"></a>音效音量覆寫
 

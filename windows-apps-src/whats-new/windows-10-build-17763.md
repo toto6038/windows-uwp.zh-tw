@@ -6,18 +6,18 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c7387a7a66d2492bf6f228c662a48b19a19afe3d
-ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
+ms.openlocfilehash: 1c2e6ee84b143ea13aa3e804f288e4dd9e0becec
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72893006"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258854"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員的 Windows 10 (組建 17763) 的新功能
 
-Windows 10 組建 17763 (也稱為 2018 年 10 月更新或版本 1809) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 17763 (也稱為 2018 年 10 月更新或版本 1809) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
-這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指導方針的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 17763 API 變更](windows-10-build-17763-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
+這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指導方針的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 17763 API 變更](windows-10-build-17763-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
 
 ## <a name="design--ui"></a>設計與 UI
 
@@ -34,21 +34,21 @@ Fluent Design 中的動作 | Fluent Design System 中運動的使用正在不斷
 文字大小調整 | 新的[文字大小調整指引](../design/input/text-scaling.md)說明如何更新您的應用程式，以配合新的文字大小調整行為，這些行為讓使用者能夠跨 OS 和個別的應用程式變更相對字型大小。 相較於使用 [放大鏡] 應用程式 (通常只是放大螢幕區域內的所有內容，並引進自己的可用性問題)、變更顯示器解析度，或依賴 DPI 縮放比例 (根據顯示器和一般觀看距離調整所有內容)，使用者可以快速存取設定以僅調整文字大小，範圍從 100% (預設大小) 到 225%。
 工具組 | [Adobe XD 和 Adobe Illustrator 工具組](../design/downloads/index.md)已更新了新功能。 這些設計工具組提供控制項與版面配置範本，可用於設計 UWP 應用程式。
 UI 命令 | [UWP 命令基礎結構](../design/basics/commanding-basics.md)的更新包括更好的命令物件封裝 (行為、標籤、圖示、鍵盤快速鍵、便捷鍵和描述) 以及一組標準的常用命令，包括剪下、複製、貼上、退出等等，這就不需要手動設定這些屬性。 </br> 新的 [XamlUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xamluicommand) 類別提供了一個基底類別，用於定義在叫用時執行動作之互動式 UI 元素的命令行為。 這是 [StandardUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.standarduicommand) 的父類別，它公開了一組具有預先定義屬性的標準平台命令。 
-Windows UI 程式庫 | [Windows UI 程式庫](https://aka.ms/winui-docs)是一組 NuGet 套件，可提供 UWP 應用程式的控制項和其他使用者介面元素。 這些套件也提供對舊版 Windows 10 的向下相容性，因此即便您的使用者沒有最新版本的作業系統，您的應用程式仍可運作。 </br> 如需 Windows UI 程式庫中之內容的詳細資訊，請參閱 [NuGet 套件中所包含的此 API 命名空間清單](https://docs.microsoft.com/uwp/api/overview/winui/)。
+Windows UI 程式庫 | [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)是一組 NuGet 套件，可提供 UWP 應用程式的控制項和其他使用者介面元素。 這些套件也提供對舊版 Windows 10 的向下相容性，因此即便您的使用者沒有最新版本的作業系統，您的應用程式仍可運作。 </br> 如需 Windows UI 程式庫中之內容的詳細資訊，請參閱 [NuGet 套件中所包含的此 API 命名空間清單](https://docs.microsoft.com/uwp/api/overview/winui/)。
 
 ## <a name="develop-windows-apps"></a>開發 Windows 應用程式
 
 功能 | 描述
  :------ | :------
 條碼掃描器 | [條碼掃描器](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner)文件已重新組織，並使用更多詳細資訊和程式碼片段進行改善。 我們還新增了一個新主題[取得並了解條碼資料](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-scan-data)，其中介紹了如何從條碼掃描器取得和處理資料。
-C++/WinRT | [C++/WinRT](https://aka.ms/cppwinrt) 包含此版本的許多新功能、變更和修正。 有一些新的函式和基底類別可以幫助您實作您自己的[集合屬性和集合型別](/windows/uwp/cpp-and-winrt-apis/collections)；現在，您可以將 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) XAML 標記延伸與 C++/WinRT 執行階段類別一起使用 (如需程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart))。 如需此版本中所有新增內容和變更內容的完整說明，請參閱 [C++/WinRT 的新功能](../cpp-and-winrt-apis/news.md)。</br></br>其他新的 C++/WinRT 內容包括：[XAML 自訂控制項](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl)；[撰寫 COM 元件](/windows/uwp/cpp-and-winrt-apis/author-coclasses)；[值分類](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories)；和[強式和弱式參考](../cpp-and-winrt-apis/weak-references.md)。
+C++/WinRT | [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index) 包含此版本的許多新功能、變更和修正。 有一些新的函式和基底類別可以幫助您實作您自己的[集合屬性和集合型別](/windows/uwp/cpp-and-winrt-apis/collections)；現在，您可以將 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) XAML 標記延伸與 C++/WinRT 執行階段類別一起使用 (如需程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart))。 如需此版本中所有新增內容和變更內容的完整說明，請參閱 [C++/WinRT 的新功能](../cpp-and-winrt-apis/news.md)。</br></br>其他新的 C++/WinRT 內容包括：[XAML 自訂控制項](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl)；[撰寫 COM 元件](/windows/uwp/cpp-and-winrt-apis/author-coclasses)；[值分類](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories)；和[強式和弱式參考](../cpp-and-winrt-apis/weak-references.md)。
 C++/WinRT 程式碼範例 | 我們在文件中針對主題新增了 250 個 C++/WinRT 程式碼清單，並隨附現有的 C++/CX 程式碼範例。
 參與指引 | 我們已更新 [UWP 文件的參與指引](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 這份新指引闡明了對我們文件的外部參與的工作流程和期望。
 DirectX 圖形架構 (DXGI) | 已針對遺漏的 DXGI API 新增了新文件，我們在 Windows 10 上提供了一篇關於最佳作法的文章。 </br> * [為了達到最佳效能，請使用 DXGI 翻轉模型](https://docs.microsoft.com/windows/desktop/direct3ddxgi/for-best-performance--use-dxgi-flip-model)：提供有關如何在現代化版本的 Windows 上，最大化簡報堆疊中效能和效率的指引。 </br> * [IDXGIOutput6::CheckHardwareCompositionSupport 方法](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-idxgioutput6-checkhardwarecompositionsupport)：通知應用程式支援硬體伸展。 </br> * [DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS 列舉](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_hardware_composition_support_flags)：描述支援的硬體組合層級。
 開始使用 | 我們的[入門](../get-started/index.md)內容已經透過新主題重寫，提供有關剛接觸 Windows 10 的開發人員如何完成以下一般工作的資訊和指引： </br> * [建構表單](../get-started/construct-form-learning-track.md) </br> * [在清單中顯示客戶](../get-started/display-customers-in-list-learning-track.md) </br> * [儲存和載入設定](../get-started/settings-learning-track.md) </br> * [使用檔案](../get-started/fileio-learning-track.md)
 地圖樣式表編輯器 | 使用新的[地圖樣式表編輯器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft?rtc=1#activetab=pivot:overviewtab)應用程式，以互動方式自訂新增至應用程式之地圖的外觀。
 Microsoft Learn | 全新的 [Microsoft Learn 網站](https://www.microsoft.com/learning/default.aspx)為 Microsoft 開發人員提供新的實際操作學習和訓練機會。 目前，Microsoft Learn 為 Microsoft 365、Microsoft Azure、Office 365 和 Windows Server 提供培訓及認證。
-記事本 | [[記事本] 已更新](https://aka.ms/ant-man) \(英文\)，新增了縮放、循環尋找/取代，以及 Unix/Linux (LF) 和 Mac (CR) 行尾結束符號的支援。
+記事本 | [[記事本] 已更新](https://blogs.windows.com/windowsexperience/2018/07/11/announcing-windows-10-insider-preview-build-17713/) \(英文\)，新增了縮放、循環尋找/取代，以及 Unix/Linux (LF) 和 Mac (CR) 行尾結束符號的支援。
 Project Rome | [Project Rome](https://docs.microsoft.com/windows/project-rome/) 現在可以在支援的平台和 SDK 之間提供一致的程式設計體驗。 </br>  新的 [Microsoft Graph 通知](https://developer.microsoft.com/graph/docs/concepts/notifications-concept-overview)使用 Project Rome 為您的應用程式提供以人為中心的跨平台通知平台。
 螢幕剪取 | 新的 [URI 配置](../launch-resume/launch-screen-snipping.md)允許您的應用程式以程式設計方式開啟新的剪取，或針對註釋啟動帶有特定影像的剪取與繪圖應用程式。
 傳統型應用程式中的 UWP 控制項 | Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用程式中使用 UWP 控制項。 這表示您可以使用只能透過 UWP 控制項 (例如 Windows Ink) 和支援 Fluent Design 系統的控制項存取的最新 Windows 10 UI 功能，來增強現有傳統型應用程式的外觀與風格和功能。 這項功能稱為 *XAML Islands*。 </br> 我們提供了幾種在應用程式中使用 XAML Islands 的方法，具體取決於您使用的應用程式平台。 WPF 和 Windows Forms 應用程式可以使用 [Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中的一組控制項，這些控制項提供設計導向的開發經驗。 C++ Win32 應用程式必須使用 [Windows.UI.Xaml.Hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting) 命名空間中的 *UWP XAML 裝載 API* 。 如需詳細資訊，請參閱[傳統型應用程式中的 UWP 控制項](../xaml-platform/xaml-host-controls.md)。 </br> **注意：** 啟用 XAML Islands 的 API 和控制項目前可作為開發人員預覽提供使用。 雖然我們鼓勵您現在在自己的原型程式碼中試用它們，但我們不建議您此時在實際程式碼中使用它們。
@@ -97,11 +97,11 @@ C++/WinRT 是撰寫與使用 Windows 執行階段 API 的新方法。 它僅在�
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>開發人員入門：在 Window 10 上建立和自訂表單
 
-我們針對 Windows 開發人員的[入門文件](../get-started/index.md)現在提供了基本應用程式開發工作的實際操作經驗。 這段影片將向您逐步說明其中一個主題，並說明如何在您的應用程式中建立表單 UI 的基本概念。 [觀看影片](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看實際操作的程式碼，然後[自行查看主題](https://aka.ms/CreateForms) \(部分機器翻譯\)。
+我們針對 Windows 開發人員的[入門文件](../get-started/index.md)現在提供了基本應用程式開發工作的實際操作經驗。 這段影片將向您逐步說明其中一個主題，並說明如何在您的應用程式中建立表單 UI 的基本概念。 [觀看影片](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看實際操作的程式碼，然後[自行查看主題](https://docs.microsoft.com/windows/uwp/get-started/construct-form-learning-track) \(部分機器翻譯\)。
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>使用個人化聊天專案增強您的機器人
 
-個人化聊天專案允許您為聊天機器人新增可自訂的角色。 藉由與 Microsoft Bot Framework SDK 整合，您可以新增閒聊功能，以更交談式的方式與客戶互動。 [觀看影片](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)以了解如何實作它，然後[試用互動式示範](https://aka.ms/PersonalityChat)以取得實際操作體驗。
+個人化聊天專案允許您為聊天機器人新增可自訂的角色。 藉由與 Microsoft Bot Framework SDK 整合，您可以新增閒聊功能，以更交談式的方式與客戶互動。 [觀看影片](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)以了解如何實作它，然後[試用互動式示範](https://www.microsoft.com/research/project/personality-chat/)以取得實際操作體驗。
 
 ### <a name="multi-instance-uwp-apps"></a>多執行個體 UWP 應用程式
 

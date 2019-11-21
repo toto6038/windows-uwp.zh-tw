@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1f6e0e04cdf81512918e0cd3e33ec0f93e2245
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5b0d226a9492a2218edf20e68b8216ea513ca12a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321004"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260532"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) app？
 
@@ -115,7 +115,7 @@ UWP 應用程式使用 Windows 執行階段，這是作業系統提供的原生 
 
 Microsoft 設計系統命名為 Fluent。 Fluent Design 系統是一組與最佳做法結合的 UWP 功能，用於建立在所有執行 Windows 裝置類型上都能展現絕佳效能的應用程式。 Fluent 體驗從平板電腦到膝上型電腦，從個人電腦到電視等裝置以及虛擬實境裝置均自然流暢。 如需 Fluent Design 簡介，請參閱[適用於 UWP 應用程式的 Fluent Design 系統](https://docs.microsoft.com/windows/uwp/design/fluent-design-system)。
 
-良好的[設計](https://go.microsoft.com/fwlink/?LinkId=258848)是決定應用程式與使用者的互動方式、外觀，以及功能的程序。 使用者經驗在判斷使用者使用您的 app 時有多愉快佔有舉足輕重的地位，因此請不要跳過這個步驟。 [設計基本知識](https://developer.microsoft.com/en-us/windows/apps/design)會為您介紹如何設計通用 Windows 應用程式。 請參閱[適用於設計人員的通用 Windows 平台 (UWP) app 簡介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)，以取得設計能讓使用者滿意的 UWP app 的詳細資訊。 開始撰寫程式碼之前，請參閱[裝置入門](../design/devices/index.md)，協助您思考在您要做為目標的所有不同表單係數上使用您的 app 的互動體驗。
+良好的[設計](http://design.windows.com/)是決定應用程式與使用者的互動方式、外觀，以及功能的程序。 使用者經驗在判斷使用者使用您的 app 時有多愉快佔有舉足輕重的地位，因此請不要跳過這個步驟。 [設計基本知識](https://developer.microsoft.com/en-us/windows/apps/design)會為您介紹如何設計通用 Windows 應用程式。 請參閱[適用於設計人員的通用 Windows 平台 (UWP) app 簡介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)，以取得設計能讓使用者滿意的 UWP app 的詳細資訊。 開始撰寫程式碼之前，請參閱[裝置入門](../design/devices/index.md)，協助您思考在您要做為目標的所有不同表單係數上使用您的 app 的互動體驗。
 
 除了在不同裝置上的互動之外，[計劃您的 app](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app) 以納入跨多個裝置工作的好處。 例如：
 
@@ -125,7 +125,7 @@ Microsoft 設計系統命名為 Fluent。 Fluent Design 系統是一組與最佳
 
 ### <a name="add-services"></a>新增服務
 
-- 使用[雲端服務](https://go.microsoft.com/fwlink/?LinkId=526377)跨裝置同步。
+- 使用[雲端服務](https://azure.microsoft.com/documentation/services/cloud-services)跨裝置同步。
 - 了解如何[連線到 Web 服務](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))以支援您的應用程式體驗。
 - 在您的計劃中包含[推播通知](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)和[在應用程式內購買](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases)。 這些功能應該可以跨裝置運作。
 

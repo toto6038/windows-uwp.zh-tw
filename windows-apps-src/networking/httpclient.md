@@ -6,12 +6,12 @@ ms.date: 06/05/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dd1fce4e8a5c18af93df32b12ce8b20c8bc69f9
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 57927ff77f060a1ea1bd7720d8831f31c5355264
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340562"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259202"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -39,7 +39,7 @@ ms.locfileid: "71340562"
 
 -   非同步方法中的 HTTP 要求進度資訊。
 
-[  **Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpRequestMessage) 類別代表 [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 所傳送的 HTTP 要求訊息。 [  **Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 類別代表從 HTTP 要求收到的 HTTP 回應訊息。 HTTP 訊息是由 IETF 定義在 [RFC 2616](https://go.microsoft.com/fwlink/p/?linkid=241642) 中。
+[  **Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpRequestMessage) 類別代表 [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 所傳送的 HTTP 要求訊息。 [  **Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 類別代表從 HTTP 要求收到的 HTTP 回應訊息。 HTTP 訊息是由 IETF 定義在 [RFC 2616](https://tools.ietf.org/html/rfc2616) 中。
 
 [  **Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空間代表做為 HTTP 實體內容和標頭 (包含 Cookie) 的 HTTP 內容。 HTTP 內容可與 HTTP 要求或 HTTP 回應產生關聯。 **Windows.Web.Http** 命名空間提供一些不同的類別來代表 HTTP 內容。
 

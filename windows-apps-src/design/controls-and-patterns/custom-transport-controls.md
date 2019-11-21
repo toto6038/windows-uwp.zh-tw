@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c42a058398539701cc1df003717eec99d1b2cd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 74735b15ec53cf04e33dcb850c6cb174082ac438
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362861"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257265"
 ---
 # <a name="create-custom-transport-controls"></a>建立自訂傳輸控制項
 
@@ -26,7 +26,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 開始之前，您應該先熟悉 MediaPlayerElement 和 MediaTransportControls 類別。 如需詳細資訊，請參閱＜MediaPlayerElement 控制項指南＞。
 
 > [!TIP]
-> 本主題中的範例是以[媒體傳輸控制項範例](https://go.microsoft.com/fwlink/p/?LinkId=620023)為基礎。 您可以下載範例來檢視及執行完整的程式碼。
+> 本主題中的範例是以[媒體傳輸控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)為基礎。 您可以下載範例來檢視及執行完整的程式碼。
 
 > [!NOTE]
 > **MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您是針對舊版 Windows 10 開發 app，便必須改為使用 [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 此頁面上的所有範例也適用於 **MediaElement**。
@@ -95,7 +95,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 
 ### <a name="create-a-derived-control"></a>建立衍生的控制項
 
-若要新增或修改傳輸控制項的功能，您必須建立衍生自 MediaTransportControls 的新類別。 名為 `CustomMediaTransportControls` 的衍生類別，會顯示於[媒體傳輸控制項範例](https://go.microsoft.com/fwlink/p/?LinkId=620023)和本頁的其餘範例中。
+若要新增或修改傳輸控制項的功能，您必須建立衍生自 MediaTransportControls 的新類別。 名為 `CustomMediaTransportControls` 的衍生類別，會顯示於[媒體傳輸控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)和本頁的其餘範例中。
 
 **建立衍生自 MediaTransportControls 的新類別**
 1. 將新的類別檔案新增到您的專案。
@@ -202,7 +202,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 ### <a name="adding-a-custom-button"></a>新增自訂按鈕
 
-您可能想要自訂 MediaTransportControls 的其中一個理由是將自訂命令新增到控制項。 不論您將它新增為主要命令或次要命令，建立命令按鈕和修改其行為的程序都一樣。 在[媒體傳輸控制項範例](https://go.microsoft.com/fwlink/p/?LinkId=620023)中，會將 [評等] 按鈕新增到主要命令。
+您可能想要自訂 MediaTransportControls 的其中一個理由是將自訂命令新增到控制項。 不論您將它新增為主要命令或次要命令，建立命令按鈕和修改其行為的程序都一樣。 在[媒體傳輸控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)中，會將 [評等] 按鈕新增到主要命令。
 
 **新增自訂命令按鈕**
 1. 建立 AppBarButton 物件，並將它新增到控制項範本中的 CommandBar。

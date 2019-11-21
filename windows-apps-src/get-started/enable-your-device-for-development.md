@@ -6,12 +6,12 @@ keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4c1f90c0fa8304f95b1dc958fe5a75e74301dd
-ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
+ms.openlocfilehash: a2d1719379302dd8e996c37e05d7ddaf35a0cf18
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71205936"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258412"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -74,7 +74,7 @@ ms.locfileid: "71205936"
 因為您無法在不具受信任憑證的裝置上安裝應用程式，所以 [側載應用程式]  會是比 [開發人員模式] 更安全的選項。
 
 > [!NOTE]
-> 如果您要側載應用程式，您應該仍然只安裝來自受信任來源的應用程式。 當您安裝未經 Microsoft Store 認證的側載應用程式時，即表示您同意您已具備側載該應用程式所需的一切權限，並且為安裝和執行該應用程式所造成的任何損害負全責。 請參閱這份[隱私權聲明](https://go.microsoft.com/fwlink/?LinkId=521839)的 Windows &gt; Microsoft Store 小節。
+> 如果您要側載應用程式，您應該仍然只安裝來自受信任來源的應用程式。 當您安裝未經 Microsoft Store 認證的側載應用程式時，即表示您同意您已具備側載該應用程式所需的一切權限，並且為安裝和執行該應用程式所造成的任何損害負全責。 請參閱這份[隱私權聲明](https://privacy.microsoft.com/privacystatement)的 Windows &gt; Microsoft Store 小節。
 
 
 ### <a name="developer-mode"></a>開發人員模式

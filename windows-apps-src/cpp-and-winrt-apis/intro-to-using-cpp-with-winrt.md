@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a9bb432ce7c856a6c54305f657f06a23dab14f1
-ms.sourcegitcommit: 805420bb7ec6850ec3576b21193a3681054c9754
+ms.openlocfilehash: fd267f96ca6931252ab3130d363447ae79820108
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71976328"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255105"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 簡介
 &nbsp;
@@ -37,7 +37,7 @@ Windows 執行階段根據元件物件模型 (COM) API，且設計它透過「�
 
 雖然我們建議您使用最新版的 Visual Studio 和 Windows SDK 進行開發，但如果您使用 10.0.17763.0 (Windows 10 版本 1809) 之前的 Windows SDK 之前隨附的 C++/WinRT 版本，若要使用上述的 Windows 命名空間標頭，您的 10.0.17134.0 (Windows 10 版本 1803) 專案中需要最小的 Windows SDK 目標版本。
 
-您會想要從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/)下載並安裝最新版的 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix)。
+您會想要從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/)下載並安裝最新版的 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)。
 
 - VSIX 擴充功能為您在 Visual Studio 中提供 C++/WinRT 專案和項目範本，以便您開始進行 C++/WinRT 開發。
 - 此外，它也會提供您 C++/WinRT 投影類型的 Visual Studio 原生偵錯視覺效果 (natvis)；提供與 C# 偵錯相似的體驗。 Natvis 會自動偵錯組建。 您可以透過定義符號 WINRT_NATVIS 選擇加入到發行組建。
@@ -96,7 +96,7 @@ Windows 傳統型 C++/WinRT 用戶端應用程式的專案範本，其在 Win32 
 將已建置的 Windows 執行階段元件二進位與其 `.winmd` 和使用它們的 UWP 應用程式搭配一起。
 
 ## <a name="earlier-versions-of-the-vsix-extension"></a>舊版 VSIX 擴充功能
-我們建議您安裝 (或更新為) 最新版的 [VSIX 擴充功能](https://aka.ms/cppwinrt/vsix)。 預設情況下，它會設定為自行更新。 如果您這麼做，且具有使用 1.0.190128.4 之前的 VSIX 擴充功能版本建立的專案，則這一節包含將這些專案升級為使用新版本的重要資訊。 如果您未更新，您仍會發現這一節中的資訊很有用。
+我們建議您安裝 (或更新為) 最新版的 [VSIX 擴充功能](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)。 預設情況下，它會設定為自行更新。 如果您這麼做，且具有使用 1.0.190128.4 之前的 VSIX 擴充功能版本建立的專案，則這一節包含將這些專案升級為使用新版本的重要資訊。 如果您未更新，您仍會發現這一節中的資訊很有用。
 
 就支援的 Windows SDK 和 Visual Studio 版本，以及 Visual Studio 組態而言，上面 [C++/WinRT、XAML、VSIX 擴充功能和 NuGet 套件的 Visual Studio 支援](#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)一節中的資訊適用於舊版的 VSIX 擴充功能。 以下資訊針對使用舊版建立 (或升級使用) 的專案，說明其行為和組態的重要差異。
 
@@ -147,7 +147,7 @@ Windows 傳統型 C++/WinRT 用戶端應用程式的專案範本，其在 Win32 
 
 ## <a name="related-topics"></a>相關主題
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix)
+* [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
 * [開始使用 C++/WinRT](get-started.md)
 * [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)
 * [C++/WinRT 中的字串處理](strings.md)

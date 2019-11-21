@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: b561e08227664f723802ffc0ee3f0e16bc34a5cc
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 33b03ae1538001a2a9e77d3d72afd7bb67e9f3dc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63810721"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258574"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>列舉和查詢檔案和資料夾
 
@@ -25,7 +25,7 @@ ms.locfileid: "63810721"
 如需如何儲存通用 Windows 平台應用程式資料的指引，請參閱 [ApplicationData](/uwp/api/windows.storage.applicationdata) 類別。
 
 > [!NOTE]
-> 如需完整範例，請參閱[資料夾列舉範例](https://go.microsoft.com/fwlink/p/?linkid=619993)。
+> 如需完整範例，請參閱[資料夾列舉範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration)。
 
 ## <a name="prerequisites"></a>必要條件
 

@@ -6,16 +6,16 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: 28eb1dfecf9f6648bd43606c541daf7b57960771
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 986fa1b14fcb3b1ada150a232fb0d42f7eafa133
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320438"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258908"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>適用於開發人員的 Windows 10 (組建 10240) 的新功能
 
-Windows 10 組建 10240 與更新的 SDK 提供提供工具、功能及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，您已經準備好可以[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或探索如何使用您在[Windows 上的現有應用程式碼](../porting/index.md)。
+Windows 10 組建 10240 與更新的 SDK 提供提供工具、功能及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，您已經準備好可以[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或探索如何使用您在[Windows 上的現有應用程式碼](../porting/index.md)。
 
 以下為您逐項列出 Windows 10 組建 10240 (也稱為 Windows 10 版本 1507) 中的新功能。
 

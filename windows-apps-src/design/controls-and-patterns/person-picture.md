@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c276b232e76afb98d778ef65c7e0e363285c4794
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63791697"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258202"
 ---
 # <a name="person-picture-control"></a>個人圖片控制項
 
@@ -185,9 +185,9 @@ namespace SampleApp
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 
 * [連絡人和行事曆](../../contacts-and-calendar/index.md)
-* [連絡人卡片範例](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [連絡人卡片範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)

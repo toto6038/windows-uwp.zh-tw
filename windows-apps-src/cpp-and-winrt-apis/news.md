@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 24abdb26cf884367d9a9521d30b09b443d2e4e00
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.openlocfilehash: d5a2c3d10f2cbfcc608d212a9465ca738e1ca15e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72998619"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255038"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
 
@@ -19,7 +19,7 @@ ms.locfileid: "72998619"
 
 ## <a name="news-and-changes-in-cwinrt-20"></a>C++/WinRT 2.0 的新聞和變更
 
-如需關於 [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)、[Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) 和 `cppwinrt.exe` 工具的詳細資訊 &mdash; 包括如何取得並加以安裝 &mdash; 請參閱[適用於 C++/WinRT、XAML、VSIX 擴充功能，以及 NuGet 封裝的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+如需關於 [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)、[Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) 和 `cppwinrt.exe` 工具的詳細資訊 &mdash; 包括如何取得並加以安裝 &mdash; 請參閱[適用於 C++/WinRT、XAML、VSIX 擴充功能，以及 NuGet 封裝的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ### <a name="changes-to-the-cwinrt-visual-studio-extension-vsix-for-version-20"></a>C++/WinRT Visual Studio 擴充功能 (VSIX) 2.0 版的變更
 
@@ -302,7 +302,7 @@ struct MainPage : PageT<MainPage>
 - 強化的智慧型指標。 之前，當移動指派新值時，事件撤銷無法撤銷。 這有助於揭露智慧型指標類別無法可靠地處理自我指派的問題；植根於 [**winrt::com_ptr 結構範本**](/uwp/cpp-ref-for-winrt/com-ptr)。 **winrt::com_ptr** 已修正，而且事件撤銷已修正為正確處理移動語意，以便在指派時撤銷。
 
 > [!IMPORTANT]
-> 對於版本 1.0.181002.2 中的 [C++/WinRT Visual Studio 延伸模組 (VSIX)](https://aka.ms/cppwinrt/vsix) 已進行重要變更，之後在版本 1.0.190128.4 中也進行了變更。 如需這些變更的詳細資料，以及如何影響您現有的專案，請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)和[舊版 VSIX 延伸模組](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
+> 對於版本 1.0.181002.2 中的 [C++/WinRT Visual Studio 延伸模組 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 已進行重要變更，之後在版本 1.0.190128.4 中也進行了變更。 如需這些變更的詳細資料，以及如何影響您現有的專案，請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)和[舊版 VSIX 延伸模組](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
 ### <a name="isolation-from-windows-sdk-header-files"></a>從 Windows SDK 標頭檔案隔離
 

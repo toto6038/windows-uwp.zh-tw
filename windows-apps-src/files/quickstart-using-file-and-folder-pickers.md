@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d45c907215f21977b0a59acede5a8314d6ed168
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b3143247eab0bd8ed4266b78e34ec54dafa4dd7e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369319"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259562"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>使用選擇器開啟檔案和資料夾
 
@@ -24,7 +24,7 @@ ms.locfileid: "66369319"
 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 和 [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 類別來存取檔案，使用 [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker) 來存取資料夾。
 
 > [!NOTE]
-> 如需完整範例，請參閱[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994) \(英文\)。
+> 如需完整範例，請參閱[檔案選擇器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker) \(英文\)。
 
 ## <a name="prerequisites"></a>必要條件
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 63af76e0ee7faa757798f71c63b141e6b2262007
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 72951270a45ba82f1241c967bb70628a3f27f7c1
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867639"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258110"
 ---
 ![設計基本知識](../images/downloads-2x.png)
 
@@ -64,7 +64,7 @@ Fluent 設計/UWP 應用程式的設計與 UI 相關下載。 如需其他工具
 <b>Framer 工具組</b><br>
 (不再支援此工具組。)<br/>
 1806 版，2018 年 6 月<br>
-<a href="https://aka.ms/framertoolkit">下載</a>
+<a href="https://github.com/Microsoft/windows-framer-toolkit">下載</a>
     :::column-end:::
 :::row-end:::
 

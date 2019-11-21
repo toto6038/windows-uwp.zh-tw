@@ -8,12 +8,12 @@ keywords: 裝置, 輸入, 互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6333345a79d92394539d337f1f2390118cff1153
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065325"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258115"
 ---
 #  <a name="ui-considerations-for-uwp-devices"></a>適用於 UWP 裝置的 UI 考量
 
@@ -94,7 +94,7 @@ UI 考量
 
 ## <a name="xbox-and-tv"></a>Xbox 和電視
 
-坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為「10 英呎體驗」。 這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或任何其他連接至電視螢幕的裝置開發應用程式，並且可能使用遊戲台或遙控器作為輸入，您就必須記住這一點。
+坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為「10 英呎體驗」。  這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或任何其他連接至電視螢幕的裝置開發應用程式，並且可能使用遊戲台或遙控器作為輸入，您就必須記住這一點。
 
 為 10 英呎體驗設計 UWP 應用程式，與為這裡所列出的任何其他裝置類別設計 UWP 應用程式十分不同。 如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](designing-for-tv.md)。
 
@@ -131,7 +131,7 @@ UI 考量
 
 所有計算裝置中最為廣泛使用的裝置，手機透過有限的螢幕空間和基本輸入，就可以執行很多功能。 手機有各種不同的大小。較大的手機稱為 平板手機。 平板手機上的 app 體驗類似智慧型手機，但因為平板手機有更大的螢幕實際可用空間，所以在內容使用的方式有一些重要變更。
 
-透過 Continuum 手機版 (此為可相容的 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器，甚至使用滑鼠和鍵盤來讓手機可像膝上型電腦一樣運作。 (如需詳細資訊，請參閱 [Continuum 手機版](https://go.microsoft.com/fwlink/p/?LinkID=699431)一文)。
+透過 Continuum 手機版 (此為可相容的 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器，甚至使用滑鼠和鍵盤來讓手機可像膝上型電腦一樣運作。 (如需詳細資訊，請參閱 [Continuum 手機版](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN)一文)。
 
 螢幕大小
 -   手機 (4 吋 到 5 吋)

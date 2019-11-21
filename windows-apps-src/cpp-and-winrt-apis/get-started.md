@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: ab582d0528d6af8c9a8ae97e43fda2714f8e2fe6
-ms.sourcegitcommit: 2442a5f5b0c4275204063162f0f379fa90ff13b4
+ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72292779"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255136"
 ---
 # <a name="get-started-with-cwinrt"></a>開始使用 C++/WinRT
 
@@ -121,7 +121,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 本主題也會示範如何將 C++/WinRT 支援新增至您可能擁有的 Windows 傳統型應用程式專案。 如果您還未擁有 Windows 傳統型應用程式專案，則可以先建立一個來照著下列步驟操作。 例如，開啟 Visual Studio 並建立 [Visual C++]  \>[Windows 傳統型]  \>[Windows 傳統型應用程式]  專案。
 
-您可以選擇性地安裝 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix) 和 NuGet 套件。 如需詳細資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+您可以選擇性地安裝 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 和 NuGet 套件。 如需詳細資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ### <a name="set-project-properties"></a>設定專案屬性
 

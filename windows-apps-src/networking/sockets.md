@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 49e126ea0212499361fea58b58237ee13fb76ca2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363304"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259173"
 ---
 # <a name="sockets"></a>通訊端
 通訊端是低階資料傳輸技術，許多網路通訊協定在其上實作。 UWP 為用戶端-伺服器或對等應用程式提供 TCP 與 UDP 通訊端類別，不需要指定連線是長期或已建立的連線。
@@ -521,7 +521,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-從 **StreamSocket** 的角度，在執行接續主體之前完成處理常式會完成執行（而且通訊端可供處置）。 因此，如果您想要在接續中使用通訊端，不要處置通訊端，您需要直接（透過 lambda 擷取）或間接 (透過在接續中繼續存取 `args->Socket`) 參考通訊端並使用它，或強制內嵌接續工作。 您可以在 [StreamSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620609) \(英文\)中看到第一項技巧（lambda 擷取）的運作情形。 [建置基本 TCP 通訊端用戶端和伺服器](#build-a-basic-tcp-socket-client-and-server)上一節中的 C++/CX 程式碼使用第二項技巧&mdash;它將要求當做回應 echo 回來，並從其中一個最內層的接續存取 `args->Socket`。
+從 **StreamSocket** 的角度，在執行接續主體之前完成處理常式會完成執行（而且通訊端可供處置）。 因此，如果您想要在接續中使用通訊端，不要處置通訊端，您需要直接（透過 lambda 擷取）或間接 (透過在接續中繼續存取 `args->Socket`) 參考通訊端並使用它，或強制內嵌接續工作。 您可以在 [StreamSocket 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket) \(英文\)中看到第一項技巧（lambda 擷取）的運作情形。 [建置基本 TCP 通訊端用戶端和伺服器](#build-a-basic-tcp-socket-client-and-server)上一節中的 C++/CX 程式碼使用第二項技巧&mdash;它將要求當做回應 echo 回來，並從其中一個最內層的接續存取 `args->Socket`。
 
 當您不要 echo 回應時適用第三項技巧。 您可以使用 `task_continuation_context::use_synchronous_execution()` 選項強制 PPL 內嵌執行接續主體。 以下程式碼範例示範如何做。
 
@@ -1384,4 +1384,4 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 * [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>範例
-* [StreamSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620609)
+* [StreamSocket 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)

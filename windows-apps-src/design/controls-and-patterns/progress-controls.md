@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a409c4b940ad0e194428981f536823d880e56302
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 67315518238bda1359862f36acd398e25e8481e3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364484"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258158"
 ---
 # <a name="progress-controls"></a>進度控制項
 
@@ -183,7 +183,7 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 
@@ -192,4 +192,4 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 **適用於開發人員 (XAML)**
 - [新增進度控制項](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
-- [如何為 Windows Phone 建立自訂不確定的進度列](https://go.microsoft.com/fwlink/p/?LinkID=392426)
+- [如何為 Windows Phone 建立自訂不確定的進度列](https://msdn.microsoft.com/library/windows/apps/gg442303.aspx)

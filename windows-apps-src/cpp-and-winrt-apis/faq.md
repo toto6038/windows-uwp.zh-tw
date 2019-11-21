@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bb19e406df98a24a6d65fc774a29e44ef267272
-ms.sourcegitcommit: c079388634cbd328d0d43e7a6185e09bb4bca65b
+ms.openlocfilehash: b0ec2c5a05e7c4e9309311fa22ad863d06597a53
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71939591"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254990"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -25,7 +25,7 @@ ms.locfileid: "71939591"
 如需完整的變更集合 (包括重大變更)，請參閱 [C++/WinRT 2.0 中的新聞和變更](news.md#news-and-changes-in-cwinrt-20)。 例如，如果您在 Windows 執行階段集合上使用範圍型 `for`，則您現在必須 `#include <winrt/Windows.Foundation.Collections.h>`。
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>我的新專案為什麼不會編譯？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134
-如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，並將 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803) 設定為目標，則新建立的 C++/WinRT 專案可能無法完成，並出現錯誤「error C3861: 'from_abi': identifier not found」  ，以及其他源自 base.h  的錯誤。 解決辦法是將 Windows SDK 的較新 (更一致) 版本設定為目標，或將專案屬性設定為 [C/C++]   > [語言]   > [一致性模式：  否] (此外，如果 **/permissive-** 顯示在 [其他選項]  底下的專案屬性 [C/C++]   > [命令列]  中，請加以刪除)。
+如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，並將 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803) 設定為目標，則新建立的 C++/WinRT 專案可能無法完成，並出現錯誤「error C3861: 'from_abi': identifier not found」  ，以及其他源自 base.h  的錯誤。 解決辦法是將 Windows SDK 的較新 (更一致) 版本設定為目標，或將專案屬性設定為 [C/C++]   > [語言]   > [一致性模式:  否] (此外，如果 **/permissive-** 顯示在 [其他選項]  底下的專案屬性 [C/C++]   > [命令列]  中，請加以刪除)。
 
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>如何解決建置錯誤「C++/WinRT VSIX 不再提供專案建置支援。  請將專案參考新增至 Microsoft.Windows.CppWinRT Nuget 套件」？
 將 **Microsoft.Windows.CppWinRT** NuGet 套件安裝到您的專案中。 如需詳細資訊，請參閱[舊版 VSIX 擴充功能](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
@@ -51,7 +51,7 @@ C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGe
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>為何連結器給我「LNK2019:無法解析的外部符號」錯誤？
 如果無法解析的符號是來自 C++/WinRT 投影的 Windows 命名空間標頭的 API (在 **winrt** 命名空間中)，則 API 在您已包含的標頭中是向前宣告，但其定義是在您尚未包含的標頭中。 包含為 API 命名空間命名的標頭，並且重新建置。 如需詳細資訊，請參閱 [C++/WinRT 投影標頭](consume-apis.md#cwinrt-projection-headers)。
 
-如果無法解析的符號是 Windows 執行階段可用函式，例如 [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)，您便需要在專案中明確連結 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) 傘程式庫。 C++/WinRT 投影仰賴部分這些免費 (非成員) 函式和進入點。 如果您使用其中一個 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix) 專案範本來供應用程式使用，則系統會自動為您連結 `WindowsApp.lib`。 否則，您也可以使用專案連結設定來包括它，或在原始程式碼中執行它。
+如果無法解析的符號是 Windows 執行階段可用函式，例如 [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)，您便需要在專案中明確連結 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) 傘程式庫。 C++/WinRT 投影仰賴部分這些免費 (非成員) 函式和進入點。 如果您使用其中一個 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 專案範本來供應用程式使用，則系統會自動為您連結 `WindowsApp.lib`。 否則，您也可以使用專案連結設定來包括它，或在原始程式碼中執行它。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
