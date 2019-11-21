@@ -7,12 +7,12 @@ ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: ba99abd906bd84a91fae5da1505ac8845dd5b99c
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 5086353adbc07e265f02e12f998ae655cd512d48
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282467"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258973"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 原則
 
@@ -36,7 +36,7 @@ ms.locfileid: "72282467"
 
 您的產品對於許多客戶的經驗都非常重要。 我們迫不及待想要看看您的作品，深感榮幸能夠協助您將產品推廣到全世界。
 
-如果您對原則有任何看法，歡迎到[我們的論壇](http://go.microsoft.com/fwlink/p/?LinkId=224196)提供您的寶貴意見。 我們會將每條意見都納入考量。
+如果您對原則有任何看法，歡迎到[我們的論壇](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore)提供您的寶貴意見。 我們會將每條意見都納入考量。
 
 
 ## <a name="table-of-contents"></a>目錄
@@ -114,7 +114,7 @@ ms.locfileid: "72282467"
 
 **10.2.3**
 
-您的產品不得包含或啟用由 Microsoft [垃圾與惡意軟體](http://go.microsoft.com/fwlink/?LinkId=821298)條件所定義的惡意程式碼。
+您的產品不得包含或啟用由 Microsoft [垃圾與惡意軟體](https://docs.microsoft.com/windows/security/threat-protection/intelligence/criteria)條件所定義的惡意程式碼。
 
 **10.2.4**
 
@@ -257,7 +257,7 @@ ms.locfileid: "72282467"
 
 ### <a name="109-notifications"></a>10.9 通知
 
-產品必須遵守通知的系統設定，即使停用這些通知，產品仍可正常運作。 這包括客戶可以看到的廣告和通知，必須和客戶的喜好設定一致，無論這些通知是由 Microsoft 推播通知服務 (MPNS)、Windows 推播通知服務 (WNS) 或任何其他服務提供。 如果客戶停用通知 (無論是特定產品還是整個系統的通知功能)，您的產品必須仍可繼續正常運作。
+產品必須遵守通知的系統設定，即使停用這些通知，產品仍可正常運作。 這包括客戶可以看到的廣告和通知，必須和客戶的喜好設定一致，無論這些通知是由 Microsoft 推播通知服務 (MPNS)、Windows 推播通知服務或任何其他服務提供。 如果客戶停用通知 (無論是特定產品還是整個系統的通知功能)，您的產品必須仍可繼續正常運作。
 
 如果您的產品使用 MPNS 或 WNS 來傳輸通知，它必須符合下列需求：
 
@@ -291,11 +291,11 @@ ms.locfileid: "72282467"
 
 **10.10.2**
 
-如果您透過合作夥伴中心的府告行銷活動功能購買和建立促銷廣告活動來促銷產品，則所有您提供給 Microsoft 的廣告資料 (含任何相關的登陸頁面) 都必須符合 Microsoft 的[創意規格原則](http://go.microsoft.com/fwlink/p/?LinkId=532593)和[創意承認原則](http://go.microsoft.com/fwlink/p/?LinkId=532595)。
+如果您透過合作夥伴中心的府告行銷活動功能購買和建立促銷廣告活動來促銷產品，則所有您提供給 Microsoft 的廣告資料 (含任何相關的登陸頁面) 都必須符合 Microsoft 的[創意規格原則](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-specs)和[創意承認原則](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies)。
 
 **10.10.3**
 
-產品顯示的任何廣告內容必須符合 Microsoft 的[創意承認原則](http://go.microsoft.com/fwlink/p/?LinkId=532595)。
+產品顯示的任何廣告內容必須符合 Microsoft 的[創意承認原則](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies)。
 
 如果您的產品必須符合 [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的廣告需求，包含下列需求：
 
@@ -309,7 +309,7 @@ ms.locfileid: "72282467"
 
 **10.10.6**
 
-如果產品的對象是小於 13 歲的兒童 (如[兒童連線隱私保護法](http://go.microsoft.com/fwlink/p/?LinkID=623015)所定義)，您必須在合作夥伴中心通知 Microsoft 此一事實，並確認產品中顯示的所有廣告內容皆適合 13 歲以下兒童觀看。
+如果產品的對象是小於 13 歲的兒童 (如[兒童連線隱私保護法](https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy)所定義)，您必須在合作夥伴中心通知 Microsoft 此一事實，並確認產品中顯示的所有廣告內容皆適合 13 歲以下兒童觀看。
 
 ### <a name="1011-mobile-voice-plans"></a>10.11 行動語音方案
 
@@ -330,11 +330,11 @@ Edge 延伸模組必須符合下列額外需求：
 
 **10.13.1**
 
-以 Xbox One 為目標的遊戲產品 (包括主要提供在其他裝置或平台上執行的遊戲遠端遊戲遊玩/控制功能的產品)，必須透過 [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) 或 [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) 程式來使用 Xbox Live 服務。
+以 Xbox One 為目標的遊戲產品 (包括主要提供在其他裝置或平台上執行的遊戲遠端遊戲遊玩/控制功能的產品)，必須透過 [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) 或 [ID@Xbox](https://www.xbox.com/Developers/id) 程式來使用 Xbox Live 服務。
 
 **10.13.2**
 
-若遊戲產品可讓玩家在 Xbox One 裝置上相互通訊或讓網路遊戲同步，則必須使用 Xbox Live 並透過 [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) 方案獲得核准。
+若遊戲產品可讓玩家在 Xbox One 裝置上相互通訊或讓網路遊戲同步，則必須使用 Xbox Live 並透過 [ID@Xbox](https://www.xbox.com/Developers/id) 方案獲得核准。
 
 **10.13.3**
 
@@ -356,7 +356,7 @@ Xbox One 上的遊戲產品不得顯示自 Xbox Live 以外取得的其他好友
 
 使用 Xbox Live 以及提供多人遊戲、使用者產生內容或使用者通訊的遊戲產品：
 - 在使用者登入 Xbox Live 之前，不得允許進行遊戲。
-- 必須遵守[家長監護和服務控制項](https://go.microsoft.com/fwlink/?linkid=860295)。
+- 必須遵守[家長監護和服務控制項](https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity)。
 
 **10.13.7**
 
@@ -385,7 +385,7 @@ Xbox Live 遊戲產品必須符合下列服務使用方式的需求︰
 - 服務及使用者資料在遊戲中必須妥善使用。 此資料包括 (但不限於) 使用方式資料、帳戶識別碼及任何其他個人識別資料、統計資料、分數、評分、排名、與其他使用者的連線，以及任何其他與使用者社交活動相關的資料。
 - 請勿儲存任何 Xbox Live 社交圖形資料 (例如好友名單)，已將 Xbox Live 帳戶連結至您的遊戲之使用者的帳戶識別碼除外。
 - 在您將遊戲自我們的服務移除，或是使用者取消其 Xbox Live 帳戶與您遊戲之間的連結時，請刪除所有帳戶識別碼。 請勿與任何廣告網路、資料代理人、或其他廣告及營利相關的服務共用服務或使用者資料 (即使是匿名、彙總或衍生資料亦然)。
-- 當 Microsoft 收到終端使用者要求刪除其個人資料的申請時，我們會提供終端使用者識別碼的清單，以將這些要求傳達給您。 您必須至少每隔 30 天檢查一次清單，確保您已收到所有的刪除要求，而且您使用清單所提供的資訊僅以滿足終端使用者的刪除要求為限。 您可以在[刪除的帳戶清單工具](https://aka.ms/xbox-deleted)中找到關於此程序的詳細資料。
+- 當 Microsoft 收到終端使用者要求刪除其個人資料的申請時，我們會提供終端使用者識別碼的清單，以將這些要求傳達給您。 您必須至少每隔 30 天檢查一次清單，確保您已收到所有的刪除要求，而且您使用清單所提供的資訊僅以滿足終端使用者的刪除要求為限。 您可以在[刪除的帳戶清單工具](https://forums.xboxlive.com/users/login.html)中找到關於此程序的詳細資料。
 
 ### <a name="1014-account-type"></a>10.14 帳戶類型
 
