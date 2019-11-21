@@ -6,12 +6,12 @@ ms.date: 08/22/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 樣本, directx, 基礎
 ms.localizationpriority: medium
-ms.openlocfilehash: f04c17609976e8bd8f6c1c6143ed7b992b0bb3c5
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: ff39abadc82cc3e0a5d0296ed499baa3b85f2714
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820607"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258491"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze 範例基礎觀念
 
@@ -21,13 +21,13 @@ ms.locfileid: "67820607"
 本主題描述 Marble Maze 專案的基本特性&mdash;例如，它在 Windows 執行階段環境中如何使用 Visual C++、如何建立和建構它，以及如何建置它。 本主題也描述程式碼中採用的幾種慣例。
 
 > [!NOTE]
-> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](https://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](https://github.com/microsoft/Windows-appsample-marble-maze)中找到。
 
 以下是本文件所討論在規劃和開發通用 Windows 平台 (UWP) 遊戲時的一些重點。
 
--   使用**DirectX 11 應用程式 (通用 Windows- C++/CX)** 在 Visual Studio 建立您的 DirectX UWP 遊戲中的範本。
--   Windows 執行階段提供類別和介面，讓您以更現代的物件導向方式來開發 UWP app。
--   使用物件參考） 致敬 (^) 符號，用來管理 Windows 執行階段變數的存留期[Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class)來管理 COM 物件的存留期並[std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class)或是[std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class)來管理其他所有堆積都配置的存留期C++物件。
+-   Use the **DirectX 11 App (Universal Windows - C++/CX)** template in Visual Studio to create your DirectX UWP game.
+-   Windows 執行階段提供類別和介面，讓您以更現代的物件導向方式來開發 UWP 應用程式。
+-   Use object references with the hat (^) symbol to manage the lifetime of Windows Runtime variables, [Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) to manage the lifetime of COM objects, and [std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class) or [std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class) to manage the lifetime of all other heap-allocated C++ objects.
 -   在大多數情況下，使用例外狀況處理 (而不是結果程式碼) 來處理意外的錯誤。
 -   使用 [SAL 註釋](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)並搭配程式碼分析工具，協助找出應用程式中的錯誤。
 
@@ -36,25 +36,25 @@ ms.locfileid: "67820607"
 
 如果您已經下載並解壓縮範例，則可以在 Visual Studio 中開啟 **MarbleMaze_VS2017.sln** 檔案 (在 **C++** 資料夾中)，程式碼會隨即顯示出來。
 
-我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 不過，如果您還沒有現有的專案提供 DirectX UWP 遊戲所需的基本功能，我們建議您建立 Visual Studio 的專案**DirectX 11 應用程式 (通用 Windows- C++/CX)** 範本因為它提供基本工作的 3D 應用程式。 若要這樣做，請執行下列步驟：
+我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows - C++/CX)** template because it provides a basic working 3D application. 若要這樣做，請執行下列步驟：
 
-1. 在 Visual Studio 2019，選取**檔案 > 新增 > 專案...**
+1. In Visual Studio 2019, select **File > New > Project...**
 
-2. 在 **建立新的專案**視窗中，選取**DirectX 11 應用程式 (通用 Windows- C++/CX)** 。 如果您沒有看到此選項，您可能沒有必要的元件，安裝&mdash;請參閱 <<c2> [ 新增或移除工作負載和元件來修改 Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)如需有關如何安裝額外的元件資訊.
+2. In the **Create a new project** window, select **DirectX 11 App (Universal Windows - C++/CX)** . If you don't see this option, you may not have the required components installed&mdash;see [Modify Visual Studio 2019 by adding or removing workloads and components](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) for information about how to install additional components.
 
 ![新專案](images/vs2019-marble-maze-sample-fundamentals-1.png)
 
-3. 選取**下一步]** ，然後輸入**專案名稱**，**位置**要儲存檔案和**方案名稱**，然後選取 [ **建立**。
+3. Select **Next**, and then enter  a **Project name**, a **Location** for the files to be stored, and a **Solution name**, and then select **Create**.
 
 
 
-中的一個重要的專案設定**DirectX 11 應用程式 (通用 Windows- C++/CX)** 範本 **/ZW**選項，可讓程式能夠使用 Windows 執行階段語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。 請參閱[設定編譯器選項](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options)，以取得如何在 Visual Studio 中設定編譯器選項的詳細資訊。
+One important project setting in the **DirectX 11 App (Universal Windows - C++/CX)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. 當您使用 Visual Studio 範本時，這個選項預設為啟用。 請參閱[設定編譯器選項](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options)，以取得如何在 Visual Studio 中設定編譯器選項的詳細資訊。
 
-> **請小心**   **/ZW**選項不相容的選項這類 **/clr**。 如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
+> **Caution**   The **/ZW** option is not compatible with options such as **/clr**. 如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
 
  
 
-應用程式套件的形式提供您從 Microsoft Store 取得的每個 UWP 應用程式。 App 套件包含套件資訊清單，內含 App 的相關資訊。 例如，您可以指定應用程式的功能 (也就是對受保護系統資源或使用者資料的必要存取權)。 如果您認為應用程式需要特定的功能，請使用封裝資訊清單來宣告所需的功能。 資訊清單也可讓您指定專案屬性，例如支援的裝置旋轉、影像填滿和啟動顯示畫面。 您可以在您的專案中開啟 **Package.appxmanifest** 來編輯資訊清單。 如需有關 App 套件的詳細資訊，請參閱[封裝 App](https://docs.microsoft.com/windows/uwp/packaging/index)。
+Every UWP app that you acquire from the Microsoft Store comes in the form of an app package. App 套件包含套件資訊清單，內含 App 的相關資訊。 例如，您可以指定應用程式的功能 (也就是對受保護系統資源或使用者資料的必要存取權)。 如果您認為應用程式需要特定的功能，請使用封裝資訊清單來宣告所需的功能。 資訊清單也可讓您指定專案屬性，例如支援的裝置旋轉、影像填滿和啟動顯示畫面。 您可以在您的專案中開啟 **Package.appxmanifest** 來編輯資訊清單。 如需有關應用程式套件的詳細資訊，請參閱[封裝應用程式](https://docs.microsoft.com/windows/uwp/packaging/index)。
 
 ##  <a name="building-deploying-and-running-the-game"></a>建置、部署及執行遊戲
 
@@ -71,20 +71,20 @@ ms.locfileid: "67820607"
 -   使用觸控、加速計、左搖桿或滑鼠使迷宮傾斜。
 -   使用觸控、控制器的 A 或 Start 按鍵或是滑鼠來關閉功能表，例如計分排行榜。
 -   使用控制器的 Start 按鍵或鍵盤的 P 鍵來暫停或繼續遊戲。
--   使用控制器的 [返回] 按鈕或鍵盤的 Home 鍵來重新啟動遊戲。
+-   使用控制器的 Back 按鍵或鍵盤的 Home 鍵來重新啟動遊戲。
 -   當計分排行榜出現時，使用控制器的 Back 按鍵或鍵盤的 Home 鍵可清除所有分數。
 
 ##  <a name="code-conventions"></a>程式碼慣例
 
 
-Windows 執行階段是一個程式設計介面，您可以使用它來建立只能在特定應用程式環境中執行的 UWP App。 這類應用程式使用授權的函式、 資料類型及裝置，並會從 Microsoft Store 散發。 Windows 執行階段在最低層級包含「應用程式二進位介面」(ABI)。 ABI 是讓 Windows 執行階段 API 可供多種程式設計語言 (例如 JavaScript、.NET 語言和 Visual C++) 存取的低階二進位合約。
+Windows 執行階段是一個程式設計介面，您可以使用它來建立只能在特定應用程式環境中執行的 UWP App。 Such apps use authorized functions, data types, and devices, and are distributed from the Microsoft Store. Windows 執行階段在最低層級包含「應用程式二進位介面」(ABI)。 ABI 是讓 Windows 執行階段 API 可供多種程式設計語言 (例如 JavaScript、.NET 語言和 Visual C++) 存取的低階二進位合約。
 
-若要從 JavaScript 和 .NET 呼叫 Windows 執行階段 API，這些語言需要每個語言環境特有的投射。 當您從 JavaScript 或 .NET 呼叫 Windows 執行階段 API 時，就會叫用投射，而投射再呼叫基礎 ABI 函式。 雖然您可以在 C++ 中直接呼叫 ABI 函式，但 Microsoft 也為 C++ 提供投射，因為它們可讓 Windows 執行階段 API 的使用變得更為輕鬆，但不會降低效能。 Microsoft 也為 Visual C++ 提供專門支援 Windows 執行階段投射的語言擴充功能。 這些語言擴充功能有很多都類似 C++/CLI 語言的語法。 不過，原生應用程式使用此語法來以 Windows 執行階段為目標，而不是以 Common Language Runtime (CLR) 為目標。 物件參考或 ^ 修飾詞是這個新語法的重要部分，因為它能夠透過參考計數的功能來自動刪除執行階段物件。 若沒有其他元件參考 Windows 執行階段物件 (例如，離開範圍或將所有參考設為 [nullptr](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref))，執行階段就會刪除該物件，而不是呼叫 [AddRef](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release) 和 **Release** 等方法來管理該物件的存留期。 另一個使用 Visual C++ 來建立 UWP app 的重要部分就是 **ref new** 關鍵字。 請使用 **ref new** (而不使用 **new**) 來建立計算參考次數的 Windows 執行階段物件。 如需詳細資訊，請參閱[型別系統 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
+若要從 JavaScript 和 .NET 呼叫 Windows 執行階段 API，這些語言需要每個語言環境特有的投射。 當您從 JavaScript 或 .NET 呼叫 Windows 執行階段 API 時，就會叫用投射，而投射再呼叫基礎 ABI 函式。 雖然您可以在 C++ 中直接呼叫 ABI 函式，但 Microsoft 也為 C++ 提供投射，因為它們可讓 Windows 執行階段 API 的使用變得更為輕鬆，但不會降低效能。 Microsoft 也為 Visual C++ 提供專門支援 Windows 執行階段投射的語言擴充功能。 這些語言擴充功能有很多都類似 C++/CLI 語言的語法。 不過，原生應用程式使用此語法來以 Windows 執行階段為目標，而不是以 Common Language Runtime (CLR) 為目標。 物件參考或 ^ 修飾詞是這個新語法的重要部分，因為它能夠透過參考計數的功能來自動刪除執行階段物件。 若沒有其他元件參考 Windows 執行階段物件 (例如，離開範圍或將所有參考設為 **nullptr**)，執行階段就會刪除該物件，而不是呼叫 [AddRef](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 和 [Release](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release) 等方法來管理該物件的存留期。 另一個使用 Visual C++ 來建立 UWP app 的重要部分就是 **ref new** 關鍵字。 請使用 **ref new** (而不使用 **new**) 來建立計算參考次數的 Windows 執行階段物件。 如需詳細資訊，請參閱[型別系統 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
 
 > [!IMPORTANT]
 > 當您建立 Windows 執行階段物件或建立 Windows 執行階段元件時，您只需要使用 **^** 和 **ref new**。 當您撰寫的核心應用程式碼不使用 Windows 執行階段時，您可以使用標準 C++ 語法。
 
-Marble Maze 使用 **^** 並搭配 **Microsoft::WRL::ComPtr** 來管理堆積配置的物件，並使記憶體流失情況降到最低。 我們建議您在使用 ^ 來管理 Windows 執行階段變數的存留期**ComPtr**來管理 COM 變數 （例如，當您使用 DirectX），存留期並**std::shared\_ptr**或**std::unique\_ptr**來管理其他所有堆積都配置的存留期C++物件。
+Marble Maze 使用 **^** 並搭配 **Microsoft::WRL::ComPtr** 來管理堆積配置的物件，並使記憶體流失情況降到最低。 We recommend that you use ^ to manage the lifetime of Windows Runtime variables, **ComPtr** to manage the lifetime of COM variables (such as when you use DirectX), and **std::shared\_ptr** or **std::unique\_ptr** to manage the lifetime of all other heap-allocated C++ objects.
 
  
 
@@ -99,7 +99,7 @@ Marble Maze 使用例外狀況處理做為處理意外錯誤的主要方法。 �
 -   使用例外狀況來傳達意外錯誤。
 -   不要使用例外狀況來控制程式碼的流程。
 -   只攔截您可以安全處理和復原的例外狀況。 否則，不要攔截例外狀況，請讓 app 終止。
--   當您呼叫 DirectX 常式傳回 **HRESULT** 時，請使用 **DX::ThrowIfFailed** 函式。 此函式是在 [DirectXHelper.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/master/C%2B%2B/Shared/DirectXHelper.h) 中定義。 如果提供的 **HRESULT** 是錯誤碼，**ThrowIfFailed** 會擲回例外狀況。 例如，**電子\_指標**導致**ThrowIfFailed**擲回[platform:: nullreferenceexception](https://docs.microsoft.com/cpp/cppcx/platform-nullreferenceexception-class)。
+-   當您呼叫 DirectX 常式傳回 **HRESULT** 時，請使用 **DX::ThrowIfFailed** 函式。 此函式是在 [DirectXHelper.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/master/C%2B%2B/Shared/DirectXHelper.h) 中定義。 如果提供的 **HRESULT** 是錯誤碼，**ThrowIfFailed** 會擲回例外狀況。 For example, **E\_POINTER** causes **ThrowIfFailed** to throw [Platform::NullReferenceException](https://docs.microsoft.com/cpp/cppcx/platform-nullreferenceexception-class).
 
     當您使用 **ThrowIfFailed** 時，請將 DirectX 呼叫寫在單獨一行，以改善程式碼的可讀性，如下列範例所示。
 
@@ -143,8 +143,8 @@ void LoadMesh(
 ## <a name="related-topics"></a>相關主題
 
 
-* [滾珠迷宮應用程式結構](marble-maze-application-structure.md)
-* [開發滾珠迷宮中 UWP 遊戲C++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Marble Maze application structure](marble-maze-application-structure.md)
+* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

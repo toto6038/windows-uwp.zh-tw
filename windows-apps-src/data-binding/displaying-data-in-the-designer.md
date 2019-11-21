@@ -4,28 +4,28 @@ title: 設計介面上適用於原型設計的範例資料
 description: 針對您的 app，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e7b3cd9185e64d701571532d0b632c270476492
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5f08c2cc39bb4cdf9a49351f70143a0f86df1fb7
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362557"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254718"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>設計介面上適用於原型設計的範例資料
 =============================================================================================
 
 
 
-**附註**  您需要範例資料的程度 — 多少可協助您 — 取決於您的繫結的使用是否[{Binding} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)或[{x： 繫結} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension). 本主題中所述的技術是以 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 的使用方式為依據，因此，它們只適用於 **{Binding}** 。 但是，如果您使用的是 **{x:Bind}** ，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
+**Note**  The degree to which you need sample data—and how much it will help you—depends on whether your bindings use the [{Binding} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) or the [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension). 本主題中所述的技術是以 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 的使用方式為依據，因此，它們只適用於 **{Binding}** 。 但是，如果您使用的是 **{x:Bind}** ，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
 
 針對您的 app，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。 為了讓您的控制項能夠填入資料 (讓您能夠在 app 的配置、範本及其他視覺化屬性上運作)，系統提供了各種不同方式，讓您可以使用設計階段的範例資料。 如果您正在建置草圖 (或原型) app，則範例資料也可以是非常實用且省時的。 您可以在執行階段於草圖或原型中使用範例資料來說明您的想法，而不需連線到實際的即時資料。
 
-**範例應用程式，示範 {Binding}**
+**Sample apps that demonstrate {Binding}**
 
--   下載 [Bookstore1](https://go.microsoft.com/fwlink/?linkid=532950) app。
--   下載 [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952) app。
+-   下載 [Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10) app。
+-   下載 [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) app。
 
 <a name="setting-datacontext-in-markup"></a>在標記中設定 DataContext
 -----------------------------
@@ -40,11 +40,11 @@ public MainPage()
 }
 ```
 
-但是，如果您要這樣做，則您的頁面就不能和它原本一樣是「可設計的」。 原因在於當您在 Visual Studio 或 Blend for Visual Studio 中開啟 XAML 頁面時，永遠不會執行命令式程式碼來指派 **DataContext** 值 (事實上，不會執行您的任何程式碼後置)。 XAML 工具當然會剖析您的標記並將其中宣告的任何物件具現化，但它們實際上不會將您的頁面類型本身具現化。 結果就是您將不會在控制項或 [建立資料繫結]  對話方塊中看見任何資料，而您頁面的樣式和配置將更具挑戰性。
+但是，如果您要這樣做，則您的頁面就不能和它原本一樣是「可設計的」。 原因在於當您在 Visual Studio 或 Blend for Visual Studio 中開啟 XAML 頁面時，永遠不會執行命令式程式碼來指派 **DataContext** 值 (事實上，不會執行您的任何程式碼後置)。 XAML 工具當然會剖析您的標記並將其中宣告的任何物件具現化，但它們實際上不會將您的頁面類型本身具現化。 結果就是您將不會在控制項或 **\[建立資料繫結\]** 對話方塊中看見任何資料，而您頁面的樣式和配置將更具挑戰性。
 
 ![疏鬆設計 UI。](images/displaying-data-in-the-designer-01.png)
 
-第一個解決方式是嘗試將 **DataContext** 指派標記為註解，並改為在頁面標記中設定 **DataContext**。 如此一來，您的即時資料就會在設計階段和執行階段顯示。 若要這樣做，請先開啟您的 XAML 頁面。 然後，在**文件大綱**] 視窗中，按一下 [根的設計項目 (通常具有標籤 **\[頁面\]** ) 來選取它。 在 [屬性]  視窗中，尋找 **DataContext** 屬性 (位於常用類別中)，然後按一下 [新增]  。 在 [選取物件]  對話方塊中按一下您的檢視模型類型，然後按一下 [確定]  。
+第一個解決方式是嘗試將 **DataContext** 指派標記為註解，並改為在頁面標記中設定 **DataContext**。 如此一來，您的即時資料就會在設計階段和執行階段顯示。 若要這樣做，請先開啟您的 XAML 頁面。 Then, in the **Document Outline** window, click the root designable element (usually with the label **\[Page\]** ) to select it. 在 **\[屬性\]** 視窗中，尋找 **DataContext** 屬性 (位於常用類別中)，然後按一下 **\[新增\]** 。 在 **\[選取物件\]** 對話方塊中按一下您的檢視模型類型，然後按一下 **\[確定\]** 。
 
 ![用於設定 DataContext 的 UI。](images/displaying-data-in-the-designer-02.png)
 
@@ -57,11 +57,11 @@ public MainPage()
     </Page.DataContext>
 ```
 
-而此處是您的繫結目前可解析的設計介面外觀。 請注意，目前已根據 **DataContext** 類型及您可繫結的屬性來填入 [建立資料繫結]  對話方塊中的 [路徑]  選擇器。
+而此處是您的繫結目前可解析的設計介面外觀。 請注意，目前已根據 **DataContext** 類型及您可繫結的屬性來填入 **\[建立資料繫結\]** 對話方塊中的 **\[路徑\]** 選擇器。
 
 ![可設計的 UI。](images/displaying-data-in-the-designer-03.png)
 
-[建立資料繫結]  對話方塊只需要可從中運作的類型，但是繫結需要使用值來初始化的屬性。 如果您不想在設計階段期間連接到雲端服務 (基於效能、付費資料傳輸、隱私權問題、這類事項等因素)，則您的初始化程式碼會進行檢查，以查看您的 app 是否正在設計工具 (例如 Visual Studio 或 Blend for Visual Studio) 中執行，並且會在該情況下載入僅供設計階段使用的範例資料。
+**\[建立資料繫結\]** 對話方塊只需要可從中運作的類型，但是繫結需要使用值來初始化的屬性。 如果您不想在設計階段期間連接到雲端服務 (基於效能、付費資料傳輸、隱私權問題、這類事項等因素)，則您的初始化程式碼會進行檢查，以查看您的 app 是否正在設計工具 (例如 Visual Studio 或 Blend for Visual Studio) 中執行，並且會在該情況下載入僅供設計階段使用的範例資料。
 
 ``` csharp
 if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
@@ -79,9 +79,9 @@ else
 <a name="sample-data-from-class-and-design-time-attributes"></a>「來自類別的範例資料」和設計階段屬性
 ---------------------------------------------------------------------------------------
 
-如果基於任何因素而導致上節中的所有選項都不適合您的情況，則您仍然可透過 XAML 工具的功能和設計階段屬性來使用許多設計階段資料選項。 Blend for Visual Studio 中的 [從類別建立範例資料]  功能就是一個很好的選項。 您可以在 [資料]  面板頂端的其中一個按鈕中找到該命令。
+如果基於任何因素而導致上節中的所有選項都不適合您的情況，則您仍然可透過 XAML 工具的功能和設計階段屬性來使用許多設計階段資料選項。 Blend for Visual Studio 中的 **\[從類別建立範例資料\]** 功能就是一個很好的選項。 您可以在 **\[資料\]** 面板頂端的其中一個按鈕中找到該命令。
 
-而您只需指定要使用的命令類別即可。 命令接著會為您執行兩個重要動作。 首先，它會產生 XAML 檔案，其中包含適用於 以遞迴方式合成您所選擇的類別及其所有成員的範例資料 (事實上，工具同樣適用於 XAML 或 JSON 檔案)。 其次，它會在 [資料]  面板中填入您所選擇之類別的結構描述。 接著您可以將成員從 [資料]  面板拖曳到設計介面來執行各種工作。 根據您的拖曳項目及放置的位置，您可以將繫結新增到現有的控制項 (使用 **{Binding}** )，或建立新的控制項並同時繫結它們。 在這任一種情況下，如果您尚未設定其中一個，操作也會在頁面的配置根目錄中設定設計階段資料內容 (**d:DataContext**)。 這個設計階段資料內容會使用 **d:DesignData** 屬性，從產生的 XAML 檔案中取得範例資料 (此外，您可以隨意在專案中尋找並編輯，以使其包含您想要的範例資料)。
+而您只需指定要使用的命令類別即可。 命令接著會為您執行兩個重要動作。 首先，它會產生 XAML 檔案，其中包含適用於 以遞迴方式合成您所選擇的類別及其所有成員的範例資料 (事實上，工具同樣適用於 XAML 或 JSON 檔案)。 其次，它會在 **\[資料\]** 面板中填入您所選擇之類別的結構描述。 接著您可以將成員從 **\[資料\]** 面板拖曳到設計介面來執行各種工作。 根據您的拖曳項目及放置的位置，您可以將繫結新增到現有的控制項 (使用 **{Binding}** )，或建立新的控制項並同時繫結它們。 在這任一種情況下，如果您尚未設定其中一個，操作也會在頁面的配置根目錄中設定設計階段資料內容 (**d:DataContext**)。 這個設計階段資料內容會使用 **d:DesignData** 屬性，從產生的 XAML 檔案中取得範例資料 (此外，您可以隨意在專案中尋找並編輯，以使其包含您想要的範例資料)。
 
 ``` xaml
 <Page ...
@@ -97,9 +97,9 @@ else
 
 各種不同的 xmlns 宣告表示，只有在設計階段才會解譯具有 **d:** 首碼的屬性，在執行階段則會略過。 因此，**d:DataContext** 屬性只會在設計階段影響 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 屬性的值，在執行階段則沒有任何作用。 如有需要，您甚至可以在標記中同時設定 **d:DataContext** 和 **DataContext**。 **d:DataContext** 將會在設計階段覆寫，而 **DataContext** 將會在執行階段覆寫。 這些相同的覆寫規則適用於所有的設計階段和執行階段屬性。
 
-**d:DataContext** 屬性及其他所有設計階段屬性都記載於[設計階段屬性](https://go.microsoft.com/fwlink/p/?LinkId=272504)主題中，其仍適用於通用 Windows 平台 (UWP) app。
+**d:DataContext** 屬性及其他所有設計階段屬性都記載於[設計階段屬性](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx)主題中，其仍適用於通用 Windows 平台 (UWP) app。
 
-[**CollectionViewSource** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)沒有**DataContext**屬性，但是沒有**來源**屬性。 因此，您可以使用 **d:Source** 屬性，在 **CollectionViewSource** 上設定僅限設計階段的範例資料。
+[**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) doesn't have a **DataContext** property, but it does have a **Source** property. 因此，您可以使用 **d:Source** 屬性，在 **CollectionViewSource** 上設定僅限設計階段的範例資料。
 
 ``` xaml
     <Page.Resources>
@@ -139,15 +139,15 @@ else
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-**IsDesignTimeCreatable** 屬性會指出設計工具應該實際建立類別的執行個體，表示這個類別具有公用的預設建構函式，以及它會在其本身中填入資料 (真實或範例)。 如果您沒有設定 **IsDesignTimeCreatable** (或將它設定為 **False**)，則將無法取得設計介面上顯示的範例資料。 所有設計工具的用途在於案例是要剖析其可繫結屬性的類別，並顯示這些功能**資料**面板並在**建立資料繫結**對話方塊。
+**IsDesignTimeCreatable** 屬性會指出設計工具應該實際建立類別的執行個體，表示這個類別具有公用的預設建構函式，以及它會在其本身中填入資料 (真實或範例)。 如果您沒有設定 **IsDesignTimeCreatable** (或將它設定為 **False**)，則將無法取得設計介面上顯示的範例資料。 All the design tool does in that case is to parse the class for its bindable properties and display these in the **Data** panel and in the **Create Data Binding** dialog.
 
 <a name="sample-data-for-prototyping"></a>適用於原型設計的範例資料
 --------------------------------------------------------
 
-針對原型設計，您會想要在設計階段和執行階段使用範例資料。 針對這個使用案例，Blend for Visual Studio 具備 [新增範例資料]  功能。 您可以在 [資料]  面板頂端的其中一個按鈕中找到該命令。
+針對原型設計，您會想要在設計階段和執行階段使用範例資料。 針對這個使用案例，Blend for Visual Studio 具備 **\[新增範例資料\]** 功能。 您可以在 **\[資料\]** 面板頂端的其中一個按鈕中找到該命令。
 
-您可以在 [資料]  面板中直接實際設計範例資料的結構描述，而不需指定類別。 您也可以在 [資料]  面板中編輯範例資料值：不需開啟和編輯檔案 (儘管如此，如有需要，您仍然可以執行該動作)。
+您可以在 **\[資料\]** 面板中直接實際設計範例資料的結構描述，而不需指定類別。 您也可以在 **\[資料\]** 面板中編輯範例資料值：不需開啟和編輯檔案 (儘管如此，如有需要，您仍然可以執行該動作)。
 
-[新增範例資料]  功能會使用 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 而非 **d:DataContext**，因此，當您執行草圖或原型時以及在設計期間就能使用範例資料。 此外，[資料]  面板確實能夠加速您的設計和繫結工作。 例如，只要將集合屬性從 [資料]  面板拖曳到設計介面，就能產生資料繫結項目控制項和必要的範本，來建置並執行所有就緒的項目。
+**\[新增範例資料\]** 功能會使用 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 而非 **d:DataContext**，因此，當您執行草圖或原型時以及在設計期間就能使用範例資料。 此外， **\[資料\]** 面板確實能夠加速您的設計和繫結工作。 例如，只要將集合屬性從 **\[資料\]** 面板拖曳到設計介面，就能產生資料繫結項目控制項和必要的範本，來建置並執行所有就緒的項目。
 
 ![適用於原型設計的範例資料。](images/displaying-data-in-the-designer-04.png)

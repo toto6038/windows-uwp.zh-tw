@@ -6,15 +6,15 @@ Search.Product: eADQiWindows 10XVcnh
 title: 自訂視訊效果
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 819f0b4a5ba17a866eb50539f5138460eefd0eec
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1be4bf71d99bd6560ce4ed753b55dacdfcceb868
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318395"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257197"
 ---
 # <a name="custom-video-effects"></a>自訂視訊效果
 
@@ -28,15 +28,15 @@ ms.locfileid: "67318395"
 
 自訂視訊效果是在實作 [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect) 介面之類別中定義。 此類別不能直接包含在您 App 的專案中。 您必須改為使用 Windows 執行階段元件來裝載您的視訊效果類別。
 
-**新增您的視訊效果的 Windows 執行階段元件**
+**Add a Windows Runtime component for your video effect**
 
-1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 \[檔案\] 功能表，然後選取 \[新增\] - \[新專案...\]。  **&gt;**
-2.  選取 \[Windows 執行階段元件 (通用 Windows)\] 專案類型。 
-3.  針對此範例，請將專案命名為「VideoEffectComponent」。  此名稱將會由稍後的程式碼所參考。
-4.  按一下 [確定]  。
-5.  專案範本會建立名為 Class1.cs 的類別。 在 \[方案總管\] 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 \[重新命名\]。  
-6.  將檔案重新命名為「ExampleVideoEffect.cs」。  Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 [ **是**]。
-7.  開啟「**ExampleVideoEffect.cs**」並更新類別定義以實作 [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect) 介面。
+1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 **\[檔案\]** 功能表，然後選取 **\[新增\] -&gt; \[新專案...\]** 。
+2.  選取 **\[Windows 執行階段元件 (通用 Windows)\]** 專案類型。
+3.  針對此範例，請將專案命名為 *VideoEffectComponent*。 此名稱將會由稍後的程式碼所參考。
+4.  按一下 **\[確定\]** 。
+5.  專案範本會建立名為 Class1.cs 的類別。 在 **\[方案總管\]** 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 **\[重新命名\]** 。
+6.  將檔案重新命名為 *ExampleVideoEffect.cs*。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 **\[是\]** 。
+7.  開啟 **ExampleVideoEffect.cs** 並更新類別定義以實作 [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect) 介面。
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
 
@@ -60,7 +60,7 @@ ms.locfileid: "67318395"
 
 ### <a name="discardqueuedframes-method"></a>DiscardQueuedFrames 方法
 
-在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.discardqueuedframes) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面，以用於處理目前的畫面之上。 呼叫此方法時，您應該處置先前已儲存的框架組合。 除了針對累計的視訊畫面之外，此方法也可以用來重設任何與先前畫面相關的狀態。
+在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.discardqueuedframes) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面，以用於處理目前的畫面之上。 呼叫此方法時，您應該處置先前已儲存的畫面組合。 除了針對累計的視訊畫面之外，此方法也可以用來重設任何與先前畫面相關的狀態。
 
 
 [!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
@@ -146,13 +146,13 @@ ms.locfileid: "67318395"
 
 > [!NOTE]
 > 因為此技術會存取原生、未受管理的影像緩衝區，您必須將您的專案設定為允許不安全的程式碼。
-> 1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 [屬性]。 
-> 2.  選取 \[建置\]  索引標籤。
-> 3.  選取 \[允許 Unsafe 程式碼\]  核取方塊。
+> 1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 **\[屬性\]** 。
+> 2.  選取 **\[建置\]** 索引標籤。
+> 3.  選取 **\[允許 unsafe 程式碼\]** 核取方塊。
 
  
 
-現在您可以新增 **ProcessFrame** 方法實作。 首先，此方法會同時從輸入和輸出軟體點陣圖取得 [**BitmapBuffer**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) 物件。 請注意，輸出框架會針對寫入開啟，而輸入框架則會針對讀取開啟。 接下來，將會透過呼叫 [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) 來為每個緩衝區取得 [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IMemoryBufferReference)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer**，來取得實際的資料緩衝區。
+現在您可以新增 **ProcessFrame** 方法實作。 首先，此方法會同時從輸入和輸出軟體點陣圖取得 [**BitmapBuffer**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) 物件。 請注意，輸出畫面格會針對寫入開啟，而輸入畫面格則會針對讀取開啟。 接下來，將會透過呼叫 [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) 來為每個緩衝區取得 [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IMemoryBufferReference)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer**，來取得實際的資料緩衝區。
 
 現在您已取得資料緩衝區，您可以從輸入緩衝區讀取，並寫入至輸出緩衝區。 緩衝區的配置是透過呼叫 [**GetPlaneDescription**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription) 取得，這將能提供緩衝區寬度、Stride 及初始位移的資訊。 「每一像素位元數」是由先前透過 [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) 方法所設定的編碼屬性所決定。 緩衝區格式資訊是用來找出每個像素之緩衝區的索引。 來源緩衝區的像素值會被複製到目標緩衝區中，其色彩值會被乘以針對此效果定義的 FadeValue 屬性，來以指定的量將它們變暗。
 
@@ -162,17 +162,17 @@ ms.locfileid: "67318395"
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>使用硬體處理實作 IBasicVideoEffect 介面
 
 
-使用硬體 (GPU) 處理建立自訂視訊效果，與上述使用軟體處理的方式幾乎相同。 本節將說明使用硬體處理之效果的一些差異。 此範例使用 Win2D Windows 執行階段 API。 如需使用 Win2D 的詳細資訊，請參閱 [Win2D 文件](https://go.microsoft.com/fwlink/?LinkId=519078)。
+使用硬體 (GPU) 處理建立自訂視訊效果，與上述使用軟體處理的方式幾乎相同。 本節將說明使用硬體處理之效果的一些差異。 此範例使用 Win2D Windows 執行階段 API。 如需使用 Win2D 的詳細資訊，請參閱 [Win2D 文件](https://microsoft.github.io/Win2D/html/Introduction.htm)。
 
 使用下列步驟，將 Win2D NuGet 套件新增到您依照本文開頭的**將自訂效果新增到您的 App** 一節建立的專案。
 
-**若要將來參照 Win2D NuGet 套件加入作用專案**
+**To add the Win2D NuGet package to your effect project**
 
-1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 [管理 NuGet 套件]。   
-2.  在視窗頂端，選取 [瀏覽] 索引標籤。 
+1.  在 **\[方案總管\]** 中，以滑鼠右鍵按一下 **\[VideoEffectComponent\]** 專案，然後選取 **\[管理 NuGet 套件\]** 。
+2.  在視窗頂端，選取 **\[瀏覽\]** 索引標籤。
 3.  在搜尋方塊中輸入 **Win2D**。
-4.  選取 [Win2D.uwp]，然後選取右窗格中的 [安裝]。  
-5.  [檢閱變更] 對話方塊會顯示要安裝的套件。  按一下 [確定]  。
+4.  選取 **\[Win2D.uwp\]** ，然後選取右窗格中的 **\[安裝\]** 。
+5.  **\[檢閱變更\]** 對話方塊會顯示要安裝的套件。 按一下 **\[確定\]** 。
 6.  接受套件授權。
 
 除了包含在基本專案設定中的命名空間之外，您將需要包含下列由 Win2D 提供的命名空間。
@@ -214,9 +214,9 @@ ms.locfileid: "67318395"
 
 如果要從您的 App 使用您的視訊效果，您必須將針對效果專案的參照新增到您的 App。
 
-1.  在 \[方案總管\] 中，於您的專案下方，以滑鼠右鍵按一下 \[參考\]  ，然後選取 \[加入參考\]  。
-2.  展開 \[專案\]  索引標籤，選取 \[方案\]  ，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *VideoEffectComponent*。
-3.  按一下 [確定]  。
+1.  在 [方案總管] 中，於您的專案下方，以滑鼠右鍵按一下 **\[參考\]** ，然後選取 **\[加入參考\]** 。
+2.  展開 **\[專案\]** 索引標籤，選取 **\[方案\]** ，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *VideoEffectComponent*。
+3.  按一下 **\[確定\]** 。
 
 ### <a name="add-your-custom-effect-to-a-camera-video-stream"></a>將您的自訂效果新增到相機視訊串流
 
@@ -239,7 +239,7 @@ ms.locfileid: "67318395"
 
 
 ## <a name="related-topics"></a>相關主題
-* [簡單的相機預覽存取權](simple-camera-preview-access.md)
+* [Simple camera preview access](simple-camera-preview-access.md)
 * [媒體組合和編輯](media-compositions-and-editing.md)
-* [來參照 Win2D 文件](https://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Win2D documentation](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [媒體播放](media-playback.md)

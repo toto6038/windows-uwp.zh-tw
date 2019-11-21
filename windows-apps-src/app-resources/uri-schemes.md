@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 7564060e28d3e78608c6f30b1400179087db2b86
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 8627bd7f9f405509cb1bff40d94f10552241f4ce
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061855"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254590"
 ---
 # <a name="uri-schemes"></a>URI 配置
 
@@ -19,9 +19,9 @@ ms.locfileid: "73061855"
 
 ## <a name="common-features-of-the-uri-schemes"></a>URI 配置的一般功能
 
-本主題說明的所有配置都遵循正規化及資源擷取的一般 URI 配置規則。 如需了解 URI 的一般語法，請參閱 [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444)。
+本主題說明的所有配置都遵循正規化及資源擷取的一般 URI 配置規則。 如需了解 URI 的一般語法，請參閱 [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt)。
 
-所有的 URI 配置都會根據 [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) 將階層式組件定義為 URI 的授權單位及路徑元件。
+所有的 URI 配置都會根據 [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) 將階層式組件定義為 URI 的授權單位及路徑元件。
 
 ```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
@@ -112,7 +112,7 @@ ms-appx:///images/logo.png
 
 `ms-appx(-web)` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，當存取資源的基礎檔案系統不區分大小寫時 (例如 NTFS)，則是以不區分大小寫的方式進行擷取。
 
-標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 字元 "？"、"#"、"/"、"*" 和 ' "' （雙引號字元）必須以百分比編碼，表示檔案或資料夾名稱之類的資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要擷取名稱為 Hello#World.html 的檔案，請使用這個 URI。
+標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 The characters "?", "#", "/", "*", and '"' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要擷取名稱為 Hello#World.html 的檔案，請使用這個 URI。
 
 ```xml
 ms-appx:///Hello%23World.html
@@ -185,7 +185,7 @@ ms-appdata:///roaming/
 
 `ms-appdata` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，當存取資源的基礎檔案系統不區分大小寫時 (例如 NTFS)，則是以不區分大小寫的方式進行擷取。
 
-標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 字元 "？"、"#"、"/"、"*" 和 ' "' （雙引號字元）必須以百分比編碼，表示檔案或資料夾名稱之類的資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要擷取名稱為 Hello#World.html 的本機檔案，請使用這個 URI。
+標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 The characters "?", "#", "/", "*", and '"' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要擷取名稱為 Hello#World.html 的本機檔案，請使用這個 URI。
 
 ```xml
 ms-appdata://local/Hello%23World.html
@@ -253,9 +253,9 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 如需範例及詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[對語言、縮放比例及高對比的磚和快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)。
 
-`ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，基礎的抓取會執行[CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) ，並將*ignoreCase*設定為 `true`。
+`ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 However, the underlying retrieval does a [CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) with *ignoreCase* set to `true`.
 
-標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 字元 "？"、"#"、"/"、"*" 和 ' "' （雙引號字元）必須以百分比編碼，表示檔案或資料夾名稱之類的資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要從名為 `Hello#World.resw`的資源檔中取出字串資源，請使用此 URI。
+標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 The characters "?", "#", "/", "*", and '"' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. 所有百分比編碼字元都會在擷取前進行解碼。 Thus, to retrieve a string resource from a Resources File named `Hello#World.resw`, use this URI.
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -269,10 +269,10 @@ ms-resource:///Hello%23World/String1
 
 ## <a name="related-topics"></a>相關主題
 
-* [統一資源識別元（URI）：一般語法](https://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [Uniform Resource Identifier (URI): Generic Syntax](https://www.ietf.org/rfc/rfc3986.txt)
 * [封裝應用程式](../packaging/index.md)
-* [從 XAML 標記和程式碼參考影像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
+* [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [儲存及擷取設定和其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
 * [當地語系化您 UI 及應用程式封裝資訊清單中的字串](localize-strings-ui-manifest.md)
 * [資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
-* [語言、縮放和高對比的磚與快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
+* [Tile and toast notification support for language, scale, and high contrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

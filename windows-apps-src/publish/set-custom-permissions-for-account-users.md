@@ -1,39 +1,39 @@
 ---
-Description: 設定帳戶使用者的角色或自訂許可權。
+Description: Set roles or custom permissions for account users.
 title: 設定帳戶使用者的角色或自訂權限
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
-ms.openlocfilehash: ead8012c6d4b9243e70dcc09f7ef174a3d907356
-ms.sourcegitcommit: 035b03f1247eae4e9359ee7db66429d4e1c1d09b
+ms.openlocfilehash: d14187509c274d23e09ac26b876a0e6ff2a03bb4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "68349215"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259919"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
-當您[將使用者新增至您的合作夥伴中心帳戶](add-users-groups-and-azure-ad-applications.md)時, 您必須指定他們在帳戶內的存取權。 您可以指派他們[標準角色](#roles) (套用至整個帳戶)，或是[自訂其權限](#custom)以提供適當層級的存取權。 某些自訂權限適用於整個帳戶，某些權限可限制為一或多個特定產品 (如果您想要，可針對所有產品授與)。
+When you [add users to your Partner Center account](add-users-groups-and-azure-ad-applications.md), you'll need to specify what access they have within the account. 您可以指派他們[標準角色](#roles) (套用至整個帳戶)，或是[自訂其權限](#custom)以提供適當層級的存取權。 某些自訂權限適用於整個帳戶，某些權限可限制為一或多個特定產品 (如果您想要，可針對所有產品授與)。
 
 > [!NOTE] 
 > 不論您是新增使用者、群組或 Azure AD 應用程式，都適用相同的角色和權限。
 
 當判斷要套用哪個角色或權限，請牢記： 
--   除非您[自訂許可權](#custom)並指派[產品層級許可權](#product-level-permissions), 否則使用者 (包括群組和 Azure AD 應用程式) 將能夠以與其指派的角色相關聯的許可權來存取整個合作夥伴中心帳戶。因此, 他們只能使用特定的應用程式和 (或) 附加元件。
+-   Users (including groups and Azure AD applications) will be able to access the entire Partner Center account with the permissions associated with their assigned role(s), unless you [customize permissions](#custom) and assign [product-level permissions](#product-level-permissions) so that they can only work with specific apps and/or add-ons.
 -   您可以藉由選取多個角色，來允許使用者、群組或 Azure AD 應用程式具備一個以上之角色功能的存取權，或使用自訂權限授與您想要的存取權。
 -   具有特定角色 (或一組自訂權限) 的使用者也可以是具有不同角色 (或一組權限) 之群組的一部分。 在此情況下，使用者將具備與群組和個別帳戶相關聯之所有功能的存取權。
 
 > [!TIP]
-> 本主題專屬於[合作夥伴中心](https://partner.microsoft.com/dashboard)內的 Windows apps 開發人員計畫。 如需硬體開發人員計畫中使用者角色的相關資訊，請參閱[管理使用者角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。 如需有關 Windows 傳統型應用程式計畫中使用者角色的詳細資訊，請參閱 [Windows 傳統型應用程式計畫](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)。
+> This topic is specific to the Windows apps developer program in [Partner Center](https://partner.microsoft.com/dashboard). 如需硬體開發人員計畫中使用者角色的相關資訊，請參閱[管理使用者角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。 如需有關 Windows 傳統型應用程式計畫中使用者角色的詳細資訊，請參閱 [Windows 傳統型應用程式計畫](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)。
 
 
 <span id="roles" />
 
 ## <a name="assign-roles-to-account-users"></a>指派角色給帳戶使用者
 
-根據預設, 當您將使用者、群組或 Azure AD 應用程式新增至合作夥伴中心帳戶時, 會顯示一組標準角色供您選擇。 每個角色都具備一組特定權限，以便在帳戶內執行特定功能。 
+By default, a set of standard roles is presented for you to choose from when you add a user, group, or Azure AD application to your Partner Center account. 每個角色都具備一組特定權限，以便在帳戶內執行特定功能。 
 
 除非選取 **\[自訂權限\]** 來選擇定義[自訂權限](#custom)，否則您新增到帳戶的每個使用者、群組或 Azure AD 應用程式至少必須被指派下列其中一個標準角色。 
 
@@ -41,25 +41,25 @@ ms.locfileid: "68349215"
 > 帳戶的**擁有者**是第一位使用 Microsoft 帳戶建立它的人 (而不是任何透過 Azure AD 新增的使用者)。 這個帳戶擁有者是唯一具備帳戶完整存取權的人，包括能夠刪除 App、建立和編輯所有帳戶使用者，以及變更所有財務和帳戶設定。 
 
 
-| Role                 | 描述              |
+| [角色]                 | 說明              |
 |----------------------|--------------------------|
-| Manager              | 具備帳戶的完整存取權，但變更稅務和支付設定例外。 這包括在合作夥伴中心管理使用者, 但請注意, 在 Azure AD 租使用者中建立和刪除使用者的功能, 取決於帳戶在 Azure AD 中的許可權。 也就是說, 如果已將管理員角色指派給使用者, 但沒有組織 Azure AD 的全域管理員許可權, 他們將無法建立新的使用者, 或從目錄中刪除使用者 (雖然他們可以變更使用者的合作夥伴中心角色)。 <p> 請注意, 如果合作夥伴中心帳戶與一個以上的 Azure AD 租使用者相關聯, 管理員就看不到使用者的完整詳細資料 (包括名字、姓氏、密碼復原電子郵件, 以及他們是否為 Azure AD 全域管理員), 除非他們已使用具有該租使用者全域管理員許可權的帳戶, 登入與該使用者相同的租使用者。 不過, 他們可以在與合作夥伴中心帳戶相關聯的任何租使用者中新增和移除使用者。 |
-| 開發人員            | 可以上傳套件並提交 App 和附加元件，而且可以檢視[使用方式報告](usage-report.md)來取得遙測詳細資料。 可以存取[跨裝置體驗](https://go.microsoft.com/fwlink/?linkid=874042)功能。 無法檢視財務資訊或帳戶設定。   |
+| 管理員              | 具備帳戶的完整存取權，但變更稅務和支付設定例外。 This includes managing users in Partner Center, but note that the ability to create and delete users in the Azure AD tenant is dependent on the account's permission in Azure AD. That is, if a user is assigned the Manager role, but does not have global administrator permissions in the organization's Azure AD, they will not be able to create new users or delete users from the directory (though they can change a user's Partner Center role). <p> Note that if the Partner Center account is associated with more than one Azure AD tenant, a Manager can’t see complete details for a user (including first name, last name, password recovery email, and whether they are an Azure AD global administrator) unless they are signed in to the same tenant as that user with an account that has global administrator permissions for that tenant. However, they can add and remove users in any tenant that is associated with the Partner Center account. |
+| 開發人員            | 可以上傳套件並提交 App 和附加元件，而且可以檢視[使用方式報告](usage-report.md)來取得遙測詳細資料。 Can access [Cross-Device Experiences](https://developer.microsoft.com/windows/project-rome) functionality. 無法檢視財務資訊或帳戶設定。   |
 | 商務參與者 | 可檢視[健康情況](health-report.md)與[使用量](usage-report.md)報告。 無法建立或提交產品、 變更帳戶設定或檢視財務資訊。   |
 | 財務參與者  | 可檢視[支付報告](payout-summary.md)、財務資訊及下載數報告。 無法對 App、附加元件或帳戶設定進行任何變更。    |
 | 行銷人員             | 可以[回應客戶評論](respond-to-customer-reviews.md)以及檢視非財務性[分析報告](analytics.md)。 無法對 App、附加元件或帳戶設定進行任何變更。      |
 
 下表顯示每個角色 (和其帳戶擁有者) 可用的部分特定功能。
 
-|                                                       |    帳戶擁有者                 |    Manager                       |    開發人員                     |    商務參與者    |    財務參與者    |    行銷人員                      |
+|                                                       |    帳戶擁有者                 |    管理員                       |    開發人員                     |    商務參與者    |    財務參與者    |    行銷人員                      |
 |-------------------------------------------------------|----------------------------------|----------------------------------|----------------------------------|----------------------------|---------------------------|----------------------------------|
-|    取得報告 (包括近乎即時的資料) |    可檢視                      |    可檢視                      |    不允許存取                     |    不允許存取               |    可檢視               |    不允許存取                     |
-|    意見反應報告/回應                          |    可檢視和傳送意見反應    |    可檢視和傳送意見反應    |    可檢視和傳送意見反應    |    不允許存取               |    不允許存取              |    可檢視和傳送意見反應    |
-|    健康情況報告 (包括近乎即時的資料)      |    可檢視                      |    可檢視                      |    可檢視                      |    可檢視                |    不允許存取              |    不允許存取                     |
-|    使用方式報告                                       |    可檢視                      |    可檢視                      |    可檢視                      |    可檢視                |    不允許存取              |    不允許存取                     |
-|    支付帳戶                                     |    可更新                    |    不允許存取                     |    不允許存取                     |    不允許存取               |    可更新             |    不允許存取                     |
-|    稅金設定檔                                        |    可更新                    |    不允許存取                     |    不允許存取                     |    不允許存取               |    可更新             |    不允許存取                     |
-|    支付摘要                                     |    可檢視                      |    不允許存取                     |    不允許存取                     |    不允許存取               |    可檢視               |    不允許存取                     |
+|    Acquisition report (including Near Real Time data) |    可檢視                      |    可檢視                      |    無存取權                     |    無存取權               |    可檢視               |    無存取權                     |
+|    意見反應報告/回應                          |    可檢視和傳送意見反應    |    可檢視和傳送意見反應    |    可檢視和傳送意見反應    |    無存取權               |    無存取權              |    可檢視和傳送意見反應    |
+|    Health report (including Near Real Time data)      |    可檢視                      |    可檢視                      |    可檢視                      |    可檢視                |    無存取權              |    無存取權                     |
+|    使用方式報告                                       |    可檢視                      |    可檢視                      |    可檢視                      |    可檢視                |    無存取權              |    無存取權                     |
+|    支付帳戶                                     |    可更新                    |    無存取權                     |    無存取權                     |    無存取權               |    可更新             |    無存取權                     |
+|    稅金設定檔                                        |    可更新                    |    無存取權                     |    無存取權                     |    無存取權               |    可更新             |    無存取權                     |
+|    支付摘要                                     |    可檢視                      |    無存取權                     |    無存取權                     |    無存取權               |    可檢視               |    無存取權                     |
 
 如果沒有適當的標準角色，或您想要限制特定 app 和/或附加元件的存取權，您可以選取 **\[自訂權限\]** 來授與使用者自訂權限，如下所述。
 
@@ -74,10 +74,10 @@ ms.locfileid: "68349215"
 
 ![存取權設定指南](images/permission_key.png)
 
-- **無存取權**:使用者將不會有指定的許可權。
-- **唯讀**:使用者將能夠存取與指定區域相關的功能, 但無法進行變更。 
-- **讀取/寫入**:使用者將可以存取與區域相關聯的變更, 以及進行流覽。
-- **混合**:您無法直接選取此選項, 但如果您已允許該許可權的存取組合, 則會顯示**混合**指示器。 例如，如果您針對**所有產品**的**定價和可用性**授與**唯讀**存取權，然後針對特定產品授與**定價和可用性**的**讀/寫**存取權，則**所有產品**的**定價和可用性**指示器會顯示為「混合式」。 如果某些產品具有**無存取權** 的權限，但其他產品具有**讀/寫**和/或**唯讀**存取權，則情況一樣。
+- **無存取權**：使用者將不具有指示的權限。
+- **唯讀**：使用者有權檢視指示區域相關的功能，但無法進行變更。 
+- **讀/寫**：使用者有權進行區域相關的變更和檢視。
+- **混合式**︰您無法直接選取這個選項，但如果您允許該權限有存取權組合，則會顯示**混合式**指示器。 例如，如果您針對**所有產品**的**定價和可用性**授與**唯讀**存取權，然後針對特定產品授與**定價和可用性**的**讀/寫**存取權，則**所有產品**的**定價和可用性**指示器會顯示為「混合式」。 如果某些產品具有**無存取權** 的權限，但其他產品具有**讀/寫**和/或**唯讀**存取權，則情況一樣。
 
 針對某些權限 (例如和檢視分析資料相關的權限)，您只能授與**唯讀**存取權。 請注意，在目前的實作中，有些權限沒有區別**唯讀**和**讀/寫**存取權。 請檢閱每個權限的詳細資料，以了解**唯讀**和/或**讀/寫**存取權賦予的特定能力。
 
@@ -101,44 +101,44 @@ ms.locfileid: "68349215"
     </tr>
     </thead>
     <tbody>
-<tr><td align="left">    <b>帳戶設定</b>                    </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 區段中的所有頁面，包括<a href="managing-your-profile.md">連絡資訊</a>。       </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 區段中的所有頁面。 可變更<a href="managing-your-profile.md">連絡資訊</a>和其他頁面，但不能變更支付帳戶或稅金設定檔 (除非另外授與該權限)。            </td></tr>
-<tr><td align="left">    <b>帳戶使用者</b>                       </td><td align="left">  可檢視已加入 <b>\[使用者\]</b> 區段中的帳戶的使用者。          </td><td align="left">  可在 <b>\[使用者\]</b> 區段中新增使用者到帳戶和變更現有使用者。             </td></tr>
-<tr><td align="left">    <b>帳戶層級的 ad 效能報告</b> </td><td align="left">  可檢視帳戶層級的<a href="advertising-performance-report.md">廣告績效報告</a>。      </td><td align="left">  N/A   </td></tr>
-<tr><td align="left">    <b>廣告活動</b>                        </td><td align="left">  可檢視帳戶中建立的<a href="create-an-ad-campaign-for-your-app.md">廣告活動</a>。      </td><td align="left">  可建立、管理和檢視帳戶中建立的<a href="create-an-ad-campaign-for-your-app.md">廣告活動</a>。          </td></tr>
-<tr><td align="left">    <b>Ad 中繼</b>                        </td><td align="left">  可以針對帳戶中的所有產品來查看 ad 中繼設定。    </td><td align="left">  可以針對帳戶中的所有產品, 查看和變更 ad 中繼設定。        </td></tr>
-<tr><td align="left">    <b>Ad 中繼報告</b>                </td><td align="left">  可檢視帳戶中所有產品的<a href="ad-mediation-report.md">廣告流量分配報告</a>。    </td><td align="left">  N/A    </td></tr>
-<tr><td align="left">    <b>Ad 效能報告</b>              </td><td align="left">  可檢視帳戶中所有產品的<a href="advertising-performance-report.md">廣告績效報告</a>。       </td><td align="left">  N/A         </td></tr>
-<tr><td align="left">    <b>Ad 單位</b>                            </td><td align="left">  可檢視已為帳戶建立的<a href="in-app-ads.md">廣告單位</a>。    </td><td align="left">  可建立、管理及檢視帳戶的<a href="in-app-ads.md">廣告單位</a>。             </td></tr>
-<tr><td align="left">    <b>分支機搆廣告</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="about-affiliate-ads.md">聯盟廣告</a>使用量。    </td><td align="left">  可管理和檢視帳戶中所有產品的<a href="about-affiliate-ads.md">聯盟廣告</a>使用量。                </td></tr>
-<tr><td align="left">    <b>關係企業效能報表</b>      </td><td align="left">  可檢視帳戶中所有產品的<a href="affiliates-performance-report.md">聯盟績效報告</a>。   </td><td align="left">  N/A   </td></tr>
-<tr><td align="left">    <b>應用程式安裝廣告報表</b>             </td><td align="left">  可檢視<a href="promote-your-app-report.md">廣告活動報告</a>。           </td><td align="left">  N/A   </td></tr>
-<tr><td align="left">    <b>社區廣告</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="about-community-ads.md">社群廣告</a>使用量。          </td><td align="left">  可建立、管理和檢視帳戶中所有產品的免費<a href="about-community-ads.md">社群廣告</a>使用量。               </td></tr>
-<tr><td align="left">    <b>連絡人資訊</b>                        </td><td align="left">  可檢視 \[帳戶設定\] 區段中的<a href="managing-your-profile.md">連絡資訊</a>。        </td><td align="left">  可編輯和檢視 \[帳戶設定\] 區段中的<a href="managing-your-profile.md">連絡資訊</a>。            </td></tr>
-<tr><td align="left">    <b>保護法 CHILDREN COPPA 合規性</b>                    </td><td align="left">  可檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。                                            </td><td align="left">  可編輯和檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。         </td></tr>
-<tr><td align="left">    <b>客戶群組</b>                     </td><td align="left">  可以查看<a href="create-customer-groups.md">客戶群組</a>(區段和已知的使用者群組)。      </td><td align="left">  可以建立、編輯及查看<a href="create-customer-groups.md">客戶群組</a>(區段和已知的使用者群組)。       </td></tr>
+<tr><td align="left">    <b>Account settings</b>                    </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 區段中的所有頁面，包括<a href="managing-your-profile.md">連絡資訊</a>。       </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 區段中的所有頁面。 可變更<a href="managing-your-profile.md">連絡資訊</a>和其他頁面，但不能變更支付帳戶或稅金設定檔 (除非另外授與該權限)。            </td></tr>
+<tr><td align="left">    <b>Account users</b>                       </td><td align="left">  可檢視已加入 <b>\[使用者\]</b> 區段中的帳戶的使用者。          </td><td align="left">  可在 <b>\[使用者\]</b> 區段中新增使用者到帳戶和變更現有使用者。             </td></tr>
+<tr><td align="left">    <b>Account-level ad performance report</b> </td><td align="left">  可檢視帳戶層級的<a href="advertising-performance-report.md">廣告效益報告</a>。      </td><td align="left">  無   </td></tr>
+<tr><td align="left">    <b>Ad campaigns</b>                        </td><td align="left">  可檢視帳戶中建立的<a href="create-an-ad-campaign-for-your-app.md">廣告活動</a>。      </td><td align="left">  可建立、管理和檢視帳戶中建立的<a href="create-an-ad-campaign-for-your-app.md">廣告活動</a>。          </td></tr>
+<tr><td align="left">    <b>Ad mediation</b>                        </td><td align="left">  Can view ad mediation configurations for all products in the account.    </td><td align="left">  Can view and change ad mediation configurations for all products in the account.        </td></tr>
+<tr><td align="left">    <b>Ad mediation reports</b>                </td><td align="left">  可檢視帳戶中所有產品的<a href="ad-mediation-report.md">廣告流量分配報告</a>。    </td><td align="left">  無    </td></tr>
+<tr><td align="left">    <b>Ad performance reports</b>              </td><td align="left">  可檢視帳戶中所有產品的<a href="advertising-performance-report.md">廣告效益報告</a>。       </td><td align="left">  無         </td></tr>
+<tr><td align="left">    <b>Ad units</b>                            </td><td align="left">  可檢視已為帳戶建立的<a href="in-app-ads.md">廣告單位</a>。    </td><td align="left">  可建立、管理及檢視帳戶的<a href="in-app-ads.md">廣告單位</a>。             </td></tr>
+<tr><td align="left">    <b>Affiliate ads</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="about-affiliate-ads.md">聯盟廣告</a>使用量。    </td><td align="left">  可管理和檢視帳戶中所有產品的<a href="about-affiliate-ads.md">聯盟廣告</a>使用量。                </td></tr>
+<tr><td align="left">    <b>Affiliates performance reports</b>      </td><td align="left">  可檢視帳戶中所有產品的<a href="affiliates-performance-report.md">聯盟績效報告</a>。   </td><td align="left">  無   </td></tr>
+<tr><td align="left">    <b>App install ads reports</b>             </td><td align="left">  可檢視<a href="promote-your-app-report.md">廣告活動報告</a>。           </td><td align="left">  無   </td></tr>
+<tr><td align="left">    <b>Community ads</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="about-community-ads.md">社群廣告</a>使用量。          </td><td align="left">  可建立、管理和檢視帳戶中所有產品的免費<a href="about-community-ads.md">社群廣告</a>使用量。               </td></tr>
+<tr><td align="left">    <b>Contact info</b>                        </td><td align="left">  可檢視 \[帳戶設定\] 區段中的<a href="managing-your-profile.md">連絡資訊</a>。        </td><td align="left">  可編輯和檢視 \[帳戶設定\] 區段中的<a href="managing-your-profile.md">連絡資訊</a>。            </td></tr>
+<tr><td align="left">    <b>COPPA compliance</b>                    </td><td align="left">  可檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。                                            </td><td align="left">  可編輯和檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。         </td></tr>
+<tr><td align="left">    <b>Customer groups</b>                     </td><td align="left">  Can view <a href="create-customer-groups.md">customer groups</a> (segments and known user groups).      </td><td align="left">  Can create, edit, and view <a href="create-customer-groups.md">customer groups</a> (segments and known user groups).       </td></tr>
 <tr><td align="left">    <b>管理產品金鑰</b>&nbsp;*                            </td><td align="left">  可檢視新的產品群組建立頁面，但實際上不能在帳戶中建立新的產品群組。    </td><td align="left">  可以建立和編輯產品群組。     </td></tr>
-<tr><td align="left">    <b>新的應用程式</b>                            </td><td align="left">  可檢視新的 app 建立頁面，但實際上不能在帳戶中建立新的 app。    </td><td align="left">  可透過保留新的 app 名稱以在帳戶中<a href="create-your-app-by-reserving-a-name.md">建立新的 app</a>，並可建立提交內容，將 app 提交到市集。     </td></tr>
+<tr><td align="left">    <b>New apps</b>                            </td><td align="left">  可檢視新的 app 建立頁面，但實際上不能在帳戶中建立新的 app。    </td><td align="left">  可透過保留新的 app 名稱以在帳戶中<a href="create-your-app-by-reserving-a-name.md">建立新的 app</a>，並可建立提交內容，將 app 提交到市集。     </td></tr>
 <tr><td align="left">    <b>新的套件組合</b>&nbsp;*                       </td><td align="left">  可檢視新的套件組合建立頁面，但實際上不能在帳戶中建立新的套件組合。     </td><td align="left">  可建立新的產品套件組合。          </td></tr>
 <tr><td align="left">    <b>合作夥伴服務</b>&nbsp;*                  </td><td align="left">  可檢視安裝到服務以擷取 XTokens 的憑證。     </td><td align="left">  可管理和檢視安裝到服務以擷取 XTokens 的憑證。       </td></tr>
-<tr><td align="left">    <b>支出帳戶</b>                      </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 中的<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">支付帳戶資訊</a>。     </td><td align="left">  可編輯和檢視 <b>\[帳戶設定\]</b> 中的<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">支付帳戶資訊</a>。       </td></tr>
-<tr><td align="left">    <b>支出摘要</b>                      </td><td align="left">  可檢視<a href="payout-summary.md">支付摘要</a>以存取和下載支付報告資訊。       </td><td align="left">  可檢視<a href="payout-summary.md">支付摘要</a>以存取和下載支付報告資訊。   </td></tr>
+<tr><td align="left">    <b>Payout account</b>                      </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 中的<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">支付帳戶資訊</a>。     </td><td align="left">  可編輯和檢視 <b>\[帳戶設定\]</b> 中的<a href="setting-up-your-payout-account-and-tax-forms.md#payout-account">支付帳戶資訊</a>。       </td></tr>
+<tr><td align="left">    <b>Payout summary</b>                      </td><td align="left">  可檢視<a href="payout-summary.md">支付摘要</a>以存取和下載支付報告資訊。       </td><td align="left">  可檢視<a href="payout-summary.md">支付摘要</a>以存取和下載支付報告資訊。   </td></tr>
 <tr><td align="left">    <b>信賴憑證者</b>&nbsp;*                   </td><td align="left">  可檢視信賴憑證者以擷取 XTokens。    </td><td align="left">  可管理和檢視信賴憑證者以擷取 XTokens。     </td></tr>
 <tr><td align="left">    <b>沙箱</b>&nbsp;*                         </td><td align="left">  可存取 <b>\[沙箱\]</b> 頁面，和檢視帳戶中的沙箱與這些沙箱適用的任何設定。 除非被授與適當的產品層級權限，否則無法檢視每個沙箱的產品和提交內容。 </td><td align="left">  可存取 <b>\[沙箱\]</b> 頁面及檢視和管理帳戶中的沙箱，包括建立和刪除沙箱及管理其設定。 除非被授與適當的產品層級權限，否則無法檢視每個沙箱的產品和提交內容。    </td></tr>
-<tr><td align="left">    <b>Microsoft Store 銷售事件</b>&nbsp;*                            </td><td align="left">  N/A    </td><td align="left">  可以設定自動將產品包含在 Microsoft Store 銷售事件中的選項。     </td></tr>
-<tr><td align="left">    <b>稅務設定檔</b>                         </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 中的<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">稅金設定檔資訊和表單</a>。     </td><td align="left">  可在 <b>\[帳戶設定\]</b> 中填寫稅單並更新<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">稅金設定檔資訊</a>。     </td></tr>
+<tr><td align="left">    <b>Microsoft Store 銷售事件</b>&nbsp;*                            </td><td align="left">  無    </td><td align="left">  可以設定自動將產品包含在 Microsoft Store 銷售事件中的選項。     </td></tr>
+<tr><td align="left">    <b>Tax profile</b>                         </td><td align="left">  可檢視 <b>\[帳戶設定\]</b> 中的<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">稅金設定檔資訊和表單</a>。     </td><td align="left">  可在 <b>\[帳戶設定\]</b> 中填寫稅單並更新<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">稅金設定檔資訊</a>。     </td></tr>
 <tr><td align="left">    <b>測試帳戶</b>&nbsp;*                     </td><td align="left">  可檢視用於測試 Xbox Live 設定的帳戶。      </td><td align="left">  可建立、管理和檢視用於測試 Xbox Live 設定的帳戶。      </td></tr>
-<tr><td align="left">    <b>Xbox 裝置</b>                        </td><td align="left">  可在 <b>\[帳戶設定\]</b> 區段中檢視為帳戶啟用的 Xbox 開發主機。       </td><td align="left">  可在 <b>\[帳戶設定\]</b> 區段中新增、移除和檢視為帳戶啟用的 Xbox 開發主機 。     </td></tr>
+<tr><td align="left">    <b>Xbox devices</b>                        </td><td align="left">  可在 <b>\[帳戶設定\]</b> 區段中檢視為帳戶啟用的 Xbox 開發主機。       </td><td align="left">  可在 <b>\[帳戶設定\]</b> 區段中新增、移除和檢視為帳戶啟用的 Xbox 開發主機 。     </td></tr>
     </tbody>
     </table>
 
-\*以星號 (*) 標示的許可權會授與所有帳戶無法使用之功能的存取權。 如果您的帳戶尚未啟用這些功能，您對於這些權限所做的選擇不會有任何影響。   
+\* Permissions marked with an asterisk (*) grant access to features which are not available to all accounts. 如果您的帳戶尚未啟用這些功能，您對於這些權限所做的選擇不會有任何影響。   
 
 
 ## <a name="product-level-permissions"></a>產品層級的權限
 
 本節中的權限可授與帳戶中的所有產品，或可自訂為只允許一或多個特定產品的權限。 
 
-產品層級許可權分為四個類別:**分析**、**營收**、**發佈**和**Xbox Live**。 您可以展開這些類別，以檢視每個類別中的個別權限。 您也可以選擇啟用一或多個特定產品的**所有權限**。
+產品層級的權限分成四種類別︰**分析**、**創造營收**、**發佈**和 **Xbox Live**。 您可以展開這些類別，以檢視每個類別中的個別權限。 您也可以選擇啟用一或多個特定產品的**所有權限**。
 
 若要為帳戶中的每個產品授與權限，請在標示 **\[所有產品\]** 的列中針對該權限做選擇 (切換方塊以指示**唯讀**或**讀/寫**)。 
  
@@ -165,15 +165,15 @@ ms.locfileid: "68349215"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>收購</b>(包括近乎即時的資料) </td><td>    可檢視產品的<a href="acquisitions-report.md">下載數</a>和<a href="add-on-acquisitions-report.md">附加元件下載數</a>報告。        </td><td>    N/A    </td><td>    N/A (父產品的設定, 包括**附加**元件的收購報告)        </td><td>    N/A                         </td></tr>
-    <tr><td align="left">    <b>實例</b> </td><td>    可檢視產品的<a href="usage-report.md">使用量報告</a>。     </td><td>    N/A       </td><td>    N/A     </td><td>    N/A         </td></tr>
-    <tr><td align="left">    <b>健全狀況</b>(包括近乎即時的資料) </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    N/A     </td><td>    N/A     </td><td>    N/A         </td></tr>
-    <tr><td align="left">    <b>客戶意見反應</b>    </td><td>    可檢視產品的<a href="reviews-report.md">評論</a>及<a href="feedback-report.md">意見反應</a>報告。       </td><td>    不適用 (以回應回函或評論，必須授與<b>連絡客戶</b>權限)   </td><td>    N/A     </td><td>    N/A         </td></tr>
-    <tr><td align="left">    <b>Xbox analytics</b> </td><td>    可以查看產品的<a href="xbox-analytics-report.md">Xbox analytics 報表</a>。    </td><td>    N/A   </td><td>    N/A       </td><td>    N/A          </td></tr>
+    <tr><td align="left">    <b>Acquisitions</b> (including Near Real Time data) </td><td>    可檢視產品的<a href="acquisitions-report.md">下載數</a>和<a href="add-on-acquisitions-report.md">附加元件下載數</a>報告。        </td><td>    無    </td><td>    N/A (settings for parent product include the **Add-on acquisitions** report)        </td><td>    無                         </td></tr>
+    <tr><td align="left">    <b>Usage</b> </td><td>    可檢視產品的<a href="usage-report.md">使用量報告</a>。     </td><td>    無       </td><td>    無     </td><td>    無         </td></tr>
+    <tr><td align="left">    <b>Health</b> (including Near Real Time data) </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    無     </td><td>    無     </td><td>    無         </td></tr>
+    <tr><td align="left">    <b>Customer feedback</b>    </td><td>    可檢視產品的<a href="reviews-report.md">評論</a>及<a href="feedback-report.md">意見反應</a>報告。       </td><td>    不適用 (若要回應意見反應或評論，必須授與<b>連絡客戶</b>權限)   </td><td>    無     </td><td>    無         </td></tr>
+    <tr><td align="left">    <b>Xbox analytics</b> </td><td>    Can view the <a href="xbox-analytics-report.md">Xbox analytics report</a> for the product.    </td><td>    無   </td><td>    無       </td><td>    無          </td></tr>
     </tbody>
     </table>
 
-### <a name="monetization"></a>營利
+### <a name="monetization"></a>創造營收
 
 <table>
     <thead>
@@ -186,10 +186,10 @@ ms.locfileid: "68349215"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>促銷代碼</b>     </td><td>    可檢視產品和其附加元件的<a href="generate-promotional-codes.md">促銷碼</a>訂單與使用量資訊，並可檢視使用量資訊。         </td><td>    可檢視、管理及建立產品及其附加元件的<a href="generate-promotional-codes.md">促銷碼</a>訂單，並可檢視使用量資訊。          </td><td>    不適用 (父產品的設定適用於所有附加元件)     </td><td>    不適用 (父產品的設定適用於所有附加元件)     </td></tr>
-    <tr><td align="left">    <b>目標供應專案</b>     </td><td>    可檢視產品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">針對性優惠</a>。         </td><td>    可檢視、管理及建立產品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">針對性優惠</a>。          </td><td>    N/A     </td><td>    N/A      </td></tr>
-    <tr><td align="left">    <b>聯絡客戶</b>  </td><td>    只要一併授與<b>客戶回函</b>權限，即可檢視<a href="respond-to-customer-feedback.md">對客戶回函的回應</a>和<a href="respond-to-customer-reviews.md">對客戶評論的回應</a>。 也可檢視已為產品建立的<a href="send-push-notifications-to-your-apps-customers.md">特定對象的通知</a>。    </td><td>    只要授與客戶<b>意見</b>反應許可權, 就可以<a href="respond-to-customer-feedback.md">回應客戶意見</a>反應並<a href="respond-to-customer-reviews.md">回應客戶評論</a>。 也可為產品<a href="send-push-notifications-to-your-apps-customers.md">建立和傳送特定對象的通知</a>。                   </td><td>    N/A         </td><td>    N/A                          </td></tr>
-    <tr><td align="left">    <b>測試</b></td><td>    可檢視 <a href="../monetize/run-app-experiments-with-a-b-testing.md">實驗 (A/B 測試)</a> 及檢視產品的實驗資料。   </td><td>    可建立、管理及檢視產品的 <a href="../monetize/run-app-experiments-with-a-b-testing.md">實驗 (A/B 測試)</a> 及檢視實驗資料。     </td><td>    N/A  </td><td>    N/A                 </td></tr>
+    <tr><td align="left">    <b>Promotional codes</b>     </td><td>    可檢視產品和其附加元件的<a href="generate-promotional-codes.md">促銷碼</a>訂單與使用量資訊，並可檢視使用量資訊。         </td><td>    可檢視、管理及建立產品及其附加元件的<a href="generate-promotional-codes.md">促銷碼</a>訂單，並可檢視使用量資訊。          </td><td>    不適用 (父產品的設定適用於所有附加元件)     </td><td>    不適用 (父產品的設定適用於所有附加元件)     </td></tr>
+    <tr><td align="left">    <b>Targeted offers</b>     </td><td>    可檢視產品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">針對性優惠</a>。         </td><td>    可檢視、管理及建立產品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">針對性優惠</a>。          </td><td>    無     </td><td>    無      </td></tr>
+    <tr><td align="left">    <b>Contact customer</b>  </td><td>    只要一併授與<b>客戶回函</b>權限，即可檢視<a href="respond-to-customer-feedback.md">對客戶回函的回應</a>和<a href="respond-to-customer-reviews.md">對客戶評論的回應</a>。 也可檢視已為產品建立的<a href="send-push-notifications-to-your-apps-customers.md">特定對象的通知</a>。    </td><td>    Can <a href="respond-to-customer-feedback.md">respond to customer feedback</a> and <a href="respond-to-customer-reviews.md">respond to customer reviews</a>, as long as the <b>Customer feedback</b> permission has been granted as well. 也可為產品<a href="send-push-notifications-to-your-apps-customers.md">建立和傳送特定對象的通知</a>。                   </td><td>    無         </td><td>    無                          </td></tr>
+    <tr><td align="left">    <b>Experimentation</b></td><td>    可檢視 <a href="../monetize/run-app-experiments-with-a-b-testing.md">實驗 (A/B 測試)</a> 及檢視產品的實驗資料。   </td><td>    可建立、管理及檢視產品的 <a href="../monetize/run-app-experiments-with-a-b-testing.md">實驗 (A/B 測試)</a> 及檢視實驗資料。     </td><td>    無  </td><td>    無                 </td></tr>
     <tr><td align="left">    <b>Microsoft Store 銷售事件</b>&nbsp;*</td><td>    可以檢視產品的銷售活動狀態。   </td><td>    可以新增產品銷售活動，並設定折扣。      </td><td>    可以檢視產品的銷售活動狀態。   </td><td>    可以新增產品銷售活動，並設定折扣。      </td></tr>
     </tbody>
     </table>
@@ -207,22 +207,22 @@ ms.locfileid: "68349215"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>產品設定</b>  </td><td>    可以查看產品的 [產品設定] 頁面。     </td><td>    可以查看和編輯產品的 [產品設定] 頁面。 </td><td>    可以查看附加元件的 [產品設定] 頁面。   </td><td>    可以查看和編輯產品設定頁面附加元件。          </td></tr>
-    <tr><td align="left">    <b>定價和可用性</b>  </td><td>    可以查看產品的 [<a href="set-app-pricing-and-availability.md">價格與可用性</a>] 頁面。     </td><td>    可以查看和編輯產品的 [<a href="set-app-pricing-and-availability.md">價格與可用性</a>] 頁面。 </td><td>    可以查看附加元件的 [<a href="set-add-on-pricing-and-availability.md">價格與可用性</a>] 頁面。   </td><td>    可以查看和編輯附加元件的 [<a href="set-add-on-pricing-and-availability.md">價格與可用性</a>] 頁面。          </td></tr>
-    <tr><td align="left">    <b>屬性</b>   </td><td>    可以查看產品的<a href="enter-app-properties.md">屬性</a>頁面。      </td><td>    可以查看和編輯產品的<a href="enter-app-properties.md">屬性</a>頁面。       </td><td>    可以查看附加元件的<a href="enter-add-on-properties.md">屬性</a>頁面。     </td><td>    可以查看和編輯附加元件的<a href="enter-add-on-properties.md">屬性</a>頁面。               </td></tr>
-    <tr><td align="left">    <b>年齡分級</b>    </td><td>    可以查看產品的<a href="age-ratings.md">年齡分級</a>頁面。       </td><td>    可以查看和編輯產品的<a href="age-ratings.md">年齡分級</a>頁面。    </td><td>    可以查看附加元件的年齡分級頁面。          </td><td>     可以查看和編輯附加元件的年齡分級頁面。       </td></tr>
-    <tr><td align="left">    <b>登記</b>        </td><td>    可以查看產品的 [<a href="upload-app-packages.md">封裝</a>] 頁面。  </td><td>    可以查看和編輯產品的 [<a href="upload-app-packages.md">套件</a>] 頁面, 包括上傳套件。     </td><td>   可以查看附加元件的 [<a href="upload-app-packages.md">套件</a>] 頁面 (如果適用)。   </td><td>     可查看和編輯附加元件的<a href="upload-app-packages.md">封裝</a>頁面 (如果適用)。             </td></tr>
-    <tr><td align="left">    <b>商店清單</b>  </td><td>    可以查看產品的<a href="create-app-store-listings.md">商店清單頁面</a>。  </td><td>    可以查看和編輯產品的<a href="create-app-store-listings.md">商店清單頁面</a>, 也可以加入不同語言的新商店清單。     </td><td>    可以查看附加元件的<a href="create-add-on-store-listings.md">商店清單頁面</a>。            </td><td>    可以查看和編輯附加元件的<a href="create-add-on-store-listings.md">商店清單頁面</a>, 也可以加入不同語言的商店清單。                 </td></tr>
-    <tr><td align="left">    <b>儲存提交</b>     </td><td>    若此權限設為唯讀，則不會授與任何存取權。           </td><td>    可將產品提交到市集和檢視認證報告。 包含新的與更新的提交。 </td><td>若此權限設為唯讀，則不會授與任何存取權。     </td><td>    可將附加元件提交到市集和檢視認證報告。 包含新的與更新的提交。</td></tr>
-    <tr><td align="left">    <b>新提交的建立</b>       </td><td>    若此權限設為唯讀，則不會授與任何存取權。        </td><td>    可為產品建立新的<a href="app-submissions.md">提交</a>。  </td><td>    若此權限設為唯讀，則不會授與任何存取權。   </td><td>    可為附加元件建立新的<a href="add-on-submissions.md">提交</a>。        </td></tr>
-    <tr><td align="left">    <b>新的附加元件</b>    </td><td>    若此權限設為唯讀，則不會授與任何存取權。 </td><td>    可為產品<a href="set-your-add-on-product-id.md">建立新的附加元件</a>。 </td><td>    N/A    </td><td>    N/A        </td></tr>
-    <tr><td align="left">    <b>名稱保留專案</b>   </td><td>    可檢視產品的<a href="manage-app-names.md">管理 app 名稱</a>頁面。</td><td>    可檢視和編輯產品的<a href="manage-app-names.md">管理 app 名稱</a>頁面，包括保留其他名稱及刪除保留名稱。 </td><td>   可檢視附加元件的保留名稱。    </td><td>   可檢視和編輯附加元件的保留名稱。          </td></tr>
-    <tr><td align="left">    <b>光碟要求</b>   </td><td>    可以在 [要求] 頁面中查看光碟。 </td><td>    可以建立光碟要求。 </td><td>   N/A    </td><td>   N/A          </td></tr>
-    <tr><td align="left">    <b>光碟版稅</b>   </td><td>    可以在版稅頁面上觀看光碟。</td><td>    可以建立光碟的版稅。 </td><td>   N/A    </td><td>   N/A          </td></tr>
+    <tr><td align="left">    <b>Product Setup</b>  </td><td>    Can view the product setup page of products.     </td><td>    Can view and edit the product setup page of products. </td><td>    Can view the product setup page of add-ons.   </td><td>    Can view and edit the product setup page add-ons.          </td></tr>
+    <tr><td align="left">    <b>Pricing and availability</b>  </td><td>    Can view the <a href="set-app-pricing-and-availability.md">Pricing and availability</a> page of products.     </td><td>    Can view and edit the <a href="set-app-pricing-and-availability.md">Pricing and availability</a> page of products. </td><td>    Can view the <a href="set-add-on-pricing-and-availability.md">Pricing and availability</a> page of add-ons.   </td><td>    Can view and edit the <a href="set-add-on-pricing-and-availability.md">Pricing and availability</a> page of add-ons.          </td></tr>
+    <tr><td align="left">    <b>Properties</b>   </td><td>    Can view the <a href="enter-app-properties.md">Properties</a> page of products.      </td><td>    Can view and edit the <a href="enter-app-properties.md">Properties</a> page of products.       </td><td>    Can view the <a href="enter-add-on-properties.md">Properties</a> page of add-ons.     </td><td>    Can view and edit the <a href="enter-add-on-properties.md">Properties</a> page of add-ons.               </td></tr>
+    <tr><td align="left">    <b>Age ratings</b>    </td><td>    Can view the <a href="age-ratings.md">Age ratings</a> page of products.       </td><td>    Can view and edit the <a href="age-ratings.md">Age ratings</a> page of products.    </td><td>    Can view the Age ratings page of add-ons.          </td><td>     Can view and edit the Age ratings page of add-ons.       </td></tr>
+    <tr><td align="left">    <b>Packages</b>        </td><td>    Can view the <a href="upload-app-packages.md">Packages</a> page of products.  </td><td>    Can view and edit the <a href="upload-app-packages.md">Packages</a> page of products, including uploading packages.     </td><td>   Can view the <a href="upload-app-packages.md">Packages</a> page of addons (if applicable).   </td><td>     Can view and edit <a href="upload-app-packages.md">Packages</a> page of addons (if applicable).             </td></tr>
+    <tr><td align="left">    <b>Store listings</b>  </td><td>    Can view the <a href="create-app-store-listings.md">Store listing page(s)</a> of products.  </td><td>    Can view and edit the <a href="create-app-store-listings.md">Store listing page(s)</a> of products, and can add new Store listings for different languages.     </td><td>    Can view the <a href="create-add-on-store-listings.md">Store listing page(s)</a> of add-ons.            </td><td>    Can view and edit the <a href="create-add-on-store-listings.md">Store listing page(s)</a> of add-ons, and can add Store listings for different languages.                 </td></tr>
+    <tr><td align="left">    <b>Store submission</b>     </td><td>    若此權限設為唯讀，則不會授與任何存取權。           </td><td>    可將產品提交到市集和檢視認證報告。 包含新的與更新的提交。 </td><td>若此權限設為唯讀，則不會授與任何存取權。     </td><td>    可將附加元件提交到市集和檢視認證報告。 包含新的與更新的提交。</td></tr>
+    <tr><td align="left">    <b>New submission creation</b>       </td><td>    若此權限設為唯讀，則不會授與任何存取權。        </td><td>    可為產品建立新的<a href="app-submissions.md">提交</a>。  </td><td>    若此權限設為唯讀，則不會授與任何存取權。   </td><td>    可為附加元件建立新的<a href="add-on-submissions.md">提交</a>。        </td></tr>
+    <tr><td align="left">    <b>New add-ons</b>    </td><td>    若此權限設為唯讀，則不會授與任何存取權。 </td><td>    可為產品<a href="set-your-add-on-product-id.md">建立新的附加元件</a>。 </td><td>    無    </td><td>    無        </td></tr>
+    <tr><td align="left">    <b>Name reservations</b>   </td><td>    可檢視產品的<a href="manage-app-names.md">管理 app 名稱</a>頁面。</td><td>    可檢視和編輯產品的<a href="manage-app-names.md">管理 app 名稱</a>頁面，包括保留其他名稱及刪除保留名稱。 </td><td>   可檢視附加元件的保留名稱。    </td><td>   可檢視和編輯附加元件的保留名稱。          </td></tr>
+    <tr><td align="left">    <b>Disc request</b>   </td><td>    Can view disc the request page. </td><td>    Can create disc requests. </td><td>   無    </td><td>   無          </td></tr>
+    <tr><td align="left">    <b>Disc royalties </b>   </td><td>    Can view disc the royalties page.</td><td>    Can create disc royalties. </td><td>   無    </td><td>   無          </td></tr>
     </tbody>
     </table>
 
-### <a name="xbox-live-"></a>Xbox Live\*
+### <a name="xbox-live-"></a>Xbox Live \*
 
 <table>
     <thead>
@@ -235,16 +235,16 @@ ms.locfileid: "68349215"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>信賴憑證者</b>&nbsp;*</td><td>    可以查看帳戶的 [信賴憑證者] 頁面。   </td><td>    可以查看和編輯帳戶的 [信賴憑證者] 頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>合作夥伴服務</b>&nbsp;*</td><td>    可以查看帳戶的 Web 服務頁面。  </td><td>    可以查看和編輯帳戶的 Web 服務頁面。      </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>Xbox Test 帳戶</b>&nbsp;*</td><td>    可以查看帳戶的 [Xbox Test 帳戶] 頁面。  </td><td>    可以查看和編輯帳戶的 [Xbox Test 帳戶] 頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>每個沙箱的 Xbox Test 帳戶</b>&nbsp;*</td><td>    只能針對帳戶的指定沙箱, 查看 [Xbox Test 帳戶] 頁面。  </td><td>    可以查看和編輯 Xbox 測試。   <tr><td align="left">    <b>僅限帳戶的指定沙箱的帳戶頁面    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left"><b>Xbox 裝置</b>&nbsp; @ no__t-3</td><td>    可以查看帳戶的 Xbox one 開發主控台頁面。  </td><td>    可以查看和編輯帳戶的 Xbox one 開發主控台頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>每個沙箱的 Xbox 裝置</b>&nbsp;*</td><td>    只能針對帳戶的指定沙箱, 查看 Xbox one 開發主控台頁面。  </td><td>    只能針對帳戶的指定沙箱, 查看和編輯 Xbox one 開發主控台頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>應用程式通道</b>&nbsp;*</td><td>    N/A  </td><td>    可將宣傳影片頻道發佈到 Xbox 主機，以透過OneGuide 檢視。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>服務設定</b>&nbsp;*</td><td>    可以查看產品的 [Xbox Live 服務設定] 頁面。  </td><td>    可以查看和編輯產品的 Xbox Live 服務設定頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>工具存取</b>&nbsp;*</td><td>    可以在產品上執行 Xbox Live 工具, 只查看資料。  </td><td>    可以在產品上執行 Xbox Live 工具來查看和編輯資料。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
+    <tr><td align="left">    <b>Relying Parties</b>&nbsp;*</td><td>    Can view the Relying parties page of an account.   </td><td>    Can view and edit the Relying parties page of an account.    </td><td>    無    </td><td>    無                      </td></tr>
+    <tr><td align="left">    <b>Partner Services</b>&nbsp;*</td><td>    Can view the Web services page of an account.  </td><td>    Can view and edit the Web services page of an account.      </td><td>    無    </td><td>    無                      </td></tr>
+    <tr><td align="left">    <b>Xbox Test Accounts</b>&nbsp;*</td><td>    Can view the Xbox Test Accounts page of an account.  </td><td>    Can view and edit the Xbox Test Accounts page of an account.    </td><td>    無    </td><td>    無                      </td></tr>
+    <tr><td align="left">    <b>Xbox Test Accounts per Sandbox</b>&nbsp;*</td><td>    Can view the Xbox Test Accounts page for only the specified sandboxes of an account.  </td><td>    Can view and edit the Xbox Test.   <tr><td align="left">    <b>Accounts page for only the specified sandboxes of an account    </td><td>    無    </td><td>    無                      </td></tr>
+    <tr><td align="left">    <b>Xbox Devices</b>&nbsp;*</td><td>    Can view the Xbox one development consoles page of an account.  </td><td>    Can view and edit the Xbox one development consoles page of an account.    </td><td>    無    </td><td>    無                      </td></tr>
+    <tr><td align="left">    <b>Xbox Devices per Sandbox</b>&nbsp;*</td><td>    Can view the Xbox one development consoles page for only the specified sandboxes of an account.  </td><td>    Can view and edit the Xbox one development consoles page for only the specified sandboxes of an account.    </td><td>    無    </td><td>    無                      </td></tr>
+    <tr><td align="left">    <b>App Channels</b>&nbsp;*</td><td>    無  </td><td>    可將宣傳影片頻道發佈到 Xbox 主機，以透過OneGuide 檢視。    </td><td>    無    </td><td>    無                      </td></tr>
+    <tr><td align="left">    <b>Service Configuration</b>&nbsp;*</td><td>    Can view the Xbox Live Service configuration page of a product.  </td><td>    Can view and edit the Xbox Live Service configuration page of a product.    </td><td>    無    </td><td>    無                      </td></tr>
+    <tr><td align="left">    <b>Tools Access</b>&nbsp;*</td><td>    Can run Xbox Live tools on a product to only view data.  </td><td>    Can run Xbox Live tools on a product to view and edit data.    </td><td>    無    </td><td>    無                      </td></tr>
 </tbody>
 </table>
 
-\*以星號 (*) 標示的許可權會授與所有帳戶無法使用之功能的存取權。 如果您的帳戶尚未啟用這些功能，您對於這些權限所做的選擇不會有任何影響。  
+\* Permissions marked with an asterisk (*) grant access to features which are not available to all accounts. 如果您的帳戶尚未啟用這些功能，您對於這些權限所做的選擇不會有任何影響。  

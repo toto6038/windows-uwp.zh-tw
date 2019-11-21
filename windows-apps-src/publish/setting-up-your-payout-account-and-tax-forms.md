@@ -1,68 +1,68 @@
 ---
-Description: 若要從 Microsoft Store 中的應用程式銷售額獲得金錢, 您必須設定您的付款帳戶, 並填寫必要的稅務形式。
-title: 設定您的支出及稅收表格
+Description: In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
+title: 設定您的支出及納稅申報表
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.date: 12/14/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 974d96f6ba2daf275ffd346f50571787d4eee925
-ms.sourcegitcommit: ad2940a12a7ee59ee7696cd23a03743eef84ca31
+ms.openlocfilehash: 5a56630a0a2f0acdc71241ac0234cad463e45ace
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71275744"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259904"
 ---
-# <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支出及稅收表格
+# <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支出及納稅申報表
 
-若要從 Microsoft Store 中的應用程式銷售額獲得金錢, 您必須設定您的付款帳戶, 並填寫[合作夥伴中心](https://partner.microsoft.com/dashboard)所需的稅務表單。
+In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms in [Partner Center](https://partner.microsoft.com/dashboard).
 
-如果您只打算列出免費 app (而不打算提供 app 內購買，或者不打算使用 Microsoft Advertising)，就不需要設定支付帳戶或填寫任何納稅申報表。 如果您稍後變更了想法, 並決定要銷售應用程式 (或附加元件), 您可以設定您的付款帳戶, 並在該時間填妥稅務表單。 您要先完成支付帳戶和稅務設定檔，才能提交任何付費 App 或附加元件。
+如果您只打算列出免費 app (而不打算提供 app 內購買，或者不打算使用 Microsoft Advertising)，就不需要設定支付帳戶或填寫任何納稅申報表。 If you change your mind later and decide you do want to sell apps (or add-ons), you can set up your payout account and fill out tax forms at that time. 您要先完成支付帳戶和稅務設定檔，才能提交任何付費 App 或附加元件。
 
 > [!NOTE]
 > 在[特定市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，開發人員只能提交免費 App。 如果您的帳戶在上述其中一個市場中註冊，就無法選擇設定支付帳戶。
 
-[設定您的開發人員帳戶](opening-a-developer-account.md)之後, 您必須執行兩件事, 才能在 Microsoft Store 中銷售應用程式 (或附加元件):
+After you have [set up your developer account](opening-a-developer-account.md), there are two things you need to do before you can sell apps (or add-ons) in the Microsoft Store:
 
-- [填寫您的稅務表單](#tax-forms)
-- [設定您的支出帳戶](#payout-account)
+- [Fill out your tax forms](#tax-forms)
+- [Set up your payout account](#payout-account)
 
 > [!NOTE]
 > 如需深入了解取得 app 銷售款項的方法和時間，請參閱[獲得報酬](getting-paid-apps.md)。
 
 ## <a name="tax-forms"></a>納稅申報表
 
-### <a name="filling-out-your-tax-forms"></a>填寫您的稅務表單
+### <a name="filling-out-your-tax-forms"></a>Filling out your tax forms
 
-首先, 您必須建立稅務設定檔, 並將它指派給您參與的程式。 您可以完成下列步驟, 以建立 Microsoft Store 的*稅務設定檔*:
+First, you'll need to create a tax profile and assign it to the programs you participate in. You can create your *tax profile* for the Microsoft Store by completing the following steps:
 
 - 指定您的居住國家/地區和國籍。
 - 填寫適當的納稅申報表。
 
-您可以在合作夥伴中心以電子方式完成並提交您的稅務表單;在大部分的情況下, 您不需要列印和郵寄任何表單。
+You can complete and submit your tax forms electronically in Partner Center; in most cases, you don't need to print and mail any forms.
 
 > [!IMPORTANT]
-> 不同國家和地區的稅金要求不同。 您必須繳交的稅金確切金額取決於您銷售應用程式的國家和地區。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 在哪些國家/地區為您代繳銷售和使用稅。 在其他國家/地區 (視您在何處註冊而定)，您可能必須直接到當地稅務機構繳納應用程式的銷售和使用稅。 此外，您收到的應用程式銷售收入可能會列為應稅收入。 我們強烈建議您洽詢您所在國家或地區的相關授權單位, 其最能協助您判斷 Microsoft Store 開發人員活動的正確稅務資訊。
+> 不同國家和地區的稅金要求不同。 您必須繳交的稅金確切金額取決於您銷售應用程式的國家和地區。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 在哪些國家/地區為您代繳銷售和使用稅。 在其他國家/地區 (視您在何處註冊而定)，您可能必須直接到當地稅務機構繳納應用程式的銷售和使用稅。 此外，您收到的應用程式銷售收入可能會列為應稅收入。 We strongly encourage you to contact the relevant authority for your country or region that can best help you determine the right tax info for your Microsoft Store developer activities.
 
-1. 在 [[合作夥伴中心](https://partner.microsoft.com/dashboard)] 中, 選取右上角的 [**帳戶設定**] 圖示, 然後選取 [**開發人員設定**]。
-2. 在左側導覽功能表中, 選取 [付款**和稅金**], 然後選取 [付款**和稅務指派**]。
+1. In [Partner Center](https://partner.microsoft.com/dashboard), select the **Account settings** icon in the top right corner, then select **Developer settings**.
+2. In the left navigation menu, select **Payout and tax**, then select **Payout and tax assignments**.
 
-    ![支出和稅務設定檔指派](images/payout-tax-profile-assignment.png)
+    ![Payout and tax profile assignment](images/payout-tax-profile-assignment.png)
 
-3. 選取您要設定其稅務資訊的 [程式] 和 [賣方識別碼] 組合。
+3. Select the program and seller id combination for which you want to configure tax information.
 
-    ![付款選取賣方識別碼](images/payout-select-seller-id.png)
+    ![Payout select seller id](images/payout-select-seller-id.png)
 
-4. 如果您想要使用現有的稅務設定檔, 請從下拉式清單中選取它。 否則, 請選取 [**建立新設定檔**], 然後按 [**提交**]。 您將會進入 [稅務設定檔] 頁面。
-5. 按一下 [**編輯**] 按鈕以編輯您的稅務資訊。
-6. 選取適當的選項按鈕, 然後在出現提示時, 選取您的國家/地區。 此步驟會決定用來在您的帳戶上進行支出的 Microsoft 商務實體。
+4. If you would like to use an existing tax profile, select it from the dropdown. Otherwise, select **Create new profile** and press **Submit**. You will be taken to the tax profiles page.
+5. Click the **Edit** button to edit your tax information.
+6. Select the appropriate radio button, and select your country if prompted. This step determines the Microsoft business entity that will be used to make payouts on your account.
 
-    ![付款選取稅務國家/地區](images/payout-select-tax-country.png)
+    ![Payout select tax country](images/payout-select-tax-country.png)
 
-7. 視您在步驟6中的選擇而定, 系統會提示您提供您國家/地區所需的稅務資訊。
+7. Depending on your selections in step 6, you will be prompted to provide tax information required for your country.
 
 > [!NOTE]
-> 無論您的居住或公民國家/地區為何, 都必須填寫美國稅務表單, 透過 Microsoft Store 銷售任何應用程式或附加元件。 符合特定美國居住規定的開發人員必須填寫 IRS W-9 表單。 美國以外的其他開發人員必須填寫 IRS W-8 表單。 完成稅金設定檔之後，您就可以在線上填寫這些表單。
+> Regardless of your country of residence or citizenship, you must fill out United States tax forms to sell any apps or add-ons through the Microsoft Store. 符合特定美國居住規定的開發人員必須填寫 IRS W-9 表單。 美國以外的其他開發人員必須填寫 IRS W-8 表單。 完成稅金設定檔之後，您就可以在線上填寫這些表單。
 
 ### <a name="withholding-rates"></a>扣繳率
 
@@ -70,75 +70,75 @@ ms.locfileid: "71275744"
 
 ### <a name="tax-treaty-benefits"></a>稅務協定優惠
 
-如果您在美國以外的地區，可能可以享有稅務協定優惠。 這些權益會因國家/地區而異, 並可讓您減少 Microsoft Store 所 withholds 的稅金量。 您可以完成 W-8BEN 表單的 Part II 來要求稅務協定優惠。 建議您與您國家或地區的適當資源聯繫，以確認您是否適用這些優惠。
+如果您在美國以外的地區，可能可以享有稅務協定優惠。 These benefits vary from country to country, and may allow you to reduce the amount of taxes that the Microsoft Store withholds. 您可以完成 W-8BEN 表單的 Part II 來要求稅務協定優惠。 建議您與您國家或地區的適當資源聯繫，以確認您是否適用這些優惠。
 
 > [!NOTE]
 > 向 Microsoft 收到付款或要求稅務協定優惠時不需要美國個人納稅識別號碼 (或 ITIN)。
 
 ## <a name="payout-account"></a>支付帳戶
 
-支付帳戶是我們用來將銷售收益支付給您的銀行帳戶。 您可以在 [設定檔] 頁面上, 查看您輸入的所有付款帳戶。
+支付帳戶是我們用來將銷售收益支付給您的銀行帳戶。 You can view all payment accounts that you have entered on the Profile page.
 
 > [!NOTE]
-> 在某些市場中，PayPal 可以用於支付帳戶。 請參閱[付款臨界值、方法和](payment-thresholds-methods-and-timeframes.md)時間範圍, 以瞭解是否支援特定市場的 paypal, 並閱讀下列[paypal 資訊](#paypal-info)以取得詳細資料。
+> 在某些市場中，PayPal 可以用於支付帳戶。 See [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md) to find out if PayPal is supported for a specific market, and read the [PayPal info](#paypal-info) below for more details.
 
-### <a name="create-a-payment-profile"></a>建立付款設定檔
+### <a name="create-a-payment-profile"></a>Create a payment profile
 
-1. 在 [[合作夥伴中心](https://partner.microsoft.com/dashboard)] 中, 選取右上角的 [**設定**] 齒輪圖示, 然後選取 [**開發人員設定**]。
-2. 在 [*支出] 和 [稅務*] 標題底下，選取 [付款**和稅務設定檔指派**]。
+1. In [Partner Center](https://partner.microsoft.com/dashboard), select the **Settings** gear icon in the top right corner, then select **Developer settings**.
+2. Underneath the *Payout and tax* heading, select **Payout and tax profile assignment**.
 
     > [!NOTE]
     > 這是機密資訊，所以會提示您再次登入。
 
-3. 選取您想要設定的付款方法。
+3. Select the payment method you would like to configure.
 
-    ![支出帳戶類型選取](images/payout-account-type-selection.png)
+    ![Payout account type selection](images/payout-account-type-selection.png)
 
-4. 選取現有的付款設定檔，或按一下 [**建立新的付款設定檔**]，為所選的付款方法建立新的設定檔。
+4. Select an existing payment profile, or click **Create a new payment profile** to create a new profile for the chosen payment method.
 
 > [!NOTE]
-> 如果基於某些原因，您的帳戶尚未準備好接收 Microsoft 的資金，您可以勾選 [**保留我的付款**] 核取方塊。 您將繼續獲得銷售的收益，但除非您停用 [**保留我的付款**]，否則不會散發付款。
+> If, for some reason, your account is not ready to receive funds from Microsoft, you may check the **Hold my payment** checkbox. You will continue to earn proceeds from your sales, but payments will not be distributed until you disable **Hold my payment.**
 
-### <a name="create-a-bank-based-payment-profile"></a>建立以銀行為基礎的付款設定檔
+### <a name="create-a-bank-based-payment-profile"></a>Create a bank-based payment profile
 
-如果您選擇使用銀行帳戶來接收支出, 您將完成下列程式來設定您的銀行帳戶。
+If you elected to use a bank account to receive payouts, you'll complete the following process to configure your bank account.
 
-1. 在 [*銀行設定檔*] 頁面上, 提供您銀行的必要資訊。
-2. 提供您的銀行帳戶詳細資料。
+1. On the *Bank Profile* page, provide the required information about your bank.
+2. Provide your bank account details.
 
     > [!NOTE]
     > 用來提供您帳戶資訊的欄位僅接受英數字元。
 
-    ![支出銀行資訊](images/payout-bank-info.png)
+    ![Payout bank info](images/payout-bank-info.png)
 
-3. 提供受益人詳細資料。
-4. 回到 [*設定檔指派*] 頁面, 選取您想要我們在發出支出時使用的貨幣。
+3. Provide beneficiary details.
+4. Back on the *Profile assignment* page, select the currency you would like us to use when we issue your payouts.
 
     > [!WARNING]
-    > 請確定您的銀行接受您選取的支出貨幣。
+    > Make sure your bank accepts the payout currency you select.
 
-5. 您將需要為您參與的每個程式選取付款設定檔, 但您可以對多個程式使用相同的設定檔。
+5. You will need to select a payment profile for each program you participate in, though you can use the same profile for multiple programs.
 
-    ![支出使用銀行設定檔](images/payout-use-bank-profile.png)
+    ![Payout use bank profile](images/payout-use-bank-profile.png)
 
-6. 按一下 [提交] 以儲存變更。
+6. Click submit to save your changes.
 
 > [!NOTE]
-> Microsoft 最多可能需要48小時的時間來驗證您的設定檔中的資訊。 當此程式完成時,*驗證狀態*會顯示為 [**完成**]
+> Microsoft may take up to 48 hours to validate the information in your profile. When this process is complete *verification status* will show **Complete**
 
 為確保付款能夠成功，請記住下列內容：
 
-- 在合作夥伴中心為您的付款帳戶所輸入的**帳戶持有人名稱**, 必須與您的銀行帳戶建立關聯的名稱完全相同。 例如，如果您的銀行帳戶名稱包含中間名，請在 **帳戶持有人姓名** 中加入中間名。
+- The **Account holder name** entered for your payout account in Partner Center must be the exact same name associated with your bank account. 例如，如果您的銀行帳戶名稱包含中間名，請在 **帳戶持有人姓名** 中加入中間名。
 - 付款會直接從 Microsoft 轉入您的銀行帳戶，貨幣單位為美元 (USD)。
-- 在合作夥伴中心以拉丁字元輸入的銀行資訊會轉譯成斯拉夫文字元。
+- Bank information entered in Partner Center in Latin characters is translated to Cyrillic characters.
 
-### <a name="editing-existing-payment-profiles"></a>編輯現有的付款設定檔
+### <a name="editing-existing-payment-profiles"></a>Editing existing payment profiles
 
-如果您需要進行變更或更正任何不正確的資訊, 您可以編輯現有的付款設定檔。
+You can edit existing payment profiles if you need to make changes or correct any incorrect information.
 
-1. 在 [[合作夥伴中心](https://partner.microsoft.com/dashboard)] 中, 選取右上角的 [**設定**] 齒輪圖示, 然後選取 [**開發人員設定**]。
-2. 在 [*支出] 和 [稅務*] 標題底下, 選取 [付款**和稅務設定檔**]。
-3. 您的付款設定檔會連同其狀態一起列出。 尋找您要編輯的設定檔, 然後按一下最右側的 [**編輯**]
+1. In [Partner Center](https://partner.microsoft.com/dashboard), select the **Settings** gear icon in the top right corner, then select **Developer settings**.
+2. Underneath the *Payout and tax* heading, select **Payout and tax profiles**.
+3. Your payment profiles will be listed along with their status. Find the profile you wish to edit and click **Edit** at the far right
 
 > [!IMPORTANT]
 > 變更支付帳戶會讓付款時間最多延遲一個付款週期。 之所以會發生延遲，是因為我們必須確認帳戶變更，正如我們在您首次建立支付帳戶時所做的一樣。 等到您的帳戶通過驗證後，仍然可以取得全額款項，目前付款週期到期的任何款項都會在下一個付款週期支付。 如需詳細資訊，請參閱[獲得報酬](getting-paid-apps.md)。
@@ -147,16 +147,16 @@ ms.locfileid: "71275744"
 
 在特定國家與地區，您可以透過輸入您的 PayPal 資訊來建立付款帳戶。 但是，請在選擇 PayPal 做為付款帳戶選項之前：
 
-- 檢查[付款閾值、方法和時程表](payment-thresholds-methods-and-timeframes.md), 確認您的國家或地區是否有支援 PayPal。
+- Check [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md) to confirm whether PayPal is a supported payment method in your country or region.
 - 檢閱下列常見問題集。 根據您的情況，PayPal 可能不是最適合您的付款帳戶選項，也許銀行帳戶才是最佳選項。
 
 使用 PayPal 做為付款方式的常見問題：
 
-- **我需要哪些 PayPal 設定才能接收付款？** 您必須確定您的 PayPal 帳戶並未封鎖 eCheck 付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。 如需詳細資訊，請參閱 [PayPal 的帳戶設定頁面](https://go.microsoft.com/fwlink/p/?linkid=513139)。
-- **是否支援我的國家/地區？** 請參閱[付款臨界值、方法和](payment-thresholds-methods-and-timeframes.md)時間範圍, 以瞭解 PayPal 是支援的付款方法。
-- **我的 PayPal 帳戶是否必須在與合作夥伴中心帳戶相同的國家/地區中註冊？** 資料分割 當您設定 PayPal 帳戶時，您可以接受預設設定。 接收來自其他國家/地區與其他貨幣的付款時，應該不會有問題，除非您已封鎖使用某些貨幣付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。
-- **我必須手動接受 PayPal 付款嗎？** 資料分割 PayPal 帳戶的預設設定會要求使用者手動接受付款，這表示若您未在 30 天內接受付款，該款項將被退回。 您可以在 PayPal 的 \[More Settings\] \(更多設定\) 頁面關閉 \[Ask Me\] \(詢問我\) 來變更此設定。
-- **PayPal 支援哪些貨幣？** 如需最新清單, 請參閱[PayPal 的支援頁面](https://developer.paypal.com/docs/classic/api/currency-codes/#paypal)
+- **What PayPal settings do I need to have in order to receive payments?** 您必須確定您的 PayPal 帳戶並未封鎖 eCheck 付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。 如需詳細資訊，請參閱 [PayPal 的帳戶設定頁面](https://developer.paypal.com/webapps/developer/docs/classic/admin/setup-account/)。
+- **Is my country/region supported?** See [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md) to find out where PayPal is a supported payment method.
+- **Does my PayPal account have to be registered in the same country/region as my Partner Center account?** 不。 當您設定 PayPal 帳戶時，您可以接受預設設定。 接收來自其他國家/地區與其他貨幣的付款時，應該不會有問題，除非您已封鎖使用某些貨幣付款。 您可以在 PayPal 的 Payment Receiving Preferences \(付款接收喜好設定\) 頁面管理此設定。
+- **Do I have to accept PayPal payments manually?** 不。 PayPal 帳戶的預設設定會要求使用者手動接受付款，這表示若您未在 30 天內接受付款，該款項將被退回。 您可以在 PayPal 的 \[More Settings\] \(更多設定\) 頁面關閉 \[Ask Me\] \(詢問我\) 來變更此設定。
+- **What currencies does PayPal support?** Please see [PayPal's support page](https://developer.paypal.com/docs/classic/api/currency-codes/#paypal) for the current list
 
 ### <a name="specific-requirements-for-certain-countriesregions"></a>某些國家/地區的特定需求
 
@@ -179,9 +179,9 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 為確保付款能夠成功，請記住下列內容：
 
-- 在合作夥伴中心為您的付款帳戶所輸入的**帳戶持有人名稱**, 必須與您的銀行帳戶建立關聯的名稱完全相同。 例如，如果您的銀行帳戶名稱包含中間名，請在 **帳戶持有人姓名** 中加入中間名。
+- The **Account holder name** entered for your payout account in Partner Center must be the exact same name associated with your bank account. 例如，如果您的銀行帳戶名稱包含中間名，請在 **帳戶持有人姓名** 中加入中間名。
 - 付款會直接從 Microsoft 轉入您的銀行帳戶，貨幣單位為盧布 (RUB)。
-- 在合作夥伴中心以拉丁字元輸入的銀行資訊會轉譯成斯拉夫文字元。
+- Bank information entered in Partner Center in Latin characters is translated to Cyrillic characters.
 - 支付的款項會進入銀行帳戶，而不是銀行卡。
 
 #### <a name="ukraine"></a>烏克蘭
@@ -194,19 +194,19 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 嘗試支付您的第一筆款項時，Microsoft 會提供所有三份文件。 針對任何後續的支付，您只會收到 AC 文件。 請保留 ADA 和 AA 文件，以防您需要它們來從您的銀行接收未來的支付款項。
 
-### <a name="create-a-paypal-payment-profile"></a>建立 PayPal 付款設定檔
+### <a name="create-a-paypal-payment-profile"></a>Create a PayPal payment profile
 
-如果您選擇使用銀行帳戶來接收支出, 您將完成下列程式來設定您的銀行帳戶。
+If you elected to use a bank account to receive payouts, you'll complete the following process to configure your bank account.
 
-1. 在 [ *PayPal* ] 頁面上，提供您 PayPal 帳戶的必要資訊。
-2. 提供您的 paypal 帳戶詳細資料。
+1. On the *PayPal* page, provide the required information about your PayPal account.
+2. Provide your paypal account details.
 
     > [!NOTE]
     > 用來提供您帳戶資訊的欄位僅接受英數字元。
 
-    ![支付 paypal 資訊的支出](images/payout-paypal-info.png)
+    ![Payout paypal info](images/payout-paypal-info.png)
 
-3. 提供受益人詳細資料。
-4. 回到 [*設定檔指派*] 頁面, 選取您想要我們在發出支出時使用的貨幣。
-5. 您將需要為您參與的每個程式選取付款設定檔, 但您可以對多個程式使用相同的設定檔。
-6. 按一下 [提交] 以儲存變更。
+3. Provide beneficiary details.
+4. Back on the *Profile assignment* page, select the currency you would like us to use when we issue your payouts.
+5. You will need to select a payment profile for each program you participate in, though you can use the same profile for multiple programs.
+6. Click submit to save your changes.

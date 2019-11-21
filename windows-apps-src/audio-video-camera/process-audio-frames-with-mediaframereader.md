@@ -4,14 +4,14 @@ description: 本文說明如何使用 MediaFrameReader 搭配 MediaCapture 以�
 title: 使用 MediaFrameReader 處理音訊框架
 ms.date: 04/18/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 60abc29ad4f9e16dc9d37e99f94c9f30039c0087
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f8d357dfbceafb6cc366b2880956ab3db231047d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360695"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256667"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理音訊框架
 
@@ -21,17 +21,17 @@ ms.locfileid: "66360695"
 > 本文中所討論的功能只從 Windows 10 版本 1803 開始提供。
 
 > [!NOTE] 
-> 還有一個通用 Windows app 範例，示範使用 **MediaFrameReader** 顯示來自不同畫面來源 (包括色彩、深度與紅外線相機) 的畫面。 如需詳細資訊，請參閱[相機畫面範例](https://go.microsoft.com/fwlink/?LinkId=823230)。
+> 還有一個通用 Windows app 範例，示範使用 **MediaFrameReader** 顯示來自不同畫面來源 (包括色彩、深度與紅外線相機) 的畫面。 如需詳細資訊，請參閱[相機畫面範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)。
 
 ## <a name="setting-up-your-project"></a>設定您的專案
 擷取音訊框架的程序與取得其他媒體框架類型的程序大致相同。 就像任何使用 **MediaCapture** 的 App 一樣，您必須在嘗試存取任何相機裝置之前，宣告您的 App 是使用*網路攝影機*功能。 如果您的應用程式會從音訊裝置擷取，您也應該宣告*麥克風*裝置功能。 
 
-**將功能新增至應用程式資訊清單**
+**Add capabilities to the app manifest**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。 
-2.  選取 [功能] 索引標籤。 
-3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。  
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。  
+1.  在 Microsoft Visual Studio 中，按兩下 **\[方案總管\]** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 **\[功能\]** 索引標籤。
+3.  核取 **\[網路攝影機\]** 方塊和 **\[麥克風\]** 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 **\[圖片媒體櫃\]** 方塊和 **\[視訊媒體櫃\]** 方塊。
 
 
 
@@ -76,11 +76,11 @@ ms.locfileid: "66360695"
 
 ## <a name="related-topics"></a>相關主題
 
-* [處理媒體與 MediaFrameReader 的畫面格](process-media-frames-with-mediaframereader.md)
+* [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [相機](camera.md)
-* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [相機框架範例](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [音訊的圖形](audio-graphs.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
+* [音訊圖](audio-graphs.md)
  
 
 

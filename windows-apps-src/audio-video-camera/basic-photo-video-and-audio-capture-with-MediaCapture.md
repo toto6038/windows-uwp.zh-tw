@@ -4,14 +4,14 @@ description: 本文示範使用 MediaCapture 類別來擷取相片和視訊的�
 title: 使用 MediaCapture 進行基本相片、視訊和音訊的擷取
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47134c951fe0351966a34b4a58fe657a6aeeb602
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 28974fea7861022c383efa5bf61565c4f18b5f8d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317574"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254329"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 進行基本相片、視訊和音訊的擷取
 
@@ -20,18 +20,18 @@ ms.locfileid: "67317574"
 
 如果您只想擷取相片或視訊，而不想新增任何其他媒體擷取功能，或者不想建立自己的相機 UI，您可能會想使用 [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) 類別，此類別讓您只需啟動 Windows 內建的相機 app，即可接收已擷取的相片或視訊檔案。 如需詳細資訊，請參閱[**使用 Windows 內建相機 UI 來擷取相片和視訊**](capture-photos-and-video-with-cameracaptureui.md)
 
-此文章中的程式碼是從[**相機入門套件**](https://go.microsoft.com/fwlink/?linkid=619479)範例改編而來。 您可以下載範例以查看實際使用的程式碼，或以此範例做為自己的 App 起點。
+此文章中的程式碼是從[**相機入門套件**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraStarterKit)範例改編而來。 您可以下載範例以查看內容中使用的程式碼，或以此範例做為自己的 app 起點。
 
 ## <a name="add-capability-declarations-to-the-app-manifest"></a>將功能宣告加入至應用程式資訊清單
 
 為了讓您的 app 可存取裝置的相機，您必須宣告您的 app 使用 *webcam* 和 *microphone* 裝置功能。 如果您要將擷取的相片和視訊儲存到使用者的圖片媒體櫃或視訊媒體櫃，您也必須宣告 *picturesLibrary* 和 *videosLibrary* 功能。
 
-**若要將功能新增至應用程式資訊清單**
+**To add capabilities to the app manifest**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。 
-2.  選取 [功能] 索引標籤。 
-3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。  
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。  
+1.  在 Microsoft Visual Studio 中，按兩下 **\[方案總管\]** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 **\[功能\]** 索引標籤。
+3.  核取 **\[網路攝影機\]** 方塊和 **\[麥克風\]** 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 **\[圖片媒體櫃\]** 方塊和 **\[視訊媒體櫃\]** 方塊。
 
 
 ## <a name="initialize-the-mediacapture-object"></a>初始化 MediaCapture 物件
@@ -47,7 +47,7 @@ ms.locfileid: "67317574"
 ## <a name="capture-a-photo-to-a-softwarebitmap"></a>將相片擷取到 SoftwareBitmap
 [  **SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 類別是在 Windows 10 中所引進，可提供多個功能中常見的影像表示法。 如果您想要擷取相片，然後立即在 app 中使用擷取的影像 (例如將它顯示於 XAML 中)，而不是擷取到檔案中，則您應該擷取到 **SoftwareBitmap**。 您稍後仍然可以選擇將影像儲存到磁碟。
 
-初始化 **MediaCapture** 物件之後，您可以使用 [**LowLagPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.LowLagPhotoCapture) 類別，將相片擷取到 **SoftwareBitmap**。 藉由呼叫 [**PrepareLowLagPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) 來取得此類別的執行個體，其會傳入 [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) 物件，以指定您所需的影像格式。 [**CreateUncompressed** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.imageencodingproperties.createuncompressed)建立未壓縮的編碼方式，與指定的像素格式。 呼叫 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotocapture.captureasync) 來擷取相片，這會傳回 [**CapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedPhoto) 物件。 透過存取 [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedphoto.frame) 屬性，然後存取 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.softwarebitmap) 屬性，來取得 **SoftwareBitmap**。
+初始化 **MediaCapture** 物件之後，您可以使用 [**LowLagPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.LowLagPhotoCapture) 類別，將相片擷取到 **SoftwareBitmap**。 藉由呼叫 [**PrepareLowLagPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) 來取得此類別的執行個體，其會傳入 [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) 物件，以指定您所需的影像格式。 [**CreateUncompressed**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.imageencodingproperties.createuncompressed) creates an uncompressed encoding with the specified pixel format. 呼叫 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotocapture.captureasync) 來擷取相片，這會傳回 [**CapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedPhoto) 物件。 透過存取 [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedphoto.frame) 屬性，然後存取 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.softwarebitmap) 屬性，來取得 **SoftwareBitmap**。
 
 您可以視需要重複呼叫 **CaptureAsync** 來擷取多張相片。 完成擷取時，呼叫 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.finishasync) 來關閉 **LowLagPhotoCapture** 工作階段，並釋放相關聯的資源。 呼叫 **FinishAsync** 之後，若要再次開始擷取相片，您將需要再次呼叫 [**PrepareLowLagPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) 來將擷取工作階段重新初始化，然後再呼叫 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotocapture.captureasync)。
 
@@ -64,7 +64,7 @@ ms.locfileid: "67317574"
 ## <a name="capture-a-photo-to-a-file"></a>將相片擷取到檔案
 典型的攝影 app 會將擷取的相片儲存到磁碟或雲端儲存空間，而且需要將中繼資料 (例如相片方向) 新增到檔案。 下列範例示範如何將相片擷取到檔案。 您稍後仍然可以選擇從影像檔建立 **SoftwareBitmap**。 
 
-這個範例中示範的技術會將相片擷取到記憶體內部的資料流，然後將相片從資料流轉碼為磁碟上的檔案。 這個範例使用 [**GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync) 來取得使用者的圖片媒體櫃，然後使用 [**SaveFolder**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.savefolder) 屬性來取得參考預設儲存資料夾。 請記得將**圖片媒體櫃**功能新增到您的應用程式資訊清單，以便存取這個資料夾。 [**CreateFileAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync)新建[ **StorageFile** ](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)相片儲存。
+這個範例中示範的技術會將相片擷取到記憶體內部的資料流，然後將相片從資料流轉碼為磁碟上的檔案。 這個範例使用 [**GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync) 來取得使用者的圖片媒體櫃，然後使用 [**SaveFolder**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.savefolder) 屬性來取得參考預設儲存資料夾。 請記得將**圖片媒體櫃**功能新增到您的應用程式資訊清單，以便存取這個資料夾。 [**CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) creates a new [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) to which the photo will be saved.
 
 建立 [**InMemoryRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.InMemoryRandomAccessStream)，然後呼叫 [**CapturePhotoToStreamAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.capturephototostreamasync)，來將相片擷取到資料流，其會傳入資料流和 [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) 物件，以指定應使用的影像格式。 您可以自行初始化該物件來建立自訂的編碼屬性，但類別會針對常見的編碼格式提供靜態方法，例如 [**ImageEncodingProperties.CreateJpeg**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.imageencodingproperties.createjpeg)。 接下來，呼叫 [**OpenAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync) 來建立輸出檔的檔案資料流。 建立 [**BitmapDecoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapDecoder)，將影像從記憶體內部的資料流解碼，接著建立 [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapEncoder)，藉由呼叫 [**CreateForTranscodingAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.createfortranscodingasync) 來將影像編碼為檔案。
 
@@ -162,8 +162,8 @@ ms.locfileid: "67317574"
 [!code-cs[RenderSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRenderSoundLevelChanged)]
 
 
-* [使用 Windows 內建相機 UI 擷取相片和視訊](capture-photos-and-video-with-cameracaptureui.md)
-* [處理與 MediaCapture 裝置方向](handle-device-orientation-with-mediacapture.md)
+* [Capture photos and video with Windows built-in camera UI](capture-photos-and-video-with-cameracaptureui.md)
+* [Handle device orientation with MediaCapture](handle-device-orientation-with-mediacapture.md)
 * [建立、編輯和儲存點陣圖影像](imaging.md)
 * [檔案、資料夾和媒體櫃](https://docs.microsoft.com/windows/uwp/files/index)
 

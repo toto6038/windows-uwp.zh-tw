@@ -1,21 +1,21 @@
 ---
-Description: 如果您的 App 沒有符合客戶裝置特定設定的資源，則會使用 App 的預設資源。 本主題說明如何指定這些預設資源的內容。
+Description: 如果您的應用程式沒有符合客戶裝置特定設定的資源，則會使用應用程式的預設資源。 本主題說明如何指定這些預設資源的內容。
 title: 指定您的應用程式使用的預設資源
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5dfd09f2a1a3ab326c09434ee2c613ae57214d59
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593983"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254639"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>指定您的應用程式使用的預設資源
 
-如果您的 App 沒有符合客戶裝置特定設定的資源，則會使用 App 的預設資源。 本主題說明如何指定這些預設資源的內容。
+如果您的應用程式沒有符合客戶裝置特定設定的資源，則會使用應用程式的預設資源。 本主題說明如何指定這些預設資源的內容。
 
 當客戶從 Microsoft Store 安裝您的 App 時，會依據 App 的可用資源比對客戶裝置上的設定。 執行這個比對後，就只需要下載並安裝適合該使用者的資源。 例如，使用最適合使用者語言喜好設定和裝置解析度及 DPI 設定的字串與影像。 例如，`200` 是 `scale` 的預設值，但是您可以視需要覆寫該預設值。
 
@@ -44,7 +44,7 @@ ms.locfileid: "57593983"
    </default>
    ```
    
-   **注意**：`LANGUAGE-TAG(S)` 這個值必須與您的應用程式預設語言保持同步。 如果這是單一 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)，則應用程式的預設語言必須是相同的標記。 如果是以逗號分隔的語言標記清單，則應用程式的預設語言必須是清單中的第一個標記。 您可以在應用程式封裝資訊清單來源檔案 (`Package.appxmanifest`) 的 **\[應用程式\]** 索引標籤上的 **\[預設語言\]** 中的，設定應用程式的預設語言。
+   **注意**：`LANGUAGE-TAG(S)` 這個值必須與您的應用程式預設語言保持同步。 如果這是單一 [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)，則應用程式的預設語言必須是相同的標記。 如果是以逗號分隔的語言標記清單，則應用程式的預設語言必須是清單中的第一個標記。 您可以在應用程式封裝資訊清單來源檔案 (`Package.appxmanifest`) 的 **\[應用程式\]** 索引標籤上的 **\[預設語言\]** 中的，設定應用程式的預設語言。
 
 4. 每個 `<qualifier>` 元素都會指定 Visual Studio 要使用什麼值做為每個限定詞名稱的預設值。 就您到目前為止所處理的檔案內容來看，您還沒有實際改變 Visual Studio 的行為表現。 換言之，Visual Studio *已經表現得好像*此檔案已經存在這些內容，因為這是預設值。 因此要將預設值覆寫成您自己的預設值，就必須變更檔案中的值。 以下是檔案在您編輯了前三個值的情況下可能呈現的外觀範例。
    ```xml
@@ -64,7 +64,7 @@ ms.locfileid: "57593983"
 
 若要確認系統已將您覆寫的預設值納入考量，請尋找檔案 `<ProjectFolder>\obj\<ReleaseConfiguration folder>\priconfig.xml`，並確認其內容符合您的覆寫。 如果這樣做了，即表示您已成功設定應用程式預設使用之資源的限定詞值。 如果找不到使用者設定的相符項目，則會使用資料夾或檔案名稱包含您在此所設定之預設資源限定詞值的資源。
 
-### <a name="how-does-this-work"></a>這是如何運作？
+### <a name="how-does-this-work"></a>這是如何運作的？
 
 Visual Studio 在幕後啟動名為 `MakePri.exe` 的工具來產生所謂套件資源索引 (PRI) 的檔案，這個檔案描述應用程式所有的資源，包括指出哪些是預設資源。 如需此工具的詳細資訊，請參閱[使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)。 Visual Studio 將設定檔傳遞至 `MakePri.exe`。 `priconfig.default.xml` 檔案的內容會用來做為該設定檔的 `<default>` 元素，也就是指定視為預設值之限定詞值集的部分。 因此，新增和編輯 `priconfig.default.xml`，最後都會影響 Visual Studio 為應用程式所產生並且包含在其應用程式套件中的套件資源索引檔案內容。
 
@@ -103,5 +103,5 @@ Visual Studio 在幕後啟動名為 `MakePri.exe` 的工具來產生所謂套件
 ## <a name="related-topics"></a>相關主題
 
 * [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)
-* [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 * [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)

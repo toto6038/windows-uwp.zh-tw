@@ -4,14 +4,14 @@ description: 本文示範如何使用手動裝置控制項來啟用美化的相�
 title: 相片和視訊擷取的手動相機控制項
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 99ffa0dcae3412d49aef9da5bc3dfea255173ecb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7344e5004e6ac398673734cb03ddbdde93b3bd0d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358940"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254311"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>相片和視訊擷取的手動相機控制項
 
@@ -21,10 +21,10 @@ ms.locfileid: "66358940"
 
 本文中討論的控制項全都會使用相同的模式新增到您的 app。 首先，檢查 app 目前執行所在的裝置是否支援此控制項。 如果支援此控制項，則為控制項設定所需的模式。 通常，如果目前的裝置不支援特定的控制項，您應該停用或隱藏可讓使用者啟用該功能的 UI 元素。
 
-本文中的程式碼是從[相機手動控制項 SDK 範例](https://go.microsoft.com/fwlink/?linkid=845228)改編而來。 您可以下載範例以查看實際使用的程式碼，或以此範例做為自己的 App 起點。
+本文中的程式碼是從[相機手動控制項 SDK 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraManualControls)改編而來。 您可以下載範例以查看內容中使用的程式碼，或以此範例做為自己的 app 起點。
 
 > [!NOTE]
-> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
+> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
 此文章中討論的所有裝置控制項 API 都是 [**Windows.Media.Devices**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices) 命名空間的成員。
 
@@ -77,7 +77,7 @@ ms.locfileid: "66358940"
 
 [!code-cs[EvValueChanged](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEvValueChanged)]
 
-## <a name="flash"></a>閃光燈
+## <a name="flash"></a>Flash
 
 [  **FlashControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.FlashControl) 可讓您啟用或停用閃光燈，或是啟用自動閃光燈，讓系統自動判斷是否要使用閃光燈。 這個控制項也可讓您在支援自動消除紅眼的裝置上使用該功能。 這些設定全部都可套用至相片擷取。 [  **TorchControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.TorchControl) 是個別的控制項，可針對視訊擷取開啟或關閉手電筒。
 
@@ -149,13 +149,13 @@ ms.locfileid: "66358940"
 
 下一步是透過處理目前正在顯示擷取預覽串流之 [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) 的 [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped) 事件，在使用者點選螢幕時接聽事件。 如果相機目前沒有進行預覽，或是點選以對焦模式已停用，請從處理常式返回而不進行任何動作。
 
-如果追蹤變數 *\_isFocused*切換為 false，而且如果焦點的過程中目前沒有攝影機 (取決於[ **FocusState** ](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusstate)屬性**FocusControl**)，開始點選-焦點程序。 從傳遞給處理常式的事件引數取得使用者的點選位置。 這個範例也會利用這個機會挑選將對焦的區域大小。 在此案例中，大小為擷取元素最小尺寸的 1/4。 將點選位置和區域大小傳遞給下一節中定義的 **TapToFocus** 協助程式方法。
+If the tracking variable *\_isFocused* is toggled to false, and if the camera isn't currently in the process of focus (determined by the [**FocusState**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusstate) property of the **FocusControl**), begin the tap-to-focus process. 從傳遞給處理常式的事件引數取得使用者的點選位置。 這個範例也會利用這個機會挑選將對焦的區域大小。 在此案例中，大小為擷取元素最小尺寸的 1/4。 將點選位置和區域大小傳遞給下一節中定義的 **TapToFocus** 協助程式方法。
 
-如果 *\_isFocused*切換設定為 true，使用者點選應清除焦點從先前的區域。 這是在下面所示的 **TapUnfocus** 協助程式方法中進行。
+If the *\_isFocused* toggle is set to true, the user tap should clear the focus from the previous region. 這是在下面所示的 **TapUnfocus** 協助程式方法中進行。
 
 [!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
 
-在 [ **TapToFocus**協助程式方法中，第一組 *\_isFocused*切換為 true，因此下一步] 畫面點選會釋放將焦點從點選的區域。
+In the **TapToFocus** helper method, first set the *\_isFocused* toggle to true so that the next screen tap will release the focus from the tapped region.
 
 這個協助程式方法的下一個工作，是要決定位於將被指派給對焦控制項之預覽串流內的矩形。 這需要兩個步驟。 第一個步驟是決定預覽串流在 [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) 控制項內佔用的矩形。 這取決於預覽串流的尺寸和裝置的方向。 本節結尾顯示的協助程式方法 **GetPreviewStreamRectInControl** 會執行此工作，並傳回包含預覽串流的矩形。
 
@@ -265,7 +265,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 ## <a name="powerline-frequency"></a>電源頻率
 有些相機裝置支援抗閃爍處理，而這取決於了解目前環境中電源的 AC 頻率。 有些裝置支援自動決定電源頻率，有些則需要手動設定頻率。 下列程式碼範例顯示如何判斷裝置上的電源頻率支援，以及必要時如何手動設定頻率。 
 
-首先，呼叫 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trygetpowerlinefrequency)，傳入一個 [**PowerlineFrequency**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.PowerlineFrequency) 類型的輸出參數，如果此呼叫失敗，表示目前的裝置不支援電源頻率控制項。 如果支援此功能，您可以試著設定自動模式來判斷裝置上是否可使用自動模式。 透過呼叫 [**TrySetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trysetpowerlinefrequency) 並傳入 **Auto** 值以執行此操作。如果呼叫成功，表示裝置支援您的自動電源頻率。 如果裝置支援電源頻率控制器，但不支援自動頻率偵測，您仍然可以使用 **TrySetPowerlineFrequency** 以手動方式設定頻率。 在這個範例中，**MyCustomFrequencyLookup** 是您為了判斷裝置目前位置的正確頻率而實作的自訂方法。 
+首先，呼叫 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trygetpowerlinefrequency)，傳入一個 [**PowerlineFrequency**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.PowerlineFrequency) 類型的輸出參數，如果此呼叫失敗，表示目前的裝置不支援電源頻率控制項。 如果支援此功能，您可以試著設定自動模式來判斷裝置上是否可使用自動模式。 Do this by calling [**TrySetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trysetpowerlinefrequency) and passing in the value **Auto**. If the call succeeds, that means that your auto powerline frequency is supported. 如果裝置支援電源頻率控制器，但不支援自動頻率偵測，您仍然可以使用 **TrySetPowerlineFrequency** 以手動方式設定頻率。 在這個範例中，**MyCustomFrequencyLookup** 是您為了判斷裝置目前位置的正確頻率而實作的自訂方法。 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
@@ -335,7 +335,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 在 **ManipulationDelta** 事件的處理常式中，更新以使用者的捏合手勢變更為基礎的縮放係數。 [  **ManipulationDelta.Scale**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.ManipulationDelta) 值代表捏合手勢的比例變更，讓少量增加的捏合大小是稍微大於 1.0 的數字，而少量減少的捏合大小是稍微小於 1.0 的數字。 在這個範例中，目前的縮放控制項值會乘以縮放差異。
 
-在設定縮放係數之前，您必須確定此值不會小於裝置所支援的最小值 (以 [**ZoomControl.Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.min) 屬性表示)。 此外，確定此值是小於或等於 [**ZoomControl.Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.max) 值。 最後，您必須確定縮放因素是如所示，裝置所支援的縮放步驟大小的倍數[**步驟**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.step)屬性。 如果縮放係數不符合這些需求，當您嘗試在擷取裝置上設定縮放比例時，將會擲回例外狀況。
+在設定縮放係數之前，您必須確定此值不會小於裝置所支援的最小值 (以 [**ZoomControl.Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.min) 屬性表示)。 此外，確定此值是小於或等於 [**ZoomControl.Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.max) 值。 Finally, you must make sure that the zoom factor is a multiple of the zoom step size supported by the device as indicated by the [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.step) property. 如果縮放係數不符合這些需求，當您嘗試在擷取裝置上設定縮放比例時，將會擲回例外狀況。
 
 建立新的 [**ZoomSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ZoomSettings) 物件，以在擷取裝置上設定縮放比例。 將 [**Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomsettings.mode) 屬性設為 [**ZoomTransitionMode.Smooth**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ZoomTransitionMode)，然後將 [**Value**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomsettings.value) 屬性設為所需的縮放係數。 最後，呼叫 [**ZoomControl.Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.configure) 以在裝置上設定新的縮放值。 裝置將會順暢地轉換到新的縮放值。
 
@@ -344,4 +344,4 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

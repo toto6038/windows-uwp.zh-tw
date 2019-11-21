@@ -6,21 +6,21 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 開發人員帳戶, 個人, 公司, 商務
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a02079e7589d7c92ececa03496600a82ef427e
-ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
+ms.openlocfilehash: 1ac6c3e7c89c091d1080364b8fbbb35d484aee49
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71982236"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260058"
 ---
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
-[合作夥伴中心](https://partner.microsoft.com/dashboard)內的 Windows 程式在許多[國家和地區](#developer-account-and-app-submission-markets)都提供個人和公司帳戶。 任一類型的帳戶都可讓您存取將應用程式發佈至存放區，並參與其他 Microsoft 程式。
+The Windows program in [Partner Center](https://partner.microsoft.com/dashboard) offers both individual and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft programs.
 
 > [!NOTE]
-> 開啟開發人員帳戶時，請務必使用您想要用於開發人員帳戶的 Microsoft 帳戶來登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。 您將可以選擇稍後[將其他使用者新增至帳戶](manage-account-users.md)。
+> When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. 您將可以選擇稍後[將其他使用者新增至帳戶](manage-account-users.md)。
 
-當您[開始註冊程序](https://go.microsoft.com/fwlink/p/?LinkId=615100)時，必須選擇要建立個人帳戶或公司帳戶。 兩種帳戶類型都允許您提交應用程式、遊戲、增益集與服務。
+當您[開始註冊程序](https://developer.microsoft.com/store/register)時，必須選擇要建立個人帳戶或公司帳戶。 兩種帳戶類型都允許您提交應用程式、遊戲、增益集與服務。
 
 公司帳戶則適用於組織與企業。 對於公司帳戶，我們會要求較高的[驗證](#account-verification)，以確認您已獲授權進行公司的帳戶設定。 個人帳戶通常適用於獨立作業的單一開發人員，雖然您可以選擇將其他帳戶使用者新增至任一種類型的帳戶。
 
@@ -33,11 +33,11 @@ ms.locfileid: "71982236"
 |--------------------|-----------------|
 | <ul><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>較短的帳戶驗證程序</li></ul> | <ul><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>要求較高的帳戶驗證</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>能夠提交有限功能的應用程式 (如[Microsoft Store 原則](store-policies.md#1014-account-type)中所述)</li></ul> |
 
-公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 根據[商店原則](store-policies.md#1014-account-type)，具有特定功能的應用程式（例如存取財務帳戶資訊或需要驗證才能存取主要功能的應用程式，不需使用安全的專用協力廠商驗證提供者），只能由公司帳戶發佈。
+公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 Per the [Store Policies](store-policies.md#1014-account-type), apps with certain functionality, such as those that access financial account information or that require authentication to access primary functionality (without using a secure dedicated third party authentication provider), can only be published by company accounts.
 
 ## <a name="account-verification"></a>帳戶驗證
 
-完成註冊程序之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 針對公司帳戶，我們的驗證合作夥伴 Dun & Bradstreet 會確認您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時提供的所有連絡人資訊是最新的)。 您無法從公司帳戶提交應用程式，直到驗證完成為止，但當您在等候時，您可以[保留應用程式名稱](create-your-app-by-reserving-a-name.md)繼續建立和測試應用程式，並開始準備您的提交。
+完成註冊程序之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 針對公司帳戶，我們的驗證合作夥伴 Dun & Bradstreet 會確認您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時提供的所有連絡人資訊是最新的)。 You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](create-your-app-by-reserving-a-name.md) continue building and testing apps, and work on getting your submissions ready.
 
 您可以在 **\[帳戶設定\]** 頁面查看您的驗證狀態。 
 
@@ -105,7 +105,7 @@ ms.locfileid: "71982236"
 | 厄利垂亞                           | 19 美元              | 99 美元           |  
 | 愛沙尼亞                           | 14 歐元              | 75 歐元           |  
 | 衣索比亞                          | 19 美元              | 99 美元           |  
-| 法羅群島                     | 19 美元              | 99 美元           |  
+| 法羅群島 (丹麥)                     | 19 美元              | 99 美元           |  
 | 斐濟群島                              | 19 美元              | 99 美元           |  
 | 芬蘭                           | 14 歐元              | 75 歐元           |  
 | 法國                            | 14 歐元              | 75 歐元           |  
@@ -115,7 +115,7 @@ ms.locfileid: "71982236"
 | 德國                           | 14 歐元              | 75 歐元           |  
 | 迦納                             | 19 美元              | 99 美元           |  
 | 希臘                            | 14 歐元              | 75 歐元           |  
-| 格陵蘭                         | 19 美元              | 99 美元           |  
+| 格陵蘭 (丹麥)                         | 19 美元              | 99 美元           |  
 | 格瑞那達                           | 19 美元              | 99 美元           |  
 | 瓜地馬拉                         | 145 瓜地馬拉格查爾             | 750 瓜地馬拉格查爾          |  
 | 幾內亞                            | 19 美元              | 99 美元           |  
@@ -151,7 +151,7 @@ ms.locfileid: "71982236"
 | 立陶宛                         | 14 歐元              | 75 歐元           |  
 | 盧森堡                        | 14 歐元              | 75 歐元           |  
 | 澳門特別行政區                         | 19 美元              | 99 美元           |  
-| 北馬其頓 (FYROM)                 | 19 美元              | 99 美元           |  
+| 前南斯拉夫馬其頓共和國                 | 19 美元              | 99 美元           |  
 | 馬達加斯加                        | 19 美元              | 99 美元           |  
 | 馬拉威                            | 19 美元              | 99 美元           |  
 | 馬來西亞                          | 62 MYR (馬來西亞林吉特)              | 300 MYR (馬來西亞林吉特)          |  
@@ -168,10 +168,10 @@ ms.locfileid: "71982236"
 | 蒙特內哥羅                        | 14 歐元              | 75 歐元           |  
 | 摩洛哥                           | 158 MAD (摩洛哥迪拉姆)             | 800 MAD (摩洛哥迪拉姆)          |  
 | 莫三比克                        | 19 美元              | 99 美元           |  
-| 緬甸                           | 19 美元              | 99 美元           |  
+| 緬甸文                           | 19 美元              | 99 美元           |  
 | 納米比亞                           | 19 美元              | 99 美元           |  
 | 諾魯                             | 19 美元              | 99 美元           |  
-| 尼泊爾                             | 19 美元              | 99 美元           |  
+| 尼泊爾聯邦民主共和國                             | 19 美元              | 99 美元           |  
 | 荷蘭                       | 14 歐元              | 75 歐元           |  
 | 紐西蘭                       | 24 紐西蘭元              | 140 紐西蘭元          |  
 | 尼加拉瓜                         | 19 美元              | 99 美元           |  

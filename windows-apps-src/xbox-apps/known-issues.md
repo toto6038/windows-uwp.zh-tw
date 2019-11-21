@@ -3,25 +3,25 @@ title: Xbox 開發人員計畫上的 UWP 已知問題
 description: 列出 UWP 在 Xbox 開發人員計畫上的已知問題。
 ms.date: 03/29/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: 01bc72051e9efa69adbbab574b932da829c83e72
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 34425a0e754d62a1d9d7716bca3576463aec3ba5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626633"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259731"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開發人員計畫上的 UWP 已知問題
 
 本主題說明 Xbox One 開發人員計畫上的 UWP 已知問題。 如需此計畫的詳細資訊，請參閱 [Xbox 上的 UWP](index.md)。 
 
-\[如果您以下來自 API 參考主題中的連結，而且不需要通用裝置系列的 API 資訊，請參閱[目前尚不支援在 Xbox 的 UWP 功能](https://go.microsoft.com/fwlink/?LinkID=760755)。\]
+\[If you came here from a link in an API reference topic, and are looking for Universal device family API information, please see [UWP features that aren't yet supported on Xbox](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN).\]
 
 下列清單將針對您可能遇到的一些已知問題進行重點提示，但這並不是完整的清單。 
 
-**我們想要您的意見反應**，因此請在[開發通用 Windows 平台 App](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
+**我們想要您的意見反應**，因此請在[開發通用 Windows 平台應用程式](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
 
 如果您遇到困難，請閱讀本主題中的資訊、參閱[常見問題集](frequently-asked-questions.md)，並使用論壇以尋求協助。
 
@@ -41,7 +41,7 @@ ms.locfileid: "57626633"
 
 此時，直到您將使用者登出為止，該權限將會「持續生效」，即使您將應用程式解除安裝並重新安裝也一樣。
  
-有另外一種免除類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 [一律] 允許子女啟動該應用程式。 該免除會儲存於雲端，且即使在子女登出再重新登入之後也會保留。
+有另外一種免除類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 **\[一律\]** 允許子女啟動該應用程式。 該免除項目儲存於雲端，即使子女登出後又重新登入，也會保留。
 
 ## <a name="storagefilecopyasync-fails-to-copy-encrypted-files-to-unencrypted-destination"></a>StorageFile.CopyAsync 無法將加密的檔案複製到未加密的目的地 
 
@@ -60,12 +60,12 @@ Xbox One 裝置上的通用 Windows 平台 (UWP) 應用程式具有無法繫結�
 
 ## <a name="uwp-api-coverage"></a>UWP API 涵蓋範圍
 
-並非所有的 UWP API 都在 Xbox 上受到支援。 如需取得已知無法運作的 API 清單，請參閱[尚未在 Xbox 上支援的 UWP 功能 (英文)](https://go.microsoft.com/fwlink/p/?LinkId=760755)。 如果您發現其他 API 問題，請在論壇上報告它們。 
+並非所有的 UWP API 都在 Xbox 上受到支援。 如需取得已知無法運作的 API 清單，請參閱[尚未在 Xbox 上支援的 UWP 功能 (英文)](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)。 如果您發現其他 API 問題，請在論壇上報告它們。 
 
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>瀏覽到 WDP 會導致憑證警告
 
-您將收到有關所提供憑證的警告 (與下列螢幕擷取畫面類似)，因為 Xbox One 主機所簽署的安全性憑證不是視為已知的受信任發行者。 若要存取 Windows Device Portal，請按一下 [繼續瀏覽此網站]。
+您將收到有關所提供憑證的警告 (與下列螢幕擷取畫面類似)，因為 Xbox One 主機所簽署的安全性憑證並不被視為已知的受信任發行者。 若要存取 Windows Device Portal，請按一下 **\[繼續瀏覽此網站\]** 。
 
 ![網站安全性憑證警告](images/security_cert_warning.jpg)
 
@@ -117,4 +117,4 @@ namespace TestDNLA {
 
 ## <a name="see-also"></a>請參閱
 - [常見問題集](frequently-asked-questions.md)
-- [在 Xbox One UWP](index.md)
+- [UWP on Xbox One](index.md)

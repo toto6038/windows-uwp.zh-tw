@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 54846cd350e8f91f7ba664690cfd4dd7e36c129e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634133"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258047"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>全球化您的日期/時間/數字格式
 
@@ -24,7 +24,7 @@ ms.locfileid: "57634133"
 
 不同的地區和文化使用不同的日期和時間格式。 這包含使用不同的慣例來排列日期的日、月順序、時間的小時和分鐘區隔方式，即使是做為分隔符號的標點符號也會有所不同。 此外，日期可能會因為不同文化而顯示為各種長格式 (「Wednesday, March 28, 2012」) 或短格式 (「3/28/12」)。 不同語言之間的星期幾與月份的名稱和縮寫當然也會有所不同。
 
-您可以預覽不同語言使用的格式。 移至 **[設定]** > **[時間與語言]** > **[地區與語言]**，然後按一下 **[其他日期、時間及區域設定]** > **[變更日期、時間或數字格式]**。 在 **[格式]** 索引標籤上，從 **[格式]** 下拉式功能表中選取語言，然後在 **[範例]** 中預覽格式。
+您可以預覽不同語言使用的格式。 移至 **[設定]**  >  **[時間與語言]**  >  **[地區與語言]** ，然後按一下 **[其他日期、時間及區域設定]**  >  **[變更日期、時間或數字格式]** 。 在 **[格式]** 索引標籤上，從 **[格式]** 下拉式功能表中選取語言，然後在 **[範例]** 中預覽格式。
 
 此主題會使用「使用者設定檔語言清單」、「應用程式資訊清單語言清單」及「應用程式執行階段語言清單」等三個術語。 如需取得這些術語意義和存取其值的詳細資訊，請參閱[了解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)。
 
@@ -52,7 +52,7 @@ ms.locfileid: "57634133"
 您可以在您自己的電腦上以這種方式測試。
 
 - 確認您專案中的資源檔同時限定 "en-US" 和 "de-DE" (請參閱[針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md))。
-- 在 **[設定]** > **[時間與語言]** > **[地區與語言]** > **[語言]** 中變更您的使用者設定檔語言清單。 新增德文 (德國)，將其設為預設值，然後重新執行程式碼。
+- 在 **[設定]**  >  **[時間與語言]**  >  **[地區與語言]**  >  **[語言]** 中變更您的使用者設定檔語言清單。 新增德文 (德國)，將其設為預設值，然後重新執行程式碼。
 
 ## <a name="format-dates-and-times-for-the-user-profile-language-list"></a>為使用者設定檔語言清單格式化日期和時間
 
@@ -104,9 +104,9 @@ ms.locfileid: "57634133"
                     "Formatted Euro (fr-FR defaults): " + currencyValueEuroFR;
 ```
 
-您可以藉由在 **[設定]** > **[時間與語言]** > **[地區與語言]** > **[國家或地區]** 中變更國家或地區，來在您自己的電腦上測試上述程式碼。 選擇國家或地區 (假設是冰島)，然後重新執行程式碼。
+您可以藉由在 **[設定]**  >  **[時間與語言]**  >  **[地區與語言]**  >  **[國家或地區]** 中變更國家或地區，來在您自己的電腦上測試上述程式碼。 選擇國家或地區 (假設是冰島)，然後重新執行程式碼。
 
-## <a name="use-a-culturally-appropriate-calendar"></a>使用符合當地文化的行事曆
+## <a name="use-a-culturally-appropriate-calendar"></a>使用符合當地文化的日曆
 
 不同地區及語言的行事曆也有所不同。 公曆 (西曆) 不是每個地區的預設行事曆。 有些地區的使用者可能會選擇其他日曆，像是日本年號年曆或阿拉伯陰曆。 不同的時區及日光節約時間也會對日曆上的日期和時間有顯著影響。
 
@@ -116,9 +116,9 @@ ms.locfileid: "57634133"
 
 不同地區格式化電話號碼的方式也有所不同。 數字位數、數字分組方式及電話號碼特定部分的意義，都會隨每個國家/地區而有所不同。 從 Windows 10 版本 1607 開始，您可以使用 [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) 命名空間中的類別來針對目前地區適當地格式化電話號碼。
 
-[**PhoneNumberInfo** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live)剖析數字的字串，並可讓您： 判斷數字是否為有效的電話號碼，目前的區域中，比較兩個數字是否相等，並擷取電話的不同功能組件數字，例如國家/地區或地理區域的程式碼。
+[**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) parses a string of digits and allows you to: determine whether the digits are a valid phone number in the current region; compare two numbers for equality; and to extract the different functional parts of the phone number, such as country code or geographical area code.
 
-[**PhoneNumberFormatter** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live)格式的數字的字串或**PhoneNumberInfo**顯示，即使位數的字串，代表部分的電話號碼。 您可以使用此部分的號碼格式，在使用者輸入號碼時格式化號碼。
+[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) formats a string of digits or a **PhoneNumberInfo** for display, even when the string of digits represents a partial phone number. 您可以使用此部分的號碼格式，在使用者輸入號碼時格式化號碼。
 
 以下範例示範如何使用 **PhoneNumberFormatter**，在輸入電話號碼時格式化電話號碼。 每當名為 phoneNumberInputTextBox 的 **TextBox** 內有文字變更時，就會使用目前預設地區設定來格式化文字方塊內容，並顯示在名為 phoneNumberOutputTextBlock 的 **TextBlock** 中。 為了便於示範，字串也使用紐西蘭的地區設定格式化，並顯示在名為 phoneNumberOutputTextBlockNZ 的 TextBlock 中。
   
@@ -151,7 +151,7 @@ ms.locfileid: "57634133"
     }
 ```    
 
-您可以藉由在 **[設定]** > **[時間與語言]** > **[地區與語言]** > **[國家或地區]** 中變更國家或地區，來在您自己的電腦上測試上述程式碼。 選擇國家或地區 (假設是紐西蘭，以確認該格式相符)，然後重新執行程式碼。 如需取得測試資料，您可以使用 Web 搜尋位於紐西蘭公司的電話號碼。
+您可以藉由在 **[設定]**  >  **[時間與語言]**  >  **[地區與語言]**  >  **[國家或地區]** 中變更國家或地區，來在您自己的電腦上測試上述程式碼。 選擇國家或地區 (假設是紐西蘭，以確認該格式相符)，然後重新執行程式碼。 如需取得測試資料，您可以使用 Web 搜尋位於紐西蘭公司的電話號碼。
 
 ## <a name="the-users-language-and-cultural-preferences"></a>使用者語言及文化喜好設定
 
@@ -161,19 +161,19 @@ ms.locfileid: "57634133"
 
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
-* [行事曆](/uwp/api/windows.globalization.calendar?branch=live)
+* [Calendar](/uwp/api/windows.globalization.calendar?branch=live)
 * [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
 * [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
 ## <a name="related-topics"></a>相關主題
 
-* [行事曆、 日期和時間控制項](../controls-and-patterns/date-and-time.md)
-* [了解使用者設定檔的語言和應用程式資訊清單的語言](manage-language-and-region.md)
+* [行事曆、日期和時間控制項](../controls-and-patterns/date-and-time.md)
+* [Understand user profile languages and app manifest languages](manage-language-and-region.md)
 * [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>範例
 
-* [行事曆的詳細資料和數學範例](https://go.microsoft.com/fwlink/p/?linkid=231636)
-* [日期和時間格式範例](https://go.microsoft.com/fwlink/p/?linkid=231618)
-* [全球化喜好設定範例](https://go.microsoft.com/fwlink/p/?linkid=231608)
-* [數字格式化和剖析範例](https://go.microsoft.com/fwlink/p/?linkid=231620)
+* [Calendar details and math sample](https://code.msdn.microsoft.com/windowsapps/Calendar-details-and-math-b1683bb7)
+* [Date and time formatting sample](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)
+* [Globalization preferences sample](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
+* [Number formatting and parsing sample](https://code.msdn.microsoft.com/windowsapps/Number-formatting-and-bb10ba3d)

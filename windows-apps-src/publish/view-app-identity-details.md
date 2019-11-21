@@ -1,33 +1,33 @@
 ---
-Description: 查看 Microsoft Store 所指派給您應用程式之唯一身分識別的相關詳細資料, 並取得應用程式商店清單的連結。
+Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
 title: 檢視應用程式身分識別詳細資料
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd9f61aa32c7e4b78603af37947b39a44e705015
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 07c2d3308d204d37e246a9a56c0a7203a1340dc0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682645"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259884"
 ---
 # <a name="view-app-identity-details"></a>檢視應用程式身分識別詳細資料
 
 
-您可以透過 [**應用程式識別**] 頁面上的 Microsoft Store, 來查看指派給應用程式之唯一身分識別的相關詳細資料。 您也可以在此頁面上取得應用程式商店清單的連結。
+You can view details related to the unique identity assigned to your app by the Microsoft Store on its **App identity** pages. You can also get a link to your app's Store listing on this page.
 
-若要尋找這項資訊，請瀏覽到其中一個 app，然後在左方導覽功能表中展開 [應用程式管理]。 選取 **\[應用程式身分識別\]** 可檢視這些詳細資料。
+若要尋找這項資訊，請瀏覽到其中一個 app，然後在左方導覽功能表中展開 **\[應用程式管理\]** 。 選取 **\[應用程式身分識別\]** 可檢視這些詳細資料。
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>app 套件資訊清單中包含的值
 
-您的封裝資訊清單中必須包含下列值。 如果您[使用 Microsoft Visual Studio 建立套件](/windows/msix/package/packaging-uwp-apps)，並且使用與您開發人員帳戶關聯的相同 Microsoft 帳戶進行簽署，這些詳細資料就會自動包含在內。 如果您手動建立套件，您就必須加入下列這些項目：
+The following values must be included in your package manifest. 如果您[使用 Microsoft Visual Studio 建立套件](/windows/msix/package/packaging-uwp-apps)，並且使用與您開發人員帳戶關聯的相同 Microsoft 帳戶進行簽署，這些詳細資料就會自動包含在內。 如果您手動建立套件，您就必須加入下列這些項目：
 
--   **封裝/身分識別/名稱**
--   **封裝/身分識別/發行者**
--   **封裝/屬性/PublisherDisplayName**
+-   **Package/Identity/Name**
+-   **Package/Identity/Publisher**
+-   **Package/Properties/PublisherDisplayName**
 
 如需詳細資訊，請參閱[套件資訊清單結構描述參考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
@@ -38,15 +38,15 @@ ms.locfileid: "68682645"
 
 下列值為參考您 app 套件系列的其他值，但是沒有包含在資訊清單中。
 
--   **套件系列名稱 (PFN)** :這個值會與特定 Windows Api 搭配使用。
--   **封裝 SID**:您將需要此值, 才能將 WNS 通知傳送到您的應用程式。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
+-   **套件系列名稱 (PFN)** ：使用特定的 Windows API 時會使用這個值。
+-   **套件 SID**：您需要此值以傳送 WNS 通知到您的 app。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 
 
 ## <a name="link-to-your-apps-listing"></a>App 清單連結
 
 您可以分享連至您 app 頁面的直接連結，以協助您的客戶在市集中找到該 app。 這個連結的格式為 **`https://www.microsoft.com/store/apps/<your app's Store ID>`** 。 當客戶按一下此連結時，會開啟您 App 的網頁清單頁面。 在 Windows 裝置上，市集應用程式也將啟動並顯示您的應用程式清單。
 
-您 App 的**市集識別碼**也會在此區段中顯示。 這個市集識別碼可用來[產生市集徽章](https://go.microsoft.com/fwlink/p/?LinkId=534236)，或識別您的 App。
+您 App 的**市集識別碼**也會在此區段中顯示。 這個市集識別碼可用來[產生市集徽章](https://developer.microsoft.com/store/badges)，或識別您的 App。
 
 **市集通訊協定連結**可以用來直接連接至您在市集中的應用程式，而不開啟瀏覽器，例如當您從應用程式連結時。 如需詳細資訊，請參閱[應用程式的連結](link-to-your-app.md)。
 

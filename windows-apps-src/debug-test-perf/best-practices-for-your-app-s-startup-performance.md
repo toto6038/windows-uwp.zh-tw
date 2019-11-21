@@ -1,24 +1,24 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: 應用程式啟動效能的最佳做法
-description: 透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。
+title: App 啟動效能的最佳做法
+description: 透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) app。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ecb325566733e57c1ae9d1a13c68b25794e9e87
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360043"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254678"
 ---
-# <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
+# <a name="best-practices-for-your-apps-startup-performance"></a>App 啟動效能的最佳做法
 
 
-透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。
+透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) app。
 
-## <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
+## <a name="best-practices-for-your-apps-startup-performance"></a>App 啟動效能的最佳做法
 
 使用者對您 App 回應速度快慢的感受，部分取決於 App 啟動時間的長短。 基於這個主題的目的，App 的啟動時間是從使用者啟動 App 時算起，到使用者可以用一些有意義的方式與 App 互動時為止。 本節提供有關如何在 App 啟動時獲得較佳效能的建議。
 
@@ -32,7 +32,7 @@ ms.locfileid: "66360043"
 
 下列程序說明如何執行 Ngen.exe 以重新編譯 app。
 
-**若要執行 Ngen.exe**
+**To run Ngen.exe**
 
 1.  至少執行 app 一次，以確保 Ngen.exe 可以偵測到它。
 2.  若要開啟 \[**工作排程器**\]，請執行下列其中一個動作：
@@ -323,7 +323,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 > End Class
 > ```
 
-如需使用延長式啟動顯示畫面的範例，請參閱[啟動顯示畫面範例](https://go.microsoft.com/fwlink/p/?linkid=234889)。
+如需使用延長式啟動顯示畫面的範例，請參閱[啟動顯示畫面範例](https://code.msdn.microsoft.com/windowsapps/Splash-screen-sample-89c1dc78)。
 
 ### <a name="phase-3"></a>階段 3
 
@@ -339,7 +339,7 @@ app 對每個啟動階段的反應方式完全取決於您，但是請盡可能�
 
 可重複使用的程式碼通常會以專案中包含的模組 (DLL) 形式出現。 載入這些模組需要存取磁碟，因此您可以想像這樣做會增加大量負擔。 這不但對冷啟動有非常大的影響，也會影響暖啟動。 如果是 C# 和 Visual Basic，CLR 會視需要載入組件，嘗試將這類負擔盡可能延後。 也就是說，CLR 只會在執行方法參照模組時載入模組。 因此，請僅在啟動程式碼中參照啟動應用程式所需的必要組件，讓 CLR 不要載入不必要的模組。 如果啟動路徑中有含有非必要參照的未使用程式碼路徑，您可以將這些程式碼路徑移到其他方法以避免不必要的載入。
 
-減少模組載入的另外一個方法是合併您的應用程式模組。 載入一個大組件所需的時間通常比載入兩個小組件的時間短。 但這並非永遠可行，只有在不會對開發人員生產力或重複使用程式碼造成實質差異的情況下，才可以合併模組。 您可以使用工具 (例如 [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 效能分析程式 (WPA)](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-)) 來找出啟動時載入的模組。
+減少模組載入的另外一個方法是合併您的應用程式模組。 載入一個大組件所需的時間通常比載入兩個小組件的時間短。 但這並非永遠可行，只有在不會對開發人員生產力或重複使用程式碼造成實質差異的情況下，才可以合併模組。 您可以使用工具 (例如 [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) 或 [Windows 效能分析程式 (WPA)](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-)) 來找出啟動時載入的模組。
 
 ### <a name="make-smart-web-requests"></a>聰明的 Web 要求
 

@@ -4,20 +4,20 @@ title: 繫結階層式資料並建立主要/詳細資料檢視
 description: 您可以將項目控制項繫結到已繫結成一個鏈的 CollectionViewSource 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d8695a385dbc6d550a8002a5f64b7d777e95594e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 14b6ab96ac5423d1811618c6a3c91ccf56645664
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360024"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255118"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>繫結階層式資料並建立主要/詳細資料檢視
 
 
 
-> **附註**  也會看到[主從式範例](https://go.microsoft.com/fwlink/p/?linkid=619991)。
+> **Note**  Also see the [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail).
 
 您可以將項目控制項繫結到已繫結成一個鏈的 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。 在本主題中，我們儘可能使用 [{x:Bind} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，必要時也使用更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)。
 
@@ -27,13 +27,13 @@ ms.locfileid: "66360024"
 
 ![運動階層的主要/詳細資料檢視](images/xaml-masterdetails.png)
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 這個主題假設您知道如何建立基本的 UWP app。 如需有關建立第一個 UWP app 的指示，請參閱[使用 C# 或 Visual Basic 建立您的第一個 UWP app](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10))。
 
 ## <a name="create-the-project"></a>建立專案
 
-建立新的 [空白應用程式 (Windows 通用)]  專案。 命名為 "MasterDetailsBinding"。
+建立新的 **\[空白應用程式 (Windows 通用)\]** 專案。 命名為 "MasterDetailsBinding"。
 
 ## <a name="create-the-data-model"></a>建立資料模型
 

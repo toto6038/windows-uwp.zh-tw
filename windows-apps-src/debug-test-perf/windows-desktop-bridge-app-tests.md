@@ -1,71 +1,71 @@
 ---
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows 傳統型橋接器應用程式測試
-description: 使用傳統型橋接器的內建測試來確保您的桌面應用程式已針對其轉換成 UWP 應用程式最佳化。
+description: Use the Desktop Bridge's built-in tests to ensure that your desktop app is optimized for its conversion to a UWP app.
 ms.date: 12/18/2017
 ms.topic: article
-keywords: windows 10 uwp 應用程式認證
+keywords: windows 10, uwp, app certification
 ms.localizationpriority: medium
-ms.openlocfilehash: a28c344ed7c8645f3788719185aac71c7a036d5c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: dcdac5130af673d1b0d1ab1a9713902e9ab22830
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317409"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257824"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
-[傳統型橋接器應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)是的 Windows 桌面應用程式轉換成使用的通用 Windows 平台 (UWP) 應用程式[傳統型橋接器](https://developer.microsoft.com/en-us/windows/bridges/desktop)。 轉換之後，Windows 傳統型應用程式就會以目標為 Windows 10 Desktop 的 UWP app 套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
+[Desktop Bridge Apps](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) are Windows desktop applications converted to Universal Windows Platform (UWP) apps using the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop). 轉換之後，Windows 傳統型應用程式就會以目標為 Windows 10 Desktop 的 UWP app 套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
 
 ## <a name="required-versus-optional-tests"></a>必要與選擇性測試
-Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，並不會用來評估您的應用程式在 Microsoft Store 上架期間。 我們建議您調查這些測試結果，以產生更佳品質的應用程式。 市集上架的整體成功/失敗條件是由必要測試所決定，而非這些選擇性測試。
+Optional tests for Windows Desktop Bridge apps are informational only and will not be used to evaluate your app during Microsoft Store onboarding. We recommend investigating these test results to produce better quality apps. 市集上架的整體成功/失敗條件是由必要測試所決定，而非這些選擇性測試。
 
 ## <a name="current-optional-tests"></a>目前選擇性測試
 
-### <a name="1-digitally-signed-file-test"></a>1.以數位方式簽署檔案的測試 
+### <a name="1-digitally-signed-file-test"></a>1.數位簽署的檔案測試 
 **背景**  
 這項測試會確認所有可攜式執行檔 (PE) 都包含有效的簽章。 如果有數位簽署的檔案，即可讓使用者知道軟體是正版。
 
-**測試詳細資料**  
+**Test details**  
 測試會掃描套件中的所有可攜式執行檔，並檢查其標頭是否有簽章。 建議對所有 PE 檔案進行數位簽署。 如果未簽署任何 PE 檔案，則會產生警告。
  
-**更正動作**  
+**Corrective actions**  
 一律建議具有數位簽署的檔案。 如需詳細資訊，請參閱[程式碼簽署簡介](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85))。
 
-### <a name="2-file-association-verbs"></a>2.檔案關聯的動詞命令 
+### <a name="2-file-association-verbs"></a>2. 檔案關聯動詞 
 **背景**  
 此測試會掃描套件登錄，確認是否登錄任何檔案關聯動詞。 
 
-**測試詳細資料**  
+**Test details**  
 運用各式各樣的通用 Windows 平台 API，可以增強已轉換的傳統型應用程式。 此測試會檢查應用程式中的 UWP 二進位檔案未呼叫非 UWP API。 UWP 二進位檔案已設定**AppContainer**旗標。
 
-**更正動作**  
-請參閱[UWP bridge 桌面：應用程式擴充功能](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions)以了解這些延伸模組，以及如何正確使用它們。 
+**Corrective actions**  
+請參閱[傳統型轉 UWP 橋接器：應用程式延伸模組](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions)，以取得這些延伸模組的解釋，以及如何正確地使用它們。 
 
-### <a name="3-debug-configuration-test"></a>3.偵錯設定測試
+### <a name="3-debug-configuration-test"></a>3. 偵錯組態測試
 這項測試會確認 appx 不是偵錯組建。
  
 **背景**  
-若要進行認證的 Microsoft Store，應用程式必須不編譯進行偵錯，而且絕不能參考可執行檔的偵錯版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
+To be certified for the Microsoft Store, apps must not be compiled for debug and they must not reference debug versions of an executable file. 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
  
-**測試詳細資料**  
+**Test details**  
 測試應用程式，確定不是偵錯組建，而且沒有連結到任何偵錯架構。
  
-**更正動作**  
-* 建置應用程式為發行組建，才能提交給 Microsoft Store。
+**Corrective actions**  
+* Build the app as a release build before you submit it to the Microsoft Store.
 * 確定您已安裝正確的 .NET Framework 版本。
 * 確認應用程式並未連結到偵錯版本的架構，且是利用發行版本所建置。 如果這個應用程式包含 .NET 元件，請確認您已安裝正確的 .NET Framework 版本。
 
-### <a name="4-package-sanity-test"></a>4.封裝的例行性測試
+### <a name="4-package-sanity-test"></a>4. 套件例行性測試
 #### <a name="41-archive-files-usage"></a>4.1 封存檔案的使用方式
 
 **背景**  
 這項測試可協助您建置更好傳統型橋接器應用程式，以便在 [Windows 10 S](https://www.microsoft.com/windows/windows-10-s) 電腦上執行。
 
-**測試詳細資料**  
+**Test details**  
 這項測試會檢查封存檔案或自我解壓縮內容中所有的可執行檔。 因為這種類型的內容內含的可執行檔在上架到 Windows 市集時未經簽署，App 可能無法如預期般在 Windows 10 S 系統上執行。
  
-**更正動作**
+**Corrective actions**
 * 請考慮評估測試已標幟的檔案，判斷是否會對 Windows 10 S 環境中執行的 App 產生影響。
 * 如果您的 App 會受影響，請從封存檔案移除可執行檔，而且不要使用自我解壓縮封存將可執行檔放在磁碟上。 這樣應該可避免 App 功能喪失。
 
@@ -74,22 +74,22 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 **背景**  
 這項測試可協助您建置更好傳統型橋接器應用程式，以便在 [Windows 10 S](https://www.microsoft.com/windows/windows-10-s) 電腦上執行。 
 
-**測試詳細資料**  
+**Test details**  
 此測試會檢查 App 是否在嘗試啟動可執行檔，這種嘗試在 Windows 10 S 系統受到限制。 需依賴此功能的 App 可能無法如預期般在 Windows 10 S 系統上執行。 
 
-**更正動作**  
+**Corrective actions**  
 * 識別測試中的哪些已標幟的項目表示要啟動不屬於 App 之可執行檔的呼叫，然後移除這些呼叫。 
 * 如果已標幟的檔案屬於您的應用程式的一部分，則可以忽略警告。
 
 
 ## <a name="current-required-tests"></a>目前的必要測試
 
-### <a name="1-app-capabilities-test-special-use-capabilities"></a>1.應用程式功能測試 （特殊用途的功能）
+### <a name="1-app-capabilities-test-special-use-capabilities"></a>1. 應用程式功能測試 (特殊用途功能)
 
 **背景**  
 特殊用途功能適用於非常特殊的情況。 僅限公司帳戶使用這些功能。 
 
-**測試詳細資料**  
+**Test details**  
 驗證應用程式是否宣告下列任一功能： 
 * EnterpriseAuthentication
 * SharedUserCertificates
@@ -97,17 +97,17 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 
 如果宣告了這些功能的其中之一，測試就會顯示警告給使用者。 
 
-**更正動作**  
-請考慮移除 app 不需要的特殊用途功能。 此外，這些功能的使用方式需接受其他上架原則審查。
+**Corrective actions**  
+請考慮移除應用程式不需要的特殊用途功能。 此外，這些功能的使用方式需接受其他上架原則審查。
 
-### <a name="2-app-manifest-resources-tests"></a>2.應用程式資訊清單資源測試 
+### <a name="2-app-manifest-resources-tests"></a>2. 應用程式資訊清單資源測試 
 #### <a name="21-app-resources-validation"></a>2.1 應用程式資源驗證
 如果應用程式資訊清單中宣告的字串或影像不正確，就無法正確地安裝應用程式。 如果應用程式安裝時包含這些錯誤，就無法正確地顯示應用程式的標誌或其他影像。    
 
-**測試詳細資料**  
+**Test details**  
 檢查應用程式資訊清單中定義的資源，確定它們存在並且有效。
 
-**更正動作**  
+**Corrective action**  
 使用下表作為指引。
 
 錯誤訊息 | 註解
@@ -121,7 +121,7 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。  | 如需詳細資訊，請參閱[回應式設計](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)和[應用程式資源](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)的指南。 
 套件缺少 "resources.pri" 檔案。  | 如果您的 app 資訊清單中有可當地語系化的內容，app 套件中務必包含有效的 resources.pri 檔案。 
 "resources.pri" 檔案必須包含資源對應，且名稱符合套件名稱 {package full name}  | 如果資訊清單已變更，而 resources.pri 中的資源對應名稱不再符合資訊清單中的套件名稱，就會發生這個錯誤。 在實際訊息中，{package full name} 包含 resources.pri 必須包含的套件名稱。 若要更正此錯誤，您需要重建 resources.pri，最簡單的方式就是重建 app 的套件。 
-"resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這對於您要透過 Microsoft Store 散發的應用程式。 Resources.pri 透過 Microsoft Store 散發的應用程式根目錄中的應用程式的套件，並包含應用程式支援的所有語言參考。 
+"resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 We don't recommend this for apps that you intend to distribute through the Microsoft Store. The resources.pri of an app that is distributed through the Microsoft Store must be in the root of the app's package and contain all the language references that the app supports. 
 字串 {string} 不符合 {number} 個字元的長度上限限制。  | 請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。 
 字串 {string} 的開頭/結尾不得具有空白字元。  | 應用程式資訊清單中的元素結構描述不允許前後有空白字元。 在實際訊息中，{string} 會以有錯誤的字串取代。 確定 resources.pri 中的資訊清單欄位沒有任何當地語系化的值前後有空白字元。 
 字串必須為非空白 (長度大於零)  | 如需詳細資訊，請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
@@ -136,30 +136,30 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 **背景**  
 傳統型橋接器應用程式應該要完整且功能正常。 使用預設影像 (來自範本或 SDK 範例) 的應用程式會呈現不佳的使用者經驗，而且在市集型錄中也不容易識別。
 
-**測試詳細資料**  
+**Test details**  
 這個測試會驗證應用程式所使用的影像不是來自 SDK 範例或 Visual Studio 的預設影像。 
 
-**更正動作**  
+**Corrective actions**  
 以更特別且更能代表您應用程式的影像取代預設影像。
 
-### <a name="3-package-compliance-tests"></a>3.封裝相容性測試
+### <a name="3-package-compliance-tests"></a>3.套件相容性測試
 #### <a name="31-app-manifest"></a>3.1 應用程式資訊清單
 測試應用程式資訊清單的內容，確定內容正確無誤。
 
 **背景**  
 應用程式必須包含格式正確的應用程式資訊清單。
 
-**測試詳細資料**  
-檢查 App 資訊清單，確認內容是正確的，如 [App 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)中所述。 這個測試會完成下列檢查︰
-* **副檔名和通訊協定**  
+**Test details**  
+檢查應用程式資訊清單，確認內容正確無誤，如[應用程式套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)中所述。 這個測試會完成下列檢查︰
+* **File extensions and protocols**  
 應用程式可能會宣告可與其相關聯的檔案類型。 大量不常見檔案類型的宣告，會產生較差的使用者體驗。 這個測試會限制應用程式可以產生關聯的副檔名數目。
-* **架構相依性規則**  
+* **Framework dependency rule**  
 這個測試會強制要求應用程式需要宣告與 UWP 的適當相依性。 如果有不適當的相依性，這個測試就會失敗。 如果應用程式設為目標的作業系統版本與建立架構相依性的作業系統版本不符，測試將會失敗。 如果應用程式參照任何「預覽」版本的架構 DLL，則測試也會失敗。
-* **處理序間通訊 (IPC) 驗證**  
-這個測試強制要求傳統型橋接器應用程式不會在應用程式容器外部與傳統型元件通訊。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的名稱指定為 `DesktopApplicationPath` 的應用程式將無法通過這個測試。  
+* **Inter-process communication (IPC) verification**  
+這個測試強制要求傳統型橋接器應用程式不會在應用程式容器外部與傳統型元件通訊。 處理程序間通訊僅適用於側載應用程式。 將 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的名稱指定為 `DesktopApplicationPath` 的應用程式將無法通過這個測試。  
 
-**更正動作**  
-按照 [App 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)中所述的需求來檢閱 App 的資訊清單。
+**Corrective action**  
+按照 [應用程式套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)中所述的需求來檢閱應用程式的資訊清單。
 
 
 #### <a name="32-application-count"></a>3.2 應用程式計數
@@ -168,10 +168,10 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 **背景**  
 這項測試是根據「市集原則」而實作。 
 
-**測試詳細資料**  
+**Test details**  
 這項測試會確認套件組合中的.appx 套件總數小於 512，而且套件組合中只有一個「主要」套件。 它也會確認套件組合版本的版本號碼設定為 0。 
 
-**更正動作**  
+**Corrective actions**  
 請確定應用程式套件和套件組合符合**測試詳細資料**中所述的需求。
 
 
@@ -179,97 +179,97 @@ Windows 傳統型橋接器應用程式的選擇性測試則僅供參考之用，
 **背景**  
 這項測試會檢查應用程式安裝還是更新任何新的服務或驅動程式。
 
-**測試詳細資料**  
+**Test details**  
 這項測試會查看 registry.dat 檔案中是否有特定登錄位置的更新，指出將登錄新的服務或驅動程式。 如果應用程式嘗試安裝驅動程式或服務，測試會失敗。  
 
-**更正動作**  
+**Corrective actions**  
 檢閱失敗，並移除有問題且不需要的服務或驅動程式。 如果應用程式與其相依，則您想要上架到市集時，需要修正應用程式。
 
 
-### <a name="4-platform-appropriate-files-test"></a>4.平台適用檔案測試
+### <a name="4-platform-appropriate-files-test"></a>4. 平台適用檔案測試
 視使用者的處理器架構而定，安裝混合二進位檔案的應用程式可能會損毀或無法正確執行。 
 
 **背景**  
 這項測試會掃描應用程式套件中的二進位檔案是否會發生架構衝突。 應用程式套件不應包含無法在資訊清單中所指定的處理器架構上使用的二進位檔案。 包含不支援的二進位檔案會導致應用程式毀損，或是以非必要方式增加應用程式套件的大小。 
 
-**測試詳細資料**  
+**Test details**  
 驗證每個檔案的可攜式執行檔標頭中的「位元」都適合與應用程式套件處理器架構宣告交叉參考。 
 
-**更正動作**  
+**Corrective actions**  
 遵循這些指導方針，以確保您的應用程式套件只包含應用程式資訊清單中指定之架構所支援的檔案： 
 * 如果應用程式的目標處理器架構是 Neutral 處理器類型，則應用程式套件不得包含 x86、x64 或 ARM 二進位檔案或映像類型檔案。
 * 如果 app 的目標處理器架構是 x86 處理器類型，則應用程式套件必須只能包含 x86 二進位檔案或映像類型檔案。 如果套件包含 x64 或 ARM 二進位檔案或映像類型檔案，這個測試將會失敗。
 * 如果 app 的目標處理器架構是 x64 處理器類型，則應用程式套件必須能包含 x64 二進位檔案或映像類型檔案。 請注意，在這個情況下，套件也可以包含 x86 檔案，但是主要的應用程式經驗應該運用 x64 二進位檔案。 如果套件包含 ARM 二進位檔案或映像類型檔案，或者*只*包含 x86 二進位檔案或映像類型檔案，則這個測試將會失敗。
 * 如果應用程式的目標處理器架構是 ARM 處理器類型，則應用程式套件必須只能包含 ARM 二進位檔案或映像類型檔案。 如果套件包含 x64 或 x86 二進位檔案或映像類型檔案，這個測試將會失敗。 
 
-### <a name="5-supported-api-test"></a>5.支援的 API 測試
+### <a name="5-supported-api-test"></a>5. 支援的 API 測試
 檢查應用程式是否使用不相容的 API。 
 
 **背景**  
 傳統型橋接器應用程式可以使用某些舊版的 Win32 API 與現代化 API (UWP 元件)。 這項測試會識別可使用不受支援之 API 的受管理二進位檔案。
  
-**測試詳細資料**  
+**Test details**  
 這項測試會檢查應用程式中的所有 UWP 元件︰
-* 確認應用程式套件內的每個 managed 二進位檔的 Win32 API，藉由檢查二進位檔的匯入位址表格不支援適用於 UWP 應用程式開發上不具有相依性。
-* 確認 App 套件內的每個 Managed 二進位檔案不會相依於核准的設定檔外部的函式。 
+* Verifies that each managed binary within the app package doesn't have a dependency on a Win32 API that is not supported for UWP app development by checking the import address table of the binary.
+* 確認應用程式套件內的每個受管理二進位檔案不會相依於核准的設定檔外部的函式。 
 
-**更正動作**  
+**Corrective actions**  
 確保應用程式已編譯為發行組建，而非偵錯組建，即可進行修正。 
 
 > [!NOTE]
-> 即使應用程式只會使用應用程式的偵錯組建會讓此測試的失敗[UWP 應用程式的 Api](https://docs.microsoft.com/uwp/)。 檢閱要找出有 API 不允許的 API for UWP 應用程式的錯誤訊息。 
+> The debug build of an app will fail this test even if the app uses only [APIs for UWP apps](https://docs.microsoft.com/uwp/). Review the error messages to identify the API present that is not an allowed API for UWP apps. 
 
 > [!NOTE]
-> C++內建的偵錯組態的應用程式會讓此測試失敗，即使設定只會從 Windows SDK 的 Api 使用 UWP 應用程式。 請參閱[UWP 應用程式中的 Windows Api 替代方案](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)如需詳細資訊。
+> C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See [Alternatives to Windows APIs in UWP apps](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps) for more information.
 
-### <a name="6-user-account-control-uac-test"></a>6.使用者帳戶控制 (UAC) 的測試  
+### <a name="6-user-account-control-uac-test"></a>6. 使用者帳戶控制 (UAC) 測試  
 
 **背景**  
 確保應用程式不會在執行階段要求使用者帳戶控制。
 
-**測試詳細資料**  
-應用程式無法要求系統管理員權限提高 」 或 「 UIAccess，每個 Microsoft Store 原則。 不支援安全性權限提高。 
+**Test details**  
+An app cannot request admin elevation or UIAccess per Microsoft Store policy. 不支援安全性權限提高。 
 
-**更正動作**  
-必須以互動式使用者身分執行應用程式。 如需詳細資料，請參閱 [UI 自動化安全性概觀](https://go.microsoft.com/fwlink/?linkid=839440)。
+**Corrective actions**  
+必須以互動式使用者身分執行應用程式。 如需詳細資料，請參閱 [UI 自動化安全性概觀](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-security-overview?redirectedfrom=MSDN)。
 
  
-### <a name="7-windows-runtime-metadata-validation"></a>7.Windows 執行階段中繼資料驗證
+### <a name="7-windows-runtime-metadata-validation"></a>7. Windows 執行階段中繼資料驗證
 **背景**  
-確保 app 隨附的元件符合 UWP 類型系統。
+確保應用程式隨附的元件符合 UWP 類型系統。
 
-**測試詳細資料**  
+**Test details**  
 這項測試會擲回數個與正確類型用法相關的旗標。
 
-**更正動作**  
-* **Exclusiveto 不屬性**  
+**Corrective actions**  
+* **ExclusiveTo attribute**  
 確保 UWP 類別不會實作已標示為 ExclusiveTo 其他類別的介面。
-* **一般中繼資料的正確性**  
+* **General Metadata correctness**  
 確保您用來產生類型的編譯器符合最新的 UWP 規格。
 * **屬性**  
 確保 UWP 類別中的所有屬性都有`get`方法 (`set`是選擇性方法)。 針對所有屬性，確定`get`方法所傳回的類型符合`set`方法輸入參數的類型。
-* **型別位置**  
+* **Type location**  
 確保所有 UWP 類型的中繼資料都位於應用程式套件中命名空間相符名稱最長的 .winmd 檔案中。
-* **型別名稱區分大小寫**  
-請確定應用程式套件中的所有 UWP 類型都會有唯一且不區分大小寫的名稱。 同時也確保 app 套件內的命名空間名稱均未使用 UWP 類型名稱。
-* **型別名稱的正確性**  
+* **Type name case-sensitivity**  
+請確定應用程式套件中的所有 UWP 類型都會有唯一且不區分大小寫的名稱。 同時也確保應用程式套件內的命名空間名稱均未使用 UWP 類型名稱。
+* **Type name correctness**  
 確保全域命名空間或 Windows 最上層命名空間中，不存在任何 UWP 類型。
  
 
-### <a name="8-windows-security-features-tests"></a>8.Windows 安全性功能測試
+### <a name="8-windows-security-features-tests"></a>8. Windows 安全性功能測試
 變更預設的 Windows 安全性保護會讓客戶面臨較高的風險。 
 
 #### <a name="81-banned-file-analyzer"></a>8.1 禁止的檔案分析器
 **背景**  
 特定的檔案已更新成具有重要安全性、可靠性或其他改良功能。 Windows 傳統型橋接器應用程式必須包含這些檔案的最新版本，因為舊版本有其風險。 Windows 應用程式認證套件會封鎖這些檔案，確保所有應用程式都使用目前的版本。
 
-**測試詳細資料**  
+**Test details**  
 Windows 應用程式認證套件中的「禁止的檔案檢查」目前會檢查下列檔案︰
 * *Bing.Maps.JavaScript\js\veapicore.js*  
 如果應用程式要使用檔案的「發行預覽」版本，而非最新正式發行，則這項檢查通常會失敗。 
 
-**更正動作**  
-若要修正此問題，使用 最新版[Bing 地圖服務 SDK](https://go.microsoft.com/fwlink/p/?linkid=614880) UWP 應用程式。
+**Corrective actions**  
+To correct this, use the latest version of the [Bing Maps SDK](https://www.bingmapsportal.com/) for UWP apps.
 
 #### <a name="82-private-code-signing"></a>8.2 私用程式碼簽署
 測試私用程式碼簽署二進位檔是否存在於應用程式套件。 
@@ -277,10 +277,10 @@ Windows 應用程式認證套件中的「禁止的檔案檢查」目前會檢查
 **背景**  
 私用程式碼簽署檔案應該保持私用，因為若遭到洩露，可能會被用於惡意用途。 
 
-**測試詳細資料**  
+**Test details**  
 檢查應用程式套件內的檔案是否存在 .pfx 或 .snk，以指出已包含私用簽署金鑰。 
 
-**更正動作**  
+**Corrective actions**  
 從套件中移除任何私用程式碼簽署金鑰 (例如，.pfx 和 .snk 檔案)。
 
 

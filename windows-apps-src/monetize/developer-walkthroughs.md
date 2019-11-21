@@ -6,25 +6,25 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf2605c55b9b73ccd3376f9c812da31339caedc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 63fec919f089dcf90b251334740c7a965bb36b78
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662663"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260302"
 ---
 # <a name="implement-ads-in-your-app"></a>在您的應用程式中實作廣告
 
-本節中的文章將示範如何使用 Microsoft Advertising SDK 將橫幅廣告、插播式廣告與原生廣告新增至應用程式。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](https://aka.ms/githubads)。
+本節中的文章將示範如何使用 Microsoft Advertising SDK 將橫幅廣告、插播式廣告與原生廣告新增至應用程式。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
 ## <a name="in-this-section"></a>本節內容
 
-|  主題    | 描述 |               
+|  主題    | 說明 |               
 |----------|-------|
 | [橫幅廣告](banner-ads.md)     | 提供使用 Microsoft Advertising SDK 中的 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 類別，將橫幅廣告加入您的 UWP app 的指示。        |
-| [插入式廣告](interstitial-ads.md)    | 提供使用 Microsoft Advertising SDK 中的 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 類別，將插播式廣告加入您的 UWP app 的指示。       |
+| [Interstitial Ads](interstitial-ads.md)    | 提供使用 Microsoft Advertising SDK 中的 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 類別，將插播式廣告加入您的 UWP app 的指示。       |
 | [原生廣告](native-ads.md)       | 提供使用 Microsoft Advertising SDK 中的 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 和 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 類別，將原生廣告加入您的 UWP app 的指示。  |
-| [影片的內容中顯示的廣告](add-advertisements-to-video-content.md)     |  提供在您的 UWP app 中於影片內容內顯示廣告的指示 (此功能目前僅支援使用 JavaScript 搭配 HTML 所撰寫的應用程式)。 |
+| [Show ads in video content](add-advertisements-to-video-content.md)     |  提供在您的 UWP app 中於影片內容內顯示廣告的指示 (此功能目前僅支援使用 JavaScript 搭配 HTML 所撰寫的應用程式)。 |
 
 
 

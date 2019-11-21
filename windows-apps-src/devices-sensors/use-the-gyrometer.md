@@ -4,22 +4,22 @@ title: 使用陀螺儀
 description: 了解如何使用陀螺儀來偵測使用者的移動變化。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7ee2cac1ae53ca59b8ec60d917e39a737a049ad
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a5898d4157b216175c77356e5a27b4c58d049d9a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369634"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259632"
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺儀
 
 
-**重要的 Api**
+**重要 API**
 
 -   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**陀螺儀**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
+-   [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
 **Sample**
 
@@ -31,7 +31,7 @@ ms.locfileid: "66369634"
 
 ## <a name="prerequisites"></a>必要條件
 
-您應該先熟悉使用 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
+You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
 您使用的裝置或模擬器必須支援陀螺儀。
 
@@ -41,7 +41,7 @@ ms.locfileid: "66369634"
 
 ###  <a name="instructions"></a>指示
 
--   從 [Visual C#]  專案範本中選擇 [空白應用程式 (通用 Windows)]  來建立一個新專案。
+-   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -136,11 +136,11 @@ ms.locfileid: "66369634"
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **GyrometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="GyrometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:GyrometerCS"`。
 
--   按 F5 或選取 [偵錯]   >  [開始偵錯]  以建置、部署及執行 App。
+-   按 F5 或選取 **\[偵錯\]**  >  **\[開始偵錯\]** 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更陀螺儀值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]   >  [停止偵錯]  以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]**  >  **\[停止偵錯\]** 以停止 App。
 
 ###  <a name="explanation"></a>說明
 
@@ -180,4 +180,4 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
  ## <a name="related-topics"></a>相關主題
 
-* [陀螺儀範例](https://go.microsoft.com/fwlink/p/?linkid=241379)
+* [Gyrometer Sample](https://code.msdn.microsoft.com/windowsapps/Gyrometer-Sensor-Sample-4fe891d9)

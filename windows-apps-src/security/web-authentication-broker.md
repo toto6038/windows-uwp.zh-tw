@@ -4,14 +4,14 @@ description: 本文章說明如何將您的通用 Windows 平台 (UWP) 應用程
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: c8130c6a8e4d8441fdf8ff60c702bd1ae30bae6e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0b870bd59cb5b6c524cf85165fa182314b93c855
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372258"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259814"
 ---
 # <a name="web-authentication-broker"></a>Web 驗證代理人
 
@@ -21,7 +21,7 @@ ms.locfileid: "66372258"
 本文章說明如何將您的通用 Windows 平台 (UWP) 應用程式連線到使用授權通訊協定 (如 OpenID 或 OAuth) 的線上身分識別提供者，例如 Facebook、Twitter、Flickr、Instagram 等。 [  **AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 方法會將要求傳送到線上身分識別提供者，然後取得說明 app 存取之提供者資源的存取權杖。
 
 >[!NOTE]
->如需完整的有效程式碼範例，請複製 [GitHub 上的 WebAuthenticationBroker 儲存機制](https://go.microsoft.com/fwlink/p/?LinkId=620622)。
+>如需完整的有效程式碼範例，請複製 [GitHub 上的 WebAuthenticationBroker 儲存機制](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)。
 
  
 
@@ -87,7 +87,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->除了 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 以外，[**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web) 命名空間還包含 [**AuthenticateAndContinue**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods) 方法。 請不要呼叫此方法。 它專為只以 Windows Phone 8.1 為目標的應用程式，並從 Windows 10 開始已被取代。
+>除了 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 以外，[**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web) 命名空間還包含 [**AuthenticateAndContinue**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods) 方法。 請不要呼叫此方法。 It is designed for apps targeting Windows Phone 8.1 only and is deprecated starting with Windows 10.
 
 ## <a name="connecting-with-single-sign-on-sso"></a>使用單一登入 (SSO) 連線。
 
@@ -136,30 +136,30 @@ catch (Exception ex)
 
 ### <a name="operational-logs"></a>作業記錄
 
-通常您可以透過使用作業記錄來判斷哪裡出問題。 沒有專用的事件記錄檔通道 Microsoft-Windows-WebAuth\\可讓網站開發人員了解如何處理他們的網頁的 Web 驗證代理人的操作。 若要啟用它，啟動 eventvwr.exe 和啟用作業記錄底下的應用程式和服務\\Microsoft\\Windows\\WebAuth。 此外，Web 驗證代理人還會在使用者代理字串後面附加一個唯一字串，以便在網頁伺服器上識別自己。 這個字串是 "MSAuthHost/1.0"。 請注意，版本號碼在日後可能會有變更，因此在程式碼中不應該依據該版本號碼。 完整的使用者代理字串範例 (附有完整的偵錯步驟) 如下：
+通常您可以透過使用作業記錄來判斷哪裡出問題。 There is a dedicated event log channel Microsoft-Windows-WebAuth\\Operational that allows website developers to understand how their web pages are being processed by the Web authentication broker. To enable it, launch eventvwr.exe and enable Operational log under the Application and Services\\Microsoft\\Windows\\WebAuth. 此外，Web 驗證代理人還會在使用者代理字串後面附加一個唯一字串，以便在網頁伺服器上識別自己。 這個字串是 "MSAuthHost/1.0"。 請注意，版本號碼在日後可能會有變更，因此在程式碼中不應該依據該版本號碼。 完整的使用者代理字串範例 (附有完整的偵錯步驟) 如下：
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
 1.  啟用作業記錄。
 2.  執行 Contoso 社交應用程式。 ![顯示 WebAuth 作業記錄的事件檢視器](images/wab-event-viewer-1.png)
 3.  產生的記錄項目可以用來進一步了解 Web 驗證代理人的行為。 在此情況下，這些可能包括：
-    -   導覽開始：記錄檔時 AuthHost 會啟動，且包含啟動和終止 Url 的相關資訊。
+    -   瀏覽開始：記錄 AuthHost 何時啟動，並且包含開始和終止 URL 的相關資訊。
     -   ![說明「瀏覽開始」的詳細資料](images/wab-event-viewer-2.png)
-    -   完整的瀏覽：記錄載入網頁的完成。
-    -   中繼標籤：記錄檔中包含詳細資料發生中繼標籤時。
-    -   瀏覽終止：使用者已終止的導覽。
-    -   瀏覽錯誤：AuthHost 遇到 URL，包括 HttpStatusCode 瀏覽發生錯誤。
+    -   瀏覽完成：記錄網頁載入完成。
+    -   Meta 標記：記錄何時遇到 meta-tag，包含詳細資料。
+    -   瀏覽終止：使用者終止瀏覽。
+    -   瀏覽錯誤：AuthHost 在 URL 遇到瀏覽錯誤，包含 HttpStatusCode。
     -   瀏覽結束：遇到終止 URL。
 
 ### <a name="fiddler"></a>Fiddler
 
 Fiddler Web 偵錯工具可以與 app 搭配使用。
 
-1.  因為 AuthHost 是在其自己的應用程式容器中執行，並提供私人網路功能必須設定登錄機碼：Windows 登錄編輯程式 5.00 版
+1.  Since the AuthHost runs in its own app container, to give it the private network capability you must set a registry key: Windows Registry Editor Version 5.00
 
-    **HKEY\_本機\_MACHINE**\\**軟體**\\**Microsoft**\\**Windows NT** \\ **CurrentVersion**\\**Image File Execution Options**\\**authhost.exe** \\ **EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
-    如果您沒有此登錄機碼，您可以將它在系統管理員權限的命令提示字元。
+    If you do not have this registry key, you can create it in a Command Prompt with administrator privileges.
 
     ```cmd 
     REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f

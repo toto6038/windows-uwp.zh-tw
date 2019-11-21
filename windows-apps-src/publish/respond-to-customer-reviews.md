@@ -4,49 +4,49 @@ title: 回應客戶評論
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10 uwp，回應，回應中，檢閱
+keywords: windows 10, uwp, responding, responses, review
 ms.localizationpriority: medium
-ms.openlocfilehash: fa73c8f43c449e8cf7b1c5aa67574f6ff00e7a15
-ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
+ms.openlocfilehash: b640fc56e1d95bc5fb3085e09960048a16633669
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67325856"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259926"
 ---
 # <a name="respond-to-customer-reviews"></a>回應客戶評論
 
 
-您可以回應檢閱您的應用程式，讓客戶知道您會聆聽他們的意見反應。 透過評論回應功能，您可以告訴您的客戶您根據其意見新增的功能或修正的錯誤 (Bug)，或取得更特定的意見反應以改進您的 App。 若要查看所有 Windows 10 客戶 Microsoft Store 中，將會顯示您的回應。 您也可以選擇您的回應透過電子郵件傳送給客戶 （如果它們尚未選擇退出，並使用執行 Windows 10 版本 1803年或更高版本的裝置）。
+You can respond to reviews of your app to let customers know you’re listening to their feedback. 透過評論回應功能，您可以告訴您的客戶您根據其意見新增的功能或修正的錯誤 (Bug)，或取得更特定的意見反應以改進您的 App。 Your responses will be displayed in the Microsoft Store for all Windows 10 customers to see. You can also choose to send your response by email to the customer (if they haven’t opted out and are using a device running Windows 10, version 1803 or higher).
 
-若要檢視您的應用程式評論，並提供回應，找到 應用程式中的[合作夥伴中心](https://partner.microsoft.com/dashboard)。 在左方導覽功能表中，展開 [分析]  ，然後按一下 [評論]  以顯示[評論報告](reviews-report.md)。 選取 **回應檢閱**提供您的回應。
+To view your app's reviews and provide responses, find the app in [Partner Center](https://partner.microsoft.com/dashboard). 在左方導覽功能表中，展開 **\[分析\]** ，然後按一下 **\[評論\]** 以顯示[評論報告](reviews-report.md)。 Select **Respond to review** to provide your response.
 
 > [!TIP]
-> 除了回應檢閱使用合作夥伴中心，您可以回應評論[以程式設計方式](../monetize/submit-responses-to-app-reviews.md)。
+> In addition to using Partner Center to respond to reviews, you can respond to reviews [programmatically](../monetize/submit-responses-to-app-reviews.md).
 
-根據預設，您的回應將會張貼到原始的客戶檢閱的正下方的存放區。 這些回應會顯示任何檢視 Windows 10 裝置上的存放區的客戶。 如果保留檢閱的客戶使用執行 Windows 10 版本 1803年或更高版本的裝置，且它們尚未退出接收電子郵件回應，一份您的回應也會傳送給該客戶的電子郵件。  您必須提供有效的電子郵件地址，才能提交您的回應，我們將會包含在電子郵件給客戶。 他們接著可以使用此電子郵件地址，直接與您連絡。
+By default, your response will be posted in the Store, directly below the original customer review. These responses will be visible to any customer viewing the Store on a Windows 10 device. If the customer who left the review is using a device running Windows 10, version 1803 or higher, and they haven't opted out of receiving email responses, a copy of your response will also be sent to that customer by email.  You'll need to provide a valid email address in order to submit your response, which we will include in the email to the customer. They can then use this email address to contact you directly.
 
-如果您不想要您的回應才會出現在存放區，並改為想要回應只能透過電子郵件給客戶，請取消選取**公開此回應** 方塊中。 請注意，您將無法取消選取此方塊，如果客戶具有退出接收電子郵件回應及/或如果他們使用的裝置目前未執行 Windows 10 版本 1803年或更高版本。
+If you don't want your response to appear in the Store, and instead want to respond only via email to the customer, uncheck the **Make this response public** box. Note that you will not be able to uncheck this box if the customer has opted out of receiving email responses and/or if they are using a device that is not running Windows 10, version 1803 or higher.
 
 ## <a name="guidelines-for-responses"></a>回應的指導方針
 
-回應客戶的評論時，您必須遵循以下指導方針。 這些適用於所有回應，或不是公用。
+回應客戶的評論時，您必須遵循以下指導方針。 These apply to all responses, whether they are public or not.
 
 > [!IMPORTANT]
-> 您將無法變更您張貼至存放區 （除非客戶修訂其原始的檢閱） 的回應，因此請仔細檢閱您的回應。 如果客戶修訂原始的檢閱，您的回應將會移除從應用程式的存放區清單頁面。 您接著可以選擇選取提交新的回應，以修改過的檢閱**更新您的回應**。
+> You won’t be able to change the responses you post to the Store (unless the customer revises their original review), so review your response carefully. If a customer revises the original review, your response will be removed from the app's  Store listing page. You then have the option to submit a new response to the revised review by selecting **Update your response**.
 
 -   回應的長度不可超過 1000 個字元。
--   您無法提供任何形式的補償給變更 app 評等的使用者，包括數位 app 項目。 請記住，嘗試操縱評等是[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)所不允許的行為。
+-   您無法提供任何形式的補償給變更 app 評分的使用者，包括數位 app 項目。 請記住，嘗試操縱評等是[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)所不允許的行為。
 -   不要在回應中加入任何行銷內容或廣告。 請記住，評論者已經是您的客戶。
--   不要在您的回應中推銷其他 app 或服務。
+-   不要在您的回應中推銷其他 App 或服務。
 -   您的回應必須與特定的 app 和評論直接相關。 不允許將相同的回應傳送給大量使用者，除非該罐頭式回應是要解決相同的問題。
--   不要在回應中加入任何粗俗、挑釁、針對個人或惡意的評論。 請務必保持禮貌並記住，滿意的客戶才是您 app 的最大支持者。
+-   不要在回應中加入任何粗俗、挑釁、針對個人或惡意的評論。 請務必保持禮貌並記住，滿意的客戶才是您 App 的最大支持者。
 
 > [!NOTE]
-> 客戶可以將開發人員的不當評論回應回報給 Microsoft。 它們也可以退出以電子郵件收到檢閱回應。
+> 客戶可以將開發人員的不當評論回應回報給 Microsoft。 They can also opt out of receiving review responses by email.
 >
 > Microsoft 保留出於任何原因而撤銷開發人員傳送回應之權限的權利，包括您的回應是提示大量不尋常的不當回應報告，還是提示大量不尋常的客戶選擇不收到評論回應。
 
-您需全權負責您與客戶之間的關係。 Microsoft 不會介入開發人員和客戶之間的糾紛。 不過，如果您的 App 的評論包含具有冒犯意味、褻瀆或粗俗的語言，請開啟[支援要求](https://go.microsoft.com/fwlink/p/?LinkID=401178)。
+您需全權負責您與客戶之間的關係。 Microsoft 不會介入開發人員和客戶之間的糾紛。 不過，如果您的 App 的評論包含具有冒犯意味、褻瀆或粗俗的語言，請開啟[支援要求](https://developer.microsoft.com/windows/support)。
 
 
 ## <a name="use-customer-reviews-to-improve-your-app"></a>使用客戶評論改進您的 App

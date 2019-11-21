@@ -1,21 +1,21 @@
 ---
-Description: 多語系應用程式工具組 (MAT) 4.0 可與 Microsoft Visual Studio 2019 的 UWP 應用程式提供的翻譯支援、 翻譯檔案管理和編輯器工具整合。
+Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide UWP apps with translation support, translation file management, and editor tools.
 title: 使用多語應用程式工具組
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 428238f9d8a3468ab308841850ac13e8da22961f
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 802a7a925a08dde94ab59d79e01df94fbbcf495d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820578"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258040"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多語應用程式工具組 4.0
 
-多語系應用程式工具組 (MAT) 4.0 可與 Microsoft Visual Studio 2019 的 UWP 應用程式提供的翻譯支援、 翻譯檔案管理和編輯器工具整合。 以下是一些工具組的價值主張。
+The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide UWP apps with translation support, translation file management, and editor tools. 以下是一些工具組的價值主張。
 
 - 可協助您在開發期間管理資源變更與翻譯狀態。
 - 提供根據設定的翻譯提供者選擇語言的 UI。
@@ -38,10 +38,10 @@ ms.locfileid: "67820578"
 
 多語應用程式工具組 4.0 (MAT 4.0) 有兩個部分，每個部分都有自己的安裝程式。
 
-- [多語系應用程式工具組 4.0 擴充功能適用於 Visual Studio 2017 和更新版本](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)。 這會包含 Visual Studio 2019.vsix 安裝程式的形式的 MAT 4.0 延伸模組。
+- [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017 and later](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2019, in the form of a .vsix installer.
 - [多語應用程式工具組 4.0 編輯器](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)。 其中包含 MAT 4.0 獨立多語編輯器工具，其形式為 .msi 安裝程式。 它同時也包含適用於 Visual Studio 2015 和 Visual Studio 2013 的 MAT 4.0 延伸模組。
 
-如果您使用 Visual Studio 2017 或 Visual Studio 2019，然後下載並執行兩種安裝程式，一個接著一個。 若您是使用 Visual Studio 2015 或 Visual Studio 2013，請下載並執行 .msi 安裝程式。
+If you use Visual Studio 2017 or Visual Studio 2019, then download and run both installers, one after the other. 若您是使用 Visual Studio 2015 或 Visual Studio 2013，請下載並執行 .msi 安裝程式。
 
 ### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步驟 3。 為您的專案啟用多語應用程式工具組
 
@@ -63,13 +63,13 @@ ms.locfileid: "67820578"
 
 工具組會反映並執行下列作業。
 
-- 針對每個您新增的語言，會使用該語言的 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)建立新的資料夾。 在該資料夾中，會建立新的資源檔 (.resw)，對應每個包含預設語言字串的檔案。
+- 針對每個您新增的語言，會使用該語言的 [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)建立新的資料夾。 在該資料夾中，會建立新的資源檔 (.resw)，對應每個包含預設語言字串的檔案。
 - 若這次您第一次新增語言，名為 `MultilingualResources` 的新資料夾便會新增到專案中。 在該資料夾中，會為每個語言新增一個 .xlf 檔案。 .xlf 檔案包含您專案中每個資源檔 (.resw) 中每個字串的翻譯單位。
 - \[輸出\] 視窗會確認您新增的語言。
 
 每當您新增/移除預設語言資源檔 (.resw) 時，或是在預設語言資源檔 (.resw) 中新增/移除字串時，請重新建置專案以重新同步 .xlf 檔案。 這可確保 .xlf 檔案包含預設語言中字串的聯集。
 
-已安裝的翻譯提供者&mdash;例如 [Microsoft 語言入口網站](https://go.microsoft.com/fwlink/p/?LinkId=330295)和 [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)&mdash;可用來翻譯您應用程式的資源。 當提供者支援特定語言時，提供者的圖示便會顯示在 \[翻譯語言\] 對話方塊中語言名稱的旁邊。
+已安裝的翻譯提供者&mdash;例如 [Microsoft 語言入口網站](https://www.microsoft.com/Language/)和 [Microsoft Translator](https://www.microsofttranslator.com/)&mdash;可用來翻譯您應用程式的資源。 當提供者支援特定語言時，提供者的圖示便會顯示在 \[翻譯語言\] 對話方塊中語言名稱的旁邊。
 
 在 \[翻譯語言\] 對話方塊中，任何工具組找到的現有 .xlf 式語言的選取方塊都會預先勾選，表示該語言已包含在專案中。
 
@@ -117,9 +117,9 @@ ms.locfileid: "67820578"
 
 若要將翻譯及編輯工作外包給負責當地語系化的人員，請在方案總管中選取想要的 .xlf 檔案，以滑鼠右鍵按一下他們，然後按一下 **\[多語應用程式工具組\]**  >  **\[匯出翻譯...\]** 。
 
-選取**輸出：郵件收件者**中匯出字串資源對話方塊中，按一下 [確定] 和您的檔案會進行壓縮及附加至新的電子郵件。 選取**輸出：檔案資料夾位置**、 瀏覽器的資料夾，然後按一下 [確定]，選擇檔案的檔案會壓縮，再按一下 [確定]，而且您的檔案 (壓縮和) 儲存在您選擇專案的新資料夾的位置。
+在匯出字串資源對話方塊中選取 **\[輸出: 郵件收件者\]** ，然後按一下 \[確定\]，您的檔案便會進行壓縮並附加到新的電子郵件。 選取 **\[輸出: 檔案資料夾位置\]** ，瀏覽資料夾並按一下 \[確定\]，選擇性的選擇要壓縮的檔案，再次按一下 \[確定\]，您的檔案便會 (在壓縮之後) 儲存到您選擇的位置，位於以您的專案命名的新資料夾中。
 
-在您負責當地語系化的人員完成工作，並將翻譯完的 .xlf 檔案傳送給您之後，您便可以將檔案匯入到您的專案中。 選取所需的.xlf 檔案方案總管] 中，按一下滑鼠右鍵，然後按一下**多語系應用程式工具組** > **匯入/回收翻譯...** .按一下 [**新增**，瀏覽至.xlf 或.zip 檔案，然後按一下**匯入**。
+在您負責當地語系化的人員完成工作，並將翻譯完的 .xlf 檔案傳送給您之後，您便可以將檔案匯入到您的專案中。 在方案總管中選取想要的 .xlf 檔案，以滑鼠右鍵按一下他們，按一下 **\[多語應用程式工具組\]**  >  **\[匯入/回收翻譯\]** 。按一下 **\[新增\]** ，巡覽至 .xlf 或 .zip 檔案，然後按一下 **\[匯入\]** 。
 
 **注意**：匯入處理序會在匯入前執行基本的驗證。 這會確保匯入檔案中的目標文化資訊與現有的 .xlf 檔案相符。
 
@@ -147,10 +147,10 @@ ms.locfileid: "67820578"
 
 兩個提供者都隨附於多語應用程式工具組中。
 
-- [Microsoft 語言入口網站](https://go.microsoft.com/fwlink/p/?LinkId=330295)提供者可根據 Microsoft 產品及服務的使用者介面文字翻譯，啟用翻譯回收並提供術語比對支援。
-- [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) 提供者可啟用隨選機器翻譯服務。
+- [Microsoft 語言入口網站](https://www.microsoft.com/Language/)提供者可根據 Microsoft 產品及服務的使用者介面文字翻譯，啟用翻譯回收並提供術語比對支援。
+- [Microsoft Translator](https://www.microsofttranslator.com/) 提供者可啟用隨選機器翻譯服務。
 
-您和您的翻譯人員可以在多語編輯器中管理翻譯狀態，並在稍後檢閱不確定的翻譯。 您可以設定每個字串中的狀態**屬性** 索引標籤。狀態的值為：**新**，**需要檢閱**，**轉譯**，**最終**，並**登出**。 資料列左側的指標會顯示狀態。 當所有資料列在多語編輯器中都已顯示為綠色時，您的翻譯工作便已完成。
+您和您的翻譯人員可以在多語編輯器中管理翻譯狀態，並在稍後檢閱不確定的翻譯。 您可以在 **\[屬性\]** 索引標籤中設定每個字串的狀態。狀態值為： **\[新字串\]** 、 **\[需要檢閱\]** 、 **\[已翻譯\]** 、 **\[最終版本\]** 及 **\[已完結\]** 。 資料列左側的指標會顯示狀態。 當所有資料列在多語編輯器中都已顯示為綠色時，您的翻譯工作便已完成。
 
 重新建置您的專案會將已翻譯的字串複製到對應您方才編輯之 .xlf 檔案的資源檔 (.resw)。
 
@@ -162,16 +162,16 @@ ms.locfileid: "67820578"
 
 * [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
 * [全球化和當地語系化](globalizing-portal.md)
-* [全球化的指導方針](guidelines-and-checklist-for-globalizing-your-app.md)
-* [可當地語系化，讓您的應用程式](prepare-your-app-for-localization.md)
-* [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
+* [Make your app localizable](prepare-your-app-for-localization.md)
+* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 
 ## <a name="downloads"></a>下載
 
-* [多語系應用程式工具組 4.0.vsix 安裝程式](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [多語系應用程式工具組 4.0.msi 安裝程式](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [Multilingual App Toolkit 4.0 .vsix installer](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+* [Multilingual App Toolkit 4.0 .msi installer](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
 
 ## <a name="translation-services"></a>翻譯服務
 
-* [Microsoft 語言入口網站](https://go.microsoft.com/fwlink/p/?LinkId=330295)
-* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft Language Portal](https://www.microsoft.com/Language/)
+* [Microsoft Translator](https://www.microsofttranslator.com/)

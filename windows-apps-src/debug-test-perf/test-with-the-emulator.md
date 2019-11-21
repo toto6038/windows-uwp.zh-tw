@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e87fba21f74140e14688194864ccdc416ea227d
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 4f2cb92dca3da2d1f8e3eccfade6558f363c5b13
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062315"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257871"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
@@ -25,9 +25,9 @@ ms.locfileid: "73062315"
 
 您的電腦必須符合下列需求：
 
-CPU （這些設定（如果有的話）可在 BIOS 中啟用）
+CPU (these settings, if available, can be enabled in the BIOS)
 
--   硬體輔助虛擬化（[檢查相容性](https://www.microsoft.com/download/details.aspx?id=592)）。
+-   Hardware-assisted virtualization ([check compatibility](https://www.microsoft.com/download/details.aspx?id=592)).
 -   第二層位址轉譯 (SLAT)。
 -   硬體型資料執行防止 (DEP)。
 
@@ -45,18 +45,18 @@ RAM
 
 若要檢查 RAM 與作業系統的需求，請在 [控制台] 中選取 **\[系統及安全性\]** ，然後選取 **\[系統\]** 。
 
-適用于 Windows 10 行動裝置版的 Microsoft 模擬器需要 Visual Studio 2015 或更新版本;它不會與舊版的 Visual Studio 回溯相容。
+Microsoft Emulator for Windows 10 Mobile requires Visual Studio 2015 or later; it is not backward compatible with earlier versions of Visual Studio.
 
 適用於 Windows 10 行動裝置版的 Microsoft 模擬器無法載入以 Windows Phone OS 7.1 之前的 Windows Phone OS 版本為目標的應用程式。
 
-## <a name="installing-uninstalling-and-running-the-emulator"></a>安裝、卸載和執行模擬器
+## <a name="installing-uninstalling-and-running-the-emulator"></a>Installing, uninstalling, and running the emulator
 
 ### <a name="installing"></a>安裝
-適用於 Windows 10 行動裝置版的 Microsoft 模擬器隨附於 Windows 10 SDK。 安裝 Visual Studio 時也可以安裝 Windows 10 SDK 與模擬器。 請參閱 [Visual Studio 下載頁面](https://go.microsoft.com/fwlink/p/?LinkId=534785)。
+適用於 Windows 10 行動裝置版的 Microsoft 模擬器隨附於 Windows 10 SDK。 安裝 Visual Studio 時也可以安裝 Windows 10 SDK 與模擬器。 請參閱 [Visual Studio 下載頁面](https://developer.microsoft.com/windows/downloads)。
 
 您也可以使用 [Microsoft 模擬器安裝程式](https://go.microsoft.com/fwlink/p/?LinkID=615095)來安裝適用於 Windows 10 行動裝置版的 Microsoft 模擬器。
 
-### <a name="uninstalling"></a>卸載
+### <a name="uninstalling"></a>Uninstalling
 
 您可以使用 Visual Studio 安裝程式/修復功能來解除安裝適用於 Windows 10 Mobile 的 Microsoft 模擬器。 或者，您可以使用 **\[控制台\]** 下的 **\[程式和功能\]** 來移除模擬器。
 
@@ -64,7 +64,7 @@ RAM
 
 ### <a name="running"></a>Running
 
-若要在模擬器中執行應用程式，只需從 Visual Studio 中的 [**執行**] 下拉式功能表選取模擬裝置。
+To run an app in the emulator, simply select an emulated device from the **run** drop-down menu in Visual Studio.
 
 ![可以用於解析度、大小及記憶體的模擬器](images/em-list.png)
 
@@ -177,7 +177,7 @@ NFC 索引標籤支援三種模式：
 -   右上角區段會列出記錄檔。 當您將一組裝置彼此輕觸 (或與 POS 終端機輕觸) 時，系統會記錄輕觸事件；而當裝置結束輕觸時，系統會記錄結束輕觸事件。 此區段也會記錄您的應用程式是否在連線中斷之前回應，或您是否在模擬器 UI 中採取任何其他動作 (以及其時間戳記)。 記錄檔在模式切換時仍會保留，而且您可以隨時點選 **\[記錄檔\]** 畫面上的 **\[清除\]** 按鈕來清除記錄檔。
 -   畫面下半部是訊息記錄檔，其中顯示目前所選連線上傳送或接收之訊息的文字記錄 (視選取的模式而定)。
 
-> **重要**  當您第一次啟動 Tapper 工具時，您會收到 Windows 防火牆提示。 您必須選取全部 3 個核取方塊，並允許該工具通過防火牆，否則該工具會失敗，而且不會顯示任何訊息。
+> **Important**  When you first launch the tapper tool, you will get a Windows Firewall prompt. 您必須選取全部 3 個核取方塊，並允許該工具通過防火牆，否則該工具會失敗，而且不會顯示任何訊息。
 
 啟動快速啟動安裝程式之後，請確認您已按照上面的指示在防火牆提示上選取全部 3 個核取方塊。 此外，您也必須在已安裝 Microsoft 模擬器的相同實體主機電腦上安裝並使用 Tapper 工具。
 
@@ -237,7 +237,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 -   選取指令碼編輯器視窗下方的 **\[啟用 MasterCard\]** 接聽程式核取方塊，然後啟動 MasterCard 的模擬器。
 -   使用該工具時，您可以產生轉送到您應用程式 (透過 NFC 工具在模擬器上執行) 的命令。
 
-若要深入了解 HCE 支援以及如何在 Windows 10 行動裝置版中開發 HCE 應用程式，請參閱 [Microsoft NFC 小組部落格](https://go.microsoft.com/fwlink/?LinkId=534749)。
+若要深入了解 HCE 支援以及如何在 Windows 10 行動裝置版中開發 HCE 應用程式，請參閱 [Microsoft NFC 小組部落格](https://blogs.msdn.com/b/nfc/)。
 
 ### <a name="how-to-create-scripts-for-hce-testing"></a>如何針對 HCE 測試建立指令碼
 
@@ -299,7 +299,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 2.  -   選取輸入的類型。
 
-        **若要使用即時輸入來執行模擬**
+        **To run the simulation with live input**
 
         在加速計模擬器的中間，拖曳彩色的點，在 3D 平面中模擬裝置的移動方式。
 
@@ -307,7 +307,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
         您可以選擇性地按一下 **\[重設\]** ，還原起始方向。
 
-    -   **若要使用錄製的輸入來執行模擬**
+    -   **To run the simulation with recorded input**
 
         在 **\[錄製的資料\]** 區段中，按一下 **\[播放\]** 按鈕，開始播放模擬的資料。 **\[錄製的資料\]** 清單中唯一可用的選項是搖動。 當模擬器播放資料時，無法在螢幕上移動。
 
@@ -345,7 +345,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 -   刪除圖釘圖示 (在 [釘選] 模式中) 或導航點 (在 [路線] 模式中) 來修改路線。
 
-**精確度設定檔**
+**Accuracy profiles**
 
 在定位模擬器的所有模式中，您可以在 **\[準確度設定檔\]** 下拉式清單中選取下列其中一個準確度設定檔。
 
@@ -356,7 +356,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 | 郊區 | 假設衛星定位相對來說比較好，而且行動電話基地台的密度良好，但是 Wi-Fi 存取點的密度不高。  |
 | 鄉村    | 假設衛星定位良好，但行動電話基地台的密度低且幾乎沒有可用來定位的 Wi-Fi 存取點。 |
 
-**速度設定檔**
+**Speed profiles**
 
 在 **\[路線\]** 模式中，您可以在下拉式清單中選取下列其中一個速度設定檔。
 
@@ -367,7 +367,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 | 騎單車      | 25 公里/小時                  | 6.94 公尺           | 以正常騎單車的速度 (25 公里/小時) 越過該路線。 |
 | 快速        |                          |                  |以比公布的速限還快的速度越過該路線。 | 
 
-**路由模式**
+**Route mode**
 
 路線模式具備下列功能與限制。
 
@@ -385,7 +385,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 ![模擬器 [其他工具] 中的 [位置] 頁面](images/em-drive.png)
 
-**位置模擬器的詳細資訊**
+**More info about the location simulator**
 
 -   您可以將準確度設為 [預設值] 來要求位置。 已經修正 Windows Phone 8 版本的定位模擬器中現有的限制，以及要求您將準確度設為 [高] 來要求位置的限制。
 
@@ -452,7 +452,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
         -   如果您在同步操作正在進行的同時按一下 **\[取消同步\]** ，即會退出記憶卡，而同步操作的結果是不完整的。
     -   **\[退出 SD 記憶卡\]** 按鈕會變更回 **\[插入 SD 記憶卡\]** 。
 
-> **請注意**  因為電話所使用的 SD 記憶卡是使用 FAT32 檔案系統來格式化，所以32GB 是大小上限。
+> **Note**  Since an SD card used by the phone is formatted with the FAT32 file system, 32GB is the maximum size.
 
 系統會對從模擬的 SD 記憶卡讀取和寫入的速度進行流速控制，以模擬真實世界的速度。 存取 SD 記憶卡的速度會比存取電腦硬碟還要慢。
 
@@ -462,21 +462,21 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 您可以輕鬆測試推播通知，而不需建立在發佈應用程式之後所需的工作雲端服務。
 
-1.  **啟用模擬。**
+1.  **Enable simulation.**
 
     選取 **\[已啟用\]** 之後，模擬器上部署的所有應用程式都會使用模擬引擎，而不是 WNS 或 MPN 服務，直到您停用模擬為止。
 
-2.  **選取要接收通知的應用程式。**
+2.  **Select an app to receive notifications.**
 
     系統會使用所有部署到模擬器 (已針對推播通知啟用) 的應用程式自動填入 **\[AppId\]** 清單。 從下拉式清單中選取應用程式。
 
     如果您在啟用模擬之後部署其他具備推播功能的 app，請按一下 **\[重新整理\]** ，將該 app 新增到清單中。
 
-3.  **選取通知通道。**
+3.  **Select a notification channel.**
 
     當您在 **\[AppId\]** 清單中選取應用程式之後，系統會使用已向選取的應用程式登錄的所有通知通道自動填入 **\[URI\]** 清單。 從下拉式清單中選取通知通道。
 
-4.  **選取通知類型。**
+4.  **Select a notification type.**
 
     當您在 **\[URI\]** 清單中選取通知通道之後，系統會使用所有可供通知服務使用的類型自動填入 **\[通知類型\]** 清單。 從下拉式清單中選取通知類型。
 
@@ -500,13 +500,13 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
         -   快顯通知
         -   磚
 
-5.  **選取通知範本。**
+5.  **Select a notification template.**
 
     當您在 **\[通知類型\]** 清單中選取通知類型之後，系統會使用所有可供通知類型使用的範本自動填入 **\[範本\]** 清單。 從下拉式清單中選取範本。
 
     模擬支援所有範本類型。
 
-6.  **（選擇性）變更通知裝載。**
+6.  **Optionally, change the notification payload.**
 
     當您在 **\[範本\]** 清單中選取範本之後，系統會使用範本的承載範例自動填入 **\[通知承載\]** 文字方塊。 檢閱 **\[通知承載\]** 文字方塊中的承載範例。
 
@@ -520,7 +520,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
     模擬器不會驗證承載的 XML 文字。
 
-7.  **傳送推播通知。**
+7.  **Send the push notification.**
 
     按一下 **\[傳送\]** ，將推播通知傳遞到選取的應用程式。
 
@@ -539,7 +539,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 ![模擬器 [其他工具] 中的 [感應器] 頁面](images/em-sensors.png)
 
-**感應器選項**
+**Sensor options**
 
 您可以啟用或停用下列選用的硬體感應器：
 
@@ -550,7 +550,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 -   NFC
 -   軟體按鈕 (僅存在於某些高解析度的模擬器影像中)
 
-**相機選項**
+**Camera options**
 
 您可以選取或清除 **\[選用感應器\]** 清單中的核取方塊來啟用或停用選用的前方相機。
 
@@ -576,7 +576,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 ![Windows Phone 模擬器中的畫面播放速率計數器](images/em-frameratecounters.PNG)
 
-**畫面播放速率計數器的描述**
+**Descriptions of the frame rate counters**
 
 下表說明每個畫面播放速率計數器。
 
@@ -589,7 +589,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 | 中繼表面計數器                 | 產生做為快取表面結果的隱含表面數目。    |
 | 畫面填滿速率計數器                     | 就螢幕而言，每個畫面繪製的像素數目。 值為 1 表示目前螢幕解析度中的像素數目，例如，480 x 800 像素。 |
 
-**啟用和停用畫面播放速率計數器**
+**Enabling and disabling the frame rate counters**
 
 您可以在程式碼中啟用或停用畫面播放速率計數器的顯示。 當您在 Visual Studio 中建立 Windows Phone 應用程式專案時，預設會將下列啟用畫面播放速率計數器的程式碼新增到 App.xaml.cs 檔案中。 若要停用畫面播放速率計數器，請將 **EnableFrameRateCounter** 設定為 **false**，或將該行程式碼標記為註解。
 
@@ -621,23 +621,23 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 ### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>錯誤訊息：「移除虛擬乙太網路交換器時發生錯誤」
 
-在某些情況下，包括當您更新至新的 Windows 10 航班之後，與模擬器相關聯的虛擬網路交換器可以進入無法透過使用者介面刪除的狀態。
+In certain situations, including after you update to a new Windows 10 flight, a virtual network switch associated with the emulator can get into a state where it can't be deleted through the user interface.
 
 若要從此情況中復原，請從系統管理員命令提示字元執行 "netcfg -d"：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`。 當命令完成執行時，需重新啟動電腦，才能完成修復程序。
 
-**注意**  此命令將會刪除所有網路裝置，而不只是與模擬器相關聯的裝置。 當您的電腦重新啟動時，將會自動探索所有硬體網路裝置。
+**Note**  This command will delete all networking devices, not just those associated with the emulator. 當您的電腦重新啟動時，將會自動探索所有硬體網路裝置。
  
 ### <a name="unable-to-launch-the-emulators"></a>無法啟動模擬器
 
-Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有的 VM、差異磁碟及模擬器特定的網路交換器，而它已經隨附於模擬器 (XDE) 二進位檔中。 如果模擬器 VM 進入錯誤狀態，您應該使用這個工具來清除這些 VM。 從系統管理員命令提示字元執行此工具：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
+Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有的 VM、差異磁碟及模擬器特定的網路交換器，而它已經隨附於模擬器 (XDE) 二進位檔中。 如果模擬器 VM 進入錯誤狀態，您應該使用這個工具來清除這些 VM。 Run the tool from an administrator command prompt:`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **請注意**  XDECleanup 會刪除所有模擬器特定的 hyper-v vm，而且它也會刪除任何 VM 檢查點或儲存的狀態。
+> **Note**  XDECleanup.exe deletes all emulator specific Hyper-V VMs, and it also deletes any VM checkpoints or saved states.
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>解除安裝 Windows 10 行動裝置版映像
 
-當您安裝模擬器時，即會安裝 Windows 10 行動裝置版 VHD 映像，它在控制台的 **\[程式和功能\]** 清單中會有自己的項目。 如果您想要卸載映射，請在已安裝的程式清單中尋找 [ **Windows 10 For Mobile 映射-\<版本\>** ]，以滑鼠右鍵按一下它，然後選擇 [**卸載**]。
+當您安裝模擬器時，即會安裝 Windows 10 行動裝置版 VHD 映像，它在控制台的 **\[程式和功能\]** 清單中會有自己的項目。 If you wish to uninstall the image, find **Windows 10 for Mobile Image -\<version\>** in the list of installed programs, right-click on it, and choose **Uninstall**.
 
-在目前版本中，您接著必須手動刪除模擬器的 VHD 檔案。 如果您已將模擬器安裝至預設路徑，則 VHD 檔案位於 C：\\Program Files （x86）\\Windows 套件\\10\\模擬\\Mobile\\\<版本\>\\的 flash .vhd。
+在目前版本中，您接著必須手動刪除模擬器的 VHD 檔案。 If you installed the emulator to the default path, the VHD file is at C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd.
 
 ### <a name="how-to-disable-hardware-accelerated-graphics"></a>如何停用硬體加速圖形
 
@@ -656,11 +656,11 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 
 ## <a name="support-resources"></a>支援資源
 
-若要尋找使用 Windows 10 工具遇到的問題及解決問題，請瀏覽 [Windows 10 工具論壇](https://go.microsoft.com/fwlink/?LinkId=534765)。 若要查看所有 Windows 10 開發論壇，請瀏覽[此連結](https://go.microsoft.com/fwlink/?LinkId=535000)。
+若要尋找使用 Windows 10 工具遇到的問題及解決問題，請瀏覽 [Windows 10 工具論壇](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)。 若要查看所有 Windows 10 開發論壇，請瀏覽[此連結](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)。
 
 ## <a name="related-topics"></a>相關主題
 
-* [在模擬器中執行 Windows Phone 應用程式](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
+* [Run Windows Phone apps in the emulator](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
 * [Windows 和 Windows Phone SDK 封存](https://developer.microsoft.com/windows/downloads/sdk-archive)
  
 
