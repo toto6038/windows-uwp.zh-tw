@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: 349326ba458999b2b1e299e8260d52d608d5af1f
-ms.sourcegitcommit: e189166dea855ce330bd0634cc158b51cb4fbd69
+ms.openlocfilehash: 68d5ba1c12a3c7dc5531934835f47af35c269b57
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72811634"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256699"
 ---
 # <a name="process-bitmaps-with-opencv"></a>使用 OpenCV 處理點陣圖
 
@@ -22,7 +22,7 @@ ms.locfileid: "72811634"
 * 如需使用 **SoftwareBitmap** 的指示，請參閱[建立、編輯和儲存點陣圖影像](imaging.md)。 
 * 若要了解如何使用 OpenCV 程式庫，請移至 [https://opencv.org](https://opencv.org)。
 * 若要了解如何使用本文所顯示的 OpenCV 協助程式元件來搭配 **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)** ，實作取自相機之畫面的即時影像處理，請參閱[使用 OpenCV 搭配 MediaFrameReader](use-opencv-with-mediaframereader.md)。
-* 如需實作一些不同效果的完整程式碼範例，請參閱 Windows 通用範例 GitHub 存放庫中的[相機畫面 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003) (英文)。
+* 如需實作一些不同效果的完整程式碼範例，請參閱 Windows 通用範例 GitHub 存放庫中的[相機畫面 + OpenCV 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV) (英文)。
 
 > [!NOTE] 
 > 本文詳細說明的 OpenCVHelper 元件所用技術，需要我們將進行處理的影像資料位於 CPU 記憶體中，而不是 GPU 記憶體中。 因此，對於可讓您要求影像的記憶體位置的 API，例如 **[MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)** 類別，您應指定 CPU 記憶體。
@@ -63,14 +63,14 @@ ms.locfileid: "72811634"
 
 接下來，新增方法 **GetPointerToPixelData** 至 OpenCVHelper.cpp。 此方法接受 **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** 並透過一系列轉換取得像素資料的 COM 介面表示法，我們可以透過此方法以 **char** 陣列取得指向基礎影像資料緩衝區的指標。 
 
-首先，透過呼叫 **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** 取得包含像素資料的 **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** ，要求讀取/寫入緩衝區以讓 OpenCV 程式庫可以修改像素資料。  呼叫 **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** 以取得 **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** 物件。 接下來，將 **IMemoryBufferByteAccess** 介面轉換成 **IInspectable** (這是所有 Windows 執行階段類別的基底介面)，並呼叫 **[QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** 以取得 **[IMemoryBufferByteAccess](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))** COM 介面，可讓我們透過 **char** 陣列取得像素資料緩衝區。 最後，呼叫 **[IMemoryBufferByteAccess::GetBuffer](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)** 填入 **char** 陣列。 如果此方法中的任一轉換步驟失敗，方法會傳回 **false**，指出無法繼續進一步處理。
+首先，透過呼叫 **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** 取得包含像素資料的 **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** ，要求讀取/寫入緩衝區以讓 OpenCV 程式庫可以修改像素資料。  呼叫 **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** 以取得 **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** 物件。 接下來，將 **IMemoryBufferByteAccess** 介面轉換成 **IInspectable** (這是所有 Windows 執行階段類別的基底介面)，並呼叫 **[QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** 以取得 **[IMemoryBufferByteAccess](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))** COM 介面，可讓我們透過 **char** 陣列取得像素資料緩衝區。 最後，呼叫IMemoryBufferByteAccess::GetBuffer **[ 填入 ](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)char** 陣列。 如果此方法中的任一轉換步驟失敗，方法會傳回 **false**，指出無法繼續進一步處理。
 
 [!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
 
 接下來，新增方法 **TryConvert**，如下所示。 此方法接受 **SoftwareBitmap**，並嘗試將它轉換成 **Mat** 物件，矩陣物件 OpenCV 用來代表影像資料緩衝區。 此方法會呼叫上述定義的 **GetPointerToPixelData** 方法以取得代表像素資料緩衝區的 **char**陣列。 如果此作業成功，則會呼叫 **Mat** 類別的建構函式，傳遞從來源 **SoftwareBitmap** 物件取得的像素寬度與高度。 
 
 > [!NOTE] 
-> 此範例指定 CV_8UC4 常數做為所建立 **Mat** 物件的像素格式。 這表示傳遞到此方法的 **SoftwareBitmap** 必須具有預乘 Alpha 之 **[BGRA8](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapPixelFormat)** 的 **[BitmapPixelFormat](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.BitmapPixelFormat)** 屬性值 (CV_8UC4 的對等項目)，才能用於此範例。
+> 此範例指定 CV_8UC4 常數做為所建立 **Mat** 物件的像素格式。 這表示傳遞到此方法的 **SoftwareBitmap** 必須具有預乘 Alpha 之 **[BGRA8](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.BitmapPixelFormat)** 的 **[BitmapPixelFormat](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapPixelFormat)** 屬性值 (CV_8UC4 的對等項目)，才能用於此範例。
 
 方法會傳回所建立 **Mat** 物件的淺層複製，以便對 **SoftwareBitmap** 參考的相同資料像素資料緩衝區進行進一步處理，而非對此緩衝區複本進行處理。
 

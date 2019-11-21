@@ -1,17 +1,17 @@
 ---
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: 組合效果
-description: 效果 API 可讓開發人員自訂其 UI 的呈現方式。
+description: 效果 API 可讓開發人員自訂其 UI 的轉譯方式。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: afcb94ca0e6692d5dfede526f1368b71920ab771
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 57236b6780a7afe996fb1e68ac474d8d8077ca69
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318207"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255906"
 ---
 # <a name="composition-effects"></a>組合效果
 
@@ -27,11 +27,11 @@ ms.locfileid: "67318207"
 
 ## <a name="effect-features"></a>效果功能
 
-- [影響程式庫](./composition-effects.md#effect-library)
-- [鏈結的效果](./composition-effects.md#chaining-effects)
+- [效果程式庫](./composition-effects.md#effect-library)
+- [連結效果](./composition-effects.md#chaining-effects)
 - [動畫支援](./composition-effects.md#animation-support)
-- [常數的 vs。動畫的效果屬性](./composition-effects.md#constant-vs-animated-effect-properties)
-- [獨立屬性的多個效果執行個體](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+- [常數與動畫效果屬性的比較](./composition-effects.md#constant-vs-animated-effect-properties)
+- [具有獨立屬性的多個效果實例](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
 ### <a name="effect-library"></a>效果程式庫
 
@@ -39,8 +39,8 @@ ms.locfileid: "67318207"
 
 | 效果               | 描述                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 2D 仿射轉換  | 套用 2D 仿射轉換矩陣至影像。 我們使用這種效果讓我們的效果[範例](https://go.microsoft.com/fwlink/?LinkId=785341)中的 Alpha 遮罩產生動畫效果。       |
-| 算術複合 | 使用彈性的方程式結合兩個影像。 我們使用算術複合在我們的[範例](https://go.microsoft.com/fwlink/?LinkId=785341)中建立淡入與淡出效果。 |
+| 2D 仿射轉換  | 套用 2D 仿射轉換矩陣至影像。 我們使用這種效果讓我們的效果[範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/Demos/Reference Demos/BasicCompositonEffects)中的 Alpha 遮罩產生動畫效果。       |
+| 算術複合 | 使用彈性的方程式結合兩個影像。 我們使用算術複合在我們的[範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/Demos/Reference Demos/BasicCompositonEffects)中建立淡入與淡出效果。 |
 | 混合效果         | 建立結合兩個影像的混合效果。 組合提供了 Win2D 中支援之 26 種[混合模式](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm)的 21 種。        |
 | 色彩來源         | 產生包含單色的影像。                                                                                                                                                                               |
 | 複合            | 結合兩個影像。 組合提供了 Win2D 中支援之所有 13 種[複合模式](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm)。                                              |
@@ -54,7 +54,7 @@ ms.locfileid: "67318207"
 | 懷舊                | 將影像轉換成懷舊色調。                                                                                                                                                                                          |
 | 色溫和色調 | 調整影像的色溫和/或色調。                                                                                                                                                                           |
 
-如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間。 不支援在組合中的效果會標示\[NoComposition\]。
+如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間。 組合中不支援的效果會注明為 \[NoComposition\]。
 
 ### <a name="chaining-effects"></a>鏈結效果
 
@@ -123,22 +123,22 @@ ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimat
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
-請參閱[去飽和度 - 動畫範例](https://go.microsoft.com/fwlink/?LinkId=785342)來了解使用主要畫面格以動畫顯示的效果屬性，以及參閱 [AlphaMask 範例](https://go.microsoft.com/fwlink/?LinkId=785343)來了解效果和運算式的使用方式。
+請參閱[去飽和度 - 動畫範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/Demos/Reference Demos/BasicCompositonEffects/Desaturation - Animation)來了解使用主要畫面格以動畫顯示的效果屬性，以及參閱 [AlphaMask 範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/Demos/Reference Demos/BasicCompositonEffects/AlphaMask)來了解效果和運算式的使用方式。
 
 ### <a name="multiple-effect-instances-with-independent-properties"></a>使用獨立屬性的多個效果執行個體
 
-藉由在效果編譯期間將參數指定為動態，該參數則可以在各效果執行個體的基礎上進行變更。 這可讓兩個視覺效果使用相同的效果，但是以不同的效果屬性呈現。 如需詳細資訊，請參閱 ColorSource 和 Blend [範例](https://go.microsoft.com/fwlink/?LinkId=785344)。
+藉由在效果編譯期間將參數指定為動態，該參數則可以在各效果執行個體的基礎上進行變更。 這可讓兩個視覺效果使用相同的效果，但是以不同的效果屬性呈現。 如需詳細資訊，請參閱 ColorSource 和 Blend [範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/Demos/Reference Demos/BasicCompositonEffects/ColorSource and Blend)。
 
 ## <a name="getting-started-with-composition-effects"></a>開始使用組合效果
 
 這個快速入門教學課程會示範如何使用效果的一些基本功能。
 
 - [安裝 Visual Studio](./composition-effects.md#installing-visual-studio)
-- [建立新的專案](./composition-effects.md#creating-a-new-project)
-- [安裝來參照 Win2D](./composition-effects.md#installing-win2d)
-- [設定您撰寫的基本概念](./composition-effects.md#setting-your-composition-basics)
+- [建立新專案](./composition-effects.md#creating-a-new-project)
+- [安裝 Win2D](./composition-effects.md#installing-win2d)
+- [設定您的撰寫基本概念](./composition-effects.md#setting-your-composition-basics)
 - [建立 CompositionSurface 筆刷](./composition-effects.md#creating-a-compositionsurface-brush)
-- [建立、 編譯和套用效果](./composition-effects.md#creating-compiling-and-applying-effects)
+- [建立、編譯和套用效果](./composition-effects.md#creating-compiling-and-applying-effects)
 
 ### <a name="installing-visual-studio"></a>安裝 Visual Studio
 
@@ -168,7 +168,7 @@ Win2D 是以 Nuget.org 套件發行，且必須安裝後才可以使用效果。
 ![來源影像](images/composition-cat-source.png)
 ### <a name="setting-your-composition-basics"></a>設定您的組合基本知識
 
-如需如何設定 Windows.UI.Composition 撰寫器、根 ContainerVisual，並與 Core Window 產生關聯的範例，請參閱 GitHub 上的[組合視覺化樹狀結構範例](https://go.microsoft.com/fwlink/?LinkId=785345)。
+如需如何設定 Windows.UI.Composition 撰寫器、根 ContainerVisual，並與 Core Window 產生關聯的範例，請參閱 GitHub 上的[組合視覺化樹狀結構範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/Demos/Reference Demos/CompositionImageSample)。
 
 ```cs
 _compositor = new Compositor();
@@ -237,12 +237,12 @@ LoadImage(surfaceBrush);
 
 ## <a name="more-information"></a>更多資訊
 
-- [Microsoft-組合 GitHub](https://github.com/microsoft/WindowsCompositionSamples)
-- [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
-- [在 Twitter 上的 Windows 撰寫小組](https://twitter.com/wincomposition)
-- [撰寫概觀](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
-- [視覺化樹狀結構的基本概念](composition-visual-tree.md)
-- [組合的筆刷](composition-brushes.md)
+- [Microsoft –組合 GitHub](https://github.com/microsoft/WindowsCompositionSamples)
+- [**Windows. UI. 撰寫**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
+- [Twitter 上的 Windows 合成小組](https://twitter.com/wincomposition)
+- [撰寫總覽](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+- [視覺化樹狀結構基本概念](composition-visual-tree.md)
+- [複合筆刷](composition-brushes.md)
 - [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
-- [動畫概觀](composition-animation.md)
-- [撰寫原生 DirectX 和 Direct2D 的互通性與 BeginDraw EndDraw](composition-native-interop.md)
+- [動畫總覽](composition-animation.md)
+- [撰寫與 BeginDraw 和 EndDraw 的原生 DirectX 和 Direct2D 互通性](composition-native-interop.md)

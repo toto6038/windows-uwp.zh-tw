@@ -6,12 +6,12 @@ keywords: contacts, selecting select single contact select multiple contacts con
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: facad25446dca286ac150e59d0418c2dd8bfc896
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 634b72032b37fe4a6bc4ea44a2e4fe27abede47d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361264"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255070"
 ---
 # <a name="select-contacts"></a>選取連絡人
 
@@ -60,7 +60,7 @@ contacts = await contactPicker.PickContactsAsync();
 
 當選擇器傳回時，檢查使用者是否已經選取任何連絡人。 如果有的話，處理連絡人資訊。
 
-這個範例示範如何處理單一連絡人。 在這裡，我們將抓取連絡人的姓名並複製到名為 *OutputName* 的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 控制項中。
+這個範例示範如何處理單一連絡人。 在這裡，我們將抓取連絡人的姓名並複製到名為 [OutputName**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)TextBlock 控制項中。
 
 ```cs
 if (contact != null)
@@ -167,7 +167,7 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 
 ## <a name="complete-example-multiple-contacts"></a>完整範例 (多位連絡人)
 
-這個範例使用連絡人選擇器來抓取多位連絡人，然後將他們新增到名為 `OutputContacts` 的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項。
+這個範例使用連絡人選擇器來抓取多位連絡人，然後將他們新增到名為 [ 的ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)`OutputContacts` 控制項。
 
 ```cs
 MainPage rootPage = MainPage.Current;
@@ -230,4 +230,4 @@ public class ContactItemAdapter
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
-現在您已基本了解如何使用連絡人選擇器來抓取連絡人資訊。 請從 GitHub 下載[通用 Windows app 範例](https://go.microsoft.com/fwlink/p/?linkid=619979)，以查看更多如何使用連絡人和連絡人選擇器的範例。
+現在您已基本了解如何使用連絡人選擇器來抓取連絡人資訊。 請從 GitHub 下載[通用 Windows app 範例](https://github.com/Microsoft/Windows-universal-samples)，以查看更多如何使用連絡人和連絡人選擇器的範例。

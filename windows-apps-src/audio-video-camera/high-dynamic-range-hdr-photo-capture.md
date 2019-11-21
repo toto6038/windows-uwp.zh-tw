@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b5a8e19961fa7cd1dd67e52339f49fd012f21f06
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 04133cc4a58ddbdbd45ba68b4c0635cd47ca2ca8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361738"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256998"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>高動態範圍 (HDR) 和弱光相片擷取
 
@@ -39,7 +39,7 @@ ms.locfileid: "66361738"
 > [!NOTE] 
 > 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
-有一個通用 Windows 範例可示範如何使用 **AdvancedPhotoCapture** 類別，您可以使用此類別來查看內容中使用的 API，或做為您 app 的起點。 如需詳細資訊，請參閱[相機進階擷取範例](https://go.microsoft.com/fwlink/?LinkID=620517)。
+有一個通用 Windows 範例可示範如何使用 **AdvancedPhotoCapture** 類別，您可以使用此類別來查看內容中使用的 API，或做為您 app 的起點。 如需詳細資訊，請參閱[相機進階擷取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraAdvancedCapture)。
 
 ## <a name="advanced-photo-capture-namespaces"></a>進階相片擷取命名空間
 
@@ -51,7 +51,7 @@ ms.locfileid: "66361738"
 
 ### <a name="determine-if-hdr-photo-capture-is-supported-on-the-current-device"></a>判斷目前的裝置是否支援 HDR 相片擷取
 
-本文所述的 HDR 擷取技術是使用 [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) 物件來執行。 並非所有裝置都支援使用 **AdvancedPhotoCapture** 執行 HDR 擷取。 藉由取得 **MediaCapture** 物件的 [**VideoDeviceController**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController)，接著取得 [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) 屬性，以判斷目前正在執行您 app 的裝置是否支援這項技術。 檢查視訊裝置控制器的 [**SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes) 集合是否包含 [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode)。如果是的話，則支援使用 **AdvancedPhotoCapture** 執行 HDR 擷取。
+本文所述的 HDR 擷取技術是使用 [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) 物件來執行。 並非所有裝置都支援使用 **AdvancedPhotoCapture** 執行 HDR 擷取。 藉由取得 **MediaCapture** 物件的 [**VideoDeviceController**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController)，接著取得 [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) 屬性，以判斷目前正在執行您 app 的裝置是否支援這項技術。 檢查視訊裝置控制器的 [**SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes) 集合以查看是否包含 [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode)。若是，則支援使用 **AdvancedPhotoCapture** 的 HDR 擷取。
 
 [!code-cs[HdrSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHdrSupported)]
 
@@ -61,7 +61,7 @@ ms.locfileid: "66361738"
 
 [!code-cs[DeclareAdvancedCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareAdvancedCapture)]
 
-在您的 app 中，於初始化 **MediaCapture** 物件之後，建立 [**AdvancedPhotoCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings) 物件，並將模式設定為 [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode)。呼叫 [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) 物件的 [**Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.configure) 方法，並傳入您建立的 **AdvancedPhotoCaptureSettings** 物件。
+在您的應用程式中，在您初始化 **MediaCapture** 物件後，建立 [**AdvancedPhotoCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings) 物件並將模式設定為 [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode)。呼叫 [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) 物件的 [**Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.configure) 方法，傳遞至您所建立的 **AdvancedPhotoCaptureSettings** 物件。
 
 呼叫 **MediaCapture** 物件的 [**PrepareAdvancedPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync)，並傳入 [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) 物件來指定擷取應該使用的編碼類型。 **ImageEncodingProperties** 類別提供靜態方法來建立 **MediaCapture** 支援的影像編碼。
 
@@ -84,7 +84,7 @@ ms.locfileid: "66361738"
 HDR 程序會擷取多個框架，然後在擷取所有框架之後，組合成單一影像。 在整個 HDR 程序完成之前，您可以透過處理 [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 事件來存取已擷取的框架。 如果您只想要取得最終的 HDR 相片結果，則不需要這樣做。
 
 > [!IMPORTANT]
-> [**OptionalReferencePhotoCaptured** ](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured)就不會引發在支援硬體 HDR，因此不會產生參考畫面格的裝置上。 您的 app 應該處理不會引發這個事件的情況。
+> [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured)不會在支援硬體 HDR 的裝置上引發，因此不會產生參考框架。 您的 app 應該處理不會引發這個事件的情況。
 
 因為送達的參照畫面與呼叫 **CaptureAsync** 無關，因此會提供一項機制以將內容資訊傳遞給 **OptionalReferencePhotoCaptured** 處理常式。 首先，您應該呼叫將包含內容資訊的物件。 這個物件的名稱和內容由您決定。 這個範例定義一個物件，其中有成員可追蹤擷取的檔案名稱和相機方向。
 
@@ -94,7 +94,7 @@ HDR 程序會擷取多個框架，然後在擷取所有框架之後，組合成�
 
 [!code-cs[CaptureWithContext](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureWithContext)]
 
-在 [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 事件處理常式中，將 [**OptionalReferencePhotoCapturedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs) 物件的 [**Context**](https://docs.microsoft.com/uwp/api/windows.media.capture.optionalreferencephotocapturedeventargs.context) 屬性轉型為您的內容物件類別。 這個範例會修改檔案名稱來區分參照畫面影像和最終 HDR 影像，然後呼叫 **SaveCapturedFrameAsync** 協助程式方法來儲存影像。
+在 [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 事件處理常式中，將 [**OptionalReferencePhotoCapturedEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.capture.optionalreferencephotocapturedeventargs.context) 物件的 [**Context**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs) 屬性轉型為您的內容物件類別。 這個範例會修改檔案名稱來區分參照畫面影像和最終 HDR 影像，然後呼叫 **SaveCapturedFrameAsync** 協助程式方法來儲存影像。
 
 [!code-cs[OptionalReferencePhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOptionalReferencePhotoCaptured)]
 
@@ -142,7 +142,7 @@ HDR 相片擷取有兩個步驟。 首先，擷取多個框架，然後框架經
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
 ## <a name="working-with-advancedcapturedphoto-objects"></a>使用 AdvancedCapturedPhoto 物件
-[**AdvancedPhotoCapture.CaptureAsync** ](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync)會傳回[ **AdvancedCapturedPhoto** ](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto)物件，表示擷取的相片。 這個物件會公開 [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame) 屬性，其傳回代表影像的 [**CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame) 物件。 [  **OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 事件也會在其事件引數中提供 **CapturedFrame** 物件。 取得這個類型的物件之後，有許多您可以使用該物件執行的動作，包括建立 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 或將影像儲存至檔案。 
+[**AdvancedPhotoCapture. CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync)會傳回代表已捕捉相片的[**AdvancedCapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto)物件。 這個物件會公開 [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame) 屬性，其傳回代表影像的 [**CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame) 物件。 [  **OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 事件也會在其事件引數中提供 **CapturedFrame** 物件。 取得這個類型的物件之後，有許多您可以使用該物件執行的動作，包括建立 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 或將影像儲存至檔案。 
 
 ## <a name="get-a-softwarebitmap-from-a-capturedframe"></a>從 CapturedFrame 取得 SoftwareBitmap
 從 **CapturedFrame** 物件取得 **SoftwareBitmap** 非常簡單，只需存取物件的 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.softwarebitmap) 屬性即可。 不過，大部分的編碼格式不支援 **SoftwareBitmap** 搭配 **AdvancedPhotoCapture**，因此您應該先檢查並確定該屬性不是 null，才能使用它。
@@ -158,7 +158,7 @@ HDR 相片擷取有兩個步驟。 首先，擷取多個框架，然後框架經
 ## <a name="save-a-capturedframe-to-a-file"></a>將 CapturedFrame 儲存到檔案
 [  **CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame) 類別會實作 IInputStream 介面，讓它可用來做為 [**BitmapDecoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapDecoder) 的輸入，然後可使用 [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapEncoder) 來將影像資料寫入磁碟。
 
-下列範例會在使用者的圖片媒體櫃中建立新資料夾，並在此資料夾中建立檔案。 請注意，您的 app 需要在應用程式資訊清單檔案中包含**圖片媒體櫃**功能，才能存取此目錄。 隨即會將檔案資料流開啟至指定的檔案。 接下來，從 **CapturedFrame** 呼叫 [**BitmapDecoder.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapdecoder.createasync) 以建立解碼器。 然後 [**CreateForTranscodingAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.createfortranscodingasync) 會從檔案資料流和解碼器建立編碼器。
+下列範例會在使用者的圖片媒體櫃中建立新資料夾，並在此資料夾中建立檔案。 請注意，您的 app 需要在應用程式資訊清單檔案中包含**圖片媒體櫃**功能，才能存取此目錄。 隨即會將檔案資料流開啟至指定的檔案。 接下來，從 [CapturedFrame**呼叫**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapdecoder.createasync)BitmapDecoder.CreateAsync 以建立解碼器。 然後 [**CreateForTranscodingAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.createfortranscodingasync) 會從檔案資料流和解碼器建立編碼器。
 
 後續步驟會使用編碼器的 [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.bitmapproperties)，將相片的方向編碼到影像檔案。 如需在擷取影像時處理方向的詳細資訊，請參閱[**使用 MediaCapture 處理裝置方向**](handle-device-orientation-with-mediacapture.md)。
 
@@ -169,4 +169,4 @@ HDR 相片擷取有兩個步驟。 首先，擷取多個框架，然後框架經
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [具有 MediaCapture 的基本相片、影片和音訊捕獲](basic-photo-video-and-audio-capture-with-MediaCapture.md)

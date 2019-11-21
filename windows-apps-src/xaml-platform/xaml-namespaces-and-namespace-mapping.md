@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a8a9a4e5b79950cb15b5d364598c72b8a190d8c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1da466cf12a8a5f959af7e863f7a300f3c713961
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366639"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258717"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空間與命名空間對應
 
@@ -37,11 +37,11 @@ XAML 檔案幾乎永遠在它的根元素中宣告預設的 XAML 命名空間。
 
 ## <a name="the-default-and-xaml-language-xaml-namespace-declarations"></a>預設和 XAML 語言 XAML 命名空間宣告
 
-在多數 XAML 檔案的根元素內有兩個 **xmlns** 宣告。 第一個宣告為預設值，對應的 XAML 命名空間： `xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"`
+在多數 XAML 檔案的根元素內有兩個 **xmlns** 宣告。 第一個宣告會將 XAML 命名空間對應為預設值： `xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"`
 
 這也是在數個舊版 Microsoft 技術使用的 XAML 命名空間識別碼，這些技術也使用 XAML 做為 UI 定義標記格式。 使用相同的識別碼是刻意的，而且當您將之前定義的 UI 移轉到使用 C++、C# 或 Visual Basic 的 Windows 執行階段 App 時，這種做法很有用。
 
-第二個宣告對應 XAML 定義的語言項目，將它對應 （通常）"x"前置詞不同的 XAML 命名的空間： `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
+第二個宣告會對應 XAML 定義之語言專案的個別 XAML 命名空間，並將它對應（通常是）到 "x：" 前置詞： `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
 
 這個 **xmlns** 值及它所對應的 "x:" 前置詞，也和數種使用 XAML 的舊版 Microsoft 技術中使用的定義相同。
 
@@ -51,30 +51,30 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 ## <a name="code-namespaces-that-map-to-the-default-xaml-namespace"></a>對應至預設 XAML 命名空間的程式碼命名空間
 
-下列項目是目前對應至預設 XAML 命名空間的程式碼命名空間的清單。
+下列是目前對應至預設 XAML 命名空間的程式碼命名空間清單。
 
 * Windows.UI
 * Windows.UI.Xaml
 * Windows.UI.Xaml.Automation
-* Windows.UI.Xaml.Automation.Peers
-* Windows.UI.Xaml.Automation.Provider
-* Windows.UI.Xaml.Automation.Text
-* Windows.UI.Xaml.Controls
+* Windows. UI .Xaml。對等
+* Windows. UI .Xaml. Provider
+* Windows. UI .Xaml. Text
+* Windows. UI. Xaml. 控制項
 * Windows.UI.Xaml.Controls.Primitives
-* Windows.UI.Xaml.Data
-* Windows.UI.Xaml.Documents
+* Windows. UI. Xaml. Data
+* Windows. UI .Xaml 檔
 * Windows.UI.Xaml.Input
-* Windows.UI.Xaml.Interop
-* Windows.UI.Xaml.Markup
+* Windows. UI. Xaml. Interop
+* Windows. UI. Xaml 標記
 * Windows.UI.Xaml.Media
 * Windows.UI.Xaml.Media.Animation
-* Windows.UI.Xaml.Media.Imaging
+* Windows. UI .Xaml. 影像處理
 * Windows.UI.Xaml.Media.Media3D
 * Windows.UI.Xaml.Navigation
-* Windows.UI.Xaml.Resources
+* Windows. UI. Xaml. Resources
 * Windows.UI.Xaml.Shapes
-* Windows.UI.Xaml.Threading
-* Windows.UI.Text
+* Windows. UI. Xaml 執行緒
+* Windows. UI. Text
 
 <span id="other-XAML-namespaces"/>
 
@@ -82,19 +82,19 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 除了預設命名空間和 XAML 語言 XAML 命名空間 "x:" 之外，您可能也會看到 Microsoft Visual Studio 產生之 App 的初始預設 XAML 中其他對應的 XAML 命名空間。
 
-### <a name="d-httpschemasmicrosoftcomexpressionblend2008"></a>**d: (`http://schemas.microsoft.com/expression/blend/2008`)**
+### <a name="d-httpschemasmicrosoftcomexpressionblend2008"></a>**d：（`http://schemas.microsoft.com/expression/blend/2008`）**
 
-"D:"XAML 命名空間供設計工具支援，專門設計工具支援的 Microsoft Visual Studio XAML 設計介面中。 "D:"XAML 命名空間可讓設計工具] 或 [XAML 項目上的設計階段屬性。 這些設計工具屬性只會影響 XAML 行為的設計層面。 當應用程式執行時，如果 Windows 執行階段 XAML 剖析器載入了相同的 XAML，就會忽略設計工具屬性。 一般來說，設計工具屬性在任何 XAML 元素上都是有效的，但是實際上，只有特定案例才適合您自行套用設計工具屬性。 特別是許多設計工具屬性是為了在您開發使用資料繫結的 XAML 和程式碼時，能夠針對與資料內容及資料來源的互動提供更佳的使用經驗。
+"d:" XAML 命名空間旨在提供設計工具支援，特別是針對 Microsoft Visual Studio 中 XAML 設計介面的設計工具支援。 "d:" XAML 命名空間啟用 XAML 元素上的設計工具或設計階段屬性。 這些設計工具屬性只會影響 XAML 行為的設計層面。 當應用程式執行時，如果 Windows 執行階段 XAML 剖析器載入了相同的 XAML，就會忽略設計工具屬性。 一般來說，設計工具屬性在任何 XAML 元素上都是有效的，但是實際上，只有特定案例才適合您自行套用設計工具屬性。 特別是許多設計工具屬性是為了在您開發使用資料繫結的 XAML 和程式碼時，能夠針對與資料內容及資料來源的互動提供更佳的使用經驗。
 
--   **d:DesignHeight 和 d:DesignWidth 屬性：** 這些屬性有時候會套用至 Visual Studio 或其他 XAML 設計工具介面會為您建立 XAML 檔案的根目錄中。 例如，如果您將一個新的 **UserControl** 新增到您的應用程式專案，系統就會在已建立的 XAML 的 [**UserControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) 根元素上設定這些屬性。 這些屬性可以讓您更容易設計 XAML 內容的組合，讓您可以預期到一旦將該 XAML 內容用於控制項執行個體或較大 UI 頁面的其他部分時，可能會有的一些配置限制。
+-   **d:DesignHeight 和 d:DesignWidth 屬性：** 這些屬性有時會套用到 Visual Studio 或其他 XAML 設計工具介面為您建立的 XAML 檔案的根元素。 例如，如果您將一個新的 [UserControl**新增到您的應用程式專案，系統就會在已建立的 XAML 的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)UserControl 根元素上設定這些屬性。 這些屬性可以讓您更容易設計 XAML 內容的組合，讓您可以預期到一旦將該 XAML 內容用於控制項執行個體或較大 UI 頁面的其他部分時，可能會有的一些配置限制。
 
-   **附註**  如果您要從 Microsoft Silverlight XAML 您可能會對這些屬性代表整個 UI 頁面的根項目。 在這個情況下，您可能想要移除這些屬性。 在設計能夠良好處理縮放和檢視狀態的頁面配置上，XAML 設計工具的其他功能 (例如模擬器) 比起使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小頁面配置來得有用。
+   **請注意**  如果您要從 Microsoft SILVERLIGHT 遷移 XAML，您可能會在代表整個 UI 頁面的根項目上擁有這些屬性。 在這個情況下，您可能想要移除這些屬性。 在設計能夠良好處理縮放和檢視狀態的頁面配置上，XAML 設計工具的其他功能 (例如模擬器) 比起使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小頁面配置來得有用。
 
--   **d:DataContext 屬性：** 您可以設定此屬性頁面根或控制項，以覆寫任何明確或繼承權[ **DataContext** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)否則該物件。
--   **d:DesignSource 屬性：** 指定的設計階段資料來源[ **CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)、 覆寫[**來源**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.collectionviewsource.source)。
--   **d:DesignInstance 和 d:DesignData 標記延伸模組：** 這些標記延伸模組用來提供設計階段資料資源，為兩者**d:DataContext**或是**d:DesignSource**。 我們將不會在這裡完全載明如何使用設計階段資料資源。 如需詳細資訊，請參閱[設計階段屬性](https://go.microsoft.com/fwlink/p/?LinkId=272504)。 如需一些使用範例，請參閱[設計介面上適用於原型設計的範例資料](https://docs.microsoft.com/windows/uwp/data-binding/displaying-data-in-the-designer)。
+-   **d:DataContext 屬性：** 您可以在頁面根元素或控制項上設定這個屬性，覆寫物件在其他情況下所具有的任何明確或繼承的 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)。
+-   **d:DesignSource 屬性：** 指定 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 的設計階段資料來源，會覆寫 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.collectionviewsource.source)。
+-   **d:DesignInstance 和 d:DesignData 標記延伸：** 這些標記延伸是用來為 **d:DataContext** 或 **d:DesignSource** 提供設計階段資料資源。 我們將不會在這裡完全載明如何使用設計階段資料資源。 如需詳細資訊，請參閱[設計階段屬性](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx)。 如需一些使用範例，請參閱[設計介面上適用於原型設計的範例資料](https://docs.microsoft.com/windows/uwp/data-binding/displaying-data-in-the-designer)。
 
-### <a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>**mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
+### <a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>**mc：（`http://schemas.openxmlformats.org/markup-compatibility/2006`）**
 
 "mc:" 指示並支援讀取 XAML 的標記相容性模式。 一般而言，"d:" 前置詞是與屬性 **mc:Ignorable** 相關聯。 這項技術可以讓執行階段 XAML 剖析器忽略 "d:" 中的設計屬性。
 
@@ -102,7 +102,7 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 "local:" 是一個前置詞，通常會針對範本化的 UWP app 專案，在 XAML 頁面內進行對應。 對應這個前置詞，以便參考建立來包含 [x:Class 屬性](x-class-attribute.md)的相同命名空間，以及適用於所有 XAML 檔案 (包含 app.xaml 在內) 的程式碼。 只要您在這個相同命名空間中定義任何想要在 XAML 中使用的自訂類別，就可以使用 **local:** 前置詞，在 XAML 中參考您的自訂類型。 來自範本化 UWP app 專案的相關前置詞為 **common:** 。 這個前置詞會參考巢狀的 "Common" 命名空間 (其中包含像是轉換器和命令的公用程式類別)，而您可以在 [**方案總管**] 檢視的 Common 資料夾中找到定義。
 
-### <a name="vsm"></a>**vsm:**
+### <a name="vsm"></a>**vsm**
 
 請勿使用。 "vsm:" 是有時可透過其他 Microsoft 技術匯入的舊版 XAML 範本中見到的前置詞。 命名空間原來可以解決傳統的命名空間工具問題。 您應該刪除用於 Windows 執行階段的任何 XAML 中 "vsm:" 的 XAML 命名空間定義，以及變更 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)、[**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 以及相關物件的任何前置詞使用方法，以改用預設的 XAML 命名空間。 如需 XAML 移轉的詳細資訊，請參閱[將 Silverlight 或 WPF XAML/程式碼移轉到 Windows 執行階段 app](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10))。
 
@@ -112,7 +112,7 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 **xmlns** 定義包含值以及前置詞命名。 值是包含在引號內的字串，後面跟著等號。 常見 XML 慣例是將 XML 命名空間與統一資源識別元 (URI) 相關聯，這就是唯一性與識別性的慣例。 您在預設 XAML 命名空間與 XAML 語言 XAML 命名空間，以及一些 Windows 執行階段 XAML 較少用的 XAML 命名空間，也會看到這種個慣例。 不過，對於對應自訂類型的 XAML 命名空間，並非指定 URI，您要使用語彙基元 "using:" 做為前置詞定義的開頭。 在 "using:" 語彙基元的後面，接著命名程式碼命名空間。
 
-比方說，若要對應的 「 custom1"前置詞，可讓您參考 「 CustomClasses"命名空間，並從該命名空間或組件的類別作為 XAML 物件項目，您的 XAML 頁面應包含根項目上的下列對應： `xmlns:custom1="using:CustomClasses"`
+例如，若要對應可讓您參考「CustomClasses」命名空間的「custom1」前置詞，並使用該命名空間或元件中的類別做為 XAML 中的物件專案，則您的 XAML 頁面應該在根項目上包含下列對應： `xmlns:custom1="using:CustomClasses"`
 
 不需要對應相同頁面範圍的部分類別。 例如，您不需要前置詞來參考針對處理頁面上 XAML UI 定義的事件而定義的任何事件處理常式。 此外，如果從 Visual Studio 為使用 C++、C# 或 Visual Basic 的 Windows 執行階段應用程式產生專案，而這些專案的許多 XAML 起始頁面已經對應了 "local:" 前置詞，則它會參考專案指定的預設命名空間以及部分類別定義使用的命名空間。
 
@@ -130,7 +130,7 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 如果您是從主 app 定義或頁面定義參考自訂類型，這些類型不需要進一步進行相依組件設定即可使用，但是您仍然必須對應包含這些類型的程式碼命名空間。 常用慣例是為任何特定 XAML 頁面的預設程式碼命名空間對應前置詞 "local"。 這個慣例通常是包含在 XAML 專案的起始專案範本內。
 
-## <a name="attached-properties"></a>附加的屬性
+## <a name="attached-properties"></a>附加屬性
 
 如果您正在參考附加屬性，附加屬性名稱的 owner-type 部份必須位於預設的 XAML 命名空間或做為前置詞。 只有在極少數的情況下，才會將前置詞屬性從其元素中獨立出來，但有時會有一種情況必須這樣做，特別是針對自訂的附加屬性。 如需詳細資訊，請參閱[自訂附加屬性](custom-attached-properties.md)。
 
@@ -138,8 +138,8 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 * [XAML 概觀](xaml-overview.md)
 * [XAML 語法指南](xaml-syntax-guide.md)
-* [建立 Windows 執行階段元件，在C#和 Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
-* [C#VB，和C++適用於 Windows 執行階段應用程式專案範本](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10))
-* [移轉的 Silverlight 或 WPF XAML/程式碼到 Windows 執行階段應用程式](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10))
+* [在和 Visual Basic 中C#建立 Windows 執行階段元件](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
+* [C#、VB 和C++ Windows 執行階段應用程式的專案範本](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10))
+* [將 Silverlight 或 WPF XAML/程式碼遷移至 Windows 執行階段應用程式](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10))
  
 

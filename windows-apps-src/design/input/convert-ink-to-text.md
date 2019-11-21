@@ -8,18 +8,18 @@ keywords: Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, 手�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f402c88efaca909fa5558880825629d94cc2a64b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 266f07385e3f7fd7450c32f8e912035d804a4740
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363749"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258058"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>將 Windows Ink 筆劃辨識為文字和圖案
 
 使用 Windows Ink 內建的辨識功能，將筆墨筆劃轉換為文字與形狀。
 
-> **重要的 Api**:[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)， [ **Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **重要 API**：[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)、[**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="free-form-recognition-with-ink-analysis"></a>使用筆墨分析辨識自由格式
 
@@ -30,7 +30,7 @@ ms.locfileid: "66363749"
 
 在此範例中，當使用者按一下按鈕表示完成繪圖時，系統便會開始辨識。
 
-**下載這個範例來自[筆跡分析範例 （基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
+**從[筆墨分析範例下載此範例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
 
 1. 首先，先設定 UI (MainPage.xaml)。 
 
@@ -66,8 +66,8 @@ ms.locfileid: "66363749"
 
 2. 在 UI 的後置程式碼檔案中 (MainPage.xaml.cs)，新增筆墨功能和筆墨分析功能所需的命名空間類型參考：
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
-    - [Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)
-    - [Windows.UI.Xaml.Shapes](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes)
+    - [Windows. UI. Input. 筆跡分析](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)
+    - [Windows. UI. Xaml. 圖形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes)
 
 3. 然後我們會指定我們的全域變數：
 
@@ -109,11 +109,11 @@ public MainPage()
 ```
 
 5. 在這個範例中，我們使用 [Recognize] 按鈕的 click 事件處理常式來執行筆墨分析。
-    - 首先，在 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 的 [**StrokeContainer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter.StrokeContainer) 上呼叫 [**GetStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokecontainer.GetStrokes)，取得所有目前筆墨筆劃的集合。
+    - 首先，在 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokecontainer.GetStrokes) 的 [**StrokeContainer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter.StrokeContainer) 上呼叫 [**GetStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)，取得所有目前筆墨筆劃的集合。
     - 如果筆墨筆劃存在，在 InkAnalyzer 的 [**AddDataForStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer#Windows_UI_Input_Inking_Analysis_InkAnalyzer_AddDataForStrokes_Windows_Foundation_Collections_IIterable_Windows_UI_Input_Inking_InkStroke__) 呼叫中傳遞它們。
     - 我們會一直嘗試辨識繪圖與文字，但您可以使用 [**SetStrokeDataKind**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind) 方法來指定您只對文字感興趣 (包括文件結構和項目符號清單)，或只對繪圖感興趣 (包括形狀辨識)。
     - 呼叫 [**AnalyzeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) 起始筆墨分析，並取得 [**InkAnalysisResult**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult)。
-    - 如果 [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) 傳回狀態 **Updated**，呼叫 [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) 和 [**InkAnalysisNodeKind.InkDrawing**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) 的 [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes)。
+    - 如果 [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) 傳回狀態 **Updated**，呼叫 [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) 和 [**InkAnalysisNodeKind.InkDrawing**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) 的 [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind)。
     - 逐一查看這兩組的節點類型，並在辨識畫布（在筆跡畫布下方）上繪製對應文字或圖案。
     - 最後，從 InkAnalyzer 刪除辨識的節點，從筆跡畫布刪除對應的筆墨筆劃。
 
@@ -215,7 +215,7 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-6. 以下是在我們的辨識畫布上繪製 TextBlock 的功能。 我們使用相關聯的筆墨筆劃的週框矩形筆墨畫布上設定的位置和 TextBlock 的字型大小。
+6. 以下是在我們的辨識畫布上繪製 TextBlock 的功能。 我們使用筆墨畫布上相關聯筆墨筆劃的周框，來設定 TextBlock 的位置和字型大小。
 
 ```csharp
 /// <summary>
@@ -236,7 +236,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 }
 ```
 
-7. 以下是在我們的辨識畫布上繪製省略符號和多邊形的功能。 我們使用相關聯的筆墨筆劃的週框矩形筆墨畫布上設定的位置和形狀的字型大小。
+7. 以下是在我們的辨識畫布上繪製省略符號和多邊形的功能。 我們使用筆墨畫布上相關聯筆墨筆劃的周框，來設定圖形的位置和字型大小。
 
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
@@ -288,11 +288,11 @@ private void DrawText(string recognizedText, Rect boundingRect)
 在本節中，我們會示範如何使用 Windows Ink 手寫辨識引擎 (而非筆墨分析)，將 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 上的一組筆劃轉換成文字 (根據安裝的預設語言套件)。
 
 > [!NOTE]
-> 本節中顯示的基本手寫辨識最適合單行的文字輸入案例，例如表單輸入。 更豐富辨識案例，包括分析和解譯的文件結構，如清單項目、 圖形和繪圖 （除了文字辨識），請參閱上一節：[自由形式辨識與筆跡分析](#free-form-recognition-with-ink-analysis)。
+> 本節中顯示的基本手寫辨識最適合單行的文字輸入案例，例如表單輸入。 如需包括文件結構、清單項目、圖形和繪圖（加上文字辨識）分析和解譯更豐富的辨識功能案例，請參閱上一節：[使用筆墨分析辨識自由格式](#free-form-recognition-with-ink-analysis)。
 
 在此範例中，當使用者按一下按鈕表示完成書寫時，系統便會開始辨識。
 
-**下載這個範例來自[筆墨手寫辨識範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)**
+**從[筆墨手寫辨識範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)下載此範例**
 
 1. 一開始先設定 UI。
 
@@ -361,7 +361,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 4. 最後是執行基本的手寫辨識。 在這個範例中，我們使用 [辨識] 按鈕的 click 事件處理常式來執行手寫辨識。
 
-    [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 會儲存 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 物件中的所有筆墨筆劃。 筆劃是透過 **InkPresenter** 的 [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer) 屬性來公開，並使用 [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) 方法來擷取。
+    [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 會儲存 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 物件中的所有筆墨筆劃。 筆劃是透過 [InkPresenter**的**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer)StrokeContainer 屬性來公開，並使用 [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) 方法來擷取。
 
     ```csharp
     // Get all strokes on the InkCanvas.
@@ -377,9 +377,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
             new InkRecognizerContainer();
     ```
 
-    [**RecognizeAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync)呼叫以擷取一組[ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)物件。
+    呼叫[**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync)以取得一組[**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)物件。
 
-    辨識結果所產生的偵測到的每個單字[ **InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer)。
+    系統會針對[**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer)偵測到的每個單字產生辨識結果。
 
     ```csharp
     // Recognize all ink strokes on the ink canvas.
@@ -389,9 +389,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
                 InkRecognitionTarget.All);
     ```
 
-    每個[ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)物件包含一組文字候選項目。 這份清單中的最上層項目會被視為辨識引擎最佳的相符項目，後面接著其餘候選人的順序排列的信心。
+    每個[**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)物件都包含一組文字候選項目。 辨識引擎會將這份清單中最上方的專案視為最符合的專案，後面接著其餘的候選人，以降低信心。
 
-    我們逐一查看每個[ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult)和編譯的候選項目清單。 隨即顯示候選項目和[ **InkStrokeContainer** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer)清除 (這也會清除[ **InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas))。
+    我們會逐一查看每個[**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) ，並編譯候選清單。 然後會顯示候選項目，並清除[**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) （這也會清除[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)）。
 
     ```csharp
     string str = "Recognition result\n";
@@ -412,7 +412,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
         inkCanvas.InkPresenter.StrokeContainer.Clear();
     ```
 
-    以下是完整的 click 處理常式範例中。
+    以下是「完整」的 click 處理常式範例。
 
     ```csharp
     // Handle button click to initiate recognition.
@@ -483,14 +483,14 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 您的應用程式可以查詢這組已安裝的手寫辨識引擎並使用其中一個，或者讓使用者選擇他們偏好的語言。
 
-**附註**  使用者可以看到一份已安裝的語言，方法是前往**設定-&gt;時間與語言**。 [語言] 下方會列出已安裝的語言。 
+**注意**   使用者可以前往 [**設定-&gt; 時間 & 語言**]，查看已安裝的語言清單。 **\[語言\]** 下方會列出已安裝的語言。
 
 若要安裝新的語言套件並針對該語言啟用手寫辨識：
 
-1. 移至 [設定] &gt; [時間與語言] &gt; [地區與語言]。 
-2. 選取 [新增語言]。 
-3. 從清單中選取語言，然後選擇地區版本。 語言現在會列於 [地區及語言] 頁面上。 
-4. 按一下語言，然後選取 [選項]。 
+1. 移至 **\[設定\] &gt; \[時間與語言\] &gt; \[地區與語言\]** 。
+2. 選取 **\[新增語言\]** 。
+3. 從清單中選取語言，然後選擇地區版本。 語言現在會列於 **\[地區及語言\]** 頁面上。
+4. 按一下語言，然後選取 **\[選項\]** 。
 5. 在 **[語言選項]** 頁面上，下載 **[手寫辨識引擎]** (他們也可以在此處下載完整的語言套件、語音辨識引擎和鍵盤配置)。
 
 我們將在此處示範如何使用手寫辨識引擎，根據選取的辨識器來解譯 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 上的一組筆墨筆劃。
@@ -618,7 +618,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 5. 最後，會根據選取的手寫辨識器執行手寫辨識。 在這個範例中，我們使用 [辨識] 按鈕的 click 事件處理常式來執行手寫辨識。
 
-    [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 會儲存 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 物件中的所有筆墨筆劃。 筆劃是透過 **InkPresenter** 的 [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer) 屬性來公開，並使用 [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) 方法來擷取。
+    [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 會儲存 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 物件中的所有筆墨筆劃。 筆劃是透過 [InkPresenter**的**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer)StrokeContainer 屬性來公開，並使用 [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) 方法來擷取。
 
 ```csharp
 // Get all strokes on the InkCanvas.
@@ -818,7 +818,7 @@ string str = "Recognition result\n";
 
 4. 最後執行手寫辨識。 在這個範例中，我們使用 [**DispatcherTimer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dispatchertimer.tick) 的 [**Tick**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DispatcherTimer) 事件處理常式來初始手寫辨識功能。
     - 呼叫 [**AnalyzeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) 起始筆墨分析，並取得 [**InkAnalysisResult**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult)。
-    - 如果 [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) 傳回的狀態為 \[已更新\]  ，則會為 [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) 的節點類型呼叫 [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes)。
+    - 如果 [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) 傳回的狀態為 \[已更新\]，則會為 [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) 的節點類型呼叫 [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind)。
     - 逐一查看節點，並顯示所辨識的文字。
     - 最後，從 InkAnalyzer 刪除辨識的節點，從筆跡畫布刪除對應的筆墨筆劃。
 
@@ -870,18 +870,18 @@ string str = "Recognition result\n";
 
 ## <a name="related-articles"></a>相關文章
 
-- [畫筆和手寫筆的互動](pen-and-stylus-interactions.md)
+- [畫筆和手寫筆互動](pen-and-stylus-interactions.md)
 
 ### <a name="topic-samples"></a>主題範例
 
-- [筆跡分析範例 （基本） (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-- [筆墨手寫辨識範例 (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+- [筆墨分析範例（基本）（C#）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+- [筆跡手寫辨識範例（C#）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
 ### <a name="other-samples"></a>其他範例
 
-- [簡單的筆墨範例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-- [複雜的筆墨範例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-- [筆墨範例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-- [快速入門教學課程：支援在 UWP 應用程式中的筆墨](https://aka.ms/appsample-ink)
-- [著色書範例](https://aka.ms/cpubsample-coloringbook)
-- [系列的資訊範例](https://aka.ms/cpubsample-familynotessample)
+- [Simple 筆墨範例（C#/C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+- [複雜筆跡範例（C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+- [筆墨範例（JavaScript）](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+- [開始使用教學課程：在 UWP 應用程式中支援筆墨](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+- [著色書籍範例](https://github.com/Microsoft/Windows-appsample-coloringbook)
+- [家族附注範例](https://github.com/Microsoft/Windows-appsample-familynotes)

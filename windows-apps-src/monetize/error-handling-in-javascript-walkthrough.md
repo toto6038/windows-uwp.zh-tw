@@ -6,18 +6,18 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 錯誤處理, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: df33dc84823d5bcdc02d892820967b74ff0e5f65
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b68979bfa6b1f661ca7765ebc2598b201f013e2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645903"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260295"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>JavaScript 錯誤處理的逐步解說
 
 此逐步解說示範如何在您的 JavaScript 應用程式中抓取廣告相關錯誤。 此逐步解說示範使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 來顯示橫幅廣告，但它的一般概念也適用於插播式廣告和原生廣告。
 
-這些範例假設您有包含 **AdControl** 的 JavaScript 應用程式。 如需示範如何將 **AdControl** 新增到 app 的逐步指示，請參閱 [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。 如需示範如何將橫幅廣告新增到 JavaScript/HTML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](https://aka.ms/githubads)。
+這些範例假設您有包含 **AdControl** 的 JavaScript 應用程式。 如需示範如何將 **AdControl** 新增到 app 的逐步指示，請參閱 [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。 如需示範如何將橫幅廣告新增到 JavaScript/HTML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
 1.  在 default.html 檔案中，為 **onErrorOccurred** 事件新增一個值，該事件是您為 **AdControl** 定義 **div** 中之 **data-win-options** 的所在位置。 請在 default.html 檔案中尋找以下程式碼。
     ``` HTML
@@ -66,4 +66,4 @@ ms.locfileid: "57645903"
 
 ## <a name="related-topics"></a>相關主題
 
-* [GitHub 上的廣告範例](https://aka.ms/githubads)
+* [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

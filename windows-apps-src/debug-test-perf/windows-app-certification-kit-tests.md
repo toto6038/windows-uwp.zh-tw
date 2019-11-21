@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f0fe5219ad6e1401e189c27fec898cb8e56c6de
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 32ece54ef17c97b1cb16b3f0a706c86eb2858556
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281775"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257862"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
@@ -28,7 +28,7 @@ ms.locfileid: "72281775"
 
 我們希望 app 即使不使用 Windows 相容模式、AppHelp 訊息和/或相容性修正程式，也可以完全正常運作。
 
-應用程式不能列出要在 HKEY @ no__t-0LOCAL @ no__t-1MACHINE @ no__t-2Software @ no__t-3Microsoft @ no__t-4Windows NT @ no__t-5CurrentVersion @ no__t-6Windows @ no__t-7AppInit @ no__t-8DLLs 登錄機碼中載入的 Dll。
+應用程式不能列出要載入 HKEY\-本機\-電腦的 Dll\\軟體\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\Appinit.reg\-Dll 登錄機碼。
 
 ### <a name="test-details"></a>測試詳細資料
 
@@ -44,8 +44,8 @@ Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::Acti
 
 如果您的 app 無法啟動，但測試平台符合 [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 的先決條件，則您可以檢閱啟用事件記錄檔以疑難排解問題。 在事件記錄檔中找到這些項目：
 
-1.  開啟 eventvwr.msc，並流覽至 [應用程式及服務記錄檔 @ no__t-0Microsoft @ no__t-1Windows @ no__t-2Immersive-Shell] 資料夾。
-2.  篩選視圖以顯示事件識別碼：5900-6000。
+1.  開啟 eventvwr.msc，並流覽至 應用程式及服務 記錄\\Microsoft\\Windows\\沉浸式 資料夾。
+2.  篩選檢視，顯示事件識別碼：5900-6000。
 3.  查閱記錄項目，尋找說明為什麼應用程式無法啟動的資訊。
 
 疑難排解有問題的檔案，並尋找和修正問題。 重新建置並重新測試應用程式。 您也可以檢查 Windows 應用程式認證套件記錄檔資料夾中是否已產生可用來偵錯應用程式的傾印檔案。
@@ -172,7 +172,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 請勿在強式命名的組件上使用 APTCA 屬性，除非您的專案需要，而且您充分了解風險。 若有必要，請務必使用適當的程式碼存取安全性要求來保護所有 API。 當組件是通用 Windows 平台 (UWP) app 的一部分時，APTCA 沒有任何作用。
 
-**備註**
+**標記**
 
 這個測試只會在 Managed 程式碼 (C#、.NET 等) 執行。
 
@@ -186,7 +186,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 建置您的應用程式時，在連結器命令中啟用 /SAFESEH 選項。 在 Visual Studio 的發行組態中，這個選項預設會處於開啟。 針對您應用程式中的所有可執行檔模組，確認建置指示中的這個選項已經啟用。
 
-**備註**
+**標記**
 
 測試不會在 64 位元的二進位檔或 ARM 晶片組二進位檔上執行，原因是兩者不會在堆疊上儲存例外處理常式位址。
 
@@ -200,7 +200,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 建置您的應用程式時，在連結器命令中啟用 /NXCOMPAT 選項。 在支援資料執行防止 (DEP) 的連結器版本中，這個選項預設會處於開啟。
 
-**備註**
+**標記**
 
 建議您在支援 DEP 的 CPU 上測試應用程式，並修正由 DEP 所導致的任何失敗。
 
@@ -214,7 +214,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 建置您的應用程式時，在連結器命令中啟用 /DYNAMICBASE 選項。 確認您應用程式使用的所有模組也都使用這個連結器選項。
 
-**備註**
+**標記**
 
 通常 ASLR 不會影響效能。 但在某些情況下，可稍微改善 32 位元系統上的效能。 系統若將許多影像載入多個不同的記憶體位置而發生嚴重壅塞，可能會使效能降低。
 
@@ -230,7 +230,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 從 app 中移除任何共用的區段，然後搭配適當的安全性屬性來呼叫 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 以建立共用的記憶體物件，然後重新建置您的 app。
 
-**備註**
+**標記**
 
 這個測試只能在以 Unmanaged 語言 (如 C 或 C++) 撰寫的應用程式上執行。
 
@@ -246,7 +246,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 如果受管理的可執行檔無法通過測試，請確定您使用的是最新的編譯器和連結器（例如 Microsoft Visual Studio）來建立 UWP 應用程式。
 
-**備註**
+**標記**
 
 這個測試會在所有 .exe 檔案和 Unmanaged DLL 上執行。
 
@@ -260,7 +260,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 不要將匯入表格合併到可執行程式碼區段中。 確定 Visual C++ 連結器的 */merge* 旗標沒有設定為將 ".rdata" 區段合併到程式碼區段中。
 
-**備註**
+**標記**
 
 這個測試會在完全 Managed 組件以外的所有二進位程式碼上執行。
 
@@ -268,19 +268,19 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 **Windows 應用程式認證套件錯誤訊息：** WXCheck 測試失敗。
 
-這個檢查有助於確保二進位檔沒有任何對應為可寫入或可執行的頁面。 如果二進位檔具有可寫入和可執行檔區段，或二進位的*SectionAlignment*小於*PAGE @ no__t-2SIZE*，就會發生這種情況。
+這個檢查有助於確保二進位檔沒有任何對應為可寫入或可執行的頁面。 如果二進位檔具有可寫入和可執行檔區段，或二進位的*SectionAlignment*小於*頁面\-大小*，就會發生這種情況。
 
 **當您的應用程式無法執行此測試時該怎麼辦**
 
-請確定二進位檔沒有可寫入或可執行檔區段，而且二進位的*SectionAlignment*值至少等於其*PAGE @ no__t-2SIZE*。
+請確定二進位檔沒有可寫入或可執行檔區段，而且二進位的*SectionAlignment*值至少等於其*頁面\-大小*。
 
-**備註**
+**標記**
 
 這個測試會在所有 .exe 檔案和原生的 Unmanaged DLL 上執行。
 
 如果可執行檔在建置時啟用了 編輯後繼續 (/ZI)，則可執行檔便可能有可寫入和可執行的區段。 停用 \[編輯後繼續\] 即可不顯示無效的區段。
 
-*PAGE @ no__t-1SIZE*是可執行檔的預設*SectionAlignment* 。
+*頁面\-大小*是可執行檔的預設*SectionAlignment* 。
 
 ### <a name="private-code-signing"></a>私用程式碼簽署
 
@@ -315,11 +315,11 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 確定 app 是編譯為發行組建而不是偵錯組建。
 
-> **注意**@no__t-即使應用程式只使用[UWP 應用](https://docs.microsoft.com/uwp/)程式的 api，應用程式的 1The debug 組建也會使這項測試失敗。
+> **請注意**  如果應用程式只使用[UWP 應用](https://docs.microsoft.com/uwp/)程式的 Api，應用程式的 Debug 組建將會使這項測試失敗。
 
 請檢查錯誤訊息，以識別應用程式所使用的 API，而不是[UWP 應用程式的 api](https://docs.microsoft.com/uwp/)。
 
-> **請注意**，如果C++設定只使用來自 UWP 應用程式之 Windows SDK 中的 api，則在 debug 設定中建立的 @no__t 1 應用程式將會使這項測試失敗。 如需詳細資訊，請參閱[UWP 應用程式中的 Windows Api 替代方案](https://go.microsoft.com/fwlink/p/?LinkID=244022)。
+> **請注意**，如果設定只使用來自 UWP 應用程式之 Windows SDK 中的 api，則在 debug 設定中建立  C++應用程式將會使這項測試失敗。 如需詳細資訊，請參閱[UWP 應用程式中的 Windows Api 替代方案](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。
 
 ## <a name="performance-tests"></a>效能測試
 
@@ -461,17 +461,17 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 <p>請確定 app 資訊清單會在 resource.pri 中定義有效的資源。</p>
 </td></tr>
 <tr><td>
-<p>影像檔案 {filename} 必須小於204800個位元組。 \* @ no__t-1</p>
+<p>影像檔案 {filename} 必須小於204800個位元組。\*\*</p>
 </td><td>
 <p>請降低所指示之影像的大小。</p>
 </td></tr>
 <tr><td>
-<p>{Filename} 檔案不能包含反向對應區段。 \* @ no__t-1</p>
+<p>{Filename} 檔案不能包含 [反向對應] 區段。\*\*</p>
 </td><td>
 <p>若呼叫 makepri.exe 時在 Visual Studio「F5 偵錯」期間產生反向對應，則可藉由在產生 pri 檔案時，執行 makepri.exe 但不加上 /m 參數來移除它。</p>
 </td></tr>
 <tr><td colspan="2">
-<p>\* @ no__t-1 表示已在適用于 Windows 8.1 的 Windows 應用程式認證套件3.3 中新增測試，而且只有在使用該版本的套件或更新版本時才適用。</p>
+<p>\*\* 表示已在適用于 Windows 8.1 的 Windows 應用程式認證套件3.3 中新增測試，而且只有在使用該版套件或更新版本時才適用。</p>
 </td></tr>
 </table>
 
@@ -523,7 +523,7 @@ UWP 應用程式預期已完成且可完整運作。 使用預設影像 (來自�
 
 ### <a name="corrective-action"></a>修正動作
 
-開啟受影響的檔案，然後從 Visual Studio 的 \[**檔案**\] 功能表中選取 \[**另存新檔**\]。 選取 \[**儲存**\] 按鈕旁的下拉式控制項，然後選取 \[**以編碼方式儲存**\]。 從 \[**進階**\] 儲存選項對話方塊中選擇 \[Unicode (UTF-8 有簽章)\] 選項，然後按一下 \[**確定**\]。
+開啟受影響的檔案，然後從 Visual Studio 的 **\[檔案\]** 功能表中選取 **\[另存新檔\]** 。 選取 \[**儲存**\] 按鈕旁的下拉式控制項，然後選取 \[**以編碼方式儲存**\]。 從 \[**進階**\] 儲存選項對話方塊中選擇 \[Unicode (UTF-8 有簽章)\] 選項，然後按一下 \[**確定**\]。
 
 ## <a name="direct3d-feature-level-test"></a>Direct3D 功能層級測試
 
@@ -533,21 +533,21 @@ UWP 應用程式預期已完成且可完整運作。 使用預設影像 (來自�
 
 ### <a name="background"></a>背景
 
-Microsoft Store 需要使用 Direct3D 的所有應用程式在功能層級 9 @ no__t-01 圖形配接器上正確呈現或失敗。
+Microsoft Store 需要使用 Direct3D 的所有應用程式在功能層級 9\-1 圖形配接器上正確呈現或失敗。
 
-由於使用者可以在安裝應用程式之後變更其裝置中的圖形硬體，因此如果您選擇的最低功能等級高於 9 @ no__t-01，則無論目前的硬體是否符合最低需求，您的應用程式都必須在啟動時偵測到。 若不符合最低需求，該 app 必須向使用者顯示訊息，以詳細說明 Direct3D 的需求。 此外，如果客戶在不相容的裝置上下載 app，該 app 必須在啟動時偵測執行環境，並顯示訊息給客戶，以詳細說明需求。
+由於使用者可以在安裝應用程式之後變更其裝置中的圖形硬體，因此如果您選擇高於 9\-1 的最低功能等級，您的應用程式就必須在啟動時偵測到目前硬體是否符合最低需求。 若不符合最低需求，該 app 必須向使用者顯示訊息，以詳細說明 Direct3D 的需求。 此外，如果客戶在不相容的裝置上下載 app，該 app 必須在啟動時偵測執行環境，並顯示訊息給客戶，以詳細說明需求。
 
 ### <a name="test-details"></a>測試詳細資料
 
-此測試會驗證應用程式是否在功能層級 9 @ no__t-01 上正確呈現。
+此測試會驗證應用程式是否在功能層級 9\-1 上正確呈現。
 
 ### <a name="corrective-action"></a>修正動作
 
-請確定您的應用程式在 Direct3D 功能層級 9 @ no__t 上正確呈現，即使您預期它在較高的功能層級上執行也一樣。 如需詳細資訊，請參閱[針對不同的 Direct3D 功能層級進行開發](https://go.microsoft.com/fwlink/p/?LinkID=253575)。
+請確定您的應用程式在 Direct3D 功能層級 9\-1 上正確轉譯，即使您預期它在較高的功能層級上執行也一樣。 如需詳細資訊，請參閱[針對不同的 Direct3D 功能層級進行開發](https://msdn.microsoft.com/library/windows/apps/hh994923.aspx)。
 
 ### <a name="direct3d-trim-after-suspend"></a>暫停後的 Direct3D 修剪
 
-> **注意**  This 測試僅適用于針對 Windows 8.1 和更新版本開發的 UWP 應用程式。
+> **注意**  此測試僅適用于針對 Windows 8.1 和更新版本開發的 UWP 應用程式。
 
 ### <a name="background"></a>背景
 
@@ -559,7 +559,7 @@ Microsoft Store 需要使用 Direct3D 的所有應用程式在功能層級 9 @ n
 
 ### <a name="corrective-action"></a>修正動作
 
-每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 介面上呼叫 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
+每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) 介面上呼叫 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) API。
 
 ## <a name="app-capabilities-test"></a>App 功能測試
 
@@ -581,13 +581,13 @@ Microsoft Store 需要使用 Direct3D 的所有應用程式在功能層級 9 @ n
 
 ### <a name="corrective-actions"></a>修正動作
 
-請考慮移除 app 不需要的特殊用途功能。 此外，這類功能的使用方式需接受其他上架原則審查。
+請考慮移除應用程式不需要的特殊用途功能。 此外，這類功能的使用方式需接受其他上架原則審查。
 
 ## <a name="windows-runtime-metadata-validation"></a>Windows 執行階段中繼資料驗證
 
 ### <a name="background"></a>背景
 
-確保 app 隨附的元件符合 UWP 類型系統。
+確保應用程式隨附的元件符合 UWP 類型系統。
 
 ### <a name="test-details"></a>測試詳細資料
 
@@ -595,11 +595,11 @@ Microsoft Store 需要使用 Direct3D 的所有應用程式在功能層級 9 @ n
 
 ### <a name="corrective-actions"></a>修正動作
 
--   **ExclusiveTo 屬性測試：** 請確定 UWP 類別不會實作為另一個類別所標記的 ExclusiveTo 介面。
--   **類型位置測試：** 請確定所有 UWP 類型的中繼資料都位於應用程式套件中具有最長命名空間相符名稱的 winmd 檔案中。
--   **類型名稱大小寫區分測試：** 請確定應用程式套件中的所有 UWP 類型都會有唯一且不區分大小寫的名稱。 同時也確保 app 套件內的命名空間名稱均未使用 UWP 類型名稱。
+-   **ExclusiveTo 屬性測試：** 確保 UWP 類別不會實作已標示為 ExclusiveTo 其他類別的介面。
+-   **類型位置測試：** 確保所有 UWP 類型的中繼資料都位於 app 套件中命名空間相符名稱最長的 winmd 檔案中。
+-   **類型名稱區分大小寫測試：** 確保所有 UWP 類型在 app 套件內都具有唯一且不區分大小寫的名稱。 同時也確保 app 套件內的命名空間名稱均未使用 UWP 類型名稱。
 -   **類型名稱正確性測試：** 確保全域命名空間或 Windows 最上層命名空間中，不存在任何 UWP 類型。
--   **一般中繼資料正確性測試：** 請確定您用來產生類型的編譯器是使用 UWP 規格的最新版本。
+-   **一般中繼資料正確性測試：** 確保您用來產生類型的編譯器符合最新的 UWP 規格。
 -   **屬性測試：** 確保 UWP 類別的所有屬性都有 get 方法 (set 方法為選用)。 針對 UWP 類型的所有屬性，確保 get 方法傳回值的類型與 set 方法輸入參數的類型相符。
 
 ## <a name="package-sanity-tests"></a>套件例行性測試
@@ -632,15 +632,15 @@ Microsoft Store 需要使用 Direct3D 的所有應用程式在功能層級 9 @ n
 
 ### <a name="supported-directory-structure-test"></a>支援的目錄結構測試
 
-驗證應用程式不會在安裝期間建立子目錄，且長度超過 @ no__t-0PATH。
+驗證應用程式不會在安裝期間建立子目錄，且長度超過\-路徑的最大值。
 
 ### <a name="background"></a>背景
 
-作業系統元件（包括 Trident、Wwahost.exe 等）在內部僅限於檔案系統路徑的最大 @ no__t-0PATH，而且不會針對較長的路徑正常運作。
+OS 元件（包括 Trident、Wwahost.exe 等）在內部僅限於檔案系統路徑的最大\-路徑，而且不會針對較長的路徑正常運作。
 
 ### <a name="test-details"></a>測試詳細資料
 
-確認應用程式安裝目錄中的路徑超過最大 @ no__t-0PATH。
+確認應用程式安裝目錄中沒有任何路徑超過最大\-路徑。
 
 ### <a name="corrective-action"></a>修正動作
 

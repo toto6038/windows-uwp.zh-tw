@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 課稅, irs, 美國國稅局, 稅賦, 所得稅, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: dc967961be7a96d04dfc744a229b4ca1f8f23a73
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 55143f109398aae1988b7ac0d060cda138e7e48e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282458"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258963"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
@@ -41,10 +41,10 @@ ms.locfileid: "72282458"
 **非美國公民：**
 <table>
 <tr><th>商務群組</th><th>法律實體</th><th>地址</th></tr>
-<tr><td>Windows、Office、Azure</td><td>Microsoft 愛爾蘭營運限制（microsoft Corporation 透過 microsoft 愛爾蘭以 microsoft Corporation 的合格媒介身分進行付款）</td><td>一個 Microsoft 場所<br>南部 @ no__t-0County @ no__t-1Business @ no__t-2Park<br>Leopardstown，都柏林18愛爾蘭</td></tr>
-<tr><td>廣告</td><td>Microsoft 愛爾蘭營運限制（付款是由 Microsoft Online Inc. 所建立，並由 microsoft 愛爾蘭擔任 Microsoft Online Inc. 的支出代理程式）。</td><td>一個 Microsoft 場所<br>南部 @ no__t-0County @ no__t-1Business @ no__t-2Park<br>Leopardstown，都柏林18愛爾蘭</td></tr>
+<tr><td>Windows、Office、Azure</td><td>Microsoft 愛爾蘭營運限制（microsoft Corporation 透過 microsoft 愛爾蘭以 microsoft Corporation 的合格媒介身分進行付款）</td><td>一個 Microsoft 場所<br>南部&nbsp;縣市&nbsp;Business&nbsp;公園<br>Leopardstown，都柏林18愛爾蘭</td></tr>
+<tr><td>廣告</td><td>Microsoft 愛爾蘭營運限制（付款是由 Microsoft Online Inc. 所建立，並由 microsoft 愛爾蘭擔任 Microsoft Online Inc. 的支出代理程式）。</td><td>一個 Microsoft 場所<br>南部&nbsp;縣市&nbsp;Business&nbsp;公園<br>Leopardstown，都柏林18愛爾蘭</td></tr>
 <tr><td>廣告</td><td>Microsoft Online Inc。</td><td>6100 Neil 道路<br>Reno，美國 NV 89511</td></tr>
-<tr><td colspan="3">* 下列國家/地區的公民獲得廣告收益，將透過 Microsoft 愛爾蘭作業限制付費：奧地利、比利時、保加利亞、克羅地亞、賽普勒斯、捷克共和國、丹麥、愛沙尼亞、芬蘭、法國、德國、希臘、匈牙利、愛爾蘭、Isle 的男士、義大利、拉脫維亞、列支敦斯登、立陶宛、盧森堡、馬爾他、摩納哥、荷蘭、挪威、波蘭、葡萄牙、羅馬尼亞，斯洛伐克，斯洛維尼亞，南非，西班牙，瑞典，瑞士，英國</td></tr>
+<tr><td colspan="3">* 下列國家/地區的公民獲得廣告收益，將透過 Microsoft 愛爾蘭作業限制：奧地利、比利時、保加利亞、克羅地亞、賽普勒斯、捷克共和國、丹麥、愛沙尼亞、芬蘭、法國、德國、希臘、匈牙利、愛爾蘭、Isle 的 Man、義大利、拉脫維亞、列支敦斯登、立陶宛、盧森堡、馬爾他、摩納哥、荷蘭、挪威、波蘭、葡萄牙、羅馬尼亞、斯洛伐克、斯洛維尼亞、南非、西班牙、瑞典、瑞士、英國</td></tr>
 </table>
 
 ## <a name="for-developers-located-in-the-united-states"></a>適用於位於美國的開發人員
@@ -56,19 +56,19 @@ ms.locfileid: "72282458"
   </tr>
   <tr> 
      <td valign="top">我在適用的納税年度<b>銷售超過 200 個應用程式</b>，其中銷售總額<b>超過 $20,000 美元</b> (<b>不</b>含透過 Windows 10 上的 Microsoft Store 於巴西及中國所進行的銷售)。</td>
-    <td valign="top"><b>1099-K</b> :<br>檔Microsoft Corporation<br>EIN： * * * * * 4442<br><br><b>重要</b>事項：表單 1099-K 包含<b>總購買</b>金額，而不是付款給您。</td>
+    <td valign="top"><b>1099-K</b>：<br>報稅者：Microsoft Corporation<br>EIN： * * * * * 4442<br><br><b>重要</b>：表單 1099-K 包含<b>總購買</b>金額，而不是付款給您。</td>
   </tr>
   <tr> 
      <td valign="top">我因為 (i) 於巴西及中國透過 Windows 10 上的 Microsoft Store 進行應用程式銷售，或是 (ii) 在 Minecraft Marketplace 中的銷售，收到<b>至少 $10 美元的款項</b>。<br>
 <br>
-<b>OR @ NO__T-1<br>
+<b>或</b><br>
 <br>
 我在適用的稅務年度（例如，來自比賽或促銷的獎勵付款或付款）中，至少收到 $600 與 Microsoft 的應用程式銷售無關的款項</td>
-    <td valign="top"><b>1099-MISC</b>：<br>方Microsoft Corporation<br>EIN： * * * * * 4442<br><br><b>重要</b>事項：某些商業實體不會收到 1099-其他表單，而不論從 Microsoft 收到的付款金額為何。  如需進一步的資訊，請洽詢您的稅務專業人員。</td>
+    <td valign="top"><b>1099-MISC</b>：<br>付款者：Microsoft Corporation<br>EIN： * * * * * 4442<br><br><b>重要</b>事項：不論從 Microsoft 收到的付款金額為何，某些商業實體都不會收到 1099-其他表單。  如需進一步的資訊，請洽詢您的稅務專業人員。</td>
   </tr>
   <tr>
     <td valign="top">上述項目皆不適用。</td>
-    <td valign="top">None</td>
+    <td valign="top">無</td>
   </tr>
   <tr>
     <td valign="top">&nbsp;</td>
@@ -80,11 +80,11 @@ ms.locfileid: "72282458"
   </tr>
   <tr> 
      <td valign="top">我在適用的納税年度從應用程式內的廣告收到<b>至少 $600 美元的款項</b></td>
-    <td valign="top"><b>1099-MISC</b>：<br>方Microsoft Online Inc。<br>EIN： * * * * * 0505<br><br><b>重要</b>事項：某些商業實體不會收到 1099-其他表單，而不論從 Microsoft 收到的付款金額為何。  如需進一步的資訊，請洽詢您的稅務專業人員。</td>
+    <td valign="top"><b>1099-MISC</b>：<br>付款者：Microsoft Online Inc<br>EIN： * * * * * 0505<br><br><b>重要</b>事項：不論從 Microsoft 收到的付款金額為何，某些商業實體都不會收到 1099-其他表單。  如需進一步的資訊，請洽詢您的稅務專業人員。</td>
   </tr>
   <tr> 
      <td valign="top">我在適用的納税年度從應用程式內的廣告收到<b>少於 $600 美元的款項</b></td>
-     <td valign="top">None</td>
+     <td valign="top">無</td>
   </tr>
 </table>
 
@@ -93,7 +93,7 @@ ms.locfileid: "72282458"
 
 <table>
   <tr>
-    <td valign="top">@no__t 0 I 從 Microsoft 收到 1042-S 的表單。這是什麼？ </b></td>
+    <td valign="top"><b>我收到來自 Microsoft 的 1042-S 形式。這是什麼？</b></td>
     <td valign="top">因為美國稅務機關將 Microsoft 所支付給您的收益視為應申報且受扣繳稅款限制，所以我們將 1042-S 表單提供給您。  此項申報需求使用表單 1042-S。</td>
   </tr>
   <tr>
@@ -104,10 +104,10 @@ ms.locfileid: "72282458"
     <td valign="top"><b>當我完成 W8 表單時，為何會在我的付款中收取稅金？</b></td>
     <td valign="top">下列任一情況即會產生扣繳稅款：<br>
      1. 您未正確完成 W8 的稅務條約區段，或<br>
-     2. 您所在的國家/地區不具有美國的稅務條約。<br><br>您可以隨時造訪合作夥伴中心，以提交更新的 W8 表單。<br><br><b>注意</b>：並非所有收入均須繳納稅金。</td>
+     2. 您所在的國家/地區不具有美國的稅務條約。<br><br>您可以隨時造訪合作夥伴中心，以提交更新的 W8 表單。<br><br><b>注意</b>：並非所有收入皆須繳納稅金。</td>
   </tr>
   <tr>
-    <td valign="top">@no__t 0 I 提交已更新的 W8 表單，其中包含有效的條約資訊。Microsoft 可以向我退款已被扣款的稅額嗎？ </b></td>
+    <td valign="top"><b>我提交了已更新的 W8 表單，其中包含有效的條約資訊。Microsoft 可以向我退款已被扣款的稅額嗎？</b></td>
     <td valign="top">稅款一旦經扣繳，便無法退還。 您應與稅務顧問討論是否能要求這些稅款的本地扣抵稅額，或是否可向 IRS 尋求退稅。</td>
   </tr>
   <tr>
@@ -127,4 +127,4 @@ ms.locfileid: "72282458"
 
 
 > [!NOTE]
-> 如您有與 **IRS 稅單**相關的其他問題或疑慮，請建立[支援票證](https://aka.ms/storesupport)。 Microsoft 無法回答與您特定稅務狀況相關的問題；請向您的稅務專業人員洽詢建議。
+> 如您有與 **IRS 稅單**相關的其他問題或疑慮，請建立[支援票證](https://developer.microsoft.com/windows/support)。 Microsoft 無法回答與您特定稅務狀況相關的問題；請向您的稅務專業人員洽詢建議。

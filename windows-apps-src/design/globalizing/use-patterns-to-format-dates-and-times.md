@@ -1,5 +1,5 @@
 ---
-Description: 使用 使用自訂的範本與模式 Windows.Globalization.DateTimeFormatting API，完全以您想要的格式顯示日期和時間。
+Description: 使用 Windows.globalization.datetimeformatting API 搭配自訂範本和模式，以完全依照您想要的格式來顯示日期和時間。
 title: 使用模式來設定日期和時間的格式
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 3849ccf0f129b65dc44f549a37859fe38ac71562
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 183fa684f81f1e3289e9e197020ce7c6cba5ebdf
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615393"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258122"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>使用範本和模式來設定日期和時間的格式
 
@@ -21,11 +21,11 @@ ms.locfileid: "57615393"
 
 ## <a name="introduction"></a>簡介
 
-[  **DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別提供不同的方式來適當地設定世界各地語言和地區的日期和時間格式。 您可以使用年、月、日等等的標準格式。 或者您也可以將格式範本傳遞到 **DateTimeFormatter** 建構函式的 *formatTemplate* 引數，例如 "longdate" 或 "month day"。
+[  **DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別提供不同的方式來適當地設定世界各地語言和地區的日期和時間格式。 您可以使用年、月、日等等的標準格式。 或者您也可以將格式範本傳遞到 *DateTimeFormatter* 建構函式的 **formatTemplate** 引數，例如 "longdate" 或 "month day"。
 
 但當您想要對所希望顯示之 [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) 物件的元件順序與格式有更多控制時，您可以將格式模式傳遞到建構函式的 *formatTemplate* 引數。 格式模式使用一種特殊的語法，可讓您取得 **DateTime** 物件的個別元件&mdash;例如，單純月份的名稱，或年份的值&mdash;以使用任何您選擇的自訂格式顯示他們。 此外，模式也可以當地語系化以配合其他語言和地區。
 
-**附註**  這是只有一個格式模式的概觀。 如需格式範本和格式模式更完整的討論，請參閱 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別的＜備註＞一節。
+**請注意**  這只是格式模式的總覽。 如需格式範本和格式模式更完整的討論，請參閱 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別的＜備註＞一節。
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>格式範本和格式模式的不同
 
@@ -39,7 +39,7 @@ var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatt
 
 這會根據目前內容的語言與地區值來建立格式子。 格式範本中的元件順序不重要，因為格式器會使用目前語言的正確順序顯示他們。 因此，它會為英文 (美國) 顯示「January 1」，為法文 (法國) 顯示「1 janvier」，為日文顯示「1月1日」。
 
-另一方面，格式模式則是文化限定的。 讓我們存取我們的格式範本的格式模式。
+另一方面，格式模式則是文化限定的。 讓我們存取格式範本的格式模式。
 
 ```csharp
 IReadOnlyList<string> monthDayPatterns = dateFormatter.Patterns;
@@ -59,7 +59,7 @@ Ja-JP: "{month.integer}月{day.integer}日"
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-上述的格式器傳回的括號內的個別元件的特定文化特性值{}。 但格式模式中的元件順序則不變。 您得到的就是您想要的，而這可能不見得適用每個文化： 此格式器針對英文 (美國) 有效，但針對法文 (法國) 和日文則無效。
+上面的格式器會針對括弧內的個別元件，{}傳回特定文化特性的值。 但格式模式中的元件順序則不變。 您得到的就是您想要的，而這可能不見得適用每個文化： 此格式器針對英文 (美國) 有效，但針對法文 (法國) 和日文則無效。
 
 ``` syntax
 En-US: January 1
@@ -76,14 +76,14 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
 
 以下是區分格式範本和格式模式的摘要。
 
-**格式的範本，例如"月日"**
+**格式化範本，例如「月份日」**
 
 -   [DateTime](/uwp/api/windows.foundation.datetime?branch=live) 格式的抽象表示，包含任何順序的月份值和日期值等。
 -   確定可以為 Windows 支援的所有語言-地區值傳回有效的標準格式。
 -   確定可以為指定的語言-地區提供文化上適當的格式化字串。
 -   並非所有元件組合都是有效的。 例如，"dayofweek day" 是無效的組合。
 
-**格式模式，例如"{month.full} {day.integer}"**
+**格式模式，例如 "{month. full} {day. integer}"**
 
 -   有明確順序的字串，以完整月份名稱後面加上空格，空格後面再加上日期整數的順序表示，或任何您指定的特定格式模式。
 -   可能無法對應任何語言-地區組的有效標準格式。
@@ -98,7 +98,7 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
 June 25 | 1:38 PM
 ```
 
-日期部分會對應 "month day" 格式範本，而時間部分則會對應 "hour minute" 格式範本。 因此，您可以建構格式器相關的日期和時間格式的範本，然後再進行串連它們一起使用的可當地語系化的格式字串的輸出。
+日期部分會對應 "month day" 格式範本，而時間部分則會對應 "hour minute" 格式範本。 因此，您可以針對相關的日期和時間格式範本來建立格式化程式，然後使用可當地語系化的格式字串將其輸出串連在一起。
 
 ```csharp
 var dateToFormat = System.DateTime.Now;
@@ -113,7 +113,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` 指可當地語系化的資源，資源檔 (.resw) 中的資源識別碼。 預設語言是英文 （美國），這會設定為值"{0} |{1}」 以及表示註解 」{0}"的日期和 「{1}「 是的時間。 如此一來，翻譯人員便可以視需要調整格式項目。 例如，如果在某些語言或地區中，時間在日期之前是較自然的樣式，他們就可以變更項目的順序。 或者，他們可以使用某種其他分隔字元來取代 "|"。
+`CustomDateTimeFormatString` 是參考資源檔（. .resw）中可當地語系化資源的資源識別碼。 若為預設語言 [英文（美國）]，則會設定為值為 "{0} |{1}"和批註，指出"{0}"為日期，而"{1}"為時間。 如此一來，翻譯人員便可以視需要調整格式項目。 例如，如果在某些語言或地區中，時間在日期之前是較自然的樣式，他們就可以變更項目的順序。 或者，他們可以使用某種其他分隔字元來取代 "|"。
 
 另一種實作此範例的方法便是查詢兩個格式器以取得其格式模式，將他們結合在一起，然後使用結合後的格式模式建構第三個格式器。
 
@@ -135,10 +135,10 @@ string output = patternFormatter.Format(System.DateTime.Now);
 
 ## <a name="important-apis"></a>重要 API
 
-* [Windows.Globalization.DateTimeFormatting](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+* [Windows.globalization.datetimeformatting](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
-* [日期時間](/uwp/api/windows.foundation.datetime?branch=live)
+* [從中](/uwp/api/windows.foundation.datetime?branch=live)
 
 ## <a name="related-topics"></a>相關主題
 
-* [日期和時間格式範例](https://go.microsoft.com/fwlink/p/?LinkId=231618)
+* [日期和時間格式設定範例](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)

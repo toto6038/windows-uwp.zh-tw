@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, ISF, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eb7f085c5e4daa46cfa6c256ec3938be3c13d82
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2919a2f61f3185d85b91bdf6fd6be22402eb77d0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365350"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258263"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>儲存和抓取 Windows Ink 筆劃資料
 
@@ -23,13 +23,13 @@ ms.locfileid: "66365350"
 > [!NOTE]
 > ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二進位文件格式中 (例如 GIF 檔案)，或直接放置到剪貼簿上。
 
-> **重要的 Api**:[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)， [ **Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **重要 API**：[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)、[**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="save-ink-strokes-to-a-file"></a>將筆墨筆劃儲存為檔案
 
 我們將在此處示範如何儲存在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項上繪製的筆墨筆劃。
 
-**下載這個範例來自[儲存和載入從 Ink Serialized Format (ISF) 檔案的筆墨筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+**從從[筆墨序列化格式（ISF）檔案儲存和載入筆跡筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)下載此範例**
 
 1.  一開始先設定 UI。
 
@@ -83,7 +83,7 @@ public MainPage()
     }
 ```
 
-3.  最後，會在 [儲存] 按鈕的 click 事件處理常式中儲存筆劃。 
+3.  最後，會在 **\[儲存\]** 按鈕的 click 事件處理常式中儲存筆劃。
 
     [  **FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 讓使用者能夠選取儲存筆劃資料的檔案和位置。
 
@@ -161,7 +161,7 @@ public MainPage()
 
 我們將在此處示範如何從檔案載入筆墨筆劃，並在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項上轉譯它們。
 
-**下載這個範例來自[儲存和載入從 Ink Serialized Format (ISF) 檔案的筆墨筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+**從從[筆墨序列化格式（ISF）檔案儲存和載入筆跡筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)下載此範例**
 
 1.  一開始先設定 UI。
 
@@ -215,7 +215,7 @@ public MainPage()
     }
 ```
 
-3.  最後，會在 [載入] 按鈕的 click 事件處理常式中載入筆墨。 
+3.  最後，會在 **\[載入\]** 按鈕的 click 事件處理常式中載入筆墨。
 
     [  **FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 讓使用者能夠選取要從中抓取已儲存之筆墨資料的檔案和位置。
 
@@ -277,7 +277,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 在這個範例中，我們將在使用畫筆筆身按鈕 (或滑鼠右鍵按鈕) 修改輸入時啟用筆劃選取項目。 如需如何實作筆劃選取項目的完整範例，請參閱[畫筆和手寫筆互動](pen-and-stylus-interactions.md)中的＜傳入輸入以進行進階處理＞。
 
-**下載這個範例來自[儲存和載入從剪貼簿的筆墨筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
+**從[[儲存] 和 [從剪貼簿載入筆跡筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)] 下載此範例**
 
 1.  一開始先設定 UI。
 
@@ -365,7 +365,7 @@ public MainPage()
     }
 ```
 
-3.  最後，在新增筆劃選取項目支援之後，我們會在 \[剪下\]、\[複製\] 和 \[貼上\] 按鈕的 click 事件處理常式中實作剪貼簿功能。   
+3.  最後，在新增筆劃選取項目支援之後，我們會在 **\[剪下\]** 、 **\[複製\]** 和 **\[貼上\]** 按鈕的 click 事件處理常式中實作剪貼簿功能。
 
     針對剪下功能，我們會先在 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 上呼叫 [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter)。
 
@@ -415,7 +415,7 @@ private void btnCopy_Click(object sender, RoutedEventArgs e)
 
 針對貼上，我們呼叫 [**CanPasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.canpastefromclipboard) 確認剪貼簿上的內容可貼到筆跡畫布。
 
-若可以的話，我們便會呼叫 [**PasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard) 將剪貼簿的筆墨筆劃插入 [**IntPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer)，接著便會將筆劃轉譯到筆跡畫布。
+若可以的話，我們便會呼叫 [**PasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard) 將剪貼簿的筆墨筆劃插入 [**IntPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter)，接著便會將筆劃轉譯到筆跡畫布。
 
 ```csharp
 private void btnPaste_Click(object sender, RoutedEventArgs e)
@@ -434,19 +434,19 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
-* [畫筆和手寫筆的互動](pen-and-stylus-interactions.md)
+* [畫筆和手寫筆互動](pen-and-stylus-interactions.md)
 
-**主題的範例**
-* [儲存並從 Ink Serialized Format (ISF) 檔案載入筆墨筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
-* [儲存和載入從剪貼簿的筆墨筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+**主題範例**
+* [從筆墨序列化格式（ISF）檔案儲存和載入筆跡筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [儲存並從剪貼簿載入筆跡筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
 
 **其他範例**
-* [簡單的筆墨範例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雜的筆墨範例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [筆墨範例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [快速入門教學課程：支援在 UWP 應用程式中的筆墨](https://aka.ms/appsample-ink)
-* [著色書範例](https://aka.ms/cpubsample-coloringbook)
-* [系列的資訊範例](https://aka.ms/cpubsample-familynotessample)
+* [Simple 筆墨範例（C#/C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+* [複雜筆跡範例（C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+* [筆墨範例（JavaScript）](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [開始使用教學課程：在 UWP 應用程式中支援筆墨](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [著色書籍範例](https://github.com/Microsoft/Windows-appsample-coloringbook)
+* [家族附注範例](https://github.com/Microsoft/Windows-appsample-familynotes)
 
 
 

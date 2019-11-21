@@ -4,28 +4,28 @@ title: 自訂預覽列印 UI
 description: 本節說明如何在預覽列印 UI 中自訂列印選項和設定。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10、 uwp、 列印
+keywords: windows 10，uwp，列印
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d13f67ecff5c670707ca1832ea44b85ca8319d9
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 000985d5f9dac5363a1ea2fb002c2be40e2777dd
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321559"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258658"
 ---
 # <a name="customize-the-print-preview-ui"></a>自訂預覽列印 UI
 
 
 
-**重要的 Api**
+**重要 API**
 
--   [**Windows.Graphics.Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)
--   [**Windows.UI.Xaml.Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)
+-   [**Windows. 圖形列印**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)
+-   [**Windows. UI. Xaml. 列印**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)
 -   [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager)
 
 本節說明如何在預覽列印 UI 中自訂列印選項和設定。 如需列印的詳細資訊，請參閱[從您的 app 進行列印](print-from-your-app.md)。
 
-**祕訣**  大部分的此主題中的範例以列印範例為基礎。 若要查看完整程式碼，請從 GitHub 的 [Windows-universal-samples 儲存機制](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)。
+**提示**  本主題中大部分的範例都是以列印範例為基礎。 若要查看完整程式碼，請從 GitHub 的 [Windows-universal-samples 儲存機制](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)下載[通用 Windows 平台 (UWP) 列印範例](https://github.com/Microsoft/Windows-universal-samples)。
 
  
 
@@ -33,22 +33,22 @@ ms.locfileid: "67321559"
 
 根據預設，預覽列印 UI 會顯示 [**ColorMode**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.colormode)、[**Copies**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.copies) 和 [**Orientation**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.orientation) 選項。 除了上述選項，還有數個其他常見的印表機選項，讓您可以新增到預覽列印 UI：
 
--   [**Binding**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.binding)
+-   [**綁定**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.binding)
 -   [**定序**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.collation)
--   [**Duplex**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.duplex)
+-   [**雙面**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.duplex)
 -   [**HolePunch**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.holepunch)
 -   [**InputBin**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.inputbin)
 -   [**MediaSize**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediasize)
--   [**MediaType**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediatype)
+-   [**群組**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediatype)
 -   [**NUp**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.nup)
 -   [**PrintQuality**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.printquality)
--   [**Staple**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.staple)
+-   [**紙**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.staple)
 
 這些選項會在 [**StandardPrintTaskOptions**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.StandardPrintTaskOptions) 類別中定義。 您可以在預覽列印 UI 中顯示的選項清單中新增或移除選項。 您也可以變更選項出現的順序，以及設定對使用者顯示的預設設定。
 
-不過，您使用這個方法所做的修改只會影響預覽列印 UI。 只要點選預覽列印 UI 中的 [更多設定]  連結，使用者就可以存取印表機支援的所有選項。
+不過，您使用這個方法所做的修改只會影響預覽列印 UI。 只要點選預覽列印 UI 中的 **\[更多設定\]** 連結，使用者就可以存取印表機支援的所有選項。
 
-**附註**  您的應用程式，可指定要顯示的任何列印選項，但只會受到所選印表機會顯示在預覽列印 UI 中。 列印 UI 不會顯示選定的印表機不支援的選項。
+**請注意**  雖然您的應用程式可以指定要顯示的任何列印選項，但只會在 [預覽列印] UI 中顯示所選印表機所支援的選項。 列印 UI 不會顯示選定的印表機不支援的選項。
 
  
 
@@ -96,7 +96,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要**  呼叫[ **displayedOptions.clear**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskoptions.displayedoptions)（） 則會從 預覽列印 UI 中，移除所有的列印選項包括**更多設定**連結。 務必在預覽列印 UI 上附加要顯示的選項。
+**重要**  呼叫[**displayedOptions。清除**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskoptions.displayedoptions)（）會從預覽列印 UI 中移除所有列印選項，包括 [**其他設定**] 連結。 務必在預覽列印 UI 上附加要顯示的選項。
 
 ### <a name="specify-default-options"></a>指定預設選項
 
@@ -185,6 +185,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 ## <a name="related-topics"></a>相關主題
 
-* [列印的設計方針](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
-* [Build 2015 影片：開發 Windows 10 中列印的應用程式](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [列印的設計指導方針](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
+* [組建2015影片：開發在 Windows 10 中列印的應用程式](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [UWP 列印範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)

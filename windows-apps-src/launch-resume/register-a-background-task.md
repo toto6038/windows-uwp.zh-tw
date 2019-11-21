@@ -4,19 +4,19 @@ description: 了解如何建立可重複用來安全登錄大多數背景工作�
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp，背景工作
+keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 087f60ae3a16ad4cd38137d692fe079ce6c58bf4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c80419a5353386872356eee7a677f10d616a9f6a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371747"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259428"
 ---
 # <a name="register-a-background-task"></a>註冊背景工作
 
 
-**重要的 Api**
+**重要 API**
 
 -   [**BackgroundTaskRegistration 類別**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
 -   [**BackgroundTaskBuilder 類別**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
@@ -39,8 +39,8 @@ ms.locfileid: "66371747"
 這個方法會採用背景工作的工作進入點、工作名稱、預先建構的背景工作觸發程序，以及 (選用) [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)。 這個方法會傳回 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 物件。
 
 > [!Important]
-> `taskEntryPoint` -針對背景工作執行的處理程序之外，這必須建構為命名空間名稱 '。 '，以及包含您的背景類別之類別的名稱。 此字串區分大小寫。  例如，如果您有 "MyBackgroundTasks" 命名空間和包含您背景類別程式碼的 "BackgroundTask1" 類別，則 `taskEntryPoint` 的字串會是 "MyBackgroundTasks.BackgroundTask1"。
-> 如果您的背景工作與您的 App 在相同處理序中執行 (亦即同處理序背景工作)，就不應該設定 `taskEntryPoint`。
+> `taskEntryPoint`-對於在進程外執行的背景工作，這必須被視為命名空間名稱 '. '，以及包含背景類別的類別名稱。 此字串區分大小寫。  例如，如果您有 "MyBackgroundTasks" 命名空間和包含您背景類別程式碼的 "BackgroundTask1" 類別，則 `taskEntryPoint` 的字串會是 "MyBackgroundTasks.BackgroundTask1"。
+> 如果您的背景工作與您的應用程式在相同處理序中執行 (亦即同處理序背景工作)，就不應該設定 `taskEntryPoint`。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -74,7 +74,7 @@ ms.locfileid: "66371747"
 
 您可以查詢 [**BackgroundTaskRegistration.AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) 屬性並逐一查看結果，以檢查現有登錄。 檢查每個執行個體的名稱 - 如果它符合您要登錄的工作名稱，則中斷迴圈並設定旗標變數，讓您的程式碼能夠在下一個步驟中選擇不同路徑。
 
-> **附註**  使用您的應用程式獨有的背景工作名稱。 確認每個背景工作都有唯一的名稱。
+> **請注意**  使用您的應用程式特有的背景工作名稱。 確認每個背景工作都有唯一的名稱。
 
 下列程式碼會使用我們在上一個步驟中建立的 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) 來登錄背景工作：
 
@@ -147,8 +147,8 @@ ms.locfileid: "66371747"
 
 然後使用新的 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 物件登錄工作。 這段程式碼應該會檢查條件參數是否為 Null；如果不是，則將條件新增到登錄物件。 傳回由 [**BackgroundTaskBuilder.Register**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 方法傳回的 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)。
 
-> **附註**  背景工作註冊參數會在註冊期間驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的應用程式能夠妥善處理背景工作註冊失敗的狀況；反之，如果應用程式需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
-> **注意**：如果您要登錄與您 App 在相同處理程序中執行的背景工作，請針對 `taskEntryPoint` 參數傳送 `String.Empty` 或 `null`。
+> **請注意**，在註冊時，會驗證背景工作註冊參數  。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的應用程式能夠妥善處理背景工作註冊失敗的狀況；反之，如果應用程式需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
+> **注意**：如果您要登錄與您 App 在相同處理程序中執行的背景工作，請針對 `String.Empty` 參數傳送 `null` 或 `taskEntryPoint`。
 
 下列範例會傳回現有工作，或新增可登錄背景工作的程式碼 (如果有選擇性的系統條件，則也包括在內)：
 
@@ -387,4 +387,4 @@ ms.locfileid: "66371747"
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 應用程式中觸發暫止、繼續和背景事件（在進行調試時）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

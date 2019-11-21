@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 51bc293a779a96db75ce83da68cb3beea54b9618
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c5c86ad836c94d990f5728ce9f7cfe49c754ce19
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368719"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259530"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>將 DirectX 9 功能對應到 DirectX 11 API
 
@@ -19,8 +19,8 @@ ms.locfileid: "66368719"
 
 **摘要**
 
--   [規劃您的 DirectX 連接埠](plan-your-directx-port.md)
--   [為 Direct3D 11 的重要變更與 Direct3D 9](understand-direct3d-11-1-concepts.md)
+-   [規劃您的 DirectX 埠](plan-your-directx-port.md)
+-   [從 Direct3D 9 到 Direct3D 11 的重要變更](understand-direct3d-11-1-concepts.md)
 -   功能對應
 
 
@@ -55,7 +55,7 @@ D3DX 與 DXUT 已過時，UWP 遊戲無法使用。 這些協助程式程式庫�
 
 -   [從 Direct3D 9 到 UWP 的簡易移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)逐步解說示範如何設定視窗、初始化 Direct3D 與執行基本 3D 轉譯。
 -   [使用 DirectX 的簡易 UWP 遊戲](tutorial--create-your-first-uwp-directx-game.md)逐步解說示範常見的遊戲程式設計工作，包含圖形、載入檔案、UI、控制項與音效。
--   [DirectX 工具組](https://go.microsoft.com/fwlink/p/?LinkID=248929)社群專案提供可搭配 Direct3D 11 與 UWP app 使用的協助程式類別。
+-   [DirectX 工具組](https://github.com/Microsoft/DirectXTK)社群專案提供可搭配 Direct3D 11 與 UWP app 使用的協助程式類別。
 
 ## <a name="move-shader-programs-from-fx-to-hlsl"></a>將著色器程式從 FX 移到 HLSL
 
@@ -66,7 +66,7 @@ Visual Studio 仍然使用 FXC 編譯著色器物件。 UWP 遊戲著色器會�
 
 若要快速瀏覽載入著色器資源，請參閱[從 Direct3D 9 到 UWP 的簡易移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)。
 
-Direct3D 11 導入的著色器模型 5 個値，也需要 Direct3D 功能層級 11\_0 （或更新版本）。 請參閱 [Direct3D 11 的 HLSL 著色器模型 5 功能](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl)。
+Direct3D 11 引進了著色器模型5，其需要 Direct3D 功能層級 11\_0 （或以上）。 請參閱 [Direct3D 11 的 HLSL 著色器模型 5 功能](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl)。
 
 ## <a name="replace-xnamath-and-d3dxmath"></a>取代 XNAMath 與 D3DXMath
 
@@ -101,17 +101,17 @@ DirectShow 不再是 DirectX API (或 Windows API) 的一部分。 [Microsoft �
 
 Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必須提供符合 UWP 需求的網路程式碼。 請使用下列 API：
 
--   [Win32 和 COM 的 UWP 應用程式 （網路） (Windows)](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)
--   [**Windows.Networking 命名空間 (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.Networking)
--   [**Windows.Networking.Sockets 命名空間 (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
--   [**Windows.Networking.Connectivity 命名空間 (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity)
--   [**Windows.ApplicationModel.Background 命名空間 (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [適用于 UWP 應用程式的 Win32 和 COM （網路）（Windows）](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)
+-   [**Windows. 網路命名空間（Windows）** ](https://docs.microsoft.com/uwp/api/Windows.Networking)
+-   [**Windows. 網路功能. Socket 命名空間（Windows）** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
+-   [**Windows. 網路連接命名空間（Windows）** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity)
+-   [**ApplicationModel. Background 命名空間（Windows）** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 下列文章可協助您為 app 封裝資訊清單中的網路新增網路功能與宣告支援。
 
--   [透過通訊端連線 (UWP 應用程式使用C#/VB/C++和 XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
--   [使用 Websocket 連線 (UWP 應用程式使用C#/VB/C++和 XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh994396(v=win.10))
--   [連接到 web 服務 (UWP 應用程式使用C#/VB/C++和 XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
+-   [使用通訊端連接（使用C#/VB/C++和 XAML 的 UWP 應用程式）（Windows）](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
+-   [連接 Websocket （使用C#/VB/C++和 XAML 的 UWP 應用程式）（Windows）](https://docs.microsoft.com/previous-versions/windows/apps/hh994396(v=win.10))
+-   [連接至 web 服務（使用C#/VB/C++和 XAML 的 UWP 應用程式）（Windows）](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
 -   [網路功能基本知識](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
 
 請注意，所有 UWP App (包含遊戲) 都使用特定的背景工作類型，以維持 App 暫停時的連線功能。 如果您的遊戲需要在暫停時維持連線狀態，請參閱[網路功能基本知識](https://docs.microsoft.com/windows/uwp/networking/networking-basics)。
@@ -136,7 +136,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nn-d3d9helper-idirect3ddevice9">IDirect3DDevice9</a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11_2/nn-d3d11_2-id3d11device2">ID3D11Device2</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11_2/nn-d3d11_2-id3d11devicecontext2">ID3D11DeviceContext2</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11_2/nn-d3d11_2-id3d11devicecontext2">ID3D11DeviceCoNtext2</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline">圖形管線</a>中會說明圖性管線階段。</p></td>
 </tr>
 <tr class="even">
@@ -146,8 +146,8 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <p><a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3">IDXGIDevice3</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-present">IDirect3DDevice9::Present</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-present">IDirect3DDevice9：:P 重發</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1：:P resent1</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-testcooperativelevel">IDirect3DDevice9::TestCooperativeLevel</a></p></td>
@@ -187,20 +187,20 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11samplerstate">ID3D11SamplerState</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitive">IDirect3DDevice9::DrawIndexedPrimitive</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitive">IDirect3DDevice9::DrawPrimitive</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw">ID3D11DeviceContext::Draw</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed">ID3D11DeviceContext::DrawIndexed</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexedinstanced">ID3D11DeviceContext::DrawIndexedInstanced</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawinstanced">ID3D11DeviceContext::DrawInstanced</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetprimitivetopology">ID3D11DeviceContext::IASetPrimitiveTopology</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawauto">ID3D11DeviceContext::DrawAuto</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitive">IDirect3DDevice9：:D rawIndexedPrimitive</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitive">IDirect3DDevice9：:D rawPrimitive</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw">ID3D11DeviceCoNtext：:D raw</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed">ID3D11DeviceCoNtext：:D rawIndexed</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexedinstanced">ID3D11DeviceCoNtext：:D rawIndexedInstanced</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawinstanced">ID3D11DeviceCoNtext：:D rawInstanced</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetprimitivetopology">ID3D11DeviceCoNtext：： IASetPrimitiveTopology</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawauto">ID3D11DeviceCoNtext：:D rawAuto</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-beginscene">IDirect3DDevice9::BeginScene</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-endscene">IDirect3DDevice9::EndScene</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitiveup">IDirect3DDevice9::DrawPrimitiveUP</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitiveup">IDirect3DDevice9::DrawIndexedPrimitiveUP</a></p></td>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitiveup">IDirect3DDevice9：:D rawPrimitiveUP</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitiveup">IDirect3DDevice9：:D rawIndexedPrimitiveUP</a></p></td>
 <td align="left"><p>沒有直接的對等項目</p></td>
 </tr>
 <tr class="odd">
@@ -210,7 +210,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>使用標準游標 API。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-reset">IDirect3DDevice9::Reset</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-reset">IDirect3DDevice9：： Reset</a></p></td>
 <td align="left"><p>LOST 裝置與 POOL_MANAGED 已不存在。 <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a> 可能會因 <a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_DEVICE_REMOVED</a> 傳回值。</p></td>
 </tr>
 <tr class="odd">
@@ -229,7 +229,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-checkdepthstencilmatch">IDirect3DDevice9:CheckDepthStencilMatch</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-checkdeviceformat">IDirect3DDevice9:CheckDeviceFormat</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-getdevicecaps">IDirect3DDevice9:GetDeviceCaps</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-getdevicecaps">IDirect3DDevice9： GetDeviceCaps</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-validatedevice">IDirect3DDevice9:ValidateDevice</a></p></td>
 <td align="left"><p>功能層級已取代功能位元。 針對任何指定的功能層級，只有少數格式與功能用法案例是選用的。 這些可以 <a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport">ID3D11Device::CheckFeatureSupport</a> 和 <a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-checkformatsupport">ID3D11Device::CheckFormatSupport</a> 進行檢查。</p></td>
 </tr>
@@ -342,7 +342,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>附註</strong>  使用.r swizzle 重複的紅色到其他元件，以取得 Direct3D 9 行為的著色器中。
+<strong>請注意</strong>   使用著色器中的 r 拌和來複製紅色到其他元件，以取得 Direct3D 9 的行為。
 </div>
 <div>
  
@@ -352,7 +352,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>附註</strong>  用以 swizzle.rrrg 著色器中重複的紅色及 alpha 元件，以取得 Direct3D 9 行為移動綠色。
+<strong>請注意</strong>   使用著色器中的 rrrg 複製紅色，並將綠色移到 Alpha 元件，以取得 Direct3D 9 的行為。
 </div>
 <div>
  
@@ -398,7 +398,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>附註</strong>  在 Direct3D 9 資料已由 255.0f，相應增加，但這可以處理在著色器。
+<strong>請注意</strong>   在 Direct3D 9 中，資料是由 255.0 f 進行調整，但這可以在著色器中處理。
 </div>
 <div>
  
@@ -412,7 +412,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>附註</strong>  在 Direct3D 9 資料已由 255.0f，相應增加，但這可以處理在著色器。
+<strong>請注意</strong>   在 Direct3D 9 中，資料是由 255.0 f 進行調整，但這可以在著色器中處理。
 </div>
 <div>
  
@@ -426,7 +426,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM 與 DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>附註</strong>   DXT1 和 DXT2 是相同的 API/硬體觀點。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
+<strong>請注意</strong>，   DXT1 和 DXT2 與 API/硬體的觀點相同。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
 </div>
 <div>
  
@@ -440,7 +440,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM 與 DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>附註</strong>   DXT3 和 DXT4 是相同的 API/硬體觀點。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
+<strong>請注意</strong>，   DXT3 和 DXT4 與 API/硬體的觀點相同。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
 </div>
 <div>
  
@@ -506,7 +506,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>附註</strong>  使用.r swizzle 重複 D3D9 行為的其他元件的紅色的著色器中。
+<strong>請注意</strong>   使用著色器中的 r 拌和，以將紅色複製到其他元件，以取得 D3D9 行為。
 </div>
 <div>
  
@@ -580,7 +580,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>附註</strong>  著色器取得 UINT 值，但如果 Direct3D 9 樣式整數類資料所需的浮點數 （0.0，1.0 f...255.f)，UINT 只是可以轉換成 float32 著色器中。
+<strong>請注意</strong>   著色器會取得 UINT 值，但如果需要 Direct3D 9 樣式整數浮點數（0.0 f，1.0 f .。。255. f），UINT 只可以轉換成著色器中的 float32。
 </div>
 <div>
  
@@ -590,7 +590,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>附註</strong>  著色器取得荷屬值，但如果需要 Direct3D 9 樣式不可或缺的浮點數，聖剛轉換成 float32 著色器中。
+<strong>注意</strong>   著色器會取得聖馬丁值，但如果需要 Direct3D 9 樣式整數浮點數，則最聖可以轉換成著色器中的 float32。
 </div>
 <div>
  
@@ -600,7 +600,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>附註</strong>  著色器取得荷屬值，但如果需要 Direct3D 9 樣式不可或缺的浮點數，聖剛轉換成 float32 著色器中。
+<strong>注意</strong>   著色器會取得聖馬丁值，但如果需要 Direct3D 9 樣式整數浮點數，則最聖可以轉換成著色器中的 float32。
 </div>
 <div>
  
@@ -646,7 +646,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>附註</strong>   10.0 或更新版本的功能等級
+<strong>注意</strong>   需要功能層級10.0 或更新版本
 </div>
 <div>
  
@@ -656,7 +656,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>附註</strong>   10.0 或更新版本的功能等級
+<strong>注意</strong>   需要功能層級10.0 或更新版本
 </div>
 <div>
  

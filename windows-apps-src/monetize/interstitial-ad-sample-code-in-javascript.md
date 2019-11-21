@@ -6,16 +6,16 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 插播式, javascript, 範例程式碼
 ms.localizationpriority: medium
-ms.openlocfilehash: 641a3bfc2c2869cab6f3bbf480aa599cadd955a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 742d10f7e49557435a6249e65cf66960d338b784
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618553"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260259"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>使用 JavaScript 的插播式廣告範例程式碼
 
-本主題提供顯示插播式廣告的基本 JavaScript 和 HTML 通用 Windows 平台 (UWP) 應用程式的完整範例程式碼。 如需示範如何設定專案以使用此程式碼的逐步指示，請參閱[插入式廣告](interstitial-ads.md)。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](https://aka.ms/githubads)。
+本主題提供顯示插播式廣告的基本 JavaScript 和 HTML 通用 Windows 平台 (UWP) 應用程式的完整範例程式碼。 如需示範如何設定專案以使用此程式碼的逐步指示，請參閱[插入式廣告](interstitial-ads.md)。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
 ## <a name="code-example"></a>程式碼範例
 
@@ -23,7 +23,7 @@ ms.locfileid: "57618553"
 
 此範例應用程式使用兩個按鈕來要求然後啟動插播式廣告。 由 Visual Studio 產生的 main.js 和 index.html 檔案已經過修改並顯示於下方。 下方顯示的 script.js 檔包含範例中的大部分程式碼，您應將此檔案新增到專案中的 **js** 資料夾。
 
-值取代成```applicationId```和```adUnitId```從合作夥伴中心提交您的應用程式存放區之前的即時值的變數。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+將您的應用程式提交至存放區之前，請先以合作夥伴中心的即時值取代 ```applicationId``` 和 ```adUnitId``` 變數的值。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 > [!NOTE]
 > 若要變更此範例以顯示插播式橫幅廣告，而不是插播式影片廣告，請將值 **InterstitialAdType.display** 傳遞到 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法的第一個參數，而不是 **InterstitialAdType.video**。 如需詳細資訊，請參閱[插播式廣告](interstitial-ads.md)。
@@ -45,6 +45,6 @@ ms.locfileid: "57618553"
 
 ## <a name="related-topics"></a>相關主題
 
-* [GitHub 上的廣告範例](https://aka.ms/githubads)
+* [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
 
  

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10 , UWP, 地圖驗證金鑰, 地圖控制項
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6cf66a6725e8231fac693a81a39bc2f0b15fd2
-ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
+ms.openlocfilehash: c3bc74d83c3f713149e9001de4ec10fe0a4706de
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67498895"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259382"
 ---
 # <a name="request-a-maps-authentication-key"></a>要求地圖驗證金鑰
 
@@ -20,9 +20,9 @@ ms.locfileid: "67498895"
 
 您的[通用 Windows app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) 必須經過驗證，才能使用 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和 [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) 命名空間中的地圖服務。 若要驗證您的 app，您必須指定地圖驗證金鑰。 本主題說明如何從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)要求地圖驗證金鑰，然後將它新增到您的 app。
 
-**提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
+**提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](https://github.com/Microsoft/Windows-universal-samples)下載下列範例：
 
--   [通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 
 ## <a name="get-a-key"></a>取得金鑰
 
@@ -31,30 +31,30 @@ ms.locfileid: "67498895"
 
 建立新的金鑰
 
-1.  在瀏覽器中瀏覽至 Bing 地圖服務開發人員中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
+1.  在您的瀏覽器中，流覽至 Bing Maps 開發人員中心（[https://www.bingmapsportal.com](https://www.bingmapsportal.com/)）。
 
-2.  如果系統要求您登入，請輸入您的 Microsoft 帳戶，然後按一下 [登入]  。
+2.  如果系統要求您登入，請輸入您的 Microsoft 帳戶，然後按一下 [登入]。
 
-3.  選擇要與您的「Bing 地圖服務」帳戶建立關聯的帳戶。 若要使用您的 Microsoft 帳戶，請按一下 [是]  。 否則，請按一下 [使用其他帳戶登入]  。
+3.  選擇要與您的「Bing 地圖服務」帳戶建立關聯的帳戶。 若要使用您的 Microsoft 帳戶，請按一下 [是]。 否則，請按一下 **\[使用其他帳戶登入\]** 。
 
-4.  如果您還沒有「Bing 地圖服務」帳戶，請建立一個新的「Bing 地圖服務」帳戶。 輸入 [帳戶名稱]  、[連絡人名稱]  、[公司名稱]  、[電子郵件地址]  及 [電話號碼]  。 接受使用規定之後，按一下 [建立]  。
+4.  如果您還沒有「Bing 地圖服務」帳戶，請建立一個新的「Bing 地圖服務」帳戶。 輸入 [帳戶名稱]、[連絡人名稱]、[公司名稱]、[電子郵件地址] 及 [電話號碼]。 接受使用規定之後，按一下 [建立]。
 
 5.  在 **[我的帳戶]** 功能表下方，按一下 **[我的金鑰]** 。
 
 6.  如果您之前已建立金鑰，請按一下連結，以建立新的金鑰。 否則，請前往建立金鑰表單。
 
-7.  完成 [建立金鑰]  表單，然後按一下 [建立]  。
+7.  完成 [建立金鑰] 表單，然後按一下 [建立]。
 
-    -   **應用程式名稱：** 應用程式的名稱。
-    -   **應用程式 URL （選擇性）：** 您的應用程式的 URL。
-    -   **索引鍵的類型：** 選取 **基本**或是**Enterprise**。
-    -   **應用程式類型：** 選取  **Windows 應用程式**您通用 Windows 應用程式中使用。
+    -   **應用程式名稱：** 您應用程式的名稱。
+    -   **應用程式 URL (選擇性)：** 您應用程式的 URL。
+    -   **金鑰類型：** 請選取 [基本] 或 [企業]。
+    -   **應用程式類型：** 選取**Windows 應用程式**以用於您的通用 windows 應用程式。
 
     以下是表單的外觀範例。
 
     ![[建立金鑰] 表單的範例。](images/createkeydialog.png)
 
-8.  按一下 [建立]  之後，新金鑰就會顯示在 [建立金鑰]  表單下方。 請將它複製到安全的地方，或立即將它新增到您的 app，如下一個步驟所述。
+8.  按一下 [建立] 之後，新金鑰就會顯示在 [建立金鑰] 表單下方。 請將它複製到安全的地方，或立即將它新增到您的 app，如下一個步驟所述。
 
 ## <a name="add-the-key-to-your-app"></a>將金鑰新增到 app
 
@@ -90,7 +90,7 @@ ms.locfileid: "67498895"
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [對應的設計方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows 應用程式中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
+* [地圖的設計指導方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
+* [組建2015影片：在您的 Windows 應用程式中跨電話、平板電腦和 PC 運用地圖和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 車流量應用程式範例](https://github.com/Microsoft/Windows-appsample-trafficapp)

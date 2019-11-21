@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 480029fd98a302fcc166067cbb383d7e9f8d1829
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 738190034f7418658958847172ded47bcbdc1b09
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820539"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258163"
 ---
 # <a name="responsive-layouts-with-xaml"></a>搭配 XAML 的回應式版面配置
 
@@ -22,12 +22,12 @@ XAML 版面配置系統提供自動調整大小、版面配置面板、視覺狀
 
 XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中，您提供控制項明確的像素大小與位置。 當使用者變更裝置的解析度或方向時，UI 不會變更。 靜態版面配置在不同的硬體規格、畫面大小中會遭到裁剪。 相反的，流暢的版面配置可縮小、放大和自動重排，以回應裝置上的可用視覺空間。 
 
-實際上，可以使用靜態與流暢元素的組合來建立 UI。 您仍然在某些地方，使用靜態項目和值，但請務必整體的 UI 會回應不同的解析度、 螢幕大小和檢視。
+實際上，可以使用靜態與流暢元素的組合來建立 UI。 您仍然可以在某些地方使用靜態元素和值，但請確定整體 UI 回應不同的解析度、螢幕大小和視圖。
 
 我們將在此處討論如何使用 XAML 屬性和版面配置面板，建立流暢版面配置。
 
 ### <a name="layout-properties"></a>版面配置屬性
-版面配置屬性控制元素的大小與位置。 若要建立流暢的版面配置，使用自動或按比例調整大小的項目，並允許視需要放置其子系的版面配置面板。 
+版面配置屬性控制元素的大小與位置。 若要建立流暢的版面配置，請針對元素使用自動或比例調整大小，並允許版面配置面板視需要定位其子系。 
 
 以下是一些常見的版面配置屬性，以及如何使用它們來建立流暢版面配置。
 
@@ -40,7 +40,7 @@ XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中�
 > [!NOTE]
 > 元素是否會調整大小以符合其內容或容器，取決於父容器如何處理調整其子項的大小。 如需詳細資訊，請參閱本文後續內容中的 [版面配置面板](#layout-panels)。
 
-等比例調整大小 (亦稱為 *「星號調整」* )，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML，星狀的值會表示為\*(或*n* \*加權的星狀調整大小時)。 例如，若要指定該單一資料行大於 5 倍的 2 欄版面配置中的第二個資料行，請使用"5\*"和"\*」 的[**寬度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width)中的屬性[**ColumnDefinition** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)項目。
+等比例調整大小 (亦稱為 *「星號調整」* )，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML 中，星號值會以 \* 表示（或針對加權星形調整大小為*n*\*）。 例如，若要指定一個資料行的寬度高於2個數據行配置中的第二個數據行，請針對[**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)元素中的[**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width)屬性使用 "5\*" 和 "\*"。
 
 這個範例會在具有 4 欄的 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 中結合固定、自動和等比例調整大小。
 
@@ -77,7 +77,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 在 Grid 中，MinWidth/MaxWidth 也可以與欄定義搭配使用，而 MinHeight/MaxHeight 可以與列定義搭配使用。
 
-**對齊方式**
+**對齊**
 
 使用 [**HorizontalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) 和 [**VerticalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) 屬性，來指定元素應該如何放置於其父容器內。
 - 適用於 **HorizontalAlignment** 的值為 **Left**、**Center**、**Right** 和 **Stretch**。
@@ -88,14 +88,14 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 如需詳細資訊，請參閱[對齊方式、邊界及邊框間距](alignment-margin-padding.md)文章，以及 [**HorizontalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) 和 [**VerticalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) 參考頁面。
 
-**可見性**
+**可視**
 
-您可以顯示或隱藏項目，藉由設定其[**可視性**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility)屬性設為其中的[**可視性**列舉](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Visibility)值：**可見**或是**摺疊**。 當元素是 Collapsed 時，它不會佔用 UI 版面配置中的任何空間。
+您可以將元素的 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 屬性設定為其中一個 [**Visibility** 列舉](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Visibility)值，藉以顯示或隱藏該元素：**Visible** 或 **Collapsed**。 當元素是 Collapsed 時，它不會佔用 UI 版面配置中的任何空間。
 
 您可以在程式碼或視覺狀態中變更元素的 Visibility 屬性。 當元素的 Visibility 變更時，其所有子元素也會變更。 您可以藉由顯示某一個面板，同時摺疊另一個面板，來取代 UI 的區段。
 
 > [!Tip]
-> 如果您已屬於您的 UI 項目**摺疊**根據預設，物件還是會建立在啟動時，即使它們不可見。 您可以延遲載入這些元素，直到藉由將 **x:DeferLoadStrategy attribute** 屬性設為 "Lazy" 來顯示它們為止。 這可以提升啟動效能。 如需詳細資訊，請參閱 [x:DeferLoadStrategy 屬性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
+> 當**您的 UI**中有預設折迭的元素時，仍會在啟動時建立物件，即使看不到它們也一樣。 您可以延遲載入這些元素，直到藉由將 **x:DeferLoadStrategy attribute** 屬性設為 "Lazy" 來顯示它們為止。 這可以提升啟動效能。 如需詳細資訊，請參閱 [x:DeferLoadStrategy 屬性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 ### <a name="style-resources"></a>樣式資源
 
@@ -111,13 +111,13 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 面板控制項 | 描述
 --------------|------------
-[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) | **Canvas** 不支援流暢的 UI；您可以完全控制放置子元素及調整其大小的各方面設定。 您通常會在特殊的情況下使用它，例如，建立圖形或定義較大型調適型 UI 的小型靜態區域。 您可以使用程式碼或視覺狀態，在執行階段重新置放元素。<li>元素是使用 Canvas.Top 與 Canvas.Left 附加屬性以絕對位置的方式來放置。</li><li>圖層可以使用 Canvas.ZIndex 附加屬性明確指定。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值都會遭到忽略。 如果沒有明確設定元素的大小，它就會調整其大小來符合它的內容。</li><li>如果子內容大於面板，就不會以視覺化方式進行剪裁。 </li><li>子內容不會受限於面板的範圍內。</li>
-[**方格**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | **Grid** 支援流暢地調整子元素大小。 您可以使用程式碼或視覺狀態，重新置放和自動重排元素。<li>元素是使用 Grid.Row 與 Grid.Column 附加屬性，以列和欄形式來排列。</li><li>您可以使用 Grid.RowSpan 與 Grid.ColumnSpan 附加屬性，讓元素橫跨多個列與欄。</li><li>系統會採用適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果沒有明確設定元素的大小，它會向兩邊延伸以填滿方格儲存格中的可用空間。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li>
+[**繪圖**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) | **Canvas** 不支援流暢的 UI；您可以完全控制放置子元素及調整其大小的各方面設定。 您通常會在特殊的情況下使用它，例如，建立圖形或定義較大型調適型 UI 的小型靜態區域。 您可以使用程式碼或視覺狀態，在執行階段重新置放元素。<li>元素是使用 Canvas.Top 與 Canvas.Left 附加屬性以絕對位置的方式來放置。</li><li>圖層可以使用 Canvas.ZIndex 附加屬性明確指定。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值都會遭到忽略。 如果沒有明確設定元素的大小，它就會調整其大小來符合它的內容。</li><li>如果子內容大於面板，就不會以視覺化方式進行剪裁。 </li><li>子內容不會受限於面板的範圍內。</li>
+[**格**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | **Grid** 支援流暢地調整子元素大小。 您可以使用程式碼或視覺狀態，重新置放和自動重排元素。<li>元素是使用 Grid.Row 與 Grid.Column 附加屬性，以列和欄形式來排列。</li><li>您可以使用 Grid.RowSpan 與 Grid.ColumnSpan 附加屬性，讓元素橫跨多個列與欄。</li><li>系統會採用適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果沒有明確設定元素的大小，它會向兩邊延伸以填滿方格儲存格中的可用空間。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li>
 [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | <li>元素是以相較於面板的邊緣或中心，以及彼此相對的關係來排列。</li><li>元素是使用各種不同的附加屬性來放置，這些屬性可控制面板對齊方式、同層級對齊方式及同層級位置。 </li><li>除非用來對齊的 RelativePanel 附加屬性會造成向兩邊延伸 (例如，元素會向面板的左右邊緣對齊)，否則 HorizontalAlignment/VerticalAlignment 的 Stretch 值會遭到忽略。 如果沒有明確設定元素的大小且它不會向兩邊延伸，則它會調整大小來符合其內容。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li>
 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) |<li>元素以垂直或水平方式堆疊到單行中。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值會以與 Orientation 屬性相反的方向來採用。 如果沒有明確設定元素的大小，它會向兩邊延伸以填滿可用的寬度 (或高度，如果 Orientation 是 Horizontal)。 利用 Orientation 屬性指定的方向，元素會調整大小來符合其內容。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小不會以 Orientation 屬性指定的方向受限於面板的範圍內，因此，可捲動內容向兩邊延伸的範圍會超過面板的範圍且不會顯示捲軸。 您必須明確限制子內容的高度 (或寬度)，讓它能夠顯示捲軸。</li>
 [**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) |<li>在列或欄中排列的元素，達到 MaximumRowsOrColumns 值時會自動換行到新列或新欄。</li><li>Orientation 屬性會指定以列或欄排列元素。</li><li>您可以使用 VariableSizedWrapGrid.RowSpan 與 VariableSizedWrapGrid.ColumnSpan 附加屬性，讓元素橫跨多個列與欄。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值都會遭到忽略。 元素的大小是由 ItemHeight 與 ItemWidth 屬性所指定。 如果未設定這些屬性，則第一個儲存格中的項目會調整大小以符合其內容，而所有其他的儲存格會繼承這個大小。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li>
 
-如需這些面板的詳細資訊和範例，請參閱[版面配置面板](layout-panels.md)。 另請參閱[回應技術範例](https://go.microsoft.com/fwlink/p/?LinkId=620024)。
+如需這些面板的詳細資訊和範例，請參閱[版面配置面板](layout-panels.md)。 另請參閱[回應技術範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)。
 
 版面配置面板可讓您將 UI 組織成控制項的邏輯群組。 將它們與適當的屬性設定搭配使用時，您可以取得自動調整大小、重新置放及自動重排 UI 元素的一些支援。 不過，大部分的 UI 版面配置需要在視窗大小有大幅變更時進一步修改。 為此，您可以使用視覺狀態。
 
@@ -130,9 +130,9 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 ### <a name="set-visual-states-in-code"></a>在程式碼中設定視覺狀態
 
-若要從程式碼套用視覺狀態，您可以呼叫 [**VisualStateManager.GoToState**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstatemanager.gotostate) 方法。 例如，若要在 app 視窗為特定大小時套用某個狀態，請處理 [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) 事件並呼叫 **GoToState** 以套用適當的狀態。
+若要從程式碼套用視覺狀態，您可以呼叫 [**VisualStateManager.GoToState**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstatemanager.gotostate) 方法。 例如，若要在應用程式視窗為特定大小時套用某個狀態，請處理 [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) 事件並呼叫 **GoToState** 以套用適當的狀態。
 
-此處的 [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 包含二個 VisualState 定義。 第一個是 `DefaultState`，是空的。 套用時，即會套用 XAML 頁面中定義的值。 第二個是 `WideState`，它會將 [**SplitView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)[**的 DisplayMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview.displaymode) 屬性變更為 **Inline** 並開啟窗格。 如果視窗寬度比 640 個有效像素來得大，即會在 SizeChanged 事件處理常式中套用此狀態。
+此處的 [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 包含二個 VisualState 定義。 第一個是 `DefaultState`，是空的。 套用時，即會套用 XAML 頁面中定義的值。 第二個是 `WideState`，它會將 [**SplitView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview.displaymode) 的 [**DisplayMode**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView) 屬性變更為 **Inline** 並開啟窗格。 如果視窗寬度比 640 個有效像素來得大，即會在 SizeChanged 事件處理常式中套用此狀態。
 
 > [!NOTE]
 > Windows 不會針對您的應用程式提供一個偵測執行您應用程式之特定裝置的方法。 它能夠告知您執行應用程式的裝置系列 (行動、桌面等)、實際解析度，以及應用程式可用的螢幕空間量 (應用程式的視窗大小)。 我們建議為 [螢幕大小與中斷點](screen-sizes-and-breakpoints-for-responsive-design.md)定義視覺狀態。
@@ -232,13 +232,13 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 ```
 
 > [!Important]
-> 在上述範例中，VisualStateManager.VisualStateGroups 附加屬性設定上**格線**項目。 使用 StateTrigger 時，請一律確保會將 VisualStateGroups 附加到根目錄的第一個子項，讓觸發程序能夠自動生效 (此處的 **Grid** 是根 **Page** 元素的第一個子項)。
+> 在上述範例中，會在**Grid**元素上設定 VisualStateManager. system.windows.visualstatemanager.visualstategroups 附加屬性。 使用 StateTrigger 時，請一律確保會將 VisualStateGroups 附加到根目錄的第一個子項，讓觸發程序能夠自動生效 (此處的 **Grid** 是根 **Page** 元素的第一個子項)。
 
 ### <a name="attached-property-syntax"></a>附加屬性語法
 
 在 VisualState 中，您通常會設定控制項屬性的值，或者為包含該控制項之面板的其中一個附加屬性設定值。 設定附加屬性時，請使用括號將附加屬性名稱括起來。
 
-這個範例示範如何在名為 `myTextBox` 的 TextBox 上，設定 [**RelativePanel.AlignHorizontalCenterWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty) 附加屬性。 第一個 XAML 會使用 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 語法，而第二個會使用 **Setter** 語法。
+這個範例示範如何在名為 [ 的 TextBox 上，設定RelativePanel.AlignHorizontalCenterWithPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty)`myTextBox` 附加屬性。 第一個 XAML 會使用 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 語法，而第二個會使用 **Setter** 語法。
 
 ```xaml
 <!-- Set an attached property using ObjectAnimationUsingKeyFrames. -->
@@ -254,13 +254,13 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 ### <a name="custom-state-triggers"></a>自訂狀態觸發程序
 
-您可以擴充 [**StateTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.StateTrigger) 類別，針對各種案例建立自訂觸發程序。 例如，可以建立 StateTrigger，根據輸入類型來觸發不同狀態，然後在輸入類型為觸控時，增加控制項四周的邊界。 或是建立 StateTrigger，以根據應用程式執行所在的裝置系列來套用不同的狀態。 如需如何建置自訂觸發程序並使用它們從單一 XAML 檢視中建立最佳化 UI 體驗的範例，請參閱[狀態觸發程序範例](https://go.microsoft.com/fwlink/p/?LinkId=620025)。
+您可以擴充 [**StateTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.StateTrigger) 類別，針對各種案例建立自訂觸發程序。 例如，可以建立 StateTrigger，根據輸入類型來觸發不同狀態，然後在輸入類型為觸控時，增加控制項四周的邊界。 或是建立 StateTrigger，以根據應用程式執行所在的裝置系列來套用不同的狀態。 如需如何建置自訂觸發程序並使用它們從單一 XAML 檢視中建立最佳化 UI 體驗的範例，請參閱[狀態觸發程序範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)。
 
 ### <a name="visual-states-and-styles"></a>視覺狀態與樣式
 
 您可以在視覺狀態中使用 Style 資源，將一組屬性變更套用到多個控制項。 如需有關使用樣式的詳細資訊，請參閱[設定控制項的樣式](../controls-and-patterns/xaml-styles.md)。
 
-在這個來自狀態觸發程序範例的簡化 XAML 中，Style 資源被套用到 Button，以調整滑鼠或觸控輸入的大小和邊界。 如需自訂狀態觸發程序的完整程式碼和定義，請參閱[狀態觸發程序範例](https://go.microsoft.com/fwlink/p/?LinkId=620025)。
+在這個來自狀態觸發程序範例的簡化 XAML 中，Style 資源被套用到 Button，以調整滑鼠或觸控輸入的大小和邊界。 如需自訂狀態觸發程序的完整程式碼和定義，請參閱[狀態觸發程序範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)。
 
 ```xaml
 <Page ... >
@@ -334,19 +334,19 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 使用 XAML 檢視，建立不同的 UI 定義來共用相同的程式碼後置。 您可以針對每個裝置系列提供獨特的 UI 定義。 請依照下列步驟來將 XAML 檢視新增到應用程式。
 
-**將 XAML 檢視新增至應用程式**
+**將 XAML 視圖加入應用程式**
 1. 依序選取 [專案] &gt; [加入新項目]。 隨即開啟 [加入新項目] 對話方塊。
     > **提示**&nbsp;&nbsp;確定在 [方案總管] 中選取的是資料夾或專案，而不是方案。
 2. 在左窗格的 [Visual C#] 或 [Visual Basic] 下方，挑選 [XAML] 範本類型。
 3. 在中央窗格，挑選 [XAML 檢視]。
 4. 輸入檢視的名稱。 檢視必須以正確方式命名。 如需命名的詳細資訊，請參閱本節的其餘部分。
-5. 按一下 [新增]。 檔案即會新增到專案。
+5. 按一下新增。 檔案即會新增到專案。
 
 先前步驟只會建立一個 XAML 檔案，但不會建立相關聯的程式碼後置檔案。 而是會使用 DeviceName 限定詞 (此為檔案或資料夾名稱的一部分)，將 XAML 檢視關聯至現有的程式碼後置檔案。 這個限定詞名稱可對應到代表應用程式目前執行所在之裝置的裝置系列的字串值，例如，「電腦」、「平板電腦」和其他裝置系列的名稱 (請參閱 [**ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues))。
 
 您可以將限定詞新增到檔案名稱，或者將檔案新增到具有限定詞名稱的資料夾。
 
-**使用檔案名稱**
+**使用檔案名**
 
 若要使用限定詞名稱搭配檔案，請使用下列格式： *[pageName]* .DeviceFamily- *[qualifierString]* .xaml。
 
@@ -356,7 +356,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 **使用資料夾名稱**
 
-若要在 Visual Studio 專案中使用資料夾組織檢視，您可以使用限定詞名稱搭配資料夾。 若要這樣做，將資料夾命名為就像這樣：DeviceFamily- *[qualifierString]* 。 在此案例中，每個 XAML 檢視檔案都具有相同名稱。 請勿在檔案名稱中包含限定詞。
+若要在 Visual Studio 專案中使用資料夾組織檢視，您可以使用限定詞名稱搭配資料夾。 若要這樣做，請使用下列格式來為資料夾命名：DeviceFamily- *[qualifierString]* 。 在此案例中，每個 XAML 檢視檔案都具有相同名稱。 請勿在檔案名稱中包含限定詞。
 
 以下提供一個範例，再次提醒，這適用於名為 MainPage.xaml 的檔案。 若要建立適用於平板電腦裝置的檢視，請建立名為 DeviceFamily-Tablet 的資料夾，並將名為 MainPage.xaml 的 XAML 檢視放置到其中。 若要建立適用於電腦裝置的檢視，請建立名為 "DeviceFamily-Desktop" 的資料夾，並將另一個名為 MainPage.xaml 的 XAML 檢視放置到其中。 以下是方案在 Visual Studio 中看起來的樣子。
 
@@ -368,13 +368,13 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 若要提供獨特的檢視和功能，您可以建立個別的 Page 檔案 (XAML 和程式碼)，然後在需要某個頁面時瀏覽到適當的頁面。
 
-**若要加入至應用程式的 XAML 頁面**
+**將 XAML 頁面新增至應用程式**
 1. 依序選取 [專案] &gt; [加入新項目]。 隨即開啟 [加入新項目] 對話方塊。
     > **提示**&nbsp;&nbsp;確定在 [方案總管] 選取的是專案而不是方案。
 2. 在左窗格的 [Visual C#] 或 [Visual Basic] 下方，挑選 [XAML] 範本類型。
 3. 在中央窗格，選取 [空白頁]。
 4. 輸入頁面的名稱。 例如，"MainPage_Tablet"。 同時建立 MainPage_Tablet.xaml 和 MainPage_Tablet.xaml.cs/vb/cpp 程式碼檔案。
-5. 按一下 [新增]。 檔案即會新增到專案。
+5. 按一下新增。 檔案即會新增到專案。
 
 在執行階段，檢查應用程式執行所在的裝置系列，然後瀏覽到正確的頁面，如下。
 
@@ -389,10 +389,10 @@ else
 }
 ```
 
-您也可以使用不同的準則來判斷要瀏覽到哪一個頁面。 如需更多範例，請參閱[量身打造的多個檢視](https://go.microsoft.com/fwlink/p/?LinkId=620636)範例，它會使用 [**GetIntegratedDisplaySize**](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getintegrateddisplaysize) 函式來檢查整合式顯示器的實體大小。
+您也可以使用不同的準則來判斷要瀏覽到哪一個頁面。 如需更多範例，請參閱[量身打造的多個檢視](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)範例，它會使用 [**GetIntegratedDisplaySize**](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getintegrateddisplaysize) 函式來檢查整合式顯示器的實體大小。
 
 ## <a name="related-topics"></a>相關主題
-- [教學課程：建立彈性的版面配置](../basics/xaml-basics-adaptive-layout.md)
-- [回應性技術範例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
-- [狀態的觸發程序範例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)
-- [量身打造多個檢視範例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)
+- [教學課程：建立自我調整版面配置](../basics/xaml-basics-adaptive-layout.md)
+- [回應性技術範例（GitHub）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
+- [狀態觸發程式範例（GitHub）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)
+- [量身打造多個 views 範例（GitHub）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)

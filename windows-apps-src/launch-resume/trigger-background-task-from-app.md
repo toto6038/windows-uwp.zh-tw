@@ -3,20 +3,20 @@ title: 從您的應用程式觸發背景工作
 description: 說明如何從應用程式中觸發背景工作
 ms.date: 07/06/2018
 ms.topic: article
-keywords: 背景工作觸發程序，背景工作
+keywords: 背景工作觸發程式，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d163d36b51e414a403986d1fdd73db7925cc0b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3d8917c6ed181607459d6126aa295d270cfea838
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371889"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259410"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>從您的應用程式觸發背景工作
 
 了解如何使用 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) 從您的應用程式啟動背景工作。
 
-如需如何建立應用程式觸發程序的範例，請參閱此[範例](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs)。
+如需如何建立應用程式觸發程式的範例，請參閱此[範例](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs)。
 
 本主題假設您有想要從應用程式啟動的背景工作。 如果您目前沒有背景工作，可以在 [BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs) 找到範例背景工作。 或者，依照[建立和註冊跨處理序的背景工作](create-and-register-a-background-task.md)中的步驟建立背景工作。
 
@@ -56,7 +56,7 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 您可以建立背景工作條件來控制何時執行工作。 條件會在條件符合之前，一直讓背景工作無法執行。 如需詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
 
-在此範例中，條件設定為**InternetAvailable**以便一次觸發，此工作只執行一次網際網路存取。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
+在此範例中，條件會設定為**InternetAvailable** ，因此一旦觸發，工作只會在網際網路存取可供使用時執行。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -88,7 +88,7 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 
 ## <a name="register-the-background-task"></a>登錄背景工作
 
-呼叫背景工作登錄函式以登錄背景工作。 如需註冊背景工作的詳細資訊，並查看以下範例程式碼中 **RegisterBackgroundTask()** 方法的定義，請參閱[註冊背景工作](register-a-background-task.md)。
+呼叫背景工作註冊函式以註冊背景工作。 如需註冊背景工作的詳細資訊，並查看以下範例程式碼中 **RegisterBackgroundTask()** 方法的定義，請參閱[註冊背景工作](register-a-background-task.md)。
 
 如果您想要使用應用程式觸發程序來延長前景處理序的存留期，請考慮改用[延伸執行](run-minimized-with-extended-execution.md)。 應用程式觸發程序是專為建立要用於執行工作的個別裝載處理序所設計。 下列代碼片段會註冊跨處理序背景觸發程序。
 
@@ -134,28 +134,28 @@ var result = await _AppTrigger.RequestAsync();
 
 使用 [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) 可判斷使用者是否已決定限制您的應用程式的背景活動。 請留意您的電池使用量，並且只在需要完成使用者想要的動作時才在背景執行。 如需有關使用者可如何控制背景活動設定的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。  
 
-- 記憶體：微調您的應用程式的記憶體和能源使用是確保作業系統可讓您執行的背景工作的關鍵。 使用[記憶體管理 API](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 來了解您的背景工作正在使用多少記憶體。 您的背景工作使用的記憶體越多，作業系統就越不容易在有其他 App 執行於前景時允許您的 App 繼續執行。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。  
-- CPU 時間：背景工作會受到時鐘取得根據觸發程序類型的使用時間數量。 應用程式觸發程序所觸發之背景工作的時間限制約為 10 分鐘。
+- 記憶體︰調整 App 的記憶體和能源使用量是確保作業系統允許背景工作執行的關鍵。 使用[記憶體管理 API](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 來了解您的背景工作正在使用多少記憶體。 您的背景工作使用的記憶體越多，作業系統就越不容易在有其他 App 執行於前景時允許您的 App 繼續執行。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。  
+- CPU 時間：背景工作受限於其依據觸發程序類型所取得的實際執行使用時間量。 應用程式觸發程序所觸發之背景工作的時間限制約為 10 分鐘。
 
 請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)，以了解套用至背景工作的資源限制。
 
 ## <a name="remarks"></a>備註
 
-從 Windows 10 開始，它不再需要將您的應用程式新增至在鎖定畫面中，才能利用背景工作的使用者。
+從 Windows 10 開始，使用者不再需要將您的應用程式新增至鎖定畫面，即可利用背景工作。
 
-如果您已經先呼叫 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)，背景工作將只會使用 **ApplicationTrigger** 來執行。
+如果您已經先呼叫RequestAccessAsync[ **，背景工作將只會使用** ApplicationTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) 來執行。
 
 ## <a name="related-topics"></a>相關主題
 
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [背景工作的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
+* [背景工作程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
 * [建立及註冊同處理序序背景工作](create-and-register-an-inproc-background-task.md)。
 * [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 * [偵錯背景工作](debug-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [當應用程式移至背景時釋出記憶體](reduce-memory-usage.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 應用程式中觸發暫止、繼續和背景事件（在進行調試時）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 * [透過延長執行延後應用程式暫停](run-minimized-with-extended-execution.md)
 * [註冊背景工作](register-a-background-task.md)

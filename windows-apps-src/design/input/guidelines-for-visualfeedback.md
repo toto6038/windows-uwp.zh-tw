@@ -1,6 +1,6 @@
 ---
 Description: 使用視覺效果意見反應，在使用者與 UWP 應用程式的互動受到偵測、解讀和處理時顯示。
-title: 視覺化回饋
+title: 視覺回饋
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
@@ -8,18 +8,18 @@ keywords: 視覺化回饋、焦點回饋、觸控回饋、觸控點視覺效果�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 56260eb09bc834b2a71e9889b91f0bc439edaa30
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: bba80403934987569c25b96eced9a610226431b5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340469"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257905"
 ---
 # <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
 使用視覺化回饋以向使用者顯示系統已偵測到、解譯及處理他們的互動。 視覺化回饋可以透過激發互動意願來協助使用者。 它會指出互動是否成功來改善使用者的控制感應。 它也會轉送系統狀態並減少錯誤。
 
-> **重要 API**：[**Windows. input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、 [**windows. ui. input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、 [**windows. ui Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+> **重要 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>建議
 
@@ -64,8 +64,8 @@ ms.locfileid: "71340469"
 
 **框線屬性**
 
-高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」* 。
-@no__t 0High 可見度焦點視覺效果紅線 @ no__t-1
+高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線*外側*。 次要框線的粗細為 **1px**，圍繞在主要框線*內側*。
+![高可見度焦點視覺效果紅線](images/FocusRectRedlines.png)
 
 若要變更框線類型 (主要或次要) 的粗細，請分別使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**︰
 ```XAML
@@ -73,7 +73,7 @@ ms.locfileid: "71340469"
 ```
 ![高可見度焦點視覺效果邊界粗細](images/FocusMargin.png)
 
-邊界是 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness) 類型的屬性，因此可將邊界自訂成只出現在控制項的特定邊。 請參閱底下：![High 可見度焦點視覺邊界粗細只有 @ no__t-1
+邊界是 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness) 類型的屬性，因此可將邊界自訂成只出現在控制項的特定邊。 請參閱下方： ![高可見度焦點聚焦視覺邊界粗細的底部](images/FocusThicknessSide.png)
 
 邊界是控制項視覺界限與焦點視覺效果「次要框線」起始位置之間的空間。 預設邊界是距離控制項界限 **1px**。 您可以編輯個別控制項的這個邊界，方法是變更 **FocusVisualMargin** 屬性︰
 ```XAML
@@ -115,20 +115,20 @@ ms.locfileid: "71340469"
 * [自訂使用者互動](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **範例**
-* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895) \(英文\)
+* [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
 
 **封存範例**
-* [Input：XAML 使用者輸入事件範例 @ no__t-0
-* [Input：裝置功能範例 @ no__t-0
-* [Input：觸控點擊測試範例 @ no__t-0
-* [XAML 捲軸、移動流覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input：簡化的筆跡範例 @ no__t-0
-* [Input：Windows 8 手勢範例 @ no__t-0
-* [Input：操作和手勢（C++）範例 @ no__t-1
-* [DirectX touch 輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [輸入： XAML 使用者輸入事件範例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [輸入：裝置功能範例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [輸入：觸控點擊測試範例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [XAML 捲軸、移動流覽和縮放範例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [輸入：簡化的筆跡範例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [輸入： Windows 8 手勢範例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Input：操作和手勢（C++）範例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [DirectX touch 輸入範例](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

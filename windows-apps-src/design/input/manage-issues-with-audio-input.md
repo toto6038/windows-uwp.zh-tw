@@ -8,19 +8,19 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aef21bc72c7458aecc3ea8f0a3cae275a22d9f08
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6281165d64b8e6e3f77807dbafd6bfff1dd0704f
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365608"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258322"
 ---
 # <a name="manage-issues-with-audio-input"></a>管理音訊輸入的問題
 
 
 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。
 
-> **重要的 Api**:[**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)， [ **RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)， [ **SpeechRecognitionAudioProblem**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
+> **重要 API**：[**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)、[**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)、[**SpeechRecognitionAudioProblem**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
 
 
 ## <a name="assess-audio-input-quality"></a>評定音訊輸入品質
@@ -108,7 +108,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 * [語音互動](speech-interactions.md)
 
 **範例**
-* [語音辨識和語音合成器範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音辨識和語音合成範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 影片, 排程器, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 69fef2bc5deb21be8685badb0cf18f38769170cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1a214288c778505d16707fd64391a9b8cedbbb32
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603843"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260352"
 ---
 # <a name="show-ads-in-video-content"></a>在影片內容中顯示廣告
 
@@ -26,7 +26,7 @@ ms.locfileid: "57603843"
 
 ## <a name="prerequisites"></a>必要條件
 
-* 使用 Visual Studio 2015 或更新版本安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。
+* 使用 Visual Studio 2015 或更新版本安裝 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。
 
 * 您的專案必須使用 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) 控制項來播放將排定廣告的影片內容。 此控制項可從 GitHub 上 Microsoft 提供的 [TVHelpers](https://github.com/Microsoft/TVHelpers) 程式庫集合中取得。
 
@@ -47,7 +47,7 @@ ms.locfileid: "57603843"
 
 1. 在 Visual Studio 中，開啟您的專案或建立新專案。
 
-2. 如果專案的目標是 [任何 CPU]，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86])。 如果專案的目標是 [任何 CPU]，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 [任何 CPU]，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 3. 將 **Microsoft Advertising SDK for JavaScript** 程式庫的參考新增至您的專案。
 
@@ -142,7 +142,7 @@ ms.locfileid: "57603843"
 
 ### <a name="requesttimeout"></a>requestTimeout
 
-此屬性會取得或設定要進行 ad 要求回應逾時之前等候的毫秒數。設定為 0 的值通知系統永遠不要啟動逾時功能。 預設值是 30000 毫秒 (30 秒)。
+此内容取得或設定媒體必須可播放的毫秒數，以等待逾時之前的廣告要求回應。設定為 0 的值通知系統永遠不要啟動逾時功能。 預設值是 30000 毫秒 (30 秒)。
 
 ### <a name="schedule"></a>排程
 
@@ -152,9 +152,9 @@ ms.locfileid: "57603843"
 
 這個事件會在廣告播放達到四分位檢查點時引發。 事件處理常式 (*eventInfo*) 的第二個參數是 JSON 物件，其成員如下：
 
-* **進度**:Ad 播放狀態 (其中**MediaProgress** AdScheduler.js 中定義的列舉值)。
-* **剪輯**:蝭 視訊剪輯。 此物件並不適用於您的代碼。
-* **adPackage**:物件，表示對應 ad 承載的一部分來播放廣告。 此物件並不適用於您的代碼。
+* **進行中**：廣告播放狀態 (在 AdScheduler.js 中定義的其中一個 **MediaProgress** 列舉值 )。
+* **剪輯**：正在播放的視訊剪輯。 此物件並不適用於您的代碼。
+* **adPackage**：表示與正在播放的廣告相對應的廣告有效承載部分之物件。 此物件並不適用於您的代碼。
 
 ### <a name="onallcomplete"></a>onAllComplete  
 
@@ -168,8 +168,8 @@ ms.locfileid: "57603843"
 
 廣告播放時會引發此事件，並指出目前 Pod 的剩餘時間。 事件處理常式 (*eventData*) 的第二個參數是 JSON 物件，其成員如下：
 
-* **remainingAdTime**:目前的 ad 的所剩餘的秒數。
-* **remainingPodTime**:目前的 pod 的所剩餘的秒數。
+* **remainingAdTime**：目前廣告剩餘的秒數。
+* **remainingPodTime**：目前 Pod 剩餘的秒數。
 
 > [!NOTE]
 > Pod 是按順序播放的一組廣告，例如在商業廣告期間播放的一組廣告。 如需詳細資訊，請參閱 IAB 數位視訊廣告服務樣板 (VAST) 規格。
@@ -178,12 +178,12 @@ ms.locfileid: "57603843"
 
 Pod 結束時會引發此事件。 事件處理常式 (*eventData*) 的第二個參數是 JSON 物件，其成員如下：
 
-* **startTime**:Pod 的開始時間，以秒為單位。
-* **pod**:物件，表示 pod。 此物件並不適用於您的代碼。
+* **startTime**：Pod 的開始時間 (秒)。
+* **pod**：代表 Pod 的物件。 此物件並不適用於您的代碼。
 
 ### <a name="onpodstart"></a>onPodStart
 
 Pod 開始時會引發此事件。 事件處理常式 (*eventData*) 的第二個參數是 JSON 物件，其成員如下：
 
-* **startTime**:Pod 的開始時間，以秒為單位。
-* **pod**:物件，表示 pod。 此物件並不適用於您的代碼。
+* **startTime**：Pod 的開始時間 (秒)。
+* **pod**：代表 Pod 的物件。 此物件並不適用於您的代碼。

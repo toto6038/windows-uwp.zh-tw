@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: db5ba7fb6e13d2a5aab4b74014458073aa88e7f4
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 0d6af9d532ecabe517983e8b56cdf8e1b2a2d812
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820220"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254527"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
@@ -29,7 +29,7 @@ ms.locfileid: "67820220"
 | :--------------- | :--------------- | :--------------- |
 | 高對比設定 | 對比 | 標準、高、黑色、白色 |
 
-您可以將限定詞名稱與限定詞值結合來形成一個限定詞。 `<qualifier name>-<qualifier value>` 是的辨識符號的格式。 `contrast-standard` 是辨識符號的範例。
+您可以將限定詞名稱與限定詞值結合來形成一個限定詞。 `<qualifier name>-<qualifier value>` 是辨識符號的格式。 `contrast-standard` 是辨識符號的範例。
 
 因此，高對比適用的一組限定詞是 `contrast-standard`、`contrast-high`、`contrast-black` 和 `contrast-white`。 限定詞名稱及限定詞值不區分大小寫。 例如，`contrast-standard` 和 `Contrast-Standard` 是相同的限定詞。
 
@@ -71,7 +71,7 @@ ms.locfileid: "67820220"
 \Assets\Images\logo.png
 ```
 
-第一個檔案名稱包含 `contrast-high` 限定詞。 當高對比為*開啟*狀態時，該限定詞是任何高對比設定的*實際*相符項目。 換句話說，這是密切相符項目，因此優先選用。 只有在限定詞包含*實際*值時，才會出現*實際*相符項目，正如此例的情況。 在此情況下，`high` 是 `contrast` 的*實際*值。
+第一個檔案名稱包含 `contrast-high` 限定詞。 當高對比為*開啟*狀態時，該限定詞是任何高對比設定的*實際*相符項目。 換句話說，這是密切相符項目，因此優先選用。 只有在限定詞包含*實際*值時，才會出現*實際*相符項目，正如此例的情況。 在此情況下，`high` 是  *的*實際`contrast`值。
 
 名稱為 `logo.png` 的檔案根本沒有對比限定詞。 缺少限定詞即是*中性*值。 如果找不到首選相符項目，則使用中性值做為遞補相符項目。 在此範例中，如果高對比為*關閉*狀態，則沒有實際相符項目。 *中性*相符項目是可找到的最佳相符項目，因此將資產 `logo.png` 載入。
 
@@ -102,7 +102,7 @@ ms.locfileid: "67820220"
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
-在資料夾名稱中，您可以結合多個限定詞，並以底線來分隔。 `<qualifier1>[_<qualifier2>...]` 是的格式。
+在資料夾名稱中，您可以結合多個限定詞，並以底線來分隔。 `<qualifier1>[_<qualifier2>...]` 是格式。
 
 您可以在檔案名稱中，以相同的格式來結合多個限定詞。
 
@@ -118,7 +118,7 @@ ms.locfileid: "67820220"
 
 您的目標系統或應用程式必須提供與 `alternateform` 限定詞相符的值。 不要將 `msft-` 首碼用於您自己的自訂 `alternateform` 限定詞值。
 
-## <a name="configuration"></a>組態
+## <a name="configuration"></a>設定
 
 您不太可能需要 `configuration` 限定詞名稱。 這可以用來指定只適用於特定製作階段環境的資源，例如僅供測試資源。
 
@@ -130,7 +130,7 @@ ms.locfileid: "67820220"
 
 ## <a name="custom"></a>自訂
 
-您的應用程式可以設定 `custom` 限定詞的值，然後載入最符合該值的資源。 例如，您可能會想要根據應用程式的授權載入資源。 App 啟動時，會呼叫 [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) 來檢查其授權並使用此授權做為 `custom` 限定詞的值，如程式碼範例中所示。
+您的應用程式可以設定 `custom` 限定詞的值，然後載入最符合該值的資源。 例如，您可能會想要根據應用程式的授權載入資源。 App 啟動時，會呼叫 `custom`SetGlobalQualifierValue[ 來檢查其授權並使用此授權做為 ](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) 限定詞的值，如程式碼範例中所示。
 
 ```csharp
 public void SetLicenseLevel(BrandID brand)
@@ -191,13 +191,13 @@ public void SetLicenseLevel(BrandID brand)
 
 ## <a name="homeregion"></a>HomeRegion
 
-`homeregion` 限定詞對應於使用者的國家或地區設定。 這代表使用者的住家位置。 值包括任何有效 [BCP-47 區域標記](https://go.microsoft.com/fwlink/p/?linkid=227302)。 也就是，任何兩個字母的 **ISO 3166-1 alpha-2** 區域代碼，加上一組代表組成區域的三位數 **ISO 3166-1 數字**地理代碼 (請參閱[聯合國統計司 M49 區域分類編碼](https://go.microsoft.com/fwlink/p/?linkid=247929))。 「選取的經濟及其他群組」的代碼無效。
+`homeregion` 限定詞對應於使用者的國家或地區設定。 這代表使用者的住家位置。 值包括任何有效 [BCP-47 區域標記](https://tools.ietf.org/html/bcp47)。 也就是，任何兩個字母的 **ISO 3166-1 alpha-2** 區域代碼，加上一組代表組成區域的三位數 **ISO 3166-1 數字**地理代碼 (請參閱[聯合國統計司 M49 區域分類編碼](https://unstats.un.org/unsd/methods/m49/m49regin.htm))。 「選取的經濟及其他群組」的代碼無效。
 
 ## <a name="language"></a>語言
 
-`language` 限定詞對應於顯示語言設定。 值包括任何有效 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)。 如需語言清單，請參閱 [IANA 語言子標記登錄](https://go.microsoft.com/fwlink/p/?linkid=227303)。
+`language` 限定詞對應於顯示語言設定。 值包括任何有效 [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)。 如需語言清單，請參閱 [IANA 語言子標記登錄](https://www.iana.org/assignments/language-subtag-registry)。
 
-如果希望應用程式支援不同的顯示語言，而且您的程式碼或 XAML 標記也含有字串常值時，請將這些字串從程式碼/標記中移入資源檔案 (`.resw`)。 您可以接著針對 App 支援的每一種語言建立該資源檔案的翻譯複本。
+如果希望應用程式支援不同的顯示語言，而且您的程式碼或 XAML 標記也含有字串常值時，請將這些字串從程式碼/標記中移入資源檔案 (`.resw`)。 您可以接著針對應用程式支援的每一種語言建立該資源檔案的翻譯複本。
 
 您通常會使用 `language` 限定詞來命名包含資源檔案 (`.resw`) 的資料夾。
 
@@ -206,7 +206,7 @@ public void SetLicenseLevel(BrandID brand)
 \Strings\language-ja\Resources.resw
 ```
 
-您可以省略 `language` 限定詞的 `language-` 部分 (也就是，限定詞名稱)。 您不可使用其他類型的限定詞這樣做，而且也只有在資料夾名稱中才做得到。
+您可以省略 `language-` 限定詞的 `language` 部分 (也就是，限定詞名稱)。 您不可使用其他類型的限定詞這樣做，而且也只有在資料夾名稱中才做得到。
 
 ```console
 \Strings\en\Resources.resw
@@ -252,7 +252,7 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 
 `targetsize` 限定詞主要用來指定要顯示在 [檔案總管] 中的[檔案類型關聯圖示](https://docs.microsoft.com/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type)或[通訊協定圖示](https://docs.microsoft.com/windows/desktop/search/-search-3x-wds-ph-ui-extensions)。 限定詞值表示以原始 (實體) 像素為單位的正方形影像側邊長度。 載入的會是符合 [檔案總管] 中 [檢視] 設定值的資源，如果完全相符的項目，則載入含有次大值的資源。
 
-在應用程式封裝資訊清單設計工具的 [視覺資產] 索引標籤中，您可以定義資產來表示應用程式圖示 (`/Assets/Square44x44Logo.png`) 的數個 `targetsize` 限定詞值大小。
+在應用程式封裝資訊清單設計工具的 [視覺資產] 索引標籤中，您可以定義資產來表示應用程式圖示 (`targetsize`) 的數個 `/Assets/Square44x44Logo.png` 限定詞值大小。
 
 如需有關針對 `scale` 及 `targetsize` 限定資源的詳細資訊，請參閱[針對 targetsize 限定影像資源](images-tailored-for-scale-theme-contrast.md#qualify-an-image-resource-for-targetsize)。
 
@@ -261,34 +261,34 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 `theme` 限定詞用來提供最符合預設應用程式模式設定的資源，或是應用程式使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme) 的覆寫。
 
 
-## <a name="shell-light-theme-and-unplated-resources"></a>Shell 淺色佈景主題和 unplated 的資源
-*Windows 10 可能 2019年更新*引進了新的"light"佈景主題，提供 Windows 殼層。 如此一來，先前已使用深色背景顯示某些應用程式資產現在會顯示淺色背景。 針對應用程式的應用程式，提供 altform unplated 資產的 工作列及視窗切換器 （Alt + Tab、 工作檢視等），您應該確認其可接受的對比淺色背景上。
+## <a name="shell-light-theme-and-unplated-resources"></a>Shell 淺色主題和 unplated 資源
+*Windows 10 2019 版更新*引進了 windows Shell 的新「light」主題。 因此，先前顯示在深色背景上的某些應用程式資產，現在會顯示在淺背景上。 針對針對工作列和視窗切換器提供 altform unplated 資產的應用程式（[Alt + Tab]、[工作視圖] 等），您應該確認它們在淺背景上具有可接受的對比。
 
-### <a name="providing-light-theme-specific-assets"></a>提供淺色佈景主題特定資產
-應用程式想要提供量身訂做的資源，殼層淺色佈景主題可以使用新的替代形式的資源限定詞： `altform-lightunplated`。 這個限定詞鏡像現有的 altform unplated 限定詞。 
+### <a name="providing-light-theme-specific-assets"></a>提供淺色主題特定資產
+想要為 shell 淺色主題提供量身打造之資源的應用程式，可以使用新的替代表單資源辨識符號： `altform-lightunplated`。 此限定詞會反映現有的 altform-unplated 辨識符號。 
 
-### <a name="downlevel-considerations"></a>舊版的考量
-應用程式應該不會使用`theme-light`辨識符號與`altform-unplated`限定詞。 這會導致無法預期的行為上 RS5 和較早版本的 Windows，因為方法的資源，所以會載入工作列。 在舊版 windows 中，可能不正確地使用佈景主題 light 版本。 `altform-lightunplated`限定詞可避免此問題。 
+### <a name="downlevel-considerations"></a>下層考慮
+應用程式不應該使用 `theme-light` 限定詞搭配 `altform-unplated` 辨識符號。 這會在 RS5 和舊版 Windows 上造成無法預期的行為，因為工作列的資源載入方式。 在舊版的 windows 上，可能會不正確地使用主題-light 版本。 `altform-lightunplated` 辨識符號可避免這個問題。 
 
-### <a name="compatibility-behavior"></a>相容性問題
-回溯相容性，Windows 會包含邏輯來偵測單色的圖示，並檢查是否它有別於預定的背景。 如果圖示無法符合對比需求，Windows 會尋找白底黑字新版的資產。 如果未提供，Windows 會切換回使用 plated 的新版的資產。
+### <a name="compatibility-behavior"></a>相容性行為
+為了回溯相容性，Windows 包含偵測單色圖示的邏輯，並檢查它是否與預期的背景相反。 如果圖示無法符合對比需求，Windows 就會尋找資產的對比白色版本。 如果無法使用，Windows 將會切換回使用資產的 plated 版本。
 
 
 
 ## <a name="important-apis"></a>重要 API
 
-* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
+* [Windows.applicationmodel.resources.core.resourcecoNtext. QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
 * [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
 ## <a name="related-topics"></a>相關主題
 
-* [有效的像素和縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [有效圖元和縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [資源管理系統](resource-management-system.md)
-* [如何準備進行當地語系化](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
-* [正在偵測平台應用程式上執行](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-* [將當地語系化的 UI 字串](localize-strings-ui-manifest.md)
-* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [地區碼 United Nations 統計資料除法 M49 構成要素](https://go.microsoft.com/fwlink/p/?linkid=247929)
-* [IANA 語言子標記登錄](https://go.microsoft.com/fwlink/p/?linkid=227303)
+* [如何準備當地語系化](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
+* [正在偵測您的應用程式執行所在的平臺](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [裝置系列總覽](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+* [當地語系化您的 UI 字串](localize-strings-ui-manifest.md)
+* [BCP-47](https://tools.ietf.org/html/bcp47)
+* [國家/地區代碼的 M49 組合的美國統計資料部門](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
+* [IANA 語言子標記登錄](https://www.iana.org/assignments/language-subtag-registry)
 * [調整配置和字型並支援 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

@@ -8,12 +8,12 @@ keywords: 觸控板、PTP、觸控、指標、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a4c3c5e2c3041aef3e2223e3bb45c1c3d3d37ad
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 991d85edd9c0a51412d33b48e364974d2095410e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365265"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258225"
 ---
 # <a name="touchpad-design-guidelines"></a>觸控板設計指導方針
 
@@ -55,11 +55,11 @@ ms.locfileid: "66365265"
 
 ![標準觸控板設定](images/mouse-touchpad-settings-standard.png)
 
-<sup>標準\\觸控板\\設定</sup>
+<sup>標準\\ 觸控板\\ 設定</sup>
 
 ![Windows 精確式觸控板設定](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\有效位數\\觸控板\\設定</sup>
+<sup>\\ 觸控板\\ 設定的 Windows\\ 精確度</sup>
 
 以下是一些已針對觸控板進行最佳化且適用於執行一般工作的手勢範例。
 
@@ -123,7 +123,7 @@ ms.locfileid: "66365265"
 
 如需有關查詢裝置功能的詳細資訊，請參閱[識別輸入裝置](identify-input-devices.md)。
 
-## <a name="visual-feedback"></a>視覺化回饋
+## <a name="visual-feedback"></a>視覺回饋
 
 
 -   偵測到觸控板游標時 (透過移動或暫留事件)，顯示滑鼠特定 UI，指示元素公開的功能。 如果觸控板游標有一段時間沒有移動，或者使用者起始觸控互動，讓觸控板 UI 逐漸淡出。 這可以讓 UI 保持整齊、不凌亂。
@@ -155,15 +155,15 @@ ms.locfileid: "66365265"
 * [處理指標輸入](handle-pointer-input.md)
 * [識別輸入裝置](identify-input-devices.md)
 **範例**
-* [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 **封存範例**
-* [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：XAML 使用者輸入的事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：筆勢和 GestureRecognizer 操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [輸入：裝置功能範例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [輸入： XAML 使用者輸入事件範例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [XAML 捲軸、移動流覽和縮放範例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [輸入：使用 GestureRecognizer 的手勢和操作](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
  
 
 

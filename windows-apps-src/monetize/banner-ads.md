@@ -5,12 +5,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, AdControl, 橫幅廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8aea8f204127a0f783f9b751a9f4178667753e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd3e57ebf5a7f7770adf2a8defcd92e66ad1e3a0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627243"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260341"
 ---
 # <a name="banner-ads"></a>橫幅廣告
 
@@ -24,12 +24,12 @@ ms.locfileid: "57627243"
 
 |  主題    | 描述 |               
 |----------|-------|
-| [XAML 和.NET 中的 AdControl](adcontrol-in-xaml-and--net.md)     | 在您的 XAML/.NET app 中新增橫幅廣告。        |
-| [以 HTML 5 AdControl 和 Javascript](adcontrol-in-html-5-and-javascript.md)     | 在您的 HTML5/JavaScript app 中新增橫幅廣告。        |
+| [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)     | 在您的 XAML/.NET app 中新增橫幅廣告。        |
+| [HTML 5 和 JAVAscript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)     | 在您的 HTML5/JavaScript app 中新增橫幅廣告。        |
 | [支援的橫幅廣告大小](supported-ad-sizes-for-banner-ads.md)    |  檢閱 UWP app 中支援的橫幅廣告大小。        |
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [GitHub 上的廣告範例](https://aka.ms/githubads)
-* [設定您的應用程式的 ad 單位](set-up-ad-units-in-your-app.md)
+* [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [設定應用程式的 ad 單位](set-up-ad-units-in-your-app.md)

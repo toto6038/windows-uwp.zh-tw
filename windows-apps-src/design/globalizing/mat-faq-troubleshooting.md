@@ -6,12 +6,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e27256fbf19ed31a7b087e94dea9e5514db516f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 07e087dbb0cb2fcbd4dd1d098f84c49543f3a885
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648263"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258148"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>多語應用程式工具組 4.0 常見問題與疑難排解
 
@@ -41,7 +41,7 @@ ms.locfileid: "57648263"
 
 ## <a name="when-i-build-my-project-i-dont-see-a-message-saying-that-a-multilingual-app-toolkit-build-has-started"></a>當我建置專案時，我沒看到顯示「多語應用程式工具組建置已啟動」的訊息
 
-確認您已為您的專案啟用 MAT。 在 **\[工具\]** 功能表上，選取 **\[多語應用程式工具組\]** > **\[啟用選取\]**。 若您的專案是使用先前版本啟用的，請使用 **\[工具\]** 功能表停用並重新啟用 MAT。 這會更新專案，使用新版本的工具組。
+確認您已為您的專案啟用 MAT。 在 **\[工具\]** 功能表上，選取 **\[多語應用程式工具組\]**  >  **\[啟用選取\]** 。 若您的專案是使用先前版本啟用的，請使用 **\[工具\]** 功能表停用並重新啟用 MAT。 這會更新專案，使用新版本的工具組。
 
 請確認您已安裝「為所有 Visual Studio 版本建置工作」元件。 這項建置元件會和延伸模組一同安裝，但可在安裝過程中手動取消選取。 這項元件為更新 .xlf 檔案並將翻譯新增到 PRI 檔案的必要元件。 若已安裝這項元件並且正常運作時，您便會看到這些建置訊息。
 
@@ -83,7 +83,7 @@ No XLIFF language files were found. The app will not contain any localized resou
 
 ## <a name="what-is-microsoft-translator"></a>什麼是 Microsoft Translator？
 
-Microsoft Translator 是機器式翻譯的雲端式服務。 機器翻譯適合在無法合理取得人類翻譯時存取翻譯。 您可以在 [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) 深入了解。
+Microsoft Translator 是機器式翻譯的雲端式服務。 機器翻譯適合在無法合理取得人類翻譯時存取翻譯。 您可以在 [Microsoft Translator](https://www.microsofttranslator.com/) 深入了解。
 
 工具組會使用 Microsoft Translator 服務為您提供翻譯建議。 您可以在 Microsoft Translator 圖示出現在 \[翻譯語言\] 對話方塊中時查看 Microsoft Translator 支援哪些語言。
 
@@ -128,7 +128,7 @@ Merge of Loc PRI file failed calling makepri.exe: "0x80004005"
 
 ## <a name="is-there-a-way-to-find-out-more-information-about-the-errors-im-seeing"></a>有什麼方法可以找到更多我看到的錯誤的相關資訊嗎？
 
-有，您可以在 Visual Studio 中開啟詳細記錄。 按一下 **\[工具\]** > **\[選項\]** > **\[專案及解決方案\]** > **\[建置及執行\]**。 將 **\[MSBuild 專案建置輸出詳細資訊\]** 從 \[最小\] 變更為 \[標準\] 或更高。
+有，您可以在 Visual Studio 中開啟詳細記錄。 按一下 **\[工具\]**  >  **\[選項\]**  >  **\[專案及解決方案\]**  >  **\[建置及執行\]** 。 將 **\[MSBuild 專案建置輸出詳細資訊\]** 從 \[最小\] 變更為 \[標準\] 或更高。
 
 從命令列執行 MSBuild 也會產生額外的訊息。
 
@@ -142,7 +142,7 @@ msbuild /t:rebuild <project-name>
 
 ## <a name="what-if-my-translator-doesnt-have-windows-10-andor-visual-studio-andor-the-multilingual-app-toolkit-installed"></a>如果我的翻譯人員沒有安裝 Windows 10，和/或 Visual Studio 和/或多語應用程式工具組的話怎麼辦？
 
-當您選取**輸出：郵件收件者**在匯出的字串資源 對話方塊中，此電子郵件包含下載和安裝多語系應用程式工具組 (MAT) 4.0 的連結。 即使沒有 Windows 10 和 Visual Studio，您的翻譯人員仍然可以安裝 MAT 4.0 獨立多語編輯器工具。
+當您在匯出字串資源對話方塊中選取 **\[輸出: 郵件收件者\]** 時，電子郵件會包含一個可讓對方下載並安裝多語應用程式工具組 (MAT) 4.0 的連結。 即使沒有 Windows 10 和 Visual Studio，您的翻譯人員仍然可以安裝 MAT 4.0 獨立多語編輯器工具。
 
 如需詳細資料，請參閱[使用多語應用程式工具組 4.0](use-mat.md)。
 
@@ -177,6 +177,6 @@ msbuild /t:rebuild <project-name>
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用多國語言的應用程式工具組 4.0](use-mat.md)
-* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
-* [MakePri.exe 命令列選項](../../app-resources/makepri-exe-command-options.md)
+* [使用多語系應用程式工具組4。0](use-mat.md)
+* [Microsoft 線上翻譯](https://www.microsofttranslator.com/)
+* [MakePri .exe 命令列選項](../../app-resources/makepri-exe-command-options.md)

@@ -4,14 +4,14 @@ description: 本節說明如何修改您的 PlayReady web 應用程式，以支�
 title: PlayReady 加密媒體延伸
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4d72050ca30271a0ad2c6c2c39c857e2c10550
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: b673122d707e152d24c49d3bacf71ed52cdb0ae5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061952"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256814"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady 加密媒體延伸
 
@@ -34,7 +34,7 @@ ms.locfileid: "73061952"
 -   提供主動取得非永久性授權。
 -   提供在一則訊息中取得多個授權的功能。
 
-    您可以使用包含多個金鑰識別碼（KeyIDs）的 PlayReady 物件，如同 Windows 8.1，或搭配多個 KeyIDs 使用[內容解密模型資料（CDMData）](https://go.microsoft.com/fwlink/p/?LinkID=626819) 。
+    您可以使用包含多個金鑰識別碼（KeyIDs）的 PlayReady 物件，如同 Windows 8.1，或搭配多個 KeyIDs 使用[內容解密模型資料（CDMData）](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN) 。
 
     > [!NOTE]
     > 在 Windows 10 中，CDMData 的 &lt;KeyID&gt; 下支援多個金鑰識別碼。
@@ -268,7 +268,7 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 
 本節列出在建立已啟用 PlayReady 的 Windows 10 web 應用程式時，應該考慮的程式設計考慮。
 
-在您的 app 關閉之前，該 app 建立的 **MSMediaKeys** 和 **MSMediaKeySession** 物件必須保持運作。 確保這些物件會保持運作的一種方式，是將它們指派為全域變數 (如果將變數宣告為函式內的區域變數，變數就會變成超出範圍且受限於記憶體回收)。 例如，下列範例會將 *\_msMediaKeys*和*g\_mediaKeySession*的變數指派為全域變數，然後將它們指派給中的**msMediaKeys**和**MSMediaKeySession**物件。函數.
+在您的 app 關閉之前，該 app 建立的 **MSMediaKeys** 和 **MSMediaKeySession** 物件必須保持運作。 確保這些物件會保持運作的一種方式，是將它們指派為全域變數 (如果將變數宣告為函式內的區域變數，變數就會變成超出範圍且受限於記憶體回收)。 例如，下列範例會將 *\_msMediaKeys*和*g\_mediaKeySession*的變數指派為全域變數，然後指派給函數中的**msMediaKeys**和**MSMediaKeySession**物件。
 
 ``` syntax
 var g_msMediaKeys;

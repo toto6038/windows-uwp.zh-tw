@@ -1,23 +1,23 @@
 ---
-Description: 本主題列出適用于 UWP 應用程式的字型，這些字型會當地語系化成美國以外的語言英語。
+Description: 本主題列出當地語系化為美國英文以外語言的 UWP app 可用的字型。
 title: 國際字型
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 06284481ccecbc3c9cd7d7a78d83ccd6e97a49a7
-ms.sourcegitcommit: f3c1a81b50f4a372a15996ac71b3f408a8ee1409
+ms.openlocfilehash: eb12ea0bb7966813413d29908c4974a7c4c97486
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72237520"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258072"
 ---
 # <a name="international-fonts"></a>國際字型
 
-本主題列出適用于 UWP 應用程式的字型，這些字型會當地語系化成美國以外的語言英語。
+本主題列出當地語系化為美國英文以外語言的 UWP app 可用的字型。
 
-下表的「語言標記」欄列出語言的 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)。 如需查看 Microsoft Store 特別支援的語言標記清單，請參閱[支援的語言](../../publish/supported-languages.md)。
+下表的「語言標記」欄列出語言的 [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)。 如需查看 Microsoft Store 特別支援的語言標記清單，請參閱[支援的語言](../../publish/supported-languages.md)。
 
 | 語言 | 語言標記 | Windows 中使用的字型 |
 | --------- | ----------- | -------------------- |
@@ -56,8 +56,8 @@ ms.locfileid: "72237520"
 | 希臘文 | el-GR | Segoe UI |
 | 古吉拉特文 | gu-IN | Nirmala UI |
 | 豪沙文 (拉丁) | ha-Latn-NG | Segoe UI |
-| Hebrew | he-IL | Segoe UI |
-| Hindi | hi-IN | Nirmala UI |
+| 希伯來文 | he-IL | Segoe UI |
+| 印度文 | hi-IN | Nirmala UI |
 | 匈牙利文 | hu-HU | Segoe UI |
 | 冰島文 | is-IS | Segoe UI |
 | 伊布文 | ig-NG | Segoe UI |
@@ -131,5 +131,5 @@ ms.locfileid: "72237520"
 
 ## <a name="related-topics"></a>相關主題
 
-* [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)
 * [支援的語言](../../publish/supported-languages.md)

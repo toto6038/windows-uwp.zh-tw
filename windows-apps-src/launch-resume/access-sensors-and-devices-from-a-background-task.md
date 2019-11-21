@@ -4,14 +4,14 @@ description: DeviceUseTrigger 可讓您的通用 Windows app 在背景存取感�
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp，背景工作
+keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: f2e4c3868c2eb83947cf9341e4fbd49e2724af61
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 50316df323129e4e36335ab32d6af8cc92b8a201
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370850"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259493"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>從背景工作存取感應器和裝置
 
@@ -20,7 +20,7 @@ ms.locfileid: "66370850"
 
 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 可讓您的通用 Windows 應用程式在背景存取感應器和周邊裝置，即使您的前景應用程式已暫停也一樣。 例如，根據您的 App 在何處執行而定，它能夠使用背景工作，將資料與裝置或監視感應器同步。 為了協助延長電池使用時間並確保可適當取得使用者同意，[**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 的用法受限於本主題中所述的原則。
 
-若要在背景中存取感應器或周邊裝置，請建立使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 的背景工作。 如需示範如何在電腦上完成這個動作的範例，請參閱[自訂 USB 裝置範例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 如需手機上的範例，請參閱[背景感應器範例](https://go.microsoft.com/fwlink/p/?LinkId=393307)。
+若要在背景中存取感應器或周邊裝置，請建立使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 的背景工作。 如需示範如何在電腦上完成這個動作的範例，請參閱[自訂 USB 裝置範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess)。 如需手機上的範例，請參閱[背景感應器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundSensors)。
 
 > [!Important]
 > **DeviceUseTrigger** 無法與同處理序背景工作搭配使用。 本主題中的資訊僅適用於在跨處理序中執行的背景工作。
@@ -29,17 +29,17 @@ ms.locfileid: "66370850"
 
 當使用者已看不到您的 App 時，Windows 會將您的 App 暫停或終止，以回收記憶體和 CPU 資源。 這可讓其他 App 在前景中執行，並減少電池耗電量。 發生這個情況時，如果沒有背景工作的協助，所有進行中的資料事件都將遺失。 Windows 提供背景工作觸發程序 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)，讓您的 App 能夠在背景中於裝置和感應器上安全地執行長時間執行的同步和監視操作，即使您的 App 暫停也一樣。 如需 App 週期的詳細資訊，請參閱[啟動、繼續和背景工作](index.md)。 如需背景工作的詳細資訊，請參閱[使用背景工作支援 App](support-your-app-with-background-tasks.md)。
 
-**附註**  在通用 Windows 應用程式，同步處理在背景中的裝置需要您的使用者已核准您的應用程式的背景同步處理。 裝置也必須透過作用中的 I/O 連接到電腦或與電腦配對，並允許最多 10 分鐘的背景活動。 本主題後續將說明有關原則強制執行的詳細資訊。
+**請注意**  在通用 Windows 應用程式中，若要在背景中同步處理裝置，您的使用者必須已核准應用程式的背景同步。 裝置也必須透過作用中的 I/O 連接到電腦或與電腦配對，並允許最多 10 分鐘的背景活動。 本主題後續將說明有關原則強制執行的詳細資訊。
 
 ### <a name="limitation-critical-device-operations"></a>限制：重要裝置操作
 
-部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 App (如果有的話) 指定為裝置的具有特殊權限的 App。 如需詳細資訊，請參閱 [Microsoft Store 裝置應用程式的裝置同步和更新](https://go.microsoft.com/fwlink/p/?LinkId=306619)。
+部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 App (如果有的話) 指定為裝置的具有特殊權限的 App。 如需詳細資訊，請參閱 [Microsoft Store 裝置應用程式的裝置同步和更新](https://msdn.microsoft.com/library/windows/hardware/dn265139(v=vs.85).aspx)。
 
 ## <a name="protocolsapis-supported-in-a-deviceusetrigger-background-task"></a>DeviceUseTrigger 背景工作中支援的通訊協定/API
 
 使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 的背景工作可讓您的 App 透過許多通訊協定/API 進行通訊，但其中的絕大部分不受系統觸發的背景工作支援。 以下受到通用 Windows app 支援。
 
-| Protocol         | 通用 Windows app 中的 DeviceUseTrigger                                                                                                                                                    |
+| 通訊協定         | 通用 Windows app 中的 DeviceUseTrigger                                                                                                                                                    |
 |------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | USB              | ![支援這個通訊協定。](images/ap-tools.png)                                                                                                                                            |
 | HID              | ![支援這個通訊協定。](images/ap-tools.png)                                                                                                                                            |
@@ -49,7 +49,7 @@ ms.locfileid: "66370850"
 | 有線網路    | ![支援這個通訊協定。](images/ap-tools.png)                                                                                                                                            |
 | Wi-Fi 網路    | ![支援這個通訊協定。](images/ap-tools.png)                                                                                                                                            |
 | IDeviceIOControl | ![DeviceServicingTrigger 支援 IDeviceIOControl](images/ap-tools.png)                                                                                                                       |
-| 感應器 API      | ![deviceservicingtrigger 支援通用的感應器 api](images/ap-tools.png) (僅限中的感應器[通用裝置系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)) |
+| 感應器 API      | ![deviceservicingtrigger 支援通用感應器 api](images/ap-tools.png) （僅限於[通用裝置系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)中的感應器） |
 
 ## <a name="registering-background-tasks-in-the-app-package-manifest"></a>在應用程式套件資訊清單中登錄背景工作
 
@@ -81,9 +81,9 @@ ms.locfileid: "66370850"
 8.  Windows 會監視系統條件和工作執行階段，若其不再符合必要條件，即會在必要時取消該工作。
 9.  當背景工作報告進度或完成時，您的 App 將透過已登錄工作上的進度和已完成的事件來接收這些事件。
 
-**重要**  使用時，請考慮以下重點[ **DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger):
+**重要**   在使用[**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)時，請考慮下列重點：
 
--   能夠以程式設計方式觸發背景工作，使用[ **DeviceUseTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)首度在 Windows 8.1 和 Windows Phone 8.1。
+-   以程式設計方式觸發使用[**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)之背景工作的功能，最初是在 Windows 8.1 和 Windows Phone 8.1 中引進。
 
 -   更新電腦上的周邊裝置時，Windows 會強制執行某些原則，以確保能取得使用者同意。
 
@@ -91,7 +91,7 @@ ms.locfileid: "66370850"
 
 -   Windows 可能會在不再符合某些原則需求時，取消使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 的背景工作，其中包含背景時間量的上限 (實際執行時間)。 使用這些背景工作來與周邊裝置進行互動時，請務必將這些原則需求納入考量。
 
-**祕訣**  若要查看這些背景工作的運作方式，請下載範例。 如需示範如何在電腦上完成這個動作的範例，請參閱[自訂 USB 裝置範例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 如需手機上的範例，請參閱[背景感應器範例](https://go.microsoft.com/fwlink/p/?LinkId=393307)。
+**提示**  若要查看這些背景工作的執行方式，請下載範例。 如需示範如何在電腦上完成這個動作的範例，請參閱[自訂 USB 裝置範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess)。 如需手機上的範例，請參閱[背景感應器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundSensors)。
  
 ## <a name="frequency-and-foreground-restrictions"></a>頻率與前景限制
 
@@ -118,7 +118,7 @@ Windows 會在 App 使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/
 | 裝置能夠使用支援的裝置周邊 API 來存取 App (適用於 USB、HID、藍牙及感應器等項目的 Windows 執行階段 API)。 如果 App 無法存取裝置或感應器，即會拒絕存取背景工作。 | ![原則套用](images/ap-tools.png) |
 | 應用程式所提供的背景工作進入點是在應用程式套件資訊清單中進行登錄。 | ![原則套用](images/ap-tools.png) |
 | 每個 App 只有一個執行中的 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 背景工作。 | ![原則套用](images/ap-tools.png) |
-| 裝置上的 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 背景工作數量尚未到達上限 (在 App 執行所在的裝置上)。 | **桌面裝置系列**:可註冊無限的數量的工作，以平行方式執行。 **行動裝置系列**:512 MB 裝置; 上的 1 個工作否則，2 個工作可以註冊，並以平行方式執行。 |
+| 裝置上的 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 背景工作數量尚未到達上限 (在 App 執行所在的裝置上)。 | **電腦裝置系列：** 您可以登錄不限數量的工作，並以平行方式執行這些工作。 **行動裝置系列：** 您可以在 512 MB 裝置上登錄 1 個工作，否則可以登錄 2 個工作，並以平行方式執行這些工作。 |
 | 使用支援的 API/通訊協定時，App 可以從單一 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 背景工作存取的周邊裝置或感應器的數量上限。 | 沒有限制 |
 | 當螢幕鎖定時，背景工作每分鐘會耗用 400 毫秒的 CPU 時間 (假設 1GHz CPU)，若螢幕未鎖定，則是每 5 分鐘會耗用相同的 CPU 時間。 無法符合這個原則會導致工作取消。 | ![原則套用](images/ap-tools.png) |
 
@@ -133,7 +133,7 @@ Windows 會在工作於背景中執行的同時，強制執行下列執行階段
 | 裝置連接到系統 (或處於無線裝置範圍內)。 | ![原則檢查套用](images/ap-tools.png) |
 | 工作正在對裝置執行正常 I/O (每 5 秒 1 個 I/O)。 | ![原則檢查套用](images/ap-tools.png) |
 | 應用程式尚未取消工作。 | ![原則檢查套用](images/ap-tools.png) |
-| 實際執行時間限制 – App 的工作可以在背景中執行的總時間。 | **桌面裝置系列**:10 分鐘的時間。 **行動裝置系列**:沒有時間限制。 為節省資源，一次只能執行 1 或 2 個工作。 |
+| 實際執行時間限制 – App 的工作可以在背景中執行的總時間。 | **電腦裝置系列：** 10 分鐘。 **行動裝置系列：** 沒有時間限制。 為節省資源，一次只能執行 1 或 2 個工作。 |
 | App 尚未結束。 | ![原則檢查套用](images/ap-tools.png) |
 
 ## <a name="best-practices"></a>最佳作法
@@ -168,7 +168,7 @@ Windows 會在工作於背景中執行的同時，強制執行下列執行階段
 
 ### <a name="cancelling-a-background-task"></a>取消背景工作
 
-若要從前景 App 取消正在背景中執行的工作，請在您於 App 中使用的 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 物件上使用 Unregister 方法來登錄 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 背景工作。 使用 **BackgroundTaskRegistration** 上的 [**Unregister**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.unregister) 方法來取消登錄背景工作，將導致背景工作基礎結構取消您的背景工作。
+若要從前景 App 取消正在背景中執行的工作，請在您於 App 中使用的 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 物件上使用 Unregister 方法來登錄 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 背景工作。 使用 [BackgroundTaskRegistration**上的**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.unregister)Unregister 方法來取消登錄背景工作，將導致背景工作基礎結構取消您的背景工作。
 
 此外，[**Unregister**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.unregister) 方法會取得布林值的 True 或 False 值，以指出是否應取消目前執行中的背景工作執行個體，而不需讓它們完成執行。 如需詳細資訊，請參閱 **Unregister** 的 API 參考資料。
 

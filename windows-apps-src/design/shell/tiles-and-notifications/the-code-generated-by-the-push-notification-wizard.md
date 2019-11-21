@@ -1,5 +1,5 @@
 ---
-Description: 您可以藉由 Visual Studio 中的精靈，從利用 Azure 行動服務建立的行動服務產生推播通知。
+Description: 您可以透過使用 Visual Studio 中的精靈，從利用 Azure 行動服務建立的行動服務產生推播通知。
 title: 由推播通知精靈產生的程式碼
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 template: detail.hbs
@@ -7,17 +7,17 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e30140a60906cb350940cc5ebd87347878845986
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8a91052adf29e6628ad70c1c004fdbaabe671d62
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365879"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258662"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推播通知精靈產生的程式碼
  
 
-您可以藉由 Visual Studio 中的精靈，從利用 Azure 行動服務建立的行動服務產生推播通知。 Visual Studio 精靈會產生程式碼，協助您開始使用。 這個主題說明精靈如何修改您的專案、所產生的程式碼如何作用、如何使用此程式碼，以及如何進一步充分利用推播通知。 請參閱 [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)。
+您可以透過使用 Visual Studio 中的精靈，從利用 Azure 行動服務建立的行動服務產生推播通知。 Visual Studio 精靈會產生程式碼，協助您開始使用。 這個主題說明精靈如何修改您的專案、所產生的程式碼如何作用、如何使用此程式碼，以及如何進一步充分利用推播通知。 請參閱 [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)。
 
 ## <a name="how-the-wizard-modifies-your-project"></a>精靈如何修改您的專案
 
@@ -42,7 +42,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## <a name="registration-for-push-notifications"></a>推播通知的登錄
 
 
-在 push.register。\*，UploadChannel 方法註冊的裝置接收推播通知。 市集會追蹤已安裝應用程式的執行個體，並提供推播通知通道。 請參閱 [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)。
+在 [push] 中註冊。\*，UploadChannel 方法會註冊裝置以接收推播通知。 市集會追蹤已安裝應用程式的執行個體，並提供推播通知通道。 請參閱 [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)。
 
 用戶端程式碼類似 JavaScript 後端和 .NET 後端兩者。 根據預設，當您新增 JavaScript 後端服務的推播通知時，對 notifyAllUsers 自訂 API 的一個範例呼叫會插入 UploadChannel 方法。
 
@@ -174,9 +174,9 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 ## <a name="server-side-scripts-javascript-backend-only"></a>伺服器端指令碼 (僅限 JavaScript 後端)
 
 
-如果是使用 JavaScript 後端的行動服務，則會在進行刪除、插入、讀取或更新操作時執行伺服器端指令碼。 指令碼不會實作這些操作，但是當用戶端呼叫 Windows Mobile REST API 觸發這些事件時，就會執行指令碼。 然後指令碼會呼叫 request.execute 或 request.respond 向呼叫內容發出回應，將控制權傳遞給操作本身。 請參閱 [Azure 行動服務 REST API 參考](https://go.microsoft.com/fwlink/p/?linkid=511139)。
+如果是使用 JavaScript 後端的行動服務，則會在進行刪除、插入、讀取或更新操作時執行伺服器端指令碼。 指令碼不會實作這些操作，但是當用戶端呼叫 Windows Mobile REST API 觸發這些事件時，就會執行指令碼。 然後指令碼會呼叫 request.execute 或 request.respond 向呼叫內容發出回應，將控制權傳遞給操作本身。 請參閱 [Azure 行動服務 REST API 參考](https://msdn.microsoft.com/library/azure/jj710108.aspx)。
 
-伺服器端指令碼提供各種不同函式。 請參閱[在 Azure 行動服務中登錄資料表操作](https://go.microsoft.com/fwlink/p/?linkid=511140)。 如需所有可用函式的參考，請參閱[行動服務伺服器指令碼參考](https://go.microsoft.com/fwlink/p/?linkid=257676)。
+伺服器端指令碼提供各種不同函式。 請參閱[在 Azure 行動服務中登錄資料表操作](https://msdn.microsoft.com/library/azure/dn167708.aspx)。 如需所有可用函式的參考，請參閱[行動服務伺服器指令碼參考](https://msdn.microsoft.com/library/windowsazure/jj554226)。
 
 系統也會在 Notifyallusers.js 中建立下列自訂 API 程式碼：
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 sendNotifications 函式會以快顯通知的方式傳送單一通知。 您也可以使用其他類型的推播通知。
 
-**祕訣**  如需如何取得在編輯指令碼時的協助資訊，請參閱[啟用伺服器端 JavaScript 的 IntelliSense](https://go.microsoft.com/fwlink/p/?LinkId=309275)。
+**提示**  如需如何在編輯腳本時取得協助的詳細資訊，請參閱[啟用伺服器端 JavaScript 的 IntelliSense](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx)。
 
  
 
@@ -231,9 +231,9 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 若行動服務提供的彈性不足、您想要以 C# 或 Visual Basic 撰寫伺服器程式碼，或是您已經有雲端服務並想要透過它傳送推播通知，則可以直接呼叫 Windows 推播通知服務 (WNS)。 直接呼叫 WNS 時，可以從您自己的雲端服務 (例如，監視來自資料庫或其他 Web 服務之資料的工作者角色) 傳送推播通知。 您的雲端服務必須透過 WNS 進行驗證，才能將推播通知傳送到您的應用程式。 請參閱[如何使用 Windows 推播通知服務進行驗證 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)) 或 [(C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/hh868206(v=win.10))。
 
-您也可以在行動服務中執行排定的工作，以傳送推播通知。 請參閱[在行動服務中排程週期性工作](https://go.microsoft.com/fwlink/p/?linkid=301694)。
+您也可以在行動服務中執行排定的工作，以傳送推播通知。 請參閱[在行動服務中排程週期性工作](https://azure.microsoft.com/documentation/articles/mobile-services-schedule-recurring-tasks/)。
 
-**警告**  一次執行推播通知精靈 之後, 不要執行精靈以新增另一個行動服務的註冊程式碼的第二次。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以完成這 push.register 中移動的精靈所產生的程式碼。\* (包括呼叫**CreatePushNotificationChannelForApplicationAsync**) OnLaunched 外部事件，但是這個細節取決於您的應用程式架構。
+**警告**  一旦您執行推播通知嚮導一次，請不要再次執行嚮導來新增另一個行動服務的註冊程式碼。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以在 push 中移動 wizard 產生的程式碼來完成這項操作。在 OnLaunched 事件外\* （包括**CreatePushNotificationChannelForApplicationAsync**的呼叫），但這項操作的細節將取決於您的應用程式架構。
 
  
 
@@ -242,9 +242,9 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 * [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
 * [原始通知概觀](raw-notification-overview.md)
-* [連接到 Windows Azure 行動服務 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
-* [連接到 Windows Azure 行動服務 (C#/C+ + VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
-* [快速入門：新增推播通知的行動服務 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
+* [連接到 Windows Azure 行動服務（JavaScript）](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
+* [連接到 Windows Azure Mobile Services （C#/C++/VB）](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
+* [快速入門：新增行動服務的推播通知（JavaScript）](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ff067729e71ed4d4a49a082adf9fc754804836a6
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 17ca27e9f9c10ba59edbe0af84118a1bee0a44a3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317593"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254344"
 ---
 # <a name="audio-graphs"></a>音訊圖
 
@@ -19,20 +19,20 @@ ms.locfileid: "67317593"
 
 本文示範如何使用 [**Windows.Media.Audio**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio) 命名空間中的 API 來建立音訊路由傳送、混音及處理案例的音訊圖。
 
-「音訊圖」  是一組用以傳送音訊資料的互連音訊節點。 
+「音訊圖」是一組用以傳送音訊資料的互連音訊節點。 
 
-- 「音訊輸入節點」  會從音訊輸入裝置、音訊檔案，或從自訂程式碼將音訊資料提供給此圖形。 
+- 「音訊輸入節點」會從音訊輸入裝置、音訊檔案，或從自訂程式碼將音訊資料提供給此圖形。 
 
-- 「音訊輸出節點」  是此圖形所處理之音訊的目的地。 音訊可以從此圖形路由傳送至音訊輸出裝置、音訊檔案或自訂程式碼。 
+- 「音訊輸出節點」是此圖形所處理之音訊的目的地。 音訊可以從此圖形路由傳送至音訊輸出裝置、音訊檔案或自訂程式碼。 
 
-- 「副混音節點」  會從一或多個節點取得音訊，然後將它們結合成可路由傳送至圖形中其他節點的單一輸出。 
+- 「副混音節點」會從一或多個節點取得音訊，然後將它們結合成可路由傳送至圖形中其他節點的單一輸出。 
 
 已建立所有節點並設定它們之間的連線後，您只需啟動音訊圖形，音訊資料就會從輸入節點經由任何副混音節點傳送至輸出節點。 此模型可讓您快速且輕鬆地實作案例，例如：從裝置的麥克風錄製到音訊檔、將檔案中的音訊播放到裝置的喇叭，或混合來自多個來源的音訊。
 
 將音訊效果加入至音訊圖，促成其他案例。 音訊圖中的每個節點可以填入零個或多個效果，以對透過節點傳遞的音訊執行音訊處理。 內建效果有好幾個：例如等化器、限制，以及可利用少數幾行程式碼附加到音訊節點的殘響效果。 您也可以建立自己的自訂音訊效果，其運作方式與內建效果完全相同。
 
 > [!NOTE]
-> [AudioGraph UWP 範例](https://go.microsoft.com/fwlink/?LinkId=619481)實作本概觀文章中所討論的程式碼。 您可以下載範例以查看內容中的程式碼，或做為您自己 app 的初期基礎。
+> [AudioGraph UWP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation)實作本概觀文章中所討論的程式碼。 您可以下載範例以查看內容中的程式碼，或做為您自己 app 的初期基礎。
 
 ## <a name="choosing-windows-runtime-audiograph-or-xaudio2"></a>選擇 Windows 執行階段 AudioGraph 或 XAudio2
 
@@ -43,26 +43,26 @@ Windows 執行階段音訊圖 API：
 -   明顯地比 XAudio2 容易使用。
 -   除了支援 C++，還可在 C# 中使用。
 -   可以直接使用包含壓縮檔案格式的音訊檔案。 XAudio2 只能在音訊緩衝區上操作，並不提供任何檔案 I/O 功能。
--   可以使用 Windows 10 中的低延遲音訊管線。
+-   可以在 Windows 10 中使用低延遲音訊管線。
 -   使用預設端點參數時，支援自動端點切換。 例如，如果使用者從裝置的喇叭切換到耳機時，則音訊會自動重新導向至新的輸入。
 
 ## <a name="audiograph-class"></a>AudioGraph 類別
 
-[  **AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) 類別是構成圖形之所有節點的父項。 使用此物件來建立所有音訊節點類型的執行個體。 將包含圖形組態設定的 [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings) 物件初始化，接著呼叫 [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createasync)，以建立 **AudioGraph** 類別的執行個體。 傳回的 [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) 可供存取建立的音訊圖，或在音訊圖建立失敗時提供錯誤值。
+[  **AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) 類別是構成圖形之所有節點的父項。 使用此物件來建立所有音訊節點類型的執行個體。 將包含圖形組態設定的AudioGraphSettings[**物件初始化，接著呼叫**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings)AudioGraph.CreateAsync[ **，以建立** AudioGraph](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createasync) 類別的執行個體。 傳回的 [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) 可供存取建立的音訊圖，或在音訊圖建立失敗時提供錯誤值。
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
--   使用 建立所有音訊的節點型別所建立\*方法**AudioGraph**類別。
--   [  **AudioGraph.Start**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.start) 方法會導致音訊圖開始處理音訊資料。 [  **AudioGraph.Stop**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.stop) 方法會停止音訊處理。 執行圖形時，可以獨立啟動和停止圖形中的每個節點，但圖形停止時，就沒有作用中的節點。 [**ResetAllNodes** ](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.resetallnodes)導致捨棄其音訊的緩衝區中現存的資料圖形中的所有節點。
+-   所有的音訊節點類型都是使用**AudioGraph**類別的 Create\* 方法建立的。
+-   [  **AudioGraph.Start**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.start) 方法會導致音訊圖開始處理音訊資料。 [  **AudioGraph.Stop**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.stop) 方法會停止音訊處理。 執行圖形時，可以獨立啟動和停止圖形中的每個節點，但圖形停止時，就沒有作用中的節點。 [**ResetAllNodes**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.resetallnodes)會使圖形中的所有節點捨棄目前在其音訊緩衝區中的任何資料。
 -   當圖形開始處理新的音訊資料配量，會發生 [**QuantumStarted**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.quantumstarted) 事件。 當配量處理完成時，會發生 [**QuantumProcessed**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.quantumprocessed) 事件。
 
 -   唯一必要的 [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings) 屬性是 [**AudioRenderCategory**](https://docs.microsoft.com/uwp/api/Windows.Media.Render.AudioRenderCategory)。 指定這個值可讓系統最佳化指定類別的音訊管線。
--   音訊圖的配量大小會決定一次處理的範例數目。 根據預設，配量大小採用預設取樣率並以 10 毫秒為基礎。 如果您藉由設定 [**DesiredSamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredsamplesperquantum) 屬性來指定自訂配量大小，您也必須將 [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode) 屬性設定為 **ClosestToDesired**，否則會忽略所提供的值。 如果使用這個值，則系統會選擇儘可能接近您指定之配量大小的大小。 若要判斷實際配量大小，請在建立完成後檢查 **AudioGraph** 的 [**SamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.samplesperquantum)。
+-   音訊圖的配量大小會決定一次處理的範例數目。 根據預設，配量大小採用預設取樣率並以 10 毫秒為基礎。 如果您藉由設定 [**DesiredSamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredsamplesperquantum) 屬性來指定自訂配量大小，您也必須將 [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode) 屬性設定為 **ClosestToDesired**，否則會忽略所提供的值。 如果使用這個值，則系統會選擇儘可能接近您指定之配量大小的大小。 若要判斷實際配量大小，請在建立完成後檢查 [AudioGraph**的**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.samplesperquantum)SamplesPerQuantum。
 -   如果您只打算搭配使用音訊圖和檔案，而不打算輸出到音訊裝置，建議您不要設定 [**DesiredSamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredsamplesperquantum) 屬性，以使用預設配量大小。
 -   [  **DesiredRenderDeviceAudioProcessing**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing) 屬性決定主要轉譯裝置對音訊圖輸出執行的處理量。 **Default** 設定可讓系統對指定的音訊轉譯類別使用預設音訊處理。 此處理可大幅改善某些裝置上的音訊聲音，特別是具有小型喇叭的行動裝置。 **Raw** 設定可將執行的訊號處理量降至最低，進而提高效能，但可能會導致某些裝置上的音效品質較差。
--   如果 [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode) 設定為 **LowestLatency**，則音訊圖會自動為 [**DesiredRenderDeviceAudioProcessing**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing) 使用 **Raw**。
+-   如果 [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode) 設定為 **LowestLatency**，則音訊圖會自動為DesiredRenderDeviceAudioProcessing[**使用**Raw](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing)。
 - 從 Windows 10 版本 1803 開始，您可以設定 [**AudioGraphSettings.MaxPlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.maxplaybackspeedfactor) 屬性來設定用於 [**AudioFileInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileinputnode.playbackspeedfactor)、[**AudioFrameInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.playbackspeedfactor) 和 [**MediaSourceInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceinputnode.playbackspeedfactor) 屬性的最大值。 當音訊圖支援大於 1 的播放速度因素，系統必須配置額外的記憶體以維護音訊資料的足夠緩衝。 基於這個原因，將 **MaxPlaybackSpeedFactor** 設定為您的應用程式所需的最小值，可以減少應用程式耗用的記憶體。 如果您的應用程式只以正常速度播放內容，建議您將 MaxPlaybackSpeedFactor 設定為 1。
 -   [  **EncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.encodingproperties) 可判斷圖形所使用的音訊格式。 僅支援 32 位元的浮點格式。
 -   [  **PrimaryRenderDevice**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.primaryrenderdevice) 會設定音訊圖的主要轉譯裝置。 如果您未設定此項，則會使用預設系統裝置。 主要轉譯裝置用來計算圖形中的其他節點的配量大小。 如果系統上未出現任何音訊轉譯裝置，則音訊圖建立將會失敗。
@@ -80,13 +80,13 @@ Windows 執行階段音訊圖 API：
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-如果您想要指定裝置輸入節點的特定音訊擷取裝置，您可以使用[ **Windows.Devices.Enumeration.DeviceInformation** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)類別，以取得一份系統的可用音訊擷取裝置，藉由呼叫[ **FindAllAsync** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)並傳入所傳回的音訊轉譯的裝置選取器[ **Windows.Media.Devices.MediaDevice.GetAudioCaptureSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector)。 您能以程式設計方式選擇其中一個傳回的 **DeviceInformation** 物件，或顯示 UI 讓使用者選取裝置，然後將它傳遞到 [**CreateDeviceInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync) 中。
+如果您想要指定裝置輸入節點的特定音訊捕捉裝置，您可以使用[**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)類別來取得系統可用的音訊捕捉裝置清單，方法是呼叫[**FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) ，並傳入 MediaDevice 所傳回的音訊轉譯裝置選取器。 [**GetAudioCaptureSelector.** ](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector)。 您能以程式設計方式選擇其中一個傳回的 **DeviceInformation** 物件，或顯示 UI 讓使用者選取裝置，然後將它傳遞到 [**CreateDeviceInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync) 中。
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
 ##  <a name="device-output-node"></a>裝置輸出節點
 
-裝置輸出節點會將音訊從圖形推送至音訊轉譯裝置，例如喇叭或耳機。 透過呼叫 [**CreateDeviceOutputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceoutputnodeasync) 建立 [**DeviceOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode)。 輸出節點會使用音訊圖的 [**PrimaryRenderDevice**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.primaryrenderdevice)。
+裝置輸出節點會將音訊從圖形推送至音訊轉譯裝置，例如喇叭或耳機。 透過呼叫 [**CreateDeviceOutputNodeAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) 建立 [**DeviceOutputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceoutputnodeasync)。 輸出節點會使用音訊圖的 [**PrimaryRenderDevice**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.primaryrenderdevice)。
 
 [!code-cs[DeclareDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceOutputNode)]
 
@@ -94,7 +94,7 @@ Windows 執行階段音訊圖 API：
 
 ##  <a name="file-input-node"></a>檔案輸入節點
 
-檔案輸入節點可讓您將資料從音訊檔案送入圖形中。 透過呼叫 [**CreateFileInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createfileinputnodeasync) 建立 [**AudioFileInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileInputNode)。
+檔案輸入節點可讓您將資料從音訊檔案送入圖形中。 透過呼叫 [**CreateFileInputNodeAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileInputNode) 建立 [**AudioFileInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createfileinputnodeasync)。
 
 [!code-cs[DeclareFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileInputNode)]
 
@@ -109,7 +109,7 @@ Windows 執行階段音訊圖 API：
 
 ##  <a name="mediasource-input-node"></a>MediaSource 輸入節點
 
-[  **MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) 類別提供一個常見的方法來參考和播放來自不同來源的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式，可能是磁碟上的檔案、串流或彈性資料流網路來源)。 [**MediaSourceAudioInputNode](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceaudioinputnode) 節點可讓您將音訊資料從 **MediaSource** 引導至音訊圖中。 藉由呼叫 [**CreateMediaSourceAudioInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_)、在代表您要播放內容的 **MediaSource** 物件中傳遞，建立 **MediaSourceAudioInputNode**。 會傳回 [**CreateMediaSourceAudioInputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)，您可透過檢查 [**Status**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) 屬性用來判斷作業狀態。 如果狀態為 **Success**，您可透過存取 [**Node**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) 屬性來取得建立的 **MediaSourceAudioInputNode**。 下列範例顯示從 AdaptiveMediaSource 物件 (代表在網路上串流內容) 建立節點。 如需使用 **MediaSource** 的詳細資訊，請參閱[媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。 如需在網際網路上串流媒體內容的詳細資訊，請參閱[彈性資料流](adaptive-streaming.md)。
+[  **MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) 類別提供一個常見的方法來參考和播放來自不同來源的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式，可能是磁碟上的檔案、串流或彈性資料流網路來源)。 [**MediaSourceAudioInputNode](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceaudioinputnode) 節點可讓您將音訊資料從 **MediaSource** 引導至音訊圖中。 藉由呼叫CreateMediaSourceAudioInputNodeAsync[ **、在代表您要播放內容的** MediaSource](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_) 物件中傳遞，建立 **MediaSourceAudioInputNode**。 會傳回 [**CreateMediaSourceAudioInputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)，您可透過檢查 [**Status**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) 屬性用來判斷作業狀態。 如果狀態為 **Success**，您可透過存取Node[**屬性來取得建立的**MediaSourceAudioInputNode](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node)。 下列範例顯示從 AdaptiveMediaSource 物件 (代表在網路上串流內容) 建立節點。 如需使用 **MediaSource** 的詳細資訊，請參閱[媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。 如需在網際網路上串流媒體內容的詳細資訊，請參閱[彈性資料流](adaptive-streaming.md)。
 
 [!code-cs[DeclareMediaSourceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareMediaSourceInputNode)]
 
@@ -129,7 +129,7 @@ Windows 執行階段音訊圖 API：
 
 ##  <a name="file-output-node"></a>檔案輸出節點
 
-檔案輸出節點可讓您將音訊資料從圖形引導至音訊檔中。 透過呼叫 [**CreateFileOutputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createfileoutputnodeasync) 建立 [**AudioFileOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileOutputNode)。
+檔案輸出節點可讓您將音訊資料從圖形引導至音訊檔中。 透過呼叫 [**CreateFileOutputNodeAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileOutputNode) 建立 [**AudioFileOutputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createfileoutputnodeasync)。
 
 [!code-cs[DeclareFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileOutputNode)]
 
@@ -137,11 +137,11 @@ Windows 執行階段音訊圖 API：
 [!code-cs[CreateFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileOutputNode)]
 
 -   檔案輸出節點支援下列檔案格式：mp3、wav、wma、m4a。
--   呼叫 [**AudioFileOutputNode.FinalizeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileoutputnode.finalizeasync) 之前，您必須呼叫 [**AudioFileOutputNode.Stop**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileoutputnode.stop) 來停止節點的處理程序，否則會擲回例外狀況。
+-   呼叫 [**AudioFileOutputNode.FinalizeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileoutputnode.stop) 之前，您必須呼叫 [**AudioFileOutputNode.Stop**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileoutputnode.finalizeasync) 來停止節點的處理程序，否則會擲回例外狀況。
 
 ##  <a name="audio-frame-input-node"></a>音訊框架輸入節點
 
-音訊框架輸入節點可讓您將在自己的程式碼中產生的音訊資料推送至音訊圖中。 這會促成一些案例，例如建立自訂軟體合成器。 透過呼叫 [**CreateFrameInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createframeinputnode) 建立 [**AudioFrameInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFrameInputNode)。
+音訊框架輸入節點可讓您將在自己的程式碼中產生的音訊資料推送至音訊圖中。 這會促成一些案例，例如建立自訂軟體合成器。 透過呼叫 [**CreateFrameInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFrameInputNode) 建立 [**AudioFrameInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createframeinputnode)。
 
 [!code-cs[DeclareFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameInputNode)]
 
@@ -152,7 +152,7 @@ Windows 執行階段音訊圖 API：
 
 [!code-cs[QuantumStarted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStarted)]
 
--   傳遞至 **QuantumStarted** 事件處理常式的 [**FrameInputNodeQuantumStartedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs) 物件會公開 [**RequiredSamples**](https://docs.microsoft.com/uwp/api/windows.media.audio.frameinputnodequantumstartedeventargs.requiredsamples) 屬性，以指出音訊圖需要多少樣本才能填滿所要處理的配量。
+-   傳遞至 [QuantumStarted**事件處理常式的**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs)FrameInputNodeQuantumStartedEventArgs 物件會公開 [**RequiredSamples**](https://docs.microsoft.com/uwp/api/windows.media.audio.frameinputnodequantumstartedeventargs.requiredsamples) 屬性，以指出音訊圖需要多少樣本才能填滿所要處理的配量。
 -   呼叫 [**AudioFrameInputNode.AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe)，將填滿音訊資料的 [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) 物件傳遞至圖形中。
 - 使用 **MediaFrameReader** 搭配音訊資料的一組全新 API 在 Windows 10 版本 1803 中引進。 這些 API 可讓您從媒體畫面來源取得 **AudioFrame** 物件，此物件可使用 **AddFrame** 方法傳遞給 **FrameInputNode**。 如需詳細資訊，請參閱[使用 MediaFrameReader 處理音訊框架](process-audio-frames-with-mediaframereader.md)。
 -   **GenerateAudioData** 協助程式方法的範例實作如下所示。
@@ -165,16 +165,16 @@ Windows 執行階段音訊圖 API：
 
 [!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
--   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性]  頁面、按一下 [建置]  屬性頁，然後選取 [容許 Unsafe 程式碼]  核取方塊。
--   將所需的緩衝區大小傳入至建構函式，以在 **Windows.Media** 命名空間中初始化 [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) 的新執行個體。 緩衝區大小是樣本數目乘以每個樣本的大小。
--   透過呼叫 [**LockBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audioframe.lockbuffer)，以取得音訊框架的 [**AudioBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer)。
--   呼叫 [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference)，從音訊緩衝區取得 [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85)) COM 介面的執行個體。
+-   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性] 頁面、按一下 [建置] 屬性頁，然後選取 [容許 Unsafe 程式碼] 核取方塊。
+-   將所需的緩衝區大小傳入至建構函式，以在 [Windows.Media**命名空間中初始化**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame)AudioFrame 的新執行個體。 緩衝區大小是樣本數目乘以每個樣本的大小。
+-   透過呼叫 [**LockBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer)，以取得音訊框架的 [**AudioBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audioframe.lockbuffer)。
+-   呼叫 [**CreateReference**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))，從音訊緩衝區取得 [**IMemoryBufferByteAccess**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference) COM 介面的執行個體。
 -   呼叫 [**IMemoryBufferByteAccess.GetBuffer**](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)，取得原始音訊緩衝區資料的指標並將它轉換為音訊資料的範例資料類型。
 -   使用資料填滿緩衝區，並傳回 [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) 以便提交至音訊圖中。
 
 ##  <a name="audio-frame-output-node"></a>音訊框架輸出節點
 
-音訊框架輸出節點可讓您使用所建立的自訂程式碼，接收和處理來自音訊圖的音訊資料輸出。 其中一個範例案例就是執行音訊輸出的訊號分析。 透過呼叫 [**CreateFrameOutputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createframeoutputnode) 以建立 [**AudioFrameOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFrameOutputNode)。
+音訊框架輸出節點可讓您使用所建立的自訂程式碼，接收和處理來自音訊圖的音訊資料輸出。 其中一個範例案例就是執行音訊輸出的訊號分析。 透過呼叫 [**CreateFrameOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFrameOutputNode) 以建立 [**AudioFrameOutputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createframeoutputnode)。
 
 [!code-cs[DeclareFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameOutputNode)]
 
@@ -183,7 +183,7 @@ Windows 執行階段音訊圖 API：
 當音訊圖開始處理音訊資料的配量時，會引發 [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph.QuantumStarted) 事件。 您可以在此事件的處理常式中存取音訊資料。 
 
 > [!NOTE]
-> 如果要在與音訊圖同步的規律節奏中擷取音訊框架，請在同步的 **QuantumStarted** 事件處理常式中呼叫 [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeoutputnode.GetFrame)。 在音訊引擎完成音訊處理之後，會非同步引發 **QuantumProcessed** 事件，這表示其節奏可能是不規則的。 因此，您不應使用 **QuantumProcessed** 事件來同步處理音訊框架資料。
+> 如果要在與音訊圖同步的規律節奏中擷取音訊框架，請在同步的 [QuantumStarted](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeoutputnode.GetFrame) 事件處理常式中呼叫 **AudioFrameOutputNode.GetFrame**。 在音訊引擎完成音訊處理之後，會非同步引發 **QuantumProcessed** 事件，這表示其節奏可能是不規則的。 因此，您不應使用 **QuantumProcessed** 事件來同步處理音訊框架資料。
 
 [!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
 
@@ -193,8 +193,8 @@ Windows 執行階段音訊圖 API：
 [!code-cs[ProcessFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetProcessFrameOutput)]
 
 -   如上述的音訊框架輸入節點範例，您必須宣告 **IMemoryBufferByteAccess** COM 介面並設定您的專案允許不安全的程式碼，才能存取底層音訊緩衝區。
--   透過呼叫 [**LockBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audioframe.lockbuffer)，以取得音訊框架的 [**AudioBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer)。
--   透過呼叫 [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference) 以從音訊緩衝區取得 **IMemoryBufferByteAccess** COM 介面的執行個體。
+-   透過呼叫 [**LockBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer)，以取得音訊框架的 [**AudioBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audioframe.lockbuffer)。
+-   透過呼叫CreateReference[**以從音訊緩衝區取得**IMemoryBufferByteAccess](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference) COM 介面的執行個體。
 -   呼叫 **IMemoryBufferByteAccess.GetBuffer**，取得原始音訊緩衝區資料的指標並將它轉換為音訊資料的範例資料類型。
 
 ## <a name="node-connections-and-submix-nodes"></a>節點連線和副混音節點
@@ -230,7 +230,7 @@ Windows 執行階段音訊圖 API：
 [!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
 
 -   所有音訊效果都會實作 [**IAudioEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IAudioEffectDefinition)。 每個節點都會公開 **EffectDefinitions** 屬性，以表示套用至該節點的效果清單。 將效果的定義物件新增至清單，即可新增該效果。
--   **Windows.Media.Audio** 命名空間中提供了數個效果定義類別。 它們包括：
+-   **Windows.Media.Audio** 命名空間中提供了數個效果定義類別。 這些地方包括：
     -   [**EchoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EchoEffectDefinition)
     -   [**EqualizerEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EqualizerEffectDefinition)
     -   [**LimiterEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.LimiterEffectDefinition)
@@ -264,7 +264,7 @@ Windows 執行階段音訊圖 API：
 
 根據預設，空間音訊是使用 Microsoft 的聲學頭部關係轉移函數 (HRTF) 演算法，根據相對於接聽器的形狀、速度及位置來減弱音訊。 您可以將 [**SpatialAudioModel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.spatialaudiomodel) 屬性設為 **FoldDown** 來使用模擬空間音訊的簡單立體聲混音方法，此方法較不準確，但所需的 CPU 與記憶體資源較少。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 - [媒體播放](media-playback.md)
  
 

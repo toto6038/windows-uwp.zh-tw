@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a660512abe5f18f7b1955853dc5389dc902fd2e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0b5e0ea6deef7dfe3531c8d0406e08bfae80f0e2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371269"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260453"
 ---
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>當應用程式移至背景時釋出記憶體
 
@@ -76,7 +76,7 @@ Windows 10 版本 1607 導入兩個新的應用程式週期事件：[**EnteredBa
 
 [!code-cs[LeavingBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetLeavingBackground)]
 
-**CreateRootFrame** 協助程式方法會重新建立您 App 的檢視內容。 這個方法中的程式碼與預設專案範本中提供的 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 處理常式程式碼幾乎完全相同。 唯一的差異在於 **Launching** 處理常式會從 [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 的 [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.previousexecutionstate) 屬性判斷先前的執行狀態，而 **CreateRootFrame** 方法則是直接取得以引數形式傳入的先前執行狀態。 若要將重複的程式碼縮減到最少，您可以重構預設的 **Launching** 事件處理常式程式碼來呼叫 **CreateRootFrame**。
+**CreateRootFrame** 協助程式方法會重新建立您應用程式的檢視內容。 這個方法中的程式碼與預設專案範本中提供的 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 處理常式程式碼幾乎完全相同。 唯一的差異在於 **Launching** 處理常式會從 [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.previousexecutionstate) 的 [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 屬性判斷先前的執行狀態，而 **CreateRootFrame** 方法則是直接取得以引數形式傳入的先前執行狀態。 若要將重複的程式碼縮減到最少，您可以重構預設的 **Launching** 事件處理常式程式碼來呼叫 **CreateRootFrame**。
 
 [!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
 
@@ -103,5 +103,5 @@ Windows 10 版本 1607 導入兩個新的應用程式週期事件：[**EnteredBa
 
 ## <a name="related-topics"></a>相關主題
 
-* [背景媒體播放範例](https://go.microsoft.com/fwlink/p/?LinkId=800141) - 說明如何在 App 移至背景狀態時釋出記憶體。
+* [背景媒體播放範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback) - 說明如何在 App 移至背景狀態時釋出記憶體。
 * [診斷工具](https://devblogs.microsoft.com/devops/diagnostic-tools-debugger-window-in-visual-studio-2015/) - 使用診斷工具來觀察記憶體回收事件，並驗證您的 App 以您預期的方式釋出記憶體。

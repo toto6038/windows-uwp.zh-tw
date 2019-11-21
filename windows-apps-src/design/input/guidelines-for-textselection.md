@@ -1,5 +1,5 @@
 ---
-Description: 本主題說明新的 Windows UI，用於選取和操作文字、 影像及控制項，並提供您的 UWP 應用程式中使用這些新的選取範圍和操作機制時，應考量的使用者經驗指導方針。
+Description: 本主題說明用來選取和管理文字、影像和控制項的新 Windows UI，並提供在 UWP 應用程式中使用這些新選取和操作機制時應考慮的使用者經驗指導方針。
 title: 選取文字和影像
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -8,19 +8,19 @@ keywords: 鍵盤、文字、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dab8d26436d312601b749bed7e97048ed5805bb
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 56f09f2c903354159c63fa7226007cd65e57e69e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317279"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257921"
 ---
 # <a name="selecting-text-and-images"></a>選取文字和影像
 
 
 本文說明如何選取及操作文字、影像以及控制項，並提供在應用程式中使用這些機制時，所應考慮的使用者經驗指導方針。
 
-> **重要的 Api**:[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **重要 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
  
 
 
@@ -45,24 +45,24 @@ ms.locfileid: "67317279"
 
 文字選取和操作特別容易受到觸控互動所帶來的使用者經驗挑戰影響。 滑鼠、畫筆/手寫筆以及鍵盤輸入都是極細微的：滑鼠點選或畫筆/手寫筆接觸一般都是對應單一像素，按鍵則不是按下就是未按下。 觸控輸入並不精細；很難將指尖的整個表面對應螢幕上特定的 x-y 位置來精確放置一個文字插入點。
 
-**考量和建議**
+**考慮與建議**
 
-您可以使用語言架構，在 Windows 中透過公開的內建控制項，建置提供完整的平台使用者互動體驗，包括選取和操作行為的應用程式。 您會發現內建控制項的互動功能足以滿足絕大多數的 UWP 應用程式。
+使用透過 Windows 中的語言架構所公開的內建控制項來建立應用程式，以提供完整的平臺使用者互動體驗，包括選取和操作行為。 您會發現內建控制項的互動功能足以滿足絕大多數的 UWP 應用程式。
 
 使用標準 UWP 文字控制項時，將無法自訂本主題中所描述的選取行為和視覺效果。
 
-**文字選取範圍**
+**文字選取**
 
-如果您的應用程式需要自訂的 UI 支援文字選取範圍，我們建議您遵循此處所述的 Windows 選取項目行為。
+如果您的應用程式需要支援文字選取的自訂 UI，建議您遵循這裡所述的 Windows 選取行為。
 
 **可編輯和不可編輯的內容**
 
 
-使用觸控時，選取互動主要是透過手勢來執行的，例如點選來設定插入游標，或選取一個文字並滑動來修改選取範圍。 因為與其他 Windows 觸控互動，計時的互動僅限於按下按住不放手勢，來顯示資訊的 UI。 如需詳細資訊，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
+使用觸控時，選取互動主要是透過手勢來執行的，例如點選來設定插入游標，或選取一個文字並滑動來修改選取範圍。 如同其他的 Windows 觸控互動，計時的互動僅限於按住手勢來顯示資訊 UI。 如需詳細資訊，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
 
-Windows 會辨識選取項目互動，可以讓您編輯和不可編輯的兩個可能的狀態，並據此調整 UI 選取項目、 意見反應和功能。
+Windows 可以辨識選取範圍互動、可編輯和不可編輯的兩個可能狀態，並據此調整選取範圍 UI、意見反應和功能。
 
-**可編輯的內容**
+**可編輯內容**
 
 若在文字的左半部內點選，游標的位置就會在文字的左邊；若在右半部內點選，游標的位置就會在文字的右邊。
 
@@ -78,11 +78,11 @@ Windows 會辨識選取項目互動，可以讓您編輯和不可編輯的兩個
 
 ![在選取範圍內或在移駐夾上進行點選 (或長按)，以叫用操作功能表。](images/textselection-show-context.png)
 
-**附註**  這些互動而稍有不同如果拼錯的字。 點選標示為拼錯的文字會將整個文字反白，並叫用建議拼法操作功能表。
+**請注意**，  這些互動在拼錯字組的情況下會有些不同。 點選標示為拼錯的文字會將整個文字反白，並叫用建議拼法操作功能表。
 
  
 
-**非可編輯的內容**
+**不可編輯的內容**
 
 下列影像示範如何在文字內點選以選取文字 (初始選取範圍中不包含任何空格)。
 
@@ -98,34 +98,34 @@ Windows 會辨識選取項目互動，可以讓您編輯和不可編輯的兩個
 
 ![具備進度移駐夾的媒體播放程式](images/gripper-mediaplayer.png)
 
-*Media player，搭配可調整的進度列。*
+*可調整進度列的 Media player。*
 
 ![具備裁剪移駐夾的影像](images/gripper-imagemanip.png)
 
-*使用裁剪夾的影像編輯器。*
+*具有裁剪 grippers 的影像編輯器。*
 
 ## <a name="related-articles"></a>相關文章
 
 
 
 **適用於開發人員**
-* [自訂的使用者互動](https://docs.microsoft.com/windows/uwp/design/layout/index)
+* [自訂使用者互動](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **範例**
-* [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
 
 **封存範例**
-* [輸入：XAML 使用者輸入的事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控的點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：簡化的手寫範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [輸入：Windows 8 筆勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 觸控的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [輸入： XAML 使用者輸入事件範例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [輸入：裝置功能範例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [輸入：觸控點擊測試範例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [XAML 捲軸、移動流覽和縮放範例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [輸入：簡化的筆跡範例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [輸入： Windows 8 手勢範例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Input：操作和手勢（C++）範例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [DirectX touch 輸入範例](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

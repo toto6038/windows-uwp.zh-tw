@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b68e736cc6d413196205f84467b7e159c53cb98e
-ms.sourcegitcommit: e7589fa25d8de86c36b6ce6d90d360337718ef93
+ms.openlocfilehash: 0d54ab79926ef20bb54a83346c12df2ea383167d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71311235"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258347"
 ---
 # <a name="mouse-interactions"></a>滑鼠互動
 
@@ -59,7 +59,7 @@ ms.locfileid: "71311235"
 <td align="left"><p>按滑鼠右鍵選取與命令</p></td>
 <td align="left"><p>按滑鼠右鍵可顯示其中包含全域命令的瀏覽列 (如果有的話) 和應用程式列。 在某個元素上按一下滑鼠右鍵即可選取該元素，並且顯示其中包含所選元素之操作命令的應用程式列。</p>
 <div class="alert">
-<strong>注意</strong>：如果選取範圍或應用程式行命令不是適當的 UI 行為，請  以滑鼠右鍵按一下以顯示內容功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
+<strong>注意</strong>  如果選取範圍或應用程式行命令不是適當的 UI 行為，請按一下滑鼠右鍵以顯示內容功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
 </div>
 <div>
  
@@ -86,7 +86,7 @@ ms.locfileid: "71311235"
 
 ## <a name="mouse-input-events"></a>滑鼠輸入事件
 
-大部分的滑鼠輸入都可以透過所有[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)物件所支援的一般路由輸入事件來處理。 它們包括：
+大部分的滑鼠輸入都可以透過所有[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)物件所支援的一般路由輸入事件來處理。 這些地方包括：
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -127,7 +127,7 @@ ms.locfileid: "71311235"
 
 不過，您可以在[Windows](https://docs.microsoft.com/uwp/api/windows.ui.input)中使用指標、手勢和操作事件，以利用每個裝置的特定功能（例如滑鼠滾輪事件）。
 
-**範例**請參閱我們的[BasicInput 範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)，適用于。
+**範例：** 請參閱我們的[BasicInput 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)，適用于。
 
 ## <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
@@ -162,7 +162,7 @@ ms.locfileid: "71311235"
 
 ### <a name="samples"></a>範例
 
-- [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-- [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-- [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895) \(英文\)
+- [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)

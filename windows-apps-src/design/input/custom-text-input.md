@@ -8,12 +8,12 @@ keywords: 鍵盤, 文字, 核心文字, 自訂文字, 文字服務架構, 輸入
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 91015294c595987e14189f85f3bd2cbed3ba8423
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6313fb4deed76c61d5fb8309da72417b92bff503
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363868"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258012"
 ---
 # <a name="custom-text-input"></a>自訂文字輸入
 
@@ -21,7 +21,7 @@ ms.locfileid: "66363868"
 
 [  **Windows.UI.Text.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core) 命名空間中的核心文字 API 讓通用 Windows 平台 (UWP) 應用程式能夠接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。 這類 API 十分類似[文字服務架構](https://docs.microsoft.com/windows/desktop/TSF/text-services-framework) API，其中的 App 不需要具備文字服務的詳細知識。 這讓應用程式能夠接收任何語言以及來自任何輸入類型的文字，例如鍵盤、語音或手寫筆。
 
-> **重要的 Api**:[**Windows.UI.Text.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core), [**CoreTextEditContext**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextEditContext)
+> **重要 API**：[**Windows.UI.Text.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core)、[**CoreTextEditContext**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextEditContext)
 
 ## <a name="why-use-core-text-apis"></a>為什麼要使用核心文字 API？
 
@@ -56,12 +56,12 @@ ms.locfileid: "66363868"
 
 | 欄位                  | 資料類型                                                                 | 描述                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範圍的開始位置是緊接在第一個字元之前的 ACP。 |
-| **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範圍的結束位置是緊接在最後一個字元之後的 ACP。     |
+| **StartCaretPosition** | \[JavaScript\]**數目** | **System. Int32** \[.net\] | **int32** \[C++\] | 範圍的開始位置是緊接在第一個字元之前的 ACP。 |
+| **EndCaretPosition**   | \[JavaScript\]**數目** | **System. Int32** \[.net\] | **int32** \[C++\] | 範圍的結束位置是緊接在最後一個字元之後的 ACP。     |
 
  
 
-例如，在先前所示之範圍的文字範圍\[0、 5\]指定"Hello"這個字。 **StartCaretPosition** 一律必須小於或等於 **EndCaretPosition**。 範圍\[5，0\]無效。
+例如，在先前所示的文字範圍中，範圍 \[0，5\] 會指定 "Hello" 這個字。 **StartCaretPosition** 一律必須小於或等於 **EndCaretPosition**。 \[5，0\] 的範圍無效。
 
 ### <a name="insertion-point"></a>插入點
 
@@ -73,7 +73,7 @@ ms.locfileid: "66363868"
 
 以下列文字資料流為例：
 
-![範例文字資料流圖表](images/coretext/stream-2.png)有兩個選項：\[0、 1\]並\[6，11\]。 編輯控制項必須報告只有其中之一。任一\[0，1\]或是\[6，11\]。
+![範例文字串流圖表](images/coretext/stream-2.png) 有兩個選擇： \[0、1\] 和 \[6、11\]。 編輯控制項必須只報告其中一個。\[0、1\] 或 \[6、11\]。
 
 ## <a name="working-with-text"></a>使用文字
 
@@ -94,13 +94,13 @@ ms.locfileid: "66363868"
 2.  將選取項目放置於 [**CoreTextTextUpdatingEventArgs.NewSelection**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.newselection) 中指定的位置上。
 3.  通知系統，已藉由將 [**CoreTextTextUpdatingEventArgs.Result**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) 設為 [**CoreTextTextUpdatingResult.Succeeded**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingResult) 成功進行更新。
 
-例如，這是編輯控制項在使用者輸入 "d" 之前的狀態。 插入點位於\[10，10\]。
+例如，這是編輯控制項在使用者輸入 "d" 之前的狀態。 插入點位於 \[10、10\]。
 
-![範例文字資料流圖表](images/coretext/stream-3.png)當使用者輸入"d" [ **TextUpdating** ](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating)就會引發事件，以下列[ **CoreTextTextUpdatingEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs)資料：
+![範例文字串流圖表](images/coretext/stream-3.png) 當使用者輸入 "d" 時， [**TextUpdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating)事件會以下列[**CoreTextTextUpdatingEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs)資料引發：
 
 -   [**範圍**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.range) = \[10，10\]
 -   [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.text) = "d"
--   [**NewSelection**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.newselection) = \[11, 11\]
+-   [**NewSelection**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.newselection) = \[11，11\]
 
 在編輯控制項中，套用指定的變更，並將 [**Result**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) 設為 **Succeeded**。 以下是控制項在套用變更之後的狀態。
 
@@ -115,15 +115,15 @@ ms.locfileid: "66363868"
 
 有時您的編輯控制項會對文字進行變更，例如，在貼上或自動校正文字時。 在這些情況下，您必須呼叫 [**NotifyTextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) 方法，來通知這些變更的文字服務。
 
-例如，這是編輯控制項在使用者貼上 "World" 之前的狀態。 插入點位於\[6，6\]。
+例如，這是編輯控制項在使用者貼上 "World" 之前的狀態。 插入點位於 \[6，6\]。
 
-![範例文字資料流圖表](images/coretext/stream-5.png)使用者會執行貼上動作，並編輯控制項最後會有下列文字：
+![範例文字串流圖表](images/coretext/stream-5.png) 使用者執行貼上動作，編輯控制項最後會出現下列文字：
 
-![範例文字資料流圖表](images/coretext/stream-4.png)當發生這種情況時，您應該呼叫[ **NotifyTextChanged** ](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged)的這些引數：
+![範例文字串流圖表](images/coretext/stream-4.png) 發生這種情況時，您應該使用下列引數來呼叫[**NotifyTextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) ：
 
--   *modifiedRange* = \[6、 6\]
+-   *modifiedRange* = \[6，6\]
 -   *newLength* = 5
--   *newSelection* = \[11, 11\]
+-   *newSelection* = \[11，11\]
 
 隨後會有一或多個 [**TextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textrequested) 事件，您可在其中處理更新文字服務正在使用的文字。
 
@@ -131,17 +131,17 @@ ms.locfileid: "66363868"
 
 在編輯控制項中，您可能想要覆寫文字更新，以提供自動校正功能。
 
-例如，假設有個編輯控制項可提供將縮寫形式化的校正功能。 這是編輯控制項在使用者輸入空格鍵來觸發校正功能之前的狀態。 插入點位於\[3，3\]。
+例如，假設有個編輯控制項可提供將縮寫形式化的校正功能。 這是編輯控制項在使用者輸入空格鍵來觸發校正功能之前的狀態。 插入點位於 \[3，3\]。
 
-![範例文字資料流圖表](images/coretext/stream-6.png)使用者按下空格鍵和對應[ **TextUpdating** ](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating)就會引發事件。 編輯控制項接受文字更新。 這是編輯控制項在完成校正之前短暫的狀態。 插入點位於\[4，4\]。
+![範例文字串流圖表](images/coretext/stream-6.png) 使用者按下空格鍵，並引發對應的[**TextUpdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating)事件。 編輯控制項接受文字更新。 這是編輯控制項在完成校正之前短暫的狀態。 插入點位於 \[4，4\]。
 
-![範例文字資料流圖表](images/coretext/stream-7.png)之外[ **TextUpdating** ](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating)事件處理常式中，編輯控制項可讓下列更正。 這是編輯控制項在完成校正之後的狀態。 插入點位於\[5，5\]。
+![範例文字串流圖表](images/coretext/stream-7.png) 在[**TextUpdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating)事件處理常式之外，編輯控制項會進行下列更正。 這是編輯控制項在完成校正之後的狀態。 插入點位於 \[5，5\]。
 
-![範例文字資料流圖表](images/coretext/stream-8.png)當發生這種情況時，您應該呼叫[ **NotifyTextChanged** ](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged)的這些引數：
+![範例文字串流圖表](images/coretext/stream-8.png) 發生這種情況時，您應該使用下列引數來呼叫[**NotifyTextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) ：
 
--   *modifiedRange* = \[1, 2\]
+-   *modifiedRange* = \[1、2\]
 -   *newLength* = 2
--   *newSelection* = \[5, 5\]
+-   *newSelection* = \[5，5\]
 
 隨後會有一或多個 [**TextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textrequested) 事件，您可在其中處理更新文字服務正在使用的文字。
 
@@ -154,8 +154,8 @@ ms.locfileid: "66363868"
 ## <a name="related-articles"></a>相關文章
 
 **範例**
-* [自訂編輯控制項範例](https://go.microsoft.com/fwlink/?linkid=831024)  
-**封存範例**
-* [XAML 文字編輯範例](https://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [自訂編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl) 
+封存**範例**
+* [XAML 文字編輯範例](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
 
 

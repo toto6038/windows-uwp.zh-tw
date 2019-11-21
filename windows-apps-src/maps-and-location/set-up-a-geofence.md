@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 地圖, 位置, 地理柵欄, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: b0f16b72e8dedd45a572562308d968d528393f70
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6507b34a1a7f6d8947ce9ec2f05fb883adfc3030
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371578"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260362"
 ---
 # <a name="set-up-a-geofence"></a>設定地理柵欄
 
@@ -20,9 +20,9 @@ ms.locfileid: "66371578"
 
 在您的 app 中設定[**地理柵欄**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)，並了解如何在前景和背景中處理通知。
 
-**提示**：若要深入了解如何在 app 中存取位置，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
+**提示**：若要深入了解如何在 app 中存取位置，請從 GitHub 的 [Windows-universal-samples 存放庫](https://github.com/Microsoft/Windows-universal-samples)下載下列範例。
 
--   [通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 
 ## <a name="enable-the-location-capability"></a>啟用位置功能
 
@@ -40,7 +40,7 @@ ms.locfileid: "66371578"
 ## <a name="set-up-a-geofence"></a>設定地理柵欄
 
 
-### <a name="step-1-request-access-to-the-users-location"></a>步驟 1：要求存取使用者的位置
+### <a name="step-1-request-access-to-the-users-location"></a>步驟 1：要求使用者位置的存取權
 
 **重要**：嘗試存取使用者的位置之前，您必須先使用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) 方法要求使用者位置的存取權。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 在使用者將權限授與您的 app 之後，您的 app 才能存取使用者的位置資訊。
 
@@ -52,11 +52,11 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 [  **RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
 
-### <a name="step-2-register-for-changes-in-geofence-state-and-location-permissions"></a>步驟 2：註冊在地理柵欄狀態下和位置的權限的變更
+### <a name="step-2-register-for-changes-in-geofence-state-and-location-permissions"></a>步驟 2：登錄地理柵欄狀態及位置權限的變更
 
 在這個範例中，**switch** 陳述式是與 **accessStatus** (來自先前的範例) 搭配使用，只有在獲允許存取使用者位置的情況下才有作用。 如果獲允許存取使用者的位置，程式碼就會存取目前的地理柵欄、登錄地理柵欄狀態變更，以及登錄位置權限的變更。
 
-**秘訣** 使用地理柵欄時，請使用來自 GeofenceMonitor 類別的 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofencemonitor.statuschanged) 事件來監視位置權限的變更，而不要使用來自 Geolocator 類別的 StatusChanged 事件。 **Disabled** 為 [**GeofenceMonitorStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus) 等同於已停用的 [**PositionStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.PositionStatus)，兩者都指出 app 沒有存取使用者位置的權限。
+**秘訣** 使用地理柵欄時，請使用來自 GeofenceMonitor 類別的 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofencemonitor.statuschanged) 事件來監視位置權限的變更，而不要使用來自 Geolocator 類別的 StatusChanged 事件。 [Disabled**為**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus)GeofenceMonitorStatus 等同於已停用的 [**PositionStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.PositionStatus)，兩者都指出 app 沒有存取使用者位置的權限。
 
 ```csharp
 switch (accessStatus)
@@ -120,11 +120,11 @@ Geofence geofence = new Geofence(fenceId, geocircle);
 
 您可以使用其中一個其他的建構函式，來進一步微調您的地理柵欄。 在下一個範例中，地理柵欄建構函式會指定這些額外的參數：
 
--   [**MonitoredStates** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.monitoredstates) -表示您想要哪些地理柵欄事件接收進入定義的區域，保留的區域或移除地理柵欄的通知。
--   [**SingleUse** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.singleuse) -移除地理柵欄，一旦已符合所有地理柵欄針對受監視的狀態。
--   [**DwellTime** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) -表示多久使用者必須是流入或流出定義區域之前便會觸發 enter/離開事件。
--   [**StartTime** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.starttime) -指出何時要開始監視地理柵欄。
--   [**持續時間**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.duration) -表示用來監視地理柵欄的期限。
+-   [**MonitoredStates**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.monitoredstates) -指出您想要接收哪些地理柵欄事件的通知，以輸入已定義的區域，保留已定義的區域，或移除地理柵欄。
+-   [**SingleUse**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.singleuse) -在監視地理柵欄的所有狀態是否符合時，移除地理柵欄。
+-   [**DwellTime**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) -指出觸發進入/離開事件之前，使用者必須在定義區域內進入或離開的時間長度。
+-   [**StartTime**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.starttime) -表示開始監視地理柵欄的時間。
+-   [**Duration**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.duration) -表示監視地理柵欄的期間。
 
 ```csharp
 // Set the fence ID.
@@ -173,7 +173,7 @@ try {
 }
 ```
 
-### <a name="step-4-handle-changes-in-location-permissions"></a>步驟 4：處理位置的權限的變更
+### <a name="step-4-handle-changes-in-location-permissions"></a>步驟 4：處理位置權限的變更
 
 [  **GeofenceMonitor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitor) 物件會觸發 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofencemonitor.statuschanged) 事件，以指出使用者的位置設定已變更。 該事件會透過引數的 **sender.Status** 屬性 (類型為 [**GeofenceMonitorStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus)) 傳遞對應的狀態。 請注意，此方法並不是從 UI 執行緒呼叫，且 [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 物件會叫用 UI 變更。
 
@@ -236,7 +236,7 @@ public async void OnGeofenceStatusChanged(GeofenceMonitor sender, object e)
 
 您可以在 app 執行時，直接從 app 接聽事件，或登錄背景工作，讓您可以在事件發生時，收到背景通知。
 
-### <a name="step-1-register-for-geofence-state-change-events"></a>步驟 1：報名地理柵欄狀態變更事件
+### <a name="step-1-register-for-geofence-state-change-events"></a>步驟 1：登錄地理柵欄狀態變更事件
 
 若要讓您的 app 收到地理柵欄狀態變更的前景通知，您必須登錄事件處理常式。 這通常是在您建立地理柵欄時設定。
 
@@ -250,7 +250,7 @@ private void Initialize()
 
 ```
 
-### <a name="step-2-implement-the-geofence-event-handler"></a>步驟 2：實作地理柵欄的事件處理常式
+### <a name="step-2-implement-the-geofence-event-handler"></a>步驟 2：實作地理柵欄事件處理常式
 
 下一步是實作事件處理常式。 此處所採取的動作取決於您 app 使用地理柵欄的目的。
 
@@ -311,7 +311,7 @@ public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
 -   在應用程式中登錄背景工作。 如果您的 app 需要網際網路存取 (例如存取雲端服務)，您可以在觸發事件時針對此狀況設定旗標。 您也可以設定一個旗標來確定觸發事件時使用者在場，以確定使用者確實收到通知。
 -   當您的 app 在前景執行時，提示使用者將位置權限授與您的 app。
 
-### <a name="step-1-register-for-geofence-state-change-events"></a>步驟 1：報名地理柵欄狀態變更事件
+### <a name="step-1-register-for-geofence-state-change-events"></a>步驟 1：登錄地理柵欄狀態變更事件
 
 在您 app 資訊清單的 \[**宣告**\] 索引標籤底下，新增位置背景工作的宣告。 請這樣做：
 
@@ -444,7 +444,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 為地理柵欄 app 進行測試和偵錯相當具挑戰性，因為它們倚賴裝置的位置。 我們在這裡概述幾個方法，可用來測試前景和背景地理柵欄。
 
-**若要偵錯地理柵欄的應用程式**
+**若要 debug 地理柵欄應用程式**
 
 1.  實際將裝置移到新的位置。
 2.  輸入一個地理柵欄來測試，方法是建立一個包含您目前實際位置的地理柵欄區域，這樣您便位於該地理柵欄中，而「地理柵欄已輸入」事件會立即觸發。
@@ -452,35 +452,35 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 ### <a name="test-and-debug-a-geofencing-app-that-is-running-in-the-foreground"></a>針對在前景執行的地理柵欄 app 進行測試和偵錯
 
-**若要測試您正在執行前景的地理圍欄應用程式**
+**測試正在執行前景的地理柵欄應用程式**
 
 1.  在 Visual Studio 中建立您的 app。
 2.  在 Visual Studio 模擬器中啟動您的應用程式。
-3.  使用這些工具來模擬地理柵欄區域內外的不同位置。 請確定等待的時間夠長，應超過 [**DwellTime**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) 屬性指定的時間才能觸發事件。 請注意，您必須接受為 app 啟用位置權限的提示。 如需有關模擬位置的詳細資訊，請參閱[設定裝置的模擬地理位置](https://go.microsoft.com/fwlink/p/?LinkID=325245)。
+3.  使用這些工具來模擬地理柵欄區域內外的不同位置。 請確定等待的時間夠長，應超過 [**DwellTime**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) 屬性指定的時間才能觸發事件。 請注意，您必須接受為 app 啟用位置權限的提示。 如需有關模擬位置的詳細資訊，請參閱[設定裝置的模擬地理位置](https://msdn.microsoft.com/library/windows/apps/hh441475(v=vs.120).aspx#BKMK_Set_the_simulated_geo_location_of_the_device)。
 4.  您也可以使用模擬器來 預估柵欄的大小，以及要在不同速度被偵測到時所需的大約暫留時間。
 
 ### <a name="test-and-debug-a-geofencing-app-that-is-running-in-the-background"></a>針對在背景執行的地理柵欄 app 進行測試和偵錯
 
-**若要測試您正在執行背景的地理圍欄應用程式**
+**測試正在執行背景的地理柵欄應用程式**
 
 1.  在 Visual Studio 中建立您的 app。 請注意，您的應用程式應該設定 \[**位置**\] 背景工作類型。
 2.  先在本機部署應用程式。
 3.  關閉目前正在本機執行的應用程式。
 4.  在 Visual Studio 模擬器中啟動您的應用程式。 請注意，在模擬器中，一次只支援在一個應用程式上進行背景地理柵欄模擬。 請勿在模擬器中啟動多個地理柵欄應用程式。
 5.  在模擬器中，模擬您地理柵欄區域內外的不同位置。 請確定等待的時間夠長，應超過 [**DwellTime**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) 才能觸發事件。 請注意，您必須接受為 app 啟用位置權限的提示。
-6.  使用 Visual Studio 觸發位置背景工作。 如需有關在 Visual Studio 中觸發背景工作的詳細資訊，請參閱[如何觸發背景工作](https://go.microsoft.com/fwlink/p/?LinkID=325378)。
+6.  使用 Visual Studio 觸發位置背景工作。 如需有關在 Visual Studio 中觸發背景工作的詳細資訊，請參閱[如何觸發背景工作](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.120).aspx#BKMK_Trigger_background_tasks)。
 
 ## <a name="troubleshoot-your-app"></a>針對您的 app 進行疑難排解
 
 
 必須先在裝置上啟用 \[**位置**\]，您的 app 才能存取位置。 在 \[**設定**\] app 中，確認已開啟下列 \[**位置隱私權設定**\]：
 
--   **此裝置的位置...** 會開啟**上**（不適用於 Windows 10 行動裝置版）
+-   **此裝置的位置**.。。已開啟 **（不適**用於 Windows 10 行動裝置版）
 -   已將定位服務設定的 \[**位置**\] 設為 \[**開啟**\]
 -   在 \[**選擇可以使用您的位置的應用程式**\] 底下，將您的 app 設為 \[**開啟**\]
 
 ## <a name="related-topics"></a>相關主題
 
-* [UWP 地理位置範例](https://go.microsoft.com/fwlink/p/?linkid=533278)
-* [地理圍欄的設計方針](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
+* [UWP 地理位置範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
+* [地理柵欄的設計方針](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
 * [定位感知應用程式的設計指導方針](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)

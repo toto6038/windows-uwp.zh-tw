@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: cf114ed3d2ffce95f9e9aba6ceb222029d23819c
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.openlocfilehash: 53fb8c0b213705a5a79680356bb4f1773594dcdc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73052032"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260490"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在應用程式資訊清單中宣告背景工作
 
@@ -37,7 +37,7 @@ ms.locfileid: "73052032"
 
 開啟 app 資訊清單 (Package.appxmanifest)，然後移至 Application 元素。 建立 Extensions 元素 (如果還不存在時)。
 
-下列的程式碼片段取自[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)：
+下列的程式碼片段取自[背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)：
 
 ```xml
 <Application Id="App"
@@ -107,7 +107,7 @@ ms.locfileid: "73052032"
 
 針對每一個由應用程式註冊的其他背景工作類別，重複步驟 2。
 
-下列範例是取自[背景工作範例]( https://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 複製此範例的 Extensions 區段，並視需要進行修改，以在應用程式資訊清單中宣告背景工作。
+下列範例是取自[背景工作範例]( https://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 請複製這個範例的 Extensions 區段，並視需要修改它，以在應用程式資訊清單中宣告背景工作。
 
 ```xml
 <Applications>
@@ -159,7 +159,7 @@ ms.locfileid: "73052032"
 
 ### <a name="run-in-the-same-process-as-your-foreground-application"></a>在前景應用程式所在的那個處理序中執行
 
-以下是宣告背景工作的範例 XML，這個背景工作與前景應用程式在相同處理序中執行。
+以下是一個範例 XML，當中宣告與前景應用程式在相同處理程序中執行的背景工作。
 
 ```xml
 <Extensions>
@@ -175,7 +175,7 @@ ms.locfileid: "73052032"
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>使用 ResourceGroup 屬性來指定背景工作執行所在的位置。
 
-以下是一個範例 XML，當中宣告在 BackgroundTaskHost.exe 處理程序中執行的背景工作，但該處理程序是與其他來自相同 App 的背景工作執行個體不同的執行個體。 注意 `ResourceGroup` 屬性，此屬性可識別哪些背景工作會在一起執行。
+以下是一個範例 XML，當中宣告在 BackgroundTaskHost.exe 處理程序中執行的背景工作，但該處理程序是與其他來自相同 App 的背景工作執行個體不同的執行個體。 請注意 `ResourceGroup` 屬性，此屬性可識別哪些背景工作會一起執行。
 
 ```xml
 <Extensions>
@@ -230,7 +230,7 @@ ms.locfileid: "73052032"
 ```
 
 > [!NOTE]
-> 您無法連同 `SupportsMultipleInstances` 一起指定 `ResourceGroup` 或 `ServerName`。
+> 您無法連同 `ResourceGroup` 一起指定 `ServerName` 或 `SupportsMultipleInstances`。
 
 ## <a name="related-topics"></a>相關主題
 

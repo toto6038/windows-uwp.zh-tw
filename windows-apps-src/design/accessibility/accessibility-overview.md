@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e5ff5d8e1a63522a70b37c3226b01a2fc680c368
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 30f361aad321feb44240e66c03003646c560a4f5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318977"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257817"
 ---
 # <a name="accessibility-overview"></a>協助工具概觀  
 
@@ -35,7 +35,7 @@ ms.locfileid: "67318977"
 * 使用者自訂的支援，例如字型、縮放設定 (放大)、色彩以及高對比設定。
 * UI 組件的替代項目或補充項目。
 
-XAML 的控制項提供內建的鍵盤以及輔助技術 (例如螢幕助讀程式) 支援，充分利用原本已經支援 UWP App、HTML 和其他 UI 技術的協助工具架構。 這種內建的支援提供基本協助工具，您只要設定一些屬性，便能輕易地自訂這些協助工具。 如果建立自己的自訂 XAML 元件和控制項，也可以使用「自動化對等」  的概念，將類似的支援新增至這些控制項。
+XAML 的控制項提供內建的鍵盤以及輔助技術 (例如螢幕助讀程式) 支援，充分利用原本已經支援 UWP App、HTML 和其他 UI 技術的協助工具架構。 這種內建的支援提供基本協助工具，您只要設定一些屬性，便能輕易地自訂這些協助工具。 如果建立自己的自訂 XAML 元件和控制項，也可以使用「自動化對等」的概念，將類似的支援新增至這些控制項。
 
 此外，利用資料繫結、樣式以及範本功能，便可以輕鬆實作支援顯示設定動態變更與替代 UI 的文字。
 
@@ -74,7 +74,7 @@ App 如果具有出色的鍵盤和螢幕助讀程式支援，通常也可以在�
 
 例如，當使用者啟動或切換到要檢視的應用程式之後，某些螢幕助讀程式會朗讀整個應用程式 UI，讓使用者在嘗試瀏覽功能前，獲得所有可用的資訊內容。 某些螢幕助讀程式在個別控制項於 Tab 瀏覽時收到焦點後，也會朗讀個別控制項的相關文字。 這樣可以讓使用者在瀏覽應用程式的輸入控制項時，能夠了解目前的方向位置。 朗讀程式是螢幕助讀程式的一個例子，它會根據使用者的選擇提供兩種操作方式。
 
-為了幫助使用者了解或瀏覽 app，螢幕助讀程式或任何其他輔助技術需要的最重要資訊是 app 元素組件的「無障礙名稱」  。 在許多情況下，控制項或元素已經有一個無障礙名稱，這個名稱是從您另外提供的其他屬性值計算得出的。 使用已計算的名稱最常見的情況是與一個支援和顯示內部文字的元素搭配使用。 至於其他元素，有時候您需要遵循元素結構的最佳做法，才能透過其他方法提供無障礙名稱。 而且有時候，您需要提供一個明確要當作 app 協助工具的無障礙名稱。 如需有多少計算的值適用於一般 UI 元素，以及一般無障礙名稱的詳細資訊，請參閱[基本協助工具資訊](basic-accessibility-information.md)。
+為了幫助使用者了解或瀏覽 app，螢幕助讀程式或任何其他輔助技術需要的最重要資訊是 app 元素組件的「無障礙名稱」。 在許多情況下，控制項或元素已經有一個無障礙名稱，這個名稱是從您另外提供的其他屬性值計算得出的。 使用已計算的名稱最常見的情況是與一個支援和顯示內部文字的元素搭配使用。 至於其他元素，有時候您需要遵循元素結構的最佳做法，才能透過其他方法提供無障礙名稱。 而且有時候，您需要提供一個明確要當作 app 協助工具的無障礙名稱。 如需有多少計算的值適用於一般 UI 元素，以及一般無障礙名稱的詳細資訊，請參閱[基本協助工具資訊](basic-accessibility-information.md)。
 
 還有其他數個自動化屬性可用，其中包括下一節描述的鍵盤屬性。 不過，並不是所有螢幕助讀程式都支援一切的自動化屬性。 一般情況下，您應該設定所有適用的自動化屬性並進行測試，為螢幕助讀程式盡可能提供最廣泛的支援。
 
@@ -103,7 +103,7 @@ App 如果具有出色的鍵盤和螢幕助讀程式支援，通常也可以在�
 
 * 工具必須判斷要以 Tab 順序瀏覽的一部分讀取文字，或者只以整體文件表示的一部分讀取文字。 您可以選擇適當的元素來顯示文字，或者調整這些文字元素的屬性，協助做出正確的判斷。 每一個文字元素都有特定用途，而且該用途通常都有一個對應的使用者介面自動化角色。 元素使用不當會造成將錯誤的角色報告給使用者介面自動化，而且會混淆輔助技術使用者。
 * 許多使用者會有視覺方面的限制，除非背景的對比夠強，否則他們不容易看清楚文字。 應用程式設計人員如果沒有這種視覺方面的限制，無法一眼就看出這會對使用者產生多大的影響。 例如，以患有色盲的使用者為例，設計時選擇的色彩不合適，會造成某些使用者無法看清楚文字。 最初為網頁內容而制定的協助工具建議定義了一些對比標準，可以避免 app 出現上述問題。 如需詳細資訊，請參閱[無障礙文字需求](accessible-text-requirements.md)。
-* 許多因為太小而導致使用者看不清楚的文字。 您可以一開始就在應用程式的 UI 中將文字設定為合理的大小，以避免這個問題。 不過，對於需要顯示大量文字，或者需要同時顯示文字和其他視覺元素的應用程式而言，這種做法會是一項挑戰。 遇到這種情況時，請確定應用程式可以與能夠放大畫面的系統功能正確互動，這樣應用程式中包含的任何文字就會隨之一起放大 (某些使用者會變更 DPI 值來做為其無障礙輔助。 該選項可以在 [輕鬆存取]  的 [讓螢幕上的內容更大一些]  中變更，這會重新導向到 [外觀及個人化]   / [顯示]  的 [控制台]  UI。)
+* 許多因為太小而導致使用者看不清楚的文字。 您可以一開始就在應用程式的 UI 中將文字設定為合理的大小，以避免這個問題。 不過，對於需要顯示大量文字，或者需要同時顯示文字和其他視覺元素的應用程式而言，這種做法會是一項挑戰。 遇到這種情況時，請確定應用程式可以與能夠放大畫面的系統功能正確互動，這樣應用程式中包含的任何文字就會隨之一起放大 (某些使用者會變更 DPI 值來做為其無障礙輔助。 該選項可以在 [輕鬆存取] 的 [讓螢幕上的內容更大一些] 中變更，這會重新導向到 [外觀及個人化] **[顯示]**  /  的 [控制台] UI。)
 
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>
@@ -188,11 +188,11 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"/>
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>應用程式中可支援 XAML / Microsoft DirectX 互通性的輔助技術支援  
-以 XAML UI (使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) 裝載的 Microsoft DirectX 內容預設並非無障礙內容。 [XAML SwapChainPanel DirectX 互通性範例](https://go.microsoft.com/fwlink/p/?LinkID=309155)說明如何針對裝載的 DirectX 內容建立使用者介面自動化對等。 這項技術可透過使用者介面自動化讓裝載的內容成為無障礙內容。
+以 XAML UI (使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) 裝載的 Microsoft DirectX 內容預設並非無障礙內容。 [XAML SwapChainPanel DirectX 互通性範例](https://code.msdn.microsoft.com/windowsapps/XAML-SwapChainPanel-00cb688b)說明如何針對裝載的 DirectX 內容建立使用者介面自動化對等。 這項技術可透過使用者介面自動化讓裝載的內容成為無障礙內容。
 
 ## <a name="related-topics"></a>相關主題  
-* [**Windows.UI.Xaml.Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
-* [協助工具的設計](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
-* [XAML 的協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [**Windows. UI. Xaml. Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
+* [協助工具設計](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
+* [XAML 協助工具範例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
 * [協助工具](accessibility.md)
-* [開始使用 [朗讀程式]](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
+* [開始使用朗讀程式](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

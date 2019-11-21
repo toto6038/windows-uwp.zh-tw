@@ -6,17 +6,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fce2c9230add569c4494b01546f1b3ced81d488b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612923"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258182"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>螢幕大小與中斷點
 
-UWP app 可在執行 Windows 10，包括手機、平板電腦、桌面、電視，以及更多的任何裝置上執行。 具有極大量的裝置目標以及跨 Windows 10 的生態系統，而不是最佳化您的 UI，針對每個裝置的螢幕大小，我們建議使用 （也稱為 「 中斷點 」） 的幾個重要的寬度類別的設計： 
-- 小型 (小於 640px) 
+UWP app 可在執行 Windows 10，包括手機、平板電腦、桌面、電視，以及更多的任何裝置上執行。 透過 Windows 10 生態系統中的大量裝置目標和螢幕大小，我們建議您針對幾個主要寬度類別（也稱為「中斷點」）進行設計，而不是優化每個裝置的 UI： 
+- 小型 (小於 640px)
 - 中型 (641px 到 1007px)
 - 大型 (1008px 和更大的)
 
@@ -71,7 +71,7 @@ UWP 的有效像素系統會自動考量您觀看的距離。 當指定控制項
 
 ## <a name="effective-pixels-and-scale-factor"></a>有效像素與縮放比例
 
-UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝置上可辨識。 Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動縮放每個螢幕的比例。 使用者可以移至 **\[設定\]** > **\[顯示\]** > **\[縮放與版面配置\]** 設定頁面，覆寫預設值。 
+UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝置上可辨識。 Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動縮放每個螢幕的比例。 使用者可以移至 **\[設定\]**  >  **\[顯示\]**  >  **\[縮放與版面配置\]** 設定頁面，覆寫預設值。 
 
 
 ## <a name="general-recommendations"></a>一般建議
@@ -90,7 +90,7 @@ UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝�
 - 使用最多 2 個欄位/區域。
 - 顯示搜尋方塊。
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以窄條模式放置，以便讓圖示帶狀線永遠顯示。
-- 請考慮進一步自訂[電視體驗](https://go.microsoft.com/fwlink/?LinkId=760736)。
+- 請考慮進一步自訂[電視體驗](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)。
 
 ### <a name="large"></a>大型
 - 設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。
@@ -100,6 +100,6 @@ UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝�
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以停駐模式放置，以便讓它永遠顯示。
 
 >[!TIP] 
-> 具有[**適用於手機的後續發展**](https://go.microsoft.com/fwlink/p/?LinkID=699431)，使用者可以將相容的 Windows 10 行動裝置連線至監視器、 滑鼠和鍵盤進行像是膝上型電腦使用他們的電話。 針對特定中斷點進行設計時，請記住這項新功能- 行動電話不會永遠留在大小類別中。
+> 透過[**適用于手機的 Continuum**](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN)，使用者可以將相容的 Windows 10 行動裝置連接到監視器、滑鼠和鍵盤，使其手機像膝上型電腦般地作用。 針對特定中斷點進行設計時，請記住這項新功能- 行動電話不會永遠留在大小類別中。
 
 

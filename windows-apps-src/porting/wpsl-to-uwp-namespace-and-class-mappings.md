@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e02d74df59bae4dd4bdaa909c97866da754db93
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 1af36b43e02c9ee08373098f57ba29c10badb6c8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339930"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259062"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>Windows Phone Silverlight 加入 UWP API 對應
 
@@ -22,7 +22,7 @@ ms.locfileid: "71339930"
 
 **如何使用資料表：  **首先，搜尋您要使用的類別名稱。 當只變更命名空間名稱無法達成對應時，就會列出類別。 如果未列出您的類別，則表示只需要變更命名空間即可達成對應。 因此，請尋找您類別的命名空間名稱，然後您就可以找到對等的 UWP 命名空間名稱。 您的類別會在該命名空間中。 如果未列出您的命名空間，則表示它的名稱未變更。
 
-**注意**  Windows 10 支援的 .NET Framework 比 Windows Phone Store 應用程式更多。 例如，Windows 10 有數個 System.servicemodel. @no__t 的命名空間，以及 System.Net、System System.net.networkinformation 和 System .Net. Socket。
+**請注意**  Windows 10 支援的 .NET Framework 比 Windows Phone Store 應用程式更多。 例如，Windows 10 有數個 System.servicemodel。\* 命名空間，以及 System.Net、System System.net.networkinformation 和 System .Net. Socket。
 此外，在 Windows 10 應用程式中，您將受益于 .NET Native，這是預先編譯的技術，可將 MSIL 轉換成原生可執行檔機器程式碼。 .NET 原生 app 比其對應的 MSIL 啟動更快、使用更少的記憶體，而且消耗較少的電池電力。
 
 | Windows Phone Silverlight | Windows 執行階段 |
@@ -52,11 +52,11 @@ ms.locfileid: "71339930"
 | (SWT = **System.Windows.Threading**) <br/> **SWT.DispatcherTimer** 類別 | [**DispatcherTimer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DispatcherTimer)類別 |
 | Blend for Visual Studio | |
 | (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> **MEDC.GeometryHelper** 類別 | 沒有直接的對等項目 |
-| **Microsoft.Expression.Interactivity** 命名空間 | [Microsoft.Xaml.Interactivity](https://go.microsoft.com/fwlink/p/?LinkId=328776) 命名空間 |
-| **Microsoft.Expression.Interactivity.Core** 命名空間 | [Microsoft.Xaml.Interactions.Core](https://go.microsoft.com/fwlink/p/?LinkId=328773) 命名空間 |
+| **Microsoft.Expression.Interactivity** 命名空間 | [Microsoft.Xaml.Interactivity](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactivity.aspx) 命名空間 |
+| **Microsoft.Expression.Interactivity.Core** 命名空間 | [Microsoft.Xaml.Interactions.Core](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactions.core.aspx) 命名空間 |
 | (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> **MEIC.ExtendedVisualStateManager** 類別 | 沒有直接的對等項目 |
 | **Microsoft.Expression.Interactivity.Input** 命名空間 | 沒有直接的對等項目 |
-| **Microsoft.Expression.Interactivity.Media** 命名空間 | [Microsoft.Xaml.Interactions.Media](https://go.microsoft.com/fwlink/p/?LinkId=328775) 命名空間 |
+| **Microsoft.Expression.Interactivity.Media** 命名空間 | [Microsoft.Xaml.Interactions.Media](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactions.media.aspx) 命名空間 |
 | **Microsoft.Expression.Shapes** 命名空間 | 沒有直接的對等項目 |
 | (MI = **Microsoft.Internal**) <br/> **MI.IManagedFrameworkInternalHelper** 介面 | 沒有直接的對等項目 |
 | 連絡人和行事曆資料 | |
@@ -121,7 +121,7 @@ ms.locfileid: "71339930"
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentCulture** 屬性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** 屬性 |
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** 屬性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** 屬性 |
 | 圖形和動畫 | |
-| **@No__t 1**命名空間、元件型[架構類別庫](https://go.microsoft.com/fwlink/p/?LinkId=263769)、[內容管線類別庫](https://go.microsoft.com/fwlink/p/?LinkId=263770) | 沒有直接的對等項目。 一般而言，請使用 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 搭配 C++。 請參閱[開發遊戲](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10))和 [DirectX 與 XAML 互通性](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10))。 |
+| **\*** 命名空間、[類型為架構的類別庫](https://msdn.microsoft.com/library/bb203940.aspx)、[內容管線類別庫](https://msdn.microsoft.com/library/bb195587(v=XNAGameStudio.40).aspx) | 沒有直接的對等項目。 一般而言，請使用 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 搭配 C++。 請參閱[開發遊戲](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10))和 [DirectX 與 XAML 互通性](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10))。 |
 | **Microsoft.Xna.Framework.Audio.Microphone** 類別 | [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)類別 |
 | **Microsoft.Xna.Framework.Audio.SoundEffect** 類別 | [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)類別 |
 | **Microsoft.Xna.Framework.GamerServices** 命名空間 | (WPS = **Windows.Phone.System**) <br/> [**WPS。UserProfile. GameServices. Core**](https://docs.microsoft.com/uwp/api/Windows.Phone.System.UserProfile.GameServices.Core)命名空間 |
@@ -157,7 +157,7 @@ ms.locfileid: "71339930"
 | Location | |
 | **System.Device.Location** 命名空間 | [**Windows. 地理位置**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)命名空間 |
 | **System.Device.GeoCoordinateWatcher** 類別 | [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)類別 |
-| 地圖 | |
+| Maps | |
 | **Microsoft.Phone.Maps** 命名空間 | [**Windows. 服務對應**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)命名空間 |
 | **Microsoft.Phone.Maps.Controls** 命名空間 | [**Windows. UI. app.xaml**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps)命名空間 |
 | **Microsoft.Phone.Maps.Controls.Map** 類別 | [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)類別 |

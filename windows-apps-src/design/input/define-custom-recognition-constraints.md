@@ -8,18 +8,18 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bb24002e3738213ba3e784e6b91ff55d970a26a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5b94c946222f510c7f1b1f7619b67ee83e6c2256
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363632"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258008"
 ---
 # <a name="define-custom-recognition-constraints"></a>定義自訂辨識限制式
 
 了解如何定義及使用自訂限制式來進行語音辨識。
 
-> **重要的 Api**:[**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
+> **重要 API**：[**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)、[**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)、[**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
 語音辨識至少需要一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的通用 Windows app 聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
 
@@ -27,11 +27,11 @@ ms.locfileid: "66363632"
 
 使用 [**SpeechRecognizer.Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) 屬性可以為語音辨識器新增限制式。
 
-這裡涵蓋了三種從 app 內部使用的語音辨識限制式。 (Cortana 語音命令的條件約束，請參閱[啟動前景應用程式，以在 Cortana 中的語音命令](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。)
+這裡涵蓋了三種從 app 內部使用的語音辨識限制式。 （如需 Cortana 語音命令條件約束，請參閱[在 cortana 中使用語音命令啟動前景應用程式](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)）。
 
-- [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)— 條件約束會根據預先定義的文法 （聽寫或 web 搜尋）。
-- [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)— 的單字或片語清單為基礎的條件約束。
-- [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)— 語音辨識文法規格 (SRGS) 檔案中定義的條件約束。
+- [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)—以預先定義的文法（聽寫或 web 搜尋）為基礎的條件約束。
+- [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)—根據單字或片語清單的條件約束。
+- [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)-在語音辨識文法規格（SRGS）檔案中定義的條件約束。
 
 每個語音辨識器可以有一個限制式集合。 只有下列限制式組合是有效的：
 
@@ -137,7 +137,7 @@ SRGS 文法提供完整的功能集，可幫助您為應用程式建構複雜的
 - 使用語意，定義語音識別對您應用程式的意義。
 - 以內嵌於文法或透過語彙連結的方式指定發音。
 
-如需 SRGS 元素與屬性的詳細資料，請參閱 [SRGS 文法 XML 參考](https://go.microsoft.com/fwlink/p/?LinkID=269886)。 如果要開始建立 SRGS 文法，請參閱[如何建立基本 XML 文法](https://go.microsoft.com/fwlink/p/?LinkID=269887)。
+如需 SRGS 元素與屬性的詳細資料，請參閱 [SRGS 文法 XML 參考](https://msdn.microsoft.com/library/hh361653)。 如果要開始建立 SRGS 文法，請參閱[如何建立基本 XML 文法](https://msdn.microsoft.com/library/hh361658)。
 
 請記住下列重點：
 
@@ -171,7 +171,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-這個 SRGS 檔案 (srgs.grxml) 包含語意轉譯標記。 這些標記提供一個將文法相符資料傳回給 app 的機制。 World Wide Web Consortium (W3C) 必須符合文法 [語意轉譯為語音辨識 (SISR) 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765)規格。
+這個 SRGS 檔案 (srgs.grxml) 包含語意轉譯標記。 這些標記提供一個將文法相符資料傳回給 app 的機制。 文法必須符合 [語音辨識（SISR） 1.0](https://www.w3.org/TR/semantic-interpretation/)規格的全球資訊網協會（W3C）語義轉譯。
 
 如下，我們將接聽各種不同形式的 "yes" 和 "no"。
 
@@ -228,4 +228,4 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 ### <a name="samples"></a>範例
 
-- [語音辨識和語音合成器範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+- [語音辨識和語音合成範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

@@ -6,19 +6,19 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 安裝, SDK, 廣告庫
 ms.localizationpriority: medium
-ms.openlocfilehash: d348b1b7a7b057388b437fab9952bb8eaffe9957
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 37e57d49ba40814891154aef2ec0de6b3b7e560c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320235"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260263"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安裝 Microsoft Advertising SDK
 
-若要在您的適用於 Windows 10 的 UWP app 中顯示廣告，請安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 這個 SDK 是 Visual Studio 2015 和更新版本的擴充功能。
+若要在您的適用於 Windows 10 的 UWP app 中顯示廣告，請安裝 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 這個 SDK 是 Visual Studio 2015 和更新版本的擴充功能。
 
 > [!NOTE]
-> 如果您正在開發 JavaScript/HTML 的 UWP 應用程式和您已安裝 Windows 10 SDK 版本 10.0.14393 （年度更新版） 或更新版本中，您也必須安裝[WinJS](https://github.com/winjs/winjs)程式庫。 這個程式庫原本包含在舊版的 Windows 10 SDK 中，但是從 Windows 10 SDK 版本 10.0.14393 (年度更新版) 起必須另外安裝。
+> 如果您正在開發 JavaScript/HTML UWP 應用程式，且已安裝 Windows 10 SDK 版本10.0.14393 （年度更新版）或更新版本，則也必須安裝[WinJS](https://github.com/winjs/winjs)程式庫。 這個程式庫原本包含在舊版的 Windows 10 SDK 中，但是從 Windows 10 SDK 版本 10.0.14393 (年度更新版) 起必須另外安裝。
 
 <span id="install-msi" />
 
@@ -35,7 +35,7 @@ ms.locfileid: "67320235"
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  下載並安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 可能需要幾分鐘的時間來安裝。 請務必等到程序完成為止。
+3.  下載並安裝 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 可能需要幾分鐘的時間來安裝。 請務必等到程序完成為止。
 
 4.  重新啟動 Visual Studio。
 
@@ -62,7 +62,7 @@ ms.locfileid: "67320235"
     > [!NOTE]
     > 如果您的專案已經包含來自先前 MSI 安裝之 SDK 的程式庫參考，請從您的專案中移除這些參考。 這些參考的旁邊將會有警告圖示，因為在先前的步驟中已移除它們所參考的程式庫。
 
-4. 在 Visual Studio 中，按一下 [專案]  和 [管理 NuGet 套件]  。
+4. 在 Visual Studio 中，按一下 [專案] 和 [管理 NuGet 套件]。
 
 5. 在搜尋方塊中，輸入 **Microsoft.Advertising.XAML** (適用於 XAML 專案) 或 **Microsoft.Advertising.JS** (適用於 JavaScript/HTML 專案) 並安裝對應的套件。 套件完成安裝後，儲存您的方案。
     > [!NOTE]
@@ -82,26 +82,26 @@ ms.locfileid: "67320235"
 
 1. 在 Visual Studio 中，開啟您的專案。
     > [!NOTE]
-    > 如果專案的目標是 [任何 CPU]  ，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86]  )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+    > 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
-2. 在 [方案總管] 中的 [參考] 上按一下滑鼠右鍵，然後選取 [加入參考]。   
+2. 在 **\[方案總管\]** 中的 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入參考\]** 。
 
 3. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]** ，按一下 **\[擴充功能\]** ，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK\]** 旁邊的核取方塊 (適用於 XAML app) 或 **\[適用於 JavaScript 的 Microsoft Advertising SDK\]** 旁邊的核取方塊 (適用於使用 JavaScript 和 HTML 建置的應用程式)。
 
-4.  在 [參考管理員]  中，按一下 [確定]。
+4.  在 [參考管理員] 中，按一下 [確定]。
 
 如需示範如何開始使用廣告 API 的逐步解說，請參閱下列文章：
 
 * [插播式廣告](interstitial-ads.md)
 * [原生廣告](native-ads.md)
-* [XAML 和.NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
-* [以 HTML 5 AdControl 和 Javascript](adcontrol-in-html-5-and-javascript.md)
+* [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
+* [HTML 5 和 JAVAscript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)
 
 <span id="framework" />
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>了解 Microsoft Advertising SDK 中的架構套件
 
-適用於 UWP App 的 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) 中的 Microsoft.Advertising.dll 程式庫是設定為*架構套件*。 這個程式庫包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空間中的廣告 API。
+適用於 UWP App 的 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 中的 Microsoft.Advertising.dll 程式庫是設定為*架構套件*。 這個程式庫包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空間中的廣告 API。
 
 因為這個程式庫是架構套件，這意謂著在使用者安裝使用這個程式庫的 App 版本之後，每當我們發佈具有修正程式和效能改進的新程式庫版本時，便會在其裝置上透過 Windows Update 自動更新這個程式庫。 這有助於確保您客戶的裝置上一律會安裝最新的可用程式庫版本。
 

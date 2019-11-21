@@ -1,23 +1,23 @@
 ---
-title: 顯示地圖的 2D、3D 和 Streetside 檢視
+title: 顯示 2D、3D 和 Streetside 檢視的地圖
 description: 您可以在稱為地圖*座次卡*的淺色可關閉視窗中顯示地圖，亦可在全功能地圖控制項中顯示地圖。
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10、uwp、地圖、位置、地圖控制項、地圖檢視
 ms.localizationpriority: medium
-ms.openlocfilehash: 366a6212f8974ef3d3fedffa8f2d657e08a1b549
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: cc12f6c9b9177bce9a91288fdd2c43c118be5f61
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318677"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260422"
 ---
-# <a name="display-maps-with-2d-3d-and-streetside-views"></a>顯示地圖的 2D、3D 和 Streetside 檢視
+# <a name="display-maps-with-2d-3d-and-streetside-views"></a>顯示 2D、3D 和 Streetside 檢視的地圖
 
 您可以在一個叫地圖*placecard*的淺色可關閉視窗中顯示一張地圖，或者在一個完整精選地圖控制項中顯示。
 
-下載 [地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977) 以嘗試本指南中描述的一些功能。
+下載 [地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) 以嘗試本指南中描述的一些功能。
 
 <a id="placecard" />
 
@@ -87,7 +87,7 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 
 在您的應用程式中使用地圖控制項顯示豐富且可自訂的地圖資料。 地圖控制項可顯示地圖、空照圖、3D 圖、檢視、方向、搜尋結果及交通路況。 您可以在地圖上顯示使用者的位置、方向，以及感興趣的地點。 地圖也可以顯示空照圖 3D 檢視、街景檢視、交通路況、大眾運輸和當地企業。
 
-當您需要在 app 內有一份地圖時，使用地圖控制項讓使用者能夠檢視 app 專屬或一般地理資訊。 在 app 中有地圖控制項，表示使用者不需要離開您的 app 便可取得該資訊。
+當您想要 app 內有地圖時，請使用地圖控制項讓使用者能夠檢視 app 專屬或一般地理資訊。 在 app 中有地圖控制項，表示使用者不需要離開您的 app 便可取得該資訊。
 
 > [!NOTE]
 >如果您不介意使用者離開您的應用程式，請考慮使用 Windows 地圖 app 來提供該資訊。 您的 app 可以啟動 Windows 地圖 app 來顯示特定的地圖、方向以及搜尋結果。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app)。
@@ -137,7 +137,7 @@ pageGrid.Children.Add(MapControl2);
 
 ### <a name="get-and-set-a-maps-authentication-key"></a>取得及設定地圖驗證金鑰
 
-您必須先指定地圖驗證金鑰做為 [**MapServiceToken**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 屬性的值，才能使用 [**MapControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken) 和地圖服務。 請在先前的範例中，使用您從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)取得的金鑰來取代 `EnterYourAuthenticationKeyHere`。 文字**警告：未指定 MapServiceToken**仍會出現在控制項下方，直到您指定的地圖服務的驗證金鑰。 如需有關取得及設定地圖驗證金鑰的詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
+您必須先指定地圖驗證金鑰做為 [**MapServiceToken**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 屬性的值，才能使用 [**MapControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken) 和地圖服務。 請在先前的範例中，使用您從 `EnterYourAuthenticationKeyHere`Bing 地圖服務開發人員中心[取得的金鑰來取代 ](https://www.bingmapsportal.com/)。 除非您指定地圖驗證金鑰，否則「**警告: 未指定 MapServiceToken**」文字會持續顯示在的控制項下方。 如需有關取得及設定地圖驗證金鑰的詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
 ## <a name="set-the-location-of-a-map"></a>設定地圖的位置
 將地圖指向您想要的任何位置或使用使用者的目前位置。  
@@ -222,7 +222,7 @@ myMap.StyleSheet = MapStyleSheet.RoadDark();
 
 您也可以使用 JSON 來定義自訂樣式，接著使用該 JSON 來建立 [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet) 物件。
 
-可以建立 JSON，以互動方式使用的樣式表[地圖樣式表編輯器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft)應用程式。
+樣式表單 JSON 可以使用[地圖樣式表單編輯器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft)應用程式以互動方式建立。
 
 ```csharp
 myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"
@@ -284,24 +284,24 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 放大、縮小、旋轉和傾斜地圖的相機，以取得您想要的效果的恰好角度。 請試試這些屬性。
 
--   設定 [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center) 屬性，將地圖的**中心**設定為某個地理點。
--   將 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) 屬性設定為 1 到 20 之間的值，以設定地圖的**縮放層級**。
--   設定 [**Heading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.heading) 屬性以設定地圖的**旋轉**，其中 0 或 360 度 = 北、90 = 東、180 = 南、270 = 西。
--   將 [**DesiredPitch**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.desiredpitch) 屬性設定為 0 到 65 度之間的值，以設定地圖的**傾斜**。
+-   設定Center[ **屬性，將地圖的**中心](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center)設定為某個地理點。
+-   將ZoomLevel[ **屬性設定為 1 到 20 之間的值，以設定地圖的**縮放層級](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel)。
+-   設定Heading[ **屬性以設定地圖的**旋轉](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.heading)，其中 0 或 360 度 = 北、90 = 東、180 = 南、270 = 西。
+-   將DesiredPitch[ **屬性設定為 0 到 65 度之間的值，以設定地圖的**傾斜](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.desiredpitch)。
 
 ## <a name="show-and-hide-map-features"></a>顯示或隱藏地圖功能
 
 設定下列 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 屬性的值，以顯示或隱藏地圖功能，例如道路和地標。
 
-* 啟用或停用 [**LandmarksVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.landmarksvisible) 屬性，在地圖上顯示**建築物與地標**。
+* 啟用或停用LandmarksVisible[ **屬性，在地圖上顯示**建築物與地標](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.landmarksvisible)。
 
   > [!NOTE]
   > 您可以顯示或隱藏建築物，但不能阻止它們顯示 3D。  
 
-* 啟用或停用 [**PedestrianFeaturesVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.pedestrianfeaturesvisible) 屬性，在地圖上顯示**行人功能**，例如公共樓梯。
-* 啟用或停用 [**TrafficFlowVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trafficflowvisible) 屬性，在地圖上顯示**交通**。
-* 將 [**WatermarkMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.watermarkmode) 屬性設定成其中一個 [**MapWatermarkMode**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapWatermarkMode) 常數，以指定是否要在地圖上顯示**浮水印**。
-* 將 [**MapRouteView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView) 新增到地圖控制項的 [**Routes**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes) 集合，以在地圖上顯示**開車或步行路線**。 如需詳細資訊和範例，請參閱[在地圖上顯示路線和路線指引](routes-and-directions.md)。
+* 啟用或停用PedestrianFeaturesVisible[ **屬性，在地圖上顯示**行人功能](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.pedestrianfeaturesvisible)，例如公共樓梯。
+* 啟用或停用TrafficFlowVisible[ **屬性，在地圖上顯示**交通](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trafficflowvisible)。
+* 將WatermarkMode[**屬性設定成其中一個**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.watermarkmode)MapWatermarkMode[ **常數，以指定是否要在地圖上顯示**浮水印](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapWatermarkMode)。
+* 將MapRouteView[**新增到地圖控制項的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView)Routes[ **集合，以在地圖上顯示**開車或步行路線](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes)。 如需詳細資訊和範例，請參閱[在地圖上顯示路線和路線指引](routes-and-directions.md)。
 
 如需有關如何在 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 中顯示圖釘、圖形及 XAML 控制項的資訊，請參閱[在地圖上顯示興趣點 (POI)](display-poi.md)。
 
@@ -323,7 +323,7 @@ Streetside 檢視是位置的街景透視，它會出現在地圖控制項上方
 
 本範例說明如何顯示類似先前影像的 Streetside 檢視。
 
-**附註**  概觀圖不會出現在地圖控制項的大小太小的大小。
+**注意**  如果地圖控制項的大小太小，則不會顯示 [總覽] 地圖。
 
  
 
@@ -377,7 +377,7 @@ private async void showStreetsideView()
 
 1.  檢查 [**Is3DSupported**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.is3dsupported) 以判斷裝置是否支援 3D 檢視。
 2.  如果支援 3D 檢視，請將地圖控制項的 [**Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style) 屬性設定為 [**MapStyle.Aerial3DWithRoads**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle)。
-3.  使用眾多 **CreateFrom** 方法的其中之一 (例如 [**CreateFromLocationAndRadius**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapScene) 和 [**CreateFromCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapscene.createfromlocationandradius)) 來建立 [**MapScene**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapscene.createfromcamera) 物件。
+3.  使用眾多 [CreateFrom**方法的其中之一 (例如**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapScene)CreateFromLocationAndRadius 和 [**CreateFromCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapscene.createfromlocationandradius)) 來建立 [**MapScene**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapscene.createfromcamera) 物件。
 4.  呼叫 [**TrySetSceneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trysetsceneasync) 以顯示 3D 檢視。 您也可以提供 [**MapAnimationKind**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapAnimationKind) 列舉中的常數，以指定要在檢視變更時使用的選用動畫。
 
 本範例說明如何顯示 3D 檢視。
@@ -421,10 +421,10 @@ private async void display3DLocation()
 
 藉由呼叫下列 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 方法，即可取得地圖上位置的相關資訊。
 
--   [**TryGetLocationFromOffset** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getlocationfromoffset)方法-取得對應至地圖控制項檢視區中的指定點的地理位置。
--   [**GetOffsetFromLocation** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getoffsetfromlocation)方法-取得對應至指定的地理位置的地圖控制項檢視區中的點。
--   [**IsLocationInView** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.islocationinview)方法-判斷指定的地理位置是目前顯示在地圖控制項的檢視區。
--   [**FindMapElementsAtOffset** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.findmapelementsatoffset)方法-Get 在地圖上的項目位於檢視區中的地圖控制項指定的點。
+-   [**TryGetLocationFromOffset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getlocationfromoffset)方法-取得對應至地圖控制項之區中指定點的地理位置。
+-   [**GetOffsetFromLocation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getoffsetfromlocation)方法-取得對應至指定地理位置之地圖控制項的區中的點。
+-   [**IsLocationInView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.islocationinview)方法-判斷指定的地理位置目前是否在地圖控制項的區中可見。
+-   [**FindMapElementsAtOffset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.findmapelementsatoffset)方法-取得地圖上位於地圖控制項之區中指定點處的元素。
 
 ## <a name="handle-interaction-and-changes"></a>處理互動及變更
 
@@ -437,7 +437,7 @@ private async void display3DLocation()
 
 藉由處理控制項的 [**LoadingStatusChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.loadingstatuschanged) 事件，即可判斷地圖是正在載入，還是已完全載入。
 
-請處理下列 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 事件，以處理使用者或應用程式變更地圖設定時所發生的變更。 [對應的指導方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
+請處理下列 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 事件，以處理使用者或應用程式變更地圖設定時所發生的變更。 [地圖的指導方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 
 -   [**CenterChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.centerchanged)
 -   [**HeadingChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.headingchanged)
@@ -455,10 +455,10 @@ private async void display3DLocation()
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [取得目前的位置](get-location.md)
 * [定位感知應用程式的設計指導方針](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)
-* [對應的設計方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows 應用程式中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 流量的應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [地圖的設計指導方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
+* [組建2015影片：在您的 Windows 應用程式中跨電話、平板電腦和 PC 運用地圖和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 車流量應用程式範例](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)

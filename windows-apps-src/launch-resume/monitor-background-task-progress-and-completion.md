@@ -1,25 +1,25 @@
 ---
 title: 監視背景工作進度和完成
-description: 了解 app 如何辨識背景工作所報告的進度與完成。
+description: 了解應用程式如何辨識背景工作所報告的進度與完成。
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ms.date: 07/06/2018
 ms.topic: article
-keywords: windows 10 uwp，背景工作
+keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: d8e4a84b0e927be8e1b89e6189e80acd2d3e4266
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 79e511d20874470dfea8413bdf88365bba86d087
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371313"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260464"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>監視背景工作進度和完成
 
-**重要的 Api**
+**重要 API**
 
 - [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
 - [**BackgroundTaskProgressEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskprogresseventhandler)
@@ -29,14 +29,14 @@ ms.locfileid: "66371313"
 
 背景工作的進度和完成可以透過 App 程式碼監視。 若要執行這項作業，App 要訂閱已向系統註冊之背景工作的事件。
 
-- 這個主題假設您有一個註冊背景工作的 App。 若要快速開始建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
+- 這個主題假設您有一個註冊背景工作的 App。 若要快速開始建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)。
 
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>建立事件處理常式，以處理完成的背景工作。
 
 ### <a name="step-1"></a>步驟 1
-建立事件處理常式函式，以處理完成的背景工作。 此程式碼必須遵循特定的磁碟使用量，會採用[ **IBackgroundTaskRegistration** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration)物件並[ **BackgroundTaskCompletedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs)物件。
+建立事件處理常式函式，以處理完成的背景工作。 此程式碼必須遵循特定的使用量，以取得[**IBackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration)物件和[**BackgroundTaskCompletedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs)物件。
 
-使用下列使用量**OnCompleted**背景工作事件處理常式方法。
+請使用下列**OnCompleted**背景工作事件處理常式方法的使用量。
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
@@ -64,7 +64,7 @@ auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskComplete
 ### <a name="step-2"></a>步驟 2
 將程式碼新增至會處理背景工作完成的事件處理常式。
 
-例如，[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)會更新 UI。
+例如，[背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)會更新 UI。
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
@@ -122,7 +122,7 @@ auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressE
 ### <a name="step-2"></a>步驟 2
 將程式碼新增至會處理背景工作完成的事件處理常式。
 
-例如，[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)會使用透過 *args* 參數所傳遞的進度狀態來更新 UI：
+例如，[背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)會使用透過 *args* 參數所傳遞的進度狀態來更新 UI：
 
 ```csharp
 private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
@@ -158,7 +158,7 @@ auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressE
 ### <a name="step-1"></a>步驟 1
 當應用程式第一次登錄背景工作時，它應該登錄以接收其進度和完成更新，以防應用程式在前景仍然為使用中時執行工作。
 
-例如，[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)會在它登錄的每個背景工作上呼叫下列函式：
+例如，[背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)會在它登錄的每個背景工作上呼叫下列函式：
 
 ```csharp
 private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
@@ -217,7 +217,7 @@ void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskReg
 ### <a name="step-2"></a>步驟 2
 當應用程式啟動或是瀏覽至背景工作狀態是相關的新頁面時，它應該取得目前登錄的背景工作清單，並將它們與進度和完成事件處理函式關聯。 應用程式目前登錄的背景工作清單保留在 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration).[**AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) 屬性中。
 
-例如，[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)會使用下列程式碼來附加瀏覽 SampleBackgroundTask 頁面時要執行的事件處理常式：
+例如，[背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)會使用下列程式碼來附加瀏覽 SampleBackgroundTask 頁面時要執行的事件處理常式：
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -299,4 +299,4 @@ void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 應用程式中觸發暫止、繼續和背景事件（在進行調試時）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

@@ -1,76 +1,76 @@
 ---
 title: 建立客戶資料庫應用程式
-description: 建立客戶資料庫的應用程式，並了解如何實作基本的企業應用程式函式。
-keywords: enterprise、 教學課程中，客戶資料，建立讀取、 更新 [刪除]，REST 驗證
+description: 建立客戶資料庫應用程式，並瞭解如何執行基本的企業應用程式功能。
+keywords: 企業，教學課程，客戶，資料，建立讀取更新刪除，REST，驗證
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: med
-ms.openlocfilehash: 7bd3a180762c3ef06d7c24ae001fb2c7fb7fc55e
-ms.sourcegitcommit: 6df46d7d5b5522805eab11a9c0e07754f28673c6
+ms.openlocfilehash: b8cf0554464b56337e3d57b58db543092682ffa3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58808296"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258621"
 ---
-# <a name="tutorial-create-a-customer-database-application"></a>教學課程：建立客戶資料庫應用程式
+# <a name="tutorial-create-a-customer-database-application"></a>教學課程︰建立客戶資料庫應用程式
 
-本教學課程會建立簡單的應用程式，來管理客戶的清單。 在此情況下，它引入了對於企業 UWP 應用程式的基本概念的選取範圍。 您將會了解如何：
+本教學課程會建立簡單的應用程式來管理客戶清單。 在這種情況下，它為 UWP 中的企業應用程式引進了基本概念的選擇。 您將會了解如何：
 
-* 實作建立、 讀取、 更新和刪除作業對本機的 SQL database。
-* 加入資料格，即可顯示和編輯您的 UI 中的客戶資料。
-* 排列在一起的基本表單版面配置中的 UI 項目。
+* 針對本機 SQL 資料庫執行建立、讀取、更新和刪除作業。
+* 加入資料格，以在 UI 中顯示和編輯客戶資料。
+* 在基本表單版面配置中將 UI 元素排列在一起。
 
-本教學課程的起點是使用最少 UI 和功能，以簡化的版本為基礎的單一頁面應用程式[客戶訂單資料庫範例應用程式](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。 它以C#和 XAML，和我們預期，您有基本的熟悉這些這兩種語言。
+本教學課程的起點是一頁應用程式，具有最少的 UI 和功能，以簡化版的[客戶訂單資料庫範例應用程式](https://github.com/Microsoft/Windows-appsample-customers-orders-database)為基礎。 它是以C#和 XAML 撰寫的，我們希望您對這兩種語言都有基本的熟悉度。
 
 ![工作應用程式的主頁面](images/customer-database-tutorial/customer-list.png)
 
-### <a name="prerequisites"></a>先決條件
+### <a name="prerequisites"></a>必要條件
 
-* [請確定您有最新版的 Visual Studio 和 Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* [複製或下載客戶資料庫教學課程範例](https://aka.ms/customer-database-tutorial)
+* [確保您擁有最新版本的 Visual Studio 和 Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [複製或下載客戶資料庫教學課程範例](https://github.com/microsoft/windows-tutorials-customer-database)
 
-您已複製/下載之後存放庫，您可以編輯專案開啟**CustomerDatabaseTutorial.sln**使用 Visual Studio。
+複製/下載存放庫之後，您可以使用 Visual Studio 開啟 [ **CustomerDatabaseTutorial** ] 來編輯專案。
 
 > [!NOTE]
-> 請參閱[完整的客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)以查看本教學課程根據應用程式。
+> 查看[完整客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)，以查看此教學課程的基礎應用程式。
 
-## <a name="part-1-code-of-interest"></a>第 1 部分：感興趣的程式碼
+## <a name="part-1-code-of-interest"></a>第1部分：相關程式碼
 
-如果您開啟後立即執行您的應用程式，您會看到幾個空白畫面頂端的按鈕。 雖然不是您可以看到，應用程式已經包含幾個測試的客戶佈建的本機 SQLite 資料庫。 從這裡開始，您會藉由實作 UI 控制項來顯示這些客戶，啟動，並移至在對資料庫執行的作業中新增。 在開始之前，以下是在您將會處理。
+如果您在開啟應用程式之後立即執行，您會在空白畫面頂端看到幾個按鈕。 雖然您看不到這種情況，但應用程式已經包含了一些測試客戶所布建的本機 SQLite 資料庫。 從這裡開始，您將會先執行 UI 控制項來顯示這些客戶，然後再繼續針對資料庫加入作業。 在開始之前，您可以在這裡著手進行。
 
 ### <a name="views"></a>檢視
 
-**CustomerListPage.xaml**是定義在本教學課程中的單一頁面的 UI 的應用程式的檢視。 每當您需要新增或變更的視覺元素，在 UI 中，您將會進行此檔案中。 本教學課程將引導您完成加入這些項目：
+**CustomerListPage**是應用程式的 View，它會在本教學課程中定義單一頁面的 UI。 每當您需要在 UI 中新增或變更視覺專案時，就會在此檔案中執行此動作。 本教學課程將逐步引導您新增這些元素：
 
-* A **RadDataGrid**來顯示和編輯您的客戶。 
-* A **StackPanel**設為新客戶的初始值。
+* 用來顯示和編輯客戶的**RadDataGrid** 。 
+* 用來設定新客戶之初始值的**StackPanel** 。
 
-### <a name="viewmodels"></a>ViewModels
+### <a name="viewmodels"></a>Viewmodel
 
-**ViewModels\CustomerListPageViewModel.cs**是應用程式的基本邏輯所在的位置。 在檢視中採取的每個使用者動作將傳入此檔案進行處理。 在本教學課程中，您將新增一些新的程式碼，並實作下列方法：
+**ViewModels\CustomerListPageViewModel.cs**是應用程式的基本邏輯所在的位置。 在此視圖中所採取的每個使用者動作都會傳遞至此檔案進行處理。 在本教學課程中，您將新增一些新的程式碼，並執行下列方法：
 
-* **CreateNewCustomerAsync**，其中，初始化新的 CustomerViewModel 物件。
-* **DeleteNewCustomerAsync**，以移除新的客戶之前它會顯示在 UI 中。
-* **DeleteAndUpdateAsync**，處理 [刪除] 按鈕的邏輯。
-* **GetCustomerListAsync**，表示從資料庫擷取客戶清單。
-* **SaveInitialChangesAsync**，其在資料庫中加入新的客戶資訊。
-* **UpdateCustomersAsync**，會重新整理以反映加入或刪除任何客戶的 UI。
+* **CreateNewCustomerAsync**，它會初始化新的 CustomerViewModel 物件。
+* **DeleteNewCustomerAsync**，這會在使用者于 UI 中顯示之前移除新的客戶。
+* **DeleteAndUpdateAsync**，它會處理 [刪除] 按鈕的邏輯。
+* **GetCustomerListAsync**，它會從資料庫中抓取客戶清單。
+* **SaveInitialChangesAsync**，這會將新客戶的資訊加入至資料庫。
+* **UpdateCustomersAsync**，這會重新整理 UI 以反映任何新增或刪除的客戶。
 
-**CustomerViewModel**是客戶的詳細資訊，可追蹤是否最近修改的包裝函式。 您不需要將任何項目新增至此類別，但某些其他位置，您將新增的程式碼會參考它。
+**CustomerViewModel**是客戶資訊的包裝函式，它會追蹤是否最近修改過。 您不需要將任何專案新增至此類別，但您在其他地方新增的一些程式碼將會參考它。
 
-如需有關範例的建構方式的詳細資訊，請參閱[應用程式結構概觀](../enterprise/customer-database-app-structure.md)。
+如需如何建立範例的詳細資訊，請參閱[應用程式結構總覽](../enterprise/customer-database-app-structure.md)。
 
-## <a name="part-2-add-the-datagrid"></a>第 2 部分：新增資料格
+## <a name="part-2-add-the-datagrid"></a>第2部分：新增 DataGrid
 
-開始處理客戶資料之前，您必須加入 UI 控制項來顯示這些客戶。 若要這樣做，我們將使用預先製作的第三方**RadDataGrid**控制項。 **Telerik.UI.for.UniversalWindowsPlatform** NuGet 套件已包含在此專案。 讓我們加入我們的專案中的方格。
+開始操作客戶資料之前，您必須新增 UI 控制項以顯示這些客戶。 為了這麼做，我們將使用預先建立的協力廠商**RadDataGrid**控制項。 此專案中已經包含 Microsoft.netcore.universalwindowsplatform NuGet 套件的**Telerik** 。 讓我們在專案中新增方格。
 
-1. 開啟**Views\CustomerListPage.xaml**從 [方案總管]。 新增下列程式碼內**網頁**宣告對應至包含資料格的 Telerik 命名空間的標記。
+1. 從 [方案總管] 開啟 [ **Views\CustomerListPage.xaml** ]。 在**Page**標記內新增下列程式程式碼，以宣告包含資料方格之 Telerik 命名空間的對應。
 
     ```xaml
         xmlns:telerikGrid="using:Telerik.UI.Xaml.Controls.Grid"
     ```
 
-2. 下面**CommandBar**內之主**RelativePanel**檢視中，加入**RadDataGrid**控制，使用一些基本設定選項：
+2. 在視圖主要**RelativePanel**的 [ **CommandBar** ] 底下，新增**RadDataGrid**控制項，其中包含一些基本設定選項：
 
     ```xaml
     <Grid
@@ -96,21 +96,21 @@ ms.locfileid: "58808296"
     </Grid>
     ```
 
-3. 您已新增資料方格中，但您還需要可顯示的資料。 將下列程式碼行新增至它：
+3. 您已加入資料格，但它需要資料才能顯示。 將下列幾行程式碼加入其中：
 
     ```xaml
     ItemsSource="{x:Bind ViewModel.Customers}"
     UserEditMode="Inline"
     ```
-    既然您已定義資料來源，以顯示，請**RadDataGrid**會為您處理大部分的 UI 邏輯。 不過，如果您執行您的專案時，您仍然不會看到任何資料上顯示。 這是因為 ViewModel 它不尚未載入。
+    現在您已定義要顯示的資料來源， **RadDataGrid**將會為您處理大部分的 UI 邏輯。 不過，如果您執行專案，您仍然看不到顯示的任何資料。 這是因為 ViewModel 還不會載入它。
 
-![空白的應用程式，客戶不](images/customer-database-tutorial/blank-customer-list.png)
+![空白應用程式，沒有客戶](images/customer-database-tutorial/blank-customer-list.png)
 
-## <a name="part-3-read-customers"></a>第 3 部分：閱讀客戶
+## <a name="part-3-read-customers"></a>第3部分：讀取客戶
 
-初始化時， **ViewModels\CustomerListPageViewModel.cs**呼叫**GetCustomerListAsync**方法。 方法需要測試的客戶資料擷取的 SQLite 資料庫，會包含在本教學課程。
+當它初始化時， **ViewModels\CustomerListPageViewModel.cs**會呼叫**GetCustomerListAsync**方法。 該方法必須從教學課程中所包含的 SQLite 資料庫，抓取測試客戶資料。
 
-1. 在  **ViewModels\CustomerListPageViewModel.cs**，更新您**GetCustomerListAsync**方法取代此程式碼：
+1. 在**ViewModels\CustomerListPageViewModel.cs**中，使用下列程式碼更新您的**GetCustomerListAsync**方法：
 
     ```csharp
     public async Task GetCustomerListAsync()
@@ -130,23 +130,23 @@ ms.locfileid: "58808296"
         });
     }
     ```
-    **GetCustomerListAsync** ViewModel 載入，但在此步驟中之前, 它並沒有進行任何項目時，會呼叫方法。 在這裡，我們已將呼叫新增至**GetAsync**方法中的**存放庫/SqlCustomerRepository**。 這可讓它連絡的儲存機制來擷取客戶物件的可列舉集合。 它接著將這些訊息剖析成個別的物件，再將它們新增到其內部**ObservableCollection**讓它們可以顯示和編輯。
+    載入 ViewModel 時，會呼叫**GetCustomerListAsync**方法，但在此步驟之前，它不會執行任何動作。 在這裡，我們已在**Repository/SqlCustomerRepository**中新增對**GetAsync**方法的呼叫。 這可讓它連線到存放庫，以取得 Customer 物件的可列舉集合。 接著，它會將它們剖析成個別的物件，然後再將它們新增至其內部**ObservableCollection** ，以顯示和編輯它們。
 
 2. 執行您的應用程式-您現在會看到顯示客戶清單的資料格。
 
-![初始清單中的客戶](images/customer-database-tutorial/initial-customers.png)
+![客戶的初始清單](images/customer-database-tutorial/initial-customers.png)
 
-## <a name="part-4-edit-customers"></a>第 4 部分：編輯客戶
+## <a name="part-4-edit-customers"></a>第4部分：編輯客戶
 
-您可以按兩下檔案，編輯資料方格中的項目，但您必須確定您在 UI 中進行任何變更也會對您的客戶程式碼後置的集合。 這表示您必須實作雙向資料繫結。 如果您想要這的詳細資訊，請參閱我們[簡介資料繫結](../get-started/display-customers-in-list-learning-track.md)。
+您可以藉由按兩下來編輯資料方格中的專案，但您必須確定您在 UI 中所做的任何變更也會在程式碼後置中，對您的客戶集合進行。 這表示您必須執行雙向資料系結。 如果您想要更多有關這方面的資訊，請參閱我們[的資料](../get-started/display-customers-in-list-learning-track.md)系結簡介。
 
-1. 首先，宣告**ViewModels\CustomerListPageViewModel.cs**實作**INotifyPropertyChanged**介面：
+1. 首先，宣告**ViewModels\CustomerListPageViewModel.cs**會實作為**INotifyPropertyChanged**介面：
 
     ```csharp
     public class CustomerListPageViewModel : INotifyPropertyChanged
     ```
 
-2. 然後，在主體中的類別，新增下列事件和方法：
+2. 然後，在類別的主要主體中，新增下列事件和方法：
 
     ```csharp
     public event PropertyChangedEventHandler PropertyChanged;
@@ -155,9 +155,9 @@ ms.locfileid: "58808296"
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     ```
 
-    **OnPropertyChanged**方法，可以方便您 setter 引發**PropertyChanged**事件，這是所需的雙向資料繫結。
+    **OnPropertyChanged**方法可讓您的 setter 輕鬆地引發**PropertyChanged**事件，這是雙向資料系結的必要專案。
 
-3. 更新的 setter **SelectedCustomer**使用此函式呼叫：
+3. 使用此函數呼叫來更新**SelectedCustomer**的 setter：
 
     ```csharp
     public CustomerViewModel SelectedCustomer
@@ -174,23 +174,23 @@ ms.locfileid: "58808296"
     }
     ```
 
-4. 在  **Views\CustomerListPage.xaml**，新增**SelectedCustomer**加入您的資料格的屬性。
+4. 在**Views\CustomerListPage.xaml**中，將**SelectedCustomer**屬性新增至您的資料格。
 
     ```xaml
     SelectedItem="{x:Bind ViewModel.SelectedCustomer, Mode=TwoWay}"
     ```
 
-    這會將使用者的選取項目在資料格中關聯對應客戶物件中的程式碼後置。 TwoWay 繫結模式可讓該物件會反映在 UI 中所做的變更。
+    這會使使用者在資料方格中的選取專案與程式碼後置中的對應 Customer 物件產生關聯。 TwoWay 系結模式可讓 UI 中所做的變更反映在該物件上。
 
-5. 執行應用程式。 您現在可以看到顯示在方格中，客戶，並對基礎資料中的變更，透過您的 UI。
+5. 執行您的應用程式。 您現在可以看到客戶顯示在方格中，並透過您的 UI 對基礎資料進行變更。
 
 ![編輯資料方格中的客戶](images/customer-database-tutorial/edit-customer-inline.png)
 
-## <a name="part-5-update-customers"></a>第 5 部分：更新客戶
+## <a name="part-5-update-customers"></a>第5部分：更新客戶
 
-現在，您可以查看和編輯您的客戶，您必須能夠將變更推送至資料庫，並提取其他人所做的任何更新。
+現在您可以看到並編輯您的客戶，您必須能夠將您的變更推送到資料庫，並提取其他人所做的更新。
 
-1. 返回**ViewModels\CustomerListPageViewModel.cs**，然後瀏覽至**UpdateCustomersAsync**方法。 這段程式碼，將變更推送至資料庫，並擷取任何新資訊來更新它：
+1. 返回**ViewModels\CustomerListPageViewModel.cs**，並流覽至**UpdateCustomersAsync**方法。 使用下列程式碼更新它，以將變更推送到資料庫並抓取任何新的資訊：
 
     ```csharp
     public async Task UpdateCustomersAsync()
@@ -203,15 +203,15 @@ ms.locfileid: "58808296"
         await GetCustomerListAsync();
     }
     ```
-    此程式碼會利用**IsModified**屬性**ViewModels\CustomerViewModel.cs**，這會自動更新客戶變更時。 這可讓您以避免不必要的呼叫，並將只更新客戶的變更推送至資料庫。
+    此程式碼會利用**ViewModels\CustomerViewModel.cs**的**IsModified**屬性，這會在客戶每次變更時自動更新。 這可讓您避免不必要的呼叫，並只將變更從更新的客戶推送到資料庫。
 
-## <a name="part-6-create-a-new-customer"></a>第 6 節：建立新的客戶
+## <a name="part-6-create-a-new-customer"></a>第6部分：建立新的客戶
 
-加入新的客戶提供一項挑戰，，因為如果您將它新增至 UI 之前提供其屬性的值，將會顯示為空白資料列的客戶。 這不是問題，但此處我們會包辦您更輕鬆地設定客戶的初始值。 在本教學課程中，我們將新增簡單的可摺疊面板中，但如果您有更多的資訊，以新增您無法針對此用途建立個別的頁面。
+加入新的客戶會帶來挑戰，因為如果您在 UI 中新增其屬性的值，客戶就會顯示為空白資料列。 這不是問題，但我們將更輕鬆地設定客戶的初始值。 在本教學課程中，我們將新增一個簡單的可折迭面板，但如果您有更多要新增的資訊，可以針對此用途建立個別的頁面。
 
 ### <a name="update-the-code-behind"></a>更新程式碼後置
 
-1. 將新的私用欄位和公用屬性，以新增**ViewModels\CustomerListPageViewModel.cs**。 這會用來控制面板可見。
+1. 將新的私用欄位和公用屬性加入至**ViewModels\CustomerListPageViewModel.cs**。 這會用來控制是否顯示面板。
 
     ```csharp
     private bool _addingNewCustomer = false;
@@ -230,14 +230,14 @@ ms.locfileid: "58808296"
     }
     ```
 
-2. 將新的公用屬性新增到 ViewModel，值的反轉**AddingNewCustomer**。 這會用來停用一般的命令列按鈕，面板會顯示時。
+2. 將新的公用屬性加入至 ViewModel，這是**AddingNewCustomer**值的反函數。 當面板為可見時，這將用來停用一般的命令列按鈕。
 
     ```csharp
     public bool EnableCommandBar => !AddingNewCustomer;
     ```
-    現在，您將需要一種方法以顯示可摺疊面板，以及建立要在其中編輯客戶。 
+    現在您將需要一種方法來顯示可折迭的面板，以及建立要在其中編輯的客戶。 
 
-3. 加入新的私用魔和公用屬性到 ViewModel，以保存新建立的客戶。
+3. 將新的私用 fiend 和公用屬性新增至 ViewModel，以保存新建立的客戶。
 
     ```csharp
     private CustomerViewModel _newCustomer;
@@ -256,7 +256,7 @@ ms.locfileid: "58808296"
     }
     ```
 
-2.  更新您**CreateNewCustomerAsync**方法來建立新的客戶，將它新增至存放庫中，並將它設為所選客戶：
+2.  更新您的**CreateNewCustomerAsync**方法以建立新的客戶、將其新增至存放庫，並將它設定為選取的客戶：
 
     ```csharp
     public async Task CreateNewCustomerAsync()
@@ -268,7 +268,7 @@ ms.locfileid: "58808296"
     }
     ```
 
-3. 更新**SaveInitialChangesAsync**方法將新建立的客戶新增至存放庫中，更新 UI，並關閉 [面板] 中。
+3. 更新**SaveInitialChangesAsync**方法，將新建立的客戶新增至存放庫、更新 UI，然後關閉面板。
 
     ```csharp
     public async Task SaveInitialChangesAsync()
@@ -278,17 +278,17 @@ ms.locfileid: "58808296"
         AddingNewCustomer = false;
     }
     ```
-4. 將下列程式碼行新增為 setter 內的最後一行**AddingNewCustomer**:
+4. 在**AddingNewCustomer**的 setter 中，新增下列程式程式碼作為最後一行：
 
     ```csharp
     OnPropertyChanged(nameof(EnableCommandBar));
     ```
 
-    這可確保**EnableCommandBar**就會自動更新每當**AddingNewCustomer**變更。
+    這可確保每當**AddingNewCustomer**變更時， **EnableCommandBar**就會自動更新。
 
 ### <a name="update-the-ui"></a>更新 UI
 
-1. 瀏覽回到**Views\CustomerListPage.xaml**，並新增**StackPanel**之間的下列屬性與您**CommandBar**和您的資料格：
+1. 流覽回到**Views\CustomerListPage.xaml**，並在您的**CommandBar**和您的資料格之間新增具有下列屬性的**StackPanel** ：
 
     ```xaml
     <StackPanel
@@ -298,15 +298,15 @@ ms.locfileid: "58808296"
         RelativePanel.Below="mainCommandBar">
     </StackPanel>
     ```
-    **X:load**屬性可確保，此面板只會顯示當您新增新的客戶。
+    **X:Load**屬性可確保只有在您新增新客戶時，才會出現此面板。
 
-2. 對您的資料格，以確保它將向下移，新的面板出現時的位置中進行下列變更：
+2. 對資料格的位置進行下列變更，以確保它會在新面板出現時向下移動：
 
     ```xaml
     RelativePanel.Below="newCustomerPanel"
     ```
 
-3. 具有四個更新堆疊面板**TextBox**控制項。 它們會繫結至新的客戶，個別屬性，可讓您編輯其值，再將它新增至資料格。
+3. 以四個**TextBox**控制項更新您的堆疊面板。 它們會系結至新客戶的個別屬性，並可讓您編輯其值，然後再將它加入資料方格。
 
     ```xaml
     <StackPanel
@@ -341,7 +341,7 @@ ms.locfileid: "58808296"
     </StackPanel>
     ```
 
-4. 簡單的按鈕加入您新的堆疊面板，以儲存新建立的客戶：
+4. 將簡單的按鈕新增至新的堆疊面板，以儲存新建立的客戶：
 
     ```xaml
     <StackPanel>
@@ -353,7 +353,7 @@ ms.locfileid: "58808296"
     </StackPanel>
     ```
 
-5. 更新**CommandBar**，因此規則的建立、 刪除和更新 按鈕就會停用堆疊面板會顯示：
+5. 更新**CommandBar**，讓 [堆疊面板] 可見時，會停用一般 [建立]、[刪除] 和 [更新] 按鈕：
 
     ```xaml
     <CommandBar
@@ -365,15 +365,15 @@ ms.locfileid: "58808296"
     </CommandBar>
     ```
 
-6. 執行應用程式。 您現在可以建立客戶，並輸入其堆疊面板中的資料。
+6. 執行您的應用程式。 您現在可以建立客戶，並在 [堆疊] 面板中輸入其資料。
 
-![建立新的客戶](images/customer-database-tutorial/add-new-customer.png)
+![建立新客戶](images/customer-database-tutorial/add-new-customer.png)
 
-## <a name="part-7-delete-a-customer"></a>第 7 節：刪除客戶
+## <a name="part-7-delete-a-customer"></a>第7部分：刪除客戶
 
-刪除客戶是最終的基本作業，您需要實作。 當您刪除您所選取資料格內的客戶時，您會想要立即呼叫**UpdateCustomersAsync**才能更新 UI。 不過，您不需要呼叫該方法，如果您要刪除您剛剛建立的客戶。
+刪除客戶是您需要執行的最後基本作業。 當您刪除已在資料方格中選取的客戶時，您會想要立即呼叫**UpdateCustomersAsync**來更新 UI。 不過，如果您要刪除剛建立的客戶，則不需要呼叫該方法。
 
-1. 瀏覽至**ViewModels\CustomerListPageViewModel.cs**，並更新**DeleteAndUpdateAsync**方法：
+1. 流覽至**ViewModels\CustomerListPageViewModel.cs**，並更新**DeleteAndUpdateAsync**方法：
 
     ```csharp
     public async void DeleteAndUpdateAsync()
@@ -386,7 +386,7 @@ ms.locfileid: "58808296"
     }
     ```
 
-2. 在  **Views\CustomerListPage.xaml**，更新 堆疊面板加入新的客戶，因此包含第二個按鈕：
+2. 在**Views\CustomerListPage.xaml**中，更新 [堆疊] 面板以加入新的客戶，使其包含第二個按鈕：
 
     ```xaml
     <StackPanel>
@@ -402,7 +402,7 @@ ms.locfileid: "58808296"
     </StackPanel>
     ```
 
-3. 在  **ViewModels\CustomerListPageViewModel.cs**，更新**DeleteNewCustomerAsync**方法來刪除新的客戶：
+3. 在**ViewModels\CustomerListPageViewModel.cs**中，更新**DeleteNewCustomerAsync**方法以刪除新的客戶：
 
     ```csharp
     public async Task DeleteNewCustomerAsync()
@@ -415,50 +415,50 @@ ms.locfileid: "58808296"
     }
     ```
 
-4. 執行應用程式。 您現在可以刪除在資料格中，或在堆疊面板中的客戶。
+4. 執行您的應用程式。 您現在可以在資料方格或 [堆疊] 面板中刪除客戶。
 
 ![刪除新的客戶](images/customer-database-tutorial/delete-new-customer.png)
 
 ## <a name="conclusion"></a>結論
 
-恭喜您！ 進行這一切完成，您的應用程式現在會有完整的本機資料庫作業。 您可以建立、 讀取、 更新和刪除您的使用者介面內的客戶，以及這些變更儲存到您的資料庫，並會保存到不同的會啟動您的應用程式。
+恭喜您！ 完成上述所有作業之後，您的應用程式現在有完整範圍的本機資料庫作業。 您可以在 UI 中建立、讀取、更新和刪除客戶，這些變更會儲存到您的資料庫，並且會在不同的應用程式啟動期間保存。
 
-現在，您已完成，請考慮下列各項：
-* 如果您還沒有這麼做，請參閱[應用程式結構概觀](../enterprise/customer-database-app-structure.md)如需有關為什麼應用程式建置其用法。
-* 瀏覽[完整的客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)以查看本教學課程根據應用程式。
+現在您已經完成，請考慮下列事項：
+* 如果您還沒有這麼做，請參閱[應用程式結構總覽](../enterprise/customer-database-app-structure.md)，以取得有關應用程式建立方式的詳細資訊。
+* 探索[完整客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)，以查看本教學課程所依據的應用程式。
 
-或者，如果您是進行一項挑戰，您可以繼續及更新版本...
+或者，如果您遇到挑戰，可以繼續 。
 
-## <a name="going-further-connect-to-a-remote-database"></a>繼續進行：連接到遠端資料庫
+## <a name="going-further-connect-to-a-remote-database"></a>進一步瞭解：連接到遠端資料庫
 
-我們提供了如何實作這些呼叫，對本機 SQLite 資料庫的逐步解說。 但是，如果您想要改為使用遠端資料庫？
+我們已提供逐步解說，說明如何針對本機 SQLite 資料庫來執行這些呼叫。 但是，如果您想要使用遠端資料庫，又該怎麼做呢？
 
-如果您想要放手一試，您將需要您自己的 Azure Active Directory (AAD) 帳戶，並且能夠裝載您自己的資料來源。
+如果您想要嘗試這麼做，您將需要自己的 Azure Active Directory （AAD）帳戶，以及裝載您自己的資料來源的能力。
 
-您要新增驗證，函式來處理 REST 呼叫，然後再建立 遠端資料庫進行互動。 程式碼正在完整[客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)，您可以參考的每個必要的作業。
+您必須加入驗證、處理 REST 呼叫的函式，然後建立要與互動的遠端資料庫。 完整[客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)中有程式碼，您可以參考每個必要的作業。
 
-### <a name="settings-and-configuration"></a>設定和組態
+### <a name="settings-and-configuration"></a>設定和設定
 
-連線到遠端資料庫的必要步驟會在拼[範例的讀我檔案](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/README.md)。 您必須執行下列作業：
+在[範例的讀我檔案](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/README.md)中，連接到您自己的遠端資料庫的必要步驟已拼出。 您必須執行下列動作：
 
-* 提供您的 Azure 帳戶的用戶端識別碼來[Constants.cs](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs)。
-* 提供的遠端資料庫的 url [Constants.cs](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs)。
-* 提供資料庫的連接字串[Constants.cs](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs)。
-* 將您的應用程式與 Microsoft Store 產生關聯。
-* 透過複製[服務專案](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService)到您的應用程式，並將它部署至 Azure。
+* 將您的 Azure 帳戶用戶端識別碼提供給[Constants.cs](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs)。
+* 提供要[Constants.cs](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs)之遠端資料庫的 url。
+* 提供要[Constants.cs](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs)之資料庫的連接字串。
+* 將您的應用程式與 Microsoft Store 建立關聯。
+* 將[服務專案](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService)複製到您的應用程式，並將其部署至 Azure。
 
 ### <a name="authentication"></a>驗證
 
-您必須建立一個按鈕來開始驗證序列，並快顯視窗或個別的頁面，來收集使用者的資訊。 一旦您已建立的您必須提供要求的使用者資訊，並使用它來取得存取權杖的程式碼。 客戶訂單資料庫範例會包裝呼叫 Microsoft Graph **web 帳戶管理員**程式庫來取得權杖，以及處理至 AAD 帳戶的驗證。
+您必須建立按鈕來啟動驗證序列，以及使用快顯或個別頁面來收集使用者的資訊。 建立該檔案之後，您必須提供要求使用者資訊的程式碼，並使用它來取得存取權杖。 客戶訂單資料庫範例會使用**WebAccountManager**程式庫包裝 Microsoft Graph 呼叫，以取得權杖並處理 AAD 帳戶的驗證。
 
-* 中實作驗證邏輯[ **AuthenticationViewModel.cs**](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/ViewModels/AuthenticationViewModel.cs)。
-* 在驗證程序會顯示在自訂[ **AuthenticationControl.xaml** ](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/UserControls/AuthenticationControl.xaml)控制項。
+* 驗證邏輯會在[**AuthenticationViewModel.cs**](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/ViewModels/AuthenticationViewModel.cs)中執行。
+* 驗證程式會顯示在自訂的[**AuthenticationControl**](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/UserControls/AuthenticationControl.xaml)控制項中。
 
 ### <a name="rest-calls"></a>REST 呼叫
 
-您不需要修改任何程式碼的我們已新增在本教學課程才能實作 REST 呼叫。 相反地，您必須執行下列作業：
+您不需要修改我們在本教學課程中加入的任何程式碼，即可執行 REST 呼叫。 相反地，您必須執行下列動作：
 
-* 建立新的實作**ICustomerRepository**並**ITutorialRepository**實作函式，而不是 SQLite REST 透過一組相同的介面。 您必須序列化和還原序列化 JSON，並可以將您的 REST 呼叫包裝在個別**HttpHelper**如果您需要的類別。 請參閱[完整的範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoRepository/Rest)如需詳細資訊。
-* 在  **App.xaml.cs**、 建立新的函式，來初始化 REST 存放庫中，以及呼叫它，而不要**SqliteDatabase**當初始化應用程式。 同樣地，請參閱[完整的範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/App.xaml.cs)。
+* 建立**ICustomerRepository**和**ITutorialRepository**介面的新實作為，透過 REST （而不是 SQLite）來執行一組相同的函式。 您將需要序列化和還原序列化 JSON，並且可以在需要時，將 REST 呼叫包裝在不同的**HttpHelper**類別中。 如需詳細資訊，請參閱[完整範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoRepository/Rest)。
+* 在**App.xaml.cs**中，建立新的函式來初始化 REST 存放庫，並在應用程式初始化時呼叫它，而不是**SqliteDatabase** 。 同樣地，請參閱[完整的範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/App.xaml.cs)。
 
-所有三個步驟完成後，您應該能夠向您的 AAD 帳戶，透過您的應用程式。 遠端資料庫的 REST 呼叫將會取代本機 SQLite 呼叫，但使用者體驗應該相同。 如果您覺得更龐大，您可以新增設定 頁面可讓使用者動態地在兩者之間切換。
+完成上述三個步驟之後，您應該能夠透過應用程式向 AAD 帳戶進行驗證。 對遠端資料庫的 REST 呼叫將會取代本機的 SQLite 呼叫，但使用者體驗應該相同。 如果您覺得更確保建構完善，可以加入 [設定] 頁面，讓使用者在兩者之間進行動態切換。

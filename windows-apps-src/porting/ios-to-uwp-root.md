@@ -7,12 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d66962971844f1983b527c6cea436dba03d63b8b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 266a5f147b57e522088dab2ec298b54596ef77b7
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322335"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260152"
 ---
 # <a name="move-from-ios-to-uwp"></a>從 iOS 移到 UWP
 
@@ -27,11 +27,11 @@ ms.locfileid: "67322335"
 | 主題 | 描述 |
 |-------|-------------|
 | [選取 iOS 和 UWP 應用程式開發的方法](selecting-an-approach-to-ios-and-uwp-app-development.md) | 開發跨平台 app 時有哪些選擇？ |
-| [開始使用 UWP for iOS 開發人員](getting-started-with-uwp-for-ios-developers.md) | 如果您是 iOS 開發人員，且正在考慮為 Windows 10 開發程式，這些文件是很好的切入點。 |
-| [設定您的 Mac 與 Windows 10](setting-up-your-mac-with-windows-10.md) | 使用目前的 Mac 電腦開發適用於 Windows 的 app。 |
+| [適用于 iOS 開發人員的 UWP 使用者入門](getting-started-with-uwp-for-ios-developers.md) | 如果您是 iOS 開發人員，且正在考慮為 Windows 10 開發程式，這些文件是很好的切入點。 |
+| [使用 Windows 10 設定您的 Mac](setting-up-your-mac-with-windows-10.md) | 使用目前的 Mac 電腦開發適用於 Windows 的 app。 |
 
 ## <a name="related-topics"></a>相關主題
 
-**設計人員和開發人員**
-* [建置適用於所有 Windows 裝置的通用 Windows 應用程式](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [下載設計資產以供 UWP 應用程式](https://docs.microsoft.com/windows/uwp/design/downloads/index)
+**適用于設計人員和開發人員**
+* [建立適用于所有 Windows 裝置的通用 Windows 應用程式](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+* [下載適用于 UWP 應用程式的設計資產](https://docs.microsoft.com/windows/uwp/design/downloads/index)

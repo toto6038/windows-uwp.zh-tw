@@ -6,17 +6,17 @@ keywords: 筆跡, 教學
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 929d72da46c52cfdb510f1e1b6a97ddcbbe066d5
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 07b6347d46913a11a666234154b72d4bf4a3ebd3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820576"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258392"
 ---
-# <a name="tutorial-support-ink-in-your-uwp-app"></a>教學課程：UWP 應用程式中的支援連結
+# <a name="tutorial-support-ink-in-your-uwp-app"></a>教學課程︰在 UWP app 中支援筆跡
 
-![介面的畫筆](images/ink/ink-hero-small.png)  
-*Surface 手寫筆* (可在 [Microsoft 網上商店](https://aka.ms/purchasesurfacepen)購買)。
+![Surface Pen](images/ink/ink-hero-small.png)  
+*Surface 手寫筆* (可在 [Microsoft 網上商店](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)購買)。
 
 本教學課程逐步解說如何建立支援使用 Windows Ink 手寫及繪圖的基本通用 Windows 平台 (UWP) app。 我們會使用範例應用程式的程式碼片段，這您可以從 GitHub 下載 (請參閱[範例程式碼](#sample-code))，來展示每個步驟中所討論的各種不同功能和相關 Windows Ink API (請參閱 [Windows Ink 平台的元件](#components-of-the-windows-ink-platform))。
 
@@ -33,15 +33,15 @@ ms.locfileid: "67820576"
 
 您可以藉由 Windows Ink 提供客戶幾乎相當於可想像的所有紙筆體驗的數位手寫功能，從快速的手寫筆記和註解到白板示範，以及從架構和工程繪圖到個人傑作。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 * 執行目前版本的 Windows 10 的電腦 (或虛擬機器)
 * [Visual Studio 2019 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* 根據您的設定，您可能必須安裝[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 套件，並啟用**開發人員模式**(設定-> [更新您系統設定] 中（& s) 開發人員使用開發人員功能-> [安全性]->)。
+* [Windows 10 SDK （10.0.15063.0）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* 視您的設定而定，您可能必須安裝[NETCore](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 套件，並在您的系統設定中啟用**開發人員模式**（設定-> 更新 & 適用于開發人員的安全性 >-> 使用開發人員功能）。
 * 如果您是使用 Visual Studio 開發通用 Windows 平台 (UWP) app 的新手，請在您開始本教學課程之前參閱這些主題︰  
     * [開始設定](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [建立"Hello，world"應用程式 (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [建立 "Hello，world" 應用程式（XAML）](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[選擇性]** 數位手寫筆和配備支援手寫筆輸入的顯示器的電腦。
 
 > [!NOTE] 
@@ -50,7 +50,7 @@ ms.locfileid: "67820576"
 ## <a name="sample-code"></a>範例程式碼
 在本教學課程中，我們使用範例筆跡 app 來示範所討論的概念和功能。
 
-從 [GitHub](https://github.com/) 的 [windows-appsample-get-started-ink sample](https://aka.ms/appsample-ink) 下載此 Visual Studio 範例和原始程式碼：
+從 [GitHub](https://github.com/) 的 [windows-appsample-get-started-ink sample](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink) 下載此 Visual Studio 範例和原始程式碼：
 
 1. 選取綠色的 **\[Clone or download\]** (複製或下載) 按鈕  
 ![複製存放庫](images/ink/ink-clone.png)
@@ -64,12 +64,12 @@ ms.locfileid: "67820576"
 
 這些物件提供 UWP app 大量筆跡體驗。
 
-| Component | 描述 |
+| 元件 | 描述 |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平台的控制項，根據預設，會接收並顯示所有的輸入，來自手寫筆筆墨筆劃或清除筆劃。 |
+| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平臺控制項，預設會接收並顯示畫筆的所有輸入做為筆墨筆劃或抹除筆劃。 |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 程式碼後置物件，連同 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項 (透過 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 屬性所公開) 進行具現化。 這個物件提供 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 公開的所有預設筆跡功能，以及一組完整的 API 來進行其他自訂和個人化。 |
-| [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | XAML UI 平台控制項包含自訂和擴充集合的 啟動中相關聯的筆跡相關功能的按鈕[ **InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)。 |
-| [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>我們在此不涵蓋此項功能，如需詳細資訊，請參閱[複雜的筆跡範例](https://go.microsoft.com/fwlink/p/?LinkID=620314)。 | 可讓筆墨筆劃轉譯到通用 Windows app 的指定 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項。 |
+| [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | XAML UI 平臺控制項，其中包含可自訂且可擴充的按鈕集合，可在相關聯的[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)中啟用筆墨相關功能。 |
+| [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>我們在此不涵蓋此項功能，如需詳細資訊，請參閱[複雜的筆跡範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)。 | 可讓筆墨筆劃轉譯到通用 Windows app 的指定 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項。 |
 
 ## <a name="step-1-run-the-sample"></a>步驟 1：執行範例
 
@@ -80,7 +80,7 @@ ms.locfileid: "67820576"
 
    > [!NOTE]
    > 或者，您可以選取 **\[偵錯\]**  >  **\[開始偵錯\]** 功能表項目，或選取此處顯示的 **\[本機電腦**執行\] 按鈕。
-   > ![Visual Studio 建置專案的按鈕](images/ink/ink-vsrun-small.png)
+   > ![Visual Studio 組建專案 按鈕](images/ink/ink-vsrun-small.png)
 
 應用程式視窗隨即開啟，並在啟動顯示畫面出現幾秒後，您會看到這個初始畫面。
 
@@ -88,7 +88,7 @@ ms.locfileid: "67820576"
 
 好了，我們現在有基本 UWP app，而我們會在此教學課程的其餘部分使用它。 在下列步驟中，我們會新增筆跡功能。
 
-## <a name="step-2-use-inkcanvas-to-support-basic-inking"></a>步驟 2：使用 InkCanvas 支援基本筆跡
+## <a name="step-2-use-inkcanvas-to-support-basic-inking"></a>步驟 2︰使用 InkCanvas 支援基本筆跡
 
 或許您可能已經注意到該 App，它的初始形式，不會讓您使用手寫筆 (雖然您可以使用手寫筆做為標準指標裝置來與應用程式互動) 繪製任何項目。 
 
@@ -101,7 +101,7 @@ ms.locfileid: "67820576"
 
 ### <a name="in-the-sample"></a>在範例中︰
 1. 請開啟 MainPage.xaml.cs 檔案，
-2. 尋找此步驟中的標題以標示的程式碼 ("/ / 步驟 2:使用 InkCanvas 來支援基本筆跡 」）。
+2. 尋找標有此步驟標題的程式碼 (「步驟 2：使用 InkCanvas 支援基本筆跡」)。
 3. 取消註解下列行。 (後續步驟中所使用的功能需要這些參考資料)。  
 
 ``` csharp
@@ -112,7 +112,7 @@ ms.locfileid: "67820576"
 ```
 
 4. 請開啟 MainPage.xaml 檔案，
-5. 尋找此步驟中的標題以標示的程式碼 ("\<！-步驟 2:InkCanvas 的基本筆跡-->")。
+5. 尋找以此步驟的標題標示的程式碼（「\<!--步驟2：使用 InkCanvas 的基本筆跡-->」）。
 6. 取消註解下列行。  
 
 ``` xaml
@@ -125,7 +125,7 @@ ms.locfileid: "67820576"
 
 ![基本筆跡](images/ink/ink-app-step1-name-small.png)
 
-## <a name="step-3-support-inking-with-touch-and-mouse"></a>步驟 3：支援觸控及滑鼠的筆跡
+## <a name="step-3-support-inking-with-touch-and-mouse"></a>步驟 3︰使用觸控與滑鼠支援筆跡
 
 您會注意到，預設筆跡功能只支援手寫筆輸入。 如果您嘗試用您的手指、滑鼠或觸控板書寫或繪圖，會讓您失望的。
 
@@ -140,7 +140,7 @@ ms.locfileid: "67820576"
 
 ### <a name="in-the-sample"></a>在範例中︰
 1. 請開啟 MainPage.xaml.cs 檔案，
-2. 尋找此步驟中的標題以標示的程式碼 ("/ / 步驟 3:支援觸控及滑鼠的筆跡 」）。
+2. 尋找標有此步驟標題的程式碼 (「步驟 3︰使用觸控與滑鼠支援筆跡」)。
 3. 取消註解下列行。  
 
 ``` csharp
@@ -155,7 +155,7 @@ ms.locfileid: "67820576"
 > [!NOTE]
 > 指定輸入裝置類型時，您必須指示支援每個特定輸入類型 (包括手寫筆)，因為設定這個屬性會覆寫預設 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 設定。
 
-## <a name="step-4-add-an-ink-toolbar"></a>步驟 4：新增筆跡 工具列
+## <a name="step-4-add-an-ink-toolbar"></a>步驟 4︰新增筆跡工具列
 
 [  **InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 是 UWP 平台控制項，提供可自訂和可擴充的按鈕集合以啟用筆跡相關功能。 
 
@@ -165,7 +165,7 @@ ms.locfileid: "67820576"
 
 ### <a name="in-the-sample"></a>在範例中
 1. 請開啟 MainPage.xaml 檔案，
-2. 尋找此步驟中的標題以標示的程式碼 ("\<！-步驟 4:新增筆跡工具列-->")。
+2. 尋找以此步驟的標題標示的程式碼（「\<!--步驟4：新增筆墨工具列-->」）。
 3. 取消註解下列行。  
 
 ``` xaml
@@ -177,13 +177,13 @@ ms.locfileid: "67820576"
 ```
 
 > [!NOTE]
-> 為盡可能整齊而簡單地保留 UI 和程式碼，請使用基本方格配置並在方格列中 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 的之後宣告 [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)。 如果您在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 之前宣告它，[**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 會先呈現在畫布下方，並且使用者無法存取。  
+> 為盡可能整齊而簡單地保留 UI 和程式碼，請使用基本方格配置並在方格列中 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 的之後宣告 [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)。 如果您在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 之前宣告它，[**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 會先呈現在畫布下方，並且使用者無法存取。  
 
 現在，再次執行以查看 [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 並試試一些工具。
 
 ![從 Ink 工作區繪圖板的 InkToolbar](images/ink/ink-inktoolbar-default-small.png)
 
-### <a name="challenge-add-a-custom-button"></a>挑戰：新增自訂按鈕
+### <a name="challenge-add-a-custom-button"></a>挑戰︰新增自訂按鈕
 <table class="wdg-noborder">
 <tr>
 <td>
@@ -203,7 +203,7 @@ ms.locfileid: "67820576"
 </tr>
 </table>
 
-## <a name="step-5-support-handwriting-recognition"></a>步驟 5：支援手寫辨識
+## <a name="step-5-support-handwriting-recognition"></a>步驟 5︰支援手寫辨識
 
 現在，您可以在您的 App 中寫字和繪圖，我們來使用這些徒手畫試試做些實用的東西。
 
@@ -213,13 +213,13 @@ ms.locfileid: "67820576"
 > 手寫辨識可以透過**手寫筆和 Windows Ink** 設定改進︰
 > 1. 開啟 [開始] 功能表，然後選取 **\[設定\]** 。
 > 2. 從 [\設定\] 畫面，選取 **\[裝置\]**  >  **\[手寫筆和 Windows Ink\]** 。
-> ![從 Ink 工作區中的素描板 InkToolbar](images/ink/ink-settings-small.png)
+> 在 [筆墨] 工作區中，從 Sketchpad ![InkToolbar](images/ink/ink-settings-small.png)
 > 3. 選取 **\[了解我的手寫內容\]** 以開啟 **\[個人化手寫\]** 對話方塊。
-> ![從 Ink 工作區中的素描板 InkToolbar](images/ink/ink-settings-handwritingpersonalization-small.png)
+> 在 [筆墨] 工作區中，從 Sketchpad ![InkToolbar](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### <a name="in-the-sample"></a>在範例中︰
 1. 請開啟 MainPage.xaml 檔案，
-2. 尋找此步驟中的標題以標示的程式碼 ("\<！-步驟 5:支援手寫辨識-->")。
+2. 尋找以此步驟的標題標示的程式碼（「\<!--步驟5：支援手寫辨識-->」）。
 3. 取消註解下列行。  
 
 ``` xaml
@@ -236,7 +236,7 @@ ms.locfileid: "67820576"
 ```
 
 4. 請開啟 MainPage.xaml.cs 檔案，
-5. 尋找此步驟中的標題以標示的程式碼 (「 步驟 5:支援語音辨識 」）。
+5. 尋找標有此步驟標題的程式碼 (「步驟 5：支援手寫辨識」)。
 6. 取消註解下列行。  
 
 - 這些是此步驟所需的全域變數。
@@ -281,7 +281,7 @@ ms.locfileid: "67820576"
 7. 再次執行 App，寫下一些文字，然後再按一下 **\[辨識文字\]** 按鈕
 8. 辨識結果會顯示在按鈕旁
 
-### <a name="challenge-1-international-recognition"></a>1 的挑戰：國際性辨識
+### <a name="challenge-1-international-recognition"></a>挑戰 1︰國際性辨識
 <table class="wdg-noborder">
 <tr>
 <td>
@@ -301,7 +301,7 @@ Windows Ink 支援許多 Windows 所支援語言的文字辨識。 每個語言�
 </tr>
 </table>
 
-### <a name="challenge-2-dynamic-recognition"></a>挑戰 2:動態辨識
+### <a name="challenge-2-dynamic-recognition"></a>挑戰 2︰動態辨識
 <table class="wdg-noborder">
 <tr>
 <td>
@@ -319,7 +319,7 @@ Windows Ink 支援許多 Windows 所支援語言的文字辨識。 每個語言�
 </tr>
 </table>
 
-## <a name="step-6-recognize-shapes"></a>步驟 6：辨識圖形
+## <a name="step-6-recognize-shapes"></a>步驟 6︰辨識圖形
 
 好了，現在您可以轉換手寫筆記為較能讀取的文字。 但是您早上的流程圖匿名會議中的那些歪歪斜斜的塗鴉又會如何呢？
 
@@ -347,7 +347,7 @@ Windows Ink 支援許多 Windows 所支援語言的文字辨識。 每個語言�
 
 ### <a name="in-the-sample"></a>在範例中︰
 1. 開啟 MainPage.xaml 檔案
-2. 尋找此步驟中的標題以標示的程式碼 ("\<！-步驟 6:辨識圖形-->")
+2. 尋找以此步驟的標題標示的程式碼（「\<!--步驟6：辨識圖形-->」）
 3. 取消註解此行。  
 
 ``` xaml
@@ -361,7 +361,7 @@ Windows Ink 支援許多 Windows 所支援語言的文字辨識。 每個語言�
 ```
 
 4. 開啟 MainPage.xaml.cs 檔案
-5. 尋找此步驟中的標題以標示的程式碼 ("/ / 步驟 6:辨識圖形 」）
+5. 尋找標有此步驟標題的程式碼 (「步驟 6︰辨識圖形」)
 6. 取消註解這些行︰  
 
 ``` csharp
@@ -392,7 +392,7 @@ Windows Ink 支援許多 Windows 所支援語言的文字辨識。 每個語言�
 ![原始筆跡流程圖](images/ink/ink-app-step6-shapereco2-small.png)
 
 
-## <a name="step-7-save-and-load-ink"></a>步驟 7：儲存及載入筆墨
+## <a name="step-7-save-and-load-ink"></a>步驟 7︰儲存和載入筆跡
 
 現在，您已完成塗鴉，您也喜歡您所看到的，不過您可能會想在稍後做些調整？ 您可以儲存您的筆墨筆劃為筆跡序列化格式 (ISF) 檔並載入它們，每當靈感來時可以進行編輯。 
 
@@ -402,7 +402,7 @@ ISF 檔案是基本的 GIF 圖像，包含描述筆墨筆劃屬性和行為的�
 
 ### <a name="in-the-sample"></a>在範例中︰
 1. 請開啟 MainPage.xaml 檔案，
-2. 尋找此步驟中的標題以標示的程式碼 ("\<！-步驟 7:儲存及載入筆墨-->")。
+2. 尋找以此步驟的標題標示的程式碼（「\<!--步驟7：儲存和載入筆墨-->」）。
 3. 取消註解下列行。 
 
 ``` xaml
@@ -419,7 +419,7 @@ ISF 檔案是基本的 GIF 圖像，包含描述筆墨筆劃屬性和行為的�
 ```
 
 4. 請開啟 MainPage.xaml.cs 檔案，
-5. 尋找此步驟中的標題以標示的程式碼 ("/ / 步驟 7:儲存及載入筆墨 」）。
+5. 尋找標有此步驟標題的程式碼 (「步驟 7︰儲存和載入筆跡」)。
 6. 取消註解下列行。  
 
 ``` csharp
@@ -439,7 +439,7 @@ ISF 檔案是基本的 GIF 圖像，包含描述筆墨筆劃屬性和行為的�
 9. 清除筆跡，或重新啟動 App。
 10. 選取 **\[載入\]** 按鈕，然後開啟您儲存的筆跡檔案。
 
-### <a name="challenge-use-the-clipboard-to-copy-and-paste-ink-strokes"></a>挑戰：使用剪貼簿複製並貼上筆墨筆劃 
+### <a name="challenge-use-the-clipboard-to-copy-and-paste-ink-strokes"></a>挑戰︰使用剪貼簿複製並貼上筆墨筆劃 
 <table class="wdg-noborder">
 <tr>
 <td>
@@ -458,9 +458,9 @@ Windows 筆跡也支援從剪貼簿複製並貼上筆墨筆劃或複製並貼到
 </tr>
 </table>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-恭喜，您已完成**輸入：支援在 UWP 應用程式中的筆墨**教學課程 ！ 我們已向您顯示在您的 UWP 應用程式中支援筆跡所需的基本程式碼，以及如何提供一些更豐富 Windows Ink 平台所支援的使用者體驗。
+恭喜，您已完成**輸入︰在 UWP app 中支援筆跡**教學課程！ 我們已向您顯示在您的 UWP 應用程式中支援筆跡所需的基本程式碼，以及如何提供一些更豐富 Windows Ink 平台所支援的使用者體驗。
 
 ## <a name="related-articles"></a>相關文章
 
@@ -468,15 +468,15 @@ Windows 筆跡也支援從剪貼簿複製並貼上筆墨筆劃或複製並貼到
 
 ### <a name="samples"></a>範例
 
-* [筆跡分析範例 （基本） (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-* [筆墨手寫辨識範例 (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
-* [儲存並從 Ink Serialized Format (ISF) 檔案載入筆墨筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
-* [儲存和載入從剪貼簿的筆墨筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
-* [筆墨工具列位置和方向範例 （基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
-* [筆墨工具列位置和方向範例 （動態）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
-* [簡單的筆墨範例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雜的筆墨範例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [筆墨範例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [快速入門教學課程：支援在 UWP 應用程式中的筆墨](https://aka.ms/appsample-ink)
-* [著色書範例](https://aka.ms/cpubsample-coloringbook)
-* [系列的資訊範例](https://aka.ms/cpubsample-familynotessample)
+* [筆墨分析範例（基本）（C#）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+* [筆跡手寫辨識範例（C#）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+* [從筆墨序列化格式（ISF）檔案儲存和載入筆跡筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [儲存並從剪貼簿載入筆跡筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+* [筆墨工具列位置和方向範例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
+* [筆墨工具列位置和方向範例（動態）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
+* [Simple 筆墨範例（C#/C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+* [複雜筆跡範例（C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+* [筆墨範例（JavaScript）](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [開始使用教學課程：在 UWP 應用程式中支援筆墨](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [著色書籍範例](https://github.com/Microsoft/Windows-appsample-coloringbook)
+* [家族附注範例](https://github.com/Microsoft/Windows-appsample-familynotes)

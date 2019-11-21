@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 定位功能
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f57af61c13b6c8d9658b444bff83098cbbbac2c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 50f605164a496d00113b73ffeae669e3ff145535
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371940"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260398"
 ---
 # <a name="get-the-users-location"></a>取得使用者的位置
 
@@ -20,9 +20,9 @@ ms.locfileid: "66371940"
 
 尋找使用者的位置並回應位置變更。 存取使用者的位置是由 \[設定\] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。
 
-**提示**：若要深入了解如何在您的 app 中存取使用者的位置，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
+**提示**：若要深入了解如何在您的 app 中存取使用者的位置，請從 GitHub 的 [Windows-universal-samples 存放庫](https://github.com/Microsoft/Windows-universal-samples)下載下列範例。
 
--   [通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 
 ## <a name="enable-the-location-capability"></a>啟用位置功能
 
@@ -42,9 +42,9 @@ ms.locfileid: "66371940"
 
 本節說明如何使用 [**Windows.Devices.Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation) 命名空間中的 API 來偵測使用者的地理位置。
 
-### <a name="step-1-request-access-to-the-users-location"></a>步驟 1：要求存取使用者的位置
+### <a name="step-1-request-access-to-the-users-location"></a>步驟 1：要求使用者位置的存取權
 
-除非您的應用程式有粗略的位置功能 （請參閱附註），您必須使用，以要求存取使用者的位置[ **RequestAccessAsync** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)方法，然後再嘗試存取的位置。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 您的應用程式將無法存取使用者的位置資訊，直到您的應用程式的使用者授與權限。\*
+除非您的應用程式具有粗略的位置功能（請參閱附注），否則在嘗試存取位置之前，您必須先使用[**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)方法來要求存取使用者的位置。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 在使用者將許可權授與您的應用程式之前，您的應用程式將無法存取使用者的位置資訊。\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -56,9 +56,9 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 [  **RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
 
->注意:粗略的位置 功能可讓您的應用程式，以取得刻意模糊 （不精確） 的位置，而不需要取得使用者的明確權限 (仍必須是全系統的位置參數**上**，不過)。 若要了解如何利用您的應用程式中的粗略位置，請參閱[ **AllowFallbackToConsentlessPositions** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions)中的方法[ **Geolocator** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator)類別。
+>注意：「粗略位置」功能可讓您的應用程式取得刻意模糊（不精確）的位置，而不需取得使用者的明確許可權（不過，全系統位置交換器仍然必須**開啟**）。 若要瞭解如何在您的應用程式中使用粗略的位置，請參閱[**Geolocator**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator)類別中的[**AllowFallbackToConsentlessPositions**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions)方法。
 
-### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>步驟 2：取得使用者的位置，並註冊在位置的權限的變更
+### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>步驟 2：取得使用者的位置並登錄位置權限的變更
 
 [  **GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 方法會執行目前位置的單次讀取。 在這裡，**switch** 陳述式是與 **accessStatus** (來自先前的範例) 搭配使用，只有在獲允許存取使用者位置的情況下才有作用。 如果獲允許存取使用者的位置，程式碼就會建立 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 物件、登錄位置權限的變更，以及要求使用者的位置。
 
@@ -94,7 +94,7 @@ switch (accessStatus)
 }
 ```
 
-### <a name="step-3-handle-changes-in-location-permissions"></a>步驟 3：處理位置的權限的變更
+### <a name="step-3-handle-changes-in-location-permissions"></a>步驟 3：處理位置權限的變更
 
 [  **Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 物件會觸發 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件，以指出使用者的位置設定已變更。 該事件會透過引數的 **Status** 屬性 (類型為 [**PositionStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.PositionStatus)) 傳遞對應的狀態。 請注意，此方法並不是從 UI 執行緒呼叫，且 [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 物件會叫用 UI 變更。
 
@@ -169,7 +169,7 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 
 本節假設您已經啟用位置功能，並已從您的前景 app UI 執行緒呼叫 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)。
 
-### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>步驟 1：定義報告間隔，並註冊位置更新
+### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>步驟 1：定義報告擷取和登錄位置更新
 
 在這個範例中，**switch** 陳述式是與 **accessStatus** (來自先前的範例) 搭配使用，只有在獲允許存取使用者位置的情況下才有作用。 如果獲允許存取使用者的位置，程式碼就會建立 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 物件、指定追蹤類型，以及登錄位置更新。
 
@@ -261,12 +261,12 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 必須先在裝置上啟用 \[**位置**\]，您的 app 才能存取使用者的位置。 在 \[**設定**\] app 中，確認已開啟下列 \[**位置隱私權設定**\]：
 
--   **此裝置的位置...** 會開啟**上**（不適用於 Windows 10 行動裝置版）
+-   **此裝置的位置**.。。已開啟 **（不適**用於 Windows 10 行動裝置版）
 -   已將定位服務設定的 \[**位置**\] 設為 \[**開啟**\]
 -   在 \[**選擇可以使用您的位置的應用程式**\] 底下，將您的 app 設為 \[**開啟**\]
 
 ## <a name="related-topics"></a>相關主題
 
-* [UWP 地理位置範例](https://go.microsoft.com/fwlink/p/?linkid=533278)
-* [地理圍欄的設計方針](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
+* [UWP 地理位置範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
+* [地理柵欄的設計方針](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
 * [定位感知應用程式的設計指導方針](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)

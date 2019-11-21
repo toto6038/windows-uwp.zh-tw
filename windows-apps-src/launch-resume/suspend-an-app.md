@@ -1,5 +1,5 @@
 ---
-title: 處理應用程式暫停
+title: 處理 app 暫停
 description: 了解如何在系統暫停您的應用程式時，儲存重要的應用程式資料。
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ms.date: 07/06/2018
@@ -11,18 +11,18 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 6d1b97e76dc1bf15bded6f44c38a67f40babf7b6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f912e6212346a4019d8421c542a81eb2318dc5d9
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370528"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260402"
 ---
-# <a name="handle-app-suspend"></a>處理應用程式暫停
+# <a name="handle-app-suspend"></a>處理 app 暫停
 
-**重要的 Api**
+**重要 API**
 
-- [**暫止**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
+- [**暫停**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
 
 了解如何在系統暫停您的應用程式時，儲存重要的應用程式資料。 這個範例會為 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件登錄一個事件處理常式，並將一個字串儲存至檔案。
 
@@ -125,7 +125,7 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 }
 ```
 
-## <a name="release-resources"></a>釋放資源
+## <a name="release-resources"></a>釋出資源
 
 您應該釋放獨占資源及檔案控制代碼，這樣當您的 app 暫停時，其他 app 仍然可以使用它們。 獨占資源的範例包括相機、I/O 裝置、外部裝置及網路資源。 明確釋放獨占資源及檔案控制代碼，有助於確保當您的 app 暫停時，其他 app 仍然可以使用它們。 當應用程式繼續執行時，應要重新取得獨占資源和檔案控制代碼。
 
@@ -137,22 +137,22 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 系統不會在 app 終止時提供通知，所以 app 必須在暫停時儲存應用程式資料並釋放獨占資源及檔案控制代碼，並在終止狀態結束後重新啟用時還原這些項目。
 
-如果您在處理常式內進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至下一個狀態。 針對會傳送給事件處理常式的 [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) 物件使用 [**GetDeferral**](https://aka.ms/Kt66iv) 方法以延遲暫停，一直到您針對傳回的 [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) 物件呼叫 [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) 方法之後。
+如果您在處理常式內進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至下一個狀態。 針對會傳送給事件處理常式的 [**EnteredBackgroundEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 物件使用 [**GetDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 方法以延遲暫停，一直到您針對傳回的 [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) 物件呼叫 [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) 方法之後。
 
 延遲不會提高在應用程式終止之前所需執行的程式碼數量。 其只會延遲終止，直到呼叫延遲的 *Complete* 方法或期限到期 (*視何者先發生*) 為止。 若要延長暫停狀態的時間，請使用 [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
 > [!NOTE]
-> 若要改善系統回應能力，在 Windows 8.1 中的，應用程式會提供低優先順序服務存取權給資源之後他們就會暫停。 為了支援這個新的優先順序，會延長暫停作業逾時，在 Windows 上讓 app 與標準優先順序一樣擁有 5 秒逾時，或在 Windows Phone 上有介於 1 到 10 秒之間的逾時。 您無法延長或改變這個逾時長度。
+> 為了改善 Windows 8.1 中的系統回應能力，應用程式會在暫止的情況下獲得低優先順序的資源存取權。 為了支援這個新的優先順序，會延長暫停作業逾時，在 Windows 上讓 app 與標準優先順序一樣擁有 5 秒逾時，或在 Windows Phone 上有介於 1 到 10 秒之間的逾時。 您無法延長或改變這個逾時長度。
 
-**關於使用 Visual Studio 偵錯注意事項：** Visual Studio 可防止 Windows 暫止附加至偵錯工具的應用程式。 這是為了讓使用者在 app 執行時可以檢視 Visual Studio 偵錯 UI。 當您正在對某個 app 偵錯時，您可以使用 Visual Studio 傳送一個暫停事件給該 app。 確定 **\[偵錯位置\]** 工具列已經顯示，然後按一下 **\[暫停\]** 圖示。
+**有關使用 Visual Studio 進行偵錯的注意事項：** Visual Studio 會防止 Windows 暫停已連接至偵錯工具的 app。 這是為了讓使用者在 app 執行時可以檢視 Visual Studio 偵錯 UI。 當您正在對某個 app 偵錯時，您可以使用 Visual Studio 傳送一個暫停事件給該 app。 確定 **\[偵錯位置\]** 工具列已經顯示，然後按一下 **\[暫停\]** 圖示。
 
 ## <a name="related-topics"></a>相關主題
 
-* [應用程式生命週期](app-lifecycle.md)
+* [應用程式週期](app-lifecycle.md)
 * [處理應用程式啟用](activate-an-app.md)
 * [處理應用程式繼續執行](resume-an-app.md)
-* [UX 指導方針，以便啟動，暫止和繼續](https://docs.microsoft.com/windows/uwp/launch-resume/index)
-* [延伸的執行](run-minimized-with-extended-execution.md)
+* [啟動、暫停和繼續的 UX 指導方針](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [擴充執行](run-minimized-with-extended-execution.md)
 
  
 

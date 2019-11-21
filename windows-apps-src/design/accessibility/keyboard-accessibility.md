@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd8fa2b5264328619619df862d21f02f70f52e0
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 1fd0f00d74d62816ff347265936f6b066a0316b0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393755"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257757"
 ---
 # <a name="keyboard-accessibility"></a>鍵盤協助工具  
 
@@ -148,7 +148,7 @@ XAML
 
 為了簡化，上面的範例省略了字串的資源使用，例如 "Ctrl+A"。 不過當地語系化時，也必須考慮快速鍵。 因為選擇做為快速鍵的按鍵時，通常取決於元素的可見文字標籤，所以這也涉及快速鍵的當地語系化。
 
-如需實作快速鍵的指引，請參閱《Windows 使用者體驗互動指導方針》中的[快速鍵](https://go.microsoft.com/fwlink/p/?linkid=221825)。
+如需實作快速鍵的指引，請參閱《Windows 使用者體驗互動指導方針》中的[快速鍵](https://docs.microsoft.com/windows/win32/uxguide/inter-keyboard?redirectedfrom=MSDN)。
 
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
@@ -175,7 +175,7 @@ XAML
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>焦點指示器的視覺狀態範例  
 我們稍早有提到任何可以讓使用者將它當作焦點的自訂控制項，都應該有視覺焦點指示器。 通常該焦點指示器就像在控制項的一般週框矩形外圍再緊接著繪製一個矩形一樣簡單。 視覺焦點的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 是控制項範本中其餘控制項組合的對等元素，但是它一開始的 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 值是設成 **Collapsed**，因為控制項還沒有被當作焦點。 然後，當控制項確實被當作焦點時，系統就會叫用視覺狀態將焦點視覺效果的 **Visibility** 設成 **Visible**。 一旦焦點移到其他地方，系統就會呼叫另一個視覺狀態，然後 **Visibility** 就會變成 **Collapsed**。
 
-所有預設 XAML 控制項聚焦時都會顯示適當的視覺焦點指示器 (如果可以聚焦)。 根據使用者選取的主題，可能也會有不同的外觀（特別是當使用者使用高對比模式時）。如果您在 UI 中使用 XAML 控制項，而不是取代控制項範本，則不需要執行任何額外的動作，就能在行為和正確顯示的控制項上取得視覺焦點指標。 不過，如果您打算重新範本化控制項，或者想了解 XAML 控制項如何提供視覺焦點指示器，本節剩餘的內容將說明如何透過 XAML 和控制項邏輯進行此工作。
+所有預設 XAML 控制項聚焦時都會顯示適當的視覺焦點指示器 (如果可以聚焦)。 根據使用者選取的佈景主題，外觀也可能會不同 (尤其是當使用者使用高對比模式時)。如果您在 UI 使用 XAML 控制項，且沒有取代控制項範本，則不需要執行額外的動作在行為和顯示正常的控制項取得視覺焦點指示器。 不過，如果您打算重新範本化控制項，或者想了解 XAML 控制項如何提供視覺焦點指示器，本節剩餘的內容將說明如何透過 XAML 和控制項邏輯進行此工作。
 
 下列是一些來自預設 XAML 範本的 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) XAML 範例。
 
@@ -250,4 +250,4 @@ Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸�
 * [協助工具](accessibility.md)
 * [鍵盤互動](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 * [觸控鍵盤範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 協助工具範例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)

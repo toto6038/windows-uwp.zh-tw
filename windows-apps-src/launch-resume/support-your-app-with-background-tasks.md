@@ -4,14 +4,14 @@ description: 本節中的主題將示範如何在背景中執行輕量型程式�
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ms.date: 08/21/2017
 ms.topic: article
-keywords: windows 10 uwp，背景工作
+keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 73d279ca0afe67fa6c7d2240fb62c91d1ab3c4c3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7ca567d34c98deb75d7ebfa5ec9f70688ad18fdb
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370577"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259412"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用背景工作支援應用程式
 
@@ -42,7 +42,7 @@ ms.locfileid: "66370577"
 若要快速開始使用跨處理序背景工作，請參閱[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
 
 > [!TIP]
-> 您從 Windows 10 開始，不再需要將應用程式放在鎖定畫面上，為註冊背景工作的必要元件。
+> 從 Windows 10 開始，您不再需要將應用程式放在鎖定畫面上，做為為其註冊背景工作的必要條件。
 
 ## <a name="background-tasks-for-system-events"></a>系統事件的背景工作
 
@@ -73,7 +73,7 @@ ms.locfileid: "66370577"
 
 新增 **InternetAvailable** 條件至您的背景工作 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 可延遲觸發背景工作，直到網路堆疊執行。 這個條件可以節省電源，因為直到網路可用前，背景工作都不會執行。 這個條件不提供即時啟動。
 
-如果您的背景工作需要網路連線，請設定 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 以確保在背景工作執行時保持網路連線。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。 如果您的背景工作不會設定**IsNetworkRequested**，然後將您的背景工作將無法存取網路，在 連線待命模式 （例如，手機的螢幕關閉時。）  
+如果您的背景工作需要網路連線，請設定 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 以確保在背景工作執行時保持網路連線。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。 如果您的背景工作未設定**IsNetworkRequested**，則當處於連線待命模式時，您的背景工作將無法存取網路（例如，當手機的畫面關閉時）。  
 如需背景工作條件的詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
 
 ## <a name="application-manifest-requirements"></a>應用程式資訊清單需求
@@ -87,7 +87,7 @@ ms.locfileid: "66370577"
 | 即時觸發程序  | 描述 |
 |--------------------|-------------|
 | **控制通道** | 背景工作可以保持連線，並透過使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 在控制通道上接收訊息。 如果您的 App 正在接聽通訊端，則您可以使用「通訊端代理程式」，而不使用 **ControlChannelTrigger**。 如需使用通訊端代理程式的詳細資訊，請參閱 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。 Windows Phone 不支援 **ControlChannelTrigger**。 |
-| **計時器** | 背景工作的執行頻率最高可達每 15 分鐘一次，而且只要使用 [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger) 即可設定在特定時間執行。 如需詳細資訊，請參閱[在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)。 |
+| **Timer** | 背景工作的執行頻率最高可達每 15 分鐘一次，而且只要使用 [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger) 即可設定在特定時間執行。 如需詳細資訊，請參閱[在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)。 |
 | **推播通知** | 背景工作會回應 [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) 以接收原始推播通知。 |
 
 **注意**  
@@ -96,7 +96,7 @@ ms.locfileid: "66370577"
 
 為了確保您的通用 Windows app 在您發行更新之後會繼續正常執行，請呼叫 [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess)，然後在 App 於更新後啟動時呼叫 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
-**觸發程序執行個體的數目限制：** 有一些限制的應用程式可以註冊某些觸發程序的執行個體數目。 App 只能針對其每個執行個體註冊 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)、[MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) 和 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) 一次。 如果 App 超過此限制，註冊將會擲回例外狀況。
+**觸發程序執行個體的數目限制：** App 可以註冊某些觸發程序的執行個體數目有限制。 App 只能針對其每個執行個體註冊 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)、[MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) 和 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) 一次。 如果 App 超過此限制，註冊將會擲回例外狀況。
 
 ## <a name="system-event-triggers"></a>系統事件觸發程序
 
@@ -138,7 +138,7 @@ ms.locfileid: "66370577"
 
 除非您豁免您的 App，使其在省電模式開啟時，仍然可以執行背景工作並接收推播通知，否則當電池省電功能啟用時，只要裝置沒有連接外部電源，而且電池電量低於指定的剩餘電量，它就會阻止背景工作執行。 但是不會阻止您登錄背景工作。
 
-不過，如 企業應用程式，將不會在 Microsoft Store 中發行的應用程式，請參閱[無限期地執行在背景中](run-in-the-background-indefinetly.md)以了解如何使用功能，在背景中執行的背景工作 」 或 「 延伸的執行工作階段無限期。
+不過，若是企業應用程式，以及將不會在 Microsoft Store 中發行的應用程式，請參閱[無限期地在背景中執行](run-in-the-background-indefinetly.md)，以瞭解如何使用功能在背景無限期執行背景工作或擴充執行會話。
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>即時通訊的背景工作資源保證
 
@@ -157,7 +157,7 @@ ms.locfileid: "66370577"
 > [!IMPORTANT]
 > **DeviceUseTrigger** 和 **DeviceServicingTrigger** 無法與同處理序背景工作搭配使用。
 
-部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 App (如果有的話) 指定為裝置的具有特殊權限的 App。 如需詳細資訊，請參閱[裝置同步處理和 Microsoft Store 裝置應用程式的更新](https://go.microsoft.com/fwlink/p/?LinkId=306619)
+部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 App (如果有的話) 指定為裝置的具有特殊權限的 App。 如需詳細資訊，請參閱[Microsoft Store 裝置應用程式的裝置同步處理和更新](https://msdn.microsoft.com/library/windows/hardware/dn265139(v=vs.85).aspx)
 
 ## <a name="managing-background-tasks"></a>管理背景工作
 
@@ -170,9 +170,9 @@ ms.locfileid: "66370577"
 
 ## <a name="related-topics"></a>相關主題
 
-**Windows 10 中的多工的概念性指引**
+**Windows 10 中多工的概念性指引**
 
-* [啟動、 繼續及多工作業](index.md)
+* [啟動、繼續和多工作業](index.md)
 
 **相關的背景工作指引**
 
@@ -180,20 +180,20 @@ ms.locfileid: "66370577"
 * [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)
 * [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
 * [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
-* [將跨處理序背景工作轉換成同處理序背景工作](convert-out-of-process-background-task.md)
+* [將跨進程背景工作轉換成同進程背景工作](convert-out-of-process-background-task.md)
 * [偵錯背景工作](debug-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [群組背景工作註冊](group-background-tasks.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
+* [如何在 UWP 應用程式中觸發暫止、繼續和背景事件（在進行調試時）](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
-* [在背景中播放媒體](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [在背景播放媒體](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [註冊背景工作](register-a-background-task.md)
 * [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
-* [更新您的 UWP 應用程式時，執行背景工作](run-a-background-task-during-updatetask.md)
+* [當您的 UWP 應用程式更新時執行背景工作](run-a-background-task-during-updatetask.md)
 * [在背景無限期執行](run-in-the-background-indefinetly.md)
 * [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
-* [觸發背景工作，從您的應用程式](trigger-background-task-from-app.md)
+* [從您的應用程式觸發背景工作](trigger-background-task-from-app.md)
 * [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
 * [使用維護觸發程序](use-a-maintenance-trigger.md)

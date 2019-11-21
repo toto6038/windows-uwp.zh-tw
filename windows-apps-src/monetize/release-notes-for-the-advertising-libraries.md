@@ -6,24 +6,24 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, release notes, 廣告, 版本資訊
 ms.localizationpriority: medium
-ms.openlocfilehash: d7a250880d148dd4ca3ced522312904f2786715e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 04d3554620cde44fc9907845a7765d023e1ed03e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601223"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260211"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 程式庫的版本資訊
 
 
 
 
-本節提供目前版本 Microsoft Advertising 程式庫的版本資訊。 這些程式庫支援 Windows 10、 Windows 8.1、 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 應用程式。
+本節提供目前版本 Microsoft Advertising 程式庫的版本資訊。 這些程式庫支援適用于 Windows 10、Windows 8.1、Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 應用程式。
 
 ## <a name="installation"></a>安裝
 
 
-Microsoft Advertising 程式庫屬於 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) 的一部分。 如需有關如何安裝 SDK 的詳細資訊，請參閱[安裝 Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md)。
+Microsoft Advertising 程式庫屬於 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 的一部分。 如需有關如何安裝 SDK 的詳細資訊，請參閱[安裝 Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md)。
 
 ## <a name="uninstall-previous-versions"></a>解除安裝之前的版本
 
@@ -39,7 +39,7 @@ Microsoft Advertising 程式庫 (其中包括 **AdControl** 和 **InterstitialAd
 
 ## <a name="no-toolbox-control"></a>沒有工具箱控制項
 
-在 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) 中目前版本的 Microsoft Advertising 程式庫中，沒有任何可供將 **AdControl** 或 **InterstitialAd** 拖曳到您 App 中設計介面的工具箱控制項。 如需在您的標記和程式碼中新增這些控制項的相關指示，請參閱[開發人員逐步解說](developer-walkthroughs.md)。
+在 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 中目前版本的 Microsoft Advertising 程式庫中，沒有任何可供將 **AdControl** 或 **InterstitialAd** 拖曳到您 App 中設計介面的工具箱控制項。 如需在您的標記和程式碼中新增這些控制項的相關指示，請參閱[開發人員逐步解說](developer-walkthroughs.md)。
 
 ## <a name="latitude-and-longitude-properties-no-longer-available"></a>緯度和經度屬性不再提供
 

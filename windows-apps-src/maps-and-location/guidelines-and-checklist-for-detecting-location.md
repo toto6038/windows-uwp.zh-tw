@@ -1,26 +1,26 @@
 ---
 Description: 這個主題說明需要存取使用者位置之 app 的效能指導方針。
-title: 定位感知 app 的指導方針
+title: 定位感知應用程式的指導方針
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 位置, 地圖, 地理位置
 ms.localizationpriority: medium
-ms.openlocfilehash: b92d74332bb13a11adc25cb33c0d026e14a5b9e9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8ab8e91c773990bafd414af1ae3d071ac6142088
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371667"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259359"
 ---
-# <a name="guidelines-for-location-aware-apps"></a>定位感知 app 的指導方針
+# <a name="guidelines-for-location-aware-apps"></a>定位感知應用程式的指導方針
 
 
 
 
-**重要的 Api**
+**重要 API**
 
--   [**Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)
+-   [**地理位置**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)
 -   [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
 這個主題說明需要存取使用者位置之 app 的效能指導方針。
@@ -41,13 +41,13 @@ ms.locfileid: "66371667"
 -   等候取得位置資料時，顯示進度列或進度環。 <!--For info on the available progress controls and how to use them, see [**Guidelines for progress controls**](guidelines-and-checklist-for-progress-controls.md).-->
 -   在停用或無法取得定位服務時顯示適當的錯誤訊息或對話方塊。
 
-    如果位置設定不允許您的應用程式存取使用者的位置，建議您提供一個可連到 [**設定**] app 中 [**位置隱私權設定**] 的便利連結。 例如，您可以使用超連結控制項或呼叫 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法，使用 `ms-settings:privacy-location` URI 從程式碼啟動 [**設定**] app。 如需詳細資訊，請參閱[啟動 Windows 設定 app](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app)。
+    如果位置設定不允許您的應用程式存取使用者的位置，建議您提供一個可連到 [**設定**] app 中 [**位置隱私權設定**] 的便利連結。 例如，您可以使用超連結控制項或呼叫 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法，使用  **URI 從程式碼啟動 [** 設定`ms-settings:privacy-location`] app。 如需詳細資訊，請參閱[啟動 Windows 設定 app](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app)。
 
 -   在使用者停用位置資訊存取功能時，清除快取的位置資料並釋放 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)。
 
-    如果使用者透過 [設定] 關閉位置資訊的存取，則釋放 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 物件。 應用程式將會接到**存取權\_拒絕**的任何位置的 API 呼叫的結果。 如果您的 app 會儲存或快取位置資料，請在使用者撤銷存取位置資訊時清除所有快取資料。 在無法透過定位服務使用位置資訊時，提供手動輸入位置的替代方法。
+    如果使用者透過 [設定] 關閉位置資訊的存取，則釋放 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 物件。 然後，應用程式會收到**存取權\_拒絕**任何位置 API 呼叫的結果。 如果您的 app 會儲存或快取位置資料，請在使用者撤銷存取位置資訊時清除所有快取資料。 在無法透過定位服務使用位置資訊時，提供手動輸入位置的替代方法。
 
--   提供用來重新啟用定位服務的 UI。 例如，提供 [重新整理] 按鈕，重複具現化[ **Geolocator** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)物件，並嘗試再次取得位置資訊。
+-   提供用來重新啟用定位服務的 UI。 例如，提供重新整理按鈕，以 reinstantiates [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)物件，並嘗試再次取得位置資訊。
 
     讓您的 app 提供可重新啟用定位服務的 UI—
 
@@ -75,7 +75,7 @@ ms.locfileid: "66371667"
 
         提供位置資料的裝置可以追蹤不同應用程式要求的報告間隔，並以最小要求間隔提供資料報告。 這樣最需要精確度的應用程式就會收到符合需求的資料。 因此，如果另一個 app 要求更高頻率的更新時，定位提供者可能會以比您 app 所要求之頻率還要高的頻率產生更新。
 
-        **附註**  並不保證位置來源，會在指定的報告間隔履行要求。 並非所有的定位提供者裝置都會追蹤報告間隔，但是您仍然應該為會追蹤的裝置提供此間隔。
+        **請注意**  不保證位置來源會接受給定報告間隔的要求。 並非所有的定位提供者裝置都會追蹤報告間隔，但是您仍然應該為會追蹤的裝置提供此間隔。
 
     -   為了幫助節省電源，請設定 [**desiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) 屬性，向定位平台指出您的應用程式是否需要高精確度的資料。 如果沒有 app 需要高精確度的資料，系統可以藉由不開啟 GPS 提供者以便節省電源。
 
@@ -84,10 +84,10 @@ ms.locfileid: "66371667"
 
         如果您的 app 有特定的準確度需求，您可以考慮使用 [**DesiredAccuracyInMeters**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracyinmeters) 屬性，而不是使用 [**DesiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy)。 這在 Windows Phone 上特別實用，通常能夠根據行動電話指標、Wi-Fi 指標及衛星來取得位置。 挑選較具體的準確度值，有助於系統在提供位置時使用電源成本最低的適當技術。
 
-        例如: 
+        例如：
 
         -   如果您的應用程式為了廣告調整、天氣、新聞等而取得位置，5000 公尺的準確度通常足以勝任。
-        -   如果您的應用程式會顯示附近的鄰區中的交易，精確度為 300 是計量的通常最好提供結果。
+        -   如果您的應用程式顯示鄰近地區的交易，則300計量的精確度通常適合提供結果。
         -   如果使用者在尋找鄰近的推薦餐廳，我們希望能夠取得同個街區內的位置，因此 100 公尺的準確度即足夠。
         -   如果使用者嘗試分享其位置，應用程式應該要求大約 10 公尺的準確度。
     -   如果您的 app 有特定的準確度需求，請使用 [**Geocoordinate.accuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geocoordinate.accuracy) 屬性。 例如，導航 app 應該使用 **Geocoordinate.accuracy** 屬性來判斷可用的位置資料是否符合 app 的需求。
@@ -96,12 +96,12 @@ ms.locfileid: "66371667"
 
 -   考量背景行為。 如果應用程式沒有焦點，則在背景暫停時就不會接收位置更新事件。 如果您的應用程式透過記錄位置更新的方式來進行追蹤，請注意這一點。 當應用程式重新取得焦點時，它僅會接收新的事件。 它不會取得在未使用時所發生的任何更新。
 
--   有效使用原始感應器與融合感應器。 感應器有兩種：[原始]  與 [融合]  。
+-   有效使用原始感應器與融合感應器。 感應器有兩種：[原始] 與 [融合]。
 
     -   原始感應器包括加速計、陀螺儀及磁力儀。
     -   融合感應器包括方向、傾角計及指南針。 融合感應器可從原始感應器組合取得資料。
 
-    Windows 執行階段 Api 可以存取所有的這些感應器磁力計除外。 融合感應器比原始感應器更精確且更穩定，但較為耗電。 您應該根據用途，使用適當的感應器。 如需詳細資訊，請參閱[感應器](https://docs.microsoft.com/windows/uwp/devices-sensors/sensors)。
+    Windows 執行階段 Api 可以存取所有這些感應器，但磁力計除外。 融合感應器比原始感應器更精確且更穩定，但較為耗電。 您應該根據用途，使用適當的感應器。 如需詳細資訊，請參閱[感應器](https://docs.microsoft.com/windows/uwp/devices-sensors/sensors)。
 
 **連線待命**
 - 當電腦處於連線待命狀態時，一律可以具現化 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 物件。 不過，**Geolocator** 物件將不會找到任何感應器來彙總，因此針對 [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 的呼叫會在 7 秒後會逾時、永遠不會呼叫 [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件接聽器，而 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件接聽器將會搭配 **NoData** 被呼叫一次。
@@ -111,11 +111,11 @@ ms.locfileid: "66371667"
 
 ### <a name="detecting-changes-in-location-settings"></a>偵測位置設定中的變更
 
-使用者可以使用 [設定]  應用程式中的 [位置隱私權設定]  來關閉定位功能。
+使用者可以使用 [設定] 應用程式中的 [位置隱私權設定] 來關閉定位功能。
 
 -   若要偵測使用者何時停用或重新啟用定位服務：
-    -   處理 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件。 如果使用者關閉定位服務，**StatusChanged** 事件之引數的 [**Status**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) 屬性值就會是 **Disabled**。
-    -   檢查 [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 傳回的錯誤碼。 如果使用者已停用位置服務，呼叫**GetGeopositionAsync**失敗，並**存取\_拒絕**錯誤而[ **LocationStatus**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.locationstatus)屬性具有值**停用**。
+    -   處理 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件。 如果使用者關閉定位服務，[StatusChanged**事件之引數的**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.statuschangedeventargs.status)Status 屬性值就會是 **Disabled**。
+    -   檢查 [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 傳回的錯誤碼。 如果使用者已停用位置服務， **GetGeopositionAsync**的呼叫會失敗並出現**存取\_拒絕**的錯誤，且[**LocationStatus**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.locationstatus)屬性已**停用**此值。
 -   如果您有位置資料為必要資料的 app (例如地圖 app)，請確實執行下列動作：
     -   處理 [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件以便在使用者位置變更時取得更新。
     -   如前述方式處理 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件，偵測位置設定中的變更。
@@ -155,7 +155,7 @@ ms.locfileid: "66371667"
 
 使用者的地理位置是個人識別資訊 (PII)。 下列網站提供保護使用者隱私權的指導。
 
--   [Microsoft Privacy]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
+-   [Microsoft 隱私權]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
@@ -165,7 +165,7 @@ ms.locfileid: "66371667"
 * [取得目前的位置](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)
 * [顯示地圖的 2D、3D 和 Streetside 檢視](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP 位置 」 範例 （地理位置）](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 位置範例（地理位置）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
  

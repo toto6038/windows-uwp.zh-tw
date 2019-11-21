@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: 38b5144d9b70e6e2825ef11a64be8873ec5b7d63
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e134e64c441aececdc50b1ac868efeb2b31bd5e5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614553"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259822"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
-項目未以您預期的方式運作？ 請閱讀這一頁的常見問題集。 也請參閱[已知問題](known-issues.md)主題和[開發通用 Windows 應用程式](https://go.microsoft.com/fwlink/?linkid=839446)論壇。 
+項目未以您預期的方式運作？ 請閱讀這一頁的常見問題集。 也請參閱[已知問題](known-issues.md)主題和[開發通用 Windows 應用程式](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)論壇。 
 
 ### <a name="why-arent-my-games-and-apps-working"></a>我的遊戲和應用程式為何無法運作？
 
@@ -59,15 +59,15 @@ Xbox 不再支援 x86 應用程式開發或 x86 應用程式提交至Microsoft S
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>我將處於開發人員模式的 Xbox One 賣掉了。 如何停用開發人員模式？
 
-如果您不再需要存取您的 Xbox One，您可以在 Windows 合作夥伴中心內停用它。 如需詳細資訊，請參閱 <<c0>  **停用您的主控台使用合作夥伴中心**一節[Xbox 一個開發人員模式停用](devkit-deactivation.md#deactivate-your-console-using-partner-center)主題。 
+如果您無法再存取您的 Xbox one，可以在 Windows 合作夥伴中心停用它。 如需詳細資訊，請參閱[Xbox One 開發人員模式停用](devkit-deactivation.md#deactivate-your-console-using-partner-center)主題中的**使用合作夥伴中心停用您的主控台**一節。 
 
-### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>我保留使用合作夥伴中心開發人員計劃，但我還是開發人員模式中。 我該怎麼做？
+### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>我使用合作夥伴中心離開開發人員計畫，但仍處於開發人員模式。 我該怎麼做？
 
 啟動 [開發首頁]，然後選取 [**離開開發人員模式**] 按鈕。 這會將您的主機重新啟動為零售模式。 
 
 ### <a name="can-i-publish-my-app"></a>我是否可以發佈我的 App？
 
-您可以[發佈應用程式](../publish/index.md)透過合作夥伴中心，如果您有[開發人員帳戶](https://developer.microsoft.com/store/register)。 在零售 Xbox One 主機上建立和測試的 UWP App，必須接受 Windows 目前所執行的擷取、檢閱和發佈程序，並需要接受額外的檢閱以符合目前的 Xbox One 標準。
+如果您有[開發人員帳戶](https://developer.microsoft.com/store/register)，您可以透過合作夥伴中心[發佈應用程式](../publish/index.md)。 在零售 Xbox One 主機上建立和測試的 UWP App，必須接受 Windows 目前所執行的擷取、檢閱和發佈程序，並需要接受額外的檢閱以符合目前的 Xbox One 標準。
 
 ### <a name="can-i-publish-my-game"></a>我是否可以發佈我的遊戲？
 
@@ -99,7 +99,7 @@ Xbox 不再支援 x86 應用程式開發或 x86 應用程式提交至Microsoft S
 如果 Visual Studio 無法連線到 Xbox One：
 
 1. 請確定您處於開發人員模式 (先前已在此頁面討論過)。
-2. 請確定您已經正確地設定開發電腦。 您是否已依照[開始使用 Xbox One 上的 UWP 應用程式開發](getting-started.md)中的*所有*指示進行？ 
+2. 請確定您已經正確地設定開發電腦。 您是否已依照*開始使用 Xbox One 上的 UWP 應用程式開發*中的[所有](getting-started.md)指示進行？ 
 
 3. 如果您還沒有這麼做，請閱讀[開發環境設定](development-environment-setup.md)主題和 [Xbox One 工具簡介](introduction-to-xbox-tools.md)主題。
 
@@ -107,7 +107,7 @@ Xbox 不再支援 x86 應用程式開發或 x86 應用程式提交至Microsoft S
   > [!NOTE]
   > 為了取得最佳的部署效能，建議您使用有線連線方式連線主機。
 
-5. 請確定您是使用 [偵錯] 索引標籤的 [驗證] 下拉式清單中的 [通用 (未加密的通訊協定)]。如需詳細資料，請參閱[開發環境設定](development-environment-setup.md)。
+5. 請確定您是使用 **\[偵錯\]** 索引標籤的 [驗證] 下拉式清單中的 [通用 (未加密的通訊協定)]。如需詳細資訊，請參閱[開發環境設定](development-environment-setup.md)。
 
 
 ### <a name="if-im-building-an-app-using-htmljavascript-how-do-i-enable-gamepad-navigation"></a>如果我是使用 HTML/JavaScript 建置 App，該如何啟用控制器瀏覽？
@@ -117,6 +117,6 @@ TVHelpers 是一組 JavaScript 和 XAML/C# 範例和程式庫，可協助您以 
 如需詳細資訊，請參閱 [TVHelpers](https://github.com/Microsoft/TVHelpers) 專案和專案 [wiki](https://github.com/Microsoft/TVHelpers/wiki)。
 
 ## <a name="see-also"></a>請參閱
-- [在 Xbox One UWP 的已知的問題](known-issues.md)
-- [在 Xbox One UWP](index.md)
-- [在 Xbox One UWP](index.md)
+- [Xbox one 上 UWP 的已知問題](known-issues.md)
+- [Xbox One 上的 UWP](index.md)
+- [Xbox One 上的 UWP](index.md)

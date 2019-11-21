@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c37ceb63a5d9d9f83d3f1ebca0b0584f1092b7f6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 617511d23bcabe342abe7477f617d81cd01182e6
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359582"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257787"
 ---
 # <a name="high-contrast-themes"></a>高對比佈景主題  
 
@@ -20,9 +20,9 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ![淺色佈景主題和「黑底白字」佈景主題中的「小算盤」。](images/high-contrast-calculators.png)
 
-*淺色佈景主題和黑色高對比佈景主題中所示的計算機。*
+*[淺色主題] 和 [高對比黑色主題] 中所顯示的計算機。*
 
-您可以使用 [設定] &gt; [輕鬆存取] &gt; [高對比]  ，切換成高對比佈景主題。
+您可以使用 [設定] &gt; [輕鬆存取] &gt; [高對比]，切換成高對比佈景主題。
 
 > [!NOTE]
 > 請留意，高對比佈景主題與淺色和深色佈景主題不同，後兩者使用較多種色彩，且不一定是高對比。 如需淺色和深色佈景主題的詳細資訊，請參閱關於[色彩](../style/color.md)的文章。
@@ -82,20 +82,20 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ## <a name="high-contrast-colors"></a>高對比色彩
 
-在 [設定] &gt; [輕鬆存取] &gt; [高對比]  頁面中，有 4 個預設的高對比佈景主題。 
+在 [設定] &gt; [輕鬆存取] &gt; [高對比] 頁面中，有 4 個預設的高對比佈景主題。 
 
 
 ![高對比設定](images/high-contrast-settings.png)  
 
-*在使用者選取一個選項之後，頁面會顯示預覽。*  
+*在使用者選取選項之後，頁面會顯示預覽。*  
 
 ![高對比資源](images/high-contrast-resources.png)  
 
-*若要變更其值，可以按一下每個預覽上的色樣。每個樣本也可以直接對應到 XAML 色彩資源。*  
+*您可以按一下預覽中的每個色樣來變更其值。每個色板也會直接對應至 XAML 色彩資源。*  
 
 每個 **SystemColor*Color** 資源都是變數，當使用者切換高對比佈景主題時會自動更新色彩。 以下是在何處及何時使用各項資源的指導方針。
 
-Resource | 使用量 |
+資源 | 用法 |
 |--------|-------|
 **SystemColorWindowTextColor** | 內文文字、標題、清單；任何無法進行互動的文字 |
 | **SystemColorHotlightColor** | 超連結 |
@@ -108,13 +108,13 @@ Resource | 使用量 |
 
 查看現有的 App、[開始]，或常用控制項通常很有幫助，可以了解其他人如何解決類似的高對比設計問題。
 
-**執行**
+**對**
 
 * 盡可能遵守前景/背景組合。
 * 在您的 App 執行時，測試全部 4 種高對比佈景主題。 使用者切換佈景主題時，應不需要重新啟動您的 App。
 * 保持一致。
 
-**不**
+**不要**
 
 * 在 **HighContrast** 佈景主題中以硬式編碼設定色彩；請使用 **SystemColor*Color** 資源。
 * 依照美學來選擇色彩資源。 請記住，色彩會隨佈景主題變更！
@@ -154,7 +154,7 @@ Resource | 使用量 |
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-請注意如何 **\{ThemeResource\}** 兩次，用來參考一次 **SystemColorWindowColor** 並再次參考 **BrandedPageBackgroundBrush**. 兩次都是為了讓您的 App 在執行階段能正確設定佈景主題。 現在是測試您 App 內功能的好時機。 當您切換成高對比佈景主題時，格線的背景將會自動更新。 在不同的高對比佈景主題之間切換時，它也會更新。
+請注意 **\{ThemeResource\}** 如何使用兩次，一次是參考**SystemColorWindowColor** ，另一個是參考**BrandedPageBackgroundBrush**。 兩次都是為了讓您的 App 在執行階段能正確設定佈景主題。 現在是測試您 App 內功能的好時機。 當您切換成高對比佈景主題時，格線的背景將會自動更新。 在不同的高對比佈景主題之間切換時，它也會更新。
 
 ## <a name="when-to-use-borders"></a>使用框線的時機
 
@@ -162,7 +162,7 @@ Resource | 使用量 |
 
 ![與頁面的其餘部分劃分的瀏覽窗格](images/high-contrast-actions-content.png)  
 
-*瀏覽窗格和頁面都共用相同的背景色彩在高對比。將它們的高對比專用框線是不可或缺的。*
+*流覽窗格和頁面都共用相同的背景色彩（高對比）。若要將其劃分為高對比的框線，這是不可或缺的。*
 
 
 ## <a name="list-items"></a>清單項目
@@ -171,7 +171,7 @@ Resource | 使用量 |
 
 ![淺色佈景主題和「黑底白字」佈景主題中的簡易清單](images/high-contrast-list1.png)
 
-*淺色佈景主題 （左） 和 （右） 的黑色高對比佈景主題中的簡單清單。選取第二個項目;請注意如何在高對比反轉其文字色彩。*
+*淺色主題的簡單列表（左）和高對比黑色主題（right）。第二個專案已選取;請注意其文字色彩在高對比中的反轉方式。*
 
 
 ### <a name="list-items-with-colored-text"></a>包含文字色彩的清單項目
@@ -180,7 +180,7 @@ Resource | 使用量 |
 
 ![淺色佈景主題和「黑底白字」佈景主題中的複雜清單](images/high-contrast-list2.png)
 
-*淺色佈景主題 （左） 和黑色高對比佈景主題 （右邊） 中的複雜清單。在高對比，第二行的選取項目無法反轉。*  
+*淺色主題的複雜清單（左）和高對比黑色主題（right）。在 [高對比] 中，選取專案的第二行無法反轉。*  
 
 您可以視情況透過 **ThemeDictionaries** 集合中的 Style 設定 Foreground，來解決此問題。 因為 **HighContrast** 中的 **Foreground** 不是由 **SecondaryBodyTextBlockStyle** 來設定，所以它的顏色將會正確反轉。
 
@@ -235,7 +235,7 @@ Resource | 使用量 |
 
 ## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
-* [UI 對比和設定範例](https://go.microsoft.com/fwlink/p/?linkid=231539)
-* [XAML 的協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
-* [XAML 高對比範例](https://go.microsoft.com/fwlink/p/?linkid=254993)
+* [UI 對比和設定範例](https://code.msdn.microsoft.com/windowsapps/High-Contrast-UI-Settings-9a310961)
+* [XAML 協助工具範例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [XAML 高對比範例](https://code.msdn.microsoft.com/windowsapps/XAML-high-contrast-style-c0ce936f)
 * [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

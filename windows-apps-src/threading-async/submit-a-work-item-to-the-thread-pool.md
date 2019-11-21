@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff0eca18eeab72dbf0a2f9a539e452a5923392d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: d3dcd162e0a139328ef5885ac26edec04a279134
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322021"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259810"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>將工作項目提交至執行緒集區
 
-\[ 更新 Windows 10 上的 UWP 應用程式。 Windows 8.x 文件，請參閱[封存](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+已針對 Windows 10 上的 UWP 應用程式更新 \[。 如需 Windows 8.x 的文章，請參閱[封存 \]](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)
 
-<b>重要的 Api</b>
+<b>重要 API</b>
 
 -   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
 -   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
@@ -31,7 +31,7 @@ ms.locfileid: "67322021"
 提供三個版本的 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)，讓您可以選擇性地指定工作項目的優先順序，並控制是否與其他工作項目同時執行。
 
 >[!NOTE]
->使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)存取 UI 執行緒，並顯示工作項目中的進度。
+>使用[**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)來存取 UI 執行緒，並顯示工作專案的進度。
 
 下列範例會建立一個工作項目，並且提供 Lambda 來執行工作：
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
-您可以進一步了解從本快速入門中下載的程式碼[建立執行緒集區工作項目範例](https://go.microsoft.com/fwlink/p/?LinkID=328569)撰寫的 Windows 8.1 和重複使用原始碼，在 win\_unap Windows 10 應用程式。
+若要深入瞭解，請從本快速入門中的建立針對 Windows 8.1 撰寫的[ThreadPool 工作專案範例](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff)中的程式碼，然後在 win\_unap Windows 10 應用程式中重複使用原始程式碼。
 
 ## <a name="related-topics"></a>相關主題
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 約會, 行事曆
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd4fc62a393e6439458ddc38f37bbb0680fb9b1
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 52200d7896c9edea727bf31c69c04c4c1bd02bb2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282231"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255488"
 ---
 # <a name="manage-appointments"></a>管理約會
 
@@ -282,7 +282,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**請注意**  For Windows Phone 儲存應用程式， [**ShowAddAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)功能就像[**ShowEditNewAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)一樣，因為新增約會所顯示的對話方塊是可編輯的。
+**請注意**，  Windows Phone Store 應用程式中， [**ShowAddAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)函式就像[**ShowEditNewAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) ，因為新增約會所顯示的對話方塊是可編輯的。
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>在使用者的行事曆替換約會
 
@@ -390,7 +390,7 @@ private async void Remove-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-a-time-span-for-the-appointments-provider"></a>顯示約會提供者的時間範圍
 
-如果使用者按一下 [顯示]，會呼叫 [**AppointmentManager.ShowTimeFrameAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) 方法以顯示預設約會提供者主要 UI 的特定時間範圍。 此範例會顯示預設約會提供者顯示在畫面上。
+如果使用者按一下 [顯示][ **，會呼叫** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync)AppointmentManager.ShowTimeFrameAsync 方法以顯示預設約會提供者主要 UI 的特定時間範圍。 此範例會顯示預設約會提供者顯示在畫面上。
 
 ```cs
 private async void Show-Click(object sender, RoutedEventArgs e)
@@ -565,11 +565,11 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
-現在，您對於如何管理約會已經有基本的了解。 請從 GitHub 下載[通用 Windows app 範例](https://go.microsoft.com/fwlink/p/?linkid=619979)，以查看更多如何管理約會的範例。
+現在，您對於如何管理約會已經有基本的了解。 請從 GitHub 下載[通用 Windows app 範例](https://github.com/Microsoft/Windows-universal-samples)，以查看更多如何管理約會的範例。
 
 ## <a name="related-topics"></a>相關主題
 
-* [約會 API 範例](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [約會 API 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Appointments)
  
 
  

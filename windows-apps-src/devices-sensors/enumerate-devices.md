@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cddd7fbcff62f070fa4c4e181e012ec871f1c0c2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b562dd139705e983bc8a8ad10962d923cff55559
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370167"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259672"
 ---
 # <a name="enumerate-devices"></a>列舉裝置
 
@@ -26,7 +26,7 @@ async void enumerateSnapshot(){
 }
 ```
 
-若要下載示範 [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API 更進階使用方式的範例，可按一下[這裡](https://go.microsoft.com/fwlink/?LinkID=620536)。
+若要下載示範 [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API 更進階使用方式的範例，可按一下[這裡](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing)。
 
 ## <a name="enumeration-apis"></a>列舉 API
 
@@ -42,13 +42,13 @@ async void enumerateSnapshot(){
 -   實際連線的匯流排。 這包含 PCI 和 USB。 例如，您可以在[**裝置管理員**] 中看到的任何項目。
 -   [UPnP](https://docs.microsoft.com/windows/desktop/UPnP/universal-plug-and-play-start-page)
 -   數位生活網路聯盟 (DLNA)
--   [**探索並啟動 （撥號）** ](https://docs.microsoft.com/uwp/api/Windows.Media.DialProtocol)
--   [**DNS 服務探索 (DNS SD)** ](https://docs.microsoft.com/uwp/api/Windows.Networking.ServiceDiscovery.Dnssd)
--   [Web Services on Devices (WSD)](https://docs.microsoft.com/windows/desktop/WsdApi/wsd-portal)
+-   [**探索並啟動（撥號）** ](https://docs.microsoft.com/uwp/api/Windows.Media.DialProtocol)
+-   [**DNS 服務探索（DNS-SD）** ](https://docs.microsoft.com/uwp/api/Windows.Networking.ServiceDiscovery.Dnssd)
+-   [裝置上的 Web 服務（WSD）](https://docs.microsoft.com/windows/desktop/WsdApi/wsd-portal)
 -   [藍牙](https://docs.microsoft.com/windows/desktop/Bluetooth/bluetooth-start-page)
--   [**Wi-Fi Direct**](https://docs.microsoft.com/uwp/api/Windows.Devices.WiFiDirect)
+-   [**Wi-fi Direct**](https://docs.microsoft.com/uwp/api/Windows.Devices.WiFiDirect)
 -   WiGig
--   [**Point of Service**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)
+-   [**服務點**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)
 
 在許多情況下，您並不需要擔心列舉 API 的使用。 這是因為許多使用裝置的 API 會自動選取適當的預設裝置，或提供更順暢的列舉 API。 例如，[**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 會自動使用預設的音訊轉譯器裝置。 只要您的 app 可以使用預設的裝置，就沒有必要在應用程式中使用列舉 API。 列舉 API 提供一般的彈性方式，可讓您探索並連接到可用的裝置。 本主題提供列舉裝置的相關資訊，並說明四個列舉裝置的常用方式。
 
@@ -65,8 +65,8 @@ async void enumerateSnapshot(){
 | 屬性                         | 註解                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **DeviceInformation.Id**         | 這是裝置的唯一識別碼，並以字串變數的方式提供。 在大部分情況下，這是一個您會從一種方法傳遞到另一種方法，來指出您感興趣之特定裝置的不透明值。 您也可以在關閉並重新開啟您的 app 之後使用這個屬性和 **DeviceInformation.Kind** 屬性。 這將能確保您可以復原並重複使用相同的 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 物件。 |
-| **DeviceInformation.Kind**       | 這表示 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 物件所代表的裝置物件類型。 這不是裝置類別或裝置類型。 單一裝置可由數個不同類型的不同 **DeviceInformation** 物件來呈現。 這個屬性的可能值及其彼此關聯的方式都列於 [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationkind) 中。                           |
-| **DeviceInformation.Properties** | 這個屬性包涵蓋針對 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 物件要求的資訊。 您可以輕鬆地將最常見的屬性當成 **DeviceInformation** 物件的屬性進行參照，例如 [**DeviceInformation.Name**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.name)。 如需詳細資訊，請參閱[裝置資訊屬性](device-information-properties.md)。                                                                |
+| **DeviceInformation 種類**       | 這表示 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 物件所代表的裝置物件類型。 這不是裝置類別或裝置類型。 單一裝置可由數個不同類型的不同 **DeviceInformation** 物件來呈現。 這個屬性的可能值及其彼此關聯的方式都列於 [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationkind) 中。                           |
+| **DeviceInformation。屬性** | 這個屬性包涵蓋針對 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 物件要求的資訊。 您可以輕鬆地將最常見的屬性當成 **DeviceInformation** 物件的屬性進行參照，例如 [**DeviceInformation.Name**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.name)。 如需詳細資訊，請參閱[裝置資訊屬性](device-information-properties.md)。                                                                |
 
  
 
@@ -77,12 +77,12 @@ async void enumerateSnapshot(){
 
 -   您可以控制顯示在 UI 中的裝置，方法是將 [**SupportedDeviceSelectors**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors)、[**SupportedDeviceClasses**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses)，或兩者新增至 [**DevicePicker.Filter**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter)。 在大部分情況下，您只需要新增一個選取器或類別，但如果您需要不止一個，您可以新增多個選取器或類別。 如果您新增多個選取器或類別，它們會使用 OR 邏輯函式結合在一起。
 -   您可以指定想要為裝置擷取的屬性。 您可以藉由將屬性新增至 [**DevicePicker.RequestedProperties**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.requestedproperties) 來執行此操作。
--   您可以使用 [**Appearance**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.appearance) 來變更 [**DevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePicker) 的外觀。
+-   您可以使用 [**Appearance**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePicker) 來變更 [**DevicePicker**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.appearance) 的外觀。
 -   您可以指定 [**DevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePicker) 顯示時的大小和位置。
 
 顯示 [**DevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePicker) 時，UI 的內容會在新增、移除或更新裝置時自動更新。
 
-**附註**  不能指定[ **DeviceInformationKind** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationkind)使用[ **DevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePicker)。 如果您想要擁有具備特定 **DeviceInformationKind** 的裝置，就需要建置 [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) 並提供自己的 UI。
+**請注意**  您無法使用[**DevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePicker)來指定[**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationkind) 。 如果您想要擁有具備特定 **DeviceInformationKind** 的裝置，就需要建置 [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) 並提供自己的 UI。
 
  
 
@@ -123,7 +123,7 @@ async void enumerateSnapshot(){
 
 以背景工作的方式監看裝置很類似上述建立 [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) 的方式。 事實上，您仍然需要先建立如上節所述的標準 **DeviceWatcher** 物件。 一旦建立該物件之後，您會呼叫 [**GetBackgroundTrigger**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.enumerationcompleted)，而不是 [**DeviceWatcher.Start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start)。 當您呼叫 **GetBackgroundTrigger** 時，必須指定您所感興趣的通知：新增、移除或更新。 您無法在沒有要求新增的情況下要求更新或移除。 一旦登錄觸發程序之後，**DeviceWatcher** 就會立即開始在背景中執行。 自此之後，每當收到適用於您應用程式且符合您準則的新通知時，將會觸發背景工作，並提供自從上次觸發您的應用程式之後所做的最新變更。
 
-**重要**  第一次[ **DeviceWatcherTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger)到達監看員時，就可以應用程式的觸發程序**EnumerationCompleted**狀態。 這表示它將包含所有初始結果。 當它在未來的任何時候觸發您的應用程式時，將只包含自從上次觸發之後所發生的新增、更新及移除通知。 這與前景 [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) 物件有些微差異，因為初始結果不會一次傳入一個，並只會在達到 **EnumerationCompleted** 之後以套件組合形式傳遞。
+**重要**  第一次觸發應用程式時， [**DeviceWatcherTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger)會在監看員達到**EnumerationCompleted**狀態時。 這表示它將包含所有初始結果。 當它在未來的任何時候觸發您的應用程式時，將只包含自從上次觸發之後所發生的新增、更新及移除通知。 這與前景 [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) 物件有些微差異，因為初始結果不會一次傳入一個，並只會在達到 **EnumerationCompleted** 之後以套件組合形式傳遞。
 
  
 
@@ -131,7 +131,7 @@ async void enumerateSnapshot(){
 
 | 行為                                  | 影響                                                                                                                                  |
 |-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| 背景中的相同行為               | None                                                                                                                                    |
+| 背景中的相同行為               | 無                                                                                                                                    |
 | 可能在背景中的唯一被動掃描 | 裝置在等待被動掃瞄執行時，可能需要較長的時間來探索。                                                           |
 | 不支援背景掃描            | [  **DeviceWatcherTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger) 將不會偵測到任何裝置，並且將不會報告任何更新。 |
 
@@ -142,7 +142,7 @@ async void enumerateSnapshot(){
 ## <a name="using-deviceinformationkind"></a>使用 DeviceInformationKind
 
 
-在大部分情況下，您不需要擔心 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 物件的 [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationkind)。 這是因為您正在使用之裝置 API 所傳回的裝置選取器，通常能保證您會取得可與其 API 搭配使用的正確裝置物件類型。 不過，某些情況下，雖然您想要取得裝置的 **DeviceInformation**，卻沒有對應的裝置 API 可提供裝置選取器。 在這些情況下，您便需要建置自己的選取器。 例如，裝置上的 Web 服務沒有專用的 API，但您可以探索這些裝置，並使用 [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API 來取得相關資訊，然後利用通訊端 API 來使用它們。
+在大部分情況下，您不需要擔心 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationkind) 物件的 [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)。 這是因為您正在使用之裝置 API 所傳回的裝置選取器，通常能保證您會取得可與其 API 搭配使用的正確裝置物件類型。 不過，某些情況下，雖然您想要取得裝置的 **DeviceInformation**，卻沒有對應的裝置 API 可提供裝置選取器。 在這些情況下，您便需要建置自己的選取器。 例如，裝置上的 Web 服務沒有專用的 API，但您可以探索這些裝置，並使用 [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API 來取得相關資訊，然後利用通訊端 API 來使用它們。
 
 如果您正在建置自己的裝置選取器來列舉裝置物件，請務必了解 [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationkind)。 如需所有可能的類型及其彼此關聯的方式，請參閱 **DeviceInformationKind** 參考頁面中的說明。 **DeviceInformationKind** 最常見的用法之一，便是指定您在搭配裝置選取器送出查詢時正在搜尋的裝置類型。 如此可確保您只會列舉符合所提供之 **DeviceInformationKind** 的裝置。 例如，您可以尋找 **DeviceInterface** 物件，然後執行查詢來取得父項 **Device** 物件的資訊。 該父項物件可能包含其他資訊。
 
@@ -153,7 +153,7 @@ async void enumerateSnapshot(){
 ## <a name="save-a-device-for-later-use"></a>儲存裝置以供稍後使用
 
 
-任何[ **DeviceInformation** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)兩項資訊的組合可唯一識別物件：[**DeviceInformation.Id** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)並[ **DeviceInformation.Kind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.kind)。 如果您保留這兩個資訊，當遺失 **DeviceInformation** 物件時，就可以將此資訊提供給 [**CreateFromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createfromidasync) 來重新建立該物件。 如果您這樣做，就可以儲存與您 app 整合之裝置的使用者喜好設定。
+任何 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 物件皆是由下列兩個資訊的組合來唯一識別：[**DeviceInformation.Id**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) 和 [**DeviceInformation.Kind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.kind)。 如果您保留這兩個資訊，當遺失 **DeviceInformation** 物件時，就可以將此資訊提供給 [**CreateFromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createfromidasync) 來重新建立該物件。 如果您這樣做，就可以儲存與您 app 整合之裝置的使用者喜好設定。
 
 
  

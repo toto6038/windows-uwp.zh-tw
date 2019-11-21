@@ -6,18 +6,18 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 支付摘要, 聲明, 付款, 收入, 支付, 付帳, 收益
 ms.localizationpriority: medium
-ms.openlocfilehash: 89cb689f0dce4f7dbaec96e9ce109e60d4292f92
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: d609af268cfe304b34797cea4bf91e36d1475c29
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282486"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259009"
 ---
 # <a name="payout-summary"></a>支付摘要
 
 [付款**摘要**] 會顯示您在 Microsoft 所獲得之金錢的詳細資料。 也可以讓您了解何時會收到付款與付款金額。
 
-如果您在 Azure Marketplace 銷售產品，您也會在 **\[支付摘要\]** 中看到成功支付的相關資訊。 如需 Azure Marketplace 付款的相關詳細資料，請參閱 [Microsoft Azure Marketplace 參與原則](https://go.microsoft.com/fwlink/p/?LinkId=722436)及 [Microsoft Azure Marketplace 發行者合約](https://go.microsoft.com/fwlink/p/?LinkID=699560 )。
+如果您在 Azure Marketplace 銷售產品，您也會在 **\[支付摘要\]** 中看到成功支付的相關資訊。 如需 Azure Marketplace 付款的相關詳細資料，請參閱 [Microsoft Azure Marketplace 參與原則](https://docs.microsoft.com/legal/marketplace/participation-policy)及 [Microsoft Azure Marketplace 發行者合約](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt)。
 
 > [!NOTE]
 > 若要符合付款資格，您的繼續作業必須達到 $50 的[付款閾值](payment-thresholds-methods-and-timeframes.md)。 如需付款閾值的詳細資訊，請參閱此頁面並審查應用程式開發人員合約。
@@ -53,27 +53,27 @@ ms.locfileid: "72282486"
 
 ## <a name="payment-status"></a>[付款狀態]
 
-| 賺取狀態           | `Reason`                                                                                                                                      | 需要合作夥伴動作嗎？                                   |
+| 賺取狀態           | 原因                                                                                                                                      | 需要合作夥伴動作嗎？                                   |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
-| 尚未              | 收益符合付款資格。 如獎勵計畫的程式指南中所定義，它會維持在此狀態的冷卻期間。 | 否                                                         |
-| 提交                 | 付款順序會在處理付款前產生擱置內部審核。                                                               | 否                                                         |
+| 尚未              | 收益符合付款資格。 如獎勵計畫的程式指南中所定義，它會維持在此狀態的冷卻期間。 | 不可以                                                         |
+| 提交                 | 付款順序會在處理付款前產生擱置內部審核。                                                               | 不可以                                                         |
 | 待決的稅務發票      | 您的稅務發票不完整或無效。                                                                                                  | 您必須先更新您的稅務發票，才能支付費用 |
 | 審查期間拒絕   | 付款在審查期間遭到拒絕。                                                                                                     | 請洽詢[Microsoft 支援服務](https://developer.microsoft.com/en-us/windows/support)以取得詳細資料                      |
-| 已失敗                   | 付款因 Microsoft 系統錯誤而失敗。                                                                                         | 請洽詢[Microsoft 支援服務](https://developer.microsoft.com/en-us/windows/support)以取得詳細資料                      |
-| 進行中              | 付款進行中。                                                                                                                 | 否                                                         |
-| 不正確的付款        | 付款 recouping 正在進行中。                                                                                                       | 否                                                         |
-| 發送                     | 付款已傳送到您的銀行。                                                                                                     | 否                                                         |
-| 重新處理             | 付款發生 Microsoft 系統錯誤，正在進行重新處理。                                                                  | 否                                                         |
-| 反轉                 | 付款已由您的銀行反轉，並將在下一個付款週期中再次傳送。                                                     | 否                                                         |
+| Failed                   | 付款因 Microsoft 系統錯誤而失敗。                                                                                         | 請洽詢[Microsoft 支援服務](https://developer.microsoft.com/en-us/windows/support)以取得詳細資料                      |
+| 進行中              | 付款進行中。                                                                                                                 | 不可以                                                         |
+| 不正確的付款        | 付款 recouping 正在進行中。                                                                                                       | 不可以                                                         |
+| 發送                     | 付款已傳送到您的銀行。                                                                                                     | 不可以                                                         |
+| 重新處理             | 付款發生 Microsoft 系統錯誤，正在進行重新處理。                                                                  | 不可以                                                         |
+| 反轉                 | 付款已由您的銀行反轉，並將在下一個付款週期中再次傳送。                                                     | 不可以                                                         |
 | 已拒絕稅務發票     | 您的稅務發票在審查期間遭到拒絕。 所有暫止的付款都會保留，直到稅務發票審核完成為止。                 | 請洽詢[Microsoft 支援服務](https://developer.microsoft.com/en-us/windows/support)以取得詳細資料                      |
-| 審查下的稅務發票 | 正在審核您的稅務發票。 當稅務發票核准之後，您的付款就會釋出。                                   | 否                                                         |
+| 審查下的稅務發票 | 正在審核您的稅務發票。 當稅務發票核准之後，您的付款就會釋出。                                   | 不可以                                                         |
 | 退回                 | 您的銀行已拒絕付款。                                                                                                      | 如需詳細資訊，請洽詢您的銀行。                             |
 
 ## <a name="export-data-page"></a>[匯出資料] 頁面
 
 遵循此頁面上的指示，匯出您想要的資料。
 
-注意：
+附註：
 
 - [匯出資料] 頁面不會自行重新整理。 您可能需要手動重新整理頁面，才能看到最新的資料。
 - 您的篩選可能會導致資料無法使用錯誤。 這可能表示您已保留在三個月內選取的預設時間週期，然後從該期間外的收益中選取付款識別碼。 請展開您的時間週期，然後再試一次。
@@ -82,7 +82,7 @@ ms.locfileid: "72282486"
 
 此選項可讓您針對指定的程式、相關聯的稅金和匯總的賺取金額，下載您在銀行內收到的付款。 這份報告適用于許多合作夥伴中心方案，因此某些資料行可能會不適用至您的報表。 這些資料行標示如下。
 
-| 資料行名稱              | 描述                                                                                                                               |
+| 欄位名稱              | 描述                                                                                                                               |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------  |
 | participantID            | 方案下合作夥伴賺取的主要身分識別                                                                             |
 | participantIDType        | 適用于商店計畫的獎勵計畫和賣方識別碼的程式識別碼通常為                                                                |
@@ -105,7 +105,7 @@ ms.locfileid: "72282486"
 
 此選項提供您在 [交易歷程記錄] 頁面中看到的每個收益明細專案的下載、賺取類型、日期、相關聯的交易金額、客戶、產品，以及適用于您程式的其他交易詳細資料。
 
-| 資料行名稱                    | 描述                                                                                                                              | 獎勵/Store/Azure Marketplace 的適用性           |
+| 欄位名稱                    | 描述                                                                                                                              | 獎勵/Store/Azure Marketplace 的適用性           |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
 | earningId                      | 每個收益的唯一識別碼                                                                                                       | 全部                                                            |
 | participantId                  | 方案下合作夥伴賺取的主要身分識別                                                                            | 全部                                                            |
@@ -138,8 +138,8 @@ ms.locfileid: "72282486"
 | paymentId                      | 付款的唯一識別碼。 此數位通常會顯示在您的 bank 語句中                                                 | 僅限 SAP 付款                                              |
 | paymentStatus                  | [付款狀態]                                                                                                                           | 全部                                                            |
 | paymentStatusDescription       | 付款狀態的易記描述                                                                                                   | 全部                                                            |
-| Id                     | 永遠為空白                                                                                                                     | 僅獎勵方案（例外狀況：OEM）和 Azure Marketplace |
-| customerName                   | 永遠為空白                                                                                                                     | 僅獎勵方案（例外狀況：OEM）和 Azure Marketplace |
+| Id                     | 永遠為空白                                                                                                                     | 僅獎勵方案（例外狀況： OEM）和 Azure Marketplace |
+| customerName                   | 永遠為空白                                                                                                                     | 僅獎勵方案（例外狀況： OEM）和 Azure Marketplace |
 | partNumber                     | 永遠為空白                                                                                                                     | 一些獎勵和商店程式和 Azure Marketplace        |
 | productName                    | 連結至交易的產品名稱                                                                                                       | 全部                                                            |
 | productId                      | 唯一的產品識別碼                                                                                                                | 儲存和 Azure Marketplace                                    |

@@ -4,22 +4,22 @@ description: 了解如何設定條件以控制背景工作的執行時間。
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ms.date: 07/06/2018
 ms.topic: article
-keywords: windows 10 uwp，背景工作
+keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 88836ac0363001e86c17486e1527b96a4eac0faa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 618c8891551d851c27414968be76fb465eb89bf0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371839"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260412"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>設定執行背景工作的條件
 
-**重要的 Api**
+**重要 API**
 
 - [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
 - [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)
@@ -29,13 +29,13 @@ ms.locfileid: "66371839"
 
 有時，背景工作還需要在某些條件符合的情況下，才能順利執行。 登錄背景工作時，您可以指定一或多個由 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) 指定的條件。 在引發觸發程序之後，會檢查條件。 接著將背景工作排入佇列，但是必 須等到符合所有必要的條件之後才會執行它。
 
-將條件放在背景工件可以避免執行不必要的工作，以延長電池壽命和節省 CPU。 例如，如果背景工作在計時器上執行，並且需要網際網路連線，則在登錄工作之前，請先將 **InternetAvailable** 條件新增到 [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)。 這樣可以藉由讓工作只有在計時器時間已經過「並且」網際網路可用時才執行，協助防止工作不必要地使用系統資源與電池電力。 
+將條件放在背景工件可以避免執行不必要的工作，以延長電池壽命和節省 CPU。 例如，如果背景工作在計時器上執行，並且需要網際網路連線，則在登錄工作之前，請先將 **InternetAvailable** 條件新增到 [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)。 這樣可以藉由讓工作只有在計時器時間已經過 *「並且」* 網際網路可用時才執行，協助防止工作不必要地使用系統資源與電池電力。
 
-您也可以藉由在相同的 [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 上多次呼叫 **AddCondition** 來結合多個條件。 請小心，不要新增衝突的條件，例如 **UserPresent** 和 **UserNotPresent**。
+您也可以藉由在相同的TaskBuilder[**上多次呼叫**AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 來結合多個條件。 請小心，不要新增衝突的條件，例如 **UserPresent** 和 **UserNotPresent**。
 
 ## <a name="create-a-systemcondition-object"></a>建立 SystemCondition 物件
 
-本主題假設您有一個已經與 App 關聯的背景工作，而且 App 包含的程式碼已經建立名為 **taskBuilder** 的 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 物件。  如果您必須先建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
+本主題假設您有一個已經與 App 關聯的背景工作，而且 App 包含的程式碼已經建立名為 [taskBuilder**的**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)BackgroundTaskBuilder 物件。  如果您必須先建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
 
 本主題既適用於與前景 App 在不同處理序中執行的背景工作，也適用於與前景 App 在相同處理序中執行的背景工作。
 
@@ -107,7 +107,7 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > [!NOTE]
 > 請小心不要將衝突的條件新增至背景工作。
 
-下列程式碼片段會顯示多個條件中建立和註冊背景工作的內容。
+下列程式碼片段顯示建立和註冊背景工作的內容中的多個條件。
 
 ```csharp
 // Set up the background task.
@@ -178,7 +178,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>備註
 
 > [!NOTE]
-> 使其只執行所需的並不會執行時的時候，請選擇您的背景工作的條件。 如需不同背景工作條件的說明，請參閱 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
+> 選擇您背景工作的條件，使其只在需要時才執行，而且不會在不應的情況下執行。 如需不同背景工作條件的說明，請參閱 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -194,4 +194,4 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 應用程式中觸發暫止、繼續和背景事件（在進行調試時）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

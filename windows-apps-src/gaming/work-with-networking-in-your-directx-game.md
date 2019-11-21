@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 網路功能, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: bc39f2608ed4d1be52757ae9718d1bc40a9de387
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 79a1640964902f1effc08196372128bd38bebe2d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367388"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258409"
 ---
 # <a name="networking-for-games"></a>遊戲的網路功能
 
@@ -45,10 +45,10 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 
 適用於遊戲的熱門網路 API 包含：
 
--   TCP 與通訊端 - 提供可靠的連線。 在不需安全性的遊戲中使用 TCP。 TCP 能輕鬆擴充伺服器，因此常用於使用基礎結構 (主從式架構或網際網路點對點) 模型的遊戲。 Wi-Fi Direct 與藍牙上的臨機 (本機點對點) 遊戲也可使用 TCP。 TCP 常用於遊戲物件動作、角色互動、文字交談與其他作業。 [ **StreamSocket** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)類別會提供可以用 Microsoft Store 遊戲中的 TCP 通訊端。 **StreamSocket** 類別與 [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) 命名空間中的相關類別搭配使用。
+-   TCP 與通訊端 - 提供可靠的連線。 在不需安全性的遊戲中使用 TCP。 TCP 能輕鬆擴充伺服器，因此常用於使用基礎結構 (主從式架構或網際網路點對點) 模型的遊戲。 Wi-Fi Direct 與藍牙上的臨機 (本機點對點) 遊戲也可使用 TCP。 TCP 常用於遊戲物件動作、角色互動、文字交談與其他作業。 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)類別會提供可用於 Microsoft Store 遊戲的 TCP 通訊端。 **StreamSocket** 類別與 [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) 命名空間中的相關類別搭配使用。
 -   使用 SSL 的 TCP 與通訊端 - 提供能防竊聽的可靠連線。 針對需要安全性的遊戲使用 TCP 連線搭配 SSL。 SSL 的加密與額外負荷會增加延遲並影響效能，請只在需要安全性時使用。 TCP 搭配 SSL 常用於登入、購買與交易資產、遊戲角色建立與管理。 [  **StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 類別提供支援 SSL 的 TCP 通訊端。
--   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [ **DatagramSocket** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)類別會提供可以用 Microsoft Store 遊戲中的 UDP 通訊端。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) 命名空間中的相關類別搭配使用。
--   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [ **HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別提供現代 HTTP 用戶端 API 使用 Microsoft Store 遊戲中的。 **HttpClient** 類別與 [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空間中的相關類別搭配使用。
+-   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)類別會提供可用於 Microsoft Store 遊戲的 UDP 通訊端。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) 命名空間中的相關類別搭配使用。
+-   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別提供現代化的 HTTP 用戶端 API，以用於 Microsoft Store 遊戲。 **HttpClient** 類別與 [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空間中的相關類別搭配使用。
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>處理您的 DirectX 遊戲中的網路例外狀況
 
@@ -121,7 +121,7 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 
 [  **DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 作業中若發生錯誤，會導致例外狀況。 例外狀況的原因是以 **HRESULT** 值表示的錯誤值。 使用 [**SocketError.GetStatus**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.socketerror.getstatus) 方法，將通訊端作業的網路錯誤轉換為 [**SocketErrorStatus**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketErrorStatus) 列舉值。 大多數 **SocketErrorStatus** 列舉值對應原始 Windows 通訊端作業傳回的錯誤。 app 可以篩選特定 **SocketErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
 
-針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 對於大多數的參數驗證錯誤， **HRESULT**傳回**E\_INVALIDARG**。
+針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
 
 新增程式碼以處理嘗試建立串流通訊端連線時發生的例外狀況
 
@@ -222,7 +222,7 @@ using namespace Windows::Networking::Sockets;
 
 ### <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http 中的例外狀況
 
-如果傳送的字串不是有效的 URI (包含不允許在 URI 中使用的字元)，與 [**Windows::Web::Http::HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 一起使用的 [**Windows::Foundation::Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 類別的建構函式會發生例外狀況。 在 C++ 中，沒有可以嘗試將字串剖析為 URI 的方法。 如果 app 取得使用者為 **Windows::Foundation::Uri** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的 URI。
+如果傳送的字串不是有效的 URI (包含不允許在 URI 中使用的字元)，與 [**Windows::Web::Http::HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 一起使用的 [**Windows::Foundation::Uri**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別的建構函式會發生例外狀況。 在 C++ 中，沒有可以嘗試將字串剖析為 URI 的方法。 如果 app 取得使用者為 **Windows::Foundation::Uri** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的 URI。
 
 您的應用程式也應檢查 URI 中的配置是 HTTP 或 HTTPS，因為 [**Windows::Web::Http::HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 僅支援這些配置。
 
@@ -273,7 +273,7 @@ using namespace Windows::Networking::Sockets;
 
 在使用 C++ 的 app 中，[**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) 代表 app 執行期間發生例外狀況時的錯誤。 [  **Platform::Exception::HResult**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [  **Platform::Exception::Message**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
-對於大多數的參數驗證錯誤， **HRESULT**傳回**E\_INVALIDARG**。 有些不合法的方法呼叫，如**HRESULT**傳回**E\_不合法\_方法\_呼叫**。
+針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。 針對某些不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**。
 
 新增程式碼以處理嘗試使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 連線至 HTTP 伺服器時發生的例外狀況
 
@@ -370,25 +370,25 @@ using namespace Windows::Web::Http;
 
 **其他資源**
 
-* [使用資料包通訊端連接](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
-* [連接到資料流通訊端的網路資源](https://docs.microsoft.com/previous-versions/windows/apps/jj150599(v=win.10))
+* [連接資料包通訊端](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
+* [使用資料流程通訊端連接到網路資源](https://docs.microsoft.com/previous-versions/windows/apps/jj150599(v=win.10))
 * [連接到網路服務](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
 * [連接到 web 服務](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
 * [網路功能基本知識](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
 * [如何設定網路隔離功能](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-* [如何啟用回送和偵錯網路隔離](https://docs.microsoft.com/previous-versions/windows/apps/hh780593(v=win.10))
+* [如何啟用回送和調試網路隔離](https://docs.microsoft.com/previous-versions/windows/apps/hh780593(v=win.10))
 
 **參考**
 
 * [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)
 * [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)
 * [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)
-* [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)
-* [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
+* [**Windows：： Web：： Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)
+* [**Windows：：網路：：通訊端**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
 
 **範例**
 
-* [DatagramSocket 範例](https://go.microsoft.com/fwlink/p/?LinkID=243037)
+* [DatagramSocket 範例](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
 * [HttpClient 範例]( https://go.microsoft.com/fwlink/p/?linkid=242550)
-* [鄰近性範例](https://go.microsoft.com/fwlink/p/?linkid=245082)
-* [StreamSocket 範例](https://go.microsoft.com/fwlink/p/?linkid=243037)
+* [鄰近性範例](https://code.msdn.microsoft.com/windowsapps/Proximity-Sample-88129731)
+* [StreamSocket 範例](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)

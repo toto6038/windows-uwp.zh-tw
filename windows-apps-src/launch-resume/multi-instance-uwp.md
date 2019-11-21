@@ -5,29 +5,29 @@ keywords: 多重執行個體 uwp
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 175ef3a3199440bf4ed6b3ee0dc91726b52e5043
-ms.sourcegitcommit: 38884ab90d5ad775c97cd880e1933b73a68750a5
+ms.openlocfilehash: 9be9b5eec70bc98bc2c44beaf1dcfbba00876f20
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544208"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259440"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>建立多執行個體通用 Windows 應用程式
 
 本主題描述如何建立多重執行個體通用 Universal Windows 平台 (UWP) 應用程式。
 
-從 Windows 10 版本 1803 (10.0;組建 17134) 之後, 您的 UWP 應用程式可以選擇支援多個實例。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
+從 Windows 10 版本1803（10.0;組建17134）之後，您的 UWP 應用程式可以選擇支援多個實例。 如果多執行個體 UWP 應用程式的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
 
 > [!IMPORTANT]
-> JavaScript 應用程式支援多個實例, 但多重實例重新導向則否。 由於 JavaScript 應用程式不支援多實例重新導向, 因此[**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)類別對這類應用程式而言並不實用。
+> JavaScript 應用程式支援多個實例，但多重實例重新導向則否。 由於 JavaScript 應用程式不支援多實例重新導向，因此[**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)類別對這類應用程式而言並不實用。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>加入多重實例行為
 
-如果您正在建立新的多重執行個體應用程式，您可以安裝 [Multi-Instance App Project Templates.VSIX](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.MultiInstanceApps) (可從 [Visual Studio Marketplace](https://aka.ms/E2nzbv) 取得)。 在安裝範本後，便可從 \[Visual C#\] > \[Windows Universal\] (或 \[其他語言\] > \[Visual C++\] > \[Windows Universal\]) 下的 \[新專案\]  對話方塊中取得這些範本。
+如果您正在建立新的多重執行個體應用程式，您可以安裝 [Multi-Instance App Project Templates.VSIX](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.MultiInstanceApps) (可從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 取得)。 在安裝範本後，便可從 \[Visual C#\] > \[Windows Universal\] (或 \[其他語言\] > \[Visual C++\] > \[Windows Universal\]) 下的 \[新專案\] 對話方塊中取得這些範本。
 
-已安裝兩個範本:**多重實例 UWP 應用程式**, 它會提供建立多重實例應用程式的範本, 以及**多重實例重新導向 UWP 應用程式**, 它會提供您可以建立的其他邏輯, 以啟動新的實例或選擇性地啟用已經啟動的實例。 例如, 也許您一次只想要一個實例編輯相同的檔, 因此您可以將具有該檔案的實例開啟到前景, 而不是啟動新的實例。
+這會安裝兩個範本：一是**多重執行個體 UWP 應用程式**，可提供用於建立多重執行個體應用程式的範本；另一是**多重執行個體重新導向 UWP 應用程式**，可提供額外的邏輯作為建置的基礎，以啟動新的執行個體，或選擇性地啟用已啟動的執行個體。 例如，也許您一次只想要一個實例編輯相同的檔，因此您可以將具有該檔案的實例開啟到前景，而不是啟動新的實例。
 
-這兩個`SupportsMultipleInstances`範本都會`package.appxmanifest`新增至檔案。 請注意命名空間`desktop4`前置`iot2`詞和: 僅以桌上型電腦或物聯網 (IoT) 專案為目標的專案支援多個實例。
+這兩個範本都會將 `SupportsMultipleInstances` 新增至 `package.appxmanifest` 檔案。 請注意，命名空間前置詞 `desktop4` 和 `iot2`：僅以桌面或物聯網（IoT）專案為目標的專案支援多重實例。
 
 ```xml
 <Package
@@ -52,13 +52,13 @@ ms.locfileid: "68544208"
 
  UWP 應用程式的多重執行個體支援不僅僅是可以啟動應用程式的多重執行個體。 無論您想要選取啟動應用程式的新執行個體，或選取啟用已執行的執行個體，皆允許自訂。 例如，如果啟動應用程式以編輯一個檔案，但已有另一個執行個體正在編輯檔案，此時您想要將啟用重新導向至該執行個體，而非開啟另一個已在編輯該檔案的執行個體。
 
-若要查看其運作方式, 請觀看這段有關建立多重實例 UWP 應用程式的影片。
+若要查看其運作方式，請觀看這段有關建立多重實例 UWP 應用程式的影片。
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
 **多重執行個體重新導向 UWP 應用程式**範本會將 `SupportsMultipleInstances` 新增至 package.appxmanifest 檔案，如上所示，也會將  **Program.cs** (如果您使用的是 C++ 版範本，則為 **Program.cpp**) 新增至包含 `Main()` 函數的專案。 重新導向啟用的邏輯會進入 `Main` 函數。 **Program.cs**的範本如下所示。
 
-[**AppInstance. RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)屬性代表此啟用要求的 shell 提供的慣用實例 (如果有的話) ( `null`如果沒有的話)。 如果 shell 提供喜好設定, 則您可以將啟用重新導向至該實例, 或者如果您選擇, 可以忽略它。
+[**AppInstance. RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)屬性代表此啟用要求的 shell 提供的慣用實例 `null` （如果沒有的話）。 如果 shell 提供喜好設定，則您可以將啟用重新導向至該實例，或者如果您選擇，可以忽略它。
 
 ``` csharp
 public static class Program
@@ -108,9 +108,9 @@ public static class Program
 }
 ```
 
-`Main()`是執行的第一件事。 它會在[**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)和[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)之前執行。 在任何其他初始化程式碼在您的應用程式執行之前，這可讓您決定要啟用此執行個體，或啟用另一個執行個體。
+`Main()` 是執行的第一件事。 它會在[**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)和[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)之前執行。 在任何其他初始化程式碼在您的應用程式執行之前，這可讓您決定要啟用此執行個體，或啟用另一個執行個體。
 
-以上的程式碼會判斷啟用的是應用程式的現有執行個體或新執行個體。 在此會使用索引鍵來判斷是否有您想要啟用的現有執行個體。 例如，如果可以啟動您的應用程式以[處理檔案啟用](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation)，您可以使用檔案名稱作為索引鍵。 然後，您可以檢查該應用程式的執行個體是否已透過該索引鍵註冊，並啟用該執行個體，而非開啟新的執行個體。 這是程式碼背後的概念:`var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
+以上的程式碼會判斷啟用的是應用程式的現有執行個體或新執行個體。 在此會使用索引鍵來判斷是否有您想要啟用的現有執行個體。 例如，如果可以啟動您的應用程式以[處理檔案啟用](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation)，您可以使用檔案名稱作為索引鍵。 然後，您可以檢查該應用程式的執行個體是否已透過該索引鍵註冊，並啟用該執行個體，而非開啟新的執行個體。 這是程式碼背後的概念： `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
 如果找到以該索引鍵註冊的執行個體，則會啟用該執行個體。 如果找不到索引鍵，則目前的執行個體 (亦即目前正在執行 `Main` 的執行個體) 會建立其應用程式物件，並開始執行。
 
@@ -125,16 +125,16 @@ public static class Program
 ## <a name="additional-considerations"></a>其他考量
 
 - 以桌面與物聯網 (IoT) 專案為目標的 UWP 應用程式支援多重執行個體。
-- 為避免產生競爭條件及發生爭用的問題，多重執行個體應用程式必須採取步驟來分割/同步化設定、應用程式本機存放區，及任何其他可在多重執行個體間共用之資源 (例如使用者檔案、資料存放區等等) 的存取權。 有可用的標準同步處理機制, 例如 mutex、信號、事件等。
+- 為避免產生競爭條件及發生爭用的問題，多重執行個體應用程式必須採取步驟來分割/同步化設定、應用程式本機存放區，及任何其他可在多重執行個體間共用之資源 (例如使用者檔案、資料存放區等等) 的存取權。 有可用的標準同步處理機制，例如 mutex、信號、事件等。
 - 如果應用程式在 Package.appxmanifest 檔案中有 `SupportsMultipleInstances`，則其延伸模組不需要宣告 `SupportsMultipleInstances`。 
 - 如果除了背景工作或應用程式服務外，您將 `SupportsMultipleInstances` 新增至任何其他延伸模組，且主控該延伸模組的應用程式也未在其 Package.appxmanifest 檔案中宣告 `SupportsMultipleInstances`，則會產生結構描述錯誤。
-- 應用程式可以在其資訊清單中使用[**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)宣告, 將多個背景工作組成相同的主機。 這會與多重執行個體衝突，其中的每個啟用都會分別進入不同的主機。 因此，應用程式無法在其資訊清單中宣告 `SupportsMultipleInstances` 與 `ResourceGroup`。
+- 應用程式可以在其資訊清單中使用[**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)宣告，將多個背景工作組成相同的主機。 這會與多重執行個體衝突，其中的每個啟用都會分別進入不同的主機。 因此，應用程式無法在其資訊清單中宣告 `SupportsMultipleInstances` 與 `ResourceGroup`。
 
 ## <a name="sample"></a>範例
 
-如需多重實例啟用重新導向的範例, 請參閱[多重實例範例](https://aka.ms/Kcrqst)。
+如需多重實例啟用重新導向的範例，請參閱[多重實例範例](https://github.com/Microsoft/AppModelSamples/tree/master/Samples/BananaEdit)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [AppInstance.FindOrRegisterInstanceForKey](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_FindOrRegisterInstanceForKey_System_String_)
 [AppInstance.GetActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_GetActivatedEventArgs)

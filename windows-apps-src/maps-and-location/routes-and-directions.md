@@ -6,12 +6,12 @@ ms.date: 09/20/2017
 ms.topic: article
 keywords: Windows 10, uwp, 路線, 地圖, 位置, 路線指引
 ms.localizationpriority: medium
-ms.openlocfilehash: 196cb4801436e8094dae4ead363ff86cc746034e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e9e464f9a3b49d3a94edbc8593df58e1e7c24515
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371696"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259333"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>在地圖上顯示路線和路線指引
 
@@ -20,7 +20,7 @@ ms.locfileid: "66371696"
 要求路線和路線指引，並將它們顯示在您的 app 中。
 
 >[!Note]
->若要深入了解如何在應用程式中使用地圖，請下載[通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
+>若要深入了解如何在應用程式中使用地圖，請下載[通用 Windows 平台 (UWP) 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)。
 >如果地圖功能不是您 app 的核心功能，請考慮改為啟動 Windows 地圖 app。 您可以使用 `bingmaps:`、`ms-drive-to:` 和 `ms-walk-to:` URI 配置，將 Windows 地圖 app 啟動到特定的地圖和轉向建議路線。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app)。
 
  
@@ -31,11 +31,11 @@ ms.locfileid: "66371696"
 
 * [  **MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder) 類別擁有可取得路線與路線指引的方法。 這些方法會傳回 [**MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult)。
 
-* [  **MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult) 包含一個 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 物件。 請透過 **MapRouteFinderResult** 的 [**Route**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinderresult.route) 屬性存取這個物件。
+* [  **MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult) 包含一個 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 物件。 請透過 [MapRouteFinderResult**的**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinderresult.route)Route 屬性存取這個物件。
 
-* [  **MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 包含 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 物件的集合。 請透過 **MapRoute** 的 [**Legs**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute.legs) 屬性存取這個集合。
+* [  **MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 包含 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 物件的集合。 請透過 [MapRoute**的**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute.legs)Legs 屬性存取這個集合。
 
-* 每個 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 都包含 [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver) 物件的集合。 請透過 **MapRouteLeg** 的 [**Maneuvers**](https://docs.microsoft.com/uwp/api/windows.services.maps.maprouteleg.maneuvers) 屬性存取這個集合。
+* 每個 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 都包含 [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver) 物件的集合。 請透過 [MapRouteLeg**的**](https://docs.microsoft.com/uwp/api/windows.services.maps.maprouteleg.maneuvers)Maneuvers 屬性存取這個集合。
 
 您可以呼叫 [**MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder) 類別的方法來取得行車或步行路線和路線指引。 例如，[**GetDrivingRouteAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder.getdrivingrouteasync) 或 [**GetWalkingRouteAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder.getwalkingrouteasync)。
 
@@ -53,7 +53,7 @@ ms.locfileid: "66371696"
 
 ## <a name="display-directions"></a>顯示路線指引
 
-[  **MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult) 物件包含您可以透過其 [**Route**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinderresult.route) 屬性存取的 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 物件。
+[  **MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult) 物件包含您可以透過其 [**Route**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 屬性存取的 [**MapRoute**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinderresult.route) 物件。
 
 計算的 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 擁有的屬性可提供行經路線的時間、路線長度，以及包含路線行程的 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 物件集合。 每個 **MapRouteLeg** 物件都包含 [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver) 物件的集合。 **MapRouteManeuver** 物件包含您可以透過其 [**InstructionText**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutemaneuver.instructiontext) 屬性存取的路線指引。
 
@@ -138,7 +138,7 @@ You have reached your destination.
 ## <a name="display-routes"></a>顯示路線
 
 
-若要在 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 上顯示 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute)，請利用 **MapRoute** 來建構 [**MapRouteView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView)。 接著，將 **MapRouteView** 新增到 **MapControl** 的 [**Routes**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes) 集合。
+若要在 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 上顯示 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)，請利用 [MapRoute**來建構**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView)MapRouteView。 接著，將 **MapRouteView** 新增到 [MapControl**的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes)Routes 集合。
 
 >[!IMPORTANT]
 >您必須指定地圖驗證金鑰，才能使用地圖服務或地圖控制項。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
@@ -190,7 +190,7 @@ private async void ShowRouteOnMap()
 }
 ```
 
-這個範例會在名為 **MapWithRoute** 的 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 上顯示下列項目。
+這個範例會在名為 [MapWithRoute**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)MapControl 上顯示下列項目。
 
 ![顯示路線的地圖控制項。](images/routeonmap.png)
 
@@ -242,7 +242,7 @@ private async void ShowRouteOnMap()
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [對應的設計方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows 應用程式中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
+* [地圖的設計指導方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
+* [組建2015影片：在您的 Windows 應用程式中跨電話、平板電腦和 PC 運用地圖和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 車流量應用程式範例](https://github.com/Microsoft/Windows-appsample-trafficapp)

@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d149faaa967846244553ed53ed5e8255dae276
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 2292d97166d34905bb895aa3f53f864510a21f46
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282280"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254766"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 
@@ -23,7 +23,7 @@ Windows 裝置入口網站適用于每個裝置系列，但功能和安裝程式
 
 Windows 裝置入口網站的功能是使用[REST api](device-portal-api-core.md)來執行，您可以直接使用它來存取資料，並以程式設計方式控制您的裝置。
 
-## <a name="setup"></a>安裝程式
+## <a name="setup"></a>設定
 
 每個裝置都有連線到 Device Portal 的特定指示，但是每個裝置都需要執行這些一般步驟：
 
@@ -36,17 +36,17 @@ Windows 裝置入口網站的功能是使用[REST api](device-portal-api-core.md
 裝置系列 | 預設開啟？ | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
 HoloLens | 是，在開發人員模式 | 80 (預設值) | 443 (預設值) | http://127.0.0.1:10080
-IoT | 是，在開發人員模式 | 8080 | 透過登錄機碼啟用 | N/A
-Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
-桌面| 在開發人員模式內啟用 | 50080 @ no__t-0 | 50043 @ no__t-0 | N/A
+IoT | 是，在開發人員模式 | 8080 | 透過登錄機碼啟用 | 不適用
+Xbox | 在開發人員模式內啟用 | 停用 | 11443 | 不適用
+桌面| 在開發人員模式內啟用 | 50080\* | 50043\* | 不適用
 Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 
-\*，這不一定是這種情況，因為桌上型電腦上的裝置入口網站會在暫時範圍（> 50000）中宣告埠，以避免與裝置上現有的埠宣告發生衝突。 若要深入了解，請參閱適用於電腦的[連接埠設定](device-portal-desktop.md#registry-based-configuration-for-device-portal)一節。  
+\* 不一定都是如此，因為桌上型電腦上的裝置入口網站會在暫時範圍（> 50000）中宣告埠，以防止裝置上的現有埠宣告發生衝突。 若要深入了解，請參閱適用於電腦的[連接埠設定](device-portal-desktop.md#registry-based-configuration-for-device-portal)一節。  
 
 如需裝置特定的安裝指示，請參閱︰
 
 - [HoloLens 的裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [IoT 的裝置入口網站](https://go.microsoft.com/fwlink/?LinkID=616499)
+- [IoT 的裝置入口網站](https://docs.microsoft.com/windows/iot-core/manage-your-device/DevicePortal)
 - [行動裝置的行動裝置](device-portal-mobile.md)
 - [Xbox 的裝置入口網站](../xbox-apps/device-portal-xbox.md)
 - [傳統型裝置的裝置入口網站](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -59,8 +59,8 @@ Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 
 - **電源**：存取電源選項。
   - **關機**：關閉裝置。
-  - **重新開機**：迴圈裝置上的電源。
-- 說明：開啟 [說明] 頁面。
+  - **重新啟動**：關閉裝置電源並重新開啟。
+- **說明**︰開啟 [說明] 頁面。
 
 使用頁面左側瀏覽窗格中的連結，瀏覽到適用於您裝置的管理與監視工具。
 
@@ -74,7 +74,7 @@ Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 
 * **部署應用程式**：從本機、網路或 web 主機部署已封裝的應用程式，並從網路共用註冊鬆散檔案。
 * **已安裝的應用程式**：使用下拉式功能表來移除或啟動裝置上安裝的應用程式。
-* **正在執行應用程式**：取得目前正在執行之應用程式的相關資訊，並視需要加以關閉。
+* 執行中的**應用程式**：取得目前正在執行之應用程式的相關資訊，並視需要加以關閉。
 
 #### <a name="install-sideload-an-app"></a>安裝（側載）應用程式
 
@@ -136,11 +136,11 @@ Phone | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
 
 下列為可用的衡量標準：
 
-- **CPU**：可用 CPU 使用率總計的百分比
+- **Cpu**：可用 cpu 使用率總計的百分比
 - **記憶體**：總計、使用中、可用、已認可、已分頁和未分頁
-- **I/O**：讀取和寫入資料量
-- **網路**：已接收和傳送的資料
-- **GPU**：可用的 GPU 引擎使用率總計百分比
+- **I/o**：讀取和寫入資料量
+- **網路**：已接收和已傳送的資料
+- **Gpu**：可用 gpu 引擎使用率總計百分比
 
 ![裝置入口網站的 [效能] 頁面](images/device-portal/mob-device-portal-perf.png)
 
@@ -152,18 +152,18 @@ ETW 記錄頁面會管理裝置上 Windows （ETW）資訊的即時事件追蹤�
 
 選取 **\[隱藏提供者\]** 以只顯示 [事件] 清單。
 
-- **已註冊的提供者**：選取事件提供者和追蹤層級。 追蹤層級是下列其中一個值：
+- **已註冊的提供**者：選取事件提供者和追蹤層級。 追蹤層級是下列其中一個值：
   1. 異常結束或終止
   2. 嚴重錯誤
   3. 警告
   4. 非錯誤警告
   5. 詳細追蹤
 
-  按一下或點選 [啟用] 以開始追蹤。 提供者已新增到 [啟用的提供者] 下拉式清單中。
-- **自訂提供者**：選取自訂 ETW 提供者和追蹤層級。 依 GUID 識別提供者。 不要在 GUID 中包含括弧。
+  按一下或點選 **\[啟用\]** 以開始追蹤。 提供者已新增到 **\[啟用的提供者\]** 下拉式清單中。
+- **自訂提供者**︰選取自訂 ETW 提供者與追蹤等級。 依 GUID 識別提供者。 不要在 GUID 中包含括弧。
 - **啟用的提供者**：這會列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 **\[停用\]** 以停止追蹤。 按一下或點選 **\[全部停止\]** 以暫停所有追蹤。
-- **提供者歷程記錄**：這會顯示在目前會話期間啟用的 ETW 提供者。 按一下或點選 **\[啟用\]** 以啟用已停用的提供者。 按一下或點選 **\[清除\]** 以清除歷程記錄。
-- **篩選器/事件**：[**事件**] 區段會以資料表格式列出來自所選提供者的 ETW 事件。 資料表會即時更新。 使用 [**篩選**] 功能表來設定將顯示事件的自訂篩選器。 按一下 [**清除**] 按鈕，以刪除資料表中的所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 [**儲存至**檔案]，將目前收集的 ETW 事件匯出至本機 CSV 檔案。
+- **提供者歷程記錄**：這會顯示目前會話期間已啟用的 ETW 提供者。 按一下或點選 **\[啟用\]** 以啟用已停用的提供者。 按一下或點選 **\[清除\]** 以清除歷程記錄。
+- **篩選/事件**： [**事件**] 區段會以資料表格式列出來自所選提供者的 ETW 事件。 資料表會即時更新。 使用 [**篩選**] 功能表來設定將顯示事件的自訂篩選器。 按一下 [**清除**] 按鈕，以刪除資料表中的所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 [**儲存至**檔案]，將目前收集的 ETW 事件匯出至本機 CSV 檔案。
 
 如需使用 ETW 記錄的詳細資訊，請參閱[使用裝置入口網站來查看偵錯工具記錄](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)檔文章。
 
@@ -173,8 +173,8 @@ ETW 記錄頁面會管理裝置上 Windows （ETW）資訊的即時事件追蹤�
 
 ![裝置入口網站效能追蹤頁面](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- **可用的設定檔**：從下拉式清單中選取 WPR 設定檔，然後按一下或按 [**啟動**] 開始追蹤。
-- **自訂設定檔**：按一下或點擊 **[流覽]** ，從您的電腦選擇 WPR 設定檔。 按一下或點選 **\[上傳並開始\]** 以開始追蹤。
+- **可用的設定檔**︰從下拉式清單選取 WPR 設定檔，然後按一下或點選 **\[開始\]** 以開始追蹤。
+- **自訂設定檔**︰按一下或點選 **\[瀏覽\]** ，以從您的電腦選擇 WPR 設定檔。 按一下或點選 **\[上傳並開始\]** 以開始追蹤。
 
 若要停止追蹤，請按一下 **\[停止\]** 。 停留在此頁面上，直到追蹤檔案（。ETL）已完成下載。
 
@@ -201,11 +201,11 @@ ETW 記錄頁面會管理裝置上 Windows （ETW）資訊的即時事件追蹤�
 
 Device Portal 會使用 DNS-SD 在區域網路上公告其目前狀態。 所有的 Device Portal 執行個體都會在 "WDP._wdp._tcp.local" 底下公告，不論其裝置類型為何。 服務執行個體的 TXT 記錄會提供下列項目：
 
-Key | Type | 描述
+索引鍵 | 類型 | 描述
 ----|------|-------------
-S | int | Device Portal 的安全連接埠。 如果為 0 (零)，Device Portal 不會接聽 HTTPS 連線。
-D | string | 裝置類型。 這會採用 "Windows. *" 格式，例如，Windows Xbox 或 Windows Desktop。
-A | string | 裝置架構。 這將是 ARM、x86 或 AMD64。  
+S | 整數 | Device Portal 的安全連接埠。 如果為 0 (零)，Device Portal 不會接聽 HTTPS 連線。
+D | 字串 | 裝置類型。 這會採用 "Windows. *" 格式，例如，Windows Xbox 或 Windows Desktop。
+A | 字串 | 裝置架構。 這將是 ARM、x86 或 AMD64。  
 T | null 字元字串分隔清單 | 裝置的使用者套用標記。 請參閱＜標記 REST API＞以了解如何使用。 清單是以兩個 NULL 結束。  
 
 建議連接 HTTPS 連接埠，因為並非所有的裝置都會接聽由 DNS-SD 記錄公告的 HTTP 埠。
@@ -216,7 +216,7 @@ T | null 字元字串分隔清單 | 裝置的使用者套用標記。 請參閱�
 
 > [!IMPORTANT]
 > 這項保護可防止獨立用戶端（例如命令列公用程式）使用 REST Api。 這可以 3 種方式解決：
-> - 使用「自動」使用者名稱。 使用者名稱前面加上 "auto-" 的用戶端將略過 CSRF 保護。 請務必注意，不可以透過瀏覽器使用此使用者名稱來登入 Device Portal，因為它會將服務開放給 CSRF 攻擊。 範例：如果裝置入口網站的使用者名稱是 "admin"，則應該使用 ```curl -u auto-admin:password <args>``` 來略過 CSRF 保護。
+> - 使用「自動」使用者名稱。 使用者名稱前面加上 "auto-" 的用戶端將略過 CSRF 保護。 請務必注意，不可以透過瀏覽器使用此使用者名稱來登入 Device Portal，因為它會將服務開放給 CSRF 攻擊。 範例︰如果 Device Portal 的使用者名稱為 "admin"，```curl -u auto-admin:password <args>``` 應該用來略過 CSRF 保護。
 > - 在用戶端中實作 cookie-to-header 配置。 這需要 GET 要求建立工作階段 Cookie，然後在所有後續要求同時包含標頭與 Cookie。
 > - 停用驗證，並使用 HTTP。 CSRF 保護僅適用於 HTTPS 端點，因此 HTTP 端點上的連線不需要執行上述各項。
 

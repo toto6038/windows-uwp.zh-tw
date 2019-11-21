@@ -6,30 +6,30 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 3deb5aca27b4f33d0492bae9fd4ddbce4f52d065
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2c4bef6045f75992e0fad503ff2a357d52363008
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370365"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259691"
 ---
 # <a name="bluetooth-le-advertisements"></a>藍牙 LE 廣告
 
 
-**重要的 Api**
+**重要 API**
 
--   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+-   [**Windows. Bluetooth. 廣告**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
 
 這篇文章提供適用於通用 Windows 平台 (UWP) 應用程式的藍牙低功耗 (LE) 廣告指標概觀。  
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 有兩個開發人員可以使用 LE Advertisement API 執行的主要功能：
 
 -   [Advertisement Watcher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher)：接聽附近的指標並根據承載或鄰近性篩選出指標。  
 -   [Advertisement Publisher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher)：定義 Windows 承載，以代表開發人員宣傳。  
 
-在 Github 上的[藍牙廣告範例](https://go.microsoft.com/fwlink/p/?LinkId=619990)中可以找到完整的範例程式碼
+在 Github 上的[藍牙廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothAdvertisement)中可以找到完整的範例程式碼
 
 ## <a name="basic-setup"></a>基本設定
 
@@ -43,7 +43,7 @@ ms.locfileid: "66370365"
 
 藍牙 LE 廣告可讓您的裝置持續發出特定承載的指標 (稱為「廣告」)。 附近任何支援藍牙 LE 功能的裝置，如果有設定為接聽此特定廣告，就都能看見此廣告。
 
-> **注意**：使用者隱私權，撰寫公告的存留時間會繫結至的應用程式。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
+> **注意**：基於使用者隱私權的理由，廣告的存留時間是與您 App 的存留時間繫結。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本發佈
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: adb80c3396002a76b3c22a9ce8a8e2893ea728ac
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 279f0d007be927e29632986ce8178c4e0b9778b3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340505"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259860"
 ---
 # <a name="dependency-properties-overview"></a>相依性屬性概觀
 
@@ -86,10 +86,10 @@ public bool IsSpinning
 
 下列是指派相依性屬性的執行階段值時，屬性系統使用的決定性順序。 優先順序最高的會優先列出。 您只需瀏覽這個清單，就能找到更詳細的說明。
 
-1. **動畫值：** 活動動畫、視覺狀態動畫或具有[**HoldEnd**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior)行為的動畫。 為取得任何實際效果，套用到屬性的動畫優先順序必須高於基礎 (未動畫化的) 值，即使該值是在本機設定也一樣。
-1. **本機值：** 您可以透過屬性包裝函式的便利性來設定本機值，這也等同于將設定為 XAML 中的屬性或屬性元素，或使用特定實例的屬性呼叫[**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)方法。 如果您使用繫結或靜態資源設定本機值，在優先順序上就像分別設定了本機值，如果設定了新的本機值，就會清除繫結或資源參考。
-1. **樣板化屬性：** 如果專案是建立為範本的一部分（從[**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)或[**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)），則該專案具有這些專案。
-1. **樣式 setter：** 來自頁面或應用程式資源的樣式中的[**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)值。
+1. **動畫值：** 作用中動畫、視覺狀態動畫，或具有 [**HoldEnd**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior) 行為的動畫。 為取得任何實際效果，套用到屬性的動畫優先順序必須高於基礎 (未動畫化的) 值，即使該值是在本機設定也一樣。
+1. **本機值：** 本機值可以輕鬆透過屬性包裝函式設定，這也等同於在 XAML 中設定為屬性 (Attribute) 或屬性 (Property) 元素，或使用特定執行個體的屬性 (Property) 呼叫 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) 方法。 如果您使用繫結或靜態資源設定本機值，在優先順序上就像分別設定了本機值，如果設定了新的本機值，就會清除繫結或資源參考。
+1. **範本化屬性：** 如果將元素建立為範本 (來自 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 或 [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)) 的一部分，元素就會含有這些屬性。
+1. **Style Setter：** 頁面或應用程式資源樣式中的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值。
 1. **預設值：** 相依性屬性可以有預設值做為其中繼資料的一部分。
 
 ### <a name="templated-properties"></a>範本化屬性
@@ -113,7 +113,7 @@ public bool IsSpinning
 
 對於動畫屬性，如果該動畫未明確指定 **From** 與 **To**，或者，如果動畫會在完成時將屬性還原為其基礎值，基礎值就仍能對動畫值產生影響。 在這些情況下，當動畫不再執行之後，就會再次使用剩餘的優先順序。
 
-但是，以 [**HoldEnd**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior) 行為指定 **To** 的動畫在移除之前可以覆寫本機值，即使它看起來像是已停止也一樣。 概念上來說，這就像是一個會永久執行的動畫，即使 UI 中不含視覺動畫也一樣。
+但是，以HoldEnd[**行為指定**To](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior) 的動畫在移除之前可以覆寫本機值，即使它看起來像是已停止也一樣。 概念上來說，這就像是一個會永久執行的動畫，即使 UI 中不含視覺動畫也一樣。
 
 多重動畫可套用到單一屬性。 這其中每一個動畫可能都已定義來取代來自值優先順序中不同時點的基礎值。 但是，這些動畫都將在執行階段同時執行，這通常表示它們必須結合其值，因為每一個動畫對於值的影響都一樣。 這完全取決於動畫如何定義，和正在動畫化的值類型。
 
@@ -138,7 +138,7 @@ public bool IsSpinning
 
 相依性屬性可以透過套用資料繫結來設定它的值。 資料繫結在 XAML 中使用 [{Binding} 標記延伸](binding-markup-extension.md)語法，在程式碼中使用 [{x:Bind} 標記延伸](x-bind-markup-extension.md)或 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 類別。 針對資料繫結屬性，最終的屬性值判斷會延遲到執行階段。 那時就會從資料來源中取得該值。 相依性屬性系統在此處扮演的角色是，讓預留位置行為能夠運作，例如，在尚未知道值時載入 XAML，然後透過與 Windows 執行階段資料繫結引擎互動，在執行階段提供值。
 
-下列範例會在 XAML 中使用繫結，以設定 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素的 [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 值。 繫結會使用繼承的資料內容與物件資料來源 (這個簡短範例中並未顯示這兩者，如需顯示內容與來源的更完整範例，請參閱[深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth))。
+下列範例會在 XAML 中使用繫結，以設定 [**TextBlock**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 元素的 [**Text**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 值。 繫結會使用繼承的資料內容與物件資料來源 (這個簡短範例中並未顯示這兩者，如需顯示內容與來源的更完整範例，請參閱[深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth))。
 
 ```xaml
 <Canvas>
@@ -166,7 +166,7 @@ public bool IsSpinning
 
 ### <a name="styles-and-templates"></a>樣式與範本
 
-樣式與範本是將屬性定義為相依性屬性的其中兩個案例。 樣式對於定義應用程式 UI 的屬性設定相當有用。 樣式在 XAML 中會定義為資源，是定義為 [**Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) 集合中的項目，或是定義在個別的 XAML 檔案 (例如佈景主題資源字典) 中。 樣式會與屬性系統互動，因為它們包含屬性的 setter。 這裡最重要的屬性就是 [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 的 [**Control.Template**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template) 屬性：它定義了 **Control** 的大部分視覺化外觀和視覺狀態。 如需樣式的詳細資訊，以及定義 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 和使用 setter 的一些 XAML 範例，請參閱[設定控制項的樣式](https://docs.microsoft.com/windows/uwp/controls-and-patterns/styling-controls)。
+樣式與範本是將屬性定義為相依性屬性的其中兩個案例。 樣式對於定義應用程式 UI 的屬性設定相當有用。 樣式在 XAML 中會定義為資源，是定義為 [**Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) 集合中的項目，或是定義在個別的 XAML 檔案 (例如佈景主題資源字典) 中。 樣式會與屬性系統互動，因為它們包含屬性的 setter。 這裡最重要的屬性就是 [**Control**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template) 的 [**Control.Template**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 屬性：它定義了 **Control** 的大部分視覺化外觀和視覺狀態。 如需樣式的詳細資訊，以及定義 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 和使用 setter 的一些 XAML 範例，請參閱[設定控制項的樣式](https://docs.microsoft.com/windows/uwp/controls-and-patterns/styling-controls)。
 
 來自樣式或範本的值是延遲的值，與繫結類似。 這是為了讓控制項使用者可以重新範本化控制項或重新定義樣式。 此外，這就是為什麼樣式中的屬性只能以相依性屬性來操作，而不能以一般屬性來操作。
 
@@ -188,13 +188,13 @@ Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://docs.microsof
 
 ### <a name="default-value-and-clearvalue"></a>預設值與 **ClearValue**
 
-相依性屬性可以在其屬性中繼資料中定義一個預設值。 針對相依性屬性，它的預設值不會在第一次設定屬性預設值之後變成無關的。 每當值優先順序中有一些其他行列式消失時，預設值可能會在執行階段再次套用。 （相依性屬性值優先順序會在下一節中討論）。例如，您可能會刻意移除樣式值或套用至屬性的動畫，但是您想要在執行此動作之後，將該值設為合理的預設值。 相依性屬性的預設值可以提供這個值，而不需要執行額外步驟來特別設定每個屬性的值。
+相依性屬性可以在其屬性中繼資料中定義一個預設值。 針對相依性屬性，它的預設值不會在第一次設定屬性預設值之後變成無關的。 每當值優先順序中有一些其他行列式消失時，預設值可能會在執行階段再次套用。 (相依性屬性值的優先順序會在下一節中討論)。例如，您可能會刻意移除套用到屬性的樣式值或動畫，但卻希望這樣做之後，將該值設定為合理的預設值。 相依性屬性的預設值可以提供這個值，而不需要執行額外步驟來特別設定每個屬性的值。
 
 即使在您已經使用本機值來設定屬性之後，您還是能夠刻意將該屬性設為預設值。 若要再次將值重設為預設值，並且還要一併啟用可能覆寫預設值但不會覆寫本機值的優先順序中的其他參與者，可以呼叫 [**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue) 方法 (參考要清除的屬性以做為方法參數)。 您不一定想讓屬性照字面使用預設值，但是清除本機值並還原為預設值，可能會讓優先順序中您所需的另一個項目立即運作，例如，使用來自控制項範本中樣式 setter 的值。
 
 ## <a name="dependencyobject-and-threading"></a>**DependencyObject** 和執行緒處理
 
-所有的 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 執行個體都必須在 UI 執行緒上建立，而這個執行緒與 Windows 執行階段 app 所顯示的目前 [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 關聯。 雖然每個 **DependencyObject** 都必須在主 UI 執行緒上建立，但是只要存取 [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) 屬性，即可使用其他緒行緒的發送器參考來存取物件。 接著，您可以在 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 物件上呼叫像是 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 的方法，並在 UI 執行緒上的執行緒限制規則內執行您的程式碼。
+所有的 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 執行個體都必須在 UI 執行緒上建立，而這個執行緒與 Windows 執行階段 app 所顯示的目前 [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 關聯。 雖然每個 **DependencyObject** 都必須在主 UI 執行緒上建立，但是只要存取 [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) 屬性，即可使用其他緒行緒的發送器參考來存取物件。 接著，您可以在 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 物件上呼叫像是 [**RunAsync**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 的方法，並在 UI 執行緒上的執行緒限制規則內執行您的程式碼。
 
 [  **DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 的執行緒層面都是相關的，因為它通常表示只有在 UI 執行緒上執行的程式碼才可以變更或甚至是讀取相依性屬性的值。 在一般的 UI 程式碼中通常可以避免緒行緒處理的問題，因為它能夠正確使用 **async** 模式及背景工作者執行緒。 通常您只會在定義自己的 **DependencyObject** 類型並且嘗試在 **DependencyObject** 不適用的資料來源或其他案例中使用這些類型時，才會遇到 **DependencyObject** 相關的執行緒處理問題。
 
@@ -207,7 +207,7 @@ Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://docs.microsof
 - [深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
 - [Storyboarded 動畫](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
 - [建立 Windows 執行階段元件](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
-- [XAML 使用者和自訂控制項範例](https://go.microsoft.com/fwlink/p/?linkid=238581)
+- [XAML 使用者和自訂控制項範例](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
 
 ## <a name="apis-related-to-dependency-properties"></a>與相依性屬性相關的 Api
 
