@@ -1,7 +1,7 @@
 - name: 建置適用於 Windows 的應用程式
   items:
     - name: 概觀
-      href: apps/index.md
+      href: apps/index.yml
     - name: 建置傳統型應用程式
       items:
         - name: 概觀
