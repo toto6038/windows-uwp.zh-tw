@@ -83,7 +83,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
->@no__t 0The 3D 製造裝置會決定哪些可用的實體材質會對應到3MF 中儲存的虛擬材質元素。 材質對應不一定要是 1:1︰如果 3D 印表機只使用一個材質，則會使用該材質列印整個模型 (不管物件或表面已獲指派不同的材質)。
+> 3D 製造裝置會決定哪些可用的實體材質會對應至儲存在3MF 中的虛擬材質元素。 材質對應不一定要是 1:1︰如果 3D 印表機只使用一個材質，則會使用該材質列印整個模型 (不管物件或表面已獲指派不同的材質)。
 
 ### <a name="color-materials"></a>色彩材質
 

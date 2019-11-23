@@ -36,7 +36,7 @@ ms.locfileid: "71340559"
 
 以下是這個路徑的評估方式：
 
-1.  針對資料內容物件 (或同一個 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 所指定的 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.source)) 搜尋一個名為 "Customer" 的屬性。
+1.  針對資料內容物件 (或同一個 [**Binding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.source) 所指定的 [**Source**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)) 搜尋一個名為 "Customer" 的屬性。
 2.  針對物件 ("Customer" 屬性的值) 搜尋一個名為 "Address" 的屬性。
 3.  針對物件 ("Address" 屬性的值) 搜尋一個名為 "StreetAddress1" 的屬性。
 
@@ -50,13 +50,13 @@ ms.locfileid: "71340559"
 
 ### <a name="indexers"></a>索引子
 
-資料繫結的屬性路徑可以包含索引屬性的參考。 這樣便能繫結到已排序的清單/向量，或繫結到字典/對應。 使用方括弧 "\[ @ no__t-1" 字元來表示索引的屬性。 這種括號中的內容可以是整數 (已排序的清單) 或未加引號的字串 (字典)。 您也可以繫結到索引鍵為整數的字典。 您可以在相同的路徑中使用不同的索引屬性，並使用點來分隔物件-屬性。
+資料繫結的屬性路徑可以包含索引屬性的參考。 這樣便能繫結到已排序的清單/向量，或繫結到字典/對應。 使用方括弧 "\[\]" 字元來表示索引的屬性。 這種括號中的內容可以是整數 (已排序的清單) 或未加引號的字串 (字典)。 您也可以繫結到索引鍵為整數的字典。 您可以在相同的路徑中使用不同的索引屬性，並使用點來分隔物件-屬性。
 
-例如，假設有一個含 "Teams" 清單 (已排序清單) 的商務物件，每一個清單都包含一個 "Players" 字典，其中每個玩家都以姓氏做為索引鍵。 第二個小組的特定播放程式的範例屬性路徑為：< 小組 @ no__t-01 @ no__t-1。Player @ no__t-2Smith @ no__t-3 "。 (您使用 1 來指出 "Teams" 中的第二個項目，因為這個清單是從 0 開始建立索引。)
+例如，假設有一個含 "Teams" 清單 (已排序清單) 的商務物件，每一個清單都包含一個 "Players" 字典，其中每個玩家都以姓氏做為索引鍵。 第二個小組的特定播放程式的範例屬性路徑為：「小組\[1\]。玩家\[Smith\]」。 (您使用 1 來指出 "Teams" 中的第二個項目，因為這個清單是從 0 開始建立索引。)
 
-**注意**@no__t- C++資料來源的1Indexing 支援有限;[深入瞭解資料](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)系結。
+**注意：** 資料來源的C++  索引支援有限;[深入瞭解資料](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)系結。
 
-### <a name="attached-properties"></a>附加的屬性
+### <a name="attached-properties"></a>附加屬性
 
 屬性路徑可以包含對附加屬性的參考。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定使用 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) 做為繫結路徑的字串是 "(Canvas.ZIndex)"。 如需附加屬性的詳細資訊，請參閱[附加屬性概觀](attached-properties-overview.md)。
 
@@ -84,15 +84,15 @@ ms.locfileid: "71340559"
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>指定集合中的特定子項
 
-若要指定集合屬性中的子項目，可以使用數值索引子。 使用方括弧 "\[ @ no__t-1" 字元括住整數索引值。 您只可以參考已排序的清單，不可以參考字典。 因為集合不是可以產生動畫效果的值，所以屬性路徑的結尾屬性永遠不可以使用索引子。
+若要指定集合屬性中的子項目，可以使用數值索引子。 在整數索引值前後使用方括弧「\[\]」字元。 您只可以參考已排序的清單，不可以參考字典。 因為集合不是可以產生動畫效果的值，所以屬性路徑的結尾屬性永遠不可以使用索引子。
 
-例如，若要指定您想要在套用至控制項[**背景**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)屬性的[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)中建立第一個色彩停用色彩的動畫，這就是屬性路徑： "（控制背景）。（GradientBrush. GradientStops） \[0 @ no__t-5。（System.windows.media.gradientstop> Color） "。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 屬性，以便套用 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 動畫值。
+例如，若要指定您想要在套用至控制項[**背景**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)屬性的[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)中建立第一個色彩停用色彩的動畫，這就是屬性路徑： "（控制背景）。（GradientBrush. GradientStops）\[0\]。（System.windows.media.gradientstop> Color） "。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 屬性，以便套用 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 動畫值。
 
 ## <a name="animating-an-attached-property"></a>讓附加屬性產生動畫效果
 
 這不是常見情況；不過，只要附加屬性具有符合動畫類型的屬性值，就可以讓它產生動畫效果。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定讓物件上 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) 附加屬性產生動畫效果的字串會使用屬性路徑 "(Grid.Row)"。
 
-**注意**  For 此範例中， [**Grid**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row)的值是**Int32**屬性類型。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 元件的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)，其中 [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 會設定為 "0" 或 "1" 的整數。
+**請注意**，  在此範例中， [**Grid**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row)的值是**Int32**屬性類型。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 元件的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame)，其中 [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 會設定為 "0" 或 "1" 的整數。
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>動畫目標屬性路徑中的屬性規則
 

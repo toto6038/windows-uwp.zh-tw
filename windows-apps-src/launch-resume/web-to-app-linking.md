@@ -15,10 +15,10 @@ ms.locfileid: "72282256"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>使用 App URI 處理常式啟用網站的應用程式
 
-\[網站的應用程式\] 將您的應用程式關聯至網站，以便當某人開啟您網站的連結時，會啟動您的應用程式而不是開啟瀏覽器。 如果未安裝您的應用程式，則會像往常一樣在瀏覽器中開啟您的網站。 因為只有經過驗證的內容擁有者可以登錄連結，所以使用者可以信任這個使用經驗。 使用者可以移至 [設定] > [應用程式] > [網站的應用程式]，檢查他們所有已註冊的網站至應用程式連結。
+\[網站的應用程式\] 將您的應用程式關聯至網站，以便當某人開啟您網站的連結時，會啟動您的應用程式而不是開啟瀏覽器。 如果未安裝您的應用程式，則會像往常一樣在瀏覽器中開啟您的網站。 只有經過驗證的內容擁有者可以註冊連結，因此使用者可以信任這項體驗。 使用者可以移至 [設定] > [應用程式] > [網站的應用程式]，檢查他們所有已註冊的網站至應用程式連結。
 
 若要啟用網站至應用程式連結，您將需要：
-- 在資訊清單檔案中識別應用程式將會處理 URI
+- 在資訊清單檔案中識別應用程式將會處理的 URI
 - 定義您的應用程式與您的網站之間關聯的 JSON 檔案。 將應用程式套件系列名稱，放在與應用程式資訊清單宣告的同一個主機根目錄。
 - 在應用程式中處理啟用。
 
@@ -46,7 +46,7 @@ ms.locfileid: "72282256"
 </Applications>
 ```
 
-上述的宣告會登錄您的應用程式要從指定的主機來處理連結。 如果您的網站有多個位址（例如： m.example.com、www\.example.com 和 example.com），則在每個位址的 `<uap3:AppUriHandler>` 內新增個別的 @no__t 1 專案。
+上述的宣告會登錄您的應用程式要從指定的主機來處理連結。 如果您的網站有多個位址（例如： m.example.com、www\.example.com 和 example.com），請在 `<uap3:AppUriHandler>` 中為每個位址新增個別的 `<uap3:Host Name=... />` 專案。
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>使用 JSON 檔案將應用程式與網站關聯
 
@@ -55,7 +55,7 @@ ms.locfileid: "72282256"
 >[!Important]
 > JSON 檔案不應該有.json 後置檔案。
 
-建立名為 **windows-app-web-link** 的 JSON 檔案 (不含.json 副檔名)，並提供您的應用程式套件系列名稱。 例如:
+建立名為 **windows-app-web-link** 的 JSON 檔案 (不含.json 副檔名)，並提供您的應用程式套件系列名稱。 例如：
 
 ``` JSON
 [{
@@ -76,7 +76,7 @@ Windows 會讓 https 連線至您的網站，並會在網頁伺服器上尋找�
 | **\***       | 代表任何子字串      |
 | **?**        | 代表單一字元 |
 
-例如，在上述範例中，假設 `"excludePaths" : [ "/news/*", "/blog/*" ]`，您的應用程式將支援以您的網站位址開頭的所有路徑（例如，msn.com），但 `/news/` 和 `/blog/`**除外**。 將支援**msn.com/weather.html** ，但不會**msn.com/news/topnews.html**。
+例如 `"excludePaths" : [ "/news/*", "/blog/*" ]`，在上述範例中，您的應用程式將會支援以您的網站位址開頭的所有路徑（例如，msn.com），**但**`/news/` 和 `/blog/`底下的路徑除外。 將支援**msn.com/weather.html** ，但不會**msn.com/news/topnews.html**。
 
 ### <a name="multiple-apps"></a>多個應用程式
 
@@ -96,7 +96,7 @@ Windows 會讓 https 連線至您的網站，並會在網頁伺服器上尋找�
 
 若要為使用者提供最佳的使用體驗，請使用排除路徑，務必從 JSON 檔案的支援路徑中排除僅供線上存取的內容。
 
-排除路徑都會先行檢查，如果有相符項目，將會使用瀏覽器開啟對應的頁面，而不是使用指定的應用程式。 在上述範例中，'/news/\* ' 包含該路徑下的任何頁面，而 '/news @ no__t-1 ' （沒有正斜線軌跡 ' news '）包含 ' news @ no__t-2 ' 下的任何路徑，例如 ' newslocal/'、' newsinternational/' 等等。
+排除路徑都會先行檢查，如果有相符項目，將會使用瀏覽器開啟對應的頁面，而不是使用指定的應用程式。 在上述範例中，'/news/\*' 包含該路徑下的任何頁面，而 '/news\*' （沒有正斜線軌跡 ' news '）則包含「新聞\*」下的任何路徑，例如 ' newslocal/'、' newsinternational/' 等等。
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>處理啟用以連結到內容的連結
 
@@ -148,21 +148,21 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-**重要：** 務必要以 `rootFrame.Navigate(deepLinkPageType, e);` 取代最終 的`if (rootFrame.Content == null)` 邏輯，如上述範例中所示。
+**重要：** 務必要以 `if (rootFrame.Content == null)` 取代最終 的`rootFrame.Navigate(deepLinkPageType, e);` 邏輯，如上述範例中所示。
 
-## <a name="test-it-out-local-validation-tool"></a>測試：本機驗證工具
+## <a name="test-it-out-local-validation-tool"></a>測試︰本機驗證工具
 
 您可以執行主機登錄驗證工具來測試您的應用程式和網站設定，該工具可在下列位置取得︰
 
-% windir% \\system32 @ no__t-1**AppHostRegistrationVerifier .exe**
+% windir%\\system32\\**AppHostRegistrationVerifier**
 
 執行此工具時，可利用下列參數來測試應用程式與網站的設定：
 
 **AppHostRegistrationVerifier .exe** *主機名稱 packagefamilyname filepath*
 
 -   主機名稱：您的網站（例如，microsoft.com）
--   套件系列名稱（PFN）：您應用程式的 PFN
--   檔案路徑：用於本機驗證的 JSON 檔案（例如 C： \\SomeFolder @ no__t-1windows-app-web 連結）
+-   套件系列名稱 (PFN)：您的應用程式PFN
+-   檔案路徑：本機驗證的 JSON 檔案（例如 C：\\SomeFolder\\windows-app-web 連結）
 
 如果此工具未傳回任何項目，則會在上傳檔案時對該檔案進行驗證。 如果有錯誤碼，表示它無法運作。
 
@@ -171,15 +171,15 @@ protected override void OnActivated(IActivatedEventArgs e)
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-名`ForceValidation` 值： `1`
+Keyname： `ForceValidation` 值： `1`
 
-## <a name="test-it-web-validation"></a>測試：Web 驗證
+## <a name="test-it-web-validation"></a>測試︰Web 驗證
 
 關閉您的應用程式，驗證當您按一下連結時會啟用該應用程式。 接著在您的網站中，複製其中一個支援路徑的網址。 例如，如果您的網站位址是 "msn.com"，且其中一個支援路徑為 "path1"，則您會使用 `http://msn.com/path1`
 
 確認您的應用程式已經關閉。 按下 **Windows 鍵 + R** 以開啟 **\[執行\]** 對話方塊並在視窗中貼上連結。 您的應用程式應要啟動，而不是網頁瀏覽器。
 
-此外，您可以使用 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) API，測試從另一個應用程式來啟動您的 app。 您同樣可以使用這個 API，在手機上測試。
+此外，您可以使用 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) API，測試從另一個應用程式來啟動您的應用程式。 您同樣可以使用這個 API，在手機上測試。
 
 如果您想要依照通訊協定啟用邏輯，在 **OnActivated** 事件處理常式中設定中斷點。
 
@@ -193,7 +193,7 @@ AppModel\SystemAppData\YourApp\AppUriHandlers`
 - 所有使用 AppUriHandlers 側載的應用程式，在安裝時都會有該主機的驗證連結。 您不需要將 JSON 檔案上傳，也能測試該功能。
 - 只要您的應用程式是利用 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 啟動的 UWP 應用程式，或使用 [ShellExecuteEx](https://docs.microsoft.com/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa) 啟動的 Windows 傳統型應用程式，此功能都能運作。 如果 URL 對應到已登錄的應用程式 URI 處理常式，會啟動該應用程式，而不是瀏覽器。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [網站至應用程式範例專案](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol 註冊](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)

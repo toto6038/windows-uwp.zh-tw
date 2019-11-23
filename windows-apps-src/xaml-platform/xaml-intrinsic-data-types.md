@@ -31,13 +31,13 @@ Windows 執行階段的 XAML 提供下列類型的語言層級支援。
 
 通常您只有針對這些 XAML 語言基本類型，才會在 XAML 中定義使用 **x:** 前置詞的物件元素。 其他所有的 XAML 語言功能通常使用在屬性表單中，或是做為標記延伸。
 
-**請注意**  By 慣例，XAML 的語言基本專案和所有其他 xaml 語言元素會顯示 "x：" 前置詞。 這就是 XAML 語言元素在真實世界標記中的一般用法。 XAML 的文件與 XAML 規格會依循這個慣例。
+**請注意**  依照慣例，xaml 和所有其他 xaml 語言元素的語言基本專案會以 "x：" 前置詞顯示。 這就是 XAML 語言元素在真實世界標記中的一般用法。 XAML 的文件與 XAML 規格會依循這個慣例。
 
 ## <a name="other-xaml-primitives"></a>其他 XAML 基本類型
 
 XAML 2009 規格有提到其他 XAML 語言層級的基本類型，如 **x:Uri** 和 **x:Single**。 除非在本主題的表格中另行列出，否則 Windows 執行階段的 XAML 目前不支援由其他 XAML 詞彙或 XAML 2009 規格所定義的其他 XAML 語言基本類型。
 
-**請注意**  Dates 和時間（使用[**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime)或[**DateTimeOffset**](https://docs.microsoft.com/dotnet/api/system.datetimeoffset)、 [**timespan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)或 system.string 的[**屬性）無法**](https://docs.microsoft.com/dotnet/api/system.timespan)使用 XAML 基本類型來設定。 因為在 Windows 執行階段 XAML 剖析器中沒有適用於日期和時間的預設 from-string 轉換行為，所以這些屬性在 XAML 中通常完全無法設定。 若要初始化任何日期和時間屬性的值，您必須使用在頁面或元素載入時執行的程式碼後置。
+**請注意**  日期和時間（使用[**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime)或[**DateTimeOffset**](https://docs.microsoft.com/dotnet/api/system.datetimeoffset)、 [**timespan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)或 system.string 的[**屬性）無法**](https://docs.microsoft.com/dotnet/api/system.timespan)使用 XAML 基本類型來設定。 因為在 Windows 執行階段 XAML 剖析器中沒有適用於日期和時間的預設 from-string 轉換行為，所以這些屬性在 XAML 中通常完全無法設定。 若要初始化任何日期和時間屬性的值，您必須使用在頁面或元素載入時執行的程式碼後置。
 
 ## <a name="related-topics"></a>相關主題
 

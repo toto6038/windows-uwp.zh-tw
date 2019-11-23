@@ -28,7 +28,7 @@ ms.locfileid: "72282287"
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 > * [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)
-> * [版面配置](/uwp/api/microsoft.ui.xaml.controls.layout)
+> * [配置](/uwp/api/microsoft.ui.xaml.controls.layout)
 >     * [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 >     * [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
 > * [LayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)
@@ -81,7 +81,7 @@ XAML 的版面配置系統（回答這些問題）會在[自訂面板](/windows/
 
 #### <a name="per-container-state"></a>每個容器狀態
 
-使用附加的版面配置，版面設定物件的單一實例可能會與*許多*容器相關聯，如下列程式碼片段所示。因此，它不能相依于或直接參考主機容器。  例如:
+使用附加的版面配置，版面設定物件的單一實例可能會與*許多*容器相關聯，如下列程式碼片段所示。因此，它不能相依于或直接參考主機容器。  例如：
 
 ```xaml
 <!-- ... --->
@@ -121,7 +121,7 @@ UI 虛擬化表示在_需要時，會_延遲建立 UI 物件。  這是效能優
 > [!NOTE]
 > 雖然本檔未涵蓋，但可在非滾動案例中套用在滾動案例中啟用 UI 虛擬化的相同功能。  例如，資料驅動的工具列控制項，它會管理它所呈現之命令的存留期，並藉由在可見區域和溢位功能表之間回收/移動元素，來回應可用空間中的變更。
 
-## <a name="getting-started"></a>快速入門
+## <a name="getting-started"></a>開始使用
 
 首先，決定您需要建立的版面配置是否應支援 UI 虛擬化。
 
@@ -289,7 +289,7 @@ VirtualizingLayoutCoNtext 提供兩個額外的屬性，專為版面配置作者
 > [!TIP]
 > 如果您要建立控制項程式庫的自訂控制項，讓其他人在各種情況下使用，則資料配置可能不適合您的選擇。
 
-### <a name="example-xbox-activity-feed-layout"></a>範例：Xbox 活動摘要版面配置
+### <a name="example-xbox-activity-feed-layout"></a>範例： Xbox 活動摘要版面配置
 
 Xbox 活動摘要的 UI 會使用重複模式，其中每一行都有寬磚，後面接著兩個在後續行上反轉的窄磚。 在此配置中，每個專案的大小是資料集中專案位置的函式，以及磚的已知大小（寬和窄）。
 
@@ -586,7 +586,7 @@ internal class ActivityFeedLayoutState
 
 根據預設， [VirtualizingLayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)會維護已實現的專案與其所代表之資料來源中的索引之間的對應。  版面配置可以選擇透過[GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat)方法（可防止預設的自動回收行為），在抓取專案時，一律要求[SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions)選項來管理此對應。  版面配置可以選擇執行這項操作，例如，只有在將滾動限制為一個方向，而且它所考慮的專案一律是連續的（亦即，知道第一個和最後一個元素的索引足以知道所有應該反應的元素時，才會使用它）。lized).
 
-#### <a name="example-xbox-activity-feed-measure"></a>範例：Xbox 活動摘要量值
+#### <a name="example-xbox-activity-feed-measure"></a>範例： Xbox 活動摘要量值
 
 下列程式碼片段顯示可新增至先前範例中的 MeasureOverride 以管理對應的其他邏輯。
 
@@ -703,7 +703,7 @@ XAML 提供了一種機制，可讓您藉由執行[IScrollAnchorPovider](/uwp/ap
 當版面配置發現其猜測不正確，且/或看到未預期的區域移位時，它必須重新置放其開始位置。  隨附在 XAML 控制項中的虛擬化配置會作為內容相依的配置而開發，因為它們會對將要顯示的內容特性提供較少的限制。
 
 
-### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>範例：可變大小專案的簡單虛擬化堆疊配置
+### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>範例：適用于可變大小專案的簡單虛擬化堆疊版面配置
 
 下列範例示範簡單的堆疊配置，適用于變數大小的專案：
 
@@ -712,7 +712,7 @@ XAML 提供了一種機制，可讓您藉由執行[IScrollAnchorPovider](/uwp/ap
 * 瞭解潛在的非連續的視口移位，以及
 * 套用版面配置更正以考慮這些轉移。
 
-**Usage：標記 @ no__t-0
+**使用方式：標記**
 
 ```xaml
 <ScrollViewer>
@@ -741,7 +741,7 @@ XAML 提供了一種機制，可讓您藉由執行[IScrollAnchorPovider](/uwp/ap
 </ScrollViewer>
 ```
 
-**Codebehind：Main .cs @ no__t-0
+**後置： Main.cs**
 
 ```csharp
 string _lorem = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus.";
@@ -757,7 +757,7 @@ var data = new ObservableCollection<Recipe>(Enumerable.Range(0, 300).Select(k =>
 repeater.ItemsSource = data;
 ```
 
-**Code：VirtualizingStackLayout .cs @ no__t-0
+**程式碼： VirtualizingStackLayout.cs**
 
 ```csharp
 // This is a sample layout that stacks elements one after

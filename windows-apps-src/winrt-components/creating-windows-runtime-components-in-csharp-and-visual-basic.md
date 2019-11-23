@@ -20,7 +20,7 @@ ms.locfileid: "71340374"
 
 您可以使用 managed 程式碼來建立自己的 Windows 執行階段類型，並將它們封裝在 Windows 執行階段元件中。 您可以在以C++、JavaScript、Visual Basic 或C#撰寫的通用 Windows 平臺（UWP）應用程式中使用您的元件。 本主題將概述建立元件的規則，並就某些層面討論 .NET 對於 Windows 執行階段的支援。 一般而言，該支援依設計應可讓 .NET 程式設計人員清楚理解。 但是，當您建立要與 JavaScript 或 C++ 搭配使用的元件時，必須了解這些語言對於 Windows 執行階段的支援方式有何差異。
 
-如果您要建立僅用於以 Visual Basic 或C#所撰寫之 UWP 應用程式中的元件，而元件不包含 UWP 控制項，則 Onsider 使用**類別庫**範本，而不是**Windows 執行階段元件**專案Microsoft Visual Studio 中的範本。 簡單類別庫的限制比較少。
+如果您要建立僅用於以 Visual Basic 或C#所撰寫之 UWP 應用程式中的元件，而元件不包含 UWP 控制項，則 Onsider 使用**類別庫**範本，而不是 Microsoft Visual Studio 中的 [ **Windows 執行階段元件**] 專案範本。 簡單類別庫的限制比較少。
 
 ## <a name="declaring-types-in-windows-runtime-components"></a>在 Windows 執行階段元件中宣告類型
 
@@ -28,9 +28,9 @@ ms.locfileid: "71340374"
 
 就外部而言，您的型別成員只能公開其參數和傳回值的 Windows 執行階段類型。 下列清單說明從 Windows 執行階段元件公開之 .NET 類型的限制。
 
-- 在您的元件中，所有公用類型和成員的欄位、參數及傳回值都必須是 Windows 執行階段類型。 這項限制包括您所撰寫的 Windows 執行階段類型，以及 Windows 執行階段本身提供的類型。 它也包含許多 .NET 類型。 包含這些類型是 .NET 提供的支援的一部分，可讓您在 managed 程式碼中自然使用 Windows 執行階段 @ no__t-0your 程式碼會顯示使用熟悉的 .NET 類型，而不是基礎 Windows 執行階段類型。 例如，您可以使用 .NET 基本類型（例如**Int32**和**Double**）、某些基本類型（例如**DateTimeOffset**和**Uri**）和一些常用的泛型介面類別型（例如**IEnumerable @ no__t-5T @ no__t-6）** （Visual Basic 中的 IEnumerable （Of T）和**IDictionary @ No__t-8TKey，TValue @ no__t-9**。 請注意，這些泛型型別的類型引數必須是 Windows 執行階段類型。 這會在本主題稍後的將[Windows 執行階段類型傳遞至 managed 程式碼](#passing-windows-runtime-types-to-managed-code)和將[managed 類型傳遞至 Windows 執行階段](#passing-managed-types-to-the-windows-runtime)一節中討論。
+- 在您的元件中，所有公用類型和成員的欄位、參數及傳回值都必須是 Windows 執行階段類型。 這項限制包括您所撰寫的 Windows 執行階段類型，以及 Windows 執行階段本身提供的類型。 它也包含許多 .NET 類型。 包含這些類型屬於 .NET 提供的支援，可讓您在 managed 程式碼中自然使用 Windows 執行階段，&mdash;您的程式碼會顯示使用熟悉的 .NET 類型，而不是基礎 Windows 執行階段類型。 例如，您可以使用 .NET 基本類型（例如**Int32**和**Double**）、某些基本類型（例如**DateTimeOffset**和**Uri**）和一些常用的泛型介面類別型，例如**ienumerable&lt;T&gt;** （Visual Basic 中的 ienumerable （of t））和**IDictionary&lt;TKey，TValue&gt;** 。 請注意，這些泛型型別的類型引數必須是 Windows 執行階段類型。 這會在本主題稍後的將[Windows 執行階段類型傳遞至 managed 程式碼](#passing-windows-runtime-types-to-managed-code)和將[managed 類型傳遞至 Windows 執行階段](#passing-managed-types-to-the-windows-runtime)一節中討論。
 
-- 公用類別與介面可包含方法、屬性與事件。 您可以為您的事件宣告委派，或使用**EventHandler @ no__t-1T @ no__t-2**委派。 公用類別或介面無法：
+- 公用類別與介面可包含方法、屬性與事件。 您可以為您的事件宣告委派，或使用**EventHandler&lt;t&gt;** 委派。 公用類別或介面無法：
     - 屬於泛型。
     - 執行不是 Windows 執行階段介面的介面（不過，您可以建立自己的 Windows 執行階段介面並加以執行）。
     - 衍生自不在 Windows 執行階段中的類型 **，例如 system.string 和** **system.object**。
@@ -49,9 +49,9 @@ ms.locfileid: "71340374"
 當您使用C++在 UWP 應用程式中測試您的元件時，您可以同時對 managed 和機器碼進行程式碼的偵錯工具。 預設值為僅限機器碼。
 
 ## <a name="to-debug-both-native-c-code-and-managed-code"></a>同時對 C++ 機器碼與 Managed 程式碼進行偵錯
-1.  為您的 Visual C++ 專案開啟捷徑功能表，然後選擇 [屬性]。
+1.  為您的 Visual C++ 專案開啟捷徑功能表，然後選擇 **\[屬性\]** 。
 2.  在屬性頁中的 [組態屬性] 下方，選擇 [偵錯]。
-3.  選擇 [偵錯工具類型]，然後在下拉式清單方塊中，將 [僅限機器碼] 變更為 [混合 (Managed 和機器碼)]。 選擇 [確定]。
+3.  選擇 **\[偵錯工具類型\]** ，然後在下拉式清單方塊中，將 **\[僅限機器碼\]** 變更為 **\[混合 (Managed 和機器碼)\]** 。 選擇 **\[確定\]** 。
 4.  在機器碼與 Managed 程式碼中設定中斷點。
 
 當您使用 JavaScript 將元件測試為 UWP 應用程式的一部分時，解決方案預設會處於 JavaScript 的「偵測模式」。 在 Visual Studio 中，您無法同時偵錯 JavaScript 和 Managed 程式碼。
@@ -59,7 +59,7 @@ ms.locfileid: "71340374"
 ## <a name="to-debug-managed-code-instead-of-javascript"></a>偵錯 Managed 程式碼，而不偵錯 JavaScript
 1.  為您的 JavaScript 專案開啟捷徑功能表，然後選擇 [屬性]。
 2.  在屬性頁中的 [組態屬性] 下方，選擇 [偵錯]。
-3.  選擇 [偵錯工具類型]，然後在下拉式清單方塊中，將 [僅限指令碼] 變更為 [僅限 Managed]。 選擇 [確定]。
+3.  選擇 [偵錯工具類型]，然後在下拉式清單方塊中，將 [僅限指令碼] 變更為 [僅限 Managed]。 選擇 **\[確定\]** 。
 4.  在 Managed 程式碼中設定中斷點，然後如常進行偵錯。
 
 ## <a name="passing-windows-runtime-types-to-managed-code"></a>將 Windows 執行階段類型傳遞至 Managed 程式碼
@@ -67,7 +67,7 @@ ms.locfileid: "71340374"
 
 在 .NET 中，例如**Int32**結構的基本型別有許多有用的屬性和方法，例如**TryParse**方法。 相對地，Windows 執行階段中的基本類型和結構就只有欄位而已。 當您將這些型別傳遞至 managed 程式碼時，它們看起來就像是 .NET 型別，而您可以像平常一樣使用 .NET 型別的屬性和方法。 下列清單將摘要說明在 IDE 中自動執行的替代：
 
--   對於 Windows 執行階段的基本類型： **Int32**、 **Int64**、 **Single**、 **Double**、 **Boolean**、 **String** （Unicode 字元的不可變集合）、 **Enum**、 **UInt32**、 **UInt64**和**Guid**，請在系統命名空間中使用相同名稱的類型。
+-   針對 Windows 執行階段基本類型**Int32**、 **Int64**、 **Single**、 **Double**、 **Boolean**、 **String** （Unicode 字元的不可變集合）、 **Enum**、 **UInt32**、 **UInt64**和**Guid**，請在系統命名空間中使用相同名稱的型別。
 -   針對**UInt8**，請使用**system.object**。
 -   針對**Char16**，請使用**system.object**。
 -   針對**IInspectable**介面，請使用**system.object**。
@@ -82,30 +82,30 @@ ms.locfileid: "71340374"
 
 | Windows 執行階段                                  | .NET                                    |
 |-|-|
-| Iiterable<t> @ no__t-0T @ no__t-1                               | IEnumerable @ no__t-0T @ no__t-1                              |
-| IVector @ no__t-0T @ no__t-1                                 | IList @ no__t-0T @ no__t-1                                    |
-| IVectorView @ no__t-0T @ no__t-1                             | IReadOnlyList @ no__t-0T @ no__t-1                            |
-| IMap @ no__t-0K、V @ no__t-1                                 | IDictionary @ no__t-0TKey、TValue @ no__t-1                   |
-| IMapView @ no__t-0K，V @ no__t-1                             | ..Ireadonlydictionary<string @ no__t-0TKey，TValue @ no__t-1           |
-| Inputiterator<ikeyvaluepair<k @ no__t-0K，V @ no__t-1                        | KeyValuePair @ no__t-0TKey，TValue @ no__t-1                  |
+| Iiterable<t>&lt;T&gt;                               | IEnumerable&lt;T&gt;                              |
+| IVector&lt;T&gt;                                 | IList&lt;T&gt;                                    |
+| IVectorView&lt;T&gt;                             | IReadOnlyList&lt;T&gt;                            |
+| IMap&lt;K、V&gt;                                 | IDictionary&lt;TKey、TValue&gt;                   |
+| IMapView&lt;K，V&gt;                             | ..Ireadonlydictionary<string&lt;TKey、TValue&gt;           |
+| Inputiterator<ikeyvaluepair<k&lt;K，V&gt;                        | KeyValuePair&lt;TKey、TValue&gt;                  |
 | IBindableIterable                                | IEnumerable                                       |
 | IBindableVector                                  | IList                                             |
 | Windows.UI.Xaml.Data.INotifyPropertyChanged      | System.ComponentModel.INotifyPropertyChanged      |
 | Windows.UI.Xaml.Data.PropertyChangedEventHandler | System.ComponentModel.PropertyChangedEventHandler |
 | Windows.UI.Xaml.Data.PropertyChangedEventArgs    | System.ComponentModel.PropertyChangedEventArgs    |
 
-當某個類型實作多個介面時，您可以將它實作的任何介面當做成員的參數類型或傳回類型。 例如，您可以傳遞或傳回**字典 @ no__t-1int、string @ no__t-2** （Visual Basic 中**的字典（Of Integer，String）** 當做**IDictionary @ no__t-5int、string @ no__t-6**、 **..ireadonlydictionary<string @ no__t-8int、string @ no__t-9**或**IEnumerable @ No__t-11System。 KeyValuePair @ No__t-12TKey，TValue @ no__t-13 @ no__t-14**。
+當某個類型實作多個介面時，您可以將它實作的任何介面當做成員的參數類型或傳回類型。 例如，您可以傳遞或傳回**字典&lt;int、string&gt;** （Visual Basic 中**的字典（整數、字串）** 做為**IDictionary&lt;int、string&gt;** 、 **..Ireadonlydictionary<string&lt;Int、String&gt;** 或**IEnumerable&lt;KeyValuePair&lt;TKey，TValue&gt;&gt;** 。
 
 > [!IMPORTANT]
-> JavaScript 會使用 managed 類型所實介面清單中第一個出現的介面。 例如，如果您將**Dictionary @ no__t-1int、string @ no__t-2**傳回至 JavaScript 程式碼，就會顯示為**IDictionary @ no__t-4int，string @ no__t-5** ，無論您將哪個介面指定為傳回型別。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
+> JavaScript 會使用 managed 類型所實介面清單中第一個出現的介面。 例如，如果您將**字典&lt;int，字串&gt;** 至 JavaScript 程式碼，它就會顯示為**IDictionary&lt;int，string&gt;** 無論您指定哪個介面做為傳回型別。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
 
-在 Windows 執行階段中， **IMap @ no__t-1 千、v @ no__t-2**和**IMapView @ no__t-4k、V @ no__t-5**是使用 inputiterator<ikeyvaluepair<k 來反復進行。 當您將它們傳遞至 managed 程式碼時，它們會顯示為**IDictionary @ no__t-1TKey、TValue @ no__t-2**和 **..ireadonlydictionary<string @ no__t-4TKey、TValue @ no__t-5**，因此自然會使用 **@ KeyValuePair-no__t，TValue @ no__t-8**來列舉它們。
+在 Windows 執行階段中， **IMap&lt;K，v&gt;** 和**IMapView&lt;K，v&gt;** 會使用 inputiterator<ikeyvaluepair<k 進行反復進行。 當您將它們傳遞至 managed 程式碼時，它們會顯示為**IDictionary&lt;TKey、TValue&gt;** 和 **..ireadonlydictionary<string&lt;TKey、TValue&gt;** ，因此您自然會使用**system.object&lt;KeyValuePair，TKey&gt;** 來列舉它們。
 
-介面顯示於 Managed 程式碼中的方式會影響實作這些介面之類型的顯示方式。 例如， **PropertySet**類別會實作為 IDictionary @ **no__t-2k，V @ no__t-3**，這會顯示在 managed 程式碼中，作為**IDictionary @ no__t-5TKey，TValue @ no__t-6**。 **PropertySet**看起來就像它實作為**IDictionary @ no__t-2TKey，TValue @ no__t-3** ，而不是**IMap @ no__t-，V @ no__t-6**，因此在 managed 程式碼中，它似乎具有**add**方法，其行為就像是上的**add**方法。NET 字典。 它似乎沒有**Insert**方法。 您可以在[建立C#或 Visual Basic Windows 執行階段元件的逐步解說主題中看到此範例，並從 JavaScript 呼叫它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
+介面顯示於 Managed 程式碼中的方式會影響實作這些介面之類型的顯示方式。 例如， **PropertySet**類別會執行**IMap&lt;K，V&gt;** ，這會顯示在 managed 程式碼中作為**IDictionary&lt;TKey，TValue&gt;** 。 **PropertySet**看起來就像它實作為**IDictionary&lt;TKey，TValue&gt;，** 而不是**IMap&lt;K，V&gt;** ，因此在 managed 程式碼中，它似乎具有**add**方法，其行為類似于 .net 字典上的**add**方法。 它似乎沒有**Insert**方法。 您可以在[建立C#或 Visual Basic Windows 執行階段元件的逐步解說主題中看到此範例，並從 JavaScript 呼叫它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
 ## <a name="passing-managed-types-to-the-windows-runtime"></a>將 Managed 類型傳遞至 Windows 執行階段
 
-如上一節所討論，有些 Windows 執行階段型別在您的元件成員的簽章中可能會顯示為 .NET 型別，或是當您在 IDE 中使用這些型別時，在 Windows 執行階段成員的簽章中出現。 當您將 .NET 型別傳遞給這些成員，或使用它們做為元件成員的傳回值時，它們就會顯示在另一端的程式碼，做為對應的 Windows 執行階段型別。 如需從 JavaScript 呼叫您的元件時，這可能會有的效果範例，請參閱[建立C#或 Visual Basic Windows 執行階段元件的逐步解說中的「從您的元件傳回 managed 類型」一節，並從JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
+如上一節所討論，有些 Windows 執行階段型別在您的元件成員的簽章中可能會顯示為 .NET 型別，或是當您在 IDE 中使用這些型別時，在 Windows 執行階段成員的簽章中出現。 當您將 .NET 型別傳遞給這些成員，或使用它們做為元件成員的傳回值時，它們就會顯示在另一端的程式碼，做為對應的 Windows 執行階段型別。 如需從 JavaScript 呼叫您的元件時，這可能會有的效果範例，請參閱[建立C#或 Visual Basic Windows 執行階段元件的逐步](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)解說中的「從您的元件傳回 managed 類型」一節，然後從 javascript 呼叫它。
 
 ## <a name="overloaded-methods"></a>多載方法
 
@@ -177,13 +177,13 @@ End Function
 
 ## <a name="asynchronous-operations"></a>非同步作業
 
-若要在您的元件中執行非同步方法，請將 "Async" 加入至方法名稱的結尾，並傳回代表非同步動作或作業的其中一個 Windows 執行階段介面：**IAsyncAction**、 **iasyncactionwithprogress<tprogress> @ no__t-2TProgress @ no__t-3**、 **iasyncoperation<tresult> @ no__t-5TResult @ No__t-6**，或**IAsyncOperationWithProgress @ no__t-8TResult、TProgress @ no__t-9**。
+若要在您的元件中執行非同步方法，請將 "Async" 加入至方法名稱的結尾，並傳回代表非同步動作或作業的其中一個 Windows 執行階段介面： **IAsyncAction**、 **iasyncactionwithprogress<tprogress>&lt;TProgress&gt;** 、 **Iasyncoperation<tresult>&lt;TResult&gt;** 或**IAsyncOperationWithProgress&lt;TResult，TProgress&gt;** 。
 
-您可以使用 .NET 工作（ [**Task**](/dotnet/api/system.threading.tasks.task)類別和泛型[**Task @ no__t-4TResult @ no__t-5**](/dotnet/api/system.threading.tasks.task-1)類別）來執行非同步方法。 您必須傳回代表進行中作業的工作，例如從以C#或 Visual Basic 撰寫的非同步方法傳回的工作，或是從工作[執行](/dotnet/api/system.threading.tasks.task.run)的工作。 如果您使用建構函式來建立此工作，就必須先呼叫其 [Task.Start](/dotnet/api/system.threading.tasks.task.start) 方法，再加以傳回。
+您可以使用[ **.net 工作（工作類別**](/dotnet/api/system.threading.tasks.task)和一般工作[ **&lt;TResult&gt;** ](/dotnet/api/system.threading.tasks.task-1)類別）來執行您的非同步方法。 您必須傳回代表進行中作業的工作，例如從以C#或 Visual Basic 撰寫的非同步方法傳回的工作，或是從工作[**執行**](/dotnet/api/system.threading.tasks.task.run)的工作。 如果您使用建構函式來建立此工作，就必須先呼叫其 [Task.Start](/dotnet/api/system.threading.tasks.task.start) 方法，再加以傳回。
 
-在 Visual Basic 中使用 `await` （`Await`）的方法需要 `async` 關鍵字（在 @no__t 中為 Visual Basic-3）。 如果您從 Windows 執行階段元件公開這類方法，請將 `async` 關鍵字套用至您傳遞給**Run**方法的委派。
+使用 `await` （在 Visual Basic 中`Await`）的方法需要 `async` 關鍵字（在`Async` 中為 Visual Basic）。 如果您從 Windows 執行階段元件公開這類方法，請將 `async` 關鍵字套用至您傳遞給**Run**方法的委派。
 
-對於不支援取消或進度報告的非同步動作與作業，您可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://docs.microsoft.com/dotnet/api/system) 或 [AsAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system) 擴充方法，將工作包覆在適當的介面中。 例如，下列程式碼會使用工作來實行非同步方法 **。請執行 @ no__t-1TResult @ no__t-2**方法來啟動工作。 **AsAsyncOperation @ no__t-1TResult @ no__t-2**擴充方法會以 Windows 執行階段非同步作業的形式傳回工作。
+對於不支援取消或進度報告的非同步動作與作業，您可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://docs.microsoft.com/dotnet/api/system) 或 [AsAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system) 擴充方法，將工作包覆在適當的介面中。 例如，下列程式碼會使用工作來實行非同步方法 **。請執行&lt;TResult&gt;** 方法來啟動工作。 **AsAsyncOperation&lt;TResult&gt;** 擴充方法會以 Windows 執行階段非同步作業的形式傳回工作。
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -220,9 +220,9 @@ function asyncExample(id) {
 }
 ```
 
-對於支援取消或進度報告的非同步動作和作業，請使用[**system.runtime.interopservices.windowsruntime.asyncinfo**](/dotnet/api/system.runtime.interopservices.windowsruntime)類別來產生已啟動的工作，並將工作的取消和進度報告功能與取消和進度連結在一起報告適當 Windows 執行階段介面的功能。 如需同時支援取消和進度報告的範例，請參閱[建立C#或 Visual Basic Windows 執行階段元件，並從 JavaScript 呼叫它的逐步](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)解說。
+對於支援取消或進度報告的非同步動作和作業，請使用[**system.runtime.interopservices.windowsruntime.asyncinfo**](/dotnet/api/system.runtime.interopservices.windowsruntime)類別來產生已啟動的工作，並將工作的取消和進度報告功能與適當 Windows 執行階段介面的取消和進度報告功能連結在一起。 如需同時支援取消和進度報告的範例，請參閱[建立C#或 Visual Basic Windows 執行階段元件，並從 JavaScript 呼叫它的逐步](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)解說。
 
-請注意，即使您的非同步方法不支援取消或進度報告，您仍然可以使用**system.runtime.interopservices.windowsruntime.asyncinfo**類別的方法。 如果您使用 Visual Basic lambda 函數或C#匿名方法，請不要提供 token 的參數和[iprogress<t> @ no__t-3T @ no__t-4](https://docs.microsoft.com/dotnet/api/system.iprogress-1)介面。 如果您使用 C# Lambda 函式，請提供語彙基元參數，但加以忽略。 先前的範例（使用 AsAsyncOperation @ no__t-0TResult @ no__t-1 方法）在您使用 System.runtime.interopservices.windowsruntime.asyncinfo 時看起來像這樣[ **。 Run @ no__t-4TResult @ no__t-5 （Func @ no__t-6CancellationToken，Task @ no__t-7TResult @ no__t-8 @ no__t-9**](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime)）方法改為多載。
+請注意，即使您的非同步方法不支援取消或進度報告，您仍然可以使用**system.runtime.interopservices.windowsruntime.asyncinfo**類別的方法。 如果您使用 Visual Basic lambda 函數或C#匿名方法，請不要提供 token 的參數和[**iprogress<t>&lt;t&gt;** ](https://docs.microsoft.com/dotnet/api/system.iprogress-1)介面。 如果您使用 C# Lambda 函式，請提供語彙基元參數，但加以忽略。 先前的範例（使用 AsAsyncOperation&lt;TResult&gt; 方法）在您使用 System.runtime.interopservices.windowsruntime.asyncinfo 時看起來像這樣。請改為[**執行&lt;TResult&gt;（Func&lt;CancellationToken，Task&lt;TResult&gt;&gt;** ](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime)）方法多載。
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -247,7 +247,7 @@ Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 End Function
 ```
 
-如果您建立選擇性支援取消或進度報告的非同步方法，請考慮新增沒有解除標記或**iprogress<t> @ no__t-1T @ no__t**介面之參數的多載。
+如果您建立選擇性支援取消或進度報告的非同步方法，請考慮新增沒有解除標記或**iprogress<t>&lt;t&gt;** 介面參數的多載。
 
 ## <a name="throwing-exceptions"></a>擲回例外狀況
 
@@ -262,14 +262,14 @@ End Function
 -   在 C++ 中，例外狀況會顯示為平台例外狀況。 如果 managed 例外狀況的 HResult 屬性可以對應至特定平臺例外狀況的 HRESULT，則會使用特定的例外狀況。否則，會擲回[**Platform：： COMException**](https://docs.microsoft.com/cpp/cppcx/platform-comexception-class)例外狀況。 C++ 程式碼無法使用 Managed 例外狀況的訊息文字。 如果是擲回特定平台例外狀況，則會顯示該例外狀況類型的預設訊息文字，否則不會顯示任何訊息文字。 請參閱[例外狀況 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/exceptions-c-cx)。
 -   在 C# 或 Visual Basic 中，例外狀況就是一般的 Managed 例外狀況。
 
-當您從自己的元件擲回例外狀況時，為了讓 JavaScript 或 C++ 呼叫端更容易處理此例外狀況，可以擲回非公開的例外狀況類型，並將其 HResult 屬性值設定為該元件專屬的值。 您可以透過例外狀況物件的 number 屬性，將 HRESULT 提供給 JavaScript 呼叫者，並C++透過[COMException：： HRESULT](https://docs.microsoft.com/cpp/cppcx/platform-comexception-class#hresult)屬性來存取呼叫端。
+當您從自己的元件擲回例外狀況時，為了讓 JavaScript 或 C++ 呼叫端更容易處理此例外狀況，可以擲回非公開的例外狀況類型，並將其 HResult 屬性值設定為該元件專屬的值。 您可以透過例外狀況物件的 number 屬性，將 HRESULT 提供給 JavaScript 呼叫者，並C++透過[**COMException：： HRESULT**](https://docs.microsoft.com/cpp/cppcx/platform-comexception-class#hresult)屬性來存取呼叫端。
 
 > [!NOTE]
 > 針對您的 HRESULT 使用負值值。 正值會被解譯為成功，如此在 JavaScript 或 C++ 呼叫端中，就不會擲回任何例外狀況。
 
 ## <a name="declaring-and-raising-events"></a>宣告和引發事件
 
-當您宣告某個類型包含事件的資料時，請從 Object 衍生，而不要從 EventArgs 衍生，因為 EventArgs 不是 Windows 執行階段類型。 使用[**EventHandler @ no__t-2TEventArgs @ no__t-3**](https://docs.microsoft.com/dotnet/api/system.eventhandler-1)作為事件的類型，並使用您的事件引數類型做為泛型型別引數。 引發事件，就像在 .NET 應用程式中一樣。
+當您宣告某個類型包含事件的資料時，請從 Object 衍生，而不要從 EventArgs 衍生，因為 EventArgs 不是 Windows 執行階段類型。 使用[**EventHandler&lt;TEventArgs&gt;** ](https://docs.microsoft.com/dotnet/api/system.eventhandler-1)作為事件的類型，並使用您的事件引數類型做為泛型型別引數。 引發事件，就像在 .NET 應用程式中一樣。
 
 從 JavaScript 或 C++ 使用您的 Windows 執行階段元件時，事件會依循這些語言所預期的 Windows 執行階段事件模式。 當您使用C#或 Visual Basic 的元件時，事件會顯示為一般的 .net 事件。 [建立C#或 Visual Basic Windows 執行階段元件，並從 JavaScript 呼叫它的逐步](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript)解說中提供了一個範例。
 

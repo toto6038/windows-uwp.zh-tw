@@ -67,7 +67,7 @@ ms.locfileid: "72517844"
 WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl2-about)，可變更 Linux 散發版本與 Windows 互動的方式、提升效能，以及增加系統呼叫的完整相容性。
 
 1. 在 PowerShell 中，輸入命令： `wsl -l`，以查看您已在電腦上安裝的 WSL 散發套件清單。 您現在應該會在這份清單中看到 Ubuntu-18.04。
-2. 現在，輸入命令： `wsl --set-version Ubuntu-18.04 2`，將您的 Ubuntu 安裝設定為使用 WSL 2。
+2. 現在，輸入命令： `wsl --set-version Ubuntu-18.04 2` 將 Ubuntu 安裝設定為使用 WSL 2。
 3. 確認每個已安裝的發行版本使用的 WSL 版本為： `wsl --list --verbose` （或 `wsl -l -v`）。
 
     ![適用于 Linux 的 Windows 子系統設定版本](../images/wsl-versions.png)
@@ -83,7 +83,7 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 > 在安裝版本管理員之前，一律建議您從作業系統中移除任何現有的 node.js 或 npm 安裝，因為不同類型的安裝可能會導致奇怪且困惑的衝突。 例如，可以使用 Ubuntu 的 `apt-get` 命令安裝的節點版本目前已過時。 如需移除先前安裝的說明，請參閱[如何從 ubuntu 移除 nodejs](https://askubuntu.com/questions/786015/how-to-remove-nodejs-from-ubuntu-16-04)。）
 
 1. 開啟您的 Ubuntu 18.04 命令列。
-2. 安裝捲曲（命令列中用來從網際網路下載內容的工具）與： `sudo apt-get install curl`
+2. 安裝捲曲（用來在命令列中從網際網路下載內容的工具）與： `sudo apt-get install curl`
 3. 安裝 nvm，包含： `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
 4. 若要確認安裝，請輸入： `command -v nvm` .。。這應該會傳回 ' nvm '，如果您收到「找不到命令」或完全沒有回應，請關閉目前的終端機並重新開啟，然後再試一次。 若要[深入瞭解，請 nvm github](https://github.com/nvm-sh/nvm)存放庫。
 5. 列出目前已安裝的節點版本（此時應該為 [無]）： `nvm ls`
@@ -96,8 +96,8 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
     ![顯示 LTS 和目前節點版本的 NVM 清單](../images/nvm-node-installed.png)
 
-9. 確認已安裝 node.js，且目前的預設版本為： `node --version`。 然後，使用： `npm --version` 來驗證您是否有 npm （您也可以使用 `which node` 或 `which npm` 查看預設版本所使用的路徑）。
-10. 若要變更專案要使用的 node.js 版本，請建立新的專案目錄 `mkdir NodeTest`，並輸入目錄 `cd NodeTest`，然後輸入 `nvm use node` 來切換至目前的版本，或 `nvm use --lts` 切換至 LTS 版本。 您也可以針對您已安裝的任何其他版本使用特定的數目，例如 `nvm use v8.2.1`。 （若要列出所有可用的 node.js 版本，請使用命令： `nvm ls-remote`）。
+9. 確認已安裝 node.js，且目前的預設版本為： `node --version`。 然後，使用： `npm --version` 來驗證您是否已 npm （您也可以使用 `which node` 或 `which npm` 查看預設版本所使用的路徑）。
+10. 若要變更您想要用於專案的 node.js 版本，請 `mkdir NodeTest`建立新的專案目錄，並輸入目錄 `cd NodeTest`，然後輸入 `nvm use node` 切換至目前的版本，或 `nvm use --lts` 以切換到 LTS 版本。 您也可以針對您已安裝的任何其他版本使用特定的數目，例如 `nvm use v8.2.1`。 （若要列出所有可用的 node.js 版本，請使用命令： `nvm ls-remote`）。
 
 > [!TIP]
 > 如果您使用 NVM 來安裝 node.js 和 NPM，您應該不需要使用 SUDO 命令來安裝新的套件。
@@ -110,11 +110,11 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
 雖然 nvm 目前是最受歡迎的節點版本管理員，但有幾個替代方法可以考慮：
 
-- [n](https://www.npmjs.com/package/n#installation)是長期的 `nvm` 種替代方案，會以稍微不同的命令來完成相同的工作，並透過 `npm` 而不是 bash 腳本來安裝。
-- [fnm](https://github.com/Schniz/fnm#using-a-script)是較新的版本管理員，其宣告速度會比 `nvm` 更快。 （它也會使用[Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops)）。
+- [n](https://www.npmjs.com/package/n#installation)是一個長期 `nvm` 的替代方法，其使用稍微不同的命令來完成相同的工作，並透過 `npm` 而不是 bash 腳本來安裝。
+- [fnm](https://github.com/Schniz/fnm#using-a-script)是較新的版本管理員，其宣告速度會比 `nvm`快得多。 （它也會使用[Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops)）。
 - [Volta](https://github.com/volta-cli/volta#installing-volta)是 LinkedIn 團隊提供的新版本管理員，宣告改良的速度和跨平臺支援。
 - [asdf-vm](https://asdf-vm.com/#/core-manage-asdf-vm)是一種適用于多種語言的單一 CLI，例如 ike gvm、nvm、rbenv ruby-build & pyenv （等等）。
-- [nvs](https://github.com/jasongin/nvs) （節點版本切換器）是可與[VS Code 整合](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md)的跨平臺 @no__t 1 替代方案。
+- [nvs](https://github.com/jasongin/nvs) （節點版本切換器）是可以與[VS Code 整合](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md)的跨平臺 `nvm` 替代方案。
 
 ## <a name="install-your-favorite-code-editor"></a>安裝您慣用的程式碼編輯器
 
@@ -127,7 +127,7 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 以終端機為基礎的文字編輯器（vim、emacs、nano）也有助於直接在主控台內進行快速變更。 （[本文](https://medium.com/linode-cube/emacs-nano-or-vim-choose-your-terminal-based-text-editor-wisely-8f3826c92a68)會提供一項不錯的工作來說明兩者之間的差異，以及如何使用每個專案）。
 
 > [!NOTE]
-> 某些 GUI 編輯器（Atom、Sublime Text、Eclipse）可能會在存取 WSL 共用網路位置時發生問題（\\wsl $ \Ubuntu\home @ no__t-1，並會嘗試使用 Windows 工具來建立您的 Linux 檔案，這可能不是您想要的。 VS Code 中的遠端 WSL 擴充功能將會為您處理這項相容性。
+> 某些 GUI 編輯器（Atom、Sublime Text、Eclipse）可能會在存取 WSL 共用網路位置（\\WSL $ \Ubuntu\home\) 時遇到問題，並會嘗試使用 Windows 工具來建立您的 Linux 檔案，這可能不是您想要的。 VS Code 中的遠端 WSL 擴充功能將會為您處理這項相容性。
 
 若要安裝 VS Code 和遠端 WSL 擴充功能：
 
@@ -165,11 +165,11 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
 ## <a name="install-windows-terminal-optional"></a>安裝 Windows 終端機（選擇性）
 
-新的 Windows 終端機可啟用多個索引標籤（在命令提示字元、PowerShell 或多個 Linux 發行版本之間快速切換）、自訂按鍵系結（建立您自己的快速鍵以開啟或關閉索引標籤、複製 + 貼上等等）、emoji ☺和自訂主題（色彩配置、字型樣式和大小、背景影像/模糊/透明度）。 [進一步瞭解](https://devblogs.microsoft.com/commandline/)。
+新的 Windows 終端機可啟用多個索引標籤（在命令提示字元、PowerShell 或多個 Linux 發行版本之間快速切換）、自訂按鍵系結（建立您自己的快速鍵以開啟或關閉索引標籤、複製 + 貼上等）、emoji ☺和自訂主題（色彩配置、字型樣式和大小、背景影像/模糊/透明度）。 [進一步瞭解](https://devblogs.microsoft.com/commandline/)。
 
 1. 取得[Microsoft Store 中的 Windows 終端機（預覽）](https://www.microsoft.com/store/apps/9n0dx20hk701)：透過存放區安裝，更新會自動處理。
 
-2. 安裝之後，請開啟 Windows 終端機並選取 [**設定**]，以使用 `profile.json` 檔案來自訂您的終端機。 [深入瞭解編輯 Windows 終端機設定](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md)。
+2. 安裝之後，請開啟 [Windows 終端機] 並選取 [**設定**]，以使用 `profile.json` 檔案來自訂您的終端機。 [深入瞭解編輯 Windows 終端機設定](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md)。
 
     ![Windows 終端機設定](../images/windows-terminal-settings.png)
 
@@ -177,7 +177,7 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
 如果您打算與其他人共同作業，或在開放原始碼網站（如 GitHub）上裝載您的專案，VS Code 支援[使用 Git 進行版本控制](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)。 VS Code 中的 [原始檔控制] 索引標籤會追蹤您所有的變更，並在 UI 中建立常用的 Git 命令（add、commit、push、pull）。
 
-1. Git 隨附于適用于 Linux 的 Windows 子系統散發版本，不過，您必須設定您的 git 設定檔。 若要這樣做，請在終端機中輸入： `git config --global user.name "Your Name"`，然後 `git config --global user.email "youremail@domain.com"`。 如果您還沒有 Git 帳戶，您可以[在 GitHub 上註冊一個](https://github.com/join)。 如果您從未使用過 Git， [GitHub 指南](https://guides.github.com/)可協助您開始著手。 如果您需要編輯您的 git 設定，可以使用內建的文字編輯器（例如 nano： `nano ~/.gitconfig`）來執行此動作。
+1. Git 隨附于適用于 Linux 的 Windows 子系統散發版本，不過，您必須設定您的 git 設定檔。 若要這樣做，請在終端機中輸入： `git config --global user.name "Your Name"`，然後 `git config --global user.email "youremail@domain.com"`。 如果您還沒有 Git 帳戶，您可以[在 GitHub 上註冊一個](https://github.com/join)。 如果您從未使用過 Git， [GitHub 指南](https://guides.github.com/)可協助您開始著手。 如果您需要編輯您的 git 設定，可以使用內建的文字編輯器，例如 nano： `nano ~/.gitconfig`。
 
 2. 我們建議您將[.gitignore](https://help.github.com/en/articles/ignoring-files)檔案新增至您的節點專案。 以下是[適用于 node.js 的 GitHub 預設 .gitignore 範本](https://github.com/github/gitignore/blob/master/Node.gitignore)。 如果您選擇[使用 GitHub 網站建立新的](https://help.github.com/articles/create-a-repo)存放庫，有一些核取方塊可用來初始化具有讀我檔案的存放庫，也就是針對 node.js 專案設定的 .gitignore 檔案，以及在需要時新增授權的選項。
 

@@ -1,10 +1,10 @@
 ---
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: This topic presents a case study of porting a very simple Windows Phone Silverlight app to a Windows 10 Universal Windows Platform (UWP) app.
-title: Windows Phone Silverlight to UWP case study, Bookstore1
+description: 本主題提供將非常簡單的 Windows Phone Silverlight 應用程式移植到 Windows 10 通用 Windows 平臺（UWP）應用程式的個案研究。
+title: Windows Phone Silverlight 至 UWP 案例研究，Bookstore1
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1079d51aa0b013cd40ff585e5baabb61f940a745
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -13,46 +13,46 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260100"
 ---
-# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight to UWP case study: Bookstore1
+# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight 至 UWP 案例研究： Bookstore1
 
 
-This topic presents a case study of porting a very simple Windows Phone Silverlight app to a Windows 10 Universal Windows Platform (UWP) app. With Windows 10, you can create a single app package that your customers can install onto a wide range of devices, and that's what we'll do in this case study. 請參閱 [UWP app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
+本主題提供將非常簡單的 Windows Phone Silverlight 應用程式移植到 Windows 10 通用 Windows 平臺（UWP）應用程式的個案研究。 使用 Windows 10 時，您可以建立單一應用程式套件，讓您的客戶可以將其安裝到各種不同的裝置上，這就是我們在此案例研究中會執行的動作。 請參閱 [UWP app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
 
 我們將移植的 app 包含繫結到檢視模型的 **ListBox**。 此檢視模型有一個顯示書名、作者及封面的書籍清單。 書籍封面影像的 **\[建置動作\]** 是設定為 **\[內容\]** ，而 **\[複製到輸出目錄\]** 是設定為 **\[不要複製\]** 。
 
 本節之前的主題說明平台之間的差異，並針對 app 各個方面 (從 XAML 標記、經過繫結到檢視模型，再到存取資料) 的移植程序，提供深入的詳細資料和指導方針。 案例研究旨在藉由真實範例中的運作示範，來為該指導方針提供補充。 這些案例研究是假設您已看過指導方針，因此不會重複其內容。
 
-**Note**   When opening Bookstore1Universal\_10 in Visual Studio, if you see the message "Visual Studio update required", then follow the steps for selecting a Target Platform Versioning in [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md).
+**注意**   在 Visual Studio 中開啟 Bookstore1Universal\_10 時，如果您看到「需要更新 Visual Studio」訊息，請遵循在[TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md)中選取目標平臺版本的步驟。
 
 ## <a name="downloads"></a>下載
 
-[Download the Bookstore1WPSL8 Windows Phone Silverlight app](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1WPSL8).
+[下載 Bookstore1WPSL8 Windows Phone Silverlight 應用程式](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1WPSL8)。
 
-[Download the Bookstore1Universal\_10 Windows 10 app](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10).
+[下載 Bookstore1Universal\_10 Windows 10 應用程式](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10)。
 
-## <a name="the-windowsphone-silverlight-app"></a>The Windows Phone Silverlight app
+## <a name="the-windowsphone-silverlight-app"></a>Windows Phone Silverlight 應用程式
 
 以下是我們即將移植的 Bookstore1WPSL8 app 的外觀。 它是一個垂直捲動的書籍清單方塊，位於 app 名稱的標題和網頁標題下方：
 
 ![bookstore1wpsl8 的外觀](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
 
-## <a name="porting-to-a-windows10-project"></a>Porting to a Windows 10 project
+## <a name="porting-to-a-windows10-project"></a>移植到 Windows 10 專案
 
-這是一項非常快速的工作，可在 Visual Studio 中建立新專案、從 Bookstore1WPSL8 將檔案複製到其中，以及在新專案中包含複製的檔案。 一開始先建立新的空白應用程式 (Windows 通用) 專案。 Name it Bookstore1Universal\_10. These are the files to copy over from Bookstore1WPSL8 to Bookstore1Universal\_10.
+這是一項非常快速的工作，可在 Visual Studio 中建立新專案、從 Bookstore1WPSL8 將檔案複製到其中，以及在新專案中包含複製的檔案。 一開始先建立新的空白應用程式 (Windows 通用) 專案。 將它命名為 Bookstore1Universal\_10。 這些是要從 Bookstore1WPSL8 複製到 Bookstore1Universal\_10 的檔案。
 
--   Copy the folder containing the book cover image PNG files (the folder is \\Assets\\CoverImages). 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 **\[加入至專案\]** 。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 **\[方案總管\]** 中的 **\[重新整理\]** ，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
--   Copy the folder containing the view model source file (the folder is \\ViewModel).
+-   複製包含書籍封面影像 PNG 檔案的資料夾（此資料夾是 \\資產\\CoverImages）。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 **\[加入至專案\]** 。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 **\[方案總管\]** 中的 **\[重新整理\]** ，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含視圖模型來源檔案的資料夾（資料夾是 \\ViewModel）。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
-We can keep the App.xaml, and App.xaml.cs that Visual Studio generated for us in the Windows 10 project.
+我們可以保留 Visual Studio 為我們在 Windows 10 專案中產生的 app.xaml 和 App.xaml.cs。
 
-Edit the source code and markup files that you just copied and change any references to the Bookstore1WPSL8 namespace to Bookstore1Universal\_10. 執行此作業的快速方法是使用 **\[檔案中取代\]** 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更：
+編輯您剛複製的原始程式碼和標記檔案，並將 Bookstore1WPSL8 命名空間的任何參考變更為 Bookstore1Universal\_10。 執行此作業的快速方法是使用 [**檔案中取代**] 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更：
 
 -   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 **\[解析\]** 命令。 刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
--   對 `ImageSource` 使用 **\[解析\]** 命令。
--   對 `BitmapImage` 使用 **\[解析\]** 命令。
+-   對 **使用**\[解析\]`ImageSource` 命令。
+-   對 **使用**\[解析\]`BitmapImage` 命令。
 -   刪除 using `System.Windows.Media;` 和 `using System.Windows.Media.Imaging;`。
--   Change the value returned by the **Bookstore1Universal\_10.BookstoreViewModel.AppName** property from "BOOKSTORE1WPSL8" to "BOOKSTORE1UNIVERSAL".
+-   將**Bookstore1Universal\_BookstoreViewModel**所傳回的值從 "BOOKSTORE1WPSL8" 變更為 "Bookstore1Universal"。
 
 在 MainPage.xaml 中，需要進行下列移植變更：
 
@@ -76,9 +76,9 @@ Edit the source code and markup files that you just copied and change any refere
 
 ## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>清償負債項目，以及一些初始樣式
 
-預設支援所有方向。 The Windows Phone Silverlight app explicitly constrains itself to portrait-only, though, so debt items \#1 and \#2 are paid off by going into the app package manifest in the new project and checking **Portrait** under **Supported orientations**.
+預設支援所有方向。 Windows Phone Silverlight 應用程式會明確地將自己限制為僅限直向，不過，\#1 和 \#2 的債務專案會前往新專案中的應用程式套件資訊清單，並在 [**支援的方向**] 下方進行檢查，以支付費用。
 
-For this app, item \#3 is not a debt since the status bar (formerly called the system tray) is shown by default. For items \#4 and \#5, we need to find four Universal Windows Platform (UWP) **TextBlock** styles that correspond to the Windows Phone Silverlight styles that we were using. You can run the Windows Phone Silverlight app in the emulator and compare it side-by-side with the illustration in the [Text](wpsl-to-uwp-porting-xaml-and-ui.md) section. From doing that, and from looking at the properties of the Windows Phone Silverlight system styles, we can make this table.
+針對此應用程式，專案 \#3 不是債務，因為預設會顯示狀態列（先前稱為系統匣）。 對於 \#4 和 \#5 的專案，我們需要尋找四個對應至我們所使用之 Windows Phone Silverlight 樣式的通用 Windows 平臺（UWP） **TextBlock**樣式。 您可以在模擬器中執行 Windows Phone Silverlight 應用程式，並與[文字](wpsl-to-uwp-porting-xaml-and-ui.md)區段中的圖例並排比較。 如此一來，在查看 Windows Phone Silverlight 系統樣式的屬性之後，就可以建立這個資料表。
 
 | Windows Phone Silverlight 樣式索引鍵 | UWP 樣式索引鍵          |
 |-------------------------------------|------------------------|
@@ -87,9 +87,9 @@ For this app, item \#3 is not a debt since the status bar (formerly called the s
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-若要設定這些樣式，您可以直接在標記編輯器中輸入它們，或是使用 Visual Studio XAML 工具並設定它們，而不需要輸入任何內容。 To do that, you right-click a **TextBlock** and click **Edit Style** &gt; **Apply Resource**. To do that with the **TextBlock**s in the item template, right click the **ListBox** and click **Edit Additional Templates** &gt; **Edit Generated Items (ItemTemplate)** .
+若要設定這些樣式，您可以直接在標記編輯器中輸入它們，或是使用 Visual Studio XAML 工具並設定它們，而不需要輸入任何內容。 若要這麼做，請以滑鼠右鍵按一下**TextBlock** ，然後按一下 **編輯樣式** &gt; 套用**資源**。 若要使用專案範本中的**TextBlock**來執行這項操作，請以滑鼠右鍵按一下**清單方塊**，然後按一下 [**編輯其他範本**] &gt; [**編輯產生的專案（ItemTemplate）** ]。
 
-項目後方有 80% 不透明的白色背景，因為 **ListBox** 控制項的預設樣式將其背景設定為 `ListBoxBackgroundThemeBrush` 系統資源。 在 **ListBox** 上設定 `Background="Transparent"` 以清除該背景。 若要將項目範本中的 **TextBlock** 靠左對齊，請以上述方式再次編輯它，然後將兩個 **TextBlock** 上的 **Margin** 都設定為 `"9.6,0"`。
+項目後方有 80% 不透明的白色背景，因為 **ListBox** 控制項的預設樣式將其背景設定為 `ListBoxBackgroundThemeBrush` 系統資源。 在 `Background="Transparent"`ListBox**上設定** 以清除該背景。 若要將項目範本中的 **TextBlock** 靠左對齊，請以上述方式再次編輯它，然後將兩個 **TextBlock** 上的 `"9.6,0"`Margin**都設定為**。
 
 完成後，因為[變更與檢視像素相關](wpsl-to-uwp-porting-xaml-and-ui.md)，所以我們需要將我們尚未變更的所有固定大小維度 (邊界、寬度、高度等等) 逐一乘以 0.8 。 例如，影像應該從 70x70px 變更為 56x56px。
 
@@ -116,7 +116,7 @@ For this app, item \#3 is not a debt since the status bar (formerly called the s
 現在我們只需要進行一些最終樣式調整，並確認應用程式的外觀在桌面 (和其他) 尺寸和行動裝置尺寸上一樣適當。 步驟如下。 而且您可以使用此主題頂端的連結來下載專案，並查看這裡和案例研究結束時所有變更的結果。
 
 -   若要盡可能縮短項目之間的間距，請找出 MainPage.xaml 中的 `BookTemplate` 資料範本，並將 `Margin` 屬性從根目錄 **Grid** 中刪除。
--   如果您想要讓頁面標題有更多的空間，您可以將頁面標題 **TextBlock** 上 `-5.6` 的下邊界重設為 `0`。
+-   如果您想要讓頁面標題有更多的空間，您可以將頁面標題 `-5.6`TextBlock`0` 上 **的下邊界重設為**。
 -   現在我們需要將 `LayoutRoot` 的背景設為正確的預設值，如此一來，無論使用哪一種佈景主題，app 在所有裝置上執行時都會具有適當的外觀。 請將它從 `"Transparent"` 變更為 `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`。
 
 若是更複雜的 app，這會是我們使用[尺寸和使用者經驗的移植](wpsl-to-uwp-form-factors-and-ux.md)中指導方針的時機，且在可以執行 app 的許多裝置上，真正選擇性地使用尺寸。 但是針對這個簡單的應用程式，我們可以稍微在這裡停下，並查看應用程式在最後一個樣式設定操作順序後的外觀。 它實際在行動裝置與桌面裝置上看起來相同，雖然它並未妥善使用寬尺寸的空間 (但我們將在稍後的案例研究中深入討論)。
@@ -125,13 +125,13 @@ For this app, item \#3 is not a debt since the status bar (formerly called the s
 
 ![移植完成的 Windows 10 app](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
-The ported Windows 10 app running on a Mobile device
+在行動裝置上執行的已移植 Windows 10 應用程式
 
 ## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>選擇性調整行動裝置的清單方塊
 
-當應用程式在行動裝置上執行時，兩個佈景主題中清單方塊的背景顏色都是預設為淺色。 這可能會是您喜歡的樣式，如果是這樣的話，就不需要再執行其他動作。 但是控制項的設計可讓您自訂它們的外觀，卻不會影響它們的行為。 因此，如果您希望清單方塊套用深色佈景主題 (原始 app 外觀)，請依照＜選擇性調整＞下方的[這些指示](w8x-to-uwp-case-study-bookstore1.md)執行。
+當應用程式在行動裝置上執行時，兩個佈景主題中清單方塊的背景顏色都是預設為淺色。 這可能會是您喜歡的樣式，如果是這樣的話，就不需要再執行其他動作。 但是控制項的設計是可以讓您自訂它們的外觀，卻不會影響它們的行為。 因此，如果您希望清單方塊套用深色佈景主題 (原始 app 外觀)，請依照＜選擇性調整＞下方的[這些指示](w8x-to-uwp-case-study-bookstore1.md)執行。
 
-## <a name="conclusion"></a>總結
+## <a name="conclusion"></a>結論
 
 這個案例研究示範移植一個非常簡單之 app 的程序—可以說是相當不實際的簡單 app。 例如，清單控制項可用來進行選取或用來建立要瀏覽的內容；app 會瀏覽到含有所點選之項目的更多相關詳細資料的頁面。 這個特定的應用程式既不處理使用者的選項，也沒有任何瀏覽。 即使如此，提供此案例研究是為了介紹移植程序，並示範您能用於實際 UWP app 的重要程式碼共用技術。
 

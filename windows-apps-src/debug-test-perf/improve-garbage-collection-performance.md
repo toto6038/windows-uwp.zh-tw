@@ -18,7 +18,7 @@ ms.locfileid: "72282195"
 
 使用 C# 和 Visual Basic 撰寫的通用 Windows 平台 (UWP) app 會從 .NET 記憶體回收行程自動管理記憶體。 本節摘要說明 UWP app 中的 .NET 記憶體回收行程的行為和效能最佳做法。 如需 .NET 記憶體回收行程如何運作，以及用於偵錯和分析記憶體回收行程效能之工具的詳細資訊，請參閱[記憶體回收](https://docs.microsoft.com/dotnet/standard/garbage-collection/index)。
 
-**請注意**  Needing，若要介入垃圾收集行程的預設行為，強烈表示您的應用程式發生一般的記憶體問題。 如需詳細資訊，請參閱[在 Visual Studio 2015 偵錯時的記憶體使用量工具](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/)。 本主題僅適用於 C# 和 Visual Basic。
+**請注意**，  需要介入垃圾收集行程的預設行為，強烈表示您的應用程式發生一般記憶體問題。 如需詳細資訊，請參閱[在 Visual Studio 2015 偵錯時的記憶體使用量工具](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/)。 本主題僅適用於 C# 和 Visual Basic。
 
  
 
@@ -42,7 +42,7 @@ ms.locfileid: "72282195"
 
 您可以透過呼叫 [**GC.Collect(n)** ](https://docs.microsoft.com/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 引發世代的記憶體回收，其中 n 是您要回收的世代 (0、1 或 2)。
 
-**注意**  We 建議您不要在應用程式中強制進行垃圾收集，因為垃圾收集行程會使用許多啟發學習法來判斷執行集合的最佳時間，而強制集合則是在許多情況下，不需要使用 CPU。 但如果您知道 app 中有大量不再使用的物件，而且希望將這個記憶體還給系統，此時就適合強制記憶體回收。 例如，您可以在載入遊戲的最後階段引發回收，以便在遊戲開始前釋放記憶體。
+**注意**  建議您不要在應用程式中強制進行垃圾收集，因為垃圾收集行程會使用許多啟發學習法來判斷執行集合的最佳時間，而且強制集合在許多情況下都不需要使用 CPU。 但如果您知道 app 中有大量不再使用的物件，而且希望將這個記憶體還給系統，此時就適合強制記憶體回收。 例如，您可以在載入遊戲的最後階段引發回收，以便在遊戲開始前釋放記憶體。
  
 若要避免不慎引發太多記憶體回收，可以將 [**GCCollectionMode**](https://docs.microsoft.com/dotnet/api/system.gccollectionmode) 設為 **Optimized**。 這樣會指示記憶體回收行程只在確定回收效能夠高時，才開始回收。
 

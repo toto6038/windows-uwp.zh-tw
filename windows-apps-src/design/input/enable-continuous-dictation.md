@@ -26,9 +26,9 @@ ms.locfileid: "74257998"
 針對較長、連續語音辨識的工作階段 (例如聽寫或電子郵件) 時，請使用 [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) 的 [**ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) 屬性來取得 [**SpeechContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession) 物件。
 
 > [!NOTE]
-> Dictation language support depends on the [device](https://docs.microsoft.com/windows/uwp/design/devices/) where your app is running. For PCs and laptops, only en-US is recognized, while Xbox and phones can recognize all languages supported by speech recognition. For more info, see [Specify the speech recognizer language](specify-the-speech-recognizer-language.md).
+> 聽寫語言支援取決於您的應用程式執行所在的[裝置](https://docs.microsoft.com/windows/uwp/design/devices/)。 針對電腦和膝上型電腦，只有 en-us 可供辨識，而 Xbox 和手機則可識別語音辨識支援的所有語言。 如需詳細資訊，請參閱[指定語音辨識器語言](specify-the-speech-recognizer-language.md)。
 
-## <a name="set-up"></a>[設定]
+## <a name="set-up"></a>設定
 
 您的應用程式需要幾項物件來管理連續聽寫工作階段：
 
@@ -68,12 +68,12 @@ private StringBuilder dictatedTextBuilder;
 - 擷取 UI 執行緒的發送器 (如果您在連續辨識事件處理常式中更新您應用程式的 UI)。
 - 初始化語音辨識器。
 - 編譯內建聽寫文法。
-    **Note**   Speech recognition requires at least one constraint to define a recognizable vocabulary. 如果沒有指定任何限制式，則會使用預先定義的聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
+    **請注意**   語音辨識必須至少有一個條件約束，才能定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
 - 設定辨識事件的事件接聽程式。
 
 在這個範例中，我們會在 [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 頁面事件中初始化語音辨識。
 
-1. 因為語音辨識器引發的事件是在背景執行緒中發生，所以請建立對發送器的參照以更新 UI 執行緒。 [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) is always invoked on the UI thread.
+1. 因為語音辨識器引發的事件是在背景執行緒中發生，所以請建立對發送器的參照以更新 UI 執行緒。 [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto)一律會在 UI 執行緒上叫用。
 ```csharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
@@ -105,15 +105,15 @@ SpeechRecognitionCompilationResult result =
 
 有兩個事件特別重要：
 
-- [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated), which occurs when the recognizer has generated some results.
-- [**Completed**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed), which occurs when the continuous recognition session has ended.
+- [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated)，當辨識器產生了一些結果時，就會發生這種情況。
+- [**Completed （已完成**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed)），這會在持續識別會話結束時發生。
 
 [  **ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) 事件會在使用者說話時引發。 辨識器會連續聆聽使用者說話，並定時引發傳遞語音輸入片段的事件。 您必須使用事件引數的 [**Result**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) 屬性檢查語音輸入，然後在事件處理常式中採取適當動作，例如附加文字到 StringBuilder 物件。
 
 做為 [**SpeechRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) 的執行個體，[**Result**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) 屬性非常適合用來判斷您是否要接受語音輸入： [  **SpeechRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) 為此提供兩個屬性：
 
-- [**Status**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.status) indicates whether the recognition was successful. 可能造成辨識失敗的原因有很多。
-- [**Confidence**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence) indicates the relative confidence that the recognizer understood the correct words.
+- [**狀態**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.status)指出辨識是否成功。 可能造成辨識失敗的原因有很多。
+- [**信賴**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence)指示辨識器瞭解正確單字的相對信賴度。
 
 以下是支援連續辨識的基本步驟：  
 
@@ -125,7 +125,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  然後我們檢查 [**Confidence**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence) 屬性。 如果「信賴等級」的值是 [**Medium**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionConfidence) 或更高，我們就會將文字附加到 StringBuilder。 我們也會在收集輸入時更新 UI 。
 
-    **Note**  the [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) event is raised on a background thread that cannot update the UI directly. If a handler needs to update the UI (as the \[Speech and TTS sample\] does), you must dispatch the updates to the UI thread through the [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) method of the dispatcher.
+    **請注意**  [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated)事件會在無法直接更新 UI 的背景執行緒上引發。 如果處理常式需要更新 UI （如 \[語音和 TTS 範例\] 執行），您必須透過發送器的[**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)方法，將更新分派至 UI 執行緒。
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -165,7 +165,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  事件處理常式會檢查 Status 數性以判斷辨識是否成功。 它也會處理使用者已經停止說話的情況。 通常，[**TimeoutExceeded**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) 會被視為成功辨識，因為它表示使用者已經結束說話。 您應該在您的程式碼中處理此情況，以提供良好體驗。
 
-    **Note**  the [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) event is raised on a background thread that cannot update the UI directly. If a handler needs to update the UI (as the \[Speech and TTS sample\] does), you must dispatch the updates to the UI thread through the [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) method of the dispatcher.
+    **請注意**  [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated)事件會在無法直接更新 UI 的背景執行緒上引發。 如果處理常式需要更新 UI （如 \[語音和 TTS 範例\] 執行），您必須透過發送器的[**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)方法，將更新分派至 UI 執行緒。
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -207,7 +207,7 @@ private async void ContinuousRecognitionSession_Completed(
 
 這可能會導致使用者體驗不是那麼理想，因為使用者會持續說話，且辨識器在達到夠高的信賴等級以引發 [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) 事件之前不會提供任何結果。
 
-處理 [**HypothesisGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.hypothesisgenerated) 事件以改善此明顯的回應性不足問題。 無論辨識器是否會針對正在處理的文字產生一組新的可能相符項目，都會引發此事件。 事件引數會提供包含目前相符項目的 [**Hypothesis**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionhypothesisgeneratedeventargs.hypothesis) 屬性。 在使用者連續說話時向使用者顯示這些項目，並讓他們知道處理作業仍在作用中。 在信賴等級提高並決定辨識結果之後，以[**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) 事件中提供的最終 [**Result**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) 來取代臨時的 **Hypothesis** 結果。
+處理 [**HypothesisGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.hypothesisgenerated) 事件以改善此明顯的回應性不足問題。 無論辨識器是否會針對正在處理的文字產生一組新的可能相符項目，都會引發此事件。 事件引數會提供包含目前相符項目的 [**Hypothesis**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionhypothesisgeneratedeventargs.hypothesis) 屬性。 在使用者連續說話時向使用者顯示這些項目，並讓他們知道處理作業仍在作用中。 在信賴等級提高並決定辨識結果之後，以ResultGenerated[**事件中提供的最終**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result)Result[**來取代臨時的**Hypothesis](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) 結果。
 
 我們在這裡附加假設文字和省略符號 (…) 至輸出 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 的目前的值。 在新的假設內容產生時，以及在從 [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) 事件取得最終結果之後，文字方塊的內容就會更新。
 
@@ -244,8 +244,8 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 
 有兩種方式可以停止辨識：
 
--   [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.stopasync) lets any pending recognition events complete ([**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) continues to be raised until all pending recognition operations are complete).
--   [**CancelAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) terminates the recognition session immediately and discards any pending results.
+-   [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.stopasync)可讓任何暫止的辨識事件完成（[**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated)會繼續引發，直到所有擱置中的辨識作業都完成為止）。
+-   [**地說 cancelasync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync)會立即終止辨識會話，並捨棄任何暫止的結果。
 
 在檢查語音辨識器的狀態之後，我們會透過呼叫語音辨識器之 [**ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) 屬性的 [**CancelAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) 方法來停止工作階段。
 
@@ -269,7 +269,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 * [語音互動](speech-interactions.md)
 
 **範例**
-* [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
+* [語音辨識和語音合成範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

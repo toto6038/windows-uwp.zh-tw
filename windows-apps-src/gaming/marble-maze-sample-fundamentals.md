@@ -25,9 +25,9 @@ ms.locfileid: "74258491"
 
 以下是本文件所討論在規劃和開發通用 Windows 平台 (UWP) 遊戲時的一些重點。
 
--   Use the **DirectX 11 App (Universal Windows - C++/CX)** template in Visual Studio to create your DirectX UWP game.
--   Windows 執行階段提供類別和介面，讓您以更現代的物件導向方式來開發 UWP 應用程式。
--   Use object references with the hat (^) symbol to manage the lifetime of Windows Runtime variables, [Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) to manage the lifetime of COM objects, and [std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class) or [std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class) to manage the lifetime of all other heap-allocated C++ objects.
+-   在 Visual Studio 中使用**DirectX 11 應用程式（ C++通用 Windows-/cx）** 範本來建立 directx UWP 遊戲。
+-   Windows 執行階段提供類別和介面，讓您以更現代的物件導向方式來開發 UWP app。
+-   使用物件參考搭配 hat （^）符號來管理 Windows 執行階段變數的存留期、 [Microsoft：： WRL：： ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class)來管理 COM 物件的存留期，以及[std：： shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class)或[std：： unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class)來管理所有其他堆積配置C++物件的存留期。
 -   在大多數情況下，使用例外狀況處理 (而不是結果程式碼) 來處理意外的錯誤。
 -   使用 [SAL 註釋](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)並搭配程式碼分析工具，協助找出應用程式中的錯誤。
 
@@ -36,25 +36,25 @@ ms.locfileid: "74258491"
 
 如果您已經下載並解壓縮範例，則可以在 Visual Studio 中開啟 **MarbleMaze_VS2017.sln** 檔案 (在 **C++** 資料夾中)，程式碼會隨即顯示出來。
 
-我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows - C++/CX)** template because it provides a basic working 3D application. 若要這樣做，請執行下列步驟：
+我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 不過，如果您還沒有提供 DirectX UWP 遊戲所需基本功能的現有專案，建議您根據 Visual Studio **directx 11 應用程式（通用C++Windows/cx）** 範本來建立專案，因為它會提供基本的工作3d 應用程式。 若要這樣做，請執行下列步驟：
 
-1. In Visual Studio 2019, select **File > New > Project...**
+1. 在 Visual Studio 2019 中，選取 [檔案] **> 新增 > 專案**。
 
-2. In the **Create a new project** window, select **DirectX 11 App (Universal Windows - C++/CX)** . If you don't see this option, you may not have the required components installed&mdash;see [Modify Visual Studio 2019 by adding or removing workloads and components](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) for information about how to install additional components.
+2. 在 [**建立新專案**] 視窗中，選取 [ **DirectX 11 應用程式（ C++通用 Windows-/cx）** ]。 如果您沒有看到此選項，表示您可能未安裝必要元件&mdash;請參閱透過[新增或移除工作負載和元件來修改 Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) ，以取得如何安裝其他元件的相關資訊。
 
 ![新專案](images/vs2019-marble-maze-sample-fundamentals-1.png)
 
-3. Select **Next**, and then enter  a **Project name**, a **Location** for the files to be stored, and a **Solution name**, and then select **Create**.
+3. 選取 **[下一步]** ，然後輸入**專案名稱**、要儲存之檔案的**位置**和**方案名稱**，然後選取 [**建立**]。
 
 
 
-One important project setting in the **DirectX 11 App (Universal Windows - C++/CX)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. 當您使用 Visual Studio 範本時，這個選項預設為啟用。 請參閱[設定編譯器選項](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options)，以取得如何在 Visual Studio 中設定編譯器選項的詳細資訊。
+[ **DirectX 11 應用程式（通用 Windows- C++/cx）** ] 範本中的一個重要專案設定是 **/ZW**選項，可讓程式使用 Windows 執行階段的語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。 請參閱[設定編譯器選項](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options)，以取得如何在 Visual Studio 中設定編譯器選項的詳細資訊。
 
-> **Caution**   The **/ZW** option is not compatible with options such as **/clr**. 如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
+> **注意**   **/ZW**選項與 **/clr**之類的選項不相容。 如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
 
  
 
-Every UWP app that you acquire from the Microsoft Store comes in the form of an app package. App 套件包含套件資訊清單，內含 App 的相關資訊。 例如，您可以指定應用程式的功能 (也就是對受保護系統資源或使用者資料的必要存取權)。 如果您認為應用程式需要特定的功能，請使用封裝資訊清單來宣告所需的功能。 資訊清單也可讓您指定專案屬性，例如支援的裝置旋轉、影像填滿和啟動顯示畫面。 您可以在您的專案中開啟 **Package.appxmanifest** 來編輯資訊清單。 如需有關應用程式套件的詳細資訊，請參閱[封裝應用程式](https://docs.microsoft.com/windows/uwp/packaging/index)。
+您從 Microsoft Store 取得的每個 UWP 應用程式都是以應用程式套件的形式呈現。 App 套件包含套件資訊清單，內含 App 的相關資訊。 例如，您可以指定應用程式的功能 (也就是對受保護系統資源或使用者資料的必要存取權)。 如果您認為應用程式需要特定的功能，請使用封裝資訊清單來宣告所需的功能。 資訊清單也可讓您指定專案屬性，例如支援的裝置旋轉、影像填滿和啟動顯示畫面。 您可以在您的專案中開啟 **Package.appxmanifest** 來編輯資訊清單。 如需有關 App 套件的詳細資訊，請參閱[封裝 App](https://docs.microsoft.com/windows/uwp/packaging/index)。
 
 ##  <a name="building-deploying-and-running-the-game"></a>建置、部署及執行遊戲
 
@@ -71,20 +71,20 @@ Every UWP app that you acquire from the Microsoft Store comes in the form of an 
 -   使用觸控、加速計、左搖桿或滑鼠使迷宮傾斜。
 -   使用觸控、控制器的 A 或 Start 按鍵或是滑鼠來關閉功能表，例如計分排行榜。
 -   使用控制器的 Start 按鍵或鍵盤的 P 鍵來暫停或繼續遊戲。
--   使用控制器的 Back 按鍵或鍵盤的 Home 鍵來重新啟動遊戲。
+-   使用控制器的 [返回] 按鈕或鍵盤的 Home 鍵來重新啟動遊戲。
 -   當計分排行榜出現時，使用控制器的 Back 按鍵或鍵盤的 Home 鍵可清除所有分數。
 
 ##  <a name="code-conventions"></a>程式碼慣例
 
 
-Windows 執行階段是一個程式設計介面，您可以使用它來建立只能在特定應用程式環境中執行的 UWP App。 Such apps use authorized functions, data types, and devices, and are distributed from the Microsoft Store. Windows 執行階段在最低層級包含「應用程式二進位介面」(ABI)。 ABI 是讓 Windows 執行階段 API 可供多種程式設計語言 (例如 JavaScript、.NET 語言和 Visual C++) 存取的低階二進位合約。
+Windows 執行階段是一個程式設計介面，您可以使用它來建立只能在特定應用程式環境中執行的 UWP App。 這類應用程式會使用授權的函式、資料類型和裝置，並從 Microsoft Store 散發。 Windows 執行階段在最低層級包含「應用程式二進位介面」(ABI)。 ABI 是讓 Windows 執行階段 API 可供多種程式設計語言 (例如 JavaScript、.NET 語言和 Visual C++) 存取的低階二進位合約。
 
-若要從 JavaScript 和 .NET 呼叫 Windows 執行階段 API，這些語言需要每個語言環境特有的投射。 當您從 JavaScript 或 .NET 呼叫 Windows 執行階段 API 時，就會叫用投射，而投射再呼叫基礎 ABI 函式。 雖然您可以在 C++ 中直接呼叫 ABI 函式，但 Microsoft 也為 C++ 提供投射，因為它們可讓 Windows 執行階段 API 的使用變得更為輕鬆，但不會降低效能。 Microsoft 也為 Visual C++ 提供專門支援 Windows 執行階段投射的語言擴充功能。 這些語言擴充功能有很多都類似 C++/CLI 語言的語法。 不過，原生應用程式使用此語法來以 Windows 執行階段為目標，而不是以 Common Language Runtime (CLR) 為目標。 物件參考或 ^ 修飾詞是這個新語法的重要部分，因為它能夠透過參考計數的功能來自動刪除執行階段物件。 若沒有其他元件參考 Windows 執行階段物件 (例如，離開範圍或將所有參考設為 **nullptr**)，執行階段就會刪除該物件，而不是呼叫 [AddRef](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 和 [Release](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release) 等方法來管理該物件的存留期。 另一個使用 Visual C++ 來建立 UWP app 的重要部分就是 **ref new** 關鍵字。 請使用 **ref new** (而不使用 **new**) 來建立計算參考次數的 Windows 執行階段物件。 如需詳細資訊，請參閱[型別系統 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
+若要從 JavaScript 和 .NET 呼叫 Windows 執行階段 API，這些語言需要每個語言環境特有的投射。 當您從 JavaScript 或 .NET 呼叫 Windows 執行階段 API 時，就會叫用投射，而投射再呼叫基礎 ABI 函式。 雖然您可以在 C++ 中直接呼叫 ABI 函式，但 Microsoft 也為 C++ 提供投射，因為它們可讓 Windows 執行階段 API 的使用變得更為輕鬆，但不會降低效能。 Microsoft 也為 Visual C++ 提供專門支援 Windows 執行階段投射的語言擴充功能。 這些語言擴充功能有很多都類似 C++/CLI 語言的語法。 不過，原生應用程式使用此語法來以 Windows 執行階段為目標，而不是以 Common Language Runtime (CLR) 為目標。 物件參考或 ^ 修飾詞是這個新語法的重要部分，因為它能夠透過參考計數的功能來自動刪除執行階段物件。 若沒有其他元件參考 Windows 執行階段物件 (例如，離開範圍或將所有參考設為 [nullptr](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref))，執行階段就會刪除該物件，而不是呼叫 [AddRef](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release) 和 **Release** 等方法來管理該物件的存留期。 另一個使用 Visual C++ 來建立 UWP app 的重要部分就是 **ref new** 關鍵字。 請使用 **ref new** (而不使用 **new**) 來建立計算參考次數的 Windows 執行階段物件。 如需詳細資訊，請參閱[型別系統 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
 
 > [!IMPORTANT]
 > 當您建立 Windows 執行階段物件或建立 Windows 執行階段元件時，您只需要使用 **^** 和 **ref new**。 當您撰寫的核心應用程式碼不使用 Windows 執行階段時，您可以使用標準 C++ 語法。
 
-Marble Maze 使用 **^** 並搭配 **Microsoft::WRL::ComPtr** 來管理堆積配置的物件，並使記憶體流失情況降到最低。 We recommend that you use ^ to manage the lifetime of Windows Runtime variables, **ComPtr** to manage the lifetime of COM variables (such as when you use DirectX), and **std::shared\_ptr** or **std::unique\_ptr** to manage the lifetime of all other heap-allocated C++ objects.
+Marble Maze 使用 **^** 並搭配 **Microsoft::WRL::ComPtr** 來管理堆積配置的物件，並使記憶體流失情況降到最低。 建議您使用 ^ 來管理 Windows 執行階段變數的存留期， **ComPtr**以管理 COM 變數的存留期（例如當您使用 DirectX 時），並使用**std：： shared\_ptr**或**std：： unique\_ptr**來管理其他所有堆積配置C++物件的存留期。
 
  
 
@@ -99,7 +99,7 @@ Marble Maze 使用例外狀況處理做為處理意外錯誤的主要方法。 �
 -   使用例外狀況來傳達意外錯誤。
 -   不要使用例外狀況來控制程式碼的流程。
 -   只攔截您可以安全處理和復原的例外狀況。 否則，不要攔截例外狀況，請讓 app 終止。
--   當您呼叫 DirectX 常式傳回 **HRESULT** 時，請使用 **DX::ThrowIfFailed** 函式。 此函式是在 [DirectXHelper.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/master/C%2B%2B/Shared/DirectXHelper.h) 中定義。 如果提供的 **HRESULT** 是錯誤碼，**ThrowIfFailed** 會擲回例外狀況。 For example, **E\_POINTER** causes **ThrowIfFailed** to throw [Platform::NullReferenceException](https://docs.microsoft.com/cpp/cppcx/platform-nullreferenceexception-class).
+-   當您呼叫 DirectX 常式傳回 **HRESULT** 時，請使用 **DX::ThrowIfFailed** 函式。 此函式是在 [DirectXHelper.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/master/C%2B%2B/Shared/DirectXHelper.h) 中定義。 如果提供的 **HRESULT** 是錯誤碼，**ThrowIfFailed** 會擲回例外狀況。 例如， **E\_指標**會導致**ThrowIfFailed**擲回[Platform：： NullReferenceException](https://docs.microsoft.com/cpp/cppcx/platform-nullreferenceexception-class)。
 
     當您使用 **ThrowIfFailed** 時，請將 DirectX 呼叫寫在單獨一行，以改善程式碼的可讀性，如下列範例所示。
 
@@ -119,7 +119,7 @@ Marble Maze 使用例外狀況處理做為處理意外錯誤的主要方法。 �
 
 您可以使用 Microsoft 原始程式碼註釋語言 (SAL) 來註釋或描述函式如何使用參數。 SAL 註釋也可描述傳回值。 SAL 註釋可搭配 C/C++ 程式碼分析工具來尋找 C 和 C++原始程式碼中可能的瑕疵。 這個工具所報告的常見程式碼錯誤包括：緩衝區滿溢、未初始化的記憶體、Null 指標取值以及記憶體和資源流失。
 
-考慮使用 [BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h) 中宣告的 **BasicLoader::LoadMesh** 方法。 這個方法使用 `_In_` 指定 *filename* 是輸入參數 (因此只能讀取)、使用 `_Out_` 指定 *vertexBuffer* 和 *indexBuffer* 是輸出參數 (因此只能寫入)，以及使用 `_Out_opt_` 指定 *vertexCount* 和 *indexCount* 是選擇性輸出參數 (可能寫入)。 因為 *vertexCount* 和 *indexCount* 是選擇性輸出參數，所以允許為 **nullptr**。 C/C++ 程式碼分析工具會檢查這個方法的呼叫，以確定傳遞的參數符合這些準則。
+考慮使用 **BasicLoader.h** 中宣告的 [BasicLoader::LoadMesh](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h) 方法。 這個方法使用 `_In_` 指定 *filename* 是輸入參數 (因此只能讀取)、使用 `_Out_` 指定 *vertexBuffer* 和 *indexBuffer* 是輸出參數 (因此只能寫入)，以及使用 `_Out_opt_` 指定 *vertexCount* 和 *indexCount* 是選擇性輸出參數 (可能寫入)。 因為 *vertexCount* 和 *indexCount* 是選擇性輸出參數，所以允許為 **nullptr**。 C/C++ 程式碼分析工具會檢查這個方法的呼叫，以確定傳遞的參數符合這些準則。
 
 ```cpp
 void LoadMesh(
@@ -143,8 +143,8 @@ void LoadMesh(
 ## <a name="related-topics"></a>相關主題
 
 
-* [Marble Maze application structure](marble-maze-application-structure.md)
-* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [大理石迷宮應用程式結構](marble-maze-application-structure.md)
+* [開發大理石迷宮，和 DirectX 中C++的 UWP 遊戲](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

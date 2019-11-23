@@ -16,7 +16,7 @@ ms.locfileid: "71339618"
 # <a name="listview-and-gridview-data-virtualization"></a>ListView 與 GridView 資料虛擬化
 
 
-**注意**  For 更多詳細資料，請參閱//build/會話會在[使用者與 GridView 和 ListView 中的大量資料互動時，大幅提升效能](https://channel9.msdn.com/Events/Build/2013/3-158)。
+**請注意**  如需詳細資訊，請參閱//build/會話會在[使用者與 GridView 和 ListView 中的大量資料互動時，大幅提升效能](https://channel9.msdn.com/Events/Build/2013/3-158)。
 
 透過資料虛擬化改善 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 的效能和啟動時間。 如需 UI 虛擬化、減少元素和漸進式更新項目的資訊，請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)。
 
@@ -27,7 +27,7 @@ ms.locfileid: "71339618"
 -   資料集來源 (本機磁碟、網路或雲端)
 -   app 的整體記憶體耗用量
 
-**注意**  Be 請注意，ListView 和 GridView 預設會啟用功能，當使用者快速移動/滾動時，會顯示暫時的預留位置視覺效果。 載入資料時，會使用您的項目範本來取代這些預留位置視覺效果。 您可以將 [**ListViewBase.ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 設為 False 來關閉該功能，但是如果您這樣做，則建議您使用 x:Phase 屬性，逐漸轉譯項目範本中的元素。 請參閱[逐漸更新 ListView 與 GridView 項目](optimize-gridview-and-listview.md#update-items-incrementally)。
+**請注意  請**留意，預設會針對 ListView 和 GridView 啟用功能，當使用者快速移動/滾動時，會顯示暫時的預留位置視覺效果。 載入資料時，會使用您的項目範本來取代這些預留位置視覺效果。 您可以將 [**ListViewBase.ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 設為 False 來關閉該功能，但是如果您這樣做，則建議您使用 x:Phase 屬性，逐漸轉譯項目範本中的元素。 請參閱[逐漸更新 ListView 與 GridView 項目](optimize-gridview-and-listview.md#update-items-incrementally)。
 
 以下是更多關於遞增和隨機存取資料虛擬化技術的詳細資訊。
 
@@ -36,7 +36,7 @@ ms.locfileid: "71339618"
 遞增資料虛擬化會依序載入資料。 [  **ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 使用遞增資料虛擬化，可能用來檢視數百萬個項目的集合，但最初只會載入 50 個項目。 當使用者移動瀏覽/捲動時，會載入接下來的 50 個項目。 載入項目時，捲軸的捲動方塊會減少大小。 針對這種資料虛擬化類型，您使用實作這些介面的資料來源類別。
 
 -   [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)
--   [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) （C#/VB）或[IObservableVector @ no__t-5T @ no__t-6](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) （C++/cx）
+-   [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) （C#/VB）或[**IObservableVector&lt;t&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) （C++/cx）
 -   [**為 isupportincrementalloading**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISupportIncrementalLoading)
 
 像這樣的資料來源是可以持續擴充的記憶體內清單。 項目控制項會要求項目使用標準 [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist) 索引子和計數屬性。 計數應該代表項目在本機的數量，而不是資料集的實際大小。
@@ -48,7 +48,7 @@ ms.locfileid: "71339618"
 隨機存取資料虛擬化允許從資料集的任意點載入。 [  **ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 使用隨機存取資料虛擬化，用來檢視數百萬個項目的集合，可以載入 100,000 – 100,050 個項目。 如果使用者接著移動到清單開頭，控制項就會載入項目 1 – 50。 捲軸的捲動方塊隨時會表示 **ListView** 包含數百萬個項目。 捲軸的捲動方塊位置是可見項目在集合內整個資料集中的相對位置。 這種類型的資料虛擬化可以大幅減少記憶體需求和集合的載入時間。 若要啟用，您必須撰寫可隨選擷取資料和管理本機快取及實作這些介面的資料來源類別。
 
 -   [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)
--   [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) （C#/VB）或[IObservableVector @ no__t-5T @ no__t-6](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) （C++/cx）
+-   [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) （C#/VB）或[**IObservableVector&lt;t&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) （C++/cx）
 -   (選擇性) [**IItemsRangeInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IItemsRangeInfo)
 -   (選擇性) [**ISelectionInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISelectionInfo)
 

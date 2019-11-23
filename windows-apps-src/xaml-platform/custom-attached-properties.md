@@ -42,7 +42,7 @@ ms.locfileid: "71340610"
 定義自訂附加屬性與自訂相依性屬性的主要差異在於定義存取子或包裝函式的方式。 您不是使用[自訂相依性屬性](custom-dependency-properties.md)中所述的包裝函式技術，而是必須也提供靜態 **Get**_PropertyName_ 和 **Set**_PropertyName_ 方法做為附加屬性的存取子。 存取子主要是由 XAML 剖析器使用，不過任何其他呼叫者也可以使用它們在非 XAML 案例中設定值。
 
 > [!IMPORTANT]
-> 如果您未正確定義存取子，XAML 處理器就無法存取您的附加屬性，而且嘗試使用它的任何人都可能會收到 XAML 剖析器錯誤。 此外，設計和程式碼撰寫工具通常會依賴「@no__t 0Property」慣例來命名識別碼，而當它們遇到參考元件中的自訂相依性屬性時。
+> 如果您未正確定義存取子，XAML 處理器就無法存取您的附加屬性，而且嘗試使用它的任何人都可能會收到 XAML 剖析器錯誤。 此外，設計和程式碼撰寫工具通常會依賴「\*屬性」慣例來命名識別碼，而當它們遇到參考元件中的自訂相依性屬性時。
 
 ## <a name="accessors"></a>存取子
 
@@ -213,7 +213,7 @@ GameService::RegisterDependencyProperties() {
 
 定義您的附加屬性並將它的支援成員包含為自訂類型的一部分之後，您接著必須讓 XAML 可以使用定義。 若要這樣做，您必須對應將要參考包含相關類別程式碼命名空間的 XAML 命名空間。 在已經將附加屬性定義為程式庫一部分的情況中，您必須包含這個程式庫，讓它成為應用程式之應用程式套件的一部分。
 
-XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 例如，針對包含前面程式碼片段中所示之附加屬性定義的命名空間 `UserAndCustomControls` 中名為 `GameService` 的類別，其對應看起來就會像這樣。
+XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 例如，針對包含前面程式碼片段中所示之附加屬性定義的命名空間 `GameService` 中名為 `UserAndCustomControls` 的類別，其對應看起來就會像這樣。
 
 ```xaml
 <UserControl
@@ -228,14 +228,14 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 <Image uc:GameService.IsMovable="True" .../>
 ```
 
-如果您在某個元素上設定屬性且該元素也在同一個對應的 XML 命名空間中，仍然需要在附加屬性名稱上包含前置詞。 這是因為前置詞會限定擁有者類型。 您不能假設附加屬性的屬性一定位於與包含屬性的元素相同的 XML 命名空間內；不過，根據一般的 XML 規則，屬性可以從元素繼承命名空間。 例如，如果您在自訂類型的 `ImageWithLabelControl` 上設定 `GameService.IsMovable` (未顯示定義)，而且即使這兩者是在對應到相同前置詞的同一個程式碼命名空間中定義的，XAML 仍然會是這個。
+如果您在某個元素上設定屬性且該元素也在同一個對應的 XML 命名空間中，仍然需要在附加屬性名稱上包含前置詞。 這是因為前置詞會限定擁有者類型。 您不能假設附加屬性的屬性一定位於與包含屬性的元素相同的 XML 命名空間內；不過，根據一般的 XML 規則，屬性可以從元素繼承命名空間。 例如，如果您在自訂類型的 `GameService.IsMovable` 上設定 `ImageWithLabelControl` (未顯示定義)，而且即使這兩者是在對應到相同前置詞的同一個程式碼命名空間中定義的，XAML 仍然會是這個。
 
 ```xaml
 <uc:ImageWithLabelControl uc:GameService.IsMovable="True" .../>
 ```
 
 > [!NOTE]
-> 如果您要撰寫具有C++/CX 的 xaml UI，則每當 XAML 頁面使用該類型時，您都必須包含定義附加屬性之自訂類型的標頭。 每個 XAML 頁面都有相關聯的程式碼後置標頭（.xaml）。 這是您應該在其中包含附加屬性之擁有者類型定義的標頭（使用 **@no__t 1include**）。
+> 如果您要撰寫具有C++/CX 的 xaml UI，則每當 XAML 頁面使用該類型時，您都必須包含定義附加屬性之自訂類型的標頭。 每個 XAML 頁面都有相關聯的程式碼後置標頭（.xaml）。 這是您應該在其中包含附加屬性之擁有者類型定義的標頭（使用 **\#包含**）。
 
 ## <a name="setting-your-custom-attached-property-imperatively-with-cwinrt"></a>以命令方式使用C++/WinRT 設定自訂附加屬性
 
@@ -264,7 +264,7 @@ MainPage::MainPage()
 
 ## <a name="value-type-of-a-custom-attached-property"></a>自訂附加屬性的值類型
 
-做為自訂附加屬性值類型的類型會影響使用方式、定義或同時影響兩者。 附加屬性的值類型會在數個位置宣告：在 **Get** 與 **Set** 存取子兩個方法的簽章中，以及做為 [**RegisterAttached**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.registerattached) 呼叫的 *propertyType* 參數。
+做為自訂附加屬性值類型的類型會影響使用方式、定義或同時影響兩者。 附加屬性的值類型會在數個位置宣告：在 **Get** 與 **Set** 存取子兩個方法的簽章中，以及做為RegisterAttached[**呼叫的**propertyType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.registerattached) 參數。
 
 最常見的附加屬性 (自訂或其他) 值類型是簡單字串。 這是因為附加屬性通常是用於 XAML 屬性，而將字串當作值類型能讓屬性變得更為精簡。 使用原生轉換為字串方法的其他基本類型 (例如整數、雙精度浮點數或列舉值) 也是附加屬性常用的值類型。 您可以使用其他值類型—不支援原生字串轉換的值類型—當作附加屬性值。 不過，這就取決於您要選擇使用或實作它：
 
@@ -275,7 +275,7 @@ MainPage::MainPage()
 
 在前面的附加屬性用法範例中，我們示範了設定 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 附加屬性的不同方法。 但是，這對於 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 與您物件的互動方式有何改變，以及在何時發生？ 我們將進一步探討這個特定的範例，因為如果您實作附加屬性，看看當典型的附加屬性擁有者類別在其他物件上發現它的附加屬性值時，會對這些值做哪些其他處理，將是一件有趣的事。
 
-[  **Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 的主要功能是成為 UI 中的絕對位置配置容器。 **Canvas** 的子項會儲存在基底類別定義的屬性 [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 中。 在所有的面板中，**Canvas** 是唯一使用絕對位置的面板。 當新增屬性而屬性可能只與 **Canvas** 和它們身為 **UIElement** 子元素的特定 **UIElement** 案例相關時，會將常見的 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 類型的物件模型塞得臃腫不堪。 將 **Canvas** 的配置控制項屬性定義成任何 **UIElement** 都可以使用的附加屬性可以讓物件模型保持簡潔。
+[  **Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 的主要功能是成為 UI 中的絕對位置配置容器。 **Canvas** 的子項會儲存在基底類別定義的屬性 [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 中。 在所有的面板中，**Canvas** 是唯一使用絕對位置的面板。 當新增屬性而屬性可能只與 [Canvas**和它們身為**UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 子元素的特定 **UIElement** 案例相關時，會將常見的UIElement 類型的物件模型塞得臃腫不堪。 將 **Canvas** 的配置控制項屬性定義成任何 **UIElement** 都可以使用的附加屬性可以讓物件模型保持簡潔。
 
 為了能夠成為實際的面板，[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 具有會覆寫架構層級的 [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) 和 [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 方法的行為。 這是 **Canvas** 實際檢查其子項是否有附加屬性值的位置。 **Measure** 和 **Arrange** 模式都有部分是迴圈，會逐一查看任何內容，而面板具有 [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) 屬性，可以明確指出哪個應該視為面板子項。 因此，**Canvas** 配置行為會逐一查看這些子項，並且在每個子項進行靜態的 [**Canvas.GetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.getleft) 和 [**Canvas.GetTop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.gettop) 呼叫，以查看那些附加屬性是否包含非預設值 (預設值為 0)。 然後，會使用這些值並根據每個子項提供的特定值，以賦予每個子項在 **Canvas** 可用配置空間中的絕對位置，然後使用 **Arrange** 來進行認可。
 

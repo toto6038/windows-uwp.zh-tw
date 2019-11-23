@@ -37,7 +37,7 @@ ms.locfileid: "71339769"
 
 ## <a name="launch-the-system-ui-to-start-screen-capture"></a>啟動系統 UI 以開始螢幕擷取
 
-啟動系統 UI 之前，您可以查看您的應用程式目前是否可以進行螢幕擷取。 您的應用程式目前是否可以進行螢幕擷取可能有數個原因，包括裝置不符合硬體需求，或擷取目標的應用程式封鎖螢幕擷取。 使用 [GraphicsCaptureSession](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession) 類別中的 **IsSupported** 方法來判斷是否支援 UWP 螢幕擷取︰
+啟動系統 UI 之前，您可以查看您的應用程式目前是否可以進行螢幕擷取。 您的應用程式目前是否可以進行螢幕擷取可能有數個原因，包括裝置不符合硬體需求，或擷取目標的應用程式封鎖螢幕擷取。 使用 **GraphicsCaptureSession** 類別中的 [IsSupported](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession) 方法來判斷是否支援 UWP 螢幕擷取︰
 
 ```cs
 // This runs when the application starts.
@@ -113,7 +113,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>建立擷取畫面集區與擷取工作階段
 
-使用**GraphicsCaptureItem**，您將會建立具有 D3D 裝置的[Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) 、支援的像素格式（**DXGI @ no__t-3FORMAT @ no__t-4B8G8R8A8 @ no__t-5UNORM**）、所需的框架數目（可以是任何整數）和框架大小。 **GraphicsCaptureItem** 類別的 **ContentSize** 屬性可以當做畫面的大小：
+使用**GraphicsCaptureItem**時，您將會建立具有 D3D 裝置的[Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) 、支援的像素格式（**DXGI\_格式\_B8G8R8A8\_UNORM**）、所需的畫面格數目（可以是任何整數）和框架大小。 **GraphicsCaptureItem** 類別的 **ContentSize** 屬性可以當做畫面的大小：
 
 ```cs
 private GraphicsCaptureItem _item;
@@ -224,7 +224,7 @@ End Sub
 
 在畫面簽入之後，應用程式不應該儲存 **Direct3D11CaptureFrame** 物件的參考，也不應該儲存基礎 Direct3D 表面的參考。
 
-在處理畫面時，建議應用程式在與 **Direct3D11CaptureFramePool** 物件相關聯的相同裝置上採用 [ID3D11Multithread](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) 鎖定。
+在處理畫面時，建議應用程式在與 [Direct3D11CaptureFramePool](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) 物件相關聯的相同裝置上採用 **ID3D11Multithread** 鎖定。
 
 基礎 Direct3D 表面一定是在建立 (或重新建立) **Direct3D11CaptureFramePool** 時指定的大小。 如果內容大於畫面，內容會被裁剪到畫面的大小。 如果內容小於畫面，則畫面的其餘部分會包含未定義的資料。 建議應用程式使用 **ContentSize** 屬性為 **Direct3D11CaptureFrame** 複製子矩形，以避免顯示未定義的內容。
 
@@ -688,6 +688,6 @@ End Class
 
 如果您想要錄製應用程式的影片，可以更輕鬆地使用[AppRecording 命名空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 這是桌面延伸模組 SDK 的一部分，因此它只適用于 desktop，而且您需要從專案新增對它的參考。 如需詳細資訊，請參閱[裝置系列總覽](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [Windows. Graphics. Capture 命名空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

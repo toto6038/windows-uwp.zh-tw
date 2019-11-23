@@ -32,7 +32,7 @@ ms.locfileid: "71339893"
 -   零持續時間動畫
 -   [  **Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 屬性的動畫
 -   [  **UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 屬性的動畫
--   以 [**SolidColorBrush.Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 子屬性為目標時，[**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 類型屬性的動畫
+-   以 [**SolidColorBrush.Color**](/uwp/api/Windows.UI.Xaml.Media.Brush) 子屬性為目標時，[**Brush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 類型屬性的動畫
 -   以這些傳回值類型的子屬性為目標時，下列 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 屬性的動畫：
 
     -   [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)
@@ -54,7 +54,7 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 讓 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 產生動畫同樣也不是很好的做法。 除了效能變差，還會造成播放的視訊內容產生裂紋或其他殘影。
 
-> **請注意**   本文中針對**MediaPlayerElement**的建議也適用于[**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 **MediaPlayerElement** 只能在 Windows 10 版本 1607 取得，因此如果您是針對先前版本的 Windows 建立 App，則需要使用 **MediaElement**。
+> **請注意**   本文中適用于**MediaPlayerElement**的建議也適用于[**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 **MediaPlayerElement** 只能在 Windows 10 版本 1607 取得，因此如果您是針對先前版本的 Windows 建立 App，則需要使用 **MediaElement**。
 
 ### <a name="use-infinite-animations-sparingly"></a>謹慎使用無限動畫
 
@@ -85,7 +85,7 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 ### <a name="display-full-screen-video-playback-when-possible"></a>盡可能顯示全螢幕視訊播放
 
-在 UWP App 中，一律在 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 上使用 [**IsFullWindow**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.isfullwindow) 屬性，以啟用和停用完整視窗轉譯。 這可確保在媒體播放時會使用系統層級最佳化。
+在 UWP App 中，一律在 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.isfullwindow) 上使用 [**IsFullWindow**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 屬性，以啟用和停用完整視窗轉譯。 這可確保在媒體播放時會使用系統層級最佳化。
 
 當視訊內容是唯一要轉譯的內容時，XAML 架構可以最佳化顯示的視訊內容，因此可以使用較少的電力，並產生較高的畫面播放速率。 最有效的媒體播放，是將 **MediaPlayerElement** 物件的大小設為畫面的寬度和長度，並且不顯示其他 XAML 元素。
 
@@ -117,7 +117,7 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 
 ### <a name="delay-setting-the-source-for-a-mediaplayerelement"></a>延遲設定 MediaPlayerElement 的來源
 
-媒體引擎是耗費大量資源的物件，XAML 架構會盡可能延遲載入 dll 和建立大型物件。 在透過 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定來源後，[**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 會被強制執行這個工作。 在使用者真的準備好播放媒體時這樣設定，就能盡量延遲與 **MediaElement** 關聯的大多數資源消耗。
+媒體引擎是耗費大量資源的物件，XAML 架構會盡可能延遲載入 dll 和建立大型物件。 在透過 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 屬性設定來源後，[**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 會被強制執行這個工作。 在使用者真的準備好播放媒體時這樣設定，就能盡量延遲與 **MediaElement** 關聯的大多數資源消耗。
 
 ### <a name="set-mediaplayerelementpostersource"></a>設定 MediaPlayerElement.PosterSource
 
@@ -127,7 +127,7 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 
 為了使媒體平台可以立即回應，清除永遠是一項困難的工作。 我們通常是透過變更滑桿的值來進行這項工作。 下列是一些如何讓這項工作更有效率的提示：
 
--   根據會查詢 [**MediaPlayerElement.MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 上 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position) 的計時器來更新 [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 的值。 請務必為您的計時器使用合理的更新頻率。 在播放期間，**Position** 只會每 250 毫秒更新一次。
+-   根據會查詢 [**MediaPlayerElement.MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 上 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position) 的計時器來更新 [**Slider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 的值。 請務必為您的計時器使用合理的更新頻率。 在播放期間，**Position** 只會每 250 毫秒更新一次。
 -   滑桿上的步階頻率大小必須隨視訊長度調整。
 -   訂閱滑桿上的 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) 以及 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件，以在使用者拖曳滑桿的指標時將 [**PlaybackRate**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.playbackrate) 屬性設定為 0。
 -   在 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件處理常式中，將媒體位置手動設定為滑桿位置值，以在清除時獲得最佳貼齊效果。
@@ -185,12 +185,12 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 
 如果您沒有明確設定解碼大小，XAML 會根據內含頁面的初始配置，將影像解碼成要在螢幕上顯示的確切大小，盡可能嘗試節省記憶體。 建議您盡可能以這種方式撰寫您的應用程式以便使用這項功能。 如果符合下列任何一個條件，則會停用此功能。
 
--   使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 或 [**UriSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.urisource) 設定內容之後，[**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 連接到動態的 XAML 樹狀結構。
+-   使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 或 [**UriSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 設定內容之後，[**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.urisource) 連接到動態的 XAML 樹狀結構。
 -   影像使用同步解碼 (例如 [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource)) 來解碼。
 -   影像在主機影像元素或筆刷或任何父元素上透過將 [[**不透明度**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)] 設定為 0，或將 [[**可見度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility)] 設定為 [**收合**] 而隱藏。
--   影像控制項或筆刷使用設定為 **None** 的 [**Stretch**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch)。
+-   影像控制項或筆刷使用設定為 [None**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch)Stretch。
 -   影像用來做為 [**NineGrid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.ninegrid)。
--   `CacheMode="BitmapCache"` 是在 image 元素或任何父項目上設定。
+-   `CacheMode="BitmapCache"` 是在 image 元素或任何父元素上設定。
 -   影像筆刷是非矩形 (例如套用至圖形或文字時)。
 
 在上述案例中，設定明確的解碼大小是節省記憶體的唯一方法。
@@ -250,7 +250,7 @@ myImage.Source = bitmapImage;
 XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容解碼到硬體記憶體中的表層，而不需要軟體記憶體中的中繼層。 這樣可以減少記憶體的尖峰使用量與轉譯延遲。 如果符合下列任何一個條件，則會停用此功能。
 
 -   影像用來做為 [**NineGrid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.ninegrid)。
--   `CacheMode="BitmapCache"` 是在 image 元素或任何父項目上設定。
+-   `CacheMode="BitmapCache"` 是在 image 元素或任何父元素上設定。
 -   影像筆刷是非矩形 (例如套用至圖形或文字時)。
 
 ### <a name="softwarebitmapsource"></a>SoftwareBitmapSource

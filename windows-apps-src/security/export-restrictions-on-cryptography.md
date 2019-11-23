@@ -21,7 +21,7 @@ ms.locfileid: "74258941"
 
 美國商務部的工業安全局規定使用特定加密類型的技術出口事項。 Microsoft Store 列出的所有應用程式必須遵守這些法令規定，因為這些應用程式檔案可能會儲存在美國。 即使 app 開發人員從其他國家/地區上傳並在美國以外的地方發行的 app 也必須遵守這些法規。 因此，將 app 送出到 Microsoft Store 時，所有 app 開發人員必須確定他們的 app 中沒有包含這些法規管制使用的任何技術。
 
-> **Note**  The information provided here provides some guidance, but it is your responsibility as the app developer who is publishing apps in the Microsoft Store to make sure that your app complies with all applicable laws and regulations.
+> **請注意**  此處提供的資訊會提供一些指引，但您會負責在 Microsoft Store 中發佈應用程式的應用程式開發人員，確保您的應用程式符合所有適用的法律和規定。
 
  
 
@@ -33,7 +33,7 @@ ms.locfileid: "74258941"
 
 首先，請判斷您的 app 是否是使用受出口管制條例規範的密碼編譯類型。 問題包含以下清單中顯示的範例；但請記住，這份清單未詳列每種可能的密碼編譯應用方式。
 
-> **Important**  Consider not only the code you wrote for your app, but also all the software libraries, utilities and operating system components that your app includes or links to.
+> **重要**  請考慮您的應用程式所撰寫的程式碼，以及應用程式所包含或連結的所有軟體程式庫、公用程式和作業系統元件。
 
 -   數位簽章的任何用途，例如驗證或完整性檢查
 -   加密您的應用程式使用或存取的任何資料或檔案
@@ -51,7 +51,7 @@ ms.locfileid: "74258941"
 
 -   密碼加密
 -   複製保護
--   Authentication
+-   驗證
 -   數位版權管理
 -   使用數位簽章
 

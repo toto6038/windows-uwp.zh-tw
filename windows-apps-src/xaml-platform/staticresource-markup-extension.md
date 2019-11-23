@@ -4,7 +4,7 @@ title: StaticResource 標記延伸
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 07d8e6c180f332e75852c6a6627004f0306e26d4
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -26,9 +26,9 @@ ms.locfileid: "74259849"
 
 ## <a name="xaml-values"></a>XAML 值
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
-| key | 要求的資源的索引鍵。 這個索引鍵最初是由 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 所指派。 資源索引鍵可以是定義在 XamlName 文法中的任何字串。 |
+| 索引鍵 | 要求的資源的索引鍵。 這個索引鍵最初是由 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 所指派。 資源索引鍵可以是定義在 XamlName 文法中的任何字串。 |
 
 ## <a name="remarks"></a>備註
 
@@ -38,7 +38,7 @@ ms.locfileid: "74259849"
 
 將 **StaticResource** 解析成資源字典中的項目時所依據的規則，並不屬於本主題說明的範圍。 那些規則取決於參考和資源是否同時存在於範本中，以及是否使用合併的資源字典等等。 如需有關如何定義資源及正確使用 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) (包括範例程式碼) 的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
 
-**Important**   A **StaticResource** must not attempt to make a forward reference to a resource that is defined lexically further within the XAML file. 不支援嘗試這樣的做法。 即使向前參考並未失敗，但是嘗試這樣做會導致效能降低。 為獲得最佳結果，請調整您資源字典的組合以避免向前參考。
+**重要**   **StaticResource**不得嘗試對 XAML 檔案中進一步定義的資源進行向前參考。 不支援嘗試這樣的做法。 即使向前參考並未失敗，但是嘗試這樣做會導致效能降低。 為獲得最佳結果，請調整您資源字典的組合以避免向前參考。
 
 嘗試將 **StaticResource** 指定給無法解析的索引鍵，會導致在執行階段擲回 XAML 剖析例外狀況。 設計工具也可能發出警告或錯誤。
 
@@ -46,7 +46,7 @@ ms.locfileid: "74259849"
 
 [{ThemeResource} 標記延伸](themeresource-markup-extension.md)是類似的標記延伸，會參考其他位置中的具名資源。 差異在於 {ThemeResource} 標記延伸能夠根據作用中的系統佈景主題傳回不同的資源。 如需詳細資訊，請參閱 [{ThemeResource} 標記延伸](themeresource-markup-extension.md)。
 
-**StaticResource** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 All markup extensions in XAML use the "\{" and "\}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
+**StaticResource** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 中的所有標記延伸都會在其屬性語法中使用「\{」和「\}」字元，這是 XAML 處理器辨識出標記延伸必須處理屬性的慣例。
 
 ### <a name="an-example-staticresource-usage"></a>{StaticResource} 用法範例
 
@@ -75,7 +75,7 @@ ms.locfileid: "74259849"
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>**{StaticResource}** 標記延伸的設計階段工具支援
 
-Microsoft Visual Studio 2013 can include possible key values in the Microsoft IntelliSense dropdowns when you use the **{StaticResource}** markup extension in a XAML page. 例如，一旦輸入 "{StaticResource" 之後，任何來自目前查閱範圍的資源索引鍵就會立即顯示於 IntelliSense 下拉式清單中。 除了您在頁面層級 ([**FrameworkElement.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources)) 和 app 層級 ([**Application.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resources)) 上擁有的典型資源之外，您也會看到 [XAML 佈景主題資源](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)，以及專案正在使用之任何延伸的資源。
+當您在 XAML 頁面中使用 **{StaticResource}** 標記延伸模組時，Microsoft Visual Studio 2013 可能會在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值。 例如，一旦輸入 "{StaticResource" 之後，任何來自目前查閱範圍的資源索引鍵就會立即顯示於 IntelliSense 下拉式清單中。 除了您在頁面層級 ([**FrameworkElement.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources)) 和 app 層級 ([**Application.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resources)) 上擁有的典型資源之外，您也會看到 [XAML 佈景主題資源](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)，以及專案正在使用之任何延伸的資源。
 
 一旦資源索引鍵存在於任何 **{StaticResource}** 用法中，**移至定義** \(F12\) 功能就可以立即解析該資源，並為您顯示其定義所在的目錄。 針對佈景主題資源，這會在設計階段移至 generic.xaml。
 
@@ -84,5 +84,5 @@ Microsoft Visual Studio 2013 can include possible key values in the Microsoft I
 * [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
 * [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)
 * [x:Key 屬性](x-key-attribute.md) \(部分機器翻譯\)
-* [{ThemeResource} markup extension](themeresource-markup-extension.md)
+* [{ThemeResource} 標記延伸](themeresource-markup-extension.md)
 

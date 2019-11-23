@@ -53,7 +53,7 @@ ms.locfileid: "72282517"
 ### <a name="span-idconverting_from_a_lower_range_representation_to_a_higher_range_representationspanspan-idconverting_from_a_lower_range_representation_to_a_higher_range_representationspanspan-idconverting_from_a_lower_range_representation_to_a_higher_range_representationspanconverting-from-a-lower-range-representation-to-a-higher-range-representation"></a><span id="Converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="CONVERTING_FROM_A_LOWER_RANGE_REPRESENTATION_TO_A_HIGHER_RANGE_REPRESENTATION"></span>從較低範圍的標記法轉換為較高範圍的標記法
 
 -   採用較低範圍格式的 NaN 將轉換成採用較高範圍格式的 NaN 表示法 (如果較高範圍格式中有提供)。 如果較高範圍格式沒有 NaN 表示法，它將會轉換成 0。
--   採用較低範圍格式的 INF 將轉換成採用較高範圍格式的 INF 表示法 (如果較高範圍格式中有提供)。 如果較高的格式沒有 INF 標記法，則會將它轉換成可顯示的最大值（以該格式表示的最大 @ no__t-0FLOAT）。 正負號將保留，如果目標格式中提供。
+-   採用較低範圍格式的 INF 將轉換成採用較高範圍格式的 INF 表示法 (如果較高範圍格式中有提供)。 如果較高的格式沒有 INF 標記法，則會將它轉換成可顯示的最大值（最大\_以該格式表示的浮點數）。 正負號將保留，如果目標格式中提供。
 -   採用較低範圍格式的 Denorm 將轉換成採用較高範圍格式的標準化表示法 (如有可能)，或是轉換成採用較高範圍格式的 Denorm 表示法 (如果 Denorm 表示法存在)。 若較高範圍格式沒有 Denorm 表示法，則這些都會失敗，且它將會轉換成 0。 正負號將保留，如果目標格式中提供。 請注意，32 位元浮點數計算格式時不會採用 Denorm 表示法 (因為 32 位元浮點數運算中，Denorm 會清除為保留正負號的 0)。
 
 ## <a name="span-idinteger_conversionspanspan-idinteger_conversionspanspan-idinteger_conversionspaninteger-conversion"></a><span id="Integer_Conversion"></span><span id="integer_conversion"></span><span id="INTEGER_CONVERSION"></span>整數轉換
@@ -170,7 +170,7 @@ ms.locfileid: "72282517"
 <tr class="odd">
 <td align="left">SINT</td>
 <td align="left">UINT 與更多位元</td>
-<td align="left"><p>若要使用更多位從聖馬丁轉換成 UINT：如果是負數，此值會壓制為0。 否則數字會複製到目標格式的 LSB，且其他 MSB 會以 0 填入。</p></td>
+<td align="left"><p>若要從 SINT 轉換成 UINT 與更多位元：如果是負數，值會限制為 0。 否則數字會複製到目標格式的 LSB，且其他 MSB 會以 0 填入。</p></td>
 </tr>
 <tr class="even">
 <td align="left">UINT</td>

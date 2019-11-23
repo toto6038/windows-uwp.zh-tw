@@ -1,6 +1,6 @@
 ---
-Description: 如果希望應用程式支援不同的顯示語言，而且您的程式碼、XAML 標記或應用程式套件資訊清單也含有字串常值時，請將這些字串移入資源檔案 (.resw)。 您可以接著針對應用程式支援的每一種語言建立該資源檔案的翻譯複本。
-title: 當地語系化您的 UI 及應用程式套件資訊清單中的字串
+Description: 如果希望 App 支援不同的顯示語言，而且您的程式碼、XAML 標記或應用程式套件資訊清單也含有字串常值時，請將這些字串移入資源檔案 (.resw)。 您可以接著針對 App 支援的每一種語言建立該資源檔案的翻譯複本。
+title: 當地語系化您 UI 及應用程式封裝資訊清單中的字串
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
 template: detail.hbs
@@ -15,27 +15,27 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74254689"
 ---
-# <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>當地語系化您的 UI 及應用程式套件資訊清單中的字串
+# <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>當地語系化您 UI 及應用程式封裝資訊清單中的字串
 
-如需有關將您的應用程式當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
+如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
 
-如果希望應用程式支援不同的顯示語言，而且您的程式碼、XAML 標記或應用程式套件資訊清單也含有字串常值時，請將這些字串移入資源檔案 (.resw)。 您可以接著針對應用程式支援的每一種語言建立該資源檔案的翻譯複本。
+如果希望 App 支援不同的顯示語言，而且您的程式碼、XAML 標記或應用程式套件資訊清單也含有字串常值時，請將這些字串移入資源檔案 (.resw)。 您可以接著針對 App 支援的每一種語言建立該資源檔案的翻譯複本。
 
 硬式編碼的字串常值可以出現在命令式程式碼或 XAML 標記中，例如為 **TextBlock** 的 **Text** 屬性。 它們也可以出現在您的應用程式套件資訊清單來源檔案 (`Package.appxmanifest` 檔案) 中，例如做為 Visual Studio 資訊清單設計工具的 \[應用程式\] 索引標籤上 \[顯示名稱\] 的值。 將這些字串移入資源檔案 (.resw)，並使用資源識別碼的參照取代您的 App 和資訊清單中的硬式編碼字串常值。
 
 不像影像資源，影像資源檔案中只包含一個影像資源，字串資源檔案中包含*多個*字串資源。 字串資源檔案是資源檔案 (.resw)，並且您通常是在專案的 \Strings 資料夾中建立這種資源檔案。 如需有關如何在資源檔案 (.resw) 的名稱中使用限定詞的背景資訊，請參閱[針對語言、縮放比例及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)。
 
-## <a name="store-strings-in-a-resources-file"></a>Store strings in a resources file
+## <a name="store-strings-in-a-resources-file"></a>將字串儲存在資源檔中
 
 1. 設定您的 App 預設語言。
     1. 在 Visual Studio 中開啟您的解決方案，然後開啟 `Package.appxmanifest`。
     2. 在 \[應用程式\] 索引標籤上，確認預設語言有適當地設定 (例如，「en」或「en-US」)。 剩餘的步驟會假設您已設定預設語言為「en-US」。
-    <br>**Note** At a minimum, you need to provide string resources localized for this default language. 這些是在找不到使用者慣用語言或顯示語言設定的較佳相符項，將會載入的資源。
+    <br>**請注意**，您至少必須為此預設語言提供當地語系化的字串資源，才能 。 這些是在找不到使用者慣用語言或顯示語言設定的較佳相符項，將會載入的資源。
 2. 建立預設語言的資源檔案 (.resw)。
     1. 在您的專案節點下，建立新的資料夾，並將其命名為「Strings」。
     2. 在 `Strings` 下，建立新的子資料夾，並命名為「en-US」。
     3. 在 `en-US` 下，建立新的資源檔案 (.resw)，並確認其命名為「Resources.resw」。
-    <br>**Note** If you have .NET Resources Files (.resx) that you want to port, see [Porting XAML and UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
+    <br>**請注意** 如果您有想要移植的 .Net 資源檔（.resx），請參閱[移植 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
 3. 開啟 `Resources.resw`，並新增這些字串資源。
 
     `Strings/en-US/Resources.resw`
@@ -48,7 +48,7 @@ ms.locfileid: "74254689"
 
     資源識別碼不區分大小寫，在每個資源檔案中都必須是唯一的。 請務必使用有意義的資源識別碼，將其他內容提供給翻譯工具。 請勿在傳送字串資源進行翻譯之後變更資源識別碼。 當地語系化團隊會使用資源識別碼，來追蹤資源中的新增、刪除及更新。 資源識別碼中的變更 (又稱為「資源識別碼轉換」) 需要重新翻譯字串，因為會出現像是字串已刪除或加入其他字串的情況。
 
-## <a name="refer-to-a-string-resource-identifier-from-xaml"></a>Refer to a string resource identifier from XAML
+## <a name="refer-to-a-string-resource-identifier-from-xaml"></a>從 XAML 參考字串資源識別碼
 
 您可以使用 [x: Uid 指示詞](../xaml-platform/x-uid-directive.md)關聯標記中的控制項或其他項目與字串資源識別碼。
 
@@ -56,13 +56,13 @@ ms.locfileid: "74254689"
 <TextBlock x:Uid="Greeting"/>
 ```
 
-在執行階段，會載入 `\Strings\en-US\Resources.resw`(因為現在這是專案中唯一的資源檔案)。 **TextBlock** 上的 **X: Uid**指示詞會造成發生查閱，以尋找包含字串資源識別碼「Greeting」的 `Resources.resw` 內的屬性識別碼。 會找到「Greeting.Text」和「Greeting.Width」屬性識別碼，並將其值套用到 **TextBlock**，覆寫標記中在本機設定的任何值。 「Greeting.Foreground」值也會套用，如果您已經新增了此值。 但只會使用屬性識別碼來設定 XAML 標記項目上的屬性，所以在此 TextBlock 上設定 **x: Uid** 為「Farewell」不會有任何影響。 `Resources.resw` *does* contain the string resource identifier "Farewell", but it contains no property identifiers for it.
+在執行階段，會載入 `\Strings\en-US\Resources.resw`(因為現在這是專案中唯一的資源檔案)。 **TextBlock** 上的 **X: Uid**指示詞會造成發生查閱，以尋找包含字串資源識別碼「Greeting」的 `Resources.resw` 內的屬性識別碼。 會找到「Greeting.Text」和「Greeting.Width」屬性識別碼，並將其值套用到 **TextBlock**，覆寫標記中在本機設定的任何值。 「Greeting.Foreground」值也會套用，如果您已經新增了此值。 但只會使用屬性識別碼來設定 XAML 標記項目上的屬性，所以在此 TextBlock 上設定 **x: Uid** 為「Farewell」不會有任何影響。 `Resources.resw`*確實*包含字串資源識別碼 "離職"，但它不包含它的任何屬性識別碼。
 
-指派字串資源識別碼給 XAML 項目時，請確定該識別碼的*所有*屬性識別碼適用於 XAML 項目。 例如，如果您在 **TextBlock** 上設定 `x:Uid="Greeting"`，則「Greeting.Text」將因為 **TextBlock** 類型有 Text 屬性而進行解析。 但是如果您在 **Button** 上設定 `x:Uid="Greeting"`，則「Greeting.Text」將會因為**Button** 類型沒有 Text 屬性造成執行階段錯誤。 該案例的一個解決方案是撰寫命名為「ButtonGreeting.Content」的屬性識別碼，並在 **Button** 上設定 `x:Uid="ButtonGreeting"`。
+指派字串資源識別碼給 XAML 項目時，請確定該識別碼的*所有*屬性識別碼適用於 XAML 項目。 例如，如果您在 `x:Uid="Greeting"`TextBlock**上設定**，則「Greeting.Text」將因為 **TextBlock** 類型有 Text 屬性而進行解析。 但是如果您在 `x:Uid="Greeting"`Button**上設定**，則「Greeting.Text」將會因為**Button** 類型沒有 Text 屬性造成執行階段錯誤。 該案例的一個解決方案是撰寫命名為「ButtonGreeting.Content」的屬性識別碼，並在 `x:Uid="ButtonGreeting"`Button**上設定**。
 
 不從資源檔案設定 **Width**，您可能會想要允許控制項動態依照內容調整大小。
 
-**Note** For [attached properties](../xaml-platform/attached-properties-overview.md), you need a special syntax in the Name column of a .resw file. 例如，若要設定「Greeting」識別碼的 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 附加屬性的值，這就是您要在 \[名稱\] 欄位中輸入的內容。
+**請注意**，針對[附加屬性](../xaml-platform/attached-properties-overview.md) ，您在 .Resw 檔案的 [名稱] 欄中需要特殊語法。 例如，若要設定「Greeting」識別碼的 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 附加屬性的值，這就是您要在 \[名稱\] 欄位中輸入的內容。
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -73,7 +73,7 @@ Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 您可以明確地載入依據簡單字串資源識別碼的字串資源。
 
 > [!NOTE]
-> 如果您已呼叫任何*可能*會在背景/背景工作執行緒中執行的 **GetForCurrentView** 方法，請使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 測試來守護這個呼叫。 從背景/背景工作執行緒呼叫 **GetForCurrentView** 會造成例外狀況「無法在沒有 CoreWindow 的執行緒上建立 *&lt;typename&gt;。* 」
+> 如果您已呼叫任何**可能**會在背景/背景工作執行緒中執行的 *GetForCurrentView* 方法，請使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 測試來守護這個呼叫。 從背景/背景工作執行緒呼叫 **GetForCurrentView** 會造成例外狀況「無法在沒有 CoreWindow 的執行緒上建立 *&lt;typename&gt;。* 」
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
@@ -92,13 +92,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 您可以使用類別庫 (通用 Windows) 或 [Windows 執行階段媒體櫃 (通用 Windows)](../winrt-components/index.md) 專案中的此相同程式碼。 在執行階段，會載入裝載媒體櫃的 App 的資源。 建議從裝載媒體櫃的 App 載入資源，因為 App 可能有較大程度當地語系化。 如果媒體櫃確實需要提供資源，則它應該提供其裝載的 App 選項以取代那些做為輸入的資源。
 
-If a resource name is segmented (it contains "." characters), then replace dots with forward slash ("/") characters in the resource name. Property identifiers, for example, contain dots; so you'd need to do this substition in order to load one of those from code.
+如果資源名稱是分段的（它包含 "." 字元），請在資源名稱中以正斜線（"/"）字元取代句點。 例如，屬性識別碼包含點;因此，您必須執行此 substition，才能從程式碼載入其中一個。
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump your app's PRI file. Each resource's `uri` is shown in the dumped file.
+如果不確定，您可以使用[MakePri](makepri-exe-command-options.md)傾印應用程式的 PRI 檔案。 傾印檔案中會顯示每個資源的 `uri`。
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -106,7 +106,7 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 
 ## <a name="refer-to-a-string-resource-identifier-from-your-app-package-manifest"></a>請參閱應用程式套件資訊清單的字串資源識別碼
 
-1. Open your app package manifest source file (the `Package.appxmanifest` file), in which by default your app's `Display name` is expressed as a string literal.
+1. 開啟您的應用程式套件資訊清單來源檔案（`Package.appxmanifest` 檔案），在此檔案中，應用程式的 `Display name` 預設會表示為字串常值。
 
    ![新增資源, 英文](images/display-name-before.png)
 
@@ -122,8 +122,8 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 
 1. 為其他語言製作一份資源檔案 (.resw) 的複本。
     1. 在「Strings」下，對於德文 (德國) 建立新的子資料夾並命名為「de-DE」。
-   <br>**Note** For the folder name, you can use any [BCP-47 language tag](https://tools.ietf.org/html/bcp47). 如需語言限定詞的詳細資訊和常見語言標記的清單，請參閱[針對語言、縮放比例及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)。
-   2. 在 `Strings/de-DE` 資料夾中製作一份 `Strings/en-US/Resources.resw` 的複本。
+   <br>**請注意**， 的資料夾名稱中，您可以使用任何[BCP-47 語言標記](https://tools.ietf.org/html/bcp47)。 如需語言限定詞的詳細資訊和常見語言標記的清單，請參閱[針對語言、縮放比例及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)。
+   2. 在 `Strings/en-US/Resources.resw` 資料夾中製作一份 `Strings/de-DE` 的複本。
 2. 翻譯字串。
     1. 開啟 `Strings/de-DE/Resources.resw` 並翻譯 \[值\] 欄位中的值。 您不需要翻譯註解。
 
@@ -137,9 +137,9 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 
 ![新增資源，法文](images/addresource-fr-fr.png)
 
-## <a name="test-your-app"></a>測試您的 App
+## <a name="test-your-app"></a>測試您的應用程式
 
-針對您的預設顯示語言來測試 App。 您可以接著在 **\[設定\]**  >  **\[時間與語言\]**  >  **\[地區與語言\]**  >  **\[語言\]** 變更顯示語言，並重新測試您的 App。 查看 UI 和命令介面 (例如您的標題列&mdash;這是您的顯示名稱&mdash;，以及您的磚上的簡短名稱) 中的字串。
+針對您的預設顯示語言來測試應用程式。 您可以接著在 **\[設定\]**  >  **\[時間與語言\]**  >  **\[地區與語言\]**  >  **\[語言\]** 變更顯示語言，並重新測試您的 App。 查看 UI 和命令介面 (例如您的標題列&mdash;這是您的顯示名稱&mdash;，以及您的磚上的簡短名稱) 中的字串。
 
 **注意** 如果找到符合顯示語言設定的資料夾名稱，則該資料夾中的資源檔案已載入。 否則，會發生遞補，以您的 App 預設語言的資源結束。
 
@@ -155,12 +155,12 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
-You only need to add `/<resources-file-name>/` before the string resource identifier for Resources Files *other than* `Resources.resw`. 這是因為「Resources.resw」是預設檔案名稱，因此您若略過檔案的名稱 (如我們在本主題中的稍早範例) 時做此假設。
+您只需要*在 `Resources.resw`以外*的資源檔的字串資源識別碼之前加入 `/<resources-file-name>/`。 這是因為「Resources.resw」是預設檔案名稱，因此您若略過檔案的名稱 (如我們在本主題中的稍早範例) 時做此假設。
 
 以下程式碼範例假設 `ErrorMessages.resw` 包含的資源其名稱為「MismatchedPasswords」，其值描述錯誤。
 
 > [!NOTE]
-> 如果您已呼叫任何*可能*會在背景/背景工作執行緒中執行的 **GetForCurrentView** 方法，請使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 測試來守護這個呼叫。 從背景/背景工作執行緒呼叫 **GetForCurrentView** 會造成例外狀況「無法在沒有 CoreWindow 的執行緒上建立 *&lt;typename&gt;。* 」
+> 如果您已呼叫任何**可能**會在背景/背景工作執行緒中執行的 *GetForCurrentView* 方法，請使用 `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` 測試來守護這個呼叫。 從背景/背景工作執行緒呼叫 **GetForCurrentView** 會造成例外狀況「無法在沒有 CoreWindow 的執行緒上建立 *&lt;typename&gt;。* 」
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ErrorMessages");
@@ -179,13 +179,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 如果您已將您的「AppDisplayName」資源移出 `Resources.resw` 到 `ManifestResources.resw`，然後到您要變更 `ms-resource:AppDisplayName` 為 `ms-resource:/ManifestResources/AppDisplayName` 的應用程式套件資訊清單中。
 
-If a resource file name is segmented (it contains "." characters), then leave the dots in the name when you reference it. **Don't** replace dots with forward slash ("/") characters, like you would for a resource name.
+如果資源檔名稱是分段的（它包含 "." 個字元），則當您參考時，請保留名稱中的點。 **不要**以正斜線（"/"）字元取代點，就像您的資源名稱一樣。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump your app's PRI file. Each resource's `uri` is shown in the dumped file.
+如果不確定，您可以使用[MakePri](makepri-exe-command-options.md)傾印應用程式的 PRI 檔案。 傾印檔案中會顯示每個資源的 `uri`。
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -228,7 +228,7 @@ Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "de-DE";
 
 ## <a name="updating-strings-in-response-to-qualifier-value-change-events"></a>更新字串以回應限定詞值變更事件
 
-您的執行中 App 可以回應預設 **ResourceContext** 中受影響限定詞值的系統設定變更。 任何這些系統設定都會叫用 [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 上的 [**MapChanged**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live) 事件。
+您的執行中 App 可以回應預設 **ResourceContext** 中受影響限定詞值的系統設定變更。 任何這些系統設定都會叫用 [**ResourceContext.QualifierValues**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live) 上的 [**MapChanged**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 事件。
 
 在回應這個事件上，您可以從預設 **ResourceContext** 重新載入字串。
 
@@ -264,24 +264,24 @@ private void RefreshUIText()
 }
 ```
 
-## <a name="load-strings-from-a-class-library-or-a-windows-runtime-library"></a>Load strings from a Class Library or a Windows Runtime Library
+## <a name="load-strings-from-a-class-library-or-a-windows-runtime-library"></a>從類別庫或 Windows 執行階段程式庫載入字串
 
 參照之類別庫 (通用 Windows) 或[Windows 執行階段媒體櫃 (通用 Windows)](../winrt-components/index.md) 的字串資源，通常加入到在建置程序期間包含它們的套件的子資料夾。 這類字串的資源識別碼通常採用表單 *LibraryName/ResourcesFileName/ResourceIdentifier*。
 
-類別庫可以為它自己的資源取得 ResourceLoader。 For example, the following code illustrates how either a library or an app that references it can get a ResourceLoader for the library's string resources.
+類別庫可以為它自己的資源取得 ResourceLoader。 例如，下列程式碼會說明程式庫或參考它的應用程式如何取得程式庫字串資源的 ResourceLoader。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-For a Windows Runtime Library (Universal Windows), if the default namespace is segmented (it contains "." characters), then use dots in the resource map name.
+針對 Windows 執行階段程式庫（通用 Windows），如果預設命名空間是分段的（它包含 "." 字元），請在資源對應名稱中使用點。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-You don't need to do that for a Class Library (Universal Windows). If in doubt, you can specify [MakePri.exe command line options](makepri-exe-command-options.md) to dump your component or library's PRI file. Each resource's `uri` is shown in the dumped file.
+您不需要為類別庫（通用 Windows）執行此動作。 如果不確定，您可以指定[MakePri](makepri-exe-command-options.md)來傾印元件或程式庫的 PRI 檔案。 傾印檔案中會顯示每個資源的 `uri`。
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
@@ -289,44 +289,44 @@ You don't need to do that for a Class Library (Universal Windows). If in doubt, 
 
 ## <a name="loading-strings-from-other-packages"></a>從其他套件載入字串
 
-The resources for an app package are managed and accessed through the package's own top-level [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) that's accessible from the current [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). Within each package, various components can have their own ResourceMap subtrees, which you can access via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+應用程式套件的資源是透過可從目前 [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)存取的套件本身頂層 [**windows.applicationmodel.resources.core.resourcemap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)來進行管理和存取。 在每個套件內，各種元件都可以有自己的 Windows.applicationmodel.resources.core.resourcemap 子樹，您可以透過[**windows.applicationmodel.resources.core.resourcemap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)來存取它們。
 
 架構套件可以存取自己具有絕對資源識別碼 URI 的資源。 另請參閱 [URI 配置](uri-schemes.md)。
 
-## <a name="loading-strings-in-non-packaged-applications"></a>Loading strings in non-packaged applications
+## <a name="loading-strings-in-non-packaged-applications"></a>在非封裝應用程式中載入字串
 
-As of Windows Version 1903 (May 2019 Update), non-packaged applications can also leverage the Resource Management System.
+從 Windows 1903 版（可能是2019更新），非封裝的應用程式也可以利用資源管理系統。
 
-Just create your UWP user controls/libraries and [store any strings in a resources file](#store-strings-in-a-resources-file). You can then [refer to a string resource identifier from XAML](#refer-to-a-string-resource-identifier-from-xaml), [refer to a string resource identifier from code](#refer-to-a-string-resource-identifier-from-code), or [load strings from a Class Library or a Windows Runtime Library](#load-strings-from-a-class-library-or-a-windows-runtime-library).
+只需建立 UWP 使用者控制項/程式庫，並[將任何字串儲存在資源檔中](#store-strings-in-a-resources-file)。 接著，您可以[從 XAML 參考字串資源識別碼](#refer-to-a-string-resource-identifier-from-xaml)、[從程式碼中參考字串資源識別碼](#refer-to-a-string-resource-identifier-from-code)，或[從類別庫或 Windows 執行階段程式庫載入字串](#load-strings-from-a-class-library-or-a-windows-runtime-library)。
 
-To use resources in non-packaged applications, you should do a few things:
+若要在非封裝的應用程式中使用資源，您應該執行幾項工作：
 
-1. Use [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) when resolving resources from code as there is no *current view* in non-packaged scenarios. The following exception occurs if you call [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in non-packaged scenarios: *Resource Contexts may not be created on threads that do not have a CoreWindow.*
-1. Use [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) to manually generate your app's resources.pri file.
+1. 當您從程式碼解析資源時，請使用[GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) ，而不是[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) ，因為非封裝案例中沒有*目前的觀點*。 如果您在非封裝的案例中呼叫[GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) ，就會發生下列例外狀況：*資源內容可能不會在沒有 CoreWindow 的執行緒上建立。*
+1. 使用[MakePri](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri)手動產生應用程式的資源 pri 檔案。
     - 執行 `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
-    - The &lt;PRICONFIG&gt; must omit the "&lt;packaging&gt;" section so that all resources are bundled in a single resources.pri file. If using the default [MakePri.exe configuration file](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), you need to delete the "&lt;packaging&gt;" section manually after it is created.
-    - The &lt;PRICONFIG&gt; must contain all relevant indexers required to merge all resources in your project into a single resources.pri file. The default [MakePri.exe configuration file](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) includes all indexers.
-    - If you don’t use the default config, make sure the PRI indexer is enabled (review the default config for how to do this) to merge PRIs found from UWP project references, NuGet references, and so on, that are located within the project root.
+    - &lt;PRICONFIG.DEFAULT.XML&gt; 必須省略「&lt;封裝&gt;」區段，以便將所有資源配套到單一資源 pri 檔案中。 如果使用[createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)所建立的預設[MakePri 設定檔](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)，您必須在建立之後，手動刪除「&lt;封裝&gt;」一節。
+    - &lt;PRICONFIG.DEFAULT.XML&gt; 必須包含將專案中的所有資源合併至單一資源 pri 檔案所需的所有相關索引子。 [Createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)所建立的預設[MakePri .exe 設定檔](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration)包含所有索引子。
+    - 如果您不使用預設的設定，請確定已啟用 PRI 索引子（請參閱如何執行此動作的預設設定），以合併位於專案根目錄內的 UWP 專案參考、NuGet 參考等的 PRIs。
         > [!NOTE]
-        > By omitting `/IndexName`, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set to *Application*, which the runtime understands for non-packaged apps (this removes the previous hard dependency on package ID). When specifying resource URIs, ms-resource:/// references that omit the root namespace infer *Application* as the root namespace for non-packaged apps (or you can specify *Application* explicitly as in ms-resource://Application/).
-1. Copy the PRI file to the build output directory of the .exe
-1. Run the .exe 
+        > 藉由省略 `/IndexName`，並讓專案不具有應用程式資訊清單，PRI 檔案的 IndexName/根命名空間會自動設定為*應用程式*，而執行時間會瞭解非封裝應用程式（這會移除先前對套件識別碼的硬式相依性）。 指定資源 Uri 時，會省略根命名空間的 ms 資源：///參考會將*應用程式*推斷為非已封裝應用程式的根命名空間（或者，您可以明確地指定*應用程式*，如同以 ms-resource：//Application/）。
+1. 將 PRI 檔案複製到 .exe 的組建輸出目錄
+1. 執行 .exe 
     > [!NOTE]
-    > The Resource Management System uses the system display language rather than the user preferred language list when resolving resources based on language in non-packaged apps. The user preferred language list is only used for UWP apps.
+    > 根據非封裝應用程式中的語言解析資源時，資源管理系統會使用系統顯示語言，而不是使用者慣用的語言清單。 使用者慣用語言清單僅用於 UWP 應用程式。
 
 > [!Important]
-> You must manually rebuild PRI files whenever resources are modified. We recommend using a post-build script that handles the [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) command and copies the resources.pri output to the .exe directory.
+> 每當修改資源時，您都必須手動重建 PRI 檔案。 我們建議使用會處理[MakePri](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri)命令的後置組建腳本，並將 .resources 輸出複製到 .exe 目錄。
 
 ## <a name="important-apis"></a>重要 API
-* [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
-* [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
+* [ApplicationModel .Resources. ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
+* [Windows.applicationmodel.resources.core.resourcecoNtext. SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>相關主題
-* [Porting XAML and UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [x:Uid directive](../xaml-platform/x-uid-directive.md)
-* [attached properties](../xaml-platform/attached-properties-overview.md)
-* [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
-* [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
-* [How to load string resources](https://docs.microsoft.com/previous-versions/windows/apps/hh965323(v=win.10))
+* [移植 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
+* [X：Uid 指示詞](../xaml-platform/x-uid-directive.md)
+* [附加屬性](../xaml-platform/attached-properties-overview.md)
+* [可當地語系化的資訊清單專案](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
+* [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)
+* [針對語言、規模和其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)
+* [如何載入字串資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965323(v=win.10))

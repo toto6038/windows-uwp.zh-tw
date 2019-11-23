@@ -44,7 +44,7 @@ ms.locfileid: "71340609"
 
 例如，子元素可以使用附加屬性來通知父元素它們在 UI 中的顯示方式。 這是 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 附加屬性的例子。 **Canvas.Left** 會建立為附加屬性，因為它是要在 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 元素內含的元素中設定，而非在 **Canvas** 本身設定。 任何可能的子元素接著就可以使用 **Canvas.Left** 與 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top)，在 **Canvas** 配置容器父系內指定其配置位移。 附加屬性不但會完成這個動作，而且基本元素物件模型不會塞滿各種只能套用到一個可能的配置容器的屬性。 相反地，許多配置容器會實作自己的附加屬性集。
 
-為了實作附加屬性，[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 類別會定義一個名稱為 [**Canvas.LeftProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.leftproperty) 的靜態 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 欄位。 接著，**Canvas** 提供 [**SetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.setleft) 與 [**GetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.getleft) 方法做為附加屬性的公開存取子，讓 XAML 設定及執行階段值都能被存取。 對於 XAML 與相依性屬性系統來說，這組 API 可以滿足啟用附加屬性的特定 XAML 語法的樣式，並將值儲存在相依性屬性儲存區。
+為了實作附加屬性，[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 類別會定義一個名稱為 [**Canvas.LeftProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 的靜態 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.leftproperty) 欄位。 接著，**Canvas** 提供 [**SetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.setleft) 與 [**GetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.getleft) 方法做為附加屬性的公開存取子，讓 XAML 設定及執行階段值都能被存取。 對於 XAML 與相依性屬性系統來說，這組 API 可以滿足啟用附加屬性的特定 XAML 語法的樣式，並將值儲存在相依性屬性儲存區。
 
 ## <a name="how-the-owning-type-uses-attached-properties"></a>擁有者類型如何使用附加屬性
 
@@ -125,13 +125,13 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 > [!WARNING]
 > Windows 執行階段 XAML 執行的現有限制是您無法建立自訂附加屬性的動畫。
 
-- 若要將附加屬性指定為資源參考的目標屬性，從資源檔到**x：Uid**，請使用特殊語法，將程式碼樣式的完整**using：** 方括弧內的宣告（"\[ @ no__t-3"）插入至建立故意的範圍中斷。 例如，假設有一個專案 `<TextBlock x:Uid="Title" />`，則以畫布為目標的資源檔中的資源索引鍵。該實例上的**Top**值為 "Title. \[using： Windows.UI.Xaml.Controls\]Canvas.Top"。 如需資源檔和 XAML 的詳細資訊，請參閱 @no__t 0Quickstart：翻譯 UI 資源 @ no__t-0。
+- 若要將附加屬性指定為資源參考的目標屬性至**x：Uid**，請使用在方括弧（"\[\]"）中插入程式碼樣式的特殊語法，並**使用：** 宣告來建立刻意的範圍中斷。 例如，假設有一個專案 `<TextBlock x:Uid="Title" />`，即以畫布為目標的資源檔中的資源索引鍵。該實例上的**Top**值為「標題」。\[使用：\]Canvas. Top」的控制項。 如需資源檔案和 XAML 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))。
 
 ## <a name="related-topics"></a>相關主題
 
 - [自訂附加屬性](custom-attached-properties.md)
 - [相依性屬性概觀](dependency-properties-overview.md)
 - [使用 XAML 定義版面配置](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)
-- [快速入門：翻譯 UI 資源 @ no__t-0
+- [快速入門：翻譯 UI 資源](https://docs.microsoft.com/previous-versions/windows/apps/hh943060(v=win.10))
 - [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)
 - [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)

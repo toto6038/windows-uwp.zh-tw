@@ -26,7 +26,7 @@ ms.locfileid: "72281807"
 
 本文將概略說明通用 Windows 平台 (UWP) app 中的藍牙 RFCOMM，並提供範例程式碼來說明如何傳送或接收檔案。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 [  **Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) 命名空間中的 API 建構在適用於 Windows 裝置的現有模式上，包括 [**enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 和 [**instantiation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice)。 資料讀取和寫入是為了利用 [**established data stream patterns**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 和 [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 中的物件所設計。 服務探索通訊協定 (SDP) 屬性具有值和預期的類型。 但是一些常見裝置的 SDP 屬性實作有誤，導致值並非預期的類型。 此外，許多 RFCOMM 的用法完全不需要額外的 SDP 屬性。 基於這些理由，此 API 提供未剖析之 SDP 資料的存取，開發人員可藉此取得所需的資訊。
 
@@ -40,7 +40,7 @@ app 可以在背景工作中執行多步驟的裝置作業，因此即使 app �
 
 傳送檔案時，依據所需的服務連線至成對裝置，是最基本的案例。 這牽涉到下列步驟：
 
--   使用**GetDeviceSelector @ no__t-1 函式**來協助產生 AQS 查詢，可用來列舉所需服務的配對裝置實例。
+-   您可以使用**RfcommDeviceService. GetDeviceSelector\*** 函數來產生 AQS 查詢，以便用來列舉所需服務的配對裝置實例。
 -   選擇一個列舉裝置、建立一個 [**RfcommDeviceService**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)，並視需要讀取 SDP 屬性 (使用 [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 剖析屬性的資料)。
 -   建立通訊端，並且使用[**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) 和 [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) 屬性以[**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 至具有適當參數的遠端裝置服務。
 -   遵循建立的資料串流模式以讀取檔案中的資料區塊，並在通訊端的 [**StreamSocket.OutputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream) 上將它傳送至裝置。

@@ -4,7 +4,7 @@ title: Binding 標記延伸'
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6f11aae7d08f25e9dffaee12e24d1486cf9de581
@@ -40,7 +40,7 @@ ms.locfileid: "72998603"
 <object property="{Binding propertyPath, bindingProperties}" .../>
 ```
 
-| 詞彙 | 說明 |
+| 詞彙 | 描述 |
 |------|-------------|
 | *propertyPath* | 指定繫結屬性路徑的字串。 如需詳細資訊，請參閱下面[屬性路徑](#property-path)一節。 |
 | *bindingProperties* | *propName*=*值*\[、 *propName*=*值*\]*<br/>使用名稱/值對語法指定的一或多個繫結屬性。 |
@@ -57,7 +57,7 @@ ms.locfileid: "72998603"
 
 如果資料來源是一個集合，則屬性路徑可以依據項目的位置或索引來指定集合中的項目。 例如，「團隊\[0\]。「播放程式」，其中常值「\[\]」會括住 "0"，以指定集合中的第一個專案。
 
-使用繫結到現有 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 的 [**ElementName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.elementname) 時，可以使用附加屬性做為屬性路徑的一部分。 為使附加屬性的意義清楚，讓附加屬性名稱中間的點不會被視為屬性路徑的步驟，請使用括號括住擁有者限定的附加屬性名稱；例如，`(AutomationProperties.Name)`。
+使用繫結到現有 [**DependencyObject**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.elementname) 的 [**ElementName**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 時，可以使用附加屬性做為屬性路徑的一部分。 為使附加屬性的意義清楚，讓附加屬性名稱中間的點不會被視為屬性路徑的步驟，請使用括號括住擁有者限定的附加屬性名稱；例如，`(AutomationProperties.Name)`。
 
 屬性路徑中繼物件會儲存為執行階段表示法中的 [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) 物件，但是大部分案例都不需要與程式碼中的 **PropertyPath** 物件互動。 您通常可以使用 XAML 來指定所需的繫結資訊。
 
@@ -68,7 +68,7 @@ ms.locfileid: "72998603"
 
 **{Binding}** 以 *bindingProperties* 預留位置語法進行說明，因為在標記延伸中可以設定 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 的多個讀取/寫入屬性。 這些屬性能以任意順序設定 (以逗號分隔的 *propName*=*value* 組)。 某些屬性需要不具類型轉換的類型，因此這些屬性需要將自己的標記延伸巢狀在 **{Binding}** 內。
 
-| 屬性 | 說明 |
+| 屬性 | 描述 |
 |----------|-------------|
 | [**路徑名**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) | 請參閱先前的[屬性路徑](#property-path)一節。 |
 | [**轉換器**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter) | 指定繫結引擎呼叫的轉換器物件。 轉換器可以使用 [{StaticResource} 標記延伸](staticresource-markup-extension.md)在標記中設定，以參考至資源字典中的該物件。 |
@@ -120,7 +120,7 @@ ms.locfileid: "72998603"
 </Page>
 ```
 
-第二個範例設定了四個不同的 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 屬性：[**ElementName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.elementname)、[**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)、[**Mode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.mode) 與 [**Converter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter)。 **Path** 在此例中顯示明確命名為 **Binding** 屬性。 **Path** 被評估為資料繫結來源，這個來源是相同執行階段物件樹中的另一個物件 (一個名稱為 `sliderValueConverter` 的 [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider))。
+第二個範例設定了四個不同的 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 屬性：[**ElementName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.elementname)、[**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)、[**Mode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.mode) 與 [**Converter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter)。 **Path** 在此例中顯示明確命名為 **Binding** 屬性。 **Path** 被評估為資料繫結來源，這個來源是相同執行階段物件樹中的另一個物件 (一個名稱為 [ 的Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)`sliderValueConverter`)。
 
 請注意 [**Converter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter) 屬性值如何使用另一個標記延伸 ([{StaticResource} 標記延伸](staticresource-markup-extension.md))，因此這裡使用了兩個巢狀標記延伸。 內部的標記延伸會先進行評估，因此一旦取得資源之後，就會有一個可供繫結使用的實用 [**IValueConverter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter) (由資源中的 `local:S2Formatter` 元素所具現化的自訂類別)。
 

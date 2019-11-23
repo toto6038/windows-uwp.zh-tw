@@ -50,14 +50,14 @@ ms.locfileid: "72517826"
     ![顯示已安裝節點版本的 NVM 清單](../images/windows-nvm-node-installs.png)
 
 9. 若要檢查哪個 node.js 版本目前為預設值，請輸入： `node --version`
-10. 若要變更專案要使用的 node.js 版本，請建立新的專案目錄 `mkdir NodeTest`，並輸入目錄 `cd NodeTest`，然後輸入 `nvm use <version>`，並以您想要使用的版本號碼取代 `<version>` （ie v 10.16.3 '）。
+10. 若要變更您想要用於專案的 node.js 版本，請 `mkdir NodeTest`建立新的專案目錄，並輸入目錄 `cd NodeTest`，然後輸入 `nvm use <version>` 以您要使用的版本號碼取代 `<version>` （ie v 10.16.3 '）。
 11. 確認安裝了哪個版本的 npm： `npm --version`，此版本號碼會自動變更為與您目前的 node.js 版本關聯的任何 npm 版本。
 
 ## <a name="alternative-version-managers"></a>替代版本管理員
 
 雖然 windows nvm 目前是最受歡迎的節點版本管理員，但是還有一些替代方式可考慮：
 
-- [nvs](https://github.com/jasongin/nvs) （節點版本切換器）是可與[VS Code 整合](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md)的跨平臺 @no__t 1 替代方案。
+- [nvs](https://github.com/jasongin/nvs) （節點版本切換器）是可以與[VS Code 整合](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md)的跨平臺 `nvm` 替代方案。
 - 
 - [Volta](https://github.com/volta-cli/volta#installing-volta)是 LinkedIn 團隊提供的新版本管理員，宣告改良的速度和跨平臺支援。
 

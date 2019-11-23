@@ -78,15 +78,15 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 
 ### <a name="registry-based-configuration-for-device-portal"></a>裝置入口網站的登錄為主設定
 
-若您想要選取 Device Portal 的連接埠號碼 (例如 80 和 443)，則可設定下列登錄機碼︰
+若您想要選取裝置入口網站的連接埠號碼 (例如 80 和 443)，則可設定下列登錄機碼︰
 
-- 低於 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
-    - `UseDynamicPorts`:必要的 DWORD。 將此設為 0，以保留選擇的連接埠號碼。
-    - `HttpPort`:必要的 DWORD。 包含 Device Portal 針對 HTTP 連線開啟接聽的連接埠號碼。    
-    - `HttpsPort`:必要的 DWORD。 包含 Device Portal 用來接聽 HTTPS 連線的連接埠號碼。
+- 在 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
+    - `UseDynamicPorts`：必要的 DWORD。 將此設為 0，以保留選擇的連接埠號碼。
+    - `HttpPort`：必要的 DWORD。 包含 Device Portal 針對 HTTP 連線開啟接聽的連接埠號碼。    
+    - `HttpsPort`：必要的 DWORD。 包含 Device Portal 用來接聽 HTTPS 連線的連接埠號碼。
     
 在相同的 regkey 路徑底下，您也可以關閉驗證需求：
-- `UseDefaultAuthorizer` @ no__t-1 @ no__t-2 表示已停用，已啟用 `1`。  
+- `UseDefaultAuthorizer` - `0` 停用，`1` 啟用。  
     - 這可控制每個連線以及從 HTTP 重新導向至 HTTPS 的基本驗證要求。  
     
 ### <a name="command-line-options-for-device-portal"></a>裝置入口網站的命令列選項
@@ -113,7 +113,7 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 
 當您嘗試在 Windows 10 的發行前版本上安裝開發人員套件時，可能會收到這個錯誤。 這些隨選功能（FoD）套件會裝載在 Windows Update 上，並在發行前版本的組建上下載，需要您選擇試驗。 如果您的安裝未加入宣告正確的組建和環形組合的試驗，將無法下載承載。 再次檢查下列各項：
 
-1. 流覽至 [**設定] > 更新 & 安全性 > Windows 測試人員方案**，並確認**Windows 測試人員帳戶**區段是否有正確的帳戶資訊。 如果您沒有看到該區段，請選取 [**連結 Windows 測試人員帳戶**]，並新增您的電子郵件帳戶，並確認它顯示在 [ **Windows 測試人員帳戶**] 標題下（您可能需要選取 [將**Windows 測試人員帳戶**第二個連結到]實際連結新加入的帳戶）。
+1. 流覽至 [**設定] > 更新 & 安全性 > Windows 測試人員方案**，並確認**Windows 測試人員帳戶**區段是否有正確的帳戶資訊。 如果您沒有看到該區段，請選取 [**連結 Windows 測試人員帳戶**]，並新增您的電子郵件帳戶，並確認其顯示在 [ **Windows 測試人員帳戶**] 標題下（您可能需要選取 [第二次**連結 Windows 測試人員帳戶**]，才能實際連結新加入的帳戶）。
  
 2. 在 [**您要接收何種內容？** ] 下，確定已選取 [使用中**的 Windows 開發**]。
  
@@ -121,7 +121,7 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
  
 4. 您現在應該可以安裝 Fod。 如果您已確認您的 Windows 測試人員快速，而且仍然無法安裝 Fod，請提供意見反應，並將記錄檔附加至**C:\Windows\Logs\CBS**。
 
-### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>SCStartServiceOpenService 失敗1060：指定的服務不是以已安裝的服務形式存在
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>SCStartService： OpenService 失敗1060：指定的服務不是以已安裝的服務形式存在
 
 如果未安裝開發人員套件，您可能會收到這個錯誤。 沒有開發人員套件，就沒有 web 管理服務。 請嘗試再次安裝開發人員套件。
 
@@ -129,7 +129,7 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 
 如果您是在計量付費網際網路連線上，可能會出現此錯誤。 您無法在計量付費連線上下載開發人員套件。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [Windows 裝置入口網站總覽](device-portal.md)
 * [裝置入口網站核心 API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

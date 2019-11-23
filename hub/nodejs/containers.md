@@ -26,7 +26,7 @@ ms.locfileid: "72315122"
 - 安裝 Windows 10 Insider Preview 組建18932或更新版本。
 - 在 Windows 上啟用 WSL 2 功能。
 - 安裝 Linux 散發套件（適用于我們的範例的 Ubuntu 18.04）。 您可以使用下列方式來檢查： `wsl lsb_release -a`。
-- 請確定您的 Ubuntu 18.04 散發套件在 WSL 2 模式下執行。 （WSL 可以在 v1 或 v2 模式中執行散發）。您可以藉由開啟 PowerShell 並輸入： `wsl -l -v` 來進行檢查。
+- 請確定您的 Ubuntu 18.04 散發套件在 WSL 2 模式下執行。 （WSL 可以在 v1 或 v2 模式中執行散發）。您可以藉由開啟 PowerShell 並輸入： `wsl -l -v`來進行檢查。
 - 使用 PowerShell，將 Ubuntu 18.04 設定為預設散發，並使用： `wsl -s ubuntu 18.04`。
 
 ## <a name="overview-of-docker-containers"></a>Docker 容器的總覽
@@ -49,7 +49,7 @@ Docker 容器類似于虛擬機器，但不會建立整個虛擬作業系統。 
 
     ![Docker Desktop 啟動](../images/install-docker-1.png)
 
-3. 如果您還沒有 Docker 識別碼，則必須造訪下列內容來設定一個： [https://hub.docker.com/signup](https://hub.docker.com/signup)。 您的識別碼必須全部是小寫的英數位元。
+3. 如果您還沒有 Docker ID，則必須造訪下列內容來設定一個識別碼： [https://hub.docker.com/signup](https://hub.docker.com/signup)。 您的識別碼必須全部是小寫的英數位元。
 
 4. 安裝之後，請選取桌面上的快捷方式圖示，或在您的 Windows [開始] 功能表中尋找，以啟動 Docker Desktop。 Docker 圖示會出現在工作列的 [隱藏的圖示] 功能表中。 在圖示上按一下滑鼠右鍵以顯示 [Docker 命令] 功能表，然後選取 [WSL 2 Tech Preview]。
 
@@ -65,12 +65,12 @@ Docker 容器類似于虛擬機器，但不會建立整個虛擬作業系統。 
 
 - 輸入下列命令，列出 Docker CLI 中可用的命令： `docker`
 - 列出具有下列內容的特定命令資訊： `docker <COMMAND> --help`
-- 列出電腦上的 docker 映射（此時就是 hello world 映射），具有： `docker image ls --all`
-- 列出您電腦上的容器，包含： `docker container ls --all`
-- 在 WSL 2 內容中列出您可以使用的 Docker 系統統計資料和資源（CPU & 記憶體），包含： `docker info`
-- 顯示目前正在執行 docker 的位置，其中： `docker context ls`
+- 列出電腦上的 docker 映射（此時就是 hello world 映射），其中包含： `docker image ls --all`
+- 列出您電腦上的容器，以及： `docker container ls --all`
+- 使用下列方式，列出您在 WSL 2 內容中可用的 Docker 系統統計資料和資源（CPU & 記憶體）： `docker info`
+- 顯示目前正在執行 docker 的位置，包含： `docker context ls`
 
-您可以看到有兩個 Docker 正在執行的內容--`default` （傳統 Docker daemon）和 `wsl` （我們的建議使用技術預覽）。 （此外，`ls` 命令是 `list` 的 short，可以交換使用）。
+您可以看到 Docker 在中執行的兩個內容--`default` （傳統 Docker daemon）和 `wsl` （我們使用技術預覽的建議）。 （此外，`ls` 命令是 `list` 的簡短，而且可以交換使用）。
 
 ![Powershell 中的 Docker 顯示內容](../images/docker-context.png)
 
@@ -87,11 +87,11 @@ Docker 擴充功能可讓您輕鬆地從 Visual Studio Code 建立、管理和�
 
     ![遠端 WSL 中 VS Code 上的 Docker 擴充功能](../images/docker-vscode-extension.png)
 
-藉由在 VS Code 上安裝 Docker 擴充功能，您現在可以在下一節中，使用快捷方式顯示 `Dockerfile` 命令的清單： `Ctrl+Space`
+藉由在 VS Code 上安裝 Docker 擴充功能，您現在可以在下一節中使用快捷方式來顯示 `Dockerfile` 命令的清單： `Ctrl+Space`
 
 深入瞭解如何[在 VS Code 中使用 Docker](https://code.visualstudio.com/docs/azure/docker)。
 
-## <a name="create-a-container-image-with-dockerfile"></a>使用 DockerFile 建立容器映射
+## <a name="create-a-container-image-with-dockerfile"></a>使用 DockerFile 建立容器映像
 
 **容器映射**會儲存您的應用程式程式碼、程式庫、設定檔、環境變數及執行時間。 使用映射可確保容器中的環境是標準化的，而且只包含建立和執行應用程式所需的功能。
 
@@ -130,20 +130,20 @@ Docker 擴充功能可讓您輕鬆地從 Visual Studio Code 建立、管理和�
 3. 若要建立 docker 映射，請從專案的根目錄執行下列命令（但使用您在 Docker Hub 上建立的使用者名稱來取代 `<your_docker_username>`）： `docker build -t <your_docker_username>/my-nextjs-app .`
 
 > [!NOTE]
-> Docker 必須使用 WSL Tech Preview 來執行，才能讓此命令運作。 如需如何啟動 Docker 的提醒，請參閱安裝一節的[步驟 #4](#install-docker-desktop-wsl-2-tech-preview) 。 @No__t-0 旗標會指定要建立的映射名稱，在我們的案例中為 "nextjs-app： v1"。 建議您在建立映射時，一律[在標記名稱上使用版本 #](https://medium.com/@mccode/the-misunderstood-docker-tag-latest-af3babfd6375) 。 請務必在命令的結尾包含句點，這會指定目前的工作目錄，以便用來尋找並複製您的下一個 .js 應用程式的組建檔案。
+> Docker 必須使用 WSL Tech Preview 來執行，才能讓此命令運作。 如需如何啟動 Docker 的提醒，請參閱安裝一節的[步驟 #4](#install-docker-desktop-wsl-2-tech-preview) 。 `-t` 旗標會指定要建立的映射名稱，在我們的案例中為 "nextjs-app： v1"。 建議您在建立映射時，一律[在標記名稱上使用版本 #](https://medium.com/@mccode/the-misunderstood-docker-tag-latest-af3babfd6375) 。 請務必在命令的結尾包含句點，這會指定目前的工作目錄，以便用來尋找並複製您的下一個 .js 應用程式的組建檔案。
 
 4. 若要在容器中執行下一個 .js 應用程式的新 docker 映射，請輸入下列命令： `docker run -d -p 3333:3000 <your_docker_username>/my-nextjs-app:v1`
 
-5. @No__t-0 旗標會將埠 ' 3000 ' （應用程式在容器內執行的埠）系結至您電腦上的本機埠 ' 3333 '，因此您現在可以將網頁瀏覽器指向[http://localhost:3333](http://localhost:3333) ，並查看您的伺服器端轉譯後的 .js 應用程式以 Docker 的形式執行容器映射。
+5. `-p` 旗標會將埠 ' 3000 ' （應用程式在容器內執行的埠）系結至您電腦上的本機埠 ' 3333 '，因此您現在可以將網頁瀏覽器指向[http://localhost:3333](http://localhost:3333) ，並查看以 Docker 容器映射形式執行的下一個 .js 應用程式的伺服器端呈現。
 
 > [!TIP]
-> 我們使用 `FROM node:12` 來建立容器映射，這會參考儲存在 Docker Hub 上的 node.js 版本12預設映射。 這個預設的 node.js 映射是以 Debian/Ubuntu Linux 系統為基礎，有許多不同的 node.js 映射可供選擇，但您可能會想要考慮更輕量或量身訂做您的需求。 深入瞭解[Docker Hub 上的 Node.js 映射登錄](https://hub.docker.com/_/node/)。
+> 我們使用參照儲存在 Docker Hub 上的 node.js 第12版預設映射的 `FROM node:12` 來建立容器映射。 這個預設的 node.js 映射是以 Debian/Ubuntu Linux 系統為基礎，有許多不同的 node.js 映射可供選擇，但您可能會想要考慮更輕量或量身訂做您的需求。 深入瞭解[Docker Hub 上的 Node.js 映射登錄](https://hub.docker.com/_/node/)。
 
-## <a name="upload-your-container-image-to-a-repository"></a>將您的容器映射上傳至存放庫
+## <a name="upload-your-container-image-to-a-repository"></a>將您的容器映像上傳至存放庫
 
 **容器存放庫**會將您的容器映射儲存在雲端中。 容器存放庫通常會包含相關映射的集合（例如不同版本），這些影像全都可用於輕鬆設定和快速部署。 一般來說，您可以透過安全的 HTTPs 端點來存取容器存放庫上的映射，讓您可以透過任何系統、硬體或 VM 實例來提取、推送或管理映射。
 
-另一方面， **container registry**會儲存存放庫的集合，以及索引、存取控制規則和 API 路徑。 這些可以公開或私下裝載。 [Docker Hub](https://hub.docker.com/)是一個開放原始碼的 Docker 登錄，以及在執行 `docker push` 和 @no__t 2 命令時所使用的預設值。 公用存放庫免費，而且需要付費以進行私用存放庫。
+另一方面， **container registry**會儲存存放庫的集合，以及索引、存取控制規則和 API 路徑。 這些可以公開或私下裝載。 [Docker Hub](https://hub.docker.com/)是一個開放原始碼的 Docker 登錄，以及執行 `docker push` 和 `docker pull` 命令時所使用的預設值。 公用存放庫免費，而且需要付費以進行私用存放庫。
 
 若要將新的容器映射上傳至 Docker Hub 上裝載的存放庫：
 
@@ -153,7 +153,7 @@ Docker 擴充功能可讓您輕鬆地從 Visual Studio Code 建立、管理和�
 
 3. 將您的容器映射推送至 Docker Hub，並使用下列命令在該處為其建立新的存放庫： `docker push <your_docker_username>/my-nextjs-app:v1`
 
-4. 您現在可以造訪下列網址，在 Docker Hub 上查看您的存放庫、輸入描述，並連結您的 GitHub 帳戶（如果您想要）： https://cloud.docker.com/repository/list
+4. 您現在可以造訪下列網址，在 Docker Hub 上查看您的存放庫、輸入描述，並連結您的 GitHub 帳戶（如有需要）： https://cloud.docker.com/repository/list
 
 5. 您也可以使用下列方式來查看作用中的 Docker 容器清單： `docker container ls` （或 `docker ps`）
 
@@ -165,17 +165,17 @@ Docker 擴充功能可讓您輕鬆地從 Visual Studio Code 建立、管理和�
 
 ## <a name="deploy-to-azure-container-registry"></a>部署至 Azure Container Registry
 
-[**Azure Container Registry**](https://azure.microsoft.com/services/container-registry/) （ACR）可讓您在私用、已驗證的存放庫中，儲存、管理和保留容器映射安全。 與標準 Docker 命令相容，ACR 可以為您處理重要的工作，例如容器健康情況監視和維護，與[Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)配對以建立可調整的協調流程系統。 視需要建立，或完全自動化具有觸發程式的組建，例如原始程式碼認可和基底映射更新。 ACR 也利用龐大的 Azure 雲端網路來管理網路延遲、全球部署，並為使用[Azure App Service](https://docs.microsoft.com/azure/app-service/) （適用于 web 裝載、行動後端、REST api）或[其他 Azure 雲端服務的任何人，建立順暢的原生體驗](https://azure.microsoft.com/product-categories/containers/).
+[**Azure Container Registry**](https://azure.microsoft.com/services/container-registry/) （ACR）可讓您在私用、已驗證的存放庫中，儲存、管理和保留容器映射安全。 與標準 Docker 命令相容，ACR 可以為您處理重要的工作，例如容器健康情況監視和維護，與[Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)配對以建立可調整的協調流程系統。 視需要建立，或完全自動化具有觸發程式的組建，例如原始程式碼認可和基底映射更新。 ACR 也利用龐大的 Azure 雲端網路來管理網路延遲、全球部署，並為使用[Azure App Service](https://docs.microsoft.com/azure/app-service/) （適用于 web 裝載、行動後端、REST api）或[其他 Azure 雲端服務](https://azure.microsoft.com/product-categories/containers/)的任何人，建立順暢的原生體驗。
 
 > [!IMPORTANT]
 > 您需要自己的 Azure 訂用帳戶，才能將容器部署至 Azure，而您可能會收到費用。 如果您還沒有 Azure 訂用帳戶，請在開始前[建立免費帳戶](https://azure.microsoft.com/free/)。
 
-如需建立 Azure Container Registry 和部署應用程式容器映射的協助，請參閱練習：將[Docker 映射部署至 Azure 容器實例](https://docs.microsoft.com/learn/modules/intro-to-containers/7-exercise-deploy-docker-image-to-container-instance)。
+如需建立 Azure Container Registry 和部署應用程式容器映射的說明，請參閱練習：將[Docker 映射部署至 Azure 容器實例](https://docs.microsoft.com/learn/modules/intro-to-containers/7-exercise-deploy-docker-image-to-container-instance)。
 
 ## <a name="additional-resources"></a>其他資源
 
 - [Azure 上的 node.js](https://azure.microsoft.com/en-us/develop/nodejs/)
 - 快速入門：[在 Azure 中建立 node.js web 應用程式](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)
-- 線上課程：[管理 Azure 中的容器](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
-- 使用 VS Code：[使用 Docker](https://code.visualstudio.com/docs/azure/docker)
-- Docker 檔：[Docker Desktop WSL 2 技術預覽](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)
+- 線上課程：[在 Azure 中管理容器](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
+- 使用 VS Code：使用[Docker](https://code.visualstudio.com/docs/azure/docker)
+- Docker 檔： [Docker DESKTOP WSL 2 技術預覽](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)

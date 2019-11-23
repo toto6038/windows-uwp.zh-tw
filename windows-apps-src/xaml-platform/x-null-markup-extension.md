@@ -30,11 +30,11 @@ ms.locfileid: "71340458"
 
 不同相依性屬性的初始預設值可能會不同，且不一定是 **null**。 此外，許多相依性屬性因為內部實作的緣故，不接受以 **null** 做為值 (無論是透過標記或程式碼)。 在這種情況下，以 **{x:Null}** 設定 XAML 屬性值可能導致發生剖析器例外狀況。
 
-一些 Windows 執行階段類型，是可為 null 的類型。 在可為 null 的類型尚未使用 **null** 做為預設值的情況下，您可以使用 **{x:Null}** ，在 XAML 中設為 **null** 值。 如果使用視覺化C++元件延伸模組C++（/cx），可為 null 的類型會表示為[Platform：： IBox @ no__t-4](https://docs.microsoft.com/cpp/cppcx/platform-ibox-interface)。 如果使用的是 Microsoft .NET 語言，可為 null 的類型會以 [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1) 來表示。
+一些 Windows 執行階段類型，是可為 null 的類型。 在可為 null 的類型尚未使用 **null** 做為預設值的情況下，您可以使用 **{x:Null}** ，在 XAML 中設為 **null** 值。 如果使用視覺化C++元件延伸模組C++（/cx），可為 null 的類型會表示為[**Platform：： IBox<T>** ](https://docs.microsoft.com/cpp/cppcx/platform-ibox-interface)。 如果使用的是 Microsoft .NET 語言，可為 null 的類型會以 [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1) 來表示。
 
 ## <a name="related-topics"></a>相關主題
 
-* [**Nullable @ no__t-2**](https://docs.microsoft.com/dotnet/api/system.nullable-1)
-* [**IReference @ no__t-2**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)
+* [**可為 null<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1)
+* [**IReference<T>** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)
  
 

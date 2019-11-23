@@ -20,8 +20,8 @@ ms.locfileid: "74258470"
 **摘要**
 
 -   計劃 DirectX 移植
--   [Important changes from Direct3D 9 to Direct3D 11](understand-direct3d-11-1-concepts.md)
--   [Feature mapping](feature-mapping.md)
+-   [從 Direct3D 9 到 Direct3D 11 的重要變更](understand-direct3d-11-1-concepts.md)
+-   [功能對應](feature-mapping.md)
 
 
 計劃從 DirectX 9 到 DirectX 11 與通用 Windows 平台 (UWP) 的遊戲移植專案：升級您的圖形程式碼，並將遊戲放置於 Windows 執行階段環境中。
@@ -35,11 +35,11 @@ ms.locfileid: "74258470"
 
 您必須使用自己的協助程式庫或社群工具來取代 D3DX 與 DXUT 協助程式庫。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
 
-> **Note**   You can use the [DirectX Tool Kit](https://github.com/Microsoft/DirectXTK) or [DirectXTex](https://github.com/Microsoft/DirectXTex) to replace some functionality that was formerly provided by D3DX and DXUT.
+> **請注意**   您可以使用[DirectX 工具套件](https://github.com/Microsoft/DirectXTK)或[DIRECTXTEX](https://github.com/Microsoft/DirectXTex)來取代先前由 D3DX 和 DXUT 所提供的一些功能。
 
  
 
-Shaders written in assembly language should be upgraded to HLSL using shader model 4 level 9\_1 or 9\_3 functionality, and shaders written for the Effects library will need to be updated to a more recent version of HLSL syntax. 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
+以元件語言撰寫的著色器應該升級為使用著色器模型4層級 9\_1 或 9\_3 功能的 HLSL，而針對效果庫撰寫的著色器則需要更新為較新版本的 HLSL 語法。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
 
 熟悉不同的 [Direct3D 功能層級](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)。 功能層級可以藉由定義已知的功能組合，將範圍廣泛的視訊硬體分類。 每一組大致上都會對應到 Direct3D 版本 (從 9.1 到 11.2)。 所有功能層級都使用 DirectX 11 API。
 

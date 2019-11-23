@@ -196,7 +196,7 @@ ms.locfileid: "71339599"
 
 在轉譯或撰寫較大型資料集時，您可以在 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0)、[**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) 及 [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) 延伸方法提供大型緩衝區大小，增加讀取或寫入傳送量。 這可以提供資料流配接器較大的內部緩衝區大小。 例如，將大型檔案的資料流傳送到 XML 剖析器時，剖析器可對資料流進行許多循序的小型讀取。 大型緩衝區可以減少對基礎 UWP 資料流的呼叫數，並提升效能。
 
-> **請注意**   當您設定的緩衝區大小超過大約 80 KB 時，您應該要特別小心，因為這可能會造成垃圾收集行程堆積上的片段（請參閱[改善垃圾收集效能](improve-garbage-collection-performance.md)）。 下列程式碼範例會建立具有 81,920 位元組緩衝區的管理資料流配接器。
+> **請注意**   在設定大於 80 KB 的緩衝區大小時應該特別小心，因為這可能會造成垃圾收集行程堆積上的片段（請參閱[改善垃圾收集效能](improve-garbage-collection-performance.md)）。 下列程式碼範例會建立具有 81,920 位元組緩衝區的管理資料流配接器。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
