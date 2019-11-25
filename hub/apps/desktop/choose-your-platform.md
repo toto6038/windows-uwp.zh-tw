@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: c931991c283bb0b31f55c3e5539eac5ddeda9575
-ms.sourcegitcommit: cf88f5e8e1de476ed2635e791a5e5e82ae4bd8cf
+ms.openlocfilehash: d0d87f8e4b6524471ff5e2ada9012a22641b06d7
+ms.sourcegitcommit: ddf0137929945eddf01041a81aa4d26038e70f46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74056847"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74392095"
 ---
 # <a name="choose-your-app-platform"></a>選擇您的應用程式平台
 
@@ -69,7 +69,8 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 如需 Windows Forms 的詳細資訊，請參閱下列文章：
 
 * [Windows Form 使用者入門](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
-* [建立您的第一個應用程式](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
+* [建立您的第一個 Windows Forms 應用程式](/dotnet/framework/winforms/creating-a-new-windows-form)
+* [教學課程：建立圖片檢視器](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
 * [API 參照 (.NET)](https://docs.microsoft.com/dotnet/api/index)
 * [增強 Windows Forms 應用程式](/dotnet/framework/winforms/advanced/)
 
