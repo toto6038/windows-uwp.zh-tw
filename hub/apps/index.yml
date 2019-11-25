@@ -1,0 +1,156 @@
+### YamlMime:Hub
+title: Windows 應用程式開發人員文件
+summary: 了解如何為 Windows 電腦和其他裝置設計、開發及部署應用程式和解決方案。
+brand: windows
+metadata:
+  title: Windows 開發人員文件
+  description: 為 Windows 電腦和其他裝置設計、開發及部署應用程式和解決方案。
+  author: mcleanbyron
+  ms.author: mcleans
+  ms.topic: hub-page
+  ms.date: 11/08/2019
+  ms.localizationpriority: medium
+  uhfHeaderId: MSDocsHeader-WinDevCenter
+  ms.openlocfilehash: f7c79005943440c4b8896e35f78b86c300a23d7f
+  ms.sourcegitcommit: 5bd8dcb5dc1b07fd97c60b41c3f8feae099fee4a
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 11/22/2019
+  ms.locfileid: "74320021"
+highlightedContent:
+  items:
+  - title: 取得 Visual Studio 與 Windows SDK
+    itemType: download
+    url: https://developer.microsoft.com/windows/downloads
+  - title: 使用者介面及設計指導方針
+    itemType: overview
+    url: /windows/apps/fluent-design-system
+  - title: 加入測試人員計畫
+    itemType: overview
+    url: https://docs.microsoft.com/windows-insider
+  - title: Windows 應用程式開發人員的線上訓練
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?products=windows
+conceptualContent:
+  items:
+  - title: 裝置平台
+    links:
+    - text: Windows 電腦
+      url: /windows/apps/desktop/
+      itemType: get-started
+    - text: 混合實境和 HoloLens
+      url: https://docs.microsoft.com/windows/mixed-reality/
+      itemType: get-started
+    - text: IoT 核心版
+      url: https://docs.microsoft.com/windows/iot-core/windows-iot-core
+      itemType: get-started
+    - text: Xbox One
+      url: https://www.xbox.com/developers
+      itemType: get-started
+    - text: 行動應用程式開發
+      url: https://docs.microsoft.com/azure/mobile-apps/
+      itemType: overview
+  - title: 開發您的第一個傳統型應用程式
+    links:
+    - text: UWP
+      url: /windows/uwp/get-started/
+      itemType: get-started
+    - text: Win32
+      url: https://docs.microsoft.com/windows/win32/desktop-programming/
+      itemType: get-started
+    - text: WPF (.NET Core)
+      url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json&view=vs-2019
+      itemType: get-started
+    - text: WPF (.NET Framework)
+      url: https://docs.microsoft.com/dotnet/framework/wpf/getting-started/
+      itemType: get-started
+    - text: Windows Forms
+      url: https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms
+      itemType: get-started
+  - title: API 參考資料
+    links:
+    - text: UWP
+      url: https://docs.microsoft.com/uwp/
+      itemType: reference
+    - text: Win32 (依標頭)
+      url: https://docs.microsoft.com/windows/win32/api/
+      itemType: reference
+    - text: Win32 (依功能)
+      url: https://docs.microsoft.com/windows/win32/apiindex/windows-api-list
+      itemType: reference
+    - text: .NET Core
+      url: https://docs.microsoft.com/dotnet/api/index?view=netcore-3.0
+      itemType: reference
+    - text: .NET Framework
+      url: https://docs.microsoft.com/dotnet/api/index?view=netframework-4.8
+      itemType: reference
+tools:
+  title: 應用程式平台和架構
+  items:
+  - title: UWP
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: /windows/uwp/
+  - title: Win32
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: https://docs.microsoft.com/windows/win32/
+  - title: WPF
+    imageSrc: https://docs.microsoft.com/media/logos/logo_NET.svg
+    url: https://docs.microsoft.com/dotnet/framework/wpf/
+  - title: Windows Forms
+    imageSrc: https://docs.microsoft.com/media/logos/logo_NET.svg
+    url: https://docs.microsoft.com/dotnet/framework/winforms/
+additionalContent:
+  sections:
+  - title: 工作
+    items:
+    - title: 建置傳統型應用程式
+      summary: 針對執行 Windows 的電腦建置 UWP、Win32、WPF 及 Windows Forms 傳統型應用程式。
+      url: /windows/apps/desktop/
+    - title: 讓您的傳統型應用程式現代化
+      summary: 增強現有的傳統型應用程式，以使用 Windows 10 的最新功能。
+      url: /windows/apps/desktop/modernize
+    - title: 開發 Windows 的功能
+      summary: 了解不同應用程式平台中對 Windows 功能的支援方式。
+      url: /windows/apps/features-and-technologies/
+    - title: 尋找程式碼範例
+      summary: 了解如何透過實驗我們提供的範例來建置出色的應用程式。
+      url: https://developer.microsoft.com/windows/samples
+    - title: 針對行動裝置進行開發
+      summary: 探索可讓您建立安全且可靠的雲端式行動應用程式的 Microsoft 服務。
+      url: https://docs.microsoft.com/azure/mobile-apps/
+    - title: 使用 Python、Node.js 等進行開發
+      summary: 設定 Windows 電腦以使用如 Python、Node.js 等的跨平台技術。
+      url: /windows/dev-environment/
+    - title: 發佈至 Microsoft Store
+      summary: 使用「合作夥伴中心」將 Windows 應用程式與遊戲發佈到 Microsoft Store。
+      url: /windows/uwp/publish/
+    - title: 讓應用程式可供存取
+      summary: 在您的應用程式中建置協助工具，賦予人員各種功能。
+      url: /windows/apps/accessibility/
+  - title: 技術
+    items:
+    - title: 適用於開發人員的新功能
+      summary: 了解 Windows 10 中的最新開發人員功能。
+      url: https://developer.microsoft.com/windows/windows-10-for-developers
+    - title: Windows AI
+      summary: 使用 Windows AI 針對您應用程式中的複雜問題建立智慧型解決方案。
+      url: https://docs.microsoft.com/windows/ai/
+    - title: Windows for IoT
+      summary: 為適用於 IoT 平台的 Windows 建立解決方案。
+      url: https://docs.microsoft.com/windows/iot-core/
+    - title: MSIX
+      summary: 以現代化和通用的封裝格式封裝和部署任何 Windows 應用程式。
+      url: https://docs.microsoft.com/windows/msix/
+    - title: Windows 上的容器
+      summary: 在快速、完全隔離的 Windows 環境中，將應用程式與相依性封裝在一起。
+      url: https://docs.microsoft.com/virtualization/windowscontainers/
+    - title: 混合實境
+      summary: 建立適用於 HoloLens 和其他應用程式的共同作業混合實境解決方案。
+      url: https://docs.microsoft.com/windows/mixed-reality/
+    - title: Project Rome
+      summary: 為應用程式建立跨裝置體驗。
+      url: https://docs.microsoft.com/windows/project-rome/
+    - title: Microsoft Graph
+      summary: 利用統一的可程式性模型，來建立與數百萬位使用者之資料互動的應用程式。
+      url: https://docs.microsoft.com/graph/
+  footer: '[@WindowsDocs 在 Twitter](https://twitter.com/WindowsDocs) - [YouTube 上的 OneDevMinute](https://aka.ms/OneDevMinute) - [Windows 開發人員支援](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)'
