@@ -6,30 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, directx, 啟動, 繼續
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2f7e70d813ea3314d897eedb5e245d781ce412
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f075b50c3f943ec016ebdb513367aff680897aa5
+ms.sourcegitcommit: c5dc47198f40339a047db72db9d5f2248583b948
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662213"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74490622"
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>啟動和繼續應用程式 (DirectX 和 C++)
 
-
-
 了解如何啟動、暫停和繼續通用 Windows 平台 (UWP) DirectX app。
 
-| 主題 | 描述 |
-|---------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [如何啟用應用程式](how-to-activate-an-app-directx-and-cpp.md) | 本主題示範如何定義 UWP DirectX app 的啟用經驗。 |
-| [如何暫停應用程式](how-to-suspend-an-app-directx-and-cpp.md) | 本主題示範如何在系統暫停 UWP DirectX app 時，儲存重要的系統狀態與 app 資料。 |
-| [如何繼續應用程式](how-to-resume-an-app-directx-and-cpp.md) | 本主題示範如何在系統繼續 UWP DirectX app 時，還原重要的應用程式資料。 |
- 
-
- 
-
- 
-
-
-
-
+|主題|說明|
+|-|-|
+|[How to activate an app](how-to-activate-an-app-directx-and-cpp.md)|本主題示範如何定義 UWP DirectX app 的啟用經驗。|
+|[How to suspend an app](how-to-suspend-an-app-directx-and-cpp.md)|本主題示範如何在系統暫停 UWP DirectX app 時，儲存重要的系統狀態與 app 資料。|
+|[How to resume an app](how-to-resume-an-app-directx-and-cpp.md)|本主題示範如何在系統繼續 UWP DirectX app 時，還原重要的應用程式資料。|
