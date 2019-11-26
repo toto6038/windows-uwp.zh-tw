@@ -1,7 +1,7 @@
 ---
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: 組合效果
-description: 效果 API 可讓開發人員自訂其 UI 的轉譯方式。
+description: 效果 API 可讓開發人員自訂其 UI 的呈現方式。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP

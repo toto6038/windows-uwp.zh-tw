@@ -37,7 +37,7 @@ ms.locfileid: "74259453"
 
 App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下是如何指示應 app 處理具有 `.alsdk` 副檔名的檔案。
 
-1.  在 **\[方案總管\]** 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 **\[宣告\]** 索引標籤，然後在 **\[可用宣告\]** 下拉式清單中選取 **\[檔案類型關聯\]** ，然後按一下 **\[新增\]** 。 請參閱[以程式設計方式撰寫識別碼](https://docs.microsoft.com/windows/desktop/shell/fa-progids)，了解檔案關聯使用的識別碼詳細資料。
+1.  在 [方案總管] 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 **\[宣告\]** 索引標籤，然後在 **\[可用宣告\]** 下拉式清單中選取 **\[檔案類型關聯\]** ，然後按一下 **\[新增\]** 。 請參閱[以程式設計方式撰寫識別碼](https://docs.microsoft.com/windows/desktop/shell/fa-progids)，了解檔案關聯使用的識別碼詳細資料。
 
     以下簡短說明可在資訊清單設計工具中填寫的每個欄位：
 
@@ -79,7 +79,7 @@ App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下
 -   檔案選擇器
 -   [開始] 畫面上的搜尋結果
 
-連同您的專案包含 44x44 圖示，讓您的標誌可以出現在這些位置中。 請調整為相符的應用程式磚標誌外觀，並使用應用程式的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 請參閱[磚和圖示資產的指導方針](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/app-assets)，以取得圖示的詳細資訊。
+連同您的專案包含 44x44 圖示，讓您的標誌可以出現在這些位置中。 請調整為相符的 app 磚標誌外觀，並使用 app 的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 請參閱[磚和圖示資產的指導方針](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/app-assets)，以取得圖示的詳細資訊。
 
 ## <a name="step-3-handle-the-activated-event"></a>步驟 3：處理啟用的事件
 
@@ -151,6 +151,6 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 
 * [檔案類型和 Uri 的指導方針](https://docs.microsoft.com/windows/uwp/files/index)
 
-### <a name="reference"></a>參考資料
+### <a name="reference"></a>參考
 * [Windows. ApplicationModel. FileActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
 * [Windows. UI .Xaml. OnFileActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)

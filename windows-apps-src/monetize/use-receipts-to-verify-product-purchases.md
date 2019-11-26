@@ -106,9 +106,9 @@ App 收據看起來如下。
 
 |  元素  |  必要  |  數量  |  描述   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    不可以        |  0 或 1  |  包含目前 App 的購買資訊。            |
-|  [ProductReceipt](#productreceipt)  |     不可以       |  0 或以上    |   包含目前 App 之 App 內購買的相關資訊。     |
-|  簽章  |      是      |  1   |   此元素是標準的 [XML-DSIG 建構](https://www.w3.org/TR/xmldsig-core/)。 它包含一個 **SignatureValue** 元素，其中包含您可用來驗證收據的簽章，以及一個 **SignedInfo** 元素。      |
+|  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含目前 App 的購買資訊。            |
+|  [ProductReceipt](#productreceipt)  |     否       |  0 或以上    |   包含目前 App 之 App 內購買的相關資訊。     |
+|  簽名  |      是      |  1   |   此元素是標準的 [XML-DSIG 建構](https://www.w3.org/TR/xmldsig-core/)。 它包含一個 **SignatureValue** 元素，其中包含您可用來驗證收據的簽章，以及一個 **SignedInfo** 元素。      |
 
 **Receipt** 具有下列屬性。
 

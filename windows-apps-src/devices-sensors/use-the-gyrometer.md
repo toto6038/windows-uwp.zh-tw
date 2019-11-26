@@ -4,7 +4,7 @@ title: 使用陀螺儀
 description: 了解如何使用陀螺儀來偵測使用者的移動變化。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a5898d4157b216175c77356e5a27b4c58d049d9a
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -18,10 +18,10 @@ ms.locfileid: "74259632"
 
 **重要 API**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
+-   [**Windows 裝置。感應器**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**陀螺儀**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
-**Sample**
+**抽樣**
 
 -   如需更完整的實作，請參閱[陀螺儀範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer)。
 
@@ -31,7 +31,7 @@ ms.locfileid: "74259632"
 
 ## <a name="prerequisites"></a>必要條件
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+您應該熟悉 Extensible Application Markup Language （XAML）、Microsoft 視覺效果C#和事件。
 
 您使用的裝置或模擬器必須支援陀螺儀。
 
@@ -41,7 +41,7 @@ You should be familiar with Extensible Application Markup Language (XAML), Micro
 
 ###  <a name="instructions"></a>指示
 
--   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
+-   從 [Visual C#] 專案範本中選擇 [空白應用程式 (通用 Windows)] 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -136,11 +136,11 @@ You should be familiar with Extensible Application Markup Language (XAML), Micro
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **GyrometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="GyrometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:GyrometerCS"`。
 
--   按 F5 或選取 **\[偵錯\]**  >  **\[開始偵錯\]** 以建置、部署及執行 App。
+-   按 F5 或選取 [偵錯] >  [開始偵錯] 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更陀螺儀值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]**  >  **\[停止偵錯\]** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯] >  [停止偵錯] 以停止 App。
 
 ###  <a name="explanation"></a>說明
 
@@ -180,4 +180,4 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
  ## <a name="related-topics"></a>相關主題
 
-* [Gyrometer Sample](https://code.msdn.microsoft.com/windowsapps/Gyrometer-Sensor-Sample-4fe891d9)
+* [陀螺儀範例](https://code.msdn.microsoft.com/windowsapps/Gyrometer-Sensor-Sample-4fe891d9)

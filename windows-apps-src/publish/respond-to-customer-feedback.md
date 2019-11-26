@@ -3,7 +3,7 @@ title: 回應客戶意見反應
 description: 您可以直接回應您的客戶在 [意見反應中樞] 中留下的意見反應。
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bc305834381fcdddac6e4eacf12144fd9f189c2
@@ -22,7 +22,7 @@ ms.locfileid: "74259948"
 
 若要提供對任何意見反應的回應，按一下您的 **\[意見反應報告\]** 中意見反應旁顯示的 **\[回應意見反應\]** 連結。
 
-[Partner Center](https://partner.microsoft.com/dashboard) supports three options for responding to customers who provide feedback about your app. 不論您選擇哪一個選項，請記住每則回應有 1000 個字元的限制。
+[合作夥伴中心](https://partner.microsoft.com/dashboard)支援三個選項來回應提供應用程式相關意見反應的客戶。 不論您選擇哪一個選項，請記住每則回應有 1000 個字元的限制。
 
 ## <a name="public-comments-in-feedback-hub"></a>意見反應中樞中的公開留言
 
@@ -59,9 +59,9 @@ ms.locfileid: "74259948"
 - 回應的長度不得超過 1000 個字元。
 - 您不得針對使用者的公開留言提供任何類型的補償，包括數位 App 項目。
 - 不要在回應中加入任何行銷內容或廣告。 請記住，留下意見反應的人已經是您的客戶。
-- 不要在您的回應中推銷其他 App 或服務。
+- 不要在您的回應中推銷其他 app 或服務。
 - 您的回應應該與特定 App 和意見反應直接相關。
-- 不要在回應中加入任何粗俗、挑釁、針對個人或惡意的評論。 請務必保持禮貌並記住，滿意的客戶才是您 App 的最大支持者。
+- 不要在回應中加入任何粗俗、挑釁、針對個人或惡意的評論。 請務必保持禮貌並記住，滿意的客戶才是您 app 的最大支持者。
 
 > [!NOTE]
 > 如果客戶收到不適當的意見反應回應，他們可以向 Microsoft 舉報開發人員。 他們也可以選擇退出透過電子郵件收到意見反應回應。

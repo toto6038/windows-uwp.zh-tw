@@ -76,11 +76,11 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 窗格之所以為空白，是因為系統僅提供 UI 殼層 - 開發人員必須以程式設計方式將身分識別提供者填入窗格。 
 
 > [!TIP]
-> Optionally, you can use **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** instead of **[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** , which will return an **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** , to query for the status of the operation. 
+> （選擇性）您可以使用 **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** ，而不是 **[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** ，這會傳回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** ，以查詢作業的狀態。 
 
 ## <a name="register-for-accountcommandsrequested"></a>註冊 AccountCommandsRequested
 
-若要將命令加入到窗格中，我們可以從註冊 AccountCommandsRequested 事件處理常式開始。 This tells the system to run our build logic when the user asks to see the pane (for example, clicks our XAML button). 
+若要將命令加入到窗格中，我們可以從註冊 AccountCommandsRequested 事件處理常式開始。 這會告訴系統在使用者要求查看窗格（例如，按一下我們的 XAML 按鈕）時，執行我們的組建邏輯。 
 
 在程式碼後置中，覆寫 OnNavigatedTo 和 OnNavigatedFrom 事件，然後將下列程式碼新增到它們︰ 
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-接下來，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法取得提供者。 提供者的 URL 會隨著提供者而有所不同，您可以在提供者的文件中找到。 For Microsoft Accounts and Azure Active Directory, it's "https\://login.microsoft.com". 
+接下來，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法取得提供者。 提供者的 URL 會隨著提供者而有所不同，您可以在提供者的文件中找到。 針對 Microsoft 帳戶和 Azure Active Directory，其為 "HTTPs\://login.microsoft.com"。 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -133,7 +133,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 請注意，我們也會傳送字串「consumers」到選擇性的 *authority* 參數。 這是因為 Microsoft 提供兩種不同類型的驗證 - 針對「consumers (消費者)」的 Microsoft 帳戶 (MSA)，針對「organizations (組織)」的 Azure Active Directory (AAD)。 「consumers (消費者)」授權表示我們想要 MSA 選項。 如果您是在開發企業應用程式，請改為使用「organizations (組織)」字串。
 
-最後，建立新的 **[WebAccountProviderCommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** ，將提供者新增到 **AccountsSettingsPane**，如下所示： 
+最後，建立新的WebAccountProviderCommand **[，將提供者新增到 ](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)AccountsSettingsPane**，如下所示： 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -178,7 +178,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * 若為 OneDrive 範圍，請參閱 [OneDrive 驗證與登入](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> Optionally, if your app uses a login hint (to populate the user field with a default email address) or other special property related to the sign-in experience, list it in the **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** property. This will cause the system to ignore the property when caching the web account, which prevents account mismatches in the cache.
+> 或者，如果您的應用程式使用登入提示（以預設的電子郵件地址填入使用者欄位）或其他與登入體驗相關的特殊屬性，請將它列在 **[WebTokenRequest. AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 屬性中。 這會導致系統在快取 web 帳戶時忽略屬性，這可防止快取中的帳戶不符。
 
 如果您是在開發企業應用程式，您可以連線 Azure Active Directory (AAD) 執行個體，並使用 Microsoft Graph API，而不是使用一般的 MSA 服務。 在這個案例中，請改為使用以下程式碼： 
 
@@ -338,7 +338,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>移除儲存的帳戶
 
-如果您保留 Web 帳戶，建議您讓使用者能夠將自己的帳戶與您的 app 解除關聯。 This way, they can effectively "log out" of the app: their account information will no longer be loaded automatically upon launch. 若要這樣做，請先移除儲存空間中的任何儲存的帳戶和提供者資訊。 接著呼叫 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 以清除快取，並使任何應用程式可能擁有的現有權杖無效。 
+如果您保留 Web 帳戶，建議您讓使用者能夠將自己的帳戶與您的 app 解除關聯。 如此一來，他們就可以有效地「登出」應用程式：啟動時，將不會再自動載入其帳戶資訊。 若要這樣做，請先移除儲存空間中的任何儲存的帳戶和提供者資訊。 接著呼叫 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 以清除快取，並使任何應用程式可能擁有的現有權杖無效。 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
@@ -422,14 +422,14 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 ## <a name="see-also"></a>請參閱
 
-[Windows.Security.Authentication.Web.Core namespace](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
+[Windows. 驗證. Web. Core 命名空間](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
-[Windows.Security.Credentials namespace](https://docs.microsoft.com/uwp/api/windows.security.credentials)
+[Windows. Security. 認證命名空間](https://docs.microsoft.com/uwp/api/windows.security.credentials)
 
-[AccountsSettingsPane class](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
+[AccountsSettingsPane 類別](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
 
 [Web 驗證代理人](web-authentication-broker.md)
 
-[Web account management sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
+[Web 帳戶管理範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
 
-[Lunch Scheduler app](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
+[午餐排程器應用程式](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

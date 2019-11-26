@@ -1,5 +1,5 @@
 ---
-title: 處理 app 暫停
+title: 處理應用程式暫停
 description: 了解如何在系統暫停您的應用程式時，儲存重要的應用程式資料。
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ms.date: 07/06/2018
@@ -18,7 +18,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260402"
 ---
-# <a name="handle-app-suspend"></a>處理 app 暫停
+# <a name="handle-app-suspend"></a>處理應用程式暫停
 
 **重要 API**
 
@@ -125,7 +125,7 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 }
 ```
 
-## <a name="release-resources"></a>釋出資源
+## <a name="release-resources"></a>釋放資源
 
 您應該釋放獨占資源及檔案控制代碼，這樣當您的 app 暫停時，其他 app 仍然可以使用它們。 獨占資源的範例包括相機、I/O 裝置、外部裝置及網路資源。 明確釋放獨占資源及檔案控制代碼，有助於確保當您的 app 暫停時，其他 app 仍然可以使用它們。 當應用程式繼續執行時，應要重新取得獨占資源和檔案控制代碼。
 

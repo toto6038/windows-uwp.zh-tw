@@ -162,18 +162,18 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 當電池低於指定的閾值時，Windows 10 可讓使用者將電池保護設定為自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 電池保護設定（可在 [**設定**] 應用程式中找到）可讓您的應用程式接收推播通知，即使電池保護已開啟也是一樣。
 
--   **允許在省電模式中接收來自任何應用程式的推播通知**：此設定可讓所有應用程式在省電模式開啟時接收推播通知。 請注意，此設定僅適用于 Windows 10 傳統型版本（家用版、專業版、企業版和教育版）。
+-   **允許在省電模式中接收來自任何 App 的推播通知**：此設定可讓所有 App 在省電模式開啟時接收推播通知。 請注意，此設定僅適用于 Windows 10 傳統型版本（家用版、專業版、企業版和教育版）。
 -   **一律允許**：此設定可讓特定 App 在省電模式開啟時，於背景執行，包括接收推播通知。 此清單是由使用者手動維護。
 
 沒有任何方式檢查這兩個設定的狀態，無法您可以檢查省電模式的狀態。 在 Windows 10 中，請使用[**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus)屬性來檢查電池保護狀態。 您的應用程式也可以使用 [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) 事件接聽省電模式的變更。
 
-如果您的應用程式非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 使用 Windows 10 中的節電設定 URI 配置 `ms-settings:batterysaver-settings`，您可以提供 [設定] 應用程式的方便連結。
+如果您的 App 非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 使用 Windows 10 中的節電設定 URI 配置 `ms-settings:batterysaver-settings`，您可以提供 [設定] 應用程式的方便連結。
 
 **提示**   當通知使用者有關電池保護設定時，建議您提供一種方法來抑制未來的訊息。 例如，以下範例中的 `dontAskMeAgainBox` 核取方塊會在 [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中保存使用者的喜好設定。
 
  
 
-以下範例說明如何在 Windows 10 中檢查是否已開啟電池保護。 此範例會通知使用者並啟動 [設定] 應用程式以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
+以下範例說明如何在 Windows 10 中檢查是否已開啟電池保護。 此範例會通知使用者並啟動 [設定] App 以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
 
 ```cs
 using System;

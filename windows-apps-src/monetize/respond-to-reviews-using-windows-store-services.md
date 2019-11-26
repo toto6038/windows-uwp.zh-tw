@@ -15,7 +15,7 @@ ms.locfileid: "74260201"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>使用Microsoft Store 服務回應評論
 
-使用 *Microsoft Store 評論 API*，以程式設計方式在 Microsoft Store 中回應您 app 的評論。 This API is especially useful for developers who want to bulk respond to many reviews without using Partner Center. 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您 App 或服務的呼叫。
+使用 *Microsoft Store 評論 API*，以程式設計方式在 Microsoft Store 中回應您 app 的評論。 此 API 特別適合想要大量回應許多評論，而不使用合作夥伴中心的開發人員。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
 
 下列步驟說明端對端的程序：
 
@@ -24,7 +24,7 @@ ms.locfileid: "74260201"
 3.  [呼叫 Microsoft Store 評論 API](#call-the-windows-store-reviews-api)。
 
 > [!NOTE]
-> In addition to using the Microsoft Store reviews API to programmatically respond to reviews, you can alternatively respond to reviews [using Partner Center](../publish/respond-to-customer-reviews.md).
+> 除了使用 Microsoft Store 審核 API 以程式設計方式回應評論以外，您也可以[使用合作夥伴中心](../publish/respond-to-customer-reviews.md)來回應評論。
 
 <span id="prerequisites" />
 
@@ -32,17 +32,17 @@ ms.locfileid: "74260201"
 
 開始撰寫程式碼以呼叫 Microsoft Store 評論 API 之前，請先確定您已完成下列先決條件。
 
-* 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 Otherwise, you can [create a new Azure AD in Partner Center](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) for no additional charge.
+* 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 否則，您可以[在合作夥伴中心建立新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) ，而不需要額外付費。
 
-* You must associate an Azure AD application with your Partner Center account, retrieve the tenant ID and client ID for the application and generate a key. Azure AD 應用程式代表您要呼叫 Microsoft Store 評論 API 的應用程式或服務。 您需要租用戶識別碼、用戶端識別碼和金鑰，才能取得傳遞給 API 的 Azure AD 存取權杖。
+* 您必須將 Azure AD 應用程式與您的合作夥伴中心帳戶建立關聯、抓取應用程式的租使用者識別碼和用戶端識別碼，並產生金鑰。 Azure AD 應用程式代表您要呼叫 Microsoft Store 評論 API 的應用程式或服務。 您需要租用戶識別碼、用戶端識別碼和金鑰，才能取得傳遞給 API 的 Azure AD 存取權杖。
     > [!NOTE]
     > 您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
 
-To associate an Azure AD application with your Partner Center account and retrieve the required values:
+若要將 Azure AD 應用程式與您的合作夥伴中心帳戶產生關聯，並抓取所需的值：
 
-1.  In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-partner-center.md).
+1.  在合作夥伴中心，[將組織的合作夥伴中心帳戶與組織的 Azure AD 目錄建立關聯](../publish/associate-azure-ad-with-partner-center.md)。
 
-2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) that represents the app or service that you will use to respond to reviews. 請確定您指派此應用程式 **[管理員]** 角色。 If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
+2.  接下來，從 [合作夥伴中心] 的 [**帳戶設定**] 區段中的 [**使用者**] 頁面，新增代表您將用來回應評論之應用程式或服務的[Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)。 請確定您指派此應用程式 **[管理員]** 角色。 如果您的 Azure AD 目錄中尚未存在該應用程式，您可以[在合作夥伴中心建立新的 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。 
 
 3.  返回 **\[使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
@@ -67,7 +67,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Partner Center in the previous section. 對於 *resource* 參數，您必須指定 ```https://manage.devcenter.microsoft.com```。
+針對 [POST URI] 和 [*用戶端\_識別碼*] 和 [用戶端 *\_密碼*] 參數中的*租使用者\_識別碼*值，指定您在上一節中從合作夥伴中心抓取之應用程式的租使用者識別碼、用戶端識別碼和金鑰。 對於 *resource* 參數，您必須指定 ```https://manage.devcenter.microsoft.com```。
 
 存取權杖到期之後，您可以按照[這裡](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的指示，重新整理權杖。
 
@@ -79,15 +79,15 @@ For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_sec
 
 Microsoft Store 評論 API 包含數種方法您可以用來判斷，是否允許您對特定評論回應和提交一個或多個評論的回應。 請依照此程序，以使用此 API：
 
-1. 取得您想要回應之評論的識別碼。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。
+1. 取得您想要回應之評論的識別碼。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/download-analytic-reports.md)的[離線下載](../publish/reviews-report.md)中。
 2. 呼叫[取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)方法，以判斷是否允許您回應評論。 當客戶提交評論時，他們可以選擇不接收評論的回應。 您無法回應已選擇不要接收評論回應的客戶所提交的評論。
 3. 呼叫[提交應用程式評論的回應](submit-responses-to-app-reviews.md)方法，以程式設計方式回應評論。
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [Get app reviews](get-app-reviews.md)
-* [Get response info for app reviews](get-response-info-for-app-reviews.md)
-* [Submit responses to app reviews](submit-responses-to-app-reviews.md)
+* [取得應用程式審查](get-app-reviews.md)
+* [取得應用程式審查的回應資訊](get-response-info-for-app-reviews.md)
+* [提交對應用程式評論的回應](submit-responses-to-app-reviews.md)
 
  

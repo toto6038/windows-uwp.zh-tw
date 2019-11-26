@@ -1,6 +1,6 @@
 ---
 Description: 使用視覺效果意見反應，在使用者與 UWP 應用程式的互動受到偵測、解讀和處理時顯示。
-title: 視覺回饋
+title: 視覺化回饋
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
@@ -64,7 +64,7 @@ ms.locfileid: "74257905"
 
 **框線屬性**
 
-高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線*外側*。 次要框線的粗細為 **1px**，圍繞在主要框線*內側*。
+高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」* 。
 ![高可見度焦點視覺效果紅線](images/FocusRectRedlines.png)
 
 若要變更框線類型 (主要或次要) 的粗細，請分別使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**︰

@@ -73,7 +73,7 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
     c. 在 **\[起始選項\]** 下，將 **\[目標裝置\]** 變更為 **\[遠端電腦\]** 。
 
-    d. 在 **\[遠端電腦\]** 中，輸入 Xbox One 主機的系統 IP 位址或主機名稱。 如需取得 IP 位址或主機名稱的資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
+    d. 在 [遠端電腦] 中，輸入 Xbox One 主機的系統 IP 位址或主機名稱。 如需取得 IP 位址或主機名稱的資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
 
     e. 在 [驗證模式] 下拉式清單中，選取 [通用 (未加密通訊協定)]。
 
@@ -93,7 +93,7 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
    c. 在 [電腦名稱] 中，輸入 Xbox One 主機的系統 IP 位址或主機名稱。 如需取得 IP 位址或主機名稱的資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
 
-   d. 在 **\[驗證類型\]** 下拉式清單中，選取 **\[通用 (未加密通訊協定)\]** 。
+   d. 在 [驗證類型] 下拉式清單中，選取 [通用 (未加密通訊協定)]。
 
    e. 在 **\[平台\]** 下拉式清單中選取 **\[x64\]** 。
 
@@ -101,7 +101,7 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 ### <a name="pin-pair-your-device-with-visual-studio"></a>與 Visual Studio 以 PIN 配對您的裝置
 
-1. 儲存您的設定，並確保您的 Xbox One 主機處於開發人員模式。
+1. 儲存您的設定，並確保您的 Xbox One 處於開發人員模式。
 
 2. 在 Visual Studio 中開啟專案，然後按下 F5。
 
@@ -117,7 +117,7 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
     ![[與 Visual Studio PIN 配對] 對話方塊](images/devhome_pin.png)
 
-    d. 如果有部署錯誤，錯誤將會出現在 **\[輸出\]** 視窗中。
+    d. 如果有部署錯誤，錯誤將會出現在 [輸出] 視窗中。
 
 恭喜，您已成功在 Xbox 上建立並部署您的第一個 UWP App！
 

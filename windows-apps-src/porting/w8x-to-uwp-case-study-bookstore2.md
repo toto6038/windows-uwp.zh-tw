@@ -89,7 +89,7 @@ Windows 10 應用程式，並在桌面裝置上執行初始原始程式碼變更
 -   在 SeZoUC.xaml 的 `ZoomedInItemsPanelTemplate` 中，設定 `Orientation="Horizontal"` 和 `GroupPadding="0,0,0,20"`。
 -   在 SeZoUC.xaml 中，刪除 `ZoomedOutItemsPanelTemplate`，並從縮小檢視中移除 `ItemsPanel` 屬性。
 
-這樣就完成了！
+這樣就大功告成了！
 
 ## <a name="adaptive-ui"></a>彈性 UI
 

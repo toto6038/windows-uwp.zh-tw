@@ -127,7 +127,7 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 
 ### <a name="developer-guidance"></a>開發人員指導方針
 
-您可以透過一組完整的 [Windows 執行階段 API](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) 自訂 Surface Dial 體驗，補充您應用程式的功能。 
+您可以透過一組完整的 [Windows 執行階段 API](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) 自訂 Surface Dial 體驗，補充您 App 的功能。 
 
 如先前所述，預設的 Surface Dial 功能表會預先填入一組內建工具，涵蓋廣泛的基本系統功能 (系統音量、系統亮度、捲動、縮放、復原，以及當系統偵測到播放音訊或視訊時的媒體控制項)。 不過，這些預設工具可能無法提供您的應用程式所需的功能。 
 
@@ -291,7 +291,7 @@ public MainPage()
 > [!NOTE]
 > 如果將 Surface Dial 放在 Surface Studio 的螢幕上，就會在 Surface Dial 放在螢幕上的位置中央顯示功能表。
 
-### <a name="rotate"></a>旋轉
+### <a name="rotate"></a>Rotate
 
 Surface Dial 主要是設計來支援涉及順暢、增量調整類比值或控制項的互動旋轉。
 
@@ -318,14 +318,14 @@ Dial 功能表上的內建工具和命令遵循下列指導方針進行以旋轉
 
 |   |   |   |
 | --- | --- | --- |
-| Left<br/>Up<br/>向外 | ![Surface Dial 的影像](images/windows-wheel/surface-dial-rotate.png) | Right<br/>Down<br/>輸入 |
+| Left<br/>Up<br/>向外 | ![Surface Dial 的影像](images/windows-wheel/surface-dial-rotate.png) | Right<br/>Down<br/>向內 |
 |   |   |   |
 
 | 概念方向 | 對應到 Surface Dial | 順時針方向旋轉 | 逆時針方向旋轉 |
 | --- | --- | --- | --- |
 | 水平 | 以 Surface Dial 的頂端為基準對應向左和向右 | Right | Left |
 | 垂直 | 以 Surface Dial 的左側為基準對應向上和向下 | Down | Up |
-| Z 軸 | 向內 (或接近) 對應到向上/向右<br/>向外 (或離開) 對應到向左/向下 | 輸入 | 向外 |
+| Z 軸 | 向內 (或接近) 對應到向上/向右<br/>向外 (或離開) 對應到向左/向下 | 向內 | 向外 |
 
 #### <a name="developer-guidance"></a>開發人員指導方針
 

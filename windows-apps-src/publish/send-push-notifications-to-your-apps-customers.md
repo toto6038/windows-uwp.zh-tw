@@ -15,7 +15,7 @@ ms.locfileid: "74259932"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>傳送通知給您的應用程式客戶
 
-在對的時間以適當的訊息和客戶互動，是您身為 App 開發人員的致勝關鍵。 通知可以鼓勵您的客戶採取行動，例如為應用程式評分、購買附加元件、嘗試新功能或下載另一個應用程式 (或許可透過您提供的[促銷代碼](generate-promotional-codes.md)免費取得)。
+在對的時間以適當的訊息和客戶互動，是您身為應用程式開發人員的致勝關鍵。 通知可以鼓勵您的客戶採取行動，例如為應用程式評分、購買附加元件、嘗試新功能或下載另一個應用程式 (或許可透過您提供的[促銷代碼](generate-promotional-codes.md)免費取得)。
 
 [合作夥伴中心](https://partner.microsoft.com/dashboard)提供資料驅動的客戶參與平臺，您可以用來將通知傳送給所有應用程式的客戶，或只以應用程式的一部分（符合您在[客戶區段](create-customer-segments.md)中所定義的準則）為目標的客戶。 您也可以建立通知，將其傳送給多個應用程式的客戶。
 
@@ -68,7 +68,7 @@ ms.locfileid: "74259932"
     * **案例** (互動式快顯通知類型)。 您可以選擇 **\[預設\]** 、 **\[警示\]** 、 **\[提醒\]** 或 **\[來電\]** 。
     * **基底 URI** (互動式快顯通知類型)。 如需詳細資訊，請參閱 [BaseUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri)。
     * **新增影像查詢** (互動式快顯通知類型)。 如需詳細資訊，請參閱 [addImageQuery](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements)。
-    * **視覺**。 影像、視訊或音效。 如需詳細資訊，請參閱[視覺效果](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
+    * **視覺效果**。 影像、視訊或音效。 如需詳細資訊，請參閱[視覺效果](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)。
     * **輸入**/**動作**/**選取項目** (互動式快顯通知類型)。 可讓使用者與通知互動。 如需詳細資訊，請參閱[調適型和互動式快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)。
     * **繫結** (互動式磚類型)。 快顯通知範本。 如需詳細資訊，請參閱[繫結](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-binding)。
 
@@ -84,7 +84,7 @@ ms.locfileid: "74259932"
 
 -   **空白（快顯）。** 以可自訂的空白快顯通知開始。 快顯通知是顯示在畫面上的快顯 UI，無論使用者是在另一個 app、在 \[開始\] 畫面或是在桌面，都能讓 app 與客戶進行通訊。
 -   **空白（磚）。** 以可自訂的空白磚通知開始。 磚是 app 在 \[開始\] 畫面上的呈現方式。 磚可以「動態」呈現，表示磚所顯示的內容會隨著通知而變更。
--   **要求評等（快顯通知）。** 要求客戶為您的 app 評等的快顯通知。 當客戶選取通知時，會顯示 app 的Microsoft Store評等頁面。
+-   **要求評等（快顯通知）。** 要求客戶為您的 app 評等的快顯通知。 當客戶選取通知時，會顯示 app 的市集評等頁面。
 -   **詢問意見反應（快顯通知）。** 要求客戶為您的 app 提供意見的快顯通知。 當客戶選取通知時，會顯示 app 的 \[意見反應中樞\] 頁面。
     > [!NOTE]
     > 如果您選擇這個範本類型，在 [**啟動**] 方塊中，記得將 {PACKAGE_FAMILY_NAME} 預留位置值取代為您的應用程式實際套件系列名稱 (PFN)。 您可以在 [App 身分識別](view-app-identity-details.md)頁面 ( **\[App 管理\]**  >  **\[App 身分識別\]** ) 上找到 app 的 PFN。

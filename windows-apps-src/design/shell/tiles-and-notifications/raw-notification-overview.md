@@ -5,7 +5,7 @@ ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b04e48163af47b7e753bc3bc050e44a947b122fc
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -36,7 +36,7 @@ ms.locfileid: "74259693"
 所有原始通知都是推播通知。 因此，傳送和接收推播通知所需的設定也適用於原始通知：
 
 -   您必須具備有效的 WNS 通道才能傳送原始通知。 如需取得推播通知通道的詳細資訊，請參閱[如何要求、建立以及儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))。
--   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 **\[功能\]** 索引標籤下找到此 **\[網際網路 (用戶端)\]** 選項。 如需詳細資訊，請參閱 [**Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
+-   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 [功能] 索引標籤下找到此 [網際網路 (用戶端)] 選項。 如需詳細資訊，請參閱 [**Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
 
 通知的本文是採用應用程式定義的格式。 用戶端會以 null 結尾字串 (**HSTRING**) 的形式接收資料，該字串只需要讓應用程式了解。
 
@@ -63,12 +63,12 @@ ms.locfileid: "74259693"
 應用程式有兩個管道可以接收原始通知：
 
 -   在應用程式執行時透過[通知傳送事件](#notification-delivery-events)接收。
--   如果應用程式能夠執行背景工作，透過[原始通知觸發的背景工作](#background-tasks-triggered-by-raw-notifications)接收。
+-   如果 app 能夠執行背景工作，透過[原始通知觸發的背景工作](#background-tasks-triggered-by-raw-notifications)接收。
 
 應用程式可以使用這兩種機制來接收原始通知。 如果應用程式同時實作通知傳送事件處理常式以及由原始通知觸發的背景工作，則應用程式執行時會優先使用通知傳送事件。
 
 -   如果應用程式正在執行，通知傳送事件會優先於背景工作，讓應用程式能夠儘速處理通知。
--   通知傳送事件處理常式可以將事件的 [**PushNotificationReceivedEventArgs.Cancel**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs.Cancel) 屬性設為 **true**，指定在處理常式結束後，原始通知不應該傳送到應用程式的背景工作。 如果 **Cancel** 屬性設為 **false** 或未設定 (預設值為 **false**)，原始通知會在通知傳送事件處理常式完成工作後觸發背景工作。
+-   通知傳送事件處理常式可以將事件的 [**PushNotificationReceivedEventArgs.Cancel**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs.Cancel) 屬性設為 **true**，指定在處理常式結束後，原始通知不應該傳送到 app 的背景工作。 如果 **Cancel** 屬性設為 **false** 或未設定 (預設值為 **false**)，原始通知會在通知傳送事件處理常式完成工作後觸發背景工作。
 
 ### <a name="notification-delivery-events"></a>通知傳送事件
 
@@ -76,10 +76,10 @@ ms.locfileid: "74259693"
 
 如果應用程式沒有執行，也沒有使用[背景工作](#background-tasks-triggered-by-raw-notifications)，那麼傳送到該應用程式的任何原始通知，都會在收到後遭 WNS 捨棄。 為了避免浪費雲端服務的資源，您應該考慮在服務實作邏輯，以追蹤應用程式是否正在使用中。 可以從兩個來源獲得這個資訊：應用程式可以明確告訴服務它已準備好開始接收通知，以及 WNS 可以告訴服務何時停止。
 
--   **應用程式通知雲端服務**：應用程式可以連絡服務，讓它知道應用程式正在前景執行。 這種方式的缺點是應用程式可能會非常頻繁地連絡服務。 不過，它的優點是服務永遠可以知道應用程式何時準備好接收傳入的原始通知。 另一個優點是當應用程式連絡服務時，服務會知道要將原始通知傳送到該應用程式的特定執行個體而不是使用廣播。
--   **雲端服務回應 WNS 回應訊息**：應用程式服務可以使用 WNS 傳回的 [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 與 [X-WNS-DeviceConnectionStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 資訊，判斷何時停止傳送原始通知給應用程式。 服務以 HTTP POST 的形式將通知傳送到通道時，它可以在回應中接收下列其中一種訊息：
+-   **App 通知雲端服務**：App 可以連絡服務，讓它知道 app 正在前景執行。 這種方式的缺點是應用程式可能會非常頻繁地連絡服務。 不過，它的優點是服務永遠可以知道應用程式何時準備好接收傳入的原始通知。 另一個優點是當應用程式連絡服務時，服務會知道要將原始通知傳送到該應用程式的特定執行個體而不是使用廣播。
+-   **雲端服務回應 WNS 回應訊息**：App 服務可以使用 WNS 傳回的 [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 與 [X-WNS-DeviceConnectionStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 資訊，判斷何時停止傳送原始通知給 app。 服務以 HTTP POST 的形式將通知傳送到通道時，它可以在回應中接收下列其中一種訊息：
 
-    -   **X-WNS-NotificationStatus: dropped**：這表示用戶端沒有接收到通知。 因此可以大膽假設收到 **dropped** 回應的原因是由於您的應用程式已不在使用者裝置的前景執行。
+    -   **X-WNS-NotificationStatus: dropped**：這表示用戶端沒有接收到通知。 因此可以大膽假設收到 **dropped** 回應的原因是由於您的 app 已不在使用者裝置的前景執行。
     -   **X-WNS-DeviceConnectionStatus: disconnected** 或 **X-WNS-DeviceConnectionStatus: tempconnected**：這表示 Windows 用戶端與 WNS 中斷連線。 請注意，若要從 WNS 接收這個訊息，您必須在通知的 HTTP POST 中設定 [X-WNS-RequestForStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 標頭來要求該訊息。
 
     應用程式的雲端服務可以使用這些狀態訊息中的資訊，停止使用原始通知進行通訊。 當應用程式回到前景並連線服務時，服務就可以繼續傳送原始通知。
@@ -113,13 +113,13 @@ ms.locfileid: "74259693"
 ## <a name="other-resources"></a>其他資源
 
 
-You can learn more by downloading the [Raw notifications sample](https://code.msdn.microsoft.com/windowsapps/Raw-notifications-sample-3bc28c5d) for Windows 8.1, and the [Push and periodic notifications sample](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) for Windows 8.1, and re-using their source code in your Windows 10 app.
+若要深入瞭解，請下載 Windows 8.1 的[原始通知範例](https://code.msdn.microsoft.com/windowsapps/Raw-notifications-sample-3bc28c5d)，以及 Windows 8.1 的[推播和定期通知範例](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603)，然後在您的 Windows 10 應用程式中重複使用其原始程式碼。
 
 ## <a name="related-topics"></a>相關主題
 
-* [Guidelines for raw notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
-* [Quickstart: Creating and registering a raw notification background task](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
-* [Quickstart: Intercepting push notifications for running apps](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
+* [原始通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
+* [快速入門：建立及註冊原始通知背景工作](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
+* [快速入門：攔截執行中應用程式的推播通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
  

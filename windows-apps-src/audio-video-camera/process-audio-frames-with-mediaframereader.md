@@ -4,7 +4,7 @@ description: 本文說明如何使用 MediaFrameReader 搭配 MediaCapture 以�
 title: 使用 MediaFrameReader 處理音訊框架
 ms.date: 04/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8d357dfbceafb6cc366b2880956ab3db231047d
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -26,7 +26,7 @@ ms.locfileid: "74256667"
 ## <a name="setting-up-your-project"></a>設定您的專案
 擷取音訊框架的程序與取得其他媒體框架類型的程序大致相同。 就像任何使用 **MediaCapture** 的 App 一樣，您必須在嘗試存取任何相機裝置之前，宣告您的 App 是使用*網路攝影機*功能。 如果您的應用程式會從音訊裝置擷取，您也應該宣告*麥克風*裝置功能。 
 
-**Add capabilities to the app manifest**
+**將功能新增至應用程式資訊清單**
 
 1.  在 Microsoft Visual Studio 中，按兩下 **\[方案總管\]** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
 2.  選取 **\[功能\]** 索引標籤。
@@ -39,7 +39,7 @@ ms.locfileid: "74256667"
 
 擷取音訊框架的第一個步驟是初始化代表音訊資料來源的 [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource)，例如麥克風或其他音訊擷取裝置。 若要這樣做，您必須建立 [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) 物件的新執行個體。 針對此範例，**MediaCapture** 的唯一初始化設定是將 [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) 設定為指出我們要從擷取裝置串流處理音訊。 
 
-在呼叫 [**MediaCapture.InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) 後，您可以取得可存取媒體框架來源清單並包含 [**FrameSources**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.framesources) 屬性。 此範例使用 Linq 查詢來選取所有框架來源，其中 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo) 描述框架來源具有 **Audio** 的 [**MediaStreamType**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype)，指出媒體來源產生音訊資料。
+在呼叫 [**MediaCapture.InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) 後，您可以取得可存取媒體框架來源清單並包含 [**FrameSources**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.framesources) 屬性。 此範例使用 Linq 查詢來選取所有框架來源，其中 [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo) 描述框架來源具有 [Audio**的**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype)MediaStreamType，指出媒體來源產生音訊資料。
 
 如果查詢傳回一或多個框架來源，您可以檢查 [**CurrentFormat**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.currentformat) 屬性以查看來源是否支援您想要的音訊格式，在此範例中，是浮動音訊資料。 查看 [**AudioEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframeformat.audioencodingproperties) 以確定來源支援您想要的音訊編碼。
 
@@ -47,15 +47,15 @@ ms.locfileid: "74256667"
 
 ## <a name="create-and-start-the-mediaframereader"></a>建立並開始 MediaFrameReader
 
-透過呼叫 [**MediaCapture.CreateFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_)、傳遞您在上一個步驟中選取的 **MediaFrameSource** 物件，取得 **MediaFrameReader** 的新執行個體。 根據預設，音訊框架會在緩衝模式中取得，如此比較不可能捨棄框架，但是如果您處理音訊框架的速度不夠快因而填滿系統分配的記憶體緩衝區，這種情形仍然會發生。
+透過呼叫MediaCapture.CreateFrameReaderAsync[ **、傳遞您在上一個步驟中選取的** MediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_) 物件，取得 **MediaFrameReader** 的新執行個體。 根據預設，音訊框架會在緩衝模式中取得，如此比較不可能捨棄框架，但是如果您處理音訊框架的速度不夠快因而填滿系統分配的記憶體緩衝區，這種情形仍然會發生。
 
 註冊 [**MediaFrameReader.FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件的處理常式，只要有可用的新音訊資料框架時就會引發該事件。 呼叫 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) 來開始擷取音訊框架。 如果畫面讀取程式無法開始，呼叫傳回的狀態值會具有 [**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus) 以外的值。
 
 [!code-cs[CreateAudioFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateAudioFrameReader)]
 
-在 **FrameArrived** 事件處理常式中，在 **MediaFrameReader** 物件上呼叫以傳送者傳遞給處理常式的 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe)，以嘗試擷取最新媒體畫面的參考。 請注意，此物件可能是 null，因此您在使用物件前應該一律先檢查。 從 **TryAcquireLatestFrame** 傳回包裝在 **MediaFrameReference** 中的媒體畫面類型，取決於您設定畫面讀取程式去取得何種類型的框架來源或來源。 由於此範例中的畫面讀取程式設定為取得音訊框架，因此它會使用 [**AudioMediaFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference.audiomediaframe) 屬性取得基礎框架。 
+在 **FrameArrived** 事件處理常式中，在 [MediaFrameReader**物件上呼叫以傳送者傳遞給處理常式的**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe)TryAcquireLatestFrame，以嘗試擷取最新媒體畫面的參考。 請注意，此物件可能是 null，因此您在使用物件前應該一律先檢查。 從 **TryAcquireLatestFrame** 傳回包裝在 **MediaFrameReference** 中的媒體畫面類型，取決於您設定畫面讀取程式去取得何種類型的框架來源或來源。 由於此範例中的畫面讀取程式設定為取得音訊框架，因此它會使用 [**AudioMediaFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference.audiomediaframe) 屬性取得基礎框架。 
 
-以下範例中的此 **ProcessAudioFrame** 協助程式方法示範如何取得 [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe)，其中提供框架時間戳記以及是否從 **AudioMediaFrame** 物件中斷等資訊。 若要讀取或處理音訊範例資料，您需要從 **AudioMediaFrame** 物件取得 [**AudioBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer) 物件、建立 [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)，然後呼叫 COM 方法 **IMemoryBufferByteAccess::GetBuffer** 來擷取資料。 請參閱程式碼清單下面的註釋，以了解存取原生緩衝區的詳細資訊。
+以下範例中的此 **ProcessAudioFrame** 協助程式方法示範如何取得 [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe)，其中提供框架時間戳記以及是否從 **AudioMediaFrame** 物件中斷等資訊。 若要讀取或處理音訊範例資料，您需要從 [AudioMediaFrame**物件取得**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer)AudioBuffer 物件、建立 [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)，然後呼叫 COM 方法 **IMemoryBufferByteAccess::GetBuffer** 來擷取資料。 請參閱程式碼清單下面的註釋，以了解存取原生緩衝區的詳細資訊。
 
 資料的格式取決於框架來源。 在此範例中，選取媒體框架來源時，我們明確地確定所選取的框架來源使用浮動資料的單一頻道。 範例程式碼的其餘部分示範如何判斷框架中音訊資料的持續時間和取樣計數。  
 
@@ -68,18 +68,18 @@ ms.locfileid: "74256667"
 
 ## <a name="additional-information-on-using-mediaframereader-with-audio-data"></a>使用 MediaFrameReader 搭配音訊資料的其他資訊
 
-您可以存取 [**MediaFrameSource.Controller**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.controller) 屬性來擷取與音訊框架來源相關聯的 [**AudioDeviceController**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AudioDeviceController)。 此物件可用來取得或設定擷取裝置的串流屬性或控制擷取層級。 下列範例將音訊裝置設為靜音，以便畫面讀取程式可以持續取得框架，但所有樣本都具有 0 的值。
+您可以存取 [**MediaFrameSource.Controller**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AudioDeviceController) 屬性來擷取與音訊框架來源相關聯的 [**AudioDeviceController**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.controller)。 此物件可用來取得或設定擷取裝置的串流屬性或控制擷取層級。 下列範例將音訊裝置設為靜音，以便畫面讀取程式可以持續取得框架，但所有樣本都具有 0 的值。
 
 [!code-cs[AudioDeviceControllerMute](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetAudioDeviceControllerMute)]
 
-您可以使用 [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) 物件來將媒體畫面來源擷取的音訊資料傳遞至 [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph)。 將框架傳遞至 [**AudioFrameInputNode**](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeinputnode) 的 [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) 方法。 如需使用音訊圖來擷取、處理和混合音訊訊號的詳細資訊，請參閱[音訊圖](audio-graphs.md)。
+您可以使用 [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) 物件來將媒體畫面來源擷取的音訊資料傳遞至 [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph)。 將框架傳遞至 [**AudioFrameInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) 的 [**AddFrame**](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeinputnode) 方法。 如需使用音訊圖來擷取、處理和混合音訊訊號的詳細資訊，請參閱[音訊圖](audio-graphs.md)。
 
 ## <a name="related-topics"></a>相關主題
 
-* [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [使用 MediaFrameReader 處理媒體框架](process-media-frames-with-mediaframereader.md)
 * [相機](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
+* [具有 MediaCapture 的基本相片、影片和音訊捕獲](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [相機框架範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
 * [音訊圖](audio-graphs.md)
  
 

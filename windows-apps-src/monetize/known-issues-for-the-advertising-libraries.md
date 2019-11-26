@@ -17,8 +17,8 @@ ms.locfileid: "74260248"
 
 本主題列出 Microsoft Advertising SDK 目前版本的已知問題。 如需其他疑難排解指導方針，請參閱下列主題。
 
-* [HTML and JavaScript troubleshooting guide](html-and-javascript-troubleshooting-guide.md)
-* [XAML and C# troubleshooting guide](xaml-and-c-troubleshooting-guide.md)
+* [HTML 和 JavaScript 疑難排解指南](html-and-javascript-troubleshooting-guide.md)
+* [XAML 和C#疑難排解指南](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>AdControl 介面於 XAML 中為未知
 
@@ -40,13 +40,13 @@ ms.locfileid: "74260248"
 
 有很多原因會使您看不見廣告，包括網路錯誤。 其他原因可能包含：
 
-* Selecting an ad unit in Partner Center with a size that is greater or less than the size of the **AdControl** in your app's code.
+* 在合作夥伴中心選取一個大小大於或小於您應用程式代碼中**AdControl**大小的 ad 單位。
 
 * 如果您在執行實際 App 時使用[測試模式值](set-up-ad-units-in-your-app.md#test-ad-units)做為您的廣告單位識別碼，則廣告將不會出現。
 
 * 如果您在過去半個小時之內建立新的廣告單位識別碼，在伺服器將新資料傳播至整個系統之前，您可能看不見廣告。 先前已顯示過廣告的現有識別碼應該會立即顯示廣告。
 
-如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://developer.microsoft.com/en-us/windows/support)。 On that page, choose **Contact us**.
+如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://developer.microsoft.com/en-us/windows/support)。 在該頁面上，選擇 [**洽詢 us**]。
 
 您也可以在[論壇](https://go.microsoft.com/fwlink/?LinkID=401264)中張貼問題。
 
@@ -58,22 +58,22 @@ ms.locfileid: "74260248"
 
 * 側載 App 或在模擬器中執行的 App 將不會顯示實際廣告。
 
-When a live ad unit is serving test ads, the ad unit’s status shows **Active and serving test ads** in Partner Center. 目前這並不適用於手機 App。
+當即時廣告單位正在提供測試廣告時，廣告單位的狀態會顯示 [作用中] **，並提供**[合作夥伴中心] 中的測試廣告。 目前這並不適用於手機 App。
 
 
 <span id="reference_errors"/>
 
 ## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>專案中因目標為 [任何 CPU] 所造成的參考錯誤
 
-使用 Microsoft Advertising SDK 時，您在專案中將無法以 **\[任何 CPU\]** 為目標。 如果您的專案以 **\[任何 CPU\]** 平台為目標，您在新增類似下列的參照之後可能會看見警告。
+使用 Microsoft Advertising SDK 時，您在專案中將無法以 **\[任何 CPU\]** 為目標。 如果您的專案以 [任何 CPU] 平台為目標，您在新增類似下列的參照之後可能會看見警告。
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
-如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 **\[組態管理員\]** 來針對偵錯和發行組態設定平台目標。
+如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 [組態管理員] 來針對偵錯和發行組態設定平台目標。
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 
-當您針對 Microsoft Store 提交建立應用程式套件 (如下列影像所示)，請務必包含您想要做為目標的架構。 如果您想要在 x64 OS 上執行 x86 組建，您可以選擇略過 x64。
+當您針對市集提交建立應用程式套件 (如下列影像所示)，請務必包含您想要做為目標的架構。 如果您想要在 x64 OS 上執行 x86 組建，您可以選擇略過 x64。
 
 ![projectstorecreateapppackages](images/13-a99b05a4-8917-4c53-822e-2548fadf828a.png)
 

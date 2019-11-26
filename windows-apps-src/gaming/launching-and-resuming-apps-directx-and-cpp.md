@@ -17,8 +17,8 @@ ms.locfileid: "74490622"
 
 了解如何啟動、暫停和繼續通用 Windows 平台 (UWP) DirectX app。
 
-|主題|說明|
+|主題|描述|
 |-|-|
-|[How to activate an app](how-to-activate-an-app-directx-and-cpp.md)|本主題示範如何定義 UWP DirectX app 的啟用經驗。|
-|[How to suspend an app](how-to-suspend-an-app-directx-and-cpp.md)|本主題示範如何在系統暫停 UWP DirectX app 時，儲存重要的系統狀態與 app 資料。|
-|[How to resume an app](how-to-resume-an-app-directx-and-cpp.md)|本主題示範如何在系統繼續 UWP DirectX app 時，還原重要的應用程式資料。|
+|[如何啟用應用程式](how-to-activate-an-app-directx-and-cpp.md)|本主題示範如何定義 UWP DirectX app 的啟用經驗。|
+|[如何暫停應用程式](how-to-suspend-an-app-directx-and-cpp.md)|本主題示範如何在系統暫停 UWP DirectX app 時，儲存重要的系統狀態與 app 資料。|
+|[如何繼續應用程式](how-to-resume-an-app-directx-and-cpp.md)|本主題示範如何在系統繼續 UWP DirectX app 時，還原重要的應用程式資料。|

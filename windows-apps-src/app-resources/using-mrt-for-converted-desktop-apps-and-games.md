@@ -431,8 +431,8 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 若要測試當地語系化的新變更，您只需將慣用的 UI 語言加入到 Windows。 並不需要下載語言套件、重新開機，或者以外國語言顯示整個 Windows UI。 
 
 1. 執行 `Settings` App (`Windows + I`)
-2. 移至 `Time & language`。
-3. 移至 `Region & language`。
+2. 移至 `Time & language`
+3. 移至 `Region & language`
 4. 按一下 `Add a language`
 5. 輸入 (或選取) 您想要的語言 (例如 `Deutsch` 或 `German`)
  * 如果有附屬語言，請選擇您想要的一種語言 (例如 `Deutsch / Deutschland`)

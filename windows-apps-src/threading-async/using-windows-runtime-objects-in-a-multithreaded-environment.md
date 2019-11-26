@@ -160,7 +160,7 @@ End Sub
 
 若物件在 UI 執行緒上執行，且當從 UI 執行緒之外的執行緒呼叫該物件時，您可以對該物件使用 UI 執行緒的 [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) 物件來發送呼叫。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [C# 指南](/dotnet/csharp/)
 
 [Visual Basic 指南](/dotnet/visual-basic/)

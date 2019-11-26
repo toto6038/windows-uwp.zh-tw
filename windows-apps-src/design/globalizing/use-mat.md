@@ -1,5 +1,5 @@
 ---
-Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide UWP apps with translation support, translation file management, and editor tools.
+Description: 多語系應用程式工具組（材料）4.0 與 Microsoft Visual Studio 2019 整合，為 UWP 應用程式提供翻譯支援、翻譯檔案管理和編輯器工具。
 title: 使用多語應用程式工具組
 template: detail.hbs
 ms.date: 01/23/2018
@@ -15,7 +15,7 @@ ms.locfileid: "74258040"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多語應用程式工具組 4.0
 
-The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide UWP apps with translation support, translation file management, and editor tools. 以下是一些工具組的價值主張。
+多語系應用程式工具組（材料）4.0 與 Microsoft Visual Studio 2019 整合，為 UWP 應用程式提供翻譯支援、翻譯檔案管理和編輯器工具。 以下是一些工具組的價值主張。
 
 - 可協助您在開發期間管理資源變更與翻譯狀態。
 - 提供根據設定的翻譯提供者選擇語言的 UI。
@@ -38,10 +38,10 @@ The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2
 
 多語應用程式工具組 4.0 (MAT 4.0) 有兩個部分，每個部分都有自己的安裝程式。
 
-- [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017 and later](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2019, in the form of a .vsix installer.
+- [適用于 Visual Studio 2017 和更新版本的多語系應用程式工具組4.0 延伸](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)模組。 這包含適用于 Visual Studio 2019 的4.0 延伸模組，格式為 .vsix 安裝程式。
 - [多語應用程式工具組 4.0 編輯器](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)。 其中包含 MAT 4.0 獨立多語編輯器工具，其形式為 .msi 安裝程式。 它同時也包含適用於 Visual Studio 2015 和 Visual Studio 2013 的 MAT 4.0 延伸模組。
 
-If you use Visual Studio 2017 or Visual Studio 2019, then download and run both installers, one after the other. 若您是使用 Visual Studio 2015 或 Visual Studio 2013，請下載並執行 .msi 安裝程式。
+如果您使用 Visual Studio 2017 或 Visual Studio 2019，則請下載並執行兩個安裝程式（一次一個）。 若您是使用 Visual Studio 2015 或 Visual Studio 2013，請下載並執行 .msi 安裝程式。
 
 ### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步驟 3。 為您的專案啟用多語應用程式工具組
 
@@ -162,16 +162,16 @@ If you use Visual Studio 2017 or Visual Studio 2019, then download and run both 
 
 * [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
 * [全球化和當地語系化](globalizing-portal.md)
-* [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
-* [Make your app localizable](prepare-your-app-for-localization.md)
-* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
+* [全球化指導方針](guidelines-and-checklist-for-globalizing-your-app.md)
+* [讓您的應用程式可當地語系化](prepare-your-app-for-localization.md)
+* [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)
 
 ## <a name="downloads"></a>下載
 
-* [Multilingual App Toolkit 4.0 .vsix installer](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [Multilingual App Toolkit 4.0 .msi installer](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [多語系應用程式工具組 4.0 .vsix 安裝程式](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+* [多語系應用程式工具組 4.0 .msi 安裝程式](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
 
 ## <a name="translation-services"></a>翻譯服務
 
-* [Microsoft Language Portal](https://www.microsoft.com/Language/)
-* [Microsoft Translator](https://www.microsofttranslator.com/)
+* [Microsoft 語言入口網站](https://www.microsoft.com/Language/)
+* [Microsoft 線上翻譯](https://www.microsofttranslator.com/)

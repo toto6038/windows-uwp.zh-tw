@@ -23,36 +23,36 @@ ms.locfileid: "74258532"
 ## <a name="game-programming-reference"></a>遊戲程式設計參考資料
 
 
--   [Graphics and Gaming](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
--   [OpenGL reference](https://www.opengl.org/sdk/docs/man4/)
+-   [圖形和遊戲](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
+-   [OpenGL 參考](https://www.opengl.org/sdk/docs/man4/)
 
 ## <a name="game-design-guidance"></a>遊戲設計指引
 
 
--   [Index of UX guidelines for UWP apps](https://developer.microsoft.com/windows/apps/design)
+-   [UWP 應用程式的 UX 指導方針索引](https://developer.microsoft.com/windows/apps/design)
 
 ## <a name="blogs"></a>部落格
 
 
--   [Games for Windows and the DirectX SDK]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [DirectX Developer Blog]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
+-   [Windows 和 DirectX SDK 遊戲]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
+-   [DirectX 開發人員 Blog]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
 -   [Shawn Hargreaves 部落格]( https://go.microsoft.com/fwlink/p/?LinkID=288872) (XNA 遊戲資訊)。
 
 ## <a name="toolkits"></a>工具組
 
 
--   [DirectX Tool Kit](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [DirectXTex texture processing library](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
+-   [DirectX 工具套件](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
+-   [DirectXTex 材質處理程式庫](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   Microsoft Visual Studio [圖形診斷](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
 -   [Win2D](https://github.com/Microsoft/Win2D) - 方便使用的 Windows 執行階段 API，適用於搭配 GPU 加速的直接模式 2D 圖形轉譯。
--   [ANGLE for Microsoft Store](https://github.com/microsoft/angle/wiki) - Runs OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
+-   [Microsoft Store 的角度](https://github.com/microsoft/angle/wiki)-藉由將 OPENGL es api 呼叫轉譯為 DIRECTX 11 api 呼叫，在 Windows 上執行 opengl es 內容。
 
 ## <a name="gdc-2015-game-dev-session-videos"></a>GDC 2015 遊戲開發課程影片
 
 
--   [Microsoft 生態系統的遊戲未來](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer (英文)
+-   [Microsoft 生態圈遊戲的未來](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
 -   [開發 Windows 10 的遊戲](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) – Chris Tector、Don Xbox
--   [進階 DirectX 12 圖形與效能](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen (英文)
+-   [進階 DirectX 12 圖形與效能](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen
 -   [Windows 10 上的遊戲消費者體驗](https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) – Bill Schiefelbein
 -   [獨立開發人員的新機會](https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) – Chris Charla
 -   [使用 Windows 10 的 Xbox Live 來開發](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) – Vijay Gajjala、Brian Tyler

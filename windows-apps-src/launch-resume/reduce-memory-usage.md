@@ -76,7 +76,7 @@ Windows 10 版本 1607 導入兩個新的應用程式週期事件：[**EnteredBa
 
 [!code-cs[LeavingBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetLeavingBackground)]
 
-**CreateRootFrame** 協助程式方法會重新建立您應用程式的檢視內容。 這個方法中的程式碼與預設專案範本中提供的 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 處理常式程式碼幾乎完全相同。 唯一的差異在於 **Launching** 處理常式會從 [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.previousexecutionstate) 的 [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 屬性判斷先前的執行狀態，而 **CreateRootFrame** 方法則是直接取得以引數形式傳入的先前執行狀態。 若要將重複的程式碼縮減到最少，您可以重構預設的 **Launching** 事件處理常式程式碼來呼叫 **CreateRootFrame**。
+**CreateRootFrame** 協助程式方法會重新建立您 App 的檢視內容。 這個方法中的程式碼與預設專案範本中提供的 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 處理常式程式碼幾乎完全相同。 唯一的差異在於 **Launching** 處理常式會從 [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.previousexecutionstate) 的 [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 屬性判斷先前的執行狀態，而 **CreateRootFrame** 方法則是直接取得以引數形式傳入的先前執行狀態。 若要將重複的程式碼縮減到最少，您可以重構預設的 **Launching** 事件處理常式程式碼來呼叫 **CreateRootFrame**。
 
 [!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
 

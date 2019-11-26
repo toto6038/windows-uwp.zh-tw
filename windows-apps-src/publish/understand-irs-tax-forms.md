@@ -56,7 +56,7 @@ ms.locfileid: "74258963"
   </tr>
   <tr> 
      <td valign="top">我在適用的納税年度<b>銷售超過 200 個應用程式</b>，其中銷售總額<b>超過 $20,000 美元</b> (<b>不</b>含透過 Windows 10 上的 Microsoft Store 於巴西及中國所進行的銷售)。</td>
-    <td valign="top"><b>1099-K</b>：<br>報稅者：Microsoft Corporation<br>EIN： * * * * * 4442<br><br><b>重要</b>：表單 1099-K 包含<b>總購買</b>金額，而不是付款給您。</td>
+    <td valign="top"><b>1099-K</b> :<br>報稅者：Microsoft Corporation<br>EIN： * * * * * 4442<br><br><b>重要</b>：表單 1099-K 包含<b>總購買</b>金額，而不是付款給您。</td>
   </tr>
   <tr> 
      <td valign="top">我因為 (i) 於巴西及中國透過 Windows 10 上的 Microsoft Store 進行應用程式銷售，或是 (ii) 在 Minecraft Marketplace 中的銷售，收到<b>至少 $10 美元的款項</b>。<br>

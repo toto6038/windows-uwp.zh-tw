@@ -1,6 +1,6 @@
 ---
 Description: 在 App 中遵循這些適用於地理柵欄的最佳做法。
-title: 地理柵欄應用程式的指導方針
+title: 地理柵欄 App 的指導方針
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,19 +13,19 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260386"
 ---
-# <a name="guidelines-for-geofencing-apps"></a>地理柵欄應用程式的指導方針
+# <a name="guidelines-for-geofencing-apps"></a>地理柵欄 App 的指導方針
 
 
 
 
 **重要 API**
 
--   [**Geofence class (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
--   [**Geolocator class (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
+-   [**地理柵欄類別（XAML）** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
+-   [**Geolocator 類別（XAML）** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
 在應用程式中遵循這些適用於[**地理柵欄**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing)的最佳做法。
 
-## <a name="recommendations"></a>建議事項
+## <a name="recommendations"></a>建議
 
 
 -   如果您的應用程式在發生 [**Geofence**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) 事件時需要網際網路存取，在建立地理柵欄之前請先檢查是否有網際網路存取。
@@ -129,7 +129,7 @@ function onVisibilityChanged() {
 
 * [設定地理柵欄](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
 * [取得目前的位置](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)
-* [UWP location sample (geolocation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
+* [UWP 位置範例（地理位置）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
  

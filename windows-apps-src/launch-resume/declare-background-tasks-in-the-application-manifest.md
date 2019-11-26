@@ -105,7 +105,7 @@ ms.locfileid: "74260490"
 
 ### <a name="add-multiple-background-task-extensions"></a>新增多個背景工作擴充功能
 
-針對每一個由應用程式註冊的其他背景工作類別，重複步驟 2。
+針對每一個由應用程式登錄的額外背景工作類別，請重複步驟 2。
 
 下列範例是取自[背景工作範例]( https://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 請複製這個範例的 Extensions 區段，並視需要修改它，以在應用程式資訊清單中宣告背景工作。
 

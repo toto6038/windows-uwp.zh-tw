@@ -88,7 +88,7 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 
 ## <a name="register-the-background-task"></a>登錄背景工作
 
-呼叫背景工作註冊函式以註冊背景工作。 如需註冊背景工作的詳細資訊，並查看以下範例程式碼中 **RegisterBackgroundTask()** 方法的定義，請參閱[註冊背景工作](register-a-background-task.md)。
+呼叫背景工作登錄函式以登錄背景工作。 如需註冊背景工作的詳細資訊，並查看以下範例程式碼中 **RegisterBackgroundTask()** 方法的定義，請參閱[註冊背景工作](register-a-background-task.md)。
 
 如果您想要使用應用程式觸發程序來延長前景處理序的存留期，請考慮改用[延伸執行](run-minimized-with-extended-execution.md)。 應用程式觸發程序是專為建立要用於執行工作的個別裝載處理序所設計。 下列代碼片段會註冊跨處理序背景觸發程序。
 

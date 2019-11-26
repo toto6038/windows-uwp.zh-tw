@@ -1,6 +1,6 @@
 ---
-title: 建立和註冊跨處理序背景工作
-description: 建立跨處理序背景工作類別並加以註冊，讓它在應用程式不在前景時也能執行。
+title: 建立及註冊跨處理序的背景工作
+description: 建立跨處理序背景工作類別並加以註冊，讓它在 App 不在前景時也能執行。
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 ms.date: 02/27/2019
 ms.topic: article
@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258682"
 ---
-# <a name="create-and-register-an-out-of-process-background-task"></a>建立和註冊跨處理序背景工作
+# <a name="create-and-register-an-out-of-process-background-task"></a>建立及註冊跨處理序的背景工作
 
 **重要 API**
 
@@ -25,7 +25,7 @@ ms.locfileid: "74258682"
 -   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 -   [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
 
-建立背景工作類別並加以註冊，讓它在 App 不在前景時也能執行。 本主題示範如何建立及註冊與 App 處理序不同處理序中執行的背景工作。 若要在前景應用程式中直接進行背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
+建立背景工作類別並加以登錄，讓它在 App 不在前景時也能執行。 本主題示範如何建立及註冊與 App 處理序不同處理序中執行的背景工作。 若要在前景應用程式中直接進行背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
 
 > [!NOTE]
 > 如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows 10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
@@ -416,8 +416,8 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 在 app 能執行背景工作之前，您必須在 app 資訊清單中宣告每一個背景工作。 如果您的應用程式嘗試使用未列在資訊清單中的觸發程式來註冊背景工作，則背景工作的註冊將會失敗，並出現「未註冊的執行時間類別」錯誤。
 
 1.  透過開啟名為 Package.appxmanifest 的檔案來開啟封裝資訊清單設計工具。
-2.  開啟 **\[宣告\]** 索引標籤。
-3.  從 **\[可用宣告\]** 下拉式清單中選擇 **\[背景工作\]** ，然後按一下 **\[新增\]** 。
+2.  開啟 [宣告] 索引標籤。
+3.  從 [可用宣告] 下拉式清單中選擇 [背景工作]，然後按一下 [新增]。
 4.  選取 [系統事件] 核取方塊。
 5.  在 [**進入點：** ] 文字方塊中，輸入背景類別的命名空間和名稱，這是此範例中的 ExampleBackgroundTask。
 6.  關閉資訊清單設計工具。

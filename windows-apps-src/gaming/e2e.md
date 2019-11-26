@@ -1,5 +1,5 @@
 ---
-title: Windows 10 遊戲開發指南
+title: Windows 10 遊戲開發指南
 description: 開發「通用 Windows 平台」(UWP) 遊戲的資源與資訊的端對端指南。
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.date: 04/16/2018
@@ -13,7 +13,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258511"
 ---
-# <a name="windows-10-game-development-guide"></a>Windows 10 遊戲開發指南
+# <a name="windows-10-game-development-guide"></a>Windows 10 遊戲開發指南
 
 
 歡迎使用 Windows 10 遊戲開發指南！
@@ -1049,7 +1049,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
         <td><a href="https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle">應用程式週期</a></td>
     </tr>
     <tr>
-        <td>使用 Microsoft Visual Studio 觸發 App 轉換</td>
+        <td>使用 Microsoft Visual Studio 觸發應用程式轉換</td>
         <td><a href="https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015">如何在 Visual Studio 中觸發 UWP 應用程式的暫止、繼續和背景事件</a></td>
     </tr>
 </table>

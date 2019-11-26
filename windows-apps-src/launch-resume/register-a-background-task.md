@@ -40,7 +40,7 @@ ms.locfileid: "74259428"
 
 > [!Important]
 > `taskEntryPoint`-對於在進程外執行的背景工作，這必須被視為命名空間名稱 '. '，以及包含背景類別的類別名稱。 此字串區分大小寫。  例如，如果您有 "MyBackgroundTasks" 命名空間和包含您背景類別程式碼的 "BackgroundTask1" 類別，則 `taskEntryPoint` 的字串會是 "MyBackgroundTasks.BackgroundTask1"。
-> 如果您的背景工作與您的應用程式在相同處理序中執行 (亦即同處理序背景工作)，就不應該設定 `taskEntryPoint`。
+> 如果您的背景工作與您的 App 在相同處理序中執行 (亦即同處理序背景工作)，就不應該設定 `taskEntryPoint`。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp

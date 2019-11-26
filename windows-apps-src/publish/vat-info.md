@@ -1,10 +1,10 @@
 ---
-Description: If you’re required to provide a VAT ID number during the Partner Center registration process, here’s some info to get you started.
+Description: 如果您需要在合作夥伴中心註冊程式期間提供加值稅識別碼，以下是可讓您開始使用的一些資訊。
 title: VAT 資訊
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0be47e5edeee0d00843d06297857f39977e085f4
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -16,7 +16,7 @@ ms.locfileid: "74258958"
 # <a name="vat-info"></a>VAT 資訊
 
 
-If you’re required to provide a VAT ID number during the Partner Center registration process, here’s some info to get you started.
+如果您需要在合作夥伴中心註冊程式期間提供加值稅識別碼，以下是可讓您開始使用的一些資訊。
 
 ## <a name="understanding-vat-numbers"></a>了解 VAT 編號
 

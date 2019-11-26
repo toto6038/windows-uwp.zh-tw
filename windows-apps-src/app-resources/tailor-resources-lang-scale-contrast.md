@@ -197,7 +197,7 @@ public void SetLicenseLevel(BrandID brand)
 
 `language` 限定詞對應於顯示語言設定。 值包括任何有效 [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)。 如需語言清單，請參閱 [IANA 語言子標記登錄](https://www.iana.org/assignments/language-subtag-registry)。
 
-如果希望應用程式支援不同的顯示語言，而且您的程式碼或 XAML 標記也含有字串常值時，請將這些字串從程式碼/標記中移入資源檔案 (`.resw`)。 您可以接著針對應用程式支援的每一種語言建立該資源檔案的翻譯複本。
+如果希望應用程式支援不同的顯示語言，而且您的程式碼或 XAML 標記也含有字串常值時，請將這些字串從程式碼/標記中移入資源檔案 (`.resw`)。 您可以接著針對 App 支援的每一種語言建立該資源檔案的翻譯複本。
 
 您通常會使用 `language` 限定詞來命名包含資源檔案 (`.resw`) 的資料夾。
 

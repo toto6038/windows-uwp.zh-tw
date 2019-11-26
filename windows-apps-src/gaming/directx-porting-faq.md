@@ -33,7 +33,7 @@ Direct3D 11 是 Direct3D 9 的重要升級。 當中有很多範例改變，包�
 ##  <a name="do-i-have-to-update-my-game-timer-for-uwp"></a>我需要針對 UWP 更新我的遊戲計時器嗎？
 
 
-[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter), along with [**QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency), is still the best way to implement a game timer for UWP apps.
+[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)除了[**QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency)，仍然是為 UWP 應用程式實作為遊戲計時器的最佳方式。
 
 您應該注意計時器與 UWP app 週期的細微差別。 在玩家重新啟動傳統型遊戲時，暫停/繼續是不同的，因為您的遊戲 會從上次的遊戲進度即時繼續快照。 如果已經過一段長時間 (例如數個星期)，某些遊戲計時器實作可能無法正確運作。 當遊戲繼續時，您可以使用 app 週期事件來重設計時器。
 
@@ -44,10 +44,10 @@ Direct3D 11 是 Direct3D 9 的重要升級。 當中有很多範例改變，包�
 
 [DirectX 工具組 (DirectXTK)](https://github.com/Microsoft/DirectXTK) 社群專案提供可搭配 Direct3D 11 使用的協助程式類別。
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>How do I maintain code paths for the desktop and the Microsoft Store?
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>如何? 維護桌上型電腦和 Microsoft Store 的程式碼路徑嗎？
 
 
-Chuck Walbourn's article series titled [Dual-use Coding Techniques for Games](https://blogs.msdn.com/b/chuckw/archive/2012/09/17/dual-use-coding-techniques-for-games.aspx) offers guidance on sharing code between the desktop and the Microsoft Store code paths.
+Chuck Walbourn 的文章系列標題[為適用于遊戲的雙重使用程式](https://blogs.msdn.com/b/chuckw/archive/2012/09/17/dual-use-coding-techniques-for-games.aspx)代碼撰寫技巧，會提供在桌面與 Microsoft Store 程式碼路徑之間共用程式碼的指引。
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>如何在 DirectX UWP app 中載入影像資源？
 
@@ -98,20 +98,20 @@ DirectX 10.x 與 11 傳統型遊戲能夠輕易地移植到 UWP。 請參閱 [�
 ## <a name="how-do-i-turn-on-antialiasing"></a>如何開啟消除鋸齒？
 
 
-當您建立 Direct3D 裝置時，即會啟用消除鋸齒 (多重取樣)。 Enumerate multisampling support by calling [**CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels), then set multisample options in the [**DXGI\_SAMPLE\_DESC structure**](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc) when you call [**CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface).
+當您建立 Direct3D 裝置時，即會啟用消除鋸齒 (多重取樣)。 藉由呼叫[**CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels)來列舉取樣的支援，然後在呼叫[**CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface)時，在[**DXGI\_範例\_DESC 結構**](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc)中設定多級取樣選項。
 
 ## <a name="my-game-renders-using-multithreading-andor-deferred-rendering-what-do-i-need-to-know-for-direct3d-11"></a>我的遊戲使用多執行緒及/或延遲轉譯進行轉譯。 我需要知道的 Direct3D 11 事項有哪些？
 
 
-請造訪 [Direct3D 11 中的多執行緒簡介](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro)開始進行。 如需主要差異的清單，請參閱 [Direct3D 版本間的執行緒差異](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-differences)。 請注意，延遲的轉譯使用裝置 *「延遲的內容」* ，而不使用 *「即時內容」* 。
+請造訪 [Direct3D 11 中的多執行緒簡介](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro)開始進行。 如需主要差異的清單，請參閱 [Direct3D 版本間的執行緒差異](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-differences)。 請注意，延遲的轉譯使用裝置「延遲的內容」，而不使用「即時內容」。
 
 ## <a name="where-can-i-read-more-about-the-programmable-pipeline-since-direct3d-9"></a>哪裡可以閱讀更多有關 Direct3D 9 之後的可程式設計管線？
 
 
 請瀏覽下列主題：
 
--   [Programming Guide for HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
--   [Direct3D 10 Frequently Asked Questions](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
+-   [HLSL 程式設計指南](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
+-   [Direct3D 10 常見問題](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
 
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>我的模型應該使用哪種格式代替 .x 檔案格式？
 
@@ -121,14 +121,14 @@ DirectX 10.x 與 11 傳統型遊戲能夠輕易地移植到 UWP。 請參閱 [�
 ## <a name="how-do-i-debug-my-shaders"></a>如何偵錯著色器？
 
 
-Microsoft Visual Studio 2015 includes diagnostic tools for DirectX graphics. 請參閱[偵錯 DirectX 圖形](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015)。
+Microsoft Visual Studio 2015 包含 DirectX 圖形的診斷工具。 請參閱[偵錯 DirectX 圖形](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015)。
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>*x* 函式的 Direct3D 11 對應功能是什麼？
 
 
 請參閱＜將 DirectX 9 功能對應到 DirectX 11 API＞中的[函式對應](feature-mapping.md#function-mapping)。
 
-##  <a name="what-is-the-dxgi_format-equivalent-of-y-surface-format"></a>What is the DXGI\_FORMAT equivalent of *y* surface format?
+##  <a name="what-is-the-dxgi_format-equivalent-of-y-surface-format"></a>與*y*介面格式相等的 DXGI\_格式為何？
 
 
 請參閱＜將 DirectX 9 功能對應到 DirectX 11 API＞中的[表面格式對應](feature-mapping.md#surface-format-mapping)。

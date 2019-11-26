@@ -18,7 +18,7 @@ ms.locfileid: "74257931"
 # <a name="rotation"></a>旋轉
 
 
-本文描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
+本文說明旋轉的新 Windows UI，並提供在 UWP 應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
 
 > **重要 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 

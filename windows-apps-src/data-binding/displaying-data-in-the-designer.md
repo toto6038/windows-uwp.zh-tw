@@ -148,6 +148,6 @@ else
 
 您可以在 [資料] 面板中直接實際設計範例資料的結構描述，而不需指定類別。 您也可以在 [資料] 面板中編輯範例資料值：不需開啟和編輯檔案 (儘管如此，如有需要，您仍然可以執行該動作)。
 
-[新增範例資料] 功能會使用 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 而非 **d:DataContext**，因此，當您執行草圖或原型時以及在設計期間就能使用範例資料。 此外， **\[資料\]** 面板確實能夠加速您的設計和繫結工作。 例如，只要將集合屬性從 [資料] 面板拖曳到設計介面，就能產生資料繫結項目控制項和必要的範本，來建置並執行所有就緒的項目。
+[新增範例資料] 功能會使用 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 而非 **d:DataContext**，因此，當您執行草圖或原型時以及在設計期間就能使用範例資料。 此外，[資料] 面板確實能夠加速您的設計和繫結工作。 例如，只要將集合屬性從 [資料] 面板拖曳到設計介面，就能產生資料繫結項目控制項和必要的範本，來建置並執行所有就緒的項目。
 
 ![適用於原型設計的範例資料。](images/displaying-data-in-the-designer-04.png)

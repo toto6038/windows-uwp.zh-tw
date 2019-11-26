@@ -1,7 +1,7 @@
 ---
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: 了解如何在目標為 Windows 10 版本 1607 之前版本的 UWP app 中啟用 App 內購買和試用版。
-title: 使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
+title: 使用 Windows.ApplicationModel.Store 命名空間的應用程式內購買和試用版
 ms.date: 08/25/2017
 ms.topic: article
 keywords: UWP, App 內購買, IAP, 附加元件, 試用版, Windows.ApplicationModel.Store
@@ -13,11 +13,11 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260282"
 ---
-# <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
+# <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的應用程式內購買和試用版
 
 您可以使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 命名空間中的成員，將 App 內購買和試用版功能新增到通用 Windows 平台 (UWP) App，以協助您的 App 獲利。 這些 API 也會提供對您 App 授權資訊的存取權。
 
-本節中的文章針對數個常見的案例，提供使用 **Windows.ApplicationModel.Store** 命名空間中成員的深入指引及程式碼範例。 如需 UWP app 中 App 內購買相關基本概念的概觀，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。 如需示範如何使用 **Windows.ApplicationModel.Store** 命名空間來實作試用版和 App 內購買的完整範例，請參閱[ Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
+本節中的文章針對數個常見的案例，提供使用 **Windows.ApplicationModel.Store** 命名空間中成員的深入指引及程式碼範例。 如需 UWP app 中 App 內購買相關基本概念的概觀，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。 如需示範如何使用 **Windows.ApplicationModel.Store** 命名空間來實作試用版和 App 內購買的完整範例，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
 
 > [!IMPORTANT]
 > **Windows.ApplicationModel.Store**命名空間不再以新功能更新。 如果您專案的目標為 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本 (也就是，您以 Windows 10 版本 1607 或更新版本為目標)，建議您改用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](https://docs.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。 使用[桌面橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 windows 桌面應用程式，或在合作夥伴中心使用開發沙箱的應用程式或遊戲中不支援**ApplicationModel. Store**命名空間（例如，與 Xbox Live 整合的任何遊戲都是如此）。 這些產品必須使用 **Windows.Services.Store** 命名空間來實作 App 內購買和試用版。
@@ -359,8 +359,8 @@ ms.locfileid: "74260282"
 |-------------|------------|--------|--------|
 |  [ListingInformation](#listinginformation)  |    是        |  1  |  包含 App 清單中的資料。            |
 |  [LicenseInformation](#licenseinformation)  |     是       |   1    |   描述此 App 和其耐久性附加元件可使用的授權。     |
-|  [ConsumableInformation](#consumableinformation)  |      不可以      |   0 或 1   |   描述此 App 可使用的消費性附加元件。      |
-|  [模擬](#simulation)  |     不可以       |      0 或 1      |   描述在測試期間，各種 [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) 方法的呼叫在 App 中如何運作。    |
+|  [ConsumableInformation](#consumableinformation)  |      否      |   0 或 1   |   描述此 App 可使用的消費性附加元件。      |
+|  [模擬](#simulation)  |     否       |      0 或 1      |   描述在測試期間，各種 [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) 方法的呼叫在 App 中如何運作。    |
 
 <span id="listinginformation" />
 
@@ -373,7 +373,7 @@ ms.locfileid: "74260282"
 |  元素  |  必要  |  數量  |  描述   |
 |-------------|------------|--------|--------|
 |  [相關](#app-child-of-listinginformation)  |    是   |  1   |    提供有關 App 的資料。         |
-|  [產品](#product-child-of-listinginformation)  |    不可以  |  0 或以上   |      描述 App 的附加元件。     |     |
+|  [產品](#product-child-of-listinginformation)  |    否  |  0 或以上   |      描述 App 的附加元件。     |     |
 
 <span id="app-child-of-listinginformation"/>
 
@@ -386,7 +386,7 @@ ms.locfileid: "74260282"
 |  元素  |  必要  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  **AppId**  |    是   |  1   |   識別市集中 App 的 GUID。 測試時可以是任何 GUID。        |
-|  **Linkuri>< externallink>**  |    是  |  1   |    Microsoft Store 清單頁面的 URI。 測試時可以是任何有效的 URI。         |
+|  **Linkuri>< externallink>**  |    是  |  1   |    市集清單頁面的 URI。 測試時可以是任何有效的 URI。         |
 |  **CurrentMarket**  |    是  |  1   |    客戶的國家/地區。         |
 |  **AgeRating**  |    是  |  1   |     表示 App 最小年齡分級的整數。 這是您在提交應用程式時，在 [合作夥伴中心] 中指定的相同值。 市集所使用的值為︰3、7、12 和 16。 如需這些分級的詳細資訊，請參閱[年齡分級](../publish/age-ratings.md)。        |
 |  [MarketData](#marketdata-child-of-app)  |    是  |  1 或以上      |    包含特定國家/地區的 App 相關資訊。 對於列出 App 的每個國家/地區，您必須各包含一個 **MarketData** 元素。       |    |
@@ -405,7 +405,7 @@ ms.locfileid: "74260282"
 |  **描述**  |    是  |  1   |      用於此國家/地區的 App 描述。       |
 |  **高價**  |    是  |  1   |     在此國家/地區的 App 價格。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此國家/地區中使用的貨幣符號。        |
-|  **CurrencyCode**  |    不可以  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  |
+|  **CurrencyCode**  |    否  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  |
 
 **MarketData** 具有下列屬性。
 
@@ -424,8 +424,8 @@ ms.locfileid: "74260282"
 |  屬性  |  必要  |  描述   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |    包含 App 用來識別附加元件的字串。           |
-|  **LicenseDuration**  |    不可以        |    指示授權在項目購買之後將會一直有效的天數。 由產品購買建立之新授權的到期日期是購買日期加上授權持續時間。 只有當 **ProductType** 屬性是 **Durable** 時，才會使用這個屬性；消費性附加元件會忽略這個屬性。           |
-|  **ProductType**  |    不可以        |    包含可識別應用程式內產品持續性的值。 支援的值為 **Durable** (預設值) 和 **Consumable**。 如果是耐久性類型，[LicenseInformation](#product-child-of-licenseinformation) 下的 [Product](#licenseinformation) 元素會描述額外資訊，如果是消費性類型，則是在 [ConsumableInformation](#product-child-of-consumableinformation) 下的 [Product](#consumableinformation) 元素描述額外資訊。           |  |
+|  **LicenseDuration**  |    否        |    指示授權在項目購買之後將會一直有效的天數。 由產品購買建立之新授權的到期日期是購買日期加上授權持續時間。 只有當 **ProductType** 屬性是 **Durable** 時，才會使用這個屬性；消費性附加元件會忽略這個屬性。           |
+|  **ProductType**  |    否        |    包含可識別應用程式內產品持續性的值。 支援的值為 **Durable** (預設值) 和 **Consumable**。 如果是耐久性類型，[LicenseInformation](#product-child-of-licenseinformation) 下的 [Product](#licenseinformation) 元素會描述額外資訊，如果是消費性類型，則是在 [ConsumableInformation](#product-child-of-consumableinformation) 下的 [Product](#consumableinformation) 元素描述額外資訊。           |  |
 
 <span id="marketdata-child-of-product"/>
 
@@ -440,11 +440,11 @@ ms.locfileid: "74260282"
 |  **名稱**  |    是   |  1   |   在此國家/地區的附加元件名稱。        |
 |  **高價**  |    是  |  1   |     在此國家/地區的附加元件價格。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此國家/地區中使用的貨幣符號。        |
-|  **CurrencyCode**  |    不可以  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  
-|  **描述**  |    不可以  |   0 或 1   |      用於此國家/地區的附加元件描述。       |
-|  **標記**  |    不可以  |   0 或 1   |      附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (也稱為標記)。       |
-|  **關鍵字**  |    不可以  |   0 或 1   |      最多可以有 10 個 **Keyword** 元素，包含附加元件的[關鍵字](../publish/enter-add-on-properties.md#keywords)。       |
-|  **ImageUri**  |    不可以  |   0 或 1   |      附加元件清單中[影像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
+|  **CurrencyCode**  |    否  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  
+|  **描述**  |    否  |   0 或 1   |      用於此國家/地區的附加元件描述。       |
+|  **標記**  |    否  |   0 或 1   |      附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (也稱為標記)。       |
+|  **關鍵字**  |    否  |   0 或 1   |      最多可以有 10 個 **Keyword** 元素，包含附加元件的[關鍵字](../publish/enter-add-on-properties.md#keywords)。       |
+|  **ImageUri**  |    否  |   0 或 1   |      附加元件清單中[影像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
 
 **MarketData** 具有下列屬性。
 
@@ -463,7 +463,7 @@ ms.locfileid: "74260282"
 |  元素  |  必要  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  [相關](#app-child-of-licenseinformation)  |    是   |  1   |    描述 App 的授權。         |
-|  [產品](#product-child-of-licenseinformation)  |    不可以  |  0 或以上   |      描述 App 中耐久性附加元件的授權狀態。         |   |
+|  [產品](#product-child-of-licenseinformation)  |    否  |  0 或以上   |      描述 App 中耐久性附加元件的授權狀態。         |   |
 
 下表顯示如何結合 **App** 和 **Product** 元素下的值來模擬一些常見的情形。
 
@@ -486,7 +486,7 @@ ms.locfileid: "74260282"
 |-------------|------------|--------|--------|
 |  **IsActive**  |    是   |  1   |    描述此 App 目前的授權狀態。 值 **true** 表示授權有效；**false** 表示無效的授權。 無論 App 是否有試用模式，此值通常為 **true**。  將此值設定為 **false** 可測試您的 App 在授權無效時是如何運作。           |
 |  **IsTrial**  |    是  |  1   |      描述此 App 目前的試用狀態。 值 **true** 表示 App 正在試用期間；**false** 表示 App 不在試用，可能因為已購買 App，或試用期間已到期。         |
-|  **ExpirationDate**  |    不可以  |  0 或 1       |     此 App 到期的試用日期，以國際標準時間 (UTC) 表示。 日期的格式必須為︰yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 要指定為 2015-01-19T05:00:00.00Z。 當 **IsTrial** 為 **true** 時，這是必要的元素。 否則就不需要。          |  |
+|  **ExpirationDate**  |    否  |  0 或 1       |     此 App 到期的試用日期，以國際標準時間 (UTC) 表示。 日期的格式必須為︰yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 要指定為 2015-01-19T05:00:00.00Z。 當 **IsTrial** 為 **true** 時，這是必要的元素。 否則就不需要。          |  |
 
 <span id="product-child-of-licenseinformation"/>
 
@@ -499,14 +499,14 @@ ms.locfileid: "74260282"
 |  元素  |  必要  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    是   |  1     |    描述此附加元件目前的授權狀態。 值 **true** 表示附加元件可以使用；**false** 表示附加元件無法使用或尚未購買           |
-|  **ExpirationDate**  |    不可以   |  0 或 1     |     附加元件到期的日期，以國際標準時間 (UTC) 表示。 日期的格式必須為︰yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 要指定為 2015-01-19T05:00:00.00Z。 如果此元素存在，附加元件就會有到期日期。 如果不存在，附加元件就不會過期。  |  
+|  **ExpirationDate**  |    否   |  0 或 1     |     附加元件到期的日期，以國際標準時間 (UTC) 表示。 日期的格式必須為︰yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 要指定為 2015-01-19T05:00:00.00Z。 如果此元素存在，附加元件就會有到期日期。 如果不存在，附加元件就不會過期。  |  
 
 **Product** 具有下列屬性。
 
 |  屬性  |  必要  |  描述   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |   包含 App 用來識別附加元件的字串。            |
-|  **OfferId**  |     不可以       |   包含 App 用來識別附加元件所屬類別的字串。 這可以對大型的項目型錄提供支援，如[管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)中所述。           |
+|  **OfferId**  |     否       |   包含 App 用來識別附加元件所屬類別的字串。 這可以對大型的項目型錄提供支援，如[管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)中所述。           |
 
 <span id="simulation"/>
 
@@ -518,7 +518,7 @@ ms.locfileid: "74260282"
 
 |  屬性  |  必要  |  描述   |
 |-------------|------------|----------------|
-|  **SimulationMode**  |    不可以        |      值可以是 **Interactive** 或 **Automatic**。 當此屬性設為 **Automatic** 時，方法會自動傳回指定的 HRESULT 錯誤碼。 這可以在執行自動的測試案例時使用。       |
+|  **SimulationMode**  |    否        |      值可以是 **Interactive** 或 **Automatic**。 當此屬性設為 **Automatic** 時，方法會自動傳回指定的 HRESULT 錯誤碼。 這可以在執行自動的測試案例時使用。       |
 
 <span id="defaultresponse"/>
 
@@ -552,4 +552,4 @@ ms.locfileid: "74260282"
 |  **ProductId**  |    是        |   包含 App 用來識別消費性附加元件的字串。            |
 |  **TransactionId**  |     是       |   包含 App 用來追蹤整個履行程序之消費性產品的購買交易的 GUID (做為字串)。 請參閱[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)。            |
 |  **狀態**  |      是      |  包含 App 用來表示消費性產品之履行狀態的字串。 值可以是 **Active**、**PurchaseReverted**、**PurchasePending** 或 **ServerError**。             |
-|  **OfferId**  |     不可以       |    包含 App 用來識別消費性產品所屬類別的字串。 這可以對大型的項目型錄提供支援，如[管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)中所述。           |
+|  **OfferId**  |     否       |    包含 App 用來識別消費性產品所屬類別的字串。 這可以對大型的項目型錄提供支援，如[管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)中所述。           |

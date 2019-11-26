@@ -64,7 +64,7 @@ ms.locfileid: "74256545"
 
 [!code-cs[SelectColor](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColor)]
 
-下列範例使用上述類似技術，來選取包含彩色、景深與紅外線相機的來源群組。
+下列範例使用上述類似技術，來選取包含色彩、深度與紅外線相機的來源群組。
 
 [!code-cs[ColorInfraredDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetColorInfraredDepth)]
 

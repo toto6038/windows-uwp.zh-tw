@@ -1,6 +1,6 @@
 ---
 title: 監視背景工作進度和完成
-description: 了解應用程式如何辨識背景工作所報告的進度與完成。
+description: 了解 app 如何辨識背景工作所報告的進度與完成。
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ms.date: 07/06/2018
 ms.topic: article
@@ -29,7 +29,7 @@ ms.locfileid: "74260464"
 
 背景工作的進度和完成可以透過 App 程式碼監視。 若要執行這項作業，App 要訂閱已向系統註冊之背景工作的事件。
 
-- 這個主題假設您有一個註冊背景工作的 App。 若要快速開始建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)。
+- 這個主題假設您有一個註冊背景工作的 App。 若要快速開始建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>建立事件處理常式，以處理完成的背景工作。
 

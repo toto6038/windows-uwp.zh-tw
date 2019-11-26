@@ -18,7 +18,7 @@ ms.locfileid: "74259621"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 資訊保護 (WIP)
 
-__備註__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1607)。
+__注意__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1607)。
 
 WIP 會強制執行組織所定義的原則，以保護屬於組織的資料。 如果您的應用程式包含在這些原則中，則應用程式產生的所有資料都會受到原則限制。 本主題可協助您建置能順利強制執行這些原則的應用程式，且使用者的個人資料不會受到任何影響。
 <iframe src="https://channel9.msdn.com/Blogs/Windows-Development-for-the-Enterprise/Securing-Enterprise-Data-with-Windows-Information-Protection/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
@@ -41,9 +41,9 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 
 ![WIP 週期](images/wip-lifecycle.png)
 
-> **Read more about WIP** <br>
-* [Introducing Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
-* [Protect your enterprise data using Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
+> **深入瞭解 WIP** <br>
+* [Windows 資訊保護簡介](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [使用 Windows 資訊保護（WIP）保護您的企業資料](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
 
 如果您的應用程式在允許清單中，則應用程式產生的所有資料都會受到原則限制。 這表示如果系統管理員撤銷使用者的企業資料存取權，這些使用者就會失去應用程式產生的所有資料的存取權。
 
@@ -61,11 +61,11 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 
 如果您已經準備好啟發您的應用程式，請參閱以下指南之一︰
 
-**For Universal Windows Platform (UWP) apps that you build by using C#**
+**針對您使用建立的通用 Windows 平臺（UWP）應用程式C#**
 
 [Windows 資訊保護 (WIP) 開發人員指南](wip-dev-guide.md)。
 
-**For Desktop apps that you build by using C++**
+**針對您使用建立的桌面應用程式C++**
 
 [Windows 資訊保護 (WIP) 開發人員指南 (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN)。
 

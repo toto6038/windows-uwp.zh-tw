@@ -1,6 +1,6 @@
 ---
 Description: 這個主題說明需要存取使用者位置之 app 的效能指導方針。
-title: 定位感知應用程式的指導方針
+title: 定位感知 app 的指導方針
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259359"
 ---
-# <a name="guidelines-for-location-aware-apps"></a>定位感知應用程式的指導方針
+# <a name="guidelines-for-location-aware-apps"></a>定位感知 app 的指導方針
 
 
 

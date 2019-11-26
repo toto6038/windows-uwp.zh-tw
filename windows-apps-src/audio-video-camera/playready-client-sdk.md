@@ -128,7 +128,7 @@ PlayReady DRM 僅允許在 PlayReady 相容性規則中指定的輸出連接器�
         <th>類比電視</th>
     </tr>
     <tr>
-        <th>任何</th>
+        <th>任何值</th>
         <th colspan="2">HDMI、DVI、DisplayPort、MHL</th>
         <th>元件、複合式</th>
     </tr>
@@ -193,7 +193,7 @@ PlayReady DRM 僅允許在 PlayReady 相容性規則中指定的輸出連接器�
     <tr>
         <th>HDMI、DisplayPort、MHL</th>
         <th>HDMI、DisplayPort、MHL</th>
-        <th>任何</th>
+        <th>任何值</th>
     </tr>
     <tr>
         <th>100</th>

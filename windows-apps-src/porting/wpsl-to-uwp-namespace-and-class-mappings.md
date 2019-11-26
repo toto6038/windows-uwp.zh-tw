@@ -157,7 +157,7 @@ ms.locfileid: "74259062"
 | Location | |
 | **System.Device.Location** 命名空間 | [**Windows. 地理位置**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)命名空間 |
 | **System.Device.GeoCoordinateWatcher** 類別 | [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)類別 |
-| Maps | |
+| 地圖 | |
 | **Microsoft.Phone.Maps** 命名空間 | [**Windows. 服務對應**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)命名空間 |
 | **Microsoft.Phone.Maps.Controls** 命名空間 | [**Windows. UI. app.xaml**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps)命名空間 |
 | **Microsoft.Phone.Maps.Controls.Map** 類別 | [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)類別 |

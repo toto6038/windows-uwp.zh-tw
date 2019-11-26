@@ -15,7 +15,7 @@ ms.locfileid: "74260327"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
 
-使用 Microsoft Advertising SDK，在您的適用於 Windows 10 的通用 Windows 平台 (UWP) app 中投放廣告，提高您的獲利商機。 Our ad monetization platform offers a variety of ad formats that can be seamlessly integrated into your apps and supports mediation with many popular ad networks. 我們的平台符合 OpenRTB、VAST 2.x、MRAID 2 及 VPAID 3 等標準，而且與 MOAT 及 IAS 相容。 
+使用 Microsoft Advertising SDK，在您的適用於 Windows 10 的通用 Windows 平台 (UWP) app 中投放廣告，提高您的獲利商機。 我們的 ad 營收平臺提供各種不同的 ad 格式，可以緊密整合到您的應用程式，並支援使用許多常用的 ad 網路進行中繼。 我們的平台符合 OpenRTB、VAST 2.x、MRAID 2 及 VPAID 3 等標準，而且與 MOAT 及 IAS 相容。 
 
 <br/>
 
@@ -32,23 +32,23 @@ ms.locfileid: "74260327"
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
 <td align="left"><b>入門</b><br/><br/>
-    <a href="https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK">Install the Microsoft Advertising SDK</a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK">安裝 MICROSOFT ADVERTISING SDK</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>
-<td align="left"><b>Developer guides</b><br/><br/>
-    <a href="banner-ads.md">Banner ads</a>
+<td align="left"><b>開發人員指南</b><br/><br/>
+    <a href="banner-ads.md">橫幅廣告</a>
     <br/>
-    <a href="interstitial-ads.md">Interstitial ads</a>
+    <a href="interstitial-ads.md">插入式 ads</a>
     <br/>
-    <a href="native-ads.md">Native ads</a>
+    <a href="native-ads.md">原生廣告</a>
     </td>
 <td align="left"><img src="images/api-reference.png" alt="API ref icon" /></td>
-<td align="left"><b>Other resources</b><br/><br/>
-    <a href="set-up-ad-units-in-your-app.md">Set up ad units in your app</a>
+<td align="left"><b>其他資源</b><br/><br/>
+    <a href="set-up-ad-units-in-your-app.md">在您的應用程式中設定 ad 單位</a>
     <br/>
-    <a href="best-practices-for-ads-in-apps.md">Best practices</a>
+    <a href="best-practices-for-ads-in-apps.md">最佳做法</a>
     <br/>
-    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">API reference</a>
+    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">API 參考</a>
     </td>
 </tr>
 </tbody>
@@ -90,7 +90,7 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 ## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>步驟 3：建立廣告單元和設定流量分配
 
-After you finish testing your app and you are ready to submit it to the Store, create an ad unit on the [In-app ads](../publish/in-app-ads.md) page in Partner Center. 然後，更新您的應用程式程式碼為使用此廣告單元，讓您的應用程式可以收到即時廣告。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+在您完成應用程式的測試，並準備好將它提交至商店之後，請在合作夥伴中心的 [[應用程式內廣告](../publish/in-app-ads.md)] 頁面上建立一個 ad 單位。 然後，更新您的應用程式程式碼為使用此廣告單元，讓您的應用程式可以收到即時廣告。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 根據預設，您的應用程式會顯示 Microsoft 付款廣告網路中的廣告。 若要讓您有最佳的廣告收入，您可以為您的廣告單元啟用[廣告流量分配](ad-mediation-service.md)，以顯示其他付費廣告網路如 Taboola 和 Smaato 的廣告。 您也可以提供來自 Microsoft 應用程式促銷活動的廣告，提高您應用程式的促銷功能。
 
@@ -98,9 +98,9 @@ After you finish testing your app and you are ready to submit it to the Store, c
 
 ## <a name="step-4-submit-your-app-and-review-performance"></a>步驟 4：提交您的應用程式，並檢閱績效
 
-After you finish developing your app with ads, you can [submit your updated app](https://docs.microsoft.com/windows/uwp/publish/app-submissions) in Partner Center to make it available in the Store. 顯示廣告的應用程式必須符合 [Microsoft Store 原則 10.10 節](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[＜應用程式開發人員合約＞中＜附件 E＞](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的額外要求。
+在您完成使用 ads 開發應用程式之後，您可以在合作夥伴中心[提交已更新的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，以便在商店中使用。 顯示廣告的應用程式必須符合 [Microsoft Store 原則 10.10 節](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[＜應用程式開發人員合約＞中＜附件 E＞](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的額外要求。
 
-After your app is published and available in the Store, you can review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center and continue to make changes to your mediation settings to optimize the performance of your ads. 您的廣告收益包含在[付款摘要](../publish/payout-summary.md)中。
+當您的應用程式發佈並可在存放區中使用之後，您可以在合作夥伴中心檢查您的[廣告效能報告](../publish/advertising-performance-report.md)，並繼續變更您的中繼設定，以將廣告的效能優化。 您的廣告收益包含在[付款摘要](../publish/payout-summary.md)中。
 
 <span id="additional-help" />
 
@@ -112,8 +112,8 @@ After your app is published and available in the Store, you can review your [adv
 |----------|-------|
 | 回報錯誤或取得針對廣告的支援。     | 請造訪[支援頁面](https://developer.microsoft.com/en-us/windows/support)，然後選擇 **\[用程式內廣告\]** 。        |
 | 取得社群支援     | 造訪[論壇](https://go.microsoft.com/fwlink/?LinkID=401264)。       |
-| 下載示範如何將橫幅廣告和插入式廣告新增到應用程式的範例專案。     | 請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。       |
-| 了解最新的 Windows App 獲利機會     | 瀏覽[從您的應用程式獲利](https://developer.microsoft.com/store/monetize)。        |
+| 下載示範如何新增橫幅和插入式廣告到 App 的範例專案。     | 請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。       |
+| 了解最新的 Windows App 獲利機會     | 請瀏覽[從您的 App 獲利](https://developer.microsoft.com/store/monetize)。        |
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Windows 8.1 和 Windows Phone 8.x 應用程式
 
@@ -123,4 +123,4 @@ After your app is published and available in the Store, you can review your [adv
 
 * [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
 * [廣告績效報告](../publish/advertising-performance-report.md)
-* [Windows Premium Ads Publishers Program](windows-premium-ads-publishers-program.md)
+* [Windows Premium Ads 發行者計畫](windows-premium-ads-publishers-program.md)

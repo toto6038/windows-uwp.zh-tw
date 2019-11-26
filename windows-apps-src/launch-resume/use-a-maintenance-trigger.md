@@ -25,7 +25,7 @@ ms.locfileid: "74259398"
 - [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 - [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
 
-了解如何在裝置插上電源時，使用 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 類別於背景中執行輕量型程式碼。
+了解如何在裝置使用 AC 電源時，使用 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 類別於背景中執行輕量型程式碼。
 
 ## <a name="create-a-maintenance-trigger-object"></a>建立維護觸發程序物件
 
@@ -78,7 +78,7 @@ SystemCondition ^ exampleCondition = ref new SystemCondition(SystemConditionType
 
 ## <a name="register-the-background-task"></a>登錄背景工作
 
-- 呼叫背景工作註冊函式以註冊背景工作。 如需有關登錄背景工作的詳細資訊，請參閱[登錄背景工作](register-a-background-task.md)。
+- 呼叫背景工作登錄函式以登錄背景工作。 如需有關登錄背景工作的詳細資訊，請參閱[登錄背景工作](register-a-background-task.md)。
 
 下列程式碼會登錄維護工作。 請注意，它會假設您的背景工作與您的應用程式在個別的處理程序中執行，因為它指定了 `entryPoint`。 如果您的背景工作與您的應用程式在相同處理程序中執行，您就不需指定 `entryPoint`。
 

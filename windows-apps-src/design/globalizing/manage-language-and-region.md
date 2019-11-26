@@ -150,35 +150,35 @@ Windows 使用者可使用 **\[設定\]**  >  **\[時間與語言\]**  >  **\[�
 <tr>
 <td align="left">英文 (英國) (預設值)； 德文 (德國)</td>
 <td align="left">英文 (英國)</td>
-<td align="left">無 (none)</td>
+<td align="left">無</td>
 <td align="left">英文 (英國)</td>
 <td align="left">UI：英文 (英國)<br>日期/時間/數字：英文 (英國)</td>
 </tr>
 <tr>
 <td align="left">德文 (德國) (預設值)；法文 (法國)；義大利文 (義大利)</td>
 <td align="left">法文 (奧地利)</td>
-<td align="left">無 (none)</td>
+<td align="left">無</td>
 <td align="left">法文 (奧地利)</td>
 <td align="left">UI：法文 (法國) (從法文 (奧地利) 後援)<br>日期/時間/數字：法文 (奧地利)</td>
 </tr>
 <tr>
 <td align="left">英文 (美國) (預設值)；法文 (法國)；英文 (英國)</td>
 <td align="left">英文 (加拿大)；法文 (加拿大)</td>
-<td align="left">無 (none)</td>
+<td align="left">無</td>
 <td align="left">英文 (加拿大)；法文 (加拿大)</td>
 <td align="left">UI：英文 (美國) (從英文 (加拿大) 後援)<br>日期/時間/數字：英文 (加拿大)</td>
 </tr>
 <tr>
 <td align="left">西班牙文 (西班牙) (預設值)；西班牙文 (墨西哥)；西班牙文 (拉丁美洲)；葡萄牙文 (巴西)</td>
 <td align="left">英文 (美國)</td>
-<td align="left">無 (none)</td>
+<td align="left">無</td>
 <td align="left">西班牙文 (西班牙)</td>
 <td align="left">UI：西班牙文 (西班牙) (使用預設值，因為英文沒有可用的後援)<br>日期/時間/數字：西班牙文 (西班牙)</td>
 </tr>
 <tr>
 <td align="left">卡達隆尼亞文 (預設值)；西班牙文 (西班牙)；法文 (法國)</td>
 <td align="left">卡達隆尼亞文；法文 (法國)</td>
-<td align="left">無 (none)</td>
+<td align="left">無</td>
 <td align="left">卡達隆尼亞文；法文 (法國)</td>
 <td align="left">UI：大部分卡達隆尼亞文和部分法文 (法國)，因為不是所有字串都是卡達隆尼亞文<br>日期/時間/數字：卡達隆尼亞文</td>
 </tr>

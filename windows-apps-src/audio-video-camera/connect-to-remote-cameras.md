@@ -1,11 +1,11 @@
 ---
 ms.assetid: ''
-description: This article shows you how to connect to remote cameras and get a MediaFrameSourceGroup to retrieve frames from each camera.
+description: 本文將說明如何連線到遠端相機，並取得 MediaFrameSourceGroup 以從每個相機抓取畫面。
 title: 連線到遠端照相機
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 253eea00ba6c4188197224111909c28a53932b88
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -16,32 +16,32 @@ ms.locfileid: "74257354"
 ---
 # <a name="connect-to-remote-cameras"></a>連線到遠端照相機
 
-This article shows you how to connect to one or more remote cameras and get a [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) object that allows you to read frames from each camera. For more information on reading frames from a media source, see [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md). For more information on pairing with devices, see [Pair devices](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices).
+本文說明如何連接到一或多個遠端相機，並取得可讓您從每張攝影機讀取畫面的[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup)物件。 如需從媒體來源讀取畫面格的詳細資訊，請參閱[使用 MediaFrameReader 處理媒體框架](process-media-frames-with-mediaframereader.md)。 如需配對裝置的詳細資訊，請參閱[配對裝置](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices)。
 
 > [!NOTE] 
-> The features discussed in this article are only available starting with Windows 10, version 1903.
+> 本文所討論的功能只有從 Windows 10 版本1903開始提供。
 
-## <a name="create-a-devicewatcher-class-to-watch-for-available-remote-cameras"></a>Create a DeviceWatcher class to watch for available remote cameras
+## <a name="create-a-devicewatcher-class-to-watch-for-available-remote-cameras"></a>建立 DeviceWatcher 類別以監看是否有可用的遠端相機
 
-The [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher) class monitors the devices available to your app and notifies your app when devices are added or removed. Get an instance of **DeviceWatcher** by calling [**DeviceInformation.CreateWatcher**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher#Windows_Devices_Enumeration_DeviceInformation_CreateWatcher_System_String_), passing in an Advanced Query Syntax (AQS) string that identifies the type of devices you want to monitor. The AQS string specifying network camera devices is the following:
+[**DeviceWatcher**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher)類別會監視您的應用程式可用的裝置，並在新增或移除裝置時通知您的應用程式。 藉由呼叫[**DeviceInformation**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher#Windows_Devices_Enumeration_DeviceInformation_CreateWatcher_System_String_)來取得**DeviceWatcher**的實例，傳入可識別您想要監視之裝置類型的先進查詢語法（AQS）字串。 指定網路攝影機裝置的 AQS 字串如下所示：
 
 ```
 @"System.Devices.InterfaceClassGuid:=""{B8238652-B500-41EB-B4F3-4234F7F5AE99}"" AND System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True"
 ```
 
 > [!NOTE] 
-> The helper method [**MediaFrameSourceGroup.GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) returns an AQS string that will monitor locally-connected and remote network cameras. To monitor only network cameras, you should use the AQS string shown above.
+> 協助程式方法[**MediaFrameSourceGroup。 GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)會傳回 AQS 字串，其會監視本機連線和遠端網路攝影機。 若只要監視網路攝影機，您應該使用如上所示的 AQS 字串。
 
 
-When you start the returned **DeviceWatcher** by calling the [**Start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start) method, it will raise the [**Added**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) event for every network camera that is currently available. Until you stop the watcher by calling [**Stop**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.stop), the **Added** event will be raised when new network camera devices become available and the [**Removed**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.devicewatcher.removed) event will be raised when a camera device becomes unavailable.
+當您藉由呼叫[**start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start)方法來啟動傳回的**DeviceWatcher**時，它會針對目前可用的每個網路攝影機引發[**新增**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added)的事件。 在您藉由呼叫[**stop**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.stop)停止監看員之前，會在新的網路攝影機裝置可用時**引發新增的事件，** 而且當相機裝置無法使用時，將會引發[**已移除**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.devicewatcher.removed)的事件。
 
-The event args passed into the **Added** and **Removed** event handlers are a [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) or a [**DeviceInformationUpdate**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.deviceinformationupdate) object, respectively. Each of these objects has an **Id** property that is the identifier for the network camera for which the event was fired. Pass this ID into the [**MediaFrameSourceGroup.FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync) method to get a [**MediaFrameSourceGroup**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync) object that you can use to retrieve frames from the camera.
+傳遞至**已加入**和**已移除**事件處理常式的事件引數分別是[**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)或[**DeviceInformationUpdate**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.deviceinformationupdate)物件。 這些物件的每一個都有一個**Id**屬性，這是引發事件的網路攝影機識別碼。 將此識別碼傳遞至[**MediaFrameSourceGroup. FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync)方法，以取得可供您用來從相機抓取框架的[**MediaFrameSourceGroup**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync)物件。
 
-## <a name="remote-camera-pairing-helper-class"></a>Remote camera pairing helper class
+## <a name="remote-camera-pairing-helper-class"></a>遠端相機配對 helper 類別
 
-The following example shows a helper class that uses a **DeviceWatcher** to create and update an **ObservableCollection** of **MediaFrameSourceGroup** objects to support data binding to the list of cameras. Typical apps would wrap the **MediaFrameSourceGroup** in a custom model class. Note that the helper class maintains a reference to the app's [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) and updates the collection of cameras within calls to [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to ensure that the UI bound to the collection is updated on the UI thread.
+下列範例顯示的 helper 類別，會使用**DeviceWatcher**來建立及更新**MediaFrameSourceGroup**物件的**ObservableCollection** ，以支援將資料系結至相機清單。 一般應用程式會將**MediaFrameSourceGroup**包裝在自訂模型類別中。 請注意，helper 類別會維護應用程式[**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)的參考，並更新對[**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)的呼叫內的相機集合，以確保系結至集合的 ui 會在 ui 執行緒上更新。
 
-Also, this example handles the [**DeviceWatcher.Updated**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.updated) event in addition to the **Added** and **Removed** events. In the **Updated** handler, the associated remote camera device is removed from and then added back to the collection.
+此外，這個範例也會處理**已新增**和**移除**的事件以外的[**DeviceWatcher**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.updated)事件。 在**更新**的處理常式中，關聯的遠端相機裝置會從移除，然後再加回集合。
 
 [!code-cs[SnippetRemoteCameraPairingHelper](./code/Frames_Win10/Frames_Win10/RemoteCameraPairingHelper.cs#SnippetRemoteCameraPairingHelper)]
 
@@ -49,9 +49,9 @@ Also, this example handles the [**DeviceWatcher.Updated**](https://docs.microsof
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
-* [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [具有 MediaCapture 的基本相片、影片和音訊捕獲](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [相機框架範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
+* [使用 MediaFrameReader 處理媒體框架](process-media-frames-with-mediaframereader.md)
  
 
  

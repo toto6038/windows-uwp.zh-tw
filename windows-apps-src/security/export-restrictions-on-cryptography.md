@@ -51,7 +51,7 @@ ms.locfileid: "74258941"
 
 -   密碼加密
 -   複製保護
--   驗證
+-   Authentication
 -   數位版權管理
 -   使用數位簽章
 

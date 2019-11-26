@@ -19,12 +19,12 @@ ms.locfileid: "74260302"
 
 ## <a name="in-this-section"></a>本節內容
 
-|  主題    | 說明 |               
+|  主題    | 描述 |               
 |----------|-------|
 | [橫幅廣告](banner-ads.md)     | 提供使用 Microsoft Advertising SDK 中的 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 類別，將橫幅廣告加入您的 UWP app 的指示。        |
-| [Interstitial Ads](interstitial-ads.md)    | 提供使用 Microsoft Advertising SDK 中的 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 類別，將插播式廣告加入您的 UWP app 的指示。       |
+| [插入式 Ads](interstitial-ads.md)    | 提供使用 Microsoft Advertising SDK 中的 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 類別，將插播式廣告加入您的 UWP app 的指示。       |
 | [原生廣告](native-ads.md)       | 提供使用 Microsoft Advertising SDK 中的 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 和 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 類別，將原生廣告加入您的 UWP app 的指示。  |
-| [Show ads in video content](add-advertisements-to-video-content.md)     |  提供在您的 UWP app 中於影片內容內顯示廣告的指示 (此功能目前僅支援使用 JavaScript 搭配 HTML 所撰寫的應用程式)。 |
+| [在影片內容中顯示廣告](add-advertisements-to-video-content.md)     |  提供在您的 UWP app 中於影片內容內顯示廣告的指示 (此功能目前僅支援使用 JavaScript 搭配 HTML 所撰寫的應用程式)。 |
 
 
 

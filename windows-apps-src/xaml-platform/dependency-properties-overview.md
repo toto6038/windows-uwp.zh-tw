@@ -33,7 +33,7 @@ ms.locfileid: "74259860"
 相依性屬性代表或支援程式設計模型的特定功能，可使用適用于 UI 的 XAML 和C#、Microsoft Visual Basic 或 Visual C++ component extensions （C++/cx）來定義用於程式碼的 Windows 執行階段應用程式。 這些功能包括：
 
 - 資料繫結
-- 樣式
+- Styles
 - 腳本動畫
 - "PropertyChanged" 行為；可以實作相依性屬性來提供可將變更傳播到其他相依性屬性的回呼
 - 使用來自屬性中繼資料的預設值

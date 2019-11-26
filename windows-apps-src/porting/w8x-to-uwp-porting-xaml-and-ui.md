@@ -200,7 +200,7 @@ ms.locfileid: "74259110"
 |                     | [無法使用]           |                   | PressedSelected     |
 | [無法使用]       |                         | DisabledStates    |                     |
 |                     | [無法使用]           |                   | 已停用            |
-|                     | [無法使用]           |                   | 啟用             |
+|                     | [無法使用]           |                   | Enabled             |
 | SelectionHintStates |                         | [無法使用]     |                     |
 |                     | VerticalSelectionHint   |                   | [無法使用]       |
 |                     | HorizontalSelectionHint |                   | [無法使用]       |

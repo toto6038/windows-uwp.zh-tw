@@ -97,7 +97,7 @@ ms.locfileid: "74258213"
 
     手指的整個接觸面會判斷最可能的目標物件為何。
 
--   Scrubbing
+-   擦選
 
     手指在群組中的項目之間拖曳，可以輕鬆重新轉換目標 (例如，選項按鈕)。 拿起手指不觸摸之後，就會啟動目前的項目。
 
@@ -200,7 +200,7 @@ ms.locfileid: "74258213"
 | Swipe          | 操作手勢 | 一或多根手指觸碰螢幕後，再往同一個方向短距離移動。  |
 | 轉動           | 操作手勢 | 二或多根手指輕觸螢幕後，往順時鐘或逆時鐘方向弧形移動。 |
 | 捏合          | 操作手勢 | 二或多根手指觸碰螢幕後，再朝靠攏的方向移動。                         |
-| Stretch        | 操作手勢 | 二或多根手指觸碰螢幕後，再朝分開的方向移動。                           |
+| 伸展        | 操作手勢 | 二或多根手指觸碰螢幕後，再朝分開的方向移動。                           |
 
  
 
@@ -570,7 +570,7 @@ End Sub
 ## <a name="routed-events"></a>路由事件
 
 
-本文中所述的所有指標事件、手勢事件和操控事件都會做為 *「路由事件」* 來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的父容器或應用程式的根 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10))。
+本文中所述的所有指標事件、手勢事件和操控事件都會做為「路由事件」來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的父容器或應用程式的根 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10))。
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 

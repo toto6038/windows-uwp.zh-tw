@@ -23,7 +23,7 @@ ms.locfileid: "74259660"
 |
 
 
-| 製造商  | 型號                          | 功能 | [連線]    | 類型         | 模式                      |
+| 製造商  | 型號                          | 功能 | 連線    | 類型         | 模式                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
 | 程式碼          | 讀取器™950                    | 2D         | USB          | 掌上型     | HID POS 掃描器           |
 | 程式碼          | 讀取器™1021                   | 2D         | USB          | 掌上型     | HID POS 掃描器           |
@@ -32,8 +32,8 @@ ms.locfileid: "74259660"
 | Honeywell     | 創世7580g                  | 2D         | USB          | 展示 | HID POS 掃描器           |
 | Honeywell     | Granit 198Xi                   | 2D         | USB          | 掌上型     | HID POS 掃描器           |
 | Honeywell     | Granit 191Xi                   | 2D         | USB          | 掌上型     | HID POS 掃描器           |
-| Honeywell     | N5680                          | 2D         | 內部     | 元件    | HID POS 掃描器           |
-| Honeywell     | N3680                          | 2D         | 內部     | 元件    | HID POS 掃描器           |
+| Honeywell     | N5680                          | 2D         | 內部     | Component    | HID POS 掃描器           |
+| Honeywell     | N3680                          | 2D         | 內部     | Component    | HID POS 掃描器           |
 | Honeywell     | 軌道7190g                    | 2D         | USB          | 展示 | HID POS 掃描器           |
 | Honeywell     | Stratos 2700                   | 2D         | USB          | 在計數器中   | HID POS 掃描器           |
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | 掌上型     | HID POS 掃描器           |

@@ -1,6 +1,6 @@
 ---
 description: 開發跨平台 app 時有哪些選擇？
-title: 選取 iOS 和 UWP app 開發的方式
+title: 選取 iOS 和 UWP 應用程式開發的方式
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260141"
 ---
-# <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>選取 iOS 和 UWP app 開發的方式
+# <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>選取 iOS 和 UWP 應用程式開發的方式
 
 
 開發跨平台 app 時有哪些選擇？

@@ -1,12 +1,12 @@
 ---
-title: Help moving from Mac (Unix) to Windows
-description: A guide to help you transition from a Mac (Unix) to a Windows development environment, including shortcut key mapping and a brief overview of concepts that differ between Mac and Windows.
+title: 協助從 Mac （Unix）移至 Windows
+description: 協助您從 Mac （Unix）轉換到 Windows 開發環境的指南，包括快速鍵對應和 Mac 和 Windows 之間不同概念的簡短總覽。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, help changing dev environments, Mac OS X to Windows, help moving from Mac to PC
+keywords: Mac 到 Windows、快速鍵對應、從 Unix 移至 Windows、從 Mac 轉換到 Windows、從 MacBook 移至介面、如何將 Windows 用於 Macintosh 使用者、從 Macintosh 切換到 Windows、協助變更開發環境、Mac OS X 到 Windows、協助從 Mac 移至電腦
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 563a8ad659cfff1396049aae78342642d1db3e72
@@ -16,79 +16,79 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74309154"
 ---
-# <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Guide for changing your dev environment from Mac to Windows
+# <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>將您的開發環境從 Mac 變更為 Windows 的指南
 
-The following tips and control equivalents should help you in your transition between a Mac and Windows (or WSL/Linux) development environment.
+下列秘訣和控制項對等專案應該可以協助您在 Mac 和 Windows （或 WSL/Linux）開發環境之間進行轉換。
 
-For app development, the nearest equivalent to Xcode would be [Visual Studio](https://visualstudio.microsoft.com). There is also a version of [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), if you ever feel the need to go back. For cross-platform source code editing (and a huge number of plug-ins) [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432) is the most popular choice.
+針對應用程式開發，最接近 Xcode 的相當於[Visual Studio](https://visualstudio.microsoft.com)。 如果您覺得需要返回，還有一個[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)版本。 針對跨平臺原始程式碼編輯（和大量外掛程式） [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432)是最受歡迎的選擇。
 
 ## <a name="keyboard-shortcuts"></a>鍵盤快速鍵
 
-| **Operation** | **Mac** | **視窗** |
+| **運營** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| [複製] | Command+C | Ctr+C |
-| 剪下 | Command+X | Ctr+X |
-| 貼上 | Command+V | Ctr+V |
-| 復原 | Command+Z | Ctrl+Z |
-| [儲存] | Command+S | Ctrl+S |
-| 開啟 | Command+O | Ctrl+O |
-| Lock computer | Command+Control+Q | WindowKey+L |
-| Show desktop | Command+F3 | WindowKey+D |
-| Minimize windows | COMMAND +M | Windows key+M |
-| [搜尋] | Command+Space | Windows 鍵 |
-| Close active window | Command+W | Control+W |
-| Switch current task | Command+Tab | Alt+Tab |
-| Save screen (Screenshot) | Command+Shift+3 | Windows+Shift+S |
-| Save window | Command+Shift+4 | Windows+Shift+S |
-| View item information or properties | Command+I | Alt+Enter |
- | Select all items | Command+A | Ctrl+A |
-| Select more than one item in a list (noncontiguous) | Command, then click each item | Control, then click each item |
-| Type special characters | Option+ character key | Alt+ character key|
+| 複製 | 命令 + C | Ctr + C |
+| 剪下 | 命令 + X | Ctr + X |
+| 貼上 | 命令 + V | Ctr + V |
+| 復原 | 命令 + Z | Ctrl+Z |
+| 儲存 | 命令 + S | Ctrl+S |
+| 開啟 | 命令 + O | Ctrl+O |
+| 鎖定電腦 | Command + Control + Q | WindowKey + L |
+| 顯示桌面 | 命令 + F3 | WindowKey + D |
+| 最小化視窗 | 命令 + M | Windows 鍵 + M |
+| 搜尋 | 命令 + 空格鍵 | Windows 鍵 |
+| 關閉使用中視窗 | 命令 + W | Control + W |
+| 切換目前的工作 | 命令 + Tab | Alt+Tab |
+| 儲存畫面（螢幕擷取畫面） | 命令 + Shift + 3 | Windows + Shift + S |
+| 儲存視窗 | 命令 + Shift + 4 | Windows + Shift + S |
+| 視圖專案資訊或屬性 | 命令 + I | Alt + Enter |
+ | 選取所有專案 | 命令 + A | Ctrl+A |
+| 在清單中選取一個以上的專案（非連續） | 命令，然後按一下每個專案 | 控制項，然後按一下每個專案 |
+| 輸入特殊字元 | Option + 字元鍵 | Alt + 字元鍵|
 
 ## <a name="trackpad-shortcuts"></a>軌跡板快速鍵
 
-Note: Some of these shortcuts require a “Precision Trackpad”, such as the trackpad on Surface devices and some other third party laptops.
+注意：其中有些快捷方式需要「精確度軌跡板」，例如 Surface 裝置上的軌跡板，以及一些其他的協力廠商膝上型電腦。
 
- **Operation** | **Mac** | **視窗** |
+ **運營** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Scroll | Two finger vertical swipe | Two finger vertical swipe |
-| 縮放 | Two finger pinch in and out | Two finger pinch in and out |
-| Swipe back and forward between views | Two finger sideways swipe | Two finger sideways swipe |
-| Switch virtual workspaces | Four fingers sideways swipe | Four fingers sideways swipe |
-| Display currently open apps | Four fingers upward swipe | Three fingers upward swipe |
-| Switch between apps | 無 | Slow three finger sideways swipe |
-| Go to desktop | Spread out four fingers | Three finger swipe downwards |
-| Open Cortana / Action center | Two finger slide from right | Three finger tap |
-| Open extra information | Three finger tap | 無 |
-|Show launchpad / start an app | Pinch with four fingers | Tap with four fingers |
+| Scroll | 雙手指垂直滑動 | 雙手指垂直滑動 |
+| Zoom | 兩個手指縮小和放大 | 兩個手指縮小和放大 |
+| 在 views 之間向前和向後滑動 | 兩個手指橫向滑動 | 兩個手指橫向滑動 |
+| 切換虛擬工作區 | 四個手指橫向滑動 | 四個手指橫向滑動 |
+| 顯示目前開啟的應用程式 | 四個手指向上滑動 | 三個手指向上滑動 |
+| 在應用程式之間切換 | 不適用 | 緩慢的三手指側刷 |
+| 前往桌面 | 散佈四個手指 | 三向下輕觸 |
+| 開啟 Cortana/行動中心 | 向右滑動兩個手指 | 三碰點 |
+| 開啟額外資訊 | 三碰點 | 不適用 |
+|顯示啟動控制板/啟動應用程式 | 使用四個手指縮小 | 利用四個手指 |
 
-Note: Trackpad options are configurable on both platforms.
+注意：在這兩個平臺上都可設定軌跡板選項。
 
 ## <a name="terminal-and-shell"></a>終端機和殼層
 
-Windows provides several alternatives to the Mac's terminal emulator.
+Windows 提供數個 Mac 終端機模擬器的替代方案。
 
-1. The Windows Command Line
+1. Windows 命令列
 
-The Windows command line will accept DOS commands, and is the most commonly used command line tool on Windows. To open it: Press **Windows+R** to open the **Run** box, then type **cmd** and then click **OK**. To open an administrator command line, type **cmd** and then press **Ctrl+Shift+Enter**. 
+Windows 命令列會接受 DOS 命令，而是 Windows 最常使用的命令列工具。 若要開啟它：按**Windows + R**開啟 [**執行**] 方塊，然後輸入**Cmd** ，再按一下 **[確定]** 。 若要開啟系統管理員命令列，請輸入**cmd** ，然後按**Ctrl + Shift + enter**。 
 
 2. PowerShell
 
-[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-6) is a "PowerShell is a task-based command-line shell and scripting language built on .NET. PowerShell helps system administrators and power-users rapidly automate tasks that manage operating systems". In other words, it's a very powerful command line, and is especially loved by system admins.
+[Powershell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-6)是一種以工作為基礎的命令列 shell 和指令碼語言，建置於 .net 上。 PowerShell 可協助系統管理員和使用者快速地將管理作業系統的工作自動化。 換句話說，這是一項功能強大的命令列，特別是系統管理員的愛。
 
-Incidentally, PowerShell is [also available for Mac](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6).
+順便一提，PowerShell[也適用于 Mac](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6)。
 
 3. 適用於 Linux 的 Windows 子系統 (WSL)
 
-WSL allows you to run a Linux shell within Windows. This means you can run *bash** or other shell, depending on choice and the specific Linux distro installed. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the Windows command line. To learn about instaling and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+WSL 可讓您在 Windows 內執行 Linux shell。 這表示您可以根據選擇和安裝的特定 Linux 散發版本，執行*bash** 或其他 shell。 使用 WSL 可提供 Mac 使用者最熟悉的環境類型。 例如，**您將會**在目前目錄中列出檔案，而不是依照 Windows 命令列的方式來列出**目錄**。 若要深入瞭解安裝和使用 WSL，請參閱[適用于 windows 10 的 Windows 子系統 For Linux 安裝指南](https://docs.microsoft.com/en-us/windows/wsl/install-win10)。
 
 ## <a name="apps-and-utilities"></a>應用程式和公用程式
 
- **App** | **Mac** | **視窗** |
+ **相關** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Settings and Preferences | System Preferences | [設定] |
-| 工作管理員 | Activity Monitor | [工作管理員] |
-| Disk formatting | Disk Utility | 磁碟管理 |
-| Text editing | TextEdit | 記事本 |
-| Event viewing | Console | 事件檢視器 |
-| Find files/apps | Command+Space | Windows 鍵 |
+| 設定和喜好設定 | 系統喜好設定 | 設定 |
+| 工作管理員 | 活動監視器 | 工作管理員 |
+| 磁片格式化 | 磁片公用程式 | 磁碟管理 |
+| 文字編輯 | TextEdit | 記事本 |
+| 事件查看 | Console | 事件檢視器 |
+| 尋找檔案/應用程式 | 命令 + 空格鍵 | Windows 鍵 |

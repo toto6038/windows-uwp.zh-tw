@@ -1,5 +1,5 @@
 ---
-title: 安全開發 Windows 應用程式的簡介
+title: 安全開發 Windows app 的簡介
 description: 這篇簡介文章可協助應用程式架構設計師和開發人員進一步瞭解可加速建立安全通用 Windows 平臺（UWP）應用程式的各種 Windows 10 平臺功能。
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
@@ -13,7 +13,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258942"
 ---
-# <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows 應用程式的簡介
+# <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows app 的簡介
 
 
 
@@ -161,7 +161,7 @@ Azure Active Directory (Azure AD) 是雲端式身分識別及存取管理服務�
 ## <a name="24-windows-hello"></a>2.4 Windows Hello
 
 
-在 Windows 10 中，方便的多重要素驗證機制已經內建在作業系統中。 Windows Hello 就是 Windows 10 內建的新生物特徵辨識登入系統。 因為此功能是直接內建於作業系統，所以 Windows Hello 讓使用者能夠使用臉部或指紋辨識來解除鎖定使用者的裝置。 Windows 安全的認證存放區會保護裝置上的生物特徵辨識資料。
+在 Windows 10 中，方便的多重要素驗證機制已經內建在作業系統中。 Windows Hello 就是 Windows 10 內建的新生物特徵辨識登入系統。 由於 Windows Hello 是直接內建在作業系統中，因此能夠讓使用者利用臉部或指紋辨識來解除使用者裝置的鎖定。 Windows 安全的認證存放區會保護裝置上的生物特徵辨識資料。
 
 Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也就是使用者與所要求服務或資料項目之間路徑的第一個部分。 裝置在成功辨識使用者之後，仍然需要驗證使用者的身分，才能決定是否要授與所要求資源的存取權。 Windows Hello 也會提供與 Windows 完全整合的增強式雙因素驗證 (2FA)，利用特定裝置和生物特徵辨識技術或 PIN 的組合，來取代可重複使用的密碼。 PIN 是使用者在註冊 Microsoft 帳戶時所指定的。
 

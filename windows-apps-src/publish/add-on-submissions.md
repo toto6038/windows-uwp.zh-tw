@@ -62,7 +62,7 @@ ms.locfileid: "74259054"
 | [**銷售價格**](put-apps-and-add-ons-on-sale.md)               | 選擇性                    |
 
 
-### <a name="store-listings"></a>Store 清單
+### <a name="store-listings"></a>市集清單
 
 需要一個市集清單。 我們建議針對 App 支援的每個[語言](create-add-on-store-listings.md#store-listing-languages)提供市集清單。
 

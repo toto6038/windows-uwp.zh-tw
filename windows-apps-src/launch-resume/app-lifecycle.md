@@ -36,7 +36,7 @@ Windows 10 (版本 1607) 另外引進兩個 app 模型狀態︰ **「在前景�
 
 這個圖例表示一開始在 Windows 10 (版本 1607) 中可能的 app 模型狀態。 讓我們逐步解說典型的 UWP 應用程式週期。
 
-![狀態圖例，顯示應用程式執行狀態之間的轉換](images/updated-lifecycle.png)
+![狀態圖例，顯示 app 執行狀態之間的轉換](images/updated-lifecycle.png)
 
 App 會在啟動或啟用時，進入背景執行狀態時。 如果應用程式因為前景應用程式啟動，而必須移至前景，則應用程式會取得 [**LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground) 事件。
 

@@ -44,7 +44,7 @@ using Windows.UI.Xaml.Controls;
 
 [  **PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument) 類別是用來處理大部分的 app 與 [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) 之間的互動，但是它會公開自己的數個回呼。 在註冊期間，建立 **PrintManager** 和 **PrintDocument** 的執行個體，並註冊其列印事件的處理常式。
 
-在 [UWP 列印範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) 中，註冊是由 `RegisterForPrinting` 方法執行。
+在 [UWP 列印範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)中，註冊是由 `RegisterForPrinting` 方法執行。
 
 ```csharp
 public virtual void RegisterForPrinting()

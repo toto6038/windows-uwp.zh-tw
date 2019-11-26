@@ -1,5 +1,5 @@
 ---
-Description: 基本協助工具資訊通常分類為名稱、角色以及值。 本主題描述的程式碼可協助您的 app 公開輔助技術所需的基本資訊。
+Description: 基本協助工具資訊通常分類為名稱、角色以及值。 本主題說明的程式碼可協助您的應用程式公開輔助技術所需的基本資訊。
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: 公開基本的協助工具資訊
 label: Expose basic accessibility information
@@ -19,7 +19,7 @@ ms.locfileid: "74257768"
 
 
 
-基本協助工具資訊通常分類為名稱、角色以及值。 本主題描述的程式碼可協助您的 app 公開輔助技術所需的基本資訊。
+基本協助工具資訊通常分類為名稱、角色以及值。 本主題說明的程式碼可協助您的應用程式公開輔助技術所需的基本資訊。
 
 <span id="accessible_name"/>
 <span id="ACCESSIBLE_NAME"/>

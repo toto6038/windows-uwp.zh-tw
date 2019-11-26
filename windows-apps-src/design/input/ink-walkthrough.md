@@ -64,7 +64,7 @@ ms.locfileid: "74258392"
 
 這些物件提供 UWP app 大量筆跡體驗。
 
-| 元件 | 描述 |
+| Component | 描述 |
 | --- | --- |
 | [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平臺控制項，預設會接收並顯示畫筆的所有輸入做為筆墨筆劃或抹除筆劃。 |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 程式碼後置物件，連同 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項 (透過 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 屬性所公開) 進行具現化。 這個物件提供 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 公開的所有預設筆跡功能，以及一組完整的 API 來進行其他自訂和個人化。 |
@@ -119,7 +119,7 @@ ms.locfileid: "74258392"
     <InkCanvas x:Name="inkCanvas" />
 ```
 
-就這麼容易！ 
+這樣就完成了！ 
 
 現在再次執行 App。 請繼續進行並徒手畫、撰寫您的名稱或者 (如果您有一面鏡子或者記性很好) 繪製您自己的自畫像。
 

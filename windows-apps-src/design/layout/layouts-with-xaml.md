@@ -130,7 +130,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 ### <a name="set-visual-states-in-code"></a>在程式碼中設定視覺狀態
 
-若要從程式碼套用視覺狀態，您可以呼叫 [**VisualStateManager.GoToState**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstatemanager.gotostate) 方法。 例如，若要在應用程式視窗為特定大小時套用某個狀態，請處理 [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) 事件並呼叫 **GoToState** 以套用適當的狀態。
+若要從程式碼套用視覺狀態，您可以呼叫 [**VisualStateManager.GoToState**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstatemanager.gotostate) 方法。 例如，若要在 app 視窗為特定大小時套用某個狀態，請處理 [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) 事件並呼叫 **GoToState** 以套用適當的狀態。
 
 此處的 [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 包含二個 VisualState 定義。 第一個是 `DefaultState`，是空的。 套用時，即會套用 XAML 頁面中定義的值。 第二個是 `WideState`，它會將 [**SplitView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview.displaymode) 的 [**DisplayMode**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView) 屬性變更為 **Inline** 並開啟窗格。 如果視窗寬度比 640 個有效像素來得大，即會在 SizeChanged 事件處理常式中套用此狀態。
 
@@ -340,7 +340,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 2. 在左窗格的 [Visual C#] 或 [Visual Basic] 下方，挑選 [XAML] 範本類型。
 3. 在中央窗格，挑選 [XAML 檢視]。
 4. 輸入檢視的名稱。 檢視必須以正確方式命名。 如需命名的詳細資訊，請參閱本節的其餘部分。
-5. 按一下新增。 檔案即會新增到專案。
+5. 按一下 [新增]。 檔案即會新增到專案。
 
 先前步驟只會建立一個 XAML 檔案，但不會建立相關聯的程式碼後置檔案。 而是會使用 DeviceName 限定詞 (此為檔案或資料夾名稱的一部分)，將 XAML 檢視關聯至現有的程式碼後置檔案。 這個限定詞名稱可對應到代表應用程式目前執行所在之裝置的裝置系列的字串值，例如，「電腦」、「平板電腦」和其他裝置系列的名稱 (請參閱 [**ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues))。
 
@@ -374,7 +374,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 2. 在左窗格的 [Visual C#] 或 [Visual Basic] 下方，挑選 [XAML] 範本類型。
 3. 在中央窗格，選取 [空白頁]。
 4. 輸入頁面的名稱。 例如，"MainPage_Tablet"。 同時建立 MainPage_Tablet.xaml 和 MainPage_Tablet.xaml.cs/vb/cpp 程式碼檔案。
-5. 按一下新增。 檔案即會新增到專案。
+5. 按一下 [新增]。 檔案即會新增到專案。
 
 在執行階段，檢查應用程式執行所在的裝置系列，然後瀏覽到正確的頁面，如下。
 

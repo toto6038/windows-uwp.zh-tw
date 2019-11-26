@@ -95,7 +95,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 每個 **SystemColor*Color** 資源都是變數，當使用者切換高對比佈景主題時會自動更新色彩。 以下是在何處及何時使用各項資源的指導方針。
 
-資源 | 用法 |
+資源 | 用途 |
 |--------|-------|
 **SystemColorWindowTextColor** | 內文文字、標題、清單；任何無法進行互動的文字 |
 | **SystemColorHotlightColor** | 超連結 |

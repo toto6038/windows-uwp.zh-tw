@@ -1,6 +1,6 @@
 ---
 Description: 一旦您已透過保留名稱來建立您的 app，您可以開始進行發行。 第一個步驟是建立提交項。
-title: App 提交
+title: 應用程式提交
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: 檢查清單, windows, uwp, 提交項目, 提交, 遊戲, 應用程式
 ms.date: 10/31/2018
@@ -13,7 +13,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260028"
 ---
-# <a name="app-submissions"></a>App 提交
+# <a name="app-submissions"></a>應用程式提交
 
 
 一旦您已[透過保留名稱來建立您的 app](create-your-app-by-reserving-a-name.md)，您就可以開始進行發行。 第一個步驟是建立**提交**。
@@ -84,7 +84,7 @@ ms.locfileid: "74260028"
 | **強制更新**          | 選用 (僅適用於更新)            | [強制更新](upload-app-packages.md#mandatory-update)
 
 
-### <a name="store-listings"></a>Store 清單
+### <a name="store-listings"></a>市集清單
 
 您需要 App 所支援之至少一種語言的所有必要資訊。 建議以 App 支援的所有語言提供[市集清單](create-app-store-listings.md)，而且您也可以[使用其他語言提供市集清單](create-app-store-listings.md#store-listing-languages)。 為了更容易管理相同產品的多個清單，您可以[匯入和匯出 Store 清單](import-and-export-store-listings.md)。
 

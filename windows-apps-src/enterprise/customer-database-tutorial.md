@@ -421,7 +421,7 @@ ms.locfileid: "74258621"
 
 ## <a name="conclusion"></a>結論
 
-恭喜您！ 完成上述所有作業之後，您的應用程式現在有完整範圍的本機資料庫作業。 您可以在 UI 中建立、讀取、更新和刪除客戶，這些變更會儲存到您的資料庫，並且會在不同的應用程式啟動期間保存。
+恭喜！ 完成上述所有作業之後，您的應用程式現在有完整範圍的本機資料庫作業。 您可以在 UI 中建立、讀取、更新和刪除客戶，這些變更會儲存到您的資料庫，並且會在不同的應用程式啟動期間保存。
 
 現在您已經完成，請考慮下列事項：
 * 如果您還沒有這麼做，請參閱[應用程式結構總覽](../enterprise/customer-database-app-structure.md)，以取得有關應用程式建立方式的詳細資訊。
@@ -447,7 +447,7 @@ ms.locfileid: "74258621"
 * 將您的應用程式與 Microsoft Store 建立關聯。
 * 將[服務專案](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService)複製到您的應用程式，並將其部署至 Azure。
 
-### <a name="authentication"></a>驗證
+### <a name="authentication"></a>Authentication
 
 您必須建立按鈕來啟動驗證序列，以及使用快顯或個別頁面來收集使用者的資訊。 建立該檔案之後，您必須提供要求使用者資訊的程式碼，並使用它來取得存取權杖。 客戶訂單資料庫範例會使用**WebAccountManager**程式庫包裝 Microsoft Graph 呼叫，以取得權杖並處理 AAD 帳戶的驗證。
 

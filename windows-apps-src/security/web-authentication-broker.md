@@ -35,7 +35,7 @@ ms.locfileid: "74259814"
 
 要求 URI 包含傳送驗證要求時所用的線上提供者位址以及其他所需的資訊 (例如應用程式識別碼或密碼)、驗證完成後使用者前往的重新導向 URI，以及預期的回應類型。 您可以向提供者詢問所需的參數。
 
-要求 URI 會以 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 方法的 *requestUri* 參數形式傳送。 它必須是安全位址 (開頭必須為 `https://`)
+要求 URI 會以AuthenticateAsync[**方法的**requestUri](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 參數形式傳送。 它必須是安全位址 (開頭必須為 `https://`)
 
 下列範例顯示如何建立要求 URI。
 
@@ -87,12 +87,12 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->除了 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 以外，[**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web) 命名空間還包含 [**AuthenticateAndContinue**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods) 方法。 請不要呼叫此方法。 It is designed for apps targeting Windows Phone 8.1 only and is deprecated starting with Windows 10.
+>除了 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 以外，[**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web) 命名空間還包含 [**AuthenticateAndContinue**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods) 方法。 請不要呼叫此方法。 它是專為以 Windows Phone 8.1 為目標的應用程式所設計，且從 Windows 10 開始已淘汰。
 
 ## <a name="connecting-with-single-sign-on-sso"></a>使用單一登入 (SSO) 連線。
 
 
-根據預設，Web 驗證代理人不允許保留 Cookie。 基於這個原因，即使 app 使用者指出他們想要保持登入 (例如，透過在提供者登入對話方塊選取核取方塊)，仍然需要在每次想要存取該提供者的資源時進行登入。 若要使用 SSO 登入，您的線上身分識別提供者必須啟用 Web 驗證代理人的 SSO，而且 app 必須呼叫不會使用 *callbackUri* 參數的 [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) 超載。 這可讓 Web 驗證代理人儲存永續性 Cookie，使相同應用程式未來的驗證呼叫不需要使用者重複登入（使用者實際上「已登入」直到存取權杖逾時）。
+根據預設，Web 驗證代理人不允許保留 Cookie。 基於這個原因，即使 app 使用者指出他們想要保持登入 (例如，透過在提供者登入對話方塊選取核取方塊)，仍然需要在每次想要存取該提供者的資源時進行登入。 若要使用 SSO 登入，您的線上身分識別提供者必須啟用 Web 驗證代理人的 SSO，而且 app 必須呼叫不會使用 [callbackUri**參數的**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync)AuthenticateAsync 超載。 這可讓 Web 驗證代理人儲存永續性 Cookie，使相同應用程式未來的驗證呼叫不需要使用者重複登入（使用者實際上「已登入」直到存取權杖逾時）。
 
 若要支援 SSO，線上提供者必須允許您以 `ms-app://<appSID>` 的形式登錄重新導向 URI，其中 `<appSID>` 是您 app 的 SID。 您可以在 app 的 app 開發人員頁面找到 app SID，或者呼叫 [**GetCurrentApplicationCallbackUri**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.getcurrentapplicationcallbackuri) 方法。
 
@@ -136,7 +136,7 @@ catch (Exception ex)
 
 ### <a name="operational-logs"></a>作業記錄
 
-通常您可以透過使用作業記錄來判斷哪裡出問題。 There is a dedicated event log channel Microsoft-Windows-WebAuth\\Operational that allows website developers to understand how their web pages are being processed by the Web authentication broker. To enable it, launch eventvwr.exe and enable Operational log under the Application and Services\\Microsoft\\Windows\\WebAuth. 此外，Web 驗證代理人還會在使用者代理字串後面附加一個唯一字串，以便在網頁伺服器上識別自己。 這個字串是 "MSAuthHost/1.0"。 請注意，版本號碼在日後可能會有變更，因此在程式碼中不應該依據該版本號碼。 完整的使用者代理字串範例 (附有完整的偵錯步驟) 如下：
+通常您可以透過使用作業記錄來判斷哪裡出問題。 有一個專門的事件記錄檔通道 Microsoft Windows WebAuth\\作業，可讓網站開發人員瞭解 Web 驗證訊息代理程式如何處理其網頁。 若要啟用它，請啟動 eventvwr.msc，並在 Microsoft\\Windows\\WebAuth\\的應用程式和服務下啟用操作記錄。 此外，Web 驗證代理人還會在使用者代理字串後面附加一個唯一字串，以便在網頁伺服器上識別自己。 這個字串是 "MSAuthHost/1.0"。 請注意，版本號碼在日後可能會有變更，因此在程式碼中不應該依據該版本號碼。 完整的使用者代理字串範例 (附有完整的偵錯步驟) 如下：
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
@@ -155,11 +155,11 @@ catch (Exception ex)
 
 Fiddler Web 偵錯工具可以與 app 搭配使用。
 
-1.  Since the AuthHost runs in its own app container, to give it the private network capability you must set a registry key: Windows Registry Editor Version 5.00
+1.  由於 AuthHost 會在自己的應用程式容器中執行，因此，若要為它提供私人網路功能，您必須設定登錄機碼： Windows 登錄編輯程式版本5.00
 
-    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
+    **HKEY\_本機\_電腦**\\**軟體**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**影像檔執行選項**\\**authhost**\\**EnablePrivateNetwork** = 00000001
 
-    If you do not have this registry key, you can create it in a Command Prompt with administrator privileges.
+    如果您沒有此登錄機碼，您可以在命令提示字元中，使用系統管理員許可權來建立它。
 
     ```cmd 
     REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f

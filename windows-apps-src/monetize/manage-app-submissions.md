@@ -1,7 +1,7 @@
 ---
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: 請在 Microsoft Store 提交 API 中使用這些方法，來管理已向您的合作夥伴中心帳戶註冊之應用程式的提交。
-title: 管理 App 提交
+title: 管理應用程式提交
 ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 提交 API、App 提交
@@ -13,7 +13,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260230"
 ---
-# <a name="manage-app-submissions"></a>管理 App 提交
+# <a name="manage-app-submissions"></a>管理應用程式提交
 
 Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提交，包括漸進式套件推出。 如需 Microsoft Store 提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
@@ -339,18 +339,18 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 |------------|--------|-------------------|
 | id            | 字串  | 提交的識別碼。 此識別碼可用於要求 [建立 App 提交](create-an-app-submission.md)、 [取得所有 App](get-all-apps.md) 和 [取得 App](get-an-app.md) 的回應資料中。 針對在合作夥伴中心建立的提交，此識別碼也會出現在合作夥伴中心的 [提交] 頁面的 URL 中。  |
 | applicationCategory           | 字串  |   指定 App [類別和/或子類別](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table)的字串。 類別與子類別會使用底線 '_' 字元結合為單一字串，例如 **BooksAndReference_EReader**。      |  
-| pricing           |  物件  | [定價資源](#pricing-object)包含應用程式的定價資訊。        |   
-| visibility           |  字串  |  應用程式的可見度。 這可以是下列其中一個值： <ul><li>Hidden</li><li>公用</li><li>Private</li><li>NotSet</li></ul>       |   
+| 定價           |  物件  | [定價資源](#pricing-object)包含應用程式的定價資訊。        |   
+| 可見度           |  字串  |  應用程式的可見度。 這可以是下列其中一個值： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
 | targetPublishMode           | 字串  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |  
 | listings           |   物件  |  索引鍵/值組的字典，其中每個索引鍵都是國家/地區代碼，而每個值都是[清單資源](#listing-object)，其中包含應用程式的清單資訊。       |   
 | hardwarePreferences           |  陣列  |   定義 App [硬體喜好設定](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)的字串陣列。 這可以是下列其中一個值： <ul><li>觸控</li><li>鍵盤</li><li>滑鼠</li><li>相機</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
-| automaticBackupEnabled           |  boolean  |   指出 Windows 是否可以在自動備份至 OneDrive 時包含您應用程式的資料。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。   |   
-| canInstallOnRemovableMedia           |  boolean  |   指出客戶是否可以將您的應用程式安裝到抽取式存放裝置。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| isGameDvrEnabled           |  boolean |   指出是否已針對應用程式啟用遊戲 DVR。    |   
+| automaticBackupEnabled           |  布林值  |   指出 Windows 是否可以在自動備份至 OneDrive 時包含您應用程式的資料。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。   |   
+| canInstallOnRemovableMedia           |  布林值  |   指出客戶是否可以將您的應用程式安裝到抽取式存放裝置。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| isGameDvrEnabled           |  布林值 |   指出是否已針對應用程式啟用遊戲 DVR。    |   
 | gamingOptions           |  陣列 |   包含一個[遊戲選項資源](#gaming-options-object)的陣列，其定義此 App 的遊戲相關設定。     |   
-| hasExternalInAppProducts           |     boolean          |   指出您的 App 是否允許使用者在 Microsoft Store 商務系統外部進行購買。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| meetAccessibilityGuidelines           |    boolean           |  指出您的 App 是否已經過測試，符合協助工具指導方針。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。      |   
+| hasExternalInAppProducts           |     布林值          |   指出您的 App 是否允許使用者在 Microsoft Store 商務系統外部進行購買。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| meetAccessibilityGuidelines           |    布林值           |  指出您的應用程式是否已經過測試，符合協助工具指導方針。 如需詳細資訊，請參閱[應用程式宣告](https://docs.microsoft.com/windows/uwp/publish/app-declarations)。      |   
 | notesForCertification           |  字串  |   包含您 App 的[認證注意事項](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
 | status           |   字串  |  提交的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>      |    
 | statusDetails           |   物件  | [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。       |    
@@ -358,7 +358,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | applicationPackages           |   陣列  | [應用程式套件資源](#application-package-object)的陣列，其提供關於提交中每個套件的詳細資料。 |    
 | packageDeliveryOptions    | 物件  | [套件交付選項資源](#package-delivery-options-object)包含提交的漸進式套件推出和強制更新設定。  |
 | enterpriseLicensing           |  字串  |  其中一個[企業授權值](#enterprise-licensing)，可指出 App 適用的企業授權行為。  |    
-| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  指出是否允許 Microsoft [讓 App 可供未來的 Windows 10 裝置系列使用](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。    |    
+| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  布林值   |  指出是否允許 Microsoft [讓 App 可供未來的 Windows 10 裝置系列使用](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。    |    
 | allowTargetFutureDeviceFamilies           | 物件   |  索引鍵/值組的字典，其中每個索引鍵都是一個 [Windows 10 裝置系列](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)，而每個值都是一個布林值，可指出您的應用程式是否允許將目標設為指定的裝置系列。     |    
 | friendlyName           |   字串  |  提交的易記名稱，如合作夥伴中心所示。 當您建立提交時，也會為您產生此值。       |  
 | trailers           |  陣列 |   包含高達 15 個 [預告片資源](#trailer-object) 陣列，代表應用程式清單的視訊預告片。<br/><br/>   |  
@@ -373,10 +373,10 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
 |  trialPeriod               |    字串     |  可針對應用程式指定試用期的字串。 這可以是下列其中一個值： <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
-|  marketSpecificPricings               |    物件     |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的 App 在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。      |     
+|  marketSpecificPricings               |    物件     |  機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的 App 在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。      |     
 |  sales               |   陣列      |  **過時**。 包含應用程式的銷售資訊的[銷售資源](#sale-object)陣列。   |     
 |  priceId               |   字串      |  指定應用程式[基本價格](#price-tiers)的[價格區間](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。   |     
-|  isAdvancedPricingModel               |   boolean      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此欄位為唯讀。   |
+|  isAdvancedPricingModel               |   布林值      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此欄位為唯讀。   |
 
 
 <span id="sale-object" />
@@ -387,7 +387,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 > [!IMPORTANT]
 > **銷售**資源不再支援，目前您無法使用 Microsoft Store 提交 API 取得或修改應用程式提交的銷售資料。 我們將來會更新「Microsoft Store 提交 API」來導入新的方法，以程式設計方式存取應用程式提交的銷售資訊。
->    * 在呼叫 [GET 方法以取得應用程式提交](get-an-app-submission.md)之後，*sales* 值將會空白。 您可以繼續使用合作夥伴中心來取得應用程式提交的銷售資料。
+>    * 在呼叫 [GET 方法以取得 App 提交](get-an-app-submission.md)之後，*sales* 值將會空白。 您可以繼續使用合作夥伴中心來取得應用程式提交的銷售資料。
 >    * 呼叫 [PUT 方法以更新 App 提交](update-an-app-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用合作夥伴中心來變更應用程式提交的銷售資料。
 
 此資源具有下列值。
@@ -398,7 +398,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 |  basePriceId               |   字串      |  用於銷售基本價格的[價格區間](#price-tiers)。    |     
 |  startDate               |   字串      |   ISO 8601 格式的銷售開始日期。  |     
 |  endDate               |   字串      |  ISO 8601 格式的銷售結束日期。      |     
-|  marketSpecificPricings               |   物件      |   索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的 App 在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。 這個字典中的任何項目都會覆寫特定市場的 *basePriceId* 值所指定的基本價格。    |
+|  marketSpecificPricings               |   物件      |   機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的 App 在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。 這個字典中的任何項目都會覆寫特定市場的 *basePriceId* 值所指定的基本價格。    |
 
 
 <span id="listing-object" />
@@ -410,7 +410,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | 值           | 類型    | 描述                  |
 |-----------------|---------|------|
 |  baseListing               |   物件      |  應用程式的[基本清單](#base-listing-object)資訊，這會定義適用於所有平台的預設清單資訊。   |     
-|  platformOverrides               | 物件 |   索引鍵/值組的字典，其中每個索引鍵都是字串，可識別要覆寫清單資訊的平台，而每個值都是[清單](#base-listing-object)資源 (只包含從 description 到 title 的值)，可指定要針對指定平台進行覆寫的清單資訊。 索引鍵可以具有下列值： <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
+|  platformOverrides               | 物件 |   索引鍵/值組的字典，其中每個索引鍵都是字串，可識別要覆寫清單資訊的平台，而每個值都是[清單](#base-listing-object)資源 (只包含從 description 到 title 的值)，可指定要針對指定平台進行覆寫的清單資訊。 索引鍵可以具有下列值： <ul><li>不明</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
 
 <span id="base-listing-object" />
 
@@ -427,7 +427,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 |  supportContact                |   字串      |  該值已過時。 若要設定或變更應用程式的支援連絡人 URL 或電子郵件地址，您必須在合作夥伴中心的 [[屬性](../publish/enter-app-properties.md#support-contact-info)] 頁面上執行此動作。 您可以在呼叫提交 API 時省略這個值。 如果您設定這個值，將會忽略它。        |
 |  websiteUrl                |   字串      |  該值已過時。 若要設定或變更應用程式網頁的 URL，您必須在 [合作夥伴中心] 的 [[屬性](../publish/enter-app-properties.md#website)] 頁面上執行此動作。 您可以在呼叫提交 API 時省略這個值。 如果您設定這個值，將會忽略它。      |    
 |  description               |    字串     |   App 清單的[描述](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)。   |     
-|  features               |    陣列     |  此陣列最多包含 20 個字串，可列出您應用程式的[功能](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)。     |
+|  features               |    陣列     |  此陣列最多包含 20 個字串，可列出您 App 的[功能](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)。     |
 |  releaseNotes               |  字串       |  適用於您 App 的[版本資訊](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions)。    |
 |  images               |   陣列      |  應用程式清單的[影像和圖示](#image-object)資源陣列。  |
 |  recommendedHardware               |   陣列      |  此陣列最多包含 11 個字串，可為您的應用程式列出[建議的硬體設定](../publish/create-app-store-listings.md#additional-information)。     |
@@ -489,17 +489,17 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
 |  genres               |    陣列     |  一或多個下列字串的陣列，描述遊戲的類型： <ul><li>Games_ActionAndAdventure</li><li>Games_CardAndBoard</li><li>Games_Casino</li><li>Games_Educational</li><li>Games_FamilyAndKids</li><li>Games_Fighting</li><li>Games_Music</li><li>Games_Platformer</li><li>Games_PuzzleAndTrivia</li><li>Games_RacingAndFlying</li><li>Games_RolePlaying</li><li>Games_Shooter</li><li>Games_Simulation</li><li>Games_Sports</li><li>Games_Strategy</li><li>Games_Word</li></ul>    |
-|  isLocalMultiplayer               |    boolean     |  指出遊戲是否支援本機多人遊戲。      |     
-|  isLocalCooperative               |   boolean      |  指出遊戲是否支援本機合作。    |     
-|  isOnlineMultiplayer               |   boolean      |  指出遊戲是否支援線上多人遊戲。    |     
-|  isOnlineCooperative               |   boolean      |  指出遊戲是否支援線上合作。    |     
+|  isLocalMultiplayer               |    布林值     |  指出遊戲是否支援本機多人遊戲。      |     
+|  isLocalCooperative               |   布林值      |  指出遊戲是否支援本機合作。    |     
+|  isOnlineMultiplayer               |   布林值      |  指出遊戲是否支援線上多人遊戲。    |     
+|  isOnlineCooperative               |   布林值      |  指出遊戲是否支援線上合作。    |     
 |  localMultiplayerMinPlayers               |   整數      |   指定遊戲支援本機多人遊戲的最少玩家數。   |     
 |  localMultiplayerMaxPlayers               |   整數      |   指定遊戲支援本機多人遊戲的最多玩家數。  |     
 |  localCooperativeMinPlayers               |   整數      |   指定遊戲支援本機合作的最少玩家數。  |     
 |  localCooperativeMaxPlayers               |   整數      |   指定遊戲支援本機合作的最多玩家數。  |     
-|  isBroadcastingPrivilegeGranted               |   boolean      |  指出遊戲是否支援廣播。   |     
-|  isCrossPlayEnabled               |   boolean      |   指出遊戲是否支援在 Windows 10 電腦和 Xbox 之間的多人工作階段。  |     
-|  kinectDataForExternal               |   字串      |  下列其中一個值，指出遊戲是否可以收集 Kinect 資料並將其傳送到外部服務： <ul><li>NotSet</li><li>Unknown</li><li>啟用</li><li>停用</li></ul>   |
+|  isBroadcastingPrivilegeGranted               |   布林值      |  指出遊戲是否支援廣播。   |     
+|  isCrossPlayEnabled               |   布林值      |   指出遊戲是否支援在 Windows 10 電腦和 Xbox 之間的多人工作階段。  |     
+|  kinectDataForExternal               |   字串      |  下列其中一個值，指出遊戲是否可以收集 Kinect 資料並將其傳送到外部服務： <ul><li>NotSet</li><li>不明</li><li>Enabled</li><li>已停用</li></ul>   |
 
 > [!NOTE]
 > 在 Microsoft Store 提交 API 首次向開發人員發佈後，2017 年 5 月新增 *gamingOptions* 資源。 如果您在引進此資源前透過提交 API 為應用程式建立了提交，並且此提交仍在進行中，則在確認成功提交或刪除提交之前，此資源將不適用於應用程式的提交。 如果 *gamingOptions* 資源不適用於應用程式的提交，則由 *取得應用程式* 方法傳回的[應用程式資源](get-app-data.md#application_object) 的 [hasAdvancedListingPermission](get-an-app.md) 欄位為 false。
@@ -572,7 +572,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | fileName   |   字串      |  套件的名稱。    |  
 | fileStatus    | 字串    |  套件的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  字串   |  唯一識別套件的識別碼。 此值是由合作夥伴中心提供。   |     
-| 版本    |  字串   |  應用程式套件的版本。 如需詳細資訊，請參閱[套件版本編號](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
+| version    |  字串   |  應用程式套件的版本。 如需詳細資訊，請參閱[套件版本編號](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
 | architecture    |  字串   |  套件的架構 (例如，ARM)。   |     
 | languages    | 陣列    |  應用程式所支援之語言的語言代碼陣列。 如需詳細資訊，請參閱[支援的語言](https://docs.microsoft.com/windows/uwp/publish/supported-languages)。    |     
 | capabilities    |  陣列   |  套件所需的功能陣列。 如需功能的詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
@@ -620,7 +620,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
 | packageRollout   |   物件      |  [套件推出資源](#package-rollout-object)包含用於提交的漸進式套件推出設定。   |  
-| isMandatoryUpdate    | boolean    |  指出您是否要將這項提交中的套件視為自我安裝應用程式更新的強制項目。 如需有關自我安裝 App 更新的強制套件詳細資訊，請參閱[下載與安裝 App 的套件更新](../packaging/self-install-package-updates.md)。    |  
+| isMandatoryUpdate    | 布林值    |  指出您是否要將這項提交中的套件視為自我安裝應用程式更新的強制項目。 如需有關自我安裝 App 更新的強制套件詳細資訊，請參閱[下載與安裝 App 的套件更新](../packaging/self-install-package-updates.md)。    |  
 | mandatoryUpdateEffectiveDate    |  date   |  這項提交中的套件變成強制項目的日期和時間，採用 ISO 8601 格式和 UTC 時區。   |        
 
 <span id="package-rollout-object" />
@@ -631,7 +631,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
-| isPackageRollout   |   boolean      |  指出是否已為提交啟用漸進式套件推出。    |  
+| isPackageRollout   |   布林值      |  指出是否已為提交啟用漸進式套件推出。    |  
 | packageRolloutPercentage    | 浮點數    |  將接收漸進式推出中套件的使用者百分比。    |  
 | packageRolloutStatus    |  字串   |  下列其中一個字串，這些字串指出漸進式套件推出的狀態： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  字串   |  未取得漸進式推出套件的客戶將收到的提交識別碼。   |          

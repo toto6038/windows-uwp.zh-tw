@@ -3,7 +3,7 @@ Description: 本文章明如何建立能實作 IBasicAudioEffect 介面以允許
 title: 自訂音訊效果
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
 ms.openlocfilehash: e4bcd5294031e64aa9f21371fa389978b5e708ab
@@ -22,14 +22,14 @@ ms.locfileid: "74257415"
 
 自訂音訊訊效果是在實作 [**IBasicAudioEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicAudioEffect) 介面之類別中定義。 此類別不能直接包含在您 App 的專案中。 您必須改為使用 Windows 執行階段元件來裝載您的音訊效果類別。
 
-**Add a Windows Runtime component for your audio effect**
+**新增音訊效果的 Windows 執行階段元件**
 
 1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 **\[檔案\]** 功能表，然後選取 **\[新增\] -&gt; \[新專案...\]** 。
 2.  選取 **\[Windows 執行階段元件 (通用 Windows)\]** 專案類型。
 3.  針對此範例，請將專案命名為 *AudioEffectComponent*。 此名稱將會由稍後的程式碼所參考。
-4.  按一下 **\[確定\]** 。
+4.  按一下 [確定]。
 5.  專案範本會建立名為 Class1.cs 的類別。 在 **\[方案總管\]** 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 **\[重新命名\]** 。
-6.  將檔案重新命名為 *ExampleAudioEffect.cs*。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 **\[是\]** 。
+6.  將檔案重新命名為 *ExampleAudioEffect.cs*。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 [是]。
 7.  開啟 **ExampleAudioEffect.cs** 並更新類別定義以實作 [**IBasicAudioEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicAudioEffect) 介面。
 
 
@@ -77,13 +77,13 @@ ms.locfileid: "74257415"
 
 > [!NOTE]
 > 因為此技術會存取原生、未受管理的影像緩衝區，您必須將您的專案設定為允許不安全的程式碼。
-> 1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[AudioEffectComponent\] 專案，然後選取 **\[屬性\]** 。
-> 2.  選取 **\[建置\]** 索引標籤。
-> 3.  選取 **\[允許 unsafe 程式碼\]** 核取方塊。
+> 1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[AudioEffectComponent\] 專案，然後選取 \[屬性\]。
+> 2.  選取 \[建置\] 索引標籤。
+> 3.  選取 \[允許 Unsafe 程式碼\] 核取方塊。
 
  
 
-現在您可以將 **ProcessFrame** 方法實作新增到效果。 首先，此方法會同時從輸入和輸出音訊框架取得 [**AudioBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer) 物件。 請注意，輸出畫面格會針對寫入開啟，而輸入畫面格則會針對讀取開啟。 接下來，將會透過呼叫 [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) 來為每個緩衝區取得 [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IMemoryBufferReference)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer**，來取得實際的資料緩衝區。
+現在您可以將 **ProcessFrame** 方法實作新增到效果。 首先，此方法會同時從輸入和輸出音訊框架取得 [**AudioBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer) 物件。 請注意，輸出框架會針對寫入開啟，而輸入框架則會針對讀取開啟。 接下來，將會透過呼叫 [**CreateReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IMemoryBufferReference) 來為每個緩衝區取得 [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer**，來取得實際的資料緩衝區。
 
 現在您已取得資料緩衝區，您可以從輸入緩衝區讀取，並寫入至輸出緩衝區。 針對輸入緩衝區中的每個範例，將會取得其值並乘以 1 - **Mix** 以設定效果的乾聲訊號值。 接下來，將會從目前在回音緩衝區中的位置擷取範例，並乘以 **Mix** 以設定效果的濕聲值。 輸出範例將會以乾聲和濕聲值的總和設定。 最後，每個輸入範例都會儲存在回音緩衝區中，且目前的範例索引會遞增。
 
@@ -93,13 +93,13 @@ ms.locfileid: "74257415"
 
 ### <a name="close-method"></a>Close 方法
 
-The system will call the [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) method on your class when the effect should shut down. 您應該使用此方法來處置您已建立的任何資源。 方法的引數為 [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason)，可讓您知道效果是否正常關閉、是否有發生錯誤，或是效果是否不支援所需的編碼格式。
+當效果應關閉時，系統會在您的類別上呼叫[**關閉**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close)[**關閉**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close)方法。 您應該使用此方法來處置您已建立的任何資源。 方法的引數為 [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason)，可讓您知道效果是否正常關閉、是否有發生錯誤，或是效果是否不支援所需的編碼格式。
 
 [!code-cs[Close](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetClose)]
 
 ### <a name="discardqueuedframes-method"></a>DiscardQueuedFrames 方法
 
-在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.discardqueuedframes) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面，以用於處理目前的畫面之上。 呼叫此方法時，您應該處置先前已儲存的畫面組合。 除了針對累計的音訊框架之外，此方法也可以用來重設任何與先前框架相關的狀態。
+在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.discardqueuedframes) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面，以用於處理目前的畫面之上。 呼叫此方法時，您應該處置先前已儲存的框架組合。 除了針對累計的音訊框架之外，此方法也可以用來重設任何與先前框架相關的狀態。
 
 [!code-cs[DiscardQueuedFrames](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetDiscardQueuedFrames)]
 
@@ -111,7 +111,7 @@ The system will call the [**Close**](https://docs.microsoft.com/uwp/api/windows.
 
 ### <a name="useinputframeforoutput-property"></a>UseInputFrameForOutput 屬性
 
-將 [**UseInputFrameForOutput**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.useinputframeforoutput) 屬性設定為 **true**，以告訴系統您的效果會將其輸出寫入到傳入 [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.processframe) 之 [**ProcessAudioFrameContext**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.ProcessAudioFrameContext) 的 [**InputFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.processaudioframecontext.inputframe)，而非寫入 [**OutputFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.processaudioframecontext.outputframe)。 
+將 [**UseInputFrameForOutput**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.useinputframeforoutput) 屬性設定為 **true**，以告訴系統您的效果會將其輸出寫入到傳入 [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.processaudioframecontext.inputframe) 之 [**ProcessAudioFrameContext**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.ProcessAudioFrameContext) 的 [**InputFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.processframe)，而非寫入 [**OutputFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.processaudioframecontext.outputframe)。 
 
 [!code-cs[UseInputFrameForOutput](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetUseInputFrameForOutput)]
 
@@ -121,16 +121,16 @@ The system will call the [**Close**](https://docs.microsoft.com/uwp/api/windows.
 
 如果要從您的 App 使用您的音訊效果，您必須將針對效果專案的參照新增到您的 App。
 
-1.  在 [方案總管] 中，於您的專案下方，以滑鼠右鍵按一下 **\[參考\]** ，然後選取 **\[加入參考\]** 。
-2.  展開 **\[專案\]** 索引標籤，選取 **\[方案\]** ，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *AudioEffectComponent*。
-3.  按一下 **\[確定\]**
+1.  在 \[方案總管\] 中，於您的專案下方，以滑鼠右鍵按一下 \[參考\]，然後選取 \[加入參考\]。
+2.  展開 \[專案\] 索引標籤，選取 \[方案\]，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *AudioEffectComponent*。
+3.  按一下 [確定]。
 
 如果您的音訊效果類別已宣告為不同的命名空間，請務必將該命名空間包含在程式碼檔案中。
 
 [!code-cs[UsingAudioEffectComponent](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUsingAudioEffectComponent)]
 
 ### <a name="add-your-custom-effect-to-an-audiograph-node"></a>將自訂效果新增到 AudioGraph 節點
-如需使用音訊圖的一般資訊，請參閱[音訊圖](audio-graphs.md)。 下列程式碼片段會示範如何將本文的範例回音效果新增到音訊圖節點。 首先，將會建立 [**PropertySet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.PropertySet)，並設定由效果所定義的 **Mix** 值。 接下來，將會呼叫 [**AudioEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.AudioEffectDefinition) 建構函式，以傳遞自訂效果類型和屬性集的完整類別名稱。 最後，效果定義會新增到現有 [**FileInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiofileinputnoderesult.fileinputnode) 的 [**EffectDefinitions**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileinputnode.effectdefinitions) 屬性，使自訂效果可以處理發出的音訊。 
+如需使用音訊圖的一般資訊，請參閱[音訊圖](audio-graphs.md)。 下列程式碼片段會示範如何將本文的範例回音效果新增到音訊圖節點。 首先，將會建立 [**PropertySet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.PropertySet)，並設定由效果所定義的 **Mix** 值。 接下來，將會呼叫 [**AudioEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.AudioEffectDefinition) 建構函式，以傳遞自訂效果類型和屬性集的完整類別名稱。 最後，效果定義會新增到現有 [**FileInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileinputnode.effectdefinitions) 的 [**EffectDefinitions**](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiofileinputnoderesult.fileinputnode) 屬性，使自訂效果可以處理發出的音訊。 
 
 [!code-cs[AddCustomEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddCustomEffect)]
 
@@ -145,9 +145,9 @@ The system will call the [**Close**](https://docs.microsoft.com/uwp/api/windows.
 
 
 ## <a name="related-topics"></a>相關主題
-* [Simple camera preview access](simple-camera-preview-access.md)
+* [簡單的相機預覽存取](simple-camera-preview-access.md)
 * [媒體組合和編輯](media-compositions-and-editing.md)
-* [Win2D documentation](https://microsoft.github.io/Win2D/html/Introduction.htm)
+* [Win2D 檔](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [媒體播放](media-playback.md)
 
  
