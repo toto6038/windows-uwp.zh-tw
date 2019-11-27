@@ -10,7 +10,7 @@ ms.author: mcleans
 author: mcleanbyron
 ms.openlocfilehash: f3a2575b17cc4228d7c4db273845478aecf65f29
 ms.sourcegitcommit: f0936ce8e88d78b1af99998794a8765094f6a487
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/25/2019
 ms.locfileid: "72915110"
@@ -25,15 +25,15 @@ Fluent Design 系統是我們的系統，用於建立調適型、富有感情的
 
 ## <a name="principles"></a>原則
 
-**調適型：流暢的體驗在每個裝置上都有自然的風格**
+**調適型：Fluent 體驗在每個裝置上帶來自然的感覺**
 
 Fluent 體驗適應環境。 Fluent 體驗在桌上型電腦、平板電腦，以及 Xbox 上感覺舒適—甚至適用於混合實境頭戴式裝置。 且當您新增更多的硬體，例如您電腦的其他螢幕，Fluent 體驗可充分利用它。
 
-**共鳴：流暢的體驗既直覺又強大**
+**富有感情的：Fluent 體驗是直覺且強大的**
 
 Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。 它們連結人和的想法，不論是在地球的另一端或站在彼此身邊。
 
-**美觀：流暢的體驗是吸引人和沉浸式**
+**效能良好：Fluent 體驗是生動且沈浸式**
 
 藉由納入現實世界的元素，Fluent 體驗點選到基本項目。 它會使用光線、陰影、動作、深度和紋理，以直覺與本能的方式組織資訊。
 
@@ -76,7 +76,7 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
 
 將焦點放在幾個重要的寬度 (也稱做「中斷點」) 可大幅簡化您的設計與程式碼，同時仍然讓您的應用程式從小螢幕到大螢幕上看起來都很棒，而不是針對每一個別螢幕大小設計。
 
-[瞭解螢幕大小和中斷點](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+[了解螢幕大小與中斷點](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
     :::column-end:::
 :::row-end:::
 
@@ -85,11 +85,11 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
         ![fpo 影像](images/fluent/rspd-resize.gif)
     :::column-end:::
     :::column span="2":::
-**建立回應式版面配置**
+**建立回應式配置**
 
-若要讓應用程式感覺自然，應將其版面配置調整為不同的螢幕大小和裝置。 您可以使用自動調整大小、版面配置面板、視覺狀態，甚至是 XAML 中的個別 UI 定義來建立回應式 UI。
+若要讓應用程式感覺自然，應將其配置調整為不同的螢幕大小和裝置。 您可以使用自動調整大小、配置面板、視覺狀態，甚至將 XAML 中的 UI 定義分開來建立回應式 UI。
 
-[瞭解回應式設計](/windows/uwp/design/layout/responsive-design)
+[了解回應式設計](/windows/uwp/design/layout/responsive-design)
     :::column-end:::
 :::row-end:::
 
@@ -98,11 +98,11 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
         ![fpo 影像](images/fluent/devices.jpg)
     :::column-end:::
     :::column span="2":::
-**適用于各種裝置的設計**
+**適用於裝置頻譜的設計**
 
 UWP 應用程式可以在各種不同執行 Windows 的裝置上執行。 這對了解有哪些裝置可用、它們用於什麼地方，以及使用者如何與它們互動，很有幫助。
 
-[瞭解 UWP 裝置](/windows/uwp/design/devices/)
+[了解 UWP 裝置](/windows/uwp/design/devices/)
 :::row-end:::
 
 :::row:::
@@ -110,11 +110,11 @@ UWP 應用程式可以在各種不同執行 Windows 的裝置上執行。 這對
         ![fpo 影像](images/fluent/keyboard-shortcuts.jpg)
     :::column-end:::
     :::column span="2":::
-**針對正確的輸入進行優化**
+**適用於正確輸入的最佳化**
 
 UWP 應用程式會自動支援常見的滑鼠、鍵盤、手寫筆及觸控式互動&mdash;您不需要執行額外的動作。 但是，您可以使用適用於特定輸入的最佳化支援來增強應用程式，例如手寫筆和 Surface Dial。
 
-[深入瞭解輸入和互動](/windows/uwp/design/input/input-primer)
+[了解輸入與互動](/windows/uwp/design/input/input-primer)
 :::row-end:::
 
 ## <a name="make-it-intuitive"></a>讓它是直覺的
@@ -130,11 +130,11 @@ Fluent 體驗以一致的方式使用控制項與模式，如此，使用者已�
         ![fpo 影像](images/fluent/thumbnail-navview.png)
     :::column-end:::
     :::column span="2":::
-**提供正確的導覽**
+**提供適當的瀏覽**
 
-使用正確的應用程式結構和流覽元件，建立輕鬆的體驗。
+使用正確的應用程式結構和瀏覽元件來建立輕鬆的體驗。
 
-[深入瞭解導覽](/windows/uwp/design/basics/navigation-basics/)
+[了解瀏覽](/windows/uwp/design/basics/navigation-basics/)
 :::row-end:::
 
 :::row:::
@@ -142,11 +142,11 @@ Fluent 體驗以一致的方式使用控制項與模式，如此，使用者已�
         ![fpo 影像](images/fluent/thumbnail-commanding.png)
     :::column-end:::
     :::column span="2":::
-**為互動式**
+**互動式**
 
-按鈕、命令列、鍵盤快速鍵和內容功能表可讓使用者與您的應用程式互動;這些工具會將靜態體驗變更為動態的內容。
+按鈕、命令列、鍵盤快速鍵和內容功能表可讓使用者與您的應用程式互動；這些工具會將靜態體驗變更為動態的內容。
 
-[瞭解命令的相關資訊](/windows/uwp/design/basics/commanding-basics/)
+[了解命令](/windows/uwp/design/basics/commanding-basics/)
 :::row-end:::
 
 :::row:::
@@ -154,21 +154,21 @@ Fluent 體驗以一致的方式使用控制項與模式，如此，使用者已�
         ![fpo 影像](images/fluent/thumbnail-controls-2.jpg)
     :::column-end:::
     :::column span="2":::
-**使用作業的正確控制項**
+**對工作使用正確的控制項**
 
 控制項是使用者介面的建置組塊；使用正確的控制項可協助您建立的使用者介面，做出使用者期待的行為。 UWP 提供超過 45 種控制項，範圍從簡單按鈕到強大資料控制。
 
-[瞭解 UWP 控制項](/windows/uwp/design/controls-and-patterns/)
+[了解 UWP 控制項](/windows/uwp/design/controls-and-patterns/)
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![內含映射](images/fluent/thumbnail-inclusive.png)
+        ![內含影像](images/fluent/thumbnail-inclusive.png)
     :::column-end:::
     :::column span="2":::
-**包含**設計良好的應用程式可供殘障人士存取。 加入一些額外的程式設計，您可以與世界各地的人分享您的應用程式。
+**內含**妥善設計的應用程式可讓身心障礙人士存取。 加入一些額外的程式設計，您可以與世界各地的人分享您的應用程式。
 
-[瞭解可用性](/windows/uwp/design/usability/)
+[了解可用性](/windows/uwp/design/usability/)
 :::row-end:::
 
 ## <a name="be-engaging-and-immersive"></a>生動和沈浸式
@@ -188,7 +188,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
     :::column span="2":::
 **顯示顯目提示**
 
-[顯色醒目提示](/windows/uwp/design/style/reveal)使用光線讓互動元素脫穎而出。光線照亮可與使用者互動的元素，顯示隱藏的邊框。 在部分控制項上已自動啟用顯示，例如清單檢視及格線檢視。 您可以藉由套用我們預先定義的顯色顯目提示樣式，在其他控制項上啟用它。
+[顯示醒目提示](/windows/uwp/design/style/reveal)使用光線讓互動式元素顯得與眾不同。光線會照亮使用者可以與之互動的元素，並顯示隱藏的框線。 在部分控制項上已自動啟用顯示，例如清單檢視及格線檢視。 您可以藉由套用我們預先定義的顯示醒目提示樣式，在其他控制項上啟用它。
 :::row-end:::
 
 :::row:::
@@ -198,7 +198,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
     :::column span="2":::
 **顯示焦點**
 
-[顯色焦點](/windows/uwp/design/style/reveal-focus)使用光線提醒您注意目前已輸入焦點的元素。
+[顯示焦點](/windows/uwp/design/style/reveal-focus)使用光線提醒您注意目前已輸入焦點的元素。
 :::row-end:::
 
 ## <a name="create-a-sense-of-depth"></a>建立深度感
@@ -258,7 +258,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
         ![fpo 影像](images/fluent/thumbnail-toolkits.jpg)
     :::column-end:::
     :::column span="2":::
-**設計工具組和範例頁面**
+**設計工具組與範例頁面**
 
 請查看我們的[設計工具組與範例頁面](/windows/uwp/design/downloads/)
 :::row-end:::

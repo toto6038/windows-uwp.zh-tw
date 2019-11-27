@@ -12,16 +12,20 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d309ce7e18a8dc62a24bc0e7f51f0015042a5f84
-ms.sourcegitcommit: 3bb982f35c057e30c742ab9f1eea119bae627a5f
+ms.openlocfilehash: 4605f759c554c12368325a7c1e42143319eddede
+ms.sourcegitcommit: 503fa613c65236660350794b4f066eccebe9ac8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74086868"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74162352"
 ---
 # <a name="collections-and-lists"></a>集合和清單
 
-集合和清單都可用來表示會一起出現的多個相關資料項目。 集合可透過多種方式以不同的集合控制項 (也可能稱為集合檢視) 來表示。 集合控制項會顯示並實現與集合型內容的互動，例如連絡人清單、日期清單、影像集合等等。  本文涵蓋的控制項包括：
+集合和清單都可用來表示會一起出現的多個相關資料項目。 集合可透過多種方式以不同的集合控制項 (也可能稱為集合檢視) 來表示。 集合控制項會顯示並實現與集合型內容的互動，例如連絡人清單、日期清單、影像集合等等。
+
+> **重要 API**：[ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater 類別](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+
+本文涵蓋的控制項包括：
 
 - 清單檢視，主要用來顯示大量文字內容集合
 - 資料格檢視，主要用來顯示大量影像內容集合
@@ -29,20 +33,14 @@ ms.locfileid: "74086868"
 - 樹狀檢視，主要用來顯示特定階層中有大量影像內容的集合
 - ItemsRepeater，可用來建立自訂集合控制項的可自訂建置組塊
 
-
 下面會提供每個控制項的設計指導方針、功能和範例。
 
 每個控制項 (ItemsRepeater 除外) 都會提供內建的樣式和互動。 不過，若要進一步自訂集合檢視及其內部項目的視覺外觀，請使用 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 如需資料範本和集合檢視外觀自訂方式的詳細資訊，請參閱[項目容器和範本](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates)頁面。
 
 每個控制項 (ItemsRepeater 除外) 也都有內建行為，可讓您選取單一或多個項目。 如需深入了解，請參閱[選取模式概觀](selection-modes.md)。
 
-> **重要 API**：[ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater 類別](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
-
-> <div id="main">  
-> <strong>Windows 10 Fall Creators Update - 行為變更</strong>  
-> </div>  
-> 根據預設，主動式手寫筆現在會在 UWP 應用程式中捲動/移動瀏覽清單 (如同觸控、觸控板和被動式手寫筆)，而不會執行選取。  
-> 如果您的應用程式需仰賴先前的行為，則可以覆寫手寫筆捲動並還原至先前的行為。 如需詳細資料，請參閱針對 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a> 的 API 參照主題。  
+> **Windows 10 Fall Creators 更新 - 行為變更**根據預設，主動式手寫筆現在會在 UWP 應用程式中捲動/移動瀏覽清單 (如同觸控、觸控板和被動式手寫筆)，而不會執行選取。
+> 如果您的應用程式需仰賴先前的行為，則可以覆寫手寫筆捲動並還原至先前的行為。 如需詳細資料，請參閱針對 [ScrollViewer 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) 的 API 參照主題。
 
 ## <a name="examples"></a>範例
 
@@ -143,7 +141,7 @@ ms.locfileid: "74086868"
 
 ### <a name="examples"></a>範例
 
-這個範例顯示典型的資料格檢視版面配置 ，在此案例中是針對瀏覽應用程式。 資料格檢視項目的中繼資料通常受限於幾行文字與項目評等。
+這個範例顯示典型的資料格檢視版面配置，在此案例中是針對瀏覽應用程式。 資料格檢視項目的中繼資料通常受限於幾行文字與項目評等。
 
 ![資料格檢視配置範例](images/controls_gridview_example02.png)
 

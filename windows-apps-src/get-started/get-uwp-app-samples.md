@@ -6,31 +6,31 @@ ms.topic: article
 keywords: windows 10, uwp, sample code, code samples, 範例程式碼, 程式碼範例
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0e30804eabb7e50c5a7319bba9a6b2c83e1d7e
-ms.sourcegitcommit: 99595e4938213aafdb49635d684d8ba8eb3f697a
+ms.openlocfilehash: ac3c99bc364e81386a362f1d1b5530bee9d462c4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69487837"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259518"
 ---
 # <a name="get-uwp-app-samples"></a>取得 UWP 應用程式範例
 
-通用 Windows 平台 (UWP) 應用程式範例可在 GitHub 上的存放庫取得。 如需可搜尋的分類清單，請參閱[範例](https://developer.microsoft.com/windows/samples)，或者，您也可以瀏覽 [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "通用 Windows 平台應用程式範例 GitHub 存放庫") \(英文\)。 Windows-universal-samples 存放庫包含示範所有 UWP 功能及其 API 使用模式的範例。
+通用 Windows 平台 (UWP) 應用程式範例可在 GitHub 上的存放庫取得。 如需可搜尋的分類清單，請參閱[範例](https://developer.microsoft.com/windows/samples)，或者，您也可以瀏覽 [Microsoft/Windows-universal-sample 存放庫](https://github.com/Microsoft/Windows-universal-samples "通用 Windows 平台應用程式範例 GitHub 存放庫")。 Windows-universal-samples 存放庫包含示範所有 UWP 功能及其 API 使用模式的範例。
 
 ![GitHub UWP 範例存放庫](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>下載程式碼
 
-若要下載範例，請移至[存放庫](https://github.com/Microsoft/Windows-universal-samples "通用 Windows 平台應用程式範例 GitHub 存放庫") \(英文\)。 選取 [Clone or download]  \(複製或下載\)，然後選取 [Download ZIP]  \(下載 ZIP\)。 
+若要下載範例，請移至[存放庫](https://github.com/Microsoft/Windows-universal-samples "通用 Windows 平台應用程式範例 GitHub 存放庫")。 選取 [Clone or download]  \(複製或下載\)，然後選取 [Download ZIP]  \(下載 ZIP\)。 
 
 ![範例下載](images/SamplesDownloadButton.png)
 
-您也可以從這篇文章[下載範例](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "通用 Windows 平台應用程式範例壓縮檔下載")。
+您可以從本文章[下載範例](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "通用 Windows 平台應用程式範例壓縮檔下載")。
 
 範例下載 .zip 檔案一律會有最新範例。 您不需要 GitHub 帳戶就可以下載該檔案。 當 SDK 更新發行時或如果您想要挑選任何最近的變更和新增項目，只要下載最新的 zip 檔案即可。
 
 > [!NOTE]
-> 若要開啟、建置和執行 UWP 範例，您必須具有 Visual Studio 2015 或更新版本以及 Windows SDK。 您可以取得[免費的 Visual Studio Community](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows 開發工具下載")。 Visual Studio Community 支援建置 UWP 應用程式。  
+> 若要開啟、建置和執行 UWP 範例，您必須具有 Visual Studio 2015 或更新版本以及 Windows SDK。 您可以取得[免費的 Visual Studio Community](https://www.microsoft.com/?ref=go)。 Visual Studio Community 支援建置 UWP 應用程式。  
 >
 > 若要讓範例正確運作，請務必將整個封存而不只是個別的範例解壓縮。 所有相關的範例都在封存的 SharedContent 資料夾中。 UWP 功能範例在 Visual Studio 中使用連結的檔案，以減少重複的常見檔案，包括範例範本檔案與影像資產。 常見檔案會儲存在存放庫根目錄的 SharedContent 資料夾中。 專案檔案會使用連結來參照常見檔案。
 > 

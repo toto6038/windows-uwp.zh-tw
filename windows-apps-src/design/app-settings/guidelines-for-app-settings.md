@@ -6,18 +6,18 @@ label: Guidelines
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
 ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/09/2019
 ms.locfileid: "72163708"
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
 
-應用程式設定是透過 [應用程式設定] 頁面存取的通用 Windows 平臺（UWP）應用程式的使用者自訂部分。 例如，「新聞讀取者」應用程式可能會讓使用者指定要顯示的新聞來源，或要在螢幕上顯示的資料行數目，而氣象應用程式可讓使用者在攝氏和華氏之間進行選擇。 本文提供建立和顯示應用程式設定的建議和最佳作法。
+應用程式設定是通用 Windows 平台 (UWP) 應用程式的使用者可自訂部分，可透過應用程式設定頁面來存取。 例如，新聞閱讀程式應用程式可讓使用者指定要顯示的新聞來源或畫面上顯示的欄數，而天氣應用程式可讓使用者在攝氏與華氏之間進行選擇。 本文提供建立和顯示應用程式設定的建議和最佳做法。
 
 ## <a name="when-to-provide-a-settings-page"></a>何時提供設定頁面
 
@@ -42,13 +42,13 @@ ms.locfileid: "72163708"
 
 使用者存取應用程式設定頁面的方式，應該以您應用程式的配置為依據。
 
-**流覽窗格**
+**瀏覽窗格**
 
 若為瀏覽窗格配置，應用程式設定應為瀏覽選項清單的最後一個項目，而且釘選到底部。
 
 ![瀏覽窗格的應用程式設定進入點](images/appsettings-entrypoint-navpane.png)
 
-**應用程式行**
+**應用程式列**
 
 如果您使用[應用程式列](../controls-and-patterns/app-bars.md)或工具列，將設定的進入點放在 [更多] 功能表中的最後一個項目。 如果更容易找到設定進入點對您的應用程式而言很重要，請將進入點直接放在應用程式列上，不要放在溢位內。
 
@@ -58,11 +58,11 @@ ms.locfileid: "72163708"
 
 如果您使用中樞配置，應用程式設定的進入點應放在應用程式列的 [更多] 溢位功能表內。
 
-**索引標籤/透視表**
+**索引標籤/樞紐**
 
 對於索引標籤或樞紐配置，我們不建議放置應用程式設定的進入點做為瀏覽的前幾個項目之一。 而是應將應用程式設定的進入點放在應用程式列的 [更多] 溢位功能表內。
 
-**主版-詳細資料**
+**主要/詳細資料**
 
 不要將應用程式設定的進入點深藏在主要/詳細資料窗格內，而是使它成為主要窗格最上層的最後一個釘選項目。
 
@@ -79,7 +79,7 @@ ms.locfileid: "72163708"
 
 ![手機上的應用程式設定頁面配置](images/appsettings-layout-navpane-mobile.png)
 
-## <a name="color-mode-settings"></a>[色彩模式] 設定
+## <a name="color-mode-settings"></a>「色彩模式」設定
 
 
 如果您的應用程式可讓使用者選擇應用程式的色彩模式，請使用[選項按鈕](../controls-and-patterns/radio-button.md)或[下拉式方塊](../controls-and-patterns/combo-box.md)與「選擇 app 模式」標題呈現這些選項。 選項看起來會像這樣
@@ -100,7 +100,7 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 ## <a name="about-section-and-feedback-button"></a>關於區段和意見反應按鈕
 
 
-我們建議您將「關於此應用程式」區段做為專用頁面或做為單獨的區段放入 App 中。 如果您想要有「傳送意見反應」按鈕，請將它放在「關於此應用程式」頁面的底端。
+我們建議您將「關於此應用程式」區段做為專用頁面或做為單獨的區段放入應用程式中。 如果您想要有「傳送意見反應」按鈕，請將它放在「關於此應用程式」頁面的底端。
 
 在「法律」子標頭下，放置任何「使用規定」和「隱私權聲明」(應該是包含換行文字的[超連結按鈕](../controls-and-patterns/hyperlinks.md)) 以及其他法律資訊，例如著作權。
 
@@ -124,11 +124,11 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 - 從頂端至底部以單欄呈現內容，如有必要，可讓它捲動。 捲動的上限設定為螢幕高度的兩倍。
 - 為應用程式設定使用下列控制項：
 
-    - [切換參數](../controls-and-patterns/toggles.md)：可讓使用者設定開啟或關閉值。
-    - [選項按鈕](../controls-and-patterns/radio-button.md)：讓使用者從一組最多5個互斥的相關選項中選擇一個專案。
-    - [文字輸入](../controls-and-patterns/text-block.md)方塊：讓使用者輸入文字。 您使用的文字輸入方塊類型必須與要從使用者取得的文字類型對應，例如電子郵件或密碼。
-    - [超連結](../controls-and-patterns/hyperlinks.md)：將使用者帶到應用程式內的另一個頁面或外部網站。 當使用者按一下超連結的時候，[設定] 飛出視窗會關閉。
-    - [按鈕](../controls-and-patterns/buttons.md)：讓使用者起始立即動作，而不關閉目前的設定飛出視窗。
+    - [切換開關](../controls-and-patterns/toggles.md)：讓使用者將值設定為開啟或關閉。
+    - [選項按鈕](../controls-and-patterns/radio-button.md)：讓使用者從一組最多可有 5 個的互斥相關選項中選擇一個項目。
+    - [文字輸入方塊](../controls-and-patterns/text-block.md)：讓使用者輸入文字。 您使用的文字輸入方塊類型必須與要從使用者取得的文字類型對應，例如電子郵件或密碼。
+    - [超連結](../controls-and-patterns/hyperlinks.md)：將使用者帶到應用程式內的其他頁面或帶到外部網站。 當使用者按一下超連結的時候，[設定] 飛出視窗會關閉。
+    - [按鈕](../controls-and-patterns/buttons.md)：讓使用者立即起始動作，而不需要關閉目前的 [設定] 飛出視窗。
 - 如果停用其中一個控制項，請新增描述訊息。 請將此訊息置於已停用控制項的上方。
 - 完成 [設定] 飛出視窗和標頭的動畫之後，以單一區塊的方式產生內容和控制項的動畫。 使用向左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 動畫，產生內容的動畫。
 - 視需要使用區段標頭、段落及標籤協助整理及釐清內容。
@@ -140,7 +140,7 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 
 ## <a name="related-articles"></a>相關文章
 
-* [命令設計基本概念](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+* [命令設計基本知識](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
 * [進度控制項的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
-* [儲存和取出應用程式資料](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [**Entrancethemetransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [儲存和擷取應用程式資料](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
