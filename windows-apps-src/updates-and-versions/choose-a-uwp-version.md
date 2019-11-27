@@ -1,18 +1,18 @@
 ---
 title: 選擇 UWP 版本
 description: 在 Microsoft Visual Studio 中撰寫 UWP app 時，您可以選擇要以哪個版本為目標。 了解不同 UWP 版本之間的差異，以及如何在新的及現有的專案中設定您的選項。
-ms.date: 04/19/2019
+ms.date: 11/19/2019
 ms.topic: article
 keywords: windows 10, uwp, 版本, 組建, windows, 選擇, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f691a0d600fd6508f1f8ec2bbffec9bf02a98da7
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: a75667fdad6352b5ca8225951ce522f13325d381
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821055"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258921"
 ---
 # <a name="choose-a-uwp-version"></a>選擇 UWP 版本
 
@@ -21,7 +21,7 @@ ms.locfileid: "67821055"
 > [!WARNING]
 > 在新版 Visual Studio 中建立的任何 UWP 專案，都無法在 Visual Studio 2015 中開啟。
 
-下表說明可用的 Windows 10 版本。 請注意，此表格僅適用於建置只有 Windows 10 支援的 UWP 應用程式。 您無法為舊版 Windows 開發 UWP 應用程式，且必須已[安裝適當的 SDK 組建](https://go.microsoft.com/fwlink/?LinkId=821431)，才能以該版本為目標。
+下表說明可用的 Windows 10 版本。 請注意，此表格僅適用於建置只有 Windows 10 支援的 UWP 應用程式。 您無法為舊版 Windows 開發 UWP 應用程式，且必須已[安裝適當的 SDK 組建](https://developer.microsoft.com/windows/downloads#_blank)，才能以該版本為目標。
 
 | 版本 | 描述 |
 | --- | --- |
@@ -34,7 +34,7 @@ ms.locfileid: "67821055"
 | 組建 10586 (11 月更新，版本 1511) | 此版本的 Windows 10 發行於 2015 年 11 月。 重點功能包括為 Microsoft Edge 和提供者 API 中的影片通訊推出 ORTC (物件即時通訊) API，讓 App 可以使用 Windows Hello 臉部驗證。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-build-10586.md) |
 | Build 10240 (Windows 10，版本 1507) | 這是 2015 年 7 月發行的初始 Windows 10 版本。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-build-10240.md) |
 
-強烈建議新的開發人員與針對一般大眾撰寫程式碼的開發人員一律使用最新的 Windows 組建 (17763)。 撰寫企業應用程式的開發人員應強烈考慮支援較舊的 [最小版本]  。
+強烈建議新的開發人員與針對一般大眾撰寫程式碼的開發人員一律使用最新的 Windows 組建 (18362)。 撰寫企業應用程式的開發人員應強烈考慮支援較舊的 [最小版本]  。
 
 ## <a name="whats-different-in-each-uwp-version"></a>每個 UWP 版本有何差異？
 
@@ -54,8 +54,8 @@ UWP 支援有限的 .NET API 子集，不論您專案的**目標版本**或**最
 
 在 Visual Studio 中的 [新增通用 Windows 專案]  對話方塊中，您可以為 [目標版本]  和 [最小版本]  選擇版本。 此外，您可以在應用程式其 [屬性]  的 [應用程式]  區段中，變更 UWP 應用程式的 [目標版本]  和 [最小版本]  。
 
-* **目標版本**。 這會設定您專案檔中的 *TargetPlatformVersion* 設定。 它也會決定您應用程式套件資訊清單中 *TargetDeviceFamily@MaxVersionTested* 屬性的值。 您選擇的值會指定您專案的目標 UWP 平台版本，也因此會決定您 App 可用的一組 API，所以我們建議您選擇可能的最新版本。 如需有關您應用程式套件資訊清單的詳細資訊，以及一些有關手動設定 TargetDeviceFamily 指導方針，請參閱 [TargetDeviceFamily](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)。
-* **最小版本**。 這會設定您專案檔中的 *TargetPlatformMinVersion* 設定。 它也會決定您應用程式套件資訊清單中 *TargetDeviceFamily@MinVersion* 屬性的值。 您選擇的值會指定您專案可搭配運作的 UWP 平台最小版本。
+* **目標版本**。 您的應用程式打算在其上執行的 Windows 10 版本。 這會設定您專案檔中的 *TargetPlatformVersion* 設定。 它也會決定您應用程式套件資訊清單中 *TargetDeviceFamily@MaxVersionTested* 屬性的值。 您選擇的值會指定您專案的目標 UWP 平台版本，也因此會決定您 App 可用的一組 API，所以我們建議您選擇可能的最新版本。 如需有關您應用程式套件資訊清單的詳細資訊，以及一些有關手動設定 TargetDeviceFamily 指導方針，請參閱 [TargetDeviceFamily](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)。
+* **最小版本**。 支援應用程式基本功能所需的最舊 Windows 10 版本。 這會設定您專案檔中的 *TargetPlatformMinVersion* 設定。 它也會決定您應用程式套件資訊清單中 *TargetDeviceFamily@MinVersion* 屬性的值。 您選擇的值會指定您專案可搭配運作的 UWP 平台最小版本。
 
 請注意，您宣告的是您的應用程式可以在從 [最小版本]  到 [目標版本]  範圍內的任何 Windows 版本上運作。 如果這兩者是相同版本，您就不需要採取任何特別的動作。 如果兩者不同，則以下是一些需要注意的事項。
 
