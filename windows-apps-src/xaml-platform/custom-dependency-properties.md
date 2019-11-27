@@ -4,7 +4,7 @@ title: 自訂相依性屬性
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ms.date: 07/12/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -32,7 +32,7 @@ ms.locfileid: "74259862"
 
 Windows 執行階段中相依性屬性的範例包括：[**Control.Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)、[**FrameworkElement.Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 以及 [**TextBox.Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) (這只是其中一部分)。
 
-慣例是由類別公開的每個相依性屬性都具有類型 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 的對應 **public static readonly** 屬性，它會在相同的類別上公開，而且提供相依性屬性的識別碼。 識別碼名稱會遵循這個慣例：相依性屬性的名稱，並在名稱最後面附加字串 "Property"。 例如，**Control.Background** 屬性的對應 **DependencyProperty** 識別碼是 [**Control.BackgroundProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.backgroundproperty)。 識別碼會儲存登錄時的相依性屬性資訊，之後只要有其他操作需要使用相依性屬性 (如呼叫 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue))，就可以使用。
+慣例是由類別公開的每個相依性屬性都具有類型DependencyProperty[**的對應**public static readonly](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 屬性，它會在相同的類別上公開，而且提供相依性屬性的識別碼。 識別碼名稱會遵循這個慣例：相依性屬性的名稱，並在名稱最後面附加字串 "Property"。 例如，**Control.Background** 屬性的對應 **DependencyProperty** 識別碼是 [**Control.BackgroundProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.backgroundproperty)。 識別碼會儲存登錄時的相依性屬性資訊，之後只要有其他操作需要使用相依性屬性 (如呼叫 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue))，就可以使用。
 
 ## <a name="property-wrappers"></a>屬性包裝函式
 
@@ -62,22 +62,22 @@ Windows 執行階段中相依性屬性的範例包括：[**Control.Background**]
 - 在屬性系統中登錄屬性名稱 (呼叫 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register))，指定擁有者類型及屬性值的類型。
   - [  **Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 有一個必要參數需要使用屬性中繼資料。 為此指定 **null**，或者如果您想要屬性變更行為，或可以透過呼叫 [**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue) 還原的中繼資料預設值，請指定 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertymetadata) 執行個體。
 - 在擁有者類型上將 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 識別碼定義為 **public static readonly** 屬性成員。
-- 定義包裝函式屬性，遵循您實作的語言中所使用的屬性存取子模型。 包裝函式屬性名稱必須符合 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 中使用的 *name* 字串。 實作 **get** 和 **set** 存取子，將包裝函式連接到它所包裝的相依性屬性，方法是呼叫 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) 和 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) 並將您自己的屬性識別碼當作參數傳遞。
+- 定義包裝函式屬性，遵循您實作的語言中所使用的屬性存取子模型。 包裝函式屬性名稱必須符合Register[**中使用的**name](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 字串。 實作 **get** 和 **set** 存取子，將包裝函式連接到它所包裝的相依性屬性，方法是呼叫 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) 和 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) 並將您自己的屬性識別碼當作參數傳遞。
 - (選用) 將 [**ContentPropertyAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.ContentPropertyAttribute) 之類的屬性放置到包裝函式中。
 
 > [!NOTE]
-> If you are defining a custom attached property, you generally omit the wrapper. 相反地，您要撰寫 XAML 處理器可以使用的不同樣式存取子。 請參閱[自訂附加屬性](custom-attached-properties.md)。 
+> 如果您要定義自訂附加屬性，通常會省略包裝函式。 相反地，您要撰寫 XAML 處理器可以使用的不同樣式存取子。 請參閱[自訂附加屬性](custom-attached-properties.md)。 
 
 ## <a name="registering-the-property"></a>登錄屬性
 
 為了讓您的屬性可以成為相依性屬性，您必須將屬性登錄到 Windows 執行階段屬性系統所維護的屬性儲存區中。  若要登錄屬性，您可以呼叫 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 方法。
 
-若為 Microsoft .NET 語言 (C# 和 Microsoft Visual Basic)，您可以在類別的內文中呼叫 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) (在類別內，但在任何成員定義外)。 [  **Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 方法呼叫也會提供識別碼做為傳回值。 [  **Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 呼叫通常是做為靜態建構函式或是類型 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 的 **public static readonly** 屬性初始化的一部份 (做為您類別的一部份)。 這個屬性會公開您相依性屬性的識別碼。 以下是 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 呼叫的範例。
+若為 Microsoft .NET 語言 (C# 和 Microsoft Visual Basic)，您可以在類別的內文中呼叫 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) (在類別內，但在任何成員定義外)。 [  **Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 方法呼叫也會提供識別碼做為傳回值。 [  **Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 呼叫通常是做為靜態建構函式或是類型DependencyProperty[**的**public static readonly](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 屬性初始化的一部份 (做為您類別的一部份)。 這個屬性會公開您相依性屬性的識別碼。 以下是 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 呼叫的範例。
 
 > [!NOTE]
-> Registering the dependency property as part of the identifier property definition is the typical implementation, but you can also register a dependency property in the class static constructor. 如果您需要一行以上的程式碼來初始化相依性屬性，這個方法比較適用。
+> 將相依性屬性註冊為 identifier 屬性定義的一部分是典型的執行，但您也可以在類別靜態的「函式」中註冊相依性屬性。 如果您需要一行以上的程式碼來初始化相依性屬性，這個方法比較適用。
 
-For C++/CX, you have options for how you split the implementation between the header and the code file. 典型的分割方式是在標頭將識別碼本身宣告為 **public static** 屬性，搭配 **get** 實作但不使用 **set**。 **get** 實作會參考私用欄位，它是未初始化的 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 執行個體。 您也可以宣告包裝函式以及包裝函式的 **get** 和 **set** 實作。 在這個情況下，標頭會包含一些基本的實作。 如果包裝函式需要 Windows 執行階段屬性，那麼標頭中也會包含屬性。 在程式碼檔案中放置 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 呼叫，位置是在只會在應用程式第一次初始化時執行的協助程式函式中。 使用 **Register** 的傳回值來填入您在標頭中宣告的靜態但未初始化的識別碼，您可以在實作檔案的根範圍內初始設為 **nullptr**。
+對於C++/cx，您可以選擇如何分割標頭和程式碼檔案之間的執行。 典型的分割方式是在標頭將識別碼本身宣告為 **public static** 屬性，搭配 **get** 實作但不使用 **set**。 **get** 實作會參考私用欄位，它是未初始化的 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) 執行個體。 您也可以宣告包裝函式以及包裝函式的 **get** 和 **set** 實作。 在這個情況下，標頭會包含一些基本的實作。 如果包裝函式需要 Windows 執行階段屬性，那麼標頭中也會包含屬性。 在程式碼檔案中放置 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 呼叫，位置是在只會在應用程式第一次初始化時執行的協助程式函式中。 使用 **Register** 的傳回值來填入您在標頭中宣告的靜態但未初始化的識別碼，您可以在實作檔案的根範圍內初始設為 **nullptr**。
 
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
@@ -166,23 +166,23 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> For the C++/CX code, the reason why you have a private field and a public read-only property that surfaces the [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) is so that other callers who use your dependency property can also use property-system utility APIs that require the identifier to be public. 如果讓識別碼保持私用，別人就無法使用這些公用程式 API。 這類 API 的範例和案例包括 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) 或 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) (選用)、[**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue)、[**GetAnimationBaseValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue)、[**SetBinding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.setbinding) 以及 [**Setter.Property**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.property)。 您無法為此使用公用欄位，因為 Windows 執行階段中繼資料的規則並不允許公用欄位。
+> 在C++/cx 程式碼中，您的私用欄位和公開唯讀屬性會呈現[**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)的原因是，其他使用相依性屬性的呼叫端也可以使用需要識別碼為公用的屬性系統公用程式 api。 如果讓識別碼保持私用，別人就無法使用這些公用程式 API。 這類 API 的範例和案例包括 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) 或 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) (選用)、[**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue)、[**GetAnimationBaseValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue)、[**SetBinding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.setbinding) 以及 [**Setter.Property**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.property)。 您無法為此使用公用欄位，因為 Windows 執行階段中繼資料的規則並不允許公用欄位。
 
 ## <a name="dependency-property-name-conventions"></a>相依性屬性名稱慣例
 
 相依性屬性有命名慣例；除了例外情況之外，請在所有情況中遵循這種命名慣例。 相依性屬性本身具有基本名稱 (在前面的範例中是 "Label")，它是以 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 的第一個參數來指定的。 這個名稱在每個登錄類型中必須是唯一的，而且這種唯一性的需求也適用於任何繼承的成員。 經由基本類型而繼承的相依性屬性會被視為登錄類型的一部分；而繼承的屬性名稱不可被重複登錄。
 
 > [!WARNING]
-> Although the name you provide here can be any string identifier that is valid in programming for your language of choice, you usually want to be able to set your dependency property in XAML too. 為了能夠在 XAML 中設定，您選擇的屬性名稱必須是有效的 XAML 名稱。 如需詳細資訊，請參閱 [XAML 概觀](xaml-overview.md)。
+> 雖然您在此處提供的名稱可以是在您所選語言的程式設計中有效的任何字串識別碼，但您通常也會想要能夠在 XAML 中設定相依性屬性。 為了能夠在 XAML 中設定，您選擇的屬性名稱必須是有效的 XAML 名稱。 如需詳細資訊，請參閱 [XAML 概觀](xaml-overview.md)。
 
 在您建立識別碼屬性時，請合併登錄時的屬性名稱與尾碼 "Property" (例如，"LabelProperty")。 這個屬性就是您相依性屬性的識別碼，當您在自己的屬性包裝函式中進行 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) 和 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) 呼叫時，它就會是您的輸入。 它也會由屬性系統和其他 XAML 處理器所使用，例如[ **{x:Bind}** ](x-bind-markup-extension.md)
 
 ## <a name="implementing-the-wrapper"></a>實作包裝函式
 
-您的屬性包裝函式應該在 **get** 實作中呼叫 [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)，以及在 **set** 實作中呼叫 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)。
+您的屬性包裝函式應該在 [get**實作中呼叫**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)GetValue，以及在 [set**實作中呼叫**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)SetValue。
 
 > [!WARNING]
-> In all but exceptional circumstances, your wrapper implementations should perform only the [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) and [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) operations. 否則，透過 XAML 和透過程式碼設定的屬性會出現不同的行為。 為求效率，當設定相依性屬性時 XAML 剖析器會略過包裝函式；並透過 **SetValue** 與備份存放區通訊。
+> 在所有例外狀況的情況下，您的包裝函式的執行只應執行[**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)和[**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)作業。 否則，透過 XAML 和透過程式碼設定的屬性會出現不同的行為。 為求效率，當設定相依性屬性時 XAML 剖析器會略過包裝函式；並透過 **SetValue** 與備份存放區通訊。
 
 ```csharp
 public String Label
@@ -244,12 +244,12 @@ public:
 
 在先前呼叫 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 的範例中，我們為 *propertyMetadata* 參數傳遞了 Null 值。 若要讓相依性屬性提供預設值或使用屬性變更的回呼，您必須定義提供下列一或兩項功能的 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata) 執行個體。
 
-通常您會在 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 的參數內提供 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata) 做為內嵌建立的執行個體。
+通常您會在 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata) 的參數內提供 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 做為內嵌建立的執行個體。
 
 > [!NOTE]
-> If you are defining a [**CreateDefaultValueCallback**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.createdefaultvaluecallback) implementation, you must use the utility method [**PropertyMetadata.Create**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertymetadata.create) rather than calling a [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata) constructor to define the **PropertyMetadata** instance.
+> 如果您要定義[**CreateDefaultValueCallback**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.createdefaultvaluecallback)的執行，則必須使用公用程式方法[**PropertyMetadata**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertymetadata.create) ，而不是呼叫[**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata)的函式來定義**PropertyMetadata**實例。
 
-下一個範例參考一個具有 [**PropertyChangedCallback**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertychangedcallback) 值的 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata) 執行個體，修改了先前顯示的 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 範例。 "OnLabelChanged" 回呼的實作稍後會在本節中說明。
+下一個範例參考一個具有 [**PropertyChangedCallback**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 值的 [**PropertyMetadata**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyMetadata) 執行個體，修改了先前顯示的 [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertychangedcallback) 範例。 "OnLabelChanged" 回呼的實作稍後會在本節中說明。
 
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
@@ -312,7 +312,7 @@ Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
 ```
 
 > [!NOTE]
-> Do not register with a default value of [**UnsetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.unsetvalue). 這樣做會混淆屬性使用者，而且會在屬性系統內會造成不想要的結果。
+> 請勿使用[**UnsetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.unsetvalue)的預設值進行註冊。 這樣做會混淆屬性使用者，而且會在屬性系統內會造成不想要的結果。
 
 ### <a name="createdefaultvaluecallback"></a>CreateDefaultValueCallback
 
@@ -421,7 +421,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 }
 ```
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳作法
 
 若要以最佳做法定義自訂的相依性屬性，請考量下列幾點。
 
@@ -472,12 +472,12 @@ Windows 執行階段不提供將自訂相依性屬性登錄為唯讀的方法。
 
 ### <a name="registering-the-dependency-properties-for-ccx-apps"></a>針對 C++/CX 應用程式登錄相依性屬性
 
-在 C++/CX 中登錄屬性的實作比 C# 更需要技巧，這是因為兩者都需要分成標頭和實作檔，同時也因為在實作檔案的根範圍內進行初始化就是一個不良做法所致 (Visual C++ component extensions (C++/CX) puts static initializer code from the root scope directly into **DllMain**, whereas C# compilers assign the static initializers to classes and thus avoid **DllMain** load lock issues.). 此處的最佳做法是宣告一個協助程式函式，為類別進行所有的相依性屬性登錄，而且每個類別都需要一個函式。 然後，針對應用程式取用的每個自訂類別，您必須參照每個想要使用的自訂類別所公開的協助程式登錄函式。 在 `InitializeComponent` 之前，於 [**Application 建構函式**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) (`App::App()`) 中呼叫每個協助程式登錄函式一次。 例如，該建構函式只會在第一次真正參照應用程式時執行，如果是暫停的應用程式繼續執行，它將不會再次執行。 此外，如先前的 C++ 登錄範例所示，在每個 [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 呼叫周圍的 **nullptr** 檢查非常重要：這可保證函式中不會有其他呼叫者可以登錄該屬性兩次。 如果沒有這類檢查，第二個登錄呼叫可能會因為屬性名稱重複而毀損您的應用程式。 如果您需要查看範例程式碼的 C++/CX 版本，可以在 [XAML 使用者和自訂控制項範例](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)中查看這個實作模式。
+在 C++/CX 中登錄屬性的實作比 C# 更需要技巧，這是因為兩者都需要分成標頭和實作檔，同時也因為在實作檔案的根範圍內進行初始化就是一個不良做法所致 （Visual C++元件延伸模組C++（/cx）會將靜態初始化運算式程式碼從根範圍直接放C#入**DllMain**中，而編譯器會將靜態初始化運算式指派給類別，進而避免**DllMain**載入鎖定問題）。 此處的最佳做法是宣告一個協助程式函式，為類別進行所有的相依性屬性登錄，而且每個類別都需要一個函式。 然後，針對應用程式取用的每個自訂類別，您必須參照每個想要使用的自訂類別所公開的協助程式登錄函式。 在 [ 之前，於Application 建構函式](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor)`App::App()` (`InitializeComponent`) 中呼叫每個協助程式登錄函式一次。 例如，該建構函式只會在第一次真正參照應用程式時執行，如果是暫停的應用程式繼續執行，它將不會再次執行。 此外，如先前的 C++ 登錄範例所示，在每個Register[**呼叫周圍的**nullptr](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) 檢查非常重要：這可保證函式中不會有其他呼叫者可以登錄該屬性兩次。 如果沒有這類檢查，第二個登錄呼叫可能會因為屬性名稱重複而毀損您的應用程式。 如果您需要查看範例程式碼的 C++/CX 版本，可以在 [XAML 使用者和自訂控制項範例](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)中查看這個實作模式。
 
 ## <a name="related-topics"></a>相關主題
 
-- [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)
-- [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)
+- [**System.windows.dependencyobject>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)
+- [**DependencyProperty. Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)
 - [相依性屬性概觀](dependency-properties-overview.md)
-- [XAML user and custom controls sample](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
+- [XAML 使用者和自訂控制項範例](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
  

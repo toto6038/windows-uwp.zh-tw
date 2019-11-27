@@ -3,7 +3,7 @@ title: 新增朋友圈支援至應用程式
 description: 說明如何將朋友圈支援新增至應用程式，及如何釘選與取消釘選連絡人
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ba05e958a8746874becd4cfa17ec0e8f255ff00
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -15,7 +15,7 @@ ms.locfileid: "74255144"
 # <a name="adding-my-people-support-to-an-application"></a>新增朋友圈支援至應用程式
 
 > [!Note]
-> As of the Windows 10 May 2019 Update (version 1903), new Windows 10 installations will no longer show ‘People in the taskbar’ by default. Customers can enable the feature by right-clicking on the taskbar and pressing “Show People on the taskbar.” Developers are discouraged from adding My People support to their applications, and should visit the [Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/) for more information about optimizing apps for Windows 10.
+> 從 Windows 10 5 月2019更新（版本1903）中，新的 Windows 10 安裝預設不會再顯示「工作列中的人員」。 客戶可以在工作列上按一下滑鼠右鍵，然後按 [顯示工作列上的人員]，來啟用此功能。 不鼓勵開發人員將我的人員支援新增至他們的應用程式，而且應該流覽[Windows 開發人員的 Blog](https://blogs.windows.com/windowsdeveloper/) ，以取得優化 windows 10 應用程式的詳細資訊。
 
 \[朋友圈\] 功能可讓使用者從應用程式直接將連絡人釘選到其工作列，這會建立一個可供使用者透過數種方式互動的新連絡人物件。 本文說明如何新增此功能的支援，讓使用者直接從您的應用程式釘選連絡人。 當釘選連絡人時，如[朋友圈分享](my-people-sharing.md)和[通知](my-people-notifications.md)等新類型的使用者互動便可供使用。
 
@@ -30,8 +30,8 @@ ms.locfileid: "74255144"
 
 若要讓您的應用程式能夠使用 \[朋友圈\] 功能時，您必須完成三件事：
 
-1. [Declare support for the shareTarget activation contract in your application manifest.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Annotate the contacts that the users can share to using your app.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [在您的應用程式資訊清單中宣告 Windows.sharetarget 啟用合約的支援。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [標注使用者可以使用您的應用程式共用的連絡人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  支援同時執行您應用程式的多個執行個體。 使用者將您應用程式的完整版用於連絡人面板中時，必須能夠與該版本互動。  他們甚至可以同時將該版本用於多個連絡人面板中。  若要支援此功能，您的應用程式必須能夠同時執行多個檢視。 若要了解做法，請參閱[顯示應用程式的多重檢視](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views) (英文) 一文。
 
 當您完成時，您的應用程式將出現在所註解連絡人的連絡人面板中。
@@ -182,16 +182,16 @@ ContactPanel 物件也允許您設定連絡人面板標頭的背景色彩 (若�
 
 ## <a name="supporting-notification-badging"></a>支援通知徽章
 
-如果您希望有來自您應用程式且與該連絡人相關的新通知時，釘選到工作列的連絡人可以收到徽章通知，則您必須在 [快顯通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)和易懂的[朋友圈通知](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications)中包含 **hint-people** 參數。
+如果您希望有來自您應用程式且與該連絡人相關的新通知時，釘選到工作列的連絡人可以收到徽章通知，則您必須在 **快顯通知**和易懂的[朋友圈通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)中包含 [hint-people](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications) 參數。
 
 ![朋友圈通知徽章](images/my-people-badging.png)
 
 若要將聯絡人加上徽章，最上層的快顯通知節點必須包含 hint-people 參數，以指出傳送或相關連絡人。 這個參數可以有以下任何的值：
-+ **Email address** 
-    + 例如 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](mailto:johndoe@mydomain.com)
-+ **Telephone number** 
++ **電子郵件地址** 
+    + 例如 mailto:johndoe@mydomain.com
++ **電話號碼** 
     + 例如 tel:888-888-8888
-+ **Remote ID** 
++ **遠端識別碼** 
     + 例如 remoteid:1234
 
 以下是如何找出快顯通知與特定連絡人相關的範例：
@@ -253,9 +253,9 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 ## <a name="see-also"></a>請參閱
 + [朋友圈分享](my-people-sharing.md)
-+ [My People notificatons](my-people-notifications.md)
-+ [Channel 9 video on adding My People support to an application](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [My People integration sample](https://github.com/tonyPendolino/MyPeopleBuild2017)
-+ [Contact Card sample](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [PinnedContactManager class documentation](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [我的人員通知](my-people-notifications.md)
++ [Channel 9 將我的人員支援新增至應用程式的影片](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [我的人員整合範例](https://github.com/tonyPendolino/MyPeopleBuild2017)
++ [連絡人卡片範例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [PinnedContactManager 類別檔](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [將應用程式連結到連絡人卡片上的動作](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
