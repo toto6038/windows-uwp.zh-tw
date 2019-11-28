@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, microsoft, windows 10, 教學課程, 線上課程, 部落格, 事件
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 64d4fc1c85ae4056da02f987ca654305a883d2c6
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 8870c1e269eb2c5f049c5431d6360e8c11570c0b
+ms.sourcegitcommit: 4cb3ee28baa8020ec925b0bdd896ab197a1ddadb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72313405"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74309165"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>在 Windows 上使用 Python 進行開發的資源
 
@@ -56,6 +56,8 @@ ms.locfileid: "72313405"
 - [Python.org 教學課程](https://docs.python.org/3/tutorial/index.html)：非正式地向讀者介紹 Python 語言和系統的基本概念和功能。
 
 - [在 Lynda.com 上學習 Python](https://www.lynda.com/Python-tutorials/Learning-Python/661773-2.html)：Python 基本簡介。
+
+- [Real Python](https://realpython.com/)：Python 開發人員資源中心 — Python 教學課程、影片課程、測驗、書籍、程式碼範例等。
 
 ## <a name="web-development"></a>Web 開發
 
