@@ -8,19 +8,19 @@ keywords: Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, 手�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 427d359676bd064e577ab4f13f7b0a17f61d7e3e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 031ac1ebc8d164c99240969ce77813f36a311858
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317159"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258294"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>UWP app 中的手寫筆互動與 Windows Ink
 
-![介面的畫筆](images/ink/hero-small.png)  
-*Surface 手寫筆* (可在 [Microsoft 網上商店](https://aka.ms/purchasesurfacepen)購買)。
+![Surface Pen](images/ink/hero-small.png)  
+*Surface 手寫筆* (可在 [Microsoft 網上商店](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)購買)。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 最佳化您的通用 Windows 平台 (UWP) app，讓手寫筆輸入能夠為您的使用者提供標準[**指標裝置**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice)功能和最好的 Windows Ink 體驗。
 
@@ -30,7 +30,7 @@ ms.locfileid: "67317159"
 | 影片 |   |
 | --- | --- |
 | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
-| *使用 UWP 應用程式中的筆墨* | *使用 Windows 手寫筆和筆跡建置更吸引人的企業應用程式* |
+| *在 UWP 應用程式中使用筆墨* | *使用 Windows 畫筆和筆跡來建立更吸引人的企業應用程式* |
 
 Windows Ink 平台搭配手寫筆裝置之後，使用者就可以自然的方式建立數位手寫筆記、繪圖以及註解。 此平台支援擷取數位板輸入做為筆墨資料、產生筆墨資料、管理筆墨資料、在輸出裝置上將筆墨資料轉譯為筆劃，以及透過手寫辨識將筆墨轉換為文字。
 
@@ -47,10 +47,10 @@ Windows Ink 平台搭配手寫筆裝置之後，使用者就可以自然的方�
 
 | Component | 描述 |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) | XAML UI 平台的控制項，根據預設，會接收並顯示所有的輸入，來自手寫筆筆墨筆劃或清除筆劃。<br/>如需如何使用 InkCanvas 的詳細資訊，請參閱[將 Windows Ink 筆觸辨識為文字](convert-ink-to-text.md)與[儲存和抓取 Windows Ink 筆觸資料](save-and-load-ink.md)。 |
+| [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) | XAML UI 平臺控制項，預設會接收並顯示畫筆的所有輸入做為筆墨筆劃或抹除筆劃。<br/>如需如何使用 InkCanvas 的詳細資訊，請參閱[將 Windows Ink 筆觸辨識為文字](convert-ink-to-text.md)與[儲存和抓取 Windows Ink 筆觸資料](save-and-load-ink.md)。 |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 程式碼後置物件，連同 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項 (透過 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 屬性所公開) 進行具現化。 這個物件提供 **InkCanvas** 公開的所有預設筆跡功能，以及一組完整的 API 來進行其他自訂和個人化。<br/>如需如何使用 InkPresenter 的詳細資訊，請參閱[將 Windows Ink 筆觸辨識為文字](convert-ink-to-text.md)與[儲存和抓取 Windows Ink 筆觸資料](save-and-load-ink.md)。 |
-| [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) | XAML UI 平台控制項包含自訂和擴充集合的 啟動中相關聯的筆跡相關功能的按鈕[ **InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)。<br/>如需如何使用 InkToolbar 的詳細資訊，請參閱[將 InkToolbar 新增至通用 Windows 平台 (UWP) 手寫筆跡應用程式](ink-toolbar.md)。 |
-| [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer) | 可讓筆墨筆劃轉譯到通用 Windows app 的指定 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項。 這樣就能完整自訂筆跡體驗。<br/>如需詳細資訊，請參閱[複雜的筆跡範例](https://go.microsoft.com/fwlink/p/?LinkID=620314)。 |
+| [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) | XAML UI 平臺控制項，其中包含可自訂且可擴充的按鈕集合，可在相關聯的[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)中啟用筆墨相關功能。<br/>如需如何使用 InkToolbar 的詳細資訊，請參閱[將 InkToolbar 新增至通用 Windows 平台 (UWP) 手寫筆跡應用程式](ink-toolbar.md)。 |
+| [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer) | 可讓筆墨筆劃轉譯到通用 Windows app 的指定 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項。 這樣就能完整自訂筆跡體驗。<br/>如需詳細資訊，請參閱[複雜的筆跡範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)。 |
 
 ## <a name="basic-inking-with-inkcanvas"></a>利用 InkCanvas 的基本筆跡功能
 
@@ -64,7 +64,7 @@ Windows Ink 平台搭配手寫筆裝置之後，使用者就可以自然的方�
 在這個範例中，[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 會重疊背景影像。
 
 > [!NOTE]
-> InkCanvas 有預設值[**高度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height)並[**寬度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)屬性為零，除非它是元素的子系是自動調整大小其子項目，例如[StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)或是[格線](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)控制項。
+> InkCanvas 的預設[**高度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height)和[**寬度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)屬性為零，除非它是自動調整其子項目大小之專案的子系，例如[StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)或[方格](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)控制項。
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -257,7 +257,7 @@ Windows Ink 平台不提供需要修改輸入 (例如筆觸選取項目) 動作�
 
 3.  接下來，我們會設定 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃，並設定一些初始的筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。
 
-    最重要的是，我們會使用 [InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 的 [**InputProcessingConfiguration**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputprocessingconfiguration) 屬性來表示 app 應該處理所有修改的輸入。 修改的輸入是藉由指派 [**InkInputRightDragAction.LeaveUnprocessed**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkInputRightDragAction) 的 **InputProcessingConfiguration.RightDragAction** 值來指定。 當設定此值時，[InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 會通過並抵達 [InkUnprocessedInput](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput) 類別 - 可讓您處理的一系列指標事件。
+    最重要的是，我們會使用 [InkPresenter**的**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputprocessingconfiguration)InputProcessingConfiguration[](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 屬性來表示 app 應該處理所有修改的輸入。 修改的輸入是藉由指派InkInputRightDragAction.LeaveUnprocessed[**的**InputProcessingConfiguration.RightDragAction](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkInputRightDragAction) 值來指定。 當設定此值時，[InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 會通過並抵達 [InkUnprocessedInput](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput) 類別 - 可讓您處理的一系列指標事件。
 
     我們會針對未處理的 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointerpressed) 、[**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointermoved) 和 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkunprocessedinput.pointerreleased) 事件指派接聽程式，這些事件是透過 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 來傳入。 所有的選取功能都是在這些事件的處理常式中實作的。
 
@@ -454,7 +454,7 @@ Windows Ink 平台不提供需要修改輸入 (例如筆觸選取項目) 動作�
 
 您也可以將烘乾筆跡自訂成 [SwapChainPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.swapchainpanel)，但此舉將無法保證與 UI 執行緒的同步，並且當筆跡轉譯到您的 SwapChainPanel 和筆跡從 InkCanvas 移除時將會產生延遲。
 
-如需這項功能的完整範例，請參閱[複雜的筆跡範例](https://go.microsoft.com/fwlink/p/?LinkID=620314)。
+如需這項功能的完整範例，請參閱[複雜的筆跡範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)。
 
 > [!NOTE]
 > 自訂乾燥與 [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
@@ -464,36 +464,36 @@ Windows Ink 平台不提供需要修改輸入 (例如筆觸選取項目) 動作�
 
 | 主題 | 描述 |
 | --- | --- |
-| [辨識筆墨筆劃](convert-ink-to-text.md) | 使用手寫辨識，將筆墨筆劃轉換為文字，或者使用自訂辨識轉換為形狀。 |
-| [儲存和擷取筆墨筆劃](save-and-load-ink.md) | 使用內嵌的筆跡序列化格式 (ISF) 中繼資料，在圖形交換格式 (GIF) 檔案中儲存筆墨筆劃資料。 |
-| [InkToolbar 加入 UWP，筆跡應用程式](ink-toolbar.md) | 將預設 InkToolbar 新增至通用 Windows 平台 (UWP) 手寫筆跡應用程式、將自訂的畫筆按鈕新增至 InkToolbar，以及將自訂的畫筆按鈕繫結到自訂的畫筆定義。 |
+| [辨識筆跡筆劃](convert-ink-to-text.md) | 使用手寫辨識，將筆墨筆劃轉換為文字，或者使用自訂辨識轉換為形狀。 |
+| [儲存和抓取筆跡筆劃](save-and-load-ink.md) | 使用內嵌的筆跡序列化格式 (ISF) 中繼資料，在圖形交換格式 (GIF) 檔案中儲存筆墨筆劃資料。 |
+| [將 InkToolbar 新增至 UWP 墨蹟應用程式](ink-toolbar.md) | 將預設 InkToolbar 新增至通用 Windows 平台 (UWP) 手寫筆跡應用程式、將自訂的畫筆按鈕新增至 InkToolbar，以及將自訂的畫筆按鈕繫結到自訂的畫筆定義。 |
 
 ## <a name="related-articles"></a>相關文章
 
-* [開始使用：支援在 UWP 應用程式中的筆墨](../../get-started/ink-walkthrough.md)
+* [開始使用：在 UWP 應用程式中支援筆墨](../../get-started/ink-walkthrough.md)
 * [處理指標輸入](handle-pointer-input.md)
 * [識別輸入裝置](identify-input-devices.md)
 
 **Api**
 
-* [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
-* [**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
-* [**Windows.UI.Input.Inking.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.Core)
+* [**Windows. 輸入**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
+* [**Windows. UI. Input. 筆跡**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+* [**Windows. UI. Input。** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.Core)
 
 **範例**
-* [快速入門教學課程：支援在 UWP 應用程式中的筆墨](https://aka.ms/appsample-ink)
-* [簡單的筆墨範例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雜的筆墨範例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [筆墨範例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [著色書範例](https://aka.ms/cpubsample-coloringbook)
-* [系列的資訊範例](https://aka.ms/cpubsample-familynotessample)
-* [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [開始使用教學課程：在 UWP 應用程式中支援筆墨](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [Simple 筆墨範例（C#/C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+* [複雜筆跡範例（C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+* [筆墨範例（JavaScript）](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [著色書籍範例](https://github.com/Microsoft/Windows-appsample-coloringbook)
+* [家族附注範例](https://github.com/Microsoft/Windows-appsample-familynotes)
+* [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
 
 **封存範例**
-* [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：XAML 使用者輸入的事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：筆勢和 GestureRecognizer 操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [輸入：裝置功能範例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [輸入： XAML 使用者輸入事件範例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [XAML 捲軸、移動流覽和縮放範例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [輸入：使用 GestureRecognizer 的手勢和操作](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)

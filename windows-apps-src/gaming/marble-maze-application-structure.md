@@ -6,22 +6,22 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 樣本, directx, 結構
 ms.localizationpriority: medium
-ms.openlocfilehash: a04e6714772d9b17c281f81ad93582d1fb691c9b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d248d8737f32d35cf0a25f4ad0c9138a1d334365
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368507"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258492"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze 應用程式結構
 
 
 
 
-DirectX 通用 Windows 平台 (UWP) 應用程式的結構與傳統型應用程式結構不同。 Windows 執行階段提供介面 (例如 [[Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types)](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow))，讓您能夠使用更現代化的物件導向方式來開發 UWP 應用程式，而不是使用控制代碼類型 (例如 [HWND](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa)) 和函式 (例如 CreateWindow) 來進行開發。 文件的這一節示範如何建構 Marble Maze App 程式碼。
+DirectX 通用 Windows 平台 (UWP) 應用程式的結構與傳統型應用程式結構不同。 Windows 執行階段提供介面 (例如 [](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types)Windows::UI::Core::ICoreWindow[](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa))，讓您能夠使用更現代化的物件導向方式來開發 UWP 應用程式，而不是使用控制代碼類型 (例如 [HWND](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow)) 和函式 (例如 CreateWindow) 來進行開發。 文件的這一節示範如何建構 Marble Maze App 程式碼。
 
 > [!NOTE]
-> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](https://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](https://github.com/microsoft/Windows-appsample-marble-maze)中找到。
 
  
 ## 
@@ -38,7 +38,7 @@ DirectX 通用 Windows 平台 (UWP) 應用程式的結構與傳統型應用程�
 
 Marble Maze 中的某些元件只要稍加修改 (甚至不需修改)，就可在任何遊戲中重複使用。 您可以針對自己的遊戲，適度調整這些檔案提供的組織和概念。 下表簡短說明重要的原始程式碼檔。
 
-| 檔案                                      | 描述                                                                                                                                                                          |
+| Files                                      | 描述                                                                                                                                                                          |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | App.h、App.cpp               | 定義 **App** 和 **DirectXApplicationSource** 類別，封裝應用程式的檢視 (視窗、執行緒及事件)。                                                     |
 | Audio.h、Audio.cpp                         | 定義管理音訊資源的 **Audio** 類別。                                                                                                                          |
@@ -68,7 +68,7 @@ Marble Maze 中的某些元件只要稍加修改 (甚至不需修改)，就可�
 
 請盡可能使用執行階段格式，而非設計階段格式，以更有效率地載入遊戲資源。
 
-「設計階段」  格式是您在設計資源時所使用的格式。 一般而言，3D 設計工具可處理設計階段格式。 有些設計階段格式也是以文字為基礎的，因此可讓您在任何文字編輯器中加以修改。 設計階段格式可能很冗長，所包含的資訊可能超出遊戲所需。 「執行階段」  格式是由遊戲讀取的二進位格式。 執行階段格式通常較為精簡，載入時比對應的設計階段格式更有效率。 這就是為什麼大部分遊戲會在執行階段使用執行階段資產。
+「設計階段」格式是您在設計資源時所使用的格式。 一般而言，3D 設計工具可處理設計階段格式。 有些設計階段格式也是以文字為基礎的，因此可讓您在任何文字編輯器中加以修改。 設計階段格式可能很冗長，所包含的資訊可能超出遊戲所需。 「執行階段」格式是由遊戲讀取的二進位格式。 執行階段格式通常較為精簡，載入時比對應的設計階段格式更有效率。 這就是為什麼大部分遊戲會在執行階段使用執行階段資產。
 
 雖然您的遊戲可直接讀取設計階段格式，但使用不同的執行階段格式有許多好處。 由於執行階段格式通常較為精簡，因此所需的磁碟空間較少，而且在網路上傳輸的時間較短。 此外，執行階段格式通常表示為記憶體對應的資料結構。 因此，它們可以更快速地載入記憶體，例如，比 XML 型文字檔更快。 最後，因為個別的執行階段格式通常是以二進位編碼，所以更不易遭到使用者修改。
 
@@ -83,7 +83,7 @@ Marble Maze 遵循一般 UWP 應用程式的生命週期。 如需 UWP 應用程
 
 當 UWP 遊戲初始化時，它通常會初始化執行階段元件，例如 Direct3D、Direct2D，以及它使用的任何輸入、音訊或物理程式庫。 它也會載入遊戲開始之前所需的遊戲專用資源。 這個初始化會在遊戲工作階段期間發生一次。
 
-初始化之後，遊戲通常會執行「遊戲迴圈」  。 在這個迴圈中，遊戲通常會執行四個動作：處理 Windows 事件、收集輸入、更新場景物件，以及呈現場景。 當遊戲更新場景時，會將目前的輸入狀態套用到場景物件，並模擬物理事件，例如物件碰撞。 遊戲也可以執行其他活動，例如播放音效或經由網路傳送資料。 當遊戲呈現場景時，它會擷取場景的目前狀態，並將它繪製到顯示裝置。 下列章節將進一步說明這些活動。
+初始化之後，遊戲通常會執行「遊戲迴圈」。 在這個迴圈中，遊戲通常會執行四個動作：處理 Windows 事件、收集輸入、更新場景物件，以及呈現場景。 當遊戲更新場景時，會將目前的輸入狀態套用到場景物件，並模擬物理事件，例如物件碰撞。 遊戲也可以執行其他活動，例如播放音效或經由網路傳送資料。 當遊戲呈現場景時，它會擷取場景的目前狀態，並將它繪製到顯示裝置。 下列章節將進一步說明這些活動。
 
 ##  <a name="adding-to-the-template"></a>新增到範本
 
@@ -123,7 +123,7 @@ Marble Maze 遵循一般 UWP 應用程式的生命週期。 如需 UWP 應用程
     });
 ```
 
-**MarbleMazeMain**類別會定義*m\_deferredResourcesReady*旗標，表示非同步載入已完成。 **MarbleMazeMain::LoadDeferredResources** 方法會在載入遊戲資源後設定這個旗標。 應用程式的更新 (**MarbleMazeMain::Update**) 和呈現 (**MarbleMazeMain::Render**) 階段會檢查這個旗標。 如果設定了這個旗標，遊戲就會繼續正常執行。 如果尚未設定這個旗標，遊戲就會顯示正在載入的畫面。
+**MarbleMazeMain**類別會定義*m\_deferredResourcesReady*旗標，以指出非同步載入已完成。 **MarbleMazeMain::LoadDeferredResources** 方法會在載入遊戲資源後設定這個旗標。 應用程式的更新 (**MarbleMazeMain::Update**) 和呈現 (**MarbleMazeMain::Render**) 階段會檢查這個旗標。 如果設定了這個旗標，遊戲就會繼續正常執行。 如果尚未設定這個旗標，遊戲就會顯示正在載入的畫面。
 
 如需 UWP app 的非同步程式設計的詳細資訊，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
@@ -178,7 +178,7 @@ void App::Run()
 ## <a name="the-state-machine"></a>狀態機器
 
 
-遊戲通常包含「狀態機器」  (也稱為「有限狀態機器」  或 FSM)，可控制遊戲邏輯的流程和順序。 狀態機器包含一定數目的狀態，也能夠在這些狀態之間切換。 狀態機器通常從「初始」  狀態開始、轉換成一或多個「中繼」  狀態，而且可能會以「終止」  狀態結束。
+遊戲通常包含「狀態機器」(也稱為「有限狀態機器」或 FSM)，可控制遊戲邏輯的流程和順序。 狀態機器包含一定數目的狀態，也能夠在這些狀態之間切換。 狀態機器通常從「初始」狀態開始、轉換成一或多個「中繼」狀態，而且可能會以「終止」狀態結束。
 
 遊戲迴圈通常會使用狀態機器，以執行目前遊戲狀態的特定邏輯。 Marble Maze 會定義 **GameState** 列舉，此列舉定義遊戲的每個可能的狀態。
 
@@ -195,7 +195,7 @@ enum class GameState
 };
 ```
 
-例如，**MainMenu** 狀態定義主功能表出現，遊戲沒在進行。 相反地，**InGameActive** 狀態定義遊戲在進行中，不顯示功能表。 **MarbleMazeMain**類別會定義**m\_gameState**成員變數以保存作用中的遊戲狀態。
+例如，**MainMenu** 狀態定義主功能表出現，遊戲沒在進行。 相反地，**InGameActive** 狀態定義遊戲在進行中，不顯示功能表。 **MarbleMazeMain**類別會定義**m\_gameState**成員變數來保存作用中的遊戲狀態。
 
 **MarbleMazeMain::Update** 和 **MarbleMazeMain::Render** 方法使用 switch 陳述式執行目前狀態的邏輯。 下列範例示範 switch 陳述式在 **MarbleMazeMain::Update** 方法中可能的樣子 (移除詳細資料以說明結構)。
 
@@ -423,9 +423,9 @@ void MarbleMazeMain::LoadState()
 
 ## <a name="related-topics"></a>相關主題
 
-* [將視覺內容加入至滾珠迷宮範例](adding-visual-content-to-the-marble-maze-sample.md)
-* [滾珠迷宮範例基本概念](marble-maze-sample-fundamentals.md)
-* [開發滾珠迷宮中 UWP 遊戲C++和 DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [將視覺內容加入至大理石迷宮範例](adding-visual-content-to-the-marble-maze-sample.md)
+* [大理石迷宮範例基本概念](marble-maze-sample-fundamentals.md)
+* [開發大理石迷宮，和 DirectX 中C++的 UWP 遊戲](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d40474fe473570e2cceba516a7e6d0441aa656
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: eeb8cb8a8b71123c3a5a94eea316621e5f93fe8e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340599"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259078"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>將 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
@@ -76,7 +76,7 @@ ms.locfileid: "71340599"
 
 有時候，修正命令式程式碼就像變更參數類型一樣，只是小事一樁。 其他時候，您將需要使用 UWP Api，而不是適用于 Windows 執行階段8.x 應用程式的 .NET Api。 若要識別支援的 Api，請使用此移植指南的其餘部分，並搭配[.net for Windows 執行階段8.x 應用程式總覽](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))和[Windows 執行階段參考](https://docs.microsoft.com/uwp/api/)。
 
-而如果您只是想要到達專案建置階段，您可以將任何非必要程式碼標成註解或清除。 然後逐一查看（一次一個問題），並參閱本節中的下列主題（和上一個主題：[疑難排解](wpsl-to-uwp-troubleshooting.md)），直到有任何組建和執行時間問題 ironed 時，您的埠才會完成。
+而如果您只是想要到達專案建置階段，您可以將任何非必要程式碼標成註解或清除。 然後逐一查看問題，並參閱本節 (與上一個主題：[疑難排解](wpsl-to-uwp-troubleshooting.md)) 中的下列主題，直到任何建置與執行階段問題都已解決，且您的移植已完成為止。
 
 ## <a name="adaptiveresponsive-ui"></a>調適型/回應式 UI
 
@@ -88,7 +88,7 @@ ms.locfileid: "71340599"
 
 ## <a name="animation"></a>動畫
 
-UWP app 現在可以使用 UWP 動畫庫，做為主要畫面格動畫及 from/to 動畫的慣用替代方案。 這些動畫已設計和微調成能夠順暢執行、看起來美觀，以及讓您的應用程式看起來就像內建的應用程式一樣與 Windows 整合在一起。 請參閱[快速入門：使用程式庫動畫 @ no__t-0 來製作 UI 的動畫。
+UWP app 現在可以使用 UWP 動畫庫，做為主要畫面格動畫及 from/to 動畫的慣用替代方案。 這些動畫已設計和微調成能夠順暢執行、看起來美觀，以及讓您的應用程式看起來就像內建的應用程式一樣與 Windows 整合在一起。 請參閱[快速入門：使用動畫庫讓 UI 產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))。
 
 如果您在 UWP app 中使用主要畫面格動畫或 from/to 動畫，您可能會想要了解新平台導入的獨立式和相依式動畫之間的區別。 請參閱[最佳化動畫和媒體](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-animations-and-media)。 在 UI 執行緒上執行的動畫 (例如讓配置屬性產生動畫效果的動畫) 稱為「相依式動畫」，在新平台上執行時，除非您執行下列兩個動作之一，否則它們將不會有任何作用。 您可以將它們的動畫作用目標重新設定為不同的屬性 (例如 [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform))，讓它們變成獨立式動畫。 或者，在動畫元素上設定 `EnableDependentAnimation="True"`，以確認想要執行無法保證能夠順暢執行的動畫。 如果您使用 Blend for Visual Studio 來撰寫新的動畫，則會在必要的地方為您設定該屬性。
 
@@ -161,9 +161,9 @@ UWP app 的繫結相關功能目前有下列限制：
 -   未針對資料輸入驗證以及 [**IDataErrorInfo**](https://docs.microsoft.com/dotnet/api/system.componentmodel.idataerrorinfo) 和 [**INotifyDataErrorInfo**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifydataerrorinfo) 介面提供內建支援。
 -   系[**結類別不**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)包含 Windows Phone Silverlight 中提供的延伸格式屬性。 不過，您仍然可以實作 [**IValueConverter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter) 來提供自訂格式。
 -   [  **IValueConverter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter) 方法將語言字串當作參數而不是 [**CultureInfo**](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo) 物件。
--   [  **CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 類別不提供排序和篩選的內建支援，而群組的運作方式也不一樣。 如需詳細資訊，請參閱[深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)和[資料繫結範例](https://go.microsoft.com/fwlink/p/?linkid=226854)。
+-   [  **CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 類別不提供排序和篩選的內建支援，而群組的運作方式也不一樣。 如需詳細資訊，請參閱[深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)和[資料繫結範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind)。
 
-雖然仍然支援相同的系結功能，但 Windows 10 提供了新的更高效能系結機制的選項，稱為已編譯的系結，其使用 {x:Bind} 標記延伸模組。 請參閱 @no__t 0Data 系結：透過 XAML 資料系結 @ no__t-0 和[X:Bind 範例](https://go.microsoft.com/fwlink/p/?linkid=619989)的新增強功能，提升您的應用程式效能。
+雖然仍然支援相同的系結功能，但 Windows 10 提供了新的更高效能系結機制的選項，稱為已編譯的系結，其使用 {x:Bind} 標記延伸模組。 請參閱[資料繫結：透過 XAML 資料繫結的全新增強功能來提升您應用程式的效能](https://channel9.msdn.com/Events/Build/2015/3-635)，以及 [x:Bind 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind)。
 
 ## <a name="binding-an-image-to-a-view-model"></a>將影像繫結到檢視模型
 
@@ -199,7 +199,7 @@ Windows Phone Silverlight 應用程式會使用在**Microsoft. Phone. 控制項*
 | Panorama | Windows Phone Silverlight 全景控制項對應至 Windows 執行階段 8.x[應用程式中中樞控制項的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub)，以及中樞控制項的指導方針。 <br/> 請注意，Panorama 控制項會將最後一個區段迴繞到第一個區段，且其背景影像會以和區段相對的視差方式移動。 [Hub](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) 區段不會迴繞，且不會使用視差。 |
 | 樞紐分析 | Windows Phone Silverlight Pivot 控制項的 UWP 對應項為[Windows. UI.](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot). u。 它適用於所有裝置系列。 |
 
-**注意**   PointerOver 視覺狀態與 Windows 10 應用程式中的自訂樣式/範本有關，但不適用於 Windows Phone Silverlight 應用程式。 您現有的自訂樣式/範本可能不適用於 Windows 10 應用程式的其他原因，包括您使用的系統資源金鑰、所使用之視覺狀態集合的變更，以及對 Windows 10 預設樣式的效能改進/範本. 我們建議您為 Windows 10 編輯控制項預設範本的全新複本，然後將樣式和範本自訂重新套用至該元件。
+**請注意**   PointerOver 視覺狀態與 Windows 10 應用程式中的自訂樣式/範本有關，但不適用於 Windows Phone Silverlight 應用程式。 您現有的自訂樣式/範本可能不適用於 Windows 10 應用程式的其他原因，包括您使用的系統資源金鑰、所使用之視覺狀態集合的變更，以及對 Windows 10 預設樣式/範本所做的效能改進。 我們建議您為 Windows 10 編輯控制項預設範本的全新複本，然後將樣式和範本自訂重新套用至該元件。
 
 如需 UWP 控制項的詳細資訊，請參閱[依功能分類的控制項](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function)、[控制項清單](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/)，以及[控制項的指導方針](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index)。
 
@@ -209,7 +209,7 @@ Windows Phone 的 Silverlight 應用程式與 Windows 10 應用程式之間的�
 
 ## <a name="localization-and-globalization"></a>當地語系化和全球化
 
-針對當地語系化的字串，您可以從 UWP 應用程式專案中的 Windows Phone Silverlight 專案重複使用 .resx 檔案。 請將檔案複製過去、將它新增到專案中，然後將它重新命名為 Resources.resw，以便讓查詢機制預設會尋找它。 將 [**建置動作**] 設定為 [**PRIResource**]，將 [**複製到輸出目錄**] 設定為 [**不要複製**]。 然後，您便可以藉由在 XAML 元素上指定 **X:uid** 屬性，在標記中使用這些字串。 請參閱[快速入門：使用字串資源 @ no__t-0。
+針對當地語系化的字串，您可以從 UWP 應用程式專案中的 Windows Phone Silverlight 專案重複使用 .resx 檔案。 請將檔案複製過去、將它新增到專案中，然後將它重新命名為 Resources.resw，以便讓查詢機制預設會尋找它。 將 [**建置動作**] 設定為 [**PRIResource**]，將 [**複製到輸出目錄**] 設定為 [**不要複製**]。 然後，您便可以藉由在 XAML 元素上指定 **X:uid** 屬性，在標記中使用這些字串。 請參閱[快速入門：使用字串資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))。
 
 Windows Phone Silverlight 應用程式會使用**CultureInfo**類別來協助全球化應用程式。 UWP app 使用 MRT (現代資源技術)，不論是在執行階段和 Visual Studio 設計介面中，都能動態載入 app 資源 (當地語系化、縮放及佈景主題)。 如需詳細資訊，請參閱[檔案、資料和全球化的指導方針](https://docs.microsoft.com/windows/uwp/design/usability/index)。
 
@@ -219,9 +219,9 @@ Windows Phone Silverlight 應用程式會使用**CultureInfo**類別來協助全
 
 當您閱讀 UWP 媒體和圖形的相關資料時，請記住，Windows 設計原則鼓勵大幅減少任何多餘的項目，包括圖形複雜性和雜亂度。 Windows 設計是以乾淨簡潔的視覺效果、印刷樣式及移動為代表。 如果您的 app 遵守相同的原則，它看起來就會更像內建的 app。
 
-Windows Phone Silverlight 具有不存在於 UWP 中的**RadialGradientBrush**類型，但是其他[**筆刷**](/uwp/api/Windows.UI.Xaml.Media.Brush)類型為。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 和 XAML C++ UWP 中使用 Direct2D 來[建立放射狀漸層筆刷](https://docs.microsoft.com/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush)。
+Windows Phone Silverlight 具有不存在於 UWP 中的**RadialGradientBrush**類型，但是其他[**筆刷**](/uwp/api/Windows.UI.Xaml.Media.Brush)類型為。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush) 和 XAML C++ UWP 中使用 Direct2D 來[建立放射狀漸層筆刷](https://docs.microsoft.com/windows/desktop/directx)。
 
-Windows Phone Silverlight 具有**OpacityMask**屬性，但該屬性不是 UWP [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)類型的成員。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 而您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 和 XAML C++ UWP app 中使用 Direct2D 來[建立不透明度遮罩](https://docs.microsoft.com/windows/desktop/Direct2D/opacity-masks-overview)。 但是 **OpacityMask** 的一般使用案例是使用同時適合淺色和深色佈景主題的單一點陣圖。 針對向量圖形，您可以使用佈景主題感知系統筆刷 (例如下面所述的圓形圖)。 但是製作佈景主題感知點陣圖 (例如下面所述的核取記號) 需要不同的方法。
+Windows Phone Silverlight 具有**OpacityMask**屬性，但該屬性不是 UWP [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)類型的成員。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 而您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/opacity-masks-overview) 和 XAML C++ UWP app 中使用 Direct2D 來[建立不透明度遮罩](https://docs.microsoft.com/windows/desktop/directx)。 但是 **OpacityMask** 的一般使用案例是使用同時適合淺色和深色佈景主題的單一點陣圖。 針對向量圖形，您可以使用佈景主題感知系統筆刷 (例如下面所述的圓形圖)。 但是製作佈景主題感知點陣圖 (例如下面所述的核取記號) 需要不同的方法。
 
 ![佈景主題感知點陣圖](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 
@@ -241,7 +241,7 @@ Windows Phone Silverlight 具有**OpacityMask**屬性，但該屬性不是 UWP�
     <BitmapIcon UriSource="Assets/winrt_check.png" Width="21" Height="21"/>
 ```
 
-在這裡，winrt\_check.png 是點陣圖形式的 Alpha 遮罩，就像 wpsl\_check.png 一樣，而且也可以是相同的檔案。 不過，您可能會想要提供數種不同大小的 winrt\_check.png，以用於不同的縮放比例因素。 如需有關該事項的詳細資訊，以及對 **Width** 和 **Height** 值所做之變更的說明，請參閱本主題中的[檢視或有效像素、檢視距離及縮放比例](#view-or-effective-pixels-viewing-distance-and-scale-factors)。
+在這裡，winrt\_檢查。 .png 是點陣圖格式的 Alpha mask，如同 wpsl\_檢查。 .png 是，它也可以是相同的檔案。 不過，您可能會想要提供數個不同大小的 winrt\_檢查，以用於不同的縮放比例因素。 如需有關該事項的詳細資訊，以及對 **Width** 和 **Height** 值所做之變更的說明，請參閱本主題中的[檢視或有效像素、檢視距離及縮放比例](#view-or-effective-pixels-viewing-distance-and-scale-factors)。
 
 如果點陣圖的淺色和深色形式有差異，有一個適合此情況的更普遍方法，就是使用兩個影像資產：一個具有深色前景 (用於淺色佈景主題)，另一個具有淺色前景 (用於深色佈景主題)。 如需有關如何為這組點陣圖資產命名的進一步詳細資訊，請參閱[針對語言、規模和其他限定詞量身打造您的資源](../app-resources/tailor-resources-lang-scale-contrast.md)。 正確命名一組影像檔之後，您便可以在摘要中使用它們的根名稱來參考它們，就像這樣：
 
@@ -257,9 +257,9 @@ Windows Phone Silverlight 具有**OpacityMask**屬性，但該屬性不是 UWP�
     </UIElement.Clip>
 ```
 
-請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 與 XAML C++ UWP app 中使用 Direct2D，以[使用任意幾何圖形做為圖層中的遮罩](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-layers-overview)。
+請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-layers-overview) 與 XAML C++ UWP app 中使用 Direct2D，以[使用任意幾何圖形做為圖層中的遮罩](https://docs.microsoft.com/windows/desktop/directx)。
 
-## <a name="navigation"></a>巡覽
+## <a name="navigation"></a>瀏覽
 
 當您流覽至 Windows Phone Silverlight 應用程式中的頁面時，您會使用統一資源識別元（URI）定址配置：
 
@@ -374,11 +374,11 @@ Silverlight 應用程式和 Windows 10 應用程式 Windows Phone 的方式，�
 
 為使您的應用程式在所有顯示器上都能有最佳體驗，建議您在某個大小範圍內個別建立適用於各個特定縮放比例的點陣圖資產。 提供 100%、200% 及 400% 的縮放比例 (並以此順序做為其優先順序)，可讓您在大部分情況下利用所有的中繼縮放係數獲得絕佳的結果。
 
-**請注意**  If，無論何種原因，您都無法以多個大小建立資產，然後建立 100% 規模的資產。 在 Microsoft Visual Studio 中，UWP app 的預設專案範本只會提供一種大小的商標資產 (磚影像和標誌)，但其縮放比例不是 100%。 在為您自己的應用程式製作資產時，請遵循本節中的指導方針，提供 100%、 200%及 400% 的大小，並使用資產套件。
+**請注意**  如果您基於任何原因而無法建立多個大小的資產，則建立100% 規模的資產。 在 Microsoft Visual Studio 中，UWP app 的預設專案範本只會提供一種大小的商標資產 (磚影像和標誌)，但其縮放比例不是 100%。 在為您自己的應用程式製作資產時，請遵循本節中的指導方針，提供 100%、 200%及 400% 的大小，並使用資產套件。
 
 如果您有複雜的圖檔，您可以用更多大小來提供您的資產。 如果您開始使用向量藝術，則使用任何縮放比例來產生高品質的資產，相對來說就容易許多。
 
-我們不建議您嘗試支援所有的規模因素，但 Windows 10 應用程式的擴展因素完整清單是 100%、125%、150%、200%、250%、300% 和 400%。 若有提供，市集將會為每個裝置挑選大小正確的資產，同時只會下載那些資產。 市集會根據裝置的 DPI 來選取要下載的資產。
+我們不建議您嘗試支援所有的規模因素，但 Windows 10 應用程式的擴展因素完整清單是100%、125%、150%、200%、250%、300% 和400%。 若有提供，市集將會為每個裝置挑選大小正確的資產，同時只會下載那些資產。 市集會根據裝置的 DPI 來選取要下載的資產。
 
 如需詳細資訊，請參閱[適用於 UWP App 的回應式設計入門](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)。
 

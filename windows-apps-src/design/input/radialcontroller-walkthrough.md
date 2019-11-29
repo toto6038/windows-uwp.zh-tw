@@ -15,7 +15,7 @@ ms.locfileid: "74258290"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>教學：在您的 UWP app 中支援 Surface Dial (及其他轉盤裝置)
 
-![Image of Surface Dial with Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
+使用 Surface Studio 進行介面撥號的 ![影像](images/radialcontroller/dial-pen-studio-600px.png)  
 *配備 Surface Studio 和 Surface 手寫筆的 Surface Dial* (可在 [Microsoft 網上商店](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)購買)。
 
 本教學課程逐步解說如何自訂轉盤裝置 (例如 Surface Dial) 所支援的使用者互動體驗。 我們會使用範例應用程式的程式碼片段，這您可以從 GitHub 下載 (請參閱[範例程式碼](#sample-code))，來展示每個步驟中所討論的各種不同功能和相關 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) API。
@@ -42,11 +42,11 @@ Dial 支援三個基本手勢︰
 
 * 執行 Windows 10 Creators Update 或更新版本的電腦 (或虛擬機器)
 * [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK （10.0.15063.0）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 轉盤裝置 (這次僅限 [Surface Dial](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116))
 * 如果您是使用 Visual Studio 開發通用 Windows 平台 (UWP) app 的新手，請在您開始本教學課程之前參閱這些主題︰  
     * [開始設定](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [建立 "Hello，world" 應用程式（XAML）](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## <a name="set-up-your-devices"></a>設定您的裝置
 
@@ -58,13 +58,13 @@ Dial 支援三個基本手勢︰
 6. 返回您的 Windows 裝置並選取 **\[新增藍牙或其他裝置\]** 。
 7. 在 **\[新增裝置\]** 對話方塊中，選取 **\[藍牙\]**  >  **\[Surface Dial\]** 。 您的 Surface Dial 現在應該連接，而且新增到 **\[藍牙與其他裝置\]** 設定頁面上 **\[滑鼠、鍵盤和手寫筆\]** 下的裝置清單。
 8. 按住幾秒鐘以顯示內建功能表，測試 Dial。
-9. If the menu isn't displayed on your screen (the Dial should also vibrate), go back to the Bluetooth settings, remove the device, and try connecting the device again.
+9. 如果功能表未顯示在您的螢幕上（也就是撥號也會震動），請回到藍牙設定，移除裝置，然後再次嘗試連接裝置。
 
 > [!NOTE]
 > 轉盤裝置可以透過 **\[轉盤\]** 設定進行設定︰
 > 1. 在 **\[開始\]** 功能表上，選取 **\[設定\]** 。
 > 2. 選取 **\[裝置\]**  >  **\[轉盤\]** 。    
-> ![Wheel settings screen](images/radialcontroller/wheel-settings.png)
+> ![滾輪設定畫面](images/radialcontroller/wheel-settings.png)
 
 現在就可以開始本教學課程。 
 
@@ -74,7 +74,7 @@ Dial 支援三個基本手勢︰
 從 [GitHub](https://github.com/) 的 [windows-appsample-get-started-radialcontroller sample](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController) 下載此 Visual Studio 範例和原始程式碼：
 
 1. 選取綠色的 **\[Clone or download\]** (複製或下載) 按鈕。  
-![Cloning the repo](images/radialcontroller/wheel-clone.png)
+![複製存放庫](images/radialcontroller/wheel-clone.png)
 2. 如果您有 GitHub 帳戶，您可以選擇 **\[在 Visual Studio 中開啟\]** 將存放庫複製到您的本機電腦。 
 3. 如果您沒有 GitHub 帳戶，或者您只想要專案的本機複本，請選擇 **\[下載 ZIP\]** (您必須定期返回以下載最新的更新)。
 
@@ -85,10 +85,10 @@ Dial 支援三個基本手勢︰
 
 這些物件提供 UWP app 大量轉盤裝置體驗。
 
-| Component | 說明 |
+| Component | 描述 |
 | --- | --- |
-| [**RadialController** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) and related | 表示轉盤輸入裝置或配件，例如 Surface Dial。 |
-| [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>我們在此不涵蓋此項功能，如需詳細資訊，請參閱 [Windows 的傳統桌面範例](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)。 | 使用 UWP app 啟用互通性。 |
+| [ **RadialController**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)和相關 | 表示轉盤輸入裝置或配件，例如 Surface Dial。 |
+| [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [ **IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>我們在此不涵蓋此項功能，如需詳細資訊，請參閱 [Windows 的傳統桌面範例](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)。 | 使用 UWP app 啟用互通性。 |
 
 ## <a name="step-1-run-the-sample"></a>步驟 1：執行範例
 
@@ -98,7 +98,7 @@ Dial 支援三個基本手勢︰
 3. 按下 F5 進行編譯、部署和執行。 
 
 > [!NOTE]
-> Alternatively, you can select **Debug** > **Start debugging** menu item, or select the **Local Machine** Run button shown here: ![Visual Studio Build project button](images/radialcontroller/wheel-vsrun.png)
+> 或者，您也可以選取 [ **Debug** ] > [**開始調試**] 功能表項目，或選取 [**本機電腦**執行] 按鈕，如下所示： ![Visual Studio 組建專案] 按鈕](images/radialcontroller/wheel-vsrun.png)
 
 應用程式視窗隨即開啟，並在啟動顯示畫面出現幾秒後，您會看到這個初始畫面。
 
@@ -108,7 +108,7 @@ Dial 支援三個基本手勢︰
 
 ## <a name="step-2-basic-radialcontroller-functionality"></a>步驟 2︰基本 RadialController 功能
 
-With the app running and in the foreground, press and hold the Surface Dial to display the **RadialController** menu.
+當應用程式執行並在前景中，按住介面撥號以顯示 [ **RadialController** ] 功能表。
 
 我們尚未完成自訂我們的 App，所以功能表包含預設的內容工具組。 
 
@@ -125,7 +125,7 @@ With the app running and in the foreground, press and hold the Surface Dial to d
 首先，加入我們的 App 的 UI：
 
 1. 請開啟 MainPage_Basic.xaml 檔案，
-2. Find the code marked with the title of this step ("\<!-- Step 3: Add controls for wheel input -->").
+2. 尋找以此步驟的標題標示的程式碼（「\<!--步驟3：新增適用于輪子輸入的控制項-->」）。
 3. 取消註解下列行。
 
     ```xaml
@@ -206,7 +206,7 @@ With the app running and in the foreground, press and hold the Surface Dial to d
         }
         ```
 
-    - 以下，我們初始化我們的自訂 RadialController 功能表項目。 我們使用 [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) 取得[RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) 物件的參照，我們使用 [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) 屬性將旋轉敏感度設定為「1」，然後我們使用 [CreateFromFontGlyph](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph) 建立我們的 [RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem)，我們新增功能表項目到 **RadialController** 功能表項目集合，最後我們使用 [SetDefaultMenuItems](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) 清除預設功能表項目，並只保留我們的自訂工具。 
+    - 以下，我們初始化我們的自訂 RadialController 功能表項目。 我們使用 [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) 取得[RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) 物件的參照，我們使用 [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) 屬性將旋轉敏感度設定為「1」，然後我們使用 [CreateFromFontGlyph](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem) 建立我們的 [RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph)，我們新增功能表項目到 **RadialController** 功能表項目集合，最後我們使用 [SetDefaultMenuItems](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) 清除預設功能表項目，並只保留我們的自訂工具。 
 
         ```csharp
         // Configure RadialController menu and custom tool.
@@ -358,7 +358,7 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
     ```
 4. 請開啟 MainPage_Haptics.xaml 檔案，
-5. Find the code marked with the title of this step ("\<!-- Step 6: Customize the device haptics -->").
+5. 尋找以此步驟的標題標示的程式碼（「\<!--步驟6：自訂裝置 haptics-->」）。
 6. 取消註解下列行。 (此 UI 程式碼只指出目前裝置所支援的觸覺回饋技術功能)。    
 
     ```xaml
@@ -615,32 +615,32 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
 
 ## <a name="related-articles"></a>相關文章
 
-[Surface Dial interactions](windows-wheel-interactions.md)
+[介面撥號互動](windows-wheel-interactions.md)
 
-### <a name="api-reference"></a>API 參考
+### <a name="api-reference"></a>API 參考資料
 
-- [**RadialController** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
-- [**RadialControllerButtonClickedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
-- [**RadialControllerConfiguration** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
-- [**RadialControllerControlAcquiredEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
-- [**RadialControllerMenu** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenu) 
-- [**RadialControllerMenuItem** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
-- [**RadialControllerRotationChangedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
-- [**RadialControllerScreenContact** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
-- [**RadialControllerScreenContactContinuedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
-- [**RadialControllerScreenContactStartedEventArgs** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
-- [**RadialControllerMenuKnownIcon** enum](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
-- [**RadialControllerSystemMenuItemKind** enum](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+- [**RadialController**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
+- [**RadialControllerButtonClickedEventArgs**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**RadialControllerConfiguration**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
+- [**RadialControllerControlAcquiredEventArgs**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**RadialControllerMenu**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenu) 
+- [**RadialControllerMenuItem**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
+- [**RadialControllerRotationChangedEventArgs**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**RadialControllerScreenContact**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
+- [**RadialControllerScreenContactContinuedEventArgs**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**RadialControllerScreenContactStartedEventArgs**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**RadialControllerMenuKnownIcon**列舉](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
+- [**RadialControllerSystemMenuItemKind**列舉](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### <a name="samples"></a>範例
 
 #### <a name="topic-samples"></a>主題範例
 
-[RadialController customization](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
+[RadialController 自訂](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
 
 #### <a name="other-samples"></a>其他範例
-[Coloring Book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
+[著色書籍範例](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
 [通用 Windows 平台範例 (C# 和 C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
 
-[Windows classic desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)
+[Windows 傳統桌面範例](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)

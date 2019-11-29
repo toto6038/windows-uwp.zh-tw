@@ -4,7 +4,7 @@ description: 本文說明如何使用 SceneAnalysisEffect 和FaceDetectionEffect
 title: 分析相機畫面的效果
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 406af54cfaae8710cea2d989278a16f28c8dd619
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -45,7 +45,7 @@ ms.locfileid: "74256210"
 
 在您的 app 中初始化 **MediaCapture** 物件之後，建立 [**SceneAnalysisEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.SceneAnalysisEffectDefinition) 的新執行個體。
 
-使用擷取裝置註冊效果，方法是在您的 **MediaCapture** 物件上呼叫 [**AddVideoEffectAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync)，提供 **SceneAnalysisEffectDefinition** 並且指定 [**MediaStreamType.VideoPreview**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) 以表示效果應該套用至影片預覽串流，而不是擷取串流。 **AddVideoEffectAsync** 會傳回新增之效果的執行個體。 因為這個方法可以用於多個效果類型，所以您必須將傳回的執行個體轉換為 [**SceneAnalysisEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.SceneAnalysisEffect) 物件。
+使用擷取裝置註冊效果，方法是在您的 [MediaCapture**物件上呼叫**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync)AddVideoEffectAsync，提供 **SceneAnalysisEffectDefinition** 並且指定 [**MediaStreamType.VideoPreview**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) 以表示效果應該套用至影片預覽串流，而不是擷取串流。 **AddVideoEffectAsync** 會傳回新增之效果的執行個體。 因為這個方法可以用於多個效果類型，所以您必須將傳回的執行個體轉換為 [**SceneAnalysisEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.SceneAnalysisEffect) 物件。
 
 若要接收場景分析的結果，您必須註冊 [**SceneAnalyzed**](https://docs.microsoft.com/uwp/api/windows.media.core.sceneanalysiseffect.sceneanalyzed) 事件的處理常式。
 
@@ -85,7 +85,7 @@ ms.locfileid: "74256210"
 
 在您的 app 中初始化 **MediaCapture** 物件之後，建立 [**FaceDetectionEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectionEffectDefinition) 的新執行個體。 設定 [**DetectionMode**](https://docs.microsoft.com/uwp/api/windows.media.core.facedetectioneffectdefinition.detectionmode) 屬性以設定優先順序，讓臉部偵測更快速或者準確度更高。 設定 [**SynchronousDetectionEnabled**](https://docs.microsoft.com/uwp/api/windows.media.core.facedetectioneffectdefinition.synchronousdetectionenabled) 以指定傳入框架不因為等待臉部偵測完成而延遲，因為這可能會導致不穩定的預覽經驗。
 
-使用擷取裝置註冊效果，方法是在您的 **MediaCapture** 物件上呼叫 [**AddVideoEffectAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync)，提供 **FaceDetectionEffectDefinition** 並且指定 [**MediaStreamType.VideoPreview**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) 以表示效果應該套用至影片預覽串流，而不是擷取串流。 **AddVideoEffectAsync** 會傳回新增之效果的執行個體。 因為這個方法可以用於多個效果類型，所以您必須將傳回的執行個體轉換為 [**FaceDetectionEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectionEffect) 物件。
+使用擷取裝置註冊效果，方法是在您的 [MediaCapture**物件上呼叫**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync)AddVideoEffectAsync，提供 **FaceDetectionEffectDefinition** 並且指定 [**MediaStreamType.VideoPreview**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) 以表示效果應該套用至影片預覽串流，而不是擷取串流。 **AddVideoEffectAsync** 會傳回新增之效果的執行個體。 因為這個方法可以用於多個效果類型，所以您必須將傳回的執行個體轉換為 [**FaceDetectionEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectionEffect) 物件。
 
 藉由設定 [**FaceDetectionEffect.Enabled**](https://docs.microsoft.com/uwp/api/windows.media.core.facedetectioneffect.enabled) 屬性，即可啟用或停用這些效果。 藉由設定 [**FaceDetectionEffect.DesiredDetectionInterval**](https://docs.microsoft.com/uwp/api/windows.media.core.facedetectioneffect.desireddetectioninterval) 屬性，調整效果分析框架的頻率。 媒體擷取正在進行時可以調整這兩個屬性。
 
@@ -97,7 +97,7 @@ ms.locfileid: "74256210"
 
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-在事件處理常式中，您可以取得框架中偵測到的所有臉部的清單，方法是存取 [**FaceDetectedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectedEventArgs) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://docs.microsoft.com/uwp/api/windows.media.core.facedetectioneffectframe.detectedfaces) 屬性。 [  **FaceBox**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.detectedface.facebox) 屬性是 [**BitmapBounds**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBounds) 結構，以預覽串流維度相對的單位來描述包含所偵測臉部的矩形。 若要檢視會將預覽串流座標轉換成畫面座標的範例程式碼，請參閱[臉部偵測 UWP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFaceDetection)。
+在事件處理常式中，您可以取得框架中偵測到的所有臉部的清單，方法是存取 [**FaceDetectedEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.facedetectioneffectframe.detectedfaces) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectedEventArgs) 屬性。 [  **FaceBox**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.detectedface.facebox) 屬性是 [**BitmapBounds**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBounds) 結構，以預覽串流維度相對的單位來描述包含所偵測臉部的矩形。 若要檢視會將預覽串流座標轉換成畫面座標的範例程式碼，請參閱[臉部偵測 UWP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFaceDetection)。
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 
@@ -109,14 +109,14 @@ ms.locfileid: "74256210"
 
 ### <a name="check-for-focus-and-exposure-support-for-detected-faces"></a>檢查偵測到的臉部的對焦和曝光支援
 
-並非所有裝置都有可以根據偵測到的臉部調整其焦點和曝光的擷取裝置。 因為臉部偵測會耗用裝置資源，所以您可能只想要在可以使用功能以增強擷取的裝置上啟用臉部偵測。 若要查看臉部型擷取最佳化是否可用，取得適用於您的初始化 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 的 [**VideoDeviceController**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController)，然後取得影片裝置控制器的 [**RegionsOfInterestControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.RegionsOfInterestControl)。 檢查以查看 [**MaxRegions**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.maxregions) 是否支援至少一個區域。 然後檢查以查看 [**AutoExposureSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.autoexposuresupported) 或 [**AutoFocusSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.autofocussupported) 是否為 true。 如果符合這些條件，則裝置可以利用臉部偵測來增強擷取。
+並非所有裝置都有可以根據偵測到的臉部調整其焦點和曝光的擷取裝置。 因為臉部偵測會耗用裝置資源，所以您可能只想要在可以使用功能以增強擷取的裝置上啟用臉部偵測。 若要查看臉部型擷取最佳化是否可用，取得適用於您的初始化 [MediaCapture**的**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController)VideoDeviceController[](capture-photos-and-video-with-mediacapture.md)，然後取得影片裝置控制器的 [**RegionsOfInterestControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.RegionsOfInterestControl)。 檢查以查看 [**MaxRegions**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.maxregions) 是否支援至少一個區域。 然後檢查以查看 [**AutoExposureSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.autoexposuresupported) 或 [**AutoFocusSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.autofocussupported) 是否為 true。 如果符合這些條件，則裝置可以利用臉部偵測來增強擷取。
 
 [!code-cs[AreFaceFocusAndExposureSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAreFaceFocusAndExposureSupported)]
 
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [具有 MediaCapture 的基本相片、影片和音訊捕獲](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

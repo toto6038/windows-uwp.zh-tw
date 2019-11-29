@@ -1,10 +1,10 @@
 ---
-Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
+Description: 查看 Microsoft Store 所指派給您應用程式之唯一身分識別的相關詳細資料，並取得應用程式商店清單的連結。
 title: 檢視應用程式身分識別詳細資料
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 07c2d3308d204d37e246a9a56c0a7203a1340dc0
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -16,20 +16,20 @@ ms.locfileid: "74259884"
 # <a name="view-app-identity-details"></a>檢視應用程式身分識別詳細資料
 
 
-You can view details related to the unique identity assigned to your app by the Microsoft Store on its **App identity** pages. You can also get a link to your app's Store listing on this page.
+您可以透過 [**應用程式識別**] 頁面上的 Microsoft Store，來查看指派給應用程式之唯一身分識別的相關詳細資料。 您也可以在此頁面上取得應用程式商店清單的連結。
 
-若要尋找這項資訊，請瀏覽到其中一個 app，然後在左方導覽功能表中展開 **\[應用程式管理\]** 。 選取 **\[應用程式身分識別\]** 可檢視這些詳細資料。
+若要尋找這項資訊，請瀏覽到其中一個 app，然後在左方導覽功能表中展開 [應用程式管理]。 選取 **\[應用程式身分識別\]** 可檢視這些詳細資料。
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>app 套件資訊清單中包含的值
 
-The following values must be included in your package manifest. 如果您[使用 Microsoft Visual Studio 建立套件](/windows/msix/package/packaging-uwp-apps)，並且使用與您開發人員帳戶關聯的相同 Microsoft 帳戶進行簽署，這些詳細資料就會自動包含在內。 如果您手動建立套件，您就必須加入下列這些項目：
+您的封裝資訊清單中必須包含下列值。 如果您[使用 Microsoft Visual Studio 建立套件](/windows/msix/package/packaging-uwp-apps)，並且使用與您開發人員帳戶關聯的相同 Microsoft 帳戶進行簽署，這些詳細資料就會自動包含在內。 如果您手動建立套件，您就必須加入下列這些項目：
 
--   **Package/Identity/Name**
--   **Package/Identity/Publisher**
--   **Package/Properties/PublisherDisplayName**
+-   **封裝/身分識別/名稱**
+-   **封裝/身分識別/發行者**
+-   **封裝/屬性/PublisherDisplayName**
 
-如需詳細資訊，請參閱[套件資訊清單結構描述參考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
+如需詳細資訊，請參閱[套件資訊清單結構描述參考**中的** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)Identity[](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)。
 
 這些元素共同宣告您的 app 身分識別，建立所有其套件所屬的「套件系列」。 個別套件會有額外的詳細資料，例如架構和版本。
 
