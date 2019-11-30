@@ -3,15 +3,15 @@ title: 適用于側載 UWP 應用程式的代理 Windows 執行階段元件
 description: 本檔討論 Windows 10 支援的企業目標功能，讓觸控式 .NET 應用程式可以使用現有程式碼，負責重要的業務關鍵作業。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: 77993256752f081c5abc4f56164d0846c2b61060
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4d35945c803df2c4f84c5085de0a27a5d6731545
+ms.sourcegitcommit: c8634b15b10bd196e7e2f876ae26e1205e160c91
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258763"
+ms.lasthandoff: 11/29/2019
+ms.locfileid: "74663545"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>適用于側載 UWP 應用程式的代理 Windows 執行階段元件
 
@@ -181,7 +181,7 @@ namespace Fabrikam
 
 <ActivatableClass> 區段會和應用程式套件中 Windows 執行階段元件偏好的真正同處理序 RuntimeClass 相同。 <ActivatableClassAttribute> 是新的專案，且屬性 Name = "DesktopApplicationPath" 和 Type = "string" 是強制性和不變的。 值屬性指向桌面元件實作 winmd 所在的位置 (下節會有更詳盡的資訊)。 桌面元件偏好的每個 RuntimeClass 都應該有自己的 <ActivatableClass> 元素樹狀結構。 ActivatableClassId 必須符合 RuntimeClass 的完整命名空間名稱。
 
-如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 在範例中，它是 EnterpriseIPCApplication\\EnterpriseIPCApplication。 手動將參考 **winmd** 複製到第二層目錄，然後使用 [專案參考] 對話方塊 (按一下 [瀏覽..] 按鈕) 尋找並參考此 **winmd**。 在此之後，桌面元件（例如 Fabrikam）的最上層命名空間應該會在專案的 [參考] 部分中顯示為最上層節點。
+如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 在範例中，它是 EnterpriseIPCApplication\\EnterpriseIPCApplication。 手動將參考 **winmd** 複製到第二層目錄，然後使用 [專案參考] 對話方塊 (按一下 **\[瀏覽..\]** 按鈕) 尋找並參考此 **winmd**。 在此之後，桌面元件（例如 Fabrikam）的最上層命名空間應該會在專案的 [參考] 部分中顯示為最上層節點。
 
 >**注意** 在側載應用程式中使用 **reference winmd** 非常重要。 如果您不小心將 **implementation winmd** 帶到側載應用程式目錄並參考它，很可能會收到與「找不到 IStringable」相關的錯誤。 這是參考錯誤 **winmd** 的明顯指標。 IPC 伺服器應用程式的建置後規則 (下節會有詳細說明) 很謹慎地將這兩個 **winmd** 隔離在兩個獨立的目錄中。
 
@@ -419,7 +419,7 @@ namespace Fabrikam
 
 **安裝**
 
-若要安裝應用程式，請將實作 **winmd** 複製到相關側載應用程式資訊清單指定的正確目錄：<ActivatableClassAttribute> 值="path"。 同時，複製所有相關支援檔案及 proxy/stub dll (下方將涵蓋後者的詳細資料)。 如果沒有將實作 winmd 複製到伺服器目錄位置，會導致所有側載應用程式呼叫變成新的，且 RuntimeClass 會擲回「類別未登錄」錯誤。 無法安裝 proxy/stub (或無法登錄) 將導致所有呼叫失敗，且不會傳回值。 後者的錯誤通常與可見例外狀況無關。
+若要安裝應用程式，請將實作 **winmd** 複製到相關側載應用程式資訊清單指定的正確目錄：<ActivatableClassAttribute> 值="path"。 同時，複製所有相關支援檔案及 proxy/stub dll (下方將涵蓋後者的詳細資料)。 如果沒有將實作 **winmd** 複製到伺服器目錄位置，會導致所有側載應用程式呼叫變成新的，且 RuntimeClass 會擲回「類別未登錄」錯誤。 無法安裝 proxy/stub (或無法登錄) 將導致所有呼叫失敗，且不會傳回值。 後者的錯誤通常與可見例外狀況**無關**。
 如果因這個設定錯誤發生例外狀況，可能會以「無效的轉型」表示。
 
 **伺服器執行考慮**
@@ -493,9 +493,9 @@ a) Dlldata.c
 
 b）標頭檔（例如，MyWinRTComponent）
 
-c）\_i. c 檔案的 \*（例如，MyWinRTComponent\_i. c）
+c） \_i. c 檔案的 \*（例如，MyWinRTComponent\_i. c）
 
-d）\_p. c 檔案的 \*（例如 MyWinRTComponent\_p. c）
+d） \_p. c 檔案的 \*（例如 MyWinRTComponent\_p. c）
 
 **步驟 5：** 將這四個產生的檔案新增到 "MyWinRTProxy" 專案。
 
@@ -553,7 +553,7 @@ MyWinRTComponent.Proxies
 
 -   大量傳輸結果會降低跨處理程序的交談功能。 這通常是使用 Windows 執行階段陣列建構來執行。
 
--   傳回 *List<T>* ，其中 *T* 是來自非同步作業或屬性擷取的物件，會產生很多跨處理程序交談。 例如，假設您傳回 *List&lt;People&gt;* 物件。 每個反覆運算傳輸都是一個跨處理程序呼叫。 每個傳回的 *People* 物件都以 Proxy 表示，每個個別物件方法或屬性的呼叫會產生跨處理程序呼叫。 *Count&lt; 中單純的 &gt;List*People 物件是大型物件，會導致大量緩慢的呼叫。 大量傳輸陣列中的內容結構會產生較佳的效能。 例如：
+-   傳回 *List<T>* ，其中 *T* 是來自非同步作業或屬性擷取的物件，會產生很多跨處理程序交談。 例如，假設您傳回 *List&lt;People&gt;* 物件。 每個反覆運算傳輸都是一個跨處理程序呼叫。 每個傳回的 *People* 物件都以 Proxy 表示，每個個別物件方法或屬性的呼叫會產生跨處理程序呼叫。 *Count* 中單純的 *List&lt;People&gt;* 物件是大型物件，會導致大量緩慢的呼叫。 大量傳輸陣列中的內容結構會產生較佳的效能。 例如：
 
 ```csharp
 struct PersonStruct
@@ -565,7 +565,7 @@ struct PersonStruct
 }
 ```
 
-然後傳回 * PersonStruct\[\]*，而不是*List&lt;PersonObject&gt;* 。
+然後傳回*PersonStruct\[\]* ，而不是*List&lt;PersonObject&gt;* 。
 這會在一個跨處理程序 "hop" 取得所有的資料。
 
 與所有效能考量一樣，測量和測試非常重要。 在理想的情況下，應該將遙測插入各種作業以判斷作業所花的時間。 務必要測量一整個範圍：例如，側載應用程式中的特定查詢實際上花了多少時間使用所有的 *People* 物件？
@@ -577,7 +577,7 @@ struct PersonStruct
 
 當您變更伺服器時，必須確定所有先前執行中的執行個體已不再執行。 COM 最終將清除這個處理序，但是取消計時器的時間會比反覆開發的有效時間還長。 因此，刪除先前執行中的執行個體是開發期間的一個標準步驟。 這需要開發人員持續追蹤哪一個 dllhost 執行個體正在裝載伺服器。
 
-您可以使用 [工作管理員] 或其他協力廠商應用程式，找出伺服器處理序並予以刪除。 同時也會隨附命令列工具 **TaskList.exe **，其中包含彈性語法，例如：
+您可以使用 [工作管理員] 或其他協力廠商應用程式，找出伺服器處理序並予以刪除。 命令列工具**TaskList .exe**也包含在內，而且具有彈性的語法，例如：
 
   
  | **命令** | **動作** |
