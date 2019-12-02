@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, 檔案路徑, PYTHONPATH, python 部署, python 封裝
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4132ef0089ee707367666b4d6340333e538b1130
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 6dbf86e0f9435e44140159ebb2bcbc3d67928999
+ms.sourcegitcommit: c8634b15b10bd196e7e2f876ae26e1205e160c91
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72313381"
+ms.lasthandoff: 11/29/2019
+ms.locfileid: "74663555"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>在 Windows 上使用 Python 的常見問題
 
@@ -47,7 +47,7 @@ ms.locfileid: "72313381"
 
 Python 字串會針對特殊字元使用「逸出」。 例如，若要在字串中插入換行字元，請鍵入 `\n`。 由於 Windows 上的檔案路徑使用反斜線，因此某些部分可能會轉換為特殊字元。
 
-若要將路徑貼入為 Python 中的字串，請新增 `r` 前置詞。 這表示它是 `raw` 字串，而且除了 \” 以外，不會使用任何逸出字元 (您可能需要移除路徑中的最後一個反斜線)。 因此您的路徑可能如下所示：r"C:\Users\MyName\Documents\Document.txt"
+若要將路徑貼入為 Python 中的字串，請新增 `r` 前置詞。 這表示它是 `raw` 字串，而且除了 \” 以外，不會使用任何逸出字元 (您可能需要移除路徑中的最後一個反斜線)。 因此，路徑可能如下：`r"C:\Users\MyName\Documents\Document.txt"`
 
 在 Python 中使用路徑時，建議使用標準 pathlib 模組。 這可讓您將字串轉換為 Rich 格式的 Path 物件，以一致方式執行路徑操作，不論其是否使用正斜線或反斜線，都可讓您的程式碼在不同的作業系統上更好地運作。
 

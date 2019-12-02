@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: e8bb86bd8d52ff96f010bf41758f1e4602330d52
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 55d512faccfa318156fb0dc28d3f804b53f0fe3d
+ms.sourcegitcommit: 102fdfdf32ba12a8911018d234d71d67ebef61ce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393473"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74551666"
 ---
 # <a name="author-events-in-cwinrt"></a>以 C++/WinRT 撰寫事件
 
-本主題示範如何撰寫一個 Windows 執行階段元件，其包含代表銀行帳戶的執行階段類別，該元件在其餘額進入借方時會引發事件。 也示範一個核心應用程式，其使用銀行帳戶執行階段類別，呼叫調整餘額的函式，並處理所造成的任何事件。
+本主題示範如何撰寫一個 Windows 執行階段元件，其包含代表銀行帳戶的執行階段類別 &mdash; 該銀行帳戶在其餘額進入借方時會引發事件。 本主題也示範一個核心應用程式，其使用銀行帳戶執行階段類別，呼叫調整餘額的函式，並處理所造成的任何事件。
 
 > [!NOTE]
 > 如需安裝和使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
@@ -24,7 +24,7 @@ ms.locfileid: "70393473"
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>建立 Windows 執行階段元件 (BankAccountWRC)
 
-請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **Windows 執行階段元件 (C++/WinRT)** 專案，並將其命名為 *BankAccountWRC* (適用於「銀行帳戶 Windows 執行階段元件」)。 尚未建置專案。
+請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **Windows 執行階段元件 (C++/WinRT)** 專案，並將其命名為 *BankAccountWRC* (適用於「銀行帳戶 Windows 執行階段元件」)。 為 *BankAccountWRC* 專案命名可讓您在本主題的其餘步驟中提供最簡單的使用體驗。 尚未建置專案。
 
 新建立的專案中包含一個名為 `Class.idl` 的檔案。 將該檔案 `BankAccount.idl` 重新命名 (重新命名 `.idl` 檔案也會自動將相依的 `.h` 和 `.cpp` 檔案重新命名)。 以下面的清單取代 `BankAccount.idl` 的內容。
 
@@ -45,7 +45,7 @@ namespace BankAccountWRC
 
 在建置程序期間，執行 `midl.exe` 工具建立元件的 Windows 執行階段中繼資料檔案 (其為 `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`)。 然後，執行 `cppwinrt.exe` 工具 (有 `-component` 選項) 產生原始碼檔案在撰寫您的元件中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BankAccount** 執行階段類別。 這些虛設常式為 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` 與 `BankAccount.cpp`。
 
-以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]  。 這會在檔案總管中開啟專案資料夾。 然後，從 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` 資料夾將虛設常式檔案 `BankAccount.h` 和 `BankAccount.cpp` 複製到包含專案檔案的資料夾中，也就是 `\BankAccountWRC\BankAccountWRC\` 並取代目的地中的檔案。 現在，我們開啟 `BankAccount.h` 與 `BankAccount.cpp` 並實作我們的執行階段類別。 在 `BankAccount.h` 中，將兩個私用成員新增至 (「不是」  原廠實作) BankAccount 的實作。
+以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]  。 這會在檔案總管中開啟專案資料夾。 然後，從 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` 資料夾將虛設常式檔案 `BankAccount.h` 和 `BankAccount.cpp` 複製到包含專案檔案的資料夾中，也就是 `\BankAccountWRC\BankAccountWRC\` 並取代目的地中的檔案。 現在要開啟 `BankAccount.h` 與 `BankAccount.cpp`，並實作我們的執行階段類別。 在 `BankAccount.h` 中，將兩個私用成員新增至 (「不是」  原廠實作) **BankAccount** 的實作。
 
 ```cppwinrt
 // BankAccount.h
@@ -102,9 +102,12 @@ namespace winrt::BankAccountWRC::implementation
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>建立核心應用程式 (BankAccountCoreApp) 以測試 Windows 執行階段元件
 
-現在建立新的專案 (在您的 `BankAccountWRC` 解決方案中，或在新的一個裡)。 建立**核心應用程式 (C++/WinRT)** 專案，並將它命名為 *BankAccountCoreApp*。
+現在建立新的專案 (在您的 *BankAccountWRC* 解決方案中，或在新的解決方案中)。 建立**核心應用程式 (C++/WinRT)** 專案，並將它命名為 *BankAccountCoreApp*。
 
-新增參考，並瀏覽至 `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (或者如果有兩個專案在相同的方案中，新增專案對專案參考)。 按一下 [新增]  ，然後按一下 [確定]  。 現在建置 BankAccountCoreApp。 萬一您看到承載檔案 `readme.txt` 不存在的錯誤，請將該檔案從 Windows 執行階段元件專案中排除，進行重建，然後重建 BankAccountCoreApp。
+> [!NOTE]
+> 如先前所述，Windows 執行階段元件的 Windows 執行階段中繼資料檔案 (命名為 *BankAccountWRC*的專案) 是建立於 `\BankAccountWRC\Debug\BankAccountWRC\` 資料夾中。 該路徑的第一個區段是包含解決方案檔案的資料夾名稱；下一個區段是名為 `Debug` 的子目錄；最後一個區段是為 Windows 執行階段元件所命名的子目錄。 如果您未將專案命名為 *BankAccountWRC*，則您的中繼資料檔案將會在 `\<YourProjectName>\Debug\<YourProjectName>\` 資料夾中。
+
+現在，在核心應用程式專案 (*BankAccountCoreApp*) 新增參考，並瀏覽至 `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (或者如果有兩個專案在相同的解決方案中，新增專案對專案參考)。 按一下 [新增]  ，然後按一下 [確定]  。 現在建置 *BankAccountCoreApp*。 萬一您看到承載檔案 `readme.txt` 不存在的錯誤，請將該檔案從 Windows 執行階段元件專案中排除，進行重建，然後重建 *BankAccountCoreApp*。
 
 在建置程序期間，執行 `cppwinrt.exe` 工具將被參考的 `.winmd` 檔案處理到包含投影類型的原始碼檔案中，在使用元件裡支援您。 適用於您元件執行階段類別的投影類型標頭 &mdash;名為`BankAccountWRC.h`&mdash;會在資料夾 `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\` 中產生。
 
@@ -114,7 +117,7 @@ namespace winrt::BankAccountWRC::implementation
 #include <winrt/BankAccountWRC.h>
 ```
 
-也在 `App.cpp` 中，新增下列程式碼起始一個 BankAccount (使用投影類型的預設建構函式)，註冊事件處理常式，然後導致帳戶進入借方。
+同時，在 `App.cpp` 中，新增下列程式碼以起始一個 **BankAccount** (使用投影類型的預設建構函式)，註冊事件處理常式，然後導致帳戶進入借方。
 
 `WINRT_ASSERT` 是巨集定義，而且會發展為 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 

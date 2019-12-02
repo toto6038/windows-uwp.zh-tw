@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4605f759c554c12368325a7c1e42143319eddede
-ms.sourcegitcommit: 503fa613c65236660350794b4f066eccebe9ac8e
+ms.openlocfilehash: 06cd49ce68de6f1c7a7a29b94c80f0a004a2eca3
+ms.sourcegitcommit: 6b29f0cbdc6e66b44150b3b60e95d67e1f7f56bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74162352"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74478535"
 ---
 # <a name="collections-and-lists"></a>集合和清單
 
@@ -141,7 +141,7 @@ ms.locfileid: "74162352"
 
 ### <a name="examples"></a>範例
 
-這個範例顯示典型的資料格檢視版面配置，在此案例中是針對瀏覽應用程式。 資料格檢視項目的中繼資料通常受限於幾行文字與項目評等。
+這個範例顯示典型的資料格檢視版面配置 ，在此案例中是針對瀏覽應用程式。 資料格檢視項目的中繼資料通常受限於幾行文字與項目評等。
 
 ![資料格檢視配置範例](images/controls_gridview_example02.png)
 
