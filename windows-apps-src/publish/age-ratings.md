@@ -6,16 +6,16 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 年齡分級, 遊戲分級, iarc, 分級, 問卷, 分級委員會, 內容分級
 ms.localizationpriority: medium
-ms.openlocfilehash: bab98b50b1d53451708b7631f74d15947c60d4c8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2e8ffdcf1daf9198ded9658c471e765acf5ab8f3
+ms.sourcegitcommit: 7754c1cb1a348f3311417ea7df3e9d168fe39517
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260048"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74694774"
 ---
 # <a name="age-ratings"></a>年齡分級
 
-**App 提交程序** 的 [\[年齡分級\]](app-submissions.md) 頁面讓您能夠提供 App 的相關資訊，因此，它可以接收到[國際年齡分級聯盟 (IARC)](https://www.globalratings.com/) 分級系統所管理的適當年齡與內容分級。 這些分級與 App 內容的適切性有關，而非 App 目標群眾的年齡。
+[App 提交程序](app-submissions.md) 的 **\[年齡分級\]** 頁面讓您能夠提供 App 的相關資訊，因此，它可以接收到[國際年齡分級聯盟 (IARC)](https://www.globalratings.com/) 分級系統所管理的適當年齡與內容分級。 這些分級與 App 內容的適切性有關，而非 App 目標群眾的年齡。
 
 ## <a name="answering-the-age-ratings-questionnaire"></a>回答年齡分級問卷
 
@@ -35,9 +35,6 @@ ms.locfileid: "74260048"
 <span id="boards" />
 
 > [!NOTE]
-> 南韓的法律要求遊戲必須經過南韓[遊戲分級委員會](https://www.grb.or.kr/Default.aspx)分級之後，才可在南韓提供使用。 如果您將提交遊戲，而您想要在南韓提供使用時，您必須填寫這個額外區段，並上傳您的分級憑證。 請注意，如果您的 app 不是遊戲，或您不想在南韓提供 app，您可以將此區塊保留空白。
-
-> [!NOTE]
 > 如果您要提交會在台灣上市的遊戲，法律規定您必須使用[此表單](https://www.gamerating.org.tw/company_login.php)來登錄提供的 CSRR 分級。 
 
 <span id="appeal" />
@@ -53,7 +50,7 @@ ms.locfileid: "74260048"
 
 以前是由開發人員指定他們的 App 年齡分級，而非完成問卷。 以下可找到舊版 Microsoft Store 年齡分級明細：
 
-| 年齡分級                           | 描述                            |
+| 年齡分級                           | 說明                            |
 |--------------------------------------|----------------------------------------|
 | 3+ (適合幼童)     | 這些應用程式包含適合幼童的內容。 其中可能包含以非現實卡通手法描述的少量喜劇式暴力。 這些角色與現實人物並無相似或關聯之處。 其中應該沒有會造成幼童害怕的內容，而且並不包含任何裸露、性或犯罪活動的關聯。 此年齡分級的應用程式不可以提供可存取不合適幼童之內容或功能的功能 (例如 12+ 分級類別底下所述不受控制的線上共用資訊)。            |
 | 7+ (適合 7 歲以上)   | 此年齡分級的應用程式和 3+ 應用程式的準則相同，但這些應用程式可包含可能會使低於此年齡層之觀眾感到驚恐的內容，以及未涉及性行為之部分裸露的內容。 此分級應該只用於包含適合兒童之內容的應用程式。                                                                                   |
