@@ -1,18 +1,18 @@
 ---
 Description: 使用 Windows UI 和元件擴充您的傳統型應用程式
-title: 使用 Windows UI 和元件擴充您的傳統型應用程式
+title: 使用 Windows UI 和元件擴充您的應用程式
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a404f2d9f58fc283cf47f47860362c0f5bc8164
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: 4e4d3d22af21b8df3c78afc725ccc0e861934681
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142551"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734984"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>使用現代化的 UWP 元件擴充您的桌面應用程式
 

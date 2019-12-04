@@ -1,17 +1,17 @@
 ---
 description: UI 的背後是商務與資料層。
-title: 將 Windows Phone Silverlight 商務和資料層移植到 UWP
+title: 將 WPSL 的商務和資料層移植到 UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 25d8bba5e1b26613185017642d63128cc2b1f7f6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9548026f0cae4ac414da15ad4ad2aa86f6226cbc
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259085"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734913"
 ---
 #  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>將 Windows Phone Silverlight 商務和資料層移植到 UWP
 

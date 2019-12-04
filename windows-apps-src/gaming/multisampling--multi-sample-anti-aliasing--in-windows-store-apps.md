@@ -1,23 +1,23 @@
 ---
-title: 通用 Windows 平台 (UWP) app 中的多重取樣
-description: 了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。
+title: UWP app 中的多重取樣
+description: 了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) 應用程式中使用多重取樣。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 多重取樣, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 976cdfb5f1dc92f693f7296d6e33d7ccc4c4d6e7
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f4d3e590f99fdf6ca907fcc8fd5b412c5796f474
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318939"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735103"
 ---
-# <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> 多重取樣在通用 Windows 平台 (UWP) 應用程式
+# <a name="span-iddev_gamingmultisampling__multi-sample_anti_aliasing__in_windows_store_appsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>通用 Windows 平臺（UWP）應用程式中的取樣
 
 
 
-了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。 多重取樣 (也稱為多重取樣消除鋸齒) 是一種用來減少鋸齒邊緣外觀的圖形技術。 這項技術的運作方式，是透過在最終的轉譯目標中繪製比實際更多的像素，然後將數值平均，以維持特定像素中「部分」邊緣的外觀。 如需多重取樣在 Direct3D 中的實際運作方式的詳細說明，請參閱[多重取樣消除鋸齒點陣化規則](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules)。
+了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) 應用程式中使用多重取樣。 多重取樣 (也稱為多重取樣消除鋸齒) 是一種用來減少鋸齒邊緣外觀的圖形技術。 這項技術的運作方式，是透過在最終的轉譯目標中繪製比實際更多的像素，然後將數值平均，以維持特定像素中「部分」邊緣的外觀。 如需多重取樣在 Direct3D 中的實際運作方式的詳細說明，請參閱[多重取樣消除鋸齒點陣化規則](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules)。
 
 ## <a name="multisampling-and-the-flip-model-swap-chain"></a>多重取樣與翻轉模型交換鏈結
 
@@ -28,11 +28,11 @@ ms.locfileid: "67318939"
 
 Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保證提供可支援多重取樣的某些緩衝區格式。 圖形裝置支援的格式和取樣計數範圍，通常比基本所需的要多。 多重取樣支援可以在執行階段決定，方法是檢查是否有以特定 DXGI 格式進行多重取樣的功能支援，然後檢查每種支援格式可用的取樣計數。
 
-1.  呼叫 [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) 以找出哪些 DXGI 格式可與多重取樣一起使用。 提供您的遊戲可用的轉譯目標格式。 在轉譯目標和解析目標必須使用相同的格式，因此請查看兩者[ **D3D11\_格式\_支援\_MULTISAMPLE\_RENDERTARGET** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support)並**D3D11\_格式\_支援\_MULTISAMPLE\_解決**。
+1.  呼叫 [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) 以找出哪些 DXGI 格式可與多重取樣一起使用。 提供您的遊戲可用的轉譯目標格式。 轉譯目標和解析目標都必須使用相同的格式，因此，請檢查[**D3D11\_格式\_支援\_** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support)的多重取樣\_RENDERTARGET 和**D3D11\_格式\_支援\_的多級**取樣\_解決。
 
-    **功能層級 9:  **雖然功能層級 9 的裝置[保證紋理的呈現目標格式支援](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85))，多重取樣的解析目標不保證支援。 因此，嘗試使用本主題中描述的多重取樣技術之前，這項檢查是必須的。
+    **功能層級9：  **雖然功能層級9個裝置[保證支援多重取樣轉譯目標格式](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85))，但不保證會針對多級解析目標提供支援。 因此，嘗試使用本主題中描述的多重取樣技術之前，這項檢查是必須的。
 
-    下列程式碼會檢查所有 dxgi 的多重取樣支援\_格式值：
+    下列程式碼會檢查所有 DXGI\_格式值的取樣支援：
 
     ```cpp
     // Determine the format support for multisampling.
@@ -82,11 +82,11 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     }
     ```
 
-    > **附註**  使用[ **ID3D11Device2::CheckMultisampleQualityLevels1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1)而是如果您需要檢查多重取樣支援並排的資源的緩衝區。
+    > **請注意**   使用[**ID3D11Device2：： CheckMultisampleQualityLevels1**](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1) ，但如果您需要檢查已並排顯示資源緩衝區的多級支援。
 
      
 
-3.  建立含有所需之取樣計數的緩衝區和轉譯目標檢視。 使用相同的 DXGI\_格式、 寬度和高度，做為交換鏈結，但指定大於 1 的取樣計數，並使用多重取樣的紋理維度 (**D3D11\_RTV\_維度\_TEXTURE2DMS**為例)。 如有需要，您可以重建含有適合多重取樣的新設定的交換鏈結。
+3.  建立含有所需之取樣計數的緩衝區和轉譯目標檢視。 使用與交換鏈相同的 DXGI\_格式、寬度和高度，但指定大於1的取樣計數，並使用多重取樣材質維度（**D3D11\_RTV\_維度\_TEXTURE2DMS** ）。 如有需要，您可以重建含有適合多重取樣的新設定的交換鏈結。
 
     下列程式碼會建立多重取樣的轉譯目標：
 

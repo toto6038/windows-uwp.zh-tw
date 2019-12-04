@@ -1,17 +1,17 @@
 ---
 Description: 某些類型的應用程式 (多語系字典、翻譯工具等) 需要覆寫應用程式套件組合的預設行為，並將資源建置到應用程式套件中，而不是讓這些資源分散在不同的資源套件中。 本主題說明如何執行這個動作。
-title: 將資源建置到您的應用程式套件，而不是資源套件
+title: 將資源建立到您的應用程式套件
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: f7acabc9858f5a2fa0b6b76d752d2a342959f41f
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: d7a63c44ac8cb6f6b17951cf6515fad33fb83ee9
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682506"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734943"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>將資源建置到您的應用程式套件，而不是資源套件
 
@@ -57,7 +57,7 @@ ms.locfileid: "68682506"
    </default>
 ```
 
-### <a name="how-does-this-work"></a>這是如何運作？
+### <a name="how-does-this-work"></a>這是如何運作的？
 
 Visual Studio 在幕後啟動名為 `MakePri.exe` 的工具來產生所謂「套件資源索引」的檔案，這個檔案描述應用程式所有的資源，包括指出要依據哪些資源限定詞名稱進行自動分割。 如需此工具的詳細資訊，請參閱[使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)。 Visual Studio 將設定檔傳遞至 `MakePri.exe`。 `priconfig.packaging.xml` 檔案的內容會用來做為該設定檔的 `<packaging>` 元素，也就是判斷自動分割的部分。 因此，新增和編輯 `priconfig.packaging.xml`，最後都會影響 Visual Studio 為應用程式所產生的套件資源索引檔案內容，以及應用程式套件組合中套件的內容。
 

@@ -1,22 +1,22 @@
 ---
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
-title: 通用 Windows 平台元件和最佳化互通性
-description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) 應用程式。
+title: 優化 UWP 元件的 interop
+description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 685f862ea0b381195db2670de45c35df67b5fcb9
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 7cc68520bbf83ec637c0814c333dfada2f974d1e
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339532"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735003"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 元件和最佳化 Interop
 
 
-建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) 應用程式。
+建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
 
 ## <a name="best-practices-for-interoperability-with-uwp-components"></a>UWP 元件互通性的最佳做法
 

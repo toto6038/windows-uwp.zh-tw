@@ -130,6 +130,8 @@
               href: controls-and-patterns/swipe.md
             - name: 拖動以重新整理
               href: controls-and-patterns/pull-to-refresh.md
+            - name: 篩選集合
+              href: controls-and-patterns/listview-filtering.md
         - name: 其他集合選項和自訂專案
           items:
             - name: 反轉清單

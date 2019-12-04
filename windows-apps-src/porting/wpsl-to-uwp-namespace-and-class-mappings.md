@@ -1,17 +1,17 @@
 ---
 description: 本主題提供 Windows Phone Silverlight Api 與其通用 Windows 平臺（UWP）對等專案的完整對應。
-title: Windows Phone Silverlight 加入 UWP 命名空間和類別對應
+title: WPSL 至 UWP 命名空間和類別對應
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1af36b43e02c9ee08373098f57ba29c10badb6c8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fdb1dc8ad4b4e61e1ffec294cfbf17e8abcc8586
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259062"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735053"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>Windows Phone Silverlight 加入 UWP API 對應
 
@@ -104,7 +104,7 @@ ms.locfileid: "74259062"
 | **System.Data.Linq.DataContext** 類別 | 沒有直接的對等項目 |
 | **System.Data.Linq.Mapping.ColumnAttribute** 類別 | 沒有直接的對等項目 |
 | **System.Data.Linq.SqlClient.SqlHelpers** 類別 | 沒有直接的對等項目 |
-| 裝置 | |
+| [裝置] | |
 | **Microsoft.Devices**、**Microsoft.Devices.Sensors** 命名空間 | [ [**Windows**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)]、[ [**windows**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.Pnp)]、[node.js]、[Windows]、[[**輸入**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)]、[windows]、[裝置]、[[**感應器**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)命名空間] |
 | **Microsoft.Devices.Camera**、**Microsoft.Devices.PhotoCamera** 類別 | [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture)類別。 還有 [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) 類別 (僅限 Windows)。 |
 | **Microsoft.Devices.CameraButtons** 類別 | [**HardwareButtons**](https://docs.microsoft.com/uwp/api/Windows.Phone.UI.Input.HardwareButtons)類別 |
@@ -116,7 +116,7 @@ ms.locfileid: "74259062"
 | **Microsoft.Devices.Sensors.Accelerometer**、**Compass** 類別 | 在 [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) 命名空間中 |
 | **Microsoft.Devices.Sensors.Gyroscope** 類別 | [**陀螺儀**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)類別 |
 | **Microsoft.Devices.Sensors.Motion** 類別 | [**傾角**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)類別 |
-| 全球化 | |
+| Globalization | |
 | **System.Globalization** 命名空間 | [**Windows. 全球化**](https://docs.microsoft.com/uwp/api/Windows.Globalization)命名空間 |
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentCulture** 屬性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** 屬性 |
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** 屬性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** 屬性 |
@@ -157,7 +157,7 @@ ms.locfileid: "74259062"
 | Location | |
 | **System.Device.Location** 命名空間 | [**Windows. 地理位置**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)命名空間 |
 | **System.Device.GeoCoordinateWatcher** 類別 | [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)類別 |
-| 地圖 | |
+| Maps | |
 | **Microsoft.Phone.Maps** 命名空間 | [**Windows. 服務對應**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)命名空間 |
 | **Microsoft.Phone.Maps.Controls** 命名空間 | [**Windows. UI. app.xaml**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps)命名空間 |
 | **Microsoft.Phone.Maps.Controls.Map** 類別 | [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)類別 |
@@ -166,11 +166,11 @@ ms.locfileid: "74259062"
 | **System.Device.Location.GeoCoordinate** 類別 | [**Geopoint**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)類別 |
 | **Microsoft.Phone.Maps.Services.Route** 類別 | [**Maproute.html**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute)類別 |
 | **Microsoft.Phone.Maps.Services.RouteQuery** 類別 | [**MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder)類別 |
-| 營利 | |
+| 創造營收 | |
 | **Microsoft.Phone.Marketplace** 命名空間 | [**ApplicationModel. Store**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)命名空間 |
-| Media | |
+| [Media] | |
 | **Microsoft.Phone.Media** 命名空間 | [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)類別 |
-| 網路功能 | |
+| 網路 | |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.DeviceNetworkInformation** 類別 | [**Hostname**](https://docs.microsoft.com/uwp/api/Windows.Networking.HostName)、 [**system.net.networkinformation**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation)類別 |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterface** 類別 | [**System.net.networkinformation**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation)類別 |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterfaceInfo** 類別 | [**ConnectionProfile**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile)類別 |

@@ -1,6 +1,6 @@
 ---
 Description: 您可以透過預先定義的方式，使用延伸模組來將您的已封裝傳統型應用程式整合至 Windows 10。
-title: 整合已封裝的桌面應用程式與 Windows 10 和 UWP （桌面橋接器）
+title: 使用桌面橋接器將現有的桌面應用程式現代化
 ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 65724a7524f68535f4ac917c5527ae8de8f2c6fb
-ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
+ms.openlocfilehash: 16afad7724afeea50d379692f0755593e43709bb
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73560684"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734823"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將桌面應用程式與 Windows 10 和 UWP 整合
 

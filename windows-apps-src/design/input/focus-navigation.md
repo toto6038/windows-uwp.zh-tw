@@ -1,6 +1,6 @@
 ---
-title: 適用於鍵盤、遊戲台、遠端控制與協助工具的焦點瀏覽
-Description: 了解如何使用鍵盤進階使用者、 行動不便人士和其他協助工具的需求，以及 10 英呎體驗提供全方位且一致的互動體驗您的 UWP 應用程式及自訂控制項的焦點瀏覽電視螢幕及 Xbox One。
+title: 沒有滑鼠的焦點導覽
+Description: 瞭解如何使用焦點導覽，在您的 UWP 應用程式中提供全方位且一致的互動體驗、鍵盤使用者的自訂控制項、殘障和其他協助工具需求，以及10英尺的經驗電視螢幕和 Xbox One。
 label: ''
 template: detail.hbs
 keywords: 鍵盤, 遊戲控制器, 遙控器, 瀏覽, 方向內部瀏覽, 方向區域, 瀏覽策略, 輸入, 使用者互動, 協助工具, 可用性
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a699ef00b3f377656940e66e6d35bfcba1cc5762
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cb49ed58f03710d44a5c06c15530936885b9beea
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625823"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735093"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>適用於鍵盤、遊戲台、遠端控制與協助工具的焦點瀏覽
 
@@ -58,8 +58,8 @@ ms.locfileid: "57625823"
 
 控制項或控制項群組的 2D 內部瀏覽區域，稱為其「方向區域」。 當焦點移動到此物件時，鍵盤方向鍵 (左、右、上、下) 可用來瀏覽方向區域內的子元素。
 
-![方向性的區域](images/keyboard/directional-area-small.png)
-*2D 內部瀏覽區域或方向 區域中，控制項群組的*
+![方向區域](images/keyboard/directional-area-small.png)
+*控制項群組的2D 內部導覽區域或方向區域*
 
 您可以使用 [XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) 屬性 (其可能值為 [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)、[Enabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) 或 [Disabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)) 管理鍵盤方向鍵的 2D 內部瀏覽。
 
@@ -74,8 +74,8 @@ ms.locfileid: "57625823"
 
 將 **XYFocusKeyboardNavigation** 設為 **Disabled** 則會封鎖控制項及其子元素的方向瀏覽。
 
-![XYFocusKeyboardNavigation 停用行為](images/keyboard/xyfocuskeyboardnav-disabled.gif)
-*XYFocusKeyboardNavigation 停用行為*
+![XYFocusKeyboardNavigation 停用的行為](images/keyboard/xyfocuskeyboardnav-disabled.gif)
+*XYFocusKeyboardNavigation 停用的行為*
 
 在此範例中，主要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 已將 **XYFocusKeyboardNavigation** 設為 **Enabled**。 所有子元素都會繼承此設定，可使用方向鍵進行瀏覽。 但是，B3 和 B4 元素則位於次要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其 **XYFocusKeyboardNavigation** 已設為 **Disabled**，因此會覆寫主要容器並停用自身和其子元素間的方向鍵瀏覽。
 
@@ -131,8 +131,8 @@ ms.locfileid: "57625823"
 
 當設定時，使用方向鍵瀏覽會限制在方向區域內的元素。 Tab 瀏覽不會受到影響，因為所有控制項仍然可透過其定位順序階層進行存取。
 
-![XYFocusKeyboardNavigation 啟用行為](images/keyboard/xyfocuskeyboardnav-enabled.gif)
-*XYFocusKeyboardNavigation 啟用行為*
+已啟用 ![XYFocusKeyboardNavigation 的行為](images/keyboard/xyfocuskeyboardnav-enabled.gif)
+*XYFocusKeyboardNavigation 啟用的行為*
 
 在此範例中，主要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 已將 **XYFocusKeyboardNavigation** 設為 **Enabled**。 所有子元素都會繼承此設定，可使用方向鍵進行瀏覽。 B3 和 B4 元素位於次要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其中並未設定 **XYFocusKeyboardNavigation**，因此會繼承主要容器設定。 B5 元素並未位於宣告的方向區域中，因此不支援方向鍵瀏覽，但支援 Tab 瀏覽行為。
 
@@ -194,8 +194,8 @@ ms.locfileid: "57625823"
 
 以下是位於不明確支援 2D 方向瀏覽元素中兩個巢狀方向區域的範例。 在此案例中，兩個巢狀區域間不支援方向瀏覽。
 
-![啟用，而且巢狀行為 XYFocusKeyboardNavigation](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
-*XYFocusKeyboardNavigation 啟用，而且巢狀的行為*
+已啟用 ![XYFocusKeyboardNavigation 和嵌套行為](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
+*XYFocusKeyboardNavigation 啟用和嵌套的行為*
 
 以下是三個巢狀方向區域更複雜的範例，其中：
 
@@ -205,7 +205,7 @@ ms.locfileid: "57625823"
 
 ![XYFocusKeyboardNavigation 啟用及複雜巢狀行為](images/keyboard/xyfocuskeyboardnav-enabled-nested2.gif)
 
-*XYFocusKeyboardNavigation 啟用，而且複雜巢狀的行為*
+*XYFocusKeyboardNavigation 啟用和複雜的嵌套行為*
 
 ## <a name="tab-navigation"></a>Tab 瀏覽
 
@@ -217,7 +217,7 @@ ms.locfileid: "57625823"
 
 在本節中，我們會描述如何完全自訂此定位順序，使其適合您的應用程式。
 
-### <a name="set-the-tab-navigation-behavior"></a>設定 Tab 瀏覽行為 
+### <a name="set-the-tab-navigation-behavior"></a>設定 Tab 瀏覽行為
 
 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的 [TabFocusNavigation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 屬性會指定整個物件樹狀結構 (或方向區域) 的 Tab 瀏覽。
 
@@ -234,21 +234,21 @@ ms.locfileid: "57625823"
 
    ![「區域」Tab 瀏覽行為](images/keyboard/tabnav-local.gif)
 
-   *「 本機 」 的索引標籤瀏覽行為*
+   *[本機] 索引標籤導覽行為*
 
-- **一次**  
+- **即可**  
   容器和所有子元素都會取得焦點一次。 針對此範例，定位順序為 B1、B2、B7、B1 (此處也會同時展示使用方向鍵的內部瀏覽)。
 
    ![「一次」Tab 瀏覽行為](images/keyboard/tabnav-once.gif)
 
-   *「 一次 」 索引標籤瀏覽行為*
+   *[一次] 索引標籤導覽行為*
 
-- **循環**   
+- **迴圈**   
   焦點循環會回到容器內第一個可設定為焦點的元素。 針對此範例，定位順序為 B1、B2、B3、B4、B5、B6、B2...
 
    ![「循環」Tab 瀏覽行為](images/keyboard/tabnav-cycle.gif)
 
-   *「 循環 」 定位巡覽行為*
+   *[迴圈] 索引標籤導覽行為*
 
 以下是先前範例的程式碼 (TabFocusNavigation =「循環」)。
 
@@ -318,7 +318,7 @@ ms.locfileid: "57625823"
 </Grid>
 ```
 
-### <a name="tabindexhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscontrolwindowsuixamlcontrolscontroltabindex"></a>[定位點索引](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
+### <a name="tabindexhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscontrolwindows_ui_xaml_controls_control_tabindex"></a>[顧問](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
 
 使用 [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 指定使用者使用 TAB 鍵巡覽控制項時，元素取得焦點的順序。 擁有較低標籤索引的控制項會在擁有較高索引的控制項之後取得焦點。
 
@@ -338,7 +338,7 @@ ms.locfileid: "57625823"
 
 ![使用 TabIndex 的「區域」Tab 瀏覽行為](images/keyboard/tabnav-tabindex.gif)
 
-*「 本機 」 索引標籤上的巡覽及定位點索引行為*
+*具有 TabIndex 行為的 [本機] 索引標籤導覽*
 
 在先前的範例中，有兩個範圍： 
 - B1，方向區域 (B2 - B6)，和 B7
@@ -425,7 +425,7 @@ ms.locfileid: "57625823"
 
 在本節中，我們涵蓋如何指定慣用的瀏覽策略和透過一組支援所有焦點式、非指標輸入類型的瀏覽策略屬性微調您應用程式內的焦點瀏覽。
 
-更多一般 Xbox/tv 建置應用程式和體驗的詳細資訊，請參閱[鍵盤互動](keyboard-interactions.md)，[設計 Xbox 和電視節目](../devices/designing-for-tv.md)，和[遊戲台和遠端控制互動](gamepad-and-remote-interactions.md).
+如需有關為 Xbox/TV 建立應用程式和體驗的一般資訊，請參閱[鍵盤互動](keyboard-interactions.md)、 [Xbox 和電視的設計](../devices/designing-for-tv.md)和[遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。
 
 ### <a name="navigation-strategies"></a>瀏覽策略
 
@@ -453,7 +453,7 @@ Projection 策略會在目前取得焦點元素的邊緣受到「投影」時，
 
 ![投影瀏覽策略](images/keyboard/xyfocusnavigationstrategy-projection.gif)
 
-*投影導覽的策略*
+*投射導覽策略*
 
 ### <a name="navigationdirectiondistance"></a>NavigationDirectionDistance
 
@@ -463,7 +463,7 @@ NavigationDirectionDistance 策略會將焦點移至最接近瀏覽方向軸的�
 
 ![NavigationDirectionDistance 瀏覽策略](images/keyboard/xyfocusnavigationstrategy-navigationdirectiondistance.gif)
 
-*NavigationDirectionDistance 導覽的策略*
+*NavigationDirectionDistance 導覽策略*
 
 ### <a name="rectilineardistance"></a>RectilinearDistance
 
@@ -473,7 +473,7 @@ RectilinearDistance 策略會根據 2D 直線距離 ([計程車幾何](https://e
 
 ![RectilinearDistance 瀏覽策略](images/keyboard/xyfocusnavigationstrategy-rectilineardistance.gif)
 
-*RectilinearDistance 導覽的策略*
+*RectilinearDistance 導覽策略*
 
 此影像顯示當 B1 取得焦點且要求方向為向下時，B3 便是 RectilinearDistance 焦點候選項目。 這是根據針對此範例的以下計算而得：
 -   距離 (B1, B3, 向下) = 10 + 0 = 10
@@ -482,7 +482,7 @@ RectilinearDistance 策略會根據 2D 直線距離 ([計程車幾何](https://e
 
 
 ## <a name="related-articles"></a>相關文章
-- [以程式設計方式的焦點瀏覽](focus-navigation-programmatic.md)
+- [程式設計焦點導覽](focus-navigation-programmatic.md)
 - [鍵盤互動](keyboard-interactions.md)
 - [鍵盤協助工具](../accessibility/keyboard-accessibility.md) 
 

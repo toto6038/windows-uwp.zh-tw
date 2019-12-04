@@ -4,13 +4,13 @@ description: 本文提供以 managed 程式碼撰寫之 Windows 執行階段元�
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 55bf6360f09ba4ab6c7878543ecfa0c80c4558e3
-ms.sourcegitcommit: 74c674c70b86bafeac7c8c749b1662fae838c428
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/10/2019
+ms.lasthandoff: 12/03/2019
 ms.locfileid: "72252317"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>診斷 Windows 執行階段元件錯誤狀況
@@ -130,7 +130,7 @@ Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
 </tr>
 <tr class="odd">
 <td align="left">WME1039</td>
-<td align="left"><p>方法 '{0}' 在其簽章中有類型 '{1}' 的參數。 雖然這種泛型類型不是有效的 Windows 執行階段類型，但此類型或其泛型參數實作了有效 Windows 執行階段類型的介面。 {2}</p>
+<td align="left"><p>方法 '{0}' 在其簽章中有類型 '{1}' 的參數。 雖然這種泛型類型不是有效的 Windows 執行階段類型，但此類型或其泛型參數實作了有效 Windows 執行階段類型的介面。 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/]({2})</p>
 > **注意** 針對 {2}，Winmdexp 會附加替代專案清單，例如「請考慮將方法簽章中的類型 ' '&lt;&gt;' 變更為下列其中一種類型： ' IReadOnlyList&lt;T&gt;，System.object&lt;t&gt;'。」的&lt;T&gt;，請參閱 "." （一般）。
 </td>
 </tr>
@@ -174,16 +174,16 @@ Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
 ## <a name="array-parameters-must-specify-whether-array-contents-are-readable-or-writable"></a>陣列參數必須指定陣列的內容是否可讀取或寫入
 
 
-在 UWP 中，參數必須是唯讀或唯寫的。 參數不可標示 **ref** (在 Visual Basic 中為不含 **OutAttribute** 屬性的 [ByRef](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute))。 這適用於陣列的內容，因此陣列參數必須指出陣列內容是否為唯讀或唯寫。 這項指示對於 **out** 參數是明確的 (在 Visual Basic 中為具有 OutAttribute 屬性的 **ByRef** 參數)，但是以傳值方式傳遞的陣列參數 (在 Visual Basic 中為 ByVal) 則必須標示。 請參閱[將陣列傳遞到 Windows 執行階段元件](passing-arrays-to-a-windows-runtime-component.md)。
+在 UWP 中，參數必須是唯讀或唯寫的。 參數不可標示 **ref** (在 Visual Basic 中為不含 [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute) 屬性的 **ByRef**)。 這適用於陣列的內容，因此陣列參數必須指出陣列內容是否為唯讀或唯寫。 這項指示對於 **out** 參數是明確的 (在 Visual Basic 中為具有 OutAttribute 屬性的 **ByRef** 參數)，但是以傳值方式傳遞的陣列參數 (在 Visual Basic 中為 ByVal) 則必須標示。 請參閱[將陣列傳遞到 Windows 執行階段元件](passing-arrays-to-a-windows-runtime-component.md)。
 
 | 錯誤代碼 | 訊息文字         |
 |--------------|----------------------|
 | WME1101      | 方法 '{0}' 具有屬於陣列的參數 '{1}'，而且兩者都有 {2} 和 {3}。 在 Windows 執行階段中，內容陣列參數必須是可讀取或可寫入的。 請從 '{1}' 移除其中一個屬性。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | WME1102      | 方法 '{0}' 具有輸出參數 '{1}'，其為數組，但已 {2}。 在 Windows 執行階段中，輸出陣列的內容是可寫入的。 請從 '{1}' 移除屬性。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| WME1103      | 方法 '{0}' 具有屬於陣列的參數 '{1}'，其具有 System.runtime.interopservices.outattribute. InAttribute 或 System.runtime.interopservices.outattribute. OutAttribute 的參數。 在 Windows 執行階段中，陣列參數必須具有 {3} 或 {3}。 請移除這些屬性，或視需要以適當的 Windows 執行階段屬性取代。                                                                                                                                                                                                                                                                                                                                                                                          |
-| WME1104      | 方法 '{0}' 有不是陣列的參數 '{1}'，而且有 {2} 或 {3}。 Windows 執行階段不支援使用 {3} 或 {3} 標記非陣列參數。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| WME1103      | 方法 '{0}' 具有屬於陣列的參數 '{1}'，其具有 System.runtime.interopservices.outattribute. InAttribute 或 System.runtime.interopservices.outattribute. OutAttribute 的參數。 在 Windows 執行階段中，陣列參數必須具有 {2} 或 {3}。 請移除這些屬性，或視需要以適當的 Windows 執行階段屬性取代。                                                                                                                                                                                                                                                                                                                                                                                          |
+| WME1104      | 方法 '{0}' 有不是陣列的參數 '{1}'，而且有 {2} 或 {3}。 Windows 執行階段不支援使用 {2} 或 {3} 標記非陣列參數。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | WME1105      | 方法 '{0}' 的參數 '{1}' 具有 InAttribute 或 System.runtime.interopservices.outattribute. OutAttribute 的參數。 Windows 執行階段不支援以 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute 標記參數。 請考慮移除 System.Runtime.InteropServices.InAttribute，並改以 'out' 修飾詞取代 System.Runtime.InteropServices.OutAttribute。 方法 '{0}' 的參數 '{1}' 具有 InAttribute 或 System.runtime.interopservices.outattribute. OutAttribute 的參數。 Windows 執行階段只支援以 System.Runtime.InteropServices.OutAttribute 標記 ByRef 參數，不支援這些屬性的其他用法。 |
-| WME1106      | 方法 '{0}' 具有屬於陣列的參數 '{1}'。 在 Windows 執行階段中，陣列參數的內容必須是可讀取或可寫入的。 請將 {1} 或 {1} 套用到 '{1}'。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| WME1106      | 方法 '{0}' 具有屬於陣列的參數 '{1}'。 在 Windows 執行階段中，陣列參數的內容必須是可讀取或可寫入的。 請將 {2} 或 {3} 套用到 '{1}'。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
 ## <a name="member-with-a-parameter-named-value"></a>參數名稱為 "value" 的成員

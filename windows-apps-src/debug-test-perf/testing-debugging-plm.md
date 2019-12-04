@@ -1,17 +1,17 @@
 ---
 description: 用來偵錯和測試您 App 如何使用處理程序生命週期管理的工具及技術。
-title: 處理程序生命週期管理 (PLM) 的測試與偵錯工具
+title: 測試和偵錯工具生命週期管理
 ms.date: 04/08/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d99492577fafc9f67929f795cd115d367940938
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 6912d7faa3a86dade13b60eac5654aef8a52173d
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713738"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735013"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>處理程序生命週期管理 (PLM) 的測試與偵錯工具
 
@@ -19,7 +19,7 @@ UWP app 與傳統型桌面應用程式的其中一個主要差異是，UWP 產�
 
 ## <a name="features-in-visual-studio-2015"></a>Visual Studio 2015 中的功能
 
-Visual Studio 2015 中內建的偵錯工具可協助您調查使用 UWP 專屬功能時的潛在問題。 您可以使用 [週期事件]  工具列 (這在執行和偵錯您的產品時會出現)，強制應用程式進入不同的 PLM 狀態。
+Visual Studio 2015 中內建的偵錯工具可協助您調查使用 UWP 專屬功能時的潛在問題。 您可以使用 **\[週期事件\]** 工具列 (這在執行和偵錯您的產品時會出現)，強制應用程式進入不同的 PLM 狀態。
 
 ![週期事件工具列](images/gs-debug-uwp-apps-001.png)
 
@@ -27,7 +27,7 @@ Visual Studio 2015 中內建的偵錯工具可協助您調查使用 UWP 專屬�
 
 PLMDebug.exe 是一項隨附於 Windows SDK 中的命令列工具，可讓您控制應用程式套件的 PLM 狀態。 工具安裝之後，預設會位於 *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64*。
 
-PLMDebug 也允許您停用任何已安裝之應用程式套件的 PLM，這對於某些偵錯程式來說是必要的。 停用 PLM 會防止 Runtime Broker 服務在您可以偵錯前，終止您的 App。 若要停用 PLM，請使用 **/enableDebug** 切換參數，後面加上您 UWP app 的完整套件名稱  (簡短名稱、套件系列名稱或套件的 AUMID 將無法運作)：
+PLMDebug 也允許您停用任何已安裝之應用程式套件的 PLM，這對於某些偵錯程式來說是必要的。 停用 PLM 會防止 Runtime Broker 服務在您可以偵錯前，終止您的 App。 若要停用 PLM，請使用 **/enableDebug** 切換參數，後面加上您 UWP app 的完整套件名稱 (簡短名稱、套件系列名稱或套件的 AUMID 將無法運作)：
 
 ```cmd
 plmdebug /enableDebug [PackageFullName]
