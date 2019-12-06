@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac 到 Windows、快速鍵對應、從 Unix 移至 Windows、從 Mac 轉換到 Windows、從 MacBook 移至介面、如何將 Windows 用於 Macintosh 使用者、從 Macintosh 切換到 Windows、協助變更開發環境、Mac OS X 到 Windows、協助從 Mac 移至電腦
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 563a8ad659cfff1396049aae78342642d1db3e72
-ms.sourcegitcommit: 4cb3ee28baa8020ec925b0bdd896ab197a1ddadb
+ms.openlocfilehash: a4e71143730184db094df2a7e8f1416cbaf244c4
+ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309154"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881274"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>將您的開發環境從 Mac 變更為 Windows 的指南
 
@@ -24,24 +24,24 @@ ms.locfileid: "74309154"
 
 ## <a name="keyboard-shortcuts"></a>鍵盤快速鍵
 
-| **運營** | **Mac** | **Windows** |
+| **運算** | **Mac** | **視窗** |
 |---------------|--------------------|---------------------|
-| 複製 | 命令 + C | Ctr + C |
-| 剪下 | 命令 + X | Ctr + X |
-| 貼上 | 命令 + V | Ctr + V |
+| [複製] | 命令 + C | Ctrl+C |
+| 剪下 | 命令 + X | Ctrl+X |
+| 貼上 | 命令 + V | Ctrl+V |
 | 復原 | 命令 + Z | Ctrl+Z |
-| 儲存 | 命令 + S | Ctrl+S |
+| [儲存] | 命令 + S | Ctrl+S |
 | 開啟 | 命令 + O | Ctrl+O |
-| 鎖定電腦 | Command + Control + Q | WindowKey + L |
-| 顯示桌面 | 命令 + F3 | WindowKey + D |
-| 最小化視窗 | 命令 + M | Windows 鍵 + M |
-| 搜尋 | 命令 + 空格鍵 | Windows 鍵 |
+| 鎖定電腦 | Command + Control + Q | WindowsKey + L |
+| 顯示桌面 | 命令 + F3 | WindowsKey + D |
+| 最小化視窗 | 命令 + M | WindowsKey + M |
+| [搜尋] | 命令 + 空格鍵 | WindowsKey |
 | 關閉使用中視窗 | 命令 + W | Control + W |
 | 切換目前的工作 | 命令 + Tab | Alt+Tab |
-| 儲存畫面（螢幕擷取畫面） | 命令 + Shift + 3 | Windows + Shift + S |
-| 儲存視窗 | 命令 + Shift + 4 | Windows + Shift + S |
-| 視圖專案資訊或屬性 | 命令 + I | Alt + Enter |
- | 選取所有專案 | 命令 + A | Ctrl+A |
+| 儲存畫面（螢幕擷取畫面） | 命令 + Shift + 3 | WindowsKey + Shift + S |
+| 儲存視窗 | 命令 + Shift + 4 | WindowsKey + Shift + S |
+| 視圖專案資訊或屬性 | 命令 + I | Alt+Enter |
+ | 選取所有項目 | 命令 + A | Ctrl+A |
 | 在清單中選取一個以上的專案（非連續） | 命令，然後按一下每個專案 | 控制項，然後按一下每個專案 |
 | 輸入特殊字元 | Option + 字元鍵 | Alt + 字元鍵|
 
@@ -49,17 +49,17 @@ ms.locfileid: "74309154"
 
 注意：其中有些快捷方式需要「精確度軌跡板」，例如 Surface 裝置上的軌跡板，以及一些其他的協力廠商膝上型電腦。
 
- **運營** | **Mac** | **Windows** |
+ **運算** | **Mac** | **視窗** |
 |---------------|--------------------|---------------------|
 | Scroll | 雙手指垂直滑動 | 雙手指垂直滑動 |
-| Zoom | 兩個手指縮小和放大 | 兩個手指縮小和放大 |
+| 縮放 | 兩個手指縮小和放大 | 兩個手指縮小和放大 |
 | 在 views 之間向前和向後滑動 | 兩個手指橫向滑動 | 兩個手指橫向滑動 |
 | 切換虛擬工作區 | 四個手指橫向滑動 | 四個手指橫向滑動 |
 | 顯示目前開啟的應用程式 | 四個手指向上滑動 | 三個手指向上滑動 |
-| 在應用程式之間切換 | 不適用 | 緩慢的三手指側刷 |
+| 在應用程式之間切換 | 無 | 緩慢的三手指側刷 |
 | 前往桌面 | 散佈四個手指 | 三向下輕觸 |
 | 開啟 Cortana/行動中心 | 向右滑動兩個手指 | 三碰點 |
-| 開啟額外資訊 | 三碰點 | 不適用 |
+| 開啟額外資訊 | 三碰點 | 無 |
 |顯示啟動控制板/啟動應用程式 | 使用四個手指縮小 | 利用四個手指 |
 
 注意：在這兩個平臺上都可設定軌跡板選項。
@@ -70,7 +70,7 @@ Windows 提供數個 Mac 終端機模擬器的替代方案。
 
 1. Windows 命令列
 
-Windows 命令列會接受 DOS 命令，而是 Windows 最常使用的命令列工具。 若要開啟它：按**Windows + R**開啟 [**執行**] 方塊，然後輸入**Cmd** ，再按一下 **[確定]** 。 若要開啟系統管理員命令列，請輸入**cmd** ，然後按**Ctrl + Shift + enter**。 
+Windows 命令列會接受 DOS 命令，而是 Windows 最常使用的命令列工具。 若要開啟它：按**WindowsKey + R**開啟 [**執行**] 方塊，然後輸入**Cmd** ，再按一下 **[確定]** 。 若要開啟系統管理員命令列，請輸入**cmd** ，然後按**Ctrl + Shift + enter**。
 
 2. PowerShell
 
@@ -80,14 +80,14 @@ Windows 命令列會接受 DOS 命令，而是 Windows 最常使用的命令列�
 
 3. 適用於 Linux 的 Windows 子系統 (WSL)
 
-WSL 可讓您在 Windows 內執行 Linux shell。 這表示您可以根據選擇和安裝的特定 Linux 散發版本，執行*bash** 或其他 shell。 使用 WSL 可提供 Mac 使用者最熟悉的環境類型。 例如，**您將會**在目前目錄中列出檔案，而不是依照 Windows 命令列的方式來列出**目錄**。 若要深入瞭解安裝和使用 WSL，請參閱[適用于 windows 10 的 Windows 子系統 For Linux 安裝指南](https://docs.microsoft.com/en-us/windows/wsl/install-win10)。
+WSL 可讓您在 Windows 內執行 Linux shell。 這表示您可以根據選擇和安裝的特定 Linux 散發版本，執行*bash** 或其他 shell。 使用 WSL 可提供 Mac 使用者最熟悉的環境類型。 例如，**您將會**在目前目錄中列出檔案，而不是依照 Windows 命令列的方式來列出**目錄**。 若要深入瞭解安裝和使用 WSL，請參閱[適用于 windows 10 的 Windows 子系統 For Linux 安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。
 
 ## <a name="apps-and-utilities"></a>應用程式和公用程式
 
- **相關** | **Mac** | **Windows** |
+ **應用程式** | **Mac** | **視窗** |
 |---------------|--------------------|---------------------|
-| 設定和喜好設定 | 系統喜好設定 | 設定 |
-| 工作管理員 | 活動監視器 | 工作管理員 |
+| 設定和喜好設定 | 系統喜好設定 | [設定] |
+| 工作管理員 | 活動監視器 | [工作管理員] |
 | 磁片格式化 | 磁片公用程式 | 磁碟管理 |
 | 文字編輯 | TextEdit | 記事本 |
 | 事件查看 | Console | 事件檢視器 |
