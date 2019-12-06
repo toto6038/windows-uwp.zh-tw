@@ -260,6 +260,8 @@
       href: style/reveal.md
     - name: 顯色焦點
       href: style/reveal-focus.md
+    - name: 圓角半徑
+      href: style/rounded-corner.md
     - name: 音效
       href: style/sound.md
     - name: 間距
