@@ -3,16 +3,16 @@ title: Xbox Live 測試使用者管理 API 參考
 description: 了解如何以程式設計方式存取使用者管理 API。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
-ms.openlocfilehash: 71c47767cf026b962f682fb30ca93758dbd5e227
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 52f333af73084ed14982b9d09b6770c8294980f7
+ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244074"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74902531"
 ---
-#<a name="xbox-live-user-management"></a>Xbox Live 的使用者管理 #
+# <a name="xbox-live-user-management"></a>Xbox Live 使用者管理
 
 ## <a name="request"></a>要求
 
@@ -26,11 +26,11 @@ ms.locfileid: "59244074"
 
 **URI 參數**
 
-* None
+* 無
 
 **要求標頭**
 
-* None
+* 無
 
 **要求本文**
 
@@ -38,12 +38,12 @@ ms.locfileid: "59244074"
 
 * 使用者
   * AutoSignIn (選擇性)：停用或啟用以 EmailAddress 或 UserId 所指定帳戶自動登入的布林值。
-  * EmailAddress (選用-必須提供除非贊助商的使用者在登入，如果未提供使用者識別碼):指定修改/新增/移除使用者的電子郵件地址。
-  * 密碼 (選用-必須提供使用者目前無法在主控台上):所使用的主控台中新增新使用者的密碼。
+  * EmailAddress (選擇性 - 如果未提供 UserId 則必須提供，登入贊助使用者的情況除外)：指定要修改/新增/刪除使用者的電子郵件地址。
+  * Password (選擇性 - 如果使用者目前不在主機上則必須提供)：用來將新使用者新增到主機的密碼。
   * SignedIn (選擇性)：指定所提供帳戶是否應登入或登出的布林值。
-  * 使用者識別碼 (選用-除非贊助商的使用者在登入，如果未提供 EmailAddress 必須提供):指定修改/新增/移除使用者的使用者識別碼。
+  * UserId (選擇性 - 如果未提供 EmailAddress 則必須提供，登入贊助使用者的情況除外)：指定要修改/新增/刪除使用者的使用者識別碼。
   * SponsoredUser (選擇性)：指定是否要新增贊助使用者的布林值。
-  * （選擇性） 刪除： 指定要從主控台刪除這位使用者的 bool
+  * Delete （選擇性）：指定要從主控台刪除此使用者的 bool
 
 ## <a name="response"></a>回應
 
@@ -64,7 +64,7 @@ ms.locfileid: "59244074"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼   | 描述     | 
+| HTTP 狀態碼   | 說明     | 
 | ------------------ |-----------------|
 | 200                | 針對 GET 的呼叫成功，且回應主體中已傳回使用者的 JSON 陣列 |
 | 204                | 針對 PUT 的呼叫成功，且已更新主機上的使用者 |
