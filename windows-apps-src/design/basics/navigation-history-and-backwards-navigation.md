@@ -1,18 +1,18 @@
 ---
 Description: 了解如何實作向後瀏覽，以便周遊 UWP 應用程式內使用者的瀏覽歷程記錄。
-title: 瀏覽歷程記錄和向後瀏覽 (Windows 應用程式)
+title: 瀏覽歷程記錄和向後瀏覽
 template: detail.hbs
 op-migration-status: ready
 ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: de2e70a09f75ed5380a47bed225c0689eb029e89
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 05b435eb6f070634507c143bd028d2cb051c97bc
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713792"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735023"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>適用於 UWP app 的瀏覽歷程記錄和向後瀏覽
 
