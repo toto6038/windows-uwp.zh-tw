@@ -553,19 +553,6 @@
                           href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
                 - name: Xbox One 遊戲和 Xbox Live
                   items:
-                    - name: 取得 Xbox One 遊戲下載數
-                      href: ../monetize/get-xbox-one-game-acquisitions.md
-                    - name: 取得 Xbox One 附加元件下載數
-                      href: ../monetize/get-xbox-one-add-on-acquisitions.md
-                    - name: 取得 Xbox One 遊戲的錯誤報告資料
-                      href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
-                      items:
-                        - name: 針對 Xbox One 遊戲中的錯誤取得詳細資料
-                          href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
-                        - name: 針對 Xbox One 遊戲中的錯誤取得堆疊追蹤
-                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
-                        - name: 針對 Xbox One 遊戲中的錯誤下載 CAB 檔案
-                          href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
                     - name: 取得 Xbox Live 分析資料
                       href: ../monetize/get-xbox-live-analytics.md
                       items:
@@ -1165,7 +1152,7 @@
           href: ../devices-sensors/use-the-light-sensor.md
         - name: 使用方向感應器
           href: ../devices-sensors/use-the-orientation-sensor.md
-    - name: 藍牙
+    - name: Bluetooth
       href: ../devices-sensors/bluetooth.md
       items:
         - name: RFCOMM

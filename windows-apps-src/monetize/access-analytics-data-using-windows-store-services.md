@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10 , UWP, Microsoft Store 服務, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 71c59049b76219d6f9360748e9ca11ea84542e47
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3b732da8f92c258647f905e6939dc3cb1b9c9f87
+ms.sourcegitcommit: 3e47987fb4f86a6349ffe8262675f50971c77472
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259320"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954062"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用 Microsoft Store 服務存取分析資料
 
-使用*Microsoft Store 分析 API* ，以程式設計方式取出已向或您組織的 Windows 合作夥伴中心帳戶註冊之應用程式的分析資料。 這個 API 可讓您擷取應用程式和附加元件 (也稱為應用程式內產品或 IAP) 下載數、錯誤、應用程式評分與評論的資料。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
+使用*Microsoft Store 分析 API* ，以程式設計方式取出已向或您組織的 Windows 合作夥伴中心帳戶註冊之應用程式的分析資料。 這個 API 可讓您擷取應用程式和附加元件 (也稱為應用程式內產品或 IAP) 下載數、錯誤、應用程式評分與評論的資料。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您 App 或服務的呼叫。
 
 下列步驟說明端對端的程序：
 
@@ -89,7 +89,7 @@ grant_type=client_credentials
 |---------------|--------------------|
 | 收購、轉換、安裝和使用 |  <ul><li>[取得應用程式收購](get-app-acquisitions.md)（舊版）</li><li>[取得應用程式獲取漏斗圖資料](get-acquisition-funnel-data.md)（舊版）</li><li>[依通道取得應用程式轉換](get-app-conversions-by-channel.md)</li><li>[取得附加元件的收購](get-in-app-acquisitions.md)</li><li>[取得訂用帳戶附加元件收購](get-subscription-acquisitions.md)</li><li>[依通道取得附加元件轉換](get-add-on-conversions-by-channel.md)</li><li>[取得應用程式安裝](get-app-installs.md)</li><li>[取得每日應用程式使用量](get-app-usage-daily.md)</li><li>[取得每月應用程式使用量](get-app-usage-monthly.md)</li></ul> |
 | App 錯誤 | <ul><li>[取得錯誤報表資料](get-error-reporting-data.md)</li><li>[取得應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)</li><li>[取得應用程式中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[下載應用程式中發生錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
-| 洞察力 | <ul><li>[取得應用程式的深入解析資料](get-insights-data-for-your-app.md)</li></ul>  |
+| 深入解析 | <ul><li>[取得應用程式的深入解析資料](get-insights-data-for-your-app.md)</li></ul>  |
 | 評分與評論 | <ul><li>[取得應用程式分級](get-app-ratings.md)</li><li>[取得應用程式審查](get-app-reviews.md)</li></ul> |
 | 應用程式內廣告與廣告行銷活動 | <ul><li>[取得 ad 效能資料](get-ad-performance-data.md)</li><li>[取得廣告行銷活動效能資料](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -102,7 +102,7 @@ grant_type=client_credentials
 | 安裝數 |  <ul><li>[取得桌面應用程式安裝](get-desktop-app-installs.md)</li></ul> |
 | 區塊 |  <ul><li>[取得桌面應用程式的升級區塊](get-desktop-block-data.md)</li><li>[取得桌面應用程式的升級封鎖詳細資料](get-desktop-block-data-details.md)</li></ul> |
 | 應用程式錯誤 |  <ul><li>[取得桌面應用程式的錯誤報表資料](get-desktop-application-error-reporting-data.md)</li><li>[在桌面應用程式中取得錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)</li><li>[針對桌面應用程式中的錯誤取得堆疊追蹤](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下載您桌面應用程式中發生錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| 洞察力 | <ul><li>[取得桌面應用程式的深入解析資料](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| 深入解析 | <ul><li>[取得桌面應用程式的深入解析資料](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>適用於 Xbox Live 服務的方法
 
@@ -113,15 +113,6 @@ grant_type=client_credentials
 | 一般分析 |  <ul><li>[取得 Xbox Live 分析資料](get-xbox-live-analytics.md)</li><li>[取得 Xbox Live 成就資料](get-xbox-live-achievements-data.md)</li><li>[取得 Xbox Live 並行使用量資料](get-xbox-live-concurrent-usage-data.md)</li></ul> |
 | 健康情況分析 |  <ul><li>[取得 Xbox Live 健全狀況資料](get-xbox-live-health-data.md)</li></ul> |
 | 社群分析 |  <ul><li>[取得 Xbox Live 遊戲中樞資料](get-xbox-live-game-hub-data.md)</li><li>[取得 Xbox Live 俱樂部資料](get-xbox-live-club-data.md)</li><li>[取得 Xbox Live 多人遊戲資料](get-xbox-live-multiplayer-data.md)</li></ul>  |
-
-### <a name="methods-for-xbox-one-games"></a>Xbox One 遊戲適用的方法
-
-透過 Xbox Developer 入口網站（XDP）內嵌的 Xbox One 遊戲中，有下列其他方法可供開發人員帳戶使用，並可在 XDP Analytics 儀表板中取得。
-
-| 案例       | 方法      |
-|---------------|--------------------|
-| 下載數 |  <ul><li>[取得 Xbox one 遊戲的收購](get-xbox-one-game-acquisitions.md)</li><li>[取得 Xbox One 附加元件的收購](get-xbox-one-add-on-acquisitions.md)</li></ul> |
-| 錯誤 |  <ul><li>[取得 Xbox One 遊戲的錯誤報表資料](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[取得 Xbox One 遊戲中的錯誤詳細資料](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[針對 Xbox One 遊戲中的錯誤取得堆疊追蹤](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[在您的 Xbox One 遊戲中下載 CAB 檔案以取得錯誤](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>硬體與驅動程式的方法
 
