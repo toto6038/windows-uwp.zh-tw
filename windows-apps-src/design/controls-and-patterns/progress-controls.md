@@ -4,7 +4,7 @@ title: 進度控制項的指導方針
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 11/29/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -12,32 +12,54 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 67315518238bda1359862f36acd398e25e8481e3
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3e5ff5d0e9172432110d60a007228e59e48785b9
+ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258158"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830801"
 ---
 # <a name="progress-controls"></a>進度控制項
 
- 
-
 進度控制項為使用者提供回饋，告知正在進行長時間執行的操作。 根據所使用的指示器，它可以表示在進度指示器可見的時候，使用者無法與 App 互動，也可以指示可能需要等待多久的時間。
 
-> **重要 API**：[ProgressBar 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
+| **平台 API** | **Windows UI 程式庫 API** |
+| - | - |
+| [ProgressBar 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive) | [ProgressBar 類別](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 屬性](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate) |
+
+| **取得 Windows UI 程式庫** |
+| - |
+| 此控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> [!NOTE]
+> 有兩個版本的 ProgressBar 控制項：一個在平台中，由 Windows.UI.Xaml namespace 命名空間代表；另一個在 Windows UI 程式庫中，也就是 Microsoft.UI.Xaml 命名空間。 雖然 ProgressBar 的 API 相同，但這兩個版本的控制項外觀不同。 本文件將顯示較新 Windows UI 程式庫版本的映像。
+在這整份文件中，我們將使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的[網頁](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+```
+
+在後方的程式碼中，我們也將使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：
+
+```csharp
+using muxc = Microsoft.UI.Xaml.Controls;
+```
+
+```vb
+Imports muxc = Microsoft.UI.Xaml.Controls
+```
 
 ## <a name="types-of-progress"></a>進度的類型
 
 有兩種控制項會向使用者顯示操作正在進行中：ProgressBar 或 ProgressRing。
 
--   ProgressBar 的「確定」  (determinate) 狀態會顯示工作已完成的百分比。 此控制項應用於已知持續時間的作業，但其進度不應封鎖使用者與 App 的互動。
+-   ProgressBar 的「確定」  (determinate) 狀態會顯示工作已完成的百分比。 此控制項應用於已知持續時間的作業，但其進度不應封鎖使用者與應用程式的互動。
 -   ProgressBar 的「不確定」  (indeterminate) 狀態會顯示操作正在進行中，它不會封鎖使用者與 App 的互動，且無法得知完成的時間。
 -   ProgressRing 只有「不確定」  (indeterminate) 狀態，且應用於直到作業完成前，任何進一步使用者互動都會被封鎖的情況。
 
 此外，進度控制項是唯讀的，無法互動。 表示使用者無法叫用或直接使用這些控制項。
 
-![ProgressBar 狀態](images/ProgressBar_TwoStates.png)
+![ProgressBar 狀態](images/progress-bar-two-states.png)
 
 *由上至下 - 不確定的 ProgressBar 和確定的 ProgressBar*
 
@@ -119,13 +141,13 @@ ms.locfileid: "74258158"
 
 **ProgressBar - 確定**
 
-![「確定」的 ProgressBar 範例](images/PB_DeterminateExample.png)
+![「確定」的 ProgressBar 範例](images/progress-bar-determinate-example.png)
 
 第一個範例是「確定」的 ProgressBar。 當作業的持續時間是已知時 (如正在安裝、下載、設定等時候)，ProgressBar 是最佳的選項。
 
 **ProgressBar - 不確定**
 
-![「不確定」的 ProgressBar 範例](images/PB_IndeterminateExample.png)
+![「不確定」的 ProgressBar 範例](images/progress-bar-indeterminate-example.png)
 
 當作業所需的時間為未知時，則使用 ProgressBar。 當在填滿虛擬的清單時，以及在「不確定」和「確定」的 ProgressBar 之間建立流暢的視覺轉換時，也都很適合用「不確定」的 ProgressBar。
 
@@ -168,7 +190,7 @@ progressRing.IsActive = true;
 
 ```XAML
 <ProgressRing IsActive="True" Height="100" Width="100" Foreground="Blue"/>
-<ProgressBar Width="100" Foreground="Green"/>
+<muxc:ProgressBar Width="100" Foreground="Green"/>
 ```
 
 變更 ProgressRing 的前景色彩會變更點的色彩。 ProgressBar 的 Foreground 屬性會變更填滿進度列的色彩 – 若要更改進度列為填滿的部分，只要覆寫 Background (背景) 屬性即可。
