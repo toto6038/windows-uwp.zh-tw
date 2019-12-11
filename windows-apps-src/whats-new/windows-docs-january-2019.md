@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 1 月
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac5f7e058a616117e73defde2c48bf4c66f68d2e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7947fb6e71a9f2ddbedcd8e3ee8bab7b720dc444
+ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259745"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74902464"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>2019 年 1 月 Windows 開發人員文件的新增功能
 
@@ -22,7 +22,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="windows-development-on-microsoft-learn"></a>Microsoft Learn 上的 Windows 開發
 
-Microsoft Learn 為 Microsoft 開發人員提供新的實際操作學習和訓練機會。 如果您有興趣了解如何開發 Windows 應用程式，請參閱[我們新的學習路徑](https://docs.microsoft.com/learn/paths/develop-windows10-apps/)，以取得平台、工具，以及如何撰寫前幾個應用程式的完整介紹。
+Microsoft Learn 為 Microsoft 開發人員提供新的實際操作學習和訓練機會。 如果您有興趣了解如何開發 Windows 應用程式，請參閱[我們新的學習路徑](/learn/paths/develop-windows10-apps/)，以取得平台、工具，以及如何撰寫前幾個應用程式的完整介紹。
 
 ![Windows 開發學習路徑的影像](images/windows-learn.png)
 
@@ -32,7 +32,7 @@ Microsoft Learn 為 Microsoft 開發人員提供新的實際操作學習和訓�
 
 ### <a name="msix-modification-packages"></a>MSIX 修改套件
 
-Windows 10 版本 1809 改善了 [MSIX 修改套件](https://docs.microsoft.com/windows/msix/modification-package-1809-update)的支援。 修改套件可以包含登錄型外掛程式和相關聯的自訂，且可讓透過 MSIX 部署的應用程式使用虛擬登錄並如預期般執行。
+Windows 10 版本 1809 改善了 [MSIX 修改套件](/windows/msix/modification-package-1809-update)的支援。 修改套件可以包含登錄型外掛程式和相關聯的自訂，且可讓透過 MSIX 部署的應用程式使用虛擬登錄並如預期般執行。
 
 ![MSIX 修改套件建立](images/msix-modification-package.png)
 
@@ -42,13 +42,13 @@ WPF、Windows Forms 和 WinUI UX 架構現在可用於在 GitHub 上貢獻開放
 
 ### <a name="progressive-web-apps-for-xbox"></a>適用於 Xbox 的漸進式 Web 應用程式
 
-使用[適用於 Xbox One 的漸進式 Web 應用程式](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations)，您可以擴充 Web 應用程式並讓它以 Xbox One 應用程式的形式透過 Microsoft Store 提供，同時仍繼續使用您現有的架構、CDN 及伺服器後端。 在大部分的情況下，您可以如同在 Windows 中一樣封裝 PWA for Xbox One，不過，本指南將引導您認識數個主要差異。
+使用[適用於 Xbox One 的漸進式 Web 應用程式](/microsoft-edge/progressive-web-apps/xbox-considerations)，您可以擴充 Web 應用程式並讓它以 Xbox One 應用程式的形式透過 Microsoft Store 提供，同時仍繼續使用您現有的架構、CDN 及伺服器後端。 在大部分的情況下，您可以如同在 Windows 中一樣封裝 PWA for Xbox One，不過，本指南將引導您認識數個主要差異。
 
 ### <a name="windows-machine-learning"></a>Windows Machine Learning
 
-我們已重新建構 [WinML API 的登陸頁面](https://docs.microsoft.com/windows/ai/api-reference)，並新增 WinML 自訂運算子和原生 API 的新文件。
+我們已重新建構 [WinML API 的登陸頁面](/windows/ai/api-reference)，並新增 WinML 自訂運算子和原生 API 的新文件。
 
-[使用 PyTorch 訓練模型](https://docs.microsoft.com/windows/ai/train-model-pytorch)提供有關如何使用 PyTorch 架構在本機或雲端訓練模型的指引。 您可以接著將此模型下載為 ONNX 檔案，並在 WinML 應用程式中使用它。
+[使用 PyTorch 訓練模型](/windows/ai/train-model-pytorch)提供有關如何使用 PyTorch 架構在本機或雲端訓練模型的指引。 您可以接著將此模型下載為 ONNX 檔案，並在 WinML 應用程式中使用它。
 
 ![WinML 圖形](images/winml-graphic.png)
 
@@ -56,15 +56,15 @@ WPF、Windows Forms 和 WinUI UX 架構現在可用於在 GitHub 上貢獻開放
 
 ### <a name="choose-your-platform"></a>選擇您的平台
 
-想要建立新的傳統型應用程式？ 請查看我們改造的[選擇您的平台](https://docs.microsoft.com/windows/desktop/choose-your-technology)頁面，以取得 UWP、WPF 和 Windows Forms 平台的詳細描述和比較，以及 Win32 API 的進一步資訊。
+想要建立新的傳統型應用程式？ 請查看我們改造的[選擇您的平台](/windows/desktop/choose-your-technology)頁面，以取得 UWP、WPF 和 Windows Forms 平台的詳細描述和比較，以及 Win32 API 的進一步資訊。
 
 ### <a name="faqs-on-win32-webview"></a>Win32 WebView 的常見問題集
 
-我們的[常見問題集](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs)會提供在傳統型應用程式中使用 Microsoft Edge WebView 時的常見問題解答，以及連範例和其他資源的連結。
+我們的[常見問題集](/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs)會提供在傳統型應用程式中使用 Microsoft Edge WebView 時的常見問題解答，以及連範例和其他資源的連結。
 
 ### <a name="japanese-era-change"></a>日本年號變更
 
-[針對日本年號變更準備您的應用程式](../design/globalizing/japanese-era-change.md)說明如何確保您的 Windows 應用程式已準備好因應 2019 年 5 月 1 日起生效的日本年號變更。 [此頁面也會以日文提供](https://docs.microsoft.com/ja-jp/windows/uwp/design/globalizing/japanese-era-change)。
+[針對日本年號變更準備您的應用程式](../design/globalizing/japanese-era-change.md)說明如何確保您的 Windows 應用程式已準備好因應 2019 年 5 月 1 日起生效的日本年號變更。 [此頁面也會以日文提供](/windows/uwp/design/globalizing/japanese-era-change)。
 
 ## <a name="videos"></a>影片
 
@@ -82,9 +82,10 @@ WPF、Windows Forms 和 WinUI UX 架構現在可用於在 GitHub 上貢獻開放
 
 Raymond Chen：
 
-* [為何有 Program Files 與 Program Files (x86)？](https://youtu.be/N7o9eJpFYco) (英文)
+* [為何有 Program Files 與 Program Files (x86)？](https://youtu.be/qRb6otsHG5c) (英文)
+* [您第一次訪問 Microsoft 的情況為何？](https://youtu.be/MfzzbNp8kfw)
 
 Larry Osterman：
 
-* [COM 為何如此複雜？](https://youtu.be/-gkXAV-StVA ) (英文)
-* [您第一次訪問 Microsoft 的情況為何？](https://youtu.be/qRb6otsHG5c) (英文)
+* [COM 為何如此複雜？](https://youtu.be/-gkXAV-StVA) (英文)
+* [您第一次訪問 Microsoft 的情況為何？](https://youtu.be/N7o9eJpFYco) (英文)

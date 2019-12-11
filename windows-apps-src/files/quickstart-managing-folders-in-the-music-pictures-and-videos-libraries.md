@@ -1,17 +1,17 @@
 ---
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
-title: 音樂、圖片及影片媒體櫃中的檔案和資料夾
+title: 管理音樂、圖片和影片媒體櫃
 description: 將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。
 ms.date: 06/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f9dba57d8e75ba105a2154be5add5b101a4a6aa4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4c75bd62fb5548cc03247772427fb5aabac4fb5a
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369328"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735073"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音樂、圖片及影片媒體櫃中的檔案和資料夾
 
@@ -129,7 +129,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 ## <a name="querying-the-media-libraries"></a>查詢媒體櫃
 
-若要取得檔案集合，指定媒體櫃及您要的檔案類型
+若要取得檔案集合，指定媒體櫃及您要的檔案類型。
 
 ```cs
 using Windows.Storage;
@@ -158,7 +158,7 @@ private async void getSongs()
 
 使用者可以選擇預設將檔案儲存到選用的 SD 記憶卡。 不過，應用程式可以選擇不允許將檔案儲存到 SD 記憶卡。 因此，媒體櫃可以分割到裝置的內部儲存空間及 SD 記憶卡上。
 
-您不需要編寫其他程式碼即可處理這項操作。 [  **Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
+您不需要編寫其他程式碼即可處理這項操作。 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
 
 考量下圖中裝置儲存空間的狀態：
 

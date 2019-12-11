@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: eba0e6312bc22153d8cb62eb97d32635184f0fdc
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
+ms.sourcegitcommit: 58f6643510a27d6b9cd673da850c191ee23b813e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317116"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701491"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
@@ -126,7 +126,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果您正在 Windows 執行階段元件中撰寫執行階段類別
 
-如果您的類型為了取用一個應用程式，已封裝在 Windows 執行階段元件中，則它必須是執行階段類別。 您可以在 Microsoft 介面定義語言 (IDL) (.idl) 檔案中宣告執行階段類別 (請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](#factoring-runtime-classes-into-midl-files-idl)。
+如果您的類型為了取用一個應用程式，已封裝在 Windows 執行階段元件中，則它必須是執行階段類別。 您可以在 Microsoft 介面定義語言 (IDL) (.idl) 檔案中宣告執行階段類別 (請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](#factoring-runtime-classes-into-midl-files-idl))。
 
 每個 IDL 檔案都會產生 `.winmd` 檔案，而 Visual Studio 會將這些檔案合併為單一檔案，其名稱與根命名空間相同。 最終 `.winmd` 檔案將會是您的元件取用者將參照的檔案。
 
@@ -239,7 +239,7 @@ Visual Studio 專案和項目範本會針對每個執行階段類別產生個別
 以下是一些範例。
 
 - 您可以放寬參數類型的限制。 例如，如果您的方法在 IDL 中採用 **SomeClass**，則在實作中，您可以選擇將其變更成 **IInspectable**。 之所以可以這麼做，是因為任何 **SomeClass** 都可轉送到 **IInspectable** (但反過來則不行)。
-- 您可以接受值形式的可複製參數，而不是參考形式。 例如，將 `SomeClass const&` 變更為 `SomeClass const&`。 如果您需要避免將參考擷取到協同程式，則這是必要的 (請參閱[參數傳遞](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing))。
+- 您可以接受值形式的可複製參數，而不是參考形式。 例如，將 `SomeClass` 變更為 `SomeClass const&`。 如果您需要避免將參考擷取到協同程式，則這是必要的 (請參閱[參數傳遞](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing))。
 - 您可以放寬傳回值的限制。 例如，您可以將 **void** 變更為 [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget)。
 
 最後兩項非常適合用來撰寫非同步的事件處理常式。
@@ -276,7 +276,13 @@ namespace MyProject
 }
 ```
 
-若要從 **MyType** 移至 **IStringable** 或 **IClosable** 物件 (您可以使用或傳回作為您投影的一部分)，您應呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函式範本。 **make** 傳回實作類型的預設介面。
+您無法直接配置您的實作類型。
+
+```cppwinrt
+MyType myimpl; // error C2259: 'MyType': cannot instantiate abstract class
+```
+
+但您可以呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函式範本，以從 **MyType** 移至 **IStringable** 或 **IClosable** 物件 (您可以使用或傳回作為您投影的一部分)。 **make** 傳回實作類型的預設介面。
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
@@ -329,36 +335,73 @@ impl.copy_from(winrt::get_self<MyType>(from));
 // com_ptr::copy_from ensures that AddRef is called.
 ```
 
-實作類型本身不是從 **winrt::Windows::Foundation::IUnknown** 衍生的，因此它沒有 **as** 函式。 即使如此，您可以具現化一個並存取所有介面的成員。 但若您這樣做，則不要將原始實作類型執行個體傳回給呼叫者。 反之，請使用上述的其中一個技術並傳回投影介面，或 **com_ptr**。
+實作類型本身不是從 **winrt::Windows::Foundation::IUnknown** 衍生的，因此它沒有 **as** 函式。 即使如此，如您在上面的 **ImplFromIClosable** 函式中所見，您可以存取其所有介面的成員。 但若您這樣做，則不要將原始實作類型執行個體傳回給呼叫者。 反之，請使用已經顯示的其中一個技術並傳回投影介面，或 **com_ptr**。
+
+如果您有實作類型的執行個體，且您需要將它傳遞給預期對應投影類型的函式，則可以這麼做，如下列程式碼範例所示。 因為轉換運算子存在於您的實作類型 (實作類型必須是由 `cppwinrt.exe` 工具產生的) 上，所以您可以這麼做。 您可以將實作類型值直接傳遞給預期該對應投影類型值的方法。 您可以從實作類型成員函式，將 `*this` 傳遞給預期該對應投影類型值的方法。
 
 ```cppwinrt
-MyType myimpl;
-myimpl.ToString();
-myimpl.Close();
-IClosable ic1 = myimpl.as<IClosable>(); // error
-```
-
-如果您有實作類型的執行個體，且您需要將它傳遞給預期對應投影類型的函式，則您可以進行。 因為轉換運算子存在於您的實作類型 (實作類型必須是由 `cppwinrt.exe` 工具產生的) 上，所以您可以這麼做。 您可以將實作類型值直接傳遞給預期該對應投影類型值的方法。 您可以從實作類型成員函式，將 `*this` 傳遞給預期該對應投影類型值的方法。
-
-```cppwinrt
-// MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.
-
-void MyOtherType::DoWork(MyProject::MyType const&){ ... }
-
-...
-
-void FreeFunction(MyProject::MyOtherType const& ot)
+// MyClass.idl
+import "MyOtherClass.idl";
+namespace MyProject
 {
-    MyType myimpl;
-    ot.DoWork(myimpl);
+    runtimeclass MyClass
+    {
+        MyClass();
+        void MemberFunction(MyOtherClass oc);
+    }
 }
 
+// MyClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyClass : MyClassT<MyClass>
+    {
+        MyClass() = default;
+        void MemberFunction(MyProject::MyOtherClass const& oc) { oc.DoWork(*this); }
+    };
+}
 ...
 
-void MyType::MemberFunction(MyProject::MyOtherType const& ot)
+// MyOtherClass.idl
+import "MyClass.idl";
+namespace MyProject
 {
-    ot.DoWork(*this);
+    runtimeclass MyOtherClass
+    {
+        MyOtherClass();
+        void DoWork(MyClass c);
+    }
 }
+
+// MyOtherClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyOtherClass : MyOtherClassT<MyOtherClass>
+    {
+        MyOtherClass() = default;
+        void DoWork(MyProject::MyClass const& c){ /* ... */ }
+    };
+}
+...
+
+//main.cpp
+#include "pch.h"
+#include <winrt/base.h>
+#include "MyClass.h"
+#include "MyOtherClass.h"
+using namespace winrt;
+
+// MyProject::MyClass is the projected type; the implementation type would be MyProject::implementation::MyClass.
+
+void FreeFunction(MyProject::MyOtherClass const& oc)
+{
+    auto defaultInterface = winrt::make<MyProject::implementation::MyClass>();
+    MyProject::implementation::MyClass* myimpl = winrt::get_self<MyProject::implementation::MyClass>(defaultInterface);
+    oc.DoWork(*myimpl);
+}
+...
 ```
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>從有非預設建構函式的類型衍生

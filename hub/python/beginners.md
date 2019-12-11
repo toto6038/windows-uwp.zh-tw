@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, 學習 python, windows 上適用於初學者的 python, 利用 microsoft store 安裝 python, python 搭配 vs code, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d4c1cb6d65eb38a93e8bf9f0c34afd9e28f20129
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 688ae004dad8653e70d86b3b91652b6898c1e9d3
+ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314922"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881279"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>開始在 Windows 上使用適用於初學者的 Python
 
@@ -21,7 +21,7 @@ ms.locfileid: "72314922"
 
 ## <a name="set-up-your-development-environment"></a>設定開發環境
 
-對於初次使用 Python 的初學者，我們建議您[從 Microsoft Store安裝 Python](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 透過 Microsoft Store 進行安裝會使用基本 Python3 解譯器，但會處理目前使用者的 PATH 設定 (避免需要系統管理員存取權)，而且還會提供自動更新。 如果您是在教育環境中，或是組織中限制您電腦上權限或系統管理存取權的部門，則這項功能特別有用。
+對於初次使用 Python 的初學者，我們建議您[從 Microsoft Store安裝 Python](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 透過 Microsoft Store 進行安裝會使用基本 Python3 解譯器，但會處理目前使用者的 PATH 設定 (避免需要系統管理員存取權)，而且還會提供自動更新。 如果您是在教育環境中，或是組織中限制您電腦上權限或系統管理存取權的部門，則這項功能特別有用。
 
 如果您是在 Windows 上使用 Python 進行 **Web 開發**，建議您針對開發環境採用不同的設定。 建議您透過 Windows 子系統 Linux 版安裝和使用 Python，而不是直接安裝在 Windows 上。 如需說明，請參閱：[開始在 Windows 上使用 Python 進行 Web 開發](./web-frameworks.md)。 如果您有興趣將作業系統上的一般工作自動化，請參閱我們的指南：[開始在 Windows 上使用 Python 進行指令碼處理和自動化](./scripting.md)。 對於某些進階案例 (例如，需要存取/修改 Python 的安裝檔案、製作二進位檔的複本，或直接使用 Python DL)，您可能會想要考慮直接從 [python.org](https://www.python.org/downloads/) 下載特定的 Python 版本，或考慮安裝[替代項目](https://www.python.org/download/alternatives)，例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是資深 Python 程式設計人員，且有選擇替代實作的特定原因時，才建議這樣做。
 
@@ -45,15 +45,17 @@ VS Code 也包含[內建終端機](https://code.visualstudio.com/docs/editor/int
 
 1. 若要安裝 VS Code，請下載 VS Code for Windows：[https://code.visualstudio.com](https://code.visualstudio.com)。
 
-2. Python 是一種解譯的語言，若要執行 Python 程式碼，您必須告訴 VS Code 使用哪個解譯器。 建議您堅持使用 Python 3.7，除非您有特定原因，非選擇不同版本不可。 開啟 [命令選擇區]  (Ctrl+Shift+P) 以選取 Python 3 解譯器，然後開始鍵入命令 **Python:Select Interpreter** 進行搜尋，然後選取命令。 您也可以使用底部狀態列上的 [選取 Python 環境]  選項 (如果有的話)，它可能已顯示選取的解譯器。 此命令會呈現 VS Code 可以自動尋找的可用解譯器清單，包括虛擬環境。 如果您未看到所需的解譯器，請參閱[設定 Python 環境](https://code.visualstudio.com/docs/python/environments)。
+2. 安裝 VS Code 後，您也必須安裝 Python 擴充功能。 若要安裝 Python 擴充功能，您可以選取 [VS Code Marketplace 連結](https://marketplace.visualstudio.com/items?itemName=ms-python.python) 或開啟 VS Code，然後在 [擴充功能] 功能表 (Ctrl+Shift+X) 中搜尋 **Python**。
+
+3. Python 是一種解譯的語言，若要執行 Python 程式碼，您必須告訴 VS Code 使用哪個解譯器。 建議您堅持使用 Python 3.7，除非您有特定原因，非選擇不同版本不可。 安裝 Python 擴充功能後，請開啟 [命令選擇區]  (Ctrl+Shift+P) 以選取 Python 3 解譯器，然後開始鍵入命令 **Python:Select Interpreter** 進行搜尋，然後選取命令。 您也可以使用底部狀態列上的 [選取 Python 環境]  選項 (如果有的話)，它可能已顯示選取的解譯器。 此命令會呈現 VS Code 可以自動尋找的可用解譯器清單，包括虛擬環境。 如果您未看到所需的解譯器，請參閱[設定 Python 環境](https://code.visualstudio.com/docs/python/environments)。
 
     ![選取 VS Code 中的 Python 解譯器](../images/interpreterselection.gif)
 
-3. 若要在 VS Code 中開啟終端機，請選取 [檢視]   >  [終端機]  ，或者使用快速鍵 **Ctrl+`** (使用倒單引號字元)。 預設終端機為 PowerShell。
+4. 若要在 VS Code 中開啟終端機，請選取 [檢視]   >  [終端機]  ，或者使用快速鍵 **Ctrl+`** (使用倒單引號字元)。 預設終端機為 PowerShell。
 
-4. 在 VS Code 終端機內，直接輸入下列命令來開啟 Python：`python`
+5. 在 VS Code 終端機內，直接輸入下列命令來開啟 Python：`python`
 
-5. 輸入下列命令來試用 Python 解譯器：`print("Hello World")`。 Python 會傳回您的陳述式 "Hello World"。
+6. 輸入下列命令來試用 Python 解譯器：`print("Hello World")`。 Python 會傳回您的陳述式 "Hello World"。
 
     ![VS Code 中的 Python 命令列](../images/python-in-vscode.png)
 
@@ -188,7 +190,7 @@ Pygame 是用於撰寫遊戲的熱門 Python 套件 - 鼓勵學生學習程式�
 
 ### <a name="online-courses-for-learning-python"></a>學習 Python 的線上課程
 
-- [Microsoft Learn 上的 Python 簡介](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/)：試用互動式 Microsoft Learn 平台，並獲得完成此模組的體驗點數，其中涵蓋如何撰寫基本 Python 程式碼、宣告變數，以及使用主控台輸入和輸出的基本概念。 互動式沙箱環境讓此平台成為尚未設定 Python 開發環境的人員開始的絕佳位置。
+- [Microsoft Learn 上的 Python 簡介](https://docs.microsoft.com/learn/modules/intro-to-python/)：試用互動式 Microsoft Learn 平台，並獲得完成此模組的體驗點數，其中涵蓋如何撰寫基本 Python 程式碼、宣告變數，以及使用主控台輸入和輸出的基本概念。 互動式沙箱環境讓此平台成為尚未設定 Python 開發環境的人員開始的絕佳位置。
 
 - [Pluralsight 上的 Python：8堂課程，29 小時](https://app.pluralsight.com/paths/skills/python)：Pluralsight 上的 Python 學習路徑提供線上課程，其中涵蓋各種與 Python 相關的主題，包括測量您技能及找出差距的工具。
 

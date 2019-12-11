@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d512faccfa318156fb0dc28d3f804b53f0fe3d
-ms.sourcegitcommit: 102fdfdf32ba12a8911018d234d71d67ebef61ce
+ms.openlocfilehash: 6fb9b98ec362b59ad2593bbce24654f1dcfc7638
+ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74551666"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830789"
 ---
 # <a name="author-events-in-cwinrt"></a>以 C++/WinRT 撰寫事件
 
@@ -253,8 +253,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ```
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>參數化委派、簡單訊號，以及專案中的回呼
-
-如果您的事件只在 C++/WinRT 專案內部使用 (不會非跨越二進位檔)，您仍可使用 [**winrt::event**](/uwp/cpp-ref-for-winrt/event) 結構範本，但您會透過 C++/WinRT 的非 Windows 執行階段 [**winrt::delegate&lt;...T&gt;** ](/uwp/cpp-ref-for-winrt/delegate) 結構範本 (也就是有效、計算參考次數的委派) 將它參數化。 其支援任意多個參數，而且不限於 Windows 執行階段類型。
+如果您需要 Visual Studio 專案內部的事件 (而非跨二進位檔)，而這些事件不限於 Windows 執行階段類型，則您仍可使用 [**winrt::event**](/uwp/cpp-ref-for-winrt/event)\<Delegate\> 類別範本。 只要使用 [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate)，而不是實際的 Windows 執行階段委派類型，因為 **winrt::delegate** 也支援非 Windows 執行階段參數。
 
 下列範例先顯示不採用任何參數的委派簽章 (基本上是簡單訊號)，而後顯示採用一個字串的委派簽章。
 

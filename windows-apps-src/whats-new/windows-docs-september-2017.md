@@ -1,16 +1,16 @@
 ---
-title: 2017 年 9 月 Windows 文件的新增功能 - 開發 UWP 應用程式
+title: 2017 年 9 月 Windows 文件的新增功能
 description: 新功能、影片及開發人員指引已加入 2017 年 9 月的 Windows 10 開發人員文件中
 keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 1709
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bf88814e00e81608f698231f31c2f4ab52cd4ea6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fb63a5f7cefbccbedc09b0c74d9daea9d26b63a8
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258772"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734953"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>2017 年 9 月 Windows 開發人員文件的新增功能
 

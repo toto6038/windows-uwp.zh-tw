@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, windows 上的 python, 搭配 wsl 的 python web, 搭配 windows 子系統 linux 版的 python web 應用程式, 在 windows 上進行 python web 開發, windows 上的 flask 應用程式, windows 上的 django 應用程式, python web, 在 windows 上進行 flask web 開發, 在 windows 上進行 django web 開發, 使用 python 進行 windows web 開發, vs code python web 開發, 遠端 wsl 延伸模組, ubuntu, wsl, venv, pip, microsoft python 延伸模組, 在 windows 上執行 python, 在 windows 上使用 python, 在 windows 上使用 python 進行建置
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 285e5149778f2d5cb63554a5af63bb9ae23809dc
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: d883007168e0baf35f8a0ab0827505b683cfd291
+ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314942"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881296"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>開始在 Windows 上使用 Python 進行 Web 開發
 
@@ -23,7 +23,7 @@ ms.locfileid: "72314942"
 
 建議您在建置 Web 應用程式時，在 WSL 上安裝 Python。 許多用於開發 Python Web 應用程式的教學課程和指示都是針對 Linux 使用者所撰寫，並使用 Linux 型封裝和安裝工具。 大部分的 Web 應用程式也會部署在 Linux 上，因此這可確保您的開發與生產環境之間具有一致性。
 
-如果您是使用 Python 進行 Web 開發以外的操作，建議您使用 Microsoft Store 直接在 Windows 10 上安裝 Python。 WSL 不支援 GUI 桌上型電腦或應用程式 (例如 PyGam、Gnome、KDE 等)。 若為這些情況，直接在 Windows 上安裝和使用 Python。 如果您是初次使用 Python，請參閱我們的指南：[開始在 Windows 上使用適用於初學者的 Python](./beginners.md)。 如果您有興趣將作業系統上的一般工作自動化，請參閱我們的指南：[開始在 Windows 上使用 Python 進行指令碼處理和自動化](./scripting.md)。 對於某些進階案例，您可能會想要考慮直接從 [python.org](https://www.python.org/downloads/windows/) 下載特定的 Python 版本，或考慮安裝[替代項目](https://www.python.org/download/alternatives)，例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是資深 Python 程式設計人員，且有選擇替代實作的特定原因時，才建議這樣做。
+如果您是使用 Python 進行 Web 開發以外的操作，建議您使用 Microsoft Store 直接在 Windows 10 上安裝 Python。 WSL 不支援 GUI 桌上型電腦或應用程式 (例如 PyGame、Gnome、KDE 等)。 若為這些情況，直接在 Windows 上安裝和使用 Python。 如果您是初次使用 Python，請參閱我們的指南：[開始在 Windows 上使用適用於初學者的 Python](./beginners.md)。 如果您有興趣將作業系統上的一般工作自動化，請參閱我們的指南：[開始在 Windows 上使用 Python 進行指令碼處理和自動化](./scripting.md)。 對於某些進階案例，您可能會想要考慮直接從 [python.org](https://www.python.org/downloads/windows/) 下載特定的 Python 版本，或考慮安裝[替代項目](https://www.python.org/download/alternatives)，例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是資深 Python 程式設計人員，且有選擇替代實作的特定原因時，才建議這樣做。
 
 ## <a name="enable-windows-subsystem-for-linux"></a>啟用 Windows 子系統 Linux 版
 
@@ -47,13 +47,16 @@ WSL 可讓您以不需進行任何修改且完全與您的 Windows 檔案系統�
 
 您可以藉由輸入 `lsb_release -d` 來檢查您目前使用的 Linux 發行版本。 若要更新您的 Ubuntu 發行版本，請使用：`sudo apt update && sudo apt upgrade`。 建議定期更新，以確保您擁有最新的套件。 Windows 不會自動處理此更新。 如需連結至 Microsoft Store 中提供的其他 Linux 發行版本、替代安裝方法或疑難排解，請參閱[適用於 Windows 10 的 Windows 子系統 Linux 版安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。
 
+> [!TIP]
+> 如果您打算使用多個命令列 (Ubuntu、PowerShell、Windows 命令提示字元等)，或想要[自訂您的終端機](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md) (包括文字、背景色彩、按鍵繫結關係等)，請考慮試用新的 [Windows 終端機](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md)。
+
 ## <a name="set-up-visual-studio-code"></a>設定 Visual Studio Code
 
 使用 VS Code 來利用 [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)、[Linting](https://code.visualstudio.com/docs/python/linting)、[偵錯支援](https://code.visualstudio.com/docs/python/debugging)、[程式碼片段](https://code.visualstudio.com/docs/editor/userdefinedsnippets)和[單元測試](https://code.visualstudio.com/docs/python/unit-testing)。 VS Code 與 Windows 子系統 Linux 版緊密整合，提供 [內建終端機](https://code.visualstudio.com/docs/editor/integrated-terminal)，以在程式碼編輯器與命令列之間建立順暢的工作流程，而且支援[使用 Git 進行版本控制](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)，其中常用的 Git 命令 (add、commit、push、pull) 直接內建在 UI 中。
 
 1. [下載並安裝 VS Code for Windows](https://code.visualstudio.com)。 VS Code 也適用於 Linux，但 Windows 子系統 Linux 版不支援 GUI 應用程式，因此我們需要將它安裝在 Windows 上。 別擔心，您仍然可以使用 Remote - WSL 延伸模組，與您的 Linux 命令列和工具整合。
 
-2. 在 VS Code 上安裝 [Remote - WSL 延伸模組](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 這可讓您使用 WSL 做為整合式開發環境，並為您處理相容性和路徑。 [進一步了解](https://code.visualstudio.com/docs/remote/remote-overview)。
+2. 在 VS Code 上安裝 [Remote - WSL 延伸模組](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 這可讓您使用 WSL 做為整合式開發環境，並為您處理相容性和路徑。 [進一步瞭解](https://code.visualstudio.com/docs/remote/remote-overview)。
 
 > [!IMPORTANT]
 > 如果您已安裝 VS Code，則必須確定您具有 [1.35 May 版本](https://code.visualstudio.com/updates/v1_35)或更新版本，才能安裝 [Remote - WSL 延伸模組](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 若沒有 Remote - WSL 延伸模組，不建議您使用 WSL，因為您會失去自動完成、偵錯、linting 等的支援。有趣的事實：此 WSL 延伸模組安裝在 $HOME/.vscode-server/extensions 中。
@@ -69,7 +72,7 @@ WSL 可讓您以不需進行任何修改且完全與您的 Windows 檔案系統�
 ![Ubuntu 終端機](../images/ubuntu-terminal.png)
 
 > [!TIP]
-> 使用 Windows 子系統 Linux 版 (WSL) 時，必須記住的重要事項是**您現在正在兩個不同的檔案系統之間工作**：1) 您的 Windows 檔案系統，以及 2) 您的 Linux 檔案系統 (WSL)，即我們範例中使用的 Ubuntu。 您必須注意安裝套件和儲存檔案的位置。 您可以在 Windows 檔案系統中安裝一個或多個版本的工具或套件，以及在 Linux 檔案系統中安裝完全不同的版本。 更新 Windows 檔案系統中的工具將不會影響 Linux 檔案系統中的工具，反之亦然。 WSL 會將您電腦上的固定磁碟機掛接在 Linux 發行版本的 `/mnt/<drive>` 資料夾底下。 例如，您的 Windows C: 磁碟機掛接在 `/mnt/c/` 底下。 您可以從 Ubuntu 終端機存取 Windows 檔案，並在這些檔案上使用 Linux 應用程式和工具，反之亦然。 建議您在適用於 Python Web 開發的 Linux 檔案系統中工作，這是因為大部分的 Web 工具原本是針對 Linux 所撰寫，並部署在 Linux 生產環境中。 它也可避免混用檔案系統語意 (例如，Windows 在檔案名稱方面不區分大小寫)。 話雖如此，WSL 現在支援在 Linux 和 Windows 檔案系統之間進行跳躍，因此您可以在其中一個檔案上裝載您的檔案。 [進一步了解](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。 我們也很高興分享[即將在 Windows 上推出 WSL2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/)，並提供一些絕佳的改善功能。 您可以[立即在 Windows 測試人員組建 18917 中試用它](https://docs.microsoft.com/windows/wsl/wsl2-install)。
+> 使用 Windows 子系統 Linux 版 (WSL) 時，必須記住的重要事項是**您現在正在兩個不同的檔案系統之間工作**：1) 您的 Windows 檔案系統，以及 2) 您的 Linux 檔案系統 (WSL)，即我們範例中使用的 Ubuntu。 您必須注意安裝套件和儲存檔案的位置。 您可以在 Windows 檔案系統中安裝一個或多個版本的工具或套件，以及在 Linux 檔案系統中安裝完全不同的版本。 更新 Windows 檔案系統中的工具將不會影響 Linux 檔案系統中的工具，反之亦然。 WSL 會將您電腦上的固定磁碟機掛接在 Linux 發行版本的 `/mnt/<drive>` 資料夾底下。 例如，您的 Windows C: 磁碟機掛接在 `/mnt/c/` 底下。 您可以從 Ubuntu 終端機存取 Windows 檔案，並在這些檔案上使用 Linux 應用程式和工具，反之亦然。 建議您在適用於 Python Web 開發的 Linux 檔案系統中工作，這是因為大部分的 Web 工具原本是針對 Linux 所撰寫，並部署在 Linux 生產環境中。 它也可避免混用檔案系統語意 (例如，Windows 在檔案名稱方面不區分大小寫)。 話雖如此，WSL 現在支援在 Linux 和 Windows 檔案系統之間進行跳躍，因此您可以在其中一個檔案上裝載您的檔案。 [進一步瞭解](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。 我們也很高興分享[即將在 Windows 上推出 WSL2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/)，並提供一些絕佳的改善功能。 您可以[立即在 Windows 測試人員組建 18917 中試用它](https://docs.microsoft.com/windows/wsl/wsl2-install)。
 
 ## <a name="install-python-pip-and-venv"></a>安裝 Python、pip 和 venv
 
@@ -96,7 +99,7 @@ Ubuntu 18.04 LTS 隨附已安裝的 Python 3.6，但不隨附您預期可能會�
 
 ## <a name="open-a-wsl---remote-window"></a>開啟 WSL - Remote 視窗
 
-VS Code 使用 Remote - WSL 延伸模組 (先前已安裝)，將您的 Linux 子系統視為遠端伺服器。 這可讓您使用 WSL 做為整合式開發環境。 [進一步了解](https://code.visualstudio.com/docs/remote/wsl)。 
+VS Code 使用 Remote - WSL 延伸模組 (先前已安裝)，將您的 Linux 子系統視為遠端伺服器。 這可讓您使用 WSL 做為整合式開發環境。 [進一步瞭解](https://code.visualstudio.com/docs/remote/wsl)。 
 
 1. 從 Ubuntu 終端機中，於 VS Code 中開啟您的專案資料夾，方法是輸入：`code .` ("." 會告訴 VS Code 開啟目前的資料夾)。
 
@@ -112,7 +115,7 @@ VS Code 使用 Remote - WSL 延伸模組 (先前已安裝)，將您的 Linux 子
 
 ## <a name="install-the-microsoft-python-extension"></a>安裝 Microsoft Python 延伸模組
 
-您將需要為 Remote - WSL 安裝任何 VS Code 延伸模組。 已在 VS Code 本機安裝的延伸模組將無法自動使用。 [進一步了解](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions)。
+您將需要為 Remote - WSL 安裝任何 VS Code 延伸模組。 已在 VS Code 本機安裝的延伸模組將無法自動使用。 [進一步瞭解](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions)。
 
 1. 輸入 **Ctrl+Shift+X** (或使用功能表瀏覽至 [檢視]   >  [延伸模組]  )，以開啟 VS Code 延伸模組視窗。
 

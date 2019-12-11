@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: f3a2575b17cc4228d7c4db273845478aecf65f29
-ms.sourcegitcommit: f0936ce8e88d78b1af99998794a8765094f6a487
+ms.openlocfilehash: f46d6ba99d4342e1e4fe7a9926082a5981fd690a
+ms.sourcegitcommit: 11c5cb559c949b6fe645499c2265434885882d8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72915110"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74666913"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>適用於 Windows 的 Fluent Design 系統應用程式建立者
 
@@ -65,7 +65,7 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
 
 ## <a name="find-a-natural-fit"></a>尋找自然符合
 
-要如何讓各種裝置上的應用程式感覺自然呢？ 藉由讓它感覺就像是考量每個特定裝置來設計它。 UI 配置適合不同螢幕大小&mdash;因此未浪費的一點空間 (但不是擠在一塊) &mdash;讓體驗感覺自然就像是專為該裝置設計的。
+要如何讓各種裝置上的應用程式感覺自然呢？ 藉由讓它感覺就像是考量每個特定裝置來設計它。 UI 配置適合不同螢幕大小因此未浪費的一點空間 (但不是擠在一塊) 讓體驗感覺自然就像是專為該裝置設計的。
 
 :::row:::
     :::column:::
@@ -112,7 +112,7 @@ UWP 應用程式可以在各種不同執行 Windows 的裝置上執行。 這對
     :::column span="2":::
 **適用於正確輸入的最佳化**
 
-UWP 應用程式會自動支援常見的滑鼠、鍵盤、手寫筆及觸控式互動&mdash;您不需要執行額外的動作。 但是，您可以使用適用於特定輸入的最佳化支援來增強應用程式，例如手寫筆和 Surface Dial。
+UWP 應用程式會自動支援常見的滑鼠、鍵盤、手寫筆及觸控式互動。 您不需要執行額外的動作。 但是，如果想要，您可以使用適用於特定輸入的最佳化支援來增強應用程式，例如手寫筆和 Surface Dial。
 
 [了解輸入與互動](/windows/uwp/design/input/input-primer)
 :::row-end:::
