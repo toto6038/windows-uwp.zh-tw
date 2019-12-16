@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 遷移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: a63d38db613ebe6425a05ed20563405242ffd441
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 17900829388bfe0b3cc325e27d0807b139ccaa27
+ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328865"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74958958"
 ---
 # <a name="move-to-cwinrt-from-c"></a>從 C# 移到 C++/WinRT
 
@@ -264,7 +264,7 @@ C# 會自動將純量 Box 處理為物件。 C++/WinRT 會要求您明確地呼�
 | 如果 o 為 null | `System.NullReferenceException` | 毀損 |
 | 如果 o 不是已 Box 處理的 int | `System.InvalidCastException` | 毀損 |
 | 進行 int 的 Unbox 處理，若為 null 則使用遞補；若為其他任何項目則會毀損 | `i = o != null ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
-| 可能的話，進行 int 的 Unbox 處理；其他任何項目使用遞補 | `var box = o as int?;`<br>`i = box != null ? box.Value : fallback;` | `i = unbox_value_or<int>(o, fallback);` |
+| 可能的話，進行 int 的 Unbox 處理；其他任何項目使用遞補 | `i = as int? ?? fallback;` | `i = unbox_value_or<int>(o, fallback);` |
 
 ### <a name="boxing-and-unboxing-a-string"></a>進行字串的 Box 處理和 Unbox 處理
 
@@ -274,24 +274,23 @@ ABI 類型 [**HSTRING**](/windows/win32/winrt/hstring) 是參考計數字串的�
 
 C# 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT 會將字串投影為實值類型。 這表示已進行 Box 處理的 null 字串可以有不同的表示法 (取決於您達成的方式)。
 
+| 行為 | C# | C++/WinRT|
+|-|-|-|
+| 宣告 | `object o;`<br>`string s;` | `IInspectable o;`<br>`hstring s;` |
+| 字串類型類別 | 參考類型 | 值類型 |
+| null  **HSTRING** 投影為 | `""` | `hstring{}` |
+| Null 和 `""` 相同嗎？ | 否 | 是 |
+| Null 的有效性 | `s = null;`<br>`s.Length` 引發 NullReferenceException | `s = hstring{};`<br>`s.size() == 0` (有效) |
+| 如果將 Null 字串指派給物件 | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| 如果將 `""` 指派給物件 | `o = "";`<br>`o != null` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
+
+基本 Box 處理和 Unbox 處理。
+
 | 操作 | C# | C++/WinRT|
 |-|-|-|
-| 字串類型類別 | 參考類型 | 值類型 |
-| null  **HSTRING** 投影為 | `""` | `hstring{ nullptr }` |
-| Null 和 `""` 相同嗎？ | 否 | 是 |
-| Null 的有效性 | `s = null;`<br>`s.Length` 引發 **NullReferenceException** | `s = nullptr;`<br>`s.size() == 0` (有效) |
-| 進行字串的 Box 處理 | `o = s;` | `o = box_value(s);` |
-| 如果 `s` 為 `null` | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
-| 如果 `s` 為 `""` | `o = "";`<br>`o != null;` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| 進行字串的 Box 處理並保留 null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| 強制進行字串的 Box 處理 | `o = PropertyValue.CreateString(s);` | `o = box_value(s);` |
-| 進行已知字串的 Unbox 處理 | `s = (string)o;` | `s = unbox_value<hstring>(o);` |
-| 如果 `o` 為 null | `s == null; // not equivalent to ""` | 毀損 |
-| 如果 `o` 不是已 Box 處理的 int | `System.InvalidCastException` | 毀損 |
-| 進行字串的 Unbox 處理，若為 null 則使用遞補；若為其他任何項目則會毀損 | `s = o != null ? (string)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| 可能的話，進行字串的 Unbox 處理；其他任何項目使用遞補 | `var s = o as string ?? fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
-
-在上述兩個「使用遞補進行 Unbox 處理」  案例中，null 字串可能已強制進行 Box 處理，在此情況下則不會使用遞補。 產生的值會是空字串，因為這是方塊中的內容。
+| 進行字串的 Box 處理 | `o = s;`<br>空字串會變成非 Null 物件。 | `o = box_value(s);`<br>空字串會變成非 Null 物件。 |
+| 進行已知字串的 Unbox 處理 | `s = (string)o;`<br>Null 物件會變成 Null 字串。<br>InvalidCastException (如果不是字串)。 | `s = unbox_value<hstring>(o);`<br>Null 物件損毀。<br>如果不是字串，則會損毀。 |
+| 將可能的字串進行 Unbox 處理 | `s = o as string;`<br>Null 物件或非字串會變成 Null 字串。<br><br>或<br><br>`s = o as string ?? fallback;`<br>Null 或非字串會變成遞補。<br>保留空字串。 | `s = unbox_value_or<hstring>(o, fallback);`<br>Null 或非字串會變成遞補。<br>保留空字串。 |
 
 ## <a name="derived-classes"></a>衍生類別
 

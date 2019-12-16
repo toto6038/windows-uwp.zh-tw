@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 92088906078a3a705e5fae052a50fc914561c77c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: d540474140e4734320b06d852933b30fa20b61be
+ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393452"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74958968"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
@@ -468,24 +468,23 @@ C++/CX 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT �
 
 此外，C++/CX 允許您對 null **String^** 進行取值，在此情況下其行為就像字串 `""`。
 
-| 操作 | C++/CX | C++/WinRT|
+| 行為 | C++/CX | C++/WinRT|
 |-|-|-|
+| 宣告 | `Object^ o;`<br>`String^ s;` | `IInspectable o;`<br>`hstring s;` |
 | 字串類型類別 | 參考類型 | 值類型 |
 | null  **HSTRING** 投影為 | `(String^)nullptr` | `hstring{}` |
 | Null 和 `""` 相同嗎？ | 是 | 是 |
-| Null 的有效性 | `s = nullptr;`<br>`s->Length == 0` (有效) | `s = nullptr;`<br>`s.size() == 0` (有效) |
-| 進行字串的 Box 處理 | `o = s;` | `o = box_value(s);` |
-| 如果 `s` 為 `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
-| 如果 `s` 為 `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| 進行字串的 Box 處理並保留 null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| 強制進行字串的 Box 處理 | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
-| 進行已知字串的 Unbox 處理 | `s = (String^)o;` | `s = unbox_value<hstring>(o);` |
-| 如果 `o` 為 null | `s == nullptr; // equivalent to ""` | 毀損 |
-| 如果 `o` 不是已 Box 處理的 int | `Platform::InvalidCastException` | 毀損 |
-| 進行字串的 Unbox 處理，若為 null 則使用遞補；若為其他任何項目則會毀損 | `s = o ? (String^)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| 可能的話，進行字串的 Unbox 處理；其他任何項目使用遞補 | `auto box = dynamic_cast<IBox<String^>^>(o);`<br>`s = box ? box->Value : fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
+| Null 的有效性 | `s = nullptr;`<br>`s->Length == 0` (有效) | `s = hstring{};`<br>`s.size() == 0` (有效) |
+| 如果將 Null 字串指派給物件 | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| 如果將 `""` 指派給物件 | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
 
-在上述兩個「使用遞補進行 Unbox 處理」  案例中，null 字串可能已強制進行 Box 處理，在此情況下則不會使用遞補。 產生的值會是空字串，因為這是方塊中的內容。
+基本 Box 處理和 Unbox 處理。
+
+| 操作 | C++/CX | C++/WinRT|
+|-|-|-|
+| 進行字串的 Box 處理 | `o = s;`<br>空字串會變成 nullptr。 | `o = box_value(s);`<br>空字串會變成非 Null 物件。 |
+| 進行已知字串的 Unbox 處理 | `s = (String^)o;`<br>Null 物件會變成空字串。<br>InvalidCastException (如果不是字串)。 | `s = unbox_value<hstring>(o);`<br>Null 物件損毀。<br>如果不是字串，則會損毀。 |
+| 將可能的字串進行 Unbox 處理 | `s = dynamic_cast<String^>(o);`<br>Null 物件或非字串會變成空字串。 | `s = unbox_value_or<hstring>(o, fallback);`<br>Null 或非字串會變成遞補。<br>保留空字串。 |
 
 ## <a name="concurrency-and-asynchronous-operations"></a>並行和非同步作業
 
