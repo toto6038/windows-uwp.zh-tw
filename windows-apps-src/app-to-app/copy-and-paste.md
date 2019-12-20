@@ -1,21 +1,21 @@
 ---
 description: 本文說明如何使用剪貼簿在通用 Windows 平台 (UWP) App 中支援複製和貼上。
-title: 複製和貼上
+title: 複製並貼上
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
-ms.date: 02/08/2017
+ms.date: 12/19/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c5f3fcd796e813719a5aa99c5ec70706e9630ce5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: dfa5c15c2bd4d82588e0b197dc265c4b529e64c9
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317847"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302682"
 ---
-# <a name="copy-and-paste"></a>複製和貼上
+# <a name="copy-and-paste"></a>複製並貼上
 
-本文說明如何使用剪貼簿在通用 Windows 平台 (UWP) App 中支援複製和貼上。 複製和貼上是在 App 間 (或是 App 內) 交換資料的傳統方式，而且幾乎每個 App 在某種程度上都能支援剪貼簿作業。
+本文說明如何使用剪貼簿在通用 Windows 平台 (UWP) App 中支援複製和貼上。 複製和貼上是在 App 間 (或是 App 內) 交換資料的傳統方式，而且幾乎每個 App 在某種程度上都能支援剪貼簿作業。 如需示範數種不同複製和貼上案例的完整程式碼範例，請參閱[剪貼簿範例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard)。
 
 ## <a name="check-for-built-in-clipboard-support"></a>檢查內建式剪貼簿支援
 
@@ -25,7 +25,6 @@ ms.locfileid: "67317847"
 
 首先，在您的 App 中包含 [**Windows.ApplicationModel.DataTransfer**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer) 命名空間。 接著，新增 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 物件的執行個體。 這個物件包含使用者想要複製的資料以及您想要包含的任何屬性 (例如描述)。
 
-<!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
 DataPackage dataPackage = new DataPackage();
 ```
@@ -42,22 +41,24 @@ dataPackage.RequestedOperation = DataPackageOperation.Copy;
 // or cut
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
-## <a name="drag-and-drop"></a>拖放
 
-接下來，您可以將使用者選取的資料新增至 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 物件。 如果 **DataPackage** 類別支援此資料，就可以使用 **DataPackage** 物件的其中一種對應方法。 以下是新增文字的方式：
+## <a name="set-the-copied-content"></a>設定複製的內容
+
+接下來，您可以將使用者選取的資料新增至 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 物件。 如果**DataPackage**類別支援這項資料，您可以使用**DataPackage**物件的其中一個對應[方法](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage#methods)。 以下是使用[**SetText**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage.settext)方法加入文字的方式：
 
 ```cs
 dataPackage.SetText("Hello World!");
 ```
 
-最後一個步驟是呼叫靜態 [**SetContent**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.Clipboard#Windows_ApplicationModel_DataTransfer_Clipboard_SetContent_Windows_ApplicationModel_DataTransfer_DataPackage_) 方法，將 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 新增到剪貼簿。
+最後一個步驟是呼叫靜態 [**SetContent**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboard.setcontent) 方法，將 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 新增到剪貼簿。
 
 ```cs
 Clipboard.SetContent(dataPackage);
 ```
+
 ## <a name="paste"></a>貼上
 
-若要取得剪貼簿的內容，請呼叫靜態 [**GetContent**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboard.getcontent) 方法。 這個方法會傳回包含內容的 [**DataPackageView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackageView)。 這個物件與 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 物件幾乎完全一樣，不同的是它的內容是唯讀的。 有了該物件，您便可以使用 [**AvailableFormats**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackageview.availableformats) 或 [**Contains**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackageView#Windows_ApplicationModel_DataTransfer_DataPackageView_Contains_System_String_) 方法來識別可用的格式。 接著，您可以呼叫對應的 [**DataPackageView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackageView) 方法來取得資料。
+若要取得剪貼簿的內容，請呼叫靜態 [**GetContent**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboard.getcontent) 方法。 這個方法會傳回包含內容的 [**DataPackageView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackageView)。 這個物件與 [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 物件幾乎完全一樣，不同的是它的內容是唯讀的。 有了該物件，您便可以使用 [**AvailableFormats**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackageview.availableformats) 或 [**Contains**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackageview.contains) 方法來識別可用的格式。 接著，您可以呼叫對應的 [**DataPackageView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackageView) 方法來取得資料。
 
 ```cs
 async void OutputClipboardText()
@@ -89,8 +90,9 @@ Clipboard.ContentChanged += async (s, e) =>
 }
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
+* [剪貼簿範例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard)
 * [應用程式間通訊](index.md)
 * [DataTransfer](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer)
 * [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)

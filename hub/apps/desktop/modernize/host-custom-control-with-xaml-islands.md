@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3c14cfaefcf10aa051e3054d5df2e6da9fd77602
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: af8ef4d8fb8661e4a8f2d6b1fb98dd19cbd567c1
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317059"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302522"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 群島在 WPF 應用程式中裝載自訂 UWP 控制項
 
@@ -21,7 +21,7 @@ ms.locfileid: "71317059"
 
 雖然本文示範如何在 WPF 應用程式中執行這項作業，但此程式與 Windows Forms 應用程式的處理方式類似。 如需有關在 WPF 和 Windows Forms 應用程式中裝載 UWP 控制項的總覽，請參閱[這篇文章](xaml-islands.md#wpf-and-windows-forms-applications)。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 若要在 WPF 應用程式中裝載自訂 UWP 控制項，您需要下列元件。 本文提供建立這些元件的指示。
 
@@ -29,9 +29,9 @@ ms.locfileid: "71317059"
 
 * **自訂 UWP 控制項**。 您需要裝載的自訂 UWP 控制項的原始程式碼，才能使用您的應用程式進行編譯。 自訂控制項通常會定義在 UWP 類別庫專案中，而您會在與 WPF （或 Windows Forms）專案相同的方案中參考它。
 
-* **定義 XamlApplication 物件的 UWP 應用程式專案**。 您的 WPF （或 Windows Forms）專案必須能夠存取 Windows 社區工具組`Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`所提供之類別的實例。 這個物件會作為根中繼資料提供者，以便在應用程式目前目錄的元件中載入自訂 UWP XAML 類型的中繼資料。 建議的做法是將**空白應用程式（通用 Windows）** 專案加入至與 WPF （或 Windows Forms）專案相同的方案中，並修訂此專案中的`App`預設類別。
+* **定義 XamlApplication 物件的 UWP 應用程式專案**。 您的 WPF （或 Windows Forms）專案必須能夠存取 Windows 社區工具組所提供之 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 類別的實例。 這個物件會作為根中繼資料提供者，以便在應用程式目前目錄的元件中載入自訂 UWP XAML 類型的中繼資料。 建議的做法是將**空白應用程式（通用 Windows）** 專案加入至與 WPF （或 Windows Forms）專案相同的方案中，並修訂此專案中的預設 `App` 類別。
   > [!NOTE]
-  > 您的方案只能包含一個定義`XamlApplication`物件的專案。 應用程式中的所有自訂 UWP 控制項都會`XamlApplication`共用相同的物件。 定義`XamlApplication`物件的專案必須包含所有其他 UWP 程式庫的參考，以及在 XAML 島中主控 UWP 控制項的專案。
+  > 您的方案只能包含一個定義 `XamlApplication` 物件的專案。 應用程式中的所有自訂 UWP 控制項都會共用相同的 `XamlApplication` 物件。 定義 `XamlApplication` 物件的專案必須包含所有其他 UWP 程式庫的參考，以及在 XAML 島中主控 UWP 控制項的專案。
 
 ## <a name="create-a-wpf-project"></a>建立 WPF 專案
 
@@ -59,19 +59,19 @@ ms.locfileid: "71317059"
 
 7. 將您的解決方案設定為以特定平臺（例如 x86 或 x64）為目標。 以**任何 CPU**為目標的專案不支援自訂 UWP 控制項。
 
-    1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**屬性** -> ] [設定**屬性** -> ] [**Configuration Manager**]。 
+    1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 **屬性** ** -> ** 設定 屬性 -> **Configuration Manager**。 
     2. 在 [使用中的**方案平臺**] 底下，選取 [**新增**]。 
     3. 在 [**新增方案平臺**] 對話方塊中，選取 [ **X64** ] 或 [ **X86** ] 並按 **[確定]** 。 
     4. 關閉開啟的對話方塊。
 
 ## <a name="create-a-xamlapplication-object-in-a-uwp-app-project"></a>在 UWP 應用程式專案中建立 XamlApplication 物件
 
-接下來，將 UWP 應用程式專案新增至與 WPF 專案相同的方案中。 您將修改此專案`App`中的預設類別，以衍生自`Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` Windows 社區工具組所提供的類別。 WPF 應用程式中的**WindowsXamlHost**物件需要此`XamlApplication`物件來裝載自訂 UWP 控制項。
+接下來，將 UWP 應用程式專案新增至與 WPF 專案相同的方案中。 您將會修訂此專案中的預設 `App` 類別，以衍生自 Windows 社區工具組所提供的 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 類別。 WPF 應用程式中的**WindowsXamlHost**物件需要此 `XamlApplication` 物件，才能裝載自訂 UWP 控制項。
 
-1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**加入** -> **新專案**]。
+1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**加入** -> **新增專案**]。
 2. 新增 **[空白應用程式 (通用 Windows)\]** 專案到您的方案。 請確定 [目標版本] 和 [最小版本] 都設定為**Windows 10 1903 版**或更新版本。
 3. 在 UWP 應用程式專案中，安裝[XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 套件（6.0.0-preview7 或更新版本）。
-4. 開啟**app.xaml**檔案，並以下列 xaml 取代此檔案的內容。 將`MyUWPApp`取代為 UWP 應用程式專案的命名空間。
+4. 開啟**app.xaml**檔案，並以下列 xaml 取代此檔案的內容。 將 `MyUWPApp` 取代為 UWP 應用程式專案的命名空間。
 
     ```xml
     <xaml:XamlApplication
@@ -83,7 +83,7 @@ ms.locfileid: "71317059"
     </xaml:XamlApplication>
     ```
 
-5. 開啟**App.xaml.cs**檔案，並以下列程式碼取代此檔案的內容。 將`MyUWPApp`取代為 UWP 應用程式專案的命名空間。
+5. 開啟**App.xaml.cs**檔案，並以下列程式碼取代此檔案的內容。 將 `MyUWPApp` 取代為 UWP 應用程式專案的命名空間。
 
     ```csharp
     namespace MyUWPApp
@@ -99,7 +99,7 @@ ms.locfileid: "71317059"
     ```
 
 6. 從 UWP 應用程式專案中刪除**MainPage。**
-7. 建立 UWP 應用程式專案。
+7. 清除 UWP 應用程式專案，然後建立它。
 8. 在 WPF 專案中，以滑鼠右鍵按一下 [相依性 **]** 節點，並加入 UWP 應用程式專案的參考。
 
 ## <a name="create-a-custom-uwp-control"></a>建立自訂 UWP 控制項
@@ -110,10 +110,10 @@ ms.locfileid: "71317059"
 
 如果您已經有自訂控制項，您可以使用它，而不是此處所示的控制項。 不過，您仍然需要設定包含控制項的專案，如下列步驟所示。
 
-1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**加入** -> **新專案**]。
+1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**加入** -> **新增專案**]。
 2. 將 **[類別庫（通用 Windows）** ] 專案新增至您的方案。 請確定 [目標版本] 和 [最小版本] 都設定為**Windows 10 1903 版**或更新版本。
 3. 以滑鼠右鍵按一下專案檔，然後選取 **[卸載專案**]。 再次以滑鼠右鍵按一下專案檔，然後選取 [**編輯**]。
-4. 在結尾`</Project>`元素之前，新增下列 XML 以停用數個屬性，然後儲存專案檔。 您必須啟用這些屬性，才能將自訂 UWP 控制項裝載在 WPF （或 Windows Forms）應用程式中。
+4. 在結尾 `</Project>` 專案之前，新增下列 XML 以停用數個屬性，然後儲存專案檔。 您必須啟用這些屬性，才能將自訂 UWP 控制項裝載在 WPF （或 Windows Forms）應用程式中。
 
     ```xml
     <PropertyGroup>
@@ -124,7 +124,7 @@ ms.locfileid: "71317059"
 
 5. 以滑鼠右鍵按一下專案檔，然後選取 [**重載專案**]。
 6. 刪除預設的**Class1.cs**檔案，並將新的**使用者控制項**專案加入至專案。
-7. 在使用者控制項的 XAML 檔案中，加入下列`StackPanel`做為預設`Grid`的子系。 這個範例會加入``TextBlock``控制項，然後``Text``將該控制項的屬性系結至``XamlIslandMessage``欄位。
+7. 在使用者控制項的 XAML 檔案中，加入下列 `StackPanel` 做為預設 `Grid`的子系。 這個範例會加入 ``TextBlock`` 控制項，然後將該控制項的 ``Text`` 屬性系結至 ``XamlIslandMessage`` 欄位。
 
     ```xml
     <StackPanel Background="LightCoral">
@@ -134,7 +134,7 @@ ms.locfileid: "71317059"
     </StackPanel>
     ```
 
-8. 在使用者控制項的程式碼後置檔案中，將`XamlIslandMessage`欄位加入至使用者控制項類別，如下所示。
+8. 在使用者控制項的程式碼後置檔案中，將 `XamlIslandMessage` 欄位加入至使用者控制項類別，如下所示。
 
     ```csharp
     public sealed partial class MyUserControl : UserControl
@@ -156,19 +156,19 @@ ms.locfileid: "71317059"
 ## <a name="host-the-custom-uwp-control-in-your-wpf-app"></a>在您的 WPF 應用程式中裝載自訂 UWP 控制項
 
 1. 在**方案總管**中，展開 WPF 專案，然後開啟 [mainwindow.xaml] 檔案或其他您要裝載自訂控制項的視窗。
-2. 在 XAML 檔案中，將下列命名空間宣告新增至`<Window>`元素。
+2. 在 XAML 檔案中，將下列命名空間宣告新增至 `<Window>` 元素。
 
     ```xml
     xmlns:xaml="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
     ```
 
-3. 在相同的檔案中，將下列控制項新增至`<Grid>`專案。 `InitialTypeName`將屬性變更為 UWP 類別庫專案中使用者控制項的完整名稱。
+3. 在相同的檔案中，將下列控制項新增至 `<Grid>` 元素。 將 `InitialTypeName` 屬性變更為 UWP 類別庫專案中使用者控制項的完整名稱。
 
     ```xml
     <xaml:WindowsXamlHost InitialTypeName="UWPClassLibrary.MyUserControl" ChildChanged="WindowsXamlHost_ChildChanged" />
     ```
 
-4. 開啟程式碼後置檔案，並將下列程式碼新增`Window`至類別。 這段程式碼`ChildChanged`會定義事件處理常式，將 UWP ``XamlIslandMessage``自訂控制項的欄位值指派`WPFMessage`給 WPF 應用程式中的欄位值。 在`UWPClassLibrary.MyUserControl` UWP 類別庫專案中，變更為使用者控制項的完整名稱。
+4. 開啟程式碼後置檔案，並將下列程式碼新增至 `Window` 類別。 此程式碼會定義 `ChildChanged` 事件處理常式，將 UWP 自訂控制項的 [``XamlIslandMessage``] 欄位的值，指派給 WPF 應用程式中 [`WPFMessage`] 欄位的值。 將 `UWPClassLibrary.MyUserControl` 變更為 UWP 類別庫專案中使用者控制項的完整名稱。
 
     ```csharp
     private void WindowsXamlHost_ChildChanged(object sender, EventArgs e)
@@ -206,7 +206,7 @@ ms.locfileid: "71317059"
     > [!NOTE]
     > 請確定您已安裝最新的*發行*前版本。 目前，如果您選擇在[MSIX 套件](https://docs.microsoft.com/windows/msix)中封裝應用程式以進行部署，則只有此套件的發行前版本才可正常使用。
 
-2. 在此專案的 app.xaml 檔案中，將下列子項目加入至`<xaml:Application>`元素。
+2. 在此專案的 app.xaml 檔案中，將下列子專案新增至 `<xaml:Application>` 元素。
 
     ```xml
     <Application.Resources>
@@ -231,13 +231,13 @@ ms.locfileid: "71317059"
 
 3. 在 UWP 類別庫專案中，安裝最[新的搶](https://www.nuget.org/packages/Microsoft.UI.Xaml)鮮版（您在 UWP 應用程式專案中安裝的版本）。
 
-4. 在相同的專案中，開啟使用者控制項的 XAML 檔案，並將下列命名空間宣告新增至`<UserControl>`專案。
+4. 在相同的專案中，開啟使用者控制項的 XAML 檔案，然後將下列命名空間宣告加入至 `<UserControl>` 專案。
 
     ```xml
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. 在相同的檔案中，加入`<winui:RatingControl />`專案做為的`<StackPanel>`子系。 這個元素會從 WinUI 程式庫加入[RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol?view=winui-2.2)類別的實例。 加入這個元素之後， `<StackPanel>`現在應該看起來像這樣。
+5. 在相同的檔案中，加入 `<winui:RatingControl />` 專案做為 `<StackPanel>`的子系。 這個元素會從 WinUI 程式庫加入[RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol?view=winui-2.2)類別的實例。 加入這個元素之後，`<StackPanel>` 現在看起來應該像這樣。
 
     ```xml
     <StackPanel Background="LightCoral">
@@ -262,7 +262,7 @@ ms.locfileid: "71317059"
 
 3. 編輯封裝專案檔案。 封裝以 .NET Core 3 為目標並裝載 XAML 孤島的 WPF 應用程式時，目前需要進行這些變更。
 
-    1. 在方案總管中, 以滑鼠右鍵按一下封裝專案節點, 然後選取 [**編輯專案檔案**]。
+    1. 在方案總管中，以滑鼠右鍵按一下封裝專案節點，然後選取 [**編輯專案檔案**]。
     2. 從檔案中找出 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。 以下列 XML 取代此元素。 這些變更目前需要用於封裝以 .NET Core 3 為目標並裝載 UWP 控制項的 WPF 應用程式。
 
         ``` xml
@@ -306,7 +306,7 @@ ms.locfileid: "71317059"
 
     1. 在方案總管中，以滑鼠右鍵按一下 WPF 專案節點，然後選取 **[卸載專案**]。
     2. 以滑鼠右鍵按一下 WPF 專案節點，然後選取 [**編輯**]。
-    3. 找出檔案`</PropertyGroup>`中的最後一個結束記號，然後緊接在該標記之後加入下列 XML。
+    3. 在檔案中找出最後一個 `</PropertyGroup>` 結束記號，並在該標記之後緊接著加入下列 XML。
 
         ``` xml
         <PropertyGroup>
