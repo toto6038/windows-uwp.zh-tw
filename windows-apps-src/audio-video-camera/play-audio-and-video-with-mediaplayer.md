@@ -4,14 +4,14 @@ description: 本文說明如何使用 MediaPlayer 在您的通用 Windows App �
 title: 使用 MediaPlayer 播放音訊和視訊
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2d95711196a9bf2ab113527e5fc8f44459dc3d
-ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
+ms.openlocfilehash: a53c03c10089856cfd738a5c071c37502a34e9a5
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486435"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683621"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>使用 MediaPlayer 播放音訊和視訊
 
@@ -20,7 +20,7 @@ ms.locfileid: "67486435"
 本文會逐步說明一般媒體播放 App 中將使用的 **MediaPlayer** 功能。 請注意，**MediaPlayer** 對於所有媒體項目都是使用 [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) 類別當作容器。 這個類別可讓您使用同一個介面，從許多不同的來源載入和播放媒體，這些來源包括本機檔案、記憶體資料流，以及網路來源。 也有可搭配 **MediaSource** 使用的高層級類別，像是 [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem) 和 [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList)，它們提供更多進階功能，如播放清單，及管理包含多個音訊、視訊和中繼資料播放軌的媒體來源。 如需 **MediaSource** 和相關 API 的詳細資訊，請參閱[媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。
 
 > [!NOTE] 
-> Windows 10 N 和 Windows 10 KN 版不含使用 **MediaPlayer** 播放所需的媒體功能。 這些功能可以手動安裝。 如需詳細資訊，請參閱[適用於 Windows 10 N 和 Windows 10 KN 版本的 Media Feature Pack](https://support.microsoft.com/en-us/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions)。
+> Windows 10 N 和 Windows 10 KN 版不含使用 **MediaPlayer** 播放所需的媒體功能。 這些功能可以手動安裝。 如需詳細資訊，請參閱[適用於 Windows 10 N 和 Windows 10 KN 版本的 Media Feature Pack](https://support.microsoft.com/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions)。
 
 ## <a name="play-a-media-file-with-mediaplayer"></a>使用 MediaPlayer 播放媒體檔案  
 使用 **MediaPlayer** 的基本媒體播放非常容易實作。 首先，建立新的 **MediaPlayer** 類別執行個體。 您可以同時有多個作用中的 **MediaPlayer** 執行個體。 接著，將播放器的 [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source) 屬性設為實作 [**IMediaPlaybackSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.IMediaPlaybackSource) 的物件，例如 [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource)、[**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem)，或 [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList)。 在此範例中，**MediaSource** 是由 App 本機存放區中的檔案建立，然後 **MediaPlaybackItem** 是由來源建立並指派到播放器的 **Source** 屬性。
@@ -34,7 +34,7 @@ ms.locfileid: "67486435"
 [!code-cs[CloseMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCloseMediaPlayer)]
 
 ## <a name="use-mediaplayerelement-to-render-video-in-xaml"></a>在 XAML 中使用 MediaPlayerElement 轉譯視訊
-您可以在 **MediaPlayer** 中播放媒體，而不在 XAML 中顯示，但許多媒體播放 app 將會想要在 XAML 頁面中轉譯媒體。 若要這麼做，請使用精簡的 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 控制項。 就像 **MediaElement** 一樣，**MediaPlayerElement** 可讓您指定是否顯示內建的傳輸控制項。
+您可以在 **MediaPlayer** 中播放媒體，而不在 XAML 中顯示，但許多媒體播放 app 將會想要在 XAML 頁面中轉譯媒體。 若要這麼做，請使用精簡的 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 控制項。 就像 **MediaElement** 一樣，**MediaPlayerElement** 可讓您指定是否應顯示內建傳輸控制項。
 
 [!code-xml[MediaPlayerElementXAML](./code/MediaPlayer_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
@@ -96,7 +96,7 @@ ms.locfileid: "67486435"
 ### <a name="pinch-and-zoom-video"></a>捏合和縮放視訊
 **MediaPlayer** 可讓您指定視訊內容內應轉譯的來源矩形，以有效地允許您放大視訊。 您指定的矩形是相對於標準化的矩形 (0,0,1,1) 其中 0,0 是畫面的左上方位置，1,1 是指定畫面的完整寬度和高度。 舉例來說，若要縮放矩形，以轉譯視訊的右上方四分之一，您需要指定矩形 (.5,0,.5,.5)。  請務必檢查您的值，以確定來源矩形在 (0,0,1,1) 標準化矩形範圍內。 嘗試設定此範圍外的值會造成擲回例外狀況。
 
-若要實作使用多點觸控手勢的捏合和縮放，您必須先指定要支援的手勢。 在此範例中，需要縮放和平移手勢。 當其中一個設定的手勢出現時，會引發 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件。 將會使用 [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped) 事件來將縮放比例重設為完整畫面。 
+若要實作使用多點觸控手勢的捏合和縮放，您必須先指定要支援的手勢。 在此範例中，需要縮放和平移手勢。 當其中一個設定的手勢出現時，會引發 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件。 [  **DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped) 事件將用來重設縮放至完整畫面。 
 
 [!code-cs[RegisterPinchZoomEvents](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetRegisterPinchZoomEvents)]
 
@@ -143,7 +143,7 @@ ms.locfileid: "67486435"
 
 [!code-cs[SetTimelineController](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetTimelineController)]
 
-**注意**[**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) 提供 **MediaPlayer** 和系統媒體傳輸控制項 (SMTC) 之間的自動整合，但此自動整合無法和以 **MediaTimelineController** 控制的媒體播放器搭配使用。 因此您必須在設定播放器的時間軸控制器之前，先停用媒體播放器的命令管理員。 若要這樣做會導致例外狀況擲回並出現下列訊息：「 附加媒體時間軸控制站是被封鎖因為物件的目前狀態。 」 如需媒體播放器與 SMTC 整合的詳細資訊，請參閱[與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)。 如果您是使用 **MediaTimelineController**，您仍然可以手動控制 SMTC。 如需詳細資訊，請參閱[系統媒體傳輸控制項的手動控制](system-media-transport-controls.md)。
+**注意**[**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) 提供 **MediaPlayer** 和系統媒體傳輸控制項 (SMTC) 之間的自動整合，但此自動整合無法和以 **MediaTimelineController** 控制的媒體播放器搭配使用。 因此您必須在設定播放器的時間軸控制器之前，先停用媒體播放器的命令管理員。 若沒有這麼做，會導致擲回包含以下訊息的例外狀況：「因為物件目前的狀態，已封鎖連接「媒體時間軸控制器」。」 如需媒體播放器與 SMTC 整合的詳細資訊，請參閱[與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)。 如果您是使用 **MediaTimelineController**，您仍然可以手動控制 SMTC。 如需詳細資訊，請參閱[系統媒體傳輸控制項的手動控制](system-media-transport-controls.md)。
 
 一旦您已經將 **MediaTimelineController** 連接到一或多個媒體播放器，就可以使用控制器所公開的方法來控制播放狀態。 以下範例呼叫 [**Start**](https://docs.microsoft.com/uwp/api/windows.media.mediatimelinecontroller.start)，讓所有相關聯的媒體播放器從媒體開頭位置開始播放。
 
@@ -189,7 +189,7 @@ ms.locfileid: "67486435"
 ## <a name="play-spherical-video-with-mediaplayer"></a>使用 MediaPlayer 播放球面視訊
 從 Windows 10 版本 1703 開始，**MediaPlayer**支援進行球面視訊播放的等距長方投影。 球面視訊內容與一般視訊不同，差異在於**MediaPlayer**只要支援視訊編碼，就會轉譯視訊。 如果球面視訊包含指定視訊使用等距長方投影的中繼資料標記，則**MediaPlayer**可以使用指定的視野範圍和檢視方向來轉譯視訊。 這會啟用具有頭戴式顯示器的虛擬實境視訊播放這類案例，或是只讓使用者透過滑鼠或鍵盤輸入移動瀏覽球面視訊內容。
 
-若要播放球面視訊，請使用用於播放本文先前所述視訊內容的步驟。 一個額外的步驟是註冊的處理常式[ **MediaPlayer.MediaOpened** ](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened)事件。 這個事件可讓您啟用和控制球面視訊播放參數。
+若要播放球面視訊，請使用用於播放本文先前所述視訊內容的步驟。 另一個步驟是註冊[**MediaPlayer MediaOpened**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened)事件的處理常式。 這個事件可讓您啟用和控制球面視訊播放參數。
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 
@@ -228,13 +228,13 @@ ms.locfileid: "67486435"
 
 如需 Win2D 的詳細資訊，請參閱[Win2D GitHub 存放庫](https://github.com/Microsoft/Win2D)。 若要試用上述的範例程式碼，您需要使用下列指示，將 Win2D NuGet 套件新增至專案。
 
-**若要將來參照 Win2D NuGet 套件加入作用專案**
+**將 Win2D NuGet 套件新增至您的效果專案**
 
 1.  在**方案總管**中，以滑鼠右鍵按一下專案，然後選取 **[管理 NuGet 套件]** 。
-2.  在視窗頂端，選取 [瀏覽] 索引標籤。 
+2.  在視窗頂端，選取 **\[瀏覽\]** 索引標籤。
 3.  在搜尋方塊中輸入 **Win2D**。
-4.  選取 [Win2D.uwp]，然後選取右窗格中的 [安裝]。  
-5.  [檢閱變更] 對話方塊會顯示要安裝的套件。  按一下 [確定]  。
+4.  選取 **\[Win2D.uwp\]** ，然後選取右窗格中的 **\[安裝\]** 。
+5.  **\[檢閱變更\]** 對話方塊會顯示要安裝的套件。 按一下 **\[確定\]** 。
 6.  接受套件授權。
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>偵測及回應系統進行的音量變更
@@ -258,10 +258,10 @@ ms.locfileid: "67486435"
 
 ## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)
-* [媒體項目、 播放清單，以及追蹤](media-playback-with-mediasource.md)
-* [整合系統媒體傳輸控制項](integrate-with-systemmediatransportcontrols.md)
-* [建立、 排程及管理媒體符號](create-schedule-and-manage-media-breaks.md)
-* [在背景中播放媒體](background-audio.md)
+* [媒體專案、播放清單和追蹤](media-playback-with-mediasource.md)
+* [與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)
+* [建立、排程及管理媒體中斷](create-schedule-and-manage-media-breaks.md)
+* [在背景播放媒體](background-audio.md)
 
 
 

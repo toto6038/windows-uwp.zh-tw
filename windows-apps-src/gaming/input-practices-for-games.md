@@ -6,12 +6,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e0ba3e563b57c2e392809097567b7e6739c90d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8235b2c2029b2bb3b9351263a3c908879b4beba9
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634943"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684984"
 ---
 # <a name="input-practices-for-games"></a>遊戲的輸入練習
 
@@ -166,7 +166,7 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 
 ## <a name="tracking-users-and-their-devices"></a>追蹤使用者及其裝置
 
-所有的輸入裝置皆與[使用者](https://docs.microsoft.com/uwp/api/windows.system.user)相關聯，如此他們的身分識別便可連結到其遊戲、成就、設定變更和其他活動。 使用者可以隨意登入或登出，而且通常不同的使用者可在前一名使用者登出後，從與系統連線的輸入裝置登入。當使用者登入或登出，會引發 [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) 事件。 您可以登錄此事件的事件處理常式來追蹤玩家，以及其正在使用的裝置。
+所有的輸入裝置皆與[使用者](https://docs.microsoft.com/uwp/api/windows.system.user)相關聯，如此他們的身分識別便可連結到其遊戲、成就、設定變更和其他活動。 使用者可以隨意登入或登出，而且通常不同的使用者可在前一名使用者登出後，從與系統連線的輸入裝置登入。當使用者登入或登出時，會引發 [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) 事件。 您可以登錄此事件的事件處理常式來追蹤玩家，以及其正在使用的裝置。
 
 使用者識別也是輸入裝置與其對應 [UI 瀏覽控制器](ui-navigation-controller.md)建立關聯的方式。
 
@@ -294,17 +294,17 @@ if (buttonArrangement == buttonSelection)
 }
 ```
 
-可套用此公式測試任何排列狀態中的任意按鈕數。
+可套用這個公式以其狀態的任何排列來測試任意數目的按鈕。
 
 ## <a name="get-the-state-of-the-battery"></a>取得電池的狀態
 
-對於實作 [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) 介面的任何遊戲控制器，您可以呼叫控制器執行個體上的 [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport)，取得提供有關控制器中電池的相關資訊的 [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport) 物件。 您可以取得屬性，例如電池充電速率 ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts))、新電池的預估容量 ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours))，以及目前電池完全充電的容量 ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours))。
+對於實作 [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) 介面的任何遊戲控制器，您可以呼叫控制器執行個體上的 [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport)，取得提供有關控制器中電池的相關資訊的 [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport) 物件。 您可以取得屬性，例如電池充電速率 ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts))、新電池的預估容量 ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours))，以及目前電池完全充電的容量 ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours))。
 
 對於支援詳細的電池報告的遊戲控制器，您可以取得此報告以及詳細的電池相關資訊，如[取得電池資訊](../devices-sensors/get-battery-info.md)中所詳述。 不過，大部分遊戲控制器不支援該層級的電池報告 下方，並且反而使用低成本的硬體。 對於這些控制器，請牢記下列事項：
 
 * **ChargeRateInMilliwatts** 與 **DesignCapacityInMilliwattHours** 將一律為 **NULL**。
 
-* 您可以藉由計算  [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours** 來取得電池百分比。 您應該會忽略這些屬性的值，並只處理已計算的百分比。
+* 您可以藉由計算  [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours** 來取得電池百分比。 您應該會忽略這些屬性的值，並只處理已計算的百分比。
 
 * 前一個項目符號的百分比一定會是下列其中一項：
 
@@ -317,6 +317,6 @@ if (buttonArrangement == buttonSelection)
 
 ## <a name="see-also"></a>請參閱
 
-* [Windows.System.User 類別](https://docs.microsoft.com/uwp/api/windows.system.user)
-* [Windows.Gaming.Input.IGameController 介面](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows.Gaming.Input.GamepadButtons 列舉](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [Windows. System. User 類別](https://docs.microsoft.com/uwp/api/windows.system.user)
+* [Windows IGameController 介面](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
+* [Windows GamepadButtons 列舉](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)

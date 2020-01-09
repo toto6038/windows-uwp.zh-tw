@@ -5,18 +5,18 @@ keywords: 多重執行個體 uwp
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be9b5eec70bc98bc2c44beaf1dcfbba00876f20
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: cdb8d87a63eba14ecb2dc25e3cb5451dce6cae60
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259440"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684641"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>建立多執行個體通用 Windows 應用程式
 
 本主題描述如何建立多重執行個體通用 Universal Windows 平台 (UWP) 應用程式。
 
-從 Windows 10 版本1803（10.0;組建17134）之後，您的 UWP 應用程式可以選擇支援多個實例。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
+從 Windows 10 版本1803（10.0;組建17134）之後，您的 UWP 應用程式可以選擇支援多個實例。 如果多執行個體 UWP 應用程式的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
 
 > [!IMPORTANT]
 > JavaScript 應用程式支援多個實例，但多重實例重新導向則否。 由於 JavaScript 應用程式不支援多實例重新導向，因此[**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)類別對這類應用程式而言並不實用。
@@ -110,7 +110,7 @@ public static class Program
 
 `Main()` 是執行的第一件事。 它會在[**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)和[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)之前執行。 在任何其他初始化程式碼在您的應用程式執行之前，這可讓您決定要啟用此執行個體，或啟用另一個執行個體。
 
-以上的程式碼會判斷啟用的是應用程式的現有執行個體或新執行個體。 在此會使用索引鍵來判斷是否有您想要啟用的現有執行個體。 例如，如果可以啟動您的應用程式以[處理檔案啟用](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation)，您可以使用檔案名稱作為索引鍵。 然後，您可以檢查該應用程式的執行個體是否已透過該索引鍵註冊，並啟用該執行個體，而非開啟新的執行個體。 這是程式碼背後的概念： `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
+以上的程式碼會判斷啟用的是應用程式的現有執行個體或新執行個體。 在此會使用索引鍵來判斷是否有您想要啟用的現有執行個體。 例如，如果可以啟動您的應用程式以[處理檔案啟用](https://docs.microsoft.com/windows/uwp/launch-resume/handle-file-activation)，您可以使用檔案名稱作為索引鍵。 然後，您可以檢查該應用程式的執行個體是否已透過該索引鍵註冊，並啟用該執行個體，而非開啟新的執行個體。 這是程式碼背後的概念： `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
 如果找到以該索引鍵註冊的執行個體，則會啟用該執行個體。 如果找不到索引鍵，則目前的執行個體 (亦即目前正在執行 `Main` 的執行個體) 會建立其應用程式物件，並開始執行。
 

@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f1c19f62482dc28bc067adb2e60b2c6fafa509
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 1c106df0efc7952895f882ec5c05cc1af52bcfac
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061889"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683496"
 ---
 # <a name="my-people-notifications"></a>朋友圈通知
 
@@ -20,8 +20,8 @@ ms.locfileid: "73061889"
 
 ## <a name="requirements"></a>需求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
-+ C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
++ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)。
++ C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="how-it-works"></a>運作方式
 
@@ -49,7 +49,7 @@ experienceType="shoulderTap"
 
 繫結內的影像節點應包含下列參數：
 
-+ **原始檔案**
++ **src**
     + 資產的 URI。 這可以是 HTTP/HTTPS Web URI、msappx URI，或本機檔案的路徑。
 + **spritesheet-src**
     + 資產的 URI。 這可以是 HTTP/HTTPS Web URI、msappx URI，或本機檔案的路徑。 僅 Spritesheet 動畫需要。
@@ -59,7 +59,7 @@ experienceType="shoulderTap"
     + 每秒畫面數 (FPS)。 僅 Spritesheet 動畫需要。 僅支援值 1-120。
 + **spritesheet-startingFrame**
     + 動畫開始的畫面編號。 僅用於 Spritesheet 動畫，若未提供則預設為 0。
-+ **同時**
++ **alt**
     + 用於螢幕助讀程式旁白的文字字串。
 
 > [!NOTE]
@@ -75,7 +75,7 @@ experienceType="shoulderTap"
     + 例如 remoteid:1234
 
 > [!NOTE]
-> 如果您的應用程式使用 [ContactStore API](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) 並使用 [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 屬性將儲存在 PC 上的連絡人與遠端儲存的連絡人連結在一起，則 RemoteId 屬性的值必須是固定且唯一的。 這表示遠端識別碼必須能一致地識別單一使用者帳戶，且應包含唯一的標記以保證不會與 PC 上其他連絡人的遠端識別碼衝突，包括其他應用程式擁有的連絡人。
+> 如果您的應用程式使用 [ContactStore API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) 並使用 [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 屬性將儲存在 PC 上的連絡人與遠端儲存的連絡人連結在一起，則 RemoteId 屬性的值必須是固定且唯一的。 這表示遠端識別碼必須能一致地識別單一使用者帳戶，且應包含唯一的標記以保證不會與 PC 上其他連絡人的遠端識別碼衝突，包括其他應用程式擁有的連絡人。
 > 如果您應用程式使用的遠端識別碼不保證固定且唯一，您可以使用 [RemoteIdHelper 類別](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass)，先將唯一標記新增至您所有的遠端識別碼，再新增到系統。 或者您可以選擇完全不使用 RemoteId 屬性，而是建立自訂延伸屬性，讓連絡人的遠端識別碼儲存在此屬性中。
 
 除了第二個繫結與裝載外，您必須在第一個繫結包含另一個裝載，以做為遞補快顯通知 若強制還原回一般通知時將使用該通知 (在 [這份文件的結尾](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)進一步解釋)。
@@ -93,7 +93,7 @@ experienceType="shoulderTap"
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
+            <image src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
         </binding>
     </visual>
 </toast>
@@ -113,8 +113,8 @@ experienceType="shoulderTap"
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
-                spritesheet-src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
+            <image src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
+                spritesheet-src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
                 spritesheet-height='80' spritesheet-fps='25' spritesheet-startingFrame='15'/>
         </binding>
     </visual>
@@ -154,4 +154,4 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 + [我的人員通知範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [新增我的人員支援](my-people-support.md)
 + [調適型快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [ToastNotification 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)
++ [ToastNotification 類別](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification)

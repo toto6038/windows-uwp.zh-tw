@@ -1,17 +1,17 @@
 ---
 title: 遊戲的獲利
-description: 在 Windows 10 上針對通用 Windows 平台 (UWP) 遊戲實作橫幅廣告、插入式影片廣告，及 App 內購買。
+description: 在 Windows 10 上針對通用 Windows 平台 (UWP) 遊戲實作橫幅廣告、插入式影片廣告，及在應用程式內購買。
 ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 獲利
 ms.localizationpriority: medium
-ms.openlocfilehash: 132f8c1d0ff314b794cc8464ec69cdf84f6a5f3b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: baef3750b8dc076fd78c239cfc61662256e57c14
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258474"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685257"
 ---
 #  <a name="monetization-for-games"></a>遊戲的獲利
 
@@ -43,7 +43,7 @@ ms.locfileid: "74258474"
 ### <a name="sale-price"></a>銷售價格
 
 宣傳您遊戲的其中一個方法是在有限的一段時間內降低其價格。 您也可以將銷售價格設為 __「免費」__ 使該遊戲可以免費下載而不需要付款。
-您可以藉由事先設定好銷售的開始日期和結束日期，來排程銷售活動。 如需詳細資訊，請參閱[促銷 App 和附加元件](https://docs.microsoft.com/windows/uwp/publish/put-apps-and-add-ons-on-sale)。
+您可以藉由事先設定好銷售的開始日期和結束日期，來排程銷售活動。 如需詳細資訊，請參閱[促銷應用程式和附加元件](https://docs.microsoft.com/windows/uwp/publish/put-apps-and-add-ons-on-sale)。
 
 ## <a name="in-game-purchases"></a>遊戲內購買
 
@@ -77,7 +77,7 @@ ms.locfileid: "74258474"
 (如果完成的遊戲已經在市集上架，您可以略過前三個步驟直接到[在市集中建立附加元件](#create-an-add-on-in-the-store))。
 
 遊戲仍在開發時就建立附加元件：
-1. [建立封裝](#create-a-package)
+1. [建立套件](#create-a-package)
 2. [將遊戲發佈為隱藏](#publish-the-game-as-hidden)
 3. [將您的遊戲解決方案與商店中的 Visual Studio 建立關聯](#associate-your-game-solution-with-the-store)
 4. [在存放區中建立附加元件](#create-an-add-on-in-the-store)
@@ -103,7 +103,7 @@ ms.locfileid: "74258474"
 3. 在 __\[應用程式概觀\]__ 頁面上，按一下 __\[開始您的提交\]__ 。
 4. 設定這個新的提交。 在提交頁面上：
     * 按一下 __\[定價和可用性\]__ 。 在 [__可見度__] 區段中，選擇 [__隱藏此應用程式並防止取得 ...__ ]，以確保只有您的開發小組可以存取遊戲。 如需詳細資訊，請移至[配送和可見性](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。
-    * 按一下 [內容]。 在 __\[類別和子類別\]__ 區段中，選擇 __\[遊戲\]__ ，再選取適合您遊戲的子類別。
+    * 按一下 __\[屬性\]__ 。 在 __\[類別和子類別\]__ 區段中，選擇 __\[遊戲\]__ ，再選取適合您遊戲的子類別。
     * 按一下 __\[年齡分級\]__ 。 準確地填寫問卷。
     * 按一下 __\[套件\]__ 。 上傳在先前步驟中建立的遊戲套件。
 5. 遵循儀表板中的任何其他提交提示，您就能成功發佈該遊戲並讓它維持對大眾隱藏。
@@ -135,7 +135,7 @@ ms.locfileid: "74258474"
 
 附加元件的其他設定包括：
 * [屬性](https://docs.microsoft.com/windows/uwp/publish/enter-add-on-properties)
-* [定價和可用性](https://docs.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
+* [價格與可用性](https://docs.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
 * [商店清單](https://docs.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
 如果您的遊戲有許多附加元件，您可以使用__Microsoft Store 提交 API__以程式設計方式建立它們。 如需詳細資訊，請參閱[使用 Microsoft Store 服務來建立和管理提交](https://docs.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)。
@@ -206,10 +206,10 @@ Smaato 可讓您將橫幅廣告整合到 UWP App 和遊戲。 下載 [SDK](https
 您可以使用 AdDuplex 在遊戲中實作橫幅廣告或插入式廣告。
 
 如需直接將 AdDuplex 整合到 Windows 10 XAML 專案的詳細資訊，請移至 AdDuplex 網站：
-* 橫幅廣告：[適用於 XAML 的 Windows 10 SDK](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage) (英文)
-* 插入式廣告：[Windows 10 XAML AdDuplex 插入式廣告的安裝與用法](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage) (英文)
+* 橫幅廣告：[適用於 XAML 的 Windows 10 SDK](https://adduplex.zendesk.com/hc/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage) (英文)
+* 插入式廣告：[Windows 10 XAML AdDuplex 插入式廣告的安裝與用法](https://adduplex.zendesk.com/hc/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage) (英文)
 
-如需將 AdDuplex SDK 整合到使用 Unity 建立的 Windows 10 UWP 遊戲中的詳細資訊，請參閱 [適用於 Unity App 之 Windows 10 SDK 的安裝與用法](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage) (英文)。
+如需將 AdDuplex SDK 整合到使用 Unity 建立的 Windows 10 UWP 遊戲中的詳細資訊，請參閱 [適用於 Unity App 之 Windows 10 SDK 的安裝與用法](https://adduplex.zendesk.com/hc/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage) (英文)。
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>透過廣告活動將遊戲的潛力最大化
 

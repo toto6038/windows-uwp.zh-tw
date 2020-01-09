@@ -4,14 +4,14 @@ title: 將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19e754fd6a52880c7bc636818acaeda815f9da16
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 879dee0c8c4c3ad9004c11fa488d32eae8936510
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259110"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684648"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
 
@@ -122,7 +122,7 @@ ms.locfileid: "74259110"
 
 ##  <a name="design-language-in-windows10"></a>Windows 10 中的設計語言
 
-通用8.1 應用程式與 Windows 10 應用程式之間的設計語言有一些小但重要的差異。 如需所有詳細資訊，請參閱[設計](https://developer.microsoft.com/en-us/windows/apps/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
+通用8.1 應用程式與 Windows 10 應用程式之間的設計語言有一些小但重要的差異。 如需所有詳細資訊，請參閱[設計](https://developer.microsoft.com/windows/apps/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>有效的像素、檢視距離及縮放比例
 
@@ -157,9 +157,9 @@ ms.locfileid: "74259110"
 以下是在 Windows 10 中已變更或不支援的[**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)和[**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)層面。
 
 -   Windows 10 應用程式不支援[**IsSwipeEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isswipeenabled)屬性（僅限 Windows 執行階段8.x 應用程式）。 API 仍然存在，但設定它不會產生任何作用。 支援所有先前的選取手勢，但向下撥動 (不支援此手勢，因為資料會顯示它是無法探索的) 和按一下滑鼠右鍵 (其保留來顯示操作功能表) 除外。
--   Windows 10 應用程式不支援[**ReorderMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.reordermode)屬性（僅限 Windows Phone 儲存應用程式）。 API 仍然存在，但設定它不會產生任何作用。 相反地，在您的 [GridView**或**ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 上，將 [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.canreorderitems) 和CanReorderItems 設定為 True，之後使用者就能使用按住不放 (或按一下並拖曳) 手勢重新排序。
+-   Windows 10 應用程式不支援[**ReorderMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.reordermode)屬性（僅限 Windows Phone 儲存應用程式）。 API 仍然存在，但設定它不會產生任何作用。 相反地，在您的 **GridView** 或 **ListView** 上，將 [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 和 [**CanReorderItems**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.canreorderitems) 設定為 True，之後使用者就能使用按住不放 (或按一下並拖曳) 手勢重新排序。
 -   針對 Windows 10 進行開發時，請使用[**ListViewItemPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter) ，而不是專案容器樣式中的[**GridViewItemPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.GridViewItemPresenter) ，這兩者都適用于[**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)和 for [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)。 如果您編輯預設項目容器樣式的複本，則可取得正確的類型。
--   Windows 10 應用程式的選取視覺效果已變更。 如果您將 [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) 設定為 **Multiple**，則根據預設，會為每個項目呈現一個核取方塊。 **ListView** 項目的預設設定表示核取方塊已內嵌配置於項目旁邊，因此，其餘項目所佔用的空間會稍微降低並移動。 針對 **GridView** 項目，核取方塊預設會重疊於項目上方。 但在任一種情況下，您可以控制核取方塊 (使用 [**CheckMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode) 屬性) 的配置 (內嵌或重疊)，以及它們是否會在 [**ListViewItemPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) 元素上完全顯示 (以及 [**SelectionCheckMarkVisualEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter) 屬性)，此元素位於項目容器樣式內部，如下列範例所示。
+-   Windows 10 應用程式的選取視覺效果已變更。 如果您將 [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) 設定為 **Multiple**，則根據預設，會為每個項目呈現一個核取方塊。 **ListView** 項目的預設設定表示核取方塊已內嵌配置於項目旁邊，因此，其餘項目所佔用的空間會稍微降低並移動。 針對 **GridView** 項目，核取方塊預設會重疊於項目上方。 但在任一種情況下，您可以控制核取方塊 (使用 [**CheckMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode) 屬性) 的配置 (內嵌或重疊)，以及它們是否會在 [**ListViewItemPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter) 元素上完全顯示 (以及 [**SelectionCheckMarkVisualEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) 屬性)，此元素位於項目容器樣式內部，如下列範例所示。
 -   在 Windows 10 中，每個專案會在 UI 虛擬化期間引發[**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging)事件兩次：一次用於回收，另一次用於重複使用。 如果 [**InRecycleQueue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.containercontentchangingeventargs.inrecyclequeue) 的值是 **true**，且您沒有特殊回收工作需要執行，您可以立即結束事件處理常式，以確保在重複使用相同項目時可以重新進入此處理常式 (屆時 **InRecycleQueue** 將會是 **false**)。
 
 ```xml
@@ -190,16 +190,16 @@ ms.locfileid: "74259110"
 | 8.1                 |                         | Windows 10        |                     |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
-|                     | 一般                  |                   | 一般              |
+|                     | 標準                  |                   | 標準              |
 |                     | PointerOver             |                   | PointerOver         |
 |                     | Pressed                 |                   | Pressed             |
 |                     | PointerOverPressed      |                   | [無法使用]       |
-|                     | 已停用                |                   | [無法使用]       |
+|                     | 停用                |                   | [無法使用]       |
 |                     | [無法使用]           |                   | PointerOverSelected |
 |                     | [無法使用]           |                   | Selected            |
 |                     | [無法使用]           |                   | PressedSelected     |
 | [無法使用]       |                         | DisabledStates    |                     |
-|                     | [無法使用]           |                   | 已停用            |
+|                     | [無法使用]           |                   | 停用            |
 |                     | [無法使用]           |                   | Enabled             |
 | SelectionHintStates |                         | [無法使用]     |                     |
 |                     | VerticalSelectionHint   |                   | [無法使用]       |
@@ -247,7 +247,7 @@ Windows 10 應用程式的[**windows.media.playto**](https://docs.microsoft.com/
 
 在其他情況下，不再支援資源索引鍵。 Visual Studio 中的 XAML 標記編輯器會醒目提示無法解析的資源索引鍵參考。 例如，XAML 標記編輯器會在樣式索引鍵 `ListViewItemTextBlockStyle` 的參考加上紅色波浪底線。 如果未修正該參考，當您嘗試將應用程式部署到模擬器或裝置上時，它將會立即終止。 因此，請務必注意 XAML 標記的正確性。 您會發現 Visual Studio 是攔截這類問題的絕佳工具。
 
-對於仍然支援的索引鍵，設計語言的變更表示某些樣式設定的屬性已經變更。 例如，`TitleTextBlockStyle` 將**FontSize**設定為 Windows 執行階段8.x 應用程式中的 14.667 px，並在 Windows Phone 存放區應用程式中 18.14 px。 但是，相同的樣式會將**FontSize**設定為 Windows 10 應用程式中更大的24px。 檢閱您的設計和配置，並在適當的位置使用適當的樣式。 如需詳細資訊，請參閱[字型的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)和[設計 UWP app](https://developer.microsoft.com/en-us/windows/apps/design)。
+對於仍然支援的索引鍵，設計語言的變更表示某些樣式設定的屬性已經變更。 例如，`TitleTextBlockStyle` 將**FontSize**設定為 Windows 執行階段8.x 應用程式中的 14.667 px，並在 Windows Phone 存放區應用程式中 18.14 px。 但是，相同的樣式會將**FontSize**設定為 Windows 10 應用程式中更大的24px。 檢閱您的設計和配置，並在適當的位置使用適當的樣式。 如需詳細資訊，請參閱[字型的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)和[設計 UWP app](https://developer.microsoft.com/windows/apps/design)。
 
 以下是不再支援的完整索引鍵清單：
 
@@ -412,7 +412,7 @@ Windows 10 應用程式的[**windows.media.playto**](https://docs.microsoft.com/
 
 雖然 [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請將 [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) 用在您的通用搜尋經驗。 以下說明在一般情況下如何透過 **AutoSuggestBox** 實作搜尋經驗。
 
-使用者開始輸入後即會引發 **TextChanged** 事件，原因為 **UserInput**。 接著，您可以填入建議清單，並設定AutoSuggestBox[**的**ItemsSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)。 使用者瀏覽清單時會引發 **SuggestionChosen** 事件 (且如果您已設定 **TextMemberDisplayPath**，文字方塊將會自動填入指定的屬性)。 當使用者以 Enter 鍵提交選擇時，會引發 **QuerySubmitted** 事件，此時您可以採取該建議動作 (在此情況下，很可能是瀏覽至其他含有指定內容之詳細資料的其他頁面)。 請注意，**SearchBoxQuerySubmittedEventArgs** 的 **LinguisticDetails** 和 **Language** 屬性已不再受支援 (有對等的 API 可支援該功能)。 **KeyModifiers** 也不再受支援。
+使用者開始輸入後即會引發 **TextChanged** 事件，原因為 **UserInput**。 接著，您可以填入建議清單，並設定 [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) 的 **ItemsSource**。 使用者瀏覽清單時會引發 **SuggestionChosen** 事件 (且如果您已設定 **TextMemberDisplayPath**，文字方塊將會自動填入指定的屬性)。 當使用者以 Enter 鍵提交選擇時，會引發 **QuerySubmitted** 事件，此時您可以採取該建議動作 (在此情況下，很可能是瀏覽至其他含有指定內容之詳細資料的其他頁面)。 請注意，**SearchBoxQuerySubmittedEventArgs** 的 **LinguisticDetails** 和 **Language** 屬性已不再受支援 (有對等的 API 可支援該功能)。 **KeyModifiers** 也不再受支援。
 
 [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)也支援輸入法編輯器（ime）。 而且，如果您想要顯示「尋找」圖示，您也可以這麼做 (與該圖示互動將會引發 **QuerySubmitted** 事件)。
 
@@ -438,7 +438,7 @@ Windows 10 應用程式的[**windows.media.playto**](https://docs.microsoft.com/
 
 在 Windows Phone 存放區應用程式和 Windows 10 應用程式中，按下 [上一頁] 按鈕時，會關閉相應放大的視圖。 針對 Windows 執行階段的 8. x 應用程式，沒有內建的 [上一頁] 按鈕處理，因此不適用問題。
 
-## <a name="settings"></a>設定
+## <a name="settings"></a>[設定]
 
 Windows 執行階段的**SettingsPane**類別不適合 Windows 10。 除了建置設定頁面，您應該改為提供使用者從您的 app 存取它的方式。 我們建議您在最上層公開這個應用程式設定頁面，做為瀏覽窗格中最後一個釘選的項目，但此處是一組完整的選項。
 

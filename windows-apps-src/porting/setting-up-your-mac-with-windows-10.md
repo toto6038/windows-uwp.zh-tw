@@ -4,14 +4,14 @@ title: 設定 Mac 的 Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 55165e0369c6bda64c19dc384c5c2addf224b8ba
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b8ff6d6b3b15992f0598bfb371e6bfb1023d6dc1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259120"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685006"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>設定 Mac 的 Windows 10
 
@@ -24,7 +24,7 @@ ms.locfileid: "74259120"
 
 **請注意**  在磁片或 USB 快閃磁片磁碟機上，您將需要有 Windows 10 可開機映射。 如果您是 MSDN 訂閱者，可以從 MSDN 訂閱者下載中心下載安裝映像。 如果您不是訂閱者，則可以從[Microsoft Store](https://www.microsoft.com/store/apps)購買安裝程式。 您也可以從[這個位置](https://www.microsoft.com/software-download/windows10)下載，如果您已經執行 Windows 而且想要升級，這就非常好用。
 
-執行 Windows 之後，您就可以從[windows 10 的開發人員下載](https://developer.microsoft.com/en-us/windows/downloads)安裝最新版本的 Visual Studio，並開始撰寫應用程式！
+執行 Windows 之後，您就可以從[windows 10 的開發人員下載](https://developer.microsoft.com/windows/downloads)安裝最新版本的 Visual Studio，並開始撰寫應用程式！
 
 **請注意**  如果您打算使用 Visual Studio 裝置模擬器，就**必須**安裝64位（X64）版本的 Windows 10 專業版或更高的版本。 但是，某些舊版的 Mac 無法執行 64 位元的 Windows。 請透過這個 [Apple 支援頁面](https://support.apple.com/kb/HT5634)，向 Apple 確認您的硬體是否相容。
 

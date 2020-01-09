@@ -5,12 +5,12 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f3fc2b2aa10fedf143c55158e521b2c1cd5b75d
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: bc3a8afbc0d3ca4655e0b1745090db633bcd92b7
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816687"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684670"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>服務點的裝置宣告並啟用模型
 
@@ -81,7 +81,7 @@ ms.locfileid: "72816687"
 
 > [!Warning]
 > 宣告可能在以下情況遺失：
-> 1. 其他應用程式已要求宣告相同裝置，而您的應用程式並未發出 **RetainDevice** 以回應 **ReleaseDeviceRequested** 事件。  (如需詳細資訊，請參閱以下[宣告交涉](#Claim-negotiation)。)
+> 1. 其他應用程式已要求宣告相同裝置，而您的應用程式並未發出 **RetainDevice** 以回應 **ReleaseDeviceRequested** 事件。  (如需詳細資訊，請參閱以下[宣告交涉](#claim-negotiation)。)
 > 2. 您的應用程式已暫停，它會導致裝置物件關閉，因此宣告不再有效。 (如需詳細資訊，請參閱[裝置物件週期](pos-basics-deviceobject.md#device-object-lifecycle)。
 
 

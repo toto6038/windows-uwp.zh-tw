@@ -3,14 +3,14 @@ title: 新增朋友圈支援至應用程式
 description: 說明如何將朋友圈支援新增至應用程式，及如何釘選與取消釘選連絡人
 ms.date: 06/28/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ba05e958a8746874becd4cfa17ec0e8f255ff00
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9e58334dafa35004080b7ed109fa90e253399040
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255144"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683476"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>新增朋友圈支援至應用程式
 
@@ -23,15 +23,15 @@ ms.locfileid: "74255144"
 
 ## <a name="requirements"></a>需求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
-+ C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
++ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)。
++ C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="overview"></a>概觀
 
 若要讓您的應用程式能夠使用 \[朋友圈\] 功能時，您必須完成三件事：
 
-1. [在您的應用程式資訊清單中宣告 Windows.sharetarget 啟用合約的支援。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [標注使用者可以使用您的應用程式共用的連絡人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [在您的應用程式資訊清單中宣告 Windows.sharetarget 啟用合約的支援。](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [標注使用者可以使用您的應用程式共用的連絡人。](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  支援同時執行您應用程式的多個執行個體。 使用者將您應用程式的完整版用於連絡人面板中時，必須能夠與該版本互動。  他們甚至可以同時將該版本用於多個連絡人面板中。  若要支援此功能，您的應用程式必須能夠同時執行多個檢視。 若要了解做法，請參閱[顯示應用程式的多重檢視](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views) (英文) 一文。
 
 當您完成時，您的應用程式將出現在所註解連絡人的連絡人面板中。
@@ -172,7 +172,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-當您的應用程式透過此合約啟用後，將會收到 [ContactPanelActivatedEventArgs 物件](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs)。  這包含了您應用程式在啟動時不斷嘗試互動的連絡人其識別碼，及 [ContactPanel](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactpanel) 物件。 您應保留對此 ContactPanel 物件的參照，這可讓您與面板互動。
+當您的應用程式透過此合約啟用後，將會收到 [ContactPanelActivatedEventArgs 物件](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs)。  這包含了您應用程式在啟動時不斷嘗試互動的連絡人其識別碼，及 [ContactPanel](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpanel) 物件。 您應保留對此 ContactPanel 物件的參照，這可讓您與面板互動。
 
 ContactPanel 物件具有兩個您應用程式應聆聽的事件：
 + 當使用者已叫用 UI 元素且該元素要求整個應用程式以其自己的視窗啟動時，便會傳送 **LaunchFullAppRequested** 事件。  您的應用程式負責自我啟動，傳遞所有必要內容。  您可以任意地依您想要的式進行 (例如透過啟動通訊協定)。
@@ -182,13 +182,13 @@ ContactPanel 物件也允許您設定連絡人面板標頭的背景色彩 (若�
 
 ## <a name="supporting-notification-badging"></a>支援通知徽章
 
-如果您希望有來自您應用程式且與該連絡人相關的新通知時，釘選到工作列的連絡人可以收到徽章通知，則您必須在 **快顯通知**和易懂的[朋友圈通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)中包含 [hint-people](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications) 參數。
+如果您希望有來自您應用程式且與該連絡人相關的新通知時，釘選到工作列的連絡人可以收到徽章通知，則您必須在 [快顯通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)和易懂的[朋友圈通知](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-notifications)中包含 **hint-people** 參數。
 
 ![朋友圈通知徽章](images/my-people-badging.png)
 
 若要將聯絡人加上徽章，最上層的快顯通知節點必須包含 hint-people 參數，以指出傳送或相關連絡人。 這個參數可以有以下任何的值：
 + **電子郵件地址** 
-    + 例如 mailto:johndoe@mydomain.com
+    + 例如 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](mailto:johndoe@mydomain.com)
 + **電話號碼** 
     + 例如 tel:888-888-8888
 + **遠端識別碼** 
@@ -206,12 +206,12 @@ ContactPanel 物件也允許您設定連絡人面板標頭的背景色彩 (若�
 ```
 
 > [!NOTE]
-> 如果您的應用程式使用 [ContactStore API](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) 並使用 [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 屬性將儲存在 PC 上的連絡人與遠端儲存的連絡人連結在一起，則 RemoteId 屬性的值必須是固定且唯一的。 這表示遠端識別碼必須能一致地識別單一使用者帳戶，且應包含唯一的標記以保證不會與 PC 上其他連絡人的遠端識別碼衝突，包括其他應用程式擁有的連絡人。
+> 如果您的應用程式使用 [ContactStore API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) 並使用 [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 屬性將儲存在 PC 上的連絡人與遠端儲存的連絡人連結在一起，則 RemoteId 屬性的值必須是固定且唯一的。 這表示遠端識別碼必須能一致地識別單一使用者帳戶，且應包含唯一的標記以保證不會與 PC 上其他連絡人的遠端識別碼衝突，包括其他應用程式擁有的連絡人。
 > 如果您應用程式使用的遠端識別碼不保證固定且唯一，您可以使用本主題稍後顯示的 RemoteIdHelper 類別，先將唯一標記新增至您所有的遠端識別碼，再新增到系統。 或者您可以選擇完全不使用 RemoteId 屬性，而是建立自訂延伸屬性，讓連絡人的遠端識別碼儲存在此屬性中。
 
 ## <a name="the-pinnedcontactmanager-class"></a>PinnedContactManager 類別
 
-[PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) 用於管理將哪些連絡人釘選到工作列上。 此類別可讓您釘選與取消釘選連絡人、判斷連絡人是否已釘選，並判定目前執行應用程式的系統是否支援釘選到特定介面上。
+[PinnedContactManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) 用於管理將哪些連絡人釘選到工作列上。 此類別可讓您釘選與取消釘選連絡人、判斷連絡人是否已釘選，並判定目前執行應用程式的系統是否支援釘選到特定介面上。
 
 您可以使用 **GetDefault** 方法擷取 PinnedContactManager 物件：
 
@@ -257,5 +257,5 @@ async Task PinMultipleContacts(Contact[] contacts)
 + [Channel 9 將我的人員支援新增至應用程式的影片](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [我的人員整合範例](https://github.com/tonyPendolino/MyPeopleBuild2017)
 + [連絡人卡片範例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [PinnedContactManager 類別檔](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [將應用程式連結到連絡人卡片上的動作](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [PinnedContactManager 類別檔](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [將應用程式連結到連絡人卡片上的動作](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/integrating-with-contacts)

@@ -6,16 +6,16 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: dcdac5130af673d1b0d1ab1a9713902e9ab22830
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ec780253deb170c5dde1828add366907c403f100
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257824"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681899"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
-[桌面橋接器應用](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)程式是使用[桌面橋接器](https://developer.microsoft.com/en-us/windows/bridges/desktop)轉換成通用 Windows 平臺（UWP）應用程式的 Windows 桌面應用程式。 轉換之後，Windows 傳統型應用程式就會以目標為 Windows 10 Desktop 的 UWP app 套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
+[桌面橋接器應用](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)程式是使用[桌面橋接器](https://developer.microsoft.com/windows/bridges/desktop)轉換成通用 Windows 平臺（UWP）應用程式的 Windows 桌面應用程式。 轉換之後，Windows 傳統型應用程式就會以目標為 Windows 10 Desktop 的 UWP app 套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
 
 ## <a name="required-versus-optional-tests"></a>必要與選擇性測試
 Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會在 Microsoft Store 上線時用來評估您的應用程式。 我們建議您調查這些測試結果，以產生更優質的應用程式。 市集上架的整體成功/失敗條件是由必要測試所決定，而非這些選擇性測試。
@@ -98,7 +98,7 @@ Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會
 如果宣告了這些功能的其中之一，測試就會顯示警告給使用者。 
 
 **矯正措施**  
-請考慮移除 app 不需要的特殊用途功能。 此外，這些功能的使用方式需接受其他上架原則審查。
+請考慮移除應用程式不需要的特殊用途功能。 此外，這些功能的使用方式需接受其他上架原則審查。
 
 ### <a name="2-app-manifest-resources-tests"></a>2. 應用程式資訊清單資源測試 
 #### <a name="21-app-resources-validation"></a>2.1 應用程式資源驗證
@@ -110,7 +110,7 @@ Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會
 **矯正措施**  
 使用下表作為指引。
 
-錯誤訊息 | 註解
+錯誤訊息 | 評價
 --------------|---------
 影像 {image name} 同時定義 Scale 和 TargetSize 限定詞二者；一次只能定義一個限定詞。 | 您可以針對不同的解析度自訂影像。 在實際訊息中，{image name} 包含有錯誤的影像名稱。 請確定每個影像都將 Scale 或 TargetSize 定義為限定詞。 
 影像 {image name} 不符合大小限制。  | 請確定所有應用程式影像都遵守適當的大小限制。 在實際訊息中，{image name} 包含有錯誤的影像名稱。 
@@ -122,9 +122,9 @@ Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會
 套件缺少 "resources.pri" 檔案。  | 如果您的 app 資訊清單中有可當地語系化的內容，app 套件中務必包含有效的 resources.pri 檔案。 
 "resources.pri" 檔案必須包含資源對應，且名稱符合套件名稱 {package full name}  | 如果資訊清單已變更，而 resources.pri 中的資源對應名稱不再符合資訊清單中的套件名稱，就會發生這個錯誤。 在實際訊息中，{package full name} 包含 resources.pri 必須包含的套件名稱。 若要更正此錯誤，您需要重建 resources.pri，最簡單的方式就是重建 app 的套件。 
 "resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 對於您想要透過 Microsoft Store 散發的應用程式，我們不建議您這麼做。 透過 Microsoft Store 散發之應用程式的 .resources，必須位於應用程式套件的根目錄中，並包含應用程式支援的所有語言參考。 
-字串 {string} 不符合 {number} 個字元的長度上限限制。  | 請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。 
+字串 {string} 不符合 {number} 個字元的長度上限限制。  | 請參閱 [app 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。 在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。 
 字串 {string} 的開頭/結尾不得具有空白字元。  | 應用程式資訊清單中的元素結構描述不允許前後有空白字元。 在實際訊息中，{string} 會以有錯誤的字串取代。 確定 resources.pri 中的資訊清單欄位沒有任何當地語系化的值前後有空白字元。 
-字串必須為非空白 (長度大於零)  | 如需詳細資訊，請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
+字串必須為非空白 (長度大於零)  | 如需詳細資訊，請參閱 [app 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。 
 "resources.pri" 檔案中沒有指定預設資源。  | 如需詳細資訊，請參閱 [應用程式資源](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)的指南。 在預設建置組態中，當產生套件組合、將其他資源放在資源套件中時，Visual Studio 只會在 app 套件中包含縮放比例-200 影像資源。 請確定您包含縮放比例-200 影像資源，或將您的專案設定為包含您所擁有的資源。 
 "resources.pri" 檔案中沒有指定資源值。  | 請確定 app 資訊清單會在 resource.pri 中定義有效的資源。 
 影像檔 {filename} 必須小於 204800 個位元組。  | 請降低所指示之影像的大小。 
@@ -150,16 +150,16 @@ Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會
 應用程式必須包含格式正確的應用程式資訊清單。
 
 **測試詳細資料**  
-檢查 App 資訊清單，確認內容是正確的，如 [App 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)中所述。 這個測試會完成下列檢查︰
+檢查應用程式資訊清單，確認內容正確無誤，如[應用程式套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。 這個測試會完成下列檢查︰
 * **副檔名和通訊協定**  
 應用程式可能會宣告可與其相關聯的檔案類型。 大量不常見檔案類型的宣告，會產生較差的使用者體驗。 這個測試會限制應用程式可以產生關聯的副檔名數目。
 * **架構相依性規則**  
 這個測試會強制要求應用程式需要宣告與 UWP 的適當相依性。 如果有不適當的相依性，這個測試就會失敗。 如果應用程式設為目標的作業系統版本與建立架構相依性的作業系統版本不符，測試將會失敗。 如果應用程式參照任何「預覽」版本的架構 DLL，則測試也會失敗。
 * **處理序間通訊（IPC）驗證**  
-這個測試強制要求傳統型橋接器應用程式不會在應用程式容器外部與傳統型元件通訊。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的名稱指定為 `DesktopApplicationPath` 的應用程式將無法通過這個測試。  
+這個測試強制要求傳統型橋接器應用程式不會在應用程式容器外部與傳統型元件通訊。 處理程序間通訊僅適用於側載應用程式。 將 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的名稱指定為 `DesktopApplicationPath` 的應用程式將無法通過這個測試。  
 
 **矯正措施**  
-按照 [App 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)中所述的需求來檢閱 App 的資訊清單。
+按照 [應用程式套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的需求來檢閱應用程式的資訊清單。
 
 
 #### <a name="32-application-count"></a>3.2 應用程式計數
@@ -211,7 +211,7 @@ Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會
 **測試詳細資料**  
 這項測試會檢查應用程式中的所有 UWP 元件︰
 * 藉由檢查二進位檔的匯入位址表，確認應用程式套件內的每個受控二進位檔不會相依于不支援 UWP 應用程式開發的 WIN32 API。
-* 確認 App 套件內的每個 Managed 二進位檔案不會相依於核准的設定檔外部的函式。 
+* 確認應用程式套件內的每個受管理二進位檔案不會相依於核准的設定檔外部的函式。 
 
 **矯正措施**  
 確保應用程式已編譯為發行組建，而非偵錯組建，即可進行修正。 
@@ -236,7 +236,7 @@ Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會
  
 ### <a name="7-windows-runtime-metadata-validation"></a>7. Windows 執行階段中繼資料驗證
 **背景**  
-確保 app 隨附的元件符合 UWP 類型系統。
+確保應用程式隨附的元件符合 UWP 類型系統。
 
 **測試詳細資料**  
 這項測試會擲回數個與正確類型用法相關的旗標。
@@ -251,7 +251,7 @@ Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會
 * **輸入位置**  
 確保所有 UWP 類型的中繼資料都位於應用程式套件中命名空間相符名稱最長的 .winmd 檔案中。
 * **類型名稱大小寫區分**  
-請確定應用程式套件中的所有 UWP 類型都會有唯一且不區分大小寫的名稱。 同時也確保 app 套件內的命名空間名稱均未使用 UWP 類型名稱。
+請確定應用程式套件中的所有 UWP 類型都會有唯一且不區分大小寫的名稱。 同時也確保應用程式套件內的命名空間名稱均未使用 UWP 類型名稱。
 * **類型名稱正確性**  
 確保全域命名空間或 Windows 最上層命名空間中，不存在任何 UWP 類型。
  

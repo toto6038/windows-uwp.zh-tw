@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 影片, 排程器, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a214288c778505d16707fd64391a9b8cedbbb32
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6178758cd67471d56b1d65e293104e987e81fb9b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260352"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681919"
 ---
 # <a name="show-ads-in-video-content"></a>在影片內容中顯示廣告
 
@@ -24,7 +24,7 @@ ms.locfileid: "74260352"
 
 影片內容的廣告根據程式少於 10 分鐘 (短時間形式) 或超過 10 分鐘 (長時間形式) 而有所不同。 雖然要在服務上設定後者比較複雜，但是寫入用戶端程式碼的方式實際上沒有任何差異。 如果 **AdScheduler** 收到含單一廣告而不是資訊清單的 VAST 承載，就會被視為如同為單一預載廣告 (在時間 00:00 的一個中斷) 呼叫的資訊清單。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 * 使用 Visual Studio 2015 或更新版本安裝 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。
 
@@ -47,7 +47,7 @@ ms.locfileid: "74260352"
 
 1. 在 Visual Studio 中，開啟您的專案或建立新專案。
 
-2. 如果專案的目標是 [任何 CPU]，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86])。 如果專案的目標是 [任何 CPU]，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 3. 將 **Microsoft Advertising SDK for JavaScript** 程式庫的參考新增至您的專案。
 
@@ -70,7 +70,7 @@ ms.locfileid: "74260352"
     > [!NOTE]
     > 這一行必須放在 `<head>` 區段所包含的 main.js 之後，否則建置專案時會發生錯誤。
 
-6.  在專案的 main.js 檔案中，新增建立新 **AdScheduler** 物件的程式碼。 傳入裝載影片內容的 **MediaPlayer**。 程式碼必須放在 [WinJS.UI.processAll](https://docs.microsoft.com/en-us/previous-versions/windows/apps/hh440975) 後面執行。
+6.  在專案的 main.js 檔案中，新增建立新 **AdScheduler** 物件的程式碼。 傳入裝載影片內容的 **MediaPlayer**。 程式碼必須放在 [WinJS.UI.processAll](https://docs.microsoft.com/previous-versions/windows/apps/hh440975) 後面執行。
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 

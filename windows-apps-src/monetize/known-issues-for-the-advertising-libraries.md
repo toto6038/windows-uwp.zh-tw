@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 通知, 已知問題, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 51192e13c63bf3141989cfbf5d9ebd7fbaf13641
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6701ff346f41352a108922f82da82fbf52fd7402
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260248"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685094"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>應用程式內廣告的已知問題與疑難排解
 
@@ -46,7 +46,7 @@ ms.locfileid: "74260248"
 
 * 如果您在過去半個小時之內建立新的廣告單位識別碼，在伺服器將新資料傳播至整個系統之前，您可能看不見廣告。 先前已顯示過廣告的現有識別碼應該會立即顯示廣告。
 
-如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://developer.microsoft.com/en-us/windows/support)。 在該頁面上，選擇 [**洽詢 us**]。
+如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://developer.microsoft.com/windows/support)。 在該頁面上，選擇 [**洽詢 us**]。
 
 您也可以在[論壇](https://go.microsoft.com/fwlink/?LinkID=401264)中張貼問題。
 
@@ -65,15 +65,15 @@ ms.locfileid: "74260248"
 
 ## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>專案中因目標為 [任何 CPU] 所造成的參考錯誤
 
-使用 Microsoft Advertising SDK 時，您在專案中將無法以 **\[任何 CPU\]** 為目標。 如果您的專案以 [任何 CPU] 平台為目標，您在新增類似下列的參照之後可能會看見警告。
+使用 Microsoft Advertising SDK 時，您在專案中將無法以 **\[任何 CPU\]** 為目標。 如果您的專案以 **\[任何 CPU\]** 平台為目標，您在新增類似下列的參照之後可能會看見警告。
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
-如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 [組態管理員] 來針對偵錯和發行組態設定平台目標。
+如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 **\[組態管理員\]** 來針對偵錯和發行組態設定平台目標。
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 
-當您針對市集提交建立應用程式套件 (如下列影像所示)，請務必包含您想要做為目標的架構。 如果您想要在 x64 OS 上執行 x86 組建，您可以選擇略過 x64。
+當您針對 Microsoft Store 提交建立應用程式套件 (如下列影像所示)，請務必包含您想要做為目標的架構。 如果您想要在 x64 OS 上執行 x86 組建，您可以選擇略過 x64。
 
 ![projectstorecreateapppackages](images/13-a99b05a4-8917-4c53-822e-2548fadf828a.png)
 

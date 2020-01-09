@@ -5,34 +5,34 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10 s, 永遠連線, ARM 上的 ARM32 應用程式, ARM 上的 windows 10, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ef6d521cc3f090179e816873fdaa0a4cdd8307e
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 6213c8c69695d160d4e6fa362aa7aa322a0326fd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821065"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683941"
 ---
-# <a name="troubleshooting-arm-uwp-apps"></a>疑難排解 ARM UWP 應用程式
+# <a name="troubleshooting-arm-uwp-apps"></a>針對 ARM UWP 應用程式進行疑難排解
 
-如果 ARM32 或 ARM64 UWP 應用程式無法正常運作，在 ARM 上，以下是一些可以幫助的指引。
+如果您的 ARM32 或 ARM64 UWP 應用程式在 ARM 上無法正常運作，以下是一些可能有説明的指導方針。
 
 >[!NOTE]
-> 若要建置您的 UWP 應用程式原生 ARM64 平台為目標，您必須 15.9 或更新版本的 Visual Studio 2017 版或 Visual Studio 2019。 如需詳細資訊，請參閱 <<c0> [ 此部落格文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)。
+> 若要建立您的 UWP 應用程式以原生方式將目標設為 ARM64 平臺，您必須具有 Visual Studio 2017 15.9 版或更新版本，或 Visual Studio 2019。 如需詳細資訊，請參閱[這篇部落格文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)。
 
 
 ## <a name="common-issues"></a>常見問題
-以下是一些常見的問題進行疑難排解 ARM32 和 ARM64 應用程式時，請記住。
+以下是針對 ARM32 和 ARM64 應用程式進行疑難排解時，要牢記在心的一些常見問題。
 
 ### <a name="using-windows-10-mobile-only-apis-on-arm-based-processors"></a>在 ARM 處理器上使用僅限 Windows 10 行動裝置版 API
-ARM 的應用程式可能會遇到問題時使用僅限行動裝置的 Api (例如**HardwareButtons**)。 若要減輕此問題，您可以在呼叫這些 API 之前動態偵測您的應用程式是否正在 Windows 10 行動裝置版上執行。 請依照部落格文章[利用 API 協定動態偵測功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)中的指引。
+當您使用僅限行動應用程式開發介面（例如**HardwareButtons**）時，ARM 應用程式可能會遇到問題。 若要減輕此問題，您可以在呼叫這些 API 之前動態偵測您的應用程式是否正在 Windows 10 行動裝置版上執行。 請依照部落格文章[利用 API 協定動態偵測功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)中的指引。
 
 ### <a name="including-dependencies-not-supported-by-uwp-apps"></a>包括 UWP 應用程式不支援的相依性
-未正確地使用 Visual Studio 與 UWP SDK 內建的通用 Windows 平台 (UWP) 應用程式可能相依於 ARM ARM64 系統上執行的應用程式無法使用的作業系統元件。 這些相依性的範例包括：
+未正確建立 Visual Studio 和 UWP SDK 的通用 Windows 平臺（UWP）應用程式，可能會相依于在 ARM64 系統上執行的 ARM 應用程式無法使用的 OS 元件。 這些相依性的範例包括：
 
 - 預期 .NET Framework 組件可供使用。
 - 參考與 UWP 不相容的第三方.NET 元件。
 
-可以解決這些問題： 移除無法使用相依性，並重建應用程式使用最新的 Microsoft Visual Studio 與 UWP SDK 版本;或從 Microsoft Store 中，移除 ARM 應用程式最後的手段，讓 x86 版本 （如果有的話） 的應用程式會下載到使用者電腦。
+這些問題可透過下列方式解決：移除無法使用的相依性，並使用最新的 Microsoft Visual Studio 和 UWP SDK 來重建應用程式;或作為最後手段，從 Microsoft Store 移除 ARM 應用程式，以便將應用程式的 x86 版本（如果有的話）下載到使用者的電腦。
 
 如需適用於 UWP 應用程式的 .NET API 的詳細資訊，請查看[適用於 UWP 應用程式的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 
@@ -40,7 +40,7 @@ ARM 的應用程式可能會遇到問題時使用僅限行動裝置的 Api (例�
 如果發生問題，請務必使用 Microsoft Visual Studio 和 Windows SDK 的最新版本編譯應用程式。 使用舊版 Visual Studio 和 SDK 編譯的應用程式，可能會有在較新版本中已修正的問題。
 
 ## <a name="debugging"></a>偵錯
-您可以使用現有的工具來開發適用於 ARM 平台的應用程式。 以下是一些實用的資源。
+您可以使用現有的工具來開發 ARM 平臺的應用程式。 以下是一些實用的資源。
 
 - Visual Studio 15.5 Preview 1 及更新版本支援使用通用驗證模式執行 ARM32 應用程式。 這會自動啟動必要遠端偵錯工具。
-- 若要深入了解 ARM 上偵錯的工具和策略，請參閱[ARM64 上的偵錯](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64)。
+- 若要深入了解 ARM 上偵錯的工具和策略，請參閱[ARM64 上的偵錯](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64)。

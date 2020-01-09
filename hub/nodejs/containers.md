@@ -8,18 +8,18 @@ ms.topic: article
 keywords: ''
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 16b1421606d3c8271141256b80ae2600ec9ca49d
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 9467224814b1e26f18031662f5e8d994a8fae1ac
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315122"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683671"
 ---
 # <a name="get-started-using-docker-containers-with-nodejs"></a>開始在 node.js 中使用 Docker 容器
 
 此逐步指南可協助您開始使用 Docker 容器搭配您的 node.js 應用程式。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 本指南假設您已完成[使用 WSL 2 設定 node.js 開發環境](./setup-on-wsl2.md)的步驟，包括：
 
@@ -159,13 +159,13 @@ Docker 擴充功能可讓您輕鬆地從 Visual Studio Code 建立、管理和�
 
 6. 您應該會看到埠 3333-> 3000/tcp 上的「我的 nextjs 應用程式： v1」容器處於作用中。 您也可以查看此處所列的「容器識別碼」。 若要停止執行您的容器，請輸入下列命令： `docker stop <container ID>`
 
-7. 一般來說，一旦停止容器，也應該將它移除。 移除容器會清除它留下的任何資源。 一旦您移除容器，在其映射檔案系統中所做的任何變更都會永久遺失。 您將需要建立新的映射來代表變更。 若要移除您的容器，請使用命令： `docker rm <container ID>`
+7. 通常，容器一旦停止，應該也會移除。 移除容器會清除它所留下的任何資源。 一旦您移除容器，在其映射檔案系統中所做的任何變更都會永久遺失。 您將需要建立新的映射來代表變更。 若要移除您的容器，請使用命令： `docker rm <container ID>`
 
 深入瞭解如何[使用 Docker 建立容器化 web 應用程式](https://docs.microsoft.com/learn/modules/intro-to-containers/)。
 
 ## <a name="deploy-to-azure-container-registry"></a>部署至 Azure Container Registry
 
-[**Azure Container Registry**](https://azure.microsoft.com/services/container-registry/) （ACR）可讓您在私用、已驗證的存放庫中，儲存、管理和保留容器映射安全。 與標準 Docker 命令相容，ACR 可以為您處理重要的工作，例如容器健康情況監視和維護，與[Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)配對以建立可調整的協調流程系統。 視需要建立，或完全自動化具有觸發程式的組建，例如原始程式碼認可和基底映射更新。 ACR 也利用龐大的 Azure 雲端網路來管理網路延遲、全球部署，並為使用[Azure App Service](https://docs.microsoft.com/azure/app-service/) （適用于 web 裝載、行動後端、REST api）或[其他 Azure 雲端服務](https://azure.microsoft.com/product-categories/containers/)的任何人，建立順暢的原生體驗。
+[**Azure Container Registry**](https://azure.microsoft.com/services/container-registry/) （ACR）可讓您在私用、已驗證的存放庫中，儲存、管理和保留容器映射安全。 與標準 Docker 命令相容，ACR 可以為您處理重要的工作，例如容器健康情況監視和維護，與[Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)配對以建立可調整的協調流程系統。 視需求建置，或是使用原始程式碼認可和基礎映像更新等觸發程序來完全自動化地進行建置。 ACR 也利用龐大的 Azure 雲端網路來管理網路延遲、全球部署，並為使用[Azure App Service](https://docs.microsoft.com/azure/app-service/) （適用于 web 裝載、行動後端、REST api）或[其他 Azure 雲端服務](https://azure.microsoft.com/product-categories/containers/)的任何人，建立順暢的原生體驗。
 
 > [!IMPORTANT]
 > 您需要自己的 Azure 訂用帳戶，才能將容器部署至 Azure，而您可能會收到費用。 如果您還沒有 Azure 訂用帳戶，請在開始前[建立免費帳戶](https://azure.microsoft.com/free/)。
@@ -174,7 +174,7 @@ Docker 擴充功能可讓您輕鬆地從 Visual Studio Code 建立、管理和�
 
 ## <a name="additional-resources"></a>其他資源
 
-- [Azure 上的 node.js](https://azure.microsoft.com/en-us/develop/nodejs/)
+- [Azure 上的 Node.js](https://azure.microsoft.com/develop/nodejs/)
 - 快速入門：[在 Azure 中建立 node.js web 應用程式](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)
 - 線上課程：[在 Azure 中管理容器](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
 - 使用 VS Code：使用[Docker](https://code.visualstudio.com/docs/azure/docker)

@@ -1,20 +1,20 @@
 ---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Device Portal 核心 API 參考資料
-description: 了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。
+title: 裝置入口網站核心 API 參考資料
+description: 了解可用來存取資料並以程式設計方式控制裝置的 Windows 裝置入口網站核心 REST API。
 ms.custom: 19H1
 ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e6b505dfd24a57f03169df3ed38402e7b3e9bb0
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 86724b084edb9350adfd2ed2623623d255302b70
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282119"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683456"
 ---
-# <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 參考資料
+# <a name="device-portal-core-api-reference"></a>裝置入口網站核心 API 參考資料
 
 所有裝置入口網站功能都是以 REST API 建置，開發人員可直接呼叫這些 API 來存取資源，並透過程式設計的方式控制其裝置。
 
@@ -34,13 +34,13 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | 套件   | (**必要**) 要安裝之套件的檔案名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -53,7 +53,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 | 200 | 部署要求已受理並正在處理 |
 | 4XX | 錯誤碼 |
@@ -62,7 +62,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -83,13 +83,13 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | 套件   | (**必要**) 要安裝之套件的檔案名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文** 
 - 指定為參數時，新增 ".opt" 至選用的套件檔案名稱，像這樣："foo.appx.opt" 或 "bar.appxbundle.opt"。 
@@ -102,7 +102,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 | 200 | 部署要求已受理並正在處理 |
 | 4XX | 錯誤碼 |
@@ -111,7 +111,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -130,11 +130,11 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -155,7 +155,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 | 200 | 部署要求已受理並正在處理 |
 | 4XX | 錯誤碼 |
@@ -163,7 +163,7 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -182,11 +182,11 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -216,7 +216,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 | 200 | 部署要求已受理並正在處理 |
 | 4XX | 錯誤碼 |
@@ -224,7 +224,7 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -243,15 +243,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -259,7 +259,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 | 200 | 最後部署的結果 |
 | 204 | 正在執行安裝 |
@@ -268,7 +268,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -287,17 +287,17 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | 套件   | (**必要**) 目標 App 的 PackageFullName (來自 GET /api/app/packagemanager/packages) |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -305,7 +305,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -314,7 +314,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -334,15 +334,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -353,7 +353,7 @@ ms.locfileid: "72282119"
         "Name": string,
         "PackageFamilyName": string,
         "PackageFullName": string,
-        "PackageOrigin": int, (https://msdn.microsoft.com/en-us/library/windows/desktop/dn313167(v=vs.85).aspx)
+        "PackageOrigin": int, (https://msdn.microsoft.com/library/windows/desktop/dn313167(v=vs.85).aspx)
         "PackageRelativeId": string,
         "Publisher": string,
         "Version": {
@@ -375,7 +375,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -384,14 +384,14 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="bluetooth"></a>藍牙
+## <a name="bluetooth"></a>[藍牙]
 
 <hr>
 
@@ -409,15 +409,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -439,7 +439,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼 | 描述 |
+| HTTP 狀態碼 | 說明 |
 | :------             | :------ |
 | 200              | [確定] |
 | 4XX              | 錯誤碼 |
@@ -447,7 +447,7 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -467,18 +467,18 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
-| id            | (**需要**) 藍牙無線電的裝置 ID 而且必須是 Base-64 編碼。 |
-| State         | （**必要**）這可以是 `"On"` 或 `"Off"`。 |
+| 識別碼            | (**需要**) 藍牙無線電的裝置 ID 而且必須是 Base-64 編碼。 |
+| 州/省         | （**必要**）這可以是 `"On"` 或 `"Off"`。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -486,7 +486,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼 | 描述 |
+| HTTP 狀態碼 | 說明 |
 | :------             | :------ |
 | 200              | [確定] |
 | 4XX              | 錯誤碼 |
@@ -494,7 +494,7 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -512,15 +512,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -550,15 +550,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -585,17 +585,17 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
-| id            | （**必要**）藍牙裝置的關聯端點識別碼，必須是 Base64 編碼。 |
+| 識別碼            | （**必要**）藍牙裝置的關聯端點識別碼，必須是 Base64 編碼。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -603,7 +603,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼 | 描述 |
+| HTTP 狀態碼 | 說明 |
 | :---             | :--- |
 | 200              | [確定] |
 | 4XX              | 錯誤碼 |
@@ -611,7 +611,7 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -629,17 +629,17 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
-| id            | （**必要**）藍牙裝置的關聯端點識別碼，必須是 Base64 編碼。 |
+| 識別碼            | （**必要**）藍牙裝置的關聯端點識別碼，必須是 Base64 編碼。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -647,7 +647,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼 | 描述 |
+| HTTP 狀態碼 | 說明 |
 | :---             | :--- |
 | 200              | [確定] |
 | 4XX              | 錯誤碼 |
@@ -655,12 +655,12 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
 ---
-## <a name="device-manager"></a>裝置管理員
+## <a name="device-manager"></a>[裝置管理員]
 <hr>
 
 ### <a name="get-the-installed-devices-on-the-machine"></a>取得電腦上已安裝的裝置
@@ -675,15 +675,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -706,7 +706,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -715,7 +715,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -733,15 +733,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -793,14 +793,14 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 5XX | 錯誤碼 |
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -809,7 +809,7 @@ ms.locfileid: "72282119"
 
 <hr>
 
-### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>取得 App 的所有損毀傾印清單
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>取得應用程式的所有損毀傾印清單
 
 **要求**
 
@@ -822,15 +822,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -840,7 +840,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -849,7 +849,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -870,17 +870,17 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | packageFullname   | (**必要**) 側載 App 的完整套件名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -893,7 +893,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -902,7 +902,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -923,18 +923,18 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | packageFullname   | (**必要**) 側載 App 的完整套件名稱。 |
 | fileName   | (**必要**) 應該刪除之傾印檔案的名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -942,7 +942,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -951,7 +951,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -972,17 +972,17 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | packageFullname   | (**必要**) 側載 App 的完整套件名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -990,7 +990,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -999,7 +999,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -1020,18 +1020,18 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | packageFullname   | (**必要**) 側載 App 的完整套件名稱。 |
 | fileName   | (**必要**) 您要下載之傾印檔案的名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1041,7 +1041,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -1050,7 +1050,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -1071,17 +1071,17 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | packageFullname   | (**必要**) 側載 App 的完整套件名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1089,14 +1089,14 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 
 **可用的裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -1115,15 +1115,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1141,13 +1141,13 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -1167,18 +1167,18 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | filename   | (**必要**) 傾印檔案的檔案名稱。 您可以透過使用 API 來取得傾印清單，以找到此項目。 |
 
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1188,7 +1188,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -1196,7 +1196,7 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -1214,15 +1214,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1238,19 +1238,19 @@ ms.locfileid: "72282119"
 
 **傾印類型**
 
-0已停用
+0：已停用
 
-1：完整記憶體傾印（收集所有使用中的記憶體）
+1：完整記憶體傾印 (收集所有的使用中記憶體)
 
-2：核心記憶體傾印（忽略使用者模式記憶體）
+2：核心記憶體傾印 (忽略使用者模式記憶體)
 
-3：有限的核心小型傾印
+3︰有限的核心小型傾印
 
 **狀態碼**
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -1258,7 +1258,7 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -1276,15 +1276,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1294,7 +1294,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -1302,7 +1302,7 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -1322,17 +1322,17 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | pid   | (**必要**) 您感興趣的處理程序唯一處理程序識別碼。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1342,7 +1342,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -1350,7 +1350,7 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -1370,7 +1370,7 @@ ms.locfileid: "72282119"
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | autoreboot   | (**選用**) True 或 False。 這指出系統失敗或遭鎖定之後，是否會自動重新啟動。 |
 | dumptype   | (**選用**) 傾印類型。 如需支援的值，請參閱 [CrashDumpType 列舉](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100))。|
@@ -1379,11 +1379,11 @@ ms.locfileid: "72282119"
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1391,7 +1391,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -1399,7 +1399,7 @@ ms.locfileid: "72282119"
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -1421,15 +1421,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1439,7 +1439,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -1448,14 +1448,14 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
 ### <a name="etw-websocket-commands"></a>ETW WebSocket 命令
 這些命令會從用戶端傳送至伺服器。
 
-| 命令 | 描述 |
+| 命令 | 說明 |
 | :----- | :----- |
 | provider *{guid}* enable *{level}* | 在指定層級啟用標示為 *{guid}* (不含括號) 的提供者。 *{level}* 是介於 1 (粗略) 至 5 (詳細) 之間的 **int**。 |
 | provider *{guid}* disable | 停用標示為 *{guid}* (不含括號) 的提供者。 |
@@ -1516,15 +1516,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1542,14 +1542,14 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 |  200 | [確定] | 
 
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -1568,15 +1568,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1598,13 +1598,13 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="location"></a>Location
+## <a name="location"></a>位置
 
 <hr>
 
@@ -1621,15 +1621,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1643,7 +1643,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 |  200 | [確定] | 
 | 4XX | 錯誤碼 |
@@ -1652,7 +1652,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -1670,11 +1670,11 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -1694,7 +1694,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -1703,7 +1703,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -1721,15 +1721,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1746,7 +1746,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-|  HTTP 狀態碼      | 描述 | 
+|  HTTP 狀態碼      | 說明 | 
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -1755,7 +1755,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -1773,11 +1773,11 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -1803,7 +1803,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -1812,7 +1812,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -1836,15 +1836,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1858,7 +1858,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -1867,7 +1867,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -1887,15 +1887,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1915,7 +1915,7 @@ ms.locfileid: "72282119"
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -1924,7 +1924,7 @@ ms.locfileid: "72282119"
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -1944,15 +1944,15 @@ ms.locfileid: "72282119"
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -1970,7 +1970,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -1979,7 +1979,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -2001,17 +2001,17 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | name | (**必要**) 電腦的新名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2019,14 +2019,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -2050,15 +2050,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2085,7 +2085,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2093,7 +2093,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -2117,15 +2117,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2150,7 +2150,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2159,7 +2159,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -2180,15 +2180,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2229,7 +2229,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2238,14 +2238,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="power"></a>電源
+## <a name="power"></a>開啟/關閉
 
 <hr>
 
@@ -2262,15 +2262,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2292,7 +2292,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2301,7 +2301,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -2320,15 +2320,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2341,7 +2341,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2349,7 +2349,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -2364,16 +2364,16 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | GET | /api/power/cfg/ *<power scheme path>* |
 
-選項:
+選項：
 - SCHEME_CURRENT
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -2385,7 +2385,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2393,7 +2393,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -2411,15 +2411,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2432,7 +2432,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2440,7 +2440,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -2461,17 +2461,17 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | scheme | (**必要**) 您要為系統設定之使用中電源配置的配置 GUID。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2479,7 +2479,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2487,7 +2487,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -2507,18 +2507,18 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | valueAC | (**必要**) 要用於 A/C 電源的值。 |
 | valueDC | (**必要**) 要用於電池電力的值。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2526,13 +2526,13 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -2548,17 +2548,17 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 您可以透過使用下列要求格式，以取得睡眠研究報告。
 
 **URI 參數**
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | FileName | (**必要**) 您要下載之檔案的完整名稱。 此值應該是 hex64 編碼。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2568,7 +2568,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2576,7 +2576,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -2594,15 +2594,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2620,7 +2620,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2628,7 +2628,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -2646,15 +2646,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2664,7 +2664,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2672,7 +2672,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * IoT
 
 <hr>
@@ -2694,15 +2694,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2710,14 +2710,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -2737,15 +2737,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2753,7 +2753,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2762,7 +2762,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -2773,7 +2773,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 <hr>
 
-### <a name="start-a-modern-app"></a>啟動現代化 App
+### <a name="start-a-modern-app"></a>啟動現代化應用程式
 
 **要求**
 
@@ -2788,18 +2788,18 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | appid   | (**必要**) 您要啟動之 App 的 PRAID。 此值應該是 hex64 編碼。 |
 | 套件   | (**必要**) 您要啟動之應用程式套件的完整名稱。 此值應該是 hex64 編碼。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2807,7 +2807,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2816,7 +2816,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -2838,18 +2838,18 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 套件   | (**必要**) 您要停止之應用程式套件的完整名稱。 此值應該是 hex64 編碼。 |
 | forcestop   | (**選用**) **yes** 的值表示系統應該強制停止所有處理程序。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2857,7 +2857,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2866,7 +2866,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -2888,17 +2888,17 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | pid   | (**必要**) 要停止的處理序唯一的處理序 ID。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2906,7 +2906,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -2914,13 +2914,13 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="networking"></a>網路功能
+## <a name="networking"></a>網路
 
 <hr>
 
@@ -2937,15 +2937,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -2995,7 +2995,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3004,7 +3004,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -3024,7 +3024,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | AdapterName | （**必要**）網路介面 GUID。 |
 | IPAddress | 要設定的靜態 IP 位址。 |
@@ -3043,11 +3043,11 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3055,7 +3055,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3064,7 +3064,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -3084,15 +3084,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3118,7 +3118,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3127,7 +3127,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -3149,17 +3149,17 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
-| 介面   | (**必要**) 可用來搜尋無線網路的網路介面 GUID，不含括號。 |
+| interface   | (**必要**) 可用來搜尋無線網路的網路介面 GUID，不含括號。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3189,7 +3189,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3198,7 +3198,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -3220,9 +3220,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
-| 介面   | (**必要**) 可用來連線到網路的網路介面 GUID。 |
+| interface   | (**必要**) 可用來連線到網路的網路介面 GUID。 |
 | op   | (**必要**) 指出要採取的動作。 可能的值是 connect 或 disconnect。|
 | ssid   | (**如果 *op* == connect 則為必要**) 要連線的 SSID。 |
 | key   | (**如果 *op* == connect 且網路需要驗證則為必要**) 共用金鑰。 |
@@ -3230,11 +3230,11 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3242,14 +3242,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -3271,18 +3271,18 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
-| 介面   | (**必要**) 與要刪除之設定檔關聯的網路介面 GUID。 |
+| interface   | (**必要**) 與要刪除之設定檔關聯的網路介面 GUID。 |
 | profile   | (**必要**) 要刪除的設定檔名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3290,14 +3290,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -3323,7 +3323,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | 使用者   | (**必要**) 與報告關聯的使用者名稱。 |
 | 型別   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。 |
@@ -3332,11 +3332,11 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3346,7 +3346,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3354,7 +3354,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3375,7 +3375,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | 使用者   | (**必要**) 與報告關聯的使用者。 |
 | 型別   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。 |
@@ -3383,7 +3383,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -3402,7 +3402,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3410,7 +3410,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3429,15 +3429,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3461,7 +3461,7 @@ WER 報告使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3469,7 +3469,7 @@ WER 報告使用下列格式。
 
 **可用的裝置系列**
 
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3492,11 +3492,11 @@ WER 報告使用下列格式。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -3517,7 +3517,7 @@ WPR 工作階段狀態使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3526,7 +3526,7 @@ WPR 工作階段狀態使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3547,17 +3547,17 @@ WPR 工作階段狀態使用下列格式。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | profile   | (**必要**) 啟動時一定要有此參數。 應啟動效能追蹤工作階段之設定檔的名稱。 可能的設定檔儲存在 perfprofiles/profiles.json。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3574,7 +3574,7 @@ WPR 工作階段狀態使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3583,7 +3583,7 @@ WPR 工作階段狀態使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3602,25 +3602,25 @@ WPR 工作階段狀態使用下列格式。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
--  無。  **注意：** 這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。
+-  無。  **注意︰** 這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。
 
 **狀態碼**
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3629,7 +3629,7 @@ WPR 工作階段狀態使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3650,17 +3650,17 @@ WPR 工作階段狀態使用下列格式。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | profile   | (**必要**) 應啟動效能追蹤工作階段之設定檔的名稱。 可能的設定檔儲存在 perfprofiles/profiles.json。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3677,7 +3677,7 @@ WPR 工作階段狀態使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3686,7 +3686,7 @@ WPR 工作階段狀態使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3705,25 +3705,25 @@ WPR 工作階段狀態使用下列格式。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- 無。  **注意：** 這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。  
+- 無。  **注意︰** 這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。  
 
 **狀態碼**
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3732,7 +3732,7 @@ WPR 工作階段狀態使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3751,15 +3751,15 @@ WPR 工作階段狀態使用下列格式。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3776,7 +3776,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3785,7 +3785,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3804,15 +3804,15 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3834,7 +3834,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3843,7 +3843,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3864,17 +3864,17 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | filename   | (**必要**) 要下載之 ETL 追蹤的名稱。  可以在 /api/wpr/tracefiles 找到 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3884,7 +3884,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3893,7 +3893,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3914,17 +3914,17 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------          | :------ |
 | filename   | (**必要**) 要刪除之 ETL 追蹤的名稱。  可以在 /api/wpr/tracefiles 找到 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -3934,7 +3934,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -3943,7 +3943,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * IoT
 
@@ -3966,15 +3966,15 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應** 目前以下列格式套用的標記。 
 ```json
@@ -3991,7 +3991,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 5XX | 伺服器錯誤 |
@@ -4000,7 +4000,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -4020,24 +4020,24 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
- - None
+ - 無
 
 **狀態碼**
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 5XX | 伺服器錯誤 |
@@ -4046,7 +4046,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -4066,26 +4066,26 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------     | :----- |
 | tagValue | (**必要**) 要移除的標記。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
- - None
+ - 無
 
 **狀態碼**
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 
@@ -4093,7 +4093,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -4113,26 +4113,26 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------     | :----- |
 | tagValue | (**必要**) 要新增的標記。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
- - None
+ - 無
 
 **狀態碼**
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 401 | 標記空間溢位。  當建議標記對於產生的 DNS-SD 服務記錄過長時的結果。 |
@@ -4141,7 +4141,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * Xbox
 * HoloLens
 * IoT
@@ -4163,15 +4163,15 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應** 以下列格式呈現的可用資料夾。 
 ```json
@@ -4184,7 +4184,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | 部署要求已受理並正在處理 |
 | 4XX | 錯誤碼 |
@@ -4194,7 +4194,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * Xbox
 * IoT
@@ -4214,19 +4214,19 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------     | :----- |
-| knownfolderid | (**必要**) 您希望取得檔案清單的最上層目錄。 使用 **LocalAppData** 存取側載 App。 |
+| knownfolderid | (**必要**) 您希望取得檔案清單的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 |
 | packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 |
 | path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應** 以下列格式呈現的可用資料夾。 
 ```json
@@ -4246,7 +4246,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | [確定] |
 | 4XX | 錯誤碼 |
@@ -4255,7 +4255,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * Xbox
 * IoT
@@ -4274,16 +4274,16 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------     | :----- |
-| knownfolderid | (**必要**) 您希望下載檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 |
+| knownfolderid | (**必要**) 您希望下載檔案的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 |
 | filename | (**必要**) 下載的檔案名稱。 |
 | packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣的套件完整名稱。 |
 | path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -4295,7 +4295,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
 | 200 | 要求的檔案 |
 | 404 | 找不到檔案 |
@@ -4304,7 +4304,7 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * Xbox
 * IoT
@@ -4324,9 +4324,9 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------     | :----- |
-| knownfolderid | (**必要**) 檔案所在的最上層目錄。 使用 **LocalAppData** 存取側載 App。 |
+| knownfolderid | (**必要**) 檔案所在的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 |
 | filename | (**必要**) 所要重新命名之檔案的原始名稱。 |
 | newfilename | (**必要**) 檔案的新名稱。|
 | packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 |
@@ -4334,30 +4334,30 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
-| 200 | [確定] |. 檔案已重新命名
+| 200 | [確定] |。 檔案已重新命名
 | 404 | 找不到檔案 |
 | 5XX | 錯誤碼 |
 
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * Xbox
 * IoT
@@ -4376,39 +4376,39 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------     | :----- |
-| knownfolderid | (**必要**) 您希望刪除檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 |
+| knownfolderid | (**必要**) 您希望刪除檔案的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 |
 | filename | (**必要**) 刪除的檔案名稱。 |
 | packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 |
 | path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None 
+- 無 
 
 **狀態碼**
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
-| 200 | [確定] |. 檔案已刪除 |
+| 200 | [確定] |。 檔案已刪除 |
 | 404 | 找不到檔案 |
 | 5XX | 錯誤碼 |
 
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * Xbox
 * IoT
@@ -4427,19 +4427,19 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 **URI 參數**
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :------     | :----- |
-| knownfolderid | (**必要**) 您希望上傳檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 |
+| knownfolderid | (**必要**) 您希望上傳檔案的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 |
 | packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 |
 | path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
@@ -4447,16 +4447,16 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 此 API 具有下列預期狀態碼。
 
-| HTTP 狀態碼      | 描述 |
+| HTTP 狀態碼      | 說明 |
 | :------     | :----- |
-| 200 | [確定] |. 檔案已上傳 |
+| 200 | [確定] |。 檔案已上傳 |
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
 **可用的裝置系列**
 
 * Windows Mobile
-* Windows 桌面
+* Windows 電腦
 * HoloLens
 * Xbox
 * IoT

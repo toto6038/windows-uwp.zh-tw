@@ -1,17 +1,17 @@
 ---
-Description: 您的 App 可以載入包含針對顯示縮放比例、佈景主題、高對比及其他執行階段內容量身打造之影像的影像資源檔案。
+Description: 您的應用程式可以載入包含針對顯示縮放比例、佈景主題、高對比及其他執行階段內容量身打造之影像的影像資源檔案。
 title: 載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 236365bc729bb6b9a2615720c4b69aea21296e5f
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 2aadcb8dc3d414db7951dc571855e01bddb03a99
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339461"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683641"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產
 您的應用程式可以載入包含針對[顯示縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、佈景主題、高對比及其他執行階段內容量身打造的影像資源檔案 (或其他資產檔案)。 可以從命令式程式碼或 XAML 標記中參考這些影像，例如 **Image** 的 **Source** 屬性。 也可以出現在應用程式套件資訊清單來源檔案 (`Package.appxmanifest` 檔案) 中 &mdash; 例如，在 Visual Studio 資訊清單設計工具的 \[視覺資產\] 索引標籤上做為 \[App 圖示\] 的值 &mdash; 或顯示在您的磚和快顯通知上。 您可以在影像檔案名稱中使用限定詞，並借助 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 選擇性動態載入這些檔案，以便載入最符合使用者顯示縮放比例、佈景主題、高對比、語言及其他內容之執行階段設定的最適當影像檔案。
@@ -86,12 +86,12 @@ var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsy
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-在這些範例示範的案例中，請使用會推斷 [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind) 的 [Uri 建構函式](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_)多載。 指定有效的絕對 URI (包括配置和授權單位)，或直接讓授權單位預設為應用程式的套件，如上述範例所示。
+在這些範例示範的案例中，請使用會推斷 [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind) 的 [Uri 建構函式](https://docs.microsoft.com/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_)多載。 指定有效的絕對 URI (包括配置和授權單位)，或直接讓授權單位預設為應用程式的套件，如上述範例所示。
 
 注意這些範例中的 URI 配置 ("`ms-appx`" 或 "`ms-appx-web`") 如何在後面加上 "`://`"，再後接絕對路徑。 在絕對路徑中，前置 `/` 會導致路徑從套件的根目錄開始進行解譯。
 
 > [!NOTE]
-> @No__t-0 （適用于[字串資源](localize-strings-ui-manifest.md)）和 `ms-appx(-web)` （適用于影像和其他資產） URI 配置會執行自動限定詞比對，以尋找最適合目前內容的資源。 `ms-appdata` URI 配置 (用來載入應用程式資料) 不會執行任何這樣的自動比對，但您可以回應 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 的內容，並使用 URI 中的完整實體檔案名稱從應用程式資料明確載入適當的資產。 如需有關應用程式資料的詳細資訊，請參閱[儲存和擷取設定及其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)。 Web URI 配置 (例如，`http`、`https` 和 `ftp`) 也不會執行自動比對。 如需有關這種情況下該執行哪些動作的詳細資訊，請參閱[在雲端裝載和載入影像](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud)。
+> `ms-resource` （適用于[字串資源](localize-strings-ui-manifest.md)）和 `ms-appx(-web)` （適用于影像和其他資產） URI 配置會執行自動限定詞比對，以尋找最適合目前內容的資源。 `ms-appdata` URI 配置 (用來載入應用程式資料) 不會執行任何這樣的自動比對，但您可以回應 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 的內容，並使用 URI 中的完整實體檔案名稱從應用程式資料明確載入適當的資產。 如需有關應用程式資料的詳細資訊，請參閱[儲存和擷取設定及其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)。 Web URI 配置 (例如，`http`、`https` 和 `ftp`) 也不會執行自動比對。 如需有關這種情況下該執行哪些動作的詳細資訊，請參閱[在雲端裝載和載入影像](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud)。
 
 如果影像檔案仍位於其原本在專案結構中的位置，絕對路徑會是不錯的選擇。 如果您希望可以移動影像檔案，但很在意要保留相對於其參考 XAML 標記檔案中的相同位置時，您可能需要使用相對於包含所在標記檔案的路徑，而不使用絕對路徑。 如果這樣做，您就不需要使用 URI 配置。 在這種情況下，您仍可從自動限定詞比對受益，但只是因為您是在 XAML 標記中使用相對路徑。
 
@@ -139,7 +139,7 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 請參閱[鏡像影像](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)。
 
 ## <a name="load-an-image-for-a-specific-language-or-other-context"></a>載入特定語言或其他內容的影像
-如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
+如需有關將您的應用程式當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
 
 預設 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) (從 [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView) 取得) 包含每個限定詞名稱表示預設執行階段內容的限定詞值 (也就是說，適用於目前使用者及電腦的設定值)。 影像檔案會&mdash;根據其名稱中的限定詞&mdash;比對該執行階段內容中的限定詞值。
 

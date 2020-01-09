@@ -5,14 +5,14 @@ title: 連線到遠端照相機
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 253eea00ba6c4188197224111909c28a53932b88
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: c7b876cff994f775b770d22c103d27271047b269
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257354"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683631"
 ---
 # <a name="connect-to-remote-cameras"></a>連線到遠端照相機
 
@@ -33,9 +33,9 @@ ms.locfileid: "74257354"
 > 協助程式方法[**MediaFrameSourceGroup。 GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector)會傳回 AQS 字串，其會監視本機連線和遠端網路攝影機。 若只要監視網路攝影機，您應該使用如上所示的 AQS 字串。
 
 
-當您藉由呼叫[**start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start)方法來啟動傳回的**DeviceWatcher**時，它會針對目前可用的每個網路攝影機引發[**新增**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added)的事件。 在您藉由呼叫[**stop**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.stop)停止監看員之前，會在新的網路攝影機裝置可用時**引發新增的事件，** 而且當相機裝置無法使用時，將會引發[**已移除**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.devicewatcher.removed)的事件。
+當您藉由呼叫[**start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start)方法來啟動傳回的**DeviceWatcher**時，它會針對目前可用的每個網路攝影機引發[**新增**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added)的事件。 在您藉由呼叫[**stop**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.stop)停止監看員之前，會在新的網路攝影機裝置可用時**引發新增的事件，** 而且當相機裝置無法使用時，將會引發[**已移除**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.removed)的事件。
 
-傳遞至**已加入**和**已移除**事件處理常式的事件引數分別是[**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)或[**DeviceInformationUpdate**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.deviceinformationupdate)物件。 這些物件的每一個都有一個**Id**屬性，這是引發事件的網路攝影機識別碼。 將此識別碼傳遞至[**MediaFrameSourceGroup. FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync)方法，以取得可供您用來從相機抓取框架的[**MediaFrameSourceGroup**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync)物件。
+傳遞至**已加入**和**已移除**事件處理常式的事件引數分別是[**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)或[**DeviceInformationUpdate**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationupdate)物件。 這些物件的每一個都有一個**Id**屬性，這是引發事件的網路攝影機識別碼。 將此識別碼傳遞至[**MediaFrameSourceGroup. FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync)方法，以取得可供您用來從相機抓取框架的[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync)物件。
 
 ## <a name="remote-camera-pairing-helper-class"></a>遠端相機配對 helper 類別
 

@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, always connected, x86 emulation on ARM, troubleshooting, 永遠連線, ARM 上的 x86 模擬, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 20aa5943fc1f3f0176cde33983da1fceca8a49ba
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: a71f33438a336aba67afbb30b19987b0e0aef83b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282356"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683931"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>疑難排解 x86 傳統型應用程式
 >[!IMPORTANT]
@@ -18,9 +18,9 @@ ms.locfileid: "72282356"
 
 如果 x86 傳統型應用程式無法像在 x86 電腦上一樣運作，以下是一些可協助您疑難排解的指引。
 
-|問題|方案|
+|問題|解決方案|
 |-----|--------|
-| 您的應用程式依賴不是針對 ARM 所設計的驅動程式。 | 將 x86 驅動程式編譯為 ARM64。 查看[使用 WDK 建置 ARM64 驅動程式](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)。 |
+| 您的應用程式依賴不是針對 ARM 所設計的驅動程式。 | 將 x86 驅動程式編譯為 ARM64。 查看[使用 WDK 建置 ARM64 驅動程式](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)。 |
 | 您的應用程式僅適用於 x64。 | 如果您針對 Microsoft Store 開發，請提交應用程式的 ARM 版本。 如需詳細資訊，請參閱[應用程式套件架構](/windows/msix/package/device-architecture)。 如果您是 Win32 開發人員，建議您編譯您的應用程式為 ARM64。 如需詳細資訊，請參閱[早期預覽 ARM 開發上 Windows 10 的 Visual Studio 支援](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。 |
 | 您的應用程式使用比 OpenGL 1.1 更新的版本或需要硬體加速 OpenGL。 | 如果有的話，請使用應用程式的 DirectX 模式。 使用 DirectX 9、DirectX 10、DirectX 11 和 DirectX 12 的 x86 應用程式可在 ARM 上正常運作。 如需詳細資訊，請參閱[DirectX 圖形與遊戲](https://docs.microsoft.com/windows/desktop/directx)。 |
 | 您的 x86 應用程式無法如預期運作。 | 請依照[ARM 上的程式相容性疑難排解員](apps-on-arm-program-compat-troubleshooter.md)中的指引，嘗試使用相容性疑難排解員。 如需一些其他疑難排解步驟，請查看[疑難排解 ARM 上的 x86 應用程式](apps-on-arm-troubleshooting-x86.md)文章。 |
@@ -43,7 +43,7 @@ ms.locfileid: "72282356"
 嘗試將 Windows 元件連結至 Windows 處理程序或載入其 DLL 處理程序的應用程式，會需要重新編譯這些 DLL 以符合系統的架構，即 ARM64。 一般而言，這些是由輸入法（Ime）、輔助技術和 shell 擴充功能應用程式使用（例如，在 Explorer 中顯示雲端儲存體圖示，或按一下滑鼠右鍵操作功能表）。 若要了解如何重新編譯您的應用程式或 DLL 為 ARM64，請參閱[早期預覽 ARM 開發上 Windows 10 的 Visual Studio 支援](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)部落格文章。 
 
 ## <a name="debugging"></a>偵錯
-若要深入調查應用程式的行為，請參閱[ARM 上的偵錯](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64)以深入了解 ARM 上偵錯的工具和策略。
+若要深入調查應用程式的行為，請參閱[ARM 上的偵錯](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64)以深入了解 ARM 上偵錯的工具和策略。
 
 ## <a name="virtual-machines"></a>虛擬機器
 Qualcomm Snapdragon 835 行動裝置版電腦平台上不支援 Windows Hypervisor 平台。 因此使用 Hyper-V 執行虛擬電腦將會無法運作。 我們會持續投資在未來 Qualcomm 晶片組的這些技術。 
@@ -51,4 +51,4 @@ Qualcomm Snapdragon 835 行動裝置版電腦平台上不支援 Windows Hypervis
 ## <a name="dynamic-code-generation"></a>動態程式碼產生
 在執行時間產生 ARM64 指示的系統會在 ARM64 上模擬 X86 桌面應用程式。 這表示如果 x86 桌面應用程式在其進程中防止動態程式碼產生或修改，則不支援在 ARM64 上以 x86 的形式執行該應用程式。 
 
-這是一種安全性風險降低，有些應用程式會使用[SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API 搭配 `ProcessDynamicCodePolicy` 旗標，在其進程上啟用。 若要在 ARM64 上以 x86 程式成功執行，則必須停用此緩和原則。 
+這是一種安全性風險降低，有些應用程式會使用[SetProcessMitigationPolicy](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API 搭配 `ProcessDynamicCodePolicy` 旗標，在其進程上啟用。 若要在 ARM64 上以 x86 程式成功執行，則必須停用此緩和原則。 

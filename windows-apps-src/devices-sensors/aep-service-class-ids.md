@@ -4,22 +4,22 @@ title: AEP 服務類別識別碼
 description: 關聯端點 (AEP) 服務提供特定通訊協定上裝置支援服務的程式設計協定。 其中幾個服務已建立參考他們時應使用的識別碼。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4b4c89fff2854c36bd76cc680197fad1aa8dff
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bc8fecd7a5a1596d074c170d7a7211126e88b8ae
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370398"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684867"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服務類別識別碼
 
 
 
-**重要的 Api**
+**重要 API**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows. 列舉**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 關聯端點 (AEP) 服務提供特定通訊協定上裝置支援服務的程式設計協定。 其中幾個服務已建立參考他們時應使用的識別碼。 這些協定可使用 **System.Devices.AepService.ServiceClassId** 屬性進行識別。 這個主題列出數個已知的 AEP 服務類別識別碼。 AEP 服務類別識別碼也適用於使用自訂類別識別碼的通訊協定。
 
@@ -88,7 +88,7 @@ UPnP 服務會使用下列通訊協定識別碼：{0e261de4-12f0-46e6-91ba-42860
 
 | 服務名稱                       | GUID                                      |
 |------------------------------------|-------------------------------------------|
-| [ODBC 來源編輯器]                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| 連線管理員                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
 | AV 傳輸                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
 | 轉譯控制                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | 第三層轉送                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
@@ -97,7 +97,7 @@ UPnP 服務會使用下列通訊協定識別碼：{0e261de4-12f0-46e6-91ba-42860
 | WFA WLAN 設定             | **23d5f7db-747f-5099-8f21-3ddfd0c3c688**  |
 | 功能加強的印表機                   | **fb9074da-3d9f-5384-922e-9978ae51ef0c**  |
 | 印表機基本                      | **5d2a7252-d45c-5158-87a4-05212da327e1**  |
-| 媒體接收器登錄           | **0b4a2add-d725-5198-b2ba-852b8bf8d183**  |
+| 媒體接收器登錄器           | **0b4a2add-d725-5198-b2ba-852b8bf8d183**  |
 | 內容目錄                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
 | 撥號                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 

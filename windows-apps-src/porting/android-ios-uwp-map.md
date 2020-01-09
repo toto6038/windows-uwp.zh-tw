@@ -3,15 +3,15 @@ Description: 比較 iOS、Android 和 Windows 10 平台之間的功能。
 title: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: f8ace0d56e6e647ed5f977cbe6860d8f91bb2b5f
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 23d090422c7c5aabb146d9cd1ff40cc64a485bdb
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282363"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683971"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
@@ -42,7 +42,7 @@ ms.locfileid: "72282363"
 <td align="left"><strong>設計語言。</strong><br><br>一組擬定平台上 app 外觀和行為的慣例。</td>
 <td align="left"><strong>Android Material Design (Android 材料設計)</strong> 指導方針提供 Android 設計人員與開發人員需要遵循的視覺化語言。</td>
 <td align="left"><strong>Human Interface Guidelines (人性化介面指導方針)</strong> 為 iOS 設計人員與開發人員提供建議。</td>
-<td align="left"><a href="https://developer.microsoft.com/en-us/windows/apps/design"><strong>UWP Windows 應用程式設計</strong></a>示範如何建立在所有 Windows 10 裝置上看起來很棒的應用程式。 您可以找到使用者介面 (UI) 設計基礎知識、回應式設計技術，以及詳細指導方針的完整清單。<br/></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/apps/design"><strong>UWP Windows 應用程式設計</strong></a>示範如何建立在所有 Windows 10 裝置上看起來很棒的應用程式。 您可以找到使用者介面 (UI) 設計基礎知識、回應式設計技術，以及詳細指導方針的完整清單。<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>使用者介面標記語言。</strong> <br><br>轉譯和描述 UI 及其元件的標記語言。 每個平台都為視覺與標記編輯提供編輯器。<br/></td>
@@ -66,7 +66,7 @@ ms.locfileid: "72282363"
 <td align="left"><strong>資料</strong>系結。 <br><br>一種軟體設計模式，可讓 app UI 轉譯資料，而且可以選擇與該資料保持同步。</td>
 <td align="left">目前已提供 <strong>Data Binding Library (資料繫結程式庫)</strong>，不過仍是搶鮮版 (Beta)。</td>
 <td align="left">iOS 上沒有內建的繫結系統。 可透過使用第三方程式庫或撰寫額外的程式碼，以 <strong>Key-Value Observing (索引鍵值觀察)</strong> 為基礎進行建置，以執行資料繫結。 控制項使用委派/回呼方法來取得資料。</td>
-<td align="left">UWP 平台可為您處理<strong>資料繫結</strong>。 您使用 <strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension">{X:bind}</a></strong> 標記延伸來利用高效能繫結，或使用 <strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a></strong> 來利用更多的功能。 然後只需設定您的繫結，選擇平台要使用<strong>單向繫結</strong>在 UI 中顯示資料來源的值，或者使用<strong>雙向繫結</strong>一併觀察那些值並在值變更時更新您的 UI。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/data-binding/index">資料系結</a></td>
+<td align="left">UWP 平台可為您處理<strong>資料繫結</strong>。 您使用 <strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension">{X:bind}</a></strong> 標記延伸來利用高效能繫結，或使用 <strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a></strong> 來利用更多的功能。 然後只需設定您的繫結，選擇平台要使用<strong>單向繫結</strong>在 UI 中顯示資料來源的值，或者使用<strong>雙向繫結</strong>一併觀察那些值並在值變更時更新您的 UI。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/data-binding/index">資料繫結</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>使用者介面自動化。</strong> <br><br>以程式設計方式存取 UI 元素，讓輔助技術產品可以存取 app，以及讓自動化測試指令碼與您的 UI 互動。</td>
@@ -127,13 +127,13 @@ ms.locfileid: "72282363"
 <td align="left"><strong>對等導覽。</strong> <br><br>向使用者顯示在階層同等重要的頁面之間瀏覽的方法。</td>
 <td align="left"><strong>Tab (索引標籤)</strong>、<strong>swipe view (撥動檢視)</strong> 和 <strong>navigation drawer (瀏覽選單)</strong> 提供<strong>橫式瀏覽</strong>。</td>
 <td align="left"><strong>Tab bar controller (索引標籤列控制器)</strong>、<strong>split view controller (分割檢視控制器)</strong> 和 <strong>page view controller (頁面檢視控制器)</strong> 允許相同階層的檢視之間的瀏覽。</td>
-<td align="left">您可以使用<strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/split-view">瀏覽窗格/分割檢視</a></strong>可讓您在內容旁顯示連結的清單。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">導覽</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間流覽</a></td>
+<td align="left">您可以使用<strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/split-view">瀏覽窗格/分割檢視</a></strong>可讓您在內容旁顯示連結的清單。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間流覽</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>階層式導覽。</strong> <br><br>在階層的父項與子項頁面之間瀏覽。</td>
 <td align="left"><strong>List (清單)</strong> 和 <strong>grid list (格線清單)</strong>、<strong>button (按鈕)</strong> 及其他控制項，搭配 <strong>intent (意圖)</strong> 使用時可提供 <strong>descendent navigation (下階瀏覽)</strong> 以載入其他 <strong>activity (活動)</strong>。</td>
 <td align="left"><strong>Navigation controller (瀏覽控制器)</strong> 可讓使用者在階層的層級之間瀏覽。</td>
-<td align="left"><strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub">中樞</a></strong>可讓您向使用者顯示內容的預覽，以供選取以流覽至子頁面。 <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/master-details">主要/詳細資料</a></strong>可讓使用者從對應的詳細資料區段旁顯示的專案摘要清單中挑選。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">導覽</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間流覽</a></td>
+<td align="left"><strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub">中樞</a></strong>可讓您向使用者顯示內容的預覽，以供選取以流覽至子頁面。 <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/master-details">主要/詳細資料</a></strong>可讓使用者從對應的詳細資料區段旁顯示的專案摘要清單中挑選。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間流覽</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>上一頁按鈕導覽。</strong> <br><br>在應用程式內往回瀏覽。</td>
@@ -180,7 +180,7 @@ ms.locfileid: "72282363"
 </tr>
 </tbody>
 </table>
-<h2 id="data">資料</h2>
+<h2 id="data">Data</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -342,7 +342,7 @@ ms.locfileid: "72282363"
 <td align="left"><strong>執行緒。</strong> <br><br>使用執行緒處理來維護<strong>回應式 UI</strong> 並執行多個<strong>平行工作</strong>。</td>
 <td align="left">實現執行緒處理的方法是使用 <strong>Runnable</strong>、<strong>Handler</strong>、<strong>ThreadPoolExecutor</strong> 及更高階的 <strong>AsyncTask</strong> 類別。</td>
 <td align="left">實現執行緒處理的方法是使用 <strong>NSThread</strong>、<strong>Grand Central Dispatch</strong> 及更高階的 <strong>NSOperation</strong>。</td>
-<td align="left">您可以使用RunAsync 將<strong>工作項目<a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync">提交到</a>執行緒集區</strong>來處理執行緒。 您可以使用計時器，使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer">CreateTimer</a></strong> 提交工作項目，以及使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer">CreatePeriodicTimer</a></strong> 建立重複性工作項目。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/submit-a-work-item-to-the-thread-pool">將工作項目提交至執行緒集區</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/use-a-timer-to-submit-a-work-item">使用計時器提交工作項目</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/create-a-periodic-work-item">建立定期工作項目</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/best-practices-for-using-the-thread-pool">使用執行緒集區的最佳做法</a></td>
+<td align="left">您可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync">RunAsync</a></strong> 將<strong>工作項目</strong>提交到<strong>執行緒集區</strong>來處理執行緒。 您可以使用計時器，使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer">CreateTimer</a></strong> 提交工作項目，以及使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer">CreatePeriodicTimer</a></strong> 建立重複性工作項目。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/submit-a-work-item-to-the-thread-pool">將工作項目提交至執行緒集區</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/use-a-timer-to-submit-a-work-item">使用計時器提交工作項目</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/create-a-periodic-work-item">建立定期工作項目</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/best-practices-for-using-the-thread-pool">使用執行緒集區的最佳做法</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>非同步程式設計。</strong> <br><br>利用非同步程式設計模式避免執行緒處理的複雜度，以便讓 UI 執行緒保持回應。</td>
@@ -354,11 +354,11 @@ ms.locfileid: "72282363"
 <td align="left"><strong>清單視圖優化。</strong> <br><br>用來協助將資料清單最佳化的內建模式，這種清單需要顯示大量資料時，通常會發生效能不佳的情況</td>
 <td align="left"><strong>ViewHolder</strong> 設計模式是用來避免多個檢視查閱，可讓您使用重複使用的 UI 元素。</td>
 <td align="left">可進行一些最佳化以改善 <strong>UITableView</strong> 的效能，沒有任何內建項目。</td>
-<td align="left">您可以使用直接提供 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview">UI 虛擬化</a>的 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">ListView</a> 和 <strong>GridView</strong> 控制項，它們提供順暢的移動瀏覽和捲動體驗及較快的啟動時間。 您也可以在資料來源中實作 <a href="https://docs.microsoft.com/dotnet/api/system.collections.ilist">IList</a> 和 <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a>，它們提供<strong>資料虛擬化</strong>並進一步提升效能。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">ListView 和 GridView UI 優化</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">ListView 和 GridView 資料虛擬化</a></td>
+<td align="left">您可以使用直接提供 <strong>UI 虛擬化</strong>的 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview">ListView</a> 和 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">GridView</a> 控制項，它們提供順暢的移動瀏覽和捲動體驗及較快的啟動時間。 您也可以在資料來源中實作 <a href="https://docs.microsoft.com/dotnet/api/system.collections.ilist">IList</a> 和 <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a>，它們提供<strong>資料虛擬化</strong>並進一步提升效能。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">ListView 和 GridView UI 優化</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">ListView 和 GridView 資料虛擬化</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="monetization">營利</h2>
+<h2 id="monetization">創造營收</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -379,7 +379,7 @@ ms.locfileid: "72282363"
 <td align="left"><strong>應用程式內購買。</strong> <br><br>允許使用者在您的 app 中進行購買的平台功能。</td>
 <td align="left"><strong>應用程式內結帳</strong>是由 Google 服務提供。 產品會新增至 <strong>Google Play 開發人員主控台</strong>。 App 內購買使用 <strong>Google Play Billing Library (Google Play 帳單功能程式庫)</strong> 實作。</td>
 <td align="left">產品已新增至 <strong>iTunes Connect</strong>。 App 內購買使用 <strong>StoreKit</strong> 架構實作。<br/><br/>產品的購買使用 <strong>SKMutablePayment</strong> 和 <strong>SKPaymentQueue</strong>。</td>
-<td align="left">您<a href="https://docs.microsoft.com/windows/uwp/publish/iap-submissions">將應用程式內產品購買新增到 app 並提交到市集</a>，即可為 app 建立它們。 <br/><br/>您使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp">CurrentApp 類別</a></strong>來定義 App 內購買。 <br/><br/>您使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync">CurrentApp.RequestProductPurchaseAsync</a></strong> 顯示能讓客戶購買產品的 UI。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases">啟用 App 內產品購買</a></td>
+<td align="left">您<a href="https://docs.microsoft.com/windows/uwp/publish/iap-submissions">將應用程式內產品購買新增到 app 並提交到Microsoft Store</a>，即可為 app 建立它們。 <br/><br/>您使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp">CurrentApp 類別</a></strong>來定義 App 內購買。 <br/><br/>您使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync">CurrentApp.RequestProductPurchaseAsync</a></strong> 顯示能讓客戶購買產品的 UI。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases">啟用 App 內產品購買</a></td>
 </tr>
 <tr class="even">
 <td align="left">可取用<strong>的應用程式內購買。</strong> <br><br>可以購買、使用並再次購買的應用程式內產品。</td>
@@ -388,7 +388,7 @@ ms.locfileid: "72282363"
 <td align="left"><a href="https://docs.microsoft.com/windows/uwp/publish/enter-iap-properties">當您將產品類型定義為「消耗性物品」並提交到市集</a>時，即可支援消耗性物品。 接著，您可以在有人購買消耗性物品之後呼叫 <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync">CurrentApp.ReportConsumableFulfillmentAsync</a></strong>，以允許客戶存取它。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/monetize/enable-consumable-in-app-product-purchases">啟用可取用的應用程式內購買</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>測試應用程式內購買。</strong> <br><br>讓您無需將 app 放置在市集，即可測試 App 內購買的程式碼。</td>
+<td align="left"><strong>測試應用程式內購買。</strong> <br><br>讓您無需將 app 放置在Microsoft Store，即可測試在應用程式內購買的程式碼。</td>
 <td align="left"><strong>App 內帳單功能沙箱</strong>用於測試。</td>
 <td align="left"><strong>沙箱測試人員帳戶</strong>用於測試。</td>
 <td align="left">只要使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator">CurrentAppSimulator</a></strong> 類別取代 CurrentApp，即可測試 App 內購買。<br/><br/></td>
@@ -588,13 +588,13 @@ ms.locfileid: "72282363"
 <td align="left"><strong>地理編碼和反向地理編碼。</strong> <br><br>將地址轉換成地理位置 (地理編碼)，以及將地理位置轉換成地址(反向地理編碼)。<br/></td>
 <td align="left"><strong>Geocoder</strong> 類別用於地理編碼與反向地理編碼。</td>
 <td align="left"><strong>CLGeocoder</strong> 類別用於地理編碼。</td>
-<td align="left">您可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder">Windows.Services.Maps</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps">MapLocationFinder 類別</a></strong>來執行地理編碼。 您使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync">FindLocationsAsync</a></strong> 執行地理編碼，並使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync">FindLocationsAtAsync</a></strong> 執行反向地理編碼。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/geocoding">執行地理編碼和反向地理編碼</a></td>
+<td align="left">您可以使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps">Windows.Services.Maps</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder">MapLocationFinder 類別</a></strong>來執行地理編碼。 您使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync">FindLocationsAsync</a></strong> 執行地理編碼，並使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync">FindLocationsAtAsync</a></strong> 執行反向地理編碼。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/geocoding">執行地理編碼和反向地理編碼</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>路線和路線。</strong> <br><br>提供兩個地理位置之間的路線、距離與路線指引。</td>
 <td align="left">Google 提供 Web 服務 <strong>Google Maps Directions API</strong>，它可在 Android 上使用，雖然未提供 SDK。</td>
 <td align="left">地圖套件提供 <strong>MKDirections</strong> API，可用來取得路線和路線指引的相關資訊。</td>
-<td align="left">使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder">Windows.Services.Maps</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps">MapRouteFinder</a></strong> 類別，可要求步行或行車路線。 路線會以 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproute">MapRoute</a></strong> 執行個體傳回，在 MapControl 上可輕鬆地顯示它。 路線指引會在 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproutemaneuver">MapRouteManeuver</a></strong> 物件內傳回。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/routes-and-directions">顯示地圖上的路線和路線</a></td>
+<td align="left">使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps">Windows.Services.Maps</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder">MapRouteFinder</a></strong> 類別，可要求步行或行車路線。 路線會以 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproute">MapRoute</a></strong> 執行個體傳回，在 MapControl 上可輕鬆地顯示它。 路線指引會在 <strong><a href="https://docs.microsoft.com/uwp/api/windows.services.maps.maproutemaneuver">MapRouteManeuver</a></strong> 物件內傳回。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/routes-and-directions">顯示地圖上的路線和路線</a></td>
 </tr>
 </tbody>
 </table>
@@ -631,7 +631,7 @@ ms.locfileid: "72282363"
 <td align="left"><strong>複製並貼上。</strong> <br><br>在 app 之間複製和貼上文字與其他內容。</td>
 <td align="left"><strong>剪貼簿架構</strong>可讓您使用 <strong>ClipboardManager</strong> 和 <strong>ClipData</strong> 類別來實作複製和貼上。</td>
 <td align="left"><strong>UIPasteboard</strong>、<strong>UIMenuController</strong> 與 <strong>UIResponderStandardEditActions</strong> 可以用來實作複製和貼上。</td>
-<td align="left">許多預設 XAML 控制項已經支援複製和貼上。 使用 <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage">Windows.ApplicationModel.DataTransfer</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.Clipboard">DataPackage</a></strong> 和 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer">Clipboard</a></strong> 類別，即可自行實作複製和貼上。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/app-to-app/copy-and-paste">複製和貼上</a></td>
+<td align="left">許多預設 XAML 控制項已經支援複製和貼上。 使用 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer">Windows.ApplicationModel.DataTransfer</a></strong> 中的 <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage">DataPackage</a></strong> 和 <strong><a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.Clipboard">Clipboard</a></strong> 類別，即可自行實作複製和貼上。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/app-to-app/copy-and-paste">複製和貼上</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>拖放。</strong> <br><br>在 app 之間拖放內容。</td>

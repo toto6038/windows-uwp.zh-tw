@@ -1,17 +1,17 @@
 ---
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: 本文會引導您完成以各種部署和偵錯目標為目標的步驟。
-title: 部署和偵錯通用 Windows 平台 (UWP) app
+title: 部署和偵錯通用 Windows 平台 (UWP) 應用程式
 ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, 偵錯, 測試, 效能
 ms.localizationpriority: medium
-ms.openlocfilehash: cdfcdfddb2b595a589c70d1facc24559c63b98da
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d948af1ce10b3752ba9f20454d8dea72916de692
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254797"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683851"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和偵錯 UWP 應用程式
 
@@ -98,7 +98,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 ## <a name="passing-command-line-debug-arguments"></a>傳遞命令列偵錯引數
 
-在 Visual Studio 2019 中，您可以在開始偵測 UWP 應用程式時，傳遞命令列的 debug 引數。 您可以從 *args* 參數存取命令列偵錯引數，而此參數位於Application[**類別的**OnLaunched](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) 方法中。 若要指定命令列偵錯引數，請開啟專案屬性，並導覽至 **\[偵錯\]** 索引標籤。
+在 Visual Studio 2019 中，您可以在開始偵測 UWP 應用程式時，傳遞命令列的 debug 引數。 您可以從 *args* 參數存取命令列偵錯引數，而此參數位於 [**Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) 類別的 **OnLaunched** 方法中。 若要指定命令列偵錯引數，請開啟專案屬性，並導覽至 **\[偵錯\]** 索引標籤。
 
 > [!NOTE]
 > 這是在 Visual Studio 2017 (版本 15.1) for C#、VB 和 C++ 中提供。 JavaScript 會在較新版本中提供。 命令列偵錯引數適用於所有部署類型，但模擬器除外。
@@ -111,7 +111,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 ![命令列引數 C++ 和 JS](images/command-line-arguments-cpp.png)
 
-指定命令列引數之後，即可存取應用程式之 **OnLaunched** 方法中的引數值。 [  **LaunchActivatedEventArgs**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)物件*args*的**Arguments**屬性值設定為 **\[命令列引數\]** 欄位中的文字。
+指定命令列引數之後，即可存取應用程式之 **OnLaunched** 方法中的引數值。 [  **LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)物件*args*的**Arguments**屬性值設定為 **\[命令列引數\]** 欄位中的文字。
 
 ![命令列引數 C++ 和 JS](images/command-line-arguments-debugging.png)
 
@@ -120,7 +120,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 有三種遠端電腦部署的驗證模式：
 
 - **通用 (未加密的通訊協定)** ：每次部署到遠端裝置時，都請使用此驗證模式。 目前這適用於 IoT 裝置、Xbox 裝置和 HoloLens 裝置，以及 Creators Update 電腦或較新的電腦。 [通用 (未加密通訊協定)] 應該只有在受信任的網路上才使用。 偵錯連接容易受到惡意使用者的攻擊，這些使用者可以攔截與變更在開發電腦與遠端電腦之間傳送的資料。
-- **Windows**：此驗證模式只適用於執行 Visual Studio 遠端工具的遠端電腦 (桌上型電腦或膝上型電腦)。 當您能夠存取目標電腦登入使用者的認證時，請使用這個驗證模式。 這是最安全的遠端部署通道。
+- **Windows**：此驗證模式只適用於執行 Visual Studio 遠端工具的遠端電腦 (桌上型電腦或膝上型電腦)。 當您可以存取目標電腦登入使用者的認證時，請使用這個驗證模式。 這是最安全的遠端部署通道。
 - **無**：此驗證模式只適用於執行 Visual Studio 遠端工具的遠端電腦 (桌上型電腦或膝上型電腦)。 當您在已有測試帳戶登入的環境中安裝了測試電腦，但無法輸入認證時，請使用這個驗證模式。 請確定遠端偵錯工具設定已設定為接受非驗證。
 
 ## <a name="advanced-remote-deployment-options"></a>進階遠端部署選項
@@ -139,7 +139,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 - 使用 Windows 10 工具1.4.1 或更新版本（包括 Windows 10 年度更新版 SDK）安裝 Visual Studio 2015 Update 3 或更新版本的 Visual Studio 版本，我們建議您使用最新版的 Visual Studio 更新，以確保您取得所有最新的開發與安全性功能。
 - 以 Windows 10 年度更新版 Xbox 遠端裝置或 Windows 10 Creators Update 電腦為目標
-- 使用「通用驗證」模式
+- 使用通用驗證模式
 
 ### <a name="properties-pages"></a>屬性頁面
 
@@ -217,7 +217,7 @@ C++ UWP app 的屬性頁面會看起來如下。
 
 若要設定 Visual Studio 的符號選項，請選取 **\[工具\] > \[選項\]** ，然後在對話方塊視窗中移至 **\[偵錯\] > \[符號\]** 。
 
-![選項對話方塊](images/gs-debug-uwp-apps-004.png)
+![[選項] 對話方塊](images/gs-debug-uwp-apps-004.png)
 
 若要使用 [WinDbg](#windbg) 在偵錯工作階段中載入符號，請將 **sympath** 變數設定到符號套件位置。 例如，執行下列命令將會從「Microsoft 符號伺服器」載入符號，然後將它們快取到 C:\Symbols 目錄中：
 

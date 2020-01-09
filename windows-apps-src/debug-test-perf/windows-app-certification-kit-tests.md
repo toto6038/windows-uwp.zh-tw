@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ece54ef17c97b1cb16b3f0a706c86eb2858556
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6ab5b2ec13e0de3d234fafc6c1a32e10d35aed4f
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257862"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681939"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
@@ -110,7 +110,7 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 ### <a name="test-details"></a>測試詳細資料
 
-檢查 App 資訊清單，確認內容是正確的，如 [App 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。
+檢查應用程式資訊清單，確認內容正確無誤，如[應用程式套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。
 
 -   **副檔名和通訊協定**
 
@@ -124,11 +124,11 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 -   **處理序間通訊（IPC）驗證**
 
-    這項測試會強制 UWP 應用程式不會在應用程式容器外與桌面元件通訊的需求。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的名稱指定為 "DesktopApplicationPath" 的 App 將無法通過這個測試。
+    這項測試會強制 UWP 應用程式不會在應用程式容器外與桌面元件通訊的需求。 處理程序間通訊僅適用於側載應用程式。 將 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的名稱指定為 "DesktopApplicationPath" 的 App 將無法通過這個測試。
 
 ### <a name="corrective-action"></a>修正動作
 
-按照 [App 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的需求來檢閱 App 的資訊清單。
+按照 [應用程式套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的需求來檢閱應用程式的資訊清單。
 
 ## <a name="windows-security-features-test"></a>Windows 安全性功能測試
 
@@ -149,7 +149,7 @@ BinScope 二元分析器測試會檢查是否正確使用下列安全性相關�
 
 ### <a name="binscope-binary-analyzer-tests"></a>BinScope 二元分析器測試
 
-[BinScope 二元分析器](https://www.microsoft.com/en-us/download/details.aspx?id=44995)測試會檢驗 app 的二進位檔，檢查編碼和建置做法是否讓 app 較不容易受到攻擊或是做為攻擊媒介。
+[BinScope 二元分析器](https://www.microsoft.com/download/details.aspx?id=44995)測試會檢驗 app 的二進位檔，檢查編碼和建置做法是否讓 app 較不容易受到攻擊或是做為攻擊媒介。
 
 BinScope 二元分析器測試會檢查是否正確使用下列安全性相關的功能：
 
@@ -172,7 +172,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 請勿在強式命名的組件上使用 APTCA 屬性，除非您的專案需要，而且您充分了解風險。 若有必要，請務必使用適當的程式碼存取安全性要求來保護所有 API。 當組件是通用 Windows 平台 (UWP) app 的一部分時，APTCA 沒有任何作用。
 
-**標記**
+**備註**
 
 這個測試只會在 Managed 程式碼 (C#、.NET 等) 執行。
 
@@ -186,7 +186,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 建置您的應用程式時，在連結器命令中啟用 /SAFESEH 選項。 在 Visual Studio 的發行組態中，這個選項預設會處於開啟。 針對您應用程式中的所有可執行檔模組，確認建置指示中的這個選項已經啟用。
 
-**標記**
+**備註**
 
 測試不會在 64 位元的二進位檔或 ARM 晶片組二進位檔上執行，原因是兩者不會在堆疊上儲存例外處理常式位址。
 
@@ -200,7 +200,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 建置您的應用程式時，在連結器命令中啟用 /NXCOMPAT 選項。 在支援資料執行防止 (DEP) 的連結器版本中，這個選項預設會處於開啟。
 
-**標記**
+**備註**
 
 建議您在支援 DEP 的 CPU 上測試應用程式，並修正由 DEP 所導致的任何失敗。
 
@@ -214,7 +214,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 建置您的應用程式時，在連結器命令中啟用 /DYNAMICBASE 選項。 確認您應用程式使用的所有模組也都使用這個連結器選項。
 
-**標記**
+**備註**
 
 通常 ASLR 不會影響效能。 但在某些情況下，可稍微改善 32 位元系統上的效能。 系統若將許多影像載入多個不同的記憶體位置而發生嚴重壅塞，可能會使效能降低。
 
@@ -230,7 +230,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 從 app 中移除任何共用的區段，然後搭配適當的安全性屬性來呼叫 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 以建立共用的記憶體物件，然後重新建置您的 app。
 
-**標記**
+**備註**
 
 這個測試只能在以 Unmanaged 語言 (如 C 或 C++) 撰寫的應用程式上執行。
 
@@ -246,7 +246,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 如果受管理的可執行檔無法通過測試，請確定您使用的是最新的編譯器和連結器（例如 Microsoft Visual Studio）來建立 UWP 應用程式。
 
-**標記**
+**備註**
 
 這個測試會在所有 .exe 檔案和 Unmanaged DLL 上執行。
 
@@ -260,7 +260,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 不要將匯入表格合併到可執行程式碼區段中。 確定 Visual C++ 連結器的 */merge* 旗標沒有設定為將 ".rdata" 區段合併到程式碼區段中。
 
-**標記**
+**備註**
 
 這個測試會在完全 Managed 組件以外的所有二進位程式碼上執行。
 
@@ -274,7 +274,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 請確定二進位檔沒有可寫入或可執行檔區段，而且二進位的*SectionAlignment*值至少等於其*頁面\-大小*。
 
-**標記**
+**備註**
 
 這個測試會在所有 .exe 檔案和原生的 Unmanaged DLL 上執行。
 
@@ -309,7 +309,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 ### <a name="test-details"></a>測試詳細資料
 
 -   檢查二進位檔的匯入位址表，確認應用程式套件內的每個二進位檔與不支援 UWP 應用程式開發的 WIN32 API 相依。
--   確認 App 套件內的每個 Managed 二進位檔案不會相依於核准的設定檔外部的函式。
+-   確認應用程式套件內的每個受管理二進位檔案不會相依於核准的設定檔外部的函式。
 
 ### <a name="corrective-actions"></a>修正動作
 
@@ -371,7 +371,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 使用下表做為指引。
 
 <table>
-<tr><th>錯誤訊息</th><th>註解</th></tr>
+<tr><th>錯誤訊息</th><th>評價</th></tr>
 <tr><td>
 <p>影像 {image name} 同時定義 Scale 和 TargetSize 限定詞二者；一次只能定義一個限定詞。</p>
 </td><td>
@@ -523,7 +523,7 @@ UWP 應用程式預期已完成且可完整運作。 使用預設影像 (來自�
 
 ### <a name="corrective-action"></a>修正動作
 
-開啟受影響的檔案，然後從 Visual Studio 的 \[**檔案**\] 功能表中選取 \[**另存新檔**\]。 選取 \[**儲存**\] 按鈕旁的下拉式控制項，然後選取 \[**以編碼方式儲存**\]。 從 \[**進階**\] 儲存選項對話方塊中選擇 \[Unicode (UTF-8 有簽章)\] 選項，然後按一下 \[**確定**\]。
+開啟受影響的檔案，然後從 Visual Studio 的 **\[檔案\]** 功能表中選取 **\[另存新檔\]** 。 選取 \[儲存\] 按鈕旁的下拉式控制項，然後選取 **\[**以編碼方式儲存**\]** 。 從 **\[進階\]** 儲存選項對話方塊中選擇 \[Unicode (UTF-8 有簽章)\] 選項，然後按一下 **\[確定\]** 。
 
 ## <a name="direct3d-feature-level-test"></a>Direct3D 功能層級測試
 
@@ -559,7 +559,7 @@ Microsoft Store 需要使用 Direct3D 的所有應用程式在功能層級 9\-1 
 
 ### <a name="corrective-action"></a>修正動作
 
-每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) 介面上呼叫 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) API。
+每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 介面上呼叫 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ## <a name="app-capabilities-test"></a>App 功能測試
 
@@ -581,13 +581,13 @@ Microsoft Store 需要使用 Direct3D 的所有應用程式在功能層級 9\-1 
 
 ### <a name="corrective-actions"></a>修正動作
 
-請考慮移除 app 不需要的特殊用途功能。 此外，這類功能的使用方式需接受其他上架原則審查。
+請考慮移除應用程式不需要的特殊用途功能。 此外，這類功能的使用方式需接受其他上架原則審查。
 
 ## <a name="windows-runtime-metadata-validation"></a>Windows 執行階段中繼資料驗證
 
 ### <a name="background"></a>背景
 
-確保 app 隨附的元件符合 UWP 類型系統。
+確保應用程式隨附的元件符合 UWP 類型系統。
 
 ### <a name="test-details"></a>測試詳細資料
 
@@ -597,7 +597,7 @@ Microsoft Store 需要使用 Direct3D 的所有應用程式在功能層級 9\-1 
 
 -   **ExclusiveTo 屬性測試：** 確保 UWP 類別不會實作已標示為 ExclusiveTo 其他類別的介面。
 -   **類型位置測試：** 確保所有 UWP 類型的中繼資料都位於 app 套件中命名空間相符名稱最長的 winmd 檔案中。
--   **類型名稱區分大小寫測試：** 確保所有 UWP 類型在 app 套件內都具有唯一且不區分大小寫的名稱。 同時也確保 app 套件內的命名空間名稱均未使用 UWP 類型名稱。
+-   **類型名稱區分大小寫測試：** 確保所有 UWP 類型在 app 套件內都具有唯一且不區分大小寫的名稱。 同時也確保應用程式套件內的命名空間名稱均未使用 UWP 類型名稱。
 -   **類型名稱正確性測試：** 確保全域命名空間或 Windows 最上層命名空間中，不存在任何 UWP 類型。
 -   **一般中繼資料正確性測試：** 確保您用來產生類型的編譯器符合最新的 UWP 規格。
 -   **屬性測試：** 確保 UWP 類別的所有屬性都有 get 方法 (set 方法為選用)。 針對 UWP 類型的所有屬性，確保 get 方法傳回值的類型與 set 方法輸入參數的類型相符。

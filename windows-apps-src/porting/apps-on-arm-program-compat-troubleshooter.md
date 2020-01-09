@@ -5,22 +5,22 @@ ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, 永遠連線, 相容性疑難排解員, ARM 上的 windows
 ms.localizationpriority: medium
-ms.openlocfilehash: 763b00a5790274d81b6daa2838ef926936e458db
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6573bedb97a7081681e5ecc600bb473f6d0b83bf
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647613"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683951"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>ARM 上的程式相容性疑難排解員
 模擬支援 x86 應用程式，是為 ARM64 上的 Windows 10 建立的新功能。 有時候模擬執行的最佳化不會造成最佳體驗。 您可以使用程式相容性疑難排解員，為您的 x86 應用程式切換模擬設定，減少預設最佳化並可能增加相容性。
 
 ## <a name="start-the-program-compatibility-troubleshooter"></a>啟動程式相容性疑難排解員
-在任何 Windows 10 電腦上以相同的方式手動啟動[程式相容性疑難排解員](https://support.microsoft.com/en-us/help/15078/windows-make-older-programs-compatible)：在可執行檔案 (.exe) 上按一下滑鼠右鍵，然後選取 **\[疑難排解相容性\]**。 這個畫面隨即顯示。
+在任何 Windows 10 電腦上以相同的方式手動啟動[程式相容性疑難排解員](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible)：在可執行檔案 (.exe) 上按一下滑鼠右鍵，然後選取 **\[疑難排解相容性\]** 。 這個畫面隨即顯示。
 
 ![疑難排解相容性選項的螢幕擷取畫面](images/arm/Capture4.png)
 
-如果您按一下 **\[疑難排解程式\]**，以下列選項將會出現。
+如果您按一下 **\[疑難排解程式\]** ，以下列選項將會出現。
 
 ![疑難排解相容性選項的螢幕擷取畫面](images/arm/Capture5.png)
 
@@ -32,7 +32,7 @@ ms.locfileid: "57647613"
 
 您可以在可執行檔上按一下滑鼠右鍵，然後選取 **\[內容\]** ，切換模擬設定。
 
-在 ARM 中上, 一個區段標題為**ARM 上的 Windows 10**會位於**相容性**] 索引標籤。按一下 [**變更模擬設定**啟動第二個視窗，如此處所示。
+在 ARM 上，名為 **\[ARM 上的 Windows 10\]** 的區段將會出現在 **\[相容性\]** 索引標籤。按一下 **\[變更模擬設定\]** 以啟動第二個視窗，如此處所示。
 
 ![變更模擬設定螢幕擷取畫面](images/arm/Capture.png)
 
@@ -57,4 +57,4 @@ ms.locfileid: "57647613"
 
 這些設定變更記憶體障礙數目，記憶體障礙用於模擬期間同步處理應用程式的核心記憶體存取。 **\[快速\]** 是預設模式，但 **\[嚴格\]** 和 **\[非常嚴格\]** 選項將會增加障礙數目。 這會讓應用程式速度變慢，但降低應用程式錯誤的風險。 **\[單核心\]** 選項會移除所有障礙，但強制所有應用程式執行緒在單一核心上執行。
 
-如果變更特定的設定解決您的問題，請將包含詳細資料的電子郵件傳送至 *woafeedback@microsoft.com*，以便我們納入您的意見反應。
+如果變更特定的設定解決您的問題，請將包含詳細資料的電子郵件傳送至 *woafeedback@microsoft.com* ，以便我們納入您的意見反應。

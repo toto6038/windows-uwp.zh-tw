@@ -4,23 +4,23 @@ title: 列舉網路上的裝置
 description: 除了探索本機連線的裝置，您也可以使用 Windows.Devices.Enumeration API 來列舉無線及網路通訊協定上的裝置。
 ms.date: 04/19/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e5773a77ccb98a75363184bcb17a6e3282e00932
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8196131b92c395c0b21f4ff68558ddeb531cf6fa
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370194"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684804"
 ---
 # <a name="enumerate-devices-over-a-network"></a>列舉網路上的裝置
 
 
 
-**重要的 Api**
+**重要 API**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows. 列舉**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 除了探索本機連線的裝置，您也可以使用 [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API 來列舉無線及網路通訊協定上的裝置。
 
@@ -45,7 +45,7 @@ ms.locfileid: "66370194"
 | Windows Connect Now (WNC)                    | **{4c1b1ef8-2f62-4b9f-9bc5-b21ab636138f}** |
 | WiGig 擴充座                                  | **{a277f3a5-8764-4f88-8045-4c5e962640b1}** |
 | HP 印表機的 Wi-Fi 佈建           | **{c85ef710-f344-4792-bb6d-85a4346f1e69}** |
-| 藍牙                                    | **{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}** |
+| [藍牙]                                    | **{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}** |
 | 藍牙 LE                                 | **{bb7bb05e-5972-42b5-94fc-76eaa7084d49}** |
 | 網路攝影機                               | **{b8238652-b500-41eb-b4f3-4234f7f5ae99}** |
 

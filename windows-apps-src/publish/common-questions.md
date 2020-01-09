@@ -4,14 +4,14 @@ title: 關於廣告活動的常見問題
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6875f5b06bbd253b7fe80fbc53936fe0dcf1a6b9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c44f93676fd0324ef82ad7b33832bb6653409cda
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597063"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685158"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
 
@@ -25,11 +25,11 @@ ms.locfileid: "57597063"
 
 ### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>我能夠在我的 App 中執行我其他一個 App 的廣告嗎？
 
-是。 這些廣告通稱為*自家廣告*，而您可以免費執行它們！ 如需社群廣告的詳細資訊，請查看[這篇文章](about-house-ads.md)。
+可以。 這些廣告通稱為*自家廣告*，而您可以免費執行它們！ 如需社群廣告的詳細資訊，請查看[這篇文章](about-house-ads.md)。
 
 ### <a name="can-i-cross-promote-my-app-with-apps-from-other-developers-in-the-store"></a>我可以利用市集中其他開發人員的 app 宣傳我的 app 嗎？
 
-是。 我們會呼叫這些*社群廣告*，您就可以免費執行它們。 在您[選擇加入社群廣告](about-community-ads.md#opt-in-to-community-ads)後，您可以[建立免費社群廣告行銷活動](create-an-ad-campaign-for-your-app.md)且您的 app 將會與其他同樣加入社群廣告的開發人員共用推銷廣告空間。 如需詳細資訊，請查看[這篇文章](about-community-ads.md)。
+可以。 我們會呼叫這些*社群廣告*，您就可以免費執行它們。 在您[選擇加入社群廣告](about-community-ads.md#opt-in-to-community-ads)後，您可以[建立免費社群廣告行銷活動](create-an-ad-campaign-for-your-app.md)且您的 app 將會與其他同樣加入社群廣告的開發人員共用推銷廣告空間。 如需詳細資訊，請查看[這篇文章](about-community-ads.md)。
 
 ### <a name="how-can-i-customize-my-ad"></a>如何自訂我的廣告？
 
@@ -37,11 +37,11 @@ ms.locfileid: "57597063"
 
 ### <a name="where-will-my-ad-appear"></a>我的廣告會在哪裡顯示？
 
-您的廣告會出現在年齡分級與 OS 版本和您的 app 相同的 app 中。 當您在 Microsoft Store 中發行您的應用程式時，您可以設定這些屬性。 若為「通用」行銷活動，您的廣告也會出現在 MSN.com、Outlook.com、Skype、和其他 Microsoft 進階內容中。
+您的廣告會出現在年齡分級與 OS 版本和您的 app 相同的 app 中。 當您在 Microsoft Store 中發佈應用程式時，會設定這些屬性。 若為「通用」行銷活動，您的廣告也會出現在 MSN.com、Outlook.com、Skype、和其他 Microsoft 進階內容中。
 
 目前下列國家與地區支援廣告活動：
 
-阿爾及利亞、阿根廷、澳大利亞、奧地利、巴哈馬、巴林、巴貝多、比利時、貝里斯、玻利維亞、巴西、加拿大、智利、中國、哥倫比亞、丹麥、多明尼加、厄瓜多、埃及、薩爾瓦多、芬蘭、法國、德國、瓜地馬拉、海地、宏都拉斯、香港特別行政區、印度、印尼、伊拉克、愛爾蘭、義大利、牙買加、約旦、科威特市、黎巴嫩、馬來西亞、墨西哥、摩洛哥、紐西蘭、荷蘭、尼加拉瓜、挪威、阿曼、巴拿馬、巴拉圭、秘魯、菲律賓、波多黎各、卡達、沙烏地阿拉伯、新加坡、西班牙、南非、瑞典、瑞士、台灣、泰國、千里達及托巴哥、突尼西亞、阿拉伯聯合大公國、英國、美國、烏拉圭、委內瑞拉、越南。
+阿爾及利亞、阿根廷、澳洲、奧地利、巴哈馬、巴林、巴貝多、比利時、貝里斯、玻利維亞、巴西、加拿大、智利、中國、哥倫比亞、丹麥、多明尼加、厄瓜多、埃及、薩爾瓦多、芬蘭、法國、德國、瓜地馬拉、海地、宏都拉斯、香港特別行政區、印度、印尼、伊拉克、愛爾蘭、義大利、牙買加、約旦、科威特市、黎巴嫩、馬來西亞、墨西哥、摩洛哥、紐西蘭、荷蘭、尼加拉瓜、挪威、阿曼、巴拿馬、巴拉圭、秘魯、菲律賓、波多黎各、卡達、沙烏地阿拉伯、新加坡、西班牙、南非、瑞典、瑞士、台灣、泰國、千里達及托巴哥、突尼西亞、阿拉伯聯合大公國、英國、美國、烏拉圭、委內瑞拉、越南。
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>廣告活動支援哪些語言？
 
@@ -55,9 +55,9 @@ ms.locfileid: "57597063"
 
 如果距上次收費日期之後 30 天內，您帳戶的收費累積少於美金 50 元，將會在次月提早向您收取這些費用。 這可以確保您的帳戶不會有累計收費超過一個月的廣告活動餘款。
 
-如果您不希望等待付費，您可以選取 \[帳單摘要\] 頁面上的 \[立即付費\] (\[促銷活動\] > \[帳單記錄\])，立即支付您的帳單。 您的付款方式將會收取 \[未支付金額\] 下列出的金額。
+如果您不希望等待付費，您可以選取 **\[帳單摘要\]** 頁面上的 **\[立即付費\]** ( **\[促銷活動\]**  >  **\[帳單記錄\]** )，立即支付您的帳單。 您的付款方式將會收取 **\[未支付金額\]** 下列出的金額。
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>我要如何刪除信用卡或編輯信用卡的詳細資料？
 
-移至<http://commerce.microsoft.com>、 登入您的 Microsoft 帳戶認證，並進行必要的變更。
+請移至[https://commerce.microsoft.com](https://commerce.microsoft.com)，使用您的 Microsoft 帳戶認證登入，然後進行必要的變更。
 

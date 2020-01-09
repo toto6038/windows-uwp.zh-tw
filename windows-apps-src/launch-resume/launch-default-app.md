@@ -4,14 +4,14 @@ description: 了解如何啟動統一資源識別項 (URI) 的預設應用程式
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
 ms.date: 06/26/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 48b4df662b990f64adcbfe2e7e03dc5303b2962e
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0d636b5689d604c0eaa3b66763709251a2445deb
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340421"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685210"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>啟動 URI 的預設應用程式
 
@@ -37,7 +37,7 @@ URI 配置可讓您按一下超連結來開啟 App。 就像您可以使用 **ma
 |[ms 交談：](#messaging-app-uri-scheme) | 訊息中心 App |
 |[ms-人員：](#people-app-uri-scheme) | 連絡人應用程式 |
 |[ms-相片：](#photos-app-uri-scheme) | 相片 App |
-|[ms-設定：](#settings-app-uri-scheme) | 「設定」App |
+|[ms-設定：](#settings-app-uri-scheme) | 設定 App |
 |[ms-store：](#store-app-uri-scheme)  | 市集應用程式 |
 |[tonepicker：](#tone-picker-uri-scheme) | 音調選擇器 |
 |[yellowpage：](#nearby-numbers-app-uri-scheme) | 附近號碼 App |
@@ -48,9 +48,9 @@ URI 配置可讓您按一下超連結來開啟 App。 就像您可以使用 **ma
 
 `https://bing.com`
 
-您也可以啟動自訂 URI 配置。 如果未安裝任何可處理該 URI 的 App，您可以建議使用者安裝某個 App。 如需詳細資訊，請參閱[如果沒有可處理 URI 的應用程式，則推薦一個應用程式](#recommend-an-app-if-one-is-not-available-to-handle-the-uri)。
+您也可以啟動自訂 URI 配置。 如果未安裝任何可處理該 URI 的應用程式，您可以建議使用者安裝某個應用程式。 如需詳細資訊，請參閱[如果沒有可處理 URI 的應用程式，則推薦一個應用程式](#recommend-an-app-if-one-is-not-available-to-handle-the-uri)。
 
-您的 app 通常無法選取已啟動的 app。 使用者決定要啟動哪個 app。 您可以登錄多個 app 來處理相同的 URI 配置。 但對保留的 URI 配置則例外。 若登錄保留的 URI 配置，將會被忽略。 如需保留 URI 配置的完整清單，請參閱[處理 URI 啟用](handle-uri-activation.md)。 如果有多個 app 可能已登錄相同的 URI 配置，您的 app 可能會建議啟動特定 app。 如需詳細資訊，請參閱[如果沒有可處理 URI 的應用程式，則推薦一個應用程式](#recommend-an-app-if-one-is-not-available-to-handle-the-uri)。
+您的應用程式通常無法選取已啟動的應用程式。 使用者決定要啟動哪個 app。 您可以登錄多個 app 來處理相同的 URI 配置。 但對保留的 URI 配置則例外。 若登錄保留的 URI 配置，將會被忽略。 如需保留 URI 配置的完整清單，請參閱[處理 URI 啟用](handle-uri-activation.md)。 如果有多個 app 可能已登錄相同的 URI 配置，您的 app 可能會建議啟動特定 app。 如需詳細資訊，請參閱[如果沒有可處理 URI 的應用程式，則推薦一個應用程式](#recommend-an-app-if-one-is-not-available-to-handle-the-uri)。
 
 ### <a name="call-launchuriasync-to-launch-a-uri"></a>呼叫 LaunchUriAsync 來啟動 URI
 
@@ -102,7 +102,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriBing, promptOption
 
 在多個 app 已登錄要處理 URI 配置時，建議十分有用。 在建議特定 app 時，如果該 app 已安裝，Windows 將會加以開啟。
 
-若要提供建議，請呼叫 [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/en-us/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_) 方法，並將 [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) 設為您想建議使用者使用的市集應用程式套件系列名稱。 作業系統會使用此資訊，並搭配從市集取得建議 app 的特定選項，以取代在市集中搜尋 app 的一般選項。
+若要提供建議，請呼叫 [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_) 方法，並將 [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) 設為您想建議使用者使用的市集應用程式套件系列名稱。 作業系統會使用此資訊，並搭配從市集取得建議 app 的特定選項，以取代在市集中搜尋 app 的一般選項。
 
 ```cs
 // Set the recommended app
@@ -119,7 +119,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 呼叫 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 的來源 app 可要求在 URI 啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理 URI 的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 您也可以使用 **DesiredRemainingView**，指示來源 app 在 URI 啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
 
-**請注意**  Windows 在判斷來源應用程式的最終視窗大小時，會將多個不同的因素納入考慮，例如來源應用程式的喜好設定、螢幕上的應用程式數目、螢幕方向等等。 設定 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 並無法保證來源 app 的特定視窗行為。
+**請注意**  Windows 在判斷來源應用程式的最終視窗大小時，會將多個不同的因素納入考慮，例如來源應用程式的喜好設定、螢幕上的應用程式數目、螢幕方向等等。 設定 [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) 並無法保證來源應用程式的特定視窗行為。
 
 ```cs
 // Set the desired remaining view.
@@ -191,7 +191,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 傳遞參數時會透過 [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) 傳遞給 LaunchURI API。 如需詳細資料，請參閱[使用 ms-tonepicker URI 配置來選擇與儲存音調](launch-ringtone-picker.md)。
 
-### <a name="nearby-numbers-app-uri-scheme"></a>附近號碼 App URI 配置
+### <a name="nearby-numbers-app-uri-scheme"></a>附近號碼應用程式 URI 配置
 
 使用 **ms-yellowpage:** URI 配置啟動附近號碼應用程式。
 
@@ -199,7 +199,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 |------------|---------|
 | yellowpage：？ input =\[關鍵字\]& 方法 =\[字串或 T9\] | 啟動「附近號碼 App」。<br>`input` 指的是您想要搜尋的關鍵字。<br>`method` 是指搜尋的類型（字串或 T9 搜尋）。<br>如果 `method` 是 `T9` (一種鍵盤)，則 `keyword` 應該是與要搜尋之 T9 鍵盤字母對應的數值字串。<br>如果 `method` 是 `String`，則 `keyword` 是要搜尋的關鍵字。 |
 
-### <a name="people-app-uri-scheme"></a>連絡人 App URI 配置
+### <a name="people-app-uri-scheme"></a>連絡人應用程式 URI 配置
 
 使用 **ms-people:** URI 配置啟動連絡人應用程式。
 如需詳細資訊，請參閱[啟動連絡人應用程式](launch-people-apps.md)。
@@ -220,7 +220,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 | ms-photos:videoedit?Action={action} | 選擇性參數，能夠以指定的影片編輯模式開啟「相片」應用程式，其中 {action} 為以下其中之一：**SlowMotion**、 **FrameExtraction**、**Trim**、**View**、**Ink**。 若未指定，則預設為 **View** |
 | ms-photos:videoedit?StartTime={timespan} | 選擇性參數，可指定開始播放影片的位置。 `{timespan}` 的格式必須是 `"hh:mm:ss.ffff"`。 如果未指定，預設為 `00:00:00.0000` |
 
-### <a name="settings-app-uri-scheme"></a>設定 App URI 配置
+### <a name="settings-app-uri-scheme"></a>設定應用程式 URI 配置
 
 使用 **ms-settings:** URI 配置[啟動 Windows 設定應用程式](launch-settings-app.md)。 啟動設定 app 是撰寫隱私權感知 app 的重要部分。 如果您的 app 無法存取敏感資源，建議讓使用者能夠方便地連結到該資源的隱私權設定。 例如，下列 URI 會開啟設定 app，並顯示相機隱私權設定。
 
@@ -230,7 +230,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 如需詳細資訊，請參閱[啟動 Windows 設定 app](launch-settings-app.md) 和[隱私權感知 app 的指導方針](https://docs.microsoft.com/windows/uwp/security/index)。
 
-### <a name="store-app-uri-scheme"></a>市集 App URI 配置
+### <a name="store-app-uri-scheme"></a>Store 應用程式 URI 配置
 
 使用 **ms-windows-store:** URI 配置[啟動 UWP 應用程式](launch-store-app.md)。 開啟產品詳細資料頁面、產品檢閱頁面及搜尋頁面等等。例如，下列 URI 會開啟 UWP 應用程式，並啟動 \[Microsoft Store\] 的首頁。
 
