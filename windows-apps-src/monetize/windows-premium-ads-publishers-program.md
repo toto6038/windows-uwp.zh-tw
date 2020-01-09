@@ -5,12 +5,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d747d35148965480cb34714cde7859203a7424d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4db99097516fcead384af6fc9e4c588707b96d41
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634373"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684444"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows Premium 廣告發行者計畫
 
@@ -22,7 +22,7 @@ ms.locfileid: "57634373"
 
 我們會根據[資格準則](#what-are-the-criteria-for-apps-in-the-program)，持續檢閱 Microsoft Store 中的應用程式。 符合準則的應用程式會經過嚴格的手動審核程序，了解是否吻合流暢、明確界定的使用者體驗，並確認廣告的擺放位置理想，以避免無意的點擊。 通過自動及手動篩選程序的應用程式就會加入計畫中。
 
-目前此計畫只能透過邀請加入，僅符合資格準則並不會讓應用程式自動成為 Premium 計畫的一部分。 如果您想深入了解如何改善應用程式的體驗以符合計畫資格，請與我們連絡：aiacare@microsoft.com。
+目前此計畫只能透過邀請加入，僅符合資格準則並不會讓應用程式自動成為 Premium 計畫的一部分。 如果您想要深入瞭解如何改善您的應用程式體驗，以符合此方案的資格，請前往我們的 aiacare@microsoft.com。
 
 ## <a name="what-are-the-criteria-for-apps-in-the-program"></a>計畫的應用程式準則為何？
 
@@ -41,7 +41,7 @@ ms.locfileid: "57634373"
 
 ## <a name="can-apps-get-removed-from-the-program"></a>應用程式會從計畫中移除嗎？
 
-我們會定期監控計畫中的應用程式，確保它們繼續符合資格準則。 若要維持最小每日廣告請求量，請確定您的應用程式使用量不會隨著時間大幅降低。 有一個絕佳方式是[定期舉辦宣傳活動](https://developer.microsoft.com/en-us/store/promote-your-apps)。
+我們會定期監控計畫中的應用程式，確保它們繼續符合資格準則。 若要維持最小每日廣告請求量，請確定您的應用程式使用量不會隨著時間大幅降低。 有一個絕佳方式是[定期舉辦宣傳活動](https://developer.microsoft.com/store/promote-your-apps)。
 
 ## <a name="can-i-provide-additional-marketing-material-to-showcase-my-app-in-the-program"></a>我可以提供其他行銷資料，以在計畫中展示我的應用程式嗎？ 
 

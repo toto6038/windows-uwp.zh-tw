@@ -1,5 +1,5 @@
 ---
-Description: 設計您的應用程式，讓它看起來沒問題，並在混合實境中正常運作。
+Description: 設計您的應用程式，讓它看起來良好，並在混合現實中正常運作。
 title: 設計混合實境
 ms.assetid: ''
 label: Designing for Mixed Reality
@@ -13,20 +13,20 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e8cee688cbfbda0fe3822017b769560fc0fffe3
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5aaa5b5a51ab2aea863fece8fb466f274a00ace3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319377"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684254"
 ---
 # <a name="designing-for-mixed-reality"></a>設計混合實境
 
 在混合實境中將您的應用程式設計美觀，並充分利用新的輸入法。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-[混合實境](https://developer.microsoft.com/windows/mixed-reality/mixed_reality)是實際環境與數位世界混合的結果。 混合實境體驗的頻譜包含一個極端的裝置，例如 HoloLens (混合真實世界與電腦產生的內容的裝置)，以及其他虛擬實境的完全沈浸式檢視 (如同使用 Windows Mixed Reality 頭戴式裝置檢視)。 請查閱 [混合實境應用程式的類型](https://developer.microsoft.com/en-us/windows/mixed-reality/types_of_mixed_reality_apps)，了解體驗的範例有什麼不同。
+[混合實境](https://developer.microsoft.com/windows/mixed-reality/mixed_reality)是實際環境與數位世界混合的結果。 混合實境體驗的頻譜包含一個極端的裝置，例如 HoloLens (混合真實世界與電腦產生的內容的裝置)，以及其他虛擬實境的完全沈浸式檢視 (如同使用 Windows Mixed Reality 頭戴式裝置檢視)。 請查閱 [混合實境應用程式的類型](https://developer.microsoft.com/windows/mixed-reality/types_of_mixed_reality_apps)，了解體驗的範例有什麼不同。
 
 雖然可以依照本主題中下列指導方針改進使用者的體驗，幾乎所有現有的 UWP app 會在混合實境的環境中執行，如同 2D app 沒有變更。
 
@@ -34,7 +34,7 @@ ms.locfileid: "67319377"
 
 HoloLens 和 Windows Mixed Reality 頭戴式裝置皆支援 UWP 平台上執行的應用程式，且皆支援兩種不同的體驗。 
 
-### <a name="2d-vs-immersive-experience"></a>2D vs。沉浸式體驗
+### <a name="2d-vs-immersive-experience"></a>2D 與沈浸式體驗
 
 沉浸式 app 取代了使用者可見的整體顯示器，將其置於 app 建立的顯示方式中心。 例如，沈浸式遊戲可能會將使用者置於外星球的表面，或旅遊導覽應用程式可能將使用者置於南美洲的村莊。 建立沈浸式應用程式需要 3D 圖形或擷取立體的影片。 通常使用第三方遊戲引擎，例如 Unity，或 DirectX 來開發沈浸式應用程式。
 
@@ -84,7 +84,7 @@ HoloLens 和 Windows Mixed Reality 頭戴式裝置皆支援 UWP 平台上執行�
 * [Clicker 裝置](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories)(僅限 HoloLens)
 * [運動控制器](https://docs.microsoft.com/windows/mixed-reality/motion-controllers) (僅限混合實境裝置，上述所示。)
 
-這些控制器與虛擬物件進行互動，看起來自然且精確。 您可取得部分免費的互動。 比方說，HoloLens 選取手勢，或按一下影片控制站的 Windows 鍵或觸發程序會產生您所預期，同樣地，您撰寫程式碼的輸入的回應。
+這些控制器與虛擬物件進行互動，看起來自然且精確。 您可取得部分免費的互動。 例如，HoloLens 選取手勢或按一下動作控制器的 Windows 按鍵或觸發程式，將會再次產生您預期的輸入回應，而不需要您自行撰寫程式碼。
 
 其他時候，您會想要新增程式碼，善加利用額外的資訊及可用的輸入。 例如，運動控制器可用於執行具有精細層級控制的物件，如果您撰寫程式碼，考慮其位置和按鈕的按壓動作。
 
@@ -92,7 +92,7 @@ HoloLens 和 Windows Mixed Reality 頭戴式裝置皆支援 UWP 平台上執行�
 > 總結來說：指導主體應盡可能永遠為使用者提供自然且無障礙的輸入法。
 
 
-## <a name="2d-app-design-considerations-functionality"></a>2D 應用程式的設計考量：功能
+## <a name="2d-app-design-considerations-functionality"></a>2D 應用程式設計注意事項：功能
 
 建立可能會用於混合實境平台上的 UWP 應用程式時，有幾件事，請牢記。
 
@@ -105,7 +105,7 @@ HoloLens 和 Windows Mixed Reality 頭戴式裝置皆支援 UWP 平台上執行�
 * 2D 應用程式會自動獲得[應用程式列](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box) 讓使用者在虛擬環境中移動及調整其大小。 檢視可以垂直重新調整大小，或重新調整大小維持相同的外觀比例。
 
 
-## <a name="2d-app-design-considerations-uiux"></a>2D 應用程式的設計考量：UI/UX
+## <a name="2d-app-design-considerations-uiux"></a>2D 應用程式設計注意事項：UI/UX
 
 * XAML 控制項實作 [Fluent Design 系統](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/) 例如[瀏覽檢視](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)，以及效果，例如[壓克力](https://docs.microsoft.com/windows/uwp/design/style/acrylic)所有作業尤其適用於 2D 混合實境應用程式。
 
@@ -163,9 +163,9 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 ## <a name="related-articles"></a>相關文章
 
 
-* [目前的限制，從殼層中使用 Api 的應用程式](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [建置 2D 應用程式](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
-* [HoloLens:建置 UWP Microsoft HoloLens 的 2D 應用程式](https://channel9.msdn.com/Events/Build/2016/B854)
-* [條件式 XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
+* [從命令介面使用 Api 的應用程式目前的限制](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [建立2D 應用程式](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [HoloLens：建立適用于 Microsoft HoloLens 的 UWP 2D 應用程式](https://channel9.msdn.com/Events/Build/2016/B854)
+* [條件式 XAML](https://docs.microsoft.com/windows/uwp/debug-test-perf/conditional-xaml)
 
 

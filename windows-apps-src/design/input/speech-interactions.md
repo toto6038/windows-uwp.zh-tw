@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d36368fab267370e2301e52731d99bc7b146fbd
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fd33720255a04ffd8669673f027973afb4369086
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258251"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684214"
 ---
 # <a name="speech-interactions"></a>語音互動
 
@@ -24,7 +24,7 @@ ms.locfileid: "74258251"
 **TTS**：TTS 使用語音合成引擎 (語音) 以轉換文字字串為口說字詞。 輸入的字串可以是基本、原始的文字，或是更加複雜的語音合成標記語言 (SSML)。 SSML 提供一個控制語音輸出特性 (例如發音、音量、音調、速率或速度，以及重音) 的標準方式。
 
 **其他語音相關元件**：
-Windows 應用程式中的 **Cortana** 使用自訂語音命令 (口說或鍵入) 於前景啟動您的應用程式 (應用程式會取得焦點，如同在 [開始] 功能表啟動一樣)，或當作背景服務啟動 (**Cortana** 會保留焦點，但會提供應用程式的結果)。 如果您要在 [Cortana](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd) UI 中公開應用程式功能，請參閱 **Cortana 語音命令 (VCD) 指導方針**。
+Windows 應用程式中的 **Cortana** 使用自訂語音命令 (口說或鍵入) 於前景啟動您的應用程式 (應用程式會取得焦點，如同在 [開始] 功能表啟動一樣)，或當作背景服務啟動 (**Cortana** 會保留焦點，但會提供應用程式的結果)。 如果您要在 **Cortana** UI 中公開應用程式功能，請參閱 [Cortana 語音命令 (VCD) 指導方針](https://docs.microsoft.com/cortana/voice-commands/vcd)。
 
 ## <a name="speech-interaction-design"></a>語音互動設計
 
@@ -204,7 +204,7 @@ TTS 從純文字或 SSML 產生語音輸出。
 
 ## <a name="other-articles-in-this-section"></a>本節中的其他文章 
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 | --- | --- |
 | [語音辨識](speech-recognition.md) | 使用語音辨識以提供輸入、指定動作或命令，以及完成工作。 |
 | [指定語音辨識器語言](specify-the-speech-recognizer-language.md) | 了解如何選取已安裝的語言以用於語音辨識。 |

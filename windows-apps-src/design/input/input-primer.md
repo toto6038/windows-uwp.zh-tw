@@ -6,20 +6,20 @@ label: Interaction primer
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9aab8c4b627b9a4952e7e3e292f1e4b528f992
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b9fbe76244d37bda69a1737e04f7172a64b3af44
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258384"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684226"
 ---
 # <a name="interaction-primer"></a>互動基本資訊
 
 ![Windows 輸入類型](images/input-interactions/icons-inputdevices03.png)
 
-通用 Windows 平台 (UWP) 中的使用者介面是輸入與輸出來源的組合 (例如，滑鼠、鍵盤、手寫筆、觸控、觸控板、語音、**Cortana**、控制器、手勢、注視等)，以及啟用延伸體驗的各種不同模式或輔助按鍵 (包括滑鼠滾輪和按鈕、手寫筆橡皮擦和筆身按鈕、觸控式鍵盤及背景 App 服務)。
+通用 Windows 平台 (UWP) 中的使用者介面是輸入與輸出來源的組合 (例如，滑鼠、鍵盤、手寫筆、觸控、觸控板、語音、**Cortana**、控制器、手勢、注視等)，以及啟用延伸體驗的各種不同模式或輔助按鍵 (包括滑鼠滾輪和按鈕、手寫筆橡皮擦和筆身按鈕、觸控式鍵盤及背景應用程式服務)。
 
 UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情況下，就不需要個別處理您應用程式所接收的獨特輸入類型。 這包含了做為一般指標類型的處理觸控、觸控板、滑鼠和手寫筆輸入，以支援靜態手勢 (例如點選或長按)、操作手勢 (例如滑動進行移動瀏覽，或呈現數位筆跡)。
 
@@ -30,7 +30,7 @@ UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情�
 對於 **Windows 10 2018 年 4 月更新版**，我們推出使用眼睛和頭追蹤輸入裝置的注視輸入支援。 
 
 > [!NOTE]
-> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。
+> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。
 
 ### <a name="device-support"></a>裝置支援
 
@@ -82,14 +82,14 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 
 語音命令會定義於語音命令定義 (VCD) 檔中，它是一種單次語言表達，會透過 **Cortana** 導向已安裝的應用程式。 根據互動的層次和複雜性，您可以在前景或背景啟動這個應用程式。 例如，某些語音命需要參考前後文或者需要使用者輸入資料，那麼在前景進行處理最合適；而基本的命令，則可以在背景進行處理。
 
-整合 app 的基本功能，並提供一個中心進入點，讓使用者不需要開啟 app 就能完成大部分的工作，這讓 **Cortana** 成為您的 app 與使用者之間的橋樑。 在多數情況下，這可以為使用者節省很多時間和精力。 如需詳細資訊，請參閱 [Cortana 設計指導方針](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)。
+整合應用程式的基本功能，並提供一個中心進入點，讓使用者不需要開啟應用程式就能完成大部分的工作，這讓 **Cortana** 成為您的應用程式與使用者之間的橋樑。 在許多情況下，這可以讓使用者節省大量時間與精力。 如需詳細資訊，請參閱 [Cortana 設計指導方針](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)。
 
 ### <a name="more-info"></a>其他資訊
 
 [Cortana 設計指導方針](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)
  
 
-## <a name="speech"></a>語音
+## <a name="speech"></a>[語音]
 
 語音是使用者可用來與應用程式互動的有效且自然的方式。 這是與應用程式通訊的簡單且精確的方式，並讓使用者能夠提高生產力，且在各種不同的情況下收到通知。
 
@@ -360,7 +360,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
 ### <a name="typical-usage"></a>一般使用方式
 
-就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與應用程式互動時相當有用。 不過，這些組合的互動必須盡可能直覺且自然，因為它們也可能造成非常令人混淆的體驗。
+就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。 不過，這些組合的互動必須盡可能直覺且自然，因為它們也可能造成非常令人混淆的體驗。
 
 
 

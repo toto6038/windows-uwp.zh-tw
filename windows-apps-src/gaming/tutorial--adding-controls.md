@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 控制項, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2b7031bf8afb047fcfc869e23ee1c398218af8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: edc790ba949010fb1975317c5113ca02744889a0
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258422"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684567"
 ---
 # <a name="add-controls"></a>新增控制項
 
@@ -41,7 +41,7 @@ ms.locfileid: "74258422"
 
 在遊戲範例中初始化 **MoveLookController** 類別時，它會登錄四個指標專用的事件以及一個滑鼠專用的事件：
 
-事件 | 描述
+事件 | 說明
 :------ | :-------
 [**CoreWindow：:P ointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | 按下 (或按住) 滑鼠左鍵或右鍵，或觸碰觸控式螢幕。
 [**CoreWindow：:P ointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |移動滑鼠，或在觸控式螢幕上進行拖曳動作。
@@ -82,7 +82,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 若要判定何時遊戲應該收聽特定輸入，**MoveLookController** 類別提供三種控制器專用的狀態，無論控制項類型為何：
 
-狀態 | 描述
+州/省 | 說明
 :----- | :-------
 **無** | 這是控制器的初始化狀態。 遊戲還沒有預期任何控制器輸入，所以會忽略所有輸入。
 **WaitForInput** | 控制器正在等候玩家確認來自遊戲的訊息，可使用滑鼠左鍵、觸控事件或遊戲台上的選單鍵。
@@ -160,7 +160,7 @@ bool MoveLookController::IsFiring()
 
 如果偵測到滑鼠的動作，我們要使用這個動作來決定相機的新上下移動和左右偏移。 我們執行的方式是透過實作相對滑鼠控制項，處理滑鼠已經移動的相對距離 (即移動開始與停止之間的差異值)，而不是記錄移動的絕對 x-y 像素座標。
 
-若要這樣做，我們檢查 [**MouseMoved**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) 事件傳回的Windows::Device::Input::MouseEventArgs::MouseDelta[**引數物件上的**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta)MouseDelta::X[**和**MouseDelta::Y](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) 欄位，獲取 X (水平移動) 與 Y (垂直移動) 座標。
+若要這樣做，我們檢查 [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) 事件傳回的 [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta) 引數物件上的 [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) 和 **MouseDelta::Y** 欄位，獲取 X (水平移動) 與 Y (垂直移動) 座標。
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -212,7 +212,7 @@ void MoveLookController::OnMouseMoved(
 ![移動視角觸控配置](images/simple-dx-game-controls-touchzones.png)
 
 下列命令摘要我們的觸控控制行為。
-使用者輸入 | 動作
+使用者輸入 | [動作]
 :------- | :--------
 移動矩形 | 觸控輸入會轉換為虛擬搖桿，其中垂直動作會轉譯為向前/向後移動位置，而水平動作會轉譯為向左/向右移動位置。
 射擊矩形 | 射擊球體。
@@ -394,14 +394,14 @@ window->PointerReleased +=
         m_lookInUse = true;
     }
 ```
-您可以查看 **GitHub** 上 [MoveLookController::OnPointerPressed](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L252-L259) 方法的完整程式碼。
+您可以查看 [GitHub](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L252-L259) 上 **MoveLookController::OnPointerPressed** 方法的完整程式碼。
 
 
 
 
 以下 **MoveLookController** 指派指標 ID 給觸發事件到對應至視角區域的特定變數的指標。 在外觀區域中發生觸控的情況下， **m\_lookPointerID**變數會設定為引發事件的指標識別碼。 布林值變數**m\_lookInUse**，也會設定為表示尚未釋放控制項。
 
-現在，我們再來看看遊戲範例如何處理 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 觸控螢幕事件。
+現在，我們來看看遊戲範例如何處理 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 觸控螢幕事件。
 
 
 在 **MoveLookController::OnPointerMoved** 方法中，我們查看何種指標 ID 已指派給事件。 如果這是 **m_lookPointerID**，我們會計算指標位置的變動。
@@ -456,10 +456,10 @@ window->PointerReleased +=
 
 這個遊戲具有鍵盤和滑鼠的下列控制項配置。
 
-使用者輸入 | 動作
+使用者輸入 | [動作]
 :------- | :--------
 W | 將玩家向前移動
-A | 將玩家向左移動
+在未驗證別名旁邊會顯示 | 將玩家向左移動
 S | 將玩家向後移動
 D | 將玩家向右移動
 X | 將檢視向上移動
@@ -469,7 +469,7 @@ P | 暫停遊戲
 滑鼠左鍵 | 射擊球體
 
 
-若使用鍵盤，遊戲範例會在 [**MoveLookController::InitWindow**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup) 方法中登錄兩個新的事件，分別為 [**CoreWindow::KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown) 和 [**CoreWindow::KeyDown**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88)。 這些事件會處理按鍵的按下和釋放。
+若使用鍵盤，遊戲範例會在 [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88) 方法中登錄兩個新的事件，分別為 [**CoreWindow::KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup) 和 [**CoreWindow::KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown)。 這些事件會處理按鍵的按下和釋放。
 
 ```cpp
 window->KeyDown +=
@@ -482,9 +482,9 @@ window->KeyUp +=
 雖然滑鼠使用指標，但是它的處理方式與觸控控制項稍微不同。 為配合我們的控制項配置，每當滑鼠移動時，**MoveLookController** 會旋轉相機，當按下滑鼠左鍵時則會射擊。
 
 
-這是在 [MoveLookController**的**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313)OnPointerPressed 方法中處理。
+這是在 **MoveLookController** 的 [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313) 方法中處理。
 
-在這個方法中，我們會查看何種指標裝置搭配 [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Input.PointerDeviceType) 列舉使用。 如果遊戲為 \[**使用中**\] 且 **PointerDeviceType** 不是 **Touch**，我們會假設其為滑鼠輸入。
+在這個方法中，我們會查看何種指標裝置搭配 [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDeviceType) 列舉使用。 如果遊戲為 \[**使用中**\] 且 **PointerDeviceType** 不是 **Touch**，我們會假設其為滑鼠輸入。
 
 ```cpp
     case MoveLookControllerState::Active:
@@ -565,7 +565,7 @@ window->KeyUp +=
 
 以下將是我們的遊戲台控制項。
 
-使用者輸入 | 動作
+使用者輸入 | [動作]
 :------- | :--------
 左類比搖桿 | 移動玩家
 右類比搖桿 | 變更攝影機檢視的旋轉 (上下移動和左右偏移)
@@ -591,7 +591,7 @@ RT 鍵 | 射擊球體
 
 ### <a name="the-updatepollingdevices-method"></a>UpdatePollingDevices 方法
 
-[MoveLookController**執行個體的**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L654-L782)UpdatePollingDevices 方法會立即檢查是否已經連接遊戲台。 如果有，我們將使用 [**Gamepad.GetCurrentReading**](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.GetCurrentReading) 開始讀取其狀態。 這會傳回 [**GamepadReading**](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.GamepadReading) 結構，讓我們可查看哪些按鈕已按下或移動搖桿。
+**MoveLookController** 執行個體的 [**UpdatePollingDevices**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L654-L782) 方法會立即檢查是否已經連接遊戲台。 如果有，我們將使用 [**Gamepad.GetCurrentReading**](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.GetCurrentReading) 開始讀取其狀態。 這會傳回 [**GamepadReading**](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.GamepadReading) 結構，讓我們可查看哪些按鈕已按下或移動搖桿。
 
 
 如果遊戲的狀態是 **WaitForInput**，我們只會聽取控制器的開始/選單鍵，如此遊戲可以繼續。
@@ -810,7 +810,7 @@ void MoveLookController::Update()
 ```
 
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 現在，我們新增了我們的控制項，還有一項功能我們需要新增，以建立身歷其境的遊戲：音效！
 音樂和音效對所有遊戲都非常重要，讓我們接著討論[加入聲音](tutorial--adding-sound.md)。

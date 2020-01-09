@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 802a7a925a08dde94ab59d79e01df94fbbcf495d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 34bc609d06705f1dfa6a5c7370ce6022ae9c3ff8
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258040"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684240"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多語應用程式工具組 4.0
 
@@ -26,7 +26,7 @@ ms.locfileid: "74258040"
 
 ## <a name="how-to-use-the-toolkit"></a>如何使用工具組
 
-### <a name="step-1-design-your-app-for-globalization-and-localization"></a>步驟 1. 將您的應用程式設計為支援全球化和當地語系化
+### <a name="step-1-design-your-app-for-globalization-and-localization"></a>步驟 1。 將您的應用程式設計為支援全球化和當地語系化
 
 在能有效使用 MAT 之前，您的應用程式必須要是可當地語系化的。 具體而言，您的專案應具備一或多個資源檔 (.resw)，其中包含您應用程式的預設語言字串。 如需詳細資料，請參閱[當地語系化您 UI 和應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)。 完成此操作後，使用工具組便可快速、輕鬆的新增其他語言。
 
@@ -34,16 +34,16 @@ ms.locfileid: "74258040"
 
 另請參閱[全球化方針](guidelines-and-checklist-for-globalizing-your-app.md)及[讓您的應用程式可當地語系化](prepare-your-app-for-localization.md)。
 
-### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>步驟 2. 下載並安裝多語應用程式工具組 4.0
+### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>步驟 2。 下載並安裝多語應用程式工具組 4.0
 
 多語應用程式工具組 4.0 (MAT 4.0) 有兩個部分，每個部分都有自己的安裝程式。
 
 - [適用于 Visual Studio 2017 和更新版本的多語系應用程式工具組4.0 延伸](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)模組。 這包含適用于 Visual Studio 2019 的4.0 延伸模組，格式為 .vsix 安裝程式。
-- [多語應用程式工具組 4.0 編輯器](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)。 其中包含 MAT 4.0 獨立多語編輯器工具，其形式為 .msi 安裝程式。 它同時也包含適用於 Visual Studio 2015 和 Visual Studio 2013 的 MAT 4.0 延伸模組。
+- [多語應用程式工具組 4.0 編輯器](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)。 其中包含 MAT 4.0 獨立多語編輯器工具，其形式為 .msi 安裝程式。 它同時也包含適用於 Visual Studio 2015 和 Visual Studio 2013 的 MAT 4.0 延伸模組。
 
 如果您使用 Visual Studio 2017 或 Visual Studio 2019，則請下載並執行兩個安裝程式（一次一個）。 若您是使用 Visual Studio 2015 或 Visual Studio 2013，請下載並執行 .msi 安裝程式。
 
-### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步驟 3。 為您的專案啟用多語應用程式工具組
+### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步驟 3. 為您的專案啟用多語應用程式工具組
 
 您必須為您的專案啟用 MAT，才能開始當地語系化應用程式。 以下是啟用工具組的方法。
 
@@ -53,7 +53,7 @@ ms.locfileid: "74258040"
 
 在 \[輸出\] 視窗中 (顯示多語應用程式工具組的輸出)，注意是否有以下訊息：`Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>`。 如果出現此訊息，表示 MAT 已準備就緒可供使用。
 
-### <a name="step-4-add-languages-to-your-project"></a>步驟 4. 將語言新增至您的專案
+### <a name="step-4-add-languages-to-your-project"></a>步驟 4。 將語言新增至您的專案
 
 請依照下列步驟來將語言新增到您的專案。
 
@@ -102,7 +102,7 @@ ms.locfileid: "74258040"
 
 #### <a name="option-1-translate-the-strings-yourself"></a>選項 1： 自行翻譯字串
 
-您可以使用多語編輯器翻譯個別字串。 如前所述，此工具隨附於 [.msi 安裝程式](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)中。
+您可以使用多語編輯器翻譯個別字串。 如前所述，此工具隨附於 [.msi 安裝程式](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)中。
 
 - 在您想要翻譯的 .xlf 檔案上按一下滑鼠右鍵。
 - 按一下 **\[開啟檔案...\]** ，然後按一下多語編輯器。 您也可以選擇性的按一下 **\[設定為預設值\]** 。
@@ -169,7 +169,7 @@ ms.locfileid: "74258040"
 ## <a name="downloads"></a>下載
 
 * [多語系應用程式工具組 4.0 .vsix 安裝程式](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [多語系應用程式工具組 4.0 .msi 安裝程式](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [多語系應用程式工具組 4.0 .msi 安裝程式](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)
 
 ## <a name="translation-services"></a>翻譯服務
 

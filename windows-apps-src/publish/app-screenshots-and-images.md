@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
 ms.localizationpriority: medium
-ms.openlocfilehash: 25dd6ffe698ae8141a02381d5ca45df31377599b
-ms.sourcegitcommit: a4a595c485a1e4549b02b0e20ca9f56b093c5814
+ms.openlocfilehash: 48a8566c80516588939dc0ef071c3da4b9232d64
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125234"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684617"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 
@@ -161,16 +161,16 @@ ms.locfileid: "74125234"
 
 #### <a name="mov"></a>MOV
 
-| 影片 | 音效 | 
+| 視訊 | 音效 | 
 | --- | --- | 
 | <ul><li>1080p ProRes (HQ，適用的話)</li><li>原生畫面播放速率；慣用 29.97 FPS</li></ul> | <ul><li>須為立體聲</li><li>建議音訊等級：-16 LKFS/LUFS</li></ul> |
 
 
 #### <a name="mp4"></a>MP4
 
-| 影片 | 音效 |
+| 視訊 | 音效 |
 | --- | --- |
-| <ul><li>編解碼器[： h.264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) （AVC1）  </li><li>漸進式掃描 (無交錯)</li><li>高調明確</li><li>2 個連續 B 畫面格</li><li>封閉式 GOP。 一半畫面播放速率的 GOP</li><li>CABAC</li><li>每秒 50 MB </li><li>色彩空間︰4.2.0</li></ul> | <ul><li>轉碼器：AAC-LC</li><li>通道：立體聲或環繞音效</li><li>取樣率︰48 KHz</li><li>音訊位元速率︰立體聲為每秒 384 KB，環繞音效為每秒 512 KB</li></ul> |
+| <ul><li>編解碼器[： h.264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) （AVC1）  </li><li>漸進式掃描 (無交錯)</li><li>高調明確</li><li>2 個連續 B 畫面格</li><li>封閉式 GOP。 一半畫面播放速率的 GOP</li><li>CABAC</li><li>每秒 50 MB </li><li>色彩空間︰4.2.0</li></ul> | <ul><li>轉碼器：AAC-LC</li><li>通道：立體聲或環繞音效</li><li>取樣率︰48 KHz</li><li>音訊位元速率︰立體聲為每秒 384 KB，環繞音效為每秒 512 KB</li></ul> |
 
 > [!WARNING]
 > 對於以 AVC1 以外的編解碼器編碼的檔案，客戶可能不會聽到音訊。
