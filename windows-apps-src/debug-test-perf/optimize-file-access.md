@@ -1,22 +1,22 @@
 ---
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
 title: 最佳化檔案存取
-description: 建立可有效存取檔案系統的通用 Windows 平台 (UWP) app，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。
+description: 建立可有效存取檔案系統的通用 Windows 平台 (UWP) 應用程式，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 176791388bc0d0a5ac33659f6744852a2c857187
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 3114bc7a86f7f7f4d22c69c814735c146352efbd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339599"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681949"
 ---
 # <a name="optimize-file-access"></a>最佳化檔案存取
 
 
-建立可有效存取檔案系統的通用 Windows 平台 (UWP) app，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。
+建立可有效存取檔案系統的通用 Windows 平台 (UWP) 應用程式，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。
 
 當您想要存取大量的檔案，而且想要存取一般 Name、FileType 以及 Path 屬性以外的屬性值時，請透過建立 [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) 存取屬性，並呼叫 [**SetPropertyPrefetch**](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch)。 **SetPropertyPrefetch** 方法可以動態改善 app 的效能，以顯示從檔案系統取得的項目集合，例如影像的集合。 下一組範例顯示一些存取多個檔案的方法。
 
@@ -236,6 +236,6 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 如果您需要低延遲的讀取和寫入，而且不希望在基礎 UWP 資料流讀取大型區塊時，也要避免緩衝。 例如，如果您使用網路通訊資料流，可能需要低延遲讀取和寫入。
 
-在聊天應用程式中，您可在網路介面上使用資料流來回傳送訊息。 在此情況下，您要在訊息完成後立即傳送出去，而不是等到緩衝區滿了才傳送。 呼叫 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0)、[**AsStreamForWrite**](https://docs.microsoft.com/en-us/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) 及 [**AsStream**](https://docs.microsoft.com/en-us/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) 延伸方法時，如果將緩衝區大小設定為 0，則產生的配接器將不會配置緩衝區，所有呼叫都會直接操作基礎 UWP 資料流。
+在聊天應用程式中，您可在網路介面上使用資料流來回傳送訊息。 在此情況下，您要在訊息完成後立即傳送出去，而不是等到緩衝區滿了才傳送。 呼叫 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0)、[**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) 及 [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) 延伸方法時，如果將緩衝區大小設定為 0，則產生的配接器將不會配置緩衝區，所有呼叫都會直接操作基礎 UWP 資料流。
 
 
