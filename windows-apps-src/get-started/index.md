@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: 開始使用, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 7439d437dda69bf235bd8681751617b2982be394
-ms.sourcegitcommit: 2d3a7d18edf2715987b26d1b5341ec88eefc99ec
+ms.openlocfilehash: 4f78bdfec6c6e06ffc542bc7741b875e952bc169
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898527"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684894"
 ---
 # <a name="get-started-with-windows-10-apps"></a>開始使用 Windows 10 應用程式
 
@@ -30,7 +30,7 @@ ms.locfileid: "74898527"
                         <h3>深入了解 Windows 10 應用程式</h3>
                         <p>Windows 10 與通用 Windows 平台可讓您建置可在所有 Windows 裝置類型上運作且完美呈現的應用程式，或使用現代化功能來更新現有的應用程式。</p>
                         <ul>
-                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">什麼是 UWP app？</a></li>
+                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">什麼是 UWP 應用程式？</a></li>
                         </ul>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ ms.locfileid: "74898527"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>開始程式設計</h3>
+                        <h3>開始撰寫程式碼</h3>
                         <p>無論您是經驗豐富的開發人員或才剛開始建立您的第一個應用程式，都能獲得 Windows 10 平台和文件的實機操作體驗。</p>
                         <ul>
                             <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">開始撰寫程式碼</a></li>
@@ -173,7 +173,7 @@ ms.locfileid: "74898527"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>API 參考資料</h3>
+                                <h3>API 參考</h3>
                             </div>
                         </div>
                     </div>
@@ -191,7 +191,7 @@ ms.locfileid: "74898527"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>將您的 App 攜入 Windows</h3>
+                                <h3>將您的應用程式攜入 Windows</h3>
                             </div>
                         </div>
                     </div>
@@ -223,7 +223,7 @@ ms.locfileid: "74898527"
                 <div class="card">
                     <div class="cardText">
                         <h3>對於開發不熟悉？</h3>
-                        <p><a href="//docs.microsoft.com/en-us/learn/browse/?products=windows&resource_type=module">Microsoft Learn 上的 Windows</a></p>
+                        <p><a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Microsoft Learn 上的 Windows</a></p>
                         </div>
                     </div>
                 </div>
