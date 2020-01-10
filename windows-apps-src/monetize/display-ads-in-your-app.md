@@ -6,12 +6,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 橫幅, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c12d64bde6b16774b9090f7122f3933e0129ddc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 48aacf03d6e424b7b53052e2c292d4a8589a8d9f
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260327"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684568"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
 
@@ -110,14 +110,14 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 |  工作    | 資源 |               
 |----------|-------|
-| 回報錯誤或取得針對廣告的支援。     | 請造訪[支援頁面](https://developer.microsoft.com/en-us/windows/support)，然後選擇 **\[用程式內廣告\]** 。        |
+| 回報錯誤或取得針對廣告的支援。     | 請造訪[支援頁面](https://developer.microsoft.com/windows/support)，然後選擇 **\[用程式內廣告\]** 。        |
 | 取得社群支援     | 造訪[論壇](https://go.microsoft.com/fwlink/?LinkID=401264)。       |
-| 下載示範如何新增橫幅和插入式廣告到 App 的範例專案。     | 請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。       |
-| 了解最新的 Windows App 獲利機會     | 請瀏覽[從您的 App 獲利](https://developer.microsoft.com/store/monetize)。        |
+| 下載示範如何將橫幅廣告和插入式廣告新增到應用程式的範例專案。     | 請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。       |
+| 了解最新的 Windows App 獲利機會     | 瀏覽[從您的應用程式獲利](https://developer.microsoft.com/store/monetize)。        |
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Windows 8.1 和 Windows Phone 8.x 應用程式
 
-對於 Windows 8.1 和 Windows Phone 8.x 應用程式，我們提供 [適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x)。 如需有關如何在 Windows 8.1 和 Windows Phone 8.x 應用程式中使用此 SDK 顯示廣告的詳細資訊，請參閱[本文](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10))。
+對於 Windows 8.1 和 Windows Phone 8.x 應用程式，我們提供 [適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x)。 如需有關如何在 Windows 8.1 和 Windows Phone 8.x 應用程式中使用此 SDK 顯示廣告的詳細資訊，請參閱[本文](https://docs.microsoft.com/previous-versions/windows/apps/dn792120(v=win.10))。
 
 ## <a name="related-topics"></a>相關主題
 

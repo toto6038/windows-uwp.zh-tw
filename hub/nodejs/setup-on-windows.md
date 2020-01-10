@@ -8,19 +8,16 @@ ms.topic: article
 keywords: Node.js、windows 10、原生 windows，直接在 windows 上
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 18a8d07f790c391a6e10577ff512347106e1cf21
-ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
+ms.openlocfilehash: 456aac17f61ab0add3d35a48c74e151fa15e9e83
+ms.sourcegitcommit: 8efeb6672f759b1ea7e3e9e2f90e764480791142
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72517826"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728469"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>直接在 Windows 上設定 node.js 開發環境
 
 以下是可讓您開始在原生 Windows 開發環境中使用 node.js 的逐步指南。
-
-> [!NOTE]
-> 雖然在 Windows 上使用 node.js 的確是可行的選項，但我們通常建議使用適用于 Linux 的 Windows 子系統（WSL）來開發 node.js web 應用程式。 許多 node.js 套件和架構都是以 * nix 環境為考慮，而且大部分的 node.js 應用程式都是部署在 Linux 上，因此在 WSL 上進行開發可確保您的開發與生產環境之間的一致性。 若要設定 WSL 開發環境，請參閱[使用 WSL 2 來設定您的 node.js 開發環境](./setup-on-wsl2.md)。
 
 ## <a name="install-nvm-windows-nodejs-and-npm"></a>安裝 nvm-windows、node.js 和 npm
 
@@ -36,12 +33,12 @@ ms.locfileid: "72517826"
 
     ![適用于 Windows 安裝精靈的 NVM](../images/install-nvm-for-windows-wizard.png)
 
-5. 安裝完成之後。 開啟 PowerShell 並嘗試使用 windows nvm 來列出目前已安裝的節點版本（此時應該為 [無]）： `nvm ls`
+5. 當安裝完成時。 開啟 PowerShell 並嘗試使用 windows nvm 來列出目前已安裝的節點版本（此時應該為 [無]）： `nvm ls`
 
     ![未顯示節點版本的 NVM 清單](../images/windows-nvm-powershell-no-node.png)
 
 6. 安裝目前版本的 node.js （以測試最新的功能改進，但較可能會遇到與 LTS 版本不同的問題）： `nvm install latest`
-7. 請先查閱目前的 LTS 版本號碼，以安裝 Node.js 的最新穩定 LTS 版本（建議）： `nvm list available`，然後使用下列程式碼安裝 LTS 版本號碼： `nvm install <version>` （將 `<version>` 取代為數字，即 `nvm install 10.16.3`）。
+7. 請先查閱目前的 LTS 版本號碼，以安裝 Node.js 的最新穩定 LTS 版本（建議）： `nvm list available`，然後使用下列程式碼安裝 LTS 版本號碼： `nvm install <version>` （將 `<version>` 取代為數字，即 `nvm install 12.14.0`）。
 
     ![NVM 可用版本的清單](../images/windows-nvm-list.png)
 
@@ -58,13 +55,13 @@ ms.locfileid: "72517826"
 雖然 windows nvm 目前是最受歡迎的節點版本管理員，但是還有一些替代方式可考慮：
 
 - [nvs](https://github.com/jasongin/nvs) （節點版本切換器）是可以與[VS Code 整合](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md)的跨平臺 `nvm` 替代方案。
-- 
+
 - [Volta](https://github.com/volta-cli/volta#installing-volta)是 LinkedIn 團隊提供的新版本管理員，宣告改良的速度和跨平臺支援。
 
 若要將 Volta 安裝為版本管理員（而非 windows nvm），請移至其[消費者入門指南](https://docs.volta.sh/guide/getting-started)的 [ **windows 安裝**] 區段，然後下載並執行其 windows installer，並遵循安裝指示。
 
 > [!IMPORTANT]
-> 在安裝 Volta 之前，您必須先確定已在您的 Windows 電腦上啟用[開發人員模式](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers)。
+> 在安裝 Volta 之前，您必須先確定已在您的 Windows 電腦上啟用[開發人員模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers)。
 
 若要深入瞭解如何使用 Volta 在 Windows 上安裝多個 node.js 版本，請參閱[Volta](https://docs.volta.sh/guide/understanding#managing-your-toolchain)檔。
 
@@ -76,7 +73,7 @@ ms.locfileid: "72517826"
 
 1. 開啟 VS Code 中的 [**擴充**功能] 視窗（Ctrl + Shift + X）。
 2. 在 [延伸模組] 視窗頂端的 [搜尋] 方塊中，輸入：「節點延伸模組套件」（或您要尋找的任何延伸模組名稱）。
-3. 選取 [**安裝**]。 安裝之後，您的擴充功能就會出現在 [**延伸**模組] 視窗的 [已啟用] 資料夾中。 您可以藉由選取新擴充功能的描述旁的齒輪圖示，來停用、卸載或設定設定。
+3. 選取 [安裝]。 安裝之後，您的擴充功能就會出現在 [**延伸**模組] 視窗的 [已啟用] 資料夾中。 您可以藉由選取新擴充功能的描述旁的齒輪圖示，來停用、卸載或設定設定。
 
 您可能想要考慮的幾個額外擴充功能包括：
 
@@ -84,14 +81,21 @@ ms.locfileid: "72517826"
 - [從其他編輯器 Keymaps](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果您要從另一個文字編輯器（例如 Atom、Sublime、Vim、EMacs、Notepad + + 等）進行轉換，這些延伸模組可協助您的環境直接在家裡。
 - [設定同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)：可讓您使用 GitHub 跨不同安裝同步處理您的 VS Code 設定。 如果您在不同的電腦上工作，這有助於讓您的環境在其上保持一致。
 
-## <a name="install-git-optional"></a>安裝 Git （選擇性）
+## <a name="install-git-optional"></a>安裝 Git (選用)
 
-如果您打算與其他人共同作業，或在開放原始碼網站（如 GitHub）上裝載您的專案，VS Code 支援[使用 Git 進行版本控制](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)。 VS Code 中的 [原始檔控制] 索引標籤會追蹤您所有的變更，並在 UI 中建立常用的 Git 命令（add、commit、push、pull）。 您必須先安裝 Git，才能開啟 [原始檔控制] 面板。
+如果您打算與其他人共同作業，或在開放原始碼網站（如 GitHub）上裝載您的專案，VS Code 支援[使用 Git 進行版本控制](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)。 VS Code 中的 [原始檔控制] 索引標籤會追蹤您所有的變更，並讓常用的 Git 命令 (add、commit、push、pull) 直接內建在 UI 中。 您首先必須安裝 Git，才能強化 [原始檔控制] 面板。
 
-1. 從[git-scm 網站](https://git-scm.com/download/win)下載並安裝 Git for Windows。
+1. 從 [git-scm 網站](https://git-scm.com/download/win)下載並安裝適用於 Windows 的 Git。
 
-2. 其中包含安裝精靈，會詢問您有關 Git 安裝設定的一系列問題。 我們建議使用所有預設設定，除非您有特定原因要變更某個專案。
+2. 隨附的安裝精靈會詢問您有關 Git 安裝設定的一系列問題。 建議您使用所有預設設定，除非您有特定原因，非變更某些設定不可。
 
-3. 如果您從未使用過 Git， [GitHub 指南](https://guides.github.com/)可協助您開始著手。
+3. 如果您之前從未使用過 Git，[GitHub 指南](https://guides.github.com/)可以協助您開始使用。
 
 4. 我們建議您將[.gitignore](https://help.github.com/en/articles/ignoring-files)檔案新增至您的節點專案。 以下是[適用于 node.js 的 GitHub 預設 .gitignore 範本](https://github.com/github/gitignore/blob/master/Node.gitignore)。
+
+## <a name="use-windows-subsystem-for-linux-for-production"></a>針對生產環境使用適用于 Linux 的 Windows 子系統
+
+直接在 Windows 上使用 node.js 非常適合用來學習和實驗您可以執行的工作。 當您準備好建立可供生產環境使用的 web 應用程式（通常會部署到 Linux 伺服器）時，建議您使用適用于 Linux 第2版（WSL 2）的 Windows 子系統來開發 node.js web 應用程式。 許多 node.js 套件和架構都是以 * nix 環境為考慮，而且大部分的 node.js 應用程式都是部署在 Linux 上，因此在 WSL 上進行開發可確保您的開發與生產環境之間的一致性。 若要設定 WSL 開發環境，請參閱[使用 WSL 2 來設定您的 node.js 開發環境](./setup-on-wsl2.md)。
+
+> [!NOTE]
+> 如果您在（有點罕見）的情況下需要在 Windows 伺服器上裝載 node.js 應用程式，最常見的案例就是[使用反向 proxy](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca)。 有兩種方式可執行此動作：1）[使用 iisnode](https://harveywilliams.net/blog/installing-iisnode)或[直接](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b)。 我們不會維護這些資源，並建議[使用 Linux 伺服器來裝載您的 node.js 應用程式](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)。

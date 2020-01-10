@@ -9,12 +9,12 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c2d05c87f4f7b6164afe1fcbcb62323eef3bdf1
-ms.sourcegitcommit: 5f80bfc3ba04ad0a0853f83917d6a0ef3da24fa3
+ms.openlocfilehash: d180621736e79daec91a11a6932e80633962d6c7
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72302257"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684526"
 ---
 # <a name="globalization-and-localization"></a>全球化與當地語系化
 
@@ -38,7 +38,7 @@ ms.locfileid: "72302257"
 - 排序規則
 
 >[!NOTE]
-> 如需 Windows 作業系統版本所支援的地區設定名稱清單，請參閱[附錄 a：](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) [Windows 語言代碼識別碼（LCID）參考](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f)中的產品行為中的表格語言標記資料行。
+> 如需 Windows 作業系統版本所支援的地區設定名稱清單，請參閱[附錄 a：](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) [Windows 語言代碼識別碼（LCID）參考](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f)中的產品行為中的表格語言標記資料行。
 
 **可當地語系化性**是為全球化應用程式準備當地語系化，和/或驗證該應用程式已準備好進行當地語系化的過程。 正確的使應用程式可當地語系化，表示之後的當地語系化過程不會在應用程式中發現任何功能缺失。 可當地語系化應用程式最重要的屬性，便是其可執行的程式碼和應用程式的可當地語系化資源完全分離。
 
@@ -55,14 +55,14 @@ ms.locfileid: "72302257"
 
 大部分的當地語系化團隊都會使用特殊的工具，協助這段過程。 例如，回收重複出現文字的翻譯。
 
-| 文章 | 描述 |
+| 文章 | 說明 |
 |---------|-------------|
 | [全球化指導方針](guidelines-and-checklist-for-globalizing-your-app.md) | 設計及開發您的應用程式，使其能夠在不同語言和文化設定的系統上正常運作。 |
 | [瞭解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md) | 此主題會定義「使用者設定檔語言清單」、「應用程式資訊清單語言清單」及「應用程式執行階段語言清單」等三個術語。 我們會在本主題及位於此功能區域的其他主題中使用這些術語，因此請務必了解他們的意義。 |
 | [全球化您的日期/時間/數位格式](use-global-ready-formats.md) | 藉由為日期、時間、數字、電話號碼及貨幣進行適當的格式設定，將您的應用程式設計為可全球通用。 您的應用程式在將來便可因應全球市場中的其他文化特性、地區及語言。 |
 | [使用範本和模式來格式化日期和時間](use-patterns-to-format-dates-and-times.md) | 使用 [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 命名空間中的類別搭配自訂範本和模式，以您想要的格式來顯示日期和時間。 |
 | [調整配置和字型並支援 RTL](adjust-layout-and-fonts--and-support-rtl.md) | 設計您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。 |
-| [NumeralSystem 值](glob-numeralsystem-values.md) | 本主題列出Windows.Globalization[**命名空間中各種類別可用的**NumeralSystem](/uwp/api/windows.globalization?branch=live) 屬性值。 |
+| [NumeralSystem 值](glob-numeralsystem-values.md) | 本主題列出 [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) 命名空間中各種類別可用的 **NumeralSystem** 屬性值。 |
 | [讓您的應用程式可當地語系化](prepare-your-app-for-localization.md) | 當地語系化的應用程式是可為其他市場、語言或地區當地語系化，而不會使應用程式產生任何功能缺失的應用程式。 可當地語系化應用程式最重要的屬性，便是其可執行的程式碼和可當地語系化的資源完全分離。 |
 | [國際字型](loc-international-fonts.md) | 本主題列出當地語系化為美國英文以外語言的 UWP app 可用的字型。 |
 | [設計您的應用程式以進行雙向文字](design-for-bidi-text.md) | 設計您的應用程式，使其提供雙向文字支援 (BiDi)，組合由左至右和由右至左書寫系統的文字。 |

@@ -1,21 +1,21 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Windows 桌面的裝置入口網站
-description: 了解 Windows Device Portal 如何在 Windows 桌面上開啟診斷與自動化功能。
+description: 了解 Windows 裝置入口網站如何在 Windows 桌面上開啟診斷與自動化功能。
 ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f25e882f53bb4f673aa5003495f37d553208721
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282000"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681969"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows 桌面的裝置入口網站
 
-Windows 裝置入口網站可讓您檢視診斷資訊，並透過 HTTP 從瀏覽器視窗與桌面互動。 您可以使用 Device Portal 來執行下列動作：
+Windows 裝置入口網站可讓您檢視診斷資訊，並透過 HTTP 從瀏覽器視窗與桌面互動。 您可以使用裝置入口網站來執行下列動作：
 - 請參閱和操作執行中處理程序清單
 - 安裝、刪除、啟動和終止 app
 - 變更 Wi-Fi 設定檔、檢視訊號強度和查看 ipconfig
@@ -62,16 +62,16 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 - 檔案總管
 - 執行中處理程序
 - 效能
-- 偵錯
+- Debug
 - Windows 事件追蹤 (ETW)
 - 效能追蹤
-- 裝置管理員
-- 網路功能
+- [裝置管理員]
+- 網路
 - 當機資料
 - 功能
 - 混合實境
 - 串流安裝偵錯工具
-- Location
+- 位置
 - 臨時
 
 ## <a name="more-device-portal-options"></a>更多裝置入口網站選項
@@ -82,8 +82,8 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 
 - 在 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
     - `UseDynamicPorts`：必要的 DWORD。 將此設為 0，以保留選擇的連接埠號碼。
-    - `HttpPort`：必要的 DWORD。 包含 Device Portal 針對 HTTP 連線開啟接聽的連接埠號碼。    
-    - `HttpsPort`：必要的 DWORD。 包含 Device Portal 用來接聽 HTTPS 連線的連接埠號碼。
+    - `HttpPort`：必要的 DWORD。 包含裝置入口網站針對 HTTP 連線開啟接聽的連接埠號碼。    
+    - `HttpsPort`：必要的 DWORD。 包含裝置入口網站用來接聽 HTTPS 連線的連接埠號碼。
     
 在相同的 regkey 路徑底下，您也可以關閉驗證需求：
 - `UseDefaultAuthorizer` - `0` 停用，`1` 啟用。  
@@ -103,7 +103,7 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
     - 這可讓您安裝自己的 SSL 憑證，以修正通常在裝置入口網站中看見的 SSL 警告頁面。 
 - `-Debug <various options for authentication, port selection, and tracing level>`
     - 執行具有特定組態並且會顯示偵錯訊息的單機版裝置入口網站。 這對於建置[封裝外掛程式](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)來說最實用。 
-    - 如需如何以 System 身分執行此操作以完整測試封裝外掛程式的詳細資料，請參閱 [MSDN Magazine 文章](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx)。
+    - 如需如何以 System 身分執行此操作以完整測試封裝外掛程式的詳細資料，請參閱 [MSDN Magazine 文章](https://msdn.microsoft.com/magazine/mt826332.aspx)。
 
 ## <a name="common-errors-and-issues"></a>常見的錯誤和問題
 
