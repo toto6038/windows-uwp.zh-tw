@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS，node.js，windows 10，microsoft，學習 NodeJS，windows 上的節點，wsl 上的節點，在 windows 上安裝節點，使用 vs code 的 NodeJS，在 windows 上以節點進行開發，在 windows 上使用 NodeJS 進行開發，在 windows 上的 wsl 上安裝節點適用于 Linux 的子系統
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: e5875f0bf7ce73d3615aa131d57c2384c73dd8a1
-ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
+ms.openlocfilehash: c987f5bea387c630a1b9ef23c928d7a1bb8fadfc
+ms.sourcegitcommit: cf4bf0ab4ea9019c1edc2bb96387ce6cedbe91dd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72517844"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75835375"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 設定您的 node.js 開發環境
 
@@ -48,19 +48,19 @@ ms.locfileid: "72517844"
 
     ![啟用 Windows 功能](../images/windows-feature-settings.png)
 
-## <a name="install-a-linux-distribution"></a>安裝 Linux 散發套件
+## <a name="install-a-linux-distribution"></a>安裝 Linux 發行版本
 
-有數個 Linux 散發套件可在 WSL 上執行。 您可以在 Microsoft Store 中尋找並安裝我的最愛。 我們建議從[Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q)開始，因為它是最新、熱門且受到妥善支援。
+有多種 Linux 發行版本可在 WSL 上執行。 您可以在 Microsoft Store 中尋找並安裝我的最愛。 建議從使用 [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) 開始，因為它是最新、熱門且受到妥善支援。
 
-1. 開啟此[Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q)連結，開啟 [Microsoft Store]，然後選取 [**取得**]。 *（這是相當大的下載，可能需要一些時間才能安裝）。*
+1. 開啟此 [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) 連結、開啟 Microsoft Store，然後選取 [取得]。 *(這是相當大的下載，因此可能需要一些時間來安裝。)*
 
-2. 下載完成之後，從 [**開始**] 功能表中，選取 [從 Microsoft Store**啟動**] 或 [啟動]，方法是輸入 "Ubuntu 18.04 LTS"。
+2. 下載完成之後，從 Microsoft Store 選取 [啟動]，或在 [開始] 功能表中鍵入 "Ubuntu 18.04 LTS"以啟動。
 
-3. 當您第一次執行散發套件時，系統會要求您建立帳戶名稱和密碼。 在此之後，預設會自動以此使用者身分登入。 您可以選擇任何使用者名稱和密碼。 它們不會影響您的 Windows 使用者名稱。
+3. 當您第一次執行發行版本時，系統將問您是否要建立帳戶名稱和密碼。 在此之後，預設您會以此使用者身分自動登入。 您可以選擇任何使用者名稱和密碼。 它們對您的 Windows 使用者名稱並無任何影響。
 
     ![Microsoft Store 中的 Linux 發行版本](../images/store-linux-distros.png)
 
-您可以藉由輸入下列內容來檢查您目前使用的 Linux 散發套件： `lsb_release -dc`。 若要更新您的 Ubuntu 散發套件，請使用： `sudo apt update && sudo apt upgrade`。 我們建議定期更新，以確保您擁有最新的套件。 Windows 不會自動處理這種更新。 如需 Microsoft Store 中可用的其他 Linux 發行版本連結、替代安裝方法或疑難排解，請參閱適用于[windows 10 的 Windows 子系統 For Linux 安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。
+您可以藉由輸入 `lsb_release -dc` 來檢查您目前使用的 Linux 發行版本。 若要更新您的 Ubuntu 發行版本，請使用：`sudo apt update && sudo apt upgrade`。 建議定期更新，以確保您擁有最新的套件。 Windows 不會自動處理此更新。 如需連結至 Microsoft Store 中提供的其他 Linux 發行版本、替代安裝方法或疑難排解，請參閱[適用於 Windows 10 的 Windows 子系統 Linux 版安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。
 
 ## <a name="install-wsl-2"></a>安裝 WSL 2
 
@@ -84,7 +84,7 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
 1. 開啟您的 Ubuntu 18.04 命令列。
 2. 安裝捲曲（用來在命令列中從網際網路下載內容的工具）與： `sudo apt-get install curl`
-3. 安裝 nvm，包含： `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
+3. 安裝 nvm，包含： `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash`
 4. 若要確認安裝，請輸入： `command -v nvm` .。。這應該會傳回 ' nvm '，如果您收到「找不到命令」或完全沒有回應，請關閉目前的終端機並重新開啟，然後再試一次。 若要[深入瞭解，請 nvm github](https://github.com/nvm-sh/nvm)存放庫。
 5. 列出目前已安裝的節點版本（此時應該為 [無]）： `nvm ls`
 
@@ -103,8 +103,8 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 > 如果您使用 NVM 來安裝 node.js 和 NPM，您應該不需要使用 SUDO 命令來安裝新的套件。
 
 > [!NOTE]
-> 在發行時，NVM v 0.34.0 是最新的可用版本。 您可以查看[GitHub 專案頁面以取得最新版本的 NVM](https://github.com/nvm-sh/nvm)，並調整上述命令以包含最新版本。
-使用捲曲安裝較新版本的 NVM 將會取代舊版，而使您已使用 NVM 的節點版本原封不動地進行安裝。 例如：`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash`
+> 在發行時，NVM v 0.35.2 是最新的可用版本。 您可以查看[GitHub 專案頁面以取得最新版本的 NVM](https://github.com/nvm-sh/nvm)，並調整上述命令以包含最新版本。
+使用捲曲安裝較新版本的 NVM 將會取代舊版，而使您已使用 NVM 的節點版本原封不動地進行安裝。 例如：`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
 
 ## <a name="alternative-version-managers"></a>替代版本管理員
 
@@ -131,12 +131,12 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
 若要安裝 VS Code 和遠端 WSL 擴充功能：
 
-1. [下載並安裝適用于 Windows 的 VS Code](https://code.visualstudio.com)。 VS Code 也適用于 Linux，但適用于 Linux 的 Windows 子系統不支援 GUI 應用程式，因此我們需要將它安裝在 Windows 上。 別擔心，您仍然可以使用遠端 WSL 擴充功能，與您的 Linux 命令列和工具整合。
+1. [下載並安裝 VS Code for Windows](https://code.visualstudio.com)。 VS Code 也適用於 Linux，但 Windows 子系統 Linux 版不支援 GUI 應用程式，因此我們需要將它安裝在 Windows 上。 別擔心，您仍然可以使用 Remote - WSL 延伸模組，與您的 Linux 命令列和工具整合。
 
-2. 在 VS Code 上安裝[遠端 WSL 擴充功能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 這可讓您使用 WSL 做為整合式開發環境，並為您處理相容性和路徑。 [進一步瞭解](https://code.visualstudio.com/docs/remote/remote-overview)。
+2. 在 VS Code 上安裝 [Remote - WSL 延伸模組](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 這可讓您使用 WSL 做為整合式開發環境，並為您處理相容性和路徑。 [進一步瞭解](https://code.visualstudio.com/docs/remote/remote-overview)。
 
 > [!IMPORTANT]
-> 如果您已安裝 VS Code，則必須確定您有[1.35 版](https://code.visualstudio.com/updates/v1_35)或更新版本，才能安裝[遠端 WSL 擴充功能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 不建議您在沒有遠端 WSL 擴充功能的 VS Code 中使用 WSL，因為您會失去自動完成、偵錯工具、linting 等的支援。有趣的事實：此 WSL 延伸模組安裝在 $HOME/.vscode-server/extensions。
+> 如果您已安裝 VS Code，則必須確定您具有 [1.35 May 版本](https://code.visualstudio.com/updates/v1_35)或更新版本，才能安裝 [Remote - WSL 延伸模組](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 不建議您在沒有遠端 WSL 擴充功能的 VS Code 中使用 WSL，因為您會失去自動完成、偵錯工具、linting 等的支援。有趣的事實：此 WSL 延伸模組安裝在 $HOME/.vscode-server/extensions。
 
 ### <a name="helpful-vs-code-extensions"></a>有用的 VS Code 延伸模組
 
@@ -175,13 +175,13 @@ WSL 2 是 WSL 中[新版本的架構](https://docs.microsoft.com/windows/wsl/wsl
 
 ## <a name="set-up-git-optional"></a>設定 Git （選擇性）
 
-如果您打算與其他人共同作業，或在開放原始碼網站（如 GitHub）上裝載您的專案，VS Code 支援[使用 Git 進行版本控制](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)。 VS Code 中的 [原始檔控制] 索引標籤會追蹤您所有的變更，並在 UI 中建立常用的 Git 命令（add、commit、push、pull）。
+如果您打算與其他人共同作業，或在開放原始碼網站（如 GitHub）上裝載您的專案，VS Code 支援[使用 Git 進行版本控制](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)。 VS Code 中的 [原始檔控制] 索引標籤會追蹤您所有的變更，並讓常用的 Git 命令 (add、commit、push、pull) 直接內建在 UI 中。
 
-1. Git 隨附于適用于 Linux 的 Windows 子系統散發版本，不過，您必須設定您的 git 設定檔。 若要這樣做，請在終端機中輸入： `git config --global user.name "Your Name"`，然後 `git config --global user.email "youremail@domain.com"`。 如果您還沒有 Git 帳戶，您可以[在 GitHub 上註冊一個](https://github.com/join)。 如果您從未使用過 Git， [GitHub 指南](https://guides.github.com/)可協助您開始著手。 如果您需要編輯您的 git 設定，可以使用內建的文字編輯器，例如 nano： `nano ~/.gitconfig`。
+1. Git 隨附于適用于 Linux 的 Windows 子系統散發版本，不過，您必須設定您的 git 設定檔。 若要這樣做，請在終端機中輸入： `git config --global user.name "Your Name"`，然後 `git config --global user.email "youremail@domain.com"`。 如果您還沒有 Git 帳戶，您可以[在 GitHub 上註冊一個](https://github.com/join)。 如果您之前從未使用過 Git，[GitHub 指南](https://guides.github.com/)可以協助您開始使用。 如果您需要編輯您的 git 設定，可以使用內建的文字編輯器，例如 nano： `nano ~/.gitconfig`。
 
 2. 我們建議您將[.gitignore](https://help.github.com/en/articles/ignoring-files)檔案新增至您的節點專案。 以下是[適用于 node.js 的 GitHub 預設 .gitignore 範本](https://github.com/github/gitignore/blob/master/Node.gitignore)。 如果您選擇[使用 GitHub 網站建立新的](https://help.github.com/articles/create-a-repo)存放庫，有一些核取方塊可用來初始化具有讀我檔案的存放庫，也就是針對 node.js 專案設定的 .gitignore 檔案，以及在需要時新增授權的選項。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 您現在已設定 node.js 開發環境。 若要開始使用您的 node.js 環境，請考慮嘗試下列其中一個教學課程：
 
