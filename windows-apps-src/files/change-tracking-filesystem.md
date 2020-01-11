@@ -5,12 +5,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ec7762fd64f0f0b8de65faa1aaf079bdaba3a3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1cef2fb660681d3e382eb8ca7dcb92456756f627
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63807034"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685228"
 ---
 # <a name="track-file-system-changes-in-the-background"></a>追蹤在背景中的檔案系統變更
 
@@ -56,7 +56,7 @@ videoTracker.Enable();
 
 一些重要注意事項：
 
-- 在建立 [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) 物件之前，請確定應用程式具有資訊清單中正確程式庫的權限。 如需詳細資訊，請參閱[檔案存取權限](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions)。
+- 在建立 [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) 物件之前，請確定應用程式具有資訊清單中正確程式庫的權限。 如需詳細資訊，請參閱[檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)。
 - [**Enable**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable)為執行緒安全，不會重設您的指標，而且可以視需要呼叫許多次 (稍後有更詳細的說明)。
 
 ![啟用空的變更追蹤器](images/changetracker-enable.png)
@@ -108,7 +108,7 @@ await changeReader.AcceptChangesAsync();
 
 雖然我們嘗試在變更追蹤器中保留足夠的空間來保存系統上發生的所有作業，直到您的應用程式可以讀取它們為止，但很容易就可以想像以下案例：應用程式不會讀取循環緩衝區覆寫本身之前的變更。 尤其是在使用者從備份還原資料，或同步處理來自其照相手機的大型相片集合時。
 
-在此情況下，**ReadBatchAsync** 會傳回錯誤碼 [ **StorageLibraryChangeType.ChangeTrackingLost**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetype)。 如果您的應用程式收到此錯誤碼，則表示下列幾件事：
+在此情況下，**ReadBatchAsync** 會傳回錯誤碼 [**StorageLibraryChangeType.ChangeTrackingLost**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetype)。 如果您的應用程式收到此錯誤碼，則表示下列幾件事：
 
 * 自從您最後一次查看緩衝區，緩衝區本身已覆寫。 最好的行動方案是將程式庫重新編目，因為來自追蹤器的任何資訊會不完整。
 * 在您呼叫 [**Reset**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.reset)前，變更追蹤器不會傳回任何其他變更。 在應用程式呼叫 Reset 之後，指標將會移至最近的變更，且追蹤會繼續正常運作。
