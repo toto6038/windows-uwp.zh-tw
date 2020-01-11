@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, microsoft, windows 10, 教學課程, 線上課程, 部落格, 事件
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 8870c1e269eb2c5f049c5431d6360e8c11570c0b
-ms.sourcegitcommit: 4cb3ee28baa8020ec925b0bdd896ab197a1ddadb
+ms.openlocfilehash: 24bda3a9eb76dac2e584540161e551ce6bb7ff4e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309165"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683661"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>在 Windows 上使用 Python 進行開發的資源
 
@@ -41,13 +41,13 @@ ms.locfileid: "74309165"
 
 - [Python API 瀏覽器](https://docs.microsoft.com/python/api/?view=azure-python)：您一次就能從 Microsoft 購足所有 Python 型 API。
 
-- [使用 Python 的 Azure 程式碼範例](https://azure.microsoft.com/en-us/resources/samples/?platform=python&sort=0):了解如何使用 Python 程式碼與 Azure 服務互動。
+- [使用 Python 的 Azure 程式碼範例](https://azure.microsoft.com/resources/samples/?platform=python&sort=0):了解如何使用 Python 程式碼與 Azure 服務互動。
 
 - [Python 與 Visual Studio Code](https://code.visualstudio.com/docs/languages/python):概述如何搭配使用 Python 與 VS Code。
 
 ## <a name="online-courses"></a>線上課程
 
-- [Microsoft Learn 上的 Python 簡介](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/)：試用互動式 Microsoft Learn 平台，並獲得完成此模組的體驗點數，其中涵蓋如何撰寫基本 Python 程式碼、宣告變數，以及使用主控台輸入和輸出的基本概念。 互動式沙箱環境讓此平台成為尚未設定 Python 開發環境的人員開始的絕佳位置。
+- [Microsoft Learn 上的 Python 簡介](https://docs.microsoft.com/learn/modules/intro-to-python/)：試用互動式 Microsoft Learn 平台，並獲得完成此模組的體驗點數，其中涵蓋如何撰寫基本 Python 程式碼、宣告變數，以及使用主控台輸入和輸出的基本概念。 互動式沙箱環境讓此平台成為尚未設定 Python 開發環境的人員開始的絕佳位置。
 
 - [Pluralsight 上的 Python：8堂課程，29 小時](https://app.pluralsight.com/paths/skills/python)：Pluralsight 上的 Python 學習路徑提供線上課程，其中涵蓋各種與 Python 相關的主題，包括測量您技能及找出差距的工具。
 
