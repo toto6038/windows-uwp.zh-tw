@@ -4,14 +4,14 @@ title: 將 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eeb8cb8a8b71123c3a5a94eea316621e5f93fe8e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 29357746b6fca2c6aae52e9516a5b7dc2fca8ef2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259078"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684624"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>將 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
@@ -205,7 +205,7 @@ Windows Phone Silverlight 應用程式會使用在**Microsoft. Phone. 控制項*
 
 ##  <a name="design-language-in-windows10"></a>Windows 10 中的設計語言
 
-Windows Phone 的 Silverlight 應用程式與 Windows 10 應用程式之間的設計語言有一些差異。 如需所有詳細資訊，請參閱[設計](https://developer.microsoft.com/en-us/windows/apps/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
+Windows Phone 的 Silverlight 應用程式與 Windows 10 應用程式之間的設計語言有一些差異。 如需所有詳細資訊，請參閱[設計](https://developer.microsoft.com/windows/apps/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
 
 ## <a name="localization-and-globalization"></a>當地語系化和全球化
 
@@ -219,9 +219,9 @@ Windows Phone Silverlight 應用程式會使用**CultureInfo**類別來協助全
 
 當您閱讀 UWP 媒體和圖形的相關資料時，請記住，Windows 設計原則鼓勵大幅減少任何多餘的項目，包括圖形複雜性和雜亂度。 Windows 設計是以乾淨簡潔的視覺效果、印刷樣式及移動為代表。 如果您的 app 遵守相同的原則，它看起來就會更像內建的 app。
 
-Windows Phone Silverlight 具有不存在於 UWP 中的**RadialGradientBrush**類型，但是其他[**筆刷**](/uwp/api/Windows.UI.Xaml.Media.Brush)類型為。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush) 和 XAML C++ UWP 中使用 Direct2D 來[建立放射狀漸層筆刷](https://docs.microsoft.com/windows/desktop/directx)。
+Windows Phone Silverlight 具有不存在於 UWP 中的**RadialGradientBrush**類型，但是其他[**筆刷**](/uwp/api/Windows.UI.Xaml.Media.Brush)類型為。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 和 XAML C++ UWP 中使用 Direct2D 來[建立放射狀漸層筆刷](https://docs.microsoft.com/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush)。
 
-Windows Phone Silverlight 具有**OpacityMask**屬性，但該屬性不是 UWP [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)類型的成員。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 而您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/opacity-masks-overview) 和 XAML C++ UWP app 中使用 Direct2D 來[建立不透明度遮罩](https://docs.microsoft.com/windows/desktop/directx)。 但是 **OpacityMask** 的一般使用案例是使用同時適合淺色和深色佈景主題的單一點陣圖。 針對向量圖形，您可以使用佈景主題感知系統筆刷 (例如下面所述的圓形圖)。 但是製作佈景主題感知點陣圖 (例如下面所述的核取記號) 需要不同的方法。
+Windows Phone Silverlight 具有**OpacityMask**屬性，但該屬性不是 UWP [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)類型的成員。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 而您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 和 XAML C++ UWP app 中使用 Direct2D 來[建立不透明度遮罩](https://docs.microsoft.com/windows/desktop/Direct2D/opacity-masks-overview)。 但是 **OpacityMask** 的一般使用案例是使用同時適合淺色和深色佈景主題的單一點陣圖。 針對向量圖形，您可以使用佈景主題感知系統筆刷 (例如下面所述的圓形圖)。 但是製作佈景主題感知點陣圖 (例如下面所述的核取記號) 需要不同的方法。
 
 ![佈景主題感知點陣圖](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 
@@ -257,7 +257,7 @@ Windows Phone Silverlight 具有**OpacityMask**屬性，但該屬性不是 UWP�
     </UIElement.Clip>
 ```
 
-請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-layers-overview) 與 XAML C++ UWP app 中使用 Direct2D，以[使用任意幾何圖形做為圖層中的遮罩](https://docs.microsoft.com/windows/desktop/directx)。
+請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 與 XAML C++ UWP app 中使用 Direct2D，以[使用任意幾何圖形做為圖層中的遮罩](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-layers-overview)。
 
 ## <a name="navigation"></a>瀏覽
 
@@ -313,7 +313,7 @@ URI 對應和片段瀏覽是 URI 瀏覽技術，因此不適用於並非以 URI 
 
 適用于 Windows 10 應用程式的系統 TextBlock 樣式
 
-在 Windows Phone Silverlight 應用程式中，預設字型系列為 Segoe WP。 在 Windows 10 應用程式中，預設的字型系列是 Segoe UI。 因此，您應用程式中的字型標準可能會看起來不一樣。 如果您想要重現 Windows Phone Silverlight 文字的外觀，您可以使用[**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight)和[**LineStackingStrategy**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)等屬性來設定自己的計量。 如需詳細資訊，請參閱[字型的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)和[設計 UWP app](https://developer.microsoft.com/en-us/windows/apps/design)。
+在 Windows Phone Silverlight 應用程式中，預設字型系列為 Segoe WP。 在 Windows 10 應用程式中，預設的字型系列是 Segoe UI。 因此，您應用程式中的字型標準可能會看起來不一樣。 如果您想要重現 Windows Phone Silverlight 文字的外觀，您可以使用[**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight)和[**LineStackingStrategy**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)等屬性來設定自己的計量。 如需詳細資訊，請參閱[字型的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)和[設計 UWP app](https://developer.microsoft.com/windows/apps/design)。
 
 ## <a name="theme-changes"></a>佈景主題變更
 
