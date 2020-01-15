@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 86724b084edb9350adfd2ed2623623d255302b70
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
+ms.sourcegitcommit: 8d945e0406818e614eacdc962493e570cc7615ed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683456"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955315"
 ---
 # <a name="device-portal-core-api-reference"></a>裝置入口網站核心 API 參考資料
 
@@ -2003,7 +2003,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 | URI 參數 | 說明 |
 | :------          | :------ |
-| name | (**必要**) 電腦的新名稱。 |
+| name | (**必要**) 電腦的新名稱。 此應為 base64 編碼。 |
 
 **要求標頭**
 
