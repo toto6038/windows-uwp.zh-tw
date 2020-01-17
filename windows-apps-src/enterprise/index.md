@@ -2,26 +2,28 @@
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: 此藍圖概述適用於 Windows 10 和通用 Windows 平台 (UWP) 應用程式的重要企業功能。
 title: 企業
-ms.date: 08/30/2018
+ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e005d388e15efe10bede88e77c3ca021b0acad6b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 0a95529f40ef5bb1cbf112c91c385e6621620a01
+ms.sourcegitcommit: 7a8aea567b26283c71420e0d305d78f675e1fba7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684939"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125679"
 ---
 # <a name="enterprise"></a>企業
 
 本文概述通用 Windows 平台 (UWP) 針對 Windows 10 應用程式而提供的重要企業功能。 如需詳盡示範其中部分功能的影片，請參閱[使用 UWP 和 Visual Studio 快速建構 LOB 應用程式](https://channel9.msdn.com/Events/Build/2018/BRK3502)。
 
+## <a name="feature-highlights"></a>功能摘要
+
 <a id="template-studio" />
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-Windows Template Studio 是 Visual Studio 2017 和 Visual Studio 2019 的擴充功能，可讓您更快速地使用精靈式體驗建立新的通用 Windows 平台 (UWP) 應用程式。 產生的 UWP 專案是是格式正確的可讀程式碼，其中包含最新的 Windows 10 功能，同時實作經過實證的模式和最佳做法。
+Windows Template Studio 是 Visual Studio 2019 的擴充功能，可讓您更快速地使用精靈式體驗建立新的通用 Windows 平台 (UWP) 應用程式。 產生的 UWP 專案是是格式正確的可讀程式碼，其中包含最新的 Windows 10 功能，同時實作經過實證的模式和最佳做法。
 
 ![Windows Template Studio](images/windows-template-studio.png)
 
@@ -58,9 +60,9 @@ Windows UI 程式庫是一組 NuGet 套件，可提供 UWP 應用程式的控制
 
 <a id="xaml-islands" />
 
-### <a name="uwp-controls-in-desktop-applications"></a>傳統型應用程式中的 UWP 控制項
+### <a name="uwp-controls-in-desktop-applications-xaml-islands"></a>傳統型應用程式中的 UWP 控制項 (XAML Island)
 
-Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用程式中使用 UWP 控制項。 這表示您可以使用只能透過 UWP 控制項 (例如 Windows Ink) 和支援 Fluent Design 系統的控制項存取的最新 Windows 10 UI 功能，來增強現有傳統型應用程式的外觀與風格和功能。 這項功能稱為 XAML Islands。
+Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用程式中使用 UWP 控制項，其使用的功能名為 *XAML Islands*。 這表示您可以使用只能透過 UWP 控制項 (例如 Windows Ink) 和支援 Fluent Design 系統的控制項存取的最新 Windows 10 UI 功能，來增強現有傳統型應用程式的外觀與風格和功能。 這項功能稱為 XAML Islands。
 
 請參閱[傳統型應用程式中的 UWP 控制項](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)。
 
@@ -86,9 +88,7 @@ Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用�
 
 ### <a name="msix-deployment"></a>MSIX 部署
 
-MSIX 是一種 Windows 應用程式套件格式，可為所有 Windows 應用程式提供現代化的封裝體驗。 MSIX 套件格式除了支援對 Win32、WPF 和 Windows Forms 應用程式的新式封裝和部署功能，也保留了現有應用程式套件和安裝檔案的功能。
-
-MSIX 是根據 .msi、.appx、App-V 和 ClickOnce 安裝技術的組合而建置的封裝格式，不僅安全、受到保護，也具可靠性。
+MSIX 是一種 Windows 應用程式套件格式，結合了 MSI、AppX、App-V 和 ClickOnce 的最佳功能，以對所有 Windows 應用程式提供現代化且可靠的封裝體驗。 MSIX 套件格式除了支援對 Win32、WPF 和 Windows Forms 應用程式的新式封裝和部署功能，也保留了現有應用程式套件和安裝檔案的功能。 
 
 ![MSIX 圖示](images/MSIX-App-Package.ico)
 
@@ -151,11 +151,12 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 
 ## <a name="deployment"></a>部署
 
-您有許多將應用程式發佈至組織使用者的選項。 您可以利用商務用 Microsoft Store 或現有行動裝置管理，或是側載應用程式至裝置。 您也可藉由發佈到 Microsoft Store，將您的應用程式提供給一般大眾。
+您可以選擇使用 MSIX 套件將應用程式發佈至組織使用者。 您可以設定以應用程式安裝程式為基礎的部署、使用裝置管理工具 (例如 Microsoft Endpoint Configuration Manager 和 Microsoft Intune) 發佈到商務用 Microsoft Store，或側載應用程式至裝置。 您也可藉由發佈到 Microsoft Store，將您的應用程式提供給一般大眾。
 
 | 主題 | 說明 |
 |-------|-------------|
-| [將 LOB 應用程式發佈到企業](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | 您可以透過商務用 Microsoft Store，將企業營運應用程式直接發佈到企業來進行大量取得，而不需要讓大眾廣泛取得應用程式。 |
+| [MSIX 文件](https://docs.microsoft.com/windows/msix/) | MSIX 是一種 Windows 應用程式套件格式，結合了 MSI、AppX、App-V 和 ClickOnce 的最佳功能，以提供現代化且可靠的封裝體驗。 |
+| [將 LOB 應用程式發佈到企業](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | 了解發佈企業營運應用程式的選項，而不將應用程式廣泛地提供給公眾使用，包括以應用程式安裝程式為基礎的部署、Microsoft Endpoint Configuration Manager 和 Microsoft Intune，以及發佈至商務用 Microsoft Store。 |
 | [側載應用程式](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | 當您側載應用程式時，您要將簽署的應用程式套件部署到裝置。 您要維護這些應用程式的簽署、裝載和部署。 用於側載應用程式的程序已經簡化為適用於 Windows 10。             |
 | [將應用程式發佈至 Microsoft Store](https://developer.microsoft.com/store/publish-apps) | 整合的 Windows Store 可讓您發佈與管理您為所有 Windows 裝置開發的所有應用程式。 透過每個市場價格、發佈和可見性控制項，以及其他選項來自訂您應用程式的可用性。 |
 
