@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6387cc75047371666ac55b9fb70ae73d3e4c4d64
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: c67d359120b738458d7397c9558f19b4794888f6
+ms.sourcegitcommit: 87c20c6a40ed54e086adbe80caa509d851f54f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302662"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76123840"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
@@ -115,7 +115,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |設定頁面| URI |
 |-------------|-----|
-| AutoPlay | ms-settings:autoplay |
+| 自動播放 | ms-settings:autoplay |
 | [藍牙] | ms-settings:bluetooth |
 | 連線的裝置 | ms-settings:connecteddevices |
 | 預設相機 | ms-設定：攝影機（**在 Windows 10 1809 版和更新版本中已被取代**） |
@@ -135,8 +135,8 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 音效 | ms-settings:easeofaccess-audio |
 | 隱藏式輔助字幕 | ms-settings:easeofaccess-closedcaptioning |
 | 色彩篩選 | ms-設定： easeofaccess-colorfilter |
-| 游標 & 指標大小 | ms-設定： easeofaccess-cursorandpointersize |
-| 顯示器 | ms-settings:easeofaccess-display |
+| 游標與指標大小 | ms-設定： easeofaccess-cursorandpointersize |
+| 顯示 | ms-settings:easeofaccess-display |
 | 眼球控制 | ms-settings:easeofaccess-eyecontrol |
 | 字型 | ms-settings:fonts |
 | 高對比 | ms-settings:easeofaccess-highcontrast |
@@ -238,24 +238,25 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 通訊記錄 | ms-settings:privacy-callhistory |
 | 相機 | ms-settings:privacy-webcam |
 | 連絡人 | ms-settings:privacy-contacts |
-| 文件 | ms-settings:privacy-documents |
+| Documents | ms-settings:privacy-documents |
 | 電子郵件 | ms-settings:privacy-email |
 | 眼球追蹤器 | ms-settings:privacy-eyetracker (需要眼球追蹤器硬體) |
 | 意見反應與診斷 | ms-settings:privacy-feedback |
 | 檔案系統 | ms-settings:privacy-broadfilesystemaccess |
-| [一般] | ms-settings:privacy-general |
-| Location | ms-settings:privacy-location |
+| [一般] | ms-設定：隱私權或 ms 設定：隱私權-一般 |
+| 筆跡 & 輸入 |ms-settings:privacy-speechtyping |
+| 位置 | ms-settings:privacy-location |
 | 訊息中心 | ms-settings:privacy-messaging |
 | 麥克風 | ms-settings:privacy-microphone |
 | 動作 | ms-settings:privacy-motion |
 | 通知 | ms-settings:privacy-notifications |
 | 其他裝置 | ms-settings:privacy-customdevices |
-| 圖片 | ms-settings:privacy-pictures |
 | 通話 | ms-設定：隱私權-phonecalls |
+| 圖片 | ms-settings:privacy-pictures |
 | 無線通訊 | ms-settings:privacy-radios |
-| 語音、筆跡與輸入 |ms-settings:privacy-speechtyping |
+| [語音] | ms-設定：隱私權-語音 |
 | 工作 | ms-settings:privacy-tasks |
-| 影片 | ms-settings:privacy-videos |
+| 視訊 | ms-settings:privacy-videos |
 | 語音啟用 | ms-設定：隱私權-voiceactivation |
 
 ## <a name="surface-hub"></a>Surface Hub
@@ -279,12 +280,12 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 省電模式設定 | ms-settings:batterysaver-settings (僅適用於具有電池的裝置上，例如平板電腦) |
 | 電池使用情況 | ms-settings:batterysaver-usagedetails (僅適用於具有電池的裝置上，例如平板電腦) |
 | 剪貼簿 | ms-設定：剪貼簿 |
-| 顯示器 | ms-settings:display |
+| 顯示 | ms-settings:display |
 | 預設儲存位置 | ms-settings:savelocations |
-| 顯示器 | ms-settings:screenrotation |
+| 顯示 | ms-settings:screenrotation |
 | 複製我的顯示器 | ms-settings:quietmomentspresentation |
 | 在下列時間 | ms-settings:quietmomentsscheduled |
-| 加密 | ms-settings:deviceencryption |
+| Encryption | ms-settings:deviceencryption |
 | 專注輔助 | ms-settings:quiethours <br> ms-settings:quietmomentshome |
 | 圖形設定 | ms-settings:display-advancedgraphics (僅適用於支援進階圖形選項的裝置) |
 | 訊息中心 | ms-settings:messaging |
@@ -300,7 +301,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Phone | ms-設定：電話（**在 Windows 10 1809 版和更新版本中已被取代**） |
 | 電源與睡眠 | ms-settings:powersleep |
 | [聲音] | ms-設定：音效 |
-| 儲存空間 | ms-settings:storagesense |
+| 存放 | ms-settings:storagesense |
 | 儲存空間感知器 | ms-settings:storagepolicies |
 
 ## <a name="time-and-language"></a>時間與語言
@@ -333,7 +334,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Windows Update-重新啟動選項 | ms-settings:windowsupdate-restartoptions |
 | Windows Update-檢視更新記錄 | ms-settings:windowsupdate-history |
 
-## <a name="user--accounts"></a>使用者帳戶
+## <a name="user-accounts"></a>[使用者帳戶]
 
 |設定頁面| URI |
 |-------------|-----|
