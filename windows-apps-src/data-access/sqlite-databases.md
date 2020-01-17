@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b9c26710dfc5f71a9709fa93de4b369f6281e8c
-ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
+ms.openlocfilehash: 7e10dc35464472a16f64ec94cd0fdd78c41eb484
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73560693"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302722"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 應用程式中使用 SQLite 資料庫
 您可以使用 SQLite 在使用者的裝置上儲存和擷取輕量資料庫中的資料。 本指南會示範怎麼做。
@@ -319,7 +319,7 @@ private void AddData(object sender, RoutedEventArgs e)
 
 就這麼簡單。 探索 [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0)，了解還可以利用 SQLite 資料庫做什麼。 查看下列連結，了解在您的 UWP 應用程式中使用資料的其他方式。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 **將您的應用程式直接連接至 SQL Server 資料庫**
 

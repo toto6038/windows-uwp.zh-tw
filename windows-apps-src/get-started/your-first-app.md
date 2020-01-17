@@ -1,19 +1,19 @@
 ---
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
-title: 建立您的第一個 App
+title: 建立您的第一個應用程式
 description: 使用您最愛的程式設計語言，建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
 ms.date: 01/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: f386de7ebf9aae2f49a2709d8c1c8ce2595cbf1d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d0870212df4deb7f12f790107ec988fac3eb69ab
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260529"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685154"
 ---
-# <a name="create-your-first-app"></a>建立您的第一個 App
+# <a name="create-your-first-app"></a>建立您的第一個應用程式
 
 歡迎使用 [UWP 平台](universal-application-platform-guide.md)！ 這些教學課程將協助您使用所選擇的語言來建立您的第一個 UWP 應用程式。
 
@@ -61,7 +61,7 @@ ms.locfileid: "74260529"
 將您的 JavaScript 和 HTML 技能擴展到 UWP 之外以建立 Web 應用程式，或在網站上透過 WebVR 探索虛擬實境。
 
 * [Microsoft Edge 開發人員文件](https://docs.microsoft.com/microsoft-edge/)
-* [將 WebVR 與 Microsoft Edge 搭配使用](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
+* [將 WebVR 與 Microsoft Edge 搭配使用](https://docs.microsoft.com/microsoft-edge/webvr/)
 
 Web 應用程式很容易就可以在 UWP 架構中封裝成 Web 應用程式，並在 Microsoft Store 上推廣。
 
@@ -72,6 +72,6 @@ Web 應用程式很容易就可以在 UWP 架構中封裝成 Web 應用程式，
 ## <a name="see-also"></a>另請參閱
 
 * [開始撰寫程式碼](create-uwp-apps.md)
-* [什麼是 UWP app？](universal-application-platform-guide.md)
+* [什麼是 UWP 應用程式？](universal-application-platform-guide.md)
 * [開始設定](get-set-up.md)
 * [註冊 Windows 帳戶](sign-up.md)

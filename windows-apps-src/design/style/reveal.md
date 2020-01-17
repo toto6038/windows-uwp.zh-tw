@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0810365eeb0023a31862d31213862e2b3bce8db8
-ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
+ms.openlocfilehash: 63a7ee8550b72356199645f54b587480275c2bcd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930352"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685086"
 ---
 # <a name="reveal-highlight"></a>顯示顯目提示
 
@@ -23,7 +23,7 @@ ms.locfileid: "70930352"
 
 顯示顯目提示是會在使用者將指標移近互動式元素 (例如命令列) 時，醒目提示該元素的光源效果。 
 
-> **重要 API**：[RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush) \(英文\)、[RevealBackgroundBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush) \(英文\)、[RevealBorderBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush) \(英文\)、[RevealBrushHelper 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) \(英文\)、[VisualState 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState) \(英文\)
+> **重要 API**：[RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush) \(英文\)、[RevealBackgroundBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush) \(英文\)、[RevealBorderBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush) \(英文\)、[RevealBrushHelper 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) \(英文\)、[VisualState 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) \(英文\)
 
 ## <a name="how-it-works"></a>運作方式
 顯示顯目提示會在指標移近互動式元素時顯示該元素的容器，藉以引起使用者對該元素的注意，如下圖所示：
@@ -76,7 +76,7 @@ Reveal 能自動搭配一些控制項運作。 針對其他控制項，您可以
 
 這些控制項預設沒有 Reveal，因為它們是較小的控制項，且通常是您應用程式主要焦點的協助程式控制項；但每個應用程式都不相同，因此如果在您的應用程式中最常使用這些控制項，我們提供一些樣式來加以協助：
 
-| 控制項名稱   | Resource Name |
+| 控制項名稱   | 資源名稱 |
 |----------|:-------------:|
 | 按鈕 |  ButtonRevealStyle |
 | ToggleButton | ToggleButtonRevealStyle |
@@ -278,7 +278,7 @@ Reveal 會根據控制項、應用程式或使用者設定所要求的佈景主�
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) \(英文\) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="reveal-and-the-fluent-design-system"></a>Reveal 和 Fluent Design 系統
 

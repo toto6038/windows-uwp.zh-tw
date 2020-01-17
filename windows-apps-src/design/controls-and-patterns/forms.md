@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: ff071a2a98c533ad7c089b28165f026de00ba68f
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: e1a5b192ed57d3962b6ba4cbef69e3663bc1e2ec
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319098"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683991"
 ---
 # <a name="forms"></a>表單
 表單是一組控制項，會收集和提交使用者的資料。 表單通常用於 [設定] 頁面、問卷調查、建立帳戶等等。 
@@ -53,12 +53,12 @@ ms.locfileid: "67319098"
 - 對於其他錯誤 (例如網路連線失敗)，請務必向使用者顯示適當的錯誤訊息。 
 
 
-## <a name="layout"></a>配置
+## <a name="layout"></a>版面配置
 
 若要輔助使用者體驗並確保使用者能夠輸入正確的輸入，請考慮下列建議來設計表單的版面配置。 
 
 ### <a name="labels"></a>標籤
-[標籤](labels.md)應該靠左對齊且置於輸入控制項上方。 許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
+[標籤](labels.md)應該靠左對齊且置於輸入控制項上方。 許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
 若要[進行協助工具設計](../accessibility/accessibility.md)，請標記所有個別控制項和控制項群組，讓人類讀者和螢幕助讀程式都能清楚明確地使用。 
 
@@ -108,7 +108,7 @@ ms.locfileid: "67319098"
 輸入控制項是允許使用者在表單中輸入資訊的 UI 元素。 以下列出可新增到表單的一些通用控制項，以及何時使用它們的相關資訊。
 
 ### <a name="text-input"></a>文字輸入
-控制項 | 用法 | 範例
+控制 | 用法 | 範例
  - | - | -
 [TextBox](text-box.md) | 擷取一或多個文字行 | 名稱、自由格式回應或意見反應
 [PasswordBox](password-box.md) | 藉由隱藏字元來收集私人資料 | 密碼、社會安全號碼 (SSN)、PIN、信用卡資訊 
@@ -116,7 +116,7 @@ ms.locfileid: "67319098"
 [RichEditBox](rich-edit-box.md) | 編輯包含格式化文字、超連結及影像的文字檔 | 在應用程式中上傳檔案、預覽及編輯
 
 ### <a name="selection"></a>選項
-控制項 | 用法 | 範例
+控制 | 用法 | 範例
 - | - | - 
 | [CheckBox](checkbox.md) | 選取或取消選取一或多個動作項目 | 同意條款及條件、新增選用項目、選取所有適用的項目
 [RadioButton](radio-button.md) | 從兩個以上的選項中選取一個選項 | 挑選類型、出貨方法等。
@@ -125,21 +125,21 @@ ms.locfileid: "67319098"
 > **注意**：如果有五個或更多選取項目，請使用清單控制項。
 
 ### <a name="lists"></a>清單
-控制項 | 用法 | 範例
+控制 | 用法 | 範例
 - | - | -
 [ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | 一開始為精簡狀態，展開可顯示可選取的項目清單 | 從一長串的項目中選取，例如州或國家/地區
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | 將項目分類並指派群組標頭、拖放項目、規劃內容，以及重新排序項目 | 排名選項
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | 排列並瀏覽以影像為基礎的集合 | 挑選相片、色彩、顯示佈景主題
 
 ### <a name="numeric-input"></a>數字輸入
-控制項 | 用法 | 範例
+控制 | 用法 | 範例
 - | - | -
 [滑桿](slider.md) | 從連續數值範圍中選取數字 | 百分比、音量、播放速度
-[評分](rating.md) | 使用星星評分 | 客戶回函
+[評分](rating.md) | 使用星星評分 | 客戶意見反應
 
 ### <a name="date-and-time"></a>日期和時間
 
-控制項 | 用法 
+控制 | 用法 
 - | - 
 [CalendarView](calendar-view.md) | 從一律顯示的行事曆中挑選單一日期或日期範圍 
 [CalendarDatePicker](calendar-date-picker.md) | 從關聯式行事曆中挑選單一日期 

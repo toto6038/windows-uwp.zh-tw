@@ -1,5 +1,5 @@
 ---
-Description: 網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容 。 超連結也可以在網頁檢視控制項中顯示和運作。
+Description: 網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容。 超連結也可以在網頁檢視控制項中顯示和運作。
 title: 網頁檢視
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
@@ -8,16 +8,16 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 799913688f04421cae6b47f0d4b7db2fb1074ed4
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: de7a430248841722aedd960cd485ea24499fdd00
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061921"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684269"
 ---
 # <a name="web-view"></a>網頁檢視
 
-網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容 。 超連結也可以在網頁檢視控制項中顯示和運作。
+網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容。 超連結也可以在網頁檢視控制項中顯示和運作。
 
 > **重要 API**：[WebView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
 
@@ -45,9 +45,9 @@ ms.locfileid: "71061921"
 
 **修改網頁檢視的外觀**
 
-[WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 不是 [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 子類別，因此它沒有控制項範本。 不過，您可以設定各種屬性來控制網頁檢視的一些視覺外觀。
+[WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 不是 [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 子類別，因此沒有控制項範本。 不過，您可以設定各種屬性來控制網頁檢視的一些視覺外觀。
 - 若要限制顯示區域，請設定 [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) 和 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 屬性。 
-- 若要轉譯、延展、扭曲和旋轉網頁檢視，請使用 [RenderTransform](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) 屬性。
+- 若要轉譯、延展、扭曲、旋轉網頁檢視，請使用 [RenderTransform](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) 屬性。
 - 若要控制網頁檢視的不透明度，請設定 [Opacity](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.opacity) 屬性。
 - 若要指定在 HTML 內容未指定色彩時當成網頁背景使用的色彩，請設定 [DefaultBackgroundColor](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultbackgroundcolor) 屬性。 
 
@@ -57,9 +57,9 @@ ms.locfileid: "71061921"
 
 **輸入事件和 Tab 順序**
 
-雖然 WebView 不是 Control 子類別，但是會接收鍵盤輸入焦點，並參與 Tab 順序。 它提供 [Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.focus) 方法，以及 [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) 和 [LostFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus) 事件，但是它沒有 Tab 相關的屬性。 它在 Tab 順序中的位置，與在 XAML 文件順序中的位置一樣。 Tab 順序包括網頁檢視內容中可接收輸入焦點的所有元素。 
+雖然 WebView 不是 Control 子類別，但是會接收鍵盤輸入焦點，並參與 Tab 順序。 它提供 [Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.focus) 方法，以及 [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) 和 [LostFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus) 事件，但是沒有 Tab 相關的屬性。 它在 Tab 順序中的位置，與在 XAML 文件順序中的位置一樣。 Tab 順序包括網頁檢視內容中可接收輸入焦點的所有元素。 
 
-如 [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 類別頁面的 Events 表格中所指出，網頁檢視不支援繼承自[UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的大部分使用者輸入事件 (例如 [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)、[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 和 [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed))。 相反地，您可以使用 [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) 搭配 JavaScript **eval** 函式來使用 HTML 事件處理常式，以及使用 HTML 事件處理常式中的 **window.external.notify** 來通知使用 [WebView.ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) 的應用程式。
+如 [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 類別頁面的 Events 表格中所指出，網頁檢視不支援繼承自[UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的大部分使用者輸入事件 (例如 [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)、[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)、[PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed))。 相反地，您可以使用 [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) 搭配 JavaScript **eval** 函式來使用 HTML 事件處理常式，以及使用 HTML 事件處理常式中的 **window.external.notify** 來通知使用 [WebView.ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) 的應用程式。
 
 ### <a name="navigating-to-content"></a>瀏覽至內容
 
@@ -88,7 +88,7 @@ webView1.Navigate("http://www.contoso.com");
 
 若要瀏覽至具有 POST 要求和 HTTP 標頭的 URI，請使用 [NavigateWithHttpRequestMessage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage) 方法。 此方法僅支援 [HttpRequestMessage.Method](https://docs.microsoft.com/uwp/api/windows.web.http.httprequestmessage.method) 屬性值的 [HttpMethod.Post](https://docs.microsoft.com/uwp/api/windows.web.http.httpmethod.post) 和 [HttpMethod.Get](https://docs.microsoft.com/uwp/api/windows.web.http.httpmethod.get)。 
 
-若要從您應用程式的 [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) 或 [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) 資料存放區載入未壓縮和未加密的內容，請使用 **Navigate** 方法搭配使用 [ms-appdata 配置](/windows/uwp/app-resources/uri-schemes)的 **Uri**。 這個配置的網頁檢視支援需要您將您的內容放入本機或暫存資料夾的子資料夾中。 這樣可瀏覽至 URI (例如 ms-appdata:///local/*folder*/*file*.html 和ms-appdata:///temp/*folder*/*file*.html)。 (若要載入壓縮或加密檔案，請參閱 [NavigateToLocalStreamUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri))。 
+若要從您應用程式的 [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) 或 [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) 資料存放區載入未壓縮和未加密的內容，請使用 **Navigate** 方法搭配使用 [ms-appdata 配置](/windows/uwp/app-resources/uri-schemes)的 **Uri**。 這個配置的網頁檢視支援需要您將您的內容放入本機或暫存資料夾的子資料夾中。 這樣可瀏覽至 URI (例如 ms-appdata:///local/*folder*/*file*.html 和ms-appdata:///temp/*folder*/*file*.html)。 (若要載入壓縮或加密的檔案，請參閱 [NavigateToLocalStreamUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri)。) 
 
 所有這些第一層子資料夾都是與其他第一層子資料夾中的內容隔離。 例如，您可以瀏覽至 ms-appdata:///temp/folder1/file.html，但此檔案中不能有 ms-appdata:///temp/folder2/file.html 的連結。 不過，您仍然可以使用 **ms-appx-web 配置**來連結至應用程式套件中的 HTML 內容，以及使用 **http** 和 **https** URI 配置來連結至 Web 內容。
 
@@ -183,7 +183,7 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 
 指令碼正在執行時，您的應用程式看起來會像沒有回應。 如果網頁檢視執行 JavaScript 並且可以中斷指令碼，則 [LongRunningScriptDetected](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.longrunningscriptdetected) 事件會定期發生。 若要判斷指令碼已執行多久的時間，請檢查 [WebViewLongRunningScriptDetectedEventArgs](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs) 的 [ExecutionTime](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime) 屬性。 若要停止指令碼，請將事件引數 [StopPageScriptExecution](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution)屬性設定為 **true**。 除非在後續網頁檢視瀏覽期間重新載入停止的指令碼，否則不會再次執行停止的指令碼。 
 
-網頁檢視控制項無法裝載任意的檔案類型。 嘗試載入網頁檢視無法裝載的內容時，會發生 [UnviewableContentIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unviewablecontentidentified) 事件。 您可以處理此事件並通知使用者，或使用 [Launcher](https://docs.microsoft.com/uwp/api/Windows.System.Launcher) 類別將檔案重新導向至外部瀏覽器或另一個 app。
+網頁檢視控制項無法裝載任意的檔案類型。 嘗試載入網頁檢視無法裝載的內容時，會發生 [UnviewableContentIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unviewablecontentidentified) 事件。 您可以處理此事件並通知使用者，或使用 [Launcher](https://docs.microsoft.com/uwp/api/Windows.System.Launcher) 類別將檔案重新導向至外部瀏覽器或另一個應用程式。
 
 同樣地，在網頁內容中叫用不支援的 URI 配置 (例如 fbconnect:// 或 mailto://) 時，會發生 [UnsupportedUriSchemeIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unsupportedurischemeidentified) 事件。 您可以處理這個事件來提供自訂行為，而不是允許預設系統啟動程式啟動 URI。
 
@@ -191,7 +191,7 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 
 ### <a name="handling-special-cases-for-web-view-content"></a>處理網頁檢視內容的特殊情況
 
-您可以使用 [ContainsFullScreenElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.containsfullscreenelement) 屬性和 [ContainsFullScreenElementChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.containsfullscreenelementchanged) 事件，來偵測、回應與啟用網頁內容中的全螢幕體驗 (例如全螢幕影片播放)。 例如，您可能使用 ContainsFullScreenElementChanged 事件來調整網頁檢視，使其佔用整個應用程式檢視，或者，如下列範例所示，在想要具有全螢幕網頁體驗時，讓視窗型應用程式進入全螢幕模式。
+您可以使用 [ContainsFullScreenElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.containsfullscreenelement) 屬性和 [ContainsFullScreenElementChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.containsfullscreenelementchanged) 事件，來偵測、回應、啟用網頁內容中的全螢幕體驗 (例如全螢幕影片播放)。 例如，您可能使用 ContainsFullScreenElementChanged 事件來調整網頁檢視，使其佔用整個應用程式檢視，或者，如下列範例所示，在想要具有全螢幕網頁體驗時，讓視窗型應用程式進入全螢幕模式。
 
 ```csharp
 // Assume webView is defined in XAML
@@ -223,7 +223,7 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
   </Capabilities>
 ```
 
-除了處理 [PermissionRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.permissionrequested) 事件的 app 之外，使用者還必須核准要求位置或媒體功能之 app 的標準系統對話方塊，以啟用這些功能。
+除了處理 [PermissionRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.permissionrequested) 事件的應用程式之外，使用者還必須核准要求位置或媒體功能之應用程式的標準系統對話方塊，以啟用這些功能。
 
 以下範例示範應用程式如何從 Bing 啟用地圖中的地理位置︰
 
@@ -259,7 +259,7 @@ string returnValue = await webView1.InvokeScriptAsync("setDate", args);
 ```
 
 
-您可以搭配使用 **InvokeScriptAsync** 與 JavaScript **eval** 函式，以將內容插入網頁中。
+您可以搭配使用 **InvokeScriptAsync** 與 JavaScript **eval** 函式，來將內容插入網頁中。
 
 在這裡，XAML 文字方塊的文字 (`nameTextBox.Text`) 會寫入 `webView1` 所裝載 HTML 頁面中的 div。 
 
@@ -271,9 +271,9 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-網頁檢視內容中的指令碼可以搭配使用 **window.external.notify** 與 string 參數，以將資訊送回 app。 若要接收這些訊息，請處理 [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) 事件。 
+網頁檢視內容中的指令碼可以搭配使用 **window.external.notify** 與 string 參數，以將資訊送回應用程式。 若要接收這些訊息，請處理 [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) 事件。 
 
-若要在呼叫 window.external.notify 時讓外部網頁引發 **ScriptNotify** 事件，您必須在 app 資訊清單的 **ApplicationContentUriRules** 區段中包含頁面的 URI (您可以在 Microsoft Visual Studio 中 Package.appxmanifest 設計工具的 [內容 URI] 索引標籤執行此作業。)這份清單中的 URI 必須使用 HTTPS，而且可能包含子網域萬用字元 (例如 `https://*.microsoft.com`)，但不能包含網域萬用字元 (例如 `https://*.com` 和 `https://*.*`)。 資訊清單需求不適用於源自 app 套件的內容、使用 ms-local-stream:// URI 的內容，或使用 [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring) 載入的內容。 
+若要在呼叫 window.external.notify 時讓外部網頁引發 **ScriptNotify** 事件，您必須在應用程式資訊清單的 **ApplicationContentUriRules** 區段中包含頁面的 URI。 (您可以在 Microsoft Visual Studio 中 Package.appxmanifest 設計工具的 [內容 URI] 索引標籤執行此作業。)這份清單中的 URI 必須使用 HTTPS，而且可能包含子網域萬用字元 (例如 `https://*.microsoft.com`)，但不能包含網域萬用字元 (例如 `https://*.com` 和 `https://*.*`)。 資訊清單需求不適用於源自應用程式套件的內容、使用 ms-local-stream:// URI 的內容，或使用 [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring) 載入的內容。 
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>在網頁檢視中存取 Windows 執行階段
 
@@ -315,13 +315,13 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 ### <a name="capturing-web-view-content"></a>擷取網頁檢視內容
 
-若要與其他 app 共用網頁檢視內容，請使用 [CaptureSelectedContentToDataPackageAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync) 方法，這會將選取的內容傳回為 [DataPackage](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage)。 這是非同步方法，因此您必須使用延遲，防止 [DataRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) 事件處理常式在非同步呼叫完成之前返回。 
+若要與其他應用程式共用網頁檢視內容，請使用 [CaptureSelectedContentToDataPackageAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync) 方法，這會將選取的內容傳回為 [DataPackage](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage)。 這是非同步方法，因此您必須使用延遲，防止 [DataRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) 事件處理常式在非同步呼叫完成之前返回。 
 
 若要取得目前網頁檢視內容的預覽影像，請使用 [CapturePreviewToStreamAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.capturepreviewtostreamasync) 方法。 這個方法會建立目前內容的映像，並將它寫入指定的資料流中。 
 
 ### <a name="threading-behavior"></a>執行緒行為
 
-網頁檢視內容預設會裝載於傳統型裝置系列之裝置的 UI 執行緒上，並從所有其他裝置上的 UI 執行緒予以卸載。 您可以使用 [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode) 靜態屬性，來查詢目前用戶端的預設執行緒行為。 必要時，您可以使用 [WebView(WebViewExecutionMode)](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.webview.-ctor#Windows_UI_Xaml_Controls_WebView__ctor_Windows_UI_Xaml_Controls_WebViewExecutionMode_) 建構函式來覆寫這個行為。 
+網頁檢視內容預設會裝載於傳統型裝置系列之裝置的 UI 執行緒上，並從所有其他裝置上的 UI 執行緒予以卸載。 您可以使用 [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode) 靜態屬性，來查詢目前用戶端的預設執行緒行為。 必要時，您可以使用 [WebView(WebViewExecutionMode)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.-ctor#Windows_UI_Xaml_Controls_WebView__ctor_Windows_UI_Xaml_Controls_WebViewExecutionMode_) 建構函式來覆寫這個行為。 
 
 > **注意**&nbsp;&nbsp;將 UI 執行緒上的內容裝載到行動裝置時可能會發生效能問題，因此，請務必在變更 DefaultExecutionMode 時在所有目標裝置上進行測試。
 
@@ -336,7 +336,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-topics"></a>相關主題
 

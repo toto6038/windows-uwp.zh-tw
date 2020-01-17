@@ -6,22 +6,22 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4671b3048850197cc33e6878b814b2c26792e36c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 59b5b6dc3b359aa68b8282375a0fcb1716cdef50
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258851"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684728"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>適用於開發人員的 Windows 10 (組建 18362) 最新動向
 
-Windows 10 組建 18362 (也就是 SDK 版本 1903年)，搭配使用 Visual Studio 2019，提供工具、 功能和體驗，以建立引人注目的 Windows 應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 18362 (也就是 SDK 版本 1903年)，搭配使用 Visual Studio 2019，提供工具、 功能和體驗，以建立引人注目的 Windows 應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
 這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指引的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 18362 API 變更](windows-10-build-18362-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://developer.microsoft.com/windows/windows-10-for-developers)。
 
 ## <a name="design--ui"></a>設計與 UI
 
-功能 | 描述
+功能 | 說明
 :------ | :------
 AnimatedVisualPlayer | [AnimatedVisualPlayer](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer) API 可在您的應用程式中裝載和控制動畫視覺效果的播放。 此 API 用來控制和顯示 [Lottie](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie) 視覺效果之類的內容，可讓您呈現您應用程式中原生的 Adobe AfterEffects 動畫。
 CompactDensity | 在您的應用程式中啟用[精簡模式](../design/style/spacing.md)，可啟用密集、資訊豐富的控制項群組。 這可以協助瀏覽大量內容、將頁面上可見的內容最大化，或在使用者使用指標輸入時協助瀏覽和互動。
@@ -34,7 +34,7 @@ Z 深度和陰影 | 使用 [Z 深度和陰影](../design/layout/depth-shadow.md)
 
 ## <a name="develop-windows-apps"></a>開發 Windows 應用程式
 
-功能 | 描述
+功能 | 說明
 :------ | :------
 反惡意程式碼掃描介面 (AMSI) | 了解[反惡意程式碼掃描介面 (AMSI) 如何協助您抵禦惡意程式碼](https://docs.microsoft.com/windows/desktop/amsi/how-amsi-helps)，然後查看[範例程式碼](https://docs.microsoft.com/windows/desktop/amsi/dev-audience)以了解如何在傳統型應用程式中加以實作。
 C++/WinRT 2.0 | 已發行 2.0 版的 C++/WinRT。 請查看[C++/WinRT 新增功能](../cpp-and-winrt-apis/news.md)，以取得所有新變更和新增項目的完整流程表。
@@ -47,7 +47,7 @@ DirectX HLSL | [HLSL Shader Model 6.4](https://docs.microsoft.com/windows/deskto
 驅動程式開發 | 已針對 Windows 驅動程式開發人員增加新的音訊、相機、顯示、網路、行動寬頻、列印、感應器、儲存體及 wifi 功能。 如需進一步詳細資訊，請查看[驅動程式開發新增功能](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development#whats-new-in-windows-10-version-1903-latest)。
 檔案系統作業 | 此[最佳做法指南](../files/best-practices-for-writing-to-files.md)可協助您充分利用 Windows.Storage.FileIO 和 Windows.Storage.PathIO 類別來執行檔案系統 I/O 作業。
 遊戲台與遙控器的互動 | 使用[遊戲台和遠端控制互動](../design/input/gamepad-and-remote-interactions.md)，打造可使用且可存取的互動體驗。 透過這些互動，您的應用程式在十英呎遠的地方可如同兩英呎遠般以直覺方式輕鬆使用。
-日本年號變更 | 我們提供了[這些指示](../design/globalizing/japanese-era-change.md)，說明如何確保您的 Windows 應用程式已準備好因應 2019 年 5 月 1 日起生效的日本年號變更。 [此頁面也會以日文提供](https://docs.microsoft.com/ja-jp/windows/uwp/design/globalizing/japanese-era-change)。
+日本年號變更 | 我們提供了[這些指示](../design/globalizing/japanese-era-change.md)，說明如何確保您的 Windows 應用程式已準備好因應 2019 年 5 月 1 日起生效的日本年號變更。 此頁面也提供日文 (在文章底部，按一下語言控制項，然後選取 [日文])。
 WPF、Windows Forms 和 WinUI 的開放原始碼 | WPF、Windows Forms 和 WinUI UX 架構現在可用於在 GitHub 上貢獻開放原始碼。 如需詳細資訊和連結，請參閱[建置 Windows 應用程式部落格](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97)。
 適用於 Xbox 的漸進式 Web 應用程式 | 使用[適用於 Xbox One 的漸進式 Web 應用程式](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations)，您可以擴充 Web 應用程式並讓它以 Xbox One 應用程式的形式透過 Microsoft Store 提供，同時仍繼續使用您現有的架構、CDN 及伺服器後端。 在大部分的情況下，您可使用 Windows 中的相同方式針對 Xbox One 封裝您的 PWA。 本指南將逐步引導您完成此程序，並強調主要差異。
 Project Rome | Project Rome SDK 現在適用於 Android 和 iOS。 了解如何整合圖形通知與每個平台：[Android](https://docs.microsoft.com/windows/project-rome/notifications/how-to-guide-for-android) 和 [iOS](https://docs.microsoft.com/windows/project-rome/notifications/how-to-guide-for-ios)。
@@ -64,7 +64,7 @@ Windows Vision Skills | [Windows Vision Skills](https://docs.microsoft.com/windo
 
 ## <a name="publish--monetize-windows-apps"></a>發佈 Windows 應用程式以及從中獲利
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 MSIX | [Windows 10 組建 1709 和 1803 上的 MSIX 支援](https://docs.microsoft.com/windows/msix/msix-1709-and-1803-support)說明 Windows 10 版本 1809 之前的版本支援那些 MSIX 功能。
 MSIX 封裝和部署 | 我們引進了數個[修改套件相關改進功能](https://docs.microsoft.com/windows/msix/modification-package-insider-preview-build-18312)，讓您更輕鬆地在 MSIX 套件中封裝自訂項目。 這些改進功能包括套件資訊清單中的新 **rescap6:ModificationPackage** 元素、能夠利用修改套件覆寫主要套建中的檔案，以及能夠將檔案系統型外掛程式封裝為 MSIX 修改套件。
@@ -83,7 +83,7 @@ Microsoft Learn 為 Microsoft 開發人員提供新的實際操作學習和訓�
 
 * 或者，隨意瀏覽 [Microsoft Learn 上的所有 Windows 開發人員模組](https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module)。
 
-## <a name="videos"></a>影片
+## <a name="videos"></a>視訊
 
 ### <a name="progressive-web-apps"></a>漸進式 Web 應用程式
 

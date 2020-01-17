@@ -1,19 +1,19 @@
 ---
-title: 何謂通用 Windows 平台 (UWP) app？
-description: 了解可以在各式各樣執行 Windows 10 之裝置上執行的「通用 Windows 平台」(UWP) app。
+title: 何謂通用 Windows 平台 (UWP) 應用程式？
+description: 了解可以在各式各樣執行 Windows 10 裝置上執行的「通用 Windows 平台」(UWP) 應用程式。
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0d226a9492a2218edf20e68b8216ea513ca12a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fdb06581639391c09c445c8497f67af28a8405df
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260532"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685017"
 ---
-# <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) app？
+# <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) 應用程式？
 
 ![通用 Windows 平台應用程式在各種裝置上執行、支援調適型使用者介面、自然使用者輸入、一個市集、合作夥伴中心和雲端服務](images/universalapps-overview.png)
 
@@ -62,15 +62,15 @@ Windows 使用下列功能，協助您讓您的 UI 以多個裝置為目標：
 - 通用輸入處理可讓您透過觸控、手寫筆、滑鼠、鍵盤，或像是 Microsoft Xbox 控制器的控制器接收輸入。
 - 工具會協助您設計可因應不同螢幕解析度的 UI。
 
-您的 app UI 的某些層面會跨裝置自動調整。 不過，您的 app 使用者經驗設計可能需要依據 app 執行所在的裝置進行調整。 例如，在小型、手持裝置上執行相片應用程式時可調整其 UI，以確保適合單手操作使用。 在桌上型電腦上執行相片應用程式時，應該調整 UI 以充分利用額外的螢幕空間。
+您的應用程式 UI 的某些層面會在不同裝置上自動調整。 不過，您的應用程式使用者經驗設計可能需要依據應用程式執行所在的裝置進行調整。 例如，在小型、手持裝置上執行相片應用程式時可調整其 UI，以確保適合單手操作使用。 在桌上型電腦上執行相片應用程式時，應該調整 UI 以充分利用額外的螢幕空間。
 
 ## <a name="theres-one-store-for-all-devices"></a>還有一個適用於所有裝置的市集。
 
-整合的 App Store 可讓您的應用程式在 Windows 10 裝置上使用，例如個人電腦、平板電腦、Xbox、HoloLens、Surface Hub 及物聯網 (IoT) 裝置。 您可以將應用程式提交至 Microsoft Store，使其可用於所有類型的裝置，或僅適用於您選擇的裝置。 您在同一個地方提交和管理適用於 Windows 裝置的所有 app。 有您想要用 UWP 功能現代化，並在 Microsoft Store 中銷售的 C++ 傳統型應用程式嗎？ 這也沒有問題。
+整合的 App Store 可讓您的應用程式在 Windows 10 裝置上使用，例如個人電腦、平板電腦、Xbox、HoloLens、Surface Hub 及物聯網 (IoT) 裝置。 您可以將應用程式提交至 Microsoft Store，使其可用於所有類型的裝置，或僅適用於您選擇的裝置。 您在同一個地方提交和管理適用於 Windows 裝置的所有應用程式。 有您想要用 UWP 功能現代化，並在 Microsoft Store 中銷售的 C++ 傳統型應用程式嗎？ 這也沒有問題。
 
 UWP 應用程式與 [Application Insights](https://azure.microsoft.com/services/application-insights/) 整合以進行詳細的遙測和分析，這是一項重要工具，可用以了解您的使用者並提升您的應用程式。
 
-### <a name="monetize-your-app"></a>從您的 app 獲利
+### <a name="monetize-your-app"></a>從您的應用程式獲利
 
 您可以選擇從您的應用程式獲利的方式。 有數種方法可以利用您的應用程式來賺錢。 您只需要選擇一個最適合您的方式，例如：
 
@@ -94,7 +94,7 @@ UWP 應用程式與 [Application Insights](https://azure.microsoft.com/services/
 - 使用者活動可讓使用者即使跨裝置也能在您的應用程式中接續未完成的部分。
 - 控制中心可組織整理來自您應用程式的通知。
 - 背景執行和觸發會在使用者需要您的應用程式時，讓應用程式開始運作。
-- 您的 app 可以使用語音和藍牙 LE 裝置， 來協助使用者與外界互動。
+- 您的應用程式可以使用語音和藍牙 LE 裝置，來協助使用者與外界互動。
 - 整合 Cortana 以新增語音命令功能至您的應用程式。
 
 ##  <a name="use-a-language-you-already-know"></a>使用您已知的語言
@@ -115,17 +115,17 @@ UWP 應用程式使用 Windows 執行階段，這是作業系統提供的原生 
 
 Microsoft 設計系統命名為 Fluent。 Fluent Design 系統是一組與最佳做法結合的 UWP 功能，用於建立在所有執行 Windows 裝置類型上都能展現絕佳效能的應用程式。 Fluent 體驗從平板電腦到膝上型電腦，從個人電腦到電視等裝置以及虛擬實境裝置均自然流暢。 如需 Fluent Design 簡介，請參閱[適用於 UWP 應用程式的 Fluent Design 系統](https://docs.microsoft.com/windows/uwp/design/fluent-design-system)。
 
-良好的[設計](http://design.windows.com/)是決定應用程式與使用者的互動方式、外觀，以及功能的程序。 使用者經驗在判斷使用者使用您的 app 時有多愉快佔有舉足輕重的地位，因此請不要跳過這個步驟。 [設計基本知識](https://developer.microsoft.com/en-us/windows/apps/design)會為您介紹如何設計通用 Windows 應用程式。 請參閱[適用於設計人員的通用 Windows 平台 (UWP) app 簡介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)，以取得設計能讓使用者滿意的 UWP app 的詳細資訊。 開始撰寫程式碼之前，請參閱[裝置入門](../design/devices/index.md)，協助您思考在您要做為目標的所有不同表單係數上使用您的 app 的互動體驗。
+良好的[設計](http://design.windows.com/)是決定應用程式與使用者的互動方式、外觀，以及功能的程序。 使用者經驗在判斷使用者使用您的應用程式時有多愉快佔有舉足輕重的地位，因此請不要跳過這個步驟。 [設計基本知識](https://developer.microsoft.com/windows/apps/design)會為您介紹如何設計通用 Windows 應用程式。 請參閱[適用於設計人員的通用 Windows 平台 (UWP) 應用程式簡介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)，以取得設計能讓使用者滿意的 UWP 應用程式的詳細資訊。 開始撰寫程式碼之前，請參閱[裝置入門](../design/devices/index.md)，協助您思考在目標裝置所有不同構成要素上使用您的應用程式的互動體驗。
 
-除了在不同裝置上的互動之外，[計劃您的 app](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app) 以納入跨多個裝置工作的好處。 例如：
+除了在不同裝置上的互動之外，請妥善[計劃您的應用程式](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app)以納入跨多個裝置工作的好處。 例如：
 
-- 使用 [UWP app 瀏覽設計基本知識](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)設計您的工作流程，以容納行動、小螢幕與大螢幕裝置。 [配置您的使用者介面](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)以回應不同的螢幕大小與解析度。
+- 使用 [UWP 應用程式瀏覽設計基本知識](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)，設計在行動裝置、小螢幕與大螢幕裝置均可行的工作流程。 [配置您的使用者介面](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)以回應不同的螢幕大小與解析度。
 
-- 請考慮如何容納多個輸入類型。 請參閱[互動的指導方針](https://docs.microsoft.com/windows/uwp/design/layout/index)以了解使用者如何使用 [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines)、[語音](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)、[觸控互動](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)、[觸控式鍵盤](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)等等方式與您的 app 互動。  或者，請參閱[文字和文字輸入的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls)以取得更多傳統互動體驗。
+- 請考慮如何容納多個輸入類型。 請參閱[互動的指導方針](https://docs.microsoft.com/windows/uwp/design/layout/index)以了解使用者如何使用 [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines)、[語音](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)、[觸控互動](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)、[觸控式鍵盤](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)等等方式與您的應用程式互動。  或者，請參閱[文字和文字輸入的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls)以取得更多傳統互動體驗。
 
 ### <a name="add-services"></a>新增服務
 
-- 使用[雲端服務](https://azure.microsoft.com/documentation/services/cloud-services)跨裝置同步。
+- 使用[雲端服務](https://azure.microsoft.com/documentation/services/cloud-services)進行跨裝置同步。
 - 了解如何[連線到 Web 服務](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))以支援您的應用程式體驗。
 - 在您的計劃中包含[推播通知](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)和[在應用程式內購買](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases)。 這些功能應該可以跨裝置運作。
 
@@ -141,7 +141,7 @@ Microsoft 設計系統命名為 Fluent。 Fluent Design 系統是一組與最佳
 
 - 了解如何使用[使用者活動](https://blogs.windows.com/buildingapps/2017/12/19/application-engagement-windows-timeline-user-activities/#tHuZ6tLPtCXqYKvw.97)，讓您應用程式中的使用者活動顯示在 Windows 時間軸和 Cortana 接續未完成的部分功能中。
 - 了解如何使用 [UWP 應用程式的磚、徽章及通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/)。
-- 如需可用於 UWP app 之 Win32 API 的完整清單，請參閱[適用於 UWP app 的 API 集合](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))和[適用於 UWP app 的 Dll](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))。
+- 如需可用於 UWP 應用程式之 Win32 API 完整清單，請參閱[適用於 UWP 應用程式的 API 集合](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))和[適用於 UWP 應用程式的 Dll](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))。
 - 如需撰寫 .NET UWP 應用程式的概觀，請參閱 [.NET 中的通用 Windows 應用程式](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/)。
 - 如需您可以在 UWP 應用程式中使用的 .NET 類型清單，請參閱[適用於 UWP 應用程式的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 - [使用 .NET Native 編譯應用程式](https://docs.microsoft.com/dotnet/framework/net-native/)

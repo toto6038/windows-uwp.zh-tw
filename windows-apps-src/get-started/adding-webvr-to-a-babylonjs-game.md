@@ -5,25 +5,18 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: webvr, edge, web development, babylon, babylonjs, babylon.js, javascript, web 開發
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f212e4e06035134b0ac5b5ea69381ed0d985783
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ff350f8ce08f566b8c95c3c46faad330923e4b2e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321158"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685206"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>新增 WebVR 支援至 3D Babylon.js 遊戲
 
 如果您使用 Babylon.js 建立 3D 遊戲，並覺得在虛擬實境 (VR) 中可能會看起來更好，則請依照此教學課程中的簡單步驟來實現這個想法。
 
-我們將會新增 WebVR 支援到此處所示的遊戲。 請繼續並接上 Xbox 控制器試試看！
-
-
-<iframe height='300' scrolling='no' title='使用 Babylon.GUI 的 Babylon.js dino 遊戲' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/wrOvoj/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 在 <a href='https://codepen.io'>CodePen</a> 上發佈的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/wrOvoj/'>使用 Babylon.GUI 的 Babylon.js dino 遊戲</a>。
-</iframe>
-
-這是在平面螢幕上運作不錯的 3D 遊戲，但是在 VR 中如何呢？
-在此教學課程中，我們會逐步進行幾個步驟建立並使用 WebVR 執行。 我們將使用 [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) 頭戴式裝置，可在 Microsoft Edge 中點選進入新增的 WebVR 支援。 在我們套用這些變更到遊戲後，您可以預期它也可在支援 WebVR 的其他瀏覽器/頭戴式裝置組合中運作。
+在此教學課程中，我們會逐步進行幾個步驟建立並使用 WebVR 來啟動及執行 3D 遊戲。 我們將使用 [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) 頭戴式裝置，可在 Microsoft Edge 中點選進入新增的 WebVR 支援。 在我們套用這些變更到遊戲後，您可以預期它也可在支援 WebVR 的其他瀏覽器/頭戴式裝置組合中運作。
 
 
 
@@ -32,7 +25,7 @@ ms.locfileid: "67321158"
 - 文字編輯器 (例如 [Visual Studio Code](https://code.visualstudio.com/download))
 - 已接到您的電腦的 Xbox 控制器
 - Windows 10 Creators Update
-- 具有[執行 Windows Mixed Reality 的最低需求規格](https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_setup)的電腦
+- 具有[執行 Windows Mixed Reality 的最低需求規格](https://developer.microsoft.com/windows/mixed-reality/immersive_headset_setup)的電腦
 - Windows Mixed Reality 裝置 (選用) 
 
 
@@ -204,9 +197,6 @@ navigator.getVRDisplays().then(function (displays) {
 
 如果我們使用頭戴式裝置開啟 **index.html** 且遊戲控制器有插入，在藍色遊戲視窗上按下左鍵會將我們的遊戲切換為 VR 模式！ 請繼續進行，並戴上您的頭戴式裝置查看結果。 
 
-
-<iframe height='300' scrolling='no' title='使用 Babylon.GUI 的 Babylon.js dino 遊戲 - WebVR' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/RjgpJd/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>請參閱由 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 在 <a href='https://codepen.io'>CodePen</a> 上發佈的 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/RjgpJd/'>使用 Babylon.GUI 的 Babylon.js dino 遊戲 - WebVR</a>。
-</iframe>
 
 
 ## <a name="conclusion"></a>結論

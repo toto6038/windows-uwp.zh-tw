@@ -7,12 +7,12 @@ ms.date: 12/3/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: 93f11c31866c50950a1f6c63632a77e01b296038
-ms.sourcegitcommit: e272af7ece8e449f46357b392d80dc1a0f44e625
+ms.openlocfilehash: 24669b81c244339509e30a43a0da8a2b27e67eeb
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74799750"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302652"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>透過使用者輸入篩選集合和清單
 如果集合顯示許多項目，或高度繫結至使用者互動，則篩選是一項可實作的實用功能。 使用本文所述的方法進行篩選可對大部分的集合控制項實作，包括 [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) 和 [ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)。 許多類型的使用者輸入都可以用來篩選集合 (例如核取方塊、選項按鈕和滑杆)，但本文將著重於採用以文字為基礎的使用者輸入，並根據使用者的搜尋，將其用於即時更新 ListView。 
@@ -35,6 +35,10 @@ ms.locfileid: "74799750"
         <ColumnDefinition Width="1*"></ColumnDefinition>
         <ColumnDefinition Width="1*"></ColumnDefinition>
     </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+            <RowDefinition Height="400"></RowDefinition>
+            <RowDefinition Height="400"></RowDefinition>
+    </Grid.RowDefinitions>
 
     <ListView x:Name="FilteredListView"
                 Grid.Column="0"
@@ -54,8 +58,9 @@ ms.locfileid: "74799750"
 
     </ListView>
 
-    <TextBox x:Name="FilterByLName" Grid.Column="1" Width="150" Header="Last Name" 
-             Margin="8" HorizontalAlignment="Left" TextChanged="FilteredLV_LNameChanged"/>
+    <TextBox x:Name="FilterByLName" Grid.Column="1" Header="Last Name" Width="200"
+             HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,20"
+             TextChanged="FilteredLV_LNameChanged"/>
 </Grid>
 ```
 ## <a name="filtering-the-data"></a>篩選資料
@@ -78,7 +83,8 @@ using System.Linq;
 
 public MainPage()
 {
-    // Define People collection to hold all Person objects. Populate collection - i.e. add Person objects (not shown)
+    // Define People collection to hold all Person objects. 
+    // Populate collection - i.e. add Person objects (not shown)
     IList<Person> People = new List<Person>();
 
     // Create PeopleFiltered collection and copy data from original People collection
@@ -92,13 +98,16 @@ public MainPage()
 
 private void FilteredLV_LNameChanged(object sender, TextChangedEventArgs e)
 {
-    // Perform a Linq query to find all Person objects (from the original People collection) that fit the criteria of the filter, save them in a new collection object called TempFiltered.
-    ObservableCollection<Person> TempFiltered = new ObservableCollection<Person>();
+    /* Perform a Linq query to find all Person objects (from the original People collection)
+    that fit the criteria of the filter, save them in a new List called TempFiltered. */
+    List<Person> TempFiltered;
     
-    // Make sure all text is case-insensitive when comparing
-    TempFiltered = People.Where(contact => contact.LastName.ToLower().Contains(FilterByLastName.Text.ToLower()));
+    /* Make sure all text is case-insensitive when comparing, and make sure 
+    the filtered items are in a List object */
+    TempFiltered = people.Where(contact => contact.LastName.Contains(FilterByLName.Text, StringComparison.InvariantCultureIgnoreCase)).ToList();
     
-    // Go through TempFiltered and compare it with the current PeopleFiltered collection, adding and subtracting items as necessary:
+    /* Go through TempFiltered and compare it with the current PeopleFiltered collection,
+    adding and subtracting items as necessary: */
 
     // First, remove any Person objects in PeopleFiltered that are not in TempFiltered
     for (int i = PeopleFiltered.Count - 1; i >= 0; i--)
@@ -110,7 +119,8 @@ private void FilteredLV_LNameChanged(object sender, TextChangedEventArgs e)
         }
     }
 
-    // Next, add back any Person objects that are included in TempFiltered and may not currently be in PeopleFiltered (in case of a backspace)
+    /* Next, add back any Person objects that are included in TempFiltered and may 
+    not currently be in PeopleFiltered (in case of a backspace) */
 
     foreach (var item in TempFiltered)
     {
@@ -124,7 +134,7 @@ private void FilteredLV_LNameChanged(object sender, TextChangedEventArgs e)
 
 現在，當使用者在 `FilterByLName` TextBox 中輸入篩選字詞時，ListView 會立即更新，只顯示姓氏包含篩選字詞的人員。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 ### <a name="get-the-sample-code"></a>取得範例程式碼
 - 如果您已安裝 XAML 控制項庫</strong>應用程式，請按一下[這裡](xamlcontrolsgallery:/item/ListView)以開啟應用程式並查看 ListView 頁面上更強固、深入的清單篩選範例。

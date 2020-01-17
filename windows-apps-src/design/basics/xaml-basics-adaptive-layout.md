@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c04725fed4ab9d5d2158f2f892af038aefc8fd
-ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
+ms.openlocfilehash: b9c5348063f277d4d76cbea120689328bcc217b1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680756"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684157"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教學課程：建立調適型配置
 
@@ -30,7 +30,7 @@ ms.locfileid: "72680756"
 
 * Visual Studio 2019：[下載 Visual Studio 2019 Community (免費)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10 SDK (10.0.15063.468 或更新版本)：[下載最新 Windows SDK (免費)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Windows 行動裝置版模擬器：[下載 Windows 10 行動裝置版模擬器 (免費)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Windows 行動裝置版模擬器：[下載 Windows 10 行動裝置版模擬器 (免費)](https://developer.microsoft.com/windows/downloads/sdk-archive)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：從 github 取得起始程式碼
 

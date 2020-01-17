@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5e464251200812e79474d05d9d0a680b49167871
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e30e9b2bed5cb4c0b7876ff1c597bb7d1243008a
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564543"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684159"
 ---
 # <a name="icons-for-uwp-apps"></a>適用於 UWP 應用程式的圖示
 
@@ -28,16 +28,14 @@ ms.locfileid: "64564543"
 
 :::row:::
     :::column:::
-        **Icons inside the app**
+        **應用程式內的圖示**
 
-        ![icons inside the app](images/icons/inside-icons.png)
-在您的應用程式中，可以使用圖示來表示動作，例如複製文字，或瀏覽至設定頁面。
+        ![應用程式內的圖示](images/icons/inside-icons.png) 在您的應用程式中，可以使用圖示來表示動作，例如複製文字，或瀏覽至設定頁面。
     :::column-end:::
     :::column:::
 **應用程式外的圖示**
 
-        ![icons outside the app](images/icons/outside-icons.jpg)
-在應用程式之外，Windows 在 [開始] 功能表和工作列中，會以圖示來代表您的應用程式。 如果使用者選擇將應用程式釘選到 [開始] 功能表，應用程式的啟動磚可能出現應用程式的圖示。 應用程式的圖示會出現在標題列，您可以選擇建立含有應用程式標誌的啟動顯示畫面。
+        ![應用程式外的圖示](images/icons/outside-icons.jpg)在應用程式之外，Windows 在 [開始] 功能表和工作列中，會以圖示來代表您的應用程式。 如果使用者選擇將應用程式釘選到 [開始] 功能表，應用程式的啟動磚可能出現應用程式的圖示。 應用程式的圖示會出現在標題列，您可以選擇建立含有應用程式標誌的啟動顯示畫面。
     :::column-end:::
 :::row-end:::
 
@@ -49,14 +47,12 @@ ms.locfileid: "64564543"
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        ![icons standard image](images/icons/icons-standard.svg)<br>
+        ![可行事項](images/do.svg) ![圖示標準影像](images/icons/icons-standard.svg)<br>
 
 像是剪下、複製、貼上和儲存之類的動作，或是導覽功能表的導覽項目，都可以使用圖示。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        ![icons concept image](images/icons/icons-concept.svg)<br>
+        ![禁止事項](images/dont.svg) ![圖示概念影像](images/icons/icons-concept.svg)<br>
 
 如果您想要表達的概念已經有圖示存在，請直接使用。 (若要查看圖示是否存在，請查看 Segoe 圖示清單)。
     :::column-end:::
@@ -64,14 +60,12 @@ ms.locfileid: "64564543"
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        ![icon shopping cart](images/icons/icon-shopping-cart.svg)<br>
+        ![可行事項](images/do.svg) ![圖示購物車](images/icons/icon-shopping-cart.svg)<br>
 
 如果有個圖示的意義很容易就能讓使用者了解，而且小尺寸也清晰易讀，就可使用該圖示。
     :::column-end:::
     :::column:::
-        ![dont](images/dont.svg)
-        ![icons concept image](images/icons/icon-bad-example.png)<br>
+        ![禁止事項](images/dont.svg) ![圖示概念影像](images/icons/icon-bad-example.png)<br>
 
 如果圖示的意義不明確，或是需要複雜的圖形才能清晰顯示圖示，則請勿使用。
     :::column-end:::
@@ -89,7 +83,7 @@ ms.locfileid: "64564543"
 Microsoft 以 Segoe MDL2 Assets 字型的形式，提供了超過 1000 個圖示。 用字型取得圖示，可能並不是很直覺的方式。但透過我們的字型顯示技術，這些圖示在任何解析度、任何尺寸的顯示器上，都相當清晰銳利。 如需說明，請參閱 [Segoe MDL2 圖示](segoe-ui-symbol-font.md)。
     :::column-end:::
     :::column:::
-        ![pre-defined icon image](images/icons/predefined-icon.png)
+        ![預先定義的圖示影像](images/icons/predefined-icon.png)
     :::column-end:::
 :::row-end:::
 
@@ -99,7 +93,7 @@ Microsoft 以 Segoe MDL2 Assets 字型的形式，提供了超過 1000 個圖示
 您不需要使用 Segoe MDL2 Assets 字型，您可以使用任何使用者系統上安裝的字型，例如 Wingdings 或 Webdings。
     :::column-end:::
     :::column:::
-        ![wingdings image](images/icons/wingdings.png)
+        ![wingdings 影像](images/icons/wingdings.png)
     :::column-end:::
 :::row-end:::
 
@@ -109,7 +103,7 @@ Microsoft 以 Segoe MDL2 Assets 字型的形式，提供了超過 1000 個圖示
 SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳利。 大部分的繪圖應用程式可以匯出為 SVG。 如需說明，請參閱 [SVGImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource)。
     :::column-end:::
     :::column:::
-        ![SVG image](images/icons/icon-scale.gif)
+        ![SVG 影像](images/icons/icon-scale.gif)
     :::column-end:::
 :::row-end:::
 
@@ -119,7 +113,7 @@ SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳�
 就像 SVG 檔案，幾何是向量資源，因此看起來總是很銳利。 不過，因為需要個別指定每個點和曲線，建立幾何物件並不容易。 只有當您需要修改圖示，而您的應用程式正在執行 (例如動畫) 時，才真的是個不錯的選擇。 如需說明，請參閱[移動與繪製命令語法](../../xaml-platform/move-draw-commands-syntax.md)。 
     :::column-end:::
     :::column:::
-        ![Geometry objects image](images/icons/geometry-objects.png)
+        ![幾何物件影像](images/icons/geometry-objects.png)
     :::column-end:::
 :::row-end:::
 
@@ -129,8 +123,7 @@ SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳�
 點陣圖影像是以特定大小建立而成，因此需視圖示需要的大小和螢幕的解析度，來縮放影像的大小。 影像縮小時會變得模糊，放大則會出現塊狀並像素化。 如果一定要使用點陣圖影像，建議使用 PNG 或 JPEG，而非 GIF。 
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        ![Bitmap image](images/icons/bitmap-image.png)
+        ![禁止事項](images/dont.svg) ![點陣圖影像](images/icons/bitmap-image.png)
     :::column-end:::
 :::row-end:::
 
@@ -148,11 +141,11 @@ SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳�
 
 :::row:::
     :::column span="2":::
-        <b>Step 1</b><br>
+        <b>步驟 1</b><br>
 將按鈕的字型家族設定為 `Segoe MDL2 Assets`，並其內容屬性設定為想使用的圖像的 unicode 值：
     :::column-end:::
     :::column:::
-        ![Create an icon button step 1](images/icons/create-icon-step-1.svg)
+        ![建立圖示按鈕步驟 1](images/icons/create-icon-step-1.svg)
     :::column-end:::
 :::row-end:::
 
@@ -162,11 +155,11 @@ SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳�
 
 :::row:::
     :::column span="2":::
-        <b>Step 2</b><br>
+        <b>步驟 2</b><br>
 您可以使用以下其中一個圖示元素物件：[BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon)、[FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)、[PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) 或 [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon)。 這讓您有更多類型的圖示可選擇，並可讓您結合圖示和其他內容類型，例如文字，如果您想要：
     :::column-end:::
     :::column:::
-        ![Create an icon button step 2](images/icons/icon-text-step-2.svg)
+        ![建立圖示按鈕步驟 2](images/icons/icon-text-step-2.svg)
     :::column-end:::
 :::row-end:::
 
@@ -183,10 +176,10 @@ SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳�
 
 :::row:::
     :::column span:::
-當您有一系列結合的命令，例如剪下/複製/貼上或一組相片編輯程式的繪圖命令，請都放在同一個[命令列](../controls-and-patterns/app-bars.md)中。 命令列需要一個或多個應用程式列按鈕或是應用程式列切換按鈕，每個按鈕皆代表一個動作。 每個按鈕都有一個[圖示](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon)屬性，可用來控制要顯示哪個圖示。 指定圖示有很多種方式。 
+當您有一系列結合的命令，例如剪下/複製/貼上或一組相片編輯程式的繪圖命令，請都放在同一個[命令列](../controls-and-patterns/app-bars.md)中。 命令列需要一個或多個應用程式列按鈕或是應用程式列切換按鈕，每個按鈕皆代表一個動作。 每個按鈕都有一個[圖示](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon)屬性，可用來控制要顯示哪個圖示。 指定圖示有很多種方式。 
     :::column-end:::
     :::column:::
-        ![Example of a command bar with icons](images/icons/create-icon-command-bar.svg)
+        ![具有圖示的命令列範例](images/icons/create-icon-command-bar.svg)
     :::column-end:::
 :::row-end:::
 

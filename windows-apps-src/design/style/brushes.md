@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f1bca419423ce6dcda4636acc9d624a0efadc1
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 20e38b24195bf3e476fa68284813bfd3a8cd2e6c
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317745"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684168"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用筆刷來繪製背景、前景和外框
 
@@ -29,11 +29,11 @@ ms.locfileid: "67317745"
 -   [**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) \(英文\) 
 -   [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) \(英文\)
 -   [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) \(英文\)
--   [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\)
+-   [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\)
 
 ## <a name="solid-color-brushes"></a>純色筆刷
 
-[  **SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 會以單一 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) (如紅色或藍色) 繪製區域。 這是最基本的筆刷。 在 XAML 中，有三種方法可以定義 **SolidColorBrush** 及其指定的純色色彩：預先定義的色彩名稱、十六進位色彩值，或屬性 (Property) 元素語法。
+[**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 會以單一 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) (如紅色或藍色) 繪製區域。 這是最基本的筆刷。 在 XAML 中，有三種方法可以定義 **SolidColorBrush** 及其指定的純色色彩：預先定義的色彩名稱、十六進位色彩值，或屬性 (Property) 元素語法。
 
 ### <a name="predefined-color-names"></a>預先定義的色彩名稱
 
@@ -63,7 +63,7 @@ ms.locfileid: "67317745"
 </StackPanel>
 ```
 
-### <a name="span-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanproperty-element-syntax"></a><span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>屬性元素語法
+### <a name="span-idproperty_element_syntax__spanspan-idproperty_element_syntax__spanspan-idproperty_element_syntax__spanproperty-element-syntax"></a><span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>屬性元素語法
 
 您可以使用屬性 (Property) 元素語法來定義 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)。 這個語法比之前的方法更複雜，但是您可以在元素中指定其他屬性值，例如 [**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush.opacity)。 如需 XAML 語法的詳細資訊 (包括屬性 (Property) 元素語法)，請參閱 [XAML 概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)和 [XAML 語法指南](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-syntax-guide)。
 
@@ -77,11 +77,11 @@ ms.locfileid: "67317745"
 </Rectangle>
 ```
 
-## <a name="span-idlineargradientbrushesspanspan-idlineargradientbrushesspanspan-idlineargradientbrushesspanlinear-gradient-brushes"></a><span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>線性漸層筆刷
+## <a name="span-idlinear_gradient_brushes_spanspan-idlinear_gradient_brushes_spanspan-idlinear_gradient_brushes_spanlinear-gradient-brushes"></a><span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>線性漸層筆刷
 
-[  **LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) 繪製區域時所用的漸層是沿著一條線定義的。 這條線稱為「漸層軸」  。 您可以沿著使用 [**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) 物件的漸層軸來指定色彩及其位置。 根據預設，漸層軸從筆刷繪製區域的左上角延伸至右下角，形成一個對角陰影。
+[**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) 繪製區域時所用的漸層是沿著一條線定義的。 這條線稱為「漸層軸」  。 您可以沿著使用 [**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) 物件的漸層軸來指定色彩及其位置。 根據預設，漸層軸從筆刷繪製區域的左上角延伸至右下角，形成一個對角陰影。
 
-[  **GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) 是漸層筆刷的基本建置組塊。 漸層停駐點會指定筆刷套用到繪製的區域時，漸層軸上的 [**Offset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.offset) 使用什麼 [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 的筆刷。
+[**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) 是漸層筆刷的基本建置組塊。 漸層停駐點會指定筆刷套用到繪製的區域時，漸層軸上的 [**Offset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.offset) 使用什麼 [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 的筆刷。
 
 漸層停駐點的 [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) 屬性會指定漸層停駐點的色彩。 您可以使用預先定義的色彩或藉由指定十六進位 **ARGB** 值來設定色彩。
 
@@ -107,7 +107,7 @@ ms.locfileid: "67317745"
 
 ![漸層停駐點](images/linear-gradients-stops.png) 您可以將 [**StartPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.startpoint) \(英文\) 與 [**EndPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.endpoint) \(英文\) 屬性設為與起始預設值 `(0,0)` 與 `(1,1)` 不同的其他值，藉此變更漸層停駐點所在的線條位置。 變更 **StartPoint** 與 **EndPoint** 座標值，就能建立水平或垂直漸層、反轉漸層方向，或是壓縮漸層範圍以套用到比完整繪製區域小的範圍。 若要壓縮漸層，請將 **StartPoint** 和/或 **EndPoint** 的值設在 0 到 1 之間。 例如，如果想要水平漸層在筆刷的左半部漸層但在右半部使用上個 [**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) 使用的純色，請將 **StartPoint** 指定為 `(0,0)`，**EndPoint** 指定為 `(0.5,0)`。
 
-### <a name="span-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>使用工具製作漸層
+### <a name="span-iduse_tools_to_make_gradientsspanspan-iduse_tools_to_make_gradientsspanspan-iduse_tools_to_make_gradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>使用工具製作漸層
 
 在了解線性漸層的運作方式之後，現在您可以利用 Visual Studio 或 Blend，簡化這些漸層的建立作業。 若要建立漸層，請在設計表面或 XAML 檢視中選取要套用漸層的物件。 展開 [筆刷]  ，然後選取 [線性漸層]  索引標籤 (請參閱下一個螢幕擷取畫面)。
 
@@ -117,9 +117,9 @@ ms.locfileid: "67317745"
 
 ![位於屬性視窗底部可控制漸層停駐點的列。](images/tool-gradient-brush-2.png)
 
-## <a name="span-idimagebrushesspanspan-idimagebrushesspanspan-idimagebrushesspanimage-brushes"></a><span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>影像筆刷
+## <a name="span-idimage_brushesspanspan-idimage_brushesspanspan-idimage_brushesspanimage-brushes"></a><span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>影像筆刷
 
-[  **ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 使用影像繪製區域，而要用來繪製的影像則來自影像檔案來源。 [  **ImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageSource) 屬性應設定為要載入之影像的路徑。 影像來源通常來自 app 資源中的 **Content** 項目。
+[**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 使用影像繪製區域，而要用來繪製的影像則來自影像檔案來源。 [**ImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageSource) 屬性應設定為要載入之影像的路徑。 影像來源通常來自 app 資源中的 **Content** 項目。
 
 根據預設值，[**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 會伸展影像，使其完全填滿繪圖區，如果繪圖區與影像的長寬比不同，影像可能會失真。 只要變更 [**Stretch**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.tilebrush.stretch) 屬性的預設值 **Fill**，將它設定為 **None**、**Uniform** 或 **UniformToFill**，就可以變更此行為。
 
@@ -137,7 +137,7 @@ ms.locfileid: "67317745"
 
 ![經過轉譯的 ImageBrush。](images/brushes-imagebrush.jpg)
 
-[**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) \(英文\) 與 [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) \(英文\) 會以統一資源識別項 (URI) 來參考影像來源檔案，而該影像來源檔案會使用數個可能的影像格式。 這些影像來源檔案是以 URI 來指定。 如需指定影像來源、可使用的影像格式，以及將影像來源封裝在應用程式中的相關資訊，請參閱[Image 和 ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes)。
+[**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) \(英文\) 與 [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) \(英文\) 會以統一資源識別項 (URI) 來參考影像來源檔案，而該影像來源檔案會使用數個可能的影像格式。 這些影像來源檔案是以 URI 來指定。 如需指定影像來源、可使用的影像格式，以及將影像來源封裝在應用程式中的相關資訊，請參閱 [Image 和 ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes)。
 
 ## <a name="brushes-and-text"></a>筆刷與文字
 
@@ -147,19 +147,19 @@ ms.locfileid: "67317745"
 
 ## <a name="webviewbrush"></a>WebViewBrush
 
-[  **WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) 是特殊的筆刷類型，可以存取一般在 [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 控制項中檢視的內容。 **WebViewBrush** 並非在矩形的 **WebView** 控制項區域中轉譯內容，而是將該內容繪製到具有轉譯介面 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 類型屬性的另一個元素上。 **WebViewBrush** 並不適用於所有筆刷案例，但對轉換 **WebView** 則很有用。 如需詳細資訊，請參閱 [**WebViewBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) \(英文\)。
+[**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) 是特殊的筆刷類型，可以存取一般在 [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 控制項中檢視的內容。 **WebViewBrush** 並非在矩形的 **WebView** 控制項區域中轉譯內容，而是將該內容繪製到具有轉譯介面 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 類型屬性的另一個元素上。 **WebViewBrush** 並不適用於所有筆刷案例，但對轉換 **WebView** 則很有用。 如需詳細資訊，請參閱 [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) \(英文\)。
 
 ## <a name="xamlcompositionbrushbase"></a>XamlCompositionBrushBase
 
-[**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\) 是用來建立使用 [**CompositionBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionBrush) \(英文\) 繪製 XAML UI 元素之自訂筆刷的基底類別。
+[**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\) 是用來建立使用 [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) \(英文\) 繪製 XAML UI 元素之自訂筆刷的基底類別。
 
 這可促成 Windows.UI.Xaml 與 Windows.UI.Composition 層之間的「下拉式清單」交互操作，如[**視覺層概觀**](/windows/uwp/composition/visual-layer)中所述。 
 
 若要建立自訂筆刷，請建立繼承自 XamlCompositionBrushBase 並能實作所需方法的新類別。
 
-例如，這可以用來將[**效果**](/windows/uwp/composition/composition-effects)至 XAML UIElement，方法是使用 [**CompositionEffectBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionEffectBrush) \(英文\) (例如 **GaussianBlurEffect** 或 [**SceneLightingEffect**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) \(英文\))，其能在被 [**XamlLight**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamllight) \(英文\) 照亮時控制 XAML UIElement 的反射屬性。
+例如，這可以用來將[**效果**](/windows/uwp/composition/composition-effects)至 XAML UIElement，方法是使用 [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush) \(英文\) (例如 **GaussianBlurEffect** 或 [**SceneLightingEffect**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) \(英文\))，其能在被 [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) \(英文\) 照亮時控制 XAML UIElement 的反射屬性。
 
-如需程式碼範例，請參閱 [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\) 的參考頁面。
+如需程式碼範例，請參閱 [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\) 的參考頁面。
 
 ## <a name="brushes-as-xaml-resources"></a>XAML 資源形式的筆刷
 
@@ -189,10 +189,10 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 如果是 [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) 和 [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)，使用預設建構函式，然後呼叫其他 API 後再嘗試將該筆刷用在 UI 屬性。
 
--   當您使用程式碼定義 [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) \(英文\) 時，[**ImageSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesourceproperty) \(英文\) 需要 [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) \(英文\) (而非 URI)。 如果您的來源是資料流，使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法初始化該值。 如果您的來源是 URI，包含 app 中使用 **ms-appx** 或 **ms-resource** 配置的內容，則使用採用 URI 的 [**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) 建構函式。 如果有任何與影像來源的擷取或解碼相關的時機問題，您也可以考慮處理 [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imageopened) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。
+-   當您使用程式碼定義 [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) \(英文\) 時，[**ImageSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesourceproperty) \(英文\) 需要 [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) \(英文\) (而非 URI)。 如果您的來源是資料流，使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法初始化該值。 如果您的來源是 URI，包含應用程式中使用 **ms-appx** 或 **ms-resource** 配置的內容，則使用採用 URI 的 [**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) 建構函式。 如果有任何與影像來源的擷取或解碼相關的時機問題，您也可以考慮處理 [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imageopened) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。
 -   對於 [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)，如果您最近已重設 [**SourceName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewbrush.sourcename) 屬性，或者如果程式碼也同時變更 [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 的內容，則可能需要呼叫 [**Redraw**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewbrush.redraw)。
 
-如需程式碼範例，請參閱 [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) \(英文\)、[**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) \(英文\) 和 [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\) 的參考頁面。
+如需程式碼範例，請參閱 [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) \(英文\)、[**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) \(英文\) 和 [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\) 的參考頁面。
  
 
  

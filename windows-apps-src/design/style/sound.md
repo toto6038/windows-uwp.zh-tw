@@ -12,18 +12,18 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 31f527cff7588ccf6da2594566cfa3cf13a214f1
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8ed1344b5ee49244a6c1afcbb873b54fcc28624f
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258674"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684879"
 ---
 # <a name="sound"></a>音效
 
 ![主角圖像](images/header-sound.svg)
 
-有許多方式可以使用音效來增強您的 App。 您可以使用音效來補充其他 UI 元素，讓使用者能透過音效辨識事件。 針對視覺殘障人士而言，音效可以是有效的使用者介面元素。 您可以使用音效來建立一個讓使用者身歷其境的氛圍；例如，您可以在拼圖遊戲的背景中播放詭譎的音樂，或針對恐怖/求生遊戲使用具威脅性的音效。
+有許多方式可以使用音效來增強您的應用程式。 您可以使用音效來補充其他 UI 元素，讓使用者能透過音效辨識事件。 對視覺殘障人士而言，音效可以是有效的使用者介面元素。 您可以使用音效來建立一個讓使用者身歷其境的氛圍；例如，您可以在拼圖遊戲的背景中播放詭譎的音樂，或針對恐怖/求生遊戲使用具威脅性的音效。
 
 ## <a name="examples"></a>範例
 
@@ -45,13 +45,13 @@ ms.locfileid: "74258674"
 
 UWP 提供一個可輕鬆存取的音效系統，您只要「撥動開關」，即可在整個應用程式體驗沈浸式音訊。
 
-[**ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer) 是 XAML 中的整合式音效系統，當開啟所有預設控制項時，就會自動播放音效。
+[**ElementSoundPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundplayer) 是 XAML 中的整合式音效系統，當開啟所有預設控制項時，就會自動播放音效。
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-**ElementSoundPlayer** 有三種不同的狀態︰[On]  、[Off]  和 [Auto]  。
+**ElementSoundPlayer** 有三種不同的狀態︰**On**、**Off**、**Auto**。
 
-如果設定為 [Off]  ，不論您的 App 在何處執行，一律不會播放音效。 如果設定為 [On]  ，您的應用程式的音效將會在每個平台上播放。
+如果設定為 **Off**，不論您的應用程式在何處執行，一律不會播放音效。 如果設定為 **On**，您的應用程式的音效將會在每個平台上播放。
 
 啟用 ElementSoundPlayer 將會自動啟用空間音訊 (3D 音效)。 若要停用 3D 音效 (但保持音效開啟)，請停用 ElementSoundPlayer 的 **SpatialAudioMode**： 
 
@@ -60,22 +60,22 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ```
 
 **SpatialAudioMode** 屬性可以具備下列值： 
-- **自動**：當音效開啟時將會開啟空間音訊。 
+- **Auto**：當音效開啟時將會開啟空間音訊。 
 - **Off**：空間音訊一律關閉 (即使音訊開啟)。
-- **開啟**：一律播放空間音訊。
+- **On**：一律播放空間音訊。
 
 若要深入了解空間音訊，以及 XAML 如何處理此功能，請參閱 [AudioGraph - 空間音訊](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio)。
 
 ### <a name="sound-for-tv-and-xbox"></a>電視和 Xbox 的音效
 
-音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 [Auto]  ，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
-若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)文章。
+音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 **Auto**，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
+若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)。
 
 ## <a name="sound-volume-override"></a>音效音量覆寫
 
 應用程式內的所有音效都可以透過 **Volume** 控制項停用。 不過，應用程式內的音效不能「比系統音效大聲」  。
 
-若要設定應用程式的音效層級，請呼叫︰
+若要設定應用程式的音量大小，請呼叫︰
 ```C#
 ElementSoundPlayer.Volume = 0.5;
 ```
@@ -85,7 +85,7 @@ ElementSoundPlayer.Volume = 0.5;
 
 如果不需要控制項的預設音效，可予以停用。 這可透過控制項上的 **ElementSoundMode** 來達成。
 
-**ElementSoundMode** 有兩種狀態︰[Off]  和 [Default]  。 未設定時，則為 [Default]  。 如果設定為 [Off]  ，則控制項所播放的每個音效都會是靜音，但「焦點除外」  。
+**ElementSoundMode** 有兩種狀態︰[Off]  和 [Default]  。 未設定時，則為 **Default**。 如果設定為 **Off**，則控制項所播放的每個音效都會是靜音，但「焦點除外」  。
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -115,7 +115,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Invoke);
 
 ### <a name="showing--hiding-content"></a>顯示及隱藏內容
 
-XAML 中有許多飛出視窗、對話方塊及可解除的 UI，而任何觸發其中一個重疊的動作應該呼叫 **Show** 或 **Hide** 音效。
+XAML 中有許多飛出視窗、對話方塊、可解除的 UI，觸發這其中任何一個重疊元素的動作應該呼叫 **Show** 或 **Hide** 音效。
 
 當重疊內容視窗出現時，應該呼叫 **Show** 音效︰
 
@@ -143,7 +143,7 @@ ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ```
-### <a name="back-navigation"></a>向後巡覽
+### <a name="back-navigation"></a>向後瀏覽
 
 從目前頁面瀏覽到應用程式中前一個頁面時，應呼叫 **GoBack** 音效︰
 
@@ -152,11 +152,11 @@ ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 ```
 ### <a name="focusing-on-an-element"></a>將焦點放在某個元素
 
-**Focus** 音效我們的系統中唯一隱含的音效。 這表示使用者並未直接與任何項目互動，但仍會聽到音效。
+**Focus** 音效是我們系統中唯一的隱含音效。 這表示使用者並未直接與任何項目互動，但仍會聽到音效。
 
 使用者瀏覽應用程式時會發生對焦，這可利用遊戲台/鍵盤/遙控器或 Kinect 進行。 **Focus** 音效通常不會在 PointerEntered 或滑鼠暫留事件  播放。
 
-若要設定控制項以在控制項取得焦點時播放 **Focus** 音效，請呼叫︰
+若要設定控制項在控制項取得焦點時播放 **Focus** 音效，請呼叫︰
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Focus);

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: acad94c0697f930235af809cc3e2826e4c5befde
-ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
+ms.openlocfilehash: 141a24ca1f828f98231ec35471f7b43229df57e6
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71144958"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684340"
 ---
 # <a name="tabview"></a>TabView
 
@@ -31,7 +31,7 @@ TabView 為 UWP 應用程式提供文件索引標籤。 使用 TabView 的時機
 - 使用者將能夠直接在索引標籤中開啟文件或網頁。
 - 使用者將能夠在視窗之間拖放索引標籤。
 
-如果 TabView 不適合您的應用程式，請考慮使用 [Pivot](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot) 或[NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview) 等控制項。
+如果 TabView 不適合您的應用程式，請考慮使用 [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) 或[NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) 等控制項。
 
 ## <a name="anatomy"></a>結構
 
@@ -91,7 +91,7 @@ private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEven
 
 由於使用者可以拖曳視窗的標題列來重新置放視窗，所以標題列不能完全填滿索引標籤，這點很重要。 因此，在標題列中顯示索引標籤時，您必須指定標題列的一部分，以保留為可拖曳的區域。 如果您沒有指定可拖曳的區域，整個標題列將會是可拖曳的，這會導致您的索引標籤無法接收輸入事件。 如果您的 TabView 會顯示在視窗的標題列中，您應該一律在 TabView 中包含 TabStripFooter，並將它標示為可拖曳的區域。
 
-如需詳細資訊，請參閱[標題列自訂](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar)
+如需詳細資訊，請參閱[標題列自訂](https://docs.microsoft.com/windows/uwp/design/shell/title-bar)
 
 ![標題列中的索引標籤](images/tabview/tab-extend-to-title.png)
 
@@ -151,7 +151,7 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 
 | TabWidthMode 值 | 行為                                                                                                                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Equal              | 新增索引標籤時，所有索引標籤會水平縮小，直到達到非常小的最小寬度為止。                                                       |
+| 等於              | 新增索引標籤時，所有索引標籤會水平縮小，直到達到非常小的最小寬度為止。                                                       |
 | SizeToContent      | 索引標籤一律會是其「自然大小」，也就是顯示其圖示和標題所需的最小大小。 當新增或關閉索引標籤時，它們不會展開或縮小。 |
 
 無論您選擇任何值，最後都有可能會有太多索引標籤顯示在索引標籤區域中。 在此情況下將會顯示捲軸，讓使用者可向左或向右滾動 TabStrip。
@@ -293,6 +293,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## <a name="related-articles"></a>相關文章
 
-- [MasterDetails](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview)
-- [樞紐分析](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
+- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
+- [樞紐分析](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)

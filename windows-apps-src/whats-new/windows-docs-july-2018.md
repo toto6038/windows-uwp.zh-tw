@@ -5,18 +5,18 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 7 月
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c92de1901c9cc67a30f495e34289bac5d7d2b94
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f4e9ce391aa485e681fc198e14fe3374edb72aa1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258800"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684711"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>2018 年 7 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、開發人員指引、影片和範例已在 7 月份提供使用。
 
-在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -29,7 +29,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 請查看我們的 PWA 指南，以：
 
 * [建置簡單的 Web 應用程序作為 PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started) \(英文\)
-* [使用 Windows 執行階段增強您的 PWA](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features) \(英文\)
+* [使用 Windows 執行階段增強您的 PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features) \(英文\)
 * [將您的 PWA 發佈到 Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store) \(英文\)
 
 ### <a name="notepad"></a>記事本
@@ -66,7 +66,7 @@ Adobe XD 和 Adobe Illustrator 工具組已更新了新功能。 這些設計工
 
 * [將 WebVR 與 Microsoft Edge 搭配使用](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge) \(英文\)：已更新，其中包含有關 Windows 10 2018 年 4 月更新的資訊。
 
-## <a name="videos"></a>影片
+## <a name="videos"></a>視訊
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>開發人員入門：在 Window 10 上建立和自訂表單
 

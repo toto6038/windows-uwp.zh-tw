@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系統管理, python 檔案自動化, windows 上的 python 指令碼, 在 windows 上設定 python, windows 上的 python 開發人員環境, windows 上的 python 開發環境, python 搭配 powershell, 適用於檔案系統工作的 python 指令碼
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3f8a17de8121fed27e69442d5560f702a04c8e42
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314862"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683651"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>開始在 Windows 上使用 Python 進行指令碼處理和自動化
 
@@ -24,7 +24,7 @@ ms.locfileid: "72314862"
 
 ## <a name="set-up-your-development-environment"></a>設定開發環境
 
-使用 Python 撰寫執行檔案系統作業的指令碼時，建議您從 [Microsoft Store 安裝 Python](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 透過 Microsoft Store 進行安裝會使用基本 Python3 解譯器，但會處理目前使用者的 PATH 設定 (避免需要系統管理員存取權)，而且還會提供自動更新。
+使用 Python 撰寫執行檔案系統作業的指令碼時，建議您從 [Microsoft Store 安裝 Python](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 透過 Microsoft Store 進行安裝會使用基本 Python3 解譯器，但會處理目前使用者的 PATH 設定 (避免需要系統管理員存取權)，而且還會提供自動更新。
 
 如果您在 Windows 上使用 Python 進行  **Web 開發**，建議您使用 Windows 子系統 Linux 版進行不同的設定。 在我們的指南中尋找逐步解說：[開始在 Windows 上使用 Python 進行 Web 開發](./web-frameworks.md)。 如果您初次使用 Python，請試用我們的指南：[開始在 Windows 上使用適用於初學者的 Python](./beginners.md)。 對於某些進階案例 (例如，需要存取/修改 Python 的安裝檔案、製作二進位檔的複本，或直接使用 Python DL)，您可能會想要考慮直接從 [python.org](https://www.python.org/downloads/) 下載特定的 Python 版本，或考慮安裝[替代項目](https://www.python.org/download/alternatives)，例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是資深 Python 程式設計人員，且有選擇替代實作的特定原因時，才建議這樣做。
 
@@ -48,7 +48,7 @@ ms.locfileid: "72314862"
 
 ## <a name="install-the-microsoft-python-extension"></a>安裝 Microsoft Python 延伸模組
 
-您必須安裝 Microsoft Python 延伸模組，才能利用 VS Code 支援功能。 [進一步了解](https://code.visualstudio.com/docs/languages/python)。
+您必須安裝 Microsoft Python 延伸模組，才能利用 VS Code 支援功能。 [深入了解](https://code.visualstudio.com/docs/languages/python)。
 
 1. 輸入 **Ctrl+Shift+X** (或使用功能表瀏覽至 [檢視]   >  [延伸模組]  )，以開啟 VS Code 延伸模組視窗。
 

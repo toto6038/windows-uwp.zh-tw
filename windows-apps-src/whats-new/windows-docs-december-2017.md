@@ -5,24 +5,24 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 12 月
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 17238dd886b76e16b0fe63151a73d4a3a5c23704
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f785ad5d7898f838435e0a05cf8dea5c778e70f3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259753"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684756"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 發行 Fall Creators Update 後已有下列功能概觀、開發人員指引和範例可以使用，包含提供給 Windows 開發人員的全新及更新資訊。
 
-在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
 ### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality：愛好者指南
 
-以深入混合實境世界的高科技愛好者為目標對象，[愛好者指南](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)回答大家對於 Windows Mixed Reality Windows 最常問的問題。 
+以深入混合實境世界的高科技愛好者為目標對象，[愛好者指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/)回答大家對於 Windows Mixed Reality Windows 最常問的問題。 
 
 本指南提供下列內容： 
 - 購買之前常見問題集 
@@ -44,7 +44,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Microsoft Collaborate 入口網站提供工具和服務，透過啟用工程系統工作項目 (錯誤、功能要求等) 的共用以及內容發佈 (組建、文件、規格) 來簡化 Microsoft 生態系統內的工程共同作業。 [進一步瞭解](https://docs.microsoft.com/collaborate/)。
+Microsoft Collaborate 入口網站提供工具和服務，透過啟用工程系統工作項目 (錯誤、功能要求等) 的共用以及內容發佈 (組建、文件、規格) 來簡化 Microsoft 生態系統內的工程共同作業。 [深入了解](https://docs.microsoft.com/collaborate/)。
 
 ![在合作夥伴中心的 Microsoft 共同作業](images/microsoft_collaborate_screenshot.PNG)
 
@@ -93,7 +93,7 @@ Visual Studio 2017 版本 15.5 已經更新 **Windows 應用程式封裝專案**
 
 [客戶訂單資料庫](https://github.com/Microsoft/Windows-appsample-customers-orders-database)範例已更新，現在會顯示資料存取 (例如使用存放庫模式) 的相關最佳做法，以及如何連接至多個資料來源 (包括 Sqlite、SQL Azure 及 REST 服務)。
 
-## <a name="videos"></a>影片
+## <a name="videos"></a>視訊
 
 ### <a name="package-a-net-app-in-visual-studio"></a>在 Visual Studio 中封裝 .NET 應用程式
 

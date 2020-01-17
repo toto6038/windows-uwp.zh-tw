@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: dc696c9a57e84e2caade6a2623a72a6048b65621
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 9fb08278391118215063c293b71ffde1ed4443b8
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319102"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684113"
 ---
 # <a name="teaching-tip"></a>教學提示
 
@@ -71,11 +71,11 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Save automatically"
             Subtitle="When you save your file to OneDrive, we save your changes as you go - so you never have to.">
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -106,10 +106,10 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to.">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 請注意，在此範例中，TeachingTip 是在元素樹狀結構中，而不是在 ResourceDictionary 或程式碼後置中。 這不影響行為；TeachingTip 只在開啟時顯示，且不佔版面配置空間。
@@ -120,7 +120,7 @@ XAML
 
 教學提示使用 TeachingTipPlacementMode 屬性，複寫 Flyout 的[FlyoutPlacementMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行為。 預設放置模式會嘗試將有目標教學提示放置在其目標上方，並將無目標教學提示置中在 XAML 根底部。 和 Flyout 一樣，如果慣用放置模式會沒有空間顯示教學提示，系統會自動選擇其他放置模式。 
 
-對於預測遊戲台輸入的應用程式，請參閱[遊戲台與遙控器的互動]( https://docs.microsoft.com/en-us/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)。 建議您測試的使用應用程式 UI 的所有可能設定，測試每個教學提示的遊戲台協助工具。
+對於預測遊戲台輸入的應用程式，請參閱[遊戲台與遙控器的互動]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)。 建議您測試的使用應用程式 UI 的所有可能設定，測試每個教學提示的遊戲台協助工具。
 
 PreferredPlacement 設定為 "BottomLeft" 的有目標教學提示會顯示為尾端置中在其目標底部，且提示的主體會向右位移。
 
@@ -128,12 +128,12 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
             PreferredPlacement="BottomLeft">
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -147,11 +147,11 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     PreferredPlacement="BottomLeft">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![範例應用程式，包含位在左下角的教學提示。 提示標題為 [自動儲存]，子標題為 [系統會在您工作時儲存您的變更，您永遠不需要再自行儲存了。]。 教學提示的右上角有關閉按鈕。](../images/teaching-tip-non-targeted-preferred-placement.png)
@@ -164,7 +164,7 @@ XAML
 
 ### <a name="add-a-placement-margin"></a>新增放置邊界  
 
-您可以使用 PlacementMargin 屬性來控制有目標教學提示與其目標的距離，也可控制無目標教學提示與 XAML 根邊緣的距離。 和 [Margin](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.margin) 一樣，PlacementMargin 有四個值 (左、右、上和下)，因此只會使用相關的值。 例如，PlacementMargin.Left 適用於提示是在目標左側時，或是在 XAML 根的左側邊緣時。
+您可以使用 PlacementMargin 屬性來控制有目標教學提示與其目標的距離，也可控制無目標教學提示與 XAML 根邊緣的距離。 和 [Margin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin) 一樣，PlacementMargin 有四個值 (左、右、上和下)，因此只會使用相關的值。 例如，PlacementMargin.Left 適用於提示是在目標左側時，或是在 XAML 根的左側邊緣時。
 
 下列範例顯示 PlacementMargin 的 Left/Top/Right/Bottom 都設定為 80 的無目標提示。
 
@@ -172,12 +172,12 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     PreferredPlacement="BottomLeft"
     PlacementMargin="80">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![範例應用程式，包含放置在右下角方向，但未完全接觸角落的教學提示。 提示標題為 [自動儲存]，子標題為 [系統會在您工作時儲存您的變更，您永遠不需要再自行儲存了。]。 教學提示的右上角有關閉按鈕。](../images/teaching-tip-placement-margin.png)
@@ -191,7 +191,7 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to.">
@@ -199,7 +199,7 @@ XAML
                     <CheckBox x:Name="HideTipsCheckBox" Content="Don't show tips at start up" IsChecked="{x:Bind HidingTips, Mode=TwoWay}" />
                     <TextBlock>You can change your tip preferences in <Hyperlink NavigateUri="app:/item/SettingsPage">Settings</Hyperlink> if you change your mind.</TextBlock>
                 </StackPanel>
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -218,7 +218,7 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources> 
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
@@ -229,7 +229,7 @@ XAML
                     <CheckBox x:Name="HideTipsCheckBox" Content="Don't show tips at start up" IsChecked="{x:Bind HidingTips, Mode=TwoWay}" />
                     <TextBlock>You can change your tip preferences in <Hyperlink NavigateUri="app:/item/SettingsPage">Settings</Hyperlink> if you change your mind.</TextBlock>
                 </StackPanel>
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -244,14 +244,14 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources> 
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to.">
-            <controls:TeachingTip.HeroContent>
+            <muxc:TeachingTip.HeroContent>
                 <Image Source="Assets/cloud.png" />
-            </controls:TeachingTip.HeroContent>
-        </controls:TeachingTip>
+            </muxc:TeachingTip.HeroContent>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -266,14 +266,14 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
-            <controls:TeachingTip.IconSource>
-                <controls:SymbolIconSource Symbol="Save" />
-            </controls:TeachingTip.IconSource>
-        </controls:TeachingTip>
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Save" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -290,11 +290,11 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     IsLightDismissEnabled="True">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![範例應用程式，包含位在右下角的消失關閉教學提示。 提示標題為 [自動儲存]，子標題為 [系統會在您工作時儲存您的變更，您永遠不需要再自行儲存了。]。](../images/teaching-tip-light-dismiss.png)
@@ -309,13 +309,13 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     PreferredPlacement="BottomRight"
     PlacementMargin="-80,-50,0,0"
     ShouldConstrainToRootBounds="False">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![範例應用程式，包含超出應用程式右下角的教學提示。 提示標題為 [自動儲存]，子標題為 [系統會在您工作時儲存您的變更，您永遠不需要再自行儲存了。]。 教學提示的右上角有關閉按鈕。](../images/teaching-tip-escape-xaml-root.png)
@@ -328,11 +328,11 @@ Closing 事件可用來取消和/或延遲教學提示的關閉。 這可用來�
 
 XAML
 ```XAML
-<controls:TeachingTip x:Name="EnableNewSettingsTip"
+<muxc:TeachingTip x:Name="EnableNewSettingsTip"
     Title="New ways to protect your privacy!"
     Subtitle="Please close this tip and review our updated privacy policy and privacy settings."
     Closing="OnTipClosing">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 C#
@@ -359,13 +359,13 @@ public void OnTipClosing(object sender, TeachingTipClosingEventArgs args)
 
 ### <a name="related-articles"></a>相關文章 
 
-* [對話方塊和飛出視窗](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
+* [對話方塊和飛出視窗](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
 
 ### <a name="recommendations"></a>建議
 * 提示是暫時的，所以不應該包含對應用程式體驗影響重大的資訊或選項。 
 * 請盡量避免太頻繁顯示教學提示。 當教學提示是在長工作階段或多個工作階段之間交錯顯示時，最有可能個別受到注意。    
 * 保持提示簡潔且其主題明確。 研究顯示使用者在決定是否要與提示互動之前，平均只讀 3-5 個字，且只理解 2-3 個字。
-* 不保證教學提示的遊戲台協助工具。 對於預測遊戲台輸入的應用程式，請參閱[遊戲台與遙控器的互動]( https://docs.microsoft.com/en-us/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)。 建議您測試的使用應用程式 UI 的所有可能設定，測試每個教學提示的遊戲台協助工具。
+* 不保證教學提示的遊戲台協助工具。 對於預測遊戲台輸入的應用程式，請參閱[遊戲台與遙控器的互動]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)。 建議您測試的使用應用程式 UI 的所有可能設定，測試每個教學提示的遊戲台協助工具。
 * 啟用讓叫學提示逸出 XAML 根之後，建議您也啟用 IsLightDismissEnabled 屬性，並將 PreferredPlacement 模式設定在最接近 XAML 根中央的位置。 
 
 ### <a name="reconfiguring-an-open-teaching-tip"></a>重新設定開啟的教學提示

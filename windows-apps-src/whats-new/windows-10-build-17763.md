@@ -6,22 +6,22 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1c2e6ee84b143ea13aa3e804f288e4dd9e0becec
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d26d88377aec4306ad0711724760ec13e6568d85
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258854"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684760"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員的 Windows 10 (組建 17763) 的新功能
 
-Windows 10 組建 17763 (也稱為 2018 年 10 月更新或版本 1809) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 17763 (也稱為 2018 年 10 月更新或版本 1809) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
 這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指導方針的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 17763 API 變更](windows-10-build-17763-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
 
 ## <a name="design--ui"></a>設計與 UI
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 應用程式圖示及標誌 | [應用程式圖示和標誌頁面](../design/style/app-icons-and-logos.md)已重寫，現在會顯示最新的 Visual Studio 圖示工具，並提供有關將影像加入至 Microsoft Store 中的應用程式清單的資訊。
 設計登陸頁面 | [更新的設計登陸頁面](https://developer.microsoft.com/windows/apps/design)概述了 UWP 設計區域以及有關 Fluent Design 最新新增項目的資訊。
@@ -33,12 +33,12 @@ Fluent Design 中的動作 | Fluent Design System 中運動的使用正在不斷
 頁面轉換 | [頁面轉換](../design/motion/page-transitions.md)可在應用程式中的頁面之間導覽使用者。 它們可以幫助使用者了解他們在導覽階層架構中的位置，並提供有關頁面之間關聯性的意見反應。
 文字大小調整 | 新的[文字大小調整指引](../design/input/text-scaling.md)說明如何更新您的應用程式，以配合新的文字大小調整行為，這些行為讓使用者能夠跨 OS 和個別的應用程式變更相對字型大小。 相較於使用 [放大鏡] 應用程式 (通常只是放大螢幕區域內的所有內容，並引進自己的可用性問題)、變更顯示器解析度，或依賴 DPI 縮放比例 (根據顯示器和一般觀看距離調整所有內容)，使用者可以快速存取設定以僅調整文字大小，範圍從 100% (預設大小) 到 225%。
 工具組 | [Adobe XD 和 Adobe Illustrator 工具組](../design/downloads/index.md)已更新了新功能。 這些設計工具組提供控制項與版面配置範本，可用於設計 UWP 應用程式。
-UI 命令 | [UWP 命令基礎結構](../design/basics/commanding-basics.md)的更新包括更好的命令物件封裝 (行為、標籤、圖示、鍵盤快速鍵、便捷鍵和描述) 以及一組標準的常用命令，包括剪下、複製、貼上、退出等等，這就不需要手動設定這些屬性。 </br> 新的 [XamlUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xamluicommand) 類別提供了一個基底類別，用於定義在叫用時執行動作之互動式 UI 元素的命令行為。 這是 [StandardUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.standarduicommand) 的父類別，它公開了一組具有預先定義屬性的標準平台命令。 
+UI 命令 | [UWP 命令基礎結構](../design/basics/commanding-basics.md)的更新包括更好的命令物件封裝 (行為、標籤、圖示、鍵盤快速鍵、便捷鍵和描述) 以及一組標準的常用命令，包括剪下、複製、貼上、退出等等，這就不需要手動設定這些屬性。 </br> 新的 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 類別提供了一個基底類別，用於定義在叫用時執行動作之互動式 UI 元素的命令行為。 這是 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 的父類別，它公開了一組具有預先定義屬性的標準平台命令。 
 Windows UI 程式庫 | [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)是一組 NuGet 套件，可提供 UWP 應用程式的控制項和其他使用者介面元素。 這些套件也提供對舊版 Windows 10 的向下相容性，因此即便您的使用者沒有最新版本的作業系統，您的應用程式仍可運作。 </br> 如需 Windows UI 程式庫中之內容的詳細資訊，請參閱 [NuGet 套件中所包含的此 API 命名空間清單](https://docs.microsoft.com/uwp/api/overview/winui/)。
 
 ## <a name="develop-windows-apps"></a>開發 Windows 應用程式
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 條碼掃描器 | [條碼掃描器](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner)文件已重新組織，並使用更多詳細資訊和程式碼片段進行改善。 我們還新增了一個新主題[取得並了解條碼資料](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-scan-data)，其中介紹了如何從條碼掃描器取得和處理資料。
 C++/WinRT | [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index) 包含此版本的許多新功能、變更和修正。 有一些新的函式和基底類別可以幫助您實作您自己的[集合屬性和集合型別](/windows/uwp/cpp-and-winrt-apis/collections)；現在，您可以將 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) XAML 標記延伸與 C++/WinRT 執行階段類別一起使用 (如需程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart))。 如需此版本中所有新增內容和變更內容的完整說明，請參閱 [C++/WinRT 的新功能](../cpp-and-winrt-apis/news.md)。</br></br>其他新的 C++/WinRT 內容包括：[XAML 自訂控制項](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl)；[撰寫 COM 元件](/windows/uwp/cpp-and-winrt-apis/author-coclasses)；[值分類](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories)；和[強式和弱式參考](../cpp-and-winrt-apis/weak-references.md)。
@@ -57,7 +57,7 @@ Windows Mixed Reality | 如果顯示器硬體支援，開發人員現在可以�
 
 ## <a name="iot-core"></a>IoT 核心版
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 AssignedAccessSettings | [AssignedAccessSettings 類別](https://docs.microsoft.com/uwp/api/windows.system.userprofile.assignedaccesssettings)允許呼叫不同的方法和屬性，來存取使用者為特定裝置指派的存取設定。
 預設應用程式概觀 | [Windows 10 IoT 核心版預設應用程式](https://docs.microsoft.com/windows/iot-core/develop-your-app/iotcoredefaultapp)已使用新功能進行更新，例如天氣、筆跡及音訊。
@@ -69,16 +69,16 @@ Windows.System.Update | 新的 [Windows.System.Update 命名空間](https://docs
 
 ## <a name="web-development"></a>Web 開發
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 EdgeHTML 18 | Windows 10 2018 年 10 月更新隨附 [EdgeHTML 18](https://docs.microsoft.com/microsoft-edge/dev-guide)，這是 Microsoft Edge 瀏覽器的最新更新和適用於 UWP 應用程式的 JavaScript 引擎。 EdgeHTML 18 為 Web 驗證 API、新的 WebView 控制項功能和更多功能帶來了現代化和擴充支援！ 在工具方面，EdgeHTML 18 帶入新的 WebDriver 功能和自動更新，以及 Edge DevTools 和 Edge DevTools 通訊協定的增強功能。 如需所有詳細資料，請參閱 [EdgeHTML 18 中的新功能](https://docs.microsoft.com/microsoft-edge/dev-guide)和[最新 Windows 10 更新 (EdgeHTML 18) 中的 DevTools](https://docs.microsoft.com/microsoft-edge/devtools-guide/whats-new)。
-漸進式 Web 應用程式 | Windows 10 JavaScript 應用程式 (在 *WWAHost.exe* 程序中執行的 Web 應用程式) 現在支援選用的[每個應用程式背景指令碼](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide#progressive-web-apps)，該指令碼會在任何檢視啟動之前啟動，並在程序中執行一段時間。 以此方式，您可以監視和修改導覽、追蹤導覽狀態、監視導覽錯誤，並在啟動檢視之前執行程式碼。 當在[應用程式資訊清單](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest)中指定為 [`StartPage`](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema2010-v2/element-application) 時，每個應用程式的檢視 (視窗) 都會作為新 [`WebUIView`](https://docs.microsoft.com/en-us/uwp/api/windows.ui.webui.webuiview) 類別的執行個體公開給指令碼，提供與一般 (Win32) [WebView](https://docs.microsoft.com/en-us/uwp/api/windows.web.ui.iwebviewcontrol) 相同的事件、屬性和方法。
+漸進式 Web 應用程式 | Windows 10 JavaScript 應用程式 (在 *WWAHost.exe* 程序中執行的 Web 應用程式) 現在支援選用的[每個應用程式背景指令碼](https://docs.microsoft.com/microsoft-edge/dev-guide#progressive-web-apps)，該指令碼會在任何檢視啟動之前啟動，並在程序中執行一段時間。 以此方式，您可以監視和修改導覽、追蹤導覽狀態、監視導覽錯誤，並在啟動檢視之前執行程式碼。 當在[應用程式資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中指定為 [`StartPage`](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema2010-v2/element-application) 時，每個應用程式的檢視 (視窗) 都會作為新 [`WebUIView`](https://docs.microsoft.com/uwp/api/windows.ui.webui.webuiview) 類別的執行個體公開給指令碼，提供與一般 (Win32) [WebView](https://docs.microsoft.com/uwp/api/windows.web.ui.iwebviewcontrol) 相同的事件、屬性和方法。
 Web API 擴充功能 | Mozilla Developer Network 文件中新增了[舊版 Microsoft API 擴充功能](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)的清單，以用於跨瀏覽器 Web 開發。 這些 API 擴充功能是 Internet Explorer 或 Microsoft Edge 獨有的，並補充了有關 MDN Web 文件中的相容性和和瀏覽器支援的現有資訊。舊版 Microsoft [CSS 延伸模組](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)和 [JavaScript 延伸模組](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)也可以使用，您可以在 [Visual Studio Code](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn) 中直接找到 MDN 中的豐富 Web API 資訊。
 WebVR | 我們對 [WebVR 開發人員指南](https://docs.microsoft.com/microsoft-edge/webvr/)做了重大更新，包括完整重新設計的首頁和重新組織的目錄。 我們還編寫了幾個新主題，包括： </br> * [什麼是 WebVR？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) 說明何謂 WebVR、為什麼您應該使用它，以及如何開始針對它進行開發。 </br> * [漸進式 Web 應用程式中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas)：了解如何將 WebVR 新增至漸進式 Web 應用程式 (PWA)。 </br> * [WebView 中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview)：了解如何將 WebVR 新增至 Windows 10 應用程式中的 WebView 控制項。 </br> * [WebVR 示範](https://docs.microsoft.com/microsoft-edge/webvr/demos)：請參閱一些使用 Microsoft Edge 和 Windows Mixed Reality 沉浸式頭戴裝置的 WebVR 示範。
 
 ## <a name="publish--monetize-windows-apps"></a>發佈 Windows 應用程式以及從中獲利
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview) 是新的 Windows 應用程式封裝格式，為所有 Windows 應用程式提供現代化的封裝體驗。 開放原始碼的 MSIX 格式保留現有的封裝功能，同時提供現代化的部署功能。
 MSIX 封裝工具 | 新的 [MSIX 封裝工具](https://docs.microsoft.com/windows/msix/mpt-overview)) 允許您以 MSIX 格式重新封裝您現有的傳統型應用程式，即使您無法存取其原始程式碼。 它可以在命令列中執行，也可以透過其互動式 UI 執行。
@@ -87,7 +87,7 @@ MSIX 封裝工具 | 新的 [MSIX 封裝工具](https://docs.microsoft.com/window
 套件支援架構 | [套件支援架構](https://docs.microsoft.com/windows/msix/package-support-framework-overview)是開放原始碼套件，可在您無法存取原始碼時，協助將修正程式套用到現有的傳統型應用程式，使其可以在 MSIX 容器中執行。
 Store 分析 API | [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 現在包含下列新方法： </br> * [取得 UWP 應用程式的深入解析資料](../monetize/get-insights-data-for-your-app.md) </br> * [取得傳統型應用程式的深入解析資料](../monetize/get-insights-data-for-your-desktop-app.md) </br>* [取得傳統型應用程式的升級區塊](../monetize/get-desktop-block-data.md) </br> * [取得傳統型應用程式的升級區塊詳細資料](../monetize/get-desktop-block-data-details.md)
 
-## <a name="videos"></a>影片
+## <a name="videos"></a>視訊
 
 下列影片自 Fall Creators Update 發行後即已發佈，重點說明 Windows 10 中適用於開發人員的新功能及改良功能。
 

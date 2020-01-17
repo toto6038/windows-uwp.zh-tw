@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f2c63c90170a633ae718db618c502efa41fb3f7d
-ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
+ms.openlocfilehash: 0e9e0a426d51fddaf4ff509438176e9db7a3e474
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680759"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684123"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 
@@ -55,7 +55,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
 3. 使用 Polygon 元素建立曝光滑桿的背景圖形。
 
-    [Windows.XAML.Ui.Shapes 命名空間](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)提供七個可以選擇的圖形。 有橢圓形、矩形，以及所謂「路徑」的項目，這可建立任何類型的圖形；是的，甚至獨角獸都行！ 
+    [Windows.XAML.Ui.Shapes 命名空間](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes)提供七個可以選擇的圖形。 有橢圓形、矩形，以及所謂「路徑」的項目，這可建立任何類型的圖形；是的，甚至獨角獸都行！ 
     
     <!-- TODO reduce size -->
     ![獨角獸](../basics/images/xaml-basics/unicorn.png)
@@ -107,8 +107,8 @@ PhotoLab 應用程式有兩個主要頁面：
         Maximum="2" />
     ```
 
-    注意：
-    * 如果查看 XAML 周圍，您會看到這些元素是在 Grid 中。 我們將多邊形放在曝光滑桿的的同一列 (Grid.Row="2")，因此這些元素會出現在相同位置。 我們將多邊形放在滑桿之前，讓滑桿顯示在圖形的最上方。
+    附註：
+    * 如果查看 XAML 周圍，您會看到這些元素是在 Grid 中。 我們將多邊形放在曝光滑桿的同一列 (Grid.Row="2")，因此這些元素會出現在相同位置。 我們將多邊形放在滑桿之前，讓滑桿顯示在圖形的最上方。
     * 我們在多邊形上設定 Stretch="Fill" 和 HorizontalAlignment="Stretch"，讓三角形調整以填滿可用空間。 如果滑桿寬度變小或變大，多邊形也會縮小或擴大，與之相配合。 
 
 4. 編譯和執行應用程式。 滑桿現在看起來超棒：
@@ -177,7 +177,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
 XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式碼數量，而且可以讓您更輕鬆地更新應用程式外觀。
 
-若要定義樣式，請將 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素新增至包含需要設定樣式之控制項的元素的 [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) 屬性。  如果將樣式新增至 **Page.Resources** 屬性，整個頁面都可以存取您的樣式。 如果將樣式新增至 App.xaml 檔案中的 **Application.Resources** 屬性，整個應用程式都可以存取該樣式。
+若要定義樣式，請將 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素新增至包含需要設定樣式之控制項的元素的 [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) 屬性。  如果將樣式新增至 **Page.Resources** 屬性，整個頁面都可以存取您的樣式。 如果將樣式新增至 App.xaml 檔案中的 **Application.Resources** 屬性，整個應用程式都可以存取該樣式。
 
 您可以建立具名樣式和一般樣式。 具名樣式必須明確套用至特定控制項；一般樣式則套用至任何符合指定之 **TargetType** 的控制項。 
 

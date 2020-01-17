@@ -5,21 +5,21 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: edd9f5e56f78a4fef34f5ddff85f64ada73dc68a
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 17c14d7147cafa17e78bd13bf6684a99d87cbdfd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282304"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684414"
 ---
 # <a name="item-templates-for-grid-view"></a>方格檢視的項目範本
 
-本節包含的項目範本，您可以用來搭配 [**GridView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView) 控制項。 使用這些範本可取得通用應用程式類型的外觀。
+本節包含的項目範本，您可以用來搭配 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 控制項。 使用這些範本可取得通用應用程式類型的外觀。
 
 為了示範資料繫結，這些範本會將 **ViewItems** 繫結至[資料繫結概觀](../../data-binding/data-binding-quickstart.md)的範例 Recording 類別。
 
 > [!NOTE] 
-> 目前，當 **DataTemplate** 包含多個控制 (例如不只一個 **TextBlock**)，螢幕助讀程式的預設可存取名稱來自項目的 .ToString()。 為了方便起見，您可以改為在 **DataTemplate** 的根元素上設定 [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties)。 如需協助工具的詳細資訊，請參閱[協助工具概觀](../accessibility/accessibility-overview.md)。
+> 目前，當 **DataTemplate** 包含多個控制 (例如不只一個 **TextBlock**)，螢幕助讀程式的預設可存取名稱來自項目的 .ToString()。 為了方便起見，您可以改為在 **DataTemplate** 的根元素上設定 [**AutomationProperties.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties)。 如需協助工具的詳細資訊，請參閱[協助工具概觀](../accessibility/accessibility-overview.md)。
 
 ## <a name="icon-and-text"></a>圖示和文字
 使用這些範本可在方格中以圖示和文字顯示應用程式集合。
@@ -156,7 +156,7 @@ ms.locfileid: "72282304"
 ```
 
 ## <a name="related-articles"></a>相關文章
-- [GridView 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [GridView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [資料繫結概觀](../../data-binding/data-binding-quickstart.md)
 - [協助工具概觀](../accessibility/accessibility-overview.md)
 - [ListView 和 GridView 範例 (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

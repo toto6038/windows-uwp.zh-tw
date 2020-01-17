@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: f416db0266c4ab2ec959c926c0bf0b676b66dd95
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 824476cb098d0ff561fca67497a896586c70b8fb
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258710"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681959"
 ---
 # <a name="reveal-focus"></a>顯示焦點
 
@@ -74,7 +74,7 @@ ms.locfileid: "74258710"
 
 但是在您開始進行自訂之前，先多了解一點構成顯示焦點的元件是件很有幫助的事。
 
-預設的顯示焦點視覺效果有三個部分︰主要框線、次要框線和顯示光暈。 主要框線的粗細為 **2px**，圍繞在次要框線「外」  。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」* 。 顯示焦點光暈的粗細會與主要框線的粗細成比例，並圍繞在主要框線「之外」  。
+預設的顯示焦點視覺效果有三個部分︰主要框線、次要框線和顯示光暈。 主要框線的粗細為 **2px**，圍繞在次要框線「外」  。 次要框線的粗細為 **1px**，圍繞在主要框線「內」  。 顯示焦點光暈的粗細會與主要框線的粗細成比例，並圍繞在主要框線「之外」  。
 
 除了靜態元素之外，顯示焦點視覺效果還具有能在靜止時規律波動，並在移動焦點時依焦點方向移動的動畫光源。
 
@@ -108,7 +108,7 @@ ms.locfileid: "74258710"
 
 ## <a name="customize-the-color"></a>自訂色彩
 
-若要變更的顯示焦點視覺效果的色彩，請使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) \(英文\) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) \(英文\) 屬性。
+若要變更的顯示焦點視覺效果的色彩，請使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) \(英文\) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) \(英文\) 屬性。
 
 | 屬性 | 預設資源 | 預設資源值 |
 | ---- | ---- | --- | 

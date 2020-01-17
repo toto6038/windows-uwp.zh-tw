@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 343fa50dbe9a0574914dc96b9fac450475a69b0a
-ms.sourcegitcommit: 87ddc67d31668a6351206bda3546ffbabb7b4551
+ms.openlocfilehash: b2b60354acb2c3d97ced3dce0b3fb7f6d97ac35d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807841"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684768"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
 ## <a name="a-simple-2d-uwp-game-for-the-microsoft-store-written-in-javascript-and-createjs"></a>以 JavaScript 和 CreateJS 撰寫且適用於 Microsoft Store 的簡單 2D UWP 遊戲
 
 
-![Walking Dino Sprite 工作表](images/JS2D_1.png)
+![Walking Dino 原件表](images/JS2D_1.png)
 
 
 ## <a name="introduction"></a>簡介
@@ -260,7 +260,7 @@ Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都
 
 程序有幾個步驟。
 
-1. 您必須[註冊](https://developer.microsoft.com/en-us/store/register)為 Windows 開發人員。
+1. 您必須[註冊](https://developer.microsoft.com/store/register)為 Windows 開發人員。
 2. 您必須使用應用程式提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 3. 必須提交應用程式以取得[認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 

@@ -1,6 +1,6 @@
 ---
 description: 能建立半透明紋理的筆刷類型。
-title: 壓克力素材
+title: 壓克力材質
 template: detail.hbs
 ms.date: 08/09/2017
 ms.topic: article
@@ -10,20 +10,20 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed9feb6edae58b906d4f37f0e1f011d4fa42ee9
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 55d8ed5fa1e3c4a7ffffaf47583eca3796f081cf
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867738"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683981"
 ---
-# <a name="acrylic-material"></a>壓克力素材
+# <a name="acrylic-material"></a>壓克力材質
 
 ![主角圖像](images/header-acrylic.svg)
 
-Acrylic 是一種能建立半透明紋理的 [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush) \(英文\) 類型。 您可以將壓克力套用到應用程式表面來增加深度，並協助建立視覺階層。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic 是一種能建立半透明紋理的 [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) \(英文\) 類型。 您可以將壓克力套用到應用程式表面來增加深度，並協助建立視覺階層。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **重要 API**：[AcrylicBrush 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush) \(英文\)、[Background 屬性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background) \(英文\)
+> **重要 API**：[AcrylicBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush) \(英文\)、[Background 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.Background) \(英文\)
 
 :::row:::
     :::column:::

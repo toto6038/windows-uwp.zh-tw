@@ -5,18 +5,18 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fa773cdb174369e14c12c4f805f3a57e2ff6eef
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 65c3c2fb4b7a5a7f0b5f4b3c89773f3e21bd654d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258822"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684744"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 最近已有下列功能概觀、開發人員指引和程式碼範例可以使用，包含提供給 Windows 開發人員的全新及更新資訊。
 
-在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/your-first-app.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/your-first-app.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -106,7 +106,7 @@ SDK 預覽組建中有新的 TaskbarManager 類別提供給 [Windows 測試人�
 
 ### <a name="scoped-search"></a>限定範圍的搜尋
 
-「UWP」範圍已新增至 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 參考](https://docs.microsoft.com/en-us/uwp/api/)文件。 除非停用這個範圍，否則從這些區域中進行的搜尋只會傳回 UWP 文件。
+「UWP」範圍已新增至 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 參考](https://docs.microsoft.com/uwp/api/)文件。 除非停用這個範圍，否則從這些區域中進行的搜尋只會傳回 UWP 文件。
 
 ![限定範圍的搜尋](images/scoped-search.png)
 
@@ -128,11 +128,11 @@ SDK 預覽組建中有新的 TaskbarManager 類別提供給 [Windows 測試人�
 
 ![購物應用程式範例的螢幕擷取畫面](images/shoppingcart.png)  
 
-## <a name="videos"></a>影片
+## <a name="videos"></a>視訊
 
 ### <a name="accessibility"></a>協助工具
 
-將協助工具建置在您的應用程式中，將應用程式推廣至更廣大的客群。 [觀看影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility)，然後深入了解[開發無障礙應用程式](https://developer.microsoft.com/en-us/windows/accessible-apps)。
+將協助工具建置在您的應用程式中，將應用程式推廣至更廣大的客群。 [觀看影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility)，然後深入了解[開發無障礙應用程式](https://developer.microsoft.com/windows/accessible-apps)。
 
 ### <a name="payments-request-api"></a>付款要求 API
 
@@ -140,4 +140,4 @@ SDK 預覽組建中有新的 TaskbarManager 類別提供給 [Windows 測試人�
 
 ### <a name="windows-10-iot-core"></a>Windows 10 IoT 核心版
 
-您可以透過 Windows 10 IoT 核心版和通用 Windows 平台，使用真實視覺及元件連線快速設計原型並建置專案，例如這個「寵物辨識門」。 [觀看影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core)，然後深入了解如何[開始使用 Windows 10 IoT 核心版](https://developer.microsoft.com/en-us/windows/iot)。
+您可以透過 Windows 10 IoT 核心版和通用 Windows 平台，使用真實視覺及元件連線快速設計原型並建置專案，例如這個「寵物辨識門」。 [觀看影片](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core)，然後深入了解如何[開始使用 Windows 10 IoT 核心版](https://developer.microsoft.com/windows/iot)。

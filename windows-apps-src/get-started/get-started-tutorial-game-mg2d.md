@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ddc46c80c0ed9a9999ec7c8e67ab9034803a3d
-ms.sourcegitcommit: deb1cdecf34feaa92b0342adc61a5d08f3f10687
+ms.openlocfilehash: 4300bdc0224a18874a7ff9153195f81f8bb8d101
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68332822"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685054"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>使用 MonoGame 2D 建立 UWP 遊戲
 
@@ -25,9 +25,9 @@ ms.locfileid: "68332822"
 MonoGame 是一個輕量型遊戲開發架構。 本教學課程將會教導您 MonoGame 遊戲開發的基礎，包括如何載入內容、繪製原件、做成動畫，以及處理使用者輸入。 也會討論一些更進階的概念，像是碰撞偵測和為高 DPI 螢幕而放大。 完成本教學課程可能需要 30-60 分鐘。
 
 ## <a name="prerequisites"></a>必要條件
-+   Windows 10 和 Microsoft Visual Studio 2019。  [按一下這裡，以了解如何開始設定 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
++   Windows 10 和 Microsoft Visual Studio 2019。  [按一下這裡，以了解如何開始設定 Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)。
 + .NET 桌面開發架構。 如果您尚未安裝此項，可以重新執行 Visual Studio 安裝程式，並修改您安裝的 Visual Studio 2019 來取得。
-+   C# 或類似物件導向程式設計語言的基本知識。 [按一下此處以了解如何開始使用 C#](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal) \(部分機器翻譯\)。
++   C# 或類似物件導向程式設計語言的基本知識。 [按一下此處以了解如何開始使用 C#](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal) \(部分機器翻譯\)。
 +   熟悉類別、方法和變數等基本電腦科學概念會更有幫助。
 
 ## <a name="why-monogame"></a>為什麼選擇 MonoGame？
@@ -692,10 +692,10 @@ if (gameOver)
 ## <a name="publish-to-the-microsoft-store"></a>發佈至 Microsoft Store
 由於我們將這個遊戲建置為 UWP 應用程式，可將這個專案發佈至 Microsoft Store。 程序有幾個步驟。
 
-您必須[註冊](https://developer.microsoft.com/en-us/store/register)為 Windows 開發人員。
+您必須[註冊](https://developer.microsoft.com/store/register)為 Windows 開發人員。
 
-您必須使用應用程式提交[檢查清單](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions) \(部分機器翻譯\)。
+您必須使用應用程式提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions) \(部分機器翻譯\)。
 
-必須提交應用程式以取得[認證](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process) \(部分機器翻譯\)。
+必須提交應用程式以取得[認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process) \(部分機器翻譯\)。
 
 如需詳細資訊，請參閱[發佈 Windows 應用程式與遊戲](https://docs.microsoft.com/windows/uwp/publish/)。

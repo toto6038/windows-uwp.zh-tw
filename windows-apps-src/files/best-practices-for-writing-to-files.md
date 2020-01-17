@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a1d93b1deaad084ff25db946199b678b35703c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dcbeffc7e3db8f3df9c197e8c388f30faf7ad03d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369515"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685243"
 ---
 # <a name="best-practices-for-writing-to-files"></a>寫入檔案的最佳做法
 
@@ -44,7 +44,7 @@ ms.locfileid: "66369515"
 執行 **StorageFile** 的 I/O 時，了解這個概念很有用。 例如，[寫入至檔案](quickstart-reading-and-writing-files.md#writing-to-a-file)一節會顯示三種寫入檔案的方式：
 
 * 使用 [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync) 方法。
-* 建立緩衝區，然後呼叫 [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync) 方法。
+* 建立緩衝區，然後呼叫 [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writebufferasync) 方法。
 * 使用資料流的四個步驟模型：
   1. [開啟](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync)檔案以取得資料流。
   2. [取得](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)輸出資料流。
@@ -114,7 +114,7 @@ ms.locfileid: "66369515"
 
 * 使用者在您應用程式的本機資料夾中建立和編輯的檔案。 這些檔案只存在於您的應用程式內，且只有在使用該應用程式時才能建立和編輯。
 * 應用程式中繼資料。 您的應用程式會使用這些檔案來追蹤自己的狀態。
-* 檔案系統中您的應用程式已宣告存取功能的位置中的其他檔案。 這些通常位於其中一個 [ **KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)。
+* 檔案系統中您的應用程式已宣告存取功能的位置中的其他檔案。 這些通常位於其中一個 [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)。
 
 您的應用程式具有前兩個檔案類別的完全控制權，因為其屬於您應用程式的套件檔案，並由您的應用程式獨佔存取。 對於最後一個類別中的檔案，您的應用程式必須注意，其他應用程式和 OS 服務可能會同時存取檔案。
 
@@ -194,6 +194,6 @@ else
 
 [使用 .NET 平行程式設計部落格](https://devblogs.microsoft.com/pfxteam/)是平行程式設計相關指引的絕佳資源。 尤其是，[AsyncReaderWriterLock 相關貼文](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)描述如何維護檔案的獨佔存取權，同時允許並行讀取權限。 請記住，將 I/O 序列化會影響效能。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [建立、寫入和讀取檔案](quickstart-reading-and-writing-files.md)

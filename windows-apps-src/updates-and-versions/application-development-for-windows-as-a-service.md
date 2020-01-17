@@ -6,43 +6,43 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a2b22df2610191636d258dc48838e0bc5be6ee4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 47be38c6d7a5374b06789beede02647ef9b264d8
+ms.sourcegitcommit: cd185e16d976f2d149312d39d560681538070e3b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259788"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737631"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>「Windows 即服務」應用程式開發
 
 **適用於**
 -   Windows 10
--   Windows 10 行動裝置版
+-   Windows 10 行動裝置版
 -   Windows 10 IoT 核心版 
 
-在今日的環境中，使用者期望經常是依照以裝置為主的體驗去設定，完整的產品週期需以月計，而非以年計。 此外，新發行版本還必須能持續使用，並且需以最不影響使用者的方式部署。 Microsoft 藉由實作創新式開發與傳遞的新方法 (稱為 [Windows 即服務 (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview))，設計出符合這些需求的 Windows 10。 既可明顯縮短產品週期，同時又能兼顧高品質水準，其關鍵就在於 Microsoft 為 Windows 10 實作以社群為主的創新測試方法。 社群又稱為 Windows 測試人員，包含世界各地數百萬名使用者。 當 Windows 測試人員選擇加入社群後，可透過稱為「正式發行前小眾測試」的循環方法，在產品週期進程中測試許多組建，並提供意見反應給 Microsoft。
+在今日的環境中，使用者期望經常是依照以裝置為主的體驗去設定，完整的產品週期需以月計，而非以年計。 此外，新發行版本還必須能持續使用，並且需以最不影響使用者的方式部署。 Microsoft 藉由實作創新式開發與傳遞的新方法 (稱為 [Windows 即服務 (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview))，設計出符合這些需求的 Windows 10。 既可明顯縮短產品週期，同時又能兼顧高品質水準，其關鍵就在於 Microsoft 為 Windows 10 實作以社群為主的創新測試方法。 社群又稱為 Windows 測試人員，包含世界各地數百萬名使用者。 當 Windows 測試人員選擇加入社群後，可透過稱為「正式發行前小眾測試」的循環方法，在產品週期進程中測試許多組建，並提供意見反應給 Microsoft。
 
 以「正式發行前小眾測試版」方式散發的組建，可提供 Windows 工程團隊有關組建實際使用情況的重要資料。 配合 Windows 測試人員執行的「正式發行前小眾測試」，也可讓 Microsoft 在比過去更多樣化的硬體、應用程式和網路環境中測試組建，以更快找出問題。 因此，Microsoft 認為以社群為主的「正式發行前小眾測試」將可加快創新式傳遞的速度，還能提供更勝以往的公開發行品質。
 
-## <a name="windows-10-release-types-and-cadences"></a>Windows 10 發行版本類型與步調
+## <a name="windows-10-release-types-and-cadences"></a>Windows 10 發行版本類型與步調
 
-Microsoft 會發行「正式發行前小眾測試版」給 Windows 測試人員，同時也會持續公開發行兩種類型的 Windows 10 發行版本：
+Microsoft 會發行「正式發行前小眾測試版」給 Windows 測試人員，同時也會持續公開發行兩種類型的 Windows 10 發行版本：
 
-「功能更新」  會在已執行 Windows 10 的裝置上安裝最新近的特色、體驗及功能。 由於功能更新包含完整的 Windows 複本，因此也是客戶在執行 Windows 7 或 Windows 8.1 的現有裝置或未安裝任何作業系統的新裝置上安裝 Windows 10 的選擇。 Microsoft 預計每半年發佈一次更新。 
+「功能更新」  會在已執行 Windows 10 的裝置上安裝最新近的特色、體驗及功能。 由於功能更新包含完整的 Windows 複本，因此也是客戶在執行 Windows 7 或 Windows 8.1 的現有裝置或未安裝任何作業系統的新裝置上安裝 Windows 10 的選擇。 Microsoft 預計每半年發佈一次更新。 
 
-「品質更新」  會提供安全性問題解析及其他重要的錯誤修正。 「品質更新」是以每個月一次或多次的頻率推出，以改善目前支援中的每項功能。 Microsoft 仍會持續在「週二更新日」(有時稱為「週二修補程式日」) 發行品質更新。 此外，為因應客戶需求，Microsoft 可能會在「週二更新日」程序外發行其他 Windows 10 品質更新。
+「品質更新」  會提供安全性問題解析及其他重要的錯誤修正。 「品質更新」是以每個月一次或多次的頻率推出，以改善目前支援中的每項功能。 Microsoft 仍會持續在「週二更新日」(有時稱為「週二修補程式日」) 發行品質更新。 此外，為因應客戶需求，Microsoft 可能會在「週二更新日」程序外發行其他 Windows 10 品質更新。
 
-在 Windows 10 開發期間，Microsoft 簡化了 Windows 產品工程及發行週期，讓我們可以前所未有的速度提供客戶想要的特色、體驗與功能。 我們也建立了新的方式來傳遞和安裝功能更新與品質更新，可簡化部署和持續性管理，擴大使用最新 Windows 功能和體驗的員工群，並降低擁有權總成本。 因此，我們已實作新的維護選項 – 稱為「半年通道」和「長期維護通道」(LTSC) – 提供實用的解決方案，相較於從前，能讓企業環境中更多的裝置保持更新的狀態。
+在 Windows 10 開發期間，Microsoft 簡化了 Windows 產品工程及發行週期，讓我們可以前所未有的速度提供客戶想要的特色、體驗與功能。 我們也建立了新的方式來傳遞和安裝功能更新與品質更新，可簡化部署和持續性管理，擴大使用最新 Windows 功能和體驗的員工群，並降低擁有權總成本。 因此，我們已實作新的維護選項 – 稱為「半年通道」和「長期維護通道」(LTSC) – 提供實用的解決方案，相較於從前，能讓企業環境中更多的裝置保持更新的狀態。
 
 下表描述各種維護通道及其主要屬性。
 
 | 維護選項 | 可安裝新功能升級的時機 | 維護存留期 | 主要優點 | 支援的版本 |
 | --- | --- | --- | --- | --- |
 | 半年通道 (已設定目標) | Microsoft 首次發行後即可安裝 | 18 個月 | 讓使用者能儘快使用新功能 | 家用版、專業版、教育版、企業版、行動裝置版、IoT 核心版、Windows 10 IoT 核心專業版 (IoT 核心專業版) |
-| 半年通道 | Microsoft 首次發行後約 4 個月 | 從第一次發佈算起 18 個月 | 提供額外的時間，以在部署前先測試 新功能升級 | 專業版、教育版、企業版、行動裝置企業版、IoT 核心專業版 |
+| 半年通道 | Microsoft 首次發行後約 4 個月 | 從第一次發佈算起 18 個月 | 提供額外的時間，以在部署前先測試新功能升級 | 專業版、教育版、企業版、行動裝置企業版、IoT 核心專業版 |
 | 長期維護通道 (LTSC) | Microsoft 發行後即可安裝 | 10 年 | 可透過少量變更組態的方式長期部署選定的 Windows 10 發行版本 | 企業版 LTSB |
 
-如需詳細資訊，請參閱 [Windows 10 更新與升級維護選項](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels)。
+如需詳細資訊，請參閱 [Windows 10 更新與升級維護選項](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels)。
 
 ## <a name="supporting-apps-in-windows-as-a-service"></a>以「Windows 即服務」支援 app
 
@@ -60,11 +60,11 @@ Microsoft 會發行「正式發行前小眾測試版」給 Windows 測試人員�
 
 在下列章節中，您會找到 Microsoft 為維持基礎作業系統相容性所採取之步驟的其他資訊。 您也會找到可採取之步驟的指導方針，協助您維護組合作業系統與 app 生態系統的相容性。 另外有章節說明如何利用 Windows 正式發行前小眾測試組建，在 Windows 組建發行之前偵測 app 迴歸。 最後，我們說明如何使用檢測與遙測導向方法，來提高 Windows 組建的品質。 我們建議 ISV 對他們的 app 組合採用類似的方法。
 
-## <a name="key-changes-since-windows7-to-ensure-app-compatibility"></a>Windows 7 以來的主要變更，以確保 app 相容性
+## <a name="key-changes-since-windows7-to-ensure-app-compatibility"></a>Windows 7 以來的主要變更，以確保 app 相容性
 
 我們了解對於開發人員來說，相容性非常重要。 ISV 與開發人員希望確保他們的 app 可在所有支援的 Windows 作業系統版本上如預期般運作。 消費者與企業的主要投資在這裡—他們希望確保他們付費使用的 app 可以持續運作。 我們了解相容性是採購決策的主要條件。 根據最佳做法撰寫良好的 app，在 Windows 新版本發行時會產生較少的程式碼轉換，並減少片段—這些 app 可降低維護工程投資，並且可以較快投入市場。
 
-在 Windows 7 時期，是以非常被動的方式處理相容性問題。 在 Windows 8 中，我們開始以不同的觀點，在 Windows 內盡力確保在設計時便將相容性納入考量，而非在事後補救。 Windows 10 是到目前為止最符合「透過設計提供相容性」的 OS 版本。 以下是我們達成這項目標的主要方法：
+在 Windows 7 時期，是以非常被動的方式處理相容性問題。 在 Windows 8 中，我們開始以不同的觀點，在 Windows 內盡力確保在設計時便將相容性納入考量，而非在事後補救。 Windows 10 是到目前為止最符合「透過設計提供相容性」的 OS 版本。 以下是我們達成這項目標的主要方法：
 -   **應用程式遙測**：這協助我們了解應用程式在 Windows 生態系統中的熱門程度，以提供資訊給相容性測試。
 -   **ISV 合作關係**：與外部合作夥伴直接合作以提供資料給他們，並協助修正我們的使用者遇到的問題。
 -   **設計檢閱，上游偵測**：與功能小組合作以降低 Windows 中重大變更的數目。 相容性檢閱是功能小組必須通過的門檻。
@@ -73,13 +73,13 @@ Microsoft 會發行「正式發行前小眾測試版」給 Windows 測試人員�
 
 ## <a name="best-practices-for-app-compatibility"></a>App 相容性的最佳做法
 
-Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解、改進我們的產品與服務，以及為使用者提供個人化體驗。 我們收集的使用狀況資料也會延伸到在 Windows 生態系統內的電腦上執行的 app。 根據客戶所使用的項目，我們會建立清單以針對新版本的 Windows 作業系統測試這些 app、裝置和驅動程式。 Windows 10 是目前具有最高相容性的 Windows 版本，針對數千個常用的 app 具有超過 90% 的相容性。 Windows 相容性小組在發現問題時，通常會和我們的 ISV 合作夥伴連絡以提供意見反應，以方便我們合作找出解決方案。 在理想的情況下，我們希望我們的一般客戶可以順暢地更新 Windows，而不會遺失他們作業系統中的功能，或是他們所依賴、用於生產或娛樂的 app。
+Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解、改進我們的產品與服務，以及為使用者提供個人化體驗。 我們收集的使用狀況資料也會延伸到在 Windows 生態系統內的電腦上執行的 app。 根據客戶所使用的項目，我們會建立清單以針對新版本的 Windows 作業系統測試這些 app、裝置和驅動程式。 Windows 10 是目前具有最高相容性的 Windows 版本，針對數千個常用的 app 具有超過 90% 的相容性。 Windows 相容性小組在發現問題時，通常會和我們的 ISV 合作夥伴連絡以提供意見反應，以方便我們合作找出解決方案。 在理想的情況下，我們希望我們的一般客戶可以順暢地更新 Windows，而不會遺失他們作業系統中的功能，或是他們所依賴、用於生產或娛樂的 app。
 
-下列章節包含一些 Microsoft 建議的最佳做法，讓您可以確保您的 app 與 Windows 10 相容。
+下列章節包含一些 Microsoft 建議的最佳做法，讓您可以確保您的 app 與 Windows 10 相容。
 
 ### <a name="windows-version-check"></a>Windows 版本檢查
 
-作業系統版本已遞增為 Windows 10。 這表示內部版本號碼已經變更為 10.0。 在過去，於 OS 版本變更之後，我們需要竭盡全力地維持應用程式與裝置相容性。 對大多數的應用程式類別 (不具有任何核心相依性) 而言，變更不會對應用程式功能造成負面影響，而現有的應用程式將會繼續在 Windows 10 上正常運作。
+作業系統版本已遞增為 Windows 10。 這表示內部版本號碼已經變更為 10.0。 在過去，於 OS 版本變更之後，我們需要竭盡全力地維持應用程式與裝置相容性。 對大多數的應用程式類別 (不具有任何核心相依性) 而言，變更不會對應用程式功能造成負面影響，而現有的應用程式將會繼續在 Windows 10 上正常運作。
 
 此變更的表現是依 App 而定。 這表示任何會特別檢查 OS 版本的 app 將會取得較高的版本號碼，這可能導致下列一或多種情況：
 -   App 安裝程式可能無法安裝 app，且 app 可能無法啟動。
@@ -87,10 +87,10 @@ Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解�
 -   App 可能會產生錯誤訊息，但會繼續正常運作。
 
 某些 app 會執行版本檢查，並傳遞警告給使用者。 不過，有些 app 會與版本檢查緊密繫結 (於驅動程式或是核心模式中以避免偵測)。 在這些情況中，如果找到不正確的版本，app 將會失敗。 相較於版本檢查，我們建議下列其中一種方法：
--   如果 app 依存於特定的 API 功能，請確定您有將正確的 API 版本做為目標。
+-   如果 app 依存於特定的 API 功能，請確定您有將正確的 API 版本作為目標。
 -   請確定您是透過 APISet 或另一個公用 API 偵測變更，並且不要使用版本做為某些功能或修正的代表。 如果有重大變更，且並未適當檢查，該變更就會變成是錯誤。
 -   請確定 app「不會」以奇特的方法檢查版本，例如透過登錄、檔案版本、位移、核心模式、驅動程式或其他方法。 如果 app 一定要檢查版本，請使用 GetVersion API，這應該會傳回主要、次要與組建編號。
--   如果您正在使用 [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN) API，請記住這個 API 的行為自 Windows 8.1 後已經變更。
+-   如果您正在使用 [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN) API，請記住這個 API 的行為自 Windows 8.1 後已經變更。
 
 如果您擁有像反惡意程式碼軟體或防火牆應用程式這樣的 app，您應該透過平常使用的意見反應管道和 Windows 測試人員計畫進行。
 
@@ -138,12 +138,12 @@ Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解�
 
 **升級測試：** 從下級版本 Windows (亦即 Windows 7 或 Windows 8.1) 升級到 Windows 10 之後，檢查 app 的運作情況。 您的 App 不應在升級期間造成回復，並且在升級後應該如預期般運作 — 這對達成順暢升級體驗而言非常重要。
 
-**重新安裝測試：** 確定在您將電腦從下層作業系統升級到 Windows 10 後，app 功能可藉由重新安裝 app 還原。 如果您的 App 無法通過升級測試，而且您未能縮小這些問題原因的範圍，則重新安裝可能可以還原遺失的功能。 通過重新安裝測試表示 App 的組件可能尚未移轉至 Windows 10。
+**重新安裝測試：** 確定在您將電腦從下層作業系統升級到 Windows 10 後，app 功能可藉由重新安裝 app 還原。 如果您的 App 無法通過升級測試，而且您未能縮小這些問題原因的範圍，則重新安裝可能可以還原遺失的功能。 通過重新安裝測試表示 App 的組件可能尚未移轉至 Windows 10。
 
 **作業系統\\裝置功能測試：** 如果您的 app 依賴作業系統中的特定功能，請確定 app 可以正常運作。 常見的測試領域包括下列各項，通常是針對精選的常用電腦型號以確保涵蓋範圍：
 -   音訊
 -   USB 裝置功能 (鍵盤、滑鼠、隨身碟、外接式硬碟等等)
--   藍牙
+-   Bluetooth
 -   圖形\\顯示器 (多重監視器、投影、旋轉螢幕等等)
 -   觸控式螢幕 (方向、螢幕小鍵盤、手寫筆、手勢等等)
 -   觸控板 (左\\右鍵、點選、捲動等等)
@@ -156,8 +156,6 @@ Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解�
 
 讓我們知道您的 app 正針對正式發行前小眾測試組建執行的狀況。 當您在測試期間發現您的 app 有問題時，請透過合作伙伴入口網站記錄錯誤 (如果您擁有存取權限，或透過您的 Microsoft 代表)。 我們鼓勵這項資訊，讓我們可以為使用者一同建置高品質的體驗。
 
-### <a name="step-4-register-on-ready-for-windows"></a>步驟 4：在 Ready For Windows 上註冊
-[Ready for Windows](https://docs.microsoft.com/configmgr/desktop-analytics/ready-for-windows) 網站是支援 Windows 10 之軟體的目錄。 這是針對全世界正在考慮為公司和組織部署 Windows 10 的 IT 系統管理員所設計。 IT 系統管理員可以查看該網站，以了解 Windows 10 是否支援他們企業中所部署的軟體。
 
 ## <a name="related-topics"></a>相關主題
 [Windows 10 更新與升級維護選項](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)

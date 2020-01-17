@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 38f289b21980e2a77fd8669c39750e9b989aa742
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364761"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684390"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -264,7 +264,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) 會將元素排成一行，可設定水平或垂直方向。
 
-您可以設定 [Spacing](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) 屬性，以調整項目之間的間距。 間距會套用在配置 [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) 的方向。
+您可以設定 [Spacing](/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) 屬性，以調整項目之間的間距。 間距會套用在配置 [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) 的方向。
 
 ![堆疊配置間距](images/stack-layout.png)
 
@@ -300,7 +300,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 此清單顯示可用的值。 此定義假設預設的 **Orientation** 為 **Horizontal**。
 
-- **無**：在列的最後留下未使用的額外空間。 這是預設值。
+- **無**：在列的最後留下未使用的額外空間。 此為預設值。
 - **Fill**：項目會獲得額外的寬度，將可用空間用完 (如果是垂直方向，則是指高度)。
 - **Uniform**：項目會獲得額外的寬度，將可用空間用完，且會獲得有額外的高度，以維持外觀比例 (如果是垂直方向，則交換上述高度和寬度)。
 
@@ -312,7 +312,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 此清單顯示可用的值。 此定義假設預設的 **Orientation** 為 **Horizontal**。
 
-- **Start**：項目與列齊頭對齊。 在列的最後留下未使用的額外空間。 這是預設值。
+- **Start**：項目與列齊頭對齊。 在列的最後留下未使用的額外空間。 此為預設值。
 - **Center**：項目與列置中對齊。 額外的空間在列的頭尾平均分配。
 - **End**：項目與列齊尾對齊。 在列的開頭留下未使用的額外空間。
 - **SpaceAround**：項目平均分佈。 在每個項目的前後加入等量的空間。
@@ -642,6 +642,12 @@ public sealed class MediaCollectionView : Control
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+
+<Page.Resources>
+    <muxc:StackLayout x:Key="MyGroupLayout"/>
+    <muxc:StackLayout x:Key="MyItemLayout" Orientation="Horizontal"/>
+</Page.Resources>
+
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind AppNotifications}"
                       Layout="{StaticResource MyGroupLayout}">
@@ -650,7 +656,7 @@ public sealed class MediaCollectionView : Control
         <!-- Group -->
         <StackPanel>
           <!-- Header -->
-          TextBlock Text="{x:Bind AppTitle}"/>
+          <TextBlock Text="{x:Bind AppTitle}"/>
           <!-- Items -->
           <muxc:ItemsRepeater ItemsSource="{x:Bind Notifications}"
                               Layout="{StaticResource MyItemLayout}"
@@ -663,10 +669,11 @@ public sealed class MediaCollectionView : Control
   </muxc:ItemsRepeater>
 </ScrollViewer>
 ```
-
-這個範例示範應用程式的配置，此配置有各種類別，可以根據使用者偏好設定進行變更，並以水平捲動清單顯示，如下所示。
+下圖顯示使用上述範例作為指導方針所建立的基本版面配置。
 
 ![透過項目重複器巢狀配置](images/items-repeater-nested-layout.png)
+
+下一個範例示範應用程式的配置，此配置有各種類別，可以根據使用者偏好設定進行變更，並以水平捲動清單顯示。 此範例的版面配置也會以上述影像表示。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -777,7 +784,7 @@ ItemsRepeater 會自動確保其項目的預設 Tab 鍵順序 (無論是否虛�
 > [!NOTE]
 > ItemsRepeater　不會自動記住最後一個焦點項目。  這表示當使用者使用 Shift + Tab 鍵時，他們可能會進入最後一個實現的項目。
 
-### <a name="announcing-item-x-of-y-in-screen-readers"></a>在螢幕助讀程式中宣告「_Y_ 的項目 _X_」
+### <a name="announcing-item-_x_-of-_y_-in-screen-readers"></a>在螢幕助讀程式中宣告「_Y_ 的項目 _X_」
 
 您需要管理設定適當的自動化屬性，例如r **PositionInSet** 和 **SizeOfSet** 的值，並確保在新增、移動、刪除項目等等動作時，保持最新狀態。
 

@@ -5,18 +5,18 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 1708
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b4cc5f10ba23c942851f34ef64afd887d265dba1
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 824cdb74a809ae3f9ae2ed202a9889535021f711
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259773"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684718"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 最近已有下列功能概觀、開發人員指引和影片可以使用，包含提供給 Windows 開發人員的全新及更新資訊。
 
-在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/your-first-app.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/your-first-app.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -57,7 +57,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="getting-started-with-point-of-service"></a>開始使用服務點
 
-我們加入了新的指南，可協助您[開始使用點服務裝置](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-get-started)。 內容涵蓋裝置列舉、檢查裝置功能、宣告裝置和裝置共用等主題。 
+我們加入了新的指南，可協助您[開始使用點服務裝置](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-get-started)。 內容涵蓋裝置列舉、檢查裝置功能、宣告裝置和裝置共用等主題。 
 
 ### <a name="xbox-live"></a>Xbox Live
 
@@ -69,11 +69,11 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 請參閱 [Xbox Live 開發人員計畫概觀](https://docs.microsoft.com//gaming/xbox-live/developer-program-overview)，以取得提供給 Xbox Live 開發人員的程式和功能的相關資訊。
 
-## <a name="videos"></a>影片
+## <a name="videos"></a>視訊
 
 ### <a name="mixed-reality"></a>混合實境
 
-[Microsoft HoloLens 課程 250](https://developer.microsoft.com/en-us/windows/mixed-reality/mixed_reality_250) 已發行一系列新的教學課程影片。 如果您已安裝工具且熟悉開發混合實境的基本知識，請觀看這些有關在各種混合實境裝置上建立共用體驗的視訊課程。
+[Microsoft HoloLens 課程 250](https://developer.microsoft.com/windows/mixed-reality/mixed_reality_250) 已發行一系列新的教學課程影片。 如果您已安裝工具且熟悉開發混合實境的基本知識，請觀看這些有關在各種混合實境裝置上建立共用體驗的視訊課程。
 
 ### <a name="narrator-and-dev-mode"></a>朗讀程式和開發人員模式
 

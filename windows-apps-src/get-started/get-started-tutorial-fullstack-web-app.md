@@ -5,12 +5,12 @@ keywords: 託管的 Web 應用程式, HWA, REST API, 單頁應用程式, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f5195cc3ed84116797c0b424a637c255b082386
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: b9a6b80034dc8272226c9563960079434dff8e41
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281860"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684787"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 
@@ -32,7 +32,7 @@ ms.locfileid: "72281860"
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
-如果您想要完成在 Microsoft Azure 上裝載 API 服務和記憶遊戲應用程式的最後步驟，您需要[建立免費的 Azure 帳戶](https://azure.microsoft.com/en-us/free/) (若尚未這麼做的話)。
+如果您想要完成在 Microsoft Azure 上裝載 API 服務和記憶遊戲應用程式的最後步驟，您需要[建立免費的 Azure 帳戶](https://azure.microsoft.com/free/) (若尚未這麼做的話)。
 
 如果您決定要放棄 (或延後) Azure 部分，只要略過部分 I 及 II 的最後區段，其中涵蓋 Azure 裝載和封裝 Microsoft Store 適用的應用程式。 您建置的 API 服務與 Web 應用程式仍會在您的電腦上本機執行 (分別從 `http://localhost:8000` 到 `http://localhost:3000`)。
 
@@ -78,11 +78,11 @@ ms.locfileid: "72281860"
 #### <a name="post-new"></a>POST /new
 初始化指定大小 (相符項目數) 的新遊戲板。
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |-----------|-------------|
 | int *size* |要洗牌到遊戲板的配對數。 範例： `http://memorygameapisample/new?size=2`|
 
-| 回應 | 描述 |
+| 回應 | 說明 |
 |----------|-------------|
 | 200 確定 | 所要求大小的新記憶遊戲已經就緒。|
 | 400 錯誤的要求| 所要求的大小超出可接受的範圍。|
@@ -93,18 +93,18 @@ ms.locfileid: "72281860"
 
 *無參數*
 
-| 回應 | 描述 |
+| 回應 | 說明 |
 |----------|-------------|
 | 200 確定 | 傳回 JSON 陣列的卡片物件。 每張卡都有 **cleared** 屬性，指出是否已找到其配對。 相符的卡片也會回報它們的 **value**。 範例： `[{"cleared":"false"},{"cleared":"false"},{"cleared":"true","value":1},{"cleared":"true","value":1}]`|
 
 #### <a name="put-guess"></a>PUT /guess
 指定要顯示的卡片，並檢查先前已經翻過的相符卡片。
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |-----------|-------------|
 | int *card* | 要顯示之卡片的卡片 ID (遊戲板陣列中的索引)。 每個完成的「猜測」包含兩個指定的卡片 (亦即，使用有效且唯一的 *card* 值兩次呼叫 **/guess**)。 範例： `http://memorygameapisample/guess?card=0`|
 
-| 回應 | 描述 |
+| 回應 | 說明 |
 |----------|-------------|
 | 200 確定 | 傳回指定之卡片含有 **id** 和 **value** 的 JSON。 範例： `[{"id":0,"value":1}]`|
 | 400 錯誤的要求 |  指定的卡片發生錯誤。 詳細資訊請查看 HTTP 回應本文。|
@@ -290,7 +290,7 @@ Azure 文件將逐步引導您完成：
 
  - [使用 Visual Studio Code 的進階 Node.js 偵錯](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Azure Web + 行動裝置版文件](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
+ - [Azure Web + 行動裝置版文件](https://docs.microsoft.com/azure/#pivot=services&panel=web)
 
  - [Azure DocumentDB 文件](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
@@ -490,7 +490,7 @@ if (cardsFlipped == gameBoardSize) {
 如果翻轉的卡片數符合遊戲板的大小 (例如，`cardsFlipped == gameBoardSize`)，表示已沒有要翻轉的卡片，而使用者已贏得遊戲。 我們將會新增一些簡單 HTML到 `id="game-board"` 的 `div`，讓使用者知道他們已贏得遊戲並可再次玩遊戲。  
 
 ### <a name="3-create-the-user-interface"></a>3.建立使用者介面 
-現在，我們透過建立使用者介面來看看此程式碼的所有動作。 本教學課程中，我們使用範本化引擎 [Pug](https://pugjs.org/) (正式名稱為 Jade)。  *Pug* 是撰寫 HTML 的全新、區分空白字元的語法。 這裡提供一個範例。 
+現在，我們透過建立使用者介面來看看此程式碼的所有動作。 本教學課程中，我們使用範本化引擎 [Pug](https://pugjs.org/) (正式名稱為 Jade)。  *Pug* 是撰寫 HTML 的全新、區分空白字元的語法。 以下是範例。 
 
 ```
 body
@@ -592,14 +592,14 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
     perspective: 1000px; 
     ```
 
-2. 立即在 style.css 中新增下列屬性至 `.cards` 類別。 `.cards` `div` 是實際做翻轉動畫的元素，會顯示卡片的正面或背面。 
+2. 立即在 style.css 中新增下列屬性至 `.cards` 類別。 `.cards``div` 是實際做翻轉動畫的元素，會顯示卡片的正面或背面。 
 
     ``` css
     transform-style: preserve-3d;
     transition-duration: 1s;
     ```
 
-    [`transform-style` ](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style) 屬性建立 3D 呈現內容，而 `.cards` 類別 (`.front`和`.back`) 的子項是 3D 空間的成員。 新增 [`transition-duration`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration) 屬性會指定動畫結束的秒數。 
+    [`transform-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style) 屬性建立 3D 呈現內容，而 `.cards` 類別 (`.front`和`.back`) 的子項是 3D 空間的成員。 新增 [`transition-duration`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration) 屬性會指定動畫結束的秒數。 
 
 3.  使用 [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) 屬性，我們可以沿著 Y 軸旋轉卡片。  新增下列 CSS 到 `cards.flip`。
 
@@ -634,8 +634,8 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
 
 在 Microsoft Store 中發佈的基本步驟如下︰
 
- 1. 建立 [Windows 開發人員](https://developer.microsoft.com/en-us/store/register)帳戶
- 2. 使用應用程式提交[檢查清單](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions)
+ 1. 建立 [Windows 開發人員](https://developer.microsoft.com/store/register)帳戶
+ 2. 使用應用程式提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)
  3. 提交您的應用程式[進行認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
 
 以下是一些可讓您更進一步的實用資源︰

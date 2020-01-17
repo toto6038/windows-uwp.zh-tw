@@ -11,16 +11,16 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 67c729455c6eb2d8f5e8b07db5e1be7ac13f59b8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 07da54dddfffe082aa5633ac8eac3f342aaa6a5c
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258180"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302712"
 ---
 # <a name="text-box"></a>文字方塊
 
-TextBox 控制項可讓使用者在應用程式中輸入文字。 其通常用來擷取單行文字，但亦可設為擷取多行文字。 文字在畫面上會以簡單、統一的純文字格式呈現。
+TextBox 控制項可讓使用者在應用程式中輸入文字。 這通常用來擷取單行文字，但亦可設為擷取多行文字。 文字在畫面上會以簡單、統一的純文字格式呈現。
 
 TextBox 具有眾多可精簡文字輸入的實用功能。 其提供熟悉的內建操作功能表，支援複製與貼上文字。 「全部清除」按鈕可讓使用者快速刪除所有已輸入的文字。 其亦具備預設啟用的內建拼字檢查功能。
 
@@ -97,9 +97,9 @@ SampleTextBox.Text = "Sample text retrieved";
 
 您可以新增 [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header) (或標籤) 與 [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.placeholdertext) (或浮水印) 至文字方塊，以告知使用者其用途。 若要自訂標頭的外觀，您可以設定 [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.headertemplate) 屬性，而不是 Header。 *如需設計資訊，請參閱標籤指導方針*。
 
-您可藉由設定 [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.maxlength) 屬性，限制使用者可以輸入的字元數目。 不過，MaxLength 不會限制已貼上文字的長度。 若對於應用程式而言具重要性，請使用 [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) 事件以修改貼上的文字。
+您可藉由設定 [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.maxlength) 屬性，限制使用者可以輸入的字元數目。 不過，MaxLength 不會限制已貼上文字的長度。 若對於應用程式而言具重要性，請使用 [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) 事件來修改貼上的文字。
 
-文字方塊包含全部清除按鈕 (「X」)，當您在方塊中輸入文字時會顯示此按鈕。 使用者按一下「X」時，會清除文字方塊中的文字。 它的外觀如下。
+文字方塊有一個全部清除按鈕 (「X」)，當方塊中有輸入文字時會顯示此按鈕。 使用者按一下「X」時，會清除文字方塊中的文字。 它的外觀如下。
 
 ![具全部清除按鈕的文字方塊](images/text-box-clear-all.png)
 
@@ -136,16 +136,16 @@ IsEnabled
 
 ### <a name="enable-multi-line-input"></a>啟用多行輸入
 
-您可使用兩種屬性來控制文字方塊是否採用多行方式顯示文字。 您通常會同時設定這兩個屬性，以產生多行文字方塊。
+您可使用兩種屬性來控制文字方塊是否採用多行方式顯示文字。 通常會同時設定這兩個屬性，以產生多行文字方塊。
 
 - 若要讓文字方塊允許並顯示新行或傳回字元，請將 [AcceptsReturn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) 屬性設為 **true**。
 - 若要啟用文字換行，請將 [TextWrapping](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) 屬性設為 **Wrap**。 這會導致文字在達到文字方塊邊緣時換行，不受行分隔字元的影響。
 
 > **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 的 TextWrapping 屬性均不支援 **WrapWholeWords** 值。 若您嘗試使用 WrapWholeWords 做為 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，則會擲回無效的引數例外狀況。
 
-多行 TextBox 大小會隨著輸入文字而繼續垂直擴展 (除非您使用其 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 或 [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 屬性，或是以父容器加以限制)。 您應測試多行文字方塊大小是否會擴展超出顯示範圍，並限制其擴展 (若確定會超出顯示範圍)。 我們建議您一律為多行文字方塊指定適當的高度，不讓其隨著使用者輸入文字而擴展。
+多行的文字方塊大小會隨著輸入文字而繼續垂直擴展 (除非您使用其 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 或 [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 屬性，或是以父容器加以限制)。 您應測試多行文字方塊大小是否會擴展超出顯示範圍，並限制其擴展 (若確定會超出顯示範圍)。 我們建議您一律為多行文字方塊指定適當的高度，不讓其隨著使用者輸入文字而擴展。
 
-必要時會啟用使用滾輪或觸控方式捲動瀏覽。 不過，依預設不會顯示垂直捲軸。 您可在內嵌 ScrollViewer 上，將 [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) 設為 [自動]  ，以顯示垂直捲軸 (如此處所示)。
+必要時會啟用使用滾輪或觸控方式捲動瀏覽。 不過，依預設不會顯示垂直捲軸。 您可在內嵌 ScrollViewer 上，將 [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) 設為 **Auto**，以顯示垂直捲軸 (如此處所示)。
 
 ```xaml
 <TextBox AcceptsReturn="True" TextWrapping="Wrap"
@@ -165,13 +165,13 @@ ScrollViewer.SetVerticalScrollBarVisibility(textBox, ScrollBarVisibility.Auto);
 
 以下是新增文字後文字方塊呈現的外觀。
 
-![多行文字方塊](images/text-box-multi-line.png)
+![多行的文字方塊](images/text-box-multi-line.png)
 
 ### <a name="format-the-text-display"></a>格式化文字顯示方式
 
-使用 [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment) 屬性，以對齊文字方塊中的文字。 若要在頁面配置中對齊文字方塊，請使用 [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) 和 [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) 屬性。
+使用 [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment) 屬性對齊文字方塊中的文字。 若要在頁面配置中對齊文字方塊，請使用 [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) 和 [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) 屬性。
 
-雖然文字方塊僅支援未格式化的文字，不過您可自訂文字在文字方塊中的顯示方式，以符合您的品牌風格。 您可設定標準[控制項](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)屬性 (例如 [FontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontfamily)、[FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize)、[FontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontstyle)、[Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)、[Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground) 和 [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.characterspacing))，以變更文字的外觀。 這些屬性僅會影響文字方塊在本機顯示文字的方式，因此舉例來說，若您將文字複製並貼至文字控制項，即不會套用任何格式化設定。
+雖然文字方塊僅支援未格式化的文字，不過您可自訂文字在文字方塊中的顯示方式，以符合您的品牌風格。 您可設定標準[控制項](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)屬性 (例如 [FontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontfamily)、[FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize)、[FontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontstyle)、[Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)、[Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground)、[CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.characterspacing))，以變更文字的外觀。 這些屬性僅會影響文字方塊在本機顯示文字的方式，因此舉例來說，若您將文字複製並貼至文字控制項，即不會套用任何格式化設定。
 
 此範例顯示已設定數個屬性來自訂文字外觀的唯讀文字方塊。
 
@@ -201,21 +201,21 @@ rootGrid.Children.Add(textBox);
 
 產生的文字方塊外觀如下。
 
-![格式化文字方塊](images/text-box-formatted.png)
+![格式化的文字方塊](images/text-box-formatted.png)
 
 ### <a name="modify-the-context-menu"></a>修改操作功能表
 
-根據預設，文字方塊操作功能表中顯示的命令會取決於文字方塊的狀態。 例如，當文字方塊可編輯時會顯示下列命令。
+根據預設，文字方塊操作功能表中顯示的命令取決於文字方塊的狀態。 例如，當文字方塊可編輯時會顯示下列命令。
 
 命令 | 顯示時機...
 ------- | -------------
 複製 | 已選取文字。
 剪下 | 已選取文字。
-貼上 | 剪貼簿包含文字。
-全選 | TextBox 包含文字。
+貼上 | 剪貼簿中有文字。
+全選 | TextBox 中有文字。
 復原 | 已變更文字。
 
-若要修改操作功能表中顯示的命令，請處理 [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) 事件。 如需此範例，請參閱案例 2 的 [ContextMenu 範例](https://code.msdn.microsoft.com/windowsapps/Context-menu-sample-40840351)。 如需設計資訊，請參閱操作功能表指導方針。
+若要修改操作功能表中顯示的命令，請處理 [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) 事件。 如需這種情況的範例，請參閱 <a href="xamlcontrolsgallery:/item/RichEditBox">XAML 控制項庫</a>中的**自訂 RichEditBox 的 CommandBarFlyout - 新增 'Share'** 範例。 如需設計資訊，請參閱[操作功能表](menus.md)的指導方針。
 
 ### <a name="select-copy-and-paste"></a>選取、複製以及貼上
 
@@ -257,11 +257,11 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者點選可編輯的輸入欄位 (例如 TextBox 或 RichEditBox) 時，就會叫用觸控式鍵盤。 您可以設定文字控制項的輸入範圍，使其符合您預期使用者輸入的資料類型，讓使用者在您的應用程式中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
 
-例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number**。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。
+例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number**。 這會告訴系統顯示數字小鍵盤，方便使用者輸入 PIN。
 
 > **重要**&nbsp;&nbsp;輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
 
-其他會影響觸控式鍵盤的屬性包括 [IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled)、[IsTextPredictionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) 和 [PreventKeyboardDisplayOnProgrammaticFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus)。 (IsSpellCheckEnabled 也會影響使用硬體鍵盤時的 TextBox。)
+其他會影響觸控式鍵盤的屬性包括 [IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled)、[IsTextPredictionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) 和 [PreventKeyboardDisplayOnProgrammaticFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus)。 (使用硬體鍵盤時，IsSpellCheckEnabled 也會影響 TextBox。)
 
 如需詳細資訊和範例，請參閱[使用輸入範圍以變更觸控式鍵盤](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)與屬性文件。
 
@@ -271,8 +271,8 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - 為文字方塊指定一個適合所要輸入的值範圍的寬度。 每個語言的單字長度都不相同，所以如果您希望您的應用程式能夠全球化，請考慮到當地語系化。
 - 文字輸入方塊通常是單行 (`TextWrap = "NoWrap"`)。 當使用者需要輸入或編輯長字串時，請將文字輸入方塊設定為多行 (`TextWrap = "Wrap"`)。
 - 文字輸入方塊通常使用於可編輯的文字。 但是您也可讓文字輸入方塊成為唯讀，如此一來，使用者可以閱讀、選取和複製它的內容，但是不能進行編輯。
-- 如果您需要讓檢視看起來不那麼擁擠，請考慮將一組文字輸入方塊設定為只在選取控制的核取方塊時才顯示。 您也可以將文字輸入方塊的啟用狀態繫結至核取方塊之類的控制項。
-- 請考慮當文字輸入方塊包含值且使用者點選它時，文字輸入方塊會執行什麼行為。 適當的預設行為是編輯值而不是取代它；插入點放置在單字之間，而不選取任何單字。 如果對於特定文字輸入方塊最常用的方式是取代，您可以在控制項接收焦點時選取欄位中的所有文字，而輸入文字會取代選取的文字。
+- 如果您需要讓檢視看起來不那麼擁擠，請考慮將一些文字輸入方塊設定為只在選取控制的核取方塊時才顯示。 您也可以將文字輸入方塊的啟用狀態繫結至核取方塊之類的控制項。
+- 請考慮當文字輸入方塊中有值且使用者點選它時，文字輸入方塊會執行什麼行為。 適當的預設行為是編輯值而不是取代值；插入點放置在單字之間，且不選取任何單字。 如果對於特定文字輸入方塊最常用的方式是取代，您可以在控制項接收焦點時選取欄位中的所有文字，且讓輸入文字取代選取的文字。
 
 ### <a name="single-line-input-boxes"></a>單行輸入方塊
 
@@ -288,11 +288,11 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 - 使用一組簡短、固定大小的單行文字輸入控制項，以特定格式輸入資料。
 
-    ![格式化資料輸入](images/textinput_example_productkey.png)
+    ![格式化的資料輸入](images/textinput_example_productkey.png)
 
 - 使用不受限制的單行文字輸入控制項輸入或編輯字串，並與命令按鈕結合，幫助使用者選取有效的值。
 
-    ![協助資料輸入](images/textinput_example_assisted.png)
+    ![輔助資料輸入](images/textinput_example_assisted.png)
 
 ### <a name="multi-line-text-input-controls"></a>多行文字輸入控制項
 
@@ -319,4 +319,4 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [文字輸入的指導方針](text-controls.md)
 - [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length) \(部分機器翻譯\)
+- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length)

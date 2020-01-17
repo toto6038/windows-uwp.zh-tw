@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Windows 10 中的協助工具, 建置無障礙 win32 應用程式, 建置無障礙 UWP 應用程式, 建置無障礙 WPF 應用程式, 建置無障礙 WinForms 應用程式
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 76bbd3f0e04bbb2f729ad0950bae190b2fffb6ac
-ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
+ms.openlocfilehash: fdb1092139602edd00086e17ff4dc7a27cf361dd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987190"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681889"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的協助工具
 
@@ -43,7 +43,7 @@ ms.locfileid: "70987190"
 
       [協助工具測試](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
 
-      [市集中的協助工具](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+      [Store 中的協助工具](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
       ![Win32 平台應用程式](images/platform-win32.png)
@@ -135,7 +135,7 @@ ms.locfileid: "70987190"
 
 :::row:::
    :::column:::
-      [程式碼範例瀏覽器](https://docs.microsoft.com/en-us/samples/browse/)
+      [程式碼範例瀏覽器](https://docs.microsoft.com/samples/browse/)
 
       取代 MSDN 程式碼庫的新範例瀏覽器。
    :::column-end:::
@@ -165,7 +165,7 @@ ms.locfileid: "70987190"
    :::column-end:::
 :::row-end:::
 
-## <a name="videos"></a>影片
+## <a name="videos"></a>視訊
 
 有各種影片，涵蓋如何因應一般協助工具考量建置無障礙 Windows 應用程式，以及 Microsoft 如何處理這些考量。
 

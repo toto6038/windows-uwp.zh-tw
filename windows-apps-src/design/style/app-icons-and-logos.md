@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0801ba9036f69aef340881b9c92807e80af6b09f
-ms.sourcegitcommit: e43bc20c2f6e9375f61931c2fce95f06fd1f31df
+ms.openlocfilehash: 25d9df392d6ed2725b171fe6513334a39458410b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70212066"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684590"
 ---
 # <a name="app-icons-and-logos"></a>應用程式圖示及標誌 
 
@@ -29,7 +29,7 @@ ms.locfileid: "70212066"
         * 在 Microsoft Store 中
     :::column-end:::
     :::column:::
-        ![windows 10 start and tiles](images/assetguidance01.jpg)
+        ![Windows 10 的開始畫面和磚](images/assetguidance01.jpg)
     :::column-end:::
 :::row-end:::
 
@@ -75,7 +75,7 @@ ms.locfileid: "70212066"
 
 「如何在 Microsoft Store 中為我的應用程式清單指定影像？」
 
-根據預設，我們會使用 Store 中來自您的套件中的一些影像，如本頁頂端表格中所述 (以及您在提交程序期間所提供的其他[影像](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images) \(英文\))。 不過，您也可以選擇性地為 Windows 10 (包含 Xbox) 客戶顯示清單時，防止 Microsoft Store 使用您應用程式套件中的標誌影像，指定讓 Microsoft Store 只使用您上傳的影像。 如此您更能在整個 Store 中掌控各種不同顯示的應用程式外觀。 (請注意，如果您的產品支援舊版的作業系統版本，那麼即使您使用此選項，這些客戶仍可能會看到套件中的影像。)您可以在提交程序的 [Store 清單]  步驟的 [Store 標誌]  區段執行此操作。
+根據預設，我們會使用 Store 中來自您的套件中的一些影像，如本頁頂端表格中所述 (以及您在提交程序期間所提供的其他[影像](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images) \(英文\))。 不過，您也可以選擇性地為 Windows 10 (包含 Xbox) 客戶顯示清單時，防止 Microsoft Store 使用您應用程式套件中的標誌影像，指定讓 Microsoft Store 只使用您上傳的影像。 如此您更能在整個 Store 中掌控各種不同顯示的應用程式外觀。 (請注意，如果您的產品支援舊版的作業系統版本，那麼即使您使用此選項，這些客戶仍可能會看到套件中的影像。)您可以在提交程序的 [Store 清單]  步驟的 [Store 標誌]  區段執行此操作。
 
 ![在應用程式提交程序中指定 Store 標誌](images/app-icons/storelogodisplay.png)
 
@@ -133,15 +133,15 @@ Visual Studio 提供了一個非常有用的工具來管理名為**資訊清單�
         2. 在[方案總管]  中，按兩下Package.appmxanifest 檔案。
     :::column-end:::
     :::column:::
-        ![The Visual Studio 2019 Manifest Designer](images/icons/vs-solution-explorer.png)
+        ![Visual Studio 2019 資訊清單設計工具](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-            Visual Studio displays the Manifest Designer.
+            Visual Studio 顯示資訊清單設計工具。
     :::column-end:::
     :::column:::
-            ![The Visual Assets tab](images/icons/vs-manfiest-designer.png)
+            ![[視覺資產] 索引標籤](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
@@ -149,7 +149,7 @@ Visual Studio 提供了一個非常有用的工具來管理名為**資訊清單�
         3. 按一下 [視覺資產]  索引標籤。
     :::column-end:::
     :::column:::
-        ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![[視覺資產] 索引標籤](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 
@@ -169,7 +169,7 @@ Visual Studio 提供了一個非常有用的工具來管理名為**資訊清單�
 
     b.  **顯示名稱**：指出您是否要在中型、寬型或大型磚上顯示簡短名稱。 
 
-    c. **磚背景**：指定磚背景色彩的十六進位值或色彩名稱。 例如， `#464646`。 預設值為 `transparent`。
+    c. **磚背景**：指定磚背景色彩的十六進位值或色彩名稱。 例如，`#464646`。 預設值為 `transparent`。
 
     d. **啟動顯示畫面背景**：指定啟動顯示畫面背景的十六進位值或色彩名稱。 
 
@@ -197,7 +197,7 @@ Visual Studio 會產生專案所需的所有應用程式圖示資產，但如果
 除了標準的縮放比例大小 ("Square44x44Logo.scale-400.png") 之外，我們也建議您建立「目標大小」資產。 我們將這些資產稱為目標大小，因為它們針對的是特定的大小，例如 16 像素，而不是特定的縮放比例，例如 400。 目標大小資產適用於不使用縮放倍數系統的曲面：
 
 * [開始] 畫面的捷徑清單 (桌面)
-* [開始] 畫面的右下角的磚 (桌面)
+* [開始] 畫面右下角的磚 (桌面)
 * 捷徑 (桌面)
 * 控制台 (桌面)
 
@@ -225,7 +225,7 @@ Visual Studio 會產生專案所需的所有應用程式圖示資產，但如果
 
 您不需要將邊框間距新增至這些資產；如果需要，Windows 會新增邊框間距。 這些資產至少需要 16 個像素的擺設區域。 
 
-以下是這些資產出現在 Windows 工作列上之圖示中的範例：
+以下是這些資產出現在 Windows 工作列上圖示中的範例：
 
 ![Windows 工作列中的資產](images/assetguidance21.png)
 
@@ -249,7 +249,7 @@ Visual Studio 會產生專案所需的所有應用程式圖示資產，但如果
 
 以下是以目標為基礎的資產的大小建議 (縮放比例 100%)：
 
-![以目標為基礎的資產的大小調整 (縮放比例 100%)](images/assetguidance23.png)
+![縮放比例 100%，以目標為基礎的資產](images/assetguidance23.png)
 
 
 ## <a name="more-about-splash-screen-assets"></a>深入了解啟動顯示畫面資產
@@ -271,7 +271,7 @@ Visual Studio 會產生專案所需的所有應用程式圖示資產，但如果
 
 磚有 4 種大小：小型 (71 x 71)、中型 (150 x 150)、寬型 (310 x 150) 和大型 (310 x 310)。 
 
-每個磚資產都與它所在的磚等大小。
+每個磚資產的大小與其所在的磚一樣。
 
 ![磚會跨頁顯示](images/app-icons/tile-assets1.png)
 
@@ -281,19 +281,19 @@ Visual Studio 會產生專案所需的所有應用程式圖示資產，但如果
 
 對於小型磚，將圖示寬度和高度限制為磚大小的 66%：
 
-![小型磚大小調整比例](images/assetguidance09.png)
+![小型磚的大小比例](images/assetguidance09.png)
 
-對於中型磚，將圖示寬度限制為磚大小的 66%，將高度限制為磚大小的 50%。 這樣可以防止商標列中的元素重疊：
+對於中型磚，將圖示寬度限制為磚大小的 66%，將高度限制為磚大小的 50%。 這可防止品牌列中的元素重疊：
 
-![中型磚大小調整比例](images/assetguidance10.png)
+![中型磚的大小比例](images/assetguidance10.png)
 
-對於寬型磚，將圖示寬度限制為磚大小的 66%，將高度限制為磚大小的 50%。 這樣可以防止商標列中的元素重疊：
+對於寬型磚，將圖示寬度限制為磚大小的 66%，將高度限制為磚大小的 50%。 這可防止品牌列中的元素重疊：
 
-![寬型磚大小調整比例](images/assetguidance11.png)
+![寬型磚的大小比例](images/assetguidance11.png)
 
 對於大型磚，將圖示寬度限制為磚大小的 66%，將高度限制為磚大小的 50%：
 
-![大型磚大小比例](images/assetguidance12.png)
+![大型磚的大小比例](images/assetguidance12.png)
 
 有些圖示是水平或垂直方向，但其他圖示卻有著更複雜的圖形，使其無法恰好符合目標尺寸。 看起來像置中的圖示可能偏向另一側。 在這個案例中，假如圖示的視覺大小與恰好符合的圖示相同，則部分圖示可能會超出建議的擺設區域：
 

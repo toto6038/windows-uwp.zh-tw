@@ -11,18 +11,18 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c276b232e76afb98d778ef65c7e0e363285c4794
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a3bf48da5fdfff205b2013341aaf6869064ce341
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258202"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684368"
 ---
 # <a name="person-picture-control"></a>個人圖片控制項
 
-個人圖片控制項會顯示個人的虛擬人偶影像 (如果有的話)。要是沒有，則顯示個人的縮寫名或一般字符。 您可以使用控制項來顯示 [Contact 物件](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) (管理個人連絡資訊的物件)，也可以手動提供連絡人資訊，例如顯示名稱和設定檔圖片。  
+個人圖片控制項會顯示個人的虛擬人偶影像 (如果有的話)。要是沒有，則顯示個人的縮寫名或一般字符。 您可以使用控制項來顯示 [Contact 物件](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (管理個人連絡資訊的物件)，也可以手動提供連絡人資訊，例如顯示名稱和設定檔圖片。  
 
-> **重要 API**：[PersonPicture 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **重要 API**：[PersonPicture 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 此圖例顯示兩個個人圖片控制項，伴隨兩個顯示使用者名稱的[文字區塊](text-block.md)元素。 
 ![個人圖片控制項](images/person-picture/person-picture_hero.png)
@@ -79,7 +79,7 @@ ms.locfileid: "74258202"
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>使用個人圖片控制項來顯示的 Contact 物件
 
-您可以使用人員選擇器控制項來顯示 [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件： 
+您可以使用人員選擇器控制項來顯示 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件： 
 
 ```xaml
 <Page
@@ -167,11 +167,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> 為了保持程式碼簡單瞭解，此範例建立新的 Contact 物件。 在實際的應用程式中，您可以讓使用者選取連絡人，或使用 [ContactManager](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 來查詢連絡人清單。 如需擷取和管理連絡人的詳細資訊，請參閱[連絡人和行事曆文章](../../contacts-and-calendar/index.md)。 
+> 為了保持程式碼簡單瞭解，此範例建立新的 Contact 物件。 在實際的應用程式中，您可以讓使用者選取連絡人，或使用 [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 來查詢連絡人清單。 如需擷取和管理連絡人的詳細資訊，請參閱[連絡人和行事曆文章](../../contacts-and-calendar/index.md)。 
 
 ## <a name="determining-which-info-to-display"></a>決定要顯示哪些資訊
 
-當您提供 [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件時，個人圖片控制項會進行評估，判斷該物件可以顯示哪些資訊。 
+當您提供 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件時，個人圖片控制項會進行評估，判斷該物件可以顯示哪些資訊。 
 
 如果有可用影像，控制項會依照下列順序，顯示找到的第一個影像：
 
