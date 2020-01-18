@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 電信業者, 電信費用帳單, 電信業者帳單
 ms.localizationpriority: medium
-ms.openlocfilehash: 606267080ced6ea8dd41f8f05ddcdee4d33b00f2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: af682d2a17e10bf1c3b3cdcb3485315a6972eb9f
+ms.sourcegitcommit: e38946d8228293fca7d6c2b4d66e8e8f0d349e92
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259962"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76258351"
 ---
 # <a name="mobile-operator-billing"></a>電信業者帳單
 
@@ -27,7 +27,7 @@ Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、
 
 | 國家/地區       | 電信業者                                        |
 |----------------------|---------------------------------------------------------|
-| 澳大利亞            | Optus                                                   |
+| 澳洲            | Optus                                                   |
 | 奧地利              | Hutchison 3G Austria、A1 Telekom、T-Mobile / tele.ring  |
 | 比利時              | Base、Proximus                                          |
 | 加拿大               | Telus                                                   |
@@ -44,6 +44,7 @@ Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、
 | 波蘭               | 橙色，播放                                            |
 | 新加坡            | M1 限制，StarHub                                     |
 | 斯洛伐克             | Slovak Telekom                                          |
+| 南非         | Vodacom                                                 |
 | 西班牙                | Orange                                                  |
 | 瑞典               | Telenor、3                                              |
 | 瑞士          | Swisscom、Sunrise                                       |

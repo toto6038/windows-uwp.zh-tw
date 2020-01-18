@@ -6,12 +6,12 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: windows 10, uwp, 稅, 應用程式稅金, 稅金要求, 商務擴展, 稅率
 ms.localizationpriority: medium
-ms.openlocfilehash: aa408e803457c9b53cb383158b5a7a91a2c07e14
-ms.sourcegitcommit: 8efeb6672f759b1ea7e3e9e2f90e764480791142
+ms.openlocfilehash: 2dd488fc241de4ef765cd318590ba857faa37003
+ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728479"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76265029"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Windows 應用程式/遊戲開發人員和 Azure Marketplace 發行者的稅務詳細資料
 
@@ -275,7 +275,7 @@ ms.locfileid: "75728479"
 ## <a name="mixed-remittance-countriesregions-for-windows-appgame-developers"></a>適用于 Windows 應用程式/遊戲開發人員的混合匯款國家/地區
 
 
-特定 Microsoft 帳單合作夥伴可能會在下列國家/地區，代收和代繳因為將您的應用程式或應用程式內產品透過市集提供給客戶使用，可能產生的銷售、使用、商品和服務、增值稅或類似稅金。 Microsoft 提供給　貴用戶的[報告](payout-summary.md#transaction-history-download-export)將可識別帳單合作夥伴已代收下列稅金的交易：將　貴用戶的應用程式或應用程式內產品透過市集提供給客戶使用所產生的銷售、使用、商品和服務、增值稅或類似稅金。 除了這類報告中所描述的交易外，Microsoft 與其帳單合作夥伴均不會代收和代繳將　貴用戶的應用程式或應用程式內產品透過市集提供給客戶使用所產生的銷售、使用、商品和服務、增值稅或類似稅金。 貴用戶須負責檢閱提供給　貴用戶的報告，並且判斷和遵守義務 (如果有)，以註冊、收取和支付　貴用戶應用程式或應用程式內產品交易所產生的稅金。
+特定 Microsoft 帳單合作夥伴可能會在下列國家/地區，代收和代繳因為將您的應用程式或應用程式內產品透過市集提供給客戶使用，可能產生的銷售、使用、商品和服務、增值稅或類似稅金。 0Microsoft 提供給您的[報告](payout-summary.md#export-data-page)可讓您識別帳單合作夥伴已收集銷售、使用、商品和服務的交易、增加的值，或適用于客戶透過商店取得應用程式或應用程式內產品的相關稅金。 除了這類報告中所描述的交易外，Microsoft 與其帳單合作夥伴均不會代收和代繳將　貴用戶的應用程式或應用程式內產品透過市集提供給客戶使用所產生的銷售、使用、商品和服務、增值稅或類似稅金。 貴用戶須負責檢閱提供給　貴用戶的報告，並且判斷和遵守義務 (如果有)，以註冊、收取和支付　貴用戶應用程式或應用程式內產品交易所產生的稅金。
 
 | 混合免稅國家/地區 |
 |------------------------------------|

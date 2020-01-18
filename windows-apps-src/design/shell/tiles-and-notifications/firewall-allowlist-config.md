@@ -9,17 +9,17 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10，uwp，WNS，windows 通知服務，通知，windows，防火牆，疑難排解，IP，流量，企業，網路，IPv4，VIP，FQDN，公用 IP 位址
 ms.localizationpriority: medium
-ms.openlocfilehash: c3774164d16e86a88f45eb50030beec099629d6f
-ms.sourcegitcommit: 738bab9a088a244a7a212dcac6fb3560c547b8d5
+ms.openlocfilehash: fa0153a395144382aee3f764f0f7d9316afa9c5e
+ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72695764"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76265019"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支援 WNS 流量的企業防火牆和 Proxy 設定
 
-## <a name="background"></a>背景資訊
-許多企業都使用防火牆來封鎖不必要的網路流量;可惜的是，這也會封鎖 Windows 通知服務通訊之類的重要事項。 這表示所有透過 WNS 傳送的通知都會放在特定網路設定之下。 若要避免這種情況，網路系統管理員可以將已核准的 WNS Fqdn 或 Vip 清單新增至其豁免清單，以允許 WNS 流量通過防火牆。 以下是有關如何和如何新增的詳細資料，以及對不同 proxy 類型的支援。
+## <a name="background"></a>背景
+許多企業都使用防火牆來封鎖不必要的網路流量和埠;可惜的是，這也會封鎖 Windows 通知服務通訊之類的重要事項。 這表示所有透過 WNS 傳送的通知都會放在特定網路設定之下。 若要避免這種情況，網路系統管理員可以將已核准的 WNS Fqdn 或 Vip 清單新增至其豁免清單，以允許 WNS 流量通過防火牆。 以下是有關如何和如何新增的詳細資料，以及對不同 proxy 類型的支援。
 
 ## <a name="proxy-support"></a>Proxy 支援
 
@@ -39,8 +39,8 @@ ms.locfileid: "72695764"
 > IP 位址範圍會定期變更;因此，這些不包含在此頁面上。 如果您想要查看 IP 範圍的清單，您可以從下載中心下載檔案： [Windows 通知服務（WNS） VIP 和 IP 範圍](https://www.microsoft.com/download/details.aspx?id=44238)。 請定期回來查看，確定您有最新的資訊。 
 
 
-### <a name="fqdns-vips-and-ips"></a>Fqdn、Vip 和 Ip
-下列 XML 檔中的每個元素都會在其後面的表格中說明（以[和標記法](#terms-and-notations)表示）。 這些 IP 範圍被刻意排除在本檔中，以建議您只使用 Fqdn，因為 Fqdn 將維持不變。 不過，您可以從下載中心下載包含完整清單的 XML 檔案： [Windows 通知服務（WNS） VIP 和 IP 範圍](https://www.microsoft.com/download/details.aspx?id=44238)。 新的 Vip 或 IP 範圍將在**上傳後的一周內生效**。
+### <a name="fqdns-vips-ips-and-ports"></a>Fqdn、Vip、Ip 和埠
+無論您從下面選擇何種方法，都必須允許透過**埠 443**對列出的目的地進行網路流量。 下列 XML 檔中的每個元素都會在其後面的表格中說明（以[和標記法](#terms-and-notations)表示）。 這些 IP 範圍被刻意排除在本檔中，以建議您只使用 Fqdn，因為 Fqdn 將維持不變。 不過，您可以從下載中心下載包含完整清單的 XML 檔案： [Windows 通知服務（WNS） VIP 和 IP 範圍](https://www.microsoft.com/download/details.aspx?id=44238)。 新的 Vip 或 IP 範圍將在**上傳後的一周內生效**。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -68,7 +68,7 @@ ms.locfileid: "72695764"
 ### <a name="terms-and-notations"></a>詞彙和標記法
 以下是上述 XML 程式碼片段中所使用之標記法和元素的說明。
 
-| 條款 | 說明 |
+| 詞彙 | 說明 |
 |---|---|
 | **點-十進位標記法（例如 64.4.28.0/26）** | 點十進位標記法是描述 IP 位址範圍的方式。 例如，64.4.28.0/26 表示64.4.28.0 的前26位是固定的，而最後6個位則是可變的。  在此情況下，IPv4 範圍是 64.4.28.0-64.4.28.63。 |
 | **ClientDNS** | 這些是從 WNS 接收通知之用戶端裝置（Windows 電腦、桌面）的完整功能變數名稱（FQDN）篩選器。 這些必須通過防火牆，才能讓 WNS 用戶端使用 WNS 功能。  建議您依 Fqdn 而不是 IP/VIP 範圍來允許清單，因為這些永遠不會變更。 |
