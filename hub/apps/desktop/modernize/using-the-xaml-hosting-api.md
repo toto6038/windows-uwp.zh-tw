@@ -1,19 +1,19 @@
 ---
 description: 本文說明如何在您的桌面C++ Win32 應用程式中裝載 UWP XAML UI。
 title: 在 C++ Win32 應用程式中使用 UWP XAML 裝載 API
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: windows 10，uwp，windows forms，wpf，win32，xaml 群島
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9e4fdc8366e26bcd7e106bf070cb42ed2cd1a49f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5a0973bcce4de4fac8f923a303b0c3216600fb97
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683681"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520423"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>在 C++ Win32 應用程式中使用 UWP XAML 裝載 API
 
@@ -55,7 +55,7 @@ XAML Islands 需要 Windows 10 1903 版（或更新版本）和對應的 Windows
     1. 安裝 Windows 10 版本 1903 SDK （版本10.0.18362）或更新版本。
     2. 將[Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增至您的方案，並將參考新增至您C++的/Win32 專案，以將您的應用程式封裝在 MSIX 套件中。
 
-* **安裝 Microsoft 工具組. SDK 套件**。 如果您不想要在 MSIX 套件中封裝您的應用程式，您可以安裝 6.0.0-preview7 或更新[版本。](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) 此套件提供數個組建和執行時間資產，讓 XAML 孤島可在您的應用程式中運作。 請確定已選取 [**包含發行**前版本] 選項，讓您可以查看此套件的最新預覽版。
+* **安裝 Microsoft 工具組. SDK 套件**。 如果您不想要將應用程式封裝在 MSIX 套件中，您可以安裝6.0.0 或更新版本的[SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) 。 此套件提供數個組建和執行時間資產，讓 XAML 孤島可在您的應用程式中運作。
 
 > [!NOTE]
 > 這些指示的舊版中，您會將 `maxversiontested` 元素加入至專案中的應用程式資訊清單。 只要您使用上述其中一個選項，就不再需要將此元素新增至資訊清單。
@@ -125,7 +125,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 4. 安裝[Microsoft 工具](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK)組. SDK NuGet 套件：
 
     1. 在 [ **NuGet 套件管理員**] 視窗中，確認已選取 [**包含發行**前版本]。
-    2. 選取 [**流覽**] 索引標籤，[搜尋 [6.0.0](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) -preview7 （或更新版本）] 此套件的 [app-v] 套件。
+    2. 選取 [**流覽**] 索引標籤，[搜尋 [6.0.0](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) ] （或更新版本）此套件的套件。
 
 ### <a name="use-the-xaml-hosting-api-to-host-a-uwp-control"></a>使用 XAML 裝載 API 來裝載 UWP 控制項
 

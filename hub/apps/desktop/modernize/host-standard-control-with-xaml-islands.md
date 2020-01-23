@@ -1,19 +1,19 @@
 ---
 description: 本文示範如何使用 XAML 島，在 WPF 應用程式中裝載標準 UWP 控制項。
 title: 使用 XAML 群島在 WPF 應用程式中裝載標準 UWP 控制項
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: windows 10，uwp，windows forms，wpf，xaml 群島，包裝的控制項，標準控制項，InkCanvas，InkToolbar
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cdaaa20b28a7f181467f6047bc93350ec40b366a
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: 47998d9c79dbbb41060b4fbd52fe3ee805aecc52
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317077"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520383"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 群島在 WPF 應用程式中裝載標準 UWP 控制項
 
@@ -26,11 +26,11 @@ ms.locfileid: "71317077"
 若要在 WPF 應用程式中裝載 UWP 控制項，您需要下列元件。 本文提供建立這些元件的指示。
 
 * WPF 應用程式的專案和原始程式碼。
-* UWP 應用程式專案，可從 Windows 社區工具`Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`組定義類別的實例。
+* UWP 應用程式專案，可從 Windows 社區工具組定義 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 類別的實例。
   > [!NOTE]
-  > 為了確保您的應用程式在所有 XAML 島案例中都能正常運作，您的 WPF （或 Windows Forms）專案`XamlApplication`必須擁有物件的存取權。 這個物件會作為根中繼資料提供者，以便在應用程式目前目錄的元件中載入 UWP XAML 類型的中繼資料。 建議的做法是將**空白應用程式（通用 Windows）** 專案加入至與 WPF （或 Windows Forms）專案相同的方案中，並修訂此專案中要`App`衍生自`XamlApplication`的預設類別。
+  > 為了確保您的應用程式在所有 XAML 島案例中都能正常運作，您的 WPF （或 Windows Forms）專案必須具有 `XamlApplication` 物件的存取權。 這個物件會作為根中繼資料提供者，以便在應用程式目前目錄的元件中載入 UWP XAML 類型的中繼資料。 建議的做法是將**空白應用程式（通用 Windows）** 專案加入至與 WPF （或 Windows Forms）專案相同的方案中，並修訂此專案中的預設 `App` 類別，以衍生自 `XamlApplication`。
   >
-  > 雖然簡單的 xaml 島案例（例如裝載第一方 uwp 控制項）不需要這個步驟，但是您的 WPF 應用`XamlApplication`程式需要此物件來支援完整範圍的 xaml 島案例，包括裝載自訂 UWP 控制項。 建議您一律新增 UWP 專案，並在您使用 XAML `XamlApplication`島的任何方案中定義物件。 您的方案只能包含一個定義`XamlApplication`物件的專案。 應用程式中的所有自訂 UWP 控制項都會`XamlApplication`共用相同的物件。
+  > 雖然簡單的 XAML 島案例（例如裝載第一方 UWP 控制項）不需要此步驟，但您的 WPF 應用程式需要此 `XamlApplication` 物件，才能支援完整範圍的 XAML 島案例，包括裝載自訂 UWP 控制項。 建議您一律新增 UWP 專案，並在您使用 XAML Islands 的任何方案中定義 `XamlApplication` 物件。 您的方案只能包含一個定義 `XamlApplication` 物件的專案。 應用程式中的所有自訂 UWP 控制項都會共用相同的 `XamlApplication` 物件。
 
 雖然本文示範如何在 WPF 應用程式中裝載 UWP 控制項，但此程式類似于 Windows Forms 應用程式。
 
@@ -49,25 +49,25 @@ ms.locfileid: "71317077"
 
 4. 在 [ **NuGet 套件管理員**] 視窗中，確認已選取 [**包含發行**前版本]。
 
-5. 選取 [**流覽**] 索引標籤，[搜尋 [6.0.0](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) -preview7 或更新版本] 套件，並安裝封裝。 此套件提供使用適用于 WPF 的包裝 UWP 控制項所需的所有專案（包括[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) ，以及[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項）。
+5. 選取 [**流覽**] 索引標籤，[搜尋 [6.0.0](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) ] 或更新版本的 []，然後安裝封裝。 此套件提供使用適用于 WPF 的包裝 UWP 控制項所需的所有專案（包括[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) ，以及[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項）。
     > [!NOTE]
-    > Windows Forms 應用程式必須使用 6.0.0-preview7 或更新版本）的[Microsoft 工具](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)。
+    > Windows Forms 的應用程式必須使用6.0.0 或更新版本的[工具](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)套件。
 
 6. 將您的解決方案設定為以特定平臺（例如 x86 或 x64）為目標。 以**任何 CPU**為目標的專案不支援大部分的 XAML 島案例。
 
-    1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**屬性** -> ] [設定**屬性** -> ] [**Configuration Manager**]。 
+    1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 **屬性** ** -> ** 設定 屬性 -> **Configuration Manager**。 
     2. 在 [使用中的**方案平臺**] 底下，選取 [**新增**]。 
     3. 在 [**新增方案平臺**] 對話方塊中，選取 [ **X64** ] 或 [ **X86** ] 並按 **[確定]** 。 
     4. 關閉開啟的對話方塊。
 
 ## <a name="create-a-xamlapplication-object-in-a-uwp-app-project"></a>在 UWP 應用程式專案中建立 XamlApplication 物件
 
-接下來，將 UWP 應用程式專案新增至與 WPF 專案相同的方案中。 您將修改此專案`App`中的預設類別，以衍生自`Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` Windows 社區工具組所提供的類別。 雖然簡單的 xaml 島案例（例如裝載單一第一方 UWP 控制項）不需要此步驟，但您的 WPF 應用`XamlApplication`程式需要此物件才能支援完整的 xaml 島案例。 我們建議您一律將此專案新增至您使用 XAML Islands 的任何解決方案。
+接下來，將 UWP 應用程式專案新增至與 WPF 專案相同的方案中。 您將會修訂此專案中的預設 `App` 類別，以衍生自 Windows 社區工具組所提供的 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 類別。 雖然簡單的 XAML 島案例（例如裝載單一第一方 UWP 控制項）不需要此步驟，但您的 WPF 應用程式需要此 `XamlApplication` 物件，才能支援完整的 XAML 島案例。 我們建議您一律將此專案新增至您使用 XAML Islands 的任何解決方案。
 
-1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**加入** -> **新專案**]。
+1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**加入** -> **新增專案**]。
 2. 新增 **[空白應用程式 (通用 Windows)\]** 專案到您的方案。 請確定 [目標版本] 和 [最小版本] 都設定為**Windows 10 1903 版**或更新版本。
-3. 在 UWP 應用程式專案中，安裝[XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 套件（6.0.0-preview7 或更新版本）。
-4. 開啟**app.xaml**檔案，並以下列 xaml 取代此檔案的內容。 將`MyUWPApp`取代為 UWP 應用程式專案的命名空間。
+3. 在 UWP 應用程式專案中，安裝[XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 套件（6.0.0 版或更新版本）。
+4. 開啟**app.xaml**檔案，並以下列 xaml 取代此檔案的內容。 將 `MyUWPApp` 取代為 UWP 應用程式專案的命名空間。
 
     ```xml
     <xaml:XamlApplication
@@ -79,7 +79,7 @@ ms.locfileid: "71317077"
     </xaml:XamlApplication>
     ```
 
-5. 開啟**App.xaml.cs**檔案，並以下列程式碼取代此檔案的內容。 將`MyUWPApp`取代為 UWP 應用程式專案的命名空間。
+5. 開啟**App.xaml.cs**檔案，並以下列程式碼取代此檔案的內容。 將 `MyUWPApp` 取代為 UWP 應用程式專案的命名空間。
 
     ```csharp
     namespace MyUWPApp
@@ -102,9 +102,9 @@ ms.locfileid: "71317077"
 
 現在您已將專案設定為使用 UWP XAML Islands，現在已準備好將[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[INKTOOLBAR](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)包裝的 UWP 控制項新增至應用程式。
 
-1. 在**方案總管**中，開啟**mainwindow.xaml. xaml**檔案。
+1. 在 **方案總管**中，開啟 **MainWindow.xaml** 檔。
 
-2. 在 XAML 檔案頂端附近的**Window**元素中, 新增下列屬性。 這會參考[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)包裝 UWP 控制項的 XAML 命名空間。
+2. 在 XAML 檔案頂端附近的**Window**元素中，新增下列屬性。 這會參考[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)包裝 UWP 控制項的 XAML 命名空間。
 
     ```xml
     xmlns:Controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"
@@ -124,7 +124,7 @@ ms.locfileid: "71317077"
             Title="MainWindow" Height="800" Width="800">
     ```
 
-3. 在**mainwindow.xaml**中，以下列 xaml 取代現有`<Grid>`的元素。 這個 XAML 會將[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)控制項（前面加上您稍早定義的**Controls**關鍵字當做命名空間） `<Grid>`新增至。
+3. 在**mainwindow.xaml**中，以下列 xaml 取代現有的 `<Grid>` 元素。 此 XAML 會將[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)控制項（前面加上您稍早定義的**Controls**關鍵字做為命名空間）新增至 `<Grid>`。
 
     ```xml
     <Grid Margin="10,50,10,10">
@@ -144,7 +144,7 @@ ms.locfileid: "71317077"
 
 4. 儲存**mainwindow.xaml. xaml**檔案。
 
-    如果您的裝置支援數位畫筆（例如介面），而且您是在實體機器上執行此實驗室，您現在可以使用畫筆來建立並執行應用程式，並在螢幕上繪製數位筆跡。 不過, 如果您沒有具備畫筆功能的裝置, 而且嘗試使用滑鼠來簽署, 就不會發生任何事。 發生這種情況的原因是, 預設只會針對數位畫筆啟用**InkCanvas**控制項。 不過，您可以變更此行為。
+    如果您的裝置支援數位畫筆（例如介面），而且您是在實體機器上執行此實驗室，您現在可以使用畫筆來建立並執行應用程式，並在螢幕上繪製數位筆跡。 不過，如果您沒有具備畫筆功能的裝置，而且嘗試使用滑鼠來簽署，就不會發生任何事。 發生這種情況的原因是，預設只會針對數位畫筆啟用**InkCanvas**控制項。 然而，您可以變更此行為。
 
 5. 開啟**MainWindow.xaml.cs**檔案。
 
@@ -154,7 +154,7 @@ ms.locfileid: "71317077"
     using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
     ```
 
-7. 找出`MainWindow()`此函式。 在`InitializeComponent()`方法後面新增下列程式程式碼, 並儲存程式碼檔案。
+7. 找出 `MainWindow()` 的函式。 在 `InitializeComponent()` 方法後面新增下列程式程式碼，並儲存程式碼檔案。
 
     ```csharp
     this.myInkCanvas.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;
@@ -162,7 +162,7 @@ ms.locfileid: "71317077"
 
     您可以使用**InkPresenter**物件來自訂預設的筆跡體驗。 這段程式碼會使用**InputDeviceTypes**屬性來啟用滑鼠和手寫筆輸入。
 
-8. 再按一次 F5, 以在偵錯工具中重建並執行應用程式。 如果您是使用具有滑鼠的電腦，請確認您可以使用滑鼠在筆墨畫布空間中繪製東西。
+8. 再按一次 F5，以在偵錯工具中重建並執行應用程式。 如果您是使用具有滑鼠的電腦，請確認您可以使用滑鼠在筆墨畫布空間中繪製東西。
 
 ## <a name="host-a-calendarview-by-using-the-host-control"></a>使用主控制項裝載 CalendarView
 
@@ -171,9 +171,9 @@ ms.locfileid: "71317077"
 > [!NOTE]
 > [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項是由[XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)封裝所提供的。 此套件包含在您稍早安裝的[Microsoft. 工具](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)組中。
 
-1. 在**方案總管**中，開啟**mainwindow.xaml. xaml**檔案。
+1. 在 **方案總管**中，開啟 **MainWindow.xaml** 檔。
 
-2. 在 XAML 檔案頂端附近的**Window**元素中, 新增下列屬性。 這會參考[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項的 XAML 命名空間。
+2. 在 XAML 檔案頂端附近的**Window**元素中，新增下列屬性。 這會參考[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項的 XAML 命名空間。
 
     ```xml
     xmlns:xamlhost="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
@@ -194,7 +194,7 @@ ms.locfileid: "71317077"
             Title="MainWindow" Height="800" Width="800">
     ```
 
-4. 在**mainwindow.xaml**中，以下列 xaml 取代現有`<Grid>`的元素。 此 XAML 會在方格中加入一個資料列，並將[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)物件加入到最後一個資料列。 為了裝載 UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)控制項，這個 XAML 會將`InitialTypeName`屬性設定為控制項的完整名稱。 此 XAML 也會定義`ChildChanged`事件的事件處理常式，這會在裝載的控制項呈現時引發。
+4. 在**mainwindow.xaml**中，以下列 xaml 取代現有的 `<Grid>` 元素。 此 XAML 會在方格中加入一個資料列，並將[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)物件加入到最後一個資料列。 為了裝載 UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)控制項，這個 XAML 會將 `InitialTypeName` 屬性設定為控制項的完整名稱。 此 XAML 也會定義 `ChildChanged` 事件的事件處理常式，這會在已呈現裝載的控制項時引發。
 
     ```xml
     <Grid Margin="10,50,10,10">
@@ -220,7 +220,7 @@ ms.locfileid: "71317077"
     using Microsoft.Toolkit.Wpf.UI.XamlHost;
     ```
 
-10. 將下列`ChildChanged`事件處理常式方法新增`MainWindow`至類別，並儲存程式碼檔案。 當主控制項已轉譯時，這個事件處理常式會執行並為行事曆控制項的`SelectedDatesChanged`事件建立簡單的事件處理常式。
+10. 將下列 `ChildChanged` 事件處理常式方法新增至 `MainWindow` 類別，並儲存程式碼檔案。 當主控制項已轉譯時，這個事件處理常式會執行，並為行事曆控制項的 `SelectedDatesChanged` 事件建立簡單的事件處理常式。
 
     ```csharp
     private void MyCalendar_ChildChanged(object sender, EventArgs e)
@@ -244,7 +244,7 @@ ms.locfileid: "71317077"
     }
     ```
 
-11. 再按一次 F5, 以在偵錯工具中重建並執行應用程式。 確認行事曆控制項現在顯示在視窗底部。
+11. 再按一次 F5，以在偵錯工具中重建並執行應用程式。 確認行事曆控制項現在顯示在視窗底部。
 
 ## <a name="package-the-app"></a>封裝應用程式
 
@@ -258,7 +258,7 @@ ms.locfileid: "71317077"
 
 3. 如果您的 WPF 專案是以 .NET Core 3 為目標，您必須編輯封裝專案檔。 這些變更目前需要用於封裝以 .NET Core 3 為目標並裝載 UWP 控制項的 WPF 應用程式。
 
-    1. 在方案總管中, 以滑鼠右鍵按一下封裝專案節點, 然後選取 [**編輯專案檔案**]。
+    1. 在方案總管中，以滑鼠右鍵按一下封裝專案節點，然後選取 [**編輯專案檔案**]。
     2. 從檔案中找出 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。 以下列 XML 取代此元素。
 
         ``` xml
@@ -283,11 +283,11 @@ ms.locfileid: "71317077"
         </Target>
         ```
 
-    3. 儲存專案檔案並將它關閉。
+    3. 儲存並關閉專案檔。
 
 4. 將您的解決方案設定為以特定平臺（例如 x86 或 x64）為目標。 這是使用 Windows 應用程式封裝專案將 WPF 應用程式建立到 MSIX 套件的必要條件。
 
-    1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**屬性** -> ] [設定**屬性** -> ] [**Configuration Manager**]。
+    1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 **屬性** ** -> ** 設定 屬性 -> **Configuration Manager**。
     2. 在 [使用中的**方案平臺**] 底下，選取 [ **x64**或**x86**]。
     3. 在 WPF 專案的資料列中，選取 [**平臺**] 資料行中的 [**新增**]。
     4. 在 [**新增方案平臺**] 對話方塊中，選取 [ **x64** ] 或 [ **x86** ] （您為使用中的**方案平臺**選取的相同平臺），然後按一下 **[確定]** 。

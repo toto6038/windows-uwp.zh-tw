@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 79edf30733f7bca443c5fd12103fbd5d93909732
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1642f8ccc989ce224ff0b3250fa1b79c954167b1
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258071"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520413"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解使用者設定檔語言和應用程式資訊清單語言
 Windows 使用者可使用 **\[設定\]**  >  **\[時間與語言\]**  >  **\[地區與語言\]** 設定慣用顯示語言的已排序清單，或單一慣用顯示語言。 語言可具有地區性的變體。 例如，您可以選取在西班牙使用的西班牙文、在墨西哥使用的西班牙文、在美國使用的西班牙文等。
@@ -35,7 +35,7 @@ Windows 使用者可使用 **\[設定\]**  >  **\[時間與語言\]**  >  **\[�
 ## <a name="app-manifest-language-list"></a>應用程式資訊清單語言清單
 應用程式資訊清單語言清單是您應用程式宣告 (或將宣告) 支援之語言的清單。 這個清單會隨著您的應用程式在開發生命週期中向當地語系化邁進時逐漸擴大。
 
-清單會在編譯階段進行判斷，但您有兩個選項可控制該判斷發生的方式。 其中一個選項是讓 Visual Studio 從您專案中的檔案判斷該清單。 若要執行此作業，首先請在您應用程式封裝資訊清單來源檔案 ( **) 中的** \[應用程式\]**索引標籤上設定您應用程式的**\[預設語言\]`Package.appxmanifest`。 然後，請確認相同的檔案包含此設定 (預設為已包含)。
+清單會在編譯階段進行判斷，但您有兩個選項可控制該判斷發生的方式。 其中一個選項是讓 Visual Studio 從您專案中的檔案判斷該清單。 若要執行此作業，首先請在您應用程式封裝資訊清單來源檔案 (`Package.appxmanifest`) 中的 **\[應用程式\]** 索引標籤上設定您應用程式的 **\[預設語言\]** 。 然後，請確認相同的檔案包含此設定 (預設為已包含)。
 
 ```xml
   <Resources>
@@ -150,35 +150,35 @@ Windows 使用者可使用 **\[設定\]**  >  **\[時間與語言\]**  >  **\[�
 <tr>
 <td align="left">英文 (英國) (預設值)； 德文 (德國)</td>
 <td align="left">英文 (英國)</td>
-<td align="left">無</td>
+<td align="left">無 (none)</td>
 <td align="left">英文 (英國)</td>
 <td align="left">UI：英文 (英國)<br>日期/時間/數字：英文 (英國)</td>
 </tr>
 <tr>
 <td align="left">德文 (德國) (預設值)；法文 (法國)；義大利文 (義大利)</td>
 <td align="left">法文 (奧地利)</td>
-<td align="left">無</td>
+<td align="left">無 (none)</td>
 <td align="left">法文 (奧地利)</td>
 <td align="left">UI：法文 (法國) (從法文 (奧地利) 後援)<br>日期/時間/數字：法文 (奧地利)</td>
 </tr>
 <tr>
 <td align="left">英文 (美國) (預設值)；法文 (法國)；英文 (英國)</td>
 <td align="left">英文 (加拿大)；法文 (加拿大)</td>
-<td align="left">無</td>
+<td align="left">無 (none)</td>
 <td align="left">英文 (加拿大)；法文 (加拿大)</td>
 <td align="left">UI：英文 (美國) (從英文 (加拿大) 後援)<br>日期/時間/數字：英文 (加拿大)</td>
 </tr>
 <tr>
 <td align="left">西班牙文 (西班牙) (預設值)；西班牙文 (墨西哥)；西班牙文 (拉丁美洲)；葡萄牙文 (巴西)</td>
 <td align="left">英文 (美國)</td>
-<td align="left">無</td>
+<td align="left">無 (none)</td>
 <td align="left">西班牙文 (西班牙)</td>
 <td align="left">UI：西班牙文 (西班牙) (使用預設值，因為英文沒有可用的後援)<br>日期/時間/數字：西班牙文 (西班牙)</td>
 </tr>
 <tr>
 <td align="left">卡達隆尼亞文 (預設值)；西班牙文 (西班牙)；法文 (法國)</td>
 <td align="left">卡達隆尼亞文；法文 (法國)</td>
-<td align="left">無</td>
+<td align="left">無 (none)</td>
 <td align="left">卡達隆尼亞文；法文 (法國)</td>
 <td align="left">UI：大部分卡達隆尼亞文和部分法文 (法國)，因為不是所有字串都是卡達隆尼亞文<br>日期/時間/數字：卡達隆尼亞文</td>
 </tr>
@@ -193,7 +193,7 @@ Windows 使用者可使用 **\[設定\]**  >  **\[時間與語言\]**  >  **\[�
 </table>
 
 >[!NOTE]
-> 如需 Microsoft 所使用的標準國家/地區代碼清單，請參閱[官方國家/地區清單](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)。
+> 如需 Microsoft 所使用的標準國家/地區代碼清單，請參閱[官方國家/地區清單](/windows/uwp/publish/supported-languages)。
 
 ## <a name="important-apis"></a>重要 API
 * [GlobalizationPreferences 語言](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)

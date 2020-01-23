@@ -1,19 +1,19 @@
 ---
 description: 本文示範如何使用 XAML 島，在 WPF 應用程式中裝載自訂 UWP 控制項。
 title: 使用 XAML 群島在 WPF 應用程式中裝載自訂 UWP 控制項
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: windows 10，uwp，windows forms，wpf，xaml 島，自訂控制項，使用者控制項，主控制項
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: af8ef4d8fb8661e4a8f2d6b1fb98dd19cbd567c1
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: 4fb6e2d4fc13d90ec69f962e69b1ee8cb5c1361c
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302522"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520393"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 群島在 WPF 應用程式中裝載自訂 UWP 控制項
 
@@ -53,9 +53,9 @@ ms.locfileid: "75302522"
 
 5. 在 [ **NuGet 套件管理員**] 視窗中，確認已選取 [**包含發行**前版本]。
 
-6. 選取 [**流覽**] 索引標籤，搜尋[XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)套件（版本 v 6.0.0-preview7 或更新版本），並安裝封裝。 此套件提供您使用**WindowsXamlHost**控制項來裝載 UWP 控制項所需的所有專案，包括其他相關的 NuGet 套件。
+6. 選取 [**流覽**] 索引標籤，搜尋[XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)套件（6.0.0 或更新版本），並安裝套件。 此套件提供您使用**WindowsXamlHost**控制項來裝載 UWP 控制項所需的所有專案，包括其他相關的 NuGet 套件。
     > [!NOTE]
-    > Windows Forms 應用程式必須使用[XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)套件（版本 v 6.0.0-preview7 或更新版本）。
+    > Windows Forms 應用程式必須使用[XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)套件（6.0.0 或更新版本）。
 
 7. 將您的解決方案設定為以特定平臺（例如 x86 或 x64）為目標。 以**任何 CPU**為目標的專案不支援自訂 UWP 控制項。
 
@@ -70,7 +70,7 @@ ms.locfileid: "75302522"
 
 1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**加入** -> **新增專案**]。
 2. 新增 **[空白應用程式 (通用 Windows)\]** 專案到您的方案。 請確定 [目標版本] 和 [最小版本] 都設定為**Windows 10 1903 版**或更新版本。
-3. 在 UWP 應用程式專案中，安裝[XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 套件（6.0.0-preview7 或更新版本）。
+3. 在 UWP 應用程式專案中，安裝[XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 套件（6.0.0 版或更新版本）。
 4. 開啟**app.xaml**檔案，並以下列 xaml 取代此檔案的內容。 將 `MyUWPApp` 取代為 UWP 應用程式專案的命名空間。
 
     ```xml
@@ -200,13 +200,11 @@ ms.locfileid: "75302522"
 
 在過去，UWP 控制項已發行為 Windows 10 OS 的一部分，並可透過 Windows SDK 提供給開發人員使用。 [WinUI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)是一種替代的方法，其中 Windows SDK 的第一方 UWP 控制項的更新版本會散發在未系結至 Windows SDK 版本的 NuGet 套件中。 此程式庫也包含不屬於 Windows SDK 和預設 UWP 平臺的新控制項。 如需詳細資訊，請參閱我們的[WinUI 程式庫藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
 
-本節示範如何將 UWP 控制項從 WinUI 程式庫新增至您的使用者控制項，讓您可以將此控制項裝載于 WPF 應用程式中。 
+本節示範如何將 UWP 控制項從 WinUI 程式庫新增至您的使用者控制項，讓您可以將此控制項裝載于 WPF 應用程式中。
 
-1. 在 UWP 應用程式專案中，安裝最新的發行前版本的[Microsoft. UI. Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件。
-    > [!NOTE]
-    > 請確定您已安裝最新的*發行*前版本。 目前，如果您選擇在[MSIX 套件](https://docs.microsoft.com/windows/msix)中封裝應用程式以進行部署，則只有此套件的發行前版本才可正常使用。
+1. 在 UWP 應用程式專案中，安裝最新版的[Microsoft. UI. Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件。
 
-2. 在此專案的 app.xaml 檔案中，將下列子專案新增至 `<xaml:Application>` 元素。
+2. 在此專案的 app.xaml 檔案中，將下列子專案新增至 `<xaml:XamlApplication>` 元素。
 
     ```xml
     <Application.Resources>
@@ -229,7 +227,7 @@ ms.locfileid: "75302522"
     </xaml:XamlApplication>
     ```
 
-3. 在 UWP 類別庫專案中，安裝最[新的搶](https://www.nuget.org/packages/Microsoft.UI.Xaml)鮮版（您在 UWP 應用程式專案中安裝的版本）。
+3. 在 UWP 類別庫專案中，安裝最新版的[Microsoft. UI .Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件（與您安裝在 UWP 應用程式專案中的版本相同）。
 
 4. 在相同的專案中，開啟使用者控制項的 XAML 檔案，然後將下列命名空間宣告加入至 `<UserControl>` 專案。
 
@@ -287,22 +285,9 @@ ms.locfileid: "75302522"
         </Target>
         ```
 
-    3. 儲存專案檔案並將它關閉。
+    3. 儲存並關閉專案檔。
 
-4. 編輯套件資訊清單，以參考正確的預設啟動顯示畫面影像。 目前需要此解決方法，才能封裝裝載自訂 UWP 控制項的 WPF 應用程式。
-
-    1. 在封裝專案中，以滑鼠右鍵按一下**package.appxmanifest.xml**檔案，然後按一下 [**查看程式碼**]。
-    2. 在檔案中找出下列元素。
-
-        ```<uap:SplashScreen Image="Images\SplashScreen.png" />```
-
-    3. 將此元素變更為：
-
-        ```<uap:SplashScreen Image="Images\SplashScreen.scale-200.png" />```
-
-    4. 儲存**package.appxmanifest.xml**檔案並將它關閉。
-
-5. 編輯 WPF 專案檔案。 目前需要這些變更，才能封裝裝載自訂 UWP 控制項的 WPF 應用程式。
+4. 編輯 WPF 專案檔案。 目前需要這些變更，才能封裝裝載自訂 UWP 控制項的 WPF 應用程式。
 
     1. 在方案總管中，以滑鼠右鍵按一下 WPF 專案節點，然後選取 **[卸載專案**]。
     2. 以滑鼠右鍵按一下 WPF 專案節點，然後選取 [**編輯**]。
@@ -314,10 +299,10 @@ ms.locfileid: "75302522"
         </PropertyGroup>
         ```
 
-    4. 儲存專案檔案並將它關閉。
+    4. 儲存並關閉專案檔。
     5. 以滑鼠右鍵按一下 WPF 專案節點，然後選擇 [**重載專案**]。
 
-6. 建立並執行封裝專案。 確認 WPF 執行，而且 UWP 自訂控制項如預期般顯示。
+5. 建立並執行封裝專案。 確認 WPF 執行，而且 UWP 自訂控制項如預期般顯示。
 
 ## <a name="related-topics"></a>相關主題
 
