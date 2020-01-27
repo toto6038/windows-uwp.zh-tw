@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: e1a5b192ed57d3962b6ba4cbef69e3663bc1e2ec
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: b6533864748b4245b16ec7bcea9d2a831ff1c88a
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683991"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520443"
 ---
 # <a name="forms"></a>表單
 表單是一組控制項，會收集和提交使用者的資料。 表單通常用於 [設定] 頁面、問卷調查、建立帳戶等等。 
@@ -127,7 +127,7 @@ ms.locfileid: "75683991"
 ### <a name="lists"></a>清單
 控制 | 用法 | 範例
 - | - | -
-[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | 一開始為精簡狀態，展開可顯示可選取的項目清單 | 從一長串的項目中選取，例如州或國家/地區
+[ComboBox](combo-box.md) | 一開始為精簡狀態，展開可顯示可選取的項目清單 | 從一長串的項目中選取，例如州或國家/地區
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | 將項目分類並指派群組標頭、拖放項目、規劃內容，以及重新排序項目 | 排名選項
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | 排列並瀏覽以影像為基礎的集合 | 挑選相片、色彩、顯示佈景主題
 

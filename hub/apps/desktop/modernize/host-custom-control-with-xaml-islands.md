@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4fb6e2d4fc13d90ec69f962e69b1ee8cb5c1361c
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 70ba858daa09f4412a771441e76f5c00dd8c6c32
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520393"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725981"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 群島在 WPF 應用程式中裝載自訂 UWP 控制項
 
@@ -258,36 +258,7 @@ ms.locfileid: "76520393"
 
 2. 在封裝專案中，以滑鼠右鍵按一下 [**應用程式**] 節點，然後選擇 [**加入參考**]。 在專案清單中，選取方案中的 WPF 專案，然後按一下 **[確定]** 。
 
-3. 編輯封裝專案檔案。 封裝以 .NET Core 3 為目標並裝載 XAML 孤島的 WPF 應用程式時，目前需要進行這些變更。
-
-    1. 在方案總管中，以滑鼠右鍵按一下封裝專案節點，然後選取 [**編輯專案檔案**]。
-    2. 從檔案中找出 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。 以下列 XML 取代此元素。 這些變更目前需要用於封裝以 .NET Core 3 為目標並裝載 UWP 控制項的 WPF 應用程式。
-
-        ``` xml
-        <ItemGroup>
-            <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-            <Implicit>true</Implicit>
-            </SDKReference>
-        </ItemGroup>
-        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-            <ItemGroup>
-            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-                <SourceProject></SourceProject>
-                <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-            </_FilteredNonWapProjProjectOutput>
-            </ItemGroup>
-        </Target>
-        ```
-
-    3. 儲存並關閉專案檔。
-
-4. 編輯 WPF 專案檔案。 目前需要這些變更，才能封裝裝載自訂 UWP 控制項的 WPF 應用程式。
+3. 編輯 WPF 專案檔案。 目前需要這些變更，才能封裝裝載自訂 UWP 控制項的 WPF 應用程式。
 
     1. 在方案總管中，以滑鼠右鍵按一下 WPF 專案節點，然後選取 **[卸載專案**]。
     2. 以滑鼠右鍵按一下 WPF 專案節點，然後選取 [**編輯**]。
@@ -299,10 +270,10 @@ ms.locfileid: "76520393"
         </PropertyGroup>
         ```
 
-    4. 儲存並關閉專案檔。
+    4. 儲存專案檔案並將它關閉。
     5. 以滑鼠右鍵按一下 WPF 專案節點，然後選擇 [**重載專案**]。
 
-5. 建立並執行封裝專案。 確認 WPF 執行，而且 UWP 自訂控制項如預期般顯示。
+4. 建立並執行封裝專案。 確認 WPF 執行，而且 UWP 自訂控制項如預期般顯示。
 
 ## <a name="related-topics"></a>相關主題
 
