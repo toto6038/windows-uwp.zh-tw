@@ -1,19 +1,19 @@
 ---
 description: 本文說明如何在您的桌面C++ Win32 應用程式中裝載 UWP XAML UI。
 title: 在 C++ Win32 應用程式中使用 UWP XAML 裝載 API
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: windows 10，uwp，windows forms，wpf，win32，xaml 群島
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5a0973bcce4de4fac8f923a303b0c3216600fb97
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 7574fb5920433f894819ffd3d94e31fef03d30b3
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520423"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814028"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>在 C++ Win32 應用程式中使用 UWP XAML 裝載 API
 
@@ -95,11 +95,11 @@ UWP XAML 裝載 API 包含這些主要的 Windows 執行階段類型和 COM 介�
 
 下列範例示範如何在C++ Win32 應用程式中使用 UWP XAML 裝載 API：
 
-* [簡單的 XAML 島範例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp)。 這個範例示範在未封裝C++的 Win32 應用程式（也就是未內建于 MSIX 套件中的應用程式）中裝載 UWP 控制項的基本部署。
+* [簡單的 XAML 島範例](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App)。 這個範例示範在未封裝C++的 Win32 應用程式（也就是未內建于 MSIX 套件中的應用程式）中裝載 UWP 控制項的基本部署。
 
-* [具有自訂控制項範例的 XAML 島](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)。 這個範例示範在未封裝C++的 Win32 應用程式中裝載自訂 UWP 控制項的完整執行，以及處理其他行為（例如鍵盤輸入和焦點導覽）。 
+* [具有自訂控制項範例的 XAML 島](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32)。 這個範例示範在封裝C++的 Win32 應用程式中裝載自訂 UWP 控制項的完整執行，以及處理其他行為，例如鍵盤輸入和焦點導覽。
 
-### <a name="wpf-and-windows-forms"></a>WPF 和 Windows Form
+### <a name="wpf-and-windows-forms"></a>WPF 和 Windows Forms
 
 Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項，做為在 WPF 和 Windows Forms 應用程式中使用 UWP 裝載 API 的參考範例。 原始程式碼可在下列位置取得：
 
@@ -109,7 +109,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 ## <a name="host-a-standard-uwp-control"></a>裝載標準 UWP 控制項
 
-本節將逐步引導您使用 UWP XAML 裝載 API，在新C++的 Win32 應用程式中裝載標準 uwp 控制項（也就是由 Windows SDK 或 WinUI 程式庫所提供的控制項）。 程式碼是以簡單的[XAML 島範例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp)為基礎，本節將討論一些最重要的程式碼部分。 如果您有現有C++的 Win32 應用程式專案，您可以針對您的專案調整這些步驟和程式碼範例。
+本節將逐步引導您使用 UWP XAML 裝載 API，在新C++的 Win32 應用程式中裝載標準 uwp 控制項（也就是由 Windows SDK 或 WinUI 程式庫所提供的控制項）。 程式碼是以簡單的[XAML 島範例](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App)為基礎，本節將討論一些最重要的程式碼部分。 如果您有現有C++的 Win32 應用程式專案，您可以針對您的專案調整這些步驟和程式碼範例。
 
 ### <a name="configure-the-project"></a>設定專案
 
@@ -119,7 +119,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 3. 安裝[CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet 套件：
 
-    1. 在 [方案總管] 中以滑鼠右鍵按一下專案，然後選擇 [管理 NuGet 封裝]。
+    1. 在**方案總管**中，以滑鼠右鍵按一下您的專案，然後選擇 [**管理 NuGet 封裝**]。
     2. 選取 [**流覽**] 索引標籤，搜尋[CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)套件，然後安裝此套件的最新版本。
 
 4. 安裝[Microsoft 工具](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK)組. SDK NuGet 套件：
@@ -341,9 +341,8 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 如需示範這些工作的完整範例，請參閱下列程式碼檔案：
 
 * **C++32**
-  * 請參閱[SIMPLE XAML 孤島範例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp)中的[HelloWindowsDesktop。](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_SimpleApp/Win32DesktopApp/HelloWindowsDesktop.cpp)
-  * 請參閱[具有自訂控制項範例的 XAML 島](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的[XamlBridge。](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp)
-
+  * 請參閱[HelloWindowsDesktop .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp)檔案。
+  * 請參閱[XamlBridge .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp)檔案。
 * **WPF：** 請參閱 Windows 社區工具組中的[WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs)檔案。  
 
 * **Windows Forms：** 請參閱 Windows 社區工具組中的[WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs)檔案。
@@ -358,27 +357,29 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 * **自訂 UWP 控制項**。 您需要裝載的自訂 UWP 控制項的原始程式碼，才能使用您的應用程式進行編譯。 自訂控制項通常會定義在 UWP 類別庫專案中，而您會在與C++ Win32 專案相同的方案中參考它。
 
-* **定義 XamlApplication 物件的 UWP 應用程式專案**。 您C++的 Win32 專案必須能夠存取 Windows 社區工具組所提供之 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 類別的實例。 這個型別會作為根中繼資料提供者，以便在應用程式目前目錄的元件中載入自訂 UWP XAML 類型的中繼資料。 建議的做法是將**空白應用程式（通用 Windows）** 專案新增至與您C++的 Win32 專案相同的方案，並在此專案中修改預設的 `App` 類別。
+* **定義 XamlApplication 物件的 UWP 應用程式專案**。 您C++的 Win32 專案必須能夠存取由 Windows 社區工具組所提供的[XamlHost](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)類別的實例。 這個型別會作為根中繼資料提供者，以便在應用程式目前目錄的元件中載入自訂 UWP XAML 類型的中繼資料。
+
+  若要這麼做，建議您將**空白應用程式（通用 Windows）** 專案新增至與您C++的 win32 專案相同的方案中，修訂此專案中的預設 `App` 類別，以衍生自 `XamlApplication`，然後在C++ Win32 應用程式的進入點碼中建立此物件的實例。
+
   > [!NOTE]
   > 您的方案只能包含一個定義 `XamlApplication` 物件的專案。 應用程式中的所有自訂 UWP 控制項都會共用相同的 `XamlApplication` 物件。 定義 `XamlApplication` 物件的專案必須包含所有其他 UWP 程式庫的參考，以及在 XAML 島中主控 UWP 控制項的專案。
 
 若要在C++ Win32 應用程式中裝載自訂 UWP 控制項，請遵循下列一般步驟。
 
-1. 在包含C++ Win32 桌面應用程式專案的方案中，新增**空白應用程式（通用 Windows）** 專案，並依照[本節](host-custom-control-with-xaml-islands.md#create-a-xamlapplication-object-in-a-uwp-app-project)中相關 WPF 逐步解說中的詳細指示來設定它。
+1. 在包含C++ Win32 桌面應用程式專案的方案中，新增**空白應用程式（通用 Windows）** 專案，並依照本節中相關的 WPF [逐步解說中的詳細](host-custom-control-with-xaml-islands.md#define-a-xamlapplication-class-in-a-uwp-app-project)指示，在其中定義 `XamlApplication` 類別。 
 
 2. 在相同的方案中，加入包含自訂 UWP XAML 控制項原始程式碼的專案（這通常是 UWP 類別庫專案），並建立專案。
 
 3. 在 UWP 應用程式專案中，加入 UWP 類別庫專案的參考。
 
-4. 在您C++的 Win32 專案中，加入 uwp 應用程式專案和方案中 uwp 類別庫專案的參考。
+4. 在您C++的 Win32 專案中：
+
+  * 在您的方案中加入 UWP 應用程式專案和 UWP 類別庫專案的參考。
+  * 在 `WinMain` 函式或其他一些進入點代碼中，建立您稍早在 UWP 應用程式專案中定義之 `XamlApplication` 類別的實例。 例如，請參閱[XAML 島範例](https://github.com/microsoft/Xaml-Islands-Samples)中C++ Win32 範例的[這行程式碼](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Desktop_Win32App/DesktopWin32App/DesktopWin32App.cpp#L46)。
 
 5. 請遵循[使用 xaml 裝載 API 來裝載 UWP 控制項](#use-the-xaml-hosting-api-to-host-a-uwp-control)一節中所述的程式，將自訂控制項裝載于應用程式中的 XAML 島。 指派自訂控制項的實例，以裝載至程式碼中**DesktopWindowXamlSource**物件的[Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content)屬性。
 
-如需C++ Win32 應用程式的完整範例，請參閱[使用自訂控制項的 XAML 島](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的下列專案範例：
-
-* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl)：此專案會執行名為 `MyUserControl` 的自訂 UWP XAML 控制項，其中包含文字方塊、數個按鈕和一個下拉式方塊。
-* [MyApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp)：這是具有上述變更的 UWP 應用程式專案。
-* [SampleCppApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp)：這是在C++ XAML 島中裝載自訂 UWP XAML 控制項的 Win32 應用程式專案。
+如需C++ Win32 應用程式的完整範例，請參閱[XAML 島C++ win32 範例](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Desktop_Win32App)。
 
 ## <a name="handle-keyboard-layout-and-dpi"></a>處理鍵盤、版面配置和 DPI
 
@@ -393,7 +394,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 若要適當地處理每個 XAML 島的鍵盤輸入，您的應用程式必須將所有的 Windows 訊息傳遞至 UWP XAML 架構，才能正確處理特定訊息。 若要這樣做，您可以在應用程式中存取訊息迴圈的某個位置，將每個 XAML 島的**DesktopWindowXamlSource**物件轉換成**IDesktopWindowXamlSourceNative2** COM 介面。 然後，呼叫此介面的**PreTranslateMessage**方法，並傳入目前的訊息。
 
-  * Win32：：應用程式可以直接在其主要訊息迴圈中呼叫**PreTranslateMessage** 。 **C++** 如需範例，請參閱[ C++ Win32 範例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的[XamlBridge .cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6)檔案。
+  * Win32：：應用程式可以直接在其主要訊息迴圈中呼叫**PreTranslateMessage** 。 **C++** 如需範例，請參閱[XamlBridge .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16)檔案。
 
   * **WPF：** 應用程式可以從[ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage)事件的事件處理常式呼叫**PreTranslateMessage** 。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177)檔案。
 
@@ -411,7 +412,7 @@ UWP XAML 裝載 API 提供數種類型和成員，可協助您完成這些工作
 
 如需示範如何在運作中範例應用程式的內容中執行這項操作的範例，請參閱下列程式碼檔案：
 
-  * /Win32：請參閱[ C++ Win32 範例](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)中的[XamlBridge .cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp)檔案。 **C++**
+  * /Win32：請參閱[XamlBridge .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp)檔案。 **C++**
 
   * **WPF：** 請參閱 Windows 社區工具組中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs)檔案。  
 
@@ -421,7 +422,7 @@ UWP XAML 裝載 API 提供數種類型和成員，可協助您完成這些工作
 
 當使用者變更父系 UI 元素的大小時，您必須處理任何必要的版面配置變更，以確保您的 UWP 控制項如預期般顯示。 以下是一些需要考慮的重要案例。
 
-* 在C++ Win32 應用程式中，當您的應用程式處理 WM_SIZE 訊息時，它可以使用[SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos)函式重新置放裝載的 XAML 島。 如需範例，請參閱[ C++ Win32 範例](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)中的[SampleApp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191)程式碼檔案。
+* 在C++ Win32 應用程式中，當您的應用程式處理 WM_SIZE 訊息時，它可以使用[SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos)函式重新置放裝載的 XAML 島。 如需範例，請參閱[SampleApp .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170)程式碼檔。
 
 * 當父 UI 元素需要取得所需之矩形區域的大小，以符合您在**DesktopWindowXamlSource**上**裝載的 node.js**時，請呼叫**windows. ui**的[Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)方法。 例如：
 
@@ -480,5 +481,5 @@ UWP XAML 架構會自動處理所裝載 UWP 控制項的 DPI 變更（例如，�
 
 ## <a name="related-topics"></a>相關主題
 
-* [桌面應用程式中的 UWP 控制項](xaml-islands.md)
-* [C++Win32 XAML 群島範例](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)
+* [在桌面應用程式中裝載 UWP XAML 控制項（XAML 島）](xaml-islands.md)
+* [C++Win32 XAML 群島範例](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)
