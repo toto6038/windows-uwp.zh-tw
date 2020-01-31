@@ -6,16 +6,16 @@ ms.date: 09/12/2019
 keywords: Windows 10 中的協助工具, 建置無障礙 win32 應用程式, 建置無障礙 UWP 應用程式, 建置無障礙 WPF 應用程式, 建置無障礙 WinForms 應用程式
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: fdb1092139602edd00086e17ff4dc7a27cf361dd
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 2739546061febcfc96403ed5520fdcbd8bc2c462
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681889"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725931"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的協助工具
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![協助工具主角圖像](images/hero-accessibility-bar-smaller.png)
 
 ## <a name="build-accessibility-into-your-applications-to-empower-people-of-all-abilities"></a>在您的應用程式中建置協助工具，賦予人員各種功能
 
@@ -256,7 +256,6 @@ ms.locfileid: "75681889"
       [Windows UI 自動化部落格](https://blogs.msdn.microsoft.com/winuiautomation/)
    :::column-end:::
 :::row-end:::
-
 :::row:::
    :::column span="3":::
       **社群與支援**

@@ -1,19 +1,19 @@
 ---
 description: 本文示範如何使用 XAML 島，在 WPF 應用程式中裝載自訂 UWP 控制項。
 title: 使用 XAML 群島在 WPF 應用程式中裝載自訂 UWP 控制項
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: windows 10，uwp，windows forms，wpf，xaml 島，自訂控制項，使用者控制項，主控制項
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 70ba858daa09f4412a771441e76f5c00dd8c6c32
-ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.openlocfilehash: 8f22761bf535f13ae0686a9b180ee810fba61028
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725981"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813998"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 群島在 WPF 應用程式中裝載自訂 UWP 控制項
 
@@ -21,17 +21,20 @@ ms.locfileid: "76725981"
 
 雖然本文示範如何在 WPF 應用程式中執行這項作業，但此程式與 Windows Forms 應用程式的處理方式類似。 如需有關在 WPF 和 Windows Forms 應用程式中裝載 UWP 控制項的總覽，請參閱[這篇文章](xaml-islands.md#wpf-and-windows-forms-applications)。
 
-## <a name="overview"></a>概觀
+## <a name="required-components"></a>必要元件
 
-若要在 WPF 應用程式中裝載自訂 UWP 控制項，您需要下列元件。 本文提供建立這些元件的指示。
+若要在 WPF （或 Windows Forms）應用程式中裝載自訂 UWP 控制項，您的方案中將需要下列元件。 本文提供建立這些元件的指示。
 
-* **WPF 應用程式的專案和原始程式碼**。 只有在 WPF 和以 .NET Core 3 為目標的 Windows Forms 應用程式中，才支援使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項來裝載自訂 UWP 控制項。 以 .NET Framework 為目標的應用程式不支援此案例。
+* **應用程式的專案和原始程式碼**。 只有以 .NET Core 3 為目標的應用程式才支援使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項來裝載自訂 UWP 控制項。 以 .NET Framework 為目標的應用程式不支援此案例。
 
-* **自訂 UWP 控制項**。 您需要裝載的自訂 UWP 控制項的原始程式碼，才能使用您的應用程式進行編譯。 自訂控制項通常會定義在 UWP 類別庫專案中，而您會在與 WPF （或 Windows Forms）專案相同的方案中參考它。
+* **自訂 UWP 控制項**。 您需要裝載的自訂 UWP 控制項的原始程式碼，才能使用您的應用程式進行編譯。 自訂控制項通常會定義在 UWP 類別庫專案中，而您會在與 WPF 或 Windows Forms 專案相同的方案中參考它。
 
-* **定義 XamlApplication 物件的 UWP 應用程式專案**。 您的 WPF （或 Windows Forms）專案必須能夠存取 Windows 社區工具組所提供之 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 類別的實例。 這個物件會作為根中繼資料提供者，以便在應用程式目前目錄的元件中載入自訂 UWP XAML 類型的中繼資料。 建議的做法是將**空白應用程式（通用 Windows）** 專案加入至與 WPF （或 Windows Forms）專案相同的方案中，並修訂此專案中的預設 `App` 類別。
-  > [!NOTE]
-  > 您的方案只能包含一個定義 `XamlApplication` 物件的專案。 應用程式中的所有自訂 UWP 控制項都會共用相同的 `XamlApplication` 物件。 定義 `XamlApplication` 物件的專案必須包含所有其他 UWP 程式庫的參考，以及在 XAML 島中主控 UWP 控制項的專案。
+* **UWP 應用程式專案，定義衍生自 XamlApplication 的根應用程式類別**。 您的 WPF 或 Windows Forms 專案必須能夠存取由 Windows 社區工具組所提供的[XamlHost](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)類別的實例。 這個物件會作為根中繼資料提供者，以便在應用程式目前目錄的元件中載入自訂 UWP XAML 類型的中繼資料。
+
+    若要這麼做，建議的做法是將**空白應用程式（通用 Windows）** 專案加入至與 WPF 或 Windows Forms 專案相同的方案中，修訂此專案中的預設 `App` 類別，以衍生自 `XamlApplication`，然後在應用程式的進入點程式碼中建立此物件的實例。
+
+    > [!NOTE]
+    > 您的方案只能包含一個定義 `XamlApplication` 物件的專案。 應用程式中的所有自訂 UWP 控制項都會共用相同的 `XamlApplication` 物件。 定義 `XamlApplication` 物件的專案必須包含所有其他 UWP 程式庫的參考，以及在 XAML 島中主控 UWP 控制項的專案。
 
 ## <a name="create-a-wpf-project"></a>建立 WPF 專案
 
@@ -59,14 +62,14 @@ ms.locfileid: "76725981"
 
 7. 將您的解決方案設定為以特定平臺（例如 x86 或 x64）為目標。 以**任何 CPU**為目標的專案不支援自訂 UWP 控制項。
 
-    1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 **屬性** ** -> ** 設定 屬性 -> **Configuration Manager**。 
+    1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 **屬性** ** -> ** 設定 屬性 -> **Configuration Manager**。
     2. 在 [使用中的**方案平臺**] 底下，選取 [**新增**]。 
     3. 在 [**新增方案平臺**] 對話方塊中，選取 [ **X64** ] 或 [ **X86** ] 並按 **[確定]** 。 
     4. 關閉開啟的對話方塊。
 
-## <a name="create-a-xamlapplication-object-in-a-uwp-app-project"></a>在 UWP 應用程式專案中建立 XamlApplication 物件
+## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>在 UWP 應用程式專案中定義 XamlApplication 類別
 
-接下來，將 UWP 應用程式專案新增至與 WPF 專案相同的方案中。 您將會修訂此專案中的預設 `App` 類別，以衍生自 Windows 社區工具組所提供的 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 類別。 WPF 應用程式中的**WindowsXamlHost**物件需要此 `XamlApplication` 物件，才能裝載自訂 UWP 控制項。
+接下來，將 UWP 應用程式專案新增至與 WPF 專案相同的方案中。 您將會修訂此專案中的預設 `App` 類別，以衍生自 Windows 社區工具組所提供的[XamlHost](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)類別。 如需此類別用途的詳細資訊，[請參閱本節](#required-components)。
 
 1. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後選取 [**加入** -> **新增專案**]。
 2. 新增 **[空白應用程式 (通用 Windows)\]** 專案到您的方案。 請確定 [目標版本] 和 [最小版本] 都設定為**Windows 10 1903 版**或更新版本。
@@ -101,6 +104,38 @@ ms.locfileid: "76725981"
 6. 從 UWP 應用程式專案中刪除**MainPage。**
 7. 清除 UWP 應用程式專案，然後建立它。
 8. 在 WPF 專案中，以滑鼠右鍵按一下 [相依性 **]** 節點，並加入 UWP 應用程式專案的參考。
+
+## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>在 WPF 應用程式的進入點中將 XamlApplication 物件具現化
+
+接下來，將程式碼新增至 WPF 應用程式的進入點，以建立您剛在 UWP 專案中定義之 `App` 類別的實例（這是現在衍生自 `XamlApplication`的類別）。 如需此物件用途的詳細資訊，請參閱[本節。](#required-components)
+
+1. 在 WPF 專案中，以滑鼠右鍵按一下專案節點，然後依序選取 [**新增 -> ** **新專案**] 和 [**類別**]。 將類別命名為**程式**，然後按一下 [**新增**]。
+
+2. 使用下列程式碼取代產生的 `Program` 類別，然後儲存檔案。 將 `MyUWPApp` 取代為 UWP 應用程式專案的命名空間，並將 `MyWPFApp` 取代為 WPF 應用程式專案的命名空間。
+
+    ```csharp
+    public class Program
+    {
+        [System.STAThreadAttribute()]
+        public static void Main()
+        {
+            using (new MyUWPApp.App())
+            {
+                MyWPFApp.App app = new MyWPFApp.App();
+                app.InitializeComponent();
+                app.Run();
+            }
+        }
+    }
+    ```
+
+3. 以滑鼠右鍵按一下專案節點，然後選擇 [**屬性**]。
+
+4. 在 [內容] 的 [**應用程式**] 索引標籤上，按一下 [**啟始物件**] 下拉式選單，然後選擇您在上一個步驟中加入之 `Program` 類別的完整名稱。 
+    > [!NOTE]
+    > 根據預設，WPF 專案會在產生的程式碼檔案中，定義不打算修改的 `Main` 進入點函式。 這個步驟會將您專案的進入點變更為新 `Program` 類別的 `Main` 方法，這可讓您在應用程式的啟動進程中，儘早新增執行的程式碼。 
+
+5. 將您的變更儲存至專案屬性。
 
 ## <a name="create-a-custom-uwp-control"></a>建立自訂 UWP 控制項
 
@@ -277,5 +312,6 @@ ms.locfileid: "76725981"
 
 ## <a name="related-topics"></a>相關主題
 
-* [桌面應用程式中的 UWP 控制項](xaml-islands.md)
+* [在桌面應用程式中裝載 UWP XAML 控制項（XAML 島）](xaml-islands.md)
+* [XAML 島程式碼範例](https://github.com/microsoft/Xaml-Islands-Samples)
 * [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

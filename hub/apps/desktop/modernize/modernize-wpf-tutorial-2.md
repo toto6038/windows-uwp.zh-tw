@@ -2,18 +2,18 @@
 description: 本教學課程示範如何新增 UWP XAML 使用者介面、建立 MSIX 套件，以及將其他現代化元件併入您的 WPF 應用程式中。
 title: 使用 XAML Islands 新增 UWP InkCanvas 控制項
 ms.topic: article
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.author: mcleans
 author: mcleanbyron
 keywords: windows 10，uwp，windows forms，wpf，xaml 群島
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 1ed4fa54b9987ef0ab5f3dd89aa9d11a00ae695c
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 945cc2f1cf225c194e5820990bdbeda584069e4c
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520433"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814038"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第2部分：使用 XAML 群島新增 UWP InkCanvas 控制項
 
@@ -22,7 +22,7 @@ ms.locfileid: "76520433"
 在本教學課程的虛構案例中，Contoso 開發小組想要將數位簽章的支援新增至 Contoso 費用應用程式。 UWP **InkCanvas**控制項是此案例的絕佳選項，因為它支援數位筆跡和 AI 提供的功能，例如辨識文字和圖形的功能。 若要這麼做，您將使用 Windows 社區工具組中提供的[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)包裝 UWP 控制項。 此控制項會包裝 UWP **InkCanvas**控制項的介面和功能，以便在 WPF 應用程式中使用。 如需包裝 UWP 控制項的詳細資訊，請參閱[在桌面應用程式中裝載 UWP XAML 控制項（Xaml 島）](xaml-islands.md)。
 
 > [!NOTE]
-> 在本教學課程中，WPF 應用程式只會從 Windows SDK 裝載第一方 UWP 控制項。 為了支援其他包含自訂 UWP 控制項的 XAML 島案例，應用程式專案必須能夠存取 Windows 社區工具組所提供之 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 類別的實例。 建議的做法是將**空白應用程式（通用 Windows）** 專案加入至與 WPF （或 Windows Forms）專案相同的方案中，並修訂此專案中的預設 `App` 類別。 因為從 Windows SDK 裝載第一方 UWP 控制項的基本案例不需要此步驟，所以本教學課程會省略此步驟。 如需詳細資訊，請參閱[這篇文章](host-standard-control-with-xaml-islands.md)。
+> 在本教學課程中，WPF 應用程式只會從 Windows SDK 裝載第一方 UWP 控制項。 因此，本教學課程會省略定義[XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)類別實例的步驟，如[這裡](host-standard-control-with-xaml-islands.md#required-components)所述。
 
 ## <a name="configure-the-project-to-use-xaml-islands"></a>將專案設定為使用 XAML 群島
 
