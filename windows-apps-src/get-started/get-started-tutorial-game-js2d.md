@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: b2b60354acb2c3d97ced3dce0b3fb7f6d97ac35d
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 92a1567fe72d46e53bf218c033fc59e8c98a2981
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684768"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929266"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
@@ -165,7 +165,6 @@ JavaScript 在載入資源 (例如影像) 時需要一點協助，因此我們�
 現在我們要讓雲朵移動。 移動雲朵 - 事實上移動任何項目 - 的秘密是，設定每秒重複呼叫多次的 [ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html) 函式。 每次呼叫這個函式，它便會在稍微不同的地方重新繪製圖形。
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">請參閱由 Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) 發佈到 <a href="https://codepen.io">CodePen</a> 的 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 以動畫顯示雲朵</a>。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
  若要這樣做的程式碼已在 **main.js** 檔案中，由 CreateJS 程式庫 EaselJS 所提供的。 它的外觀如下：
 
 ```
