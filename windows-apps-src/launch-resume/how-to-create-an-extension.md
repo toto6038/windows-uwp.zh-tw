@@ -1,37 +1,36 @@
 ---
 title: 建立和裝載應用程式延伸模組
-description: 撰寫和裝載通用 Windows 平台 (UWP) 應用程式延伸模組可讓您透過使用者可從 Microsoft Store 安裝的套件來擴充應用程式。
+description: 撰寫和裝載應用程式延伸模組，可讓您透過使用者可以從 Microsoft Store 安裝的套件來擴充應用程式。
 keywords: 應用程式延伸模組, 應用程式服務, 背景
-ms.date: 10/05/2017
+ms.date: 01/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cb5395238ad6813556b7ae254ca4a86bc8f5b28
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: d315fb89f38e517e61194adf5b75a28b4675de9c
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282390"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929278"
 ---
 # <a name="create-and-host-an-app-extension"></a>建立和裝載應用程式延伸模組
 
-本文說明如何建立 UWP 應用程式延伸模組，並將其裝載於 UWP app。
+本文說明如何建立 Windows 10 應用程式擴充功能，並將其裝載于應用程式中。 UWP 應用程式和已[封裝的桌面應用程式](/windows/apps/desktop/modernize/#msix-packages)支援應用程式延伸模組。
 
-本文附有程式碼範例：
-- 下載並解壓縮[數學延伸模組程式碼範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)。
+為了示範如何建立應用程式擴充功能，本文會使用[數學延伸模組程式碼範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/MathExtensionSample)中的套件資訊清單 XML 和程式碼片段。 這個範例是 UWP 應用程式，但範例中示範的功能也適用于已封裝的桌面應用程式。 請依照下列指示開始使用範例：
+
+- 下載並解壓縮[數學擴充程式碼範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)。
 - 在 Visual Studio 2019 中，開啟 MathExtensionSample。 將組建類型設定為 x86 ( **\[建置\]**  >  **\[組態管理員\]** ，然後將兩個專案的 **\[平台\]** 變更為 **\[x86\]** )。
-- 部署解決方案：**組建** > **部署解決方案**。
+- 部署方案： **\[建置\]**  >  **\[部署方案\]** 。
 
 ## <a name="introduction-to-app-extensions"></a>應用程式延伸模組簡介
 
-在通用 Windows 平台 (UWP) 中，擴充功能提供類似於外掛模組、增益集和附加元件在其他平台上所執行的功能。 舉例來說，Microsoft Edge 延伸模組即是 UWP 應用程式延伸模組。 UWP 應用程式延伸模組是在 Windows 10 年度更新版 (版本 1607 組建 10.0.14393) 中引進的。
+在 Windows 10 中，應用程式延伸模組提供的功能類似于其他平臺上的外掛程式、增益集和附加元件。 應用程式延伸模組是在 Windows 10 年度版（版本1607、組建10.0.14393）中引進。
 
-UWP 應用程式延伸模組是具有延伸宣告的 UWP app，此宣告可讓延伸模組與主機應用程式共用內容和部署事件。 延伸應用程式可以提供多個延伸模組。
+應用程式延伸模組是 UWP 應用程式或封裝的桌面應用程式，其具有延伸宣告，可讓他們與主機應用程式共用內容和部署事件。 延伸應用程式可以提供多個延伸模組。
 
-應用程式延伸模組就是 UWP app，因此同樣可以做為功能完整的應用程式、裝載延伸模組，以及提供延伸模組給其他應用程式，完全不需要建立不同的應用程式套件。
+因為應用程式延伸模組只是 UWP 應用程式或已封裝的桌面應用程式，所以它們也可以是功能完整的應用程式、主機延伸模組，並提供其他應用程式的擴充功能，而不需要建立個別的應用程式套件。
 
-建立應用程式延伸主機時，可能會提供以您的應用程式為中心發展生態系統的機會，其他開發人員可在其中用您想像不到的方式或您沒有的資源來增強該應用程式，。 請考慮 Microsoft Office 擴充功能、Visual Studio 延伸模組、瀏覽器擴充功能等。這些應用程式的體驗會比隨附的功能更豐富。 延伸模組可以增加應用程式的價值並延長其使用壽命。
-
-**概觀**
+建立應用程式延伸主機時，可能會提供以您的應用程式為中心發展生態系統的機會，其他開發人員可在其中用您想像不到的方式或您沒有的資源來增強該應用程式，。 請考慮建立 Microsoft Office 延伸模組、Visual Studio 延伸模組、瀏覽器延伸等延伸模組。這些延伸模組建立為這些應用程式更加豐富且超出其所隨附功能的體驗。 延伸模組可以增加應用程式的價值並延長其使用壽命。
 
 概略來說，要設定應用程式延伸模組關聯性，我們必須：
 
@@ -74,7 +73,7 @@ _MathExtensionHost 專案中的 package.appxmanifest.xml_
 
 請注意 `xmlns:uap3="http://..."`，以及 `uap3` 是否存在於 `IgnorableNamespaces`。 由於我們要使用 uap3 命名空間，因此上述注意事項是必要。
 
-`<uap3:Extension Category="windows.appExtensionHost">` 會將此應用程式識別為延伸主機。
+`<uap3:Extension Category="windows.appExtensionHost">` 將此應用程式識別為延伸主機。
 
 `<uap3:AppExtensionHost>` 中的 **Name** 元素是_延伸協定_名稱。 延伸模組指定相同的延伸協定時，主機將可以找到它。 依慣例，我們建議您使用應用程式名稱或發佈者名稱建立延伸協定名稱，以避免與其他延伸協定名稱產生可能的衝突。
 
@@ -116,11 +115,11 @@ _MathExtension 專案中的 package.appxmanifest.xml：_
 
 再次注意 `xmlns:uap3="http://..."` 程式碼行，以及 `uap3` 是否存在於 `IgnorableNamespaces`。 由於我們要使用 `uap3` 命名空間，因此上述注意事項是必要。
 
-`<uap3:Extension Category="windows.appExtension">` 會將此應用程式識別為延伸模組。
+`<uap3:Extension Category="windows.appExtension">` 將此應用程式識別為延伸模組。
 
 `<uap3:AppExtension>` 屬性的意義如下：
 
-|屬性|描述|必要項|
+|屬性|說明|必要|
 |---------|-----------|:------:|
 |**名稱**|這是延伸協定名稱。 符合主機中宣告的 **Name** 時，該主機將可找到此延伸模組。| :heavy_check_mark: |
 |**ID**| 唯一識別此延伸模組。 由於可能會有多個使用相同延伸協定的延伸模組 (試想支援數個延伸模組的繪圖應用程式)，您可以使用 ID 來加以區分。 應用程式延伸主機可以使用 ID 推斷一些關於延伸模組類型的資訊。 例如，您可能會有一個延伸模組針對傳統型設計，另一個則針對行動裝置設計，此 ID 即為區分方法。 您也可以使用 **Properties** 元素進行區分，如下所述。| :heavy_check_mark: |
@@ -211,7 +210,7 @@ _MathExtension 專案中的 package.appxmanifest.xml_
 
 主機載入延伸模組時，像這樣的程式碼會從延伸模組之 Package.appxmanifest 所定義的屬性中擷取服務的名稱：
 
-_在 ExtensionManager.cs 中，于 MathExtensionHost 專案中 `Update()`_
+_在 ExtensionManager.cs 的 MathExtensionHost 專案中 `Update()`_
 ```cs
 ...
 var properties = await ext.GetExtensionPropertiesAsync() as PropertySet;
@@ -233,11 +232,11 @@ if (_properties != null)
 
 有了儲存在 `_serviceName` 中的應用程式服務名稱，主機就可以使用該名稱來叫用應用程式服務。
 
-叫用應用程式服務還需要包含應用程式服務之套件的系列名稱。 幸好，應用程式延伸模組 API 會提供這項資訊，這會在行中取得： `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
+叫用應用程式服務還需要包含應用程式服務之套件的系列名稱。 幸運的是，應用程式延伸模組 API 提供了這項資訊，可在這一行取得： `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
 
 ### <a name="define-how-the-host-and-the-extension-will-communicate"></a>定義主機與其延伸模組通訊的方式
 
-app 服務會使用[ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) 來交換資訊。 身為主機的作者，您必須提供通訊協定，才能與彈性的延伸模組進行通訊。 在程式碼範例中，這意味著要解釋如何處理未來可能接受 1、2 或更多個引數的延伸模組。
+應用程式服務會使用 [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) 來交換資訊。 身為主機的作者，您必須提供通訊協定，才能與彈性的延伸模組進行通訊。 在程式碼範例中，這意味著要解釋如何處理未來可能接受 1、2 或更多個引數的延伸模組。
 
 在此範例中，引數的通訊協定是**ValueSet** ，其中包含名為 ' Arg ' 的機碼值組 + 引數編號，例如 `Arg1` 和 `Arg2`。 主機傳遞 **ValueSet** 中所有的引數，而延伸模組則使用其所需的引數。 如果延伸模組可以計算結果，則主機預期延伸模組傳回的 **ValueSet** 會有包含計算值的 `Result`。 如果該索引鍵不存在，主機會假設延伸模無法完成計算。
 
@@ -407,7 +406,7 @@ _MathExtension 專案中的 package.appxmanifest.xml：_
 
 應用程式延伸模組會參與開放式生態系統。 如果您的應用程式可以裝載應用程式延伸模組，任何人都能針對您的主機撰寫延伸模組，只要這些延伸模組符合您從延伸模組傳送/接收資訊的方法即可。 這點與參與封閉式生態系統的選用套件不同，其中是由發佈者決定允許誰來建立可與應用程式搭配使用的選用套件。
 
-應用程式延伸模組是獨立套件，而且可以成為獨立應用程式。 這些延伸模組對其他應用程式不能有部署相依性。 選用套件必須有主要套件，沒有就無法執行。
+應用程式延伸模組是獨立套件，而且可以成為獨立應用程式。 這些延伸模組對其他應用程式不能有部署相依性。 選擇性套件需要主要套件，而且不能在沒有它的情況下執行。
 
 遊戲的擴充套件緊密繫結至遊戲，因此是很好的選用套件候選項目，無法單獨在遊戲之外執行，而且您可能也不希望生態系統中的任何開發人員都來建立擴充套件。
 
