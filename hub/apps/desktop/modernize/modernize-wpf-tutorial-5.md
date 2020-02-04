@@ -5,7 +5,7 @@ ms.topic: article
 ms.date: 01/23/2020
 ms.author: mcleans
 author: mcleanbyron
-keywords: windows 10，uwp，windows forms，wpf，xaml 群島
+keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ms.openlocfilehash: 27906d9d389c065ab1fdf7124151cd1915f850eb
@@ -34,7 +34,7 @@ Visual Studio 2019 提供簡單的方法，讓您使用 Windows 應用程式封�
 
 1. 在**方案總管**中，以滑鼠右鍵按一下**ContosoExpenses**方案，然後選擇 [**加入 > 新增專案**]。
 
-    ![加入新專案](images/wpf-modernize-tutorial/AddNewProject.png)
+    ![新增專案](images/wpf-modernize-tutorial/AddNewProject.png)
 
 3. 在 [**加入新的專案**] 對話方塊中，搜尋 [`packaging`]，在C#類別中選擇 [ **Windows 應用程式封裝專案**] 專案範本，然後按 **[下一步]** 。
 

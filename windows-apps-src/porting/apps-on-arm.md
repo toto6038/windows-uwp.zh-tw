@@ -36,7 +36,7 @@ ARM 上的 Windows 10 會從 Microsoft Store 執行所有 x86、ARM32 和 ARM64 
 除了 UWP 應用程式之外，Windows 10 on ARM 也可以在未修改的情況下執行您的 x86 Win32 應用程式，並提供良好的效能和順暢的使用者體驗，就像任何電腦一樣。 這些 x86 Win32 應用程式不需要針對 ARM 重新編譯，甚至不知道它們是在 ARM 處理器上執行。 請注意，64位 x64 Win32 應用程式不受支援，但大部分的應用程式都有 x86 版本可供使用。  當您選擇應用程式架構時，只要選擇32位 x86 版本，即可在 Windows 10 ARM 電腦上執行應用程式。
 
 ## <a name="in-this-section"></a>本節內容
-|主題 | 說明 |
+|主題 | 描述 |
 |-----|-----|
 |[x86 模擬在 ARM 上的運作方式](apps-on-arm-x86-emulation.md)|概觀詳述在 ARM 上如何模擬 x86 應用程式。|
 |[對 ARM 上的 x86 應用程式進行疑難排解](apps-on-arm-troubleshooting-x86.md)|在 ARM 上執行 x86 應用程式的一般問題，以及修正這些問題。 |
@@ -44,7 +44,7 @@ ARM 上的 Windows 10 會從 Microsoft Store 執行所有 x86、ARM32 和 ARM64 
 |[ARM 上的程式相容性疑難排解員](apps-on-arm-program-compat-troubleshooter.md)|如果您的應用程式在 ARM 上無法正常運作時調整相容性設定的指引。 |
 
 ## <a name="related-topics"></a>相關主題
-|主題 | 說明 |
+|主題 | 描述 |
 |-----|-----|
 |[使用 WDK 建置 ARM64 驅動程式](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)|建置 ARM64 驅動程式的指示。 |
 | [在 ARM 上調試 x86 應用程式](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64) | 用於偵錯 ARM 上的 x86 應用程式的指引。 |

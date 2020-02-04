@@ -28,7 +28,7 @@ ms.locfileid: "76725991"
 - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 - [Windows.UI.Xaml.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
-## <a name="pointers"></a>指標
+## <a name="pointers"></a>Pointers
 大多數互動體驗通常會牽涉到使用者透過使用輸入裝置指向想要互動的物件來識別該物件，例如觸控、滑鼠、畫筆/手寫筆及觸控板。 由於這些輸入裝置所提供的原始人性化介面裝置 (HID) 資料包含許多常用屬性，因此，會將內容升級並合併到整合的輸入堆疊，並公開為與裝置無關的指標資料。 您的 UWP 應用程式之後就能取用此資料，而不需擔心所使用的輸入裝置。
 
 > [!NOTE]
@@ -53,7 +53,7 @@ UWP 應用程式可以接聽下列指標事件：
 <thead>
 <tr class="header">
 <th align="left">事件</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -193,7 +193,7 @@ UWP 應用程式可以接聽下列指標事件：
 
 在大部分情況下，我們建議您透過事件處理常式的 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 來取得指標資訊。
 
-如果事件引數未公開所需的指標詳細資料，您可以透過 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 的 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 與 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法，取得公開的延伸 [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 資訊。
+如果事件引數未公開所需的指標詳細資料，您可以透過 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 的 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 與 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法，取得公開的延伸 [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 資訊。
 
 下列程式碼會設定全域字典物件，用於追蹤每一個作用中的指標，並識別目標物件的各種指標事件接聽程式。
 
@@ -569,7 +569,7 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
 ### <a name="get-pointer-properties"></a>取得指標屬性
 
-如稍早所述，您必須透過 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 的 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 與 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法，從 [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 物件取得最延伸的指標資訊。 下列程式碼片段顯示取得的方式。
+如稍早所述，您必須透過 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 的 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 與 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法，從 [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 物件取得最延伸的指標資訊。 下列程式碼片段顯示取得的方式。
 
 -   首先，為每個指標建立一個新的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
@@ -678,7 +678,7 @@ String QueryPointer(PointerPoint ptrPt)
 ## <a name="primary-pointer"></a>主要指標
 某些輸入裝置，例如觸控數位板或觸控板，可支援比一般單一滑鼠或手寫筆指標更多的指標 (在大多數的案例中為 Surface Hub，因為其支援兩個手寫筆輸入)。 
 
-請使用 **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** 類別的唯讀 **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** 屬性識別和區別單一主要指標 (主要指標在輸入序列期間永遠都是第一個偵測到的指標)。 
+請使用 **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** 類別的唯讀 **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** 屬性識別和區別單一主要指標 (主要指標在輸入序列期間永遠都是第一個偵測到的指標)。 
 
 藉由識別主要指標，您可以使用它來模擬滑鼠或手寫筆輸入、自訂互動，或提供其他特定功能或 UI。
 
@@ -697,7 +697,7 @@ String QueryPointer(PointerPoint ptrPt)
 
 ### <a name="visual-feedback"></a>視覺回饋
 
-我們會根據 XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** 物件，定義一個 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** 來醒目提示哪個指標正位於畫布上，並使用 **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 來為對應到主要指標的橢圓形建立動畫。
+我們會根據 XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** 物件，定義一個 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** 來醒目提示哪個指標正位於畫布上，並使用 **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 來為對應到主要指標的橢圓形建立動畫。
 
 **以下是 XAML：**
 

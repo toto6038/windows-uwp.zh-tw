@@ -52,9 +52,9 @@ ms.locfileid: "76726548"
 
       使用此處提供的工具、資訊和範例引擎和應用程式，開發適用于 Windows 桌面和 Windows Server 的語音功能應用程式。
 
-      [Microsoft 語音平臺-軟體發展工具組（SDK）（版本11）](https://www.microsoft.com/download/details.aspx?id=27226)
+      [Microsoft 語音平台 - 軟體開發套件 (SDK) (版本 11)](https://www.microsoft.com/download/details.aspx?id=27226)
       
-      [Microsoft Speech SDK，版本5。1](https://www.microsoft.com/download/details.aspx?id=10121)
+      [Microsoft 語音 SDK，版本 5.1](https://www.microsoft.com/download/details.aspx?id=10121)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -65,7 +65,7 @@ ms.locfileid: "76726548"
 
       在針對受管理 Windows 應用程式建立的平台上，利用 XAML UI 模型和 .NET Framework 開發無障礙的應用程式和工具。
 
-      [.NET Framework 的系統語音程式設計指南](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
+      [適用於 .NET Framework 的 System.Speech 程式設計指南](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
    :::column-end:::
    :::column:::
       ![Azure 語音服務](images/platform-azure-speech.png)
@@ -105,7 +105,7 @@ ms.locfileid: "76726548"
    :::column-end:::
 :::row-end:::
 
-## <a name="samples"></a>範例
+## <a name="samples"></a>Samples
 
 下載並執行示範各種協助工具特性和功能的完整 Windows 範例。
 
@@ -134,7 +134,7 @@ ms.locfileid: "76726548"
    :::column-end:::
 :::row-end:::
 
-## <a name="videos"></a>視訊
+## <a name="videos"></a>Videos
 
 各種影片涵蓋如何建立整合語音互動的 Windows 應用程式。
 
