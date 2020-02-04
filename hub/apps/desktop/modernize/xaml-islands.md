@@ -1,19 +1,19 @@
 ---
 description: 本指南可協助您直接在 WPF 和 Windows Forms 應用程式中建立 Fluent 型 UWP UI
 title: 傳統型應用程式中的 UWP 控制項
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 95fbfc9aa988330fb21713651687690fa769b99f
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 96705faff278c4cab31e0ab271bc31d08261401b
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520403"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814008"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在傳統型應用程式中裝載 UWP XAML 控制項 (XAML Islands)
 
@@ -127,4 +127,5 @@ UWP XAML 裝載 API 是由數個 Windows 執行階段類別和 COM 介面所組�
 如需有關使用 XAML Islands 的更多背景資訊和教學課程，請參閱下列文章和資源：
 
 * [將 WPF 應用程式現代化教學課程](modernize-wpf-tutorial.md)：本教學課程提供逐步指示，說明如何使用「Windows 社區工具組」中包裝的控制項和主控制項，將 UWP 控制項新增至現有的 WPF 企業營運應用程式。 本教學課程包含 WPF 應用程式的完整程式碼，以及程序中每個步驟的詳細指示。
+* [XAML Islands 程式碼範例](https://github.com/microsoft/Xaml-Islands-Samples)：此報告包含 Windows Forms、WPF 和 C++/Win32 範例，以示範如何使用 XAML Islands。
 * [XAML Islands v1 - 更新與藍圖](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap)：此部落格文章討論許多有關 XAML Islands 的常見問題，並提供詳細的開發藍圖。

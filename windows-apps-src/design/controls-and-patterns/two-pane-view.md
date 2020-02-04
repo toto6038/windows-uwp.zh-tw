@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b3d12f2aad1d5dffbbad0790e5940699536daf0b
-ms.sourcegitcommit: e6a435716799c7bb192b3d5c4d3b8295ec3911d4
+ms.openlocfilehash: 67b97aec970cc655700729743f10c63c666ab0a6
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549703"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929255"
 ---
 # <a name="two-pane-view"></a>兩個窗格檢視
 
@@ -238,8 +238,8 @@ _窗格大小 2* 和 *_
 當兩個窗格檢視處於寬模式時，TallLayout 屬性會決定要顯示的內容：
 
 - **SinglePane** - 單一窗格 (由 PanePriority 決定)。 此窗格會佔用 TwoPaneView 的完整大小 (亦即，兩個方向都是以星號調整大小)。
-- **TopBottom** - Pane1 在上方/Pane2 在右側。 兩個窗格都是以水平方向以星號調整大小，Pane1 的高度是自動調整，而 Pane2 的高度則是以星號調整大小。
-- **BottomTop** - Pane1 在右側/Pane2 在左側。 兩個窗格都是以水平方向以星號調整大小，Pane2 的高度是自動調整，而 Pane1 的高度則是以星號調整大小。
+- **TopBottom** - Pane1 在上方/Pane2 在下方。 兩個窗格都是以水平方向以星號調整大小，Pane1 的高度是自動調整，而 Pane2 的高度則是以星號調整大小。
+- **BottomTop** - Pane1 在下方/Pane2 在上方。 兩個窗格都是以水平方向以星號調整大小，Pane2 的高度是自動調整，而 Pane1 的高度則是以星號調整大小。
 
 預設值是 **TopBottom**。
 
