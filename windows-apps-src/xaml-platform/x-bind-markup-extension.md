@@ -4,14 +4,14 @@ title: xBind 標記延伸
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8008c652dea89b42185c9fb1d9ac42e96f16a117
-ms.sourcegitcommit: 5af282fb230765a7225e138d99e9cb1b60bf7238
+ms.openlocfilehash: 4c8fda22a565972e4157777c1db537a8f8d9ba20
+ms.sourcegitcommit: 20af365ce85d3d7d3a8d07c4cba5d0f1fbafd85d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77012046"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77033999"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 標記延伸
 
@@ -94,7 +94,7 @@ ms.locfileid: "77012046"
 
 若要使用索引子，模型必須對要編製索引的屬性類型實作 **IList&lt;T&gt;** 或 **IVector&lt;T&gt;** 。 （請注意，IReadOnlyList&lt;T&gt; 和 IVectorView&lt;T&gt; 不支援索引子語法）。如果索引屬性的類型支援**INotifyCollectionChanged**或**IObservableVector** ，而且系結為單向或 TwoWay，則它會註冊並接聽這些介面上的變更通知。 變更偵測邏輯會根據所有的集合變更進行更新，即使不會影響特定的索引值亦然。 這是因為所有集合執行個體的接聽邏輯是通用的。
 
-如果資料目錄為字典或地圖，則屬性路徑可以依它們的字串名稱指定集合中的項目。 例如 **&lt;TextBlock Text = "{X:Bind player\[' John smith '\]}"/&gt;** 會尋找名為 "John Smith" 的字典中的專案。 名稱必須加上引號，而且可以使用單引號或雙引號。 上標三角 (^) 可以用來逸出字串中的引號。 最簡單的方式是使用針對 XAML 屬性所使用的引號之外的替代引號。 （請注意，..Ireadonlydictionary<string&lt;T&gt; 和 IMapView&lt;T&gt; 不支援索引子語法）。
+如果資料目錄為字典或地圖，則屬性路徑可以依它們的字串名稱指定集合中的項目。 例如 **&lt;TextBlock Text = "{X:Bind player\[' John smith '\]}"/&gt;** 會尋找名為 "John Smith" 的字典中的專案。 名稱必須加上引號，而且可以使用單引號或雙引號。 上標三角 (^) 可以用來逸出字串中的引號。 通常最簡單的方式是使用用於 XAML 屬性的替代引號。 （請注意，..Ireadonlydictionary<string&lt;T&gt; 和 IMapView&lt;T&gt; 不支援索引子語法）。
 
 若要使用字串索引子，模型必須在要編製索引的屬性類型上實作 **IDictionary&lt;string, T&gt;** 或 **IMap&lt;string, T&gt;** 。 如果已編製索引的屬性類型支援 **IObservableMap**，且繫結為 OneWay 或 TwoWay，則它會登錄並接聽那些介面的變更通知。 變更偵測邏輯會根據所有的集合變更進行更新，即使不會影響特定的索引值亦然。 這是因為所有集合執行個體的接聽邏輯是通用的。
 

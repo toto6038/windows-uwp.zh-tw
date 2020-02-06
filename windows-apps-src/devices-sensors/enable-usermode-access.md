@@ -1,28 +1,28 @@
 ---
-title: 啟用使用者模式存取 GPIO、I2C 和 SPI
-description: 本教學課程描述如何在 Windows 10 上以使用者模式存取 GPIO、I2C、SPI 及 UART。
+title: 啟用 GPIO、I2C 和 SPI 的使用者模式存取
+description: 本教學課程說明如何在 Windows 10 上啟用 GPIO、I2C、SPI 和 UART 的使用者模式存取。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1356003c86040cfa51872b802ba070a685789b
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 08c802154180f5577c43a3ad5f349f53e3d9b5d3
+ms.sourcegitcommit: 20ee991a1cf87ef03c158cd3f38030c7d0e483fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281837"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037898"
 ---
-# <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>啟用使用者模式存取 GPIO、I2C 和 SPI
+# <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>啟用 GPIO、I2C 和 SPI 的使用者模式存取
 
-Windows 10 包含可透過使用者模式直接存取 GPIO、I2C、SPI 和 UART 的新 API。 諸如 Raspberry Pi 2 等開發板會公開這些連線的子集，讓使用者能夠使用自訂電路系統延伸基本運算模組，以處理特定應用程式。 這些低階匯流排通常會與其他重要的內建功能共用，包含一部分在排針上公開的 GPIO 針腳與匯流排。 若要保留系統穩定性，必須指定哪些針腳與匯流排可由使用者模式應用程式安全地修改。
+Windows 10 包含新的 Api，可供直接從一般用途的輸入/輸出（GPIO）、內部整合電路（I2C）、串列周邊介面（SPI）和通用非同步收發器（UART）使用者模式存取。 Raspberry Pi 2 之類的開發面板會公開這些連線的子集，讓您使用自訂電路擴充基底計算模組來處理特定應用程式。 這些低階匯流排通常會與其他重要的內建功能共用，包含一部分在排針上公開的 GPIO 針腳與匯流排。 若要保留系統穩定性，必須指定使用者模式應用程式可以安全修改哪些 pin 和匯流排。
 
-本文件說明如何在 ACPI 中指定這項設定，並提供工具以驗證是否正確指定設定。
+本檔說明如何在「先進設定與電源介面」（ACPI）中指定此設定，並提供工具來驗證是否已正確指定設定。
 
 > [!IMPORTANT]
-> 本文件適用對象為 UEFI 和 ACPI 開發人員。 假設這些人員對於 ACPI、ASL 編撰和 SpbCx/GpioClx 已具部分熟悉度。
+> 本檔的物件是整合可延伸韌體介面（UEFI）和 ACPI 開發人員。 假設您已經熟悉 ACPI、ACPI 來源語言（ASL）撰寫和 SpbCx/GpioClx。
 
-透過現有的 `GpioClx` 與 `SpbCx` 架構，連接 Windows 上的低階匯流排使用者模式存取。 新驅動程式稱為 *RhProxy*，適用於 Windows IoT 核心版和 Windows 企業版，且會針對使用者模式公開 `GpioClx` 與 `SpbCx` 資源。 若要啟用 API，您必須在 ACPI 表格中宣告 rhproxy 的裝置節點，且應將所有 GPIO 與 SPB 資源對使用者模式公開。 本文件會逐步解說關於編寫與驗證 ASL 的資訊。
+Windows 上的低層級匯流排的使用者模式存取是透過現有的 `GpioClx` 和 `SpbCx` 架構來進行檢測。 新的驅動程式稱為*RhProxy*（可在 Windows IoT 核心版和 windows Enterprise 上取得），會向使用者模式公開 `GpioClx` 和 `SpbCx` 資源。 若要啟用 Api，必須在您的 ACPI 資料表中宣告 rhproxy 的裝置節點，其中包含應該向使用者模式公開的每個 GPIO 和 SPB 資源。 本文件會逐步解說關於編寫與驗證 ASL 的資訊。
 
 ## <a name="asl-by-example"></a>以 ASL 為例
 
@@ -41,7 +41,7 @@ Device(RHPX)
 * _CID – Compatible Id。必須是「MSFT8000」。
 * _UID – Unique Id。設為 1。
 
-接下來我們會宣告應對使用者模式公開的所有 GPIO 與 SPB 資源。 資源宣告的順序非常重要，因為系統會使用資源索引將屬性與資源產生關聯。 若公開多個 I2C 或 SPI 匯流排，則系統會將第一個宣告的匯流排視為該類型的「預設」匯流排，且其將為 `GetDefaultAsync()`Windows.Devices.I2c.I2cController[ 與 ](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller)Windows.Devices.Spi.SpiController[ 之 ](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller) 方法傳回的執行個體。
+接下來，我們宣告每個應該對使用者模式公開的 GPIO 和 SPB 資源。 資源宣告的順序非常重要，因為系統會使用資源索引將屬性與資源產生關聯。 若公開多個 I2C 或 SPI 匯流排，則系統會將第一個宣告的匯流排視為該類型的「預設」匯流排，且其將為 `GetDefaultAsync()`Windows.Devices.I2c.I2cController[ 與 ](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller)Windows.Devices.Spi.SpiController[ 之 ](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller) 方法傳回的執行個體。
 
 ### <a name="spi"></a>SPI
 
@@ -208,7 +208,7 @@ I2CSerialBus() 描述元的下列欄位會固定：
 
 ### <a name="gpio"></a>GPIO
 
-接下來，我們會宣告對使用者模式公開的所有 GPIO 針腳。 我們提供下列指導方針，以協助您決定要公開的針腳：
+接下來，我們會宣告對使用者模式公開的所有 GPIO pin。 我們提供下列指導方針，以協助您決定要公開的針腳：
 
 * 在已公開的排針上宣告所有的針腳。
 * 宣告連線至按鈕和 LED 等實用內建功能的針腳。
@@ -294,9 +294,9 @@ Package (2) { “GPIO-PinCount”, 54 },
 
 ### <a name="uart"></a>UART
 
-如果您的 UART 驅動程式使用 `SerCx` 或 `SerCx2`，您可以使用 rhproxy 向使用者模式公開驅動程式。 建立類型 `GUID_DEVINTERFACE_COMPORT` 之裝置介面的 UART 驅動程式不需要使用 rhproxy。 收件匣 `Serial.sys` 驅動程式是這些案例之一。
+如果您的 UART 驅動程式使用 `SerCx` 或 `SerCx2`，您可以使用 rhproxy 將驅動程式公開至使用者模式。 建立類型 `GUID_DEVINTERFACE_COMPORT` 之裝置介面的 UART 驅動程式不需要使用 rhproxy。 收件匣 `Serial.sys` 驅動程式是這些案例之一。
 
-若要向使用者模式公開 `SerCx` 樣式 UART，請宣告 `UARTSerialBus` 資源，如下所示。
+若要將 `SerCx`樣式的 UART 公開至使用者模式，請如下所示宣告 `UARTSerialBus` 資源。
 
 ```cpp
 // Index 2
@@ -325,7 +325,7 @@ UARTSerialBus(           // Pin 17, 19 of JP1, for SIO_UART2
 Package(2) { "bus-UART-UART2", Package() { 2 }},
 ```
 
-這會為控制器指派易記名稱 “UART2”，這是使用者將從使用者模式用來存取匯流排的識別碼。
+這會將易記名稱「UART2」指派給控制器，這是使用者將用來從使用者模式存取匯流排的識別碼。
 
 ## <a name="runtime-pin-muxing"></a>執行階段針腳多工處理
 
@@ -655,14 +655,14 @@ Device(I2C1)
 1. 使用 `ACPITABL.dat` 編譯和載入您的 rhproxy 節點
 1. 確認 `rhproxy` 裝置節點存在
 1. 確認 `rhproxy` 載入並啟動
-1. 確認預期的裝置公開到使用者模式
+1. 確認預期的裝置已公開至使用者模式
 1. 確認您可以從命令列與每部裝置互動
 1. 確認您可以從 UWP app 與每部裝置互動
 1. 執行 HLK 測試
 
 ### <a name="verify-controller-drivers"></a>確認控制器驅動程式
 
-因為 Rhproxy 公開系統上的其他裝置到使用者模式，只有那些裝置已在運作它才有作用。 第一個步驟是確認那些裝置 (您想要公開的 I2C、SPI、GPIO 控制器) 已在運作。
+由於 rhproxy 會向使用者模式公開系統上的其他裝置，因此只有在這些裝置已在運作時才會運作。 第一個步驟是確認那些裝置 (您想要公開的 I2C、SPI、GPIO 控制器) 已在運作。
 
 在命令提示字元中，執行
 
@@ -740,9 +740,9 @@ devcon status *msft8000
 * 問題 51- `CM_PROB_WAITING_ON_DEPENDENCY` - 系統未啟動 rhproxy，因為它的其中一個相依性無法載入。 這表示傳遞至 rhproxy 的資源指向無效的 ACPI 節點，或者目標裝置未啟動。 首先，請再次檢查所有的裝置成功執行 (參閱上述「確認控制器驅動程式」)。 然後，再次檢查您的 ASL，並確定您的所有資源路徑（例如 `\_SB.I2C1`）都正確，並指向 DSDT 中的有效節點。
 * 問題 10 - `CM_PROB_FAILED_START` - Rhproxy 無法啟動，很可能是因為資源剖析問題。 移到您的 ASL 資源並再次檢查 DSD 中的資源索引，確認 GPIO 資源依照增加的 PIN 碼順序指定。
 
-### <a name="verify-that-the-expected-devices-are-exposed-to-usermode"></a>確認預期的裝置公開到使用者模式
+### <a name="verify-that-the-expected-devices-are-exposed-to-user-mode"></a>確認預期的裝置已公開至使用者模式
 
-現在 rhproxy 正在執行中，它應該已建立使用者模式可以存取的裝置介面。 我們會使用數個命令列工具來列舉裝置，並查看他們是否出現。
+既然 rhproxy 正在執行，它應該已建立可供使用者模式存取的裝置介面。 我們會使用數個命令列工具來列舉裝置，並查看他們是否出現。
 
 複製[https://github.com/ms-iot/samples](https://github.com/ms-iot/samples)存放庫，並建立 `GpioTestTool`、`I2cTestTool`、`SpiTestTool`和 `Mincomm` 範例。 複製工具到進行測試的裝置，並使用下列命令列舉裝置。
 
@@ -835,7 +835,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 ## <a name="resources"></a>資源
 
-| 目的地 | 連結 |
+| Destination | 連結 |
 |-------------|------|
 | ACPI 5.0 規格 | http://acpi.info/spec.htm |
 | Asl.exe (Microsoft ASL 編譯器) | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
@@ -854,7 +854,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 | MinComm (序列) | https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
-## <a name="apendix"></a>附錄
+## <a name="appendix"></a>附錄
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>附錄 A - Raspberry Pi ASL 清單
 
