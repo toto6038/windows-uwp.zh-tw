@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8f22761bf535f13ae0686a9b180ee810fba61028
-ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
+ms.openlocfilehash: 35ddf17d121a06e453e9b51e023e859f0c1cd0ab
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813998"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089344"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 群島在 WPF 應用程式中裝載自訂 UWP 控制項
 
@@ -34,7 +34,7 @@ ms.locfileid: "76813998"
     若要這麼做，建議的做法是將**空白應用程式（通用 Windows）** 專案加入至與 WPF 或 Windows Forms 專案相同的方案中，修訂此專案中的預設 `App` 類別，以衍生自 `XamlApplication`，然後在應用程式的進入點程式碼中建立此物件的實例。
 
     > [!NOTE]
-    > 您的方案只能包含一個定義 `XamlApplication` 物件的專案。 應用程式中的所有自訂 UWP 控制項都會共用相同的 `XamlApplication` 物件。 定義 `XamlApplication` 物件的專案必須包含所有其他 UWP 程式庫的參考，以及在 XAML 島中主控 UWP 控制項的專案。
+    > 您的方案只能包含一個定義 `XamlApplication` 物件的專案。 應用程式中的所有自訂 UWP 控制項都會共用相同的 `XamlApplication` 物件。 定義 `XamlApplication` 物件的專案必須包含所有其他 UWP 程式庫的參考，以及在 XAML 島上用來主控 UWP 控制項的專案。
 
 ## <a name="create-a-wpf-project"></a>建立 WPF 專案
 
@@ -285,7 +285,7 @@ ms.locfileid: "76813998"
 
 ## <a name="package-the-app"></a>封裝應用程式
 
-您可以選擇性地封裝[MSIX 封裝](https://docs.microsoft.com/windows/msix)中的 WPF 應用程式以進行部署。 MSIX 是適用于 Windows 的現代化應用程式封裝技術，它是以 MSI、APPX、App-v 和 ClickOnce 安裝技術的組合為基礎。
+您可以選擇性地封裝[MSIX 封裝](https://docs.microsoft.com/windows/msix)中的 WPF 應用程式以進行部署。 MSIX 是適用于 Windows 的現代化應用程式封裝技術，它是以 MSI、.appx、App-v 和 ClickOnce 安裝技術的組合為基礎。
 
 下列指示說明如何使用 Visual Studio 2019 中的[Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，在 MSIX 套件中封裝解決方案中的所有元件。 只有當您想要在 MSIX 套件中封裝 WPF 應用程式時，才需要執行這些步驟。 請注意，這些步驟目前包含裝載自訂 UWP 控制項之案例特有的一些因應措施。
 

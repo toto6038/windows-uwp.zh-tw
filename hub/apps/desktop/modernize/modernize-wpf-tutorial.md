@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
 author: mcleanbyron
-keywords: windows 10，uwp，windows forms，wpf，xaml 群島
+keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: de84cbb2e1927d9426eefaaf7b0d70d604427da1
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 397c301564c0d4799c6b41db209da9659725103d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683811"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089304"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>教學課程：將 WPF 應用程式現代化 
 
@@ -51,7 +51,7 @@ Contoso 想要使用新的 Windows 功能將此應用程式現代化，讓員工
 * 將調適型卡片和 Windows 10 通知整合到應用程式中。
 * 使用 MSIX 封裝應用程式，並在 Azure DevOps 上設定 CI/CD 管線，讓您可以在應用程式和使用者可供使用時，自動將其傳遞給測試人員和使用者。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要執行本教學課程，您的開發電腦必須安裝下列必要條件：
 
@@ -74,7 +74,7 @@ Contoso 想要使用新的 Windows 功能將此應用程式現代化，讓員工
 3. 開啟 Visual Studio 2019，然後按兩下**C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln**檔案以開啟方案。
 4. 藉由按下 [**開始**] 按鈕或 CTRL + F5，確認您可以建立、執行和偵錯工具 CONTOSO 費用 WPF 專案。
 
-## <a name="get-started"></a>入門
+## <a name="get-started"></a>開始使用
 
 在您擁有 Contoso 費用範例應用程式的原始程式碼之後，您可以確認是否可以在 Visual Studio 中建立，您已準備好開始進行教學課程：
 
@@ -98,7 +98,7 @@ Contoso 想要使用新的 Windows 功能將此應用程式現代化，讓員工
 
 ### <a name="msix-packaging"></a>MSIX 封裝
 
-[MSIX](/windows/msix/) （先前稱為 AppX）是適用于 Windows 應用程式的新式封裝模型。 MSIX 支援 UWP 應用程式以及使用 Win32、WPF、Windows Forms、JAVA、Electron 等技術建立的桌面應用程式。 當您在 MSIX 套件中封裝桌面應用程式時，您可以將應用程式發佈至 Microsoft Store。 您的桌面應用程式也會在安裝時取得套件身分識別，讓您的桌面應用程式能夠使用更廣泛的 WinRT Api 集合。
+[MSIX](/windows/msix/)是適用于 Windows 應用程式的新式封裝模型。 MSIX 支援 UWP 應用程式以及使用 Win32、WPF、Windows Forms、JAVA、Electron 等技術建立的桌面應用程式。 當您在 MSIX 套件中封裝桌面應用程式時，您可以將應用程式發佈至 Microsoft Store。 您的桌面應用程式也會在安裝時取得套件身分識別，讓您的桌面應用程式能夠使用更廣泛的 WinRT Api 集合。
 
 如需詳細資訊，請參閱下列文章：
 

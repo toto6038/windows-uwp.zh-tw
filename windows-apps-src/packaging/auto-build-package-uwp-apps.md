@@ -3,15 +3,15 @@ title: 設定您的 UWP 應用程式的自動化組建
 description: 如何設定您的自動化組建以產生側載及/或儲存套件。
 ms.date: 07/17/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d38464a26af0df03c1aa381b16fbddf1de55cc
-ms.sourcegitcommit: e0644abf76a2535ea24758d1904ff00dfcd86a51
+ms.openlocfilehash: 70415c9f3d58625cfdc651ec67c8a9f37c23cffa
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72008040"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089494"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP 應用程式的自動化組建
 
@@ -62,7 +62,7 @@ steps:
 
 ```
 
-預設範本會嘗試使用 .csproj 檔案中指定的憑證來簽署封裝。 如果您想要在組建期間簽署封裝，您必須具有私密金鑰的存取權。 否則，您可以藉由將參數 `/p:AppxPackageSigningEnabled=false` 新增至 YAML 檔案中的 `msbuildArgs` 區段，來停用簽章。
+預設範本會嘗試使用 .csproj 檔案中指定的憑證來簽署封裝。 如果您想要在組建期間簽署封裝，您必須具有私密金鑰的存取權。 否則，您可以藉由將參數 `/p:AppxPackageSigningEnabled=false` 新增至 YAML 檔案中的 `msbuildArgs` 區段來停用簽章。
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>將您的專案憑證新增至安全檔案程式庫
 
@@ -83,7 +83,7 @@ steps:
 5. 如果憑證中的私密金鑰有密碼，建議您將密碼儲存在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) ，然後將密碼連結到[變數群組](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 您可以使用變數來存取管線中的密碼。 請注意，只有私密金鑰才支援密碼;目前不支援使用本身受到密碼保護的憑證檔案。
 
 > [!NOTE]
-> 從 Visual Studio 2019 開始，UWP 專案中不會再產生暫時性憑證。 若要建立或匯出憑證, 請使用[本文](/windows/msix/package/create-certificate-package-signing)中所述的 PowerShell Cmdlet。
+> 從 Visual Studio 2019 開始，UWP 專案中不會再產生暫時性憑證。 若要建立或匯出憑證，請使用[本文中所](/windows/msix/package/create-certificate-package-signing)述的 PowerShell Cmdlet。
 
 ## <a name="configure-the-build-solution-build-task"></a>設定建置方案建置工作
 
@@ -93,14 +93,14 @@ steps:
 |--------------------|---------|---------------|
 | AppxPackageDir | $(Build.ArtifactStagingDirectory)\AppxPackages | 定義要儲存所產生構件的資料夾。 |
 | AppxBundlePlatforms | $(Build.BuildPlatform) | 可讓您定義要包含在組合中的平臺。 |
-| AppxBundle | 永遠 | 使用指定平臺的 msix/.appx 檔案建立 .msixbundle/.appxbundle。 |
+| AppxBundle | 一律 | 使用指定平臺的 msix/.appx 檔案建立 .msixbundle/.appxbundle。 |
 | UapAppxPackageBuildMode | StoreUpload | 產生 msixupload/. .appxupload 檔案和用於側載的 **_Test**資料夾。 |
 | UapAppxPackageBuildMode | CI | 只會產生 msixupload/. .appxupload 檔案。 |
-| UapAppxPackageBuildMode | SideloadOnly | 只產生側載的 **_Test**資料夾。 |
+| UapAppxPackageBuildMode | SideloadOnly | 僅針對側載產生 **_Test**資料夾。 |
 | AppxPackageSigningEnabled | true | 啟用套件簽署。 |
 | PackageCertificateThumbprint | 憑證指紋 | 此值**必須**符合簽署憑證中的指紋，或為空字串。 |
-| PackageCertificateKeyFile | `Path` | 要使用之憑證的路徑。 這會從安全的檔案中繼資料中取出。 |
-| PackageCertificatePassword | 密碼 | 憑證中私密金鑰的密碼。 我們建議您將密碼儲存在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) ，並將密碼連結到[變數群組](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 您可以將變數傳遞給這個引數。 |
+| PackageCertificateKeyFile | 路徑 | 要使用之憑證的路徑。 這會從安全的檔案中繼資料中取出。 |
+| PackageCertificatePassword | Password | 憑證中私密金鑰的密碼。 我們建議您將密碼儲存在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) ，並將密碼連結到[變數群組](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 您可以將變數傳遞給這個引數。 |
 
 ### <a name="configure-the-build"></a>設定組建
 
@@ -115,8 +115,8 @@ steps:
 
 ### <a name="configure-package-signing"></a>設定封裝簽署
 
-若要簽署 MSIX （或 APPX）套件，管線必須取出簽署憑證。 若要這麼做，請在 VSBuild 工作之前新增 DownloadSecureFile 工作。
-這可讓您透過 ```signingCert``` 來存取簽署憑證。
+若要簽署 MSIX （或 .appx）封裝，管線必須取得簽署憑證。 若要這麼做，請在 VSBuild 工作之前新增 DownloadSecureFile 工作。
+這可讓您透過 ```signingCert```存取簽署憑證。
 
 ```yml
 - task: DownloadSecureFile@1
@@ -174,9 +174,9 @@ steps:
 
 您可以在 [組建結果] 頁面的 [成品 **] 選項中**看到產生的構件。
 
-![構件](images/building-screen6.png)
+![成品](images/building-screen6.png)
 
-因為我們已將 `UapAppxPackageBuildMode` 引數設定為 `StoreUpload`，所以成品資料夾會包含提交至存放區的封裝（. msixupload/. .appxupload）。 請注意，您也可以將一般應用程式套件（. msix/.appx）或應用程式配套（. .msixbundle/.appxbundle/）提交至存放區。 根據本文的用途，我們將使用 .appxupload 檔案。
+因為我們已將 `UapAppxPackageBuildMode` 引數設定為 `StoreUpload`，所以 [成品] 資料夾會包含提交至存放區的封裝（. msixupload/. .appxupload）。 請注意，您也可以將一般應用程式套件（. msix/.appx）或應用程式配套（. .msixbundle/.appxbundle/）提交至存放區。 根據本文的用途，我們將使用 .appxupload 檔案。
 
 ## <a name="address-bundle-errors"></a>位址組合錯誤
 
@@ -188,10 +188,10 @@ steps:
 
 |**專案**|**屬性**|
 |-------|----------|
-|App|`<AppxBundle>Always</AppxBundle>`|
+|應用程式|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
 
-然後，從組建步驟中移除 `AppxBundle` MSBuild 引數。
+然後，從 [組建] 步驟中移除 `AppxBundle` MSBuild 引數。
 
 ## <a name="related-topics"></a>相關主題
 

@@ -1,24 +1,24 @@
 ---
 title: 針對轉換後的傳統型應用程式和遊樂場使用 MRT
-description: 將您的 .NET 或 Win32 應用程式或遊戲封裝成 AppX 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的應用程式資源。 這個深入主題說明技術。
+description: 藉由將您的 .NET 或 Win32 應用程式或遊戲封裝為 msix 或 .appx 套件，您可以利用資源管理系統來載入專為執行時間內容量身打造的應用程式資源。 這個深入主題說明技術。
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件
 ms.localizationpriority: medium
-ms.openlocfilehash: 0425e7bb00e4a5be848443aa278ebaad1706cb30
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c753e9437c76c89ac6af8cedcb1f954d1ce56fe3
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683911"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089445"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在舊版應用程式或遊戲中使用 Windows 10 資源管理系統
 
-.NET 和 Win32 應用程式和遊戲通常會當地語系化為不同語言，以拓展其潛在市場範圍。 如需有關將您的應用程式當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。 藉由將您的 .NET 或 Win32 應用程式或遊戲封裝為 MSIX 或 AppX 套件，您可以利用資源管理系統來載入專為執行時間內容量身打造的應用程式資源。 這個深入主題說明技術。
+.NET 和 Win32 應用程式和遊戲通常會當地語系化為不同語言，以拓展其潛在市場範圍。 如需有關將您的應用程式當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。 藉由將您的 .NET 或 Win32 應用程式或遊戲封裝為 msix 或 .appx 套件，您可以利用資源管理系統來載入專為執行時間內容量身打造的應用程式資源。 這個深入主題說明技術。
 
 將傳統 Win32 應用程式當地語系化的方法有許多種，但 Windows 8 引進了[新資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))，其跨程式設計語言、跨應用程式類型運作，並且提供超簡單的當地語系化功能。 此系統在本主題中將稱為「MRT」。 過去這代表「現代化資源技術」，但「現代化」一詞已停止使用。 資源管理員也稱為 MRM (現代化資源管理員) 或 PRI (套件資源索引)。
 
-與 MSIX 型或 AppX 型部署結合（例如，從 Microsoft Store），MRT.LOG 可以自動為指定的使用者/裝置傳遞最適用的資源，以將應用程式的下載和安裝大小降到最低。 對於具有大量當地語系化內容的應用程式而言，縮減約莫數個 *GB* 的 AAA 遊戲大小有絕對的重要性。 其他 MRT 好處包括 Windows Shell 和 Microsoft Store 的當地語系化清單，當使用者慣用的語言不符合可用資源時的自動後援邏輯。
+與 MSIX 型或 .appx 型部署結合（例如，從 Microsoft Store），MRT.LOG 可以自動為指定的使用者/裝置傳遞最適用的資源，以將應用程式的下載和安裝大小降到最低。 對於具有大量當地語系化內容的應用程式而言，縮減約莫數個 *GB* 的 AAA 遊戲大小有絕對的重要性。 其他 MRT 好處包括 Windows Shell 和 Microsoft Store 的當地語系化清單，當使用者慣用的語言不符合可用資源時的自動後援邏輯。
 
 本文件描述高階 MRT 架構，並提供移植指南，以最小的程式碼變更將舊版 Win32 應用程式移至 MRT。 一旦移至 MRT，便有其他好處供開發人員運用 (例如按縮放比例或系統主題的區段資源功能)。 請注意，傳統型橋接器所處理的 UWP 應用程式和 Win32 應用程式皆適合進行 MRT 型當地語系化 (亦即「Centennial」)。
 
@@ -27,28 +27,28 @@ ms.locfileid: "75683911"
 <table>
 <tr>
 <th>工作</th>
-<th>效益</th>
+<th>優點</th>
 <th>估計成本</th>
 </tr>
 <tr>
 <td>當地語系化套件資訊清單</td>
 <td>要在 Windows Shell 與 Microsoft Store 中顯示當地語系化的內容，需要最低工作</td>
-<td>小型</td>
+<td>Small</td>
 </tr>
 <tr>
 <td>使用 MRT 識別並找出資源</td>
 <td>下載和安裝大小最小化的先決條件; 自動語言遞補</td>
-<td>中等</td>
+<td>中</td>
 </tr>
 <tr>
 <td>組建資源套件</td>
 <td>下載和安裝大小最小化的最後步驟</td>
-<td>小型</td>
+<td>Small</td>
 </tr>
 <tr>
 <td>移轉至 MRT 資源格式與 API</td>
 <td>大幅縮小的檔案大小 (取決於現有的資源技術)</td>
-<td>大型</td>
+<td>Large</td>
 </tr>
 </table>
 
@@ -207,7 +207,7 @@ ms.locfileid: "75683911"
 
 在 `.resw` 檔案中定義值之後，下一步就是更新資訊清單來參考資源字串。 您可以再次直接編輯 XML 檔案，或依賴 Visual Studio 資訊清單設計工具。
 
-如果您直接編輯 XML，請開啟 `AppxManifest.xml` 檔案，對<span style="background-color: lightgreen">醒目提示值</span>進行下列變更 - 使用這個*確切*文字，而非應用程式特定的文字。 不需要使用這些確切的資源名稱，您可以自行選擇，但是您的選擇必須完全符合 `.resw` 檔案內容。 這些名稱應該符合您在 `.resw` 檔案中建立的 `Names`，其以 `ms-resource:` 配置和 `Resources/` 命名空間做為首碼。 
+如果您直接編輯 XML，請開啟 `AppxManifest.xml` 檔案，對<span style="background-color: lightgreen">醒目提示值</span>進行下列變更 - 使用這個*確切*文字，而非應用程式特定的文字。 不需要使用這些確切的資源名稱，您可以自行選擇，但是您的選擇必須完全符合 &mdash; 檔案內容。 這些名稱應該符合您在 `Names` 檔案中建立的 `.resw`，其以 `ms-resource:` 配置和 `Resources/` 命名空間做為首碼。 
 
 > [!NOTE]
 > 此程式碼片段已省略資訊清單的許多元素-請勿刪除任何專案！
@@ -293,7 +293,7 @@ ms.locfileid: "75683911"
 
 現在建置了 PRI 檔案，接著您可以建置並登入套件︰
 
-1. 若要建立應用程式套件，請執行下列命令，以您想要建立的 MSIX/AppX 檔案的名稱取代 `contoso_demo.appx`，並確定為檔案選擇不同的目錄（此範例使用上層目錄; 它可以是任何位置，但**不**應該是專案目錄）。
+1. 若要建立應用程式套件，請執行下列命令，以您想要建立的 msix/.appx 檔案名稱取代 `contoso_demo.appx`，並確定為檔案選擇不同的目錄（此範例使用上層目錄; 它可以是任何位置，但**不**應該是專案目錄）。
 
     ```CMD
     makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o
@@ -310,14 +310,14 @@ ms.locfileid: "75683911"
     > [!IMPORTANT]
     > 如果您手動建立簽署憑證，請確定您將檔案放在來源專案或套件來源以外的不同目錄中，否則可能會納入封裝中，包括私密金鑰！
 
-3. 若要登入套件，請使用下列命令。 請注意，`AppxManifest.xml` 的 `Identity` 元素中所指定的 `Publisher`，必須符合憑證的 `Subject` (這**不是**`<PublisherDisplayName>` 元素，而是對使用者顯示的當地語系化顯示名稱)。 一如往常，將 `contoso_demo...` 檔名取代為專案的適用名稱，並且 (**非常重要**) 確定 `.pfx` 檔案不在目錄的目錄中 (否則可能建立為套件的一部分，包括私用簽署金鑰！)︰
+3. 若要登入套件，請使用下列命令。 請注意，`Publisher` 的 `Identity` 元素中所指定的 `AppxManifest.xml`，必須符合憑證的 `Subject` (這**不是**`<PublisherDisplayName>` 元素，而是對使用者顯示的當地語系化顯示名稱)。 一如往常，將 `contoso_demo...` 檔名取代為專案的適用名稱，並且 (**非常重要**) 確定 `.pfx` 檔案不在目錄的目錄中 (否則可能建立為套件的一部分，包括私用簽署金鑰！)︰
 
     ```CMD
     signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appx
     ```
 
     您可以輸入 `signtool sign /?` 來查看每個參數運作狀況，但請簡單地說明︰
-      * `/fd` 設定檔案摘要演算法（SHA256 是 AppX 的預設值）
+      * `/fd` 設定檔案摘要演算法（SHA256 是 .appx 的預設值）
       * `/a` 會自動選取最佳憑證
       * `/f` 指定包含簽署憑證的輸入檔
 
@@ -494,7 +494,7 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 
 本文假設您的當地語系化資源都有相同的檔案名（例如 `contoso_demo.exe.mui` 或 `contoso_strings.dll` 或 `contoso.strings.xml`），但它們放在具有 BCP-47 名稱（`en-US`、`de-DE`等等）的不同資料夾中。 這無關於您有多少資源檔案、其名稱為何、其檔案格式 / 相關的 API 為何等等。唯一重要是每個*邏輯*資源都有相同的檔名 (各位於不同的*實體*目錄)。 
 
-以反例來看，如果您的應用程式使用具單一 `Resources` 目錄的一般檔案結構 (包含檔案 `english_strings.dll` 和 `french_strings.dll`)，它不會和 MRT 對應得很好。 比較好的結構是包含子目錄及檔案 `en\strings.dll` 和 `fr\strings.dll` 的 `Resources` 目錄。 也可以使用相同的基本檔名，但具有內嵌限定詞，例如 `strings.lang-en.dll` 和 `strings.lang-fr.dll`，但使用含語言代碼的目錄在概念上更加簡單，這也是我們著重的部分。
+以反例來看，如果您的應用程式使用具單一 `Resources` 目錄的一般檔案結構 (包含檔案 `english_strings.dll` 和 `french_strings.dll`)，它不會和 MRT 對應得很好。 比較好的結構是包含子目錄及檔案 `Resources` 和 `en\strings.dll` 的 `fr\strings.dll` 目錄。 也可以使用相同的基本檔名，但具有內嵌限定詞，例如 `strings.lang-en.dll` 和 `strings.lang-fr.dll`，但使用含語言代碼的目錄在概念上更加簡單，這也是我們著重的部分。
 
 >[!NOTE]
 > 即使您無法遵循此檔案命名慣例，仍然可以使用 MRT.LOG 和封裝的優點;這只需要更多工具。
@@ -578,7 +578,7 @@ set absoluteFileName = bestCandidate.ValueAsString
 
 #### <a name="loading-net-resources"></a>正在載入 .NET 資源
 
-因為 .NET 具有尋找與載入資源 (稱為「衛星組件」) 的內建機制，在上述綜合範例中並無可取代的明確程式碼 - 在 .NET 中，您只需要適當目錄的資源 DLL，而且會自動幫您找出。 當應用程式使用資源套件封裝為 MSIX 或 AppX 時，目錄結構會有些不同，而不是讓資原始目錄成為主要應用程式目錄的子目錄，而是其對等的（如果使用者不會在其喜好設定中列出語言）。 
+因為 .NET 具有尋找與載入資源 (稱為「衛星組件」) 的內建機制，在上述綜合範例中並無可取代的明確程式碼 - 在 .NET 中，您只需要適當目錄的資源 DLL，而且會自動幫您找出。 當應用程式使用資源套件封裝為 MSIX 或 .appx 時，目錄結構會有些不同，而不是讓資原始目錄成為主要應用程式目錄的子目錄，而是與其對等的（如果使用者不會在其喜好設定中列出語言）。 
 
 舉例來說，想一想 .NET 應用程式具有下列版面配置，其中所有檔案都存在於 `MainApp` 資料夾下︰
 
@@ -595,7 +595,7 @@ set absoluteFileName = bestCandidate.ValueAsString
 </pre>
 </blockquote>
 
-轉換至 AppX 之後，版面配置看起來就像這樣，假設 `en-US` 是預設的語言，而使用者的語言清單中有列出德文和法文︰
+轉換成 .appx 之後，版面配置看起來會像這樣，假設 `en-US` 是預設語言，而使用者的語言清單中同時有德文和法文：
 
 <blockquote>
 <pre>
@@ -615,7 +615,7 @@ set absoluteFileName = bestCandidate.ValueAsString
 
 由於當地語系化的資源已不再存在於主要可執行檔安裝位置下的子目錄中，因此內建的 .NET 資源解決方式未能成功運作。 幸好 .NET 有定義良好的機制可處理失敗的組件載入操作 - `AssemblyResolve`事件。 使用 MRT 的 .NET 應用程式註冊這個活動，並為 .NET 資源子系統提供遺失的組件。 
 
-有關如何使用 WinRT API 尋找 .NET 使用過的衛星組件的精簡範例，如下所示。雖然您可以看到所呈現的程式碼與上述虛擬程式碼有相近的對應，但會刻意壓縮來顯示最少實作，通過的 `ResolveEventArgs` 會提供我們要尋找的組件名稱。 此程式碼 (詳細的註解與錯誤處理) 的可執行版本，可在 [GitHub 上的 **.NET 組件解析程式**樣本](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DotNetSatelliteAssemblyDemo)中的檔案 `PriResourceRsolver.cs` 中找到。
+有關如何使用 WinRT API 尋找 .NET 使用過的衛星組件的精簡範例，如下所示。雖然您可以看到所呈現的程式碼與上述虛擬程式碼有相近的對應，但會刻意壓縮來顯示最少實作，通過的 `ResolveEventArgs` 會提供我們要尋找的組件名稱。 此程式碼 (詳細的註解與錯誤處理) 的可執行版本，可在 `PriResourceRsolver.cs`GitHub 上的 [.NET 組件解析程式**樣本**中的檔案 ](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DotNetSatelliteAssemblyDemo) 中找到。
 
 ```csharp
 static class PriResourceResolver
@@ -630,7 +630,7 @@ static class PriResourceResolver
 
     var resource = ResourceManager.Current.MainResourceMap.GetSubtree("Files")[fileName];
 
-    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with AppX, but
+    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with .appx, but
     // in general is discouraged. The full sample provides a safer wrapper of this method
     return Assembly.UnsafeLoadFrom(resource.Resolve(resourceContext).ValueAsString);
   }

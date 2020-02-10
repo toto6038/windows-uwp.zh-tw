@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: ec780253deb170c5dde1828add366907c403f100
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c7ffd500f3b616367ac26dffbbfc03d43b507dac
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681899"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089404"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
@@ -43,7 +43,7 @@ Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會
 請參閱[傳統型轉 UWP 橋接器：應用程式延伸模組](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions)，以取得這些延伸模組的解釋，以及如何正確地使用它們。 
 
 ### <a name="3-debug-configuration-test"></a>3. 偵錯組態測試
-這項測試會確認 appx 不是偵錯組建。
+此測試會確認 msix 或 .appx 不是 debug 組建。
  
 **背景**  
 若要獲得 Microsoft Store 認證，應用程式不得針對 debug 進行編譯，而且它們不能參考可執行檔的 debug 版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
@@ -110,7 +110,7 @@ Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會
 **矯正措施**  
 使用下表作為指引。
 
-錯誤訊息 | 評價
+錯誤訊息 | 註解
 --------------|---------
 影像 {image name} 同時定義 Scale 和 TargetSize 限定詞二者；一次只能定義一個限定詞。 | 您可以針對不同的解析度自訂影像。 在實際訊息中，{image name} 包含有錯誤的影像名稱。 請確定每個影像都將 Scale 或 TargetSize 定義為限定詞。 
 影像 {image name} 不符合大小限制。  | 請確定所有應用程式影像都遵守適當的大小限制。 在實際訊息中，{image name} 包含有錯誤的影像名稱。 
