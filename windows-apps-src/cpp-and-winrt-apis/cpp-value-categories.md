@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移動, 轉送, 值類別, 移動語意, 完美轉送, lvalue, rvalue, glvalue, prvalue, xvalue
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a11d7763c33df6733a8dbf78392d27417e7cf18d
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 1312b84ded26859cd4b83ffbe3e8a75bfdef6950
+ms.sourcegitcommit: 20ee991a1cf87ef03c158cd3f38030c7d0e483fa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270211"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037878"
 ---
 # <a name="value-categories-and-references-to-them"></a>值類別，以及其參考
 本主題說明 C++ 中存在的各種值類別 (以及值參考)。 您一定曾聽過 *lvalues* 和 *rvalues*，但您可能不認為它們如本主題所呈現。 而且還有其他種類的值。
@@ -58,7 +58,7 @@ int main()
 您無法移動 lvalue。 但有  一種您可移動的 glvalue (具有身分識別的項目集合)&mdash;如果您知道您正在做什麼 (包括小心不要在移動後存取它)&mdash;也就是 xvalue。 當我們研究值類別的全貌時，我們將會再次探討這個概念。
 
 ## <a name="rvalue-references-and-reference-binding-rules"></a>Rvalue 參考和參考繫結規則
-本節將介紹 rvalue 參考的語法。 我們必須等待另一個主題討論移動和轉送的實質處理方式，但這些都是 rvalue 參考可解決的問題。 不過，在我們研究 rvalue 參考之前，我們必須先更清楚了解 `T&`&mdash;我們之前一直稱為「參考」的項目。 它其實是「lvalue (非 const) 參考」，會參照參考的使用者可以寫入其中的值。
+本節將介紹 rvalue 參考的語法。 我們必須等待另一個主題討論移動和轉送的實質處理方式，但足以說明右值參考是解決這些問題的必要項目。 不過，在我們研究 rvalue 參考之前，我們必須先更清楚了解 `T&`&mdash;我們之前一直稱為「參考」的項目。 它其實是「lvalue (非 const) 參考」，會參照參考的使用者可以寫入其中的值。
 
 ```cppwinrt
 template<typename T> T& get_by_lvalue_ref() { ... } // Get by lvalue (non-const) reference.

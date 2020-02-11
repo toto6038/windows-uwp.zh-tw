@@ -6,21 +6,21 @@ ms.date: 07/22/2019
 ms.topic: article
 keywords: windows 10, uwp, 封裝
 ms.localizationpriority: medium
-ms.openlocfilehash: d067511e4ceb5aaf072aabf8f74ccf186a7787dc
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: bb772007cd5c4391634f9df6ba0b6d2037a7b5de
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682676"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089474"
 ---
 # <a name="packaging-apps"></a>封裝應用程式
 
-本節包含或連結至關於在 MSIX 和 AppX 應用程式套件中封裝通用 Windows 平台 (UWP) 應用程式的文章，以進行部署和安裝。 其中一些連結會移至 [MSIX 文件](https://docs.microsoft.com/windows/msix/)中的相關文章。
+本節包含或連結至關於在 MSIX 和 .appx 應用程式套件中封裝通用 Windows 平台 (UWP) 應用程式的文章，以進行部署和安裝。 其中一些連結會移至 [MSIX 文件](https://docs.microsoft.com/windows/msix/)中的相關文章。
 
 > [!NOTE]
-> Windows 10 中 UWP 應用程式的原始應用程式封裝格式已命名為 AppX。 從 Windows 10 版本 1809 開始，此封裝格式已重新命名為 MSIX 並已延伸為支援所有類型的Windows 應用程式，包含 .NET 和 C++/Win32 桌面應用程式。 MSIX 的支援也會延伸到舊版的 Windows。 如需詳細資訊，請參閱 [MSIX 文件](https://docs.microsoft.com/windows/msix/)。
+> Windows 10 中 UWP 應用程式的原始應用程式封裝格式為 .appx。 從 Windows 10 版本 1809 開始，此封裝格式已重新命名為 .msix 並已延伸為支援所有類型的Windows 應用程式，包含 .NET 和 C++/Win32 桌面應用程式。 MSIX 的支援也會延伸到舊版的 Windows。 如需詳細資訊，請參閱 [MSIX 文件](https://docs.microsoft.com/windows/msix/)。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [使用 Visual Studio 封裝 UWP 應用程式](/windows/msix/package/packaging-uwp-apps) | 若要發佈或銷售您的通用 Windows 平台 (UWP) 應用程式，您必須為其建立應用程式套件。 |
 | [手動應用程式封裝](/windows/msix/package/manual-packaging-root) | 如果想要建立並簽署應用程式套件，但是沒有使用 Visual Studio 來開發應用程式時，您必須使用手動應用程式封裝工具。 |

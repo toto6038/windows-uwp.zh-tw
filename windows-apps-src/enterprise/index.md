@@ -6,12 +6,12 @@ ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a95529f40ef5bb1cbf112c91c385e6621620a01
-ms.sourcegitcommit: 7a8aea567b26283c71420e0d305d78f675e1fba7
+ms.openlocfilehash: 7e17b155966c609537c40050edc4c11ee6935b0d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125679"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089464"
 ---
 # <a name="enterprise"></a>企業
 
@@ -88,7 +88,7 @@ Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用�
 
 ### <a name="msix-deployment"></a>MSIX 部署
 
-MSIX 是一種 Windows 應用程式套件格式，結合了 MSI、AppX、App-V 和 ClickOnce 的最佳功能，以對所有 Windows 應用程式提供現代化且可靠的封裝體驗。 MSIX 套件格式除了支援對 Win32、WPF 和 Windows Forms 應用程式的新式封裝和部署功能，也保留了現有應用程式套件和安裝檔案的功能。 
+MSIX 是一種 Windows 應用程式套件格式，結合了 MSI、.appx、App-V 和 ClickOnce 的最佳功能，以對所有 Windows 應用程式提供現代化且可靠的封裝體驗。 MSIX 套件格式除了支援對 Win32、WPF 和 Windows Forms 應用程式的新式封裝和部署功能，也保留了現有應用程式套件和安裝檔案的功能。 
 
 ![MSIX 圖示](images/MSIX-App-Package.ico)
 
@@ -155,7 +155,7 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 
 | 主題 | 說明 |
 |-------|-------------|
-| [MSIX 文件](https://docs.microsoft.com/windows/msix/) | MSIX 是一種 Windows 應用程式套件格式，結合了 MSI、AppX、App-V 和 ClickOnce 的最佳功能，以提供現代化且可靠的封裝體驗。 |
+| [MSIX 文件](https://docs.microsoft.com/windows/msix/) | MSIX 是一種 Windows 應用程式套件格式，結合了 MSI、.appx、App-V 和 ClickOnce 的最佳功能，以提供現代化且可靠的封裝體驗。 |
 | [將 LOB 應用程式發佈到企業](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | 了解發佈企業營運應用程式的選項，而不將應用程式廣泛地提供給公眾使用，包括以應用程式安裝程式為基礎的部署、Microsoft Endpoint Configuration Manager 和 Microsoft Intune，以及發佈至商務用 Microsoft Store。 |
 | [側載應用程式](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | 當您側載應用程式時，您要將簽署的應用程式套件部署到裝置。 您要維護這些應用程式的簽署、裝載和部署。 用於側載應用程式的程序已經簡化為適用於 Windows 10。             |
 | [將應用程式發佈至 Microsoft Store](https://developer.microsoft.com/store/publish-apps) | 整合的 Windows Store 可讓您發佈與管理您為所有 Windows 裝置開發的所有應用程式。 透過每個市場價格、發佈和可見性控制項，以及其他選項來自訂您應用程式的可用性。 |

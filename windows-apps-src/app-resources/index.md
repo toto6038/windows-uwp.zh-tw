@@ -7,12 +7,12 @@ ms.date: 10/20/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: f40a68b6e07a90bcb1ce1d646bdfc0dfb4553495
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5b45f33e9849a46e22250640b88a85ea16143231
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359415"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089317"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>應用程式資源和資源管理系統
 
@@ -25,7 +25,7 @@ ms.locfileid: "66359415"
 
 如需有關將您的應用程式當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
 
-| 文章 | 描述 |
+| 文章 | 說明 |
 |---------|-------------|
 | [資源管理系統](resource-management-system.md) | 建置期間，資源管理系統會建立所有不同變體 (使用您的應用程式封裝) 的資源的索引。 在執行階段，系統會偵測生效的使用者和電腦設定，並載入這些設定的最佳相符項的資源。 |
 | [資源管理系統如何比對和選擇資源](how-rms-matches-and-chooses-resources.md) | 當要求資源時，也許有幾個某程度符合目前資源內容的候選項目。 資源管理系統將會分析所有的候選項目，並判斷要傳回的最佳候選項目。 本主題將詳細說明該程序，並且提供範例。 |
@@ -38,6 +38,6 @@ ms.locfileid: "66359415"
 | [將資源建置到您的應用程式套件，而不是資源套件](build-resources-into-app-package.md) | 某些類型的應用程式 (多語系字典、翻譯工具等) 需要覆寫應用程式套件組合的預設行為，並將資源建置到應用程式套件中，而不是讓這些資源分散在不同的資源套件中。 本主題說明如何執行這個動作。 |
 | [套件資源索引 (PRI) API 和自訂建置系統](pri-apis-custom-build-systems.md) | 您可以使用[套件資源索引 (PRI) API](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)，開發適用於您的 UWP 應用程式資源的自訂建置系統。 建置系統可以依據 UWP 應用程式所需的任何複雜層級，建立套件資源索引 (PRI) 檔案並對這些檔案進行版本控制和傾印 (為 XML)。 |
 | [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md) | MakePri.exe 是一個命令列工具，您可以用來建立和傾印 PRI 檔案。 其做為 MSBuild 的一部分整合到 Microsoft Visual Studio 中，但用於手動建立套件或自訂組建系統也很有用。 |
-| [在舊版應用程式或遊戲中使用 Windows 10 資源管理系統](using-mrt-for-converted-desktop-apps-and-games.md) | 將您的 .NET 或 Win32 應用程式或遊戲封裝成 AppX 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的應用程式資源。 這個深入主題說明技術。 |
+| [在舊版應用程式或遊戲中使用 Windows 10 資源管理系統](using-mrt-for-converted-desktop-apps-and-games.md) | 將您的 .NET 或 Win32 應用程式或遊戲封裝成 .msix 或 .appx 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的應用程式資源。 這個深入主題說明技術。 |
 
 另請參閱[對語言、縮放比例及高對比的磚與快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)。

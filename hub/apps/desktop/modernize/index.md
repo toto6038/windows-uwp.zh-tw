@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: fb6d2bebda31ed768309b23d18b3b47e4487b058
-ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
+ms.openlocfilehash: c2e7524605847009dae415d93794658dd08a79a3
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76929251"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089394"
 ---
 # <a name="modernize-your-desktop-apps"></a>讓您的傳統型應用程式現代化
 
@@ -24,7 +24,7 @@ Windows 10 和通用 Windows 平台 (UWP) 提供許多功能，您可以用來�
 
 ## <a name="msix-packages"></a>MSIX 套件
 
-MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式提供通用封裝體驗，包括 UWP、WPF、Windows Forms 及 Win32 應用程式。 MSIX 綜合 MSI、AppX、App-V 和 ClickOnce 安裝技術的優勢，以提供新式且可靠的封裝體驗。
+MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式提供通用封裝體驗，包括 UWP、WPF、Windows Forms 及 Win32 應用程式。 MSIX 綜合 MSI、.appx、App-V 和 ClickOnce 安裝技術的優勢，以提供新式且可靠的封裝體驗。
 
 將您的傳統型 Windows 應用程式封裝在 MSIX 套件中，可讓您存取強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。
 
