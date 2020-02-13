@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7574fb5920433f894819ffd3d94e31fef03d30b3
-ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
+ms.openlocfilehash: 84a41b4dd77a451a79e607e5ad5cb7df548419a9
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76814028"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089414"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>在 C++ Win32 應用程式中使用 UWP XAML 裝載 API
 
@@ -22,11 +22,11 @@ ms.locfileid: "76814028"
 UWP XAML 裝載 API 提供更廣泛的控制項集合的基礎，讓開發人員能夠將流暢的 UI 帶入非 UWP 桌面應用程式。 這項功能稱為「 *XAML 島*」。 如需這項功能的總覽，請參閱[在桌面應用程式中裝載 UWP XAML 控制項（Xaml 島）](xaml-islands.md)。
 
 > [!NOTE]
-> 如果您有關于 XAML Islands 的意見反應，請在[Microsoft 工具](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)組的 Win32 存放庫中建立新的問題，並在該處留下您的意見。 如果您想要私下提交意見反應，可以將它傳送給 XamlIslandsFeedback@microsoft.com。 您的深入解析和案例對我們而言非常重要。
+> 如果您有關於 XAML Islands 的意見反應，請在 [Microsoft.Toolkit.Win32 存放庫](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)中建立新問題，並留下您的意見。 如果您想要私下提交意見反應，可以將意見反應傳送到 XamlIslandsFeedback@microsoft.com。 您的深入解析和案例對我們而言非常重要。
 
-## <a name="should-you-use-the-uwp-xaml-hosting-api"></a>您應該使用 UWP XAML 裝載 API 嗎？
+## <a name="is-the-uwp-xaml-hosting-api-the-right-choice-for-your-desktop-app"></a>UWP XAML 裝載 API 是您桌面應用程式的正確選擇嗎？
 
-UWP XAML 裝載 API 提供了在桌面應用程式中裝載 UWP 控制項的低層級基礎結構。 某些類型的桌面應用程式可以選擇使用替代、更方便的 Api 來完成此目標。  
+UWP XAML 裝載 API 提供了在桌面應用程式中裝載 UWP 控制項的低層級基礎結構。 某些類型的桌面應用程式可以選擇使用替代、更方便的 Api 來完成此目標。
 
 * 如果您有C++ Win32 桌面應用程式，而且想要在應用程式中裝載 uwp 控制項，則必須使用 UWP XAML 裝載 API。 這些類型的應用程式沒有任何替代方案。
 
@@ -34,35 +34,9 @@ UWP XAML 裝載 API 提供了在桌面應用程式中裝載 UWP 控制項的低�
 
 因為我們建議只有C++ win32 應用程式使用 UWP XAML 裝載 API，本文主要會提供C++ Win32 應用程式的指示和範例。 不過，如果您選擇，您可以在 WPF 和 Windows Forms 應用程式中使用 UWP XAML 裝載 API。 本文指向適用于 WPF 的[主控制項](xaml-islands.md#host-controls)和 Windows Forms 在 Windows 社區工具組中的相關原始程式碼，讓您可以看到 UWP XAML 裝載 API 如何由這些控制項使用。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
-XAML Islands 需要 Windows 10 1903 版（或更新版本）和對應的 Windows SDK 組建。 若要在C++ Win32 應用程式中使用 XAML Islands，您必須先設定您的專案。
-
-### <a name="support-for-cwinrt"></a>支援C++/WinRT
-
-請確定您的專案支援[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis)：
-
-* 針對新的專案，您可以安裝[ C++/WinRT Visual Studio 擴充功能（VSIX）](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) ，並使用該C++延伸模組中包含的其中一個/WinRT 專案範本。
-* 針對現有的專案，您可以在專案中安裝[CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet 套件。
-
-如需這些選項的詳細資訊，請參閱[這篇文章](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
-
-### <a name="configure-your-project-for-app-deployment"></a>設定專案以進行應用程式部署
-
-選擇下列其中一個選項，準備您的專案以進行部署：
-
-* **在 MSIX 套件中封裝您的應用程式**。 將您的應用程式封裝在[MSIX 套件](https://docs.microsoft.com/windows/msix/)中，可提供許多部署和執行時間的優點。
-    1. 安裝 Windows 10 版本 1903 SDK （版本10.0.18362）或更新版本。
-    2. 將[Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增至您的方案，並將參考新增至您C++的/Win32 專案，以將您的應用程式封裝在 MSIX 套件中。
-
-* **安裝 Microsoft 工具組. SDK 套件**。 如果您不想要將應用程式封裝在 MSIX 套件中，您可以安裝6.0.0 或更新版本的[SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) 。 此套件提供數個組建和執行時間資產，讓 XAML 孤島可在您的應用程式中運作。
-
-> [!NOTE]
-> 這些指示的舊版中，您會將 `maxversiontested` 元素加入至專案中的應用程式資訊清單。 只要您使用上述其中一個選項，就不再需要將此元素新增至資訊清單。
-
-### <a name="additional-requirements-for-custom-uwp-controls"></a>自訂 UWP 控制項的其他需求
-
-如果您裝載的是自訂 UWP 控制項（例如，由數個可搭配使用的 UWP 控制群組成的使用者控制項），您必須遵循[本節中的](#host-a-custom-uwp-control)其他指示。 您也必須擁有自訂控制項的原始程式碼，才能使用您的應用程式進行編譯。
+XAML Islands 需要 Windows 10 1903 版（或更新版本）和對應的 Windows SDK 組建。 若要在C++ Win32 應用程式中使用 XAML Islands，您必須[依照本節所](#configure-the-project)述的方式設定您的專案。
 
 ## <a name="architecture-of-the-api"></a>API 的架構
 
@@ -99,13 +73,16 @@ UWP XAML 裝載 API 包含這些主要的 Windows 執行階段類型和 COM 介�
 
 * [具有自訂控制項範例的 XAML 島](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32)。 這個範例示範在封裝C++的 Win32 應用程式中裝載自訂 UWP 控制項的完整執行，以及處理其他行為，例如鍵盤輸入和焦點導覽。
 
-### <a name="wpf-and-windows-forms"></a>WPF 和 Windows Forms
+### <a name="wpf-and-windows-forms"></a>WPF 和 Windows Form
 
 Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項，做為在 WPF 和 Windows Forms 應用程式中使用 UWP 裝載 API 的參考範例。 原始程式碼可在下列位置取得：
 
 * 若為 WPF 版本的控制項，請[移至這裡](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost)。 WPF 版本衍生自[HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)。
 
 * 如需控制項的 Windows Forms 版本，請[移至這裡](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost)。 Windows Forms 版本衍生自[system.web](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)。
+
+> [!NOTE]
+> 強烈建議您在 Windows 社區工具組中使用[XAML 島 .net 控制項](xaml-islands.md#wpf-and-windows-forms-applications)，而不是直接在 WPF 和 Windows Forms 應用程式中使用 UWP XAML 裝載 API。 本文中的 WPF 和 Windows Forms 範例連結僅供說明之用。
 
 ## <a name="host-a-standard-uwp-control"></a>裝載標準 UWP 控制項
 
@@ -117,15 +94,36 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 2. 在**方案總管**中，以滑鼠右鍵按一下方案節點，然後按一下 [重定**目標方案**]，選取**10.0.18362.0**或更新版本的 SDK，然後按一下 **[確定]** 。
 
-3. 安裝[CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet 套件：
+3. 安裝[CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet 套件，以在您的專案中啟用[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis)的支援：
 
     1. 在**方案總管**中，以滑鼠右鍵按一下您的專案，然後選擇 [**管理 NuGet 封裝**]。
     2. 選取 [**流覽**] 索引標籤，搜尋[CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)套件，然後安裝此套件的最新版本。
 
+    > [!NOTE]
+    > 針對新的專案，您也可以安裝[ C++/WinRT Visual Studio 擴充功能（VSIX）](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) ，並使用該C++延伸模組中包含的其中一個/WinRT 專案範本。 如需詳細資訊，請參閱[這篇文章](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+
 4. 安裝[Microsoft 工具](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK)組. SDK NuGet 套件：
 
     1. 在 [ **NuGet 套件管理員**] 視窗中，確認已選取 [**包含發行**前版本]。
-    2. 選取 [**流覽**] 索引標籤，[搜尋 [6.0.0](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) ] （或更新版本）此套件的套件。
+    2. 選取 [**流覽**] 索引標籤，**搜尋 [6.0.0** ] （或更新版本）此套件的套件。 此套件提供數個組建和執行時間資產，讓 XAML 孤島可在您的應用程式中運作。
+
+5. 在[組件資訊清單](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests)中設定 `maxVersionTested` 值，指定您的應用程式與 Windows 10 1903 版或更新版本相容。
+
+    1. 如果您的專案中還沒有組件資訊清單，請將新的 XML 檔案加入至您的專案，並將其命名為**manifest**。
+    2. 在您的組件資訊清單中，包含**相容性**元素和下列範例中所示的子項目。 將**maxVersionTested**元素的**Id**屬性取代為您的目標 windows 10 版本號碼（必須是 windows 10 1903 版或更新版本）。
+
+        ```xml
+        <?xml version="1.0" encoding="UTF-8"?>
+        <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+            <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+                <application>
+                    <!-- Windows 10 -->
+                    <maxversiontested Id="10.0.18362.0"/>
+                    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+                </application>
+            </compatibility>
+        </assembly>
+        ```
 
 ### <a name="use-the-xaml-hosting-api-to-host-a-uwp-control"></a>使用 XAML 裝載 API 來裝載 UWP 控制項
 
@@ -343,7 +341,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 * **C++32**
   * 請參閱[HelloWindowsDesktop .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp)檔案。
   * 請參閱[XamlBridge .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp)檔案。
-* **WPF：** 請參閱 Windows 社區工具組中的[WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs)檔案。  
+* **WPF**請參閱 Windows 社區工具組中的[WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs)檔案。  
 
 * **Windows Forms：** 請參閱 Windows 社區工具組中的[WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs)檔案。
 
@@ -353,7 +351,7 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 若要裝載自訂 UWP 控制項，您需要下列專案和元件：
 
-* **應用程式的專案和原始程式碼**。 請確定您已設定您的專案，以符合裝載 XAML 孤島的[必要條件](#prerequisites)。
+* **應用程式的專案和原始程式碼**。 請確定您已[設定](#configure-the-project)用來裝載 XAML 孤島的專案。
 
 * **自訂 UWP 控制項**。 您需要裝載的自訂 UWP 控制項的原始程式碼，才能使用您的應用程式進行編譯。 自訂控制項通常會定義在 UWP 類別庫專案中，而您會在與C++ Win32 專案相同的方案中參考它。
 
@@ -374,8 +372,8 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 4. 在您C++的 Win32 專案中：
 
-  * 在您的方案中加入 UWP 應用程式專案和 UWP 類別庫專案的參考。
-  * 在 `WinMain` 函式或其他一些進入點代碼中，建立您稍早在 UWP 應用程式專案中定義之 `XamlApplication` 類別的實例。 例如，請參閱[XAML 島範例](https://github.com/microsoft/Xaml-Islands-Samples)中C++ Win32 範例的[這行程式碼](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Desktop_Win32App/DesktopWin32App/DesktopWin32App.cpp#L46)。
+    * 在您的方案中加入 UWP 應用程式專案和 UWP 類別庫專案的參考。
+    * 在 `WinMain` 函式或其他一些進入點代碼中，建立您稍早在 UWP 應用程式專案中定義之 `XamlApplication` 類別的實例。 例如，請參閱[XAML 島範例](https://github.com/microsoft/Xaml-Islands-Samples)中C++ Win32 範例的[這行程式碼](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Desktop_Win32App/DesktopWin32App/DesktopWin32App.cpp#L46)。
 
 5. 請遵循[使用 xaml 裝載 API 來裝載 UWP 控制項](#use-the-xaml-hosting-api-to-host-a-uwp-control)一節中所述的程式，將自訂控制項裝載于應用程式中的 XAML 島。 指派自訂控制項的實例，以裝載至程式碼中**DesktopWindowXamlSource**物件的[Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content)屬性。
 
@@ -394,9 +392,9 @@ Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/window
 
 若要適當地處理每個 XAML 島的鍵盤輸入，您的應用程式必須將所有的 Windows 訊息傳遞至 UWP XAML 架構，才能正確處理特定訊息。 若要這樣做，您可以在應用程式中存取訊息迴圈的某個位置，將每個 XAML 島的**DesktopWindowXamlSource**物件轉換成**IDesktopWindowXamlSourceNative2** COM 介面。 然後，呼叫此介面的**PreTranslateMessage**方法，並傳入目前的訊息。
 
-  * Win32：：應用程式可以直接在其主要訊息迴圈中呼叫**PreTranslateMessage** 。 **C++** 如需範例，請參閱[XamlBridge .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16)檔案。
+  * **C++ Win32：** ：應用程式可以直接在其主要訊息迴圈中呼叫**PreTranslateMessage** 。 如需範例，請參閱[XamlBridge .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16)檔案。
 
-  * **WPF：** 應用程式可以從[ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage)事件的事件處理常式呼叫**PreTranslateMessage** 。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177)檔案。
+  * **WPF**應用程式可以從[ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage)事件的事件處理常式呼叫**PreTranslateMessage** 。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177)檔案。
 
   * **Windows Forms：** 應用程式可以從[system.windows.forms.control.preprocessmessage](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.preprocessmessage)方法的覆寫呼叫**PreTranslateMessage** 。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100)檔案。
 
@@ -412,9 +410,9 @@ UWP XAML 裝載 API 提供數種類型和成員，可協助您完成這些工作
 
 如需示範如何在運作中範例應用程式的內容中執行這項操作的範例，請參閱下列程式碼檔案：
 
-  * /Win32：請參閱[XamlBridge .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp)檔案。 **C++**
+  * **C++/Win32**：請參閱[XamlBridge .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp)檔案。
 
-  * **WPF：** 請參閱 Windows 社區工具組中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs)檔案。  
+  * **WPF**請參閱 Windows 社區工具組中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs)檔案。  
 
   * **Windows Forms：** 請參閱 Windows 社區工具組中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs)檔案。
 
@@ -424,13 +422,13 @@ UWP XAML 裝載 API 提供數種類型和成員，可協助您完成這些工作
 
 * 在C++ Win32 應用程式中，當您的應用程式處理 WM_SIZE 訊息時，它可以使用[SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos)函式重新置放裝載的 XAML 島。 如需範例，請參閱[SampleApp .cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170)程式碼檔。
 
-* 當父 UI 元素需要取得所需之矩形區域的大小，以符合您在**DesktopWindowXamlSource**上**裝載的 node.js**時，請呼叫**windows. ui**的[Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)方法。 例如：
+* 當父 UI 元素需要取得所需之矩形區域的大小，以符合您在**DesktopWindowXamlSource**上**裝載的 node.js**時，請呼叫**windows. ui**的[Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)方法。 例如:
 
     * 在 WPF 應用程式中，您可以從裝載**DesktopWindowXamlSource**之[HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)的[MeasureOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride)方法來執行此動作。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs)檔案。
 
     * 在 Windows Forms 應用程式中，您可以從裝載**DesktopWindowXamlSource**之[控制項](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)的[getpreferredsize 所](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize)方法來執行此動作。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs)檔案。
 
-* 當父 UI 元素的大小變更時，請呼叫您在**DesktopWindowXamlSource**上裝載之根**Windows.** node.js 的[排列](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange)方法。 例如：
+* 當父 UI 元素的大小變更時，請呼叫您在**DesktopWindowXamlSource**上裝載之根**Windows.** node.js 的[排列](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange)方法。 例如:
 
     * 在 WPF 應用程式中，您可以從裝載**DesktopWindowXamlSource**之[HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)物件的[ArrangeOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride)方法來執行此動作。 如需範例，請參閱 Windows 社區工具組中的[WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs)檔案。
 
@@ -453,31 +451,43 @@ UWP XAML 架構會自動處理所裝載 UWP 控制項的 DPI 變更（例如，�
 </assembly>
 ```
 
-## <a name="troubleshooting"></a>[疑難排解]
+## <a name="package-the-app"></a>封裝應用程式
+
+您可以選擇性地將應用程式封裝在[MSIX 套件](https://docs.microsoft.com/windows/msix)中進行部署。 MSIX 是適用于 Windows 的現代化應用程式封裝技術，它是以 MSI、.appx、App-v 和 ClickOnce 安裝技術的組合為基礎。
+
+下列指示說明如何使用 Visual Studio 2019 中的[Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，在 MSIX 套件中封裝解決方案中的所有元件。 只有當您想要在 MSIX 套件中封裝應用程式時，才需要執行這些步驟。
+
+1. 將新的[Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增至您的方案。 當您建立專案時，請選取 [ **Windows 10，版本1903（10.0;）]。組建18362）** ，適用于**目標版本**和**最低版本**。
+
+2. 在封裝專案中，以滑鼠右鍵按一下 [**應用程式**] 節點，然後選擇 [**加入參考**]。 在專案清單中，選取方案中C++的/Win32 桌面應用程式專案，然後按一下 **[確定]** 。
+
+3. 建立並執行封裝專案。 確認應用程式會執行，並如預期般顯示 UWP 控制項。
+
+## <a name="troubleshooting"></a>疑難排解
 
 ### <a name="error-using-uwp-xaml-hosting-api-in-a-uwp-app"></a>在 UWP 應用程式中使用 UWP XAML 裝載 API 時發生錯誤
 
 | 問題 | 解析度 |
 |-------|------------|
-| 您的應用程式會收到**COMException** ，並顯示下列訊息：「無法啟動 DesktopWindowXamlSource。 此類型不能用在 UWP 應用程式中。」 或「無法啟用 WindowsXamlManager。 此類型不能用在 UWP 應用程式中。」 | 此錯誤表示您正嘗試使用 uwp XAML 裝載 API （具體而言，您嘗試在 UWP 應用程式中具現化[DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)或[WindowsXamlManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager)類型）。 UWP XAML 裝載 API 僅適用于非 UWP 桌面應用程式，例如 WPF、Windows Forms 和C++ Win32 應用程式。 |
+| 您的應用程式會收到包含下列訊息的**COMException** ：「無法啟用 DesktopWindowXamlSource。 此類型不能用在 UWP 應用程式中。」 或「無法啟用 WindowsXamlManager。 此類型不能用在 UWP 應用程式中。」 | 此錯誤表示您正嘗試使用 uwp XAML 裝載 API （具體而言，您嘗試在 UWP 應用程式中具現化[DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)或[WindowsXamlManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager)類型）。 UWP XAML 裝載 API 僅適用于非 UWP 桌面應用程式，例如 WPF、Windows Forms 和C++ Win32 應用程式。 |
 
 ### <a name="error-trying-to-use-the-windowsxamlmanager-or-desktopwindowxamlsource-types"></a>嘗試使用 WindowsXamlManager 或 DesktopWindowXamlSource 類型時發生錯誤
 
 | 問題 | 解析度 |
 |-------|------------|
-| 您的應用程式會收到例外狀況，並顯示下列訊息：「WindowsXamlManager 和 DesktopWindowXamlSource 支援以 Windows 版本10.0.18226.0 和更新版本為目標的應用程式。 請檢查應用程式資訊清單或套件資訊清單，並確定 MaxTestedVersion 屬性已更新。」 | 此錯誤表示您的應用程式嘗試在 UWP XAML 裝載 API 中使用**WindowsXamlManager**或**DesktopWindowXamlSource**類型，但 OS 無法判斷應用程式是否已建立成以 Windows 10 1903 版或更新版本為目標。 UWP XAML 裝載 API 最初是在舊版 Windows 10 中引進為預覽版本，但只有從 Windows 10 版本1903開始才支援。</p></p>若要解決此問題，請建立應用程式的 MSIX 套件，並從封裝執行它，或在您的專案中安裝[Microsoft. 工具](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK)組. SDK NuGet 套件。 如需詳細資訊，請參閱[本節](#configure-your-project-for-app-deployment)。 |
+| 您的應用程式會收到包含下列訊息的例外狀況：針對以 Windows 版本10.0.18226.0 和更新版本為目標的應用程式，支援 WindowsXamlManager 和 DesktopWindowXamlSource。 請檢查應用程式資訊清單或套件資訊清單，並確定 MaxTestedVersion 屬性已更新。」 | 此錯誤表示您的應用程式嘗試在 UWP XAML 裝載 API 中使用**WindowsXamlManager**或**DesktopWindowXamlSource**類型，但 OS 無法判斷應用程式是否已建立成以 Windows 10 1903 版或更新版本為目標。 UWP XAML 裝載 API 最初是在舊版 Windows 10 中引進為預覽版本，但只有從 Windows 10 版本1903開始才支援。</p></p>若要解決此問題，請建立應用程式的 MSIX 套件，並從封裝執行它，或在您的專案中安裝[Microsoft. 工具](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK)組. SDK NuGet 套件。 如需詳細資訊，請參閱[本節](#configure-the-project)。 |
 
 ### <a name="error-attaching-to-a-window-on-a-different-thread"></a>附加至不同執行緒上的視窗時發生錯誤
 
 | 問題 | 解析度 |
 |-------|------------|
-| 您的應用程式會收到**COMException** ，並顯示下列訊息：「AttachToWindow 方法失敗，因為指定的 HWND 是在不同的執行緒上建立的。」 | 此錯誤表示您的應用程式呼叫**IDesktopWindowXamlSourceNative：： AttachToWindow**方法，並將在不同執行緒上建立之視窗的 HWND 傳遞給它。 您必須將在與您呼叫方法的程式碼相同的執行緒上建立的視窗 HWND，傳遞給這個方法。 |
+| 您的應用程式會收到包含下列訊息的**COMException** ：「AttachToWindow 方法失敗，因為指定的 HWND 是在不同的執行緒上建立的。」 | 此錯誤表示您的應用程式呼叫**IDesktopWindowXamlSourceNative：： AttachToWindow**方法，並將在不同執行緒上建立之視窗的 HWND 傳遞給它。 您必須將在與您呼叫方法的程式碼相同的執行緒上建立的視窗 HWND，傳遞給這個方法。 |
 
 ### <a name="error-attaching-to-a-window-on-a-different-top-level-window"></a>附加至另一個最上層視窗的視窗時發生錯誤
 
 | 問題 | 解析度 |
 |-------|------------|
-| 您的應用程式會收到**COMException** ，並顯示下列訊息：「AttachToWindow 方法失敗，因為指定的 hwnd 是從另一個最上層視窗遞減，而不是先前在同一個執行緒上傳遞至 ATTACHTOWINDOW 的 hwnd。」 | 此錯誤表示您的應用程式呼叫**IDesktopWindowXamlSourceNative：： AttachToWindow**方法，並將視窗的 HWND 傳遞至與您在同一個執行緒上先前呼叫這個方法所指定的視窗相比，從另一個最上層視窗遞減。</p></p>當您的應用程式在特定執行緒上呼叫**AttachToWindow**之後，相同執行緒上的所有其他[DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)物件都只能附加至 windows，而這些子系是在第一次呼叫**AttachToWindow**時所傳遞的同一個最上層視窗的子系。 當特定執行緒的所有**DesktopWindowXamlSource**物件都關閉時，下一個**DesktopWindowXamlSource**就可以自由附加到任何視窗。</p></p>若要解決此問題，請關閉系結至這個執行緒上其他最上層視窗的所有**DesktopWindowXamlSource**物件，或為此**DesktopWindowXamlSource**建立新的執行緒。 |
+| 您的應用程式會收到包含下列訊息的**COMException** ：「AttachToWindow 方法失敗，因為指定的 HWND 是從另一個最上層視窗遞減，而不是先前在同一個執行緒上傳遞給 AttachToWindow 的 HWND。」 | 此錯誤表示您的應用程式呼叫**IDesktopWindowXamlSourceNative：： AttachToWindow**方法，並將視窗的 HWND 傳遞至與您在同一個執行緒上先前呼叫這個方法所指定的視窗相比，從另一個最上層視窗遞減。</p></p>當您的應用程式在特定執行緒上呼叫**AttachToWindow**之後，相同執行緒上的所有其他[DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)物件都只能附加至 windows，而這些子系是在第一次呼叫**AttachToWindow**時所傳遞的同一個最上層視窗的子系。 當特定執行緒的所有**DesktopWindowXamlSource**物件都關閉時，下一個**DesktopWindowXamlSource**就可以自由附加到任何視窗。</p></p>若要解決此問題，請關閉系結至這個執行緒上其他最上層視窗的所有**DesktopWindowXamlSource**物件，或為此**DesktopWindowXamlSource**建立新的執行緒。 |
 
 ## <a name="related-topics"></a>相關主題
 
