@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, view products, Microsoft Store 集合, 檢視產品
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6976f8161089be1f907d85e7373fc0f3474c62
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: a5a986896ca3b2585590e11d17219106a9043204
+ms.sourcegitcommit: 2747d9266e1678fca96d3822ce47499ca91a2c70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77112238"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252282"
 ---
 # <a name="query-for-products"></a>查詢產品
 
@@ -39,7 +39,7 @@ ms.locfileid: "77112238"
 | POST   | ```https://collections.mp.microsoft.com/v6.0/collections/query``` |
 
 
-### <a name="request-header"></a>要求標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭         | 類型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -59,7 +59,7 @@ ms.locfileid: "77112238"
 | modifiedAfter     | datetime     | 如果已指定，該服務只會傳回在此日期之後修改過的產品。        | 否       |
 | parentProductId   | string       | 如果已指定，該服務只會傳回對應到特定 App 的附加元件。      | 否       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | 如果已指定，該服務只會傳回適用於所提供產品/SKU 組的產品。 如需詳細資訊，請參閱下表。      | 否       |
-| productTypes      | 列出&lt;字串&gt;       | 指定要在查詢結果中傳回的產品類型。 支援的產品類型為 **Application**、**Durable** 及 **UnmanagedConsumable**。     | 是       |
+| productTypes      | 列出&lt;字串&gt;       | 指定要在查詢結果中傳回的產品類型。 支援的產品類型包括**應用程式**、**耐用**、**遊戲**和**UnmanagedConsumable**。     | 是       |
 | validityType      | string       | 設定為 **All** 時，會傳回某使用者的所有產品，包括已過期的項目。 設定為 **Valid** 時，只會傳回在當下有效的產品 (也就是該產品的狀態為使用中、開始日期 &lt; 目前時間，以及結束日期 &gt; 目前時間)。 | 否       |
 
 
