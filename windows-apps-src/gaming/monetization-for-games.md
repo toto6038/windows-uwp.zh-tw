@@ -38,7 +38,7 @@ ms.locfileid: "75685257"
 ### <a name="base-price"></a>基本價格
 
 遊戲的基本價格會決定您的遊戲是歸類為_付費_或_免費_。 您可以使用 [[合作夥伴中心](https://partner.microsoft.com/dashboard)] 來設定以國家和地區為基礎的基本價格。
-決定價格的程序可能包括您[在不同國家銷售時的納稅義務](https://docs.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)，以及[特定市場的成本考量](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。 您也可以[針對特定市場設定自訂價格](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets)。
+決定價格的程序可能包括您[在不同國家/地區銷售時的納稅義務](https://docs.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)，以及[特定市場的成本考量](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。 您也可以[針對特定市場設定自訂價格](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets)。
 
 ### <a name="sale-price"></a>銷售價格
 

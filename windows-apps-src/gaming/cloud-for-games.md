@@ -97,7 +97,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
     </tr>
     <tr>
         <td><a href="https://www.nextgames.com/">下一場遊戲</a></td>
-        <td>Next Games 是 <b>The Walking Dead: No Man's Land</b> 電玩遊戲的製作者，此遊戲是根據 AMC 的原創影集改編。 The Walking Dead 遊戲使用 Azure 做為後端。 它在首個週末便達到 1,000,000 次的下載次數，並在首週便拿下美國 App Store 中 iPhone 與 iPad 免費 App 的第 1 名、12 個國家中免費 App 的第 1 名，以及 13 個國家中免費遊戲的第 1 名。
+        <td>Next Games 是 <b>The Walking Dead: No Man's Land</b> 電玩遊戲的製作者，此遊戲是根據 AMC 的原創影集改編。 The Walking Dead 遊戲使用 Azure 做為後端。 它在首個週末便達到 1,000,000 次的下載次數，並在首週便拿下美國 App Store 中 iPhone 與 iPad 免費 App 的第 1 名、12 個國家/地區中免費 App 的第 1 名，以及 13 個國家/地區中免費遊戲的第 1 名。
         </td>
         <td>
             <ul>
