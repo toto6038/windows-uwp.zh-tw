@@ -1,18 +1,21 @@
 ---
 description: Windows Premium 廣告發行者計畫包含已啟用廣告應用程式的規劃集合，合作夥伴廣告網路可以使用高收益廣告來鎖定特定對象。 此計畫中的應用程式在使用方式、參與度和體驗等方面都是同等級最佳。
 title: Windows Premium 廣告發行者計畫
-ms.date: 09/08/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: 4db99097516fcead384af6fc9e4c588707b96d41
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: ba5708b953efff3b4a7c52286ae1a74c43d3d211
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684444"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463750"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows Premium 廣告發行者計畫
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 我們持續努力協助 Windows 開發人員利用廣告從他們的應用程式獲利，因此我們提供 [Windows Premium 廣告發行者計畫](https://www.windowspremiumapps.com)。 這是已啟用廣告之應用程式和遊戲的精心規劃集合，在使用方式、參與度和體驗等方面都是同等級最佳。 這些應用程式和遊戲都經過可見性認證，擁有高度參與的全球可識別使用者。
 

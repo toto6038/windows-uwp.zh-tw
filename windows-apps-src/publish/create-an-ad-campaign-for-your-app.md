@@ -1,19 +1,22 @@
 ---
 Description: 您可以在合作夥伴中心建立廣告行銷活動，以協助推廣您的應用程式並擴大應用程式的使用者群。
-title: 為您的應用程式建立廣告活動
+title: 為您的應用程式建立行銷活動
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
-ms.date: 10/31/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 行銷活動, 促銷
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5d23a502c5517193956da6c57efe1eb668e0f0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e804260a312c963c380f4d09b00cc276b385c2ff
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260015"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463720"
 ---
-# <a name="create-an-ad-campaign-for-your-app"></a>為您的應用程式建立廣告活動
+# <a name="create-an-ad-campaign-for-your-app"></a>為您的應用程式建立行銷活動
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 您可以在[合作夥伴中心](https://partner.microsoft.com/dashboard)建立廣告行銷活動，以協助推廣您的應用程式並擴大其使用者群。 根據預設，我們會根據您在合作夥伴中心內的應用程式設定，為您的廣告選擇目標物件，但您可以選擇性地定義您自己的物件。 您也可以使用一組預設的廣告範本或上傳自己的廣告設計。 如需廣告行銷活動的詳細資訊，請參閱[廣告行銷活動的常見問題](common-questions.md)。
 
@@ -55,7 +58,7 @@ ms.locfileid: "74260015"
 9.  在 **\[對象\]** 頁面上，我們將會顯示建議用於您行銷活動的對象設定。 您可以選擇性地調整這項資訊：
     * **國家/地區**：最多選擇您想要顯示廣告的 5 個國家或地區。 如需支援的國家或地區清單，請參閱[廣告行銷活動的常見問題](common-questions.md#where-will-my-ad-appear)。
 
-    * **裝置**：選擇您想要顯示這些廣告的裝置類型。 只有您 app 支援的裝置類型才會顯示。
+    * **裝置**：選擇您想要顯示這些廣告的裝置類型。 只有您應用程式支援的裝置類型才會顯示。
 
     * **Surface**：選擇 **\[通用\]** ，讓您的廣告出現在應用程式中，以及 MSN.com、Outlook.com、Skype 和其他 Microsoft 進階內容中。 選擇 **\[App\]** ，如果您只想讓您的廣告出現在應用程式中。
 

@@ -1,18 +1,21 @@
 ---
 description: 了解如何將原生廣告加入您的 UWP App。
 title: 原生廣告
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告控制項, 原生廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: 83c174dc682af27a4811a44c826c572f91ec1f06
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7a2022db39c27453dd3c1e9e1eb63914b25a637b
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260212"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463930"
 ---
 # <a name="native-ads"></a>原生廣告
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 原生廣告是以元件為基礎的廣告格式，其中每一項廣告創意 (例如標題、影像、描述和喚起行動文字) 都會當做個別元素傳送到您的應用程式。 您可以使用您自己的字型、色彩、動畫以及其他 UI 元件，將這些元素項目整合到您的應用程式中，拼接出符合您應用程式外觀與感覺的低調使用者體驗，同時從廣告獲得高利潤。
 
@@ -33,12 +36,12 @@ ms.locfileid: "74260212"
     > [!NOTE]
     > 如果您正在使用現有的專案，請在專案中開啟 Package.appxmanifest 檔案，並確保選取 **\[網際網路 (用戶端)\]** 功能。 您的應用程式需要這項功能來接收測試廣告和即時廣告。
 
-2. 如果專案的目標是 [任何 CPU]，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86])。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 3. 在您的專案中新增 Microsoft Advertising SDK 的參考：
 
     1. 在 [方案總管] 視窗中的 [參考] 上按一下滑鼠右鍵，然後選取 [加入參考]。
-    2.  在 [參考管理員] 中，展開 [通用 Windows]、按一下 [擴充功能]，然後選取 [適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)] 旁邊的核取方塊。
+    2.  在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]** 、按一下 **\[擴充功能\]** ，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\]** 旁邊的核取方塊。
     3.  在 [參考管理員] 中，按一下 [確定]。
 
 4. 在您的應用程式的適當程式碼檔案中 (例如在 MainPage.xaml.cs 中，或部分其他頁面的程式碼檔案)，新增下列命名空間參考。
@@ -109,7 +112,7 @@ ms.locfileid: "74260212"
 
 1.  請確定您的原生廣告實作遵循我們的[原生廣告指南](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)。
 
-2.  在合作夥伴中心，移至 [[應用程式內廣告](../publish/in-app-ads.md)] 頁面，並[建立一個 ad 單位](set-up-ad-units-in-your-app.md#live-ad-units)。 廣告單元類型請指定 **\[原生\]** 。 記下廣告單位識別碼與應用程式識別碼。
+2.  在合作夥伴中心，移至 [[應用程式內廣告](../publish/in-app-ads.md)] 頁面，並[建立一個 ad 單位](set-up-ad-units-in-your-app.md#live-ad-units)。 廣告單元類型請指定 **\[原生\]** 。 記下廣告單元識別碼與應用程式識別碼。
     > [!NOTE]
     > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在合作夥伴中心建立即時 UWP ad 單位時，ad 單位的 [應用程式識別碼] 值一律會符合應用程式的商店識別碼（範例存放區識別碼值看起來像9NBLGGH4R315）。
 

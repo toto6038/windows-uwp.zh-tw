@@ -2,30 +2,33 @@
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: 閱讀有關在 JavaScript/HTML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 title: HTML 和 JavaScript 疑難排解指南
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, AdControl, 疑難排解, HTML, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fb804c312962fc349607b9d55176bfd7279cf8e9
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633233"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463790"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML 和 JavaScript 疑難排解指南
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 本主題包含在 JavaScript/HTML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 
 * [HTML](#html)
   * [AdControl 未出現](#html-notappearing)
-  * [會閃爍黑色方塊，並會消失](#html-blackboxblinksdisappears)
-  * [不重新整理的廣告](#html-adsnotrefreshing)
+  * [黑色箱閃爍並消失](#html-blackboxblinksdisappears)
+  * [廣告未重新整理](#html-adsnotrefreshing)
 
 * [JavaScript](#js)
   * [AdControl 未出現](#js-adcontrolnotappearing)
-  * [會閃爍黑色方塊，並會消失](#js-blackboxblinksdisappears)
-  * [不重新整理的廣告](#js-adsnotrefreshing)
+  * [黑色箱閃爍並消失](#js-blackboxblinksdisappears)
+  * [廣告未重新整理](#js-adsnotrefreshing)
 
 ## <a name="html"></a>HTML
 
@@ -33,7 +36,7 @@ ms.locfileid: "57633233"
 
 ### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)] 功能。
+1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
 
 2.  確定 JavaScript 參考存在。 若 &lt;head&gt; 區段中沒有 ad.js 參考，**AdControl** 將無法顯示，且建置期間會發生錯誤。
 
@@ -46,7 +49,7 @@ ms.locfileid: "57633233"
     </head>
     ```
 
-3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合應用程式識別碼和您在合作夥伴中心取得 ad 單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須與您在合作夥伴中心取得的應用程式識別碼和 ad 單位識別碼相符。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -136,7 +139,7 @@ ms.locfileid: "57633233"
 
 11. 確定 **AdControl** 沒有在檢視區隱藏。 **AdControl** 必須可見，廣告才能正確顯示。
 
-12. 不應在模擬器中測試 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 和 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 的實際值。 若要確保 **AdControl** 如預期般運作，請對 **ApplicationId** 和 **AdUnitId** 都使用[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
+12. 不應在模擬器中測試 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 和 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 的實際值。 若要確保 **AdControl** 如預期般運作，請對 [ApplicationId](set-up-ad-units-in-your-app.md#test-ad-units) 和 **AdUnitId** 都使用**測試值**。
 
 <span id="html-blackboxblinksdisappears"/>
 
@@ -223,7 +226,7 @@ ms.locfileid: "57633233"
 
 ### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)] 功能。
+1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
 
 2.  確定 **AdControl** 已具現化。 如果 **AdControl** 尚未具現化。 它將無法供使用。
 
@@ -271,7 +274,7 @@ ms.locfileid: "57633233"
     });  
     ```
 
-4.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合應用程式識別碼和您在合作夥伴中心取得 ad 單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+4.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須與您在合作夥伴中心取得的應用程式識別碼和 ad 單位識別碼相符。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -283,7 +286,7 @@ ms.locfileid: "57633233"
 
 5.  檢查 **AdControl** 的父元素。 該父元素必須為使用中且可見。
 
-6.  不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確保 **AdControl** 如預期般運作，請對 **ApplicationId** 和 **AdUnitId** 都使用[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
+6.  不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確保 **AdControl** 如預期般運作，請對 [ApplicationId](set-up-ad-units-in-your-app.md#test-ad-units) 和 **AdUnitId** 都使用**測試值**。
 
 <span id="js-blackboxblinksdisappears"/>
 

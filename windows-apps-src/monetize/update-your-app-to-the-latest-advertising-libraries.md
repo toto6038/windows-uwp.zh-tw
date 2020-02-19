@@ -1,25 +1,28 @@
 ---
 description: 了解如何將您的應用程式更新成使用最新支援的 Microsoft Advertising 程式庫，並確定您的應用程式會繼續接收橫幅廣告。
 title: 使用橫幅廣告的最新廣告程式庫
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, AdControl, AdMediatorControl, 移轉
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ac8499e673cacad897455c7065dd3386103406
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: a8ccc8e9c76fc0f16bcdfc619d8048307fdfbc57
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735043"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463880"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>將您的應用程式更新到橫幅廣告的最新 Advertising 程式庫
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 從 2017 年 4 月 1 日，我們停止提供橫幅廣告至使用未受支援廣告 SDK 版本的 app。 如果您使用 **AdControl** 在您的通用 Windows 平台 (UWP) app 中顯示橫幅廣告，請使用本文中的資訊來判斷您是否使用尚未受到支援的廣告 SDK，並將您的應用程式移轉到支援的 SDK。
 
 ## <a name="overview"></a>概觀
 
-顯示橫幅廣告的 UWP app 必須使用在 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 中散佈，來自 Advertising 程式庫的 **AdControl**。 此 SDK 支援一組最基本的廣告功能，包括透過來自美國互動廣告局 (Interactive Advertising Bureau, IAB) 的[行動多媒體廣告介面定義 (Mobile Rich-media Ad Interface Definitions, MRAID) 1.0 規格](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 多媒體的功能。 許多我們的廣告商都尋求這些功能，而且我們要求 App 開發人員使用這些 SDK 版本，來協助讓我們的應用程式生態體系對廣告商更具吸引力，並最終為您賺取更多收入。
+顯示橫幅廣告的 UWP app 必須使用在 **Microsoft Advertising SDK** 中散佈，來自 Advertising 程式庫的 [AdControl](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 此 SDK 支援一組最基本的廣告功能，包括透過來自美國互動廣告局 (Interactive Advertising Bureau, IAB) 的[行動多媒體廣告介面定義 (Mobile Rich-media Ad Interface Definitions, MRAID) 1.0 規格](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 多媒體的功能。 許多我們的廣告商都尋求這些功能，而且我們要求 App 開發人員使用這些 SDK 版本，來協助讓我們的應用程式生態體系對廣告商更具吸引力，並最終為您賺取更多收入。
 
 在此 SDK 發行前，我們在數個舊版廣告 SDK 中提供 **AdControl** 類別。 因為不支援上述最基本的廣告功能，已不再支援這些舊版的廣告 SDK。 從 2017 年 4 月 1 日，我們停止提供橫幅廣告至使用未受支援廣告 SDK 版本的 app。 如果您有仍然使用未受支援廣告 SDK 版本的 app，您將會看到以下行為：
 

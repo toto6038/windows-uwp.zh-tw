@@ -2,18 +2,21 @@
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: Microsoft Advertising SDK 提供您數種方式來透過廣告讓您的 App 獲利。
 title: 使用 Microsoft Advertising SDK 停用應用程式中的廣告
-ms.date: 06/20/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 橫幅, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: 48aacf03d6e424b7b53052e2c292d4a8589a8d9f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5f318a68a97e98d3da24da16778988ee40c4e1dd
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684568"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463780"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 使用 Microsoft Advertising SDK，在您的適用於 Windows 10 的通用 Windows 平台 (UWP) app 中投放廣告，提高您的獲利商機。 我們的 ad 營收平臺提供各種不同的 ad 格式，可以緊密整合到您的應用程式，並支援使用許多常用的 ad 網路進行中繼。 我們的平台符合 OpenRTB、VAST 2.x、MRAID 2 及 VPAID 3 等標準，而且與 MOAT 及 IAS 相容。 
 
@@ -31,7 +34,7 @@ ms.locfileid: "75684568"
 <tbody>
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
-<td align="left"><b>入門</b><br/><br/>
+<td align="left"><b>開始使用</b><br/><br/>
     <a href="https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK">安裝 MICROSOFT ADVERTISING SDK</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>

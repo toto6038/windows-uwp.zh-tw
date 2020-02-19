@@ -2,18 +2,21 @@
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: 了解如何在 Windows 10 的 JavaScript/HTML 應用程式 (UWP) 中使用 AdControl 類別來顯示橫幅廣告。
 title: HTML 5 和 JavaScript 中的 AdControl
-ms.date: 03/22/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, AdControl, 廣告控制項, JavaScript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ce2eb259f26135f2fc5525e10673d1feb78184
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3bb6a804cbf7fa2b46020178d8a90e38d76607f1
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260351"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463500"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 和 JavaScript 中的 AdControl
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 本文會逐步說明如何在 Windows 10 的通用 Windows 平台 (UWP) JavaScript/HTML 應用程式中使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 類別來顯示橫幅廣告。
 
@@ -33,7 +36,7 @@ ms.locfileid: "74260351"
     > [!NOTE]
     > 如果您正在使用現有的專案，請在專案中開啟 Package.appxmanifest 檔案，並確保選取 **\[網際網路 (用戶端)\]** 功能。 您的應用程式需要這項功能來接收測試廣告和即時廣告。
 
-2. 如果專案的目標是 [任何 CPU]，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86])。 如果專案的目標是 [任何 CPU]，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 3. 在您的專案中新增 Microsoft Advertising SDK 的參考：
 
@@ -115,7 +118,7 @@ ms.locfileid: "74260351"
 
 1. 請確定您在應用程式中使用橫幅廣告的方式遵循我們的[橫幅廣告指南](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)。
 
-1.  在合作夥伴中心，移至 [[應用程式內廣告](../publish/in-app-ads.md)] 頁面，並[建立一個 ad 單位](set-up-ad-units-in-your-app.md#live-ad-units)。 單位類型請指定 [橫幅]。 記下廣告單位識別碼與應用程式識別碼。
+1.  在合作夥伴中心，移至 [[應用程式內廣告](../publish/in-app-ads.md)] 頁面，並[建立一個 ad 單位](set-up-ad-units-in-your-app.md#live-ad-units)。 廣告單元類型請指定 **\[橫幅\]** 。 記下廣告單元識別碼與應用程式識別碼。
     > [!NOTE]
     > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在合作夥伴中心建立即時 UWP ad 單位時，ad 單位的 [應用程式識別碼] 值一律會符合應用程式的商店識別碼（範例存放區識別碼值看起來像9NBLGGH4R315）。
 

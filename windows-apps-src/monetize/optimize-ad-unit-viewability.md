@@ -1,34 +1,37 @@
 ---
 description: 深入了解改善您的廣告單元的可見性的方法。
 title: 最佳化您的廣告單元的可見性
-ms.date: 05/07/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, guidelines, viewability, 廣告, 指導方針, 可見性
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e21f4e98c58f79f397c369891212eccb196c18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6996b656c9bf161538e286dc4c2d63c1d2840bc8
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662263"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463940"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>最佳化您的廣告單元的可見性
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 [廣告效能報告](../publish/advertising-performance-report.md)包括您的廣告單元的可見性計量。 可見性是重要的衡量標準，因為廣告業越來越重視可檢視的廣告曝光，而非只是提供廣告曝光。 廣告客戶傾向於競標可檢視的廣告曝光，因為它們已增加機會讓使用者看到他們的廣告。  
 
 為與 IAB 可見性指導方針一致，橫幅的廣告曝光若符合下列條件會被視為可檢視：
 
-* 像素需求：大於或等於公告中 50%的像素為單位所在的應用程式可檢視的空間。
-* 時間需求：像素滿足此需求是時間大於或等於一的持續秒，post ad 轉譯。
+* 像素需求：廣告中大於或等於 50% 的像素是在 App 的可檢視空間。
+* 時間需求：符合像素需求的時間大於或等於一個連續一秒、張貼廣告轉譯。
 
 影片廣告曝光若符合下列條件會計算為可檢視：
 
-* 像素需求：大於或等於公告中 50%的像素所在應用程式可檢視的一部分。
-* 時間需求：影片符合的像素的需求，且播放 post ad 所呈現的兩個連續秒。
+* 像素需求：廣告中大於或等於 50% 的像素是在 App 的可檢視部分。
+* 時間需求：符合像素需求的影片，且播放兩個連續秒的張貼廣告轉譯。
 
 可見性使用下列公式計算：
 
-**Viewability = [Viewed 印象] * 100 / [總計廣告曝光數]**
+**廣告 = [已觀看的印象] * 100/[總廣告閱聽]**
 
 ## <a name="guidelines-to-improve-ad-unit-viewability"></a>改善廣告單元可見性的指導方針
 

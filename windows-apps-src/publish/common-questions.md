@@ -2,18 +2,21 @@
 Description: 關於廣告活動的常見問題
 title: 關於廣告活動的常見問題
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
-ms.date: 10/31/2018
+ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c44f93676fd0324ef82ad7b33832bb6653409cda
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: be6759ea808e230d3cf504caf03763123babd870
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685158"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463730"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 ### <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>我的 app 廣告的執行成本是多少？
 
@@ -25,11 +28,11 @@ ms.locfileid: "75685158"
 
 ### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>我能夠在我的 App 中執行我其他一個 App 的廣告嗎？
 
-可以。 這些廣告通稱為*自家廣告*，而您可以免費執行它們！ 如需社群廣告的詳細資訊，請查看[這篇文章](about-house-ads.md)。
+是的。 這些廣告通稱為*自家廣告*，而您可以免費執行它們！ 如需社群廣告的詳細資訊，請查看[這篇文章](about-house-ads.md)。
 
 ### <a name="can-i-cross-promote-my-app-with-apps-from-other-developers-in-the-store"></a>我可以利用市集中其他開發人員的 app 宣傳我的 app 嗎？
 
-可以。 我們會呼叫這些*社群廣告*，您就可以免費執行它們。 在您[選擇加入社群廣告](about-community-ads.md#opt-in-to-community-ads)後，您可以[建立免費社群廣告行銷活動](create-an-ad-campaign-for-your-app.md)且您的 app 將會與其他同樣加入社群廣告的開發人員共用推銷廣告空間。 如需詳細資訊，請查看[這篇文章](about-community-ads.md)。
+是的。 我們會呼叫這些*社群廣告*，您就可以免費執行它們。 在您[選擇加入社群廣告](about-community-ads.md#opt-in-to-community-ads)後，您可以[建立免費社群廣告行銷活動](create-an-ad-campaign-for-your-app.md)且您的 app 將會與其他同樣加入社群廣告的開發人員共用推銷廣告空間。 如需詳細資訊，請查看[這篇文章](about-community-ads.md)。
 
 ### <a name="how-can-i-customize-my-ad"></a>如何自訂我的廣告？
 

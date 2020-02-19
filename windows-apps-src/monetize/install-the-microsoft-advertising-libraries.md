@@ -2,18 +2,21 @@
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: 了解如何安裝 Microsoft Advertising SDK。
 title: 安裝 Microsoft Advertising SDK
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 安裝, SDK, 廣告庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 37e57d49ba40814891154aef2ec0de6b3b7e560c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f3b63ac40041b93372544d586d3feb23940fccc5
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260263"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463384"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安裝 Microsoft Advertising SDK
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 若要在您的適用於 Windows 10 的 UWP app 中顯示廣告，請安裝 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 這個 SDK 是 Visual Studio 2015 和更新版本的擴充功能。
 
@@ -26,7 +29,7 @@ ms.locfileid: "74260263"
 
 透過 MSI 安裝程式安裝 Microsoft Advertising SDK：
 
-1.  關閉所有 Visual Studio 執行個體。
+1.  關閉 Visual Studio 的所有執行個體。
 
 2. 如果您先前已安裝任何版本的 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 擴充功能或 Microsoft Store Engagement and Monetization SDK，請將這些 SDK 版本解除安裝。 或者，也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊廣告 SDK 版本：
     ```console
@@ -49,7 +52,7 @@ ms.locfileid: "74260263"
 
 若要透過 NuGet 在特定 UWP 專案中安裝 Microsoft Advertising SDK：
 
-1.  關閉所有 Visual Studio 執行個體。
+1.  關閉 Visual Studio 的所有執行個體。
 
 2.  如果您先前已安裝任何版本的 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 擴充功能或 Microsoft Store Engagement and Monetization SDK，請將這些 SDK 版本解除安裝。 或者，也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊廣告 SDK 版本：
     ```console
@@ -80,9 +83,9 @@ ms.locfileid: "74260263"
 
 安裝 Microsoft Advertising SDK 之後，請依照這些指示，在專案中參考 SDK 以便使用廣告 API。
 
-1. 在 Visual Studio 中，開啟您的專案。
+1. 在 Visual Studio 中開啟專案。
     > [!NOTE]
-    > 如果專案的目標是 [任何 CPU]，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86])。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+    > 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 2. 在 **\[方案總管\]** 中的 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入參考\]** 。
 
@@ -105,4 +108,4 @@ ms.locfileid: "74260263"
 
 因為這個程式庫是架構套件，這意謂著在使用者安裝使用這個程式庫的 App 版本之後，每當我們發佈具有修正程式和效能改進的新程式庫版本時，便會在其裝置上透過 Windows Update 自動更新這個程式庫。 這有助於確保您客戶的裝置上一律會安裝最新的可用程式庫版本。
 
-如果我們發行的新版 SDK 在這個程式庫中引進新的 API 或功能，您將必須安裝最新版的 SDK 才能使用這些功能。 在此情況下，您也需要將已更新的 App 發佈到「市集」。
+如果我們發行的新版 SDK 在這個程式庫中引進新的 API 或功能，您將必須安裝最新版的 SDK 才能使用這些功能。 在此情況下，您也需要將已更新的 App 發佈到「Microsoft Store」。

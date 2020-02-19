@@ -2,20 +2,23 @@
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: 了解如何使用 Microsoft Advertising SDK，在適用於 Windows 10 的 UWP app 中加入插播式廣告。
 title: 插播式廣告
-ms.date: 03/22/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: 98800f1a9a94de20910e932032d8b949bac52dde
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b953fe0aca3d0ab9b8ce27f2b068c3bf1b869c83
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259274"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463950"
 ---
 # <a name="interstitial-ads"></a>插播式廣告
 
-本逐步解說示範如何在通用 Windows 平台 (UWP) App 和 Windows 10 遊戲中包含插播式廣告。 如需示範如何使用 C# 和 C++ 將插入式廣告新增到 JavaScript/HTML App 及 XAML App 的完整範例專案，請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+
+本逐步解說示範如何在通用 Windows 平台 (UWP) App 和 Windows 10 遊戲中包含插播式廣告。 如需示範如何使用 C# 和 C++ 將插播式廣告新增到 JavaScript/HTML 應用程式及 XAML 應用程式的完整範例專案，請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
 <span id="whatareinterstitialads10"/>
 
@@ -32,7 +35,7 @@ ms.locfileid: "74259274"
 我們提供兩種類型的插播式廣告，供您的應用程式和遊戲使用：：**插入式影片廣告**和**插播式橫幅廣告**。
 
 > [!NOTE]
-> 插播式廣告 API 不會處理任何使用者介面，除了在影片播放時。 請參閱[插入式廣告最佳做法](ui-and-user-experience-guidelines.md#interstitialbestpractices10)，以在您考慮如何將插入式廣告整合到 App 時，取得應該執行和應該避免之事項的指導方針。
+> 插播式廣告 API 不會處理任何使用者介面，除了在影片播放時。 當您考慮如何將插播式廣告整合到應用程式時，請參閱[插播式廣告最佳做法](ui-and-user-experience-guidelines.md#interstitialbestpractices10)，取得應該執行和應該避免之事項的指導方針。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -52,16 +55,16 @@ ms.locfileid: "74259274"
 
 本節提供 C# 範例，但同時對於 XAML/.NET 專案也支援 Visual Basic 和 C++。 如需完整的 C# 程式碼範例，請參閱[使用 C# 的插播式廣告範例程式碼](interstitial-ad-sample-code-in-c.md)。
 
-1. 在 Visual Studio 中，開啟您的專案。
+1. 在 Visual Studio 中開啟專案。
     > [!NOTE]
     > 如果您正在使用現有的專案，請在專案中開啟 Package.appxmanifest 檔案，並確保選取 **\[網際網路 (用戶端)\]** 功能。 您的應用程式需要這項功能來接收測試廣告和即時廣告。
 
-2. 如果專案的目標是 [任何 CPU]，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86])。 如果專案的目標是 [任何 CPU]，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 3. 在您的專案中新增 Microsoft Advertising SDK 的參考：
 
     1. 在 [方案總管] 視窗中的 [參考] 上按一下滑鼠右鍵，然後選取 [加入參考]。
-    2.  在 [參考管理員] 中，展開 [通用 Windows]、按一下 [擴充功能]，然後選取 [適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)] 旁邊的核取方塊。
+    2.  在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]** 、按一下 **\[擴充功能\]** ，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\]** 旁邊的核取方塊。
     3.  在 [參考管理員] 中，按一下 [確定]。
 
 3.  在您的應用程式的適當程式碼檔案中 (例如在 MainPage.xaml.cs 中，或部分其他頁面的程式碼檔案)，新增下列命名空間參考。
@@ -105,9 +108,9 @@ ms.locfileid: "74259274"
 
 以下指示假設您已在 Visual Studio 中建立 JavaScript 的通用 Windows 專案，並且是針對特定的 CPU。 如需完整的程式碼範例，請參閱[使用 JavaScript 的插播式廣告範例程式碼](interstitial-ad-sample-code-in-javascript.md)。
 
-1. 在 Visual Studio 中，開啟您的專案。
+1. 在 Visual Studio 中開啟專案。
 
-2. 如果專案的目標是 [任何 CPU]，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86])。 如果專案的目標是 [任何 CPU]，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 3. 在您的專案中新增 Microsoft Advertising SDK 的參考：
 
@@ -160,12 +163,12 @@ ms.locfileid: "74259274"
 
 此範例假設您已在 Visual Studio 中建立 C++ **DirectX 和 XAML 應用程式 (通用 Windows)** 專案，並且是針對特定的 CPU 架構。
  
-1. 在 Visual Studio 中，開啟您的專案。
+1. 在 Visual Studio 中開啟專案。
 
 3. 在您的專案中新增 Microsoft Advertising SDK 的參考：
 
     1. 在 [方案總管] 視窗中的 [參考] 上按一下滑鼠右鍵，然後選取 [加入參考]。
-    2.  在 [參考管理員] 中，展開 [通用 Windows]、按一下 [擴充功能]，然後選取 [適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)] 旁邊的核取方塊。
+    2.  在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]** 、按一下 **\[擴充功能\]** ，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\]** 旁邊的核取方塊。
     3.  在 [參考管理員] 中，按一下 [確定]。
 
 2.  在應用程式適當的標頭檔 (例如，DirectXPage.xaml.h) 中，宣告 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 物件和相關的事件處理常式方法。  
@@ -213,7 +216,7 @@ ms.locfileid: "74259274"
 
 1. 請確定您在應用程式中使用插播式廣告的方式遵循我們的[插播式廣告指南](ui-and-user-experience-guidelines.md#interstitialbestpractices10)。
 
-2.  在合作夥伴中心，移至 [[應用程式內廣告](../publish/in-app-ads.md)] 頁面，並[建立一個 ad 單位](set-up-ad-units-in-your-app.md#live-ad-units)。 針對廣告單元類型，請選擇 **\[插播式影片\]** 或 **\[插播式橫幅\]** ，視顯示的插播式廣告類型而定。 記下廣告單位識別碼與應用程式識別碼。
+2.  在合作夥伴中心，移至 [[應用程式內廣告](../publish/in-app-ads.md)] 頁面，並[建立一個 ad 單位](set-up-ad-units-in-your-app.md#live-ad-units)。 針對廣告單元類型，請選擇 **\[插播式影片\]** 或 **\[插播式橫幅\]** ，視顯示的插播式廣告類型而定。 記下廣告單元識別碼與應用程式識別碼。
     > [!NOTE]
     > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在合作夥伴中心建立即時 UWP ad 單位時，ad 單位的 [應用程式識別碼] 值一律會符合應用程式的商店識別碼（範例存放區識別碼值看起來像9NBLGGH4R315）。
 

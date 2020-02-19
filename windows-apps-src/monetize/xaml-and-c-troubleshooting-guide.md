@@ -2,30 +2,33 @@
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: 深入了解在 XAML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 title: XAML 和 C# 的疑難排解指南
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, AdControl,疑難排解, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 94af97e1e678c6ee92aaa731057c5f67185e25c5
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 9783036d00fc56b904e6d362f55ddaaf8375a872
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334656"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463740"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 的疑難排解指南
+
+>[!WARNING]
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
 
 本主題包含在 XAML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 
 * [XAML](#xaml)
   * [AdControl 未出現](#xaml-notappearing)
-  * [會閃爍黑色方塊，並會消失](#xaml-blackboxblinksdisappears)
-  * [不重新整理的廣告](#xaml-adsnotrefreshing)
+  * [黑色箱閃爍並消失](#xaml-blackboxblinksdisappears)
+  * [廣告未重新整理](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
   * [AdControl 未出現](#csharp-adcontrolnotappearing)
-  * [會閃爍黑色方塊，並會消失](#csharp-blackboxblinksdisappears)
-  * [不重新整理的廣告](#csharp-adsnotrefreshing)
+  * [黑色箱閃爍並消失](#csharp-blackboxblinksdisappears)
+  * [廣告未重新整理](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -35,9 +38,9 @@ ms.locfileid: "58334656"
 
 ### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)] 功能。
+1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
 
-2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合應用程式識別碼和您在合作夥伴中心取得 ad 單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須與您在合作夥伴中心取得的應用程式識別碼和 ad 單位識別碼相符。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -79,7 +82,7 @@ ms.locfileid: "58334656"
 
 7.  確定 **AdControl** 沒有在檢視區隱藏。 **AdControl** 必須可見，廣告才能正確顯示。
 
-8.  不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確保 **AdControl** 如預期般運作，請對 **ApplicationId** 和 **AdUnitId** 都使用[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
+8.  不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確保 **AdControl** 如預期般運作，請對 [ApplicationId](set-up-ad-units-in-your-app.md#test-ad-units) 和 **AdUnitId** 都使用**測試值**。
 
 <span id="xaml-blackboxblinksdisappears"/>
 
@@ -166,14 +169,14 @@ ms.locfileid: "58334656"
 
 ### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)] 功能。
+1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
 
 2.  確定 **AdControl** 已具現化。 如果 **AdControl** 未具現化，將無法使用。
 
     > [!div class="tabbedCodeSnippets"]
     [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合應用程式識別碼和您在合作夥伴中心取得 ad 單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須與您在合作夥伴中心取得的應用程式識別碼和 ad 單位識別碼相符。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs
@@ -216,7 +219,7 @@ ms.locfileid: "58334656"
 
 8.  檢查 **AdControl** 的父項。 該父元素必須為使用中且可見。
 
-9. 不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確保 **AdControl** 如預期般運作，請對 **ApplicationId** 和 **AdUnitId** 都使用[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
+9. 不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確保 **AdControl** 如預期般運作，請對 [ApplicationId](set-up-ad-units-in-your-app.md#test-ad-units) 和 **AdUnitId** 都使用**測試值**。
 
 <span id="csharp-blackboxblinksdisappears"/>
 

@@ -7,31 +7,31 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 965d823f48cacf4af4999e45ffd02f421c8927e7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1f53dd0538e4564c50fb5cbcb6986f5cf9661cae
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259708"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463806"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀
  
 
-Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。
+Windows Push Notification Services （WNS）可讓協力廠商開發人員從他們自己的雲端服務傳送快顯、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。
 
 ## <a name="how-it-works"></a>運作方式
 
 
 下圖顯示傳送推播通知的完整資料流程。 流程有三個步驟：
 
-1.  您的應用程式從通用 Windows 平台要求推播通知通道。
+1.  您的應用程式會向 WNS 要求推播通知通道。
 2.  Windows 要求 WNS 建立通知通道。 這個通道以統一資源識別元 (URI) 的形式傳回呼叫裝置。
-3.  Windows 將通知通道 URI 傳回您的應用程式。
+3.  WNS 會將通知通道 URI 傳回給您的應用程式。
 4.  您的應用程式將 URI 傳回您自己的雲端服務。 您接著將 URI 儲存在您自己的雲端服務，當您傳送通知時，就可以存取該 URI。 URI 是您自己的應用程式和服務之間的介面，您必須負責以安全和可靠的 Web 標準實作這個介面。
 5.  如果您的雲端服務有要傳送的更新，其會使用通道 URI 通知 WNS。 而做法是透過安全通訊端層 (SSL) 發出 HTTP POST 要求，包括通知承載。 這個步驟需要驗證。
 6.  WNS 接收要求，並將通知路由到適當裝置。
 
-![推播通知的 WNS 資料流程圖表](images/wns-diagram-01.png)
+![推播通知的 WNS 資料流程圖表](images/wns-diagram-01.jpg)
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>註冊您的應用程式與接收雲端服務認證
 
@@ -40,7 +40,7 @@ Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的�
 
 每個應用程式都有自己雲端服務的一組認證。 這些認證無法用於傳送通知給任何其他應用程式。
 
-如需如何註冊 app 的詳細資訊，請參閱[如何使用 Windows 通知服務 (WNS) 進行驗證](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))。
+如需如何註冊應用程式的詳細資訊，請參閱[如何使用 Windows 通知服務 (WNS) 進行驗證](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))。
 
 ## <a name="requesting-a-notification-channel"></a>要求通知通道
 
@@ -68,7 +68,7 @@ WNS 驗證配置使用 [OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-
 1.  雲端服務遵循 OAuth 2.0 通訊協定，透過 HTTPS 將本身的認證傳送至 WNS。 如此即可向 WNS 驗證服務。
 2.  如果驗證成功，WNS 就會傳回存取權杖。 所有後續通知要求都將使用這個存取權杖，直至到期為止。
 
-![雲端服務驗證的 WNS 圖表](images/wns-diagram-02.png)
+![雲端服務驗證的 WNS 圖表](images/wns-diagram-02.jpg)
 
 在向 WNS 進行驗證時，雲端服務會透過安全通訊端階層 (SSL) 提交 HTTP 要求。 參數使用「application/x-www-for-urlencoded」格式提供。 在 [用戶端\_識別碼] 欄位中提供您的套件 SID，並在 [用戶端\_密碼] 欄位中提供您的秘密金鑰。 如需語法詳細資訊，請參閱[存取權杖要求](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))參考。
 
@@ -137,7 +137,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 以下圖表說明資料流程
 
-![傳送通知的 WNS 圖表](images/wns-diagram-03.png)
+![傳送通知的 WNS 圖表](images/wns-diagram-03.jpg)
 
 ### <a name="important-notes"></a>重要事項
 
@@ -162,18 +162,18 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 當電池低於指定的閾值時，Windows 10 可讓使用者將電池保護設定為自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 電池保護設定（可在 [**設定**] 應用程式中找到）可讓您的應用程式接收推播通知，即使電池保護已開啟也是一樣。
 
--   **允許在省電模式中接收來自任何 App 的推播通知**：此設定可讓所有 App 在省電模式開啟時接收推播通知。 請注意，此設定僅適用于 Windows 10 傳統型版本（家用版、專業版、企業版和教育版）。
--   **一律允許**：此設定可讓特定 App 在省電模式開啟時，於背景執行，包括接收推播通知。 此清單是由使用者手動維護。
+-   **允許在省電模式中接收來自任何應用程式的推播通知**：此設定可讓所有應用程式在省電模式開啟時接收推播通知。 請注意，此設定僅適用于 Windows 10 傳統型版本（家用版、專業版、企業版和教育版）。
+-   **一律允許**：此設定可讓特定應用程式在省電模式開啟時，於背景執行，包括接收推播通知。 此清單是由使用者手動維護。
 
 沒有任何方式檢查這兩個設定的狀態，無法您可以檢查省電模式的狀態。 在 Windows 10 中，請使用[**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus)屬性來檢查電池保護狀態。 您的應用程式也可以使用 [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) 事件接聽省電模式的變更。
 
-如果您的 App 非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 使用 Windows 10 中的節電設定 URI 配置 `ms-settings:batterysaver-settings`，您可以提供 [設定] 應用程式的方便連結。
+如果您的應用程式非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 使用 Windows 10 中的節電設定 URI 配置 `ms-settings:batterysaver-settings`，您可以提供 [設定] 應用程式的方便連結。
 
 **提示**   當通知使用者有關電池保護設定時，建議您提供一種方法來抑制未來的訊息。 例如，以下範例中的 `dontAskMeAgainBox` 核取方塊會在 [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中保存使用者的喜好設定。
 
  
 
-以下範例說明如何在 Windows 10 中檢查是否已開啟電池保護。 此範例會通知使用者並啟動 [設定] App 以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
+以下範例說明如何在 Windows 10 中檢查是否已開啟電池保護。 此範例會通知使用者並啟動 [設定] 應用程式以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
 
 ```cs
 using System;
