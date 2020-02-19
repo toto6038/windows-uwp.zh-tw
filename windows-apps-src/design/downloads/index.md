@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4678565547616c0cee4a7961cb4a0c95fc03241b
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 44e6f65b38faa7bd80c277d999f4e18b398bd11b
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520453"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463870"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>設計 UWP 應用程式的工具組和範例
 
@@ -28,7 +28,7 @@ Fluent 設計/UWP 應用程式的設計與 UI 相關下載。 如需其他工具
     :::column:::
 ![主角圖像](images/figma.png)
 <b>Figma 工具組</b><br>
-1905 版，2019 年 5 月<br>
+WinUI 2.3，2020 年 2 月<br>
 <a href="https://aka.ms/figmatoolkit">下載</a>
     :::column-end:::
     :::column:::
