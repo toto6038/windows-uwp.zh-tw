@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, ads, advertising, ad mediation, 廣告, 廣告流量分配
 ms.localizationpriority: medium
-ms.openlocfilehash: ad2f60b6b87f81df44bc2f875a722a9e36fdd170
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 13cdba15e73028e0bf0560dc373e6f06bd0e86d5
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463980"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507192"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 廣告流量分配服務
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 當您使用 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)[在您的 App 顯示廣告](display-ads-in-your-app.md)，您也可以選擇使用 Microsoft 廣告流量分配服務來最大化您的廣告收益。 本文提供廣告流量分配服務及其目標的概觀。
 

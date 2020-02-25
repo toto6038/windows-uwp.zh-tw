@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, AdControl, 廣告控制項, JavaScript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bb6a804cbf7fa2b46020178d8a90e38d76607f1
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 7614265048945ddc9f1a1c32338e8446ee3ce7ba
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463500"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507182"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 和 JavaScript 中的 AdControl
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 本文會逐步說明如何在 Windows 10 的通用 Windows 平台 (UWP) JavaScript/HTML 應用程式中使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 類別來顯示橫幅廣告。
 

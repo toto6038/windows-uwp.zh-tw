@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 行銷活動, 促銷
 ms.localizationpriority: medium
-ms.openlocfilehash: e804260a312c963c380f4d09b00cc276b385c2ff
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: aa5c3c160d3bb69a2ba478606a3c3e04e935088d
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463720"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507062"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>為您的應用程式建立行銷活動
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 您可以在[合作夥伴中心](https://partner.microsoft.com/dashboard)建立廣告行銷活動，以協助推廣您的應用程式並擴大其使用者群。 根據預設，我們會根據您在合作夥伴中心內的應用程式設定，為您的廣告選擇目標物件，但您可以選擇性地定義您自己的物件。 您也可以使用一組預設的廣告範本或上傳自己的廣告設計。 如需廣告行銷活動的詳細資訊，請參閱[廣告行銷活動的常見問題](common-questions.md)。
 

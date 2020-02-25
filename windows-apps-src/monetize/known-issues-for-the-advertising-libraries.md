@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 通知, 已知問題, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 34c07a46d31ddf6c8f5b56ffd19059b4d225a72c
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: f39d8512398c43ea65037de82434e3740bac7ff2
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463960"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506739"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>應用程式內廣告的已知問題與疑難排解
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 本主題列出 Microsoft Advertising SDK 目前版本的已知問題。 如需其他疑難排解指導方針，請參閱下列主題。
 
@@ -51,7 +51,7 @@ ms.locfileid: "77463960"
 
 如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://developer.microsoft.com/windows/support)。 在該頁面上，選擇 [**洽詢 us**]。
 
-您也可以在[論壇](https://go.microsoft.com/fwlink/?LinkID=401264)中張貼問題。
+您也可以在[論壇](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)中張貼問題。
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>您的 App 中顯示測試廣告而不是實際廣告
 
@@ -94,7 +94,7 @@ JavaScript/HTML App 不能將元素置於 Z 軸順序的保留 MAX-10 範圍內�
 
 ## <a name="more-information"></a>詳細資訊
 
-如需最新已知問題的詳細資訊，或是張貼 Microsoft Advertising SDK 的相關問題，請造訪[論壇](https://go.microsoft.com/fwlink/?LinkID=401264)。
+如需最新已知問題的詳細資訊，或是張貼 Microsoft Advertising SDK 的相關問題，請造訪[論壇](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)。
 
  
 

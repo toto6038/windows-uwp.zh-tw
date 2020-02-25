@@ -1,25 +1,25 @@
 ---
-Description: 如果應用程式未能提供適切的鍵盤功能操作，盲眼或行動不便的使用者將難以使用應用程式，或者根本無法使用。
+Description: 如果 app 未能提供適切的鍵盤功能操作，盲眼或行動不便的使用者將難以使用 app，或者根本無法使用。
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: 鍵盤協助工具
 label: Keyboard accessibility
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fd0f00d74d62816ff347265936f6b066a0316b0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50b9f2a30f529e78773bc40671c9541ff2687b64
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257757"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521229"
 ---
 # <a name="keyboard-accessibility"></a>鍵盤協助工具  
 
 
 
-如果應用程式未能提供適切的鍵盤功能操作，盲眼或行動不便的使用者將難以使用應用程式，或者根本無法使用。
+如果 app 未能提供適切的鍵盤功能操作，盲眼或行動不便的使用者將難以使用 app，或者根本無法使用。
 
 <span id="keyboard_navigation_among_UI_elements"/>
 <span id="keyboard_navigation_among_ui_elements"/>
@@ -98,8 +98,8 @@ XAML
 
 「捷徑」是一種鍵盤組合，可讓使用者更有效率地存取應用程式功能，提高工作效率。 目前有兩種捷徑：
 
-* 「便捷鍵」是連至應用程式中某部分 UI 的捷徑。 便捷鍵包含 Alt 鍵和一個字母按鍵。
-* 「快速鍵」是應用程式命令的捷徑。 您的應用程式不一定會包含準確對應到命令的 UI。 快速鍵包含 Ctrl 鍵和一個字母按鍵。
+* *便捷鍵*是連至應用程式中某部分 UI 的捷徑。 便捷鍵包含 Alt 鍵和一個字母按鍵。
+* *快速鍵*是應用程式命令的捷徑。 您的應用程式不一定會包含準確對應到命令的 UI。 快速鍵包含 Ctrl 鍵和一個字母按鍵。
 
 請為依賴螢幕助讀程式或其他輔助技術的使用者，提供一種便利的方法，讓他們發現應用程式的快速鍵。 使用工具提示、無障礙名稱、無障礙說明或其他螢幕上的溝通方式，與快速鍵進行溝通。 至少應在 app 的說明內容中詳細記載快速鍵。
 
@@ -144,7 +144,7 @@ XAML
 ```
 
 > [!IMPORTANT]
-> 設定[**AutomationProperties. AcceleratorKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty)或[**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty)時，不會啟用鍵盤功能。 它只會向 UI 自動化架構報告應該使用哪些按鍵，以便透過輔助技術將這類資訊傳遞給使用者。 按鍵處理的實作仍然需要在程式碼中完成，而不是在 XAML 中完成。 您仍然需要為相關控制項上的 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 或 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件附加處理常式，才能在您的應用程式中實際實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline) 格式明確的為助憶鍵中的特定鍵加上文字底線。
+> 設定[**AutomationProperties. AcceleratorKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty)或[**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty)時，不會啟用鍵盤功能。 它只會向 UI 自動化架構報告應該使用哪些按鍵，以便透過輔助技術將這類資訊傳遞給使用者。 按鍵處理的實作仍然需要在程式碼中完成，而不是在 XAML 中完成。 您仍然需要為相關控制項上的 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 或 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件附加處理常式，才能在您的應用程式中實際實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline) 格式明確地為助憶鍵中的特定鍵加上文字底線。
 
 為了簡化，上面的範例省略了字串的資源使用，例如 "Ctrl+A"。 不過當地語系化時，也必須考慮快速鍵。 因為選擇做為快速鍵的按鍵時，通常取決於元素的可見文字標籤，所以這也涉及快速鍵的當地語系化。
 
@@ -239,7 +239,7 @@ XAML
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
 
 ## <a name="keyboard-accessibility-and-windows-phone"></a>鍵盤協助工具和 Windows Phone
-Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸入面板 (SIP) 可以支援數個鍵盤協助工具案例。 螢幕助讀程式可以讀出來自 [文字] SIP 的文字輸入，包含宣告刪除。 使用者能探索他們的手指所在位置，這是因為螢幕助讀程式可以偵測到使用者正在掃描按鍵，而它會大聲讀出掃描到的按鍵名稱。 此外，部分鍵盤導向的協助工具概念也可以對應到完全不使用鍵盤的相關輔助技術。 例如，即使 SIP 未配置 Tab 鍵，朗讀程式仍然支援相當於按 Tab 鍵的觸控手勢，因此，在 UI 中透過控制項提供有用的 Tab 順序仍是一個重要的協助工具原則。 用來瀏覽複雜控制項內組件的方向鍵也可透過朗讀程式觸控手勢加以支援。 一旦焦點到達不適合用於文字輸入的控制項時，朗讀程式便支援可叫用該控制項動作的手勢。
+Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸入面板 (SIP) 可以支援數個鍵盤協助工具案例。 螢幕助讀程式可以讀出來自 **\[文字\]** SIP 的文字輸入，包含宣告刪除。 使用者能探索他們的手指所在位置，這是因為螢幕助讀程式可以偵測到使用者正在掃描按鍵，而它會大聲讀出掃描到的按鍵名稱。 此外，部分鍵盤導向的協助工具概念也可以對應到完全不使用鍵盤的相關輔助技術。 例如，即使 SIP 未配置 Tab 鍵，朗讀程式仍然支援相當於按 Tab 鍵的觸控手勢，因此，在 UI 中透過控制項提供有用的 Tab 順序仍是一個重要的協助工具原則。 用來瀏覽複雜控制項內組件的方向鍵也可透過朗讀程式觸控手勢加以支援。 一旦焦點到達不適合用於文字輸入的控制項時，朗讀程式便支援可叫用該控制項動作的手勢。
 
 鍵盤快速鍵通常與 Windows Phone app 無關，因為 SIP 不會包含 Ctrl 鍵或 Alt 鍵。
 
@@ -250,4 +250,4 @@ Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸�
 * [協助工具](accessibility.md)
 * [鍵盤互動](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 * [觸控鍵盤範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML 協助工具範例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [XAML 協助工具範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

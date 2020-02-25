@@ -5,14 +5,14 @@ title: 高對比佈景主題
 template: detail.hbs
 ms.date: 09/28/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 617511d23bcabe342abe7477f617d81cd01182e6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 634f85ec64597f14210cf83fd67189f2f54bad4d
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257787"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521249"
 ---
 # <a name="high-contrast-themes"></a>高對比佈景主題  
 
@@ -82,7 +82,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ## <a name="high-contrast-colors"></a>高對比色彩
 
-在 [設定] &gt; [輕鬆存取] &gt; [高對比] 頁面中，有 4 個預設的高對比佈景主題。 
+在 *[設定] > [輕鬆存取] > [高對比]* 頁面中，有 4 個預設的高對比佈景主題。 
 
 
 ![高對比設定](images/high-contrast-settings.png)  
@@ -95,7 +95,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 每個 **SystemColor*Color** 資源都是變數，當使用者切換高對比佈景主題時會自動更新色彩。 以下是在何處及何時使用各項資源的指導方針。
 
-資源 | 用途 |
+資源 | 使用方式 |
 |--------|-------|
 **SystemColorWindowTextColor** | 內文文字、標題、清單；任何無法進行互動的文字 |
 | **SystemColorHotlightColor** | 超連結 |
@@ -235,7 +235,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
-* [UI 對比和設定範例](https://code.msdn.microsoft.com/windowsapps/High-Contrast-UI-Settings-9a310961)
-* [XAML 協助工具範例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
-* [XAML 高對比範例](https://code.msdn.microsoft.com/windowsapps/XAML-high-contrast-style-c0ce936f)
+* [UI 對比和設定範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
+* [XAML 協助工具範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
+* [XAML 高對比範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
 * [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

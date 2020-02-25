@@ -4,19 +4,19 @@ title: 關於廣告活動的常見問題
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 02/18/2020
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: be6759ea808e230d3cf504caf03763123babd870
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: eec32cab8da41b6069862484372ae8bc55ad1a0c
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463730"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506822"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 ### <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>我的 app 廣告的執行成本是多少？
 

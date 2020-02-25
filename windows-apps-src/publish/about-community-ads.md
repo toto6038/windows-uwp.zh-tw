@@ -4,19 +4,19 @@ title: 關於社群廣告
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 ms.date: 02/18/2020
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8da380cb49d584e56f584f3ad321d601d211faf0
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 48d63dae76113c70273f6ff2cba46348b1e24a10
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463440"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507012"
 ---
 # <a name="about-community-ads"></a>關於社群廣告
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 如果您的應用程式[顯示橫幅或橫幅插入式廣告](../monetize/display-ads-in-your-app.md)，您可以免費將應用程式與其他開發人員在 Microsoft Store 中的應用程式交叉推廣。 我們將此功能稱為「社群廣告」。  
 

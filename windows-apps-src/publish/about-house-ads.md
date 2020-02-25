@@ -4,19 +4,19 @@ title: 關於自家廣告
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 ms.date: 02/18/2020
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b93682b6d1d154a393a0f0af1e09708ad08a05b9
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 809adf6fbee5db8cca89ebe870ffcb3696d7cb85
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463420"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507102"
 ---
 # <a name="about-house-ads"></a>關於自家廣告
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 您可以免費建立一個廣告，在您其他的應用程式中促銷您其中一個應用程式。 我們通稱為*自家廣告*。
 

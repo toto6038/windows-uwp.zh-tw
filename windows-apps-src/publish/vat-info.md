@@ -4,14 +4,14 @@ title: VAT 資訊
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be47e5edeee0d00843d06297857f39977e085f4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d6b90b000564c1c6929154c3ac3b79c129e3fff6
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258958"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507142"
 ---
 # <a name="vat-info"></a>VAT 資訊
 
@@ -21,7 +21,7 @@ ms.locfileid: "74258958"
 ## <a name="understanding-vat-numbers"></a>了解 VAT 編號
 
 
-增值稅 (VAT) 編號是歐盟國家或地區使用的一種識別碼。 如需詳細資訊，請參閱歐盟的官方 [VIES 網站](https://go.microsoft.com/fwlink/p/?LinkId=181246)。
+增值稅 (VAT) 編號是歐盟國家或地區使用的一種識別碼。 如需詳細資訊，請參閱歐盟的官方 [VIES 網站](http://ec.europa.eu/taxation_customs/vies/vieshome.do)。
 
 ## <a name="accepted-formats-for-vat-numbers"></a>VAT 編號接受的格式
 
@@ -29,7 +29,7 @@ ms.locfileid: "74258958"
 請注意，Microsoft 不會提供任何稅務建議，下列資訊僅供參考。 如果這份指導方針的資訊不足以供您向 Microsoft 提供 VAT 編號，您應該諮詢當地的稅徵機關以查看是否有最新的變更。
 
 <table Responsive="true">
-<tr><th>國家/地區</th><th>VAT 資訊</th></tr>
+<tr><th>國家 (地區)</th><th>VAT 資訊</th></tr>
 <tr><td data-th="Country/region">奧地利
 </td><td data-th="VAT info">
 <ul>
@@ -98,7 +98,7 @@ ms.locfileid: "74258958"
 <li>範例：12345678</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">法國</td><td data-th="VAT info">
+<tr><td data-th="Country/region">France</td><td data-th="VAT info">
 <ul>
 <li>VAT 編號格式：11 個數字</li>
 <li>國家/地區代碼：FR</li>
@@ -106,7 +106,7 @@ ms.locfileid: "74258958"
 <li>注意：可包含任何字母字元 (I 或 Q 除外) 做為第一個或第二個字元，或做為第一個與第二個字元，再加上 9 個數字。</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">德國</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Germany</td><td data-th="VAT info">
 <ul>
 <li>VAT 編號格式：9 個數字</li>
 <li>國家/地區代碼：DE</li>

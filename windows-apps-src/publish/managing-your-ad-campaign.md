@@ -4,19 +4,19 @@ title: 管理您的廣告活動
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.date: 02/18/2020
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d79e65b2937e7ec6db57e00b31b44b1796203a50
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 7f7ee8f95ad1471c73d5ac9e7bb08796dadd6411
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463970"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507022"
 ---
 # <a name="manage-your-ad-campaign"></a>管理您的廣告活動
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 若要在[合作夥伴中心](https://partner.microsoft.com/dashboard)管理應用程式的廣告活動，請在左側導覽功能表中展開 [**吸引**]，然後選取 [**廣告活動**]。 您會看到所有與您的 App 相關聯的廣告活動，以及每一個廣告活動的曝光數、點擊數和安裝數。 如需曝光數、點擊數和安裝數的詳細資訊，請參閱[廣告活動報告](promote-your-app-report.md)中這些詞彙的定義。
 

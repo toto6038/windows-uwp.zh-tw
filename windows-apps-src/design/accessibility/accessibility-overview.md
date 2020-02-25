@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0065ecd39244d9cbb48bf75d474217aae249e45b
-ms.sourcegitcommit: ae288e85be682f74109510b9f52787fdc3dd2ecd
+ms.openlocfilehash: 22f614d65728c0f5121cadfdcbfb58a7b817a47d
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76860539"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521274"
 ---
 # <a name="accessibility-overview"></a>協助工具概觀
 
@@ -107,7 +107,7 @@ App 如果具有出色的鍵盤和螢幕助讀程式支援，通常也可以在�
 
 * 工具必須判斷要以 Tab 順序瀏覽的一部分讀取文字，或者只以整體文件表示的一部分讀取文字。 您可以選擇適當的元素來顯示文字，或者調整這些文字元素的屬性，協助做出正確的判斷。 每一個文字元素都有特定用途，而且該用途通常都有一個對應的使用者介面自動化角色。 元素使用不當會造成將錯誤的角色報告給使用者介面自動化，而且會混淆輔助技術使用者。
 * 許多使用者會有視覺方面的限制，除非背景的對比夠強，否則他們不容易看清楚文字。 應用程式設計人員如果沒有這種視覺方面的限制，無法一眼就看出這會對使用者產生多大的影響。 例如，以患有色盲的使用者為例，設計時選擇的色彩不合適，會造成某些使用者無法看清楚文字。 最初為網頁內容而制定的協助工具建議定義了一些對比標準，可以避免 app 出現上述問題。 如需詳細資訊，請參閱[無障礙文字需求](accessible-text-requirements.md)。
-* 許多因為太小而導致使用者看不清楚的文字。 您可以一開始就在應用程式的 UI 中將文字設定為合理的大小，以避免這個問題。 不過，對於需要顯示大量文字，或者需要同時顯示文字和其他視覺元素的應用程式而言，這種做法會是一項挑戰。 遇到這種情況時，請確定應用程式可以與能夠放大畫面的系統功能正確互動，這樣應用程式中包含的任何文字就會隨之一起放大 (某些使用者會變更 DPI 值來做為其無障礙輔助。 該選項可以在 **\[輕鬆存取\]** 的 **\[讓螢幕上的內容更大一些\]** 中變更，這會重新導向到 **\[外觀及個人化\]**  /  **\[顯示\]** 的 **\[控制台\]** UI。)
+* 許多因為太小而導致使用者看不清楚的文字。 您可以一開始就在應用程式的 UI 中將文字設定為合理的大小，以避免這個問題。 不過，對於需要顯示大量文字，或者需要同時顯示文字和其他視覺元素的應用程式而言，這種做法會是一項挑戰。 遇到這種情況時，請確定應用程式可以與能夠放大畫面的系統功能正確互動，這樣應用程式中包含的任何文字就會隨之一起放大 (某些使用者會變更 DPI 值來做為其無障礙輔助。 該選項可以在 **\[輕鬆存取\]** 的 **\[讓螢幕上的內容更大一些\]** 中變更，這會重新導向到 **\[外觀及個人化\]** \[顯示\] /  的 **\[控制台\]** UI。)
 
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>
@@ -200,7 +200,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>應用程式中可支援 XAML / Microsoft DirectX 互通性的輔助技術支援
 
-以 XAML UI (使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) 裝載的 Microsoft DirectX 內容預設並非無障礙內容。 [XAML SwapChainPanel DirectX 互通性範例](https://code.msdn.microsoft.com/windowsapps/XAML-SwapChainPanel-00cb688b)說明如何針對裝載的 DirectX 內容建立使用者介面自動化對等。 這項技術可透過使用者介面自動化讓裝載的內容成為無障礙內容。
+以 XAML UI (使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) 裝載的 Microsoft DirectX 內容預設並非無障礙內容。 [XAML SwapChainPanel DirectX 互通性範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample)說明如何針對裝載的 DirectX 內容建立使用者介面自動化對等。 這項技術可透過使用者介面自動化讓裝載的內容成為無障礙內容。
 
 ## <a name="related-topics"></a>相關主題
 

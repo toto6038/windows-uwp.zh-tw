@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 397c301564c0d4799c6b41db209da9659725103d
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089304"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521276"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>教學課程：將 WPF 應用程式現代化 
 
@@ -69,7 +69,7 @@ Contoso 想要使用新的 Windows 功能將此應用程式現代化，讓員工
 
 開始本教學課程之前，請先下載 Contoso 費用應用程式的原始程式碼，並確定您可以在 Visual Studio 中建立程式碼。
 
-1. 從[AppConsult WinAppsModernization 研討會存放庫](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop)的 [**發行**] 索引標籤下載應用程式原始程式碼。 直接連結為[https://aka.ms/wamwc](https://aka.ms/wamwc)。
+1. 從[AppConsult WinAppsModernization 研討會存放庫](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop)的 [**發行**] 索引標籤下載應用程式原始程式碼。 直接連結為[https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases](https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases)。
 2. 開啟 zip 檔案，並將所有內容解壓縮到**C：\\** 磁片磁碟機的根目錄。 它會建立名為**C:\WinAppsModernizationWorkshop**的資料夾。
 3. 開啟 Visual Studio 2019，然後按兩下**C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln**檔案以開啟方案。
 4. 藉由按下 [**開始**] 按鈕或 CTRL + F5，確認您可以建立、執行和偵錯工具 CONTOSO 費用 WPF 專案。

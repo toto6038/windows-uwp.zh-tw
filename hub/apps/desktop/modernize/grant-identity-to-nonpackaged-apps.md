@@ -1,6 +1,6 @@
 ---
 Description: 瞭解如何將身分識別授與非封裝的桌面應用程式，讓您可以在這些應用程式中使用新式 Windows 10 功能。
-title: 將身分識別授與非封裝的桌面應用程式
+title: 將身分識別授與非封裝的傳統型應用程式
 ms.date: 10/25/2019
 ms.topic: article
 keywords: windows 10、desktop、package、identity、MSIX、Win32
@@ -8,14 +8,14 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f355bba3087f58ed20800052371804048bc0006c
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: 10ed6b8e1bd5efce4c9d4429d91849b1333505b6
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73145613"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521349"
 ---
-# <a name="grant-identity-to-non-packaged-desktop-apps"></a>將身分識別授與非封裝的桌面應用程式
+# <a name="grant-identity-to-non-packaged-desktop-apps"></a>將身分識別授與非封裝的傳統型應用程式
 
 <!--
 > [!NOTE]
@@ -50,7 +50,7 @@ ms.locfileid: "73145613"
 
 為了支援 sparse 封裝，封裝資訊清單架構現在支援[ **\<屬性\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties)元素下的選擇性 **\<AllowExternalContent\>** 元素。 這可讓您的套件資訊清單在磁片上的特定位置參考套件外的內容。
 
-例如，如果您有現有的非封裝桌面應用程式，可在 C:\Program Files\MyDesktopApp 中安裝應用程式可執行檔和其他內容\, 您可以建立包含 **\<AllowExternalContent**的 sparse 封裝\>資訊清單中的元素。 在應用程式的安裝過程中，或第一次使用應用程式時，您可以安裝 sparse 封裝，並將 C:\Program Files\MyDesktopApp\ 宣告為應用程式將使用的外部位置。
+例如，如果您現有的非封裝桌面應用程式會在 C:\Program Files\MyDesktopApp 中安裝應用程式可執行檔和其他內容\, 您可以建立包含資訊清單中 **\<AllowExternalContent\>** 元素的 sparse 封裝。 在應用程式的安裝過程中，或第一次使用應用程式時，您可以安裝 sparse 封裝，並將 C:\Program Files\MyDesktopApp\ 宣告為應用程式將使用的外部位置。
 
 ## <a name="create-a-package-manifest-for-the-sparse-package"></a>建立 sparse 封裝的封裝資訊清單
 
@@ -61,7 +61,7 @@ ms.locfileid: "73145613"
 * [ **\<身分識別\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素，描述桌面應用程式的身分識別屬性。
 * 在[ **\<屬性\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties)專案下 **\<AllowExternalContent\>** 元素。 此元素應指派 `true`的值，這可讓您的套件資訊清單在磁片上的特定位置參考封裝外部的內容。 在稍後的步驟中，您將會在從安裝程式或應用程式中執行的程式碼註冊您的 sparse 封裝時，指定外部位置的路徑。 您在資訊清單中所參考的任何內容（不在套件本身）都應該安裝到外部位置。
 * [ **\<y\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)元素的**MinVersion**屬性應設定為 `10.0.19000.0` 或更新版本。
-* [ **\<應用程式\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)元素的**TrustLevel = mediumIL**和**RuntimeBehavior = Win32App**屬性會宣告與 sparse 封裝相關聯的傳統型應用程式，其執行方式類似于標準的未封裝桌上型電腦應用程式，不含登錄和檔案系統虛擬化，以及其他執行時間變更。
+* [ **\<應用程式\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)元素的**TrustLevel = mediumIL**和**RuntimeBehavior = Win32App**屬性會宣告與 sparse 封裝相關聯的傳統型應用程式，其執行方式類似于標準未封裝的桌面應用程式，而不需要登錄和檔案系統虛擬化和其他執行時間變更。
 
 下列範例顯示 sparse 封裝資訊清單（Package.appxmanifest.xml）的完整內容。 此資訊清單包含需要套件識別的 `windows.sharetarget` 延伸模組。
 
@@ -196,7 +196,7 @@ private static bool registerSparsePackage(string externalLocation, string sparse
 
 ## <a name="sample"></a>範例
 
-如需可完整運作的範例應用程式，示範如何使用 sparse 封裝將套件識別授與桌面應用程式，請參閱[https://aka.ms/sparsepkgsample](https://aka.ms/sparsepkgsample)。 如需建立和執行範例的詳細資訊，請閱讀[這篇文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)。
+如需可完整運作的範例應用程式，示範如何使用 sparse 封裝將套件識別授與桌面應用程式，請參閱[https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages)。 如需建立和執行範例的詳細資訊，請閱讀[這篇文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)。
 
 這個範例包含下列各項：
 

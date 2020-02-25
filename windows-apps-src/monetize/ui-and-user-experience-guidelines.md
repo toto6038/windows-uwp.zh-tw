@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 指導方針, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ce51f1ec99b080de6483b1d703492050c7a434c
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: d64d5c544f6ec9e1356cc024e634286336dc9f91
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463920"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506792"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 本文提供的指引可讓您在應用程式中提供絕佳的橫幅廣告、插播式廣告以及原生廣告體驗。 如需如何設計應用程式外觀與操作方式的一般指引，請參閱[設計與 UI](https://developer.microsoft.com/windows/apps/design)。
 
@@ -38,7 +38,7 @@ ms.locfileid: "77463920"
 
 以下章節提供如何使用 [AdControl](banner-ads.md) 在您的應用程式中實作[橫幅廣告](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)的建議，以及違反 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的實作範例。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳作法
 
 建議您在應用程式中實作橫幅廣告時，依照這些最佳做法：
 
@@ -90,7 +90,7 @@ ms.locfileid: "77463920"
 
 以下章節提供如何使用 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 在您的應用程式中實作插播式影片廣告及標準橫幅廣告的建議，以及違反 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的實作範例。 由於您比任何人都了解您的應用程式，除非原則考量，我們會將它保留給您來做出最佳的最終決策。 請務必牢記，您應用程式的評分與收益緊密結合。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳作法
 
 建議您在應用程式中實作插入式廣告時，依照這些最佳做法：
 
@@ -190,7 +190,7 @@ ms.locfileid: "77463920"
     * *贊助廠商*文字 (在 **SponsoredBy** 屬性中提供)。 此文字由廣告商提供。
     * 另一個顯示*贊助廠商*文字的方法是由您選擇顯示某些其他文字，以協助區分原生廣告體驗和您應用程式的其餘部分，例如「贊助內容」、「促銷內容」、「建議內容」等。
 
-### <a name="user-experience"></a>使用者經歷
+### <a name="user-experience"></a>使用者體驗
 
 原生廣告應該要與您應用程式的其餘部分有明確界定，且周圍有空間以避免意外點按。 使用邊框、不同的背景或其他 UI 來區隔廣告內容和您應用程式的其餘部分。 請記住，意外點擊廣告長期下來對您的廣告收益或一般使用者體驗不會有幫助。
 

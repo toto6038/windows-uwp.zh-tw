@@ -1,26 +1,26 @@
 ---
-Description: 本主題說明應用程式中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。
+Description: 本主題說明 app 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: 協助工具文字的需求
 label: Accessible text requirements
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b566b1960435a856b82a7be605ef5e1f7ba86e2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7f794cc6f23cf3f4beaf5bc3c9558ceaf2ccc8a6
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257796"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521310"
 ---
 # <a name="accessible-text-requirements"></a>協助工具文字的需求  
 
 
 
 
-本主題說明應用程式中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。 本主題也討論在通用 Windows 平台 (UWP) App 中文字元素可以擁有的 Microsoft 使用者介面自動化角色，以及圖形中文字的最佳做法。
+本主題說明 app 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。 本主題也討論在通用 Windows 平台 (UWP) App 中文字元素可以擁有的 Microsoft 使用者介面自動化角色，以及圖形中文字的最佳做法。
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
@@ -60,7 +60,7 @@ UWP App 可以使用這些預設元素 (一般稱為「文字元素」或「文�
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
 
 ## <a name="auto-suggest-accessibility"></a>自動建議的協助工具  
-當使用者在輸入欄位輸入，且顯示可能建議的清單時，這類案例稱為自動建議。 這常見於電子郵件的「收件者」欄位、Windows 中的 Cortana 搜尋方塊、Microsoft Edge 的 URL 輸入欄位、「天氣」App 的位置輸入欄位等位置。 如果您是使用 XAML [**AutosuggestBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) 或 HTML 內建控制項，則系統已經為您預設好這個體驗。 為了讓這個體驗無障礙，輸入欄位和清單必須相關聯。 在[實作自動建議](#implementing_auto-suggest)一節中有說明。
+當使用者在輸入欄位輸入，且顯示可能建議的清單時，這類案例稱為自動建議。 這常見於電子郵件的 **\[收件者\]** 欄位、Windows 中的 Cortana 搜尋方塊、Microsoft Edge 的 URL 輸入欄位、「天氣」App 的位置輸入欄位等位置。 如果您是使用 XAML [**AutosuggestBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) 或 HTML 內建控制項，則系統已經為您預設好這個體驗。 為了讓這個體驗無障礙，輸入欄位和清單必須相關聯。 在[實作自動建議](#implementing_auto-suggest)一節中有說明。
 
 朗讀程式已經更新，讓這個體驗能透過特殊的建議模式成為無障礙類型體驗。 整體來說，適當地連結編輯欄位與清單之後，使用者將能：
 
@@ -126,7 +126,7 @@ _沒有預設選取專案的範例_
 
 當字型使用的字型太小時，使用者可能難以讀取應用程式中的文字，因此請確定您應用程式中的任何文字都是合理的大小。
 
-當您這麼做之後，Windows 會包含各種協助工具工具和設定，讓使用者可以利用並調整其本身的需求，以及閱讀文字的喜好設定。 這些地方包括：
+當您這麼做之後，Windows 會包含各種協助工具工具和設定，讓使用者可以利用並調整其本身的需求，以及閱讀文字的喜好設定。 這些包括：
 
 * 放大鏡工具可放大 UI 的選取區域。 您應該確定應用程式中的文字版面配置不會使其難以使用放大鏡進行閱讀。
 * [設定] 中的全域規模和解析度設定 **-> 系統 > 顯示 > 縮放比例和版面**配置。 確切可用的調整大小選項可能會有所不同，因為這取決於顯示裝置的功能。
@@ -151,7 +151,7 @@ XAML
 
 我們不建議您停用文字調整，因為在所有應用程式中，通用的 UI 文字調整會是使用者的重要協助工具體驗。
 
-您也可以使用 [**TextScaleFactorChanged**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) 事件與 [**TextScaleFactor**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) 屬性，了解手機上 [文字大小] 設定的變更相關資訊。 方法如下：
+您也可以使用 [**TextScaleFactorChanged**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) 事件與 [**TextScaleFactor**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) 屬性，了解手機上 **\[文字大小\]** 設定的變更相關資訊。 方法如下：
 
 C#
 ```csharp
@@ -186,6 +186,6 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [文字縮放比例](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [協助工具](accessibility.md)
 * [基本協助工具資訊](basic-accessibility-information.md)
-* [XAML 文字顯示範例](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
-* [XAML 文字編輯範例](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
-* [XAML 協助工具範例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d) 
+* [XAML 文字顯示範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
+* [XAML 文字編輯範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
+* [XAML 協助工具範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) 

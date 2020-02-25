@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: ba5708b953efff3b4a7c52286ae1a74c43d3d211
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 06421b92106baec5a846db5fc7adf8ef3b742bff
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463750"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507072"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows Premium 廣告發行者計畫
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 我們持續努力協助 Windows 開發人員利用廣告從他們的應用程式獲利，因此我們提供 [Windows Premium 廣告發行者計畫](https://www.windowspremiumapps.com)。 這是已啟用廣告之應用程式和遊戲的精心規劃集合，在使用方式、參與度和體驗等方面都是同等級最佳。 這些應用程式和遊戲都經過可見性認證，擁有高度參與的全球可識別使用者。
 

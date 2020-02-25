@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: b953fe0aca3d0ab9b8ce27f2b068c3bf1b869c83
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 608933ca60532d0840a2a7bb66f13389d9f12dbd
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463950"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506769"
 ---
 # <a name="interstitial-ads"></a>插播式廣告
 
 >[!WARNING]
-> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://aka.ms/ad-monetization-shutdown)
+> 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 本逐步解說示範如何在通用 Windows 平台 (UWP) App 和 Windows 10 遊戲中包含插播式廣告。 如需示範如何使用 C# 和 C++ 將插播式廣告新增到 JavaScript/HTML 應用程式及 XAML 應用程式的完整範例專案，請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
