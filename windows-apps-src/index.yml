@@ -11,12 +11,12 @@ metadata:
   ms.date: 09/24/2019
   ms.technology: uwp-conceptual-docs
   keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp
-  ms.openlocfilehash: 4d1ca7d03cdbc3dd8eccd2e22ae88c217672179c
-  ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+  ms.openlocfilehash: 688f34e3e2316133713e71c99763d86255914aee
+  ms.sourcegitcommit: b3ff4e7ec42a4234774b47ac39940e5ff7817ccd
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 09/27/2019
-  ms.locfileid: "71329604"
+  ms.lasthandoff: 02/21/2020
+  ms.locfileid: "77544995"
 landingContent:
 - title: 不熟悉 UWP 嗎？
   linkLists:
@@ -35,7 +35,7 @@ landingContent:
     - text: 瀏覽 Microsoft Learn 的 Windows 課程
       url: https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module
     - text: 什麼是 UWP 應用程式？
-      url: /get-started/universal-application-platform-guide.md
+      url: get-started/universal-application-platform-guide.md
 - title: 最新功能
   linkLists:
   - linkListType: whats-new
@@ -88,7 +88,7 @@ landingContent:
       url: /windows/msix
   - linkListType: concept
     links:
-    - text: 從您的 app 獲利
+    - text: 從您的應用程式獲利
       url: monetize/index.md
 - title: 社群與支援
   linkLists:
