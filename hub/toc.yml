@@ -71,7 +71,27 @@
     - name: Speech
       href: apps/speech.md
     - name: 功能和技術
-      href: apps/features-and-technologies.md
+      items:
+        - name: 概觀
+          href: apps/features-and-technologies.md
+        - name: 在 .NET 中處理 ETW 追蹤
+          items:
+            - name: 概觀
+              href: apps/trace-processing/overview.md
+            - name: 處理您的首次追蹤
+              href: apps/trace-processing/quickstart.md
+            - name: 存取追蹤資料
+              href: apps/trace-processing/tutorial.md
+            - name: 擴充 TraceProcessor
+              href: apps/trace-processing/extensibility.md
+            - name: 載入符號
+              href: apps/trace-processing/symbols.md
+            - name: 使用串流
+              href: apps/trace-processing/streaming.md
+            - name: 範例
+              href: 'https://github.com/microsoft/eventtracing-processing-samples'
+            - name: 參考資料
+              href: apps/trace-processing/reference.md
     - name: 最新的文件更新
       href: apps/whats-new/latest-doc-updates.md
 - name: 使用 Windows 裝置
