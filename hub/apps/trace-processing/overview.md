@@ -5,14 +5,14 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
-ms.openlocfilehash: 1283a6b183673cbfb0d3d27290fc24ae6b020302
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: bc2ec3035e097a8cab15b556d1b1793385b8aeb9
+ms.sourcegitcommit: 7f1b64f62bc3a82ebcd3807c809363df46919195
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629069"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705753"
 ---
-# <a name="process-event-tracing-for-windows-etw-traces-in-net"></a>在 .NET 中處理 Windows 事件追蹤（ETW）追蹤
+# <a name="process-etw-traces-in-net"></a>在 .NET 中處理 ETW 追蹤
 
 [Windows 事件追蹤（ETW）](https://docs.microsoft.com/windows/win32/etw/event-tracing-portal)是 windows 作業系統內建的功能強大的追蹤集合系統。 Windows 與 ETW 的深度整合，包括針對內容切換、記憶體配置、進程建立和結束等事件，向下到核心的系統行為資料。 可從 ETW 取得的全系統資料，非常適合用於端對端效能分析或其他問題，而需要查看整個系統中許多元件之間的互動。
 
@@ -28,7 +28,7 @@ ms.locfileid: "77629069"
 
 下一個步驟是[處理您的第一個追蹤](quickstart.md)。
 
-## <a name="in-this-section"></a>本節內容
+## <a name="related-topics"></a>相關主題
 
 * [存取追蹤資料](tutorial.md)
 * [擴充 TraceProcessor](extensibility.md)
