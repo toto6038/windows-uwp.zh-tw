@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a91c080805bca5d536aad3755ca7edf052d1fe0e
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: ffd5481fec0ebf6db24d9af95b8a11d05a043170
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414053"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521219"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>參與 UWP 概念文件編輯
 
@@ -56,4 +56,4 @@ ms.locfileid: "67414053"
 
 如果您想要針對文件提供意見反應，而並非想要自行編輯，請再[在公用存放庫中建立問題](https://github.com/MicrosoftDocs/windows-uwp/issues)。 選取 [問題]  索引標籤，並選取 [新增問題]  按鈕。 請務必附上主題標題和頁面 URL。 您的問題會指派給 UWP 文件小組的成員進行審核。
 
-* 對於內部問題，請使用 [WDG 內容要求工具](https://aka.ms/pubrequest)。
+* 對於內部問題，請使用 [WDG 內容要求工具](http://sesuw2-iis02a/WSCPubRequest/WindowsContentRequestTool.aspx)。

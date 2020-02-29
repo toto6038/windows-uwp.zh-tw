@@ -1,18 +1,17 @@
 ---
 title: Microsoft Store 原則與管理辦法
 description: 本節包含適用於 Microsoft Store 應用程式和內容的「Microsoft Store 原則」與「應用程式品質」準則，以及開發人員應該遵循的「管理辦法」。
-layout: LandingPage
-ms.date: 10/26/2017
+ms.date: 02/25/2020
 ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: 9DA14ADF-B4FB-4EC8-8D63-4B9152476BE0
-ms.openlocfilehash: 624b40fd5980fe66bbdf538845d81082e91c5aec
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a58ccb4ae9af163b84cc1f5b05a7b4784ac3749c
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826435"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607270"
 ---
 # <a name="store-policies-and-code-of-conduct"></a>Microsoft Store 原則與管理辦法
 

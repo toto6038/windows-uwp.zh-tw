@@ -1,18 +1,17 @@
 ---
 title: 開發人員管理辦法
 description: 身為 Microsoft Store 應用程式的開發人員，您應該遵守應用程式開發人員合約中的條款，以及您與 Microsoft 之間的任何其他授權或合約。
-layout: LandingPage
-ms.date: 10/26/2017
+ms.date: 02/25/2020
 ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: 2B84B877-794A-468F-A478-DA09E4694513
-ms.openlocfilehash: a9e96431594cf1a046741659011e546807294f7a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d81333b38908a10f88d886d766353aae455b1f47
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826445"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607242"
 ---
 # <a name="developer-code-of-conduct"></a>開發人員管理辦法
 

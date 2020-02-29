@@ -1,18 +1,17 @@
 ---
 title: 應用程式品質
 description: Microsoft Store 中的應用程式可供從中玩味、娛悅人心且值得一用，對客戶和開發人員都同樣重要。 為了協助開發人員達到此目標，我們提供這份概觀來說明應用程式品質的一些重要層面。
-layout: LandingPage
-ms.date: 10/26/2017
+ms.date: 07/25/2017
 ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
-ms.openlocfilehash: 550ffeac8912769fc7e319d819f4de67f6d36cf1
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826415"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607247"
 ---
 # <a name="app-quality"></a>應用程式品質
 
