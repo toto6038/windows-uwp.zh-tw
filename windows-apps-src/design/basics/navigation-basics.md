@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6290b142eee4aff7287b9542b645df89164d173b
-ms.sourcegitcommit: 34671182c26f5d0825c216a6cededc02b0059a9e
+ms.openlocfilehash: 137dbfe6471ee4d42e2a34e24512bdb658e985d0
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286936"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463760"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -27,17 +27,17 @@ ms.locfileid: "67286936"
 
 :::row:::
     :::column:::
-        ![navigation example 1](images/nav/nav-1.svg)
+        ![瀏覽範例 1](images/nav/nav-1.svg)
 
 要求使用者依序瀏覽一系列頁面。
     :::column-end:::
     :::column:::
-        ![navigation example 2](images/nav/nav-2.svg)
+        ![瀏覽範例 2](images/nav/nav-2.svg)
 
 提供可讓使用者直接跳到任何頁面的功能表。
     :::column-end:::
     :::column:::
-        ![navigation example 3](images/nav/nav-3.svg)
+        ![瀏覽範例 3](images/nav/nav-3.svg)
 
 將所有東西放在單一頁面上，並提供檢視內容的篩選機制。
     :::column-end:::
@@ -67,16 +67,16 @@ ms.locfileid: "67286936"
 
 :::row:::
     :::column:::
-        ![do example](images/nav/do.svg)
+        ![執行範例](images/nav/do.svg)
 
-        ![navview good](images/nav/navview-good.svg)
+        ![良好的 navview](images/nav/navview-good.svg)
 
 提供熟悉的瀏覽功能表中的瀏覽項目。
     :::column-end:::
     :::column:::
-        ![don't example](images/nav/dont.svg)
+        ![禁止事項範例](images/nav/dont.svg)
 
-        ![navview bad](images/nav/navview-bad.svg)
+        ![不良的 navview](images/nav/navview-bad.svg)
 
 具有許多瀏覽選項的使用者會拖垮。
     :::column-end:::
@@ -106,10 +106,10 @@ ms.locfileid: "67286936"
 
 :::row:::
     :::column:::
-        ![Pages arranged in a flat structure](images/nav/flat-lateral-structure.svg)
+        ![單層式結構排列的頁面](images/nav/flat-lateral-structure.svg)
     :::column-end:::
     :::column span="2":::
-        ### Flat/lateral
+        ### <a name="flatlateral"></a>單層式/側面
 
 在單層式/側面結構中，頁面是並排存在。 您可以依任何順序從一個頁面瀏覽到另一個。
 
@@ -125,10 +125,10 @@ ms.locfileid: "67286936"
 
 :::row:::
     :::column:::
-        ![Pages arranged in a hierarchy](images/nav/hierarchical-structure.svg)
+        ![階層排列的頁面](images/nav/hierarchical-structure.svg)
     :::column-end:::
     :::column span="2":::
-        ### Hierarchical
+        ### <a name="hierarchical"></a>階層式
 
 在階層式結構中，頁面是組織成類似樹狀的結構。 每個子頁面都有一個父頁面，但父頁面可以有一或多個子頁面。 若要進入子頁面，您必須經過父頁面。
 
@@ -145,10 +145,10 @@ ms.locfileid: "67286936"
 
 :::row:::
     :::column:::
-        ![an app with a hybrid structure](images/nav/combining-structures.svg)
+        ![具備混合式結構的 app](images/nav/combining-structures.svg)
     :::column-end:::
     :::column span="2":::
-        ### Combining structures
+        ### <a name="combining-structures"></a>結合結構
 
 您不是只能選擇一種結構；許多妥善設計的應用程式會使用二者。 應用程式可在最上層頁面使用單層式結構，可以任何順序檢視頁面，而具有較複雜關係的頁面則採用階層式結構。
 
@@ -165,39 +165,51 @@ ms.locfileid: "67286936"
 
 :::row:::
     :::column:::
-        ![Frame image](images/nav/thumbnail-frame.svg)
+        ![框架影像](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
-        [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [**框架**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 有幾個例外，即任何有多個頁面的應用程式都會使用框架。 一般來說，應用程式會有主要頁面，包含框架和主要瀏覽元素，例如瀏覽檢視控制項。 當使用者選取頁面時，框架會載入並且顯示。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![索引標籤和樞紐影像](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
+        [**頂端瀏覽**](../controls-and-patterns/navigationview.md)
 
-顯示相同層級中水平的頁面連結清單。 [NavigationView](../controls-and-patterns/navigationview.md) 控制項會實作上方瀏覽與索引標籤模式。
+顯示相同層級中水平的頁面連結清單。 [NavigationView](../controls-and-patterns/navigationview.md) 控制項會實作頂端瀏覽模式。
         
 在以下情況使用上方瀏覽：
 
 - 您想要在螢幕上顯示所有的瀏覽選項。
 - 您希望您的應用程式內容有更多空間。
 - 圖示無法清楚地描述您的瀏覽類別。
-        
-在以下情況使用索引標籤：
-
-- 您想要保留瀏覽歷程記錄和頁面狀態。
-- 您預期使用者會在索引標籤之間頻繁切換。
 
 :::row-end:::
 
 :::row:::
     :::column:::
-         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![索引標籤和樞紐影像](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+    :::column span="2":::
+        [**索引標籤**](../controls-and-patterns/tab-view.md)
+
+顯示一組水平的索引標籤及其各自的內容。 [TabView](../controls-and-patterns/tab-view.md) 控制項可用來既顯示數個頁面 (或文件)，同時又讓使用者能夠重新排列、開啟或關閉索引標籤。
+    
+在以下情況使用索引標籤：
+
+- 您想要讓使用者能夠動態開啟、關閉或重新排列索引標籤。
+- 您預期可能會有一次開啟大量索引標籤的情形。
+- 您希望使用者能夠輕鬆地在使用索引標籤的應用程式中，於視窗之間移動索引標籤，情形類似 Microsoft Edge 等網頁瀏覽器。
+
+:::row-end:::
+
+:::row:::
+    :::column:::
+         ![索引標籤和樞紐影像](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
         :::column span="2":::
     [**Pivot**](../controls-and-patterns/pivot.md)
@@ -213,10 +225,10 @@ ms.locfileid: "67286936"
 
 :::row:::
     :::column:::
-        ![navview image](images/nav/thumbnail-navview.svg)
+        ![navview 影像](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
-        [**Left navigation**](../controls-and-patterns/navigationview.md)
+        [**左方瀏覽**](../controls-and-patterns/navigationview.md)
 
 顯示連結到最上層頁面的垂直清單。 使用時機：
         
@@ -228,10 +240,10 @@ ms.locfileid: "67286936"
         
 :::row:::
     :::column:::
-        ![Master details image](images/nav/thumbnail-master-detail.svg)
+        ![主要詳細資料影像](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**Master/details**](../controls-and-patterns/master-details.md)
+        [**主要/詳細資料**](../controls-and-patterns/master-details.md)
 
 顯示項目的清單 (主要檢視)。 選取在詳細區段中顯示其相對應頁面的項目。 使用時機：
         
@@ -243,10 +255,10 @@ ms.locfileid: "67286936"
 
 :::row:::
     :::column:::
-        ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg)
+        ![超連結和按鈕影像](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
     :::column span="2":::
-        [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
+        [**超連結**](../controls-and-patterns/hyperlinks.md)
 
 內嵌瀏覽元素可顯示在頁面的內容中。 不同於其他瀏覽元素在頁面間皆須保持一致，內嵌於內容的瀏覽元素會隨頁面不同而改變。
 :::row-end:::

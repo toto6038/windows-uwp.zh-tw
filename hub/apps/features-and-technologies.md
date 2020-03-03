@@ -6,12 +6,12 @@ ms.date: 05/08/2019
 ms.localizationpriority: medium
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: ac779bf57e51b13051fa25293606daab05540fd1
-ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.openlocfilehash: 6bae7fdef4e9cdf05dfa6f56160f1021033123e6
+ms.sourcegitcommit: 7f1b64f62bc3a82ebcd3807c809363df46919195
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76726021"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705773"
 ---
 # <a name="features-and-technologies-for-windows-apps"></a>Windows 應用程式的功能和技術
 
@@ -80,13 +80,19 @@ Windows 提供多種方式，將語音辨識和文字轉換語音 (也稱為 TTS
 
 |  UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
-| [啟用裝置功能](/windows/uwp/devices-sensors/enable-device-capabilities)<br/><br/>[列舉裝置](/windows/uwp/devices-sensors/enumerate-devices)<br/><br/>[感應器](/windows/uwp/devices-sensors/sensors)<br/><br/>[Bluetooth](/windows/uwp/devices-sensors/bluetooth)<br/><br/>[列印與掃描](/windows/uwp/devices-sensors/printing-and-scanning)<br/><br/>[NFC](/windows/uwp/devices-sensors/nfc) | [感應器 API](/windows/desktop/sensorsapi/portal)<br/><br/>[列印](/desktop/printdocs/printdocs-printing)<br/><br/>[UPnP API](/desktop/upnp/universal-plug-and-play-start-page) |  [列印和列印系統管理](https://docs.microsoft.com/dotnet/framework/wpf/advanced/printing-and-print-system-management)  |  [列印支援](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-print-support)  |
+| [啟用裝置功能](/windows/uwp/devices-sensors/enable-device-capabilities)<br/><br/>[列舉裝置](/windows/uwp/devices-sensors/enumerate-devices)<br/><br/>[感應器](/windows/uwp/devices-sensors/sensors)<br/><br/>[藍牙](/windows/uwp/devices-sensors/bluetooth)<br/><br/>[列印與掃描](/windows/uwp/devices-sensors/printing-and-scanning)<br/><br/>[NFC](/windows/uwp/devices-sensors/nfc) | [感應器 API](/windows/desktop/sensorsapi/portal)<br/><br/>[列印](/desktop/printdocs/printdocs-printing)<br/><br/>[UPnP API](/desktop/upnp/universal-plug-and-play-start-page) |  [列印和列印系統管理](https://docs.microsoft.com/dotnet/framework/wpf/advanced/printing-and-print-system-management)  |  [列印支援](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-print-support)  |
 
 ### <a name="system-network-and-power"></a>系統、網路和電源
 
 |  UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
 | [列舉裝置](/windows/uwp/devices-sensors/enumerate-devices)<br/><br/>[取得電池資訊](/windows/uwp/devices-sensors/get-battery-info)<br/><br/>[執行緒和非同步程式設計](/windows/uwp/threading-async/)<br/><br/>[網路和 Web 服務](/windows/uwp/networking/) | [系統服務](/windows/desktop/system-services)<br/><br/>[記憶體管理](/windows/desktop/memory/memory-management)<br/><br/>[電源管理](/windows/desktop/power/power-management-portal)<br/><br/>[處理序和執行緒](/windows/desktop/procthread/processes-and-threads)<br/><br/>[網路功能和網際網路](/windows/desktop/networking)<br/><br/>[Windows 系統資訊](/windows/desktop/sysinfo/windows-system-information) |  [執行緒模型](https://docs.microsoft.com/dotnet/framework/wpf/advanced/threading-model)<br/><br/>[以 .NET Framework 進行網路程式設計](https://docs.microsoft.com/dotnet/framework/network-programming/)  |  [系統資訊](https://docs.microsoft.com/dotnet/framework/winforms/advanced/system-information-and-windows-forms)<br/><br/>[電源管理](https://docs.microsoft.com/dotnet/framework/winforms/advanced/power-management-in-windows-forms)<br/><br/>[以 .NET Framework 進行網路程式設計](https://docs.microsoft.com/dotnet/framework/network-programming/)<br/><br/>[Windows Forms 中的網路功能](https://docs.microsoft.com/dotnet/framework/winforms/advanced/networking-in-windows-forms-applications)  |
+
+### <a name="debugging-and-performance"></a>偵錯和效能
+
+|  UWP  |  Win32 (Windows API) |  WPF 和 Windows Forms  |
+|-------|----------------------|-------|-----------------|
+| [偵錯、測試及效能](/windows/uwp/debug-test-perf)<br/><br/>[部署和偵錯 UWP 應用程式](/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)<br/><br/>[Windows 應用程式認證套件](/windows/uwp/debug-test-perf/windows-app-certification-kit)<br/><br/>[效能](/windows/uwp/debug-test-perf/performance-and-xaml-ui)| [偵錯和錯誤處理](https://docs.microsoft.com/windows/win32/debugging-and-error-handling)<br/><br/>[Windows 的偵錯工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/)<br/><br/>[Windows 事件追蹤 (ETW)](https://docs.microsoft.com/windows/win32/etw/event-tracing-portal)<br/><br/>[.NET TraceProcessing API](/windows/apps/trace-processing/)<br/><br/>[TraceLogging](https://docs.microsoft.com/windows/win32/tracelogging/trace-logging-portal)<br/><br/>[效能計數器](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-portal) |  [偵錯、追蹤和程式碼剖析](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/)<br/><br/>[追蹤和檢測應用程式](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/tracing-and-instrumenting-applications)<br/><br/>[使用 Managed 偵錯助理診斷錯誤](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants)<br/><br/>[執行階段分析](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/runtime-profiling)<br/><br/>[效能計數器](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/performance-counters)<br/><br/>[Windows Forms 的 ClickOnce 部署](https://docs.microsoft.com/dotnet/framework/winforms/clickonce-deployment-for-windows-forms)  |
 
 ### <a name="packaging-and-deployment"></a>封裝和部署
 
