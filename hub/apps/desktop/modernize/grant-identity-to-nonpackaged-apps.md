@@ -1,19 +1,19 @@
 ---
 Description: 瞭解如何將身分識別授與非封裝的桌面應用程式，讓您可以在這些應用程式中使用新式 Windows 10 功能。
 title: 將身分識別授與非封裝的傳統型應用程式
-ms.date: 10/25/2019
+ms.date: 02/28/2020
 ms.topic: article
 keywords: windows 10、desktop、package、identity、MSIX、Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 10ed6b8e1bd5efce4c9d4429d91849b1333505b6
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: ae05a00cac19fdd349aa48160b88cde6b84e26b0
+ms.sourcegitcommit: 620e4a51e2486ec2cb7190176b3d9bf3d7b5b6af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521349"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78222024"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>將身分識別授與非封裝的傳統型應用程式
 
@@ -137,7 +137,7 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx  /p <
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>將套件身分識別中繼資料新增至您的桌面應用程式資訊清單
 
-您也必須在桌面應用程式中包含[並存應用程式資訊清單](https://docs.microsoft.com/windows/win32/sbscs/application-manifests)，並包含一個 **\<msix\>** 元素，其中具有可宣告應用程式身分識別屬性的屬性。 當可執行檔啟動時，OS 會使用這些屬性的值來判斷您應用程式的身分識別。
+您也必須在桌面應用程式中包含[並存應用程式資訊清單](https://docs.microsoft.com/windows/win32/sbscs/application-manifests)，並包含一個[&lt;msix&gt;](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix)元素，其中具有可宣告應用程式身分識別屬性的屬性。 當可執行檔啟動時，OS 會使用這些屬性的值來判斷您應用程式的身分識別。
 
 下列範例顯示具有 **\<msix\>** 元素的並存應用程式資訊清單。
 
