@@ -8,19 +8,19 @@ keywords: 觸控、指標、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 25398f0b48e88e2cebe81f62cc62ac1d9bd92d5c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2277be481326aa5ae5a76c900160108bcd29fb84
+ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258213"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256141"
 ---
 # <a name="touch-interactions"></a>觸控互動
 
 
 在設計應用程式時，請先預期觸控會是使用者的主要輸入方法。 若您使用平台控制項，在觸控板、滑鼠和畫筆/手寫筆的支援方面則不需要額外的程式設計，因為 UWP 應用程式對此提供免費支援。
 
-不過，請記住，針對觸控最佳化的 UI 未必優於傳統 UI。 兩者對技術和應用程式而言各有優缺點。 在設計觸控優先的 UI 之前，了解觸控 (包含觸控板)、畫筆/手寫筆、滑鼠以及鍵盤輸入之間的核心差異是很重要的。
+不過，請記住，針對觸控最佳化的 UI 未必優於傳統 UI。 兩者對技術和應用程式而言各有優缺點。 在移至觸控式第一個 UI 中，請務必瞭解觸控、觸控板、畫筆/手寫筆、滑鼠和鍵盤輸入之間的核心差異。
 
 > **重要 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)、[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 
@@ -56,8 +56,8 @@ ms.locfileid: "74258213"
 下表顯示在設計觸控最佳化 UWP 應用程式時應考慮存在於輸入裝置間的一些差異性。
 
 <table>
-<tbody><tr><th>因素</th><th>觸控互動</th><th>滑鼠、鍵盤、畫筆/手寫筆互動</th><th>觸控板</th></tr>
-<tr><td rowspan="3">精確度</td><td>指尖的接觸區域大於單一 x-y 座標，增加了啟動非預期命令的機會。</td><td>滑鼠和畫筆/手寫筆可以提供精確的 x-y 座標。</td><td>與滑鼠相同。</td></tr>
+<tbody><tr><th>因素</th><th>觸控互動</th><th>滑鼠、鍵盤、畫筆/手寫筆互動</th><th>Touchpad</th></tr>
+<tr><td rowspan="3">Precision</td><td>指尖的接觸區域大於單一 x-y 座標，增加了啟動非預期命令的機會。</td><td>滑鼠和畫筆/手寫筆可以提供精確的 x-y 座標。</td><td>與滑鼠相同。</td></tr>
 <tr><td>接觸區域的形狀會隨著移動而變化。  </td><td>滑鼠移動和畫筆/手寫筆筆觸可以提供精確的 x-y 座標。 鍵盤焦點很明確。</td><td>與滑鼠相同。</td></tr>
 <tr><td>沒有滑鼠游標協助目標預測。</td><td>滑鼠游標、畫筆/手寫筆游標以及鍵盤焦點，都可以協助目標預測。</td><td>與滑鼠相同。</td></tr>
 <tr><td rowspan="3">人體構造</td><td>指尖的移動並不精準，因為用單指或多指進行直線動作很困難。 這是因為手關節的曲度以及手指進行動作時牽涉到好幾個關節。</td><td>使用滑鼠或畫筆/手寫筆進行直線動作較為簡單，因為控制這些裝置的手實際經過的距離比畫面上的游標短。</td><td>與滑鼠相同。</td></tr>
@@ -72,9 +72,8 @@ ms.locfileid: "74258213"
 <tr><td>支援透過手勢 (例如點選、拖曳、滑動、捏合以及旋轉) 直接操作物件。</td><td>不支援直接操作，因為滑鼠、畫筆/手寫筆以及鍵盤是間接輸入裝置。</td><td>與滑鼠相同。</td></tr>
 </tbody></table>
 
-
-
-**請注意**，   間接輸入已有超過25年的精簡優勢。 有一些功能 (例如暫留觸發工具提示) 是專門設計來解決觸控板、滑鼠、畫筆/手寫筆以及鍵盤輸入的 UI 探索問題。 這類的 UI 功能已經針對觸控輸入提供的豐富經驗而重新設計，不會犧牲這些裝置上的使用者經驗。
+> [!NOTE]
+> 間接輸入的優勢在於已經過 25 年以上的技術改良。 有一些功能 (例如暫留觸發工具提示) 是專門設計來解決觸控板、滑鼠、畫筆/手寫筆以及鍵盤輸入的 UI 探索問題。 這類的 UI 功能已經針對觸控輸入提供的豐富經驗而重新設計，不會犧牲這些裝置上的使用者經驗。
 
  
 
@@ -85,7 +84,7 @@ ms.locfileid: "74258213"
 當使用者依賴觸控輸入進行要求正確與精確位置的活動時，視覺化回饋就顯得相當重要。 隨時隨地偵測到觸控輸入時便顯示回饋，可以協助使用者了解應用程式及其控制項所定義的任何自訂目標規則。
 
 
-## <a name="targeting"></a>目標預測
+## <a name="targeting"></a>目標鎖定
 
 目標預測透過以下各項進行最佳化：
 
@@ -97,7 +96,7 @@ ms.locfileid: "74258213"
 
     手指的整個接觸面會判斷最可能的目標物件為何。
 
--   擦選
+-   Scrubbing
 
     手指在群組中的項目之間拖曳，可以輕鬆重新轉換目標 (例如，選項按鈕)。 拿起手指不觸摸之後，就會啟動目前的項目。
 
@@ -132,7 +131,7 @@ ms.locfileid: "74258213"
 
     在要求精確度 (例如文字選取) 的情況下，請提供位移的選取控點以提高精確度。 如需詳細資訊，請參閱[選取文字和影像的指導方針 (Windows 執行階段應用程式)](guidelines-for-textselection.md)。
 
-## <a name="timing"></a>計時
+## <a name="timing"></a>時間
 
 避免計時模式的變更有利於直接操作。 直接操作可以模擬直接、即時的實體物件控制。 物件會隨著手指移動而回應。
 
@@ -151,7 +150,8 @@ ms.locfileid: "74258213"
 -   互動應該支援複合式操作。 例如，在拖曳手指進行移動瀏覽時，透過捏合進行縮放。
 -   不應該以時間來辨別互動。 不論執行時間長短，相同的互動應該產生相同的結果。 以時間為基礎的啟動會對使用者造成強制性的延遲，同時對直接操作的沈浸式性質和系統回應感知功能造成減損。
 
-    **請注意**  例外狀況，您可以使用特定的計時互動來協助學習和探索（例如，按住）。
+   > [!NOTE]
+   > 例外狀況是您使用特定的計時互動來協助學習和探索（例如，按住）。
 
      
 
@@ -195,7 +195,7 @@ ms.locfileid: "74258213"
 | 名稱           | 類型                 | 描述                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | 點選            | 靜態手勢       | 一根手指觸碰螢幕後提起手指。                                            |
-| 長按 | 靜態手勢       | 一根手指觸碰螢幕後停在原地。                                      |
+| 按住不放 | 靜態手勢       | 一根手指觸碰螢幕後停在原地。                                      |
 | 滑動          | 操作手勢 | 一或多根手指觸碰螢幕後，再往同一個方向移動。                   |
 | Swipe          | 操作手勢 | 一或多根手指觸碰螢幕後，再往同一個方向短距離移動。  |
 | 轉動           | 操作手勢 | 二或多根手指輕觸螢幕後，往順時鐘或逆時鐘方向弧形移動。 |
@@ -231,7 +231,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 | [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)               | 當指標離開元素的界限區域時就會發生。  |
 | [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)           | 當觸控點異常遺失時就會發生。               |
 | [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)     | 若有另一個元素採用指標擷取時就會發生。    |
-| [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | 當滑鼠滾輪的差異值變更時發生。         |
+| [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | 發生于滑鼠滾輪的差異值變更以及 pinched 觸控板時。         |
 | [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) | 提供所有指標事件的資料。                         |
 
  
@@ -414,6 +414,9 @@ End Sub
 
 您可以使用操作事件來偵測互動 (例如拖曳、縮放及按住不放)。
 
+> [!NOTE]
+> 觸控板不會引發操作事件。 相反地，系統會針對觸控板輸入引發指標事件。
+
 以下是操作事件及其相關事件引數的清單。
 
 | 事件或類別                                                                                               | 描述                                                                                                                               |
@@ -436,7 +439,8 @@ End Sub
 
 接著觸發一或多個 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件。 例如，當您觸碰螢幕，然後將手指劃過螢幕時。 最後，當互動完成時，就會引發 [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) 事件。
 
-**請注意**  如果您沒有觸控式螢幕監視器，您可以使用滑鼠和滑鼠滾輪介面，在模擬器中測試操作事件程式碼。
+> [!NOTE]
+> 如果您沒有觸控式螢幕監視器，您可以使用滑鼠和滑鼠滾輪介面，在模擬器中測試操作事件程式碼。
 
  
 

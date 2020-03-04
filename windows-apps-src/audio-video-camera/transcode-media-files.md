@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 38aef2779908e173712bda0f35ca9e0651fb786b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 58cc932ee8801835c44282de159900e3bb167e01
+ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683871"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256161"
 ---
 # <a name="transcode-media-files"></a>轉碼媒體檔案
 
@@ -41,7 +41,7 @@ ms.locfileid: "75683871"
 
 ### <a name="methods-for-creating-audio-only-encoding-profiles"></a>用於建立僅限音訊編碼設定檔的方法
 
-方法  |Profile  |
+方法  |設定檔  |
 ---------|---------|
 [**CreateAlac**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createalac)     |Apple 無失真音訊轉碼器 (ALAC) 音訊         |
 [**CreateFlac**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createflac)     |免費無失真音訊轉碼器 (FLAC) 音訊。         |
@@ -52,7 +52,7 @@ ms.locfileid: "75683871"
 
 ### <a name="methods-for-creating-audio--video-encoding-profiles"></a>用於建立音訊/視訊編碼設定檔的方法
 
-方法  |Profile  |
+方法  |設定檔  |
 ---------|---------|
 [**CreateAvi**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createavi) |AVI |
 [**CreateHevc**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createhevc) |高效率視訊編碼 (HEVC) 視訊，也稱為 H.265 視訊 |
@@ -70,7 +70,7 @@ ms.locfileid: "75683871"
 
 ## <a name="transcode-the-file"></a>檔案轉碼
 
-若要進行檔案的轉碼，請建立新的 [**MediaTranscoder**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding.MediaTranscoder) 物件並呼叫 [**MediaTranscoder.PrepareFileTranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.mediatranscoder.preparefiletranscodeasync) 方法。 傳入來源檔案、目的地檔案，然後進行設定檔的編碼。 再呼叫 [**PrepareTranscodeResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding.PrepareTranscodeResult) 物件上的 [**TranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 方法，該物件是從非同步轉碼作業傳回的物件。
+若要進行檔案的轉碼，請建立新的 [**MediaTranscoder**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding.MediaTranscoder) 物件並呼叫 [**MediaTranscoder.PrepareFileTranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.mediatranscoder.preparefiletranscodeasync) 方法。 傳入來源檔案、目的地檔案，然後進行設定檔的編碼。 再呼叫 [**PrepareTranscodeResult**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 物件上的 [**TranscodeAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding.PrepareTranscodeResult) 方法，該物件是從非同步轉碼作業傳回的物件。
 
 [!code-cs[TranscodeTranscodeFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeTranscodeFile)]
 
@@ -79,22 +79,5 @@ ms.locfileid: "75683871"
 您可以註冊事件在非同步進度 [**TranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 的進度變更時回應。 這些事件屬於通用 Windows 平台 (UWP) app 的非同步程式設計架構，而不是只屬於轉碼 API。
 
 [!code-cs[TranscodeCallbacks](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeCallbacks)]
-
-
-## <a name="encode-a-metadata-stream"></a>編碼中繼資料串流
-從 Windows 10 版本1803開始，您可以在轉碼媒體檔案時包含計時中繼資料。 不同于上述的影片轉碼範例，其使用內建的媒體編碼設定檔建立方法，例如[**MediaEncodingProfile. CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)，您必須手動建立中繼資料編碼設定檔，以支援您所編碼的元資料類型。
-
-建立中繼資料 incoding 設定檔的第一個步驟是建立一個 [**TimedMetadataEncodingProperties**] 物件，以描述要轉碼之中繼資料的編碼方式。 子類型屬性是指定元資料類型的 GUID。 每個元資料類型的編碼細節都是專屬的，而且不是由 Windows 提供。 在此範例中，會使用 GoPro 中繼資料（gprs）的 GUID。 接下來，呼叫[**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)來設定資料的二進位 blob，以描述元資料格式特有的資料流程格式。 接下來， **TimedMetadataStreamDescriptor**（ https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) 是從編碼屬性建立，而追蹤標籤和名稱則是允許應用程式讀取 endcoded 串流以識別中繼資料資料流程，並選擇性地在 UI 中顯示資料流程名稱。 
- 
-[!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
-
-建立**TimedMetadataStreamDescriptor**之後，您可以建立**MediaEncodingProfile**來描述要在檔案中編碼的影片、音訊和中繼資料。 在最後一個範例中建立的**TimedMetadataStreamDescriptor**會傳遞至這個範例 helper 函式，並藉由呼叫[**SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)來加入至**MediaEncodingProfile** 。
-
-[!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
- 
-
- 
-
-
 
 
