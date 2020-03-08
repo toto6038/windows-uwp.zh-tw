@@ -3,18 +3,18 @@ Description: 已封裝的傳統型應用程式可以使用各種不同的通用 
 title: UWP API 適用於已封裝的傳統型應用程式 (傳統型橋接器)
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 60a735af077d2121868e2613cb0f33e194e4330c
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302532"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852975"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>適用于桌面應用程式的 UWP Api
 
@@ -27,17 +27,17 @@ ms.locfileid: "75302532"
 | 約會、連絡人和電子郵件 | 目前不支援所有 Api。 |
 | 驗證和使用者識別 | 目前不支援所有 Api。 |
 | 背景工作 | 雖然桌面應用程式可以註冊背景工作，但只有完全 UWP 應用程式可以當做<i>背景工作執行</i>。 如需詳細資訊，請參閱 [GitHub 上的背景工作範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)。 |
-| [藍牙] | 目前不支援所有 Api。 |
+| Bluetooth | 目前不支援所有 Api。 |
 | 聊天和通話 | 桌面應用程式無法在行動裝置上執行，直到它們完全移植到 UWP 為止。 |
 | 協定啟用 | 合約僅能啟用完整的 UWP 應用程式。 |
 | 密碼編譯 | 目前不支援所有 Api。 |
 | 地理位置 | 目前不支援所有 Api。 |
 | 檔案和資料夾選擇器 | 具有身分識別的應用程式具有完整的檔案系統存取權，且不需要 UWP 選擇器。 |
-| [Media] | 目前不支援所有 Api。 |
+| 媒體 | 目前不支援所有 Api。 |
 | 服務點 | 目前不支援所有 Api。 |
 | 智慧卡 | 目前不支援所有 Api。 |
 | PlayReady | 目前不支援所有 Api。 |
-| [VPN] | 目前不支援所有 Api。 |
+| VPN | 目前不支援所有 Api。 |
 | 電子錢包 | 桌面應用程式無法在行動裝置上執行，直到它們完全移植到 UWP 為止。 |
 | XAML UI | Windows 10 版本1809和舊版不支援將 UWP XAML 內容裝載于桌面應用程式中。 從 Windows 10 版本1903開始，您可以使用[XAML Islands](xaml-islands.md)來裝載 UWP XAML 內容。  |
 
@@ -383,4 +383,4 @@ ms.locfileid: "75302532"
 
 ## <a name="next-steps"></a>後續步驟
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標籤](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在這裡](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)發問。

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 廣告, 指導方針, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: d64d5c544f6ec9e1356cc024e634286336dc9f91
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506792"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852568"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 
@@ -84,7 +84,7 @@ ms.locfileid: "77506792"
 
 <span id="interstitialbestpractices10" />
 
-## <a name="guidelines-for-interstitial-ads"></a>插播式廣告指南
+## <a name="guidelines-for-interstitial-ads"></a>插入式廣告指南
 
 巧妙地使用[插播式廣告](interstitial-ads.md)可以大幅提高您應用程式的收益，而不會對使用者滿意的產生負面影響。 當使用不當時，這類廣告會有完全相反的效果。
 
@@ -102,7 +102,7 @@ ms.locfileid: "77506792"
 
     * 重試關卡的額外時間。
 
-    * 自訂虛擬人偶的特色，例如刺青或帽子。
+    * 自訂虛擬人偶的功能，例如刺青或帽子。
 
 * 如果您的應用程式必須看完插播式影片廣告，請先提到這項規則，如此使用者才不會對按下關閉按鈕時所發生的錯誤訊息感到意外。
 
@@ -138,7 +138,7 @@ ms.locfileid: "77506792"
 
 * 在呼叫 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 前，請勿擷取超過 5 分鐘的插播式影片廣告。 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
 
-* 請勿對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 [觀看廣告以取得 *xxx*]，您應該在使用者這麼做之後提供 *xxx*。 要考慮的兩個選項︰
+* 請勿對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 [觀看廣告已取得 *xxx*]，您應該在使用者這麼做之後提供 *xxx*。 要考慮的兩個選項︰
 
     * 除非引發 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，否則不要包含該選項。
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10，uwp，azure ad 應用程式，aad，使用者，群組，多個使用者，多使用者
 ms.localizationpriority: medium
 ms.openlocfilehash: 41467f51e02f3cc700e3759f33d6fd6eea3ac7a6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260073"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852553"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>將使用者、群組和 Azure AD 應用程式新增至您的合作夥伴中心帳戶
 
@@ -48,7 +48,7 @@ ms.locfileid: "74260073"
     > 如果您選取一個以上的使用者來新增至您的合作夥伴中心帳戶，您必須為他們指派相同的角色或一組自訂許可權。 若要新增多個具有不同角色/權限的使用者，請針對每個角色或一組自訂權限重複下列步驟。
 4.  當您完成選取使用者時，請按一下 **\[新增選取的項目\]** 。
 5.  在 **\[角色\]** 區段中，指定所選使用者的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
-6.  按一下 **[儲存]** 。
+6.  Haga clic en **Guardar**.
 
 ### <a name="additional-methods-for-adding-users"></a>新增使用者的其他方法
 
@@ -71,7 +71,7 @@ ms.locfileid: "74260073"
 4.  如果您選取 **\[將這個使用者設為 Azure AD 中的全域管理員\]** 方塊，請輸入使用者需要復原其密碼時可以使用的電子郵件。
 5.  在 **\[群組成員資格\]** 區段中，選取任何您要讓新使用者隸屬的群組。
 6.  在 **\[角色\]** 區段中，指定使用者的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
-7.  按一下 **[儲存]** 。
+7.  Haga clic en **Guardar**.
 8.  在確認頁面上，您將會看見新使用者的登入資訊 (包括暫時密碼)。 請確定會記下此資訊，並將它提供給新的使用者，因為您在離開此頁面之後將無法存取該暫時密碼。
 
 
@@ -85,7 +85,7 @@ ms.locfileid: "74260073"
 1.  從 [**使用者**] 頁面（在 [**帳戶設定**] 下）選取 [**新增使用者**]，然後選擇 [**以電子郵件邀請使用者**]。
 1.  輸入一或多個電子郵件地址 (最多十個)，以逗號或分號分隔。
 2.  在 **\[角色\]** 區段中，指定使用者的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
-3.  按一下 **[儲存]** 。
+3.  Haga clic en **Guardar**.
 
 您邀請的使用者會取得電子郵件邀請來加入您的帳戶，而在您的 Azure AD 租用戶中將為其建立新的[來賓使用者](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)帳戶。 使用者必須接受邀請才能存取您的帳戶。
 
@@ -122,7 +122,7 @@ ms.locfileid: "74260073"
 
 3.  當您完成選取群組時，請按一下 **\[新增選取的項目\]** 。
 4.  在 **\[角色\]** 區段中，指定所選群組的[角色或自訂權限](set-custom-permissions-for-account-users.md)。 不論與個別帳戶相關聯的角色/許可權為何，群組的所有成員都能以您套用至群組的許可權存取您的合作夥伴中心帳戶。
-5.  按一下 **[儲存]** 。
+5.  Haga clic en **Guardar**.
 
 
 ### <a name="create-a-new-group-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account"></a>在您組織的目錄中建立新的群組帳戶，並將它新增至您的合作夥伴中心帳戶
@@ -135,7 +135,7 @@ ms.locfileid: "74260073"
 4.  指定群組的[角色或自訂權限](set-custom-permissions-for-account-users.md)。 不論與個別帳戶相關聯的角色/許可權為何，群組的所有成員都能以您套用至群組的許可權存取您的合作夥伴中心帳戶。
 5.  從出現的清單中選取要指派至新群組的使用者。 您可以使用搜尋方塊來搜尋特定的使用者。
 6.  完成選取使用者時，按一下 **\[新增選取的項目\]** ，將其新增到新群組。
-7.  按一下 **[儲存]** 。
+7.  Haga clic en **Guardar**.
 
 
 <span id="azure-ad-applications" />
@@ -155,7 +155,7 @@ ms.locfileid: "74260073"
 
 4.  當您完成選取 Azure AD 應用程式時，請按一下 **\[新增選取的項目\]** 。
 5.  在 **\[角色\]** 區段中，指定所選 Azure AD 應用程式的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
-6.  按一下 **[儲存]** 。
+6.  Haga clic en **Guardar**.
 
 
 ### <a name="create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account"></a>在您組織的目錄中建立新的 Azure AD 應用程式帳戶，並將它新增至您的合作夥伴中心帳戶
@@ -163,14 +163,14 @@ ms.locfileid: "74260073"
 如果您想要將合作夥伴中心存取權授與全新 Azure AD 應用程式帳戶，您可以在 [**使用者**] 區段中建立一個。 請注意，這會在您組織的目錄中建立新的帳戶，而不是在您的合作夥伴中心帳戶中。
 
 > [!TIP]
-> 如果您主要是使用此 Azure AD 應用程式進行合作夥伴中心驗證，且不需要使用者直接存取，您可以輸入任何有效的 [**回復 URL** ] 和 [**應用程式識別碼 URI**] 位址，只要這些值不是由任何其他 Azure 所使用目錄中的 AD 應用程式。
+> 如果您主要是使用此 Azure AD 應用程式進行合作夥伴中心驗證，而且不需要使用者直接存取，您可以為 [**回復 URL** ] 和 [**應用程式識別碼 URI**] 輸入任何有效的位址，前提是您目錄中的任何其他 Azure AD 應用程式都不會使用這些值。
 
 1.  從 [**使用者**] 頁面（在 [**帳戶設定**] 下）選取 [**新增 Azure AD 應用程式**]。
 2.  在下一個頁面上，選取 [**新增 Azure AD 應用程式**]。
 3.  輸入新的 Azure AD 應用程式的 **\[回覆 URL\]** 。 使用者可以從此 URL 登入並使用您的 Azure AD 應用程式 (也稱為 App URL 或登入 URL)。 **回覆 URL** 長度不可超過 256 個字元，而且在您的目錄中必須是唯一的。
 4.  輸入新 Azure AD 應用程式的 [**應用程式識別碼 URI**]。 這是 Azure AD 應用程式的邏輯識別碼，是在傳送單一登入要求至 Azure AD 時提供。 請注意，在目錄中的每個 Azure AD 應用程式的 **\[應用程式識別碼 URI\]** 必須是唯一的，且長度不能超過 256 個字元。 如需**應用程式識別碼 URI** 的詳細資訊，請參閱[整合應用程式與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。
 5.  在 **\[角色\]** 區段中，指定 Azure AD 應用程式的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
-6.  按一下 **[儲存]** 。
+6.  Haga clic en **Guardar**.
 
 新增或建立 Azure AD 應用程式之後，您可以返回 **\[使用者\]** 區段，然後選取應用程式名稱以檢閱應用程式的設定，包括租用戶識別碼、用戶端識別碼、回覆 URL，以及 App 識別碼 URI。
 
@@ -210,7 +210,7 @@ ms.locfileid: "74260073"
     -   對於 **\[Azure AD 應用程式\]** ，您可以為 **\[回覆 URL\]** 或 **\[應用程式識別碼 URI\]** 輸入新值。
     請記住，這些變更會在您組織的目錄中，以及您的合作夥伴中心帳戶中進行。
 3.  如需合作夥伴中心存取的相關變更，請選取或取消選取您要套用的角色，或選取 [**自訂許可權**] 並進行所需的變更。 這些變更只會影響合作夥伴中心的存取權，且不會變更貴組織 Azure AD 租使用者內的任何許可權。
-3.  按一下 **[儲存]** 。
+3.  Haga clic en **Guardar**.
 
 
 ## <a name="view-history-for-account-users"></a>檢視帳戶使用者歷程記錄

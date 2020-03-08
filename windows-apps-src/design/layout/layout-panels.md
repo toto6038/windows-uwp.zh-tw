@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340128"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853200"
 ---
 # <a name="layout-panels"></a>版面配置面板
 
@@ -182,7 +182,7 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 
 您可以使用 **Auto** 或星號調整來分配欄內或列內的空間。 您可以使用自動調整大小，讓 UI 元素調整大小以符合它們的內容或父容器。 您也可以使用自動調整大小搭配方格的列與欄。 若要使用自動調整大小，請將 UI 元素的 Height 和/或 Width 設定為 **Auto**。
 
-您使用等比例調整大小 (亦稱為「星號調整」)，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML 中，星號值會表示\*為（或針對加權星形調整大小，則為*n* \* ）。 例如，若要指定一個資料行的寬度高於2個數據行版面配置中的第二個數據行，請\*在[**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)元素\*中使用 "5" 和 "" 作為[**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width)屬性。
+您使用等比例調整大小 (亦稱為「星號調整」)，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML 中，星號值會以 \* 表示（或針對加權星形調整大小為*n*\*）。 例如，若要指定一個資料行的寬度高於2個數據行配置中的第二個數據行，請針對[**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)元素中的[**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width)屬性使用 "5\*" 和 "\*"。
 
 這個範例會在具有 4 欄的 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 中結合固定、自動和等比例調整大小。
 
@@ -243,7 +243,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 在這個範例中，每個欄中的列數上限為 3。 由於藍色矩形會橫跨 2 列，因此第一欄只會包含 2 個項目 (紅色和藍色矩形)。 綠色矩形接著會換行到下一欄的頂端。
 
-## <a name="canvas"></a>畫布
+## <a name="canvas"></a>Canvas
 
 [  **Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 面板使用固定座標點定位子元素且不支援流暢版面配置。 您可以在每個元素上設定 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 附加屬性，以指定個別子元素上的點。 在版面配置的 [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 階段，父項 Canvas 會從其子系讀取這些附加屬性值。
 
@@ -264,7 +264,7 @@ Canvas 不會針對其子項進行任何調整大小的動作。 每個元素都
 
 結果看起來就像這樣。
 
-![畫布](images/layout-panel-canvas.png)
+![Canvas](images/layout-panel-canvas.png)
 
 請謹慎使用 Canvas 面板。 雖然在某些情況下，能夠精確控制 UI 元素的位置是非常方便的，但是，固定位置的版面配置面板會導致 UI 區域較無法適應整體應用程式視窗大小變更。 當裝置方向變更、分割應用程式視窗、變更監視器，以及一些其他使用者案例，都可能需要調整應用程式視窗的大小。
 

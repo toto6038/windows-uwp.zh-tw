@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 679dde6802a2c0d27444fbcda040f2ba19039457
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259264"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852792"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>透過 Microsoft Store Services SDK 與客戶互動
 
@@ -59,7 +59,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
 
 透過 MSI 安裝程式安裝 Microsoft Store Services SDK：
 
-1.  關閉所有 Visual Studio 執行個體。
+1.  關閉 Visual Studio 的所有執行個體。
 
 2. 如果您先前已安裝 Microsoft Store Engagement and Monetization SDK、通用廣告用戶端 SDK 或 Ad Mediator 擴充功能，請立即將這些 SDK 解除安裝。 您也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊 SDK 版本：
     ```console
@@ -82,7 +82,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
 
 透過 NuGet 安裝 Microsoft Store Services SDK 程式庫：
 
-1.  關閉所有 Visual Studio 執行個體。
+1.  關閉 Visual Studio 的所有執行個體。
 
 2. 如果您先前已安裝 Microsoft Store Engagement and Monetization SDK、通用廣告用戶端 SDK 或 Ad Mediator 擴充功能，請立即將這些 SDK 解除安裝。 您也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊 SDK 版本：
     ```console
@@ -113,7 +113,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
 
 透過 MSI 安裝程式或 NuGet 安裝 Microsoft Store Services SDK 之後，請依照下列指示在您的 UWP 專案中參考 SDK 組件。
 
-1. 在 Visual Studio 中，開啟您的專案。
+1. 在 Visual Studio 中開啟專案。
     > [!NOTE]
     > 如果您的專案是以**任何 CPU** 為目標的 JavaScript App，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。
 
