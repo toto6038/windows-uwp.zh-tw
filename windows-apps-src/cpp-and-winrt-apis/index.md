@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
 ms.openlocfilehash: 61a54edc236f94bec44420471a176a2014fcdb0d
-ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329569"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852485"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -34,7 +34,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 
 ### <a name="topics-about-cwinrt"></a>C++/WinRT 相關主題
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 | - | - |
 | [C++/WinRT 的簡介](intro-to-using-cpp-with-winrt.md) | C++/ WinRT&mdash;Windows 執行階段 API 的標準 C++ 語言投影的簡介。 |
 | [開始使用 C++/WinRT](get-started.md) | 為了加快使用 C + + / WinRT，本主題逐步解說一個簡單的程式碼範例。 |
@@ -72,7 +72,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 
 ### <a name="topics-about-the-c-language"></a>C++ 語言相關主題
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 | - | - |
 | [值類別，以及其參考](cpp-value-categories.md) | 本主題說明 C++ 中存在的各類值。 您必定聽說左值和右值，但還有其他種類的值。 |
 

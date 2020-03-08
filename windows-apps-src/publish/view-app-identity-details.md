@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 07c2d3308d204d37e246a9a56c0a7203a1340dc0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259884"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853255"
 ---
 # <a name="view-app-identity-details"></a>檢視應用程式身分識別詳細資料
 
@@ -29,7 +29,7 @@ ms.locfileid: "74259884"
 -   **封裝/身分識別/發行者**
 -   **封裝/屬性/PublisherDisplayName**
 
-如需詳細資訊，請參閱[套件資訊清單結構描述參考**中的** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)Identity[](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)。
+如需詳細資訊，請參閱[套件資訊清單結構描述參考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
 這些元素共同宣告您的 app 身分識別，建立所有其套件所屬的「套件系列」。 個別套件會有額外的詳細資料，例如架構和版本。
 
@@ -38,8 +38,8 @@ ms.locfileid: "74259884"
 
 下列值為參考您 app 套件系列的其他值，但是沒有包含在資訊清單中。
 
--   **套件系列名稱 (PFN)** ：使用特定的 Windows API 時會使用這個值。
--   **套件 SID**：您需要此值以傳送 WNS 通知到您的 app。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
+-   **套件系列名稱（PFN）** ：這個值會與特定 Windows Api 搭配使用。
+-   **封裝 SID**：您將需要此值，才能將 WNS 通知傳送到您的應用程式。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 
 
 ## <a name="link-to-your-apps-listing"></a>App 清單連結

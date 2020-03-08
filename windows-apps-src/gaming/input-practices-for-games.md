@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 輸入
 ms.localizationpriority: medium
 ms.openlocfilehash: 8235b2c2029b2bb3b9351263a3c908879b4beba9
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684984"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853049"
 ---
 # <a name="input-practices-for-games"></a>遊戲的輸入練習
 
@@ -166,7 +166,7 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 
 ## <a name="tracking-users-and-their-devices"></a>追蹤使用者及其裝置
 
-所有的輸入裝置皆與[使用者](https://docs.microsoft.com/uwp/api/windows.system.user)相關聯，如此他們的身分識別便可連結到其遊戲、成就、設定變更和其他活動。 使用者可以隨意登入或登出，而且通常不同的使用者可在前一名使用者登出後，從與系統連線的輸入裝置登入。當使用者登入或登出時，會引發 [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) 事件。 您可以登錄此事件的事件處理常式來追蹤玩家，以及其正在使用的裝置。
+所有的輸入裝置皆與[使用者](https://docs.microsoft.com/uwp/api/windows.system.user)相關聯，如此他們的身分識別便可連結到其遊戲、成就、設定變更和其他活動。 使用者可以隨意登入或登出，而且通常不同的使用者可在前一名使用者登出後，從與系統連線的輸入裝置登入。當使用者登入或登出，會引發 [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) 事件。 您可以登錄此事件的事件處理常式來追蹤玩家，以及其正在使用的裝置。
 
 使用者識別也是輸入裝置與其對應 [UI 瀏覽控制器](ui-navigation-controller.md)建立關聯的方式。
 
@@ -294,7 +294,7 @@ if (buttonArrangement == buttonSelection)
 }
 ```
 
-可套用這個公式以其狀態的任何排列來測試任意數目的按鈕。
+可套用此公式測試任何排列狀態中的任意按鈕數。
 
 ## <a name="get-the-state-of-the-battery"></a>取得電池的狀態
 
@@ -315,7 +315,7 @@ if (buttonArrangement == buttonSelection)
 
 如果您的程式碼根據電池剩餘容量的百分比執行某個動作 (例如繪製 UI)，請確認它符合上述值。 例如，如果您想要在電池電力不足時警告玩家，則在到達 10% 時發出警告。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Windows. System. User 類別](https://docs.microsoft.com/uwp/api/windows.system.user)
 * [Windows IGameController 介面](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
