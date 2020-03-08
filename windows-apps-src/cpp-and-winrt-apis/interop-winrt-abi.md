@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, 互通性, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: 91602c75cdaddc325407529ab4d231db46ecca39
-ms.sourcegitcommit: 412bf5bb90e1167d118699fbf71d0e6864ae79bd
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72586712"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853265"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>C++/WinRT 與 ABI 之間的互通性
 
@@ -308,7 +308,7 @@ static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISa
 |-|-|-|
 | 從 **winrt::Sample** 擷取 **ISample\*** | `p = reinterpret_cast<ISample*>(get_abi(s));` | s  仍然擁有物件。 |
 | 從 **winrt::Sample** 中斷連結 **ISample\*** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | s  不再擁有物件。 |
-| 將 **ISample\***  轉送至新的 **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | s  會取得物件的擁有權。 |
+| 將 **ISample\*** 轉送至新的 **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | s  會取得物件的擁有權。 |
 | 將 **ISample\*** 設定到 **winrt::Sample** 中 | `*put_abi(s) = p;` | s  會取得物件的擁有權。 s  先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
 | 將 **ISample\*** 接收到 **winrt::Sample** 中 | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | s  會取得物件的擁有權。 s  先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
 | 取代 **winrt::Sample** 中的 **ISample\*** | `attach_abi(s, p);` | s  會取得物件的擁有權。 s  先前擁有的物件會釋出。 |

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, 事件
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fb9b98ec362b59ad2593bbce24654f1dcfc7638
-ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830789"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853278"
 ---
 # <a name="author-events-in-cwinrt"></a>以 C++/WinRT 撰寫事件
 
@@ -287,7 +287,7 @@ logCallback(L"Hello, World!");
 
 我們建議您將事件 (不是委派) 當作函式參數傳遞。 [**winrt::event**](/uwp/cpp-ref-for-winrt/event)的 **add** 函式是一個例外狀況，因為您必須在該情況下傳遞委派。 此指導方針的原因是因為委派可以在不同的 Windows 執行階段語言中採用不同的形式 (就它們支援一個或多個用戶端註冊而論)。 事件與其多個訂閱者模型，構成一個更容易預測且一致的選項。
 
-事件處理常式委派的簽章應該包含兩個參數：*sender* (**IInspectable**) 和 *args* (某些事件引數類型，例如 [ **RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs))。
+事件處理常式委派的簽章應該包含兩個參數：*sender* (**IInspectable**) 和 *args* (某些事件引數類型，例如 [**RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs))。
 
 請注意，如果您要設計內部 API，不一定要套用這些指導方針。 雖然經過一段時間，內部 API 通常會變成公開的。
 

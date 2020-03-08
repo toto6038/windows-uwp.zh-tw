@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "66364113"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853514"
 ---
 # <a name="xaml-theme-resources"></a>XAML 佈景主題資源
 
@@ -65,7 +65,7 @@ XAML 架構提供一組已命名的 [Color](/uwp/api/Windows.UI.Color) 資源，
 
 此表格列出索引鍵、簡單名稱，以及代表色彩的字串 (使用 \#aarrggbb 格式)，適用於 XAML 架構提供的 "Light" 和 "Dark" 資源。 索引鑰可用來參考應用程式中的資源。 「簡單的亮色調/暗色調名稱」是用來做為筆刷命名慣例的一部分 (稍後將會說明)。
 
-| 索引鍵                             | 簡單的亮色調/暗色調名稱 | 亮      | 暗       |
+| 按鍵                             | 簡單的亮色調/暗色調名稱 | 輕量型      | 深色       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -94,21 +94,21 @@ XAML 架構提供一組已命名的 [Color](/uwp/api/Windows.UI.Color) 資源，
 
 :::row:::
     :::column:::
-        #### Light theme
+        #### <a name="light-theme"></a>淺色佈景主題
     :::column-end:::
     :::column:::
-        #### Dark theme
+        #### <a name="dark-theme"></a>深色佈景主題
     :::column-end:::
 :::row-end:::
 
-#### <a name="base"></a>Base
+#### <a name="base"></a>基本
 
 :::row:::
     :::column:::
-        ![The base light theme](images/themes/light-base.png)
+        ![基本淺色佈景主題](images/themes/light-base.png)
     :::column-end:::
     :::column:::
-        ![The base dark theme](images/themes/dark-base.png)
+        ![基本深色佈景主題](images/themes/dark-base.png)
     :::column-end:::
 :::row-end:::
 
@@ -116,21 +116,21 @@ XAML 架構提供一組已命名的 [Color](/uwp/api/Windows.UI.Color) 資源，
 
 :::row:::
     :::column:::
-        ![The alt light theme](images/themes/light-alt.png)
+        ![Alt 淺色佈景主題](images/themes/light-alt.png)
     :::column-end:::
     :::column:::
-        ![The alt dark theme](images/themes/dark-alt.png)
+        ![Alt 深色佈景主題](images/themes/dark-alt.png)
     :::column-end:::
 :::row-end:::
 
-#### <a name="list"></a>清單
+#### <a name="list"></a>List
 
 :::row:::
     :::column:::
-        ![The list light theme](images/themes/light-list.png)
+        ![清單淺色佈景主題](images/themes/light-list.png)
     :::column-end:::
     :::column:::
-        ![The list dark theme](images/themes/dark-list.png)
+        ![清單深色佈景主題](images/themes/dark-list.png)
     :::column-end:::
 :::row-end:::
 
@@ -138,10 +138,10 @@ XAML 架構提供一組已命名的 [Color](/uwp/api/Windows.UI.Color) 資源，
 
 :::row:::
     :::column:::
-        ![The chrome light theme](images/themes/light-chrome.png)
+        ![Chrome 淺色佈景主題](images/themes/light-chrome.png)
     :::column-end:::
     :::column:::
-        ![The chrome dark theme](images/themes/dark-chrome.png)
+        ![Chrome 深色佈景主題](images/themes/dark-chrome.png)
     :::column-end:::
 :::row-end:::
 
@@ -151,12 +151,12 @@ XAML 架構提供一組已命名的 [Color](/uwp/api/Windows.UI.Color) 資源，
 
 此表格列出全系統的色彩，XAML 可提供來做為衍生自 Windows 系統調色盤的資源物件。 [輕鬆存取名稱] 欄顯示如何在 Windows 設定 UI 中標示色彩。 [簡單的高對比名稱] 欄是簡單的說明，描述色彩如何套用到 XAML 通用控制項的方式。 它是用來做為筆刷命名慣例的一部分 (稍後將會說明)。 [初始預設值] 欄顯示若系統完全不是以高對比執行時您會獲得的值。
 
-| 索引鍵                           | 輕鬆存取名稱            | 簡單的高對比名稱 | 初始預設值 |
+| 按鍵                           | 輕鬆存取名稱            | 簡單的高對比名稱 | 初始預設值 |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
 | SystemColorButtonFaceColor    | **按鈕文字** (背景)   | 背景               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **按鈕文字** (前景)   | 前景               | \#FF000000      |
-| SystemColorGrayTextColor      | **無效的文字**              | 已停用                 | \#FF6D6D6D      |
-| SystemColorHighlightColor     | **選取的文字** (背景) | 醒目顯示                | \#FF3399FF      |
+| SystemColorGrayTextColor      | **無效的文字**              | 停用                 | \#FF6D6D6D      |
+| SystemColorHighlightColor     | **選取的文字** (背景) | 反白顯示                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **選取的文字** (前景) | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **超連結**                 | Hyperlink                | \#FF0066CC      |
 | SystemColorWindowColor        | **背景**                 | PageBackground           | \#FFFFFFFF      |
@@ -177,7 +177,7 @@ Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存�
 
 ### <a name="theme-dependent-brushes"></a>佈景主題相依筆刷
 
-前述各節中顯示的色彩資源可用來設定系統佈景主題資源字典中 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 資源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 屬性。 您可以使用筆刷資源，將色彩套用到 XAML 元素。 適用於筆刷資源的索引鍵會遵循下列命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如， `SystemControlBackroundAltHighBrush`。
+前述各節中顯示的色彩資源可用來設定系統佈景主題資源字典中 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 資源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 屬性。 您可以使用筆刷資源，將色彩套用到 XAML 元素。 適用於筆刷資源的索引鍵會遵循下列命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackroundAltHighBrush`。
 
 讓我們看看如何在執行階段決定此筆刷的色彩值。 在 "Light" 和 "Dark" 資源字典中，此筆刷的定義如下：
 
@@ -191,8 +191,8 @@ Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存�
 
 | 佈景主題        | 色彩的簡單名稱 | 色彩資源             | 執行階段值                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
-| 亮        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
-| 暗         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
+| 輕量型        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
+| 深色         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
 | HighContrast | 背景        | SystemColorButtonFaceColor | 設定中針對按鈕背景指定的色彩。 |
 
 您可以使用 `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` 命名配置來決定要將哪一個筆刷套用到您自己的 XAML 元素。
