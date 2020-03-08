@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258182"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853138"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>螢幕大小與中斷點
 
@@ -40,21 +40,21 @@ UWP app 可在執行 Windows 10，包括手機、平板電腦、桌面、電視�
 </thead>
 <tbody>
 <tr class="even">
-<td style="vertical-align:top;">小型</td>
+<td style="vertical-align:top;">Small</td>
 <td style="vertical-align:top;">640px 或更少</td>
 <td style="vertical-align:top;">4&quot; 到 6&quot;；20&quot; 到 65&quot;</td>
 <td style="vertical-align:top;">手機、電視</td>
 <td style="vertical-align:top;">320x569、360x640、480x854</td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;">中等</td>
+<td style="vertical-align:top;">中</td>
 <td style="vertical-align:top;">641px 到 1007px</td>
 <td style="vertical-align:top;">7&quot; 到 12&quot;</td>
 <td style="vertical-align:top;">平板手機、平板電腦</td>
 <td style="vertical-align:top;">960x540</td>
 </tr>
 <tr class="even">
-<td style="vertical-align:top;">大型</td>
+<td style="vertical-align:top;">Large</td>
 <td style="vertical-align:top;">1008px 或更大像素</td>
 <td style="vertical-align:top;">13&quot; 及更大</td>
 <td style="vertical-align:top;">電腦、膝上型電腦、Surface Hub</td>
@@ -76,7 +76,7 @@ UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝�
 
 ## <a name="general-recommendations"></a>一般建議
 
-### <a name="small"></a>小型
+### <a name="small"></a>Small
 - 設定左右視窗邊界為 12px，以在應用程式視窗左右邊緣建立視覺區隔。
 - 將[應用程式列](../controls-and-patterns/app-bars.md) 固定在視窗底部以改善存取性。
 - 一次使用 1 個欄位/區域。
@@ -84,7 +84,7 @@ UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝�
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以重疊模式放置，以節省螢幕空間。
 - 如果您使用[主要詳細資料模式](../controls-and-patterns/master-details.md)，請使用堆疊展示模式，以節省螢幕空間。
 
-### <a name="medium"></a>中等
+### <a name="medium"></a>中
 - 設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。
 - 將[應用程式列](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。
 - 使用最多 2 個欄位/區域。
@@ -92,7 +92,7 @@ UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝�
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以窄條模式放置，以便讓圖示帶狀線永遠顯示。
 - 請考慮進一步自訂[電視體驗](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)。
 
-### <a name="large"></a>大型
+### <a name="large"></a>Large
 - 設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。
 - 將[應用程式列](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。
 - 使用最多 3 個欄位/區域。

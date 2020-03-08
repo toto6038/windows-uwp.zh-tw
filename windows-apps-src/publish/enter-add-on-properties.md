@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 附加元件, 屬性, 訂閱期間, 產品存留期, 內容類型, iap, App 內購買, 應用程式內產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 59c7e5b2c9ceea534f530bc6880b32a808c91e70
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787035"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852507"
 ---
 # <a name="enter-add-on-properties"></a>輸入附加元件屬性
 
@@ -29,17 +29,17 @@ ms.locfileid: "63787035"
 
 ## <a name="product-lifetime"></a>產品存留期
 
-如果您選取的產品類型是 **\[耐久性\]**，則此處會顯示 **\[產品存留期\]**。 耐久型附加元件的預設 [產品存留期] 為 [永久]，這表示附加元件永久有效。 如果您想，您可以變更**產品的壽命期間**，讓附加元件到期時間設定的持續時間 （與選項 1-365 天）。
+如果您選取的產品類型是 **\[耐久性\]** ，則此處會顯示 **\[產品存留期\]** 。 耐久型附加元件的預設 [產品存留期] 為 [永久]，這表示附加元件永久有效。 如果您想要的話，可以變更**產品存留期**，讓附加元件在設定的持續時間之後過期（使用1-365 天的選項）。
 
 
 ## <a name="quantity"></a>數量
 
-如果您選取的產品類型是 **\[市集管理的消費性產品\]**，則此處會顯示 **\[數量\]**。 您將需要輸入 1 到 1000000 之間的數字。 當客戶取得您的附加元件時，會將此數量授與客戶，而且當 App 報告客戶取用的附加元件時，市集將會追蹤餘額。
+如果您選取的產品類型是 **\[市集管理的消費性產品\]** ，則此處會顯示 **\[數量\]** 。 您將需要輸入 1 到 1000000 之間的數字。 當客戶取得您的附加元件時，會將此數量授與客戶，而且當 App 報告客戶取用的附加元件時，市集將會追蹤餘額。
 
 
 ## <a name="subscription-period"></a>訂閱期間
 
-如果您選取的產品類型是 **\[訂閱\]**，則此處會顯示 **\[訂閱期間\]**。 選擇一個選項，來指定向客戶收取訂閱費用的頻率。 預設選項是**每月**，但您也可以選取**3 個月**， **6 個月**，**每年**，或**24 個月**.
+如果您選取的產品類型是 **\[訂閱\]** ，則此處會顯示 **\[訂閱期間\]** 。 選擇一個選項，來指定向客戶收取訂閱費用的頻率。 預設選項是 [**每月**]，但您也可以選取**3 個月**、 **6 個月**、**每年**或**24 個月**。
 
 > [!IMPORTANT]
 > 您的附加元件發行之後，您無法變更 **\[訂閱期間\]** 選項。
@@ -47,7 +47,7 @@ ms.locfileid: "63787035"
 
 ## <a name="free-trial"></a>免費試用
 
-如果您選取的產品類型是 **\[訂閱\]**，則此處也會顯示 **\[免費試用\]**。 預設選項是 **\[無免費試用\]**。 如果您想要的話，也可以讓客戶免費使用附加元件一段指定時間 (**1 星期**或 **1 個月**)。 
+如果您選取的產品類型是 **\[訂閱\]** ，則此處也會顯示 **\[免費試用\]** 。 預設選項是 **\[無免費試用\]** 。 如果您想要的話，也可以讓客戶免費使用附加元件一段指定時間 (**1 星期**或 **1 個月**)。 
 
 > [!IMPORTANT]
 > 您的附加元件發行之後，您無法變更 **\[免費試用\]** 選項。
@@ -81,23 +81,23 @@ ms.locfileid: "63787035"
 
 您可以選擇為您所提交的每個附加元件提供最多 10 個關鍵字 (字元數上限為 30)。 接著，您的 App 可以查詢符合這些單字的附加元件。 此功能可讓您在 App 中建置能夠載入附加元件的畫面，而不必直接在 App 的程式碼中指定產品識別碼。 之後，您可以隨時變更附加元件的關鍵字，不需要變更 App 中的程式碼或重新提交 App。
 
-若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) 屬性  (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，則使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 屬性)。
+若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/Windows.Services.Store) 屬性 (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，則使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 屬性)。
 
 > [!NOTE]
-> 關鍵字不適用於在 Windows 8 和 Windows 8.1 為目標的封裝中使用。
+> 關鍵字不適用於以 Windows 8 和 Windows 8.1 為目標的套件。
 
 <span id="custom-developer-data" />
 
 ### <a name="custom-developer-data"></a>自訂開發人員資料
 
-您最多可輸入 3000 個字元在 **\[自訂開發人員資料\]** 欄位中 (舊稱為 **「標記」**)，提供應用程式內產品的額外內容。 更常見的狀況是使用 XML 字串形式，但您可以在此欄位中輸入任何內容。 接著，您的應用程式可以查詢此欄位以讀取其內容（雖然應用程式無法編輯資料並傳回變更）。
+您最多可輸入 3000 個字元在 **\[自訂開發人員資料\]** 欄位中 (舊稱為 **「標記」** )，提供應用程式內產品的額外內容。 更常見的狀況是使用 XML 字串形式，但您可以在此欄位中輸入任何內容。 接著，您的應用程式可以查詢此欄位以讀取其內容（雖然應用程式無法編輯資料並傳回變更）。
 
 例如，假設您有一個遊戲，而您要銷售附加元件，讓客戶存取其他關卡。 使用 **\[自訂開發人員資料\]** 欄位，應用程式可以查詢以查看客戶擁有此附加元件時可以使用哪些關卡。 您可以隨時更新附加元件的 **\[自訂開發人員資料\]** 欄位中的資訊，然後發行附加元件的更新提交，藉以調整此值 (在此案例中為包含的關卡)，而不必變更 App 中的程式碼或重新提交 App。
 
-若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) 屬性。 (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，則使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 屬性)。
+若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/Windows.Services.Store) 屬性。 (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，則使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 屬性)。
 
 > [!NOTE]
-> **自訂開發人員資料**欄位不適用於在 Windows 8 和 Windows 8.1 為目標的封裝中使用。
+> **自訂開發人員資料**欄位不能用於以 Windows 8 和 Windows 8.1 為目標的套件。
 
  
 

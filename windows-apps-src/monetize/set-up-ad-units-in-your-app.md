@@ -1,19 +1,19 @@
 ---
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: 瞭解如何將應用程式識別碼和 ad 單位識別碼值從合作夥伴中心新增至您的應用程式，然後再將應用程式提交至存放區。
-title: 在您的 App 中設定廣告單元
+title: 在您的應用程式中設定廣告單元
 ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 廣告單元, 測試
 ms.localizationpriority: medium
 ms.openlocfilehash: c7bafdc7d21814a03d6f7da7132d8017d7f238e5
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506721"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852567"
 ---
-# <a name="set-up-ad-units-in-your-app"></a>在您的 App 中設定廣告單元
+# <a name="set-up-ad-units-in-your-app"></a>在您的應用程式中設定廣告單元
 
 >[!WARNING]
 > 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)

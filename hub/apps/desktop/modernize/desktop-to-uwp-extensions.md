@@ -3,17 +3,17 @@ Description: 您可以透過預先定義的方式，使用延伸模組來將您�
 title: 使用桌面橋接器將現有的桌面應用程式現代化
 ms.date: 04/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302592"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852445"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將桌面應用程式與 Windows 10 和 UWP 整合
 
@@ -60,9 +60,9 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration)找到完整的結構描述參考。
 
-|名稱 | 說明 |
+|名稱 | 描述 |
 |-------|-------------|
-|分類 |總是 ``windows.desktopAppMigration``。
+|類別 |總是 ``windows.desktopAppMigration``。
 |AumID |您已封裝應用程式之應用程式使用者模型識別碼。 |
 |ShortcutPath |啟動您傳統型版本應用程式之 .lnk 檔案的路徑。 |
 
@@ -120,9 +120,9 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.fileTypeAssociation``。
+|類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織和群組檔案類型。 名稱必須是不含空格的所有小寫字元。 |
 |MigrationProgId |程式[設計識別碼（ProgID）](https://docs.microsoft.com/windows/desktop/shell/fa-progids) ，描述您要從中繼承檔案關聯的桌面應用程式的應用程式、元件和版本。|
 
@@ -179,9 +179,9 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.fileTypeAssociation``。
+|類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 | 檔案類型關聯的名稱。 您可以使用此名稱來組織和群組檔案類型。 名稱必須是不含空格的所有小寫字元。   |
 |FileType |您應用程式支援的檔案副檔名。 |
 
@@ -240,14 +240,14 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 | 總是 ``windows.fileTypeAssociation``。
+|類別 | 總是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織和群組檔案類型。 名稱必須是不含空格的所有小寫字元。 |
 |動詞 |在檔案總管操作功能表中出現的名稱。 此字串可使用 ```ms-resource``` 進行當地語系化。|
 |Id |指令動詞的唯一識別碼。 如果您的應用程式是 UWP 應用程式，這會傳遞至您的應用程式做為其啟用事件引數的一部分，讓它可以適當地處理使用者的選取專案。 如果您的應用程式是完全信任的封裝應用程式，它會改為接收參數（請參閱下一個專案符號）。 |
-|Parameters |與指令動詞關聯的引數參數與值清單。 如果您的應用程式是完全信任的封裝應用程式，則在應用程式啟動時，這些參數會當做事件引數傳遞至應用程式。 您可以根據不同的啟用動詞來自訂應用程式的行為。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 如果您的應用程式是 UWP 應用程式，則無法傳遞參數。 應用程式會改為接收識別碼 (請參閱上一個項目符號)。|
-|Extended |指定是否僅在使用者以滑鼠右鍵按一下檔案顯示操作功能表前按住 **Shift** 鍵，才會顯示指令動詞。 這個屬性是選擇性的，而且預設為**False**的值（例如，一律顯示動詞）（如果未列出）。 您會針對每個動詞個別指定此行為 (不包括「開啟」，其一律設定為 **False**)。|
+|參數 |與指令動詞關聯的引數參數與值清單。 如果您的應用程式是完全信任的封裝應用程式，則在應用程式啟動時，這些參數會當做事件引數傳遞至應用程式。 您可以根據不同的啟用動詞來自訂應用程式的行為。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 如果您的應用程式是 UWP 應用程式，則無法傳遞參數。 應用程式會改為接收識別碼 (請參閱上一個項目符號)。|
+|擴充 |指定是否僅在使用者以滑鼠右鍵按一下檔案顯示操作功能表前按住 **Shift** 鍵，才會顯示指令動詞。 這個屬性是選擇性的，而且預設為**False**的值（例如，一律顯示動詞）（如果未列出）。 您會針對每個動詞個別指定此行為 (不包括「開啟」，其一律設定為 **False**)。|
 
 #### <a name="example"></a>範例
 
@@ -304,12 +304,12 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.fileTypeAssociation``。
+|類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織和群組檔案類型。 名稱必須是不含空格的所有小寫字元。 |
 |UseUrl |指出是否要直接從 URL 目標開啟檔案。 如果您未設定此值，您的應用程式嘗試使用 URL 來開啟檔案，會導致系統先在本機下載檔案。 |
-|Parameters | 選擇性參數。 |
+|參數 | 選擇性參數。 |
 |FileType |相關的檔案副檔名。 |
 
 #### <a name="example"></a>範例
@@ -370,17 +370,17 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |一律 ``windows.firewallRules``|
+|類別 |一律 ``windows.firewallRules``|
 |可執行檔 |您想要新增到防火牆例外清單的可執行檔名稱 |
-|Direction |指定規則為輸入或輸出規則 |
+|方向 |指定規則為輸入或輸出規則 |
 |IPProtocol |通訊協定 |
 |LocalPortMin |本機連接埠數字範圍中較低的數字。 |
 |LocalPortMax |本機連接埠數字範圍中最高的數字。 |
 |RemotePortMax |遠端連接埠數字範圍中較低的數字。 |
 |RemotePortMax |遠端連接埠數字範圍中最高的數字。 |
-|Profile |網路類型 |
+|設定檔 |網路類型 |
 
 #### <a name="example"></a>範例
 
@@ -430,9 +430,9 @@ ms.locfileid: "75302592"
 
 ```
 
-|名稱 | 說明 |
+|名稱 | 描述 |
 |-------|-------------|
-|分類 |總是 ``windows.loaderSearchPathOverride``。
+|類別 |總是 ``windows.loaderSearchPathOverride``。
 |FolderPath | 包含 dll 檔案的資料夾路徑。 指定相對於套件根資料夾的路徑。 您可以在一個延伸模組中指定最多 5 個路徑。 如果您想要系統在套件根資料夾中搜尋檔案，請使用空字串代表其中一個路徑。 不包含重複路徑，並請確定路徑不包含前置和結尾斜線或反斜線。 <br><br> 系統不會搜尋子資料夾，因此請務必明確列出包含要系統載入的 DLL 檔案的每個資料夾。|
 
 #### <a name="example"></a>範例
@@ -495,9 +495,9 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.fileTypeAssociation``。
+|類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織和群組檔案類型。 名稱必須是不含空格的所有小寫字元。 |
 |MultiSelectModel |請參閱下方。 |
 |FileType |相關的檔案副檔名。 |
@@ -570,9 +570,9 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.fileTypeAssociation``。
+|類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織和群組檔案類型。 名稱必須是不含空格的所有小寫字元。 |
 |FileType |相關的檔案副檔名。 |
 |Clsid   |您應用程式的類別識別碼。 |
@@ -632,9 +632,9 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.fileTypeAssociation``。
+|類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織和群組檔案類型。 名稱必須是不含空格的所有小寫字元。 |
 |FileType |相關的檔案副檔名。 |
 |Clsid   |您應用程式的類別識別碼。 |
@@ -697,12 +697,12 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.fileTypeAssociation``。
+|類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織和群組檔案類型。 名稱必須是不含空格的所有小寫字元。 |
 |FileType |相關的檔案副檔名。 |
-|value |一個有效的 [Kind 值](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
+|值 |一個有效的 [Kind 值](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### <a name="example"></a>範例
 
@@ -758,9 +758,9 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.fileTypeAssociation``。
+|類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織和群組檔案類型。 名稱必須是不含空格的所有小寫字元。 |
 |FileType |相關的檔案副檔名。 |
 |Clsid  |您應用程式的類別識別碼。 |
@@ -914,9 +914,9 @@ ms.locfileid: "75302592"
 
 ```
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.cloudfiles``。
+|類別 |總是 ``windows.cloudfiles``。
 |iconResource |圖示，表示您的雲端檔案提供者服務。 在 [檔案總管] 瀏覽窗格中，會顯示此圖示。  使用者選擇此圖示，以顯示您的雲端服務中的檔案。 |
 |CustomStateHandler Clsid |執行 CustomStateHandler 之應用程式的類別識別碼。 系統會使用這個類別 ID 要求雲端檔案的自訂狀態和欄。 |
 |ThumbnailProviderHandler Clsid |執行 ThumbnailProviderHandler 之應用程式的類別識別碼。 系統會使用這個類別 ID 要求雲端檔案的縮圖影像。 |
@@ -984,11 +984,11 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.protocol``。
+|類別 |總是 ``windows.protocol``。
 |名稱 |通訊協定的名稱。 |
-|Parameters |當應用程式啟動時，要當做事件引數傳遞至應用程式的參數和值清單。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 |
+|參數 |當應用程式啟動時，要當做事件引數傳遞至應用程式的參數和值清單。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 |
 
 ### <a name="example"></a>範例
 
@@ -1036,9 +1036,9 @@ ms.locfileid: "75302592"
 </Extension>
 ```
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.appExecutionAlias``。
+|類別 |總是 ``windows.appExecutionAlias``。
 |可執行檔 |叫用別名時欲啟動之可執行檔的相對路徑。 |
 |別名 |適用於您應用程式的簡短名稱。 其必須一律以副檔名「.exe」結尾。 針對套件中的每個應用程式，您僅可指定單一應用程式執行別名。 若有多個應用程式註冊相同的別名，系統將會叫用最後一個註冊的別名，因此請務必選擇絕對不會遭其他應用程式覆寫的唯一別名。
 |
@@ -1077,7 +1077,7 @@ ms.locfileid: "75302592"
 > [!NOTE]
 > 使用者至少要啟動您的應用程式一次，才能註冊此啟動工作。
 
-您的應用程式可以宣告多個啟動工作。 每個工作都是獨立啟動的。 所有啟動工作皆會顯示在「工作管理員」中的 **\[啟動\]** 索引標籤下方，且具有您在應用程式的資訊清單中指定的名稱，以及應用程式的圖示。 工作管理員會自動分析您工作的啟動影響。
+您的應用程式可以宣告多個啟動工作。 每個工作都是獨立啟動的。 所有啟動工作皆會顯示在「工作管理員」中的 **\[啟動\]** 索引標籤下方，且具有您在應用程式的資訊清單中指定的名稱，以及應用程式的圖示。 [工作管理員] 會自動分析您工作的啟動影響。
 
 使用者可以使用工作管理員手動停用您應用程式的啟動工作。 若使用者停用工作，您將無法以程式設計的方式重新啟用它。
 
@@ -1099,12 +1099,12 @@ ms.locfileid: "75302592"
 </Extension>
 ```
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.startupTask``。|
+|類別 |總是 ``windows.startupTask``。|
 |可執行檔 |欲啟動之可執行檔檔案的相對路徑。 |
 |TaskId |您工作的唯一識別碼。 您的應用程式可以使用此識別碼，呼叫[ApplicationModel. StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask)類別中的 api，以程式設計方式啟用或停用啟動工作。 |
-|Enabled |指出工作第一次啟動時會是啟用或停用。 下次使用者登入時，將會執行已啟用的工作 (除非使用者將其停用)。 |
+|已啟用 |指出工作第一次啟動時會是啟用或停用。 下次使用者登入時，將會執行已啟用的工作 (除非使用者將其停用)。 |
 |DisplayName |出現在工作管理員中工作的名稱。 您可以透過使用 ```ms-resource``` 來當地語系化此字串。 |
 
 #### <a name="example"></a>範例
@@ -1154,18 +1154,18 @@ ms.locfileid: "75302592"
   </AutoPlayHandler>
 ```
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.autoPlayHandler``。
+|類別 |總是 ``windows.autoPlayHandler``。
 |ActionDisplayName |字串，表示使用者可以在連接到電腦的裝置上執行的動作 (例如：「匯入檔案」或「播放影片」)。 |
 |ProviderDisplayName | 表示您的應用程式或服務的字串（例如： "Contoso video player"）。 |
 |ContentEvent |內容事件的名稱，該事件導致向使用者提示您的``ActionDisplayName``與``ProviderDisplayName``。 將磁碟區裝置 (例如，相機記憶卡、隨身碟或 DVD) 插入電腦時，就會引發內容事件。 您可以在[這裡](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到那些事件的完整清單。  |
 |動詞 |動詞設定會針對選取的選項，識別傳遞給應用程式的值。 您可以為自動播放事件指定多個啟動動作，並使用 \[動詞\] 設定判斷使用者為您 app 選取的選項。 您可以檢查傳遞至 app 啟動事件引數的 verb 屬性，以判斷使用者選取的選項。 您可以在 \[動詞\] 設定使用保留字 open 以外的任何值。 |
-|DropTargetHandler |執行[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面之應用程式的類別識別碼。 抽取式媒體中的檔案將會傳遞至[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)實作的[Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)方法。  |
-|Parameters |您不需要為所有內容事件實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對於任何內容事件，您可以提供命令列參數，而不實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對於這些事件，自動播放會使用這些命令列參數來啟動您的應用程式。 您可以在應用程式的初始化程式碼中剖析這些參數，以判斷自動播放是否啟動應用程式，然後提供您的自訂實作。 |
+|DropTargetHandler |執行[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面之應用程式的類別識別碼。 抽取式媒體中的檔案將會傳遞至[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)實作的[Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)方法。  |
+|參數 |您不需要為所有內容事件實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對於任何內容事件，您可以提供命令列參數，而不實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對於這些事件，自動播放會使用這些命令列參數來啟動您的應用程式。 您可以在應用程式的初始化程式碼中剖析這些參數，以判斷自動播放是否啟動應用程式，然後提供您的自訂實作。 |
 |DeviceEvent |裝置事件的名稱，該事件導致向使用者提示您的``ActionDisplayName``與``ProviderDisplayName``。 將裝置連接到電腦時，就會引發裝置事件。 裝置事件以字串``WPD``開頭，[這裡](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)列出這些裝置事件。 |
 |HWEventHandler |執行[IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)介面之應用程式的類別識別碼。 |
-|InitCmdLine |您想要傳遞到[IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)介面的[Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize)方法的字串參數。 |
+|InitCmdLine |您想要傳遞到[IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize)介面的[Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)方法的字串參數。 |
 
 ### <a name="example"></a>範例
 
@@ -1241,11 +1241,11 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.appPrinter``。
+|類別 |總是 ``windows.appPrinter``。
 |DisplayName |您想要出現在另外一個應用程式的列印目標清單中的顯示名稱。 |
-|Parameters |應用程式正確處理要求所需的任何參數。 |
+|參數 |應用程式正確處理要求所需的任何參數。 |
 
 #### <a name="example"></a>範例
 
@@ -1291,9 +1291,9 @@ ms.locfileid: "75302592"
 
 您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.sharedFonts``。
+|類別 |總是 ``windows.sharedFonts``。
 |檔案 |包含您想要共用之字型的檔案。 |
 
 #### <a name="example"></a>範例
@@ -1337,11 +1337,11 @@ ms.locfileid: "75302592"
 </Extension>
 ```
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|分類 |總是 ``windows.fullTrustProcess``。
+|類別 |總是 ``windows.fullTrustProcess``。
 |GroupID |您要傳遞給可執行檔的一個可識別一組參數的字串。 |
-|Parameters |您想要傳遞給可執行檔的參數。 |
+|參數 |您想要傳遞給可執行檔的參數。 |
 
 #### <a name="example"></a>範例
 
@@ -1376,4 +1376,4 @@ ms.locfileid: "75302592"
 
 ## <a name="next-steps"></a>後續步驟
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標籤](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在這裡](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)發問。

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 通知, 已知問題, 疑難排解
 ms.localizationpriority: medium
 ms.openlocfilehash: f39d8512398c43ea65037de82434e3740bac7ff2
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506739"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852569"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>應用程式內廣告的已知問題與疑難排解
 
@@ -68,15 +68,15 @@ ms.locfileid: "77506739"
 
 ## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>專案中因目標為 [任何 CPU] 所造成的參考錯誤
 
-使用 Microsoft Advertising SDK 時，您在專案中將無法以 **\[任何 CPU\]** 為目標。 如果您的專案以 **\[任何 CPU\]** 平台為目標，您在新增類似下列的參照之後可能會看見警告。
+使用 Microsoft Advertising SDK 時，您在專案中將無法以 **\[任何 CPU\]** 為目標。 如果您的專案以 [任何 CPU] 平台為目標，您在新增類似下列的參照之後可能會看見警告。
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
-如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 **\[組態管理員\]** 來針對偵錯和發行組態設定平台目標。
+如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 [組態管理員] 來針對偵錯和發行組態設定平台目標。
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 
-當您針對 Microsoft Store 提交建立應用程式套件 (如下列影像所示)，請務必包含您想要做為目標的架構。 如果您想要在 x64 OS 上執行 x86 組建，您可以選擇略過 x64。
+當您針對市集提交建立應用程式套件 (如下列影像所示)，請務必包含您想要做為目標的架構。 如果您想要在 x64 OS 上執行 x86 組建，您可以選擇略過 x64。
 
 ![projectstorecreateapppackages](images/13-a99b05a4-8917-4c53-822e-2548fadf828a.png)
 

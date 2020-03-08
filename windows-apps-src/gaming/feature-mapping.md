@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: c5c86ad836c94d990f5728ce9f7cfe49c754ce19
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259530"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853535"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>將 DirectX 9 功能對應到 DirectX 11 API
 
@@ -261,7 +261,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_R8G8B8</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A8R8G8B8</p></td>
@@ -279,7 +279,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X1R5G5B5</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A1R5G5B5</p></td>
@@ -291,7 +291,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_R3G3B2</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A8</p></td>
@@ -299,11 +299,11 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A8R3G3B2</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X4R4G4B4</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A2B10G10R10</p></td>
@@ -316,7 +316,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_X8B8G8R8</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_G16R16</p></td>
@@ -324,7 +324,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A2R10G10B10</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A16B16G16R16</p></td>
@@ -332,11 +332,11 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A8P8</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_P8</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_L8</p></td>
@@ -360,7 +360,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A4L4</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_V8U8</p></td>
@@ -368,11 +368,11 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_L6V5U5</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X8L8V8U8</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_Q8W8V8U8</p></td>
@@ -384,15 +384,15 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_W11V11U10</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A2W10V10U10</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_UYVY</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
@@ -406,7 +406,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_YUY2</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
@@ -456,23 +456,23 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_D32</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D15S1</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_D24S8</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D24X8</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_D24X4S4</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D16</p></td>
@@ -484,11 +484,11 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D24FS8</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_S1D15</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_S8D24</p></td>
@@ -496,11 +496,11 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_X8D24</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X4S4D24</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_L16</p></td>
@@ -526,7 +526,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_MULTI2_ARGB8</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_R16F</p></td>
@@ -554,7 +554,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_CxV8U8</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPE_FLOAT1</p></td>
@@ -574,7 +574,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPED3DCOLOR</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
@@ -628,11 +628,11 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_UDEC3</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPE_DEC3N</p></td>
-<td align="left"><p>沒有</p></td>
+<td align="left"><p>無法使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_FLOAT16_2</p></td>

@@ -1,5 +1,5 @@
 ---
-Description: 建置期間，資源管理系統會建立所有不同變體 (使用您的 App 封裝) 的資源的索引。 在執行階段，系統會偵測生效的使用者和電腦設定，並載入這些設定的最佳相符項的資源。
+Description: 建置期間，資源管理系統會建立所有不同變體 (使用您的應用程式封裝) 的資源的索引。 在執行階段，系統會偵測生效的使用者和電腦設定，並載入這些設定的最佳相符項的資源。
 title: 資源管理系統
 template: detail.hbs
 ms.date: 10/20/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598623"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853117"
 ---
 # <a name="resource-management-system"></a>資源管理系統
 資源管理系統有建置時間和執行階段的功能。 在建置期間，系統會建立所有不同變體 (使用您的 App 封裝) 的資源的索引。 此索引套件資源索引或 PRI，並且也會包含在您的應用程式套件中。 在執行階段，系統偵測到已生效的使用者與電腦設定，查詢 PRI 中的資訊，並自動載入最符合這些設定的資源。
@@ -24,7 +24,7 @@ ms.locfileid: "57598623"
 - 在每個套件根目錄的 Resources.pri 檔案會在 [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) 具現化時自動載入。
 - PRI 檔案可以使用工具 [MakePRI.exe](compile-resources-manually-with-makepri.md) 建立及傾印。
 - 一般的 App 開發，您不需要 MakePRI.exe，因為它已經整合到 Visual Studio 編譯工作流程中。 而 Visual Studio 支援在專用 UI 中編輯 PRI 檔案。 不過，您的當地語系化人員和他們使用的工具可能仰賴 MakePRI.exe。
-- 每個 PRI 檔案包含具名的資源集合，稱為資源地圖。 載入套件的 PRI 檔案時，資源地圖名稱已經過驗證，符合套件識別資料名稱。
+- 每個 PRI 檔案都包含一個具名資源集合，稱為資源對應。 載入套件的 PRI 檔案時，資源地圖名稱已經過驗證，符合套件識別資料名稱。
 - PRI 檔案只包含資料，所以它們不使用可攜式執行檔 (PE) 的格式。 它們是特別設計為純資料，作為 Windows 的資源格式。 它們取代 Win32 App 模型中 DLL 所內含的資源。
 - PRI 檔案的大小上限是 64 KB。
 
@@ -42,7 +42,7 @@ ms.locfileid: "57598623"
 
 App 可用的資源儲存在階層集合中，您可以存取 [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 物件。 **ResourceManager** 類別提供 App 所使用各種最上層 **ResourceMap** 執行個體的存取權，對應至 App 的各種不同套件。 [  **MainResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager.MainResourceMap) 值對應至目前應用程式套件的資源地圖，它不包含任何參考的架構套件。 各個 **ResourceMap** 會針對套件資訊清單中指定的套件名稱命名。 在 **ResourceMap** 內是子樹系 (請參閱 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live))，它也包含 **NamedResource** 物件。 子樹系通常對應至包含資源的資源檔案。 如需詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產](images-tailored-for-scale-theme-contrast.md)。
 
-這裡提供一個範例。
+以下是一個範例。
 
 ```csharp
 // using Windows.ApplicationModel.Resources.Core;
@@ -63,7 +63,7 @@ var str = resourceMap.GetValue("String1", resourceContext).ValueAsString;
 ## <a name="important-apis"></a>重要 API
 * [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader?branch=live)
 * [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
-* [Resourcecontext)&lt;2}](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
+* [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## <a name="related-topics"></a>相關主題
 * [當地語系化您 UI 及應用程式封裝資訊清單中的字串](localize-strings-ui-manifest.md)

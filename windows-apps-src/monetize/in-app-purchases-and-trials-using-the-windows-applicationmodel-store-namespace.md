@@ -7,11 +7,11 @@ ms.topic: article
 keywords: UWP, App 內購買, IAP, 附加元件, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 03bd2740022864008e87b448682c1025c46d2f2d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260282"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852776"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的應用程式內購買和試用版
 
@@ -144,7 +144,7 @@ ms.locfileid: "74260282"
 
 <span id="proxy-schema" />
 
-### <a name="schema"></a>架構
+### <a name="schema"></a>Schema
 
 本節列出定義 WindowsStoreProxy.xml 檔案結構的 XSD 檔案。 若要在使用 WindowsStoreProxy.xml 檔案時將這個結構描述套用到 Visual Studio 中的 XML 編輯器，請執行下列動作︰
 
@@ -355,7 +355,7 @@ ms.locfileid: "74260282"
 
 此檔案的根元素是 **CurrentApp** 元素，代表目前的 App。 此元素包含下列子項元素。
 
-|  元素  |  必要  |  數量  |  描述   |
+|  項目  |  必要項  |  數量  |  描述   |
 |-------------|------------|--------|--------|
 |  [ListingInformation](#listinginformation)  |    是        |  1  |  包含 App 清單中的資料。            |
 |  [LicenseInformation](#licenseinformation)  |     是       |   1    |   描述此 App 和其耐久性附加元件可使用的授權。     |
@@ -370,7 +370,7 @@ ms.locfileid: "74260282"
 
 **ListingInformation** 包含下列子項元素。
 
-|  元素  |  必要  |  數量  |  描述   |
+|  項目  |  必要項  |  數量  |  描述   |
 |-------------|------------|--------|--------|
 |  [相關](#app-child-of-listinginformation)  |    是   |  1   |    提供有關 App 的資料。         |
 |  [產品](#product-child-of-listinginformation)  |    否  |  0 或以上   |      描述 App 的附加元件。     |     |
@@ -383,13 +383,13 @@ ms.locfileid: "74260282"
 
 **App** 包含下列子項元素。
 
-|  元素  |  必要  |  數量  | 描述   |
+|  項目  |  必要項  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  **AppId**  |    是   |  1   |   識別市集中 App 的 GUID。 測試時可以是任何 GUID。        |
 |  **Linkuri>< externallink>**  |    是  |  1   |    市集清單頁面的 URI。 測試時可以是任何有效的 URI。         |
 |  **CurrentMarket**  |    是  |  1   |    客戶的國家/地區。         |
 |  **AgeRating**  |    是  |  1   |     表示 App 最小年齡分級的整數。 這是您在提交應用程式時，在 [合作夥伴中心] 中指定的相同值。 市集所使用的值為︰3、7、12 和 16。 如需這些分級的詳細資訊，請參閱[年齡分級](../publish/age-ratings.md)。        |
-|  [MarketData](#marketdata-child-of-app)  |    是  |  1 或以上      |    包含特定國家/地區的 App 相關資訊。 對於列出 App 的每個國家/地區，您必須各包含一個 **MarketData** 元素。       |    |
+|  [MarketData](#marketdata-child-of-app)  |    是  |  1 或更多      |    包含特定國家/地區的 App 相關資訊。 對於列出 App 的每個國家/地區，您必須各包含一個 **MarketData** 元素。       |    |
 
 <span id="marketdata-child-of-app"/>
 
@@ -399,7 +399,7 @@ ms.locfileid: "74260282"
 
 **MarketData** 包含下列子項元素。
 
-|  元素  |  必要  |  數量  | 描述   |
+|  項目  |  必要項  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  **名稱**  |    是   |  1   |   在此國家/地區的 App 名稱。        |
 |  **描述**  |    是  |  1   |      用於此國家/地區的 App 描述。       |
@@ -409,7 +409,7 @@ ms.locfileid: "74260282"
 
 **MarketData** 具有下列屬性。
 
-|  屬性  |  必要  |  描述   |
+|  屬性  |  必要項  |  描述   |
 |-------------|------------|----------------|
 |  **xml： lang**  |    是        |     指定市場資料資訊適用的國家/地區。          |  |
 
@@ -421,7 +421,7 @@ ms.locfileid: "74260282"
 
 **Product** 具有下列屬性。
 
-|  屬性  |  必要  |  描述   |
+|  屬性  |  必要項  |  描述   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |    包含 App 用來識別附加元件的字串。           |
 |  **LicenseDuration**  |    否        |    指示授權在項目購買之後將會一直有效的天數。 由產品購買建立之新授權的到期日期是購買日期加上授權持續時間。 只有當 **ProductType** 屬性是 **Durable** 時，才會使用這個屬性；消費性附加元件會忽略這個屬性。           |
@@ -435,20 +435,20 @@ ms.locfileid: "74260282"
 
 **MarketData** 包含下列子項元素。
 
-|  元素  |  必要  |  數量  | 描述   |
+|  項目  |  必要項  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  **名稱**  |    是   |  1   |   在此國家/地區的附加元件名稱。        |
 |  **高價**  |    是  |  1   |     在此國家/地區的附加元件價格。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此國家/地區中使用的貨幣符號。        |
 |  **CurrencyCode**  |    否  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  
 |  **描述**  |    否  |   0 或 1   |      用於此國家/地區的附加元件描述。       |
-|  **標記**  |    否  |   0 或 1   |      附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (也稱為標記)。       |
+|  **標籤**  |    否  |   0 或 1   |      附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (也稱為標記)。       |
 |  **關鍵字**  |    否  |   0 或 1   |      最多可以有 10 個 **Keyword** 元素，包含附加元件的[關鍵字](../publish/enter-add-on-properties.md#keywords)。       |
 |  **ImageUri**  |    否  |   0 或 1   |      附加元件清單中[影像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
 
 **MarketData** 具有下列屬性。
 
-|  屬性  |  必要  |  描述   |
+|  屬性  |  必要項  |  描述   |
 |-------------|------------|----------------|
 |  **xml： lang**  |    是        |     指定市場資料資訊適用的國家/地區。          |  |
 
@@ -460,7 +460,7 @@ ms.locfileid: "74260282"
 
 **LicenseInformation** 包含下列子項元素。
 
-|  元素  |  必要  |  數量  | 描述   |
+|  項目  |  必要項  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  [相關](#app-child-of-licenseinformation)  |    是   |  1   |    描述 App 的授權。         |
 |  [產品](#product-child-of-licenseinformation)  |    否  |  0 或以上   |      描述 App 中耐久性附加元件的授權狀態。         |   |
@@ -482,7 +482,7 @@ ms.locfileid: "74260282"
 
 **App** 包含下列子項元素。
 
-|  元素  |  必要  |  數量  | 描述   |
+|  項目  |  必要項  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    是   |  1   |    描述此 App 目前的授權狀態。 值 **true** 表示授權有效；**false** 表示無效的授權。 無論 App 是否有試用模式，此值通常為 **true**。  將此值設定為 **false** 可測試您的 App 在授權無效時是如何運作。           |
 |  **IsTrial**  |    是  |  1   |      描述此 App 目前的試用狀態。 值 **true** 表示 App 正在試用期間；**false** 表示 App 不在試用，可能因為已購買 App，或試用期間已到期。         |
@@ -496,14 +496,14 @@ ms.locfileid: "74260282"
 
 **Product** 包含下列子項元素。
 
-|  元素  |  必要  |  數量  | 描述   |
+|  項目  |  必要項  |  數量  | 描述   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    是   |  1     |    描述此附加元件目前的授權狀態。 值 **true** 表示附加元件可以使用；**false** 表示附加元件無法使用或尚未購買           |
 |  **ExpirationDate**  |    否   |  0 或 1     |     附加元件到期的日期，以國際標準時間 (UTC) 表示。 日期的格式必須為︰yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 要指定為 2015-01-19T05:00:00.00Z。 如果此元素存在，附加元件就會有到期日期。 如果不存在，附加元件就不會過期。  |  
 
 **Product** 具有下列屬性。
 
-|  屬性  |  必要  |  描述   |
+|  屬性  |  必要項  |  描述   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |   包含 App 用來識別附加元件的字串。            |
 |  **OfferId**  |     否       |   包含 App 用來識別附加元件所屬類別的字串。 這可以對大型的項目型錄提供支援，如[管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)中所述。           |
@@ -516,7 +516,7 @@ ms.locfileid: "74260282"
 
 **Simulation** 具有下列屬性。
 
-|  屬性  |  必要  |  描述   |
+|  屬性  |  必要項  |  描述   |
 |-------------|------------|----------------|
 |  **SimulationMode**  |    否        |      值可以是 **Interactive** 或 **Automatic**。 當此屬性設為 **Automatic** 時，方法會自動傳回指定的 HRESULT 錯誤碼。 這可以在執行自動的測試案例時使用。       |
 
@@ -528,7 +528,7 @@ ms.locfileid: "74260282"
 
 **DefaultResponse** 具有下列屬性。
 
-|  屬性  |  必要  |  描述   |
+|  屬性  |  必要項  |  描述   |
 |-------------|------------|----------------|
 |  **名稱**  |    是        |   對此屬性指派**結構描述**中 [StoreMethodName](#schema) 類型所顯示的其中一個列舉值。 這些列舉值代表在測試期間，您想要模擬 App 中錯誤碼傳回值的 **CurrentAppSimulator** 方法。 例如，值 **RequestAppPurchaseAsync_GetResult** 表示您想要模擬 [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) 方法的錯誤碼傳回值。            |
 |  **HResult**  |     是       |   對此屬性指派**結構描述**中 [ResponseCodes](#schema) 類型所顯示的其中一個列舉值。 這些列舉值代表您想要為已指派給此 **DefaultResponse** 元素之 **MethodName** 屬性的方法傳回的錯誤碼。           |
@@ -547,7 +547,7 @@ ms.locfileid: "74260282"
 
 **Product** 具有下列屬性。
 
-|  屬性  |  必要  |  描述   |
+|  屬性  |  必要項  |  描述   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |   包含 App 用來識別消費性附加元件的字串。            |
 |  **TransactionId**  |     是       |   包含 App 用來追蹤整個履行程序之消費性產品的購買交易的 GUID (做為字串)。 請參閱[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)。            |

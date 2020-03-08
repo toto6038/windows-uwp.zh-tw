@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: c8204382a4e341083ce825a9424181cdd75771e1
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260241"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852509"
 ---
 # <a name="manage-add-on-submissions"></a>管理附加元件提交
 
@@ -230,20 +230,20 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值      | 類型   | 描述        |
 |------------|--------|----------------------|
-| id            | 字串  | 提交的識別碼。 在回應資料中可將此識別碼用於要求，以[建立附加元件提交](create-an-add-on-submission.md)、[取得所有的附加元件](get-all-add-ons.md)，以及[取得附加元件](get-an-add-on.md)。 針對在合作夥伴中心建立的提交，此識別碼也會出現在合作夥伴中心的 [提交] 頁面的 URL 中。  |
-| contentType           | 字串  |  附加元件中提供的[內容類型](../publish/enter-add-on-properties.md#content-type)。 這可以是下列其中一個值： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | 陣列  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-add-on-properties.md#keywords)。 您的應用程式可以使用這些關鍵字查詢附加元件。   |
-| lifetime           | 字串  |  附加元件的存留期。 這可以是下列其中一個值： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
-| listings           | 物件  |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[清單資源](#listing-object)，其中包含附加元件的清單資訊。  |
-| 定價           | 物件  | [定價資源](#pricing-object)包含附加元件的定價資訊。   |
-| targetPublishMode           | 字串  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
-| tag           | 字串  |  附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (此資訊以前稱為 *「標記」* )。   |
-| 可見度  | 字串  |  附加元件的可見度。 這可以是下列其中一個值： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
-| status  | 字串  |  提交的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | 物件  |  [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。 |
-| fileUploadUrl           | 字串  | 共用存取簽章 (SAS) URI，可用於上傳任何適用於提交的套件。 如果您要新增提交的新套件，請將包含套件的 ZIP 封存上傳至這個 URI。 如需詳細資訊，請參閱[建立附加元件提交](#create-an-add-on-submission)。  |
-| friendlyName  | 字串  |  提交的易記名稱，如合作夥伴中心所示。 當您建立提交時，也會為您產生此值。  |
+| id            | string  | 提交的識別碼。 在回應資料中可將此識別碼用於要求，以[建立附加元件提交](create-an-add-on-submission.md)、[取得所有的附加元件](get-all-add-ons.md)，以及[取得附加元件](get-an-add-on.md)。 針對在合作夥伴中心建立的提交，此識別碼也會出現在合作夥伴中心的 [提交] 頁面的 URL 中。  |
+| contentType           | string  |  附加元件中提供的[內容類型](../publish/enter-add-on-properties.md#content-type)。 這可以是下列其中一個值： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| 關鍵字           | 陣列  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-add-on-properties.md#keywords)。 您的應用程式可以使用這些關鍵字查詢附加元件。   |
+| lifetime           | string  |  附加元件的存留期。 這可以是下列其中一個值： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
+| 清單           | object  |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[清單資源](#listing-object)，其中包含附加元件的清單資訊。  |
+| 定價           | object  | [定價資源](#pricing-object)包含附加元件的定價資訊。   |
+| targetPublishMode           | string  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>立即</li><li>手動</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | string  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
+| tag (標記)           | string  |  附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (此資訊以前稱為 *「標記」* )。   |
+| 可見性  | string  |  附加元件的可見度。 這可以是下列其中一個值： <ul><li>Hidden</li><li>公用</li><li>私人</li><li>NotSet</li></ul>  |
+| status  | string  |  提交的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>發行</li><li>已發行</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>憑證</li><li>CertificationFailed</li><li>發行</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | object  |  [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。 |
+| fileUploadUrl           | string  | 共用存取簽章 (SAS) URI，可用於上傳任何適用於提交的套件。 如果您要新增提交的新套件，請將包含套件的 ZIP 封存上傳至這個 URI。 如需詳細資訊，請參閱[建立附加元件提交](#create-an-add-on-submission)。  |
+| friendlyName  | string  |  提交的易記名稱，如合作夥伴中心所示。 當您建立提交時，也會為您產生此值。  |
 
 <span id="listing-object" />
 
@@ -253,9 +253,9 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           | 類型    | 描述       |
 |-----------------|---------|------|
-|  description               |    字串     |   附加元件清單的描述。   |     
-|  圖示               |   物件      |[圖示資源](#icon-object)包含附加元件清單圖示的資料。    |
-|  title               |     字串    |   附加元件清單的標題。   |  
+|  描述               |    string     |   附加元件清單的描述。   |     
+|  圖示               |   object      |[圖示資源](#icon-object)包含附加元件清單圖示的資料。    |
+|  title               |     string    |   附加元件清單的標題。   |  
 
 <span id="icon-object" />
 
@@ -265,8 +265,8 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           | 類型    | 描述     |
 |-----------------|---------|------|
-|  fileName               |    字串     |   圖示檔案的名稱，位於您針對提交所上傳的 ZIP封存中。 圖示必須是 .png 檔案，大小必須是 300 x 300 像素。   |     
-|  fileStatus               |   字串      |  圖示檔案的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
+|  fileName               |    string     |   圖示檔案的名稱，位於您針對提交所上傳的 ZIP封存中。 圖示必須是 .png 檔案，大小必須是 300 x 300 像素。   |     
+|  fileStatus               |   string      |  圖示檔案的狀態。 這可以是下列其中一個值： <ul><li>無</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />
 
@@ -276,10 +276,10 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           | 類型    | 描述    |
 |-----------------|---------|------|
-|  marketSpecificPricings               |    物件     |  機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。     |     
+|  marketSpecificPricings               |    object     |  機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。     |     
 |  sales               |   陣列      |  **過時**。 包含附加元件的銷售資訊的[銷售資源](#sale-object)陣列。     |     
-|  priceId               |   字串      |  指定附加元件[基本價格](#price-tiers)的[價格區間](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。    |    
-|  isAdvancedPricingModel               |   布林值      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此欄位為唯讀。   |
+|  priceId               |   string      |  指定附加元件[基本價格](#price-tiers)的[價格區間](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。    |    
+|  isAdvancedPricingModel               |   boolean      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此欄位為唯讀。   |
 
 
 <span id="sale-object" />
@@ -297,11 +297,11 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           | 類型    | 描述           |
 |-----------------|---------|------|
-|  name               |    字串     |   銷售的名稱。    |     
-|  basePriceId               |   字串      |  用於銷售基本價格的[價格區間](#price-tiers)。    |     
-|  startDate               |   字串      |   ISO 8601 格式的銷售開始日期。  |     
-|  endDate               |   字串      |  ISO 8601 格式的銷售結束日期。      |     
-|  marketSpecificPricings               |   物件      |   機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 這個字典中的任何項目都會覆寫特定市場的 *basePriceId* 值所指定的基本價格。    |
+|  名稱               |    string     |   銷售的名稱。    |     
+|  basePriceId               |   string      |  用於銷售基本價格的[價格區間](#price-tiers)。    |     
+|  startDate               |   string      |   ISO 8601 格式的銷售開始日期。  |     
+|  endDate               |   string      |  ISO 8601 格式的銷售結束日期。      |     
+|  marketSpecificPricings               |   object      |   機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 這個字典中的任何項目都會覆寫特定市場的 *basePriceId* 值所指定的基本價格。    |
 
 <span id="status-details-object" />
 
@@ -311,9 +311,9 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           | 類型    | 描述       |
 |-----------------|---------|------|
-|  errors               |    物件     |   包含提交的錯誤詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。   |     
-|  warnings               |   物件      | 包含提交的警告詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。     |
-|  certificationReports               |     物件    |   提供提交認證報告資料存取的[認證報告資源](#certification-report-object)陣列。 如果認證失敗，您可以檢查這些報告來取得詳細資訊。    |  
+|  errors               |    object     |   包含提交的錯誤詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。   |     
+|  警告               |   object      | 包含提交的警告詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。     |
+|  certificationReports               |     object    |   提供提交認證報告資料存取的[認證報告資源](#certification-report-object)陣列。 如果認證失敗，您可以檢查這些報告來取得詳細資訊。    |  
 
 <span id="status-detail-object" />
 
@@ -323,8 +323,8 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           | 類型    | 描述    |
 |-----------------|---------|------|
-|  code               |    字串     |   描述錯誤或警告類型的[提交狀態碼](#submission-status-code)。   |     
-|  details               |     字串    |  含有更多關於問題之詳細資料的訊息。     |
+|  code               |    string     |   描述錯誤或警告類型的[提交狀態碼](#submission-status-code)。   |     
+|  詳細資料               |     string    |  含有更多關於問題之詳細資料的訊息。     |
 
 <span id="certification-report-object" />
 
@@ -334,8 +334,8 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           | 類型    | 描述               |
 |-----------------|---------|------|
-|     date            |    字串     |  產生報告的日期和時間，格式為 ISO 8601。    |
-|     reportUrl            |    字串     |  您可以存取報告的 URL。    |
+|     date            |    string     |  產生報告的日期和時間，格式為 ISO 8601。    |
+|     reportUrl            |    string     |  您可以存取報告的 URL。    |
 
 ## <a name="enums"></a>列舉
 
