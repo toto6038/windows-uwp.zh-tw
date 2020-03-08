@@ -1,16 +1,16 @@
 ---
-Description: 了解有關數種方式以程式設計方式可以讓客戶評等，並檢閱您的應用程式。
+Description: 瞭解幾種可透過程式設計方式讓客戶對您的應用程式評分及進行檢查的方式。
 title: 為您的應用程式作評等與評論
 ms.date: 01/22/2019
 ms.topic: article
 keywords: Windows 10、uwp、評分、評論
 ms.localizationpriority: medium
 ms.openlocfilehash: b167f4cc40ee72e6405436bacee28f2f20b4623c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601303"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853035"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>為您的應用程式作評等與評論
 
@@ -18,14 +18,14 @@ ms.locfileid: "57601303"
 * 您可以直接在應用程式的環境中顯示評等與評論對話方塊。
 * 您可以以以程式設計方式在 Microsoft Store 中打開您的應用程式的評等與評論頁面。
 
-當您準備好要分析您的評等和檢閱資料時，您可以在合作夥伴中心內檢視的資料，或使用 Microsoft Store 分析 API 以程式設計方式擷取這項資料。
+當您準備好要分析您的評等和評論資料時，您可以在合作夥伴中心查看資料，或使用 Microsoft Store 的分析 API 以程式設計方式抓取此資料。
 
 > [!IMPORTANT]
-> 時新增評分函式應用程式內，所有檢閱必須都傳送使用者的存放區評等機制，不論所選擇的評等星狀。 如果您從使用者收集意見反應或註解，它必須是清除應用程式評等或存放區中的評論無關，但會直接傳送至應用程式開發人員。 請參閱 「 開發人員管理辦法的相關詳細資訊[Fraudulent 或誠實 」 活動](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)。
+> 在您的應用程式中新增評等函式時，不論選擇的星級評等為何，所有評論都必須將使用者傳送至商店的評等機制。 如果您向使用者收集意見或意見，必須清楚指出它與商店中的應用程式評等或評論無關，但會直接傳送給應用程式開發人員。 如需[詐騙或 Dishonest 活動](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)的相關詳細資訊，請參閱開發人員程式碼。
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>顯示您的應用程式中的評分並評論對話方塊
 
-若要以程式設計的方式顯示對話方塊，詢問您的客戶評分您的應用程式，並送出檢閱應用程式，請呼叫[RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync)方法中的[Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store)命名空間。 
+若要以程式設計方式向您的應用程式顯示對話方塊，要求您的客戶對應用程式進行評分並提交評論，請呼叫[RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync)方法（在[Windows. Store](https://docs.microsoft.com/uwp/api/windows.services.store)命名空間中）。 
 
 > [!IMPORTANT]
 > 必須在您的應用程式 UI 執行緒上呼叫顯示評等與評論對話方塊的要求。
@@ -101,11 +101,11 @@ private async Task PromptUserToRateApp()
 }
 ```
 
-**RequestRateAndReviewAppAsync**方法在 Windows 10 版本 1809 年引進，它僅適用於在目標專案**Windows 10 年 10 月 2018 Update (10.0;建置 17763）** 或在 Visual Studio 中的更新版本。
+**RequestRateAndReviewAppAsync**方法是在 windows 10 版本1809中引進，而且只能用於以**Windows 10 2018 年10月更新（10.0;）為目標的專案。組建17763）** 或 Visual Studio 的更新版本。
 
 ### <a name="response-data-for-the-rating-and-review-request"></a>評等與評論要求的回應資料
 
-在您提交要求以顯示 評等，然後檢閱對話方塊中後, [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata)屬性[StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult)類別包含 JSON 格式的字串，指出是否要求成功。
+提交要求以顯示 [評等] 和 [評論] 對話方塊之後， [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult)類別的[ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata)屬性會包含 JSON 格式的字串，指出要求是否成功。
 
 以下範例展示在客戶成功提交評分或評論後該要求的傳回值。
 
@@ -133,12 +133,12 @@ private async Task PromptUserToRateApp()
 | 欄位          | 描述                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | *狀態*       | 表示客戶是否成功提交評等或評論的字串。 支援的值為**成功**和**中止**。 |
-| *資料*         | 此物件包含名為*已更新*的單一布林值。 此值表示客戶是否更新現有評等或評論。 *資料*物件只包含在成功回應中。 |
-| *ErrorDetails* | 字串包含要求的錯誤詳細資料。                                                                                     |
+| *data*         | 此物件包含名為*已更新*的單一布林值。 此值表示客戶是否更新現有評等或評論。 *資料*物件只包含在成功回應中。 |
+| *errorDetails* | 字串包含要求的錯誤詳細資料。                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>在 Microsoft Store 中啟動您的應用程式的評等與評論頁面
 
-如果您想以程式設計方式打開 Microsoft Store 中應用程式的評等與評論頁面，則可以使用具有 ```ms-windows-store://review```  URI 方案的 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法，如本程式碼範例所示。
+如果您想以程式設計方式打開 Microsoft Store 中應用程式的評等與評論頁面，則可以使用具有 [  URI 方案的 ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)LaunchUriAsync```ms-windows-store://review``` 方法，如本程式碼範例所示。
 
 ```csharp
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9WZDNCRFHVJL"));
@@ -149,7 +149,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 ## <a name="analyze-your-ratings-and-reviews-data"></a>分析您的評分與評論資料
 
 要分析客戶的評分與評論資料，您有數個選項：
-* 您可以使用[檢閱](../publish/reviews-report.md)在合作夥伴中心，請參閱評等和評論，從您的客戶中的報表。 您也可以下載此報告來離線檢視。
+* 您可以使用合作夥伴中心的[評論](../publish/reviews-report.md)報告來查看客戶的評等和評論。 您也可以下載此報告來離線檢視。
 * 您可以使用 Microsoft Store 分析 API 中的[取得應用程式評分](get-app-ratings.md) 和 [取得應用程式評論](get-app-reviews.md) 方法以程式設計方式擷取 JSON 格式的客戶的評分與評論。
 
 ## <a name="related-topics"></a>相關主題
