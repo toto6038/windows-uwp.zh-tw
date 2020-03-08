@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281788"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853201"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 應用程式設計簡介
 
@@ -56,7 +56,7 @@ UWP 可透過 100%、125%、150%、175%、200%、225%、250%、300%、350% 和 4
     :::column-end:::
 :::row-end:::
 
-## <a name="layout"></a>配置
+## <a name="layout"></a>版面配置
 
 由於 UWP 應用程式會對於所有裝置自動調整大小，所以設計適用於任何裝置的 UWP 應用程式依照相同的結構。 讓我們從您的 UWP 應用程式 UI 一開頭開始。
 
@@ -112,7 +112,7 @@ UWP 的設計平台提供一組通用控制項，確保可在所有執行 Window
 
 ![輔色 gif](images/intro-style.gif)
 
-## <a name="shell"></a>命令介面
+## <a name="shell"></a>殼層
 
 :::row:::
     :::column:::
@@ -176,6 +176,6 @@ UWP 應用程式需依賴智慧型互動。 您可以針對按一下的互動來
 
 ## <a name="related-articles"></a>相關文章
 
-- [什麼是 UWP app？](../../get-started/universal-application-platform-guide.md)
-- [Fluent Design 系統](/windows/apps/fluent-design-system)
+- [什麼是 UWP 應用程式？](../../get-started/universal-application-platform-guide.md)
+- [Fluent 設計系統](/windows/apps/fluent-design-system)
 - [XAML 平台概觀](../../xaml-platform/index.md)
