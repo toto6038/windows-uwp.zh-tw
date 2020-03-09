@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: a2fa7e107d890a5be7c8d27af03289b839ec3c09
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73052005"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852455"
 ---
 # <a name="pointofservice-device-objects"></a>PointOfService device objects
 
 ## <a name="creating-a-device-object"></a>建立裝置物件
-一旦您識別出您想要使用的 PointOfService 裝置，您只要使用以程式設計方式選擇的 [**DeviceID**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)，從最新的列舉或儲存的 DeviceID 呼叫 [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync)，或者使用者已選取來建立新的服務點裝置物件。
+一旦您識別出您想要使用的 PointOfService 裝置，您只要使用以程式設計方式選擇的 [**DeviceID**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync)，從最新的列舉或儲存的 DeviceID 呼叫 [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)，或者使用者已選取來建立新的服務點裝置物件。
 
 這個範例嘗試使用 DeviceID 以 FromIdAsync 建立新的 BarcodeScanner 物件。 如果建立物件時失敗，會寫入偵錯的訊息。
 
@@ -37,7 +37,7 @@ ms.locfileid: "73052005"
 在您擁有裝置物件後，您就可以再存取裝置的方法、內容和活動。  
 
 ## <a name="device-object-lifecycle"></a>裝置物件週期
-Windows 8 推出前，App 的週期很簡單。 Win32 與 .NET App 執行或不執行，通常會為完整的 App 週期宣告 PointOfService peripehrals。 當使用者將它們縮至最小或切換到其他 App 時，它們會繼續執行。 這原本不成問題，直到可攜式裝置和電源管理變得越來越重要。
+Windows 8 推出前，app 的週期很簡單。 Win32 與 .NET App 執行或不執行，通常會為完整的 App 週期宣告 PointOfService peripehrals。 當使用者將它們縮至最小或切換到其他 app 時，它們會繼續執行。 這原本不成問題，直到可攜式裝置和電源管理變得越來越重要。
 
 Windows 8 引進的新應用程式模型提供 UWP 應用程式。 增加一種新的高階暫停狀態。 UWP app 會在使用者將其縮至最小或切換到其他應用程式時，很快暫停。 這表示 App 的執行緒已停止，除非作業系統需要重新宣告資源，並代表 PointOfService 周邊的任何裝置物件自動關閉以允許其他應用程式存取周邊，否則會 App 會留在記憶體中。 當使用者切換回 App 時，它可以快速還原到執行狀態，並只要他們仍可恢復繼續使用，就會還原 PointOfService 周邊連接。
 
