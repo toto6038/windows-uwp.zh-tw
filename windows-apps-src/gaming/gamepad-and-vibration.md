@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲台, 震動
 ms.localizationpriority: medium
 ms.openlocfilehash: e65b22039c381bd333516bd9f98c60bbddb9621c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646923"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853050"
 ---
 # <a name="gamepad-and-vibration"></a>遊戲台與震動
 
@@ -23,32 +23,32 @@ ms.locfileid: "57646923"
 * 如何偵測已新增或移除遊戲台
 * 如何讀取來自一個或多個遊戲台的輸入
 * 如何傳送震動和脈衝命令
-* 遊戲台做為 UI 瀏覽裝置的行為
+* 遊戲台的行為方式為 UI 流覽裝置
 
 ## <a name="gamepad-overview"></a>遊戲台概觀
 
-Xbox 無線控制器和 Xbox 無線控制器 S 系列這類遊戲台是一般用途的遊戲輸入裝置。 它們是 Xbox One 的標準輸入裝置，而且是不愛用鍵盤和滑鼠的 Windows 遊戲玩家的共通選擇。 在 Windows 10 和 Xbox UWP 應用程式中，遊戲台受到 [Windows.Gaming.Input][] 命名空間所支援。
+Xbox 無線控制器和 Xbox 無線控制器 S 系列這類遊戲台是一般用途的遊戲輸入裝置。 它們是 Xbox One 的標準輸入裝置，而且是不愛用鍵盤和滑鼠的 Windows 遊戲玩家的共通選擇。 在 Windows 10 和 Xbox UWP 應用程式中，遊戲台受到 [Windows. 遊戲輸入][] 命名空間所支援。
 
-Xbox One 遊戲台配備方向板 （或方向鍵）;**A**， **B**， **X**， **Y**，**檢視**，與**功能表**按鈕; 左和右搖桿、 轉場廣告和觸發程序;以及四個震動 motors 總數。 兩個搖桿都提供 X 和 Y 軸中的雙類比讀數，同時在往內按時當成按鈕。 每個觸發程序會提供表示進度提取回類比讀取。
+Xbox One 遊戲台配備了方向板（或 3D pad）;**A**、 **B**、 **X**、 **Y**、 **View**和**Menu**按鈕;左和右 thumbsticks、緩衝器和觸發程式;總共四個震動馬達。 兩個搖桿都提供 X 和 Y 軸中的雙類比讀數，同時在往內按時當成按鈕。 每個觸發程式都會提供一個類比讀取，代表其提取回的距離。
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **Paddle** buttons on its underside. These can be used to provide redundant access to game commands that are difficult to use together (such as the right thumbstick together with any of the **A**, **B**, **X**, or **Y** buttons) or to provide dedicated access to additional commands. -->
 
 > [!NOTE]
-> `Windows.Gaming.Input.Gamepad` 也支援具有相同的控制項配置為標準的 Xbox One 遊戲台 Xbox 360 遊戲台。
+> `Windows.Gaming.Input.Gamepad` 也支援 Xbox 360 遊戲台，其具有與標準 Xbox One 遊戲台相同的控制項版面配置。
 
 ### <a name="vibration-and-impulse-triggers"></a>震動和脈衝發射鍵
 
 Xbox One 遊戲台提供兩個獨立馬達來進行強烈和輕微遊戲台震動，以及兩個專用馬達來提供每個發射鍵的劇烈震動 (這個特殊功能是 Xbox One 遊戲台發射鍵稱為「脈衝發射鍵」的原因)。
 
 > [!NOTE]
-> Xbox 360 遊戲台未配備_脈衝觸發程序_。
+> Xbox 360 遊戲台未配備_脈衝觸發_程式。
 
 如需詳細資訊，請參閱[震動和脈衝發射鍵概觀](#vibration-and-impulse-triggers-overview)。
 
 ### <a name="thumbstick-deadzones"></a>搖桿靜止區域
 
-理論上，中心位置的靜止搖桿每次產生的 X 和 Y 軸中性讀數應相同。 不過，基於搖桿的機械力和敏感度，中心位置的實際讀數僅大約是理想中性值，而且後續讀數可能會不同。 基於這個理由，您必須一律使用小型_deadzone_&mdash;接近理想的中心位置會被忽略的值範圍&mdash;補償機械損耗或其他遊戲台製造的差異問題。
+理論上，中心位置的靜止搖桿每次產生的 X 和 Y 軸中性讀數應相同。 不過，基於搖桿的機械力和敏感度，中心位置的實際讀數僅大約是理想中性值，而且後續讀數可能會不同。 基於這個理由，您必須一律使用小型的_deadzone_&mdash;理想中心位置附近的某個範圍的值，而忽略&mdash;以補償製造差異、機械磨損或其他遊戲台問題。
 
 較大的靜止區域可以輕鬆地區隔想要的輸入與不想要的輸入。
 
@@ -58,7 +58,7 @@ Xbox One 遊戲台提供兩個獨立馬達來進行強烈和輕微遊戲台震�
 
 為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的「邏輯」輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
 
-遊戲台對應的 UI 瀏覽控制器[必要組](ui-navigation-controller.md#required-set)左搖桿，來巡覽命令的 D-p，**檢視**，**功能表**， ，並**B**按鈕。
+作為 UI 導覽控制器，遊戲台會將[所需的一組](ui-navigation-controller.md#required-set)導覽命令對應至左側的操縱杆、D-Pad、 **View**、 **Menu**、 **a**和**B**按鈕。
 
 | 瀏覽命令 | 遊戲台輸入                       |
 | ------------------:| ----------------------------------- |
@@ -66,17 +66,17 @@ Xbox One 遊戲台提供兩個獨立馬達來進行強烈和輕微遊戲台震�
 |               Down | 左搖桿向下 / 方向鍵向下   |
 |               Left | 左搖桿向左 / 方向鍵向左   |
 |              Right | 左搖桿向右 / 方向鍵向右 |
-|               View | 檢視按鈕                         |
-|               Menu | 功能表按鈕                         |
-|             Accept | A 按鈕                            |
-|             取消 | B 按鈕                            |
+|               檢視 | 檢視按鈕                         |
+|               功能表 | 功能表按鈕                         |
+|             接受 | A 按鈕                            |
+|             [取消] | B 按鈕                            |
 
 此外，遊戲台會將所有[選擇性集](ui-navigation-controller.md#optional-set)的瀏覽命令對應到其餘輸入。
 
 | 瀏覽命令 | 遊戲台輸入          |
 | ------------------:| ---------------------- |
-|            上一頁 | LT 鍵           |
-|          下一頁 | RT 鍵          |
+|            Page Up | LT 鍵           |
+|          Page Down | RT 鍵          |
 |          向左翻頁 | LB 鍵            |
 |         向右翻頁 | RB 鍵           |
 |          向上捲動 | 右搖桿向上    |
@@ -94,9 +94,9 @@ Xbox One 遊戲台提供兩個獨立馬達來進行強烈和輕微遊戲台震�
 
 ### <a name="the-gamepads-list"></a>遊戲台清單
 
-[Gamepad][] 類別提供靜態屬性 [Gamepad][]，這個屬性是目前已連接遊戲台的唯讀清單。 因為您只可能會想要在某些連線的遊戲板，因此建議您維護您自己的集合，而不是存取透過`Gamepads`屬性。
+[Gamepad][] 類別提供靜態屬性 [Gamepad][]，這個屬性是目前已連接遊戲台的唯讀清單。 因為您可能只對某些已連線的遊戲台感興趣，建議您維護自己的集合，而不是透過 `Gamepads` 屬性來存取它們。
 
-下列範例會將所有已連接的遊戲台複製到新集合。 請注意，因為其他執行緒在背景中的將用來存取這個集合 (在[GamepadAdded][]並[GamepadRemoved][]事件)，您需要將任何程式碼，以讀取或更新的鎖定集合。
+下列範例會將所有已連接的遊戲台複製到新集合。 請注意，因為背景中的其他執行緒將會存取此集合（在[GamepadAdded][]和[GamepadRemoved][]事件中），所以您需要對任何可讀取或更新集合的程式碼進行鎖定。
 
 ```cpp
 auto myGamepads = ref new Vector<Gamepad^>();
@@ -142,7 +142,7 @@ private void GetGamepads()
 
 ### <a name="adding-and-removing-gamepads"></a>新增和移除遊戲台
 
-當新增或移除，遊戲台[GamepadAdded][]並[GamepadRemoved][]引發事件。 您可以註冊這些事件的處理常式來追蹤目前已連接的遊戲台。
+當遊戲新增或移除時，會引發[GamepadAdded][]和[GamepadRemoved][]事件。 您可以註冊這些事件的處理常式來追蹤目前已連接的遊戲台。
 
 下列範例會開始追蹤已新增的遊戲台。
 
@@ -179,7 +179,7 @@ Gamepad.GamepadAdded += (object sender, Gamepad e) =>
 };
 ```
 
-下列範例會停止追蹤已移除遊戲台。 您也需要處理您追蹤時予以移除; 舵會發生什麼事比方說，此程式碼只會追蹤從一個遊戲板中，輸入，並只將它設定為`nullptr`移除時。 您必須檢查每個畫面格，如果您的遊戲台是作用中，以及哪些遊戲台控制站會連線並中斷連線時，要收集來自輸入的更新。
+下列範例會停止追蹤已移除的遊戲台。 您也必須處理當您要追蹤的遊戲台被移除時，會發生什麼事;例如，此程式碼只會追蹤一個遊戲台的輸入，並只會將它設定為在移除時 `nullptr`。 如果您的遊戲台作用中，您必須檢查每個畫面格，並在控制器連線並中斷連接時，更新您正在收集輸入的遊戲台。
 
 ```cpp
 Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(Platform::Object^, Gamepad^ args)
@@ -219,7 +219,7 @@ Gamepad.GamepadRemoved += (object sender, Gamepad e) =>
 };
 ```
 
-請參閱[輸入的遊戲作法](input-practices-for-games.md)如需詳細資訊。
+如需詳細資訊，請參閱[遊戲的輸入實務](input-practices-for-games.md)。
 
 ### <a name="users-and-headsets"></a>使用者和耳機
 
@@ -253,7 +253,7 @@ GamepadReading reading = gamepad.GetCurrentReading();
 
 ### <a name="reading-the-thumbsticks"></a>讀取搖桿
 
-每個搖桿都提供 X 和 Y 軸中介於 -1.0 與 +1.0 之間的類比讀數。 在 X 軸中，-1.0 的值對應到最左邊的搖桿位置；+1.0 的值對應到最右邊的搖桿位置。 在 Y 軸中，-1.0 的值對應到最底端的搖桿位置；+1.0 的值對應到最頂端的搖桿位置。 在這兩個軸，值大約是 0.0 時隨身碟處於置中位置，但這是正常的精確的值，以改變，甚至是之間後續的讀數;在本節中稍後討論減輕這項差異的策略。
+每個搖桿都提供 X 和 Y 軸中介於 -1.0 與 +1.0 之間的類比讀數。 在 X 軸中，-1.0 的值對應到最左邊的搖桿位置；+1.0 的值對應到最右邊的搖桿位置。 在 Y 軸中，-1.0 的值對應到最底端的搖桿位置；+1.0 的值對應到最頂端的搖桿位置。 在這兩個軸中，當卡在中心位置時，此值大約是0.0，但是精確的值會改變，即使在後續的讀取之間也是一樣。本章節稍後將討論減輕這種變化的策略。
 
 左搖桿之 X 軸的值讀取自 [GamepadReading][] 結構的 `LeftThumbstickX` 屬性；Y 軸的值則讀取自 `LeftThumbstickY` 屬性。 右搖桿之 X 軸的值讀取自 `RightThumbstickX` 屬性；Y 軸的值則讀取自 `RightThumbstickY` 屬性。
 
@@ -271,7 +271,7 @@ double rightStickX = reading.RightThumbstickX; // returns a value between -1.0 a
 double rightStickY = reading.RightThumbstickY; // returns a value between -1.0 and +1.0
 ```
 
-讀取搖桿值時，如果搖桿靜止在中心位置，您會注意到搖桿值不會確實地產生中性讀數 0.0；相反地，每次移動搖桿並回到中心位置時，它們都會產生接近 0.0 的不同值。 若要減少這些變化，您可以實作小型「靜止區域」，這是指接近理想中心位置的可忽略值範圍。 實作靜止區域的一種方法是判定搖桿與中心的距離，若讀數比您選擇的距離值更接近中心則加以忽略。 您可以大致計算距離&mdash;因為搖桿讀數基本上極座標圖、 未平面的值就不完全&mdash;只要使用畢氏三元理論。 所產生的會是一個放射狀靜止區域。
+讀取搖桿值時，如果搖桿靜止在中心位置，您會注意到搖桿值不會確實地產生中性讀數 0.0；相反地，每次移動搖桿並回到中心位置時，它們都會產生接近 0.0 的不同值。 若要減少這些變化，您可以實作小型「靜止區域」，這是指接近理想中心位置的可忽略值範圍。 實作靜止區域的一種方法是判定搖桿與中心的距離，若讀數比您選擇的距離值更接近中心則加以忽略。 您可以使用畢氏定理，來計算距離，大致&mdash;不精確，因為操縱杆讀數基本上是極座標而非平面的值&mdash;。 所產生的會是一個放射狀靜止區域。
 
 下列範例示範使用畢式定理產生基本放射狀靜止區域。
 
@@ -331,7 +331,7 @@ double rightTrigger = reading.RightTrigger; // returns a value between 0.0 and 1
 
 ### <a name="reading-the-buttons"></a>讀取按鈕
 
-每個遊戲台按鈕&mdash;d-pad、 左側和右側轉場廣告、 左側和右側搖桿按 4 個方向**A**， **B**， **X**， **Y**，**檢視**，和**功能表**&mdash;提供數位閱讀的指出是否已按下 （向下） 或發行 （上）。 為了提高效率，按鈕的讀數不表示為個別的布林值;相反地，它們所有封裝到單一的位元欄位，由[GamepadButtons][]列舉型別。
+每個遊戲台按鈕&mdash;面板的四個方向、左右的緩衝器、左右的下拉控制杆按下、 **A**、 **B**、 **X**、 **Y**、 **View**和**Menu**&mdash;提供數位閱讀，指出它是按下（下）還是放開（向上）。 為了提高效率，按鈕讀數不會以個別的布林值表示;相反地，它們全都封裝成[GamepadButtons][]列舉所代表的單一位位。
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **paddle** buttons on its underside. These buttons are also represented in the `GamepadButtons` enumeration and their values are read in the same way as the standard gamepad buttons. -->
@@ -370,23 +370,23 @@ if (GamepadButtons.None == (reading.Buttons & GamepadButtons.A))
 }
 ```
 
-有時候您可能想要判斷從按鈕的轉換時按下 為發行或發行為已按下，無論是在按下或釋放，多個按鈕，或一組按鈕以特定方式排列&mdash;一些按下，某些 not。 如需如何偵測所有這些條件的相關資訊，請參閱[偵測按鈕轉換](input-practices-for-games.md#detecting-button-transitions)和[偵測複雜按鈕排列](input-practices-for-games.md#detecting-complex-button-arrangements)。
+有時候，您可能會想要判斷按鈕從已按下或放開到已按下的時間、是否有多個按鈕按下或放開，或是以特定方式排列一組按鈕&mdash;按下 [部分]。 如需如何偵測所有這些條件的相關資訊，請參閱[偵測按鈕轉換](input-practices-for-games.md#detecting-button-transitions)和[偵測複雜按鈕排列](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
 ## <a name="run-the-gamepad-input-sample"></a>執行遊戲台輸入範例
 
-[GamepadUWP 範例 _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadUWP) 示範如何連接到遊戲台，以及如何讀取其狀態。
+[GamepadUWP 範例 _(github)_ ](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadUWP) 示範如何連接到遊戲台，以及如何讀取其狀態。
 
 ## <a name="vibration-and-impulse-triggers-overview"></a>震動和脈衝發射鍵概觀
 
 遊戲台內的震動馬達用來將觸感反應提供給使用者。 遊戲會使用這項功能來創造更強大的身歷其境感受、協助溝通狀態資訊 (例如發生損害)、提示重要物件的鄰近性，或其他創意用途。
 
-Xbox One 遊戲台共配備四個獨立震動馬達。 兩個是位於在遊戲台主體中的大型馬達左的馬達提供概略、 高 amplitude 震動，而右邊的馬達提供 gentler、 更微妙的震動。 另外兩個是小型馬達，每個發射鍵內各有一個，其提供使用者發射手指的直接劇烈大量的震動；Xbox One 遊戲台的這項獨特功能是其發射鍵稱為「脈衝發射鍵」的原因。 將這些馬達組合在一起，可以產生多種不同的觸覺。
+Xbox One 遊戲台共配備四個獨立震動馬達。 有兩個是位於遊戲台主體中的大型馬達;左側馬達提供粗略、高幅度的震動，而右馬達則提供 gentler、更細微的震動。 另外兩個是小型馬達，每個發射鍵內各有一個，其提供使用者發射手指的直接劇烈大量的震動；Xbox One 遊戲台的這項獨特功能是其發射鍵稱為「脈衝發射鍵」的原因。 將這些馬達組合在一起，可以產生多種不同的觸覺。
 
 ## <a name="using-vibration-and-impulse"></a>使用震動與脈衝
 
-遊戲台震動是透過 [Gamepad][] 類別的 [Vibration][] 屬性所控制。 `Vibration` 是的執行個體[GamepadVibration][]結構所構成的四個浮動點值; 每個值代表其中一個馬達的濃度。
+遊戲台震動是透過 [Gamepad][] 類別的 [Vibration][] 屬性所控制。 `Vibration` 是由四個浮點值組成的[GamepadVibration][]結構實例。每個值都代表其中一個馬達的濃度。
 
-雖然成員`Gamepad.Vibration`可以直接修改屬性，則建議您將初始化個別`GamepadVibration`執行個體的值，然後將它複製到`Gamepad.Vibration`屬性來變更實際的馬達強度全部一次。
+雖然可以直接修改 `Gamepad.Vibration` 屬性的成員，但建議您將個別的 `GamepadVibration` 實例初始化為您想要的值，然後將它複製到 `Gamepad.Vibration` 屬性，以一次變更實際的馬達濃度。
 
 下列範例示範如何同時變更馬達強度。
 
@@ -436,7 +436,7 @@ vibration.RightMotor = 0.25; // sets the intensity of the right motor to 25%
 mainGamepad.Vibration = vibration;
 ```
 
-請記住，這兩個馬達不會完全相同，因此，將這些屬性設定成相同值並不會讓兩個馬達產生相同的震動。 任何值，左邊的馬達會產生更強震動的較低的頻率比右邊馬達這&mdash;相同值&mdash;會產生較高頻率震動 gentler。 即使是最大值，左馬達還是無法產生右馬達的高頻率，右馬達也無法產生左馬達的高力道。 然而，因為馬達與遊戲台主體緊密連接，即使馬達具有不同特性並反應不同強度的震動，玩家不會完整感覺到單一馬達的震動。 這種方式所產生的觸覺會比馬達完全相同時更多樣、更複雜。
+請記住，這兩個馬達不會完全相同，因此，將這些屬性設定成相同值並不會讓兩個馬達產生相同的震動。 對於任何值，左側馬達會產生比右&mdash;馬達更低的震動，&mdash;以較高的頻率產生 gentler 震動。 即使是最大值，左馬達還是無法產生右馬達的高頻率，右馬達也無法產生左馬達的高力道。 然而，因為馬達與遊戲台主體緊密連接，即使馬達具有不同特性並反應不同強度的震動，玩家不會完整感覺到單一馬達的震動。 這種方式所產生的觸覺會比馬達完全相同時更多樣、更複雜。
 
 ### <a name="using-the-impulse-triggers"></a>使用脈衝發射鍵
 
@@ -462,17 +462,17 @@ mainGamepad.Vibration = vibration;
 
 ## <a name="run-the-gamepad-vibration-sample"></a>執行遊戲台震動範例
 
-[GamepadVibrationUWP 範例 _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadVibrationUWP) 示範如何使用遊戲台震動馬達和脈衝發射鍵來產生各種效果。
+[GamepadVibrationUWP 範例 _(github)_ ](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadVibrationUWP) 示範如何使用遊戲台震動馬達和脈衝發射鍵來產生各種效果。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Windows.Gaming.Input.UINavigationController][]
-* [Windows.Gaming.Input.IGameController][]
-* [輸入適用於遊戲的作法](input-practices-for-games.md)
+* [Windows. IGameController][]
+* [遊戲的輸入實務](input-practices-for-games.md)
 
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
+[Windows. 遊戲輸入]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.UINavigationController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx
-[Windows.Gaming.Input.IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
+[Windows. IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
 [Gamepad]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.aspx
 [Gamepad]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepads.aspx
 [gamepadadded]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepadadded.aspx
