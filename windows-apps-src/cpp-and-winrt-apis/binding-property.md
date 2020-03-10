@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 屬性
 ms.localizationpriority: medium
 ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: eb683734801c1de5977db70e626609cf7e5b7654
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70304509"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853277"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
 可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 這個主意是以軟體設計模式為基礎稱為「觀察者模式」  。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作可觀察屬性，以及將 XAML 控制項繫結至這些屬性的方法 (如需背景資訊，請參閱[資料繫結](/windows/uwp/data-binding))。
@@ -27,7 +27,7 @@ XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯
 > 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="create-a-blank-app-bookstore"></a>建立空白的應用程式 (Bookstore)
-在 Microsoft Visual Studio 中，從建立新的專案開始。 建立 **空白的應用程式 (C++/WinRT)** 專案，並將它命名為 *Bookstore*。
+請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **空白的應用程式 (C++/WinRT)** 專案，並將它命名為 *Bookstore*。
 
 我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 我們在相同的編譯單位裡撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且我們會使用 C++/WinRT 撰寫和使用它。
 
@@ -56,7 +56,7 @@ namespace Bookstore
 以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]  。 這會在檔案總管中開啟專案資料夾。 在那裏，從 `\Bookstore\Bookstore\Generated Files\sources\` 資料夾將虛設常式檔案 `BookSku.h` 和 `BookSku.cpp` 複製到專案資料夾中，也就是 `\Bookstore\Bookstore\`。 在 方案總管  中，選取專案資料夾後，確定 顯示所有檔案  已切換成開啟。 按一下滑鼠右鍵您複製的虛設常式檔案，然後按一下 [加入至專案]  。
 
 ## <a name="implement-booksku"></a>執行 **BookSku**
-現在，我們開啟 `\Bookstore\Bookstore\BookSku.h` 與 `BookSku.cpp` 並實作我們的執行階段類別。 在 `BookSku.h` 中，新增一個採用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的建構函式，一個儲存標題字串的私用成員，以及另一個用於標題變更時，我們會引發的事件。 進行這些變更之後，您的 `BookSku.h` 看起來像這樣。
+現在要開啟 `\Bookstore\Bookstore\BookSku.h` 與 `BookSku.cpp`，並實作我們的執行階段類別。 在 `BookSku.h` 中，新增一個採用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的建構函式，一個儲存標題字串的私用成員，以及另一個用於標題變更時，我們會引發的事件。 進行這些變更之後，您的 `BookSku.h` 看起來像這樣。
 
 ```cppwinrt
 // BookSku.h
