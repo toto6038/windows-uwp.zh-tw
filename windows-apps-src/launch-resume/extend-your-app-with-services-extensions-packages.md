@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 延伸, 組件化, app 服務, 套件, 擴充功能
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a98ef8e0ec53668277face05d83c08f6421cb7
-ms.sourcegitcommit: c7e10793cbef55ace959ac8fc6ddd08e683602bd
+ms.openlocfilehash: a2d12fbf1c45c05c2e9917c77c0d15f15bccaf72
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329516"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935339"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>透過服務、延伸模組和套件擴充您的應用程式
 
@@ -78,7 +78,7 @@ Windows 10 中有許多技術可擴充及搭配您的應用程式。 此表格�
 選用套件可用來補充或延伸應用程式套件的原始功能。 您可以發行 App 後再接著發行選用套件，也可以同時發行 App 和選用套件。 透過選用套件延伸 App 有其優點，您可以將內容當做個別應用程式套件來發佈和創造收益。 選用套件會使用主 App 的身分識別來執行 (這點與應用程式擴充功能不同)，因此通常是由原本的 App 開發人員所開發。 視定義選用套件的方式而定，可以將程式碼、資產或程式碼與資產兩者從選用套件載入至您的主 App。 如果您需要以可分別販賣、授權及散佈的內容來增強應用程式，則選用套件可能是您的正確選擇。 如需實作詳細資料，請參閱[選用套件及相關集合的製作](/windows/msix/package/optional-packages)。
 
 **一般套件組合**
-[一般套件組合應用程式套件](/windows/msix/package/flat-bundles.md)類似一般的應用程式套件組合，不同點在於不是將所有應用程式套件包括在資料夾中，一般套件組合只會在應用程式套件中包含*參考*。 因包含的是應用程式套件的參考，而不是檔案本身，一般套件組合將會減少封裝和下載應用程式所需的時間量。
+[一般套件組合應用程式套件](/windows/msix/package/flat-bundles)類似一般的應用程式套件組合，不同點在於不是將所有應用程式套件包括在資料夾中，一般套件組合只會在應用程式套件中包含*參考*。 因包含的是應用程式套件的參考，而不是檔案本身，一般套件組合將會減少封裝和下載應用程式所需的時間量。
 
 **應用程式延伸模組**
 
@@ -98,7 +98,7 @@ Windows 應用程式服務可讓您的 UWP 應用程式將服務提供給另一�
 
 串流安裝是一種盡可能使您的 App 有效地傳遞給使用者的方式。 只要所需的部分下載完成，使用者即可投入與 App 的互動，而不是等待下載了整個 App 才來開始使用。 身為開發人員，您可以決定將 App 分割為用於基本啟用與啟動的必要區段和用於 App 其餘部分的其他內容。 如需詳細資訊和實作詳細資料，請參閱 [UWP app 串流安裝](/windows/msix/package/streaming-install)。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 [建立和使用應用程式服務](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
 [資產封裝簡介](/windows/msix/package/asset-packages)  

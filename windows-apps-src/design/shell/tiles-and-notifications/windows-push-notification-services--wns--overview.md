@@ -3,24 +3,22 @@ Description: Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員�
 title: Windows 推播通知服務 (WNS) 概觀
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 03/06/2020
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f53dd0538e4564c50fb5cbcb6986f5cf9661cae
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: bd6c3ec487871d18a7142489802b801120f5e7ed
+ms.sourcegitcommit: 0142b5a47511afa76d74015e3fd8635b6042a542
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463806"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79038126"
 ---
-# <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀
- 
+# <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀 
 
 Windows Push Notification Services （WNS）可讓協力廠商開發人員從他們自己的雲端服務傳送快顯、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。
 
 ## <a name="how-it-works"></a>運作方式
-
 
 下圖顯示傳送推播通知的完整資料流程。 流程有三個步驟：
 
@@ -35,15 +33,52 @@ Windows Push Notification Services （WNS）可讓協力廠商開發人員從他
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>註冊您的應用程式與接收雲端服務認證
 
-
-您的應用程式必須先在市集儀表板註冊，您才能夠使用 WNS 傳送通知。 這樣做會將您應用程式的認證提供給您，您的雲端服務向 WNS 進行驗證時要使用該認證。 這些認證由套件安全性識別碼 (SID) 與祕密金鑰組成。 若要執行此註冊，請登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。 建立您的應用程式之後，您可以依照**應用程式管理 - WNS/MPNS** 頁面的指示來擷取認證。 如果您想要使用 Live 服務解決方案，請遵循此頁面的 **Live 服務網站**連結。
+您的應用程式必須先在市集儀表板註冊，您才能夠使用 WNS 傳送通知。 
 
 每個應用程式都有自己雲端服務的一組認證。 這些認證無法用於傳送通知給任何其他應用程式。
 
-如需如何註冊應用程式的詳細資訊，請參閱[如何使用 Windows 通知服務 (WNS) 進行驗證](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))。
+### <a name="step-1-register-your-app-with-the-dashboard"></a>步驟1：使用儀表板註冊您的應用程式
+
+您的應用程式必須先向合作夥伴中心儀表板註冊，才可以透過 WNS 傳送通知。 這樣做會將您應用程式的認證提供給您，您的雲端服務向 WNS 進行驗證時要使用該認證。 這些認證由套件安全性識別碼 (SID) 與祕密金鑰組成。 若要執行此註冊，請登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。 建立應用程式之後，請參閱[產品管理-](https://apps.dev.microsoft.com/)適用于 INSTRUNCTIONS 的 WNS/MPNS，以瞭解如何取得認證（如果您想要使用 live services 解決方案，請遵循此頁面上的**live services 網站**連結）。
+
+若要註冊：
+1.  移至合作夥伴中心的 [Windows Store 應用程式] 頁面，並使用您的個人 Microsoft 帳戶登入（例如： johndoe@outlook.com，janedoe@xboxlive.com）。
+2.  登入之後，請按一下 [儀表板] 連結。
+3.  在儀表板上，選取 [建立新的應用程式]。
+
+![wns 應用程式註冊](../images/wns-create-new-app.png)
+
+4.  藉由保留應用程式名稱來建立您的應用程式。 為您的應用程式提供唯一的名稱。 輸入名稱，然後按一下 [保留產品名稱] 按鈕。 如果名稱可供使用，則會保留給您的應用程式。 當您成功保留應用程式的名稱之後，其他詳細資料就會變成可供修改。
+
+![wns 保留產品名稱](../images/wns-reserve-poduct-name.png)
+ 
+### <a name="step-2-obtain-the-identity-values-and-credentials-for-your-app"></a>步驟2：取得應用程式的身分識別值和認證
+
+當您為應用程式保留名稱時，Windows 儲存區會建立相關聯的認證。 它也會指派必須存在於應用程式資訊清單檔（package.appxmanifest.xml）中的相關聯身分識別值（名稱和發行者）。 如果您已將應用程式上傳至 Windows Store，這些值將會自動新增至您的資訊清單。 如果您尚未上傳您的應用程式，您必須手動將識別值新增至您的資訊清單。
+
+1.  選取 [產品管理] 下拉箭號
+
+![wns 產品管理](../images/wns-product-management.png)
+
+2.  在 [產品管理] 下拉式清單中，選取 [WNS/MPNS] 連結。
+
+![wns 產品管理 continuted](../images/wns-product-management2.png)
+ 
+3.  在 [WNS/MPNS] 頁面上，按一下 [Windows Push Notification Services （WNS）] 和 [Microsoft Azure 行動服務] 區段底下的 [Live 服務網站] 連結。
+
+![wns live 服務](../images/wns-live-services-page.png)
+ 
+4.  應用程式註冊入口網站（先前為 [即時服務] 頁面）頁面會提供您要包含在應用程式資訊清單中的身分識別元素。 這包括應用程式密碼、套件安全識別碼和應用程式識別。 在文字編輯器中開啟您的資訊清單，並在頁面指示時加入該元素。   
+
+> [!NOTE]
+> 如果您使用 AAD 帳戶登入，則必須聯絡已註冊應用程式的 Microsoft 帳戶擁有者，以取得相關聯的應用程式秘密。 如果您需要協助尋找此連絡人，請按一下螢幕右上角的齒輪，然後按一下 [開發人員設定]，就會在該處顯示使用其 Microsoft 帳戶建立應用程式的人員的電子郵件地址。
+ 
+5.  將 SID 和用戶端密碼上傳至您的雲端伺服器。
+
+> [!Important]
+> SID 和用戶端密碼應該由您的雲端服務安全地儲存及存取。 洩漏或竊取這項資訊，可讓攻擊者在沒有您的許可權或知識的情況下，將通知傳送給您的使用者。
 
 ## <a name="requesting-a-notification-channel"></a>要求通知通道
-
 
 執行可接收推播通知的應用程式時，該應用程式必須先透過 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_) 要求通知通道。 如需查看完整討論與程式碼範例，請參閱[如何要求、建立以及儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))。 這個 API 可傳回以唯一方式連結至呼叫端應用程式及其磚的通道 URI，而所有的通知類型都可以透過它來傳送。
 
@@ -58,7 +93,6 @@ Windows Push Notification Services （WNS）可讓協力廠商開發人員從他
 
 ## <a name="authenticating-your-cloud-service"></a>驗證您的雲端服務
 
-
 若要傳送通知，雲端服務必須透過 WNS 進行驗證。 當您向 Microsoft Store 儀表板註冊您的應用程式時，便會發生這個程序的第一個步驟。 進行註冊期間，將會提供應用程式套件安全性識別碼 (SID) 與祕密金鑰。 您的雲端服務會使用這個資訊向 WNS 進行驗證。
 
 WNS 驗證配置使用 [OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-v2-23) 通訊協定的用戶端認證設定檔進行實作。 雲端服務提供本身的認證 (套件 SID 與祕密金鑰) 向 WNS 進行驗證。 然後會收到傳回的存取權杖。 這個存取權杖可讓雲端服務傳送通知。 每個傳送至 WNS 的通知要求都需要有權杖。
@@ -70,11 +104,10 @@ WNS 驗證配置使用 [OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-
 
 ![雲端服務驗證的 WNS 圖表](images/wns-diagram-02.jpg)
 
-在向 WNS 進行驗證時，雲端服務會透過安全通訊端階層 (SSL) 提交 HTTP 要求。 參數使用「application/x-www-for-urlencoded」格式提供。 在 [用戶端\_識別碼] 欄位中提供您的套件 SID，並在 [用戶端\_密碼] 欄位中提供您的秘密金鑰。 如需語法詳細資訊，請參閱[存取權杖要求](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))參考。
+在向 WNS 進行驗證時，雲端服務會透過安全通訊端階層 (SSL) 提交 HTTP 要求。 參數使用「application/x-www-for-urlencoded」格式提供。 在 [用戶端\_識別碼] 欄位中提供您的套件 SID，並在 [用戶端\_密碼] 欄位中提供您的秘密金鑰，如下列範例所示。 如需語法詳細資訊，請參閱[存取權杖要求](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))參考。
 
-**請注意**  這只是一個範例，而不是剪下並貼上程式碼，您可以在自己的程式碼中順利使用。
-
- 
+> [!NOTE]
+> 這只是一個範例，而非剪下並貼上程式碼，您可以在自己的程式碼中順利使用。 
 
 ``` http
  POST /accesstoken.srf HTTP/1.1
@@ -169,7 +202,8 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 如果您的應用程式非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 使用 Windows 10 中的節電設定 URI 配置 `ms-settings:batterysaver-settings`，您可以提供 [設定] 應用程式的方便連結。
 
-**提示**   當通知使用者有關電池保護設定時，建議您提供一種方法來抑制未來的訊息。 例如，以下範例中的 `dontAskMeAgainBox` 核取方塊會在 [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中保存使用者的喜好設定。
+> [!TIP]
+> 當通知使用者有關電池保護設定時，建議您提供一種方法來抑制未來的訊息。 例如，以下範例中的 `dontAskMeAgainBox` 核取方塊會在 [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中保存使用者的喜好設定。
 
  
 
