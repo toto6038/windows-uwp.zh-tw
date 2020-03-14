@@ -1,19 +1,19 @@
 ---
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: 請在 Microsoft Store 提交 API 中使用這些方法，來抓取已向合作夥伴中心帳戶註冊的應用程式資料。
-title: 取得應用程式資料
+title: 取得 App 資料
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式資料
 ms.localizationpriority: medium
 ms.openlocfilehash: cfbe8df46f51b41ccdd840f609caf2c593735e1f
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853345"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210974"
 ---
-# <a name="get-app-data"></a>取得應用程式資料
+# <a name="get-app-data"></a>取得 App 資料
 
 在 Microsoft Store 提交 API 中使用下列方法，以取得合作夥伴中心帳戶中現有應用程式的資料。 如需 Microsoft Store 提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
@@ -64,7 +64,7 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 
 | 值           | 類型    | 描述       |
 |-----------------|---------|---------------------|
-| id            | string  | 應用程式的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
+| id            | string  | 應用程式的 Store 識別碼。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
 | primaryName   | string  | 應用程式的主要名稱。      |
 | packageFamilyName | string  | 應用程式的套件系列名稱      |
 | packageIdentityName          | string  | 應用程式的套件識別資料名稱。                       |
@@ -91,7 +91,7 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 
 | 值           | 類型    | 描述         |
 |-----------------|---------|----------------------|
-| inAppProductId            | string  | 附加元件的市集識別碼。 此值由市集所提供。 市集識別碼範例為 9NBLGGH4TNMP。   |
+| inAppProductId            | string  | 附加元件的 Store 識別碼。 此值由 Microsoft Store 所提供。 Store 識別碼範例為 9NBLGGH4TNMP。   |
 
 
 <span id="flight-object" />

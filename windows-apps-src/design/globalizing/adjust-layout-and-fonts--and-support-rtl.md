@@ -1,6 +1,6 @@
 ---
 Description: 設計您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。
-title: 調整配置和字型並支援 RTL
+title: 調整配置和字型以及支援 RTL
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: windows 10, uwp, 可當地語系化性, 當地語系化, rtl, ltr
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852535"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209834"
 ---
-# <a name="adjust-layout-and-fonts-and-support-rtl"></a>調整配置和字型並支援 RTL
+# <a name="adjust-layout-and-fonts-and-support-rtl"></a>調整配置和字型以及支援 RTL
 設計您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。 流程方向是文字書寫和顯示，以及使用者的眼睛掃過頁面上 UI 元素的方向。
 
 ## <a name="layout-guidelines"></a>配置指導方針

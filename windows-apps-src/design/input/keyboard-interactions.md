@@ -12,11 +12,11 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.openlocfilehash: 449f0c81bdd54d99ef0977ca1c9b6ba10ba5eae7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258353"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210104"
 ---
 # <a name="keyboard-interactions"></a>鍵盤互動
 
@@ -402,11 +402,11 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 | **鍵盤**  | **遊戲台**                         | **遠端控制**  |
 |---------------|-------------------------------------|---------------------|
-| 空格鍵         | A 按鈕                            | 選取按鈕       |
-| Enter         | A 按鈕                            | 選取按鈕       |
-| ESC        | B 按鈕                            | 返回按鈕         |
-| Home/End      | 不適用                                 | 不適用                 |
-| Page Up/Down  | 發射鍵用於垂直捲動，緩衝鍵用於水平捲動   | 不適用                 |
+| 空格鍵         | A 按鍵                            | 選取按鈕       |
+| Enter 鍵         | A 按鍵                            | 選取按鈕       |
+| ESC 鍵        | B 按鍵                            | [上一步] 按鈕         |
+| Home/End      | N/A                                 | N/A                 |
+| Page Up/Down  | 發射鍵用於垂直捲動，緩衝鍵用於水平捲動   | N/A                 |
 
 設計 UWP 應用程式使用於遊戲台與遙控器時，應該留意的一些重要差異包括：
 -   文字輸入需要使用者按 A 啟動文字控制項。

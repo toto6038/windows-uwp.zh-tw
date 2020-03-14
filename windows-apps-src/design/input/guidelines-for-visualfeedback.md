@@ -1,6 +1,6 @@
 ---
 Description: 使用視覺效果意見反應，在使用者與 UWP 應用程式的互動受到偵測、解讀和處理時顯示。
-title: 視覺化回饋
+title: 視覺回饋
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bba80403934987569c25b96eced9a610226431b5
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257905"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209974"
 ---
 # <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
@@ -21,7 +21,7 @@ ms.locfileid: "74257905"
 
 > **重要 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 
-## <a name="recommendations"></a>建議
+## <a name="recommendations"></a>建議事項
 
 - 嘗試限制修改這些與您的設計目的直接相關的控制項範本，不然的話，多出來的變更會影響控制項和應用程式的效能與可存取性。 
     - 請參閱 [XAML 樣式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles)以取得有關自訂控制項屬性的詳細資訊，包括可見狀態屬性。
@@ -64,7 +64,7 @@ ms.locfileid: "74257905"
 
 **框線屬性**
 
-高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」* 。
+高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線*外側*。 次要框線的粗細為 **1px**，圍繞在主要框線*內側*。
 ![高可見度焦點視覺效果紅線](images/FocusRectRedlines.png)
 
 若要變更框線類型 (主要或次要) 的粗細，請分別使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**︰
@@ -75,7 +75,7 @@ ms.locfileid: "74257905"
 
 邊界是 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness) 類型的屬性，因此可將邊界自訂成只出現在控制項的特定邊。 請參閱下方： ![高可見度焦點聚焦視覺邊界粗細的底部](images/FocusThicknessSide.png)
 
-邊界是控制項視覺界限與焦點視覺效果「次要框線」起始位置之間的空間。 預設邊界是距離控制項界限 **1px**。 您可以編輯個別控制項的這個邊界，方法是變更 **FocusVisualMargin** 屬性︰
+邊界是控制項視覺界限與焦點視覺效果 *「次要框線」* 起始位置之間的空間。 預設邊界是距離控制項界限 **1px**。 您可以編輯個別控制項的這個邊界，方法是變更 **FocusVisualMargin** 屬性︰
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```

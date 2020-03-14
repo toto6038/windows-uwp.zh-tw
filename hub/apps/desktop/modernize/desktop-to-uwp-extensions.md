@@ -9,11 +9,11 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852445"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209714"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將桌面應用程式與 Windows 10 和 UWP 整合
 
@@ -380,7 +380,7 @@ ms.locfileid: "78852445"
 |LocalPortMax |本機連接埠數字範圍中最高的數字。 |
 |RemotePortMax |遠端連接埠數字範圍中較低的數字。 |
 |RemotePortMax |遠端連接埠數字範圍中最高的數字。 |
-|設定檔 |網路類型 |
+|Profile |網路類型 |
 
 #### <a name="example"></a>範例
 
@@ -1040,7 +1040,7 @@ ms.locfileid: "78852445"
 |-------|-------------|
 |類別 |總是 ``windows.appExecutionAlias``。
 |可執行檔 |叫用別名時欲啟動之可執行檔的相對路徑。 |
-|別名 |適用於您應用程式的簡短名稱。 其必須一律以副檔名「.exe」結尾。 針對套件中的每個應用程式，您僅可指定單一應用程式執行別名。 若有多個應用程式註冊相同的別名，系統將會叫用最後一個註冊的別名，因此請務必選擇絕對不會遭其他應用程式覆寫的唯一別名。
+|Alias |適用於您應用程式的簡短名稱。 其必須一律以副檔名「.exe」結尾。 針對套件中的每個應用程式，您僅可指定單一應用程式執行別名。 若有多個應用程式註冊相同的別名，系統將會叫用最後一個註冊的別名，因此請務必選擇絕對不會遭其他應用程式覆寫的唯一別名。
 |
 
 #### <a name="example"></a>範例
@@ -1077,7 +1077,7 @@ ms.locfileid: "78852445"
 > [!NOTE]
 > 使用者至少要啟動您的應用程式一次，才能註冊此啟動工作。
 
-您的應用程式可以宣告多個啟動工作。 每個工作都是獨立啟動的。 所有啟動工作皆會顯示在「工作管理員」中的 **\[啟動\]** 索引標籤下方，且具有您在應用程式的資訊清單中指定的名稱，以及應用程式的圖示。 [工作管理員] 會自動分析您工作的啟動影響。
+您的應用程式可以宣告多個啟動工作。 每個工作都是獨立啟動的。 所有啟動工作皆會顯示在「工作管理員」中的 **\[啟動\]** 索引標籤下方，且具有您在應用程式的資訊清單中指定的名稱，以及應用程式的圖示。 工作管理員會自動分析您工作的啟動影響。
 
 使用者可以使用工作管理員手動停用您應用程式的啟動工作。 若使用者停用工作，您將無法以程式設計的方式重新啟用它。
 
@@ -1376,4 +1376,4 @@ ms.locfileid: "78852445"
 
 ## <a name="next-steps"></a>後續步驟
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標籤](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在這裡](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)發問。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。

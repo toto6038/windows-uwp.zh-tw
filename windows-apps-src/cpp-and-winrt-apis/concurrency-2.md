@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853375"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209253"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>採用 C++/WinRT 的更進階並行和非同步
 

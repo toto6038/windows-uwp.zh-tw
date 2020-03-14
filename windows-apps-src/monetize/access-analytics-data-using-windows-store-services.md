@@ -8,15 +8,15 @@ keywords: Windows 10 , UWP, Microsoft Store 服務, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3b732da8f92c258647f905e6939dc3cb1b9c9f87
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853355"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210784"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用 Microsoft Store 服務存取分析資料
 
-使用*Microsoft Store 分析 API* ，以程式設計方式取出已向或您組織的 Windows 合作夥伴中心帳戶註冊之應用程式的分析資料。 這個 API 可讓您擷取應用程式和附加元件 (也稱為應用程式內產品或 IAP) 下載數、錯誤、應用程式評分與評論的資料。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
+使用*Microsoft Store 分析 API* ，以程式設計方式取出已向或您組織的 Windows 合作夥伴中心帳戶註冊之應用程式的分析資料。 這個 API 可讓您擷取應用程式和附加元件 (也稱為應用程式內產品或 IAP) 下載數、錯誤、應用程式評分與評論的資料。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您 App 或服務的呼叫。
 
 下列步驟說明端對端的程序：
 
@@ -85,7 +85,7 @@ grant_type=client_credentials
 
 下列分析方法適用于合作夥伴中心的 UWP 應用程式。
 
-| 狀況       | 方法      |
+| 案例       | 方法      |
 |---------------|--------------------|
 | 收購、轉換、安裝和使用 |  <ul><li>[取得應用程式收購](get-app-acquisitions.md)（舊版）</li><li>[取得應用程式獲取漏斗圖資料](get-acquisition-funnel-data.md)（舊版）</li><li>[依通道取得應用程式轉換](get-app-conversions-by-channel.md)</li><li>[取得附加元件的收購](get-in-app-acquisitions.md)</li><li>[取得訂用帳戶附加元件收購](get-subscription-acquisitions.md)</li><li>[依通道取得附加元件轉換](get-add-on-conversions-by-channel.md)</li><li>[取得應用程式安裝](get-app-installs.md)</li><li>[取得每日應用程式使用量](get-app-usage-daily.md)</li><li>[取得每月應用程式使用量](get-app-usage-monthly.md)</li></ul> |
 | App 錯誤 | <ul><li>[取得錯誤報表資料](get-error-reporting-data.md)</li><li>[取得應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)</li><li>[取得應用程式中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[下載應用程式中發生錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
@@ -97,7 +97,7 @@ grant_type=client_credentials
 
 下列分析方法可供隸屬於 [Windows 傳統型應用程式計畫](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的開發人員帳戶使用。
 
-| 狀況       | 方法      |
+| 案例       | 方法      |
 |---------------|--------------------|
 | 安裝 |  <ul><li>[取得桌面應用程式安裝](get-desktop-app-installs.md)</li></ul> |
 | Blocks |  <ul><li>[取得桌面應用程式的升級區塊](get-desktop-block-data.md)</li><li>[取得桌面應用程式的升級封鎖詳細資料](get-desktop-block-data-details.md)</li></ul> |
@@ -108,7 +108,7 @@ grant_type=client_credentials
 
 下列其他方法可供使用 [Xbox Live 服務](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md)的遊戲開發人員帳戶使用。
 
-| 狀況       | 方法      |
+| 案例       | 方法      |
 |---------------|--------------------|
 | 一般分析 |  <ul><li>[取得 Xbox Live 分析資料](get-xbox-live-analytics.md)</li><li>[取得 Xbox Live 成就資料](get-xbox-live-achievements-data.md)</li><li>[取得 Xbox Live 並行使用量資料](get-xbox-live-concurrent-usage-data.md)</li></ul> |
 | 健康情況分析 |  <ul><li>[取得 Xbox Live 健全狀況資料](get-xbox-live-health-data.md)</li></ul> |

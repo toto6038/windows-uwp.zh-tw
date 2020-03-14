@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 支付摘要, 聲明, 付款, 收入, 支付, 付帳, 收益
 ms.localizationpriority: medium
 ms.openlocfilehash: f4d8727a48cd68b304d515fe34082b4c4f632b4b
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853455"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210524"
 ---
 # <a name="payout-reports"></a>支出報表
 
@@ -70,7 +70,7 @@ ms.locfileid: "78853455"
 | 提交                 | 付款順序會在處理付款前產生擱置內部審核。                                                               | 否                                                         |
 | 待決的稅務發票      | 您的稅務發票不完整或無效。                                                                                                  | 您必須先更新您的稅務發票，才能支付費用 |
 | 審查期間拒絕   | 付款在審查期間遭到拒絕。                                                                                                     | 請洽詢[Microsoft 支援服務](https://developer.microsoft.com/windows/support)以取得詳細資料                      |
-| 已失敗                   | 付款因 Microsoft 系統錯誤而失敗。                                                                                         | 請洽詢[Microsoft 支援服務](https://developer.microsoft.com/windows/support)以取得詳細資料                      |
+| Failed                   | 付款因 Microsoft 系統錯誤而失敗。                                                                                         | 請洽詢[Microsoft 支援服務](https://developer.microsoft.com/windows/support)以取得詳細資料                      |
 | 進行中              | 付款進行中。                                                                                                                 | 否                                                         |
 | 不正確的付款        | 付款 recouping 正在進行中。                                                                                                       | 否                                                         |
 | 已傳送                     | 付款已傳送到您的銀行。                                                                                                     | 否                                                         |
@@ -169,7 +169,7 @@ ms.locfileid: "78853455"
 | resellerName                   | 轉售商名稱                                                                                                                            | 獎勵-僅限某些程式                                 |
 | distributorId                  | 散發者識別碼                                                                                                                   | 獎勵-僅限某些程式                                 |
 | distributorName                | 散發者名稱                                                                                                                         | 獎勵-僅限某些程式                                 |
-| agreementNumber                | 合約編號                                                                                                                         | 獎勵-僅限某些程式                                 |
+| agreementNumber                | [合約編號]                                                                                                                         | 獎勵-僅限某些程式                                 |
 | agreementStartDate             | [合約開始日期]                                                                                                                     | 獎勵-僅限某些程式                                 |
 | agreementEndDate               | [合約結束日期]                                                                                                                       | 獎勵-僅限某些程式                                 |
 | 工作負載                       | 工作負載                                                                                                                                 | 獎勵-僅限某些程式                                 |
@@ -214,15 +214,15 @@ ms.locfileid: "78853455"
 | 父系產品識別碼       | 唯一的父系產品識別碼。 請注意：如果該交易沒有父系產品，則父系產品識別碼 = 產品識別碼。                                |
 | 產品識別碼              | 唯一的產品識別碼。                                                                                                                                              |
 | 父系產品名稱     | 父系產品的名稱。 請注意：如果該交易沒有父系產品，則父系產品名稱 = 產品名稱。                                  |
-| 產品名稱            | 產品的名稱。                                                                                                                                                    |
+| [產品名稱]            | 產品的名稱。                                                                                                                                                    |
 | 產品類型            | 產品類型 (例如應用程式、附加元件、遊戲等等)                                                                                                                       |
 | 數量                | 當收入來源為商務用 Microsoft Store 時，數量代表購買的授權數目。 針對所有其他的收入來源，數量永遠都會是 1。 注意︰即使單一交易分成兩個行項目，因為使用兩個不同的付款方式，每個行項目會顯示數量 1。 |
 | [交易類型]        | 交易類型 (例如購買、退貨、作廢、退款等等)                                                                                              |
 | 付款方式          | 交易使用的客戶付款方式 (例如，卡片、行動裝置電信業者帳單、PayPal 等)。                                                               |
 | 國家/地區        | 發生該筆交易的國家/地區。                                                                                                                          |
 | 當地提供者/賣方 | 記錄的當地提供者/賣方。                                                                                                                                        |
-| 交易貨幣    | 交易的貨幣。                                                                                                                                            |
-| 交易金額      | 交易的金額。                                                                                                                                              |
+| [交易貨幣]    | 交易的貨幣。                                                                                                                                            |
+| [交易金額]      | 交易的金額。                                                                                                                                              |
 | 免稅            | 免稅金額 (銷售、使用或 VAT/GST 稅額)。                                                                                                                  |
 | 淨收入            | 交易金額減去免稅額。                                                                                                                                   |
 | 市集費用               | Microsoft 保留做為在市集提供 App 或附加元件之費用的淨收入百分比。                                                      |

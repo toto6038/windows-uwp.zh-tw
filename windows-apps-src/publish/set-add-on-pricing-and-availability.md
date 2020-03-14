@@ -1,19 +1,19 @@
 ---
 Description: 提交附加內容時，在價格與可用性頁面上的選項會決定您的附加內容計費內容，以及提供給客戶的方式。
-title: 設定附加內容價格與可用性
+title: 設定附加元件價格與可用性
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 附加元件, iap, 價格
 ms.localizationpriority: medium
 ms.openlocfilehash: c6384b5890466ff13c72a1b90eb9b27194d51fff
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
-ms.translationtype: MT
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853525"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210994"
 ---
-# <a name="set-add-on-pricing-and-availability"></a>設定附加內容價格與可用性
+# <a name="set-add-on-pricing-and-availability"></a>設定附加元件價格與可用性
 
 在[合作夥伴中心](https://partner.microsoft.com/dashboard)提交附加元件時，[**定價與可用性**] 頁面上的選項會決定要向客戶收取多少費用，以及應如何提供給客戶。
 
@@ -27,9 +27,9 @@ ms.locfileid: "78853525"
 
 ## <a name="visibility"></a>可視性
 
-您可以決定您的附加內容是否應提供給客戶購買。 
+您可以決定您的附加元件是否應提供給客戶購買。 
 
-預設選項是 **\[可以在父產品的市集清單中顯示\]** 。 對於可供任何客戶使用的附加內容，請維持勾選此選項。 
+預設選項是 **\[可以在父產品的市集清單中顯示\]** 。 對於可供任何客戶使用的附加元件，請維持勾選此選項。 
 
 對於您不想要廣泛提供的附加元件，選取 **\[在市集中隱藏\]** 以及下列其中一個選項：
 
@@ -61,7 +61,7 @@ ms.locfileid: "78853525"
 
 ## <a name="sale-pricing"></a>銷售定價
 
-如果您想要以降低的價格提供附加內容一段有限的時間，您可以建立及排程銷售。 如需詳細資訊，請參閱[促銷 App 和附加元件](put-apps-and-add-ons-on-sale.md)。
+如果您想要以降低的價格提供附加內容一段有限的時間，您可以建立及排程銷售。 如需詳細資訊，請參閱[促銷應用程式和附加元件](put-apps-and-add-ons-on-sale.md)。
 
 
 

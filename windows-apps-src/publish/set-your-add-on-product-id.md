@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 附加元件, iap, 耐久性, 消耗性, 訂閱, 產品類型, 產品識別碼, App 內購買, 應用程式內產品
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ef1ca71ffcd7b2d445292bfb38a6a8d29e7a74
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852408"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210504"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>設定您的附加內容產品類型與產品識別碼
 
@@ -21,7 +21,7 @@ ms.locfileid: "78852408"
 
 ## <a name="product-type"></a>產品類型
 
-首先，您必須表明您所提供的附加內容類型。 此選取項目指的是客戶可以如何使用您的附加內容。
+首先，您必須表明您所提供的附加內容類型。 此選取項目指的是客戶可以如何使用您的附加元件。
 
 > [!NOTE]
 > 儲存此頁面建立附加元件之後，您將無法變更產品類型。 如果不慎選錯了產品類型，您隨時可以刪除進行中的附加元件提交，並建立新的附加元件以重新開始。
@@ -32,7 +32,7 @@ ms.locfileid: "78852408"
 
 如果您的附加元件通常是一次性購買，請選取 **\[耐久性\]** 產品類型。 這些附加元件通常用於解除鎖定 App 中的額外功能。
 
-耐久型附加元件的預設 [產品存留期] 為 [永久]，這表示附加元件永久有效。 您可以在附加元件提交程序的**內容**步驟中，將 [\[產品存留期\]](enter-add-on-properties.md) 設為不同的持續時間。 若您這樣做，附加元件會在您指定的持續時間後到期（選項是 1-365 天），在此情況下客戶可以在附加元件到期之後重新購買附加元件。
+耐久型附加元件的預設 **\[產品存留期\]** 為 **\[永久\]** ，這表示附加元件永久有效。 您可以在附加元件提交程序的**內容**步驟中，將 [\[產品存留期\]](enter-add-on-properties.md) 設為不同的持續時間。 若您這樣做，附加元件會在您指定的持續時間後到期（選項是 1-365 天），在此情況下客戶可以在附加元件到期之後重新購買附加元件。
 
 ### <a name="consumable"></a>消耗性
 

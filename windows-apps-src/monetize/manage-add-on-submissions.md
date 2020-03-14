@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: c8204382a4e341083ce825a9424181cdd75771e1
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852509"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209644"
 ---
 # <a name="manage-add-on-submissions"></a>管理附加元件提交
 
@@ -131,9 +131,9 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
     GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
     ```
 
-    若要確認提交狀態，請檢閱回應主體中的「狀態」值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
+    若要確認提交狀態，請檢閱回應主體中的 *「狀態」* 值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
-7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以使用先前的方法或造訪合作夥伴中心，繼續監視提交進度。
+7. 順利完成提交之後，即會將提交傳送到 Microsoft Store 以供擷取。 您可以使用先前的方法或造訪合作夥伴中心，繼續監視提交進度。
 
 <span/>
 
@@ -232,10 +232,10 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 |------------|--------|----------------------|
 | id            | string  | 提交的識別碼。 在回應資料中可將此識別碼用於要求，以[建立附加元件提交](create-an-add-on-submission.md)、[取得所有的附加元件](get-all-add-ons.md)，以及[取得附加元件](get-an-add-on.md)。 針對在合作夥伴中心建立的提交，此識別碼也會出現在合作夥伴中心的 [提交] 頁面的 URL 中。  |
 | contentType           | string  |  附加元件中提供的[內容類型](../publish/enter-add-on-properties.md#content-type)。 這可以是下列其中一個值： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| 關鍵字           | 陣列  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-add-on-properties.md#keywords)。 您的應用程式可以使用這些關鍵字查詢附加元件。   |
+| 關鍵字           | 陣列  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-add-on-properties.md#keywords)。 您的 App 可以使用這些關鍵字查詢附加元件。   |
 | lifetime           | string  |  附加元件的存留期。 這可以是下列其中一個值： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | 清單           | object  |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[清單資源](#listing-object)，其中包含附加元件的清單資訊。  |
-| 定價           | object  | [定價資源](#pricing-object)包含附加元件的定價資訊。   |
+| pricing           | object  | [定價資源](#pricing-object)包含附加元件的定價資訊。   |
 | targetPublishMode           | string  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>立即</li><li>手動</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
 | tag (標記)           | string  |  附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (此資訊以前稱為 *「標記」* )。   |
@@ -276,7 +276,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           | 類型    | 描述    |
 |-----------------|---------|------|
-|  marketSpecificPricings               |    object     |  機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。     |     
+|  marketSpecificPricings               |    object     |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。     |     
 |  sales               |   陣列      |  **過時**。 包含附加元件的銷售資訊的[銷售資源](#sale-object)陣列。     |     
 |  priceId               |   string      |  指定附加元件[基本價格](#price-tiers)的[價格區間](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。    |    
 |  isAdvancedPricingModel               |   boolean      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此欄位為唯讀。   |
@@ -301,7 +301,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 |  basePriceId               |   string      |  用於銷售基本價格的[價格區間](#price-tiers)。    |     
 |  startDate               |   string      |   ISO 8601 格式的銷售開始日期。  |     
 |  endDate               |   string      |  ISO 8601 格式的銷售結束日期。      |     
-|  marketSpecificPricings               |   object      |   機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 這個字典中的任何項目都會覆寫特定市場的 *basePriceId* 值所指定的基本價格。    |
+|  marketSpecificPricings               |   object      |   索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 這個字典中的任何項目都會覆寫特定市場的 *basePriceId* 值所指定的基本價格。    |
 
 <span id="status-details-object" />
 
@@ -351,7 +351,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 |-----------------|------|
 |  Base               |   未設定價格區間；使用附加元件的基本價格。      |     
 |  NotAvailable              |   特定區域中無法使用此附加元件。    |     
-|  Free              |   附加元件是免費的。    |    
+|  免費              |   附加元件是免費的。    |    
 |  層*xxxx*               |   指定附加元件的價格區間的字串，格式為**第 <em>xxxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果*價格資源* 的 [isAdvancedPricingModel](#pricing-object) 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果*價格資源* 的 [isAdvancedPricingModel](#pricing-object) 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看您的開發人員帳戶可用的完整定價層（包括與每一層相關聯的市場特定價格），請移至合作夥伴中心內任何應用程式提交的 [**定價與可用性**] 頁面，然後按一下 [**市場和自訂價格**] 區段中的 [**查看資料表**] 連結（針對某些開發人員帳戶，此連結位於 [**定價**] 區段）。     |
 
 <span id="submission-status-code" />

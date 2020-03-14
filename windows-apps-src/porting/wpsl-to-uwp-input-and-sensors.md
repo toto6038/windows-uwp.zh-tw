@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a62fcb4a208a52fd77be2a9913e265b12bf31f43
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853137"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210914"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>將 Windows Phone Silverlight 移植到 UWP 以進行 i/o、裝置和應用程式模型
 
@@ -20,7 +20,7 @@ ms.locfileid: "78853137"
 
 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。 它也可能涉及資料處理。 但是這個程式碼通常不被認為是 UI 層或資料層。 這個程式碼包含與震動控制器、加速計、陀螺儀、麥克風和喇叭 (與語音辨識和合成交集)、(地理) 位置以及輸入形式 (例如觸控、滑鼠、鍵盤及手寫筆) 的整合。
 
-## <a name="application-lifecycle-process-lifetime-management"></a>應用生命程式週期 (處理程序生命週期管理)
+## <a name="application-lifecycle-process-lifetime-management"></a>應用程式週期 (處理程序生命週期管理)
 
 您的 Windows Phone Silverlight 應用程式包含可儲存和還原其應用程式狀態和其檢視狀態的程式碼，以支援被重設腳本並隨後重新開機。 通用 Windows 平臺（UWP）應用程式的應用程式生命週期與 Windows Phone Silverlight 應用程式的使用方式非常類似，因為它們的設計都是以最大化資源的目標，讓使用者選擇要擁有的任何應用程式前景。 您會發現您的程式碼會相當容易地適應新系統。
 
@@ -44,7 +44,7 @@ UWP app 不支援鏡頭 app。
 
 **請注意**   建議您不要使用作業系統或裝置系列來偵測功能是否存在。 若要判斷特定作業系統或裝置系列功能是否存在，識別目前的作業系統或裝置系列通常不是最佳的方式。 不要偵測作業系統或裝置系列 (與版本號碼)，而是要測試功能本身是否存在 (請參閱[條件式編譯與調適型程式碼](wpsl-to-uwp-porting-to-a-uwp-project.md))。 如果您必須要求特定的作業系統或裝置系列，請務必將其當做最低的支援版本，而不是專門針對那一個版本來設計測試。
 
-有數項建議技術可用來針對不同的裝置量身打造您的應用程式 UI。 繼續使用自動調整大小元素與動態配置面板。 在 XAML 標記中，繼續使用以有效像素 (先前稱為檢視像素) 為單位的大小，讓您的 UI 可隨不同的解析度與縮放比例調整 (請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md))。 還有使用 Visual State Manager 的調適型觸發程序與 Setter 讓您的 UI 可隨視窗大小調整 (請參閱 [UWP app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide))。
+有數項建議技術可用來針對不同的裝置量身打造您的應用程式 UI。 繼續使用自動調整大小元素與動態版面配置面板。 在 XAML 標記中，繼續使用以有效像素 (先前稱為檢視像素) 為單位的大小，讓您的 UI 可隨不同的解析度與縮放比例調整 (請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md))。 還有使用 Visual State Manager 的調適型觸發程序與 Setter 讓您的 UI 可隨視窗大小調整 (請參閱 [UWP app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide))。
 
 不過，如果有無法避免的情況，使您不得不偵測裝置系列時，才能那樣做。 在這個範例中，我們使用 [**AnalyticsVersionInfo**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.AnalyticsVersionInfo) 類別來瀏覽到專為行動裝置系列量身訂做的適當頁面，然後確保其會切換回預設頁面。
 

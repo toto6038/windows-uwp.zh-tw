@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，發行，前置處理，認證，發行，擱置，提交，發行，狀態，時間
 ms.localizationpriority: medium
 ms.openlocfilehash: d88d8deeb467f186f120fb8c1e579d5c9222aaf1
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852824"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210954"
 ---
 # <a name="the-app-certification-process"></a>應用程式認證程序
 
@@ -49,9 +49,9 @@ ms.locfileid: "78852824"
 
 當您的應用程式在發佈階段時，您應用程式提交的 [狀態] 欄中的 [**顯示詳細資料**] 連結，可讓您知道您的新封裝和商店清單詳細資料在每個支援的作業系統版本上是否可供客戶使用。 尚未完成的步驟會顯示為**擱置中**。 您的應用程式將會保留在發佈階段，直到程式完成為止，這表示新的封裝和/或清單詳細資料可供您所有的應用程式潛在客戶使用。
 
-## <a name="in-the-store"></a>在市集中 
+## <a name="in-the-store"></a>在 Microsoft Store 中 
 
-成功進行上述步驟之後，提交的狀態會從 [發行中] 變成 [在市集內]。 客戶就能在 Microsoft Store 下載您的提交項目 (除非您選擇了其他[可搜尋性](choose-visibility-options.md#discoverability)選項)。 
+成功進行上述步驟之後，提交的狀態會從 **\[發行中\]** 變成 **\[在 Microsoft Store 內\]** 。 客戶就能在 Microsoft Store 下載您的提交項目 (除非您選擇了其他[可搜尋性](choose-visibility-options.md#discoverability)選項)。 
 
 > [!NOTE]
 > 我們也會在應用程式發佈之後進行抽樣檢查以找出潛在的問題，並且確保您的應用程式符合所有的 [Microsoft Store 原則](store-policies.md)。 如果我們發現任何問題，將會通知您相關問題和修正方式 (如果有)，或者問題是否已從市集移除。

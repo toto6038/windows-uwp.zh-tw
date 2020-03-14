@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e96f6d2495583fcee4d16e54a5c8a5e208fec27
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852508"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210774"
 ---
 # <a name="manage-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交
 
@@ -131,9 +131,9 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
     ```
 
-    若要確認提交狀態，請檢閱回應主體中的「狀態」值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
+    若要確認提交狀態，請檢閱回應主體中的 *「狀態」* 值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
-7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以使用先前的方法或造訪合作夥伴中心，繼續監視提交進度。
+7. 順利完成提交之後，即會將提交傳送到 Microsoft Store 以供擷取。 您可以使用先前的方法或造訪合作夥伴中心，繼續監視提交進度。
 
 <span/>
 
@@ -372,7 +372,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
 | packageRollout   |   object      |   [套件推出資源](#package-rollout-object)包含用於提交的漸進式套件推出設定。    |  
-| isMandatoryUpdate    | 布林值    |  指出您是否要將這項提交中的套件視為自我安裝應用程式更新的強制項目。 如需有關自我安裝 App 更新的強制套件詳細資訊，請參閱[下載與安裝 App 的套件更新](../packaging/self-install-package-updates.md)。    |  
+| isMandatoryUpdate    | boolean    |  指出您是否要將這項提交中的套件視為自我安裝應用程式更新的強制項目。 如需有關自我安裝應用程式更新的強制套件詳細資訊，請參閱[下載與安裝應用程式的套件更新](../packaging/self-install-package-updates.md)。    |  
 | mandatoryUpdateEffectiveDate    |  date   |  這項提交中的套件變成強制項目的日期和時間，採用 ISO 8601 格式和 UTC 時區。   |        
 
 <span id="package-rollout-object" />
@@ -383,7 +383,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
-| isPackageRollout   |   布林值      |  指出是否已為提交啟用漸進式套件推出。    |  
+| isPackageRollout   |   boolean      |  指出是否已為提交啟用漸進式套件推出。    |  
 | packageRolloutPercentage    | float    |  將接收漸進式推出中套件的使用者百分比。    |  
 | packageRolloutStatus    |  string   |  下列其中一個字串，這些字串指出漸進式套件推出的狀態： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  string   |  未取得漸進式推出套件的客戶將收到的提交識別碼。   |          

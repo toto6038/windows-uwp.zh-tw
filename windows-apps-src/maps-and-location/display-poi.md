@@ -1,5 +1,5 @@
 ---
-title: 在地圖上顯示興趣點 (POI)
+title: 在地圖上顯示感興趣的地點 (POI)
 description: 藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ms.date: 08/11/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 圖釘
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bf8009232dbe3afcab2af28b76785fb261200f7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259380"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210294"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>在地圖上顯示感興趣的地點
 
@@ -165,7 +165,7 @@ public void AddLandmarkPhoto()
 
 此程式碼有三個部分值得進一步研究：影像、參考相機，以及 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 屬性。
 
-### <a name="image"></a>Image
+### <a name="image"></a>影像
 
 此範例顯示專案的 **\[資產\]** 資料夾中儲存的自訂影像。 [  **MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) 的 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 屬性預期的值類型為 [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference)。 這種類型會要求針對Windows.Storage.Streams[ **命名空間**使用](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) using 陳述式。
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10，uwp，azure ad 應用程式，aad，使用者，群組，多個使用者，多使用者
 ms.localizationpriority: medium
 ms.openlocfilehash: 41467f51e02f3cc700e3759f33d6fd6eea3ac7a6
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852553"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210704"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>將使用者、群組和 Azure AD 應用程式新增至您的合作夥伴中心帳戶
 
@@ -43,7 +43,7 @@ ms.locfileid: "78852553"
 
 1.  選取齒輪圖示（位於合作夥伴中心的右上角附近），然後選取 [**開發人員設定**]。 在 [**設定**] 功能表中，選取 [**使用者**]。
 2.  從 **\[使用者\]** 頁面選取 **\[新增使用者\]** 。 
-3.  從出現的清單中選取一或多位使用者。 您可以使用搜尋方塊來搜尋特定的使用者。
+3.  從出現的清單中選取一個或多個使用者。 您可以使用搜尋方塊來搜尋特定的使用者。
     > [!TIP]
     > 如果您選取一個以上的使用者來新增至您的合作夥伴中心帳戶，您必須為他們指派相同的角色或一組自訂許可權。 若要新增多個具有不同角色/權限的使用者，請針對每個角色或一組自訂權限重複下列步驟。
 4.  當您完成選取使用者時，請按一下 **\[新增選取的項目\]** 。
@@ -83,7 +83,7 @@ ms.locfileid: "78852553"
 > 您必須使用您的 Azure AD 租用戶中的全域管理員帳戶登入，才能邀請外部使用者。
 
 1.  從 [**使用者**] 頁面（在 [**帳戶設定**] 下）選取 [**新增使用者**]，然後選擇 [**以電子郵件邀請使用者**]。
-1.  輸入一或多個電子郵件地址 (最多十個)，以逗號或分號分隔。
+1.  輸入一個或多個電子郵件地址 (最多十個)，以逗號或分號分隔。
 2.  在 **\[角色\]** 區段中，指定使用者的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
 3.  Haga clic en **Guardar**.
 
@@ -116,7 +116,7 @@ ms.locfileid: "78852553"
 
 1.  選取齒輪圖示（位於合作夥伴中心的右上角附近），然後選取 [**開發人員設定**]。 在 [**設定**] 功能表中，選取 [**使用者**]。
 2. 從 [**使用者**] 頁面中，選取 [**新增群組**]。
-2.  從出現的清單中選取一或多個群組。 您可以使用搜尋方塊來搜尋特定的群組。
+2.  從出現的清單中選取一個或多個群組。 您可以使用搜尋方塊來搜尋特定的群組。
     > [!TIP]
     > 如果您選取多個群組以新增至您的合作夥伴中心帳戶，您必須將相同的角色或一組自訂許可權指派給他們。 若要新增多個具有不同角色/權限的群組，請針對每個角色或一組自訂權限重複下列步驟。
 
@@ -149,7 +149,7 @@ ms.locfileid: "78852553"
 
 1.  1.  選取齒輪圖示（位於合作夥伴中心的右上角附近），然後選取 [**開發人員設定**]。 在 [**設定**] 功能表中，選取 [**使用者**]。
 2. 從 **\[使用者\]** 頁面，選取 **\[新增 Azure AD 應用程式\]** 。
-3.  從出現的清單中選取一或多個 Azure AD 應用程式。 您可以使用搜尋方塊來搜尋特定的 Azure AD 應用程式。
+3.  從出現的清單中選取一個或多個 Azure AD 應用程式。 您可以使用搜尋方塊來搜尋特定的 Azure AD 應用程式。
     > [!TIP]
     > 如果您選取一個以上的 Azure AD 應用程式來新增至您的合作夥伴中心帳戶，則必須為他們指派相同的角色或一組自訂許可權。 若要新增多個具有不同角色/權限的 Azure AD 應用程式，請針對每個角色或一組自訂權限重複下列步驟。
 
@@ -168,7 +168,7 @@ ms.locfileid: "78852553"
 1.  從 [**使用者**] 頁面（在 [**帳戶設定**] 下）選取 [**新增 Azure AD 應用程式**]。
 2.  在下一個頁面上，選取 [**新增 Azure AD 應用程式**]。
 3.  輸入新的 Azure AD 應用程式的 **\[回覆 URL\]** 。 使用者可以從此 URL 登入並使用您的 Azure AD 應用程式 (也稱為 App URL 或登入 URL)。 **回覆 URL** 長度不可超過 256 個字元，而且在您的目錄中必須是唯一的。
-4.  輸入新 Azure AD 應用程式的 [**應用程式識別碼 URI**]。 這是 Azure AD 應用程式的邏輯識別碼，是在傳送單一登入要求至 Azure AD 時提供。 請注意，在目錄中的每個 Azure AD 應用程式的 **\[應用程式識別碼 URI\]** 必須是唯一的，且長度不能超過 256 個字元。 如需**應用程式識別碼 URI** 的詳細資訊，請參閱[整合應用程式與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。
+4.  輸入新 Azure AD 應用程式的 **\[應用程式識別碼 URI\]** 。 這是 Azure AD 應用程式的邏輯識別碼，是在傳送單一登入要求至 Azure AD 時提供。 請注意，在目錄中的每個 Azure AD 應用程式的 **\[應用程式識別碼 URI\]** 必須是唯一的，且長度不能超過 256 個字元。 如需**應用程式識別碼 URI** 的詳細資訊，請參閱[整合應用程式與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。
 5.  在 **\[角色\]** 區段中，指定 Azure AD 應用程式的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
 6.  Haga clic en **Guardar**.
 

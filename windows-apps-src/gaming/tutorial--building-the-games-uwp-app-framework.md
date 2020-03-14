@@ -1,17 +1,17 @@
 ---
-title: 定義遊戲的 UWP 應用程式架構
+title: 定義遊戲的 UWP app 架構
 description: 撰寫通用 Windows 平台 (UWP) DirectX 遊戲程式碼的第一部分，是建立讓遊戲物件與 Windows 互動的架構。
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ms.date: 10/24/2017
 ms.topic: article
-keywords: windows 10, uwp, games, directx
+keywords: windows 10, uwp, games, directx, 遊戲
 ms.localizationpriority: medium
 ms.openlocfilehash: af5d73e0a786e33aff6274cd63ee5ae6ac77c133
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852998"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210864"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定義 UWP app 架構
 
@@ -191,7 +191,7 @@ void App::Load(
 * 建立遊戲 UI 控制項物件，並顯示遊戲資訊重疊，以在資源檔案載入時顯示進度列。 如需詳細資訊，請參閱[新增使用者介面](tutorial--adding-a-user-interface.md)。
 * 建立控制器，讓它可以從控制器（觸控、滑鼠或 Xbox 無線控制器）讀取輸入。 如需詳細資訊，請參閱[新增控制項](tutorial--adding-controls.md)。
 * 初始化控制器之後，我們在畫面的左下角和右下角分別為移動和相機觸控控制項定義兩個矩形區域。 玩家使用左下角矩形 (呼叫 **SetMoveRect** 來定義) 當作前後左右移轉相機的虛擬控制鍵。 右下角矩形 (由 **SetFireRect** 方法定義) 當作發射子彈的虛擬按鈕。
-* 使用 __create_task__ 和 __create_task::then__ 中斷資源載入為兩個不同的階段。 因為 Direct3D 11 裝置內容的存取被限於裝置內容建立的執行緒，而存取用於建立物件的 Direct3D 11 裝置則是無限制執行緒，這表示 **CreateGameDeviceResourcesAsync** 工作可以在從完成工作 (*FinalizeCreateGameDeviceResources*，其在原始執行緒上執行) 的獨立執行緒上執行。 我們使用 **LoadLevelAsync** 和 **FinalizeLoadLevel** 時會以類似的模式來載入關卡資源。
+* 使用 __create_task__ 和 __create_task::then__ 中斷資源載入為兩個不同的階段。 因為 Direct3D 11 裝置內容的存取被限於裝置內容建立的執行緒，而存取用於建立物件的 Direct3D 11 裝置則是無限制執行緒，這表示 **CreateGameDeviceResourcesAsync** 工作可以在從完成工作 (*FinalizeCreateGameDeviceResources*，其在原始執行緒上執行) 的獨立執行緒上執行。 我們使用類似的模式來載入等級資源 **LoadLevelAsync** 和 **FinalizeLoadLevel**。
 
 ```cpp
 GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) :

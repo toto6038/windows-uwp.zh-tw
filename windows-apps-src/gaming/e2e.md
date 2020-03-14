@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
 ms.openlocfilehash: a348393a02bab946a128babefc07dc48faea6cd1
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685069"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210614"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 遊戲開發指南
 
@@ -102,7 +102,7 @@ ms.locfileid: "75685069"
     </tr>        
 </table>
 
-### <a name="partner-center"></a>合作夥伴中心
+### <a name="partner-center"></a>夥伴中心
 
 [在合作夥伴中心註冊開發人員帳戶](https://developer.microsoft.com/store/register)是發佈 Windows 遊戲的第一個步驟。 開發人員帳戶可讓您保留您遊戲的名稱，以及將適用於所有 Windows 裝置的免費或付費遊戲提交到 Microsoft Store。 您可以使用開發人員帳戶來管理您的遊戲與遊戲內產品、取得詳細的分析，以及啟用可為您的全球玩家創造絕佳體驗的服務。 
 
@@ -113,7 +113,7 @@ Microsoft 也提供數個可協助您開發及發行 Windows 遊戲的開發人�
 
 Microsoft 提供數個可協助您開發及發行 Windows 遊戲的開發人員計畫。 如果您想要為 Xbox One 開發遊戲，並將 Xbox Live 功能整合到遊戲中，請考慮加入開發人員計畫。 若要在 Microsoft Store 中發佈遊戲，您也必須在[合作夥伴中心](https://partner.microsoft.com/dashboard)建立開發人員帳戶。
 
-#### <a name="xbox-live-creators-program"></a>Xbox Live Creators 計畫
+#### <a name="xbox-live-creators-program"></a>Xbox Live 創作者計畫
 
 Xbox Live 創作者計畫允許任何人將 Xbox Live 整合至其遊戲中，並發佈到 Xbox One 和 Windows 10。 簡化的認證處理程序，而且在標準 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies) 以外不需要核准概念。
 
@@ -127,7 +127,7 @@ Xbox Live 創作者計畫允許任何人將 Xbox Live 整合至其遊戲中，�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Xbox Live Creators 計畫</td>
+        <td>Xbox Live 創作者計畫</td>
         <td><a href="https://developer.microsoft.com/games/xbox/xboxlive/creator">深入了解 Xbox Live Creators 計畫</a></td>
     </tr>
 </table>
@@ -302,11 +302,11 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Visual Studio 工程小組部落格</td>
-        <td><a href="https://devblogs.microsoft.com/visualstudio/">Visual Studio 部落格 (英文)</a></td>
+        <td><a href="https://devblogs.microsoft.com/visualstudio/">Visual Studio 的 Blog</a></td>
     </tr>
     <tr>
         <td>Visual Studio 開發人員工具部落格</td>
-        <td><a href="https://devblogs.microsoft.com/visualstudio/">開發人員工具部落格</a></td>
+        <td><a href="https://devblogs.microsoft.com/visualstudio/">開發人員工具 Blog</a></td>
     </tr>
     <tr>
         <td>Somasegar 開發人員工具部落格</td>
@@ -322,7 +322,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Visual C++ 工具小組部落格</td>
-        <td><a href="https://devblogs.microsoft.com/cppblog/">Visual C++ Team Blog</a> (Visual C++ 小組部落格)</td>
+        <td><a href="https://devblogs.microsoft.com/cppblog/">視覺C++效果小組 blog</a></td>
     </tr>
     <tr>
         <td>PIX 小組部落格</td>
@@ -517,7 +517,7 @@ C++/CX 是一種高效能、低額外負荷的語言，可提供結合速度、�
     </colgroup>
     <tr>
         <td>C++/CX 參考與概觀</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Visual C++ 語言參考 (C++/CX)</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">視覺C++語言參考（C++/cx）</a></td>
     </tr>
     <tr>
         <td>Visual C++ 程式設計指南與參考</td>
@@ -653,7 +653,7 @@ PlayFab 現在是 Microsoft 家庭成員，它是直播遊戲的完整後端平�
         <td><a href="https://www.youtube.com/watch?v=fGNpiqVi5xU&list=PLHCfyL7JpoPbLpA_oh_T5PKrfzPgCpPT5">關於 PlayFab 核心系統的示範影片系列</a></td>
     </tr>
     <tr>
-        <td>做法</td>
+        <td>Recipes</td>
         <td><a href="https://api.playfab.com/docs/tutorials/recipes-index">熱門的遊戲機制和設計模式範例</a></td>
     </tr>
     <tr>
@@ -669,7 +669,7 @@ PlayFab 現在是 Microsoft 家庭成員，它是直播遊戲的完整後端平�
         <td><a href="https://api.playfab.com/documentation/">直接透過 REST 之類的 Web Api 存取 PlayFab 服務</a></td>
     </tr>
     <tr>
-        <td>論壇</td>
+        <td>Forums</td>
         <td><a href="https://community.playfab.com/index.html">PlayFab 論壇</a></td>
     </tr>
 </table>
@@ -704,7 +704,7 @@ Unity 提供一個平台建立美麗而吸引人的 2D、3D、VR 和 AR 遊戲�
     </tr>
     <tr>
         <td>如何使用 Mixer Interactive 為您的遊戲新增互動性</td>
-        <td><a href="https://github.com/mixer/interactive-unity-plugin/wiki/Getting-started">開始使用指南</a></td>
+        <td><a href="https://github.com/mixer/interactive-unity-plugin/wiki/Getting-started">使用者入門指南</a></td>
     </tr>
     <tr>
         <td>Mixer SDK for Unity</td>
@@ -957,7 +957,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     </colgroup>
     <tr>
         <td>UWP 開發入門</td>
-        <td><a href="https://developer.microsoft.com/windows/apps/getstarted">開始使用 Windows 應用程式</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/getstarted">Windows 應用程式入門</a></td>
     </tr>
     <tr>
         <td>開始 UWP 開發設定</td>
@@ -1026,7 +1026,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     </tr>
     <tr>
         <td>UWP 中不支援的 CRT 功能</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">通用 Windows 平台應用程式不支援 CRT 函式</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">通用 Windows 平臺應用程式中不支援 CRT 函式</a></td>
     </tr>
     <tr>
         <td>Windows API 的替代方法</td>
@@ -1311,7 +1311,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
 </table>
 
 
-## <a name="production"></a>製作
+## <a name="production"></a>生產
 
 
 您的工作室現在已完全進入並移到製作階段，工作已散佈至整個團隊。 您正在潤飾、重構及延伸原型，以將它精心製作成完整的遊戲。
@@ -1397,7 +1397,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </colgroup>
     <tr>
         <td>測試您的程式碼效能</td>
-        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">雲端負載測試</a></td>
+        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">以雲端為基礎的負載測試</a></td>
     </tr>
     <tr>
         <td>使用遊戲裝置資訊取得 Xbox 主機類型</td>
@@ -1496,7 +1496,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
 </table>
 
 
-### <a name="globalization-and-localization"></a>全球化與當地語系化
+### <a name="globalization-and-localization"></a>全球化和當地語系化
 
 開發 Windows 上全球適用的遊戲，並了解 Microsoft 暢銷產品中的國際功能。
 
@@ -1519,7 +1519,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
 
 下列指南與資訊可協助讓發行及提交程序儘可能順利。
 
-### <a name="publishing"></a>Publishing
+### <a name="publishing"></a>發行
 
 您將使用[合作夥伴中心](https://partner.microsoft.com/dashboard)來發佈和管理您的遊戲套件。
 
@@ -1833,7 +1833,7 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
         <td><a href="https://edadfs.partners.extranet.microsoft.com/adfs/ls/?wa=wsignin1.0&wtrealm=https%3a%2f%2fdeveloper.xboxlive.com&wctx=rm%3d0%26id%3dpassive%26ru%3d%252fen-us%252flive%252fcertification%252frequirements%252fPages%252fTCR.aspx&wct=2019-11-20T19%3a55%3a26Z">Xbox Live on Windows 10 的 xbox 需求</a></td>
     </tr>
     <tr>
-        <td>範例</td>
+        <td>Samples</td>
         <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">ID@Xbox 開發人員的程式碼範例</a></td>
     </tr>  
     <tr>

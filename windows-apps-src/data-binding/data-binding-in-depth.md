@@ -4,17 +4,17 @@ title: 深入了解資料繫結
 description: 資料繫結可讓您的 App UI 顯示資料，以及選擇性地與該資料保持同步。
 ms.date: 10/05/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 0b54b04f2f36c2661de8baf58d0da1aec75ae590
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683466"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210144"
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
 
@@ -226,7 +226,7 @@ public class HostViewModel : BindableBase
 > [!NOTE]
 > 針對C++/WinRT，您在應用程式中宣告的任何執行時間類別（衍生自基類）稱為可*組合*的類別。 而且有以可組合的類別為主的條件約束。 若要讓應用程式通過 Visual Studio 和 Microsoft Store 所使用的 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)測試來驗證提交 (因而讓應用程式成功擷取到 Microsoft Store 中)，可組合的類別必須最終衍生自 Windows 基底類別。 這表示位於繼承階層根目錄的類別必須是源自 Windows.* 命名空間的類型。 如果您需要從基底類別衍生執行階段類別&mdash;例如，若要針對要衍生自的所有檢視模型實作 **BindableBase** 類別&mdash;則可衍生自 [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。
 
-以引數 [**String.Empty**](https://docs.microsoft.com/dotnet/api/system.string.empty) 或 **null** 引發 **PropertyChanged** 事件時，表示應該重新讀取物件上的所有非索引子屬性。 您可以引發事件，以指出物件上的索引子屬性已變更，方法是針對特定索引子使用「專案\[*索引子*\]」的引數（其中*索引子*是索引值），或所有索引子的「專案\[\]」的值。
+以引數String.Empty[**或**null](https://docs.microsoft.com/dotnet/api/system.string.empty) 引發 **PropertyChanged** 事件時，表示應該重新讀取物件上的所有非索引子屬性。 您可以引發事件，以指出物件上的索引子屬性已變更，方法是針對特定索引子使用「專案\[*索引子*\]」的引數（其中*索引子*是索引值），或所有索引子的「專案\[\]」的值。
 
 繫結來源可以視為單一物件 (屬性包含資料) 或物件集合。 在C#和 Visual Basic 程式碼中，您可以一次系結至執行[**List （of T）** ](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)的物件，以顯示不會在執行時間變更的集合。 對於可觀察的集合 (觀察集合中新增和移除項目)，則改為單向繫結到 [**ObservableCollection(Of T)** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)。 在C++/cx 程式碼中，您可以系結至可觀察和不可觀察集合的[**向量&lt;t&gt;** ](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class) ，而C++/WinRT 有自己的類型。 如果要繫結到您自己的集合類別，請使用下表中的指導方針。
 
@@ -616,7 +616,7 @@ Click="{x:Bind RootFrame.GoForward}"/>
 
 無法透過這項技巧使用多載方法來處理事件。 此外，如果處理事件的方法有參數，則必須全部都可以從事件的所有參數的類型分別指派。 在此案例中，[**Frame.GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 未多載，也沒有參數 (但即使接受兩個 **object** 參數，仍然有效)。 不過， [**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback)會多載，因此我們無法將該方法與這項技術搭配使用。
 
-事件繫結技巧類似於實作與使用命令 (命令是一個屬性，可傳回實作 [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 介面的物件)。 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 與 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 都能搭配命令一起使用。 因此，您不需要實作命令模式許多次，您可以使用 [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) 範例 (在 [Common] 資料夾) 中的**DelegateCommand** 協助程式類別。
+事件繫結技巧類似於實作與使用命令 (命令是一個屬性，可傳回實作 [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 介面的物件)。 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 與 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 都能搭配命令一起使用。 因此，您不需要實作命令模式許多次，您可以使用 **QuizGame** 範例 (在 [Common] 資料夾) 中的[DelegateCommand](https://github.com/microsoft/Windows-appsample-networkhelper) 協助程式類別。
 
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>繫結到資料夾或檔案集合
 
@@ -649,7 +649,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 請注意，使用這項技術的雙向繫結只適用於已編製索引的位置 (例如 音樂)。 您可以呼叫 [**FolderInformation.GetIndexedStateAsync**](https://docs.microsoft.com/uwp/api/windows.storage.bulkaccess.folderinformation.getindexedstateasync) 方法來判斷位置是否已編製索引。
 
-另請注意，虛擬化向量可能會在填入某些項目的值之前先傳回 **null**。 例如，使用與虛擬化向量繫結之清單控制項的 [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 值之前，您應該先檢查是否有 **null**，或者改用 [**SelectedIndex**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)。
+另請注意，虛擬化向量可能會在填入某些項目的值之前先傳回 **null**。 例如，使用與虛擬化向量繫結之清單控制項的SelectedItem[**值之前，您應該先檢查是否有**null](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)，或者改用 [**SelectedIndex**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)。
 
 ## <a name="binding-to-data-grouped-by-a-key"></a>繫結到依索引鍵分組的資料
 
@@ -800,7 +800,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 ## <a name="xbind-and-binding-feature-comparison"></a>{x:Bind} 和 {Binding} 功能比較
 
-| 功能 | {x:Bind} | {Binding} | 備註 |
+| 功能 | {x:Bind} | {Binding} | 注意事項 |
 |---------|----------|-----------|-------|
 | Path 是預設屬性 | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
 | Path 屬性 | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | 在 x:Bind 中，Path 預設以 Page 為根目錄，而不是 DataContext。 | 
@@ -814,8 +814,8 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | 您使用 {x:Bind} 繫結到欄位；Path 預設以 Page 為根目錄，任何具名的項目都可以透過它的欄位來存取。 | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | 使用 {X:Bind} 來命名元素，並在 Path 中使用它的名稱。 | 
 | RelativeSource: TemplatedParent | 不需要 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | With {x:Bind} TargetType on ControlTemplate 表示系結至範本父系。 針對 {Binding}，可以在控制項範本中使用一般範本系結來進行大部分的使用。 但在需要使用轉換器或雙向繫結的情況下，請使用 TemplatedParent。&lt; | 
-| Source | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 對於 {x:Bind}，您可以直接使用已命名的元素，使用屬性或靜態路徑。 | 
-| [模式] | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode 可以是 OneTime、OneWay 或 TwoWay。 {x:Bind} 預設為 OneTime。{Binding} 預設為 OneWay。 | 
+| 來源 | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 對於 {x:Bind}，您可以直接使用已命名的元素，使用屬性或靜態路徑。 | 
+| Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode 可以是 OneTime、OneWay 或 TwoWay。 {x:Bind} 預設為 OneTime。{Binding} 預設為 OneWay。 | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger 可以是 Default、LostFocus 或 PropertyChanged。 {x:Bind} 不支援 UpdateSourceTrigger=Explicit。 {x:Bind} 一律使用 PropertyChanged 行為，但 TextBox.Text 除外，它會使用 LostFocus 行為。 | 
 
 

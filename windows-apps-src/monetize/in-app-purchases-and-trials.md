@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 在應用程式內購買, IAP, 附加元件, 試用版, 消費性, 耐久性, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: 5396a8a6f02271647eb16d469853241b5717bd6e
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340289"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209774"
 ---
 # <a name="in-app-purchases-and-trials"></a>應用程式內購買和試用版
 
@@ -40,19 +40,19 @@ Windows SDK 提供您可用來實作下列功能以從您的「通用 Windows �
 
 ## <a name="basic-concepts"></a>基本概念
 
-「市集」中提供的每個項目通常稱為「產品」。 大部分的開發人員只會使用下列類型的產品︰*應用程式*和*附加元件*。
+「市集」中提供的每個項目通常稱為 *「產品」* 。 大部分的開發人員只會使用下列類型的產品︰*應用程式*和*附加元件*。
 
 附加元件是您在應用程式內容中提供給客戶使用的產品或功能︰例如，在應用程式或遊戲中使用的貨幣、適用於遊戲的新地圖或武器，能夠在沒有廣告的情況下使用您的應用程式，或者適用於能夠提供該類型內容之應用程式的數位內容 (例如，音樂或視訊)。 每個應用程式與附加元件都有相關的授權，可指出使用者是否有資格使用該應用程式或附加元件。 如果使用者有資格使用應用程式或附加元件，授權也會提供關於試用版的額外資訊。
 
-若要在您的應用程式中提供客戶的附加元件，您必須[在合作夥伴中心為您的應用程式定義附加](../publish/add-on-submissions.md)元件，讓存放區知道其相關資訊。 接著，您的 App 便可以使用 **Windows.Services.Store** 或 **Windows.ApplicationModel.Store** 命名空間中的 API，以 App 內購買形式提供要對使用者銷售的附加元件。
+若要在您的應用程式中提供客戶的附加元件，您必須[在合作夥伴中心為您的應用程式定義附加](../publish/add-on-submissions.md)元件，讓存放區知道其相關資訊。 接著，您的應用程式便可以使用 **Windows.Services.Store** 或 **Windows.ApplicationModel.Store** 命名空間中的 API，以應用程式內購買形式提供要對使用者銷售的附加元件。
 
 UWP 應用程式可以提供下列類型的附加元件。
 
 | 附加元件類型 |  描述  |
 |---------|-------------------|
-| 耐久性  |  在您于 [[合作夥伴中心] 中指定](../publish/enter-iap-properties.md)的存留期內保存的附加元件。 <p/><p/>根據預設，耐久性附加元件永遠不會過期，在此情況下只需購買一次。 如果您為附加元件指定特定的持續時間，則使用者就能在該附加元件到期之後重新進行購買。 |
-| 開發人員管理的消費性產品  |  可購買、使用，然後消費過後再次購買的附加元件。 您要負責記錄附加元件所代表項目的使用者餘額。<p/><p/>當使用者取用任何與附加元件相關的項目時，您需負責維持使用者在該附加元件所代表項目的餘額，以及負責在使用者取用所有項目之後，向 Microsoft Store 回報已完全交付此附加元件的購買。 使用者必須等到您的應用程式將先前的附加元件購買回報為已完全交付之後，才能再次購買該附加元件。 <p/><p/>例如，如果您的附加元件在遊戲中代表 100 個金幣，而使用者花費了 10 個金幣，則您的應用程式或服務必須針對該使用者保留 90 個金幣的新餘額。 當使用者花光 100 個金幣之後，您的應用程式必須回報該附加元件已完成，接著使用者就能再次購買 100 個金幣的附加元件。    |
-| 市集管理的消費性產品  |  隨時可供購買、使用，然後再次購買的附加元件。 Microsoft Store 會記錄使用者在該附加元件所代表項目的餘額。<p/><p/>當使用者取用任何與附加元件相關的項目時，您必須負責向 Microsoft Store 回報這些項目已完成，而 Microsoft Store 會更新使用者的餘額。 使用者可以隨時多次購買附加元件 (不需要先取用項目)。 您的應用程式可以隨時查詢使用者目前的餘額。 <p/><p/> 例如，如果您的附加元件在遊戲中代表最初的 100 個金幣數量，而使用者花費了 50 個金幣，則您的應用程式會向 Microsoft Store 回報已完成附加元件的 50 個單位，而 Microsoft Store 會更新剩下的餘額。 如果使用者然後重新購買附加元件以獲取多 100 個硬幣，它們現在總計會有 150 個硬幣。 <p/><p/>**注意**&nbsp;&nbsp;若要使用 Microsoft Store 管理的消費性產品，您的應用程式必須以 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本為目標，而且必須使用 **Windows.Services.Store** 命名空間，而不是 **Windows.ApplicationModel.Store** 命名空間。  |
+| 耐久  |  在您于 [[合作夥伴中心] 中指定](../publish/enter-iap-properties.md)的存留期內保存的附加元件。 <p/><p/>根據預設，耐久性附加元件永遠不會過期，在此情況下只需購買一次。 如果您為附加元件指定特定的持續時間，則使用者就能在該附加元件到期之後重新進行購買。 |
+| 開發人員管理的消費性產品  |  可購買、使用，然後消費過後再次購買的附加元件。 您要負責記錄附加元件所代表項目的使用者餘額。<p/><p/>當使用者取用任何與附加元件相關的項目時，您需負責維持使用者在該附加元件所代表項目的餘額，以及負責在使用者取用所有項目之後，向 Microsoft Store 回報已完全交付此附加元件的購買。 使用者必須等到您的應用程式將先前的附加元件購買回報為已完全交付之後，才能再次購買該附加元件。 <p/><p/>例如，如果您的附加元件在遊戲中代表 100 個金幣，而使用者花費了 10 個金幣，則您的應用程式或服務必須針對該使用者保留 90 個金幣的新餘額。 當使用者花光 100 個金幣之後，您的 App 必須回報該附加元件已完成，接著使用者就能再次購買 100 個金幣的附加元件。    |
+| Microsoft Store 管理的消費性產品  |  隨時可供購買、使用，然後再次購買的附加元件。 Microsoft Store 會記錄使用者在該附加元件所代表項目的餘額。<p/><p/>當使用者取用任何與附加元件相關的項目時，您必須負責向 Microsoft Store 回報這些項目已完成，而 Microsoft Store 會更新使用者的餘額。 使用者可以隨時多次購買附加元件 (不需要先取用項目)。 您的應用程式可以隨時查詢使用者目前的餘額。 <p/><p/> 例如，如果您的附加元件在遊戲中代表最初的 100 個金幣數量，而使用者花費了 50 個金幣，則您的應用程式會向 Microsoft Store 回報已完成附加元件的 50 個單位，而 Microsoft Store 會更新剩下的餘額。 如果使用者然後重新購買附加元件以獲取多 100 個硬幣，它們現在總計會有 150 個硬幣。 <p/><p/>**注意**&nbsp;&nbsp;若要使用 Microsoft Store 管理的消費性產品，您的應用程式必須以 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本為目標，而且必須使用 **Windows.Services.Store** 命名空間，而不是 **Windows.ApplicationModel.Store** 命名空間。  |
 | 訂閱 | 耐久性附加元件會繼續向客戶收取週期性費用，才能繼續使用附加元件。 客戶隨時都可以取消訂閱，避免進一步的費用。 <p/><p/>**注意**&nbsp;&nbsp;若要使用訂閱附加元件，您的應用程式必須以 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本為目標，而且必須使用 **Windows.Services.Store** 命名空間，而不是 **Windows.ApplicationModel.Store** 命名空間。  |
 
 <span />
@@ -80,7 +80,7 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 <span id="video" />
 
-### <a name="video"></a>影片
+### <a name="video"></a>視訊
 
 觀看下列影片，了解如何使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間，在您的應用程式中實作在應用程式內購買的概觀。
 <br/>
@@ -142,7 +142,7 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 ### <a name="implement-trial-functionality"></a>實作試用版功能
 
-使用 **Windows.Services.Store** 命名空間在您的 App 試用版中排除或限制功能：
+使用 **Windows.Services.Store** 命名空間在您的應用程式試用版中排除或限制功能：
 
 1. [將您的應用程式設定為合作夥伴中心內的免費試用版](../publish/set-app-pricing-and-availability.md#free-trial)。
 
@@ -249,8 +249,8 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 | 物件 |  市集識別碼格式  |
 |---------|-------------------|
-| SKU |  SKU 的「市集識別碼」的格式為 ```<product Store ID>/xxxx```，其中 ```xxxx``` 是 4 個字元的英數字串，用來識別產品的 SKU。 例如， ```9NBLGGH4R315/000N```。 這個識別碼是由 [StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.storeid) 物件的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) 屬性所傳回，有時稱為「SKU 市集識別碼」。 |
-| 可用性  |  可用性的「市集識別碼」的格式為 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是 4 個字元的英數字串，用來識別產品的 SKU，而 ```yyyyyyyyyyyy``` 是 12 個字元的英數字串，用來識別 SKU 的可用性。 例如， ```9NBLGGH4R315/000N/4KW6QZD2VN6X```。 這個識別碼是由 [StoreAvailability](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid) 物件的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability) 屬性所傳回，有時稱為「可用性市集識別碼」。  |
+| SKU |  SKU 的「市集識別碼」的格式為 ```<product Store ID>/xxxx```，其中 ```xxxx``` 是 4 個字元的英數字串，用來識別產品的 SKU。 例如：```9NBLGGH4R315/000N```。 這個識別碼是由 [StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.storeid) 物件的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) 屬性所傳回，有時稱為 *「SKU 市集識別碼」* 。 |
+| 可用性  |  可用性的「市集識別碼」的格式為 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是 4 個字元的英數字串，用來識別產品的 SKU，而 ```yyyyyyyyyyyy``` 是 12 個字元的英數字串，用來識別 SKU 的可用性。 例如：```9NBLGGH4R315/000N/4KW6QZD2VN6X```。 這個識別碼是由 [StoreAvailability](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid) 物件的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability) 屬性所傳回，有時稱為 *「可用性市集識別碼」* 。  |
 
 <span id="product-ids" />
 
@@ -270,11 +270,11 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 ### <a name="apps-that-use-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的應用程式
 
-如果您的應用程式使用**ApplicationModel. Store**命名空間，您將需要使用您指派給合作夥伴中心之附加元件的產品識別碼，以進行大部分的作業。 例如：
+如果您的應用程式使用**ApplicationModel. Store**命名空間，您將需要使用您指派給合作夥伴中心之附加元件的產品識別碼，以進行大部分的作業。 例如，
 
 * 使用產品識別碼找出代表附加元件的 [ProductListing](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting)或代表附加元件授權的 [ProductLicense](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense)。 產品識別碼由 [ProductListing.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.ProductId) 和 [ProductLicense.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense.ProductId) 屬性公開。
 
-* 當您使用 [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) 方法為使用者購買附加元件時，請指定產品識別碼。 如需詳細資訊，請參閱[啟用應用程式內產品購買](enable-in-app-product-purchases.md)。
+* 當您使用 [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) 方法為使用者購買附加元件時，請指定產品識別碼。 如需詳細資訊，請參閱[啟用在應用程式內產品購買](enable-in-app-product-purchases.md)。
 
 * 當您使用 [ReportConsumableFulfillmentAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync) 方法報告消費性附加元件完成時，請指定產品識別碼。 如需詳細資訊，請參閱[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)。
 

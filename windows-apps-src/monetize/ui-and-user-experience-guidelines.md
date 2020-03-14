@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 廣告, 指導方針, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: d64d5c544f6ec9e1356cc024e634286336dc9f91
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852568"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210244"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 
@@ -38,7 +38,7 @@ ms.locfileid: "78852568"
 
 以下章節提供如何使用 [AdControl](banner-ads.md) 在您的應用程式中實作[橫幅廣告](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)的建議，以及違反 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的實作範例。
 
-### <a name="best-practices"></a>最佳作法
+### <a name="best-practices"></a>最佳做法
 
 建議您在應用程式中實作橫幅廣告時，依照這些最佳做法：
 
@@ -84,13 +84,13 @@ ms.locfileid: "78852568"
 
 <span id="interstitialbestpractices10" />
 
-## <a name="guidelines-for-interstitial-ads"></a>插入式廣告指南
+## <a name="guidelines-for-interstitial-ads"></a>插播式廣告指南
 
 巧妙地使用[插播式廣告](interstitial-ads.md)可以大幅提高您應用程式的收益，而不會對使用者滿意的產生負面影響。 當使用不當時，這類廣告會有完全相反的效果。
 
 以下章節提供如何使用 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 在您的應用程式中實作插播式影片廣告及標準橫幅廣告的建議，以及違反 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的實作範例。 由於您比任何人都了解您的應用程式，除非原則考量，我們會將它保留給您來做出最佳的最終決策。 請務必牢記，您應用程式的評分與收益緊密結合。
 
-### <a name="best-practices"></a>最佳作法
+### <a name="best-practices"></a>最佳做法
 
 建議您在應用程式中實作插入式廣告時，依照這些最佳做法：
 
@@ -102,7 +102,7 @@ ms.locfileid: "78852568"
 
     * 重試關卡的額外時間。
 
-    * 自訂虛擬人偶的功能，例如刺青或帽子。
+    * 自訂虛擬人偶的特色，例如刺青或帽子。
 
 * 如果您的應用程式必須看完插播式影片廣告，請先提到這項規則，如此使用者才不會對按下關閉按鈕時所發生的錯誤訊息感到意外。
 
@@ -138,7 +138,7 @@ ms.locfileid: "78852568"
 
 * 在呼叫 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 前，請勿擷取超過 5 分鐘的插播式影片廣告。 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
 
-* 請勿對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 [觀看廣告已取得 *xxx*]，您應該在使用者這麼做之後提供 *xxx*。 要考慮的兩個選項︰
+* 請勿對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 [觀看廣告以取得 *xxx*]，您應該在使用者這麼做之後提供 *xxx*。 要考慮的兩個選項︰
 
     * 除非引發 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，否則不要包含該選項。
 
@@ -190,7 +190,7 @@ ms.locfileid: "78852568"
     * *贊助廠商*文字 (在 **SponsoredBy** 屬性中提供)。 此文字由廣告商提供。
     * 另一個顯示*贊助廠商*文字的方法是由您選擇顯示某些其他文字，以協助區分原生廣告體驗和您應用程式的其餘部分，例如「贊助內容」、「促銷內容」、「建議內容」等。
 
-### <a name="user-experience"></a>使用者體驗
+### <a name="user-experience"></a>使用者經歷
 
 原生廣告應該要與您應用程式的其餘部分有明確界定，且周圍有空間以避免意外點按。 使用邊框、不同的背景或其他 UI 來區隔廣告內容和您應用程式的其餘部分。 請記住，意外點擊廣告長期下來對您的廣告收益或一般使用者體驗不會有幫助。
 

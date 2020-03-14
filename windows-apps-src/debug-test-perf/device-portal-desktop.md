@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681969"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210184"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows 桌面的裝置入口網站
 
@@ -60,13 +60,13 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 
 - 應用程式管理員
 - 檔案總管
-- 執行中處理程序
+- 執行處理序
 - 效能
-- Debug
+- 偵錯
 - Windows 事件追蹤 (ETW)
 - 效能追蹤
-- [裝置管理員]
-- 網路
+- 裝置管理員
+- 網路功能
 - 當機資料
 - 功能
 - 混合實境
@@ -129,7 +129,7 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 
 如果您是在計量付費網際網路連線上，可能會出現此錯誤。 您無法在計量付費連線上下載開發人員套件。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Windows 裝置入口網站總覽](device-portal.md)
 * [裝置入口網站核心 API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

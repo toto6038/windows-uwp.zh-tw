@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 440f758e5db8bd77d3f26290eb59d7684e5f87a3
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853051"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210024"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>遊戲台與遙控器的互動
 
@@ -71,12 +71,12 @@ ms.locfileid: "78853051"
 
 下表列出 UWP app 支援的所有硬體按鈕，以及哪一種輸入裝置支援這些按鈕。
 
-| 按鈕                    | 遊戲台   | 遠端控制    |
+| 按鈕                    | 遊戲台   | 遙控器    |
 |---------------------------|-----------|-------------------|
 | A/選取按鈕           | 是       | 是               |
 | B/返回按鈕             | 是       | 是               |
 | 方向鍵 (D 鍵)   | 是       | 是               |
-| 功能表按鈕               | 是       | 是               |
+| 選項按鈕               | 是       | 是               |
 | 檢視按鈕               | 是       | 是               |
 | X 和 Y 按鈕           | 是       | 否                |
 | 左搖桿                | 是       | 否                |
@@ -97,8 +97,8 @@ UWP 會自動將現有的鍵盤輸入行為對應到遊戲台與遙控器輸入�
 |-----------------------|---------------------------------------|
 | 方向鍵            | 方向鍵 (也是遊戲台的左搖桿)    |
 | 空白鍵              | A/選取按鈕                       |
-| 輸入                 | A/選取按鈕                       |
-| ESC                | B/返回按鈕*                        |
+| Enter 鍵                 | A/選取按鈕                       |
+| ESC 鍵                | B/返回按鈕*                        |
 
 當應用程式未處理 B 按鈕的[KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)或[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)事件時 \*，將會引發[BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested)事件，這應該會導致應用程式內的回溯導覽。 不過，您必須自行實作此功能，如下列程式碼片段所示：
 
@@ -162,7 +162,7 @@ Xbox One 上的 UWP App 也支援透過按下 **功能表** 按鈕來開啟操�
 | 放大/縮小        | CTRL +/- | LT 鍵/RT 鍵 | 無 | `ScrollViewer`，支援放大和縮小的視圖 |
 | 開啟/關閉瀏覽窗格 | 無 | 檢視 | 無 | 瀏覽窗格​​ |
 | 搜尋 | 無 | Y 按鈕 | 無 | App 中主要搜尋功能的快速鍵 |
-| [開啟內容功能表](#commandbar-and-contextflyout) | 以滑鼠右鍵按一下 | 功能表按鈕 | [CoNtextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | 操作功能表 |
+| [開啟內容功能表](#commandbar-and-contextflyout) | 以滑鼠右鍵按一下 | 選項按鈕 | [CoNtextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | 操作功能表 |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>XY 焦點瀏覽和互動
 
@@ -428,7 +428,7 @@ public App()
 
 如此一來，顯示全螢幕內容時就一定不會出現游標。
 
-## <a name="focus-visual"></a>視覺焦點
+## <a name="focus-visual"></a>焦點視覺效果
 
 視覺焦點是目前有焦點的 UI 元素周圍的框線。 這可協助引導使用者輕鬆瀏覽您的 UI 而不會迷失。
 

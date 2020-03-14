@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: a2fa7e107d890a5be7c8d27af03289b839ec3c09
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852455"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209984"
 ---
 # <a name="pointofservice-device-objects"></a>PointOfService device objects
 
@@ -37,7 +37,7 @@ ms.locfileid: "78852455"
 在您擁有裝置物件後，您就可以再存取裝置的方法、內容和活動。  
 
 ## <a name="device-object-lifecycle"></a>裝置物件週期
-Windows 8 推出前，app 的週期很簡單。 Win32 與 .NET App 執行或不執行，通常會為完整的 App 週期宣告 PointOfService peripehrals。 當使用者將它們縮至最小或切換到其他 app 時，它們會繼續執行。 這原本不成問題，直到可攜式裝置和電源管理變得越來越重要。
+Windows 8 推出前，App 的週期很簡單。 Win32 與 .NET App 執行或不執行，通常會為完整的 App 週期宣告 PointOfService peripehrals。 當使用者將它們縮至最小或切換到其他 App 時，它們會繼續執行。 這原本不成問題，直到可攜式裝置和電源管理變得越來越重要。
 
 Windows 8 引進的新應用程式模型提供 UWP 應用程式。 增加一種新的高階暫停狀態。 UWP app 會在使用者將其縮至最小或切換到其他應用程式時，很快暫停。 這表示 App 的執行緒已停止，除非作業系統需要重新宣告資源，並代表 PointOfService 周邊的任何裝置物件自動關閉以允許其他應用程式存取周邊，否則會 App 會留在記憶體中。 當使用者切換回 App 時，它可以快速還原到執行狀態，並只要他們仍可恢復繼續使用，就會還原 PointOfService 周邊連接。
 

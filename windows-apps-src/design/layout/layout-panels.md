@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853200"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210204"
 ---
 # <a name="layout-panels"></a>版面配置面板
 
@@ -182,7 +182,7 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 
 您可以使用 **Auto** 或星號調整來分配欄內或列內的空間。 您可以使用自動調整大小，讓 UI 元素調整大小以符合它們的內容或父容器。 您也可以使用自動調整大小搭配方格的列與欄。 若要使用自動調整大小，請將 UI 元素的 Height 和/或 Width 設定為 **Auto**。
 
-您使用等比例調整大小 (亦稱為「星號調整」)，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML 中，星號值會以 \* 表示（或針對加權星形調整大小為*n*\*）。 例如，若要指定一個資料行的寬度高於2個數據行配置中的第二個數據行，請針對[**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)元素中的[**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width)屬性使用 "5\*" 和 "\*"。
+您使用等比例調整大小 (亦稱為 *「星號調整」* )，按照權重比例，將可用的空間分配給格線的列和欄。 在 XAML 中，星號值會以 \* 表示（或針對加權星形調整大小為*n*\*）。 例如，若要指定一個資料行的寬度高於2個數據行配置中的第二個數據行，請針對[**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)元素中的[**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width)屬性使用 "5\*" 和 "\*"。
 
 這個範例會在具有 4 欄的 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 中結合固定、自動和等比例調整大小。
 

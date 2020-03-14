@@ -1,5 +1,5 @@
 ---
-Description: 您的應用程式可以載入包含針對顯示縮放比例、佈景主題、高對比及其他執行階段內容量身打造之影像的影像資源檔案。
+Description: 您的 App 可以載入包含針對顯示縮放比例、佈景主題、高對比及其他執行階段內容量身打造之影像的影像資源檔案。
 title: 載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產
 template: detail.hbs
 ms.date: 10/10/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aadcb8dc3d414db7951dc571855e01bddb03a99
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852536"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209874"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產
 您的應用程式可以載入包含針對[顯示縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、佈景主題、高對比及其他執行階段內容量身打造的影像資源檔案 (或其他資產檔案)。 可以從命令式程式碼或 XAML 標記中參考這些影像，例如 **Image** 的 **Source** 屬性。 也可以出現在應用程式套件資訊清單來源檔案 (`Package.appxmanifest` 檔案) 中 &mdash; 例如，在 Visual Studio 資訊清單設計工具的 \[視覺資產\] 索引標籤上做為 \[App 圖示\] 的值 &mdash; 或顯示在您的磚和快顯通知上。 您可以在影像檔案名稱中使用限定詞，並借助 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 選擇性動態載入這些檔案，以便載入最符合使用者顯示縮放比例、佈景主題、高對比、語言及其他內容之執行階段設定的最適當影像檔案。
@@ -139,7 +139,7 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 請參閱[鏡像影像](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)。
 
 ## <a name="load-an-image-for-a-specific-language-or-other-context"></a>載入特定語言或其他內容的影像
-如需有關將您的應用程式當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
+如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
 
 預設 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) (從 [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView) 取得) 包含每個限定詞名稱表示預設執行階段內容的限定詞值 (也就是說，適用於目前使用者及電腦的設定值)。 影像檔案會&mdash;根據其名稱中的限定詞&mdash;比對該執行階段內容中的限定詞值。
 

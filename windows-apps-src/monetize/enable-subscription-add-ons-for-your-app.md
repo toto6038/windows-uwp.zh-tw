@@ -5,12 +5,12 @@ keywords: Windows 10, UWP, 訂閱, 附加元件, 在應用程式內購買, IAP, 
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b937ca61110452e233061179c398cae0d047686e
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: ba436ab760f589debeaf6909acd64d61df89a43d
+ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335056"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295731"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>啟用應用程式的訂閱附加元件
 
@@ -19,7 +19,7 @@ ms.locfileid: "58335056"
 > [!NOTE]
 > 若要在您的應用程式中提供購買訂閱附加元件，您的專案必須以 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本為目標 (這對應到 Windows 10 (版本 1607))，且其必須使用 **Windows.Services.Store** 命名空間中的 API 來實作 App 內購買體驗，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需有關這些命名空間之間差異的詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
 
-## <a name="feature-highlights"></a>特色重點
+## <a name="feature-highlights"></a>功能摘要
 
 UWP app 的訂閱附加元件支援下列功能：
 
@@ -33,24 +33,24 @@ UWP app 的訂閱附加元件支援下列功能：
 
 若要在您的應用程式中啟用購買訂閱附加元件，請執行下列步驟。
 
-1. [建立附加元件提交](../publish/add-on-submissions.md)訂用帳戶在合作夥伴中心和發佈提交。 當您依照附加元件提交程序執行時，請密切注意下列屬性：
+1. 在合作夥伴中心為您的訂用帳戶[建立附加元件提交](../publish/add-on-submissions.md)，併發布提交。 當您依照附加元件提交程序執行時，請密切注意下列屬性：
 
-    * [產品類型](../publish/set-your-add-on-product-id.md#product-type):請確定您選取**訂用帳戶**。
+    * [產品類型](../publish/set-your-add-on-product-id.md#product-type)：請務必選取**訂閱**。
 
-    * [訂用帳戶期限](../publish/enter-add-on-properties.md#subscription-period):選擇您的訂用帳戶的週期性計費期間。 發佈附加元件之後，您就無法變更訂閱期間。
+    * [訂閱期間](../publish/enter-add-on-properties.md#subscription-period)：為您的訂閱選擇週期性計費期間。 發佈附加元件之後，您就無法變更訂閱期間。
 
         每個訂閱附加元件支援單一訂閱期間和試用期間。 您必須為您想在應用程式中提供的每種訂閱類型，各建立一個訂閱附加元件。 例如，如果您想要提供無試用版、每月訂閱含 1 個月試用版、年度訂閱不含試用版，以及年度訂閱含一個月試用版，您就必須建立四個訂閱附加元件。
 
-    * [試用期間](../publish/enter-add-on-properties.md#free-trial):請考慮選擇 1 週或 1 個月試用期讓您的訂用帳戶，讓他們在購買前先試用您的訂用帳戶內容的使用者。 發佈訂閱附加元件之後，您就無法變更或移除試用期間。
+    * [試用期間](../publish/enter-add-on-properties.md#free-trial)：請考慮為您的訂閱選擇 1 星期或 1 個月試用期間，讓使用者在購買之前可以先試用您的訂閱內容。 發佈訂閱附加元件之後，您就無法變更或移除試用期間。
 
         若要取得訂閱的免費試用版，使用者必須透過標準 App 內購買程序購買您的訂閱，包括有效的付款表單。 試用期間不會向使用者收費。 試用期間結束後，訂閱會自動轉換為完整訂閱，並透過使用者的付款方式收取第一期付費訂閱的費用。 如果使用者在試用期間選擇取消其訂閱，則訂閱將保持作用中直到試用期結束。 某些試用期無法適用於所有訂閱期。
 
         > [!NOTE]
         > 每個客戶只能取得一次訂閱附加元件的免費試用版。 客戶取得免費試用訂用帳戶之後，Microsoft Store 會阻止相同客戶再次取得相同的免費試用訂用帳戶。
 
-    * [可見性](../publish/set-add-on-pricing-and-availability.md#visibility):如果您要建立測試的附加元件，您只會使用來測試您的訂用帳戶的應用程式內購買體驗，我們建議您選取其中一個**存放區中隱藏**選項。 否則，您可以選擇最適合您情形的可見性選項。
+    * [Visibility](../publish/set-add-on-pricing-and-availability.md#visibility)：如果您正在建立一個測試附加元件，此測試附加元件只用於測試訂閱的 App 內購買體驗，我們建議您選擇其中一個**在 Microsoft Store 中隱藏**選項。 否則，您可以選擇最適合您情形的可見性選項。
 
-    * [定價](../publish/set-add-on-pricing-and-availability.md?#pricing):在本節中，選擇您訂用帳戶的價格。 附加元件發佈後，您無法提高訂閱的價格。 不過，您可以稍後降低價格。
+    * [定價](../publish/set-add-on-pricing-and-availability.md?#pricing)：在本區段中選擇您的訂閱價格。 附加元件發佈後，您無法提高訂閱的價格。 不過，您可以稍後降低價格。
         > [!IMPORTANT]
         > 根據預設，當您建立任何附加元件時，最初價格設定為**免費**。 因為您完成附加元件提交後就無法提高訂閱附加元件的價格，所以請務必在這裡選擇您的訂閱價格。
 
@@ -68,8 +68,8 @@ UWP app 的訂閱附加元件支援下列功能：
 
 這些範例包含下列先決條件：
 * 適用於目標為 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
-* 您必須[建立應用程式提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)在合作夥伴中心與此應用程式會發佈在存放區。 測試時您也可以選擇將應用程式設定為不可在市集中搜尋。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
-* 您必須[建立應用程式的訂用帳戶附加元件](../publish/add-on-submissions.md)在合作夥伴中心。
+* 您已在合作夥伴中心內[建立應用程式提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，並在商店中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在市集中搜尋。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
+* 您已在合作夥伴中心內[建立應用程式的訂用帳戶附加](../publish/add-on-submissions.md)元件。
 
 這些範例中的程式碼假設：
 * 程式碼檔案含有適用於 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空間的 **using** 陳述式。
@@ -124,10 +124,10 @@ UWP app 的訂閱附加元件支援下列功能：
 訂閱附加元件目前不支援下列案例。
 
 * 目前不支援透過市集直接銷售訂閱給客戶。 訂閱僅適用於數位產品的 App 內購買。
-* 客戶無法使用其 Microsoft 帳戶的 [https://account.microsoft.com/services](https://account.microsoft.com/services) 頁面切換訂閱期限。 若要切換到不同的訂用帳戶期間，客戶必須取消其目前的訂用帳戶，並再購買其他訂用帳戶期間，從您的應用程式的訂用帳戶。
+* 客戶無法使用其 Microsoft 帳戶的 [https://account.microsoft.com/services](https://account.microsoft.com/services) 頁面切換訂閱期限。 若要切換至不同的訂用期間，客戶必須取消其目前的訂用帳戶，然後向您的應用程式購買不同訂用帳戶期間的訂用帳戶。
 * 訂閱附加元件目前不支援切換層級 (例如從基本訂閱切換至功能更多的優質訂閱)。
 * 訂閱附加元件目前不支援[銷售](../publish/put-apps-and-add-ons-on-sale.md)與[促銷代碼](../publish/generate-promotional-codes.md)。
-
+* 在設定訂閱附加元件的可見度之後，更新現有的訂閱以**停止**取得。 如需詳細資訊，請參閱[設定附加元件定價和可用性](../publish/set-add-on-pricing-and-availability.md)。
 
 ## <a name="related-topics"></a>相關主題
 

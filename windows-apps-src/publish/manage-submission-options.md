@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 發佈暫停, 發佈日期, 傳送提交以發佈, 受限制的功能核准
 ms.localizationpriority: medium
 ms.openlocfilehash: c2548ddd35fc50f62727d986d2d934d2346eb7b5
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852823"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210324"
 ---
 # <a name="manage-submission-options"></a>管理提交選項
 
@@ -45,7 +45,7 @@ ms.locfileid: "78852823"
 
 ## <a name="notes-for-certification"></a>認證注意事項
 
-在您提交 app 時，可以選擇使用 **\[認證注意事項\]** 區段，為認證測試人員提供額外的資訊。 這些資訊有助於確保正確測試您的 app。 
+在您提交 app 時，可以選擇使用 **\[認證注意事項\]** 區段，為認證測試人員提供額外的資訊。 這些資訊有助於確保正確測試您的應用程式。 
 
 如需詳細資訊，請參閱[認證注意事項](notes-for-certification.md)。
 

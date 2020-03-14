@@ -1,5 +1,5 @@
 ---
-title: 顯示地圖的 2D、3D 和 Streetside 檢視
+title: 顯示 2D、3D 和 Streetside 檢視的地圖
 description: 您可以在稱為地圖*座次卡*的淺色可關閉視窗中顯示地圖，亦可在全功能地圖控制項中顯示地圖。
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ms.date: 03/19/2018
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Windows 10、uwp、地圖、位置、地圖控制項、地圖檢視
 ms.localizationpriority: medium
 ms.openlocfilehash: cc12f6c9b9177bce9a91288fdd2c43c118be5f61
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260422"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210304"
 ---
-# <a name="display-maps-with-2d-3d-and-streetside-views"></a>顯示地圖的 2D、3D 和 Streetside 檢視
+# <a name="display-maps-with-2d-3d-and-streetside-views"></a>顯示 2D、3D 和 Streetside 檢視的地圖
 
 您可以在一個叫地圖*placecard*的淺色可關閉視窗中顯示一張地圖，或者在一個完整精選地圖控制項中顯示。
 
@@ -85,9 +85,9 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 
 ## <a name="display-map-in-a-control"></a>在控制項中顯示地圖
 
-在您的應用程式中使用地圖控制項顯示豐富且可自訂的地圖資料。 地圖控制項可顯示地圖、空照圖、3D 圖、檢視、方向、搜尋結果及交通路況。 您可以在地圖上顯示使用者的位置、方向，以及感興趣的地點。 地圖也可以顯示空照圖 3D 檢視、街景檢視、交通路況、大眾運輸和當地企業。
+在您的應用程式中使用地圖控制項顯示豐富且可自訂的地圖資料。 地圖控制項可顯示地圖、空照圖、3D 圖、檢視、方向、搜尋結果及交通路況。 您可以在地圖上顯示使用者的位置、方向，以及感興趣的地點。 地圖也可以顯示空照圖 3D 檢視、Streetside 檢視、交通路況、大眾運輸和當地企業。
 
-當您需要在 app 內有一份地圖時，使用地圖控制項讓使用者能夠檢視 app 專屬或一般地理資訊。 在 app 中有地圖控制項，表示使用者不需要離開您的 app 便可取得該資訊。
+當您想要 app 內有地圖時，請使用地圖控制項讓使用者能夠檢視 app 專屬或一般地理資訊。 在 app 中擁有地圖控制項，表示使用者不需要離開您的 app 便可取得該資訊。
 
 > [!NOTE]
 >如果您不介意使用者離開您的應用程式，請考慮使用 Windows 地圖 app 來提供該資訊。 您的 app 可以啟動 Windows 地圖 app 來顯示特定的地圖、方向以及搜尋結果。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app)。

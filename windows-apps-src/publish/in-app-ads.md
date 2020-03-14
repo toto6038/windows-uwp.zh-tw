@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 96994566d19e03f1d85b751242331f04fef098ad
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852827"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210694"
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -51,7 +51,7 @@ ms.locfileid: "78852827"
     * 如果為橫幅廣告單元選取 **\[電腦/平板電腦 (Windows 8.1)\]** 或 **\[行動裝置 (Windows Phone 8.x)\]** 裝置系列，您可以選擇性選取 **\[在應用程式中顯示社群廣告\]** 以選擇加入[社群廣告](about-community-ads.md)。
 
 7.  如果您尚未設定所選應用程式的 COPPA 合規性，請選擇 [COPPA 合規性](#coppa)區段中的選項。
-8.  按一下 [建立廣告單元]。
+8.  按一下 **\[建立廣告單元\]** 。
 
 建立新的 ad 單位之後，它會出現在 [**銷售**&gt;**應用程式內廣告**] 頁面的 [可用的 ad 單位] 表格中。
 
@@ -154,7 +154,7 @@ ms.locfileid: "78852827"
 
 <span id="coppa" />
 
-## <a name="coppa-compliance"></a>COPPA 相容性
+## <a name="coppa-compliance"></a>COPPA 合規性
 
 當您[建立 ad 單位](#create-ad-unit)或[選取現有的 ad 單位](#available-ad-units)時，如果所選取的 ad 單位應用程式至少有一次提交已到達應用程式認證流程中[的 [存放區](../publish/the-app-certification-process.md#in-the-store)] 步驟，則 [**保護法 children coppa 合規性**] 區段會出現在頁面底部。
 

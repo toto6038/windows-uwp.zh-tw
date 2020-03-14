@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 安裝, SDK, 廣告庫
 ms.localizationpriority: medium
 ms.openlocfilehash: 109ddbd3551dbd4304b86e56ace40f39e1b71211
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853105"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209634"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安裝 Microsoft Advertising SDK
 
@@ -85,7 +85,7 @@ ms.locfileid: "78853105"
 
 1. 在 Visual Studio 中開啟專案。
     > [!NOTE]
-    > 如果專案的目標是 [任何 CPU]，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86])。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+    > 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 2. 在 **\[方案總管\]** 中的 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入參考\]** 。
 
@@ -108,4 +108,4 @@ ms.locfileid: "78853105"
 
 因為這個程式庫是架構套件，這意謂著在使用者安裝使用這個程式庫的 App 版本之後，每當我們發佈具有修正程式和效能改進的新程式庫版本時，便會在其裝置上透過 Windows Update 自動更新這個程式庫。 這有助於確保您客戶的裝置上一律會安裝最新的可用程式庫版本。
 
-如果我們發行的新版 SDK 在這個程式庫中引進新的 API 或功能，您將必須安裝最新版的 SDK 才能使用這些功能。 在此情況下，您也需要將已更新的 App 發佈到「市集」。
+如果我們發行的新版 SDK 在這個程式庫中引進新的 API 或功能，您將必須安裝最新版的 SDK 才能使用這些功能。 在此情況下，您也需要將已更新的 App 發佈到「Microsoft Store」。

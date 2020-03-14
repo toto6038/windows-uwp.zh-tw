@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853138"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210174"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>螢幕大小與中斷點
 
@@ -86,7 +86,7 @@ UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝�
 
 ### <a name="medium"></a>中
 - 設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。
-- 將[應用程式列](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。
+- 將[應用程式列](../controls-and-patterns/app-bars.md) 之類的命令元素放置在應用程式視窗的頂端。
 - 使用最多 2 個欄位/區域。
 - 顯示搜尋方塊。
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以窄條模式放置，以便讓圖示帶狀線永遠顯示。
@@ -94,7 +94,7 @@ UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝�
 
 ### <a name="large"></a>Large
 - 設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。
-- 將[應用程式列](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。
+- 將[應用程式列](../controls-and-patterns/app-bars.md) 之類的命令元素放置在應用程式視窗的頂端。
 - 使用最多 3 個欄位/區域。
 - 顯示搜尋方塊。
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以停駐模式放置，以便讓它永遠顯示。

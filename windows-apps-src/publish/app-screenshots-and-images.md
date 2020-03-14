@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
 ms.localizationpriority: medium
 ms.openlocfilehash: 48a8566c80516588939dc0ef071c3da4b9232d64
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684617"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210894"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 
@@ -23,7 +23,7 @@ ms.locfileid: "75684617"
 
 此存放區也可以使用您應用程式的圖示，以及您在應用程式套件中包含的其他映射。 在您提交應用程式之前，執行 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)，以判斷您是否缺少任何必要影像。 如需這些映射的指引和建議，請參閱[應用程式圖示和標誌](../design/style/app-icons-and-logos.md)。
 
-## <a name="screenshots"></a>[螢幕擷取畫面]
+## <a name="screenshots"></a>螢幕擷取畫面
 
 螢幕擷取畫面是客戶可在您應用程式的 Store 清單中看見的應用程式影像。
 
@@ -184,7 +184,7 @@ ms.locfileid: "75684617"
 
 在**windows 10 和 Xbox 映射**一節中， **16:9 的超級主圖美工（1920 x 1080 或 3840 x 2160 圖元）** 影像用於所有 Windows 10 裝置類型（包括 Xbox）上的 Microsoft Store 中的各種版面配置。 我們建議您提供此影像，無論您的應用程式是以哪個作業系統版本或裝置類型為目標。
 
-如果您的清單包含[預告影片](#trailers)，*需要*這個影像以正確顯示。 對於 Windows 10 1607 版或更新版本 (包括 Xbox) 的客戶，它做為您的 Store 清單頂端的主要影像 (或在任何預告片播放完畢之後出現)。 它也可能在整個 Microsoft Store 的促銷配置中用於展示您的應用程式。 請注意，此影像不能包含產品的標題或其他文字。
+如果您的清單包含*預告影片*，[需要](#trailers)這個影像以正確顯示。 對於 Windows 10 1607 版或更新版本 (包括 Xbox) 的客戶，它做為您的 Store 清單頂端的主要影像 (或在任何預告片播放完畢之後出現)。 它也可能在整個 Microsoft Store 的促銷配置中用於展示您的應用程式。 請注意，此影像不能包含產品的標題或其他文字。
 
 以下提供一些您在設計影像時應記住的秘訣：
 
@@ -212,7 +212,7 @@ ms.locfileid: "75684617"
 - **精選促銷正方形美工圖案，1080 x 1080 像素**：*不能*包括產品的標題。
 
 > [!NOTE]
-> 為確保 Xbox 上的最佳顯示，您必須也在[Microsoft Store標誌](#store-logos) 區段中提供 **9:16（720 x 1080 或 1440 x 2160 像素）** 影像。
+> 為確保 Xbox 上的最佳顯示，您必須也在**Microsoft Store標誌** 區段中提供 [9:16（720 x 1080 或 1440 x 2160 像素）](#store-logos)影像。
 
 
 ### <a name="holographic-image"></a>全像影像

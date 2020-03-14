@@ -11,11 +11,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d919a86a44110d5b3b444fdf47d41f31637ccb6b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684505"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210004"
 ---
 # <a name="programmatic-focus-navigation"></a>程式設計焦點瀏覽
 
@@ -250,7 +250,7 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
 }
 ```
 
-在這裡，我們顯示如何為 [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 處理 [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 事件，並在功能表關閉時設定焦點。
+在這裡，我們顯示如何為 [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 處理 [LosingFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 事件，並在功能表關閉時設定焦點。
 
 ```XAML
 <CommandBar x:Name="MyCommandBar" LosingFocus="OnLosingFocus">
