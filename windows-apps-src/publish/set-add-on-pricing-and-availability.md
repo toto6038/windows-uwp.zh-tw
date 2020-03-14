@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 附加元件, iap, 價格
 ms.localizationpriority: medium
-ms.openlocfilehash: c6384b5890466ff13c72a1b90eb9b27194d51fff
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
-ms.translationtype: HT
+ms.openlocfilehash: 803164c395602313bcb84331e30376efd6832731
+ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
+ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210994"
+ms.locfileid: "79295721"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>設定附加元件價格與可用性
 
@@ -37,7 +37,7 @@ ms.locfileid: "79210994"
 -   **停止取得：擁有直接連結的任何客戶可以看到產品的市集清單，但除非他們已擁有該產品，或是有促銷碼而且使用 Windows 10 裝置，才能下載。此附加元件不會顯示在父產品的清單中**：選擇此選項表示附加元件不會顯示在您的應用程式清單中，而且也不讓新客戶購買附加元件。 不過， **Windows 8.1 或更早版本的客戶不支援此選項**。 如果您先前發佈的應用程式可在 Windows 8.1 或更早版本上使用，則附加元件仍可供購買給這些客戶。 若要在 Windows 8.1 或更早的版本上停止提供客戶的附加元件，您必須更新應用程式以移除提供附加元件的程式碼，然後發佈應用程式的新提交。 即使您的應用程式未以 Windows 8.1 或更早版本為目標，仍建議使用此選項;如果您從未為客戶提供您選擇要讓其無法使用的附加元件，這是更好的體驗。
     
  > [!NOTE] 
- > 選擇 **\[停止取得\]** 選項並/或提交從 App 程式碼移除附加元件的 App 更新，無論使用的作業系統為何，都不會影響已經購買附加元件的客戶。
+ > 選擇 [**停止**取得] 選項和/或提交應用程式更新，以從您的應用程式移除附加元件，將不會阻止客戶使用附加元件（如果已購買）。 現有的訂閱將無法更新，並會在目前的期限結束之後取消。
 
 
 ## <a name="schedule"></a>排程
