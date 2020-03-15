@@ -6,12 +6,12 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a9cdf03aa574ea0762d73514a209367f27822ba
-ms.sourcegitcommit: 33fcf67cf96ce8574df2e50cafc4ca7c18234c4b
+ms.openlocfilehash: 059ce14f85ebe7d955ba2da8897ab47109f74a72
+ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76530780"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401967"
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 的裝置入口網站
 
@@ -22,7 +22,7 @@ ms.locfileid: "76530780"
 
 1. 開啟您的 HoloLens 並將裝置戴上。
 2. 執行 HoloLens （第1代）的 [[開始手勢](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture)] 或 [ [bloom](https://developer.microsoft.com/mixed-reality#Bloom)手勢]，啟動主功能表。
-3. 看一下 [**設定**] 圖格，然後在 hololens （第1代）上執行 [[空中](https://developer.microsoft.com/mixed-reality#Press_and_release)操作] 手勢，或透過[觸碰或使用手光線](https://docs.microsoft.com/hololens/hololens2-basic-usage)在 hololens 2 上選取它。 [設定] 應用程式會在您選取之後啟動。
+3. 看一下 [**設定**] 圖格，[並在 hololens](https://developer.microsoft.com/mixed-reality#Press_and_release) （第1代）上執行點按手勢，或透過[觸碰或使用手光線](https://docs.microsoft.com/hololens/hololens2-basic-usage)在 hololens 2 上選取。 [設定] 應用程式會在您選取之後啟動。
 4. 選取 **\[更新\]** 功能表項目。
 5. 選取 **\[適用於開發人員\]** 功能表項目。
 6. 啟用 **\[開發人員模式\]** 。
@@ -84,7 +84,7 @@ ms.locfileid: "76530780"
 
 ## <a name="device-portal-pages"></a>Device Portal 頁面 
 
-### <a name="home"></a>家用版 
+### <a name="home"></a>首頁 
 
 您的 Device Portal 工作階段從首頁開始。 從首頁左側的瀏覽列中存取其他頁面。
 
@@ -101,7 +101,7 @@ ms.locfileid: "76530780"
 - **裝置**狀態：監視裝置的健康狀況並報告嚴重錯誤。
 - **Windows 資訊**：顯示 HoloLens 的名稱，以及目前安裝的 Windows 版本。
 - **\[喜好設定\]** 區段包含下列設定：
-    - **IPD**：設定瞳孔間距 (IPD)，這是使用者雙眼注視前方時，兩個瞳孔中心點之間的距離 (以公釐為單位)。 此設定會立即生效。 預設值會在您設定裝置時自動計算。
+    - **IPD**：設定瞳孔間距 (IPD)，這是使用者雙眼注視前方時，兩個瞳孔中心點之間的距離 (以公釐為單位)。 此設定會立即生效。 預設值會在您設定裝置時自動計算。 **僅適用于 HoloLens （第1代），Hololens 2 會計算眼位置。** 
     - **裝置名稱**：為 HoloLens 指派名稱。 在變更此值之後，必須重新啟動裝置才能生效。 按一下 [儲存] 之後，將會有對話方塊詢問您是否要立即重新啟動裝置，或稍後再重新啟動。
     - **睡眠設定**：設定裝置在接上電源及使用電池的情況下，在進入睡眠之前所需等待的時間長度。
 
@@ -174,7 +174,7 @@ HoloLens 上的 [系統效能] 工具有額外 3 個可記錄的衡量標準。
 
 按一下或點選 [虛擬鍵盤] 下方的區域，來啟用傳送按鍵輸入到 HoloLens。 在 [輸入文字] 文字方塊中輸入，然後按一下或點選 [傳送] 來將按鍵輸入傳送到使用中的 App。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Windows 裝置入口網站總覽](device-portal.md)
 * [裝置入口網站核心 API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core) (所有 Windows 10 裝置通用的 API)
