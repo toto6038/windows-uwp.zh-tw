@@ -11,11 +11,11 @@ template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a2f73fe6280d3a86510ce48f47017dd4897139a
-ms.sourcegitcommit: 3ec8c1d0ea3798cdb2745e7a941a025cf3cf21c8
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650781"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79208983"
 ---
 # <a name="xaml-styles"></a>XAML 樣式
 
@@ -107,11 +107,11 @@ ms.locfileid: "67650781"
 
 ## <a name="use-based-on-styles"></a>使用根據樣式
 
-為了更容易維持樣式，並將樣式重複使用率提升到最高，您可以建立會從其他樣式繼承的樣式。 您可以使用 [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon) 屬性建立繼承樣式。 繼承自其他樣式的樣式必須用在相同類型的控制項，或是根據樣式之目標類型所衍生的控制項。 例如，如果根據樣式的目標是 [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl)，則以此樣式為基礎樣式的目標可以是 **ContentControl**，或是 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 和 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 這類衍生自 **ContentControl** 的類型。 如果根據樣式中沒有設定某個值，則該值就會繼承自根據樣式。 若是變更根據樣式的值，則根據樣式會覆寫該值。 在下一個範例中，**Button** 與 [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的樣式是繼承自同一個根據樣式。
+為了更容易維持樣式，並將樣式重複使用率提升到最高，您可以建立會從其他樣式繼承的樣式。 您可以使用 [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon) 屬性建立繼承樣式。 繼承自其他樣式的樣式必須用在相同類型的控制項，或是基礎樣式之目標類型所衍生的控制項。 例如，如果基礎樣式的目標是 [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl)，則以此樣式為基礎樣式的目標可以是 **ContentControl**，或是 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 和 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 這類衍生自 **ContentControl** 的類型。 如果根據樣式中沒有設定某個值，則該值就會繼承自基礎樣式。 若是變更基礎樣式的值，則根據樣式會覆寫該值。 在下一個範例中，**Button** 與 [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的樣式是繼承自同一個基礎樣式。
 
 ![使用根據樣式來設定樣式的按鈕。](images/styles-buttons-based-on.png)
 
-根據樣式的目標是 [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl)，並設定 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 與 [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 屬性。 以此樣式為基礎的樣式目標是 **ContentControl** 所衍生的 [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 和 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。 根據樣式可為 [BorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.borderbrush) 與 [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground) 屬性設定不同色彩。 (您通常不會在 **CheckBox** 周圍設定邊界。 我們在這裡這樣做是為了顯示樣式的效果。)
+基礎樣式的目標是 [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl)，並設定 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 與 [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 屬性。 以此樣式為基礎的樣式目標是 **ContentControl** 所衍生的 [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 和 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。 根據樣式可為 [BorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.borderbrush) 與 [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground) 屬性設定不同色彩。 (您通常不會在 **CheckBox** 周圍設定邊界。 我們在這裡這樣做是為了顯示樣式的效果。)
 
 ```XAML
 <Page.Resources>
