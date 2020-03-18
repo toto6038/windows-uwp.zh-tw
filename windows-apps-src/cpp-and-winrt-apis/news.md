@@ -7,11 +7,11 @@ keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: d5a2c3d10f2cbfcc608d212a9465ca738e1ca15e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255038"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209103"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
 
@@ -259,7 +259,7 @@ struct MainPage : PageT<MainPage>
 
 #### <a name="improved-support-for-com-style-single-interface-inheritance"></a>已改善對 COM 樣式單一介面繼承的支援
 
-與 Windows 執行階段程式設計一樣， C++/WinRT 也用於撰寫和取用僅限 COM 的 API。 此更新可讓您實作存在介面階層的 COM 伺服器。 Windows 執行階段不需要這麼做；但它對於某些 COM 實作是必要的。
+與 Windows 執行階段程式設計一樣，C++/WinRT 也用於撰寫和取用僅限 COM 的 API。 此更新可讓您實作存在介面階層的 COM 伺服器。 Windows 執行階段不需要這麼做；但它對於某些 COM 實作是必要的。
 
 #### <a name="correct-handling-of-out-params"></a>正確處理 `out` 參數
 
@@ -291,7 +291,7 @@ struct MainPage : PageT<MainPage>
 
 - **重大變更**。 [**winrt::get_abi(winrt::hstring const&)** ](/uwp/cpp-ref-for-winrt/get-abi) 現在會傳回 `void*`，而不是 `HSTRING`。 您可以使用 `static_cast<HSTRING>(get_abi(my_hstring));` 以取得 HSTRING。 請參閱[交互操作 ABI 的 HSTRING](interop-winrt-abi.md#interoperating-with-the-abis-hstring)。
 - **重大變更**。 [**winrt::put_abi(winrt::hstring&)** ](/uwp/cpp-ref-for-winrt/put-abi) 現在會傳回 `void**`，而不是 `HSTRING*`。 您可以使用 `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` 以取得 HSTRING*。 請參閱[交互操作 ABI 的 HSTRING](interop-winrt-abi.md#interoperating-with-the-abis-hstring)。
-- **重大變更**。 HRESULT 現在投影為 **winrt::hresult**。 如果您需要 HRESULT (以進行類別檢查，或支援類型特性)，您可以 `static_cast` **winrt::hresult**。 否則，只要您在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h`，**winrt::hresult** 會轉換成 HRESULT。
+- **重大變更**。 HRESULT 現在投影為 **winrt::hresult**。 如果您需要 HRESULT (以進行類別檢查，或支援類型特性)，您可以 `static_cast`**winrt::hresult**。 否則，只要您在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h`，**winrt::hresult** 會轉換成 HRESULT。
 - **重大變更**。 GUID 現在投影為 **winrt::guid**。 對於您實作的 API，必須為 GUID 參數使用 **winrt::guid**。 否則，只要您在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h`，**winrt::guid** 會轉換成 GUID。 請參閱[交互操作 ABI 的 GUID 結構](interop-winrt-abi.md#interoperating-with-the-abis-guid-struct)。
 - **重大變更**。 [**winrt::handle_type 建構函式**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor)已透過明確宣告而強化 (現在很難使用它撰寫錯誤的程式碼)。 如果需要指派原始的控制碼值，請改由呼叫 [**handle_type::attach 函式**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function)。
 - **重大變更**。 **WINRT_CanUnloadNow** 和 **WINRT_GetActivationFactory** 的簽章已變更。 您不得宣告這些函式。 相反，加入 `winrt/base.h` (如果包含任何 C++/WinRT Windows 命名空間標頭檔案，則會自動包含)，以包含這些函式的宣告。

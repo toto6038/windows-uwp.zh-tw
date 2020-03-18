@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d540474140e4734320b06d852933b30fa20b61be
-ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
+ms.openlocfilehash: 6a0307833e996a5faba558631062c94efca3b75d
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74958968"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935359"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
@@ -21,14 +21,14 @@ ms.locfileid: "74958968"
 如果您想要將 C++/CX 程式碼逐漸移植到 C++/WinRT，您可以使用此策略。 C++/CX 和 C++/WinRT 程式碼可以共存在相同的專案中，但 XAML 編譯器支援與 Windows 執行階段元件除外。 對於這些兩個例外狀況，您必須將相同專案中的目標設為 C++/CX 或 C++/WinRT。
 
 > [!IMPORTANT]
-> 如果您的專案組建了 XAML 應用程式，那麼其中一種建議的工作流程是，先使用一個 C++/WinRT 專案範本，在 Visual Studio 中建立新項目 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 然後，開始從 C++/CX 專案複製原始程式碼和標記。 您可以使用 [專案]  \> [新增項目...]  來新增 XAML 頁面\> **Visual C++**  > **空白頁 (C++/WinRT)** 。
+> 如果您的專案組建了 XAML 應用程式，那麼其中一種建議的工作流程是，先使用一個 C++/WinRT 專案範本，在 Visual Studio 中建立新項目 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 然後，開始從 C++/CX 專案複製原始程式碼和標記。 您可以使用 [專案]  \> [新增項目...]  來新增 XAML 頁面\>**Visual C++**  > **空白頁 (C++/WinRT)** 。
 >
 > 或者，您可以使用 Windows 執行階段元件，在移植 XAML C++/CX 專案時，將程式碼從中分解出來。 請盡可能將 C++/CX 程式碼移動到元件中，再將 XAML 專案變更為 C++/WinRT。 或是將 XAML 專案保留為 C++/CX，而建立新的 C++/WinRT 元件，並開始將 C++/CX 程式碼從 XAML 專案移植到元件中。 您也可以在同個解決方案中，一起使用 C++/CX 元件專案與 C++/WinRT 元件專案，從應用程式專案中參照這兩個元件專案，並逐漸從一個專案移植到另一個專案。 如需在相同專案中使用兩種語言投影的更多詳細資料，請參閱 [C++/WinRT 與 C++/CX 之間的互通性](interop-winrt-cx.md)。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 以及根命名空間 **Windows** 的 Windows SDK 宣告類型。 投影到 C++/WinRT 的 Windows 類型有與 Windows 類型相同的完整名稱，但它放在 C++ **winrt** 命名空間。 這些不同的命名空間，可讓您以自己的速度從 C++/CX 移植至 C++/WinRT。
 
-請記住上述例外狀況，將 C++/CX 專案移植到 C++/WinRT 的第一個步驟是手動新增 C++/WinRT 支援 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 若要這麼做，請將 [Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)安裝到您的專案中。 在 Visual Studio 中開啟專案，按一下 [專案]  \>[管理 NuGet 套件...]  \>[瀏覽]  、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝]  以安裝適用於該專案的套件。 該變更的其中一個效果，是會關閉專案中支援的 C++/CX。 最好關閉支援，這樣組建訊息有助於找出 (並移植) C++/CX 上所有的相依性，或您可以重新開啟支援 (在專案屬性中，**C/C++** \> **一般** \> **使用 Windows 執行階段擴充功能** \> **是 (/ZW)** )，請逐漸移植。
+請記住上述例外狀況，將 C++/CX 專案移植到 C++/WinRT 的第一個步驟是手動新增 C++/WinRT 支援 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 若要這麼做，請將 [Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)安裝到您的專案中。 在 Visual Studio 中開啟專案，按一下 [專案]  \>[管理 NuGet 套件...]  \>[瀏覽]  、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝]  以安裝適用於該專案的套件。 該變更的其中一個效果，是會關閉專案中支援的 C++/CX。 最好關閉支援，這樣組建訊息有助於找出 (並移植) C++/CX 上所有的相依性，或您可以重新開啟支援 (在專案屬性中，**C/C++** \>**一般**\>**使用 Windows 執行階段擴充功能**\>**是 (/ZW)** )，請逐漸移植。
 
 或者，在 Visual Studio 中使用 C++/WinRT 專案屬性頁面，將下列屬性新增至 `.vcxproj` 檔案檔案。 如需類似自訂選項 (可微調 `cppwinrt.exe` 工具的行為) 清單，請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
 
@@ -186,7 +186,7 @@ class MyClass
 
 如需了解 C++/WinRT 中的對等項目，請參閱[延遲初始化](consume-apis.md#delayed-initialization)。
 
-## <a name="properties"></a>屬性
+## <a name="properties"></a>[內容]
 
 C++/CX 語言擴充功能包括了屬性的概念。 當撰寫 C++/CX 原始程式碼時，可以如欄位一般存取其屬性。 標準 C++ 不具屬性的概念，因此在 C++/WinRT 中，您要呼叫 get 和 set 函式。
 
@@ -309,7 +309,18 @@ C++ 集合類型會使用預設建構函式，這可能導致非預期的物件�
 | 空白參考的陣列 | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
 | 配對 | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
 
-沒有任何簡略方式可建立空白參考的陣列。 您必須針對陣列中的每個元素重複 `nullptr`。 如果您的元素過少，則會有額外的預設建構元素。
+### <a name="more-about-collections-of-empty-references"></a>深入了解空白參考的集合
+
+每當您的 C++/CX 中有 **Platform::Array\^** 時 (請參閱[移植 **Platform::Array\^** ](#port-platformarray))，您可以選擇將其移植到 C++/WinRT 中的 **std::vector** (事實上，任何連續的容器皆可)，而不將其保留為陣列。 選擇 **std::vector** 有某些優點。
+
+例如，雖然在建立空白參考固定大小的向量時有速記 (請參閱上表)，但在建立空白參考的*陣列*時則沒有這類速記。 您必須針對陣列中的每個元素重複 `nullptr`。 如果您的元素過少，則會有額外的預設建構元素。
+
+針對向量，您可以在初始化時為其填入空白參考 (如上表所示)，或者，您可以在初始化後，使用如下列的程式碼填入空白參考。
+
+```cppwinrt
+std::vector<TextBox> boxes(10); // 10 default-constructed TextBoxes.
+boxes.resize(10, nullptr); // 10 empty references.
+```
 
 ### <a name="more-about-the-stdmap-example"></a>關於 **std::map** 範例的詳細資訊
 
@@ -336,7 +347,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Wind
 }
 ```
 
-對等項目 C++/WinRT 程式碼藉由呼叫 [ **IUnknown::try_as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function) 函式，取代 `dynamic_cast`，該函式會封裝 **QueryInterface**。 您也可以選擇呼叫 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)，如果未傳回查詢所需的介面 (要求類型的預設介面)，則會擲回例外狀況。 這是 C++/WinRT 程式碼範例。
+對等項目 C++/WinRT 程式碼藉由呼叫 [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function) 函式，取代 `dynamic_cast`，該函式會封裝 **QueryInterface**。 您也可以選擇呼叫 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)，如果未傳回查詢所需的介面 (要求類型的預設介面)，則會擲回例外狀況。 這是 C++/WinRT 程式碼範例。
 
 ```cppwinrt
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
@@ -490,7 +501,7 @@ C++/CX 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT �
 
 平行模式程式庫 (PPL) (例如 [**concurrency::task**](/cpp/parallel/concrt/reference/task-class)) 已更新為支援 C++/CX hat (^) 參考。
 
-對於 C++/WinRT，您應該改用協同程式和 `co_await` 。 如需詳細資訊和程式碼範例，請參閱[使用 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+對於 C++/WinRT，您應該改用協同程式和 `co_await`。 如需詳細資訊和程式碼範例，請參閱[使用 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 ## <a name="consuming-objects-from-xaml-markup"></a>取用 XAML 標記中的物件
 
@@ -531,7 +542,9 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### <a name="port-platformarray"></a>移植 **Platform::Array\^**
 
-您的選項包括使用初始化清單、**std::array** 或 **std::vector**。 如需詳細資訊以及程式碼範例，請參閱[標準初始化清單](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)和[標準陣列和向量](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)。
+在 C++/CX 要求您使用陣列的情況下，C++/WinRT 可讓您使用任何連續的容器。 若要了解 **std::vector** 為何是不錯的選擇，請參閱[預設建構函式對於集合的影響](#how-the-default-constructor-affects-collections)。
+
+因此，每當 C++/CX 中有 **Platform::Array\^** 時，使用初始設定式清單 (**std::array** 或 **std::vector**) 都將是您的移植選項之一。 如需詳細資訊以及程式碼範例，請參閱[標準初始化清單](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)和[標準陣列和向量](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)。
 
 ### <a name="port-platformexception-to-winrthresult_error"></a>將 **Platform::Exception\^** 移植到 **winrt::hresult_error**
 
@@ -553,7 +566,7 @@ catch (winrt::hresult_error const& ex)
 
 C++/WinRT 提供這些例外類別。
 
-| 例外類型 | 基底類別 | HRESULT |
+| 例外狀況類型 | 基底類別 | HRESULT |
 | ---- | ---- | ---- |
 | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) | | 呼叫 [**hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function) |
 | [**winrt::hresult_access_denied**](/uwp/cpp-ref-for-winrt/error-handling/hresult-access-denied) | **winrt::hresult_error** | E_ACCESSDENIED |
@@ -646,7 +659,7 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 
 C++/WinRT 也針對有限的類型數量支援 [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring)。 您必須為想要字串化的任何其他類型新增多載。
 
-| 語言 | 將 int 字串化 | 將列舉字串化 |
+| Language | 將 int 字串化 | 將列舉字串化 |
 | - | - | - |
 | C++/CX | `String^ result = "hello, " + intValue.ToString();` | `String^ result = "status: " + status.ToString();` |
 | C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |

@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, Windows UI 程式庫, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: aadf177bc4a44f67550dba1f6f706525b8460857
-ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
+ms.openlocfilehash: 0dce8e7ea08b18921f228b3da2e679a9edb02228
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256171"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79200976"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>C++/WinRT Windows UI 程式庫簡單範例
 
@@ -53,7 +53,7 @@ ms.locfileid: "78256171"
 
 在 `MainPage.cpp` 中，刪除您的 **MainPage::ClickHandler** 實作內的程式碼，因為 *myButton* 不再位於 XAML 標記中。
 
-在 `MainPage.h` 中，編輯您的 include 元素，使其看起來像下面清單中的項目。 如果您要從一個以上的 XAML 頁面使用 WinUI，則可以移至預先編譯的標頭檔 (通常為 `pch.h`) 並改為將其包含在其中。
+在 `MainPage.h` 中，編輯您的 include 元素，使其看起來像下面清單中的項目。
 
 ```cppwinrt
 #include "MainPage.g.h"
@@ -63,7 +63,10 @@ ms.locfileid: "78256171"
 
 立即建置專案。
 
-當您將 NuGet 套件新增至 C++/WinRT 專案 (例如您稍早新增的 **Microsoft.UI.Xaml** 套件)，並建立該專案時，工具會在專案的 `\Generated Files\winrt` 資料夾中產生一組投影標頭檔。 如果您已遵循逐步解說的指示，現在會有一個 `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt` 資料夾。 您對上述 `MainPage.h` 所做的變更，會使這些投影標頭檔包含在專案中。 這是必要的，以便解析 NuGet 套件中的類型參考。
+當您將 NuGet 套件新增至 C++/WinRT 專案 (例如您稍早新增的 **Microsoft.UI.Xaml** 套件)，並建立該專案時，工具會在專案的 `\Generated Files\winrt` 資料夾中產生一組投影標頭檔。 如果您已遵循逐步解說的指示，現在會有一個 `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt` 資料夾。 您對上述 `MainPage.h` 所做的編輯，會使 WinUI 的這些投影標頭檔顯示於 **MainPage**。 這是必要的，因為這樣才可解析 **MainPage** 中對 **Microsoft::UI::Xaml::Controls::NavigationView** 類型的參考。
+
+> [!IMPORTANT]
+> 在實際的應用程式中，您可以將 WinUI 投影標頭檔顯示於專案中的*所有* XAML 頁面；而不只是 **MainPage**。 在此情況下，您應將兩個 WinUI 投影標頭檔的 include 元素移至先行編譯的標頭檔中 (通常是 `pch.h`)。 然後，即可解析您專案中的任一處對 NuGet 套件中的類型所做的參考。 對於最基本的單頁應用程式 (例如在此逐步解說中建置的)，並不需要使用 `pch.h`，且在 `MainPage.h` 中包含標頭是適當的。
 
 您現在可以執行專案。
 

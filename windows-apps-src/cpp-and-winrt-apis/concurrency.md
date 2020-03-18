@@ -5,18 +5,19 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 06fadae3e33da3289726f45e7222617d51843015
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: 949f8c407e0a49c87cbb45c01117a7e2e1525010
+ms.sourcegitcommit: 5f22e596443ff4645ebf68626d8a4d275d8a865f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816685"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083174"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
-本主題示範的方式，您可以使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，同時建立及使用 Windows 執行階段非同步物件。
+> [!IMPORTANT]
+> 本主題介紹*協同程式* 和 `co_await` 的概念，建議您在 UI *和*非 UI 應用程式中均應加以使用。 為了簡單起見，本簡介主題中大部分的程式碼範例均說明 **Windows 主控台應用程式 (C++/WinRT)** 專案。 本主題中後續的程式碼範例會使用協同程式，但為了方便起見，主控台應用程式範例仍會繼續在結束之前使用封鎖 **get** 函式呼叫，以免應用程式在完成其輸出的列印之前結束。 您不應從 UI 執行緒執行此動作 (呼叫封鎖 **get** 函式)。 您應使用 `co_await` 陳述式。 [更進階的並行和非同步](concurrency-2.md)主題會說明您將在 UI 應用程式中使用的技術。
 
-閱讀本主題之後，另請參閱[更進階的並行和非同步](concurrency-2.md)以取得進一步的案例。
+本簡介主題說明您如何使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 同時建立及使用 Windows 執行階段非同步物件。 閱讀本主題之後 (特別是針對您將在 UI 應用程式中使用的技術)，另請參閱[更進階的並行和非同步](concurrency-2.md)。
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>非同步作業與 Windows 執行階段 "Async" 函式
 
@@ -29,7 +30,9 @@ ms.locfileid: "72816685"
 
 這些非同步作業類型的每一個皆投影到 **winrt::Windows::Foundation** C++/WinRT 命名空間中的對應類型。 C++/WinRT 也包含內部等待配接器結構。 您不會直接使用它，但多虧了該結構，您可以撰寫 `co_await` 陳述式，合作等待傳回這些非同步作業類型之一的任何函式結果。 且您可以撰寫自己的協同程式，傳回這些類型。
 
-非同步 Windows 函式的範例是 [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)，其傳回類型 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) 的非同步作業物件。 讓我們看一些使用 C++/WinRT 來呼叫這類 API 的方式 (先看封鎖，再看非封鎖)。
+非同步 Windows 函式的範例是 [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)，其傳回類型 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) 的非同步作業物件。
+
+讓我們看一些使用 C++/WinRT 來呼叫這類 API 的方式 (先看封鎖，再看非封鎖)。 我們將在以下幾個程式碼範例中使用 **Windows 主控台應用程式 (C++/WinRT)** 專案，以便說明基本概念。 [更進階的並行和非同步](concurrency-2.md)會討論更適合 UI 應用程式使用的技術。
 
 ## <a name="block-the-calling-thread"></a>封鎖呼叫執行緒
 
@@ -111,6 +114,8 @@ int main()
 您可以將一個協同程式彙總到其他協同程式。 或您可以呼叫 **get** 封鎖並等待完成 (取得結果，如果有的話)。 或者，您可以將它傳遞到另一個程式設計語言，其支援 Windows 執行階段。
 
 也可以藉由使用委派，處理非同步動作與作業完成的和/或進行中事件。 如需詳細資訊和程式碼範例，請參閱[非同步動作與作業的委派類型](handle-events.md#delegate-types-for-asynchronous-actions-and-operations)。
+
+在上述程式碼範例中您可以看到，我們在結束 **main** 之前繼續使用封鎖 **get** 函式呼叫。 但這只是為了讓應用程式不會在完成其輸出的列印之前即結束。
 
 ## <a name="asynchronously-return-a-windows-runtime-type"></a>非同步傳回 Windows 執行階段類型
 

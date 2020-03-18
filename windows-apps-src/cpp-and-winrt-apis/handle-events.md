@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 一般, c++, cpp, winrt, 投影, 投射, 控點, 事件, 委派
 ms.localizationpriority: medium
-ms.openlocfilehash: b64fbe93198af95402161873c1d68d0da41f33f7
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.openlocfilehash: 664f6799d3bb6f848243820ec46e655262e8c1a7
+ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853377"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295711"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 
@@ -38,6 +38,9 @@ XAML 設計工具會將適當的事件處理常式函式原型 (以及虛設常�
 ```
 
 ```cppwinrt
+// MainPage.h
+void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
 // MainPage.cpp
 void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
 {
@@ -59,6 +62,22 @@ MainPage::MainPage()
 
 > [!IMPORTANT]
 > 註冊委派時，上述程式碼範例會傳遞原始「this」  指標 (指向目前物件)。 若要了解如何為目前物件建立強式或弱式參考，請參閱[如果您使用成員函式作為委派](weak-references.md#if-you-use-a-member-function-as-a-delegate)。
+
+以下是使用靜態成員函式的範例；請留意其較為簡單的語法。
+
+```cppwinrt
+// MainPage.h
+static void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
+// MainPage.cpp
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    Button().Click( MainPage::ClickHandler );
+}
+void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
+```
 
 有其他方式可建構 **RoutedEventHandler**。 以下是從文件主題取得的語法區塊適用於 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (從網頁右上角中 [語言]  下拉式清單選擇 [C++/WinRT]  )。 請注意各種不同的建構函式：一種使用的是 lambda，另一種使用可用函式，還有一種 (上述中我們使用的) 是使用物件和指標成員函式。
 

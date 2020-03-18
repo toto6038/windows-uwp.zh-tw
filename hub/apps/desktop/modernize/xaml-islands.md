@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 96705faff278c4cab31e0ab271bc31d08261401b
-ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
+ms.openlocfilehash: 061ad7a3f63fc92dd2f865f8870c7de5edf862af
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76814008"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935351"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在傳統型應用程式中裝載 UWP XAML 控制項 (XAML Islands)
 
@@ -53,7 +53,7 @@ WPF 和 Windows Forms 應用程式可以使用 XAML Island 控制項的選項，
 
 ### <a name="host-controls"></a>主控制項
 
-除了可用包裝的控制項所涵蓋案例之外，WPF 和 Windows Forms 應用程式也可以使用「Windows 社區工具組」中提供的 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項。
+對於可用包裝的控制項未涵蓋的自訂控制項和其他案例，WPF 和 Windows Forms 應用程式也可以使用「Windows 社群工具組」中提供的 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項。
 
 | 控制 | 最低支援的作業系統 | 說明 |
 |-----------------|-------------------------------|-------------|
@@ -81,16 +81,6 @@ XAML Island .NET 控制項需要 Windows 10 版本 1903 或更新版本。 若�
 
 * 如果您裝載的是自訂 UWP 控制項，則您的 WPF 或 Windows Forms 專案必須以 .NET Core 3 為目標。 以 .NET Framework 為目標的應用程式不支援裝載自訂 UWP 控制項。 您也必須執行一些額外的步驟來參考自訂控制項。 如需詳細資訊，請參閱[使用 XAML Islands 在 WPF 應用程式中裝載自訂 UWP 控制項](host-custom-control-with-xaml-islands.md)。
 
-* 這些指示的舊版會要求您將 `maxversiontested` 元素新增至 WPF 或 Windows Forms 專案中的應用程式資訊清單。 只要您使用上列最新版本的 NuGet 套件，就不再需要將此元素新增至資訊清單。
-
-### <a name="architecture-of-xaml-island-net-controls"></a>XAML Island .NET 控制項的架構
-
-您可以在這裡快速檢視不同類型的 XAML Island 控制項如何在 UWP XAML 裝載 API 上方在架構上進行組織。
-
-![裝載控制項架構](images/xaml-islands/host-controls.png)
-
-隨附於 Windows SDK 的此圖表底部會出現 API。 包裝的控制項和主控制項可透過「Windows 社區工具組」中的 NuGet 套件來取得。
-
 ### <a name="web-view-controls"></a>Web 檢視控制項
 
 「Windows 社區工具組」也提供下列 .NET 控制項，以便在 WPF 和 Windows Forms 應用程式中裝載 Web 內容。 這些控制項通常用於類似的傳統型應用程式現代化案例，作為 XAML Island 控制項，而且它們會在與 XAML Island 控制項相同的 [Microsoft.Toolkit.Win32 存放庫](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32)中進行維護。
@@ -113,6 +103,33 @@ UWP XAML 裝載 API 是由數個 Windows 執行階段類別和 COM 介面所組�
 
 > [!NOTE]
 > 「Windows 社區工具組」中包裝的控制項和主控制項，會在內部使用 UWP XAML 裝載 API，並在您直接使用 UWP XAML 裝載 API (包括鍵盤導覽和版面配置變更) 的情況下，實作您需要自行處理的所有行為。 對於 WPF 和 Windows Forms 應用程式，我們強烈建議您使用這些控制項，而不是直接使用 UWP XAML 裝載 API，因為它們會抽象化許多使用 API 的實作詳細資料。
+
+## <a name="architecture-of-xaml-islands"></a>XAML Island 的架構
+
+您可以在這裡快速檢視不同類型的 XAML Island 控制項如何在 UWP XAML 裝載 API 上方在架構上進行組織。
+
+![裝載控制項架構](images/xaml-islands/host-controls.png)
+
+隨附於 Windows SDK 的此圖表底部會出現 API。 包裝的控制項和主控制項可透過「Windows 社區工具組」中的 NuGet 套件來取得。
+
+## <a name="window-host-context-for-xaml-islands"></a>XAML Island 的視窗裝載內容
+
+當您在桌面應用程式中裝載 XAML Island 時，您可以在相同的執行緒上同時執行 XAML 內容的多個樹狀結構。 若要在 XAML Island 中存取 XAML 內容樹狀結構的根元素，並取得其裝載所在內容的相關資訊，請使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 類別。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 類別不會提供 XAML Island 的正確資訊。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 物件存在於執行緒上，且可供您的應用程式存取，但不會傳回有意義的界限或可見度 (這些物件一律不可見，且大小為 1x1)。 如需詳細資訊，請參閱[視窗裝載](/windows/uwp/design/layout/show-multiple-views#windowing-hosts)。
+
+例如，若要取得裝載在 XAML Island 中的 UWP 控制項所在視窗的周框矩形，請使用控制項的 [XamlRoot.Size](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot.size) 屬性。 可裝載於 XAML Island 中的每個 UWP 控制項都衍生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，因此您可以使用控制項的 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.xamlroot) 屬性來存取 **XamlRoot** 物件。
+
+```csharp
+Size windowSize = myUWPControl.XamlRoot.Size;
+```
+
+請不要使用 [CoreWindows.Bounds](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.bounds) 屬性來取得周框矩形。
+
+```csharp
+// This will return incorrect information for a UWP control that is hosted in a XAML Island.
+Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
+```
+
+如需您在 XAML Island 內容中應避免使用的一般視窗相關 API 的表格，以及建議的 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 取代項目，請參閱[本節](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts)的表格。
 
 ## <a name="feature-roadmap"></a>功能藍圖
 

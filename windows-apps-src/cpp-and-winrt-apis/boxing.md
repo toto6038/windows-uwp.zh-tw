@@ -5,18 +5,21 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, boxing, 純量, 數值
 ms.localizationpriority: medium
-ms.openlocfilehash: 431230d3b67d7a380b4f0b20fdef1e0f918c3aa2
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 29263260217de154f1a942d37d1e18fece15e3d0
+ms.sourcegitcommit: 0142b5a47511afa76d74015e3fd8635b6042a542
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270156"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79038091"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>使用 C++/WinRT，Boxing 和 unboxing 純量數值到 IInspectable
  
 Windows 執行階段 (WinRT) 中，[**IInspectable 介面**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)是每個執行階段類別的根介面。 這是類似在每個 COM 介面與類別根的 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)；以及在每個[一般類型系統](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system)類別根的 **System.Object** 的想法。
 
 換言之，預期 **IInspectable** 的函式可以傳遞任何執行階段類別的執行個體。 但您無法直接將純量數值 (例如數字或文字值) 傳遞至此類函式。 而是需要將純量數值包裝於參考類別物件中。 該包裝程序稱為「boxing」  值。
+
+> [!IMPORTANT]
+> 您可以對任何可傳至 Windows 執行階段 API 的類型進行 Box 和 Unbox 處理。 換句話說，即 Windows 執行階段類型。 以上提供的是數值和文字值 (字串) 的範例。 另一個範例是您在 IDL 中定義的 `struct`。 如果您嘗試對一般 C++ `struct` (未定義於 IDL 中) 進行 Box 處理，則編譯器會提醒您，您只能對 Windows 執行階段類型進行 Box 處理。 執行階段類別是一種 Windows 執行階段類型，但您理當可將執行階段類別傳至 Windows 執行階段 API，而不需要進行其 Box 處理。
 
 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 提供 [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 函式，該函式採用純量數值，並傳回經過 Box 處理到 **IInspectable** 的值。 針對將 **IInspectable** Unbox 回純量數值，有 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 和 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函式。
 

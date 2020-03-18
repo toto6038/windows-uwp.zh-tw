@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
 ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
-ms.sourcegitcommit: 58f6643510a27d6b9cd673da850c191ee23b813e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74701491"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209273"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
@@ -114,7 +114,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ...
 ```
 
-因為您的 **App** 類型「是」  一個**IFrameworkViewSource**，所以您可以只將一個傳遞至 **Run**。
+因為您的 **App** 類型「是」  一個 **IFrameworkViewSource**，所以您可以只將一個傳遞至 **Run**。
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -126,7 +126,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果您正在 Windows 執行階段元件中撰寫執行階段類別
 
-如果您的類型為了取用一個應用程式，已封裝在 Windows 執行階段元件中，則它必須是執行階段類別。 您可以在 Microsoft 介面定義語言 (IDL) (.idl) 檔案中宣告執行階段類別 (請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](#factoring-runtime-classes-into-midl-files-idl))。
+如果您的類型為了取用一個應用程式，已封裝在 Windows 執行階段元件中，則它必須是執行階段類別。 您可以在 Microsoft 介面定義語言 (IDL) (.idl) 檔案中宣告執行階段類別 (請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](#factoring-runtime-classes-into-midl-files-idl)。
 
 每個 IDL 檔案都會產生 `.winmd` 檔案，而 Visual Studio 會將這些檔案合併為單一檔案，其名稱與根命名空間相同。 最終 `.winmd` 檔案將會是您的元件取用者將參照的檔案。
 
@@ -234,7 +234,7 @@ Visual Studio 專案和項目範本會針對每個執行階段類別產生個別
 
 ## <a name="runtime-class-methods-properties-and-events"></a>執行階段類別方法、屬性和事件
 
-我們已了解工作流程會使用 IDL 宣告您的執行階段類別和其成員，然後由工具為您產生原型和虛設常式實作。 至於這些針對您執行階段類別成員自動產生的原型，您「可以」  對其進行編輯，讓其傳遞您在 IDL 中宣告的不同類型。 但是，若要這麼做，您在 IDL 中宣告的類型必須要能夠轉送到您在實作版本中宣告的類型。
+我們已了解工作流程會使用 IDL 宣告您的執行階段類別和其成員，然後由工具為您產生原型和虛設常式實作。 至於這些針對您執行階段類別成員自動產生的原型，您「可以」  對其進行編輯，讓其傳遞您在 IDL 中宣告的不同類型。 但是，若要這麼做，您在 IDL 中宣告的類型必須能夠轉送到您在實作版本中宣告的類型。
 
 以下是一些範例。
 
@@ -316,7 +316,7 @@ iclosable.Close();
 > [!NOTE]
 > 如果您尚未安裝 Windows SDK 10.0.17763.0 版 (Windows 10 1809 版) 或更新版本，則您必須呼叫 [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi)，而不是呼叫 [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
 
-這裡提供一個範例。 這是[實作 **BgLabelControl** 自訂控制項類別](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)的另一個範例。
+以下是範例。 這是[實作 **BgLabelControl** 自訂控制項類別](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)的另一個範例。
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -459,7 +459,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 ...
 ```
 
-基底類別建構函式預期一個 **ToggleButton**。 而且 **MySpecializedToggleButton**「是」  一個**ToggleButton**。
+基底類別建構函式預期一個 **ToggleButton**。 而 **MySpecializedToggleButton** *是* **ToggleButton**。
 
 除非您進行上述的編輯 (將建構函式參數傳遞給基底類別)，否則編譯器會標幟您的建構函式，並指出在稱為 (此案例中) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** 的類型中，無法取得適當的預設建構函式。 這是您實作類型的基礎類別的實際基底類別。
 
@@ -492,17 +492,17 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 |功能|接受|附註|
 |-|-|-|
 |`T` (代表智慧指標)|投影|請參閱[命名空間：投影類型、實作類型及處理站](#namespaces-projected-types-implementation-types-and-factories)中有關意外使用實作類型的注意事項。|
-|`agile_ref<T>`|兩者|如果您使用實作類型，則建構函式引數必須是 `com_ptr<T>`。|
+|`agile_ref<T>`|雙向|如果您使用實作類型，則建構函式引數必須是 `com_ptr<T>`。|
 |`com_ptr<T>`|實作|使用投影類型會產生錯誤：`'Release' is not a member of 'T'`。|
-|`default_interface<T>`|兩者|如果您使用實作類型，則會傳回第一次實作的介面。|
+|`default_interface<T>`|雙向|如果您使用實作類型，則會傳回第一次實作的介面。|
 |`get_self<T>`|實作|使用投影類型會產生錯誤：`'_abi_TrustLevel': is not a member of 'T'`。|
-|`guid_of<T>()`|兩者|傳回預設介面的 GUID。|
+|`guid_of<T>()`|雙向|傳回預設介面的 GUID。|
 |`IWinRTTemplateInterface<T>`<br>|投影|使用實作類型編譯，但這是錯誤的 &mdash; 請參閱[命名空間：投影類型、實作類型及處理站](#namespaces-projected-types-implementation-types-and-factories)中的注意事項。|
 |`make<T>`|實作|使用投影類型會產生錯誤：`'implements_type': is not a member of any direct or indirect base class of 'T'`|
-| `make_agile(T const&amp;)`|兩者|如果您使用實作類型，則引數必須是 `com_ptr<T>`。|
+| `make_agile(T const&amp;)`|雙向|如果您使用實作類型，則引數必須是 `com_ptr<T>`。|
 | `make_self<T>`|實作|使用投影類型會產生錯誤：`'Release': is not a member of any direct or indirect base class of 'T'`|
 | `name_of<T>`|投影|如果您使用實作類型，您會取得轉換為字串 (stringify) 的預設介面 GUID。|
-| `weak_ref<T>`|兩者|如果您使用實作類型，則建構函式引數必須是 `com_ptr<T>`。|
+| `weak_ref<T>`|雙向|如果您使用實作類型，則建構函式引數必須是 `com_ptr<T>`。|
 
 ## <a name="opt-in-to-uniform-construction-and-direct-implementation-access"></a>加入統一建構，以及直接實作存取
 
@@ -589,7 +589,7 @@ namespace winrt::MyProject
 }
 ```
 
-您不需要遵循上述所有一切，其用意在於顯示兩個呼叫都涉及呼叫名為 **call_factory** 的函式。 因此，您可推斷這些呼叫都涉及處理站快取，而且不會直接存取實作。 若「具有」  `-opt[imize]`，則完全不會定義這些相同的函式。 它們會改由投影宣告，而其定義會留在元件上。
+您不需要遵循上述所有一切，其用意在於顯示兩個呼叫都涉及呼叫名為 **call_factory** 的函式。 因此，您可推斷這些呼叫都涉及處理站快取，而且不會直接存取實作。 若具有  `-opt[imize]`，則完全不會定義這些相同的函式。 它們會改由投影宣告，而其定義會留在元件上。
 
 元件接著可以提供直接在實作中呼叫的定義。 我們現在已達成重大變更。 當您使用 `-component` 與 `-opt[imize]` 時，系統會為您產生定義，而這些定義會出現在名為 `Type.g.cpp` 的檔案中，其中 *Type* 是正在實作的執行階段類別名稱。 這就是當您第一次在現有專案中啟用 `-opt[imize]`時，您為何會遇到各種連結器錯誤的原因。 您必須在實作中包含所產生的檔案，才能拼接起來。
 

@@ -4,14 +4,14 @@ title: 將 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 29357746b6fca2c6aae52e9516a5b7dc2fca8ef2
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684624"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210634"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>將 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
@@ -197,7 +197,7 @@ Windows Phone Silverlight 應用程式會使用在**Microsoft. Phone. 控制項*
 | LongListSelector 搭配已分組的資料 | Windows Phone Silverlight LongListSelector 的功能有兩種，可用於音樂會。 首先，可以顯示依索引鍵分組的資料，例如依第一個字母分組的名稱清單。 其次，可以在下列兩種語意式檢視之間「縮放」：已分組的項目 (例如名稱) 清單和只有群組索引鍵本身 (例如第一個字母) 的清單。 運用 UWP，您可以使用[清單和格線檢視控制項的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists)來顯示已分組的資料。 |
 | LongListSelector 搭配一般資料 | 基於效能考慮，在很長的清單中，我們建議 LongListSelector，而不要使用 Windows Phone Silverlight 清單方塊，即使是針對一般、非群組的資料也一樣。 在 UWP app 中，針對長的項目清單 (不論是否可將資料加以分組)，皆建議使用 [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)。 |
 | Panorama | Windows Phone Silverlight 全景控制項對應至 Windows 執行階段 8.x[應用程式中中樞控制項的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub)，以及中樞控制項的指導方針。 <br/> 請注意，Panorama 控制項會將最後一個區段迴繞到第一個區段，且其背景影像會以和區段相對的視差方式移動。 [Hub](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) 區段不會迴繞，且不會使用視差。 |
-| 樞紐分析 | Windows Phone Silverlight Pivot 控制項的 UWP 對應項為[Windows. UI.](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot). u。 它適用於所有裝置系列。 |
+| 樞紐 | Windows Phone Silverlight Pivot 控制項的 UWP 對應項為[Windows. UI.](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot). u。 它適用於所有裝置系列。 |
 
 **請注意**   PointerOver 視覺狀態與 Windows 10 應用程式中的自訂樣式/範本有關，但不適用於 Windows Phone Silverlight 應用程式。 您現有的自訂樣式/範本可能不適用於 Windows 10 應用程式的其他原因，包括您使用的系統資源金鑰、所使用之視覺狀態集合的變更，以及對 Windows 10 預設樣式/範本所做的效能改進。 我們建議您為 Windows 10 編輯控制項預設範本的全新複本，然後將樣式和範本自訂重新套用至該元件。
 
@@ -219,9 +219,9 @@ Windows Phone Silverlight 應用程式會使用**CultureInfo**類別來協助全
 
 當您閱讀 UWP 媒體和圖形的相關資料時，請記住，Windows 設計原則鼓勵大幅減少任何多餘的項目，包括圖形複雜性和雜亂度。 Windows 設計是以乾淨簡潔的視覺效果、印刷樣式及移動為代表。 如果您的 app 遵守相同的原則，它看起來就會更像內建的 app。
 
-Windows Phone Silverlight 具有不存在於 UWP 中的**RadialGradientBrush**類型，但是其他[**筆刷**](/uwp/api/Windows.UI.Xaml.Media.Brush)類型為。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 和 XAML C++ UWP 中使用 Direct2D 來[建立放射狀漸層筆刷](https://docs.microsoft.com/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush)。
+Windows Phone Silverlight 具有不存在於 UWP 中的**RadialGradientBrush**類型，但是其他[**筆刷**](/uwp/api/Windows.UI.Xaml.Media.Brush)類型為。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush) 和 XAML C++ UWP 中使用 Direct2D 來[建立放射狀漸層筆刷](https://docs.microsoft.com/windows/desktop/directx)。
 
-Windows Phone Silverlight 具有**OpacityMask**屬性，但該屬性不是 UWP [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)類型的成員。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 而您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 和 XAML C++ UWP app 中使用 Direct2D 來[建立不透明度遮罩](https://docs.microsoft.com/windows/desktop/Direct2D/opacity-masks-overview)。 但是 **OpacityMask** 的一般使用案例是使用同時適合淺色和深色佈景主題的單一點陣圖。 針對向量圖形，您可以使用佈景主題感知系統筆刷 (例如下面所述的圓形圖)。 但是製作佈景主題感知點陣圖 (例如下面所述的核取記號) 需要不同的方法。
+Windows Phone Silverlight 具有**OpacityMask**屬性，但該屬性不是 UWP [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)類型的成員。 在某些情況下，您將可藉由點陣圖獲得類似的效果。 而您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/opacity-masks-overview) 和 XAML C++ UWP app 中使用 Direct2D 來[建立不透明度遮罩](https://docs.microsoft.com/windows/desktop/directx)。 但是 **OpacityMask** 的一般使用案例是使用同時適合淺色和深色佈景主題的單一點陣圖。 針對向量圖形，您可以使用佈景主題感知系統筆刷 (例如下面所述的圓形圖)。 但是製作佈景主題感知點陣圖 (例如下面所述的核取記號) 需要不同的方法。
 
 ![佈景主題感知點陣圖](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 
@@ -257,7 +257,7 @@ Windows Phone Silverlight 具有**OpacityMask**屬性，但該屬性不是 UWP�
     </UIElement.Clip>
 ```
 
-請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 與 XAML C++ UWP app 中使用 Direct2D，以[使用任意幾何圖形做為圖層中的遮罩](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-layers-overview)。
+請注意，您可以在 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-layers-overview) 與 XAML C++ UWP app 中使用 Direct2D，以[使用任意幾何圖形做為圖層中的遮罩](https://docs.microsoft.com/windows/desktop/directx)。
 
 ## <a name="navigation"></a>瀏覽
 
@@ -305,7 +305,7 @@ URI 對應和片段瀏覽是 URI 瀏覽技術，因此不適用於並非以 URI 
 
 系統匣 (在 XAML 標記中以 `shell:SystemTray.IsVisible` 設定) 現在稱為狀態列，並且預設會顯示。 您可以在命令式程式碼中，藉由呼叫 [**Windows.UI.ViewManagement.StatusBar.ShowAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.statusbar.showasync) 和 [**HideAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.statusbar.hideasync) 方法來控制其可見度。
 
-## <a name="text"></a>文字
+## <a name="text"></a>Text
 
 文字 (或印刷樣式) 是 UWP app 中的一個重要層面，在移植時，您可以重新檢閱檢視的視覺設計，以確保它們不會與新的設計語言產生違和感。 請使用這些插圖說明來找出可用的 UWP  **TextBlock** 系統樣式。 尋找對應到您所使用之 Windows Phone Silverlight 樣式的範本。 或者，您也可以建立自己的通用樣式，並將 Windows Phone Silverlight 系統樣式的屬性複製到其中。
 

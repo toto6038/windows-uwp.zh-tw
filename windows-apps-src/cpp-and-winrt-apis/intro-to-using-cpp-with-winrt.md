@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 簡介
 ms.localizationpriority: medium
 ms.openlocfilehash: fd267f96ca6931252ab3130d363447ae79820108
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255105"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209133"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 簡介
 &nbsp;
@@ -44,7 +44,7 @@ Windows 執行階段根據元件物件模型 (COM) API，且設計它透過「�
 
 下列各節會說明 C++/WinRT 的 Visual Studio 專案範本。 當您建立已安裝最新版 VSIX 擴充功能的新 C++/WinRT 專案時候，新的 C++/WinRT 專案就會自動安裝 [Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 **Microsoft.Windows.CppWinRT** NuGet 套件提供 C++/WinRT 建置支援 (MSBuild 屬性和目標)，讓您的專案能在開發電腦與建置代理程式之間可攜 (在其上只會安裝 NuGet套件，而不會安裝 VSIX 擴充功能)。
 
-或者，您可藉由手動安裝 **Microsoft.Windows.CppWinRT** NuGet 套件來轉換現有的專案。 安裝 (或更新為) 最新版 VSIX 擴充功能之後，請在 Visual Studio 中開啟現有的專案，按一下 [專案]  \> [管理 NuGet 套件...]  \>[瀏覽]  、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝]  以安裝適用於該專案的套件。 新增該套件後，您會收到適用於專案的 C++/WinRT MSBuild 支援，包含叫用 `cppwinrt.exe` 工具。
+或者，您可藉由手動安裝 **Microsoft.Windows.CppWinRT** NuGet 套件來轉換現有的專案。 安裝 (或更新為) 最新版 VSIX 擴充功能之後，請在 Visual Studio 中開啟現有的專案，按一下 [專案]  \>[管理 NuGet 套件...]  \>[瀏覽]  、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝]  以安裝適用於該專案的套件。 新增該套件後，您會收到適用於專案的 C++/WinRT MSBuild 支援，包含叫用 `cppwinrt.exe` 工具。
 
 > [!IMPORTANT]
 > 如果您有使用 1.0.190128.4 之前的 VSIX 擴充功能版本建立 (或升級使用) 的專案，則查看[舊版的 VSIX 擴充功能](#earlier-versions-of-the-vsix-extension)。 該區段包含您的專案組態相關重要資訊，您必須知道要將其升級為使用最新版的 VSIX 擴充功能。
@@ -110,7 +110,7 @@ Windows 傳統型 C++/WinRT 用戶端應用程式的專案範本，其在 Win32 
 ...
 ```
 
-您可以藉由手動安裝 **Microsoft.Windows.CppWinRT** NuGet 套件來升級您的專案。 安裝 (或升級為) 最新版 VSIX 擴充功能之後，請在 Visual Studio 中開啟您的專案，按一下 [專案]  \> [管理 NuGet 套件...]  \>[瀏覽]  、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝]  以安裝適用於您專案的套件。
+您可以藉由手動安裝 **Microsoft.Windows.CppWinRT** NuGet 套件來升級您的專案。 安裝 (或升級為) 最新版 VSIX 擴充功能之後，請在 Visual Studio 中開啟您的專案，按一下 [專案]  \>[管理 NuGet 套件...]  \>[瀏覽]  、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝]  以安裝適用於您專案的套件。
 
 ### <a name="created-with-or-upgraded-to-between-101810022-and-101901283"></a>使用 1.0.181002.2 與 1.0.190128.3 之間版本建立 (或升級)
 如果您的專案使用 1.0.181002.2 與 1.0.190128.3 (含) 之間的 VSIX 擴充功能版本建立，則專案範本會在專案中自動建立 **Microsoft.Windows.CppWinRT** NuGet 套件。 您可能也已將舊專案升級為使用此範圍中的 VSIX 擴充功能版本。 如果您這樣做，則&mdash;因為建置支援也仍然存在於此範圍內的 VSIX 擴充功能版本中&mdash;您升級的專案不一定已安裝 **Microsoft.Windows.CppWinRT** NuGet 套件。
@@ -120,7 +120,7 @@ Windows 傳統型 C++/WinRT 用戶端應用程式的專案範本，其在 Win32 
 ### <a name="invalid-upgrade-configurations"></a>無效的升級組態
 使用最新版的 VSIX 擴充功能時，如果也還沒安裝 **Microsoft.Windows.CppWinRT**NuGet 套件，專案就不適合具有 `<CppWinRTEnabled>true</CppWinRTEnabled>` 屬性。 具有此組態的專案會產生建置錯誤訊息「C++/WinRT VSIX 不再提供專案的建置支援。  請將專案參考加入 Microsoft.Windows.CppWinRT Nuget 套件」。
 
-如上所述， C++/WinRT 專案現在必須已安裝的 NuGet 套件。
+如上所述，C++/WinRT 專案現在必須已安裝的 NuGet 套件。
 
 由於 `<CppWinRTEnabled>` 元素現在已過時，您可以選擇性地編輯 `.vcxproj`，以及刪除此元素。 它不是絕對必要，但是個選項。
 
