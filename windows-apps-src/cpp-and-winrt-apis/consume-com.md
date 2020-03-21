@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, COM, 元件, 類別, 介面
 ms.localizationpriority: medium
-ms.openlocfilehash: 88012d96b7c769094cb80d0f34b77060291a3eef
-ms.sourcegitcommit: 80ea5e05f8c15700f6c6fa3d1ed37e479568762b
+ms.openlocfilehash: 4a9bdfcee8811e52587eb4fcd59913a731b799a2
+ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75928811"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79511001"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>使用 C++/WinRT 取用 COM 元件
 
@@ -18,7 +18,7 @@ ms.locfileid: "75928811"
 
 在本主題結束時，您將可看到極簡 Direct2D 應用程式的完整原始程式碼清單。 我們將摘要選取該程式碼，並使用這些程式碼說明如何透過 C++/WinRT 使用 C++/WinRT 程式庫的各種設備來取用 COM 元件。
 
-## <a name="com-smart-pointers-winrtcom_ptruwpcpp-ref-for-winrtcom-ptr"></a>COM 智慧型指標 ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
+## <a name="com-smart-pointers-winrtcom_ptr"></a>COM 智慧型指標 ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
 當您使用 COM 進行程式設計時，您應直接使用介面，而不是使用物件 (在幕後使用 Windows 執行階段 API (COM 的進化版) 也是如此)。 例如，若要在 COM 類別上呼叫函式，您可以啟用類別、重新取得介面，然後在該介面上呼叫函式。 若要存取物件的狀態，您不是直接存取其資料成員，相反地，您會在介面上呼叫存取子和更動子函式。
 
@@ -127,7 +127,7 @@ winrt::check_hresult(D2D1CreateFactory(
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>採用 **IUnknown** 介面指標的 COM 函式
 
-您可以呼叫 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) 免費函式來將 **com_ptr** 傳遞給採用 **IUnknown** 介面指標的函式。
+您可以呼叫 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) 免費函式來將 **com_ptr** 傳遞給採用 **IUnknown** 介面指標的函式。
 
 ```cppwinrt
 winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
