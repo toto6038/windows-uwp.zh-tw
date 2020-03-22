@@ -48,8 +48,6 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: 散發您的封裝應用程式
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
-        - name: 將身分識別授與非封裝的傳統型應用程式
-          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: 教學課程：將 WPF 應用程式現代化
           items:
             - name: 概觀
@@ -64,6 +62,8 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-4.md
             - name: 使用 MSIX 封裝和部署
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
+        - name: 將身分識別授與非封裝的傳統型應用程式
+          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
     - name: Fluent Design 系統
       href: apps/fluent-design-system.md
     - name: 協助工具
@@ -71,27 +71,7 @@
     - name: Speech
       href: apps/speech.md
     - name: 功能和技術
-      items:
-        - name: 概觀
-          href: apps/features-and-technologies.md
-        - name: 在 .NET 中處理 ETW 追蹤
-          items:
-            - name: 概觀
-              href: apps/trace-processing/overview.md
-            - name: 處理您的首次追蹤
-              href: apps/trace-processing/quickstart.md
-            - name: 存取追蹤資料
-              href: apps/trace-processing/tutorial.md
-            - name: 擴充 TraceProcessor
-              href: apps/trace-processing/extensibility.md
-            - name: 載入符號
-              href: apps/trace-processing/symbols.md
-            - name: 使用串流
-              href: apps/trace-processing/streaming.md
-            - name: 範例
-              href: 'https://github.com/microsoft/eventtracing-processing-samples'
-            - name: 參考資料
-              href: apps/trace-processing/reference.md
+      href: apps/features-and-technologies.md
     - name: 最新的文件更新
       href: apps/whats-new/latest-doc-updates.md
 - name: 使用 Windows 裝置

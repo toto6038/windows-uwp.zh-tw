@@ -4,17 +4,16 @@ Description: 許多企業都使用防火牆來封鎖不想要的流量。 本檔
 title: 將 WNS 流量新增至防火牆允許清單
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10，uwp，WNS，windows 通知服務，通知，windows，防火牆，疑難排解，IP，流量，企業，網路，IPv4，VIP，FQDN，公用 IP 位址
 ms.localizationpriority: medium
-ms.openlocfilehash: fa0153a395144382aee3f764f0f7d9316afa9c5e
-ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
+ms.openlocfilehash: 34e66249c5b44cbfecd81b9238eda2b1e5412b9a
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76265019"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080658"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支援 WNS 流量的企業防火牆和 Proxy 設定
 

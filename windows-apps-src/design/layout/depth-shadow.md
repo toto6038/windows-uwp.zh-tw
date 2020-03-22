@@ -3,19 +3,18 @@ author: knicholasa
 description: '[Z 深度] 或 [相對深度] 和 [陰影] 是將深度併入應用程式的兩種方式，可讓使用者自然且有效率地進行焦點。'
 title: UWP 應用程式的 Z 深度和陰影
 template: detail.hbs
-ms.author: nichola
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
 keywords: Windows 10, UWP
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9197be38d1edfdad41a434132f318cdf3f45ea
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 216974ba564a192f94473469f3a7a49191ef2192
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282421"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081391"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度和陰影
 
@@ -39,7 +38,7 @@ Z 深度是在3D 應用程式建立者之間使用的詞彙，用來表示沿著
 
 ## <a name="themeshadow"></a>ThemeShadow
 
-ThemeShadow 類型可以套用至任何 XAML 元素，以根據 x、y、z 座標適當地繪製陰影。 ThemeShadow 也會自動針對其他環境規格進行調整：
+[ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow)類型可以套用至任何 XAML 元素，以根據 x、y、z 座標適當地繪製陰影。 ThemeShadow 也會自動針對其他環境規格進行調整：
 
 - 適應光源、使用者主題、應用程式環境和 shell 中的變更。
 - 根據物件的 z 深度，自動套用陰影至元素。 
@@ -65,7 +64,7 @@ ThemeShadow 類型可以套用至任何 XAML 元素，以根據 x、y、z 座標
 - [媒體傳輸控制](../controls-and-patterns/media-playback.md#media-transport-controls)， [InkToolbar](../controls-and-patterns/inking-controls.md)
 - [連接動畫](../motion/connected-animation.md)
 
-注意：Flyouts 只會在針對 Windows 10 1903 版或較新版本的 SDK 編譯時套用 ThemeShadow。
+注意： Flyouts 只會在針對 Windows 10 1903 版或較新版本的 SDK 編譯時套用 ThemeShadow。
 
 ### <a name="themeshadow-in-popups"></a>在快顯視窗中 ThemeShadow
 
@@ -99,7 +98,7 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 以[飛出](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout)視窗、 [DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout)、 [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout)或[TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout)為依據的控制項會自動使用 ThemeShadow 來轉換陰影。
 
-如果預設陰影在控制項的內容上看起來不正確，您可以在相關聯的 FlyoutPresenter 上將[IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled)屬性設定為 `false` 來停用它：
+如果預設陰影在控制項的內容上看起來不正確，您可以將[IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled)屬性設定為相關聯 FlyoutPresenter 上的 `false`，將它停用：
 
 ```xaml
 <Flyout>
@@ -160,11 +159,11 @@ DropShadow 不會自動回應其環境，也不會使用光線來源。 如需�
 ## <a name="which-shadow-should-i-use"></a>應該使用哪一個陰影？
 
 | 屬性 | ThemeShadow | DropShadow |
-| - | - | - | - |
+| - | - | - |
 | **最小 SDK** | Windows 10 版本1903 | 14393 |
 | **能力** | 是 | 否 |
 | **定義** | 否 | 是 |
-| **光線來源** | 自動（預設為全域，但可覆寫每個應用程式） | None |
+| **光線來源** | 自動（預設為全域，但可覆寫每個應用程式） | 無 |
 | **在3D 環境中支援** | 是 | 否 |
 
 - 請記住，shadow 的用途是提供有意義的階層，而不是簡單的視覺處理。
