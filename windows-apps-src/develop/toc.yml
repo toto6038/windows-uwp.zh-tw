@@ -299,7 +299,7 @@
           href: ../debug-test-perf/loose-file-registration.md
         - name: 搶鮮版 (Beta) 測試
           href: ../debug-test-perf/beta-testing.md
-        - name: Windows Device Portal
+        - name: Windows 裝置入口網站
           href: ../debug-test-perf/device-portal.md
           items:
             - name: 傳統型裝置的 Device Portal
@@ -743,7 +743,7 @@
       items:
         - name: 簡介
           href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-        - name: 立即開始
+        - name: 開始使用
           href: ../cpp-and-winrt-apis/get-started.md
         - name: 新功能
           href: ../cpp-and-winrt-apis/news.md
@@ -1354,6 +1354,8 @@
               href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
             - name: 建立和裝載應用程式延伸模組
               href: ../launch-resume/how-to-create-an-extension.md
+            - name: 建立託管應用程式
+              href: ../launch-resume/hosted-apps.md
         - name: 使用背景工作支援應用程式
           href: ../launch-resume/support-your-app-with-background-tasks.md
           items:
