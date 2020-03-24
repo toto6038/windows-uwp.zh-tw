@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: d0d87f8e4b6524471ff5e2ada9012a22641b06d7
-ms.sourcegitcommit: ddf0137929945eddf01041a81aa4d26038e70f46
+ms.openlocfilehash: bf8a5970d1999427023592f919ef0b92737fa934
+ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74392095"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510981"
 ---
 # <a name="choose-your-app-platform"></a>選擇您的應用程式平台
 
@@ -26,9 +26,13 @@ ms.locfileid: "74392095"
 
 所有這些應用程式平台都可讓您建立在傳統 Windows 桌面上執行的傳統型應用程式 (例如 Word、Excel 和 Photoshop)，並充分利用該環境的特定功能。 不過，其中有些平台會共用一些特性，而且更適合特定類型的應用程式：
 
-* **UWP、WPF 和 Windows Forms**。 這些平台提供受管理的執行階段環境 (適用於 UWP 的 Windows 執行階段，以及適用於 Windows Forms 和 WPF 的 .NET)，其有許多優點，特別是在開發人員生產力、複雜且可自訂的 UI，以及應用程式安全性等方面。 由於這些架構支援視覺化設計工具和 UI 標記來快速建立 UI，因此特別適用於企業營運應用程式。
+* **UWP**。 此平台為執行 Windows 10 的所有裝置提供一般型別系統、API 和應用程式模型。 UWP 應用程式可以是原生或受管理的。 
 
-* **Win32 API**。 Win32 API (也稱為 Windows API) 是適用於原生 C/C++ Windows 應用程式的原創平台，而這些應用程式需要直接存取 Windows 和硬體。 它提供了一流的開發體驗，而不需取決於受管理的執行階段環境 (例如 .NET 和 WinRT)。 這讓 Win32 API 成為應用程式的首選平台，因為這些應用程式需要最高階效能及直接存取系統硬體。
+* **WPF 和 Windows Forms**。 這些平台會針對在 .NET 上執行的受控應用程式，提供一般型別系統、API 和應用程式模型。
+
+* **Win32 API**。 Win32 API (也稱為 Windows API) 是適用於原生 C/C++ Windows 應用程式的原創平台，而這些應用程式需要直接存取 Windows 和硬體。 這讓 Win32 API 成為應用程式的首選平台，因為這些應用程式需要最高階效能及直接存取系統硬體。
+
+UWP 和 .NET 都與 Visual Studio 進行深度整合。 這可提供許多優點，特別是在開發人員生產力、精細且可自訂的使用者介面，以及應用程式安全性等方面。 由於這些架構支援視覺化設計工具和 UI 標記來快速建立 UI，因此特別適用於企業營運應用程式。
 
 本文會更詳細地說明這些平台，並協助您判斷最適合您應用程式的平台。 
 
@@ -43,7 +47,7 @@ UWP 是適用於 Windows 10 應用程式和遊戲的先進平台。 它是高度
 
 如需 UWP 的詳細資訊，請參閱下列文章：
 
-* [入門](/windows/uwp/get-started/)
+* [開始使用](/windows/uwp/get-started/)
 * [設計與 UI](/windows/uwp/design/)
 * [技術和功能](/windows/uwp/develop/)
 * [API 參考](/uwp/)
@@ -88,7 +92,7 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 
 如需詳細資訊，請參閱下列文章：
 
-* [入門](/windows/win32/desktop-programming/)
+* [開始使用](/windows/win32/desktop-programming/)
 * [建立您的第一個 Win32 和 C++ 應用程式](/windows/win32/learnwin32/learn-to-program-for-windows/)
 * [技術和功能](/windows/win32/desktop-app-technologies)
 * [API 參考](/windows/win32/apiindex/windows-api-list/)

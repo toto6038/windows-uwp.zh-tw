@@ -5,18 +5,18 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 字串
 ms.localizationpriority: medium
-ms.openlocfilehash: 004aa3e267bab86527ac3d5c3fe0383ccd4ad904
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: 1771c3754e8e9580514f646ae8589b1982911fc7
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844314"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79448569"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT 中的字串處理
 
 有了 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，您可以使用 C++ 標準程式庫寬字串類型 (例如 **std::wstring**) ，來呼叫 Windows 執行階段 API (請注意：無法與縮小字串類型例如 **std::string** 共用)。 C++/WinRT 有一個稱為 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的自訂字串類型 (在 C++/WinRT 基底程式庫中定義，也就是 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`)。 且這是 Windows 執行階段建構函式、函式和屬性確實採用與傳回的字串類型。 但在許多情況下，&mdash;由於 **hstring** 的轉換建構函式和轉換運算子&mdash;您可以選擇是否要注意用戶端程式碼中的 **hstring**。 如果您正在*撰寫* API，更需要深入了解 **hstring**。
 
-C++ 有許多字串類型。 許多程式庫裡存在著變體，除了來自 C++ 標準程式庫的 **std::basic_string** 以外。 C++17 有字串轉換公用程式，以及 **std::basic_string_view**，來橋接所有字串類型間的間隔。  [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 提供 **std::wstring_view** 的轉換性，以提供 **std::basic_string_view** 為設計目的互通性。
+C++ 有許多字串類型。 許多程式庫裡存在著變體，除了來自 C++ 標準程式庫的 **std::basic_string** 以外。 C++17 有字串轉換公用程式，以及 **std::basic_string_view**，來橋接所有字串類型間的間隔。  [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 提供 **std::wstring_view** 的轉換性，以提供 **std::basic_string_view** 為設計目的的互通性。
 
 ## <a name="using-stdwstring-and-optionally-winrthstring-with-uri"></a>將 **std::wstring** (並選擇性地使用 **winrt::hstring**) 與 **Uri** 搭配使用
 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 建構自 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。
@@ -154,28 +154,30 @@ WINRT_ASSERT(w == L"Hello, World!");
 ## <a name="the-rationale-for-winrthstring-and-winrtparamhstring"></a>**winrt::hstring** 和 **winrt::param::hstring** 的原理
 用 **wchar_t** 字元實作 Windows 執行階段，但 Windows 執行階段的應用程式二進位介面 (ABI) 不是 **std::wstring** 或 **std::wstring_view** 提供的子集。 使用這些會導致嚴重的效率不彰。 反之，C++/WinRT 提供 **winrt::hstring**，用來表示與基礎 [HSTRING](https://docs.microsoft.com/windows/desktop/WinRT/hstring) 一致的不可變更字串，且在類似於 **std::wstring** 的介面後面實作。 
 
-您可能會注意到， 邏輯上應該接受 **winrt::hstring** 的 C++/ WinRT 輸入參數，實際預期為 **winrt::param::hstring**。 **param** 命名空間包含一組專門用於最佳化輸入參數的類型，以自然繫結至 C++ 標準程式庫類型，並避免複製及其他效率不彰。 您不應該直接使用這些類型。 如果要對自己的函式使用最佳化，請使用 **std::wstring_view**。 另請參閱[將參數傳入 ABI 界限](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi)。
+您可能會注意到， 邏輯上應該接受 **winrt::hstring** 的 C++/ WinRT 輸入參數，實際預期為 **winrt::param::hstring**。 **param** 命名空間包含一組專門用於最佳化輸入參數的類型，以自然繫結至 C++ 標準程式庫類型，並避免複製及其它效率不彰。 您不應該直接使用這些類型。 如果要對自己的函式使用最佳化，請使用 **std::wstring_view**。 另請參閱[將參數傳入 ABI 界限](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi)。
 
 結論是您可以大致忽略特定的 Windows 執行階段字串管理，並只搭配使用您知道的效率。 了解在 Windows 執行階段中重度使用字串的程度，這一點很重要。
 
 ## <a name="formatting-strings"></a>格式化字串
-字串格式化的一個選項是 **std::wstringstream**。 以下是格式與顯示簡單偵錯追蹤訊息的範例。
+字串格式化的一個選項是 **std::wostringstream**。 以下是格式與顯示簡單偵錯追蹤訊息的範例。
 
 ```cppwinrt
 #include <sstream>
+#include <winrt/Windows.UI.Input.h>
+#include <winrt/Windows.UI.Xaml.Input.h>
 ...
-void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
+void MainPage::OnPointerPressed(winrt::Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e)
 {
-    float2 const point = args.CurrentPoint().Position();
-    std::wstringstream wstringstream;
-    wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
-    ::OutputDebugString(wstringstream.str().c_str());
+    winrt::Windows::Foundation::Point const point{ e.GetCurrentPoint(nullptr).Position() };
+    std::wostringstream wostringstream;
+    wostringstream << L"Pointer pressed at (" << point.X << L"," << point.Y << L")" << std::endl;
+    ::OutputDebugString(wostringstream.str().c_str());
 }
 ```
 
 ## <a name="the-correct-way-to-set-a-property"></a>設定屬性的正確方式
 
-您可以藉由將值傳遞至 setter 函式來設定屬性。 這裡提供一個範例。
+您可以藉由將值傳遞至 setter 函式來設定屬性。 以下是範例。
 
 ```cppwinrt
 // The right way to set the Text property.
@@ -190,6 +192,6 @@ myTextBlock.Text() = L"Hello!";
 ```
 
 ## <a name="important-apis"></a>重要 API
-* [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt::to_hstring 函式](/uwp/cpp-ref-for-winrt/to-hstring)
 * [winrt::to_string 函式](/uwp/cpp-ref-for-winrt/to-string)

@@ -5,12 +5,12 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b313e80b744279f8dc955e8c07d31aba2860c3f
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 663e0dddb9823e35e2d31ba9667bd3d16bd1d5de
+ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393422"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510991"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>從 WRL 移到 C++/WinRT
 本主題示範如何將 [Windows 執行階段 C++ 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 程式碼移植到其在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的對等項目。
@@ -27,7 +27,7 @@ ms.locfileid: "70393422"
 
 如果包含任何 C++/WinRT 投影 Windows API 標頭 (例如，`winrt/Windows.Foundation.h`)，則您不需要像這樣明確包含 `winrt/base.h`，因為它會自動為您包含。
 
-## <a name="porting-wrl-com-smart-pointers-microsoftwrlcomptrcppwindowscomptr-class"></a>移植 WRL COM 智慧型指標 ([Microsoft: 110:: WRL::ComPtr](/cpp/windows/comptr-class))
+## <a name="porting-wrl-com-smart-pointers-microsoftwrlcomptr"></a>移植 WRL COM 智慧型指標 ([Microsoft: 110:: WRL::ComPtr](/cpp/windows/comptr-class))
 移植任何使用 **Microsoft::WRL::ComPtr\<T\>** 的程式碼以使用 [**winrt::com_ptr\<T\>** ](/uwp/cpp-ref-for-winrt/com-ptr)。 以下是變更前後的程式碼範例。 在「之後」  版本中，[**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput-function) 成員函式擷取基礎原始指標，如此一來便可以設定它。
 
 ```cpp
@@ -87,7 +87,7 @@ m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->G
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
 ```
 
-當您想要將基礎原始指標傳遞至期待一個 **IUnknown** 指標的函式，請使用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) 函式，下一個範例做為示範。
+當您想要將基礎原始指標傳遞至期待一個 **IUnknown** 指標的函式，請使用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) 函式，下一個範例做為示範。
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;

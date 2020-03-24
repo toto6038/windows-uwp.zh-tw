@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始使用, uwp, windows 10, 了解追蹤, 版面配置, 表單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9542151a8104ade77d8311ed1f16eba2809ecf7a
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: 02cb15d948bf35b1c449bb430c9c31dd33d9eec6
+ms.sourcegitcommit: ea058c804637319f18801447fd0f7e38ce17b801
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163682"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79543971"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 
@@ -152,7 +152,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ### <a name="useful-apis"></a>實用的 API
 
-| API | 描述 |
+| API | 說明 |
 |------|---------------|
 | [適用於表單的控制項](../design/controls-and-patterns/forms.md#input-controls) | 用於建立表單的實用輸入控制項清單，以及在什麼地方使用它們的基本指導方針。 |
 | [方格](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | 用於在多列與多欄版面配置中排列控制項的面板。 |
@@ -162,7 +162,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ### <a name="useful-docs"></a>實用的文件
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|----------------|
 | [協助工具概觀](../design/accessibility/accessibility-overview.md) | 應用程式中協助工具選項的廣泛縮放概觀。 |
 | [協助工具檢查清單](../design/accessibility/accessibility-checklist.md) | 實用的檢查清單以確保您的應用程式符合協助工具標準。 |
@@ -177,7 +177,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ## <a name="useful-code-samples"></a>實用的程式碼範例
 
-| 程式碼範例 | 描述 |
+| 程式碼範例 | 說明 |
 |-----------------|---------------|
 | [調適型版面配置的教學課程](../design/basics/xaml-basics-adaptive-layout.md) | 透過調適型版面配置和回應式設計的逐步引導體驗。 |
 | [客戶訂單資料庫](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | 請參閱多頁面企業範例中的版面配置和表單的實際運作。 |

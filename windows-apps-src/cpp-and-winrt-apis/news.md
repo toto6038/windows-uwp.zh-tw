@@ -1,21 +1,80 @@
 ---
 description: C++/WinRT 的新聞和變更。
 title: C++/WinRT 的新功能
-ms.date: 04/23/2019
+ms.date: 03/16/2020
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d5a2c3d10f2cbfcc608d212a9465ca738e1ca15e
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 734544a1294c6a97e70afcbf7ce6b5efc13cf841
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209103"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79448580"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
 
 隨著 C++/WinRT 後續版本的發行，本主題說明新功能和變更內容。
+
+## <a name="rollup-of-recent-improvementsadditions-as-of-march-2020"></a>2020 年 3 月為止的最新改良/新增彙總套件
+
+### <a name="up-to-23-shorter-build-times"></a>組建時間縮短達 23%
+
+C++/WinRT 和 C++ 編譯器小組已共同合作，盡可能縮短組建時間。 我們仔細研究編譯器分析，以找出重組 C++/WinRT 內部結構的方法，來協助 C++ 編譯器消除額外的編譯時間，以及改進 C++ 編譯器本身以處理 C++/WinRT 程式庫的方法。 C++/WinRT 已針對編譯器最佳化；而編譯器也已針對 C++/WinRT 最佳化。
+
+以最差的情況為例，組建預先編譯的標頭 (PCH)，其中包含每個單一 C++/WinRT 投影命名空間標頭。
+
+| 版本 | PCH 大小 (位元組) | 次數 |
+| - | - | - |
+| 7 月的 C++/WinRT，含 Visual C++ 16.3 | 3,004,104,632 | 31 |
+| C++/WinRT 2.0.200316.3 版，含 Visual C++ 16.5 | 2,393,515,336 | 24 |
+
+大小縮減 20%，組建時間減少 23%。
+
+### <a name="improved-msbuild-support"></a>已改善 MSBuild 支援
+
+我們已投注大量心力來改善對各種不同方案的 [MSBuild](/visualstudio/msbuild/msbuild?view=vs-2019) 支援。
+
+### <a name="even-faster-factory-caching"></a>更快速的處理站快取
+
+我們改進了處理站快取的內嵌，以便更好地內嵌最忙碌路徑，從而加快執行速度。
+
+這項改進並不會影響程式碼大小 (如下方[最佳化 EH 程式碼產生](#optimized-exception-handling-eh-code-generation)中所述)，如果您的應用程式大量使用 C++ 例外狀況處理程式，則可以使用 `/d2FH4` 選項來壓縮二進位檔，依預設，使用 Visual Studio 2019 16.3 和更高版本建立新專案中已啟用該功能。
+
+### <a name="more-efficient-boxing"></a>更有效率的 Boxing
+
+在 XAML 應用程式中使用時，[**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 現在更有效率 (請參閱 [Boxing 和 Unboxing](/windows/uwp/cpp-and-winrt-apis/boxing))。 執行大量 Boxing 的應用程式也會注意到程式碼大小的縮減。
+
+### <a name="support-for-implementing-com-interfaces-that-implement-iinspectable"></a>支援執行 IInspectable 的實作 COM 介面
+
+如果您需要執行一個 (非 Windows 執行時間) COM 介面，而該介面剛好實作了 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，則現在可以使用 C++/WinRT 來執行此動作。 請參閱[實作 IInspectable 的 COM 介面](https://github.com/microsoft/xlang/pull/603)。
+
+### <a name="module-locking-improvements"></a>模組鎖定改進
+
+對模組鎖定的控制現在既可以自訂託管方案，也可以完全消除模組層級的鎖定。 請參閱[模組鎖定改進](https://github.com/microsoft/xlang/pull/583)。
+
+### <a name="support-for-non-windows-runtime-error-information"></a>支援非 Windows 執行階段錯誤資訊
+
+某些 API (即使是某些 Windows 執行階段 API) 會報告錯誤，而不會使用 Windows 執行階段錯誤來源 API。 在這種情況下，C++/WinRT 現在回到使用 COM 錯誤資訊。 請參閱[非 WinRT 錯誤資訊的 C++/WinRT 支援](https://github.com/microsoft/xlang/pull/582)。
+
+### <a name="enable-c-module-support"></a>啟用 C++ 模組支援 
+
+C++ 模組支援已恢復，但僅適用於實驗性表單。 這項功能在 C++ 編譯器中尚未完成。
+
+### <a name="more-efficient-coroutine-resumption"></a>協同程式恢復更有效率
+
+C++/WinRT 協同程式已經順利執行，但我們會繼續尋找改善的方式。 請參閱[提高協同程式恢復的可擴縮性](https://github.com/microsoft/xlang/pull/546)。
+
+### <a name="new-when_all-and-when_any-async-helpers"></a>新增 **when_all** 和 **when_any** 非同步協助程式
+
+**when_all** 協助程式函式建立了 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) 物件，該物件在所有提供的可等候都完成時就會完成。 **when_any** 協助程式建立了 **IAsyncAction**，其在所有提供的可等候都完成時就會完成。 
+
+請參閱[新增 when_any 非同步協助程式](https://github.com/microsoft/xlang/pull/520)和[新增 when_all 非同步協助程式](https://github.com/microsoft/xlang/pull/516)。
+
+### <a name="other-optimizations-and-additions"></a>其他最佳化和新增功能
+
+此外，還引進了許多錯誤修正和一些最佳化和新增功能，包括各種改善措施，以簡化偵錯功能並將內部和預設實作最佳化。 如需完整清單，請進入此連結：[https://github.com/microsoft/xlang/pulls?q=is%3Apr+is%3Aclosed](https://github.com/microsoft/xlang/pulls?q=is%3Apr+is%3Aclosed)。
 
 ## <a name="news-and-changes-in-cwinrt-20"></a>C++/WinRT 2.0 的新聞和變更
 
@@ -259,7 +318,7 @@ struct MainPage : PageT<MainPage>
 
 #### <a name="improved-support-for-com-style-single-interface-inheritance"></a>已改善對 COM 樣式單一介面繼承的支援
 
-與 Windows 執行階段程式設計一樣，C++/WinRT 也用於撰寫和取用僅限 COM 的 API。 此更新可讓您實作存在介面階層的 COM 伺服器。 Windows 執行階段不需要這麼做；但它對於某些 COM 實作是必要的。
+與 Windows 執行階段程式設計一樣， C++/WinRT 也用於撰寫和取用僅限 COM 的 API。 此更新可讓您實作存在介面階層的 COM 伺服器。 Windows 執行階段不需要這麼做；但它對於某些 COM 實作是必要的。
 
 #### <a name="correct-handling-of-out-params"></a>正確處理 `out` 參數
 
