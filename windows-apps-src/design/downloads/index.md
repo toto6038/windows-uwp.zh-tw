@@ -1,28 +1,28 @@
 ---
-description: 取得適用於 UWP 應用程式使用者介面配置和控制項設計的最新下載和工具。
-keywords: uwP 應用程式layout, UI, user interface designs, downloads, uwp tools, UWP 應用程式版面配置, 使用者介面設計, 下載, UWP 工具
-title: 設計 UWP 應用程式的工具組和範例
-ms.date: 10/11/2018
+description: 取得適用於 Windows 應用程式使用者介面配置和控制項設計的最新下載和工具。
+keywords: uwp 應用程式配置, UI, 使用者介面, 下載, uwp 工具, windows 應用程式配置, windows 使用者介面工具
+title: 設計 Windows 應用程式的工具組和範例
+ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 44e6f65b38faa7bd80c277d999f4e18b398bd11b
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 9d683b73b64ef1cf2bd8d267aa40e2e1c419ac92
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463870"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218488"
 ---
-# <a name="design-toolkits-and-samples-for-uwp-apps"></a>設計 UWP 應用程式的工具組和範例
+# <a name="design-toolkits-and-samples-for-windows-apps"></a>設計 Windows 應用程式的工具組和範例
 
 ![設計基本知識](../images/downloads-2x.png)
 
-Fluent 設計/UWP 應用程式的設計與 UI 相關下載。 如需其他工具 (例如 Visual Studio)，請參閱<a href="https://developer.microsoft.com/windows/downloads">我們的主要下載頁面</a>。
+Fluent 設計/Windows 應用程式的設計與 UI 相關下載。 如需其他工具 (例如 Visual Studio)，請參閱<a href="https://developer.microsoft.com/windows/downloads">我們的主要下載頁面</a>。
 
 ## <a name="design-toolkits"></a>設計工具組
 
-這些工具組提供控制項與版面配置範本，可用於設計 UWP 應用程式。
+這些工具組提供控制項與版面配置範本，可用於設計 Windows 應用程式。
 
 :::row:::
     :::column:::
@@ -68,7 +68,7 @@ WinUI 2.3，2020 年 2 月<br>
     :::column:::
 ![WinUI 程式庫縮圖](images/WinUI-library.png)
 <b>Windows UI 程式庫</b><br>
-用於 UWP 應用程式的控制項和其他 UI 元素。<br/>
+用於 Windows 應用程式的控制項和其他 UI 元素。<br/>
 <a href="/uwp/toolkits/winui/getting-started">安裝指示</a><br/>
     :::column-end:::
     :::column:::
@@ -102,22 +102,22 @@ Helper 函式、自訂控制項和應用程式服務。<br />
 
 ![Fluent XAML 佈景主題編輯器影像](images/XamlThemeEditor_screenshot.png)
 **Fluent XAML 佈景主題編輯器**<br>
-Fluent XAML 佈景主題編輯器這項工具可為通用 Windows 平台應用程式 (UWP) 中使用的 ResourceDictionary 架構產生 XAML 標記，而協助您展現 Fluent Design 系統的彈性及支援應用程式開發程序。
+Fluent XAML 佈景主題編輯器這項工具可為 Windows 應用程式中使用的 ResourceDictionary 架構產生 XAML 標記，而協助您展現 Fluent Design 系統的彈性及支援應用程式開發程序。
 <a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">下載工具範例</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">查看 Github 上的工具</a>
 
 ![VanArsdel 影像](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-Van Arsdel, Ltd. 端對端 UWP 範例應用程式可用來展示新一代的 Microsoft Fluent Design 系統。 它大量使用了 <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 程式庫</a>中經過改良的密度和新控制項，以及 UX 架構和組合強大的基礎功能。 此範例會示範如何建置豐富、具生產力的體驗來管理及購買 IoT 裝置 (在此範例中為燈光)。<br>
+Van Arsdel, Ltd. 端對端 Windows 範例應用程式可用來展示新一代的 Microsoft Fluent Design 系統。 它大量使用了 <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 程式庫</a>中經過改良的密度和新控制項，以及 UX 架構和組合強大的基礎功能。 此範例會示範如何建置豐富、具生產力的體驗來管理及購買 IoT 裝置 (在此範例中為燈光)。<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">下載 VanArsdel 範例</a> <br><a href="https://github.com/microsoft/vanarsdel">查看 GitHub 上的 VanArsdel 範例</a>
 
 ![BuildCast 影像](images/buildcast.png)
 **BuildCast**<br>
-BuildCast 是一個用來展示 Fluent Design 系統和 UWP 的端對端範例。 它可讓您瀏覽、下載和播放特選影片播客，包括 Channel 9 上最受歡迎的取樣，以及一些 Windows 科技愛好者摘要。 它也具備 Ink Notes、書籤和遠端播放。 此範例最初呈現於 Build 2017 會議的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">運用 Fluent 設計建置令人驚豔的應用程式</a>討論中。 <br>
+BuildCast 是一個用來展示 Fluent Design 系統和 Windows 的端對端範例。 它可讓您瀏覽、下載和播放特選影片播客，包括 Channel 9 上最受歡迎的取樣，以及一些 Windows 科技愛好者摘要。 它也具備 Ink Notes、書籤和遠端播放。 此範例最初呈現於 Build 2017 會議的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">運用 Fluent 設計建置令人驚豔的應用程式</a>討論中。 <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">下載 BuildCast 範例</a> <br><a href="https://github.com/Microsoft/BuildCast">查看 GitHub 上的 BuildCast 範例</a>
 
 ![午餐排程器](images/lunchscheduler.png)
 **午餐排程器**<br>
-排程與朋友和同事共用午餐的 UWP 範例。 您建立午餐約會、邀請朋友前往感興趣的餐廳，接下來應用程式會負責所有受邀對象的午餐管理。 此應用程式在 UWP app 中納入 Fluent 設計系統元素，包括壓克力風格、顯色和連接動畫。 <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip">下載午餐排程器範例</a><br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">查看 GitHub 上的午餐排程器範例</a></p>  
+排程與朋友和同事共用午餐的 Windows 範例。 您建立午餐約會、邀請朋友前往感興趣的餐廳，接下來應用程式會負責所有受邀對象的午餐管理。 此應用程式在 Windows 應用程式中納入 Fluent 設計系統元素，包括壓克力風格、顯色和連接動畫。 <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip">下載午餐排程器範例</a><br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">查看 GitHub 上的午餐排程器範例</a></p>  
 
 ![Xaml 控制項庫](images/xaml-controls-gallery.png)
 **XAML 控制項庫**<br>
@@ -125,4 +125,4 @@ BuildCast 是一個用來展示 Fluent Design 系統和 UWP 的端對端範例�
 
 ## <a name="want-more-code"></a>想要更多程式碼嗎？
 
-瀏覽 Windows 範本頁面取得所有我們的 UWP 應用程式範本的清單。 <a href="https://developer.microsoft.com/windows/samples">移至範本入口網站</a>
+瀏覽 Windows 範本頁面取得所有我們的 Windows 應用程式範本的清單。 <a href="https://developer.microsoft.com/windows/samples">移至範本入口網站</a>

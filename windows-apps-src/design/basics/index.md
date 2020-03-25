@@ -1,28 +1,28 @@
 ---
-description: 了解如何設計在各種裝置與螢幕尺寸上都很容易瀏覽且看起來很棒的 UWP 應用程式並撰寫應用程式程式碼。
+description: 了解如何設計在各種裝置與螢幕尺寸上都很容易瀏覽且看起來很棒的 Windows 應用程式，並撰寫應用程式程式碼。
 title: 設計基本知識
-keywords: uwP 應用程式配置, 通用 Windows 平台,應用程式設計, 介面
-ms.date: 03/07/2018
+keywords: uwp 應用程式配置, 通用 windows 平台, 應用程式設計, 介面, windows應用程式配置
+ms.date: 03/23/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 78462d5d29ebcc31792aa46da7657c57fb960e13
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: fdedd400928a32ae44a1e88b8e0159d7b36473f2
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984108"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218508"
 ---
-# <a name="design-basics-for-uwp-apps"></a>UWP 應用程式設計基本知識
+# <a name="design-basics-for-windows-apps"></a>Windows 應用程式的設計基本概念
 
 ![設計基本圖示](../images/basics-2x.png)
 
-通用 Windows 平台 (UWP) 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。 這不是一份詳盡規則的清單，這份文件會隨著不斷演進的 Fluent Design 系統以及我們應用程式建置社群的需求改變。 
+Windows 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。 這不是一份詳盡規則的清單，這份文件會隨著不斷演進的 Fluent Design 系統以及我們應用程式建置社群的需求改變。 
 
 ## <a name="overview"></a>概觀
 
-[**UWP 應用程式設計簡介**](design-and-ui-intro.md)
+[**Windows 應用程式設計簡介**](design-and-ui-intro.md)
 
-與最佳做法結合的 UWP 功能簡介，其用於建立在所有執行 Windows 裝置類型上都能展現絕佳效能的應用程式。
+Windows 應用程式功能與最佳做法結合的簡介，可建立在所有 Windows 裝置類型上都能展現絕佳效能的應用程式。
 
 [**Fluent Design 系統**](/windows/apps/fluent-design-system)
 
@@ -32,7 +32,7 @@ Fluent Design 系統展現我們建立彈性、共鳴和美觀的使用者介面
 
 [**瀏覽基本知識**](navigation-basics.md)
 
-UWP 應用程式中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。 本文會為您介紹這些元件，並示範如何搭配使用來建立最佳的瀏覽體驗。
+Windows 應用程式中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。 本文會為您介紹這些元件，並示範如何搭配使用來建立最佳的瀏覽體驗。
 
 [**命令基本知識**](commanding-basics.md)
 
@@ -57,4 +57,4 @@ UWP 應用程式中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功�
 
 [**3.建立自訂樣式**](xaml-basics-style.md)
 
-建立自訂樣式，讓 UWP 控制項擁有自己的外觀和操作。
+建立自訂樣式，讓 Windows 控制項擁有自己的外觀和操作。

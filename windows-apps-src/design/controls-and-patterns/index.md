@@ -1,29 +1,29 @@
 ---
-description: 取得對您的 UWP 應用程式新增控制項和模式的設計指導方針與程式碼撰寫指示。 尋找 45 種以上的實用控制項來用於您的應用程式。
-title: UWP 控制項和模式 - Windows 應用程式開發
-keywords: uwp 控制項, 使用者介面,應用程式控制項
+description: 取得對 Windows 應用程式新增控制項和模式的設計指導方針與程式碼撰寫指示。 尋找 45 種以上的實用控制項來用於您的應用程式。
+title: Windows 控制項和模式 - Windows 應用程式開發
+keywords: uwp 控制項, 使用者介面, 應用程式控制項, windows 控制項
 label: Controls & patterns
 template: detail.hbs
-ms.date: 11/16/2017
+ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: ea9f58c8f861be7774285c5611ad222d9587e2a1
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081706"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218448"
 ---
-# <a name="controls-for-uwp-apps"></a>適用於 UWP 應用程式的控制項
+# <a name="controls-for-windows-apps"></a>Windows 應用程式控制項
 
 ![控制項](../images/controls-2x.png)
 
-在 UWP 應用程式開發中，「控制項」<i></i>是顯示內容或啟用互動的 UI 元素。 控制項是使用者介面的基本要素。 「模式」<i></i>是可結合數個控制項以創造新項目的配方。
+在 Windows 應用程式開發中，「控制項」<i></i>是顯示內容或啟用互動的 UI 元素。 控制項是使用者介面的基本要素。 「模式」<i></i>是可結合數個控制項以創造新項目的配方。
 
 我們提供超過 45 種控制項供您使用，從簡單的按鈕到強大的資料控制項 (例如資料格檢視) 都有。  這些控制項是 Fluent 設計系統的一部分，並可幫助您建立在所有裝置與螢幕大小上皆美觀的粗體、可調整 UI。
 
-本節中的文章提供對您的 UWP 應用程式新增控制項和模式的設計指導方針與程式碼撰寫指示。
+本節中的文章提供對 Windows 應用程式新增控制項和模式的設計指導方針與程式碼撰寫指示。
 
 ## <a name="intro"></a>簡介
 
@@ -140,4 +140,4 @@ ms.locfileid: "80081706"
 
 ## <a name="additional-controls"></a>其他控制項
 
-<a href="https://www.telerik.com/">Telerik</a>、<a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>、<a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>、<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>、<a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> 及 <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> 等各家公司所推出適用於 UWP 開發的其他控制項。 這些控制項，透過擴大標準系統控制項與自訂控制和服務，為企業與 .NET 開發人員提供額外的支援。
+<a href="https://www.telerik.com/">Telerik</a>、<a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>、<a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>、<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>、<a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> 及 <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> 等各家公司所推出適用於 Windows 開發的其他控制項。 這些控制項，透過擴大標準系統控制項與自訂控制和服務，為企業與 .NET 開發人員提供額外的支援。

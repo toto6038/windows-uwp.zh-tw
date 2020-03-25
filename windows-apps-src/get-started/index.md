@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: 開始使用, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f78bdfec6c6e06ffc542bc7741b875e952bc169
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9183d9e2134d376400d2d6b85901477ff7b27413
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684894"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218578"
 ---
 # <a name="get-started-with-windows-10-apps"></a>開始使用 Windows 10 應用程式
 
@@ -30,7 +30,7 @@ ms.locfileid: "75684894"
                         <h3>深入了解 Windows 10 應用程式</h3>
                         <p>Windows 10 與通用 Windows 平台可讓您建置可在所有 Windows 裝置類型上運作且完美呈現的應用程式，或使用現代化功能來更新現有的應用程式。</p>
                         <ul>
-                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">什麼是 UWP 應用程式？</a></li>
+                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">什麼是 Windows 應用程式？</a></li>
                         </ul>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ ms.locfileid: "75684894"
                     <h3>範例</h3>
                     <p>獲得 Windows 10 平台的第一手經驗並查看實際使用的 API。</p>
                     <br>
-                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">使用UWP 應用程式範例</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">使用 Windows 應用程式範例</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">客戶訂單資料庫</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">測驗遊戲 (Project Rome)</a></p>
                     <p><a href="//developer.microsoft.com/windows/samples">Windows 程式碼範例入口網站</a></p>
