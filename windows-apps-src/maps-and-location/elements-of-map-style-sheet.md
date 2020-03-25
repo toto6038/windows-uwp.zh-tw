@@ -7,12 +7,12 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: Windows 10, uwp, 地圖, 地圖樣式表
 ms.localizationpriority: medium
-ms.openlocfilehash: b59e8c3c6d9c4c299e441964be1afb4e02051e23
-ms.sourcegitcommit: 5264d7499ddbe21199a63d74a294206069f90f8b
+ms.openlocfilehash: b2e6e57721a5667a9ca38b21eee2a618353cd30b
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78287449"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218558"
 ---
 # <a name="map-style-sheet-reference"></a>地圖樣式表參考
 
@@ -263,6 +263,7 @@ Microsoft 對應技術會使用_地圖樣式表單_來定義地圖的外觀。  
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 旗標，指出是否在地圖上繪製海拔著色。 |
 | shadowColor                  | 色彩   |      |      |      |  ✔   |  ✔   | 使用陰影之圖示後方的陰影色彩。 |
 | spaceColor                   | 色彩   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 地圖周圍區域的 ARGB 色彩值。 |
+| terrainFlat                  | Bool    |      |      |      |      |      | 旗標，指出地形在地圖上是否應為平面（已停用）。 |
 | useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 旗標，指出是否應該使用 SVG 中的原始色彩，而不是查閱影像中色彩的調色板專案。 |
 
 <a id="mapelement" />

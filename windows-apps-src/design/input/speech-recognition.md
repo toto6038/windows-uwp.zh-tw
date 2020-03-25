@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1979e16853fc288b83f5e4216c970440300fc597
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5192177edf284d1fe6e0c6eb06bf8713fbff8b4e
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258321"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218378"
 ---
 # <a name="speech-recognition"></a>語音辨識
 
@@ -208,7 +208,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 ## <a name="recognize-speech-input"></a>辨識語音輸入
 
-「限制式」定義了應用程式可在語音輸入中辨識的字詞和片語 (詞彙)。 限制式是語音辨識的核心，可大幅提升您應用程式的語音辨識準確度。
+*「限制式」* 定義了應用程式可在語音輸入中辨識的字詞和片語 (詞彙)。 條件約束是語音辨識的核心，可讓您的應用程式更有效地控制語音辨識的精確度。
 
 您可以使用下列類型的條件約束來辨識語音輸入。
 
@@ -220,7 +220,8 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 網頁搜尋文法類似聽寫文法，包含大量使用者可能說出的字詞與片語。 不過，已將它最佳化，可辨識使用者在搜尋 Web 時常用的詞彙。
 
-**請注意**  因為預先定義的聽寫和 web 搜尋文法可能很大，而且因為它們在線上（而不是在裝置上），效能可能不如在裝置上安裝自訂文法的速度快。     
+> [!NOTE]
+> 因為預先定義的聽寫和 web 搜尋文法可能很大，而且因為它們在線上（而不是在裝置上），效能可能不如在裝置上安裝自訂文法的速度快。     
 
 這些預先定義的文法可用來辨識最多 10 秒鐘的語音輸入，而您不需要花費任何編寫的精力。 但是，它們需要連線到網路。
 
@@ -333,7 +334,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 ![以 SGRS 文法檔為基礎之限制的最終辨識畫面](images/speech-listening-complete.png)
 
-[正在聆聽] 畫面可以提供 app 能夠辨識的字詞或片語的範例。 以下示範如何使用 [**SpeechRecognizerUIOptions**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions) 類別的屬性 (透過呼叫 [**SpeechRecognizer.UIOptions**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) 屬性來取得) 來自訂 [正在聆聽] 畫面上的內容。
+**\[正在聆聽\]** 畫面可以提供 app 能夠辨識的字詞或片語的範例。 以下示範如何使用 [**SpeechRecognizerUIOptions**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions) 類別的屬性 (透過呼叫 [**SpeechRecognizer.UIOptions**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) 屬性來取得) 來自訂 **\[正在聆聽\]** 畫面上的內容。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)

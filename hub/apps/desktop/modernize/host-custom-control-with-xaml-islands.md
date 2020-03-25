@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d881fc42e453e2ace0a44543c3e204aa154958b7
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: b1ac53e0a6b6e01cd2129e2b1893f91fae2ef0fe
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209794"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218598"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 群島在 WPF 應用程式中裝載自訂 UWP 控制項
 
-本文示範如何使用 Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項，在以 .net Core 3 為目標的 WPF 應用程式中裝載自訂 UWP 控制項。 自訂控制項包含來自 Windows SDK 的幾個第一方 UWP 控制項，並將其中一個 UWP 控制項中的屬性系結至 WPF 應用程式中的字串。 本文也會示範如何也從[WinUI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)裝載第一方 UWP 控制項。
+本文示範如何使用 Windows 社區工具組中的[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項，在以 .net Core 3 為目標的 WPF 應用程式中裝載自訂 UWP 控制項。 自訂控制項包含來自 Windows SDK 的幾個第一方 UWP 控制項，並將其中一個 UWP 控制項中的屬性系結至 WPF 應用程式中的字串。 本文也會示範如何同時從[WinUI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)裝載 UWP 控制項。
 
 雖然本文示範如何在 WPF 應用程式中執行這項作業，但此程式與 Windows Forms 應用程式的處理方式類似。 如需有關在 WPF 和 Windows Forms 應用程式中裝載 UWP 控制項的總覽，請參閱[這篇文章](xaml-islands.md#wpf-and-windows-forms-applications)。
 
@@ -231,7 +231,7 @@ ms.locfileid: "79209794"
 
 ## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>從 WinUI 程式庫將控制項加入至自訂控制項
 
-在過去，UWP 控制項已發行為 Windows 10 OS 的一部分，並可透過 Windows SDK 提供給開發人員使用。 [WinUI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)是一種替代的方法，其中 Windows SDK 的第一方 UWP 控制項的更新版本會散發在未系結至 Windows SDK 版本的 NuGet 套件中。 此程式庫也包含不屬於 Windows SDK 和預設 UWP 平臺的新控制項。 如需詳細資訊，請參閱我們的[WinUI 程式庫藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
+在過去，UWP 控制項已發行為 Windows 10 OS 的一部分，並可透過 Windows SDK 提供給開發人員使用。 [WinUI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)是一種替代的方法，其中 WINDOWS SDK 的 UWP 控制項更新版本會散發在未系結至 Windows SDK 版本的 NuGet 套件中。 此程式庫也包含不屬於 Windows SDK 和預設 UWP 平臺的新控制項。 如需詳細資訊，請參閱我們的[WinUI 程式庫藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
 
 本節示範如何將 UWP 控制項從 WinUI 程式庫新增至您的使用者控制項，讓您可以將此控制項裝載于 WPF 應用程式中。
 
@@ -286,6 +286,9 @@ ms.locfileid: "79209794"
 您可以選擇性地封裝[MSIX 封裝](https://docs.microsoft.com/windows/msix)中的 WPF 應用程式以進行部署。 MSIX 是適用于 Windows 的現代化應用程式封裝技術，它是以 MSI、.appx、App-v 和 ClickOnce 安裝技術的組合為基礎。
 
 下列指示說明如何使用 Visual Studio 2019 中的[Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，在 MSIX 套件中封裝解決方案中的所有元件。 只有當您想要在 MSIX 套件中封裝 WPF 應用程式時，才需要執行這些步驟。 請注意，這些步驟目前包含裝載自訂 UWP 控制項之案例特有的一些因應措施。
+
+> [!NOTE]
+> 如果您選擇不要在[MSIX 套件](https://docs.microsoft.com/windows/msix)中封裝應用程式以進行部署，執行應用程式的電腦必須安裝[Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) 。
 
 1. 將新的[Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增至您的方案。 當您建立專案時，請選取 [ **Windows 10，版本1903（10.0;）]。組建18362）** ，適用于**目標版本**和**最低版本**。
 

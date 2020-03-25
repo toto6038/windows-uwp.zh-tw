@@ -6,12 +6,12 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.date: 03/19/2020
-ms.openlocfilehash: ae86947b461e3fb748b67043827ffeebfc5cb0d2
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 2a7a5983dcc7e330a30cf53b93c73f36f811d17d
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108101"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218468"
 ---
 # <a name="contribute-to-windows-docs-and-be-entered-to-win-some-swag"></a>參與 Windows 檔並輸入贏得一些 swag
 
@@ -27,7 +27,7 @@ ms.locfileid: "80108101"
     - **Windows 硬體開發人員** - [工具和驅動程式](https://docs.microsoft.com/windows-hardware/drivers/)
 3. 選取頁面頂端的 [**編輯**] 按鈕，以進行檔頁面的更正。 這會帶您前往 GitHub 中的 markdown 來源檔案。
 4. 當您的變更完成之後。 將提取要求（PR）檔案。
-5. 流覽[@WindowsDocs](https://twitter.com/WindowsDocs)的 twitter 帳戶，並以您的 PR 連結回復比賽文章。
+5. 以您的 PR 連結回復[@WindowsDocs 比賽文章](https://twitter.com/WindowsDocs/status/1242088720209268736)。
 
 感謝您參與我們的參與者群！
 
