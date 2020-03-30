@@ -6,12 +6,12 @@ keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a2d1719379302dd8e996c37e05d7ddaf35a0cf18
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4b360f75ccf08d9cc00eeba2948215b7240627a8
+ms.sourcegitcommit: 3c3730e968fba89b21459390735614cd4c9d9c67
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258412"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320412"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -193,7 +193,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
     -   **允許安裝所有受信任的應用程式**
 
-    - 或 -
+    或者
 
     若要啟用開發人員模式，請編輯原則來啟用這兩者：
 
@@ -207,26 +207,30 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 1.  執行 **regedit**。
 2.  若要啟用側載功能，請將此 DWORD 的值設定為 1：
 
-    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps`
+    -   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowAllTrustedApps`
 
-    - 或 -
+    或者
 
     若要啟用開發人員模式，請將此 DWORD 的值設定為 1：
 
-    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense`
+    -   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowDevelopmentWithoutDevLicense`
 
 **使用 PowerShell 啟用您的裝置**
 
 1.  使用系統管理員權限執行 PowerShell。
 2.  若要啟用側載功能，請執行下列命令：
 
-    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"`
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
+    ```
 
-    - 或 -
+    或者
 
     若要啟用開發人員模式，請執行下列命令：
 
-    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"`
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
+    ```
 
 ## <a name="upgrade-your-device-from-windows-81-to-windows-10"></a>將裝置從 Windows 8.1 升級至 Windows 10
 
@@ -247,5 +251,5 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 * [發佈您的 UWP 應用程式](https://docs.microsoft.com/windows/uwp/publish/)。
 * [開發 UWP 應用程式的操作說明文章](https://docs.microsoft.com/windows/uwp/develop/)
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
-* [什麼是 UWP app？](universal-application-platform-guide.md)
+* [什麼是 UWP 應用程式？](universal-application-platform-guide.md)
 * [註冊 Windows 帳戶](sign-up.md)

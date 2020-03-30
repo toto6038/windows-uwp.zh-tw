@@ -1,20 +1,20 @@
 ---
-description: 本主題示範如何將 C++/CX 程式碼移植到其在 C++/WinRT 中的對等項目。
+description: 本主題說明將 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 專案中的原始程式碼移植到其在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的對等項目時所涉及的技術詳細資料。
 title: 從 C++/CX 移到 C++/WinRT
 ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a0307833e996a5faba558631062c94efca3b75d
-ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
+ms.openlocfilehash: a554a46d73053c2b6a01a0b10dbc78c87b743052
+ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78935359"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80290030"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
-本主題示範如何將 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 專案移植到其在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的對等項目。
+本主題說明將 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 專案中的原始程式碼移植到其在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的對等項目時所涉及的技術詳細資料。
 
 ## <a name="porting-strategies"></a>移植策略
 
@@ -501,7 +501,7 @@ C++/CX 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT �
 
 平行模式程式庫 (PPL) (例如 [**concurrency::task**](/cpp/parallel/concrt/reference/task-class)) 已更新為支援 C++/CX hat (^) 參考。
 
-對於 C++/WinRT，您應該改用協同程式和 `co_await`。 如需詳細資訊和程式碼範例，請參閱[使用 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+對於 C++/WinRT，您應該改用協同程式和 `co_await` 。 如需詳細資訊和程式碼範例，請參閱[使用 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 ## <a name="consuming-objects-from-xaml-markup"></a>取用 XAML 標記中的物件
 

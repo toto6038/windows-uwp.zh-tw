@@ -13,20 +13,20 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5fd3408657047c3d1d102c65f6264954983134
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: c32b60b3d9e717a916b5424f3b8bd78102439f30
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257738"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081974"
 ---
 # <a name="command-bar"></a>命令列
 
 命令列可讓使用者輕鬆存取您的應用程式最常見的工作。 命令列可以提供應用程式層級或網頁特定命令的存取權，而且可以搭配任何瀏覽模式使用。
 
-> **重要 API**：[CommandBar 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar)、[AppBarButton 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
+> **平台 API：** [CommandBar 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar)、[AppBarButton 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
-![具有圖示之命令列的範例](images/controls_appbar_icons.png)
+![具有圖示的命令列範例](images/controls_appbar_icons.png)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -40,7 +40,7 @@ CommandBar 控制項是一般用途、彈性、輕量的控制項，它可以顯
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/CommandBar">開啟應用程式並查看 CommandBar 運作情形</a>。</p>
     <ul>
@@ -277,7 +277,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 - [XAML 命令範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ## <a name="related-articles"></a>相關文章

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 06cd49ce68de6f1c7a7a29b94c80f0a004a2eca3
-ms.sourcegitcommit: 6b29f0cbdc6e66b44150b3b60e95d67e1f7f56bf
+ms.openlocfilehash: e198e65052e9ef79ee38863260bce1c1f798ba38
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74478535"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081742"
 ---
 # <a name="collections-and-lists"></a>集合和清單
 
@@ -47,7 +47,7 @@ ms.locfileid: "74478535"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請參閱 <a href="xamlcontrolsgallery:/item/ListView">ListView</a>、<a href="xamlcontrolsgallery:/item/GridView">GridView</a>、<a href="xamlcontrolsgallery:/item/FlipView">FlipView</a>、<a href="xamlcontrolsgallery:/item/TreeView">TreeView</a> 和 <a href="xamlcontrolsgalley:/item/ItemsRepeater">ItemsRepeater</a> 的實際運作。</p>
     <ul>
@@ -93,7 +93,7 @@ ms.locfileid: "74478535"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -158,7 +158,7 @@ ms.locfileid: "74478535"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -212,7 +212,7 @@ ms.locfileid: "74478535"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -251,7 +251,7 @@ ms.locfileid: "74478535"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -290,7 +290,7 @@ ItemsRepeater 與本頁面上所顯示的其餘集合控制項不同，其不會
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>

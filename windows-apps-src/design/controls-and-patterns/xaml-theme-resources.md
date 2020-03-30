@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: f2097a35d87594251ed2c0a04be06ccdb705902f
+ms.sourcegitcommit: 378693fe9b655fe14814d683e8d8cb2dd1380fd7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209043"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249852"
 ---
 # <a name="xaml-theme-resources"></a>XAML 佈景主題資源
 
@@ -177,7 +177,7 @@ Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存�
 
 ### <a name="theme-dependent-brushes"></a>佈景主題相依筆刷
 
-前述各節中顯示的色彩資源可用來設定系統佈景主題資源字典中 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 資源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 屬性。 您可以使用筆刷資源，將色彩套用到 XAML 元素。 適用於筆刷資源的索引鍵會遵循下列命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackroundAltHighBrush`。
+前述各節中顯示的色彩資源可用來設定系統佈景主題資源字典中 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 資源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 屬性。 您可以使用筆刷資源，將色彩套用到 XAML 元素。 適用於筆刷資源的索引鍵會遵循下列命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackgroundAltHighBrush`。
 
 讓我們看看如何在執行階段決定此筆刷的色彩值。 在 "Light" 和 "Dark" 資源字典中，此筆刷的定義如下：
 

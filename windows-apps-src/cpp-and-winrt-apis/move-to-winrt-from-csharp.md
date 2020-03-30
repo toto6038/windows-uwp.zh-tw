@@ -1,20 +1,20 @@
 ---
-description: 本主題示範如何將 C# 程式碼移植到其在 C++/WinRT 中的對等項目。
+description: 本主題說明將 [C#](/visualstudio/get-started/csharp) 專案中的原始程式碼移植到其在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的對等項目時所涉及的技術詳細資料。
 title: 從 C# 移到 C++/WinRT
 ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 遷移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 17900829388bfe0b3cc325e27d0807b139ccaa27
-ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
+ms.openlocfilehash: f7cd35dbf211b14dfb886fc9ba4305cd7ce56e5e
+ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74958958"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80290048"
 ---
 # <a name="move-to-cwinrt-from-c"></a>從 C# 移到 C++/WinRT
 
-本主題示範如何將 [C#](/visualstudio/get-started/csharp) 專案移植到其在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的對等項目。
+本主題說明將 [C#](/visualstudio/get-started/csharp) 專案中的原始程式碼移植到其在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的對等項目時所涉及的技術詳細資料。
 
 ## <a name="register-an-event-handler"></a>註冊事件處理常式
 
@@ -193,7 +193,7 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 
 C++/WinRT 也針對有限的類型數量支援 [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring)。 您必須為想要字串化的任何其他類型新增多載。
 
-| 語言 | 將 int 字串化 | 將列舉字串化 |
+| Language | 將 int 字串化 | 將列舉字串化 |
 | - | - | - |
 | C# | `string result = "hello, " + intValue.ToString();`<br>`string result = $"hello, {intValue}";` | `string result = "status: " + status.ToString();`<br>`string result = $"status: {status}";` |
 | C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |
@@ -290,7 +290,7 @@ C# 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT 會將
 |-|-|-|
 | 進行字串的 Box 處理 | `o = s;`<br>空字串會變成非 Null 物件。 | `o = box_value(s);`<br>空字串會變成非 Null 物件。 |
 | 進行已知字串的 Unbox 處理 | `s = (string)o;`<br>Null 物件會變成 Null 字串。<br>InvalidCastException (如果不是字串)。 | `s = unbox_value<hstring>(o);`<br>Null 物件損毀。<br>如果不是字串，則會損毀。 |
-| 將可能的字串進行 Unbox 處理 | `s = o as string;`<br>Null 物件或非字串會變成 Null 字串。<br><br>或<br><br>`s = o as string ?? fallback;`<br>Null 或非字串會變成遞補。<br>保留空字串。 | `s = unbox_value_or<hstring>(o, fallback);`<br>Null 或非字串會變成遞補。<br>保留空字串。 |
+| 將可能的字串進行 Unbox 處理 | `s = o as string;`<br>Null 物件或非字串會變成 Null 字串。<br><br>或者<br><br>`s = o as string ?? fallback;`<br>Null 或非字串會變成遞補。<br>保留空字串。 | `s = unbox_value_or<hstring>(o, fallback);`<br>Null 或非字串會變成遞補。<br>保留空字串。 |
 
 ## <a name="derived-classes"></a>衍生類別
 

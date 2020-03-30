@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 57639fc370ed7e10a427af4808e2a8a6de91b554
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8f1717a59399fb95f7b71a38ee8d2d46de4ca765
+ms.sourcegitcommit: e11e0f65930665579d1f296861234893e82bf8fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257698"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80301438"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
@@ -313,7 +313,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 ## <a name="images"></a>映像
 
-### <a name="image"></a>Image
+### <a name="image"></a>影像
 顯示影像的控制項。
 
 ```xaml
@@ -544,7 +544,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 範例程式碼：[媒體傳輸控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)
 
-### <a name="video"></a>影片
+### <a name="video"></a>視訊
 請參閱＜媒體元素＞。
 
 ## <a name="navigation"></a>瀏覽
@@ -724,10 +724,10 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 ### <a name="text-box"></a>文字方塊
 單行或多行純文字欄位。
 
-![文字方塊控制項](images/controls/text-box.png) 
+![文字方塊控制項](images/controls/text-box.png)
 
 ```xaml
-<TextBox x:Name="textBox1" Text="I am a TextBox" 
+<TextBox x:Name="textBox1" Text="I am a Text Box."
          TextChanged="TextBox_TextChanged"/>
 ```
 
@@ -779,9 +779,9 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 ```xaml
 <ListBox x:Name="listBox1" Width="100"
          SelectionChanged="ListBox_SelectionChanged">
-    <x:String>Item 1</x:String>
-    <x:String>Item 2</x:String>
-    <x:String>Item 3</x:String>
+    <x:String>List item 1</x:String>
+    <x:String>List item 2</x:String>
+    <x:String>List item 3</x:String>
 </ListBox>
 ```
 
