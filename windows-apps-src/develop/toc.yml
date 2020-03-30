@@ -160,6 +160,8 @@
           href: ../app-to-app/receive-data.md
         - name: 複製和貼上
           href: ../app-to-app/copy-and-paste.md
+    - name: 處理序之間通訊 (IPC)
+      href: ../communication/interprocess-communication.md
     - name: 網路和 Web 服務
       href: ../networking/index.md
       items:
