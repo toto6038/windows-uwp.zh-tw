@@ -4,16 +4,19 @@ title: 意見反應報告
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47eb494ac1b61caac0549f89254ae5d60a7ddf4c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50ffec5beafd88ddc852e4d9b2fb995fb12bd939
+ms.sourcegitcommit: 56d777134bc85f049e281e34660de612ac938a01
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259021"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80417431"
 ---
 # <a name="feedback-report"></a>意見反應報告
+
+> [!WARNING]
+> 2020年4月15日的意見反應報告淘汰：2020年4月15日之後，將不再支援此報告。 此報表的資料將不會在此日期之後重新整理，而且報表將在未來移除，恕不另行通知。 您可以在意見反應中樞中，繼續直接查看從客戶收到的意見反應。
 
 合作夥伴中心的**意見反應報告**可讓您查看 Windows 10 客戶透過意見反應中樞提交的問題、建議和 upvotes。 您可以在合作夥伴中心內查看此資料，或將資料匯出為離線觀看。
 
