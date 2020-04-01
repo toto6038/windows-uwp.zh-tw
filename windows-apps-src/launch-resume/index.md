@@ -6,12 +6,12 @@ ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp, 背景工作, 應用程式服務, 連線的裝置, 遠端系統
 ms.localizationpriority: medium
-ms.openlocfilehash: 79f3f1d28294527d6987540a159baa31d663db4c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9280a240f35c2fdf5290c94d837e2fafc008dbfd
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371727"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80483005"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>啟動、繼續和背景工作
 
@@ -31,7 +31,7 @@ ms.locfileid: "66371727"
 
 本節詳細說明 Windows 10 通用 Windows 平台 (UWP) 應用程式從啟用到關閉為止的整個週期。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [應用程式週期](app-lifecycle.md)               | 了解 UWP 應用程式的週期，以及當 Windows 啟動、暫停及繼續執行您的應用程式時，會發生什麼情況。 |
 | [處理應用程式預先啟動](handle-app-prelaunch.md) | 了解如何處理應用程式預先啟動。                                                                              |
@@ -43,14 +43,14 @@ ms.locfileid: "66371727"
 
 ## <a name="launch-apps"></a>啟動應用程式
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [建立通用 Windows 平台主控台應用程式](console-uwp.md) | 了解如何撰寫在主控台視窗中執行的通用 Windows 平台應用程式。 |
 | [建立多重執行個體 UWP 應用程式](multi-instance-uwp.md) | 了解如何撰寫多重執行個體通用 Windows 平台應用程式。 |
 
 [使用 URI 啟動應用程式](launch-app-with-uri.md)一節詳細說明如何使用統一資源識別元 (URI) 啟動應用程式。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [啟動 URI 的預設應用程式](launch-default-app.md) | 了解如何啟動統一資源識別項 (URI) 的預設應用程式。 URI 可讓您啟動另一個應用程式來執行特定工作。 本主題也提供許多內建於 Windows 之 URI 配置的概觀。 |
 | [處理 URI 啟用](handle-uri-activation.md) | 了解如何登錄應用程式，以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。 |
@@ -64,14 +64,14 @@ ms.locfileid: "66371727"
 
 [透過檔案啟用啟動應用程式](launch-app-from-file.md) 一節詳細說明如何設定您的應用程式在開啟特定類型的檔案時啟動。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [啟動檔案的預設應用程式](launch-the-default-app-for-a-file.md) | 了解如何啟動檔案的預設應用程式。 |
 | [處理檔案啟用](handle-file-activation.md) | 了解如何登錄您的應用程式，以使它成為某種檔案類型的預設處理常式。 |
 
 請參閱後續內容中與啟動應用程式相關的其他主題。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [繼續使用者活動，甚至是在各個裝置之間](useractivities.md) | 透過從使用者離開之處啟動您的應用程式，讓使用者重新使用您的應用程式，即使是在不同的裝置上。 |
 | [使用自動播放功能來自動啟動](auto-launching-with-autoplay.md) | 當使用者將裝置連接至電腦時，您可以使用「自動播放」，讓您的應用程式成為一個選項。 這些裝置包含非磁碟區型裝置 (例如相機或媒體播放裝置) 或磁碟區型裝置 (例如 USB 隨身碟、SD 記憶卡或 DVD)。 |
@@ -81,7 +81,7 @@ ms.locfileid: "66371727"
 
 [應用程式服務與延伸模組](app-services.md)一節說明如何將應用程式服務整合到您的 UWP 應用程式，以允許在應用程式之間共用資料和功能。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [建立和使用應用程式服務](how-to-create-and-consume-an-app-service.md) | 了解如何撰寫可為其他通用 Windows 平台 (UWP) 應用程式提供服務的 UWP 應用程式，以及如何取用這些服務。 |
 | [轉換應用程式服務，以便與其主機應用程式在相同處理序中執行](convert-app-service-in-process.md) | 將在個別背景處理序中執行的應用程式服務程式碼，轉換成和您應用程式服務提供者在相同處理序內執行的程式碼。 |
@@ -92,12 +92,13 @@ ms.locfileid: "66371727"
 
 [背景工作](support-your-app-with-background-tasks.md)一節將示範如何在背景中執行輕量型程式碼來回應觸發程序。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [背景工作的指導方針](guidelines-for-background-tasks.md)                                       | 確保您的應用程式符合執行背景工作的需求。 |
 | [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 可讓您的通用 Windows 應用程式在背景存取感應器和周邊裝置，即使您的前景應用程式已暫停也一樣。 |
 | [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)       | 建立及註冊與前景應用程式在相同處理序中執行的背景工作。 |
 | [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)           | 建立及註冊在與應用程式不同處理序中執行的背景工作，以便在應用程式不在前景時也能執行。 |
+| [建立並註冊 winmain 應用程式的 COM 背景工作](create-and-register-a-winmain-background-task.md) | 建立一個 COM 背景工作，該工作可在封裝的 winmain 應用程式未執行時在主要程序或處理程序外執行。 |
 | [將跨處理序背景工作移植到同處理序背景工作](convert-out-of-process-background-task.md) | 了解如何將跨處理序背景工作移植到在與前景應用程式相同的處理序中執行的同處理序背景工作。|
 | [偵錯背景工作](debug-a-background-task.md)                                                       | 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。 |
 | [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md) | 在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。 |
@@ -119,7 +120,7 @@ ms.locfileid: "66371727"
 
 [已連線的應用程式和裝置 (Project Rome)](connected-apps-and-devices.md) 一節說明如何使用遠端系統平台來探索遠端裝置、啟動遠端裝置上的應用程式，以及與遠端裝置上的應用程式服務通訊。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [探索遠端裝置](discover-remote-devices.md)  | 了解如何探索能夠連線的裝置。 |
 | [啟動遠端裝置上的應用程式](launch-a-remote-app.md) | 了解如何啟動遠端裝置上的應用程式。  |
@@ -130,7 +131,7 @@ ms.locfileid: "66371727"
 
 [啟動顯示畫面](splash-screens.md)一節說明如何設定應用程式的啟動顯示畫面。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [新增啟動顯示畫面](add-a-splash-screen.md) | 設定應用程式的啟動顯示畫面影像與背景色彩 |
 | [延長顯示啟動顯示畫面](create-a-customized-splash-screen.md) | 您可以為應用程式建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，您可以自訂這個畫面。 |
