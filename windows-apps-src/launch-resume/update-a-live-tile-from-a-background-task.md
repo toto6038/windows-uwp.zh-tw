@@ -1,18 +1,18 @@
 ---
 title: 從背景工作更新動態磚
-description: 使用背景工作來更新含有最新內容的 app 動態磚。
+description: 使用背景工作來更新含有最新內容的應用程式動態磚。
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ms.date: 01/11/2018
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: df2fad68fd1aab9b3b056e962736f3d37f749e63
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: f2700f0e5ffa8c2d1c9f0500e967096763757cd9
+ms.sourcegitcommit: 9aef3bc26a56b8d266b3089d509f79b119234b6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393539"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80538183"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>從背景工作更新動態磚
 
@@ -21,7 +21,7 @@ ms.locfileid: "70393539"
 -   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
 -   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
-使用背景工作來更新含有最新內容的 app 動態磚。
+使用背景工作來更新含有最新內容的應用程式動態磚。
 
 以下是說明如何將動態磚新增至應用程式的影片。
 
@@ -114,7 +114,7 @@ namespace BackgroundTasks
             // Create a tile notification for each feed item.
             foreach( var item in feed.Items )
             {
-                XmlDocument tileXml = TileUpdateManager.GetTemplateContent( TileTemplateType.TileWideText03 );
+                XmlDocument tileXml = TileUpdateManager.GetTemplateContent( TileTemplateType.TileWide310x150Text03 );
 
                 var title = item.Title;
                 string titleText = title.Text == null ? String.Empty : title.Text;
@@ -147,7 +147,7 @@ namespace BackgroundTasks
 1.  在 [方案總管] 中，開啟 Package.appxmanifest。
 2.  按一下或點選 [宣告] 索引標籤。
 3.  在 [可用宣告] 下，選取 [BackgroundTasks]，然後按一下 [加入]。 Visual Studio 會在 [支援的宣告] 下新增 [BackgroundTasks]。
-4.  在 **\[支援的工作類型\]** 下，確定已選取 **\[計時器\]** 。
+4.  在 [支援的工作類型] 下，確定已選取 [計時器]。
 5.  在 [應用程式設定] 下，將進入點設定成 [BackgroundTasks.BlogFeedBackgroundTask]。
 6.  按一下或點選 [應用程式 UI] 索引標籤。
 7.  將 [鎖定畫面通知] 設定成 [徽章與文字並排]。
@@ -213,8 +213,8 @@ namespace ContosoApp
         private async void RegisterBackgroundTask()
         {
             var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
-            if( backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
-                backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity )
+            if( backgroundAccessStatus == BackgroundAccessStatus.AllowedSubjectToSystemPolicy ||
+                backgroundAccessStatus == BackgroundAccessStatus.AlwaysAllowed )
             {
                 foreach( var task in BackgroundTaskRegistration.AllTasks )
                 {
@@ -250,7 +250,7 @@ namespace ContosoApp
 5.  在 [偵錯位置] 工具列，按一下 [暫停] 下拉式清單，然後選取 [BlogFeedBackgroundTask]。
 6.  Visual Studio 會在中斷點暫停執行。
 7.  按 F5 或點選 [偵錯]  **[繼續]&gt;** ，繼續執行 App。
-8.  按 Shift+F5 或點選 **\[偵錯\] &gt; \[停止偵錯\]** ，停止偵錯。
+8.  按 Shift+F5 或點選 [偵錯]  **[停止偵錯]&gt;** ，停止偵錯。
 9.  回到 [開始] 畫面上 App 的磚。 數秒之後，磚通知會顯示在應用程式磚上。
 
 ## <a name="related-topics"></a>相關主題

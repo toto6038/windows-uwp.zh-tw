@@ -2,28 +2,31 @@
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: 開立開發人員帳戶
 description: 以下概述如何在合作夥伴中心註冊適用于 Microsoft Store 和其他 Microsoft 程式的 Windows 開發人員帳戶。
-ms.date: 10/31/2018
+ms.date: 3/30/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d00fcee11b8cf813144a6f8ea021dc40829056d2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0ab3dcc5f774de6bd7ce422ecdcec61b26cc9a4b
+ms.sourcegitcommit: 9aef3bc26a56b8d266b3089d509f79b119234b6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259955"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80538193"
 ---
 # <a name="opening-a-developer-account"></a>開立開發人員帳戶
 
 本文說明如何在[合作夥伴中心](https://partner.microsoft.com/dashboard)註冊 Windows 開發人員帳戶。
 
 > [!NOTE]
-> 當您註冊開發人員帳戶時，我們會使用您在連絡人資訊中提供的電子郵件地址來傳送與您的帳戶相關的訊息。 有時候，這些可能會包含程式的相關資訊。 如果您選擇不[](https://account.microsoft.com/account/Account?ru=https%3A%2F%2Faccount.microsoft.com%2Fprofile%2Fcontact-info&destrt=profile-landing)使用這些資訊電子郵件，請注意我們仍會傳送交易式訊息（例如，讓您知道您的應用程式已通過認證，或付款已過期）。 這些交易式電子郵件是您帳戶的必要部分，除非您關閉帳戶，否則您會繼續收到。
+> 當您註冊開發人員帳戶時，我們會使用您在連絡人資訊中提供的電子郵件地址來傳送與您的帳戶相關的訊息。 有時候，這些可能會包含程式的相關資訊。 如果您選擇不[opt out](https://account.microsoft.com/account/Account?ru=https%3A%2F%2Faccount.microsoft.com%2Fprofile%2Fcontact-info&destrt=profile-landing)使用這些資訊電子郵件，請注意我們仍會傳送交易式訊息（例如，讓您知道您的應用程式已通過認證，或付款已過期）。 這些交易式電子郵件是您帳戶的必要部分，除非您關閉帳戶，否則您會繼續收到。
 
 ## <a name="the-account-signup-process"></a>帳戶註冊程序
 
 > [!NOTE]
 > 在某些情況下，當您註冊開發人員帳戶時所看到的畫面和欄位，可能會與下列步驟中所述的內容略有不同。 但是，基本資訊和程式會符合這些步驟所描述的內容。
+
+> [!NOTE]
+> 某些地區設定中的使用者可能無法完成其註冊，因此有一個已知的問題。 在我們確認已解決此問題之前，建議您在 partner.microsoft.com 上開始註冊程式之後，手動將瀏覽器的地區設定標記變更為**en-us** 。
 
 1.  前往[註冊頁面](https://developer.microsoft.com/store/register)，然後選取 [**註冊**]。
 2.  如果您尚未使用 Microsoft 帳戶登入，請立即登入，或建立新的 Microsoft 帳戶。 您在這裡使用的 Microsoft 帳戶就是您用來登入開發人員帳戶的。
