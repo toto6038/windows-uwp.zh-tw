@@ -7,13 +7,12 @@ ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-layout: LandingPage
-ms.openlocfilehash: a1a828bc3ade8d7eee977387149c0577bb43122a
-ms.sourcegitcommit: 701955a4e4b42a05606198a2f9a9e8df2ca3ab60
+ms.openlocfilehash: a2c674d95ea9fb9a8efb41cdcb0d991f26fe52c5
+ms.sourcegitcommit: 08cb5a4ca2e02179ad6b768c841fe3d5216bcae3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65615690"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614988"
 ---
 # <a name="design-and-code-windows-apps"></a>設計和程式碼 Windows 應用程式
 
@@ -21,21 +20,20 @@ ms.locfileid: "65615690"
 
 有關在 Windows 10 建立應用程式體驗的 Fluent Design 指導方針及 UI 程式碼範例。
 
-
 :::row:::
     :::column:::
         <a href="downloads/index.md">
             <img src="images/downloads-1x.png" alt="Design downloads" />
         </a><br/>
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="downloads/index.md">Design downloads</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Get design toolkits and samples.</p>
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="downloads/index.md">設計下載</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">取得設計工具組與範例。</p>
     :::column-end:::
     :::column:::
         <a href="basics/index.md">
             <img src="images/basics-1x.png" alt="Design basics" />
         </a><br/>
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="basics/index.md">Design basics</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">An introduction to app design and the Fluent Design System.</p>
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="basics/index.md">設計基本知識</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">應用程式設計及 Fluent Design 簡介。</p>
     :::column-end:::
 :::row-end:::
 
@@ -44,7 +42,7 @@ ms.locfileid: "65615690"
         <a href="layout/index.md">
             <img src="images/layout-1x.png" alt="Layout" />
         </a><br/>
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="layout/index.md">Layout</a></h3>
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="layout/index.md">配置</a></h3>
        <p style="margin-top: 0px; margin-bottom: 50px">讓 UI 在每個螢幕大小看起來都很棒的回應式秘訣與技巧。</p>
     :::column-end:::
     :::column:::
@@ -61,15 +59,15 @@ ms.locfileid: "65615690"
         <a href="style/index.md">
             <img src="images/style-1x.png" alt="Style" />
         </a><br/>
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="style/index.md">Style</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Make your app stand out with color, typography, acrylic, and reveal.</p>
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="style/index.md">樣式</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">運用色彩、印刷樣式，壓克力風格和顯色，讓您的 App 脫穎而出。</p>
     :::column-end:::
     :::column:::
         <a href="motion/index.md">
             <img src="images/motion-1x.png" alt="Motion" />
         </a><br/>
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="motion/index.md">Motion</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Bring your app to life with animations and transitions.</p>
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="motion/index.md">動作</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">利用動畫和轉場效果，使您的 App 生動有趣。</p>
     :::column-end:::
 :::row-end:::
 
@@ -79,14 +77,14 @@ ms.locfileid: "65615690"
             <img src="images/shell-1x.png" alt="Shell" />
         </a><br/>
         <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="shell/tiles-and-notifications/creating-tiles.md">Shell</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Create tiles for launching your app and displaying notifications.</p>
+        <p style="margin-top: 0px; margin-bottom: 50px">建立啟動應用程式的磚，並顯示通知。</p>
     :::column-end:::
     :::column:::
         <a href="input/index.md">
             <img src="images/inputs-1x.png" alt="Input and interactions" />
         </a><br/>
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="input/index.md">Input and interactions</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Optimize your app for pen, Surface dial, and other input types.</p>
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="input/index.md">輸入與互動</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">針對手寫筆、Surface Dial 和其他輸入類型最佳化您的應用程式。</p>
     :::column-end:::
 :::row-end:::
 
@@ -95,14 +93,14 @@ ms.locfileid: "65615690"
         <a href="devices/index.md">
             <img src="images/devices-1x.png" alt="Devices" />
         </a><br />
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="devices/index.md">Devices</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Learn about the spectrum of Windows 10 devices and how to optimize for them.</p>
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="devices/index.md">裝置</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">了解 Windows 10 裝置系列及其最佳化方式。</p>
     :::column-end:::
     :::column:::
         <a href="usability/index.md">
             <img src="images/usability-1x.png" alt="Usability" />
         </a><br/>
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="usability/index.md">Usability</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Make your app inclusive and accessible to people around the world.</p>
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="usability/index.md">可用性</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">讓全世界的使用者都能共融且無障礙地使用您的應用程式。</p>
     :::column-end:::
 :::row-end:::

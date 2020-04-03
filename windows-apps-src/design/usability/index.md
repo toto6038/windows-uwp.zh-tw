@@ -2,18 +2,17 @@
 description: 了解如何讓您的應用程式包容世界各地的使用者且無障礙。
 keywords: uwP 應用程式協助工具, 全球化, 設計包容性應用程式, 協助工具應用程式需求
 title: UWP 應用程式的可用性 - Windows 應用程式開發
-layout: LandingPage
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: a6912932b7ad71fd3d04c038eab7e0aa4dd6cb11
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
+ms.openlocfilehash: c725839a29c093c78eb977538da4c43d906051c6
+ms.sourcegitcommit: 08cb5a4ca2e02179ad6b768c841fe3d5216bcae3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076384"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614955"
 ---
 # <a name="usability-for-uwp-apps"></a>UWP 應用程式的可用性
 
@@ -179,13 +178,24 @@ ms.locfileid: "70076384"
 
 應用程式設定可讓您的使用者自訂您的應用程式、將應用程式最佳化以滿足他們的個別需求和喜好。 提供正確的設定並正確儲存設定甚至可讓良好的使用者體驗變得更好。
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/guidelines-for-app-settings.md">指導方針</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">建立和顯示應用程式設定的最佳做法。</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/store-and-retrieve-app-data.md">儲存和擷取應用程式資料</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">如何儲存及擷取本機、漫遊和暫存的應用程式資料。</p>
+    :::column-end:::
+:::row-end:::
+
+<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../app-settings/guidelines-for-app-settings.md">指導方針</a></b><br/>建立和顯示應用程式設定的最佳做法。</p>
+<p><b><a href="../app-settings/guidelines-for-app-settings.md">Guidelines</a></b><br/>Best practices for creating and displaying app settings.</p>
                     </div>
                 </div>
             </div>
@@ -196,13 +206,13 @@ ms.locfileid: "70076384"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../app-settings/store-and-retrieve-app-data.md">儲存和擷取應用程式資料</a></b><br/>如何儲存及擷取本機、漫遊和暫存的應用程式資料。</p>
+<p><b><a href="../app-settings/store-and-retrieve-app-data.md">Store and retrieve app data</a></b><br/>How to store and retrieve local, roaming, and temporary app data.</p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
-</ul>
+</ul> -->
 
 ## <a name="globalization-and-localization"></a>全球化與當地語系化
 
@@ -213,13 +223,34 @@ ms.locfileid: "70076384"
 ## <a name="in-app-help"></a>應用程式內說明
 無論您的應用程式設計有多完美，某些使用者也將會需要一些額外的說明。
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/guidelines-for-app-help.md">應用程式說明的指導方針</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">應用程式可能十分複雜，並提供有效的說明，讓使用者可以大幅改善其體驗。</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/instructional-ui.md">指示性 UI</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">有些時候，教導使用者有關應用程式中不明顯的功能 (例如特定觸控互動) 可能十分有用。 在這些情況下，您需要透過 UI 對使用者顯示指示，讓他們可以探索和使用他們可能遺漏的功能。</p>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/in-app-help.md">App 內說明</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">大部分時間，最好是在 app 內顯示說明，並在使用者選擇檢視時才顯示。 當建立 App 內說明時，請考慮下列指導方針。</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/external-help.md">外部說明</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">大部分時間，最好是在 app 內顯示說明，並在使用者選擇檢視時才顯示。 當建立 App 內說明時，請考慮下列指導方針。</p>
+    :::column-end:::
+:::row-end:::
+
+<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/guidelines-for-app-help.md">應用程式說明的指導方針</a></b><br/>應用程式可能十分複雜，並提供有效的說明，讓使用者可以大幅改善其體驗。
+<p><b><a href="../in-app-help/guidelines-for-app-help.md">Guidelines for app help</a></b><br/>Applications can be complex, and providing effective help for your users can greatly improve their experience.
 </p>
                     </div>
                 </div>
@@ -231,7 +262,7 @@ ms.locfileid: "70076384"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/instructional-ui.md">指示性 UI</a></b><br/>有些時候，教導使用者有關應用程式中不明顯的功能 (例如特定觸控互動) 可能十分有用。 在這些情況下，您需要透過 UI 對使用者顯示指示，讓他們可以探索和使用他們可能遺漏的功能。</p>
+<p><b><a href="../in-app-help/instructional-ui.md">Instructional UI</a></b><br/>Sometimes it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the UI so they can discover and use features they might have missed.</p>
                     </div>
                 </div>
             </div>
@@ -242,7 +273,7 @@ ms.locfileid: "70076384"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/in-app-help.md">應用程式內說明</a></b><br/>大部分時間，最好是在 app 內顯示說明，並在使用者選擇檢視時才顯示。 當建立 App 內說明時，請考慮下列指導方針。</p>
+<p><b><a href="../in-app-help/in-app-help.md">In-app help</a></b><br/>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
                     </div>
                 </div>
             </div>
@@ -253,11 +284,11 @@ ms.locfileid: "70076384"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/external-help.md">外部說明</a></b><br/>大部分時間，最好是在 app 內顯示說明，並在使用者選擇檢視時才顯示。 當建立 App 內說明時，請考慮下列指導方針。</p>
+<p><b><a href="../in-app-help/external-help.md">External help</a></b><br/>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
                     </div>
                 </div>
             </div>
         </div>
     </li>        
-</ul>
+</ul> -->
 

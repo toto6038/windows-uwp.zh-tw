@@ -3,21 +3,21 @@ description: 針對手寫筆、Surface Dial 和其他輸入類型最佳化您的
 title: 輸入與互動
 keywords: 應用程式輸入, 自訂 UWP 應用程式
 label: Input and interactions
-layout: LandingPage
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 12ca16eea1bb3b5ced72add427333e7e5988f876
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: c2d7db47a0731323cbbb45c471428a2496f8d479
+ms.sourcegitcommit: 08cb5a4ca2e02179ad6b768c841fe3d5216bcae3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065292"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614946"
 ---
-![輸入圖示](../images/inputs-2x.png)
 # <a name="input-and-interactions"></a>輸入與互動
+
+![輸入圖示](../images/inputs-2x.png)
 
 <!-- <div>
   <img src="images/keyboard/keyboard-hero.jpg" alt="" />
@@ -28,109 +28,54 @@ UWP 應用程式可自動處理各種輸入並在各種不同的裝置上執行 
 
 本節中的設計與程式碼撰寫指示可協助您針對特定類型輸入自訂您的 UWP 應用程式。
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage" style="background-color: #f2f2f2" >
-                        <a href="input-primer.md">
-                            <img src="images/input-interactions/icons-inputdevices03.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div>  -->
-                    <div class="cardText">
-                        <h3><a href="input-primer.md">輸入基本資訊</a></h3>
-                        <p>與特定尺寸規格配對使用時，請熟悉各個輸入裝置類型及其行為、功能與限制。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage" style="background-color: #f2f2f2">
-                        <a href="identify-input-devices.md">
-                            <img src="images/landing-page/fluentdesign-app-sm.png" alt=" " style="display: block; width: 100%; height: auto;"/>
-                            </a>
-                        </div>
-                    </div> -->
-                    <div class="cardText">
-                        <h3><a href="gaze-interactions.md">新功能！注視輸入</a></h3>
-                        <p>根據使用者眼睛和頭部的位置和移動追蹤他們的注視。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="input-primer.md">輸入基本資訊</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">與特定尺寸規格配對使用時，請熟悉各個輸入裝置類型及其行為、功能與限制。</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="gaze-interactions.md">注視輸入</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">根據使用者眼睛和頭部的位置和移動追蹤他們的注視。</p>
+    :::column-end:::
+:::row-end:::
 
 <!-- 
 ## Input primer
 
 See our <b>[Input primer](index.md)</b> to familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors. -->
 
+:::row:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">輸入</h2>
+        <a href="/windows/uwp/design/input/identify-input-devices">識別輸入裝置</a><br/>
+        <a href="/windows/uwp/design/input/handle-pointer-input">指標</a><br/>
+        <a href="/windows/uwp/design/input/pen-and-stylus-interactions">手寫筆與 Windows Ink</a><br/>
+        <a href="/windows/uwp/design/input/touch-interactions">觸控</a><br/>
+        <a href="/windows/uwp/design/input/mouse-interactions">滑鼠</a><br/>
+        <a href="/windows/uwp/design/input/keyboard-interactions">鍵盤</a><br/>
+        <a href="/windows/uwp/design/input/gamepad-and-remote-interactions">遊戲台和遙控器</a><br/>
+        <a href="/windows/uwp/design/input/touchpad-interactions">觸控板</a><br/>
+        <a href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a><br/>
+        <a href="/windows/uwp/design/input/multiple-input-design-guidelines">多重輸入</a><br/>
+        <a href="/windows/uwp/design/input/input-injection">輸入插入</a><br/>
+        <a href="/windows/uwp/design/input/custom-text-input">自訂文字輸入</a><br/>
+    :::column-end:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">互動</h2>
+        <a href="/windows/uwp/design/input/drag-and-drop">拖放功能</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-panning">移動瀏覽</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-rotation">旋轉</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-textselection">選取文字和影像</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-targeting">目標預測</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-visualfeedback">視覺化回饋</a><br/>
+    :::column-end:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">語音與 AI</h2>
+        <a href="/windows/uwp/design/input/speech-interactions">語音</a><br/>
+        <a href="/windows/uwp/design/input/cortana-interactions">Cortana</a><br/>
+    :::column-end:::
+:::row-end:::
 
-<ul class="panelContent cardsL" style="margin-left: 1px">
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Input</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">識別輸入裝置</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">指標</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">手寫筆與 Windows Ink</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">觸控</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/mouse-interactions">滑鼠</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/keyboard-interactions">鍵盤</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">遊戲台和遙控器</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">觸控板</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">多重輸入</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/input-injection">輸入插入</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">自訂文字輸入</a></p>                        
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>  
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>互動</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">拖放功能</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">移動瀏覽</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-rotation">旋轉</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-textselection">選取文字和影像</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-targeting">目標預測</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-visualfeedback">視覺化回饋</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>語音與 AI</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">語音</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/cortana-interactions">Cortana</a></p>  
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>            
-       
-</ul>
 
 <!-- <div class="side-by-side">
 <div class="side-by-side-content">
