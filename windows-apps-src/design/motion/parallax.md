@@ -12,18 +12,20 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ab37c49115acbccaf81725b74def85891fd73219
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: ac195916e76ad7b3f03adc39a293422d0d58f7a4
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735063"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614077"
 ---
 # <a name="parallax"></a>視差
 
 視差是一種視覺效果，讓較靠近檢視者的項目移動的比背景中其他項目快。 視差能夠製造深度、透視和移動的感覺。 在 UWP 應用程式中，您可以使用 ParallaxView 控制項建立視差效果。  
 
-> **重要 API**：[ParallaxView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、[VerticalShift 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)、[HorizontalShift 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **WINDOWS UI 程式庫 api：** [ParallaxView 類別](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview)、 [VerticalShift 屬性](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.VerticalShift)、 [HorizontalShift 屬性](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+>
+> **平臺 api**： [ParallaxView 類別](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、 [VerticalShift 屬性](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)、 [HorizontalShift 屬性](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
 ## <a name="examples"></a>範例
 
@@ -47,7 +49,7 @@ ms.locfileid: "74735063"
 
 ## <a name="how-it-works-in-a-user-interface"></a>使用者介面運作方式
 
-在 UI 中建立視差效果的做法是在 UI 捲動或平移時，以不同的速率移動不同的物件。 <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> 為了示範，讓我們使用一個兩層的內容，分別是清單與背景影像。  清單位在背景影像上方，這已經造成清單可能比較靠近檢視者的錯覺。  現在，為了達到視差效果，我們要最靠近我們的物件移動速度比較遠的物件「快」。  當使用者捲動介面時，清單移動速度比背景影像快，因此造成深度錯覺。
+在 UI 中建立視差效果的做法是在 UI 捲動或平移時，以不同的速率移動不同的物件。 <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> 為了示範，讓我們看看兩個內容層、一個清單和一個背景影像。  清單位在背景影像上方，這已經造成清單可能比較靠近檢視者的錯覺。  現在，為了達到視差效果，我們想要讓最接近我們的物件以「更快」的速度傳送，而不是距離較遠的物件。  當使用者捲動介面時，清單移動速度比背景影像快，因此造成深度錯覺。
 
  ![一個帶有背景影像和清單的視差範例](images/_Parallax_v2.gif)
 
@@ -80,7 +82,7 @@ ms.locfileid: "74735063"
        <x:String>Item 2</x:String> 
        <x:String>Item 3</x:String> 
        <x:String>Item 4</x:String> 
-       <x:String>Item 5</x:String>  
+       <x:String>Item 5</x:String>     
        <x:String>Item 6</x:String> 
        <x:String>Item 7</x:String> 
        <x:String>Item 8</x:String> 
@@ -98,9 +100,9 @@ ms.locfileid: "74735063"
        <x:String>Item 21</x:String>        
     </ListView>
 </Grid>
-``` 
+```    
 
-ParallaxView 會自動調整影像大小，讓影像能為視差作業運作，使您無須擔心影像捲動時會超出檢視範圍。
+ParallaxView 會自動調整影像大小，使其適用于視差作業，因此您不必擔心影像的向外滾動。
 
 ## <a name="customizing-the-parallax-effect"></a>自訂視差效果 
 
@@ -113,11 +115,11 @@ VerticalShift 與 HorizontalShift 屬性可讓您控制視差效果的程度。
 
 如需自訂視差方式清單，請查看 ParallaxView 類別。 
 
-## <a name="dos-and-donts"></a>應做與不應做事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 - 在有背景影像的清單中使用視差
 - 當 ListViewItems 包含影像時，考慮在 ListViewItems 中使用視差
-- 不要到處使用視差，過度使用會削弱其效果
+- 請勿在任何地方使用它，過度使用會降低其影響
 
 ## <a name="related-articles"></a>相關文章
 
