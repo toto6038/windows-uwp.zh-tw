@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: fd267f96ca6931252ab3130d363447ae79820108
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 250e3626c5abee43cf3b8ca3320c78ec4f8f9751
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209133"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662411"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 簡介
 &nbsp;
@@ -62,7 +62,7 @@ Windows 執行階段根據元件物件模型 (COM) API，且設計它透過「�
 
 透過使用 C++/WinRT，您也可以使用標準 C++ 實作自己的執行階段類別，而不用求助於 COM 樣式程式設計。 對於執行階段類別，您只要在 IDL 檔案中描述您的類型，而 `midl.exe` 與 `cppwinrt.exe` 會為您產生實作重複使用的原始程式碼檔案。 或者您可以只要實作衍生自 C++/WinRT 基底類別的介面。 如需詳細資訊，請參閱[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
-如需適用於 `cppwinrt.exe` 工具的自訂選項清單 (透過專案屬性設定)，請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
+如需適用於 `cppwinrt.exe` 工具的自訂選項清單 (透過專案屬性設定)，請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)。
 
 您可以依照專案中安裝的 **Microsoft.Windows.CppWinRT** NuGet 套件顯示狀態，找出使用 C++/WinRT MSBuild 支援的專案。
 
@@ -120,7 +120,7 @@ Windows 傳統型 C++/WinRT 用戶端應用程式的專案範本，其在 Win32 
 ### <a name="invalid-upgrade-configurations"></a>無效的升級組態
 使用最新版的 VSIX 擴充功能時，如果也還沒安裝 **Microsoft.Windows.CppWinRT**NuGet 套件，專案就不適合具有 `<CppWinRTEnabled>true</CppWinRTEnabled>` 屬性。 具有此組態的專案會產生建置錯誤訊息「C++/WinRT VSIX 不再提供專案的建置支援。  請將專案參考加入 Microsoft.Windows.CppWinRT Nuget 套件」。
 
-如上所述，C++/WinRT 專案現在必須已安裝的 NuGet 套件。
+如上所述， C++/WinRT 專案現在必須已安裝的 NuGet 套件。
 
 由於 `<CppWinRTEnabled>` 元素現在已過時，您可以選擇性地編輯 `.vcxproj`，以及刪除此元素。 它不是絕對必要，但是個選項。
 

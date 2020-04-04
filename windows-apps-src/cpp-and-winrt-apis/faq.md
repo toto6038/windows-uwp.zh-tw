@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 167286226adb6d26a6cdd4ee4a26bdcc58e4b5ed
-ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
+ms.openlocfilehash: 592458c6e6157e8cef0d1312ebf6e5c9f15b7919
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79448572"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662382"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -35,7 +35,7 @@ ms.locfileid: "79448572"
 
 ## <a name="how-do-i-customize-the-build-support-in-the-nuget-package"></a>如何自訂 NuGet 套件中的組建支援？
 
-C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGet 套件的[讀我檔案](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)中。
+C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGet 套件的[讀我檔案](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)中。
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>C++/WinRT Visual Studio 擴充功能 (VSIX) 有何需求？
 若為 VSIX 擴充功能的版本 1.0.190128.4 和更新版本，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。 若為其他版本，則請參閱[舊版 VSIX 擴充功能](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。

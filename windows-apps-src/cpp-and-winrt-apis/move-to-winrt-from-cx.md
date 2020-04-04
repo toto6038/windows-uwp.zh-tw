@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: a554a46d73053c2b6a01a0b10dbc78c87b743052
-ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
+ms.openlocfilehash: c5f8b9548bba704a7035b014ca3728db8bcbcc16
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80290030"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662388"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
@@ -30,7 +30,7 @@ ms.locfileid: "80290030"
 
 請記住上述例外狀況，將 C++/CX 專案移植到 C++/WinRT 的第一個步驟是手動新增 C++/WinRT 支援 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 若要這麼做，請將 [Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)安裝到您的專案中。 在 Visual Studio 中開啟專案，按一下 [專案]  \>[管理 NuGet 套件...]  \>[瀏覽]  、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝]  以安裝適用於該專案的套件。 該變更的其中一個效果，是會關閉專案中支援的 C++/CX。 最好關閉支援，這樣組建訊息有助於找出 (並移植) C++/CX 上所有的相依性，或您可以重新開啟支援 (在專案屬性中，**C/C++** \>**一般**\>**使用 Windows 執行階段擴充功能**\>**是 (/ZW)** )，請逐漸移植。
 
-或者，在 Visual Studio 中使用 C++/WinRT 專案屬性頁面，將下列屬性新增至 `.vcxproj` 檔案檔案。 如需類似自訂選項 (可微調 `cppwinrt.exe` 工具的行為) 清單，請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
+或者，在 Visual Studio 中使用 C++/WinRT 專案屬性頁面，將下列屬性新增至 `.vcxproj` 檔案檔案。 如需類似自訂選項 (可微調 `cppwinrt.exe` 工具的行為) 清單，請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)。
 
 ```xml
 <syntaxhighlight lang="xml">
