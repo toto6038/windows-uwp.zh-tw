@@ -1,19 +1,19 @@
 ---
 Description: 若要從 Microsoft Store 中的應用程式銷售額獲得金錢，您必須設定您的付款帳戶，並填寫必要的稅務形式。
-title: 設定您的支出及稅收表格
+title: 設定您的支出及納稅申報表
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.date: 1/17/2020
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac23c926e0d7b517fe18321980fc322d7be5b064
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: ca046122a841c727b6f9ef46a868b2c9ba0be2e9
+ms.sourcegitcommit: 74627903a18b14c1af68269b0a8c85840caa1898
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210444"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80759438"
 ---
-# <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支出及稅收表格
+# <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支出及納稅申報表
 
 > [!NOTE]
 > 如果您要尋找有關支出的支援，包括設定付款帳戶、遺失支出、在保存支出或任何其他專案，請在[這裡](https://partner.microsoft.com/support)聯絡支援。
