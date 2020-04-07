@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ffd5481fec0ebf6db24d9af95b8a11d05a043170
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 5340c8375be9cf33a8f56fdba7bd36e9743767ab
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521219"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482314"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>參與 UWP 概念文件編輯
 
@@ -22,7 +22,7 @@ ms.locfileid: "77521219"
 
 如果目前已位在公用內容存放庫中，請先瀏覽至想要變更的檔案。 請在該處選取顯示內容上方的鉛筆圖示，即可開始編輯。
 
-或者，如果您正在檢視 docs.microsoft.com 中的頁面，可以選取頁面右上方部分的 [編輯]  按鈕。 此操作會將您重新導向存放庫中的相關來源檔案。
+或者，如果您正在檢視 [docs.microsoft.com](https://docs.microsoft.com) 中的頁面，可以選取頁面右上方部分的 [編輯]  按鈕。 此操作會將您重新導向存放庫中的相關來源檔案。
 
 當您開始編輯時，GitHub 會自動將官方存放庫分為個人 GitHub 帳戶，您可以在其中進行變更。 當您完成時，請將提取要求提交回 **docs** 分支。
 

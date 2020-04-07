@@ -11,18 +11,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a9ff0acd46ef7efa92239b0a3ef07b507850a66
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 315edbddccc51b7e742bf9beffad8497a104ce03
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081515"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614088"
 ---
 # <a name="swipe"></a>Swipe
 
 撥動命令是操作功能表的快速操作，讓使用者不需要在應用程式中變更狀態，即可透過觸控輕鬆存取常用的功能表動作。
 
-> **重要 API**：[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)、[SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)、[ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **Windows UI 程式庫 API**：[SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol)、[SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
+>
+> **平台 API**：[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)、[SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)、[ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![執行並顯示淺色佈景主題](images/LightThemeSwipe.png)
 

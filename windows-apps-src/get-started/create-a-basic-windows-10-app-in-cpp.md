@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 13e6f4ac59a99463cd891e936f51449baf4ea7c2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4c388b9b81744c0d27d96c1f97b4e405af63eaef
+ms.sourcegitcommit: fc5db2e26db65be025e9f62044b4d29bb1744f8d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259534"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80524078"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 建立 "Hello world" 應用程式
 
@@ -45,7 +45,7 @@ ms.locfileid: "74259534"
 
 -   您仍然可以建立使用 Visual C++ 編譯器編譯原生機器程式碼的應用程式。 使用 C++/CX 編譯的 UWP 應用程式不在受管理的執行階段環境中執行。
 
-### <a name="whats-new"></a>有何新功能？
+### <a name="whats-new"></a>新功能
 
 -   UWP 應用程式和通用 Windows 應用程式的設計原則與傳統型應用程式的設計原則有很大的差別。 設計的重點不再強調視窗的邊框、標籤、對話方塊等等。 內容才是最重要的。 完美的通用 Windows app 會在規劃階段就遵循這些原則。
 
@@ -88,7 +88,7 @@ ms.locfileid: "74259534"
 
    您的專案檔案已成功建立。
 
-繼續之前，先看看方案中有些什麼。
+繼續之前，先看看方案中有些什麼功能。
 
 ![節點摺疊的通用應用程式方案](images/vs2017-uwp-02.png)
 
@@ -255,7 +255,7 @@ MainPage::MainPage()
 
    如果在轉譯期間發生無法處理的例外狀況，設計工具會無法載入。 在設計工具中的轉譯涉及了執行頁面的設計階段版本。 停用執行中的使用者程式碼會很有幫助。 您可以藉由在 [工具]、[選項]  對話方塊變更設定來執行此動作。 在 [XAML 設計工具]  下，取消核取 [在 XAML 設計工具中執行專案程式碼 (如果支援)]  。
 
-5.  在 MainPage.xaml.cpp 中，將下列程式碼新增到您剛才建立的 **Button\_Click** 事件處理常式。 此程式碼會從 `nameInput` [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控制項擷取使用者的名稱，並用它來建立問候語。 `greetingOutput` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 會顯示結果。
+5.  在 MainPage.xaml.cpp 中，將下列程式碼新增到您剛才建立的 **Button\_Click** 事件處理常式。 此程式碼會從 `nameInput` [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控制項擷取使用者的名稱，並用其來建立問候語。 `greetingOutput` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 會顯示結果。
 
     ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -395,7 +395,7 @@ MainPage::MainPage()
 
 恭喜，您已經完成第一個教學課程了！ 本教學課程教導如何新增內容至 Windows 通用 app、如何新增互動功能，以及如何變更其外觀。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 如果您擁有目標為 Windows 8.1 和 (或) Windows Phone 8.1 的 Windows 通用應用程式專案時，可將它移植到 Windows 10。 沒有任何自動處理程序可用來進行此動作，但您可以手動完成此動作。 開始使用新的 Windows 通用專案，以取得最新的專案系統結構與資訊清單檔案、將程式碼檔案複製到專案的目錄結構、將項目新增到專案，然後根據本主題中的指導方針，使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 重新撰寫您的 XAML。 如需詳細資訊，請參閱[將 Windows Runtime 8 專案移植到通用 Windows 平台 (UWP) 專案](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project)和[移植到通用 Windows 平台 (C++)](https://msdn.microsoft.com/library/mt186164.aspx)。
 

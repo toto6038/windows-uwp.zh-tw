@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 734544a1294c6a97e70afcbf7ce6b5efc13cf841
-ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
+ms.openlocfilehash: 3057a3d13ba1e7d368dd6bf8820710030687a04d
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79448580"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662413"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
 
@@ -89,7 +89,7 @@ C++/WinRT 協同程式已經順利執行，但我們會繼續尋找改善的方�
 
 - `cppwinrt.exe` 工具目前包含在 Microsoft.Windows.CppWinRT NuGet 封裝中，此工具可視需要為每個專案產生平台投影標頭。 因此，`cppwinrt.exe` 工具不再依賴 Windows SDK (儘管基於相容性原因，此工具仍隨附 SDK)。
 - `cppwinrt.exe` 現在會在每個平台/特定設定的中繼資料夾 ($IntDir) 之下產生投影標頭，以啟用平行組建。
-- 如果您想要手動自訂專案檔案，C++/WinRT 組件支援 (屬性/目標) 現在已完整記載。 請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
+- 如果您想要手動自訂專案檔案，C++/WinRT 組件支援 (屬性/目標) 現在已完整記載。 請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)。
 - 已進行許多錯誤修正。
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>C++/WinRT 2.0 版的變更
@@ -98,7 +98,7 @@ C++/WinRT 協同程式已經順利執行，但我們會繼續尋找改善的方�
 
 `cppwinrt.exe` 工具採用 Windows 執行階段中繼資料 (`.winmd`) 檔案，並從中產生以標頭檔案為基礎的標準 C++ 程式庫，其*投影*中繼資料中所述的 API。 如此一來，便可從 C++/WinRT 程式碼中使用取用這些 API。
 
-此工具目前是完全開放的原始碼專案，可在 GitHub 上找到。 請造訪 [Microsoft\/xlang](https://github.com/Microsoft/xlang)，然後按一下 [src]   > [工具]   > [cppwinrt]  。
+此工具目前是完全開放的原始碼專案，可在 GitHub 上找到。 瀏覽 [Microsoft\/cppwinrt](https://github.com/microsoft/cppwinrt)。
 
 #### <a name="xlang-libraries"></a>xlang 程式庫
 

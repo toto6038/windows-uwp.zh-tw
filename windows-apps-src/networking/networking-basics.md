@@ -6,12 +6,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d6bafc9a21e3950974615078af24989aab7da9e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1cf9d4866ddb72da0a284bcdcff07e3420f2880e
+ms.sourcegitcommit: 4657ac3be576b1d6dcd938d73a2f6a7e060ab17b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259185"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80404911"
 ---
 # <a name="networking-basics"></a>網路功能基本知識
 您對於任何具備網路功能的 app 所需執行的動作。
@@ -21,7 +21,7 @@ ms.locfileid: "74259185"
 
 以下是最常用的網路功能。
 
-| 功能 | 描述 |
+| 功能 | 說明 |
 |------------|-------------|
 | **internetClient** | 提供公共場所 (例如機場和咖啡廳) 的網際網路與網路的對外存取。 大部分需要網際網路存取的應用程式都應使用此功能。 |
 | **internetClientServer** | 透過公共場所 (例如機場和咖啡廳) 的網際網路和網路提供 app 對內及對外網路存取。 |
@@ -29,7 +29,7 @@ ms.locfileid: "74259185"
 
 您的 app 在某些情況下有可能需要其他功能。
 
-| 功能 | 描述 |
+| 功能 | 說明 |
 |------------|-------------|
 | **enterpriseAuthentication** | 允許 app 連線至需要網域認證的網路資源。 例如，從私人內部網路上的 SharePoint 伺服器擷取資料的應用程式。 透過此功能，您的認證可用來在需要認證的網路上存取網路資源。 具有此功能的應用程式可在網路上模擬您。 若要允許應用程式透過驗證 Proxy 來存取網際網路，您並不需要這項功能。<br/><br/>如需詳細資訊，請參閱文件中有關[受限制的功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)中的「企業」  功能案例。 |
 | **proximity** | 與非常靠近電腦的裝置進行近距離鄰近性通訊時所需。 近距離鄰近性可用來傳送或與鄰近裝置上的應用程式連線。 <br/><br/> 這個功能可讓 app 存取網路以連線至非常靠近的裝置，只要使用者同意傳送邀請或是接受邀請即可。 |
@@ -460,11 +460,11 @@ using Windows::Storage::Streams;
 
 如果來自用戶端的起始要求不包含這個值，或提供的值不符合伺服器所期待，當發生 WebSocket 交握錯誤時，預期的值就會從伺服器傳送到用戶端。
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>驗證
 如何在透過網路連線時提供驗證認證。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>提供具有 StreamSocket 類別的用戶端憑證
-[  **Windows.Networking.StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 類別支援使用 SSL/TLS 來驗證與 app 交談的伺服器。 在某些情況下，app 也必須使用 TLS 的用戶端憑證向伺服器驗證本身。 在 Windows 10 中，您可以在 [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) 物件上提供用戶端憑證 (這必須在 TLS 交握啟動之前設定)。 如果伺服器要求用戶端憑證，Windows 會使用提供的憑證來回應。
+[**Windows.Networking.Sockets.StreamSocket**](/uwp/api/windows.networking.sockets.streamsocket) 類別支援使用 SSL/TLS 來驗證與應用程式交談的伺服器。 在某些情況下，app 也必須使用 TLS 的用戶端憑證向伺服器驗證本身。 在 Windows 10 中，您可以在 [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) 物件上提供用戶端憑證 (這必須在 TLS 交握啟動之前設定)。 如果伺服器要求用戶端憑證，Windows 會使用提供的憑證來回應。
 
 以下程式碼片段說明其實作方式：
 
