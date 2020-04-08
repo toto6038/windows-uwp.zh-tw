@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 31371c2b2a4826939de428fb6d7c082b78d05843
-ms.sourcegitcommit: 6951827b7d0948618e1fbb082c28794c7f23f83c
+ms.openlocfilehash: b008b12c5f92d56c127c5ec8026d305d3d57a869
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923147"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081676"
 ---
 # <a name="menus-and-context-menus"></a>功能表和操作功能表
 
@@ -26,13 +26,15 @@ ms.locfileid: "70923147"
 
 ![一般操作功能表的範例](images/contextmenu_rs2_icons.png)
 
-| **取得 Windows UI 程式庫** |
-| - |
-| 此控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+**取得 Windows UI 程式庫**
 
-| **平台 API** | **Windows UI 程式庫 API** |
+|  |  |
 | - | - |
-| [MenuFlyout 類別](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 類別](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 屬性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) \(英文\) | [MenuBar 類別](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | 此 **MenuBar** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項與 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 程式庫 API：** [MenuBar 類別](/uwp/api/microsoft.ui.xaml.controls.menubar) \(英文\)
+>
+> **平台 API：** [MenuFlyout 類別](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 類別](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 屬性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) \(英文\)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -57,7 +59,7 @@ MenuBar 和 CommandBar 皆代表您可以用來向使用者公開命令的表面
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/MenuFlyout">開啟應用程式並查看 MenuFlyout 的運作情形</a>。</p>
     <ul>
@@ -268,7 +270,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) \(英文\) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 - [XAML 操作功能表範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu) \(英文\)
 
 ## <a name="related-articles"></a>相關文章
