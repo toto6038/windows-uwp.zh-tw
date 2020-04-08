@@ -12,22 +12,26 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dfa010d3e50208df31dad9d838486e72f38787c2
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: ecc4dbebcee5e99d78f8523cf78c9dbd5a20b334
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340244"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081664"
 ---
 # <a name="password-box"></a>密碼方塊
 
- 
-
 密碼方塊是一個文字輸入方塊，會基於隱私權考量而隱藏輸入其中的字元。 密碼方塊看起來就像文字方塊，只不過它會將已輸入的文字轉譯成預留位置字元。 您可以設定預留位置字元。
 
-> **重要 API**：[PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)、[Password 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password)、[PasswordChar 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)、[PasswordRevealMode 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)、[PasswordChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
-
 根據預設，密碼方塊會提供一種方式，讓使用者能夠藉由按住顯示按鈕來檢視他們的密碼。 您可以停用顯示按鈕，或提供替代機制來顯示密碼，例如核取方塊。
+
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)、[Password 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password)、[PasswordChar 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)、[PasswordRevealMode 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)、[PasswordChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -40,7 +44,7 @@ ms.locfileid: "71340244"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/PasswordBox">開啟應用程式並查看 PasswordBox 運作情形</a>。</p>
     <ul>

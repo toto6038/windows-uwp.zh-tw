@@ -4,11 +4,11 @@ title: ListView 與 GridView UI 最佳化
 description: 透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 ListView 和 GridView 的效能和啟動時間。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 73da4a2a590c5f1d860bb480c6d81b01e5e93819
 ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/13/2020
 ms.locfileid: "79210074"
@@ -16,7 +16,7 @@ ms.locfileid: "79210074"
 # <a name="listview-and-gridview-ui-optimization"></a>ListView 與 GridView UI 最佳化
 
 
-**請注意**   如需詳細資訊，請參閱//build/會話會在[使用者與 GridView 和 ListView 中的大量資料互動時，大幅提升效能](https://channel9.msdn.com/events/build/2013/3-158)。
+**注意**  如需詳細資訊，請參閱 //build/ 講座[使用者與 GridView 與 ListView 中的大量資料互動時大幅提升效能](https://channel9.msdn.com/events/build/2013/3-158)。
 
 透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 的效能和啟動時間。 如需資料虛擬化技術的資訊，請參閱 [ListView 和 GridView 資料虛擬化](listview-and-gridview-data-optimization.md)。
 
@@ -30,9 +30,9 @@ ms.locfileid: "79210074"
 
 ## <a name="ui-virtualization"></a>UI 虛擬化
 
-UI 虛擬化是您可以執行的最重要改善。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是浪費資源，因為項目不會同時全部顯示。 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)和[**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) （和其他標準[**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl)衍生的控制項）會為您執行 UI 虛擬化。 當項目即將被捲動到檢視 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
+UI 虛擬化是您可以執行的最重要改善。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是浪費資源，因為項目不會同時全部顯示。 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) (及其他標準 [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視中 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
 
-如果您提供自訂項目面板範本 (請參閱 [**ItemsPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel))，則確定您使用虛擬面板，例如 [**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid) 或 [**ItemsStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel)。 如果您使用 [**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)、[**WrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WrapGrid) 或 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)，則不會虛擬化。 此外，僅在使用 [**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 或 [**ItemsStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid) 時會引發下列 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel) 事件：[**ChoosingGroupHeaderContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)、[**ChoosingItemContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 和 [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging)。
+如果您提供自訂項目面板範本 (請參閱 [**ItemsPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel))，則確定您使用虛擬面板，例如 [**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid) 或 [**ItemsStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel)。 如果您使用 [**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)、[**WrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WrapGrid) 或 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)，則不會虛擬化。 此外，只有在使用 [**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid) 或 [**ItemsStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel) 時，才會引發下列 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 事件：[**ChoosingGroupHeaderContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)、[**ChoosingItemContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer)、[**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging)。
 
 檢視區概念對 UI 虛擬化很重要，因為架構必須建立可能要顯示的元素。 一般而言，[**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 的檢視區是邏輯控制項的延伸。 例如，[**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 的檢視區是 **ListView** 元素的寬度和高度。 有些面板允許子元素有不限數量的空間，範例是 [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 和 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)，使用自動調整大小的列或欄。 當虛擬化的 **ItemsControl** 放在這類的面板中時，會採用足夠的空間以顯示其所有項目，虛擬化就無效。 在 **ItemsControl** 設定寬度和高度以還原虛擬化。
 
@@ -250,7 +250,7 @@ UI 虛擬化是您可以執行的最重要改善。 這意謂著系統會依需�
 
 **ChoosingItemContainer 事件**
 
-[**ChoosingItemContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer)是一個事件，可讓您在啟動或回收期間需要新的專案時，將專案（**ListViewItem**/**GridViewItem**）提供給[**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)/[**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 。 您可以根據容器將會顯示的資料項目類型建立容器 (如下列範例所示)。 **ChoosingItemContainer** 是針對不同項目使用不同資料範本，一個高效能的方式。 容器快取可以使用 **ChoosingItemContainer** 來達成。 例如，如果您有五個不同的範本，其中某個範本比其他範本更常發生，則 ChoosingItemContainer 不僅可讓您以需要的比例建立項目，還可保留適當的快取元素數目以供回收。 [**ChoosingGroupHeaderContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)提供與群組標題相同的功能。
+[**ChoosingItemContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 事件可讓您在每當啟動或回收期間需要新項目時就提供項目 (**ListViewItem**/**GridViewItem**) 給 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)/[**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)。 您可以根據容器將會顯示的資料項目類型建立容器 (如下列範例所示)。 **ChoosingItemContainer** 是針對不同項目使用不同資料範本，一個高效能的方式。 容器快取可以使用 **ChoosingItemContainer** 來達成。 例如，如果您有五個不同的範本，其中某個範本比其他範本更常發生，則 ChoosingItemContainer 不僅可讓您以需要的比例建立項目，還可保留適當的快取元素數目以供回收。 [**ChoosingGroupHeaderContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) 為群組標頭提供相同的功能。
 
 ```csharp
 // Example shows how to use ChoosingItemContainer to return the correct
@@ -312,7 +312,7 @@ private void ListView_ChoosingItemContainer
 }
 ```
 
-**專案範本選取器**
+**項目範本選取器**
 
 項目範本選取器 ([**DataTemplateSelector**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DataTemplateSelector)) 可讓 app 根據要顯示的資料項目類型，在執行階段傳回不同的項目範本。 這可以讓開發更具生產力，但因為不是每個項目範本都可以針對每個資料項目重複使用，這也會讓 UI 虛擬化更困難。
 

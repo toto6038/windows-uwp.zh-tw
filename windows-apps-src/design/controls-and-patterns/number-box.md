@@ -7,21 +7,28 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bcabe0867e21b20f97405d514b16bef2165821fb
-ms.sourcegitcommit: be25b7628b1ff22175a682e670539947db2fa85a
+ms.openlocfilehash: 5307448b6209228cd8c4550a739c6db15091ba54
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852860"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081674"
 ---
 # <a name="number-box"></a>數字方塊
 
 代表可用來顯示和編輯數字的控制項。 這可支援基本方程式的驗證、遞增逐步執行及計算內嵌計算，例如乘法、除法、加法和減法。
 
+![一般操作功能表的範例](images/contextmenu_rs2_icons.png)
 
-**重要 API：** [NumberBox 類別](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+**取得 Windows UI 程式庫**
 
-## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？ 
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | 此 **NumberBox** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項與 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+**Windows UI 程式庫 API：** [NumberBox 類別](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 您可使用 NumberBox 控制項來擷取和顯示數學輸入。 如果您需要可接受數字以外內容的可編輯文字方塊，請使用 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控制項。 如果您需要可接受密碼或其他敏感性輸入的可編輯文字方塊，請參閱 [PasswordBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox)。 如果您需要文字方塊來輸入搜尋字詞，請參閱 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)。 如果您需要輸入或編輯格式化文字，請參閱 [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)。
 
@@ -30,7 +37,7 @@ ms.locfileid: "74852860"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡來<a href="xamlcontrolsgallery:/item/TextBox">開啟應用程式並查看 NumberBox 運作情形</a>。</p>
     <ul>

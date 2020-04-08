@@ -13,23 +13,29 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e0a7d1732833f8e6fc750f8ee481fa3c1116b50
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4f0215cd9d3f9a105b6a7ff0ec3f07ef50ff1e44
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66823594"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080919"
 ---
 # <a name="date-picker"></a>日期選擇器
 
- 
+日期選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選當地語系化的日期值。
 
-日期選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選當地語系化的日期值。 
+![日期選擇器的範例](images/date-picker-closed.png)
 
-> **重要 API**：[DatePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、[Date 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
+**取得 Windows UI 程式庫**
 
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本包含這個控制項的新範本，使用者可使用此控制項繪製圓角。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項與 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [DatePicker 類別](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、[Date 屬性](/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
+
 使用日期選擇器可讓使用者挑選已知的日期，例如出生日期 (行事曆內容不重要)。
 
 如需有關如何選擇正確日期控制項的詳細資訊，請參閱[日期和時間控制項](date-and-time.md)文章。
@@ -39,7 +45,7 @@ ms.locfileid: "66823594"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/DatePicker">開啟應用程式，並查看 DatePicker 的運作情形</a>。</p>
     <ul>

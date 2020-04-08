@@ -7,26 +7,30 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f289b21980e2a77fd8669c39750e9b989aa742
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 3b7eb2aa8f753c3e8b956ed722d1f807362bc204
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684390"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081715"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
 使用 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)，即可使用靈活的版面配置系統、自訂檢視畫面、進行模擬，藉以建立自訂的集合體驗。
 
-與 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 不同，[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 並未提供全面的使用者體驗，無預設的 UI，也未提供焦點、選取或使用者互動的相關原則。 然而，它是一個建置組塊，您可用來建立自己的唯一集合型體驗和自訂控制項。 雖然沒有內建原則，但可讓您附加原則以建置所需的體驗。 例如，您可以定義要使用的配置、鍵盤輸入原則、選取原則等。
+與 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 不同，[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 並未提供全面的使用者體驗，無預設的 UI，也未提供焦點、選取或使用者互動的相關原則。 然而，ItemsRepeater 是建置組塊，可供您用來建立自己的唯一集合型體驗和自訂控制項。 雖然沒有內建原則，但可讓您附加原則以建置所需的體驗。 例如，您可以定義要使用的配置、鍵盤輸入原則、選取原則等。
 
 您可以在概念上將 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 視為以資料為主的窗格，而非 ListView 那種完整的控制項。 您可以指定要顯示的資料項目集合，產生每個資料項目的 UI 元素項目範本，以及決定元素大小和位置方式的配置。 然後，ItemsRepeater 會根據資料來源，產生出子元素，並依照項目範本和配置的指定方式加以顯示。 顯示的項目不需要同質性，因為 ItemsRepeater 可以根據您在資料範本選取器中指定的條件，載入內容來呈現資料項目。
 
-| **取得 Windows UI 程式庫** |
-| - |
-| 此控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/) \(英文\)。 |
+**取得 Windows UI 程式庫**
 
-> **重要 API**：[ItemsRepeater 類別](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)[ScrollViewer 類別](/uwp/api/windows.ui.xaml.controls.scrollviewer)
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **ItemsRepeater** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 程式庫 API：** [ItemsRepeater 類別](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+>
+> **平台 API：** [ScrollViewer 類別](/uwp/api/windows.ui.xaml.controls.scrollviewer) \(英文\)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -46,7 +50,7 @@ ItemsRepeater 沒有內建的項目集合。 如果需要直接提供項目集�
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/ItemsRepeater">開啟應用程式並查看 ItemsRepeater 的運作情形</a>。</p>
     <ul>

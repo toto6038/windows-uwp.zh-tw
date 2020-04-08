@@ -12,22 +12,22 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f623c18db5af8e503965c0c4518e35e263791a51
-ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
+ms.openlocfilehash: ad18426a36503c9a540343565c20297502810b76
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039159"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081651"
 ---
 # <a name="radio-buttons"></a>選項按鈕
-
-> **重要 API**：[RadioButton 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)、[Checked 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)、[IsChecked 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 選項按鈕可讓使用者從集合中選取一個選項。 每個選項都由一個選項按鈕表示，而且使用者在選項按鈕群組中只能選取一個選項按鈕。
 
 (如果您對名稱感到好奇，選項按鈕 (Radio Button) 的名稱來自於收音機 (Radio) 上的頻道預設按鈕。)
 
 ![選項按鈕](images/controls/radio-button.png)
+
+> **平台 API**：[RadioButton 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)、[Checked 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)、[IsChecked 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -62,7 +62,7 @@ ms.locfileid: "71039159"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/RadioButton">開啟應用程式並查看 RadioButton 運作情形</a>。</p>
     <ul>
@@ -189,7 +189,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-topics"></a>相關主題
 

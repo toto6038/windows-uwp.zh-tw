@@ -3,16 +3,16 @@ title: 版本調適型應用程式
 description: 了解如何利用新的 API 並維持與先前版本的相容性
 ms.date: 05/17/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b947d0b6cc83dc6bca45efb7103a933e79972e3b
 ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/21/2019
 ms.locfileid: "67317455"
 ---
-# <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>自適性應用程式版本：使用新的 Api，同時維持與舊版的相容性
+# <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本調適型應用程式：使用新的 API 並同時維持與先前版本的相容性
 
 每個版本的 Windows 10 SDK 都新增了令人興奮、讓您想要使用的新功能。 不過，並非您所有的客戶都會同時將他們的裝置更新至最新版 Windows 10，且您會想盡可能讓您的 App 可以適用廣泛的裝置類型。 在這裡，我們會說明如何設計您的 App，讓它可以在較早版本的 Windows 10 上執行，同時讓 App 在安裝最新更新的裝置上執行時也會利用新功能。
 
@@ -20,14 +20,14 @@ ms.locfileid: "67317455"
 
 - 首先，請將您的 Visual Studio 專案設定為以最新的 API 為目標。 這會影響當您編譯 App 時的情況。
 - 接著，請執行執行階段檢查，以確保您僅呼叫正在執行您 App 之裝置上的 API。
-- 其三，在 Windows 10 的最小版本和目標版本上測試應用程式。
+- 其三，在 Windows 10 的最低版本和目標版本上測試應用程式。
 
 ## <a name="configure-your-visual-studio-project"></a>設定您的 Visual Studio 專案
 
 支援多個 Windows 10 版本的第一個步驟，是在您的 Visual Studio 專案中指定「目標」  與「最低」  支援的 OS/SDK 版本。
 
-- *目標*：Visual Studio 會編譯應用程式程式碼，並執行所有的工具，對 SDK 版本。 於編譯期間，此 SDK 版本中所有的 API 與資源，都會在您的 App 程式碼中提供使用。
-- *最低需求*：SDK 版本，可支援您的應用程式可以在上執行 （並將部署至存放區） 的最舊 OS 版本和 Visual Studio 會編譯您的應用程式標記的程式碼的版本。 
+- *目標*：Visual Studio 編譯 App 程式碼並執行所有工具的目標 SDK 版本。 於編譯期間，此 SDK 版本中所有的 API 與資源，都會在您的 App 程式碼中提供使用。
+- *最低需求*：支援可執行您 App (且會由市集部署至) 之最早 OS 版本的 SDK 版本，以及 Visual Studio 編譯您 App 標記程式碼的目標版本。 
 
 在執行階段期間，您的 App 將針對它所部署至的 OS 版本執行，因此如果您使用或呼叫該版本中沒有提供使用的資源或 API，您的 App 便會擲回例外狀況。 我們稍後於本文章中會示範如何使用執行階段檢查，以呼叫正確的 API。
 
@@ -48,7 +48,7 @@ ms.locfileid: "67317455"
 
 下表顯示各個 SDK 的組建編號，供您參考。
 
-| 易記名稱 | Version | OS/SDK 組建 |
+| 易記名稱 | 版本 | OS/SDK 組建 |
 | ---- | ---- | ---- |
 | RTM | 1507 | 10240 |
 | 11 月份更新 | 1511 | 10586 |
@@ -57,11 +57,11 @@ ms.locfileid: "67317455"
 | Fall Creators Update | 1709 | 16299 |
 | 2018 年 4 月更新 | 1803 | 17134 |
 | 2018 年 10 月更新 | 1809 | 17763 |
-| 2019 年更新 | 1903 | 18362 |
+| 2019 年 5 月更新 | 1903 | 18362 |
 
 您可以從 [Windows SDK 與模擬器封存](https://developer.microsoft.com/windows/downloads/sdk-archive)下載任何已發行版本的 SDK 。 您可以從 [Windows 測試人員](https://insider.windows.com/for-developers/)網站的開發人員區段下載最新的 Windows Insider Preview SDK。
 
- 如需 Windows 10 更新的詳細資訊，請參閱[Windows 10 版本資訊](https://www.microsoft.com/itpro/windows-10/release-information)。 重要的 Windows 10 的支援生命週期的詳細資訊，請參閱[生命週期概要說明 Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
+ 如需 Windows 10 更新的詳細資訊，請參閱 [Windows 10 版本資訊](https://www.microsoft.com/itpro/windows-10/release-information)。 如需有關 Windows 10 支援生命週期的重要資訊，請參閱 [Windows 生命週期事資料表](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
 
 ## <a name="perform-api-checks"></a>執行 API 檢查
 
@@ -69,7 +69,7 @@ ms.locfileid: "67317455"
 
 ### <a name="api-contracts"></a>API 協定
 
-裝置系列內的一組 API 會細分成小部分，稱為 API 協定。 您可以使用 **ApiInformation.IsApiContractPresent** 方法以測試 API 協定是否存在。 如果您要測試相同版本的 API 協定中是否有許多 API 存在，這是相當有用的方法。
+裝置系列內的 API 會細分成小部分，稱為 API 協定。 您可以使用 **ApiInformation.IsApiContractPresent** 方法以測試 API 協定是否存在。 如果您要測試相同版本的 API 協定中是否有許多 API 存在，這是相當有用的方法。
 
 ```csharp
     bool isScannerDeviceContract_1_Present =
@@ -79,32 +79,32 @@ ms.locfileid: "67317455"
 
 什麼是 API 協定？ API 協定基本上代表一個功能：一組聯合提供某個特定功能的相關 API。 假設的 API 協定可能會代表包含兩個類別、五個介面、一個結構、兩個列舉等等的一組 API。
 
-邏輯相關的類型會群組成一個 API 協定，並且從 Windows 10 開始，每個 Windows 執行階段 API 都是某個 API 協定的成員。 有了 API 協定，您在檢查的會是裝置上特定功能或 API 的可用性，其實也就是檢查裝置的功能，而不是檢查是否有特定裝置或作業系統。 實作 API 協定中任何 API 的平台也必須該 API 協定中的每個 API。 這表示您可以測試執行中 OS 是否支援特定 API 協定；如果支援，則呼叫該 API 協定中的任何 API，而不需個別檢查每一個 API。
+邏輯相關的類型會群組成一個 API 協定，並且從 Windows 10 開始，每個 Windows 執行階段 API 都是某個 API 協定的成員。 有了 API 協定，您檢查裝置上特定功能或 API 的可用性，其實也就是檢查裝置的功能，而不是檢查是否有特定裝置或作業系統。 實作 API 協定中任何 API 的平台也必須實實作該 API 協定中的每個 API。 這表示您可以測試執行中 OS 是否支援特定 API 協定；如果支援，則呼叫該 API 協定中的任何 API，而不需個別檢查每一個 API。
 
 最大且最常使用的 API 協定是 **Windows.Foundation.UniversalApiContract**。 其中包含通用 Windows 平台中的大多數 API。 [裝置系列擴充功能 SDK 及 API 協定](https://docs.microsoft.com/uwp/extension-sdks/)文件說明各種可用的 API 協定。 您將了解它們大部分代表一組在功能上相關的 API。
 
 > [!NOTE]
-> 如果您還未記載的預覽 Windows 軟體開發套件 (SDK) 安裝，則您也可以在 SDK 安裝資料夾中的 'Platform.xml' 檔案中找到 API 合約支援的相關資訊 '\(Program Files (x86)) \Windows Kits\10\Platforms\<平台 >\<SDK 版本 > \Platform.xml'。
+> 如果您已安裝的預覽版 Windows 軟體開發套件 (SDK) 尚未記載於文件，還是可以在位於 SDK 安裝資料夾 (\(Program Files (x86))\Windows Kits\10\Platforms\<platform>\<SDK 版本>\Platform.xml) 的 Platform.xml 檔案中找到 API 協定支援的相關資訊。
 
 ### <a name="version-adaptive-code-and-conditional-xaml"></a>版本調適型程式碼和條件式 XAML
 
-在 Windows 10 的所有版本中，都可以使用程式碼條件中的 ApiInformation 類別，測試您要呼叫的 API 是否存在。 您可以在調適型程式碼中使用該類別的各種方法 (例如 IsTypePresent、IsEventPresent、IsMethodPresent 和 IsPropertyPresent)，以您所需的細微性來測試 API 是否存在。
+在 Windows 10 的所有版本中，都可以使用程式碼條件中的 ApiInformation 類別，測試您要呼叫的 API 是否存在。 您可以在調適型程式碼中使用該類別的各種方法 (例如 IsTypePresent、IsEventPresent、IsMethodPresent、IsPropertyPresent)，以您所需的細微性來測試 API 是否存在。
 
 如需詳細資訊和範例，請參閱 **[版本調適型程式碼](version-adaptive-code.md)** 。
 
-如果您的應用程式最小版本是組建 15063 (Creators Update) 或更新版本，您可以在標記中使用*條件式 XAML*來設定屬性和具現化物件，而不需使用程式碼後置。 條件式 XAML 提供一種在標記中使用 ApiInformation.IsApiContractPresent 方法的方式。
+如果您的應用程式最低版本是組建 15063 (Creators Update) 或更新版本，您可以在標記中使用「條件式 XAML」  來設定屬性和具現化物件，而不需使用程式碼後置。 條件式 XAML 提供一種在標記中使用 ApiInformation.IsApiContractPresent 方法的方式。
 
 如需詳細資訊和範例，請參閱 **[條件式 XAML](conditional-xaml.md)** 。
 
 ## <a name="test-your-version-adaptive-app"></a>測試版本調適型應用程式
 
-當您使用版本調適型程式碼或條件式 XAML 來撰寫版本調適型應用程式時，您必須在執行 Windows 10 最小版本的裝置及執行目標版本的裝置上測試該應用程式。
+當您使用版本調適型程式碼或條件式 XAML 來撰寫版本調適型應用程式時，您必須在執行 Windows 10 最低版本的裝置及執行目標版本的裝置上測試該應用程式。
 
-您不可只在單一裝置上測試所有的條件程式碼路徑。 為了確保測試過所有的程式碼路徑，您必須在執行支援的最小 OS 版本的遠端裝置 (虛擬機器) 上部署和測試應用程式。
-如需遠端偵錯的詳細資訊，請參閱[部署和偵錯 UWP app](deploying-and-debugging-uwp-apps.md)。
+您不可只在單一裝置上測試所有的條件式程式碼路徑。 為了確保測試過所有的程式碼路徑，您必須在執行支援的最低 OS 版本的遠端裝置 (或虛擬機器) 上部署和測試應用程式。
+如需遠端偵錯的詳細資訊，請參閱[部署和偵錯 UWP 應用程式](deploying-and-debugging-uwp-apps.md)。
 
 ## <a name="related-articles"></a>相關文章
 
 - [什麼是 UWP 應用程式](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-- [以動態方式偵測 API 合約的功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [利用 API 協定動態偵測功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API 協定](https://channel9.msdn.com/Events/Build/2015/3-733) (組建 2015 影片)

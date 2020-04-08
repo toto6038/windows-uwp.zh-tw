@@ -1,16 +1,16 @@
 ---
-description: 本主題示範可用於 C++/CX 與 C++/WinRT 物件之間轉換的輔助函式。
+description: 本主題示範可用於 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 與 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 物件之間轉換的輔助函式。
 title: C++/WinRT 與 C++/CX 之間的互通性
 ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, 互通性, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b0c676276fa0974144f03b12c3037a42069641
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 0e54937391d3317f1b37415036aabc88a6cfaa41
+ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270056"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80290020"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT 與 C++/CX 之間的互通性
 
@@ -18,7 +18,7 @@ ms.locfileid: "68270056"
 
 本主題示範可用於 C++/CX 和 C++/WinRT 物件之間轉換的兩個輔助函式。 您可以使用它們在使用兩種語言投影的程式碼之間互通，或您可以使用函式，將程式碼從 C++/CX 逐漸移植到 C++/WinRT。
 
-## <a name="fromcx-and-tocx-functions"></a>from_cx 和 to_cx 函式
+## <a name="from_cx-and-to_cx-functions"></a>from_cx 和 to_cx 函式
 下列輔助函式將 C++/CX 物件轉換為對等的 C++/WinRT 物件。 函式將 C++/CX 物件轉換為其基礎 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) 介面指標。 然後它在該指標上呼叫 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))，以查詢 C++/WinRT 物件的預設介面。 **QueryInterface** 是 Windows 執行階段應用程式二進位介面 (ABI)，相當於 C++/CX safe_cast 擴充功能。 而且，[**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函式會擷取 C++/WinRT 物件之基礎 **IUnknown** 介面指標的位址，使其可設為另一個值。
 
 ```cppwinrt
@@ -52,7 +52,7 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 此範例專案也說明您可以如何對不同的程式碼孤立區使用命名空間別名，以處理 C++/WinRT 投影與 C++/CX 投影之間可能產生的命名空間衝突。
 
 - 建立 **Visual C++** \> **Windows 通用** > **核心應用程式 (C++/WinRT)** 專案。
-- 在專案屬性中：[C/C++]  \> [一般]  \> [使用 Windows 執行階段擴充功能]  \> [是 \(/ZW\)\]  。 如此會開啟適用於 C++/CX 的專案支援。
+- 在專案屬性中：[C/C++]  \> [一般]  \> [使用 Windows 執行階段擴充功能]  \> [是 (/ZW)]  。 如此會開啟適用於 C++/CX 的專案支援。
 - 將 `App.cpp` 的內容取代為下方的程式碼清單。
 
 `WINRT_ASSERT` 是巨集定義，而且會發展為 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。

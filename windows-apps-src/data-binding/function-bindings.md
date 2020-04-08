@@ -1,13 +1,13 @@
 ---
-description: XBind 標記延伸可讓用於標記的函式。
+description: XBind 標記延伸允許在標記中使用函式。
 title: x:Bind 中的函式
 ms.date: 02/06/2019
 ms.topic: article
-keywords: windows 10 uwp xBind
+keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
 ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66360077"
@@ -15,9 +15,9 @@ ms.locfileid: "66360077"
 # <a name="functions-in-xbind"></a>x:Bind 中的函式
 
 > [!NOTE]
-> 如需在您的應用程式中使用資料繫結的一般資訊 **{x： 繫結}** (以及之間的全面比較 **{x： 繫結}** 並 **{Binding}** )，請參閱[資料深入了解繫結](data-binding-in-depth.md)。
+> 針對如何在應用程式中以 **{x:Bind}** 使用資料繫結 (以及 **{x:Bind}** 和 **{Binding}** 的完整比較) 的相關資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
 
-從 Windows 10 版本 1607 開始， **{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這可讓：
+從 Windows 10 版本 1607 開始， **{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這可以：
 
 - 使完成值轉換更為簡單
 - 使繫結取決於多個參數
@@ -63,7 +63,7 @@ class ColorEntry
 
 函式的路徑是以和其他屬性路徑相同的方式指定，且可以包含句點 (.)、索引子或轉換來找出該函式。
 
-靜態函式可以使用 XMLNamespace:ClassName.MethodName 語法來指定。 例如，使用繫結至程式碼後置中的靜態函式的語法如下。
+靜態函式可以使用 XMLNamespace:ClassName.MethodName 語法來指定。 例如，使用下列語法繫結至程式碼後置中的靜態函式。
 
 ```xaml
 <Page 
@@ -87,7 +87,7 @@ namespace MyNamespace
 }
 ```
 
-您也可以直接在標記中使用系統函數，來完成簡單的案例，例如日期格式設定、 文字格式設定、 文字串連等，例如：
+您也可以直接在標記中使用系統函數來完成簡單的案例，例如日期格式設定、文字格式、文字串連等。例如：
 
 ```xaml
 <Page 
@@ -108,7 +108,7 @@ namespace MyNamespace
 - 引數類型需要符合傳入的資料，我們不會進行縮小轉換
 - 函式的傳回類型必須符合正在使用繫結的屬性類型
 
-繫結引擎會回應通知引發函式名稱，並重新評估視的 繫結的屬性變更。 例如: 
+繫結引擎會回應以函數名稱引發的屬性變更通知，並視需要重新評估繫結。 例如：
 
 ```xaml
 <DataTemplate x:DataType="local:Person">
@@ -164,7 +164,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> 您可以使用 x： 繫結中的函式，以達到相同的案例，為所支援轉換和 MultiBinding 在 WPF 中的透過。
+> 您可以使用 x:Bind 中的函式，達到與 WPF 中的轉換器和 MultiBinding 所支援的相同案例。
 
 ## <a name="function-arguments"></a>函式引數
 
@@ -178,7 +178,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>雙向函式繫結
 
-在雙向繫結案例中，必須針對繫結的相反方向指定第二個函式。 這是使用**連回**繫結屬性。 在下列範例中，函式應該採用一個引數是需要回推至模型的值。
+在雙向繫結案例中，必須針對繫結的相反方向指定第二個函式。 這是使用 **BindBack** 繫結屬性來完成。 在以下範例中，函式應該有一個引數是推回到模型所需的值。
 
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />

@@ -10,25 +10,33 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e975c47ae783fe9984950cf30cc82844b344aa7c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6d55c24dbf84e16e0bb4dedc9eaf2b89982e2993
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319267"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081624"
 ---
 # <a name="pivot"></a>樞紐分析
 
 [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\) 控制項可讓使用者在一小組內容區段之間進行觸控撥動。
 
-> **重要 API**：[Pivot 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)、[NavigationView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView) \(英文\)
+![預設焦點底線選取的標頭](images/pivot_focus_selectedHeader.png)
+
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[Pivot 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)、[NavigationView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView) \(英文\)
 
 ## <a name="examples"></a>範例
 
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/Pivot">開啟應用程式並查看 Pivot 控制項的運作情形</a>。</p>
     <ul>
@@ -191,7 +199,7 @@ Pivot 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-topics"></a>相關主題
 

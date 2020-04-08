@@ -4,11 +4,11 @@ title: 應用程式啟動效能的最佳做法
 description: 透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74254678"
@@ -107,7 +107,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 
 ![即時視覺化樹狀結構。](images/live-visual-tree.png)
 
-**使用延遲**。 將元素摺疊或將其不透明度設定為 0 並不會防止建立該元素。 使用 x:Load 或 x:DeferLoadStrategy，您便可延遲載入某個 UI，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在啟動畫面期間不顯示的 UI，讓您在需要時才載入該 UI，或是隨著延遲邏輯一起載入。 若要觸發載入，您只需要針對該元素呼叫 FindName。 如需範例和詳細資訊，請參閱 [x:Load 屬性](../xaml-platform/x-load-attribute.md)和 [x:DeferLoadStrategy 屬性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute)。
+**使用延遲**。 將元素摺疊或將其不透明度設定為 0 並不會防止建立該元素。 使用 x:Load 或 x:DeferLoadStrategy，您便可延遲載入某個 UI，而在需要時才加以載入。 這是一個相當好的方式，可延遲處理在啟動畫面期間不顯示的 UI，讓您在需要時才載入該 UI，或是隨著延遲邏輯一起載入。 若要觸發載入，您只需要針對該元素呼叫 FindName。 如需範例與詳細資訊，請參閱 [x:Load 屬性](../xaml-platform/x-load-attribute.md)與 [x:DeferLoadStrategy 屬性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute) \(部分機器翻譯\)。
 
 **虛擬化**。 如果您的 UI 中有清單或重複器內容，則強烈建議您使用 UI 虛擬化。 如果不將清單 UI 虛擬化，代價就是會在最前面建立所有元素，而這會導致啟動變慢。 請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)。
 

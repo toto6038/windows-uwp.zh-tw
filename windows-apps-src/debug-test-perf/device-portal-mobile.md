@@ -4,11 +4,11 @@ title: 行動裝置的 Device Portal
 description: 了解 Windows Device Portal 如何讓您從遠端設定並管理行動裝置。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，裝置入口網站
+keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
 ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/11/2019
 ms.locfileid: "72281887"
@@ -25,31 +25,31 @@ ms.locfileid: "72281887"
 
 ### <a name="turn-on-device-discovery-and-pairing"></a>開啟裝置探索和配對
 
-若要連線到 Device Portal，您必須在手機的設定中啟用裝置探索和 Device Portal。 這可讓您將手機與電腦或其他 Windows 10 裝置配對。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。
+若要連線到裝置入口網站，必須在手機的設定中啟用裝置探索和裝置入口網站。 這可讓您將手機與電腦或其他 Windows 10 裝置配對。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。
 
 第一次連線到 Device Portal 時，系統會要求您提供 6 個字元且區分大小寫的安全性驗證碼。 這可確保您具備手機的存取權，並讓您保持安全免於受到攻擊者入侵。 按下手機上的 [配對] 按鈕，即會產生並顯示驗證碼，接著請在瀏覽器的文字方塊中輸入這 6 個字元。
 
 ![開發人員模式裝置探索設定](images/device-portal/mob-dev-mode-pairing.png)
 
-您可以從三種連接到裝置入口網站的方式中選擇：USB、本機主機，以及透過區域網路（包括 VPN 和網際網路共用）。
+您可以從三種方式之中擇一連線到裝置入口網站：USB、本機主機、透過區域網路 (包括 VPN 和網際網路共用)。
 
-**連接至裝置入口網站**
+**連線到裝置入口網站**
 
 1. 在瀏覽器中，針對您使用的連接類型輸入位址 (如下所示)。
 
-    - USB： `http://127.0.0.1:10080`
+    - USB：`http://127.0.0.1:10080`
 
     當手機透過 USB 連線連接到電腦時，請使用這個位址。 這兩個裝置都必須具備 Windows 10 版本 1511或更新版本。
     
-    - Localhost： `http://127.0.0.1`
+    - 本機主機：`http://127.0.0.1`
 
     使用這個位址來在手機上適用於 Windows 10 行動裝置版的 Microsoft Edge 中於本機檢視 Device Portal。
     
-    - 區域網路： `https://<The IP address or hostname of the phone>`
+    - 區域網路：`https://<The IP address or hostname of the phone>`
 
     使用這個位址來透過區域網路連線。
 
-    手機的 IP 位址會顯示於手機上的 Device Portal 設定中。 HTTPS 需要進行驗證和安全通訊。 主機名稱（在系統 > 的設定 > 中可編輯）也可以用來存取區域網路上的裝置入口網站（例如， http://Phone360) ，這對於可能經常變更網路或 IP 位址或需要共用的裝置很有用。 
+    手機的 IP 位址會顯示於手機上的 Device Portal 設定中。 HTTPS 需要進行驗證和安全通訊。 主機名稱 (可在 [設定] > [系統] > [關於] 中編輯) 也可以用來在區域網路上存取裝置入口網站 (例如 http://Phone360) )。這對於經常會變更網路或 IP 位址，或是需要與他人共用的裝置來說相當有用。 
 
 2. 按下手機上的 [配對] 按鈕，來產生並顯示所需的安全性驗證碼
 
@@ -83,5 +83,5 @@ ms.locfileid: "72281887"
 
 ## <a name="see-also"></a>另請參閱
 
-* [Windows 裝置入口網站總覽](device-portal.md)
-* [裝置入口網站核心 API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Windows 裝置入口網站概觀](device-portal.md)
+* [裝置入口網站核心 API 參考資料](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

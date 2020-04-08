@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c402b321c073b8b3450b14ca124e82b0fb9b1c
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 4f609f7ec989cf334d6b21a32ee8bde0e43203f0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340216"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081504"
 ---
 # <a name="text-block"></a>文字區塊
 
@@ -24,7 +24,7 @@ ms.locfileid: "71340216"
 
  TextBlock 是在應用程式中顯示唯讀文字的主要控制項。 您可以使用它來顯示單行或多行文字、內嵌的超連結，以及已設定格式的文字 (例如，粗體、斜體或加上底線)。
  
- > **重要 API**：[TextBlock 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[Text 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)、[Inlines 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
+ > **平台 API**：[TextBlock 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[Text 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)、[Inlines 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -39,7 +39,7 @@ ms.locfileid: "71340216"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/TextBlock">開啟應用程式並查看 TextBlock 運作情形</a>。</p>
     <ul>

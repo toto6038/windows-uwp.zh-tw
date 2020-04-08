@@ -12,22 +12,26 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c69c5e64d75e03ce5bb2ef0d82c3b816fe78a770
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: b91ca2de98142bf267cc42b56fba14a49a87bb06
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339429"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081244"
 ---
 # <a name="check-boxes"></a>核取方塊
 
- 
-
 核取方塊可用於選取或取消選取動作項目。 它可以用於單一項目或使用者可從中選擇的多個項目清單。 這個控制項有三個選項狀態：未選取、已選取，以及不確定。 當子選項集合同時含有未選取和已選取狀態時，請使用不確定狀態。
 
-> **重要 API**：[ 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
-
 ![核取方塊狀態範例](images/templates-checkbox-states-default.png)
+
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [ 類別](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 屬性](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -54,7 +58,7 @@ ms.locfileid: "71339429"
 
 <table>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/CheckBox">開啟應用程式並查看 CheckBox 運作情形</a>。</p>
     <ul>
@@ -185,7 +189,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 CheckBox 控制項是繼承自 [ToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)，且可以有三種狀態︰ 
 
-狀態 | 屬性 | 值
+State | 屬性 | 值
 ------|----------|------
 已核取 | IsChecked | **true** 
 未核取 | IsChecked | **false** 

@@ -11,29 +11,36 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a3bf48da5fdfff205b2013341aaf6869064ce341
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c73414e897cde652d03c9ebb92528b4504241ba3
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684368"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081635"
 ---
 # <a name="person-picture-control"></a>個人圖片控制項
 
-個人圖片控制項會顯示個人的虛擬人偶影像 (如果有的話)。要是沒有，則顯示個人的縮寫名或一般字符。 您可以使用控制項來顯示 [Contact 物件](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (管理個人連絡資訊的物件)，也可以手動提供連絡人資訊，例如顯示名稱和設定檔圖片。  
+個人圖片控制項會顯示個人的虛擬人偶影像 (如果有的話)。要是沒有，則顯示個人的縮寫名或一般字符。 您可以使用控制項來顯示 [Contact 物件](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (管理個人連絡資訊的物件)，也可以手動提供連絡人資訊，例如顯示名稱和設定檔圖片。
 
-> **重要 API**：[PersonPicture 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
-
-此圖例顯示兩個個人圖片控制項，伴隨兩個顯示使用者名稱的[文字區塊](text-block.md)元素。 
 ![個人圖片控制項](images/person-picture/person-picture_hero.png)
 
+ > 兩個個人圖片控制項，伴隨兩個顯示使用者名稱的[文字區塊](text-block.md)元素。
+
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **PersonPicture** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[PersonPicture 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 當您想要表示一個人及其連絡人資訊時，請使用個人圖片。 例如，以下是您可能使用控制項的時機︰
+
 * 顯示目前的使用者
 * 顯示通訊錄中的連絡人
-* 顯示訊息的寄件者 
+* 顯示訊息的寄件者
 * 顯示社交媒體連絡人
 
 圖中顯示連絡人清單中的個人圖片控制項：![個人圖片控制項](images/person-picture/person-picture-control.png)
@@ -43,7 +50,7 @@ ms.locfileid: "75684368"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/PersonPicture">開啟應用程式並查看 PersonPicture 運作情形</a>。</p>
     <ul>
@@ -79,7 +86,7 @@ ms.locfileid: "75684368"
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>使用個人圖片控制項來顯示的 Contact 物件
 
-您可以使用人員選擇器控制項來顯示 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件： 
+您可以使用人員選擇器控制項來顯示 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件：
 
 ```xaml
 <Page
@@ -95,7 +102,7 @@ ms.locfileid: "75684368"
 
         <PersonPicture
             Contact="{x:Bind CurrentContact, Mode=OneWay}" />
-            
+
         <Button Click="LoadContactButton_Click">Load contact</Button>
     </StackPanel>
 </Page>
@@ -127,7 +134,7 @@ namespace SampleApp
             this.InitializeComponent();
         }
 
-        private Windows.ApplicationModel.Contacts.Contact _currentContact; 
+        private Windows.ApplicationModel.Contacts.Contact _currentContact;
         public Windows.ApplicationModel.Contacts.Contact CurrentContact
         {
             get => _currentContact;
@@ -149,7 +156,7 @@ namespace SampleApp
             contact.LastName = "Sherman";
 
             // Get the app folder where the images are stored.
-            var appInstalledFolder = 
+            var appInstalledFolder =
                 Windows.ApplicationModel.Package.Current.InstalledLocation;
             var assets = await appInstalledFolder.GetFolderAsync("Assets");
             var imageFile = await assets.GetFileAsync("betsy.png");
@@ -167,11 +174,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> 為了保持程式碼簡單瞭解，此範例建立新的 Contact 物件。 在實際的應用程式中，您可以讓使用者選取連絡人，或使用 [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 來查詢連絡人清單。 如需擷取和管理連絡人的詳細資訊，請參閱[連絡人和行事曆文章](../../contacts-and-calendar/index.md)。 
+> 為了保持程式碼簡單瞭解，此範例建立新的 Contact 物件。 在實際的應用程式中，您可以讓使用者選取連絡人，或使用 [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 來查詢連絡人清單。 如需擷取和管理連絡人的詳細資訊，請參閱[連絡人和行事曆文章](../../contacts-and-calendar/index.md)。
 
 ## <a name="determining-which-info-to-display"></a>決定要顯示哪些資訊
 
-當您提供 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件時，個人圖片控制項會進行評估，判斷該物件可以顯示哪些資訊。 
+當您提供 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件時，個人圖片控制項會進行評估，判斷該物件可以顯示哪些資訊。
 
 如果有可用影像，控制項會依照下列順序，顯示找到的第一個影像：
 
@@ -181,7 +188,7 @@ namespace SampleApp
 
 您可以將 PreferSmallImage 屬性設定為 true 來變更影像。這樣會讓 SmallDisplayPicture 的優先順序高於 LargeDisplayPicture。
 
-如果沒有影像，控制項會顯示連絡人的名稱或縮寫名。如果沒有任何名稱資料，控制項會顯示連絡人資料，例如電子郵件地址或電話號碼。 
+如果沒有影像，控制項會顯示連絡人的名稱或縮寫名。如果沒有任何名稱資料，控制項會顯示連絡人資料，例如電子郵件地址或電話號碼。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 

@@ -1,5 +1,5 @@
 ---
-Description: 行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如天次或行事曆行程密度。
+Description: 行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如星期幾、行事曆行程密度。
 title: 行事曆日期選擇器
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
@@ -12,23 +12,27 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de2f1cefc47e8740bfebbe7853ae317d25ab9d0
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 28248b3df4a3444441c7a4a19f1a360150170b1c
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363215"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081245"
 ---
 # <a name="calendar-date-picker"></a>行事曆日期選擇器
 
- 
+行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如星期幾、行事曆行程密度。 您可以修改行事曆來提供其他內容，或限制可用的日期。
 
-行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如天次或行事曆行程密度。 您可以修改行事曆來提供其他內容，或限制可用的日期。
+**取得 Windows UI 程式庫**
 
-> **重要 API**：[CalendarDatePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)、[Date 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.date)、[DateChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
+> **平台 API**：[CalendarDatePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)、[Date 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.date)、[DateChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
+
 使用者可以使用**行事曆日期選擇器**，從內容相關行事曆檢視中挑選單一日期。 它的用途包括選擇約會或出發日期。
 
 若要讓使用者挑選已知的日期，例如出生日期 (行事曆內容不重要)，請考慮使用[日期選擇器](date-picker.md)。
@@ -40,7 +44,7 @@ ms.locfileid: "66363215"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/CalendarDatePicker">開啟應用程式並查看 CalendarDatePicker 運作情形</a>。</p>
     <ul>
@@ -106,7 +110,7 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 

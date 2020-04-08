@@ -4,11 +4,11 @@ title: 分析和效能的工具
 description: Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) 應用程式的效能。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ae0fc2eca3d32a0e491ef0d8ca00ef22c05eb27f
 ms.sourcegitcommit: 698a86640b365dc1ca772fb6f53ca556dc284ed6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/09/2019
 ms.locfileid: "68935767"
@@ -18,12 +18,12 @@ ms.locfileid: "68935767"
 
 Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) 應用程式的效能。 請依循下列連結來了解如何使用這些工具。
 
-**Visual Studio 中的 XAML UI 回應性工具**。 其中一個可用來測量您應用程式內效能影響的最佳工具是「XAML UI 回應性工具」。 這已[進行更新](https://devblogs.microsoft.com/wpf/new-ui-performance-analysis-tool-for-wpf-applications/)以支援更多案例。
+**Visual Studio 中的 XAML UI 回應性工具**。 其中一個可用來測量您應用程式內效能影響的最佳工具是「XAML UI 回應性工具」。 這已[更新](https://devblogs.microsoft.com/wpf/new-ui-performance-analysis-tool-for-wpf-applications/)以支援更多案例。
 
 另請參閱：
 
 |           |             |
 |-----------|-------------|
-| [使用 Visual Studio 診斷工具來分析 UWP 應用程式的效能](https://docs.microsoft.com/visualstudio/profiling/profiling-tools) | Visual Studio 分析工具可顯示應用程式的程式碼在您的程式執行時將時間用於何處，以協助您找出應用程式、函數和演算法效能瓶頸。 |
-| [XAML 效能:將以 XAML 建立的通用 Windows 應用程式體驗最大化的技術](https://channel9.msdn.com/Events/Build/2015/3-698) | 在此 //build 工作階段中，您將了解新的平台功能、新的工具功能和新技術，而大幅提升 XAML 型通用 Windows 應用程式的效能。 |
-| [Visual Studio 中的新 XAML 工具](https://channel9.msdn.com/Events/Build/2015/2-697) | 在此 //build 工作階段中，您將了解 Visual Studio 2015 中的某些新功能，包括重新設計的 Blend 經驗、UI 偵錯工具與 XAML 編輯器增強功能。 Visual Studio 2019 也提供這些工具 |
+| [使用 Visual Studio 診斷工具分析 UWP 應用程式的效能](https://docs.microsoft.com/visualstudio/profiling/profiling-tools) | Visual Studio 分析工具可顯示應用程式的程式碼在您的程式執行時將時間用於何處，以協助您找出應用程式、函數和演算法效能瓶頸。 |
+| [XAML 效能：最大化使用 XAML 建置的通用 Windows 應用程式體驗的技術](https://channel9.msdn.com/Events/Build/2015/3-698) | 在此 //build 工作階段中，您將了解新的平台功能、新的工具功能和新技術，而大幅提升 XAML 型通用 Windows 應用程式的效能。 |
+| [Visual Studio 中新的 XAML 工具](https://channel9.msdn.com/Events/Build/2015/2-697) | 在此 //build 工作階段中，您將了解 Visual Studio 2015 中的某些新功能，包括重新設計的 Blend 經驗、UI 偵錯工具與 XAML 編輯器增強功能。 這些工具也可以在 Visual Studio 2019 中取得 |

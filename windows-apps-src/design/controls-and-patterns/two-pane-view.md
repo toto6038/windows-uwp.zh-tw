@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a070a72324408746f67b8814554160a76ee0ce4
-ms.sourcegitcommit: e4b48989c91cd77ba73c90d9eb9cd67b88d52f21
+ms.openlocfilehash: 19b473ea964ee9c6cb82098e142f066258bcf30b
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79191643"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081437"
 ---
 # <a name="two-pane-view"></a>兩個窗格檢視
 
@@ -25,13 +25,15 @@ ms.locfileid: "79191643"
 > [!NOTE]
 > _雙螢幕裝置_是一種特殊裝置，具有獨特的功能。 這不等同於具有多個監視器的桌面裝置。 如需雙螢幕裝置的詳細資訊，請參閱[雙螢幕裝置簡介](/dual-screen/introduction)。 (如需您可以針對多個監視器最佳化應用程式的方式詳細資訊，請參閱[顯示多重檢視](/windows/uwp/design/layout/show-multiple-views)。)
 
-| 取得 Windows UI 程式庫 |
-| - |
-| 此控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](/uwp/toolkits/winui/)。 |
+**取得 Windows UI 程式庫**
 
-| 平台 API | Windows UI 程式庫 API |
+|  |  |
 | - | - |
-| [TwoPaneView 類別](/uwp/api/windows.ui.xaml.controls.twopaneview) | [TwoPaneView 類別](/uwp/api/microsoft.ui.xaml.controls.twopaneview) |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **TwoPaneView** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 程式庫 API：** [TwoPaneView 類別](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
+>
+> **平台 API：** [TwoPaneView 類別](/uwp/api/windows.ui.xaml.controls.twopaneview)
 
 在這整份文件中，我們將使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的[網頁](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：
 

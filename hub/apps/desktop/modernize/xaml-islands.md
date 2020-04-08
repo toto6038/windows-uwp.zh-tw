@@ -1,19 +1,19 @@
 ---
 description: 本指南可協助您直接在 WPF 和 Windows Forms 應用程式中建立 Fluent 型 UWP UI
 title: 傳統型應用程式中的 UWP 控制項
-ms.date: 01/24/2020
+ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 061ad7a3f63fc92dd2f865f8870c7de5edf862af
-ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
+ms.openlocfilehash: 0f596047cfdd01fcfca568ea1c63b1e2cc14c272
+ms.sourcegitcommit: 1670eec29b4360ec37cde2910b76078429273cb0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78935351"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80329501"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在傳統型應用程式中裝載 UWP XAML 控制項 (XAML Islands)
 
@@ -21,7 +21,7 @@ ms.locfileid: "78935351"
 
 您可以裝載衍生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的任何 UWP 控制項，包括：
 
-* Windows SDK 或 WinUI 程式庫所提供的任何第一方 UWP 控制項。
+* Windows SDK 所提供的任何第一方 UWP 控制項。
 * 任何自訂 UWP 控制項 (例如，由數個可搭配使用的 UWP 控制群組成的使用者控制項)。 您必須擁有自訂控制項的原始程式碼，才能使用您的應用程式進行編譯。
 
 基本上，會使用「UWP XAML 裝載 API」  來建立 XAML Islands。 這個 API 是由 Windows 10 版本 1903 SDK 中引進的數個 Windows 執行階段類別和 COM 介面所組成。 我們也在 [Windows 社區工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中提供一組 XAML Island .NET 控制項，在內部使用 UWP XAML 裝載 API，並為 WPF 和 Windows Forms 應用程式提供更方便的開發體驗。
@@ -30,6 +30,13 @@ ms.locfileid: "78935351"
 
 > [!NOTE]
 > 如果您有關於 XAML Islands 的意見反應，請在 [Microsoft.Toolkit.Win32 存放庫](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)中建立新問題，並留下您的意見。 如果您想要私下提交意見反應，可以將意見反應傳送到 XamlIslandsFeedback@microsoft.com。 您的深入解析和案例對我們而言非常重要。
+
+## <a name="requirements"></a>需求
+
+XAML Islands 具有下列執行階段需求：
+
+* Windows 10 版本 1903 或更新版本。
+* 如果您的應用程式沒有封裝在 [MSIX 套件](https://docs.microsoft.com/windows/msix)中以供部署，則電腦必須安裝 [C++ Visual Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
 
 ## <a name="wpf-and-windows-forms-applications"></a>WPF 和 Windows Form 應用程式
 
@@ -99,7 +106,11 @@ XAML Island .NET 控制項需要 Windows 10 版本 1903 或更新版本。 若�
 
 C++ Win32 應用程式不支援 XAML Island .NET 控制項。 這些應用程式必須改為使用 Windows 10 SDK (版本 1903 和更新版本) 所提供的「UWP XAML 裝載 API」  。
 
-UWP XAML 裝載 API 是由數個 Windows 執行階段類別和 COM 介面所組成，您的 C++ Win32 應用程式可以用來裝載任何衍生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的 UWP 控制項。 您可以在具有相關聯視窗控制碼 (HWND) 的應用程式中，將 UWP 控制項裝載於任何 UI 元素中。 如需此 API 的詳細資訊，包括必要條件，請參閱[在 C++ Win32 應用程式中使用 UWP XAML 裝載 API](using-the-xaml-hosting-api.md)。
+UWP XAML 裝載 API 是由數個 Windows 執行階段類別和 COM 介面所組成，您的 C++ Win32 應用程式可以用來裝載任何衍生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的 UWP 控制項。 您可以在具有相關聯視窗控制碼 (HWND) 的應用程式中，將 UWP 控制項裝載於任何 UI 元素中。 如需此 API 的詳細資訊，請參閱下列文章：
+
+* [在 C++ Win32 應用程式中使用 UWP XAML 裝載 API](using-the-xaml-hosting-api.md)
+* [在 C++ Win32 應用程式中裝載標準 UWP 控制項](host-standard-control-with-xaml-islands-cpp.md)
+* [在 C++ Win32 應用程式中裝載自訂 UWP 控制項](host-custom-control-with-xaml-islands-cpp.md)
 
 > [!NOTE]
 > 「Windows 社區工具組」中包裝的控制項和主控制項，會在內部使用 UWP XAML 裝載 API，並在您直接使用 UWP XAML 裝載 API (包括鍵盤導覽和版面配置變更) 的情況下，實作您需要自行處理的所有行為。 對於 WPF 和 Windows Forms 應用程式，我們強烈建議您使用這些控制項，而不是直接使用 UWP XAML 裝載 API，因為它們會抽象化許多使用 API 的實作詳細資料。
@@ -112,7 +123,33 @@ UWP XAML 裝載 API 是由數個 Windows 執行階段類別和 COM 介面所組�
 
 隨附於 Windows SDK 的此圖表底部會出現 API。 包裝的控制項和主控制項可透過「Windows 社區工具組」中的 NuGet 套件來取得。
 
-## <a name="window-host-context-for-xaml-islands"></a>XAML Island 的視窗裝載內容
+## <a name="limitations-and-workarounds"></a>限制和因應措施
+
+下列各節將討論使用 XAML Islands 的傳統型應用程式中某些 UWP 開發案例的限制和因應措施。 
+
+### <a name="supported-only-with-workarounds"></a>有因應措施才能使用
+
+:heavy_check_mark:若要在 XAML Island 中存取 XAML 內容樹狀結構的根元素，並取得其裝載所在內容的相關資訊，請勿使用 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、[Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 類別。 而是改成使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 類別。 如需詳細資訊，請參閱[本節](#window-host-context-for-xaml-islands)。
+
+:heavy_check_mark:若要從 WPF、Windows Forms 或C++ Win32 應用程式支援[分享協定](/windows/uwp/app-to-app/share-data)，您的應用程式必須使用 [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) 介面來取得 [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) 物件，以起始特定視窗的共用作業。 如需示範如何在 WPF 應用程式中使用此介面的範例，請參閱 [ShareSource 範例](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource)。
+
+:heavy_check_mark:不支援在 XAML Islands 中搭配使用 `x:Bind` 與裝載控制項。 您將必須在 .NET Standard 程式庫中宣告資料模型。
+
+### <a name="not-supported"></a>不受支援
+
+:no_entry_sign:使用 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項，在以 .NET Framework 為目標的 WPF 和 Windows Forms 應用程式中，裝載 C# 型協力廠商 UWP 控制項。 只有以 .NET Core 3 為目標的應用程式才支援此案例。
+
+:no_entry_sign:在執行階段，XAML Islands 中的 UWP XAML 內容不會回應從深色變淺色的 Windows 主題變更，反之亦然。 內容會在執行階段回應高對比變更。
+
+:no_entry_sign:新增 **WebView** 控制項到自訂使用者控制項 (開啟執行緒、關閉執行緒或退出程序)。
+
+:no_entry_sign:在全螢幕模式中不支援 [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 控制項和 [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) 主控制項。
+
+:no_entry_sign:含手寫檢視的文字輸入。 如需這項功能的詳細資訊，請參閱[本文](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-handwriting-view)。
+
+:no_entry_sign:使用 `@Places` 和 `@People` 內容連結的文字控制項。 如需這項功能的詳細資訊，請參閱[本文](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links)。
+
+### <a name="window-host-context-for-xaml-islands"></a>XAML Island 的視窗裝載內容
 
 當您在桌面應用程式中裝載 XAML Island 時，您可以在相同的執行緒上同時執行 XAML 內容的多個樹狀結構。 若要在 XAML Island 中存取 XAML 內容樹狀結構的根元素，並取得其裝載所在內容的相關資訊，請使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 類別。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 類別不會提供 XAML Island 的正確資訊。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 物件存在於執行緒上，且可供您的應用程式存取，但不會傳回有意義的界限或可見度 (這些物件一律不可見，且大小為 1x1)。 如需詳細資訊，請參閱[視窗裝載](/windows/uwp/design/layout/show-multiple-views#windowing-hosts)。
 
@@ -131,9 +168,11 @@ Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
 
 如需您在 XAML Island 內容中應避免使用的一般視窗相關 API 的表格，以及建議的 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 取代項目，請參閱[本節](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts)的表格。
 
+如需示範如何在 WPF 應用程式中使用此介面的範例，請參閱 [ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource) 範例。
+
 ## <a name="feature-roadmap"></a>功能藍圖
 
-以下是自從 Windows 10 版本 1903 和 6.0 版「Windows 社區工具組」起 XAML Islands 相關功能的目前狀態：
+以下是與 XAML Islands 相關功能的目前狀態：
 
 * **C++ Win32 應用程式：** UWP XAML 裝載 API 會被視為從 Windows 10 版本 1903 起的 1.0 版。
 * **以 .NET Framework 4.6.2 和更新版本為目標的受控應用程式：** [6.0.0 版 NuGet 套件](#configure-your-project-to-use-the-xaml-island-net-controls)中所提供的 XAML Island 控制項，會被視為以 .NET Framework 4.6.2 和更新版本為目標的應用程式 1.0 版。

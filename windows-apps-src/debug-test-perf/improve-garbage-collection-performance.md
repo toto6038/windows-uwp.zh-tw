@@ -4,11 +4,11 @@ title: 改善記憶體回收效能
 description: 使用 C# 和 Visual Basic 撰寫的通用 Windows 平台 (UWP) app 會從 .NET 記憶體回收行程自動管理記憶體。 本節摘要說明 UWP app 中的 .NET 記憶體回收行程的行為和效能最佳做法。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9e7cc16b65f4ee2727fae5a711da9372ee91c01
 ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/11/2019
 ms.locfileid: "72282195"
@@ -18,7 +18,7 @@ ms.locfileid: "72282195"
 
 使用 C# 和 Visual Basic 撰寫的通用 Windows 平台 (UWP) app 會從 .NET 記憶體回收行程自動管理記憶體。 本節摘要說明 UWP app 中的 .NET 記憶體回收行程的行為和效能最佳做法。 如需 .NET 記憶體回收行程如何運作，以及用於偵錯和分析記憶體回收行程效能之工具的詳細資訊，請參閱[記憶體回收](https://docs.microsoft.com/dotnet/standard/garbage-collection/index)。
 
-**請注意**，  需要介入垃圾收集行程的預設行為，強烈表示您的應用程式發生一般記憶體問題。 如需詳細資訊，請參閱[在 Visual Studio 2015 偵錯時的記憶體使用量工具](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/)。 本主題僅適用於 C# 和 Visual Basic。
+**注意**  當應用程式發生一般記憶體問題時，很可能需要介入記憶體回收行程的預設行為。 如需詳細資訊，請參閱[在 Visual Studio 2015 偵錯時的記憶體使用量工具](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/)。 本主題僅適用於 C# 和 Visual Basic。
 
  
 
@@ -42,7 +42,7 @@ ms.locfileid: "72282195"
 
 您可以透過呼叫 [**GC.Collect(n)** ](https://docs.microsoft.com/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 引發世代的記憶體回收，其中 n 是您要回收的世代 (0、1 或 2)。
 
-**注意**  建議您不要在應用程式中強制進行垃圾收集，因為垃圾收集行程會使用許多啟發學習法來判斷執行集合的最佳時間，而且強制集合在許多情況下都不需要使用 CPU。 但如果您知道 app 中有大量不再使用的物件，而且希望將這個記憶體還給系統，此時就適合強制記憶體回收。 例如，您可以在載入遊戲的最後階段引發回收，以便在遊戲開始前釋放記憶體。
+**注意**  建議您不要在應用程式中強制記憶體回收，因為記憶體回收行程使用許多啟發學習法來判斷執行回收的最佳時間，在許多情況下，強制回收會造成不必要的 CPU 使用。 但如果您知道 app 中有大量不再使用的物件，而且希望將這個記憶體還給系統，此時就適合強制記憶體回收。 例如，您可以在載入遊戲的最後階段引發回收，以便在遊戲開始前釋放記憶體。
  
 若要避免不慎引發太多記憶體回收，可以將 [**GCCollectionMode**](https://docs.microsoft.com/dotnet/api/system.gccollectionmode) 設為 **Optimized**。 這樣會指示記憶體回收行程只在確定回收效能夠高時，才開始回收。
 
@@ -74,7 +74,7 @@ ms.locfileid: "72282195"
 
 ### <a name="avoid-reference-rich-objects"></a>避免太多參考的物件
 
-記憶體回收行程會依照物件之間 (從應用程式的根目錄開始)的參考，判斷哪些物件為作用中。 如需詳細資訊，請參閱[記憶體回收期間執行的動作](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals)。 如果物件包含許多參考，記憶體回收行程就需要執行較多的動作。 常見的技巧（尤其是大型物件）是將參考豐富的物件轉換成沒有參考的物件（例如，而不是儲存參考、儲存索引）。 當然，這個技術只適用於邏輯上可以這麼做的物件。
+記憶體回收行程會依照物件之間 (從應用程式的根目錄開始)的參考，判斷哪些物件為作用中。 如需詳細資訊，請參閱[記憶體回收期間執行的動作](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals)。 如果物件包含許多參考，記憶體回收行程就需要執行較多的動作。 一個常見的技術 (通常用於大型物件) 是將大量參考的物件轉換為沒有參考的物件 (例如，不儲存參考，改為儲存索引)。 當然，這個技術只適用於邏輯上可以這麼做的物件。
 
 以索引取代物件參考對您的應用程式來說會是一個具破壞性且複雜的變更，但是這種做法對於含有大量參考的大型物件非常有效。 請只在您發現應用程式中的大量記憶體回收與大量參考的物件有關時，才執行這個作業。
 

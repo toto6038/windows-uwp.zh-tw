@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 13901e044cbf6a14ac0ede6e9ed0f451859e49a1
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 202c1cb16e461d7cfbbe82cea999f1ed17523850
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629149"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081057"
 ---
 # <a name="calendar-date-and-time-controls"></a>行事曆、日期和時間控制項
 
@@ -30,7 +30,7 @@ ms.locfileid: "77629149"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/category/DataInput">開啟應用程式並查看這些控制項的運作情形</a>。</p>
     <ul>
@@ -67,7 +67,7 @@ ms.locfileid: "77629149"
 
 ### <a name="calendar-date-picker"></a>行事曆日期選擇器
 
-**CalendarDatePicker** 是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如天次或行事曆行程密度。 您可以修改行事曆來提供其他內容，或限制可用的日期。
+**CalendarDatePicker** 是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如星期幾或行事曆行程密度。 您可以修改行事曆來提供其他內容，或限制可用的日期。
 
 如果尚未設定日期，進入點會顯示預留位置文字；否則，它會顯示所選的日期。 當使用者選取進入點時，行事曆檢視會展開，方便使用者選擇日期。 行事曆檢視與其他 UI 重疊；它不會將其他 UI 移開。
 

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d5014532be613e8284a1e2d6496f71b9f2b8e892
-ms.sourcegitcommit: 5002836b3c8d3e0f2970da1333ec8f42da861ae3
+ms.openlocfilehash: 00c51fed9f2d327afe6f493891b2744243501ea1
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071250"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080957"
 ---
 # <a name="dialog-controls"></a>對話方塊控制項
 
@@ -25,21 +25,26 @@ ms.locfileid: "77071250"
 
 ![對話方塊範例](../images/dialogs/dialog_RS2_delete_file.png)
 
+**取得 Windows UI 程式庫**
 
-> **重要 API**：[ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+|  |  |
+| - | - |
+| ![WinUI 標誌](../images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 使用對話方塊來通知使用者重要的資訊，或是在完成動作之前要求確認或其他資訊。
 
-如需使用對話方塊和使用飛出視窗 (類似的控制項) 之時機的建議，請參閱[對話方塊和飛出視窗](index.md)。 
+如需使用對話方塊和使用飛出視窗 (類似的控制項) 之時機的建議，請參閱[對話方塊和飛出視窗](index.md)。
 
 ## <a name="examples"></a>範例
 
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡開啟應用程式並查看 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 運作情形。</p>
     <ul>
@@ -66,7 +71,7 @@ ms.locfileid: "77071250"
     - 確保動作按鈕的文字簡潔扼要。 簡短字串可讓使用者快速且放心地進行選擇。
     - 除了安全、不具破壞性的動作之外，還可以選擇性地向使用者顯示一個或兩個與主要指示相關的動作按鈕。 這些「執行」動作按鈕可確認對話方塊的要點。 使用 PrimaryButton 和 SecondaryButton API 來新增這些「執行」動作。
     - 「執行」動作按鈕應該顯示為最左側按鈕。 安全、不具破壞性的動作應該顯示為最右側按鈕。
-    - 您可以隨意選擇將三個按鈕其中之一區分為對話方塊的預設按鈕。 使用 DefaultButton API 來區分其中一個按鈕。  
+    - 您可以隨意選擇將三個按鈕其中之一區分為對話方塊的預設按鈕。 使用 DefaultButton API 來區分其中一個按鈕。
 -   針對頁面上特定位置的內容相關錯誤，例如 (密碼欄位中的) 驗證錯誤，請使用 App 本身的畫布顯示內嵌錯誤，而不要使用對話方塊。
 - 使用 [ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)建置您的對話方塊體驗。 請勿使用已過時的 MessageDialog API。
 
@@ -236,8 +241,8 @@ private async void DisplaySubscribeDialog()
 ```
 
 ## <a name="confirmation-dialogs-okcancel"></a>確認對話方塊 (確定/取消)
-確認對話方塊可讓使用者確認要執行的動作。 使用者可以確認動作或選擇取消。  
-典型的確認對話方塊有兩個按鈕︰確認 (確定) 按鈕和取消按鈕。  
+確認對話方塊可讓使用者確認要執行的動作。 使用者可以確認動作或選擇取消。
+典型的確認對話方塊有兩個按鈕︰確認 (確定) 按鈕和取消按鈕。
 
 <ul>
     <li>

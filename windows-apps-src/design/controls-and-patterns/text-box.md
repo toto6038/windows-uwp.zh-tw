@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 07da54dddfffe082aa5633ac8eac3f342aaa6a5c
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: 0167d1f0ed69f8354fa6ee7cd77387aee9aee842
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302712"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081505"
 ---
 # <a name="text-box"></a>文字方塊
 
@@ -24,7 +24,13 @@ TextBox 控制項可讓使用者在應用程式中輸入文字。 這通常用�
 
 TextBox 具有眾多可精簡文字輸入的實用功能。 其提供熟悉的內建操作功能表，支援複製與貼上文字。 「全部清除」按鈕可讓使用者快速刪除所有已輸入的文字。 其亦具備預設啟用的內建拼字檢查功能。
 
-> **重要 API**：[TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -45,7 +51,7 @@ TextBox 具有眾多可精簡文字輸入的實用功能。 其提供熟悉的�
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/TextBox">開啟應用程式並查看 TextBox 運作情形</a>。</p>
     <ul>

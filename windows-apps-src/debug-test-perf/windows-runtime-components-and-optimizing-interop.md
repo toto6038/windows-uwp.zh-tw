@@ -1,14 +1,14 @@
 ---
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
-title: 優化 UWP 元件的 interop
-description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
+title: 針對 UWP 元件最佳化 Interop
+description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) 應用程式。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc68520bbf83ec637c0814c333dfada2f974d1e
 ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/03/2019
 ms.locfileid: "74735003"
@@ -16,7 +16,7 @@ ms.locfileid: "74735003"
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 元件和最佳化 Interop
 
 
-建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
+建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) 應用程式。
 
 ## <a name="best-practices-for-interoperability-with-uwp-components"></a>UWP 元件互通性的最佳做法
 
@@ -30,7 +30,7 @@ UWP 具有一個類型庫，這個類型庫可從任何可撰寫 UWP 應用程�
 
 當您在 C# 或 Visual Basic 中開發 UWP app 時，您使用的兩組最常見的 API 是 UWP API 與適用於 UWP app 的 .NET API。 一般來說，在 UWP 中定義的類型位於開頭為 "Windows." 的命名空間， 而 .NET 類型則位於開頭為 "System." 的命名空間， 但還是有些例外。 使用適用於 UWP app 的 .NET API 中所列的類型時，並不需要互通性。 如果您發現在使用 UWP 時效能不佳，可以改用適用於 UWP App 的 .NET，以獲得較佳的效能。
 
-**請注意**   隨附于 Windows 10 的大部分 UWP 元件都是在中C++執行，因此您可以在使用C#或 Visual Basic 時，跨越互通性界限。 一如往常，請務必先評估您的應用程式以了解使用 UWP 元件是否會影響應用程式的效能，再花費時間和精力變更程式碼。
+**注意**   大部分隨附在 Windows 10 中的 UWP 元件都是以 C++ 實作，因此從 C# 或 Visual Basic 使用這些元件時，可以跨越互通性界限。 一如往常，請務必先評估您的應用程式以了解使用 UWP 元件是否會影響應用程式的效能，再花費時間和精力變更程式碼。
 
 在這個主題中，當我們提到「UWP 元件」時，是指以 C# 或 Visual Basic 以外的語言所撰寫的元件。
 

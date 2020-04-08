@@ -10,25 +10,35 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6cc29260f5891cda74879618b59bb3762b7f18
-ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
+ms.openlocfilehash: edeebf177cf438931bb318ea19cd292a9c9b27c0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690414"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081596"
 ---
 # <a name="rating-control"></a>評分控制項
 
 評分控制項可讓使用者檢視並設定反映其對內容與服務滿意度的評分。 使用者可以使用觸控、手寫筆、滑鼠、遊戲台或鍵盤，與評分控制項互動。 下列指導方針示範如何使用評分控制項的功能來提供彈性和自訂。
 
-> **重要 API**：[RatingControl 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+![評分控制項範例](images/rating_rs2_doc_ratings_intro.png)
+
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **RatingControl** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 程式庫 API：** [RatingControl 類別](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)
+>
+> **平台 API：** [RatingControl 類別](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ## <a name="examples"></a>範例
 
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/RatingControl">開啟應用程式並查看 RatingControl 運作情形</a>。</p>
     <ul>
@@ -38,8 +48,6 @@ ms.locfileid: "72690414"
 </td>
 </tr>
 </table>
-
-![評分控制項範例](images/rating_rs2_doc_ratings_intro.png)
 
 ### <a name="editable-rating-with-placeholder-value"></a>有預留位置值的可編輯評分
 

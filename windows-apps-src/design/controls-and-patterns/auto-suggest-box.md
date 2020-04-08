@@ -12,20 +12,26 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 86386c75407cb1132cc71766e4e126b7e0e3c81b
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: e8a4c347bd2baa51115ecd9315f923e205133a6e
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339471"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081266"
 ---
 # <a name="auto-suggest-box"></a>自動建議方塊
 
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
-> **重要 API**：[AutoSuggestBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)[TextChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen)[QuerySubmitted 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
-
 ![自動建議方塊](images/controls/auto-suggest-box-open.png)
+
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[AutoSuggestBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)[TextChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen)[QuerySubmitted 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -38,7 +44,7 @@ ms.locfileid: "71339471"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/AutoSuggestBox">開啟應用程式並查看 AutoSuggestBox 運作情形</a>。</p>
     <ul>
@@ -143,7 +149,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
-根據預設，文字輸入方塊沒有顯示 \[查詢\] 按鈕。 您可以設定 [QueryIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) 屬性，以便在文字方塊右側新增包含指定圖示的按鈕。 例如，若要讓 AutoSuggestBox 看起來像是典型的搜尋方塊，請新增 \[尋找\] 圖示，如下所示。
+文字輸入方塊預設不會顯示查詢按鈕。 您可以設定 [QueryIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) 屬性，以便在文字方塊右側新增包含指定圖示的按鈕。 例如，若要讓 AutoSuggestBox 看起來像是典型的搜尋方塊，請加入「Find」圖示，就像這樣：
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>

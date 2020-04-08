@@ -4,14 +4,14 @@ title: HoloLens 的 Device Portal API 參考
 description: 了解 HoloLens 的 Windows Device Portal REST API，您可以用來存取資料，並以程式設計方式控制您的裝置。
 ms.date: 03/22/2018
 ms.topic: article
-keywords: windows 10 uwp，裝置入口網站
+keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aeb068908adf6d6c40a50cee3aececba1861ee8
-ms.sourcegitcommit: 81511fddf1393dffcfc069c769bb149da99529b1
-ms.translationtype: MT
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59013335"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63801387"
 ---
 # <a name="device-portal-api-reference-for-hololens"></a>HoloLens 的 Device Portal API 參考
 
@@ -32,19 +32,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -63,19 +63,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -94,19 +94,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -126,19 +126,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -160,21 +160,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 必要   | (**required**) 決定 Device Portal 是否需要 HTTPS。 可能的值為 **yes**、**no** 與 **default**。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -196,21 +196,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | ipd   | (**required**) 要儲存的新 IPD 值。 此值應該以公釐表示。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -234,21 +234,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | clientmode   | (**必要**) 決定追蹤模式。 **active** 的值會在無法被動地建立視覺追蹤模式時強制建立它。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -269,25 +269,25 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
 下表指明可能的值。
 
-| 值 | 描述 |
+| 值 | 說明 |
 | --- | --- |
-| 1 | 一般 |
+| 1 | 標準 |
 | 2 | 暖 |
-| 3 | 嚴重 |
+| 3 | 重大 |
 
 **狀態碼**
 
@@ -309,22 +309,22 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 優先順序   | (**建立控制項串流時為必要**) 指出串流的優先順序。 |
 | streamid   | (**張貼到已建立的串流時為必要**) 要張貼到之串流的識別碼。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -343,19 +343,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -374,25 +374,25 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
 - 標準狀態碼。
 
-### <a name="get-the-simulation-mode"></a>取得的模擬模式
+### <a name="get-the-simulation-mode"></a>取得模擬模式
 
 **要求**
 
@@ -405,19 +405,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -438,21 +438,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | mode   | (**必要**) 指出模擬模式。 可能的值包括 **default**、**simulation**、**remote** 與 **legacy**。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -475,21 +475,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 記錄   | (**必要**) 要刪除之錄製的名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -508,19 +508,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -541,21 +541,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 記錄   | (**必要**) 要取得之錄製的名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -574,19 +574,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -607,21 +607,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 記錄   | (**必要**) 要取得之錄製的名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -642,21 +642,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 記錄   | (**必要**) 要載入之錄製的名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -677,21 +677,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 記錄   | (**必要**) 要暫停之錄製的名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -712,21 +712,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 記錄   | (**必要**) 要播放之錄製的名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -747,21 +747,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 記錄   | (**必要**) 要停止之錄製的名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -782,21 +782,21 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | 記錄   | (**必要**) 要卸載之錄製的名稱。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -815,19 +815,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -848,19 +848,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -881,7 +881,7 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | head   | (**請參閱下面的內容**) 將此值設定為 1 來指出系統應該記錄頭部資料。 |
 | hands   | (**請參閱下面的內容**) 將此值設定為 1 來指出系統應該記錄手勢資料。 |
@@ -894,15 +894,15 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -921,19 +921,19 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -956,21 +956,21 @@ DELETE | /api/holographic/mrc/file |
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | filename   | (**必要**) 要刪除的影片檔名稱。 名稱應該是 hex64 編碼。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -991,22 +991,22 @@ DELETE | /api/holographic/mrc/file |
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | filename   | (**必要**) 要取得的影片檔名稱。 名稱應該是 hex64 編碼。 |
 | op   | (**選用**) 若要下載串流，請將此值設定為 **stream**。 |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1025,19 +1025,19 @@ DELETE | /api/holographic/mrc/file |
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1056,19 +1056,19 @@ DELETE | /api/holographic/mrc/file |
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1087,19 +1087,19 @@ DELETE | /api/holographic/mrc/file |
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1118,19 +1118,19 @@ DELETE | /api/holographic/mrc/file |
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1149,19 +1149,19 @@ DELETE | /api/holographic/mrc/file |
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1180,19 +1180,19 @@ DELETE | /api/holographic/mrc/file |
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1211,19 +1211,19 @@ DELETE | /api/holographic/mrc/file |
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1246,7 +1246,7 @@ DELETE | /api/holographic/mrc/file |
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | pv   | (**選用**) 指出是否擷取 PV 相機。 應該是 **true** 或 **false**。 |
 | holo   | (**選用**) 指出是否擷取全像投影。 應該是 **true** 或 **false**。 |
@@ -1255,15 +1255,15 @@ DELETE | /api/holographic/mrc/file |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1284,7 +1284,7 @@ DELETE | /api/holographic/mrc/file |
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | pv   | (**選用**) 指出是否擷取 PV 相機。 應該是 **true** 或 **false**。 |
 | holo   | (**選用**) 指出是否擷取全像投影。 應該是 **true** 或 **false**。 |
@@ -1293,15 +1293,15 @@ DELETE | /api/holographic/mrc/file |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1322,7 +1322,7 @@ DELETE | /api/holographic/mrc/file |
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | pv   | (**選用**) 指出是否擷取 PV 相機。 應該是 **true** 或 **false**。 |
 | holo   | (**選用**) 指出是否擷取全像投影。 應該是 **true** 或 **false**。 |
@@ -1331,15 +1331,15 @@ DELETE | /api/holographic/mrc/file |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 
@@ -1360,7 +1360,7 @@ DELETE | /api/holographic/mrc/file |
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數 | 描述 |
+| URI 參數 | 說明 |
 | :---          | :--- |
 | pv   | (**選用**) 指出是否擷取 PV 相機。 應該是 **true** 或 **false**。 |
 | holo   | (**選用**) 指出是否擷取全像投影。 應該是 **true** 或 **false**。 |
@@ -1369,15 +1369,15 @@ DELETE | /api/holographic/mrc/file |
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**
 
-- None
+- 無
 
 **狀態碼**
 

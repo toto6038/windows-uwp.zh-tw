@@ -1,92 +1,92 @@
 ---
-title: 使用 Win32 的視覺分層
-description: 您可以使用視覺圖層來增強的 Win32 桌面應用程式 UI。
+title: 使用視覺層搭配 Win32
+description: 使用視覺層來增強 Win32 傳統型應用程式的 UI。
 template: detail.hbs
 ms.date: 03/18/2019
 ms.topic: article
-keywords: UWP、 轉譯、 組合，win32
+keywords: UWP, 轉譯, 組合, win32
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: c9b4ec38b0dd1f6eca3f43cfded74c6292c08100
 ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/24/2019
 ms.locfileid: "66215193"
 ---
-# <a name="using-the-visual-layer-with-win32"></a>使用 Win32 的視覺分層
+# <a name="using-the-visual-layer-with-win32"></a>使用視覺層搭配 Win32
 
-您可以使用 Windows 執行階段撰寫 Api (也稱為[視覺分層](/windows/uwp/composition/visual-layer)) 在您的 Win32 應用程式，以建立新式體驗也淺註冊 Windows 10 使用者。
+您可以在 Win32 應用程式中使用 Windows 執行階段 Composition API (又稱為[視覺層](/windows/uwp/composition/visual-layer))，建立適用於 Windows 10 使用者的現代化體驗。
 
-本教學課程的完整程式碼是可在 GitHub 上：[Win32 HelloComposition 範例](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition)。
+您可在 GitHub 上取得本教學課程的完整程式碼：[Win32 HelloComposition 範例](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition)。
 
-需要精確控制其 UI 複合應用程式的通用 Windows 應用程式可以存取[Windows.UI.Composition](/uwp/api/windows.ui.composition)執行精細的控制如何撰寫和轉譯其 UI 的命名空間。 這個撰寫 API 並不限於 UWP 應用程式，不過。 Win32 桌面應用程式可以利用新式的組合中的系統 UWP 和 Windows 10。
+需要精確控制其 UI 組合的通用 Windows 應用程式可以存取 [Windows.UI.Composition](/uwp/api/windows.ui.composition) 命名空間，更精細地控制其 UI 的組成與轉譯方式。 不過，此 Composition API 並不限於 UWP 應用程式。 Win32 傳統型應用程式可利用 UWP 和 Windows 10 中的新式組合系統。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
-裝載 API UWP 有這些必要條件。
+UWP 主控 API 具備下列先決條件。
 
-- 我們假設您已熟悉使用 Win32 與 UWP 應用程式開發。 如需詳細資訊，請參閱：
-  - [開始使用 Win32 和C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
+- 假設您對使用 Win32 和 UWP 進行應用程式開發已有一些熟悉。 如需詳細資訊，請參閱：
+  - [開始使用 Win32 和 C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
   - [開始使用 Windows 10 應用程式](/windows/uwp/get-started/)
-  - [加強適用於 Windows 10 桌面應用程式](/windows/uwp/porting/desktop-to-uwp-enhance)
-- Windows 10 1803 （含） 以後版本
-- 17134 或更新版本的 Windows 10 SDK
+  - [增強您的 Windows 10 傳統型應用程式](/windows/uwp/porting/desktop-to-uwp-enhance)
+- Windows 10 版本 1803 或更新版本
+- Windows 10 SDK 17134 或更新版本
 
-## <a name="how-to-use-composition-apis-from-a-win32-desktop-application"></a>如何使用撰寫 Api，從 Win32 桌面應用程式
+## <a name="how-to-use-composition-apis-from-a-win32-desktop-application"></a>如何從 Win32 傳統型應用程式使用 Composition API
 
-在本教學課程中，您會建立簡單的 Win32C++應用程式並為其新增 UWP 撰寫項目。 重點是在正確設定專案、 建立 interop 的程式碼，以及繪製簡單使用 Windows 撰寫 Api。 完成的應用程式看起來像這樣。
+在本教學課程中，您會建立簡單的 Win32 C++ 應用程式，並在其中新增 UWP 組合 元素。 重點在於正確地設定專案、建立 Interop 程式碼，以及使用 Windows Composition API 繪製簡單的東西。 完成的應用程式看起來像這樣。
 
-![執行的應用程式 UI](images/visual-layer-interop/win32-comp-interop-app-ui.png)
+![執行中的應用程式 UI](images/visual-layer-interop/win32-comp-interop-app-ui.png)
 
-## <a name="create-a-c-win32-project-in-visual-studio"></a>建立C++Visual Studio 中的 Win32 專案
+## <a name="create-a-c-win32-project-in-visual-studio"></a>在 Visual Studio 中建立 C++ Win32 專案
 
 第一個步驟是在 Visual Studio 中建立 Win32 應用程式專案。
 
-若要建立新的 Win32 應用程式專案中C++名為_HelloComposition_:
+若要使用 C++ 建立名為 _HelloComposition_ 的 Win32 應用程式專案：
 
-1. 開啟 Visual Studio，然後選取**檔案** > **新增** > **專案**。
+1. 開啟 Visual Studio，然後選取 [檔案]   > [新增]   > [專案]  。
 
-    **新的專案** 對話方塊隨即開啟。
-1. 底下**已安裝**分類中，展開**Visual C++** 節點，然後再選取**Windows Desktop**。
-1. 選取  **Windows 桌面應用程式**範本。
-1. 輸入名稱_HelloComposition_，然後按一下**確定**。
+    [新增專案]  對話方塊隨即開啟。
+1. 在 [已安裝]  類別下，展開 [Visual C++]  節點，然後選取 [Windows Desktop]  。
+1. 選取 [Windows 傳統型應用程式]  範本。
+1. 輸入名稱 _HelloComposition_，然後按一下 [確定]  。
 
     Visual Studio 會建立專案，並開啟主要應用程式檔案的編輯器。
 
-## <a name="configure-the-project-to-use-windows-runtime-apis"></a>將專案設定為使用 Windows 執行階段 Api
+## <a name="configure-the-project-to-use-windows-runtime-apis"></a>設定專案以使用 Windows 執行階段 API
 
-若要使用 Windows 執行階段 (WinRT) Api 在 Win32 應用程式中，我們使用C++/WinRT。 您需要設定 Visual Studio 專案，以新增C++/WinRT 支援。
+若要在 Win32 應用程式中使用 Windows 執行階段 (WinRT) API，我們會使用 C++/WinRT。 您必須設定您的 Visual Studio 專案，以新增 C++/WinRT 支援。
 
-(如需詳細資訊，請參閱 <<c0> [ 開始使用C++/WinRT-修改 Windows 桌面應用程式專案，以加入C++/WinRT 支援](/windows/uwp/cpp-and-winrt-apis/get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support))。</c0>
+(如需詳細資訊，請參閱[開始使用 C++/WinRT - 修改 Windows 傳統型應用程式專案來新增 C++/WinRT 支援](/windows/uwp/cpp-and-winrt-apis/get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。)
 
-1. 從**專案**功能表上，開啟專案屬性 (_HelloComposition 屬性_)，並確定下列設定設為指定的值：
+1. 從 [專案]  功能表，開啟專案屬性 (_HelloComposition 屬性_)，並確定下列設定已設定為指定的值：
 
-    - 針對**組態**，選取_所有組態_。 針對**平台**，選取_所有平台_。
-    - **組態屬性** > **一般** > **Windows SDK 版本** = _10.0.17763.0_或更新版本
+    - 針對 [設定]  ，選取 [所有設定]  。 針對 [平台]  ，選取 [所有平台]  。
+    - [設定屬性]   > [一般]   > [Windows SDK 版本]   = _10.0.17763.0_ 或更高版本
 
     ![設定 SDK 版本](images/visual-layer-interop/sdk-version.png)
 
-    - **C /C++** > **語言** >   **C++語言標準** = _ISO C++ c++17 標準 (/ stf:c + + 17)_
+    - [C/C++]   > [語言]   > [C++ 語言標準]   = _ISO C++ 17 標準 (/stf:c++17)_
 
-    ![設定標準的語言](images/visual-layer-interop/language-standard.png)
+    ![設定語言標準](images/visual-layer-interop/language-standard.png)
 
-    - **連結器** > **輸入** > **其他相依性**必須包含 「_windowsapp.lib_"。 如果它不包含在清單中，請將它加入。
+    - [連結器]   > [輸入]   > [其他相依性]  必須包含 "_windowsapp.lib_"。 如果未包含在清單中，請加以新增。
 
-    ![加入連結器相依性](images/visual-layer-interop/linker-dependencies.png)
+    ![新增連結器相依性](images/visual-layer-interop/linker-dependencies.png)
 
-1. 更新先行編譯標頭
+1. 更新預先編譯的標頭
 
-    - 重新命名`stdafx.h`並`stdafx.cpp`要`pch.h`和`pch.cpp`分別。
-    - 設定專案屬性**C /C++** > **先行編譯標頭** > **先行編譯標頭檔**到*pch.h*.
-    - 尋找和取代`#include "stdafx.h"`與`#include "pch.h"`中的所有檔案。
+    - 將 `stdafx.h` 和 `stdafx.cpp` 分別重新命名為 `pch.h` 和 `pch.cpp`。
+    - 將專案屬性 [C/C++]   > [預先編譯的標頭]   > [預先編譯的標頭]  設為 [pch.h]  。
+    - 在所有檔案中以 `#include "pch.h"` 尋找並取代 `#include "stdafx.h"`。
 
-        (**編輯** > **尋找和取代** > **檔案中尋找**)
+        ([編輯]   > [尋找和取代]   > [在檔案中尋找]  )
 
-        ![尋找和取代 stdafx.h](images/visual-layer-interop/replace-stdafx.png)
+        ![尋找並取代 stdafx.h](images/visual-layer-interop/replace-stdafx.png)
 
-    - 在  `pch.h`，包括`winrt/base.h`和`unknwn.h`。
+    - 在 `pch.h` 中包含 `winrt/base.h` 和 `unknwn.h`。
 
         ```cppwinrt
         // reference additional headers your program requires here
@@ -94,28 +94,28 @@ ms.locfileid: "66215193"
         #include <winrt/base.h>
         ```
 
-它是個不錯的主意，若要建置此專案目前以確定沒有任何錯誤，再繼續。
+在此時建立專案是個不錯的主意，可確定沒有任何錯誤，再繼續進行。
 
-## <a name="create-a-class-to-host-composition-elements"></a>建立類別以主應用程式組合項目
+## <a name="create-a-class-to-host-composition-elements"></a>建立類別來裝載組合元素
 
-主機內容來建立含視覺化的圖層，建立類別 (_CompositionHost_) 來管理 interop 及建立複合項目。 這是設定的您用來大部分裝載的 Api 組合，包括：
+若要裝載使用視覺層建立的內容，請建立類別 (_CompositionHost_) 來管理 Interop 並建立組合元素。 您可以在這裡進行用於託管 Composition API 的大部分組態，包括：
 
-- 取得[複合](/uwp/api/windows.ui.composition.compositor)，這會建立並管理中的物件[Windows.UI.Composition](/uwp/api/windows.ui.composition)命名空間。
-- 建立[DispatcherQueueController](/uwp/api/windows.system.dispatcherqueuecontroller)/[DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) WinRT api 管理工作。
-- 建立[DesktopWindowTarget](/uwp/api/windows.ui.composition.desktop.desktopwindowtarget)和顯示的組合物件的組合容器。
+- 取得 [Compositor](/uwp/api/windows.ui.composition.compositor)，其可在 [Windows.UI.Composition](/uwp/api/windows.ui.composition) 命名空間中會建立和管理物件。
+- 建立 [DispatcherQueueController](/uwp/api/windows.system.dispatcherqueuecontroller)/[DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) 來管理 WinRT API 的工作。
+- 建立 [DesktopWindowTarget](/uwp/api/windows.ui.composition.desktop.desktopwindowtarget) 和組合容器，以顯示組合物件。
 
-我們讓此類別為單一子句，以避免執行緒問題。 比方說，您可以只建立一個發送器佇列，每個執行緒，因此 CompositionHost 的相同執行緒上的第二個執行個體具現化會產生錯誤。
+我們將此類別設為單一實體，以避免執行緒問題。 例如，您只能為每個執行緒建立一個發送器佇列，因此在相同執行緒上具現化 CompositionHost 的第二個執行個體會造成錯誤。
 
 > [!TIP]
-> 如果您要檢查的完整程式碼的教學課程，以確定所有的程式碼是在正確的位置，當您完成本教學課程結尾處。
+> 如有需要，請在本教學課程最後檢查完整的程式碼，以確保當您逐步進行教學課程時，所有程式碼皆位於正確的位置。
 
 1. 將新的類別檔案新增到您的專案。
-    - 在 **方案總管**，以滑鼠右鍵按一下_HelloComposition_專案。
-    - 在操作功能表中，選取**新增** > **類別...** .
-    - 在 [**加入類別**] 對話方塊中，將類別命名為_CompositionHost.cs_，然後按一下**新增**。
+    - 在 [方案總管]  中，以滑鼠右鍵按一下 [HelloComposition]  專案。
+    - 在內容功能表中，選取 [新增]   > [類別...]  。
+    - 在 [新增類別]  對話方塊中，將類別命名為 _CompositionHost.cs_，然後按一下 [新增]  。
 
-1. 包含標頭和_using_撰寫 interop 所需。
-    - 在 CompositionHost.h，加入下列_包含_在檔案頂端。
+1. 包含組合 Interop 所需的標頭和 _using_。
+    - 在 CompositionHost.h 中，在檔案頂端新增下列 _include_。
 
     ```cppwinrt
     #pragma once
@@ -124,7 +124,7 @@ ms.locfileid: "66215193"
     #include <DispatcherQueue.h>
     ```
 
-    - 在 CompositionHost.cpp，加入下列_using_頂端的檔案之後,_包含_。
+    - 在 CompositionHost.cpp 中，在檔案頂端的任何 _include_ 之後，新增下列 _using_。
 
     ```cppwinrt
     using namespace winrt;
@@ -135,9 +135,9 @@ ms.locfileid: "66215193"
     using namespace Windows::Foundation::Numerics;
     ```
 
-1. 編輯要使用單一子句模式的類別。
-    - 在 CompositionHost.h，請建構函式私用。
-    - 宣告的公用靜態_GetInstance_方法。
+1. 編輯類別，以使用單一模式。
+    - 在 CompositionHost.h 中，將建構函式設為私人的。
+    - 宣告公用靜態 _GetInstance_ 方法。
 
     ```cppwinrt
     class CompositionHost
@@ -151,7 +151,7 @@ ms.locfileid: "66215193"
     };
     ```
 
-    - 在 CompositionHost.cpp，定義加入_GetInstance_方法。
+    - 在 CompositionHost.cpp 中，新增 _GetInstance_ 方法的定義。
 
     ```cppwinrt
     CompositionHost* CompositionHost::GetInstance()
@@ -161,7 +161,7 @@ ms.locfileid: "66215193"
     }
     ```
 
-1. 在 CompositionHost.h，複合、 DispatcherQueueController，和 DesktopWindowTarget 變數宣告私用成員。
+1. 在 CompositionHost.h 中，宣告 Compositor、DispatcherQueueController 和 DesktopWindowTarget 的私人成員變數。
 
     ```cppwinrt
     winrt::Windows::UI::Composition::Compositor m_compositor{ nullptr };
@@ -169,17 +169,17 @@ ms.locfileid: "66215193"
     winrt::Windows::UI::Composition::Desktop::DesktopWindowTarget m_target{ nullptr };
     ```
 
-1. 新增公用的方法，以初始化撰寫 interop 物件。
+1. 新增公用方法，以初始化組合 Interop 物件。
     > [!NOTE]
-    > 在 _初始化_，您呼叫_EnsureDispatcherQueue_， _CreateDesktopWindowTarget_，以及_CreateCompositionRoot_方法。 您在後續步驟中建立這些方法。
+    > 在 _Initialize_中，您可呼叫 _EnsureDispatcherQueue_、_CreateDesktopWindowTarget_ 和 _CreateCompositionRoot_ 方法。 您會在後續步驟中建立這些方法。
 
-    - 在 CompositionHost.h，宣告名為公用方法_初始化_會做為引數的 HWND。
+    - 在 CompositionHost.h 中，宣告名為 _Initialize_ 的公用方法，其採用 HWND 作為引數。
 
     ```cppwinrt
     void Initialize(HWND hwnd);
     ```
 
-    - 在 CompositionHost.cpp，定義加入_初始化_方法。
+    - 在 CompositionHost.cpp 中，新增 _Initialize_ 方法的定義。
 
     ```cppwinrt
     void CompositionHost::Initialize(HWND hwnd)
@@ -192,17 +192,17 @@ ms.locfileid: "66215193"
     }
     ```
 
-1. 將使用 Windows 撰寫的執行緒上建立發送器佇列。
+1. 在即將使用 Windows Composition 的執行緒上建立發送器佇列。
 
-    必須有發送器佇列，因此這個方法在初始化期間呼叫第一個執行緒上建立複合。
+    必須在具有發送器佇列的執行緒上建立 Compositor，因此會在初始化期間先呼叫這個方法。
 
-    - 在 CompositionHost.h，宣告名為私用方法_EnsureDispatcherQueue_。
+    - 在 CompositionHost.h 中，宣告名為 _EnsureDispatcherQueue_ 的私人方法。
 
     ```cppwinrt
     void EnsureDispatcherQueue();
     ```
 
-    - 在 CompositionHost.cpp，定義加入_EnsureDispatcherQueue_方法。
+    - 在 CompositionHost.cpp 中，新增 _EnsureDispatcherQueue_ 方法的定義。
 
     ```cppwinrt
     void CompositionHost::EnsureDispatcherQueue()
@@ -225,14 +225,14 @@ ms.locfileid: "66215193"
     }
     ```
 
-1. 註冊您的應用程式視窗做為撰寫目標。
-    - 在 CompositionHost.h，宣告名為私用方法_CreateDesktopWindowTarget_會做為引數的 HWND。
+1. 將應用程式的視窗註冊為組合目標。
+    - 在 CompositionHost.h 中，宣告名為 _CreateDesktopWindowTarget_ 的私人方法，其會採用 HWND 作為引數。
 
     ```cppwinrt
     void CreateDesktopWindowTarget(HWND window);
     ```
 
-    - 在 CompositionHost.cpp，定義加入_CreateDesktopWindowTarget_方法。
+    - 在 CompositionHost.cpp 中，新增 _CreateDesktopWindowTarget_ 方法的定義。
 
     ```cppwinrt
     void CompositionHost::CreateDesktopWindowTarget(HWND window)
@@ -246,14 +246,14 @@ ms.locfileid: "66215193"
     }
     ```
 
-1. 建立來保存視覺物件的根視覺容器。
-    - 在 CompositionHost.h，宣告名為私用方法_CreateCompositionRoot_。
+1. 建立根視覺容器來保存視覺物件。
+    - 在 CompositionHost.h 中，宣告名為 _CreateCompositionRoot_ 的私人方法。
 
     ```cppwinrt
     void CreateCompositionRoot();
     ```
 
-    - 在 CompositionHost.cpp，定義加入_CreateCompositionRoot_方法。
+    - 在 CompositionHost.cpp 中，新增 _CreateCompositionRoot_ 方法的定義。
 
     ```cppwinrt
     void CompositionHost::CreateCompositionRoot()
@@ -265,24 +265,24 @@ ms.locfileid: "66215193"
     }
     ```
 
-建置專案，現在先確定沒有任何錯誤。
+立即建立專案，以確保沒有任何錯誤。
 
-這些方法會設定 UWP 視覺分層和 Win32 Api 之間的互通性所需的元件。 現在您可以將內容加入您的應用程式。
+這些方法會設定在 UWP 視覺層與 Win32 API 之間進行 Interop 所需的元件。 您現在可以將內容新增至您的應用程式。
 
-### <a name="add-composition-elements"></a>將複合項目
+### <a name="add-composition-elements"></a>新增組合元素
 
-就地基礎結構，您現在可以產生您想要顯示的組合內容。
+基礎結構已就緒之後，即可產生要顯示的 Compositio 內容。
 
-針對此範例中，您將新增程式碼會建立隨機色彩正方形[SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)造成短暫的延遲之後卸除的動畫。
+在此範例中，您會新增程式碼來建立隨機彩色方塊 [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)，其中包含的動畫可使其在短暫延遲之後卸除。
 
-1. 新增撰寫項目。
-    - 在 CompositionHost.h，宣告名為公用方法_AddElement_採用 3 **float**做為引數的值。
+1. 新增組合元素。
+    - 在 CompositionHost.h 中，宣告名為 _AddElement_ 的公用方法，其採用 3 個 **float** 值作為引數。
 
     ```cppwinrt
     void AddElement(float size, float x, float y);
     ```
 
-    - 在 CompositionHost.cpp，定義加入_AddElement_方法。
+    - 在 CompositionHost.cpp 中，新增 _AddElement_ 方法的定義。
 
     ```cppwinrt
     void CompositionHost::AddElement(float size, float x, float y)
@@ -322,9 +322,9 @@ ms.locfileid: "66215193"
 
 ## <a name="create-and-show-the-window"></a>建立並顯示視窗
 
-現在，您可以將按鈕和 UWP 組合內容新增至 Win32 UI。
+現在，您可以將按鈕和 UWP 組合內容新增至您的 Win32 UI。
 
-1. 在 HelloComposition.cpp，頂端的檔案，包括_CompositionHost.h_、 定義 BTN_ADD，及取得 CompositionHost 的執行個體。
+1. 在 HelloComposition.cpp 的檔案頂端，包含 _CompositionHost.h_、定義 BTN_ADD，以及取得 CompositionHost 的執行個體。
 
     ```cppwinrt
     #include "CompositionHost.h"
@@ -335,14 +335,14 @@ ms.locfileid: "66215193"
     CompositionHost* compHost = CompositionHost::GetInstance();
     ```
 
-1. 在 `InitInstance`方法中，變更會建立視窗的大小。 (在這一行，變更`CW_USEDEFAULT, 0`至`900, 672`。)
+1. 在 `InitInstance` 方法中，變更所建立的視窗大小。 (在這一行中，將 `CW_USEDEFAULT, 0` 變更為 `900, 672`。)
 
     ```cppwinrt
     HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, 0, 900, 672, nullptr, nullptr, hInstance, nullptr);
     ```
 
-1. WndProc 函式中加入`case WM_CREATE`要_訊息_switch 區塊。 在此情況下，您會初始化 CompositionHost，並建立按鈕。
+1. 在 WndProc 函式中，將 `case WM_CREATE` 新增至 _message_ switch 區塊。 在此情況下，您會初始化 CompositionHost 並建立按鈕。
 
     ```cppwinrt
     case WM_CREATE:
@@ -358,9 +358,9 @@ ms.locfileid: "66215193"
     break;
     ```
 
-1. 也在 WndProc 函式會處理按下按鈕，將複合項目新增至 UI。 
+1. 此外，在 WndProc 函式中，處理 button click 以將組合元素新增至 UI。 
 
-    新增`case BTN_ADD`要_wmId_ WM_COMMAND 區塊內的 switch 區塊。
+    將 `case BTN_ADD` 新增至 WM_COMMAND 區塊內的 _wmId_ switch 區塊。
 
     ```cppwinrt
     case BTN_ADD: // addButton click
@@ -373,17 +373,17 @@ ms.locfileid: "66215193"
     }
     ```
 
-您現在可以建置並執行您的應用程式。 如果您要檢查的完整程式碼結尾的教學課程，以確定所有的程式碼是在正確的位置。
+您現在可以建置及執行您的應用程式。 如有需要，請在本教學課程最後檢查完整的程式碼，以確保所有程式碼皆位於正確的位置。
 
-當您執行應用程式，並按一下按鈕時，您應該會看到動畫加入至 UI 的平方。
+當您執行應用程式，並按一下按鈕時，應該會看見新增到 UI 的動畫方塊。
 
 ## <a name="additional-resources"></a>其他資源
 
 - [Win32 HelloComposition 範例 (GitHub)](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition)
-- [開始使用 Win32 和C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
-- [開始使用 Windows 10 應用程式](/windows/uwp/get-started/)(UWP)
-- [增強您的桌面應用程式適用於 Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
-- [Windows.UI.Composition 命名空間](/uwp/api/windows.ui.composition)(UWP)
+- [開始使用 Win32 和 C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
+- [開始使用 Windows 10 應用程式](/windows/uwp/get-started/) (UWP)
+- [增強您的 Windows 10 傳統型應用程式](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Windows.UI.Composition 命名空間](/uwp/api/windows.ui.composition) (UWP)
 
 ## <a name="complete-code"></a>完整程式碼
 
@@ -530,7 +530,7 @@ void CompositionHost::AddElement(float size, float x, float y)
 }
 ```
 
-### <a name="hellocompositioncpp-partial"></a>HelloComposition.cpp （部分）
+### <a name="hellocompositioncpp-partial"></a>HelloComposition.cpp (部分)
 
 ```cppwinrt
 #include "pch.h"

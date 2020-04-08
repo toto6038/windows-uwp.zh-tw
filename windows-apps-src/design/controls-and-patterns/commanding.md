@@ -1,16 +1,15 @@
 ---
 title: 通用 Windows 平台 (UWP) 應用程式中的命令
 description: 如何使用 XamlUICommand 和 StandardUICommand 類別 (連同 ICommand 介面) 來共用及管理各種控制項類型的命令 (不論所使用的裝置和輸入類型為何)。
-author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: cd34c9444c68b8e959f449124fe4ae294ec14fc4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 57e4a135e97c0a8f5d09834f2eb8c729c6422af0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257714"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081748"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 的通用 Windows 平台 (UWP) 應用程式中的命令
 
@@ -242,7 +241,7 @@ public class ListItemData
 }
 ```
 
-2. 在 MainPage 類別中，我們會針對 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate)定義 `ListItemData` 物件集合。 我們會接著在其中填入 5 個項目的初始集合 (使用文字和相關聯的 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) Delete)。
+2. 在 MainPage 類別中，我們會針對 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) 定義 `ListItemData` 物件集合。 我們會接著在其中填入 5 個項目的初始集合 (使用文字和相關聯的 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) Delete)。
 
 ```csharp
 /// <summary>
@@ -541,7 +540,7 @@ public class ListItemData
 }
 ```
 
-2. 在 MainPage 類別中，我們會針對 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate)定義 `ListItemData` 物件集合。 我們會接著在其中填入 5 個項目的初始集合 (使用文字和相關聯的 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand))。
+2. 在 MainPage 類別中，我們會針對 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) 定義 `ListItemData` 物件集合。 我們會接著在其中填入 5 個項目的初始集合 (使用文字和相關聯的 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand))。
 
 ```csharp
 ObservableCollection<ListItemData> collection = new ObservableCollection<ListItemData>();
@@ -1096,11 +1095,11 @@ namespace UICommand1
 - 使用您自己的一組預先定義屬性值來建立 XamlUICommand 物件
 - 使用一組預先定義的平台屬性和值來建立 StandardUICommand 物件
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 如需示範 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 實作的完整範例，請參閱 [XAML 控制項庫](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)範例。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 [適用於 UWP 應用程式的控制項和模式](index.md)
 

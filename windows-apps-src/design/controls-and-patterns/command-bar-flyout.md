@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f4d2443370d285322e94c4ca21e7d616f96794b7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6b85177e5d3d0f4a2a37010ba9122861216a4b6b
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257729"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081964"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 
@@ -25,17 +25,24 @@ ms.locfileid: "74257729"
 
 ![展開的文字命令列飛出視窗](images/command-bar-flyout-header.png)
 
-> CommandBarFlyout 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或是 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
-
-> - **平台 API**：[CommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 類別](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 類別](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 類別](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->- **Windows UI 程式庫 API**：[CommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
-
 如同 [CommandBar](app-bars.md)，CommandBarFlyout 有可用來新增命令的 **PrimaryCommands** 和 **SecondaryCommands** 屬性。 您可以將命令放在集合中，或兩者之中。 顯示主要和次要命令的時機和方式取決於顯示模式。
 
 命令列飛出視窗有兩個顯示模式：摺疊  和展開  。
 
-- 在摺疊模式中，只會顯示主要命令。 如果您的命令列飛出視窗同時有主要和次要命令，則會顯示「查看更多」按鈕 (以省略符號 \[•••\] 表示)。 這可讓使用者藉由轉換為展開模式來取得次要命令的存取權。
+- 在摺疊模式中，只會顯示主要命令。 如果您的命令列飛出視窗同時有主要與次要命令，則會顯示「查看更多」按鈕 (以省略符號 \[***\] 表示)。 這可讓使用者藉由轉換為展開模式來取得次要命令的存取權。
 - 在展開模式中，主要和次要命令會同時顯示 (如果控制項只有次要項目，則會以類似 MenuFlyout 控制項的方式顯示)。
+
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | 此 **CommandBarFlyout** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項與 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+>**Windows UI 程式庫 API**：[CommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+>
+>**平台 API**：[CommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 類別](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 類別](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 類別](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>
+> CommandBarFlyout 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或是 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -56,7 +63,7 @@ TextCommandBarFlyout 會在 TextBox、TextBlock、RichEditBox、RichTextBlock �
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/CommandBarFlyout">開啟應用程式並查看 CommandBarFlyout 運作情形</a>。</p>
     <ul>
@@ -386,8 +393,8 @@ CommandBarFlyout 控制項有 2 個可用來新增命令與內容的屬性：[Pr
 
 | 命令 | 顯示... |
 | ------- | -------- |
-| Bold | 當文字控制項不是唯讀狀態 (僅限 RichEditBox)。 |
-| Italic | 當文字控制項不是唯讀狀態 (僅限 RichEditBox)。 |
+| 粗體 | 當文字控制項不是唯讀狀態 (僅限 RichEditBox)。 |
+| 斜體 | 當文字控制項不是唯讀狀態 (僅限 RichEditBox)。 |
 | Underline | 當文字控制項不是唯讀狀態 (僅限 RichEditBox)。 |
 | 校訂 | 當 IsSpellCheckEnabled 為 **true** 並已選取拼字錯誤的文字時。 |
 | 剪下 | 當文字控制項不是唯讀狀態並已選取文字時。 |
@@ -405,7 +412,7 @@ TextCommandBarFlyout 無法加以自訂，並由每個文字控制項自動管�
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 - [XAML 命令範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ## <a name="related-articles"></a>相關文章

@@ -12,23 +12,26 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 841903f9bc998af5ead2a3486c500487cb070855
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: cf4e9885fdb17780c176e2740101a0cd530328ec
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364297"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081549"
 ---
 # <a name="sliders"></a>滑桿
 
- 
-
 滑桿是一個控制項，透過讓使用者沿著軌跡移動 Thumb 控制項，從一定範圍內選取值。
-
-> **重要 API**：[Slider 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)、[Value 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)、[ValueChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ![滑桿控制項](images/controls/slider.png)
 
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[Slider 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)、[Value 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)、[ValueChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -40,27 +43,27 @@ ms.locfileid: "66364297"
 
 以下是決定是否使用滑桿時的一些其他考量因素：
 
--   **設定看起來是否像相對數量？** 如果不是，請使用[選項按鈕](radio-button.md)或[清單方塊](lists.md)。
--   **該設定是否為已知的確切數值？** 如果是，請使用數字[文字方塊](text-box.md)。
--   **在變更設定時，獲得即時回應的效果是否為使用者帶來益處？** 如果是，請使用滑桿。 例如，藉由立即看到色調、飽和或光度值變更後的效果，能讓使用者更易於選擇色彩。
--   **設定的範圍是否包含四個或更多值？** 如果不是，請使用[選項按鈕](radio-button.md)。
--   **使用者是否能變更該值？** 滑桿的用意是提供使用者互動。 如果使用者無法變更值，請改用唯讀文字。
+- **設定看起來是否像相對數量？** 如果不是，請使用[選項按鈕](radio-button.md)或[清單方塊](lists.md)。
+- **該設定是否為已知的確切數值？** 如果是，請使用數字[文字方塊](text-box.md)。
+- **在變更設定時，獲得即時回應的效果是否為使用者帶來益處？** 如果是，請使用滑桿。 例如，藉由立即看到色調、飽和或光度值變更後的效果，能讓使用者更易於選擇色彩。
+- **設定的範圍是否包含四個或更多值？** 如果不是，請使用[選項按鈕](radio-button.md)。
+- **使用者是否能變更該值？** 滑桿的用意是提供使用者互動。 如果使用者無法變更值，請改用唯讀文字。
 
 如果您正在決定使用滑桿或數值文字方塊，則在下列情況下請使用數值文字方塊：
 
--   螢幕空間很小。
--   使用者似乎慣於使用鍵盤。
+- 螢幕空間很小。
+- 使用者似乎慣於使用鍵盤。
 
 如果是下列情況，請使用滑桿：
 
--   使用者可受益於立即回應。
+- 使用者可受益於立即回應。
 
 ## <a name="examples"></a>範例
 
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/Slider">開啟應用程式並查看 Slider 運作情形</a>。</p>
     <ul>
@@ -188,7 +191,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-topics"></a>相關主題
 - [切換開關](toggles.md)

@@ -7,7 +7,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2977877b839f40e07b3eaa03b8349fb8439a401
 ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73062757"
@@ -38,7 +38,7 @@ App 使用 SetSource()，而不是 SetSourceAsync()。 當設定串流以透過�
 
 使用 SetSourceAsync 或 UriSource 來設定內容之後，BitmapImage 連接到動態的 XAML 樹狀結構。 您在設定來源之前，應該一律將 [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 附加到動態樹狀結構。 每當在標記中指定影像元素或筆刷時，就自動會是這種情況。 以下提供範例。 
 
-**即時樹狀結構範例**
+**動態樹狀結構範例**
 
 範例 1 (好)—在標記中指定的統一資源識別元 (URI)。
 
@@ -60,7 +60,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-範例2程式碼後置（不正確）-先設定 BitmapImage 的 UriSource，再將它連接到樹狀結構。
+範例 2 程式碼後置 (壞)—將 BitmapImage 連接到樹狀結構之前先設定其 UriSource。
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -87,7 +87,7 @@ myImage.Source = bitmapImage;
 
 在某些無法預先決定適當解碼大小的情況下，您應該遵從 XAML 的自動以正確大小解碼功能，它會在未指定明確的 DecodePixelWidth/DecodePixelHeight 時，盡可能嘗試以適當大小將影像解碼。
 
-如果您預先知道影像內容的大小，就要設定明確的解碼大小。 如果提供的解碼大小與其他 XAML 元素的大小成比例，您也應該同時將 [**DecodePixelType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) 設定為 **Logical**。 例如，如果您使用 Image.Width 和 Image.Height 來明確設定內容大小，您可以將 DecodePixelType 設定為 DecodePixelType.Logical 以使用與 Image 控制項相同的邏輯像素維度，然後明確使用 BitmapImage.DecodePixelWidth 和/或 BitmapImage.DecodePixelHeight 來控制影像的大小，以達到潛在節省大量記憶體的目的。
+如果您預先知道影像內容的大小，就應該設定明確的解碼大小。 如果提供的解碼大小是相對其他 XAML 元素的大小，您也應該一併將 [**DecodePixelType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) 設定為 **Logical**。 例如，如果您使用 Image.Width 和 Image.Height 來明確設定內容大小，您可以將 DecodePixelType 設定為 DecodePixelType.Logical 以使用與 Image 控制項相同的邏輯像素維度，然後明確使用 BitmapImage.DecodePixelWidth 和/或 BitmapImage.DecodePixelHeight 來控制影像的大小，以達到潛在節省大量記憶體的目的。
 
 請注意，決定解碼內容的大小時，應考量 Image.Stretch。
 
@@ -119,7 +119,7 @@ myImage.Source = bitmapImage;
 
 ## <a name="collapsed-elements-at-load-time"></a>載入時摺疊的元素
 
-應用程式中一種常見的模式就是一開始隱藏 UI 中的元素，在稍後才顯示。 在大多數情況下，應該使用 x:Load 或 x:DeferLoadStrategy 來延遲這些元素，以避免支付在載入時建立元素的費用。
+App 中一種常見的模式就是一開始隱藏 UI 中的元素，在稍後才顯示。 在大多數情況下，應該使用 x:Load 或 x:DeferLoadStrategy 來延遲這些元素，以避免支付在載入時建立元素的費用。
 
 這包括使用可見度轉換器的布林值來隱藏項目直到稍後才顯示的情況。
 
@@ -131,15 +131,15 @@ myImage.Source = bitmapImage;
 
 因為項目在載入時摺疊，所以觸發了這個規則。 將元素摺疊或將其不透明度設定為 0 並不會防止建立該元素。 這個規則可能是由使用可見度轉換器的布林值並採用預設值 false 的 App 所造成。
 
-### <a name="solution"></a>解決方案
+### <a name="solution"></a>解決方法
 
-使用 [x:Load attribute](../xaml-platform/x-load-attribute.md) 或 [x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute)，您便可延遲載入某個 UI，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在第一個畫面不顯示的 UI。 您可以選擇在需要時載入元素，或是隨著一組延遲邏輯一起載入。 若要觸發載入，請針對您希望載入的元素呼叫 findName。 x:Load 擴充可解除載入元素的 x:DeferLoadStrategy 功能，以及透過 x:Bind 控制載入狀態。
+使用 [x:Load 屬性](../xaml-platform/x-load-attribute.md)或 [x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute) \(部分機器翻譯\)，您便可延遲載入某個 UI，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在第一個畫面不顯示的 UI。 您可以選擇在需要時載入元素，或是隨著一組延遲邏輯一起載入。 若要觸發載入，請針對您希望載入的元素呼叫 findName。 x:Load 擴充可卸載元素的 x:DeferLoadStrategy 功能，以及透過 x:Bind 控制載入狀態。
 
 在某些情況下，使用 findName 來顯示某個 UI 可能無法作為解答。 如果您預期在按一下按鈕且延遲很低的情況下實現某個重要的 UI，便會是這種情況。 在此情況下，您可能會想要使用更多的記憶體來降低 UI 延遲，若是如此，您應該使用 x:DeferLoadStrategy，並針對您希望實現的元素將 Visibility 設定為 Collapsed。 在載入頁面且 UI 執行緒可用之後，您可以在必要時呼叫 findName 來載入元素。 使用者將無法看見元素，直到您將元素的 Visibility 設定為 Visible 為止。
 
 ## <a name="listview-is-not-virtualized"></a>ListView 未虛擬化
 
-UI 虛擬化是您對改善集合效能所能做的最重要改進。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是一種資源浪費，因為項目不會同時全部顯示。 ListView 和 GridView (及其他標準 ItemsControl 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
+UI 虛擬化是您對改善集合效能所能做的最重要改進。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是一種資源浪費，因為項目不會同時全部顯示。 ListView 和 GridView (及其他標準 ItemsControl 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視中 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
 
 UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降低集合項目的複雜度及使用資料虛擬化是其他兩個可改善集合效能的重要層面。 如需有關改善 ListViews 和 GridViews 內集合效能的詳細資訊，請參閱 [ListView 與 GridView UI 最佳化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)一文，以及 [ListView 和 GridView 資料虛擬化](https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization)一文。
 
@@ -151,7 +151,7 @@ UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降�
 
 檢視區概念對 UI 虛擬化很重要，因為架構必須建立可能要顯示的元素。 一般而言，ItemsControl 的檢視區是邏輯控制項的延伸。 例如，ListView 的檢視區是 ListView 元素的寬度和高度。 有些面板允許子元素有不限數量的空間，範例是 ScrollViewer 和 Grid，使用自動調整大小的列或欄。 將虛擬化的 ItemsControl 放在這類面板中時，它會佔用足夠的空間來顯示其所有項目，這會導致虛擬化變成無效。 
 
-### <a name="solution"></a>解決方案
+### <a name="solution"></a>解決方法
 
 在您使用的 ItemsControl 上設定寬度和高度以還原虛擬化。
 
@@ -169,7 +169,7 @@ UI 執行緒封鎖係指對執行關閉執行緒來封鎖 UI 執行緒之函式�
 
 平台的 UI 程式碼和您應用程式的 UI 程式碼都是在相同的 UI 執行緒上執行。 該執行緒上一次只能執行一個指令，如果您的應用程式程式碼花費太多時間來處理事件，架構便無法執行配置或引發代表使用者互動的新事件。 App 的回應性與是否有 UI 執行緒來處理工作相關。
 
-### <a name="solution"></a>解決方案
+### <a name="solution"></a>解決方法
 
 即使您的 App 有部分無法完整運作，它仍然可以與使用者互動。 例如，如果應用程式顯示資料時需要一些時間抓取，您可以在不考慮應用程式啟動程式碼的情況下，用非同步的方式抓取資料來執行程式碼。 等到資料可供使用時，再將該資料填入 App 的使用者介面。 為了協助保持 App 的回應性，平台為其許多 API 提供非同步的版本。 非同步 API 可確保使用中的執行緒不會被封鎖太長的時間。 當您從 UI 執行緒呼叫 API 時，如果有非同步版本可用，請使用非同步版本。
 
@@ -185,7 +185,7 @@ UI 執行緒封鎖係指對執行關閉執行緒來封鎖 UI 執行緒之函式�
 
 App 使用 {Binding}，而不是 {x:Bind}。 {Binding} 會帶來不小的工作集和 CPU 額外負荷。 建立 {Binding} 會造成一系列的配置，而更新繫結目標則可能造成反射和 Boxing。
 
-### <a name="solution"></a>解決方案
+### <a name="solution"></a>解決方法
 
 使用 {x:Bind} 標記延伸，這會在建置階段編譯繫結。 {x:Bind} 繫結 (通常指已編譯的繫結) 除了具有極佳的效能、可在編譯時驗證您的繫結運算式之外，還可透過讓您在產生以作為頁面部分類別的程式碼檔中設定中斷點，來支援偵錯功能。 
 
@@ -197,21 +197,21 @@ ResourceDictionaries 通常是用來將您的資源儲存在稍微全域的層�
 
 ### <a name="impact"></a>影響
 
-任何含有 x:Name 的資源都會在 ResourceDictionary 一建立好就立即具現化。 這是因為 x:Name 會告知平台您的應用程式需要此資源的欄位存取權，因此平台需要建立可供建立參考的內容。
+任何含有 x:Name 的資源都會在 ResourceDictionary 一建立好就立即具現化。 這是因為 x:Name 會告知平台您的 App 需要此資源的欄位存取權，因此平台需要建立可供建立參考的內容。
 
 ### <a name="cause"></a>原因
 
 您的 App 在資源上設定 x:Name。
 
-### <a name="solution"></a>解決方案
+### <a name="solution"></a>解決方法
 
 當您不從程式碼後置參考資源時，請使用 x:Key，而不要使用 x:Name。
 
 ## <a name="collections-control-is-using-a-non-virtualizing-panel"></a>集合控制項使用非虛擬面板
 
-如果您提供自訂項目面板範本 (請參閱 ItemsPanel)，請確定您使用的是虛擬面板，例如 ItemsWrapGrid 或 ItemsStackPanel。 如果您使用的是 VariableSizedWrapGrid、WrapGrid 或 StackPanel，則不會虛擬化。 此外，只有在使用 ItemsWrapGrid 或 ItemsStackPanel 時，才會引發下列 ListView 事件：ChoosingGroupHeaderContainer、ChoosingItemContainer 和 ContainerContentChanging。
+如果您提供自訂項目面板範本 (請參閱 ItemsPanel)，請確定您使用的是虛擬面板，例如 ItemsWrapGrid 或 ItemsStackPanel。 如果您使用的是 VariableSizedWrapGrid、WrapGrid 或 StackPanel，則不會虛擬化。 此外，只有在使用 ItemsWrapGrid 或 ItemsStackPanel 時，才會引發下列 ListView 事件：ChoosingGroupHeaderContainer、ChoosingItemContainer 與 ContainerContentChanging。
 
-UI 虛擬化是您對改善集合效能所能做的最重要改進。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是一種資源浪費，因為項目不會同時全部顯示。 ListView 和 GridView (及其他標準 ItemsControl 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
+UI 虛擬化是您對改善集合效能所能做的最重要改進。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是一種資源浪費，因為項目不會同時全部顯示。 ListView 和 GridView (及其他標準 ItemsControl 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視中 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
 
 UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降低集合項目的複雜度及使用資料虛擬化是其他兩個可改善集合效能的重要層面。 如需有關改善 ListViews 和 GridViews 內集合效能的詳細資訊，請參閱 [ListView 與 GridView UI 最佳化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)一文，以及 [ListView 和 GridView 資料虛擬化](https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization)一文。
 
@@ -223,7 +223,7 @@ UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降�
 
 您使用不支援虛擬化的面板。
 
-### <a name="solution"></a>解決方案
+### <a name="solution"></a>解決方法
 
 使用虛擬面板，例如 ItemsWrapGrid 或 ItemsStackPanel。
 
@@ -239,11 +239,11 @@ UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降�
 
 元素的 UIA 名稱為 null 或空白。 這個規則會檢查 UIA 看到的內容，而不是 AutomationProperties.Name 的值。
 
-### <a name="solution"></a>解決方案
+### <a name="solution"></a>解決方法
 
 將控制項 XAML 中的 AutomationProperties.Name 屬性設定為適當的當地語系化字串。
 
-有時，正確的應用程式修正不是提供名稱，而是將 UIA 元素從所有地方 (原始樹狀結構除外) 移除。 您可以藉由設定 `AutomationProperties.AccessibilityView = "Raw"`，在 XAML 中執行此動作。
+有時，正確的應用程式修正不是提供名稱，而是將 UIA 元素從所有地方 (原始樹狀結構除外) 移除。 您可以透過設定 `AutomationProperties.AccessibilityView = "Raw"`，在 XAML 中執行此動作。
 
 ## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>協助工具：具有相同 Controltype 的 UIA 元素不應該有相同的名稱
 
@@ -259,7 +259,7 @@ UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降�
 
 具有相同 UIA 父系的 UIA 元素有相同的 Name 和 ControlType。
 
-### <a name="solution"></a>解決方案
+### <a name="solution"></a>解決方法
 
 在 XAML 中使用 AutomationProperties.Name 來設定名稱。 在經常發生這種情況的清單中，請使用繫結將 AutomationProperties.Name 的值繫結至資料來源。
 
