@@ -8,21 +8,18 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 945cc2f1cf225c194e5820990bdbeda584069e4c
-ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
+ms.openlocfilehash: 6bb90fb9cbe7c9f54f60fd1920f0e73e174a3772
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76814038"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482579"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：使用 XAML Islands 新增 UWP InkCanvas 控制項
 
 這是教學課程的第二部分，示範如何將名為 Contoso Expenses 的範例 WPF 傳統型應用程式現代化。 如需教學課程概觀、先決條件和下載範例應用程式的指示，請參閱[教學課程：將 WPF 應用程式現代化](modernize-wpf-tutorial.md)。 此文章假設您已經完成[第 1 部分](modernize-wpf-tutorial-1.md)。
 
 在此教學課程的虛構案例中，Contoso 開發小組想要在 Contoso Expenses 應用程式中新增對數位簽章的支援。 UWP **InkCanvas** 控制項對此案例來說是很棒的選擇，因其支援數位筆跡和 AI 支援的功能，例如，辨識文字和圖形的能力。 若要這麼做，您將使用 Windows 社群工具組中提供的 [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) \(英文\) 包裝的 UWP 控制項。 此控制項會包裝 UWP **InkCanvas** 控制項的介面和功能，以便在 WPF 應用程式中使用。 如需包裝 UWP 控制項的詳細資訊，請參閱[在傳統型應用程式中裝載 UWP XAML 控制項 (XAML Islands)](xaml-islands.md)。
-
-> [!NOTE]
-> 在此教學課程中，WPF 應用程式只會裝載來自 Windows SDK 的第一方 UWP 控制項。 因此，此教學課程會省略定義 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別執行個體的步驟，如[這裡](host-standard-control-with-xaml-islands.md#required-components)所述。
 
 ## <a name="configure-the-project-to-use-xaml-islands"></a>將專案設定為使用 XAML Islands
 

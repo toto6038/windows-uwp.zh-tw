@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8e18455a39441d46e13e5a9a72291c9cd379c310
-ms.sourcegitcommit: 9effd88952bd26611f7b0a0e7baa68aba7d0ee8d
+ms.openlocfilehash: 9c451eba40b5c36843a32efbc80de40866f2f0dc
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616525"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081454"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -34,13 +34,15 @@ XAML [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tree
 - **TreeViewItem** 中內容的任意類型
 - 在樹狀檢視之間拖放
 
-| **取得 Windows UI 程式庫** |
-| - |
-| 此控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+**取得 Windows UI 程式庫**
 
-| **平台 API** | **Windows UI 程式庫 API** |
+|  |  |
 | - | - |
-| [TreeView 類別](/uwp/api/windows.ui.xaml.controls.treeview)、[TreeViewNode 類別](/uwp/api/windows.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 屬性](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [TreeView 類別](/uwp/api/microsoft.ui.xaml.controls.treeview)、[TreeViewNode 類別](/uwp/api/microsoft.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 屬性](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **TreeView** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 程式庫 API：** [TreeView 類別](/uwp/api/microsoft.ui.xaml.controls.treeview)、[TreeViewNode 類別](/uwp/api/microsoft.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 屬性](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
+>
+> **平台 API：** [TreeView 類別](/uwp/api/windows.ui.xaml.controls.treeview)、[TreeViewNode 類別](/uwp/api/windows.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 屬性](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
 
 在這整份文件中，我們將使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的[網頁](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：
 
@@ -69,7 +71,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/TreeView">開啟應用程式並查看 TreeView 運作情形</a>。</p>
     <ul>

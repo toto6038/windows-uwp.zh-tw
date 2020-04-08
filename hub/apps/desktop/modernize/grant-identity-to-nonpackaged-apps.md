@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ae05a00cac19fdd349aa48160b88cde6b84e26b0
-ms.sourcegitcommit: 620e4a51e2486ec2cb7190176b3d9bf3d7b5b6af
+ms.openlocfilehash: 6b77cc7b2f39a987df4c832f7a8daeb7e2722def
+ms.sourcegitcommit: f2f61a43f5bc24b829e8db679ffaca3e663c00e9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78222024"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588710"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>將身分識別授與非封裝的傳統型應用程式
 
@@ -124,7 +124,7 @@ ms.locfileid: "78222024"
 下列範例示範如何從命令列建立疏鬆套件。  
 
 ```Console
-MakeAppx.exe  pack  /d  <path to directory that contains manifest>  /p  <output path>\MyPackage.msix  /nv
+MakeAppx.exe pack /d <path to directory that contains manifest> /p <output path>\MyPackage.msix /nv
 ```
 
 您必須使用目標電腦上受信任的憑證來簽署疏鬆套件，才能順利將其安裝在目標電腦上。 您可以建立新的自我簽署憑證以供開發之用，並使用 Windows SDK 中提供的 [SignTool](https://docs.microsoft.com/windows/msix/package/sign-app-package-using-signtool) 來簽署疏鬆套件。
@@ -132,7 +132,7 @@ MakeAppx.exe  pack  /d  <path to directory that contains manifest>  /p  <output 
 下列範例示範如何從命令列簽署疏鬆套件。
 
 ```Console
-SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx  /p <certificate password>  <path to sparse package>\MyPackage.msix
+SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <certificate password> <path to sparse package>\MyPackage.msix
 ```
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>將套件識別中繼資料新增至傳統型應用程式資訊清單
