@@ -4,11 +4,11 @@ title: 最佳化動畫、媒體及影像
 description: 建立具有流暢的動畫、高畫面播放速率和高效能媒體擷取和播放功能的通用 Windows 平台 (UWP) app。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 579772bba55c93de38c3c43538ad14253dbc2572
 ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71339893"
@@ -32,13 +32,13 @@ ms.locfileid: "71339893"
 -   零持續時間動畫
 -   [  **Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 屬性的動畫
 -   [  **UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 屬性的動畫
--   以 [**SolidColorBrush.Color**](/uwp/api/Windows.UI.Xaml.Media.Brush) 子屬性為目標時，[**Brush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 類型屬性的動畫
+-   以 [**SolidColorBrush.Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 子屬性為目標時，[**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 類型屬性的動畫
 -   以這些傳回值類型的子屬性為目標時，下列 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 屬性的動畫：
 
     -   [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)
-    -   [**System.windows.media.media3d.transform3d>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d)
-    -   [**投**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection)
-    -   [**張**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
+    -   [**Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d)
+    -   [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection)
+    -   [**Clip**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
 
 相依式動畫會影響配置，因此需要有來自 UI 執行緒的額外輸入才能進行計算。 相依式動畫包含對 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 和 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 這類屬性的修改。 相依式動畫預設不會執行，且需要由 app 開發人員選擇加入。 如果 UI 執行緒保持未封鎖狀態，則相依式動畫啟用後便可以很流暢地執行，但是如果架構或 app 正在 UI 執行緒上執行大量的其他工作，就會發生斷斷續續的現象。
 
@@ -54,7 +54,7 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 讓 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 產生動畫同樣也不是很好的做法。 除了效能變差，還會造成播放的視訊內容產生裂紋或其他殘影。
 
-> **請注意**   本文中適用于**MediaPlayerElement**的建議也適用于[**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 **MediaPlayerElement** 只能在 Windows 10 版本 1607 取得，因此如果您是針對先前版本的 Windows 建立 App，則需要使用 **MediaElement**。
+> **注意**   這篇文章對於 **MediaPlayerElement** 的建議也適用於 [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 **MediaPlayerElement** 只能在 Windows 10 版本 1607 取得，因此如果您是針對先前版本的 Windows 建立 App，則需要使用 **MediaElement**。
 
 ### <a name="use-infinite-animations-sparingly"></a>謹慎使用無限動畫
 
@@ -66,7 +66,7 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 [  **Windows.UI.Xaml.Media.Animation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation) 命名空間包含高效能且順暢的動畫庫，這些動畫的外觀及操作與其他 Windows 動畫相同。 相關類別的名稱中會包含「佈景主題」，其相關說明請見[動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)。 這個動畫庫支援許多常見的動畫案例，例如將應用程式的第一個檢視以動畫顯示，並建立狀態與內容轉換。 建議您儘量使用這個動畫庫來提升效能以及與 UWP UI 的一致性。
 
-> **注意**   動畫程式庫無法以動畫顯示所有可能的屬性。 如需無法套用動畫庫的 XAML 案例，請參閱[腳本動畫](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)。
+> **注意**   動畫庫無法讓所有可能的屬性產生動畫效果。 如需無法套用動畫庫的 XAML 案例，請參閱[腳本動畫](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)。
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>個別使 CompositeTransform3D 屬性產生動畫效果
@@ -85,7 +85,7 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 ### <a name="display-full-screen-video-playback-when-possible"></a>盡可能顯示全螢幕視訊播放
 
-在 UWP App 中，一律在 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.isfullwindow) 上使用 [**IsFullWindow**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 屬性，以啟用和停用完整視窗轉譯。 這可確保在媒體播放時會使用系統層級最佳化。
+在 UWP App 中，一律在 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 上使用 [**IsFullWindow**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.isfullwindow) 屬性，以啟用和停用完整視窗轉譯。 這可確保在媒體播放時會使用系統層級最佳化。
 
 當視訊內容是唯一要轉譯的內容時，XAML 架構可以最佳化顯示的視訊內容，因此可以使用較少的電力，並產生較高的畫面播放速率。 最有效的媒體播放，是將 **MediaPlayerElement** 物件的大小設為畫面的寬度和長度，並且不顯示其他 XAML 元素。
 
@@ -105,7 +105,7 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 ### <a name="put-other-elements-to-the-side-of-embedded-video"></a>將其他元素放到內嵌視訊的旁邊
 
-App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 不是頁面大小，再加上其他繪製的 XAML 物件，您很明顯地無法使用全螢幕播放。 請注意不要在 周圍繪製框線，以避免不慎進入這個模式。
+App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 不是頁面大小，再加上其他繪製的 XAML 物件，您很明顯地無法使用全螢幕播放。 請注意不要在  周圍繪製框線，以避免不慎進入這個模式。
 
 當視訊是內嵌模式時，請勿在視訊上繪製 XAML 元素。 如果您這樣做，架構會強制執行一些額外工作來建構場景。 將傳輸控制項放在內嵌媒體元素下方 (而非視訊上)，是這個狀況最佳化的最佳範例。 在這個影像中，紅色列代表一組傳輸控制項 (播放、暫停及停止等)。
 
@@ -117,7 +117,7 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 
 ### <a name="delay-setting-the-source-for-a-mediaplayerelement"></a>延遲設定 MediaPlayerElement 的來源
 
-媒體引擎是耗費大量資源的物件，XAML 架構會盡可能延遲載入 dll 和建立大型物件。 在透過 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 屬性設定來源後，[**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 會被強制執行這個工作。 在使用者真的準備好播放媒體時這樣設定，就能盡量延遲與 **MediaElement** 關聯的大多數資源消耗。
+媒體引擎是耗費大量資源的物件，XAML 架構會盡可能延遲載入 dll 和建立大型物件。 在透過 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定來源後，[**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 會被強制執行這個工作。 在使用者真的準備好播放媒體時這樣設定，就能盡量延遲與 **MediaElement** 關聯的大多數資源消耗。
 
 ### <a name="set-mediaplayerelementpostersource"></a>設定 MediaPlayerElement.PosterSource
 
@@ -127,7 +127,7 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 
 為了使媒體平台可以立即回應，清除永遠是一項困難的工作。 我們通常是透過變更滑桿的值來進行這項工作。 下列是一些如何讓這項工作更有效率的提示：
 
--   根據會查詢 [**MediaPlayerElement.MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 上 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position) 的計時器來更新 [**Slider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 的值。 請務必為您的計時器使用合理的更新頻率。 在播放期間，**Position** 只會每 250 毫秒更新一次。
+-   根據會查詢 [**MediaPlayerElement.MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 上 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position) 的計時器來更新 [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 的值。 請務必為您的計時器使用合理的更新頻率。 在播放期間，**Position** 只會每 250 毫秒更新一次。
 -   滑桿上的步階頻率大小必須隨視訊長度調整。
 -   訂閱滑桿上的 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) 以及 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件，以在使用者拖曳滑桿的指標時將 [**PlaybackRate**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.playbackrate) 屬性設定為 0。
 -   在 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件處理常式中，將媒體位置手動設定為滑桿位置值，以在清除時獲得最佳貼齊效果。
@@ -185,19 +185,19 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 
 如果您沒有明確設定解碼大小，XAML 會根據內含頁面的初始配置，將影像解碼成要在螢幕上顯示的確切大小，盡可能嘗試節省記憶體。 建議您盡可能以這種方式撰寫您的應用程式以便使用這項功能。 如果符合下列任何一個條件，則會停用此功能。
 
--   使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 或 [**UriSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 設定內容之後，[**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.urisource) 連接到動態的 XAML 樹狀結構。
+-   使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 或 [**UriSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.urisource) 設定內容之後，[**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 連接到動態的 XAML 樹狀結構。
 -   影像使用同步解碼 (例如 [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource)) 來解碼。
 -   影像在主機影像元素或筆刷或任何父元素上透過將 [[**不透明度**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)] 設定為 0，或將 [[**可見度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility)] 設定為 [**收合**] 而隱藏。
--   影像控制項或筆刷使用設定為 [None**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch)Stretch。
+-   影像控制項或筆刷使用設定為 **None** 的 [**Stretch**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch)。
 -   影像用來做為 [**NineGrid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.ninegrid)。
--   `CacheMode="BitmapCache"` 是在 image 元素或任何父元素上設定。
+-   已在影像元素或任何父元素上設定 `CacheMode="BitmapCache"`。
 -   影像筆刷是非矩形 (例如套用至圖形或文字時)。
 
 在上述案例中，設定明確的解碼大小是節省記憶體的唯一方法。
 
 您在設定來源之前，應該一律將 [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 附加到動態樹狀結構。 每當在標記中指定影像元素或筆刷時，就自動會是這種情況。 「動態樹狀結構範例」標題之下會提供範例。 您在設定串流來源時應該一律避免使用 [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource)，改為使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync)。 而且最好避免在等待 [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) 事件引發時隱藏影像內容 (無論是不透明度設定為零，或是摺疊的可見性)。 這麼做只是為了判斷：如果完成，您也無法從自動以正確大小解碼獲得好處。 如果您的 app 必須一開始就隱藏影像內容，則可能的話也應該明確設定解碼大小。
 
-**即時樹狀結構範例**
+**動態樹狀結構範例**
 
 範例 1 (好)—在標記中指定的統一資源識別元 (URI)。
 
@@ -219,7 +219,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-範例2程式碼後置（不正確）-先設定 BitmapImage 的 UriSource，再將它連接到樹狀結構。
+範例 2 程式碼後置 (壞)—將 BitmapImage 連接到樹狀結構之前先設定其 UriSource。
 
 ```csharp
 var bitmapImage = new BitmapImage();
@@ -250,7 +250,7 @@ myImage.Source = bitmapImage;
 XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容解碼到硬體記憶體中的表層，而不需要軟體記憶體中的中繼層。 這樣可以減少記憶體的尖峰使用量與轉譯延遲。 如果符合下列任何一個條件，則會停用此功能。
 
 -   影像用來做為 [**NineGrid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.ninegrid)。
--   `CacheMode="BitmapCache"` 是在 image 元素或任何父元素上設定。
+-   已在影像元素或任何父元素上設定 `CacheMode="BitmapCache"`。
 -   影像筆刷是非矩形 (例如套用至圖形或文字時)。
 
 ### <a name="softwarebitmapsource"></a>SoftwareBitmapSource
@@ -263,7 +263,7 @@ XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容
 
 ### <a name="use-getthumbnailasync-for-thumbnails"></a>使用 GetThumbnailAsync 以取得縮圖
 
-按比例調整影像的一個使用案例是建立縮圖。 雖然您可以使用 [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 與 [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 來提供較小的影像版本，但 UWP 提供更有效的 API 供您擷取縮圖。 [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync)會提供已快取檔案系統之影像的縮圖。 這樣做的效能比使用 XAML API 更好，因為不需要開啟或解碼影像。
+按比例調整影像的一個使用案例是建立縮圖。 雖然您可以使用 [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 與 [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 來提供較小的影像版本，但 UWP 提供更有效的 API 供您擷取縮圖。 [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync) 會為已快取檔案系統的影像提供縮圖。 這樣做的效能比使用 XAML API 更好，因為不需要開啟或解碼影像。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp

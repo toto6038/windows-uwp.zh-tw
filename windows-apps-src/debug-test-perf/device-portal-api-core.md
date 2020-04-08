@@ -1,20 +1,20 @@
 ---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: 裝置入口網站核心 API 參考資料
-description: 了解可用來存取資料並以程式設計方式控制裝置的 Windows 裝置入口網站核心 REST API。
+title: Device Portal 核心 API 參考資料
+description: 了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。
 ms.custom: 19H1
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10，uwp，裝置入口網站
+keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
 ms.sourcegitcommit: 8d945e0406818e614eacdc962493e570cc7615ed
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 01/15/2020
 ms.locfileid: "75955315"
 ---
-# <a name="device-portal-core-api-reference"></a>裝置入口網站核心 API 參考資料
+# <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 參考資料
 
 所有裝置入口網站功能都是以 REST API 建置，開發人員可直接呼叫這些 API 來存取資源，並透過程式設計的方式控制其裝置。
 
@@ -59,10 +59,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -85,14 +85,14 @@ ms.locfileid: "75955315"
 
 | URI 參數 | 說明 |
 | :------          | :------ |
-| 套件   | (**必要**) 要安裝之套件的檔案名稱。 |
+| 套件   | (**必要**) 要安裝的套件檔案名稱。 |
 
 **要求標頭**
 
 - 無
 
 **要求本文** 
-- 指定為參數時，新增 ".opt" 至選用的套件檔案名稱，像這樣："foo.appx.opt" 或 "bar.appxbundle.opt"。 
+- 指定為參數時，將 ".opt" 新增至選用的套件檔案名稱，如下所示："foo.appx.opt" 或 "bar.appxbundle.opt"。 
 - .appx 或 .appxbundle 檔案，以及 App 所需的任何相依性。 
 - 用來簽署 App 的憑證 (如果裝置是 IoT 或 Windows Desktop)。 其他平台並不需要憑證。 
 
@@ -108,10 +108,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -161,9 +161,9 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -174,7 +174,7 @@ ms.locfileid: "75955315"
 
 **要求**
 
-您可以使用下列要求格式在鬆散資料夾中登錄[相關集合](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
+您可以使用下列要求格示，在鬆散資料夾中登錄[相關集合](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
 
 | 方法      | 要求 URI |
 | :------     | :----- |
@@ -222,9 +222,9 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -265,10 +265,10 @@ ms.locfileid: "75955315"
 | 204 | 正在執行安裝 |
 | 404 | 找不到安裝動作 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -311,10 +311,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -381,17 +381,17 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="bluetooth"></a>[藍牙]
+## <a name="bluetooth"></a>Bluetooth
 
 <hr>
 
@@ -399,7 +399,7 @@ ms.locfileid: "75955315"
 
 **要求**
 
-您可以透過使用下列要求格式，以取得電腦上已安裝藍牙無線電的清單。 這也可以使用相同的 JSON 資料升級至 WebSocket 連線。
+您可以透過使用下列要求格式，取得已安裝在電腦上的藍牙無線電清單。 也可以使用相同的 JSON 資料，升級至 WebSocket 連線。
  
 | 方法        | 要求 URI |
 | :------          | :------ |
@@ -421,7 +421,7 @@ ms.locfileid: "75955315"
 
 **回應**
 
-此回應包含附加至裝置的藍牙無線電 JSON 陣列。
+此回應包含連結至裝置的藍牙無線電 JSON 陣列。
 ```json
 {"BluetoothRadios" : [
     {
@@ -445,19 +445,19 @@ ms.locfileid: "75955315"
 | 4XX              | 錯誤碼 |
 | 5XX              | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
 <hr>
 
-### <a name="turn-the-bluetooth-radio-on-or-off"></a>開啟或關閉藍牙無線電。
+### <a name="turn-the-bluetooth-radio-on-or-off"></a>開啟或關閉藍牙無線電
 
 **要求**
 
-設定特定藍牙無線電為開或關。
+將特定藍牙無線電設為開啟或關閉。
  
 | 方法 | 要求 URI |
 | :------   | :------ |
@@ -469,8 +469,8 @@ ms.locfileid: "75955315"
 
 | URI 參數 | 說明 |
 | :------          | :------ |
-| 識別碼            | (**需要**) 藍牙無線電的裝置 ID 而且必須是 Base-64 編碼。 |
-| 州/省         | （**必要**）這可以是 `"On"` 或 `"Off"`。 |
+| ID            | (**必要**) 藍牙無線電的裝置識別碼，而且必須是 Base-64 編碼。 |
+| State         | (**必要**) 這可以是 `"On"` 或 `"Off"`。 |
 
 **要求標頭**
 
@@ -492,9 +492,9 @@ ms.locfileid: "75955315"
 | 4XX              | 錯誤碼 |
 | 5XX              | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -503,7 +503,7 @@ ms.locfileid: "75955315"
 
 **要求**
 
-您可以使用下列要求格式來取得目前配對的藍牙裝置清單。 這可以升級至具有相同 JSON 資料的 WebSocket 連線。 在 WebSocket 連線的存留期內，裝置清單可能會變更。 每次有更新時，將會透過 WebSocket 連線傳送完整的裝置清單。
+您可以使用以下要求格式，取得目前配對的藍芽裝置清單。 可以使用相同的 JSON 資料，升級至 WebSocket 連線。 在 WebSocket 連線的存留期內，裝置清單可能會變更。 每當有更新時，會透過 WebSocket 連線傳送完整的裝置清單。
 
 | 方法        | 要求 URI       |
 | :---          | :---              |
@@ -524,7 +524,7 @@ ms.locfileid: "75955315"
 
 **回應**
 
-回應包含目前配對的藍牙裝置的 JSON 陣列。
+回應包含目前配對藍牙裝置的 JSON 陣列。
 ```json
 {"PairedDevices": [
     {
@@ -534,14 +534,14 @@ ms.locfileid: "75955315"
     },...
 ]}
 ```
-如果裝置可用於此系統上的音訊，則會出現 [ *AudioConnectionStatus* ] 欄位。 （原則和選用元件可能會影響此。）*AudioConnectionStatus*將會是「已連接」或「已中斷連線」。
+如果裝置可用於此系統上的音訊，則會顯示 [AudioConnectionStatus]  欄位。 (原則與選用元件可能會對此產生影響。)*AudioConnectionStatus* 將會是 "Connected" 或 "Disconnected"。
 
 ---
-### <a name="get-a-list-of-available-bluetooth-devices"></a>取得可用的藍牙裝置清單
+### <a name="get-a-list-of-available-bluetooth-devices"></a>取得可用的藍芽裝置清單
 
 **要求**
 
-您可以使用下列要求格式，取得可供配對的藍牙裝置清單。 這可以升級至具有相同 JSON 資料的 WebSocket 連線。 在 WebSocket 連線的存留期內，裝置清單可能會變更。 每次有更新時，將會透過 WebSocket 連線傳送完整的裝置清單。
+您可以使用以下要求格式，取得目前配對的可用藍芽裝置清單。 可以使用相同的 JSON 資料，升級至 WebSocket 連線。 在 WebSocket 連線的存留期內，裝置清單可能會變更。 每當有更新時，會透過 WebSocket 連線傳送完整的裝置清單。
 
 | 方法        | 要求 URI          |
 | :---          | :---                 |
@@ -562,7 +562,7 @@ ms.locfileid: "75955315"
 
 **回應**
 
-回應包含目前可用於配對的藍牙裝置的 JSON 陣列。
+回應包含目前可用於配對之藍牙裝置的 JSON 陣列。
 ```json
 {"AvailableDevices": [
     {
@@ -573,11 +573,11 @@ ms.locfileid: "75955315"
 ```
 
 ---
-### <a name="connect-a-bluetooth-device"></a>連接藍牙裝置
+### <a name="connect-a-bluetooth-device"></a>連線藍牙裝置
 
 **要求**
 
-如果裝置可用於此系統上的音訊，將會連接到裝置。 （原則和選用元件可能會影響此。）
+如果裝置可用於此系統上的音訊，將會連線到裝置。 (原則與選用元件可能會對此產生影響。)
 
 | 方法       | 要求 URI           |
 | :---         | :---                  |
@@ -587,7 +587,7 @@ ms.locfileid: "75955315"
 
 | URI 參數 | 說明 |
 | :---          | :--- |
-| 識別碼            | （**必要**）藍牙裝置的關聯端點識別碼，必須是 Base64 編碼。 |
+| ID            | (**必要**) 藍牙裝置的「關聯端點識別碼」，而且必須是 Base64 編碼。 |
 
 **要求標頭**
 
@@ -609,9 +609,9 @@ ms.locfileid: "75955315"
 | 4XX              | 錯誤碼 |
 | 5XX              | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -621,7 +621,7 @@ ms.locfileid: "75955315"
 
 **要求**
 
-如果裝置可用於此系統上的音訊，將會中斷裝置的連線。 （原則和選用元件可能會影響此。）
+如果裝置可用於此系統上的音訊，將會中斷裝置連線。 (原則與選用元件可能會對此產生影響。)
 
 | 方法       | 要求 URI              |
 | :---         | :---                     |
@@ -631,7 +631,7 @@ ms.locfileid: "75955315"
 
 | URI 參數 | 說明 |
 | :---          | :--- |
-| 識別碼            | （**必要**）藍牙裝置的關聯端點識別碼，必須是 Base64 編碼。 |
+| ID            | (**必要**) 藍牙裝置的「關聯端點識別碼」，而且必須是 Base64 編碼。 |
 
 **要求標頭**
 
@@ -653,14 +653,14 @@ ms.locfileid: "75955315"
 | 4XX              | 錯誤碼 |
 | 5XX              | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
 ---
-## <a name="device-manager"></a>[裝置管理員]
+## <a name="device-manager"></a>裝置管理員
 <hr>
 
 ### <a name="get-the-installed-devices-on-the-machine"></a>取得電腦上已安裝的裝置
@@ -712,10 +712,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -724,7 +724,7 @@ ms.locfileid: "75955315"
 
 **要求**
 
-您可以透過使用下列要求格式，取得已連接 USB 裝置和中樞的 USB 描述項清單。
+您可以使用下列要求格式，取得已連接 USB 裝置和中樞的 USB 描述項清單。
 
 | 方法      | 要求 URI |
 | :------     | :----- |
@@ -798,9 +798,9 @@ ms.locfileid: "75955315"
 |  200 | [確定] | 
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -809,7 +809,7 @@ ms.locfileid: "75955315"
 
 <hr>
 
-### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>取得應用程式的所有損毀傾印清單
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>取得 App 的所有損毀傾印清單
 
 **要求**
 
@@ -846,10 +846,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -899,10 +899,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -948,10 +948,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -996,10 +996,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1047,10 +1047,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1093,10 +1093,10 @@ ms.locfileid: "75955315"
 | :------     | :----- |
 |  200 | [確定] | 
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile (位於Windows 測試人員計畫中)
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1145,9 +1145,9 @@ ms.locfileid: "75955315"
 | :------     | :----- |
 |  200 | [確定] | 
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -1194,9 +1194,9 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -1238,13 +1238,13 @@ ms.locfileid: "75955315"
 
 **傾印類型**
 
-0：已停用
+0：停用
 
-1：完整記憶體傾印 (收集所有的使用中記憶體)
+1：完整記憶體傾印 (收集所有使用中記憶體)
 
 2：核心記憶體傾印 (忽略使用者模式記憶體)
 
-3︰有限的核心小型傾印
+3：有限的核心小型傾印
 
 **狀態碼**
 
@@ -1256,9 +1256,9 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -1300,9 +1300,9 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -1348,9 +1348,9 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -1397,9 +1397,9 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -1445,10 +1445,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1546,10 +1546,10 @@ ms.locfileid: "75955315"
 | :------     | :----- |
 |  200 | [確定] | 
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1595,10 +1595,10 @@ ms.locfileid: "75955315"
 
 - 標準狀態碼。
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1649,10 +1649,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -1700,19 +1700,19 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
-### <a name="get-the-injected-position"></a>取得插入的位置
+### <a name="get-the-injected-position"></a>取得插入位置
 
 **要求**
 
-您可以使用下列要求格式，取得裝置的插入 (偽裝) 位置。 必須設定插入的位置，否則將會擲回錯誤。
+您可以使用下列要求格式，取得裝置的插入 (偽裝) 位置。 必須設定插入位置，否則將會擲回錯誤。
  
 | 方法      | 要求 URI |
 | :------     | :----- |
@@ -1752,15 +1752,15 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
-### <a name="set-the-injected-position"></a>設定插入的位置
+### <a name="set-the-injected-position"></a>設定插入位置
 
 **要求**
 
@@ -1809,10 +1809,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -1864,10 +1864,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -1921,10 +1921,10 @@ ms.locfileid: "75955315"
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -1976,10 +1976,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2023,10 +2023,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | 200 | [確定] |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2091,9 +2091,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -2156,10 +2156,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -2235,17 +2235,17 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="power"></a>開啟/關閉
+## <a name="power"></a>電源
 
 <hr>
 
@@ -2298,10 +2298,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -2347,9 +2347,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -2391,9 +2391,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -2438,9 +2438,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -2485,9 +2485,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -2530,9 +2530,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | 200 | [確定] |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -2574,9 +2574,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -2626,9 +2626,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
@@ -2670,14 +2670,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 <hr>
 
-## <a name="remote-control"></a>遙控器
+## <a name="remote-control"></a>遠端控制
 
 <hr>
 
@@ -2714,10 +2714,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | 200 | [確定] |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2759,10 +2759,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2773,7 +2773,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 <hr>
 
-### <a name="start-a-modern-app"></a>啟動現代化應用程式
+### <a name="start-a-modern-app"></a>啟動現代化 App
 
 **要求**
 
@@ -2813,10 +2813,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2863,10 +2863,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2890,7 +2890,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 | URI 參數 | 說明 |
 | :------          | :------ |
-| pid   | (**必要**) 要停止的處理序唯一的處理序 ID。 |
+| pid   | (**必要**) 要停止的處理序的唯一處理序識別碼。 |
 
 **要求標頭**
 
@@ -2912,15 +2912,15 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="networking"></a>網路
+## <a name="networking"></a>網路功能
 
 <hr>
 
@@ -3001,21 +3001,21 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-### <a name="set-a-static-ip-address-ipv4-configuration"></a>設定靜態 IP 位址（IPV4 設定）
+### <a name="set-a-static-ip-address-ipv4-configuration"></a>設定靜態 IP 位址 (IPV4 組態)
 
 **要求**
 
-設定具有靜態 IP 和 DNS 的 IPV4 設定。 如果未指定靜態 IP，則會啟用 DHCP。 如果指定了靜態 IP，則也必須指定 DNS。
+設定具有靜態 IP 和 DNS 的 IPV4 組態。 如果未指定靜態 IP，則會啟用 DHCP。 如果已指定靜態 IP，則必須也指定 DNS。
  
 | 方法      | 要求 URI |
 | :------     | :----- |
@@ -3026,14 +3026,14 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 | URI 參數 | 說明 |
 | :---          | :--- |
-| AdapterName | （**必要**）網路介面 GUID。 |
+| AdapterName | (**必要**) 網路介面 GUID。 |
 | IPAddress | 要設定的靜態 IP 位址。 |
-| SubnetMask | （如果*IPAddress*不是 null，則為**必要**）靜態子網路遮罩。 |
-| DefaultGateway | （如果*IPAddress*不是 null，則為**必要**）靜態預設閘道。 |
-| PrimaryDNS | （如果*IPAddress*不是 null，則為**必要**）要設定的靜態主要 DNS。 |
-| SecondayDNS | （如果*PrimaryDNS*不是 null，則為**必要**）要設定的靜態次要 DNS。 |
+| SubnetMask | (**必要** 如果 *IPAddress* 不是 null) 靜態子網路遮罩。 |
+| DefaultGateway | (**必要** 如果 *IPAddress* 不是 null) 靜態預設閘道。 |
+| PrimaryDNS | (**必要** 如果 *IPAddress* 不是 null) 要設定的靜態主要 DNS。 |
+| SecondayDNS | (**必要** 如果 *PrimaryDNS* 不是 null) 要設定的靜態次要 DNS。 |
 
-為了清楚起見，若要設定 DHCP 的介面，只會將網路上的 `AdapterName` 序列化：
+為了清楚起見，若要將介面設為 DHCP，請將纜線上的 `AdapterName` 序列化：
 
 ```json
 {
@@ -3061,10 +3061,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3124,10 +3124,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3151,7 +3151,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 | URI 參數 | 說明 |
 | :------          | :------ |
-| interface   | (**必要**) 可用來搜尋無線網路的網路介面 GUID，不含括號。 |
+| 介面   | (**必要**) 可用來搜尋無線網路的網路介面 GUID，不含括號。 |
 
 **要求標頭**
 
@@ -3195,10 +3195,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3222,10 +3222,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 | URI 參數 | 說明 |
 | :------          | :------ |
-| interface   | (**必要**) 可用來連線到網路的網路介面 GUID。 |
+| 介面   | (**必要**) 可用來連線到網路的網路介面 GUID。 |
 | op   | (**必要**) 指出要採取的動作。 可能的值是 connect 或 disconnect。|
-| ssid   | (**如果 *op* == connect 則為必要**) 要連線的 SSID。 |
-| key   | (**如果 *op* == connect 且網路需要驗證則為必要**) 共用金鑰。 |
+| ssid   | (**如果 *op* == connect，則為必要**) 要連線的 SSID。 |
+| 索引鍵   | (**如果 *op* == connect 且網路需要授權，則為必要**) 共用金鑰。 |
 | createprofile | (**必要**) 在裝置上建立網路設定檔。  這會導致日後將裝置自動連線至網路。 此項目可為**是**或**否**。 |
 
 **要求標頭**
@@ -3246,10 +3246,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | 200 | [確定] |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3273,7 +3273,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 
 | URI 參數 | 說明 |
 | :------          | :------ |
-| interface   | (**必要**) 與要刪除之設定檔關聯的網路介面 GUID。 |
+| 介面   | (**必要**) 與要刪除之設定檔關聯的網路介面 GUID。 |
 | profile   | (**必要**) 要刪除的設定檔名稱。 |
 
 **要求標頭**
@@ -3294,10 +3294,10 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | :------     | :----- |
 | 200 | [確定] |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3352,9 +3352,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3408,9 +3408,9 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3467,9 +3467,9 @@ WER 報告使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3523,10 +3523,10 @@ WPR 工作階段狀態使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3580,10 +3580,10 @@ WPR 工作階段狀態使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3614,7 +3614,7 @@ WPR 工作階段狀態使用下列格式。
 
 **回應**
 
--  無。  **注意︰** 這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。
+-  無。  **注意：** 這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。
 
 **狀態碼**
 
@@ -3626,10 +3626,10 @@ WPR 工作階段狀態使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3683,10 +3683,10 @@ WPR 工作階段狀態使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3717,7 +3717,7 @@ WPR 工作階段狀態使用下列格式。
 
 **回應**
 
-- 無。  **注意︰** 這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。  
+- 無。  **注意：** 這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。  
 
 **狀態碼**
 
@@ -3729,10 +3729,10 @@ WPR 工作階段狀態使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3782,10 +3782,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3840,10 +3840,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3890,10 +3890,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3940,10 +3940,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3997,10 +3997,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 5XX | 伺服器錯誤 |
 
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -4043,10 +4043,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 5XX | 伺服器錯誤 |
 
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -4090,10 +4090,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 200 | [確定] |
 
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -4138,10 +4138,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 401 | 標記空間溢位。  當建議標記對於產生的 DNS-SD 服務記錄過長時的結果。 |
 
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -4191,10 +4191,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 5XX | 錯誤碼 |
 
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT
@@ -4216,9 +4216,9 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 | URI 參數 | 說明 |
 | :------     | :----- |
-| knownfolderid | (**必要**) 您希望取得檔案清單的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 |
-| packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 |
-| path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
+| knownfolderid | (**必要**) 您希望取得檔案清單的最上層目錄。 使用 **LocalAppData** 存取側載 App。 |
+| packagefullname | (**如果 *knownfolderid* == LocalAppData**，則為必要) 您感興趣的應用程式套件完整名稱。 |
+| 路徑 | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
 
 **要求標頭**
 
@@ -4252,10 +4252,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT
@@ -4276,10 +4276,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 | URI 參數 | 說明 |
 | :------     | :----- |
-| knownfolderid | (**必要**) 您希望下載檔案的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 |
+| knownfolderid | (**必要**) 您希望下載檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 |
 | filename | (**必要**) 下載的檔案名稱。 |
-| packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣的套件完整名稱。 |
-| path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
+| packagefullname | (**如果 *knownfolderid* == LocalAppData，則為必要**) 您感興趣的套件完整名稱。 |
+| 路徑 | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
 
 **要求標頭**
 
@@ -4301,10 +4301,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 | 404 | 找不到檔案 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT
@@ -4326,11 +4326,11 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 | URI 參數 | 說明 |
 | :------     | :----- |
-| knownfolderid | (**必要**) 檔案所在的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 |
+| knownfolderid | (**必要**) 檔案所在的最上層目錄。 使用 **LocalAppData** 存取側載 App。 |
 | filename | (**必要**) 所要重新命名之檔案的原始名稱。 |
 | newfilename | (**必要**) 檔案的新名稱。|
-| packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 |
-| path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
+| packagefullname | (**如果 *knownfolderid* == LocalAppData**，則為必要) 您感興趣的應用程式套件完整名稱。 |
+| 路徑 | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
 
 **要求標頭**
 
@@ -4350,14 +4350,14 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 | HTTP 狀態碼      | 說明 |
 | :------     | :----- |
-| 200 | [確定] |。 檔案已重新命名
+| 200 | [確定] |. 檔案已重新命名
 | 404 | 找不到檔案 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT
@@ -4378,10 +4378,10 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 | URI 參數 | 說明 |
 | :------     | :----- |
-| knownfolderid | (**必要**) 您希望刪除檔案的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 |
+| knownfolderid | (**必要**) 您希望刪除檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 |
 | filename | (**必要**) 刪除的檔案名稱。 |
-| packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 |
-| path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
+| packagefullname | (**如果 *knownfolderid* == LocalAppData**，則為必要) 您感興趣的應用程式套件完整名稱。 |
+| 路徑 | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
 
 **要求標頭**
 
@@ -4401,14 +4401,14 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 | HTTP 狀態碼      | 說明 |
 | :------     | :----- |
-| 200 | [確定] |。 檔案已刪除 |
+| 200 | [確定] |. 檔案已刪除 |
 | 404 | 找不到檔案 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT
@@ -4429,9 +4429,9 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 | URI 參數 | 說明 |
 | :------     | :----- |
-| knownfolderid | (**必要**) 您希望上傳檔案的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 |
-| packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 |
-| path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
+| knownfolderid | (**必要**) 您希望上傳檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 |
+| packagefullname | (**如果 *knownfolderid* == LocalAppData**，則為必要) 您感興趣的應用程式套件完整名稱。 |
+| 路徑 | (**選用**) 資料夾內的子目錄或上方所指定的套件。 |
 
 **要求標頭**
 
@@ -4449,14 +4449,14 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 
 | HTTP 狀態碼      | 說明 |
 | :------     | :----- |
-| 200 | [確定] |。 檔案已上傳 |
+| 200 | [確定] |. 檔案已上傳 |
 | 4XX | 錯誤碼 |
 | 5XX | 錯誤碼 |
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT

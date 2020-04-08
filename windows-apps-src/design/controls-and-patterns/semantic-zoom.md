@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0821ebaa300d6641cf4efe8f96f1ae8878877a88
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 35613366078531a9e342df0b4314d049fde844e9
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258137"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081567"
 ---
 # <a name="semantic-zoom"></a>語意式縮放
 
@@ -48,7 +48,7 @@ ms.locfileid: "74258137"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/SemanticZoom">開啟應用程式並查看 SemanticZoom 運作情形</a>。</p>
     <ul>
@@ -73,7 +73,7 @@ ms.locfileid: "74258137"
 
 ## <a name="create-a-semantic-zoom"></a>建立語意式縮放
 
-**SemanticZoom** 控制項不具有屬於自己的任何視覺化呈現方式。 它是可管理另外 2 個提供內容檢視的控制項 (通常是 **ListView** 或 **GridView** 控制項) 之間轉換的主控制項。  您會將檢視控制項設定為 SemanticZoom 的 [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) 與 [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) 屬性。
+**SemanticZoom** 控制項沒有屬於自己的任何視覺化呈現方式。 它是一個主控制項，可管理另外 2 個提供內容檢視的控制項，通常是 **ListView** 或 **GridView** 控制項。  您會將檢視控制項設定為 SemanticZoom 的 [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) 與 [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) 屬性。
 
 語意式縮放需要的 3 個元素為︰
 - 分組的資料來源。 (群組是由放大檢視中的 GroupStyle 定義所定義。)

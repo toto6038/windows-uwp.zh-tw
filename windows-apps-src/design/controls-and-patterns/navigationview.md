@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c0d12b3b043546cd908fb474fa8ca9656d8dc56e
-ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+ms.openlocfilehash: 17eb1a2f24e9fd893fee1a0aff349989577375c7
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71100845"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081697"
 ---
 # <a name="navigation-view"></a>瀏覽檢視
 
@@ -24,6 +24,12 @@ NavigationView 控制項提供您的應用程式最上層瀏覽。 其可配合�
 
 ![頂端瀏覽](images/nav-view-header.png)<br/>
 _瀏覽檢視支援頂端和左側瀏覽窗格或功能表_
+
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **NavigationView** 控制項包含在 Windows UI 程式庫中，該程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **平台 API**：[Windows.UI.Xaml.Controls.NavigationView 類別](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
@@ -46,7 +52,7 @@ NavigationView 是調適型瀏覽控制項，適用於：
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/XAML-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td><img src="images/XAML-controls-gallery-app-icon-sm.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/NavigationView">開啟應用程式並查看 NavigationView 運作情形</a>。</p>
     <ul>
@@ -65,7 +71,7 @@ NavigationView 是調適型瀏覽控制項，適用於：
 
 :::row:::
     :::column:::
-    ### <a name="top"></a>上層
+    ### <a name="top"></a>頁首
     窗格位於內容上方。</br>
     `PaneDisplayMode="Top"`
     :::column-end:::
@@ -226,7 +232,7 @@ NavigationView 窗格可以包含：
     :::column-end:::
 :::row-end:::
 
-### <a name="header"></a>標頭
+### <a name="header"></a>Header
 
 您可以設定 [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header) 屬性新增頁面標題。
 
@@ -250,7 +256,7 @@ _瀏覽檢視內容_
 
 瀏覽檢視預設會根據其可用的螢幕空間量自動變更顯示模式。 [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) 和 [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) 屬性會指定顯示模式變更的中斷點。 您可以修改這些值，以自訂調適性顯示模式行為。
 
-### <a name="default"></a>預設值
+### <a name="default"></a>Default
 
 PaneDisplayMode 是設定為 **Auto** 的預設值，調適性行為會顯示：
 
@@ -379,12 +385,12 @@ NavigationView 有內建的返回按鈕；但是，和向前瀏覽一樣，這�
 
 :::row:::
     :::column:::
-        ![Navigation view back button in the left navigation pane](images/leftnav-back.png)<br/>
-        _The back button in the left navigation pane_
+        ![左側瀏覽窗格中的瀏覽檢視返回按鈕](images/leftnav-back.png)<br/>
+        _左側瀏覽窗格中的返回按鈕_
     :::column-end:::
     :::column:::
-        ![Navigation view back button in the top navigation pane](images/topnav-back.png)<br/>
-        _The back button in the top navigation pane_
+        ![上方瀏覽窗格中的瀏覽檢視返回按鈕](images/topnav-back.png)<br/>
+        _上方瀏覽窗格中的返回按鈕_
     :::column-end:::
 :::row-end:::
 
@@ -660,7 +666,7 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 | ------------ | -------------- |
 | Left | NavigationViewExpandedPaneBackground |
 | LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
-| 上層 | NavigationViewTopPaneBackground |
+| 頁首 | NavigationViewTopPaneBackground |
 
 此範例示範如何覆寫 App.xaml 中的佈景主題資源。 您覆寫佈景主題資源時，應該至少一律提供「預設」和「高對比」資源字典，並且視需要提供「亮色調」或「暗色調」資源的字典。 如需詳細資訊，請參閱 [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)。
 

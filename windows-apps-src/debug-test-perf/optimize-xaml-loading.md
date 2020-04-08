@@ -1,14 +1,14 @@
 ---
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: 最佳化您的 XAML 標記
-description: 剖析 XAML 標記以在記憶體建構物件，對複雜 UI 而言很耗費時間。 以下是一些您可以執行的動作，以針對您的應用程式改善 XAML 標記剖析和載入時間及記憶體效率。
+description: 剖析 XAML 標記以在記憶體建構物件，對複雜 UI 而言很耗費時間。 以下是一些您可以執行的動作，以針對您的 app 改善 XAML 標記剖析和載入時間及記憶體效率。
 ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: beb6dde4036019e004d94e5f60e8f3583c78d775
 ms.sourcegitcommit: de34aabd90a92a083dfa17d4f8a98578597763f4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/28/2019
 ms.locfileid: "72980020"
@@ -16,32 +16,32 @@ ms.locfileid: "72980020"
 # <a name="optimize-your-xaml-markup"></a>最佳化您的 XAML 標記
 
 
-剖析 XAML 標記以在記憶體建構物件，對複雜 UI 而言很耗費時間。 以下是一些您可執行來改善 XAML 標記剖析與載入時間及 App 記憶體效率的動作。
+剖析 XAML 標記以在記憶體建構物件，對複雜 UI 而言很耗費時間。 以下是一些您可執行來改善 XAML 標記剖析與載入時間及應用程式記憶體效率的動作。
 
 在 app 啟動時，限制 XAML 標記僅針對您需要的初始 UI 載入。 檢查初始頁面中的標記 (包括頁面資源)，並確認您沒有載入不是立即需要的額外元素。 這些元素可能來自各種不同的來源，例如資源字典、最初既已摺疊的元素，以及繪製在其他元素上的元素。
 
-針對效率最佳化您的 XAML 需要做出取捨；不一定會有各種情況都適用的單一解決方案。 我們來看看一些常見的問題，並提供您可用來為 App 進行適當權衡取捨的指導方針。
+針對效率最佳化您的 XAML 需要做出取捨；不一定會有各種情況都適用的單一解決方案。 我們來看看一些常見的問題，並提供您可用來為應用程式進行適當權衡取捨的指導方針。
 
 ## <a name="minimize-element-count"></a>最小化元素計數
 
 雖然 XAML 平台能夠顯示大量的元素，您可以讓您的 app 配置和轉譯速度更快，方法是使用最少量的元素來達成您想要的視覺效果。
 
-您對如何配置 UI 控制項所做的選擇會影響 App 啟動時所建立的 UI 元素數目。 如需有關最佳化版面配置的詳細資訊，請參閱[最佳化您的 XAML 版面配置](optimize-your-xaml-layout.md)。
+您對如何配置 UI 控制項所做的選擇會影響應用程式啟動時所建立的 UI 元素數目。 如需有關最佳化版面配置的詳細資訊，請參閱[最佳化您的 XAML 版面配置](optimize-your-xaml-layout.md)。
 
 元素計數在資料範本中極其重要，因為會針對每個資料項目重新建立各個元素。 如需有關減少清單或方格中元素計數的詳細資訊，請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)文章中的*每個項目的元素減少*。
 
-我們來看看一些可以減少 App 參數在啟動時載入之元素數目的其他方式。
+我們來看看一些可以減少應用程式在啟動時載入之元素數目的其他方式。
 
 ### <a name="defer-item-creation"></a>延遲建立項目
 
-如果您的 XAML 標記包含不會立即顯示的元素，您可以將這些元素延遲到要顯示時再載入。 比如說，您可以延遲建立不可見內容，例如索引標籤式 UI 中的次要索引標籤。 或者，可以預設將項目顯示在方格檢視中，但提供使用者可改為在清單中檢視資料的選項。 您可以將清單延遲到需要時再載入。
+如果您的 XAML 標記包含不會立即顯示的元素，您可以將這些元素延遲到要顯示時再載入。 比如說，您可以延遲建立不可見內容，例如索引標籤式 UI 中的次要索引標籤。 或者，可以預設將項目顯示在網格檢視中，但提供使用者可改為在清單中檢視資料的選項。 您可以將清單延遲到需要時再載入。
 
-使用 [x:Load 屬性](../xaml-platform/x-load-attribute.md) 而非 [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.Visibility) 屬性來控制項顯示元素的時機。 當元素的可見度設定為 **Collapsed** 時，系統會在轉譯階段跳過該元素，但仍然要付出物件執行個體佔用記憶體的代價。 改用 x:Load 時，除非必要，否則架構不會建立物件執行個體，因此記憶體使用量甚至更低。 缺點是未載入 UI 時，會產生少量的記憶體額外負荷 (約為 600 個位元組)。
+使用 [x:Load 屬性](../xaml-platform/x-load-attribute.md)，而非 [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.Visibility) 屬性，來控制項顯示元素的時機。 當元素的可見度設定為 **Collapsed** 時，系統會在轉譯階段跳過該元素，但仍然要付出物件執行個體佔用記憶體的代價。 改用 x:Load 時，除非必要，否則架構不會建立物件執行個體，因此記憶體使用量甚至更低。 缺點是未載入 UI 時，會產生少量的記憶體額外負荷 (約為 600 個位元組)。
 
 > [!NOTE]
 > 您可以使用 [x:Load](../xaml-platform/x-load-attribute.md) 或 [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md) 屬性來延遲載入元素。 x:Load 屬性是在 Windows 10 Creators Update (版本 1703，SDK 組建 15063) 中開始提供。 Visual Studio 專案設為目標的版本必須至少是 *Windows 10 Creators Update (10.0，組建 15063)* ，才能使用 x:Load。 若要以舊版為目標，請使用 x:DeferLoadStrategy。
 
-下列範例顯示元素計數及記憶體使用量在使用不同技術隱藏 UI 元素時的差異。 將包含完全相同項目的 ListView 和 GridView 放置在頁面的根方格中。 隱藏 ListView，但顯示 GridView。 這其中每個範例的 XAML 都會在螢幕上產生相同的 UI。 我們使用 Visual Studio [分析和效能的工具](tools-for-profiling-and-performance.md)來檢查元素計數和記憶體使用量。
+下列範例顯示元素計數及記憶體使用量在使用不同技術隱藏 UI 元素時的差異。 將包含完全相同項目的 ListView 和 GridView 放置在頁面的根方格中。 看不到 ListView，但會顯示 GridView。 這其中每個範例的 XAML 都會在螢幕上產生相同的 UI。 我們使用 Visual Studio [分析和效能的工具](tools-for-profiling-and-performance.md)來檢查元素計數和記憶體使用量。
 
 #### <a name="option-1---inefficient"></a>選項 1 - 效率低
 
@@ -113,20 +113,20 @@ ListView 在此處將 x:Load 屬性設定為 **False** (其他 XAML 與原先完
 
 未載入 ListView 的即時視覺化樹狀結構。 頁面的元素總計數為 45。
 
-![未載入清單檢視的即時視覺化樹狀結構](images/visual-tree-3.png)
+![未載入清單檢視的視覺化樹狀結構](images/visual-tree-3.png)
 
 ListView 及其子系未載入記憶體中。
 
 ![包含清單檢視的視覺化樹狀結構](images/memory-use-3.png)
 
 > [!NOTE]
-> 這些範例的元素計數和記憶體使用量都很小，只是顯示來示範概念。 在這些範例中，使用 x:Load 的額外負荷大於節省的記憶體，因此應用程式並未受益。 您應該對您的 App 使用分析工具，以判斷 App 是否因為延遲載入而受益。
+> 這些範例的元素計數和記憶體使用量都很小，只是顯示來示範概念。 在這些範例中，使用 x:Load 的額外負荷大於節省的記憶體，因此應用程式並未受益。 您應該對您的應用程式使用分析工具，以判斷應用程式是否因為延遲載入而受益。
 
 ### <a name="use-layout-panel-properties"></a>使用版面配置面板屬性
 
-版面配置面板具有 [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background) 屬性，因此不需要只是為了上色而將 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 放在面板最前面。
+配置面板有 [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background) 屬性，所以不需要只是為了塗上色彩而將 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 放在面板前面。
 
-**而且**
+**Inefficient**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -135,7 +135,7 @@ ListView 及其子系未載入記憶體中。
 </Grid>
 ```
 
-**低下**
+**Efficient**
 
 ```xaml
 <Grid Background="Black"/>
@@ -143,23 +143,23 @@ ListView 及其子系未載入記憶體中。
 
 版面配置面板還有內建的框線屬性，因此不需要在版面配置面板周圍放置 [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) 元素。 如需詳細資訊和範例，請參閱[最佳化您的 XAML 版面配置](optimize-your-xaml-layout.md)。
 
-### <a name="use-images-in-place-of-vector-based-elements"></a>使用影像來取代向量元素
+### <a name="use-images-in-place-of-vector-based-elements"></a>使用影像來取代以向量為基礎的元素
 
-如果您重複使用相同向量元素的次數多到一定程度，改用 [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) 元素會更有效率。 因為 CPU 必須個別建立每個元素，向量元素可能會耗費較多資源。 影像檔只需要解碼一次。
+如果您重複使用相同的向量元素夠多次，改為使用 [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) 元素會更有效率。 向量元素需要耗費較多的資源，因為 CPU 必須個別建立每個元素。 影像檔只需要解碼一次。
 
 ## <a name="optimize-resources-and-resource-dictionaries"></a>最佳化資源和資源字典
 
-您通常會使用[資源字典](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)，在有點像全域的層級上儲存要在 App 中多個地方參考的資源。 例如，樣式、筆刷、範本等等。
+您通常會使用[資源字典](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)，在某些全域層級上儲存要在應用程式中多個地方參考的資源。 例如，樣式、筆刷、範本等等。
 
 一般而言，我們已將 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 最佳化，除非有要求，否則不會將資源具現化。 但有些情況還是應該避免，不要讓資源進行無謂的具現化。
 
 ### <a name="resources-with-xname"></a>包含 x:Name 的資源
 
-使用 [x:Key 屬性](../xaml-platform/x-key-attribute.md)來參考您的資源。 任何含有 [x:Name 屬性](../xaml-platform/x-name-attribute.md)的資源都無法從平台最佳化受益，反而是在 ResourceDictionary 一經建立之後，就會立即進行具現化。 這是因為 x:Name 會告知平台您的應用程式需要此資源的欄位存取權，因此平台需要建立可供建立參考的內容。
+使用 [x:Key 屬性](../xaml-platform/x-key-attribute.md)來參考您的資源。 任何含有 [x:Name 屬性](../xaml-platform/x-name-attribute.md)的資源都無法從平台最佳化受益，反而是在 ResourceDictionary 一經建立之後，就會立即進行具現化。 這是因為 x:Name 會告知平台您的 App 需要此資源的欄位存取權，因此平台需要建立可供建立參考的內容。
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>UserControl 中的 ResourceDictionary
 
-在 [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) 內定義的 ResourceDictionary 會受到不利影響。 平台會針對 UserControl 的每個執行個體建立這類 ResourceDictionary 的複本。 如果您有很多使用的 UserControl，則請將 ResourceDictionary 移出 UserControl，並將它放在頁面層級。
+在 [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) 內定義的 ResourceDictionary 會受到不利影響。 平台會針對 UserControl 的每個執行個體建立這類 ResourceDictionary 的複本。 如果您有一個使用頻率很高的 UserControl，則請將 ResourceDictionary 從 UserControl 中移出，然後將它放到頁面層級。
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Resource 和 ResourceDictionary 領域
 
@@ -167,7 +167,7 @@ ListView 及其子系未載入記憶體中。
 
 這裡的 _InitialPage.xaml_ 使用來自 _ExampleResourceDictionary.xaml_ 的某個資源，因此必須在啟動時剖析整個 _ExampleResourceDictionary.xaml_。
 
-**InitialPage。**
+**InitialPage.xaml。**
 
 ```xaml
 <Page x:Class="ExampleNamespace.InitialPage" ...>
@@ -185,7 +185,7 @@ ListView 及其子系未載入記憶體中。
 </Page>
 ```
 
-**ExampleResourceDictionary。**
+**ExampleResourceDictionary.xaml。**
 
 ```xaml
 <ResourceDictionary>
@@ -196,7 +196,7 @@ ListView 及其子系未載入記憶體中。
 </ResourceDictionary>
 ```
 
-如果您會在 App 的許多頁面上使用資源，則將資料儲存在 _App.xaml_ 是不錯做法，而且可以避免重複。 但是 _App.xaml_ 會在 app 啟動時進行剖析，因此任何只有一個頁面使用的資源 (除非該頁面是初始頁面) 都應該放在頁面的本機資源中。 此範例顯示包含僅由一個頁面 (不是初始頁面) 使用的資源的 _App.xaml_。 這會無端地增加 app 啟動時間。
+如果您在應用程式的許多頁面上使用資源，則將其存放在 _App.xaml_ 是很好的做法，而且可以避免重複。 但是 _App.xaml_ 會在應用程式啟動時進行剖析，所以僅在單一頁面中使用的任何資源 (除非該頁面是初始頁面) 應該放在頁面的本機資源。 此範例顯示包含僅由一個頁面 (不是初始頁面) 所使用資源的 _App.xaml_。 這會無端地增加 app 啟動時間。
 
 **App.xaml**
 
@@ -212,7 +212,7 @@ ListView 及其子系未載入記憶體中。
 </Application>
 ```
 
-**InitialPage。**
+**InitialPage.xaml。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -223,7 +223,7 @@ ListView 及其子系未載入記憶體中。
 </Page>
 ```
 
-**SecondPage。**
+**SecondPage.xaml。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -234,13 +234,13 @@ ListView 及其子系未載入記憶體中。
 </Page>
 ```
 
-為了讓這些範例更有效率，請將 `SecondPageTextBrush` 移入 _SecondPage.xaml_，並將 `ThirdPageTextBrush` 移入 _ThirdPage.xaml_。 `InitialPageTextBrush` 可以留在_app.xaml_中，因為在任何情況下，應用程式資源必須在應用程式啟動時進行剖析。
+為了讓這些範例更有效率，請將 `SecondPageTextBrush` 移入 _SecondPage.xaml_，並將 `ThirdPageTextBrush` 移入 _ThirdPage.xaml_。 `InitialPageTextBrush` 可以保留在 _App.xaml_ 中，因為在任何情況下，應用程式資源必須在應用程式啟動時進行剖析。
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>將看起來相同的多個筆刷合併到一個資源
 
-XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使用這些物件。 但是，XAML 無法清楚分辨某個標記中宣告的筆刷與另一個標記中宣告的筆刷是否相同。 此處的範例使用 [SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 進行示範，但是使用 [GradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientBrush) 的案例會更適合且更重要。 此外，還會檢查是否有使用預先定義色彩的筆刷；例如 `"Orange"` 和 `"#FFFFA500"` 是相同的色彩。
+XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使用這些物件。 但是，XAML 無法清楚分辨某個標記中宣告的筆刷與另一個標記中宣告的筆刷是否相同。 此處的範例使用 [SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 進行示範，但是 [GradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientBrush) 的案例更類似且更重要。 此外，還會檢查使用預先定義色彩的筆刷；例如 `"Orange"` 和 `"#FFFFA500"` 是相同的色彩。
 
-**而且.**
+**Inefficient。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -262,7 +262,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 若要修正重複，將筆刷定義為資源。 如果其他頁面中的控制項使用相同的筆刷，請將其移至 _App.xaml_。
 
-**低下.**
+**Efficient。**
 
 ```xaml
 <Page ... >
@@ -281,17 +281,17 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 過度繪製是在以相同螢幕像素繪製多個物件的情況下發生。 請注意，在這個指導方針和想要最小化元素計數之間有時需要取捨。
 
-使用 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled) 做為視覺診斷。 您可能會發現原先不知道已在場景內的繪製中物件。
+使用 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled) 做為視覺診斷。 您會發現原本未注意到的繪製物件出現在場景中。
 
 ### <a name="transparent-or-hidden-elements"></a>透明或隱藏的元素
 
-如果元素因為透明或隱藏在其他元素後面而看不見，並且不影響版面配置，則將其刪除。 如果元素在初始視覺狀態看不見，但是在其他視覺狀態中可見，請使用 x:Load 來控制其狀態，或者在元素本身將 [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 設為 **Collapsed**，並且在適當狀態中將值變更為 **Visible**。 這個啟發學習法有例外狀況：一般來說，屬性在大多數視覺狀態中的值最好是在本機對元素進行設定。
+如果元素因為是透明的或是隱藏在其他元素後面而看不見，而且它不會參與配置，則刪除它。 如果元素在初始視覺狀態看不見，但是在其他視覺狀態中可見，請使用 x:Load 來控制其狀態，或者在元素本身將 [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 設為 **Collapsed**，並且在適當狀態中將值變更為 **Visible**。 這個啟發學習法有例外狀況：一般來說，屬性在大多數視覺狀態中的值最好是在本機對元素進行設定。
 
 ### <a name="composite-elements"></a>複合元素
 
-使用複合元素，而不要分層放置多個元素來建立效果。 在這個範例中，結果是雙色調圖形，上半部是黑色 (從 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的背景)，下半部是灰色 (從半透明白色的 [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) alpha 混合 **Grid** 的黑色背景)。 這裡需要 150% 的像素以達成填滿的結果。
+使用複合元素，而不要分層放置多個元素來建立效果。 在這個範例中，結果是雙色調圖形，上半部是黑色 (來自 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的背景)，下半部是灰色 (從半透明白色的[Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) alpha-blended 混合 **Grid** 的黑色背景)。 這裡需要 150% 的像素以達成填滿的結果。
 
-**而且.**
+**Inefficient。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -304,7 +304,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 </Grid>
 ```
 
-**低下.**
+**Efficient。**
 
 ```xaml
 <Grid>
@@ -319,9 +319,9 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 ### <a name="layout-panels"></a>版面配置面板
 
-配置面板可以有兩個目的：為區域上色和配置子元素。 如果進一步以 z 順序排序的元素已為區域上色，則前方的配置面板不需要繪製該區域：而是可以只專注於配置其子系。 這裡提供一個範例。
+配置面板可以有兩個目的：為區域上色和配置子元素。 如果進一步以 z 順序排序的元素已為區域上色，則前方的配置面板不需要繪製該區域：而是可以只專注於配置其子系。 以下是範例。
 
-**而且.**
+**Inefficient。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -334,7 +334,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 </GridView>
 ```
 
-**低下.**
+**Efficient。**
 
 ```xaml
 <GridView Background="Blue">
@@ -352,7 +352,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 使用 [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) 元素以在物件周圍繪製框線。 在這個範例中，[Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 是做為 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 周圍的臨時框線。 但是會過度繪製中心儲存格中的所有像素。
 
-**而且.**
+**Inefficient。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -371,7 +371,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 </Grid>
 ```
 
-**低下.**
+**Efficient。**
 
 ```xaml
  <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
@@ -385,9 +385,9 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 ### <a name="cache-static-content"></a>快取靜態內容
 
-另一個過度繪製的來源是來自許多重疊元素的圖形。 如果您在 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)上將 [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) 設為 **BitmapCache**，該元素包含組合圖形，則平台會將元素轉譯為點陣圖一次，然後在每個框架使用該點陣圖，而不會過度繪製。
+另一個過度繪製的來源是來自許多重疊元素的圖形。 如果您在包含組合圖形的 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 上，將 [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) 設為 **BitmapCache**，則平台會將元素轉譯為點陣圖一次，然後在每個框架使用該點陣圖，而不會過度繪製。
 
-**而且.**
+**Inefficient。**
 
 ```xaml
 <Canvas Background="White">
@@ -403,7 +403,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 ![顯示重疊區域的文氏圖表](images/translucentvenn.png)
 
-**低下.**
+**Efficient。**
 
 ```xaml
 <Canvas Background="White" CacheMode="BitmapCache">
@@ -426,6 +426,6 @@ XAML 內建控制項和架構提供的字典已經完全啟用 XBF2。 針對您
 ## <a name="related-articles"></a>相關文章
 
 - [應用程式啟動效能的最佳做法](best-practices-for-your-app-s-startup-performance.md)
-- [優化您的 XAML 版面配置](optimize-your-xaml-layout.md)
-- [ListView 和 GridView UI 優化](optimize-gridview-and-listview.md)
-- [分析和效能的工具](tools-for-profiling-and-performance.md)
+- [最佳化您的 XAML 配置](optimize-your-xaml-layout.md)
+- [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)
+- [分析和效能工具](tools-for-profiling-and-performance.md)

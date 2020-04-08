@@ -11,21 +11,28 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b791768d4ccd78b46fef2d4e494ce06ef9f6ca6a
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: f287f738c39e21ea76ff2595cc34ac715a1b52ca
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062211"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081170"
 ---
 # <a name="color-picker"></a>色彩選擇器
 
 色彩選擇器可用來瀏覽和選取色彩。 預設狀態下，使用者可在色彩頻譜上瀏覽各種顏色，或以 [紅綠藍 (RGB)]、[色調飽和值 (HSV)] 或 [十六進位] 文字方塊來指定色彩。
 
-> **重要 API**：[ColorPicker 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)、[Color 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
-
 ![預設色彩選擇器](images/color-picker-default.png)
 
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **ColorPicker** 控制項包含在 Windows UI 程式庫中，該程式庫是 NuGet 套件，其包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 程式庫 API：** [ColorPicker 類別](/uwp/api/microsoft.ui.xaml.controls.colorpicker)、[Color 屬性](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
+>
+> **平台 API：** [ColorPicker 類別](/uwp/api/windows.ui.xaml.controls.colorpicker)、[Color 屬性](/uwp/api/windows.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -38,7 +45,7 @@ ms.locfileid: "73062211"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已經安裝了 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/ColorPicker">開啟應用程式，並查看 ColorPicker 運作情形</a>。</p>
     <ul>
@@ -188,7 +195,7 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 下表列出了可用於設定 ColorPicker 控制項的所有選項。
 
-功能 | 屬性
+功能 | [內容]
 --------|-----------
 色彩頻譜 | IsColorSpectrumVisible、ColorSpectrumShape、ColorSpectrumComponents
 色彩預覽 | IsColorPreviewVisible
@@ -204,7 +211,7 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 - 請多加思考您的應用程式適合採用何種色彩選擇方式。 有些情境下，可能並不需要精準地挑選色彩，因此簡易版的選擇器反而更加實用
 - 如需提供最精準的色彩挑選體驗，請使用方形頻譜，並確保大小至少達 256x256px，或是加入文字輸入欄位，讓使用者可以精細調整選取的色彩。
 - 在飛出視窗中使用色彩選擇器時，單單點選頻譜或調整滑桿，並不會確定選擇色彩。 如何確定選取色彩：
-  - 請提供確定及取消功能的按鈕，以便套用或取消選擇。 點擊 [返回] 按鈕，或是點選飛出視窗以外的地方，即會關閉視窗，但不儲存使用者的選擇。
+  - 請提供確定及取消功能的按鈕，以便套用或取消選擇。 點擊 [返回] 按鈕，或點選飛出視窗以外的地方，即會關閉視窗，但不會儲存使用者的選擇項目。
   - 或者，藉由點選飛出視窗外部或按 [返回] 按鈕，在關閉飛出視窗時認可選擇。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼

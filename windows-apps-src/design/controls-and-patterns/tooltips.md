@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dabfee25df08d933fc892c3ed6e46f3cc6f4513
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e1e4874051554a8b725c7921a60a2c2429b18bc1
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364026"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081461"
 ---
 # <a name="tooltips"></a>工具提示
 
@@ -25,7 +25,13 @@ ms.locfileid: "66364026"
 
 ![工具提示](images/controls/tool-tip.png)
 
-> **重要 API**：[ToolTip 類別](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本包含這個控制項的新範本，使用者可使用此控制項繪製圓角。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[ToolTip 類別](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -59,7 +65,7 @@ ms.locfileid: "66364026"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/ToolTip">開啟應用程式並查看 ToolTip 運作情形</a>。</p>
     <ul>
@@ -125,7 +131,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-如果 ToolTip 遮蔽它所參考的內容，您可以使用新的 **PlacementRect** 屬性精確地調整其位置。 PlacementRect 會固定 ToolTip 的位置，也可作為 ToolTip 不會遮蓋的區域，但前提是有足夠的螢幕空間可將 ToolTip 拖曳到此區域外部。 您可以指定 ToolTip 擁有者的相關矩形來源，以及排除區域的高度和寬度。 [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性會定義 ToolTip 應拖曳到 PlacementRect. 的上、下、左或右。 
+如果 ToolTip 遮蔽它所參考的內容，您可以使用新的 **PlacementRect** 屬性精確地調整其位置。 PlacementRect 會固定 ToolTip 的位置，也可做為 ToolTip 不會遮蓋的區域，但前提是有足夠的螢幕空間可將 ToolTip 拖曳到此區域外部。 您可以指定 ToolTip 擁有者的相關矩形來源，以及排除區域的高度和寬度。 [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性會定義 ToolTip 應拖曳到 PlacementRect. 的上、下、左或右。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->
@@ -149,7 +155,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 

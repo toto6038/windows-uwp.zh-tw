@@ -1,88 +1,88 @@
 ---
-title: 使用 WPF 中的視覺分層
-description: 了解技術視覺化的圖層 API 搭配使用與現有的 WPF 內容來建立進階的動畫和效果。
+title: 使用視覺層搭配 WPF
+description: 了解使用視覺層 API 搭配現有 WPF 內容來建立進階動畫及效果的技術。
 ms.date: 03/18/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: a2f30ba67acc12d622acd09f9fae872ee2058a2f
 ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/24/2019
 ms.locfileid: "66215148"
 ---
-# <a name="using-the-visual-layer-with-wpf"></a>使用 WPF 中的視覺分層
+# <a name="using-the-visual-layer-with-wpf"></a>使用視覺層搭配 WPF
 
-您可以使用 Windows 執行階段撰寫 Api (也稱為[視覺分層](/windows/uwp/composition/visual-layer)) 在您的 Windows Presentation Foundation (WPF) 應用程式，以建立新式體驗也淺註冊 Windows 10 使用者。
+您可以在 Windows Presentation Foundation (WPF) 應用程式中使用 Windows 執行階段 Composition API (又稱為[視覺層](/windows/uwp/composition/visual-layer))，建立適用於 Windows 10 使用者的現代化體驗。
 
-本教學課程的完整程式碼是可在 GitHub 上：[WPF HelloComposition 範例](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/HelloComposition)。
+您可在 GitHub 取得本教學課程的完整程式碼：[WPF HelloComposition 範例](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/HelloComposition)。
 
 ## <a name="prerequisites"></a>必要條件
 
-裝載 API UWP XAML 有這些必要條件。
+UWP XAML 裝載 API 具備下列先決條件。
 
-- 我們假設您已熟悉使用 WPF 和 UWP 應用程式開發。 如需詳細資訊，請參閱：
+- 本文假設您對使用 WPF 和 UWP 進行應用程式開發已有一定程度的認識。 如需詳細資訊，請參閱：
   - [使用者入門 (WPF)](/dotnet/framework/wpf/getting-started/)
   - [開始使用 Windows 10 應用程式](/windows/uwp/get-started/)
-  - [加強適用於 Windows 10 桌面應用程式](/windows/uwp/porting/desktop-to-uwp-enhance)
-- .NET framework 4.7.2 或更新版本
-- Windows 10 1803 （含） 以後版本
-- 17134 或更新版本的 Windows 10 SDK
+  - [增強您的 Windows 10 傳統型應用程式](/windows/uwp/porting/desktop-to-uwp-enhance)
+- .NET Framework 4.7.2 或更新版本
+- Windows 10 版本 1803 或更新版本
+- Windows 10 SDK 17134 或更新版本
 
-## <a name="how-to-use-composition-apis-in-wpf"></a>如何在 WPF 中使用組合 Api
+## <a name="how-to-use-composition-apis-in-wpf"></a>如何在 WPF 中使用 Composition API
 
-在本教學課程中，您會建立簡單的 WPF 應用程式 UI 及動畫的撰寫項目加入。 在 WPF 和組合元件會保持簡單，但顯示的 interop 程式碼是相同不論元件的複雜度。 完成的應用程式看起來像這樣。
+在本教學課程中，您會建立簡單的 WPF 應用程式 UI，並在其中加入動畫 Composition 元素。 WPF 和 Composition 元件兩方都會維持簡單形式，但不論元件的複雜度多高，顯示的 interop 程式碼均相同。 完成的應用程式看起來類似如下。
 
-![執行的應用程式 UI](images/visual-layer-interop/wpf-comp-interop-app-ui.png)
+![執行中的應用程式 UI](images/visual-layer-interop/wpf-comp-interop-app-ui.png)
 
 ## <a name="create-a-wpf-project"></a>建立 WPF 專案
 
-第一個步驟是建立 WPF 應用程式專案，其中包含應用程式定義和 XAML 頁面的 ui。
+第一步是建立 WPF 應用程式專案，裡頭包含應用程式定義和 UI 的 XAML 頁面。
 
-若要在視覺效果建立新的 WPF 應用程式專案C#名為_HelloComposition_:
+如何使用 Visual C# 建立名稱為 _HelloComposition_ 的 WPF 應用程式專案：
 
-1. 開啟 Visual Studio，然後選取**檔案** > **新增** > **專案**。
+1. 開啟 Visual Studio，然後選取 [檔案]   > [新增]   > [專案]  。
 
-    **新的專案** 對話方塊隨即開啟。
-1. 底下**已安裝**分類中，展開**Visual C#** 節點，然後再選取**Windows Desktop**。
-1. 選取  **WPF 應用程式 (.NET Framework)** 範本。
-1. 輸入名稱_HelloComposition_，選取 Framework **.NET Framework 4.7.2**，然後按一下**確定**。
+    [新增專案]  對話方塊隨即開啟。
+1. 在 [已安裝]  類別下，展開 [Visual C#]  節點，然後選取 [Windows Desktop]  。
+1. 選取 [WPF 應用程式 (.NET Framework)]  範本。
+1. 輸入名稱 HelloComposition  ，選取 [Framework **.NET Framework 4.7.2**]，然後按一下 [確定]  。
 
-    Visual Studio 會建立專案，並開啟預設的應用程式視窗名為 MainWindow.xaml 的設計工具。
+    Visual Studio 會建立專案，並開啟預設應用程式視窗 (名為 MainWindow.xaml) 的設計工具。
 
-## <a name="configure-the-project-to-use-windows-runtime-apis"></a>將專案設定為使用 Windows 執行階段 Api
+## <a name="configure-the-project-to-use-windows-runtime-apis"></a>將專案設定為使用 Windows 執行階段 API
 
-若要使用 Windows 執行階段 (WinRT) Api，在 WPF 應用程式中，您需要設定您的 Visual Studio 專案以存取 Windows 執行階段。 此外，向量廣泛所撰寫的 Api，因此您需要新增參考，才能使用向量。
+若要在您的 WPF 應用程式中使用 Windows 執行階段 (WinRT) API，需要將 Visual Studio 專案設為存取 Windows 執行階段。 此外，Composition API 會廣泛使用向量，因此需要新增使用向量所需的參考。
 
-NuGet 套件是可用來解決這兩個這些需求。 安裝這些封裝來新增必要參考加入專案的最新版本。  
+NuGet 封裝可用於解決這兩項需求。 請安裝最新版本的封裝，將必要的參考新增至您的專案。  
 
-- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) （需要預設套件管理格式設為 PackageReference）。
+- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) (需要將預設的封裝管理格式設為 PackageReference。)
 - [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors/)
 
 > [!NOTE]
-> 雖然我們建議您設定專案使用的 NuGet 套件，您可以手動新增所需的參考。 如需詳細資訊，請參閱 <<c0> [ 加強您的桌面應用程式適用於 Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)。 下表顯示您需要將參考新增至檔案。
+> 雖然建議使用 NuGet 封裝來設定您的專案，但您可以手動新增需要的參考。 如需詳細資訊，請參閱[增強您的 Windows 10 傳統型應用程式](/windows/uwp/porting/desktop-to-uwp-enhance)。 下表所列的是需要新增參考的檔案。
 
-|檔案|Location|
+|檔案|位置|
 |--|--|
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<sdk 版本  >\Windows.Foundation.UniversalApiContract\<版本  >|
+|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<sdk 版本  >\Windows.Foundation.FoundationContract\<版本  >|
 |System.Numerics.Vectors.dll|C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics.Vectors\v4.0_4.0.0.0__b03f5f7f11d50a3a|
 |System.Numerics.dll|C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2|
 
-## <a name="configure-the-project-to-be-per-monitor-dpi-aware"></a>將專案設定為可個別監視器 DPI 感知
+## <a name="configure-the-project-to-be-per-monitor-dpi-aware"></a>將專案設為個別監視器 DPI 感知
 
-視覺分層內容，您將新增至您的應用程式不會自動調整規模以符合錯誤會顯示在螢幕的 DPI 設定。 您要啟用個別監視器 DPI 感知應用程式，然後確定，您用來建立視覺分層內容的程式碼會考量目前的 DPI 縮放比例的應用程式執行時。 在這裡，我們會設定為 DPI 感知的專案。 在稍後的章節中，我們會示範如何向視覺分層內容中使用的 DPI 資訊。
+您新增至應用程式的視覺層內容不會自動調整成符合其顯示畫面的 DPI 設定。 您需要啟用應用程式的個別監視器 DPI 感知，再確定用於建立視覺層內容的程式碼會考慮到應用程式執行當前的 DPI 縮放比例。 在此會將專案設為 DPI 感知。 後續章節會示範如何使用 DPI 資訊來調整視覺層內容。
 
-WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是個別監視器 DPI 感知 app.manifest 檔案中。 若要開啟 Windows 層級個別監視器 DPI 感知應用程式資訊清單檔中：
+預設情況下，WPF 應用程式屬於系統 DPI 感知，但必須在 app.manifest 檔案中，將本身宣告為個別監視器 DPI 感知。 如何在應用程式資訊清單檔案中開啟 Windows 層級的個別監視器 DPI 感知：
 
-1. 在 **方案總管**，以滑鼠右鍵按一下_HelloComposition_專案。
-1. 在操作功能表中，選取**新增** > **新項目...** .
-1. 在 [**加入新項目**] 對話方塊中，選取 [應用程式資訊清單檔案]，然後按一下**新增**。 （您可以保留預設名稱）。
-1. 在 app.manifest 檔案，尋找此 xml 和取消註解它：
+1. 在 [方案總管]  中，以滑鼠右鍵按一下 [HelloComposition]  專案。
+1. 在操作功能表中，選取 [新增]**Add** > [新增項目...]  。
+1. 在 [新增項目]  對話方塊中，選取「應用程式資訊清單檔案」，然後按一下 [新增]  。 (您可以保留預設名稱。)
+1. 在 app.manifest 檔案中，尋找此 xml，並取消其註解：
 
     ```xaml
     <application xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -92,15 +92,15 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
       </application>
     ```
 
-1. 將此設定後的新增`<windowsSettings>`標記：
+1. 在開頭的 `<windowsSettings>` 標籤後，新增此設定：
 
     ```xaml
           <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitor</dpiAwareness>
     ```
 
-1. 您也需要設定**DoNotScaleForDpiChanges** App.config 檔中設定。
+1. 您也需要在 App.config 檔案中設定 **DoNotScaleForDpiChanges** 設定值。
 
-    開啟 App.Config，並將這個 xml 內加入`<configuration>`項目：
+    開啟 App.Config，並將此 xml 新增至 `<configuration>` 元素：
 
     ```xml
     <runtime>
@@ -109,22 +109,22 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     ```
 
 > [!NOTE]
-> **Appcontextswitchoverrides>** 只能設定一次。 如果您的應用程式中已有一組，您必須以分號分隔各個值屬性中的這個參數。
+> **AppContextSwitchOverrides** 只能設定一次。 如果您的應用程式已經設定過一次，則必須以分號在值屬性內分隔此參數。
 
-(如需詳細資訊，請參閱 <<c0> [ 個別監視器 DPI 開發人員指南和範例](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI)GitHub 上。)
+(如需詳細資訊，請參閱 GitHub 上的[個別監視器 DPI 開發人員指南與範例](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI) (英文)。)
 
-## <a name="create-an-hwndhost-derived-class-to-host-composition-elements"></a>建立主應用程式組合項目 HwndHost 衍生類別
+## <a name="create-an-hwndhost-derived-class-to-host-composition-elements"></a>建立 HwndHost 衍生類別以裝載複合元素
 
-主機內容建立視覺化的圖層，您需要建立衍生自類別[HwndHost](/dotnet/api/system.windows.interop.hwndhost)。 這是組態的您用來大部分的裝載 Api 組合。 在這個類別中，您可以使用[平台引動服務 (PInvoke)](/cpp/dotnet/calling-native-functions-from-managed-code)並[COM Interop](/dotnet/api/system.runtime.interopservices.comimportattribute)帶入您的 WPF 應用程式撰寫的 Api。 如需 PInvoke 和 COM Interop 的詳細資訊，請參閱 <<c0> [ 與 unmanaged 程式碼交互操作](/dotnet/framework/interop/index)。
+若要裝載使用視覺層的內容，您需要建立衍生自 [HwndHost](/dotnet/api/system.windows.interop.hwndhost) 的類別。 您會在這裡處理裝載 Composition API 的大部分設定。 在此類別中，要使用[平台引動服務 (PInvoke)](/cpp/dotnet/calling-native-functions-from-managed-code) 和 [COM Interop](/dotnet/api/system.runtime.interopservices.comimportattribute)，將 Composition API 帶入您的 WPF 應用程式。 如需 PInvoke 和 COM Interop 的詳細資訊，請參閱[與非受控程式碼交互操作](/dotnet/framework/interop/index)。
 
 > [!TIP]
-> 如果您要檢查的完整程式碼的教學課程，以確定所有的程式碼是在正確的位置，當您完成本教學課程結尾處。
+> 如有需要，請查看本教學課程結尾的完整程式碼，確定在逐步進行教學課程時，所有程式碼的位置皆正確。
 
-1. 新的類別檔案加入專案，衍生自[HwndHost](/dotnet/api/system.windows.interop.hwndhost)。
-    - 在 **方案總管**，以滑鼠右鍵按一下_HelloComposition_專案。
-    - 在操作功能表中，選取**新增** > **類別...** .
-    - 在 [**加入新項目**] 對話方塊中，將類別命名為_CompositionHost.cs_，然後按一下**新增**。
-1. 在 CompositionHost.cs，編輯 類別定義，以衍生自**HwndHost**。
+1. 將新類別檔案新增至衍生自 [HwndHost](/dotnet/api/system.windows.interop.hwndhost) 的專案。
+    - 在 [方案總管]  中，以滑鼠右鍵按一下 [HelloComposition]  專案。
+    - 在內容功能表中，選取 [新增]   > [類別...]  。
+    - 在 [新增項目]  對話方塊中，將類別命名為 _CompositionHost.cs_，然後按一下 [新增]  。
+1. 在 CompositionHost.cs 中，編輯類別定義，以從 **HwndHost** 衍生。
 
     ```csharp
     // Add
@@ -138,7 +138,7 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     }
     ```
 
-1. 您可以將下列程式碼和建構函式加入類別。
+1. 將以下程式碼和建構函式新增至該類別。
 
     ```csharp
     // Add
@@ -179,9 +179,9 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     }
     ```
 
-1. 覆寫**BuildWindowCore**並**DestroyWindowCore**方法。
+1. 覆寫 **BuildWindowCore** 和 **DestroyWindowCore** 方法。
     > [!NOTE]
-    > BuildWindowCore，在您呼叫_InitializeCoreDispatcher_並_InitComposition_方法。 您在後續步驟中建立這些方法。
+    > 在 BuildWindowCore 中，您可以呼叫 _InitializeCoreDispatcher_ 和 _InitComposition_ 方法。 在後續步驟中會建立上述方法。
 
     ```csharp
     // Add
@@ -219,7 +219,7 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     }
     ```
 
-    - [CreateWindowEx](/windows/desktop/api/winuser/nf-winuser-createwindowexa)並[DestroyWindow](/windows/desktop/api/winuser/nf-winuser-destroywindow)需要 PInvoke 宣告。 將這個宣告類別的程式碼的結尾。
+    - [CreateWindowEx](/windows/desktop/api/winuser/nf-winuser-createwindowexa) 和 [DestroyWindow](/windows/desktop/api/winuser/nf-winuser-destroywindow) 需要 PInvoke 宣告， 請將此宣告放置在該類別的程式碼結尾。
 
     ```csharp
     #region PInvoke declarations
@@ -242,8 +242,8 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     #endregion PInvoke declarations
     ```
 
-1. 初始化使用的執行緒[CoreDispatcher](/uwp/api/windows.ui.core.coredispatcher)。 Core 發送器是負責處理視窗訊息，以及分派事件的 WinRT Api。 新執行個體**CoreDispatcher**必須由具有 CoreDispatcher 的執行緒上。
-    - 建立名為的方法_InitializeCoreDispatcher_並加入程式碼來設定在發送程式佇列。
+1. 使用 [CoreDispatcher](/uwp/api/windows.ui.core.coredispatcher) 初始化執行緒。 核心發送器負責處理 WinRT API 的視窗訊息和分派事件。 **CoreDispatcher** 的新執行個體必須建立在具有 CoreDispatcher 的執行緒上。
+    - 建立名為 _InitializeCoreDispatcher_ 的方法，並新增程式碼以設定發送器佇列。
 
     ```csharp
     private object InitializeCoreDispatcher()
@@ -259,7 +259,7 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     }
     ```
 
-    - 發送器佇列也會要求 PInvoke 宣告。 將放在這個宣告_PInvoke 宣告_您在上一個步驟中建立的區域。
+    - 發送器佇列也需要 PInvoke 宣告。 將此宣告放在上一個步驟中建立的 PInvoke 宣告  區域中。
 
     ```csharp
     //typedef enum DISPATCHERQUEUE_THREAD_APARTMENTTYPE
@@ -314,9 +314,9 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
                                             out object dispatcherQueueController);
     ```
 
-    您現在已準備好在發送器佇列，而可以開始初始化，並建立組合內容。
+    現在已準備好發送器佇列，可以開始初始化並建立 Composition 內容。
 
-1. 初始化[複合](/uwp/api/windows.ui.composition.compositor)。 複合項是建立各種類型中的處理站[Windows.UI.Composition](/uwp/api/windows.ui.composition)跨越視覺效果、 影響系統和動畫系統的命名空間。 複合類別也會管理從處理站建立物件的存留期。
+1. 初始化 [Compositor](/uwp/api/windows.ui.composition.compositor)。 Compositor 是一個處理站，可以在 [Windows.UI.Composition](/uwp/api/windows.ui.composition) 命名空間中建立各種類型，範圍包括視覺效果、效果系統和動畫系統。 Compositor 類別也會管理從處理站建立的物件存留期。
 
     ```csharp
     private void InitComposition(IntPtr hwndHost)
@@ -336,7 +336,7 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     }
     ```
 
-    - **ICompositorDesktopInterop**並**ICompositionTarget**需要 COM 匯入。 將此程式碼後的_CompositionHost_類別，但在命名空間宣告。
+    - **ICompositorDesktopInterop** 和 **ICompositionTarget** 需要 COM 匯入項目。 請將此程式碼放置在 _CompositionHost_ 類別之後，但需位在命名空間宣告中。
 
     ```csharp
     #region COM Interop
@@ -385,29 +385,29 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     #endregion COM Interop
     ```
 
-## <a name="create-a-usercontrol-to-add-your-content-to-the-wpf-visual-tree"></a>建立使用者控制項，將您的內容新增至 WPF 視覺化樹狀結構
+## <a name="create-a-usercontrol-to-add-your-content-to-the-wpf-visual-tree"></a>建立 UserControl 以將內容新增至 WPF 視覺化樹狀結構
 
-設定基礎結構的最後一個步驟，才能主控件組合內容是將 HwndHost 新增至 WPF 視覺化樹狀結構。
+設定裝載 Composition 內容所需的基礎結構時，最後一步是將 HwndHost 新增至 WPF 視覺化樹狀結構。
 
 ### <a name="create-a-usercontrol"></a>建立 UserControl
 
-使用者控制項是封裝您的程式碼建立及管理撰寫內容，並輕鬆地將內容新增至您的 XAML 的便利方式。
+UserControl 是一種方便的程式碼封裝方式，可封裝用來建立和管理 Composition 內容的程式碼，並且輕鬆將內容新增至您的 XAML。
 
-1. 將新的使用者控制項檔案加入專案。
-    - 在 **方案總管**，以滑鼠右鍵按一下_HelloComposition_專案。
-    - 在操作功能表中，選取**新增** > **使用者控制項...** .
-    - 在 **加入新項目**對話方塊中，命名的使用者控制項_CompositionHostControl.xaml_，然後按一下**新增**。
+1. 將新的使用者控制檔案新增至您的專案。
+    - 在 [方案總管]  中，以滑鼠右鍵按一下 [HelloComposition]  專案。
+    - 在操作功能表中，選取 [新增]   > [使用者控制項...]  。
+    - 在 [新增項目]  對話方塊中，將使用者控制項命名為 CompositionHostControl.xaml  ，然後按一下 [新增]  。
 
-    同時 CompositionHostControl.xaml 和 CompositionHostControl.xaml.cs 檔案中建立並加入至專案。
-1. 在 CompositionHostControl.xaml，取代`<Grid> </Grid>`以此方式標記**框線**項目，這是您 HwndHost 就會進入 XAML 容器。
+    會建立 CompositionHostControl.xaml 和 CompositionHostControl.xaml.cs 檔案並新增到您的專案中。
+1. 在 CompositionHostControl.xaml 中，將 `<Grid> </Grid>` 標籤更換為 **Border** 元素，也就是您的 HwndHost 將會進入的 XAML 容器。
 
     ```xaml
     <Border Name="CompositionHostElement"/>
     ```
 
-在 使用者控制項的程式碼，方法，您可以建立您在上一個步驟中建立 CompositionHost 類別的執行個體，並將它新增為子項目_CompositionHostElement_，在 XAML 頁面中所建立的框線。
+在使用者控制項的程式碼中，要建立 CompositionHost 類別 (已於上一步建立) 的執行個體，並將其新增為 CompositionHostElement  (您在 XAML 頁面中建立的 Border) 的子元素。
 
-1. 在 CompositionHostControl.xaml.cs，加入私用變數，您將使用您撰寫的程式碼中的物件。 將這些類別定義之後新增。
+1. 在 CompositionHostControl.xaml.cs 中，新增會在 Composition 程式碼中使用的物件的私用變數。 請將這些變數新增在類別定義後方。
 
     ```csharp
     CompositionHost compositionHost;
@@ -416,9 +416,9 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     DpiScale currentDpi;
     ```
 
-1. 加入使用者控制項的處理常式**Loaded**事件。 這是設定您的 CompositionHost 執行個體。
+1. 新增使用者控制項 **Loaded** 事件的處理常式。 您要在這裡設定 CompositionHost 執行個體。
 
-    - 在建構函式，將連結的事件處理常式如下所示 (`Loaded += CompositionHostControl_Loaded;`)。
+    - 在建構函式中，連結事件處理常式，如這裡所示 (`Loaded += CompositionHostControl_Loaded;`)。
 
     ```csharp
     public CompositionHostControl()
@@ -428,7 +428,7 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     }
     ```
 
-    - 新增事件處理常式方法同名*CompositionHostControl_Loaded*。
+    - 新增名稱為 CompositionHostControl_Loaded  的事件處理常式方法。
     ```csharp
     private void CompositionHostControl_Loaded(object sender, RoutedEventArgs e)
     {
@@ -449,9 +449,9 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     }
     ```
 
-    在這種方法，您會將設定您將使用您撰寫的程式碼中的物件。 以下是快速查看發生的事情。
+    在這個方法中，要設定會在 Composition 程式碼中使用的物件。 以下會快速介紹一下過程。
 
-    - 首先，請確定設定為只執行一次藉由檢查是否 CompositionHost 的執行個體已存在。
+    - 首先檢查 CompositionHost 執行個體是否已存在，確定僅進行一次設定。
 
     ```csharp
     // If the user changes the DPI scale setting for the screen the app is on,
@@ -463,13 +463,13 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     }
     ```
 
-    - 取得目前的 DPI。 這用來適當調整您的撰寫項目。
+    - 取得目前的 DPI， 這是用來妥善調整您的 Composition 元素。
 
     ```csharp
     currentDpi = VisualTreeHelper.GetDpi(this);
     ```
 
-    - 建立 CompositionHost 的執行個體，並將它指派為的子系上框線_CompositionHostElement_。
+    - 建立 CompositionHost 的執行個體，並將其指派為 Border (CompositionHostElement  ) 的子系。
 
     ```csharp
     compositionHost =
@@ -477,26 +477,26 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     ControlHostElement.Child = compositionHost;
     ```
 
-    - 取得複合項從 CompositionHost。
+    - 從 CompositionHost 取得 Compositor。
 
     ```csharp
     compositor = compositionHost.Compositor;
     ```
 
-    - 使用複合項來建立視覺效果的容器。 這是您加入您的撰寫項目，來組合容器。
+    - 使用 Compositor 建立容器視覺效果。 這是您要將 Composition 元素新增至其中的 Composition 容器。
 
     ```csharp
     containerVisual = compositor.CreateContainerVisual();
     compositionHost.Child = containerVisual;
     ```
 
-### <a name="add-composition-elements"></a>將複合項目
+### <a name="add-composition-elements"></a>新增 Composition 元素
 
-就地基礎結構，您現在可以產生您想要顯示的組合內容。
+基礎結構就緒後，即可產生要顯示的 Composition 內容。
 
-針對此範例中，您會新增建立，並以動畫顯示簡單的方塊的程式碼[SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)。
+在這個範例中，您要新增程式碼 [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual) 來建立簡單的方塊並加上動畫。
 
-1. 新增撰寫項目。 在 CompositionHostControl.xaml.cs，加入 CompositionHostControl 類別中的這些方法。
+1. 新增 Composition 元素。 在 CompositionHostControl.xaml.cs 中，將這些方法新增至 CompositionHostControl 類別。
 
     ```csharp
     // Add
@@ -548,15 +548,15 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
 
 ### <a name="handle-dpi-changes"></a>處理 DPI 變更
 
-程式碼來新增和以動畫顯示的項目會考量目前的 DPI 縮放比例會建立項目，但您也需要應用程式執行時，帳戶的 DPI 變更時。 您可以處理[HwndHost.DpiChanged](/dotnet/api/system.windows.interop.hwndhost.dpichanged)事件變更的通知，並調整您的計算是根據新的 DPI。
+用於新增元素並製作元素動畫的程式碼，會在建立元素時將目前的 DPI 縮放比例考量在內，但也需要考慮到應用程式執行時的 DPI 變更。 您可以控制 [HwndHost.DpiChanged](/dotnet/api/system.windows.interop.hwndhost.dpichanged) 事件，以便接收變更通知，並根據新的 DPI 調整計算。
 
-1. 在 CompositionHostControl_Loaded 方法，在最後一行，後面加入這個連結 DpiChanged 事件處理常式。
+1. 請在 CompositionHostControl_Loaded 方法中，在最後一行後方新增此事件，以連結 DpiChanged 事件處理常式。
 
     ```csharp
     compositionHost.DpiChanged += CompositionHost_DpiChanged;
     ```
 
-1. 新增事件處理常式方法同名_CompositionHostDpiChanged_。 此程式碼調整規模和每個元素的位移，並重新計算任何未完成的動畫。
+1. 新增名稱為 CompositionHostDpiChanged  的事件處理常式方法。 這段程式碼會調整每個元素的縮放比例和位移，然後重新計算任何未完成的動畫。
 
     ```csharp
     private void CompositionHost_DpiChanged(object sender, DpiChangedEventArgs e)
@@ -577,12 +577,12 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     }
     ```
 
-## <a name="add-the-user-control-to-your-xaml-page"></a>將使用者控制項新增至您的 XAML 頁面
+## <a name="add-the-user-control-to-your-xaml-page"></a>將使用者控制項新增至 XAML 頁面
 
-現在，您可以將使用者控制項加入您的 XAML UI。
+現在可以將使用者控制項新增至 XAML UI。
 
-1. 在 MainWindow.xaml 中，設定視窗高度為 600 和 840 的寬度。
-1. 新增 XAML 的 ui。 在 MainWindow.xaml 中，新增此 XAML 根之間`<Grid> </Grid>`標記。
+1. 在 MainWindow.xaml 中，將 [視窗高度] 設為 600，並將 [寬度] 設為 840。
+1. 新增 UI 的 XAML。 在 MainWindow.xaml 中，在根 `<Grid> </Grid>` 標籤之間新增此 XAML。
 
     ```xaml
     <Grid.ColumnDefinitions>
@@ -608,9 +608,9 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
                                   BorderThickness="3"/>
     ```
 
-1. 處理按下按鈕，建立新的項目。 （Click 事件已傳入在 XAML 中。）
+1. 操作按鈕點選動作，以建立新元素。 (XAML 中已連結 Click 事件。)
 
-    在 MainWindow.xaml.cs 中，新增這*Button_Click*事件處理常式方法。 此程式碼會呼叫_CompositionHost.AddElement_來建立新的項目，使用隨機產生的大小和位移。
+    在 MainWindow.xaml.cs 中，新增此 Button_Click  事件處理常式方法。 此程式碼會呼叫 CompositionHost.AddElement  ，建立隨機產生大小和位移的新元素。
 
     ```csharp
     // Add
@@ -626,25 +626,25 @@ WPF 應用程式是系統 DPI 感知，根據預設，但需要宣告本身是�
     }
     ```
 
-您現在可以建置並執行您的 WPF 應用程式。 如果您要檢查的完整程式碼結尾的教學課程，以確定所有的程式碼是在正確的位置。
+現在可以建置並執行 WPF 應用程式。 如有需要，請查看本教學課程結尾的完整程式碼，確定所有程式碼的位置皆正確。
 
-當您執行應用程式，並按一下按鈕時，您應該會看到動畫加入至 UI 的平方。
+執行應用程式並按一下按鈕時，應該會看見新增到 UI 的方塊動畫。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
-相同的基礎結構為基礎的更完整範例，請參閱 < [WPF 視覺化的圖層整合範例](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/VisualLayerIntegration)GitHub 上。
+如需在相同基礎結構上組建且更完整的範例，請參閱 GitHub 上的 [WPF 視覺層整合範例](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/VisualLayerIntegration) (英文)。
 
 ## <a name="additional-resources"></a>其他資源
 
 - [使用者入門 (WPF)](/dotnet/framework/wpf/getting-started/) (.NET)
-- [以相互操作 unmanaged 程式碼](/dotnet/framework/interop/)(.NET)
-- [開始使用 Windows 10 應用程式](/windows/uwp/get-started/)(UWP)
-- [增強您的桌面應用程式適用於 Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
-- [Windows.UI.Composition 命名空間](/uwp/api/windows.ui.composition)(UWP)
+- [與非受控程式碼交互操作](/dotnet/framework/interop/) (.NET)
+- [開始使用 Windows 10 應用程式](/windows/uwp/get-started/) (UWP)
+- [增強您的 Windows 10 傳統型應用程式](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Windows.UI.Composition 命名空間](/uwp/api/windows.ui.composition) (UWP) (英文)
 
 ## <a name="complete-code"></a>完整程式碼
 
-本教學課程中，以下是完整的程式碼。
+以下為本教學課程的完整程式碼。
 
 ### <a name="mainwindowxaml"></a>MainWindow.xaml
 

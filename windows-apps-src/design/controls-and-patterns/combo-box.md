@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 351e234577b1a07b33bdcdbb92642c3697342503
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: 31b3bcc2388a98941fc5e8aa44d18beee53de5c7
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163694"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081101"
 ---
 # <a name="combo-box-and-list-box"></a>下拉式方塊和清單方塊
 
@@ -23,11 +23,17 @@ ms.locfileid: "72163694"
 
 關閉下拉式方塊後，它會顯示目前的選取項目，若沒有已選取的項目則是空的。 當使用者展開下拉式方塊時，它會顯示可選取的項目清單。
 
-> **重要 API**：[ComboBox 類別](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable 屬性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text 屬性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-
-精簡狀態下具有標頭的下拉式方塊。
-
 ![精簡狀態下的下拉式清單範例](images/combo_box_collapsed.png)
+
+> _精簡狀態下具有標頭的下拉式方塊。_
+
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本包含這個控制項的新範本，使用者可使用此控制項繪製圓角。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [ComboBox 類別](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable 屬性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text 屬性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -41,7 +47,7 @@ ms.locfileid: "72163694"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/ComboBox">開啟應用程式並查看 ComboBox 運作情形</a>。</p>
     <ul>
@@ -240,13 +246,13 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 {
     if (byte.TryParse(e.Text, out double newValue))
     {
-        // Update the app’s font size.
+        // Update the app's font size.
         _fontSize = newValue;
     }
     else
     {
         // If the item is invalid, reject it and revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         sender.Text = sender.SelectedValue.ToString();
         e.Handled = true;
     }
@@ -279,7 +285,7 @@ private void FavoriteColorComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSu
     else
     {
         // If the item is invalid, reject it but do not revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         e.Handled = true;
     }
 }

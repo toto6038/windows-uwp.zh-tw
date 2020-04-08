@@ -1,158 +1,158 @@
 ---
-title: 在 Windows 上開始使用 node.js web 架構
-description: 協助您在 Windows 上開始使用 node.js web 架構的指南。
+title: 開始在 Windows 上使用 Node.js Web 架構
+description: 本指南可協助您開始在 Windows 上使用 Node.js Web 架構。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-keywords: NodeJS，node.js，windows 10，microsoft，學習 NodeJS，windows 上的節點，wsl 上的節點，在 windows 上安裝節點，使用 vs code 的 NodeJS，在 windows 上以節點進行開發，在 windows 上使用 NodeJS 進行開發，在 windows 上的 wsl 上安裝節點適用于 Linux 的子系統
+keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 Node, wsl 上的 Node, linux 或 windows 上的 Node, 在 windows 上安裝 Node, nodejs 與 vs code, 在 windows 上使用 Node 進行開發, 在 windows 上使用 nodejs 進行開發, 在 WSL 上安裝 Node, Windows 子系統 Linux 版上的 NodeJS
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: a8ce1d08136a74504e1b3bad26feadd61b72068f
 ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/17/2019
 ms.locfileid: "72517785"
 ---
-# <a name="get-started-with-nodejs-web-frameworks-on-windows"></a>在 Windows 上開始使用 node.js web 架構
+# <a name="get-started-with-nodejs-web-frameworks-on-windows"></a>開始在 Windows 上使用 Node.js Web 架構
 
-此逐步指南可協助您開始使用 Windows 上的 node.js web 架構，包括下一篇、Nuxt 和 Gatsby。
+此逐步指南可協助您開始在 Windows 上使用 Node.js Web 架構，包括 Next.js、Nuxt.js 及 Gatsby。
 
 ## <a name="prerequisites"></a>必要條件
 
-本指南假設您已完成[使用 WSL 2 設定 node.js 開發環境](./setup-on-wsl2.md)的步驟，包括：
+本指南假設您已經完成[使用 WSL 2 設定您的 Node.js 開發環境](./setup-on-wsl2.md)的步驟，包括：
 
-- 安裝 Windows 10 Insider Preview 組建18932或更新版本。
+- 安裝 Windows 10 Insider Preview 組建 18932 或更新版本。
 - 在 Windows 上啟用 WSL 2 功能。
-- 安裝 Linux 散發套件（適用于我們的範例的 Ubuntu 18.04）。 您可以使用下列方式來檢查： `wsl lsb_release -a`
-- 請確定您的 Ubuntu 18.04 散發套件在 WSL 2 模式下執行。 （WSL 可以在 v1 或 v2 模式中執行散發）。您可以開啟 PowerShell 並輸入： `wsl -l -v` 來檢查此項
-- 使用 PowerShell，將 Ubuntu 18.04 設定為預設散發，並使用： `wsl -s ubuntu 18.04`
+- 安裝 Linux 發行版本 (本範例適用 Ubuntu 18.04)。 可透過下列方式進行檢查：`wsl lsb_release -a`
+- 確保 Ubuntu 18.04 發行版本是在 WSL 2 模式下執行。 (WSL 可以在 v1 或 v2 模式中執行發行版本。)可開啟 PowerShell 並輸入下列內容，以此方式進行檢查：`wsl -l -v`
+- 使用 PowerShell，將 Ubuntu 18.04 設定為預設發行版本，請透過：`wsl -s ubuntu 18.04`
 
 ## <a name="get-started-with-nextjs"></a>開始使用 Node.js
 
-接下來的 .js 是一種架構，可根據回應 .js、node.js、Webpack 和 Babel 來建立伺服器呈現的 JavaScript 應用程式。 基本上，它是一種專案的重複使用方法，它會特別注意最佳做法，讓您以簡單且一致的方式建立「通用」 web 應用程式，幾乎不會有任何設定。 這些「通用」伺服器呈現的 web 應用程式有時也稱為「isomorphic」，這表示程式碼會在用戶端和伺服器之間共用。
+Next.js 是一種架構，可讓您以 React.js、Node.js、Webpack 及 Babel.js 為基礎，建立伺服器轉譯的 JavaScript 應用程式。 基本上這是 React 的專案樣板，其設計注重最佳做法，可透過簡單、一致的方式建立「通用」Web 應用程式，幾乎無需任何設定。 這類「通用」的伺服器轉譯 Web 應用程式有時也稱為「同構」，表示用戶端和伺服器之間會共用程式碼。
 
-若要建立下一個 .js 專案，包括安裝下一個、回應和回應 dom：
+如何建立 Next.js 專案 (包括安裝 next、react 及 react-dom)：
 
-1. 開啟您的 WSL 終端機（ie）。Ubuntu 18.04）。
+1. 開啟 WSL 終端機 (即 Ubuntu 18.04)。
 
-2. 建立新的專案資料夾： `mkdir NextProjects` 並輸入該目錄： `cd NextProjects`。
+2. 建立新的專案資料夾：`mkdir NextProjects`，並進入該目錄：`cd NextProjects`。
 
-3. 安裝下一個 .js 並建立專案（將「我的下一個應用程式」取代為您想要呼叫應用程式的任何內容）： `npm create next-app my-next-app`。
+3. 安裝 Next.js 並建立專案 (將 'my-next-app' 取代為您要為應用程式取的名稱)：`npm create next-app my-next-app`。
 
-4. 安裝套件之後，請將目錄變更為新的應用程式資料夾，`cd my-next-app`，然後使用 `code .` 以在 VS Code 中開啟您的下一個 .js 專案。 這可讓您查看已針對您的應用程式建立的下一個 .js 架構。 請注意，VS Code 在 WSL 遠端環境中開啟您的應用程式（如 VS Code 視窗左下方的綠色索引標籤所示）。 這表示當您使用 VS Code 在 Windows OS 上進行編輯時，它仍會在 Linux OS 上執行您的應用程式。
+4. 安裝套件後，將目錄變更至新的應用程式資料夾 `cd my-next-app` 中，然後使用 `code .` 在 VS Code 中開啟 Next.js 專案。 如此即可查看為應用程式建立的 Next.js 架構。 請注意，VS Code 會在 WSL-Remote 環境中開啟您的應用程式 (如 VS Code 視窗左下方的綠色索引標籤所示)。 這表示當您在 Windows 作業系統上使用 VS Code 進行編輯時，它仍會 Linux OS 上執行您的應用程式。
 
-    ![WSL-遠端擴充功能](../images/wsl-remote-extension.png)
+    ![WSL-Remote 延伸模組](../images/wsl-remote-extension.png)
 
-5. 在下一次安裝 .js 之後，您必須知道3個命令：
+5. 安裝 Next.js 之後，3 個不可不知的命令：
 
-    - `npm run dev` 用於執行具有熱重載的開發實例、檔案監看式和工作重新執行。
-    - `npm run build`，用來編譯您的專案。
-    - `npm start`，用於以生產模式啟動應用程式。
+    - `npm run dev`，可透過熱式重新載入、檔案監看以及工作重新執行功能，執行開發執行個體。
+    - `npm run build`，用於編譯專案。
+    - `npm start`，用於在實際執行模式中啟動您的應用程式。
 
-    開啟 VS Code 中整合的 WSL 終端機（**View > terminal**）。 請確定終端機路徑指向您的專案目錄（即 `~/NextProjects/my-next-app$`）。 然後嘗試使用下列程式執行新的下一個 .js 應用程式的開發實例： `npm run dev`
+    在 VS Code 中開啟整合式 WSL 終端機 ([檢視] > [終端機]  )。 確定終端機路徑指向您的專案目錄 (即 `~/NextProjects/my-next-app$`)。 然後嘗試使用下列項目，執行 Next.js 應用程式的開發執行個體：`npm run dev`
 
-6. 本機開發伺服器將會啟動，一旦您的專案頁面完成建立之後，您的終端機會顯示「已成功地在[http://localhost:3000](http://localhost:3000)」上編譯。 選取此 localhost 連結，以在網頁瀏覽器中開啟新的 node.js 應用程式。
+6. 本機開發伺服器將會啟動，當專案頁面完成建置後，您的終端機會顯示「編譯成功 - [http://localhost:3000](http://localhost:3000) 已就緒」。 選取此 localhost 連結，以在 Web 瀏覽器中開啟新的 Next.js 應用程式。
 
-    ![您在 localhost：3000中執行的下一個 .js 應用程式](../images/next-app.png)
+    ![於 localhost:3000 執行的 Next.js 應用程式](../images/next-app.png)
 
-7. 在您的 VS Code 編輯器中開啟 `pages/index.js` 檔案。 找出頁面標題 `<h1 className='title'>Welcome to Next.js!</h1>`，並將其變更為 `<h1 className='title'>This is my new Next.js app!</h1>`。 在您的網頁瀏覽器仍然開啟至 localhost：3000時，儲存您的變更，並注意熱重載功能會自動在瀏覽器中編譯及更新您的變更。
+7. 在 VS Code 編輯器中開啟 `pages/index.js` 檔案。 尋找頁面標題 `<h1 className='title'>Welcome to Next.js!</h1>` 並變更為 `<h1 className='title'>This is my new Next.js app!</h1>`。 在您的 Web 瀏覽器仍開啟 localhost:3000 的情況下，儲存您的變更。請注意，熱式重新載入功能會自動編譯並在瀏覽器中更新變更。
 
-8. 我們來看一下，接下來的 .js 如何處理錯誤。 移除 `</h1>` 結束記號，讓您的標題程式碼現在看起來像這樣： `<h1 className='title'>This is my new Next.js app!`。 儲存這項變更，請注意，您的瀏覽器中會顯示「無法編譯」錯誤，而在您的終端機中，讓您知道應該會有 `<h1>` 的結束記號。 取代 `</h1>` 結束記號、儲存，且頁面將會重載。
+8. 接下來看看 Next.js 如何處理錯誤。 移除 `</h1>` 結尾標記，標題看起來就會如下所示：`<h1 className='title'>This is my new Next.js app!`。 儲存這項變更。請注意，瀏覽器中會顯示「無法編譯」的錯誤，而且會在終端機中告知應使用 `<h1>` 的結尾標記。 取代 `</h1>` 結尾標記並儲存，將會重新載入頁面。
 
-您可以使用 VS Code 的偵錯工具搭配您的下一個 .js 應用程式，方法是選取 F5 鍵，或移至 **> Debug** （Ctrl + Shift + D），並在功能表列中查看 **> 偵錯主控台**（Ctrl + shift + Y）。 如果您在 [偵錯工具] 視窗中選取齒輪圖示，將會為您建立啟動設定（`launch.json`）檔案，以儲存偵錯工具的安裝詳細資料。 若要深入瞭解，請參閱[VS Code 的調試](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。
+您可以使用 F5 鍵，或前往功能表列的 [檢視] > [偵錯]  (Ctrl+Shift+D) 和 [檢視] > [偵錯主控台]  (Ctrl+Shift+Y)，搭配使用 VS Code 的偵錯程式與 Next.js 應用程式。 在 [偵錯] 視窗中選取齒輪圖示，即會建立啟動組態 (`launch.json`) 檔案，以儲存偵測設定的詳細資訊。 若要深入了解，請參閱 [VS Code 偵錯](https://code.visualstudio.com/docs/nodejs/nodejs-debugging) (英文)。
 
-![VS Code 的 [debug] 視窗和 [啟動]。 json 設定圖示](../images/vscode-debug-launch-configuration.png)
+![VS Code 偵錯視窗與 launch.json 組態圖示](../images/vscode-debug-launch-configuration.png)
 
-若要深入瞭解下一個 .js，請參閱[下一個 .js](https://nextjs.org/docs)檔。
+若要深入了解 Next.js，請參閱 [Next.js 文件](https://nextjs.org/docs) (英文)。
 
 ## <a name="get-started-with-nuxtjs"></a>開始使用 Nuxt.js
 
-Nuxt 是一種架構，可用於根據 Vue、node.js、Webpack 和 Babel 建立伺服器呈現的 JavaScript 應用程式。 它是由下一個 .js 所啟發。 基本上，它是 Vue 的專案樣板。 就像下一的 .js 一樣，它會特別注意最佳做法，並可讓您以簡單且一致的方式建立「通用」 web 應用程式，幾乎不會有任何設定。 這些「通用」伺服器呈現的 web 應用程式有時也稱為「isomorphic」，這表示程式碼會在用戶端和伺服器之間共用。
+Nuxt.js 是一種架構，可讓您以 Vue.js、Node.js、Webpack 及 Babel.js 為基礎，建立伺服器轉譯的 JavaScript 應用程式。 該架構是受到 Next.js 所啟發。 基本這是 Vue 的專案樣板。 就像 Next.js 一樣，其設計注重最佳做法，可透過簡單、一致的方式建立「通用」Web 應用程式，幾乎無需任何設定。 這類「通用」的伺服器轉譯 Web 應用程式有時也稱為「同構」，表示用戶端和伺服器之間會共用程式碼。
 
-若要建立 Nuxt 專案，其中包括回答一系列有關您想要安裝之整合式伺服器端架構、UI 架構、測試架構、模式、模組和 linter 的問題：
+如何建立 Nuxt.js 專案 (牽涉到要安裝何種整合式伺服器端架構、使用者介面架構、測試架構、模式、模組和 Linter 等各種問題)：
 
-1. 開啟您的 WSL 終端機（ie）。Ubuntu 18.04）。
+1. 開啟 WSL 終端機 (即 Ubuntu 18.04)。
 
-2. 建立新的專案資料夾： `mkdir NuxtProjects` 並輸入該目錄： `cd NuxtProjects`。
+2. 建立新的專案資料夾：`mkdir NuxtProjects`，並進入該目錄：`cd NuxtProjects`。
 
-3. 安裝 Nuxt 並建立專案（將「我的 Nuxt 應用程式」取代為您想要呼叫應用程式的任何內容）： `npm create nuxt-app my-nuxt-app`
+3. 安裝 Nuxt.js 並建立專案 (將 'my-nuxt-app' 取代為您要為應用程式取的名稱)：`npm create nuxt-app my-nuxt-app`
 
-4. Nuxt 安裝程式現在會詢問您下列問題：
-    - 專案名稱：我的 nuxtjs-應用程式
-    - 專案描述：我的 Nuxt 應用程式的描述。
-    - 作者名稱：我使用我的 GitHub 別名。
-    - 選擇套件管理員： Yarn 或**Npm** -我們會在範例中使用 Npm。
-    - 選擇 UI 架構：無、Ant 設計 Vue、啟動程式 Vue 等等。 在此範例中，我們將選擇**Vuetify** ，但是 Vue 的社區建立了一個比較好的[摘要](https://vue-community.org/guide/ecosystem/ui-libraries.html#summary-tldr)，以協助您選擇最適合您的專案。
-    - 選擇自訂伺服器架構： None、AdonisJs、Express、Fastify 等。 讓我們在此範例中選擇 [**無**]，但您可以在 Dev.to 網站上找到[2019-2020 server framework 的比較](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm)。
-    - 選擇 Nuxt （使用空格鍵來選取模組，或只在您不想要的情況下輸入）： Axios （用於簡化 HTTP 要求）或[PWA 支援](https://pwa.nuxtjs.org/)（用於新增服務背景工作、資訊清單 json 檔案等）。 讓我們不要新增此範例的模組。
-    - 選擇 [linting 工具： **ESLint**]、[美化]、[不起毛的分段檔案]。 讓我們選擇 [ **ESLint** ] （用來分析程式碼的工具，並警告您可能發生的錯誤）。
-    - 選擇測試架構： **None**、JEST、AVA。 讓我們選擇 [**無**]，因為我們不會在本快速入門中討論測試。
-    - 選擇轉譯模式：**通用（SSR）** 或單一頁面應用程式（SPA）。 我們在範例中選擇**通用（SSR）** ，但是[Nuxt](https://nuxtjs.org/guide#server-rendered-universal-ssr-)檔指出一些差異--SSR 需要執行的 node.js 伺服器，以伺服器呈現您的應用程式和 SPA 以進行靜態裝載。
-    - 選擇 [開發工具： **jsconfig** ] （建議 VS Code，讓 Intellisense 程式碼完成運作）
+4. Nuxt.js 安裝程式會詢問您以下問題：
+    - 專案名稱：my-nuxtjs-app
+    - 專案描述：我的 Nuxt.js 應用程式描述。
+    - 作者姓名：我要使用我的 GitHub 別名。
+    - 選擇封裝管理員：Yarn 或 **Npm** - 本文以 NPM 為例。
+    - 選擇使用者介面架構：None、Ant Design Vue、 Bootstrap Vue 等。 此範例會選擇 **Vuetify**，不過 Vue 社群有製作一篇不錯的[使用者介面架構比較摘要](https://vue-community.org/guide/ecosystem/ui-libraries.html#summary-tldr) (英文)，可幫助您選擇最適合專案的選項。
+    - 選擇自訂的伺服器架構：None、AdonisJs、Express、Fastify 等。 此範例會選擇 **None**，但是您可以在 Dev.to 網站找到 [2019-2020 伺服器架構比較](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm) (英文)。
+    - 選擇 Nuxt.js 模組 (使用空白鍵來選取模組，或如果不需要任何模組，只要按 Enter 即可)：Axios (用於簡化 HTTP 要求) 或 [PWA support](https://pwa.nuxtjs.org/) (用於新增服務程式、manifest.json 檔案等)。 此範例不用新增模組。
+    - 選擇 linting 工具：**ESLint**、Prettier、Lint 分段檔案。 選擇 **ESLint** (此工具可分析您的程式碼，並警告您可能發生的錯誤)。
+    - 選擇測試架構：**None**、Jest、AVA。 這次選擇 **None**，因為本快速入門不會進行測試。
+    - 選擇轉譯模式：**通用 (SSR)** 或單頁應用程式 (SPA)。 此範例會選擇 [通用 (SSR)]  ，但是 [Nuxt.js 文件](https://nuxtjs.org/guide#server-rendered-universal-ssr-) (英文) 有指出一些差異 -- 為了進行靜態裝載，SSR 需要執行 Node.js 伺服器，以對您的應用程式與 SPA 進行伺服器轉譯。
+    - 選擇開發工具：**jsconfig.json** (建議用於 VS Code，以讓 Intellisense 程式碼完成運作)
 
-5. 建立專案之後，`cd my-nuxtjs-app` 輸入您的 Nuxt 專案目錄，然後輸入 `code .` 以在 VS Code WSL-遠端環境中開啟專案。
+5. 建立專案後，輸入 `cd my-nuxtjs-app` 以進入您的 Nuxt.js 專案目錄，然後輸入 `code .`，以在 VS Code WSL-Remote 環境中開啟專案。
 
-    ![WSL-遠端擴充功能](../images/wsl-remote-extension.png)
+    ![WSL-Remote 延伸模組](../images/wsl-remote-extension.png)
 
-6. 安裝 Nuxt 之後，您必須知道3個命令：
+6. 安裝 Nuxt.js 之後，3 個不可不知的命令：
 
-    - `npm run dev` 用於執行具有熱重載的開發實例、檔案監看式和工作重新執行。
-    - `npm run build`，用來編譯您的專案。
-    - `npm start`，用於以生產模式啟動應用程式。
+    - `npm run dev`，可透過熱式重新載入、檔案監看以及工作重新執行功能，執行開發執行個體。
+    - `npm run build`，用於編譯專案。
+    - `npm start`，用於在實際執行模式中啟動您的應用程式。
 
-    開啟 VS Code 中整合的 WSL 終端機（**View > terminal**）。 請確定終端機路徑指向您的專案目錄（即 `~/NuxtProjects/my-nuxt-app$`）。 然後，使用下列程式嘗試執行新 Nuxt 應用程式的開發實例： `npm run dev`
+    在 VS Code 中開啟整合式 WSL 終端機 ([檢視] > [終端機]  )。 確定終端機路徑指向您的專案目錄 (即 `~/NuxtProjects/my-nuxt-app$`)。 然後嘗試使用下列項目，執行 Nuxt.js 應用程式的開發執行個體：`npm run dev`
 
-6. 本機程式開發伺服器將會啟動（針對用戶端和伺服器所編譯的部分，顯示一些酷炫的進度列）。 當您的專案完成建立之後，您的終端機會顯示「編譯成功」，以及編譯所需的時間。 將網頁瀏覽器指向[http://localhost:3000](http://localhost:3000)以開啟新的 Nuxt 應用程式。
+6. 本機開發伺服器即會啟動 (顯示某種用戶端和伺服器編譯的酷炫進度列)。 專案建置完成後，終端機會顯示「編譯成功」以及編譯所花費的時間。 將您的 Web 瀏覽器指向 [http://localhost:3000](http://localhost:3000)，以開啟新的 Nuxt.js 應用程式。
 
-    ![您在 localhost：3000中執行的 Nuxt 應用程式](../images/nuxt-app.png)
+    ![於 localhost:3000 執行的 Nuxt.js 應用程式](../images/nuxt-app.png)
 
-7. 在您的 VS Code 編輯器中開啟 `pages/index.vue` 檔案。 找出頁面標題 `<v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>`，並將其變更為 `<v-card-title class="headline">This is my new Nuxt.js app!</v-card-title>`。 在您的網頁瀏覽器仍然開啟至 localhost：3000時，儲存您的變更，並注意熱重載功能會自動在瀏覽器中編譯及更新您的變更。
+7. 在 VS Code 編輯器中開啟 `pages/index.vue` 檔案。 尋找頁面標題 `<v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>` 並變更為 `<v-card-title class="headline">This is my new Nuxt.js app!</v-card-title>`。 在您的 Web 瀏覽器仍開啟 localhost:3000 的情況下，儲存您的變更。請注意，熱式重新載入功能會自動編譯並在瀏覽器中更新變更。
 
-8. 讓我們看看 Nuxt 如何處理錯誤。 移除 `</v-card-title>` 結束記號，讓您的標題程式碼現在看起來像這樣： `<v-card-title class="headline">This is my new Nuxt.js app!`。 儲存這項變更，並請注意，編譯錯誤會顯示在您的瀏覽器中，而在您的終端機中，讓您知道 `<v-card-title>` 的結束記號遺失，以及可在程式碼中找到錯誤的行號。 取代 `</v-card-title>` 結束記號、儲存，且頁面將會重載。
+8. 接下來看看 Nuxt.js 如何處理錯誤。 移除 `</v-card-title>` 結尾標記，標題看起來就會如下所示：`<v-card-title class="headline">This is my new Nuxt.js app!`。 儲存這項變更。請注意，瀏覽器中會顯示編譯錯誤，而且會在終端機中告知缺少 `<v-card-title>` 的結尾標記，以及程式碼中發生錯誤的行號。 取代 `</v-card-title>` 結尾標記並儲存，將會重新載入頁面。
 
-您可以藉由選取 F5 鍵，或移至 **> Debug** （Ctrl + Shift + D）並在功能表列中查看 **> 偵錯主控台**（Ctrl + shift + Y）來使用 VS Code 的偵錯工具與您的 Nuxt。 如果您在 [偵錯工具] 視窗中選取齒輪圖示，將會為您建立啟動設定（`launch.json`）檔案，以儲存偵錯工具的安裝詳細資料。 若要深入瞭解，請參閱[VS Code 的調試](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。
+您可以使用 F5 鍵，或前往功能表列的 [檢視] > [偵錯]  (Ctrl+Shift+D) 和 [檢視] > [偵錯主控台]  (Ctrl+Shift+Y)，搭配使用 VS Code 的偵錯程式與 Nuxt.js 應用程式。 在 [偵錯] 視窗中選取齒輪圖示，即會建立啟動組態 (`launch.json`) 檔案，以儲存偵測設定的詳細資訊。 若要深入了解，請參閱 [VS Code 偵錯](https://code.visualstudio.com/docs/nodejs/nodejs-debugging) (英文)。
 
-![VS Code 的 [debug] 視窗和 [啟動]。 json 設定圖示](../images/vscode-debug-launch-configuration.png)
+![VS Code 偵錯視窗與 launch.json 組態圖示](../images/vscode-debug-launch-configuration.png)
 
-若要深入瞭解 Nuxt，請參閱[Nuxt 指南](https://nuxtjs.org/guide)。
+若要深入了解 Nuxt.js，請參閱 [Nuxt.js 指南](https://nuxtjs.org/guide) (英文)。
 
 ## <a name="get-started-with-gatsbyjs"></a>開始使用 Gatsby.js
 
-Gatsby 是以 Nuxt 為基礎的靜態網站產生器架構，而不是像下一個 .js 和的伺服器呈現。 靜態網站產生器會在組建時間產生靜態 HTML。 它不需要伺服器。 接下來的 .js 和 Nuxt 會在執行時間產生 HTML （每次新的要求都在中）。 他們需要執行伺服器。 Gatsby 也會決定如何處理您應用程式中的資料（使用 GraphQL），而下一個 .js 和 Nuxt 則留給您決定。
+Gatsby.js 是以 React.js 為基礎的靜態網站產生器架構，而非 Next.js 和 Nuxt.js 這類的伺服器轉譯。 靜態網站產生器會在建置時產生靜態 HTML。 不需要伺服器。 Next.js 和 Nuxt.js 會在執行階段產生 HTML (每次收到新請求時)， 需要伺服器才能執行。 Gatsby 也會指定如何 (透過 GraphQL) 處理應用程式中的資料，而 Next.js 和 Nuxt.js 則由您自己決定。
 
-若要建立 Gatsby 專案：
+如何建立 Gatsby.js 專案：
 
-1. 開啟您的 WSL 終端機（ie）。Ubuntu 18.04）。
-2. 建立新的專案資料夾： `mkdir GatsbyProjects` 並輸入該目錄： `cd GatsbyProjects`
-3. 使用 npm 來安裝 Gatsby CLI： `npm install -g gatsby-cli`。 安裝之後，請使用 `gatsby --version` 來檢查版本。
-4. 建立 Gatsby 專案： `gatsby new my-gatsby-app`
-5. 安裝套件之後，請將目錄變更為新的應用程式資料夾，`cd my-gatsby-app`，然後使用 `code .`，在 VS Code 中開啟您的 Gatsby 專案。 這可讓您查看已使用 VS Code 的檔案瀏覽器為應用程式建立的 Gatsby 架構。 請注意，VS Code 在 WSL 遠端環境中開啟您的應用程式（如 VS Code 視窗左下方的綠色索引標籤所示）。 這表示當您使用 VS Code 在 Windows OS 上進行編輯時，它仍會在 Linux OS 上執行您的應用程式。
+1. 開啟 WSL 終端機 (即 Ubuntu 18.04)。
+2. 建立新專案資料夾：`mkdir GatsbyProjects`，並進入該目錄：`cd GatsbyProjects`
+3. 使用 npm 安裝 Gatsby CLI：`npm install -g gatsby-cli`。 安裝後，使用 `gatsby --version` 檢查版本。
+4. 建立您的 Gatsby.js 專案：`gatsby new my-gatsby-app`
+5. 安裝套件後，將目錄變更到新的應用程式資料夾 `cd my-gatsby-app` 中，然後使用 `code .` 在 VS Code 中開啟 Gatsby 專案。 如此即可使用 VS Code 的 [檔案總管]，查看為應用程式建立的 Gatsby.js 架構。 請注意，VS Code 會在 WSL-Remote 環境中開啟您的應用程式 (如 VS Code 視窗左下方的綠色索引標籤所示)。 這表示當您在 Windows 作業系統上使用 VS Code 進行編輯時，它仍會 Linux OS 上執行您的應用程式。
 
-    ![WSL-遠端擴充功能](../images/wsl-remote-extension.png)
+    ![WSL-Remote 延伸模組](../images/wsl-remote-extension.png)
 
-6. 安裝 Gatsby 之後，您必須知道3個命令：
+6. 安裝 Gatsby 之後，3 個不可不知的命令：
 
-    - `gatsby develop`，用來執行具有熱重載的開發實例。
-    - `gatsby build`，用於建立生產組建。
-    - `gatsby serve`，用於以生產模式啟動應用程式。
+    - `gatsby develop`，可透過熱式重新載入開發執行個體。
+    - `gatsby build`，用於建立正式組建。
+    - `gatsby serve`，用於在實際執行模式中啟動您的應用程式。
 
-    開啟 VS Code 中整合的 WSL 終端機（**View > terminal**）。 請確定終端機路徑指向您的專案目錄（即 `~/GatsbyProjects/my-gatsby-app$`）。 然後嘗試使用下列程式執行新應用程式的開發實例： `gatsby develop`
+    在 VS Code 中開啟整合式 WSL 終端機 ([檢視] > [終端機]  )。 確定終端機路徑指向您的專案目錄 (即 `~/GatsbyProjects/my-gatsby-app$`)。 然後嘗試使用下列程式，執行新應用程式的開發執行個體：`gatsby develop`
 
-7. 當您的新 Gatsby 專案完成編譯之後，您的終端機會會顯示「您現在可以在瀏覽器中看到 Gatsby-starter-default。 [http://localhost:8000/](http://localhost:8000/)」。 選取此 localhost 連結，即可查看在網頁瀏覽器中建立的新專案。
+7. 當新 Gatsby 專案完成編譯之後，您的終端機會顯示「您現在可以在瀏覽器中檢視 gatsby-starter-default。 [http://localhost:8000/](http://localhost:8000/)。」 選取此 localhost 連結，以在 Web 瀏覽器中檢視您建置的新專案。
 
 > [!NOTE]
-> 您會注意到您的終端機輸出也會讓您知道，您可以「View GraphiQL，這是一個瀏覽器內的 IDE，以探索您網站的資料和架構： [http://localhost:8000/___graphql](http://localhost:8000/___graphql)」。 GraphQL 會將您的 Api 合併為內建于 Gatsby 的自我記錄 IDE （GraphiQL）。 除了探索您網站的資料和架構之外，您還可以執行查詢、變化和訂閱等 GraphQL 作業。 如需詳細資訊，請參閱[GraphiQL 簡介](https://www.gatsbyjs.org/docs/running-queries-with-graphiql/)。
+> 您會發現終端機的輸出結果也會告知您可以「檢視 GraphiQL，這是瀏覽器內用 IDE，以探索網站的資料和結構描述：[http://localhost:8000/___graphql](http://localhost:8000/___graphql)。」 GraphQL 會將您的 API 合併至 Gatsby 內建的自編文件 IDE (GraphiQL)。 除了探索網站的資料和結構描述以外，也可以執行 GraphQL 作業，例如查詢、變動和訂閱。 如需詳細資訊，請參閱 [GraphiQL 簡介](https://www.gatsbyjs.org/docs/running-queries-with-graphiql/) (英文)。
 
-8. 在您的 VS Code 編輯器中開啟 `src/pages/index.js` 檔案。 找出頁面標題 `<h1 >Hi people</h1>`，並將其變更為 `<h1 >Hi (Your Name)!</h1>`。 在您的網頁瀏覽器仍然開啟至 localhost：8000時，儲存您的變更，並注意熱重載功能會自動在瀏覽器中編譯及更新您的變更。
+8. 在 VS Code 編輯器中開啟 `src/pages/index.js` 檔案。 尋找頁面標題 `<h1 >Hi people</h1>` 並變更為 `<h1 >Hi (Your Name)!</h1>`。 在您的 Web 瀏覽器仍開啟 localhost:8000 的情況下，儲存您的變更。請注意，熱式重新載入功能會自動編譯並在瀏覽器中更新變更。
 
-    ![您在 localhost：3000中執行的 Gatsby 應用程式](../images/gatsby-app.png)
+    ![於 localhost:3000 執行的 Gatsby.js 應用程式](../images/gatsby-app.png)
 
-9. 我們來看一下，接下來的 .js 如何處理錯誤。 移除 `</h1>` 結束記號，讓您的標題程式碼現在看起來像這樣： `<h1>Hi (Your Name)!`。 儲存這項變更，請注意，您的瀏覽器中會顯示「無法編譯」錯誤，而在您的終端機中，讓您知道應該會有 `<h1>` 的結束記號。 取代 `</h1>` 結束記號、儲存，且頁面將會重載。
+9. 接下來看看 Next.js 如何處理錯誤。 移除 `</h1>` 結尾標記，標題看起來就會如下所示：`<h1>Hi (Your Name)!`。 儲存這項變更。請注意，瀏覽器中會顯示「無法編譯」的錯誤，而且會在終端機中告知應使用 `<h1>` 的結尾標記。 取代 `</h1>` 結尾標記並儲存，將會重新載入頁面。
 
-您可以使用 VS Code 的偵錯工具搭配您的下一個 .js 應用程式，方法是選取 F5 鍵，或移至 **> Debug** （Ctrl + Shift + D），並在功能表列中查看 **> 偵錯主控台**（Ctrl + shift + Y）。 如果您在 [偵錯工具] 視窗中選取齒輪圖示，將會為您建立啟動設定（`launch.json`）檔案，以儲存偵錯工具的安裝詳細資料。 若要深入瞭解，請參閱[VS Code 的調試](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。
+您可以使用 F5 鍵，或前往功能表列的 [檢視] > [偵錯]  (Ctrl+Shift+D) 和 [檢視] > [偵錯主控台]  (Ctrl+Shift+Y)，搭配使用 VS Code 的偵錯程式與 Next.js 應用程式。 在 [偵錯] 視窗中選取齒輪圖示，即會建立啟動組態 (`launch.json`) 檔案，以儲存偵測設定的詳細資訊。 若要深入了解，請參閱 [VS Code 偵錯](https://code.visualstudio.com/docs/nodejs/nodejs-debugging) (英文)。
 
-![VS Code 的 [debug] 視窗和 [啟動]。 json 設定圖示](../images/vscode-debug-launch-configuration.png)
+![VS Code 偵錯視窗與 launch.json 組態圖示](../images/vscode-debug-launch-configuration.png)
 
-若要深入瞭解 Gatsby，請參閱[Gatsby](https://www.gatsbyjs.org/docs/)檔。
+若要深入了解 Gatsby，請參閱 [Gatsby.js 文件](https://www.gatsbyjs.org/docs/) (英文)。

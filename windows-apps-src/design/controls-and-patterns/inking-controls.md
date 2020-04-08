@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: b665145eac8599bae69aaf4b1951d267bf79f7a7
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 892e8e9bdeed562a83e566266a7391e9c24b2ad3
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062104"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081734"
 ---
 # <a name="inking-controls"></a>手寫筆跡控制項
 
@@ -54,7 +54,7 @@ InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與�
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/InkCanvas">開啟應用程式並查看 InkCanvas 的運作情形</a>。</p>
     <ul>
@@ -139,7 +139,7 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 > [!NOTE]
 > 您無法變更內建按鈕的顯示順序。 預設的顯示順序是：鋼珠筆、鉛筆、螢光筆、橡皮擦和尺規。 自訂畫筆會附加到最後一個預設畫筆，自訂工具按鈕會新增到最後一個畫筆按鈕與橡皮擦按鈕之間，而自訂切換按鈕會新增到尺規按鈕之後。 (自訂按鈕會以指定的順序新增。)
 
-雖然 InkToolbar 可能是最上層項目，但它通常會透過「手寫筆跡」按鈕或命令公開。 建議您使用 Segoe MLD2 Assets 字型的 EE56 字符做為最上層圖示。
+雖然 InkToolbar 可能是最上層項目，但它通常會透過 [手寫筆跡] 按鈕或命令公開。 建議您使用 Segoe MLD2 Assets 字型的 EE56 字符做為最上層圖示。
 
 ## <a name="inktoolbar-interaction"></a>InkToolbar 互動
 
@@ -158,7 +158,7 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 - 搭配 InkCanvas 使用 InkToolbar 控制項，以提供基本的手寫筆跡功能與設定。 InkCanvas 與 InkToolbar 兩者都可透過程式設計的方式自訂。
 - InkToolbar (以及一般的手寫筆跡) 最能夠透過主動式手寫筆來體驗。 不過，如果您的應用程式要求，也可支援使用滑鼠與觸控的手寫筆跡。
 - 如果支援使用觸控輸入的手寫筆跡，建議您針對切換按鈕 (包含「觸控書寫」工具提示) 使用 Segoe MLD2 Assets 字型的 ED5F 圖示。
-- 如果提供筆觸選取項目，建議您針對工具按鈕 (包含「選取工具」工具提示) 使用 Segoe MLD2 Assets 字型的 EF20 圖示。
+- 如果提供筆劃選取項目，建議您針對工具按鈕 (包含「選取工具」工具提示) 使用 Segoe MLD2 Assets 字型的 EF20 圖示。
 - 如果使用一個以上的 InkCanvas，建議您使用單一 InkToolbar 來控制所有畫布上的手寫筆跡。
 - 為獲得最佳效能，建議您更改預設飛出視窗，而不是針對預設與自訂工具建立自訂飛出視窗。
 

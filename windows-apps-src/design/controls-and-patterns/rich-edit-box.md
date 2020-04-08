@@ -11,20 +11,24 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 00a65324b799b0cf974271da23fdbcb36aa6c8e2
-ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
+ms.openlocfilehash: d3acd69b2b0e3a1bd97b6aa917991d4b2c88d075
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67399619"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081593"
 ---
 # <a name="rich-edit-box"></a>Rich Edit 方塊
 
- 
-
 您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 **true**，使 RichEditBox 變成唯讀。
 
-> **重要 API**：[RichEditBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) \(英文\)、[Document 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document) \(英文\)、[IsReadOnly 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly) \(英文\)、[IsSpellCheckEnabled 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) \(英文\)
+**取得 Windows UI 程式庫**
+
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本包含這個控制項的新範本，使用者可使用此控制項繪製圓角。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[RichEditBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) \(英文\)、[Document 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document) \(英文\)、[IsReadOnly 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly) \(英文\)、[IsSpellCheckEnabled 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) \(英文\)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -40,7 +44,7 @@ ms.locfileid: "67399619"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/RichEditBox">開啟應用程式並查看 RichEditBox 的運作情形</a>。</p>
     <ul>
@@ -226,4 +230,4 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [新增搜尋](search.md)
 - [文字輸入的指導方針](text-controls.md)
 - [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) \(英文\)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)

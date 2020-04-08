@@ -4,12 +4,12 @@ description: 了解圓角原則、設計方法和自訂選項。
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 邊角半徑, 修圓
-ms.openlocfilehash: 84cd27bf8c65ed65a6ee2b0f044e0ffb3ef86bf0
-ms.sourcegitcommit: 49af415e4eefea125c023b7071adaa5dc482e223
+ms.openlocfilehash: a83473b5ad836633bc195aa2b5afe87fa092e0ee
+ms.sourcegitcommit: 3c3730e968fba89b21459390735614cd4c9d9c67
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74799922"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320430"
 ---
 # <a name="corner-radius"></a>圓角半徑
 
@@ -180,9 +180,21 @@ ms.locfileid: "74799922"
 
 如果您只想變更所選控制項數目的圓度，可以直接在控制項上修改 [CornerRadius](/uwp/api/windows.ui.xaml.controls.control.cornerradius) 屬性。
 
-|預設值 | 已修改屬性 |
+|Default | 已修改屬性 |
 |:-- |:-- |
 |![DefaultCheckBox](images/rounded-corner/default-checkbox.png)| ![CustomCheckBox](images/rounded-corner/custom-checkbox.png)|
 |`<CheckBox Content="Checkbox"/>` | `<CheckBox Content="Checkbox" CornerRadius="5"/> ` |
 
 並非所有控制項的邊角都會回應其進行修改的 `CornerRadius` 屬性。 若要確保您想修圓其邊角的控制項確實會以您預期的方式回應其 `CornerRadius` 屬性，請先檢查 `ControlCornerRadius` 或 `OverlayCornerRadius` 全域資源是否會影響有問題的控制項。 如果不會，請檢查您想修圓的控制項到底是否有邊角。 我們有許多控制項都不會呈現實際的邊緣，因此無法正確使用 `CornerRadius` 屬性。
+
+### <a name="basing-custom-styles-on-winui"></a>在 WinUI 上建立自訂樣式的基礎
+
+您可以在樣式中指定正確的 `BasedOn` 屬性，將自訂樣式建立在 WinUI 圓角樣式的基礎上。 例如，若要以 WinUI 按鈕樣式為基礎，建立自訂按鈕樣式，請執行下列動作：
+
+```xaml
+<Style x:Key="MyCustomButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
+   ...
+</Style>
+```
+
+通常，WinUI 控制項樣式遵循一致的命名慣例："DefaultXYZStyle"，其中 "XYZ" 是控制項的名稱。 如需完整參考，您可以瀏覽 WinUI 存放庫中的 XAML 檔案。

@@ -12,24 +12,26 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e5ff5d0e9172432110d60a007228e59e48785b9
-ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
+ms.openlocfilehash: 66dc74e73207feb9b155adffc116f857dcb3027d
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830801"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081634"
 ---
 # <a name="progress-controls"></a>進度控制項
 
 進度控制項為使用者提供回饋，告知正在進行長時間執行的操作。 根據所使用的指示器，它可以表示在進度指示器可見的時候，使用者無法與 App 互動，也可以指示可能需要等待多久的時間。
 
-| **平台 API** | **Windows UI 程式庫 API** |
-| - | - |
-| [ProgressBar 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive) | [ProgressBar 類別](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 屬性](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate) |
+**取得 Windows UI 程式庫**
 
-| **取得 Windows UI 程式庫** |
-| - |
-| 此控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+|  |  |
+| - | - |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **ProgressBar** 控制項包含在 Windows UI 程式庫中，該程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 程式庫 API：** [ProgressBar 類別](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 屬性](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate)
+>
+> **平台 API：** [ProgressBar 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 > [!NOTE]
 > 有兩個版本的 ProgressBar 控制項：一個在平台中，由 Windows.UI.Xaml namespace 命名空間代表；另一個在 Windows UI 程式庫中，也就是 Microsoft.UI.Xaml 命名空間。 雖然 ProgressBar 的 API 相同，但這兩個版本的控制項外觀不同。 本文件將顯示較新 Windows UI 程式庫版本的映像。
@@ -72,7 +74,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡開啟應用程式並查看 <a href="xamlcontrolsgallery:/item/ProgressBar">ProgressBar</a> 或 <a href="xamlcontrolsgallery:/item/ProgressRing">ProgressRing</a> 運作情形。</p>
     <ul>
@@ -85,16 +87,16 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 ## <a name="when-to-use-each-control"></a>各控制項的使用時機
 
-發生中的事要使用何種控制項或狀態來顯示不一定總是明確。 有時候工作本身已足夠明顯，因此完全不需要進度控制項 – 而有時候即使用了進度控制項，卻仍需要文字來向使用者說明進行中的作業。
+發生中的事要使用何種控制項或狀態來顯示不一定總是明確。 有時候工作本身已足夠明顯，因此完全不需要進度控制項 – 而有時候即使已使用進度控制項，卻仍需要文字來向使用者說明進行中的作業。
 
 ### <a name="progressbar"></a>ProgressBar
 -   **控制項是否有已定義的持續時間或可預測的結束時間？**
 
     如果有，則使用「確定」的 ProgressBar，並據此更新其百分比或值。
 
--   **使用者可以繼續而不必監視操作的進度嗎？**
+-   **使用者可以繼續，而不必監視操作的進度嗎？**
 
-    當正在使用 ProgressBar 時，互動式非強制回應的，通常表示使用者不會因該作業未完成而被封鎖，且他們能夠以其他方式使用 App 直到該方面的作業完成。
+    當 ProgressBar 正在使用中時，互動為非強制回應的，通常表示使用者不會因該作業未完成而受到封鎖，而且可以繼續以其他方式使用該應用程式，直到該方面的作業完成為止。
 
 -   **關鍵字**
 
@@ -125,7 +127,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 ### <a name="no-progress-indication-necessary"></a>不需要進度指示
 -   **使用者是否需要知道發生什麼事？**
 
-    例如，如果 App 正在背景進行下載，而使用者並未起始下載，則使用者不需要知道這項下載作業。
+    例如，如果應用程式正在背景進行下載，而使用者並未起始下載，則使用者不需要知道這項下載作業。
 
 -   **作業是否屬於不會阻擋使用者活動，且使用者不感興趣 (但仍有一些興趣) 的背景活動？**
 
@@ -133,11 +135,11 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 -   **使用者是否只在意作業已經完成？**
 
-    有時最好只在作業完成時顯示通知，或在作業完成時立即提供視覺提示，並在背景完成最終作業。
+    有時，最好只在作業完成時顯示通知，或在作業完成時立即提供視覺提示，並在背景完成最終作業。
 
 ## <a name="progress-controls-best-practices"></a>進度控制項的最佳做法
 
-有時看一些不同進度控制項的使用時機與方式的視覺化範例會比較清楚：
+有時看看一些不同進度控制項的使用時機與方式的視覺化範例會比較清楚：
 
 **ProgressBar - 確定**
 
@@ -159,7 +161,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 ![「不確定」的 ProgressRing 範例](images/PR_IndeterminateExample.png)
 
-當使用者與 App 間任何進一步的互動會被阻擋時，或 App 正在等候使用者輸入以繼續時，使用「不確定」的 ProgressRing。 「正在登入...」 上方的範例是絕佳的 ProgressRing 案例，使用者必須登到登入完成才能繼續使用 App。
+當使用者與應用程式之間任何進一步的互動停止時，或應用程式正在等候使用者輸入以繼續時，會使用不確定的 ProgressRing。 上方的「正在登入...」範例是絕佳的 ProgressRing 案例，使用者必須等到簽署完成後，才能繼續使用應用程式。
 
 ## <a name="customizing-a-progress-control"></a>自訂進度控制項
 
@@ -197,7 +199,7 @@ progressRing.IsActive = true;
 
 **顯示等待游標**
 
-當 App 或作業需要時間思考時，以及您需要指示使用者，顯示等待游標的 App 或區域要直到等待游標消失才能進行互動時，最好只短暫顯示等待游標。
+有時候，最好只在應用程式或作業需要時間思考時，以及您需要指示使用者，顯示等待游標的應用程式或區域要直到等待游標消失才能進行互動時，才短暫顯示等待游標。
 
 ```C#
 Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
