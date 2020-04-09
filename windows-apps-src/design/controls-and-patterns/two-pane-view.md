@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19b473ea964ee9c6cb82098e142f066258bcf30b
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: e151e06f0ebc838671aa1100d96e8e6f14de0739
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081437"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614129"
 ---
 # <a name="two-pane-view"></a>兩個窗格檢視
 
@@ -32,20 +32,11 @@ ms.locfileid: "80081437"
 | ![WinUI 標誌](images/winui-logo-64x64.png) | **TwoPaneView** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API：** [TwoPaneView 類別](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
+
+> [!TIP]
+> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
-> **平台 API：** [TwoPaneView 類別](/uwp/api/windows.ui.xaml.controls.twopaneview)
-
-在這整份文件中，我們將使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的[網頁](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-```
-
-在後方的程式碼中，我們也將使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：
-
-```csharp
-using muxc = Microsoft.UI.Xaml.Controls;
-```
+>在後方的程式碼中，我們也使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：`using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 

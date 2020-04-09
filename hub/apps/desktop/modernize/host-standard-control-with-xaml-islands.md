@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3f2a0a6ee6b22fa7d08e7fc746c4ec2ad4ebffa7
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: ed6aa406cd1372819c25bd43b59cd416130b09e0
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218588"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482506"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML Islands 在 WPF 應用程式中裝載標準 UWP 控制項
 
@@ -31,7 +31,7 @@ ms.locfileid: "80218588"
 
 * **應用程式的專案和原始程式碼**。 在以 .NET Framework 或 .NET Core 3 為目標的應用程式中，支援使用 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項來裝載標準第一方 UWP 控制項。
 
-* **UWP 應用程式專案，可定義從 XamlApplication 衍生的根應用程式類別**。 您的 WPF 或 Windows Forms 專案必須能存取 Windows 社群工具組所提供 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)類別的執行個體。 建議的做法是在個別的 UWP 應用程式專案中定義此物件，而該專案屬於 WPF 或 Windows Forms 應用程式的方案。 此物件會作為根中繼資料提供者，以便在目前應用程式目錄的組件中載入自訂 UWP XAML 類型的中繼資料。
+* **UWP 應用程式專案，可定義從 XamlApplication 衍生的根應用程式類別**。 您的 WPF 或 Windows Forms 專案必須能存取 Windows 社群工具組所提供 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文)\ 類別的執行個體，讓其能夠探索和載入自訂 UWP XAML 控制項。 建議的做法是在個別的 UWP 應用程式專案中定義此物件，而該專案屬於 WPF 或 Windows Forms 應用程式的方案。 
 
     > [!NOTE]
     > 雖然裝載第一方 UWP 控制項不需要 `XamlApplication` 物件，但您的應用程式需要此物件來支援完整範圍的 XAML Island 案例，包括裝載自訂 UWP 控制項。 因此，我們建議您一律在任何使用 XAML Islands 的方案中定義 `XamlApplication` 物件。
@@ -67,7 +67,7 @@ ms.locfileid: "80218588"
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>在 UWP 應用程式專案中定義 XamlApplication 類別
 
-接著，將 UWP 應用程式專案新增至您的方案，並修訂此專案中的預設 `App` 類別，以便從 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別衍生。
+接著，將 UWP 應用程式專案新增至您的方案，並修訂此專案中的預設 `App` 類別，以便從 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別衍生。 這個類別支援 [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 介面，該介面可讓您的應用程式在執行時探索和載入自訂 UWP XAML 控制項的中繼資料，而這些中繼資料位於應用程式目前目錄組件中。 這個類別也會初始化目前執行緒的 UWP XAML 架構。
 
 > [!NOTE]
 > 雖然裝載第一方 UWP 控制項不需要執行此步驟，但您的應用程式需要 `XamlApplication` 物件來支援完整範圍的 XAML Island 案例，包括裝載自訂 UWP 控制項。 因此，我們建議您一律在任何使用 XAML Islands 的方案中定義 `XamlApplication` 物件。

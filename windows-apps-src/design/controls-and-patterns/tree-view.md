@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 9c451eba40b5c36843a32efbc80de40866f2f0dc
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: ab5b509aa69dc54d18ef3643d7ccd46bc2984676
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081454"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614105"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -44,21 +44,10 @@ XAML [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tree
 >
 > **平台 API：** [TreeView 類別](/uwp/api/windows.ui.xaml.controls.treeview)、[TreeViewNode 類別](/uwp/api/windows.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 屬性](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
 
-在這整份文件中，我們將使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的[網頁](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-```
-
-在後方的程式碼中，我們也將使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：
-
-```csharp
-using muxc = Microsoft.UI.Xaml.Controls;
-```
-
-```vb
-Imports muxc = Microsoft.UI.Xaml.Controls
-```
+> [!TIP]
+> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>在後方的程式碼中，我們也使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：`using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 

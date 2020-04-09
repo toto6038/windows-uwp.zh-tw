@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2f34c9c56cf9db5dfcfd702b97f2d34273b86e6a
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 23d7fbf129e9cf53a9510200aa4e3836dffa602f
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80226312"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482645"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 UWP 控制項
 
@@ -45,20 +45,20 @@ ms.locfileid: "80226312"
 4. 在 [管理 NuGet 套件]  視窗中，安裝下列額外的 NuGet 套件：
 
     * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) \(英文\) (v6.0.0 版或更新版本)。 此套件提供數個組建和執行階段資產，讓 XAML Islands 可在您的應用程式中運作。
-    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) (v6.0.0 版或更新版本)。
+    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) (v6.0.0 版或更新版本)。 此套件會定義稍後將在本逐步解說中使用的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 類別。
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140) \(英文\)。
 
 5. 建置解決方案並確認已成功建置。
 
 ## <a name="create-a-uwp-app-project"></a>建立 UWP 應用程式專案
 
-接下來，將 **UWP (C++/WinRT)** 應用程式專案新增至您的解決方案，並對此專案進行一些設定變更。 稍後在此逐步解說中，您將在此專案中新增程式碼，以實作自訂 UWP XAML 控制項，並定義 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別的執行個體。 您的應用程式將使用此類別作為根中繼資料提供者，來載入自訂 UWP XAML 類型的中繼資料。
+接下來，將 **UWP (C++/WinRT)** 應用程式專案新增至您的解決方案，並對此專案進行一些設定變更。 稍後在此逐步解說中，您將在此專案中新增程式碼，以實作自訂 UWP XAML 控制項，並定義 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 類別的執行個體。 
 
-1. 在 [方案總管]  中，以滑鼠右鍵按一下解決方案節點，然後選取 [新增]   -> [新增專案]  。
+1. 在 [方案總管]  中，在方案節點上按一下滑鼠右鍵，然後選取 [新增]   -> [新增專案]  。
 
 2. 在您的解決方案中新增**空白應用程式 (C++/WinRT)** 專案。 將專案命名為 **MyUWPApp**，並確定目標版本和最小版本都設定為 **Windows 10 1903 版**或更新版本。
 
-3. 在 **MyUWPApp** 專案中，安裝 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) NuGet 套件：
+3. 在 **MyUWPApp** 專案中，安裝 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) NuGet 套件。 此套件會定義稍後將在本逐步解說中使用的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 類別。
 
     1. 以滑鼠右鍵按一下 [MyUWPApp]  專案，然後選擇 [管理 NuGet 套件]  。
     2. 選取 [瀏覽]  索引標籤、搜尋 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 套件，然後安裝此套件的 v6.0.0 或更新版本。
@@ -150,7 +150,7 @@ ms.locfileid: "80226312"
 您現在已準備好將程式碼新增至 **MyUWPApp** 專案，以執行下列工作：
 
 * 實作自訂 UWP XAML 控制項。 稍後在此逐步解說中，您將新增程式碼以在 **MyDesktopWin32App** 專案中裝載此控制項。
-* 在 Windows 社群工具組中，定義衍生自 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別的類型。 此類別可作為根中繼資料提供者，來載入自訂 UWP XAML 類型的中繼資料。
+* 在 Windows 社群工具組中，定義衍生自 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別的類型。
 
 ### <a name="define-a-custom-uwp-xaml-control"></a>定義自訂 UWP XAML 控制項
 
@@ -181,7 +181,7 @@ ms.locfileid: "80226312"
 
 ### <a name="define-a-xamlapplication-class"></a>定義 XamlApplication 類別
 
-接著，修訂 **MyUWPApp** 專案中預設的 [應用程式]  類別，以便從 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別衍生。 稍後在此逐步解說中，您將更新此傳統型專案，以建立此類別的執行個體作為根中繼資料提供者，來載入自訂 UWP XAML 類型的中繼資料。
+接著，修訂 **MyUWPApp** 專案中預設的 [應用程式]  類別，以便從 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別衍生。 這個類別支援 [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 介面，該介面可讓您的應用程式在執行時探索和載入自訂 UWP XAML 控制項的中繼資料，而這些中繼資料位於應用程式目前目錄組件中。 這個類別也會初始化目前執行緒的 UWP XAML 架構。 稍後在本逐步解說中，您會更新傳統型專案以建立此類別的執行個體。
 
   > [!NOTE]
   > 每個使用 XAML Islands 的解決方案只能包含一個定義 `XamlApplication` 物件的專案。 您應用程式中的所有自訂 UWP XAML 控制項都會共用相同的 `XamlApplication` 物件。 

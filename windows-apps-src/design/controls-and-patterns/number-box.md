@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5307448b6209228cd8c4550a739c6db15091ba54
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 0eada4c65933151eb6d40b7e3cfdbf31369d6d35
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081674"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614123"
 ---
 # <a name="number-box"></a>數字方塊
 
@@ -24,9 +24,14 @@ ms.locfileid: "80081674"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | 此 **NumberBox** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項與 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **NumberBox** 控制項需要 Windows UI 程式庫，此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 **Windows UI 程式庫 API：** [NumberBox 類別](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+
+> [!TIP]
+> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>在後方的程式碼中，我們也使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：`using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -50,20 +55,20 @@ ms.locfileid: "80081674"
 
 ### <a name="create-a-simple-numberbox"></a>建立簡單的 NumberBox
 
-以下的 XAML 適用於示範預設外觀的基本 NumberBox。 使用 [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path)，以確保向使用者顯示的資料會與您應用程式中儲存的資料保持同步。 
-
+以下的 XAML 適用於示範預設外觀的基本 NumberBox。 使用 [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path)，以確保向使用者顯示的資料會與您應用程式中儲存的資料保持同步。
 
 ```xaml
-<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
+<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
+
 ![顯示 0 的聚焦輸入欄位。](images/numberbox-basic.png)
 
 ### <a name="labeling-numberbox"></a>標記 NumberBox
 
-如果 NumberBox 的目的不清楚，請使用 `Header` 或 `PlaceholderText`。 無論 NumberBox 是否包含值，都會顯示 `Header`。 
+如果 NumberBox 的目的不清楚，請使用 `Header` 或 `PlaceholderText`。 無論 NumberBox 是否包含值，都會顯示 `Header`。
 
 ```xaml
-<NumberBox Header="Enter a number:"
+<muxc:NumberBox Header="Enter a number:"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
@@ -72,7 +77,7 @@ ms.locfileid: "80081674"
 `PlaceholderText` 會顯示在 NumberBox 內，而只有在 `Value` 設定為 NaN 或使用者清除輸入時才會顯示。
 
 ```xaml
-<NumberBox PlaceholderText="1+2^2"
+<muxc:NumberBox PlaceholderText="1+2^2"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
@@ -82,9 +87,8 @@ ms.locfileid: "80081674"
 
 將 `AcceptsExpression` 屬性設定為 true，可讓 NumberBox 使用作業標準順序來評估基本內嵌運算式，例如乘法、除法、加法和減法。 當失去焦點或使用者按下 Enter 鍵時，就會觸發評估。 評估運算式之後，就不會保留運算式的原始形式。
 
-XAML
 ```xaml
-<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
+<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     AcceptsExpression="True" />
 ```
 
@@ -96,15 +100,14 @@ XAML
 - 按向上鍵
 - 按向下鍵
 
-使用 `LargeChange` 屬性，設定當 NumberBox 為焦點且使用者按下 PageUp 或 PageDown 鍵時，NumberBox 內的值會變更多少。 
+使用 `LargeChange` 屬性，設定當 NumberBox 為焦點且使用者按下 PageUp 或 PageDown 鍵時，NumberBox 內的值會變更多少。
 
-使用 `SpinButtonPlacementMode` 屬性來啟用按鈕，按一下這些按鈕可依據 `SmallChange` 屬性所指定的數量來遞增或遞減 NumberBox 中的值。 如果最大或最小值會被另一個步驟超過，就會停用這些按鈕。 
+使用 `SpinButtonPlacementMode` 屬性來啟用按鈕，按一下這些按鈕可依據 `SmallChange` 屬性所指定的數量來遞增或遞減 NumberBox 中的值。 如果最大或最小值會被另一個步驟超過，就會停用這些按鈕。
 
-將 `SpinButtonPlacementMode` 設定為 `Inline`，讓按鈕顯示在控制項旁邊。 
+將 `SpinButtonPlacementMode` 設定為 `Inline`，讓按鈕顯示在控制項旁邊。
 
-XAML
-```XAML
-<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
+```xaml
+<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     SmallChange="10"
     LargeChange="100"
     SpinButtonPlacementMode="Inline" />
@@ -112,11 +115,10 @@ XAML
 
 ![旁邊有向下箭號按鈕和向上箭號按鈕的 NumberBox。](images/numberbox-spinbutton-inline.png)
 
-將 `SpinButtonPlacementMode` 設定為 `Compact`，讓按鈕只有在 NumberBox 為焦點時才顯示為飛出視窗。  
+將 `SpinButtonPlacementMode` 設定為 `Compact`，讓按鈕只有在 NumberBox 為焦點時才顯示為飛出視窗。
 
-XAML
-```XAML
-<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
+```xaml
+<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     SmallChange="10"
     LargeChange="100"
     SpinButtonPlacementMode="Compact" />
@@ -130,31 +132,28 @@ XAML
 
 將 `ValidationMode` 設定為 `InvalidInputOverwritten`，可讓 NumberBox 在失去焦點或按下 Enter 鍵觸發評估時，以最後一個有效的值覆寫不是數字也不合乎公式的無效輸入。
 
-XAML
-```XAML
-<NumberBox Header="Quantity"
+```xaml
+<muxc:NumberBox Header="Quantity"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     ValidationMode="InvalidInputOverwritten" />
 ```
 
-將 `ValidationMode` 設定為 `Disabled`，允許設定自訂輸入驗證。  
+將 `ValidationMode` 設定為 `Disabled`，允許設定自訂輸入驗證。
 
-至於小數點和逗號，使用者所使用的格式將由針對 NumberBox 設定的格式所取代。 不會觸發輸入驗證錯誤。 
+至於小數點和逗號，使用者所使用的格式將由針對 NumberBox 設定的格式所取代。 不會觸發輸入驗證錯誤。
 
-### <a name="formatting-input"></a>格式化輸入 
+### <a name="formatting-input"></a>格式化輸入
 
 [數位格式](/uwp/api/windows.globalization.numberformatting)可用於格式化 Numberbox 的值，其做法是設定格式化類別的執行個體，並將其指派給 `NumberFormatter` 屬性。 小數、貨幣、百分比和重要數字是一些可用的數字格式化類別。 請注意，捨入也是由數字格式化屬性所定義。
 
-以下範例示範如何使用 DecimalFormatter 來格式化 NumberBox 的值，使其具有一個整數數字、兩個分數數字，以及進位到最接近 0.25：  
+以下範例示範如何使用 DecimalFormatter 來格式化 NumberBox 的值，使其具有一個整數數字、兩個分數數字，以及進位到最接近 0.25：
 
-XAML
-```XAML
-<NumberBox  x:Name="FormattedNumberBox"
+```xaml
+<muxc:NumberBox  x:Name="FormattedNumberBox"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
-C#
-```C#
+```csharp
 private void SetNumberBoxNumberFormatter()
 {
     IncrementNumberRounder rounder = new IncrementNumberRounder();
@@ -171,19 +170,19 @@ private void SetNumberBoxNumberFormatter()
 
 ![顯示值為 0.00 的 NumberBox。](images/numberbox-formatted.png)
 
-至於小數點和逗號，使用者所使用的格式將由針對 NumberBox 設定的格式所取代。 不會觸發輸入驗證錯誤。 
+至於小數點和逗號，使用者所使用的格式將由針對 NumberBox 設定的格式所取代。 不會觸發輸入驗證錯誤。
 
 ## <a name="remarks"></a>備註
 
 ### <a name="input-scope"></a>輸入範圍
 
-`Number` 將用於[輸入範圍](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)。 此輸入範圍適合使用數字 0-9。 這可能會遭到覆寫，但不會明確支援替代的 InputScope 類型。 
+`Number` 將用於[輸入範圍](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)。 此輸入範圍適合使用數字 0-9。 這可能會遭到覆寫，但不會明確支援替代的 InputScope 類型。
 
 ### <a name="not-a-number"></a>不是數位
 
-當 NumberBox 的輸入清除時，`Value` 會設定為 `NaN`，表示沒有數值存在。 
+當 NumberBox 的輸入清除時，`Value` 會設定為 `NaN`，表示沒有數值存在。
 
-### <a name="expression-evaluation"></a>運算式評估 
+### <a name="expression-evaluation"></a>運算式評估
 
 NumberBox 會使用中置標記法來評估運算式。 依照優先順序，可允許的運算子如下：
 
@@ -191,9 +190,9 @@ NumberBox 會使用中置標記法來評估運算式。 依照優先順序，可
 * */
 * +-
 
-請注意，括弧可用來覆寫優先順序規則。 
+請注意，括弧可用來覆寫優先順序規則。
 
 ## <a name="recommendations"></a>建議
 
-* `Text` 和 `Value` 可讓您輕鬆地將 NumberBox 的值當作 String 或 Double 擷取，而不需要轉換不同類型的值。 以程式設計方式改變 NumberBox 的值時，建議透過 `Value` 屬性來這麼做。 `Value` 會在初始設定時覆寫 `Text`。 初始設定之後，對其中一項所做的變更會擴散到另一項，但是一貫地透過 `Value` 進行程式設計變更，有助於避免 NumberBox 會透過 `Text` 接受非數值字元的概念誤解。  
-* 使用 `Header` 或 `PlaceholderText` 來通知使用者 NumberBox 只接受以數值字元作為輸入。 以拼寫表示的數字 (例如 "one") 將不會解析為接受的值。 
+* `Text` 和 `Value` 可讓您輕鬆地將 NumberBox 的值當作 String 或 Double 擷取，而不需要轉換不同類型的值。 以程式設計方式改變 NumberBox 的值時，建議透過 `Value` 屬性來這麼做。 `Value` 會在初始設定時覆寫 `Text`。 初始設定之後，對其中一項所做的變更會擴散到另一項，但是一貫地透過 `Value` 進行程式設計變更，有助於避免 NumberBox 會透過 `Text` 接受非數值字元的概念誤解。
+* 使用 `Header` 或 `PlaceholderText` 來通知使用者 NumberBox 只接受以數值字元作為輸入。 以拼寫表示的數字 (例如 "one") 將不會解析為接受的值。

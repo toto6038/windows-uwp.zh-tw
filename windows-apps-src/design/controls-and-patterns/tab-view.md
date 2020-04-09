@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce9e3775f4b0f78d17f0ffdf3d6381f2e8a233d9
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 93a4fd98ea1773a67cfe341e63f323c69d0bf79e
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081527"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614108"
 ---
 # <a name="tabview"></a>TabView
 
@@ -24,9 +24,14 @@ TabView 控制項是一種顯示索引標籤組合以及其各自內容的方式
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **TabView** 控制項包含在 Windows UI 程式庫中，該程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **TabView** 控制項需要 Windows UI 程式庫，此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API**：[TabView 類別](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 類別](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
+
+> [!TIP]
+> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>在後方的程式碼中，我們也使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：`using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -56,28 +61,28 @@ TabView 控制項是一種顯示索引標籤組合以及其各自內容的方式
 這個範例會建立簡單的 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 以及事件處理常式，以支援開啟和關閉索引標籤。
 
 ```xaml
-<TabView AddTabButtonClick="Tabs_AddTabButtonClick"
-         TabCloseRequested="Tabs_TabCloseRequested" />
+ <muxc:TabView AddTabButtonClick="TabView_AddTabButtonClick"
+               TabCloseRequested="TabView_TabCloseRequested"/>
 ```
 
 ```csharp
 // Add a new Tab to the TabView
-private void Tabs_AddTabButtonClick(TabView sender, TabViewAddTabButtonClickEventArgs e)
+private void TabView_AddTabButtonClick(muxc.TabView sender, object args)
 {
-    var newTab = new TabViewItem();
-    newTab.IconSource = new SymbolIconSource() { Symbol = Symbol.Document };
+    var newTab = new muxc.TabViewItem();
+    newTab.IconSource = new muxc.SymbolIconSource() { Symbol = Symbol.Document };
     newTab.Header = "New Document";
 
     // The Content of a TabViewItem is often a frame which hosts a page.
     Frame frame = new Frame();
     newTab.Content = frame;
-    frame.Navigate(typeof(BaconIpsumPage));
+    frame.Navigate(typeof(Page1));
 
     sender.TabItems.Add(newTab);
 }
 
 // Remove the requested tab from the TabView
-private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEventArgs args)
+private void TabView_TabCloseRequested(muxc.TabView sender, muxc.TabViewTabCloseRequestedEventArgs args)
 {
     sender.TabItems.Remove(args.Tab);
 }
@@ -89,8 +94,8 @@ private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEven
 
 ### <a name="bind-tabitemssource-to-a-tabviewitemcollection"></a>將 TabItemsSource 繫結至 TabViewItemCollection
 
-```csharp
-<TabView TabItemsSource="{x:Bind TabViewItemCollection}" />
+```xaml
+<muxc:TabView TabItemsSource="{x:Bind TabViewItemCollection}" />
 ```
 
 ### <a name="display-tabview-tabs-in-a-windows-titlebar"></a>在視窗標題列中顯示 TabView 索引標籤
@@ -104,21 +109,37 @@ private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEven
 ![標題列中的索引標籤](images/tabview/tab-extend-to-title.png)
 
 ```xaml
-<Page>
-    <TabView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <TabViewItem Icon="Home" Header="Home" IsClosable="False" />
-        <TabViewItem Icon="Document" Header="Document 1" />
-        <TabViewItem Icon="Document" Header="Document 2" />
-        <TabViewItem Icon="Document" Header="Document 3" />
+<muxc:TabView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <muxc:TabView.TabItems>
+        <muxc:TabViewItem Header="Home" IsClosable="False">
+            <muxc:TabViewItem.IconSource>
+                <muxc:SymbolIconSource Symbol="Home" />
+            </muxc:TabViewItem.IconSource>
+        </muxc:TabViewItem>
+        <muxc:TabViewItem Header="Document 1">
+            <muxc:TabViewItem.IconSource>
+                <muxc:SymbolIconSource Symbol="Document" />
+            </muxc:TabViewItem.IconSource>
+        </muxc:TabViewItem>
+        <muxc:TabViewItem Header="Document 2">
+            <muxc:TabViewItem.IconSource>
+                <muxc:SymbolIconSource Symbol="Document" />
+            </muxc:TabViewItem.IconSource>
+        </muxc:TabViewItem>
+        <muxc:TabViewItem Header="Document 3">
+            <muxc:TabViewItem.IconSource>
+                <muxc:SymbolIconSource Symbol="Document" />
+            </muxc:TabViewItem.IconSource>
+        </muxc:TabViewItem>
+    </muxc:TabView.TabItems>
 
-        <TabView.TabStripHeader>
-            <Grid x:Name="ShellTitlebarInset" Background="Transparent" />
-        </TabView.TabStripHeader>
-        <TabView.TabStripFooter>
-            <Grid x:Name="CustomDragRegion" Background="Transparent" />
-        </TabView.TabStripFooter>
-    </TabView>
-</Page>
+    <muxc:TabView.TabStripHeader>
+        <Grid x:Name="ShellTitlebarInset" Background="Transparent" />
+    </muxc:TabView.TabStripHeader>
+    <muxc:TabView.TabStripFooter>
+        <Grid x:Name="CustomDragRegion" Background="Transparent" />
+    </muxc:TabView.TabStripFooter>
+</muxc:TabView>
 ```
 
 ```csharp
@@ -221,8 +242,8 @@ Ctrl+Tab 會選取下一個 [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.ta
 這個範例會在 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 上執行數個上述建議。 具體而言，此範例會執行 Ctrl + T、Ctrl + W、Ctrl + 1-8 和 Ctrl + 9。
 
 ```xaml
-<controls:TabView x:Name="TabRoot">
-    <controls:TabView.KeyboardAccelerators>
+<muxc:TabView x:Name="TabRoot">
+    <muxc:TabView.KeyboardAccelerators>
         <KeyboardAccelerator Key="T" Modifiers="Control" Invoked="NewTabKeyboardAccelerator_Invoked" />
         <KeyboardAccelerator Key="W" Modifiers="Control" Invoked="CloseSelectedTabKeyboardAccelerator_Invoked" />
         <KeyboardAccelerator Key="Number1" Modifiers="Control" Invoked="NavigateToNumberedTabKeyboardAccelerator_Invoked" />
@@ -234,22 +255,31 @@ Ctrl+Tab 會選取下一個 [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.ta
         <KeyboardAccelerator Key="Number7" Modifiers="Control" Invoked="NavigateToNumberedTabKeyboardAccelerator_Invoked" />
         <KeyboardAccelerator Key="Number8" Modifiers="Control" Invoked="NavigateToNumberedTabKeyboardAccelerator_Invoked" />
         <KeyboardAccelerator Key="Number9" Modifiers="Control" Invoked="NavigateToNumberedTabKeyboardAccelerator_Invoked" />
-    </controls:TabView.KeyboardAccelerators>
+    </muxc:TabView.KeyboardAccelerators>
     <!-- ... some tabs ... -->
-</controls:TabView>
+</muxc:TabView>
 ```
 
 ```csharp
 private void NewTabKeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-    // See previous sample
-    CreateNewTab();
+    // Create new tab.
+    var newTab = new muxc.TabViewItem();
+    newTab.IconSource = new muxc.SymbolIconSource() { Symbol = Symbol.Document };
+    newTab.Header = "New Document";
+
+    // The Content of a TabViewItem is often a frame which hosts a page.
+    Frame frame = new Frame();
+    newTab.Content = frame;
+    frame.Navigate(typeof(Page1));
+
+    TabRoot.TabItems.Add(newTab);
 }
 
 private void CloseSelectedTabKeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-    // Only close the selected tab if it is closeable
-    if (((TabViewItem)TabRoot.SelectedItem).IsCloseable)
+    // Only remove the selected tab if it can be closed.
+    if (((muxc.TabViewItem)TabRoot.SelectedItem).IsClosable)
     {
         TabRoot.TabItems.Remove(TabRoot.SelectedItem);
     }
