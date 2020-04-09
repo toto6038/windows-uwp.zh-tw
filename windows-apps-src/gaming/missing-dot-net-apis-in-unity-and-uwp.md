@@ -6,20 +6,20 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: 878a598c8a0b71e4ee394f7f98c215e5462b44e7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: df93fbeb3a879a84873827a5ead926f96b02adcc
+ms.sourcegitcommit: 8ee0752099170aaf96c7cb105f7cc039b6e7ff06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368437"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80968054"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Unity 和 UWP 中遺失 .NET API
 
 使用 .NET 建置 UWP 遊戲 時，您可能會發現一些您可能在 Unity 編輯器或獨立電腦遊戲中使用的 API，未出現在 UWP 上。 這是因為 UWP apps 適用的 .NET 包括每個命名空間的完整 .NET Framework 中所提供的類型子集。
 
-此外，部分遊戲引擎使用未與 UWP 適用的 .NET (例如 Unity 的 Mono) 完全相容的不同類型 .NET。 因此當您要撰寫您的遊戲，所有項目可能會正常運作在編輯器中，但當您建置適用於 UWP，您可能會收到這類錯誤：**類型或命名空間 '格式器' 不存在於的命名空間 'System.Runtime.Serialization' （您是否遺漏了組件參考？）**
+此外，部分遊戲引擎使用未與 UWP 適用的 .NET (例如 Unity 的 Mono) 完全相容的不同類型 .NET。 所以當您撰寫遊戲時，所有項目在編輯器中可能運作正常，但是當您移至 UWP 的建置，您可能會收到這類錯誤：**命名空間 'System.Runtime.Serialization' 中沒有類型或命名空間 'Formatters' (是否遺漏了組件參考？)**
 
-幸運的是，Unity 提供了一些這些遺漏的 Api 作為延伸方法和所述的替代類型[通用 Windows 平台：遺失.NET 型別在.NET 後端指令碼處理上的](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)。 不過，如果您需要的功能不在這裡，[適用於 Windows 8.x App 的 .NET 概觀](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))討論您可以轉換您的程式碼的方式以使用 WinRT 或 UWP API 適用的 .NET。 (這討論 Windows 8，但也適用於 Windows 10 UWP app)。
+幸好 Unity 提供一些這些遺失的 API 作為延伸方法和更換類型，這在[通用 Windows 平台︰.NET 指令碼後端遺失 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)中有所描述。 不過，如果您需要的功能不在這裡，[適用於 Windows 8.x App 的 .NET 概觀](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))討論您可以轉換您的程式碼的方式以使用 WinRT 或 UWP API 適用的 .NET。 (這討論 Windows 8，但也適用於 Windows 10 UWP app)。
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -43,7 +43,7 @@ ms.locfileid: "66368437"
 
 一般而言，對於 **\[指令碼執行階段版本\]** 和 **\[Api 相容性層級\]** ，您應該選取已推出的最新版本，以便與 .NET Framework 有更多相容性，如此可讓您使用更多的 .NET API。
 
-![設定：指令碼的執行階段版本;指令碼的後端;Api 相容性層級](images/missing-dot-net-apis-in-unity-1.png)
+![設定︰指令碼執行階段版本；指令碼後端；Api 相容性層級](images/missing-dot-net-apis-in-unity-1.png)
 
 ## <a name="platform-dependent-compilation"></a>平台相關編譯
 
@@ -60,7 +60,7 @@ ms.locfileid: "66368437"
 ```
 
 > [!NOTE]
-> `NETFX_CORE` 只要檢查您要編譯C#.NET 指令碼的後端的程式碼。 如果您使用不同的指令碼後端，例如 IL2CPP，請改為使用 `UNITY_WSA_10_0`。
+> `NETFX_CORE` 僅適用于檢查您是否要針對 .NET C#腳本後端編譯器代碼。 如果您使用不同的腳本後端（例如 IL2CPP），請改用[`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) 。
 
 如需平台相關編譯指示詞的完整清單，請參閱[平台相關編譯](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)。
 
@@ -96,7 +96,7 @@ private void Save()
 
 一個重要事項是 [Close](https://docs.microsoft.com/dotnet/api/system.io.stream.close) 方法只有在 .NET Standard 2.0 及更新版本中可用 (雖然 Unity 提供延伸方法)。 改為使用 [Dispose](https://docs.microsoft.com/dotnet/api/system.io.stream.dispose)。
 
-### <a name="threading"></a>執行緒
+### <a name="threading"></a>執行緒處理
 
 [System.Threading](https://docs.microsoft.com/dotnet/api/system.threading) 命名空間中的某些類型，例如 [ThreadPool](https://docs.microsoft.com/dotnet/api/system.threading.threadpool)，不適用於較舊版本的 .NET Standard。 在這些情況中，您可以改為使用 [Windows.System.Threading](https://docs.microsoft.com/uwp/api/windows.system.threading) 命名空間。
 
@@ -144,6 +144,6 @@ private async void GetCertificatesAsync(string certStoreName)
 
 ## <a name="see-also"></a>另請參閱
 
-* [通用 Windows 平台：在.NET 後端指令碼處理上遺漏的.NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [適用於 UWP 應用程式的概觀的.NET](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
+* [通用 Windows 平臺： .NET 腳本後端缺少 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
+* [適用于 UWP 應用程式的 .NET 總覽](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
 * [Unity UWP 移植指南](https://unity3d.com/partners/microsoft/porting-guides)
