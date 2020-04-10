@@ -181,6 +181,8 @@
           href: ../networking/web-feeds.md
         - name: 背景傳輸
           href: ../networking/background-transfers.md
+    - name: 共用命名物件
+      href: ../communication/sharing-named-objects.md
 - name: 資料和檔案
   items:
     - name: 應用程式資源
