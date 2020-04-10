@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a3cd8a0c988df08047b10911a4d4f55e3ba1cb6e
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: e098283bae6f58b927892c680a4981d83f9e31e8
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209303"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081378"
 ---
 # <a name="buttons"></a>按鈕
 
@@ -33,18 +33,20 @@ ms.locfileid: "79209303"
 [Button](/uwp/api/windows.ui.xaml.controls.button) | 起始立即動作的按鈕。 可以搭配 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件或 [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) 繫結使用。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 按下時會接連引發 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件的按鈕。
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | 樣式類似超連結且用於瀏覽的按鈕。 如需有關超連結的詳細資訊，請參閱[超連結](hyperlinks.md)。
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 用於開啟附加飛出視窗的按鈕 (具有＞形箭號)。
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 具有兩端的按鈕。 一端可起始動作，另一端可開啟功能表。
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 具有兩端的切換按鈕。 一端可開啟/關閉，另一端可開啟功能表。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | ![WinUI 標誌](images/winui-logo-16x16.png) 用於開啟附加飛出視窗的按鈕 (具有＞形箭號)。
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | ![WinUI 標誌](images/winui-logo-16x16.png) 具有兩端的按鈕。 一端可起始動作，另一端可開啟功能表。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | ![WinUI 標誌](images/winui-logo-16x16.png) 具有兩端的切換按鈕。 一端可開啟/關閉，另一端可開啟功能表。
 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | 可以開啟或關閉的按鈕。
 
-| **取得 Windows UI 程式庫** |
-| - |
-| **DropDownButton**、**SplitButton** 和 **ToggleSplitButton** 包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+**取得 Windows UI 程式庫**
 
-| **平台 API** | **Windows UI 程式庫 API** |
+|  |  |
 | - | - |
-| [Click 事件](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)<br/> [Command 屬性](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton 類別](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)<br/> [SplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.splitbutton)<br/> [ToggleSplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **DropDownButton**、**SplitButton** 和 **ToggleSplitButton** 包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 程式庫 API：** [DropDownButton 類別](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)、[SplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.splitbutton)、[ToggleSplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
+>
+> **平台 API：** [Click 事件](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)、[Command 屬性](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -68,7 +70,7 @@ ms.locfileid: "79209303"
 <table>
 <th align="left">XAML 控制項庫<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>，請按一下這裡<a href="xamlcontrolsgallery:/item/Button">開啟應用程式並查看 Button 運作情形</a>。</p>
     <ul>
