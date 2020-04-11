@@ -4,12 +4,12 @@ description: 了解圓角原則、設計方法和自訂選項。
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 邊角半徑, 修圓
-ms.openlocfilehash: a83473b5ad836633bc195aa2b5afe87fa092e0ee
-ms.sourcegitcommit: 3c3730e968fba89b21459390735614cd4c9d9c67
+ms.openlocfilehash: 134a49ac57678eea0da718e93a14e3d0cf8896d5
+ms.sourcegitcommit: 7112e4ec3f19d46a1fc4d81d1c29fd9c01522610
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80320430"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "81001475"
 ---
 # <a name="corner-radius"></a>圓角半徑
 
@@ -150,11 +150,11 @@ ms.locfileid: "80320430"
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary>
-                <CornerRadius x:Key="OverlayCornerRadius">4</CornerRadius>
-                <CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
-            </ResourceDictionary>
             <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            <ResourceDictionary>
+                <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
+                <CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
+            </ResourceDictionary>
         </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
 </Application.Resources>

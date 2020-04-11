@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 92a1567fe72d46e53bf218c033fc59e8c98a2981
-ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
+ms.openlocfilehash: 4ef4255c8ea1eb9db34f652e5974a4f341e5500d
+ms.sourcegitcommit: 74627903a18b14c1af68269b0a8c85840caa1898
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76929266"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80759447"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
@@ -30,7 +30,7 @@ ms.locfileid: "76929266"
 
 這個專案是使用 Visual Studio 以 JavaScript 建置而成。 只要某些小變更，它也可以裝載於網站，或是適用於其他平台。 
 
-**注意：** 這並非完整 (或良好！) 的遊戲；其設計訴求是要示範如何使用 JavaScript 和第三方程式庫製作可立即發佈至 Microsoft Store 的應用程式。
+**注意：** 這並非完整 (或良好！) 的遊戲；其設計訴求是要示範如何使用 JavaScript 和第三方程式庫製作可立即發佈至 Microsoft Store 的應用程式。 
 
 
 ## <a name="requirements"></a>需求
@@ -42,6 +42,7 @@ ms.locfileid: "76929266"
 
 這個專案利用 CreateJS JavaScript 架構。 CreateJS 是一套免費工具，根據 MIT 授權，可讓您輕鬆地建立以 Sprite 為基礎的遊戲。 CreateJS 程式庫已存在專案中 (在方案總管檢視中尋找 *js/easeljs-0.8.2.min.js*，以及 *js/preloadjs-0.6.2.min.js*)。 您可以在 [CreateJS 首頁](https://www.createjs.com)找到有關 CreateJS 的資訊。
 
+**注意：** Visual Studio 2019 不支援 Javascript UWP 應用程式開發。 您必須使用 Visual Studio 2017 來開發 Javascript UWP 應用程式。
 
 ## <a name="getting-started"></a>開始使用
 

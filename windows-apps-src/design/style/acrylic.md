@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c6995ab6116d4e3bda8e21c397ab3b4985732763
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 9739933f9fd23c6f169c24c4f789e53ba894708d
+ms.sourcegitcommit: 252dbf4483d58dd7093a79726a29923109eebee5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77639765"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80696628"
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
@@ -76,15 +76,6 @@ Acrylic 最明顯的特徵就是它的透明度。 有兩種壓克力混合類�
 如果您在瀏覽表面上使用應用程式內壓克力，請考慮將內容延伸至壓克力窗格下，以改善應用程式上的流程。 使用 NavigationView 將能自動為您做到這點。 不過，為了避免產生分割效果，請試著不要將多個壓克力組件以相連的方式放置在一起，因為這可能會在兩個模糊表面之間產生不必要的接合。 Acrylic 是一個能讓您的設計賞心悅目的工具，但若使用方式不正確，便可能會產生視覺上的干擾。
 
 請考慮採用下列使用模式來決定將壓克力融入應用程式的最佳方式：
-
-### <a name="horizontal-navigation-or-commanding"></a>水平瀏覽或命令
-
-如果您的應用程式無法利用 NavigationView，且您打算自行新增壓克力，建議您使用色調不透明度為 60% 的相對透明壓克力。
- - 當窗格以重疊於其他應用程式內容之上的方式開啟時，則應為 [60% 應用程式內壓克力](#acrylic-theme-resources)
-
-![使用應用程式內水平命令來對應應用程式](images/Maps_In_App_Acrylic_1.png)
-
-此外，讓上方的內容延伸或捲動至壓克力之下，將能為應用程式帶來更加沉浸且順暢的體驗。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
@@ -202,7 +193,7 @@ Acrylic 最明顯的特徵就是它的透明度。 有兩種壓克力混合類�
 
 若要新增壓克力筆刷，請針對深色、淺色及高對比佈景主題定義三個資源。 請注意，在高對比中，我們建議使用 SolidColorBrush 並搭配與深色/淺色 AcrylicBrush 相同的 x:Key。
 
-> [!Note] 
+> [!Note]
 > 如果您不指定 TintLuminosityOpacity 值，系統將會根據您的 TintColor 和 TintOpacity 自動調整其值。
 
 ```xaml
