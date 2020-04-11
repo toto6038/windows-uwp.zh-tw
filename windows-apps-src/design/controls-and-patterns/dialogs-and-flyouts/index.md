@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 37ab62a6e6c2e294e8d6b5222eab4a1a9ae25a2e
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: c61d1478c38df315a3fe3c20151de8c2bfbca4e2
+ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081012"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123576"
 ---
 # <a name="dialogs-and-flyouts"></a>對話方塊和飛出視窗
 
@@ -24,15 +24,12 @@ ms.locfileid: "80081012"
 
 > **平台 API：** [ContentDialog 類別](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、 [Flyout 類別](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
-:::row:::
-    :::column:::
 **對話方塊**
 
 ![對話方塊範例](../images/dialogs/dialog_RS2_delete_file.png)
 
 對話方塊是提供內容相關應用程式資訊的強制回應 UI 重疊項目。 對話方塊會阻擋與應用程式視窗的互動，直到對話方塊確實關閉為止， 而且它們通常會需要使用者執行某種動作。
-    :::column-end:::
-    :::column::: 
+
 **飛出視窗**
 
 ![飛出視窗的範例](../images/flyout-example2.png)
@@ -40,9 +37,6 @@ ms.locfileid: "80081012"
 飛出視窗是一種輕量型的內容相關快顯視窗，會顯示與使用者動作相關的 UI。 其中包含位置和大小調整邏輯，並且可以用來顯示次要控制項或顯示更多有關項目的詳細資料。
 
 與對話方塊不同的是，飛出視窗可以透過點選或按一下飛出視窗以外的地方、按 Esc 鍵或 [上一頁] 按鈕、重新調整 App 視窗的大小，或是變更裝置的方向，來快速將它關閉。
-    :::column-end:::
-:::row-end:::
-
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -52,8 +46,6 @@ ms.locfileid: "80081012"
 
 由於對話方塊會阻止互動，而飛出視窗不會，您應該將對話方塊用在想讓使用者放下手上的工作，並將注意力放到特定資訊或是回答問題的情況。 相反地，飛出視窗適合在您想要引起使用者注意，但即使他們想要忽略它也無妨的情況下使用。
 
-:::row:::
-    :::column:::
    <p><b>適合使用對話方塊的情況...</b> <br/>
 <ul>
 <li>表示使用者<b>「必須」</b>先閱讀並確認才能繼續執行工作的重要資訊。 範例包括：
@@ -69,17 +61,14 @@ ms.locfileid: "80081012"
 <li>問題，當應用程式需要詢問使用者關於造成應用程式無法繼續執行的問題時 (例如當應用程式無法代替使用者選擇時)。 會造成應用程式無法繼續執行的問題，且該問題不能忽略或延遲回應，並應該向使用者提供明確定義的選擇。</li>
 </ul>
 </p>
-    :::column-end:::
-    :::column:::
+
+
    <p><b>適合使用飛出視窗的情況...</b> <br/>
 <ul>
 <li>用來在完成動作之前收集所需的其他資訊。</li>
 <li>顯示僅在某些情況下有關聯的資訊。 例如，在影像中心 App 中，當使用者按一下影像縮圖時，您可以使用飛出視窗顯示該影像的大尺寸版本。</li>
 <li>顯示詳細資訊，例如頁面上項目的詳細資料或較長的描述。</li>
 </ul></p>
-    :::column-end:::
-:::row-end:::
-
 
 ## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>避免使用對話方塊與飛出視窗的方法
 
