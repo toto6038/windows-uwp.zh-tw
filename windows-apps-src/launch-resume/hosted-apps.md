@@ -3,23 +3,23 @@ Description: 瞭解如何建立託管應用程式，以繼承主機應用程式�
 title: 建立託管應用程式
 ms.date: 01/28/2020
 ms.topic: article
-keywords: windows 10、desktop、package、identity、MSIX、Win32
+keywords: windows 10, 傳統型, 套件, 識別資料, MSIX, Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 870042f3a7737e5caf646d4d14ffd49af39a079f
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: a3017073b15ea18214e9c78263fb212bb192132b
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108141"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266926"
 ---
 # <a name="create-hosted-apps"></a>建立託管應用程式
 
 從 Windows 10 版本2004開始，您可以建立*託管應用程式*。 裝載的應用程式與父*主機*應用程式共用相同的可執行檔和定義，但是其外觀和行為類似于系統上的個別應用程式。
 
-裝載的應用程式適用于您想要元件（例如可執行檔或腳本檔案）行為類似 Windows 10 應用程式的情況，但元件需要主機進程才能執行。 例如，PowerShell 或 Python 腳本可能會以裝載應用程式的形式傳遞，需要安裝主機才能執行。 裝載的應用程式可以有自己的開始磚、身分識別，以及與 Windows 10 功能（例如背景工作、通知、磚和共用目標）的深度整合。
+裝載的應用程式適用于您想要元件（例如可執行檔或腳本檔案）行為類似獨立 Windows 10 應用程式的情況，但元件需要主機進程才能執行。 例如，PowerShell 或 Python 腳本可能會以裝載應用程式的形式傳遞，需要安裝主機才能執行。 裝載的應用程式可以有自己的開始磚、身分識別，以及與 Windows 10 功能（例如背景工作、通知、磚和共用目標）的深度整合。
 
 封裝資訊清單中的數個專案和屬性支援裝載的應用程式功能，可讓託管應用程式使用主機應用程式封裝中的可執行檔和定義。 當使用者執行裝載的應用程式時，作業系統會自動以託管應用程式的身分識別來啟動主機可執行檔。 然後主機可以將視覺資產、內容或呼叫 Api 載入為裝載的應用程式。 裝載的應用程式會取得在主機與託管應用程式之間宣告的功能交集。 這表示託管應用程式無法要求比主機所提供的更多功能。
 
