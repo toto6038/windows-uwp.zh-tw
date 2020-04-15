@@ -1,19 +1,19 @@
 ---
-Description: 本文章涵蓋四個通知選項 &\#8212; 本機、 排程，週期，並推送 （& s)\#8212; 中提供磚與徽章的更新和快顯通知的內容。
+Description: 本文涵蓋四個通知選項 &\#8212; 本機、排程、定期和推播 &\#8212; 提供磚和徽章更新和快顯通知內容。
 title: 選擇通知傳遞方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b1ea41a509b1673b7c4f5812d34db93dd6b0c93e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 80a06f5199c49f5fcd7a08dc9c9baef18ee19db9
+ms.sourcegitcommit: 017f2f1492f3220da0fae8b4c99de7206a185dff
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365938"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81385846"
 ---
 # <a name="choose-a-notification-delivery-method"></a>選擇通知傳遞方法
 
@@ -27,10 +27,10 @@ ms.locfileid: "66365938"
 
 App 可以使用四種機制來傳遞通知：
 
--   **Local**
--   **排程**
--   **Periodic**
--   **推播**
+-   **本機**
+-   **按**
+-   **分期付款**
+-   **推送**
 
 下表摘要說明通知傳遞類型。
 
@@ -79,7 +79,7 @@ App 可以使用四種機制來傳遞通知：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">推播</td>
+<td align="left">推送</td>
 <td align="left">磚、徽章、快顯通知、原始通知</td>
 <td align="left">即使您的應用程式未執行，仍然會從雲端伺服器傳送的通知。</td>
 <td align="left"><ul>
@@ -103,16 +103,16 @@ App 可以使用四種機制來傳遞通知：
 
 當 API 呼叫是本機呼叫時，通知可以參考網頁影像。 如果網路影像無法下載、已損毀或不符合影像規格，磚與快顯通知的應對方式是不同的：
 
--   圖格：更新不會顯示
--   快顯通知：會顯示通知，但您的映像會卸除
+-   磚：不會顯示更新
+-   快顯通知：會顯示通知，但是捨棄影像
 
 根據預設，本機快顯通知會在三天後到期，而本機磚通知永遠不會過期。 我們建議針對您的通知使用合理且明確的到期時間 (快顯通知的最大值為三天) 來覆寫這些預設值。 
 
 如需詳細資訊，請參閱這些主題：
 
--   [通知區域的圖格](sending-a-local-tile-notification.md)
+-   [傳送本機磚通知](sending-a-local-tile-notification.md)
 -   [傳送本機快顯通知](send-local-toast.md)
--   [通用 Windows 平台 (UWP) 通知的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平臺（UWP）通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>排程通知
 
@@ -125,7 +125,8 @@ App 可以使用四種機制來傳遞通知：
 
 如需詳細資訊，請參閱這些主題：
 
--   [通用 Windows 平台 (UWP) 通知的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [排程快顯通知](scheduled-toast.md)
+-   [通用 Windows 平臺（UWP）通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="periodic-notifications"></a>定期通知
 
@@ -139,7 +140,7 @@ App 可以使用四種機制來傳遞通知：
 如需詳細資訊，請參閱這些主題：
 
 -   [定期通知概觀](periodic-notification-overview.md)
--   [通用 Windows 平台 (UWP) 通知的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平臺（UWP）通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="push-notifications"></a>推播通知
 
@@ -154,19 +155,19 @@ App 可以使用四種機制來傳遞通知：
 
 -   [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
 -   [推播通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
--   [通用 Windows 平台 (UWP) 通知的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平臺（UWP）通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
 ## <a name="related-topics"></a>相關主題
 
 
-* [通知區域的圖格](sending-a-local-tile-notification.md)
+* [傳送本機磚通知](sending-a-local-tile-notification.md)
 * [傳送本機快顯通知](send-local-toast.md)
 * [推播通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 * [快顯通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [定期通知概觀](periodic-notification-overview.md)
 * [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
-* [通用 Windows 平台 (UWP) 通知的程式碼在 GitHub 上的範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [GitHub 上的通用 Windows 平臺（UWP）通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  
