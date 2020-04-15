@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e198e65052e9ef79ee38863260bce1c1f798ba38
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 75bc81f4295fb76f5a7cc61b3cadd1496f57dc4c
+ms.sourcegitcommit: 1b06c27e7fa4726fd950cbeaf05206c0a070e3c7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081742"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80893478"
 ---
 # <a name="collections-and-lists"></a>集合和清單
 
@@ -38,6 +38,8 @@ ms.locfileid: "80081742"
 每個控制項 (ItemsRepeater 除外) 都會提供內建的樣式和互動。 不過，若要進一步自訂集合檢視及其內部項目的視覺外觀，請使用 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 如需資料範本和集合檢視外觀自訂方式的詳細資訊，請參閱[項目容器和範本](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates)頁面。
 
 每個控制項 (ItemsRepeater 除外) 也都有內建行為，可讓您選取單一或多個項目。 如需深入了解，請參閱[選取模式概觀](selection-modes.md)。
+
+本文未涵蓋的其中一個案例是在資料表中或跨多個資料欄顯示集合。 如果您想要以這種格式顯示集合，請考慮使用 [Windows 社群工具組](https://docs.microsoft.com/windows/communitytoolkit/)中的 [DataGrid 控制項](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid)。 
 
 > **Windows 10 Fall Creators 更新 - 行為變更**根據預設，主動式手寫筆現在會在 UWP 應用程式中捲動/移動瀏覽清單 (如同觸控、觸控板和被動式手寫筆)，而不會執行選取。
 > 如果您的應用程式需仰賴先前的行為，則可以覆寫手寫筆捲動並還原至先前的行為。 如需詳細資料，請參閱針對 [ScrollViewer 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) 的 API 參照主題。

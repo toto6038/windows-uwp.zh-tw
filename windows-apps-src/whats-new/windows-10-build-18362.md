@@ -1,17 +1,17 @@
 ---
 title: Windows 10 (組建 18362) 的新功能
 description: Windows 10 組建 18362 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。
-keywords: 新功能, 新增功能, 更新, 多項更新, 功能, 新, Windows 10, 最新, 開發人員, 18362, 5 月
+keywords: 新功能, 新增功能, Windows, Windows 10, 更新, 多項更新, 功能, 新, 最新, 開發人員, 18362, 5 月
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 59b5b6dc3b359aa68b8282375a0fcb1716cdef50
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 334dac56c12bf914cb767787bddc06b1c5dc9da2
+ms.sourcegitcommit: 74627903a18b14c1af68269b0a8c85840caa1898
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684728"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80759383"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>適用於開發人員的 Windows 10 (組建 18362) 最新動向
 

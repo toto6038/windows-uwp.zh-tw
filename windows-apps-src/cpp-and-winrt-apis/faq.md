@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 592458c6e6157e8cef0d1312ebf6e5c9f15b7919
-ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
+ms.openlocfilehash: d942fd58619c12192fd8429c0e8aeb5aa070fd4d
+ms.sourcegitcommit: 2a80888843bb53cc1f926dcdfc992cf065539a67
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2020
-ms.locfileid: "80662382"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81005448"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -78,7 +78,10 @@ C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGe
 如果在其解構程式中您有釋出資源的執行階段類別，且設計該執行階段類別從其實作編譯單位之外使用 (它是 Windows 執行階段元件，旨在供給 Windows 執行階段用戶端應用程式的一般使用)，我們建議您也實作 **IClosable** 以便支援不確定完成的語言使用您的執行階段類別。 請確定不論是否解構函式都會釋出您的資源，[**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close)，或兩者都呼叫。 可以任意呼叫 **IClosable::Close** 數次。
 
 ## <a name="do-i-need-to-call-iclosableclose-on-runtime-classes-that-i-consume"></a>我需要在我使用的執行階段類別上呼叫 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) 嗎？
-**IClosable** 存在以支援不確定完成的語言。 因此，您就不應該呼叫 C++/WinRT 的 **IClosable::Close**，除非在非常少數案例中，牽涉到關機競爭或半致命採用。 如果您正使用 **Windows.UI.Composition** 類型，以此為例，您可能會遇到想在一組序列中處置物件的案例，允許 C++/WinRT 包裝函式的解構函式為您執行工作，做為替代方案。
+**IClosable** 存在以支援不確定完成的語言。 因此，您通常不需要從 C++/WinRT 呼叫 **IClosable::Close**。 但請考慮這些對一般規則的例外狀況。
+- 有非常少數案例牽涉到關機競爭或半致命採用，在這些案例中您的確需要呼叫 **IClosable::Close**。 如果您正使用 **Windows.UI.Composition** 類型，以此為例，您可能會遇到想在一組序列中處置物件的案例，允許 C++/WinRT 包裝函式的解構函式為您執行工作，做為替代方案。
+- 如果您無法保證對物件仍保有最後的參考 (因為您已將它傳遞給其他 API，而這些 API 可能會保留參考)，則呼叫 **IClosable::Close** 是個不錯的主意。
+- 當不確定時，安全的作法是手動呼叫 **IClosable::Close**，而不是等待包裝函式在解構時呼叫它。
 
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>我可以使用 LLVM/Clang 來編譯 C++/WinRT 嗎？
 我們對於 C++/WinRT 不支援 LLVM 和 Clang toolchain，但我們在內部使用它來驗證 C++/WinRT 的標準一致性。 例如，如果您想要模擬我們在內部的操作，您可能會嘗試實驗，例如如下所述。

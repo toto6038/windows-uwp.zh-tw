@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e95a9a1f6a0d34e377f48c5b19497eb638fb186e
-ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
+ms.openlocfilehash: c130505ec79ca83698fd79df26464969afe79c36
+ms.sourcegitcommit: 1b06c27e7fa4726fd950cbeaf05206c0a070e3c7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830823"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80893468"
 ---
 # <a name="list-view-and-grid-view"></a>清單檢視和方格檢視
 
@@ -36,7 +36,7 @@ ListView 和 GridView 提供許多處理集合的優點。 它們很容易實作
 ## <a name="differences-between-listview-and-gridview"></a>ListView 與 GridView 之間的差異
 
 ### <a name="listview"></a>ListView
-ListView 會在單一欄中以垂直堆疊的方式顯示資料。 ListView 較適用於以文字為焦點的項目，以及應從上往下讀取 (也就是依字母順序排列) 的集合。 ListView 的一些常見使用案例包括訊息清單和搜尋結果清單。
+ListView 會在單一欄中以垂直堆疊的方式顯示資料。 ListView 較適用於以文字為焦點的項目，以及應從上往下讀取 (也就是依字母順序排列) 的集合。 ListView 的一些常見使用案例包括訊息清單和搜尋結果清單。 需要以多個資料欄或類似資料表格式顯示的集合_不_應該使用 ListView，但應該改用 [DataGrid](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) 查看。
 
 ![具有分組資料的清單檢視](images/listview-grouped-example-resized-final.png)
 
@@ -212,7 +212,7 @@ ListView 或 GridView 中的資料範本會定義項目/資料的視覺化方式
 但是，您通常會想要以更多樣化的表示方式來顯示資料。 為了明確指定項目在 ListView/GridView 中的顯示方式，您必須建立 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 在 DataTemplate 中的 XAML 會定義用來顯示個別項目之控制項的配置和外觀。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義靜態內容。 
 
 > [!NOTE]
-> 當您在 DataTemplate 中使用 [x:Bind 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)時，必須在 DataTemplate 上指定 DataType (`x:DataType`)。
+> 當您在 DataTemplate中使用 [x:Bind markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 時，必須在 DataTemplate 上指定 DataType (`x:DataType`)。
 
 #### <a name="simple-listview-data-template"></a>簡單的 ListView 資料範本
 在此範例中，資料項目是一個簡單字串。 DataTemplate 會以內嵌方式定義於 ListView 定義內，以將影像新增至字串左側，並以藍綠色顯示字串。 這是使用前述的方法 1 和選項 1 建立的相同 ListView。
@@ -414,7 +414,7 @@ myGridView.IsItemClickEnabled = true;
 輔助按鍵 | 互動
 -------------|------------
 無 | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取單一項目。</li>
-Ctrl | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來取消選取單一項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
+CTRL | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來取消選取單一項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
 
 當 SelectionMode 是 **Single** 時，您可以從 [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) \(英文\) 屬性取得選取的資料項目。 您可以使用 [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) 屬性來取得選取項目集合中的索引。 如果未選取任何項目，SelectedItem 即為 **null** 且 SelectedIndex 是 -1。 
  
@@ -436,7 +436,7 @@ Shift | <li>使用者可以選取多個連續項目，方法是按一下或點�
 輔助按鍵 | 互動
 -------------|------------
 無 | <li>此行為與**單一**選取相同。</li>
-Ctrl | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取多個項目，以便在焦點項目上切換選取項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
+CTRL | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取多個項目，以便在焦點項目上切換選取項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
 Shift | <li>使用者可以選取多個連續項目，方法是按一下或點選選取範圍中的第一個項目，然後按一下或點選選取範圍中的最後一個項目。</li><li>使用者可以使用方向鍵來建立連續的選取範圍，選取範圍的第一個項目是按下 Shift 鍵時所選取的項目。</li>
 
 當 SelectionMode 是 **Multiple** 或 **Extended** 時，您可以從 [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems) \(英文\) 屬性取得選取的資料項目。 
@@ -610,7 +610,7 @@ ListView 和 GridView 控制項支援在項目本身內部，以及在本身和�
 
 - [XAML ListView 和 GridView 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) \(英文\) - 示範 ListView 和 GridView 控制項。
 - [XAML 拖放範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop) \(英文\) - 示範搭配 ListView 控制項的拖放。
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) \(英文\) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 

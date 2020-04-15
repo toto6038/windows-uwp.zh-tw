@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 23d7fbf129e9cf53a9510200aa4e3836dffa602f
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 93badc28c9c4fa1684836fc4a883e54661e8d4dc
+ms.sourcegitcommit: 7112e4ec3f19d46a1fc4d81d1c29fd9c01522610
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80482645"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80986986"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 UWP 控制項
 
@@ -377,9 +377,11 @@ ms.locfileid: "80482645"
 4. 在 [方案總管]  中，以滑鼠右鍵按一下 [MyDesktopWin32App (卸載)]  ，然後選取 [重新載入專案]  。
 
 5. 以滑鼠右鍵按一下 [MyDesktopWin32App]  、選取 [屬性]  ，然後按一下左窗格中的 [C/C++]  節點。 確認已根據您在上一個步驟中所做的專案檔變更，定義了 [其他 Include 目錄]  巨集。
+
     ![C/C++ 專案設定](images/xaml-islands/xaml-island-cpp-7.png)
 
 6. 在 [屬性頁]  對話方塊中，展開 [資訊清單工具]   -> [輸入及輸出]  。 將 [DPI 感知]  屬性設定為 [以螢幕為基礎的高 DPI 感知]  。 如果您未設定此屬性，可能就會在某些高 DPI 案例中遇到資訊清單設定錯誤。
+
     ![C/C++ 專案設定](images/xaml-islands/xaml-island-cpp-8.png)
 
 ## <a name="host-the-custom-uwp-xaml-control-in-the-desktop-project"></a>在傳統型專案中裝載自訂 UWP XAML 控制項

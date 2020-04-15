@@ -4,12 +4,12 @@ description: 如何使用 XamlUICommand 和 StandardUICommand 類別 (連同 ICo
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 57e4a135e97c0a8f5d09834f2eb8c729c6422af0
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 2ad2a84a78006eafcdfa47d1faef533bea2224ff
+ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081748"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123593"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 的通用 Windows 平台 (UWP) 應用程式中的命令
 
@@ -37,7 +37,7 @@ ms.locfileid: "80081748"
 
 下圖顯示兩個共用一些相同命令的命令介面 ([CommandBar](app-bars.md) 及浮動關聯式 [CommandBarFlyout](command-bar-flyout.md))。
 
-![Microsoft 相片中的命令列](images/control-examples/command-bar-photos.png)<br>*Microsoft 相片中的命令列*
+![展開的命令列](images/control-examples/command-bar-photos.png)<br>*命令列*
 
 ![Microsoft 相片圖庫中的內容功能表](images/ContextMenu_example.png)<br>*Microsoft 相片圖庫中的內容功能表*
 
