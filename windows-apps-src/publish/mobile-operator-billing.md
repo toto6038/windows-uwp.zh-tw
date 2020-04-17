@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 電信業者, 電信費用帳單, 電信業者帳單
 ms.localizationpriority: medium
-ms.openlocfilehash: af682d2a17e10bf1c3b3cdcb3485315a6972eb9f
-ms.sourcegitcommit: e38946d8228293fca7d6c2b4d66e8e8f0d349e92
+ms.openlocfilehash: 77e157698203b5f55c3fd2ce9dd59e8c94051f5b
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76258351"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545028"
 ---
 # <a name="mobile-operator-billing"></a>電信業者帳單
 
@@ -25,17 +25,17 @@ Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、
 
 下列電信業者目前支援電信業者帳單。
 
-| 國家/地區       | 電信業者                                        |
+| 國家 (地區)       | 電信業者                                        |
 |----------------------|---------------------------------------------------------|
 | 澳洲            | Optus                                                   |
 | 奧地利              | Hutchison 3G Austria、A1 Telekom、T-Mobile / tele.ring  |
 | 比利時              | Base、Proximus                                          |
 | 加拿大               | Telus                                                   |
-| 捷克共和國       | T-Mobile                                                |
+| Czechia              | T-Mobile                                                |
 | 丹麥              | 3、TDC / YouSee、Telenor、Telia                         |
 | 芬蘭              | DNA、Elisa                                              |
-| 法國               | Orange                                                  |
-| 德國              | O2、Telekom Deutschland、Vodafone                       |
+| France               | Orange                                                  |
+| Germany              | O2、Telekom Deutschland、Vodafone                       |
 | 匈牙利              | Telenor                                                 |
 | 義大利                | Wind、Tre                                               |
 | 馬來西亞             | Digi                                                    |

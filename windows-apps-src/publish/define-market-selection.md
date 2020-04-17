@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 市場, 國家, 地區
 ms.localizationpriority: medium
-ms.openlocfilehash: 3621e9c6af0daa84a9762989a14c79f35471b73c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 0b1a51a98746594a8563de2f309bec9cb5dda0b3
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210964"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545048"
 ---
 # <a name="define-market-selection"></a>定義市場選取項目
 
@@ -139,7 +139,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
     <td>克羅埃西亞</td>
     <td>古拉梳</td>
     <td>賽普勒斯</td>
-    <td>捷克共和國 *</td>
+    <td>Czechia *</td>
   </tr>
   <tr>
     <td>丹麥 *</td>
@@ -160,7 +160,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
     <td>福克蘭群島</td>
   </tr>
   <tr>
-    <td>法羅群島 (丹麥)</td>
+    <td>法羅群島</td>
     <td>斐濟群島</td>
     <td>芬蘭 *</td>
     <td>法國 *</td>
@@ -180,11 +180,11 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   <tr>
     <td>直布羅陀</td>
     <td>希臘 *</td>
-    <td>格陵蘭 (丹麥)</td>
+    <td>格陵蘭</td>
     <td>格瑞那達</td>
   </tr>
   <tr>
-    <td>瓜地洛普</td>
+    <td>哥德普洛</td>
     <td>關島</td>
     <td>瓜地馬拉</td>
     <td>根息</td>
@@ -256,7 +256,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
     <td>馬紹爾群島</td>
   </tr>
   <tr>
-    <td>馬丁尼克島</td>
+    <td>馬丁尼克</td>
     <td>茅利塔尼亞</td>
     <td>模里西斯</td>
     <td>馬約特島</td>
@@ -275,12 +275,12 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   </tr>
   <tr>
     <td>莫三比克</td>
-    <td>緬甸文</td>
+    <td>緬甸</td>
     <td>納米比亞</td>
     <td>諾魯</td>
   </tr>
   <tr>
-    <td>尼泊爾聯邦民主共和國</td>
+    <td>尼泊爾</td>
     <td>荷蘭 *</td>
     <td>新喀里多尼亞群島領土</td>
     <td>紐西蘭 *</td>
@@ -300,7 +300,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   <tr>
     <td>巴基斯坦</td>
     <td>帛琉</td>
-    <td>黎凡特</td>
+    <td>巴勒斯坦民族權力機構</td>
     <td>巴拿馬</td>
   </tr>
   <tr>
@@ -331,7 +331,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
     <td>法屬聖馬丁</td>
     <td>聖匹島</td>
     <td>聖文森及格瑞那丁</td>
-    <td>薩摩亞</td>
+    <td>薩摩亞獨立國</td>
   </tr>
   <tr>
     <td>聖馬利諾</td>
@@ -439,7 +439,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
 | 智利                | 禮品卡       | 2.24%                         | 2016 年 3 月     |
 | 中國                | 禮品卡       | 2.24%                         | 2016 年 3 月     |
 | 哥倫比亞             | 禮品卡       | 2.24%                         | 2016 年 3 月     |
-| 捷克共和國       | 禮品卡       | 2.24%                         | 2016 年 3 月     |
+| Czechia              | 禮品卡       | 2.24%                         | 2016 年 3 月     |
 | 丹麥              | 禮品卡       | 2.24%                         | 2016 年 3 月     |
 | 芬蘭              | 禮品卡       | 2.24%                         | 2016 年 3 月     |
 | France               | 禮品卡       | 2.24%                         | 2016 年 3 月     |
@@ -476,7 +476,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>針對 Windows 8.x 的「世界其他地方」市場
 
-如果您先前發佈的應用程式包含以 Windows 8.x 為目標的套件，請務必注意，在 Windows 8.x 上使用存放區的客戶會將許多市場視為單一「Rest」市場，即使它們顯示為個別的市場也一樣。在合作夥伴中心。
+如果您先前發佈的應用程式包含以 Windows 8.x 為目標的套件，請務必注意，在 Windows 8.x 上使用存放區的客戶會將許多市場視為單一「Rest」市場，即使在合作夥伴中心中顯示為個別的市場也一樣。
 
 如果您在提交應用程式時保留預設市場選擇，則不必擔心這一點，而且您的應用程式將可供所有可能的市場使用。 不過，如果您想要排除特定市場，請記住，即使其中一項「其他世界」市場也不能使用，這表示您的應用程式將無法在 Windows 8 或 Windows 8.1 上客戶的*任何*「rest」市場中提供。
 
@@ -563,7 +563,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   </tr>
   <tr>
     <td>福克蘭群島</td>
-    <td>法羅群島 (丹麥)</td>
+    <td>法羅群島</td>
     <td>斐濟群島</td>
     <td>法屬圭亞那</td>
   </tr>
@@ -577,11 +577,11 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
     <td>Georgia</td>
     <td>迦納</td>
     <td>直布羅陀</td>
-    <td>格陵蘭 (丹麥)</td>
+    <td>格陵蘭</td>
   </tr>
   <tr>
     <td>格瑞那達</td>
-    <td>瓜地洛普</td>
+    <td>哥德普洛</td>
     <td>關島</td>
     <td>瓜地馬拉</td>
   </tr>
@@ -623,7 +623,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   </tr>
   <tr>
     <td>馬紹爾群島</td>
-    <td>馬丁尼克島</td>
+    <td>馬丁尼克</td>
     <td>茅利塔尼亞</td>
     <td>模里西斯</td>
   </tr>
@@ -641,12 +641,12 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   </tr>
   <tr>
     <td>莫三比克</td>
-    <td>緬甸文</td>
+    <td>緬甸</td>
     <td>納米比亞</td>
     <td>諾魯</td>
   </tr>
   <tr>
-    <td>尼泊爾聯邦民主共和國</td>
+    <td>尼泊爾</td>
     <td>新喀里多尼亞群島領土</td>
     <td>尼加拉瓜</td>
     <td>尼日</td>
@@ -659,7 +659,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   </tr>
   <tr>
     <td>帛琉</td>
-    <td>黎凡特</td>
+    <td>巴勒斯坦民族權力機構</td>
     <td>巴拿馬</td>
     <td>巴布亞紐幾內亞</td>
   </tr>
@@ -679,7 +679,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
     <td>法屬聖馬丁</td>
     <td>聖匹島</td>
     <td>聖文森及格瑞那丁</td>
-    <td>薩摩亞</td>
+    <td>薩摩亞獨立國</td>
   </tr>
   <tr>
     <td>聖馬利諾</td>

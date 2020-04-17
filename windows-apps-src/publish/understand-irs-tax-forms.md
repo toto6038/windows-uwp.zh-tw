@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 課稅, irs, 美國國稅局, 稅賦, 所得稅, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 55143f109398aae1988b7ac0d060cda138e7e48e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e01e1615cb05ab7b0f3d3fa12861e46b231642a8
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258963"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545068"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
@@ -44,7 +44,7 @@ ms.locfileid: "74258963"
 <tr><td>Windows、Office、Azure</td><td>Microsoft 愛爾蘭營運限制（microsoft Corporation 透過 microsoft 愛爾蘭以 microsoft Corporation 的合格媒介身分進行付款）</td><td>一個 Microsoft 場所<br>南部&nbsp;縣市&nbsp;Business&nbsp;公園<br>Leopardstown，都柏林18愛爾蘭</td></tr>
 <tr><td>廣告</td><td>Microsoft 愛爾蘭營運限制（付款是由 Microsoft Online Inc. 所建立，並由 microsoft 愛爾蘭擔任 Microsoft Online Inc. 的支出代理程式）。</td><td>一個 Microsoft 場所<br>南部&nbsp;縣市&nbsp;Business&nbsp;公園<br>Leopardstown，都柏林18愛爾蘭</td></tr>
 <tr><td>廣告</td><td>Microsoft Online Inc。</td><td>6100 Neil 道路<br>Reno，美國 NV 89511</td></tr>
-<tr><td colspan="3">* 下列國家/地區的公民獲得廣告收益，將透過 Microsoft 愛爾蘭作業限制：奧地利、比利時、保加利亞、克羅地亞、賽普勒斯、捷克共和國、丹麥、愛沙尼亞、芬蘭、法國、德國、希臘、匈牙利、愛爾蘭、Isle 的 Man、義大利、拉脫維亞、列支敦斯登、立陶宛、盧森堡、馬爾他、摩納哥、荷蘭、挪威、波蘭、葡萄牙、羅馬尼亞、斯洛伐克、斯洛維尼亞、南非、西班牙、瑞典、瑞士、英國</td></tr>
+<tr><td colspan="3">* 下列國家/地區的公民獲得廣告收益，將透過 Microsoft 愛爾蘭作業限制付費：奧地利、比利時、保加利亞、克羅地亞、賽普勒斯、Czechia、丹麥、愛沙尼亞、芬蘭、法國、德國、希臘、匈牙利、愛爾蘭、Man Isle、義大利、拉脫維亞、列支敦斯登、立陶宛、盧森堡、馬爾他、摩納哥、荷蘭、挪威、波蘭、葡萄牙、羅馬尼亞、斯洛伐克、斯洛維尼亞、南非、西班牙、瑞典、瑞士、英國</td></tr>
 </table>
 
 ## <a name="for-developers-located-in-the-united-states"></a>適用於位於美國的開發人員
@@ -56,7 +56,7 @@ ms.locfileid: "74258963"
   </tr>
   <tr> 
      <td valign="top">我在適用的納税年度<b>銷售超過 200 個應用程式</b>，其中銷售總額<b>超過 $20,000 美元</b> (<b>不</b>含透過 Windows 10 上的 Microsoft Store 於巴西及中國所進行的銷售)。</td>
-    <td valign="top"><b>1099-K</b> :<br>報稅者：Microsoft Corporation<br>EIN： * * * * * 4442<br><br><b>重要</b>：表單 1099-K 包含<b>總購買</b>金額，而不是付款給您。</td>
+    <td valign="top"><b>1099-K</b>：<br>報稅者：Microsoft Corporation<br>EIN： * * * * * 4442<br><br><b>重要</b>：表單 1099-K 包含<b>總購買</b>金額，而不是付款給您。</td>
   </tr>
   <tr> 
      <td valign="top">我因為 (i) 於巴西及中國透過 Windows 10 上的 Microsoft Store 進行應用程式銷售，或是 (ii) 在 Minecraft Marketplace 中的銷售，收到<b>至少 $10 美元的款項</b>。<br>

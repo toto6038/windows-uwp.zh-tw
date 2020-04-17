@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 45a491364a4b1f406169cba76b7e7ea1ded00886
-ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
+ms.openlocfilehash: e9a6ce5dac2e6a8480b3c6e95472b437ad6f947c
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79434215"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545008"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>付款門檻、方式和時間範圍
 
@@ -79,7 +79,7 @@ ms.locfileid: "79434215"
 | 象牙海岸的象牙海岸                    | 是               | 是                                      | 是    | 否              |
 | 克羅埃西亞                          | 是               | 是                                      | 是    | 否              |
 | 賽普勒斯                           | 是               | 是                                      | 是    | 是             |
-| 捷克共和國                   | 是               | 是                                      | 是    | 是             |
+| Czechia                          | 是               | 是                                      | 是    | 是             |
 | 丹麥                          | 是               | 是                                      | 是    | 是             |
 | 多米尼克                         | 是               | 是                                      | 否     | 是             |
 | 多明尼加共和國               | 是               | 是                                      | 是    | 是             |
