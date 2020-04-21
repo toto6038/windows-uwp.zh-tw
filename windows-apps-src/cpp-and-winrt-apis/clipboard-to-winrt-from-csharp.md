@@ -1,16 +1,16 @@
 ---
 title: 將剪貼簿範例從 C# 移植到 C++/WinRT (案例研究)
 description: 本主題會提供將其中一個[通用 Windows 平台 (UWP) 應用程式範例](https://github.com/microsoft/Windows-universal-samples)從 [C#](/visualstudio/get-started/csharp) 移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的案例研究。
-ms.date: 03/20/2020
+ms.date: 04/13/2020
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, C#, 範例, 剪貼簿, 案例研究
 ms.localizationpriority: medium
-ms.openlocfilehash: 570f3538bf15616a45a17cdbce9a56066c8036bc
-ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
+ms.openlocfilehash: ecfbe1831014bce0cb7259c935ab0ae7a8af3de8
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123641"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266936"
 ---
 # <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>將剪貼簿範例從 C# 移植到 C++/WinRT &mdash; 案例研究
 
@@ -23,16 +23,16 @@ ms.locfileid: "81123641"
 瀏覽[剪貼簿範例](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/clipboard/) \(英文\) 網頁，然後按一下 [下載 ZIP]  \(英文\)。 將下載的檔案解壓縮，並查看資料夾結構。
 
 - C# 版本的範例原始程式碼包含在名為 `cs` 的資料夾中。 C# 版本所使用的其他檔案可以在 `shared` 和 `SharedContent` 資料夾中找到。
-- 您可以在 GitHub 上範例存放庫的 [cppwinrt](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) 資料夾中，找到 C++/WinRT 版本的範例原始程式碼。
+- 您可以在 GitHub 上[範例存放庫](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard)的 [cppwinrt 資料夾](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) 中，找到 C++/WinRT 版本的範例原始程式碼。
 
-此主題中的逐步解說將說明如何從 C# 原始程式碼移植 C++/WinRT 來重新建立該版本。 如此一來，您就可以了解如何將自己 C# 專案移植到 C++/WinRT。
+此主題中的逐步解說將說明如何從 C# 原始程式碼移植 Clipboard 範例的 C++/WinRT 來重新建立該版本。 如此一來，您就可以了解如何將自己 C# 專案移植到 C++/WinRT。
 
-若要了解範例的用途，請開啟 C# 解決方案 (`\Clipboard_sample\cs\Clipboard.sln`)、適當地變更設定 (也許變更為 *x64*)、建置，然後執行。 範例的使用者介面 (UI) 會逐步引導您完成其各種功能。
+若要了解範例的用途，請開啟 C# 解決方案 (`\Clipboard_sample\cs\Clipboard.sln`)、適當地變更設定 (也許變更為 *x64*)、建置，然後執行。 範例本身的使用者介面 (UI) 會逐步引導您完成其各種功能。
 
-## <a name="createablankappcwinrt-named-clipboard"></a>建立空白應用程式 (C++/WinRT)，並將其命名為 Clipboard
+## <a name="create-a-blank-app-cwinrt-named-clipboard"></a>建立空白應用程式 (C++/WinRT)，並將其命名為 Clipboard
 
 > [!NOTE]
-> 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的相關資訊，請參閱  [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 在 Microsoft Visual Studio 中建立新的 C++/WinRT 專案，開始移植程序。 使用 [空白應用程式 (C++/WinRT)]  專案範本建立新的專案。 將其名稱設定為 *Clipboard*，並 (讓您的資料夾結構符合此逐步解說) 確保取消核取 [將解決方案和專案放置於同一個目錄]  。
 
@@ -58,11 +58,11 @@ C# 專案會參考共用資料夾中的資產檔案。 您可以在 C++/WinRT �
 
 瀏覽至 `\Clipboard_sample\SharedContent\media` 資料夾。 選取 C# 專案所包含的七個檔案 (`microsoft-sdk.png` 至 `windows-sdk.png`)、複製這些檔案，然後將其貼到新專案的 `\Clipboard\Clipboard\Assets` 資料夾中。
 
-以滑鼠右鍵按一下 `Assets` 資料夾 (在 C++/WinRT 專案的 [方案總管] 中) > [新增]  > *[現有項目...]  ，然後瀏覽至 `\Clipboard\Clipboard\Assets`。 在檔案選擇器中，選取七個檔案，然後按一下 [新增]  。
+以滑鼠右鍵按一下 `Assets` 資料夾 (在 C++/WinRT 專案的 [方案總管] 中) > [新增]   >  > [現有項目...]  ，然後瀏覽至 `\Clipboard\Clipboard\Assets`。 在檔案選擇器中，選取七個檔案，然後按一下 [新增]  。
 
 `Package.appxmanifest` 現在會與專案的資產檔案同步。
 
-## <a name="mainpage-including-the-sample-configuration-functionality"></a>**MainPage**，包括範例設定功能
+## <a name="mainpage-including-the-functionality-that-configures-the-sample"></a>**MainPage**，包括範例設定功能
 
 剪貼簿範例&mdash;如同所有[通用 Windows 平台 (UWP) 應用程式範例](https://github.com/microsoft/Windows-universal-samples)&mdash;是由使用者一次逐步執行一個案例的集合所組成。 給定範例中的案例集合是在範例的原始程式碼中設定的。 集合中的每個案例都是一個資料項目，可儲存標題，以及專案中實作案例之類別的類型。
 
@@ -76,12 +76,12 @@ C# 專案會參考共用資料夾中的資產檔案。 您可以在 C++/WinRT �
 
 在 C++/WinRT 版本中，我們會以類似的方式，將 **MainPage** 類型分解到原始程式碼檔案中。 我們將會採用 `MainPage.xaml.cs` 中的邏輯，並將其大部分轉譯為 `MainPage.h` 和 `MainPage.cpp`。 置於 `SampleConfiguration.cs` 中的邏輯，我們則將其轉譯為 `SampleConfiguration.h` 和 `SampleConfiguration.cpp`。
 
-C# 通用 WINDOWS 平台 (UWP) 應用程式中的類別是 Windows 執行階段類型。 但是當您在 C++/WinRT 應用程式中撰寫類型時，可以選擇該類型為 Windows 執行階段類型，還是一般類別/結構/列舉。
+C# 通用 WINDOWS 平台 (UWP) 應用程式中的類別是 Windows 執行階段類型。 但是當您在 C++/WinRT 應用程式中撰寫類型時，可以選擇該類型為 Windows 執行階段類型，還是一般 C++ 類別/結構/列舉。
 
 在 C++/WinRT 專案中，**MainPage** 已經是 Windows 執行階段類型，因此我們不需要變更其外觀比例。 具體而言，這是*執行階段類別*。
 
-- 如需有關是否要撰寫執行階段類別的詳細資訊，請參閱[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis) 主題。
-- *實作類型*和*投影類型*的概念在 C++/WinRT 中很重要。 您可以在上述主題以及[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/consume-apis) 中了解這些資訊。
+- 如需有關是否要撰寫特定類別之執行階段類別的詳細資訊，請參閱[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis) 主題。
+- 「實作類型」  和「投影類型」  的概念在使用 C++/WinRT 時很重要。 您可以在上述主題以及[使用 C++/WinRT 取用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis) 中了解這些資訊。
 - 如需有關執行階段類別和 `.idl` 檔案之間連線的資訊，請閱讀並遵循主題 [XAML 控制項；繫結至一個 C++/WinRT 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。 該主題會逐步解說撰寫新執行階段類別的程序，其第一步是要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。
 
 對於 **MainPage**，我們在 C++/WinRT 專案中已經有所需的 `MainPage.idl` 檔案。 但是在此逐步解說期間，我們會將*新的* `.idl` 檔案加入至專案。
@@ -106,6 +106,8 @@ C# 通用 WINDOWS 平台 (UWP) 應用程式中的類別是 Windows 執行階段�
 - **Scenarios** 屬性是 **Scenario** 類型 (我們稍早提到的類型) 的物件集合。 我們將在下一個小節討論 **Scenario**，因此，在此之前，也讓我們先保留 **Scenarios** 屬性。
 - **BuildClipboardFormatsOutputString**、**DisplayToast** 和 **EnableClipboardContentChangedNotifications** 方法是公用程式函式，相較於主頁面，這些函式對於範例的一般狀態更相關。 因此在移植期間，我們會將這三種方法重構至名為 **SampleState** 的新公用程式類型 (不需要是 Windows 執行階段類型)。 基於這個理由，這三種方法不會放入 IDL 中。
 - **NotifyUser** 方法是從靜態 *Current* 欄位傳回之 **MainPage** 執行個體上的個別案例 XAML 頁面中呼叫的。 (如先前所述) **Current** 是投影類型的執行個體，因此我們必須在 IDL 中宣告 **NotifyUser**。 **NotifyUser** 接受 **NotifyType** 類型的參數。 我們將在下一個小節中討論這一點。
+
+您想要對其進行資料繫結的任何成員也必須在 IDL 中宣告 (無論使用 `{x:Bind}` 或 `{Binding}`)。 如需詳細資訊，請參閱[資料繫結](/windows/uwp/data-binding/)。
 
 我們的進度：我們正在開發要在 `MainPage.idl` 檔案中新增及不新增哪些成員的清單。 但我們還是必須討論 **Scenarios** 屬性，以及 **NotifyType** 類型。 那麼，接下來就讓我們來看看。
 
@@ -191,7 +193,7 @@ namespace SDKTemplate
 
 事實上，我們想要保留的最新版 **MainPage** 的唯一成員是建構函式。
 
-當您從 stub 檔案複製新成員、刪除不想要的成員，並更新命名空間之後，您專案中的 `MainPage.h` 和 `MainPage.cpp` 檔案看起來應該像這樣。 請注意，我們對 **factory_implementation** 類型所做的唯一變更是更新其命名空間。
+當您從 stub 檔案複製新成員、刪除不想要的成員，並更新命名空間之後，您專案中的 `MainPage.h` 和 `MainPage.cpp` 檔案看起來應該像以下列出的程式碼。 請注意，有兩個 **MainPage** 類型。 其中一個在**實作**命名空間，另一個在 **factory_implementation** 命名空間中。 請注意，我們對 **factory_implementation** 類型所做的唯一變更是在其命名空間中新增 **SDKTemplate**。
 
 ```cppwinrt
 // MainPage.h
@@ -255,7 +257,7 @@ namespace winrt::SDKTemplate::implementation
 
 ### <a name="update-all-remaining-namespace-declarationsreferences-and-build"></a>更新其餘所有命名空間宣告/參考並建置
 
-建置 C++/WinRT 專案之前，請先尋找 **Clipboard** 命名空間的任何宣告或參考，然後將其變更為 **SDKTemplate**。
+建置 C++/WinRT 專案之前，請先尋找 **Clipboard** 命名空間的任何宣告和參考，然後將其變更為 **SDKTemplate**。
 
 - `MainPage.xaml` 和 `App.xaml`。 命名空間會出現在 `x:Class` 和 `xmlns:local` 屬性的值中。
 - `App.idl`。
@@ -684,7 +686,7 @@ public string BuildClipboardFormatsOutputString()
 
 C# 程式碼會使用 `new` 關鍵字建構 **StringBuilder**。 在 C# 中，物件預設是參考類型，並使用 `new`，在堆積上宣告。 在新式標準 C++ 中，物件預設為值類型，在堆疊上宣告 (不使用 `new`)。 因此，我們會將 `StringBuilder output = new StringBuilder();` 單純地移植到 C++/WinRT，作為 `std::wostringstream output;`。
 
-C# `var` 關鍵字會要求編譯器推斷類型。 您可以在 C++/WinRT 中將 `var` 移植到 `auto`。 但 C++/WinRT 中，有一些情況 (為了避免複製) 您想要*參考*推斷 (或推算) 的類型，並以 `auto&` 表示該類型。 也有一些情況下，您想要一種特殊並正確繫結的參考，不論它是使用 *lvalue*，還是使用 *rvalue* 進行初始化。 另外，您可以使用 `auto&&` 來表示該參考。 這是您看到的格式，用於下面移植程式碼中的 `for` 迴圈。 如需 *lvalues* 和 *rvalues* 的簡介，請參閱[值類別和它們的參考](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories)。
+C# `var` 關鍵字會要求編譯器推斷類型。 您可以在 C++/WinRT 中將 `var` 移植到 `auto`。 但在 C++/WinRT 中，有一些情況 (為了避免複製) 會讓想*參考*推斷 (或推算) 的類型，並以 `auto&` 表示 lvalue 參考推算類型。 也有一些情況下，您想要一種特殊並正確繫結的參考，不論它是使用 *lvalue*，還是使用 *rvalue* 進行初始化。 另外，您可以使用 `auto&&` 來表示該參考。 這是您看到的格式，用於下面移植程式碼中的 `for` 迴圈。 如需 *lvalues* 和 *rvalues* 的簡介，請參閱[值類別和它們的參考](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories)。
 
 編輯 `pch.h`、`SampleConfiguration.h` 和 `SampleConfiguration.cpp`，以符合下列清單。
 
@@ -790,6 +792,8 @@ private void OnWindowActivated(object sender, WindowActivatedEventArgs e) { ... 
 在 C++/WinRT 中，我們會將其設為 **SampleState** 的公用靜態方法。
 
 在 C# 中，您可以使用 `+=` 和 `-=` 運算子語法來註冊和撤銷事件處理委派。 在 C++/WinRT 中，您有數個語法選項可供您註冊/撤銷委派，如[藉由在 C++/WinRT 使用委派來處理事件](/windows/uwp/cpp-and-winrt-apis/handle-events)中所述。 但是一般的形式是，您呼叫針對事件命名的一對函數來進行註冊及撤銷。 若要註冊，您可以將委派傳遞至註冊函數，然後擷取撤銷權杖作為回報 ([**winrt::event_token**](/uwp/cpp-ref-for-winrt/event-token))。 若要撤銷，請將該權杖傳遞至撤銷函數。 在此情況下，處理常式是靜態的，而且 (如您在下列程式碼清單中所見) 函式呼叫語法很簡單。
+
+在 C#，實際上「會」  使用類似的權杖。 但程式語言會隱含該詳細資料。 C++/WinRT 會讓其明確顯示。
 
 **object** 類型會出現在 C# 事件處理常式簽章中。 在 C# 語言中，**object** 是 .NET [**System.Object**](/dotnet/api/system.object) 類型的[別名](/dotnet/csharp/language-reference/builtin-types/reference-types)。 C++/WinRT 中的對等項是 [**winrt::Windows::Foundation::IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)。 因此，您將會在 C++/WinRT 事件處理常式中看到 **IInspectable**。
 
@@ -939,12 +943,14 @@ void MainPage::OnNavigatedTo(NavigationEventArgs const& /* e */)
 
 #### <a name="button_click"></a>**Button_Click**
 
-**Button_Click** 是 C# **MainPage** 類別的私用 (事件處理) 方法，而且是在 `MainPage.xaml.cs` 中定義的。 在這裡，該方法會搭配所參考的 XAML **SplitView** 一起使用。
+**Button_Click** 是 C# **MainPage** 類別的私用 (事件處理) 方法，而且是在 `MainPage.xaml.cs` 中定義的。 在這裡，其會連同所參考的 XAML **SplitView**，以及加以註冊的 **ToggleButton**。
 
 ```xaml
 <!-- MainPage.xaml -->
 ...
 <SplitView x:Name="Splitter" ... />
+...
+<ToggleButton Click="Button_Click" .../>
 ...
 ```
 
@@ -955,7 +961,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-以及移植到 C++/WinRT 的對等項目。 請注意，在 C++/WinRT 版本中，事件處理常式為 `public` (如您所見，您是在`private:`宣告*之前*，將其宣告)。
+以及移植到 C++/WinRT 的對等項目。 請注意，在 C++/WinRT 版本中，事件處理常式為 `public` (如您所見，您是在`private:`宣告*之前*，將其宣告)。 這是因為在 XAML 標記中註冊的事件處理常式 (例如這一項) 必須在 C++/WinRT 中為 `public`，XAML 標記才能存取。 如果您在命令式程式碼中註冊事件處理常式 (如同我們在先前的 **MainPage::EnableClipboardContentChangedNotifications** 中進行的)，則事件處理常式無需為 `public`。
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -1037,7 +1043,7 @@ async void Footer_Click(object sender, RoutedEventArgs e)
 
 對等 C++/WinRT 方法也將是非同步的 (因為其會呼叫 [**Launcher.LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync))。 但是，此方法不需要 `co_await`，也不會傳回非同步物件。 如需有關 `co_await` 和非同步物件的詳細資訊，請參閱[使用 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
-現在讓我們來談談方法的作用。 因為這是用於 **HyperlinkButton** 之 **Click** 事件的事件處理常式，因此名為 *sender* 的物件實際上是 **HyperlinkButton**。 所以轉換是安全的 (我們也可以將此轉換表示為 `sender as HyperlinkButton`)。 接下來，我們會擷取 **Tag** 屬性的值 (如果您查看 C# 專案中的 XAML 標記，就會看到這會設定為代表 Web URL 的字串)。 雖然 **FrameworkElement.Tag** 屬性 (**HyperlinkButton** 是 **FrameworkElement**) 屬於 **object** 類型，但在 C# 中，我們可以使用 [**Object.ToString**](/dotnet/api/system.object.tostring) 將其字串化。 從產生的字串中，我們會建構 **Uri** 物件。 最後 (透過 Shell 的協助)，我們會啟動瀏覽器並瀏覽至該 URL。
+現在讓我們來談談方法的作用。 因為這是用於 **HyperlinkButton** 之 **Click** 事件的事件處理常式，因此名為 *sender* 的物件實際上是 **HyperlinkButton**。 因此類型轉換是安全的 (我們也可以將此轉換表示為 `sender as HyperlinkButton`)。 接下來，我們會擷取 **Tag** 屬性的值 (如果您查看 C# 專案中的 XAML 標記，就會看到這會設定為代表 Web URL 的字串)。 雖然 **FrameworkElement.Tag** 屬性 (**HyperlinkButton** 是 **FrameworkElement**) 屬於 **object** 類型，但在 C# 中，我們可以使用 [**Object.ToString**](/dotnet/api/system.object.tostring) 將其字串化。 從產生的字串中，我們會建構 **Uri** 物件。 最後 (透過 Shell 的協助)，我們會啟動瀏覽器並瀏覽至該 URL。
 
 以下是移植到 C++/WinRT 的方法 (同樣地，為清楚起見，將其展開)，之後是細節的描述。
 
@@ -1165,6 +1171,8 @@ namespace SDKTemplate
 
 最後&mdash;，若要為五個 XAML 頁面類型的每一個完全移除 `.h` 和 `.cpp` 檔案中的 `MyProperty`&mdash;，請刪除 `int32_t MyProperty()` 存取子和 `void MyProperty(int32_t)` 更動子函數的宣告和定義。
 
+順便一提，您可讓 XAML 檔案的名稱符合其所代表的類別名稱。 例如，如果您在 XAML 標記檔中有 `x:Class="MyNamespace.MyPage"`，則應該將該檔案命名為 `MyPage.xaml`。 雖然這不是技術需求，但不需要針對相同的成品使用不同的名稱，就能讓您的專案更容易了解和維護，而且更容易使用。
+
 ## <a name="copyfiles"></a>**CopyFiles**
 
 在 C# 專案中，**COPYFILES** XAML 頁面類型是在 `CopyFiles.xaml` 和 `CopyFiles.xaml.cs` 原始程式碼檔案中實作。 讓我們再依序看一下 **CopyFiles** 的每個成員。
@@ -1277,7 +1285,7 @@ if (file != null)
 ...
 ```
 
-為了將 C# `as` 關鍵字移植到C++/WinRT，到目前為止，我們看到 [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 函數使用了好幾次。 如果轉換失敗，則該函數會擲回例外狀況。 但是，如果我們想要轉換在失敗時傳回 `nullptr` (讓我們可以在程式碼中處理該條件)，則改用 [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function) 函數。
+為了將 C# `as` 關鍵字移植到C++/WinRT，到目前為止，我們看到 [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 函數使用了好幾次。 如果類型轉換失敗，則該函數會擲回例外狀況。 但是，如果我們想要轉換在失敗時傳回 `nullptr` (讓我們可以在程式碼中處理該條件)，則改用 [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function) 函數。
 
 ```cppwinrt
 auto file{ storageItem.try_as<StorageFile>() };
@@ -1324,7 +1332,7 @@ C++/WinRT 物件會實作 **IClosable**，主要用於取得不具決定性最�
 
 **CopyImage. OnDeferredImageRequestedHandler** 的 C# 版本具有 `finally` 子句，但沒有 `catch` 子句。 我們已稍微在 C++/WinRT 版本中進一步執行，並實作 `catch` 子句，讓我們可以報告延遲轉譯是否成功。
 
-移植此 XAML 頁面的其餘部分，並不會產生任何新的討論內容。 就像 **CopyFiles** 一樣，移植中的最後一個步驟就是選取 `CopyImage.xaml` 的整個內容，並將它貼入 C++/WinRT 專案中的相同檔案。
+移植此 XAML 頁面的其餘部分，並不會產生任何新的討論內容。 請記得刪除虛擬 **ClickHandler** 函數。 另外，就像 **CopyFiles** 一樣，移植中的最後一個步驟就是選取 `CopyImage.xaml` 的整個內容，並將它貼入 C++/WinRT 專案中的相同檔案。
 
 ## <a name="copytext"></a>**CopyText**
 
@@ -1338,9 +1346,11 @@ C++/WinRT 物件會實作 **IClosable**，主要用於取得不具決定性最�
 
 第二，當我們最終到達射後不理的 **CheckHistoryAndRoaming** 協同程式時，要做的第一件事就是對 `this` 採取強式參考，以保證 **HistoryAndRoaming** 頁面至少會存留到協同程式最後完成為止。 如需上述兩個層面的詳細資訊，請參閱 [C++/WinRT 中的強式和弱式參考](/windows/uwp/cpp-and-winrt-apis/weak-references)。
 
-在移植 **CheckHistoryAndRoaming** 時，我們發現另一個興趣點。 它包含用來更新 UI 的程式碼；因此，我們必須確定是在主要 UI 執行緒上執行該更新。 一般來說，非同步方法可以在任何的任意執行緒上執行和/或繼續。 在 C# 中，解決方案是呼叫 [**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher.runasync)，並從 lambda 函數內更新 UI。 在 C++/WinRT 中，我們可以使用 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) 函數，搭配 `this` 指標的[**發送器**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) 來暫停協同程式，並在主要 UI 執行緒上立即繼續執行。
+在移植 **CheckHistoryAndRoaming** 時，我們發現另一個興趣點。 它包含用來更新 UI 的程式碼；因此，我們必須確定是在主要 UI 執行緒上執行該更新。 最初呼叫事件處理常式的執行緒是主要的 UI 執行緒。 但一般來說，非同步方法可以在任何的任意執行緒上執行和/或繼續。 在 C# 中，解決方案是呼叫 [**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher.runasync)，並從 lambda 函數內更新 UI。 在 C++/WinRT 中，我們可以使用 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) 函數，搭配 `this` 指標的[**發送器**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) 來暫停協同程式，並在主要 UI 執行緒上立即繼續執行。
 
 相關的運算式為 `co_await winrt::resume_foreground(Dispatcher());`。 或者，雖然較不清楚，但是也可以將其簡單表達為 `co_await Dispatcher();`。 較短的版本是承蒙 C++/WinRT 所提供的轉換運算子來達成。
+
+移植此 XAML 頁面的其餘部分，並不會產生任何新的討論內容。 請記得刪除虛擬 **ClickHandler** 函數，並複製 XAML 標記。
 
 ## <a name="otherscenarios"></a>**OtherScenarios**
 

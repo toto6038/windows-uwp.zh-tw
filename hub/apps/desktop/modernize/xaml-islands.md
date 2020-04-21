@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 0f596047cfdd01fcfca568ea1c63b1e2cc14c272
-ms.sourcegitcommit: 1670eec29b4360ec37cde2910b76078429273cb0
+ms.openlocfilehash: dbae7ada227b4f3019a2e17c91e6b06b7f2f276f
+ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80329501"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81441863"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在傳統型應用程式中裝載 UWP XAML 控制項 (XAML Islands)
 
@@ -148,6 +148,8 @@ UWP XAML 裝載 API 是由數個 Windows 執行階段類別和 COM 介面所組�
 :no_entry_sign:含手寫檢視的文字輸入。 如需這項功能的詳細資訊，請參閱[本文](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-handwriting-view)。
 
 :no_entry_sign:使用 `@Places` 和 `@People` 內容連結的文字控制項。 如需這項功能的詳細資訊，請參閱[本文](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links)。
+
+:no_entry_sign:XAML Islands 不支援裝載 [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)，其中包含接受文字輸入的控制項，例如 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)、[RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)或 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)。 如果這樣做，輸入控制項將不會正確地回應按鍵功能。 若要使用 XAML Island 來達到類似的功能，建議您裝載包含輸入控制項的[快顯視窗](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup)。
 
 ### <a name="window-host-context-for-xaml-islands"></a>XAML Island 的視窗裝載內容
 

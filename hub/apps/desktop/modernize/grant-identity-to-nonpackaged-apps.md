@@ -8,25 +8,20 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6b77cc7b2f39a987df4c832f7a8daeb7e2722def
-ms.sourcegitcommit: f2f61a43f5bc24b829e8db679ffaca3e663c00e9
+ms.openlocfilehash: d997c6109256974f17bc0f86a518e34ef55960a7
+ms.sourcegitcommit: ecd7bce5bbe15e72588937991085dad6830cec71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588710"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81224271"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>將身分識別授與非封裝的傳統型應用程式
 
-<!--
-> [!NOTE]
-> The features described in this article require Windows 10 Insider Preview Build 10.0.19000.0 or a later release.
--->
-
 許多 Windows 10 擴充性功能都會向非 UWP 傳統型應用程式要求所要使用的[套件識別資料](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)，包括背景工作、通知、動態磚和共用目標。 在這些情況下，作業系統需要身分識別，才能識別對應 API 的呼叫者。
 
-在 Windows 10 Insider Preview 組建 10.0.19000.0 之前的作業系統版本中，將身分識別授與傳統型應用程式的唯一方法，就是[將其封裝在已簽署的 MSIX 套件](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)中。 對於這些應用程式，身分識別會指定於套件資訊清單，而 MSIX 部署管線會根據資訊清單中的資訊來處理身分識別註冊。 套件資訊清單中參考的所有內容都會出現在 MSIX 套件內。
+在 Windows 10 版本 2004 之前的作業系統版本中，將身分識別授與傳統型應用程式的唯一方法，就是[將其封裝在已簽署的 MSIX 套件](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)中。 對於這些應用程式，身分識別會指定於套件資訊清單，而 MSIX 部署管線會根據資訊清單中的資訊來處理身分識別註冊。 套件資訊清單中參考的所有內容都會出現在 MSIX 套件內。
 
-從 Windows 10 Insider Preview 組建 10.0.19000.0 開始，您可建置*疏鬆套件*並向您的應用程式進行註冊，以將套件識別資料授與未封裝在 MSIX 套件中的傳統型應用程式。 此支援可讓尚無法採用 MSIX 封裝進行部署的傳統型應用程式，使用需要套件識別資料的 Windows 10 擴充性功能。 如需更多背景資訊，請參閱[這篇部落格文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)。
+從 Windows 10 版本 2004 開始，您可建置*疏鬆套件*並向您的應用程式進行註冊，以將套件識別資料授與未封裝在 MSIX 套件中的傳統型應用程式。 此支援可讓尚無法採用 MSIX 封裝進行部署的傳統型應用程式，使用需要套件識別資料的 Windows 10 擴充性功能。 如需更多背景資訊，請參閱[這篇部落格文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)。
 
 若要建置並註冊可將套件識別資料授與傳統型應用程式的疏鬆套件，請遵循下列步驟。
 
@@ -162,9 +157,9 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 ## <a name="register-your-sparse-package-at-run-time"></a>在執行階段註冊您的疏鬆套件
 
-若要將套件識別資料授與您的傳統型應用程式，您的應用程式必須使用 [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) 類別來註冊疏鬆套件。 您可以將程式碼新增至應用程式，以在第一次執行應用程式時註冊疏鬆套件，也可以在安裝傳統型應用程式時執行程式碼來註冊該套件 (例如，如果您使用 MSI 來安裝傳統型應用程式，可以從自訂動作執行此程式碼)。
+若要將套件識別資料授與您的傳統型應用程式，您的應用程式必須使用 [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) 類別的 **AddPackageByUriAsync** 方法來註冊疏鬆套件。 Windows 10 版本 2004 起可以取得此方法。 您可以將程式碼新增至應用程式，以在第一次執行應用程式時註冊疏鬆套件，也可以在安裝傳統型應用程式時執行程式碼來註冊該套件 (例如，如果您使用 MSI 來安裝傳統型應用程式，可以從自訂動作執行此程式碼)。
 
-下列範例示範如何註冊疏鬆套件。 此程式碼會建立 **AddPackageOptions** 物件，其中包含您的套件資訊清單可參考套件外部內容的外部位置路徑。 然後，程式碼會將此物件傳遞至 **PackageManager.AddPackageByUriAsync** 方法，以註冊疏鬆套件。 此方法也會將已簽署疏鬆套件的位置接收為 URI。 如需更完整的範例，請參閱相關[範例](#sample)中的 `StartUp.cs` 程式碼檔案。
+下列範例示範如何註冊疏鬆套件。 此程式碼會建立 **AddPackageOptions** 物件，其中包含您的套件資訊清單可參考套件外部內容的外部位置路徑。 然後，程式碼會將此物件傳遞至 **AddPackageByUriAsync** 方法，以註冊疏鬆套件。 此方法也會將已簽署疏鬆套件的位置接收為 URI。 如需更完整的範例，請參閱相關[範例](#sample)中的 `StartUp.cs` 程式碼檔案。
 
 ```csharp
 private static bool registerSparsePackage(string externalLocation, string sparsePkgPath)
