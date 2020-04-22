@@ -603,7 +603,7 @@ streamWebSocket->Control->NoDelay = false;
 auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
 ```
 
-**注意** 請不要嘗試在呼叫 **ConnectAsync***之後*變更控制項屬性。 該規則的唯一例外是 [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType)。
+**注意** 請不要嘗試在呼叫 **ConnectAsync** *之後*變更控制項屬性。 該規則的唯一例外是 [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType)。
 
 ## <a name="websocket-information-classes"></a>WebSocket 資訊類別
 [**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) 和 [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket) 分別有一個對應的類別，可提供關於物件的其他資訊。
