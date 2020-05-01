@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 757de9201d1cb7f753419024271f2be5c1aa67f4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582309"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "63787108"
 ---
 # <a name="debugging-testing-and-performance"></a>偵錯、測試及效能
 
 
 本節說明如何使用 Microsoft Visual Studio 來偵錯、測試及最佳化您的應用程式。 它也包含 Windows 裝置入口網站 (適用於裝置監視和設定) 和 Windows 應用程式認證套件 (用以針對 Microsoft Store 準備您的應用程式) 等工具。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [部署和偵錯 UWP 應用程式](deploying-and-debugging-uwp-apps.md) | 本文會引導您完成以各種部署和偵錯目標為目標的步驟。 |
 | [處理程序生命週期管理 (PLM) 的測試與偵錯工具](testing-debugging-plm.md) | 用來偵錯和測試您 App 如何使用處理程序生命週期管理的工具及技術。 |

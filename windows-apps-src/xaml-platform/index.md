@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 84427f0cec6aa0921f903fff9b5e74b4da5a58a9
-ms.sourcegitcommit: f8c354def02d5c82d195e4f629e6470110268223
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68623390"
 ---
 # <a name="xaml-platform"></a>XAML 平台
 
 本節包含說明程式設計概念的主題，這些概念通常適用於使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 所撰寫，且使用 XAML 定義 UI 的所有應用程式。 程式設計概念包含如何使用屬性和事件，以及如何將它們套用到通用 Windows平台 (UWP) 應用程序的程式設計。 通用 Windows 平台會藉由新增相依性屬性系統，來延伸屬性及其值的 C#、Visual Basic 或 C++/CX 概念。 本節中的主題會在 UWP 使用 XAML 語言時記錄該語言，並記錄如何使用 XAML 為 UWP 應用程式定義 UI 的基本到進階方案。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [XAML 概觀](xaml-overview.md) | 向 Windows 執行階段應用程式開發人員介紹 XAML 語言與概念，並描述在 XAML 中宣告物件與設定屬性的不同方法，因為 XAML 可以用來建立 Windows 執行階段應用程式。 |
 | [相依性屬性概觀](dependency-properties-overview.md) | 說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段應用程式時，可供使用的相依性屬性系統。 |

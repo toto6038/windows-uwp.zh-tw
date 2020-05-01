@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8db56882833b9d3bd8a6d2932d04e07a72b205e2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66365244"
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a>XAML UI 的 3D 透視效果
@@ -47,7 +47,7 @@ ms.locfileid: "66365244"
 
 ## <a name="planeprojection-class"></a>PlaneProjection 類別
 
-使用 [**PlaneProjection**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PlaneProjection) 設定 UIElement 的 [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection) 屬性，即可將 3D 效果套用至任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)。 **PlaneProjection** 定義如何在空間中呈現轉換。 以下範例顯示一個簡單情況。
+使用 [**PlaneProjection**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 設定 UIElement 的 [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection) 屬性，即可將 3D 效果套用至任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PlaneProjection)。 **PlaneProjection** 定義如何在空間中呈現轉換。 以下範例顯示一個簡單情況。
 
 ```xml
 <Image Source="kid.png">

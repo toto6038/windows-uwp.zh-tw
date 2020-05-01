@@ -1,7 +1,6 @@
-items:
 - name: 新功能
   href: whats-new/toc.yml
-- name: 立即開始
+- name: 開始使用
   href: get-started/toc.yml
 - name: 設計與 UI
   href: design/toc.yml
@@ -13,9 +12,3 @@ items:
   href: publish/toc.yml
 - name: API 參考資料
   href: /uwp/
-ms.openlocfilehash: 694733290f7b44ed6b7c88eaf6bcb9a5e0e71309
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582271"

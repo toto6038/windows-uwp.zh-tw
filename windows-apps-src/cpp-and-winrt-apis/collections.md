@@ -7,10 +7,10 @@ keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 集合
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4f1b15ec377b030a467dded634abe3fdde717896
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68270140"
 ---
 # <a name="collections-with-cwinrt"></a>使用 C++/WinRT 的集合
@@ -55,7 +55,7 @@ int main()
 }
 ```
 
-如上述程式碼範例所示，在建立集合之後，您可以附加項目、重複處理這些項目，而且通常可將這些項目視為可能會從 API 收到的任何 Windows 執行階段集合物件。 如果需要集合的固定畫面，您可以呼叫所示的 [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)。 如上所示，&mdash;建立和使用集合&mdash;的模式適用於想要將資料傳入 API 或從 API 取得資料的簡單案例。 如果預期 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)，則可傳遞 **IVector** 或 **IVectorView**。
+如上述程式碼範例所示，在建立集合之後，您可以附加項目、重複處理這些項目，而且通常可將這些項目視為可能會從 API 收到的任何 Windows 執行階段集合物件。 如果需要集合的固定畫面，您可以呼叫所示的 [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)。 如上所示，&mdash;建立和使用集合&mdash;的模式適用於想要將資料傳入 API 或從 API 取得資料的簡單案例。 如果預期  IIterable  ，則可傳遞 [IVector**或**IVectorView](/uwp/api/windows.foundation.collections.iiterable_t_)。
 
 在以上的程式碼範例中，對 **winrt::init_apartment** 的呼叫會初始化 Windows 執行階段中的執行緒；預設是在多執行緒 Apartment 中。 此呼叫也會初始化 COM。
 
@@ -116,7 +116,7 @@ auto bookSkus{ winrt::single_threaded_observable_vector<Windows::Foundation::IIn
 - [**winrt::single_threaded_map**](/uwp/cpp-ref-for-winrt/single-threaded-map) 函式範本會傳回非可觀察關聯集合成為 [**IMap**](/uwp/api/windows.foundation.collections.imap_k_v_)。
 - [**winrt::single_threaded_observable_map**](/uwp/cpp-ref-for-winrt/single-threaded-observable-map) 函式範本會傳回可觀察關聯集合成為 [**IObservableMap**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_)。
 
-您可以選擇傳遞至類型 **std::map** 或 **std::unordered_map** 的 *rvalue*，使用資料準備這些集合。
+您可以選擇傳遞至類型 *std::map* 或 **std::unordered_map** 的 **rvalue**，使用資料準備這些集合。
 
 ```cppwinrt
 auto coll1{
@@ -212,11 +212,11 @@ private:
 
 這些是 C++/WinRT 提供的基底類別，可供您實作自訂集合。
 
-### <a name="winrtvectorviewbaseuwpcpp-ref-for-winrtvector-view-base"></a>[winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
+### <a name="winrtvector_view_base"></a>[winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 請參閱以上的程式碼範例。
 
-### <a name="winrtvectorbaseuwpcpp-ref-for-winrtvector-base"></a>[winrt::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
+### <a name="winrtvector_base"></a>[winrt::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
 
 ```cppwinrt
 struct MyVector :
@@ -238,7 +238,7 @@ private:
 };
 ```
 
-### <a name="winrtobservablevectorbaseuwpcpp-ref-for-winrtobservable-vector-base"></a>[winrt::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
+### <a name="winrtobservable_vector_base"></a>[winrt::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
 
 ```cppwinrt
 struct MyObservableVector :
@@ -260,7 +260,7 @@ private:
 };
 ```
 
-### <a name="winrtmapviewbaseuwpcpp-ref-for-winrtmap-view-base"></a>[winrt::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
+### <a name="winrtmap_view_base"></a>[winrt::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
 
 ```cppwinrt
 struct MyMapView :
@@ -279,7 +279,7 @@ private:
 };
 ```
 
-### <a name="winrtmapbaseuwpcpp-ref-for-winrtmap-base"></a>[winrt::map_base](/uwp/cpp-ref-for-winrt/map-base)
+### <a name="winrtmap_base"></a>[winrt::map_base](/uwp/cpp-ref-for-winrt/map-base)
 
 ```cppwinrt
 struct MyMap :
@@ -303,7 +303,7 @@ private:
 };
 ```
 
-### <a name="winrtobservablemapbaseuwpcpp-ref-for-winrtobservable-map-base"></a>[winrt::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
+### <a name="winrtobservable_map_base"></a>[winrt::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
 
 ```cppwinrt
 struct MyObservableMap :

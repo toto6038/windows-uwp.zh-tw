@@ -13,10 +13,10 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 31cf2134fb8f77809b75a5abf3e6980443452059
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68867408"
 ---
 # <a name="motion-for-uwp-apps"></a>適用於 UWP app 的動作
@@ -74,21 +74,21 @@ Fluent 動作在您的應用程式中可以發揮作用。 它根據使用者的
 
 :::row:::
     :::column:::
-### <a name="timing-and-easingtiming-and-easingmd"></a>[計時和加/減速](timing-and-easing.md)
+### <a name="timing-and-easing"></a>[計時和加/減速](timing-and-easing.md)
 計時和加/減速是在 UI 內當物件進入、離開或移動時使動態感覺自然的一項重要元素。
     :::column-end:::
     :::column:::
-### <a name="directionality-and-gravitydirectionality-and-gravitymd"></a>[方向性和重力](directionality-and-gravity.md)
+### <a name="directionality-and-gravity"></a>[方向性和重力](directionality-and-gravity.md)
 方向訊號有助於為使用者體驗期間提供堅實的心智模式。 方向移動受到重力等作用的影響，強調了移動的自然感覺。
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-### <a name="page-transitionspage-transitionsmd"></a>[頁面轉換](page-transitions.md)
+### <a name="page-transitions"></a>[頁面轉換](page-transitions.md)
 使用者在應用程式裡的頁面間瀏覽，頁面轉換提供回饋做為頁面間的關係。 它們可協助使用者了解他們在瀏覽階層中的位置。
     :::column-end:::
     :::column:::
-### <a name="connected-animationconnected-animationmd"></a>[連接動畫](connected-animation.md)
+### <a name="connected-animation"></a>[連接動畫](connected-animation.md)
 連接動畫可讓兩個不同檢視之間元素的轉換有動畫效果，而產生動態且迷人的瀏覽體驗。
     :::column-end:::
 :::row-end:::

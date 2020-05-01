@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e3e29dabf074eab59f6c788c139524f7dc2474df
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67318323"
 ---
 # <a name="audio-video-and-camera"></a>音訊、視訊和相機
@@ -18,7 +18,7 @@ ms.locfileid: "67318323"
 
 本節提供有關建立通用 Windows 平台 (UWP) app 以擷取、播放或編輯相片、視訊或音訊的資訊。
  
-| 主題                                                                                             | 描述                                                                                                                                                                                                                                                                                    |
+| 主題                                                                                             | 說明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [相機](camera.md) | 列出適用於 UWP app 的相機功能，以及示範如何使用它們的操作說明文章的連結。 |
 | [媒體播放](media-playback.md) | 提供建立使用音訊和視訊播放的 UWP app 的相關資訊。 |
@@ -39,7 +39,7 @@ ms.locfileid: "67318323"
 | [查詢已安裝的轉碼器](codec-query.md) | 告訴您如何查詢裝置已安裝的音訊及視訊編碼器與解碼器。 |
 | [螢幕擷取](screen-capture.md) | 說明如何使用 [Windows.Graphics.Capture 命名空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)，從顯示畫面或應用程式視窗取得畫面格來建立要建置共同作業及互動體驗的視訊串流或快照。 |
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 - [開發 UWP 應用程式](https://docs.microsoft.com/windows/uwp/develop/)
 
  

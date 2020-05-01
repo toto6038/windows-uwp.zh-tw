@@ -7,10 +7,10 @@ keywords: windows 10, uwp, 教育
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d68fd78a7da3f1b98f61225f3aad8ca1590140e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67317612"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>開發教育用通用 Windows App
@@ -40,5 +40,5 @@ Windows Ink 平台可以融入學生熟悉的輸入模式來讓教育用 App 更
 ### <a name="microsoft-store"></a>Microsoft Store
 教育用 App 通常是在特殊情況下向特定組織發行。 請參閱[向企業散發企業營運應用程式](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)以取得相關詳細資訊。
 
-## <a name="related-topics"></a>相關主題
+## <a name="related-topics"></a>[相關主題]
 - Windows IT 中心中的[教育用 Windows 10](https://docs.microsoft.com/education/windows/index)

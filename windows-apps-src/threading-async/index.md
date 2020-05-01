@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, asynchronous, threads, threading, 非同步, 執行緒
 ms.localizationpriority: medium
 ms.openlocfilehash: 22c151b90be30b39da7decd9a0ce3109e29b7fb7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582258"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "63813158"
 ---
 # <a name="threading-and-async-programming"></a>執行緒和非同步程式設計
 執行緒和非同步程式設計可讓您的 app 在平行執行緒中以非同步方式完成工作。
@@ -28,10 +28,10 @@ ms.locfileid: "57582258"
 
 執行緒集區可以降低建立及摧毀執行緒的額外負荷，因此在管理執行緒更有效率。 這表示它可以存取多個 CPU 核心以最佳化執行緒，還可以在應用程式之間和在背景工作執行時平衡執行緒資源。 使用內建的執行緒集區可方便您專心撰寫完成工作的程式碼，而不是執行緒管理機制。
 
-| 主題                                                                                                          | 描述                         |
+| 主題                                                                                                          | 說明                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
 | [非同步程式設計 (UWP 應用程式)](asynchronous-programming-universal-windows-platform-apps.md)              | 這個主題描述通用 Windows 平台 (UWP) 的非同步程式設計，以及它在 C#、Microsoft Visual Basic .NET、Visual C++ 元件延伸 (C++/CX) 以及 JavaScript 中的表示方式。 |
-| [C++/CX 的非同步程式設計 (UWP 應用程式)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| 本文描述透過使用在 ppltasks.h 內 <code>concurrency</code> 命名空間中定義的 <code>task</code> 類別，於 C++/CX 中運用非同步方法的建議方式。 |
+| [C++/CX 的非同步程式設計 (UWP 應用程式)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| 本文描述透過使用在 ppltasks.h 內 <code>task</code> 命名空間中定義的 <code>concurrency</code> 類別，於 C++/CX 中運用非同步方法的建議方式。 |
 | [使用執行緒集區的最佳做法](best-practices-for-using-the-thread-pool.md)                         | 本主題描述使用執行緒集區的最佳做法。 |
 | [在 C# 或 Visual Basic 中呼叫非同步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | 通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。 本主題討論如何在 C# 或 Microsoft Visual Basic 使用 UWP 的非同步方法。 |
 | [建立定期工作項目](create-a-periodic-work-item.md)                                                   | 了解如何建立定期重複執行的工作項目。 |

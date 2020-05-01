@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 673f774c4d686726b59ff4e52e356ec0bc319379
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66370758"
 ---
 # <a name="networking-and-web-services"></a>網路和 Web 服務
 
 下列網路和 Web 服務技術可供通用 Windows 平台 (UWP) 開發人員使用。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 | - | - |
 | [網路功能基本知識](networking-basics.md) | 您對於任何具備網路功能的 app 所需執行的動作。 |
 | [哪一種網路功能技術？](which-networking-technology.md) | 適用於 UWP 開發人員的網路功能技術快速概觀，並建議您如何選擇最適合您的 app 的技術。 |

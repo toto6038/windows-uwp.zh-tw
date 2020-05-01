@@ -7,10 +7,10 @@ keywords: 開始設定, uwp, windows 10, 了解曲目, 設定, 儲存設定, 載
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66370490"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 應用程式中儲存和載入設定
@@ -51,9 +51,9 @@ composite["FontSize"] = 11;
 roamingSettings.Values["RoamingFontInfo"] = composite;
  ```
 
-透過使用 `Windows.Storage.ApplicationData.Current.LocalSettings` 優先取得本機設定資料存放區的 **ApplicationDataContainer**，將設定儲存至本機裝置。 您指派給此執行個體的索引鍵/值字典組會儲存在本機裝置設定資料存放區中。
+透過使用 **優先取得本機設定資料存放區的**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.LocalSettings`，將設定儲存至本機裝置。 您指派給此執行個體的索引鍵/值字典組會儲存在本機裝置設定資料存放區中。
 
-使用類似的模式儲存漫遊設定。 使用 `Windows.Storage.ApplicationData.Current.RoamingSettings`，優先取得漫遊設定資料存放區的 **ApplicationDataContainer**。 然後將索引鍵/值組指派給執行個體。  這些索引鍵/值組將會自動在裝置間漫遊。
+使用類似的模式儲存漫遊設定。 使用 **，優先取得漫遊設定資料存放區的** ApplicationDataContainer`Windows.Storage.ApplicationData.Current.RoamingSettings`。 然後將索引鍵/值組指派給執行個體。  這些索引鍵/值組將會自動在裝置間漫遊。
 
 上述的程式碼片段中，**ApplicationDataCompositeValue** 儲存多個索引鍵/值組。 當您有多個應該不會彼此同步處理的設定時，複合值會很實用。 當您儲存 **ApplicationDataCompositeValue** 時，以一個單位儲存與載入這些值，或自動完成。 這個相關的方式設定不會取得同步，因為它們會以一個單位而非個別來進行漫遊。
 
@@ -74,9 +74,9 @@ if (composite != null)
 }
 ```
 
-透過使用 `Windows.Storage.ApplicationData.Current.LocalSettings` 優先取得本機設定資料存放區的 **ApplicationDataContainer** 執行個體，從本機裝置載入設定。 然後用來擷取索引鍵/值組。
+透過使用 **優先取得本機設定資料存放區的**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.LocalSettings` 執行個體，從本機裝置載入設定。 然後用來擷取索引鍵/值組。
 
-透過下列類似的模式載入漫遊設定。 使用 `Windows.Storage.ApplicationData.Current.RoamingSettings`，從漫遊設定資料存放區優先取得 **ApplicationDataContainer** 執行個體。 從該執行個體存取索引鍵/值組。 如果尚未漫遊資料至裝置，但您正從此裝置存取設定，則會收到 null **ApplicationDataContainer**。 這便是在上述範例程式碼中有 `if (composite != null)` 檢查的原因。
+透過下列類似的模式載入漫遊設定。 使用 **，從漫遊設定資料存放區優先取得** ApplicationDataContainer`Windows.Storage.ApplicationData.Current.RoamingSettings` 執行個體。 從該執行個體存取索引鍵/值組。 如果尚未漫遊資料至裝置，但您正從此裝置存取設定，則會收到 null **ApplicationDataContainer**。 這便是在上述範例程式碼中有 `if (composite != null)` 檢查的原因。
 
 ## <a name="useful-apis-and-docs"></a>實用的 API 和文件
 
@@ -84,7 +84,7 @@ if (composite != null)
 
 ### <a name="useful-apis"></a>實用的 API
 
-| API | 描述 |
+| API | 說明 |
 |------|---------------|
 | [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | 從本機應用程式資料存放區中取得應用程式設定容器。 |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | 從漫遊應用程式資料存放區中取得應用程式設定容器。 |
@@ -93,13 +93,13 @@ if (composite != null)
 
 ### <a name="useful-docs"></a>實用的文件
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|----------------|
 | [應用程式設定的指導方針](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | 描述建立和顯示應用程式設定的最佳做法。 |
 | [儲存及擷取設定和其他應用程式資料](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | 逐步解說儲存和擷取的設定，包括漫遊設定。 |
 
 ## <a name="useful-code-samples"></a>實用的程式碼範例
 
-| 程式碼範例 | 描述 |
+| 程式碼範例 | 說明 |
 |-----------------|---------------|
 | [應用程式資料範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) | 案例 2-4 著重於設定 |
