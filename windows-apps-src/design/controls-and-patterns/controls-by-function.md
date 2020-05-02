@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f1717a59399fb95f7b71a38ee8d2d46de4ca765
-ms.sourcegitcommit: e11e0f65930665579d1f296861234893e82bf8fb
+ms.openlocfilehash: 32038d6e25ec450dae59d0c1d7e9c8703fdc8018
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80301438"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148797"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
@@ -222,7 +222,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 ### <a name="date-picker"></a>日期選擇器
 讓使用者能夠選取日期的控制項。
 
-![日期選擇器控制項](images/controls/date-picker.png)
+![日期選擇器控制項](images/controls_datepicker_expand.png)
 
 ```xaml
 <DatePicker Header="Arrival Date"/>
@@ -235,7 +235,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 ### <a name="time-picker"></a>時間選擇器
 讓使用者能夠設定時間值的控制項。
 
-![TimePicker 控制項](images/controls/time-picker.png) 
+![TimePicker 控制項](images/controls_timepicker_expand.png)
 
 ```xaml
 <TimePicker Header="Arrival Time"/>

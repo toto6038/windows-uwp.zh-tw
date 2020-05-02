@@ -8,10 +8,10 @@ ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
-ms.sourcegitcommit: 8d945e0406818e614eacdc962493e570cc7615ed
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75955315"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 參考資料

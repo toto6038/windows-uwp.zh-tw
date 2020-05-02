@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取檔案, 撰寫檔案, 建立檔案, 寫入文字, 閱讀文字
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 29cfeef852f240548f1cd961f73766346da7afa4
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1270d49cc8746b2793b1414306f9ee842cb40f40
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321136"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82166244"
 ---
 # <a name="work-with-files"></a>使用檔案
 
@@ -108,7 +108,7 @@ UWP 應用程式必須宣告它要透過將對應功能新增至資訊清單來�
 
 ### <a name="useful-apis"></a>實用的 API
 
-| API | 描述 |
+| API | 說明 |
 |------|---------------|
 |  [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) | 提供有關建立、開啟、複製、刪除與重新命名檔案的檔案之方法相關資訊。 |
 | [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) | 提供有關資料夾、建立檔案的方法，以及建立、重新命名檔案與刪除資料夾的方法的相關資訊。 |
@@ -123,7 +123,7 @@ UWP 應用程式必須宣告它要透過將對應功能新增至資訊清單來�
 
 ### <a name="useful-docs"></a>實用的文件
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|----------------|
 | [Windows.Storage 命名空間](https://docs.microsoft.com/uwp/api/windows.storage) | API 參考文件。 |
 | [檔案、資料夾和媒體櫃](https://docs.microsoft.com/windows/uwp/files/) | 概念文件。 |
@@ -139,10 +139,10 @@ UWP 應用程式必須宣告它要透過將對應功能新增至資訊清單來�
 
 ## <a name="useful-code-samples"></a>實用的程式碼範例
 
-| 程式碼範例 | 描述 |
+| 程式碼範例 | 說明 |
 |-----------------|---------------|
-| [應用程式資料範例](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | 透過使用應用程式資料 API 來示範如何儲存和擷取每個使用者的特定資料。 |
+| [應用程式資料範例](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/applicationdata/) | 透過使用應用程式資料 API 來示範如何儲存和擷取每個使用者的特定資料。 |
 | [檔案存取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | 示範如何建立、讀取、寫入、複製和刪除檔案。 |
-| [檔案選擇器範例](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | 透過讓使用者使用 UI 選擇，來示範如何存取檔案和資料夾，以及如何儲存檔案，讓使用者可以指定要儲存的名稱、檔案類型和檔案的位置。 |
+| [檔案選擇器範例](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/filepicker/) | 透過讓使用者使用 UI 選擇，來示範如何存取檔案和資料夾，以及如何儲存檔案，讓使用者可以指定要儲存的名稱、檔案類型和檔案的位置。 |
 | [JSON 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | 使用 [Windows.Data.Json 命名空間](https://docs.microsoft.com/uwp/api/Windows.Data.Json) 來示範如何編碼和解碼 JavaScript 物件標記法 (JSON) 物件、陣列、字串、數字和布林。 |
 | [其他程式碼範例](https://developer.microsoft.com/windows/samples) | 在分類下拉式清單中選擇 [檔案、資料夾和媒體櫃]  。 |

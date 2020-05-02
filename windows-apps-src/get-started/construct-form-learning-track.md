@@ -7,10 +7,10 @@ keywords: 開始使用, uwp, windows 10, 了解追蹤, 版面配置, 表單
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 02cb15d948bf35b1c449bb430c9c31dd33d9eec6
-ms.sourcegitcommit: ea058c804637319f18801447fd0f7e38ce17b801
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79543971"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單

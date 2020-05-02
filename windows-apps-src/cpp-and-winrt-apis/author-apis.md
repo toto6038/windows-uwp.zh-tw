@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: fcdeaec3728306de420baa4a2aea06ef1952641e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209273"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255262"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
@@ -234,12 +234,12 @@ Visual Studio 專案和項目範本會針對每個執行階段類別產生個別
 
 ## <a name="runtime-class-methods-properties-and-events"></a>執行階段類別方法、屬性和事件
 
-我們已了解工作流程會使用 IDL 宣告您的執行階段類別和其成員，然後由工具為您產生原型和虛設常式實作。 至於這些針對您執行階段類別成員自動產生的原型，您「可以」  對其進行編輯，讓其傳遞您在 IDL 中宣告的不同類型。 但是，若要這麼做，您在 IDL 中宣告的類型必須能夠轉送到您在實作版本中宣告的類型。
+我們已了解工作流程會使用 IDL 宣告您的執行階段類別和其成員，然後由工具為您產生原型和虛設常式實作。 至於這些針對您執行階段類別成員自動產生的原型，您「可以」  對其進行編輯，讓其傳遞您在 IDL 中宣告的不同類型。 但是，若要這麼做，您在 IDL 中宣告的類型必須要能夠轉送到您在實作版本中宣告的類型。
 
 以下是一些範例。
 
 - 您可以放寬參數類型的限制。 例如，如果您的方法在 IDL 中採用 **SomeClass**，則在實作中，您可以選擇將其變更成 **IInspectable**。 之所以可以這麼做，是因為任何 **SomeClass** 都可轉送到 **IInspectable** (但反過來則不行)。
-- 您可以接受值形式的可複製參數，而不是參考形式。 例如，將 `SomeClass` 變更為 `SomeClass const&`。 如果您需要避免將參考擷取到協同程式，則這是必要的 (請參閱[參數傳遞](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing))。
+- 您可以接受值形式的可複製參數，而不是參考形式。 例如，將 `SomeClass const&` 變更為 `SomeClass`。 如果您需要避免將參考擷取到協同程式，則這是必要的 (請參閱[參數傳遞](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing))。
 - 您可以放寬傳回值的限制。 例如，您可以將 **void** 變更為 [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget)。
 
 最後兩項非常適合用來撰寫非同步的事件處理常式。

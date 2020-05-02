@@ -12,10 +12,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 315edbddccc51b7e742bf9beffad8497a104ce03
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80614088"
 ---
 # <a name="swipe"></a>Swipe
@@ -184,7 +184,7 @@ UWP 撥動命令有兩種模式：[顯示](/uwp/api/windows.ui.xaml.controls.swi
 
 ## <a name="handle-an-invoked-swipe-command"></a>處理叫用的撥動命令
 
-若要因應撥動命令執行動作，請處理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件 (如需使用者如何叫用命令的詳細資訊，請檢閱稍早在本文中的_撥動如何運作？_ 一節。)一般而言，撥動命令是在 ListView 或類似清單的案例中。 在該情況下，當叫用命令時，您會想要對這個撥動項目執行動作。
+若要因應撥動命令執行動作，請處理其 [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) 事件  (如需使用者如何叫用命令的詳細資訊，請檢閱稍早在本文中的_撥動如何運作？_ 一節。)一般而言，撥動命令是在 ListView 或類似清單的案例中。 在該情況下，當叫用命令時，您會想要對這個撥動項目執行動作。
 
 以下說明如何在您先前建立的_刪除_撥動項目上處理叫用事件。
 

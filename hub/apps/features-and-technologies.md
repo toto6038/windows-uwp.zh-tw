@@ -7,10 +7,10 @@ ms.localizationpriority: medium
 ms.author: mcleans
 author: mcleanbyron
 ms.openlocfilehash: 6bae7fdef4e9cdf05dfa6f56160f1021033123e6
-ms.sourcegitcommit: 7f1b64f62bc3a82ebcd3807c809363df46919195
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77705773"
 ---
 # <a name="features-and-technologies-for-windows-apps"></a>Windows 應用程式的功能和技術
@@ -80,7 +80,7 @@ Windows 提供多種方式，將語音辨識和文字轉換語音 (也稱為 TTS
 
 |  UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
-| [啟用裝置功能](/windows/uwp/devices-sensors/enable-device-capabilities)<br/><br/>[列舉裝置](/windows/uwp/devices-sensors/enumerate-devices)<br/><br/>[感應器](/windows/uwp/devices-sensors/sensors)<br/><br/>[藍牙](/windows/uwp/devices-sensors/bluetooth)<br/><br/>[列印與掃描](/windows/uwp/devices-sensors/printing-and-scanning)<br/><br/>[NFC](/windows/uwp/devices-sensors/nfc) | [感應器 API](/windows/desktop/sensorsapi/portal)<br/><br/>[列印](/desktop/printdocs/printdocs-printing)<br/><br/>[UPnP API](/desktop/upnp/universal-plug-and-play-start-page) |  [列印和列印系統管理](https://docs.microsoft.com/dotnet/framework/wpf/advanced/printing-and-print-system-management)  |  [列印支援](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-print-support)  |
+| [啟用裝置功能](/windows/uwp/devices-sensors/enable-device-capabilities)<br/><br/>[列舉裝置](/windows/uwp/devices-sensors/enumerate-devices)<br/><br/>[感應器](/windows/uwp/devices-sensors/sensors)<br/><br/>[Bluetooth](/windows/uwp/devices-sensors/bluetooth)<br/><br/>[列印與掃描](/windows/uwp/devices-sensors/printing-and-scanning)<br/><br/>[NFC](/windows/uwp/devices-sensors/nfc) | [感應器 API](/windows/desktop/sensorsapi/portal)<br/><br/>[列印](/desktop/printdocs/printdocs-printing)<br/><br/>[UPnP API](/desktop/upnp/universal-plug-and-play-start-page) |  [列印和列印系統管理](https://docs.microsoft.com/dotnet/framework/wpf/advanced/printing-and-print-system-management)  |  [列印支援](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-print-support)  |
 
 ### <a name="system-network-and-power"></a>系統、網路和電源
 

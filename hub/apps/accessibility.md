@@ -7,10 +7,10 @@ keywords: Windows 10 中的協助工具, 建置無障礙 win32 應用程式, 建
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
 ms.openlocfilehash: 2739546061febcfc96403ed5520fdcbd8bc2c462
-ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "76725931"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的協助工具

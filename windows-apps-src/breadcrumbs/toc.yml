@@ -1,10 +1,10 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/
   items:
-    - name: Windows
-      tocHref: /windows/
-      topicHref: /windows/
+    - name: '[App]'
+      tocHref: /windows/apps/
+      topicHref: /windows/apps/
       items:
         - name: UWP
           tocHref: /windows/uwp/
@@ -13,7 +13,7 @@
             - name: 新功能
               tocHref: /windows/uwp/whats-new/
               topicHref: /windows/uwp/whats-new/windows-10-version-latest
-            - name: 立即開始
+            - name: 開始使用
               tocHref: /windows/uwp/get-started/
               topicHref: /windows/uwp/get-started/
             - name: 設計與 UI
@@ -26,7 +26,7 @@
                 - name: 設計基本知識
                   tocHref: /windows/uwp/design/fluent-design-system/
                   topicHref: /windows/uwp/design/basics/index
-                - name: 配置
+                - name: 版面配置
                   tocHref: /windows/uwp/design/layout/
                   topicHref: /windows/uwp/design/layout/index
                 - name: 樣式

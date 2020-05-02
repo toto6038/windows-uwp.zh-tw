@@ -353,11 +353,13 @@
             - name: 快顯通知內容結構描述
               href: shell/tiles-and-notifications/toast-schema.md
             - name: 傳送本機快顯通知
-              href: shell/tiles-and-notifications/send-local-toast.md
               items:
+                - name: UWP 應用程式
+                  href: shell/tiles-and-notifications/send-local-toast.md
                 - name: 傳統型應用程式
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
                   items:
+                    - name: 概觀
+                      href: shell/tiles-and-notifications/toast-desktop-apps.md
                     - name: 'C# 應用程式'
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL 應用程式

@@ -10,10 +10,10 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 0b54b04f2f36c2661de8baf58d0da1aec75ae590
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79210144"
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
@@ -379,7 +379,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 
 ### <a name="binding-object-declared-using-binding"></a>使用 {Binding} 宣告的繫結物件
 
-如果您使用 C++/WinRT 或 Visual C++ 元件延伸模組 (C++/CX)，則需要將 [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) \(英文\) 屬性新增至您希望繫結至之任何執行階段類別，以使用 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) \(部分機器翻譯\) 標記延伸模組。 若要使用 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) \(部分機器翻譯\)，您不需要該屬性。
+如果您使用 C++/WinRT 或 Visual C++ 元件延伸模組 (C++/CX)，則需要將 [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) \(英文\) 屬性新增至您希望繫結至之任何執行階段類別，以使用 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) \(部分機器翻譯\) 標記延伸模組。 若要使用 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，您不需要該屬性。
 
 ```cppwinrt
 // HostViewModel.idl
@@ -390,7 +390,7 @@ runtimeclass HostViewModel : Windows.UI.Xaml.Data.INotifyPropertyChanged
 ```
 
 > [!IMPORTANT]
-> 如果您使用的是 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則可以使用 [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) \(英文\) 屬性 (如果您安裝了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809) 或更新版本)。 如果沒有該屬性，則需要實作 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) 與 [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) 介面，才能使用 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) \(部分機器翻譯\) 標記延伸模組。
+> 如果您使用的是 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則可以使用 [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 屬性，前提是您安裝了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809) 或更新版本。 如果沒有該屬性，則需要實作 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) 與 [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) 介面，才能使用 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) \(部分機器翻譯\) 標記延伸模組。
 
 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 預設會假設您繫結到標記頁面的 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)。 我們會將頁面的 **DataContext** 設定為繫結來源類別的執行個體 (在此案例中為 **HostViewModel** 類型)。 下列範例顯示宣告繫結物件的標記。 我們使用稍早已在「繫結目標」一節中使用的 **Button.Content** 繫結目標，並繫結到 **HostViewModel.NextButtonText** 屬性。
 
