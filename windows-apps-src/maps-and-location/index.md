@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 地圖服務
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f39e365cd15a10f775a89cf32747b4bf0bbd87a
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75685058"
 ---
 # <a name="maps-and-location-overview"></a>地圖和位置概觀

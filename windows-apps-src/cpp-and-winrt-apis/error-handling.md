@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, error, handling, exception, 標準, 投影, 錯誤, 處理, 例外狀況
 ms.localizationpriority: medium
 ms.openlocfilehash: 37819d1626d3adc6f5647f447567a9273e72668d
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68270134"
 ---
 # <a name="error-handling-with-cwinrt"></a>使用 C++/WinRT 處理錯誤

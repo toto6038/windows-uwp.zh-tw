@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, WinRT API, 索引編製程式, 搜尋
 localizationpriority: medium
 ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66369259"
 ---
 # <a name="using-supplemental-properties"></a>使用補充屬性  
@@ -150,7 +150,7 @@ UWP 變更通知和變更追蹤將能繼續搭配補充屬性運作，如同其�
 
 ### <a name="recovering"></a>復原 
 當應用程式注意到索引正在被重建時，它們便必須負責在對其方便的時機更新補充屬性。  
-### <a name="privacy"></a>隱私權 
+### <a name="privacy"></a>私密性 
 針對某些可能會被寫入檔案的屬性，使用者可能不會想將它們與其他應用程式共用。 應用程式應該要能指出其寫入至屬性的資訊是僅限其應用程式使用的私人資訊、可與幾個其他應用程式共用的資訊，或是可供系統上所有應用程式使用的公用資訊。  
 
 不過此功能對一些早期採用者來說具有相當的潛在可能性，他們覺得取得公用屬性仍然能為設計帶來許多價值。 因此，我們將此功能標記為可有可無，而我們應該會繼續在無法視需要隱藏值的情況下建置此功能。 在未來加入此功能將會導入更多案例，因此我們應該在所有設計中都考慮它。  

@@ -11,10 +11,10 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
-ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68796722"
 ---
 # <a name="content-links-in-text-controls"></a>文字控制項中的內容連結
@@ -46,7 +46,7 @@ ms.locfileid: "68796722"
 
 | 功能   | RichEditBox | 文字區塊 |
 | --------- | ----------- | ---------- |
-| 用途 | ContentLinkInfo 執行個體 | ContentLink 文字元素 |
+| 使用方式 | ContentLinkInfo 執行個體 | ContentLink 文字元素 |
 | 游標 | 取決於內容連結的類型，無法變更 | 取決於 Cursor 屬性，預設為 **null** |
 | ToolTip | 未轉譯 | 顯示次要文字 |
 
@@ -154,7 +154,7 @@ Uri 屬性的作用很像超連結的 NavigateUri 屬性。 當使用者按一�
 - 如果 LinkContentKind 不是 "Places"，就會嘗試開啟 [地圖]  應用程式進入指定的位置。 例如，如果您在 ContentLinkChanged 事件處理常式中修改了 LinkContentKind，就會發生這種情況。
 - 如果 [地圖] 應用程式無法開啟 URI，則會在預設瀏覽器中開啟地圖。 這通常會在使用者的_網站應用程式_設定不允許使用 [地圖]  應用程式開啟 URI 時發生。
 
-##### <a name="people"></a>People
+##### <a name="people"></a>人員
 
 連絡人選擇器會使用採用 **ms-people** 通訊協定的 URI 來建立 ContentLinkInfo。
 

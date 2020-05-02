@@ -6,17 +6,17 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 723cae783ba16fe5be9bb2076f96d4a5f823d733
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258840"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>2018 年 8 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、開發人員指引和影片已在 8 月份提供使用。
 
-在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -54,7 +54,7 @@ Mozilla Developer Network 文件中新增了[舊版 Microsoft API 擴充功能](
 
 [Project Rome 文件](https://docs.microsoft.com/windows/project-rome/)網站已經重新整理為功能優先的方法。 這應該會讓開發人員更容易找到他們正在尋找的東西，並跨多個平台實作他們選擇的功能。
 
-## <a name="videos"></a>影片
+## <a name="videos"></a>視訊
 
 ### <a name="xbox-live-unity-plugin"></a>Xbox Live Unity 外掛程式
 

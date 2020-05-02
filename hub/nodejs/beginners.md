@@ -9,10 +9,10 @@ keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 433eb5701696f590f10d8b3276481098b9ec073d
-ms.sourcegitcommit: 8f9cea69f33b06166fec22677eaa43466352c14d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75657080"
 ---
 # <a name="get-started-using-nodejs-on-windows-for-beginners"></a>適合初學者在 Windows 上開始使用 Node.js

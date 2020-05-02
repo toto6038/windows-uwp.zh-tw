@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a87fe2bbff1768da43d6cb366b173077555270f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582340"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "63806986"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>UWP app的磚、徽章及通知
  
@@ -33,8 +33,8 @@ App 在 [開始] 功能表上以磚的形式顯示。 每個 UWP app 都會有�
 <p><em>推播通知</em>或<em>原始通知</em>是從 Windows 推播通知服務 (WNS) 或從背景工作傳送到您 app 的通知。 您的應用程式可以通知使用者有趣事發生 (透過徽章更新、磚更新或快顯通知) 以回應這些通知，或是以您所選擇的任何方式來回應。</p>
 
  
-## <a name="tiles"></a>磚
-| 文章 | 描述 |
+## <a name="tiles"></a>Tiles
+| 文章 | 說明 |
 | --- | --- |
 | [建立磚](creating-tiles.md) | 自訂您的 App 的預設磚，並提供不同螢幕大小的資產。 |
 | [應用程式圖示資產](app-assets.md) | 以各種形式出現在整個 Windows 10 作業系統的 App 圖示資產，好比通用 Windows 平台 (UWP) App 的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。 |
@@ -47,7 +47,7 @@ App 在 [開始] 功能表上以磚的形式顯示。 每個 UWP app 都會有�
 
 ## <a name="notifications"></a>通知
 
-| 文章 | 描述 |
+| 文章 | 說明 |
 | --- | --- |
 | [快顯通知](adaptive-interactive-toasts.md) | 調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。 |
 | [傳送本機快顯通知](send-local-toast.md) | 了解如何傳送互動式快顯通知。 |

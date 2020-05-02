@@ -6,21 +6,21 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c54321d1d9db95a33d2de6363a79d93243c07d1f
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258882"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>適用於開發人員的 Windows 10 (組建 16299) 最新動向
 
-Windows 10 組建 16299 (也稱為 Fall Creators Update 或 1709 版本) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 16299 (也稱為 Fall Creators Update 或 1709 版本) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
 這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指引的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 16299 API 變更](windows-10-build-16299-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
 
 ## <a name="design--ui"></a>設計與 UI
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 條件式 XAML | 您現在可以使用[條件式 XAML](../debug-test-perf/conditional-xaml.md) 來建立[版本調適型應用程式](../debug-test-perf/version-adaptive-apps.md)。 條件式 XAML 可讓您在 XAML 標記中使用 **ApiInformation.IsApiContractPresent** 方法，因此可以根據 API 是否存在來設定屬性和具現化物件，而不必使用程式碼後置。
 設計工具組 | [UWP 應用程式的設計工具組和資源](../design/downloads/index.md)已藉由新增 Sketch 及 Adobe XD 工具組進行擴充。 先前既有的工具組也已更新並修訂，為您的 UWP 應用程式提供更強固的控制項與版面配置範本。 此外，也加入新的工具和範例，以提供範例與靈感。
@@ -35,7 +35,7 @@ UI 控制項 | 這些新的控制項使得快速建立美觀 UI 的工作變得�
 
 ## <a name="gaming"></a>遊戲
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 遊戲廣播 | **[Windows.Media.AppBroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)** 命名空間的新 API 可讓您的應用程式啟動系統提供的遊戲廣播 UI。 </br>您也可以註冊在廣播開始或停止時通知您應用程式的事件。 **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** 命名空間的新 API 可讓您錄製音訊和視訊以及收錄遊戲的螢幕擷取畫面。 </br>您也可以提供中繼資料，供系統嵌入至廣播及擷取串流，讓應用程式提供同步遊戲事件的檢視體驗。 如需這些功能的詳細資訊，請參閱[遊戲廣播及擷取](../gaming/game-broadcast-and-capture.md)。
 遊戲聊天覆疊 | [GameChatOverlay 類別](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatoverlay)提供方法，可用於取得預設遊戲聊天覆疊執行個體、設定想要的覆疊位置，以及新增訊息。
@@ -47,7 +47,7 @@ Xbox Live | 我們已經為 Xbox Live 開發人員新增關於 UWP 遊戲和 Xbo
 
 ## <a name="develop-windows-apps"></a>開發 Windows 應用程式
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 啟動 UWP 應用程式 | 現已提供下列新功能： </br>* 使用 [StartupTask 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.startuptask)來指定當使用者登入或系統開機時啟動的 UWP 應用程式。 </br> * 識別 UWP 應用程式是否[由命令列啟動](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)。 </br>* 使用 [RequestRestartAsync() 和 RequestRestartForUserAsync()](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication) API，以程式設計方式要求您的 UWP 應用程式重新啟動。 </br>* [啟動 Windows 設定應用程式](../launch-resume/launch-settings-app.md)已更新，以反映新的 URI 配置，例如 `ms-settings:storagesense`、`ms-settings:cortana-notifications` 等等。
 應用程式封裝 | 應用程式安裝程式已擴充為允許從網頁下載 UWP 應用程式套件。 此外，現在也能使用應用程式安裝程式下載一組相關應用程式套件。 請參閱新的[使用應用程式安裝程式安裝 UWP 應用程式](../packaging/appinstaller-root.md)一節，以深入了解。
@@ -76,7 +76,7 @@ EdgeHTML 16 | 為 Microsoft Edge 和 JS 型通用 Windows 平台應用程式提�
 
 本節中的功能在發行 Windows 1703 先前版本時已加入。 所有 Windows 開發人員都能使用這些功能，不需要更新 SDK。
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 帳戶管理 | [將 Azure AD 租用戶關聯至合作夥伴中心帳戶](../publish/associate-azure-ad-with-dev-center.md)來新增多個帳戶使用者時，我們現在提供更大彈性。 您可以將多個 Azure AD 租用戶與單一合作夥伴中心帳戶產生關聯，或將單一 Azure AD 租用戶與多個合作夥伴中心帳戶產生關聯。
 廣告 | Microsoft Advertising SDK 現已可讓您在應用程式中顯示[原生廣告](../monetize/native-ads.md)。 原生廣告是以元件為基礎的廣告格式，其中每一項廣告創意 (例如標題、影像、描述和喚起行動文字) 都會當做個別元素傳送到您的應用程式。 原生廣告則目前僅供加入試驗計劃的開發人員使用，但我們很快就要將這項功能提供給所有的開發人員。

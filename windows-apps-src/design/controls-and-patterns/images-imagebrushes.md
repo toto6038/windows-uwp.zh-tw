@@ -9,10 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a07fc5c669d3c9cd374a4a031fba2ee6ef6d5756
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74257282"
 ---
 # <a name="images-and-image-brushes"></a>影像與影像筆刷
@@ -44,7 +44,7 @@ ms.locfileid: "74257282"
 
 ## <a name="create-an-image"></a>建立影像
 
-### <a name="image"></a>Image
+### <a name="image"></a>影像
 這個範例示範如何使用 [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 物件建立影像。
 
 

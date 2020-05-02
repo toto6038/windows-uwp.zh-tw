@@ -13,10 +13,10 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63801180"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>集合和清單的關聯式命令功能
@@ -35,7 +35,7 @@ ms.locfileid: "63801180"
 
 下表列出了一些常見的集合命令，以及公開這些命令的方式。 
 
-| 命令          | 不限輸入類型 | 滑鼠快速操作 | 鍵盤快速操作 | 觸控快速操作 |
+| 命令          | 不限輸入類型 | 滑鼠快速操作 | 鍵盤快速操作鍵 | 觸控快速操作 |
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | 刪除項目      | 操作功能表   | 暫留按鈕      | DEL 鍵              | 撥動以刪除   |
 | 為項目加上旗標        | 操作功能表   | 暫留按鈕      | Ctrl+Shift+G         | 撥動以加上旗標     |
@@ -234,7 +234,7 @@ public sealed partial class PodcastUserControl : UserControl
 
 使用者可以使用下列「操作動作」來叫用操作功能表：
 
-| Input    | 操作動作                          |
+| 輸入    | 操作動作                          |
 | -------- | --------------------------------------- |
 | 滑鼠    | 按一下滑鼠右鍵                             |
 | 鍵盤 | Shift+F10、功能表按鈕                  |

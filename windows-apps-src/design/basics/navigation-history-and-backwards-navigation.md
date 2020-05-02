@@ -8,10 +8,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 05b435eb6f070634507c143bd028d2cb051c97bc
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74735023"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>適用於 UWP app 的瀏覽歷程記錄和向後瀏覽
@@ -294,7 +294,7 @@ bool App::On_BackRequested()
 
 我們建議提供下列輸入的支援以便返回瀏覽。 (請注意，當中某些輸入不受系統 BackRequested 支援，必須另以不同的事件處理。)
 
-| Input | 事件 |
+| 輸入 | 事件 |
 | --- | --- |
 | Windows 退格鍵 | BackRequested |
 | 硬體返回按鈕 | BackRequested |

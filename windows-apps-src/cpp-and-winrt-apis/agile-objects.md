@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 敏捷式, 物件, 敏捷性, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 82dff619e6fa3934f69b93090bee90de6359ca07
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66360326"
 ---
 # <a name="agile-objects-in-cwinrt"></a>使用 C++/WinRT 的敏捷式物件
@@ -87,7 +87,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
 
 不論您是否選擇退出敏捷性，您都可以自行實作 **IMarshal**。 例如，您可以使用 **winrt::non_agile** 標記避免預設敏捷性實作，並自行實作 **IMarshal**&mdash;或許可支援「依值封送處理」語意。
 
-## <a name="agile-references-winrtagileref"></a>敏捷式參考資訊 (winrt::agile_ref)
+## <a name="agile-references-winrtagile_ref"></a>敏捷式參考資訊 (winrt::agile_ref)
 
 如果您正在使用非敏捷式物件，但您需要在某些潛在敏捷內容中傳遞它，有一個方法是使用 [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) 結構範本來取得非敏捷式類型執行個體或非敏捷式物件介面的敏捷式參考。
 

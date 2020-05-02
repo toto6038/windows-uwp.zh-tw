@@ -8,10 +8,10 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: c27826980127674b4a4356af8a3c36056e86bd83
-ms.sourcegitcommit: cf88f5e8e1de476ed2635e791a5e5e82ae4bd8cf
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74056863"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>建置 Windows PC 適用的傳統型應用程式
@@ -35,7 +35,7 @@ ms.locfileid: "74056863"
 <thead>
 <tr class="header">
 <th>平台</th>
-<th>描述</th>
+<th>說明</th>
 <th>文件與資源</th>
 </tr>
 </thead>
@@ -43,22 +43,22 @@ ms.locfileid: "74056863"
 <tr class="odd">
 <td><a href="https://docs.microsoft.com/windows/uwp/">通用 Windows 平台 (UWP)</a></td>
 <td><p>適用於 Windows 10 應用程式和遊戲的先進平台。 您可以建立專門使用 UWP 控制項和 API 的 UWP 應用程式，也可以在使用其他平台之一所建立的傳統型應用程式中使用 UWP 控制項和 API。</p></td>
-<td><a href="/windows/uwp/get-started/">入門</a><br/><a href="/uwp/">API 參照</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">範例</a></td>
+<td><a href="/windows/uwp/get-started/">開始使用</a><br/><a href="/uwp/">API 參考</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">範例</a></td>
 </tr>
 <tr class="even">
 <td><a href="https://docs.microsoft.com/windows/win32/">Win32</a></td>
 <td><p>這是適用於原生 C/C++ Windows 應用程式的首選平台，該應用程式需要直接存取 Windows 和硬體。</p></td>
-<td><a href="/windows/win32/desktop-programming/">入門</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API 參照</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">範例</a></td>
+<td><a href="/windows/win32/desktop-programming/">開始使用</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API 參考</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">範例</a></td>
 </tr>
 <tr class="odd">
 <td><a href="https://docs.microsoft.com/dotnet/framework/wpf/">WPF</a></td>
 <td><p>已建立以 .NET 為基礎的平台，適用於使用 XAML UI 模型之圖形豐富的受控 Windows 應用程式。 這些應用程式可以 <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework 為目標。</p></td>
-<td><a href="/dotnet/framework/wpf/getting-started/">入門</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 參照 (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">範例</a></td>
+<td><a href="/dotnet/framework/wpf/getting-started/">開始使用</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 參照 (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">範例</a></td>
 </tr>
 <tr class="even">
 <td><a href="https://docs.microsoft.com/dotnet/framework/winforms/">Windows Forms</a></td>
 <td><p>一個以 .NET 為基礎的平台，旨在為具有輕量 UI 模型的受管企業營運應用程式所設計。 這些應用程式可以 <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework 為目標。</p></td>
-<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">入門</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 參照 (.NET)</a><br/><a href="https://code.msdn.microsoft.com/windowsdesktop/site/search?f%5B0%5D.Type=Technology&f%5B0%5D.Value=Windows%20Forms">範例</a></td>
+<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">開始使用</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 參照 (.NET)</a><br/><a href="https://code.msdn.microsoft.com/windowsdesktop/site/search?f%5B0%5D.Type=Technology&f%5B0%5D.Value=Windows%20Forms">範例</a></td>
 </tr>
 </tbody>
 </table>
@@ -77,7 +77,7 @@ ms.locfileid: "74056863"
 
 <br/>
 
-| 文章 | 描述 |
+| 文章 | 說明 |
 |---------|-------------|
 | [傳統型應用程式現代化](/windows/apps/desktop/modernize) | 說明可在任何傳統型應用程式中使用的最新 Windows 10 和 UWP 開發功能，包括 WPF、Windows Forms 和 C++ Win32 應用程式。 |
 | [教學課程：將 WPF 應用程式現代化](/windows/apps/desktop/modernize/modernize-wpf-tutorial) | 依照逐步指示，將 UWP 筆跡和行事曆控制項新增至應用程式，並將其封裝在 MSIX 套件中，以將現有 WPF 企業營運範例應用程式現代化。  |
@@ -88,7 +88,7 @@ ms.locfileid: "74056863"
 
 <br/>
 
-| 文章 | 描述 |
+| 文章 | 說明 |
 |---------|-------------|
 | [選擇您的應用程式平台](choose-your-platform.md) | 提供主要傳統型應用程式平台的深入比較，並可協助您選擇適合您需求的平台。 本文也會針對每個平台的文件提供實用的連結。 |
 | [傳統型應用程式現代化](/windows/apps/desktop/modernize) | 說明可在任何傳統型應用程式中使用的最新 Windows 10 和 UWP 開發功能，包括 WPF、Windows Forms 和 C++ Win32 應用程式。 |
@@ -96,7 +96,7 @@ ms.locfileid: "74056863"
 
 ## <a name="related-documentation-and-technologies"></a>相關文件和技術
 
-| 資源 | 描述 |
+| 資源 | 說明 |
 |---------|-------------|
 | [.NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0) | 深入瞭解 .NET Core 3.0 的最新功能，包括 WPF 和 Windows Forms 應用程式的增強功能。 |
 | [適用於 WPF 和 .NET Core 3.0 的桌面指南](https://docs.microsoft.com/dotnet/desktop-wpf/overview/index) | 開發以 .NET Core 3.0 為目標的 WPF 應用程式，而不是完整的 .NET Framework。  |

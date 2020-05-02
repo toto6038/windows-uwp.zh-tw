@@ -9,10 +9,10 @@ keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 63c47107538d8744201f83ea1be24cfaf3193f4f
-ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72517823"
 ---
 # <a name="get-started-using-mongodb-or-postgresql-with-nodejs-on-windows"></a>開始在 Windows 上搭配 Node.js 使用 MongoDB 或 PostgreSQL
@@ -21,12 +21,12 @@ Node.js 應用程式通常需要保存資料，這可能透過檔案、本機儲
 
 ## <a name="prerequisites"></a>必要條件
 
-本指南假設您已經完成[透過 WSL 2 設定 Node.js 開發環境](./setup-on-wsl2.md)的步驟，包括：
+本指南假設您已經完成[使用 WSL 2 設定您的 Node.js 開發環境](./setup-on-wsl2.md)的步驟，包括：
 
 - 安裝 Windows 10 Insider Preview 組建 18932 或更新版本。
 - 在 Windows 上啟用 WSL 2 功能。
-- 安裝 Linux 發行版本 (我們的範例適用 Ubuntu 18.04)。 您可以使用下列方式進行檢查：`wsl lsb_release -a`
-- 確保 Ubuntu 18.04 發行版本是在 WSL 2 模式下執行。 (WSL 可以在 v1 或 v2 模式中執行發行版本。)您可藉由開啟 PowerShell 並輸入下列內容進行檢查：`wsl -l -v`
+- 安裝 Linux 發行版本 (本範例適用 Ubuntu 18.04)。 可透過下列方式進行檢查：`wsl lsb_release -a`
+- 確保 Ubuntu 18.04 發行版本是在 WSL 2 模式下執行。 (WSL 可以在 v1 或 v2 模式中執行發行版本。)可開啟 PowerShell 並輸入下列內容，以此方式進行檢查：`wsl -l -v`
 - 使用 PowerShell，將 Ubuntu 18.04 設定為預設發行版本，請透過：`wsl -s ubuntu 18.04`
 
 ## <a name="differences-between-mongodb-and-postgresql"></a>MongoDB 與 PostgreSQL 之間的差異

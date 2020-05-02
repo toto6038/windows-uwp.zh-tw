@@ -6,10 +6,10 @@ ms.topic: article
 keywords: webvr, edge, web development, babylon, babylonjs, babylon.js, javascript, web 開發
 ms.localizationpriority: medium
 ms.openlocfilehash: ff350f8ce08f566b8c95c3c46faad330923e4b2e
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75685206"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>新增 WebVR 支援至 3D Babylon.js 遊戲

@@ -9,10 +9,10 @@ keywords: ''
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 9467224814b1e26f18031662f5e8d994a8fae1ac
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75683671"
 ---
 # <a name="get-started-using-docker-containers-with-nodejs"></a>開始在 Node.js 中使用 Docker 容器
@@ -21,7 +21,7 @@ ms.locfileid: "75683671"
 
 ## <a name="prerequisites"></a>必要條件
 
-本指南假設您已經完成[透過 WSL 2 設定 Node.js 開發環境](./setup-on-wsl2.md)的步驟，包括：
+本指南假設您已經完成[使用 WSL 2 設定您的 Node.js 開發環境](./setup-on-wsl2.md)的步驟，包括：
 
 - 安裝 Windows 10 Insider Preview 組建 18932 或更新版本。
 - 在 Windows 上啟用 WSL 2 功能。

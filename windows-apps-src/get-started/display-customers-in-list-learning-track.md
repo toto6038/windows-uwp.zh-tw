@@ -7,10 +7,10 @@ keywords: get started, uwp, windows 10, learning track, data binding, list, 開�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3cebf51bdf9fa9942a0b88ed7b4cf66204671781
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71340333"
 ---
 # <a name="display-customers-in-a-list"></a>在清單中顯示客戶
@@ -163,7 +163,7 @@ public class Customer : INotifyPropertyChanged
 
 ### <a name="useful-apis"></a>實用的 API
 
-| API | 描述 |
+| API | 說明 |
 |------|---------------|
 | [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) \(英文\) | 描述資料物件的視覺化結構，以允許在 UI 中顯示特定元素。 |
 | [x:Bind](../xaml-platform/x-bind-markup-extension.md) | 關於建議的 x:Bind 標記延伸的文件。 |
@@ -175,7 +175,7 @@ public class Customer : INotifyPropertyChanged
 
 ### <a name="useful-docs"></a>實用的文件
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|----------------|
 | [深入了解資料繫結](../data-binding/data-binding-in-depth.md) | 資料繫結原則的基本概觀 |
 | [資料繫結概觀](../data-binding/data-binding-quickstart.md) | 有關資料繫結的詳細概念性資訊。 |
@@ -183,7 +183,7 @@ public class Customer : INotifyPropertyChanged
 
 ## <a name="useful-code-samples"></a>實用的程式碼範例
 
-| 程式碼範例 | 描述 |
+| 程式碼範例 | 說明 |
 |-----------------|---------------|
 | [資料繫結教學課程](../data-binding/xaml-basics-data-binding.md) | 資料繫結基本概念的逐步引導體驗。 |
 | [ListView 和 GridView](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) \(英文\) | 透過資料繫結探索更詳細的 ListView。 |

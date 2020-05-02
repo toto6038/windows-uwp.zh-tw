@@ -10,10 +10,10 @@ dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 36c8c6248b356bbb17da72b53b0480a27999b875
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74257688"
 ---
 # <a name="contact-card"></a>連絡人卡片
@@ -78,7 +78,7 @@ ms.locfileid: "74257688"
 
     ```
 
-2. 呼叫 [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported) 方法，以判斷您是否可以顯示連絡人卡片。 如果不支援，則會顯示錯誤訊息 (此範例假設您要顯示連絡人卡片來回應按一下事件)。
+2. 呼叫 [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported) 方法，以判斷您是否可以顯示連絡人卡片。 如果不支援，則會顯示錯誤訊息  (此範例假設您要顯示連絡人卡片來回應按一下事件)。
     ```csharp
     // Contact and Contact Managers are existing classes 
     private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 

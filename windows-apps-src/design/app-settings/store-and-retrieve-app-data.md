@@ -9,10 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eb7ef49d0ce1876635dc36e84f43432c13e1791
-ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72690361"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>儲存及擷取設定和其他 app 資料
@@ -25,7 +25,7 @@ ms.locfileid: "72690361"
 
 app 資料有兩種類型：設定和檔案。
 
-### <a name="settings"></a>設定
+### <a name="settings"></a>Settings
 
 您可以使用設定來儲存使用者喜好設定和 app 狀態資訊。 應用程式資料 API 可讓您輕鬆建立及擷取設定 (本文稍後將說明一些範例)。
 
@@ -36,10 +36,10 @@ app 資料有兩種類型：設定和檔案。
 - **Char16**、**String**
 - [**DateTime**](/uwp/api/Windows.Foundation.DateTime)、[**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)
     - 若為 C#/.NET，請使用：[**System.DateTimeOffset**](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0)、[**System.TimeSpan**](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)
-- **GUID**、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
+- **GUID**、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、 [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
 - [**ApplicationDataCompositeValue**](/uwp/api/Windows.Storage.ApplicationDataCompositeValue)：一組必須個別序列化和還原序列化的相關應用程式設定。 使用複合設定，可以輕鬆管理不可部分完成的互相依存設定更新。 在並行存取和漫遊期間，系統可確保複合設定的完整性。 複合設定是針對少量資料最佳化，如果針對大型資料集使用複合設定，可能會拖慢系統效能。
 
-### <a name="files"></a>Files
+### <a name="files"></a>檔案
 
 使用檔案可儲存二進位資料，或啟用您自己的自訂序列化類型。
 
@@ -177,7 +177,7 @@ async void ReadTimestamp()
 
 只有在使用者將裝置設成「受信任」時，才會轉換儲存在 [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) 中的資料。 如果裝置不受信任，保存在此保存庫中的資料將不會漫遊。
 
-### <a name="conflict-resolution"></a>衝突解決方案
+### <a name="conflict-resolution"></a>衝突的解決方式
 
 漫遊應用程式資料並不是為了要一次在多個裝置上同時使用。 如果同步化時因為兩個裝置上的特定資料單位變更而引發衝突，系統一律保留最後寫入的值。 這樣可確保應用程式使用的是最新資訊。 如果資料單位是一個設定複合項目，則在設定單位的層級仍然會發生衝突解決，這表示將會同步具有最新變更的複合項目。
 
@@ -210,7 +210,7 @@ async void ReadTimestamp()
 
 1.  登錄以在漫遊資料變更時收到通知。
 
-    [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) 事件會在漫遊資料變更時通知您。 這個範例會將 `DataChangeHandler` 設定成處理漫遊資料變更的處理常式。
+    [  **DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) 事件會在漫遊資料變更時通知您。 這個範例會將 `DataChangeHandler` 設定成處理漫遊資料變更的處理常式。
 
 ```csharp
 void InitHandlers()

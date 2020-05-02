@@ -7,10 +7,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: cb2aef514c8787b5afe11ea5a2818012bfdf2f41
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282410"
 ---
 # <a name="typography"></a>印刷樣式
@@ -19,7 +19,7 @@ ms.locfileid: "72282410"
 
 作為語言的視覺表示，印刷格式的主要工作是溝通資訊。 其樣式絕對不能阻礙這項目標。 在這篇文章中，我們將會討論如何在您的 UWP 應用程式中設定印刷樣式，以協助使用者輕鬆且有效地了解內容。
 
-## <a name="font"></a>Font
+## <a name="font"></a>字型
 
 您應該在整個應用程式 UI 中使用單一字型，我們建議您維持 UWP 應用程式的預設字型 **Segoe UI**。 它設計成可維持不同大小和像素密度的最佳可讀性，並能提供輔助系統內容的乾淨、明亮、開放審美觀。
 
@@ -104,7 +104,7 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
     :::column-end:::
 :::row-end:::
 
-## <a name="alignment"></a>對齊方式
+## <a name="alignment"></a>對應項目
 
 預設 [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) 是 Left，而在大部分情況下，靠左和不齊右方法可提供一致的內容錨定與統一的配置。 對於 RTL 語言，請參閱[調整配置和字型以支援全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
 

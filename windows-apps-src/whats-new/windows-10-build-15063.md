@@ -7,21 +7,21 @@ ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
 ms.openlocfilehash: 53604de72eb32f7f6a8162b0cdb9cf481f6e9537
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258875"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>適用於開發人員的 Windows 10 (組建 15063) 最新動向
 
-Windows 10 組建 15063 (也稱為 Creators Update 或 1703 版本) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 15063 (也稱為 Creators Update 或 1703 版本) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
-這是開發人員會感興趣的新功能和改良功能集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 15063 API 變更](windows-10-build-15063-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
+這是開發人員會感興趣的新功能和改良功能集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 15063 API 變更](windows-10-build-15063-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
 
 ## <a name="windows-10-build-15063---march-2017"></a>Windows 10 組建 15063 - 2017 年 3 月
 
-功能 | 描述
+功能 | 說明
  :---- | :----
 背景工作 | 現在您可以在[群組](../launch-resume/group-background-tasks.md)中登錄背景工作，為背景工作提供粗略等同於命名空間的功能。 您可以將背景工作作為群組的一部分登錄或取消登錄，以隔離這些登錄。 這種隔離是確保不同的元件的應用程式或其他媒體櫃，不干擾彼此的背景工作註冊很有幫助。 </br></br> 企業可以以他們套件的易記名稱為基礎，[為 UWP 應用程式啟用或停用背景活動](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider)。 </br></br> 背景工作現在可以是[多重執行個體](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)。 您可以指定每一個執行個體，使其各自執行於新的程序中，並且都帶有各自的 CPU 和記憶體限制。
 藍牙低功耗 | 發佈泛型屬性 (GATT) 服務現在在前景的 [GattServiceProvider 類別](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceprovider)和背景的[GattServiceProviderTrigger 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.gattserviceprovidertrigger)中都已獲得支援。 </br></br>藍牙周邊角色目前在支援的無線電上已可供使用。 使用 [IsPeripheralRoleSupported](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothadapter) 來檢查支援。 </br></br> 不需要先配對裝置，即可與藍牙低功耗裝置通訊。 請參閱 [Windows.Devices.Bluetooth.BluetoothLEDevice](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice) 和 [GenericAttributeProfile 命名空間](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceprovider)以查看已為未配對連線啟用的 API。

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 4881fe961979243849728d3f835c449e0f71f4b4
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75683841"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>撰寫裝置入口網站的自訂外掛程式

@@ -12,10 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c6eb22fbe0488fa9a36160ce9e704d10727e4c9
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66364477"
 ---
 # <a name="search-and-find-in-page"></a>搜尋和在頁面中尋找
@@ -62,7 +62,7 @@ ms.locfileid: "66364477"
 
 **我的內容。**   跨裝置、雲端、社交關係圖等進行搜尋。 結果會有所不同，但會受限於使用者帳戶的連接。
 
-使用提示文字傳達搜尋範圍。 範例包含：
+使用提示文字傳達搜尋範圍。 範例包括：
 
 「搜尋 Windows 和網際網路」
 

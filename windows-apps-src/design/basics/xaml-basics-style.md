@@ -6,10 +6,10 @@ ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e9e0a426d51fddaf4ff509438176e9db7a3e474
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684123"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
@@ -108,7 +108,7 @@ PhotoLab 應用程式有兩個主要頁面：
     ```
 
     附註：
-    * 如果查看 XAML 周圍，您會看到這些元素是在 Grid 中。 我們將多邊形放在曝光滑桿的同一列 (Grid.Row="2")，因此這些元素會出現在相同位置。 我們將多邊形放在滑桿之前，讓滑桿顯示在圖形的最上方。
+    * 如果查看 XAML 周圍，您會看到這些元素是在 Grid 中。 我們將多邊形放在曝光滑桿的的同一列 (Grid.Row="2")，因此這些元素會出現在相同位置。 我們將多邊形放在滑桿之前，讓滑桿顯示在圖形的最上方。
     * 我們在多邊形上設定 Stretch="Fill" 和 HorizontalAlignment="Stretch"，讓三角形調整以填滿可用空間。 如果滑桿寬度變小或變大，多邊形也會縮小或擴大，與之相配合。 
 
 4. 編譯和執行應用程式。 滑桿現在看起來超棒：

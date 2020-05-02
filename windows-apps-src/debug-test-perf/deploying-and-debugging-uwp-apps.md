@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, uwp, 偵錯, 測試, 效能
 ms.localizationpriority: medium
 ms.openlocfilehash: d948af1ce10b3752ba9f20454d8dea72916de692
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75683851"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和偵錯 UWP 應用程式

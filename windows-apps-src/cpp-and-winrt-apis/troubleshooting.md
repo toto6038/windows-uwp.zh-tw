@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, troubleshooting, HRESULT, error, 標準, 投影, 移難排解, 錯誤
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c34ca6da522726f07e3f4ff5092b011bd15dd93
-ms.sourcegitcommit: 260d1a0b73ef422eb6875a3e3b52495a82630f06
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "69560163"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>針對 C++/WinRT 問題進行疑難排解
@@ -52,10 +52,10 @@ XAML 剖析例外狀況可能難以診斷 &mdash; 特別是如果例外狀況中
 | C++ 連接器產生「錯誤 LNK2019: 無法解析的外部符號 _WINRT_CanUnloadNow@0 在函式 _VSDesignerCanUnloadNow@0 中被參考  」 | 請參閱[如何將您 C++/WinRT 專案的目標設定為 Windows SDK 的較新版本](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 | 建置程序會產生錯誤訊息「C++/WinRT VSIX 不再提供專案的建置支援。  請將專案參考加入 Microsoft.Windows.CppWinRT Nuget 套件」。 | 將 **Microsoft.Windows.CppWinRT** NuGet 套件安裝到您的專案中。 如需詳細資訊，請參閱[舊版 VSIX 擴充功能](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。 |
 | C++ 連接器產生「錯誤 LNK2019: 無法解析的外部符號」  ，包含提及 *winrt::impl::consume_Windows_Foundation_Collections_IVector*。 | 自 [C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20)，如果您在 Windows 執行階段集合上使用範圍型 `for`，則您現在必須 `#include <winrt/Windows.Foundation.Collections.h>`。 |
-| C++ 編譯器產生「*錯誤 C4002:函式類巨集引動過程 GetCurrentTime 有太多引數*」。 | 請參閱[如何解決 GetCurrentTime 和/或 TRY 意義不明的狀況？](faq.md#how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try)。 |
-| C++編譯器會產生「錯誤 C2334: '{' 前面有非預期的權杖；略過顯示的函式主體  」。 | 請參閱[如何解決 GetCurrentTime 和/或 TRY 意義不明的狀況？](faq.md#how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try)。 |
+| C++ 編譯器產生「*錯誤 C4002：函式類巨集引動過程 GetCurrentTime 有太多引數*」。 | 請參閱[如何解決 GetCurrentTime 和/或 TRY 意義不明的狀況？](faq.md#how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try)。 |
+| C++編譯器會產生「錯誤 C2334：'{' 前面有非預期的權杖；略過顯示的函式主體  」。 | 請參閱[如何解決 GetCurrentTime 和/或 TRY 意義不明的狀況？](faq.md#how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try)。 |
 | C++編譯器會產生「winrt::impl::produce&lt;D,I&gt; 無法具現化抽象類別，因為遺漏 GetBindingConnector  」。 | 您需要 `#include <winrt/Windows.UI.Xaml.Markup.h>`。 |
-| C++ 編譯器會產生「錯誤 C2039: 'promise_type': 不是 'std::experimental::coroutine_traits<void>' 的成員  」。 | 您的協同程式需要傳回非同步作業物件或 **winrt::fire_and_forget**。 請參閱[並行和非同步作業](concurrency.md)。 |
+| C++ 編譯器會產生「錯誤 C2039：'promise_type': 不是 'std::experimental::coroutine_traits<void>' 的成員  」。 | 您的協同程式需要傳回非同步作業物件或 **winrt::fire_and_forget**。 請參閱[並行和非同步作業](concurrency.md)。 |
 | 您的專案會產生「模稜兩可的 'PopulatePropertyInfoOverride' 存取  」。 | 當您在 IDL 中宣告一個基底類別，並在 XAML 標記中宣告不同基底類別時，就會發生此錯誤。 |
 | 第一次載入 C++/WinRT 解決案會產生「*專案 'MyProject.vcxproj' 組態 'Debug\|x86' 的 Designtime 建置失敗。IntelliSense 可能無法使用。* 」 | 經過第一次建置之後，此 IntelliSense 問題就會解決。 |
 | 註冊委派時嘗試指定 [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) 會產生 [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) 例外狀況。 | 請參閱[如果您的自動撤銷委派無法註冊](handle-events.md#if-your-auto-revoke-delegate-fails-to-register)。 |

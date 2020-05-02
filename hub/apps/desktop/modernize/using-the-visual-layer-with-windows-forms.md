@@ -8,10 +8,10 @@ ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: 9da9dee48beef6e3c1cd38ffbe9761ed89fd940d
-ms.sourcegitcommit: 93d0b2996b4742b33cd6d641e036f42672cf5238
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "69999643"
 ---
 # <a name="using-the-visual-layer-with-windows-forms"></a>使用視覺層搭配 Windows Forms
@@ -55,19 +55,19 @@ Visual Studio 會建立專案，並針對名為 Form1.cs 的預設應用程式�
 
 若要在您的 Windows Forms 應用程式中使用 Windows 執行階段 (WinRT) API，您需要設定 Visual Studio 專案，以存取 Windows 執行階段。 此外，Composition API 會廣泛使用向量，因此，您需要新增使用向量所需的參考。
 
-NuGet 套件可用於解決這兩項需求。 安裝最新版的套件，將必要的參考新增至您的專案。  
+NuGet 封裝可用於解決這兩項需求。 請安裝最新版本的封裝，將必要的參考新增至您的專案。  
 
-- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) (需要設為 PackageReference 的預設套件管理格式。)
+- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) (需要將預設的封裝管理格式設為 PackageReference。)
 - [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors/)
 
 > [!NOTE]
-> 雖然我們建議使用 NuGet 套件來設定您的專案，但您可以手動新增需要的參考。 如需詳細資訊，請參閱[增強您的 Windows 10 傳統型應用程式](/windows/uwp/porting/desktop-to-uwp-enhance)。 下表顯示您需要加入參考的檔案。
+> 雖然建議使用 NuGet 封裝來設定您的專案，但您可以手動新增需要的參考。 如需詳細資訊，請參閱[增強您的 Windows 10 傳統型應用程式](/windows/uwp/porting/desktop-to-uwp-enhance)。 下表所列的是需要新增參考的檔案。
 
 |檔案|位置|
 |--|--|
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk 版本*>\Windows.Foundation.UniversalApiContract\<*版本*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk 版本*>\Windows.Foundation.FoundationContract\<*版本*>|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<sdk 版本  >\Windows.Foundation.UniversalApiContract\<版本  >|
+|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<sdk 版本  >\Windows.Foundation.FoundationContract\<版本  >|
 |System.Numerics.Vectors.dll|C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics.Vectors\v4.0_4.0.0.0__b03f5f7f11d50a3a|
 |System.Numerics.dll|C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2|
 
@@ -236,7 +236,7 @@ NuGet 套件可用於解決這兩項需求。 安裝最新版的套件，將必�
     }
     ```
 
-    - **ICompositorDesktopInterop** 和 **ICompositionTarget** 需要 COM 匯入。 將此程式碼放置在 _CompositionHost_ 類別後面，但在命名空間宣告中。
+    - **ICompositorDesktopInterop** 和 **ICompositionTarget** 需要 COM 匯入項目。 將此程式碼放置在 _CompositionHost_ 類別後面，但在命名空間宣告中。
 
     ```csharp
     #region COM Interop
@@ -422,7 +422,7 @@ NuGet 套件可用於解決這兩項需求。 安裝最新版的套件，將必�
 - [與非受控程式碼互通](/dotnet/framework/interop/) (.NET)
 - [開始使用 Windows 10 應用程式](/windows/uwp/get-started/) (UWP)
 - [增強您的 Windows 10 傳統型應用程式](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
-- [Windows.UI.Composition 命名空間](/uwp/api/windows.ui.composition) (UWP)
+- [Windows.UI.Composition 命名空間](/uwp/api/windows.ui.composition) (UWP) (英文)
 
 ## <a name="complete-code"></a>完整程式碼
 

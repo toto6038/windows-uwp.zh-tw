@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c95d915c8906e2052243fee509e260fc8864454
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258362"
 ---
 # <a name="get-set-up"></a>開始設定
@@ -72,5 +72,5 @@ Microsoft Visual Studio 2019 可協助您設計、撰寫、測試您的應用程
 ## <a name="see-also"></a>另請參閱
 
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
-* [什麼是 UWP app？](universal-application-platform-guide.md)
+* [什麼是 UWP 應用程式？](universal-application-platform-guide.md)
 * [註冊 Windows 帳戶](sign-up.md)
