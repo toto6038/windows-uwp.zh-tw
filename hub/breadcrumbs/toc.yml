@@ -1,40 +1,58 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/
   items:
-    - name: Windows
-      tocHref: /windows/
-      topicHref: /windows/
+    - name: '[App]'
+      tocHref: /windows/apps/
+      topicHref: /windows/apps/
       items:
-        - name: '[App]'
-          tocHref: /windows/apps/
-          topicHref: /windows/apps/
+        - name: 建置傳統型應用程式
+          tocHref: /windows/apps/desktop/
+          topicHref: /windows/apps/desktop/
+        - name: 桌面應用程式現代化
+          tocHref: /windows/apps/desktop/modernize/
+          topicHref: /windows/apps/desktop/modernize/
           items:
-            - name: 建置傳統型應用程式
-              tocHref: /windows/apps/desktop/
-              topicHref: /windows/apps/desktop/
-            - name: 桌面應用程式現代化
-              tocHref: /windows/apps/desktop/modernize/
-              topicHref: /windows/apps/desktop/modernize/
-            - name: .NET TraceProcessing
-              tocHref: /windows/apps/trace-processing/
-              topicHref: /windows/apps/trace-processing/overview
-        - name: 開發環境
-          tocHref: /windows/dev-environment/
-          topicHref: /windows/dev-environment/
-          items:
-            - name: Python
-              tocHref: /windows/python/
-              topicHref: /windows/python/
-            - name: Node.js
-              tocHref: /windows/nodejs/
-              topicHref: /windows/nodejs/
-            - name: Mac 到 Windows
-              tocHref: /windows/dev-environment/mac-to-windows/
-              topicHref: /windows/dev-environment/mac-to-windows/
-            - name: 開發人員環境
-              tocHref: /windows/dev-environment/wsl
-              topicHref: /windows/wsl/about
-            - name: 開發人員環境
-              tocHref: /windows/dev-environment/wsl
-              topicHref: /windows/wsl/wsl2-about
+            - name: 呼叫 Windows 執行階段 API
+              topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
+            - name: XAML Islands
+              topicHref: /windows/apps/desktop/modernize/xaml-islands
+            - name: 視覺層
+              topicHref: /windows/apps/desktop/modernize/visual-layer-in-desktop-apps
+            - name: 需要套件身分識別的功能
+              topicHref: /windows/apps/desktop/modernize/modernize-packaged-apps
+            - name: 教學課程：將 WPF 應用程式現代化
+              topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial
+        - name: .NET TraceProcessing
+          tocHref: /windows/apps/trace-processing/
+          topicHref: /windows/apps/trace-processing/overview
+        - name: 針對 Windows 10X 進行開發
+          topicHref: /windows/apps/10x/faq
+        - name: Fluent Design 系統
+          topicHref: /windows/apps/fluent-design-system
+        - name: 協助工具
+          topicHref: /windows/apps/accessibility
+        - name: Speech
+          topicHref: /windows/apps/speech
+        - name: 功能和技術
+          topicHref: /windows/apps/features-and-technologies
+        - name: 最新的文件更新
+          topicHref: /windows/apps/whats-new/latest-doc-updates
+    - name: 開發環境
+      tocHref: /windows/dev-environment/
+      topicHref: /windows/dev-environment/
+      items:
+        - name: Python
+          tocHref: /windows/python/
+          topicHref: /windows/python
+        - name: Node.js
+          tocHref: /windows/nodejs/
+          topicHref: /windows/nodejs
+        - name: Android
+          tocHref: /windows/android/
+          topicHref: /windows/android/overview
+        - name: Mac 到 Windows
+          topicHref: /windows/dev-environment/mac-to-windows
+        - name: Windows 子系統 Linux 版
+          tocHref: /windows/dev-environment/wsl
+          topicHref: /windows/wsl/about

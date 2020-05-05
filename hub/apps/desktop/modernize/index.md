@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c86290c9765eba5186e777f8de7b3b86967be9e
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: b966d00455bce390457e148c60b57296375ac2fa
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521339"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730245"
 ---
 # <a name="modernize-your-desktop-apps"></a>讓您的傳統型應用程式現代化
 
@@ -36,11 +36,11 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 
 如需詳細資訊，請參閱 [.NET Core 3.0 的新功能](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)。
 
-## <a name="uwp-apis"></a>UWP API
+## <a name="windows-runtime-apis"></a>Windows 執行階段 API
 
-您可以在您的 WPF、Windows Forms 或 C++ Win32 傳統型應用程式中直接呼叫許多 UWP API，整合為 Windows 10 使用者帶來好處的新式體驗。 例如，您可以呼叫 UWP API 以將快顯通知新增至您的傳統型應用程式。
+您可以在您的 WPF、Windows Forms 或 C++ Win32 傳統型應用程式中直接呼叫許多 Windows 執行階段 API，整合為 Windows 10 使用者帶來好處的新式體驗。 例如，您可以呼叫 Windows 執行階段 API 以將快顯通知新增至您的傳統型應用程式。
 
-如需詳細資訊，請參閱[在傳統型應用程式中使用 UWP API](desktop-to-uwp-enhance.md)。
+如需詳細資訊，請參閱[在傳統型應用程式中使用 Windows 執行階段 API](desktop-to-uwp-enhance.md)。
 
 ## <a name="host-uwp-controls-xaml-islands"></a>主機 UWP 控制項 (XAML Islands)
 
@@ -50,18 +50,18 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 
 ## <a name="use-the-visual-layer-in-desktop-apps"></a>在傳統型應用程式中使用視覺層
 
-您現在可以在非 UWP 傳統型應用程式中使用 UWP API，來增強您的 WPF、Windows Forms 和 C++ Win32 應用程式的外觀、風格及功能，並且利用只能透過 UWP 取用的最新 Windows 10 UI 功能。 當您需要建立自訂體驗，超越使用 XAML Islands 可以裝載的內建 UWP 控制項時，這個方式非常有用。
+您現在可以在非 UWP 傳統型應用程式中使用 Windows 執行階段 API，來增強您的 WPF、Windows Forms 和 C++ Win32 應用程式的外觀、風格及功能，並且利用只能透過 UWP 取用的最新 Windows 10 UI 功能。 當您需要建立自訂體驗，超越使用 XAML Islands 可以裝載的內建 UWP 控制項時，這個方式非常有用。
 
 如需詳細資訊，請參閱[使用視覺層讓您的傳統型應用程式現代化](visual-layer-in-desktop-apps.md)。
 
 ## <a name="additional-features-available-to-apps-with-package-identity"></a>具有套件身分識別之應用程式可用的其他功能
 
-部分新式 Windows 10 體驗只能在具有[套件身分識別](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)的傳統型應用程式中獲得。 這些功能包括特定 UWP API、套件擴充功能和 UWP 元件。 如需詳細資訊，請參閱[需要套件身分識別的功能](modernize-packaged-apps.md)。
+部分新式 Windows 10 體驗只能在具有[套件身分識別](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)的傳統型應用程式中獲得。 這些功能包括特定 Windows 執行階段 API、套件擴充功能和 UWP 元件。 如需詳細資訊，請參閱[需要套件身分識別的功能](modernize-packaged-apps.md)。
 
 將身分識別授與傳統型應用程式有數種方式：
 
 * 將其封裝在 [MSIX 套件](/windows/msix/desktop/desktop-to-uwp-root)中。 MSIX 是新式應用程式套件格式，為所有 Windows 應用程式、UWP、WPF、Windows Forms 及 Win32 應用程式提供通用封裝體驗。 這可以提供強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。 如需詳細資訊，請參閱 MSIX 文件中的[封裝傳統型應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
-* 如果您無法採用 MSIX 封裝來部署傳統型應用程式，請從 Windows 10 Insider Preview 組建10.0.19000.0 開始，藉由建立僅包含套件資訊清單的*疏鬆 MSIX 套件*來授與套件識別。 如需詳細資訊，請參閱[將身分識別授與非封裝的傳統型應用程式](grant-identity-to-nonpackaged-apps.md)。
+* 如果您無法採用 MSIX 封裝來部署傳統型應用程式，請從 Windows 10 版本 2004 開始，藉由建立僅包含套件資訊清單的*疏鬆 MSIX 套件*來授與套件識別。 如需詳細資訊，請參閱[將身分識別授與非封裝的傳統型應用程式](grant-identity-to-nonpackaged-apps.md)。
 
 <a id="desktop-uwp-controls"/>
 

@@ -1,0 +1,85 @@
+- name: Windows 開發環境
+  href: index.yml
+  items:
+    - name: 使用 Python 進行開發
+      items:
+        - name: 概觀
+          href: ../python/index.yml
+        - name: 初學者入門
+          href: ../python/beginners.md
+        - name: 開始使用 Web 開發
+          href: ../python/web-frameworks.md
+        - name: 開始使用自動化
+          href: ../python/scripting.md
+        - name: 開始使用資料庫
+          href: ../python/databases.md
+        - name: 常見問題集
+          href: ../python/faqs.md
+        - name: 資源
+          href: ../python/resources.md
+    - name: 使用 Node.js 進行開發
+      items:
+        - name: 概觀
+          href: ../nodejs/index.yml
+        - name: 使用 WSL2 進行設定 (Linux)
+          href: ../nodejs/setup-on-wsl2.md
+        - name: 使用 Windows 進行設定 (初學者)
+          href: ../nodejs/setup-on-windows.md
+        - name: 初學者入門
+          href: ../nodejs/beginners.md
+        - name: 開始使用 Web 架構
+          href: ../nodejs/web-frameworks.md
+        - name: 開始使用資料庫
+          href: ../nodejs/databases.md
+        - name: 開始使用容器
+          href: ../nodejs/containers.md
+    - name: 使用 Android 進行開發
+      items:
+        - name: 概觀
+          href: ../android/overview.md
+        - name: 開始使用原生 Android
+          href: ../android/native-android.md
+        - name: 開始使用跨平台
+          items:
+            - name: Xamarin Native
+              href: ../android/xamarin-android.md
+            - name: Xamarin Forms
+              href: ../android/xamarin-forms.md
+            - name: React Native
+              href: ../android/react-native.md
+            - name: PWA (Ionic、PhoneGap、Cordova)
+              href: ../android/pwa.md
+        - name: 用來改善效能的 Defender 設定
+          href: ../android/defender-settings.md
+        - name: 在裝置或模擬器上進行測試
+          href: ../android/emulator.md
+    - name: Mac 到 Windows 指南
+      items:
+        - name: 變更開發環境
+          href: mac-to-windows.md
+        - name: 鍵盤快速鍵
+          href: 'mac-to-windows.md#keyboard-shortcuts'
+        - name: 軌跡板快速鍵
+          href: 'mac-to-windows.md#trackpad-shortcuts'
+        - name: 終端機和殼層
+          href: 'mac-to-windows.md#terminal-and-shell'
+        - name: 應用程式和公用程式
+          href: 'mac-to-windows.md#apps-and-utilities'
+    - name: Windows 子系統 Linux 版
+      items:
+        - name: 關於 WSL
+          href: 'https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context'
+        - name: 關於 WSL 2
+          href: 'https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context'
+        - name: WSL 1 和 WSL 2 的比較
+          href: 'https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context'
+        - name: 使用者帳戶和存取權限
+          href: 'https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context'
+    - name: Windows 終端機
+      items:
+        - name: 概觀
+          href: 'https://github.com/microsoft/terminal#terminal--console-overview'
+        - name: 使用者指南
+          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md'
+        - name: 自訂設定
+          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md'

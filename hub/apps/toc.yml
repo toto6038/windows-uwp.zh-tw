@@ -11,11 +11,11 @@
       items:
         - name: 概觀
           href: desktop/modernize/index.md
-        - name: 呼叫 UWP API
+        - name: 呼叫 Windows 執行階段 API
           items:
             - name: 概觀
               href: desktop/modernize/desktop-to-uwp-enhance.md
-            - name: 可用 UWP API
+            - name: 可用 Windows 執行階段 API
               href: desktop/modernize/desktop-to-uwp-supported-api.md
         - name: 主機 UWP XAML 控制項 (XAML Islands)
           items:
