@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c75bd62fb5548cc03247772427fb5aabac4fb5a
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74735073"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音樂、圖片及影片媒體櫃中的檔案和資料夾
@@ -86,7 +86,7 @@ Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync
 
 當您呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) 時，使用者會看到確認對話方塊，指出資料夾「不會再出現在 [圖片] 中，但也不會被刪除」。 這表示，資料夾仍保留在磁碟的原始位置上、已從 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 屬性中移除，且將不再包含在內建的 [相片] app 中。
 
-下列範例假設使用者已從名為 **lvPictureFolders** 的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項中選取要移除的資料夾。
+下列範例假設使用者已從名為 [lvPictureFolders**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)ListView  控制項中選取要移除的資料夾。
 
 
 ```cs
@@ -129,7 +129,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 ## <a name="querying-the-media-libraries"></a>查詢媒體櫃
 
-若要取得檔案集合，指定媒體櫃及您要的檔案類型。
+若要取得檔案集合，指定媒體櫃及您要的檔案類型
 
 ```cs
 using Windows.Storage;
@@ -158,7 +158,7 @@ private async void getSongs()
 
 使用者可以選擇預設將檔案儲存到選用的 SD 記憶卡。 不過，應用程式可以選擇不允許將檔案儲存到 SD 記憶卡。 因此，媒體櫃可以分割到裝置的內部儲存空間及 SD 記憶卡上。
 
-您不需要編寫其他程式碼即可處理這項操作。 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
+您不需要編寫其他程式碼即可處理這項操作。 [  **Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
 
 考量下圖中裝置儲存空間的狀態：
 

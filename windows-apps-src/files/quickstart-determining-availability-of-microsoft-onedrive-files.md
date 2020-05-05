@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 36835a198d03a8ad5f5e811a74e120c9bbd25c08
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258582"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>判斷 Microsoft OneDrive 檔案的可用性
@@ -40,7 +40,7 @@ ms.locfileid: "74258582"
 
 [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) \(英文\)，可用來判斷檔案目前是否可用。 下表顯示 **StorageFile.IsAvailable** 屬性在各種案例中的值。
 
-| 檔案類型                              | Online | 計量付費網路        | 離線 |
+| 檔案類型                              | 線上 | 計量付費網路        | 離線 |
 |-------------------------------------------|--------|------------------------|---------|
 | 本機檔案                                | True   | True                   | True    |
 | 標示為可離線使用的 OneDrive 檔案 | True   | True                   | True    |
@@ -53,7 +53,7 @@ ms.locfileid: "74258582"
 
 1.  宣告某項功能適用於您想要存取的媒體櫃。
 2.  包含 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空間。 這個命名空間包含管理檔案、資料夾及應用程式設定的類型。 其中也會包含所需的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 類型。
-3.  針對所需的檔案取得 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件。 如果您正在列舉媒體櫃，通常可呼叫 [**StorageFolder.CreateFileQuery**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery) 方法，然後呼叫所產生之 [**StorageFileQueryResult**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.StorageFileQueryResult) 物件的 [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 方法，來完成這個步驟。 **GetFilesAsync** 方法會傳回 **StorageFile** 物件的 [IReadOnlyList](https://msdn.microsoft.com/library/hh192385.aspx) 集合。
+3.  針對所需的檔案取得 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件。 如果您正在列舉媒體櫃，通常可呼叫 [**StorageFolder.CreateFileQuery**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery) 方法，然後呼叫所產生之 [**StorageFileQueryResult**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.StorageFileQueryResult) 物件的 [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 方法，來完成這個步驟。 **GetFilesAsync** 方法會傳回 [StorageFile](https://msdn.microsoft.com/library/hh192385.aspx) 物件的 **IReadOnlyList** 集合。
 4.  一旦您具備代表所需檔案之 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件的存取權後，[**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 屬性的值就會反映檔案是否可供使用。
 
 下列泛型方法說明如何列舉任意資料夾，並傳回該資料夾的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件集合。 接著，呼叫方法會在參考每個檔案之 [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 屬性的傳回集合上重複執行。

@@ -7,15 +7,15 @@ keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
 ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77607247"
 ---
 # <a name="app-quality"></a>應用程式品質
 
-上次更新日期：2017 年 7 月 25 日
+上次更新日期︰2017 年 7 月 25 日
 
 Microsoft Store 提供全球客戶一個廣泛且多樣化的應用程式集合。 Microsoft Store 中的應用程式可供從中玩味、娛悅人心且值得一用，對客戶和開發人員都同樣重要。 為了協助開發人員達到此目標，我們提供這份概觀來說明應用程式品質的一些重要層面。
 
@@ -85,7 +85,7 @@ Microsoft Store 頁面的中繼資料 (圖示、標題、螢幕擷取畫面及�
 - 如需詳細資訊，請參閱[與您的客戶互動](https://developer.microsoft.com/store/engage)。
 
 
-### <a name="see-also"></a>請參閱
+### <a name="see-also"></a>另請參閱
 
 - [Microsoft Store 原則與管理辦法](store-policies-and-code-of-conduct.md)
 - [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72281887"
 ---
 # <a name="device-portal-for-mobile"></a>行動裝置的 Device Portal
@@ -31,7 +31,7 @@ ms.locfileid: "72281887"
 
 ![開發人員模式裝置探索設定](images/device-portal/mob-dev-mode-pairing.png)
 
-您可以從三種方式之中擇一連線到裝置入口網站：USB、本機主機、透過區域網路 (包括 VPN 和網際網路共用)。
+您可以從 3 種連接到 Device Portal 的方式中進行選擇：USB、本機主機，以及透過區域網路 (包括 VPN 和網際網路共用)。
 
 **連線到裝置入口網站**
 

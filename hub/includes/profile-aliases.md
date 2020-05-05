@@ -4,10 +4,10 @@ author: mattwojo
 ms.author: mattwoj
 ms.date: 10/04/2019
 ms.openlocfilehash: 2f7a57f1652ecab81a70c39faa1b70c42ed6a3de
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72314902"
 ---
 鍵入 `sudo service mongodb start` 或 `sudo service postgres start` 和 `sudo -u postgrest psql` 可能會很繁瑣。  不過，您可以考慮在 WSL 的 `.profile` 檔案中設定別名，可以更快速地使用這些命令且更容易記住。 
@@ -26,5 +26,5 @@ ms.locfileid: "72314902"
 
 這可讓您輸入 `start-pg`，以開始執行 postgresql 服務，以及輸入 `run-pg` 以開啟 psql 命令介面。 您可以將 `start-pg` 和 `run-pg` 變更為想要的任何名稱，但要小心不要覆寫 postgres 已使用的命令！
 
-4. 新增別名之後，請使用 **Ctrl + X** 結束 Nano 文字編輯器 -- 當系統提示您儲存並按 Enter 鍵 (將檔案名稱保留為 `.profile`) 時，請選取 `Y` (是)。
+4. 新增別名之後，請使用 **Ctrl + X** 結束 Nano 文字編輯器 -- 當系統提示您儲存並按 Enter 鍵 (將檔案名稱保留為 `Y`) 時，請選取 `.profile` (是)。
 5. 關閉並重新開啟您的 WSL 終端機，然後嘗試新的別名命令。

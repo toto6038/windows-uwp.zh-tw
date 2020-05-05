@@ -7,10 +7,10 @@ keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c03475c0c4007508a18c17645dbe99eeb7d6cb0
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75681979"
 ---
 # <a name="version-adaptive-code"></a>版本調適型程式碼
@@ -71,11 +71,11 @@ ms.locfileid: "75681979"
 
 在本節中，我們會示範數個使用 Windows 10 版本 1607 (Windows Insider Preview) 中新 API 的調適型程式碼範例。
 
-### <a name="example-1-new-enum-value"></a>範例 1：新增列舉值
+### <a name="example-1-new-enum-value"></a>範例 1：新列舉值
 
-Windows 10 版本 1607 新增了一個新值至 [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) \(英文\) 列舉：**ChatWithoutEmoji**。 這個新的輸入範圍具有與 **Chat** 輸入範圍相同的輸入行為 (拼字檢查、自動完成、自動大寫)，但是它會對應到沒有 Emoji 按鈕的觸控式鍵盤。 如果您建立自己的 Emoji 選擇器，並想要停用觸控式鍵盤中內建的 Emoji 按鈕，這會很有用。 
+Windows 10 版本 1607 新增了一個新值至 [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) 列舉：**ChatWithoutEmoji**。 這個新的輸入範圍具有與 **Chat** 輸入範圍相同的輸入行為 (拼字檢查、自動完成、自動大寫)，但是它會對應到沒有 Emoji 按鈕的觸控式鍵盤。 如果您建立自己的 Emoji 選擇器，並想要停用觸控式鍵盤中內建的 Emoji 按鈕，這會很有用。 
 
-這個範例示範如何檢查 **ChatWithoutEmoji** 列舉值是否存在，並在存在的情況下設定 **TextBox** 的[InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性。 如果它沒有出現在 App 所執行的系統上，**InputScope** 會改成設定為 **Chat**。 顯示的程式碼可以放置在 Page 建構子或 Page.Loaded 事件處理常式中。
+這個範例示範如何檢查 **ChatWithoutEmoji** 列舉值是否存在，並在存在的情況下設定 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 的**InputScope** 屬性。 如果它沒有出現在 App 所執行的系統上，**InputScope** 會改成設定為 **Chat**。 顯示的程式碼可以放置在 Page 建構子或 Page.Loaded 事件處理常式中。
 
 > [!TIP]
 > 當您檢查 API 時，請使用靜態字串，而不倚賴 .NET 語言功能，否則您的 App 可能會嘗試存取未定義的類型，且在執行階段當機。
@@ -303,7 +303,7 @@ public MainPage()
 
 您應該只有在不同 OS 版本之間有不會影響其他 UI 的小型 UI 變更時 (例如控制項上的屬性或列舉值變更)，才針對調適型程式碼使用狀態觸發程序。
 
-### <a name="example-1-new-property"></a>範例 1：新內容
+### <a name="example-1-new-property"></a>範例 1：新屬性
 
 設定可延伸狀態觸發程序的第一個步驟，就是子類別化 [StateTriggerBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.statetriggerbase) 類別來建立會根據 API 的存在啟用的自訂觸發程序。 這個範例示範如果存在的屬性符合 XAML 中設定的 `_isPresent` 變數時，便會啟用的觸發程序。
 
@@ -446,4 +446,4 @@ class IsEnumPresentTrigger : StateTriggerBase
 ## <a name="related-articles"></a>相關文章
 
 - [裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-- [利用 API 協定動態偵測功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/) \(英文\)
+- [利用 API 協定動態偵測功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

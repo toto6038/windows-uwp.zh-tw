@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 15e6ebd45d4f7069e09169a437476b0f785ea959
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259594"
 ---
  # <a name="files-folders-and-libraries"></a>檔案、資料夾和媒體櫃
@@ -18,7 +18,7 @@ ms.locfileid: "74259594"
 
 您可以使用 [Windows.Storage](https://docs.microsoft.com/uwp/api/Windows.Storage)、[Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 和 [Windows.Storage.Pickers](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers) 命名空間中的 API，以在檔案中讀取與寫入文字和其他資料格式，以及管理檔案和資料夾。 在本節中，您也將了解讀取和寫入 app 設定、檔案和資料夾選擇器，並了解特殊的沙箱式位置，例如影片/音樂媒體櫃。
 
-| 主題 | 描述  |
+| 主題 | 說明  |
 |-------|--------------|
 | [列舉和查詢檔案和資料夾](quickstart-listing-files-and-folders.md) | 存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢來查詢位置中的檔案和資料夾。 |
 | [建立、寫入和讀取檔案](quickstart-reading-and-writing-files.md) | 使用 [StorageFile](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件讀取和寫入檔案。 |

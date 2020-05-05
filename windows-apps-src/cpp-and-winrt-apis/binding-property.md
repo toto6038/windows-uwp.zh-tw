@@ -6,17 +6,17 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 屬性
 ms.localizationpriority: medium
 ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79209193"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
-可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 這個主意是以軟體設計模式為基礎稱為「觀察者模式」  。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作可觀察屬性，以及將 XAML 控制項繫結至這些屬性的方法 (如需背景資訊，請參閱[資料繫結](/windows/uwp/data-binding))。
+可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作可觀察屬性，以及將 XAML 控制項繫結至這些屬性的方法 (如需背景資訊，請參閱[資料繫結](/windows/uwp/data-binding))。
 
 > [!IMPORTANT]
-> 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
+> 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請參閱[使用 C++/WinRT 使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
 ## <a name="what-does-observable-mean-for-a-property"></a>對一個屬性來說，*可觀察*的意義是什麼？
 比方說一個名為 **BookSku** 的執行階段類別有個名為 **Title** 的屬性。 如果 **BookSku** 選擇引發 [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件，每當變更 **Title** 的值時，則 **Title** 是可觀察的屬性。 它是 **BookSku** 的行為 (引發或不引發事件)，判斷是哪一個，如果有的話，其屬性則為可觀察的。
@@ -29,9 +29,9 @@ XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯
 ## <a name="create-a-blank-app-bookstore"></a>建立空白的應用程式 (Bookstore)
 請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **空白的應用程式 (C++/WinRT)** 專案，並將它命名為 *Bookstore*。
 
-我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 我們在相同的編譯單位裡撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且我們會使用 C++/WinRT 撰寫和使用它。
+我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 會在相同的編譯單元內撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且將會使用 C++/WinRT 來撰寫和使用。
 
-撰寫新執行階段類別的第一個步驟，要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。 請命名為 `BookSku.idl`。 刪除 `BookSku.idl`的預設內容，並在此執行階段類別宣告中貼上。
+撰寫新執行階段類別的第一個步驟，要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。 請命名為 `BookSku.idl`。 接下來請刪除 `BookSku.idl` 的預設內容，並貼到此執行階段類別宣告內。
 
 ```idl
 // BookSku.idl
@@ -51,9 +51,9 @@ namespace Bookstore
 >
 > 檢視模型是檢視的抽取，所以會直接繫結至檢視 (XAML 標記)。 資料模型是資料的抽取，而且只能從您的檢視模型取用，並不會直接繫結至 XAML。 因此，您可以宣告您的資料模型不是執行階段類別，而是 C++ 結構或類別。 它們不需在 MIDL 中宣告，而且您可以隨意使用您喜歡的任何繼承階層。
 
-儲存檔案並建置專案。 在建置程序期間，會執行 `midl.exe` 工具，以建立 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)，其會描述執行階段類別。 然後，執行 `cppwinrt.exe` 工具產生原始碼檔案在撰寫和使用執行階段類別中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
+儲存檔案並建置專案。 在建置程序期間，會執行 `midl.exe` 工具，以建立 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)，其會描述執行階段類別。 然後，會執行 `cppwinrt.exe` 工具，以產生原始碼檔案，可再撰寫和使用執行階段類別時提供支援。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
 
-以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]  。 這會在檔案總管中開啟專案資料夾。 在那裏，從 `\Bookstore\Bookstore\Generated Files\sources\` 資料夾將虛設常式檔案 `BookSku.h` 和 `BookSku.cpp` 複製到專案資料夾中，也就是 `\Bookstore\Bookstore\`。 在 方案總管  中，選取專案資料夾後，確定 顯示所有檔案  已切換成開啟。 按一下滑鼠右鍵您複製的虛設常式檔案，然後按一下 [加入至專案]  。
+以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]  。 這會在檔案總管中開啟專案資料夾。 在那裏，從 `BookSku.h` 資料夾將虛設常式檔案 `BookSku.cpp` 和 `\Bookstore\Bookstore\Generated Files\sources\` 複製到專案資料夾中，也就是 `\Bookstore\Bookstore\`。 在 方案總管  中，選取專案資料夾後，確定 顯示所有檔案  已切換成開啟。 在您複製的虛設常式檔案上按右鍵，然後按一下 **[加入至專案]** 。
 
 ## <a name="implement-booksku"></a>執行 **BookSku**
 現在要開啟 `\Bookstore\Bookstore\BookSku.h` 與 `BookSku.cpp`，並實作我們的執行階段類別。 在 `BookSku.h` 中，新增一個採用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的建構函式，一個儲存標題字串的私用成員，以及另一個用於標題變更時，我們會引發的事件。 進行這些變更之後，您的 `BookSku.h` 看起來像這樣。
@@ -142,7 +142,7 @@ namespace Bookstore
 }
 ```
 
-儲存並建置。 從 `Generated Files\sources` 資料夾將 `BookstoreViewModel.h` 與 `BookstoreViewModel.cpp` 複製到專案資料夾，在專案中包含它們。 開啟那些檔案，並實作如下所示的執行階段類別。 請注意，我們在 `BookstoreViewModel.h` 中如何宣告 `BookSku.h`，其會宣告 **BookSku** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookSku**)。 我們會從預設的建構函式中移除 `= default`。
+儲存並建置。 從 `BookstoreViewModel.h` 資料夾將 `BookstoreViewModel.cpp` 與 `Generated Files\sources` 複製到專案資料夾，在專案中包含它們。 開啟那些檔案，並實作如下所示的執行階段類別。 請注意，我們在 `BookstoreViewModel.h` 中如何宣告 `BookSku.h`，其會宣告 **BookSku** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookSku**)。 我們會從預設的建構函式中移除 `= default`。
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -208,7 +208,7 @@ namespace Bookstore
 
 如果您省略包含 `BookstoreViewModel.idl` (請查看上面的 `MainPage.idl` 清單)，則會看到 **\<"MainViewModel" 附近**的預期錯誤。 確定您將所有類型都留在相同的命名空間中的另一個秘訣：未顯示在程式碼清單中的命名空間。
 
-若要解決我們預期會看見的錯誤，您現在必須從所產生的檔案 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和 `MainPage.cpp`) 複製 **MainViewModel** 屬性的存取子虛設常式，並貼到 `\Bookstore\Bookstore\MainPage.h` 和 `MainPage.cpp` 中。 接下來說明這麼做的步驟。
+若要解決我們預期會看見的錯誤，您現在必須從所產生的檔案 (**和** ) 複製 `\Bookstore\Bookstore\Generated Files\sources\MainPage.h`MainViewModel`MainPage.cpp` 屬性的存取子虛設常式，並貼到 `\Bookstore\Bookstore\MainPage.h` 和 `MainPage.cpp` 中。 接下來說明這麼做的步驟。
 
 在 `\Bookstore\Bookstore\MainPage.h` 中包含 `BookstoreViewModel.h`，其會宣告 **BookstoreViewModel** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookstoreViewModel**)。 新增私用成員以儲存檢視模型。 請注意，按照 **BookstoreViewModel** (這是 **Bookstore::BookstoreViewModel**) 的投影類型，實作屬性存取子函式 (以及成員 m_mainViewModel)。 實作類型是在與應用程式相同的專案 (編譯單位) 中，因此我們透過採用 **std::nullptr_t** 的建構函式多載建構 m_mainViewModel。 也會移除 **MyProperty** 屬性。
 
@@ -272,7 +272,7 @@ namespace winrt::Bookstore::implementation
 <Button Click="ClickHandler" Content="{x:Bind MainViewModel.BookSku.Title, Mode=OneWay}"/>
 ```
 
-現在建置並執行專案。 按一下按鈕執行 [按一下]  事件處理常式。 該處理常式呼叫本書標題更動子函式；該更動子引發一個事件，讓 UI 知道 **Title** 屬性已變更；且按鈕重新查詢該屬性的值，更新其自身的 **Content** 值。
+現在請建置並執行專案。 按一下按鈕執行 [按一下]  事件處理常式。 該處理常式呼叫本書標題更動子函式；該更動子引發一個事件，讓 UI 知道 **Title** 屬性已變更；且按鈕重新查詢該屬性的值，更新其自身的 **Content** 值。
 
 ## <a name="using-the-binding-markup-extension-with-cwinrt"></a>使用 {Binding} 標記延伸搭配 C++/WinRT
 對於目前發行的 C++/WinRT 版本，為了能夠使用 {Binding} 標記延伸，您必須實作 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) 和 [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面。

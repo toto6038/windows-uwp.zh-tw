@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f2cb92dca3da2d1f8e3eccfade6558f363c5b13
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0b38cf60f1f890649af33ad34f244bc348af2832
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257871"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148696"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
@@ -54,7 +54,7 @@ RAM
 ### <a name="installing"></a>安裝
 適用於 Windows 10 Mobile 的 Microsoft 模擬器隨附於 Windows 10 SDK。 安裝 Visual Studio 時也可以安裝 Windows 10 SDK 與模擬器。 請參閱 [Visual Studio 下載頁面](https://developer.microsoft.com/windows/downloads)。
 
-您也可以使用 [Microsoft 模擬器安裝程式](https://go.microsoft.com/fwlink/p/?LinkID=615095)來安裝適用於 Windows 10 Mobile 的 Microsoft 模擬器。
+您也可以使用 [Microsoft 模擬器安裝程式](https://download.microsoft.com/download/E/3/4/E347E8C5-BD79-49AF-941C-D08893A45268/emulator/EmulatorSetup.exe)來安裝適用於 Windows 10 Mobile 的 Microsoft 模擬器。
 
 ### <a name="uninstalling"></a>解除安裝
 
@@ -619,7 +619,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 以下是關於模擬器的已知問題，以及當您遇到這類問題時該如何解決的建議方法。
 
-### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>錯誤訊息：「移除虛擬乙太網路交換器失敗」
+### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>錯誤訊息：「移除虛擬乙太網路交換器時發生錯誤」
 
 在某些情況下 (包括在您更新為新的 Windows 10 正式發行前小眾測試版之後)，與模擬器相關聯的虛擬網路交換器會進入無法透過使用者介面加以刪除的狀態。
 
@@ -635,7 +635,7 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>解除安裝 Windows 10 行動裝置版映像
 
-當您安裝模擬器時，即會安裝 Windows 10 行動裝置版 VHD 映像，它在控制台的 [程式和功能]  清單中會有自己的項目。 如果您想要解除安裝該映像，可在安裝的程式清單中尋找 [Windows 10 行動裝置版映像 -\<版本\>]  、在其上按一下滑鼠右鍵，然後選擇 [解除安裝]  。
+當您安裝模擬器時，即會安裝 Windows 10 行動裝置版 VHD 映像，它在控制台的 [程式和功能]  清單中會有自己的項目。 如果您想要解除安裝該映像，可在安裝的程式清單中尋找 [Windows 10 行動裝置版映像 -**版本\<]\>** 、在其上按一下滑鼠右鍵，然後選擇 [解除安裝]  。
 
 在目前版本中，您接著必須手動刪除模擬器的 VHD 檔案。 若您將模擬器安裝至預設路徑，則 VHD 檔案會位於 C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd。
 
@@ -646,13 +646,13 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 若要停用硬體加速：
 
 1. 啟動 [登錄編輯程式]。
-2. 建立下列登錄子機碼 (如果其不存在)：HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
+2. 如果下列登錄子機碼不存在，請建立一個︰HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
 3. 以滑鼠右鍵按一下 10.0 資料夾，指向 [新增]  ，然後按一下 [DWORD 值]  。
 4. 輸入 **DisableRemoteFx**，然後按 Enter 鍵。
 5. 按兩下 **DisableRemoteFx**，在 [值]  資料方塊中輸入 1，選取 [十進位]  選項，然後按一下 [確定]  。
 6. 關閉登錄編輯器。
 
-**注意：** 設定此登錄值之後，您必須在 Hyper-V 管理員中針對您在 Visual Studio 中啟動的組態刪除虛擬機器，然後以軟體呈現的圖形重新啟動模擬器。
+**注意︰** 設定此登錄值之後，您必須在 Hyper-V 管理員中針對您在 Visual Studio 中啟動的組態刪除虛擬機器，然後以軟體呈現的圖形重新啟動模擬器。
 
 ## <a name="support-resources"></a>支援資源
 

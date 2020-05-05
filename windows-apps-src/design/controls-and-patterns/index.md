@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80218448"
 ---
 # <a name="controls-for-windows-apps"></a>Windows 應用程式控制項
@@ -32,7 +32,7 @@ ms.locfileid: "80218448"
 :::row:::
     :::column:::
       <p><b><a href="controls-and-events-intro.md">新增控制項和處理事件</a></b> <br/>
-將控制項新增到應用程式有 3 個主要步驟：將控制項新增到應用程式 UI、在控制項上設定屬性，以及將程式碼新增到控制項的事件處理常式以便使其執行某些功能。</p>
+將控制項新增到應用程式有 3 個主要步驟︰將控制項新增到應用程式 UI、在控制項上設定屬性，以及將程式碼新增到控制項的事件處理常式以便使其執行某些功能。</p>
     :::column-end:::
     :::column:::
       <p><b><a href="xaml-styles.md">設定控制項的樣式</a></b> <br/>

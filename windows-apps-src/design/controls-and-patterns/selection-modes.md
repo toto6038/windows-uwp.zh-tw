@@ -12,10 +12,10 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b781e6074468fbe73446e4057e36ff31266d05
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72165095"
 ---
 # <a name="selection-mode-overview"></a>選取模式概觀
@@ -25,9 +25,9 @@ ms.locfileid: "72165095"
 ## <a name="different-selection-modes"></a>不同的選取模式
 有三種選取模式：
 
-- Single：使用者一次只能選取一個項目。
-- Multiple：使用者可在無須使用輔助按鍵的情況下選取多個項目。
-- Extended：使用者可以使用輔助按鍵選取多個項目，例如按住 SHIFT 鍵。
+- 單一：使用者一次只能選取一個項目。
+- 多重：使用者不需要使用輔助按鍵就能選取多個項目。
+- 延伸：使用者可以使用輔助按鍵選取多個項目，例如按住 SHIFT 鍵。
 
 ## <a name="selection-mode-examples"></a>選取模式範例
 ### <a name="here-is-a-listview-with-single-selection-mode-enabled"></a>以下是已啟用單一選取模式的 ListView。

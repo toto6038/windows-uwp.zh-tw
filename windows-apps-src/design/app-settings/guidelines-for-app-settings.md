@@ -9,10 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72163708"
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
@@ -66,7 +66,7 @@ ms.locfileid: "72163708"
 
 不要將應用程式設定的進入點深藏在主要/詳細資料窗格內，而是使它成為主要窗格最上層的最後一個釘選項目。
 
-## <a name="layout"></a>配置
+## <a name="layout"></a>版面配置
 
 
 無論在桌面或行動裝置上，應用程式設定視窗都應開啟全螢幕並填滿整個視窗。 如果您的應用程式設定功能表最多有四個最上層群組，這些群組應該重疊顯示下一欄。
@@ -83,8 +83,8 @@ ms.locfileid: "72163708"
 
 
 如果您的應用程式可讓使用者選擇應用程式的色彩模式，請使用[選項按鈕](../controls-and-patterns/radio-button.md)或[下拉式方塊](../controls-and-patterns/combo-box.md)與「選擇 app 模式」標題呈現這些選項。 選項看起來會像這樣
-- 亮
-- 暗
+- 輕量型
+- 深色
 - Windows 預設
 
 我們也建議您新增超連結至 [Windows 設定] 應用程式的 [色彩] 頁面，使用者存取和修改目前的預設 app 模式。 使用字串「Windows 色彩設定」做為超連結的文字。

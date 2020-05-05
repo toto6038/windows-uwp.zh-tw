@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 網路功能, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
 ms.openlocfilehash: 221ab5e0647fe95e8d715fc320ba2b9c1bee2dfe
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684964"
 ---
 # <a name="websockets"></a>WebSocket
@@ -566,7 +566,7 @@ private:
 ### <a name="send-data-on-a-streamwebsocket"></a>在 StreamWebSocket 上傳送資料
 建立連線後，您可將資料傳送至伺服器。 可以藉由使用 [**StreamWebSocket.OutputStream**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) 屬性執行此動作，並使用 [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) 來將資料寫入。
 
-**注意** 如果您想要在相同的通訊端上寫入更多資料，請務必在 **DataWriter** 超出範圍之前，呼叫 [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) 中斷輸出資料流與 **DataWriter** 的連結。 這會將資料流的擁有權傳回給 **MessageWebSocket**。
+**注意** 如果您想要在相同的通訊端上寫入更多資料，請務必在 [DataWriter**超出範圍之前，呼叫**](/uwp/api/windows.storage.streams.datawriter.DetachStream)DataWriter.DetachStream  中斷輸出資料流與 **DataWriter** 的連結。 這會將資料流的擁有權傳回給 **MessageWebSocket**。
 
 ### <a name="receive-data-on-a-streamwebsocket"></a>在 StreamWebSocket 上接收資料
 使用 [**StreamWebSocket.InputStream**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) 屬性，並使用 [**DataReader**](/uwp/api/windows.storage.streams.datareader) 來讀取資料。
@@ -603,7 +603,7 @@ streamWebSocket->Control->NoDelay = false;
 auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
 ```
 
-**注意** 請不要嘗試在呼叫 **ConnectAsync** *之後*變更控制項屬性。 該規則的唯一例外是 [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType)。
+**注意** 請不要嘗試在呼叫 *ConnectAsync* **之後**變更控制項屬性。 該規則的唯一例外是 [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType)。
 
 ## <a name="websocket-information-classes"></a>WebSocket 資訊類別
 [**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) 和 [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket) 分別有一個對應的類別，可提供關於物件的其他資訊。

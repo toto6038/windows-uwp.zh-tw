@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: beb6dde4036019e004d94e5f60e8f3583c78d775
-ms.sourcegitcommit: de34aabd90a92a083dfa17d4f8a98578597763f4
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72980020"
 ---
 # <a name="optimize-your-xaml-markup"></a>最佳化您的 XAML 標記
@@ -28,7 +28,7 @@ ms.locfileid: "72980020"
 
 您對如何配置 UI 控制項所做的選擇會影響應用程式啟動時所建立的 UI 元素數目。 如需有關最佳化版面配置的詳細資訊，請參閱[最佳化您的 XAML 版面配置](optimize-your-xaml-layout.md)。
 
-元素計數在資料範本中極其重要，因為會針對每個資料項目重新建立各個元素。 如需有關減少清單或方格中元素計數的詳細資訊，請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)文章中的*每個項目的元素減少*。
+元素計數在資料範本中極其重要，因為會針對每個資料項目重新建立各個元素。 如需有關減少清單或方格中元素計數的詳細資訊，請參閱 *ListView 與 GridView UI 最佳化*文章中的[每個項目的元素減少](optimize-gridview-and-listview.md)。
 
 我們來看看一些可以減少應用程式在啟動時載入之元素數目的其他方式。
 
@@ -385,7 +385,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 ### <a name="cache-static-content"></a>快取靜態內容
 
-另一個過度繪製的來源是來自許多重疊元素的圖形。 如果您在包含組合圖形的 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 上，將 [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) 設為 **BitmapCache**，則平台會將元素轉譯為點陣圖一次，然後在每個框架使用該點陣圖，而不會過度繪製。
+另一個過度繪製的來源是來自許多重疊元素的圖形。 如果您在包含組合圖形的 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) 上，將 **CacheMode** 設為 [BitmapCache](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)，則平台會將元素轉譯為點陣圖一次，然後在每個框架使用該點陣圖，而不會過度繪製。
 
 **Inefficient。**
 

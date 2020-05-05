@@ -7,10 +7,10 @@ keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 自訂, 範本
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: a6cde5a62367dccd83ca8dc6a46c203587850422
-ms.sourcegitcommit: cfbcf0381ec11f6daef3fa82b36ecbff3f3b8450
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/07/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80760528"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項
@@ -48,13 +48,13 @@ namespace BgLabelControlApp
 上列清單顯示的是在宣告相依性屬性 (DP) 時所遵循的模式。 每個 DP 都有兩個物件。 首先要宣告 [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty) 類型的唯讀靜態屬性。 其名稱是您的 DP 加上*屬性*。 在實作中，要使用這個靜態屬性。 再來請使用您的 DP 類型和名稱，來宣告讀寫執行個體的屬性。 如果想要撰寫*附加屬性* (而非 DP)，請參閱[自訂附加屬性](/windows/uwp/xaml-platform/custom-attached-properties)中的程式碼範例。
 
 > [!NOTE]
-> 如果需要具有浮點類型的 DP，可將其設定為 `double` ([MIDL 3.0](/uwp/midl-3/) 中的 `Double`)。 若宣告並實作 `float` 類型的 DP (MIDL 中的 `Single`)，然後設定 XAML 標記內該 DP 的值，則會導致「Failed to create a 'Windows.Foundation.Single' from the text」 *<NUMBER>的錯誤*。
+> 如果需要具有浮點類型的 DP，可將其設定為 `double` (`Double`MIDL 3.0[ 中的 ](/uwp/midl-3/))。 若宣告並實作 `float` 類型的 DP (MIDL 中的 `Single`)，然後設定 XAML 標記內該 DP 的值，則會導致「Failed to create a 'Windows.Foundation.Single' from the text」 *<NUMBER>的錯誤*。
 
 儲存檔案並建置專案。 在建置程序期間，會執行 `midl.exe` 工具，以建立 Windows 執行階段中繼資料檔案 (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`)，其會描述執行階段類別。 然後，會執行 `cppwinrt.exe` 工具，以產生原始碼檔案，可再撰寫和使用執行階段類別時提供支援。 這些檔案包含虛設常式，可協助開始實作您在 IDL 中宣告的 **BgLabelControl** 執行階段類別。 這些虛設常式為 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` 與 `BgLabelControl.cpp`。
 
-從 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` 將虛設常式檔案 `BgLabelControl.h` 和 `BgLabelControl.cpp` 複製到專案資料夾中，也就是 `\BgLabelControlApp\BgLabelControlApp\`。 在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的虛設常式檔案上按右鍵，然後按一下 **[加入至專案]** 。
+從 `BgLabelControl.h` 將虛設常式檔案 `BgLabelControl.cpp` 和 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` 複製到專案資料夾中，也就是 `\BgLabelControlApp\BgLabelControlApp\`。 在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的虛設常式檔案上按右鍵，然後按一下 **[加入至專案]** 。
 
-您會在 `BgLabelControl.h` 和 `BgLabelControl.cpp` 的頂端看到 `static_assert`，而您需要在專案建置之前先將其移除。
+您會在 `static_assert` 和 `BgLabelControl.h` 的頂端看到 `BgLabelControl.cpp`，而您需要在專案建置之前先將其移除。
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>實作 **BgLabelControl** 自訂控制項類別
 現在要開啟 `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` 與 `BgLabelControl.cpp`，並實作我們的執行階段類別。 在 `BgLabelControl.h` 中，請變更建構函式，以設定預設樣式索引鍵，並實作 **Label** 和 **LabelProperty**，新增名為 **OnLabelChanged** 的靜態事件處理常式，來處理相依性屬性值的變更，再新增私用成員以儲存 **LabelProperty** 的支援欄位。
@@ -161,7 +161,7 @@ namespace winrt::BgLabelControlApp::implementation
 </ResourceDictionary>
 ```
 
-在此情況下，預設樣式所設定的唯一屬性是控制項範本。 該範本是由方形 (其背景繫結至XAML [**控制項**](/uwp/api/windows.ui.xaml.controls.control)類型的所有執行個體具有的**背景**屬性) 和文字元素 (其文字繫結至 **BgLabelControl::Label** 相依性屬性) 組成。
+在此情況下，預設樣式所設定的唯一屬性是控制項範本。 該範本是由方形 (其背景繫結至XAML  控制項[**類型的所有執行個體具有的**背景](/uwp/api/windows.ui.xaml.controls.control)屬性) 和文字元素 (其文字繫結至 **BgLabelControl::Label** 相依性屬性) 組成。
 
 ## <a name="add-an-instance-of-bglabelcontrol-to-the-main-ui-page"></a>將 **BgLabelControl** 的執行個體新增至主要 UI 頁面
 

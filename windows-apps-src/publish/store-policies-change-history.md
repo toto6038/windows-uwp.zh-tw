@@ -7,10 +7,10 @@ keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 ms.openlocfilehash: 3fbdc8e4831a39386396dc2c1dad25581f12fbf9
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77607275"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Microsoft Store 原則變更歷程記錄
@@ -171,7 +171,7 @@ ms.locfileid: "77607275"
 <p>經過更新的「個人資訊」(10.5.1) 位置設定的要求，包含有關 Windows 10 行動應用程式的資訊。</p></td>
 </tr>
 <tr class="odd">
-<td>2015 年 6 月 8 日</td>
+<td>2015 年 6 月 8 日 </td>
 <td>6.4</td>
 <td><p>合併 10.1＜出眾功能與價值、精確的呈現＞中的段落。</p>
 <p>將 11.12＜年齡分級＞延伸套用至所有的 Windows 市集應用程式。</p>
@@ -195,7 +195,7 @@ ms.locfileid: "77607275"
 </table>
 
 
-### <a name="see-also"></a>請參閱
+### <a name="see-also"></a>另請參閱
 
 - [Microsoft Store 原則與管理辦法](store-policies-and-code-of-conduct.md)
 - [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

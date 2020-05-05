@@ -12,10 +12,10 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 0dbe5e2f1cc32a3d1b52572f71fba7547af99f17
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258568"
 ---
 # <a name="create-write-and-read-a-file"></a>建立、寫入和讀取檔案
@@ -23,8 +23,8 @@ ms.locfileid: "74258568"
 **重要 API**
 
 -   [**StorageFolder 類別**](/uwp/api/windows.storage.storagefolder)
--   [**StorageFile 類別**](/uwp/api/windows.storage.storagefile)
--   [**FileIO 類別**](/uwp/api/windows.storage.fileio)
+-   [**StorageFile 類別**](/uwp/api/windows.storage.storagefile) \(英文\)
+-   [**FileIO 類別**](/uwp/api/windows.storage.fileio) \(英文\)
 
 使用 [**StorageFile**](/uwp/api/windows.storage.storagefile) 物件讀取和寫入檔案。
 
@@ -254,7 +254,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  接著從 `stream` 呼叫 [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) 方法，以取得輸出資料流。 如果您使用 C#，則它放入 **using** 陳述式中以管理輸出資料流的存留期。 如果您使用 [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，將它放入區塊中，或在使用完畢時將它設為 `nullptr`，即可控制其存留期。
+2.  接著從 [ 呼叫  IRandomAccessStream.GetOutputStreamAt](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)`stream` 方法，以取得輸出資料流。 如果您使用 C#，則它放入 **using** 陳述式中以管理輸出資料流的存留期。 如果您使用 [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，將它放入區塊中，或在使用完畢時將它設為 `nullptr`，即可控制其存留期。
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))
@@ -554,6 +554,6 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim text As String = dataReader.ReadString(numBytesLoaded)
     ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [寫入檔案的最佳做法](best-practices-for-writing-to-files.md)

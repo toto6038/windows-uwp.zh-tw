@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: 9de761a0b127d7218c7dc2bb4c6862626b7c60e4
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77089424"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
@@ -45,7 +45,7 @@ Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::Acti
 如果您的 app 無法啟動，但測試平台符合 [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 的先決條件，則您可以檢閱啟用事件記錄檔以疑難排解問題。 在事件記錄檔中找到這些項目：
 
 1.  開啟 eventvwr.exe，並瀏覽至 [應用程式及服務記錄檔]\\Microsoft\\Windows\\Immersive-Shell 資料夾。
-2.  篩選檢視，以顯示事件識別碼：5900-6000。
+2.  篩選檢視，顯示事件識別碼：5900-6000。
 3.  查閱記錄項目，尋找說明為什麼應用程式無法啟動的資訊。
 
 疑難排解有問題的檔案，並尋找和修正問題。 重新建置並重新測試應用程式。 您也可以檢查 Windows 應用程式認證套件記錄檔資料夾中是否已產生可用來偵錯應用程式的傾印檔案。
@@ -559,7 +559,7 @@ Microsoft Store 要求使用 Direct3D 的所有應用程式都能在功能層級
 
 ### <a name="corrective-action"></a>修正動作
 
-每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 介面上呼叫 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
+每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) 介面上呼叫 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) API。
 
 ## <a name="app-capabilities-test"></a>App 功能測試
 
@@ -596,8 +596,8 @@ Microsoft Store 要求使用 Direct3D 的所有應用程式都能在功能層級
 ### <a name="corrective-actions"></a>修正動作
 
 -   **ExclusiveTo 屬性測試：** 確保 UWP 類別不會實作已標示為 ExclusiveTo 其他類別的介面。
--   **類型位置測試：** 確保所有 UWP 類型的中繼資料都位於應用程式套件中命名空間相符名稱最長的 winmd 檔案中。
--   **類型名稱區分大小寫測試：** 請確定應用程式套件中的所有 UWP 類型都會有唯一且不區分大小寫的名稱。 同時也確保 app 套件內的命名空間名稱均未使用 UWP 類型名稱。
+-   **類型位置測試：** 確保所有 UWP 類型的中繼資料都位於 app 套件中命名空間相符名稱最長的 winmd 檔案中。
+-   **類型名稱區分大小寫測試：** 確保所有 UWP 類型在 app 套件內都具有唯一且不區分大小寫的名稱。 同時也確保 app 套件內的命名空間名稱均未使用 UWP 類型名稱。
 -   **類型名稱正確性測試：** 確保全域命名空間或 Windows 最上層命名空間中，不存在任何 UWP 類型。
 -   **一般中繼資料正確性測試：** 確保您用來產生類型的編譯器符合最新的 UWP 規格。
 -   **屬性測試：** 確保 UWP 類別的所有屬性都有 get 方法 (set 方法為選用)。 針對 UWP 類型的所有屬性，確保 get 方法傳回值的類型與 set 方法輸入參數的類型相符。

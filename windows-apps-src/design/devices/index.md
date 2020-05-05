@@ -9,10 +9,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258115"
 ---
 #  <a name="ui-considerations-for-uwp-devices"></a>適用於 UWP 裝置的 UI 考量
@@ -118,7 +118,7 @@ UI 考量
 
 輸入
 - 遊戲台 (例如 Xbox 控制器)
-- 遙控器
+- 遠端
 - 語音 (偶而，如果客戶有 Kinect 或耳機)
 
 一般裝置功能

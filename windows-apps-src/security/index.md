@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: cb5687c1a6744c34231c9b368da7c691c8e77642
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282446"
 ---
 # <a name="security"></a>安全性
@@ -28,7 +28,7 @@ ms.locfileid: "72282446"
 [驗證和使用者識別](authentication-and-user-identity.md)一節包含與使用者登入和身分識別相關之案例的逐步解說。 App 有數個使用者驗證選項，涵蓋範圍從使用 [Web 驗證代理人](web-authentication-broker.md)的簡單單一登入 (SSO) 到高度安全的雙因素驗證。
 
 <table>
-<tr><th>主題</th><th>描述</th></tr>
+<tr><th>主題</th><th>說明</th></tr>
 <tr><td><a href="credential-locker.md">認證保險箱</a></td><td>本文說明 App 如何使用認證保險箱來安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。</td></tr>
 
 <tr><td><a href="fingerprint-biometrics.md">指紋生物識別技術</a> </td><td>本文將說明如何在您的應用程式中新增指紋生物識別技術。 包括使用者必須同意特定動作時的指紋驗證要求，以增強 app 的安全性。 例如，您可以在授權 app 內購買之前或授與限制資源的存取權之前要求指紋驗證。 指紋驗證是使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">Windows.Security.Credentials.UI</a> 命名空間中的 <a href="https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI">UserConsentVerifier</a> 類別所管理。</td></tr>
@@ -46,11 +46,11 @@ ms.locfileid: "72282446"
 
 密碼編譯一節包含更複雜的密碼編譯相關主題資訊。 
 
-| 主題                                                                         | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 主題                                                                         | 說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |-------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [憑證簡介](certificates.md)                                      | 本文討論應用程式中的憑證使用方式。 數位憑證用於公開金鑰密碼編譯，將公開金鑰繫結至個人、電腦或組織。 這種繫結身分常被用來在實體之間互相驗證。 例如，憑證通常是用來向使用者驗證網頁伺服器，或是向網頁伺服器驗證使用者。 您可以建立憑證要求並安裝或匯入已發出的憑證。 您也可以在憑證階層中註冊憑證。 |
 | [密碼編譯金鑰](cryptographic-keys.md)                                   | 本文說明如何使用標準金鑰衍生函式來衍生金鑰，以及如何使用對稱和非對稱金鑰來加密內容。                                                                                                                                                                                                                                                                                                                                                                         |
-| [資料保護](data-protection.md)                                         | 本文說明如何使用 [Windows.Security.Cryptography.DataProtection](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 命名空間中的 [DataProtectionProvider](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 類別，來加密和解密 UWP 應用程式中的數位資料。                                                                                                                                                                                                              |
+| [資料保護](data-protection.md)                                         | 本文說明如何使用 [Windows.Security.Cryptography.DataProtection](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 命名空間中的 [DataProtectionProvider](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 類別，來加密和解密 UWP 應用程式中的數位資料。                                                                                                                                                                                                              |
 | [MAC、雜湊以及簽章](macs-hashes-and-signatures.md)               | 本文討論如何在應用程式中使用訊息驗證碼 (MAC)、雜湊及簽章來偵測訊息是否遭竄改。                                                                                                                                                                                                                                                                                                                                                                                |
 | [密碼編譯的匯出限制](export-restrictions-on-cryptography.md) | 使用這項資訊判斷您的應用程式使用密碼編譯的方式，是否會阻止其列在 Windows 市集中。                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [常見的密碼編譯工作](common-cryptography-tasks.md)                     | 下列文章提供常見的密碼編譯工作範例程式碼，例如建立隨機數字、比較緩衝區、在字串與二進位資料間轉換、複製到位元組陣列和從位元組陣列中複製，以及編碼和解碼資料。                                                                                                                                                                                                                                                                                    |

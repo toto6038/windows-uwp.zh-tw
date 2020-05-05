@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 57927ff77f060a1ea1bd7720d8831f31c5355264
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259202"
 ---
 # <a name="httpclient"></a>HttpClient
@@ -57,7 +57,7 @@ ms.locfileid: "74259202"
 
 ## <a name="send-a-simple-get-request-over-http"></a>透過 HTTP 傳送簡單 GET 要求
 
-如本文先前所述，[**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何使用 [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 類別將 GET 要求傳送至 http:\//www.contoso.com，以及使用 [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 類別讀取 GET 要求的回應。
+如本文先前所述，[**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何使用 \/[Windows.Web.Http.HttpClient  類別將 GET 要求傳送至 http:](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)/www.contoso.com，以及使用 [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 類別讀取 GET 要求的回應。
 
 ```csharp
 //Create an HTTP client object

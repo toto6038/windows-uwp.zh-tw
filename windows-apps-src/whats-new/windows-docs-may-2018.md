@@ -6,21 +6,21 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cd84892f9d90a69379ac5a7f84dfa188adf1211e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258790"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>2018 年 5 月 Windows 開發人員文件的新增功能
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、開發人員指引、影片和範例已經在 5 月份與 [Microsoft Build 2018](https://www.microsoft.com/build/) 開發人員會議同步提供。
 
-在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
-### <a name="motion-in-fluent-design"></a>Fluent Design 動作
+### <a name="motion-in-fluent-design"></a>Fluent Design 中的動作
 
 Fluent Design 動作系統的使用正在不斷發展，建立在時間、簡化、方向性和重力基本概念之上。 套用這些基本概念將有助於引導使用者使用您的應用程式，並通過反映自然世界將他們其與數位體驗連結。 深入了解下列文章：
 
@@ -99,7 +99,7 @@ Sets 功能適用於 Windows 測試人員預覽組建。 使用 Sets 功能時�
 
 ## <a name="developer-guidance"></a>開發人員指引
 
-### <a name="get-started"></a>立即開始
+### <a name="get-started"></a>開始使用
 
 我們已使用新的學習途徑來重振我們的開始使用內容。 這些新主題旨在為新的 Windows 10 開發人員提供其想完成的一些常見工作的相關資訊。 這些主題不是教學課程，並不會提供隨手可得的逐步解說，但會指出現有文件的位置及其使用方式。 請查看全新面貌的[開始撰寫程式碼](../get-started/create-uwp-apps.md)頁面，或瀏覽每個個別的學習途徑：
 
@@ -118,7 +118,7 @@ Sets 功能適用於 Windows 測試人員預覽組建。 使用 Sets 功能時�
 
 合作夥伴中心的[通知](../publish/send-push-notifications-to-your-apps-customers.md)頁面現在針對圖形和世界地圖檢視中的所有通知，提供額外的分析資料。
 
-## <a name="videos"></a>影片
+## <a name="videos"></a>視訊
 
 ### <a name="cwinrt"></a>C++/WinRT
 

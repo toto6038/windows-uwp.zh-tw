@@ -7,24 +7,24 @@ ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
 ms.openlocfilehash: 46abd26f2b9814f87980572d9e9a7891e26a2dcb
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258900"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>適用於開發人員的 Windows 10 (組建 14393) 的新功能
 
-Windows 10 組建 14939 (也稱為年度更新版或 1607 版本) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 14939 (也稱為年度更新版或 1607 版本) 搭配 Visual Studio 2019 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的應用程式程式碼](../porting/index.md)。
 
 這是開發人員會感興趣的新功能和改良功能清單。 如需新增到 Windows SDK 之新命名空間的原始清單，請參閱 [Windows 10 組建 14393 API 變更](windows-10-build-14393-api-diff.md)。 如需此更新之重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://developer.microsoft.com/windows/windows-10-for-developers)。
 
 ## <a name="windows-10-build-14393---july-2016"></a>Windows 10 組建 14393 - 2016 年 7 月
 
-功能 | 描述
+功能 | 說明
  :---- | :----
 XAML 元素的便捷鍵 | 您可以使用新的 [**AccessKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.accesskey) 屬性及 [**AccessKeyManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeymanager) 來改善 App 中的鍵盤協助工具。
-動畫 GIF 支援 | XAML [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) 元素現已支援動畫 GIF。 您可以在 [**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage)上使用這些新成員來控制播放：[**AutoPlay**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.autoplay)、[**IsAnimatedBitmap**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.isanimatedbitmap)、[**IsPlaying**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.isplaying)、[**Play**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.play)、[**Stop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.stop)。
+動畫 GIF 支援 | XAML [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) 元素現已支援動畫 GIF。 您可以在 [**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) 上使用下列新成員來控制播放：[**AutoPlay**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.autoplay)、[**IsAnimatedBitmap**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.isanimatedbitmap)、[**IsPlaying**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.isplaying)、[**Play**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.play)、[**Stop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.stop)。
 App 擴充性 | 為您的 UWP App 撰寫[擴充功能](https://github.com/microsoft/App-Extensibility-Sample)。 讓您的 UWP 應用程式裝載其他 UWP 應用程式所提供的內容。  探索、列舉並存取來自那些 App 的唯讀內容。
 評定測試 | 「[進行測驗](https://docs.microsoft.com/education/windows/take-tests-in-windows-10?f=255&MSPPError=-2147217396)」是一個針對高度利害攸關測驗轉譯鎖定線上評定的瀏覽器架構 App。 使用[進行測驗 API](../apps-for-education/take-a-test-api.md) 來防止學生在測驗期間使用其他電腦或網際網路資源。
 背景智慧型傳送服務 (BITS) | 現已可以在 PowerShell 遠端工作階段中使用 [BITS](https://docs.microsoft.com/windows/desktop/Bits/background-intelligent-transfer-service-portal) COM API 和 PowerShell Cmdlet (若可用的話)。 這對於管理沒有本機登入功能的 Windows Server 2016 Technical Preview 版本特別有用。 BITS 工作是透過在工作階段使用者帳戶內容中執行的 PowerShell 遠端工作階段啟動，並只會在至少有一個和該使用者帳戶關聯的作用中本機登入工作階段或 PowerShell 遠端工作階段時，才會呈現進度。 請參閱[管理 PowerShell 遠端工作階段](https://docs.microsoft.com/windows/desktop/Bits/using-windows-powershell-to-create-bits-transfer-jobs)，以取得如何管理長時間執行傳輸工作階段的詳細資料。<br/><br/>在支援 [BITS Helper 權杖](https://docs.microsoft.com/windows/desktop/Bits/helper-tokens-for-bits-transfer-jobs)的舊版 Windows 中，工作擁有者必須擁有系統管理員權限才能設定 Helper 權杖。 在這個版本中，BITS 工作擁有者現已可以在不身為系統管理員的情況下設定 Helper 權杖，前提是該 Helper 權杖不能具有系統管理員功能。 這將能透過讓背景下載或更新工具在具有較低權限的 NetworkService 帳戶 (而非具有系統管理員權限的帳戶) 下執行，來降低背景下載或更新工具的弱點數量。
@@ -36,14 +36,14 @@ Windows.UI.Composition | [  **Windows.UI.Composition**](https://docs.microsoft.c
 連線的 App | 探索已連線到雲端或是位於附近的裝置，並建置能夠在它們之間順暢轉換的經驗。 請參閱[連線的 App 和裝置](https://docs.microsoft.com/windows/uwp/launch-resume/connected-apps-and-devices?redirectedfrom=MSDN)以取得詳細資料。
 傳統型應用程式轉換器 | 傳統型應用程式轉換器是一個可讓您將現有針對 .NET 4.6.1 或 Win32 撰寫的傳統型應用程式移至通用 Windows 平台 (UWP) 的工具。
 開發無障礙應用程式 | 使用 [App 協助工具指導方針](https://developer.microsoft.com/windows/accessible-apps)來針對提升使用性和客戶滿意度設計包容性軟體。 從無障礙技術產品的故事獲得靈感。 在新的開發人員中樞上，尋找能讓所有人存取 App 的相關資訊。
-Direct3D | 許多新的主題已經新增到 Direct 3D 文件。 如需關於這些更新的詳細資訊，請參閱 [Direct3D 12 新版本頁面](https://docs.microsoft.com/windows/desktop/direct3d12/new-releases)中的 **Windows 10 版本 1607**。
+Direct3D | 許多新的主題已經新增到 Direct 3D 文件。 如需關於這些更新的詳細資訊，請參閱 **Direct3D 12 新版本頁面**中的 [Windows 10 版本 1607](https://docs.microsoft.com/windows/desktop/direct3d12/new-releases)。
 遊戲 - 電動搖桿和賽車方向盤支援 | [**Windows.Gaming.Input**](https://docs.microsoft.com/uwp/api/windows.gaming.input) 支援兩個新的輸入裝置類別：電動搖桿和賽車方向盤。 這可讓遊戲以裝置類別的方式支援電動搖桿和賽車方向盤裝置，而不需要針對那些裝置的個別版本撰寫特定程式碼。 這支援那些類別的所有 Xbox 360 和 Xbox One 裝置，以及特定的電腦 (HID) 裝置。
 遊戲 - 力回饋支援 | [  **Windows.Gaming.Input.ForceFeedback**](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback) API 能為控制電腦 (HID) 賽車方向盤的力回饋提供支援。
 遊戲 - 新輸入裝置自訂 WinRT 類別庫的 OEM 支援 | [  **Windows.Gaming.Input.Custom**](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom) API 能為第三方配件 OEM 提供支援，以為其 Xbox 360 和 Xbox One 配件撰寫自訂 WinRT 類別庫。     
 全球化 | 新的 [**Windows.Globalization.PhoneNumberFormatting**](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting) 命名空間中的類別能搭配廣泛的全球支援，支援電話號碼的格式、驗證及配對。 這個新類別支援許多當地標準格式，還支援在部分數字輸入時提供部分數字的遞增格式化。
 App 內購買和 App 授權 | [  **System.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間為針對 App 執行 App 內購買和存取市集授權提供新的 API。 如需詳細資訊，請參閱[啟用應用程式內產品購買](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases)。
 InkToolbar | [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) 是通用 Windows 應用程式控制項，包含能在相關聯的 **InkCanvas** 中啟用筆跡相關功能的可自訂及擴充按鈕集合。<br/><br/>根據預設，工具列包含用於繪圖、清除、反白顯示，以及顯示尺規的按鈕。 根據功能而定，其他設定和命令 (例如筆跡色彩、筆觸寬度、清除所有項目) 將會在飛出視窗中提供。<br/><br/>**InkToolbar** 也可以搭配您自己的手寫筆、工具及其他筆跡功能進行自訂。
-已移除 MAX_PATH 限制 | MAX_PATH 限制已經自一般的 Win32 檔案和目錄 API 中移除。 該行為現為選擇加入。 如需詳細資料，請參閱[命名檔案、路徑及命名空間](https://docs.microsoft.com/windows/desktop/FileIO/naming-a-file)中的**最大路徑長度限制**一節。
+已移除 MAX_PATH 限制 | MAX_PATH 限制已經自一般的 Win32 檔案和目錄 API 中移除。 該行為現為選擇加入。 如需詳細資料，請參閱**命名檔案、路徑及命名空間**中的[最大路徑長度限制](https://docs.microsoft.com/windows/desktop/FileIO/naming-a-file)一節。
 相機 - 媒體畫面讀取器 |新的 [**Windows.Media.Capture.Frames**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames) 命名空間能提供從一或多個可用來源讀取媒體畫面的 API。來源包括色彩、深度及紅外線相機、音訊裝置，或甚至自訂畫面來源 (例如能產生骨骼追蹤畫面的來源)。 此功能是針對要讓執行媒體畫面即時處理的 App 使用所設計，例如虛擬實境及深度感知相機 App。
 媒體播放 | 在 App 中播放媒體的建議方式是使用 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 類別，並視需要使用輕量型的 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 類別來以 XAML 轉譯媒體。 針對 **MediaPlayer** 類別的改善包括針對特定端點播放音訊的能力、導入管理播放程式狀態的 [**MediaPlaybackSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackSession) 類別、視訊的捏合和縮放功能、將視訊轉譯到 [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) 表面的能力，以及能同步處理多個媒體播放程式之播放的 [**MediaTimelineController**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaTimelineController) 類別。<br>使用 [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) 開啟媒體項目時，您現在可以偵測到因完全或部分不支援的轉碼器所導致的媒體失敗。<br><br>新的 [**MediaBreakManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakManager) 類別可以快速且輕鬆地將媒體中斷新增到任何 [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem) 類別，以讓您可以輕鬆地建立、排程及管理音訊及視訊廣告等媒體中斷。<br><br>**MediaPlayer** 類別現已能自動整合到系統媒體傳輸控制項 (SMTC)。 新的 [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) 類別可讓您部分或完全覆寫 SMTC 命令。<br><br>您現在可以使用新的單一程序模型在背景播放媒體。相較於之前的雙程序模型，新模型的實作將會變得更簡單且輕鬆。 新的資訊清單功能可讓您將 App 在背景播放媒體的需求告知系統，而新的 App 週期事件 ([**EnteredBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) 和 [**LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground)) 可讓您有機會在背景執行時釋放未使用的資源。
 Microsoft Edge | Microsoft Edge 已新增擷取、串流及指標 API 的支援。 「擷取」是 **XMLHttpRequests** 的現代化替代功能，能為要求和回應新增低層級功能。 我們同時也新增了串流資料來源的能力。 「串流」可從來源讀取資料區塊，而不必先針對整個來源進行緩衝以對之進行讀取。 指標 API 能夠有效地透過指標 (單向要求) 將資訊 (例如重要的應用程式和測量資訊) 傳送到伺服器。 指標 API 為完全非同步的且無須要處理要求，這使它成為非封鎖要求。<br/><br/>如需 Microsoft Edge 中新 API 的詳細資訊，請參閱＜Microsoft Edge 開發人員指南＞中的[新功能](https://developer.microsoft.com/microsoft-edge/platform/documentation/dev-guide)。  

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP, 營利, 參與, 促銷, Microsoft Store 服務
 ms.localizationpriority: medium
 ms.openlocfilehash: 7beee974bceceab02984ae6499a9c5db0b0281b9
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259295"
 ---
 # <a name="monetization-engagement-and-store-services"></a>營利、參與和 Microsoft Store 服務
@@ -108,7 +108,7 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 
 尋找其他能讓您提高獲利的方法嗎？ 請考慮採用下列選項。
 
- 主題                | 描述                 |
+ 主題                | 說明                 |
 |--------------------|-----------------------------|
 | [Microsoft 聯盟計畫](https://www.microsoftaffiliates.com/) | 從您的應用程式、部落格、網頁或其他通訊設備連結至 Microsoft 產品以賺取佣金。 您可以連結至 Microsoft Store 中銷售的應用程式、遊戲、音樂、電影、硬體、配件及其他商品。
 | [A/B 實驗](https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing) | 在您為所有使用者啟用變更前，以部分客戶為對象，由應用程式中執行 A/B 測試來衡量功能變更的有效性。

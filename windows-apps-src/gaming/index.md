@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: db551135fab4e29b49b3031ad3338fa9a2e58379
-ms.sourcegitcommit: 00cd8a6616e358479a63e56126c62ef02b8da75b
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72548398"
 ---
 # <a name="game-programming"></a>遊戲程式設計
 
 通用 Windows 平台 (UWP) 提供建立遊戲、發佈遊戲以及從遊戲中創造營收的嶄新商機。 了解如何建立適用於 Windows 10 的遊戲。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-|-|
 | [Windows 10 遊戲開發指南](e2e.md) | 開發 UWP 遊戲的資源與資訊的端對端指南。 |
 | [規劃](planning.md) | 本主題包含遊戲規劃階段的文件清單。 |
