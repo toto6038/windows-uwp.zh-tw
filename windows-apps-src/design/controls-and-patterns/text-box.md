@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0167d1f0ed69f8354fa6ee7cd77387aee9aee842
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 26e64c286124537eeb20af6c46f16e83edc88414
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081505"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643750"
 ---
 # <a name="text-box"></a>文字方塊
 
@@ -28,7 +28,7 @@ TextBox 具有眾多可精簡文字輸入的實用功能。 其提供熟悉的�
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項與 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **平台 API**：[TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
@@ -294,11 +294,11 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 - 使用一組簡短、固定大小的單行文字輸入控制項，以特定格式輸入資料。
 
-    ![格式化的資料輸入](images/textinput_example_productkey.png)
+    ![格式化的資料輸入](images/textinput-example-productkey.png)
 
 - 使用不受限制的單行文字輸入控制項輸入或編輯字串，並與命令按鈕結合，幫助使用者選取有效的值。
 
-    ![輔助資料輸入](images/textinput_example_assisted.png)
+    ![輔助資料輸入](images/textinput-example-assisted.png)
 
 ### <a name="multi-line-text-input-controls"></a>多行文字輸入控制項
 

@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: bbdce669faa73b1db2071173014dec474160affb
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.openlocfilehash: 26a0ea1ec70f4ae4255030541a6513541db1fb99
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81266946"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82267506"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>採用 C++/WinRT 的更進階並行和非同步
 
@@ -261,7 +261,7 @@ int main()
 }
 ```
 
-上述範例會在私人執行緒上建立佇列 (包含在控制器內)，然後將控制器傳遞至協同程式。 協同程式可以使用佇列在私人執行緒上等候 (暫停和繼續)。 **DispatcherQueue** 的另一個常見用法是在目前的 UI 執行緒上，針對傳統型或 Win32 應用程式建立佇列。
+上述範例會在私人執行緒上建立佇列 (包含在控制器內)，然後將控制器傳遞至協同程式。 協同程式可以使用佇列在私人執行緒上等候 (暫停和繼續)。  **DispatcherQueue** 的另一個常見用法是在目前的 UI 執行緒上，針對傳統型或 Win32 應用程式建立佇列。
 
 ```cppwinrt
 DispatcherQueueController CreateDispatcherQueueController()
@@ -673,7 +673,7 @@ IAsyncAction Async(HANDLE event)
 IAsyncAction Async(winrt::handle event)
 {
     co_await DoWorkAsync();
-    co_await resume_on_signal(event); // The incoming handle *is* not valid here.
+    co_await resume_on_signal(event); // The incoming handle *is* valid here.
 }
 ```
 
@@ -717,7 +717,7 @@ IAsyncAction SampleCaller()
 
 ## <a name="asynchronous-timeouts-made-easy"></a>非同步逾時變簡單
 
-C++/WinRT 已大量投入 C++ 協同程式中。 其對於撰寫平行程式碼的效果已徹底改觀。 本節討論非同步詳細資料並不重要的情況，而您只想要立即取得結果。 基於這個理由，C++/WinRT 的 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows 執行階段非同步作業介面具有 **get** 函式，其類似於 **std::function** 所提供的函式。
+C++/WinRT 已大量投入 C++ 協同程式中。 其對於撰寫平行程式碼的效果已徹底改觀。 本節討論非同步詳細資料並不重要的情況，而您只想要立即取得結果。 基於這個理由，C++/WinRT 的 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows 執行階段非同步作業介面具有 **get** 函式，其類似於 **std::future** 所提供的函式。
 
 ```cppwinrt
 using namespace winrt::Windows::Foundation;
@@ -731,7 +731,7 @@ int main()
 
 **get** 函式會無限期地封鎖，而非同步物件會完成。 非同步物件的存留時間可能很短，因此您通常只需要這麼做。
 
-但在某些情況下，這並不足夠，而您必須在一段時間之後放棄等候。 幸虧有 Windows 執行階段所提供的建構元素，因此一律可撰寫該程式碼。 但現在 C++/WinRT 提供 **wait_for** 函式，可讓一切更加輕鬆。 它也會在 **IAsyncAction** 上實作，其同樣類似於 **std::function** 所提供的函式。
+但在某些情況下，這並不足夠，而您必須在一段時間之後放棄等候。 幸虧有 Windows 執行階段所提供的建構元素，因此一律可撰寫該程式碼。 但現在 C++/WinRT 提供 **wait_for** 函式，可讓一切更加輕鬆。 其也會在 **IAsyncAction** 上實作，其同樣類似於 **std::future** 所提供的函式。
 
 ```cppwinrt
 using namespace std::chrono_literals;

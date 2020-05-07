@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac 到 Windows, 快速鍵對應, 從 Unix 移至 Windows, 從 Mac 轉換至 Windows, 協助從 MacBook 移至 Surface, 如何為 Macintosh 使用者使用 Windows, 從 Macintosh 切換至 Windows, 協助變更開發環境, Mac OS X 至 Windows, 協助從 Mac 移至電腦
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 8c23fa3e6791a3cd78d259b40e68606a30fd9395
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 457abcec97247afcc0d63c983c8a6cda2de51c66
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218438"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643694"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>將開發環境從 Mac 變更為 Windows 的指南
 
@@ -82,7 +82,7 @@ Windows 命令列會接受 DOS 命令，而且是 Windows 最常用的命令列�
 
 3. 適用於 Linux 的 Windows 子系統 (WSL)
 
-WSL 可讓您在 Windows 中執行 Linux 命令介面。 這表示您可以根據選擇和安裝的 Linux 發行版本，執行 *bash** 或其他命令介面。 使用 WSL 將提供 Mac 使用者最熟悉的環境類型。 例如，您會使用 **ls** 來列出目前目錄中的檔案，而非使用您在 Windows 命令列中使用的 **dir**。 若要了解安裝和使用 WSL 的詳細資訊，請參閱[適用於 Windows 10 的 Windows 子系統 Linux 版安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。
+WSL 可讓您在 Windows 中執行 Linux 命令介面。 這表示您可以根據選擇和安裝的 Linux 發行版本，執行 **bash** 或其他命令介面。 使用 WSL 將提供 Mac 使用者最熟悉的環境類型。 例如，您會使用 **ls** 來列出目前目錄中的檔案，而非使用您在 Windows 命令列中使用的 **dir**。 若要了解安裝和使用 WSL 的詳細資訊，請參閱[適用於 Windows 10 的 Windows 子系統 Linux 版安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。
 
 4. Windows 終端機 (預覽)
 

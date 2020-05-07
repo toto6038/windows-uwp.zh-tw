@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: ab5b509aa69dc54d18ef3643d7ccd46bc2984676
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.openlocfilehash: 68682d7b47e42995060601f5ae1c9b8d891aa3ff
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80614105"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643705"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -472,7 +472,7 @@ End Sub
 
 啟用多個選項時，每個樹狀檢視節點旁邊會顯示核取方塊，並反白顯示選取的項目。 使用者可以使用核取方塊來選取或取消選取項目。按一下項目仍會導致叫用該項目。
 
-選取或取消選取父節點，將會選取或取消選取該節點之下的所有子系。 如果已選取父節點之下的其中一些 (但不是所有) 子系，則父節點的核取方塊會顯示為不確定 (以黑色方塊填滿)。
+選取或取消選取父節點，將會選取或取消選取該節點之下的所有子系。 如果已選取父節點之下的其中一些 (但不是所有) 子系，則父節點的核取方塊會顯示為不確定的狀態。
 
 ![樹狀檢視中的多個選取項目](images/treeview-selection.png)
 

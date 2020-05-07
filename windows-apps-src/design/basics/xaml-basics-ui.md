@@ -6,10 +6,10 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c23a9539d0fc3902f715917b380e8b6b3e132c15
-ms.sourcegitcommit: 1d868968297d0d6d02cc38fe84d0a3ab5bccfb60
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68974454"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教學課程：建立使用者介面
@@ -515,7 +515,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 請使用 X
 
 5. 在對話方塊中，將 [名稱 (索引碼)]  值變更為 **ImageGridView_ItemsPanelTemplate**，然後選取 [確定]  。
 
-    預設 **ItemsPanelTemplate** 的複本會新增至 XAML 的 **Page.Resources** 區段。 (像之前一樣，**GridView** 會更新以參考此資源)。
+    預設 **ItemsPanelTemplate** 的複本會新增至 XAML 的 **Page.Resources** 區段  (像之前一樣，**GridView** 會更新以參考此資源)。
 
     ```xaml
     <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">

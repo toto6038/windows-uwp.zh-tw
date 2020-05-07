@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 是否可本地化, 當地語系化, 日文, 紀元
 ms.localizationpriority: high
 ms.openlocfilehash: 7e8250ccae96ed835aba2a2a993fdde9ae31a884
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67714114"
 ---
 # <a name="prepare-your-application-for-the-japanese-era-change"></a>針對日本紀元變更準備您的應用程式
@@ -140,7 +140,7 @@ ms.locfileid: "67714114"
   * [GetCalendarInfoEx 函式](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfoex)
   * [GetCalendarInfoW 函式](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfow)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [日本曆的紀元處理方式](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar)
 * [日本曆的千禧年 (Y2K) 時刻](https://blogs.msdn.microsoft.com/shawnste/2018/04/12/the-japanese-calendars-y2k-moment/)

@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c+ +, cpp, winrt, 投影, 延遲解構, 安全查詢
 ms.localizationpriority: medium
 ms.openlocfilehash: 76068ffc655c20aa13b50cce9ac49af9afd50805
-ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71329563"
 ---
 # <a name="extension-points-for-your-implementation-types"></a>適用於實作類型的擴充點
@@ -191,7 +191,7 @@ struct MainPage : PageT<MainPage>
 
 例如，如果用戶端在物件被置於無法使用狀態之後 (即在  **Shut­Down**  或  **Disconnect**  方法呼叫之後) 嘗試使用該物件，則可以使用 **abi_enter** 來擲回假設的  **invalid_state_error** 例外狀況。 如果基礎集合已變更，則 C++/WinRT 反覆運算器類別會在  **abi_enter** 函式中擲回無效狀態例外狀況。
 
-除了簡單的 **abi_enter**  和  **abi_exit** 函式之外，您還可以定義名為  **abi_guard** 的巢狀類型。 在這種情況下，會在進入每個投影介面方法 (非 **IInspectable**) 建立 **abi_guard** 執行個體，並以物件的參考作為其建構函式參數。  **abi_guard**  接著在方法結束時解構。 您可以將喜歡的任何額外狀態放入 **abi_guard** 類型。
+除了簡單的 **abi_enter**  和  **abi_exit** 函式之外，您還可以定義名為  **abi_guard** 的巢狀類型。 在這種情況下，會在進入每個投影介面方法 (非 **IInspectable**) 時建立 **abi_guard** 執行個體，並以物件的參考作為其建構函式參數。  **abi_guard**  接著在方法結束時解構。 您可以將喜歡的任何額外狀態放入 **abi_guard** 類型。
 
 如果您未定義自己的 **abi_guard**，則預設在建構時呼叫 **abi_enter** ，並在解構時呼叫  **abi_exit**。
 

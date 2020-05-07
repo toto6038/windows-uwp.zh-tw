@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: d942fd58619c12192fd8429c0e8aeb5aa070fd4d
-ms.sourcegitcommit: 2a80888843bb53cc1f926dcdfc992cf065539a67
+ms.openlocfilehash: 95f5ad82831b6b07e0bbc2127947f777f0cd50e5
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81005448"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81759921"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -82,6 +82,8 @@ C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGe
 - 有非常少數案例牽涉到關機競爭或半致命採用，在這些案例中您的確需要呼叫 **IClosable::Close**。 如果您正使用 **Windows.UI.Composition** 類型，以此為例，您可能會遇到想在一組序列中處置物件的案例，允許 C++/WinRT 包裝函式的解構函式為您執行工作，做為替代方案。
 - 如果您無法保證對物件仍保有最後的參考 (因為您已將它傳遞給其他 API，而這些 API 可能會保留參考)，則呼叫 **IClosable::Close** 是個不錯的主意。
 - 當不確定時，安全的作法是手動呼叫 **IClosable::Close**，而不是等待包裝函式在解構時呼叫它。
+
+因此，如果您知道您有最後一個參考，那麼您可以讓包裝函式的解構函式執行此工作。 如果您需要在最後一個參考消失之前關閉，則需要呼叫 **Close**。 若要在出現例外狀況時依然保持安全，您應該在 resource-acquisition-is-initialization (RAII) 中執行 **Close** (讓關閉作業在回溯時發生)。 C++/WinRT 沒有 **unique_close** 包裝函式，但您可以自行建立。
 
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>我可以使用 LLVM/Clang 來編譯 C++/WinRT 嗎？
 我們對於 C++/WinRT 不支援 LLVM 和 Clang toolchain，但我們在內部使用它來驗證 C++/WinRT 的標準一致性。 例如，如果您想要模擬我們在內部的操作，您可能會嘗試實驗，例如如下所述。

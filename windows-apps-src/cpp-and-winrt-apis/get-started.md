@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
 ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74255136"
 ---
 # <a name="get-started-with-cwinrt"></a>開始使用 C++/WinRT
@@ -182,7 +182,7 @@ C++/WinRT 語言投影取決於某些 Windows 執行階段的可用 (非成員) 
 ## <a name="important-apis"></a>重要 API
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed.Items 屬性](/uwp/api/windows.web.syndication.syndicationfeed.items)
-* [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt::hresult-error 結構](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>相關主題
