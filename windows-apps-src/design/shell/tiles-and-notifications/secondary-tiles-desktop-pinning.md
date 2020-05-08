@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf, 傳統型橋接器, 次要磚, 釘選, 快速入門, 程式碼範例, 範例, 次要磚, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: cd6debb076aac4286c8cb9a33730ade4942b5030
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 7ddcd96eadbb6d2edbc3a72fa58ff3cc8931a09b
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209914"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730368"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>從傳統型應用程式釘選次要磚
 
@@ -29,7 +29,7 @@ ms.locfileid: "79209914"
 
 ## <a name="package-your-app-with-desktop-bridge"></a>使用傳統型橋接器封裝應用程式
 
-如果您尚未使用傳統型橋接器封裝您的應用程式，[您必須先這麼做](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)，才能使用任何的 UWP API。
+如果您尚未使用桌面橋接器封裝您的應用程式，[您必須先執行](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)此動作，才能使用任何 Windows 執行階段 api。
 
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>允許存取 IInitializeWithWindow 介面
@@ -98,7 +98,7 @@ bool isPinned = await tile.RequestCreateAsync();
 ## <a name="resources"></a>資源
 
 * [完整程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
-* [次要磚總覽](secondary-tiles.md)
-* [釘選次要磚（UWP）](secondary-tiles-pinning.md)
-* [傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)
-* [桌面橋接器程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+* [次要磚概觀](secondary-tiles.md)
+* [釘選次要磚 (UWP)](secondary-tiles-pinning.md)
+* [桌面橋接器](https://developer.microsoft.com/windows/bridges/desktop)
+* [傳統型橋接器程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

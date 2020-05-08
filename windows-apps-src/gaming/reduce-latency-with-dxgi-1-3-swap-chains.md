@@ -6,38 +6,33 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, latency, dxgi, swap chains, directx, 遊戲, 延遲, 交換鏈結
 ms.localizationpriority: medium
-ms.openlocfilehash: dd414c3ea65d30253d54cd335ed0b85d151b6dff
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 27ecce9d95d3c2e852b049e3cac9579850022df9
+ms.sourcegitcommit: d2aabe027a2fff8a624111a00864d8986711cae6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258433"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82880858"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>透過 DXGI 1.3 交換鏈結減少延遲
-
-
 
 使用 DXGI 1.3 可減少有效的框架延遲，方法是等候交換鏈結在適當時機發出訊號來開始轉譯新畫面。 遊戲通常需要提供最低的延遲量，範圍可能從接收到玩家輸入時，到遊戲藉由更新顯示器來回應該輸入時。 本主題說明在 Direct3D 11.2 中開始時提供的技術，您可以使用該技術來將遊戲中有效的框架延遲降至最低。
 
 ## <a name="how-does-waiting-on-the-back-buffer-reduce-latency"></a>在背景緩衝區上等候如何減少延遲？
 
+使用翻轉模型交換鏈結，背景緩衝區「翻轉」會在您的遊戲呼叫 [**IDXGISwapChain::Present**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-present) 時排入佇列。 當轉譯迴圈呼叫 Present() 時，系統會封鎖執行緒，直到它完成先前框架的顯示為止，在它實際顯示之前，清出空間以將新框架排入佇列。 這會導致遊戲繪製框架的時間和系統允許它顯示該框架的時間之間，產生額外的延遲。 在許多情況下，系統將會到達一個穩定的平衡，遊戲在它轉譯的時間和它呈現每個畫面的時間之間，一律會等候一個幾乎完全是額外存在的畫面。 最好是等到系統準備好接受新畫面，然後根據目前資料來轉譯該畫面，並立即將該畫面排入佇列。
 
-使用翻轉模型交換鏈結，背景緩衝區「翻轉」會在您的遊戲呼叫 [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) 時排入佇列。 當轉譯迴圈呼叫 Present() 時，系統會封鎖執行緒，直到它完成先前框架的顯示為止，在它實際顯示之前，清出空間以將新框架排入佇列。 這會導致遊戲繪製框架的時間和系統允許它顯示該框架的時間之間，產生額外的延遲。 在許多情況下，系統將會到達一個穩定的平衡，遊戲在它轉譯的時間和它呈現每個畫面的時間之間，一律會等候一個幾乎完全是額外存在的畫面。 最好是等到系統準備好接受新畫面，然後根據目前資料來轉譯該畫面，並立即將該畫面排入佇列。
+使用[**\_DXGI 交換\_鏈\_旗\_標框架\_延遲\_可等候\_物件**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)旗標來建立可等候交換鏈。 使用此方法建立的交換鏈結，可以在系統真正準備好接受新框架時通知您的轉譯迴圈。 這讓您的遊戲可以根據目前的資料進行轉譯，然後立即在目前佇列中放置結果。
 
-建立具有 DXGI 的可等候交換鏈[ **\_交換\_鏈\_旗標\_框架\_延遲\_可等候\_物件**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)旗標。 使用此方法建立的交換鏈結，可以在系統真正準備好接受新框架時通知您的轉譯迴圈。 這讓您的遊戲可以根據目前的資料進行轉譯，然後立即在目前佇列中放置結果。
+## <a name="step-1-create-a-waitable-swap-chain"></a>步驟 1： 建立可等候交換鏈
 
-## <a name="step-1-create-a-waitable-swap-chain"></a>步驟 1：建立可等候的交換鏈結
-
-
-當您呼叫[**CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)時，指定[**DXGI\_交換\_鏈\_旗標\_框架\_延遲\_可等候\_物件**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)旗標。
+當您呼叫[**CreateSwapChainForCoreWindow**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)時，指定[**\_DXGI\_交換\_\_\_鏈旗\_標畫面\_延遲可等候物件**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)旗標。
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **請注意**，   與某些旗標相較之下，無法使用[**ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)來新增或移除此旗標。 如果這個旗標的設定與建立交換鏈結時的不同，則 DXGI 會傳回錯誤碼。
-
- 
+> [!NOTE]
+> 相對於某些旗標，無法使用[**ResizeBuffers**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)來新增或移除此旗標。 如果這個旗標的設定與建立交換鏈結時的不同，則 DXGI 會傳回錯誤碼。
 
 ```cpp
 // If the swap chain already exists, resize it.
@@ -50,10 +45,9 @@ HRESULT hr = m_swapChain->ResizeBuffers(
     );
 ```
 
-## <a name="step-2-set-the-frame-latency"></a>步驟 2：設定畫面延遲
+## <a name="step-2-set-the-frame-latency"></a>步驟 2： 設定框架延遲
 
-
-使用 [**IDXGISwapChain2::SetMaximumFrameLatency**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-setmaximumframelatency) API 來設定畫面延遲，而不是呼叫 [**IDXGIDevice1::SetMaximumFrameLatency**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice1-setmaximumframelatency)。
+使用 [**IDXGISwapChain2::SetMaximumFrameLatency**](/windows/win32/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-setmaximumframelatency) API 來設定畫面延遲，而不是呼叫 [**IDXGIDevice1::SetMaximumFrameLatency**](/windows/win32/api/dxgi/nf-dxgi-idxgidevice1-setmaximumframelatency)。
 
 根據預設，會將適用於可等候交換鏈結的畫面延遲設為 1，這會盡可能產生最少的延遲，但也會降低 CPU-GPU 平行處理原則。 如果您需要提高 CPU-GPU 平行處理原則以達到 60 FPS (也就是說，如果 CPU 和 GPU 在框架處理轉譯工作時所花費的時間各少於 16.7 毫秒，但它們相加的總和大於 16.7 毫秒)，請將框架延遲設為 2。 這允許 GPU 處理在前一個框架期間由 CPU 排入佇列的工作，同時允許 CPU 獨立為目前框架提交轉譯命令。
 
@@ -68,10 +62,9 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 //    );
 ```
 
-## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>步驟 3：從交換鏈結取得可等候的物件
+## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>步驟 3： 從交換鏈取得可等候物件
 
-
-呼叫 [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject) 以擷取等候控制代碼。 等候控制代碼是指向可等候物件的指標。 儲存此控制代碼，以供您的轉譯迴圈使用。
+呼叫 [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](/windows/win32/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject) 以擷取等候控制代碼。 等候控制代碼是指向可等候物件的指標。 儲存此控制代碼，以供您的轉譯迴圈使用。
 
 ```cpp
 // Get the frame latency waitable object, which is used by the WaitOnSwapChain method. This
@@ -80,10 +73,9 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## <a name="step-4-wait-before-rendering-each-frame"></a>步驟 4：轉譯每個框架之前先等候
+## <a name="step-4-wait-before-rendering-each-frame"></a>步驟 4： 在轉譯每個畫面格之前等候
 
-
-您的轉譯迴圈在開始轉譯每個框架之前，應該先等候交換鏈結透過可等候的物件發出訊號。 這包含第一個使用交換鏈結轉譯的畫面。 使用 [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex)，提供步驟 2 中抓取的等候控制代碼，為每個畫面的開始發出訊號。
+您的轉譯迴圈在開始轉譯每個框架之前，應該先等候交換鏈結透過可等候的物件發出訊號。 這包含第一個使用交換鏈結轉譯的畫面。 使用 [**WaitForSingleObjectEx**](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobjectex)，提供步驟 2 中抓取的等候控制代碼，為每個畫面的開始發出訊號。
 
 下列範例顯示來自 DirectXLatency 範例的轉譯迴圈：
 
@@ -133,7 +125,6 @@ void DX::DeviceResources::WaitOnSwapChain()
 
 ## <a name="what-should-my-game-do-while-it-waits-for-the-swap-chain-to-present"></a>當我的遊戲在等候交換鏈結出現時應該做些什麼？
 
-
 如果您的遊戲不含任何會在轉譯迴圈上封鎖的工作，讓它等候交換鏈結出現就非常有利，因為能夠節省電力，這在行動裝置上特別重要。 否則，當您的遊戲在等候交換鏈結出現時，您可以使用多執行緒處理來完成工作。 以下只是一些您的遊戲可以完成的工作：
 
 -   處理網路事件
@@ -146,20 +137,11 @@ void DX::DeviceResources::WaitOnSwapChain()
 
 ## <a name="related-topics"></a>相關主題
 
-
-* [DirectXLatency 範例](https://code.msdn.microsoft.com/windowsapps/DirectXLatency-sample-a2e2c9c3)
-* [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
-* [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex)
-* [**Windows. 系統執行緒**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
-* [中的非同步程式設計C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
-* [進程和執行緒](https://docs.microsoft.com/windows/desktop/ProcThread/processes-and-threads)
-* [參與](https://docs.microsoft.com/windows/desktop/Sync/synchronization)
-* [使用事件物件（Windows）](https://docs.microsoft.com/windows/desktop/Sync/using-event-objects)
-
- 
-
- 
-
-
-
-
+* [DirectX 延遲範例應用程式](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/DirectX%20latency%20sample)
+* [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](/windows/win32/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
+* [**WaitForSingleObjectEx**](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobjectex)
+* [**Windows.System.Threading**](/uwp/api/Windows.System.Threading)
+* [C + + 中的非同步程式設計](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [進程和執行緒](/windows/win32/procthread/processes-and-threads)
+* [參與](/windows/win32/sync/synchronization)
+* [使用事件物件 (Windows)](/windows/win32/sync/using-event-objects)

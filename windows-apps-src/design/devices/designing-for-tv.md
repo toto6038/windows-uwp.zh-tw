@@ -13,16 +13,16 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 24cc85c255f26b61603690d6b39c3a6ffdcbb544
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209994"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970723"
 ---
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
-設計您的通用 Windows 平台 (UWP) 應用程式，讓它在 Xbox One 及電視螢幕上看起來既美觀又能正常運作。
+設計您的 Windows 應用程式，使其在 Xbox One 和電視畫面上看起來良好且功能良好。
 
 請參閱[遊戲台和遠端控制互動](../input/gamepad-and-remote-interactions.md)，以取得在*10 英尺*體驗中 UWP 應用程式互動體驗的指引。
 
@@ -32,7 +32,7 @@ ms.locfileid: "79209994"
 UWP 架構提供的大部分功能可讓 app 在這些裝置上使用相同的使用者介面 (UI)，無需進行額外的工作。
 不過，如果要量身打造並提供最佳化的 app 以便在 Xbox One 和電視螢幕上運作良好，則需要特殊考量。
 
-坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為 **「10 英呎體驗」** 。
+坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為「10 英呎體驗」。 
 這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。
 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。
 如果您為 Xbox One 或其他輸出至電視螢幕的裝置開發 app，並使用控制器做為輸入，您就必須記住這一點。
@@ -40,7 +40,7 @@ UWP 架構提供的大部分功能可讓 app 在這些裝置上使用相同的�
 您並非需要本篇文章中所有的步驟，才能讓 app 創造出 10 英呎體驗，但是了解這些步驟，為您的 app 做出適當的決定，可針對您的 app 特定需求，量身打造出更良好的 10 英呎體驗。
 當您打算在 10 英呎環境中運作您的 app 時，請考慮下列設計原則。
 
-### <a name="simple"></a>簡單
+### <a name="simple"></a>Simple
 
 針對 10 英呎環境的設計會產生一些獨特的挑戰。 解析度和檢視距離會讓人們很難處理太多資訊。
 請嘗試讓設計保持清晰，盡量精簡為最簡單的元件。 在電視上顯示的資訊量應該與在行動電話上 (而不是電腦上) 看到的內容差不多。
@@ -68,21 +68,21 @@ _**螢幕擷取畫面中顯示的所有電影都可在 Microsoft 電影 & TV 上
 
 | 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
-| [UI 元素調整大小](#ui-element-sizing)  | 通用 Windows 平台使用[縮放與有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)，根據檢視距離來調整 UI。 了解如何調整大小並套用到整個 UI，可協助最佳化 10 英呎環境的 app。  |
-|  [電視-安全區域](#tv-safe-area) | UWP 預設會自動避免在電視不安全的區域 (接近螢幕邊緣的區域) 中顯示任何 UI。 不過，這會產生一種「被框住」的效果，UI 看起來就像信箱一樣。 為了讓您的 app 能真正融入電視螢幕，您要加以修改，讓 app 在支援的電視能延伸到螢幕的邊緣。 |
-| [字體](#colors)  |  UWP 支援色彩佈景主題，優先採用系統佈景主題的 app 在 Xbox One 上將會預設為 **「深色」** 。 如果您的 app 有特定的色彩佈景主題，您應該考慮到有些色彩不適合電視，應盡量避免使用。 |
+| [調整 UI 元素大小](#ui-element-sizing)  | 通用 Windows 平台使用[縮放與有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)，根據檢視距離來調整 UI。 了解如何調整大小並套用到整個 UI，可協助最佳化 10 英呎環境的 app。  |
+|  [電視安全區域](#tv-safe-area) | UWP 預設會自動避免在電視不安全的區域 (接近螢幕邊緣的區域) 中顯示任何 UI。 不過，這會產生一種「被框住」的效果，UI 看起來就像信箱一樣。 為了讓您的 app 能真正融入電視螢幕，您要加以修改，讓 app 在支援的電視能延伸到螢幕的邊緣。 |
+| [色彩](#colors)  |  UWP 支援色彩主題，而與系統主題相關的應用程式在 Xbox One 上會預設為**深色**。 如果您的 app 有特定的色彩佈景主題，您應該考慮到有些色彩不適合電視，應盡量避免使用。 |
 | [音效](../style/sound.md)    | 音效聲音在 10 英呎體驗中扮演關鍵角色，其為使用者提供身歷其境的體驗與回應。 在 Xbox One 上執行 app 時，UWP 可提供針對通用控制項自動開啟音效的功能。 深入了解關於 UWP 內建音效支援及如何善用的詳細資訊。    |
 | [UI 控制項的指導方針](#guidelines-for-ui-controls)  |  提供數種可針對多部裝置良好運作的 UI 控制項，但當在電視上使用時具有特定考量。 深入了解有關針對 10 英呎體驗進行設計時使用這些控制項的一些最佳做法。 |
-| [Xbox 的自訂視覺狀態觸發程式](#custom-visual-state-trigger-for-xbox) | 若要針對 10 英呎體驗量身打造您的 UWP app，建議您使用自訂的 *「視覺狀態觸發程序」* ，在 App 偵測到它已在 Xbox 主機上啟動時變更配置。 |
+| [適用於 Xbox 的自訂視覺狀態觸發程序](#custom-visual-state-trigger-for-xbox) | 若要為您的 UWP 應用程式量身打造體驗，建議您在應用程式偵測到已在 Xbox 主控台上啟動時，使用自訂*視覺狀態觸發*程式來進行版面配置變更。 |
 
 除了上述的設計和配置考慮以外，您還可以在建立應用程式時考慮一些[遊戲和遠端控制互動](../input/gamepad-and-remote-interactions.md)優化。
 
 | 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY 焦點導覽和互動](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | **XY 焦點導覽**可讓使用者流覽應用程式的 UI。 不過，這限制使用者只能向上、向下、向左和向右瀏覽。 本節概述處理此功能和其他考量的建議。 |
+| [XY 焦點瀏覽和互動](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | **XY 焦點導覽**可讓使用者流覽應用程式的 UI。 不過，這限制使用者只能向上、向下、向左和向右瀏覽。 本節概述處理此功能和其他考量的建議。 |
 | [滑鼠模式](../input/gamepad-and-remote-interactions.md#mouse-mode)|對於某些類型的應用程式（例如地圖或繪製和繪製應用程式）而言，XY 焦點導覽並不實用，甚至可能。 在這些情況下，**滑鼠模式**可讓使用者自由流覽遊戲台或遙控器，就像在電腦上的滑鼠一樣。|
 | [焦點視覺效果](../input/gamepad-and-remote-interactions.md#focus-visual)  | 焦點視覺效果是強調目前焦點 UI 元素的框線。 這可協助使用者快速地識別他們導覽的 UI，或與其互動。  |
-| [專注參與](../input/gamepad-and-remote-interactions.md#focus-engagement) | 當 UI 元素具有焦點以與其互動時，焦點參與需要使用者在遊戲台或遠端控制上按**A/Select**按鈕。 |
+| [焦點佔用](../input/gamepad-and-remote-interactions.md#focus-engagement) | 當 UI 元素具有焦點以與其互動時，焦點參與需要使用者在遊戲台或遠端控制上按**A/Select**按鈕。 |
 | [硬體按鈕](../input/gamepad-and-remote-interactions.md#hardware-buttons) | 遊戲台和遠端控制提供非常不同的按鈕和設定。 |
 
 > [!NOTE]
@@ -95,13 +95,13 @@ _**螢幕擷取畫面中顯示的所有電影都可在 Microsoft 電影 & TV 上
 
 ### <a name="scale-factor-and-adaptive-layout"></a>縮放比例與調適型配置
 
-**「縮放比例」** 有助於確保 UI 元素以適合 app 執行裝置的大小顯示。
+**縮放比例**有助於確保 UI 元素會以對執行應用程式之裝置的適當大小來顯示。
 在桌面上，您可以在 **\[設定\] &gt; \[系統\] &gt; \[顯示\]** 中找到這個設定，以滑動值表示。
 手機上也有這個相同的設定 (如果裝置支援)。
 
 ![變更文字、app 與其他項目的大小](images/designing-for-tv/ui-scaling.png)
 
-Xbox One 上沒有這類系統設定。不過，如果要適當調整 UWP UI 元素的大小以適用於電視，預設會針對 XAML app 將它們調整為 **200%** ，以及針對 HTML app 調整為 **150%** 。
+Xbox One 上沒有這類系統設定。不過，如果要適當調整 UWP UI 元素的大小以適用於電視，預設會針對 XAML app 將它們調整為 **200%**，以及針對 HTML app 調整為 **150%**。
 只要 UI 元素能針對其他裝置適當調整大小，就能針對電視適當調整大小。
 Xbox One 以 1080p (1920 x 1080 像素) 呈現您的 app。 因此，從電腦等其他裝置帶入 app 時，請確定採用[調適型技術](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)，以 100% 縮放比例讓 UI 呈現 960 x 540 像素的最佳外觀 (或針對 HTML app 以 100% 縮放比例呈現 1280 x 720 像素的最佳外觀)。
 
@@ -122,7 +122,7 @@ Xbox One 以 1080p (1920 x 1080 像素) 呈現您的 app。 因此，從電腦�
 
 #### <a name="number-of-clicks"></a>點選次數
 
-使用者從電視螢幕一邊瀏覽到另一邊時，以不超過 **「點選六次」** 的原則來簡化您的 UI。 同樣地，這裡適用 **「簡單」** 的原則。 
+當使用者從電視螢幕的某個邊緣導覽到另一個畫面時，應該不會再按六下**滑鼠**來簡化您的 UI。 同樣地，這裡的**簡單性**原則也適用。 
 
 ![跨 6 個圖示](images/designing-for-tv/six-clicks.png)
 
@@ -147,11 +147,11 @@ bool result =
     Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
 ```
 
-`result` 會通知您是否已成功退出宣告。
+`result`會通知您是否已成功退出宣告。
 
 如需詳細資訊 (包括適用於 HTML/JavaScript 的範例程式碼)，請參閱[如何關閉縮放比例](../../xbox-apps/disable-scaling.md)。
 
-請務必將本主題中所述的 *「有效」* 像素值加倍來得到 *「實際」* 像素值 (或針對 HTML app 乘以 1.5)，藉以計算出 UI 元素的適當大小。
+請務必計算適當的 UI 元素大小，方法是將本主題中提及的*有效*圖元值加倍到*實際*圖元值（或針對 HTML 應用程式乘以1.5）。
 
 ## <a name="tv-safe-area"></a>電視安全區域
 
@@ -170,7 +170,7 @@ bool result =
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 ```
 
-### <a name="image"></a>影像
+### <a name="image"></a>映像
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -198,7 +198,7 @@ bool result =
 
 對於只針對 10 英呎體驗的 UWP app，使用核心視窗界限是比較簡單的選項。
 
-在 `OnLaunched` 的 `App.xaml.cs` 方法中，新增下列程式碼：
+在 `App.xaml.cs` 的 `OnLaunched` 方法中，新增下列程式碼：
 
 ```csharp
 Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode
@@ -239,7 +239,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 </SplitView>
 ```
 
-[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 是另一個常放在 app 一邊或多邊附近的窗格範例，也因此其背景應該延伸到電視螢幕邊緣。 它通常也包含一個 **\[更多\]** 按鈕 (在右邊以 "..." 代表)，此按鈕應該留在電視安全區域中。 以下是可達到所需的互動和視覺效果的幾個不同策略。
+[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 是另一個常放在 app 一邊或多邊附近的窗格範例，也因此其背景應該延伸到電視螢幕邊緣。 它通常也會包含 [**更多**] 按鈕，以 "..." 表示右側應該會保留在電視安全區域中。 以下是可達到所需的互動和視覺效果的幾個不同策略。
 
 **選項 1**︰將 `CommandBar` 背景色彩變更為透明或與頁面背景相同的色彩︰
 
@@ -266,7 +266,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 ```
 
 > [!NOTE]
-> 如果使用這個方法，請注意 **\[更多\]** 按鈕會視需要變更所開啟之 `CommandBar` 的高度，以便在 `AppBarButton` 的圖示之下顯示其標籤。 建議您將標籤移到其圖示的 *「右側」* ，以避免發生調整大小的情況。 如需詳細資訊，請參閱 [CommandBar 標籤](#commandbar-labels)。
+> 如果使用這種方法，請注意 [**更多**] 按鈕會在必要時`CommandBar`變更已開啟的高度，以便在其圖示下方`AppBarButton`顯示的標籤。 我們建議您將標籤移至圖示的*右邊*，以避免調整大小。 如需詳細資訊，請參閱 [CommandBar 標籤](#commandbar-labels)。
 
 這兩種方法也適用於本節所列的其他類型的控制項。
 
@@ -333,7 +333,7 @@ UWP 具有可將視覺焦點保留在 [VisibleBounds](https://docs.microsoft.com
 > [!NOTE]
 > 這個程式碼片段是特別針對 `ListView`；如果是 `GridView` 樣式，請將 [ControlTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) 和 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的 [TargetType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 屬性都設定為 `GridView`。
 
-若要更精細地控制專案如何進入視圖，如果您的應用程式是以1803版或更新版本為目標，您可以使用[BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 您可以將它放在**ListView**/**GridView**的[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)上，以便在內部**ScrollViewer**完成之前攔截，如下列程式碼片段所示：
+若要更精細地控制專案如何進入視圖，如果您的應用程式是以1803版或更新版本為目標，您可以使用[BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 您可以將它放在 [ **ListView**/]**GridView**的[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)上，以便在內部**ScrollViewer**完成之前攔截，如下列程式碼片段所示：
 
 ```xaml
 <GridView x:Name="gridView">
@@ -387,16 +387,16 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 
 ### <a name="application-theme"></a>應用程式佈景主題
 
-您可以根據適合 app 的方式選擇 **「應用程式佈景主題」** (深色或淺色)，或者選擇不使用佈景主題。 請在[色彩佈景主題](../style/color.md)中閱讀更多有關佈景主題的一般建議。
+您可以根據應用程式的最適合來選擇**應用程式主題**（深色或淺色），也可以選擇不使用主題。 請在[色彩佈景主題](../style/color.md)中閱讀更多有關佈景主題的一般建議。
 
 UWP 也能讓 app 根據執行的裝置所提供的系統設定，動態設定佈景主題。
 雖然 UWP 一律會優先採用使用者指定的佈景主題設定，但是每個裝置也會提供適當的預設佈景主題。
-由於 Xbox One 的 *「媒體」* 體驗要求比 *「生產力」* 體驗要求還高，因此預設為深色的系統佈景主題。
+由於 Xbox One 的本質，其預期會有比*生產力*經驗更多的*媒體*體驗，因此預設為深色系統主題。
 如果您的 app 佈景主題是根據系統設定，在 Xbox One 上就會預設為深色。
 
 ### <a name="accent-color"></a>輔色
 
-UWP 提供一個很方便的方式可以公開使用者從其系統設定選取的 **「輔色」** 。
+UWP 提供便利的方式來公開使用者從其系統設定選取的**輔色**。
 
 使用者可以在 Xbox One 上選取使用者的色彩，就如同在電腦上選取輔色一樣。
 只要您的 app 透過筆刷或色彩資源呼叫這些輔色，就會採用使用者在系統設定中選取的色彩。 請注意，Xbox One 上的輔色依使用者 (不是依系統) 而定。
@@ -436,11 +436,11 @@ UWP 提供一個很方便的方式可以公開使用者從其系統設定選取�
 
 您可以將 [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 屬性設定為 `true`，如此就能讓樞紐一律保持在相同位置上，而不會讓選取的樞紐標頭總是移到第一個位置。 對於大螢幕顯示器 (例如電視)，這會是更好的體驗，因為標頭換行可能會讓使用者分心。 如果不能在螢幕上同時顯示所有的樞紐標頭，即會提供捲軸，讓客戶能夠看見其他標頭。不過，您應該確定它們全都會顯示於螢幕上以提供最佳體驗。 如需詳細資訊，請參閱[索引標籤和樞紐](/windows/uwp/design/controls-and-patterns/pivot)。
 
-### <a name="navigation-pane-a-namenavigation-pane-"></a>瀏覽窗格 <a name="navigation-pane" />
+### <a name="navigation-pane"></a>瀏覽窗格 <a name="navigation-pane" />
 
-瀏覽窗格 (也稱為 *「漢堡式功能表」* ) 是 UWP app 中常用的瀏覽控制項。 它一般會是一個含有清單樣式功能表的窗格，功能表中有數個可供選擇的選項，可將使用者帶到不同的頁面。 這個窗格通常一開始會摺疊起來以節省空間，使用者按一下按鈕即可將它開啟。
+流覽窗格（也稱為*漢堡功能表*）是 UWP 應用程式中常用的導覽控制項。 它一般會是一個含有清單樣式功能表的窗格，功能表中有數個可供選擇的選項，可將使用者帶到不同的頁面。 這個窗格通常一開始會摺疊起來以節省空間，使用者按一下按鈕即可將它開啟。
 
-使用滑鼠和觸控可以很容易存取瀏覽窗格，但使用遊戲台/遙控器遠端則較難存取瀏覽窗格，因為使用者必須瀏覽到按鈕才能開啟窗格。 因此，理想的做法是讓 **「檢視」** 按鈕開啟瀏覽窗格，以及讓使用者能夠一路瀏覽到頁面左邊來開啟窗格。 如何實作這個設計模式的程式碼範例位於[程式設計焦點瀏覽](../input/focus-navigation-programmatic.md#split-view-code-sample)文件。 這將讓使用者非常容易存取窗格的內容。 如需有關瀏覽窗格在不同螢幕大小中如何運作的詳細資訊，以及適用於遊戲台/遙控器瀏覽的最佳做法，請參閱[瀏覽窗格](../controls-and-patterns/navigationview.md)。
+使用滑鼠和觸控可以很容易存取瀏覽窗格，但使用遊戲台/遙控器遠端則較難存取瀏覽窗格，因為使用者必須瀏覽到按鈕才能開啟窗格。 因此，最好的作法是讓 [View] 按鈕開啟**流覽**窗格，也可以讓使用者在頁面左側流覽所有方式來開啟它。 如何實作這個設計模式的程式碼範例位於[程式設計焦點瀏覽](../input/focus-navigation-programmatic.md#split-view-code-sample)文件。 這將讓使用者非常容易存取窗格的內容。 如需有關瀏覽窗格在不同螢幕大小中如何運作的詳細資訊，以及適用於遊戲台/遙控器瀏覽的最佳做法，請參閱[瀏覽窗格](../controls-and-patterns/navigationview.md)。
 
 ### <a name="commandbar-labels"></a>CommandBar 標籤
 
@@ -462,13 +462,13 @@ UWP 提供一個很方便的方式可以公開使用者從其系統設定選取�
 
 巢狀的 UI 會公開容器 UI 元素內部包含的巢狀可動作項目，其中巢狀項目與容器項目都可以各自獨立取得焦點。
 
-對於某些輸入類型，巢狀的 UI 能夠良好運作，但對於依賴 XY 導覽的遊戲台與遙控器，則不一定能夠良好運作。 請務必遵循本主題中的指導方針，以確保您的 UI 能夠針對 10 英呎環境最佳化，讓使用者能夠輕鬆地存取所有可互動的元素。 其中一個常見的解決方案是將嵌套的 UI 元素放在 `ContextFlyout`中。
+對於某些輸入類型，巢狀的 UI 能夠良好運作，但對於依賴 XY 導覽的遊戲台與遙控器，則不一定能夠良好運作。 請務必遵循本主題中的指導方針，以確保您的 UI 能夠針對 10 英呎環境最佳化，讓使用者能夠輕鬆地存取所有可互動的元素。 其中一個常見的解決方案是將嵌套的 UI 元素`ContextFlyout`放在中。
 
 如需巢狀 UI 的詳細資訊，請參閱[清單項目中的巢狀 UI](../controls-and-patterns/nested-ui.md)。
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-[MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 元素提供預設的播放體驗，讓使用者可以與其媒體互動 (播放、暫停、開啟隱藏式輔助字幕等等)。 這個控制項是 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 的屬性，且支援兩種配置選項： *「單列」* 和 *「雙列」* 。 在單列配置中，滑桿與播放按鈕都會在同一列上，且播放/暫停按鈕會在滑桿左邊。 在雙列配置中，滑桿會自成一列，而播放按鈕則位於下方另一列上。 針對 10 英呎體驗設計時，應使用雙列配置，因為它能為控制器提供較佳的瀏覽。 若要啟用雙列配置，請在 `IsCompact="False"` 的 `MediaTransportControls`TransportControls[ 屬性中的 ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) 元素上設定 `MediaPlayerElement`。
+[MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 元素提供預設的播放體驗，讓使用者可以與其媒體互動 (播放、暫停、開啟隱藏式輔助字幕等等)。 這個控制項是[MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)的屬性，並支援兩種配置選項：*單一資料列*和*雙列*。 在單列配置中，滑桿與播放按鈕都會在同一列上，且播放/暫停按鈕會在滑桿左邊。 在雙列配置中，滑桿會自成一列，而播放按鈕則位於下方另一列上。 針對 10 英呎體驗設計時，應使用雙列配置，因為它能為控制器提供較佳的瀏覽。 若要啟用雙列配置，請在 `MediaPlayerElement` 的 [TransportControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) 屬性中的 `MediaTransportControls` 元素上設定 `IsCompact="False"`。
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -499,7 +499,7 @@ UWP 提供一個很方便的方式可以公開使用者從其系統設定選取�
 
 ## <a name="custom-visual-state-trigger-for-xbox"></a>適用於 Xbox 的自訂視覺狀態觸發程序
 
-若要針對 10 英呎體驗量身打造您的 UWP app，建議您在 App 偵測到它已在 Xbox 主機上啟動時變更配置。 若要這麼做，其中一個方法是使用 *「視覺狀態觸發程序」* 。 當您想要在 **Blend for Visual Studio** 中進行編輯時，視覺狀態觸發程序最為實用。 下列程式碼片段示範如何建立適用於 Xbox 的視覺狀態觸發程序：
+若要針對 10 英呎體驗量身打造您的 UWP app，建議您在 App 偵測到它已在 Xbox 主機上啟動時變更配置。 執行此動作的其中一種方式是使用自訂*視覺狀態觸發*程式。 當您想要在 **Blend for Visual Studio** 中進行編輯時，視覺狀態觸發程序最為實用。 下列程式碼片段示範如何建立適用於 Xbox 的視覺狀態觸發程序：
 
 ```xml
 <VisualStateManager.VisualStateGroups>
@@ -560,12 +560,12 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 接著，您可以在這項檢查之後，在程式碼區塊中適當調整 UI。 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 針對 10 英呎經驗的設計已納入特殊考量，使其有別於其他所有平台的設計。 您當然可以直接將 UWP app 移植至 Xbox One 且它亦可運作，但它不一定是針對 10 英呎體驗最佳化，且會讓使用者感到失望。 遵循本文所述的指導方針，以確定 app 在電視上仍可呈現優異效果。
 
 ## <a name="related-articles"></a>相關文章
 
-- [通用 Windows 平臺（UWP）應用程式的裝置入門](index.md)
-- [遊戲控制器與遙控器的互動](../input/gamepad-and-remote-interactions.md) \(部分機器翻譯\)
-- [UWP 應用程式中的音效](../style/sound.md)
+- [適用于 Windows 應用程式的裝置入門](index.md)
+- [遊戲台與遙控器的互動](../input/gamepad-and-remote-interactions.md)
+- [UWP app 中的音效](../style/sound.md)

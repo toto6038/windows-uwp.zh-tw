@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 程式設計
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ecf6e4c28695d789a133c96d6fa04ceb705ef3e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a87b979dc48f8977047599cac6a32ba0d901bd63
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258532"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606357"
 ---
 # <a name="game-programming-resources"></a>遊戲程式設計資源
 
@@ -24,7 +24,7 @@ ms.locfileid: "74258532"
 
 
 -   [圖形和遊戲](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
--   [OpenGL 參考](https://www.opengl.org/sdk/docs/man4/)
+-   [OpenGL 參考資料](https://www.opengl.org/sdk/docs/man4/)
 
 ## <a name="game-design-guidance"></a>遊戲設計指引
 
@@ -34,15 +34,15 @@ ms.locfileid: "74258532"
 ## <a name="blogs"></a>部落格
 
 
--   [Windows 和 DirectX SDK 遊戲]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [DirectX 開發人員 Blog]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
--   [Shawn Hargreaves 部落格]( https://go.microsoft.com/fwlink/p/?LinkID=288872) (XNA 遊戲資訊)。
+-   [適用於 Windows 與 DirectX SDK 的遊戲]( https://blogs.msdn.com/b/chuckw/)
+-   [DirectX 開發人員部落格]( https://blogs.msdn.com/b/directx/)
+-   [Shawn Hargreaves 部落格]( https://blogs.msdn.com/b/shawnhar/) (XNA 遊戲資訊)。
 
 ## <a name="toolkits"></a>工具組
 
 
--   [DirectX 工具套件](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [DirectXTex 材質處理程式庫](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
+-   [DirectX 工具組](  https://github.com/Microsoft/DirectXTK)
+-   [DirectXTex 紋理處理程式庫](  https://github.com/Microsoft/DirectXTex)
 -   Microsoft Visual Studio [圖形診斷](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
 -   [Win2D](https://github.com/Microsoft/Win2D) - 方便使用的 Windows 執行階段 API，適用於搭配 GPU 加速的直接模式 2D 圖形轉譯。
 -   [Microsoft Store 的角度](https://github.com/microsoft/angle/wiki)-藉由將 OPENGL es api 呼叫轉譯為 DIRECTX 11 api 呼叫，在 Windows 上執行 opengl es 內容。
@@ -50,9 +50,9 @@ ms.locfileid: "74258532"
 ## <a name="gdc-2015-game-dev-session-videos"></a>GDC 2015 遊戲開發課程影片
 
 
--   [Microsoft 生態圈遊戲的未來](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
+-   [Microsoft 生態系統的遊戲未來](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer (英文)
 -   [開發 Windows 10 的遊戲](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) – Chris Tector、Don Xbox
--   [進階 DirectX 12 圖形與效能](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen
+-   [進階 DirectX 12 圖形與效能](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen (英文)
 -   [Windows 10 上的遊戲消費者體驗](https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) – Bill Schiefelbein
 -   [獨立開發人員的新機會](https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) – Chris Charla
 -   [使用 Windows 10 的 Xbox Live 來開發](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) – Vijay Gajjala、Brian Tyler

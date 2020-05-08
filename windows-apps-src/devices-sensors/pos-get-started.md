@@ -1,22 +1,22 @@
 ---
 title: 開始使用服務點
-description: 本文包含有關如何開始使用服務點 UWP API 的資訊
+description: 本文包含開始使用服務點 Windows 執行階段 Api 的相關資訊。
 ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: d059f0e33f7343fa0ac9919a243008ed486e31ff
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: f5f19d1337a7ae49f46ab65d8420fedb775eeb2f
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63772738"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730379"
 ---
 # <a name="getting-started-with-point-of-service"></a>開始使用服務點
 
 服務點、銷售點或服務點裝置是用來協助零售交易的電腦週邊設備。 服務點裝置的範例包括電子收銀機、條碼掃描器、磁條讀取器和收據印表機。
 
-您將從本文了解使用通用 Windows 平台 (UWP) PointOfService API 銜接服務點裝置的基本概念。 我們會討論裝置列舉、檢查裝置功能、宣告裝置和裝置共用。 我們使用條碼掃描器裝置做為範例，但幾乎這裡所有的指引都適用於任何 UWP 相容的服務點裝置。 (如需所支援裝置的清單，請參閱 [服務點裝置支援](pos-device-support.md))。
+在這裡，您將瞭解使用 Windows 執行階段點服務 Api 來與服務點互動的基本概念。 我們會討論裝置列舉、檢查裝置功能、宣告裝置和裝置共用。 我們使用條碼掃描器裝置做為範例，但幾乎這裡所有的指引都適用於任何 UWP 相容的服務點裝置。 (如需所支援裝置的清單，請參閱 [服務點裝置支援](pos-device-support.md))。
 
 ## <a name="finding-and-connecting-to-point-of-service-peripherals"></a>找出和連接至服務點週邊設備
 
@@ -152,7 +152,7 @@ catch (Exception ex)
 ```
 
 ### <a name="retaining-the-device"></a>保留裝置
-透過網路或藍牙連線使用服務點裝置時，您可能希望與網路上的其他應用程式共用該裝置  (如需詳細資訊的詳細資訊，請參閱[共用裝置](#sharing-a-device-between-apps)。)在其他情況下，您可能想要保留長時間使用的裝置。 此範例示範如何在其他應用程式要求釋放已宣告的條碼掃描器之後保留該裝置。
+透過網路或藍牙連線使用服務點裝置時，您可能希望與網路上的其他應用程式共用該裝置  (如需詳細資訊，請參閱[共用裝置](#sharing-a-device-between-apps))。有時候，您可能想要佔住裝置長時間使用。 此範例示範如何在其他應用程式要求釋放已宣告的條碼掃描器之後保留該裝置。
 
 ```Csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
@@ -209,8 +209,8 @@ if (claimedBarcodeScanner != null)
 
 ## <a name="see-also"></a>另請參閱
 + [條碼掃描器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [現金隱藏式選單的範例]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
-+ [列顯示範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
++ [收銀機範例]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
++ [行顯示範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
 + [磁條讀取器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
-+ [POSPrinter 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
++ [POS 印表機範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
 

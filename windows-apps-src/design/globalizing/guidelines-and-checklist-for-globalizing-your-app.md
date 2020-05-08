@@ -8,12 +8,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c68baf991b3fd939a6e6ee681700977a5a5eb9
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f08c8178781c82e8961fd180d4b75912359b4da9
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258082"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730269"
 ---
 # <a name="guidelines-for-globalization"></a>全球化指導方針
 
@@ -25,7 +25,7 @@ ms.locfileid: "74258082"
 | 在整理 (排序) 字串和其他資料時，不要假設該作業總是按照字母順序進行。 | 針對並非使用拉丁文書寫體的語言，整理是以像是發音或筆畫數等要素作為基礎的。 即使是使用拉丁文書寫體的語言，也不一定會依字母順序排序。 例如，在某些文化特性中，電話簿可能不是依字母順序排序。 Windows 可以為您處理排序，但是如果您建立自己的排序演算法，則務必將目標市場所使用的排序方法納入考量。 |
 | 使用適當格式的數字、日期、時間、地址及電話號碼。 | 這些格式在不同文化、地區、語言和市場間都有所不同。 若要顯示這些資料，請使用 [**Globalization**](/uwp/api/Windows.Globalization?branch=live) API 取得適用於特定對象的適當格式。 請參閱[全球化您的日期/時間/數字格式](use-global-ready-formats.md)。 姓氏與名稱顯示的順序，以及地址的格式等也會有所不同。 請使用標準日期、時間及數字顯示。 請使用標準日期和時間選擇器控制項。 請使用標準地址資訊。 |
 | 支援國際度量單位和貨幣。 | 即使最普遍的是公制系統和英制系統，但是，不同的國家或地區還是會使用不同的單位和比例。 如果您處理像是長度、溫度或面積等度量，請務必支援正確系統度量單位。 使用 [**GeographicRegion.CurrenciesInUse**](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse) 屬性取得在特定地區中使用的貨幣組。 |
-| 使用 Unicode 進行字元編碼。 | 根據預設，Microsoft Visual Studio 會使用 Unicode 字元編碼所有文件。 如果您使用不同的編輯器，務必以適當的 Unicode 字元編碼儲存來源檔案。 所有 UWP API 都會傳回 UTF-16 編碼的字串。 |
+| 使用 Unicode 進行字元編碼。 | 根據預設，Microsoft Visual Studio 會使用 Unicode 字元編碼所有文件。 如果您使用不同的編輯器，務必以適當的 Unicode 字元編碼儲存來源檔案。 所有 Windows 執行階段 API 都會傳回 UTF-16 編碼的字串。 |
 | 支援國際紙張大小。 | 最常用的紙張大小會因為國家或地區而不同，所以，如果您包含根據紙張大小而定的功能 (例如，列印)，請確定可支援常用的國際紙張大小並加以測試。 |
 | 記錄鍵盤或 IME 的語言。 | 當您的應用程式要求使用者輸入文字時，記錄目前啟用之鍵盤配置或輸入法編輯器 (IME) 的語言標記。 這可確保在稍後顯示輸入時，會以正確的格式顯示給使用者。 使用 [**Language.CurrentInputMethodLanguageTag**](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag) 屬性取得目前的輸入語言。 |
 | 請不要使用語言來假設使用者的地區；也請不要使用地區來假設使用者的語言。 | 語言和地區是不同的概念。 使用者可以使用語言的特殊地區變體 (例如，en-GB 是英國使用的英文，但是使用者可能在完全不同的國家或地區)。 考量您的應用程式是否需要關於使用者語言 (例如針對 UI 文字) 或地區 (例如針對授權問題) 的知識。 如需詳細資訊，請參閱[了解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)。 |
@@ -36,16 +36,16 @@ ms.locfileid: "74258082"
 
 ## <a name="important-apis"></a>重要 API
  
-* [身](/uwp/api/Windows.Globalization?branch=live)
+* [全球化](/uwp/api/Windows.Globalization?branch=live)
 * [GeographicRegion.CurrenciesInUse](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
-* [Language. CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
-* [Windows. 全球化字型](/uwp/api/windows.globalization.fonts?branch=live)
+* [Language.CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
+* [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live)
 
 ## <a name="related-topics"></a>相關主題
 
 * [字串使用方式的建議](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
-* [全球化您的日期/時間/數位格式](use-global-ready-formats.md)
-* [瞭解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)
+* [全球化您的日期/時間/數字格式](use-global-ready-formats.md)
+* [了解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)
 * [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)
 * [應用程式資源和資源管理系統](../../app-resources/index.md)
 * [資源管理系統如何比對語言標記](../../app-resources/how-rms-matches-lang-tags.md)

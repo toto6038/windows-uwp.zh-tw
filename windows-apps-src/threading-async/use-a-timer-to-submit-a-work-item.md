@@ -6,20 +6,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, timer, threads, Windows 10, uwp, 計時器, 執行緒
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bd870858bbccffa07b082384ae6ddea987b67f2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1b5c0982c10cde25fc5f61314c540c194d6519a2
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258922"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619332"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用計時器提交工作項目
 
 
 <b>重要 API</b>
 
--   [**Windows. UI. Core 命名空間**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
--   [**Windows. 執行緒命名空間**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+-   [**Windows.UI.Core 命名空間**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+-   [**Windows.System.Threading 命名空間**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
 
 了解如何建立在計時器過後執行的工作項目。
 
@@ -27,7 +27,7 @@ ms.locfileid: "74258922"
 
 使用 [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) 方法建立工作項目的計時器。 提供完成工作的 Lambda，以及使用 *delay* 參數指定執行緒集區需要等待多久的時間，才能將工作項目指派給可用的執行緒。 延遲使用 [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) 結構指定。
 
-> **請注意**  您可以使用[**COREDISPATCHER**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)來存取 UI，並顯示工作專案的進度。
+> **注意**  您可以使用[**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)來存取 UI，並顯示工作專案的進度。
 
 下列範例會建立一個在三分鐘內執行的工作項目：
 
@@ -221,7 +221,7 @@ ms.locfileid: "74258922"
 
 通用 Windows 平台 (UWP) app 無法使用 **Thread.Sleep**，因為它會封鎖 UI 執行緒。 您可以改為使用 [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) 來建立工作項目，這將會延遲由該工作項目完成的工作，而且不會封鎖 UI 執行緒。
 
-如需示範工作項目、計時器工作項目以及定期工作項目的完整程式碼範例，請參閱[執行緒集區範例](https://code.msdn.microsoft.com/windowsapps/Pool-Sample-5aa60454)。 程式碼範例原本是為了 Windows 8.1 而撰寫的，但可在 Windows 10 中重複使用程式碼。
+如需示範工作項目、計時器工作項目以及定期工作項目的完整程式碼範例，請參閱[執行緒集區範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample)。 程式碼範例原本是針對 Windows 8.1 而撰寫的，但程式碼可以在 Windows 10 中重複使用。
 
 如需重複計時器的詳細資訊，請參閱[建立定期工作項目](create-a-periodic-work-item.md)。
 

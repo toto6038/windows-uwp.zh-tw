@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc8fecd7a5a1596d074c170d7a7211126e88b8ae
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 67bba732efd199c5093bb75e9b0a2c41b67e568c
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684867"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148576"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服務類別識別碼
 
@@ -72,7 +72,7 @@ app 開發人員應該根據類別識別碼使用進階的查詢語法 (AQS) 篩
 
  
 
-如需可用藍芽服務的更完整清單，請參閱藍芽的通訊協定和服務頁面[這裡](https://go.microsoft.com/fwlink/p/?LinkID=619586)和[這裡](https://go.microsoft.com/fwlink/p/?LinkID=619587)。 您也可以使用 [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids)API 來取得一些常見的 GATT 服務。
+如需可用藍芽服務的更完整清單，請參閱藍芽的通訊協定和服務頁面[這裡](https://www.bluetooth.org/en-us/specification/assigned-numbers/service-discovery)和[這裡](https://go.microsoft.com/fwlink/p/?LinkID=619587)。 您也可以使用 [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids)API 來取得一些常見的 GATT 服務。
 
 ## <a name="custom-bluetooth-le-services"></a>自訂藍芽 LE 服務
 
@@ -88,7 +88,7 @@ UPnP 服務會使用下列通訊協定識別碼：{0e261de4-12f0-46e6-91ba-42860
 
 | 服務名稱                       | GUID                                      |
 |------------------------------------|-------------------------------------------|
-| 連線管理員                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| [ODBC 來源編輯器]                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
 | AV 傳輸                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
 | 轉譯控制                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | 第三層轉送                 | **97d477fa-f403-577b-a714-b29a9007797f**  |

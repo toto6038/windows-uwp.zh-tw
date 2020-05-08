@@ -1,25 +1,25 @@
 ---
-Description: 視覺化檢視是新的通用 Windows 平台 (UWP) 應用程式，可協助開發人員設計彈性的存放區中的通知適用於 Windows 10 動態磚。
+Description: 通知視覺化工具是 Store 中新的 Windows App 應用程式，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
 title: 通知視覺化工具
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e2bb5a450aebdf38f3d4f1a710f3537544dcddd6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c8d355570ef7002d1424457bf29f8161680f2c77
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616673"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971033"
 ---
 # <a name="notifications-visualizer"></a>通知視覺化工具
 
  
 
 
-通知視覺化檢視是新的通用 Windows 平台 (UWP) 應用程式[存放區中](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)，可協助開發人員設計調適性的動態磚和適用於 Windows 10 的互動式的快顯通知。
+通知視覺化檢視是[存放區中](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)的新 Windows 應用程式，可協助開發人員設計適用于 Windows 10 的調適型動態磚和互動式快顯通知。
 
 
 ## <a name="overview"></a>概觀
@@ -34,11 +34,11 @@ ms.locfileid: "57616673"
 
 使用通知視覺化檢視，您可以建立及測試彈性磚和快顯通知承載，不需要編輯和部署您自己的應用程式。 建立含有理想的視覺效果的承載後，您便可將它整合到您的應用程式。 若要深入了解，請參閱[傳送本機磚通知](sending-a-local-tile-notification.md)和[傳送本機快顯通知](send-local-toast.md)。
 
-**附註**  通知視覺化檢視模擬的 Windows [開始] 功能表和快顯通知未必完全正確，並不支援某些進階的裝載屬性。 當您有想要的磚或快顯通知時，請釘選磚或彈出快顯通知來測試它，確認它顯示為您想要的樣子。
+**注意：**   通知視覺化檢視的 Windows [開始] 功能表和快顯通知的模擬不一定完全精確，而且也不支援某些 advanced 裝載屬性。 當您有想要的磚或快顯通知時，請釘選磚或彈出快顯通知來測試它，確認它顯示為您想要的樣子。
 
  
 
-## <a name="features"></a>功能
+## <a name="features"></a>特性
 
 通知視覺化檢視隨附數個範例承載，以展示彈性動態磚和互動式快顯通知可能的型態並協助您開始。 您可以實驗所有不同的文字選項、群組/子群組、背景影像，而且您可以看到磚如何適應不同的裝置和螢幕。 在您變更後，您可以將更新的承載儲存為檔案以供日後使用。
 
@@ -54,6 +54,6 @@ ms.locfileid: "57616673"
 
 ## <a name="related-topics"></a>相關主題
 
-* [取得存放區中的通知視覺化檢視](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
-* [建立自動調整圖格](create-adaptive-tiles.md)
-* [互動式的快顯通知](adaptive-interactive-toasts.md)
+* [在市集中取得通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
+* [建立彈性磚](create-adaptive-tiles.md)
+* [互動式快顯通知](adaptive-interactive-toasts.md)

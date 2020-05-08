@@ -1,22 +1,22 @@
 ---
-Description: 了解如何 Fluent 影片使用方向性以及重力。
-title: 方向性和重力 - UWP app 中的動畫
+Description: 瞭解流暢動作如何使用方向和引力。
+title: 方向和引力-Windows 應用程式中的動畫
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8f1e36f0febeeaac5a12d408d7be8a717f0ab398
-ms.sourcegitcommit: 7c3b88198178d6f6a535f35e1bf8665410d41d92
+ms.openlocfilehash: ddcfac5e36500a8fc6dc41c7c86037f5a1483203
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67569118"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970643"
 ---
 # <a name="directionality-and-gravity"></a>方向性和重力
 
@@ -43,11 +43,11 @@ ms.locfileid: "67569118"
 
 :::row:::
     :::column:::
-移動的方向會對應至實體的動作。 就像大自然中，物件可在任何世界軸 (X、Y、Z) 移動。 這就是我們想像螢幕上物件如何移動的情況。
-當您移動物件時，避免發生非自然的衝突。 請記住，其中物件是來自移至，並一律支援場景，例如捲動方向 或 版面配置階層中的 可用的較高層級建構。
+移動方向對應于實體動作。 就像大自然中，物件可在任何世界軸 (X、Y、Z) 移動。 這就是我們想像螢幕上物件如何移動的情況。
+當您移動物件時，請避免發生非自然衝突。 請記住，物件來自並移至的位置，而且一律支援可能用於場景中的較高層級結構，例如 [捲軸] 或 [版面配置階層]。
     :::column-end:::
     :::column:::
-        ![direction backward in](images/Direction.gif)
+        ![後進方向](images/Direction.gif)
     :::column-end:::
 :::row-end:::
 
@@ -65,7 +65,7 @@ ms.locfileid: "67569118"
 
 當瀏覽造成螢幕上的項目遭到更換，很重要的一點是須顯示退出的場景退到哪裡，新的場景來自哪裡。
 
-這有幾個優點：
+這有幾項優點：
 
 - 它強化使用者的空間心理模式。
 - 退出場景的持續時間提供更多時間準備內容讓傳入的場景做動畫效果。
@@ -75,34 +75,34 @@ ms.locfileid: "67569118"
 
 :::row:::
     :::column:::
-**正向中**慶祝連出的內容不衝突的方式輸入場景的內容。 內容減速場景。
+**向前**以不會與外寄內容衝突的方式來輸入場景的慶祝內容。 內容減速進入場景。
     :::column-end:::
     :::column:::
-        ![direction forward in](images/forwardIN.gif)
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-**正向外延展**內容快速結束。 關閉螢幕，加速物件。
-    :::column-end:::
-    :::column:::
-        ![direction forward out](images/forwardOUT.gif)
+        ![方向向前](images/forwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-**回溯單元**與正向中相同但反轉。
+**向前快**轉內容很快就會結束。 物件的加速畫面。
     :::column-end:::
     :::column:::
-        ![direction backward in](images/backwardIN.gif)
+        ![向外方向](images/forwardOUT.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-**回溯外**相同順向外擴充，但反轉。
+**後**置與正向，但相反。
     :::column-end:::
     :::column:::
-        ![direction backward out](images/backwardOUT.gif)
+        ![後進方向](images/backwardIN.gif)
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+**向外**與順向外，但相反。
+    :::column-end:::
+    :::column:::
+        ![方向向外](images/backwardOUT.gif)
     :::column-end:::
 :::row-end:::
 
@@ -118,5 +118,5 @@ ms.locfileid: "67569118"
 
 ## <a name="related-articles"></a>相關文章
 
-- [影片概觀](index.md)
+- [動作概觀](index.md)
 - [計時和加/減速](timing-and-easing.md)

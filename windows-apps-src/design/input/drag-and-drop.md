@@ -1,17 +1,17 @@
 ---
-description: 本文說明如何在您的通用 Windows 平台 (UWP) app 中新增拖放功能。
+description: 本文說明如何在 Windows app 應用程式中新增拖放功能。
 title: 拖放
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fec8ef45cff07d7a092fd46bd2d960bfcaf0c50a
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: e14ab0d7e6ef8b79ce29addf37ec1fc52b737923
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684514"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970153"
 ---
 # <a name="drag-and-drop"></a>拖放
 
@@ -50,8 +50,8 @@ ms.locfileid: "75684514"
 ## <a name="construct-a-data-package"></a>建構資料套件 
 
 在大部分的案例中，系統會為您建構資料套件。 系統會自動處理：
-* 映像
-* 文字 
+* 影像
+* Text 
 
 針對其他內容，您將需要處理 **DragStarted** 和 **DragCompleted** 事件，然後使用他們建構您自己的 [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)。
 
@@ -104,19 +104,19 @@ ms.locfileid: "75684514"
 | --- | --- |
 |  啟用拖曳 | [CoreDragOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 |  建立資料套件 | [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)  |
-| 將拖曳交給殼層  | [CoreDragOperation. StartAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
+| 將拖曳交給殼層  | [CoreDragOperation.StartAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 | 從殼層接收置放  | [CoreDragDropManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager)<br/>[ICoreDropOperationTarget](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.icoredropoperationtarget)    |
 
 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [應用程式間通訊](index.md)
-* [System.windows.uielement.allowdrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop)
+* [AllowDrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop)
 * [CanDrag](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag)
-* [System.windows.dragdrop.dragover>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
+* [DragOver](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
 * [AcceptedOperation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation)
-* [視圖](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.dataview)
+* [DataView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.dataview)
 * [DragUIOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.draguioverride)
-* [Drop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+* [下拉式](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 * [IsDragSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource)

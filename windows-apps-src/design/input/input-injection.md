@@ -1,5 +1,5 @@
 ---
-Description: 模擬並自動化的裝置，例如鍵盤、 滑鼠、 觸控、 畫筆、 和 UWP 應用程式中的遊戲台輸入。
+Description: 模擬並自動化 Windows 應用程式中的裝置輸入，例如鍵盤、滑鼠、觸控、畫筆和遊戲台。
 title: 透過輸入插入模擬使用者輸入
 label: Input injection
 template: detail.hbs
@@ -7,28 +7,28 @@ keywords: device, digitizer, input, interaction, injection, 裝置, 數位板, �
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ff3150d4c1ed713451669b8918906141daa9659
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: d15305fecb562546bdeaf15c501890151c7dd29a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065238"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968027"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>透過輸入插入模擬使用者輸入
 
-在您的 UWP 應用程式中模擬並自動化從裝置 (例如鍵盤、滑鼠、觸控功能、手寫筆和遊戲台) 的使用者輸入。
+從 Windows 應用程式中的鍵盤、滑鼠、觸控、畫筆和遊戲台等裝置，模擬並自動化使用者輸入。
 
-> **重要的 Api**:[**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
+> **重要 API**：[**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-輸入插入可讓您 UWP 應用程式模擬從各種輸入裝置的輸入和隨處直接輸入，包括在您的應用程式的用戶端區域以外 (即使以系統管理員權限執行 App，例如登錄編輯程式)。
+輸入插入可讓您的 Windows 應用程式模擬各種輸入裝置的輸入，並將該輸入放在任何位置，包括在應用程式的工作區外部（甚至是以系統管理員許可權執行的應用程式，例如登錄編輯程式）。
 
-輸入插入適用於 UWP app 和工具，其需要提供功能，包括協助工具、測試 (臨機操作、自動)，以及遠端存取和支援功能。
+輸入插入適用于需要提供功能的 Windows 應用程式和工具，其中包括協助工具、測試（臨機操作、自動化）以及遠端存取和支援功能。
 
 ## <a name="setup"></a>安裝程式
 
-若要在您的 UWP app 中使用輸入插入 API，您將需要新增下列項目到應用程式資訊清單：
+若要在您的 Windows 應用程式中使用輸入插入式 Api，您必須將下列內容新增至應用程式資訊清單：
 
 1. 以滑鼠右鍵按一下 **Package.appxmanifest** 檔案，然後選取**檢視程式碼**。
 1. 將下列內容插入 `Package` 節點：
@@ -41,17 +41,17 @@ ms.locfileid: "65065238"
 
 | ![觸控輸入插入範例](images/injection/touch-input-injection.gif) | 
 |:--:|
-| *觸控輸入的資料隱碼攻擊的範例* |
+| *觸控輸入插入範例* |
 
 在此範例中，我們會示範如何使用輸入插入 API ([Windows.UI.Input.Preview.Injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection))，在一個地區的 App 接聽滑鼠輸入事件，以及在另一個地區模擬對應的觸控輸入事件。
 
-**下載這個範例來自[輸入資料隱碼攻擊範例 （觸控的滑鼠）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
+**從[輸入插入範例下載此範例（滑鼠到觸控）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
 
 1. 首先，先設定 UI (MainPage.xaml)。
 
     我們有兩個方格區域 (一個供滑鼠輸入用，一個供插入的觸控輸入用)，每一個都有四個按鈕。
       > [!NOTE] 
-      > 格線背景必須指派一個值 (`Transparent`，在此情況下)，否則不會偵測到的指標事件。
+      > 格線背景必須指派值（`Transparent`在此案例中為），否則不會偵測到指標事件。
 
     當在輸入區域中偵測到按下任何滑鼠鍵時，對應的觸控事件會插入到輸入插入區域。 來自輸入插入的按鈕點選會報告在標題區域中。
 
@@ -365,4 +365,4 @@ ms.locfileid: "65065238"
 
 ### <a name="topic-samples"></a>主題範例
 
-- [輸入資料隱碼攻擊範例 （觸控的滑鼠）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)
+- [輸入插入範例 (滑鼠到觸控)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)

@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10，uwp，WNS，windows 通知服務，通知，windows，防火牆，疑難排解，IP，流量，企業，網路，IPv4，VIP，FQDN，公用 IP 位址
 ms.localizationpriority: medium
-ms.openlocfilehash: 34e66249c5b44cbfecd81b9238eda2b1e5412b9a
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 7f87dc0cc174a22f474c91a58f3ffeb738822fa8
+ms.sourcegitcommit: 963316e065cf36c17b6360c3f89fba93a1a94827
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080658"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82868912"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支援 WNS 流量的企業防火牆和 Proxy 設定
 
@@ -60,6 +60,10 @@ ms.locfileid: "80080658"
         <IpRange Subnet=""/>
         <!-- See the file in Download Center for the complete list of IP ranges -->
     </ClientIPsIPv4>
+    <IdentityServiceDNS>
+        <DNS FQDN="login.microsoftonline.com"/>
+        <DNS FQDN="login.live.com"/>
+    </IdentityServiceDNS>
 </WNSPublicIpAddresses>
 
 ```
@@ -83,9 +87,9 @@ ms.locfileid: "80080658"
 ## <a name="related-topics"></a>相關主題
 
 * [快速入門：傳送推播通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
-* [如何要求、建立和儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [如何攔截執行中應用程式的通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
-* [如何使用 Windows 推播通知服務（WNS）進行驗證](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [如何要求、建立以及儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [如何攔截執行應用程式的通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [如何使用 Windows 推播通知服務 (WNS) 進行驗證](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
 * [推播通知服務要求和回應標頭](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
-* [推播通知的方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [推播通知的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
  

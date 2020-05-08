@@ -1,5 +1,5 @@
 ---
-Description: 使用已針對觸控板進行最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，以建立通用 Windows 平台 (UWP) 應用程式。
+Description: 以直覺且獨特的使用者互動體驗來建立 Windows 應用程式，其已針對觸控板優化，但在輸入裝置之間具有一致的功能。
 title: 觸控板互動
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,12 +8,12 @@ keywords: 觸控板、PTP、觸控、指標、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 991d85edd9c0a51412d33b48e364974d2095410e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: afbdf5c672328acfc60a82f9f66c75dc52370c99
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258225"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970233"
 ---
 # <a name="touchpad-design-guidelines"></a>觸控板設計指導方針
 
@@ -29,7 +29,7 @@ ms.locfileid: "74258225"
 
 -   標準觸控板或 Windows 精確式觸控板。
 
-    精確式觸控板已針對通用 Windows 平台 (UWP) 裝置進行最佳化。 它們讓系統本質上就能處理特定層面的觸控板體驗 (例如手指追蹤和手掌偵測)，以便在不同的裝置上取得更一致的體驗。
+    精確度 touchpads 已針對 Windows 應用程式裝置進行優化。 它們讓系統本質上就能處理特定層面的觸控板體驗 (例如手指追蹤和手掌偵測)，以便在不同的裝置上取得更一致的體驗。
 
 -   觸控板上一或多根手指的直接接觸點。
 -   觸控接觸點的移動 (或者沒有，根據時間閾值)。
@@ -40,7 +40,7 @@ ms.locfileid: "74258225"
 -   辨識為替代的輸入法，例如滑鼠或手寫筆。
 -   用來補充或修改其他輸入法的層面，例如弄髒手寫筆繪製的筆跡筆觸。
 
-觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及一般較小目標的生產力應用程式和桌面環境兩者。 針對觸控輸入最佳化您的 UWP app 設計，獲得預設的觸控板支援。
+觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及一般較小目標的生產力應用程式和桌面環境兩者。 針對觸控輸入優化您的 Windows 應用程式設計，並根據預設取得觸控板支援。
 
 因為觸控板支援整合的互動體驗，所以我們建議使用 [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件，在內建的觸控輸入支援以外，還提供滑鼠樣式的 UI 命令。 例如，使用 [上一頁] 和 [下一頁] 按鈕，讓使用者翻頁內容以及移動瀏覽內容。
 
@@ -55,11 +55,11 @@ ms.locfileid: "74258225"
 
 ![標準觸控板設定](images/mouse-touchpad-settings-standard.png)
 
-<sup>標準\\ 觸控板\\ 設定</sup>
+<sup>標準\\的\\觸控板設定</sup>
 
 ![Windows 精確式觸控板設定](images/mouse-touchpad-settings-ptp.png)
 
-<sup>\\ 觸控板\\ 設定的 Windows\\ 精確度</sup>
+<sup>Windows\\精確\\的\\觸控板設定</sup>
 
 以下是一些已針對觸控板進行最佳化且適用於執行一般工作的手勢範例。
 
@@ -77,7 +77,7 @@ ms.locfileid: "74258225"
 <tbody>
 <tr class="odd">
 <td align="left"><p>三指點選</p></td>
-<td align="left"><p>使用者喜好設定，可使用 <strong>Cortana</strong> 搜尋或顯示 [重要訊息中心]。</p></td>
+<td align="left"><p>使用者喜好設定，可使用 <strong>Cortana</strong> 搜尋或顯示 [重要訊息中心]<strong></strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>三指滑動</p></td>
@@ -134,7 +134,7 @@ ms.locfileid: "74258225"
 
 如需有關視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-visualfeedback)。
 
-## <a name="cursors"></a>游標
+## <a name="cursors"></a>資料指標
 
 
 我們提供了一組可用於觸控板指標的標準游標。 它們可用來指示元素的主要動作。
@@ -146,25 +146,24 @@ ms.locfileid: "74258225"
 -   一律使用箭頭游標 (![箭頭游標](images/cursor-arrow.png)) 於可點選的元素。 請勿使用指向手型游標 (![指向手型游標](images/cursor-pointinghand.png)) 於連結或其他互動式元素。 請改為使用暫留效果 (描述如前)。
 -   使用文字游標 (![文字游標](images/cursor-text.png)) 於可選取的文字。
 -   使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 [開始] 畫面磚)，請勿使用移動游標。
--   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
--   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
+-   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png), ![調整水平大小游標](images/cursor-horizontal.png), ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png), ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
+-   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png), ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
 ## <a name="related-articles"></a>相關文章
 
+- [處理指標輸入](handle-pointer-input.md)
+- [識別輸入裝置](identify-input-devices.md)
 
-* [處理指標輸入](handle-pointer-input.md)
-* [識別輸入裝置](identify-input-devices.md)
-**範例**
-* [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-**封存範例**
-* [輸入：裝置功能範例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [輸入： XAML 使用者輸入事件範例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [XAML 捲軸、移動流覽和縮放範例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [輸入：使用 GestureRecognizer 的手勢和操作](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
- 
+### <a name="samples"></a>範例
 
+- [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
 
+### <a name="archive-samples"></a>封存範例
 
+- [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [輸入：XAML 使用者輸入事件範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [XAML 捲軸、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [輸入：使用 GestureRecognizer 處理手勢與操作](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)

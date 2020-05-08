@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2800db96177f77648d2d2a98f5cd87c930f6840a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ce9d15139d45cce01feb979f18167abee89a1f28
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258341"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82558820"
 ---
 # <a name="keyboard-events"></a>鍵盤事件
 
@@ -27,8 +27,8 @@ ms.locfileid: "74258341"
 
 | 事件                                      | 描述                    |
 |--------------------------------------------|--------------------------------|
-| [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) | 按下按鍵時發生。  |
-| [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)     | 放開按鍵時發生。 |
+| [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) | 發生於按下按鍵時。  |
+| [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)     | 發生於放開按鍵時。 |
 
 > [!IMPORTANT]
 > 有些 Windows 執行階段控制項可在內部處理輸入事件。 在這種情況下，因為事件接聽程式不會叫用相關處理常式，所以看起來像是沒有發生輸入事件。 這個按鍵子集通常是由類別處理常式處理，為基本鍵盤協助工具提供內建支援。 例如，[**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 類別會覆寫空格鍵與 Enter 鍵的 [**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown) 事件 (以及 [**OnPointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onpointerpressed))，並將這些事件路由傳送到控制項的 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 如果按下按鍵是由控制項類別處理，就不會引發 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 與 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件。  
@@ -48,13 +48,13 @@ ms.locfileid: "74258341"
 
 輸入事件處理常式實作一個提供下列資訊的委派：
 
--   事件發送者。 發送者會回報附加了事件處理常式的物件。
+-   事件的傳送者。 發送者會回報附加了事件處理常式的物件。
 -   事件資料。 以鍵盤事件來說，該資料將會是 [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) 的執行個體。 處理常式的委派是 [**KeyEventHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyeventhandler)。 對大多數處理常式案例來說，最相關的 **KeyRoutedEventArgs** 屬性是 [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)，也有可能是 [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)。
 -   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource)。 由於鍵盤事件是路由事件，因此事件資料會提供 **OriginalSource**。 如果您是刻意讓物件透過物件樹反昇，有時 **OriginalSource** (而不是發送者) 就會成為較為重要的物件。 不過這需要視您的設計而定。 如需如何使用 **OriginalSource** 而非發送者的相關資訊，請參閱這個主題的＜鍵盤路由事件＞一節，或參閱[事件與路由事件概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)。
 
 ### <a name="attaching-a-keyboard-event-handler"></a>附加鍵盤事件處理常式
 
-您可以為任何物件附加鍵盤事件處理函式，只要該事件是該物件的成員即可。 這包含任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 衍生類別。 下列 XAML 範例示範如何為 [**Grid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 附加 [**KeyUp**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 事件的處理常式。
+您可以為任何物件附加鍵盤事件處理函式，只要該事件是該物件的成員即可。 這包含任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 衍生類別。 下列 XAML 範例示範如何為 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 附加 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件的處理常式。
 
 ```xaml
 <Grid KeyUp="Grid_KeyUp">
@@ -94,12 +94,12 @@ void MyProject::MainPage::Grid_KeyUp(
 
 所有鍵盤事件都是使用 [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) 代表事件資料，**KeyRoutedEventArgs** 包含下列屬性：
 
--   [**擊鍵**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**機碼**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
 -   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**Dps**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
--   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) （繼承自[**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs)）
+-   [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (繼承自 [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
-### <a name="key"></a>索引鍵
+### <a name="key"></a>機碼
 
 如果按下按鍵，會引發 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 事件。 同樣的，如果放開按鍵，會引發 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件。 通常您接聽事件是為了處理特定的按鍵值。 若要判斷按下或放開的是哪一個按鍵，請檢查事件資料中的 [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) 值。 **Key** 會傳回 [**VirtualKey**](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKey) 值。 **VirtualKey** 列舉包括所有受支援的按鍵。
 
@@ -279,7 +279,7 @@ End Sub
 > [!NOTE]
 > 在 XAML 中設定 [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey) 或 [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) 可提供字串資訊，其中記載用於叫用該特定動作的快速鍵。 Microsoft UI 自動化用戶端 (例如朗讀程式) 會擷取此資訊，通常直接提供給使用者。
 >
-> 設定 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 本身不會有任何動作。 您還是需要附加 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 或 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件的處理常式，才能實際在應用程式中實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline) 格式明確的為助憶鍵中的特定鍵加上文字底線。
+> 設定 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 本身不會有任何動作。 您還是需要附加 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 或 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件的處理常式，才能實際在應用程式中實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline) 格式明確地為助憶鍵中的特定鍵加上文字底線。
 
  
 
@@ -288,7 +288,7 @@ End Sub
 
 有一些特定事件是路由事件，包括 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 與 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)。 路由事件使用事件反昇路由策略。 反昇路由策略表示事件源自於子物件，並接著反昇路由到物件樹中相繼的父物件。 這是處理相同事件並與相同事件資料互動的機會。
 
-以下列 XAML 範例為例，它會處理一個 [**Canvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 和兩個 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 物件的 [**KeyUp**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 事件。 在這個情況下，如果在任一 **Button** 物件具有焦點時放開按鍵，則會引發 **KeyUp** 事件。 接著，事件會反昇到父 **Canvas**。
+以下列 XAML 範例為例，它會處理一個 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 和兩個 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 物件的 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件。 在這個情況下，如果在任一 **Button** 物件具有焦點時放開按鍵，則會引發 **KeyUp** 事件。 接著，事件會反昇到父 **Canvas**。
 
 ```xaml
 <StackPanel KeyUp="StackPanel_KeyUp">
@@ -313,15 +313,15 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ### <a name="the-handled-property-in-event-data"></a>事件資料中的 Handled 屬性
 
-視您的事件處理策略而定，您可能會只想使用一個事件處理常式來應對反昇事件。 例如，如果您有附加到其中一個 [**Button**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 控制項的特定 [**KeyUp**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 處理常式，該處理常式會先使用它來處理該事件。 在這個情況下，您可能不想讓父面板也同時處理事件。 這時，您可以在事件資料中使用 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 屬性。
+視您的事件處理策略而定，您可能會只想使用一個事件處理常式來應對反昇事件。 例如，如果您有附加到其中一個 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 控制項的特定 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 處理常式，該處理常式會先使用它來處理該事件。 在這個情況下，您可能不想讓父面板也同時處理事件。 這時，您可以在事件資料中使用 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 屬性。
 
 使用路由事件資料類別中的 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 屬性是為了報告先前在事件路由上登錄的另一個處理常式已經執行。 這會影響路由事件系統的行為。 將事件處理常式中的 **Handled** 設成 **true** 時，該事件會停止路由而不會傳送給相繼的父元素。
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler 和已處理的鍵盤事件
 
-您可以使用一項特別的技術，以附加可以在已標示為處理過的事件上作用的處理常式。 這項技術會使用[**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)方法來註冊處理常式，而不是使用 XAML 屬性或特定語言語法來新增處理常式，例如 C\#中的 + =。
+您可以使用一項特別的技術，以附加可以在已標示為處理過的事件上作用的處理常式。 這項技術會使用[**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)方法來註冊處理常式，而不是使用 XAML 屬性或語言特定語法來新增處理常式，例如 C\#中的 + =。
 
-這項技術的一般限制在於 **AddHandler** API 是採用一個 [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent) 類型的參數來識別相關的路由事件。 並非所有路由事件都提供 **RoutedEvent** 識別項，因此這項考量也就影響到哪些路由事件仍然可以在 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 案例中處理。 [  **KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 與 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件在 [**UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) 上已有路由事件識別項 ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent) 與 [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement))。 不過，其他事件 (例如 [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)) 並沒有路由事件識別項，因此也就不能與 **AddHandler** 技術搭配使用。
+這項技術的一般限制在於 **AddHandler** API 是採用一個 [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent) 類型的參數來識別相關的路由事件。 並非所有路由事件都提供 **RoutedEvent** 識別項，因此這項考量也就影響到哪些路由事件仍然可以在 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 案例中處理。 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 與 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 上已有路由事件識別項 ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) 與 [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent))。 不過，其他事件 (例如 [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)) 並沒有路由事件識別項，因此也就不能與 **AddHandler** 技術搭配使用。
 
 ### <a name="overriding-keyboard-events-and-behavior"></a>覆寫鍵盤事件和行為
 
@@ -367,7 +367,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 另一個範例是 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)。 **TextBox** 並不將某些按鍵 (例如方向鍵) 視為文字，而是視為控制項 UI 特定的行為。 **TextBox** 會將這些事件案例標示為已處理。
 
-自訂控制項可以透過覆寫 [**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown) / [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup)，以實作它們自己類似的按鍵事件覆寫行為。 如果您的自訂控制項會處理特定的快速鍵，或具有類似於針對 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 所述之情況的控制項或焦點行為，就應該將這個邏輯放入您自己的 **OnKeyDown** / **OnKeyUp** 覆寫中。
+自訂控制項可以藉由覆寫[**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown) / [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup)，來實作為主要事件的類似覆寫行為。 如果您的自訂控制項會處理特定的快速鍵，或具有類似於針對 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 所述之情況的控制項或焦點行為，就應該將這個邏輯放入您自己的 **OnKeyDown** / **OnKeyUp** 覆寫中。
 
 ## <a name="the-touch-keyboard"></a>觸控式鍵盤
 
@@ -379,30 +379,31 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 按下觸控式鍵盤上的按鍵，就像按下硬體鍵盤上的按鍵一樣，都會引發 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 與 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件。 不過，觸控式鍵盤將不會引發 Ctrl+A、Ctrl+Z、Ctrl+X、Ctrl+C 以及 Ctrl+V 的輸入事件，因為它們是保留給輸入控制項的文字操作。
 
-您可以設定文字控制項的輸入範圍，使其符合您預期使用者輸入的資料類型，讓使用者在您的應用程式中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。 例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 [**Number**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。 如需詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)。
+您可以設定文字控制項的輸入範圍，使其符合您預期使用者輸入的資料類型，讓使用者在您的應用程式中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。 例如，如果文字方塊只能用來輸入4位數的 PIN，請將[**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope)屬性設定為[**Number**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。 如需詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)。
 
 ## <a name="related-articles"></a>相關文章
 
-**能夠**
-* [鍵盤互動](keyboard-interactions.md)
-* [識別輸入裝置](identify-input-devices.md)
-* [回應觸控鍵盤的存在](respond-to-the-presence-of-the-touch-keyboard.md)
+### <a name="developers"></a>開發人員
 
-**設計師**
-* [鍵盤設計方針](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+- [鍵盤互動](keyboard-interactions.md)
+- [識別輸入裝置](identify-input-devices.md)
+- [回應觸控式鍵盤的出現](respond-to-the-presence-of-the-touch-keyboard.md)
 
-**範例**
-* [觸控鍵盤範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
+### <a name="designers"></a>設計工具
 
-**封存範例**
-* [輸入範例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [輸入：裝置功能範例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [輸入：觸控鍵盤範例](https://code.msdn.microsoft.com/windowsapps/Touch-keyboard-sample-43532fda)
-* [回應螢幕小鍵盤的外觀範例](https://code.msdn.microsoft.com/windowsapps/keyboard-events-sample-866ba41c)
-* [XAML 文字編輯範例](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
- 
+- [鍵盤設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 
- 
+### <a name="samples"></a>範例
+
+- [觸控式鍵盤範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+- [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
+
+### <a name="archive-samples"></a>封存範例
+
+- [輸入範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [輸入：觸控式鍵盤範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Touch%20keyboard%20sample%20(Windows%208))
+- [回應螢幕小鍵盤外觀的範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Responding%20to%20the%20appearance%20of%20the%20on-screen%20keyboard%20sample)
+- [XAML 文字編輯範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BVB%5D-Windows%208%20app%20samples/VB/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))

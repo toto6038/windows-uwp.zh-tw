@@ -1,22 +1,22 @@
 ---
-Description: 了解如何 Fluent 動作使用的預存時間和 easing 函式。
-title: 計時和加/減速 - UWP app 中的動畫
+Description: 瞭解流暢動作如何使用計時和緩動函數。
+title: 計時和加/減速
 label: Timing and easing
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b736a10a7284e3cc9aa193e082dc654e908afe40
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 098a75da573a977aa393197a61a62b0337f0dc06
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444178"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970503"
 ---
 # <a name="timing-and-easing"></a>計時和加/減速
 
@@ -28,7 +28,7 @@ ms.locfileid: "65444178"
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可<a href="xamlcontrolsgallery:/item/EasingFunction">開啟 應用程式，並查看作用中的加/減速函式</a>。</p>
+    <p>如果您已安裝<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/EasingFunction">開啟應用程式，並查看作用中的緩</a>時函式。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -55,11 +55,11 @@ ms.locfileid: "65444178"
 
 :::row:::
     :::column:::
-用於物件或場景的結束或關閉頁面。
+針對即將結束場景或關閉的物件或頁面使用。
 可讓非常快速的方向回饋離開 UI，而計時不會阻礙畫面播放速率以達到流暢的動畫。
     :::column-end:::
     :::column:::
-        ![150ms motion](images/150msAlt.gif)
+        ![150ms 動作](images/150msAlt.gif)
     :::column-end:::
 :::row-end:::
 
@@ -67,11 +67,11 @@ ms.locfileid: "65444178"
 
 :::row:::
     :::column:::
-物件或輸入場景或開啟的頁面中使用。
+針對輸入場景或開啟的物件或頁面使用。
 可在其進入場景時擁有合理的量的時間展示內容。
     :::column-end:::
     :::column:::
-        ![300ms motion](images/300ms.gif)
+        ![300ms 動作](images/300ms.gif)
     :::column-end:::
 :::row-end:::
 
@@ -79,10 +79,10 @@ ms.locfileid: "65444178"
 
 :::row:::
     :::column:::
-使用的轉譯場景是單一或多個場景物件。 
+針對在單一場景或多個場景之間轉譯的物件使用。 
     :::column-end:::
     :::column:::
-        ![500ms motion](images/500ms.gif)
+        ![500毫秒動作](images/500ms.gif)
     :::column-end:::
 :::row-end:::
 
@@ -102,13 +102,13 @@ ms.locfileid: "65444178"
 
 :::row:::
     :::column:::
-使用 UI 或即將結束場景的物件。
+用於即將結束場景的 UI 或物件。
 
-物件會提供，並取得趨勢電子報，直到達到逸出的速度。
-產生的操作是物件會嘗試利用使用者的方式並騰出空間給新的內容傳入到其最困難。
+物件變得強大並獲得動力，直到達到 escape 速度為止。
+所得到的結果是，物件正嘗試從使用者的情況中取得最困難的方法，並騰出空間給新的內容。
     :::column-end:::
     :::column:::
-        ![accelerate easing](images/accelEase.gif)
+        ![加速緩動](images/accelEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -141,15 +141,15 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 :::row:::
     :::column:::
-物件或 UI 輸入場景，請瀏覽，或產生中使用。
+用於物件或 UI 進入場景，可以導覽或產生。
 
-一旦在場景，滿足物件，具有極大的阻力，會變慢的其餘部分的物件。
-產生的操作是物件經過長時間距離離開和在極端的速度，輸入或已快速回到其餘狀態。
+一旦進入場景之後，就會符合物件的極端阻力，這會使物件變慢。
+所產生的結果是，物件是從遠距離開始，並以極快的速度進入，或快速返回 rest 狀態。
 
-即使它前面的無回應，連入物件的速度就會有的感覺快速且回應迅速的效果。
+即使它之前有無回應，傳入物件的速度還是會有更快速且迅速回應的效果。
     :::column-end:::
     :::column:::
-        ![decelerate easing](images/decelEase.gif)
+        ![減速緩動](images/decelEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -182,13 +182,13 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 :::row:::
     :::column:::
-這是在系統內任何動畫的參數變更加/減速的基準。
+這是系統內任何動畫參數變更的基準緩動。
 請對使用畫面上狀態會改變的物件使用標準加/減速，例如簡單的位置變更。 此外，對場景中的物件變形使用，像是會長大的物件。
 
-物件變更狀態從 A，b 克服，，和透過所採取，自然會強制產生的操作。
+所產生的結果是，將狀態從 A 變更為 B 的物件是克服，並由自然強制執行。
     :::column-end:::
     :::column:::
-        ![standard easing](images/standardEase.gif)
+        ![標準緩動](images/standardEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -219,5 +219,5 @@ CubicBezierEasingFunction standard =
 
 ## <a name="related-articles"></a>相關文章
 
-- [影片概觀](index.md)
-- [方向和重力](directionality-and-gravity.md)
+- [動作概觀](index.md)
+- [方向性和重力](directionality-and-gravity.md)

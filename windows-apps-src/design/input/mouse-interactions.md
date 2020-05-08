@@ -6,18 +6,18 @@ label: Mouse
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d54ab79926ef20bb54a83346c12df2ea383167d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e0591a62134f09c1b3a9d115d038020e95f0c139
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258347"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970713"
 ---
 # <a name="mouse-interactions"></a>滑鼠互動
 
-針對觸控輸入最佳化您的通用 Windows 平台 (UWP) app，獲得預設的基本滑鼠支援。 
+針對觸控輸入優化您的 Windows 應用程式設計，並根據預設取得基本的滑鼠支援。 
 
 ![滑鼠](images/input-patterns/input-mouse.jpg)
 
@@ -59,7 +59,7 @@ ms.locfileid: "74258347"
 <td align="left"><p>按滑鼠右鍵選取與命令</p></td>
 <td align="left"><p>按滑鼠右鍵可顯示其中包含全域命令的瀏覽列 (如果有的話) 和應用程式列。 在某個元素上按一下滑鼠右鍵即可選取該元素，並且顯示其中包含所選元素之操作命令的應用程式列。</p>
 <div class="alert">
-<strong>注意</strong>  如果選取範圍或應用程式行命令不是適當的 UI 行為，請按一下滑鼠右鍵以顯示內容功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
+<strong>注意：</strong>  如果選取範圍或應用程式行命令不是適當的 UI 行為，請以滑鼠右鍵按一下以顯示內容功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
 </div>
 <div>
  
@@ -86,31 +86,31 @@ ms.locfileid: "74258347"
 
 ## <a name="mouse-input-events"></a>滑鼠輸入事件
 
-大部分的滑鼠輸入都可以透過所有[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)物件所支援的一般路由輸入事件來處理。 這些地方包括：
+大部分的滑鼠輸入都可以透過所有[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)物件所支援的一般路由輸入事件來處理。 其中包括：
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
 - [**CoNtextCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
 - [**CoNtextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
 - [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
-- [**System.windows.dragdrop.dragenter>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
+- [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
 - [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
-- [**System.windows.dragdrop.dragover>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
+- [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
 - [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
 - [**下拉式**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
 - [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**擁有**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
 - [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
-- [**System.windows.uielement.manipulationcompleted>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
-- [**System.windows.uielement.manipulationdelta>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
-- [**System.windows.uielement.manipulationinertiastarting>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
-- [**System.windows.uielement.manipulationstarted>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
-- [**System.windows.uielement.manipulationstarting>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
+- [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
+- [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
+- [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
+- [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
+- [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
 - [**NoFocusCandidateFound**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefound)
 - [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
 - [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
@@ -120,10 +120,10 @@ ms.locfileid: "74258347"
 - [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
 - [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**System.windows.forms.control.previewkeydown>** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
+- [**System.windows.forms.control.previewkeydown>**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**點選**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
 不過，您可以在[Windows](https://docs.microsoft.com/uwp/api/windows.ui.input)中使用指標、手勢和操作事件，以利用每個裝置的特定功能（例如滑鼠滾輪事件）。
 
@@ -140,7 +140,7 @@ ms.locfileid: "74258347"
 
 如需視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
 
-## <a name="cursors"></a>游標
+## <a name="cursors"></a>資料指標
 
 我們提供了一組可用於滑鼠指標的標準游標。 它們可用來指示元素的主要動作。
 
@@ -151,8 +151,8 @@ ms.locfileid: "74258347"
 - 一律使用箭頭游標 (![箭頭游標](images/cursor-arrow.png)) 於可點選的元素。 請勿使用指向手型游標 (![指向手型游標](images/cursor-pointinghand.png)) 於連結或其他互動式元素。 請改為使用暫留效果 (描述如前)。
 - 使用文字游標 (![文字游標](images/cursor-text.png)) 於可選取的文字。
 - 使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 [開始] 畫面磚)，請勿使用移動游標。
-- 請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
-- 使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
+- 請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png), ![調整水平大小游標](images/cursor-horizontal.png), ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png), ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
+- 使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png), ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
 ## <a name="related-articles"></a>相關文章
 

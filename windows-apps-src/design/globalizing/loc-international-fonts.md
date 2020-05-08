@@ -1,25 +1,25 @@
 ---
-Description: 本主題列出當地語系化為美國英文以外語言的 UWP app 可用的字型。
+Description: 本主題列出適用于 Windows 應用程式的字型，這些字型會當地語系化成美國英文以外的語言。
 title: 國際字型
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: eb12ea0bb7966813413d29908c4974a7c4c97486
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: aa0b560ad684ba230e0a498b9069d24d510f49c0
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258072"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970903"
 ---
 # <a name="international-fonts"></a>國際字型
 
-本主題列出當地語系化為美國英文以外語言的 UWP app 可用的字型。
+本主題列出適用于 Windows 應用程式的字型，這些字型會當地語系化成美國英文以外的語言。
 
-下表的「語言標記」欄列出語言的 [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)。 如需查看 Microsoft Store 特別支援的語言標記清單，請參閱[支援的語言](../../publish/supported-languages.md)。
+在下表中，[語言標記] 欄會列出語言的[BCP-47 語言標記](https://tools.ietf.org/html/bcp47)。 如需查看 Microsoft Store 特別支援的語言標記清單，請參閱[支援的語言](../../publish/supported-languages.md)。
 
-| 語言 | 語言標記 | Windows 中使用的字型 |
+| Language | 語言標記 | Windows 中使用的字型 |
 | --------- | ----------- | -------------------- |
 | 南非荷蘭文 | af-ZA | Segoe UI |
 | 阿爾巴尼亞文 | sq-AL | Segoe UI |
@@ -30,9 +30,9 @@ ms.locfileid: "74258072"
 | 亞塞拜然文 (拉丁) | az-Latn-AZ | Segoe UI |
 | 孟加拉文 (孟加拉) | bn-BD | Nirmala UI |
 | 孟加拉文 (印度) | bn-IN | Nirmala UI |
-| 巴斯克文 (巴斯克文) | eu-ES | Segoe UI |
+| 巴斯克文 (巴斯克) | eu-ES | Segoe UI |
 | 白俄羅斯文 | be-BY | Segoe UI |
-| 波士尼亞文 (拉丁) | bs-Latn-BA | Segoe UI |
+| 波士尼亞文 (拉丁文) | bs-Latn-BA | Segoe UI |
 | 保加利亞文 | bg-BG | Segoe UI |
 | 卡達隆尼亞文 | ca-ES | Segoe UI |
 | 中部庫德文 (阿拉伯文) | ku-ARAB-IQ | Segoe UI |
@@ -50,14 +50,14 @@ ms.locfileid: "74258072"
 | 菲律賓文 | fil-PH | Segoe UI |
 | 芬蘭文 | fi-FI | Segoe UI |
 | 法文 | fr-FR | Segoe UI |
-| 加里斯亞文 | gl-ES | Segoe UI |
+| 加利西亞文 | gl-ES | Segoe UI |
 | 喬治亞文 | ka-GE | Segoe UI |
 | 德文 | de-DE | Segoe UI |
 | 希臘文 | el-GR | Segoe UI |
 | 古吉拉特文 | gu-IN | Nirmala UI |
 | 豪沙文 (拉丁) | ha-Latn-NG | Segoe UI |
-| 希伯來文 | he-IL | Segoe UI |
-| 印度文 | hi-IN | Nirmala UI |
+| Hebrew | he-IL | Segoe UI |
+| Hindi | hi-IN | Nirmala UI |
 | 匈牙利文 | hu-HU | Segoe UI |
 | 冰島文 | is-IS | Segoe UI |
 | 伊布文 | ig-NG | Segoe UI |
@@ -71,7 +71,7 @@ ms.locfileid: "74258072"
 | 哈薩克文 | kk-KZ | Segoe UI |
 | 高棉文 | km-KH | Leelawadee UI |
 | 基切文 | qut-GT | Segoe UI |
-| 金揚萬答文 | rw-RW | Segoe UI |
+| 盧安達文 | rw-RW | Segoe UI |
 | 史瓦希里文 | sw-KE | Segoe UI |
 | 貢根文 | kok-IN | Nirmala UI |
 | 韓文 | ko-KR | Malgun Gothic |
@@ -84,7 +84,7 @@ ms.locfileid: "74258072"
 | 馬來亞拉姆文 | ml-IN | Nirmala UI |
 | 馬爾他文 | mt-MT | Segoe UI |
 | 毛利文 | mi-NZ | Segoe UI |
-| 馬拉提文 | mr-IN | Nirmala UI |
+| 馬拉地文 | mr-IN | Nirmala UI |
 | 蒙古文 (斯拉夫) | mn-MN | Segoe UI |
 | 尼泊爾文 | ne-NP | Nirmala UI |
 | 挪威文 (巴克摩) | nb-NO | Segoe UI |
@@ -100,10 +100,10 @@ ms.locfileid: "74258072"
 | 羅馬尼亞文 | ro-RO | Segoe UI |
 | 俄文 | ru-RU | Segoe UI |
 | 蘇格蘭蓋爾文 | gd-GB | Segoe UI |
-| 塞爾維亞文 (斯拉夫，波士尼亞與赫塞哥維納) | sr-Cyrl-BA | Segoe UI |
+| 塞爾維亞文 (斯拉夫、波士尼亞與赫塞哥維納) | sr-Cyrl-BA | Segoe UI |
 | 塞爾維亞文 (斯拉夫，塞爾維亞) | sr-Cyrl-CS | Segoe UI |
 | 塞爾維亞文 (拉丁) | sr-Latn-CS | Segoe UI |
-| 賴索托文 | nso-ZA | Segoe UI |
+| 北索托文 | nso-ZA | Segoe UI |
 | 塞茲瓦納文 | tn-ZA | Segoe UI |
 | 信德文 (阿拉伯文) | sd-Arab-PK | Segoe UI |
 | 僧伽羅文 | si-LK | Nirmala UI |
@@ -114,9 +114,9 @@ ms.locfileid: "74258072"
 | 塔吉克文 (斯拉夫) | tg-Cyrl-TJ | Segoe UI |
 | 坦米爾文 | ta-IN | Nirmala UI |
 | 韃靼文 | tt-RU | Segoe UI |
-| 特拉古文 | te-IN | Nirmala UI |
+| 泰盧固文 | te-IN | Nirmala UI |
 | 泰文 | th-TH | Leelawadee UI |
-| 提格里尼亞文 | ti-ET | Ebrima |
+| 提格利尼亞文 | ti-ET | Ebrima |
 | 土耳其文 | tr-TR | Segoe UI |
 | 土庫曼文 | tk-TM | Segoe UI |
 | 烏克蘭文 | uk-UA | Segoe UI |
@@ -127,7 +127,7 @@ ms.locfileid: "74258072"
 | 越南文 | vi-VN | Segoe UI |
 | 威爾斯文 | cy-GB | Segoe UI |
 | 沃洛夫文 | wo-SN | Segoe UI |
-| 優魯巴文 | yo-NG | Segoe UI |
+| 約魯巴文 | yo-NG | Segoe UI |
 
 ## <a name="related-topics"></a>相關主題
 

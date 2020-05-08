@@ -1,19 +1,19 @@
 ---
 Description: 清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
-title: 在 UVP app 中新增和刪除動畫
+title: 新增和刪除動畫
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d0dc449c0134799f3de675fff4bdbbda66046be8
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 4264a9a3a75c076fc033bb98dad45ff8dc99f2ef
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317090"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970283"
 ---
 # <a name="add-and-delete-animations"></a>新增和刪除動畫
 
@@ -21,7 +21,7 @@ ms.locfileid: "67317090"
 
 清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
 
-> **重要的 Api**:[**AddDeleteThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
+> **重要 API**: [**AddDeleteThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -39,8 +39,8 @@ ms.locfileid: "67317090"
 ## <a name="related-articles"></a>相關文章
 
 * [動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [以動畫顯示清單中新增及刪除](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
-* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [讓清單新增和刪除產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
+* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
 * [**AddDeleteThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
  

@@ -1,21 +1,21 @@
 ---
 Description: 了解如何使用磚、徽章、快顯通知以及通知提供您應用程式的進入點，並將使用者維持在最新狀態。
-title: UWP 應用程式的徽章通知
+title: Windows 應用程式的徽章通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e0c3802f0b6163ad5f0e179d90148bae543aeab
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1d3aa9658e8a57a7993eb79d164b1e17ac23b9ac
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320851"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970873"
 ---
-# <a name="badge-notifications-for-uwp-apps"></a>UWP 應用程式的徽章通知
+# <a name="badge-notifications-for-windows-apps"></a>Windows 應用程式的徽章通知
 
  
 
@@ -56,7 +56,7 @@ ms.locfileid: "67320851"
 <table>
 <tr>
     <th>狀態</th>
-    <th>字符</th>
+    <th>圖像</th>
     <th>XML</th>
 </tr>
 <tr>
@@ -65,7 +65,7 @@ ms.locfileid: "67320851"
     <td>`<badge value="none"/>`</td>
 </tr>
 <tr>
-    <td>活動 (activity)</td>
+    <td>activity</td>
     <td><img src="images/badges/badge-activity.png" alt="Glyph" /></td>
     <td>`<badge value="activity"/>`</td>
 </tr>
@@ -75,7 +75,7 @@ ms.locfileid: "67320851"
     <td>`<badge value="alarm"/>`</td>
 </tr>
 <tr>
-    <td>提醒 (alert)</td>
+    <td>警示</td>
     <td><img src="images/badges/badge-alert.png" alt="Glyph" /></td>
     <td>`<badge value="alert"/>`</td>
 </tr>
@@ -85,7 +85,7 @@ ms.locfileid: "67320851"
     <td>`<badge value="attention"/>`</td>
 </tr>
 <tr>
-    <td>線上 (available)</td>
+    <td>可供使用</td>
     <td><img src="images/badges/badge-available.png" alt="Glyph" /></td>
     <td>`<badge value="available"/>`</td>
 </tr>
@@ -100,7 +100,7 @@ ms.locfileid: "67320851"
     <td>`<badge value="busy"/>`</td>
 </tr>
 <tr>
-    <td>error</td>
+    <td>錯誤</td>
     <td><img src="images/badges/badge-error.png" alt="Glyph" /></td>
     <td>`<badge value="error"/>`</td>
 </tr>
@@ -128,7 +128,7 @@ ms.locfileid: "67320851"
 
 ## <a name="create-a-badge"></a>建立徽章
 
-這些範例會示範如何建立、 徽章更新。
+這些範例會示範如何建立徽章更新。
 
 ### <a name="create-a-numeric-badge"></a>建立數字徽章
 
@@ -202,4 +202,4 @@ private void clearBadge()
 
 * [調適型和互動式快顯通知](adaptive-interactive-toasts.md)
 * [建立磚](creating-tiles.md)
-* [建立自動調整圖格](create-adaptive-tiles.md)
+* [建立彈性磚](create-adaptive-tiles.md)

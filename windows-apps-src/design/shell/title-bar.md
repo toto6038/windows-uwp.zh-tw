@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標題列
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 323b9b80a7d0087a07faf34d598f51d643e1324c
-ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
+ms.openlocfilehash: 47db0abfa96ae572c20d6bfd7496d7b5d168ab50
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930340"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968413"
 ---
 # <a name="title-bar-customization"></a>標題列自訂
 
@@ -20,7 +20,7 @@ ms.locfileid: "70930340"
 
 應用程式在桌面視窗中執行時，您可以自訂標題列，以符合應用程式的特質。 標題列自訂 API 可讓您指定標題列元素的色彩，或將應用程式內容延伸至標題列區域，完全加以掌控。
 
-> **重要 API**：[ApplicationView. 標題列屬性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、 [ApplicationViewTitleBar 類別](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、 [CoreApplicationViewTitleBar 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **重要 API**：[ApplicationView.TitleBar 屬性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、[ApplicationViewTitleBar 類別](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、[CoreApplicationViewTitleBar 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>可自訂標題列到什麼程度
 
@@ -33,7 +33,7 @@ ms.locfileid: "70930340"
 當您選擇進行完整自訂時，要負責將內容置入標題列區域，而且您可以自行定義可拖曳的區域。 [返回]、[關閉]、[最小化] 及 [最大化] 系統按鈕仍然可用並且由系統來處理，但像應用程式標題這類元素則不是如此。 您必須依應用程式需要自行建立這些元素。
 
 > [!NOTE]
-> 簡單的色彩自訂適用於使用 XAML、DirectX 及 HTML 的 UWP app。 只有使用 XAML 的 UWP app，才能進行完整自訂。
+> 使用 XAML、DirectX 和 HTML 的 Windows 應用程式可使用簡單的色彩自訂。 完整自訂僅適用于使用 XAML 的 Windows 應用程式。
 
 ## <a name="simple-color-customization"></a>簡單色彩自訂
 
@@ -103,6 +103,11 @@ coreTitleBar.ExtendViewIntoTitleBar = true;
 
 以下說明如何將內容方格設定為可拖曳的標題列區域。 此程式碼會放入應用程式第一個頁面的 XAML 及程式碼後置中。 如需完整的程式碼，請參閱[完整自訂範例](./title-bar.md#full-customization-example)一節。
 
+
+> [!IMPORTANT]
+> 根據預設，某些 UI 元素（例如方格）沒有背景設定時，不會參與點擊測試。
+> 若要讓`AppTitleBar`下列範例中的方格允許拖曳，我們必須將背景設定為`Transparent`。
+
 ```xaml
 <Grid x:Name="AppTitleBar" Background="Transparent">
     <!-- Width of the padding columns is set in LayoutMetricsChanged handler. -->
@@ -143,7 +148,7 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 
 UIElement (`AppTitleBar`) 是應用程式 XAML 的一部分。 您可以在不會變更的根頁面中宣告並設定標題列，或是在應用程式可瀏覽到的每個頁面中設定或宣告標題列區域。 如果是在每個頁面中設定，您必須確保可拖曳的區域會在使用者四處瀏覽應用程式時保持一致。
 
-應用程式正在執行時，您可以呼叫 SetTitleBar 切換到新的標題列元素。 您也可以將 **null** 做為參數傳遞給 SetTitleBar 來還原為預設拖曳行為 (如需詳細資訊，請參閱「預設可拖曳的區域」)。
+應用程式正在執行時，您可以呼叫 SetTitleBar 切換到新的標題列元素。 您也可以將 **null** 做為參數傳遞給 SetTitleBar 來還原為預設拖曳行為  (如需詳細資訊，請參閱「預設可拖曳的區域」)。
 
 > [!IMPORTANT]
 > 您指定的可拖曳區域必須可進行點擊測試，這表示您可能需要為某些元素設定透明背景筆刷。 如需詳細資訊，請參閱 [VisualTreeHelper.FindElementsInHostCoordinates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates) 的備註。
@@ -162,7 +167,7 @@ UIElement (`AppTitleBar`) 是應用程式 XAML 的一部分。 您可以在不�
 
 ### <a name="system-caption-buttons"></a>系統標題按鈕
 
-系統會將應用程式視窗的左上角或右上角保留給系統標題按鈕 (返回、最小化、最大化、關閉)。 系統繼續擁有標題控制項區域的控制權，以保證提供最基本的拖曳、最小化，最大化及關閉視窗功能。 對於由左到右的語言，系統會在右上角繪製 [關閉]，而由右到左的語言則是在左上角繪製。
+系統會將應用程式視窗的左上角或右上角保留給系統標題按鈕 ([返回]、[最小化]、[最大化]、關閉])。 系統繼續擁有標題控制項區域的控制權，以保證提供最基本的拖曳、最小化，最大化及關閉視窗功能。 對於由左到右的語言，系統會在右上角繪製 [關閉]，而由右到左的語言則是在左上角繪製。
 
 標題控制項區域的尺寸及位置是由 CoreApplicationViewTitleBar 類別傳達，這樣就可以在標題列 UI 的版面配置中加以處理。 每個側邊保留區域的寬度是由 [SystemOverlayLeftInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayLeftInset) 或 [SystemOverlayRightInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayRightInset) 屬性指定，而其高度則由 [Height](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.Height) 屬性指定。
 
@@ -279,7 +284,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->只有在應用程式支援_全螢幕_模式時，才能進入該模式。 如需詳細資訊，請參閱 [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板電腦模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是支援的硬體上的使用者選項，因此使用者可以選擇以平板電腦模式執行任何應用程式。
+>只有在應用程式支援_全螢幕_模式時，才能進入該模式。 如需詳細資訊，請參閱 [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板電腦模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是支援的硬體上的使用者選項，因此使用者可以選擇在平板電腦模式下執行任何應用程式。
 
 ## <a name="full-customization-example"></a>完整自訂範例
 
