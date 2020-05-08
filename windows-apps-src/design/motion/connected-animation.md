@@ -9,14 +9,14 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e17b1c18fc8e643ac788e5e13ac78cae49a35ef
-ms.sourcegitcommit: 6d743cf9c3e09f87ea2879b8e1f2dc4a1b1a16fe
+ms.openlocfilehash: 385c11e48695c2486fd5a2b72633923454e2f8ea
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166085"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970633"
 ---
-# <a name="connected-animation-for-uwp-apps"></a>UWP 應用程式適用的連接動畫
+# <a name="connected-animation-for-windows-apps"></a>Windows 應用程式的連接動畫
 
 連接動畫可讓兩個不同檢視之間元素的轉換有動畫效果，而產生動態且迷人的瀏覽體驗。 這可幫助使用者能夠在檢視之間保持其脈絡並連續性。
 
@@ -55,7 +55,7 @@ ms.locfileid: "74166085"
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>連接動畫和 Fluent 設計系統
 
- Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 連接動畫是將動作加入應用程式中的 Fluent 設計系統元件。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](/windows/apps/fluent-design-system)。
+ Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 連接動畫是將動作加入應用程式中的 Fluent 設計系統元件。 若要深入瞭解，請參閱[流暢的設計總覽](/windows/apps/fluent-design-system)。
 
 ## <a name="why-connected-animation"></a>為何要使用連接動畫？
 
@@ -98,11 +98,11 @@ ms.locfileid: "74166085"
 
 為了達到各種效果，某些設定會忽略 ConnectedAnimationService 上的這些屬性，並改為使用自己的值，如下表所述。
 
-| 設定 | 尊重 DefaultDuration 嗎？ | 尊重 DefaultEasingFunction 嗎？ |
+| 組態 | 尊重 DefaultDuration 嗎？ | 尊重 DefaultEasingFunction 嗎？ |
 | - | - | - |
-| 重力 | [是] | 是* <br/> **從 A 到 B 的基本轉譯會使用此緩動函式，但是「引力 dip」則有它自己的緩動函數。*  |
-| 直銷 | 無 <br/> *在150ms 上繪製動畫。*| 無 <br/> *使用減速緩動函數。* |
-| 基本 | [是] | [是] |
+| 重力 | 是 | 是* <br/> **從 A 到 B 的基本轉譯會使用此緩動函式，但「引力 dip」有其本身的緩動函式。*  |
+| 直接 | 否 <br/> *在150ms 上繪製動畫。*| 否 <br/> *使用減速緩動函數。* |
+| 基本 | 是 | 是 |
 
 ## <a name="how-to-implement-connected-animation"></a>如何執行連接的動畫
 
@@ -268,7 +268,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 }
 ```
 
-若要使用這個元素做為目的地來啟動動畫，例如從詳細資料檢視中流覽時，請使用[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)。 如果您剛載入 ListView 的資料來源，TryStartConnectedAnimationAsync 會等候啟動動畫，直到已建立對應的專案容器為止。
+若要使用這個元素做為目的地來啟動動畫，例如從詳細資料檢視中流覽時，請使用[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)。 如果您剛剛才為 ListView 載入資料來源，TryStartConnectedAnimationAsync 將等待啟動動畫，直到對應的項目容器已建立為止。
 
 ```csharp
 private void ContactsListView_Loaded(object sender, RoutedEventArgs e)

@@ -6,22 +6,22 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: 68d5ba1c12a3c7dc5531934835f47af35c269b57
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 823468f7d18dcfb4c9379a981d6c2da7a250fe22
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74256699"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730310"
 ---
 # <a name="process-bitmaps-with-opencv"></a>使用 OpenCV 處理點陣圖
 
-本文說明如何使用 **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** 類別 (許多不同的 UWP API 使用此類別來代表影像) 來搭配 Open Source Computer Vision Library (OpenCV，這是一個開放原始碼的原生程式碼程式庫，提供廣泛的影像處理演算法)。 
+本文說明如何使用**[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** 類別，它是由許多不同的 Windows 執行階段 api 用來代表影像，其中包含開放原始碼電腦視覺程式庫（OpenCV），這是一個開放原始碼的機器碼程式庫，提供各式各樣的影像處理演算法。 
 
-本文中的範例會逐步引導您建立可從 UWP 應用程式使用的機器碼 Windows 執行階段元件，包括使用C#建立的應用程式。 此協助程式元件將會公開單一方法 **Blur**，此方法會使用 OpenCV 的模糊影像處理功能。 此元件會實作私用方法以取得指向基礎影像資料緩衝區的指標，可供 OpenCV 程式庫直接使用，讓您更容易延伸協助程式元件來實作其他 OpenCV 處理功能。 
+本文中的範例會逐步引導您建立可從 UWP 應用程式使用的機器碼 Windows 執行階段元件，包括使用 c # 建立的應用程式。 此協助程式元件將會公開單一方法 **Blur**，此方法會使用 OpenCV 的模糊影像處理功能。 此元件會實作私用方法以取得指向基礎影像資料緩衝區的指標，可供 OpenCV 程式庫直接使用，讓您更容易延伸協助程式元件來實作其他 OpenCV 處理功能。 
 
 * 如需使用 **SoftwareBitmap** 的指示，請參閱[建立、編輯和儲存點陣圖影像](imaging.md)。 
-* 若要了解如何使用 OpenCV 程式庫，請移至 [https://opencv.org](https://opencv.org)。
-* 若要了解如何使用本文所顯示的 OpenCV 協助程式元件來搭配 **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)** ，實作取自相機之畫面的即時影像處理，請參閱[使用 OpenCV 搭配 MediaFrameReader](use-opencv-with-mediaframereader.md)。
+* 若要瞭解如何使用 OpenCV 程式庫，請移[https://opencv.org](https://opencv.org)至。
+* 若要了解如何使用本文所顯示的 OpenCV 協助程式元件來搭配 **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)**，實作取自相機之畫面的即時影像處理，請參閱[使用 OpenCV 搭配 MediaFrameReader](use-opencv-with-mediaframereader.md)。
 * 如需實作一些不同效果的完整程式碼範例，請參閱 Windows 通用範例 GitHub 存放庫中的[相機畫面 + OpenCV 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV) (英文)。
 
 > [!NOTE] 
@@ -31,17 +31,17 @@ ms.locfileid: "74256699"
 
 ### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. 將新的機器碼 Windows 執行階段元件專案新增至您的方案
 
-1. 在 \[方案總管\] 中的方案上按一下滑鼠右鍵，然後選取 **\[新增\] -> \[新增專案\]** ，新增專案到 Visual Studio 中的方案。 
-2. 在 **\[Visual C++\]** 類別下，選取 **\[Windows 執行階段元件 (通用 Windows)\]** 。 對於此範例，將專案命名為「OpenCVBridge」，然後按一下 **\[確定\]** 。 
-3. 在 **\[新增 Windows 通用專案\]** 對話方塊中，選取您應用程式的目標和最小作業系統版本，然後按一下 **\[確定\]** 。
-4. 在 \[方案總管\] 中自動產生的檔案 Class1.cpp 上按一下滑鼠右鍵，然後選取 **\[移除\]** ，確認對話方塊出現時，選擇 **\[刪除\]** 。 接著刪除 Class1.h 標頭檔。
-5. 在 OpenCVBridge 專案圖示上按一下滑鼠右鍵，然後選取 **\[新增\] -> \[類別\]** 。在 **\[新增類別\]** 對話方塊中，在 **\[類別名稱\]** 欄位中輸入「OpenCVHelper」，然後按一下 **\[確定\]** 。 我們將在稍後的步驟新增程式碼到所建立的類別檔案中。
+1. 在 \[方案總管\] 中的方案上按一下滑鼠右鍵，然後選取 **\[新增\] -> \[新增專案\]**，新增專案到 Visual Studio 中的方案。 
+2. 在 **\[Visual C++\]** 類別下，選取 **\[Windows 執行階段元件 (通用 Windows)\]**。 對於此範例，將專案命名為「OpenCVBridge」，然後按一下 **\[確定\]**。 
+3. 在 **\[新增 Windows 通用專案\]** 對話方塊中，選取您應用程式的目標和最小作業系統版本，然後按一下 **\[確定\]**。
+4. 在 \[方案總管\] 中自動產生的檔案 Class1.cpp 上按一下滑鼠右鍵，然後選取 **\[移除\]**，確認對話方塊出現時，選擇 **\[刪除\]**。 接著刪除 Class1.h 標頭檔。
+5. 在 OpenCVBridge 專案圖示上按一下滑鼠右鍵，然後選取 **\[新增\] -> \[類別\]**。在 **\[新增類別\]** 對話方塊中，在 **\[類別名稱\]** 欄位中輸入「OpenCVHelper」，然後按一下 **\[確定\]**。 我們將在稍後的步驟新增程式碼到所建立的類別檔案中。
 
 ### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. 將 OpenCV NuGet 套件新增到您的元件專案
 
 1. 在 \[方案總管\] 中，以滑鼠右鍵按一下 OpenCVBridge 專案，然後選取 **\[管理 NuGet 套件...\]**
-2. 當 \[NuGet 封裝管理員\] 對話方塊開啟時，選取 **\[瀏覽\]** 索引標籤並在搜尋方塊中輸入「OpenCV.Win」。
-3. 選取「OpenCV.Win.Core」，然後按一下 **\[安裝\]** 。 在 **\[預覽\]** 對話方塊中，按一下 **\[確定\]** 。
+2. 當 [NuGet 套件管理員] 對話方塊開啟時，請選取 [**流覽**] 索引標籤，然後在搜尋方塊中輸入 "OpenCV"。
+3. 選取「OpenCV.Win.Core」，然後按一下 **\[安裝\]**。 在 **\[預覽\]** 對話方塊中，按一下 **\[確定\]**。
 4. 使用相同的程序，安裝「OpenCV.Win.ImgProc」套件。
 
 >[!NOTE]
@@ -63,14 +63,14 @@ ms.locfileid: "74256699"
 
 接下來，新增方法 **GetPointerToPixelData** 至 OpenCVHelper.cpp。 此方法接受 **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** 並透過一系列轉換取得像素資料的 COM 介面表示法，我們可以透過此方法以 **char** 陣列取得指向基礎影像資料緩衝區的指標。 
 
-首先，透過呼叫 **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** 取得包含像素資料的 **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** ，要求讀取/寫入緩衝區以讓 OpenCV 程式庫可以修改像素資料。  呼叫 **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** 以取得 **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** 物件。 接下來，將 **IMemoryBufferByteAccess** 介面轉換成 **IInspectable** (這是所有 Windows 執行階段類別的基底介面)，並呼叫 **[QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** 以取得 **[IMemoryBufferByteAccess](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))** COM 介面，可讓我們透過 **char** 陣列取得像素資料緩衝區。 最後，呼叫IMemoryBufferByteAccess::GetBuffer **[ 填入 ](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)char** 陣列。 如果此方法中的任一轉換步驟失敗，方法會傳回 **false**，指出無法繼續進一步處理。
+首先，透過呼叫 **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** 取得包含像素資料的 **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)**，要求讀取/寫入緩衝區以讓 OpenCV 程式庫可以修改像素資料。  呼叫 **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** 以取得 **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** 物件。 接下來，將 **IMemoryBufferByteAccess** 介面轉換成 **IInspectable** (這是所有 Windows 執行階段類別的基底介面)，並呼叫 **[QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** 以取得 **[IMemoryBufferByteAccess](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))** COM 介面，可讓我們透過 **char** 陣列取得像素資料緩衝區。 最後，呼叫 **[IMemoryBufferByteAccess::GetBuffer](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)** 填入 **char** 陣列。 如果此方法中的任一轉換步驟失敗，方法會傳回 **false**，指出無法繼續進一步處理。
 
 [!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
 
 接下來，新增方法 **TryConvert**，如下所示。 此方法接受 **SoftwareBitmap**，並嘗試將它轉換成 **Mat** 物件，矩陣物件 OpenCV 用來代表影像資料緩衝區。 此方法會呼叫上述定義的 **GetPointerToPixelData** 方法以取得代表像素資料緩衝區的 **char**陣列。 如果此作業成功，則會呼叫 **Mat** 類別的建構函式，傳遞從來源 **SoftwareBitmap** 物件取得的像素寬度與高度。 
 
 > [!NOTE] 
-> 此範例指定 CV_8UC4 常數做為所建立 **Mat** 物件的像素格式。 這表示傳遞到此方法的 **SoftwareBitmap** 必須具有預乘 Alpha 之 **[BGRA8](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.BitmapPixelFormat)** 的 **[BitmapPixelFormat](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapPixelFormat)** 屬性值 (CV_8UC4 的對等項目)，才能用於此範例。
+> 此範例指定 CV_8UC4 常數做為所建立 **Mat** 物件的像素格式。 這表示傳遞到此方法的 **SoftwareBitmap** 必須具有預乘 Alpha 之 **[BGRA8](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapPixelFormat)** 的 **[BitmapPixelFormat](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.BitmapPixelFormat)** 屬性值 (CV_8UC4 的對等項目)，才能用於此範例。
 
 方法會傳回所建立 **Mat** 物件的淺層複製，以便對 **SoftwareBitmap** 參考的相同資料像素資料緩衝區進行進一步處理，而非對此緩衝區複本進行處理。
 
@@ -82,7 +82,7 @@ ms.locfileid: "74256699"
 
 
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>使用協助程式元件的簡單 SoftwareBitmap OpenCV 範例
-現在已經建立 OpenCVBridge 元件，我們可以建立簡單 C# 應用程式，來使用 OpenCV **blur** 方法修改 **SoftwareBitmap**。 若要從您的 UWP 應用程式存取 Windows 執行階段元件，您必須先將參考新增至元件。 在 \[方案總管\] 中，以滑鼠右鍵按一下 UWP app 專案下方的 **\[參考\]** 節點，然後選取 **\[加入參考...\]** 。在 \[參考管理員\] 對話方塊中，選取 **\[專案\] -> \[方案\]** 。 核取 OpenCVBridge 專案旁邊的方塊，並按一下 **\[確定\]** 。
+現在已經建立 OpenCVBridge 元件，我們可以建立簡單 C# 應用程式，來使用 OpenCV **blur** 方法修改 **SoftwareBitmap**。 若要從您的 UWP 應用程式存取 Windows 執行階段元件，您必須先將參考新增至元件。 在 \[方案總管\] 中，以滑鼠右鍵按一下 UWP app 專案下方的 **\[參考\]** 節點，然後選取 **\[加入參考...\]**。在 \[參考管理員\] 對話方塊中，選取 **\[專案\] -> \[方案\]**。 核取 OpenCVBridge 專案旁邊的方塊，並按一下 **\[確定\]**。
 
 以下的範例程式碼可讓使用者選取影像檔，接著使用 **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** 建立影像的 **SoftwareBitmap** 表示法。 如需使用 **SoftwareBitmap** 的詳細資訊，請參閱[建立、編輯和儲存點陣圖影像](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging)。
 

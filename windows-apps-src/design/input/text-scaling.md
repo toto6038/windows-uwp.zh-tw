@@ -1,59 +1,59 @@
 ---
-Description: 建置 UWP 應用程式和支援的平台文字調整的自訂/樣板化控制項。
+Description: 建立 Windows 應用程式，以及支援平臺文字縮放的自訂/範本控制項。
 title: 文字大小調整
 label: Text scaling
 template: detail.hbs
-keywords: UWP、 文字、 調整、 協助工具、 「 輕鬆存取 」，顯示 「 讓文字更大 」，使用者互動，輸入
+keywords: UWP，文字，縮放，協助工具，「輕鬆存取」，顯示，「讓文字變大」，使用者互動，輸入
 ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 22ad7a1ac6160fd8b1cfb70c69f299c5d89192d3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4db3af0d2ec0ce1dbd0866f569ad9bf9b0392aa8
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57600813"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970563"
 ---
 # <a name="text-scaling"></a>文字大小調整
 
-![調整 225%到 100%的文字範例](images/coretext/text-scaling-news-hero-small.png)  
-*調整 Windows 10 （100%到 225 的 %） 中的文字範例*
+![文字縮放比例100% 到225% 的範例](images/coretext/text-scaling-news-hero-small.png)  
+*Windows 10 中的文字縮放範例（100% 到225%）*
 
 ## <a name="overview"></a>概觀
 
-許多人時，頗具挑戰性讀取 （從行動裝置，到 Surface Hub 的巨大螢幕的桌上型監視器的膝上型電腦） 的電腦螢幕上的文字。 相反地，某些使用者發現大於必要應用程式和網站中使用的字型大小。
+將電腦螢幕上的文字（從 [行動裝置] 到 [膝上型電腦] 到 [桌面監視器]）讀取到 Surface Hub 的 [巨型] 畫面，對於許多人來說可能是一項挑戰。 相反地，有些使用者會發現應用程式和網站中所使用的字型大小大於所需的大小。
 
-若要確保文字是以易於閱讀盡最大範圍的使用者，Windows 會提供變更相對字型大小跨 OS 和個別的應用程式的使用者的能力。 而不是使用 [放大鏡] 應用程式 （這通常只是可以放大螢幕上的區域內的所有項目，並引進自己的可用性問題）、 變更顯示器解析度，或依賴 DPI 縮放比例 （這會顯示和一般檢視為基礎的所有項目調整大小距離），使用者可以快速存取設定，以可調整大小只是文字，範圍從 100%（預設大小） 225%。
+為了確保最大範圍的使用者能夠盡可能地閱讀文字，Windows 提供使用者在 OS 和個別應用程式之間變更相對字型大小的能力。 相較於使用 [放大鏡] 應用程式 (通常只是放大螢幕區域內的所有內容，並引進自己的可用性問題)、變更顯示器解析度，或依賴 DPI 縮放比例 (根據顯示器和一般觀看距離調整所有內容)，使用者可以快速存取設定以僅調整文字大小，範圍從 100% (預設大小) 到 225%。
 
 ## <a name="support"></a>支援
 
-通用 Windows 應用程式 (這兩個標準，並將 PWA)，支援縮放比例預設的文字。
+通用 Windows 應用程式（標準和 PWA）預設支援文字縮放。
 
-如果您的 UWP 應用程式包含自訂控制項、 自訂文字介面、 硬式編碼的控制項的高度，較舊的架構或第 3 個合作對象的架構，您可能必須進行一些更新，以確保一致且有用的體驗，為您的使用者。  
+如果您的 Windows 應用程式包含自訂控制項、自訂文字介面、硬式編碼控制項高度、舊版架構或協力廠商架構，您可能必須進行一些更新，以確保使用者的一致且有用的體驗。  
 
-DirectWrite、 GDI 和 XAML SwapChainPanels 原本不支援文字大小調整，而 Win32 支援僅限於功能表、 圖示和工具列。  
+DirectWrite、GDI 和 XAML SwapChainPanels 原本就不支援文字縮放，而 Win32 支援僅限於功能表、圖示和工具列。  
 
 <!-- If you want to support text scaling in your application with these frameworks, you’ll need to support the text scaling change event outlined below and provide alternative sizes for your UI and content.   -->
 
-## <a name="user-experience"></a>使用者體驗
+## <a name="user-experience"></a>使用者經驗
 
-使用者可以調整文字大小以讓文字更大的滑桿，在 設定-> 輕鬆存取-> 願景/顯示畫面。
+使用者可以使用 [設定] 上的 [讓文字變大] 滑杆來調整文字大小-> 輕鬆存取-> 視覺/顯示畫面。
 
-![調整 225%到 100%的文字範例](images/coretext/text-scaling-settings-100-small.png)  
-*文字調整規模設定從 設定-> 輕鬆存取-> 願景/顯示畫面*
+![文字縮放比例100% 到225% 的範例](images/coretext/text-scaling-settings-100-small.png)  
+*設定的文字縮放設定-> 輕鬆存取-> 視覺/顯示畫面*
 
 ## <a name="ux-guidance"></a>UX 指導方針
 
-文字是調整大小時，控制項和容器也必須調整大小並且自動重排以容納文字和其新的版面配置。 如前文所述，根據應用程式、 架構和平台，是為您完成大部分的這項工作。 下列的 UX 指導方針涵蓋這些情況下，很不。
+調整文字大小時，控制項和容器也必須調整大小和重新排列，以容納文字及其新版面配置。 如先前所述，根據應用程式、架構和平臺，會為您完成大部分的工作。 下列 UX 指導方針涵蓋不適用的案例。
 
-### <a name="use-the-platform-controls"></a>使用平台控制項
+### <a name="use-the-platform-controls"></a>使用平臺控制項
 
-我們說這已經嗎？ 值得連載：可能的話，請一律使用提供的各種不同的 Windows 應用程式架構的內建控制項，來取得最完整的使用者體驗可能最少的投入時間。
+我們已經說過了嗎？ 值得一提的是，在可行的情況下，一定要使用各種 Windows 應用程式架構所提供的內建控制項，以取得最全面的使用者體驗。
 
-例如，所有 UWP 文字控制項都支援全文檢索規模調整而不需要任何自訂或樣板化的體驗。
+例如，所有 UWP 文字控制項都支援完整的文字縮放體驗，而不需要任何自訂或範本。
 
-以下是從基本的 UWP 應用程式，其中包含幾個標準文字控制項的程式碼片段：
+以下是基本 UWP 應用程式的程式碼片段，其中包含幾個標準文字控制項：
 
 ``` xaml
 <Grid>
@@ -93,14 +93,14 @@ DirectWrite、 GDI 和 XAML SwapChainPanels 原本不支援文字大小調整，
 </Grid>
 ```
 
-![動態調整 225%到 100%的文字](images/coretext/text-scaling.gif)  
-*調整動畫效果的文字*
+![動畫文字縮放比例100% 到225%](images/coretext/text-scaling.gif)  
+*動畫文字縮放比例*
 
 ### <a name="use-auto-sizing"></a>使用自動調整大小
 
-未指定控制項的絕對的大小。 可能的話，可讓您根據使用者和裝置設定自動的控制項重新調整大小的平台。  
+請勿指定控制項的絕對大小。 盡可能讓平臺根據使用者和裝置設定，自動調整控制項大小。  
 
-在此程式碼片段前一個範例中，我們會使用`Auto`和`*`一組方格資料行和可讓平台的寬度值調整應用程式版面配置方格中包含的項目大小為基礎。
+在前一個範例的這個程式碼片段中，我們`Auto`會`*`針對一組格線資料行使用和寬度值，並讓平臺根據方格中包含的元素大小來調整應用程式的版面配置。
 
 ``` xaml
 <Grid.ColumnDefinitions>
@@ -112,28 +112,28 @@ DirectWrite、 GDI 和 XAML SwapChainPanels 原本不支援文字大小調整，
 
 ### <a name="use-text-wrapping"></a>使用文字換行
 
-若要確保您的應用程式的版面配置是富彈性並具可調適性越好，可讓任何包含的文字 （許多控制項並不支援文字換行的預設值） 的控制項中的文字換行。
+若要確保應用程式的版面配置盡可能彈性且可調整，請在包含文字的任何控制項中啟用文字換行（許多控制項預設不支援文字換行）。
 
-如果您未指定文字換行，此平台會使用其他方法，在調整版面配置，包括剪取 （請參閱上一個範例）。
+如果您未指定文字換行，平臺會使用其他方法來調整版面配置，包括裁剪（請參閱上一個範例）。
 
-在這裡，我們使用`AcceptsReturn`和`TextWrapping`文字方塊屬性，以確保我們的版面配置是盡可能有彈性。
+在此，我們會`AcceptsReturn`使用`TextWrapping`和 TextBox 屬性，以確保我們的版面配置盡可能彈性。
 
 ``` xaml
 <TextBox PlaceholderText="Type something here" 
           AcceptsReturn="True" TextWrapping="Wrap" />
 ```
 
-![動畫效果的文字與文字換行調整 225%到 100%](images/coretext/text-scaling-textwrap.gif)  
-*動態調整文字換行的文字*
+![文字換行的動畫文字縮放比例100% 到225%](images/coretext/text-scaling-textwrap.gif)  
+*文字換行的動畫文字縮放*
 
 ### <a name="specify-text-trimming-behavior"></a>指定文字修剪行為
 
-如果文字換行不是慣用的行為，大部分的文字控制項可讓您裁剪文字，或指定的文字修剪行為的省略符號。 裁剪是慣用的省略符號，如省略符號會佔用空間本身。
+如果文字換行不是慣用的行為，大部分的文字控制項都可讓您裁剪文字，或為文字修剪行為指定省略號。 對橢圓形而言偏好裁剪，因為省略號會佔用空間本身。
 
 > [!NOTE]
-> 若要裁剪文字，裁剪字串的結尾，無法開始。
+> 如果您需要裁剪文字，請裁剪字串結尾，而不是開始。
 
-在此範例中，我們會示範如何裁剪在 TextBlock 中使用的文字[TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)屬性。
+在此範例中，我們會示範如何使用[system.windows.controls.textblock.texttrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)屬性來裁剪 TextBlock 中的文字。
 
 ``` xaml
 <TextBlock TextTrimming="Clip">
@@ -141,14 +141,14 @@ DirectWrite、 GDI 和 XAML SwapChainPanels 原本不支援文字大小調整，
 </TextBlock>
 ```
 
-![縮放比例 100%以 225%取代成文字裁剪的文字](images/coretext/text-scaling-clipping-small.png)  
-*使用文字裁剪相應的文字*
+![文字裁剪比例為100% 到225%](images/coretext/text-scaling-clipping-small.png)  
+*使用文字裁剪縮放文字*
 
 ### <a name="use-a-tooltip"></a>使用工具提示
 
-如果您裁剪文字，可用於工具提示提供給使用者的完整文字。
+如果您裁剪文字，請使用工具提示來提供完整的文字給您的使用者。
 
-在這裡，我們將工具提示新增至 TextBlock，不支援文字換行：
+在這裡，我們會將工具提示新增至不支援文字換行的 TextBlock：
 
 ``` xaml
 <TextBlock TextTrimming="Clip">
@@ -159,19 +159,19 @@ DirectWrite、 GDI 和 XAML SwapChainPanels 原本不支援文字大小調整，
 </TextBlock>
 ```
 
-### <a name="dont-scale-font-based-icons-or-symbols"></a>無法擴充字型架構圖示或符號
+### <a name="dont-scale-font-based-icons-or-symbols"></a>不要調整以字型為基礎的圖示或符號
 
-當使用字型架構圖示強調或裝飾，停用縮放比例，這些字元。
+當您使用以字型為基礎的圖示進行強調或裝飾時，請停用這些字元的縮放。
 
-設定[IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)屬性設`false`大部分 XAML 的控制項。
+針對大部分[IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)的 XAML 控制項`false` ，將 IsTextScaleFactorEnabled 屬性設定為。
 
-### <a name="support-text-scaling-natively"></a>調整原生支援文字
+### <a name="support-text-scaling-natively"></a>以原生方式支援文字縮放
 
-處理[TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings 系統事件，在您自訂的架構和控制項。 每次使用者在他們的系統設定的文字的縮放比例時，會引發這個事件。
+在您的自訂架構和控制項中處理[TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings 系統事件。 每次使用者在其系統上設定文字縮放比例時，就會引發此事件。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
-本主題提供縮放支援在 Windows 中的文字的概觀，並包含有關如何自訂使用者體驗的 UX 和開發人員指引。
+本主題概述 Windows 中的文字調整支援，並包含 UX 和開發人員指引，說明如何自訂使用者體驗。
 
 ## <a name="related-articles"></a>相關文章
 
