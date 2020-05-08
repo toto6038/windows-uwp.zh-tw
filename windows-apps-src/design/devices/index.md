@@ -1,6 +1,6 @@
 ---
-Description: 了解支援通用 Windows 平台 (UWP) 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。
-title: 適用於 UWP 裝置的 UI 考量
+Description: 認識支援 Windows App 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。
+title: 適用於 Windows 裝置的 UI 考量
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
@@ -8,18 +8,18 @@ keywords: 裝置, 輸入, 互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 121025dc5e87e7e3953b9517144e36ab382795bb
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258115"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968204"
 ---
-#  <a name="ui-considerations-for-uwp-devices"></a>適用於 UWP 裝置的 UI 考量
+#  <a name="ui-considerations-for-windows-devices"></a>適用於 Windows 裝置的 UI 考量
 
 ![裝置](../images/devices-2x.png)
 
-了解支援通用 Windows 平台 (UWP) 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。
+認識支援 Windows App 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。
 
 ![執行 Windows 的裝置](images/device-primer/device-primer-ramp.png)
 
@@ -96,7 +96,7 @@ UI 考量
 
 坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為「10 英呎體驗」。  這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或任何其他連接至電視螢幕的裝置開發應用程式，並且可能使用遊戲台或遙控器作為輸入，您就必須記住這一點。
 
-為 10 英呎體驗設計 UWP 應用程式，與為這裡所列出的任何其他裝置類別設計 UWP 應用程式十分不同。 如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](designing-for-tv.md)。
+為 10 英呎體驗設計 Windows 應用程式，與為以下所列的任何其他裝置類別設計 Windows 應用程式十分不同。 如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](designing-for-tv.md)。
 
 螢幕大小
 - 24 吋 (含) 以上

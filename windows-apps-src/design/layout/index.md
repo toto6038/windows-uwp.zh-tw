@@ -1,17 +1,17 @@
 ---
-description: 了解如何設計在各種裝置與螢幕尺寸上都很容易瀏覽且看起來很棒的 UWP 應用程式並撰寫應用程式程式碼。
-title: UWP 應用程式的配置概觀
+description: 了解如何設計在各種裝置與螢幕尺寸上都很容易瀏覽且看起來很棒的 Windows 應用程式，並撰寫應用程式程式碼。
+title: Windows 應用程式的配置概觀
 keywords: uwP 應用程式配置, 通用 Windows 平台,應用程式設計, 介面
 ms.date: 03/07/2018
 ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ab0344acc40103620da5164faa397c081a4a079
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: c3647f6a4c3bbc3951fab45380762de472d13533
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867329"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970773"
 ---
 # <a name="layout"></a>版面配置
 

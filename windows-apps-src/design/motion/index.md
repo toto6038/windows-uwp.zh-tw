@@ -1,6 +1,6 @@
 ---
 Description: 有意義且精心設計的動作會讓應用程式更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
-title: UWP app 中的動作和動畫
+title: Windows 應用程式的動作
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
@@ -12,14 +12,14 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 31cf2134fb8f77809b75a5abf3e6980443452059
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 49fc31729bc8f195bacf1d743c570aa5293b33de
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867408"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970333"
 ---
-# <a name="motion-for-uwp-apps"></a>適用於 UWP app 的動作
+# <a name="motion-for-windows-apps"></a>Windows 應用程式的動作
 
 ![動作圖示](../images/motion-2x.png)
 
