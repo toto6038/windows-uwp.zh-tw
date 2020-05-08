@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: c59982c174909a3fb8ab0b21d5dd792969cfeebc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d2b6ba88587f4f536d4fe6fc2750a520166fde18
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259478"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606347"
 ---
 # <a name="handle-a-cancelled-background-task"></a>處理已取消的背景工作
 
@@ -23,11 +23,11 @@ ms.locfileid: "74259478"
 
 -   [**BackgroundTaskCanceledEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
 -   [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
--   [**ApplicationData。目前**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
+-   [**ApplicationData.Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
 
 了解如何建立一個可辨識取消要求、停止工作並使用永續性儲存體向應用程式回報取消的背景工作。
 
-本主題假設您已經建立背景工作類別，包括做為背景工作進入點使用的**Run**方法。 若要快速開始建立背景工作，請參閱[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)或[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
+本主題假設您已經建立背景工作類別，包括做為背景工作進入點使用的**Run**方法。 若要快速開始建立背景工作，請參閱[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)或[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)。
 
 本主題也適用於同處理序背景工作。 但不是**執行**方法，而是替代**OnBackgroundActivated**。 同處理序背景工作並不需要您使用永續性儲存體來發出取消訊號，因為背景工作是在與您前景應用程式相同的處理序中執行，所以您可以使用應用程式狀態來傳達取消。
 
@@ -67,7 +67,7 @@ void ExampleBackgroundTask::OnCanceled(
 }
 ```
 
-將名為 **\_CancelRequested**的旗標變數新增至背景工作類別。 此變數將用來指示何時提出取消要求。
+將名** \_為 CancelRequested**的旗標變數新增至背景工作類別。 此變數將用來指示何時提出取消要求。
 
 ```csharp
 volatile bool _CancelRequested = false;
@@ -83,9 +83,9 @@ private:
     volatile bool CancelRequested;
 ```
 
-在您于步驟1中建立的**OnCanceled**方法中，將旗標變數 **\_CancelRequested**設定為**true**。
+在您于步驟1中建立的**OnCanceled**方法中，將旗標變數** \_CancelRequested**設定為**true**。
 
-完整的[背景工作範例]( https://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法會將 **\_CancelRequested**設定為**true** ，並寫入可能有用的 debug 輸出。
+完整的[背景工作範例]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9) **OnCanceled**方法會將** \_CancelRequested**設定為**true** ，並寫入可能有用的 debug 輸出。
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -131,9 +131,9 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>藉由結束背景工作來處理取消
 
-收到取消要求時，執行背景工作的方法必須藉由辨識 **\_cancelRequested**設定為**true**的時間來停止工作和結束。 對於同進程背景工作，這表示從**OnBackgroundActivated**方法傳回。 對於跨進程背景工作，這表示會從**Run**方法傳回。
+收到取消要求時，執行背景工作的方法必須藉由辨識** \_cancelRequested**設定為**true**來停止工作和結束。 對於同進程背景工作，這表示從**OnBackgroundActivated**方法傳回。 對於跨進程背景工作，這表示會從**Run**方法傳回。
 
-修改背景工作類別的程式碼，以便在旗標變數運作時檢查旗標變數。 如果 **\_cancelRequested**變成 true，請停止工作繼續進行。
+修改背景工作類別的程式碼，以便在旗標變數運作時檢查旗標變數。 如果** \_cancelRequested**變成 true，請停止工作繼續進行。
 
 [背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)包含的檢查會在背景工作取消時停止定期計時器回呼。
 
@@ -402,7 +402,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 
 ## <a name="related-topics"></a>相關主題
 
-- [建立及註冊同處理序序背景工作](create-and-register-an-inproc-background-task.md)。
+- [建立並註冊同進程背景](create-and-register-an-inproc-background-task.md)工作。
 - [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 - [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 - [背景工作的指導方針](guidelines-for-background-tasks.md)
@@ -414,4 +414,4 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 - [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
 - [使用維護觸發程序](use-a-maintenance-trigger.md)
 - [偵錯背景工作](debug-a-background-task.md)
-- [如何在 UWP 應用程式中觸發暫止、繼續和背景事件（在進行調試時）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+- [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

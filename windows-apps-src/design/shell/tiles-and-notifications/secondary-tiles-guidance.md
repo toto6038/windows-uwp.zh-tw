@@ -1,5 +1,5 @@
 ---
-Description: 了解在您 UWP 應用程式中使用次要磚的時機和位置。
+Description: 瞭解您應該在 Windows 應用程式中使用次要磚的時機和位置。
 title: 次要磚設計指引
 label: Secondary tiles
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles, guidance, guidelines, best practices, 次要磚. 指導方針, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 875513840d8dc752fe336241fa54710aebad6103
-ms.sourcegitcommit: 2d709ddcc31f52d2a4ace1134aea45057d99a615
+ms.openlocfilehash: 400b0d48fd68c720d613325d1938c0c4a70931a7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74782588"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971023"
 ---
 # <a name="secondary-tile-guidance"></a>次要磚指導方針
 
@@ -23,7 +23,7 @@ ms.locfileid: "74782588"
 > 只有使用者才能將次要磚釘選至 \[開始\] 功能表；應用程式無法以程式設計的方式釘選次要磚。 使用者也可控制磚的移除，並可將次要磚從 \[開始\] 功能表或在父項應用程式中移除。
 
 
-## <a name="recommendations"></a>建議事項
+## <a name="recommendations"></a>建議
 
 當啟用您應用程式中的次要磚時，請考慮以下建議事項：
 
@@ -45,10 +45,10 @@ ms.locfileid: "74782588"
 * 次要磚 (例如 \[開始\] 畫面上的所有磚) 為動態的出口，可經常更新為新的內容。 次要磚可使用與任何其他磚相同的機制，來呈現通知與更新。 若要深入了解，請參閱[選擇通知傳遞方法](choosing-a-notification-delivery-method.md)。
 
 
-## <a name="related"></a>相關
+## <a name="related"></a>相關參考
 
-* [次要磚總覽](secondary-tiles.md)
+* [次要磚概觀](secondary-tiles.md)
 * [釘選次要磚](secondary-tiles-pinning.md)
 * [磚資產](app-assets.md)
-* [磚內容檔](create-adaptive-tiles.md)
+* [磚內容文件](create-adaptive-tiles.md)
 * [傳送本機磚通知](sending-a-local-tile-notification.md)

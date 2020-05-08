@@ -1,42 +1,42 @@
 ---
-Description: 桌面應用程式和 UWP 應用程式之間共用程式碼
-title: 桌面應用程式和 UWP 應用程式之間共用程式碼
+Description: 在桌面應用程式和 UWP 應用程式之間共用程式碼
+title: 在桌面應用程式和 UWP 應用程式之間共用程式碼
 ms.date: 10/03/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 344ee7060edcee3376e271fc21e104490d8724d7
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 4c07a3bbff4b29d2b59ef7d6d8a5912ce3675a4e
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319714"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730357"
 ---
-# <a name="move-from-a-desktop-application-to-uwp"></a>移至 UWP 的桌面應用程式
+# <a name="move-from-a-desktop-application-to-uwp"></a>從桌面應用程式移至 UWP
 
-如果您有現有的傳統型應用程式使用 （包括 WPF 和 Windows Form） 的.NET Framework 所建置或C++Win32 Api，您有幾個選項將移到通用 Windows 平台 (UWP) 和 Windows 10。
+如果您現有的桌面應用程式是使用 .NET Framework （包括 WPF 和 Windows Forms）或 c + + Win32 Api 所建立，則您有數個選項可移至通用 Windows 平臺（UWP）和 Windows 10。
 
-## <a name="package-your-desktop-application-in-an-msix-package"></a>封裝您 MSIX 封裝中的傳統型應用程式
+## <a name="package-your-desktop-application-in-an-msix-package"></a>將桌面應用程式封裝在 MSIX 套件中
 
-您可以封裝 MSIX 封裝中您的桌面應用程式以存取許多 Windows 10 功能。 MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式提供通用封裝體驗，包括 UWP、WPF、Windows Forms 及 Win32 應用程式。 將您的傳統型 Windows 應用程式封裝在 MSIX 套件中，可讓您存取強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。 您可以封裝您的應用程式是否有原始程式碼，或如果您只需要現有的安裝程式檔案 （例如 MSI 或 APP-V 安裝程式）。 封裝您的應用程式之後，您可以整合 UWP 功能，例如封裝擴充功能和其他 UWP 元件。
+您可以在 MSIX 套件中封裝桌面應用程式，以取得更多 Windows 10 功能的存取權。 MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式提供通用封裝體驗，包括 UWP、WPF、Windows Forms 及 Win32 應用程式。 將您的傳統型 Windows 應用程式封裝在 MSIX 套件中，可讓您存取強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。 不論您是否有原始程式碼，或是只有現有的安裝程式檔案（例如 MSI 或 App-v 安裝程式），您都可以封裝應用程式。 封裝應用程式之後，您可以整合 UWP 功能，例如封裝延伸模組和其他 UWP 元件。
 
-如需詳細資訊，請參閱 <<c0> [ 桌面應用程式 （傳統型橋接器） 封裝](/windows/msix/desktop/desktop-to-uwp-root)並[需要的套件識別功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
+如需詳細資訊，請參閱[封裝桌面應用程式（桌面橋接器）](/windows/msix/desktop/desktop-to-uwp-root)和[需要套件識別的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
 
-## <a name="use-uwp-apis"></a>使用 UWP Api
+## <a name="use-windows-runtime-apis"></a>使用 Windows 執行階段 Api
 
-您可以在您的 WPF、Windows Forms 或 C++ Win32 傳統型應用程式中直接呼叫許多 UWP API，整合為 Windows 10 使用者帶來好處的新式體驗。 例如，您可以呼叫 UWP API 以將快顯通知新增至您的傳統型應用程式。
+您可以在您的 WPF、Windows Forms 或 C++ Win32 傳統型應用程式中直接呼叫許多 Windows 執行階段 API，整合為 Windows 10 使用者帶來好處的新式體驗。 例如，您可以呼叫 Windows 執行階段 API 以將快顯通知新增至您的傳統型應用程式。
 
-如需詳細資訊，請參閱[在傳統型應用程式中使用 UWP API](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
+如需詳細資訊，請參閱[在傳統型應用程式中使用 Windows 執行階段 API](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
 
-## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>移轉 .NET Framework 應用程式的 UWP 應用程式
+## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>將 .NET Framework 應用程式遷移至 UWP 應用程式
 
-如果您的應用程式在.NET Framework 上執行，您可以利用.NET Standard 2.0 將它移轉至 UWP 應用程式。 移動程式碼以及您可以到.NET Standard 2.0 類別庫，然後建立參考您的.NET Standard 2.0 程式庫的 UWP 應用程式。 
+如果您的應用程式是在 .NET Framework 上執行，您可以利用 .NET Standard 2.0，將它遷移至 UWP 應用程式。 盡可能將最多的程式碼移至 .NET Standard 2.0 類別庫，然後建立參考您 .NET Standard 2.0 程式庫的 UWP 應用程式。 
 
 ### <a name="share-code-in-a-net-standard-20-library"></a>共用 .NET Standard 2.0 程式庫中的程式碼
 
-如果您的應用程式在.NET Framework 上執行，將程式碼，您可以到.NET Standard 2.0 類別庫。 只要您的程式碼使用 Standard 中定義的 API，就可以在 UWP app 中重複使用該程式碼。 這比以往任何時候都還要容易共用 .NET Standard 程式庫的程式碼，因為 .NET Standard 2.0 中包含更加多的 API 了。
+如果您的應用程式是在 .NET Framework 上執行，請將盡可能多的程式碼放入 .NET Standard 2.0 類別庫。 只要您的程式碼使用 Standard 中定義的 API，就可以在 UWP app 中重複使用該程式碼。 這比以往任何時候都還要容易共用 .NET Standard 程式庫的程式碼，因為 .NET Standard 2.0 中包含更加多的 API 了。
 
-以下是告訴您其相關的影片。
+這裡提供的影片會告訴您更多相關資訊。
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
@@ -76,13 +76,13 @@ ms.locfileid: "67319714"
 
 您部分的程式碼專屬於特定平台，必須繼續留在傳統型應用程式專案中。
 
-#### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>範例：移轉至.NET Standard 2.0 程式庫的資料存取程式碼
+#### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>範例：將資料存取程式碼移轉至 .NET Standard 2.0 程式庫
 
-例如，假設我們有非常基本的 Windows Forms 應用程式會顯示從 Northwind 範例資料庫的客戶。
+假設我們有一個非常基本的 Windows Forms 應用程式，它會顯示 Northwind 範例資料庫中的客戶。
 
 ![Windows Forms 應用程式](images/desktop-to-uwp/win-forms-app.png)
 
-專案包含內有名為 **Northwind** 靜態類別的 .NET Standard 2.0 類別庫。 如果我們將此程式碼移入 **Northwind** 類別，程式碼將無法編譯，因為其中使用 ``SQLConnection``、``SqlCommand`` 和 ``SqlDataReader`` 類別，以及那些未在 .NET Standard 2.0 中提供的類別。
+專案包含內有名為 **Northwind** 靜態類別的 .NET Standard 2.0 類別庫。 如果我們將此程式碼移**至 Northwind**類別，它將不會編譯， ``SQLConnection``因為``SqlCommand``它會``SqlDataReader``使用、和類別，以及 .NET Standard 2.0 中未提供的類別。
 
 ```csharp
 public static ArrayList GetCustomerNames()
@@ -232,14 +232,14 @@ public sealed partial class MainPage : Page
 
 #### <a name="add-a-xamarin-project"></a>新增 Xamarin 專案
 
-首先，將 **\[Android\]** 、 **\[iOS\]** 或 **\[跨平台\]** 專案新增至您的方案。
+首先，將 **\[Android\]**、**\[iOS\]** 或 **\[跨平台\]** 專案新增至您的方案。
 
 您可以在 **\[加入新的專案\]** 對話方塊的 **\[Visual C#\]** 群組底下找到這些範本。
 
 ![Xamarin 應用程式](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->跨平台專案非常適合只有極少平台特定功能的應用程式。 您可以使用這些專案建立一個在 Android、iOS 及 Windows 上執行的原生 XAML 型 UI。 請按一下[這裡](https://docs.microsoft.com/xamarin/xamarin-forms/)進一步了解。
+>跨平台專案非常適合只有極少平台特定功能的應用程式。 您可以使用這些專案建立一個在 Android、iOS 及 Windows 上執行的原生 XAML 型 UI。 [在這裡](https://docs.microsoft.com/xamarin/xamarin-forms/)深入瞭解。
 
 接著，從 Android、iOS 或跨平台專案中新增類別庫專案的參考。
 
@@ -282,10 +282,10 @@ public class MainActivity : ListActivity
 
 ## <a name="next-steps"></a>後續步驟
 
-**尋找問題的解答**
+**尋找您的問題解答**
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何疑問嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
-**提供意見反應或提出功能建議**
+**提供意見反應或功能建議**
 
 請參閱 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。

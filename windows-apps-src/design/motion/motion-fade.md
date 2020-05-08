@@ -1,19 +1,19 @@
 ---
 Description: 使用淡化動畫將項目帶入檢視或帶出檢視。 兩個常見的淡化動畫為淡入和淡出。
-title: UWP app 中的淡入/淡出動畫
+title: 淡化動畫
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8642e911a3ad4275e0a7a0f147ca9d70f415b0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6b937ba4174d01096a09a98f7efd4e7e3dce9632
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366791"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970303"
 ---
 # <a name="fade-animations"></a>淡化動畫
 
@@ -21,7 +21,7 @@ ms.locfileid: "66366791"
 
 使用淡化動畫將項目帶入檢視或帶出檢視。 兩個常見的淡化動畫為淡入和淡出。
 
-> **重要的 Api**:[**FadeInThemeAnimation 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)， [ **FadeOutThemeAnimation 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
+> **重要 Api**: [**FadeInThemeAnimation 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)、[**FadeOutThemeAnimation 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -35,8 +35,8 @@ ms.locfileid: "66366791"
 ## <a name="related-articles"></a>相關文章
 
 * [動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [建立淡出動畫](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
-* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [讓淡入/淡出產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
+* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
 * [**FadeInThemeAnimation 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)
 * [**FadeOutThemeAnimation 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 

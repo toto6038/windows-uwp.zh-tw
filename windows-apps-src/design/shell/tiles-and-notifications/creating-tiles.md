@@ -1,25 +1,25 @@
 ---
-Description: App 在 [開始] 功能表上以磚的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。
-title: 磚
+Description: App 在 [開始] 功能表上以磚的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的 Windows 應用程式專案時，它會包含預設的磚，以顯示您應用程式的名稱和標誌。
+title: Windows 應用程式的磚
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e46d73c91f54b1bb74a70990a238f13ccd47645d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0882ac67766bc2ce037133cf8a39b5393f616e13
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634433"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970993"
 ---
-# <a name="tiles-for-uwp-apps"></a>適用於 UWP App 的磚
+# <a name="tiles-for-windows-apps"></a>Windows 應用程式的磚
 
  
 
-App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。 Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
+*磚*是應用程式在 [開始] 功能表上的標記法。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的 Windows 應用程式專案時，它會包含預設的磚，以顯示您應用程式的名稱和標誌。Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
 
 ## <a name="configure-the-default-tile"></a>設定預設磚
 
@@ -47,19 +47,19 @@ App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一�
 
 以下是您應該更新的幾個項目。
 
--   DisplayName:這個值取代為您想要在您的磚上顯示的名稱。
--   簡短名稱：因為您的顯示名稱，以符合圖格上的有限的空間，建議您指定簡短名稱，藉此確定您的應用程式名稱不會截斷。
+-   DisplayName：使用您想要在磚上顯示的名稱來取代此值。
+-   ShortName：因為磚上可容納顯示名稱的空間有限，建議您另外指定 ShortName，以確保您的 app 名稱不會被截斷。
 -   標誌影像：
 
-    您應該以自己的影像取代這些影像。 您可以選擇為不同的視覺比例提供影像，但不需全部提供。 若要確保您的 app 在各種裝置上有很好的顯示效果，我們建議您提供每個影像的 100%、200% 及 400% 比例版本。 請參閱[磚和圖示資產](app-assets.md)，以深入了解如何產生這些資產。
+    您應該以自己的影像取代這些影像。 您可以選擇為不同的視覺比例提供影像，但不需全部提供。 若要確保您的 app 在各種裝置上有很好的顯示效果，我們建議您提供每個影像的 100%、200% 及 400% 比例版本。 若要深入瞭解如何產生這些資產，請參閱[應用程式圖示和標誌](/windows/uwp/design/style/app-icons-and-logos)。
 
     縮放影像按照以下命名慣例：
     
-    *&lt;映像名稱&gt;*.scale-*&lt;縮放比例&gt;*。*&lt;影像檔案延伸模組&gt;* 
+    * &lt; &gt; **映射名稱&gt; &lt;* 因素。*影像檔案副檔名&gt; &lt; * 
 
     例如：SplashScreen.scale-100.png
 
-    參考影像時，您將以 *&lt;影像名稱&gt;*.*&lt;影像檔案副檔名&gt;* 的格式來參考它 (在此範例中為 "SplashScreen.png")。 系統會從您提供的影像中，為裝置自動選取適當的縮放影像。
+    當您參考映射時，您會將其稱為* &lt;「映射名稱&gt;*」。*影像檔案&gt;副檔名（在此範例中為 "SplashScreen"）。 &lt; * 系統會從您提供的影像中，為裝置自動選取適當的縮放影像。
 
 -   您不需要 (但強烈建議您) 提供適用於寬形磚和大型磚大小的標誌，方便使用者可以將 App 的磚調整成那些尺寸。 若要提供這些額外的影像，您可以建立 **DefaultTile** 元素，並使用 **Wide310x150Logo** 和 **Square310x310Logo** 屬性來指定其他影像：
 ```    XML

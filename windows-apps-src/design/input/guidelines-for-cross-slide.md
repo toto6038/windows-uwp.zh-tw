@@ -4,14 +4,14 @@ title: 交叉滑動的指導方針
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 833949effd311c707de8dd1823ec6eee06e91e87
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 685c71ca0e6ed0989932b7c9a0169088d5b83bd2
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257980"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82558835"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑動的指導方針
 
@@ -33,7 +33,7 @@ ms.locfileid: "74257980"
 -   當點選互動用於其他用途時，項目選取請使用交叉滑動。
 -   不要使用交叉滑動將項目新增到佇列。
 
-## <a name="span-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指引
+## <a name="span-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
 
 
 選取和拖曳只適用於單一方向移動瀏覽 (垂直或水平) 的內容區域。 為了讓任一種互動可以作用，必須鎖定單一移動瀏覽方向，而且必須以與移動瀏覽方向垂直的方向操作手勢。
@@ -56,7 +56,7 @@ ms.locfileid: "74257980"
 
 針對朝單一方向捲動的清單或集合使用交叉滑動。 如需詳細資訊，請參閱[新增 ListView 控制項](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10))。
 
-**請注意**  在內容區域可透過兩個方向移動流覽的情況下（例如網頁瀏覽器或電子郵件讀取器），您應該使用按住計時互動來叫用影像和超連結等物件的快顯功能表。
+**請注意**  ，在內容區域可透過兩個方向移動流覽的情況下（例如網頁瀏覽器或電子郵件讀取器），您應該使用按住計時互動來叫用影像和超連結等物件的操作功能表。
 
  
 
@@ -97,7 +97,7 @@ ms.locfileid: "74257980"
 
 在將選取做為唯一主要動作的應用程式中使用單一點選。 顯示交叉滑動自顯動畫是為了讓使用者判別這項功能與用於啟動和瀏覽的標準點選互動不同。
 
-**選取籃**
+**選取項目籃**
 
 選取項目籃可以清楚且動態地顯示已經從應用程式的主要清單或集合選取的項目。 這個功能適合用來追蹤選取的項目，而且在以下情況時，應用程式應該加以利用：
 
@@ -111,7 +111,7 @@ ms.locfileid: "74257980"
 
 當未使用選取項目籃並且已經啟動清單或集合中的另一個項目時，也會清除目前的選項。 例如，如果您選取了某個收件匣訊息，預覽窗格就會更新。 接著，如果您選取了第二個收件匣訊息，就會取消選取上一個訊息，並且預覽窗格也會更新。
 
-**等待**
+**佇列**
 
 佇列不等於選取項目籃清單，不應該當作是選取項目籃清單。 主要差別包括：
 
@@ -123,29 +123,31 @@ ms.locfileid: "74257980"
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**拖放式**
+**拖曳**
 
 使用拖曳，將一或多個物件從一個位置移到另一個位置。
 
 如果需要移動的物件超過一個，請讓使用者選取多個項目，然後同時拖曳所有項目。
 
-## <a name="span-idrelated_topicsspanrelated-articles"></a><span id="related_topics"></span>相關文章
+## <a name="related-articles"></a>相關文章
 
+### <a name="samples"></a>範例
 
-**範例**
-* [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-**封存範例**
-* [輸入： XAML 使用者輸入事件範例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [輸入：裝置功能範例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [輸入：觸控點擊測試範例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [XAML 捲軸、移動流覽和縮放範例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [輸入：簡化的筆跡範例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-* [輸入： Windows 8 手勢範例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-* [Input：操作和手勢（C++）範例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [DirectX touch 輸入範例](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
+- [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
+
+### <a name="archive-samples"></a>封存範例
+
+- [輸入：XAML 使用者輸入事件範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [輸入：觸控點擊測試範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
+- [XAML 捲軸、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [輸入：簡化的筆跡範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
+- [輸入：Windows 8 手勢範例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [輸入：操作和手勢範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
+- [DirectX 觸控輸入範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
  
 
  

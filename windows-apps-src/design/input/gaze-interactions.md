@@ -1,6 +1,6 @@
 ---
 title: 注視互動
-Description: 瞭解如何設計及優化您的 UWP 應用程式，為依賴眼和 head 追蹤器的使用者提供最佳的體驗。
+Description: 瞭解如何設計和優化您的 Windows 應用程式，為依賴眼和 head 追蹤器的使用者提供最佳的體驗。
 label: Gaze interactions
 template: detail.hbs
 keywords: 注視, 眼球追蹤, 頭部追蹤, 注視點, 輸入, 使用者互動, 協助工具, 可用性
@@ -11,14 +11,14 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6176bdce1a725c1024af9f4ecf0c37cabb0f5376
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 4cfd84d54ecd1425b3b7e66c54c96fbd78c2dd46
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684228"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970123"
 ---
-# <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP 應用程式中的注視互動與眼球追蹤
+# <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Windows 應用程式中的注視互動和眼追蹤
 
 ![眼球追蹤英雄](images/gaze/eyecontrolbanner1.png)
 
@@ -31,22 +31,22 @@ ms.locfileid: "75684228"
 
 ## <a name="overview"></a>概觀
 
-注視輸入是一種互動與使用 Windows 和 UWP 應用程式的強大方式，對於患有神經肌肉疾病（如 ALS）和其他肌肉或神經功能受損的使用者來說，它是特別有用的輔助技術。
+注視輸入是一種功能強大的方式，可讓您互動和使用 Windows 應用程式，特別適用于具有為主眼部神經 muscular 疾病（例如 ALS）的使用者輔助技術，以及其他牽涉到受損肌肉或 nerve 功能的障礙。
 
 此外，注視輸入提供同樣吸引人的機會用於電腦遊戲（包括目標擷取和追蹤）和傳統生產力應用程式、kiosk，以及其他互動式案例，其中傳統輸入裝置（鍵盤、滑鼠、觸控) 就無法使用，或讓使用者空出雙手執行其他工作（例如提著購物袋）可能會很實用/有幫助。
 
 > [!NOTE]
-> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。 **Windows 10 2018 年4月更新（版本1803、組建17134）** 和更新版本，可供建立可與眼睛追蹤硬體互動之應用程式的一組 UWP Api （[windows. 輸入. 預覽](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)）。
+> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。 **Windows 10 2018 年4月更新（版本1803、組建17134）** 及更新版本，可供建立可與眼睛追蹤硬體互動之應用程式的一組 Windows 執行階段 Api （[windows. 輸入. 預覽](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)）。
 
-## <a name="privacy"></a>[隱私權]
+## <a name="privacy"></a>隱私權
 
-透過眼球追蹤裝置可能會收集到機密個人資料，因此您需要在 UWP 應用程式的應用程式資訊清單中宣告 `gazeInput` 功能 (請參閱下列 **安裝** 章節)。 宣告時，Windows 會自動提示使用者同意對話方塊（初次執行應用程式時），使用者必須授與應用程式與眼球追蹤裝置通訊和存取此資料的權限。
+由於眼睛追蹤裝置所收集的可能敏感性個人資料，因此您必須在應用程式的`gazeInput`應用程式資訊清單中宣告功能（請參閱下列**安裝**程式一節）。 宣告時，Windows 會自動提示使用者同意對話方塊（初次執行應用程式時），使用者必須授與應用程式與眼球追蹤裝置通訊和存取此資料的權限。
 
 此外，如果您的應用程式收集、儲存或傳輸眼球追蹤資料，則您必須在應用程式的隱私權聲明中說明，並遵守 [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) 和 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies) 中 **個人資訊** 的所有其他需求。
 
-## <a name="setup"></a>[設定]
+## <a name="setup"></a>安裝程式
 
-若要在 UWP 應用程式中使用注視輸入 API，您會需要： 
+若要在您的 Windows 應用程式中使用注視輸入 Api，您必須： 
 
 - 在應用程式資訊清單中指定 `gazeInput` 功能。
 
@@ -64,13 +64,13 @@ ms.locfileid: "75684228"
 
 ## <a name="basic-eye-tracking"></a>基本眼球追蹤
 
-在此範例中，我們會示範如何在 UWP 應用程式中追蹤使用者的注視，以及使用基本點擊測試的計時函式來表示他們如何維持他們的注視集中在特定元素上。
+在此範例中，我們會示範如何追蹤使用者在 Windows 應用程式中的注視，並使用計時函式進行基本的點擊測試，以指出它們可以在特定元素上維護其注視焦點的程度。
 
 小橢圓形用來顯示應用程式檢視區中的注視點所在位置，而 [Windows 社群工具組](https://docs.microsoft.com/windows/communitytoolkit/) 的 [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) 是隨機放置在畫布上。 在進度列上偵測到注視焦點時，開始使用計時器，且進度列達到 100% 時隨機將進度列移至畫布上。
 
 ![使用計時器範例的注視追蹤](images/gaze/gaze-input-timed2.gif)
 
-*使用計時器進行注視追蹤範例*
+*使用計時器範例的注視追蹤*
 
 **從[注視輸入範例下載此範例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
@@ -499,9 +499,9 @@ ms.locfileid: "75684228"
     ```
 6. 最後，以下是適用於此應用程式用來管理是注視焦點計時器的方法。
 
-    `DoesElementContainPoint` 檢查注視指標是否在進度列上。 若是如此，它開始使用注視計時器，並在每個注視計時器刻度上遞增進度列。
+    `DoesElementContainPoint`檢查注視指標是否在進度列上。 若是如此，它開始使用注視計時器，並在每個注視計時器刻度上遞增進度列。
 
-    `SetGazeTargetLocation` 設定進度列的初始位置，如果進度列完成（視注視焦點計時器而定），則會將進度列移到隨機位置。
+    `SetGazeTargetLocation`設定進度列的初始位置，如果進度列完成（視注視焦點計時器而定），則將進度列移到隨機位置。
 
     ```csharp
     /// <summary>
@@ -596,12 +596,12 @@ ms.locfileid: "75684228"
     }
     ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 ### <a name="resources"></a>資源
 
-- [Windows 社區工具組注視程式庫](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
+- [Windows 社群工具組注視媒體櫃](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>主題範例
 
-- [注視範例（基本）（C#）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)
+- [注視範例（基本 (C#)）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)

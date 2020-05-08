@@ -1,5 +1,5 @@
 ---
-description: 描述使用高對比佈景主題時，確保通用 Windows 平台 (UWP) App 可以正常運作所需的步驟。
+description: 說明在高對比主題為作用中時，確保您的 Windows 應用程式可供使用的必要步驟。
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: 高對比佈景主題
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 634f85ec64597f14210cf83fd67189f2f54bad4d
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 118f604b8c8c95a863773270825ff4db5c5a1b3a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521249"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969453"
 ---
 # <a name="high-contrast-themes"></a>高對比佈景主題  
 
@@ -20,9 +20,9 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ![淺色佈景主題和「黑底白字」佈景主題中的「小算盤」。](images/high-contrast-calculators.png)
 
-*[淺色主題] 和 [高對比黑色主題] 中所顯示的計算機。*
+*淺色佈景主題和「黑底白字」佈景主題中的「小算盤」。*
 
-您可以使用 [設定] &gt; [輕鬆存取] &gt; [高對比]，切換成高對比佈景主題。
+您可以使用 [設定] &gt; [輕鬆存取] &gt; [高對比]**，切換成高對比佈景主題。
 
 > [!NOTE]
 > 請留意，高對比佈景主題與淺色和深色佈景主題不同，後兩者使用較多種色彩，且不一定是高對比。 如需淺色和深色佈景主題的詳細資訊，請參閱關於[色彩](../style/color.md)的文章。
@@ -39,13 +39,13 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 在第一個範例中以內嵌方式設定色彩 `#E6E6E6` 時，該格線在所有佈景主題中都會保持該背景色彩。 如果使用者切換成「黑底白字」佈景主題，他們會預期 App 具有黑色背景。 由於 `#E6E6E6` 很接近白色，某些使用者可能會無法與您的 App 互動。
 
-在第二個範例中，[ **{ThemeResource} 標記延伸**](../../xaml-platform/themeresource-markup-extension.md)是用來參考 [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 集合 ([**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 元素的專用屬性) 中的某個色彩。 **ThemeDictionaries** 讓 XAML 能根據使用者目前的佈景主題，自動為您切換色彩。
+在第二個範例中，[**{ThemeResource} 標記延伸**](../../xaml-platform/themeresource-markup-extension.md)是用來參考 [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 集合 ([**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 元素的專用屬性) 中的某個色彩。 **ThemeDictionaries**可讓 XAML 根據使用者目前的主題，自動為您交換色彩。
 
 ## <a name="theme-dictionaries"></a>佈景主題字典
 
 當您需要變更系統預設色彩時，請針對您的 App 建立 ThemeDictionaries 集合。
 
-1. 由建立適當的配置開始 (如果尚未存在)。 在 App.xaml 中，建立 **ThemeDictionaries** 集合，其中至少包含 **Default** 與 **HighContrast**。
+1. 由建立適當的配置開始 (如果尚未存在)。 在 app.xaml 中，建立**ThemeDictionaries**集合，包括最少的**預設**和**systeminformation.highcontrast** 。
 2. 在 **Default** 中，建立您需要的 [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) 類型 (通常是 **SolidColorBrush**)。 針對它的用途來指定 *x:Key* 名稱。
 3. 指派您想要的**色彩**。
 4. 將該 **Brush** 標記複製到 **HighContrast** 中。
@@ -78,7 +78,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 最後步驟是決定要在高對比中使用的色彩，下一個章節中會說明。
 
 > [!NOTE]
-> **HighContrast** 不是唯一可用的索引鍵名稱。 另外還有 **HighContrastBlack**、**HighContrastWhite** 以及 **HighContrastCustom**。 在大部分情況下，您只需要 **HighContrast**。
+> **Systeminformation.highcontrast**不是唯一可用的索引鍵名稱。 另外還有**HighContrastBlack**、 **HighContrastWhite**和**HighContrastCustom**。 在大部分的情況下，您只需要**systeminformation.highcontrast** 。
 
 ## <a name="high-contrast-colors"></a>高對比色彩
 
@@ -87,7 +87,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ![高對比設定](images/high-contrast-settings.png)  
 
-*在使用者選取選項之後，頁面會顯示預覽。*  
+*在使用者選取一個選項之後，頁面就會顯示預覽。*  
 
 ![高對比資源](images/high-contrast-resources.png)  
 
@@ -114,7 +114,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 * 在您的 App 執行時，測試全部 4 種高對比佈景主題。 使用者切換佈景主題時，應不需要重新啟動您的 App。
 * 保持一致。
 
-**不要**
+**避免事項**
 
 * 在 **HighContrast** 佈景主題中以硬式編碼設定色彩；請使用 **SystemColor*Color** 資源。
 * 依照美學來選擇色彩資源。 請記住，色彩會隨佈景主題變更！
@@ -154,7 +154,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-請注意 **\{ThemeResource\}** 如何使用兩次，一次是參考**SystemColorWindowColor** ，另一個是參考**BrandedPageBackgroundBrush**。 兩次都是為了讓您的 App 在執行階段能正確設定佈景主題。 現在是測試您 App 內功能的好時機。 當您切換成高對比佈景主題時，格線的背景將會自動更新。 在不同的高對比佈景主題之間切換時，它也會更新。
+請注意** \{如何\}使用 ThemeResource**兩次，一次是參考**SystemColorWindowColor** ，另一個則是參考**BrandedPageBackgroundBrush**。 兩次都是為了讓您的 App 在執行階段能正確設定佈景主題。 現在是測試您 App 內功能的好時機。 當您切換成高對比佈景主題時，格線的背景將會自動更新。 在不同的高對比佈景主題之間切換時，它也會更新。
 
 ## <a name="when-to-use-borders"></a>使用框線的時機
 
@@ -182,7 +182,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 *淺色主題的複雜清單（左）和高對比黑色主題（right）。在 [高對比] 中，選取專案的第二行無法反轉。*  
 
-您可以視情況透過 **ThemeDictionaries** 集合中的 Style 設定 Foreground，來解決此問題。 因為 **HighContrast** 中的 **Foreground** 不是由 **SecondaryBodyTextBlockStyle** 來設定，所以它的顏色將會正確反轉。
+若要解決此情況，您可以透過**ThemeDictionaries**集合中的樣式，有條件地設定前景。 因為 **HighContrast** 中的 **Foreground** 不是由 **SecondaryBodyTextBlockStyle** 來設定，所以它的顏色將會正確反轉。
 
 ```xaml
 <!-- In App.xaml... -->
@@ -234,7 +234,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 > 請確定您是從 App 已經初始化且已經顯示內容的範圍內呼叫 **AccessibilitySettings** 建構函式。
 
 ## <a name="related-topics"></a>相關主題  
-* [協助工具](accessibility.md)
+* [協助工具選項](accessibility.md)
 * [UI 對比和設定範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
 * [XAML 協助工具範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [XAML 高對比範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))

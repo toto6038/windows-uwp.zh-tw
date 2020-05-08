@@ -1,5 +1,5 @@
 ---
-Description: 瞭解如何使用 UWP 應用程式中的鍵盤、遊戲台和協助工具工具，以程式設計方式管理焦點導覽。
+Description: 瞭解如何使用 Windows 應用程式中的鍵盤、遊戲台和協助工具工具，以程式設計方式管理焦點導覽。
 title: 使用鍵盤、遊戲台、遠端控制與協助工具以程式設計方式進行焦點瀏覽
 label: Programmatic focus navigation
 keywords: 鍵盤, 遊戲控制器, 遙控器, 瀏覽, 瀏覽策略, 輸入, 使用者互動, 協助工具, 可用性
@@ -10,18 +10,18 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d919a86a44110d5b3b444fdf47d41f31637ccb6b
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 6b66363588ddad01b05ccc9cc6b3b7912fa21594
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210004"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970143"
 ---
 # <a name="programmatic-focus-navigation"></a>程式設計焦點瀏覽
 
 ![鍵盤、遠端與方向鍵](images/dpad-remote/dpad-remote-keyboard.png)
 
-若要以程式設計方式在您的 UWP 應用程式中移動焦點，您可以使用 [FocusManager.TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 方法或[FocusManager.FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) 方法。
+若要在您的 Windows 應用程式中以程式設計方式移動焦點，您可以使用[system.windows.input.focusmanager>. TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_)方法或[FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_)方法。
 
 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 會嘗試使用指定方向中下一個可設定為焦點元素的焦點，從元素變更焦點，[FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) 則會擷取元素 (作為 [DependencyObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject))，該元素會根據指定的瀏覽方向取得焦點 (僅限方向瀏覽，無法用來模擬 Tab 瀏覽)。
 
@@ -136,14 +136,14 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 
 下圖顯示這些概念的一部分。 
 
-當元素 B 取得焦點時，FindNextElement 會在向右巡覽時識別 I 作為焦點候選項目。 原因如下：
+當元素 B 取得焦點時，FindNextElement 會在向右巡覽時識別 I 作為焦點候選項目。 這樣做的原因是：
 - 因為 [HintRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect) 位於 A，因此啟動參考為 A 而非 B
 - C 並非候選項目，因為 MyPanel 已識別為 [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot)
 - F 並非候選項目，因為 [ExclusionRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) 與它重疊
 
 ![使用瀏覽提示自訂焦點瀏覽行為](images/keyboard/navigation-hints.png)
 
-*使用導覽提示自訂焦點導覽行為*
+*使用瀏覽提示自訂焦點瀏覽行為*
 
 ## <a name="navigation-focus-events"></a>瀏覽焦點事件
 
@@ -211,7 +211,7 @@ private void OnNoFocusCandidateFound (
 
 ![在 GettingFocus 事件上變更焦點瀏覽](images/keyboard/focus-events.png)
 
-*變更 GettingFocus 事件的焦點導覽目標*
+*在 GettingFocus 事件上變更焦點瀏覽*
 
 在這裡，我們顯示如何處理 [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 事件和重新導向焦點。
 
@@ -250,7 +250,7 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
 }
 ```
 
-在這裡，我們顯示如何為 [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 處理 [LosingFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 事件，並在功能表關閉時設定焦點。
+在這裡，我們顯示如何為 [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 處理 [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 事件，並在功能表關閉時設定焦點。
 
 ```XAML
 <CommandBar x:Name="MyCommandBar" LosingFocus="OnLosingFocus">
@@ -280,7 +280,7 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 }
 ```
 
-## <a name="find-the-first-and-last-focusable-element"></a>尋找第一個和最後一個可設定焦點元素
+## <a name="find-the-first-and-last-focusable-element"></a>尋找第一個和最後一個可設定焦點元素 
 
 [FocusManager.FindFirstFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindFirstFocusableElement_Windows_UI_Xaml_DependencyObject_) 和 [FocusManager.FindLastFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindLastFocusableElement_Windows_UI_Xaml_DependencyObject_) 方法會將焦點移動到物件範圍 ([UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的元素樹狀結構或 [TextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement) 的文字樹狀結構) 中的第一個或最後一個可設定焦點元素。 在呼叫中指定的範圍 (若引數為 Null，則範圍為目前的視窗)。
 
@@ -327,6 +327,6 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## <a name="related-articles"></a>相關文章
 
-- [鍵盤、遊戲台、遠端控制和協助工具工具的焦點導覽](focus-navigation.md)
+- [適用於鍵盤、遊戲台、遠端控制與協助工具的焦點瀏覽](focus-navigation.md)
 - [鍵盤互動](keyboard-interactions.md)
 - [鍵盤協助工具](../accessibility/keyboard-accessibility.md)

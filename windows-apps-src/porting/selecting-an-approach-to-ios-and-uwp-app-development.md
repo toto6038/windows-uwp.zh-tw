@@ -1,19 +1,19 @@
 ---
 description: 開發跨平台 app 時有哪些選擇？
-title: 選取 iOS 和 UWP 應用程式開發的方式
+title: 選取 iOS 和 UWP app 開發的方式
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a76b451a3d268e418ae24998afdd29d32bb43ed6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 538fbc33d161f5f91033427af76438f49d3d3b68
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260141"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148589"
 ---
-# <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>選取 iOS 和 UWP 應用程式開發的方式
+# <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>選取 iOS 和 UWP app 開發的方式
 
 
 開發跨平台 app 時有哪些選擇？
@@ -54,7 +54,7 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
     如果您的核心商務邏輯是以 C++ 撰寫，而不是 Objective-C 或 Swift，在專案中只要做一點點變更，就可以使用這個程式碼。 然後您可以使用 XAML 來定義您的 UI，就像用於其他 Windows 應用程式一樣，然後必要時再呼叫 C++ 程式碼。
 
--   [使用角度在 Windows 上執行 OpenGL ES](https://github.com/microsoft/angle/wiki)
+-   [使用 ANGLE 在 Windows 上執行 OpenGL ES](https://github.com/microsoft/angle/wiki)
 
     移植 OpenGL ES 2.0 專案的中間步驟是使用 ANGLE。 ANGLE 可讓您透過將 OpenGL ES API 呼叫轉譯為 DirectX 11 API 呼叫，在 Windows 上執行 OpenGL ES 內容。
 
@@ -64,11 +64,11 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
     遊戲編寫環境。
 
--   [結構2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construct 2]( https://www.scirra.com/)
 
     遊戲編寫環境。
 
--   [鈦 Studio](https://www.appcelerator.com/platform/titanium-studio/)
+-   [Titanium Studio](https://www.appcelerator.com/platform/titanium-studio/)
 
     跨平台編寫環境。
 
@@ -76,7 +76,7 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
     適用於子畫面處理與物理模型化的跨平台程式碼程式庫。
 
--   [影響 .js](https://impactjs.com/)
+-   [Impact.js](https://impactjs.com/)
 
     以 HTML 為基礎的遊戲庫。
 

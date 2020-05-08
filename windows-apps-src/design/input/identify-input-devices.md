@@ -1,5 +1,5 @@
 ---
-Description: 識別連接至通用 Windows 平台 (UWP) 裝置的輸入裝置，以及識別它們的功能和屬性。
+Description: 識別連線到 Windows 應用程式裝置的輸入裝置，並識別其功能和屬性。
 title: 識別輸入裝置
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
@@ -8,26 +8,26 @@ keywords: 裝置, 數位板, 輸入, 互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b2a17d1f4664326cb54d9c53d828eb372ef93fe4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 792b2f71408928de0278dd0c623f13923a2165a8
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257888"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970023"
 ---
 # <a name="identify-input-devices"></a>識別輸入裝置
 
 
-識別連接至通用 Windows 平台 (UWP) 裝置的輸入裝置，以及識別它們的功能和屬性。
+識別連線到 Windows 應用程式裝置的輸入裝置，並識別其功能和屬性。
 
 > **重要 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)、[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 ## <a name="retrieve-mouse-properties"></a>擷取滑鼠屬性
 
 
-[  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空間包含 [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities) 類別，這個類別可以用來擷取由一或多個已連接滑鼠所公開的屬性。 做法是建立一個新的 **MouseCapabilities** 物件並取得您感興趣的屬性。
+[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空間包含 [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities) 類別，這個類別可以用來擷取由一或多個已連接滑鼠所公開的屬性。 做法是建立一個新的 **MouseCapabilities** 物件並取得您感興趣的屬性。
 
-**請  注意**，此處所討論的屬性所傳回的值是以所有偵測到的滑鼠為基礎：如果至少有一個滑鼠支援特定的功能，則布林值屬性會傳回非零，而數值屬性則會傳回任何一個滑鼠所公開的最大值。
+**請注意**  ，此處所討論的屬性所傳回的值是以所有偵測到的滑鼠為根據：如果至少有一個滑鼠支援特定的功能，則布林值屬性會傳回非零，而數值屬性則會傳回任何一個滑鼠所公開的最大值。
 
  
 
@@ -48,7 +48,7 @@ private void GetMouseProperties()
 ## <a name="retrieve-keyboard-properties"></a>擷取鍵盤屬性
 
 
-[  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空間包含 [**KeyboardCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.KeyboardCapabilities) 類別，這個類別可以用來擷取是否已連接鍵盤。 做法是建立一個新的 **KeyboardCapabilities** 物件並取得 [**KeyboardPresent**](https://docs.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent) 屬性。
+[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空間包含 [**KeyboardCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.KeyboardCapabilities) 類別，這個類別可以用來擷取是否已連接鍵盤。 做法是建立一個新的 **KeyboardCapabilities** 物件並取得 [**KeyboardPresent**](https://docs.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent) 屬性。
 
 下列程式碼會使用一個 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素來顯示鍵盤屬性和值。
 
@@ -63,9 +63,9 @@ private void GetKeyboardProperties()
 ## <a name="retrieve-touch-properties"></a>擷取觸控屬性
 
 
-[  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空間包含 [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities) 類別，這個類別可以用來擷取是否已連接任何觸控數位板。 做法是建立一個新的 **TouchCapabilities** 物件並取得您感興趣的屬性。
+[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空間包含 [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities) 類別，這個類別可以用來擷取是否已連接任何觸控數位板。 做法是建立一個新的 **TouchCapabilities** 物件並取得您感興趣的屬性。
 
-**請  注意**，此處所討論的屬性所傳回的值是以所有偵測到的觸控數位板為基礎：如果至少有一個數位板支援特定功能，則布林值屬性會傳回非零，而數值屬性則會傳回任何一張數位板所公開的最大值。
+**請注意**  ，此處所討論的屬性所傳回的值是以所有偵測到的觸控數位板為基礎：如果至少有一位數位板支援特定的功能，則布林值屬性會傳回非零，而數值屬性則會傳回任何一個數位板所公開的最大值。
 
  
 
@@ -83,9 +83,9 @@ private void GetTouchProperties()
 ## <a name="retrieve-pointer-properties"></a>擷取指標屬性
 
 
-[  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空間包含 [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) 類別，這個類別可以用來擷取是否有任何裝置支援指標輸入 (觸控、觸控板、滑鼠或手寫筆)。 做法是建立一個新的 **PointerDevice** 物件並取得您感興趣的屬性。
+[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空間包含 [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) 類別，這個類別可以用來擷取是否有任何裝置支援指標輸入 (觸控、觸控板、滑鼠或手寫筆)。 做法是建立一個新的 **PointerDevice** 物件並取得您感興趣的屬性。
 
-**請  注意**，此處所討論的屬性所傳回的值是以所有偵測到的指標裝置為基礎：如果至少有一部裝置支援特定的功能，則布林值屬性會傳回非零，而數值屬性則會傳回任何一個指標裝置所公開的最大值。
+**請注意**  ，此處所討論的屬性所傳回的值是以所有偵測到的指標裝置為基礎：如果至少有一部裝置支援特定的功能，則布林值屬性會傳回非零，而數值屬性則會傳回任何一個指標裝置所公開的最大值。
 
 下列程式碼會使用一個表格來顯示每個指標裝置的屬性和值。
 
@@ -176,18 +176,12 @@ private void GetPointerDevices()
 
 ## <a name="related-articles"></a>相關文章
 
+### <a name="samples"></a>範例
 
-**範例**
-* [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 
-**封存範例**
-* [輸入：裝置功能範例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
- 
+### <a name="archive-samples"></a>封存範例
 
- 
-
-
-
-
+- [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))

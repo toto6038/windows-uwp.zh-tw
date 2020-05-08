@@ -1,5 +1,5 @@
 ---
-Description: 使用已針對觸控最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，建立通用 Windows 平台 (UWP) 應用程式。
+Description: 以直覺且獨特的使用者互動體驗來建立 Windows 應用程式，其已針對觸控優化，但在輸入裝置之間的功能一致。
 title: 觸控互動
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -8,12 +8,12 @@ keywords: 觸控、指標、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2277be481326aa5ae5a76c900160108bcd29fb84
-ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
+ms.openlocfilehash: 99926de0ea26b0cef9184756add777a39330d934
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256141"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970253"
 ---
 # <a name="touch-interactions"></a>觸控互動
 
@@ -27,7 +27,7 @@ ms.locfileid: "78256141"
 
 許多裝置都配備多點觸控螢幕，支援使用一或多根手指 (或觸控點) 進行輸入。 觸控點及其移動方式都會解譯為觸控手勢與操作，以支援各種不同的使用者互動。
 
-通用 Windows 平台 (UWP) 包含一些處理觸控輸入的不同機制，讓您能夠建立使用者可自信探索的沈浸式體驗。 此處將說明在 UWP 應用程式中使用觸控輸入的基本知識。
+Windows 應用程式包含許多用來處理觸控輸入的不同機制，可讓您建立使用者可放心流覽的沉浸式體驗。 在這裡，我們將討論在 Windows 應用程式中使用觸控輸入的基本概念。
 
 觸控互動需要具備三個要件：
 
@@ -53,10 +53,10 @@ ms.locfileid: "78256141"
 
 ## <a name="compare-touch-interaction-requirements"></a>比較觸控互動需求
 
-下表顯示在設計觸控最佳化 UWP 應用程式時應考慮存在於輸入裝置間的一些差異性。
+下表顯示當您設計觸控式優化的 Windows 應用程式時，您應該考慮的輸入裝置之間的一些差異。
 
 <table>
-<tbody><tr><th>因素</th><th>觸控互動</th><th>滑鼠、鍵盤、畫筆/手寫筆互動</th><th>Touchpad</th></tr>
+<tbody><tr><th>因數</th><th>觸控互動</th><th>滑鼠、鍵盤、畫筆/手寫筆互動</th><th>Touchpad</th></tr>
 <tr><td rowspan="3">Precision</td><td>指尖的接觸區域大於單一 x-y 座標，增加了啟動非預期命令的機會。</td><td>滑鼠和畫筆/手寫筆可以提供精確的 x-y 座標。</td><td>與滑鼠相同。</td></tr>
 <tr><td>接觸區域的形狀會隨著移動而變化。  </td><td>滑鼠移動和畫筆/手寫筆筆觸可以提供精確的 x-y 座標。 鍵盤焦點很明確。</td><td>與滑鼠相同。</td></tr>
 <tr><td>沒有滑鼠游標協助目標預測。</td><td>滑鼠游標、畫筆/手寫筆游標以及鍵盤焦點，都可以協助目標預測。</td><td>與滑鼠相同。</td></tr>
@@ -79,12 +79,12 @@ ms.locfileid: "78256141"
 
 ## <a name="use-touch-feedback"></a>使用觸控回饋
 
-與您的應用程式互動期間適當的視覺化意見反應，可協助使用者辨識、學習及適應其互動如何由應用程式和 Windows 平臺來解讀。 視覺化回饋可以指示互動成功、轉送系統狀態、改善控制感應、減少錯誤、協助使用者了解系統和輸入裝置，並能激發使用者互動意願。
+與應用程式進行互動時的適當視覺化回饋，可以協助使用者辨識、學習及適應應用程式與 Windows 平台如何解譯他們的互動。 視覺化回饋可以指示互動成功、轉送系統狀態、改善控制感應、減少錯誤、協助使用者了解系統和輸入裝置，並能激發使用者互動意願。
 
 當使用者依賴觸控輸入進行要求正確與精確位置的活動時，視覺化回饋就顯得相當重要。 隨時隨地偵測到觸控輸入時便顯示回饋，可以協助使用者了解應用程式及其控制項所定義的任何自訂目標規則。
 
 
-## <a name="targeting"></a>目標鎖定
+## <a name="targeting"></a>目標
 
 目標預測透過以下各項進行最佳化：
 
@@ -104,7 +104,7 @@ ms.locfileid: "78256141"
 
     對於密集封裝的項目 (例如超連結)，只要手指按下、不滑動並在項目上來回搖晃，即可輕易重新選定目標。 由於遮蔽的緣故，因此會透過工具提示或狀態列來識別目前的項目，並且會在放開手指時啟動。
 
-## <a name="accuracy"></a>準確度
+## <a name="accuracy"></a>精確度
 
 使用下列功能針對隨性互動進行設計：
 
@@ -131,7 +131,7 @@ ms.locfileid: "78256141"
 
     在要求精確度 (例如文字選取) 的情況下，請提供位移的選取控點以提高精確度。 如需詳細資訊，請參閱[選取文字和影像的指導方針 (Windows 執行階段應用程式)](guidelines-for-textselection.md)。
 
-## <a name="timing"></a>時間
+## <a name="timing"></a>計時
 
 避免計時模式的變更有利於直接操作。 直接操作可以模擬直接、即時的實體物件控制。 物件會隨著手指移動而回應。
 
@@ -169,7 +169,7 @@ ms.locfileid: "78256141"
 
 您可以使用應用程式檢視與事件，來修改移動瀏覽/捲動和縮放行為。 與處理指標和手勢事件相比，它可以提供更順暢的互動體驗。
 
-如需有關 app 檢視的詳細資訊，請參閱[控制項、配置及文字](https://docs.microsoft.com/windows/uwp/design/basics/)。
+如需有關應用程式檢視的詳細資訊，請參閱[控制項、配置及文字](https://docs.microsoft.com/windows/uwp/design/basics/)。
 
 ## <a name="custom-touch-interactions"></a>自訂觸控互動
 
@@ -195,12 +195,12 @@ ms.locfileid: "78256141"
 | 名稱           | 類型                 | 描述                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | 點選            | 靜態手勢       | 一根手指觸碰螢幕後提起手指。                                            |
-| 按住不放 | 靜態手勢       | 一根手指觸碰螢幕後停在原地。                                      |
-| 滑動          | 操作手勢 | 一或多根手指觸碰螢幕後，再往同一個方向移動。                   |
+| 長按 | 靜態手勢       | 一根手指觸碰螢幕後停在原地。                                      |
+| 投影片          | 操作手勢 | 一或多根手指觸碰螢幕後，再往同一個方向移動。                   |
 | Swipe          | 操作手勢 | 一或多根手指觸碰螢幕後，再往同一個方向短距離移動。  |
 | 轉動           | 操作手勢 | 二或多根手指輕觸螢幕後，往順時鐘或逆時鐘方向弧形移動。 |
 | 捏合          | 操作手勢 | 二或多根手指觸碰螢幕後，再朝靠攏的方向移動。                         |
-| 伸展        | 操作手勢 | 二或多根手指觸碰螢幕後，再朝分開的方向移動。                           |
+| 延展        | 操作手勢 | 二或多根手指觸碰螢幕後，再朝分開的方向移動。                           |
 
  
 
@@ -238,7 +238,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 
 下列範例示範如何使用 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 及 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 物件上的點選互動。
 
-首先，在 Extensible Application Markup Language (XAML) 中建立名為 [ 的Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)`touchRectangle`。
+首先，在 Extensible Application Markup Language (XAML) 中建立名為 `touchRectangle` 的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -286,7 +286,7 @@ Public Sub New()
 End Sub
 ```
 
-最後，當 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerExited**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 事件處理常式再次將 [Height**和**Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 設定為它們的開始值時，[**PointerPressed**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 事件處理常式會提高 [**Rectangle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 的 [**Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 和Width。
+最後，當 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerExited**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 事件處理常式再次將 **Height** 和 **Width** 設定為它們的開始值時，[**PointerPressed**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 事件處理常式會提高 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)。
 
 ```cpp
 // Handler for pointer exited event.
@@ -421,11 +421,11 @@ End Sub
 
 | 事件或類別                                                                                               | 描述                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [**System.windows.uielement.manipulationstarting> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | 第一次建立操作處理器時發生。                                                                                  |
-| [**System.windows.uielement.manipulationstarted> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | 當輸入裝置開始在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 進行操作時發生。                                            |
-| [**System.windows.uielement.manipulationdelta> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)                                         | 當輸入裝置在操作期間變更位置時發生。                                                                      |
-| [**System.windows.uielement.manipulationinertiastarting> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastartingevent)                | 在操作和慣性開始的時候，只要輸入裝置不與 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 物件接觸便發生。 |
-| [**System.windows.uielement.manipulationcompleted> 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)                                 | 當在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 進行的操作和慣性互動完成時發生。                                          |
+| [**ManipulationStarting 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | 發生於第一次建立操作處理器時。                                                                                  |
+| [**ManipulationStarted 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | 當輸入裝置開始在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 進行操作時發生。                                            |
+| [**ManipulationDelta 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)                                         | 輸入裝置在操作期間變更位置時發生。                                                                      |
+| [**ManipulationInertiaStarting 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastartingevent)                | 在操作和慣性開始的時候，只要輸入裝置不與 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 物件接觸便發生。 |
+| [**ManipulationCompleted 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)                                 | 當在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 進行的操作和慣性互動完成時發生。                                          |
 | [**ManipulationStartingRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs)               | 提供 [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting) 事件的資料。                                         |
 | [**ManipulationStartedRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs)                 | 提供 [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted) 事件的資料。                                           |
 | [**ManipulationDeltaRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs)                     | 提供 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件的資料。                                               |
@@ -446,7 +446,7 @@ End Sub
 
 下列範例示範如何使用 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 上的滑動互動，並在螢幕上移動它。
 
-首先，在 XAML 中建立了一個名為 [ 且Height](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)`touchRectangle` 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 為 200 的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)。
+首先，在 XAML 中建立了一個名為 `touchRectangle` 且 [**Height**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 和 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 為 200 的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -456,7 +456,7 @@ End Sub
 </Grid>
 ```
 
-接著，建立一個名為 [ 的全域TranslateTransform](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)`dragTranslation` 來轉譯 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。 在 [Rectangle**上指定**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)ManipulationDelta 事件接聽程式，並將 `dragTranslation` 新增到 [Rectangle**的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)RenderTransform。
+接著，建立一個名為 `dragTranslation` 的全域 [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) 來轉譯 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。 在 **Rectangle** 上指定 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件接聽程式，並將 `dragTranslation` 新增到 **Rectangle** 的 [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)。
 
 ```cpp
 // Global translation transform used for changing the position of 
@@ -574,9 +574,9 @@ End Sub
 ## <a name="routed-events"></a>路由事件
 
 
-本文中所述的所有指標事件、手勢事件和操控事件都會做為「路由事件」來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的父容器或應用程式的根 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10))。
+本文中所述的所有指標事件、手勢事件和操控事件都會做為 *「路由事件」* 來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的父容器或應用程式的根 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10))。
 
-## <a name="dos-and-donts"></a>可行與禁止事項
+## <a name="dos-and-donts"></a>建議事項和避免事項
 
 
 -   設計以觸控互動做為主要預期輸入方法的應用程式。
@@ -587,29 +587,21 @@ End Sub
 -   如有可能，不要使用計時互動 (適當用法範例：觸碰並按住)。
 -   如有可能，不要使用手指數目來辨別操作。
 
-
 ## <a name="related-articles"></a>相關文章
 
-* [處理指標輸入](handle-pointer-input.md)
-* [識別輸入裝置](identify-input-devices.md)
+- [處理指標輸入](handle-pointer-input.md)
+- [識別輸入裝置](identify-input-devices.md)
 
-**範例**
+### <a name="samples"></a>範例
 
-* [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
+- [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延遲輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
 
-**封存範例**
+### <a name="archive-samples"></a>封存範例
 
-* [輸入：裝置功能範例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [輸入： XAML 使用者輸入事件範例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [XAML 捲軸、移動流覽和縮放範例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [輸入：使用 GestureRecognizer 的手勢和操作](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
- 
-
- 
-
-
-
-
+- [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [輸入：XAML 使用者輸入事件範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [XAML 捲軸、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [輸入：使用 GestureRecognizer 處理手勢與操作](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)

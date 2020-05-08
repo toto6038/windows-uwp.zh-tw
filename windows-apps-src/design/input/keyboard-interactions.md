@@ -1,5 +1,5 @@
 ---
-Description: 了解如何設計和最佳化您的 UWP app，使其可以同時為鍵盤使用者及行動不便或有其他可存取性需求的人士提供最佳的使用者體驗。
+Description: 瞭解如何設計和優化您的 Windows 應用程式，使其能為鍵盤使用者和殘障和其他協助工具需求提供最佳的體驗。
 title: 鍵盤互動
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
@@ -11,26 +11,26 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 449f0c81bdd54d99ef0977ca1c9b6ba10ba5eae7
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 1d883243b60b2b2693fbf0f21315008e556b5743
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210104"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970753"
 ---
 # <a name="keyboard-interactions"></a>鍵盤互動
 
 ![鍵盤主角影像](images/keyboard/keyboard-hero.jpg)
 
-了解如何設計和最佳化您的 UWP app，使其可以同時為鍵盤使用者及行動不便或有其他可存取性需求的人士提供最佳的使用者體驗。
+瞭解如何設計和優化您的 Windows 應用程式，使其能為鍵盤使用者和殘障和其他協助工具需求提供最佳的體驗。
 
-跨裝置，鍵盤輸入是整體通用 Windows 平台 (UWP) 互動體驗很重要的一部分。 精心設計的鍵盤體驗可讓使用者有效率瀏覽您的應用程式 UI，不需要從鍵盤移開手，就能存取應用程式的完整功能。
+跨裝置，鍵盤輸入是整體 Windows 應用程式互動體驗的重要部分。 精心設計的鍵盤體驗可讓使用者有效率瀏覽您的應用程式 UI，不需要從鍵盤移開手，就能存取應用程式的完整功能。
 
 ![鍵盤與遊戲台影像](images/keyboard/keyboard-gamepad.jpg)
 
-***鍵盤和遊戲台之間會共用常見的互動模式***
+***鍵盤與遊戲台之間共用一般互動模式***
 
-本主題中，我們會著重在針對電腦鍵盤的 UWP app 設計上。 不過，設計良好的鍵盤體驗對於支援協助工具工具（例如 Windows 朗讀程式），使用[軟體鍵盤](#software-keyboard)（例如觸控鍵盤和螢幕小鍵盤（OSK）），以及處理其他輸入裝置類型（例如 Xbox 遊戲台和遠端控制）而言非常重要。
+在本主題中，我們特別著重于 Windows 應用程式設計，以在電腦上進行鍵盤輸入。 不過，設計良好的鍵盤體驗對於支援協助工具工具（例如 Windows 朗讀程式），使用[軟體鍵盤](#software-keyboard)（例如觸控鍵盤和螢幕小鍵盤（OSK）），以及處理其他輸入裝置類型（例如 Xbox 遊戲台和遠端控制）而言非常重要。
 
 本文討論的許多指導方針和建議，包括[對焦視覺效果](#focus-visuals)、[便捷鍵](#access-keys)和 [UI 瀏覽](#navigation)，也適用於這些其他案例。
 
@@ -44,7 +44,7 @@ ms.locfileid: "79210104"
 
 ![鍵盤與手機的影像](images/keyboard/keyboard-phone.jpg)
 
-***UWP 支援使用任何裝置的鍵盤***
+***UWP 支援鍵盤與任何裝置***
 
 ## <a name="basic-experiences"></a>基本體驗
 ![以焦點為基礎的裝置](images/keyboard/focus-based-devices.jpg)
@@ -57,8 +57,8 @@ ms.locfileid: "79210104"
 
 | 裝置/工具                       | 描述     |
 |-----------------------------------|-----------------|
-|鍵盤 (硬體與軟體)   |除了標準硬體鍵盤之外，UWP 應用程式也支援兩種軟體鍵盤：[觸控（或軟體）鍵盤](#software-keyboard)和[螢幕小鍵盤](#on-screen-keyboard)。|
-|遊戲台與遙控器         |Xbox 遊戲台與遙控器是[10 英呎經驗](../devices/designing-for-tv.md)中的基本輸入裝置。 如需 UWP 支援遊戲台與遙控器的特定詳細資訊，請參閱[遊戲台與遙控器的互動](gamepad-and-remote-interactions.md)。|
+|鍵盤 (硬體與軟體)   |除了標準硬體鍵盤之外，Windows 應用程式也支援兩種軟體鍵盤：[觸控（或軟體）鍵盤](#software-keyboard)和[螢幕小鍵盤](#on-screen-keyboard)。|
+|遊戲台與遙控器         |Xbox 遊戲台與遙控器是[10 英呎經驗](../devices/designing-for-tv.md)中的基本輸入裝置。 如需遊戲台和遠端控制之 Windows 支援的特定詳細資料，請參閱[遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。|
 |螢幕助讀程式（朗讀程式）          |「朗讀程式」是 Windows 內建螢幕助讀程式，提供唯一互動體驗和功能，但仍依賴基本鍵盤瀏覽和輸入。 如需朗讀程式詳細資訊，請參閱[開始使用朗讀程式](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)。|
 
 ## <a name="custom-experiences-and-efficient-keyboarding"></a>自訂體驗與有效的鍵盤
@@ -95,7 +95,7 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 根據預設，Tab 順序反映 UI 元素建立的順序。 例如，如果 `StackPanel` 包含 `Button`、`Checkbox` 和 `TextBox`，Tab 順序就是 `Button`、`Checkbox` 和 `TextBox`。
 
-您可以藉由設定[TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex)屬性來覆寫預設的定位順序。
+您可以藉由設定 [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex)屬性覆寫預設 Tab 順序。
 
 #### <a name="tab-order-should-be-logical-and-predictable"></a>Tab 順序應該有邏輯與可預測的
 
@@ -119,11 +119,11 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 最初的焦點指定當應用程式或網頁第一次啟動或啟用時取得焦點的 UI 項目。 使用鍵盤時，是由使用者開始與應用程式的 UI 互動。
 
-針對 UWP 應用程式，會將初始焦點設定為具有最高的[TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex)可以接收焦點的元素。 忽略容器控制項的子元素。 在平局，視覺化樹狀結構上的第一個元素會接收焦點。
+對於 UWP app，最初的焦點設定為可以接收焦點、具有最高 [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 的元素。 忽略容器控制項的子元素。 在平局，視覺化樹狀結構上的第一個元素會接收焦點。
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>將最初的焦點設定在最合乎邏輯的元素
 
-將最初的焦點設定在使用者啟動您的 app 或瀏覽網頁時，最可能會採取的第一個或主要動作的 UI 元素上。 一些範例包括：
+將最初的焦點設定在使用者啟動您的 app 或瀏覽網頁時，最可能會採取的第一個或主要動作的 UI 元素上。 部分範例包括：
 -   相片 app，焦點設定到影像中心的第一個項目
 -   音樂 app，焦點設定到播放按鈕
 
@@ -142,11 +142,11 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 根據預設，UWP 控制項依循這些基本鍵盤行為：
 -   **Tab 鍵**依 Tab 順序在可動作/使用中控制項之間瀏覽。
 -   **Shift + Tab** 依反向的 Tab 順序瀏覽控制項。 如果使用者已使用方向鍵瀏覽到控制項內部，焦點設為控制項內部的最後一個已知的值。
--   **方向鍵**公開控制項特定的「內部瀏覽」。當使用者進入「內部瀏覽」時，方向鍵不會瀏覽移出控制項。 一些範例包括：
-    -   向上/向下鍵會將焦點移到 `ListView` 和 `MenuFlyout` 中
-    -   修改目前選取的 `Slider` 和 `RatingsControl` 值
-    -   在 `TextBox` 中移動插入號
-    -   展開/折迭 `TreeView` 內的專案
+-   **方向鍵**公開控制項特定的「內部瀏覽」。當使用者進入「內部瀏覽」時，方向鍵不會瀏覽移出控制項。 部分範例包括：
+    -   向上/向下鍵會將焦點`ListView`移到內部和`MenuFlyout`
+    -   修改和的`Slider`目前選取值`RatingsControl`
+    -   在內部移動插入號`TextBox`
+    -   展開/折迭內的專案`TreeView`
 
 使用這些預設行為來優化應用程式的鍵盤導覽。
 
@@ -158,7 +158,7 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 ![對話方塊範例](images/keyboard/dialog.png)
 
-***使用方向鍵流覽，讓與相關按鈕集合的互動變得更容易***
+***透過使用方向鍵瀏覽，相關按鈕集合的互動變得更容易***
 
 如果在單欄中顯示項目時，向上/向下鍵瀏覽項目。 在單列中顯示項目時，向左/向右鍵瀏覽項目。 如果是多欄項目，所有 4 個方向鍵瀏覽。
 
@@ -174,7 +174,7 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
   <td><img src="images/keyboard/arrow-only.png" alt="arrow only" /></td>
 </table>
 
-***藉由刪除定位停駐點並只流覽方向鍵，可讓您更輕鬆且更有效率地與兩個堆疊 ListView 控制項互動。***
+***兩個堆疊 ListView 控制項的互動，排除定位停駐點，只使用方向鍵瀏覽，可變得更容易且更有效率。***
 
 瀏覽[控制項群組](#control-group)一節，以了解如何將最佳化範例套用至您的應用程式 UI。
 
@@ -194,7 +194,7 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 ![空格鍵](images/keyboard/space-key.png)
 
-#### <a name="enter-key"></a>Enter 鍵
+#### <a name="enter-key"></a>ENTER 鍵
 
 **Enter** 鍵可執行各種一般的使用者互動，視具有輸入焦點的控制項而定：
 -   啟動命令控制項例如 `Button` 或 `Hyperlink`。 為了避免使用者困擾，**Enter** 鍵也啟動看起來像是命令控制項之類的控制項，例如 `ToggleButton` 或 `AppBarToggleButton`。
@@ -203,7 +203,7 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
     -   **Enter** 鍵為清單及方格項目執行選取動作，如同**空格**鍵，除非這些項目另有相關聯的其他動作（開啟新視窗）。
     -   如果與控制項有相關的其他動作，**Enter** 鍵執行其他動作，而**空格**鍵執行選取動作。
 
-**注意** **Enter** 鍵和**空格**鍵不一定執行相同的動作，但通常大致相同。
+**注意****Enter** 鍵和**空格**鍵不一定執行相同的動作，但通常大致相同。
 
 ![Enter 鍵](images/keyboard/enter-key.png)
 
@@ -215,7 +215,7 @@ Esc 鍵可讓使用者取消暫時性 UI（以及該 UI 中的任何持續動作
 
 ![Esc 鍵](images/keyboard/esc-key.png)
 
-#### <a name="home-and-end-keys"></a>Home 和 End 鍵
+#### <a name="home-and-end-keys"></a>Home 和 End 按鍵
 
 **Home** 和 **End** 鍵可以讓使用者捲動到 UI 區域的開頭或結尾。
 
@@ -245,7 +245,7 @@ Esc 鍵可讓使用者取消暫時性 UI（以及該 UI 中的任何持續動作
 
 提供一致的鍵盤快速鍵，可跨應用程式支援類似的工作，使其更有用且更強大，並協助使用者記住它們。
 
-#### <a name="accelerators"></a>加速器
+#### <a name="accelerators"></a>快速鍵
 
 加速器可協助使用者在應用程式中更快速且更有效率地執行一般動作。 
 
@@ -283,8 +283,8 @@ Esc 鍵可讓使用者取消暫時性 UI（以及該 UI 中的任何持續動作
 | 全選                           | Ctrl+A                                           |
 | 連續選取                  | Shift+方向鍵                                  |
 | 儲存                                 | Ctrl+S                                           |
-| 尋找                                 | Ctrl+F                                           |
-| Print                                | Ctrl+P                                           |
+| Find                                 | Ctrl+F                                           |
+| 列印                                | Ctrl+P                                           |
 | 複製                                 | Ctrl+C                                           |
 | 剪下                                  | Ctrl+X                                           |
 | 貼上                                | Ctrl+V                                           |
@@ -306,9 +306,9 @@ Esc 鍵可讓使用者取消暫時性 UI（以及該 UI 中的任何持續動作
 #### <a name="arrow-key-navigation"></a>方向鍵瀏覽
 
 UI 區域中有類似、相關控制項的群組時，使用者期望有方向鍵瀏覽的支援：
--   `CommandBar` 中的 `AppBarButtons`
--   在 `ListView` 或 `GridView` 中 `ListItems` 或 `GridItems`
--   `ContentDialog` 內 `Buttons`
+-   `AppBarButtons`在`CommandBar`
+-   `ListItems`或`GridItems`內部`ListView`或`GridView`
+-   `Buttons`境內`ContentDialog`
 
 UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組，使用 `XYFocusKeyboardNavigation="Enabled"` 提供類似的行為。
 
@@ -320,7 +320,7 @@ UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>對話方塊按鈕</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>按鈕</sup></p>     
+      <p><sup>RadioButtons</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
@@ -345,9 +345,9 @@ UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組
 
 如果您的配置依循控制項群組的已知 UI 模式，指派一個定位停駐點至群組，可以改善使用者的瀏覽效率。
 
-範例包含：
+範例包括：
 -   `RadioButtons`
--   看起來像的多個 `ListViews`，其行為類似單一 `ListView`
+-   看`ListViews`起來像這樣的多個，其行為類似于單一`ListView`
 -   外觀及操作像磚格線的任何 UI（例如 [開始] 功能表磚）
 
 #### <a name="specifying-control-group-behavior"></a>指定控制項群組行為
@@ -402,9 +402,9 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 | **鍵盤**  | **遊戲台**                         | **遠端控制**  |
 |---------------|-------------------------------------|---------------------|
-| 空格鍵         | A 按鍵                            | 選取按鈕       |
-| Enter 鍵         | A 按鍵                            | 選取按鈕       |
-| ESC 鍵        | B 按鍵                            | [上一步] 按鈕         |
+| Space         | A 按鍵                            | 選取按鈕       |
+| Enter         | A 按鍵                            | 選取按鈕       |
+| 逸出        | B 按鍵                            | 上一頁按鈕         |
 | Home/End      | N/A                                 | N/A                 |
 | Page Up/Down  | 發射鍵用於垂直捲動，緩衝鍵用於水平捲動   | N/A                 |
 
@@ -429,16 +429,16 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
   <tr>
     <td>
       <p><img src="images/keyboard/directional-navigation.png" alt="directional navigation"/></p>
-      <p><strong>支援 <em>方向導覽</strong></br>使用者可以使用方向鍵（鍵盤箭號、遊戲台和遙控器的 D-pad），在不同的控制項之間流覽。</em></p>
+      <p><em><strong>支援的方向導覽</strong></br>使用方向鍵（鍵盤方向鍵、遊戲台與遙控器方向鍵）時，使用者可以瀏覽不同的控制項。</em></p>
     </td>
     <td>
       <p><img src="images/keyboard/no-directional-navigation.png" alt="no directional navigation"/></p>
-      <p><strong>不支援 <em>方向導覽</strong> </br>使用者無法使用方向鍵在不同的控制項之間瀏覽。 在控制項之間流覽的其他方法（tab 鍵）不會受到影響。</em></p>
+      <p><em><strong>不支援方向導覽</strong> </br>使用者無法使用方向鍵在不同的控制項之間瀏覽。 不會影響控制項之間的瀏覽其他方法（tab 鍵）。</em></p>
     </td>
   </tr>
 </table>
 
-### <a name="built-in-keyboard-optimization"></a>內建鍵盤優化
+### <a name="built-in-keyboard-optimization"></a>內建的鍵盤最佳化 
 
 根據使用的配置和控制項，UWP app 可以專為鍵盤輸入進行最佳化。
 
@@ -454,7 +454,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 ![多欄和列方向鍵瀏覽](images/keyboard/multiple-column-and-row-navigation.png)
 
-***多個資料行/資料列箭號導覽***
+***多欄/列方向鍵瀏覽***
 
 #### <a name="wrapping-homogeneous-list-and-grid-view-items"></a>換行同質清單和方格檢視項目
 
@@ -476,12 +476,12 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
     </td>
     <td>
       <p><img src="images/keyboard/column-major-keyboard.png" alt="column major keyboard navigation"/></p>
-      <p><em>資料行主要鍵盤導覽</em></p>
+      <p><em>以欄為主順序鍵盤瀏覽</em></p>
     </td>
   </tr>
 </table>
 
-#### <a name="popup-ui"></a>快顯視窗 UI
+#### <a name="popup-ui"></a>快顯 UI 
 
 如先前所述，您應該嘗試確保方向導覽對應至應用程式 UI 中控制項的視覺化順序。
 
@@ -501,19 +501,19 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 我們建議您在自訂控制項中模擬這些相同的行為。 如需如何執行此行為的程式碼範例，請參閱以程式[設計的焦點導覽](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element)檔。
 
-## <a name="test-your-app"></a>測試您的應用程式
+## <a name="test-your-app"></a>測試應用程式
 
 在所有支援的輸入裝置上測試您的 app，以確保以一致且直覺式的方式瀏覽至 UI 元素，且沒有非預期的元素會干擾您想要的 Tab 順序。
 
 ## <a name="related-articles"></a>相關文章
 * [鍵盤事件](keyboard-events.md)
 * [識別輸入裝置](identify-input-devices.md)
-* [回應觸控鍵盤的存在](respond-to-the-presence-of-the-touch-keyboard.md)
+* [回應觸控式鍵盤的出現](respond-to-the-presence-of-the-touch-keyboard.md)
 * [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
 
 ## <a name="appendix"></a>附錄
 
-### <a name="software-keyboard"></a>軟體鍵盤
+### <a name="software-keyboard"></a>軟體鍵盤 
 
 軟體鍵盤是顯示在螢幕上的鍵盤，使用者可用來取代實體鍵盤，透過觸控、滑鼠、畫筆/手寫筆或其他指標裝置 (不需要觸控式螢幕) 來輸入資料。 在觸控式螢幕上，也可以直接觸控這些鍵盤來輸入文字。 在 Xbox One 裝置上，需要藉由移動焦點視覺效果或使用遊戲台與遙控器的快速鍵，選取個別的按鍵。
 
@@ -539,9 +539,9 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 -   下拉式方塊
 -   選項按鈕
 -   捲軸
--   樹狀目錄
--   樹狀目錄項目
--   Menu
+-   樹狀結構
+-   樹狀結構項目
+-   功能表
 -   功能表列
 -   功能表項目
 -   工具列
@@ -560,14 +560,14 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 成功的鍵盤互動讓使用者只利用鍵盤就可以完成基本的應用程式操作；也就是說，使用者可以使用所有的互動式元素以及啟動預設的功能。 有許多因素會影響成功的程度，包括鍵盤瀏覽、協助工具的便捷鍵，以及進階使用者的快速鍵。
 
-**請注意**  觸控鍵盤不支援切換和大部分的系統命令。
+**請注意**  ，觸控鍵盤不支援切換和大部分的系統命令。
 
 #### <a name="on-screen-keyboard"></a>螢幕小鍵盤
 如同軟體鍵盤，螢幕小鍵盤是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、滑鼠、畫筆/手寫筆或其他指標裝置 (不需要觸控式螢幕) 來輸入資料。 提供螢幕小鍵盤的用意是針對沒有實體鍵盤的系統，或者使用者因行動不便而無法使用傳統實體輸入裝置的情況。 螢幕小鍵盤會模擬絕大部分的硬體鍵盤功能。
 
 螢幕小鍵盤可以從 [設定] &gt; [輕鬆存取] 中的 [鍵盤] 頁面開啟。
 
-**注意** 螢幕小鍵盤的優先順序高於觸控式鍵盤，如果顯示螢幕小鍵盤，就不會顯示觸控式鍵盤。
+**注意**螢幕小鍵盤的優先順序高於觸控鍵盤，如果螢幕小鍵盤出現，則不會顯示。
 
 ![螢幕小鍵盤](images/keyboard/osk.png)
 

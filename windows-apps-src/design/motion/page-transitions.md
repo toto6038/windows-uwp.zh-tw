@@ -1,25 +1,25 @@
 ---
-Description: 了解如何使用您的 UWP 應用程式中的頁面轉換。
-title: 在 UWP app 中的頁面轉換
+Description: 瞭解如何在您的 Windows 應用程式中使用頁面轉換。
+title: 頁面轉換
 template: detail.hbs
 ms.date: 04/08/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9b3244c24ff4fa8e3c85ee9970536b1b35d8efd5
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 6239d8409767cab06d4d2c8c9c3abb9d743ca1c9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444200"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970513"
 ---
 # <a name="page-transitions"></a>頁面轉換
 
 使用者在應用程式裡的頁面間瀏覽，頁面轉換提供回饋做為頁面間的關係。 頁面轉換協助使用者了解它們是否在瀏覽階層的頂端、在同層級頁面間移動，或深入瀏覽至頁面階層。
 
-針對應用程式裡頁面間的瀏覽，提供了兩個不同的動畫，*頁面重新整理*和*切入*，並以 [**NavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo) 的子類別顯示。
+提供兩種不同的*動畫，供*您在應用程式中的頁面之間流覽、*頁面*重新整理和切入，並以[**NavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo)的子類別來表示。
 
 ## <a name="examples"></a>範例
 
@@ -28,7 +28,7 @@ ms.locfileid: "65444200"
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可<a href="xamlcontrolsgallery:/item/PageTransition">開啟 應用程式，並查看作用中的頁面轉換</a>。</p>
+    <p>如果您已安裝<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/PageTransition">開啟應用程式，並查看作用中的頁面轉換</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -37,7 +37,7 @@ ms.locfileid: "65444200"
 </tr>
 </table>
 
-## <a name="page-refresh"></a>重新整理頁面
+## <a name="page-refresh"></a>頁面重新整理
 
 頁面重新整理是向上滑動動畫和淡入/淡出動畫的組合，適用於傳入內容。 當使用者被帶到瀏覽堆疊的頂層，例如在 索引標籤 或 left-nav 項目之間瀏覽，請使用頁面重新整理。
 
@@ -53,9 +53,9 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**注意**：A [**框架**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)會自動使用[ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition)以動畫顯示兩個頁面之間瀏覽。 根據預設，動畫是頁面重新整理。
+**注意**：A [**畫面**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)自動使用 [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) 以動畫顯示兩頁之間的瀏覽。 根據預設，動畫是頁面重新整理。
 
-## <a name="drill"></a>切入
+## <a name="drill"></a>深入探詢
 
 當使用者深入瀏覽應用程式，例如選取項目後顯示詳細資訊，請使用切入。
 
@@ -63,18 +63,18 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ![切入動畫](images/drill.gif)
 
-切入動畫會以 [**DrillInNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) 類別顯示。
+「演練」動畫是以[**DrillInNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo)類別表示。
 
 ```csharp
 // Play the drill in animation
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 ```
 
-## <a name="horizontal-slide"></a>水平的投影片
+## <a name="horizontal-slide"></a>水準投影片
 
-您可以使用水平的滑桿顯示同層級頁面會相互並排顯示。 [NavigationView](../controls-and-patterns/navigationview.md)控制會自動使用最上層導覽中，這個動畫，但如果您要建置您自己的水平的瀏覽體驗，然後您可以實作具有 SlideNavigationTransitionInfo 水平的投影。
+使用水準投影片顯示同輩頁面彼此旁顯示。 [NavigationView](../controls-and-patterns/navigationview.md)控制項會自動使用此動畫來進行熱門導覽，但如果您要建立自己的水準流覽體驗，則可以使用 SlideNavigationTransitionInfo 來執行水準投影片。
 
-所需的看法卻是使用者屬於彼此相鄰的頁面之間巡覽。 
+所要的感覺是使用者要在彼此之間的頁面之間流覽。 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage
@@ -86,7 +86,7 @@ myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { E
 
 ## <a name="suppress"></a>隱藏
 
-若要在瀏覽期間避免播放任何動畫，請使用 [**SuppressNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) 以其他取代**NavigationTransitionInfo** 子類型。
+若要避免在導覽期間播放任何動畫，請使用[**SuppressNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)取代其他**NavigationTransitionInfo**子類型。
 
 ```csharp
 // Suppress the default animation
@@ -103,5 +103,5 @@ myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 
 ## <a name="related-topics"></a>相關主題
 
-- [兩個頁面之間巡覽](../basics/navigate-between-two-pages.md)
-- [在 UWP 應用程式中的動作](index.md)
+- [在兩個頁面之間瀏覽](../basics/navigate-between-two-pages.md)
+- [UWindowsWP 應用程式中的動作](index.md)

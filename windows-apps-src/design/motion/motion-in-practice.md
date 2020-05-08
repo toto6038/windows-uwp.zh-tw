@@ -1,22 +1,22 @@
 ---
-Description: 了解如何 Fluent 基礎一起出現在您的應用程式中的動作。
-title: 執行中動作 - UWP app 中的動畫
+Description: 瞭解如何在您的應用程式中整合流暢的動作基本概念。
+title: 實務中的動作-Windows 應用程式中的動畫
 label: Motion in practice
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8cf010533d2d62559bb8dc0d214e04ab917e62bd
-ms.sourcegitcommit: d534f81590d881a18d677a648c59913029837a84
+ms.openlocfilehash: 45ab6c593b9e20f778e4b352a8b284cefe57c9a8
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67535440"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970323"
 ---
 # <a name="bringing-it-together"></a>組合在一起
 
@@ -26,13 +26,13 @@ ms.locfileid: "67535440"
 
 :::row:::
     :::column:::
-**隱含的動畫**自動 tween 和參數變更以達到非常簡單 Fluent 運行時使用的標準化的值的值之間的時間。
+**隱含動畫**自動補間和參數中的值之間的時間變更，以使用標準化值達到非常簡單的流暢動作。
     :::column-end:::
     :::column:::
-**內建動畫**系統元件，例如通用控制項和共用的影片是 「 預設的 Fluent"。 已在其隱含的使用方式與一致的方式套用基本概念。
+**內建動畫**系統元件（例如通用控制項和共用動作）預設為「流暢」。 基本概念的套用方式與其隱含用法一致。
     :::column-end:::
     :::column:::
-**下列指引建議的自訂動畫**有時候可能會當系統尚未提供的確切動作解決方案針對您的案例。 在這些情況下，使用做為起點的基準基本建議用於您的體驗。
+**遵循指引建議的自訂動畫**有時候系統可能尚未為您的案例提供確切的動作解決方案。 在這些情況下，請使用基準基本建議做為您體驗的起點。
     :::column-end:::
 :::row-end:::
 
@@ -42,14 +42,14 @@ ms.locfileid: "67535440"
 
 :::row:::
     :::column:::
-<b>正向外方向：</b><br>
-淡出：150 m;簡化：預設加速<b>邁向中的方向：</b><br>
-投影片 150px 組成：300 毫秒。簡化：預設減速
+<b>向外方向：</b><br>
+淡出： 150m;簡化：預設<b>的加速方向：</b><br>
+向上滑150px：300毫秒;簡化：預設減速
     :::column-end:::
     :::column:::
-<b>回溯時的方向：</b><br>
-投影片 150px 下：150ms;簡化：預設加速<b>回溯中的方向：</b><br>
-淡入：300 毫秒。簡化：預設減速
+<b>方向向外：</b><br>
+向下滑動150px： 150ms;簡化：預設<b>的加速方向：</b><br>
+淡入：300毫秒;簡化：預設減速
     :::column-end:::
 :::row-end:::
 
@@ -59,12 +59,12 @@ ms.locfileid: "67535440"
 
 :::row:::
     :::column:::
-<b>展開的方向：</b><br>
-增加：300 毫秒。簡化：Standard
+<b>方向擴充：</b><br>
+成長：300毫秒;簡化：標準
     :::column-end:::
     :::column:::
 <b>方向合約：</b><br>
-增加：150ms;簡化：預設加速
+成長： 150ms;簡化：預設加速
     :::column-end:::
 :::row-end:::
 
@@ -74,7 +74,7 @@ ms.locfileid: "67535440"
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>如果您有<strong style="font-weight: semi-bold">XAML 控制項陳列庫</strong>應用程式安裝，請按一下這裡可<a href="xamlcontrolsgallery:/item/ImplicitTransition">開啟 應用程式，並查看作用中的隱含轉換</a>。</p>
+    <p>如果您已安裝<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/ImplicitTransition">開啟應用程式，並查看動作中的隱含轉換</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -83,36 +83,36 @@ ms.locfileid: "67535440"
 </tr>
 </table>
 
-## <a name="implicit-animations"></a>隱含的動畫
+## <a name="implicit-animations"></a>隱含動畫
 
-> 隱含的動畫需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。
+> 隱含動畫需要 Windows 10 版本1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更新版本。
 
-隱含的動畫是簡單的方式來達成 Fluent 動作透過自動之間參數變更期間的最大值舊和新值。
+隱含動畫是一種簡單的方式，可在參數變更期間自動插入舊值和新值，以達成流暢的運動。
 
-您可以隱含地以動畫顯示變更下列屬性：
+您可以針對下列屬性，以隱含的方式建立變更的動畫：
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **不透明度**
   - **旋轉**
-  - **縮放**
-  - **轉譯**
+  - **縮放比例**
+  - **翻譯**
 
-- [框線](/uwp/api/windows.ui.xaml.controls.border)， [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)，或[面板](/uwp/api/windows.ui.xaml.controls.panel)
+- [Border](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[Panel](/uwp/api/windows.ui.xaml.controls.panel)
   - **背景**
 
-可以有變更會隱含地以動畫顯示每個屬性都有對應_轉換_屬性。 若要以動畫顯示屬性，您可以指派轉換類型對應_轉換_屬性。 下表顯示_轉換_屬性和每個使用的轉換類型。
+每一個可以有隱含動畫變更的屬性都有對應的_轉換_屬性。 若要以動畫顯示內容，請將轉換類型指派給對應的_轉換_屬性。 下表顯示_轉換_屬性以及要用於每一個的轉換類型。
 
-| 動畫的屬性 | 轉換屬性 | 隱含的轉換類型 |
+| 動畫屬性 | 轉換屬性 | 隱含轉換類型 |
 | -- | -- | -- |
-| [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
+| [UIElement。不透明度](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Scale](/uwp/api/windows.ui.xaml.uielement.scale) | [ScaleTransition](/uwp/api/windows.ui.xaml.uielement.scaletransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.vector3transition) |
 | [UIElement.Translation](/uwp/api/windows.ui.xaml.uielement.translation) | [TranslationTransition](/uwp/api/windows.ui.xaml.uielement.translationtransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.vector3transition) |
-| [Border.Background](/uwp/api/windows.ui.xaml.controls.border.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
-| [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
-| [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [框線。背景](/uwp/api/windows.ui.xaml.controls.border.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [ContentPresenter 背景](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [Panel。背景](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-此範例示範如何使用 Opacity 屬性和轉換，使按鈕控制項啟用時，淡入與淡出，停用時。
+這個範例示範如何使用 [不透明度] 屬性和 [轉換]，讓按鈕在控制項已啟用時淡入，並在停用時淡出。
 
 ```xaml
 <Button x:Name="SubmitButton"
@@ -133,6 +133,6 @@ public double OpaqueIfEnabled(bool IsEnabled)
 
 ## <a name="related-articles"></a>相關文章
 
-- [影片概觀](index.md)
+- [動作概觀](index.md)
 - [計時和加/減速](timing-and-easing.md)
-- [方向和重力](directionality-and-gravity.md)
+- [方向性和重力](directionality-and-gravity.md)

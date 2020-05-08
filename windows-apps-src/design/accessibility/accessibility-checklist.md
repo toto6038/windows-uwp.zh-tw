@@ -1,23 +1,23 @@
 ---
-Description: 提供一份檢查清單，以協助確定您的通用 Windows 平台 (UWP) app 可提供無障礙功能。
+Description: 提供檢查清單以協助您確保 Windows 應用程式可供存取。
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: 協助工具檢查清單
 label: Accessibility checklist
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b789102b90e63e5456c030f6eb90df372354d7a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: c7775c2d6c9e579e14c9f607fa0a09b665dbb24b
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319004"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969759"
 ---
 # <a name="accessibility-checklist"></a>協助工具檢查清單
 
-提供一份檢查清單，以協助確定您的通用 Windows 平台 (UWP) App 可提供無障礙功能。
+提供檢查清單以協助您確保 Windows 應用程式可供存取。
 
 我們在此提供一份檢查清單，讓您用來確定 App 可提供無障礙功能。
 
@@ -39,14 +39,14 @@ ms.locfileid: "67319004"
 
     如需詳細資訊，請參閱[鍵盤互動](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)。
 
-3. 請確定文字是可讀取的大小
+3. 確定文字是可讀取的大小
 
-    * Windows 包含各種協助工具和設定，使用者可以利用和調整，以自己的需求和喜好設定，用於讀取文字。 它們包括：
-        * [放大鏡] 工具，可以放大 UI 中的所選取的區域。 您應該確定在您的應用程式中的文字版面配置不會造成難以使用 [放大鏡] 進行讀取。
-        * 中的全域規模和解析度設定**設定]-> [系統]-> [顯示比例和版面配置]-> [** 。 確實有哪些調整大小選項可能會不同，因為這取決於顯示裝置的功能。
-        * 中的文字大小設定**設定]-> [輕鬆存取]-> [顯示**。 調整**使文字變大**設定來指定文字的大小在支援跨所有應用程式和畫面 （所有 UWP 文字控制項都支援規模調整體驗，而不需要任何自訂或樣板化的文字） 的控制項。
+    * Windows 包含各種協助工具工具和設定，可讓使用者利用並調整其本身的需求，以及閱讀文字的喜好設定。 其中包括：
+        * 放大鏡工具可放大 UI 的選取區域。 您應該確定應用程式中的文字版面配置不會使其難以使用放大鏡進行閱讀。
+        * [設定] 中的全域規模和解析度設定 **->系統 >顯示 >縮放比例和版面**配置。 確切可用的調整大小選項可能會有所不同，因為這取決於顯示裝置的功能。
+        * [設定] 中的文字大小設定 **->輕鬆存取->顯示**。 調整 [**讓文字變大**] 設定，僅指定在所有應用程式和螢幕上支援控制項中的文字大小（所有 UWP 文字控制項都支援文字縮放體驗，而不需要任何自訂或範本）。
         > [!NOTE]
-        > **更大的每個項目**設定可讓使用者，只有其主畫面上的一般情況下指定慣用的文字和應用程式的大小。
+        > [**讓所有專案變大**] 設定可讓使用者在主要畫面上，僅針對文字和應用程式指定其慣用的大小。
 
 4. 用肉眼檢查 UI，確定文字有適當的對比、元素可在高對比佈景主題中正確顯示以及使用正確的色彩。
 
@@ -62,7 +62,7 @@ ms.locfileid: "67319004"
 
     如需詳細資訊，請參閱[協助工具測試](accessibility-testing.md)。
 
-6. 確定應用程式資訊清單的各項設定符合無障礙指導方針。
+6. 確定應用程式資訊清單的各項設定符合協助工具指導方針。
 
 7. 在 Microsoft Store 中將您的 App 宣告為提供無障礙功能。
 
@@ -74,6 +74,6 @@ ms.locfileid: "67319004"
 
 * [協助工具文字的需求](accessible-text-requirements.md)
 * [文字大小調整](../input/text-scaling.md)
-* [協助工具](accessibility.md)
-* [協助工具的設計](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
+* [協助工具選項](accessibility.md)
+* [協助工具設計](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
 * [應避免的做法](practices-to-avoid.md)

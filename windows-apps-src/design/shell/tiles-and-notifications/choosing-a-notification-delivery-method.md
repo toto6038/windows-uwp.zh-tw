@@ -1,5 +1,5 @@
 ---
-Description: 本文涵蓋四個通知選項 &\#8212; 本機、排程、定期和推播 &\#8212; 提供磚和徽章更新和快顯通知內容。
+Description: 本文涵蓋四個通知選項&\#8212; 本機、排程、定期和 push&\#8212; 提供磚和徽章更新和快顯通知內容。
 title: 選擇通知傳遞方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 80a06f5199c49f5fcd7a08dc9c9baef18ee19db9
-ms.sourcegitcommit: 017f2f1492f3220da0fae8b4c99de7206a185dff
+ms.openlocfilehash: f1df2048ea54b3ffc7c62270841b2be650bb90ea
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81385846"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970823"
 ---
 # <a name="choose-a-notification-delivery-method"></a>選擇通知傳遞方法
 
@@ -28,8 +28,8 @@ ms.locfileid: "81385846"
 App 可以使用四種機制來傳遞通知：
 
 -   **本機**
--   **按**
--   **分期付款**
+-   **排程**
+-   **定期**
 -   **推送**
 
 下表摘要說明通知傳遞類型。
@@ -79,7 +79,7 @@ App 可以使用四種機制來傳遞通知：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">推送</td>
+<td align="left">發送</td>
 <td align="left">磚、徽章、快顯通知、原始通知</td>
 <td align="left">即使您的應用程式未執行，仍然會從雲端伺服器傳送的通知。</td>
 <td align="left"><ul>
@@ -108,11 +108,11 @@ App 可以使用四種機制來傳遞通知：
 
 根據預設，本機快顯通知會在三天後到期，而本機磚通知永遠不會過期。 我們建議針對您的通知使用合理且明確的到期時間 (快顯通知的最大值為三天) 來覆寫這些預設值。 
 
-如需詳細資訊，請參閱這些主題：
+如需詳細資訊，請參閱下列主題：
 
 -   [傳送本機磚通知](sending-a-local-tile-notification.md)
 -   [傳送本機快顯通知](send-local-toast.md)
--   [通用 Windows 平臺（UWP）通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows 應用程式通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>排程通知
 
@@ -123,10 +123,10 @@ App 可以使用四種機制來傳遞通知：
 
 根據預設，排程的通知會在傳遞的三天後到期。 您可以覆寫排程的磚通知上的這個預設到期時間，但無法覆寫排程的快顯通知上的到期時間。
 
-如需詳細資訊，請參閱這些主題：
+如需詳細資訊，請參閱下列主題：
 
 -   [排程快顯通知](scheduled-toast.md)
--   [通用 Windows 平臺（UWP）通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows 應用程式通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="periodic-notifications"></a>定期通知
 
@@ -137,12 +137,12 @@ App 可以使用四種機制來傳遞通知：
 
 根據預設，定期通知會在輪詢發生的三天後到期。 如有需要，您可以指定明確的到期時間來覆寫這個預設設定。
 
-如需詳細資訊，請參閱這些主題：
+如需詳細資訊，請參閱下列主題：
 
 -   [定期通知概觀](periodic-notification-overview.md)
--   [通用 Windows 平臺（UWP）通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows 應用程式通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <a name="push-notifications"></a>推播通知
+## <a name="push-notifications"></a>推送通知
 
 
 若要交流即時資料或針對使用者個人化的資料，就非常適合使用推播通知。 推播通知用於在無法預測的時間產生的內容，像是突發新聞、社交網路更新或立即訊息。 當資料 (像是遊戲進行時的遊戲分數) 有時效性而不適合定期通知時，也可以使用推播通知。
@@ -151,11 +151,11 @@ App 可以使用四種機制來傳遞通知：
 
 根據預設，推播通知會在裝置收到的三天後到期。 如有需要，您可以指定明確的到期時間來覆寫這個預設值 (快顯通知的最大值為三天)。
 
-如需詳細資訊，請參閱：
+如需詳細資訊，請參閱
 
 -   [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
 -   [推播通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
--   [通用 Windows 平臺（UWP）通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows 應用程式通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
 ## <a name="related-topics"></a>相關主題
@@ -167,7 +167,7 @@ App 可以使用四種機制來傳遞通知：
 * [快顯通知的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [定期通知概觀](periodic-notification-overview.md)
 * [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
-* [GitHub 上的通用 Windows 平臺（UWP）通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [GitHub 上的 Windows 應用程式通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  

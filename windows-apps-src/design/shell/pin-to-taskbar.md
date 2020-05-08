@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile, 工作列, 工作列管理員, 釘選到工作列, 主要磚
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aa259cd8c5c45ea99d83eaecb8e30fb0438aa8f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 44ef6430398960e13fe5eebb40a52d022df6f0d2
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684529"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970653"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>將應用程式釘選到工作列
 
@@ -55,7 +55,7 @@ else
 
 ## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. 檢查工作列是否存在並允許釘選
 
-UWP 應用程式可在各種裝置上執行；並非所有的裝置皆支援工作列。 目前只有傳統型裝置支援工作列。 
+Windows 應用程式可以在各種不同的裝置上執行;並非全部都支援工作列。 目前只有傳統型裝置支援工作列。 
 
 即使工作列可供使用，使用者電腦上的群組原則仍可停用工作列釘選。 因此，在您嘗試釘選應用程式之前，您必須檢查是否支援釘選到工作列。 如果工作列存在並允許釘選，[TaskbarManager.IsPinningAllowed 屬性](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsPinningAllowed)會傳回 true。 
 
@@ -108,6 +108,6 @@ bool isPinned = await TaskbarManager.GetDefault().RequestPinCurrentAppAsync();
 
 ## <a name="resources"></a>資源
 
-* [GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
+* [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
 * [TaskbarManager 類別](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [將應用程式釘選到 [開始] 功能表](tiles-and-notifications/primary-tile-apis.md)
+* [將應用程式釘選到開始功能表](tiles-and-notifications/primary-tile-apis.md)

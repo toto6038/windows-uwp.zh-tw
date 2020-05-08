@@ -6,12 +6,12 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: df93fbeb3a879a84873827a5ead926f96b02adcc
-ms.sourcegitcommit: 8ee0752099170aaf96c7cb105f7cc039b6e7ff06
+ms.openlocfilehash: 8c7f906a19ddbabea85b0426aca9e41a62327e36
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80968054"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729801"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Unity 和 UWP 中遺失 .NET API
 
@@ -19,7 +19,7 @@ ms.locfileid: "80968054"
 
 此外，部分遊戲引擎使用未與 UWP 適用的 .NET (例如 Unity 的 Mono) 完全相容的不同類型 .NET。 所以當您撰寫遊戲時，所有項目在編輯器中可能運作正常，但是當您移至 UWP 的建置，您可能會收到這類錯誤：**命名空間 'System.Runtime.Serialization' 中沒有類型或命名空間 'Formatters' (是否遺漏了組件參考？)**
 
-幸好 Unity 提供一些這些遺失的 API 作為延伸方法和更換類型，這在[通用 Windows 平台︰.NET 指令碼後端遺失 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)中有所描述。 不過，如果您需要的功能不在這裡，[適用於 Windows 8.x App 的 .NET 概觀](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))討論您可以轉換您的程式碼的方式以使用 WinRT 或 UWP API 適用的 .NET。 (這討論 Windows 8，但也適用於 Windows 10 UWP app)。
+幸好 Unity 提供一些這些遺失的 API 作為延伸方法和更換類型，這在[通用 Windows 平台︰.NET 指令碼後端遺失 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)中有所描述。 不過，如果您需要的功能不在這裡，則[適用于 Windows 8.x 應用程式的 .net 總覽](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))會討論如何將程式碼轉換為使用 WinRT 或 .net 來 Windows 執行階段 api 的方式。 (這討論 Windows 8，但也適用於 Windows 10 UWP app)。
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -31,17 +31,17 @@ ms.locfileid: "80968054"
 
 ## <a name="scripting-backend-configuration"></a>指令碼後端設定
 
-如果您建置 UWP 時遇到問題，第一件事您應該做的是檢查 **\[播放程式設定\]** ( **\[檔案\] > \[組建設定\]** ，選取 **\[通用 Windows 平台\]** ，然後 **\[播放程式設定\]** )。 在 **\[其他設定\] > \[設定\]** 下，前三個下拉選項 ( **\[指令碼執行階段版本\]** 、 **\[指令碼後端\]** 和 **\[Api 相容性層級\]** ) 是所有要考慮的重要設定。
+如果您建置 UWP 時遇到問題，第一件事您應該做的是檢查 **\[播放程式設定\]**(**\[檔案\] > \[組建設定\]**，選取 **\[通用 Windows 平台\]**，然後 **\[播放程式設定\]**)。 在 **\[其他設定\] > \[設定\]** 下，前三個下拉選項 (**\[指令碼執行階段版本\]**、**\[指令碼後端\]** 和 **\[Api 相容性層級\]**) 是所有要考慮的重要設定。
 
 **\[指令碼執行階段版本\]** 是 Unity 指令碼後端用來讓您取得您所選擇大致上對等版本的 .NET Framework 支援。 不過，請記住，並非該版本的 .NET framework 的所有 API 都支援，只有您的 UWP 目標那些 .NET Standard 版本。
 
-通常若推出 .NET 新版本，會有更多的 API 新增至 .NET Standard，讓您可以跨獨立和 UWP 使用相同的程式碼。 例如，[System.Runtime.Serialization.Json](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json) 命名空間已導入 .NET Standard 2.0。 如果您設定 **\[指令碼執行階段版本\]** 為 **\[.NET 3.5 同等\]** (其目標是較舊版本的 .NET Standard)，嘗試使用 API 時，您將會收到錯誤，請將其切換為 **\[.NET 4.6 同等\]** (支援 .NET Standard 2.0)，API 將可運作。
+通常若推出 .NET 新版本，會有更多的 API 新增至 .NET Standard，讓您可以跨獨立和 UWP 使用相同的程式碼。 例如，[System.Runtime.Serialization.Json](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json) 命名空間已導入 .NET Standard 2.0。 如果您設定 **\[指令碼執行階段版本\]** 為 **\[.NET 3.5 同等\]**(其目標是較舊版本的 .NET Standard)，嘗試使用 API 時，您將會收到錯誤，請將其切換為 **\[.NET 4.6 同等\]**(支援 .NET Standard 2.0)，API 將可運作。
 
-**\[指令碼後端\]** 可以是 **\[.NET\]** 或 **\[IL2CPP\]** 。 本主題中，我們假設您已選擇 **\[.NET\]** ，因為那是此處所討論的問題所在。 如需詳細資訊，請參閱[指令碼後端](https://docs.unity3d.com/Manual/windowsstore-scriptingbackends.html)。
+**\[指令碼後端\]** 可以是 **\[.NET\]** 或 **\[IL2CPP\]**。 本主題中，我們假設您已選擇 **\[.NET\]**，因為那是此處所討論的問題所在。 如需詳細資訊，請參閱[指令碼後端](https://docs.unity3d.com/Manual/windowsstore-scriptingbackends.html)。
 
-最後，您應該設定 **\[Api 相容性層級\]** 為您要讓您的遊戲在上面執行的 .NET 版本。 這應該符合 **\[指令碼執行階段版本\]** 。
+最後，您應該設定 **\[Api 相容性層級\]** 為您要讓您的遊戲在上面執行的 .NET 版本。 這應該符合 **\[指令碼執行階段版本\]**。
 
-一般而言，對於 **\[指令碼執行階段版本\]** 和 **\[Api 相容性層級\]** ，您應該選取已推出的最新版本，以便與 .NET Framework 有更多相容性，如此可讓您使用更多的 .NET API。
+一般而言，對於 **\[指令碼執行階段版本\]** 和 **\[Api 相容性層級\]**，您應該選取已推出的最新版本，以便與 .NET Framework 有更多相容性，如此可讓您使用更多的 .NET API。
 
 ![設定︰指令碼執行階段版本；指令碼後端；Api 相容性層級](images/missing-dot-net-apis-in-unity-1.png)
 
@@ -60,7 +60,7 @@ ms.locfileid: "80968054"
 ```
 
 > [!NOTE]
-> `NETFX_CORE` 僅適用于檢查您是否要針對 .NET C#腳本後端編譯器代碼。 如果您使用不同的腳本後端（例如 IL2CPP），請改用[`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) 。
+> `NETFX_CORE`僅適用于檢查您是否要針對 .NET 腳本後端編譯 c # 程式碼。 如果您要使用不同的腳本後端（例如 IL2CPP） [`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) ，請改用。
 
 如需平台相關編譯指示詞的完整清單，請參閱[平台相關編譯](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)。
 
@@ -96,7 +96,7 @@ private void Save()
 
 一個重要事項是 [Close](https://docs.microsoft.com/dotnet/api/system.io.stream.close) 方法只有在 .NET Standard 2.0 及更新版本中可用 (雖然 Unity 提供延伸方法)。 改為使用 [Dispose](https://docs.microsoft.com/dotnet/api/system.io.stream.dispose)。
 
-### <a name="threading"></a>執行緒處理
+### <a name="threading"></a>執行緒
 
 [System.Threading](https://docs.microsoft.com/dotnet/api/system.threading) 命名空間中的某些類型，例如 [ThreadPool](https://docs.microsoft.com/dotnet/api/system.threading.threadpool)，不適用於較舊版本的 .NET Standard。 在這些情況中，您可以改為使用 [Windows.System.Threading](https://docs.microsoft.com/uwp/api/windows.system.threading) 命名空間。
 
@@ -115,7 +115,7 @@ private void UsingThreads()
 
 ### <a name="security"></a>安全性
 
-部分 **System.Security.** * 命名空間，例如 [System.Security.Cryptography.X509Certificates](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0)，在您建置適用於 UWP 的 Unity 遊戲時不會提供。 在這些案例中，請使用 **Windows.Security.** * API，其涵蓋幾乎相同的功能。
+部分 **System.Security.*** 命名空間，例如 [System.Security.Cryptography.X509Certificates](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0)，在您建置適用於 UWP 的 Unity 遊戲時不會提供。 在這些案例中，請使用 **Windows.Security.*** API，其涵蓋幾乎相同的功能。
 
 下列範例只會取得憑證存放區中具指定名稱的憑證：
 
@@ -138,12 +138,12 @@ private async void GetCertificatesAsync(string certStoreName)
 
 ### <a name="networking"></a>網路功能
 
-部分 **System&period;Net.** * 命名空間，例如 [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0)，也在建置適用於 UWP 的 Unity 遊戲時不會提供。 對於這些 API 大部分，請使用對應的 **Windows.Networking.** * 和 **Windows.Web.** * WinRT API 來取得類似的功能。 如需詳細資訊，請參閱[網路和 web 服務](https://docs.microsoft.com/windows/uwp/networking/)。
+部分 **System&period;Net.*** 命名空間，例如 [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0)，也在建置適用於 UWP 的 Unity 遊戲時不會提供。 對於這些 API 大部分，請使用對應的 **Windows.Networking.*** 和 **Windows.Web.*** WinRT API 來取得類似的功能。 如需詳細資訊，請參閱[網路和 web 服務](https://docs.microsoft.com/windows/uwp/networking/)。
 
 在 **System.Net.Mail** 的案例中，使用 [Windows.ApplicationModel.Email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email) 命名空間。 如需詳細資訊，請參閱[傳送電子郵件](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email)。
 
 ## <a name="see-also"></a>另請參閱
 
-* [通用 Windows 平臺： .NET 腳本後端缺少 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [適用于 UWP 應用程式的 .NET 總覽](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
+* [通用 Windows 平台︰.NET 指令碼後端遺失 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
+* [用於 UWP App 的 .NET 概觀](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
 * [Unity UWP 移植指南](https://unity3d.com/partners/microsoft/porting-guides)

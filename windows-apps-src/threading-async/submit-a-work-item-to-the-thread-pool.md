@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
-ms.openlocfilehash: d3dcd162e0a139328ef5885ac26edec04a279134
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a9da63e05380987d69d97a74123e593acd0b8cb1
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259810"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619342"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>將工作項目提交至執行緒集區
 
-已針對 Windows 10 上的 UWP 應用程式更新 \[。 如需 Windows 8.x 的文章，請參閱[封存 \]](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)
+\[已更新 Windows 10 上的 UWP 應用程式。 如需 Windows [8.x 的文章](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)，請參閱封存\]
 
 <b>重要 API</b>
 
@@ -348,9 +348,9 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 請注意，完成處理常式在分派 UI 更新之前，會檢查是否已取消工作項目。
 
-## <a name="summary-and-next-steps"></a>摘要與後續步驟
+## <a name="summary-and-next-steps"></a>摘要和後續步驟
 
-若要深入瞭解，請從本快速入門中的建立針對 Windows 8.1 撰寫的[ThreadPool 工作專案範例](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff)中的程式碼，然後在 win\_unap Windows 10 應用程式中重複使用原始程式碼。
+若要深入瞭解，請從本快速入門中的建立針對 Windows 8.1 撰寫的[ThreadPool 工作專案範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample)中的程式碼，然後在 Win\_unap Windows 10 應用程式中重複使用原始程式碼。
 
 ## <a name="related-topics"></a>相關主題
 

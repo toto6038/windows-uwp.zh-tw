@@ -1,5 +1,5 @@
 ---
-Description: 調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像及選擇性使用者互動的彈性快顯通知。
+Description: 調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。
 title: 快顯通知內容
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
@@ -8,28 +8,28 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 互動式快顯通知, 調適性快顯通知, 快顯通知內容, 快顯通知裝載
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b424da3b9413c7528cb6f6a6a888e9fe2cc7cb7
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: bda62b76973adb7b6cfe068cdd9ca33b1a54454c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209854"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970923"
 ---
 # <a name="toast-content"></a>快顯通知內容
 
 調適型和互動式快顯通知可讓您使用文字、影像和按鈕/輸入建立彈性通知。
 
-> **重要 API**：[UWP Community Toolkit Notifications NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要 API**：[UWP 社群工具組通知 NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> 若要查看 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯範本目錄](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))。
+> 若要查看來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))。
 
 
 ## <a name="getting-started"></a>開始使用
 
-**安裝通知程式庫。** 如果您想要使用 C# 而不是 XML 產生通知，請安裝名稱為 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 套件 (搜尋 "notifications uwp")。 本文中所提供的 C# 範例使用該 NuGet 套件 1.0.0 版本。
+**安裝 Notifications 程式庫。** 如果您想要使用 C# 而不是 XML 產生通知，請安裝名稱為 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 套件 (搜尋 "notifications uwp")。 本文中所提供的 C# 範例使用該 NuGet 套件 1.0.0 版本。
 
-**安裝通知視覺化檢視。** 這個免費的 UWP 應用程式透過在您編輯快顯通知時提供即時視覺預覽 (類似 Visual Studio 的 XAML 編輯器/設計檢視)，可協助您設計互動式快顯通知。 如需詳細資訊，請參閱[通知視覺化工具](notifications-visualizer.md)或[從 Microsoft Store 下載通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)。
+**安裝通知視覺化工具。** 這項免費的 Windows 應用程式可協助您設計互動式快顯通知，其方式是在編輯時提供快顯的立即視覺化預覽，類似 Visual Studio 的 XAML 編輯器/設計檢視。 如需詳細資訊，請參閱[通知視覺化工具](notifications-visualizer.md)或[從 Microsoft Store 下載通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)。
 
 
 ## <a name="sending-a-toast-notification"></a>傳送快顯通知
@@ -88,7 +88,7 @@ ToastContent content = new ToastContent()
 ![快顯通知結構](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>Visual
+## <a name="visual"></a>視覺效果
 
 每個快顯通知都必須指定視覺效果，您必須在其中提供可包含文字、影像等項目的泛型快顯通知繫結。 這些元素會呈現在各種不同 Windows 裝置，包括桌上型電腦、手機、平板電腦和 Xbox。
 
@@ -103,7 +103,7 @@ ToastContent content = new ToastContent()
 
 ## <a name="text-elements"></a>文字元素
 
-每個快顯通知都必須至少有一個文字元素，並且可以包含兩個類型皆為 [**AdaptiveText**](toast-schema.md#adaptivetext) 的額外文字元素。
+每個快顯必須至少有一個文字元素，而且可以包含兩個額外的文字元素，全都是[**AdaptiveText**](toast-schema.md#adaptivetext)類型。
 
 <img alt="Toast with title and description" src="images/toast-title-and-description.jpg" width="364"/>
 
@@ -144,7 +144,7 @@ new ToastBindingGeneric()
 
 ## <a name="app-logo-override"></a>App 標誌覆寫
 
-根據預設，快顯通知會顯示 App 的標誌。 不過，您可以將此標誌覆寫為您自己的 [**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo) 影像。 例如，如果這是來自某個人的通知，我們建議以那個人的相片來覆寫 App 標誌。
+根據預設，快顯通知會顯示 App 的標誌。 不過，您可以使用自己的[**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo)影像來覆寫此標誌。 例如，如果這是來自某個人的通知，我們建議以那個人的相片來覆寫 App 標誌。
 
 <img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
 
@@ -318,7 +318,7 @@ ToastContent toastContent = new ToastContent()
 
 這個額外內容是使用 Adaptive 所指定，您可以閱讀[調適型磚文件](create-adaptive-tiles.md) 進行深入了解。
 
-請注意，任何調適性內容都必須包含在 [**AdaptiveGroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup) 中。 否則無法使用 Adaptive 呈現出來。
+請注意，任何適應性內容都必須包含在[**AdaptiveGroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup)中。 否則無法使用 Adaptive 呈現出來。
 
 
 ### <a name="columns-and-text-elements"></a>欄和文字元素
@@ -806,7 +806,7 @@ ToastContent content = new ToastContent()
 
 
 
-## <a name="audio"></a>音效
+## <a name="audio"></a>音訊
 
 自訂音訊一直以來都支援行動裝置，也支援桌上型電腦版本 1511 (組建 10586) 或較新版本。 您可以透過下列方式參考自訂音訊︰
 
@@ -879,6 +879,6 @@ ToastContent content = new ToastContent()
  
 ## <a name="related-topics"></a>相關主題
 
-* [傳送本機快顯通知並處理啟用](send-local-toast.md)
-* [GitHub 上的通知程式庫（UWP 社區工具組的一部分）](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
-* [語言、縮放和高對比的磚與快顯通知支援](tile-toast-language-scale-contrast.md)
+* [傳送本機快顯通知及處理啟用](send-local-toast.md)
+* [GitHub 上的 Notifications 程式庫 (屬於 UWP 社群工具組)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [對語言、縮放比例及高對比的磚和快顯通知支援](tile-toast-language-scale-contrast.md)

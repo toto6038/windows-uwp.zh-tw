@@ -1,27 +1,27 @@
 ---
-Description: 描述在 Microsoft Store 中，宣告您的通用 Windows 平台 (UWP) app 可提供無障礙功能的要求條件。
+Description: 說明在 Microsoft Store 中將 Windows 應用程式宣告為可存取的需求。
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: 市集中的協助工具
 label: Accessibility in the Store
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f00bb9449d9e48518d16e08fa6b6665eecd2f85
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad128aca1a633c5ce33830b5ee9231f7a794a60c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359738"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969673"
 ---
 # <a name="accessibility-in-the-store"></a>市集中的協助工具  
 
 
 
-描述在 Microsoft Store 中，宣告您的通用 Windows 平台 (UWP) app 可提供無障礙功能的要求條件。
+說明在 Microsoft Store 中將 Windows 應用程式宣告為可存取的需求。
 
-將您的 App 送出到 Microsoft Store 進行認證時，您可以宣告 App 可提供無障礙功能。 將您的應用程式宣告為無障礙應用程式，可以讓需要使用無障礙應用程式的使用者 (例如視覺障礙者) 比較容易找到這些程式。 使用者搜尋 Microsoft Store 時，可以使用 **\[無障礙\]** 篩選器尋找無障礙 app。 宣告您的 App 可提供無障礙功能時，也會在您的 App 介紹加上 [無障礙]  標記。
+將您的 App 送出到 Microsoft Store 進行認證時，您可以宣告 App 可提供無障礙功能。 將您的應用程式宣告為無障礙應用程式，可以讓需要使用無障礙應用程式的使用者 (例如視覺障礙者) 比較容易找到這些程式。 使用者搜尋 Microsoft Store 時，可以使用 **\[無障礙\]** 篩選器尋找無障礙 app。 宣告您的 App 可提供無障礙功能時，也會在您的 App 介紹加上 **\[無障礙\]** 標記。
 
 將 app 宣告為無障礙 app，說明該 app 具有符合使用者主要案例所需的[基本協助工具資訊](basic-accessibility-information.md)，可使用下列一或多個項目：
 
@@ -48,4 +48,4 @@ ms.locfileid: "66359738"
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>相關主題    
-* [協助工具](accessibility.md) 
+* [協助工具選項](accessibility.md) 
