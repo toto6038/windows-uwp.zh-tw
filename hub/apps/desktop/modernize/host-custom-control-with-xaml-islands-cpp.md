@@ -1,19 +1,19 @@
 ---
 description: 此文章示範如何使用 XAML 裝載 API，在 C++ Win32 應用程式中裝載自訂 UWP 控制項。
 title: 使用 XAML 裝載 API 在 C++ Win32 應用程式中裝載自訂 UWP 控制項
-ms.date: 03/23/2020
+ms.date: 04/07/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, 自訂控制項, 使用者控制項, 主控制項
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 93badc28c9c4fa1684836fc4a883e54661e8d4dc
-ms.sourcegitcommit: 7112e4ec3f19d46a1fc4d81d1c29fd9c01522610
+ms.openlocfilehash: eac2574d48864ba8b8dc907c8a7ec43ef266358b
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80986986"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606330"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 UWP 控制項
 
@@ -512,6 +512,72 @@ ms.locfileid: "80986986"
 
 9. 儲存檔案。
 10. 建置解決方案並確認已成功建置。
+
+## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>將控制項從 WinUI 程式庫新增至自訂控制項
+
+習慣上，UWP 控制項已當作 Windows 10 OS 的一部分發行，並可透過 Windows SDK 提供給開發人員使用。 [WinUI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)是替代方法，其中 Windows SDK 中已更新的 UWP 控制項版本會在未繫結至 Windows SDK 版本的 NuGet 套件中散發。 此程式庫也包含不屬於 Windows SDK 和預設 UWP 平台的新控制項。 如需詳細資訊，請參閱我們的 [WinUI 程式庫藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
+
+本節示範如何將 UWP 控制項從 WinUI 程式庫新增至您的使用者控制項。
+
+1. 在 **MyUWPApp** 專案中，安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件的最新發行前或發行版本。
+
+    > [!NOTE]
+    > 如果您的傳統型應用程式封裝在 [MSIX 套件](https://docs.microsoft.com/windows/msix)中，您可使用 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 套件的發行前或發行版本。 如果您的傳統型應用程式未使用 MSIX 進行封裝，您必須安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件的發行前版本。
+
+2. 在此專案的 pch.h 檔案中，新增下列 `#include` 陳述式並儲存您所做的變更。 這些陳述式會從 WinUI 程式庫將所需的投影標頭集合帶入您的專案中。 任何使用 WinUI 程式庫的 C++/WinRT 專案都需要執行此步驟。 如需詳細資訊，請參閱[這篇文章](https://docs.microsoft.com/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project)。
+
+    ```cpp
+    #include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"
+    #include "winrt/Microsoft.UI.Xaml.Controls.Primitives.h"
+    #include "winrt/Microsoft.UI.Xaml.Media.h"
+    #include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
+    ```
+
+3. 在相同專案的 App.xaml 檔案中，將下列子元素新增至 `<xaml:XamlApplication>` 元素並儲存您所做的變更。
+
+    ```xml
+    <Application.Resources>
+        <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+    </Application.Resources>
+    ```
+
+    新增此元素之後，此檔案的內容現在應該如下所示。
+
+    ```xml
+    <Toolkit:XamlApplication
+        x:Class="MyUWPApp.App"
+        xmlns:Toolkit="using:Microsoft.Toolkit.Win32.UI.XamlHost"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:MyUWPApp">
+        <Application.Resources>
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
+        </Application.Resources>
+    </Toolkit:XamlApplication>
+    ```
+
+4. 在相同的專案中，開啟 MyUserControl.xaml 檔案，然後將下列命名空間宣告新增至 `<UserControl>` 元素。
+
+    ```xml
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    ```
+
+5. 在相同的檔案中，新增 `<winui:RatingControl />` 元素作為 `<StackPanel>` 的子系並儲存您所做的變更。 此元素會從 WinUI 程式庫新增 https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol 類別的執行個體。 新增此屬性之後，`<StackPanel>` 現在應該如下所示。
+
+    ```xml
+    <StackPanel HorizontalAlignment="Center" Spacing="10" 
+                Padding="20" VerticalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" 
+                       Text="Hello from XAML Islands" FontSize="30" />
+        <TextBlock HorizontalAlignment="Center" Margin="15" TextWrapping="Wrap"
+                       Text="😍❤💋🌹🎉😎�🐱‍👤" FontSize="16" />
+        <Button HorizontalAlignment="Center" 
+                x:Name="Button" Click="ClickHandler">Click Me</Button>
+        <winui:RatingControl />
+    </StackPanel>
+    ```
+
+6. 建置解決方案並確認已成功建置。
 
 ## <a name="test-the-app"></a>測試應用程式
 

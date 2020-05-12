@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f79b7247a7e1a1889c530a16c280f490db51042e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79210174"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970743"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>螢幕大小與中斷點
 
-UWP 應用程式可在執行 Windows 10，包括手機、平板電腦、桌機、電視，以及更多的任何裝置上執行。 Windows 10 生態系統跨越大量裝置目標與螢幕大小，與其針對每個裝置最佳化您的 UI，我們建議設計幾個重要的寬度類別 (也稱為「中斷點」) ： 
+Windows 應用程式可在執行 Windows，包括手機、平板電腦、桌機、電視，以及更多的任何裝置上執行。 Windows 10 生態系統跨越大量裝置目標與螢幕大小，與其針對每個裝置最佳化您的 UI，我們建議設計幾個重要的寬度類別 (也稱為「中斷點」) ： 
 - 小型 (小於 640 像素)
 - 中型 (641 - 1007 像素)
 - 大型 (1008 和更高像素)

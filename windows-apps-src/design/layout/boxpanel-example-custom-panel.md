@@ -12,12 +12,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe1389e3c3db28f834217b4f163c48633c32d14
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 68ca40a48b8b8d04bcd8b01584856233e9a99e7c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71340163"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970203"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel，自訂面板範例
 
@@ -47,7 +47,7 @@ ms.locfileid: "71340163"
 
 從 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 衍生一個自訂類別著手。 若要這樣做，最簡單的方法可能是從 Microsoft Visual Studio 的 [方案總管]  針對專案使用 [加入]   |  [新增項目]   |  [類別]  內容功能表選項，為這個類別定義個別的程式碼檔案。 將類別 (和檔案) 命名為 `BoxPanel`。
 
-因為類別的範本檔案並非專供通用 Windows 平台 (UWP) app 使用，所以一開始不會有許多 **using** 陳述式。 因此，請先新增 **using** 陳述式。 範本檔案開始位置也使用了幾個您可能不需要，且可以刪除的 **using** 陳述式。 以下是建議的 **using** 陳述式清單，可用以解析一般自訂面板程式碼所需的類型：
+因為類別的範本檔案並非專供 Windows 應用程式使用，所以一開始不會有許多 **using** 陳述式。 因此，請先新增 **using** 陳述式。 範本檔案開始位置也使用了幾個您可能不需要，且可以刪除的 **using** 陳述式。 以下是建議的 **using** 陳述式清單，可用以解析一般自訂面板程式碼所需的類型：
 
 ```CSharp
 using System;

@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 892e8e9bdeed562a83e566266a7391e9c24b2ad3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 848d682b2672e1a397e3ac867ae981c707873e8e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081734"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970413"
 ---
 # <a name="inking-controls"></a>手寫筆跡控制項
 
 
 
-有兩個不同的控制項可協助在通用 Windows 平台 (UWP) 應用程式中提供筆跡：[InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) \(英文\) 和 [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) \(英文\)。
+有兩個不同的控制項可協助在 Windows 應用程式中提供筆跡：[InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) \(英文\) 和 [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) \(英文\)。
 
 InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與粗細的預設設定) 或擦去筆劃。 此控制項為完全透明的重疊，不包含任何用於變更預設筆墨筆劃屬性的內建 UI。
 
@@ -84,7 +84,7 @@ InkCanvas 與 InkToolbar 也會用於 **Windows Ink 工作區**中的**繪圖板
 ```
 
 > [!NOTE]
-> 如需使用 InkPresenter 自訂 InkCanvas 的詳細說明，請參閱 [UWP 應用程式中的手寫筆互動與 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) \(部分機器翻譯\) 一文。
+> 如需使用 InkPresenter 自訂 InkCanvas 的詳細說明，請參閱 [Windows 應用程式中的手寫筆互動與 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)一文。
 
 InkToolbar 控制項必須與 InkCanvas 搭配使用。 將 InkToolbar (與所有內建工具) 併入您的應用程式時需要額外的一行標記︰
 
@@ -170,6 +170,6 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 
 ## <a name="related-articles"></a>相關文章
 
-- [UWP 應用程式中的手寫筆互動與 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) \(部分機器翻譯\)
+- [Windows 應用程式中的手寫筆互動與 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
 - [將 Windows Ink 筆劃辨識為文字和圖案](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text) \(部分機器翻譯\)
 - [儲存和擷取 Windows Ink 筆劃資料](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink) \(部分機器翻譯\)

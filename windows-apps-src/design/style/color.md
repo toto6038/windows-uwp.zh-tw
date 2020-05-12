@@ -1,18 +1,18 @@
 ---
-description: 了解如何在 UWP 應用程式中使用輔色及佈景主題。
-title: UWP 應用程式中的色彩
+description: 了解如何在 Windows 應用程式中使用輔色及佈景主題。
+title: Windows 應用程式中的色彩
 ms.date: 04/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7ab504657ae5e3142eb7db1d9517a013e9aaf5f3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f5e103b7661c53fb70561dd1bd654188be2704ff
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684586"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970763"
 ---
 # <a name="color"></a>色彩
 
@@ -20,7 +20,7 @@ ms.locfileid: "75684586"
 
 色彩可提供直覺的溝通資訊方式給您應用程式中的使用者：色彩可用來指出互動性、提供意見反應給使用者動作，以及讓您的介面產生視覺延續性。
 
-在 UWP 應用程式中，色彩主要由輔色及佈景主題來決定。 在本文中，我們會討論如何在應用程式中使用色彩，以及如何使用輔色及佈景主題資源，讓您的 UWP 應用程式可用於任何佈景主題背景。
+在 Windows 應用程式中，色彩主要由輔色及佈景主題來決定。 在本文中，我們會討論如何在應用程式中使用色彩，以及如何使用輔色及佈景主題資源，讓您的 Windows 應用程式可用於任何佈景主題背景。
 
 ## <a name="color-principles"></a>色彩原則
 
@@ -48,7 +48,7 @@ ms.locfileid: "75684586"
 
 ## <a name="themes"></a>佈景主題
 
-UWP 應用程式可以使用淺色或深色應用程式佈景主題。 佈景主題會影響應用程式的背景、文字、圖示和[通用控制項](../controls-and-patterns/index.md)。
+Windows 應用程式可以使用淺色或深色應用程式佈景主題。 佈景主題會影響應用程式的背景、文字、圖示和[通用控制項](../controls-and-patterns/index.md)。
 
 ### <a name="light-theme"></a>淺色佈景主題
 
@@ -58,7 +58,7 @@ UWP 應用程式可以使用淺色或深色應用程式佈景主題。 佈景主
 
 ![深色佈景主題](images/color/dark-theme.svg)
 
-根據預設，您的 UWP 應用程式佈景主題是 Windows 設定中使用者的佈景主題喜好設定，或裝置的預設佈景主題 (也就是 Xbox 上的深色)。 不過，您可以設定適用於 UWP 應用程式的佈景主題。
+根據預設，您的 Windows 應用程式佈景主題是 Windows 設定中使用者的佈景主題喜好設定，或裝置的預設佈景主題 (也就是 Xbox 上的深色)。 不過，您可以設定適用於 Windows 應用程式的佈景主題。
 
 ### <a name="changing-the-theme"></a>變更佈景主題
 

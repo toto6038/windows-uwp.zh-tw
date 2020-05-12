@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: f7c5eb595f3347eb4670e4f7c0a50aa930341d3e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9848fc9e330a725f52ce2a7fae8b13f300476cf7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74735033"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970193"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教學課程：使用 Grid 與 StackPanel 建立簡單的天氣應用程式
 
@@ -120,6 +120,6 @@ ms.locfileid: "74735033"
 您可以視需要試著使用上述的版面配置進行試驗，並探索您可用來代表天氣資料的各種方式。
 
 ## <a name="related-articles"></a>相關文章
-如需如何設計 UWP 應用程式版面配置的簡介，請參閱 [UWP 應用程式設計簡介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
+如需如何設計 Windows 應用程式版面配置的簡介，請參閱 [Windows 應用程式設計簡介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
 若要了解如何建立可適應不同螢幕大小的回應式版面配置，請參閱[使用 XAML 定義頁面版面配置](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)

@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e098283bae6f58b927892c680a4981d83f9e31e8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4f0814621c67c01d5d1a73235faf02d3d753f2c2
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081378"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970053"
 ---
 # <a name="buttons"></a>按鈕
 
@@ -42,7 +42,7 @@ ms.locfileid: "80081378"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **DropDownButton**、**SplitButton** 和 **ToggleSplitButton** 包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **DropDownButton**、**SplitButton** 和 **ToggleSplitButton** 包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API：** [DropDownButton 類別](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)、[SplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.splitbutton)、[ToggleSplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
 >
@@ -550,7 +550,7 @@ private void ApplyListStyle(string listStyle)
 
 ## <a name="back-buttons"></a>返回按鈕
 
-返回按鈕是一種系統提供的 UI 元素，可透過使用者的返回堆疊或瀏覽歷程記錄啟用向後瀏覽。 您不需要自行建立返回按鈕，但您可能必須花一點心力來提供良好的向後瀏覽體驗。 如需詳細資訊，請參閱 [UWP 應用程式的瀏覽歷程記錄和向後瀏覽](../basics/navigation-history-and-backwards-navigation.md)。
+返回按鈕是一種系統提供的 UI 元素，可透過使用者的返回堆疊或瀏覽歷程記錄啟用向後瀏覽。 您不需要自行建立返回按鈕，但您可能必須花一點心力來提供良好的向後瀏覽體驗。 如需詳細資訊，請參閱 [Windows 應用程式的瀏覽歷程記錄和向後瀏覽](../basics/navigation-history-and-backwards-navigation.md)。
 
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼

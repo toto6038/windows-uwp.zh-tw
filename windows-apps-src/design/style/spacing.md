@@ -6,16 +6,16 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 08853a201eff063b49dcc69d5827c9b54e324b75
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5bcc7d45646651cdb60228a3c08123378eedb960
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684874"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970613"
 ---
 # <a name="control-size-and-density"></a>控制項大小和密度
 
-使用控制項大小和密度的組合來最佳化您的通用 Windows 平台 (UWP) 應用程式，並提供最適合您應用程式功能和互動需求的使用者體驗。
+使用控制項大小和密度的組合來最佳化您的 Windows 應用程式，並提供最適合您應用程式功能和互動需求的使用者體驗。
 
 根據預設，UWP 應用程式會以低密度 (或 `Standard`) 配置。 不過，從 WinUI 2.1 開始，也支援高密度 (或 `Compact`) 版面配置選項 (適用於資訊豐富的 UI 和類似的特殊情況)。 這可透過基本樣式資源指定 (請參閱以下範例)。
 
@@ -44,7 +44,7 @@ ms.locfileid: "75684874"
 **大小調整的設計訴求是要適應觸控和指標輸入。**
 
 > [!NOTE]
->如需有效像素與縮放規模的詳細資訊，請參閱 [UWP 應用程式設計簡介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>如需有效像素與縮放規模的詳細資訊，請參閱 [Windows 應用程式設計簡介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
 > 如需系統層級縮放的詳細資訊，請參閱[對齊、邊界、邊框距離](../layout/alignment-margin-padding.md)。
 
@@ -96,7 +96,7 @@ ms.locfileid: "75684874"
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) (英文) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 

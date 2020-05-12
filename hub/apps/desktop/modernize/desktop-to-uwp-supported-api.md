@@ -1,6 +1,6 @@
 ---
-Description: 已封裝的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP 應用程式。 本文列出您的已封裝應用程式可以使用的類別。
-title: UWP API 適用於已封裝的傳統型應用程式 (傳統型橋接器)
+Description: 已封裝的傳統型應用程式可使用各種不同的 Windows 執行階段 API，即使它們尚未完全轉換為 UWP 應用程式。 本文列出您的已封裝應用程式可以使用的類別。
+title: Windows 執行階段 API 適用於已封裝的傳統型應用程式 (傳統型橋接器)
 ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -9,18 +9,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 60a735af077d2121868e2613cb0f33e194e4330c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 68c2427fe6b02385325f0f224cc837912621f6bb
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209664"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729856"
 ---
-# <a name="uwp-apis-available-to-desktop-apps"></a>適用於傳統型應用程式的 UWP API
+# <a name="windows-runtime-apis-available-to-desktop-apps"></a>適用於傳統型應用程式的 Windows 執行階段 API
 
 傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP 應用程式。 本文列出您的傳統型應用程式可以使用的類別。
 
-許多 UWP API 都需要傳統型應用程式有[套件識別資料](modernize-packaged-apps.md)。 大部分的 UWP API 能與具有套件識別資料的應用程式搭配運作良好。 不過，部分功能區域尚未經過完整測試或目前未如預期般運作。
+許多 Windows 執行階段 API 都需要傳統型應用程式有[套件識別資料](modernize-packaged-apps.md)。 大部分的 Windows 執行階段 API 能與具有套件識別資料的應用程式搭配運作良好。 不過，部分功能區域尚未經過完整測試或目前未如預期般運作。
 
 | 功能區域 | 詳細資料 |
 |--------------|---------|
@@ -45,9 +45,9 @@ ms.locfileid: "79209664"
 
 ## <a name="list-of-apis"></a>API 清單
 
-下列是傳統型應用程式中所支援 UWP API 的完整清單。 您可以檢視[僅在具有套件識別資料的應用程式中支援的 API](#new)，或檢視[所有傳統型應用程式均支援的 API](#both)。
+下列是傳統型應用程式中所支援 Windows 執行階段 API 的完整清單。 您可以檢視[僅在具有套件識別資料的應用程式中支援的 API](#new)，或檢視[所有傳統型應用程式均支援的 API](#both)。
 
-如需如何使用 UWP API 的範例，請參閱 GitHub 上的[傳統型橋接器範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 應用程式範例](https://github.com/Microsoft/Windows-universal-samples)。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)。
+如需如何使用 Windows 執行階段 API 的範例，請參閱 GitHub 上的[傳統型橋接器範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 應用程式範例](https://github.com/Microsoft/Windows-universal-samples)。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)。
 
 <a id="new" />
 

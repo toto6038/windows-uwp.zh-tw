@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a4fd98ea1773a67cfe341e63f323c69d0bf79e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f5ec09f8fdfa0a8b4b8c7161cc6d91a3013230d7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614108"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970683"
 ---
 # <a name="tabview"></a>TabView
 
@@ -24,7 +24,7 @@ TabView 控制項是一種顯示索引標籤組合以及其各自內容的方式
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **TabView** 控制項需要 Windows UI 程式庫，此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **TabView** 控制項需要 Windows UI 程式庫，該程式庫是 NuGet 套件，其中包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API**：[TabView 類別](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 類別](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 

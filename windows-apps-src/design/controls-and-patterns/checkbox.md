@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b91ca2de98142bf267cc42b56fba14a49a87bb06
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 3fca2695cbb57375964beff0f8a3fd9be603228c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081244"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968923"
 ---
 # <a name="check-boxes"></a>核取方塊
 
@@ -29,7 +29,7 @@ ms.locfileid: "80081244"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **平台 API：** [ 類別](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 屬性](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
@@ -89,11 +89,33 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>繫結到 IsChecked
 
-使用 [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 屬性，以判斷是否選取或清除核取方塊。 您可以將 IsChecked 屬性的值繫結到另一個二進位值。 不過，因為 IsChecked 是[可為 null](https://docs.microsoft.com/dotnet/api/system.nullable-1) 的布林值，所以您必須使用值轉換器，才能將它繫結到布林值。
+使用 [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 屬性，以判斷是否選取或清除核取方塊。 您可以將 IsChecked 屬性的值繫結到另一個二進位值。
+不過，因為 IsChecked 是[可為 null](https://docs.microsoft.com/dotnet/api/system.nullable-1) 的布林值，所以您必須使用轉型或值轉換器，才能將其繫結到布林值屬性。 這取決於您所使用的實際繫結類型，而您會在下面找到每個可能類型的範例。 
 
 在這個範例中，用於同意服務條款之核取方塊的 **IsChecked** 屬性會繫結到 [提交] 按鈕的 [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) 屬性。 唯有當您同意服務條款時，才會啟用 \[提交\] 按鈕。
 
-> 請注意&nbsp;&nbsp;我們只顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../../data-binding/data-binding-quickstart.md)。
+#### <a name="using-xbind"></a>使用 x:Bind
+
+> 請注意&nbsp;&nbsp;我們只顯示相關的程式碼。 如需資料繫結的詳細資訊，請參閱[資料繫結概觀](../../data-binding/data-binding-quickstart.md)。 [這裡](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)詳述特定 {x:Bind} 資訊 (例如轉型)。
+
+```xaml
+<StackPanel Grid.Column="2" Margin="40">
+    <CheckBox x:Name="termsOfServiceCheckBox" Content="I agree to the terms of service."/>
+    <Button Content="Submit" 
+            IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay}"/>
+</StackPanel>
+```
+
+如果此核取方塊也可以是**不確定**狀態，我們會使用繫結的 [FallbackValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) 屬性來指定代表此狀態的布林值。 在此情況下，我們也不想啟用 [提交] 按鈕：
+
+```xaml
+<Button Content="Submit" 
+        IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay, FallbackValue=False}"/>
+```
+
+#### <a name="using-xbind-or-binding"></a>使用 x:Bind 或 Binding
+
+> 請注意&nbsp;&nbsp;我們只會在此顯示使用 {x:Bind} 的相關程式碼。 在 {Binding} 範例中，我們會將 {x:Bind} 取代為 {Binding}。 如需有關資料繫結、值轉換器以及 {x:Bind} 和 {Binding} 標記擴充之間差異的詳細資訊，請參閱[資料繫結概觀](../../data-binding/data-binding-quickstart.md)。
 
 ```xaml
 ...
@@ -110,6 +132,7 @@ checkBox1.Content = "I agree to the terms of service.";
                         Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"/>
 </StackPanel>
 ```
+
 
 ```csharp
 public class NullableBooleanToBooleanConverter : IValueConverter

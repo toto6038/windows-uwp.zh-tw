@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 68682d7b47e42995060601f5ae1c9b8d891aa3ff
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 41674ecb468023ac6e97cc01d1867478e8a3d70d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81643705"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970423"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -38,7 +38,7 @@ XAML [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tree
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **TreeView** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **TreeView** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API：** [TreeView 類別](/uwp/api/microsoft.ui.xaml.controls.treeview)、[TreeViewNode 類別](/uwp/api/microsoft.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 屬性](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
 >

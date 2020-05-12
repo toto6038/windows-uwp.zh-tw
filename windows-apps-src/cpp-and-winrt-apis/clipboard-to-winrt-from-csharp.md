@@ -5,18 +5,30 @@ ms.date: 04/13/2020
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, C#, 範例, 剪貼簿, 案例研究
 ms.localizationpriority: medium
-ms.openlocfilehash: ecfbe1831014bce0cb7259c935ab0ae7a8af3de8
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.openlocfilehash: de19d4624cbcf6f102b2eb2067c9f0ff9c583f0b
+ms.sourcegitcommit: 29daa3959304d748e4dec4e6f8e774fade65aa8d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81266936"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82851602"
 ---
 # <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>將剪貼簿範例從 C# 移植到 C++/WinRT &mdash; 案例研究
 
 本主題會提供將其中一個[通用 Windows 平台 (UWP) 應用程式範例](https://github.com/microsoft/Windows-universal-samples)從 [C#](/visualstudio/get-started/csharp) 移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的案例研究。 您可以依照逐步解說移植自己範例，以了解如何移植並獲取經驗。
 
-另請參閱[從 C# 移到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp)，其中所提供的小節會解說從 C# 移植到 C++/WinRT 所涉及的特定技術詳細資料。
+如需有關從 C# 移植至 C++/WinRT 所涉及之技術詳細資料的完整說明，請參閱附屬主題：[從 C# 移至 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp)。
+
+## <a name="a-brief-preface-about-c-and-c-source-code-files"></a>有關 C# 和 C++ 原始程式碼檔案的簡短序言
+
+在 C# 專案中，您的原始程式碼檔案主要是 `.cs` 檔案。 當您移至 C++ 時，您會發現有更多種類的原始程式碼檔案可供使用。 原因在於編譯器之間的差異、重複使用 C++ 原始程式碼的方式，以及「宣告」  和「定義」  類型及其函式 (其方法) 的概念。
+
+函式「宣告」  僅描述函式的「簽章」  (其傳回類型、其名稱及其參數類型和名稱)。 函式「定義」  包含函式的「主體」  (其實作)。
+
+在類型方面則有點不同。 您藉由提供名稱和 (至少)「宣告」  其所有成員函式 (和其他成員) 來「定義」  類型。 沒錯，您可以「定義」  類型，即使您未定義其成員函式亦然。
+
+- 常見 C++ 原始程式碼檔案為 `.h` 和 `.cpp` 檔案。 `.h` 檔案是「標頭」  檔案，而且會定義一或多個類型。 雖然您「可以」  在標頭中定義成員函式，但這通常是 `cpp` 檔案的用途。 因此對於假設 C++ 類型 **MyClass**，您會在 `MyClass.h` 中定義 **MyClass**，而且會在 `MyClass.cpp` 中定義其成員函式。 若要讓其他開發人員重複使用您的類別，只要分享 `.h` 檔案和物件程式碼即可。 您會將 `.cpp` 檔案保密，因為實作會構成您的智慧財產。
+- 預先編譯的標頭 (`pch.h`)。 通常，您的應用程式中會包含一組標頭檔，而這組標頭檔很少變更。 因此，您可以將這組標頭彙總成一個標頭，編譯該標頭一次，然後在每次建置時使用該預先編譯步驟的輸出，而不是在每次編譯時處理這組標頭的內容。 您可以透過「預先編譯的標頭」  檔案(通常名為 `pch.h`) 來執行此動作。
+- `.idl` 檔案。 這些檔案包含介面定義語言 (IDL)。 您可將 IDL 視為 Windows 執行階段類型的標頭檔。 我們將在 [**MainPage** 類型的 IDL](#idl-for-the-mainpage-type) 一節中進一步討論 IDL。
 
 ## <a name="download-and-test-the-clipboard-sample"></a>下載並測試剪貼簿範例
 
@@ -72,19 +84,30 @@ C# 專案會參考共用資料夾中的資產檔案。 您可以在 C++/WinRT �
 
 ### <a name="idl-for-the-mainpage-type"></a>**MainPage** 類型的 IDL
 
+這一節，我們首先會討論介面定義語言 (IDL)，以及其如何在使用 C++/WinRT 進行程式設計時協助我們。 IDL 是一種原始程式碼，其描述 Windows 執行階段類型的可呼叫介面。 類型的可呼叫 (或公用) 介面會「投影」  在世界中，以便取用該類型。 類型的該「投影」  部分與類型的實際內部實作相反，投影部分當然無法呼叫，且不是公用的。 這只是我們在 IDL 中定義的投影部分。
+
+擁有撰寫的 IDL 原始程式碼 (在 `.idl` 檔案內) 後，您就可以將 IDL 編譯成電腦可讀取的中繼資料檔案 (也稱為 Windows 中繼資料)。 這些中繼資料檔的副檔名為 `.winmd`，以下是其中一些用途。
+
+- `.winmd` 可以描述元件中的 Windows 執行階段類型。 當您從應用程式專案參考 Windows 執行階段元件 (WRC) 時，應用程式專案會讀取屬於 WRC 的 Windows 中繼資料 (該中繼資料可能位於不同的檔案中，或者可能封裝到與 WRC 本身相同的檔案中)，以便您在應用程式內取用 WRC 的類型。
+- `.winmd` 可以在應用程式的某個部分中描述 Windows 執行階段類型，讓相同應用程式的不同部分可加以取用。 例如，在相同應用程式中，XAML 頁面所取用的 Windows 執行階段類型。
+- 為了讓您更輕鬆地取用 Windows 執行階段類型 (內建或第三方)，C++/WinRT 建置系統會使用 `.winmd` 檔案來產生包裝函式類型，以代表這些 Windows 執行階段類型的投影部分。
+- 為了讓您更輕鬆地實作自己的 Windows 執行階段類型，C++/WinRT 建置系統會將您的 IDL 轉換成 `.winmd` 檔案，然後使用該檔案來為您的投影產生包裝函式，以及產生可作為您的實作基礎的 stub (我們稍後會在本主題中進一步討論這些 stub)。
+
+我們搭配 C++/WinRT 使用的特定 IDL 版本是 [Microsoft 介面定義語言 3.0](/uwp/midl-3/intro)。 在本節的其餘部分，我們將稍為詳細地檢查 C# **MainPage** 類型。 我們會決定該類型有哪些部分必須在 C++/WinRT **MainPage** 類型的「投影」  中 (也就是，其可呼叫 (或公用) 介面)，而哪些部可能只是其實作的一部分。 這種區別很重要，因為當我們要撰寫 IDL (我們將在下一節中進行) 時，我們只會在其中定義可呼叫的部分。
+
 一起實作 **MainPage** 類型的 C# 原始程式碼檔案包括：`MainPage.xaml` (我們很快就會透過複製來移植)、`MainPage.xaml.cs` 和 `SampleConfiguration.cs`。
 
 在 C++/WinRT 版本中，我們會以類似的方式，將 **MainPage** 類型分解到原始程式碼檔案中。 我們將會採用 `MainPage.xaml.cs` 中的邏輯，並將其大部分轉譯為 `MainPage.h` 和 `MainPage.cpp`。 置於 `SampleConfiguration.cs` 中的邏輯，我們則將其轉譯為 `SampleConfiguration.h` 和 `SampleConfiguration.cpp`。
 
-C# 通用 WINDOWS 平台 (UWP) 應用程式中的類別是 Windows 執行階段類型。 但是當您在 C++/WinRT 應用程式中撰寫類型時，可以選擇該類型為 Windows 執行階段類型，還是一般 C++ 類別/結構/列舉。
+C# 通用 WINDOWS 平台 (UWP) 應用程式中的類別當然是 Windows 執行階段類型。 但是當您在 C++/WinRT 應用程式中撰寫類型時，可以選擇該類型為 Windows 執行階段類型，還是一般 C++ 類別/結構/列舉。
 
-在 C++/WinRT 專案中，**MainPage** 已經是 Windows 執行階段類型，因此我們不需要變更其外觀比例。 具體而言，這是*執行階段類別*。
+專案中的任何 XAML 頁面都必須是 Windows 執行階段類型，因此 **MainPage** 必須是 Windows 執行階段類型。 在 C++/WinRT 專案中，**MainPage** 已經是 Windows 執行階段類型，因此我們不需要變更其外觀比例。 具體而言，這是*執行階段類別*。
 
 - 如需有關是否要撰寫特定類別之執行階段類別的詳細資訊，請參閱[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis) 主題。
-- 「實作類型」  和「投影類型」  的概念在使用 C++/WinRT 時很重要。 您可以在上述主題以及[使用 C++/WinRT 取用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis) 中了解這些資訊。
-- 如需有關執行階段類別和 `.idl` 檔案之間連線的資訊，請閱讀並遵循主題 [XAML 控制項；繫結至一個 C++/WinRT 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。 該主題會逐步解說撰寫新執行階段類別的程序，其第一步是要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。
+- 在 C++/WinRT 中，執行階段類別的內部實作，以及其投影 (公用) 部分，會以兩個不同類別的形式存在。 這些也稱為「實作類型」  和「投影類型」  。 您可以在上述要點提到的主題，以及[使用 C++/WinRT 取用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis) 中進一步了解這些類型。
+- 如需有關執行階段類別和 IDL( `.idl` 檔案) 之間連線的詳細資訊，請閱讀並遵循 [XAML 控制項；繫結至一個 C++/WinRT 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)主題。 該主題會逐步解說撰寫新執行階段類別的程序，其第一步是要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。
 
-對於 **MainPage**，我們在 C++/WinRT 專案中已經有所需的 `MainPage.idl` 檔案。 但是在此逐步解說期間，我們會將*新的* `.idl` 檔案加入至專案。
+對於 **MainPage**，我們在 C++/WinRT 專案中已經有所需的 `MainPage.idl` 檔案。 這是因為專案範本為我們建立了該檔案。 但稍後在此逐步解說中，我們會將進一步的 `.idl` 檔案新增至專案。
 
 我們很快將會看到一份清單，列出我們需要將哪些 IDL 新增至現有的 `MainPage.idl` 檔案。 在那之前，我們要推論在 IDL 中需要做什麼和不需要做什麼。
 
@@ -139,7 +162,7 @@ ScenarioControl.ItemsSource = itemCollection;
 
 現在，讓我們將新的類型以及我們決定要在 IDL 中宣告之 **Mainpage** 的新成員新增至 `MainPage.idl` 檔案。 同時，我們會將 Visual Studio 專案範本提供給我們的 **Mainpage** 的預留位置成員從 IDL 中移除。
 
-因此，在您的 C++/WinRT 專案中，開啟 `MainPage.idl` 並加以編輯，使其看起來像下面的清單。 請注意，其中一項編輯是將命名空間名稱從 **Clipboard** 變更為 **SDKTemplate**。 如有需要，您可以只刪除目前的 `MainPage.idl` 內容，並貼入下列清單中。 另一個要注意的調整是，我們要將 **Scenario::ClassType** 的名稱變更為 **Scenario::ClassName**。
+因此，在您的 C++/WinRT 專案中，開啟 `MainPage.idl` 並加以編輯，使其看起來像下面的清單。 請注意，其中一項編輯是將命名空間名稱從 **Clipboard** 變更為 **SDKTemplate**。 如有需要，您可以使用下列程式碼來取代 `MainPage.idl` 的整個內容。 另一個要注意的調整是，我們要將 **Scenario::ClassType** 的名稱變更為 **Scenario::ClassName**。
 
 ```idl
 // MainPage.idl
@@ -183,13 +206,15 @@ namespace SDKTemplate
 
 ### <a name="save-the-idl-and-re-generate-stub-files"></a>儲存 IDL 並重新產生 stub 檔案
 
-如果您已經閱讀 [XAML 控制項；繫結至一個 C++/WinRT 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)主題，則您將已經遇到 *stub 檔案*的概念。 當您建置 C++/WinRT 專案時，系統會為您產生 stub 檔案 (使用名為 `cppwinrt.exe` 的工具，並以 `.idl` 檔案的內容為基礎)。 該主題包含更多關於上述內容的詳細資料。
+[XAML 控制項；繫結至 C++/WinRT 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)主題引進「stub 檔案」  的概念，並顯示其運作方式的逐步解說。 我們在本主題稍早提到 C++/WinRT 建置系統會將 `.idl` 檔案的內容轉換成 Windows 中繼資料，然後該中繼資料中名為 `cppwinrt.exe` 的工具會產生可作為您的實作基礎的 stub 時，也提到了 stub。
+
+每次在您的 IDL 和組建中進行新增、移除或變更時，建置系統都會更新這些 stub 檔案中的 stub 實作。 因此，每當您變更 IDL 和組建時，我們建議您檢視這些 stub 檔案、複製任何已變更的簽章，並將其貼到您的專案中。 我們稍後會提供更多有關確切做法的細節和範例。 但這麼做的好處是，讓您隨時都能順利得知您的實作類型應有的形式，以及其方法的簽章為何。
 
 目前在此逐步解說中，我們已經暫時完成編輯 `MainPage.idl` 檔案，因此您應該立即加以儲存。 專案目前還沒有建置完成，但是現在執行建置很有幫助，因為該專案會重新產生 **MainPage** 的 stub 檔案。
 
 針對這個 C++/WinRT 專案，這些 stub 檔案是在 `\Clipboard\Clipboard\Generated Files\sources` 資料夾中產生的。 在部分建置完成之後，您將會在該處找到這些檔案 (同樣地，如預期般，建置不會完全成功。 但我們想要&mdash;產生 stub&mdash; 的步驟*將*已經成功)。 我們感興趣的檔案是 `MainPage.h` 和 `MainPage.cpp`。
 
-在這兩個 stub 檔案中，您將會看到我們新增至 IDL (例如，**Current** 和 **FEATURE_NAME**) 之 **MainPage** 新成員的 stub 實作。 我們會將這些 stub 實作複製到已經存在於專案的 `MainPage.h` 和 `MainPage.cpp` 檔案中。 同時，如同我們對 IDL 的處理方式，我們將從這些現有的檔案中移除 Visual Studio 專案範本提供給我們的 **Mainpage** 預留位置成員 (名為 **MyProperty** 的虛擬屬性，以及名為 **ClickHandler** 的事件處理常式)。
+在這兩個 stub 檔案中，您將會看到我們新增至 IDL (例如，**Current** 和 **FEATURE_NAME**) 之 **MainPage** 成員的新 stub 實作。 您會想要將這些 stub 實作複製到已經存在於專案的 `MainPage.h` 和 `MainPage.cpp` 檔案中。 同時，如同我們對 IDL 的處理方式，我們將從這些現有的檔案中移除 Visual Studio 專案範本提供給我們的 **Mainpage** 預留位置成員 (名為 **MyProperty** 的虛擬屬性，以及名為 **ClickHandler** 的事件處理常式)。
 
 事實上，我們想要保留的最新版 **MainPage** 的唯一成員是建構函式。
 
@@ -559,7 +584,7 @@ void MainPage::UpdateStatus(hstring const& strMessage, SDKTemplate::NotifyType c
 ...
 ```
 
-在 C# 中，您可以*進入*巢狀屬性。 因此，C# **MainPage** 類型可以使用語法 `Dispatcher` 存取自己的 **Dispatcher** 屬性。 而 C# 則可以使用 `Dispatcher.HasThreadAccess` 之類的語法，進一步*進入*該值。 在 C++/WinRT 中，系統會將屬性當作存取子函式實作，因此語法的不同之處僅在於為每個函式呼叫加上括號。
+在 C# 中，您可以使用點標記法來「點入」  巢狀屬性。 因此，C# **MainPage** 類型可以使用語法 `Dispatcher` 存取自己的 **Dispatcher** 屬性。 而 C# 則可以使用 `Dispatcher.HasThreadAccess` 之類的語法，進一步*進入*該值。 在 C++/WinRT 中，系統會將屬性當作存取子函式實作，因此語法的不同之處僅在於為每個函式呼叫加上括號。
 
 |C#|C++/WinRT|
 |-|-|
@@ -1127,7 +1152,7 @@ void MainPage::Footer_Click(Windows::Foundation::IInspectable const& sender, Win
 
 當這麼做時，也讓我們從這五個 XAML 頁面類型的每一個中移除自動產生的虛擬屬性 (`Int32 MyProperty;` 及其實作)。
 
-首先，將新的 **Midl 檔案 (.idl)** 項目新增至 C++/WinRT 專案。 請命名為 `Project.idl`。 刪除 `Project.idl` 的預設內容，並在其位置貼上以下的清單。
+首先，將新的 **Midl 檔案 (.idl)** 項目新增至 C++/WinRT 專案。 請命名為 `Project.idl`。 以下列程式碼取代整個 `Project.idl` 的內容。
 
 ```idl
 // Project.idl

@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 06734c854f0097db5fa96e35d4123dde8bda8a95
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 479a289ff15ab6a3db7a51d52f4bf3b075e8a64b
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614143"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968773"
 ---
 # <a name="teaching-tip"></a>教學提示
 
@@ -27,7 +27,7 @@ ms.locfileid: "80614143"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](../images/winui-logo-64x64.png) | **TeachingTip** 控制項需要 Windows UI 程式庫，此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](../images/winui-logo-64x64.png) | **TeachingTip** 控制項需要 Windows UI 程式庫，該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API：** [TeachingTip 類別](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取檔案, 撰寫檔案, 建立檔案, 寫入文字, 閱讀文字
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1270d49cc8746b2793b1414306f9ee842cb40f40
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c36f4885dffa86452543f05f5b7a59a882d25710
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82166244"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730050"
 ---
 # <a name="work-with-files"></a>使用檔案
 
@@ -26,7 +26,7 @@ ms.locfileid: "82166244"
 以下是您必須知道關於讀取或從/至檔案寫入文字的主要類型：
 
 - [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) 代表檔案。 這個類別有屬性，可提供有關建立、開啟、複製、刪除、與重新命名檔案的檔案與方法相關資訊。
-可用於處理字串路徑。 有一些採用字串路徑的 UWP API，但您更經常使用 **StorageFile** 代表檔案，因為在 UWP 中一些您使用的檔案可能沒有路徑，或可能會有雜亂無章的路徑。 使用 [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) 將路徑轉換為 **StorageFile**。 
+可用於處理字串路徑。 有一些採用字串路徑的 Windows 執行階段 API，但您更經常使用 **StorageFile** 代表檔案，因為在 UWP 中一些您使用的檔案可能沒有路徑，或可能會有雜亂無章的路徑。 使用 [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) 將路徑轉換為 **StorageFile**。 
 
 - [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) 類別提供讀取和寫入文字的簡易方式。 這個類別也可以讀取/寫入位元組陣列，或緩衝區的內容。 這個類別與 [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) 類別非常相似。 主要差異在於，它採用 **StorageFile**，而不是採用字串路徑作為 **PathIO**。
 - [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) 代表資料夾 (目錄)。 這個類別有建立檔案、查詢資料夾內容、建立、重新命名，以及刪除資料夾和可提供資料夾相關資訊的屬性的方法。 

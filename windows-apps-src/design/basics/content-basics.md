@@ -1,6 +1,6 @@
 ---
-Description: 在 UWP 應用程式中用於顯示內容的常見頁面模式和 UI 元素的概觀。
-title: 通用 Windows 平台 (UWP) 應用程式的內容設計基本知識
+Description: 在 Windows 應用程式中用於顯示內容的常見頁面模式和 UI 元素的概觀。
+title: Windows 應用程式的內容設計基本知識
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
@@ -9,14 +9,14 @@ ms.date: 12/01/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fdb4f21c2837fdc201d9e9847541cfd2bf728468
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63796334"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969343"
 ---
-# <a name="content-design-basics-for-uwp-apps"></a>UWP app 的內容設計基本知識
+# <a name="content-design-basics-for-windows-apps"></a>Windows 應用程式的內容設計基本知識
 
 任何一種 app 的主要用途都是讓使用者存取內容。 由於應用程式因多種不同的目的而存在，因此內容會有多種形式：在相片編輯應用程式中，內容是相片；在旅遊應用程式中，內容是地圖與旅遊地點的相關資訊；以此類推。 
 

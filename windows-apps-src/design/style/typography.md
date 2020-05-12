@@ -1,31 +1,31 @@
 ---
 description: 了解如何在您的應用程式中使用印刷樣式，以協助使用者輕鬆了解內容。
-title: UWP 應用程式中的印刷樣式
+title: Windows 應用程式中的印刷樣式
 ms.date: 04/06/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cb2aef514c8787b5afe11ea5a2818012bfdf2f41
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3a5b6df7a5d8333e0f4834c256a38fc912f8f51e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72282410"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970623"
 ---
-# <a name="typography"></a>印刷樣式
+# <a name="typography-in-windows-apps"></a>Windows 應用程式中的印刷樣式
 
 ![主角圖像](images/header-typography.svg)
 
-作為語言的視覺表示，印刷格式的主要工作是溝通資訊。 其樣式絕對不能阻礙這項目標。 在這篇文章中，我們將會討論如何在您的 UWP 應用程式中設定印刷樣式，以協助使用者輕鬆且有效地了解內容。
+作為語言的視覺表示，印刷格式的主要工作是溝通資訊。 其樣式絕對不能阻礙這項目標。 在這篇文章中，我們將會討論如何在您的 Windows 應用程式中設定印刷樣式，以協助使用者輕鬆且有效地了解內容。
 
 ## <a name="font"></a>字型
 
-您應該在整個應用程式 UI 中使用單一字型，我們建議您維持 UWP 應用程式的預設字型 **Segoe UI**。 它設計成可維持不同大小和像素密度的最佳可讀性，並能提供輔助系統內容的乾淨、明亮、開放審美觀。
+您應該在整個應用程式 UI 中使用單一字型，我們建議您維持 Windows 應用程式的預設字型 **Segoe UI**。 它設計成可維持不同大小和像素密度的最佳可讀性，並能提供輔助系統內容的乾淨、明亮、開放審美觀。
 
 ![Segoe UI 字型的範例文字](images/type/segoe-sample.svg)
 
-若要顯示非英文語言或為應用程式選取不同字型，請參閱[語言](#languages)和[字型](#fonts)以了解我們對 UWP 應用程式的建議使用字型。
+若要顯示非英文語言或為應用程式選取不同字型，請參閱[語言](#languages)和[字型](#fonts)以了解我們對 Windows 應用程式的建議使用字型。
 
 :::row:::
     :::column:::
@@ -46,7 +46,7 @@ UWP 應用程式的字型大小會在所有裝置上自動縮放。 此縮放演
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)遵循 UWP [字體坡形](#type-ramp)調整大小。
+![可行事項](images/do.svg)遵循 Windows [字體坡形](#type-ramp)大小調整。
     :::column-end:::
     :::column:::
 ![禁止事項](images/dont.svg)使用小於 12 像素的字型大小。
@@ -57,7 +57,7 @@ UWP 應用程式的字型大小會在所有裝置上自動縮放。 此縮放演
 
 :::row:::
     :::column:::
-使用者在掃描頁面時依賴視覺階層：標頭摘要顯示內容，本文提供更多詳細資料。 若要在應用程式中建立清楚的視覺階層，請遵循 UWP 字體坡形。
+使用者在掃描頁面時依賴視覺階層：標頭摘要顯示內容，本文提供更多詳細資料。 若要在應用程式中建立清楚的視覺階層，請遵循 Windows 字體坡形。
     :::column-end:::
     :::column:::
 ![文字區塊樣式](images/type/type-hierarchy.svg)
@@ -66,7 +66,7 @@ UWP 應用程式的字型大小會在所有裝置上自動縮放。 此縮放演
 
 ### <a name="type-ramp"></a>字體坡形
 
-UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者輕鬆閱讀內容。 所有大小都是有效像素，會針對在所有裝置上執行的 UWP 應用程式而最佳化。
+Windows 字體坡形可在頁面的類型之間建立重要關係，協助使用者輕鬆閱讀內容。 所有大小都是有效像素，會針對在所有裝置上執行的 UWP 應用程式而最佳化。
 
 ![字體坡形](images/type/type-ramp.png)
 

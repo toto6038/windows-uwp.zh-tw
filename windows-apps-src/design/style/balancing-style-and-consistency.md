@@ -1,17 +1,17 @@
 ---
 description: 建立一致、可使用、亦展現原創性與創造力之應用程式的秘訣。
-title: 在樣式與一致性之間取得平衡 (UWP 應用程式設計)
+title: 在樣式與一致性之間取得平衡 (Windows 應用程式設計)
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb511fad1aa4e1605d83090a5e4e8d98efff1be
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0972fcdaba2ed8c1a9a7b3f297302b0b90184bc2
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63790643"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970473"
 ---
 # <a name="balancing-style-and-consistency"></a>在樣式與一致性之間取得平衡
 

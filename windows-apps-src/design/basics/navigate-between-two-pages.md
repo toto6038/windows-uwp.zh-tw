@@ -1,5 +1,5 @@
 ---
-Description: 了解如何啟用通用 Windows 平台 (UWP) 應用程式中兩個基本頁面之間的對等瀏覽。
+Description: 了解如何啟用 Windows 應用程式中兩個基本頁面之間的對等瀏覽。
 title: 兩個頁面之間的對等瀏覽
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: c35795eeb6afa32e77acb507c687e334e454d0d5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ef50b2d84ae9785a13d8c8dd13ca5a399dae142d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72560808"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969243"
 ---
 # <a name="implement-navigation-between-two-pages"></a>兩個頁面之間的實作瀏覽
 
@@ -451,6 +451,6 @@ Page1::Page1()
 ```
 
 ## <a name="related-articles"></a>相關文章
-* [UWP app 的瀏覽設計基本知識](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
+* [Windows 應用程式的瀏覽設計基本知識](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
 * [樞紐分析](../controls-and-patterns/pivot.md)
 * [瀏覽檢視](../controls-and-patterns/navigationview.md)

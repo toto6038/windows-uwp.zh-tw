@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d2372044076e1885602dec806df95ad60e789cdd
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66364544"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968083"
 ---
 # <a name="nested-ui-in-list-items"></a>清單項目中的巢狀 UI
 
@@ -56,9 +56,9 @@ ms.locfileid: "66364544"
 
 ## <a name="options-for-secondary-actions"></a>次要動作的選項
 
-建立清單 UI 時，請先確定您已考慮到所有 UWP 所支援的輸入方法。 如需不同輸入種類的詳細資訊，請參閱[輸入基本資訊](../input/index.md)。
+建立清單 UI 時，請先確定您已考慮到 Windows 支援的所有輸入方法。 如需不同輸入種類的詳細資訊，請參閱[輸入基本資訊](../input/index.md)。
 
-當您確定 App 已支援所有 UWP 所支援的輸入之後，您應該決定該 App 的次要動作是否具有足夠的重要性，需要在主要清單中公開為加速器。 請記得，公開越多動作，將會使 UI 變得越加複雜。 您是否真的需要在主要清單 UI 中公開次要動作？還是可以將它們放到別處？
+在您確定應用程式可支援 Windows 支援的所有輸入之後，您應該決定該應用程式的次要動作是否具有足夠的重要性，而需在主要清單中公開為加速器。 請記得，公開越多動作，將會使 UI 變得越加複雜。 您是否真的需要在主要清單 UI 中公開次要動作？還是可以將它們放到別處？
 
 如果有其他動作是所有輸入隨時都需要使用的，您可以考慮在主要清單 UI 中公開那些動作。
 
@@ -97,7 +97,7 @@ ms.locfileid: "66364544"
 
 ## <a name="consider-all-inputs"></a>請考慮到所有輸入
 
-當您決定使用巢狀 UI 時，請同時評估所有輸入類型的使用者體驗。 如先前所述，巢狀 UI 很適合某些輸入類型。 不過它並不一定可以搭配其他類型使用。 鍵盤、控制器及遙控輸入特別可能在使用巢狀 UI 元素時遇到困難。 請務必遵循下列指導方針，以確保您的 UWP 能夠搭配所有輸入類型使用。
+當您決定使用巢狀 UI 時，請同時評估所有輸入類型的使用者體驗。 如先前所述，巢狀 UI 很適合某些輸入類型。 不過它並不一定可以搭配其他類型使用。 鍵盤、控制器及遙控輸入特別可能在使用巢狀 UI 元素時遇到困難。 請務必遵循下列指引，以確保您的 Windows 能夠搭配所有輸入類型使用。
 
 ## <a name="nested-ui-handling"></a>巢狀 UI 處理
 

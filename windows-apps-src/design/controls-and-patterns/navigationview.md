@@ -2,7 +2,7 @@
 Description: NavigationView 一種調適型控制項，用於實作應用程式最上層的瀏覽模式。
 title: 瀏覽檢視
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 05/02/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 17eb1a2f24e9fd893fee1a0aff349989577375c7
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 85cd58233de0feeded449e55cb1175087a64e61d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081697"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970363"
 ---
 # <a name="navigation-view"></a>瀏覽檢視
 
@@ -29,13 +29,13 @@ _瀏覽檢視支援頂端和左側瀏覽窗格或功能表_
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **NavigationView** 控制項包含在 Windows UI 程式庫中，該程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **NavigationView** 控制項包含在 Windows UI 程式庫中，該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **平台 API**：[Windows.UI.Xaml.Controls.NavigationView 類別](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
 > **Windows UI 程式庫 API**：[Microsoft.UI.Xaml.Controls.NavigationView 類別](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
-> NavigationView 的一些功能 (例如_頂端_瀏覽) 需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> NavigationView 的一些功能 (例如「頂端」  和「階層式」  瀏覽) 需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -648,6 +648,242 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
     }
 }
 ```
+## <a name="hierarchical-navigation"></a>階層式瀏覽
+有些應用程式可能有更複雜的階層式結構，而不只需要瀏覽項目的簡單列表。 您可能想使用最上層的瀏覽項目來顯示頁面的類別，以及可顯示特定頁面的子系項目。 如果您的中樞樣式頁面只會連結至其他頁面，這也很有用。 針對這類案例，您應該建立階層式 NavigationView。
+
+若要在窗格中顯示巢狀瀏覽項目的階層式清單，請使用 **NavigationViewItem** 的 `MenuItems` 屬性或 `MenuItemsSource` 屬性。
+每個 NavigationViewItem 均可包含其他 NavigationViewItem 和組織項目 (例如項目標頭和分隔符號)。 若要在使用 `MenuItemsSource` 時顯示階層式清單，請將 `ItemTemplate` 設定為 NavigationViewItem，並將其 `MenuItemsSource` 屬性繫結至階層的下一個層級。
+
+雖然 NavigationViewItem 可以包含任意數目的巢狀層級，但建議讓應用程式的瀏覽階層保持淺層。 我們認為兩個層級兼具可用性且容易理解。
+
+NavigationView 會以頂端、左側和 LeftCompact 窗格顯示模式顯示階層。 以下是展開的樹狀子目錄在每個窗格顯示模式中的外觀：
+
+![具有階層的 NavigationView](images/navigation-view-hierarchy-labeled.png)
+
+### <a name="adding-a-hierarchy-of-items-in-markup"></a>在標記中新增項目的階層
+在標記中宣告應用程式瀏覽階層。
+
+```Xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<muxc:NavigationView>
+    <muxc:NavigationView.MenuItems>
+        <muxc:NavigationViewItem Content="Home" Icon="Home" ToolTipService.ToolTip="Home"/>
+        <muxc:NavigationViewItem Content="Collections" Icon="Keyboard" ToolTipService.ToolTip="Collections">
+            <muxc:NavigationViewItem.MenuItems>
+                <muxc:NavigationViewItem Content="Notes" Icon="Page" ToolTipService.ToolTip="Notes"/>
+                <muxc:NavigationViewItem Content="Mail" Icon="Mail" ToolTipService.ToolTip="Mail"/>
+            </muxc:NavigationViewItem.MenuItems>
+        </muxc:NavigationViewItem>
+    </muxc:NavigationView.MenuItems>
+</muxc:NavigationView>
+```
+
+### <a name="adding-a-hierarchy-of-items-using-data-binding"></a>使用資料繫結新增項目的階層
+
+將功能表項目的階層新增至 NavigationView 
+* 將 MenuItemsSource 屬性繫結至階層式資料
+* 將項目範本定義為 NavigationViewMenuItem，將其內容設為功能表項目的標籤，並將其 MenuItemsSource 屬性繫結至階層的下一個層級
+
+這個範例也會示範**展開**和**摺疊**事件。 具有子系的功能表項目會引發這些事件。
+
+```xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<DataTemplate x:Key="NavigationViewMenuItem" x:DataType="local:Category">
+    <muxc:NavigationViewItem Content="{x:Bind Name}" MenuItemsSource="{x:Bind Children}"/>
+</DataTemplate>
+<muxc:NavigationView x:Name="navview" 
+    MenuItemsSource="{x:Bind categories, Mode=OneWay}" 
+    MenuItemTemplate="{StaticResource NavigationViewMenuItem}" 
+    ItemInvoked="{x:Bind OnItemInvoked}" 
+    Expanding="OnItemExpanding" 
+    Collapsed="OnItemCollapsed" 
+    PaneDisplayMode="Left">
+    
+    <StackPanel Margin="10,10,0,0">
+        <TextBlock Margin="0,10,0,0" x:Name="ExpandingItemLabel" Text="Last Expanding: N/A"/>
+        <TextBlock x:Name="CollapsedItemLabel" Text="Last Collapsed: N/A"/>
+    </StackPanel>    
+</muxc:NavigationView>
+```
+
+```csharp
+public class Category
+{
+    public String Name { get; set; }
+    public String Icon { get; set; }
+    public ObservableCollection<Category> Children { get; set; }
+}
+    
+public sealed partial class HierarchicalNavigationViewDataBinding : Page
+{
+    public HierarchicalNavigationViewDataBinding()
+    {
+        this.InitializeComponent();
+    }  
+    
+    public ObservableCollection<Category> Categories = new ObservableCollection<Category>()
+    {
+        new Category(){
+            Name = "Menu Item 1",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+               new Category(){
+                    Name = "Menu Item 2",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { 
+                            Name  = "Menu Item 2", 
+                            Icon = "Icon",
+                            Children = new ObservableCollection<Category>() {
+                                new Category() { Name  = "Menu Item 3", Icon = "Icon" },
+                                new Category() { Name  = "Menu Item 4", Icon = "Icon" }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        new Category(){
+            Name = "Menu Item 5",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+                new Category(){
+                    Name = "Menu Item 6",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { Name  = "Menu Item 7", Icon = "Icon" },
+                        new Category() { Name  = "Menu Item 8", Icon = "Icon" }
+                    }
+                }
+            }
+        },
+        new Category(){ Name = "Menu Item 9", Icon = "Icon" }
+    };
+    private void OnItemInvoked(object sender, NavigationViewItemInvokedEventArgs e)
+    {
+        var clickedItem = e.InvokedItem;
+        var clickedItemContainer = e.InvokedItemContainer;
+    }
+    private void OnItemExpanding(object sender, NavigationViewItemExpandingEventArgs e)
+    {
+        var nvib = e.ExpandingItemContainer;
+        var name = "Last Expanding: " + nvib.Content.ToString();
+        ExpandingItemLabel.Text = name;
+    }
+    private void OnItemCollapsed(object sender, NavigationViewItemCollapsedEventArgs e)
+    {
+        var nvib = e.CollapsedItemContainer;
+        var name = "Last Collapsed: " + nvib.Content;
+        CollapsedItemLabel.Text = name;
+    }
+}
+```
+### <a name="selection"></a>選項
+根據預設，任何項目都可以包含子系、加以叫用或選取。
+為使用者提供瀏覽選項的階層式樹狀結構時，您可選擇讓父系項目變為不可選取，例如當您的應用程式沒有與該父系項目相關聯的目的地頁面時。 如果父系項目  可選取，建議您使用左側展開或頂端窗格顯示模式。 LeftCompact 模式會讓使用者瀏覽至父系項目，以便在每次叫用時開啟子系樹狀子目錄。
+
+選取的項目會沿著其左邊緣 (在左側模式中) 或沿著其底部邊緣 (在頂端模式中) 繪製其選取指標。 以下顯示已選取父系項目的情況下，左側和頂端模式中的 NavigationView。
+
+![已選取父系的左側模式 NavigationView](images/navigation-view-selection.png)
+
+![已選取父系的頂端模式 NavigationView](images/navigation-view-selection-top.png)
+
+選取的項目不一定會保持可見狀態。 如果已選取摺疊/非展開樹狀子目錄中的子系，其第一個可見上階會顯示為已選取。 如果樹狀子目錄已展開，選取指標會移回選取的項目。
+
+例如，在上圖中，使用者可以選取「行事曆」項目，接著可以摺疊其樹狀子目錄。 在此情況下，選取指標會顯示在「帳戶」項目底下，因為「帳戶」是「行事曆」的第一個可見上階。 當使用者再次展開樹狀子目錄時，選取指標將移回「行事曆」項目。 
+
+整個 NavigationView 將不會顯示一個以上的選取指標。
+
+在頂端和左側模式中，按一下 NavigationViewItem 上的箭號將會展開或摺疊樹狀子目錄。 按一下或點擊 NavigationViewItem 上的「其他地方」  將會觸發 `ItemInvoked` 事件，同時也會摺疊或展開樹狀子目錄。
+
+若要防止項目在叫用時顯示選取指標，請將其 [SelectsOnInvoked](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3) 屬性設定為 False，如下所示：
+
+```xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<DataTemplate x:Key="NavigationViewMenuItem" x:DataType="local:Category">
+    <muxc:NavigationViewItem Content="{x:Bind Name}" 
+        MenuItemsSource="{x:Bind Children}"
+        SelectsOnInvoked="{x:Bind IsLeaf}" />
+</DataTemplate>
+<muxc:NavigationView x:Name="navview" 
+    MenuItemsSource="{x:Bind categories, Mode=OneWay}" 
+    MenuItemTemplate="{StaticResource NavigationViewMenuItem}">
+   
+</muxc:NavigationView>
+```
+
+```csharp
+public class Category
+{
+    public String Name { get; set; }
+    public String Icon { get; set; }
+    public ObservableCollection<Category> Children { get; set; }
+    public bool IsLeaf { get; set; }
+}
+    
+public sealed partial class HierarchicalNavigationViewDataBinding : Page
+{
+    public HierarchicalNavigationViewDataBinding()
+    {
+        this.InitializeComponent();
+    }      
+    
+    public ObservableCollection<Category> Categories = new ObservableCollection<Category>()
+    {
+        new Category(){
+            Name = "Menu Item 1",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+                new Category(){
+                    Name = "Menu Item 2",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { 
+                            Name  = "Menu Item 2", 
+                            Icon = "Icon",
+                            Children = new ObservableCollection<Category>() {
+                                new Category() { Name  = "Menu Item 3", Icon = "Icon", IsLeaf = true },
+                                new Category() { Name  = "Menu Item 4", Icon = "Icon", IsLeaf = true }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        new Category(){
+            Name = "Menu Item 5",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+                new Category(){
+                    Name = "Menu Item 6",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { Name  = "Menu Item 7", Icon = "Icon", IsLeaf = true },
+                        new Category() { Name  = "Menu Item 8", Icon = "Icon", IsLeaf = true }
+                    }
+                }
+            }
+        },
+        new Category(){ Name = "Menu Item 9", Icon = "Icon", IsLeaf = true }
+    };
+}
+```
+
+### <a name="keyboarding-within-hierarchical-navigationview"></a>階層式 NavigationView 內的鍵盤輸入
+使用者可以使用其[鍵盤](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions)，將焦點移到瀏覽檢視的周圍。 方向鍵會在窗格內公開「內部瀏覽」，並遵循 [樹狀檢視](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view)中提供的互動。 按鍵動作會在瀏覽 NavigationView 或其飛出視窗功能表 (其顯示在 HierarchicalNavigationView 的頂端和左側精簡模式中) 時變更。 以下是每個按鍵可在階層式 NavigationView 中採取的特定動作：
+
+| 按鍵      |      在左側模式中      |  在頂端模式中 | 在飛出視窗中  |
+|----------|------------------------|--------------|------------|
+| Up |將焦點移至目前聚焦項目正上方的項目。 | 不執行任何動作。 |將焦點移至目前聚焦項目正上方的項目。|
+| Down|將焦點移到目前聚焦項目的正下方。* | 不執行任何動作。 | 將焦點移到目前聚焦項目的正下方。* |
+| Right |不執行任何動作。  |將焦點直接移至目前聚焦項目右邊的項目。 |不執行任何動作。|
+| Left |不執行任何動作。 | 將焦點直接移至目前聚焦項目左邊的項目。  |不執行任何動作。 |
+| 空格鍵/Enter 鍵 |如果項目具有子系，則展開/摺疊項目，而不要變更焦點。   | 如果項目具有子系，則將子系展開到飛出視窗中，並將焦點置於飛出視窗中的項目。 | 叫用/選取項目並關閉飛出視窗。 |
+| Esc | 不執行任何動作。 | 不執行任何動作。 | 關閉飛出視窗。|
+
+空格鍵或 Enter 鍵一律會叫用/選取一個項目。
+
+*請注意，項目不需要在視覺上相鄰，焦點會從窗格清單中的最後一個項目移至 [設定] 項目。 
 
 ## <a name="navigation-view-customization"></a>瀏覽檢視自訂
 
@@ -744,4 +980,4 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 - [NavigationView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 - [主要/詳細資料](master-details.md)
 - [瀏覽基本知識](../basics/navigation-basics.md)
-- [適用於 UWP 的 Fluent Design 概觀](/windows/apps/fluent-design-system)
+- [Fluent Design 概觀](/windows/apps/fluent-design-system)

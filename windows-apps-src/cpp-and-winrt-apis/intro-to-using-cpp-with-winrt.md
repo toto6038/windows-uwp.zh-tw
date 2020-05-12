@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: 250e3626c5abee43cf3b8ca3320c78ec4f8f9751
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ddf2cd876ac629f4cb3c49e349e43dee8fdb0c7a
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80662411"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730306"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 簡介
 &nbsp;
@@ -27,10 +27,10 @@ C++/WinRT 是 Microsoft 針對 [C++/CX](/cpp/cppcx/visual-c-language-reference-c
 > 最重要的一些 C++/WinRT 項目會在 [C++/WinRT 的 SDK 支援](#sdk-support-for-cwinrt)和 [C++/WinRT、XAML、VSIX 擴充功能和 NuGet 套件的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)等章節中說明。
 
 ## <a name="language-projections"></a>語言投影
-Windows 執行階段根據元件物件模型 (COM) API，且設計它透過「語言投影」  來存取。 投影隱藏 COM 的詳細資訊，並針對特定語言提供更自然的程式設計體驗。
+Windows 執行階段根據元件物件模型 (COM) API，且設計它透過「語言投影」  來存取。 投影會隱藏 COM 的詳細資訊，並針對特定語言提供更自然的程式設計體驗。
 
-### <a name="the-cwinrt-language-projection-in-the-windows-uwp-api-reference-content"></a>Windows UWP API 參考內容中的 C++/WinRT 語言投影
-當您在瀏覽[Windows UWP Api](https://docs.microsoft.com/uwp/api/)，按一下右上方下拉式方塊中的 [**語言**]，然後選取**C++/WinRT**，當它們在 C++/WinRT 語言投影中顯示時，檢視 API 語法區塊。
+### <a name="the-cwinrt-language-projection-in-the-windows-runtime-api-reference-content"></a>Windows 執行階段 API 參考內容中的 C++/WinRT 語言投影
+當您在瀏覽[Windows 執行階段 API](https://docs.microsoft.com/uwp/api/)，按一下右上方下拉式方塊中的 [語言]  ，然後選取**C++/WinRT**，當它們在 C++/WinRT 語言投影中顯示時，檢視 API 語法區塊。
 
 ## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>C++/WinRT、XAML、VSIX 擴充功能和 NuGet 套件的 Visual Studio 支援
 如需 Visual Studio 支援，您需要 Visual Studio 2019 或 Visual Studio 2017 (至少 15.6 版；我們建議至少 15.7 版)。 從 Visual Studio 安裝程式中，安裝**通用 Windows 平台開發**工作負載。 在 [安裝詳細資料]   > [通用 Windows 平台開發]  中，勾選 [C++ (v14x) 通用 Windows 平台工具]  選項 (如果尚未勾選)。 而在 Windows [設定]   > [更新與安全性] **\&**  > [針對開發人員]  中，選擇 [開發人員模式]  選項，而非 [側載應用程式]  選項。
@@ -151,4 +151,4 @@ Windows 傳統型 C++/WinRT 用戶端應用程式的專案範本，其在 Win32 
 * [開始使用 C++/WinRT](get-started.md)
 * [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)
 * [C++/WinRT 中的字串處理](strings.md)
-* [Windows UWP API](https://docs.microsoft.com/uwp/api/)
+* [Windows 執行階段 API](https://docs.microsoft.com/uwp/api/)

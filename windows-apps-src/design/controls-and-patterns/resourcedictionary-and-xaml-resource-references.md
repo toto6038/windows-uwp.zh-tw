@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2be937646374db3586b1b3bca2df2b99888c831a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73061976"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968133"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 與 XAML 資源參考
 
@@ -53,7 +53,7 @@ XAML 資源是從標記參考多次的物件。 資源是在 [ResourceDictionary
 
 -   `<Page.Resources>…</Page.Resources>` - 定義資源字典。
 -   `<x:String>` - 以 "greeting" 索引鍵來定義資源。
--   `{StaticResource greeting}` - 查詢具有 "greeting" 索引鍵的資源；此索引鍵會指派給 [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) \(英文\) 的 [Text](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) \(英文\) 屬性。
+-   `{StaticResource greeting}` - 查詢具有 "greeting" 索引鍵的資源；此索引鍵會指派給 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) \(英文\) 的 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) \(英文\) 屬性。
 
 > **注意**&nbsp;&nbsp;請不要將與 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(英文\) 相關的概念，與在產生您應用程式套件之程式碼專案的構成內容中所討論的**資源**建置動作、資源 (.resw) 檔案或其他「資源」混淆。
 
@@ -79,11 +79,11 @@ XAML 資源是從標記參考多次的物件。 資源是在 [ResourceDictionary
 
 所有資源都必須有一個索引鍵。 該索引鍵通常是以 `x:Key="myString"` 定義的字串。 不過，指定索引鍵有其他幾個方式：
 
--   [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) \(英文\) 和 [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) \(英文\) 需要 **TargetType**，且將會在未指定 **x:Key** \(部分機器翻譯\) 的情況下使用 [TargetType](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) 作為索引鍵。 在此情況下，索引鍵是實際的 Type 物件，而不是字串。 (請參閱以下範例)
--   具有 [TargetType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) 的 **DataTemplate** \(英文\) 資源將會在未指定 **x:Key** \(部分機器翻譯\) 的情況下使用 [TargetType](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) 作為索引鍵。 在此情況下，索引鍵是實際的 Type 物件，而不是字串。
+-   [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) \(英文\) 和 [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) \(英文\) 需要 **TargetType**，且將會在未指定 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) \(部分機器翻譯\) 的情況下使用 **TargetType** 作為索引鍵。 在此情況下，索引鍵是實際的 Type 物件，而不是字串。 (請參閱以下範例)
+-   具有 **TargetType** 的 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) \(英文\) 資源將會在未指定 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) \(部分機器翻譯\) 的情況下使用 **TargetType** 作為索引鍵。 在此情況下，索引鍵是實際的 Type 物件，而不是字串。
 -   可以使用 [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute) 代替 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)。 不過，x:Name 也會產生資源的程式碼後置欄位。 因此，x:Name 比 x:Key 沒有效率，因為載入頁面時，必須初始化該欄位。
 
-[StaticResource 標記延伸](../../xaml-platform/staticresource-markup-extension.md)僅能以字串名稱 ([x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) 或 [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute)) 擷取資源。 不過，當 XAML 架構在決定尚未設定 **Style** \(英文\) 和 [ContentTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) \(英文\) 或 [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) \(英文\) 屬性的控制項所要使用的樣式與範本時，也會尋找隱含的樣式資源 (那些使用 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 而不是 x:Key 或 x:Name 的資源)。
+[StaticResource 標記延伸](../../xaml-platform/staticresource-markup-extension.md)僅能以字串名稱 ([x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) 或 [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute)) 擷取資源。 不過，當 XAML 架構在決定尚未設定 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) \(英文\) 和 [ContentTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) \(英文\) 或 [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) \(英文\) 屬性的控制項所要使用的樣式與範本時，也會尋找隱含的樣式資源 (那些使用 **TargetType** 而不是 x:Key 或 x:Name 的資源)。
 
 在這裡，[Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) \(英文\) 具有 **typeof(Button)** 的隱含索引鍵，而且由於頁面底部的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) \(英文\) 未指定 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) \(英文\) 屬性，它會尋找索引鍵為 **typeof(Button)** 的樣式：
 
@@ -249,7 +249,7 @@ sealed partial class App : Application
 
 「合併的資源字典」  是將某個資源字典結合到另一個資源字典中，通常是在另一個檔案中。
 
-> **提示**&nbsp;&nbsp;您可以使用 [專案] **&gt; 功能表的 [新增] &gt; [新增項目]**  [資源字典]  選項，在 Microsoft Visual Studio 中建立資源字典檔案。
+> **提示**&nbsp;&nbsp;您可以使用 [專案]  功能表的 [新增] &gt; [新增項目] &gt; [資源字典]  選項，在 Microsoft Visual Studio 中建立資源字典檔案。
 
 在這裡，您會在另一個名為 Dictionary1.xaml 的 XAML 檔案中，定義資源字典。
 
@@ -294,7 +294,7 @@ sealed partial class App : Application
 
 在 `<ResourceDictionary.MergedDictionaries>…</ResourceDictionary.MergedDictionaries>` 之後，您可以視需要在您的主要字典中放入其他資源。 使用合併字典中的資源就像使用一般字典中的資源一樣。 在以上的範例中，`{StaticResource brush}` 會在子字典/合併字典中找到資源 (Dictionary1.xaml)，而 `{StaticResource greeting}` 則會在主頁面字典中找到其資源。
 
-在資源查詢序列中，只有在檢查該 [ResourceDictionary](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 的其他所有索引資源之後，才會檢查 [MergedDictionaries](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 字典。 搜尋該層級之後，就會查詢合併字典，並檢查 **MergedDictionaries** 中的每個項目。 如果有多個合併字典，會按照在 **MergedDictionaries** 屬性中宣告的相反順序檢查它們。 在以下的範例中，如果 Dictionary2.xaml 與 Dictionary1.xaml 宣告了相同的索引鍵，則會先使用 Dictionary2.xaml 的索引鍵，因為它是這組 **MergedDictionaries** 中的最後一個項目。
+在資源查詢序列中，只有在檢查該 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的其他所有索引資源之後，才會檢查 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 字典。 搜尋該層級之後，就會查詢合併字典，並檢查 **MergedDictionaries** 中的每個項目。 如果有多個合併字典，會按照在 **MergedDictionaries** 屬性中宣告的相反順序檢查它們。 在以下的範例中，如果 Dictionary2.xaml 與 Dictionary1.xaml 宣告了相同的索引鍵，則會先使用 Dictionary2.xaml 的索引鍵，因為它是這組 **MergedDictionaries** 中的最後一個項目。
 
 ```XAML
 <Page
@@ -316,7 +316,7 @@ sealed partial class App : Application
 
 在任一 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的範圍內，會檢查字典的索引鍵唯一性。 不過，這個範圍不會延伸到不同 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 檔案中的不同項目。
 
-您可以在合併字典範圍上使用查詢序列且不使用唯一索引鍵強制，建立 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 資源的後援值順序。 例如，您可以將特定筆刷色彩的使用者喜好設定儲存在順序的最後一個合併資源字典中，而使用同步至 app 狀態和使用者喜好設定資料的資源字典。 不過，如果還沒有使用者喜好設定，您可以在初始 **MergedDictionaries** \(英文\) 檔案中，為 [ResourceDictionary](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 資源定義相同的索引鍵字串，如此一來它就可以做為後援值。 請記得，您在主要資源字典中提供的值，一律會比合併字典優先檢查，所以如果您要使用後援技術，請不要在主要資源字典中定義該資源。
+您可以在合併字典範圍上使用查詢序列且不使用唯一索引鍵強制，建立 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 資源的後援值順序。 例如，您可以將特定筆刷色彩的使用者喜好設定儲存在順序的最後一個合併資源字典中，而使用同步至 app 狀態和使用者喜好設定資料的資源字典。 不過，如果還沒有使用者喜好設定，您可以在初始 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) \(英文\) 檔案中，為 **ResourceDictionary** 資源定義相同的索引鍵字串，如此一來它就可以做為後援值。 請記得，您在主要資源字典中提供的值，一律會比合併字典優先檢查，所以如果您要使用後援技術，請不要在主要資源字典中定義該資源。
 
 ## <a name="theme-resources-and-theme-dictionaries"></a>佈景主題資源和佈景主題字典
 
@@ -328,9 +328,9 @@ sealed partial class App : Application
 <TextBlock Text="hello world" Foreground="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" VerticalAlignment="Center"/>
 ```
 
-「佈景主題字典」是一種特殊類型的合併字典，可根據使用者目前在裝置上使用的佈景主題保留不同的資源。 例如，「淺色」佈景主題可能會使用白色筆刷，而「深色」佈景主題則可能使用深色筆刷。 筆刷會變更它所解析成的資源，但除此之外，使用筆刷做為資源的控制項組合仍可維持不變。 若要在您自己的範本和樣式中重新產生佈景主題切換行為，請使用 [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 屬性取代將項目合併到主要字典時使用的 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 屬性。
+「佈景主題字典」是一種特殊類型的合併字典，可根據使用者目前在裝置上使用的佈景主題保留不同的資源。 例如，「淺色」佈景主題可能會使用白色筆刷，而「深色」佈景主題則可能使用深色筆刷。 筆刷會變更它所解析成的資源，但除此之外，使用筆刷做為資源的控制項組合仍可維持不變。 若要在您自己的範本和樣式中重新產生佈景主題切換行為，請使用 [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 屬性取代將項目合併到主要字典時使用的 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 屬性。
 
-[ThemeDictionaries](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(英文\) 內的每個 [ResourceDictionary](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) \(英文\) 元素都必須有一個 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) \(部分機器翻譯\) 值。 這個值是為相關佈景主題命名的字串，例如 "Default"、"Dark"、"Light" 或 "HighContrast"。 `Dictionary1` 和 `Dictionary2` 通常會定義名稱相同但值不同的資源。
+[ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) \(英文\) 內的每個 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(英文\) 元素都必須有一個 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) \(部分機器翻譯\) 值。 這個值是為相關佈景主題命名的字串，例如 "Default"、"Dark"、"Light" 或 "HighContrast"。 `Dictionary1` 和 `Dictionary2` 通常會定義名稱相同但值不同的資源。
 
 在這裡，您針對淺色佈景主題使用紅色文字，針對深色佈景主題使用藍色文字。
 
@@ -401,7 +401,7 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 
 最後，還會針對平台資源進行資源查詢。 平台資源包含針對每個系統 UI 佈景主題定義的控制項範本，這些範本會針對 Windows 執行階段應用程式，定義您在 UI 中使用的所有控制項的預設外觀。 平台資源也包含一組與整個系統外觀及佈景主題相關的具名資源。 技術上來說，這些資源是 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 項目，所以在載入 app 後可以從 XAML 或程式碼查詢。 例如，系統佈景主題資源包含稱為 "SystemColorWindowTextColor" 的資源，它提供 [Color](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 定義，能夠讓 app 文字色彩與來自作業系統和使用者喜好設定的系統視窗文字色彩相符。 app 的其他 XAML 樣式也可以參考此樣式，或者程式碼可以取得資源查詢值 (並在範例中將它轉換為 **Color**)。
 
-如需詳細資訊，以及可供使用 XAML 之 UWP 應用程式使用的佈景主題特定資源與系統資源的清單，請參閱 [XAML 佈景主題資源](xaml-theme-resources.md)。
+如需使用 XAML 的 Windows 應用程式可用的佈景主題專用資源和系統資源詳細資訊和清單，請參閱 [XAML 佈景主題資源](xaml-theme-resources.md)。
 
 如果仍然無法在這些位置中找到要求的索引鍵，就會發生 XAML 剖析錯誤/例外狀況。 在某些情況下，XAML 剖析例外狀況可能是 XAML 標記編譯動作或 XAML 設計環境沒有偵測到的執行階段例外狀況。
 
@@ -443,21 +443,21 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 
 ## <a name="resourcedictionary-and-xamlreaderload"></a>ResourceDictionary 和 XamlReader.Load
 
-您可以使用 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 做為 [XamlReader.Load](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlreader.load) 方法的根目錄或 XAML 輸入的一部分。 如果提交來進行載入的 XAML 中的所有 XAML 資源參考都是完全獨立的，則您也可以在該 XAML 中包含這類參考。 **XamlReader.Load** 會在不知道任何其他 **ResourceDictionary** 物件 (甚至是 [Application.Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resources) \(英文\)) 的內容中剖析 XAML。 此外，請勿在已提交到 `{ThemeResource}`XamlReader.Load**的 XAML 內使用**。
+您可以使用 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 做為 [XamlReader.Load](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlreader.load) 方法的根目錄或 XAML 輸入的一部分。 如果提交來進行載入的 XAML 中的所有 XAML 資源參考都是完全獨立的，則您也可以在該 XAML 中包含這類參考。 **XamlReader.Load** 會在不知道任何其他 **ResourceDictionary** 物件 (甚至是 [Application.Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resources) \(英文\)) 的內容中剖析 XAML。 此外，請勿在已提交到 **XamlReader.Load** 的 XAML 內使用 `{ThemeResource}`。
 
 ## <a name="using-a-resourcedictionary-from-code"></a>從程式碼使用 ResourceDictionary
 
-大部分適用於 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的案例都是專門使用 XAML 來處理。 您可以在 XAML 檔案內或 UI 定義檔案的一組 XAML 節點中宣告 **ResourceDictionary** 容器和資源。 然後，您可以使用 XAML 資源參考，從 XAML 的其他部分要求這些資源。 儘管如此，還是會有一些特定狀況，是您的 app 想要在執行時使用執行的程式碼來調整 **ResourceDictionary** 的內容，或者至少查詢 **ResourceDictionary** 的內容來查看是否已經定義某個資源。 這些程式碼呼叫是在 **ResourceDictionary** 執行個體上所進行，所以您必須先擷取一個，無論是透過取得 **FrameworkElement.Resources** \(英文\) 來再物件樹狀中某處的立即 [ResourceDictionary](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources)，或是 `Application.Current.Resources`。
+大部分適用於 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的案例都是專門使用 XAML 來處理。 您可以在 XAML 檔案內或 UI 定義檔案的一組 XAML 節點中宣告 **ResourceDictionary** 容器和資源。 然後，您可以使用 XAML 資源參考，從 XAML 的其他部分要求這些資源。 儘管如此，還是會有一些特定狀況，是您的 app 想要在執行時使用執行的程式碼來調整 **ResourceDictionary** 的內容，或者至少查詢 **ResourceDictionary** 的內容來查看是否已經定義某個資源。 這些程式碼呼叫是在 **ResourceDictionary** 執行個體上所進行，所以您必須先擷取一個，無論是透過取得 [FrameworkElement.Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) \(英文\) 來再物件樹狀中某處的立即 **ResourceDictionary**，或是 `Application.Current.Resources`。
 
-在 C\# 或 Microsoft Visual Basic 程式碼中，您可以使用索引子 ([Item](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(部分機器翻譯\)) 來參考指定 [ResourceDictionary](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item) \(英文\) 中的資源。 **ResourceDictionary** 是字串索引鍵字典，因此索引子會使用字串索引鍵而不是整數索引。 在 Visual C++ 元件延伸 (C++/CX) 程式碼中，請使用 [Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup) \(英文\)。
+在 C\# 或 Microsoft Visual Basic 程式碼中，您可以使用索引子 ([Item](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item) \(部分機器翻譯\)) 來參考指定 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(英文\) 中的資源。 **ResourceDictionary** 是字串索引鍵字典，因此索引子會使用字串索引鍵而不是整數索引。 在 Visual C++ 元件延伸 (C++/CX) 程式碼中，請使用 [Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup) \(英文\)。
 
 使用程式碼來檢查或變更 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 時，[Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup) 或 [Item](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item) 這類 API 的行為不會從直接資源周遊到 app 資源；那是只有在載入 XAML 頁面時才會發生的 XAML 剖析器行為。 在執行階段，索引鍵的範圍與您當時使用的 **ResourceDictionary** 執行個體完全無關。 但是該範圍卻會延伸到 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries)。
 
-此外，如果您要求的索引鍵不存在於 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(英文\)，系統可能不會出現錯誤；傳回值可能只會提供為 **null**。 不過，如果您嘗試使用傳回的 **null** 做為值，則您還是會收到錯誤。 錯誤會來自屬性的 setter，並非您的 **ResourceDictionary** 呼叫。 如果屬性接受 **null** 為有效值，是唯一可以避免錯誤的的方法。 請注意，這個行為與 XAML 剖析期間的 XAML 查詢行為恰好相反；無法在剖析期間解析從 XAML 提供的索引鍵會造成 XAML 剖析錯誤，即使在屬性可以接受 **null** 的情況中也是一樣。
+此外，如果您要求的索引鍵不存在於 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(英文\)，系統可能不會出現錯誤；傳回值可能只會提供為 **null**。 不過，如果您嘗試使用傳回的 **null** 做為值，則您還是會收到錯誤。 錯誤會來自屬性的 setter，並非您的 **ResourceDictionary** 呼叫。 如果屬性接受 **null** 為有效值，是唯一可以避免錯誤的方法。 請注意，這個行為與 XAML 剖析期間的 XAML 查詢行為恰好相反；無法在剖析期間解析從 XAML 提供的索引鍵會造成 XAML 剖析錯誤，即使在屬性可以接受 **null** 的情況中也是一樣。
 
 合併的資源字典包含在主要資源字典的索引範圍內，而主要資源字典會在執行階段參考合併字典。 換句話說，您可以使用主要字典的 **Item** 或 [Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup) \(英文\) 來尋找實際在合併字典中定義的任何物件。 在這個情況下，查詢行為會與剖析階段 XAML 查詢行為類似：如果合併字典中有多個物件，而且每個物件都有相同的索引鍵，就會傳回最後新增的字典中的物件。
 
-您可以透過呼叫 [Add](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) (C**或 Visual Basic) 或**Insert\# \(英文\) (C++/CX)，將項目新增到現有的 [ResourceDictionary](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.insert) \(英文\)。 您可以將項目新增到直接資源或 app 資源。 這兩種 API 呼叫都需要索引鍵，這符合 **ResourceDictionary** 中每個項目都必須具有索引鍵的需求。 不過，您在執行階段新增到 **ResourceDictionary** 的項目與 XAML 資源參考無關。 XAML 資源參考所需的查詢會在 app 載入時 (或者在偵測到佈景主題變更時)，進行第一次剖析 XAML 的時候發生。 在執行階段新增到集合的資源則無法使用，而更改 **ResourceDictionary** 不會已經從中抓取的資源中失效，即使您變更了該資源的值也一樣。
+您可以透過呼叫 **Add** (C\# 或 Visual Basic) 或 [Insert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.insert) \(英文\) (C++/CX)，將項目新增到現有的 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) \(英文\)。 您可以將項目新增到直接資源或 app 資源。 這兩種 API 呼叫都需要索引鍵，這符合 **ResourceDictionary** 中每個項目都必須具有索引鍵的需求。 不過，您在執行階段新增到 **ResourceDictionary** 的項目與 XAML 資源參考無關。 XAML 資源參考所需的查詢會在 app 載入時 (或者在偵測到佈景主題變更時)，進行第一次剖析 XAML 的時候發生。 在執行階段新增到集合的資源則無法使用，而更改 **ResourceDictionary** 不會已經從中抓取的資源中失效，即使您變更了該資源的值也一樣。
 
 在執行階段，您也可以從 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 移除項目，建立部分或所有項目的複本，或執行其他操作。 **ResourceDictionary** 的成員清單指示可用的 API。 請注意，因為 **ResourceDictionary** 具有預計的 API 來支援它的基礎集合介面，您的 API 選項會根據您是使用 C\#、Visual Basic 或是 C++/CX 而有所差異。
 

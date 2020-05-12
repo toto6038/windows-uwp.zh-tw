@@ -1,5 +1,5 @@
 ---
-Description: 了解如何實作向後瀏覽，以便周遊 UWP 應用程式內使用者的瀏覽歷程記錄。
+Description: 了解如何實作向後瀏覽，以便周遊 Windows 應用程式內使用者的瀏覽歷程記錄。
 title: 瀏覽歷程記錄和向後瀏覽
 template: detail.hbs
 op-migration-status: ready
@@ -7,18 +7,18 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05b435eb6f070634507c143bd028d2cb051c97bc
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0601aea88d0705377490fb4adf26ce3da9c4e573
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74735023"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969144"
 ---
-# <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>適用於 UWP app 的瀏覽歷程記錄和向後瀏覽
+# <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 應用程式的瀏覽歷程記錄和向後瀏覽
 
 > **重要 API**：[BackRequested 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
-通用 Windows 平台 (UWP) 提供一致的返回瀏覽系統，以周遊使用者在應用程式內及應用程式之間 (視裝置而定) 的瀏覽歷程記錄。
+Windows 應用程式提供一致的返回瀏覽系統，以周遊使用者在應用程式內及應用程式之間 (視裝置而定) 的瀏覽歷程記錄。
 
 若要在您的應用程式中實作向後瀏覽，請將[返回按鈕](#back-button)放在應用程式 UI 的左上角。 如果您的應用程式使用 [NavigationView](../controls-and-patterns/navigationview.md) 控制項，則您可以使用 [NavigationView 的內建返回按鈕](../controls-and-patterns/navigationview.md#backwards-navigation)。
 

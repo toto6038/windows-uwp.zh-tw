@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 25d9df392d6ed2725b171fe6513334a39458410b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0ad8b78538a2b047501361072a017658ba152e73
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684590"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971003"
 ---
 # <a name="app-icons-and-logos"></a>應用程式圖示及標誌 
 
@@ -185,7 +185,7 @@ Visual Studio 會產生您的影像檔，並將它們新增至專案中。 如�
 
 Square150x150Logo-scale-100.png、Square150x150Logo-scale-200.png、Square150x150Logo-scale-400.png
 
-請注意，Visual Studio 預設不會產生徽章標誌。 這是因為您的徽章標誌是獨一無二的，可能與您的其他應用程式圖示不符合。 如需詳細資訊，請參閱 [UWP 應用程式的徽章通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。 
+請注意，Visual Studio 預設不會產生徽章標誌。 這是因為您的徽章標誌是獨一無二的，可能與您的其他應用程式圖示不符合。 如需詳細資訊，請參閱 [Windows 應用程式的徽章通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。 
 
 
 ## <a name="more-about-app-icon-assets"></a>深入了解應用程式圖示資產
@@ -253,13 +253,13 @@ Visual Studio 會產生專案所需的所有應用程式圖示資產，但如果
 
 
 ## <a name="more-about-splash-screen-assets"></a>深入了解啟動顯示畫面資產
-如需啟動顯示畫面的詳細資訊，請參閱 [UWP 啟動顯示畫面](/windows/uwp/launch-resume/splash-screens)一文。
+如需啟動顯示畫面的詳細資訊，請參閱 [Windows 應用程式啟動顯示畫面](/windows/uwp/launch-resume/splash-screens)一文。
 
 ## <a name="more-about-badge-logo-assets"></a>深入了解徽章標誌資產
 
 當您使用資產產生器來產生所需的所有資產時，預設情況下它不會產生徽章標誌的原因是：它們與其他應用程式資產非常不同。 徽章標誌會出現在通知和應用程式磚上的狀態影像。 
 
-如需詳細資訊，請參閱 [UWP 應用程式的徽章通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。
+如需詳細資訊，請參閱 [Windows 應用程式的徽章通知](/windows/uwp/design/shell/tiles-and-notifications/badges)。
 
 
 ## <a name="customizing-asset-padding"></a>自訂資產邊框間距

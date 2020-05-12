@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: bf8a5970d1999427023592f919ef0b92737fa934
-ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
+ms.openlocfilehash: 906126c14dd32a9c0196d53deab5bc36c07f4bef
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79510981"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729839"
 ---
 # <a name="choose-your-app-platform"></a>選擇您的應用程式平台
 
@@ -31,6 +31,8 @@ ms.locfileid: "79510981"
 * **WPF 和 Windows Forms**。 這些平台會針對在 .NET 上執行的受控應用程式，提供一般型別系統、API 和應用程式模型。
 
 * **Win32 API**。 Win32 API (也稱為 Windows API) 是適用於原生 C/C++ Windows 應用程式的原創平台，而這些應用程式需要直接存取 Windows 和硬體。 這讓 Win32 API 成為應用程式的首選平台，因為這些應用程式需要最高階效能及直接存取系統硬體。
+
+在 Windows 10 上，所有這些平台都支援使用 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui)來建立其使用者介面。 WinUI 提供一組新式控制項，包括現有 XAML 控制項的增強版和全新的控制項。 WinUI 也支援舊版 Windows 10 來達到最大的可用性。
 
 UWP 和 .NET 都與 Visual Studio 進行深度整合。 這可提供許多優點，特別是在開發人員生產力、精細且可自訂的使用者介面，以及應用程式安全性等方面。 由於這些架構支援視覺化設計工具和 UI 標記來快速建立 UI，因此特別適用於企業營運應用程式。
 
@@ -110,7 +112,7 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 | **開放原始碼** | [是 (僅限 Windows UI 程式庫)](https://github.com/Microsoft/microsoft-ui-xaml)  |  [是 (僅限 .NET Core)](https://github.com/dotnet/wpf) | [是 (僅限 .NET Core)](https://github.com/dotnet/winforms)  |
 | **支援 XAML** |   是   |  是  |   否   |
 | **優勢**  |  <ul><li>適用於 UI 的 XAML 標記</li><li>豐富且可自訂的 UX</li><li>您現有的程式碼基底相容於 .NET Standard</li><li>高 DPI 支援</li><li>支援跨 Windows 裝置的多種輸入類型 (包括觸控、手寫筆、遊戲台、滑鼠和鍵盤)</li><li>支援 Xbox、HoloLens、IoT 或 Surface Hub</li><li>選擇性密集 (精簡) UI</li><li>支援原生 C++</li><li>最佳化的電池使用時間</li><li>新式協助工具支援 (例如螢幕助讀程式)</li><li>Rich Text 格式資料功能 (例如內建的拼字檢查)</li><li>筆跡支援</li><li>透過應用程式容器保護執行安全 (例如，未受信任的內容會沙箱化)</li></ul>  |  <ul><li>適用於 UI 的 XAML 標記</li><li>豐富且可自訂的 UX</li><li>來自 Microsoft 和合作夥伴的大型控制項集合</li><li>密集 UI</li><li>支援 Windows 7</li><li>支援平台進行輸入驗證</li></ul> | <ul><li>快速應用程式開發</li><li>用於建置 UI 的 WYSIWYG 編輯器</li><li>來自 Microsoft 和合作夥伴的大型控制項集合</li><li>密集 UI</li><li>支援 Windows 7</li><li>鍵盤和滑鼠輸入</li></ul>          |
-| **有限支援的案例** |  <ul><li>多重視窗支援<sup>1</sup></li><li>支援平台進行輸入驗證<sup>1</sup></li><li>不支援 Windows 7</li><li>某些 UWP API 需要特定的 Windows 10 最低版本</li><li>完整平台支援和命令介面整合 (例如，UWP 目前不支援系統匣整合或完整存取所有裝置)</li><li>直接存取磁碟上的所有檔案</li><li>ADO.NET</li><li>使用非 .NET Standard 或非 Windows 應用程式認證套件相容 API 的現有程式碼基底類別程式庫</li><li>區域網路回送支援 (亦即，如果您的應用程式需要與 localhost 通訊，而不在目標裝置上建立回送豁免)</li><li>密集檔案 I/O</li></ul>     |  <ul><li>高 DPI 支援<sup>2</sup></li><li>觸控輸入<sup>2</sup></li></ul>  |  <ul><li>高 DPI 支援<sup>2</sup></li><li>觸控輸入<sup>2</sup></li><li>可自訂的 UI</li><li>豐富的圖形和使用者體驗 (例如觸控和動畫)</li><li>豐富的視圖和資料模型抽象</li></ul>    |   |
+| **有限支援的案例** |  <ul><li>多重視窗支援<sup>1</sup></li><li>支援平台進行輸入驗證<sup>1</sup></li><li>不支援 Windows 7</li><li>某些Windows 執行階段 API 需要特定的 Windows 10 最低版本</li><li>完整平台支援和命令介面整合 (例如，UWP 目前不支援系統匣整合或完整存取所有裝置)</li><li>直接存取磁碟上的所有檔案</li><li>ADO.NET</li><li>使用非 .NET Standard 或非 Windows 應用程式認證套件相容 API 的現有程式碼基底類別程式庫</li><li>區域網路回送支援 (亦即，如果您的應用程式需要與 localhost 通訊，而不在目標裝置上建立回送豁免)</li><li>密集檔案 I/O</li></ul>     |  <ul><li>高 DPI 支援<sup>2</sup></li><li>觸控輸入<sup>2</sup></li></ul>  |  <ul><li>高 DPI 支援<sup>2</sup></li><li>觸控輸入<sup>2</sup></li><li>可自訂的 UI</li><li>豐富的圖形和使用者體驗 (例如觸控和動畫)</li><li>豐富的視圖和資料模型抽象</li></ul>    |   |
 
 <sup>1</sup> 我們已公開宣佈的功能，可在未來的 Windows 10 版本中解決此案例。
 

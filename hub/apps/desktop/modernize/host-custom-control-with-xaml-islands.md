@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fa8dd744120d5751dcf8c10a090ccc31094000d2
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 5f3e4eee486edd47901fc2b97a6e10c880cb04b1
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80482499"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606297"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>在 WPF 應用程式中使用 XAML Islands 裝載自訂 UWP 控制項
 
@@ -29,7 +29,7 @@ ms.locfileid: "80482499"
 
 * **自訂 UWP 控制項**。 您需要想裝載之自訂 UWP 控制項的原始程式碼，才能使用您的應用程式進行編譯。 自訂控制項通常會定義於 UWP 類別庫專案，而您會在與 WPF 或 Windows Forms 專案相同的方案中參考該專案。
 
-* **UWP 應用程式專案，可定義從 XamlApplication 衍生的根應用程式類別**。 您的 WPF 或 Windows Forms 專案必須能存取 Windows 社群工具組所提供 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 類別的執行個體，讓其能夠探索和載入自訂 UWP XAML 控制項。 建議的做法是在個別的 UWP 應用程式專案中定義此物件，而該專案屬於 WPF 或 Windows Forms 應用程式的方案。 
+* **UWP 應用程式專案，可定義從 XamlApplication 衍生的根應用程式類別**。 您的 WPF 或 Windows Forms 專案必須能存取 Windows 社群工具組所提供 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文)\ 類別的執行個體，讓其能夠探索和載入自訂 UWP XAML 控制項。 建議的做法是在個別的 UWP 應用程式專案中定義此物件，而該專案屬於 WPF 或 Windows Forms 應用程式的方案。 
 
     > [!NOTE]
     > 您的方案只能包含一個可定義 `XamlApplication` 物件的專案。 您應用程式中的所有自訂 UWP 控制項都會共用相同的 `XamlApplication` 物件。 定義 `XamlApplication` 物件的專案必須包含所有其他 UWP 程式庫的參考，以及用來在 XAML Island 上裝載 UWP 控制項的專案。
@@ -235,7 +235,10 @@ ms.locfileid: "80482499"
 
 本節示範如何將 UWP 控制項從 WinUI 程式庫新增至您的使用者控制項，以便您在 WPF 應用程式中裝載此控制項。
 
-1. 在 UWP 應用程式專案中，安裝最新版的 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件。
+1. 在 UWP 應用程式專案中，安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件的最新版本或發行前版本。
+
+    > [!NOTE]
+    > 如果您的傳統型應用程式封裝在 [MSIX 套件](https://docs.microsoft.com/windows/msix)中，您可使用 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 套件的發行前或發行版本。 如果您的傳統型應用程式未使用 MSIX 進行封裝，您必須安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件的發行前版本。
 
 2. 在此專案的 App.xaml 檔案中，將下列子元素新增至 `<xaml:XamlApplication>` 元素。
 
@@ -268,7 +271,7 @@ ms.locfileid: "80482499"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. 在相同的檔案中，新增 `<winui:RatingControl />` 元素作為 `<StackPanel>` 的子系。 此元素會從 WinUI 程式庫新增 [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol?view=winui-2.2) 類別的執行個體。 新增此屬性之後，`<StackPanel>` 現在應該如下所示。
+5. 在相同的檔案中，新增 `<winui:RatingControl />` 元素作為 `<StackPanel>` 的子系。 此元素會從 WinUI 程式庫新增 [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) 類別的執行個體。 新增此屬性之後，`<StackPanel>` 現在應該如下所示。
 
     ```xml
     <StackPanel Background="LightCoral">
@@ -290,7 +293,7 @@ ms.locfileid: "80482499"
 > [!NOTE]
 > 如果您選擇不要在 [MSIX 套件](https://docs.microsoft.com/windows/msix)中封裝應用程式以供部署，則執行您應用程式的電腦必須安裝 [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
 
-1. 將新的 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的方案。 當您建立專案時，同時對 [目標版本]  和 [最低版本]  選取 [Windows 10 版本1903 (10.0；組建 18362)]  。
+1. 將新的 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的方案。 當您建立專案時，同時對 [目標版本]  和 [最低版本]  選取 [Windows 10 版本 1903 (10.0；組建 18362)]  。
 
 2. 在封裝專案中，以滑鼠右鍵按一下 [應用程式]  接點，然後選擇 [新增參考]  。 在專案清單中，選取您方案中的 WPF 專案，然後按一下 [確定]  。
 

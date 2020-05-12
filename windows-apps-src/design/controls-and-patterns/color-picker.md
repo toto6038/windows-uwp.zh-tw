@@ -11,12 +11,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f287f738c39e21ea76ff2595cc34ac715a1b52ca
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6e7661beb52438640c570e1a5ec4d7f60502e119
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081170"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968893"
 ---
 # <a name="color-picker"></a>色彩選擇器
 
@@ -28,7 +28,7 @@ ms.locfileid: "80081170"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **ColorPicker** 控制項包含在 Windows UI 程式庫中，該程式庫是 NuGet 套件，其包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **ColorPicker** 控制項包含在 Windows UI 程式庫中，該程式庫是 NuGet 套件，其包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API：** [ColorPicker 類別](/uwp/api/microsoft.ui.xaml.controls.colorpicker)、[Color 屬性](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 >
@@ -220,7 +220,7 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
-- [UWP app 中的手寫筆互動與 Windows Ink](../input/pen-and-stylus-interactions.md)
+- [Windows 應用程式中的手寫筆互動](../input/pen-and-stylus-interactions.md)
 - [手寫筆跡控制項](inking-controls.md)
 
 <!--

@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9739933f9fd23c6f169c24c4f789e53ba894708d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d969c5282fa03fb11d108d2b2c8e0fe44dfde49
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80696628"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968453"
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
@@ -36,7 +36,7 @@ Acrylic 是一種能建立半透明紋理的 [Brush](https://docs.microsoft.com/
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>Acrylic 和 Fluent Design 系統
 
- Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 Acrylic 是 Fluent Design 系統元件，其能將實體紋理 (材質) 與深度加入應用程式。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](/windows/apps/fluent-design-system)。
+ Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 Acrylic 是 Fluent Design 系統元件，其能將實體紋理 (材質) 與深度加入應用程式。 若要深入了解，請參閱 [Fluent Design 概觀](/windows/apps/fluent-design-system)。
 
  ## <a name="video-summary"></a>影片摘要
 
@@ -102,7 +102,7 @@ Acrylic 最明顯的特徵就是它的透明度。 有兩種壓克力混合類�
 
 此外，在下列狀況中，只有背景壓克力會以純色取代其透明度與紋理：
  - 當桌面上的應用程式視窗停用時
- - 當 UWP 應用程式正在電話、Xbox、HoloLens 或平板電腦模式中執行時
+ - 當 Windows 應用程式正在電話、Xbox、HoloLens 或平板電腦模式中執行時
 
 ### <a name="legibility-considerations"></a>可讀性考量
 請務必確定您應用程式呈現給使用者的任何文字皆[符合對比率](../accessibility/accessible-text-requirements.md)。 我們已最佳化壓克力的配方，來使高彩黑色、白色，或甚至中彩的灰色文字都能在壓克力上方符合對比率。 由平台所提供的佈景主題資源預設為不透明度 80% 的對比色調色彩。 將高彩本文在壓克力上顯示時，您可以在降低色調不透明度的情況下保持可讀性。 在深色模式中，色調不透明度可以是 70%，而淺色模式壓克力將能在 50% 不透明度時符合對比率。

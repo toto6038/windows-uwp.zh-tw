@@ -1,19 +1,19 @@
 ---
-title: 通用 Windows 平台 (UWP) 應用程式中的命令
+title: Windows 應用程式中的命令
 description: 如何使用 XamlUICommand 和 StandardUICommand 類別 (連同 ICommand 介面) 來共用及管理各種控制項類型的命令 (不論所使用的裝置和輸入類型為何)。
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 2ad2a84a78006eafcdfa47d1faef533bea2224ff
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 24df2f6c67fe5a501461d5ce5e9c18a147c54672
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81123593"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968763"
 ---
-# <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 的通用 Windows 平台 (UWP) 應用程式中的命令
+# <a name="commanding-in-windows-app-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 的 Windows 應用程式中的命令
 
-本主題中，我們說明通用 Windows 平台 (UWP) 應用程式中的命令。 我們特別討論如何使用 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 類別 (連同 ICommand 介面) 來共用及管理各種控制項類型的命令 (不論所使用的裝置和輸入類型為何)。
+我們在本主題中說明 Windows 應用程式中的命令。 我們特別討論如何使用 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 類別 (連同 ICommand 介面) 來共用及管理各種控制項類型的命令 (不論所使用的裝置和輸入類型為何)。
 
 ![表示共用命令一般使用方式的圖表：具有「最愛」命令的多個 UI 介面](images/commanding/generic-commanding.png)
 
@@ -67,9 +67,9 @@ ms.locfileid: "81123593"
 
 **一律提供操作功能表** 我們建議在傳統操作功能表或 CommandBarFlyout 中包含所有相關的關聯式命令，因為所有輸入類型都支援這兩者。 比方說，如果某個命令僅在指標暫留事件期間公開，它就無法在只能觸控的裝置上使用。
 
-## <a name="commands-in-uwp-applications"></a>UWP 應用程式中的命令
+## <a name="commands-in-windows-applications"></a>Windows 應用程式中的命令
 
-您可以使用一些方式來共用及管理 UWP 應用程式中的命令體驗。 您可以在程式碼後置中定義適用於標準互動 (例如 Click ) 的事件處理常式 (視您的 UI 複雜度而定，這可能相當沒有效率)、可以將適用於標準互動的事件接聽程式繫結至共用處理常式，也可以將控制項的 Command 屬性繫結至可描述命令邏輯的 ICommand 實作。
+您可以使用一些方式來共用及管理 Windows 應用程式中的命令體驗。 您可以在程式碼後置中定義適用於標準互動 (例如 Click ) 的事件處理常式 (視您的 UI 複雜度而定，這可能相當沒有效率)、可以將適用於標準互動的事件接聽程式繫結至共用處理常式，也可以將控制項的 Command 屬性繫結至可描述命令邏輯的 ICommand 實作。
 
 若要透過命令介面和最少的程式碼複製，有效率地提供豐富且完整的使用者體驗，我們建議使用本主題所述的命令繫結功能 (如需標準事件處理，請參閱個別的事件主題)。
 
@@ -614,7 +614,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 ## <a name="command-experiences-using-the-icommand-interface"></a>使用 ICommand 介面的命令體驗
 
-標準 UWP 控制項 (按鈕、清單、選取項目、行事曆、預測文字) 提供許多常見命令體驗的基礎。 如需完整的控制項類型清單，請參閱[適用於 UWP 應用程式的控制項和模式](index.md)。
+標準 UWP 控制項 (按鈕、清單、選取項目、行事曆、預測文字) 提供許多常見命令體驗的基礎。 如需完整的控制項類型清單，請參閱[適用於 Windows 應用程式的控制項和模式](index.md)。
 
 支援結構化命令體驗的最基本方式就是定義 ICommand 介面實作 (適用於 C++ 的 [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)或適用於 C# 的 [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand))。  此 ICommand 執行個體可以接著繫結至按鈕等控制項。
 
@@ -1087,7 +1087,7 @@ namespace UICommand1
 
 通用 Windows 平台提供強大且富有彈性的命令系統，可讓您建置應用程式來共用及管理各種控制項類型、裝置和輸入類型的命令。
 
-建立 UWP 應用程式的命令時，請使用下列方法：
+建立 Windows 應用程式的命令時，請使用下列方法：
 
 - 在 XAML/程式碼後置中接聽和處理事件
 - 繫結至事件處理常式方法，例如 Click
@@ -1101,7 +1101,7 @@ namespace UICommand1
 
 ## <a name="see-also"></a>另請參閱
 
-[適用於 UWP 應用程式的控制項和模式](index.md)
+[適用於 Windows 應用程式的控制項和模式](index.md)
 
 ### <a name="samples"></a>範例
 

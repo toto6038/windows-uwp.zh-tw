@@ -7,16 +7,16 @@ keywords: windows 10, uwp
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 249291c59a31036fa967ac338209404557b57503
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 33a5f0bc31a8fe1421f7ab0de5f229d2feb77915
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66215168"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730131"
 ---
 # <a name="using-the-visual-layer-in-desktop-apps"></a>在傳統型應用程式中使用視覺層
 
-您現在可以在非 UWP 傳統型應用程式中使用 UWP API，來增強您的 WPF、Windows Forms 和 C++ Win32 應用程式的外觀、風格及功能，並且利用只能透過 UWP 取用的最新 Windows 10 UI 功能。
+您現在可以在非 UWP 傳統型應用程式中使用 Windows 執行階段 API，來增強您的 WPF、Windows Forms 和 C++ Win32 應用程式的外觀、風格及功能，並且利用只能透過 UWP 取用的最新 Windows 10 UI 功能。
 
 在許多情況下，您可使用 [XAML Islands](xaml-islands.md)，將新式 XAML 控制項新增至您的應用程式。 不過，當您需要建立超越內建控制項的自訂體驗時，可以存取視覺層 API。
 

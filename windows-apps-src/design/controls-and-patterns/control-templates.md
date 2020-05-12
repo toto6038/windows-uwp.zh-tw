@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d0c2f5c5aa6c5d5bfcaee8e9b0ec14bbcd4ff3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8ed4515a90df50a1ff8c0d6b82eb8cda5a4a78c9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71339379"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968743"
 ---
 # <a name="control-templates"></a>控制項範本
 
@@ -186,7 +186,7 @@ ms.locfileid: "71339379"
 
 ## <a name="controls-and-accessibility"></a>控制項和協助工具
 
-當您建立控制項的新範本時，除了可能變更控制項的行為和視覺外觀，還可能變更控制項本身在協助工具架構的表現方式。 通用 Windows 平台 (UWP) 支援 Microsoft 使用者介面自動化的協助工具架構。 所有預設控制項和其範本都支援適用於控制項的目的和功能的一般 UI 自動化控制項類型和模式。 這些控制項類型和模式都由 UI 自動化用戶端 (例如，輔助技術) 解譯，而且這可以讓控制項做為大型無障礙應用程式 UI 的一部分加以存取。
+當您建立控制項的新範本時，除了可能變更控制項的行為和視覺外觀，還可能變更控制項本身在協助工具架構的表現方式。 Windows 應用程式支援 Microsoft UI 自動化的協助工具架構。 所有預設控制項和其範本都支援適用於控制項的目的和功能的一般 UI 自動化控制項類型和模式。 這些控制項類型和模式都由 UI 自動化用戶端 (例如，輔助技術) 解譯，而且這可以讓控制項做為大型無障礙應用程式 UI 的一部分加以存取。
 
 為了區隔基本的控制項邏輯，同時滿足一些 UI 自動化的架構需求，控制項類別會在獨立的類別 (自動化對等) 中包含協助工具支援。 自動化對等有時會與控制項範本互動，因為對等預期範本中會有某些已命名的部分，因此可能會有啟用輔助技術來叫用按鈕動作這類功能。
 

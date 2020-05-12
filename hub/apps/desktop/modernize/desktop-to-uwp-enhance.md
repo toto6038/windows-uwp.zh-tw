@@ -1,6 +1,6 @@
 ---
-Description: 使用通用 Windows 平台 (UWP) API 增強適用於 Windows 10 使用者的傳統型應用程式。
-title: 在傳統型應用程式中使用 UWP API
+Description: 使用 Windows 執行階段 API 增強適用於 Windows 10 使用者的傳統型應用程式。
+title: 在傳統型應用程式中呼叫 Windows 執行階段 API
 ms.date: 08/20/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,24 +8,24 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 78d9760c5ef21b29d09babaace0f4379b6a51209
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 444699c00a17dd90fe4c08c44ff56d540cadb3d6
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302602"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729862"
 ---
-# <a name="call-uwp-apis-in-desktop-apps"></a>在傳統型應用程式中呼叫 UWP API
+# <a name="call-windows-runtime-apis-in-desktop-apps"></a>在傳統型應用程式中呼叫 Windows 執行階段 API
 
 您可以使用通用 Windows 平台 (UWP) API，在您的傳統型應用程式中加入讓 Windows 10 使用者驚艷的現代化體驗。
 
-首先，使用必要的參考來設定您的專案。 然後，從您的程式碼呼叫 UWP API，以將 Windows 10 體驗加入您的傳統型應用程式。 您可以針對 Windows 10 使用者另行建置，也可以散發相同的二進位碼給所有使用者，無論他們執行什麼 Windows 版本。
+首先，使用必要的參考來設定您的專案。 然後，從您的程式碼呼叫 Windows 執行階段 API，以將 Windows 10 體驗加入您的傳統型應用程式。 您可以針對 Windows 10 使用者另行建置，也可以散發相同的二進位碼給所有使用者，無論他們執行什麼 Windows 版本。
 
-某些 UWP API 僅在具有[套件識別資料](modernize-packaged-apps.md)的傳統型應用程式中才支援。 如需詳細資訊，請參閱[可用的 UWP API](desktop-to-uwp-supported-api.md)。
+某些 Windows 執行階段 API 僅在具有[套件識別資料](modernize-packaged-apps.md)的傳統型應用程式中才支援。 如需詳細資訊，請參閱[可用的 Windows 執行階段 API](desktop-to-uwp-supported-api.md)。
 
 ## <a name="set-up-your-project"></a>設定專案
 
-您必須對您的專案進行一些變更，以便使用 UWP API。
+您必須對您的專案進行一些變更，以便使用 Windows 執行階段 API。
 
 ### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>修改 .NET 專案以使用 Windows 執行階段 API
 

@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f5f38fdfb3ba9fd32a6e06ec19cdbfb6c3b09f24
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d79d4f3394bcf8f7892f2c6dc3d4e0ca72972ab
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867679"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970603"
 ---
 # <a name="writing-style"></a>撰寫樣式
 
@@ -103,7 +103,7 @@ ms.locfileid: "68867679"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)通用 Windows 平台 (UWP) 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。 運用每個 UWP 應用程式中所包含的設計功能，您可以建置可在一系列裝置上縮放的使用者介面 (UI)。
+![可行事項](images/do.svg) Windows 應用程式設計指引可以協助您設計和建立美觀、優雅的應用程式。 運用每個 Windows 應用程式中所包含的設計功能，您可以建置可在一系列裝置上縮放的使用者介面 (UI)。
     :::column-end:::
     :::column:::
     :::column-end:::

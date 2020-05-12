@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7c21e5e6305c7b2941b46db562c93da0fdfe39
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5ae8094ac3fbb1de8958b1cc138953d3e1b887cc
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684380"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970383"
 ---
 # <a name="masterdetails-pattern"></a>主要/詳細資料模式
 
@@ -24,6 +24,9 @@ ms.locfileid: "75684380"
 > **重要 API**：[ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![主要/詳細資料模式的範例](images/HIGSecOne_MasterDetail.png)
+
+> [!TIP]
+> 如果您想使用為您實作此模式的 XAML 控制項，建議使用 Windows 社群工具組中的 [MasterDetailsView XAML 控制項](/windows/communitytoolkit/controls/masterdetailsview)。
 
 ## <a name="is-this-the-right-pattern"></a>這是正確的模式嗎？
 
@@ -61,7 +64,7 @@ ms.locfileid: "75684380"
 
 對於詳細資料檢視頁面，請使用最適合的[內容元素](../layout/layout-panels.md)。 如果您有許多個別的欄位，請考慮使用**格線**配置來將元素排列成表單。
 
-如需在頁面之間瀏覽，請參閱[適用於 UWP 應用程式的瀏覽歷程記錄和向後瀏覽](../basics/navigation-history-and-backwards-navigation.md)。
+如需在頁面之間瀏覽，請參閱[適用於 Windows 應用程式的瀏覽歷程記錄和向後瀏覽](../basics/navigation-history-and-backwards-navigation.md)。
 
 ## <a name="side-by-side-style"></a>並排樣式
 
@@ -98,6 +101,9 @@ ms.locfileid: "75684380"
 - [Windows Template Studio 主要/詳細資料範例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS 閱讀程式範例](https://github.com/Microsoft/Windows-appsample-rssreader)
+
+> [!TIP]
+> 如果您想使用為您實作此模式的 XAML 控制項，建議使用 Windows 社群工具組中的 [MasterDetailsView XAML 控制項](/windows/communitytoolkit/controls/masterdetailsview)。
 
 ## <a name="related-articles"></a>相關文章
 

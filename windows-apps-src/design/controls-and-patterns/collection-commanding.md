@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b97041e305cfaac2a5fe202212741a282dccdb54
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63801180"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968873"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>集合和清單的關聯式命令功能
 
@@ -31,7 +31,7 @@ ms.locfileid: "63801180"
 
 ## <a name="creating-commands-for-all-input-types"></a>建立所有輸入類型的命令
 
-由於使用者可使用[各式各樣的裝置和輸入方式](../devices/index.md)與 UWP 應用程式進行互動，建議同時採用不限輸入類型的操作功能表，以及限定輸入類型的快速操作方式，讓您的應用程式公開命令。 兼採上述兩種公開方式，使用者就能迅速對內容叫用命令，無論使用何種輸入類型或裝置類型皆可。
+由於使用者可使用[各式各樣的裝置和輸入方式](../devices/index.md)與 Windows 應用程式進行互動，建議同時採用不限輸入類型的操作功能表，以及限定輸入類型的快速操作方式，讓您的應用程式公開命令。 兼採上述兩種公開方式，使用者就能迅速對內容叫用命令，無論使用何種輸入類型或裝置類型皆可。
 
 下表列出了一些常見的集合命令，以及公開這些命令的方式。 
 
@@ -445,7 +445,7 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
-* 請確定使用者可以用所有類型的 UWP 裝置存取全部的命令。
+* 請確定使用者可以用所有類型的 Windows 裝置存取全部的命令。
 * 請務必加入操作功能表，讓使用者得以存取集合項目的所有可用命令。 
 * 請務必提供常用命令的輸入快速操作功能。 
 * 請務必使用 [ICommand 介面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)來實作命令。 

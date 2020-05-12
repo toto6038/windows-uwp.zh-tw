@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: fdb06581639391c09c445c8497f67af28a8405df
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c9b2c270538ec49a139b88fb1c7eddb92acad10a
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685017"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730098"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) 應用程式？
 
@@ -152,6 +152,6 @@ Microsoft 設計系統命名為 Fluent。 Fluent Design 系統是一組與最佳
 
 Windows 執行階段和 WinRT API 是 Windows API 的進化版。 起初，Windows 透過一般、C 樣式 Win32 API 撰寫程式。 新增的 COM API ([DirectX](https://docs.microsoft.com/windows/desktop/directx) 是明顯的範例)。 Windows Forms、WPF、.NET 和受控語言有其自己撰寫 Windows 應用程式的方式，以及自己喜好的 API 技術。 Windows 執行階段實際上是 COM 的下一個階段。 在實際的應用程式二進位介面 (ABI) 層，其在 COM 中的根目錄會變成可見。 但是，Windows 執行階段的設計訴求是可從各種不同的程式設計語言進行呼叫。 而且能夠以對每種語言都很自然的方式呼叫。 為了這個目的，可透過所謂的語言投影存取 Windows 執行階段。 Windows 執行階段語言投影成 C#、Visual Basic、標準 C++、JavaScript 等等。 此外，適當封裝後 (請參閱[傳統型橋接器](/windows/uwp/porting/desktop-to-uwp-root))，您可以從某個應用程式模型內建的應用程式呼叫 WinRT API：Win32、.NET、WinForms 和 WPF。
 
-您當然可以從您的 UWP 應用程式呼叫 WinRT API。 UWP 是以 Windows 執行階段為基礎的應用程式模型。 在技術上，UWP 應用程式模型是以 [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication) 為基礎，不過視您所選擇的程式設計語言而定，您可能看不到細節。 如本主題所闡述，從價值主張的觀點來看，UWP 適合用於撰寫可發佈至 Microsoft Store 並在任何一種裝置板型規格上執行的單一二進位檔。 UWP 應用程式的裝置範圍取決於您限制您的應用程式呼叫或您有條件呼叫的 UWP API 子集。
+您當然可以從您的 UWP 應用程式呼叫 WinRT API。 UWP 是以 Windows 執行階段為基礎的應用程式模型。 在技術上，UWP 應用程式模型是以 [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication) 為基礎，不過視您所選擇的程式設計語言而定，您可能看不到細節。 如本主題所闡述，從價值主張的觀點來看，UWP 適合用於撰寫可發佈至 Microsoft Store 並在任何一種裝置板型規格上執行的單一二進位檔。 UWP 應用程式的裝置範圍取決於您限制您的應用程式呼叫或您有條件呼叫的 Windows 執行階段 API 子集。
 
 希望這一節已成功地說明技術基礎 Windows 執行階段 API，以及通用 Windows 平台的機制與商業價值之間的差異。

@@ -1,16 +1,16 @@
 ---
-Description: UWP 應用程式中表單的版面配置指導方針。
+Description: Windows 應用程式中表單的版面配置指導方針。
 title: 表單
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: b6533864748b4245b16ec7bcea9d2a831ff1c88a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 69ffaf4ff67d4ee78e78c195d759ae242a069e8e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76520443"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968509"
 ---
 # <a name="forms"></a>表單
 表單是一組控制項，會收集和提交使用者的資料。 表單通常用於 [設定] 頁面、問卷調查、建立帳戶等等。 
@@ -62,7 +62,7 @@ ms.locfileid: "76520443"
 
 若要[進行協助工具設計](../accessibility/accessibility.md)，請標記所有個別控制項和控制項群組，讓人類讀者和螢幕助讀程式都能清楚明確地使用。 
 
-對於字型樣式，請使用預設 [UWP 字體坡形](../style/typography.md)。 將 `TitleTextBlockStyle` 使用於頁面標題，將 `SubtitleTextBlockStyle` 使用於群組標題，以及將 `BodyTextBlockStyle` 使用於控制項標籤。
+對於字型樣式，請使用預設 [Windows 字體坡形](../style/typography.md)。 將 `TitleTextBlockStyle` 使用於頁面標題，將 `SubtitleTextBlockStyle` 使用於群組標題，以及將 `BodyTextBlockStyle` 使用於控制項標籤。
 
 <div class="mx-responsive-img">
 <table>
@@ -149,7 +149,7 @@ ms.locfileid: "76520443"
 ### <a name="additional-controls"></a>其他控制項 
 如需 UWP 控制項的完整清單，請參閱[依函式排序的控制項索引](controls-by-function.md)。
 
-如需更多複雜和自訂 UI 控制項，請查看各家公司所提供的 UWP 資源，例如 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/uwp-ui-controls)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP) 及 [ActiPro](https://www.actiprosoftware.com/products/controls/universal)。
+如需更多複雜和自訂 UI 控制項，請查看各家公司所提供的資源，例如 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/uwp-ui-controls)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP) 及 [ActiPro](https://www.actiprosoftware.com/products/controls/universal)。
 
 ## <a name="one-column-form-example"></a>一欄表單範例
 這個範例會使用 Acrylic [主要/詳細資料](master-details.md)[清單檢視](lists.md)和 [NavigationView](navigationview.md) 控制項。

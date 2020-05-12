@@ -7,12 +7,12 @@ ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dc23e86f85c5db3dd10c5cec152047be387d4513
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9ee88e32ed0ce0fd193fe79e48814a11f494d062
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72282287"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970213"
 ---
 # <a name="attached-layouts"></a>附加的版面配置
 
@@ -22,7 +22,7 @@ ms.locfileid: "72282287"
 
 | **取得 Windows UI 程式庫** |
 | - |
-| 此控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項和 UI 功能的 NuGet 封裝。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/) \(英文\)。 |
+| 此控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **重要 API**：
 

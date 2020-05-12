@@ -1,7 +1,7 @@
 ---
 author: knicholasa
 description: Z 深度 (即相對深度) 以及陰影，是兩種在應用程式中呈現深度的方式，有助於使用者自然且有效率地對焦。
-title: UWP 應用程式的 Z 深度與陰影
+title: Windows 應用程式的 Z 深度與陰影
 template: detail.hbs
 ms.date: 04/19/2019
 ms.topic: article
@@ -9,18 +9,18 @@ ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 216974ba564a192f94473469f3a7a49191ef2192
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2655abd69f0f02efada9de5bab22e463c86b5d7e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081391"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970183"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度和陰影
 
 ![gif 顯示四個以對角線方式堆疊的灰色矩形，互相交疊。 gif 顯示動畫效果，呈現陰影明滅。](images/elevation-shadow/shadow.gif)
 
-在 UI 中建立元素的視覺階層，可讓 UI 輕鬆掃描並傳達應該聚焦的重要事項。 系統往往會運用立體高度 (強調 UI 的重要元素) 在軟體中達到階層效果。 本文探討如何使用 z 深度和陰影在 UWP 應用程式中建立立體高度。
+在 UI 中建立元素的視覺階層，可讓 UI 輕鬆掃描並傳達應該聚焦的重要事項。 系統往往會運用立體高度 (強調 UI 的重要元素) 在軟體中達到階層效果。 本文探討如何使用 z 深度和陰影在 Windows 應用程式中建立立體高度。
 
 Z 深度是在 3D 應用程式製作者之間通用的詞彙，用來表示沿著 Z 軸的兩個表面之間的距離， 展現了物件與檢視者之間有多近。 可以將其視為類似於 x/y 座標的概念，但為 z 的方向。
 
@@ -32,7 +32,7 @@ Z 深度是在 3D 應用程式製作者之間通用的詞彙，用來表示沿�
 
 陰影是使用者感知立體高度圖的一種方式。 高架物件上方的光線會在下方的表面上產生陰影。 物件越高，陰影面積變得越大且越柔和。 UI 中的高架物件不需要陰影，但是陰影有助於展現立體高度的外觀。
 
-在 UWP 應用程式中，應該基於明確的目的使用陰影，而非出於美觀。 使用太多陰影會降低或消除使用者透過陰影聚焦的能力。
+在 Windows 應用程式中，應該基於明確的目的使用陰影，而非出於美觀。 使用太多陰影會降低或消除使用者透過陰影聚焦的能力。
 
 如果使用標準控制項，則 ThemeShadow 陰影會自動合併到 UI 中。 不過，您可以使用 ThemeShadow 或 DropShadow API，在 UI 中手動加入陰影。 
 

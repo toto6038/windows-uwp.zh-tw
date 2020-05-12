@@ -1,6 +1,6 @@
 ---
-Description: 在通用 Windows 平台 (UWP) app 中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。
-title: UWP 應用程式的瀏覽基本知識
+Description: Windows 應用程式中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。
+title: Windows 應用程式的瀏覽基本知識
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
@@ -10,14 +10,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 137dbfe6471ee4d42e2a34e24512bdb658e985d0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4973ccaf066b2694412f04b09b8725da2fc31c36
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77463760"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969233"
 ---
-# <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
+# <a name="navigation-design-basics-for-windows-apps"></a>Windows 應用程式的瀏覽設計基本知識
 
 ![瀏覽基本知識標頭](images/nav/navigation-basics-header.jpg)
 

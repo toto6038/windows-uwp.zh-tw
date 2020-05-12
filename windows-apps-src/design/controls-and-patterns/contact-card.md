@@ -9,16 +9,16 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 36c8c6248b356bbb17da72b53b0480a27999b875
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 274481b2a282b025a637f7f6cc54dc0161c3e61d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74257688"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968753"
 ---
 # <a name="contact-card"></a>連絡人卡片
 
-連絡人卡片會顯示[連絡人](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (UWP 用來代表人員和企業的機制) 的連絡資訊，例如姓名、電話號碼和地址。  連絡人卡片也可讓使用者編輯連絡資訊。 您可以選擇顯示精簡的連絡人卡片，或是包含額外資訊的完整連絡人卡片。
+連絡人卡片會顯示[連絡人](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (Windows 用來代表人員和企業的機制) 的連絡資訊，例如姓名、電話號碼和地址。  連絡人卡片也可讓使用者編輯連絡資訊。 您可以選擇顯示精簡的連絡人卡片，或是包含額外資訊的完整連絡人卡片。
 
 > **重要 API**：[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)、[ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard)、[IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[Contact 類別](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 

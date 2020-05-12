@@ -1,24 +1,24 @@
 ---
 Description: 每個 UWP 應用程式都具有通用設計功能，可協助組建出能在各種裝置上美觀縮放的應用程式。
-title: 通用 Windows 平台 (UWP) 應用程式設計簡介 (Windows 應用程式)
+title: Windows 應用程式設計簡介 (Windows 應用程式)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d0e7ad60e8c709cf4a7b075b1d7307bbd61ed79c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209313"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969353"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 應用程式設計簡介
 
 ![範例光源應用程式](images/introUWP-header.jpg)
 
-通用 Windows 平台 (UWP) 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。
+Windows 應用程式設計指引可以協助您設計和建立美觀、優雅的應用程式。
 
 這不是一份詳盡規則的清單，這份文件會隨著不斷演進的 [Fluent Design 系統](/windows/apps/fluent-design-system)以及我們應用程式建置社群的需求改變。
 

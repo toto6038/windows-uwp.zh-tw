@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 824476cb098d0ff561fca67497a896586c70b8fb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 098c46499e65c34e3699b09e137ea94c40590ef7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75681959"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968004"
 ---
 # <a name="reveal-focus"></a>顯示焦點
 
@@ -168,7 +168,7 @@ ms.locfileid: "75681959"
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>顯示焦點和 Fluent Design 系統
 
-顯示焦點是能將光源加入應用程式中的 Fluent Design 系統元件。 若要深入了解 Fluent Design 系統及該系統的其他元件，請參閱[適用於 UWP 的 Fluent Design 概觀](/windows/apps/fluent-design-system)。
+顯示焦點是能將光源加入應用程式中的 Fluent Design 系統元件。 若要深入了解 Fluent Design 系統及該系統的其他元件，請參閱 [Fluent Design 概觀](/windows/apps/fluent-design-system)。
 
 ## <a name="related-articles"></a>相關文章
 

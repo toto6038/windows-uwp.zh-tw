@@ -1,6 +1,6 @@
 ---
-Description: 在通用 Windows 平台 (UWP) app 中，命令元素是讓使用者執行動作，例如傳送電子郵件、刪除項目，或提交表單的互動式 UI 元素。
-title: Universal Windows Platform (UWP) app 的命令設計基本知識
+Description: 在 Windows 應用程式中，命令元素是讓使用者執行動作，例如傳送電子郵件、刪除項目，或提交表單的互動式 UI 元素。
+title: Windows 應用程式的命令設計基本知識
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
@@ -10,16 +10,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6be51c274078d3b8db5ae50033bbf714ec4aa12a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 26d649e5a27ae7eef0131964f5c277f3539da73f
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081397"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969373"
 ---
-# <a name="command-design-basics-for-uwp-apps"></a>UWP 應用程式的命令設計基本知識
+# <a name="command-design-basics-for-windows-apps"></a>Windows 應用程式的命令設計基本知識
 
-在通用 Windows 平台 (UWP) 應用程式中，「命令元素」  是讓使用者執行動作 (例如傳送電子郵件、刪除項目，或提交表單) 的互動式 UI 元素。 「命令介面」  是由常見命令元素、將其裝載的命令介面、其所支援的互動，以及它們所提供的體驗所組成。
+在 Windows 應用程式中，「命令元素」  是讓使用者執行動作 (例如傳送電子郵件、刪除項目，或提交表單) 的互動式 UI 元素。 「命令介面」  是由常見命令元素、將其裝載的命令介面、其所支援的互動，以及它們所提供的體驗所組成。
 
 ## <a name="provide-the-best-command-experience"></a>提供最佳的命令體驗
 
@@ -33,7 +33,7 @@ ms.locfileid: "80081397"
 - 開啟、儲存和刪除檔案
 - 編輯或建立內容
 
-您的命令體驗的設計要有創意。 選擇您的應用程式支援的輸入裝置，以及您的應用程式回應每個裝置的方式。 透過支援最廣泛的功能和喜好設定，盡可能讓您的應用程式可使用、可攜性及可存取 (如需詳細資訊，請參閱[通用 Windows 平台 (UWP) 應用程式的命令設計](../controls-and-patterns/commanding.md))。
+您的命令體驗的設計要有創意。 選擇您的應用程式支援的輸入裝置，以及您的應用程式回應每個裝置的方式。 透過支援最廣泛的功能和喜好設定，盡可能讓您的應用程式可使用、可攜性及可存取 (如需詳細資訊，請參閱 [Windows 應用程式的命令設計](../controls-and-patterns/commanding.md))。
 
 
 
@@ -43,7 +43,7 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="choose-the-right-command-elements"></a>選擇正確的命令元素
 
-在命令介面中使用正確的元素，可以讓人感覺出應用程式是直覺易用的，還是混亂難用的應用程式。 通用 Windows 平台 (UWP) 有一組完整的命令元素可用。 以下是一些常用的 UWP 命令元素清單。
+在命令介面中使用正確的元素，可以讓人感覺出應用程式是直覺易用的，還是混亂難用的應用程式。 Windows 應用程式中有一組完整的命令元素可用。 以下是一些常用的 UWP 命令元素清單。
 
 :::row:::
     :::column:::

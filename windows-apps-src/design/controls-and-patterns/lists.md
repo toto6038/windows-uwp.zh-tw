@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 75bc81f4295fb76f5a7cc61b3cadd1496f57dc4c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9896003fb1d55a2dbb57468848edd66a3d8d8d88
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80893478"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970393"
 ---
 # <a name="collections-and-lists"></a>集合和清單
 
@@ -41,7 +41,7 @@ ms.locfileid: "80893478"
 
 本文未涵蓋的其中一個案例是在資料表中或跨多個資料欄顯示集合。 如果您想要以這種格式顯示集合，請考慮使用 [Windows 社群工具組](https://docs.microsoft.com/windows/communitytoolkit/)中的 [DataGrid 控制項](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid)。 
 
-> **Windows 10 Fall Creators 更新 - 行為變更**根據預設，主動式手寫筆現在會在 UWP 應用程式中捲動/移動瀏覽清單 (如同觸控、觸控板和被動式手寫筆)，而不會執行選取。
+> **Windows 10 Fall Creators 更新 - 行為變更**根據預設，主動式手寫筆現在會在 Windows 應用程式中捲動/移動瀏覽清單 (如同觸控、觸控板和被動式手寫筆)，而不會執行選取。
 > 如果您的應用程式需仰賴先前的行為，則可以覆寫手寫筆捲動並還原至先前的行為。 如需詳細資料，請參閱針對 [ScrollViewer 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) 的 API 參照主題。
 
 ## <a name="examples"></a>範例

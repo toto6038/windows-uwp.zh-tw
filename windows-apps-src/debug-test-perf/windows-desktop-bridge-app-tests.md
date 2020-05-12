@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ffd500f3b616367ac26dffbbfc03d43b507dac
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 37c382fb81a4527b730840142643ff72b9020127
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089404"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730298"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
@@ -37,7 +37,7 @@ ms.locfileid: "77089404"
 此測試會掃描套件登錄，確認是否登錄任何檔案關聯動詞。 
 
 **測試詳細資料**  
-運用各式各樣的通用 Windows 平台 API，可以增強已轉換的傳統型應用程式。 此測試會檢查應用程式中的 UWP 二進位檔案未呼叫非 UWP API。 UWP 二進位檔案已設定 **AppContainer** 旗標。
+運用各式各樣的 Windows 執行階段 API，可以增強已轉換的傳統型應用程式。 此測試會檢查應用程式中的 UWP 二進位檔案未呼叫非 Windows 執行階段 API。 UWP 二進位檔案已設定 **AppContainer** 旗標。
 
 **修正動作**  
 請參閱[傳統型轉 UWP 橋接器：應用程式延伸模組](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) \(部分機器翻譯\)，以取得這些延伸模組的解釋，以及如何正確地使用它們。 

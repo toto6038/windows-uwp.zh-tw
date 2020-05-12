@@ -6,14 +6,18 @@ ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8db29561afa06a2f6a2be67565d59e9387240d1c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 29c6609a2e57abede7fe606be8c028e503270d4c
+ms.sourcegitcommit: f910b29d35ac7afd0b759640bcac1d2fee399b3d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74259198"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82973274"
 ---
 # <a name="network-communications-in-the-background"></a>背景網路通訊
+
+> [!NOTE]
+> **針對發行前產品的部分相關資訊，在產品正式發行時可能會有大幅修改。Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
+
 若要繼續網路通訊 (雖然它不在前景)，您的應用程式可以使用背景工作及這兩個選項之一。
 - 通訊端代理程式。 如果您的應用程式使用通訊端進行長期連線，當它離開前景時，即可將通訊端的擁有權委派給系統通訊端代理程式。 當流量抵達通訊端時，代理程式就會啟動應用程式，將擁有權移轉回應用程式，接著應用程式會處理抵達的流量。
 - 控制通道觸發程序。 
@@ -160,6 +164,10 @@ case SocketActivityTriggerReason.SocketClosed:
 如果使用 WebSockets、[**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2)、[**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 或 [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient)，您必須使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
 
 ## <a name="controlchanneltrigger-with-websockets"></a>ontrolChannelTrigger 搭配 WebSockets
+
+> [!IMPORTANT]
+> SDK 的 10.0.15063.0 版及更早版本支援本節所述的功能 (**ontrolChannelTrigger 搭配 WebSockets**)。 [Windows 10 Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK) 的發行前版本也支援此功能。
+
 使用 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，有一些特殊考量。 在使用 **MessageWebSocket** 或 **StreamWebSocket** 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 **StreamWebSocket** 接收封包要求的處理方式。 在 **MessageWebSocket** 接收封包的要求不會受到影響。
 
 在使用 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 搭配 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 時，應遵循下列使用模式與最佳做法：

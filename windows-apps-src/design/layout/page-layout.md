@@ -1,29 +1,29 @@
 ---
-title: UWP 應用程式的頁面配置
-description: 設計您的應用程式時，首先要考慮的事項是版面配置結構。 本文涵蓋基本頁面配置的通用結構，包括您需要的 UI 元素，以及它們在頁面上的位置。 在 UWP 應用程式中，每個頁面通常都會有導覽、命令和內容元素。
+title: 適用於 Windows 應用程式的頁面配置
+description: 設計您的應用程式時，首先要考慮的事項是版面配置結構。 本文涵蓋基本頁面配置的通用結構，包括您需要的 UI 元素，以及它們在頁面上的位置。 在 Windows 應用程式中，每個頁面通常都有瀏覽、命令和內容元素。
 ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 7333cebc945715412e3ff1140ca26e1ed5368704
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3dbdf8d006472c288369fd528e89663aca5a9e10
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684541"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970883"
 ---
 # <a name="page-layout"></a>頁面配置
 
-在 UWP 應用程式中，每個 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) (頁面) 通常都會有導覽、命令和內容元素。 
+在 Windows 應用程式中，每個 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) (頁面) 通常都有瀏覽、命令和內容元素。 
 
-您的應用程式可以有多個頁面：當使用者啟動 UWP 應用程式時，應用程式程式碼會建立一個 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) (框架)，放在應用程式的 [**Window**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) (視窗) 中。 然後，Frame 可以在應用程式的 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 實例之間[導覽](../basics/navigate-between-two-pages.md)。 
+您的應用程式可以有多個頁面：當使用者啟動 Windows 應用程式時，應用程式程式碼會建立一個 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) (框架)，放在應用程式的 [**Window**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) (視窗) 中。 然後，Frame 可以在應用程式的 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 實例之間[導覽](../basics/navigate-between-two-pages.md)。 
 
 大部分的頁面都遵循通用的版面配置結構，本文涵蓋您需要的 UI 元素，以及它們在頁面上的位置。 
 
 ![頁面結構](images/page-components.svg)
 
 ## <a name="navigation"></a>瀏覽
-您的應用程式版面配置是從您選擇的導覽模型開始，這會定義您的使用者如何在應用程式的頁面之間導覽。 在本文中，我們將討論兩個常見的導覽模式：左側導覽和頂端導覽。 如需選擇其他導覽選項的指引，請參閱 [UWP 應用程式的導覽設計基本知識](../basics/navigation-basics.md)。
+您的應用程式版面配置是從您選擇的導覽模型開始，這會定義您的使用者如何在應用程式的頁面之間導覽。 在本文中，我們將討論兩個常見的導覽模式：左側導覽和頂端導覽。 如需選擇其他瀏覽選項的指引，請參閱 [Windows 應用程式的瀏覽設計基本知識](../basics/navigation-basics.md)。
 
 ![頂端和左側導覽模式](images/top-left-nav.svg)
 
@@ -91,7 +91,7 @@ ms.locfileid: "75684541"
 [表單](../controls-and-patterns/forms.md)是一組控制項，會收集和提交使用者的資料。 大多數 (即使不是全部) 應用程式都會在設定頁面上、登入入口網站、意見反應中樞、帳戶建立或基於其他目的使用某種表單。 
 
 ## <a name="sample-apps"></a>範例應用程式
-若要瞭解如何執行這些模式，請看我們的 [UWP 範例應用程式](https://developer.microsoft.com/windows/samples)：
+若要了解如何執行這些模式，請看我們的 [Windows 範例應用程式](https://developer.microsoft.com/windows/samples)：
 - [BuildCast 影片播放器](https://github.com/Microsoft/BuildCast)
 - [Lunch Scheduler (午餐排程器)](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
 - [Coloring Book (著色本)](https://github.com/Microsoft/Windows-appsample-coloringbook)

@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, COM, 元件, 類別, 介面
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a286056fc0c44d01482e23e52df0fa80eca0515
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 1b6ce3ce56b4afbf4c45b406c8af369bee4b55bb
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218518"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619322"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>使用 C++/WinRT 取用 COM 元件
 
@@ -127,7 +127,13 @@ winrt::check_hresult(D2D1CreateFactory(
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>採用 **IUnknown** 介面指標的 COM 函式
 
-您可以呼叫 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) 免費函式來將 **com_ptr** 傳遞給採用 **IUnknown** 介面指標的函式。 如需程式碼範例，請參閱該主題。
+您可以使用 [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function) 將 **com_ptr** 傳遞給採用 **IUnknown** 介面指標的函式。
+
+您可以使用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) 免費函式，傳回投影類型物件的基礎原始 [IUnknown 介面](/windows/win32/api/unknwn/nn-unknwn-iunknown) 位址 (換句話說，就是指標)。 然後，將該位址傳遞給採用 **IUnknown** 介面指標的函式。
+
+如需「投影類型」  相關資訊，請參閱[使用 C++/WinRT 取用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
+
+如需 **get_unknown** 的程式碼範例，請參閱 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown)，或本主題中[極簡 Direct2D 應用程式的完整原始程式碼清單](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application)。
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>傳遞及傳回 COM 智慧型指標
 

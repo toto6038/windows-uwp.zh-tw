@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a7ee8550b72356199645f54b587480275c2bcd
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 26e756b52d4faf18eff2fc684c7db94bca058642
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685086"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971073"
 ---
 # <a name="reveal-highlight"></a>顯示顯目提示
 
@@ -282,7 +282,7 @@ Reveal 會根據控制項、應用程式或使用者設定所要求的佈景主�
 
 ## <a name="reveal-and-the-fluent-design-system"></a>Reveal 和 Fluent Design 系統
 
- Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 Reveal 是能將光源加入應用程式中的 Fluent Design 系統元件。 若要深入了解，請參閱[適用於 UWP 的 Fluent Design 概觀](/windows/apps/fluent-design-system)。
+ Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 Reveal 是能將光源加入應用程式中的 Fluent Design 系統元件。 若要深入了解，請參閱 [Fluent Design 概觀](/windows/apps/fluent-design-system)。
 
 ## <a name="related-articles"></a>相關文章
 

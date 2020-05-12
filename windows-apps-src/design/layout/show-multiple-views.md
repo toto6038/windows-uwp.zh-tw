@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ee49b5fe5b5956e9069ea196c4d2e029b3a15763
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e7d6ea614a9d85eadfcb807c6e6100dbe15ed0c4
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68729513"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970733"
 ---
 # <a name="show-multiple-views-for-an-app"></a>顯示 app 的多重檢視
 
@@ -32,11 +32,11 @@ ms.locfileid: "68729513"
 
 每個 app 都有獨一無二的配置，不過建議在常見位置放置「新增視窗」按鈕，例如可於新視窗中開啟的內容右上角。 也請考慮納入 [操作功能表](../controls-and-patterns/menus.md) 選項，以「在新視窗中 開啟」。
 
-若要建立應用程式的個別執行個體 (而不是相同執行個體的個別視窗)，請參閱[建立多重執行個體 UWP 應用程式](../../launch-resume/multi-instance-uwp.md)。
+若要建立應用程式的個別執行個體 (而不是相同執行個體的個別視窗)，請參閱[建立多重執行個體 Windows 應用程式](../../launch-resume/multi-instance-uwp.md)。
 
 ## <a name="windowing-hosts"></a>視窗化主機
 
-UWP 內容可以透過不同方式裝載在 app 內。
+Windows 內容可透過不同方式裝載在應用程式內。
 
 - [CoreWindow](/uwp/api/windows.ui.core.corewindow)/[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)
 
@@ -47,7 +47,7 @@ UWP 內容可以透過不同方式裝載在 app 內。
     若要了解如何使用 ApplicationView 顯示 app 的次要視窗，請參閱[使用 ApplicationView](application-view.md)。
 - [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)
 
-    AppWindow 會在自身建立來源的同個 UI 執行緒上運作，因此可簡化多重視窗 UWP 應用程式的建立作業。
+    AppWindow 會在自身建立來源的同個 UI 執行緒上運作，因此可簡化多重視窗 Windows 應用程式的建立作業。
 
     從 Windows 10 版本 1903 (SDK 18362) 起，可使用 [WindowManagement](/uwp/api/windows.ui.windowmanagement) 命名空間中的 AppWindow 類別和其他 API。 如果您的 app 以舊版 Windows 10 為目標，請務必使用 ApplicationView 來建立次要視窗。
 
