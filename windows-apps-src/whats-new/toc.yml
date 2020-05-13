@@ -1,10 +1,15 @@
-- name: 適用於開發人員的 Windows 10 (組建 18362) 新功能
-  href: ../whats-new/windows-10-build-18362.md
+- name: 適用於開發人員的 Windows 10 (組建 19041) 新功能
+  href: ../whats-new/windows-10-build-19041.md
   items:
-    - name: Windows 10 (組建 18362) 中的 API 新增項目
-      href: ../whats-new/windows-10-build-18362-api-diff.md
+    - name: Windows 10 (組建 19041) 中的 API 新增項目
+      href: ../whats-new/windows-10-build-19041-api-diff.md
 - name: 舊版 Windows 10
   items:
+    - name: 適用於開發人員的 Windows 10 (組建 18362) 新功能
+      href: ../whats-new/windows-10-build-18362.md
+      items:
+        - name: Windows 10 (組建 18362) 中的 API 新增項目
+          href: ../whats-new/windows-10-build-18362-api-diff.md
     - name: 適用於開發人員的 Windows 10 (組建 17763) 的新功能
       href: ../whats-new/windows-10-build-17763.md
       items:

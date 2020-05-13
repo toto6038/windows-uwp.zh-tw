@@ -1,5 +1,5 @@
 ---
-Description: 認識支援 Windows App 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。
+Description: 認識支援 Windows 應用程式的裝置，可協助您針對各種外型規格提供最佳的使用者體驗。
 title: 適用於 Windows 裝置的 UI 考量
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
@@ -8,18 +8,18 @@ keywords: 裝置, 輸入, 互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 121025dc5e87e7e3953b9517144e36ab382795bb
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 37b77e62f14418611047a3af49bd15ed4f8094b4
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968204"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234877"
 ---
 #  <a name="ui-considerations-for-windows-devices"></a>適用於 Windows 裝置的 UI 考量
 
 ![裝置](../images/devices-2x.png)
 
-認識支援 Windows App 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。
+認識支援 Windows 應用程式的裝置，可協助您針對各種外型規格提供最佳的使用者體驗。
 
 ![執行 Windows 的裝置](images/device-primer/device-primer-ramp.png)
 

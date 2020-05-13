@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cc182d05b1cc02dd62f66506c12fcfcfc8a03952
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bb65acf606ffa44f075016720ebcd055ba5febc8
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969773"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234459"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Windows 應用程式的磚、徽章及通知
  
@@ -37,9 +37,9 @@ App 在 [開始] 功能表上以磚的形式顯示。 每個 Windows 應用程�
 | 文章 | 說明 |
 | --- | --- |
 | [建立磚](creating-tiles.md) | 自訂您的 App 的預設磚，並提供不同螢幕大小的資產。 |
-| [應用程式圖示資產](app-assets.md) | 以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比 Windows App 應用程式的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。 |
+| [應用程式圖示資產](app-assets.md) | 以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比 Windows 應用程式的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。 |
 | [主要磚 API](primary-tile-apis.md) | 要求釘選應用程式的主要磚，並檢查主要磚目前是否已釘選。 |
-| [磚內容](create-adaptive-tiles.md) | 磚通知內容是使用彈性指定 (Windows 10 中的新功能)，可讓您使用配合不同螢幕密度調整的簡易靈活標記語言，設計專屬的磚通知內容。 本文會告訴您如何為 Windows App 應用程式建立彈性動態磚。 |
+| [磚內容](create-adaptive-tiles.md) | 磚通知內容是使用調適型 (Windows 10 中的新功能) 所指定，可讓您使用配合不同螢幕密度調整的簡易靈活標記語言，設計專屬的磚通知內容。 本文會告訴您如何為 Windows 應用程式建立彈性動態磚。 |
 | [磚內容結構描述](../tiles-and-notifications/tile-schema.md) | 以下是用來建立彈性磚的元素和屬性。 |
 | [特殊的磚範本](special-tile-templates-catalog.md) | 特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。 |
 | [傳送本機磚通知](sending-a-local-tile-notification.md) | 了解如何傳送本機磚通知，並將豐富的動態內容新增至動態磚。 |
@@ -51,7 +51,7 @@ App 在 [開始] 功能表上以磚的形式顯示。 每個 Windows 應用程�
 | --- | --- |
 | [快顯通知](adaptive-interactive-toasts.md) | 調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。 |
 | [傳送本機快顯通知](send-local-toast.md) | 了解如何傳送互動式快顯通知。 |
-| [通知視覺化工具](notifications-visualizer.md) | 通知視覺化工具是 [Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) 中新的 Windows App 應用程式，可協助開發人員設計適用於 Windows 10 的彈性動態磚。 |
+| [通知視覺化工具](notifications-visualizer.md) | 通知視覺化工具是 [Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) 中新的 Windows 應用程式，可協助開發人員設計適用於 Windows 10 的彈性動態磚。 |
 | [選擇通知傳遞方法](choosing-a-notification-delivery-method.md) | 本文涵蓋四個通知選項：本機、排程、定期和推播，它們會傳遞磚和徽章更新及快顯通知內容。 |
 | [定期通知概觀](periodic-notification-overview.md) | 定期通知也稱為輪詢通知，可以在固定的時間間隔從雲端服務下載內容來更新磚和徽章。 |
 | [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md) | Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。 |

@@ -99,6 +99,8 @@
               href: ../audio-video-camera/dash-profile-support.md
         - name: 媒體傳播
           href: ../audio-video-camera/media-casting.md
+        - name: 啟用來自遠端藍牙連線裝置的音訊播放
+          href: ../audio-video-camera/enable-remote-audio-playback.md
         - name: PlayReady DRM
           href: ../audio-video-camera/playready-client-sdk.md
           items:
