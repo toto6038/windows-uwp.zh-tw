@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cd347b115a920c71ca1eb9b5f466adf05c69c64
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a1db38120252febefd55933fa106f473b3f920d8
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968243"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234859"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>指定語音辨識器語言
 
@@ -56,7 +56,7 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 已安裝的語言會隨著裝置而不同。 如果您要針對特定限制式來使用它，就應該確認該語言是否存在。
 
-**請注意**  ，安裝新的語言套件之後，需要重新開機。 如果指定的語言不受\_支援\_或尚未完成安裝，則會引發錯誤碼為 SPERR 找不到的例外狀況（0x8004503a）。
+**注意**   安裝新的語言套件之後，需要重新開機。 \_ \_ 如果指定的語言不受支援或尚未完成安裝，則會引發錯誤碼為 SPERR 找不到的例外狀況（0x8004503a）。
 
  
 

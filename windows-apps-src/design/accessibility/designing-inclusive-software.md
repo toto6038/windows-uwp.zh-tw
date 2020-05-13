@@ -1,5 +1,5 @@
 ---
-Description: 瞭解適用于 Windows 10 的 Windows app 應用程式的進化式內含性設計。  在設計和建置通用軟體時考量提供無障礙功能。
+Description: 瞭解適用于 Windows 10 之 Windows 應用程式的進化式內含性設計。  在設計和建置通用軟體時考量提供無障礙功能。
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: 設計適用於 Windows 10 的全人軟體
 label: Designing inclusive software
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f048d9d3541b52994713c8040c451a421df3e0a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: f7286394f68d6cda82581a825117f12ce98493ba
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969433"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234081"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>設計適用於 Windows 10 的全人軟體  
 
-瞭解適用于 Windows 10 的 Windows app 應用程式的進化式內含性設計。  在設計和建置通用軟體時考量提供無障礙功能。
+瞭解適用于 Windows 10 之 Windows 應用程式的進化式內含性設計。  在設計和建置通用軟體時考量提供無障礙功能。
 
 在 Microsoft，我們一直不斷發展我們的設計原則和做法。 這些可以說明我們的體驗如何呈現、操作、運作和表現。 我們的觀點一直不斷在進化。
 

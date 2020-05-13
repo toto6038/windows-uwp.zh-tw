@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: de18e77137941acfba6e9cb3fb6421de8fe156f0
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 5f7c124c1d77cbce140cb42cdc07682dad8f78f2
+ms.sourcegitcommit: 0f2ae8f97daac440c8e86dc07d11d356de29515c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730255"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280248"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 遊戲開發指南
 
@@ -119,7 +119,7 @@ Xbox Live 創作者計畫允許任何人將 Xbox Live 整合至其遊戲中，�
 
 您可以只使用零售硬體在創作者計畫中部署、設計和發佈您的遊戲，不需要專用的開發套件。 若要開始使用，請在您的 Xbox 在One 上下載[啟用開發人員模式 App](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation)。
 
-如果您想要存取更多 Xbox Live 功能、專屬的行銷和開發支援，以及在主要 Xbox One 市集中的機會，請套用至該[ID@Xbox](https://www.xbox.com/Developers/id)方案。
+如果您想要存取更多 Xbox Live 功能、專屬的行銷和開發支援，以及在主要 Xbox One 市集中的機會，請套用至該 [ID@Xbox](https://www.xbox.com/Developers/id) 方案。
 
 <table>
     <colgroup>
@@ -134,7 +134,7 @@ Xbox Live 創作者計畫允許任何人將 Xbox Live 整合至其遊戲中，�
 
 #### <a name="idxbox"></a>ID@Xbox
 
-ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上自行發行遊戲。 如果您想要為 Xbox One 開發遊戲，或是在您的 Windows 10 遊戲中新增 Xbox Live 功能 (例如玩家分數、成就及排行榜)，請向 ID@Xbox 註冊。 成為 ID@Xbox 開發人員以取得所需的工具與支援，讓您可以充分發揮您的創意並獲得最大的成功。 在合作夥伴中心註冊開發人員ID@Xbox帳戶之前，建議您先申請。
+ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上自行發行遊戲。 如果您想要為 Xbox One 開發遊戲，或是在您的 Windows 10 遊戲中新增 Xbox Live 功能 (例如玩家分數、成就及排行榜)，請向 ID@Xbox 註冊。 成為 ID@Xbox 開發人員以取得所需的工具與支援，讓您可以充分發揮您的創意並獲得最大的成功。 ID@Xbox在合作夥伴中心註冊開發人員帳戶之前，建議您先申請。
 
 <table>
     <colgroup>
@@ -218,7 +218,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Windows 遊戲範例 (MSDN Code Gallery)</td>
-        <td><a href="https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft">Microsoft Store 遊戲範例</a></td>
+        <td><a href="https://docs.microsoft.com/samples/browse/?term=games">Microsoft Store 遊戲範例</a></td>
     </tr>
     <tr>
         <td>JavaScript 2D 遊戲範例</td>
@@ -1496,7 +1496,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
 </table>
 
 
-### <a name="globalization-and-localization"></a>全球化與當地語系化
+### <a name="globalization-and-localization"></a>全球化和當地語系化
 
 開發 Windows 上全球適用的遊戲，並了解 Microsoft 暢銷產品中的國際功能。
 
@@ -1834,7 +1834,7 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
     </tr>
     <tr>
         <td>範例</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">開發人員的ID@Xbox程式碼範例</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">開發人員的程式碼範例 ID@Xbox</a></td>
     </tr>  
     <tr>
         <td>Xbox Live 遊戲開發概觀 (影片)</td>

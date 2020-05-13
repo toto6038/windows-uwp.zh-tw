@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 95c23a00ebc9ee2563340fbd5594d53ac7edb066
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 75dad7eb676bd2d2a9d95fa57122085329e5e144
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970003"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233945"
 ---
 # <a name="accessibility-practices-to-avoid"></a>協助工具應避免的做法
 
-如果您想要建立可存取的 Windows app 應用程式，請參閱這份實務清單以避免： 
+如果您想要建立可存取的 Windows 應用程式，請參閱這份實務清單以避免： 
 
 * **避免建立自訂的 UI 元素，盡可能使用預設的 Windows 控制項**或已經實作 Microsoft UI 自動化支援的控制項。 根據預設，標準的 Windows 控制項都具備無障礙功能，通常只需要新增一些 App 特定的協助工具屬性即可。 相反地，為真正的自訂控制項實作 [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 支援時，涉及的因素更多 (請參閱[自訂自動化對等](custom-automation-peers.md))。
 * **請勿將靜態文字或其他非互動元素放入 Tab 順序中** (例如，透過為非互動式的元素設定 [**TabIndex**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.tabindex) 屬性)。 如果將非互動式元素設定在 Tab 順序中，會違反鍵盤協助工具指導方針，因為這樣做會降低使用者的鍵盤瀏覽效率。 許多輔助技術針對如何顯示輔助技術使用者的應用程式介面使用 Tab 順序，並且著重其元素的邏輯能力。 Tab 順序中只有文字的元素，會讓只預期和 Tab 順序中的元素 (按鈕、核取方塊、文字輸入欄位、下拉式方塊、清單等) 互動的使用者感到混淆。

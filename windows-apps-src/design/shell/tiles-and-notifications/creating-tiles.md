@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0882ac67766bc2ce037133cf8a39b5393f616e13
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8823116b8fed3503ccf0dadc488956c93ae6c32b
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970993"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234454"
 ---
 # <a name="tiles-for-windows-apps"></a>Windows 應用程式的磚
 
@@ -55,11 +55,11 @@ ms.locfileid: "82970993"
 
     縮放影像按照以下命名慣例：
     
-    * &lt; &gt; **映射名稱&gt; &lt;* 因素。*影像檔案副檔名&gt; &lt; * 
+    * &lt; 映射名稱 &gt; *。縮放* &lt; 比例因素 &gt; *。* &lt;影像檔案 &gt; 副檔名* 
 
     例如：SplashScreen.scale-100.png
 
-    當您參考映射時，您會將其稱為* &lt;「映射名稱&gt;*」。*影像檔案&gt;副檔名（在此範例中為 "SplashScreen"）。 &lt; * 系統會從您提供的影像中，為裝置自動選取適當的縮放影像。
+    當您參考映射時，您會將其稱為「 * &lt; 映射名稱 &gt; *」。* &lt;影像檔案 &gt; 副檔名*（在此範例中為 "SplashScreen"）。 系統會從您提供的影像中，為裝置自動選取適當的縮放影像。
 
 -   您不需要 (但強烈建議您) 提供適用於寬形磚和大型磚大小的標誌，方便使用者可以將 App 的磚調整成那些尺寸。 若要提供這些額外的影像，您可以建立 **DefaultTile** 元素，並使用 **Wide310x150Logo** 和 **Square310x310Logo** 屬性來指定其他影像：
 ```    XML

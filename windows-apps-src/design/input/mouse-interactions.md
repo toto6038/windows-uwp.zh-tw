@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0591a62134f09c1b3a9d115d038020e95f0c139
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2d6ddf03541e94f89d0950a4f4c03eebaa0e396e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970713"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234472"
 ---
 # <a name="mouse-interactions"></a>滑鼠互動
 
@@ -59,7 +59,7 @@ ms.locfileid: "82970713"
 <td align="left"><p>按滑鼠右鍵選取與命令</p></td>
 <td align="left"><p>按滑鼠右鍵可顯示其中包含全域命令的瀏覽列 (如果有的話) 和應用程式列。 在某個元素上按一下滑鼠右鍵即可選取該元素，並且顯示其中包含所選元素之操作命令的應用程式列。</p>
 <div class="alert">
-<strong>注意：</strong>  如果選取範圍或應用程式行命令不是適當的 UI 行為，請以滑鼠右鍵按一下以顯示內容功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
+<strong>注意</strong>   如果選取範圍或應用程式行命令不是適當的 UI 行為，請以滑鼠右鍵按一下以顯示操作功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
 </div>
 <div>
  

@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d2866b3e04d2fa531e9bd538badd96205a8c65
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 37fb7cc81d1a86a159526af5d580a02482d13f9a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969423"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233969"
 ---
 # <a name="developing-inclusive-windows-apps"></a>開發全人 Windows 應用程式  
 
-本文討論如何開發可存取的 Windows 應用程式應用程式。 具體而言，本文章將假設您已了解設計 App 邏輯階層的方法。 瞭解如何開發可存取的 Windows 應用程式，包括鍵盤導覽、色彩和對比設定，以及輔助技術的支援。
+本文討論如何開發可存取的 Windows 應用程式。 具體而言，本文章將假設您已了解設計 App 邏輯階層的方法。 瞭解如何開發可存取的 Windows 應用程式，包括鍵盤導覽、色彩和對比設定，以及輔助技術的支援。
 
 如果您還沒了解這部分的內容，請先閱讀[設計通用軟體](designing-inclusive-software.md)。
 
@@ -32,7 +32,7 @@ ms.locfileid: "82969423"
 
 如需使 app 的 UI 元素可供輔助技術 (AT) 使用的詳細資訊，請參閱[公開基本的協助工具資訊](basic-accessibility-information.md)。
 
-## <a name="keyboard-navigation"></a>鍵盤導覽  
+## <a name="keyboard-navigation"></a>鍵盤瀏覽  
 讓視障或行動不便的使用者能夠透過鍵盤瀏覽 UI，是一件非常重要的事。 不過，只有需要使用者互動以運作的 UI 控制項才需要鍵盤焦點。 不需要動作的元件 (例如靜態影像) 並不需要鍵盤焦點。  
 
 請務必記得，鍵盤瀏覽和使用滑鼠或觸控瀏覽的不同之處，在於鍵盤瀏覽是線性的。 考慮鍵盤瀏覽時，請思考您的使用者與產品互動的方式，以及什麼樣的瀏覽才是合乎邏輯的方式。 在西方文化中，人們的閱讀方式是從左到右，從上到下。 因此，常見的鍵盤瀏覽做法便是跟隨這個模式。  

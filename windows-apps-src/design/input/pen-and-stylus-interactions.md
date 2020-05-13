@@ -1,6 +1,6 @@
 ---
-Description: 建立 Windows 應用程式，以支援手寫筆和手寫筆裝置的自訂互動，包括用於自然書寫和繪圖體驗的數位筆跡。
-title: Windows 應用程式中的畫筆互動和 Windows Ink
+Description: 建立 Windows 應用程式，以支援手寫筆和手寫筆裝置的自訂互動，包括自然書寫和繪圖體驗的數位筆跡。
+title: Windows 應用程式中的手寫筆互動與 Windows Ink
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
 template: detail.hbs
@@ -8,21 +8,21 @@ keywords: Windows Ink, Windows Inking, Windows 筆跡, DirectInk, InkPresenter, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c2cda9b2775ac1e0dca2cd37d1082bc6d75b1bad
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 1c9986ee6d4dacc929a8c2d243becf7d5c9d973e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968383"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234908"
 ---
-# <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Windows 應用程式中的畫筆互動和 Windows Ink
+# <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Windows 應用程式中的手寫筆互動與 Windows Ink
 
 ![Surface 手寫筆](images/ink/hero-small.png)  
 *Surface 手寫筆* (可在 [Microsoft 網上商店](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)購買)。
 
 ## <a name="overview"></a>概觀
 
-優化您的 Windows 應用程式以進行手寫筆輸入，為您的使用者提供標準[**指標裝置**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice)功能和最佳的 Windows 筆跡體驗。
+針對手寫筆輸入優化您的 Windows 應用程式，為您的使用者提供標準[**指標裝置**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice)功能和最佳的 windows 筆跡體驗。
 
 > [!NOTE]
 > 本主題著重在 Windows Ink 平台。 如需了解一般指標輸入處理 (類似於滑鼠、觸控及觸控板)，請參閱[處理指標輸入](handle-pointer-input.md)。
@@ -462,7 +462,7 @@ Windows Ink 平台不提供需要修改輸入 (例如筆觸選取項目) 動作�
 
 ## <a name="other-articles-in-this-section"></a>本節中的其他文章
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 | --- | --- |
 | [辨識筆墨筆劃](convert-ink-to-text.md) | 使用手寫辨識，將筆墨筆劃轉換為文字，或者使用自訂辨識轉換為形狀。 |
 | [儲存和擷取筆墨筆劃](save-and-load-ink.md) | 使用內嵌的筆跡序列化格式 (ISF) 中繼資料，在圖形交換格式 (GIF) 檔案中儲存筆墨筆劃資料。 |

@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: 鍵盤、協助工具、瀏覽、焦點、文字、輸入、使用者互動
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: 76b468eedd136522a4af9fb5880049278548865d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 969d0c24c86a47e72cbfec08d835c25b6e6779c4
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970263"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234879"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>回應觸控式鍵盤的出現
 

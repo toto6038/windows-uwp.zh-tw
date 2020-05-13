@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 網路功能, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e693016fa6b87f231c1cbbfac4c2e55d44623c9
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: d2d1487c708b8618feec5cb735fb8af260608e00
+ms.sourcegitcommit: 0f2ae8f97daac440c8e86dc07d11d356de29515c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606367"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280268"
 ---
 # <a name="networking-for-games"></a>遊戲的網路功能
 
@@ -121,7 +121,7 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 
 [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 作業中若發生錯誤，會導致例外狀況。 例外狀況的原因是以 **HRESULT** 值表示的錯誤值。 使用 [**SocketError.GetStatus**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.socketerror.getstatus) 方法，將通訊端作業的網路錯誤轉換為 [**SocketErrorStatus**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketErrorStatus) 列舉值。 大多數 **SocketErrorStatus** 列舉值對應原始 Windows 通訊端作業傳回的錯誤。 app 可以篩選特定 **SocketErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
 
-針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 對於大部分的參數驗證錯誤，傳回的**HRESULT**是**E\_INVALIDARG**。
+針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 對於大部分的參數驗證錯誤，傳回的**HRESULT**是**E \_ INVALIDARG**。
 
 新增程式碼以處理嘗試建立串流通訊端連線時發生的例外狀況
 
@@ -273,7 +273,7 @@ using namespace Windows::Networking::Sockets;
 
 在使用 C++ 的 app 中，[**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) 代表 app 執行期間發生例外狀況時的錯誤。 [**Platform：： Exception：： hresult**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult)屬性會傳回指派給特定例外狀況的**HResult** 。 [**Platform：： Exception：： Message**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message)屬性會傳回與**HRESULT**值相關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
-對於大部分的參數驗證錯誤，傳回的**HRESULT**是**E\_INVALIDARG**。 針對某些不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**。
+對於大部分的參數驗證錯誤，傳回的**HRESULT**是**E \_ INVALIDARG**。 針對某些不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**。
 
 新增程式碼以處理嘗試使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 連線至 HTTP 伺服器時發生的例外狀況
 
@@ -388,7 +388,7 @@ using namespace Windows::Web::Http;
 
 **範例**
 
-* [DatagramSocket 範例](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
+* [DatagramSocket 範例](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/ControlChannelTrigger%20StreamSocket%20sample%20(Windows%208))
 * [HttpClient 範例]( https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)
-* [鄰近性範例](https://code.msdn.microsoft.com/windowsapps/Proximity-Sample-88129731)
+* [鄰近性範例](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/Proximity%20sample%20(Windows%208))
 * [StreamSocket 範例](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)

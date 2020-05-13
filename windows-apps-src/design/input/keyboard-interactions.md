@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 1d883243b60b2b2693fbf0f21315008e556b5743
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 44cb122f70825df3ceef043d84e57cd077780749
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970753"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234703"
 ---
 # <a name="keyboard-interactions"></a>鍵盤互動
 
@@ -55,7 +55,7 @@ ms.locfileid: "82970753"
 
 以下是本主題中討論的裝置和工具：
 
-| 裝置/工具                       | 描述     |
+| 裝置/工具                       | 說明     |
 |-----------------------------------|-----------------|
 |鍵盤 (硬體與軟體)   |除了標準硬體鍵盤之外，Windows 應用程式也支援兩種軟體鍵盤：[觸控（或軟體）鍵盤](#software-keyboard)和[螢幕小鍵盤](#on-screen-keyboard)。|
 |遊戲台與遙控器         |Xbox 遊戲台與遙控器是[10 英呎經驗](../devices/designing-for-tv.md)中的基本輸入裝置。 如需遊戲台和遠端控制之 Windows 支援的特定詳細資料，請參閱[遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。|
@@ -89,13 +89,13 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 若要搭配使用控制項 (包括瀏覽元素) 與鍵盤，控制項必須有焦點。 控制項接收鍵盤焦點的其中一種方式，就是在您應用程式的定位順序中，將其識別為索引標籤，以透過 tab 鍵導覽來存取。
 
-若要讓控制項包含在定位順序中， [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled)屬性必須設定為**True** ，而且[IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop)屬性必須設定為**true**。
+若要讓控制項包含在定位順序中， [IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled)屬性必須設定為**True** ，而且[IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop)屬性必須設定為**true**。
 
-若要從定位順序中特別排除控制項，請將[IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop)屬性設定為**false**。
+若要從定位順序中特別排除控制項，請將[IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop)屬性設定為**false**。
 
 根據預設，Tab 順序反映 UI 元素建立的順序。 例如，如果 `StackPanel` 包含 `Button`、`Checkbox` 和 `TextBox`，Tab 順序就是 `Button`、`Checkbox` 和 `TextBox`。
 
-您可以藉由設定 [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex)屬性覆寫預設 Tab 順序。
+您可以藉由設定 [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex)屬性覆寫預設 Tab 順序。
 
 #### <a name="tab-order-should-be-logical-and-predictable"></a>Tab 順序應該有邏輯與可預測的
 
@@ -119,7 +119,7 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 最初的焦點指定當應用程式或網頁第一次啟動或啟用時取得焦點的 UI 項目。 使用鍵盤時，是由使用者開始與應用程式的 UI 互動。
 
-對於 UWP app，最初的焦點設定為可以接收焦點、具有最高 [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 的元素。 忽略容器控制項的子元素。 在平局，視覺化樹狀結構上的第一個元素會接收焦點。
+對於 UWP app，最初的焦點設定為可以接收焦點、具有最高 [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 的元素。 忽略容器控制項的子元素。 在平局，視覺化樹狀結構上的第一個元素會接收焦點。
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>將最初的焦點設定在最合乎邏輯的元素
 
@@ -143,8 +143,8 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 -   **Tab 鍵**依 Tab 順序在可動作/使用中控制項之間瀏覽。
 -   **Shift + Tab** 依反向的 Tab 順序瀏覽控制項。 如果使用者已使用方向鍵瀏覽到控制項內部，焦點設為控制項內部的最後一個已知的值。
 -   **方向鍵**公開控制項特定的「內部瀏覽」。當使用者進入「內部瀏覽」時，方向鍵不會瀏覽移出控制項。 部分範例包括：
-    -   向上/向下鍵會將焦點`ListView`移到內部和`MenuFlyout`
-    -   修改和的`Slider`目前選取值`RatingsControl`
+    -   向上/向下鍵會將焦點移 `ListView` 到內部和`MenuFlyout`
+    -   修改和的目前選取值 `Slider``RatingsControl`
     -   在內部移動插入號`TextBox`
     -   展開/折迭內的專案`TreeView`
 
@@ -307,7 +307,7 @@ Esc 鍵可讓使用者取消暫時性 UI（以及該 UI 中的任何持續動作
 
 UI 區域中有類似、相關控制項的群組時，使用者期望有方向鍵瀏覽的支援：
 -   `AppBarButtons`在`CommandBar`
--   `ListItems`或`GridItems`內部`ListView`或`GridView`
+-   `ListItems`或 `GridItems` 內部 `ListView` 或`GridView`
 -   `Buttons`境內`ContentDialog`
 
 UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組，使用 `XYFocusKeyboardNavigation="Enabled"` 提供類似的行為。
@@ -347,7 +347,7 @@ UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組
 
 範例包括：
 -   `RadioButtons`
--   看`ListViews`起來像這樣的多個，其行為類似于單一`ListView`
+-   `ListViews`看起來像這樣的多個，其行為類似于單一`ListView`
 -   外觀及操作像磚格線的任何 UI（例如 [開始] 功能表磚）
 
 #### <a name="specifying-control-group-behavior"></a>指定控制項群組行為
@@ -404,9 +404,9 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 |---------------|-------------------------------------|---------------------|
 | Space         | A 按鍵                            | 選取按鈕       |
 | Enter         | A 按鍵                            | 選取按鈕       |
-| 逸出        | B 按鍵                            | 上一頁按鈕         |
-| Home/End      | N/A                                 | N/A                 |
-| Page Up/Down  | 發射鍵用於垂直捲動，緩衝鍵用於水平捲動   | N/A                 |
+| 逸出        | B 按鍵                            | [上一頁] 按鈕         |
+| Home/End      | 不適用                                 | 不適用                 |
+| Page Up/Down  | 發射鍵用於垂直捲動，緩衝鍵用於水平捲動   | 不適用                 |
 
 設計 UWP 應用程式使用於遊戲台與遙控器時，應該留意的一些重要差異包括：
 -   文字輸入需要使用者按 A 啟動文字控制項。
@@ -419,7 +419,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 #### <a name="directional-navigation"></a>方向導覽
 
-方向瀏覽是由 UWP[焦點管理員](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.FocusManager)協助程式類別所管理，它接受所按下的方向鍵 (鍵盤方向鍵、遊戲台與遙控器方向鍵)，並嘗試在對應的視覺的方向中移動焦點。
+方向瀏覽是由 UWP[焦點管理員](/uwp/api/Windows.UI.Xaml.Input.FocusManager)協助程式類別所管理，它接受所按下的方向鍵 (鍵盤方向鍵、遊戲台與遙控器方向鍵)，並嘗試在對應的視覺的方向中移動焦點。
 
 與鍵盤不同的是，當應用程式選擇不使用[滑鼠模式](gamepad-and-remote-interactions.md#mouse-mode)時，會在整個應用程式中，針對遊戲台和遠端控制套用方向性導覽。 如需雙向導覽優化的詳細資訊，請參閱[遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。
 
@@ -501,6 +501,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 我們建議您在自訂控制項中模擬這些相同的行為。 如需如何執行此行為的程式碼範例，請參閱以程式[設計的焦點導覽](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element)檔。
 
+
 ## <a name="test-your-app"></a>測試應用程式
 
 在所有支援的輸入裝置上測試您的 app，以確保以一致且直覺式的方式瀏覽至 UI 元素，且沒有非預期的元素會干擾您想要的 Tab 順序。
@@ -510,6 +511,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 * [識別輸入裝置](identify-input-devices.md)
 * [回應觸控式鍵盤的出現](respond-to-the-presence-of-the-touch-keyboard.md)
 * [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
+* [NavigationView 控制項鍵盤細節](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation) 
 
 ## <a name="appendix"></a>附錄
 
@@ -545,7 +547,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 -   功能表列
 -   功能表項目
 -   工具列
--   清單
+-   List
 -   清單項目
 
 以下是觸控式鍵盤各種模式的範例。 第一個影像是預設版面配置，第二個是拇指版面配置 (不是所有語言都有提供)。
@@ -560,7 +562,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 成功的鍵盤互動讓使用者只利用鍵盤就可以完成基本的應用程式操作；也就是說，使用者可以使用所有的互動式元素以及啟動預設的功能。 有許多因素會影響成功的程度，包括鍵盤瀏覽、協助工具的便捷鍵，以及進階使用者的快速鍵。
 
-**請注意**  ，觸控鍵盤不支援切換和大部分的系統命令。
+**注意**   觸控鍵盤不支援切換和大部分的系統命令。
 
 #### <a name="on-screen-keyboard"></a>螢幕小鍵盤
 如同軟體鍵盤，螢幕小鍵盤是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、滑鼠、畫筆/手寫筆或其他指標裝置 (不需要觸控式螢幕) 來輸入資料。 提供螢幕小鍵盤的用意是針對沒有實體鍵盤的系統，或者使用者因行動不便而無法使用傳統實體輸入裝置的情況。 螢幕小鍵盤會模擬絕大部分的硬體鍵盤功能。

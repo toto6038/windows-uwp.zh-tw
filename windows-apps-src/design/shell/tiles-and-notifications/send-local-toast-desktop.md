@@ -8,16 +8,16 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: 'windows 10，uwp，win32，桌面，快顯通知，傳送快顯通知，傳送本機快顯，桌面橋接器，msix，sparse 封裝，c #，c 升，快顯通知，wpf'
 ms.localizationpriority: medium
-ms.openlocfilehash: f177660ce6e367caf69de849839a94472f5343fb
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 679254aa35ea49e72f7feaae02ba0ccbddeafdad
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968283"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233665"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
 
-桌面應用程式（包括封裝的[MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)應用程式、使用[稀疏套件](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)來取得套件識別的應用程式，以及傳統的非封裝 Win32 應用程式）可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，由於不同的啟用配置，桌面應用程式有一些特殊的步驟，如果您不使用 MSIX 或 sparse 封裝，則可能缺少套件身分識別。
+桌面應用程式（包括封裝的[MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)應用程式、使用[稀疏套件](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)來取得套件識別的應用程式，以及傳統的非封裝 Win32 應用程式）都可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，由於不同的啟用配置，桌面應用程式有一些特殊的步驟，如果您不使用 MSIX 或 sparse 封裝，則可能缺少套件身分識別。
 
 > [!IMPORTANT]
 > 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 對於其他傳統型語言，請參閱[傳統型 C++ WRL](send-local-toast-desktop-cpp-wrl.md)。
@@ -27,7 +27,7 @@ ms.locfileid: "82968283"
 
 如果您尚未從 Win32 應用程式參考 Windows 執行階段 Api，則必須先執行此動作。
 
-只要在您`Microsoft.Windows.SDK.Contracts`的專案中安裝[NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts)即可。 在這裡深入瞭解如何[啟用 Windows 執行階段 api](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
+只要 `Microsoft.Windows.SDK.Contracts` 在您的專案中安裝[NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts)即可。 在這裡深入瞭解如何[啟用 Windows 執行階段 api](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
 
 
 ## <a name="step-2-copy-compat-library-code"></a>步驟 2：複製 Compat 程式庫程式碼
@@ -117,7 +117,7 @@ public class MyNotificationActivator : NotificationActivator
 
 #### <a name="step-41-wix-installer"></a>步驟4.1： WiX 安裝程式
 
-如果您為安裝程式使用 WiX，請編輯 **Product.wxs** 檔案以新增兩個捷徑內容到您的 [開始] 功能表捷徑，如下所示。 請確定步驟 #3 的 GUID 包含在中`{}` ，如下所示。
+如果您為安裝程式使用 WiX，請編輯 **Product.wxs** 檔案以新增兩個捷徑內容到您的 [開始] 功能表捷徑，如下所示。 請確定步驟 #3 的 GUID 包含在中，如下所示 `{}` 。
 
 **Product.wxs**
 

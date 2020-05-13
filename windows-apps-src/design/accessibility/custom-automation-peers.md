@@ -8,18 +8,18 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b5462dcd5714c765853174ae62f56f99c5d5cdcc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 15386febd99180c30671a313465b11f7fe63ffd0
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969519"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234110"
 ---
 # <a name="custom-automation-peers"></a>自訂自動化對等  
 
 說明 Microsoft 使用者介面自動化的自動化對等，以及如何提供自訂 UI 類別的自動化支援。
 
-自動化用戶端可以使用 UI 自動化提供的架構來檢查或操作不同 UI 平台和架構的使用者介面。 如果您要撰寫 Windows app 應用程式，您用於 UI 的類別已提供使用者介面自動化支援。 您可以從現有的非密封類別衍生新的類別，藉此定義新的 UI 控制項或支援類別。 在進行這個程序的時候，您的類別可以新增預設使用者介面自動化支援所沒有的協助工具支援行為。 在此情況下，您應該藉由衍生自基底執行所使用的[**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)類別、將任何必要的支援加入至對等執行，以及通知 Windows 應用程式控制基礎結構應該建立新的對等體，來擴充現有的 UI 自動化支援。
+自動化用戶端可以使用 UI 自動化提供的架構來檢查或操作不同 UI 平台和架構的使用者介面。 如果您要撰寫 Windows 應用程式，您用於 UI 的類別已經提供使用者介面自動化支援。 您可以從現有的非密封類別衍生新的類別，藉此定義新的 UI 控制項或支援類別。 在進行這個程序的時候，您的類別可以新增預設使用者介面自動化支援所沒有的協助工具支援行為。 在此情況下，您應該藉由衍生自基底執行所使用的[**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)類別、將任何必要的支援加入至對等執行，以及通知 Windows 應用程式控制基礎結構應該建立新的對等體，來擴充現有的 UI 自動化支援。
 
 使用者介面自動化不僅可以啟用無障礙應用程式和輔助技術 (例如螢幕助讀程式)，也可以啟用品質保證 (測試) 程式碼。 無論是哪一種情況，UI 自動化用戶端均可以利用您應用程式外部的其他程式碼檢查使用者介面元素，以及模擬使用者與您應用程式的互動。 如需所有平台的 UI 自動化的廣義相關資訊，請參閱 [UI 自動化概觀](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-uiautomationoverview)。
 
@@ -76,7 +76,7 @@ UWP 是利用現有 UI 自動化技術和舊版的 Managed 程式碼 UI 架構 (
 
 不論架構的自動化對等是如何實作的，使用者介面自動化用戶端功能都與 UWP 無關，事實上，現有的使用者介面自動化用戶端 (例如輔助技術) 有可能會使用其他程式設計模型 (例如 COM)。 在 COM 中，用戶端可以對實作要求模式或一般使用者介面自動化架構的 COM 控制項模式介面執行 **QueryInterface**，以便檢查屬性、事件或樹狀結構。 如果是模式，使用者介面自動化架構會將該介面程式碼，封送處理到在 app 的使用者介面自動化提供者及相關對等上執行的 UWP 程式碼中。
 
-當您使用 C\#或 Microsoft Visual Basic 來執行 managed 程式碼架構（例如 UWP 應用程式）的控制項模式時，您可以使用 .NET Framework 介面來代表這些模式，而不是使用 COM 介面表示。 例如，Microsoft .NET 提供者實作使用者介面自動化模式介面時，其 **Invoke** 模式為 [**IInvokeProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider)。
+當您使用 C 或 Microsoft Visual Basic 來執行 managed 程式碼架構（例如 UWP 應用程式）的控制項模式時 \# ，您可以使用 .NET Framework 介面來代表這些模式，而不是使用 COM 介面表示。 例如，Microsoft .NET 提供者實作使用者介面自動化模式介面時，其 **Invoke** 模式為 [**IInvokeProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider)。
 
 如需控制項模式、提供者介面及其用途的清單，請參閱[控制項模式和介面](control-patterns-and-interfaces.md)。 如需控制項類型的清單，請參閱[使用者介面自動化控制項類型概觀](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controltypesoverview)。
 
@@ -275,7 +275,7 @@ protected override string GetClassNameCore()
 
 部分輔助技術在報告使用者介面自動化樹狀目錄中的項目特性 (使用者介面自動化 **Name** 以外的其他資訊) 時，會直接使用 [**GetAutomationControlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltype) 值。 如果您的控制項與衍生的控制項有很大的差異，而且您希望報告的控制項類型與控制項使用之基礎對等類別報告的控制項類型不同，就必須實作對等並覆寫對等實作中的 [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore)。 如果衍生自如 [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 或 [**ContentControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl) 的一般化基礎類別 (這些基礎類別不提供控制項類型的精確資訊)，這就特別重要。
 
-實作的 [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) 會傳回 [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) 值來描述您的控制項。 雖然您可以傳回 **AutomationControlType.Custom**，不過您應該傳回一個更明確的控制項類型 (只要它可以準確描述控制項的主要情況)。 範例如下。
+實作的 [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) 會傳回 [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) 值來描述您的控制項。 雖然您可以傳回 **AutomationControlType.Custom**，不過您應該傳回一個更明確的控制項類型 (只要它可以準確描述控制項的主要情況)。 以下是範例。
 
 ```csharp
 protected override AutomationControlType GetAutomationControlTypeCore()
@@ -529,10 +529,10 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 
 對於傳遞到對等中的參數，可接受驗證輸入，例如，如果傳遞的是 **null**，則擲回 [**ArgumentNullException**](https://docs.microsoft.com/dotnet/api/system.argumentnullexception)，但這對您的實作來說不是有效值。 不過，如果後續有對等所執行的操作，請記住，對等與裝載控制項的互動具有非同步特性。 對等所執行的任何操作不一定會封鎖控制項中的 UI 執行緒 (而且也不應該封鎖)。 因此，您可能會遇到一些情況，就是在建立對等或第一次呼叫自動化對等方法時，有某個物件可供使用或具有特定屬性，但是在同時，控制項狀態已經變更。 針對這些情況，有兩個專用的例外狀況可供提供者擲回：
 
-* 如果您無法根據傳遞給您 API 的原始資訊來存取對等的擁有者或相關對等元素，請擲回 [**ElementNotAvailableException**](https://docs.microsoft.com/dotnet/api/system.windows.automation.elementnotavailableexception)。 例如，您可能有一個對等嘗試執行其方法，但是已經從 UI 移除擁有者，例如已經被關閉的強制回應對話方塊。 針對 non-.NET 用戶端，這會對應[**至\_UIA\_E ELEMENTNOTAVAILABLE**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-error-codes)。
-* 如果擁有者仍然存在，但是該擁有者處於 [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled)`=`**false** 之類的模式，而會封鎖您對等嘗試完成的某些特定程式設計變更，請擲回 [**ElementNotEnabledException**](https://docs.microsoft.com/dotnet/api/system.windows.automation.elementnotenabledexception)。 針對 non-.NET 用戶端，這會對應[**至\_UIA\_E ELEMENTNOTENABLED**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-error-codes)。
+* 如果您無法根據傳遞給您 API 的原始資訊來存取對等的擁有者或相關對等元素，請擲回 [**ElementNotAvailableException**](https://docs.microsoft.com/dotnet/api/system.windows.automation.elementnotavailableexception)。 例如，您可能有一個對等嘗試執行其方法，但是已經從 UI 移除擁有者，例如已經被關閉的強制回應對話方塊。 針對 non-.NET 用戶端，這會對應至[**UIA \_ E \_ ELEMENTNOTAVAILABLE**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-error-codes)。
+* 如果擁有者仍然存在，但是該擁有者處於 [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled)`=`**false** 之類的模式，而會封鎖您對等嘗試完成的某些特定程式設計變更，請擲回 [**ElementNotEnabledException**](https://docs.microsoft.com/dotnet/api/system.windows.automation.elementnotenabledexception)。 針對 non-.NET 用戶端，這會對應至[**UIA \_ E \_ ELEMENTNOTENABLED**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-error-codes)。
 
-除此之外，就對等從它們的對等支援擲回的例外狀況來說，對等應該相當保守。 大多數用戶端無法處理來自對等的例外狀況，並將這些例外狀況轉換成使用者在與用戶端進行互動時的可動作選項。 因此，與每次對等嘗試執行操作無效時都擲回例外狀況相比，有時無作業和攔截例外狀況而不在對等實作中重新擲回，會是一個較佳的策略。 此外，也請考量大多數使用者介面自動化用戶端都不是以 Managed 程式碼撰寫。 大部分都是以 COM 撰寫，而且只要呼叫的使用者介面自動化用戶端方法會結束存取您的對等，就只會在**HRESULT**中檢查是否有**S\_OK** 。
+除此之外，就對等從它們的對等支援擲回的例外狀況來說，對等應該相當保守。 大多數用戶端無法處理來自對等的例外狀況，並將這些例外狀況轉換成使用者在與用戶端進行互動時的可動作選項。 因此，與每次對等嘗試執行操作無效時都擲回例外狀況相比，有時無作業和攔截例外狀況而不在對等實作中重新擲回，會是一個較佳的策略。 此外，也請考量大多數使用者介面自動化用戶端都不是以 Managed 程式碼撰寫。 大部分都是以 COM 撰寫，而且只要呼叫的使用者介面自動化用戶端方法會結束存取您的對等，就只會在**HRESULT**中檢查是否有**S \_ OK** 。
 
 <span id="related_topics"/>
 

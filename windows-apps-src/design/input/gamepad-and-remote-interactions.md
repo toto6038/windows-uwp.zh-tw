@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 207ad9cb3008f1a36402e413b7e246aa2135ae26
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5fd39acbf6549cddc075f8b63779f06a802bfdbb
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970163"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234670"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>遊戲台與遙控器的互動
 
@@ -76,7 +76,7 @@ ms.locfileid: "82970163"
 | A/選取按鈕           | 是       | 是               |
 | B/返回按鈕             | 是       | 是               |
 | 方向鍵 (D 鍵)   | 是       | 是               |
-| 選項按鈕               | 是       | 是               |
+| 功能表按鈕               | 是       | 是               |
 | 檢視按鈕               | 是       | 是               |
 | X 和 Y 按鈕           | 是       | 否                |
 | 左搖桿                | 是       | 否                |
@@ -162,7 +162,7 @@ Xbox one 上的 Windows 應用程式也支援按下**功能表**按鈕，以開�
 | 放大/縮小        | CTRL +/- | LT 鍵/RT 鍵 | 無 | `ScrollViewer`、支援放大和縮小的檢視 |
 | 開啟/關閉瀏覽窗格 | 無 | 檢視 | 無 | 瀏覽窗格​​ |
 | 搜尋 | 無 | Y 按鈕 | 無 | App 中主要搜尋功能的快速鍵 |
-| [開啟操作功能表](#commandbar-and-contextflyout) | 以滑鼠右鍵按一下 | 選項按鈕 | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | 操作功能表 |
+| [開啟操作功能表](#commandbar-and-contextflyout) | 以滑鼠右鍵按一下 | 功能表按鈕 | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | 操作功能表 |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>XY 焦點瀏覽和互動
 
@@ -288,7 +288,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ![CommandBar 位於清單/格線的底部](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
-如果您將放在`CommandBar`清單/方格*上方*，該怎麼辦？ 雖然使用者在向下捲動清單/格線後，必須捲動回去才能到達 `CommandBar`，但是比起前一種設定，這種設定的瀏覽程度會少一些。 請注意，這是假設您的 app 最初的焦點是放置在 `CommandBar` 旁邊或上方；如果最初的焦點是在清單/格線下方，此方法也同樣不佳。 如果這些`CommandBar`專案是不需要經常存取的全域動作專案（例如 [**同步**處理] 按鈕），則在清單/方格上方可以接受它們。
+如果您將放在 `CommandBar` 清單/方格*上方*，該怎麼辦？ 雖然使用者在向下捲動清單/格線後，必須捲動回去才能到達 `CommandBar`，但是比起前一種設定，這種設定的瀏覽程度會少一些。 請注意，這是假設您的 app 最初的焦點是放置在 `CommandBar` 旁邊或上方；如果最初的焦點是在清單/格線下方，此方法也同樣不佳。 如果這些 `CommandBar` 專案是不需要經常存取的全域動作專案（例如 [**同步**處理] 按鈕），則在清單/方格上方可以接受它們。
 
 雖然您無法垂直堆疊 `CommandBar` 的項目，但是如果將這些項目依捲動方向放置 (例如，放在垂直捲動清單的左邊或右邊，或是放在水平捲動清單的頂端或底部) 對您的 UI 配置而言可行，則這可能會是您想要考慮使用的另一個選項。
 
@@ -313,7 +313,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 #### <a name="problem-ui-elements-located-after-long-scrolling-listgrid"></a>問題：UI 元素位於長的捲動清單/格線之後 <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-下圖中所示的屬性 [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 是一份很長的捲動清單。 如果上*不*需要`ListView` [engagement](#focus-engagement) ，當使用者流覽至清單時，焦點就會放在清單中的第一個專案上。 若要讓使用者到達 [**上一****步] 或 [下一步]** 按鈕，他們必須瀏覽清單中的所有專案。 要求使用者瀏覽整個清單會非常痛苦&mdash;如果清單夠短，這還算可以接受&mdash;，所以您可能要考慮其他方案。
+下圖中所示的屬性 [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 是一份很長的捲動清單。 如果上*不*需要[engagement](#focus-engagement) `ListView` ，當使用者流覽至清單時，焦點就會放在清單中的第一個專案上。 若要讓使用者到達 [**上一****步] 或 [下一步]** 按鈕，他們必須瀏覽清單中的所有專案。 要求使用者瀏覽整個清單會非常痛苦&mdash;如果清單夠短，這還算可以接受&mdash;，所以您可能要考慮其他方案。
 
 ![房地產 app︰50 個項目的清單需要點選 51 次才能到達下面的按鈕](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
@@ -329,7 +329,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 **專注參與<a name="engagement"></a>**
 
-當*需要*engagement 時，整個`ListView`會變成單一焦點目標。 使用者可以略過清單的內容，以取得下一個可設定焦點的元素。 請在[焦點佔用](#focus-engagement)中閱讀更多關於哪些控制項支援佔用，以及如何使用的內容。
+當*需要*engagement 時，整個 `ListView` 會變成單一焦點目標。 使用者可以略過清單的內容，以取得下一個可設定焦點的元素。 請在[焦點佔用](#focus-engagement)中閱讀更多關於哪些控制項支援佔用，以及如何使用的內容。
 
 ![房地產 app︰設定需要佔用，只需按 1 次就可到達 [上一個/下一個] 按鈕](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
 
@@ -423,7 +423,7 @@ public App()
 當以全螢幕顯示影片或其他類型的內容時，您通常會想要隱藏游標，因為它可能會干擾使用者。 這種案例會在 App 的其他部分是使用滑鼠模式，但您希望在顯示全螢幕內容時將它關閉時發生。 若要這樣做，請將全螢幕內容置於個別的 `Page` 上，然後依照下列步驟執行。
 
 1. 在 `App` 物件中，設定 `RequiresPointerMode="WhenRequested"`。
-2. 在全`Page`螢幕*except* `Page`以外的每個物件中， `RequiresPointer="WhenFocused"`設定。
+2. 在 `Page` 全螢幕*以外*的每個物件中 `Page` ，設定 `RequiresPointer="WhenFocused"` 。
 3. 針對全螢幕 `Page` 設定 `RequiresPointer="Never"`。
 
 如此一來，顯示全螢幕內容時就一定不會出現游標。
@@ -498,7 +498,7 @@ public App()
 如果使用者想要從左邊的按鈕瀏覽到右邊的按鈕，合理的狀況是假設使用者只要按下方向鍵/左搖桿向右兩次。
 不過，如果 [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 不需要佔用，就會發生下列行為︰當使用者第一次按右鍵，焦點會移到 `Slider`，然後當使用者再按右鍵一次，`Slider` 的控點會向右移動。 使用者會一直將控點往右移動，而無法到達按鈕。
 
-有幾種方法可以解決這個問題。 一個是設計不同的版面配置，類似于[XY 焦點導覽](#xy-focus-navigation-and-interaction)中的房地產應用程式範例，以及我們重新放置上方 [**上**一**步] 和 [下一個]** 按鈕的互動`ListView`。 垂直而非水平堆疊控制項可以解決問題，如下列影像所示。
+有幾種方法可以解決這個問題。 一個是設計不同的版面配置，類似于[XY 焦點導覽](#xy-focus-navigation-and-interaction)中的房地產應用程式範例，以及我們重新放置上方 [**上**一**步] 和 [下一個]** 按鈕的互動 `ListView` 。 垂直而非水平堆疊控制項可以解決問題，如下列影像所示。
 
 ![按鈕在水平滑桿上方和下方](images/designing-for-tv/focus-engagement-focus-trapping-2.png)
 
@@ -538,9 +538,9 @@ public App()
 
 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 與這些控制項稍有不同，其具有待考量的個別原因。 如果您有具可設定焦點內容的 `ScrollViewer`，瀏覽至 `ScrollViewer` 預設可讓您在其可設定焦點的元素之間移動。 就像在 `ListView` 中一樣，您必須捲動每個項目才能瀏覽到 `ScrollViewer` 之外。
 
-`ScrollViewer`如果*沒有可設定焦點*的&mdash;內容，例如，如果它只包含&mdash;您可以設定`IsFocusEngagementEnabled="True"`的文字，讓使用者可以`ScrollViewer`使用**A/Select**按鈕來與互動。 參與之後，他們可以使用**D-pad/left**鍵來流覽文字，然後按**B/上一頁**按鈕以在完成時將其脫開。
+如果沒有 `ScrollViewer` 可*no*設定焦點的內容 &mdash; ，例如，如果它只包含 &mdash; 您可以設定的文字， `IsFocusEngagementEnabled="True"` 讓使用者可以 `ScrollViewer` 使用**A/Select**按鈕來與互動。 參與之後，他們可以使用**D-pad/left**鍵來流覽文字，然後按**B/上一頁**按鈕以在完成時將其脫開。
 
-另一個方法是在上`IsTabStop="True"`設定， `ScrollViewer`如此一來，使用者就不需要將焦點&mdash;放在控制項上，然後在中沒有可設定焦點的`ScrollViewer`元素時，使用**D-pad/left**來進行滾動。
+另一個方法是在上設定，如此一來 `IsTabStop="True"` `ScrollViewer` ，使用者就不需要將 &mdash; 焦點放在控制項上，然後在中沒有可設定焦點的元素時，使用**D-pad/left**來進行滾動 `ScrollViewer` 。
 
 ### <a name="focus-engagement-defaults"></a>焦點佔用預設值
 
@@ -557,13 +557,13 @@ public App()
 | SemanticZoom          | 關閉                       |
 | 滑桿                | 另一                        |
 
-所有其他 Windows 控制項在時`IsFocusEngagementEnabled="True"`，都不會產生任何行為或視覺效果變更。
+所有其他 Windows 控制項在時，都不會產生任何行為或視覺效果變更 `IsFocusEngagementEnabled="True"` 。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 您可以建立針對特定裝置或體驗優化的 Windows 應用程式，但通用 Windows 平臺也可讓您建立可在不同裝置間成功使用的應用程式，不論是2英尺還是10英尺的體驗，以及無論輸入裝置或使用者的能力為何。 使用本文中的建議可確保您的應用程式在電視和電腦上都能正常進行。
 
 ## <a name="related-articles"></a>相關文章
 
 - [針對 Xbox 和電視進行設計](../devices/designing-for-tv.md)
-- [適用于 Windows 應用程式的裝置入門](index.md)
+- [Windows 應用程式的裝置入門](index.md)

@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24cc85c255f26b61603690d6b39c3a6ffdcbb544
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5025a63f5c96365ba1f14311b9c68ed41f4fc5aa
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970723"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234591"
 ---
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
@@ -266,7 +266,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 ```
 
 > [!NOTE]
-> 如果使用這種方法，請注意 [**更多**] 按鈕會在必要時`CommandBar`變更已開啟的高度，以便在其圖示下方`AppBarButton`顯示的標籤。 我們建議您將標籤移至圖示的*右邊*，以避免調整大小。 如需詳細資訊，請參閱 [CommandBar 標籤](#commandbar-labels)。
+> 如果使用這種方法，請注意 [**更多**] 按鈕會在必要時變更已開啟的高度 `CommandBar` ，以便在其圖示下方顯示的標籤 `AppBarButton` 。 我們建議您將標籤移至圖示的*右邊*，以避免調整大小。 如需詳細資訊，請參閱 [CommandBar 標籤](#commandbar-labels)。
 
 這兩種方法也適用於本節所列的其他類型的控制項。
 
@@ -333,7 +333,7 @@ UWP 具有可將視覺焦點保留在 [VisibleBounds](https://docs.microsoft.com
 > [!NOTE]
 > 這個程式碼片段是特別針對 `ListView`；如果是 `GridView` 樣式，請將 [ControlTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) 和 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的 [TargetType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 屬性都設定為 `GridView`。
 
-若要更精細地控制專案如何進入視圖，如果您的應用程式是以1803版或更新版本為目標，您可以使用[BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 您可以將它放在 [ **ListView**/]**GridView**的[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)上，以便在內部**ScrollViewer**完成之前攔截，如下列程式碼片段所示：
+若要更精細地控制專案如何進入視圖，如果您的應用程式是以1803版或更新版本為目標，您可以使用[BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 您可以將它放在 [ **ListView**] GridView 的[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)上 / **GridView** ，以便在內部**ScrollViewer**完成之前攔截，如下列程式碼片段所示：
 
 ```xaml
 <GridView x:Name="gridView">
@@ -462,7 +462,7 @@ UWP 提供便利的方式來公開使用者從其系統設定選取的**輔色**
 
 巢狀的 UI 會公開容器 UI 元素內部包含的巢狀可動作項目，其中巢狀項目與容器項目都可以各自獨立取得焦點。
 
-對於某些輸入類型，巢狀的 UI 能夠良好運作，但對於依賴 XY 導覽的遊戲台與遙控器，則不一定能夠良好運作。 請務必遵循本主題中的指導方針，以確保您的 UI 能夠針對 10 英呎環境最佳化，讓使用者能夠輕鬆地存取所有可互動的元素。 其中一個常見的解決方案是將嵌套的 UI 元素`ContextFlyout`放在中。
+對於某些輸入類型，巢狀的 UI 能夠良好運作，但對於依賴 XY 導覽的遊戲台與遙控器，則不一定能夠良好運作。 請務必遵循本主題中的指導方針，以確保您的 UI 能夠針對 10 英呎環境最佳化，讓使用者能夠輕鬆地存取所有可互動的元素。 其中一個常見的解決方案是將嵌套的 UI 元素放在中 `ContextFlyout` 。
 
 如需巢狀 UI 的詳細資訊，請參閱[清單項目中的巢狀 UI](../controls-and-patterns/nested-ui.md)。
 
@@ -560,12 +560,12 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 接著，您可以在這項檢查之後，在程式碼區塊中適當調整 UI。 
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 針對 10 英呎經驗的設計已納入特殊考量，使其有別於其他所有平台的設計。 您當然可以直接將 UWP app 移植至 Xbox One 且它亦可運作，但它不一定是針對 10 英呎體驗最佳化，且會讓使用者感到失望。 遵循本文所述的指導方針，以確定 app 在電視上仍可呈現優異效果。
 
 ## <a name="related-articles"></a>相關文章
 
-- [適用于 Windows 應用程式的裝置入門](index.md)
-- [遊戲台與遙控器的互動](../input/gamepad-and-remote-interactions.md)
+- [Windows 應用程式的裝置入門](index.md)
+- [遊戲控制器與遙控器的互動](../input/gamepad-and-remote-interactions.md) \(部分機器翻譯\)
 - [UWP app 中的音效](../style/sound.md)

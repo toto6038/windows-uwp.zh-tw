@@ -6,12 +6,12 @@ keywords: 筆跡, 教學
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b4dc6fbec0e16428035348114b1b160d50cff0
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: d0df2b531510d86591c44bc69f6ed5c6ad9f200f
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968143"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234628"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>教學課程：在您的 Windows 應用程式中支援筆墨
 
@@ -33,13 +33,13 @@ ms.locfileid: "82968143"
 
 您可以藉由 Windows Ink 提供客戶幾乎相當於可想像的所有紙筆體驗的數位手寫功能，從快速的手寫筆記和註解到白板示範，以及從架構和工程繪圖到個人傑作。
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>先決條件
 
 * 執行目前版本的 Windows 10 的電腦 (或虛擬機器)
 * [Visual Studio 2019 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 視您的設定而定，您可能必須安裝[NETCore](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 套件，並在您的系統設定中啟用**開發人員模式**（設定-> 更新 & 適用于開發人員的安全性 >-> 使用開發人員功能）。
-* 如果您不熟悉使用 Visual Studio 的 Windows 應用程式開發，請先查看這些主題，再開始進行本教學課程：  
+* 如果您不熟悉使用 Visual Studio 進行 Windows 應用程式開發，請先查看這些主題，再開始進行本教學課程：  
     * [開始設定](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
     * [建立 Hello, world 應用程式 (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[選擇性]** 數位手寫筆和配備支援手寫筆輸入的顯示器的電腦。
@@ -79,7 +79,7 @@ ms.locfileid: "82968143"
 3. 按下 F5 進行編譯、部署和執行。  
 
    > [!NOTE]
-   > 或者，您可以選取 [ **Debug** > ] [**開始調試**] 功能表項目，或選取此處顯示的**本機電腦**執行按鈕。
+   > 或者，您可以選取 [ **Debug**]  >  [**開始調試**] 功能表項目，或選取此處顯示的**本機電腦**執行按鈕。
    > ![Visual Studio 組建專案按鈕](images/ink/ink-vsrun-small.png)
 
 應用程式視窗隨即開啟，並在啟動顯示畫面出現幾秒後，您會看到這個初始畫面。
@@ -112,7 +112,7 @@ ms.locfileid: "82968143"
 ```
 
 4. 請開啟 MainPage.xaml 檔案，
-5. 尋找以此步驟的標題標示的程式碼（「\<!--步驟2：基本筆跡 with InkCanvas-->」）。
+5. 尋找以此步驟的標題標示的程式碼（「 \< !--步驟2：基本筆跡 With InkCanvas-->」）。
 6. 取消註解下列行。  
 
 ``` xaml
@@ -165,7 +165,7 @@ ms.locfileid: "82968143"
 
 ### <a name="in-the-sample"></a>在範例中
 1. 請開啟 MainPage.xaml 檔案，
-2. 尋找以此步驟的標題標示的程式碼（「\<!--步驟4：新增筆墨工具列-->」）。
+2. 尋找以此步驟的標題標示的程式碼（「 \< !--步驟4：新增筆墨工具列-->」）。
 3. 取消註解下列行。  
 
 ``` xaml
@@ -212,14 +212,14 @@ ms.locfileid: "82968143"
 > [!NOTE]
 > 手寫辨識可以透過**手寫筆和 Windows Ink** 設定改進︰
 > 1. 開啟 [開始] 功能表，然後選取 **\[設定\]**。
-> 2. 從 [設定] 畫面中，選取 [**裝置** > ] [**畫筆] & Windows Ink**]。
+> 2. 從 [設定] 畫面中，選取 [**裝置**] [  >  **畫筆] & Windows Ink**]。
 > ![從 Ink 工作區繪圖板的 InkToolbar](images/ink/ink-settings-small.png)
 > 3. 選取 **\[了解我的手寫內容\]** 以開啟 **\[個人化手寫\]** 對話方塊。
 > ![從 Ink 工作區繪圖板的 InkToolbar](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### <a name="in-the-sample"></a>在範例中︰
 1. 請開啟 MainPage.xaml 檔案，
-2. 尋找以此步驟的標題標示的程式碼（「\<!--步驟5：支援手寫辨識-->」）。
+2. 尋找以此步驟的標題標示的程式碼（「 \< !--步驟5：支援手寫辨識-->」）。
 3. 取消註解下列行。  
 
 ``` xaml
@@ -347,7 +347,7 @@ Windows Ink 支援許多 Windows 所支援語言的文字辨識。 每個語言�
 
 ### <a name="in-the-sample"></a>在範例中︰
 1. 開啟 MainPage.xaml 檔案
-2. 尋找以此步驟的標題標示的程式碼（「\<!--步驟6：辨識圖形-->」）
+2. 尋找以此步驟的標題標示的程式碼（「 \< !--步驟6：辨識圖形-->」）
 3. 取消註解此行。  
 
 ``` xaml
@@ -402,7 +402,7 @@ ISF 檔案是基本的 GIF 圖像，包含描述筆墨筆劃屬性和行為的�
 
 ### <a name="in-the-sample"></a>在範例中︰
 1. 請開啟 MainPage.xaml 檔案，
-2. 尋找以此步驟的標題標示的程式碼（「\<!--步驟7：儲存和載入筆墨-->」）。
+2. 尋找以此步驟的標題標示的程式碼（「 \< !--步驟7：儲存和載入筆墨-->」）。
 3. 取消註解下列行。 
 
 ``` xaml
@@ -458,13 +458,13 @@ Windows 筆跡也支援從剪貼簿複製並貼上筆墨筆劃或複製並貼到
 </tr>
 </table>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 恭喜您，您已完成**輸入：在 Windows 應用程式中支援筆墨**教學課程！ 我們向您示範了在 Windows 應用程式中支援筆墨所需的基本程式碼，以及如何提供 Windows Ink 平臺所支援的一些更豐富的使用者體驗。
 
 ## <a name="related-articles"></a>相關文章
 
-* [Windows 應用程式中的畫筆互動和 Windows Ink](pen-and-stylus-interactions.md)
+* [Windows 應用程式中的手寫筆互動與 Windows Ink](pen-and-stylus-interactions.md)
 
 ### <a name="samples"></a>範例
 

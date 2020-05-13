@@ -7,16 +7,16 @@ ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，快顯通知，傳送快顯通知，傳送本機快顯，桌面橋接器，msix，sparse 封裝，c + +，cpp，cplusplus，WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: cc87f9281b9623c1f1b46def8f886cfebeb0438f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 3e103c41de7bf169629085fd259e23e17804360d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968293"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234662"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>從傳統型 C++ WRL 應用程式傳送本機快顯通知
 
-桌面應用程式（包括封裝的[MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)應用程式、使用[稀疏套件](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)來取得套件識別的應用程式，以及傳統的非封裝 Win32 應用程式）可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，由於不同的啟用配置，桌面應用程式有一些特殊的步驟，如果您不是使用 MSIX 或 sparse 封裝，則可能缺少套件識別。
+桌面應用程式（包括封裝的[MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)應用程式、使用[稀疏套件](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)來取得套件識別的應用程式，以及傳統的非封裝 Win32 應用程式）都可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，由於不同的啟用配置，桌面應用程式有一些特殊的步驟，如果您不是使用 MSIX 或 sparse 封裝，則可能缺少套件識別。
 
 > [!IMPORTANT]
 > 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 對於其他傳統型語言，請參閱[傳統型 C#](send-local-toast-desktop.md)。
@@ -407,7 +407,7 @@ if (SUCCEEDED(hr))
 
 如果您收到 `HRESULT 0x800401f0 CoInitialize has not been called.`，在呼叫 API 前，請務必先在您的應用程式中呼叫 `CoInitialize(nullptr)`。
 
-如果您在`HRESULT 0x8000000e A method was called at an unexpected time.`呼叫相容性 api 時收到，這可能表示您無法呼叫所需的 Register 方法（或者，如果 MSIX/sparse 套件應用程式，您目前並未在 MSIX/sparse 內容下執行您的應用程式）。
+如果您在 `HRESULT 0x8000000e A method was called at an unexpected time.` 呼叫相容性 api 時收到，這可能表示您無法呼叫所需的 Register 方法（或者，如果 MSIX/sparse 套件應用程式，您目前並未在 MSIX/sparse 內容下執行您的應用程式）。
 
 如果您收到數個 `unresolved external symbol` 編譯錯誤，您可能在步驟 #1 忘記新增 `runtimeobject.lib` 至 **\[其他相依性\]** (或是只將它新增至偵錯設定而未新增至發行設定)。
 
@@ -421,8 +421,8 @@ Windows 8 已引進快顯通知，但使用[舊版快顯通知範本](https://do
 | OS | ToastGeneric | COM 啟動器 | 舊版快顯通知範本 |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | 支援 | 支援 | 支援 (但不會啟用 COM 伺服器) |
-| Windows 8.1 / 8 | N/A | N/A | 支援 |
-| Windows 7 和更舊版本 | N/A | N/A | N/A |
+| Windows 8.1 / 8 | 不適用 | 不適用 | 支援 |
+| Windows 7 和更舊版本 | 不適用 | 不適用 | 不適用 |
 
 若要查看您是否正在執行 Windows 10，請加入 `<VersionHelpers.h>` 標頭並檢查 **IsWindows10OrGreater** 方法。 如果這傳回 true，請繼續呼叫本文中提及的所有方法！ 
 

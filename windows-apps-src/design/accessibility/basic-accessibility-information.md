@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b019495235ca2ff4bec2f9e6bc1b9230a15599
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ff19eea5a2fa57d4e5b2728ddbd87e5d99ff539a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969513"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234133"
 ---
 # <a name="expose-basic-accessibility-information"></a>公開基本的協助工具資訊  
 
@@ -29,10 +29,10 @@ ms.locfileid: "82969513"
 
 這個表格描述如何定義或取得 XAML UI 中各種元素類型的無障礙名稱。
 
-| 項目類型 | 描述 |
+| 項目類型 | 說明 |
 |--------------|-------------|
 | 靜態文字 | 若為 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 元素，則會從可見的 (內部) 文字自動判斷無障礙名稱。 該元素中的所有文字都會當作名稱使用。 請參閱[來自內部文字的名稱](#name_from_inner_text)。 |
-| 影像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素與 **img** 及類似元素的 HTML **alt** 屬性沒有直接的相似項目。 請使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供名稱，或使用輔助字幕技術。 請參閱[影像的無障礙名稱](#images)。 |
+| 映像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素與 **img** 及類似元素的 HTML **alt** 屬性沒有直接的相似項目。 請使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供名稱，或使用輔助字幕技術。 請參閱[影像的無障礙名稱](#images)。 |
 | 表單項目 | 表單元素的無障礙名稱應該和元素的顯示標籤相同。 請參閱 [Labels 和 LabeledBy](#labels)。 |
 | 按鈕和連結 | 根據預設值，按鈕或連結的無障礙名稱是以可見的文字為基礎，使用與[來自內部文字的名稱](#name_from_inner_text)中所述之規則相同的規則。 如果按鈕只包含一個影像，則使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供與設計的按鈕動作相當的純文字。 |
 
@@ -56,7 +56,7 @@ ms.locfileid: "82969513"
 ## <a name="influencing-the-ui-automation-tree-views"></a>影響使用者介面自動化樹狀檢視  
 使用者介面自動化架構含有樹狀檢視的概念，其中使用者介面自動化用戶端可以使用三種可能的檢視來擷取 UI 中元素間的關係：原始、控制項及內容。 控制項檢視是使用者介面自動化用戶端通常所使用的檢視，因為它提供 UI 中可互動元素的良好表示法和組織。 測試工具通常可以讓您選擇在工具呈現元素的組織時要使用哪一種樹狀檢視。
 
-根據預設，當使用者介面自動化架構代表 Windows 應用程式的 UI 時，控制項視圖中會顯示任何[**控制項**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)衍生類別和其他幾個專案。 但是，有時您會基於 UI 組合的緣故而不想讓元素出現在控制項檢視中，因為該元素正在複製資訊，或者呈現與協助工具案例無關緊要的資訊。 使用附加屬性 [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) 來變更在樹狀檢視中公開元素的方法。 如果您在 **Raw** 樹狀結構中放置元素，則大多數的輔助技術不會報告該元素為其檢視的一部分。 若要查看如何在現有控制項中運作的一些範例，請在文字編輯器中開啟 generic.xaml 設計參考 XAML 檔案，並在範本中搜尋 **AutomationProperties.AccessibilityView**。
+根據預設，當使用者介面自動化架構代表 Windows 應用程式的 UI 時，任何[**控制項**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)衍生類別和其他幾個元素都會出現在控制項視圖中。 但是，有時您會基於 UI 組合的緣故而不想讓元素出現在控制項檢視中，因為該元素正在複製資訊，或者呈現與協助工具案例無關緊要的資訊。 使用附加屬性 [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) 來變更在樹狀檢視中公開元素的方法。 如果您在 **Raw** 樹狀結構中放置元素，則大多數的輔助技術不會報告該元素為其檢視的一部分。 若要查看如何在現有控制項中運作的一些範例，請在文字編輯器中開啟 generic.xaml 設計參考 XAML 檔案，並在範本中搜尋 **AutomationProperties.AccessibilityView**。
 
 <span id="name_from_inner_text"/>
 <span id="NAME_FROM_INNER_TEXT"/>

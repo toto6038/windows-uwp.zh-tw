@@ -1,5 +1,5 @@
 ---
-Description: 以直覺且獨特的使用者互動體驗來建立 Windows 應用程式，其已針對觸控優化，但在輸入裝置之間的功能一致。
+Description: 以直覺且獨特的使用者互動體驗來建立 Windows 應用程式，其已針對觸控優化，但在輸入裝置之間具有一致的功能。
 title: 觸控互動
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -8,12 +8,12 @@ keywords: 觸控、指標、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 99926de0ea26b0cef9184756add777a39330d934
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e753b5c92dc22f967e2f518e8435d3a4fb41a529
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970253"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234841"
 ---
 # <a name="touch-interactions"></a>觸控互動
 
@@ -192,7 +192,7 @@ Windows 應用程式包含許多用來處理觸控輸入的不同機制，可讓
 
 以下提供 UWP 支援的基本觸控手勢組合。
 
-| 名稱           | 類型                 | 描述                                                                            |
+| 名稱           | 類型                 | 說明                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | 點選            | 靜態手勢       | 一根手指觸碰螢幕後提起手指。                                            |
 | 長按 | 靜態手勢       | 一根手指觸碰螢幕後停在原地。                                      |
@@ -222,7 +222,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 
 以下是指標事件及其相關事件引數的清單。
 
-| 事件或類別                                                       | 描述                                                   |
+| 事件或類別                                                       | 說明                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
 | [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)             | 單指觸碰螢幕時就會發生。               |
 | [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)           | 在相同的觸控點上提起時就會發生。                |
@@ -419,7 +419,7 @@ End Sub
 
 以下是操作事件及其相關事件引數的清單。
 
-| 事件或類別                                                                                               | 描述                                                                                                                               |
+| 事件或類別                                                                                               | 說明                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [**ManipulationStarting 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | 發生於第一次建立操作處理器時。                                                                                  |
 | [**ManipulationStarted 事件**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | 當輸入裝置開始在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 進行操作時發生。                                            |
@@ -576,7 +576,7 @@ End Sub
 
 本文中所述的所有指標事件、手勢事件和操控事件都會做為 *「路由事件」* 來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的父容器或應用程式的根 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10))。
 
-## <a name="dos-and-donts"></a>建議事項和避免事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 -   設計以觸控互動做為主要預期輸入方法的應用程式。

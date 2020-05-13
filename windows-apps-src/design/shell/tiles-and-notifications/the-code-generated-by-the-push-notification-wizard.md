@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9651af0c9caaae58bad82b2e33c1b0621b205054
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 6a3429607ecd9245dd10722fbb47d06d7aa6ef75
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970453"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234838"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推播通知精靈產生的程式碼
  
@@ -42,7 +42,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## <a name="registration-for-push-notifications"></a>推播通知的登錄
 
 
-在 [push] 中註冊。\*，UploadChannel 方法會註冊裝置以接收推播通知。 市集會追蹤已安裝應用程式的執行個體，並提供推播通知通道。 請參閱 [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)。
+在 push. register. 中 \* ，UploadChannel 方法會註冊裝置以接收推播通知。 市集會追蹤已安裝應用程式的執行個體，並提供推播通知通道。 請參閱 [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)。
 
 用戶端程式碼類似 JavaScript 後端和 .NET 後端兩者。 根據預設，當您新增 JavaScript 後端服務的推播通知時，對 notifyAllUsers 自訂 API 的一個範例呼叫會插入 UploadChannel 方法。
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 sendNotifications 函式會以快顯通知的方式傳送單一通知。 您也可以使用其他類型的推播通知。
 
-**提示**  ：如需如何在編輯腳本時取得協助的相關資訊，請參閱[啟用伺服器端 JavaScript 的 IntelliSense](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx)。
+**秘訣**   如需如何在編輯腳本時取得協助的詳細資訊，請參閱[啟用伺服器端 JavaScript 的 IntelliSense](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx)。
 
  
 
@@ -220,7 +220,7 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 因為 Windows 會回應推播通知，所以能在應用程式未執行時處理大部分的這類通知。 例如，即使本機郵件應用程式並未執行，推播通知也能讓使用者得知有新的郵件訊息。 Windows 處理快顯通知的方式是顯示訊息，例如文字訊息的第一行。 Windows 處理磚或徽章通知的方式是更新應用程式的動態磚，以反映新郵件訊息數。 您可以利用這種方式提示應用程式使用者檢查新資訊。 您的應用程式可以在執行時收到原始通知，而您可以使用這類通知將資料傳送給應用程式。 如果應用程式未執行，您可以設定背景工作來監視推播通知。
 
-您應該根據 Windows app 應用程式的指導方針使用推播通知，因為這些通知會佔用使用者的資源，而且如果過度使用，可能會有干擾。 請參閱[推播通知的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)。
+您應該根據 Windows 應用程式的指導方針使用推播通知，因為這些通知會佔用使用者的資源，而且如果過度使用，可能會有干擾。 請參閱[推播通知的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)。
 
 如果您利用推播通知更新動態磚，也應該遵循[磚與徽章的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)中的指導方針。
 
@@ -233,7 +233,7 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 您也可以在行動服務中執行排定的工作，以傳送推播通知。 請參閱[在行動服務中排程週期性工作](https://azure.microsoft.com/documentation/articles/mobile-services-schedule-recurring-tasks/)。
 
-**警告**  ：一旦您執行推播通知嚮導一次，請不要再次執行嚮導來新增另一個行動服務的註冊程式碼。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以在 push 中移動 wizard 產生的程式碼來完成這項操作。\* （包括**CreatePushNotificationChannelForApplicationAsync**的呼叫）在 OnLaunched 事件之外，但這方面的細節將取決於您的應用程式架構。
+**警告**   一旦執行推播通知嚮導一次，請不要第二次執行嚮導來新增另一個行動服務的註冊程式碼。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以在 push 中移動 wizard 產生的程式碼來完成這項操作。 \*（包括**CreatePushNotificationChannelForApplicationAsync**的呼叫）在 OnLaunched 事件之外，但這方面的細節將取決於您的應用程式架構。
 
  
 

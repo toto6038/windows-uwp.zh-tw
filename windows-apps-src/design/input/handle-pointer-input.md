@@ -1,5 +1,5 @@
 ---
-Description: 在您的 Windows 應用程式應用程式中，接收、處理和管理指標的輸入資料，例如觸控、滑鼠、畫筆/手寫筆和觸控板。
+Description: 在您的 Windows 應用程式中，接收、處理和管理指標的輸入資料，例如觸控、滑鼠、畫筆/手寫筆和觸控板。
 title: 處理指標輸入
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,16 +8,16 @@ keywords: pen, mouse, touchpad, touch, pointer, input, user interaction, 畫筆,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: db3b87bd187c64b04615fb6722e4e1f2b666b7dc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 609f6f1ad33c3736d9ac99ec40cbbfe7ade9500a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970063"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234820"
 ---
 # <a name="handle-pointer-input"></a>處理指標輸入
 
-在您的 Windows 應用程式應用程式中，接收、處理和管理指標裝置的輸入資料（例如觸控、滑鼠、畫筆/手寫筆和觸控板）。
+在您的 Windows 應用程式中，接收、處理和管理來自指標裝置（例如觸控、滑鼠、畫筆/手寫筆和觸控板）的輸入資料。
 
 > [!Important]
 > 只有在需求明確且定義清楚，而且沒有平台控制項支援的互動可以支援您的情況時，才能建立自訂互動。  
@@ -72,7 +72,7 @@ Windows 應用程式可以接聽下列指標事件：
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>在另一個 UI 元素擷取指標、指標被釋放，或另一個指標以程式設計方式被擷取時，即會發生此情況。</p>
 <div class="alert">
-<strong>請注意</strong>  ，沒有對應的指標捕捉事件。
+<strong>注意</strong>   沒有對應的指標捕捉事件。
 </div>
 <div>
  
@@ -132,7 +132,7 @@ Windows 應用程式可以接聽下列指標事件：
 
 ### <a name="create-the-ui"></a>建立 UI
 
-在此範例中，我們使用[矩形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle)（`Target`）做為物件耗用指標輸入。 當指標狀態變更時，目標的色彩就會變更。
+在此範例中，我們使用[矩形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle)（ `Target` ）做為物件耗用指標輸入。 當指標狀態變更時，目標的色彩就會變更。
 
 每個指標的詳細資料都會顯示於浮動的 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中，該區塊會與指標一起移動。 指標事件本身會在位於矩形右側的 [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 中回報。
 

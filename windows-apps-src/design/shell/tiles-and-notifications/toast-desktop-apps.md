@@ -7,16 +7,16 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，快顯通知，桌面橋接器，msix，sparse 封裝，傳送快顯通知，com 伺服器，com 啟動程式，com，假 com，無 com，不含 com 的選項
 ms.localizationpriority: medium
-ms.openlocfilehash: 020cdeb1aaddac7fe879e91d18e258aea1b387ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b84120a592a1c2f5f18c6b6121568cbf126a582e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970983"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234545"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>傳統型應用程式的快顯通知
 
-桌面應用程式（包括封裝的[MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)應用程式、使用[稀疏套件](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)來取得套件識別的應用程式，以及傳統的非封裝 Win32 應用程式）可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，傳統型應用程式有幾個不同選項，因為不同的啟用配置。
+桌面應用程式（包括封裝的[MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)應用程式、使用[稀疏套件](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)來取得套件識別的應用程式，以及傳統的非封裝 Win32 應用程式）都可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，傳統型應用程式有幾個不同選項，因為不同的啟用配置。
 
 在本文中，我們列出您可在Windows 10 上傳送快顯通知的選項。 每個選項完全支援...
 

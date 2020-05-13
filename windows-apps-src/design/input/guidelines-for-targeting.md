@@ -8,16 +8,16 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 199c120dcc85e5c113d6d4d529699a3f2fb28aa1
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 13737e9aeb906e0430b2a18dd75ae1fce3a75956
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970083"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234579"
 ---
 # <a name="guidelines-for-touch-targets"></a>觸控目標的指導方針
 
-無論裝置類型或輸入方法為何，您 Windows 應用程式中的所有互動式 UI 元素都必須夠大，才能讓使用者正確存取和使用。
+無論裝置類型或輸入方法為何，Windows 應用程式中的所有互動式 UI 元素都必須夠大，才能讓使用者正確存取和使用。
 
 支援觸控輸入（和觸控連絡人區域相對不精確的性質）需要進一步優化目標大小和控制項配置，因為觸控數位板所報告的較大、更複雜的輸入資料集是用來判斷使用者的預定（或最可能的）目標。
 
@@ -29,10 +29,10 @@ ms.locfileid: "82970083"
 
 ## <a name="fluent-standard-sizing"></a>Fluent 標準大小調整
 
-「Fluent 標準大小調整」** 旨在提供資訊密度和使用者舒適度之間平衡。 實際上，畫面上所有的項目都會對齊 40x40 有效像素 (epx) 目標，其可讓 UI 元素貼齊格線並根據系統層級縮放適度調整。
+「Fluent 標準大小調整」  旨在提供資訊密度和使用者舒適度之間平衡。 實際上，畫面上所有的項目都會對齊 40x40 有效像素 (epx) 目標，其可讓 UI 元素貼齊格線並根據系統層級縮放適度調整。
 
 > [!NOTE]
-> 如需有關有效圖元和縮放比例的詳細資訊，請參閱[Windows 應用程式設計簡介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+> 如需有效像素與縮放規模的詳細資訊，請參閱 [Windows 應用程式設計簡介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
 > 如需系統層級縮放的詳細資訊，請參閱[對齊、邊界、邊框距離](../layout/alignment-margin-padding.md)。
 
@@ -44,7 +44,7 @@ ms.locfileid: "82970083"
 
 壓縮大小可以在頁面或格線層級套用。
 
-### <a name="page-level"></a>分頁層級
+### <a name="page-level"></a>頁面層級
 
 ```xaml
 <Page.Resources>

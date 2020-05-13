@@ -8,12 +8,12 @@ keywords: 觸控板、PTP、觸控、指標、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: afbdf5c672328acfc60a82f9f66c75dc52370c99
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ffc3ce96c7e8c2ad4a34aecd1ca85ff644bdef97
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970233"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234479"
 ---
 # <a name="touchpad-design-guidelines"></a>觸控板設計指導方針
 
@@ -55,11 +55,11 @@ ms.locfileid: "82970233"
 
 ![標準觸控板設定](images/mouse-touchpad-settings-standard.png)
 
-<sup>標準\\的\\觸控板設定</sup>
+<sup>標準的 \\ 觸控板 \\ 設定</sup>
 
 ![Windows 精確式觸控板設定](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\精確\\的\\觸控板設定</sup>
+<sup>Windows \\ 精確的 \\ 觸控板 \\ 設定</sup>
 
 以下是一些已針對觸控板進行最佳化且適用於執行一般工作的手勢範例。
 

@@ -1,5 +1,5 @@
 ---
-description: 說明在高對比主題為作用中時，確保您的 Windows 應用程式可供使用的必要步驟。
+description: 說明當高對比主題為作用中時，確保您的 Windows 應用程式可供使用的必要步驟。
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: 高對比佈景主題
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 118f604b8c8c95a863773270825ff4db5c5a1b3a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ce3fe9ea96f4b4ce2f541fb5f7a9682a0dee5e0e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969453"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234032"
 ---
 # <a name="high-contrast-themes"></a>高對比佈景主題  
 
@@ -108,13 +108,13 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 查看現有的 App、[開始]，或常用控制項通常很有幫助，可以了解其他人如何解決類似的高對比設計問題。
 
-**對**
+**可行事項**
 
 * 盡可能遵守前景/背景組合。
 * 在您的 App 執行時，測試全部 4 種高對比佈景主題。 使用者切換佈景主題時，應不需要重新啟動您的 App。
 * 保持一致。
 
-**避免事項**
+**禁止事項**
 
 * 在 **HighContrast** 佈景主題中以硬式編碼設定色彩；請使用 **SystemColor*Color** 資源。
 * 依照美學來選擇色彩資源。 請記住，色彩會隨佈景主題變更！
@@ -154,7 +154,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-請注意** \{如何\}使用 ThemeResource**兩次，一次是參考**SystemColorWindowColor** ，另一個則是參考**BrandedPageBackgroundBrush**。 兩次都是為了讓您的 App 在執行階段能正確設定佈景主題。 現在是測試您 App 內功能的好時機。 當您切換成高對比佈景主題時，格線的背景將會自動更新。 在不同的高對比佈景主題之間切換時，它也會更新。
+請注意如何使用** \{ ThemeResource \} **兩次，一次是參考**SystemColorWindowColor** ，另一個則是參考**BrandedPageBackgroundBrush**。 兩次都是為了讓您的 App 在執行階段能正確設定佈景主題。 現在是測試您 App 內功能的好時機。 當您切換成高對比佈景主題時，格線的背景將會自動更新。 在不同的高對比佈景主題之間切換時，它也會更新。
 
 ## <a name="when-to-use-borders"></a>使用框線的時機
 

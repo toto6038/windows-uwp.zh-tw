@@ -1,17 +1,17 @@
 ---
-description: 本文說明如何在 Windows app 應用程式中新增拖放功能。
+description: 本文說明如何在您的 Windows 應用程式中新增拖放功能。
 title: 拖放
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e14ab0d7e6ef8b79ce29addf37ec1fc52b737923
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 52fb9c5d6b9c594be1ad4f1fa1a4421d99cae5fa
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970153"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234615"
 ---
 # <a name="drag-and-drop"></a>拖放
 
@@ -50,8 +50,8 @@ ms.locfileid: "82970153"
 ## <a name="construct-a-data-package"></a>建構資料套件 
 
 在大部分的案例中，系統會為您建構資料套件。 系統會自動處理：
-* 影像
-* Text 
+* 映像
+* 文字 
 
 針對其他內容，您將需要處理 **DragStarted** 和 **DragCompleted** 事件，然後使用他們建構您自己的 [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)。
 
@@ -109,7 +109,7 @@ ms.locfileid: "82970153"
 
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [應用程式間通訊](index.md)
 * [AllowDrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop)
