@@ -1,5 +1,5 @@
 ---
-Description: Windows 應用程式中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。
+Description: Windows 應用程式中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。
 title: Windows 應用程式的瀏覽基本知識
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4973ccaf066b2694412f04b09b8725da2fc31c36
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ed38be070263bbd619e44daf5c747a97299b3cf7
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969233"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233851"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 應用程式的瀏覽設計基本知識
 

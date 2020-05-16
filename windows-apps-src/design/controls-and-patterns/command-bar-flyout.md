@@ -12,18 +12,18 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6b85177e5d3d0f4a2a37010ba9122861216a4b6b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bdd18fea2fe563fcee835e6b61e24d6a9b03d029
+ms.sourcegitcommit: f945df77f8a19961ba053ee62e593ec8e015038f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081964"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82989804"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 
 命令列飛出視窗藉由在與 UI 畫布上元素相關的浮動工具列中顯示命令，讓使用者能輕鬆存取一般工作。
 
-![展開的文字命令列飛出視窗](images/command-bar-flyout-header.png)
+![展開的文字命令列飛出視窗](images/command-bar-flyout-text-full.png)
 
 如同 [CommandBar](app-bars.md)，CommandBarFlyout 有可用來新增命令的 **PrimaryCommands** 和 **SecondaryCommands** 屬性。 您可以將命令放在集合中，或兩者之中。 顯示主要和次要命令的時機和方式取決於顯示模式。
 
@@ -36,7 +36,7 @@ ms.locfileid: "80081964"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | 此 **CommandBarFlyout** 控制項包含在 Windows UI 程式庫中；此程式庫是包含適用於 UWP 應用程式的新控制項與 UI 功能的 NuGet 套件。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | 此 **CommandBarFlyout** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 >**Windows UI 程式庫 API**：[CommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
@@ -417,5 +417,5 @@ TextCommandBarFlyout 無法加以自訂，並由每個文字控制項自動管�
 
 ## <a name="related-articles"></a>相關文章
 
-- [UWP 應用程式的命令設計基本知識](../basics/commanding-basics.md)
+- [Windows 應用程式的命令設計基本知識](../basics/commanding-basics.md)
 - [CommandBar 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
