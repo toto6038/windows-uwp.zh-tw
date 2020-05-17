@@ -63,7 +63,7 @@ sample.as<IInitializeWithWindow>()->Initialize(hwnd);
 
 ## <a name="a-simple-example-of-a-com-component"></a>COM 元件的簡單範例
 
-以下是使用 C++/WinRT 撰寫 COM 元件的簡單範例。 這是微型應用程式的完整清單，如果將程式碼貼到新 `pch.h`Windows 主控台應用程式 (C++/WinRT)`main.cpp` 專案的 **和** 中，即可試用程式碼。
+以下是使用 C++/WinRT 撰寫 COM 元件的簡單範例。 這是微型應用程式的完整清單，如果將程式碼貼到新 **Windows 主控台應用程式 (C++/WinRT)** 專案的 `pch.h` 和 `main.cpp` 中，即可試用程式碼。
 
 ```cppwinrt
 // pch.h
@@ -573,7 +573,7 @@ HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** r
 
 另請參閱 [C++/WinRT 中的弱式參考](weak-references.md#weak-references-in-cwinrt)。
 
-如果您的類型實作的是 [**IInspectable**](/uwp/cpp-ref-for-winrt/implements) (或衍生自 [IInspectable**的任何介面)，則 C++/WinRT (具體來說，是**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource)winrt::implements[**基礎架構範本) 會實作**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)IWeakReferenceSource  。
+如果您的類型實作的是 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (或衍生自 **IInspectable** 的任何介面)，則 C++/WinRT (具體來說，是 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎架構範本) 會實作 [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource)。
 
 這是因為 **IWeakReferenceSource** 和 [**IWeakReference**](/windows/desktop/api/weakreference/nn-weakreference-iweakreference) 是專為 Windows 執行階段類型所設計的。 因此，只要將 **winrt::Windows::Foundation::IInspectable** (或衍生自 **IInspectable** 的介面) 加入實作，即可開啟您的 coclass 的弱式參考支援。
 

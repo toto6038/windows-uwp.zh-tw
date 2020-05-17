@@ -22,7 +22,7 @@ ms.locfileid: "74259611"
 
 將使用者經常存取的檔案新增到您 app 的最近使用清單 (MRU) 中，以追蹤這些檔案。 平台會根據項目上次存取的時間來排序項目，並在達到清單的 25 個項目數限制時移除最舊的項目，為您管理 MRU。 所有 app 都有自己的 MRU。
 
-從靜態 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList) 屬性取得的 [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) 類別，代表您的 app 的 MRU。 MRU 項目會儲存為 [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem) 物件，所以 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件 (代表檔案) 和 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 物件 (代表資料夾) 都可以新增到 MRU。
+從靜態 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) 屬性取得的 [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList) 類別，代表您的 app 的 MRU。 MRU 項目會儲存為 [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem) 物件，所以 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 物件 (代表檔案) 和 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 物件 (代表資料夾) 都可以新增到 MRU。
 
 > [!NOTE]
 > 如需完整範例，請參閱[檔案選擇器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker) \(英文\) 和[檔案存取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) \(英文\)。
@@ -61,9 +61,9 @@ ms.locfileid: "74259611"
 
 使用最適合您要擷取之項目的擷取方法。
 
--   使用 [**GetFileAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 將檔案擷取為 [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfileasync)。
--   使用 [**GetFolderAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 將資料夾擷取為 [**StorageFolder**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfolderasync)。
--   使用 [**GetItemAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem) 擷取可代表檔案或資料夾的泛型 [**IStorageItem**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getitemasync)。
+-   使用 [**GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfileasync) 將檔案擷取為 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)。
+-   使用 [**GetFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfolderasync) 將資料夾擷取為 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder)。
+-   使用 [**GetItemAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getitemasync) 擷取可代表檔案或資料夾的泛型 [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem)。
 
 以下說明如何取回我們剛才新增的檔案。
 
@@ -91,7 +91,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 ## <a name="future-access-list"></a>未來存取清單
 
-如同 MRU 一樣，您的 app 也有一個未來存取清單。 您的使用者會挑選檔案和資料夾，以授權您的 app 存取原本可能無法存取的項目。 如果您將這些項目新增到未來存取清單，則可以保留該權限，讓您的 app 稍後再次存取這些項目。 從靜態 [**StorageApplicationPermissions.FutureAccessList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemAccessList) 屬性取得的 [**StorageItemAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) 類別，代表您 app 的未來存取清單。
+如同 MRU 一樣，您的 app 也有一個未來存取清單。 您的使用者會挑選檔案和資料夾，以授權您的 app 存取原本可能無法存取的項目。 如果您將這些項目新增到未來存取清單，則可以保留該權限，讓您的 app 稍後再次存取這些項目。 從靜態 [**StorageApplicationPermissions.FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) 屬性取得的 [**StorageItemAccessList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemAccessList) 類別，代表您 app 的未來存取清單。
 
 當使用者挑選項目時，請考慮將此項目新增到您的未來存取清單及 MRU。
 

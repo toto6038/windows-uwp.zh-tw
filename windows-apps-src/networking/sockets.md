@@ -32,14 +32,14 @@ TCP (傳輸控制通訊協定) 通訊端為長期連線提供雙向的低階網�
 <Capability Name="privateNetworkClientServer" />
 ```
 
-如果您透過網際網路連線，可以宣告 `privateNetworkClientServer`，而不是 `internetClientServer`。 **StreamSocket** 和 **StreamSocketListener** 需要宣告其中一個應用程式功能。
+如果您透過網際網路連線，可以宣告 `internetClientServer`，而不是 `privateNetworkClientServer`。 **StreamSocket** 和 **StreamSocketListener** 需要宣告其中一個應用程式功能。
 
 ### <a name="an-echo-client-and-server-using-tcp-sockets"></a>echo 用戶端和伺服器，使用 TCP 通訊端
-建構 [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 並開始接聽傳入的 TCP 連線。 每次用戶端與 [StreamSocketListener**建立連線，都會引發**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)StreamSocketListener.ConnectionReceived  事件。
+建構 [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 並開始接聽傳入的 TCP 連線。 每次用戶端與 **StreamSocketListener** 建立連線，都會引發 [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) 事件。
 
 也建構 [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket)、連線到伺服器、傳送要求，及接收回應。
 
-建立名為  **的**頁面`StreamSocketAndListenerPage`。 將 XAML 標記放入 `StreamSocketAndListenerPage.xaml`，並將命令式程式碼放入 `StreamSocketAndListenerPage` 類別中。
+建立名為 `StreamSocketAndListenerPage` 的**頁面**。 將 XAML 標記放入 `StreamSocketAndListenerPage.xaml`，並將命令式程式碼放入 `StreamSocketAndListenerPage` 類別中。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -562,7 +562,7 @@ UDP (使用者資料包通訊協定) 通訊端與 TCP 通訊端類似，也提�
 
 建構另一個 **DatagramSocket** 扮演 echo 用戶端的角色、繫結至特定連接埠號碼、傳送 UDP 訊息，然後接收回應。
 
-建立名為  **的**頁面`DatagramSocketPage`。 將 XAML 標記放入 `DatagramSocketPage.xaml`，並將命令式程式碼放入 `DatagramSocketPage` 類別中。
+建立名為 `DatagramSocketPage` 的**頁面**。 將 XAML 標記放入 `DatagramSocketPage.xaml`，並將命令式程式碼放入 `DatagramSocketPage` 類別中。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -1285,7 +1285,7 @@ private:
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>提供具有 StreamSocket 類別的用戶端憑證
 [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) 支援使用 SSL/TLS 來驗證與用戶端 app 交談的伺服器。 在某些情況下，用戶端應用程式必須使用 SSL/TLS 的用戶端憑證向伺服器驗證本身。 您可以在繫結或連接通訊端（SSL/TLS 交握開始前必須先設定通訊端）之前，使用 [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) 屬性提供用戶端憑證。 您可以從 **StreamSocket** 物件本身存取 **StreamSocketControl** 執行個體 (透過其 [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control) 屬性)。 如果伺服器要求用戶端憑證，Windows 會使用提供的用戶端憑證來回應。
 
-使用採用 [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) 的 [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.socketprotectionlevel) 覆寫，如這個最少程式碼範例所示。
+使用採用 [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel) 的 [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) 覆寫，如這個最少程式碼範例所示。
 
 > [!IMPORTANT]
 > 如程式碼範例中的意見所示，您的專案需要宣告 sharedUserCertificates 應用程式功能，以讓此程式碼正常運作。

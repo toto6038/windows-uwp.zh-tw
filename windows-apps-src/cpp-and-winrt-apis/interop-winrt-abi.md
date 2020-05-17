@@ -306,18 +306,18 @@ static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISa
 
 | 操作 | 如何執行此動作 | 附註 |
 |-|-|-|
-| 從 **winrt::Sample\* 擷取** ISample  | `p = reinterpret_cast<ISample*>(get_abi(s));` | s  仍然擁有物件。 |
-| 從 **winrt::Sample\* 中斷連結** ISample  | `p = reinterpret_cast<ISample*>(detach_abi(s));` | s  不再擁有物件。 |
+| 從 **winrt::Sample** 擷取 **ISample\*** | `p = reinterpret_cast<ISample*>(get_abi(s));` | s  仍然擁有物件。 |
+| 從 **winrt::Sample** 中斷連結 **ISample\*** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | s  不再擁有物件。 |
 | 將 **ISample\*** 轉送至新的 **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | s  會取得物件的擁有權。 |
 | 將 **ISample\*** 設定到 **winrt::Sample** 中 | `*put_abi(s) = p;` | s  會取得物件的擁有權。 s  先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
 | 將 **ISample\*** 接收到 **winrt::Sample** 中 | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | s  會取得物件的擁有權。 s  先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
-| 取代 **winrt::Sample\* 中的** ISample  | `attach_abi(s, p);` | s  會取得物件的擁有權。 s  先前擁有的物件會釋出。 |
+| 取代 **winrt::Sample** 中的 **ISample\*** | `attach_abi(s, p);` | s  會取得物件的擁有權。 s  先前擁有的物件會釋出。 |
 | 將 **ISample\*** 設定到 **winrt::Sample** | `copy_from_abi(s, p);` | s  會對物件建立新的參考。 s  先前擁有的物件會釋出。 |
 | 將 **winrt::Sample** 複製到 **ISample\*** | `copy_to_abi(s, reinterpret_cast<void*&>(p));` | p  會接收物件的複本。 p  先前擁有的所有物件都會流失。 |
 
 ## <a name="interoperating-with-the-abis-guid-struct"></a>交互操作 ABI 的 GUID 結構
 
-[**GUID**](/previous-versions/aa373931(v%3Dvs.80)) 會投影為 **winrt::guid**。 對於您實作的 API，必須為 GUID 參數使用 **winrt::guid**。 除此之外，在您包含任何 C++/WinRT 標頭之前，只要您包含  **(由 <windows.h> 和其他許多標頭檔以隱含方式包含)，** winrt::guid**和**GUID`unknwn.h` 之間就會進行自動轉換。
+[**GUID**](/previous-versions/aa373931(v%3Dvs.80)) 會投影為 **winrt::guid**。 對於您實作的 API，必須為 GUID 參數使用 **winrt::guid**。 除此之外，在您包含任何 C++/WinRT 標頭之前，只要您包含 `unknwn.h` (由 <windows.h> 和其他許多標頭檔以隱含方式包含)，**winrt::guid** 和 **GUID** 之間就會進行自動轉換。
 
 如果您不這麼做，則可以在這兩者之間建立硬式的 `reinterpret_cast`。 針對下列資料表，假設這些宣告。
 

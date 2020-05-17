@@ -47,7 +47,7 @@ ms.locfileid: "66365244"
 
 ## <a name="planeprojection-class"></a>PlaneProjection 類別
 
-使用 [**PlaneProjection**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 設定 UIElement 的 [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection) 屬性，即可將 3D 效果套用至任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PlaneProjection)。 **PlaneProjection** 定義如何在空間中呈現轉換。 以下範例顯示一個簡單情況。
+使用 [**PlaneProjection**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PlaneProjection) 設定 UIElement 的 [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection) 屬性，即可將 3D 效果套用至任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)。 **PlaneProjection** 定義如何在空間中呈現轉換。 以下範例顯示一個簡單情況。
 
 ```xml
 <Image Source="kid.png">

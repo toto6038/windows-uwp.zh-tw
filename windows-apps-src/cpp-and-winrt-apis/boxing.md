@@ -14,7 +14,7 @@ ms.locfileid: "79038091"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>使用 C++/WinRT，Boxing 和 unboxing 純量數值到 IInspectable
  
-Windows 執行階段 (WinRT) 中，[**IInspectable 介面**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)是每個執行階段類別的根介面。 這是類似在每個 COM 介面與類別根的 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)；以及在每個**一般類型系統**類別根的 [System.Object](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system) 的想法。
+Windows 執行階段 (WinRT) 中，[**IInspectable 介面**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)是每個執行階段類別的根介面。 這是類似在每個 COM 介面與類別根的 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)；以及在每個[一般類型系統](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system)類別根的 **System.Object** 的想法。
 
 換言之，預期 **IInspectable** 的函式可以傳遞任何執行階段類別的執行個體。 但您無法直接將純量數值 (例如數字或文字值) 傳遞至此類函式。 而是需要將純量數值包裝於參考類別物件中。 該包裝程序稱為「boxing」  值。
 

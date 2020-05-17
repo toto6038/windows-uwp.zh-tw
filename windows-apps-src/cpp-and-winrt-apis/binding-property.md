@@ -53,7 +53,7 @@ namespace Bookstore
 
 儲存檔案並建置專案。 在建置程序期間，會執行 `midl.exe` 工具，以建立 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)，其會描述執行階段類別。 然後，會執行 `cppwinrt.exe` 工具，以產生原始碼檔案，可再撰寫和使用執行階段類別時提供支援。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
 
-以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]  。 這會在檔案總管中開啟專案資料夾。 在那裏，從 `BookSku.h` 資料夾將虛設常式檔案 `BookSku.cpp` 和 `\Bookstore\Bookstore\Generated Files\sources\` 複製到專案資料夾中，也就是 `\Bookstore\Bookstore\`。 在 方案總管  中，選取專案資料夾後，確定 顯示所有檔案  已切換成開啟。 在您複製的虛設常式檔案上按右鍵，然後按一下 **[加入至專案]** 。
+以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]  。 這會在檔案總管中開啟專案資料夾。 在那裏，從 `\Bookstore\Bookstore\Generated Files\sources\` 資料夾將虛設常式檔案 `BookSku.h` 和 `BookSku.cpp` 複製到專案資料夾中，也就是 `\Bookstore\Bookstore\`。 在 方案總管  中，選取專案資料夾後，確定 顯示所有檔案  已切換成開啟。 在您複製的虛設常式檔案上按右鍵，然後按一下 **[加入至專案]** 。
 
 ## <a name="implement-booksku"></a>執行 **BookSku**
 現在要開啟 `\Bookstore\Bookstore\BookSku.h` 與 `BookSku.cpp`，並實作我們的執行階段類別。 在 `BookSku.h` 中，新增一個採用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的建構函式，一個儲存標題字串的私用成員，以及另一個用於標題變更時，我們會引發的事件。 進行這些變更之後，您的 `BookSku.h` 看起來像這樣。
@@ -142,7 +142,7 @@ namespace Bookstore
 }
 ```
 
-儲存並建置。 從 `BookstoreViewModel.h` 資料夾將 `BookstoreViewModel.cpp` 與 `Generated Files\sources` 複製到專案資料夾，在專案中包含它們。 開啟那些檔案，並實作如下所示的執行階段類別。 請注意，我們在 `BookstoreViewModel.h` 中如何宣告 `BookSku.h`，其會宣告 **BookSku** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookSku**)。 我們會從預設的建構函式中移除 `= default`。
+儲存並建置。 從 `Generated Files\sources` 資料夾將 `BookstoreViewModel.h` 與 `BookstoreViewModel.cpp` 複製到專案資料夾，在專案中包含它們。 開啟那些檔案，並實作如下所示的執行階段類別。 請注意，我們在 `BookstoreViewModel.h` 中如何宣告 `BookSku.h`，其會宣告 **BookSku** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookSku**)。 我們會從預設的建構函式中移除 `= default`。
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -208,7 +208,7 @@ namespace Bookstore
 
 如果您省略包含 `BookstoreViewModel.idl` (請查看上面的 `MainPage.idl` 清單)，則會看到 **\<"MainViewModel" 附近**的預期錯誤。 確定您將所有類型都留在相同的命名空間中的另一個秘訣：未顯示在程式碼清單中的命名空間。
 
-若要解決我們預期會看見的錯誤，您現在必須從所產生的檔案 (**和** ) 複製 `\Bookstore\Bookstore\Generated Files\sources\MainPage.h`MainViewModel`MainPage.cpp` 屬性的存取子虛設常式，並貼到 `\Bookstore\Bookstore\MainPage.h` 和 `MainPage.cpp` 中。 接下來說明這麼做的步驟。
+若要解決我們預期會看見的錯誤，您現在必須從所產生的檔案 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和 `MainPage.cpp`) 複製 **MainViewModel** 屬性的存取子虛設常式，並貼到 `\Bookstore\Bookstore\MainPage.h` 和 `MainPage.cpp` 中。 接下來說明這麼做的步驟。
 
 在 `\Bookstore\Bookstore\MainPage.h` 中包含 `BookstoreViewModel.h`，其會宣告 **BookstoreViewModel** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookstoreViewModel**)。 新增私用成員以儲存檢視模型。 請注意，按照 **BookstoreViewModel** (這是 **Bookstore::BookstoreViewModel**) 的投影類型，實作屬性存取子函式 (以及成員 m_mainViewModel)。 實作類型是在與應用程式相同的專案 (編譯單位) 中，因此我們透過採用 **std::nullptr_t** 的建構函式多載建構 m_mainViewModel。 也會移除 **MyProperty** 屬性。
 

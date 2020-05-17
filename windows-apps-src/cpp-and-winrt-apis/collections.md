@@ -55,7 +55,7 @@ int main()
 }
 ```
 
-如上述程式碼範例所示，在建立集合之後，您可以附加項目、重複處理這些項目，而且通常可將這些項目視為可能會從 API 收到的任何 Windows 執行階段集合物件。 如果需要集合的固定畫面，您可以呼叫所示的 [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)。 如上所示，&mdash;建立和使用集合&mdash;的模式適用於想要將資料傳入 API 或從 API 取得資料的簡單案例。 如果預期  IIterable  ，則可傳遞 [IVector**或**IVectorView](/uwp/api/windows.foundation.collections.iiterable_t_)。
+如上述程式碼範例所示，在建立集合之後，您可以附加項目、重複處理這些項目，而且通常可將這些項目視為可能會從 API 收到的任何 Windows 執行階段集合物件。 如果需要集合的固定畫面，您可以呼叫所示的 [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)。 如上所示，&mdash;建立和使用集合&mdash;的模式適用於想要將資料傳入 API 或從 API 取得資料的簡單案例。 如果預期 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)，則可傳遞 **IVector** 或 **IVectorView**。
 
 在以上的程式碼範例中，對 **winrt::init_apartment** 的呼叫會初始化 Windows 執行階段中的執行緒；預設是在多執行緒 Apartment 中。 此呼叫也會初始化 COM。
 
@@ -116,7 +116,7 @@ auto bookSkus{ winrt::single_threaded_observable_vector<Windows::Foundation::IIn
 - [**winrt::single_threaded_map**](/uwp/cpp-ref-for-winrt/single-threaded-map) 函式範本會傳回非可觀察關聯集合成為 [**IMap**](/uwp/api/windows.foundation.collections.imap_k_v_)。
 - [**winrt::single_threaded_observable_map**](/uwp/cpp-ref-for-winrt/single-threaded-observable-map) 函式範本會傳回可觀察關聯集合成為 [**IObservableMap**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_)。
 
-您可以選擇傳遞至類型 *std::map* 或 **std::unordered_map** 的 **rvalue**，使用資料準備這些集合。
+您可以選擇傳遞至類型 **std::map** 或 **std::unordered_map** 的 *rvalue*，使用資料準備這些集合。
 
 ```cppwinrt
 auto coll1{

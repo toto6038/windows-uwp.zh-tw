@@ -15,7 +15,7 @@ ms.locfileid: "68682721"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>從 Microsoft Store 下載與安裝套件更新
 
-從 Windows 10 版本 1607 開始，您可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 命名空間中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store) 類別的方法，以程式設計方式檢查 Microsoft Store 中目前應用程式的套件更新，以及下載並安裝更新的套件。 您也可以在合作夥伴中心上查詢已標示為強制性的套件，並在安裝強制更新之前在您的應用程式中停用功能。
+從 Windows 10 版本 1607 開始，您可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 類別的方法，以程式設計方式檢查 Microsoft Store 中目前應用程式的套件更新，以及下載並安裝更新的套件。 您也可以在合作夥伴中心上查詢已標示為強制性的套件，並在安裝強制更新之前在您的應用程式中停用功能。
 
 在 Windows 10 版本 1803 中導入的其他 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 方法可讓您下載及以無訊息方式安裝套件更新 (不向使用者顯示 UI 通知)、解除安裝[選用套件](/windows/msix/package/optional-packages)，以及取得應用程式下載和安裝佇列中套件的資訊。
 
@@ -31,7 +31,7 @@ ms.locfileid: "68682721"
 此程式碼範例假設：
 
 * 程式碼會在 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 的內容中執行。
-* **Page** 包含名為 [ 的 ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar)ProgressBar```downloadProgressBar```，可提供下載作業的狀態。
+* **Page** 包含名為 ```downloadProgressBar``` 的 [ProgressBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar)，可提供下載作業的狀態。
 * 程式碼檔案含有使用 **Windows.Services.Store**、**Windows.Threading.Tasks**、**Windows.UI.Popups** 命名空間的 **using** 陳述式。
 * App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 針對[多使用者應用程式](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法。
 

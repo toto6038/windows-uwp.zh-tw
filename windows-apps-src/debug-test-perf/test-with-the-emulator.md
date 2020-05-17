@@ -635,7 +635,7 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>解除安裝 Windows 10 行動裝置版映像
 
-當您安裝模擬器時，即會安裝 Windows 10 行動裝置版 VHD 映像，它在控制台的 [程式和功能]  清單中會有自己的項目。 如果您想要解除安裝該映像，可在安裝的程式清單中尋找 [Windows 10 行動裝置版映像 -**版本\<]\>** 、在其上按一下滑鼠右鍵，然後選擇 [解除安裝]  。
+當您安裝模擬器時，即會安裝 Windows 10 行動裝置版 VHD 映像，它在控制台的 [程式和功能]  清單中會有自己的項目。 如果您想要解除安裝該映像，可在安裝的程式清單中尋找 [Windows 10 行動裝置版映像 -\<版本\>]  、在其上按一下滑鼠右鍵，然後選擇 [解除安裝]  。
 
 在目前版本中，您接著必須手動刪除模擬器的 VHD 檔案。 若您將模擬器安裝至預設路徑，則 VHD 檔案會位於 C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd。
 

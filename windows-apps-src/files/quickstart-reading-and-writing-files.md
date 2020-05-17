@@ -254,7 +254,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  接著從 [ 呼叫  IRandomAccessStream.GetOutputStreamAt](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)`stream` 方法，以取得輸出資料流。 如果您使用 C#，則它放入 **using** 陳述式中以管理輸出資料流的存留期。 如果您使用 [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，將它放入區塊中，或在使用完畢時將它設為 `nullptr`，即可控制其存留期。
+2.  接著從 `stream` 呼叫 [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) 方法，以取得輸出資料流。 如果您使用 C#，則它放入 **using** 陳述式中以管理輸出資料流的存留期。 如果您使用 [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，將它放入區塊中，或在使用完畢時將它設為 `nullptr`，即可控制其存留期。
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))

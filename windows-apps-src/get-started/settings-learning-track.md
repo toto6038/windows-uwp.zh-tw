@@ -51,9 +51,9 @@ composite["FontSize"] = 11;
 roamingSettings.Values["RoamingFontInfo"] = composite;
  ```
 
-透過使用 **優先取得本機設定資料存放區的**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.LocalSettings`，將設定儲存至本機裝置。 您指派給此執行個體的索引鍵/值字典組會儲存在本機裝置設定資料存放區中。
+透過使用 `Windows.Storage.ApplicationData.Current.LocalSettings` 優先取得本機設定資料存放區的 **ApplicationDataContainer**，將設定儲存至本機裝置。 您指派給此執行個體的索引鍵/值字典組會儲存在本機裝置設定資料存放區中。
 
-使用類似的模式儲存漫遊設定。 使用 **，優先取得漫遊設定資料存放區的** ApplicationDataContainer`Windows.Storage.ApplicationData.Current.RoamingSettings`。 然後將索引鍵/值組指派給執行個體。  這些索引鍵/值組將會自動在裝置間漫遊。
+使用類似的模式儲存漫遊設定。 使用 `Windows.Storage.ApplicationData.Current.RoamingSettings`，優先取得漫遊設定資料存放區的 **ApplicationDataContainer**。 然後將索引鍵/值組指派給執行個體。  這些索引鍵/值組將會自動在裝置間漫遊。
 
 上述的程式碼片段中，**ApplicationDataCompositeValue** 儲存多個索引鍵/值組。 當您有多個應該不會彼此同步處理的設定時，複合值會很實用。 當您儲存 **ApplicationDataCompositeValue** 時，以一個單位儲存與載入這些值，或自動完成。 這個相關的方式設定不會取得同步，因為它們會以一個單位而非個別來進行漫遊。
 
@@ -74,9 +74,9 @@ if (composite != null)
 }
 ```
 
-透過使用 **優先取得本機設定資料存放區的**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.LocalSettings` 執行個體，從本機裝置載入設定。 然後用來擷取索引鍵/值組。
+透過使用 `Windows.Storage.ApplicationData.Current.LocalSettings` 優先取得本機設定資料存放區的 **ApplicationDataContainer** 執行個體，從本機裝置載入設定。 然後用來擷取索引鍵/值組。
 
-透過下列類似的模式載入漫遊設定。 使用 **，從漫遊設定資料存放區優先取得** ApplicationDataContainer`Windows.Storage.ApplicationData.Current.RoamingSettings` 執行個體。 從該執行個體存取索引鍵/值組。 如果尚未漫遊資料至裝置，但您正從此裝置存取設定，則會收到 null **ApplicationDataContainer**。 這便是在上述範例程式碼中有 `if (composite != null)` 檢查的原因。
+透過下列類似的模式載入漫遊設定。 使用 `Windows.Storage.ApplicationData.Current.RoamingSettings`，從漫遊設定資料存放區優先取得 **ApplicationDataContainer** 執行個體。 從該執行個體存取索引鍵/值組。 如果尚未漫遊資料至裝置，但您正從此裝置存取設定，則會收到 null **ApplicationDataContainer**。 這便是在上述範例程式碼中有 `if (composite != null)` 檢查的原因。
 
 ## <a name="useful-apis-and-docs"></a>實用的 API 和文件
 

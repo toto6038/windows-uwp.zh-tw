@@ -19,9 +19,9 @@ ms.locfileid: "80482506"
 
 本文示範使用 [XAML Islands](xaml-islands.md)，在 WPF 應用程式中裝載標準 UWP 控制項 (也就是 Windows SDK 所提供的第一方 UWP 控制項) 的兩種方式：
 
-* 其會示範如何使用 Windows 社群工具組中[包裝的控制項](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)來裝載 UWP [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 和 [InkToolbar](xaml-islands.md#wrapped-controls) 控制項。 這些控制項會包裝一小部分有用 UWP 控制項的介面和功能。 您可以直接將控制項新增至 WPF 或 Windows Forms 專案的設計介面，然後像設計工具中的任何其他 WPF 或 Windows Forms 控制項一樣來使用它們。
+* 其會示範如何使用 Windows 社群工具組中[包裝的控制項](xaml-islands.md#wrapped-controls)來裝載 UWP [InkCanvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和 [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 控制項。 這些控制項會包裝一小部分有用 UWP 控制項的介面和功能。 您可以直接將控制項新增至 WPF 或 Windows Forms 專案的設計介面，然後像設計工具中的任何其他 WPF 或 Windows Forms 控制項一樣來使用它們。
 
-* 其也會示範如何使用 Windows 社群工具組中的 [WindowsXamlHost](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 控制項來裝載 UWP [CalendarView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項。 只有一小組 UWP 控制項會以已包裝的控制項形式提供，因此您可使用 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 來裝載任何其他標準 UWP 控制項。
+* 其也會示範如何使用 Windows 社群工具組中的 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項來裝載 UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 控制項。 只有一小組 UWP 控制項會以已包裝的控制項形式提供，因此您可使用 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 來裝載任何其他標準 UWP 控制項。
 
 雖然本文示範如何在 WPF 應用程式中裝載 UWP 控制項，但此程序類似於 Windows Forms 應用程式。
 
@@ -134,7 +134,7 @@ ms.locfileid: "80482506"
 
 4. 在屬性的 [應用程式]  索引標籤上，按一下 [啟始物件]  下拉式清單，然後選擇您在上一個步驟中所新增 `Program` 類別的完整名稱。 
     > [!NOTE]
-    > 根據預設，WPF 專案會在所產生的程式碼檔案中定義不打算修改的 `Main` 進入點函式。 此步驟會將您專案的進入點變更為新 `Main` 類別的 `Program` 方法，這可讓您在應用程式的啟動程序中，儘早新增可執行的程式碼。 
+    > 根據預設，WPF 專案會在所產生的程式碼檔案中定義不打算修改的 `Main` 進入點函式。 此步驟會將您專案的進入點變更為新 `Program` 類別的 `Main` 方法，這可讓您在應用程式的啟動程序中，儘早新增可執行的程式碼。 
 
 5. 將您的變更儲存至專案屬性。
 

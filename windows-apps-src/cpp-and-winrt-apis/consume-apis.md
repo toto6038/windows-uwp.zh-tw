@@ -41,7 +41,7 @@ int main()
 > [!TIP]
 > 每當您要使用來自 Windows 命名空間的類型時，請包含對應到該命名空間的 C++/WinRT 標頭。 `using namespace` 指示詞是選擇性的，但很便利。
 
-上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，  Uri(String)[ **) 堆疊配置** winrt::Windows::Foundation::Uri](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
+上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，[**Uri(String)** ](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) 堆疊配置 **winrt::Windows::Foundation::Uri** 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
 
 事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為 **Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下所示，您投影值成員的呼叫透過智慧型指標確實委派至支援物件；其為狀態發生變更的位置。
 
@@ -77,7 +77,7 @@ int main()
 亦即，在您包含的標頭中轉送宣告一些 API。 但其定義在您未包含的標頭裡。 因此，如果您接著呼叫 [**Windows::Foundation::Uri::RawUri**](/uwp/api/windows.foundation.uri.rawuri)，則您會收到連結器錯誤，指出成員未定義。 解決方案是明確 `#include <winrt/Windows.Foundation.h>`。 一般而言，當您看到如下的連結器錯誤時，請包含為 API 命名空間命名的標頭並重建。
 
 ## <a name="accessing-members-via-the-object-via-an-interface-or-via-the-abi"></a>透過物件、透過介面，或透過 ABI 存取成員
-使用 C++/WinRT 投影，Windows 執行階段類別的執行階段呈現方式是不超過基礎 ABI 介面。 不過，為了方便使用，您可以按照作者希望的方式對類別撰寫程式碼。 例如，您可以呼叫  Uri[**的**ToString](/uwp/api/windows.foundation.uri) 方法，就像類別的方法一樣 (事實上，藉由此做法，這是一種在個別 **IStringable** 介面上的方法)。
+使用 C++/WinRT 投影，Windows 執行階段類別的執行階段呈現方式是不超過基礎 ABI 介面。 不過，為了方便使用，您可以按照作者希望的方式對類別撰寫程式碼。 例如，您可以呼叫 [**Uri**](/uwp/api/windows.foundation.uri) 的 **ToString** 方法，就像類別的方法一樣 (事實上，藉由此做法，這是一種在個別 **IStringable** 介面上的方法)。
 
 `WINRT_ASSERT` 是巨集定義，而且會發展為 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
@@ -150,7 +150,7 @@ int main()
 }
 ```
 
-投影類型的所有建構函式 (除了 *std::nullptr_t*  建構函式以外) 皆會促使系統建立支援 Windows 執行階段物件。 **std::nullptr_t** 建構函式基本上是沒有選項。 預期之後會初始化投影物件。 因此，不管執行階段類別是否有預設建構函式，您都可以使用這項技術有效地延遲初始化。
+投影類型的所有建構函式 (除了 **std::nullptr_t**  建構函式以外) 皆會促使系統建立支援 Windows 執行階段物件。 **std::nullptr_t** 建構函式基本上是沒有選項。 預期之後會初始化投影物件。 因此，不管執行階段類別是否有預設建構函式，您都可以使用這項技術有效地延遲初始化。
 
 此考量會影響您叫用預設建構函數的其他位置，例如向量和地圖。 考量此程式碼範例，您需要**空白的應用程式 (C++/WinRT)** 專案。
 

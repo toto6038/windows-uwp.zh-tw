@@ -86,7 +86,7 @@ Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync
 
 當您呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) 時，使用者會看到確認對話方塊，指出資料夾「不會再出現在 [圖片] 中，但也不會被刪除」。 這表示，資料夾仍保留在磁碟的原始位置上、已從 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 屬性中移除，且將不再包含在內建的 [相片] app 中。
 
-下列範例假設使用者已從名為 [lvPictureFolders**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)ListView  控制項中選取要移除的資料夾。
+下列範例假設使用者已從名為 **lvPictureFolders** 的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項中選取要移除的資料夾。
 
 
 ```cs

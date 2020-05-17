@@ -45,12 +45,12 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!NOTE]
-> 在上述的 MIDL 3.0 清單中，請注意，**BookSkus** 屬性的類別是 [BookSku**的**](/uwp/api/windows.foundation.collections.ivector_t_)IObservableVector  。 在本主題的下一節中，我們會將 [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) 的項目來源繫結至 **BookSkus**。 清單方塊是項目控制項，若要正確設定 [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性，您需要將它設定為 **IObservableVector** 或 **IVector** 類型的值，或互通性類型值，例如 [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。
+> 在上述的 MIDL 3.0 清單中，請注意，**BookSkus** 屬性的類別是 **BookSku** 的 [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_)。 在本主題的下一節中，我們會將 [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) 的項目來源繫結至 **BookSkus**。 清單方塊是項目控制項，若要正確設定 [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性，您需要將它設定為 **IObservableVector** 或 **IVector** 類型的值，或互通性類型值，例如 [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。
 
 > [!WARNING]
-> 本主題中所顯示的程式碼適用於 C++/WinRT 版本2.0.190530.8 和更新版本。 如果您使用較早版本，則需要對顯示的程式碼進行一些微幅調整。 在上述的 MIDL 3.0 清單中，將 **BookSkus** 屬性變更為 [**IInspectable**](/uwp/api/windows.foundation.collections.ivector_t_) 的 [**IObservableVector**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)。 然後在您的實作中也使用 **IInspectable** (而非 **BookSku**)。
+> 本主題中所顯示的程式碼適用於 C++/WinRT 版本2.0.190530.8 和更新版本。 如果您使用較早版本，則需要對顯示的程式碼進行一些微幅調整。 在上述的 MIDL 3.0 清單中，將 **BookSkus** 屬性變更為 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 的 [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_)。 然後在您的實作中也使用 **IInspectable** (而非 **BookSku**)。
 
-儲存並建置。 複製 `BookstoreViewModel.h` 資料夾之中 `BookstoreViewModel.cpp` 和 `\Bookstore\Bookstore\Generated Files\sources` 的存取子虛設常式 (如需詳細資訊，請參閱先前的主題 [XAML 控制項，繫結至 C++/WinRT 屬性](binding-property.md))。 實作像這樣的這些存取子虛設常式。
+儲存並建置。 複製 `\Bookstore\Bookstore\Generated Files\sources` 資料夾之中 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 的存取子虛設常式 (如需詳細資訊，請參閱先前的主題 [XAML 控制項，繫結至 C++/WinRT 屬性](binding-property.md))。 實作像這樣的這些存取子虛設常式。
 
 ```cppwinrt
 // BookstoreViewModel.h

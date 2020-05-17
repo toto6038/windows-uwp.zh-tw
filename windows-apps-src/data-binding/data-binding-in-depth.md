@@ -379,7 +379,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 
 ### <a name="binding-object-declared-using-binding"></a>使用 {Binding} 宣告的繫結物件
 
-如果您使用 C++/WinRT 或 Visual C++ 元件延伸模組 (C++/CX)，則需要將 [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) \(英文\) 屬性新增至您希望繫結至之任何執行階段類別，以使用 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) \(部分機器翻譯\) 標記延伸模組。 若要使用 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，您不需要該屬性。
+如果您使用 C++/WinRT 或 Visual C++ 元件延伸模組 (C++/CX)，則需要將 [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 屬性新增至您希望繫結至之任何執行階段類別，以使用 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 標記延伸。 若要使用 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，您不需要該屬性。
 
 ```cppwinrt
 // HostViewModel.idl
