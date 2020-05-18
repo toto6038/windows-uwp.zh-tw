@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: dbae7ada227b4f3019a2e17c91e6b06b7f2f276f
-ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
+ms.openlocfilehash: d050e2b4a7659f8910ce603ec7e90b703cc7722f
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81441863"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606237"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在傳統型應用程式中裝載 UWP XAML 控制項 (XAML Islands)
 
@@ -129,6 +129,8 @@ UWP XAML 裝載 API 是由數個 Windows 執行階段類別和 COM 介面所組�
 
 ### <a name="supported-only-with-workarounds"></a>有因應措施才能使用
 
+:heavy_check_mark:在目前的 XAML Islands 版本中，有條件地支援 XAML Island 中 [WinUI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/) 的裝載 UWP 控制項。 如果您的桌面應用程式使用 [MSIX 套件](https://docs.microsoft.com/windows/msix)進行部署，則可以從 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)NugGet 套件的搶鮮版或發行版本裝載 WinUI 控制項。 如果您的傳統型應用程式未使用 MSIX 進行封裝，您必須先安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件搶鮮版才能裝載 WinUI 控制項。
+
 :heavy_check_mark:若要在 XAML Island 中存取 XAML 內容樹狀結構的根元素，並取得其裝載所在內容的相關資訊，請勿使用 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、[Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 類別。 而是改成使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 類別。 如需詳細資訊，請參閱[本節](#window-host-context-for-xaml-islands)。
 
 :heavy_check_mark:若要從 WPF、Windows Forms 或C++ Win32 應用程式支援[分享協定](/windows/uwp/app-to-app/share-data)，您的應用程式必須使用 [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) 介面來取得 [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) 物件，以起始特定視窗的共用作業。 如需示範如何在 WPF 應用程式中使用此介面的範例，請參閱 [ShareSource 範例](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource)。
@@ -150,6 +152,8 @@ UWP XAML 裝載 API 是由數個 Windows 執行階段類別和 COM 介面所組�
 :no_entry_sign:使用 `@Places` 和 `@People` 內容連結的文字控制項。 如需這項功能的詳細資訊，請參閱[本文](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links)。
 
 :no_entry_sign:XAML Islands 不支援裝載 [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)，其中包含接受文字輸入的控制項，例如 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)、[RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)或 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)。 如果這樣做，輸入控制項將不會正確地回應按鍵功能。 若要使用 XAML Island 來達到類似的功能，建議您裝載包含輸入控制項的[快顯視窗](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup)。
+
+:no_entry_sign:XAML Islands 目前不支援在裝載的 [Windows.UI.Xaml.Controls.Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 控制項中，或透過使用 [Windows.UI.Xaml.Media.Imaging.SvgImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource)物件來顯示 SVG 檔案。 因應措施是將您想要顯示的影像檔案轉換成點陣式的格式，例如 JPG 或 PNG。
 
 ### <a name="window-host-context-for-xaml-islands"></a>XAML Island 的視窗裝載內容
 
