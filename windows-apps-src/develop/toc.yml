@@ -819,6 +819,8 @@
           items:
             - name: 值類別，以及參考
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
+    - name: 'C#/WinRT'
+      href: ../csharp-winrt/index.md
     - name: 安全性
       href: ../security/index.md
       items:
