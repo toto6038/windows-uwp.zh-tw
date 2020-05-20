@@ -24,7 +24,7 @@ ms.locfileid: "66362216"
 
 ## <a name="reduce-layout-structure"></a>減少版面配置結構
 
-簡化 UI 元素樹狀結構的階層結構，就能獲得最大的版面配置效能。 面板存在於視覺化樹狀結構中，但它們是結構化元素，而不是像 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 或 a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的「像素產生的元素」  。 藉由減少非像素產生的元素來簡化樹狀結構，通常可大幅提升效能。
+簡化 UI 元素樹狀結構的階層結構，就能獲得最大的版面配置效能。 面板存在於視覺化樹狀結構中，但它們是結構化元素，而不是像 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 或 a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的「像素產生的元素」。 藉由減少非像素產生的元素來簡化樹狀結構，通常可大幅提升效能。
 
 許多 UI 都是透過巢狀面板來實作，因而產生了既深且複雜的面板與元素樹狀結構。 巢串面板是非常簡便的，但在許多情況下，您可以利用更複雜的單一面板來達成相同的 UI。 使用單一面板可提供較佳的效能。
 
