@@ -222,7 +222,7 @@ Visual Studio 專案和項目範本會針對每個執行階段類別產生個別
 上列內容的重點如下。
 
 - 您在 IDL 中宣告的每個建構函式，都導致在實作類型與投影類型上產生一個建構函示。 從「不同」  編譯單位使用 IDL 已宣告的建構函式取用執行階段類型。
-- 不論您是否有 IDL 已宣告的建構函式，都會在您的投影類型上產生接受 **std::nullptr_t** 的建構函式多載。 呼叫 **std::nullptr_t** 建構函式是從「相同」  編譯單位取用執行階段類別的「首兩個步驟」  。 如需詳細資料和程式碼範例，請參閱[使用 C++/WinRT 取用 API](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project)。
+- 不論您是否有 IDL 已宣告的建構函式，都會在您的投影類型上產生接受 **std::nullptr_t** 的建構函式多載。 呼叫 **std::nullptr_t** 建構函式是從「相同」編譯單位取用執行階段類別的「首兩個步驟」。 如需詳細資料和程式碼範例，請參閱[使用 C++/WinRT 取用 API](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project)。
 - 如果您正從「相同」  編譯單位取用執行階段類別，您也可以直接在實作類型 (請記住，是在 `MyRuntimeClass.h`) 上實作非預設建構函式。
 
 > [!NOTE]

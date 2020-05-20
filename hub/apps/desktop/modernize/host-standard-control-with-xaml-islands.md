@@ -48,7 +48,7 @@ ms.locfileid: "80482506"
 2. 請確定已啟用[套件參考](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)：
 
     1. 在 Visual Studio 中，按一下 [工具] -> [NuGet 套件管理員]-> [套件管理員設定]  。
-    2. 確定已針對 [預設套件管理格式]  選取 [PackageReference]  。
+    2. 確定已針對 [預設套件管理格式] 選取 [PackageReference]。
 
 3. 請以滑鼠右鍵按一下 [方案總管]  中的 WPF 專案，然後選擇 [管理 NuGet 套件]  。
 
@@ -180,7 +180,7 @@ ms.locfileid: "80482506"
     ```
 
     > [!NOTE]
-    > 您也可以將這些和其他已包裝的控制項，從 [工具箱]  的 [Windows 社群工具組]  區段拖曳至設計工具，藉此新增到視窗。
+    > 您也可以將這些和其他已包裝的控制項，從 [工具箱] 的 [Windows 社群工具組] 區段拖曳至設計工具，藉此新增到視窗。
 
 4. 儲存 **MainWindow.xaml** 檔案。
 
@@ -295,7 +295,7 @@ ms.locfileid: "80482506"
 > [!NOTE]
 > 如果您選擇不要在 [MSIX 套件](https://docs.microsoft.com/windows/msix)中封裝應用程式以供部署，則執行您應用程式的電腦必須安裝 [Visual C++ 執行階段](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
 
-1. 將新的 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的方案。 當您建立專案時，同時對 [目標版本]  和 [最低版本]  選取 [Windows 10 版本 1903 (10.0；組建 18362)]  。
+1. 將新的 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的方案。 當您建立專案時，同時對 [目標版本] 和 [最低版本] 選取 [Windows 10 版本 1903 (10.0；組建 18362)]。
 
 2. 在封裝專案中，以滑鼠右鍵按一下 [應用程式]  節點，然後選擇 [新增參考]  。 在專案清單中，選取您方案中的 WPF 專案，然後按一下 [確定]  。
 
