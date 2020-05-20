@@ -9,20 +9,72 @@
         - name: 建置傳統型應用程式
           tocHref: /windows/apps/desktop/
           topicHref: /windows/apps/desktop/
-        - name: 桌面應用程式現代化
-          tocHref: /windows/apps/desktop/modernize/
-          topicHref: /windows/apps/desktop/modernize/
           items:
-            - name: 呼叫 Windows 執行階段 API
-              topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
-            - name: XAML Islands
-              topicHref: /windows/apps/desktop/modernize/xaml-islands
-            - name: 視覺層
-              topicHref: /windows/apps/desktop/modernize/visual-layer-in-desktop-apps
-            - name: 需要套件身分識別的功能
-              topicHref: /windows/apps/desktop/modernize/modernize-packaged-apps
-            - name: 教學課程：將 WPF 應用程式現代化
-              topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial
+            - name: 桌面應用程式現代化
+              tocHref: /windows/apps/desktop/modernize/
+              topicHref: /windows/apps/desktop/modernize/
+              items:
+                - name: 呼叫 Windows 執行階段 API
+                  topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
+                  items:
+                    - name: 可用 Windows 執行階段 API
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-supported-api
+                - name: XAML Islands
+                  topicHref: /windows/apps/desktop/modernize/xaml-islands
+                  items:
+                    - name: 在 WPF 應用程式中裝載標準 UWP 控制項
+                      topicHref: /windows/apps/desktop/modernize/host-standard-control-with-xaml-islands
+                    - name: 在 WPF 應用程式中裝載自訂 UWP 控制項
+                      topicHref: /windows/apps/desktop/modernize/host-custom-control-with-xaml-islands
+                    - name: 使用 UWP XAML 裝載 API
+                      topicHref: /windows/apps/desktop/modernize/using-the-xaml-hosting-api
+                    - name: 在 C++ Win32 應用程式中裝載標準 UWP 控制項
+                      topicHref: /windows/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp
+                    - name: 在 C++ Win32 應用程式中裝載自訂 UWP 控制項
+                      topicHref: /windows/apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp
+                    - name: C++ Win32 應用程式中適用於 XAML Islands 的進階案例
+                      topicHref: /windows/apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp
+                - name: 視覺層
+                  topicHref: /windows/apps/desktop/modernize/visual-layer-in-desktop-apps
+                  items:
+                    - name: WPF
+                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-wpf
+                    - name: Windows Forms
+                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-windows-forms
+                    - name: Win32
+                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-win32
+                - name: 需要套件身分識別的功能
+                  topicHref: /windows/apps/desktop/modernize/modernize-packaged-apps
+                  items:
+                    - name: 整合套件擴充功能
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-extensions
+                    - name: 使用 UWP 元件進行擴充
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-extend
+                    - name: 散發已封裝的傳統型應用程式
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-distribute
+                - name: 教學課程：將 WPF 應用程式現代化
+                  topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial
+                  items:
+                    - name: 第 1 部分
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-1
+                    - name: 第 2 部分
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-2
+                    - name: 第 3 部分
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-3
+                    - name: 第 4 部分
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-4
+                    - name: 第 5 部分
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-5
+        - name: Windows UI 程式庫 (WinUI)
+          tocHref: /windows/apps/winui/
+          topicHref: /windows/apps/winui/
+          items:
+            - name: WinUI 3
+              tocHref: /windows/apps/winui/winui3/
+              topicHref: /windows/apps/winui/winui3
+            - name: WinUI 2
+              tocHref: /windows/apps/winui/winui2/
+              topicHref: /windows/apps/winui/winui2
         - name: .NET TraceProcessing
           tocHref: /windows/apps/trace-processing/
           topicHref: /windows/apps/trace-processing/overview
@@ -42,6 +94,9 @@
       tocHref: /windows/dev-environment/
       topicHref: /windows/dev-environment/
       items:
+        - name: Windows 封裝管理員
+          tocHref: /windows/package-manager/
+          topicHref: /windows/package-manager
         - name: Python
           tocHref: /windows/python/
           topicHref: /windows/python

@@ -8,23 +8,23 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: d050e2b4a7659f8910ce603ec7e90b703cc7722f
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 4175fdf2cbb10912c22e0b0058629819c87dbc63
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606237"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83579915"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在傳統型應用程式中裝載 UWP XAML 控制項 (XAML Islands)
 
-從 Windows 10 版本 1903 開始，您可以使用稱為「XAML Islands」  的功能，將 UWP 控制項裝載在非 UWP 傳統型應用程式中。 這項功能可讓您使用僅透過 UWP 控制項提供的最新 Windows 10 UI 功能，來增強現有 WPF、Windows Forms 和 C++ Win32 應用程式的外觀、風格和功能。 這表示您可以使用 UWP 功能，例如 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) 和控制項，這些功能支援現有 WPF、Windows Forms 和 C++ Win32 應用程式中的 [Fluent Design 系統](/windows/uwp/design/fluent-design-system/index)。
+從 Windows 10 版本 1903 開始，您可以使用稱為「XAML Islands」的功能，將 UWP 控制項裝載在非 UWP 傳統型應用程式中。 這項功能可讓您使用僅透過 UWP 控制項提供的最新 Windows 10 UI 功能，來增強現有 WPF、Windows Forms 和 C++ Win32 應用程式的外觀、風格和功能。 這表示您可以使用 UWP 功能，例如 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) 和控制項，這些功能支援現有 WPF、Windows Forms 和 C++ Win32 應用程式中的 [Fluent Design 系統](/windows/uwp/design/fluent-design-system/index)。
 
 您可以裝載衍生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的任何 UWP 控制項，包括：
 
 * Windows SDK 所提供的任何第一方 UWP 控制項。
 * 任何自訂 UWP 控制項 (例如，由數個可搭配使用的 UWP 控制群組成的使用者控制項)。 您必須擁有自訂控制項的原始程式碼，才能使用您的應用程式進行編譯。
 
-基本上，會使用「UWP XAML 裝載 API」  來建立 XAML Islands。 這個 API 是由 Windows 10 版本 1903 SDK 中引進的數個 Windows 執行階段類別和 COM 介面所組成。 我們也在 [Windows 社區工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中提供一組 XAML Island .NET 控制項，在內部使用 UWP XAML 裝載 API，並為 WPF 和 Windows Forms 應用程式提供更方便的開發體驗。
+基本上，會使用「UWP XAML 裝載 API」來建立 XAML Islands。 這個 API 是由 Windows 10 版本 1903 SDK 中引進的數個 Windows 執行階段類別和 COM 介面所組成。 我們也在 [Windows 社區工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中提供一組 XAML Island .NET 控制項，在內部使用 UWP XAML 裝載 API，並為 WPF 和 Windows Forms 應用程式提供更方便的開發體驗。
 
 您使用 XAML Islands 的方式取決於您的應用程式類型，以及您想要裝載的 UWP 控制項類型。
 
@@ -42,7 +42,7 @@ XAML Islands 具有下列執行階段需求：
 
 我們建議 WPF 和 Windows Forms 應用程式使用「Windows 社區工具組」中提供的 XAML Island .NET 控制項。 這些控制項會提供物件模型，模擬 (或提供存取) 對應 UWP 控制項的屬性、方法和事件。 它們也會處理鍵盤導覽和版面配置變更之類的行為。
 
-WPF 和 Windows Forms 應用程式有兩組 XAML Island 控制項：「包裝的控制項」  和「主控制項」  。 
+WPF 和 Windows Forms 應用程式有兩組 XAML Island 控制項：「包裝的控制項」和「主控制項」。 
 
 ### <a name="wrapped-controls"></a>包裝的控制項
 
@@ -104,7 +104,7 @@ XAML Island .NET 控制項需要 Windows 10 版本 1903 或更新版本。 若�
 
 ## <a name="c-win32-applications"></a>C++ Win32 應用程式
 
-C++ Win32 應用程式不支援 XAML Island .NET 控制項。 這些應用程式必須改為使用 Windows 10 SDK (版本 1903 和更新版本) 所提供的「UWP XAML 裝載 API」  。
+C++ Win32 應用程式不支援 XAML Island .NET 控制項。 這些應用程式必須改為使用 Windows 10 SDK (版本 1903 和更新版本) 所提供的「UWP XAML 裝載 API」。
 
 UWP XAML 裝載 API 是由數個 Windows 執行階段類別和 COM 介面所組成，您的 C++ Win32 應用程式可以用來裝載任何衍生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的 UWP 控制項。 您可以在具有相關聯視窗控制碼 (HWND) 的應用程式中，將 UWP 控制項裝載於任何 UI 元素中。 如需此 API 的詳細資訊，請參閱下列文章：
 
@@ -129,7 +129,7 @@ UWP XAML 裝載 API 是由數個 Windows 執行階段類別和 COM 介面所組�
 
 ### <a name="supported-only-with-workarounds"></a>有因應措施才能使用
 
-:heavy_check_mark:在目前的 XAML Islands 版本中，有條件地支援 XAML Island 中 [WinUI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/) 的裝載 UWP 控制項。 如果您的桌面應用程式使用 [MSIX 套件](https://docs.microsoft.com/windows/msix)進行部署，則可以從 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)NugGet 套件的搶鮮版或發行版本裝載 WinUI 控制項。 如果您的傳統型應用程式未使用 MSIX 進行封裝，您必須先安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件搶鮮版才能裝載 WinUI 控制項。
+:heavy_check_mark:在目前的 XAML Islands 版本中，有條件地支援 XAML Island 中 [WinUI 2.x 程式庫](../../winui/index.md) 的裝載控制項。 如果您的桌面應用程式使用 [MSIX 套件](https://docs.microsoft.com/windows/msix)進行部署，則可以從 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)NugGet 套件的搶鮮版或發行版本裝載 WinUI 控制項。 如果您的傳統型應用程式未使用 MSIX 進行封裝，您必須先安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件搶鮮版才能裝載 WinUI 控制項。 [WinUI 3.0 程式庫](../../winui/winui3/index.md)中的裝載控制項支援會在之後的版本中推出。
 
 :heavy_check_mark:若要在 XAML Island 中存取 XAML 內容樹狀結構的根元素，並取得其裝載所在內容的相關資訊，請勿使用 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、[Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 類別。 而是改成使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 類別。 如需詳細資訊，請參閱[本節](#window-host-context-for-xaml-islands)。
 

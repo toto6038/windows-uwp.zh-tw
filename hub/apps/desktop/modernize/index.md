@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b966d00455bce390457e148c60b57296375ac2fa
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 86586cfc0f054181f08cd3cd75731e6c53ea4b92
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730245"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83579925"
 ---
 # <a name="modernize-your-desktop-apps"></a>讓您的傳統型應用程式現代化
 
@@ -21,6 +21,17 @@ Windows 10 和通用 Windows 平台 (UWP) 提供許多功能，您可以用來�
 
 > [!NOTE]
 > 您是否需要將傳統型應用程式遷移到 Windows 10 方面的協助？ [桌面應用程式保證](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure)服務為將應用程式移植到 Windows 10 的開發人員提供直接、無成本的支援。 這個方案適用於所有 ISV 和符合資格的企業。 如需方案本身資格的詳細資訊，請造訪 [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered)。 若要立即開始使用，請[提交您的要求](https://fasttrack.microsoft.com/dl/daa)。
+
+## <a name="windows-ui-library"></a>Windows UI 程式庫
+
+Windows UI 程式庫一組 NuGet 套件，可提供 Windows 10 應用程式的控制項和其他使用者介面元素。 WinUI 一開始是以工具組的形式提供，旨在針對舊版 Windows 10 提供適用於 UWP 應用程式的全新或更新版 UWP 控制項。 WinUI 已擴大範圍，現在是適用於 UWP、.NET 和 Win32 上 Windows 10 應用程式的新式原生使用者介面 (UI) 平台。
+
+您可以透過下列方式在桌面應用程式中使用 WinUI：
+
+* 您可以將現有的 WPF、Windows Forms 和 C++/Win32 應用程式更新為使用 [XAML Islands](xaml-islands.md)，以在應用程式中裝載 WinUI 2.x 控制項。
+* 從 [WinUi 3.0 預覽版 1](../../winui/winui3/index.md) 開始，您可以建立 [.NET 和 C++ /Win32 應用程式來使用完全以 WinUI 為基礎的 UI](../../winui/winui3/get-started-winui3-for-desktop.md)。
+
+請參閱 [Windows UI (WinUI) 程式庫](../../winui/index.md)。
 
 ## <a name="msix-packages"></a>MSIX 套件
 
@@ -44,7 +55,7 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 
 ## <a name="host-uwp-controls-xaml-islands"></a>主機 UWP 控制項 (XAML Islands)
 
-從 Windows 10 1903 版開始，您可以直接將 [UWP XAML 控制項](/windows/uwp/design/controls-and-patterns/controls-by-function)新增至 WPF、Windows Forms 或 C++ Win32 應用程式的任何 UI 元素 (與視窗控制代碼 (HWND) 相關聯)。 這表示您可以將最新的 UWP 功能 (例如 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions))，與支援 [Fluent Design 系統](/windows/uwp/design/fluent-design-system/index)的控制項，完全整合至傳統型應用程式中的視窗和其他顯示表面。 此開發人員案例有時候稱為 XAML islands  。
+從 Windows 10 1903 版開始，您可以直接將 [UWP XAML 控制項](/windows/uwp/design/controls-and-patterns/controls-by-function)新增至 WPF、Windows Forms 或 C++ Win32 應用程式的任何 UI 元素 (與視窗控制代碼 (HWND) 相關聯)。 這表示您可以將最新的 UWP 功能 (例如 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions))，與支援 [Fluent Design 系統](/windows/uwp/design/fluent-design-system/index)的控制項，完全整合至傳統型應用程式中的視窗和其他顯示表面。 此開發人員案例有時候稱為 XAML islands。
 
 如需詳細資訊，請參閱[傳統型應用程式中的 UWP 控制項](xaml-islands.md)
 
@@ -79,12 +90,6 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 | [ComboBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | 您現在可以讓下拉式方塊變成可編輯，讓使用者可以輸入未列在控制項中的值。  |
 | [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) | 您現在可以設定樹狀檢視，以啟用資料繫結、項目範本及拖放。  |
 | [DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) |   可讓您靈活顯示資料列和資料行中的資料集合。 這個控制項可於 [Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/) (英文) 中取得。  |
-
-## <a name="windows-ui-library"></a>Windows UI 程式庫
-
-Windows UI 程式庫是一組 NuGet 套件，可提供 UWP 應用程式的新控制項和其他使用者介面元素。 Windows UI 程式庫 API 可以在舊版 Windows 10 上運作，所以即使使用者未執行最新版本的 Windows 10，您的應用程式仍然可以運作。 如此可讓您在新控制項於 Windows UI 程式庫中發行時加以採用，不需要擔心是否包含版本檢查或條件式 XAML。
-
-請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/) (英文)。
 
 ## <a name="other-technologies-for-modern-desktop-apps"></a>新式傳統型應用程式的其他技術
 

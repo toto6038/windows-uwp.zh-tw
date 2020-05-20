@@ -1,6 +1,36 @@
 - name: Windows 開發環境
   href: index.yml
   items:
+    - name: Windows 封裝管理員
+      items:
+        - name: 概觀
+          href: ../package-manager/index.md
+        - name: 使用 winget 工具
+          items:
+            - name: 概觀
+              href: ../package-manager/winget/index.md
+            - name: hash 命令
+              href: ../package-manager/winget/hash.md
+            - name: help 命令
+              href: ../package-manager/winget/help.md
+            - name: install 命令
+              href: ../package-manager/winget/install.md
+            - name: search 命令
+              href: ../package-manager/winget/search.md
+            - name: show 命令
+              href: ../package-manager/winget/show.md
+            - name: source 命令
+              href: ../package-manager/winget/source.md
+            - name: validate 命令
+              href: ../package-manager/winget/validate.md
+        - name: 提交封裝
+          items:
+            - name: 概觀
+              href: ../package-manager/package/index.md
+            - name: 建立封裝資訊清單
+              href: ../package-manager/package/manifest.md
+            - name: 將您的資訊清單提交至存放庫
+              href: ../package-manager/package/repository.md
     - name: 使用 Python 進行開發
       items:
         - name: 概觀

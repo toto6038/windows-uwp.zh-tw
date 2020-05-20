@@ -1,0 +1,56 @@
+---
+Description: Build 2020 線上活動期間所述的 Windows 開發人員文件連結。
+title: Build 期間的討論主題相關文件
+ms.topic: article
+ms.date: 05/11/2020
+ms.localizationpriority: medium
+ms.author: jken
+author: grantmestrength
+ms.openlocfilehash: 9f632c8f47ec42027918c3776492967e60c09764
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83580435"
+---
+# <a name="microsoft-build---the-windows-documentation"></a>Microsoft Build - Windows 文件
+
+![Build 主圖影像](../images/build-banner.jpeg)
+
+針對 [Microsoft Build 2020](https://mybuild.microsoft.com) 的討論內容，我們已收集可支援這些內容的文件連結。 我們會在活動繼續進行的期間更新此頁面，請記得回來查看是否有任何新項目！
+
+## <a name="windows-terminal"></a>Windows 終端機
+
+* [安裝和設定 Windows 終端機](https://docs.microsoft.com/windows/terminal/get-started)
+* [設定自訂按鍵繫結](https://docs.microsoft.com/windows/terminal/customize-settings/key-bindings)
+* [自訂終端機的資源庫](https://docs.microsoft.com/windows/terminal/custom-terminal-gallery/retro-command-prompt)
+
+## <a name="windows-subsystem-for-linux-wsl"></a>適用於 Linux 的 Windows 子系統 (WSL)
+
+* [什麼是 WSL？(什麼是 WSL 2？)](https://docs.microsoft.com/windows/wsl/about)
+* [安裝 WSL 2](https://docs.microsoft.com/windows/wsl/install-win10)
+* [比較 WSL2 和 WSL 1](https://docs.microsoft.com/windows/wsl/compare-versions)
+
+## <a name="windows-package-manager"></a>Windows 封裝管理員
+
+* [Windows 封裝管理員](https://docs.microsoft.com/windows/package-manager) 
+* [提交您的封裝](https://docs.microsoft.com/windows/package-manager/package)
+* [使用 winget 工具](https://docs.microsoft.com/windows/package-manager/winget)
+
+## <a name="winui"></a>WinUI
+
+* [WinUI 的概觀](https://docs.microsoft.com/windows/apps/winui/)
+* [WinUI 3.0 預覽版 1](https://docs.microsoft.com/windows/apps/winui/winui3) 
+* [適用於桌面應用程式的 WinUI 3.0](https://docs.microsoft.com/windows/apps/winui/winui3/get-started-winui3-for-desktop)
+
+## <a name="developing-for-android-on-windows"></a>在 Windows 上進行 Android 的開發
+
+* [Android 開發概觀](https://docs.microsoft.com/windows/android/overview)
+* [開始使用](https://docs.microsoft.com/windows/android/native-android)
+* [在 Android 裝置上測試](https://docs.microsoft.com/windows/android/emulator)
+
+## <a name="dual-screen-device-development"></a>雙螢幕裝置開發
+
+* [Surface Duo 簡介](https://www.microsoft.com/surface/devices/surface-duo)
+* [取得 Surface Duo 工具](https://docs.microsoft.com/dual-screen/android/get-duo-sdk?tabs=windows)
+* [使用 Surface Duo 模擬器](https://docs.microsoft.com/dual-screen/android/use-emulator?tabs=java%2Cwindows)

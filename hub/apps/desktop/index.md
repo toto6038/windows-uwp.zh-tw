@@ -7,12 +7,12 @@ keywords: windows win32, 傳統型應用程式
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c27826980127674b4a4356af8a3c36056e86bd83
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 5a55a1578fba7052396ecec725db2678ea8bd6ff
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74056863"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83580015"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>建置 Windows PC 適用的傳統型應用程式
 
@@ -62,6 +62,9 @@ ms.locfileid: "74056863"
 </tr>
 </tbody>
 </table>
+
+> [!NOTE]
+> 所有這些應用程式平台都提供完整的使用者介面架構和一組 UI 控制項，可讓您建立在傳統 Windows 桌面上執行的桌面應用程式 (例如 Word、Excel 和 Photoshop)，並充分利用該環境的特定功能。 在 Windows 10 上，所有這些平台都支援使用 Windows UI (WinUI) 程式庫來建立其使用者介面。 若要深入了解適用於桌面應用程式的 WinUI，請參閱[本節](choose-your-platform.md#windows-ui-library)。
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>更新現有適用於 Windows 10 的傳統型應用程式
 

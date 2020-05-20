@@ -8,38 +8,27 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: 906126c14dd32a9c0196d53deab5bc36c07f4bef
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: c14b092b9cce9ce7e3b180eaedef657e2d3d03db
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729839"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83580005"
 ---
 # <a name="choose-your-app-platform"></a>選擇您的應用程式平台
 
 當您想要為 Windows 電腦建立新的傳統型應用程式時，首先必須決定要使用哪個應用程式平台。 Windows 提供四個主要應用程式平台，各有不同的優勢：
 
-* [通用 Windows 平台 (UWP)](#uwp)
-* [WPF (.NET)](#wpf)
-* [Windows Forms (.NET)](#windows-forms)
-* [Win32](#win32)
+* [通用 Windows 平台 (UWP)](#uwp)：此平台為執行 Windows 10 的所有裝置提供一般型別系統、API 和應用程式模型。 UWP 應用程式可以是原生或受管理的。
+* [WPF](#wpf) 和 [Windows Forms](#windows-forms)：這些 .NET 型平台會針對受控應用程式提供一般類型的系統、API 和應用程式模型。
+* [Win32](#win32)：這是適用於原生 C/C++ Windows 應用程式的原創平台，需要直接存取 Windows 和硬體。 這讓 Win32 API 成為應用程式的首選平台，因為這些應用程式需要最高階效能及直接存取系統硬體。
 
-所有這些應用程式平台都可讓您建立在傳統 Windows 桌面上執行的傳統型應用程式 (例如 Word、Excel 和 Photoshop)，並充分利用該環境的特定功能。 不過，其中有些平台會共用一些特性，而且更適合特定類型的應用程式：
+所有這些應用程式平台都包含完整的使用者介面架構和一組 UI 控制項，可讓您建立在傳統 Windows 桌面上執行的桌面應用程式 (例如 Word、Excel 和 Photoshop)，並充分利用該環境的特定功能。 在 Windows 10 上，所有這些平台都支援使用 [Windows UI (WinUI) 程式庫](#windows-ui-library)來建立其使用者介面。
 
-* **UWP**。 此平台為執行 Windows 10 的所有裝置提供一般型別系統、API 和應用程式模型。 UWP 應用程式可以是原生或受管理的。 
-
-* **WPF 和 Windows Forms**。 這些平台會針對在 .NET 上執行的受控應用程式，提供一般型別系統、API 和應用程式模型。
-
-* **Win32 API**。 Win32 API (也稱為 Windows API) 是適用於原生 C/C++ Windows 應用程式的原創平台，而這些應用程式需要直接存取 Windows 和硬體。 這讓 Win32 API 成為應用程式的首選平台，因為這些應用程式需要最高階效能及直接存取系統硬體。
-
-在 Windows 10 上，所有這些平台都支援使用 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui)來建立其使用者介面。 WinUI 提供一組新式控制項，包括現有 XAML 控制項的增強版和全新的控制項。 WinUI 也支援舊版 Windows 10 來達到最大的可用性。
-
-UWP 和 .NET 都與 Visual Studio 進行深度整合。 這可提供許多優點，特別是在開發人員生產力、精細且可自訂的使用者介面，以及應用程式安全性等方面。 由於這些架構支援視覺化設計工具和 UI 標記來快速建立 UI，因此特別適用於企業營運應用程式。
-
-本文會更詳細地說明這些平台，並協助您判斷最適合您應用程式的平台。 
+其中有些平台會共用一些特性，而且更適合特定類型的應用程式。 例如，UWP 和 .NET 都與 Visual Studio 進行深度整合。 這可提供許多優點，特別是在開發人員生產力、精細且可自訂的使用者介面，以及應用程式安全性等方面。 由於這些架構支援視覺化設計工具和 UI 標記來快速建立 UI，因此特別適用於企業營運應用程式。
 
 > [!NOTE]
-> 無論您選擇哪一個應用程式平台，都可以使用通用 Windows 平台 (UWP) 的眾多功能，以在 Windows 10 上的應用程式中提供現代化體驗。 例如，即使您的傳統型應用程式是使用 WPF、Windows Forms 或 Win32 API 建置的，您仍然可以使用 UWP 首次引進的眾多功能，例如 MSIX 套件部署和 UWP XAML 控制項。 如需詳細資訊，請參閱[讓您的傳統型應用程式現代化](modernize/index.md)。
+> 無論您選擇哪一個應用程式平台，都可以使用眾多 Windows 10 功能為您的應用程式提供現代化體驗。 例如，即使您的桌面應用程式是使用 WPF、Windows Forms 或 Win32 API 建置的，您仍然可以使用 MSIX 套件部署。 如需有關如何讓桌面應用程式現代化的詳細資訊，請參閱[讓您的桌面應用程式現代化](modernize/index.md)。
 
 ## <a name="uwp"></a>UWP
 
@@ -99,6 +88,16 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 * [技術和功能](/windows/win32/desktop-app-technologies)
 * [API 參考](/windows/win32/apiindex/windows-api-list/)
 * [範例](https://github.com/Microsoft/Windows-classic-samples)
+
+## <a name="windows-ui-library"></a>Windows UI 程式庫
+
+在 Windows 10 上，每一個主要的桌面平台都支援使用 [Windows UI (WinUI) 程式庫](../winui/index.md)來建立其使用者介面。 WinUI 一開始是以工具組的形式提供，旨在針對舊版 Windows 10 提供適用於 UWP 應用程式的全新或更新版 UWP 控制項。 WinUI 已擴大範圍，現在是適用於 UWP、.NET 和 Win32 上 Windows 10 應用程式的新式原生使用者介面 (UI) 平台。
+
+您可以透過下列方式在桌面應用程式中使用 WinUI：
+
+* UWP 應用程式可以使用 WinUI 控制項來取代 Windows SDK 所提供的 UWP 控制項。
+* 您可以將現有的 WPF、Windows Forms 和 C++/Win32 應用程式更新為使用 [XAML Islands](modernize/xaml-islands.md)，以在應用程式中裝載 WinUI 2.x 控制項。
+* 從 [WinUi 3.0 預覽版 1](../winui/winui3/index.md) 開始，您可以建立 [.NET 和 C++ /Win32 應用程式來使用完全以 WinUI 為基礎的 UI](../winui/winui3/get-started-winui3-for-desktop.md)。
 
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>平台比較：UWP、WPF 和 Windows Forms
 
