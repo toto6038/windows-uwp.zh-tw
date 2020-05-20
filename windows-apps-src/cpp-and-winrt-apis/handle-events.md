@@ -79,7 +79,7 @@ MainPage::MainPage()
 void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
 ```
 
-有其他方式可建構 **RoutedEventHandler**。 以下是從文件主題取得的語法區塊適用於 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (從網頁右上角中 [語言]  下拉式清單選擇 [C++/WinRT]  )。 請注意各種不同的建構函式：一種使用的是 lambda，另一種使用可用函式，還有一種 (上述中我們使用的) 是使用物件和指標成員函式。
+有其他方式可建構 **RoutedEventHandler**。 以下是從文件主題取得的語法區塊適用於 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (從網頁右上角中 [語言] 下拉式清單選擇 [C++/WinRT])。 請注意各種不同的建構函式：一種使用的是 lambda，另一種使用可用函式，還有一種 (上述中我們使用的) 是使用物件和指標成員函式。
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -96,7 +96,7 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 函式呼叫運算子的語法也值得一看。 其會告訴您所需的委派參數。 如您所見，在此案例中，函式呼叫運算子的語法，與我們的 **MainPage::ClickHandler** 參數相符合。
 
 > [!NOTE]
-> 對於任何指定的事件，若要找出其委派的詳細資料以及該委派的參數，請先參閱事件本身的文件主題。 以 [UIElement.KeyDown 事件](/uwp/api/windows.ui.xaml.uielement.keydown)為例。 請前往該主題，並且從 [語言]  下拉式清單中選擇 [C++/WinRT]  。 在本主題開頭的語法區塊中，可看到以下項目。
+> 對於任何指定的事件，若要找出其委派的詳細資料以及該委派的參數，請先參閱事件本身的文件主題。 以 [UIElement.KeyDown 事件](/uwp/api/windows.ui.xaml.uielement.keydown)為例。 請前往該主題，並且從 [語言] 下拉式清單中選擇 [C++/WinRT]。 在本主題開頭的語法區塊中，可看到以下項目。
 > 
 > ```cppwinrt
 > // Register

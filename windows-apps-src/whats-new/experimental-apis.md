@@ -31,4 +31,4 @@ Intellisense 會讓您知道 API 是否為實驗性。 當您使用實驗 API �
 
 ## <a name="providing-feedback"></a>提供意見反應
 
-如果您已試用過實驗 API 並想要提供意見反應，請使用 [Windows 意見反應中樞](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub)中的 [開發人員平台]  類別。
+如果您已試用過實驗 API 並想要提供意見反應，請使用 [Windows 意見反應中樞](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub)中的 [開發人員平台] 類別。

@@ -16,7 +16,7 @@ ms.locfileid: "81545018"
 # <a name="organizational-licensing-options"></a>組織授權選項
 
 
-您可以透過商務用 Microsoft 網上商店和教育用 Microsoft 網上商店，在應用程式提交之[定價和可用性](set-app-pricing-and-availability.md#organizational-licensing)頁面的 [組織授權]  區段中，指出您的應用程式是否可以大量購買及其方式。
+您可以透過商務用 Microsoft 網上商店和教育用 Microsoft 網上商店，在應用程式提交之[定價和可用性](set-app-pricing-and-availability.md#organizational-licensing)頁面的 [組織授權] 區段中，指出您的應用程式是否可以大量購買及其方式。
 
 透過這些設定，您可以選擇允許您的 app 讓組織 (企業和教育) 使用，這些組織為其使用者取得和部署的多重授權，讓您有機會提升跨 Windows 10 裝置類型 (包括電腦、平板電腦及電話) 之組織的普及。
 
