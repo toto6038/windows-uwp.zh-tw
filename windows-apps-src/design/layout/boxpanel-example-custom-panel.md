@@ -12,12 +12,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 68ca40a48b8b8d04bcd8b01584856233e9a99e7c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b4aad4ecc4d45d2fca3d429d872a0e7c73ddeaa1
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970203"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233689"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel，自訂面板範例
 
@@ -29,7 +29,7 @@ ms.locfileid: "82970203"
 
 範例程式碼示範一個自訂面板實作，但對於影響不同配置案例的自訂面板方法的配置概念則未多加說明。 如需有關這些配置概念以及如何才能套用到特定配置案例的詳細資訊，請參閱 [XAML 自訂面板概觀](custom-panels-overview.md)。
 
-「面板」  是一個物件，可在 XAML 配置系統執行和轉譯 app UI 時，為其所含的子元素提供配置行為。 您可以從 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 類別衍生自訂類別，為 XAML 配置定義自訂面板。 透過覆寫 [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 與 [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 方法，提供可度量和排列子元素的邏輯，即可提供面板行為。 本範例衍生自 **Panel**。 當您從 **Panel** 開始時，**ArrangeOverride** 和 **MeasureOverride** 方法沒有開始行為。 您的程式碼是提供一個讓 XAML 配置系統知道子元素並在 UI 中轉譯的入口。 因此，您的程式碼務必說明所有子元素，並遵循配置系統預期的模式。
+「面板」是一個物件，可在 XAML 配置系統執行和轉譯 app UI 時，為其所含的子元素提供配置行為。 您可以從 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 類別衍生自訂類別，為 XAML 配置定義自訂面板。 透過覆寫 [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 與 [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 方法，提供可度量和排列子元素的邏輯，即可提供面板行為。 本範例衍生自 **Panel**。 當您從 **Panel** 開始時，**ArrangeOverride** 和 **MeasureOverride** 方法沒有開始行為。 您的程式碼是提供一個讓 XAML 配置系統知道子元素並在 UI 中轉譯的入口。 因此，您的程式碼務必說明所有子元素，並遵循配置系統預期的模式。
 
 ## <a name="your-layout-scenario"></a>您的配置案例
 
@@ -45,9 +45,9 @@ ms.locfileid: "82970203"
 
 ## <a name="start-by-deriving-from-panel"></a>從 **Panel** 衍生著手
 
-從 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 衍生一個自訂類別著手。 若要這樣做，最簡單的方法可能是從 Microsoft Visual Studio 的 [方案總管]  針對專案使用 [加入]   |  [新增項目]   |  [類別]  內容功能表選項，為這個類別定義個別的程式碼檔案。 將類別 (和檔案) 命名為 `BoxPanel`。
+從 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 衍生一個自訂類別著手。 若要這樣做，最簡單的方法可能是從 Microsoft Visual Studio 的 [方案總管] 針對專案使用 [加入] |  [新增項目] |  [類別] 內容功能表選項，為這個類別定義個別的程式碼檔案。 將類別 (和檔案) 命名為 `BoxPanel`。
 
-因為類別的範本檔案並非專供 Windows 應用程式使用，所以一開始不會有許多 **using** 陳述式。 因此，請先新增 **using** 陳述式。 範本檔案開始位置也使用了幾個您可能不需要，且可以刪除的 **using** 陳述式。 以下是建議的 **using** 陳述式清單，可用以解析一般自訂面板程式碼所需的類型：
+類別的範本檔案並非專供 Windows 應用程式使用，因此一開始不會有許多 **using** 陳述式。 因此，請先新增 **using** 陳述式。 範本檔案開始位置也使用了幾個您可能不需要，且可以刪除的 **using** 陳述式。 以下是建議的 **using** 陳述式清單，可用以解析一般自訂面板程式碼所需的類型：
 
 ```CSharp
 using System;

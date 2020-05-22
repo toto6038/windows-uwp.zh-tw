@@ -1,17 +1,17 @@
 ---
 title: Windows 10 組建 17763 API 變更
 description: 開發人員可以使用下列清單識別 Windows 10 組建 17763 中新增或變更的命名空間
-keywords: 新增功能, 新功能, 更新, Windows 10, 最新, api, 17763, 十月
+keywords: Windows 10, apis, 17763, 1809
 ms.date: 10/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8fd6d2c41cd2f632f22819f452b2f203fd8ac309
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0e21cf153cb86571f83b496461a1da383b387158
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63780343"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234794"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>Windows 10 組建 17763 中的新 API
 
@@ -1459,7 +1459,7 @@ DropDownButtonAutomationPeer <br> DropDownButtonAutomationPeer.Collapse <br> Dro
 
 Frame.IsNavigationStackEnabled <br> Frame.IsNavigationStackEnabledProperty <br> Frame.NavigateToType
 
-#### <a name="grid"></a>[方格](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)
+#### <a name="grid"></a>[Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)
 
 Grid.BackgroundSizing <br> Grid.BackgroundSizingProperty
 
@@ -1571,7 +1571,7 @@ StackPanel.BackgroundSizing <br> StackPanel.BackgroundSizingProperty
 
 TextBlock.CopySelectionToClipboard <br> TextBlock.SelectionFlyout <br> TextBlock.SelectionFlyoutProperty
 
-#### <a name="textbox"></a>[TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) \(英文\)
+#### <a name="textbox"></a>[TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)
 
 TextBox.CanPasteClipboardContent <br> TextBox.CanPasteClipboardContentProperty <br> TextBox.CanRedo <br> TextBox.CanRedoProperty <br> TextBox.CanUndo <br> TextBox.CanUndoProperty <br> TextBox.ClearUndoRedoHistory <br> TextBox.CopySelectionToClipboard <br> TextBox.CutSelectionToClipboard <br> TextBox.Description <br> TextBox.DescriptionProperty <br> TextBox.PasteFromClipboard <br> TextBox.ProofingMenuFlyout <br> TextBox.ProofingMenuFlyoutProperty <br> TextBox.Redo <br> TextBox.SelectionChanging <br> TextBox.SelectionFlyout <br> TextBox.SelectionFlyoutProperty <br> TextBox.Undo
 

@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c35bc6cfcf36543482bcb42d0ccda7fd3102ac9
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a9b27094a5861151b907dc7787828068122e4a54
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970033"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233980"
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
 
-應用程式設定是 Windows 應用程式的使用者可自訂部分，可透過應用程式設定頁面來存取。 例如，新聞閱讀程式應用程式可讓使用者指定要顯示的新聞來源或畫面上顯示的欄數，而天氣應用程式可讓使用者在攝氏與華氏之間進行選擇。 本文提供建立和顯示應用程式設定的建議和最佳做法。
+應用程式設定是 Windows 應用程式的使用者可自訂部分，可透過應用程式設定頁面進行存取。 例如，新聞閱讀程式應用程式可讓使用者指定要顯示的新聞來源或畫面上顯示的欄數，而天氣應用程式可讓使用者在攝氏與華氏之間進行選擇。 本文提供建立和顯示應用程式設定的建議和最佳做法。
 
 ## <a name="when-to-provide-a-settings-page"></a>何時提供設定頁面
 

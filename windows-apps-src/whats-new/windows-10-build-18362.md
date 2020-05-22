@@ -1,17 +1,17 @@
 ---
 title: Windows 10 (組建 18362) 的新功能
 description: Windows 10 組建 18362 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。
-keywords: 新功能, 新增功能, Windows, Windows 10, 更新, 多項更新, 功能, 新, 最新, 開發人員, 18362, 5 月
+keywords: Windows 10, 18362, 1903
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 334dac56c12bf914cb767787bddc06b1c5dc9da2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b5fb6c5ebd300c393c4aef7b73750fe00c6b1f6d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80759383"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234359"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>適用於開發人員的 Windows 10 (組建 18362) 最新動向
 
@@ -40,7 +40,7 @@ Z 深度和陰影 | 使用 [Z 深度和陰影](../design/layout/depth-shadow.md)
 C++/WinRT 2.0 | 已發行 2.0 版的 C++/WinRT。 請查看[C++/WinRT 新增功能](../cpp-and-winrt-apis/news.md)，以取得所有新變更和新增項目的完整流程表。
 選擇您的平台 | 想要建立新的傳統型應用程式？ 請查看我們改造的[選擇您的平台](https://docs.microsoft.com/windows/desktop/choose-your-technology)頁面，以取得 UWP、WPF 和 Windows Forms 平台的詳細描述和比較，以及 Win32 API 的進一步資訊。
 交談式代理程式 | [Windows.ApplicationModel.ConversationalAgent](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent) 命名空間可讓您將 Windows 平台代理程式啟用執行階段 (AAR) 所支援的任何數位助理新增至 Windows 應用程式。
-雲端檔案 API | 「雲端檔案 API」  可讓您[建置支援預留位置檔案的雲端同步引擎](https://docs.microsoft.com/windows/desktop/cfapi/build-a-cloud-file-sync-engine)。
+雲端檔案 API | 「雲端檔案 API」可讓您[建置支援預留位置檔案的雲端同步引擎](https://docs.microsoft.com/windows/desktop/cfapi/build-a-cloud-file-sync-engine)。
 Direct 3D 12 | 之外，[Direct3D 12 轉譯行程](/windows/desktop/direct3d12/direct3d-12-render-passes)可以改善您的轉譯器效能 (如果它是以並排式延遲轉譯 (TBDR) 為基礎的話)。 此技術可讓您的應用程式更容易識別資源轉譯順序需求和資料相依性，進而協助您的轉譯器改善 GPU 效率。 這會減少往返晶片記憶體的記憶體流量。
 Direct Machine Learning (DirectML) | [DirectML](https://docs.microsoft.com/windows/desktop/direct3d12/dml) 是適用於機器學習的低階硬體加速 API。 它具有 DirectX 12 樣式的熟悉 (原生C++，nano-COM) 程式設計介面和工作流程。 您可以將機器學習推斷工作負載整合到您的遊戲、引擎、中介軟體、後端或其他應用程式中。 所有 DirectX 12 相容硬體都支援 DirectML。
 DirectX HLSL | [HLSL Shader Model 6.4](https://docs.microsoft.com/windows/desktop/direct3dhlsl/hlsl-shader-model-6-4-features-for-direct3d-12)提供可搭配 DirectML 使用得新機器學習 intrinsics。

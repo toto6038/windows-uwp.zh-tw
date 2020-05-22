@@ -11,16 +11,16 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 85cd58233de0feeded449e55cb1175087a64e61d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7f05b58a74b6270f0893dd4be238eb766629fb77
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970363"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234010"
 ---
 # <a name="navigation-view"></a>瀏覽檢視
 
-NavigationView 控制項提供您的應用程式最上層瀏覽。 其可配合各種不同的螢幕大小，並且同時支援「頂端」  和「左側」  的瀏覽樣式。
+NavigationView 控制項提供您的應用程式最上層瀏覽。 其可配合各種不同的螢幕大小，並且同時支援「頂端」和「左側」的瀏覽樣式。
 
 ![頂端瀏覽](images/nav-view-header.png)<br/>
 _瀏覽檢視支援頂端和左側瀏覽窗格或功能表_
@@ -29,13 +29,13 @@ _瀏覽檢視支援頂端和左側瀏覽窗格或功能表_
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **NavigationView** 控制項包含在 Windows UI 程式庫中，該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **NavigationView** 控制項包含在 Windows UI 程式庫中，該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](/uwp/toolkits/winui/)。 |
 
 > **平台 API**：[Windows.UI.Xaml.Controls.NavigationView 類別](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
 > **Windows UI 程式庫 API**：[Microsoft.UI.Xaml.Controls.NavigationView 類別](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
-> NavigationView 的一些功能 (例如「頂端」  和「階層式」  瀏覽) 需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> NavigationView 的一些功能 (例如「頂端」和「階層式」瀏覽) 需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或 [Windows UI 程式庫](/uwp/toolkits/winui/)。
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -65,7 +65,7 @@ NavigationView 是調適型瀏覽控制項，適用於：
 
 ## <a name="display-modes"></a>顯示模式
 
-> PaneDisplayMode 屬性需要 Windows 10 1809 版 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/) (英文)。
+> PaneDisplayMode 屬性需要 Windows 10 1809 版 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或 [Windows UI 程式庫](/uwp/toolkits/winui/) (英文)。
 
 您可以使用 PaneDisplayMode 屬性來設定 NavigationView 的不同瀏覽樣式或顯示模式。
 
@@ -156,7 +156,7 @@ NavigationView 窗格可以包含：
 
 左窗格也包含：
 
-- 切換開啟和關閉窗格的功能表按鈕。 在較大的應用程式視窗上，當窗格開啟時，您可以選擇使用 [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) 屬性隱藏此按鈕。
+- 切換開啟和關閉窗格的功能表按鈕。 在較大的應用程式視窗上，當窗格開啟時，您可以選擇使用 [IsPaneToggleButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) 屬性隱藏此按鈕。
 
 瀏覽檢視有放置在窗格左上角的返回按鈕。 不過，這會自動處理向後瀏覽，並將內容新增至返回堆疊。 若要啟用向後瀏覽，請參閱[向後瀏覽](#backwards-navigation)一節。
 
@@ -185,7 +185,7 @@ NavigationView 窗格可以包含：
 
 #### <a name="pane-footer"></a>窗格頁尾
 
-您可以將自由格式內容新增至 [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) 屬性，在窗格頁尾中放置自由格式內容。
+您可以將自由格式內容新增至 [PaneFooter](/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) 屬性，在窗格頁尾中放置自由格式內容。
 
 :::row:::
     :::column:::
@@ -200,9 +200,9 @@ NavigationView 窗格可以包含：
 
 #### <a name="pane-title-and-header"></a>窗格標題和頁首
 
-您也可以設定 [PaneTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle) 屬性，在窗格標頭區域中放置文字內容。 其會使用字串，並顯示功能表按鈕旁邊的文字。
+您也可以設定 [PaneTitle](/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle) 屬性，在窗格標頭區域中放置文字內容。 其會使用字串，並顯示功能表按鈕旁邊的文字。
 
-若要新增非文字內容，例如圖片或標誌，您可以將任何元素新增至 [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader) 屬性，以便置於窗格的頁首。
+若要新增非文字內容，例如圖片或標誌，您可以將任何元素新增至 [PaneHeader](/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader) 屬性，以便置於窗格的頁首。
 
 如果已設定 PaneTitle 和 PaneHeader，內容會在功能表按鈕旁邊水平堆疊，而且 PaneTitle 最接近功能表按鈕。
 
@@ -219,7 +219,7 @@ NavigationView 窗格可以包含：
 
 #### <a name="pane-content"></a>窗格內容
 
-您可以將自由格式內容新增至 [PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent) 屬性，在窗格中放置自由格式內容。
+您可以將自由格式內容新增至 [PaneCustomContent](/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent) 屬性，在窗格中放置自由格式內容。
 
 :::row:::
     :::column:::
@@ -250,7 +250,7 @@ _瀏覽檢視內容_
 
 內容區域是顯示所選瀏覽類別大部分資訊的位置。
 
-當 NavigationView 處於 [基本]  模式時，建議您在內容區域使用 12px 邊界，若為其他模式則使用 24px 邊界。
+當 NavigationView 處於 [基本] 模式時，建議您在內容區域使用 12px 邊界，若為其他模式則使用 24px 邊界。
 
 ## <a name="adaptive-behavior"></a>調適性行為
 
@@ -403,10 +403,10 @@ NavigationView 有內建的返回按鈕；但是，和向前瀏覽一樣，這�
 此程式碼假設您的應用程式包含將瀏覽的頁面，這些頁面的名稱如下：_HomePage_、_AppsPage_、_GamesPage_、_MusicPage_、_MyContentPage_ 和 _SettingsPage_。 這些頁面的程式碼不會顯示。
 
 > [!IMPORTANT]
-> 應用程式頁面的資訊會儲存在 [ValueTuple](https://docs.microsoft.com/dotnet/api/system.valuetuple) 中。 此結構會要求應用程式專案的最小版本必須是 SDK 17763 或以上。 如果您使用 NavigationView 的 WinUI 版本鎖定舊版 Windows 10 為目標，您可以改為使用 [System.ValueTuple NuGet 套件](https://www.nuget.org/packages/System.ValueTuple/)。
+> 應用程式頁面的資訊會儲存在 [ValueTuple](/dotnet/api/system.valuetuple) 中。 此結構會要求應用程式專案的最小版本必須是 SDK 17763 或以上。 如果您使用 NavigationView 的 WinUI 版本鎖定舊版 Windows 10 為目標，您可以改為使用 [System.ValueTuple NuGet 套件](https://www.nuget.org/packages/System.ValueTuple/)。
 
 > [!IMPORTANT]
-> 此程式碼顯示如何使用 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)版本的 NavigationView。 如果您改為使用平台版本的 NavigationView，應用程式專案的最小版本必須是 SDK 17763 或以上。 若要使用平台版本，請移除 `muxc:` 的所有參考。
+> 此程式碼顯示如何使用 [Windows UI 程式庫](/uwp/toolkits/winui/)版本的 NavigationView。 如果您改為使用平台版本的 NavigationView，應用程式專案的最小版本必須是 SDK 17763 或以上。 若要使用平台版本，請移除 `muxc:` 的所有參考。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -467,7 +467,7 @@ NavigationView 有內建的返回按鈕；但是，和向前瀏覽一樣，這�
 ```
 
 > [!IMPORTANT]
-> 此程式碼顯示如何使用 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)版本的 NavigationView。 如果您改為使用平台版本的 NavigationView，應用程式專案的最小版本必須是 SDK 17763 或以上。 若要使用平台版本，請移除 `muxc` 的所有參考。
+> 此程式碼顯示如何使用 [Windows UI 程式庫](/uwp/toolkits/winui/)版本的 NavigationView。 如果您改為使用平台版本的 NavigationView，應用程式專案的最小版本必須是 SDK 17763 或以上。 若要使用平台版本，請移除 `muxc` 的所有參考。
 
 ```csharp
 // Add "using" for WinUI controls.
@@ -651,7 +651,7 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 ## <a name="hierarchical-navigation"></a>階層式瀏覽
 有些應用程式可能有更複雜的階層式結構，而不只需要瀏覽項目的簡單列表。 您可能想使用最上層的瀏覽項目來顯示頁面的類別，以及可顯示特定頁面的子系項目。 如果您的中樞樣式頁面只會連結至其他頁面，這也很有用。 針對這類案例，您應該建立階層式 NavigationView。
 
-若要在窗格中顯示巢狀瀏覽項目的階層式清單，請使用 **NavigationViewItem** 的 `MenuItems` 屬性或 `MenuItemsSource` 屬性。
+若要在窗格中顯示巢狀瀏覽項目的階層式清單，請使用 **NavigationViewItem** 的 [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems?view=winui-2.4) 屬性或 [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource?view=winui-2.4) 屬性。
 每個 NavigationViewItem 均可包含其他 NavigationViewItem 和組織項目 (例如項目標頭和分隔符號)。 若要在使用 `MenuItemsSource` 時顯示階層式清單，請將 `ItemTemplate` 設定為 NavigationViewItem，並將其 `MenuItemsSource` 屬性繫結至階層的下一個層級。
 
 雖然 NavigationViewItem 可以包含任意數目的巢狀層級，但建議讓應用程式的瀏覽階層保持淺層。 我們認為兩個層級兼具可用性且容易理解。
@@ -684,7 +684,7 @@ NavigationView 會以頂端、左側和 LeftCompact 窗格顯示模式顯示階�
 * 將 MenuItemsSource 屬性繫結至階層式資料
 * 將項目範本定義為 NavigationViewMenuItem，將其內容設為功能表項目的標籤，並將其 MenuItemsSource 屬性繫結至階層的下一個層級
 
-這個範例也會示範**展開**和**摺疊**事件。 具有子系的功能表項目會引發這些事件。
+這個範例也會示範[展開](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding?view=winui-2.4)及[摺疊](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed?view=winui-2.4)事件。 具有子系的功能表項目會引發這些事件。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -780,7 +780,7 @@ public sealed partial class HierarchicalNavigationViewDataBinding : Page
 ```
 ### <a name="selection"></a>選項
 根據預設，任何項目都可以包含子系、加以叫用或選取。
-為使用者提供瀏覽選項的階層式樹狀結構時，您可選擇讓父系項目變為不可選取，例如當您的應用程式沒有與該父系項目相關聯的目的地頁面時。 如果父系項目  可選取，建議您使用左側展開或頂端窗格顯示模式。 LeftCompact 模式會讓使用者瀏覽至父系項目，以便在每次叫用時開啟子系樹狀子目錄。
+為使用者提供瀏覽選項的階層式樹狀結構時，您可選擇讓父系項目變為不可選取，例如當您的應用程式沒有與該父系項目相關聯的目的地頁面時。 如果父系項目可選取，建議您使用左側展開或頂端窗格顯示模式。 LeftCompact 模式會讓使用者瀏覽至父系項目，以便在每次叫用時開啟子系樹狀子目錄。
 
 選取的項目會沿著其左邊緣 (在左側模式中) 或沿著其底部邊緣 (在頂端模式中) 繪製其選取指標。 以下顯示已選取父系項目的情況下，左側和頂端模式中的 NavigationView。
 
@@ -794,9 +794,9 @@ public sealed partial class HierarchicalNavigationViewDataBinding : Page
 
 整個 NavigationView 將不會顯示一個以上的選取指標。
 
-在頂端和左側模式中，按一下 NavigationViewItem 上的箭號將會展開或摺疊樹狀子目錄。 按一下或點擊 NavigationViewItem 上的「其他地方」  將會觸發 `ItemInvoked` 事件，同時也會摺疊或展開樹狀子目錄。
+在頂端和左側模式中，按一下 NavigationViewItem 上的箭號將會展開或摺疊樹狀子目錄。 按一下或點擊 NavigationViewItem 上的「其他地方」將會觸發 `ItemInvoked` 事件，同時也會摺疊或展開樹狀子目錄。
 
-若要防止項目在叫用時顯示選取指標，請將其 [SelectsOnInvoked](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3) 屬性設定為 False，如下所示：
+若要防止項目在叫用時顯示選取指標，請將其 [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3) 屬性設定為 False，如下所示：
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -870,7 +870,7 @@ public sealed partial class HierarchicalNavigationViewDataBinding : Page
 ```
 
 ### <a name="keyboarding-within-hierarchical-navigationview"></a>階層式 NavigationView 內的鍵盤輸入
-使用者可以使用其[鍵盤](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions)，將焦點移到瀏覽檢視的周圍。 方向鍵會在窗格內公開「內部瀏覽」，並遵循 [樹狀檢視](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view)中提供的互動。 按鍵動作會在瀏覽 NavigationView 或其飛出視窗功能表 (其顯示在 HierarchicalNavigationView 的頂端和左側精簡模式中) 時變更。 以下是每個按鍵可在階層式 NavigationView 中採取的特定動作：
+使用者可以使用其[鍵盤](/windows/uwp/design/input/keyboard-interactions)，將焦點移到瀏覽檢視的周圍。 方向鍵會在窗格內公開「內部瀏覽」，並遵循 [樹狀檢視](/windows/uwp/design/controls-and-patterns/tree-view)中提供的互動。 按鍵動作會在瀏覽 NavigationView 或其飛出視窗功能表 (其顯示在 HierarchicalNavigationView 的頂端和左側精簡模式中) 時變更。 以下是每個按鍵可在階層式 NavigationView 中採取的特定動作：
 
 | 按鍵      |      在左側模式中      |  在頂端模式中 | 在飛出視窗中  |
 |----------|------------------------|--------------|------------|
@@ -907,7 +907,7 @@ public sealed partial class HierarchicalNavigationViewDataBinding : Page
 此範例示範如何覆寫 App.xaml 中的佈景主題資源。 您覆寫佈景主題資源時，應該至少一律提供「預設」和「高對比」資源字典，並且視需要提供「亮色調」或「暗色調」資源的字典。 如需詳細資訊，請參閱 [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)。
 
 > [!IMPORTANT]
-> 此程式碼顯示如何使用 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)版本的 AcrylicBrush。 如果您改為使用平台版本的 AcrylicBrush，應用程式專案的最小版本必須是 SDK 16299 或以上。 若要使用平台版本，請移除 `muxm:` 的所有參考。
+> 此程式碼顯示如何使用 [Windows UI 程式庫](/uwp/toolkits/winui/)版本的 AcrylicBrush。 如果您改為使用平台版本的 AcrylicBrush，應用程式專案的最小版本必須是 SDK 16299 或以上。 若要使用平台版本，請移除 `muxm:` 的所有參考。
 
 ```xaml
 <Application
@@ -953,10 +953,10 @@ public sealed partial class HierarchicalNavigationViewDataBinding : Page
 ```
 
 ### <a name="top-whitespace"></a>前幾個空白字元
-有些應用程式選擇[自訂其視窗標題列](https://docs.microsoft.com/windows/uwp/design/shell/title-bar)，可能會將其應用程式內容延伸到標題列區域。 當 NavigationView 是**使用 [ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**，在應用程式中延伸至標題列的根元素時，控制項會自動調整其互動式元素的位置，以避免與[可拖曳的區域](https://docs.microsoft.com/windows/uwp/design/shell/title-bar#draggable-regions)重疊。 
+有些應用程式選擇[自訂其視窗標題列](/windows/uwp/design/shell/title-bar)，可能會將其應用程式內容延伸到標題列區域。 當 NavigationView 是**使用 [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**，在應用程式中延伸至標題列的根元素時，控制項會自動調整其互動式元素的位置，以避免與[可拖曳的區域](/windows/uwp/design/shell/title-bar#draggable-regions)重疊。 
 ![延伸至標題列的應用程式](images/navigation-view-with-titlebar-padding.png)
 
-如果您的應用程式透過呼叫 [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar) 方法指定可拖曳的區域，而您想要讓 [上一頁] 和 [功能表] 按鈕更接近應用程式視窗的頂端，請將 `IsTitleBarAutoPaddingEnabled` 設定為 False。
+如果您的應用程式透過呼叫 [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) 方法指定可拖曳的區域，而您想要讓 [上一頁] 和 [功能表] 按鈕更接近應用程式視窗的頂端，請將 `IsTitleBarAutoPaddingEnabled` 設定為 False。
 
 ![應用程式延伸至標題列而不需額外填補](images/navigation-view-no-titlebar-padding.png)
 
@@ -973,11 +973,11 @@ public sealed partial class HierarchicalNavigationViewDataBinding : Page
 </Page.Resources>
 ```
 
-此主題資源會修改 [NavigationView.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.header) 周圍的邊界。
+此主題資源會修改 [NavigationView.Header](/uwp/api/windows.ui.xaml.controls.navigationview.header) 周圍的邊界。
 
 ## <a name="related-topics"></a>相關主題
 
-- [NavigationView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+- [NavigationView 類別](/uwp/api/windows.ui.xaml.controls.navigationview)
 - [主要/詳細資料](master-details.md)
 - [瀏覽基本知識](../basics/navigation-basics.md)
 - [Fluent Design 概觀](/windows/apps/fluent-design-system)

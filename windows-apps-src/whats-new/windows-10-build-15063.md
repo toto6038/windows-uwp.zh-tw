@@ -1,17 +1,17 @@
 ---
 title: Windows 10 (組建 15063) 的新功能
 description: Windows 10 組建 15063 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。
-keywords: 新功能, 新功能, 更新, 多項更新, 功能, 新, Windows 10, 1703, 3 月, 最新, 15063
+keywords: Windows 10, 1703, 15063
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: 53604de72eb32f7f6a8162b0cdb9cf481f6e9537
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ba6eb59cb6b5808f8298e3e0ab3b6c2f889e57ec
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258875"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234638"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>適用於開發人員的 Windows 10 (組建 15063) 最新動向
 

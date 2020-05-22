@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 848d682b2672e1a397e3ac867ae981c707873e8e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b9a4d0fb13b28babb3d99d0f763d9e7dc6decd2b
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970413"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233787"
 ---
 # <a name="inking-controls"></a>手寫筆跡控制項
 
@@ -147,7 +147,7 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 
 再次選取作用中工具的按鈕時，會顯示飛出視窗。 色彩或大小變更時，飛出視窗會自動關閉並且可以繼續使用手寫筆跡。 自訂畫筆和工具可以使用預設飛出視窗，或指定自訂飛出視窗。
 
-橡皮擦也有飛出視窗，其能提供 [清除所有筆跡]  命令。  
+橡皮擦也有飛出視窗，其能提供 [清除所有筆跡] 命令。  
 ![叫用橡皮擦飛出視窗的 InkToolbar](images/ink-tools-erase-all-ink.png)
 
  如需自訂項目及擴充功能的資訊，請查看 [SimpleInk 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)。

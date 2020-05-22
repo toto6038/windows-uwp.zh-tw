@@ -7,14 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d0e7ad60e8c709cf4a7b075b1d7307bbd61ed79c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 299a25bb92c5afdb86ebc1569a1f98916baa3d09
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969353"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233954"
 ---
-# <a name="introduction-to-uwp-app-design"></a>UWP 應用程式設計簡介
+# <a name="introduction-to-windows-app-design"></a>Windows 應用程式設計簡介
 
 ![範例光源應用程式](images/introUWP-header.jpg)
 
@@ -177,5 +177,5 @@ UWP 應用程式需依賴智慧型互動。 您可以針對按一下的互動來
 ## <a name="related-articles"></a>相關文章
 
 - [什麼是 UWP 應用程式？](../../get-started/universal-application-platform-guide.md)
-- [Fluent 設計系統](/windows/apps/fluent-design-system)
+- [Fluent Design 系統](/windows/apps/fluent-design-system)
 - [XAML 平台概觀](../../xaml-platform/index.md)

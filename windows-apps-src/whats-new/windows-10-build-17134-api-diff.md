@@ -1,16 +1,16 @@
 ---
 title: Windows 10 組建 17134 API 變更
 description: 開發人員可以使用下列清單識別 Windows 10 組建 17134 中新增或變更的命名空間
-keywords: 新功能, 新功能, 更新, Windows 10, 最新, api, 17134
+keywords: Windows 10, apis, 17134, 1803
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb3ec9646848f74e4a147a102c0e2bd803073d74
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9f3613793a44222f4612a5ae64514546abb6ca66
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67322005"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234689"
 ---
 # <a name="new-apis-in-windows-10-build-17134"></a>Windows 10 組建 17134 中的新 API
 

@@ -1,16 +1,16 @@
 ---
 title: Windows 10 (組建 16299) 的新功能
 description: Windows 10 組建 16299 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。
-keywords: 新功能, 更新, 功能, 全新, Windows 10, 1709, 10 月, 最新版, 開發人員, 16299, Fall Creators
+keywords: Windows 10, 1709, 16299, Fall Creators
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c54321d1d9db95a33d2de6363a79d93243c07d1f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fc4f0a50a70531d9d0591c1153aad1ab23e8250d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258882"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234217"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>適用於開發人員的 Windows 10 (組建 16299) 最新動向
 

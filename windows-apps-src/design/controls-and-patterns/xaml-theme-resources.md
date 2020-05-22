@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fc05ce50c19a04d5b90d225746c9af6569f49bd3
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b16ad72541f34e40d1b0cf534082eb68b0843141
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970433"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234725"
 ---
 # <a name="xaml-theme-resources"></a>XAML 佈景主題資源
 
@@ -55,7 +55,7 @@ Windows 執行階段不會使用這些實體檔案進行執行階段查詢。 �
 
 ## <a name="the-xaml-color-ramp-and-theme-dependent-brushes"></a>XAML 色彩坡形和佈景主題相依的筆刷
 
-適用於 "Light"、"Dark" 及 "HighContrast" 佈景主題的色彩組合可在 XAML 中組成 [Windows 色彩坡度]  。 不論您是否想要修改系統佈景主題，或者將系統佈景主題套用到自己的 XAML 元素，都請務必了解色彩資源的結構。
+適用於 "Light"、"Dark" 及 "HighContrast" 佈景主題的色彩組合可在 XAML 中組成 [Windows 色彩坡度]。 不論您是否想要修改系統佈景主題，或者將系統佈景主題套用到自己的 XAML 元素，都請務必了解色彩資源的結構。
 
 如需有關如何在 Windows 應用程式中套用色彩的詳細資訊，請參閱 [Windows 應用程式中的色彩](../style/color.md)。
 
@@ -147,7 +147,7 @@ XAML 架構提供一組已命名的 [Color](/uwp/api/Windows.UI.Color) 資源，
 
 ### <a name="windows-system-high-contrast-colors"></a>Windows 系統的高對比色彩
 
-除了由 XAML 架構提供的資源組，還有一組衍生自 Windows 系統調色盤的色彩值。 這些色彩並不是 Windows 執行階段或 Windows 應用程式專用。 不過，當系統的運作 (和 app 的執行) 是使用 "HighContrast" 佈景主題時，有許多 XAML [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) 資源會取用這些色彩。 XAML 架構提供這些全系統的色彩做為已設定索引鍵的資源。 索引鍵需遵循下列命名格式：`SystemColor[name]Color`。
+除了由 XAML 架構提供的資源組，還有一組衍生自 Windows 系統調色盤的色彩值。 這些色彩並不是 Windows 執行階段或 Windows 應用程式專用的。 不過，當系統的運作 (和 app 的執行) 是使用 "HighContrast" 佈景主題時，有許多 XAML [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) 資源會取用這些色彩。 XAML 架構提供這些全系統的色彩做為已設定索引鍵的資源。 索引鍵需遵循下列命名格式：`SystemColor[name]Color`。
 
 此表格列出全系統的色彩，XAML 可提供來做為衍生自 Windows 系統調色盤的資源物件。 [輕鬆存取名稱] 欄顯示如何在 Windows 設定 UI 中標示色彩。 [簡單的高對比名稱] 欄是簡單的說明，描述色彩如何套用到 XAML 通用控制項的方式。 它是用來做為筆刷命名慣例的一部分 (稍後將會說明)。 [初始預設值] 欄顯示若系統完全不是以高對比執行時您會獲得的值。
 
@@ -202,7 +202,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 -->
 
 > [!NOTE]
-> 並非每個 \[*簡單的高對比名稱*\]\[  簡單的亮色調/暗色調名稱\] 組合都是提供來作為筆刷資源。
+> 並非每個 \[*簡單的高對比名稱*\]\[簡單的亮色調/暗色調名稱\] 組合都是提供來作為筆刷資源。
 
 ## <a name="the-xaml-type-ramp"></a>XAML 字體坡形
 

@@ -6,16 +6,16 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5bcc7d45646651cdb60228a3c08123378eedb960
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 634393e700538dc5db43b2d4065c6742fd7673f1
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970613"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234329"
 ---
 # <a name="control-size-and-density"></a>控制項大小和密度
 
-使用控制項大小和密度的組合來最佳化您的 Windows 應用程式，並提供最適合您應用程式功能和互動需求的使用者體驗。
+使用控制項大小和密度的組合對您的 Windows 應用程式進行最佳化，並提供最適合您應用程式功能及互動需求的使用者體驗。
 
 根據預設，UWP 應用程式會以低密度 (或 `Standard`) 配置。 不過，從 WinUI 2.1 開始，也支援高密度 (或 `Compact`) 版面配置選項 (適用於資訊豐富的 UI 和類似的特殊情況)。 這可透過基本樣式資源指定 (請參閱以下範例)。
 
@@ -39,7 +39,7 @@ ms.locfileid: "82970613"
 
 ## <a name="fluent-standard-sizing"></a>Fluent 標準大小調整
 
-「Fluent 標準大小調整」  旨在提供資訊密度和使用者舒適度之間平衡。 實際上，畫面上所有的項目都會對齊 40x40 有效像素 (epx) 目標，其可讓 UI 元素貼齊格線並根據系統層級縮放適度調整。
+「Fluent 標準大小調整」旨在提供資訊密度和使用者舒適度之間平衡。 實際上，畫面上所有的項目都會對齊 40x40 有效像素 (epx) 目標，其可讓 UI 元素貼齊格線並根據系統層級縮放適度調整。
 
 **大小調整的設計訴求是要適應觸控和指標輸入。**
 
@@ -54,7 +54,7 @@ ms.locfileid: "82970613"
 
 ![標準控制項版面配置範例](images/standarddensity.png)
 
-*控制項版面配置範例*
+*標準控制項版面配置範例*
 
 下圖顯示對 Windows 10 2018 年 10 月更新的控制項大小所做的變更。 具體來說，對齊 40epx 格線。
 

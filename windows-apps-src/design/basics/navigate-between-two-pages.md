@@ -1,5 +1,5 @@
 ---
-Description: 了解如何啟用 Windows 應用程式中兩個基本頁面之間的對等瀏覽。
+Description: 了解如何在 Windows 應用程式中，啟用兩個基本頁面之間的對等瀏覽。
 title: 兩個頁面之間的對等瀏覽
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: ef50b2d84ae9785a13d8c8dd13ca5a399dae142d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 50211600931fc67c43aa577fabe23f1277a0e897
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969243"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233828"
 ---
 # <a name="implement-navigation-between-two-pages"></a>兩個頁面之間的實作瀏覽
 
@@ -30,23 +30,23 @@ ms.locfileid: "82969243"
 
 ## <a name="1-create-a-blank-app"></a>1.建立空白的應用程式
 
-1.  在 Microsoft Visual Studio 功能表，選擇 [檔案]   > [新增專案]  。
-2.  在 [新增專案]  對話方塊的左側窗格中，選擇 [Visual C#]   > [Windows]   > [通用]  或 [Visual C++]   > [Windows]   > [通用]  節點。
+1.  在 Microsoft Visual Studio 功能表，選擇 [檔案] > [新增專案]。
+2.  在 [新增專案] 對話方塊的左側窗格中，選擇 [Visual C#] > [Windows] > [通用] 或 [Visual C++] > [Windows] > [通用] 節點。
 3.  在中央窗格中，選擇**空白 app**。
-4.  在 [名稱]  方塊中輸入 **NavApp1**，然後選擇 [確定]  按鈕。
-    隨即建立解決方案，而且專案檔案會出現在 [方案總管]  中。
-5.  若要執行程式，請從功能表依序選擇 [偵錯]   >  [開始偵錯]  ，或按 F5。
+4.  在 [名稱] 方塊中輸入 **NavApp1**，然後選擇 [確定] 按鈕。
+    隨即建立解決方案，而且專案檔案會出現在 [方案總管] 中。
+5.  若要執行程式，請從功能表依序選擇 [偵錯] >  [開始偵錯]，或按 F5。
     隨即顯示空白頁面。
-6.  若要停止偵錯並回到 Visual Studio，請結束 app，或從功能表按一下 [停止偵錯]  。
+6.  若要停止偵錯並回到 Visual Studio，請結束 app，或從功能表按一下 [停止偵錯]。
 
 ## <a name="2-add-basic-pages"></a>2.新增基本頁面
 
 接下來，將兩個頁面新增到專案。
 
-1.  在 [方案總管]  中，以滑鼠右鍵按一下 [BlankApp]  專案節點以開啟捷徑功能表。
-2.  從捷徑功能表選擇 [新增]   >  [新增項目]  。
-3.  在 [加入新項目]  對話方塊中，選擇中間窗格的 [空白頁]  。
-4.  在 [名稱]  方塊中，輸入 **Page1** (或 **Page2**)，然後按 [新增]  按鈕。
+1.  在 [方案總管] 中，以滑鼠右鍵按一下 [BlankApp] 專案節點以開啟捷徑功能表。
+2.  從捷徑功能表選擇 [新增] >  [新增項目]。
+3.  在 [加入新項目] 對話方塊中，選擇中間窗格的 [空白頁]。
+4.  在 [名稱] 方塊中，輸入 **Page1** (或 **Page2**)，然後按 [新增] 按鈕。
 5. 重複步驟 1 到 4，新增第二個頁面。
 
 現在，這些檔案應該會列在您的 NavApp1 專案中。
@@ -414,7 +414,7 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-執行 app，在文字方塊中輸入您的名稱，然後按一下 [按一下以移至頁面 2]  連結。 
+執行 app，在文字方塊中輸入您的名稱，然後按一下 [按一下以移至頁面 2] 連結。 
 
 當 `Page1` 中 **HyperlinkButton** 的 **Click** 事件呼叫 `this.Frame.Navigate(typeof(Page2), name.Text)` 時，`name.Text` 屬性會傳送到 `Page2`，而事件資料的值會用於頁面上所顯示的訊息。
 

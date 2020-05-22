@@ -1,17 +1,17 @@
 ---
 title: Windows 10 (組建 17763) 的新功能
 description: Windows 10 組建 17763 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。
-keywords: 新功能, 最新動向, 更新, 多項更新, 功能, 新, Windows 10, 最新, 開發人員, 17763
+keywords: Windows 10, 17763, 1809
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d26d88377aec4306ad0711724760ec13e6568d85
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 77b47866bc064baec7c0ecf556eb615f67af0554
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684760"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234380"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員的 Windows 10 (組建 17763) 的新功能
 

@@ -10,16 +10,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 26d649e5a27ae7eef0131964f5c277f3539da73f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 154f1969f18cffc485252971258ef801ca86a56e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969373"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234027"
 ---
 # <a name="command-design-basics-for-windows-apps"></a>Windows 應用程式的命令設計基本知識
 
-在 Windows 應用程式中，「命令元素」  是讓使用者執行動作 (例如傳送電子郵件、刪除項目，或提交表單) 的互動式 UI 元素。 「命令介面」  是由常見命令元素、將其裝載的命令介面、其所支援的互動，以及它們所提供的體驗所組成。
+在 Windows 應用程式中，「命令元素」是讓使用者執行動作 (例如傳送電子郵件、刪除項目，或提交表單) 的互動式 UI 元素。 「命令介面」是由常見命令元素、將其裝載的命令介面、其所支援的互動，以及它們所提供的體驗所組成。
 
 ## <a name="provide-the-best-command-experience"></a>提供最佳的命令體驗
 

@@ -1,17 +1,17 @@
 ---
 title: Windows 10 組建 18362 API 變更
 description: 開發人員可以使用下列清單識別 Windows 10 組建 18362 中新增或變更的命名空間
-keywords: 新功能, 新功能, 更新, Windows 10, 最新, api, 18362, 5 月
+keywords: Windows 10, apis, 18362, 1903
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e230ac2716fc79449197a2f777b9262b2c237fe3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5770ca513f6eb75c6a2c1e9e89aa0b3bc0ffc581
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63780357"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233808"
 ---
 # <a name="new-apis-in-windows-10-build-18362"></a>Windows 10 組建 18362 中的新 API
 
@@ -87,7 +87,7 @@ TensorUInt8Bit.Close <br> TensorUInt8Bit.CreateFromBuffer <br> TensorUInt8Bit.Cr
 
 ### <a name="windowsapplicationmodel"></a>[Windows.ApplicationModel](https://docs.microsoft.com/uwp/api/windows.applicationmodel)
 
-#### <a name="package"></a>[Package](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package)
+#### <a name="package"></a>[套件](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package) \(英文\)
 
 Package.EffectiveLocation <br> Package.MutableLocation
 
@@ -679,7 +679,7 @@ CompositionTransform
 
 CompositionVisualSurface <br> CompositionVisualSurface.SourceOffset <br> CompositionVisualSurface.SourceSize <br> CompositionVisualSurface.SourceVisual
 
-#### <a name="compositor"></a>[Compositor](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositor)
+#### <a name="compositor"></a>[撰寫器](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositor) \(英文\)
 
 Compositor.CreateProjectedShadowCaster <br> Compositor.CreateProjectedShadowReceiver <br> Compositor.CreateProjectedShadow <br> Compositor.CreateRadialGradientBrush <br> Compositor.CreateVisualSurface
 
