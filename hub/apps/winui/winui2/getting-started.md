@@ -4,12 +4,12 @@ description: 如何安裝及使用 Windows UI 程式庫。
 ms.topic: reference
 ms.date: 05/08/2020
 keywords: windows 10, uwp, 工具組 sdk
-ms.openlocfilehash: 2205a95dfd342503674662d5cb0e4ed598eda870
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 585475df4138c6a5d4d8b885582137c972a64287
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580405"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775863"
 ---
 # <a name="getting-started-with-the-windows-ui-library"></a>開始使用 Windows UI 程式庫
 
@@ -18,18 +18,18 @@ ms.locfileid: "83580405"
 程式庫會以 NuGet 套件的形式來提供，可供新增至任何新的或現有的 Visual Studio 專案。
 
 > [!NOTE]
-> 如需有關試用 WinUI 3.0 早期預覽版的詳細資訊，請參閱 [WinUI 3.0 (Alpha)](../winui3/index.md)。
+> 如需有關試用 WinUI 3.0 早期預覽版的詳細資訊，請參閱 [WinUI 3.0 Preview 1](../winui3/index.md)。
 
 ## <a name="download-and-install-the-windows-ui-library"></a>下載並安裝 Windows UI 程式庫
 
-1. 下載 [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)，並務必在 Visual Studio 安裝程式中選擇 [通用 Windows 平台開發]  工作負載。
+1. 下載 [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)，並務必在 Visual Studio 安裝程式中選擇 [通用 Windows 平台開發] 工作負載。
 
 2. 開啟現有專案，或使用 [Visual C#] -> [Windows] -> [通用] 底下的 [空白應用程式] 範本建立新專案 (也可以使用適用於您語言投影的適當範本來建立)。  
 
     > [!IMPORTANT]
     > 若要使用 WinUI 2.4，您必須在專案屬性中設定 TargetPlatformVersion >= 10.0.18362.0 和 TargetPlatformMinVersion >= 10.0.15063.0。
 
-3. 在 [方案總管] 面板中，以滑鼠右鍵按一下專案名稱，然後選取 [管理 NuGet 套件]  。 選取 [瀏覽]  索引標籤，然後搜尋 **Microsoft.UI.Xaml** 或 **WinUI**。 然後選擇您要使用的 [[Windows UI 程式庫 NuGet 套件]](nuget-packages.md)。
+3. 在 [方案總管] 面板中，以滑鼠右鍵按一下專案名稱，然後選取 [管理 NuGet 套件]。 選取 [瀏覽] 索引標籤，然後搜尋 **Microsoft.UI.Xaml** 或 **WinUI**。 然後選擇您要使用的 [[Windows UI 程式庫 NuGet 套件]](nuget-packages.md)。
 **Microsoft.UI.Xaml** 套件包含適用於所有應用程式的 Fluent 控制項和功能。  
 您可以選擇性地核取 [包含發行前版本]，以查看包含實驗性新功能的最新發行前版本。
 
@@ -39,12 +39,12 @@ ms.locfileid: "83580405"
 
 4. 將 Windows UI (WinUI) 佈景主題資源新增至 App.xaml 資源。 視您是否有額外的應用程式資源而定，您可以透過兩種方式來執行此動作。
 
-    a. 如果您沒有其他應用程式資源，請將 `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` 新增至您的 Application.Resources： 
+    a. 如果您沒有其他應用程式資源，請將 `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` 新增至您的 Application.Resources：
 
     ``` XAML
     <Application>
         <Application.Resources>
-            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" /> 
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
         </Application.Resources>
     </Application>
     ```
@@ -57,7 +57,7 @@ ms.locfileid: "83580405"
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
                     <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                </ResourceDictionary.MergedDictionaries> 
+                </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Application.Resources>
     </Application>
@@ -102,6 +102,6 @@ WinUI 是裝載於 GitHub 上的開放原始碼專案。
 
 我們歡迎您在 [Windows UI 程式庫存放庫](https://aka.ms/winui)中提出錯誤回報、功能要求和社群程式碼。
 
-## <a name="other-resources"></a>其他資源 
+## <a name="other-resources"></a>其他資源
 
 如果您不熟悉 UWP，建議您造訪開發人員入口網站上的 [UWP 開發入門](https://developer.microsoft.com/windows/getstarted)頁面。

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, windows 上的 python, 搭配 wsl 的 python web, 搭配 windows 子系統 linux 版的 python web 應用程式, 在 windows 上進行 python web 開發, windows 上的 flask 應用程式, windows 上的 django 應用程式, python web, 在 windows 上進行 flask web 開發, 在 windows 上進行 django web 開發, 使用 python 進行 windows web 開發, vs code python web 開發, 遠端 wsl 延伸模組, ubuntu, wsl, venv, pip, microsoft python 延伸模組, 在 windows 上執行 python, 在 windows 上使用 python, 在 windows 上使用 python 進行建置
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 8cbc8343764e4de57bd418ecdb36bd606b037c68
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3ae3b04738152ff1a142e1599cc05357006456b9
+ms.sourcegitcommit: 2af814b7f94ee882f42fae8f61130b9cc9833256
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80218478"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83717137"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>開始在 Windows 上使用 Python 進行 Web 開發
 
@@ -25,30 +25,18 @@ ms.locfileid: "80218478"
 
 如果您是使用 Python 進行 Web 開發以外的操作，建議您使用 Microsoft Store 直接在 Windows 10 上安裝 Python。 WSL 不支援 GUI 桌上型電腦或應用程式 (例如 PyGam、Gnome、KDE 等)。 若為這些情況，直接在 Windows 上安裝和使用 Python。 如果您是初次使用 Python，請參閱我們的指南：[開始在 Windows 上使用適用於初學者的 Python](./beginners.md)。 如果您有興趣將作業系統上的一般工作自動化，請參閱我們的指南：[開始在 Windows 上使用 Python 進行指令碼處理和自動化](./scripting.md)。 對於某些進階案例，您可能會想要考慮直接從 [python.org](https://www.python.org/downloads/windows/) 下載特定的 Python 版本，或考慮安裝[替代項目](https://www.python.org/download/alternatives)，例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是資深 Python 程式設計人員，且有選擇替代實作的特定原因時，才建議這樣做。
 
-## <a name="enable-windows-subsystem-for-linux"></a>啟用 Windows 子系統 Linux 版
+## <a name="install-windows-subsystem-for-linux"></a>安裝 Windows 子系統 Linux 版
 
-WSL 可讓您以不需進行任何修改且完全與您的 Windows 檔案系統與最愛工具 (例如 Visual Studio Code) 整合的方式，直接在 Windows 上執行 GNU/Linux 環境 (包括大部分的命令列工具、公用程式與應用程式)。 啟用 WSL 之前，請先檢查您是否具備[最新版本的 Windows 10](https://www.microsoft.com/software-download/windows10)。
+使用 WSL，您可以執行與 Windows 和您最愛的工具 (例如 Visual Studio Code、Outlook 等) 直接整合的 GNU/Linux 命令列環境。
 
-若要在您的電腦上啟用 WSL，您需要：
+若要啟用並安裝 WSL (或 WSL 2，視需求而定)，請遵循 [WSL 安裝文件](https://docs.microsoft.com/windows/wsl/install-win10)中的步驟。 這些步驟會包含選擇 Linux 發行版本 (例如 Ubuntu)。
 
-1. 移至您的 [開始]  功能表 (左下方的 Windows 圖示)、鍵入「開啟或關閉 Windows 功能」，然後選取 [控制台]  的連結，以開啟 [Windows 功能]  快顯功能表。 在清單中尋找「Windows 子系統 Linux 版」，然後選取核取方塊以開啟此功能。
+一旦您安裝了 WSL 和 Linux 發行版本，請開啟 Linux 發行版本 (位於 Windows 的 [開始] 功能表中)，然後使用下列命令來檢查版本和代號：`lsb_release -dc`。
 
-2. 出現提示時，重新啟動您的電腦。
-
-## <a name="install-a-linux-distribution"></a>安裝 Linux 發行版本
-
-有多種 Linux 發行版本可在 WSL 上執行。 您可以在 Microsoft Store 中尋找並安裝我的最愛。 建議從使用 [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) 開始，因為它是最新、熱門且受到妥善支援。
-
-1. 開啟此 [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) 連結、開啟 Microsoft Store，然後選取 [取得]  。 *(這是相當大的下載，因此可能需要一些時間來安裝。)*
-
-2. 下載完成之後，從 Microsoft Store 選取 [啟動]  ，或在 [開始]  功能表中鍵入 "Ubuntu 18.04 LTS"以啟動。
-
-3. 當您第一次執行發行版本時，系統將問您是否要建立帳戶名稱和密碼。 在此之後，預設您會以此使用者身分自動登入。 您可以選擇任何使用者名稱和密碼。 它們對您的 Windows 使用者名稱並無任何影響。
-
-您可以藉由輸入 `lsb_release -d` 來檢查您目前使用的 Linux 發行版本。 若要更新您的 Ubuntu 發行版本，請使用：`sudo apt update && sudo apt upgrade`。 建議定期更新，以確保您擁有最新的套件。 Windows 不會自動處理此更新。 如需連結至 Microsoft Store 中提供的其他 Linux 發行版本、替代安裝方法或疑難排解，請參閱[適用於 Windows 10 的 Windows 子系統 Linux 版安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。
+我們建議您定期更新 Linux 發行版本 (包括安裝後立即更新)，以確保您擁有最新的套件。 Windows 不會自動處理此更新。 若要更新您的發行版本，請使用下列命令：`sudo apt update && sudo apt upgrade`。  
 
 > [!TIP]
-> 如果您打算使用多個命令列 (Ubuntu、PowerShell、Windows 命令提示字元等)，或想要[自訂您的終端機](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md) (包括文字、背景色彩、按鍵繫結關係等)，請考慮試用新的 [Windows 終端機](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md)。
+> 考慮[從 Microsoft Store 安裝新的 Windows 終端機](https://www.microsoft.com/store/apps/9n0dx20hk701)以啟用多個索引標籤 (在多個 Linux 命令列、Windows 命令提示字元、PowerShell、Azure CLI 等之間快速切換)、建立自訂按鍵繫結 (開啟或關閉索引標籤、複製+貼上等的快速鍵)、使用搜尋功能及設定自訂佈景主題 (色彩配置、字型樣式和大小、背景影像/柔邊/透明度)。 [深入了解](https://docs.microsoft.com/windows/terminal)。
 
 ## <a name="set-up-visual-studio-code"></a>設定 Visual Studio Code
 
@@ -65,14 +53,14 @@ WSL 可讓您以不需進行任何修改且完全與您的 Windows 檔案系統�
 
 讓我們在 Linux (Ubuntu) 檔案系統上建立新的專案目錄，接著使用 VS Code 搭配 Linux 應用程式和工具來處理此目錄。
 
-1. 關閉 VS Code 並開啟 Ubuntu 18.04 (您的 WSL 命令列)，方法是移至您的 [開始]  功能表 (左下方的 Windows 圖示)，然後鍵入："Ubuntu 18.04"。
+1. 關閉 VS Code 並開啟 Ubuntu 18.04 (您的 WSL 命令列)，方法是移至您的 [開始] 功能表 (左下方的 Windows 圖示)，然後鍵入："Ubuntu 18.04"。
 
 2. 在您的 Ubuntu 命令列中，瀏覽至您要放置專案的位置，並為其建立目錄：`mkdir HelloWorld`。
 
 ![Ubuntu 終端機](../images/ubuntu-terminal.png)
 
 > [!TIP]
-> 使用 Windows 子系統 Linux 版 (WSL) 時，必須記住的重要事項是**您現在正在兩個不同的檔案系統之間工作**：1) 您的 Windows 檔案系統，以及 2) 您的 Linux 檔案系統 (WSL)，即我們範例中使用的 Ubuntu。 您必須注意安裝套件和儲存檔案的位置。 您可以在 Windows 檔案系統中安裝一個或多個版本的工具或套件，以及在 Linux 檔案系統中安裝完全不同的版本。 更新 Windows 檔案系統中的工具將不會影響 Linux 檔案系統中的工具，反之亦然。 WSL 會將您電腦上的固定磁碟機掛接在 Linux 發行版本的 `/mnt/<drive>` 資料夾底下。 例如，您的 Windows C: 磁碟機掛接在 `/mnt/c/` 底下。 您可以從 Ubuntu 終端機存取 Windows 檔案，並在這些檔案上使用 Linux 應用程式和工具，反之亦然。 建議您在適用於 Python Web 開發的 Linux 檔案系統中工作，這是因為大部分的 Web 工具原本是針對 Linux 所撰寫，並部署在 Linux 生產環境中。 它也可避免混用檔案系統語意 (例如，Windows 在檔案名稱方面不區分大小寫)。 話雖如此，WSL 現在支援在 Linux 和 Windows 檔案系統之間進行跳躍，因此您可以在其中一個檔案上裝載您的檔案。 [深入了解](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。 我們也很高興分享[即將在 Windows 上推出 WSL2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/)，並提供一些絕佳的改善功能。 您可以[立即在 Windows 測試人員組建 18917 中試用它](https://docs.microsoft.com/windows/wsl/wsl2-install)。
+> 使用 Windows 子系統 Linux 版 (WSL) 時，必須記住的重要事項是**您現在正在兩個不同的檔案系統之間工作**：1) 您的 Windows 檔案系統，以及 2) 您的 Linux 檔案系統 (WSL)，即我們範例中使用的 Ubuntu。 您必須注意安裝套件和儲存檔案的位置。 您可以在 Windows 檔案系統中安裝一個或多個版本的工具或套件，以及在 Linux 檔案系統中安裝完全不同的版本。 更新 Windows 檔案系統中的工具將不會影響 Linux 檔案系統中的工具，反之亦然。 WSL 會將您電腦上的固定磁碟機掛接在 Linux 發行版本的 `/mnt/<drive>` 資料夾底下。 例如，您的 Windows C: 磁碟機掛接在 `/mnt/c/` 底下。 您可以從 Ubuntu 終端機存取 Windows 檔案，並在這些檔案上使用 Linux 應用程式和工具，反之亦然。 建議您在適用於 Python Web 開發的 Linux 檔案系統中工作，這是因為大部分的 Web 工具原本是針對 Linux 所撰寫，並部署在 Linux 生產環境中。 它也可避免混用檔案系統語意 (例如，Windows 在檔案名稱方面不區分大小寫)。 話雖如此，WSL 現在支援在 Linux 和 Windows 檔案系統之間進行跳躍，因此您可以在其中一個檔案上裝載您的檔案。 [深入了解](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。
 
 ## <a name="install-python-pip-and-venv"></a>安裝 Python、pip 和 venv
 
@@ -99,7 +87,7 @@ Ubuntu 18.04 LTS 隨附已安裝的 Python 3.6，但不隨附您預期可能會�
 
 ## <a name="open-a-wsl---remote-window"></a>開啟 WSL - Remote 視窗
 
-VS Code 使用 Remote - WSL 延伸模組 (先前已安裝)，將您的 Linux 子系統視為遠端伺服器。 這可讓您使用 WSL 做為整合式開發環境。 [深入了解](https://code.visualstudio.com/docs/remote/wsl)。 
+VS Code 使用 Remote - WSL 延伸模組 (先前已安裝)，將您的 Linux 子系統視為遠端伺服器。 這可讓您使用 WSL 做為整合式開發環境。 [深入了解](https://code.visualstudio.com/docs/remote/wsl)。
 
 1. 從 Ubuntu 終端機中，於 VS Code 中開啟您的專案資料夾，方法是輸入：`code .` ("." 會告訴 VS Code 開啟目前的資料夾)。
 
@@ -109,7 +97,7 @@ VS Code 使用 Remote - WSL 延伸模組 (先前已安裝)，將您的 Linux 子
 
 3. 關閉您的 Ubuntu 終端機。 接下來我們將使用整合至 VS Code 的 WSL 終端機。
 
-4. 在 VS Code 中開啟 WSL 終端機，方法是按 **Ctrl+`** (使用倒單引號字元)，或選取 [檢視]   >  [終端機]  。 這會開啟一個 bash (WSL) 命令列，並開啟至您在 Ubuntu 終端機中建立的專案資料夾路徑。
+4. 在 VS Code 中開啟 WSL 終端機，方法是按 **Ctrl+`** (使用倒單引號字元)，或選取 [檢視] >  [終端機]。 這會開啟一個 bash (WSL) 命令列，並開啟至您在 Ubuntu 終端機中建立的專案資料夾路徑。
 
     ![VS Code 與 WSL 終端機](../images/vscode-bash-remote.png)
 
@@ -117,21 +105,21 @@ VS Code 使用 Remote - WSL 延伸模組 (先前已安裝)，將您的 Linux 子
 
 您將需要為 Remote - WSL 安裝任何 VS Code 延伸模組。 已在 VS Code 本機安裝的延伸模組將無法自動使用。 [深入了解](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions)。
 
-1. 輸入 **Ctrl+Shift+X** (或使用功能表瀏覽至 [檢視]   >  [延伸模組]  )，以開啟 VS Code 延伸模組視窗。
+1. 輸入 **Ctrl+Shift+X** (或使用功能表瀏覽至 [檢視] >  [延伸模組])，以開啟 VS Code 延伸模組視窗。
 
-2. 在頂端 [搜尋 Marketplace 中的延伸模組]  方塊中，輸入：**Python**。
+2. 在頂端 [搜尋 Marketplace 中的延伸模組] 方塊中，輸入：**Python**。
 
-3. 尋找 **Python (ms-python.python) by Microsoft** 延伸模組，然後選取綠色 [安裝]  按鈕。
+3. 尋找 **Python (ms-python.python) by Microsoft** 延伸模組，然後選取綠色 [安裝] 按鈕。
 
-4. 延伸模組完成安裝之後，您必須選取藍色 [需要重新載入]  按鈕。 這會重新載入VS Code，並在 VS Code 延伸模組視窗中顯示 [WSL：  UBUNTU-18.04 - 已安裝] 區段，其中顯示您已安裝 Python 延伸模組。
+4. 延伸模組完成安裝之後，您必須選取藍色 [需要重新載入] 按鈕。 這會重新載入VS Code，並在 VS Code 延伸模組視窗中顯示 [WSL：UBUNTU-18.04 - 已安裝] 區段，其中顯示您已安裝 Python 延伸模組。
 
 ## <a name="run-a-simple-python-program"></a>執行簡單的 Python 程式
 
-Python 是一種解譯的語言，並支援不同類型的解譯器 (Python2、Anaconda、PyPy 等)。 VS Code 應該預設為與專案相關聯的解譯器。 如果您有變更它的原因，請選取目前顯示在 VS Code 視窗底部藍色列中的解譯器，或開啟 [命令選擇區]  (Ctrl+Shift+P)，然後輸入命令 **Python:Select Interpreter**。 這會顯示您目前已安裝的 Python 解譯器清單。 [深入了解如何設定 Python 環境](https://code.visualstudio.com/docs/python/environments)。
+Python 是一種解譯的語言，並支援不同類型的解譯器 (Python2、Anaconda、PyPy 等)。 VS Code 應該預設為與專案相關聯的解譯器。 如果您有變更它的原因，請選取目前顯示在 VS Code 視窗底部藍色列中的解譯器，或開啟 [命令選擇區] (Ctrl+Shift+P)，然後輸入命令 **Python:Select Interpreter**。 這會顯示您目前已安裝的 Python 解譯器清單。 [深入了解如何設定 Python 環境](https://code.visualstudio.com/docs/python/environments)。
 
 讓我們建立並執行簡單的 Python 程式作為測試，並確保已選取正確的 Python 解譯器。
 
-1. 輸入 **Ctrl+Shift+E** (或使用功能表瀏覽至 [檢視]   >  [總管]  )，以開啟 VS Code 檔案總管視窗。
+1. 輸入 **Ctrl+Shift+E** (或使用功能表瀏覽至 [檢視] >  [總管])，以開啟 VS Code 檔案總管視窗。
 
 2. 如果尚未開啟，請輸入 **Ctrl+Shift+`** 來開啟整合式 WSL 終端機，並確定已選取 **HelloWorld** python 專案資料夾。
 
@@ -147,7 +135,7 @@ Python 是一種解譯的語言，並支援不同類型的解譯器 (Python2、A
     print("Hello World")
     ```
 
-6. 若要執行剛才建立的 Python "Hello World" 程式，請在 [VS Code 總管] 視窗中選取 **test.py** 檔案，然後以滑鼠右鍵按一下該檔案，以顯示選項功能表。 選取 [在終端機中執行 Python 檔案]  。 或者，在您的整合式 WSL 終端機視窗中，輸入 `python test.py` 以執行 "Hello World" 程式。 Python 解譯器會在您的終端機視窗中列印 "Hello World"。
+6. 若要執行剛才建立的 Python "Hello World" 程式，請在 [VS Code 總管] 視窗中選取 **test.py** 檔案，然後以滑鼠右鍵按一下該檔案，以顯示選項功能表。 選取 [在終端機中執行 Python 檔案]。 或者，在您的整合式 WSL 終端機視窗中，輸入 `python test.py` 以執行 "Hello World" 程式。 Python 解譯器會在您的終端機視窗中列印 "Hello World"。
 
 恭喜。 您已完成所有設定，現在可以建立並執行 Python 程式！ 現在，讓我們嘗試使用兩個最受歡迎的 Python Web 架構來建立 Hello World 應用程式：Flask 和 Django。
 
@@ -155,7 +143,7 @@ Python 是一種解譯的語言，並支援不同類型的解譯器 (Python2、A
 
 [Flask](http://flask.pocoo.org/) 是適用於 Python 的 Web 應用程式架構。 在此簡短教學課程中，您將使用 VS Code 和 WSL，建立小型 "Hello World" Flask 應用程式。
 
-1. 開啟 Ubuntu 18.04 (您的 WSL 命令列)，方法是移至您的 [開始]  功能表 (左下方的 Windows 圖示)，然後鍵入："Ubuntu 18.04"。
+1. 開啟 Ubuntu 18.04 (您的 WSL 命令列)，方法是移至您的 [開始] 功能表 (左下方的 Windows 圖示)，然後鍵入："Ubuntu 18.04"。
 
 2. 建立專案的目錄：`mkdir HelloWorld-Flask`，然後 `cd HelloWorld-Flask` 以輸入目錄。
 
@@ -233,7 +221,7 @@ Python 是一種解譯的語言，並支援不同類型的解譯器 (Python2、A
 
 [Django](https://www.djangoproject.com) 是適用於 Python 的 Web 應用程式架構。 在此簡短教學課程中，您將使用 VS Code 和 WSL，建立小型 "Hello World" Django 應用程式。
 
-1. 開啟 Ubuntu 18.04 (您的 WSL 命令列)，方法是移至您的 [開始]  功能表 (左下方的 Windows 圖示)，然後鍵入："Ubuntu 18.04"。
+1. 開啟 Ubuntu 18.04 (您的 WSL 命令列)，方法是移至您的 [開始] 功能表 (左下方的 Windows 圖示)，然後鍵入："Ubuntu 18.04"。
 
 2. 建立專案的目錄：`mkdir HelloWorld-Django`，然後 `cd HelloWorld-Django` 以輸入目錄。
 

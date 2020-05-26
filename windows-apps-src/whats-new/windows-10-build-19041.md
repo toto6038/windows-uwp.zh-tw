@@ -5,12 +5,12 @@ keywords: 新功能, 新增功能, Windows, Windows 10, 更新, 多項更新, �
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e5f07e83d7e2e1b96c4bade5a2a6998c11e0559
-ms.sourcegitcommit: dbb368861c85c45f34ea0d5b77eb3af2416be1b2
+ms.openlocfilehash: bb7630afd6cc69497494a2e86e6c5e3544acefec
+ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83382800"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790992"
 ---
 # <a name="whats-new-for-developers-in-windows-10-build-19041"></a>Windows 10 提供給開發人員的新功能 (組建 19041)
 
@@ -36,7 +36,7 @@ Wi-Fi | 已新增數個新的原生 WiFi 函式和結構，例如 [WlanDeviceSer
 Wi-Fi 熱點 2 | [透過網站佈建 Wi-Fi 設定檔](/windows/win32/nativewifi/prov-wifi-profile-via-website) 描述 Wi-Fi 熱點 2 的新功能。
 Windows 全像攝影版 Interop | 已新增 [`windows.graphics.holographic.interop.h`](/windows/win32/api/windows.graphics.holographic.interop) 標頭，包含 17 個 Win32 API。 API 可用於 Win32 與 Windows 執行階段之間的交互作業。 在 Windows 10 組建 18362 中新增 API 時，此為組建 19041 的新標頭。
 Windows Sockets | 已對 Windows Socket 2 SPI 內容進行增強。 我們所改善和增強的其中一個主題範例是 [LPWSPEVENTSELECT 回呼函式](/windows/win32/api/ws2spi/nc-ws2spi-lpwspeventselect)主題。
-XAML Islands - 基礎 | 使用 XAML Islands 在您的傳統型 Windows 應用程式中裝載 UWP XAML 控制項。 了解如何[在 WPF 應用程式中裝載標準 UWP 控制項](/windows/apps/desktop/modernize/host-standard-control-with-xaml-island)以及[在 C++ Win32 應用程式中裝載標準 UWP 控制項](/windows/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp)。
+XAML Islands - 基礎 | 使用 XAML Islands 在您的傳統型 Windows 應用程式中裝載 UWP XAML 控制項。 了解如何[在 WPF 應用程式中裝載標準 UWP 控制項](/windows/apps/desktop/modernize/host-standard-control-with-xaml-islands)以及[在 C++ Win32 應用程式中裝載標準 UWP 控制項](/windows/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp)。
 XAML Islands - 自訂控制項 | [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) 和 [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet 套件可讓您更輕鬆地在 .NET 和 C++ Win32 應用程式中裝載自訂 UWP XAML 控制項。 </br> 如需逐步解說，請參閱[在 WPF 應用程式中裝載自訂 UWP 控制項](/windows/apps/desktop/modernize/host-custom-control-with-xaml-islands)以及[在 C++ Win32 應用程式中裝載自訂 UWP 控制項](/windows/apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp)。 </br> 最後，如需更複雜的 C++ Win32 案例相關指引，請參閱 [XAML Islands 的進階案例](/windows/apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp)。
 
 ## <a name="build-with-windows"></a>使用 Windows 裝置

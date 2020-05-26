@@ -6,18 +6,22 @@ ms.date: 05/11/2020
 ms.localizationpriority: medium
 ms.author: jken
 author: grantmestrength
-ms.openlocfilehash: 9f632c8f47ec42027918c3776492967e60c09764
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 0880d7e7299db2a1a0f7de69400b7bb9c5d0efd9
+ms.sourcegitcommit: 10ec5a20dd1152a1037ebc4fba1a28cc96593586
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580435"
+ms.locfileid: "83665859"
 ---
 # <a name="microsoft-build---the-windows-documentation"></a>Microsoft Build - Windows 文件
 
 ![Build 主圖影像](../images/build-banner.jpeg)
 
 針對 [Microsoft Build 2020](https://mybuild.microsoft.com) 的討論內容，我們已收集可支援這些內容的文件連結。 我們會在活動繼續進行的期間更新此頁面，請記得回來查看是否有任何新項目！
+
+## <a name="project-reunion"></a>Project Reunion
+
+* [Project Reunion](https://blogs.windows.com/windowsdeveloper/2020/05/19/developing-for-all-1-billion-windows-10-devices-and-beyond/) 是 Windows 開發的未來。
 
 ## <a name="windows-terminal"></a>Windows 終端機
 

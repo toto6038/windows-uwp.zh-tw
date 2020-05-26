@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aa60db28003c4f231cf36b653c5e69b422978c1a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 28dc4a62bf580da41d424c98c186413dc96a8aae
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71340063"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775822"
 ---
 # <a name="transforms-overview"></a>轉換概觀
 
@@ -19,7 +19,7 @@ ms.locfileid: "71340063"
 
 ## <a name="span-idwhat_is_a_transform_spanspan-idwhat_is_a_transform_spanspan-idwhat_is_a_transform_spanwhat-is-a-transform"></a><span id="What_is_a_transform_"></span><span id="what_is_a_transform_"></span><span id="WHAT_IS_A_TRANSFORM_"></span>什麼是轉換？
 
-「轉換」  定義了如何將點從一個座標空間對應或轉換到另一個座標空間。 將轉換套用到 UI 元素時，會變更該 UI 元素轉譯為螢幕上 UI 一部分的方式。
+「轉換」定義了如何將點從一個座標空間對應或轉換到另一個座標空間。 將轉換套用到 UI 元素時，會變更該 UI 元素轉譯為螢幕上 UI 一部分的方式。
 
 轉換可分為四大類：轉譯、旋轉、縮放及扭曲 (傾斜)。 為了使用圖形 API 來變更 UI 元素的外觀，通常最簡單的方式就是建立一次只定義一個操作的轉換。 因此，Windows 執行階段為這些轉換分類中的每一個都定義了個別的類別：
 
@@ -37,6 +37,8 @@ ms.locfileid: "71340063"
 在 XAML 配置中，版面配置階段完成之後才會套用轉換，因此是在套用轉換前，先完成可用空間計算與其他配置決策。 因為會先進行配置，所以如果您轉換位於 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 儲存格或是會在配置期間配置空間的類似配置容器中的元素，有時會收到非預期的結果。 經過轉換的元素可能會顯示成被截斷或被遮住，因為它嘗試在分割其父容器內的空間時，繪製到未計算轉換後尺寸的區域。 您可能需要對轉換結果進行實驗並調整一些設定。 例如，您可能需要變更 **Center** 屬性，或是宣告配置空間的固定像素度量，而不倚賴調適型配置與比例縮放，以確保父容器配置足夠的空間。
 
 **移轉注意事項：** Windows Presentation Foundation (WPF) 已有在版面配置階段前先套用轉換的 **LayoutTransform** 屬性。 但 Windows 執行階段 XAML 不支援 **LayoutTransform** 屬性。 (Microsoft Silverlight 也沒有此選項)。
+
+或者，Windows 社區工具組會提供 [LayoutTransformControl](/windows/communitytoolkit/controls/LayoutTransformControl)，可將矩陣轉換應用於應用程式的任何 FrameworkElement。
 
 ## <a name="span-idapplying_a_transform_to_a_ui_elementspanspan-idapplying_a_transform_to_a_ui_elementspanspan-idapplying_a_transform_to_a_ui_elementspanapplying-a-transform-to-a-ui-element"></a><span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>將轉換套用到 UI 元素
 

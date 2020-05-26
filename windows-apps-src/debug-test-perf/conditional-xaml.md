@@ -5,16 +5,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d02c75775dfd63281dbf46c7f9fc58f48ac1e20
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ef518c9974fb4c8bc0f09f442f4b78be1c9c85d2
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66359972"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775838"
 ---
 # <a name="conditional-xaml"></a>條件式 XAML
 
-條件式 XAML  提供一種在 XAML 標記中使用 [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) 方法的方式。 這可讓您在標記中根據 API 是否存在來設定屬性和具現化物件，而不必使用程式碼後置。 它會選擇性剖析元素或屬性，判斷是否可在執行階段使用它們。 條件陳述式是在執行階段進行評估，如果評估為 **true**，則剖析條件式 XAML 標記所限定的元素，否則便將其忽略。
+條件式 XAML 提供一種在 XAML 標記中使用 [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) 方法的方式。 這可讓您在標記中根據 API 是否存在來設定屬性和具現化物件，而不必使用程式碼後置。 它會選擇性剖析元素或屬性，判斷是否可在執行階段使用它們。 條件陳述式是在執行階段進行評估，如果評估為 **true**，則剖析條件式 XAML 標記所限定的元素，否則便將其忽略。
 
 條件式 XAML 是從 Creators Update (版本 1703 組建 15063) 開始提供。 若要使用條件式 XAML，必須將 Visual Studio 專案的最低版本設定為組建 15063 (Creators Update) 或更新版本，並將目標版本設定成比最低版本更新的版本。 如需有關設定 Visual Studio 專案的詳細資訊，請參閱[版本調適型應用程式](version-adaptive-apps.md)。
 
@@ -99,7 +99,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-請注意，雖然 IsApiContractPresent 方法的 contractName  參數接受的是字串，但是在 XAML 命名空間宣告中，不要將此字串放在引號 (" ") 內。
+請注意，雖然 IsApiContractPresent 方法的 contractName 參數接受的是字串，但是在 XAML 命名空間宣告中，不要將此字串放在引號 (" ") 內。
 
 ## <a name="use-ifelse-conditions"></a>使用 if/else 條件
 
@@ -247,3 +247,4 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 - [UWP 應用程式指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 - [利用 API 協定動態偵測功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API 協定](https://channel9.msdn.com/Events/Build/2015/3-733) (組建 2015 影片)
+- [通用裝置系列 API 合約](/uwp/extension-sdks/windows-universal-sdk)

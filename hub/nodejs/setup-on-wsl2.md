@@ -8,72 +8,39 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 Node, wsl 上的 Node, linux 或 windows 上的 Node, 在 windows 上安裝 Node, nodejs 與 vs code, 在 windows 上使用 Node 進行開發, 在 windows 上使用 nodejs 進行開發, 在 WSL 上安裝 Node, Windows 子系統 Linux 版上的 NodeJS
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: c987f5bea387c630a1b9ef23c928d7a1bb8fadfc
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1ea8973e1db665d1fe66ef6b5f5699319131d605
+ms.sourcegitcommit: 2af814b7f94ee882f42fae8f61130b9cc9833256
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75835375"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83717127"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 設定您的 Node.js 開發環境
 
-下列逐步指南可協助您使用 Windows 子系統 Linux 版 (WSL) 來設定 Node.js 開發環境。 此指南目前要求您安裝並執行 Windows 測試人員預覽版，才能安裝並使用 [WSL 2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) \(英文\)。 相較於 WSL 1，WSL 2 的速度和效能已有顯著改善，特別是關於 Node.js 的部分。 許多用於 Node.js Web 開發的 npm 模組和教學課程都是針對 Linux 使用者所撰寫，並使用 Linux 型封裝和安裝工具。 大部分的 Web 應用程式也會部署於 Linux 上，因此，使用 WSL 2 將確保您的開發與實際執行環境之間具有一致性。
+下列逐步指南可協助您使用 Windows 子系統 Linux 版 (WSL) 來設定 Node.js 開發環境。
+
+我們建議您安裝並執行更新的 WSL 2，因為更新版在效能速度和系統呼叫相容性方面有重大改進，並且包含可執行 [Docker Desktop](https://docs.docker.com/docker-for-windows/wsl-tech-preview/#download) 的功能。 許多用於 Node.js Web 開發的 npm 模組和教學課程都是針對 Linux 使用者所撰寫，並使用 Linux 型封裝和安裝工具。 大部分的 Web 應用程式也會部署於 Linux 上，因此，使用 WSL 2 將確保您的開發與實際執行環境之間具有一致性。
 
 > [!NOTE]
 > 如果您已認可直接在 Windows 上使用 Node.js，或打算使用 Windows Server 實際執行環境，請參閱我們的指南，以便[直接在 Windows 上設定 Node.js 開發環境](./setup-on-windows.md)。
 
-## <a name="install-windows-10-insider-preview-build"></a>安裝 Windows 10 Insider 預覽版
-
-1. **[安裝最新版的 Windows 10](https://www.microsoft.com/software-download/windows10)** ：選取 [立即更新]  以下載更新小幫手。 下載之後，開啟更新小幫手以查看您目前是否正在執行最新版的 Windows，如果不是，請選取小幫手視窗內部的 [立即更新]  以更新您的電腦 (如果您執行的是最新版的 Windows 10，則此步驟是選用的)。 
-
-    ![Windows 更新小幫手](../images/windows-update-assistant2019.png)
-
-2. **[移至 [開始] > [設定] > [Windows 測試人員計畫]](ms-settings:windowsinsider)** ：在 [Windows 測試人員計畫] 視窗內部，選取 [開始使用]  ，然後選取 [連結帳戶]  。
-
-    ![Windows 測試人員計畫設定](../images/windows-insider-program-settings.png)
-
-3. **[以 Windows 測試人員身分登入](https://insider.windows.com/getting-started/#register)** \(英文\)：如果您尚未註冊測試人員計畫，將必須使用您的 [Microsoft 帳戶](https://account.microsoft.com/account)來完成註冊。
-
-    ![Windows 測試人員註冊](../images/windows-insider-account.png)
-
-4. 選擇接收 [快速通道]  更新或 [跳到下一個 Windows 版本]  內容。 確認並選擇 [稍後重新啟動]  。 重新啟動之前，我們必須先變更幾個額外設定。
-
-    ![Windows 測試人員快速通道](../images/windows-insider-fast.png)
-
-## <a name="enable-windows-subsystem-for-linux-and-virtual-machine-platform"></a>啟用 Windows 子系統 Linux 版和虛擬機器平台
-
-1. 仍在 [Windows 設定]  中，搜尋**開啟或關閉 Windows 功能**。
-2. 出現 [Windows 功能]  清單之後，捲動以尋找 [虛擬機器平台]  和 [Windows 子系統 Linux 版]  、確定已核取此方塊以啟用這兩者，然後選取 [確定]  。
-3. 出現提示時，重新啟動您的電腦。
-
-    ![啟用 Windows 功能](../images/windows-feature-settings.png)
-
-## <a name="install-a-linux-distribution"></a>安裝 Linux 發行版本
-
-有多種 Linux 發行版本可在 WSL 上執行。 您可以在 Microsoft Store 中尋找並安裝我的最愛。 建議從使用 [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) 開始，因為它是最新、熱門且受到妥善支援。
-
-1. 開啟此 [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) 連結、開啟 Microsoft Store，然後選取 [取得]  。 *(這是相當大的下載，因此可能需要一些時間來安裝。)*
-
-2. 下載完成之後，從 Microsoft Store 選取 [啟動]  ，或在 [開始]  功能表中鍵入 "Ubuntu 18.04 LTS"以啟動。
-
-3. 當您第一次執行發行版本時，系統將問您是否要建立帳戶名稱和密碼。 在此之後，預設您會以此使用者身分自動登入。 您可以選擇任何使用者名稱和密碼。 它們對您的 Windows 使用者名稱並無任何影響。
-
-    ![Microsoft Store 中的 Linux 發行版本](../images/store-linux-distros.png)
-
-您可以藉由輸入 `lsb_release -dc` 來檢查您目前使用的 Linux 發行版本。 若要更新您的 Ubuntu 發行版本，請使用：`sudo apt update && sudo apt upgrade`。 建議定期更新，以確保您擁有最新的套件。 Windows 不會自動處理此更新。 如需連結至 Microsoft Store 中提供的其他 Linux 發行版本、替代安裝方法或疑難排解，請參閱[適用於 Windows 10 的 Windows 子系統 Linux 版安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。
-
 ## <a name="install-wsl-2"></a>安裝 WSL 2
 
-WSL 2 是 WSL 中[新版的架構](https://docs.microsoft.com/windows/wsl/wsl2-about)，可變更 Linux 發行版本與 Windows 互動的方式，以提升效能並新增完整的系統呼叫相容性。
+若要啟用並安裝 WSL 2，請遵循 [WSL 安裝文件](https://docs.microsoft.com/windows/wsl/install-win10)中的步驟。 這些步驟會包含選擇 Linux 發行版本 (例如 Ubuntu)。
 
-1. 在 PowerShell 中，輸入命令：`wsl -l`，以檢視您已在電腦上安裝的 WSL 發行版本清單。 您現在應該會在此清單中看到 Ubuntu-18.04。
-2. 現在，輸入命令：`wsl --set-version Ubuntu-18.04 2`，以將 Ubuntu 安裝設定為使用 WSL 2。
-3. 確認與每個已安裝發行版本搭配使用的 WSL 版本：`wsl --list --verbose` (或 `wsl -l -v`)。
+一旦您安裝了 WSL 2 和 Linux 發行版本，請開啟 Linux 發行版本 (位於 Windows 的 [開始] 功能表中)，然後使用下列命令來檢查版本和代號：`lsb_release -dc`。
 
-    ![Windows 子系統 Linux 版 (WSL) 設定版本](../images/wsl-versions.png)
+我們建議您定期更新 Linux 發行版本 (包括安裝後立即更新)，以確保您擁有最新的套件。 Windows 不會自動處理此更新。 若要更新您的發行版本，請使用下列命令：`sudo apt update && sudo apt upgrade`。  
 
-> [!TIP]
-> 您可以依照相同的指示 (使用 PowerShell)，將已安裝的任何 Linux 發行版本設定為 WSL 2，只需將 'Ubuntu-18.04' 變更為您想要設為目標的已安裝發行版本名稱。 若要變更回 WSL 1，請執行與上述相同的命令，但將 '2' 取代為 '1'。  您也可以輸入下列內容，以將 WSL 2 設定為任何新安裝之發行版本的預設值：`wsl --set-default-version 2`。
+## <a name="install-windows-terminal-optional"></a>安裝 Windows 終端機 (選用)
+
+新的 Windows 終端機可啟用多個索引標籤 (在多個 Linux 命令列、Windows 命令提示字元、PowerShell、Azure CLI 等之間快速切換)、建立自訂按鍵繫結 (開啟或關閉索引標籤、複製+貼上等的快速鍵)、使用搜尋功能及自訂佈景主題 (色彩配置、字型樣式和大小、背景影像/柔邊/透明度)。 [深入了解](https://docs.microsoft.com/windows/terminal)。
+
+1. [在 Microsoft Store 中取得 Windows 終端機 (預覽)](https://www.microsoft.com/store/apps/9n0dx20hk701) \(英文\)：透過 Microsoft Store 安裝，就會自動處理更新。
+
+2. 安裝之後，開啟 Windows 終端機，然後選取 [設定]，以使用 `settings.json` 檔案來自訂終端機。
+
+    ![Windows 終端機設定](../images/windows-terminal-settings.png)
 
 ## <a name="install-nvm-nodejs-and-npm"></a>安裝 nvm、node.js 和 npm
 
@@ -99,8 +66,7 @@ WSL 2 是 WSL 中[新版的架構](https://docs.microsoft.com/windows/wsl/wsl2-a
 9. 使用下列命令來確認已安裝 Node.js 及目前預設版本：`node --version`。 然後，使用下列命令來確認您還有 npm：`npm --version` (您也可以使用 `which node` 或 `which npm` 來查看預設版本所使用的路徑)。
 10. 若要變更您想要用於專案的 Node.js 版本，請建立新的專案目錄 `mkdir NodeTest` 並進入目錄 `cd NodeTest`，然後輸入 `nvm use node` 以切換至目前版本，或輸入 `nvm use --lts` 以切換至 LTS 版本。 您也可以針對已安裝的任何其他版本使用特定版本號碼，例如 `nvm use v8.2.1` (若要列出所有可用的 Node.js 版本，請使用下列命令：`nvm ls-remote`)。
 
-> [!TIP]
-> 如果您使用 NVM 來安裝 Node.js 和 NPM，則應該不需使用 SUDO 命令來安裝新套件。
+如果您使用 NVM 來安裝 Node.js 和 NPM，則應該不需使用 SUDO 命令來安裝新套件。
 
 > [!NOTE]
 > 在發佈時，NVM v0.35.2 是最新的可用版本。 您可以查看 [GitHub 專案頁面以取得最新版的 NVM](https://github.com/nvm-sh/nvm) \(英文\)，並調整上述命令以包含最新版本。
@@ -144,7 +110,7 @@ WSL 2 是 WSL 中[新版的架構](https://docs.microsoft.com/windows/wsl/wsl2-a
 
 安裝 Node.js 延伸模組套件：
 
-1. 在 VS Code 中開啟 [延伸模組]  視窗 (Ctrl+Shift+X)。
+1. 在 VS Code 中開啟 [延伸模組] 視窗 (Ctrl+Shift+X)。
 
     [延伸模組] 視窗現在分為三個區段 (因為您安裝了 Remote-WSL 延伸模組)。
     - 「本機 - 已安裝」：安裝來與您 Windows 作業系統搭配使用的延伸模組。
@@ -162,16 +128,6 @@ WSL 2 是 WSL 中[新版的架構](https://docs.microsoft.com/windows/wsl/wsl2-a
 - [適用於 Chrome 的偵錯工具](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code) \(英文\)：當您使用 Node.js 在伺服器端完成開發之後，您將需要開發並測試用戶端。 此延伸模組會整合您的 VS Code 編輯器與 Chrome 瀏覽器偵錯服務，讓工作更有效率。
 - [來自其他編輯器的按鍵對應](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果您從另一個文字編輯器 (例如 Atom、Sublime、Vim、eMacs、Notepad++ 等) 進行轉換，這些延伸模組有助於讓您的環境感到非常自在。
 - [設定同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) \(英文\)：可讓您使用 GitHub 同步處理不同安裝之間的 VS Code 設定。 如果您在不同的電腦上工作，這有助於讓您的環境在其上保持一致。
-
-## <a name="install-windows-terminal-optional"></a>安裝 Windows 終端機 (選用)
-
-新的 Windows 終端機可啟用多個索引標籤 (在命令提示字元、PowerShell 或多個 Linux 發行版本之間快速切換)、自訂按鍵繫結 (建立自己的快速鍵以開啟或關閉索引標籤、複製 + 貼上等)、Emoji ☺，以及自訂佈景主題 (色彩配置、字型樣式和大小、背景影像/柔邊/透明度)。 [深入了解](https://devblogs.microsoft.com/commandline/)。
-
-1. [在 Microsoft Store 中取得 Windows 終端機 (預覽)](https://www.microsoft.com/store/apps/9n0dx20hk701) \(英文\)：透過 Microsoft Store 安裝，就會自動處理更新。
-
-2. 安裝之後，開啟 Windows 終端機，然後選取 [設定]  ，以使用 `profile.json` 檔案來自訂終端機。 [深入了解如何編輯 Windows 終端機設定](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md) \(英文\)。
-
-    ![Windows 終端機設定](../images/windows-terminal-settings.png)
 
 ## <a name="set-up-git-optional"></a>設定 Git (選用)
 
