@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 385c11e48695c2486fd5a2b72633923454e2f8ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ad94d7b887e28ac01156592ac47cfc9ac4783193
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970633"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775903"
 ---
 # <a name="connected-animation-for-windows-apps"></a>Windows 應用程式的連接動畫
 
@@ -55,7 +55,7 @@ ms.locfileid: "82970633"
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>連接動畫和 Fluent 設計系統
 
- Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 連接動畫是將動作加入應用程式中的 Fluent 設計系統元件。 若要深入瞭解，請參閱[流暢的設計總覽](/windows/apps/fluent-design-system)。
+ Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 連接動畫是將動作加入應用程式中的 Fluent 設計系統元件。 若要深入了解，請參閱 [Fluent Design 概觀](/windows/apps/fluent-design-system)。
 
 ## <a name="why-connected-animation"></a>為何要使用連接動畫？
 
@@ -101,7 +101,7 @@ ms.locfileid: "82970633"
 | 組態 | 尊重 DefaultDuration 嗎？ | 尊重 DefaultEasingFunction 嗎？ |
 | - | - | - |
 | 重力 | 是 | 是* <br/> **從 A 到 B 的基本轉譯會使用此緩動函式，但「引力 dip」有其本身的緩動函式。*  |
-| 直接 | 否 <br/> *在150ms 上繪製動畫。*| 否 <br/> *使用減速緩動函數。* |
+| 直接 | No <br/> *在150ms 上繪製動畫。*| No <br/> *使用減速緩動函數。* |
 | 基本 | 是 | 是 |
 
 ## <a name="how-to-implement-connected-animation"></a>如何執行連接的動畫
@@ -271,7 +271,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 若要使用這個元素做為目的地來啟動動畫，例如從詳細資料檢視中流覽時，請使用[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)。 如果您剛剛才為 ListView 載入資料來源，TryStartConnectedAnimationAsync 將等待啟動動畫，直到對應的項目容器已建立為止。
 
 ```csharp
-private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
+private async void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 {
     ContactsItem item = GetPersistedItem(); // Get persisted item
     if (item != null)

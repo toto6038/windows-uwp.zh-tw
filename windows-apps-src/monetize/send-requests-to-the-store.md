@@ -1,17 +1,17 @@
 ---
-Description: 您可以使用 SendRequestAsync 方法，將要求傳送至 Microsoft Store，還沒有 Windows SDK 中提供 API 的作業。
+Description: 您可以使用 SendRequestAsync 方法，將要求傳送至 Microsoft Store，以取得 Windows SDK 中尚未提供 API 的作業。
 title: 傳送要求至 Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: d492bc7dde990404552689516731850974c31a7c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 810c546eb0ee0263dcb50b3ce58e593ad294435c
+ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589793"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83867328"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>傳送要求至 Microsoft Store
 
@@ -27,14 +27,14 @@ ms.locfileid: "57589793"
 * 整數，辨識您想要傳送給 Microsoft Store 的要求。
 * 如果要求支援任何引數，您也可以傳遞 JSON 格式化字串，其中包含與要求一起傳遞的引數。
 
-下列範例示範如何呼叫這個方法。 這個範例需要 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空間的 using 陳述式。
+下列範例將示範如何呼叫這個方法。 這個範例需要 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空間的 using 陳述式。
 
 ```csharp
 public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
 
     if (result.ExtendedError == null)
     {
@@ -77,7 +77,7 @@ public async Task<bool> AddUserToFlightGroup()
 |  *requestKind*                   |  指定 7，傳回裝置所屬最高排名之正式發行前小眾測試版群組，或指定 8 傳回目前使用者與裝置所屬最高排名之正式發行前小眾測試版群組。 我們建議 *requestKind* 參數使用值 8，因為這個值會跨目前使用者及裝置的成員資格，傳回最高排名之正式發行前小眾測試版群組。  |
 |  *parametersAsJson*                   |  傳遞 JSON 格式化字串，包含下列範例中顯示的資料。  |
 
-下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *GetRemoteVariables*。 指派*projectId*欄位設為您定義在合作夥伴中心內的遠端變數之專案的識別碼。
+下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *GetRemoteVariables*。 將 [ *projectId* ] 欄位指派給您在 [合作夥伴中心] 中定義遠端變數的專案識別碼。
 
 ```json
 { 
@@ -156,5 +156,5 @@ public async Task<bool> AddUserToFlightGroup()
 
 ## <a name="related-topics"></a>相關主題
 
-* [節目分級，並檢閱您的應用程式中的對話方塊](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
+* [顯示您的應用程式中的評分並評論對話方塊](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
 * [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)
