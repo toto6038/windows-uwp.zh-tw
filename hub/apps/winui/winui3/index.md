@@ -3,12 +3,12 @@ title: WinUI 3.0 預覽版 1 (2020 年 5月)
 description: WinUI 3.0 預覽版的概觀。
 ms.date: 05/14/2020
 ms.topic: article
-ms.openlocfilehash: 9141fe7ff215f28557020c7f76dd35c3560edfe5
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 3aac14807f8455eb9a9294c40ddc76ddfa224659
+ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580135"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83688484"
 ---
 # <a name="windows-ui-library-30-preview-1-may-2020"></a>Windows UI 程式庫 3.0 預覽版 1 (2020 年 5月)
 
@@ -64,12 +64,12 @@ Windows UI 程式庫 (WinUI) 3.0 是一項重大更新，WinUI 將轉換為所�
 
 安裝 Visual Studio Preview 時，您必須包含下列工作負載：
 
-- .NET Win32 開發
+- .NET 桌面開發
 - 通用 Windows 平台開發
 
 若要建立 C++ 應用程式，您也必須包含下列工作負載：
 
-- 使用 C++ 進行 Win32 開發
+- 使用 C++ 的傳統型開發
 - 適用於通用 Windows 平台工作負載的「C++ (v142) 通用 Windows 平台工具」選用元件
 
 ### <a name="visual-studio-project-templates"></a>Visual Studio 專案範本
@@ -133,24 +133,30 @@ WinUI 3.0 預覽版 1 可與執行 Windows 10 2018 年 4 月更新 (1803 版 - �
 - MapControl
 - 具有 NavigationView 的階層式導覽
 - SwapChainPanel 不支援透明度
-- 在 C# 中，您必須使用 `WinRT.WeakReference<T>`，而不是 `System.WeakReference<T>`。
 - 全域顯示 (Global Reveal) 會使用回溯行為 (實心筆刷)
 - 此版本不支援 XAML Islands
 - 第三方生態系統程式庫的功能不完整
 - IME 無法運作
 - 無法呼叫 Windows.UI.Text 命名空間的方法
-  
+
+### <a name="known-issues"></a>已知問題
+
+- 在 C# 傳統型應用程式中：
+   - 對於 Windows 物件的弱式參考 (包含 Xaml 物件)，您必須使用 `WinRT.WeakReference<T>`，而不是 `System.WeakReference<T>`。
+   - [Point](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[Rect](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)和 [Size](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) 結構的成員類型是 Float 而不是 Double。
+
+
 ## <a name="xaml-controls-gallery-winui-30-preview-1-branch"></a>Xaml 控制項資源庫 (WinUI 3.0 預覽版 1 分支)
 
-如需包含所有 WinUI 3.0 預覽版 1 控制項和功能的範例應用程式，請參閱 [Xaml 控制項資源庫的 WinUI 3.0 預覽版 1 分支](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview1)。
+如需包含所有 WinUI 3.0 預覽版 1 控制項和功能的範例應用程式，請參閱 [Xaml 控制項資源庫的 WinUI 3.0 預覽版 1 分支](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)。
 
 ![WinUI 3.0 預覽版 1 Xaml 控制項資源庫應用程式](images/WinUI3XamlControlsGallery.png)<br/>
 WinUI 3.0 預覽版 1 Xaml 控制項資源庫應用程式的範例
 
-若要下載範例，請使用下列命令來複製 **winui3preview1** 分支：
+若要下載範例，請使用下列命令來複製 **winui3preview** 分支：
 
-> `git clone --single-branch --branch winui3preview1 https://github.com/microsoft/Xaml-Controls-Gallery.git`
+> `git clone --single-branch --branch winui3preview https://github.com/microsoft/Xaml-Controls-Gallery.git`
 
-複製之後，請確定您已切換至本機 Git 環境中的 **winui3preview1** 分支：
+複製之後，請確定您已切換至本機 Git 環境中的 **winui3preview**分支：
 
-> `git checkout winui3preview1`
+> `git checkout winui3preview`
