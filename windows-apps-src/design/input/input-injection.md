@@ -7,12 +7,12 @@ keywords: device, digitizer, input, interaction, injection, 裝置, 數位板, �
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d15305fecb562546bdeaf15c501890151c7dd29a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7bcd63d940e53d90d925f83f27e4c77165a11650
+ms.sourcegitcommit: 124cea09be7f12444bfff541badb65d539d55c83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968027"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84124114"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>透過輸入插入模擬使用者輸入
 
@@ -51,7 +51,7 @@ ms.locfileid: "82968027"
 
     我們有兩個方格區域 (一個供滑鼠輸入用，一個供插入的觸控輸入用)，每一個都有四個按鈕。
       > [!NOTE] 
-      > 格線背景必須指派值（`Transparent`在此案例中為），否則不會偵測到指標事件。
+      > 格線背景必須指派值（ `Transparent` 在此案例中為），否則不會偵測到指標事件。
 
     當在輸入區域中偵測到按下任何滑鼠鍵時，對應的觸控事件會插入到輸入插入區域。 來自輸入插入的按鈕點選會報告在標題區域中。
 

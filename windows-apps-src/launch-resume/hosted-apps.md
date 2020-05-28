@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ed4356513e406c7c787ec111d32560ac08d293f1
-ms.sourcegitcommit: f26d0b22a70b05679fc7089e11d639ba1a4a23af
+ms.openlocfilehash: 1847fb707d633cc7960b3b9767db974452414a25
+ms.sourcegitcommit: eae9859ee06c1e5e4afa08d8d3da072ad06d24a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82107721"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84110395"
 ---
 # <a name="create-hosted-apps"></a>建立託管應用程式
 
 從 Windows 10 版本2004開始，您可以建立*託管應用程式*。 裝載的應用程式與父*主機*應用程式共用相同的可執行檔和定義，但是其外觀和行為類似于系統上的個別應用程式。
 
-裝載的應用程式適用于您想要元件（例如可執行檔或腳本檔案）行為類似獨立 Windows 10 應用程式的情況，但元件需要主機進程才能執行。 例如，PowerShell 或 Python 腳本可能會以裝載應用程式的形式傳遞，需要安裝主機才能執行。 裝載的應用程式可以有自己的開始磚、身分識別，以及與 Windows 10 功能（例如背景工作、通知、磚和共用目標）的深度整合。
+裝載的應用程式適用於您想要元件 (例如可執行檔或指令碼檔案) 行為類似獨立 Windows 10 應用程式，但元件需要主機處理序才能執行的情況。 例如，PowerShell 或 Python 腳本可能會以裝載應用程式的形式傳遞，需要安裝主機才能執行。 裝載的應用程式可以有自己的開始磚、身分識別，以及與 Windows 10 功能 (例如背景工作、通知、磚和共用目標) 的深度整合。
 
 封裝資訊清單中的數個專案和屬性支援裝載的應用程式功能，可讓託管應用程式使用主機應用程式封裝中的可執行檔和定義。 當使用者執行裝載的應用程式時，作業系統會自動以託管應用程式的身分識別來啟動主機可執行檔。 然後主機可以將視覺資產、內容或呼叫 Api 載入為裝載的應用程式。 裝載的應用程式會取得在主機與託管應用程式之間宣告的功能交集。 這表示託管應用程式無法要求比主機所提供的更多功能。
 
@@ -63,7 +63,7 @@ ms.locfileid: "82107721"
 裝載的應用程式套件可以是簽署或不帶正負號：
 
 * 已簽署的套件可能包含可執行檔。 這在具有二進位延伸機制的案例中很有用，這可讓主機在裝載的應用程式封裝中載入 DLL 或已註冊的元件。
-* 未簽署的封裝只能包含無法執行檔。 這在主機只需要載入影像、資產和內容或腳本檔案的案例中很有用。 未簽署的套件必須在`OID`其[**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素中包含特殊值，否則將無法註冊。 這可防止不帶正負號的套件與或詐騙已簽署套件的身分識別相互衝突。
+* 未簽署的封裝只能包含無法執行檔。 這在主機只需要載入影像、資產和內容或腳本檔案的案例中很有用。 未簽署的套件必須 `OID` 在其[**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素中包含特殊值，否則將無法註冊。 這可防止不帶正負號的套件與或詐騙已簽署套件的身分識別相互衝突。
 
 若要定義託管應用程式，請在封裝資訊清單中宣告下列專案：
 
@@ -98,7 +98,7 @@ ms.locfileid: "82107721"
 
 | 元素              | 詳細資料 |
 |----------------------|-------|
-| [**身分識別**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) | 因為此範例中的裝載應用程式封裝不帶正負號，所以**發行者**屬性`OID.2.25.311729368913984317654407730594956997722=1`必須包含字串。 這可確保未簽署的套件無法欺騙已簽署套件的身分識別。 |
+| [**身分識別**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) | 因為此範例中的裝載應用程式封裝不帶正負號，所以**發行者**屬性必須包含 `OID.2.25.311729368913984317654407730594956997722=1` 字串。 這可確保未簽署的套件無法欺騙已簽署套件的身分識別。 |
 | [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) | **MinVersion**屬性必須指定10.0.19041.0 或更新版本的 OS。 |
 | [**uap10:HostRuntimeDependency**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntimedependency)  | 此元素元素會宣告主機應用程式套件的相依性。 這是由主機套件的**名稱**和**發行者**，以及它所依賴的**MinVersion**所組成。 這些值可以在主機封裝中的[Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素下找到。 |
 | [**應用程式**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) | **Uap10： HostId**屬性會表示主機上的相依性。 裝載的應用程式套件必須宣告這個屬性，而不是[**應用程式**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)或[**延伸**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension)元素的一般**可執行檔**和**EntryPoint**屬性。 因此，託管應用程式會從主機繼承具有對應的**HostId**值的**可執行檔**、 **EntryPoint**和執行時間屬性。<br/><br/>**Uap10： Parameters**屬性會指定傳遞至主機可執行檔之進入點函式的參數。 因為主機必須知道該如何處理這些參數，所以主機和裝載應用程式之間有隱含的合約。 |
@@ -109,8 +109,8 @@ ms.locfileid: "82107721"
 
 使用[**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)類別的下列方法，註冊未簽署的託管應用程式封裝。 從 Windows 10 版本2004開始提供這些方法。
 
-* **AddPackageByUriAsync**：使用*Options*參數的**AllowUnsigned**屬性，註冊未簽署的 MSIX 套件。
-* **RegisterPackageByUriAsync**：執行鬆散封裝資訊清單檔案註冊。 如果封裝已簽署，則包含資訊清單的資料夾必須包含[appxsignature.p7x](https://docs.microsoft.com/windows/msix/overview#inside-an-msix-package)檔案和目錄。 如果不帶正負號，必須設定*options*參數的**AllowUnsigned**屬性。
+* [**AddPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync)：使用*Options*參數的**AllowUnsigned**屬性，註冊未簽署的 MSIX 套件。
+* [**RegisterPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.registerpackagebyuriasync)：執行鬆散封裝資訊清單檔案註冊。 如果封裝已簽署，則包含資訊清單的資料夾必須包含[appxsignature.p7x](https://docs.microsoft.com/windows/msix/overview#inside-an-msix-package)檔案和目錄。 如果不帶正負號，必須設定*options*參數的**AllowUnsigned**屬性。
 
 ### <a name="requirements-for-unsigned-hosted-apps"></a>未簽署託管應用程式的需求
 
@@ -138,7 +138,7 @@ ms.locfileid: "82107721"
 
 ### <a name="the-host"></a>主機
 
-主機名稱為**PyScriptEngine**。 這是以 c # 撰寫的包裝函式，會執行 python 腳本。 以`-Register`參數執行時，腳本引擎會安裝包含 python 腳本的託管應用程式。 當使用者嘗試啟動新安裝的裝載應用程式時，主機會啟動並執行**NumberGuesser** python 腳本。
+主機名稱為**PyScriptEngine**。 這是以 c # 撰寫的包裝函式，會執行 python 腳本。 以參數執行時 `-Register` ，腳本引擎會安裝包含 python 腳本的託管應用程式。 當使用者嘗試啟動新安裝的裝載應用程式時，主機會啟動並執行**NumberGuesser** python 腳本。
 
 主機應用程式的套件資訊清單（PyScriptEnginePackage 資料夾中的 package.appxmanifest.xml 檔案）包含**uap10： HostRuntime**延伸模組，它會將應用程式宣告為識別碼**PythonHost**和可執行檔**PyScriptEngine**的主機。  
 
@@ -151,7 +151,7 @@ ms.locfileid: "82107721"
 
 裝載應用程式的套件資訊清單（NumberGuesser/Package.appxmanifest.xml 檔案）包含下列專案：
 
-* [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**發行者**屬性包含不帶正負`OID.2.25.311729368913984317654407730594956997722=1`號封裝所需的識別碼。
+* [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**發行者**屬性包含 `OID.2.25.311729368913984317654407730594956997722=1` 不帶正負號封裝所需的識別碼。
 * [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)元素的**uap10： HostId**屬性會將**PythonHost**識別為其主機。
 
 ### <a name="run-the-sample"></a>執行範例
@@ -162,13 +162,13 @@ ms.locfileid: "82107721"
 2. 在 Visual Studio 中開啟 [PyScriptEngine] 方案，並將**PyScriptEnginePackage**專案設定為啟始專案。
 3. 建立**PyScriptEnginePackage**專案。
 4. 在方案總管中，以滑鼠右鍵按一下**PyScriptEnginePackage**專案，然後選擇 [**部署**]。
-5. 在您複製範例檔案的目錄中開啟 [命令提示字元] 視窗，然後執行下列命令來註冊範例**NumberGuesser**應用程式（託管應用程式）。 將`D:\repos\HostedApps`變更為您複製範例檔案的路徑。
+5. 在您複製範例檔案的目錄中開啟 [命令提示字元] 視窗，然後執行下列命令來註冊範例**NumberGuesser**應用程式（託管應用程式）。 將變更 `D:\repos\HostedApps` 為您複製範例檔案的路徑。
 
     ```CMD
     D:\repos\HostedApps>pyscriptengine -Register D:\repos\HostedApps\NumberGuesser\AppxManifest.xml
     ```
 
     > [!NOTE]
-    > 您可以在`pyscriptengine`命令列上執行，因為範例中的主機會宣告[**AppExecutionAlias**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias)。
+    > 您可以 `pyscriptengine` 在命令列上執行，因為範例中的主機會宣告[**AppExecutionAlias**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias)。
 
 6. 開啟 [**開始**] 功能表，然後按一下 [ **NumberGuesser** ] 以執行裝載的應用程式。
