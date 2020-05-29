@@ -6,14 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10 , UWP, 地圖驗證金鑰, 地圖控制項
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0d1900398c313021600c18338ecc1201241410
-ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
+ms.openlocfilehash: 2f4a76edfe5772665564cb8890ffcdf56205a2f7
+ms.sourcegitcommit: d1eba7cf79cd2885b5bf8f5501bc44a569ab9864
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83790999"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172590"
 ---
 # <a name="request-a-maps-authentication-key"></a>要求地圖驗證金鑰
+
+> [!WARNING]
+> 較舊版本的 Windows 10 可能無法使用線上地圖服務。 在下列版本中，MapControl 可能不會再于 Windows 中顯示對應和 Api。對應命名空間可能不會傳回結果：
+> - Windows 10 版本1607和更早版本：從2020年10月開始，地圖服務將無法使用全球
+> - Windows 10 版本1703和較舊版本：[在中國銷售的某些裝置](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-mapcontrol-desktop-chinavariantwin10)上無法使用地圖服務
 
 您的[通用 Windows 應用程式](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)必須先經過驗證，才能使用[**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)和對應 Windows 中的服務[**。**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) 若要驗證您的應用程式，則必須指定地圖驗證金鑰。 本主題說明如何從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)要求地圖驗證金鑰，然後將它新增到您的 app。
 
