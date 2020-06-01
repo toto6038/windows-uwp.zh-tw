@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b048de69a8a259509e5a5c54c5f1d61675a25a18
+ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209714"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854717"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將傳統型應用程式與 Windows 10 和 UWP 整合
 
@@ -1372,7 +1372,7 @@ ms.locfileid: "79209714"
 
 如果要建立在所有裝置上執行的通用 Windows 平台使用者介面，但希望 Win32 應用程式的元件能繼續在完全信任的情況下執行，此延伸模組非常有用。
 
-您只需要為 Win32 應用程式建立 Windows 應用程式套件。 然後，將此延伸模組新增至 UWP 應用程式的套件檔案。 此延伸模組表示您想要在 Windows 應用程式套件中啟動可執行檔。  如果您想要在 UWP 應用程式和 Win32 應用程式之間進行通訊，可以設定一或多個[應用程式服務](/windows/uwp/launch-resume/app-services.md)。 您可以在[這裡](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)閱讀更多關於此案例的資訊。
+您只需要為 Win32 應用程式建立 Windows 應用程式套件。 然後，將此延伸模組新增至 UWP 應用程式的套件檔案。 此延伸模組表示您想要在 Windows 應用程式套件中啟動可執行檔。  如果您想要在 UWP 應用程式和 Win32 應用程式之間進行通訊，可以設定一或多個[應用程式服務](/windows/uwp/launch-resume/app-services)。 您可以在[這裡](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)閱讀更多關於此案例的資訊。
 
 ## <a name="next-steps"></a>接下來的步驟
 

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 299a25bb92c5afdb86ebc1569a1f98916baa3d09
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: add292dd5b58c3e8da1a0ce2c2371bf211b2a617
+ms.sourcegitcommit: 7704c888a28edc7ab0515a75afac93d1dda4d693
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233954"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84151947"
 ---
 # <a name="introduction-to-windows-app-design"></a>Windows 應用程式設計簡介
 
@@ -120,7 +120,7 @@ UWP 的設計平台提供一組通用控制項，確保可在所有執行 Window
 
 磚會顯示在 [開始] 功能表中，而當您的應用程式啟動時，其可讓您一窺該應用程式的狀態。 磚的支援來自後端的內容，以及情報，並利用貢獻的內容精心製作。
 
-UWP 應用程式有四種磚大小 (小型、中型、寬形及大型)，可利用應用程式的圖示和身分識別自訂。 如需設計 UWP 應用程式磚的指導方針，請參閱[磚和圖示資產的指導方針](../shell/tiles-and-notifications/app-assets.md)。
+UWP 應用程式有四種磚大小 (小型、中型、寬形及大型)，可利用應用程式的圖示和身分識別自訂。 如需設計 UWP 應用程式磚的指導方針，請參閱[磚和圖示資產的指導方針](../style/app-icons-and-logos.md)。
     :::column-end:::
     :::column:::
 ![開始功能表上的磚](images/shell.svg)

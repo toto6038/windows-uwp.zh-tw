@@ -7,12 +7,15 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f5e103b7661c53fb70561dd1bd654188be2704ff
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+dev_langs:
+- csharp
+- cppwinrt
+ms.openlocfilehash: c87dfbdc00df36c75a5b0b865376af352edcabbb
+ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970763"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83867358"
 ---
 # <a name="color"></a>色彩
 
@@ -235,6 +238,9 @@ Windows 殼層中的輔色演算法會產生輔色的淺色和深色色調。
 
 ```csharp
 Color LightBlue = Color.FromArgb(255,54,192,255);
+```
+```cppwinrt
+Windows::UI::Color LightBlue = Windows::UI::ColorHelper::FromArgb(255,54,192,255);
 ```
 
 字母「Argb」表示 Alpha (透明度)、紅色、綠色和藍色，色彩的四個元件。 每個引數的範圍為 0 到 255。 您可以選擇省略第一個值，如此會提供 255 的預設不透明度，亦即 100% 不透明。
