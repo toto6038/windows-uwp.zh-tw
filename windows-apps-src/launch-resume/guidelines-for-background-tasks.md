@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c66cbccbdeed1258a25d3da03ed34a64995cd48
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7709e93ba14d3ecf5418accc41a9fe52c968fcec
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260492"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262759"
 ---
 # <a name="guidelines-for-background-tasks"></a>背景工作的指導方針
 
@@ -24,7 +24,7 @@ ms.locfileid: "74260492"
 
 如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows 10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
 
-**同處理序與跨處理序背景工作︰** Windows 10 (版本 1607) 引進的[同處理序背景工作](create-and-register-an-inproc-background-task.md)可讓您在與前景 app 相同的處理序中執行背景程式碼。 決定要使用同處理序或跨處理序的背景工作時，請考慮下列因素︰
+**同處理序與跨處理序背景工作︰** Windows 10 (版本 1607) 引進的[同處理序背景工作](create-and-register-an-inproc-background-task.md)可讓您在與前景應用程式相同的處理序中執行背景程式碼。 決定要使用同處理序或跨處理序的背景工作時，請考慮下列因素︰
 
 |考量 | 影響 |
 |--------------|--------|
@@ -35,9 +35,9 @@ ms.locfileid: "74260492"
 
 **觸發程序執行個體的數目限制：** App 可以註冊某些觸發程序的執行個體數目有限制。 App 只能針對其每個執行個體註冊 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)、[MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) 和 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) 一次。 如果 App 超過此限制，註冊將會擲回例外狀況。
 
-**CPU 配額：** 背景工作會受到它們根據觸發程序類型所取得的實際執行使用時間所限制。 大部分的觸發程序有 30 秒的實際執行使用限制，而部分觸發程序擁有最多 10 分鐘的執行時間，以完成需要大量運算資源的工作。 背景工作應該要輕量，才能延長電池使用時間並為前景應用程式提供較佳的使用者體驗。 請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)，以了解套用至背景工作的資源限制。
+**CPU 配額：** 背景工作受限於其依據觸發程序類型所取得的實際執行使用時間量。 大部分的觸發程序有 30 秒的實際執行使用限制，而部分觸發程序擁有最多 10 分鐘的執行時間，以完成需要大量運算資源的工作。 背景工作應該要輕量，才能延長電池使用時間並為前景應用程式提供較佳的使用者體驗。 請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)，以了解套用至背景工作的資源限制。
 
-**管理背景工作：** 您的 app 應該取得已登錄的背景工作清單、登錄進度與完成處理常式，並適當地處理這些事件。 您的背景工作類別應該報告進度、取消和完成。 如需詳細資訊，請參閱[處理已取消的背景工作](handle-a-cancelled-background-task.md)和[監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)。
+**管理背景工作：** 您的應用程式應該取得已登錄的背景工作清單、登錄進度與完成處理常式，並適當地處理這些事件。 您的背景工作類別應該報告進度、取消和完成。 如需詳細資訊，請參閱[處理已取消的背景工作](handle-a-cancelled-background-task.md)和[監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)。
 
 **使用 [BackgroundTaskDeferral](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral)：** 如果背景工作類別執行非同步程式碼，請務必使用延遲。 否則，當[Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法傳回時，您的背景工作可能會提前終止（或在同進程背景工作的情況下， [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated)方法）。 如需詳細資訊，請參閱[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
 
@@ -47,7 +47,7 @@ ms.locfileid: "74260492"
 
 如果您有多個背景工作，請考慮是否應該先執行相同的主機程序，或分散到不同的主機處理程序。 如果您擔心一個背景工作失敗會擔擱其他背景工作，請分敗主機處理程序。  使用資訊清單設計工具中的**資源群組**項目，將背景工作分組到不同的主機的處理程序。 
 
-若要設定**資源群組**，請開啟 Package.appxmanifest 設計工具，選擇 **/[宣告/]** ，並新增 **/[應用程式服務/]** 宣告：
+若要設定**資源群組**，請開啟 Package.appxmanifest 設計工具，選擇 **/[宣告/]**，並新增 **/[應用程式服務/]** 宣告：
 
 ![資源群組設定](images/resourcegroup.png)
 
@@ -55,16 +55,20 @@ ms.locfileid: "74260492"
 
 與前景應用程式在相同處理序中執行的背景工作，不需要在應用程式資訊清單中宣告自己。 如需在資訊清單中宣告在跨處理序中執行的背景工作的詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
 
-**準備 App 更新︰** 如果要更新您的 App，請建立並註冊 **ServicingComplete** 背景工作 (請參閱 [SystemTriggerType](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)) 來取消註冊舊版 App 的背景工作，並註冊新版的背景工作。 除了在前景內執行的內容以外，此時也很適合執行可能需要的應用程式更新。
+**準備應用程式更新︰** 如果要更新您的應用程式，請建立並註冊 **ServicingComplete** 背景工作 (請參閱 [SystemTriggerType](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)) 來取消註冊舊版應用程式的背景工作，並註冊新版的背景工作。 除了在前景內執行的內容以外，此時也很適合執行可能需要的應用程式更新。
 
 **執行背景工作的要求：**
 
-> **重要**  從 Windows 10 開始，應用程式不再需要在鎖定畫面上做為執行背景工作的先決條件。
+> **重要事項**   從 Windows 10 開始，應用程式不再需要在鎖定畫面上做為執行背景工作的必要元件。
 
-通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須先呼叫 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)，才能登錄任何類型的背景工作。 如果使用者已明確地在裝置設定中拒絕您應用程式的背景工作權限，則這個方法會傳回 [**BackgroundAccessStatus.DeniedByUser**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus)。 如需使用者的背景活動與省電模式選項的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。 
+通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須呼叫[**GetAccessState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並檢查應用程式在背景中不會被拒絕執行。 請確定 [**GetAccessStatus**] 不會傳回其中一個拒絕的[**BackgroundAccessStatus**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus)列舉。 例如， https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) 如果使用者已在裝置的設定中明確拒絕您應用程式的背景工作許可權，則此方法會傳回。
+
+如果您的應用程式在背景中遭到拒絕而無法執行，您的應用程式應該呼叫[**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並確保在註冊背景工作之前不會拒絕回應。
+
+如需使用者的背景活動與省電模式選項的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。 
 ## <a name="background-task-checklist"></a>背景工作檢查清單
 
-*同時適用于同進程和跨進程背景工作*
+*同時適用於同處理序和跨處理序的背景工作*
 
 -   將背景工作與正確的觸發程序關聯。
 -   新增條件以協助確認背景工作順利執行。
@@ -73,7 +77,7 @@ ms.locfileid: "74260492"
 -   檢查背景工作登錄是否有錯誤。 在適當狀況下，嘗試以不同的參數值再次登錄背景工作。
 -   針對桌上型電腦以外的所有裝置系列，如果裝置的記憶體變成不足，背景工作可能就會終止。 如果沒有顯示記憶體不足的例外狀況，或是應用程式沒有處理該狀況，背景工作將會在沒有警告也沒有引發 OnCanceled 事件的情況下終止。 這有助於確保前景應用程式的使用者體驗。 您的背景工作應該要設計成能夠處理這種情況。
 
-*僅適用于跨進程背景工作*
+*僅適用於跨處理序背景工作*
 
 -   在 Windows 執行階段元件中建立背景工作。
 -   請勿顯示背景工作快顯通知、磚以及徽章更新以外的 UI。
@@ -82,15 +86,15 @@ ms.locfileid: "74260492"
 -   在應用程式資訊清單中宣告每個背景工作，以及它所使用的觸發程序類型。 確認進入點與觸發程序類型是否正確。
 -   除非您要使用應該與應用程式在相同內容中執行的觸發程序 (例如 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger))，否則請勿在資訊清單中指定 Executable 元素。
 
-*僅適用于同進程背景工作*
+*僅適用於同處理序背景工作*
 
 - 取消工作時，請確認 `BackgroundActivated` 事件處理常式在取消發生或終止整個處理序之前結束。
 -   撰寫短期背景工作。 背景工作的使用時間是限制為 30 秒時鐘時間。
--   請勿仰賴背景工作的使用者互動。
+-   不要依賴背景工作的使用者互動。
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立及註冊同處理序序背景工作](create-and-register-an-inproc-background-task.md)。
+* [建立並註冊同進程背景](create-and-register-an-inproc-background-task.md)工作。
 * [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [在背景播放媒體](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
@@ -103,7 +107,7 @@ ms.locfileid: "74260492"
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 UWP 應用程式中觸發暫止、繼續和背景事件（在進行調試時）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 
  
 

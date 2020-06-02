@@ -7,12 +7,12 @@ keywords: windows win32, 傳統型應用程式
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a55a1578fba7052396ecec725db2678ea8bd6ff
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: d052ad0f670bccd9b32d2e3643520dd6129ed22a
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580015"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262739"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>建置 Windows PC 適用的傳統型應用程式
 
@@ -58,7 +58,7 @@ ms.locfileid: "83580015"
 <tr class="even">
 <td><a href="https://docs.microsoft.com/dotnet/framework/winforms/">Windows Forms</a></td>
 <td><p>一個以 .NET 為基礎的平台，旨在為具有輕量 UI 模型的受管企業營運應用程式所設計。 這些應用程式可以 <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework 為目標。</p></td>
-<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">開始使用</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 參照 (.NET)</a><br/><a href="https://code.msdn.microsoft.com/windowsdesktop/site/search?f%5B0%5D.Type=Technology&f%5B0%5D.Value=Windows%20Forms">範例</a></td>
+<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">開始使用</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 參照 (.NET)</a></td>
 </tr>
 </tbody>
 </table>

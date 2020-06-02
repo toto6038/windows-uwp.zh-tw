@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 86586cfc0f054181f08cd3cd75731e6c53ea4b92
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 31d7805e7ae936e5c7427b54f2eb9b0ad4b4c3e9
+ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83579925"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84257379"
 ---
 # <a name="modernize-your-desktop-apps"></a>讓您的傳統型應用程式現代化
 
@@ -74,7 +74,7 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 * 將其封裝在 [MSIX 套件](/windows/msix/desktop/desktop-to-uwp-root)中。 MSIX 是新式應用程式套件格式，為所有 Windows 應用程式、UWP、WPF、Windows Forms 及 Win32 應用程式提供通用封裝體驗。 這可以提供強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。 如需詳細資訊，請參閱 MSIX 文件中的[封裝傳統型應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
 * 如果您無法採用 MSIX 封裝來部署傳統型應用程式，請從 Windows 10 版本 2004 開始，藉由建立僅包含套件資訊清單的*疏鬆 MSIX 套件*來授與套件識別。 如需詳細資訊，請參閱[將身分識別授與非封裝的傳統型應用程式](grant-identity-to-nonpackaged-apps.md)。
 
-<a id="desktop-uwp-controls"/>
+<a id="desktop-uwp-controls"></a>
 
 ## <a name="uwp-controls-optimized-for-desktop-apps"></a>針對傳統型應用程式最佳化的 UWP 控制項
 
