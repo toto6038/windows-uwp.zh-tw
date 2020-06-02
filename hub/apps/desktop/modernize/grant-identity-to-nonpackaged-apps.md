@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d870c82a3e4a8bc6c2ce923026010eff953eead2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c90400c577110f326c693a6c06d28582033a86f6
+ms.sourcegitcommit: eae9859ee06c1e5e4afa08d8d3da072ad06d24a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82107711"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84110387"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>將身分識別授與非封裝的傳統型應用程式
 
@@ -36,7 +36,7 @@ ms.locfileid: "82107711"
 
 ### <a name="sparse-packages"></a>疏鬆套件
 
-「疏鬆套件」  包含套件資訊清單，但沒有其他應用程式二進位檔和內容。 疏鬆套件的資訊清單可以參考在預先決定的外部位置中套件外部的檔案。 這可讓尚無法針對整個應用程式採用 MSIX 封裝的應用程式，依照某些 Windows 10 擴充性功能的要求取得套件識別資料。
+「疏鬆套件」包含套件資訊清單，但沒有其他應用程式二進位檔和內容。 疏鬆套件的資訊清單可以參考在預先決定的外部位置中套件外部的檔案。 這可讓尚無法針對整個應用程式採用 MSIX 封裝的應用程式，依照某些 Windows 10 擴充性功能的要求取得套件識別資料。
 
 > [!NOTE]
 > 使用疏鬆套件的傳統型應用程式不會收到透過 MSIX 套件完全部署的部分優點。 這些優點包括防篡改保護、在鎖定位置安裝，以及作業系統在部署、執行階段和解除安裝時的完整管理。
@@ -54,7 +54,7 @@ ms.locfileid: "82107711"
 確定套件資訊清單包含下列項目：
 
 * [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素，可描述傳統型應用程式的身分識別屬性。
-* [  Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties) 元素之下的 [**uap10:AllowExternalContent**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) 元素。 此元素應獲派 `true` 值，該值可讓您的套件資訊清單參考套件外部的內容 (在磁片上的特定位置)。 在稍後的步驟中，您將會從在您的安裝程式或應用程式中執行的程式碼註冊疏鬆套件時，指定外部位置的路徑。 您在資訊清單中所參考的任何內容 (不在套件本身) 都應該安裝到外部位置。
+* [Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties) 元素之下的 [**uap10:AllowExternalContent**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) 元素。 此元素應獲派 `true` 值，該值可讓您的套件資訊清單參考套件外部的內容 (在磁片上的特定位置)。 在稍後的步驟中，您將會從在您的安裝程式或應用程式中執行的程式碼註冊疏鬆套件時，指定外部位置的路徑。 您在資訊清單中所參考的任何內容 (不在套件本身) 都應該安裝到外部位置。
 * [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 元素的 **MinVersion** 屬性應該設定為 `10.0.19000.0` 或更新版本。
 * [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) 元素的 **TrustLevel=mediumIL** 和 **RuntimeBehavior=Win32App** 屬性會宣告與疏鬆套件相關聯的傳統型應用程式，其執行方式類似於標準未封裝的傳統型應用程式，而不需登錄和檔案系統虛擬化和其他執行階段變更。
 
@@ -157,9 +157,9 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 ## <a name="register-your-sparse-package-at-run-time"></a>在執行階段註冊您的疏鬆套件
 
-若要將套件識別資料授與您的傳統型應用程式，您的應用程式必須使用 [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) 類別的 **AddPackageByUriAsync** 方法來註冊疏鬆套件。 Windows 10 版本 2004 起可以取得此方法。 您可以將程式碼新增至應用程式，以在第一次執行應用程式時註冊疏鬆套件，也可以在安裝傳統型應用程式時執行程式碼來註冊該套件 (例如，如果您使用 MSI 來安裝傳統型應用程式，可以從自訂動作執行此程式碼)。
+若要將套件識別資料授與您的傳統型應用程式，您的應用程式必須使用 [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) 類別的 [**AddPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync) 方法來註冊疏鬆套件。 Windows 10 版本 2004 起可以取得此方法。 您可以將程式碼新增至應用程式，以在第一次執行應用程式時註冊疏鬆套件，也可以在安裝傳統型應用程式時執行程式碼來註冊該套件 (例如，如果您使用 MSI 來安裝傳統型應用程式，可以從自訂動作執行此程式碼)。
 
-下列範例示範如何註冊疏鬆套件。 此程式碼會建立 **AddPackageOptions** 物件，其中包含您的套件資訊清單可參考套件外部內容的外部位置路徑。 然後，程式碼會將此物件傳遞至 **AddPackageByUriAsync** 方法，以註冊疏鬆套件。 此方法也會將已簽署疏鬆套件的位置接收為 URI。 如需更完整的範例，請參閱相關[範例](#sample)中的 `StartUp.cs` 程式碼檔案。
+下列範例示範如何註冊疏鬆套件。 此程式碼會建立 [**AddPackageOptions**](https://docs.microsoft.com/uwp/api/windows.management.deployment.addpackageoptions) 物件，其中包含您的套件資訊清單可參考套件外部內容的外部位置路徑。 然後，程式碼會將此物件傳遞至 **AddPackageByUriAsync** 方法，以註冊疏鬆套件。 此方法也會將已簽署疏鬆套件的位置接收為 URI。 如需更完整的範例，請參閱相關[範例](#sample)中的 `StartUp.cs` 程式碼檔案。
 
 ```csharp
 private static bool registerSparsePackage(string externalLocation, string sparsePkgPath)

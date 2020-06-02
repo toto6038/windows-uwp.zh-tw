@@ -6,12 +6,12 @@ ms.author: denelon
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c1a8ab3c6a2cc697729fb5551e686a465bf6a0c
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: c5ebcc564b4db16c1d16385cbeaf7fd6d82c8f18
+ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83825119"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83865025"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>將您的資訊清單提交至存放庫
 
@@ -93,7 +93,7 @@ winget validate \<manifest-file>
 
 3. 使用 `push` 命令將變更推送至遠端存放庫。
     ```CMD
-    `git push`
+    git push
     ```
 
 ### <a name="step-5-create-a-pull-request"></a>步驟 5：建立提取要求

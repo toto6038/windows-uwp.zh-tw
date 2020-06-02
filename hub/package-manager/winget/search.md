@@ -6,12 +6,12 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: edbd11724ed523f7d6efc57af9a8ef3a7e06bf5a
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 5a176c1138ebfe3f3a9eb2cbef02dad745cfe170
+ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824959"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83865015"
 ---
 # <a name="search-command-winget"></a>search 命令 (winget)
 
@@ -49,7 +49,7 @@ ms.locfileid: "83824959"
 | **--id**        |   將搜尋限制為應用程式的識別碼。 識別碼包含發行者和應用程式名稱。 |
 | **--name**      |  將搜尋限制為應用程式的名稱。 |
 | **--moniker**  |    將搜尋限制為指定的別名。 |
-|  **--tag**    |  將搜尋限制為針對應用程式所列出的標籤。 |
+| **--tag**    |  將搜尋限制為針對應用程式所列出的標籤。 |
 | **--command**   |   將搜尋限制為應用程式的名稱。 |
 
 該字串將被視為子字串。 根據預設，搜尋也不會區分大小寫。 例如，`winget search micro` 可能會傳回下列內容：
@@ -64,7 +64,7 @@ ms.locfileid: "83824959"
 
 | 選項  | 說明 |
  --------------|-------------|
-| **e, --exact**  |     在查詢中使用確切字串，包括檢查是否區分大小寫。 其不會使用子字串的預設行為。  |  
+| **-e, --exact**  |     在查詢中使用確切字串，包括檢查是否區分大小寫。 其不會使用子字串的預設行為。  |  
 | **-n, --count**      |  將顯示的輸出限制為指定的計數。 |
 | **-s, --source**     |  將搜尋限制為指定的[來源](source.md)名稱。  |
 

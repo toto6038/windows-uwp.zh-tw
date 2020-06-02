@@ -6,16 +6,19 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: b44f20021a0fa33da862e2361be60b730b041b49
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: cb897f25324ab8a516d18f5defe7cffa3e6a0109
+ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824969"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84166244"
 ---
 # <a name="source-command-winget"></a>source 命令 (winget)
 
 [!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
+
+> [!NOTE]
+> **source** 命令目前僅供內部使用。 目前不支援其他來源。
 
 [winget](index.md) 工具的 **source** 命令會管理 Windows 封裝管理員所存取的存放庫。 您可以使用 **source** 命令來**新增**、**移除**、**列出**及**更新**存放庫。
 
@@ -70,22 +73,24 @@ ms.locfileid: "83824969"
 
 | 類型  | 說明 |
 |--------------|-------------|
-| **Microsoft.PreIndexed.Package** | 來源類型 \<預設>。 |
+| **Microsoft.PreIndexed.Package** | 來源 \<default> 的類型。 |
 
 ## <a name="list"></a>list
 
 **list** 子命令會列舉目前啟用的來源。 此子命令也會提供特定來源的詳細資料。
 
-使用方式：`winget list [-n, --name] \<name>`
+使用方式：`winget source list [-n, --name] \<name>`
 
 ### <a name="list-all"></a>全部列出
 
 **list** 子命令本身會顯示所支援的完整來源清單。 例如：
 
 ```CMD
-> C:\winget list
-> Current sources:
->     Contoso ->  https://www.contoso.com/cache
+> C:\winget source list
+> Name   Arg
+> -----------------------------------------
+> winget https://winget.azureedge.net/cache
+
 ```
 
 ### <a name="list-source-details"></a>列出來源詳細資料
@@ -111,7 +116,7 @@ ms.locfileid: "83824969"
 
 **update**子命令會強制更新個別來源或所有來源。
 
-使用方式：`winget update [-n, --name] \<name>`
+使用方式：`winget source update [-n, --name] \<name>`
 
 ### <a name="update-all"></a>更新全部
 
@@ -119,7 +124,7 @@ ms.locfileid: "83824969"
 
 ### <a name="update-source"></a>更新來源
 
-**update** 子命令與 **--name** 選項結合後，可以直接更新個別來源。 例如：`C:\winget update --name contoso`
+**update** 子命令與 **--name** 選項結合後，可以直接更新個別來源。 例如：`C:\winget source update --name contoso`
 
 ## <a name="remove"></a>移除
 

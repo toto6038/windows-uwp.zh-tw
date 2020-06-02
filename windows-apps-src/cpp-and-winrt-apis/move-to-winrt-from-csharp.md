@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 遷移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 804c22b782dada9c0bde3c379ebfe5a37f1dcff9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 38ad2d4f2b0af65424e6d9fa50f2c21b626e1914
+ms.sourcegitcommit: 3125d5e2e32831481790266f44967851585888b3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81759945"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172829"
 ---
 # <a name="move-to-cwinrt-from-c"></a>從 C# 移到 C++/WinRT
 
@@ -24,10 +24,10 @@ ms.locfileid: "81759945"
 
 就預期的移植變更種類而言，您可以將其分為四個類別。
 
-- [**移植語言投影**](#port-the-language-projection)。 Windows 執行階段 (WinRT) 會「投影」  到各種程式設計語言中。 每一個語言投影都會設計成所述程式設計語言慣用的型態。 針對 C#，某些 Windows 執行階段類型會投影為 .NET 類型。 例如，您會將 [**System.Collections.Generic.IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1) 轉譯回 [**Windows.Foundation.Collections.IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1)。 此外，在 C# 中，某些 Windows 執行階段作業會投影為方便的 C# 語言功能。 例如，您會在 C# 使用 `+=` 運算子語法來註冊事件處理委派。 因此，您會把這類語言功能轉譯回要執行的基本作業 (在此範例中為事件註冊)。
+- [**移植語言投影**](#port-the-language-projection)。 Windows 執行階段 (WinRT) 會「投影」到各種程式設計語言中。 每一個語言投影都會設計成所述程式設計語言慣用的型態。 針對 C#，某些 Windows 執行階段類型會投影為 .NET 類型。 例如，您會將 [**System.Collections.Generic.IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1) 轉譯回 [**Windows.Foundation.Collections.IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1)。 此外，在 C# 中，某些 Windows 執行階段作業會投影為方便的 C# 語言功能。 例如，您會在 C# 使用 `+=` 運算子語法來註冊事件處理委派。 因此，您會把這類語言功能轉譯回要執行的基本作業 (在此範例中為事件註冊)。
 - [**移植語言語法**](#port-language-syntax)。 這些變更有許多都是簡單的機械轉換，也就是將符號取代為另一個符號。 例如，將點 (`.`) 變更為雙冒號 (`::`)。
 - [**移植語言程序**](#port-language-procedure)。 這其中有一些是簡單的重複變更 (例如將 `myObject.MyProperty` 變更為 `myObject.MyProperty()`)。 而其他則是更深入的變更 (例如，將牽涉到使用 **System.Text.StringBuilder** 的程序移植到涉及使用 **std::wostringstream** 的程序)。
-- [**移植 C++/WinRT 特有的工作**](#porting-tasks-that-are-specific-to-cwinrt)。 Windows 執行階段的特定詳細資料會透過 C# 在幕後進行處理。 這些詳細資料會在 C++/WinRT 中明確執行。 例如，您可以使用 `.idl` 檔案來定義您的執行階段類別。
+- [**C++/WinRT 特定的移植相關工作**](#porting-related-tasks-that-are-specific-to-cwinrt)。 Windows 執行階段的特定詳細資料會透過 C# 在幕後進行處理。 這些詳細資料會在 C++/WinRT 中明確執行。 例如，您可以使用 `.idl` 檔案來定義您的執行階段類別。
 
 此主題的其餘部分會根據該分類法進行結構化。
 
@@ -59,7 +59,7 @@ ms.locfileid: "81759945"
 
 在 C# 中，**OpenButton_Click** 方法可以是私有的，而且 XAML 仍可將其連線到 *OpenButton* 所引發的 [**ButtonBase.Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。
 
-在 C++/WinRT 中，「如果您想要在 XAML 標記中註冊 **OpenButton_Click** 方法」  ，則該方法在[實作類型](/windows/uwp/cpp-and-winrt-apis/author-apis)中必須是公用的。 如果您只在命令式程式碼中註冊事件處理常式，則事件處理常式不需要是公用的。
+在 C++/WinRT 中，「如果您想要在 XAML 標記中註冊 **OpenButton_Click** 方法」，則該方法在[實作類型](/windows/uwp/cpp-and-winrt-apis/author-apis)中必須是公用的。 如果您只在命令式程式碼中註冊事件處理常式，則事件處理常式不需要是公用的。
 
 ```cppwinrt
 namespace winrt::MyProject::implementation
@@ -88,6 +88,21 @@ namespace winrt::MyProject::implementation
     }
 };
 ```
+
+最後一個案例是您要移植的 C# 專案從標記*繫結*到事件處理常式 (如需更多案例背景，請參閱 [Functions in x:Bind](/windows/uwp/data-binding/function-bindings))。
+
+```xaml
+<Button x:Name="OpenButton" Click="{x:Bind OpenButton_Click}" />
+```
+
+您可以將該標記變更為更簡單的 `Click="OpenButton_Click"`。 或者，如果想要的話，也可以保留該標記不變。 為了加以支援，您只需要在 IDL 中宣告事件處理常式。
+
+```idl
+void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
+```
+
+> [!NOTE]
+> 將函式宣告為 `void` (即使您*實作*為[「射後不理」(Fire and Forget)](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget))。
 
 ## <a name="port-language-syntax"></a>移植語言語法
 
@@ -128,7 +143,7 @@ C# 靜態欄位會成為 C++/WinRT 靜態存取子和 (或) 更動子涵式。 �
 
 ### <a name="porting-xaml-markup-and-asset-files"></a>移植 XAML 標記和資產檔案
 
-在[將剪貼簿範例從 C# 移植到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp) 案例中，我們可以在 C# 和 C++/WinRT 專案中使用「相同」  XAML 標記 (包括資源) 和資產檔案。 在某些情況下，您需要編輯標記來達到此目的。 請參閱[複製完成移植 **MainPage** 所需的 XAML 和樣式](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage)。
+在[將剪貼簿範例從 C# 移植到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp) 案例中，我們可以在 C# 和 C++/WinRT 專案中使用「相同」XAML 標記 (包括資源) 和資產檔案。 在某些情況下，您需要編輯標記來達到此目的。 請參閱[複製完成移植 **MainPage** 所需的 XAML 和樣式](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage)。
 
 ## <a name="port-language-procedure"></a>移植語言程序
 
@@ -230,7 +245,7 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 
 另請參閱[移植 **BuildClipboardFormatsOutputString** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)，以及[移植 **DisplayChangedFormats** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats)。
 
-## <a name="porting-tasks-that-are-specific-to-cwinrt"></a>移植 C++/WinRT 特有的工作
+## <a name="porting-related-tasks-that-are-specific-to-cwinrt"></a>C++/WinRT 特定的移植相關工作
 
 ### <a name="define-your-runtime-classes-in-idl"></a>定義 IDL 中的執行階段類別
 
@@ -273,7 +288,7 @@ C# 會自動將純量 Box 處理為物件。 C++/WinRT 會要求您明確地呼�
 
 字串在某些方面是實值類型，而在其他方面則是參考類型。 C# 和 C++/WinRT 會以不同的方式處理字串。
 
-ABI 類型 [**HSTRING**](/windows/win32/winrt/hstring) 是參考計數字串的指標。 但是它並非衍生自 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，因此在技術上並不是「物件」  。 此外, null **HSTRING** 代表空字串。 將非衍生自 **IInspectable** 的項目包裝在 [**IReference\<T\>** ](/uwp/api/windows.foundation.ireference_t_)內，即可完成 Box 處理，而 Windows 執行階段會以 [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) 物件形式提供標準實作 (自訂類型會回報為 [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype))。
+ABI 類型 [**HSTRING**](/windows/win32/winrt/hstring) 是參考計數字串的指標。 但是它並非衍生自 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，因此在技術上並不是「物件」。 此外, null **HSTRING** 代表空字串。 將非衍生自 **IInspectable** 的項目包裝在 [**IReference\<T\>** ](/uwp/api/windows.foundation.ireference_t_) 內，即可完成 Box 處理，而 Windows 執行階段會以 [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) 物件形式提供標準實作 (自訂類型會回報為 [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype))。
 
 C# 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT 會將字串投影為實值類型。 這表示已進行 Box 處理的 null 字串可以有不同的表示法 (取決於您達成的方式)。
 
@@ -368,7 +383,7 @@ XAML 資料繫結要求項目來源實作 **[IIterable](/uwp/api/windows.foundat
 - **IVector\<IInspectable\>**
 - **IBindableIterable** (會逐一查看元素並儲存至私用集合)
 
-在執行階段無法偵測 **IVector\<T\>** 等一般介面。 每個 **IVector\<T\>** 都有不同的介面識別碼 (IID)，這是 **T**的函數。任何開發人員都可以任意擴充 **T** 集合，所以顯然 XAML 繫結程式碼永遠不會知道要查詢的完整集合。 該限制不是 C# 的問題，因為每個實作 **IEnumerable\<T\>** 的 CLR 物件都會實作 **IEnumerable**。 在 ABI 層級，這表示每個實作 **IObservableVector\<T\>** 的物件都會自動實作 **IObservableVector\<IInspectable\>** 。
+在執行階段無法偵測 **IVector\<T\>** 等一般介面。 每個 **IVector\<T\>** 都有不同的介面識別碼 (IID)，這是 **T**的函式。任何開發人員都可以任意擴充 **T** 集合，所以顯然 XAML 繫結程式碼永遠不會知道要查詢的完整集合。 該限制不是 C# 的問題，因為每個實作 **IEnumerable\<T\>** 的 CLR 物件都會實作 **IEnumerable**。 在 ABI 層級，這表示每個實作 **IObservableVector\<T\>** 的物件都會自動實作 **IObservableVector\<IInspectable\>** 。
 
 C++/WinRT 不提供該保證。 如果 C++/WinRT 執行階段類別會實作 **IObservableVector\<T\>** ，我們無法假設也會提供 **IObservableVector\<IInspectable\>** 的實作。
 
@@ -424,7 +439,7 @@ Widget MyPage::BookstoreViewModel(winrt::hstring title)
 
 ### <a name="derived-classes"></a>衍生類別
 
-為了從執行階段類別衍生，基底類別必須「可組合」  。 C# 不要求您採取任何特殊步驟，即可讓類別變為可組合，而 C++/WinRT 則會要求您採取步驟。 您可使用[未密封的關鍵字](/uwp/midl-3/intro#base-classes)，指出您希望類別可作為基底類別使用。
+為了從執行階段類別衍生，基底類別必須「可組合」。 C# 不要求您採取任何特殊步驟，即可讓類別變為可組合，而 C++/WinRT 則會要求您採取步驟。 您可使用[未密封的關鍵字](/uwp/midl-3/intro#base-classes)，指出您希望類別可作為基底類別使用。
 
 ```idl
 unsealed runtimeclass BasePage : Windows.UI.Xaml.Controls.Page

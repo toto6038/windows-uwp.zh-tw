@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 啟用您的裝置以用於開發
 description: 設定您的 Windows 10 裝置以進行開發和偵錯。
 keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用裝置
-ms.date: 04/09/2019
+ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b360f75ccf08d9cc00eeba2948215b7240627a8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f41c7b706f4c088142a77092cf176ed543e21567
+ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80320412"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854774"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -19,23 +19,23 @@ ms.locfileid: "80320412"
 
 ![啟用您的裝置以進行開發](images/developer-poster.png)
 
-如果您使用電腦進行一般的日常活動，例如玩遊戲、瀏覽網頁、收發電子郵件或使用 Office 應用程式等等，您「不」  必啟用開發人員模式，事實上您不應啟用。 此頁面上剩餘的資訊對您而言不重要，您可以放心地返回任何您原本進行的動作。 感謝您的瀏覽！
+如果您使用電腦進行一般的日常活動，例如玩遊戲、瀏覽網頁、收發電子郵件或使用 Office 應用程式等等，您「不」必啟用開發人員模式，事實上您不應啟用。 此頁面上剩餘的資訊對您而言不重要，您可以放心地返回任何您原本進行的動作。 感謝您的瀏覽！
 
-但是，如果您是第一次在電腦上使用 Visual Studio 撰寫軟體，您「將」  需要在開發電腦上以及在任何要用來測試程式碼的裝置上，啟用開發人員模式。 當開發人員模式未啟用時開啟 UWP 專案會開啟 [開發人員專用]  設定頁面，或造成此對話方塊出現在 Visual Studio 中：
+但是，如果您是第一次在電腦上使用 Visual Studio 撰寫軟體，您「將」需要在開發電腦上以及在任何要用來測試程式碼的裝置上，啟用開發人員模式。 當開發人員模式未啟用時開啟 UWP 專案會開啟 [開發人員專用] 設定頁面，或造成此對話方塊出現在 Visual Studio 中：
 
 ![Visual Studio 中顯示的 [啟用開發人員模式] 對話方塊](images/latestenabledialog.png)
 
-當您看到這個對話方塊時，請按一下 [開發人員專用設定]  來開啟 [開發人員專用]  設定頁面。
+當您看到這個對話方塊時，請按一下 [開發人員專用設定] 來開啟 [開發人員專用] 設定頁面。
 
 > [!NOTE]
-> 您可以隨時移至 [開發人員專用]  頁面來啟用或停用 [開發人員模式]：只要在工作列中的 Cortana 搜尋方塊中輸入「開發人員專用」即可。
+> 您可以隨時移至 [開發人員專用] 頁面來啟用或停用 [開發人員模式]：只要在工作列中的 Cortana 搜尋方塊中輸入「開發人員專用」即可。
 
 ## <a name="accessing-settings-for-developers"></a>存取開發人員專用設定
 
 若要啟用開發人員模式，或存取其他設定：
 
-1.  從 [開發人員專用]  設定對話方塊中，選擇您需要的存取層級。
-2.  閱讀您所選設定的免責聲明，然後按一下 [是]  來接受變更。
+1.  從 [開發人員專用] 設定對話方塊中，選擇您需要的存取層級。
+2.  閱讀您所選設定的免責聲明，然後按一下 [是] 來接受變更。
 
 > [!NOTE]
 > 啟用 Developer 模式需要系統管理員權限。 如果您的裝置是由組織所擁有，此選項可能會停用。
@@ -51,9 +51,9 @@ ms.locfileid: "80320412"
 
  您可以啟用裝置來進行開發，或直接用於側載。
 
--   「Microsoft Store 應用程式」  為預設設定。 如果您不開發應用程式，或使用您的公司所發行的特殊內部應用程式，請讓此設定保持作用中狀態。
--   「側載」  是安裝並執行或測試未經 Microsoft Store 認證的應用程式。 例如，僅供公司內部使用的 app。
--   「開發人員模式」  可讓您側載應用程式，也可從 Visual Studio 以偵錯模式執行應用程式。
+-   「Microsoft Store 應用程式」為預設設定。 如果您不開發應用程式，或使用您的公司所發行的特殊內部應用程式，請讓此設定保持作用中狀態。
+-   「側載」是安裝並執行或測試未經 Microsoft Store 認證的應用程式。 例如，僅供公司內部使用的 app。
+-   「開發人員模式」可讓您側載應用程式，也可從 Visual Studio 以偵錯模式執行應用程式。
 
 根據預設，您只能從 Microsoft Store 安裝通用 Windows 平台 (UWP) 應用程式。 變更這些設定來使用開發人員功能，可以變更裝置的安全性層級。 您不應該從未驗證的來源安裝 app。
 
@@ -62,7 +62,7 @@ ms.locfileid: "80320412"
 > [!NOTE]
 > 從 Windows 測試人員組建 18956 開始，預設會啟用側載。 您現在可以將已簽署的 MSIX 套件部署到裝置，而不需要特殊設定。
 
-通常是需要在受管理裝置上安裝自訂應用程式而不透過 Microsoft Store 的公司或學校，或是需要執行的應用程式並非來自 Microsoft 的人員，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用「UWP 應用程式」  設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) 和[在 Microsoft Intune 中開始使用 App 部署](https://docs.microsoft.com/intune/deploy-use/add-apps)。
+通常是需要在受管理裝置上安裝自訂應用程式而不透過 Microsoft Store 的公司或學校，或是需要執行的應用程式並非來自 Microsoft 的人員，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用「UWP 應用程式」設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載應用程式](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和[在 Microsoft Intune 基本概念](https://docs.microsoft.com/mem/intune/fundamentals/)。
 
 裝置系列特定的資訊
 
@@ -71,7 +71,7 @@ ms.locfileid: "80320412"
 -   在行動裝置系列上：如果已經安裝所需的憑證，您便可以點選檔案來安裝任何透過電子郵件傳送給您或位於 SD 記憶卡上的 .appx。
 
 
-因為您無法在不具受信任憑證的裝置上安裝應用程式，所以 [側載應用程式]  會是比 [開發人員模式] 更安全的選項。
+因為您無法在不具受信任憑證的裝置上安裝應用程式，所以 [側載應用程式] 會是比 [開發人員模式] 更安全的選項。
 
 > [!NOTE]
 > 如果您要側載應用程式，您應該仍然只安裝來自受信任來源的應用程式。 當您安裝未經 Microsoft Store 認證的側載應用程式時，即表示您同意您已具備側載該應用程式所需的一切權限，並且為安裝和執行該應用程式所造成的任何損害負全責。 請參閱這份[隱私權聲明](https://privacy.microsoft.com/privacystatement)的 Windows &gt; Microsoft Store 小節。
@@ -82,8 +82,8 @@ ms.locfileid: "80320412"
 [開發人員模式] 取代了 Windows 8.1 對開發人員授權的需求。  除了側載功能，[開發人員模式] 設定還會啟用偵錯和其他部署選項。 這包括啟動 SSH 服務來允許此裝置成為部署目標。 若要停用此服務，您必須停用 [開發人員模式]。
 
 當您在桌面上啟用開發人員模式時，系統會安裝一套功能，包括︰
-- Windows 裝置入口網站。 只有在已開啟 [啟用裝置入口網站]  選項時，才會啟用裝置入口網站並為其設定防火牆規則。
-- 為 SSH 服務安裝及設定允許遠端安裝應用程式的防火牆規則。 啟用 [裝置探索]  將會開啟 SSH 伺服器。
+- Windows 裝置入口網站。 只有在已開啟 [啟用裝置入口網站] 選項時，才會啟用裝置入口網站並為其設定防火牆規則。
+- 為 SSH 服務安裝及設定允許遠端安裝應用程式的防火牆規則。 啟用 [裝置探索] 將會開啟 SSH 伺服器。
 
 
 ## <a name="additional-developer-mode-features"></a>其他開發人員模式功能
@@ -131,7 +131,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>Windows Explorer、遠端桌面及 PowerShell 的最佳化 (僅限傳統型裝置)
 
- 在傳統型裝置系列上，[開發人員專用]  設定頁面含有您可用來將電腦最佳化以進行開發工作的設定捷徑。 針對每個設定，您都可以選取核取方塊並按一下 [套用]  ，或按一下 [顯示設定]  連結來開啟該選項的設定頁面。
+ 在傳統型裝置系列上，[開發人員專用] 設定頁面含有您可用來將電腦最佳化以進行開發工作的設定捷徑。 針對每個設定，您都可以選取核取方塊並按一下 [套用]，或按一下 [顯示設定] 連結來開啟該選項的設定頁面。
 
 
 ## <a name="notes"></a>附註
@@ -148,7 +148,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 若要尋找這些問題及其他問題的因應措施，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)。
 
 > [!NOTE]
-> 如果不正確地安裝開發人員模式下，我們鼓勵您提出的意見反應要求。 在 [意見反應中樞]  應用程式中，選取 [新增意見反應]  ，然後選擇 [開發人員平台]  類別和 [開發人員模式]  子類別。 提交意見反應將協助 Microsoft 解決您遇到的問題。
+> 如果不正確地安裝開發人員模式下，我們鼓勵您提出的意見反應要求。 在 [意見反應中樞] 應用程式中，選取 [新增意見反應]，然後選擇 [開發人員平台] 類別和 [開發人員模式] 子類別。 提交意見反應將協助 Microsoft 解決您遇到的問題。
 
 ### <a name="failed-to-locate-the-package"></a>找不到套件
 

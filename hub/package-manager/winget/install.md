@@ -6,12 +6,12 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: c903c923a82edc03ffdce9c5790060cb65232cf8
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 8c460ccd18bb1bb12e5322e0e08a17edbd9692f7
+ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824989"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84166237"
 ---
 # <a name="install-command-winget"></a>install 命令 (winget)
 
@@ -47,14 +47,33 @@ ms.locfileid: "83824989"
 | **--name**   |  將搜尋限制為應用程式的名稱。 |  
 | **--moniker**   | 將搜尋限制為針對應用程式列出的別名。 |  
 | **-v, --version**  |  讓您指定要安裝的確切版本。 如果未指定，則會安裝目前最高版本的應用程式。 |  
-| **--tag**   |   將搜尋限制為針對應用程式所列出的標籤。 |  
-| **-s, -source**   |  將搜尋限制為提供的來源名稱。 後面必須加上來源名稱。 |  
-| **-e, -exact**   |   在查詢中使用確切字串，包括檢查是否區分大小寫。 其不會使用子字串的預設行為。 |  
-| **-i, -interactive** |  在互動模式中執行安裝程式。 預設體驗會顯示安裝程式的進度。 |  
-| **-h, -silent** |  以無訊息模式執行安裝程式。 這會隱藏所有 UI。 預設體驗會顯示安裝程式的進度。 |  
+| **-s, --source**   |  將搜尋限制為提供的來源名稱。 後面必須加上來源名稱。 |  
+| **-e, --exact**   |   在查詢中使用確切字串，包括檢查是否區分大小寫。 其不會使用子字串的預設行為。 |  
+| **-i, --interactive** |  在互動模式中執行安裝程式。 預設體驗會顯示安裝程式的進度。 |  
+| **-h, --silent** |  以無訊息模式執行安裝程式。 這會隱藏所有 UI。 預設體驗會顯示安裝程式的進度。 |  
 | **-o, --log**  |  將記錄導向至記錄檔。 您必須提供檔案路徑，而且您必須有該檔案的寫入權限。 |
-| **-override** | 將直接傳遞至安裝程式的字串。    |
-| **-l,--location** |    要安裝的位置 (如果支援的話)。 |
+| **--override** | 將直接傳遞至安裝程式的字串。    |
+| **-l, --location** |    要安裝的位置 (如果支援的話)。 |
+
+### <a name="example-queries"></a>範例查詢
+
+下列範例會安裝特定版本的應用程式。
+
+```CMD
+winget install powertoys --version 0.15.2
+```
+
+下列範例會從其識別碼安裝應用程式。
+
+```CMD
+winget install --id Microsoft.PowerToys
+```
+
+下列範例會依版本和識別碼來安裝應用程式。
+
+```CMD
+winget install --id Microsoft.PowerToys --version 0.15.2
+```
 
 ## <a name="multiple-selections"></a>多個選取項目
 
@@ -68,11 +87,11 @@ ms.locfileid: "83824989"
 
 | 選項  | 說明 |
 |-------------|-------------|  
-|  **-m,--manifest** | 要安裝的應用程式資訊清單路徑。 |
+|  **-m, --manifest** | 要安裝的應用程式資訊清單路徑。 |
 
 ### <a name="log-files"></a>記錄檔
 
-除非重新導向，否則 winget 的記錄檔會位於下列資料夾中：** \%temp%\\AICLI\\ *.log**
+除非重新導向，否則 winget 的記錄檔會位於下列資料夾中： **\%temp%\\AICLI\\*.log**
 
 ## <a name="related-topics"></a>相關主題
 
