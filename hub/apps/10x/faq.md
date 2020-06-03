@@ -2,18 +2,22 @@
 Description: 瞭解一些關於 Windows 10 的基本開發人員問題的答案。
 title: Windows 10 開發人員常見問題
 ms.topic: article
-ms.date: 04/1/2020
+ms.date: 06/02/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: d168faf16bdd8a88e0cd4c52c680781061bfcf0d
-ms.sourcegitcommit: dadbc20564e4b0c0ecbab5fd5649dbf8ab08095a
+ms.openlocfilehash: 3ba14e33c098d3515522a9a5907065751fafba87
+ms.sourcegitcommit: 13bda6040988461a61b1b5561fde2f7a54835ccd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80581952"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84318234"
 ---
 # <a name="windows-10x-developer-faq"></a>Windows 10 開發人員常見問題
+
+> [!IMPORTANT]
+> 我們最近宣佈了 Windows 10 和 Windows 10 的優先順序變更。
+> 這些公告包括對 Windows 10 外型規格優先順序的變更。 [如需詳細資訊，請參閱這裡。](https://blogs.windows.com/windowsexperience/2020/05/04/accelerating-innovation-in-windows-10-to-meet-customers-where-they-are/)
 
 Windows 10 是 Windows 系列中的產品線，最適合用於雙螢幕裝置。 身為開發人員，您可以將 Windows 10 的應用程式優化，利用行動裝置和雙畫面觀眾特有的新功能，同時享有相同範圍的 Windows 10 功能和豐富的桌面支援，來觸及更多物件。 [我們已于2019年底宣佈 Windows 10](https://blogs.windows.com/windowsexperience/2019/10/02/introducing-windows-10x-enabling-dual-screen-pcs-in-2020/#6qxkItE2XMPu24uw.97)，我們正期待在晚期2020中發行。
 
@@ -29,7 +33,7 @@ Windows 10 是 Windows 系列中的產品線，最適合用於雙螢幕裝置。
 
 ### <a name="does-this-replace-desktop-windows-10"></a>這會取代桌上型電腦 Windows 10 嗎？
 
-No。 Windows 10 將會平行發行至 Windows 10 的桌上出版本。 桌上出版的 Windows 10 將繼續提供新式桌面應用程式案例的增強功能和改進。 Windows 10 是另一個針對支援雙畫面平臺而優化的平臺。
+不會。 Windows 10 將會平行發行至 Windows 10 的桌上出版本。 桌上出版的 Windows 10 將繼續提供新式桌面應用程式案例的增強功能和改進。 Windows 10 是另一個針對支援雙畫面平臺而優化的平臺。
 
 ### <a name="when-will-windows-10x-be-released"></a>何時會釋放 Windows 10 倍？
 
