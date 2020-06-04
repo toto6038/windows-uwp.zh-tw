@@ -1,23 +1,26 @@
 ---
 Description: 瞭解如何接收您的應用程式、附加元件（應用程式內產品）和廣告收益的付款。
-title: 獲得報酬
+title: 取得付款
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.date: 03/05/2019
+ms.date: 05/29/2020
 ms.topic: article
 keywords: windows 10, uwp, 付款, 應用程式銷售, 應用程式收益, 支出, Microsoft Store 費用, 支付保留, 百分比
 ms.localizationpriority: medium
-ms.openlocfilehash: 853554a0a3a0507f1a8b9d8994618d16aa44bccc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5927e6636f1c5a60b4f3453e0493755176c649ad
+ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259998"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84334223"
 ---
-# <a name="getting-paid"></a>獲得報酬
+# <a name="getting-paid"></a>取得付款
 以下是有關接收您的應用程式、附加元件和廣告收益之付款的一些重要資訊。
 
 > [!IMPORTANT]
 > 您必須先[設定您的付款帳戶，並填寫必要的稅務形式](setting-up-your-payout-account-and-tax-forms.md)，才可以從 Microsoft Store 中的應用程式銷售額獲得金錢。
+
+> [!NOTE]
+> 如果您要尋找有關支出的支援，包括設定付款帳戶、遺失支出、在保存支出或任何其他專案，請在[這裡](https://developer.microsoft.com/windows/support)聯絡支援。
 
 ## <a name="store-fee"></a>市集費用
 
@@ -44,7 +47,7 @@ Microsoft Store 費用適用於 Windows 市集收取的所有 App 銷售金額�
 請記住，您所選取的價格可能會包含客戶必須支付的銷售或增值稅。 如需詳細資訊，請參閱[付費 app 的稅務詳細資料](tax-details-for-paid-apps.md)。
 
 
-## <a name="payout-reporting"></a>支付報告
+## <a name="payout-reporting"></a>付款報告
 
 您可以存取有關付款資訊的詳細資料，並在[合作夥伴中心](https://partner.microsoft.com/dashboard)的**支出摘要**中下載報告。 如需此處所顯示的詳細資訊，以及我們將您所賺取金額分類的方式，請參閱[支付摘要](payout-summary.md)。
 
