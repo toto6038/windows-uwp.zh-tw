@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 課稅, irs, 美國國稅局, 稅賦, 所得稅, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: ab115b5cb2b64c6f5bd05b166e904773948a876c
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 4a385c9c351dc0bb5db857fe7d1f5f267347f1f1
+ms.sourcegitcommit: 31c925736391ab166c06f34258564b00aeebd83a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854704"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428913"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
@@ -32,20 +32,21 @@ ms.locfileid: "83854704"
 稅務表單將會從下列位址傳送給您：
 
 **美國公民：**
-<table>
-<tr><th>商務群組</th><th>法律實體</th><th>位址</th></tr>
-<tr><td>Windows、Office、Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>美國 Redmond WA 98052</td></tr>
-<tr><td>廣告</td><td>Microsoft Online Inc。</td><td>6100 Neil 道路<br>Reno，美國 NV 89511</td></tr>
-<table> 
+
+| 商務群組         | 法律實體          | 位址                                          |
+|------------------------|-----------------------|--------------------------------------------------|
+| Windows、Office、Azure | Microsoft Corporation | One Microsoft Way<br>美國華盛頓98052州雷德蒙德       |
+| 廣告            | Microsoft Online Inc。 | 6880塞拉里昂中心 Parkway<br>Reno，美國 NV 98511 |
 
 **非美國公民：**
-<table>
-<tr><th>商務群組</th><th>法律實體</th><th>位址</th></tr>
-<tr><td>Windows、Office、Azure</td><td>Microsoft 愛爾蘭營運限制（microsoft Corporation 透過 microsoft 愛爾蘭以 microsoft Corporation 的合格媒介身分進行付款）</td><td>一個 Microsoft 場所<br>南部 &nbsp; 市 &nbsp; 公司 &nbsp; 公園<br>Leopardstown，都柏林18愛爾蘭</td></tr>
-<tr><td>廣告</td><td>Microsoft 愛爾蘭營運限制（付款是由 Microsoft Online Inc. 所建立，並由 microsoft 愛爾蘭擔任 Microsoft Online Inc. 的支出代理程式）。</td><td>一個 Microsoft 場所<br>南部 &nbsp; 市 &nbsp; 公司 &nbsp; 公園<br>Leopardstown，都柏林18愛爾蘭</td></tr>
-<tr><td>廣告</td><td>Microsoft Online Inc。</td><td>6100 Neil 道路<br>Reno，美國 NV 89511</td></tr>
-<tr><td colspan="3">* 下列國家/地區的公民獲得廣告收益，將透過 Microsoft 愛爾蘭作業限制付費：奧地利、比利時、保加利亞、克羅地亞、賽普勒斯、Czechia、丹麥、愛沙尼亞、芬蘭、法國、德國、希臘、匈牙利、愛爾蘭、Man Isle、義大利、拉脫維亞、列支敦斯登、立陶宛、盧森堡、馬爾他、摩納哥、荷蘭、挪威、波蘭、葡萄牙、羅馬尼亞、斯洛伐克、斯洛維尼亞、南非、西班牙、瑞典、瑞士、英國</td></tr>
-</table>
+| 商務群組         | 法律實體          | 位址                                          |
+|------------------------|-----------------------|--------------------------------------------------|
+| Windows、Office、Azure | Microsoft 愛爾蘭營運限制（microsoft Corporation 透過 microsoft 愛爾蘭以 microsoft Corporation 的合格媒介身分進行付款） | 一個 Microsoft 場所<br>南部 &nbsp; 市 &nbsp; 公司 &nbsp; 公園<br>Leopardstown，都柏林18愛爾蘭|
+| 廣告\*          | Microsoft 愛爾蘭營運限制（付款是由 Microsoft Online Inc. 所建立，並由 microsoft 愛爾蘭擔任 Microsoft Online Inc. 的支出代理程式）。 | 一個 Microsoft 場所<br>南部 &nbsp; 市 &nbsp; 公司 &nbsp; 公園<br>Leopardstown，都柏林18愛爾蘭 |
+| 廣告            | Microsoft Online Inc。 | 6880塞拉里昂中心 Parkway<br>Reno，美國 NV 98511 |
+
+>[!NOTE]
+> \*下列國家/地區的公民獲得廣告收益，將透過 Microsoft 愛爾蘭作業限制付費：奧地利、比利時、保加利亞、克羅地亞、賽普勒斯、Czechia、丹麥、愛沙尼亞、芬蘭、法國、德國、希臘、匈牙利、愛爾蘭、Man Isle、義大利、拉脫維亞、列支敦斯登、立陶宛、盧森堡、馬爾他、摩納哥、荷蘭、挪威、波蘭、葡萄牙、羅馬尼亞、斯洛伐克、斯洛維尼亞、南非、西班牙、瑞典、瑞士、英國
 
 ## <a name="for-developers-located-in-the-united-states"></a>適用於位於美國的開發人員
 
@@ -68,7 +69,7 @@ ms.locfileid: "83854704"
   </tr>
   <tr>
     <td valign="top">上述項目皆不適用。</td>
-    <td valign="top">None</td>
+    <td valign="top">無</td>
   </tr>
   <tr>
     <td valign="top">&nbsp;</td>
@@ -84,7 +85,7 @@ ms.locfileid: "83854704"
   </tr>
   <tr> 
      <td valign="top">我在適用的納税年度從應用程式內的廣告收到<b>少於 $600 美元的款項</b></td>
-     <td valign="top">None</td>
+     <td valign="top">無</td>
   </tr>
 </table>
 
