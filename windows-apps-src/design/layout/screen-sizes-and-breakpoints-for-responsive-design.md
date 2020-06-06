@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f79b7247a7e1a1889c530a16c280f490db51042e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2e385f6b9977eead6aed52215080588e4f9d8c27
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970743"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262769"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>螢幕大小與中斷點
 
@@ -98,8 +98,3 @@ UWP 應用程式會自動調整您的 UI 以確保應用程式在所有 Windows 
 - 最多使用 3 個欄/區域。
 - 顯示搜尋方塊。
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以停駐模式放置，以便讓它永遠顯示。
-
->[!TIP] 
-> 透過 [**Continuum 手機版**](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN)，使用者可以將相容的 Windows 10 行動裝置連接到監視器、滑鼠、鍵盤，讓手機可以像膝上型電腦一樣運作。 針對特定中斷點進行設計時，請記住這項新功能 - 行動電話不會永遠留在大小類別中。
-
-

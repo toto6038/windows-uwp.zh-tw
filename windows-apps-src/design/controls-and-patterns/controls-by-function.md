@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32038d6e25ec450dae59d0c1d7e9c8703fdc8018
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c593ea76535bec6a9d8ab41f0bcd4f2299162615
+ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82148797"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84437198"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
@@ -627,7 +627,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 <ProgressBar x:Name="progressBar1" Value="50" Width="100"/>
 ```
 
-![不確定的進度列控制項](images/controls/progress-bar-indeterminate.png)
+![不確定的進度列控制項](images/controls/progress-bar-indeterminate.gif)
 
 顯示不確定進度的進度列。
 

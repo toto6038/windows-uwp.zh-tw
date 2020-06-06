@@ -12,18 +12,18 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a8938d8c405a98275232c0905d04b4cf27cbae0e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 59fef3ea55d6aa0ddfa2ef809634be7565d54f90
+ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969083"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84437164"
 ---
 # <a name="auto-suggest-box"></a>自動建議方塊
 
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
-![自動建議方塊](images/controls/auto-suggest-box-open.png)
+![自動建議方塊](images/controls_autosuggest_expanded01.png)
 
 **取得 Windows UI 程式庫**
 
