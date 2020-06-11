@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: b9a4d0fb13b28babb3d99d0f763d9e7dc6decd2b
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 56104dd5608356b47a405c37eba71e544c5ba23c
+ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233787"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84257421"
 ---
 # <a name="inking-controls"></a>手寫筆跡控制項
 
@@ -72,7 +72,7 @@ Microsoft Edge 針對**網頁筆記**使用 InkCanvas 與 InkToolbar。
 
 **Windows Ink 工作區**
 
-InkCanvas 與 InkToolbar 也會用於 **Windows Ink 工作區**中的**繪圖板**和**螢幕繪圖**。  
+InkCanvas 與 InkToolbar 也會用於 **Windows Ink 工作區**中的**剪取與繪圖**。  
 ![Windows Ink 工作區中的 InkToolbar](images/ink-tools-ink-workspace.png)
 
 ## <a name="create-an-inkcanvas-and-inktoolbar"></a>建立 InkCanvas 與 InkToolbar

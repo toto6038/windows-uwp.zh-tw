@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f0b0ca87e86d487708a55e6aa75bf106c40c384
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 621b687e54cfba55bfd176d4fe0072e47cf79183
+ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970553"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84437144"
 ---
 # <a name="tooltips"></a>工具提示
 
@@ -76,9 +76,9 @@ ms.locfileid: "82970553"
 </tr>
 </table>
 
-Bing 地圖服務應用程式中的工具提示。
+Windows Maps 應用程式中的工具提示。
 
-![Bing 地圖服務應用程式中的工具提示](images/control-examples/tool-tip-maps.png)
+![Windows Maps 應用程式中的工具提示](images/control-examples/tool-tip-maps.png)
 
 ## <a name="create-a-tooltip"></a>建立工具提示
 

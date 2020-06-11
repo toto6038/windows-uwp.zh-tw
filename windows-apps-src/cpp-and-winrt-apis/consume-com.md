@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, COM, 元件, 類別, 介面
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6ce3ce56b4afbf4c45b406c8af369bee4b55bb
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: d5fae09192262b63b11175bf08e7a2c522b31abd
+ms.sourcegitcommit: 82d441e3b9da920cf860fad6b59d6b848466c90f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619322"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84271877"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>使用 C++/WinRT 取用 COM 元件
 
@@ -22,7 +22,7 @@ ms.locfileid: "82619322"
 
 當您使用 COM 進行程式設計時，您應直接使用介面，而不是使用物件 (在幕後使用 Windows 執行階段 API (COM 的進化版) 也是如此)。 例如，若要在 COM 類別上呼叫函式，您可以啟用類別、重新取得介面，然後在該介面上呼叫函式。 若要存取物件的狀態，您不是直接存取其資料成員，相反地，您會在介面上呼叫存取子和更動子函式。
 
-更具體地說，我們將討論如何與「指標」  介面互動。 為此，我們將受益於 C++/WinRT 中的 COM 智慧型指標類型&mdash;[**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 類型。
+更具體地說，我們將討論如何與「指標」介面互動。 為此，我們將受益於 C++/WinRT 中的 COM 智慧型指標類型&mdash;[**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 類型。
 
 ```cppwinrt
 #include <d2d1_1.h>
@@ -131,7 +131,7 @@ winrt::check_hresult(D2D1CreateFactory(
 
 您可以使用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) 免費函式，傳回投影類型物件的基礎原始 [IUnknown 介面](/windows/win32/api/unknwn/nn-unknwn-iunknown) 位址 (換句話說，就是指標)。 然後，將該位址傳遞給採用 **IUnknown** 介面指標的函式。
 
-如需「投影類型」  相關資訊，請參閱[使用 C++/WinRT 取用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
+如需「投影類型」相關資訊，請參閱[使用 C++/WinRT 取用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
 
 如需 **get_unknown** 的程式碼範例，請參閱 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown)，或本主題中[極簡 Direct2D 應用程式的完整原始程式碼清單](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application)。
 
@@ -168,9 +168,19 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>極簡 Direct2D 應用程式的完整原始程式碼清單
 
-如果您要建置並執行此原始程式碼範例，您必須先在 Visual Studio 中建立新的**核心應用程式 (C++/WinRT)** 。 `Direct2D` 是合適的專案名稱，但您可以隨意命名。
+> [!NOTE]
+> 如需安裝和為 C++/WinRT 開發設定 Visual Studio 的相關資訊&mdash;包括如何安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援)&mdash;，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+
+如果您想要建立並執行此原始程式碼範例，請先安裝 (或更新至) 最新版本的 C++ /WinRT Visual Studio 擴充功能 (VSIX)，請參閱上面的注意事項。 然後，在 Visual Studio 中，建立新的**核心應用程式 ( C++ /WinRT)** 。 `Direct2D` 是合適的專案名稱，但您可以隨意命名。 以 Windows SDK 最新的正式推出版本 (即非預覽版本) 為目標。
+
+### <a name="step-1-edit-pchh"></a>步驟 1. 編輯 `pch.h`
 
 開啟 `pch.h`，並在加入 `windows.h` 之後，立即新增 `#include <unknwn.h>`。 這是因為我們使用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown)。 每當使用 **winrt::get_unknown** 時，對 `#include <unknwn.h>` 而言的確是個不錯的選擇，即使該標頭已包含在另一個標頭中。
+
+> [!NOTE]
+> 如果您省略此步驟，則會看到組建錯誤 *'get_unknown': 找不到識別碼*。
+
+### <a name="step-2-edit-appcpp"></a>步驟 2. 編輯 `App.cpp`
 
 開啟 `App.cpp`、刪除整個內容，然後貼入下列清單。
 
@@ -504,7 +514,7 @@ using namespace winrt::Windows::Foundation;
 void MyFunction(IUnknown*); // error C2872:  'IUnknown': ambiguous symbol
 ```
 
-非限定名稱 IUnknown  在全域命名空間中發生衝突，因此造成「符號模稜兩可」  的編譯器錯誤。 您可以改為將 C++/WinRT 版的名稱隔離至 **winrt** 命名空間，如下所示。
+非限定名稱 IUnknown 在全域命名空間中發生衝突，因此造成「符號模稜兩可」的編譯器錯誤。 您可以改為將 C++/WinRT 版的名稱隔離至 **winrt** 命名空間，如下所示。
 
 ```cppwinrt
 namespace winrt
