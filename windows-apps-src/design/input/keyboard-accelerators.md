@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e2509743bf9e847fb740816e3552f4172cf644c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 694ab7a3897bdf13189d61ab70ed05b9169b834c
+ms.sourcegitcommit: 020d0ff0e5abf46b2ed660eac61251b32bf150bc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970703"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716036"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -331,7 +331,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 由於功能在應用程式之間各有不同，此建議不一定可行。
 
-| **編輯** | **常見鍵盤快速操作** |
+| **編輯中** | **常見鍵盤快速操作** |
 | ------------- | ----------------------------------- |
 | 開始編輯模式 | Ctrl + E |
 | 選取焦點所在控制項或視窗中的所有項目 | Ctrl + A |
@@ -530,8 +530,8 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 預覽輸入事件會在任何其他事件之前引發。 如果不處理這些事件，就會引發焦點所在元素的快速鍵，後面接著引發 KeyDown 事件。 兩個事件都會反昇直到已處理為止。
 
 
-![主要事件序列](images/accelerators/accelerators_keyevents.png)
-索引***鍵事件順序***
+![主要事件序列索引 ](images/accelerators/accelerators_keyevents.png)
+ ***鍵事件順序***
 
 事件的順序：
 
@@ -576,8 +576,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 我們建議將所有的鍵盤快速鍵當地語系化。 您可以在 XAML 宣告中使用標準 UWP 資源 (.resw) 檔案和 x:Uid 屬性來進行此作業。 在此範例中，Windows 執行階段會自動載入資源。
 
-![具有 uwp 資源](images/accelerators/accelerators_localization.png)
-的鍵盤快速鍵當地語系化使用***uwp 資源檔的鍵盤快速鍵當地語系化***
+![具有 UWP 資源的鍵盤快速鍵當地語系化使用 ](images/accelerators/accelerators_localization.png)
+ ***uwp 資源檔的鍵盤快速鍵當地語系化***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -602,8 +602,8 @@ void AddAccelerator(
       { 
         Modifiers = keyModifiers, Key = key
       };
-    accelerator.Invoked = handler;
-    this.KeyAccelerators.Add(accelerator);
+    accelerator.Invoked += handler;
+    this.KeyboardAccelerators.Add(accelerator);
   }
 ```
 
@@ -636,7 +636,7 @@ public class MyListView : ListView
 ## <a name="related-articles"></a>相關文章
 
 - [鍵盤互動](keyboard-interactions.md)
-- [便捷鍵](access-keys.md)
+- [存取金鑰](access-keys.md)
 
 ### <a name="samples"></a>範例
 
