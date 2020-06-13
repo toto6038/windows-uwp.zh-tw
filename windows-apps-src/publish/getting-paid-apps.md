@@ -6,12 +6,12 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: windows 10, uwp, 付款, 應用程式銷售, 應用程式收益, 支出, Microsoft Store 費用, 支付保留, 百分比
 ms.localizationpriority: medium
-ms.openlocfilehash: 5927e6636f1c5a60b4f3453e0493755176c649ad
-ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
+ms.openlocfilehash: 0d42677aeda694e2fc8924cee1832b62d98b15e5
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84334223"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746768"
 ---
 # <a name="getting-paid"></a>取得付款
 以下是有關接收您的應用程式、附加元件和廣告收益之付款的一些重要資訊。
@@ -40,7 +40,7 @@ Microsoft Store 費用適用於 Windows 市集收取的所有 App 銷售金額�
 > [!NOTE] 
 > 這些價格區間也適用於您從應用程式內提供的所有附加元件。
 
-每個價格區間對於市集所提供的貨幣都有對應值。 我們使用這些值協助您在全球以可資比較的價格帶來銷售應用程式。 不過，由於貨幣匯率隨時都在變化，因此確切的銷售金額可能會隨貨幣種類的不同而有些微差異。
+每個價格區間對於市集所提供的貨幣都有對應值。 我們使用這些值協助您在全球以可資比較的價格帶來銷售應用程式。 不過，由於貨幣匯率隨時都在變化，因此確切的銷售金額可能會隨貨幣種類的不同而有些微差異。 每月計算一次匯率。 根據您的交易發生的時間，會套用適當的匯率。 匯率和其實際的日期範圍會分別列在 exchangeRate 和 exchangeRateDate 資料行的支出報告中。
 
 您也有選項可以輸入您選擇以特定市場當地貨幣表示的自由格式價格。 這樣做時，除非您提交新價格的更新，否則不會調整價格 (即使轉換率變更)。 
 

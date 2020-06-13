@@ -6,12 +6,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 連絡人, 行事曆, 約會, 電子郵件訊息
 ms.localizationpriority: medium
-ms.openlocfilehash: 8abb3773b2fa18a25716baf641d04c7ad37a293c
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: b2e3f0b1d93d2b2c32e117f61fd7514077ca3923
+ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74255444"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756544"
 ---
 # <a name="contacts-my-people-and-calendar"></a>連絡人、朋友圈及行事曆
 
@@ -36,7 +36,7 @@ ms.locfileid: "74255444"
 ## <a name="related-topics"></a>相關主題
 
 * [約會 API 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Appointments)
-* [連絡人管理員 API 範例](https://code.msdn.microsoft.com/windowsapps/Contact-manager-API-sample-319bdcef)
-* [連絡人選擇器應用程式範例](https://code.msdn.microsoft.com/windowsapps/Contact-Picker-App-sample-fc6677a1)
-* [處理連絡人動作範例](https://code.msdn.microsoft.com/windowsapps/Handling-Contact-Actions-359380e2)
+* [連絡人管理員 API 範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Contact%20manager%20API%20sample)
+* [連絡人選擇器應用程式範例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/ContactPicker)
+* [處理連絡人動作範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/99866-Windows%208.1%20Store%20app%20samples/Handling%20Contact%20Actions)
 * [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)

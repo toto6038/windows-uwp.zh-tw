@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 21061105287c97b4a665dad791703dfab2e9ce8f
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 686ed66622efa9c73aa0ed7de64a719d7c441eb4
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233815"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746758"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>付款門檻、方式和時間範圍
 
@@ -19,7 +19,10 @@ ms.locfileid: "83233815"
 
 針對任何特定國家/地區，我們將使用 ACH/SEPA 或電匯支付款項。 此外，部分國家/地區支援 PayPal 做為付款方式。
 
-## <a name="number-of-days-for-payments-to-reach-payout-account"></a>款項進入支付帳戶所需的天數
+> [!NOTE]
+> 由於外部匯率的變更，確切的銷售金額可能會與另一貨幣有些許差異。 每月計算一次匯率。 根據您的交易發生的時間，會套用適當的匯率。 匯率和其實際的日期範圍會分別列在 exchangeRate 和 exchangeRateDate 資料行的支出報告中。
+
+## <a name="number-of-days-for-payments-to-reach-payout-account"></a>付款匯入支付帳戶的所需天數
 
 我們通常會在某個指定月份，於該月份的 15 日之前發送任何應付款項，但是還需要一天的時間，款項才會進入您的帳戶。 天數將取決於我們針對您的帳戶所使用的付款方式，如下所述。
 
@@ -39,7 +42,7 @@ ms.locfileid: "83233815"
 > [!NOTE]
 > 所有區域的付款閾值為 $50 美元。
 
-| Country                          | Azure Marketplace | 商店、廣告、混音器和 Minecraft | Office | PayPal 付款 |
+| Country                          | Azure Marketplace | 商店、廣告、Mixer 和 Minecraft | Office | PayPal 付款 |
 |----------------------------------|-------------------|------------------------------------------|--------|-----------------|
 | 阿富汗                      | 是               | 是                                      | 否     | 否              |
 | 阿爾巴尼亞                          | 是               | 是                                      | 是    | 是             |
@@ -73,10 +76,10 @@ ms.locfileid: "83233815"
 | 中國                            | 否                | 是                                      | 是    | 是             |
 | 哥倫比亞                         | 是               | 是                                      | 是    | 是             |
 | 葛摩                          | 是               | 是                                      | 否     | 否              |
-| 剛果民主共和國 (DRC)                      | 是               | 是                                      | 是    | 否              |
-| 剛果民主共和國               | 是               | 是                                      | 是    | 否              |
+| 剛果民主共和國                      | 是               | 是                                      | 是    | 否              |
+| 剛果共和國               | 是               | 是                                      | 是    | 否              |
 | 哥斯大黎加                       | 是               | 是                                      | 是    | 是             |
-| 象牙海岸的象牙海岸                    | 是               | 是                                      | 是    | 否              |
+| 象牙海岸                    | 是               | 是                                      | 是    | 否              |
 | 克羅埃西亞                          | 是               | 是                                      | 是    | 否              |
 | 賽浦路斯                           | 是               | 是                                      | 是    | 是             |
 | 捷克                          | 是               | 是                                      | 是    | 是             |
@@ -114,7 +117,7 @@ ms.locfileid: "83233815"
 | 約旦                           | 是               | 是                                      | 是    | 是             |
 | 哈薩克                       | 是               | 是                                      | 是    | 是             |
 | 肯亞                            | 是               | 是                                      | 是    | 是             |
-| 韓國（南部）                    | 是               | 是                                      | 是    | 否              |
+| 南韓                    | 是               | 是                                      | 是    | 否              |
 | 科威特                           | 是               | 是                                      | 是    | 是             |
 | 吉爾吉斯                       | 否                | 否                                       | 是    | 否              |
 | 寮國                             | 是               | 是                                      | 是    | 否              |
@@ -137,7 +140,7 @@ ms.locfileid: "83233815"
 | 摩洛哥                          | 是               | 是                                      | 是    | 否              |
 | 莫三比克                       | 是               | 是                                      | 是    | 是             |
 | 尼泊爾                            | 是               | 是                                      | 是    | 否              |
-| 荷蘭，                 | 是               | 是                                      | 是    | 是             |
+| 荷蘭                 | 是               | 是                                      | 是    | 是             |
 | 紐西蘭                      | 是               | 是                                      | 是    | 是             |
 | 尼加拉瓜                        | 是               | 是                                      | 是    | 是             |
 | 尼日                            | 是               | 是                                      | 是    | 否              |
