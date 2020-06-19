@@ -4,27 +4,27 @@ title: 應用程式內廣告
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.date: 03/25/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 96994566d19e03f1d85b751242331f04fef098ad
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 11d992baf42f320856134f0e8fba845c5ad61393
+ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210694"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84945926"
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
 >[!WARNING]
 > 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-使用 [[合作夥伴中心](https://partner.microsoft.com/dashboard)] 的 [**銷售**&gt;**應用程式內廣告**] 頁面，即可建立及管理的 ad 單位：
+使用合作夥伴中心的 [**銷售** &gt; **應用程式內廣告**] 頁面，即可建立及管理的 ad 單位： [Partner Center](https://partner.microsoft.com/dashboard)
 
 * 使用 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 的通用 Windows 平台 (UWP) 應用程式。
 * 先前發行的 Windows 8.x 和 Windows Phone 8.x 應用程式，使用[適用于 Windows 的 MICROSOFT ADVERTISING SDK 和 Windows Phone](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x)8.x。
 
 > [!IMPORTANT]
-> 自2018年10月31日起，新建立的產品就無法包含以 Windows Phone Windows 8.x 或更早版本為目標的套件。 如需詳細資訊，請參閱這[篇 blog 文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
+> 您無法再上傳使用 Windows Phone 8.x SDK 建立的新 XAP 套件。 已在存放中且具有 XAP 套件的應用程式將可繼續在 Windows 10 行動裝置上使用。 如需詳細資訊，請參閱這[篇 blog 文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 如需有關如何將這些 SDK 與應用程式整合來顯示廣告的詳細資訊，請參閱[使用 Microsoft Advertising SDK 在您的應用程式中顯示廣告](../monetize/display-ads-in-your-app.md)。
 
@@ -34,7 +34,7 @@ ms.locfileid: "79210694"
 
 若要在您的應用程式中建立[橫幅廣告](../monetize/banner-ads.md)、[插播式廣告](../monetize/interstitial-ads.md)或[原生廣告](../monetize/native-ads.md)的廣告單元：
 
-1.  移至合作夥伴中心內的**銷售**&gt;**應用程式內廣告** 頁面，然後按一下 **建立 ad 單位**。
+1.  移至合作夥伴中心內的**銷售** &gt; **應用程式內廣告**頁面，然後按一下 [**建立 ad 單位**]。
 2.  在 **\[應用程式名稱\]** 下拉式清單中，選取使用廣告單元所在的應用程式。
 3.  在 **\[廣告單元名稱\]** 欄位中，輸入廣告單元的名稱。 這可以是任何要用來識別報告用途廣告單元的描述性字串。
 4.  在 **\[廣告單元類型\]** 下拉式清單中選取廣告類型。
@@ -43,7 +43,7 @@ ms.locfileid: "79210694"
     * 如果您在應用程式中顯示插入式 video ad 或插入式橫幅廣告，請選取 [**影片插入式**] 或 [**橫幅插入式**] （請務必針對您要顯示的插入式 ad 類型選取適當的選項）。
     * 如果您要在應用程式中顯示原生廣告，請選取 [**原生**]。
 
-5. 在 **\[裝置系列\]** 下拉式清單中，選取使用廣告單元所在應用程式的目標裝置系列。 可用的選項包括： **\[UWP (Windows 10)\]** 、 **\[電腦/平板電腦 (Windows 8.1)\]** 或 **\[行動裝置 (Windows Phone 8.x)\]** 。
+5. 在 **\[裝置系列\]** 下拉式清單中，選取使用廣告單元所在應用程式的目標裝置系列。 可用的選項包括：**\[UWP (Windows 10)\]**、**\[電腦/平板電腦 (Windows 8.1)\]** 或 **\[行動裝置 (Windows Phone 8.x)\]**。
 
 6. 視需要設定下列其他設定：
 
@@ -51,18 +51,18 @@ ms.locfileid: "79210694"
     * 如果為橫幅廣告單元選取 **\[電腦/平板電腦 (Windows 8.1)\]** 或 **\[行動裝置 (Windows Phone 8.x)\]** 裝置系列，您可以選擇性選取 **\[在應用程式中顯示社群廣告\]** 以選擇加入[社群廣告](about-community-ads.md)。
 
 7.  如果您尚未設定所選應用程式的 COPPA 合規性，請選擇 [COPPA 合規性](#coppa)區段中的選項。
-8.  按一下 **\[建立廣告單元\]** 。
+8.  按一下 **\[建立廣告單元\]**。
 
-建立新的 ad 單位之後，它會出現在 [**銷售**&gt;**應用程式內廣告**] 頁面的 [可用的 ad 單位] 表格中。
+建立新的廣告單元後，廣告單元會顯示在 **\[創造營收\]** &gt; **\[應用程式內廣告\]** 頁面的可用廣告單元表格中。
 
 <span id="available-ad-units" />
 
 ## <a name="review-and-edit-ad-units"></a>檢閱和編輯廣告單元
 
-在您為帳戶中的一或多個應用程式建立 ad 單位之後，這些 ad 單位會顯示在 [**銷售**&gt;**應用程式內廣告**] 頁面底部的表格中。 此表格會顯示每個廣告單元的 **\[應用程式識別碼\]** 和 **\[廣告單元識別碼\]** ，以及其他資訊。 若要在應用程式中顯示廣告，您必須在程式碼中使用下列值。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](../monetize/set-up-ad-units-in-your-app.md)。
+建立一個或多個應用程式的廣告單元後，這些廣告單元會顯示在 **\[創造營收\]** &gt; **\[應用程式內廣告\]** 頁面底部的表格中。 此表格會顯示每個廣告單元的 **\[應用程式識別碼\]** 和 **\[廣告單元識別碼\]**，以及其他資訊。 若要在應用程式中顯示廣告，您必須在程式碼中使用下列值。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](../monetize/set-up-ad-units-in-your-app.md)。
 
-* 如果您的 app 顯示[橫幅廣告](../monetize/banner-ads.md)，請將這些值指派給 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 物件的 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 和 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 屬性。
-* 如果您的應用程式顯示[插播式廣告](../monetize/interstitial-ads.md)，請將這些值傳遞給 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 物件的 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 方法。
+* 如果您的 app 顯示[橫幅廣告](../monetize/banner-ads.md)，請將這些值指派給 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 物件的 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 和 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 屬性。
+* 如果您的應用程式顯示[插入式 ads](../monetize/interstitial-ads.md)，請將這些值傳遞至[InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad)物件的[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)方法。
 * 如果您的應用程式顯示[原生廣告](../monetize/native-ads.md)，請將這些值傳遞至**NativeAdsManagerV2**的函式。
   > [!IMPORTANT]
   > 每個廣告單元只能在一個應用程式中使用。 如果您在多個 app 中使用廣告單元，不會提供廣告給該廣告單元。
@@ -95,12 +95,12 @@ ms.locfileid: "79210694"
     > [!NOTE]
     > 本節中的其餘步驟僅適用于您選擇 [**修改預設設定**] 的情況。
 
-3. 在 **\[目標\]** 下拉式清單中選擇 **\[基準\]** ，為您的廣告流量分配設定預設設定。 這個預設設定將適用於所有市場，除了您定義市場特定設定的市場之外。
+3. 在 **\[目標\]** 下拉式清單中選擇 **\[基準\]**，為您的廣告流量分配設定預設設定。 這個預設設定將適用於所有市場，除了您定義市場特定設定的市場之外。
 4. 接著指定要在控制項中顯示付費網路 (依據廣告效果支付收益給您) 和其他廣告網路 (不依據廣告效果支付收益給您) 的廣告比率。 若要這樣做，請在 **\[付費廣告網路\]** 和 **\[其他廣告網路\]** 的 **\[權重\]** 欄位中輸入介於 0 到 100 之間的值。  
 5. 在 **\[付費廣告網路\]** 區段中，選取 **\[作用中\]** 欄中每個您要使用的[付費網路](#paid-networks)的核取方塊，然後使用 **\[排名\]** 欄中的箭號依排名順序排列網路 (這會指定控制項使用每個網路的頻率)。
 6. 如果您選取 **\[橫幅\]** 或 **\[插播式橫幅\]** 廣告單元，您會看到名為 **\[其他廣告網路\]** 的區段。 此區段中的網路不會依廣告效果讓您賺取收益。 這些網路會從來源顯示廣告，像是應用程式促銷活動。
 
-    在 **\[其他廣告網路\]** 區段中，選取 **\[作用中\]** 欄中您要使用的每個[其他網路](#other-networks)的核取方塊，然後使用 **\[排名\]** 欄中的箭號依排名順序排列網路 (這會指定控制項使用每個網路的頻率)。 以下是目前支援的其他網路：
+    在 [**其他 ad 網路**] 區段中，針對您要使用**的每**個[其他網路](#other-networks)選取 [作用中] 資料行中的核取方塊，然後使用 [**排名**] 資料行中的箭號，依序排列網路（這會指定您的控制項應該使用每個網路的頻率）。 以下是目前支援的其他網路：
 
 7. 對於您要覆寫預設流量分配設定的每個市場，在 **\[目標\]** 下拉式清單中選取市場，然後更新廣告網路選取項目和排名。
 8. 按一下 **\[建立廣告單元\]** (如果要建立新的廣告單元) 或 **\[儲存\]** (如果要編輯現有的廣告單元)。
@@ -158,7 +158,7 @@ ms.locfileid: "79210694"
 
 當您[建立 ad 單位](#create-ad-unit)或[選取現有的 ad 單位](#available-ad-units)時，如果所選取的 ad 單位應用程式至少有一次提交已到達應用程式認證流程中[的 [存放區](../publish/the-app-certification-process.md#in-the-store)] 步驟，則 [**保護法 children coppa 合規性**] 區段會出現在頁面底部。
 
-基於兒童線上隱私權保護法 (「COPPA」) 的立法宗旨，如果您的應用程式是針對 13 歲以下的兒童，您必須選取本區段中的 **\[這個應用程式是針對 13 歲以下的孩童\]** 。 如果您選取此選項，當傳送廣告到您的應用程式時，Microsoft 會採取步驟來停用其行為廣告服務。
+基於兒童線上隱私權保護法 (「COPPA」) 的立法宗旨，如果您的應用程式是針對 13 歲以下的兒童，您必須選取本區段中的 **\[這個應用程式是針對 13 歲以下的孩童\]**。 如果您選取此選項，當傳送廣告到您的應用程式時，Microsoft 會採取步驟來停用其行為廣告服務。
 
 您選擇的 **\[COPPA 合規性\]** 設定會自動套用到所選應用程式的所有廣告單元。
 

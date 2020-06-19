@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce9d15139d45cce01feb979f18167abee89a1f28
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 73b9ba40eb11d67e82ca3014c2758746d45df40f
+ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82558820"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84978390"
 ---
 # <a name="keyboard-events"></a>鍵盤事件
 
@@ -94,12 +94,12 @@ void MyProject::MainPage::Grid_KeyUp(
 
 所有鍵盤事件都是使用 [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) 代表事件資料，**KeyRoutedEventArgs** 包含下列屬性：
 
--   [**機碼**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**擊鍵**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
 -   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**已處理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
 -   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (繼承自 [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
-### <a name="key"></a>機碼
+### <a name="key"></a>Key
 
 如果按下按鍵，會引發 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 事件。 同樣的，如果放開按鍵，會引發 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件。 通常您接聽事件是為了處理特定的按鍵值。 若要判斷按下或放開的是哪一個按鍵，請檢查事件資料中的 [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) 值。 **Key** 會傳回 [**VirtualKey**](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKey) 值。 **VirtualKey** 列舉包括所有受支援的按鍵。
 
@@ -319,7 +319,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler 和已處理的鍵盤事件
 
-您可以使用一項特別的技術，以附加可以在已標示為處理過的事件上作用的處理常式。 這項技術會使用[**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)方法來註冊處理常式，而不是使用 XAML 屬性或語言特定語法來新增處理常式，例如 C\#中的 + =。
+您可以使用一項特別的技術，以附加可以在已標示為處理過的事件上作用的處理常式。 這項技術會使用[**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)方法來註冊處理常式，而不是使用 XAML 屬性或語言特定語法來新增處理常式，例如 C 中的 + = \# 。
 
 這項技術的一般限制在於 **AddHandler** API 是採用一個 [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent) 類型的參數來識別相關的路由事件。 並非所有路由事件都提供 **RoutedEvent** 識別項，因此這項考量也就影響到哪些路由事件仍然可以在 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 案例中處理。 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 與 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件在 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 上已有路由事件識別項 ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) 與 [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent))。 不過，其他事件 (例如 [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)) 並沒有路由事件識別項，因此也就不能與 **AddHandler** 技術搭配使用。
 
@@ -365,9 +365,9 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 例如，[**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) ([**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的基礎類別) 會處理 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)，這樣它就可以檢查空格鍵或 Enter 鍵。 **ButtonBase** 將 **KeyUp** 視為等同滑鼠左鍵，可以引發 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 事件的處理會在 **ButtonBase** 覆寫虛擬方法 [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup) 時完成。 在實作中，它會將 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 設定成 **true**。 以空格鍵為例，結果是接聽按鍵事件的任何父按鈕，都不會收到自己的處理常式的已處理事件。
 
-另一個範例是 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)。 **TextBox** 並不將某些按鍵 (例如方向鍵) 視為文字，而是視為控制項 UI 特定的行為。 **TextBox** 會將這些事件案例標示為已處理。
+另一個範例是 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)。 某些按鍵（例如方向鍵）不會依**文字方塊**視為文字，而是會被視為控制項 UI 行為的特定索引鍵。 **TextBox** 會將這些事件案例標示為已處理。
 
-自訂控制項可以藉由覆寫[**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown) / [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup)，來實作為主要事件的類似覆寫行為。 如果您的自訂控制項會處理特定的快速鍵，或具有類似於針對 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 所述之情況的控制項或焦點行為，就應該將這個邏輯放入您自己的 **OnKeyDown** / **OnKeyUp** 覆寫中。
+自訂控制項可以藉由覆寫[**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown)OnKeyUp，來實作為主要事件的類似覆寫行為  /  [** **](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup)。 如果您的自訂控制項會處理特定的快速鍵，或具有類似於針對 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 所述之情況的控制項或焦點行為，就應該將這個邏輯放入您自己的 **OnKeyDown** / **OnKeyUp** 覆寫中。
 
 ## <a name="the-touch-keyboard"></a>觸控式鍵盤
 

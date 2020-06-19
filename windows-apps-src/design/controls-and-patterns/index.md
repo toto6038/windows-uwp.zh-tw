@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 82e6d91b5a4147237cd04b46dc5b69b8151fece9
+ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80218448"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84978380"
 ---
 # <a name="controls-for-windows-apps"></a>Windows 應用程式控制項
 
@@ -32,7 +32,7 @@ ms.locfileid: "80218448"
 :::row:::
     :::column:::
       <p><b><a href="controls-and-events-intro.md">新增控制項和處理事件</a></b> <br/>
-將控制項新增到應用程式有 3 個主要步驟︰將控制項新增到應用程式 UI、在控制項上設定屬性，以及將程式碼新增到控制項的事件處理常式以便使其執行某些功能。</p>
+將控制項新增到應用程式有 3 個主要步驟：將控制項新增到應用程式 UI、在控制項上設定屬性，以及將程式碼新增到控制項的事件處理常式以便使其執行某些功能。</p>
     :::column-end:::
     :::column:::
       <p><b><a href="xaml-styles.md">設定控制項的樣式</a></b> <br/>
@@ -95,8 +95,8 @@ ms.locfileid: "80218448"
 - [個人圖片](person-picture.md) ![WinUI 標誌](images/winui-logo-16x16.png)
 - [樞紐分析](pivot.md)
 - [進度列](progress-controls.md) ![WinUI 標誌](images/winui-logo-16x16.png)
-- [進度環](progress-controls.md)
-- [選項按鈕](radio-button.md)
+- [進度環](progress-controls.md) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [選項按鈕](radio-button.md) ![WinUI 標誌](images/winui-logo-16x16.png)
 - [評分控制項](rating.md) ![WinUI 標誌](images/winui-logo-16x16.png)
 - [重複按鈕](buttons.md#create-a-repeat-button)
 - [Rich Edit 方塊](rich-edit-box.md)
