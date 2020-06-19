@@ -6,25 +6,25 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 584d327fc4882db6d3bf8d0cfd2a84b13023c6f4
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 7ff826be0f5b0b8e9a6723fbb1593663f1748c3d
+ms.sourcegitcommit: d708ac4ec4fac0135dafc0d8c5161ef9fd945ce7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684844"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069470"
 ---
 # <a name="bluetooth-developer-faq"></a>藍牙開發人員常見問題集
 
 本文包含 UWP 藍牙 API 常見問題的解答。
 
 ## <a name="what-apis-do-i-use-bluetooth-classic-rfcomm-or-bluetooth-low-energy-gatt"></a>我使用何種 API？ 藍牙傳統 (RFCOMM) 或藍牙低功耗 (GATT)？
-這個一般主題在線上有各種討論，因此讓我們直接鎖定在與 Windows 有關的差異。 以下是一些一般指導方針︰
+這個一般主題在線上有各種討論，因此讓我們直接鎖定在與 Windows 有關的差異。 以下有幾個一般方針︰
 
 ### <a name="bluetooth-le-windowsdevicesbluetoothgenericattributeprofile"></a>藍牙 LE (Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 當您與支援藍牙低功耗的裝置進行通訊時，請使用 GATT API。 如果您的使用案例不頻繁、低頻寬，或需要低電力，則藍牙低能量是解答。 包括這項功能的主要命名空間是 [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)。 
 
-**不使用 Bluetooth LE 的時機**
+**不使用藍牙 LE 時**
 - 高頻寬、高頻率案例。 如果您需要一直與大量資料同步，請考慮使用藍牙傳統，或甚至使用 WiFi。 
 
 ### <a name="bluetooth-classic-windowsdevicesbluetoothrfcomm"></a>藍牙傳統 (Windows.Devices.Bluetooth.Rfcomm)
@@ -63,7 +63,7 @@ RFCOMM Api 為開發人員提供通訊端來執行雙向序列埠樣式通訊。
 
 使用 Bluetooth RFCOMM （傳統）時，您不需要配對裝置，就可以使用它們。 從 Windows 10 版本 1607 開始，您可以直接查詢附近的裝置並和它們連接。 已更新的 [RFCOMM 聊天範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) (英文) 說明這個功能。 
 
-**(14393 和以下)** 藍牙低功耗 (GATT 用戶端) 不適用這項功能，因此您還是需要透過 [設定] 頁面，或使用 [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) API 來配對，才能存取這類裝置。
+**（14393和以下）** 這項功能不適用於藍牙低功耗（GATT 用戶端），因此您仍然必須透過 [設定] 頁面或使用 [ [Windows 裝置] 列舉](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)api 來存取這些裝置。
 
 **(15030 和以上)** 不再需要配對藍牙裝置。 使用新的 Async API，例如 GetGattServicesAsync and GetCharacteristicsAsync，以查詢遠端裝置的目前狀態。 如需詳細資料，請參閱[用戶端文件](gatt-client.md)。 
 
@@ -72,14 +72,14 @@ RFCOMM Api 為開發人員提供通訊端來執行雙向序列埠樣式通訊。
 
 ## <a name="do-all-windows-devices-support-peripheral-role"></a>所有 Windows 裝置都支援周邊角色嗎？
 
-不。 這是與硬體相關的功能，但提供了方法（BluetoothAdapter. IsPeripheralRoleSupported）來查詢是否受支援。  目前支援的裝置包括 8992+ 上的 Windows Phone 以及 RPi3 (Windows IoT)。 
+否。 這是與硬體相關的功能，但提供了方法（BluetoothAdapter. IsPeripheralRoleSupported）來查詢是否受支援。  目前支援的裝置包括 8992+ 上的 Windows Phone 以及 RPi3 (Windows IoT)。 
 
 ## <a name="can-i-access-these-apis-from-win32"></a>我可以從 Win32 存取這些 API 嗎？
 
 是，所有這些 API 應該都會運作。 這個部落格詳述呼叫[傳統型應用程式中的 Windows API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/) 的方式。 
-## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>「-在這裡插入 SKU-」 上具有這項功能嗎？
+## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>「-在這裡插入 SKU-」** 上具有這項功能嗎？
 
 **藍牙 LE**︰ 是，所有功能都在 OneCore 中，而且應該適用於具有正常運作之藍牙 LE 堆疊的最新裝置。 
 > 警告：週邊設備角色與硬體相關，而有些 Windows Server 版本不支援藍牙。 
 
-**BLUETOOTH BR/EDR （傳統）** ：有一些變化存在，但大部分的設定檔層級支援非常相似。 請參閱[RFCOMM](send-or-receive-files-with-rfcomm.md)上的檔，以及這些適用于[PC](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles)和[手機](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)的支援設定檔
+**BLUETOOTH BR/EDR （傳統）**：有一些變化存在，但大部分的設定檔層級支援非常相似。 請參閱[RFCOMM](send-or-receive-files-with-rfcomm.md)上的檔，以及這些適用于[PC](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles)和[手機](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)的支援設定檔

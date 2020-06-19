@@ -10,25 +10,25 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 1fb1a971e897bc88d090c589b266542c6de2d1c9
-ms.sourcegitcommit: b432a639fb3d15ebd22d429ccee4dbb03e8550ca
+ms.openlocfilehash: 2c48b4bbfb7fb361b598722d070962db32665042
+ms.sourcegitcommit: d708ac4ec4fac0135dafc0d8c5161ef9fd945ce7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77778519"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069462"
 ---
 # <a name="bluetooth-rfcomm"></a>藍牙 RFCOMM
 
 **重要 API**
 
 - [**Windows. 藍牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Windows. Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
+- [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
 本文將概略說明通用 Windows 平台 (UWP) app 中的藍牙 RFCOMM，並提供範例程式碼來說明如何傳送或接收檔案。
 
 ## <a name="overview"></a>概觀
 
-[  **Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) 命名空間中的 API 建構在適用於 Windows 裝置的現有模式上，包括 [**enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 和 [**instantiation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice)。 資料讀取和寫入是為了利用 [**established data stream patterns**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 和 [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 中的物件所設計。 服務探索通訊協定 (SDP) 屬性具有值和預期的類型。 但是一些常見裝置的 SDP 屬性實作有誤，導致值並非預期的類型。 此外，許多 RFCOMM 的用法完全不需要額外的 SDP 屬性。 基於這些理由，此 API 提供未剖析之 SDP 資料的存取，開發人員可藉此取得所需的資訊。
+[**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) 命名空間中的 API 建構在適用於 Windows 裝置的現有模式上，包括 [**enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 和 [**instantiation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice)。 資料讀取和寫入是為了利用 [**established data stream patterns**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 和 [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 中的物件所設計。 服務探索通訊協定 (SDP) 屬性具有值和預期的類型。 但是一些常見裝置的 SDP 屬性實作有誤，導致值並非預期的類型。 此外，許多 RFCOMM 的用法完全不需要額外的 SDP 屬性。 基於這些理由，此 API 提供未剖析之 SDP 資料的存取，開發人員可藉此取得所需的資訊。
 
 RFCOMM API 運用了服務識別碼的概念。 雖然服務識別碼只是 128 位元的 GUID，但也通常會指定為 16 或 32 位元的整數。 RFCOMM API 為服務識別碼提供一個包裝函式，使它們可指定和做為 128 位元的 GUID 及 32 位元的整數使用，但不提供 16 位元的整數。 這對 API 而言不是問題，因為語言將自動轉換成 32 位元的整數，而且仍然可以正確地產生識別碼。
 
@@ -38,9 +38,9 @@ app 可以在背景工作中執行多步驟的裝置作業，因此即使 app �
 
 ## <a name="send-a-file-as-a-client"></a>以用戶端身分傳送檔案
 
-傳送檔案時，依據所需的服務連線至成對裝置，是最基本的案例。 這牽涉到下列步驟：
+傳送檔案時，依據所需的服務連線至成對裝置，是最基本的案例。 請執行下列步驟：
 
-- 您可以使用**RfcommDeviceService. GetDeviceSelector\*** 函數來產生 AQS 查詢，以便用來列舉所需服務的配對裝置實例。
+- 使用**RfcommDeviceService. GetDeviceSelector \* **函式可協助產生 AQS 查詢，以便用來列舉所需服務的配對裝置實例。
 - 選擇一個列舉裝置、建立一個 [**RfcommDeviceService**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)，並視需要讀取 SDP 屬性 (使用 [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 剖析屬性的資料)。
 - 建立通訊端，並且使用[**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) 和 [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) 屬性以[**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 至具有適當參數的遠端裝置服務。
 - 遵循建立的資料串流模式以讀取檔案中的資料區塊，並在通訊端的 [**StreamSocket.OutputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream) 上將它傳送至裝置。
