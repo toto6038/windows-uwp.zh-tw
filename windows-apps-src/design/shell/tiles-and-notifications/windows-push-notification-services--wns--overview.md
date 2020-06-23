@@ -5,14 +5,14 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 03/06/2020
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4a0a2d532341e76d6ff74dda9b6b6a8638c77fd
-ms.sourcegitcommit: b398966fc052b232e03f2e32512a48d3a4444b8c
+ms.openlocfilehash: fa70346dc6033ac1f879a1c2429c3c4222b8c0ec
+ms.sourcegitcommit: 368660812e143de5def5e5328a2eadb178cd5544
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80367672"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85129105"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀 
 
@@ -41,8 +41,8 @@ Windows Push Notification Services （WNS）可讓協力廠商開發人員從他
 
 您的應用程式必須先向合作夥伴中心儀表板註冊，才可以透過 WNS 傳送通知。 這樣做會將您應用程式的認證提供給您，您的雲端服務向 WNS 進行驗證時要使用該認證。 這些認證由套件安全性識別碼 (SID) 與祕密金鑰組成。 若要執行此註冊，請登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。 建立應用程式之後，請參閱[產品管理-](https://apps.dev.microsoft.com/)適用于 INSTRUNCTIONS 的 WNS/MPNS，以瞭解如何取得認證（如果您想要使用 live services 解決方案，請遵循此頁面上的**live services 網站**連結）。
 
-若要註冊：
-1.    移至合作夥伴中心的 [Windows Store 應用程式] 頁面，並使用您的個人 Microsoft 帳戶登入（例如： johndoe@outlook.com，janedoe@xboxlive.com）。
+註冊：
+1.    移至合作夥伴中心的 [Windows Store 應用程式] 頁面，並使用您的個人 Microsoft 帳戶登入（例如： johndoe@outlook.com 、 janedoe@xboxlive.com ）。
 2.    登入之後，請按一下 [儀表板] 連結。
 3.    在儀表板上，選取 [建立新的應用程式]。
 
@@ -86,9 +86,9 @@ Windows Push Notification Services （WNS）可讓協力廠商開發人員從他
 
 ### <a name="important-notes"></a>重要事項
 
--   我們不保證應用程式的通知通道 URI 一律保持相同。 我們建議每次執行應用程式時要求新通道，並在 URI 變更時更新本身的服務。 開發人員不得修改通道 URI，而是要將它視為黑箱字串。 在這個時候，通道 URI 會在 30 天後到期。 如果您的 Windows 10 應用程式會在背景定期更新其通道，您可以下載 Windows 8.1 的[推播和定期通知範例](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603)，並重複使用其原始程式碼和（或）其所示範的模式。
+-   我們不保證應用程式的通知通道 URI 一律保持相同。 我們建議每次執行應用程式時要求新通道，並在 URI 變更時更新本身的服務。 開發人員不得修改通道 URI，而是要將它視為黑箱字串。 在這個時候，通道 URI 會在 30 天後到期。 如果您的 Windows 10 應用程式會在背景中定期更新其通道，您可以下載適用於 Windows 8.1 的[推播與定期通知範例](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603)，並重複使用其原始原始碼和/或其示範的模式。
 -   雲端服務與用戶端應用程式之間的介面要由您 (開發人員) 實作。 我們建議應用程式完成與本身服務的驗證程序，並透過安全通訊協定 (像是 HTTPS) 傳輸資料。
--   雲端服務務必確定通道 URI 使用「notify.windows.com」網域，這一點非常重要。 在任何情況下服務都不可以將通知推播至其他任何網域的通道。 如果應用程式的回呼遭到竄改，惡意攻擊者可能會提交通道 URI 來詐騙 WNS。 如果不檢查網域，您的雲端服務可能會不知不覺地將資訊曝露給攻擊者。
+-   雲端服務務必確定通道 URI 使用「notify.windows.com」網域，這一點非常重要。 在任何情況下服務都不可以將通知推播至其他任何網域的通道。 如果應用程式的回呼遭到竄改，惡意攻擊者可能會提交通道 URI 來詐騙 WNS。 在不檢查網域的情況下，您的雲端服務可能會在不知情的情況下洩漏此攻擊者的資訊。
 -   如果您的雲端服務嘗試將通知傳遞到已過期的通道，WNS 將傳回[回應碼 410](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))。 您回應這該代碼的方式為讓您的服務不繼續嘗試傳送通知到該 URI。
 
 ## <a name="authenticating-your-cloud-service"></a>驗證您的雲端服務
@@ -104,7 +104,7 @@ WNS 驗證配置使用 [OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-
 
 ![雲端服務驗證的 WNS 圖表](images/wns-diagram-02.jpg)
 
-在向 WNS 進行驗證時，雲端服務會透過安全通訊端階層 (SSL) 提交 HTTP 要求。 參數使用「application/x-www-for-urlencoded」格式提供。 在 [用戶端\_識別碼] 欄位中提供您的套件 SID，並在 [用戶端\_密碼] 欄位中提供您的秘密金鑰，如下列範例所示。 如需語法詳細資訊，請參閱[存取權杖要求](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))參考。
+在向 WNS 進行驗證時，雲端服務會透過安全通訊端階層 (SSL) 提交 HTTP 要求。 參數使用「application/x-www-for-urlencoded」格式提供。 在 [用戶端 \_ 識別碼] 欄位和 [用戶端密碼] 欄位中的秘密金鑰中提供您的套件 SID， \_ 如下列範例所示。 如需語法詳細資訊，請參閱[存取權杖要求](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))參考。
 
 > [!NOTE]
 > 這只是一個範例，而非剪下並貼上程式碼，您可以在自己的程式碼中順利使用。 
@@ -194,21 +194,21 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 ## <a name="push-notifications-and-battery-saver"></a>推播通知和省電模式
 
 
-省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 當電池低於指定的閾值時，Windows 10 可讓使用者將電池保護設定為自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 電池保護設定（可在 [**設定**] 應用程式中找到）可讓您的應用程式接收推播通知，即使電池保護已開啟也是一樣。
+省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 Windows 10 可讓使用者設定省電模式，以便在電池電力低於指定的閾值時自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 省電模式設定 (可在 **\[設定\]** 應用程式中找到) 可讓您的應用程式即使在省電模式開啟時，也會接收到推播通知。
 
--   **允許在省電模式中接收來自任何應用程式的推播通知**：此設定可讓所有應用程式在省電模式開啟時接收推播通知。 請注意，此設定僅適用于 Windows 10 傳統型版本（家用版、專業版、企業版和教育版）。
+-   **允許在省電模式中接收來自任何應用程式的推播通知**：此設定可讓所有應用程式在省電模式開啟時接收推播通知。 請注意，此設定僅適用於傳統型版本的 Windows 10 (家用版、專業版、企業版及教育版)。
 -   **一律允許**：此設定可讓特定應用程式在省電模式開啟時，於背景執行，包括接收推播通知。 此清單是由使用者手動維護。
 
-沒有任何方式檢查這兩個設定的狀態，無法您可以檢查省電模式的狀態。 在 Windows 10 中，請使用[**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus)屬性來檢查電池保護狀態。 您的應用程式也可以使用 [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) 事件接聽省電模式的變更。
+沒有任何方式檢查這兩個設定的狀態，無法您可以檢查省電模式的狀態。 在 Windows 10 中，使用 [**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus) 屬性檢查省電模式狀態。 您的應用程式也可以使用 [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) 事件接聽省電模式的變更。
 
-如果您的應用程式非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 使用 Windows 10 中的節電設定 URI 配置 `ms-settings:batterysaver-settings`，您可以提供 [設定] 應用程式的方便連結。
+如果您的應用程式非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 您可以在 Windows 10 中使用省電模式設定 URI 配置 `ms-settings:batterysaver-settings`，以便為 [設定] 應用程式提供方便的連結。
 
 > [!TIP]
 > 當通知使用者有關電池保護設定時，建議您提供一種方法來抑制未來的訊息。 例如，以下範例中的 `dontAskMeAgainBox` 核取方塊會在 [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中保存使用者的喜好設定。
 
  
 
-以下範例說明如何在 Windows 10 中檢查是否已開啟電池保護。 此範例會通知使用者並啟動 [設定] 應用程式以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
+以下是如何在 Windows 10 中檢查省電模式是否開啟的範例。 此範例會通知使用者並啟動 [設定] 應用程式以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
 
 ```cs
 using System;
@@ -281,11 +281,11 @@ async public void CheckForEnergySaving()
 * [傳送本機磚通知](sending-a-local-tile-notification.md)
 * [快速入門：傳送推播通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
 * [如何透過推播通知更新徽章](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
-* [如何要求、建立和儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [如何攔截執行中應用程式的通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
-* [如何使用 Windows 推播通知服務（WNS）進行驗證](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [如何要求、建立以及儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [如何攔截執行應用程式的通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [如何使用 Windows 推播通知服務 (WNS) 進行驗證](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
 * [推播通知服務要求和回應標頭](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
-* [推播通知的方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [推播通知的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 * [原始通知](https://docs.microsoft.com/previous-versions/windows/apps/hh761488(v=win.10))
  
 
