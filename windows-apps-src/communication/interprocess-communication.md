@@ -4,12 +4,12 @@ description: 本主題說明在通用 Windows 平臺（UWP）應用程式與 Win
 ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp
-ms.openlocfilehash: 2407a54439157be16b186b48759746238962f8b4
-ms.sourcegitcommit: 2d375e1c34473158134475af401532cc55fc50f4
+ms.openlocfilehash: 5db029db3ffb538802f39aa616c96dbe75601eac
+ms.sourcegitcommit: bf7d4f6739aeeaac735aae3dd0dcbda63a8c5e69
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888506"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256378"
 ---
 # <a name="interprocess-communication-ipc"></a>處理序之間通訊 (IPC)
 
@@ -29,11 +29,11 @@ App service 可讓應用程式在背景中公開接受和傳回基本類型（[*
 
 具有[runFullTrust](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)功能的已封裝應用程式可以透過[套件資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/element-com-extension)，為 IPC 註冊跨進程的 COM 伺服器。 這就是所謂的[封裝 COM](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge/)。
 
-## <a name="filesystem"></a>內
+## <a name="filesystem"></a>Filesystem
 
 ### <a name="broadfilesystemaccess"></a>BroadFileSystemAccess
 
-封裝的應用程式可以藉由宣告[broadFileSystemAccess](/windows/uwp/files/file-access-permissions#accessing-additional-locations)限制的功能，使用廣泛的檔案系統來執行 IPC。
+封裝的應用程式可以藉由宣告[broadFileSystemAccess](/windows/uwp/files/file-access-permissions#accessing-additional-locations)限制的功能，使用廣泛的檔案系統來執行 IPC。 這項功能會授與[Windows 存放區](/uwp/api/Windows.Storage)api，並[xxxFromApp](/previous-versions/windows/desktop/legacy/mt846585(v=vs.85)) Win32 api 存取廣泛的檔案系統。
 
 根據預設，已封裝應用程式的檔案系統的 IPC 僅限於本節所述的其他機制。
 
@@ -73,27 +73,27 @@ App service 可讓應用程式在背景中公開接受和傳回基本類型（[*
 
 為了維護安全性和網路隔離，已封裝的應用程式預設會封鎖 IPC 的回送連接。 您可以使用[功能](/previous-versions/windows/apps/hh770532(v=win.10))和[資訊清單屬性](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)，在受信任的封裝應用程式之間啟用回送連接。
 
-* 所有參與回送連接的封裝應用程式，都必須在其[封裝資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/element-capability)中宣告 `privateNetworkClientServer` 功能。
+* 所有參與回送連接的封裝應用程式，都必須 `privateNetworkClientServer` 在其[封裝資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/element-capability)中宣告功能。
 * 兩個已封裝的應用程式可以透過回送來進行通訊，方法是在其封裝指令[清單內](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)
     * 每個應用程式都必須在其[LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)中列出另一個。 用戶端會為伺服器宣告「out」規則，而伺服器會針對其支援的用戶端宣告「in」規則。
 
 > [!NOTE]
 > 在開發期間，您可以透過 [套件資訊清單編輯器]，Visual Studio 在 add-appxpackage 中找到識別應用程式所需的套件系列名稱，或透過 Microsoft Store 或已安裝之應用程式的[Get-AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell 命令，從[合作夥伴中心](/windows/uwp/publish/view-app-identity-details)取得。
 
-未封裝的應用程式和服務沒有套件身分識別，因此無法在[LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)中宣告。 您可以設定封裝的應用程式，透過[CheckNetIsolation](/previous-versions/windows/apps/hh780593(v=win.10))透過回送與未封裝的應用程式和服務進行連線，但這只適用于您具有機器本機存取權的側載或偵測案例，而且您具有系統管理員許可權。
+未封裝的應用程式和服務沒有套件身分識別，因此無法在[LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)中宣告。 您可以設定封裝的應用程式，透過[CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))透過回送與未封裝的應用程式和服務進行連線，但這只適用于您具有機器本機存取權的側載或偵測案例，而且您具有系統管理員許可權。
 
-* 參與回送連線的所有已封裝應用程式都必須在其[封裝資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/element-capability)中宣告 `privateNetworkClientServer` 功能。
-* 如果封裝的應用程式要連接到未封裝的應用程式或服務，請執行 `CheckNetIsolation.exe LoopbackExempt -a -n=<PACKAGEFAMILYNAME>`，為封裝的應用程式新增回送豁免。
-* 如果未封裝的應用程式或服務正在連接到封裝的應用程式，請執行 `CheckNetIsolation.exe LoopbackExempt -is -n=<PACKAGEFAMILYNAME>`，讓已封裝的應用程式能夠接收輸入回送連接。
-    * 當封裝的應用程式正在接聽連接時， [CheckNetIsolation](/previous-versions/windows/apps/hh780593(v=win.10))必須持續執行。
-    * `-is` 旗標是在 Windows 10 版本1607（10.0;）中引進組建14393）。
+* 參與回送連線的所有已封裝應用程式都必須 `privateNetworkClientServer` 在其[封裝資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/element-capability)中宣告功能。
+* 如果封裝的應用程式要連接到未封裝的應用程式或服務，請執行 `CheckNetIsolation.exe LoopbackExempt -a -n=<PACKAGEFAMILYNAME>` 來為封裝的應用程式新增回送豁免。
+* 如果未封裝的應用程式或服務正在連接到已封裝的應用程式，請執行， `CheckNetIsolation.exe LoopbackExempt -is -n=<PACKAGEFAMILYNAME>` 讓封裝的應用程式能夠接收輸入回送連接。
+    * 當封裝的應用程式正在接聽連接時， [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))必須持續執行。
+    * 此 `-is` 旗標是在 Windows 10 版本1607（10.0;）中引進的組建14393）。
 
 > [!NOTE]
-> 在開發期間，您可以透過 [套件資訊清單編輯器] Visual Studio [CheckNetIsolation](/previous-versions/windows/apps/hh780593(v=win.10))旗標所 `-n` 需的套件系列名稱，其方式是透過 Microsoft Store 或已安裝之應用程式的[add-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell 命令，從[合作夥伴中心](/windows/uwp/publish/view-app-identity-details)取得
+> CheckNetIsolation.exe旗標所需的套件系列名稱 `-n` ，可以在開發期間透過 [套件資訊清單編輯器] 中的 Visual Studio 找到，或透過 [[合作夥伴中心](/windows/uwp/publish/view-app-identity-details)]，針對已安裝的應用程式透過 Microsoft Store 或 Add-appxpackage PowerShell 命令[取得](/powershell/module/appx/get-appxpackage?view=win10-ps)。 [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))
 
-[CheckNetIsolation](/previous-versions/windows/apps/hh780593(v=win.10))也很適合用來進行[網路隔離問題的調試](/previous-versions/windows/apps/hh780593(v=win.10)#debug-network-isolation-issues)程式。
+[CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))也很適合用來進行[網路隔離問題的調試](/previous-versions/windows/apps/hh780593(v=win.10)#debug-network-isolation-issues)程式。
 
-## <a name="pipes"></a>Ray
+## <a name="pipes"></a>管道
 
 [管道](/windows/win32/ipc/pipes)可讓管道伺服器與一或多個管道用戶端之間進行簡單的通訊。
 
@@ -101,7 +101,7 @@ App service 可讓應用程式在背景中公開接受和傳回基本類型（[*
 
 * 根據預設，只有在相同封裝內的進程之間才支援已封裝應用程式中的具名管道，除非進程是完全信任的。
 * 具名管道可以透過[共用命名物件](/windows/uwp/communication/sharing-named-objects)的指導方針，在封裝之間共用。
-* 封裝應用程式中的具名管道必須使用 `\\.\pipe\LOCAL\` 管線名稱的語法。
+* 封裝應用程式中的具名管道必須使用 `\\.\pipe\LOCAL\` 管道名稱的語法。
 
 ## <a name="registry"></a>登錄
 
