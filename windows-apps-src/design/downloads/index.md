@@ -3,16 +3,16 @@ description: 取得適用於 Windows 應用程式使用者介面配置和控制�
 keywords: uwp 應用程式配置, UI, 使用者介面, 下載, uwp 工具, windows 應用程式配置, windows 使用者介面工具
 title: 設計 Windows 應用程式的工具組和範例
 ms.date: 03/23/2020
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2528ae4dabf072872ce765eb7bfd696c2b29d3f7
-ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
+ms.openlocfilehash: 8336da43767931c439ea79fd9e3824f1a4cc3893
+ms.sourcegitcommit: 47899c30a39087bca1f058a4395cf58daacf5ae9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746778"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345482"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>設計 Windows 應用程式的工具組和範例
 

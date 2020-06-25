@@ -1,17 +1,15 @@
 ---
 title: 使用 winget 工具來安裝和管理應用程式
 description: winget 命令列工具可讓開發人員在 Windows 10 電腦上探索、安裝、升級、移除和設定應用程式。
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d6280d725681704c41e0bbdb59c2a08fb75c302
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 3b3f108de117fb937a7a670497a4a1a1d5810aca
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580045"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334531"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>使用 winget 工具來安裝和管理應用程式
 
@@ -59,7 +57,7 @@ ms.locfileid: "83580045"
 
 目前的 **winget** 工具預覽版支援下列命令。
 
-| 命令 | 說明 |
+| 命令 | 描述 |
 |---------|-------------|
 | [hash](hash.md) | 產生安裝程式的 SHA256 雜湊。 |
 | [說明](help.md) | 顯示 **winget** 工具命令的說明。 |
@@ -73,7 +71,7 @@ ms.locfileid: "83580045"
 
 目前的 **winget** 工具預覽版支援下列選項。
 
-| 選項 | 說明 |
+| 選項 | 描述 |
 |--------------|-------------|
 | **-v,--version** | 此選項會傳回目前的 winget 版本。 |
 | **--info** |  info 會提供您有關 winget 的所有詳細資訊，包括授權和隱私權聲明的連結。 |
