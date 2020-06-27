@@ -2,105 +2,87 @@
 title: 管理遊戲流程
 description: 了解如何初始化遊戲狀態、處理事件，以及設定遊戲更新迴圈。
 ms.assetid: 6c33bf09-b46a-4bb5-8a59-ca83ce257eb3
-ms.date: 10/24/2017
+ms.date: 06/24/2020
 ms.topic: article
-keywords: windows 10, uwp, games, directx, 遊戲
+keywords: windows 10, uwp, games, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e4d8f43893b5f2a9a58c2eb6209ecb7d8dd1c21
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 181eca743a9ccdc76ebfc1302e8bb04d85a32269
+ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367586"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85409627"
 ---
 # <a name="game-flow-management"></a>管理遊戲流程
 
-遊戲現在會有一個視窗，非同步登錄兩個事件處理常式，並且載入資產登記。 本章節說明有關使用遊戲狀態、如何管理特定的主要遊戲狀態，以及如何建立遊戲引擎的更新迴圈。 然後，我們將會了解使用者介面流程，且最終能了解事件處理常式，以及 UWP 遊戲所需的事件詳細資訊。
+> [!NOTE]
+> 本主題是使用 DirectX 教學課程系列[建立簡單的通用 Windows 平臺（UWP）遊戲](tutorial--create-your-first-uwp-directx-game.md)的一部分。 該連結的主題會設定數列的內容。
 
->[!Note]
->如果您尚未下載此範例的最新遊戲程式碼，請移至 [Direct3D 遊戲範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此為 UWP 功能範例的大集合的一部分。 如需下載範例方法的指示，請參閱[從 GitHub 取得 UWP 範例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
+遊戲現在有一個視窗，已註冊一些事件處理常式，並以非同步方式載入了資產。 本主題說明遊戲狀態的使用方式、如何管理特定的重要遊戲狀態，以及如何為遊戲引擎建立更新迴圈。 然後，我們將瞭解使用者介面流程，最後進一步瞭解 UWP 遊戲所需的事件處理常式。
 
 ## <a name="game-states-used-to-manage-game-flow"></a>用於管理遊戲流程的遊戲狀態
 
-我們使用遊戲狀態來管理遊戲流程。 您的遊戲可能會有任意數目的可能狀態，因為使用者可以隨時從暫停狀態繼續 UWP 遊戲應用程式。
+我們使用遊戲狀態來管理遊戲流程。
 
-對於此遊戲範例，當啟動時，其可能處於下列三種狀態的其中一種：
-* 遊戲迴圈正在執行，而且正在進行某個關卡。
-* 遊戲迴圈未執行，因為遊戲才剛結束。 (已設定高分記錄)
-* 未啟動任何遊戲，或遊戲進行到兩個關卡之間。 (高分記錄為 0)
+當**Simple3DGameDX**範例遊戲在機器上首次執行時，它會處於未啟動任何遊戲的狀態。 遊戲執行的後續時間，可以是任何一種狀態。
 
-您可以定義所需狀態數量，視遊戲的需求而定。 同時，請注意您的 UWP 遊戲可以隨時終止，而在繼續進行遊戲時，玩家會希望從上一次的狀態繼續玩下去，就像沒有停止遊戲一樣。
+- 未啟動任何遊戲，或遊戲在層級之間（高分數為零）。
+- 遊戲迴圈正在執行，而且位於層級的中間。
+- 遊戲迴圈未執行，因為遊戲已完成（高分具有非零的值）。
 
-## <a name="game-states-initialization"></a>遊戲狀態初始化
+您的遊戲可以擁有所需的最多狀態。 但請記住，它可以隨時終止。 當它繼續時，使用者預期它會繼續處於終止時的狀態。
 
-在遊戲初始化時，您不只專注於冷啟動遊戲，也要在暫停或終止之後重新啟動。 範例遊戲永遠儲存遊戲狀態，其外觀停留在執行中狀態。 
+## <a name="game-state-management"></a>遊戲狀態管理
 
-在暫停狀態中，遊戲暫停，但遊戲的資源仍在記憶體中。 
+因此，在遊戲初始化期間，您必須支援冷啟動遊戲，以及在停止遊戲後繼續遊戲。 **Simple3DGameDX**範例一律會儲存其遊戲狀態，以提供絕對不會停止的印象。
 
-同樣地，繼續事件是要確定範例遊戲從上一次暫停或終止的地方繼續。 範例遊戲在終止之後重新啟動時會正常啟動，然後判斷上次的已知狀態，讓玩家能夠立即繼續進行遊戲。
+為了回應暫止事件，遊戲已暫止，但遊戲的資源仍在記憶體中。 同樣地，系統會處理 resume 事件，以確保範例遊戲會在暫停或終止時，以其所在的狀態收取。 根據狀態而定，會對玩家顯示不同的選項。 
 
-根據狀態而定，會對玩家顯示不同的選項。 
+- 如果遊戲繼續進行中，則會顯示 [已暫停]，而重迭會提供 [繼續] 選項。
+- 如果遊戲在遊戲完成的狀態下繼續，則會顯示 [高分數] 和 [播放新遊戲的選項]。
+- 最後，如果遊戲在層級開始之前繼續進行，則重迭會向使用者顯示啟動選項。
 
-* 如果遊戲要從關卡的中途繼續，它會顯示暫停狀態，重疊則會顯示一個繼續選項。
-* 如果是從遊戲已完成的狀態繼續，則會顯示高分記錄和玩新遊戲的選項。
-* 最後，如果遊戲在關卡尚未開始之前繼續，則重疊會對使用者顯示開始選項。
+範例遊戲並不區分遊戲是否正在冷啟動、第一次啟動而沒有暫停事件，或是從暫停狀態繼續。 這是任何 UWP app 的適當設計。
 
-遊戲範例不會區分遊戲本身是冷啟動 (初次啟動遊戲，沒有暫停事件)，或是從暫停狀態繼續。 這是任何 UWP app 的適當設計。
+在此範例中，遊戲狀態的初始化會發生在[**GameMain：： InitializeGameState**](#the-gamemaininitializegamestate-method)中（該方法的大綱會在下一節中顯示）。
 
-在此範例中，遊戲狀態的初始化發生在 [__GameMain::InitializeGameState__](#gamemaininitializegamestate-method)。
+以下是可協助您將流程視覺化的流程圖。 同時涵蓋初始化和更新迴圈。
 
-這是協助將流程視覺化的流程圖，其涵蓋初始化與更新迴圈。
-
-* 當您檢查目前遊戲狀態時，初始化開始於 __[開始]__ 節點。 如需遊戲程式碼，請移至 [__GameMain::InitializeGameState__](#gamemaininitializegamestate-method)。
-* 如需更新迴圈的詳細資訊，請移至[更新遊戲引擎](#update-game-engine)。 如需遊戲程式碼，請移至 [__App::Update__](#appupdate-method)。
+- 當您檢查目前遊戲狀態時，初始化開始於 **[開始]** 節點。 針對遊戲程式碼，請參閱下一節中的[**GameMain：： InitializeGameState**](#the-gamemaininitializegamestate-method) 。
+* 如需更新迴圈的詳細資訊，請移至[更新遊戲引擎](#update-game-engine)。 針對遊戲代碼，請移至[**GameMain：： Update**](#the-gamemainupdate-method)。
 
 ![我們遊戲的主要狀態電腦](images/simple-dx-game-flow-statemachine.png)
 
-### <a name="gamemaininitializegamestate-method"></a>GameMain::InitializeGameState 方法
+### <a name="the-gamemaininitializegamestate-method"></a>GameMain：： InitializeGameState 方法
 
-__InitializeGameState__ 方法從 [__GameMain__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L32-L131)建構函式類別呼叫，當 __GameMain__ 中類別物件建立於 [__App::Load__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/App.cpp#L115-L123) 方法時，便會呼叫該方法。
+**GameMain：： InitializeGameState**方法是透過**GameMain**類別的「函式」間接呼叫，這是在**應用程式：： Load**中建立**GameMain**實例的結果。
 
-```cpp
-
-GameMain::GameMain(...)
+```cppwinrt
+GameMain::GameMain(std::shared_ptr<DX::DeviceResources> const& deviceResources) : ...
 {
     m_deviceResources->RegisterDeviceNotify(this);
     ...
-
-    create_task([this]()
-    {
-        ...
-
-    }).then([this]()
-    {
-        // The finalize code needs to run in the same thread context
-        // as the m_renderer object was created because the D3D device context
-        // can ONLY be accessed on a single thread.
-        m_renderer->FinalizeCreateGameDeviceResources();
-
-        InitializeGameState(); //Initialization of game states occurs here.
-        
-        ...
-    
-    }, task_continuation_context::use_current()).then([this]()
-    {
-        ...
-        
-    }, task_continuation_context::use_current());
+    ConstructInBackground();
 }
 
-```
+winrt::fire_and_forget GameMain::ConstructInBackground()
+{
+    ...
+    m_renderer->FinalizeCreateGameDeviceResources();
 
-```cpp
+    InitializeGameState();
+    ...
+}
 
 void GameMain::InitializeGameState()
 {
     // Set up the initial state machine for handling Game playing state.
     if (m_game->GameActive() && m_game->LevelActive())
     {
-        // The last time the game terminated it was in the middle of a level.
+        // The last time the game terminated it was in the middle
+        // of a level.
         // We are waiting for the user to continue the game.
-        //...
+        ...
     }
     else if (!m_game->GameActive() && (m_game->HighScore().totalHits > 0))
     {
@@ -108,98 +90,101 @@ void GameMain::InitializeGameState()
         // Show the high score.
         // We are waiting for the user to acknowledge the high score and start a new game.
         // The level resources for the first level will be loaded later.
-        //...
+        ...
     }
     else
     {
         // This is either the first time the game has run or
         // the last time the game terminated the level was completed.
         // We are waiting for the user to begin the next level.
-        m_updateState = UpdateEngineState::WaitingForResources;
-        m_pressResult = PressResultState::PlayLevel;
-        SetGameInfoOverlay(GameInfoOverlayState::LevelStart);
-        m_uiControl->SetAction(GameInfoOverlayCommand::PleaseWait);
+        ...
     }
     m_uiControl->ShowGameInfoOverlay();
 }
-
 ```
 
 ## <a name="update-game-engine"></a>更新遊戲引擎
 
-在 [__App::Run__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/App.cpp#L127-L130) 方法中，它會呼叫 [__GameMain::Run__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L143-L202)。 在此方法內，範例已經實作基本狀態電腦，以處理玩家可以採取的所有主要動作。 這個狀態電腦的最高層級負責處理遊戲載入、進行特定關卡或在遊戲暫停後 (系統或玩家暫停) 繼續之前所玩的關卡。
+**App：： run**方法會呼叫**GameMain：： run**。 在**GameMain：： Run**中，是用來處理使用者可以採取之所有主要動作的基本狀態機器。 此狀態機器的最高等級會處理載入遊戲、播放特定層級，或在遊戲暫停（由系統或使用者）之後繼續執行層級。
 
-在遊戲範例中，遊戲可能處於 3 種主要狀態 (__UpdateEngineState__)：
+在範例遊戲中，有3個主要狀態（由**UpdateEngineState**列舉代表）可供遊戲使用。
 
-1. __等候資源__:遊戲迴圈正在循環，在資源 (尤其是圖形資源) 可用之前無法轉換。 當載入資源的非同步工作完成時，它會將狀態更新為 __ResourcesLoaded__。 當層級從磁碟、遊戲伺服器或雲端後端載入新資源時，這通常在層級之間發生。 在遊戲範例中，我們模擬這個行為，因為範例此時並不需要任何額外的個別關卡資源。
-2. __等候按__:遊戲迴圈正在循環，等候特定使用者輸入。 這項輸入是玩家載入遊戲、開始關卡或繼續關卡的動作。 範例程式碼將這些子狀態稱為 __PressResultState__ 列舉值。
-3. 在  __Dynamics__:遊戲迴圈正在執行且使用者正在玩遊戲。 當使用者在玩遊戲時，遊戲會檢查可能轉換的 3 種條件： 
-    * __TimeExpired__：關卡設定的時間到期
-    * __LevelComplete__：玩家完成關卡 
-    * __LevelComplete__：玩家完成所有關卡
+1. **UpdateEngineState：： WaitingForResources**。 遊戲迴圈正在循環，在資源 (尤其是圖形資源) 可用之前無法轉換。 當非同步資源載入工作完成時，我們會將狀態更新為**UpdateEngineState：： ResourcesLoaded**。 當層級從磁片、遊戲伺服器或雲端後端載入新資源時，通常會發生這種情況。 在範例遊戲中，我們會模擬此行為，因為此範例在當時並不需要任何額外的每一層資源。
+2. **UpdateEngineState：： WaitingForPress**。 遊戲迴圈正在循環，等候特定使用者輸入。 此輸入是用來載入遊戲、啟動層級，或繼續層級的播放動作。 範例程式碼會透過**PressResultState**列舉來參考這些子狀態。
+3. **UpdateEngineState：:D ynamics**。 遊戲迴圈正在執行且使用者正在玩遊戲。 當使用者在玩遊戲時，遊戲會檢查可能轉換的 3 種條件： 
+ - **GameState：： TimeExpired**。 層級的時間限制到期。
+ - **GameState：： LevelComplete**。 播放程式完成層級。
+ - **GameState：： GameComplete**。 播放程式完成所有層級。
 
-您的遊戲只在一種電腦包含多個較小狀態的電腦的狀態。 針對每個特定狀態，它必須以極特定的準則定義。 如何從一個狀態轉換到另一個狀態，必須分別根據使用者的輸入或系統的動作 (如載入資源圖形) 執行。 規劃您的遊戲的同時，請思考繪出整個遊戲流程，確保您已處理了所有使用者或系統可能採取的動作。 遊戲可以很複雜，所以狀態電腦是一個很強大的工具，可以協助將這些複雜程序視覺化，讓它變得更容易管理。
+遊戲只是包含多個較小狀態機器的狀態機器。 每個特定狀態都必須以非常特定的準則來定義。 從某個狀態轉換到另一個狀態時，必須以個別的使用者輸入或系統動作（例如圖形資源載入）為基礎。
 
-我們來看看以下更新迴圈的程式碼。
+在規劃您的遊戲時，請考慮繪製整個遊戲流程，以確保您已解決使用者或系統可以採取的所有可能動作。 遊戲可能非常複雜，因此狀態機器是一種功能強大的工具，可協助您將此複雜性視覺化，並使其更容易管理。
 
-### <a name="appupdate-method"></a>App::Update 方法
+讓我們看一下更新迴圈的程式碼。
 
-用來更新遊戲引擎的狀態電腦結構
+### <a name="the-gamemainupdate-method"></a>GameMain：： Update 方法
 
-```cpp
+這是用來更新遊戲引擎之狀態機器的結構。
+
+```cppwinrt
 void GameMain::Update()
 {
-    m_controller->Update(); //the controller instance has its own update loop.
+    // The controller object has its own update loop.
+    m_controller->Update(); 
 
     switch (m_updateState)
     {
     case UpdateEngineState::WaitingForResources:
-        //...
+        ...
         break;
 
     case UpdateEngineState::ResourcesLoaded:
-        //...
+        ...
         break;
 
     case UpdateEngineState::WaitingForPress:
         if (m_controller->IsPressComplete())
         {
-            //...
+            ...
         }
         break;
 
     case UpdateEngineState::Dynamics:
         if (m_controller->IsPauseRequested())
         {
-            //...
+            ...
         }
         else
         {
-            GameState runState = m_game->RunGame(); //when the player is playing, the work is handled by this Simple3DGame::RunGame method.
+            // When the player is playing, work is done by Simple3DGame::RunGame.
+            GameState runState = m_game->RunGame();
             switch (runState)
             {
             case GameState::TimeExpired:
-                //...
+                ...
                 break;
 
             case GameState::LevelComplete:
-                //...
+                ...
                 break;
 
             case GameState::GameComplete:
-                //...
+                ...
                 break;
             }
         }
 
         if (m_updateState == UpdateEngineState::WaitingForPress)
         {
-            // Transitioning state, so enable waiting for the press event
-            m_controller->WaitForPress(m_renderer->GameInfoOverlayUpperLeft(), m_renderer->GameInfoOverlayLowerRight());
+            // Transitioning state, so enable waiting for the press event.
+            m_controller->WaitForPress(
+                m_renderer->GameInfoOverlayUpperLeft(),
+                m_renderer->GameInfoOverlayLowerRight());
         }
         if (m_updateState == UpdateEngineState::WaitingForResources)
         {
-            // Transitioning state, so shut down the input controller until resources are loaded
+            // Transitioning state, so shut down the input controller
+            // until resources are loaded.
             m_controller->Active(false);
         }
         break;
@@ -207,30 +192,33 @@ void GameMain::Update()
 }
 ```
 
-## <a name="update-user-interface"></a>更新使用者介面
+## <a name="update-the-user-interface"></a>更新使用者介面
 
-我們需要持續通知玩家系統的狀態，允許遊戲狀態根據玩家的動作和定玩家規則來變更。 包括此遊戲範例的許多遊戲，通常會利用使用者介面 (UI) 元素來向玩家顯示這項資訊。 UI 包含遊戲狀態的表示法，以及其他遊戲特有的資訊，例如分數或子彈，或是剩餘的機會次數。 UI 也稱為重疊，因為與主要圖形管線分開轉譯，而且放置在 3D 投影上層。 有些 UI 資訊也會呈現為平視顯示 (HUD)，讓使用者不必他們視線移開主要遊戲區即可獲得這些資訊。 在範例遊戲中，我們使用 Direct2D API 建立這個重疊。 我們也可以使用 XAML 來建立這個重疊，如[延伸遊戲範例](tutorial-resources.md)中的討論。
+我們需要持續通知玩家系統的狀態，允許遊戲狀態根據玩家的動作和定玩家規則來變更。 許多遊戲（包括此範例遊戲）通常會使用使用者介面（UI）元素，將此資訊提供給播放者。 UI 包含遊戲狀態的標記法，以及其他播放特定的資訊，例如分數、ammo，或剩餘的機會數。 UI 也稱為「重迭」，因為它會與主要圖形管線分開轉譯，並放在3D 投影上。
 
-使用者介面有兩個元件：
+有些 UI 資訊也會顯示為標題顯示（抬頭顯示器），讓使用者可以看到該資訊，而不需要完全離開主要遊戲區域。 在範例遊戲中，我們會使用 Direct2D Api 來建立此重迭。 或者，我們可以使用 XAML 來建立這項重迭，我們將在[擴充範例遊戲](tutorial-resources.md)中加以討論。
 
--   HUD，包含遊戲目前狀態之分數和資訊。
--   暫停點陣圖，是遊戲暫停狀態期間上面重疊文字的黑色矩形。 這就是遊戲重疊。 我們會在[新增使用者介面](tutorial--adding-a-user-interface.md)中進一步討論。
+使用者介面有兩個元件。
 
-不難想像，重疊也有狀態電腦。 重疊可以顯示關卡開始或遊戲結束的訊息。 基本上，它就是遊戲暫停或中斷時，用來顯示我們對使用者顯示之任何遊戲狀態資訊的畫布。
+- 包含遊戲目前狀態之分數和資訊的抬頭顯示器。
+- 暫停點陣圖，是遊戲暫停狀態期間上面重疊文字的黑色矩形。 這就是遊戲重疊。 我們會在[新增使用者介面](tutorial--adding-a-user-interface.md)中進一步討論。
 
-經過轉譯的覆疊可以是六個畫面的其中一個，視根據遊戲狀態而定： 
-1. 遊戲開始的資源載入畫面
-2. 遊戲統計播放畫面
-3. 關卡開始訊息畫面
-4. 在時間之內完成所有關卡的遊戲結束畫面
-5. 時間用完的遊戲結束畫面
-6. 暫停功能表畫面
+不難想像，重疊也有狀態電腦。 重迭可以顯示層級開始或遊戲訊息。 這基本上是一個畫布，我們可以在遊戲暫停或暫止時，輸出想要顯示給播放程式之遊戲狀態的任何相關資訊。
 
-將您的使用者介面與遊戲圖形管線分開，可讓您不用依賴遊戲圖形轉譯引擎獨立使用使用者介面，並大幅降低遊戲程式碼的複雜程度。
+轉譯的重迭可以是這六個畫面的其中一個，視遊戲的狀態而定。
 
-以下是遊戲範例如何建立重疊狀態電腦的結構。
+1. 開始遊戲時的資源載入進度畫面。
+2. 遊戲統計資料畫面。
+3. 層級啟動訊息畫面。
+4. 當所有層級都完成但沒有時間執行時，遊戲畫面。
+5. 當時間用盡時的遊戲畫面。
+6. 暫停功能表畫面。
 
-```cpp
+將您的使用者介面與遊戲的圖形管線隔開，可讓您在遊戲的圖形轉譯引擎之外獨立作業，並大幅降低遊戲程式碼的複雜度。
+
+以下是範例遊戲如何為重迭的狀態機器進行結構說明。
+
+```cppwinrt
 void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 {
     m_gameInfoOverlayState = state;
@@ -241,33 +229,35 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
         break;
 
     case GameInfoOverlayState::GameStats:
-        //...
+        ...
         break;
 
     case GameInfoOverlayState::LevelStart:
-        //...
+        ...
         break;
 
     case GameInfoOverlayState::GameOverCompleted:
-        //...
+        ...
         break;
 
     case GameInfoOverlayState::GameOverExpired:
-        //...
+        ...
         break;
 
     case GameInfoOverlayState::Pause:
-        //...
+        ...
         break;
     }
 }
 ```
 
-## <a name="events-handling"></a>事件處理
+## <a name="event-handling"></a>事件處理
 
-我們的範例程式碼在 App.cpp 中的 **Initialize**、**SetWindow** 以及 **Load** 中登錄了數個特定事件的處理常式。 以下是需要在新增遊戲機制或開始圖形開發之前運作的重要事件。 這些事件是正確 UWP app 體驗的基礎。 因為 UWP app 可以隨時啟動、停用、調整大小、定格、解除定格、暫停或繼續，因此遊戲必須儘速登錄這些事件，並透過保持遊戲經驗順暢及使用者預期的方式來處理它們。
+如我們在[定義遊戲的 UWP 應用程式架構](tutorial--building-the-games-uwp-app-framework.md)主題中所見，**應用程式**類別的許多視圖提供者方法會註冊事件處理常式。 這些方法必須在加入遊戲機制或開始圖形開發之前，正確地處理這些重要的事件。
 
-這些是此範例使用的事件處理常式，以及它們處理的事件。
+適當處理問題的事件是 UWP 應用程式體驗的基礎。 由於 UWP 應用程式可以隨時啟動、停用、調整大小、貼齊、unsnapped、暫停或繼續，遊戲必須儘快註冊這些事件，並以讓播放程式的體驗保持順暢且可預測的方式處理。
+
+這些是此範例中所使用的事件處理常式，以及它們所處理的事件。
 
 <table>
 <colgroup>
@@ -283,60 +273,61 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <tbody>
 <tr class="odd">
 <td align="left">OnActivated</td>
-<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated"><strong>CoreApplicationView::Activated</strong></a>。 遊戲 app 已經被帶到前景，因此啟動主視窗。</td>
+<td align="left">處理 <a href="/uwp/api/windows.applicationmodel.core.coreapplicationview.activated"><strong>CoreApplicationView::Activated</strong></a>。 遊戲 app 已經被帶到前景，因此啟動主視窗。</td>
 </tr>
 <tr class="even">
 <td align="left">OnDpiChanged</td>
-<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>。 已變更顯示器的 DPI，而遊戲會隨之調整其資源。
+<td align="left">處理 <a href="/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>。 已變更顯示器的 DPI，而遊戲會隨之調整其資源。
 <div class="alert">
-<strong>附註</strong> <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow"><strong>CoreWindow</strong> </a>座標是 dip （裝置無關的像素），如<a href="https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview">Direct2D</a>。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
+<strong>注意</strong> <a href="/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow"><strong>CoreWindow</strong></a>座標是以與裝置無關的圖元（Dip）來進行<a href="/windows/desktop/Direct2D/direct2d-overview">Direct2D</a>。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
 </div>
 <div>
 </div></td>
 </tr>
 <tr class="odd">
 <td align="left">OnOrientationChanged</td>
-<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_OrientationChanged"><strong>Graphics::Display::DisplayInformation::OrientationChanged</strong></a>。 顯示器方向有所變更，而轉譯需要更新。</td>
+<td align="left">處理 <a href="/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_OrientationChanged"><strong>Graphics::Display::DisplayInformation::OrientationChanged</strong></a>。 顯示器方向有所變更，而轉譯需要更新。</td>
 </tr>
 <tr class="even">
 <td align="left">OnDisplayContentsInvalidated</td>
-<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DisplayContentsInvalidated"><strong>Graphics::Display::DisplayInformation::DisplayContentsInvalidated</strong></a>。 顯示器需要重新繪製，而您的遊戲需要再試一次經過轉譯。</td>
+<td align="left">處理 <a href="/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DisplayContentsInvalidated"><strong>Graphics::Display::DisplayInformation::DisplayContentsInvalidated</strong></a>。 顯示器需要重新繪製，而您的遊戲需要再試一次經過轉譯。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnResuming</td>
-<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming"><strong>CoreApplication::Resuming</strong></a>。 遊戲應用程式從暫停狀態還原遊戲。</td>
+<td align="left">處理 <a href="/uwp/api/windows.applicationmodel.core.coreapplication.resuming"><strong>CoreApplication::Resuming</strong></a>。 遊戲應用程式從暫停狀態還原遊戲。</td>
 </tr>
 <tr class="even">
 <td align="left">OnSuspending</td>
-<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending"><strong>CoreApplication::Suspending</strong></a>。 遊戲 app 將它的狀態儲存到磁碟。 它有 5 秒的時間將狀態儲存到存放區。</td>
+<td align="left">處理 <a href="/uwp/api/windows.applicationmodel.core.coreapplication.suspending"><strong>CoreApplication::Suspending</strong></a>。 遊戲 app 將它的狀態儲存到磁碟。 它有 5 秒的時間將狀態儲存到存放區。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnVisibilityChanged</td>
-<td align="left">處理<a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.visibilitychanged"><strong>CoreWindow::VisibilityChanged</strong></a>。 遊戲 app 已經變更可見度，可以是已經變成可見，或因為另一個 app 成為可見而變成不可見。</td>
+<td align="left">處理<a href="/uwp/api/windows.ui.core.corewindow.visibilitychanged"><strong>CoreWindow::VisibilityChanged</strong></a>。 遊戲 app 已經變更可見度，可以是已經變成可見，或因為另一個 app 成為可見而變成不可見。</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowActivationChanged</td>
-<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.activated"><strong>CoreWindow::Activated</strong></a>。 遊戲 app 主視窗已經停用或啟動，因此必須移除焦點並暫停遊戲，或重新取得焦點。 在這兩種情況下，重疊會指示遊戲已經暫停。</td>
+<td align="left">處理 <a href="/uwp/api/windows.ui.core.corewindow.activated"><strong>CoreWindow::Activated</strong></a>。 遊戲 app 主視窗已經停用或啟動，因此必須移除焦點並暫停遊戲，或重新取得焦點。 在這兩種情況下，重疊會指示遊戲已經暫停。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnWindowClosed</td>
-<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.closed"><strong>CoreWindow::Closed</strong></a>。 遊戲 app 關閉主視窗並暫停遊戲。</td>
+<td align="left">處理 <a href="/uwp/api/windows.ui.core.corewindow.closed"><strong>CoreWindow::Closed</strong></a>。 遊戲 app 關閉主視窗並暫停遊戲。</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowSizeChanged</td>
-<td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.sizechanged"><strong>CoreWindow::SizeChanged</strong></a>。 遊戲應用程式重新分配圖形資源及重疊，以容納大小變更，然後更新轉譯目標。</td>
+<td align="left">處理 <a href="/uwp/api/windows.ui.core.corewindow.sizechanged"><strong>CoreWindow::SizeChanged</strong></a>。 遊戲應用程式重新分配圖形資源及重疊，以容納大小變更，然後更新轉譯目標。</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="next-steps"></a>後續步驟
 
-本主題中，我們已討論如何使用遊戲狀態管理整體遊戲流量，以及遊戲的多個不同狀態的電腦所組成。 我們也已經了解如何更新 UI，以及管理主應用程式鍵事件處理常式。 現在，我們已經準備好深入轉譯迴圈、遊戲及其機制。
+在本主題中，我們已瞭解如何使用遊戲狀態來管理整體遊戲流程，而且遊戲是由多個不同的狀態機器所組成。 我們也已瞭解如何更新 UI，以及如何管理重要的應用程式事件處理常式。 現在我們已經準備好深入探討轉譯迴圈、遊戲和其機制。
  
-您可以瀏覽其他以任何順序構成此遊戲的元件：
-* [定義主要的遊戲物件](tutorial--defining-the-main-game-loop.md)
-* [轉譯架構 i:轉譯為您簡介](tutorial--assembling-the-rendering-pipeline.md)
-* [轉譯架構 II:遊戲的轉譯](tutorial-game-rendering.md)
-* [新增的使用者介面](tutorial--adding-a-user-interface.md)
-* [加入控制項](tutorial--adding-controls.md)
-* [加入聲音](tutorial--adding-sound.md)
+您可以依照任何順序，逐一流覽本遊戲的其餘主題。
+
+- [定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)
+- [轉譯架構 I：轉譯簡介](tutorial--assembling-the-rendering-pipeline.md)
+- [轉譯架構 II：遊戲轉譯](tutorial-game-rendering.md)
+- [新增使用者介面](tutorial--adding-a-user-interface.md)
+- [加入控制項](tutorial--adding-controls.md)
+- [加入聲音](tutorial--adding-sound.md)

@@ -1,40 +1,45 @@
 ---
 title: 藍牙 GATT 伺服器
 description: 本文將概略說明適用於通用 Windows 平台 (UWP) app 的藍牙泛型屬性設定檔 (GATT) 伺服器，並提供常見使用案例的範例程式碼。
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cded3ee7fb2cc3157caa61939e022c3869f5232
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 65a4643e6a73e0eb015fc40c7354d0cd307fa0d1
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282375"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469543"
 ---
 # <a name="bluetooth-gatt-server"></a>藍牙 GATT 伺服器
 
+本文示範適用於通用 Windows 平台 (UWP) app 的藍牙泛型屬性 (GATT) 伺服器 API，以及常見 GATT 伺服器工作的範例程式碼︰
 
-**重要 API**
-- [**Windows. 藍牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Windows. GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
-
-
-本文示範適用於通用 Windows 平台 (UWP) app 的藍牙泛型屬性 (GATT) 伺服器 API，以及常見 GATT 伺服器工作的範例程式碼︰ 
 - 定義支援的服務
 - 發行伺服器，讓遠端用戶端可以找到它
 - 服務的廣告支援
 - 回應讀取和寫入要求
 - 將通知傳送給訂閱的用戶端
 
-## <a name="overview"></a>總覽
+> [!Important]
+> 您必須在*package.appxmanifest.xml*中宣告 "bluetooth" 功能。
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
+
+**重要 API**
+
+- [**Windows. 藍牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+- [**Windows. GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
+
+## <a name="overview"></a>概觀
+
 Windows 通常以用戶端角色操作。 不過，許多案例也都需要 Windows 作為藍牙 LE GATT 伺服器。 幾乎 IoT 裝置的所有案例，以及大部分跨平台 BLE 通訊，都需要 Windows 作為 GATT 伺服器。 此外，將通知傳送至附近的穿戴式裝置會變成也需要這項技術的常見案例。  
-> 請確定清楚[GATT 用戶端文件](gatt-client.md)中的所有概念後，再繼續進行。  
 
 伺服器的作業將圍繞著服務提供者和 GattLocalCharacteristic。 這兩個類別會提供宣告、執行及公開資料階層至遠端裝置所需的功能。
 
 ## <a name="define-the-supported-services"></a>定義支援的服務
-您的應用程式可能會宣告將由 Windows 發行的一或多個服務。 每個服務都是透過 UUID 唯一識別。 
+您的應用程式可能會宣告將由 Windows 發行的一或多個服務。 每個服務都是透過 UUID 唯一識別。
 
 ### <a name="attributes-and-uuids"></a>屬性和 UUID
 每個服務、特性和描述元都是透過其專屬唯一 128 位元 UUID 所定義。
@@ -144,8 +149,8 @@ GattServiceProviderAdvertisingParameters advParameters = new GattServiceProvider
 };
 serviceProvider.StartAdvertising(advParameters);
 ```
-- **IsDiscoverable**：通告通知中遠端裝置的易記名稱，使裝置可供探索。
-- **IsConnectable**：通告可連線公告以用於周邊角色。
+- **IsDiscoverable**︰在廣告中廣告遠端裝置的易記名稱，讓裝置更容易找到。
+- **IsConnectable**︰廣告可在周邊角色中使用的可連接廣告。
 
 > 服務為 Discoverable 和 Connectable 時，系統會將服務 Uuid 新增至廣告封包。  廣告封包中只有 31 個位元組，而 128 位元 UUID 佔用其中的 16 個！
 
@@ -154,7 +159,7 @@ serviceProvider.StartAdvertising(advParameters);
 ## <a name="respond-to-read-and-write-requests"></a>回應讀取和寫入要求
 如上所述，宣告必要特性時，GattLocalCharacteristics 有 3 種類型的事件-ReadRequested、WriteRequested 和 SubscribedClientsChanged。
 
-### <a name="read"></a>Read
+### <a name="read"></a>讀取
 當遠端裝置嘗試從特性讀取值 (且不是常數值) 時，會呼叫 ReadRequested 事件。 在其上呼叫讀取的特性以及引數 (包含遠端裝置的相關資訊) 會傳遞給委派︰ 
 
 ```csharp

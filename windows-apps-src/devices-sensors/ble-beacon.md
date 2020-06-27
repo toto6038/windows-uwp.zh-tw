@@ -1,26 +1,31 @@
 ---
 title: 藍牙廣告
 description: 本節包含如何透過 AdvertisementWatcher 和 AdvertisementPublisher API 的使用者，將藍牙低功耗 (LE) 廣告整合到通用 Windows 平台 (UWP) 應用程式的文章。
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c4bef6045f75992e0fad503ff2a357d52363008
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2300871292e08588b0c2124c67a379d403ae53b3
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259691"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469523"
 ---
 # <a name="bluetooth-le-advertisements"></a>藍牙 LE 廣告
 
 
 **重要 API**
 
--   [**Windows. Bluetooth. 廣告**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+-   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
 
 這篇文章提供適用於通用 Windows 平台 (UWP) 應用程式的藍牙低功耗 (LE) 廣告指標概觀。  
+
+> [!Important]
+> 您必須在*package.appxmanifest.xml*中宣告 "bluetooth" 功能。
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 ## <a name="overview"></a>概觀
 
@@ -43,7 +48,7 @@ ms.locfileid: "74259691"
 
 藍牙 LE 廣告可讓您的裝置持續發出特定承載的指標 (稱為「廣告」)。 附近任何支援藍牙 LE 功能的裝置，如果有設定為接聽此特定廣告，就都能看見此廣告。
 
-> **注意**：基於使用者隱私權的理由，廣告的存留時間是與您 App 的存留時間繫結。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
+> **注意**：若為使用者隱私權，廣告的期限會與您的應用程式相關。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本發佈
 

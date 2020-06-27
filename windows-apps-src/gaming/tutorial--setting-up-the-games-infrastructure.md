@@ -1,168 +1,198 @@
 ---
 title: 設定遊戲專案
-description: 組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。
+description: 開發遊戲的第一個步驟是在 Microsoft Visual Studio 中設定專案。 在您設定特別用於遊戲開發的專案之後，您稍後可以重複使用它做為一種範本。
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
-ms.date: 10/24/2017
+ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 設定, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: ca91926ec374015eeb88be6d89d3e1741d8b9c6d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c0c8d82752d9b73a3e3e7ffcec3ced1515564072
+ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367679"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85409587"
 ---
 # <a name="set-up-the-game-project"></a>設定遊戲專案
 
-本主題說明如何使用 Visual Studio 中的範本設定簡單的 UWP DirectX 遊戲。 組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。 學習使用正確的範本並設定專用於遊戲開發的專案，可以節省很多時間和麻煩。
+> [!NOTE]
+> 本主題是使用 DirectX 教學課程系列[建立簡單的通用 Windows 平臺（UWP）遊戲](tutorial--create-your-first-uwp-directx-game.md)的一部分。 該連結的主題會設定數列的內容。
+
+開發遊戲的第一個步驟是在 Microsoft Visual Studio 中建立專案。 在您設定特別用於遊戲開發的專案之後，您稍後可以重複使用它做為一種範本。
 
 ## <a name="objectives"></a>目標
 
-* 使用範本在 Visual Studio 中設定 Direct3D 遊戲專案。
-* 透過檢查 **App** 來源檔案，了解遊戲的主要進入點
-* 檢視專案的 **package.appxmanifest** 檔案
-* 了解專案中包含哪些遊戲開發工具與支援
+* 使用專案範本在 Visual Studio 中建立新的專案。
+* 藉由檢查**應用程式**類別的來源檔案，瞭解遊戲的進入點和初始化。
+* 查看遊戲迴圈。
+* 檢查項目的**package.appxmanifest.xml**檔案。
 
-## <a name="how-to-set-up-the-game-project"></a>如何設定遊戲專案
+## <a name="create-a-new-project-in-visual-studio"></a>在 Visual Studio 中建立新專案
 
-如果您是通用 Windows 平台 (UWP) 開發的新手，我們建議使用 Visual Studio 中的範本設定基本程式碼結構。
+> [!NOTE]
+> 如需安裝和為 C++/WinRT 開發設定 Visual Studio 的相關資訊&mdash;包括如何安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援)&mdash;，請參閱 [C++/WinRT 的 Visual Studio 支援](/windows/uwp/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
->[!Note]
->本文是根據遊戲範例的教學課程系列的一部分。 您可以在 [Direct3D 遊戲範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)取得最新的程式碼。 此為 UWP 功能範例的大集合的一部分。 如需下載範例方法的指示，請參閱[從 GitHub 取得 UWP 範例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
+第一次安裝（或更新至）最新版本的 c + +/WinRT Visual Studio 延伸模組（VSIX）;請參閱上面的注意事項。 然後，在 Visual Studio 中，根據 [ **Core 應用程式（c + +/WinRT）** ] 專案範本建立新的專案。 以 Windows SDK 最新的正式推出版本 (即非預覽版本) 為目標。
 
-### <a name="use-directx-template-to-create-a-project"></a>使用 DirectX 範本建立專案
+## <a name="review-the-app-class-to-understand-iframeworkviewsource-and-iframeworkview"></a>請參閱**應用程式**類別，以瞭解**IFrameworkViewSource**和**IFrameworkView**
 
-Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對使用慣用語言和技術的特定應用程式類型所設計。 在 Microsoft Visual Studio 2017，您會發現一些可以大幅簡化遊戲和圖形應用程式開發的範本。 如果您不使用範本，就必須自己開發許多基本圖形轉譯和顯示架構，對遊戲開發初學者而言可能有點困難。
+在您的核心應用程式專案中，開啟原始程式碼檔案 `App.cpp` 。 在中，**應用程式**類別的實作為，其代表應用程式及其生命週期。 在此情況下，我們知道應用程式是遊戲。 但我們會將它稱為*應用程式*，以更普遍地討論通用 WINDOWS 平臺（UWP）應用程式如何初始化。
 
-用於此教學課程的範本名為 **DirectX 11 App (通用 Windows)** 。 
+### <a name="the-wwinmain-function"></a>WWinMain 函式
 
-在 Visual Studio 中建立 DirectX 11 遊戲專案的步驟：
-1.  選取**檔案...** &gt; **新**&gt; **專案...**
-2.  在左窗格中，選取**已安裝** &gt; **範本** &gt; **Visual C++**  &gt; **Windows標準**
-3.  在中央窗格中，選取 **\[DirectX 11 應用程式 (通用 Windows)\]** 。
-4.  提供遊戲專案名稱，然後按一下 [確定]  。
+**WWinMain**函式是應用程式的進入點。 以下是**wWinMain**的樣子（來自 `App.cpp` ）。
 
-![顯示如何選取 directx11 範本以建立新的遊戲專案的螢幕擷取畫面](images/simple-dx-game-setup-new-project.png)
-
-這個範本為您提供使用 DirectX 搭配 C++ 的 UWP app 的基本架構。 按一下 F5 來建置並執行它。 看看那個粉藍色螢幕。 此範本會建立多個程式碼檔案，其中包含使用 DirectX 搭配 C++ 的 UWP app 所適用的基本功能。
-
-## <a name="review-the-apps-main-entry-point-by-understanding-iframeworkview"></a>了解 IFrameworkView 來檢視 App 的主要進入點
-
-**App** 類別繼承自 **IFrameworkView** 類別。
-
-### <a name="inspect-apph"></a>檢查 **App.h**。
-
-讓我們快速看看 5 中的方法**app.h 中** &mdash; [**初始化**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)， [ **SetWindow** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow)， [**負載**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load)， [**執行**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run)，以及[**解除初始化**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize)實作時[ **IFrameworkView** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.run)定義檢視提供者的介面。 這些方法是由遊戲啟動時建立的應用程式單例執行，而且會載入您 app 的所有資源，以及連接適當的事件處理常式。
-
-```cpp
-    // Main entry point for our app. Connects the app with the Windows shell and handle application lifecycle events.
-    ref class App sealed : public Windows::ApplicationModel::Core::IFrameworkView
-    {
-    public:
-        App();
-
-        // IFrameworkView Methods.
-        virtual void Initialize(Windows::ApplicationModel::Core::CoreApplicationView^ applicationView);
-        virtual void SetWindow(Windows::UI::Core::CoreWindow^ window);
-        virtual void Load(Platform::String^ entryPoint);
-        virtual void Run();
-        virtual void Uninitialize();
-
-    protected:
-        ...
-    };
-```
-
-### <a name="inspect-appcpp"></a>檢查 **App.cpp**
-
-以下是 **App.cpp** 來源檔中的 **main** 方法：
-
-```cpp
-//The main function is only used to initialize our IFrameworkView class.
-[Platform::MTAThread]
-int main(Platform::Array<Platform::String^>^)
+```cppwinrt
+int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    auto direct3DApplicationSource = ref new Direct3DApplicationSource();
-    CoreApplication::Run(direct3DApplicationSource);
-    return 0;
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 
-這個方法會從檢視提供者 factory 建立的 Direct3D 檢視提供者執行個體 (**Direct3DApplicationSource**，其定義於`App.h`)，並將其傳遞至應用程式的單一呼叫[ **CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。 架構檢視的方法 (即**應用程式**在此範例中的類別) 中的順序會呼叫**初始化**-**SetWindow** -**負載**-**OnActivated**-**執行**-**解除初始化**。 呼叫**CoreApplication::Run**開始該 lifycycle。 您的遊戲主迴圈所在之實作的主體中[ **IFrameworkView::Run**方法](/uwp/api/windows.applicationmodel.core.iframeworkview.run)，而且在此情況下，它具有**App::Run**。
+我們會建立**應用程式**類別的實例（這只是建立的**應用程式**實例），並將其傳遞給靜態[**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication.run)方法。 請注意， **CoreApplication**需要[**IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)介面。 因此， **App**類別必須執行該介面。
 
-在 **App.cpp** 中捲動以尋找 **App::Run** 方法。 以下是程式碼。
+本主題的下兩節將描述[**IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)和[**IFrameworkView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)介面。 這些介面（以及**CoreApplication**）代表您的應用程式使用*視圖提供者*提供視窗的方式。 Windows 會使用該視圖提供者，將您的應用程式與 Windows shell 連線，以便處理應用程式生命週期事件。
 
-```cpp
-//This method is called after the window becomes active.
-void App::Run()
+### <a name="the-iframeworkviewsource-interface"></a>IFrameworkViewSource 介面
+
+**App**類別確實會執行[**IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)，如下列清單所示。
+
+```cppwinrt
+struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
+{
+    ...
+    IFrameworkView CreateView()
+    {
+        return *this;
+    }
+    ...
+}
+```
+
+執行**IFrameworkViewSource**的物件是一個*視圖提供者 factory*物件。 該物件的工作是製造並傳回*視圖提供者*物件。
+
+**IFrameworkViewSource**具有單一方法[**IFrameworkViewSource：： CreateView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource.createview)。 Windows 會在您傳遞給**CoreApplication**的物件上呼叫該函數。 如您在上面所見，該方法的**App：： CreateView**實會傳回 `*this` 。 換句話說，**應用程式**物件會傳回本身。 由於**IFrameworkViewSource：： CreateView**的傳回數值型別為[**IFrameworkView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)，因此**應用程式**類別也必須執行*該*介面。 您可以看到它在上面的清單中。
+
+### <a name="the-iframeworkview-interface"></a>IFrameworkView 介面
+
+執行[**IFrameworkView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)的物件是一個*視圖提供者*物件。 我們現在已提供具有該視圖提供者的視窗。 這就是我們在**wWinMain**中建立的相同**應用程式**物件。 因此， **App**類別可同時做為*視圖提供者 factory*和*視圖提供者*。
+
+現在 Windows 可以呼叫**應用程式**類別的**IFrameworkView**方法的執行。 在這些方法的實現中，您的應用程式有機會執行一些工作，例如初始化、開始載入所需的資源、連接適當的事件處理常式，以及接收您的應用程式將用來顯示其輸出的[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) 。
+
+您的**IFrameworkView**方法的執行會依照下面所示的順序來呼叫。
+
+- [**[初始化]**](/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)
+- [**SetWindow**](/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow)
+- [**載入**](/uwp/api/windows.applicationmodel.core.iframeworkview.load)
+- 會引發[**CoreApplicationView：：已啟用**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)事件。 因此，如果您已註冊（選擇性）來處理該事件，則此時會呼叫您的**OnActivated**處理常式。
+- [**進行**](/uwp/api/windows.applicationmodel.core.iframeworkview.run)
+- [**解除初始化**](/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize)
+
+以下是**應用程式**類別（在中）的基本架構 `App.cpp` ，其中顯示這些方法的簽章。
+
+```cppwinrt
+struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
+{
+    ...
+    void Initialize(Windows::ApplicationModel::CoreCoreApplicationView const& applicationView) { ... }
+    void SetWindow(Windows::UI::Core::CoreWindow const& window) { ... }
+    void Load(winrt::hstring const& entryPoint) { ... }
+    void OnActivated(
+        Windows::ApplicationModel::CoreCoreApplicationView const& applicationView,
+        Windows::ApplicationModel::Activation::IActivatedEventArgs const& args) { ... }
+    void Run() { ... }
+    void Uninitialize() { ... }
+    ...
+}
+```
+
+這只是**IFrameworkView**的簡介。 在[定義遊戲的 UWP 應用程式架構](tutorial--building-the-games-uwp-app-framework.md)中，我們將更詳細說明這些方法，以及如何加以執行。
+
+### <a name="tidy-up-the-project"></a>整理專案
+
+您從專案範本建立的核心應用程式專案包含我們在此時間點應該整理的功能。 之後，我們就可以使用專案來重新建立「正在完成」圖庫遊戲（**Simple3DGameDX**）。 對中的**應用程式**類別進行下列變更 `App.cpp` 。
+
+- 刪除其資料成員。
+- 刪除**OnPointerPressed**、 **OnPointerMoved**和**AddVisual**
+- 從**SetWindow**刪除程式碼。
+
+專案將會建立並執行，但它只會在工作區中顯示純色。
+
+## <a name="the-game-loop"></a>遊戲迴圈
+
+若要瞭解遊戲迴圈的外觀，請查看您所下載[Simple3DGameDX](/samples/microsoft/windows-universal-samples/simple3dgamedx/)範例遊戲的原始程式碼。
+
+**App**類別具有**GameMain**類型的資料成員，名為*m_main*。 而該成員會用於**App：： Run** ，如下所示。
+
+```cppwinrt
+void Run()
+{
+    m_main->Run();
+}
+```
+
+您可以在中找到**GameMain：： Run** `GameMain.cpp` 。 這是遊戲的主要迴圈，下面是一個非常粗略的大綱，其中顯示最重要的功能。
+
+```cppwinrt
+void GameMain::Run()
 {
     while (!m_windowClosed)
     {
-        if (m_windowVisible)
+        if (m_visible)
         {
-            CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
-
-            m_main->Update();
-
-            if (m_main->Render())
-            {
-                m_deviceResources->Present();
-            }
+            CoreWindow::GetForCurrentThread().Dispatcher().ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
+            Update();
+            m_renderer->Render();
+            m_deviceResources->Present();
         }
         else
         {
-            CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessOneAndAllPending);
+            CoreWindow::GetForCurrentThread().Dispatcher().ProcessEvents(CoreProcessEventsOption::ProcessOneAndAllPending);
         }
     }
 }
 ```
 
-這個方法的用途：如果不關閉您的遊戲的視窗，它會分派所有事件、 更新計時器，然後呈現而圖形管線的結果。 我們將討論這更詳細地[定義 UWP 應用程式架構](tutorial--building-the-games-uwp-app-framework.md)，[轉譯架構 i:轉譯為您簡介](tutorial--assembling-the-rendering-pipeline.md)，和[轉譯架構 II:遊戲轉譯](tutorial-game-rendering.md)。 現在，您應該對 UWP DirectX 遊戲的基本程式碼結構有大致的了解。
+以下簡要說明此主要遊戲迴圈的作用。
+
+如果您遊戲的視窗未關閉，請分派所有事件、更新計時器，然後轉譯和呈現圖形管線的結果。 對於這些考慮，我們會有更多的想法，而我們將在[定義遊戲的 UWP 應用程式架構](tutorial--building-the-games-uwp-app-framework.md)、轉譯[架構 I：](tutorial--assembling-the-rendering-pipeline.md)轉譯的簡介和轉譯[架構 II：遊戲](tutorial-game-rendering.md)轉譯的主題中執行此動作。 但這是 UWP DirectX 遊戲的基本程式碼結構。
 
 ## <a name="review-and-update-the-packageappxmanifest-file"></a>檢視並更新 package.appxmanifest 檔案
 
+**Package.appxmanifest.xml**檔案包含 UWP 專案的相關中繼資料。 這些中繼資料可用來封裝和啟動您的遊戲，並提交至 Microsoft Store。 此檔案也包含重要資訊，供玩家的系統用來提供遊戲必須執行之系統資源的存取權。
 
-範本不只有程式碼檔案。 **Package.appxmanifest** 檔案包含有關您專案的中繼資料，可用來封裝和啟動您的遊戲，以及提交到 Microsoft Store。 它也包含玩家系統的重要資訊，用來存取遊戲執行所需的系統資源。
-
-在 **\[方案總管\]** 中的 **Package.appxmanifest** 檔案上按兩下，啟動 **\[資訊清單設計工具\]** 。
+按兩下**方案總管**中的**package.appxmanifest.xml**檔案，即可啟動**資訊清單設計**工具。
 
 ![package.appx 資訊清單編輯器的螢幕擷取畫面。](images/simple-dx-game-setup-app-manifest.png)
 
-如需 **package.appxmanifest** 檔案和封裝的詳細資訊，請參閱[資訊清單設計工具](https://docs.microsoft.com/previous-versions/br230259(v=vs.140))。 現在，看看 [功能]  索引標籤，以及其中提供的選項。
+如需 **package.appxmanifest** 檔案和封裝的詳細資訊，請參閱[資訊清單設計工具](/previous-versions/br230259(v=vs.140))。 現在，請查看 [**功能**] 索引標籤，並查看所提供的選項。
 
 ![direct3d App 的預設功能的螢幕擷取畫面。](images/simple-dx-game-setup-capabilities.png)
 
-如果您未選取遊戲所使用的功能 (例如透過 [網際網路]  存取全球高分板)，就無法存取對應的資源或功能。 建立新遊戲時，記得選取遊戲執行所需的功能！
+如果您未選取遊戲使用的功能，例如存取全球高計分面板的**網際網路**，則您將無法存取對應的資源或功能。 當您建立新的遊戲時，請確定您選取的是您的遊戲所呼叫之 Api 所需的任何功能。
 
-現在，讓我們看看隨附於 **DirectX 11 應用程式 (通用 Windows)** 範本的其餘檔案。
+現在讓我們來看一下 [ **DirectX 11 應用程式（通用 Windows）** ] 範本隨附的其餘檔案。
 
-## <a name="review-the-included-libraries-and-headers"></a>檢視包含的程式庫和標頭
+## <a name="review-other-important-libraries-and-source-code-files"></a>查看其他重要的程式庫和原始程式碼檔
 
-有幾個檔案我們尚未討論。 這些檔案提供 Direct3D 遊戲開發案例中常用的其他工具和支援。 如需基本 DirectX 遊戲專案隨附之檔案的完整清單，請參閱 [DirectX 遊戲專案範本](user-interface.md#template-structure)。
+如果您想要自行建立一種遊戲專案範本，讓您可以重複使用它做為未來專案的起點，則您會想要複製 `GameMain.h` 和 `GameMain.cpp` 移出您下載的[Simple3DGameDX](/samples/microsoft/windows-universal-samples/simple3dgamedx/)專案，並將其新增至新的核心應用程式專案。 研究這些檔案、瞭解其作用，並移除**Simple3DGameDX**特有的任何專案。 也將任何相依于您尚未複製之程式碼的專案加上批註。 只要透過範例， `GameMain.h` 取決於 `GameRenderer.h` 。 當您複製的檔案超出**Simple3DGameDX**時，您將能夠取消批註。
 
-| 範本來源檔         | 檔案資料夾            | 描述 |
+以下是**Simple3DGameDX**中一些檔案的簡短問卷調查，如果您想要加入範本，您將會發現這些檔案很有用。 在任何情況下，請務必瞭解**Simple3DGameDX**本身的工作方式。
+
+|來源檔案|檔案資料夾|描述|
 |------------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| DeviceResources.h/.cpp       | 通用                 | 定義控制所有 DirectX [裝置資源](tutorial--assembling-the-rendering-pipeline.md#resource) 的類別物件。 它也會包括您的應用程式介面，其擁有裝置遺失或建立時要通知的 DeviceResources。                                                |
-| DirectXHelper.h              | 通用                 | 實作方法包括**DX::ThrowIfFailed**、**ReadDataAsync** 和 **ConvertDipsToPixels。 **DX::ThrowIfFailed** 將 DirectX Win32 API 傳回的錯誤 HRESULT 值轉換成 Windows 執行階段例外狀況。 使用這個方法放置偵錯 DirectX 錯誤的中斷點。 如需詳細資訊，請參閱 [ThrowIfFailed](https://github.com/Microsoft/DirectXTK/wiki/ThrowIfFailed)。 **ReadDataAsync** 會非同步讀取二進位檔案。 **ConvertDipsToPixels** 會將裝置獨立像素 (DIP) 中的長度轉換為實體像素的長度。 |
-| StepTimer.h                  | 通用                 | 定義高解析度的計時器，對於遊戲或互動式轉譯應用程式非常實用。   |
-| Sample3DSceneRenderer.h/.cpp | 內容                | 定義起始基本轉譯管線的類別物件。 它建立基本轉譯器實作，將 Direct3D 交換鏈結與圖形卡連接至您的使用 DirectX 的 UWP。   |
-| SampleFPSTextRenderer.h/.cpp | 內容                | 定義使用 Direct2D 和 DirectWrite 轉譯螢幕右下角中目前每秒畫面格數 (FPS) 值的類別物件。  |
-| SamplePixelShader.hlsl       | 內容                | 包含最基本的像素著色器的高階著色器語言 (HLSL) 程式碼。                                            |
-| SampleVertexShader.hlsl      | 內容                | 包含最基本的頂點著色器的高階著色器語言 (HLSL) 程式碼。                                           |
-| ShaderStructures.h           | 內容                | 包含可用於傳送 MVP 矩陣及每個頂點資料至頂點著色器的著色器結構。  |
-| pch.h/.cpp                   | 主要                   | 包含針對 Direct3D 應用程式所使用之 API (包括 DirectX 11 API) 所含的所有 Windows 系統。| 
+|DeviceResources.h/.cpp|公用事業|定義**DeviceResources**類別，以控制所有 DirectX[裝置資源](tutorial--assembling-the-rendering-pipeline.md#resource)。 也會定義**IDeviceNotify**介面，用來通知您的應用程式，圖形配接器裝置已遺失或重新建立。|
+|DirectXSample.h|公用事業|執行 helper 函式，例如**ConvertDipsToPixels**。 **ConvertDipsToPixels** 會將裝置獨立像素 (DIP) 中的長度轉換為實體像素的長度。|
+|GameTimer .h/.cpp|公用事業|定義高解析度的計時器，對於遊戲或互動式轉譯應用程式非常實用。|
+|GameRenderer.h/.cpp|轉譯|定義**GameRenderer**類別，它會執行基本的轉譯管線。|
+|GameHud .h/.cpp|轉譯|定義一個類別，以使用 Direct2D 和 DirectWrite 來呈現遊戲的列印頭顯示（抬頭顯示器）。|
+|VertexShader. hlsl 和 VertexShaderFlat. hlsl|著色器|包含基本頂點著色器的高階著色器語言（HLSL）程式碼。|
+|無效. hlsl 和 PixelShaderFlat. hlsl|著色器|包含基本圖元著色器的高階著色器語言（HLSL）程式碼。|
+|ConstantBuffers.hlsli|著色器|包含常數緩衝區的資料結構定義，以及用來將模型視圖投射（MVP）矩陣和每個頂點的資料傳遞至頂點著色器的著色器結構。|
+|pch.h/.cpp|N/A|包含 common c + +/WinRT、Windows 和 DirectX include。| 
 
 ### <a name="next-steps"></a>後續步驟
 
-此時，您已學會如何使用 **DirectX 11 App (通用 Windows)** 範本建立 UWP DirectX 遊戲專案，並引進此專案提供的幾個元件和檔案。
+此時，我們已示範如何為 DirectX 遊戲建立新的 UWP 專案、查看其中一些部分，並開始思考如何將該專案轉換成一種可重複使用的遊戲範本。 我們也探討了**Simple3DGameDX**範例遊戲的一些重要部分。
 
-下一節是[定義遊戲的 UWP 架構](tutorial--building-the-games-uwp-app-framework.md)。 我們將會檢查此遊戲如何使用和延伸許多範本提供的概念和元件。
-
- 
-
- 
-
-
-
-
+下一節將[定義遊戲的 UWP 應用程式架構](tutorial--building-the-games-uwp-app-framework.md)。 我們將更進一步瞭解**Simple3DGameDX**的運作方式。

@@ -1,16 +1,16 @@
 ---
 title: 藍牙 GATT 用戶端
 description: 本文將概略說明適用於通用 Windows 平台 (UWP) app 的藍牙泛型屬性設定檔 (GATT) 用戶端，並提供常見使用案例的範例程式碼。
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e894b750ba2119e2cca6f316f9671c51386d800c
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 5c17351cf964ffb05dc60dbaf5c6ced1db467f78
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854674"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469533"
 ---
 # <a name="bluetooth-gatt-client"></a>藍牙 GATT 用戶端
 
@@ -21,6 +21,11 @@ ms.locfileid: "83854674"
 - 列舉裝置所支援的服務和特性
 - 讀取和寫入特性
 - 訂閱特性值變更時的通知
+
+> [!Important]
+> 您必須在*package.appxmanifest.xml*中宣告 "bluetooth" 功能。
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 > **重要 API**
 >
@@ -196,7 +201,7 @@ if (result == GattCommunicationStatus.Success)
 - 寫入至用戶端特性組態描述元 (CCCD)
 - 處理 Characteristic.ValueChanged 事件
 
-寫入至 CCCD 是要告訴「伺服器」裝置，每次特定特性值變更時，這個用戶端都想要知道。 若要這樣做：
+寫入至 CCCD 是要告訴「伺服器」裝置，每次特定特性值變更時，這個用戶端都想要知道。 作法：
 
 ```csharp
 GattCommunicationStatus status = await selectedCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(
