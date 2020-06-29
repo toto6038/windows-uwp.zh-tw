@@ -93,7 +93,7 @@
           items:
             - name: 設定專案
               href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
-            - name: UWP 架構
+            - name: UWP 應用程式架構
               href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
             - name: 管理遊戲流程
               href: ../gaming/tutorial-game-flow-management.md
@@ -158,7 +158,7 @@
               items:
                 - name: 轉換概觀
                   href: ../graphics-concepts/transform-overview.md
-                - name: '世界矩陣轉換 '
+                - name: 世界矩陣轉換
                   href: ../graphics-concepts/world-transform.md
                 - name: 檢視轉換
                   href: ../graphics-concepts/view-transform.md
