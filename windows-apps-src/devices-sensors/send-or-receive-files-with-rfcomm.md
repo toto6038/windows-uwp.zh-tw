@@ -2,7 +2,7 @@
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: 藍牙 RFCOMM
 description: 本文將概略說明通用 Windows 平台 (UWP) app 中的藍牙 RFCOMM，並提供範例程式碼來說明如何傳送或接收檔案。
-ms.date: 07/19/2018
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 41facafe5a1f42a94ed91a4b5e6d34bd43c806f2
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: d95b7159c64c7796e55d4566d62630c076a707b1
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448318"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469553"
 ---
 # <a name="bluetooth-rfcomm"></a>藍牙 RFCOMM
 
@@ -25,6 +25,11 @@ ms.locfileid: "85448318"
 - [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
 本文將概略說明通用 Windows 平台 (UWP) app 中的藍牙 RFCOMM，並提供範例程式碼來說明如何傳送或接收檔案。
+
+> [!Important]
+> 您必須在*package.appxmanifest.xml*中宣告 "bluetooth" 功能。
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 ## <a name="overview"></a>概觀
 

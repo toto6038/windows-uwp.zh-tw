@@ -1,17 +1,15 @@
 ---
 title: 將封裝提交至 Windows 封裝管理員
-description: ''
-author: denelon
-ms.author: denelon
+description: 您可以使用 Windows 封裝管理員作為軟體封裝 (包含工具和應用程式) 的散發通道。
 ms.date: 04/29/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: e83088c5a6b2755a8ce7f08e513d09f877580db8
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: ae9c9039154e2a576a691a01d64abcf8c9029c1c
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580085"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334604"
 ---
 # <a name="submit-packages-to-windows-package-manager"></a>將封裝提交至 Windows 封裝管理員
 

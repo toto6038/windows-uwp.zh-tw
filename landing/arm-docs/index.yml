@@ -6,16 +6,16 @@ metadata:
   description: 此頁面為您提供開始開發 ARM64 win32 與 UWP 應用程式的資訊。
   ms.service: guidance
   ms.topic: landing-page
-  author: msatranjr
-  ms.author: misatran
+  author: hickeys
+  ms.author: hickeys
   ms.date: 05/08/2018
   ms.localizationpriority: medium
-  ms.openlocfilehash: 953b284568f17cedcd89c3459706ac4c88200111
-  ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+  ms.openlocfilehash: 2777d1f2d4c65be24f8582aa5c3e451b783244fe
+  ms.sourcegitcommit: 97d2ef33253af210ad2d4f036b4820056ff03f62
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/29/2020
-  ms.locfileid: "80380363"
+  ms.lasthandoff: 06/26/2020
+  ms.locfileid: "85441615"
 landingContent:
 - title: 關於 Windows 10 on ARM
   linkLists:
@@ -40,7 +40,7 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: 使用 SDK 建置 ARM64 應用程式
-      url: https://blogs.windows.com/buildingapps/?p=52087
+      url: https://blogs.windows.com/windowsdeveloper/2018/11/15/official-support-for-windows-10-on-arm-development/
     - text: ARM 上的 UWP 應用程式
       url: /windows/uwp/porting/apps-on-arm-troubleshooting-arm32
     - text: 在 ARM 上進行偵錯
