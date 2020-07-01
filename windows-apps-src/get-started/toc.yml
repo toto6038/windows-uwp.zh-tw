@@ -32,4 +32,4 @@
     - name: 建置複雜的應用程式
       href: ../get-started/plan-your-app.md
 - name: 取得 Windows 應用程式範例
-  href: ../get-started/get-uwp-app-samples.md
+  href: ../get-started/get-app-samples.md
