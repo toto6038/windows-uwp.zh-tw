@@ -1,17 +1,15 @@
 ---
 title: winget validate 命令
 description: 驗證資訊清單檔案，以將軟體提交至 GitHub 上的 Microsoft 社群封裝資訊清單存放庫。
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a5772e144a4226be9fbb4a4949aaac1e3d4408e6
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: ec1f15ef9086c1083430c9bbe55ea52827ae4bfb
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824929"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334469"
 ---
 # <a name="validate-command-winget"></a>validate 命令 (winget)
 

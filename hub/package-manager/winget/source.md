@@ -1,17 +1,15 @@
 ---
 title: source 命令
 description: 管理 Windows 封裝管理員所存取的存放庫。
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: cb897f25324ab8a516d18f5defe7cffa3e6a0109
-ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
+ms.openlocfilehash: 5d383dfc4e66c75c993210d382b674508ad3cef4
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84166244"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334486"
 ---
 # <a name="source-command-winget"></a>source 命令 (winget)
 

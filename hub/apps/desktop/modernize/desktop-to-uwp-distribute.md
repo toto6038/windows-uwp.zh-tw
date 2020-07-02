@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 14ad6707b7203dddd9aa7be186e76da677bbd675
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 7eb57e8cea83a4d45087be4c4685ada8d108fa7a
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302702"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334496"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>散發已封裝的傳統型應用程式
 
@@ -35,7 +35,7 @@ ms.locfileid: "75302702"
 >[!IMPORTANT]
 > 如果您計畫將應用程式發佈到 Microsoft Store，請確定您的應用程式可在執行 Windows 10 S 的裝置上正確運作。此為 Microsoft Store 需求。 請參閱[針對 Windows 10 S 測試您的 Windows 應用程式](/windows/msix/desktop/desktop-to-uwp-test-windows-s)。
 
-<a id="side-load" />
+<a id="side-load"></a>
 
 ## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>不透過 Microsoft Store 散發您的應用程式
 
@@ -58,7 +58,7 @@ ms.locfileid: "75302702"
 
 若要在其他裝置上側載您的應用程式，請參閱[在 Windows 10 中側載 LOB 應用程式](/windows/application-management/sideload-apps-in-windows-10)。
 
-<a id="transition-users" />
+<a id="transition-users"></a>
 
 ## <a name="transition-users-to-your-packaged-app"></a>將使用者轉換至您已封裝的應用程式
 
@@ -126,7 +126,7 @@ private void MigrateUserData()
 
 ```csharp
 private void RemoveDesktopApp()
-{              
+{
     //Typically, you can find your uninstall string at this location.
     String uninstallString = (String)Microsoft.Win32.Registry.GetValue
         (@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion" +

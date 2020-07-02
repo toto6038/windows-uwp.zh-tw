@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b048de69a8a259509e5a5c54c5f1d61675a25a18
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: d9f5ca95678a8b31ed53cfdf2c4e6433bca504c8
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854717"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334454"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將傳統型應用程式與 Windows 10 和 UWP 整合
 
@@ -36,7 +36,7 @@ ms.locfileid: "83854717"
 * [將選項新增至具有特定檔案類型的檔案操作功能表](#add)
 * [使用 URL 直接開啟特定類型的檔案](#open)
 
-<a id="point" />
+<a id="point"></a>
 
 ### <a name="point-existing-start-tiles-and-taskbar-buttons-to-your-packaged-app"></a>將現有的開始畫面磚和工作列按鈕指向您已封裝的應用程式
 
@@ -55,7 +55,6 @@ ms.locfileid: "83854717"
         <DesktopApp ShortcutPath="[path]" />
     </DesktopAppMigration>
 </Extension>
-
 ```
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration)找到完整的結構描述參考。
@@ -93,7 +92,7 @@ ms.locfileid: "83854717"
 
 [具有轉換/移轉/解除安裝的 WPF 圖片檢視器](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="make" />
+<a id="make"></a>
 
 ### <a name="make-your-packaged-application-open-files-instead-of-your-desktop-app"></a>使用您已封裝的應用程式開啟檔案，而非使用您的傳統型應用程式
 
@@ -154,7 +153,7 @@ ms.locfileid: "83854717"
 
 [具有轉換/移轉/解除安裝的 WPF 圖片檢視器](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="associate" />
+<a id="associate"></a>
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>將已封裝的應用程式和一組檔案類型建立關聯
 
@@ -212,7 +211,7 @@ ms.locfileid: "83854717"
 
 [具有轉換/移轉/解除安裝的 WPF 圖片檢視器](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="add" />
+<a id="add"></a>
 
 ### <a name="add-options-to-the-context-menus-of-files-that-have-a-certain-file-type"></a>將選項新增至具有特定檔案類型的檔案操作功能表
 
@@ -279,7 +278,7 @@ ms.locfileid: "83854717"
 
 [具有轉換/移轉/解除安裝的 WPF 圖片檢視器](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="open" />
+<a id="open"></a>
 
 ### <a name="open-certain-types-of-files-directly-by-using-a-url"></a>使用 URL 直接開啟特定類型的檔案
 
@@ -341,7 +340,7 @@ ms.locfileid: "83854717"
 * [為您的應用程式建立防火牆例外](#rules)
 * [將 DLL 檔案放置在套件的任何資料夾](#load-paths)
 
-<a id="rules" />
+<a id="rules"></a>
 
 ### <a name="create-firewall-exception-for-your-app"></a>為您的應用程式建立防火牆例外
 
@@ -403,7 +402,7 @@ ms.locfileid: "83854717"
 </Package>
 ```
 
-<a id="load-paths" />
+<a id="load-paths"></a>
 
 ### <a name="place-your-dll-files-into-any-folder-of-the-package"></a>將 DLL 檔案放置在套件的任何資料夾
 
@@ -467,7 +466,7 @@ ms.locfileid: "83854717"
 * [為檔案類型指定操作功能表處理常式](#context-menu)
 * [讓雲端服務中的檔案出現在檔案總管](#cloud-files)
 
-<a id="define" />
+<a id="define"></a>
 
 ### <a name="define-how-your-application-behaves-when-users-select-and-open-multiple-files-at-the-same-time"></a>定義使用者同時選取和開啟多個檔案時，您的應用程式將會如何反應
 
@@ -541,7 +540,7 @@ ms.locfileid: "83854717"
 
 如果使用者開啟 15 個或較少數量的檔案，**MultiSelectModel** 屬性的預設選項將會設定為 *Player*。 否則，預設值為 *Document*。 UWP 應用程式一律以 *Player* 啟動。
 
-<a id="show" />
+<a id="show"></a>
 
 ### <a name="show-file-contents-in-a-thumbnail-image-within-file-explorer"></a>在檔案總管中以縮圖影像顯示檔案內容
 
@@ -604,7 +603,7 @@ ms.locfileid: "83854717"
 </Package>
 ```
 
-<a id="preview" />
+<a id="preview"></a>
 
 ### <a name="show-file-contents-in-the-preview-pane-of-file-explorer"></a>在檔案總管的預覽窗格中顯示檔案內容
 
@@ -665,7 +664,7 @@ ms.locfileid: "83854717"
 </Package>
 ```
 
-<a id="enable" />
+<a id="enable"></a>
 
 ### <a name="enable-users-to-group-files-by-using-the-kind-column-in-file-explorer"></a>讓使用者在檔案總管中使用種類欄位群組檔案
 
@@ -733,7 +732,7 @@ ms.locfileid: "83854717"
 </Package>
 ```
 
-<a id="make-file-properties" />
+<a id="make-file-properties"></a>
 
 ### <a name="make-file-properties-available-to-search-index-property-dialogs-and-the-details-pane"></a>讓檔案屬性可供搜尋、索引、屬性對話方塊，以及詳細資料窗格使用
 
@@ -790,7 +789,7 @@ ms.locfileid: "83854717"
 </Package>
 ```
 
-<a id="context-menu" />
+<a id="context-menu"></a>
 
 ### <a name="specify-a-context-menu-handler-for-a-file-type"></a>為檔案類型指定操作功能表處理常式
 
@@ -888,7 +887,7 @@ ms.locfileid: "83854717"
 </Package>
 ```
 
-<a id="cloud-files" />
+<a id="cloud-files"></a>
 
 ### <a name="make-files-from-your-cloud-service-appear-in-file-explorer"></a>讓雲端服務中的檔案出現在檔案總管
 
@@ -951,7 +950,7 @@ ms.locfileid: "83854717"
 </Package>
 ```
 
-<a id="start" />
+<a id="start"></a>
 
 ## <a name="start-your-application-in-different-ways"></a>以不同的方式啟動您的應用程式
 
@@ -961,7 +960,7 @@ ms.locfileid: "83854717"
 * [讓使用者在將裝置連接到電腦時，啟動您的應用程式](#autoplay)
 * [從 Microsoft Store 接收更新後自動重新開機](#updates)
 
-<a id="protocol" />
+<a id="protocol"></a>
 
 ### <a name="start-your-application-by-using-a-protocol"></a>使用通訊協定啟動您的應用程式
 
@@ -1012,7 +1011,7 @@ ms.locfileid: "83854717"
 </Package>
 ```
 
-<a id="alias" />
+<a id="alias"></a>
 
 ### <a name="start-your-application-by-using-an-alias"></a>使用別名啟動您的應用程式
 
@@ -1068,7 +1067,7 @@ ms.locfileid: "83854717"
 
 您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-<a id="executable" />
+<a id="executable"></a>
 
 ### <a name="start-an-executable-file-when-users-log-into-windows"></a>在使用者登入 Windows 時啟動可執行檔
 
@@ -1131,7 +1130,7 @@ ms.locfileid: "83854717"
  </Package>
 ```
 
-<a id="autoplay" />
+<a id="autoplay"></a>
 
 ### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>讓使用者在將裝置連接到電腦時，啟動您的應用程式
 
@@ -1190,7 +1189,7 @@ ms.locfileid: "83854717"
 </Package>
 ```
 
-<a id="updates" />
+<a id="updates"></a>
 
 ### <a name="restart-automatically-after-receiving-an-update-from-the-microsoft-store"></a>從 Microsoft Store 接收更新後自動重新開機
 
@@ -1203,7 +1202,7 @@ ms.locfileid: "83854717"
 當應用程式中的每個使用中視窗收到 [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) 訊息時，您的應用程式應該會儲存資料並關閉。
 
 >[!NOTE]
-使用中視窗也會收到 [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) 訊息，以防應用程式未處理 [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) 訊息。
+> 使用中視窗也會收到 [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) 訊息，以防應用程式未處理 [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) 訊息。
 
 此時，您的應用程式有 30 秒的時間可以關閉本身的處理程序，否則平台會強制終止。
 
@@ -1217,7 +1216,7 @@ ms.locfileid: "83854717"
 * [與其他 Windows 應用程式共用字型](#fonts)
 * [從通用 Windows 平台 (UWP) 應用程式中啟動 Win32 處理程序](#win32-process)
 
-<a id="printing" />
+<a id="printing"></a>
 
 ### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>在支援列印的應用程式中，將您的應用程式作為列印目標顯示
 
@@ -1269,7 +1268,7 @@ ms.locfileid: "83854717"
 
 您可以在[這裡](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF)找到使用此延伸模組的範例。
 
-<a id="fonts" />
+<a id="fonts"></a>
 
 ### <a name="share-fonts-with-other-windows-applications"></a>與其他 Windows 應用程式共用字型
 
@@ -1317,7 +1316,7 @@ ms.locfileid: "83854717"
 </Package>
 ```
 
-<a id="win32-process" />
+<a id="win32-process"></a>
 
 ### <a name="start-a-win32-process-from-a-universal-windows-platform-uwp-app"></a>從通用 Windows 平台 (UWP) 應用程式中啟動 Win32 處理程序
 

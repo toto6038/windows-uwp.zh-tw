@@ -9,12 +9,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 68c2427fe6b02385325f0f224cc837912621f6bb
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 63648743536dae9f7655f82674ad04255a13f437
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729856"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334407"
 ---
 # <a name="windows-runtime-apis-available-to-desktop-apps"></a>適用於傳統型應用程式的 Windows 執行階段 API
 
@@ -49,7 +49,7 @@ ms.locfileid: "82729856"
 
 如需如何使用 Windows 執行階段 API 的範例，請參閱 GitHub 上的[傳統型橋接器範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 應用程式範例](https://github.com/Microsoft/Windows-universal-samples)。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)。
 
-<a id="new" />
+<a id="new"></a>
 
 ### <a name="apis-supported-only-in-apps-with-package-identity"></a>僅在具有套件識別資料的應用程式中支援的 API
 
@@ -375,7 +375,7 @@ ms.locfileid: "82729856"
 * [Windows.UI.StartScreen.JumpList](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.JumpList)
 * [Windows.UI.StartScreen.JumpListItem](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.JumpListItem)
 
-<a id="both" />
+<a id="both"></a>
 
 ### <a name="apis-supported-in-all-desktop-applications"></a>所有傳統型應用程式均支援的 API
 

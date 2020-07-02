@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: a38f5fa7f3ef99f5970ec5d476fb65761aa39db4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 73e867071058dfde71979318d6d711d79460f30b
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302582"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334559"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
@@ -25,7 +25,7 @@ ms.locfileid: "75302582"
 
 準備好後就可以開始進行。
 
-<a id="setup" />
+<a id="setup"></a>
 
 ## <a name="first-setup-your-solution"></a>先設定解決方案
 
@@ -110,7 +110,7 @@ ms.locfileid: "75302582"
 
 :five:[在 UWP 專案中，顯示您要的頁面](#parse)
 
-<a id="solution-setup" />
+<a id="solution-setup"></a>
 
 ### <a name="setup-your-solution"></a>設定解決方案
 
@@ -122,7 +122,7 @@ ms.locfileid: "75302582"
 
 在此範例中，Windows Forms 專案名稱為 **Landmarks**，而包含 XAML UI 的 UWP 專案名稱為 **MapUI**。
 
-<a id="xaml-UI" />
+<a id="xaml-UI"></a>
 
 ### <a name="create-a-xaml-ui"></a>建立 XAML UI
 
@@ -171,7 +171,7 @@ ms.locfileid: "75302582"
 > [!NOTE]
 > 地圖控制項會從網際網路下載資料，所以如果您使用地圖控制項，則也必須將「網際網路用戶端」功能新增至您的資訊清單。
 
-<a id="start" />
+<a id="start"></a>
 
 ### <a name="start-the-uwp-app"></a>啟動 UWP 應用程式
 
@@ -196,7 +196,7 @@ private async void ShowMap(double lat, double lon)
 }
 ```
 
-<a id="parse" />
+<a id="parse"></a>
 
 ### <a name="parse-parameters-and-show-a-page"></a>剖析參數並顯示頁面
 
@@ -271,7 +271,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 :five:[修改傳統型應用程式以取得共用檔案](#modify-desktop)
 
-<a id="share-extension" />
+<a id="share-extension"></a>
 
 以下步驟  
 
@@ -299,7 +299,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 您也需要指定您的應用程式可以分享哪些檔案類型。 在此範例中，我們會將 [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) 傳統型應用程式設為點陣圖影像的共用目標，以指定支援檔案類型的 `Bitmap`。
 
-<a id="override" />
+<a id="override"></a>
 
 ### <a name="override-the-onsharetargetactivated-event-handler"></a>覆寫 OnShareTargetActivated 事件處理常式
 
@@ -332,7 +332,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 在此程式碼中，我們會將使用者共用的影像儲存到應用程式本機存放區資料夾。 稍後會修改傳統型應用程式，以從相同的資料夾中提取影像。 傳統型應用程式可以執行此操作，因為與 UWP 應用程式位在相同套件中。
 
-<a id="desktop-extensions" />
+<a id="desktop-extensions"></a>
 
 ### <a name="add-desktop-extensions-to-the-uwp-project"></a>將桌面延伸模組新增至 UWP 專案
 
@@ -340,7 +340,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 ![桌面延伸模組](images/desktop-to-uwp/desktop-extensions.png)
 
-<a id="full-trust" />
+<a id="full-trust"></a>
 
 ### <a name="add-the-full-trust-process-extension"></a>新增完全信任處理序延伸模組
 
@@ -356,7 +356,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 透過此延伸模組，UWP 應用程式即可啟用您要共用檔案的傳統型應用程式。 在範例中，我們會參考 [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) 傳統型應用程式的可執行檔。
 
-<a id="modify-desktop" />
+<a id="modify-desktop"></a>
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>修改傳統型應用程式以取得共用檔案
 
@@ -414,7 +414,7 @@ private void Watcher_Created(object sender, FileSystemEventArgs e)
 
 :three:[登錄背景工作](#register-background-task)
 
-<a id="implement-task" />
+<a id="implement-task"></a>
 
 ### <a name="implement-the-background-task"></a>實作背景工作
 
@@ -455,7 +455,7 @@ public sealed class SiteVerifier : IBackgroundTask
     }
 ```
 
-<a id="configure-background-task" />
+<a id="configure-background-task"></a>
 
 ### <a name="configure-the-background-task"></a>設定背景工作
 
@@ -473,7 +473,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ![Timer 屬性](images/desktop-to-uwp/background-task-entry-point.png)
 
-<a id="register-background-task" />
+<a id="register-background-task"></a>
 
 ### <a name="register-the-background-task"></a>登錄背景工作
 
