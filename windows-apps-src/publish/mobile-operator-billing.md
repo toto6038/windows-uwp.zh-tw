@@ -6,17 +6,17 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: windows 10, uwp, 電信業者, 電信費用帳單, 電信業者帳單
 ms.localizationpriority: medium
-ms.openlocfilehash: 16783e71a170118f470a351a7f5dc4c2a178405e
-ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
+ms.openlocfilehash: 2be7938faddaf50c96005f32c77f523ebf4061e3
+ms.sourcegitcommit: ae195892efb9d3abd1190776617984d4219c6777
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84334213"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85913227"
 ---
 # <a name="mobile-operator-billing"></a>電信業者帳單
 
 > [!NOTE]
-> 如果您要尋找有關支出的支援，包括設定付款帳戶、遺失支出、在保存支出或任何其他專案，請在[這裡](https://developer.microsoft.com/windows/support)聯絡支援。
+> 若正在尋找與支出相關的支援，包括設定支出帳戶、遺漏支出、暫停支出等，請在[這裡](https://developer.microsoft.com/windows/support)連絡支援人員。
 
 Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、執行 Windows 10 行動裝置版的手機以及 Xbox One 主機的付款方式 如果客戶的電信業者支援這項功能，客戶就可以新增 [電信業者帳單] 做為付款方式，並使用其行動裝置帳戶在 Microsoft Store 購物。
 
@@ -30,7 +30,7 @@ Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、
 | 國家/地區       | 電信業者                                        |
 |----------------------|---------------------------------------------------------|
 | 澳洲            | Optus                                                   |
-| 奧地利              | Hutchison 3G Austria、A1 Telekom、T-Mobile / tele.ring  |
+| 奧地利              | A1 Telekom，Hutchison 3G 奧地利，T-Mobile/telepresence. 環形  |
 | 比利時              | Base、Proximus                                          |
 | 加拿大               | Telus                                                   |
 | 捷克              | T-Mobile                                                |
@@ -39,7 +39,7 @@ Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、
 | 法國               | 橙色                                                  |
 | 德國              | O2、Telekom Deutschland、Vodafone                       |
 | 匈牙利              | Telenor                                                 |
-| 義大利                | Wind、Tre                                               |
+| 義大利                | Tre，風                                               |
 | 馬來西亞             | Digi                                                    |
 | 荷蘭          | KPN/Telfort                                           |
 | 挪威               | Telenor/Talkmore、Telia/OneCall                     |
@@ -48,10 +48,10 @@ Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、
 | 斯洛伐克             | Slovak Telekom                                          |
 | 南非         | Vodacom                                                 |
 | 西班牙                | 橙色                                                  |
-| 瑞典               | Telenor、3                                              |
-| 瑞士          | Swisscom、Sunrise                                       |
+| 瑞典               | 3，Telenor                                              |
+| 瑞士          | 日出、Swisscom                                       |
 | 台灣               | FarEasTone                                              |
 | 土耳其               | Turkcell                                                |
 | 阿拉伯聯合大公國 | Etisalat                                                |
 | 美國        | Sprint、Verizon                                         |
-| 英國       | O2、3 UK、EE                                            |
+| 英國       | 3 UK、EE、O2、Vodaphone                                 |

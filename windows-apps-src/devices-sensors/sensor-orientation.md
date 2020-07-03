@@ -4,22 +4,22 @@ title: 感應器方向
 description: 取自 Accelerometer、Gyrometer、Compass、Inclinometer 以及 OrientationSensor 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。
 ms.date: 05/24/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd84cd2f2255138b738ecb6dd7f6dab824d7ec4
-ms.sourcegitcommit: d1ef530ef4dfa34db7bc429ab5a0c19fc405885f
+ms.openlocfilehash: 4659aaba330d3b41451e91e450ff601e3fcf5407
+ms.sourcegitcommit: 42a2d9e47f682ba42d91fed587f4d5924bde9c9a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71247451"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85840762"
 ---
 # <a name="sensor-orientation"></a>感應器方向
 
-取自 [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)、[**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)、[**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)、[**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer) 以及 [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的參照畫面定義，並在使用者轉動裝置時隨著旋轉。 如果您的 app 支援自動旋轉，而會隨著使用者旋轉時調整自己的方向來適應裝置，您就必須在使用前先行針對旋轉調整感應器資料。
+[**加速**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)計、[**陀螺儀**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)、[**羅盤**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)、[**傾角**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)和[**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)類別中的感應器資料是由其參考軸所定義。 這些軸線是由裝置的參照畫面定義，並在使用者轉動裝置時隨著旋轉。 如果您的 app 支援自動旋轉，而會隨著使用者旋轉時調整自己的方向來適應裝置，您就必須在使用前先行針對旋轉調整感應器資料。
 
 ### <a name="important-apis"></a>重要 API
 
-- [**Windows 裝置。感應器**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+- [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
 - [**Windows. 感應器。自訂**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
 
 ## <a name="display-orientation-vs-device-orientation"></a>顯示方向和裝置方向
@@ -30,15 +30,15 @@ ms.locfileid: "71247451"
 
 此圖表顯示[橫向](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)的顯示和裝置方向。
 
-![顯示方向與裝置方向為 Landscape](images/sensor-orientation-a.PNG)
+:::image type="content" source="images/sensor-orientation-a-small.jpg" alt-text="顯示方向與裝置方向為 Landscape":::
 
 下圖顯示[LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)中的顯示和裝置方向。
 
-![顯示方向與裝置方向為 LandscapeFlipped](images/sensor-orientation-b.PNG)
+![顯示方向與裝置方向為 LandscapeFlipped](images/sensor-orientation-b-small.jpg)
 
 這個最後的圖表會顯示裝置方向為[LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)時的橫向顯示方向。
 
-![顯示方向為 Landscape，而裝置方向為 LandscapeFlipped](images/sensor-orientation-c.PNG)
+![顯示方向為 Landscape，而裝置方向為 LandscapeFlipped](images/sensor-orientation-c-small.jpg)
 
 使用 [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) 方法搭配 [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation) 屬性，即可透過 [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) 類別查詢方向值。 接著與 [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) 列舉比較就能建立邏輯。 記住您支援哪些方向，就必須支援將參考軸線轉換為該方向。
 
@@ -46,12 +46,12 @@ ms.locfileid: "71247451"
 
 製造商會同時生產橫向優先裝置與直向優先裝置。 橫向優先裝置 (例如桌上型電腦和膝上型電腦) 與直向優先裝置 (例如手機和某些平板電腦) 之間的參考框架並不同。 下表顯示橫向優先裝置與直向優先裝置的感應器軸線。
 
-| Orientation | 橫向優先 | 直向優先 |
+| 方向 | 橫向優先 | 直向優先 |
 |-------------|-----------------|----------------|
-| **Sap** | ![方向為 Landscape 的橫向優先裝置](images/sensor-orientation-0.PNG) | ![方向為 Landscape 的直向優先裝置](images/sensor-orientation-1.PNG) |
-| **直向** | ![方向為 Portrait 的橫向優先裝置](images/sensor-orientation-2.PNG) | ![方向為 Portrait 的直向優先裝置](images/sensor-orientation-3.PNG) |
-| **LandscapeFlipped** | ![方向為 LandscapeFlipped 的橫向優先裝置](images/sensor-orientation-4.PNG) | ![方向為 LandscapeFlipped 的直向優先裝置](images/sensor-orientation-5.PNG) | 
-| **PortraitFlipped** | ![方向為 PortraitFlipped 的橫向優先裝置](images/sensor-orientation-6.PNG)| ![方向為 PortraitFlipped 的直向優先裝置](images/sensor-orientation-7.PNG) |
+| **橫向** | ![方向為 Landscape 的橫向優先裝置](images/sensor-orientation-0-small.jpg) | ![方向為 Landscape 的直向優先裝置](images/sensor-orientation-1-small.jpg) |
+| **縱向** | ![方向為 Portrait 的橫向優先裝置](images/sensor-orientation-2-small.jpg) | ![方向為 Portrait 的直向優先裝置](images/sensor-orientation-3-small.jpg) |
+| **LandscapeFlipped** | ![方向為 LandscapeFlipped 的橫向優先裝置](images/sensor-orientation-4-small.jpg) | ![方向為 LandscapeFlipped 的直向優先裝置](images/sensor-orientation-5-small.jpg) | 
+| **PortraitFlipped** | ![方向為 PortraitFlipped 的橫向優先裝置](images/sensor-orientation-6-small.jpg)| ![方向為 PortraitFlipped 的直向優先裝置](images/sensor-orientation-7-small.jpg) |
 
 ## <a name="devices-broadcasting-display-and-headless-devices"></a>廣播顯示畫面和無周邊裝置的裝置
 
@@ -66,7 +66,7 @@ ms.locfileid: "71247451"
 | 顯示方向 | 指南針朝向的參考軸線 | 面向北方的 API 指南針朝向 (先橫向) | 面向北方的 API 指南針朝向 (先直向) |指南針朝向調整 (先橫向) | 指南針朝向調整 (先直向) |
 |---------------------|------------------------------------|---------------------------------------------------------|--------------------------------------------------------|------------------------------------------------|-----------------------------------------------|
 | 橫向           | -Z | 0   | 270 | 朝向               | (朝向 + 90) % 360  |
-| 直向            |  Y | 90  | 0   | (朝向 + 270) % 360 |  朝向              |
+| 縱向            |  Y | 90  | 0   | (朝向 + 270) % 360 |  朝向              |
 | LandscapeFlipped    |  Z | 180 | 90  | (朝向 + 180) % 360 | (朝向 + 270) % 360 |
 | PortraitFlipped     |  Y | 270 | 180 | (朝向 + 90) % 360  | (朝向 + 180) % 360 |
 
@@ -110,10 +110,10 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 
 | 參考軸線        |  X |  Y | Z |
 |-----------------------|----|----|---|
-| **Sap**         |  X |  Y | Z |
-| **直向**          |  Y | -X | Z |
-| **LandscapeFlipped**  | -X | -Y | Z |
-| **PortraitFlipped**   | -Y |  X | Z |
+| **橫向**         |  X |  Y | Z |
+| **縱向**          |  Y | -X | Z |
+| **LandscapeFlipped**  | -X | -y | Z |
+| **PortraitFlipped**   | -y |  X | Z |
 
 以下是將這些轉換套用到陀螺儀的程式碼範例。
 
@@ -159,7 +159,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="display-orientation-and-device-orientation"></a>顯示方向和裝置方向
 
-[  **OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) 資料必須以不同方式變更。 請將這些不同的方向視為逆時針旋轉到 Z 軸，因此我們需要反轉旋轉以取回使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
+[**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) 資料必須以不同方式變更。 請將這些不同的方向視為逆時針旋轉到 Z 軸，因此我們需要反轉旋轉以取回使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
 
 ![尤拉公式](images/eulers-formula.png)
 
@@ -171,7 +171,11 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 | 顯示方向  | 延著 Z 軸逆時針旋轉 | 參考四元數 (反向旋轉) | 參考旋轉矩陣 (反向旋轉) |
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
-| **Sap**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
-| **直向**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
+| **橫向**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
+| **縱向**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
 | **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
+
+## <a name="see-also"></a>另請參閱
+
+[整合動作與方向感應器](https://docs.microsoft.com/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)
