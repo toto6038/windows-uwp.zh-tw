@@ -8,25 +8,25 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: ab67507153e0ff7065baffa92ea6ec35aee5b132
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 8775113c22716259f9449899b577481738dc6c0f
+ms.sourcegitcommit: da1c0ae251883987f105bc2919b2d67846194bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580765"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85198516"
 ---
 # <a name="get-started-with-winui-30-for-desktop-apps"></a>開始使用適用於桌面應用程式的 WinUI 3.0
 
-WinUI 3.0 預覽版 1 引進了新的專案範本，可讓您使用完全以 WinUI 為基礎的使用者介面來建立受控的桌面版 C#/.NET 和原生 C++/Win32 桌面應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3.0 提供的視窗、控制項和其他 UI 類型來實作。 
+WinUI 3.0 預覽版 1 引進了新的專案範本，可讓您使用完全以 WinUI 為基礎的使用者介面來建立受控的桌面版 C#/.NET 和原生 C++/Win32 桌面應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3.0 提供的視窗、控制項和其他 UI 類型來實作。
 
-WinUI 3.0 預覽版 1 會在 Visual Studio 2019 中新增下列 **WinUI in Desktop** 專案範本：
+WinUI 3.0 Preview 1 會將下列專案範本新增至 Visual Studio 2019，以便建置使用 WinUI 3.0 的桌面應用程式：
 
-* 以 .NET 5 為目標的 C# 應用程式和程式庫：
-  * 已封裝的空白應用程式 (WinUI in Desktop)
-  * 類別庫 (WinUI in Desktop)
+* 適用於以 .NET 5 為目標的 C# 應用程式和程式庫的專案範本：
+  * **已封裝的空白應用程式 (WinUI in Desktop)**
+  * **類別庫 (WinUI in Desktop)**
 
-* C++/Win32 應用程式：
-  * 已封裝的空白應用程式 (WinUI in Desktop)
+* 適用於 C++ /Win32 應用程式的專案範本：
+  * **已封裝的空白應用程式 (WinUI in Desktop)**
 
 應用程式專案範本會產生 WinUI 應用程式專案和 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建立至 [MSIX 套件](https://docs.microsoft.com/windows/msix/overview)以進行部署。
 
@@ -41,6 +41,9 @@ WinUI 3.0 預覽版 1 會在 Visual Studio 2019 中新增下列 **WinUI in Deskt
 3. 安裝 .NET 5 預覽版 4 的 x64 和 x86 版本：
     * x64：[https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe)
     * x86：[https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe)
+
+    > [!NOTE]
+    > WinUI 3.0 Preview 1 需要 .NET 5 Preview 4。 WinUI 3.0 Preview 1 不支援較新的 .NET 5 預覽版本。
 
 4. 安裝 VSIX 擴充功能，其中包含適用於 Visual Studio 2019 的 WinUI 3.0 預覽版 1 專案範本。 如需詳細資訊，請參閱[這些指示](index.md#visual-studio-project-templates)。
 

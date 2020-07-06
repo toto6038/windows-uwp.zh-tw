@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: fc12bf1abeabd1a1c3cfccfe3c6d3f12ebda65f3
-ms.sourcegitcommit: c4f912ba0313ae49632f81e38d7d2d983ac132ad
+ms.openlocfilehash: e7cb0e10efec9077292faa8f8d72a7dad1da2c1b
+ms.sourcegitcommit: 83f4a528b5e3fc2b140c76fdf2acf734d6d851d4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84200775"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84683377"
 ---
 # <a name="author-events-in-cwinrt"></a>以 C++/WinRT 撰寫事件
 
@@ -26,7 +26,7 @@ ms.locfileid: "84200775"
 
 請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **Windows 執行階段元件 (C++/WinRT)** 專案，並將其命名為 *BankAccountWRC* (適用於「銀行帳戶 Windows 執行階段元件」)。 為 *BankAccountWRC* 專案命名可讓您在本主題的其餘步驟中提供最簡單的使用體驗。 尚未建置專案。
 
-新建立的專案中包含一個名為 `Class.idl` 的檔案。 將該檔案 `BankAccount.idl` 重新命名 (重新命名 `.idl` 檔案也會自動將相依的 `.h` 和 `.cpp` 檔案重新命名)。 以下面的清單取代 `BankAccount.idl` 的內容。
+新建立的專案中包含一個名為 `Class.idl` 的檔案。 在方案總管中，將該檔案 `BankAccount.idl` 重新命名 (重新命名 `.idl` 檔案也會自動將相依的 `.h` 和 `.cpp` 檔案重新命名)。 以下面的清單取代 `BankAccount.idl` 的內容。
 
 ```idl
 // BankAccountWRC.idl
@@ -92,6 +92,8 @@ namespace winrt::BankAccountWRC::implementation
 }
 ```
 
+您也必須從這兩個檔案中刪除 `static_assert`。
+
 > [!NOTE]
 > 如需有關事件撤銷的詳細資訊，請參閱[撤銷已註冊的委派](handle-events.md#revoke-a-registered-delegate)。 您可以免費為您的事件取得自動事件撤銷實作。 換句話說，您不需要實作事件撤銷的多載&mdash;C++/WinRT 投影會為您提供。
 
@@ -103,7 +105,7 @@ namespace winrt::BankAccountWRC::implementation
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>建立核心應用程式 (BankAccountCoreApp) 以測試 Windows 執行階段元件
 
-現在建立新的專案 (在您的 *BankAccountWRC* 解決方案中，或在新的解決方案中)。 建立**核心應用程式 (C++/WinRT)** 專案，並將它命名為 *BankAccountCoreApp*。
+現在建立新的專案 (在您的 *BankAccountWRC* 解決方案中，或在新的解決方案中)。 建立**核心應用程式 (C++/WinRT)** 專案，並將它命名為 *BankAccountCoreApp*。 如果兩個專案位於相同的方案中，請將 *BankAccountCoreApp* 設定為啟始專案。
 
 > [!NOTE]
 > 如先前所述，Windows 執行階段元件的 Windows 執行階段中繼資料檔案 (命名為 *BankAccountWRC*的專案) 是建立於 `\BankAccountWRC\Debug\BankAccountWRC\` 資料夾中。 該路徑的第一個區段是包含解決方案檔案的資料夾名稱；下一個區段是名為 `Debug` 的子目錄；最後一個區段是為 Windows 執行階段元件所命名的子目錄。 如果您未將專案命名為 *BankAccountWRC*，則您的中繼資料檔案將會在 `\<YourProjectName>\Debug\<YourProjectName>\` 資料夾中。
@@ -155,11 +157,117 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 每一次您按一下視窗，從銀行帳戶餘額減 1。 若要示範事件如預期般引發，請將中斷點放在正在處理 **AccountIsInDebit** 事件的 lambda 運算式內、執行應用程式，然後在視窗中按一下。
 
-## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>透過 ABI 的參數化委派，以及簡單訊號
+## <a name="parameterized-delegates-across-an-abi"></a>透過 ABI 的參數化委派
 
 如果您的事件必須可透過應用程式二進位介面 (ABI) 存取&mdash;例如界於元件與其取用的應用程式之間&mdash;則您的事件必須使用 Windows 執行階段委派類型。 上述範例使用 [**Windows::Foundation::EventHandler\<T\>** ](/uwp/api/windows.foundation.eventhandler) Windows 執行階段委派類型。 [**TypedEventHandler\<TSender, TResult\>** ](/uwp/api/windows.foundation.eventhandler) 是 Windows 執行階段委派類型的另一個範例。
 
-這兩個委派類型的類型參數必須透過 ABI，因此類型參數也必須是 Windows 執行階段類型。 包含第一和第三方執行階段類別，以及數字和字串等基本類型。 如果您忘記此限制的話，編譯器會協助您解決「必須是 WinRT 類型」的錯誤。
+這兩個委派類型的類型參數必須透過 ABI，因此類型參數也必須是 Windows 執行階段類型。 包含 Windows 執行階段類別、第三方執行階段類別，以及數字和字串等基本類型。 如果您忘記此限制的話，編譯器會協助您解決「必須是 WinRT 類型」的錯誤。
+
+以下是程式代碼清單形式的範例。 從您稍早在本主題中建立的 **BankAccountWRC** 和 **BankAccountCoreApp** 專案開始，編輯這些專案中的程式碼，使其看起來像這些清單中的程式碼。
+
+第一份清單適用於 **BankAccountWRC** 專案。 如下所示編輯 `BankAccountWRC.idl` 之後，請建立專案，然後將 `MyEventArgs.h` 和 `.cpp` 複製到專案中 (從 `Generated Files` 資料夾)，就如同您先前使用 `BankAccount.h` 和 `.cpp` 所做的一樣。
+
+```cppwinrt
+// BankAccountWRC.idl
+namespace BankAccountWRC
+{
+    [default_interface]
+    runtimeclass MyEventArgs
+    {
+        Single Balance{ get; };
+    }
+
+    [default_interface]
+    runtimeclass BankAccount
+    {
+        ...
+        event Windows.Foundation.EventHandler<BankAccountWRC.MyEventArgs> AccountIsInDebit;
+        ...
+    };
+}
+
+// MyEventArgs.h
+#pragma once
+#include "MyEventArgs.g.h"
+
+namespace winrt::BankAccountWRC::implementation
+{
+    struct MyEventArgs : MyEventArgsT<MyEventArgs>
+    {
+        MyEventArgs() = default;
+        MyEventArgs(float balance);
+        float Balance();
+
+    private:
+        float m_balance{ 0.f };
+    };
+}
+
+// MyEventArgs.cpp
+#include "pch.h"
+#include "MyEventArgs.h"
+#include "MyEventArgs.g.cpp"
+
+namespace winrt::BankAccountWRC::implementation
+{
+    MyEventArgs::MyEventArgs(float balance) : m_balance(balance)
+    {
+    }
+
+    float MyEventArgs::Balance()
+    {
+        return m_balance;
+    }
+}
+
+// BankAccount.h
+...
+struct BankAccount : BankAccountT<BankAccount>
+{
+...
+    winrt::event_token AccountIsInDebit(Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs> const& handler);
+...
+private:
+    winrt::event<Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs>> m_accountIsInDebitEvent;
+...
+}
+...
+
+// BankAccount.cpp
+#include "MyEventArgs.h"
+...
+winrt::event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs> const& handler) { ... }
+...
+void BankAccount::AdjustBalance(float value)
+{
+    m_balance += value;
+
+    if (m_balance < 0.f)
+    {
+        auto args = winrt::make_self<winrt::BankAccountWRC::implementation::MyEventArgs>(m_balance);
+        m_accountIsInDebitEvent(*this, *args);
+    }
+}
+...
+```
+
+這份清單適用於 **BankAccountCoreApp** 專案。
+
+```cppwinrt
+// App.cpp
+...
+void Initialize(CoreApplicationView const&)
+{
+    m_eventToken = m_bankAccount.AccountIsInDebit([](const auto&, BankAccountWRC::MyEventArgs args)
+    {
+        float balance = args.Balance();
+        WINRT_ASSERT(balance < 0.f); // Put a breakpoint here.
+    });
+}
+...
+```
+
+## <a name="simple-signals-across-an-abi"></a>跨 ABI 的簡單訊號
 
 如果您不需要透過您的事件傳遞任何參數或與引數，則可以定義自己的簡單 Windows 執行階段委派類型。 以下範例顯示 **BankAccount** 執行階段類別的簡易版本。 它會宣告名為 **SignalDelegate** 的委派類型，然後使用該委派類型來引發訊號類型事件，而不是具有參數的事件。
 

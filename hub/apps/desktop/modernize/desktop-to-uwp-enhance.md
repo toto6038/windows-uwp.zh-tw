@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 444699c00a17dd90fe4c08c44ff56d540cadb3d6
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: fd561096dc53f85186698c981693693a6d3b9e64
+ms.sourcegitcommit: d95ccb47c616bd32c56e491490a6baf30185c8c5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729862"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85295535"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在傳統型應用程式中呼叫 Windows 執行階段 API
 
@@ -38,39 +38,39 @@ ms.locfileid: "82729862"
 
 1. 請確定已啟用[套件參考](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)：
 
-    1. 在 Visual Studio 中，按一下 [工具] -> [NuGet 套件管理員]-> [套件管理員設定]  。
-    2. 確定已針對 [預設套件管理格式]  選取 [PackageReference]  。
+    1. 在 Visual Studio 中，按一下 [工具] -> [NuGet 套件管理員]-> [套件管理員設定]。
+    2. 確定已針對 [預設套件管理格式] 選取 [PackageReference]。
 
-2. 在 Visual Studio 中開啟您的專案，在 [方案總管]  中您的專案上按一下滑鼠右鍵，然後選擇 [管理 NuGet 套件]  。
+2. 在 Visual Studio 中開啟您的專案，在 [方案總管] 中您的專案上按一下滑鼠右鍵，然後選擇 [管理 NuGet 套件]。
 
-3. 在 [NuGet 套件管理員]  視窗中，選取 [瀏覽]  索引標籤，然後搜尋 `Microsoft.Windows.SDK.Contracts`。
+3. 在 [NuGet 套件管理員] 視窗中，選取 [瀏覽] 索引標籤，然後搜尋 `Microsoft.Windows.SDK.Contracts`。
 
-4. 找到 `Microsoft.Windows.SDK.Contracts` 套件之後，請在 [NuGet 套件管理員]  的右窗格中，根據您想要設為目標的 Windows 10 版本，選取您要安裝的套件 [版本]  ：
+4. 找到 `Microsoft.Windows.SDK.Contracts` 套件之後，請在 [NuGet 套件管理員] 的右窗格中，根據您想要設為目標的 Windows 10 版本，選取您要安裝的套件 [版本]：
 
     * **10.0.18362.xxxx**：針對 Windows 10 版本 1903 選擇此版本。
     * **10.0.17763.xxxx**：針對 Windows 10 版本 1809 選擇此版本。
     * **10.0.17134.xxxx**：針對 Windows 10 版本 1803 選擇此版本。
 
-5. 按一下 [安裝]  。
+5. 按一下 [安裝]。
 
 #### <a name="to-add-the-required-references-manually"></a>手動新增必要的參考
 
-1. 開啟 [參考管理員]  對話方塊，選擇 [瀏覽]  按鈕，然後選取 [所有檔案]  。
+1. 開啟 [參考管理員] 對話方塊，選擇 [瀏覽] 按鈕，然後選取 [所有檔案]。
 
     ![新增參考對話方塊](images/desktop-to-uwp/browse-references.png)
 
-2. 新增指向這些檔案的參考。
+2. 新增下列所有檔案的參考。
 
     |檔案|位置|
     |--|--|
-    |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.WindowsRuntime.UI.Xaml.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.InteropServices.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
     |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
-    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk 版本*>\Windows.Foundation.UniversalApiContract\<*版本*>|
-    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk 版本*>\Windows.Foundation.FoundationContract\<*版本*>|
+    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\\<*版本*>|
+    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk 版本*>\Windows.Foundation.FoundationContract\\<*version*>|
 
-3. 在 [屬性]  視窗中，將每個 .winmd  檔案的 [複製本機]  欄位設定為 [False]  。
+3. 在 [屬性] 視窗中，將每個 .winmd 檔案的 [複製本機] 欄位設定為 [False]。
 
     ![複製本機欄位](images/desktop-to-uwp/copy-local-field.png)
 
@@ -101,14 +101,14 @@ ms.locfileid: "82729862"
 
 :white_check_mark:**決定要增強或擴充**
 
-您會經常聽到我們使用「增強」  、「擴充」  這些詞彙，所以我們想花一點時間來解釋這些詞彙到底是什麼意思。
+您會經常聽到我們使用「增強」、「擴充」這些詞彙，所以我們想花一點時間來解釋這些詞彙到底是什麼意思。
 
-我們使用「增強」  一詞來描述可以直接從您的傳統型應用程式呼叫的 Windows 執行階段 API (無論您是否選擇在 MSIX 套件中封裝您的應用程式)。 當您選擇 Windows 10 體驗後，找出您需要建立的 API，然後查看該 API 是否出現在[此清單](desktop-to-uwp-supported-api.md)中。 這個清單列出您可以直接從您的傳統型應用程式呼叫的 API。 如果您的 API 未顯示在此清單中，這是因為與該 API 相關的功能只能在 UWP 程序中執行。 很多時候，這包括轉譯 UWP XAML 的 API，例如 UWP 地圖控制項或 Windows Hello 安全性提示。
+我們使用「增強」一詞來描述可以直接從您的傳統型應用程式呼叫的 Windows 執行階段 API (無論您是否選擇在 MSIX 套件中封裝您的應用程式)。 當您選擇 Windows 10 體驗後，找出您需要建立的 API，然後查看該 API 是否出現在[此清單](desktop-to-uwp-supported-api.md)中。 這個清單列出您可以直接從您的傳統型應用程式呼叫的 API。 如果您的 API 未顯示在此清單中，這是因為與該 API 相關的功能只能在 UWP 程序中執行。 很多時候，這包括轉譯 UWP XAML 的 API，例如 UWP 地圖控制項或 Windows Hello 安全性提示。
 
 > [!NOTE]
 > 雖然轉譯 UWP XAML 的 API 通常無法直接從您的傳統型應用程式呼叫，但您還是可以使用替代做法。 如果您想要裝載 UWP XAML 控制項或其他自訂視覺效果體驗，可以使用 [XAML Islands](xaml-islands.md) (從 Windows 10 版本1903 開始) 和[視覺圖層](visual-layer-in-desktop-apps.md) (從 Windows 10 版本 1803 開始)。 這些功能可以在已封裝或未封裝的傳統型應用程式中使用。
 
-如果您已選擇將您的傳統型應用程式封裝在 MSIX 套件中，另一個選項是將 UWP 專案新增至您的方案，藉此「擴充」  應用程式。 桌面專案仍是您應用程式的進入點，但 UWP 專案可讓您存取未出現在[此清單](desktop-to-uwp-supported-api.md)中的所有 API。 傳統型應用程式可以透過使用應用程式服務來與 UWP 程序通訊，而且我們提供大量關於如何設定的指導方針。 如果您想要新增需要 UWP 專案的體驗，請參閱[透過 UWP 元件擴充](desktop-to-uwp-extend.md)。
+如果您已選擇將您的傳統型應用程式封裝在 MSIX 套件中，另一個選項是將 UWP 專案新增至您的方案，藉此「擴充」應用程式。 桌面專案仍是您應用程式的進入點，但 UWP 專案可讓您存取未出現在[此清單](desktop-to-uwp-supported-api.md)中的所有 API。 傳統型應用程式可以透過使用應用程式服務來與 UWP 程序通訊，而且我們提供大量關於如何設定的指導方針。 如果您想要新增需要 UWP 專案的體驗，請參閱[透過 UWP 元件擴充](desktop-to-uwp-extend.md)。
 
 :white_check_mark:**參考 API 協定**
 
@@ -117,7 +117,7 @@ ms.locfileid: "82729862"
 
 ![API 協定表格](images/desktop-to-uwp/contract-table.png)
 
-如果您有 .NET 傳統型應用程式，請新增指向該 API 協定的參考，然後將該檔案的 [複製本機]  屬性設定為 [False]  。 如果您有 C++ 專案，請將包含此協定之資料夾的路徑新增至 [其他 Include 目錄]  。
+如果您有 .NET 傳統型應用程式，請新增指向該 API 協定的參考，然後將該檔案的 [複製本機] 屬性設定為 [False]。 如果您有 C++ 專案，請將包含此協定之資料夾的路徑新增至 [其他 Include 目錄]。
 
 :white_check_mark:**呼叫 API 以新增您的體驗**
 

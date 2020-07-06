@@ -1,22 +1,22 @@
 ---
-description: 可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 本主題示範如何實作和使用可觀察屬性，以及如何將 XAML 控制項繫結至它。
+description: 可有效地繫結至 XAML 控制項屬性稱為「可觀察的」屬性。 本主題示範如何實作和使用可觀察屬性，以及如何將 XAML 控制項繫結至它。
 title: XAML 控制項；繫結至一個 C++/WinRT 屬性
 ms.date: 06/21/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 12a20ae3df6ae83723550bf365aadab99b1b3b7b
+ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209193"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756525"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
-可有效地繫結至 XAML 控制項屬性稱為「可觀察的」  屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作可觀察屬性，以及將 XAML 控制項繫結至這些屬性的方法 (如需背景資訊，請參閱[資料繫結](/windows/uwp/data-binding))。
+可有效地繫結至 XAML 控制項屬性稱為「可觀察的」屬性。 這個主意是以軟體設計模式為基礎稱為「觀察者模式」。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作可觀察屬性，以及將 XAML 控制項繫結至這些屬性的方法 (如需背景資訊，請參閱[資料繫結](/windows/uwp/data-binding))。
 
 > [!IMPORTANT]
-> 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請參閱[使用 C++/WinRT 使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
+> 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
 ## <a name="what-does-observable-mean-for-a-property"></a>對一個屬性來說，*可觀察*的意義是什麼？
 比方說一個名為 **BookSku** 的執行階段類別有個名為 **Title** 的屬性。 如果 **BookSku** 選擇引發 [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件，每當變更 **Title** 的值時，則 **Title** 是可觀察的屬性。 它是 **BookSku** 的行為 (引發或不引發事件)，判斷是哪一個，如果有的話，其屬性則為可觀察的。
@@ -29,9 +29,9 @@ XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯
 ## <a name="create-a-blank-app-bookstore"></a>建立空白的應用程式 (Bookstore)
 請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **空白的應用程式 (C++/WinRT)** 專案，並將它命名為 *Bookstore*。
 
-我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 會在相同的編譯單元內撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且將會使用 C++/WinRT 來撰寫和使用。
+我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 我們在相同的編譯單位裡撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且我們會使用 C++/WinRT 撰寫和使用它。
 
-撰寫新執行階段類別的第一個步驟，要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。 請命名為 `BookSku.idl`。 接下來請刪除 `BookSku.idl` 的預設內容，並貼到此執行階段類別宣告內。
+撰寫新執行階段類別的第一個步驟，要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。 請命名為 `BookSku.idl`。 刪除 `BookSku.idl`的預設內容，並在此執行階段類別宣告中貼上。
 
 ```idl
 // BookSku.idl
@@ -47,16 +47,22 @@ namespace Bookstore
 > [!NOTE]
 > 您的檢視模型類別 &mdash; 事實上，您在應用程式中宣告的任何執行階段類別&mdash; 不需要衍生自基底類別。 上面所宣告的 **BookSku** 類別是其範例。 它會實作一個介面，但它不會衍生自任何基底類別。
 >
-> 您在從基底類別  衍生的應用程式中宣告的任何執行階段類別，都稱為「可組合」  類別。 而且有以可組合的類別為主的條件約束。 若要讓應用程式通過 Visual Studio 和 Microsoft Store 所使用的 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)測試來驗證提交 (因而讓應用程式成功擷取到 Microsoft Store 中)，可組合的類別必須最終衍生自 Windows 基底類別。 這表示位於繼承階層根目錄的類別必須是源自 Windows.* 命名空間的類型。 如果您需要從基底類別衍生執行階段類別&mdash;例如，若要針對要衍生自的所有檢視模型實作 **BindableBase** 類別&mdash;則可衍生自 [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。
+> 您在從基底類別衍生的應用程式中宣告的任何執行階段類別，都稱為「可組合」類別。 而且有以可組合的類別為主的條件約束。 若要讓應用程式通過 Visual Studio 和 Microsoft Store 所使用的 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)測試來驗證提交 (因而讓應用程式成功擷取到 Microsoft Store 中)，可組合的類別必須最終衍生自 Windows 基底類別。 這表示位於繼承階層根目錄的類別必須是源自 Windows.* 命名空間的類型。 如果您需要從基底類別衍生執行階段類別&mdash;例如，若要針對要衍生自的所有檢視模型實作 **BindableBase** 類別&mdash;則可衍生自 [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。
 >
 > 檢視模型是檢視的抽取，所以會直接繫結至檢視 (XAML 標記)。 資料模型是資料的抽取，而且只能從您的檢視模型取用，並不會直接繫結至 XAML。 因此，您可以宣告您的資料模型不是執行階段類別，而是 C++ 結構或類別。 它們不需在 MIDL 中宣告，而且您可以隨意使用您喜歡的任何繼承階層。
 
-儲存檔案並建置專案。 在建置程序期間，會執行 `midl.exe` 工具，以建立 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)，其會描述執行階段類別。 然後，會執行 `cppwinrt.exe` 工具，以產生原始碼檔案，可再撰寫和使用執行階段類別時提供支援。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
+儲存檔案並建置專案。 在建置程序期間，會執行 `midl.exe` 工具，以建立 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)，其會描述執行階段類別。 然後，執行 `cppwinrt.exe` 工具產生原始碼檔案在撰寫和使用執行階段類別中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
 
-以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]  。 這會在檔案總管中開啟專案資料夾。 在那裏，從 `\Bookstore\Bookstore\Generated Files\sources\` 資料夾將虛設常式檔案 `BookSku.h` 和 `BookSku.cpp` 複製到專案資料夾中，也就是 `\Bookstore\Bookstore\`。 在 方案總管  中，選取專案資料夾後，確定 顯示所有檔案  已切換成開啟。 在您複製的虛設常式檔案上按右鍵，然後按一下 **[加入至專案]** 。
+以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]。 這會在檔案總管中開啟專案資料夾。 在那裏，從 `\Bookstore\Bookstore\Generated Files\sources\` 資料夾將虛設常式檔案 `BookSku.h` 和 `BookSku.cpp` 複製到專案資料夾中，也就是 `\Bookstore\Bookstore\`。 在 [方案總管] 中，選取專案資料夾後，確定 [顯示所有檔案] 已切換成開啟。 按一下滑鼠右鍵您複製的虛設常式檔案，然後按一下 [加入至專案]。
 
 ## <a name="implement-booksku"></a>執行 **BookSku**
-現在要開啟 `\Bookstore\Bookstore\BookSku.h` 與 `BookSku.cpp`，並實作我們的執行階段類別。 在 `BookSku.h` 中，新增一個採用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的建構函式，一個儲存標題字串的私用成員，以及另一個用於標題變更時，我們會引發的事件。 進行這些變更之後，您的 `BookSku.h` 看起來像這樣。
+現在要開啟 `\Bookstore\Bookstore\BookSku.h` 與 `BookSku.cpp`，並實作我們的執行階段類別。 在 `BookSku.h` 中，進行下列變更。
+
+- 新增採用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 值的函式。 此值是標題字串。
+- 新增私人成員以儲存標題字串。
+- 在標題變更時，為我們將引發的事件新增另一個私人成員。
+
+進行這些變更之後，您的 `BookSku.h` 看起來像這樣。
 
 ```cppwinrt
 // BookSku.h
@@ -122,7 +128,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-在 **Title** 更動子函式裡，我們檢查是否設定了與目前值不同的值。 如果是，更新標題並使用與變更過的屬性名稱相同的引數引發 [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)事件。 這是為了讓使用者介面 (UI) 知道要重新查詢哪些屬性的值。
+在 **Title** 更動子函式裡，我們檢查是否設定了與目前值不同的值。 如果是，則更新標題並使用與變更過的屬性名稱相同的引數引發 [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件。 這是為了讓使用者介面 (UI) 知道要重新查詢哪些屬性的值。
 
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>宣告和實作 **BookstoreViewModel**
 我們的主要 XAML 頁面會繫結至主要檢視模型。 且檢視模型會有幾個屬性，包括類型之一的 **BookSku**。 在此步驟，我們會宣告並實作主要檢視模型執行階段類別。
@@ -272,7 +278,7 @@ namespace winrt::Bookstore::implementation
 <Button Click="ClickHandler" Content="{x:Bind MainViewModel.BookSku.Title, Mode=OneWay}"/>
 ```
 
-現在請建置並執行專案。 按一下按鈕執行 [按一下]  事件處理常式。 該處理常式呼叫本書標題更動子函式；該更動子引發一個事件，讓 UI 知道 **Title** 屬性已變更；且按鈕重新查詢該屬性的值，更新其自身的 **Content** 值。
+現在建置並執行專案。 按一下按鈕執行 [按一下] 事件處理常式。 該處理常式呼叫本書標題更動子函式；該更動子引發一個事件，讓 UI 知道 **Title** 屬性已變更；且按鈕重新查詢該屬性的值，更新其自身的 **Content** 值。
 
 ## <a name="using-the-binding-markup-extension-with-cwinrt"></a>使用 {Binding} 標記延伸搭配 C++/WinRT
 對於目前發行的 C++/WinRT 版本，為了能夠使用 {Binding} 標記延伸，您必須實作 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) 和 [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面。
@@ -315,7 +321,7 @@ runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
 </Page>
 ```
 
-ChangeColorButton  元素會透過繫結參考 *UseCustomColorCheckBox* 元素。 因此，此頁面的 IDL 必須宣告名為 *UseCustomColorCheckBox* 的唯讀屬性，以便可供繫結存取。
+ChangeColorButton 元素會透過繫結參考 *UseCustomColorCheckBox* 元素。 因此，此頁面的 IDL 必須宣告名為 *UseCustomColorCheckBox* 的唯讀屬性，以便可供繫結存取。
 
 *UseCustomColorCheckBox* 的 Click 事件處理常式委派會使用傳統 XAML 委派語法，因此不需要 IDL 中的項目；它只需在您的實作類別中是公用的。 另一方面，*ChangeColorButton* 也有 `{x:Bind}` Click 事件處理常式，其也必須放入 IDL 中。
 

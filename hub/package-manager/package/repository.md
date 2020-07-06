@@ -1,17 +1,15 @@
 ---
 title: 將您的資訊清單提交至存放庫
-description: ''
-author: denelon
-ms.author: denelon
+description: 建立描述應用程式的封裝資訊清單之後，您就可以將資訊清單提交至 Windows 封裝管理員存放庫。
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ebcc564b4db16c1d16385cbeaf7fd6d82c8f18
-ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
+ms.openlocfilehash: 19a66b2d0724eb0f4f8c3f171033e4e616751717
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83865025"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334593"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>將您的資訊清單提交至存放庫
 
@@ -112,7 +110,7 @@ winget validate \<manifest-file>
 
 * 資訊清單會符合[結構描述需求](manifest.md#manifest-contents)。
 * 資訊清單中的所有 URL 都會導向安全網站。
-* 安裝程式和應用程式都沒有病毒。
+* 安裝程式和應用程式都沒有病毒。 此套件可能會被誤認為惡意程式碼。 如果您認為這是誤判，可以將安裝程式提交給 Defender 小組，以從[這裡](https://www.microsoft.com/wdsi/filesubmission)進行分析。
 * 應用程式會為系統管理員和非系統管理員進行正確地安裝和卸載。
 * 安裝程式支援非互動模式。
 * 所有資訊清單項目都是正確的，不會產生誤導。
@@ -124,7 +122,7 @@ winget validate \<manifest-file>
 
 * **Needs: author feedback**：提交失敗。 我們會將提取要求重新指派給您。 如果您未在 10 天內解決此問題，我們將會關閉提取要求。
 * **Manifest-Validation-Error**：提交的資訊清單包含語法錯誤。
-* **URL-Validation-Error**：提交中的一或多個 URI 未通過 [SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) 驗證。
+* **URL-Validation-Error**：提交中的一或多個 URL 未通過 [SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) 驗證。
 * **Binary-Validation-Error**：已提交的應用程式安裝程式未通過病毒掃描測試，或是雜湊不相符。
 * **Pull-Request-Error**:提取要求發生問題。 例如，資料夾結構不是[所需的格式](#step-3-add-your-manifest-to-the-local-repository)。
 * **Validation-Error**：已提交的應用程式無法通過一般驗證測試。

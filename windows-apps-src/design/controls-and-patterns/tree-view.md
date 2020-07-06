@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 80072be15a28883e5d29a7393edd112cf6fa47be
-ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
+ms.openlocfilehash: d5308f49499f4bdec9db0087cef54ac2fa0bb805
+ms.sourcegitcommit: 69b7fe203d8384d0ade37122ae9d2c4568f6d168
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83688492"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267165"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -197,7 +197,7 @@ End Sub
 
 您可以將樹狀檢視所表示的資料項目儲在其 [Content](/uwp/api/windows.ui.xaml.controls.treeviewnode.content) 屬性中。
 
-在前一個範例中，內容是簡單的字串值。 在這裡，樹狀檢視節點表示使用者的 [圖片]  資料夾，因此圖片媒體櫃 [StorageFolder](/uwp/api/windows.storage.storagefolder) 已指派給節點的 **Content** 屬性。
+在前一個範例中，內容是簡單的字串值。 在這裡，樹狀檢視節點表示使用者的 [圖片] 資料夾，因此圖片媒體櫃 [StorageFolder](/uwp/api/windows.storage.storagefolder) 已指派給節點的 **Content** 屬性。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -211,7 +211,7 @@ Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
 ```
 
 > [!NOTE]
-> 若要取得 [圖片]  資料夾的存取權，您必須在應用程式資訊清單中指定**圖片媒體櫃**功能。 如需詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) \(部分機器翻譯\)。
+> 若要取得 [圖片] 資料夾的存取權，您必須在應用程式資訊清單中指定**圖片媒體櫃**功能。 如需詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) \(部分機器翻譯\)。
 
 您可以提供 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 來指定資料項目在樹狀檢視中的顯示方式。
 
@@ -488,6 +488,10 @@ End Sub
 - 如果使用者選取父節點，也會選取該父節點下所有的具現化子節點。 同樣的，如果選取所有的子節點，父節點也會變成已選取狀態。
 - **SelectAll** 方法只會將具現化節點新增至 **SelectedNodes** 集合。
 - 如果選取包含未具現化子節點的父節點，則會在子節點具現化時選取這些子節點。
+
+#### <a name="selecteditemselecteditems"></a>SelectedItem/SelectedItems
+
+從 WinUI 2.2 開始，TreeView 具有 [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditem) 和 [SelectedItems](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditems) 屬性。 您可使用這些屬性直接取得所選節點的內容。 若已啟用多重選取，SelectedItem 會包含 SelectedItems 集合中的第一個專案。
 
 ## <a name="code-examples"></a>程式碼範例
 
@@ -802,7 +806,7 @@ namespace TreeViewTest
 
 ### <a name="pictures-and-music-library-tree-view"></a>圖片及音樂媒體櫃樹狀檢視
 
-此範例示範如何建立顯示使用者 [圖片]  及 [音樂]  媒體櫃內容和結構的樹狀檢視。 無法事先知道項目的數量，因此會在每個節點展開時填滿該節點，並在其摺疊時加以清空。
+此範例示範如何建立顯示使用者 [圖片] 及 [音樂] 媒體櫃內容和結構的樹狀檢視。 無法事先知道項目的數量，因此會在每個節點展開時填滿該節點，並在其摺疊時加以清空。
 
 自訂項目範本會用來顯示資料項目，而這些項目的類型為 [IStorageItem](/uwp/api/windows.storage.istorageitem)。
 

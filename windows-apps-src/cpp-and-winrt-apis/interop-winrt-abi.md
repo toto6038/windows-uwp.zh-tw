@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, 互通性, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 91602c75cdaddc325407529ab4d231db46ecca39
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4249618a4b26fd7e8129547a679c80c5e2ed6903
+ms.sourcegitcommit: a2b340dc3a28e845830eeb9ce00342a3f7351d62
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209143"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85834996"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>C++/WinRT 與 ABI 之間的互通性
 
@@ -43,7 +43,7 @@ namespace ABI::Windows::Foundation
 
 **IUriRuntimeClass** 是 COM 介面。 不僅如此，&mdash;由於其基底是 **IInspectable**&mdash;**IUriRuntimeClass** 是 Windows 執行階段介面。 請注意，**HRESULT** 會傳回類型，而不是引發例外狀況。 並且使用構件，例如 **HSTRING** 控點 (完成時，將該控點設回 `nullptr` 是很好的做法)。 這樣可了解 Windows 執行階段在應用程式二進位層級的樣子，亦即 COM 程式設計的層級。
 
-Windows 執行階段是根據元件物件模型 (COM) API。 您可以使用該方式存取 Windows 執行階段，或者透過「語言投影」  存取。 投影會隱藏 COM 的詳細資訊，並針對特定語言提供更自然的程式設計體驗。
+Windows 執行階段是根據元件物件模型 (COM) API。 您可以使用該方式存取 Windows 執行階段，或者透過「語言投影」存取。 投影會隱藏 COM 的詳細資訊，並針對特定語言提供更自然的程式設計體驗。
 
 例如，如果您在 "%WindowsSdkDir%Include\10.0.17134.0\cppwinrt\winrt" 資料夾中尋找 (同樣地，視需求調整您案例的 SDK 版本號碼)，然後您會找到 C++/WinRT 語言投影標頭。 每一個 Windows 命名空間有一個標頭，就像每一個 Windows 命名空間有一個 ABI 標頭。 以下是包括 C++/WinRT 標頭之一的範例。
 
@@ -108,6 +108,9 @@ int main()
 
 **as** 函式的實作會呼叫 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 如果您想要僅呼叫 [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 的較低層級轉換，您可以使用 [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) 和 [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) 輔助函式。 下一個程式碼範例將這些較低層級轉換新增至上述的程式碼範例。
 
+> [!IMPORTANT]
+> 與 ABI 類型交互操作時，所使用的 ABI 類型務必對應至 C++/WinRT 物件的預設介面。 否則，ABI 類型的方法叫用，實際上會在預設介面上的相同 vtable 位置中呼叫方法，並產生意料之外的結果。 請注意，[**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) 不會在編譯時期防範此種情形，因為其會針對所有 ABI 類型使用 **void\*** ，並假設呼叫端已小心翼翼避免不符合類型。 這是為了避免在可能從未使用 ABI 類型的情況下，要求 C++/WinRT 標頭參考 ABI 標頭。
+
 ```cppwinrt
 int main()
 {
@@ -117,11 +120,11 @@ int main()
 
     // Convert to an ABI type.
     ptr = nullptr;
-    winrt::copy_to_abi(uri, *ptr.put_void());
+    winrt::copy_to_abi(uriAsIStringable, *ptr.put_void());
 
     // Convert from an ABI type.
     uri = nullptr;
-    winrt::copy_from_abi(uri, ptr.get());
+    winrt::copy_from_abi(uriAsIStringable, ptr.get());
     ptr = nullptr;
 }
 ```
@@ -133,11 +136,11 @@ int main()
 
     // Copy to an owning raw ABI pointer with copy_to_abi.
     abi::IStringable* owning{ nullptr };
-    winrt::copy_to_abi(uri, *reinterpret_cast<void**>(&owning));
+    winrt::copy_to_abi(uriAsIStringable, *reinterpret_cast<void**>(&owning));
 
     // Copy from a raw ABI pointer.
     uri = nullptr;
-    winrt::copy_from_abi(uri, owning);
+    winrt::copy_from_abi(uriAsIStringable, owning);
     owning->Release();
 ```
 
@@ -151,14 +154,14 @@ int main()
     // Lowest-level conversions that only copy addresses
 
     // Convert to a non-owning ABI object with get_abi.
-    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uri)) };
+    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uriAsIStringable)) };
     WINRT_ASSERT(non_owning);
 
     // Avoid interlocks this way.
-    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uri));
-    WINRT_ASSERT(!uri);
-    winrt::attach_abi(uri, owning);
-    WINRT_ASSERT(uri);
+    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uriAsIStringable));
+    WINRT_ASSERT(!uriAsIStringable);
+    winrt::attach_abi(uriAsIStringable, owning);
+    WINRT_ASSERT(uriAsIStringable);
 ```
 
 ## <a name="convert_from_abi-function"></a>convert_from_abi 函式
@@ -306,14 +309,14 @@ static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISa
 
 | 操作 | 如何執行此動作 | 附註 |
 |-|-|-|
-| 從 **winrt::Sample** 擷取 **ISample\*** | `p = reinterpret_cast<ISample*>(get_abi(s));` | s  仍然擁有物件。 |
-| 從 **winrt::Sample** 中斷連結 **ISample\*** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | s  不再擁有物件。 |
-| 將 **ISample\*** 轉送至新的 **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | s  會取得物件的擁有權。 |
-| 將 **ISample\*** 設定到 **winrt::Sample** 中 | `*put_abi(s) = p;` | s  會取得物件的擁有權。 s  先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
-| 將 **ISample\*** 接收到 **winrt::Sample** 中 | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | s  會取得物件的擁有權。 s  先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
-| 取代 **winrt::Sample** 中的 **ISample\*** | `attach_abi(s, p);` | s  會取得物件的擁有權。 s  先前擁有的物件會釋出。 |
-| 將 **ISample\*** 設定到 **winrt::Sample** | `copy_from_abi(s, p);` | s  會對物件建立新的參考。 s  先前擁有的物件會釋出。 |
-| 將 **winrt::Sample** 複製到 **ISample\*** | `copy_to_abi(s, reinterpret_cast<void*&>(p));` | p  會接收物件的複本。 p  先前擁有的所有物件都會流失。 |
+| 從 **winrt::Sample** 擷取 **ISample\*** | `p = reinterpret_cast<ISample*>(get_abi(s));` | s 仍然擁有物件。 |
+| 從 **winrt::Sample** 中斷連結 **ISample\*** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | s 不再擁有物件。 |
+| 將 **ISample\*** 轉送至新的 **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | s 會取得物件的擁有權。 |
+| 將 **ISample\*** 設定到 **winrt::Sample** 中 | `*put_abi(s) = p;` | s 會取得物件的擁有權。 s 先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
+| 將 **ISample\*** 接收到 **winrt::Sample** 中 | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | s 會取得物件的擁有權。 s 先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
+| 取代 **winrt::Sample** 中的 **ISample\*** | `attach_abi(s, p);` | s 會取得物件的擁有權。 s 先前擁有的物件會釋出。 |
+| 將 **ISample\*** 設定到 **winrt::Sample** | `copy_from_abi(s, p);` | s 會對物件建立新的參考。 s 先前擁有的物件會釋出。 |
+| 將 **winrt::Sample** 複製到 **ISample\*** | `copy_to_abi(s, reinterpret_cast<void*&>(p));` | p 會接收物件的複本。 p 先前擁有的所有物件都會流失。 |
 
 ## <a name="interoperating-with-the-abis-guid-struct"></a>交互操作 ABI 的 GUID 結構
 
@@ -344,13 +347,13 @@ void GetString(_Out_ HSTRING* value);
 
 | 操作 | 如何執行此動作 | 附註 |
 |-|-|-|
-| 從 **hstring** 擷取 **HSTRING** | `h = static_cast<HSTRING>(get_abi(s));` | s  仍然擁有字串。 |
-| 從 **hstring** 中斷連結 **HSTRING** | `h = reinterpret_cast<HSTRING>(detach_abi(s));` | s  不再擁有字串。 |
-| 將 **HSTRING** 設定到 **hstring** 中 | `*put_abi(s) = h;` | s  會取得字串的擁有權。 s  先前擁有的所有字串都會流失 (會在偵錯中宣告)。 |
-| 將 **HSTRING** 接收到 **hstring** 中 | `GetString(reinterpret_cast<HSTRING*>(put_abi(s)));` | s  會取得字串的擁有權。 s  先前擁有的所有字串都會流失 (會在偵錯中宣告)。 |
-| 取代 **hstring** 中的 **HSTRING** | `attach_abi(s, h);` | s  會取得字串的擁有權。 s  先前擁有的字串會釋出。 |
-| 將 **HSTRING** 複製到 **hstring** | `copy_from_abi(s, h);` | s  會建立字串的私用複本。 s  先前擁有的字串會釋出。 |
-| 將 **hstring**複製到 **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | h  會接收字串的複本。 h  先前擁有的所有字串都會流失。 |
+| 從 **hstring** 擷取 **HSTRING** | `h = static_cast<HSTRING>(get_abi(s));` | s 仍然擁有字串。 |
+| 從 **hstring** 中斷連結 **HSTRING** | `h = reinterpret_cast<HSTRING>(detach_abi(s));` | s 不再擁有字串。 |
+| 將 **HSTRING** 設定到 **hstring** 中 | `*put_abi(s) = h;` | s 會取得字串的擁有權。 s 先前擁有的所有字串都會流失 (會在偵錯中宣告)。 |
+| 將 **HSTRING** 接收到 **hstring** 中 | `GetString(reinterpret_cast<HSTRING*>(put_abi(s)));` | s 會取得字串的擁有權。 s 先前擁有的所有字串都會流失 (會在偵錯中宣告)。 |
+| 取代 **hstring** 中的 **HSTRING** | `attach_abi(s, h);` | s 會取得字串的擁有權。 s 先前擁有的字串會釋出。 |
+| 將 **HSTRING** 複製到 **hstring** | `copy_from_abi(s, h);` | s 會建立字串的私用複本。 s 先前擁有的字串會釋出。 |
+| 將 **hstring**複製到 **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | h 會接收字串的複本。 h 先前擁有的所有字串都會流失。 |
 
 ## <a name="important-apis"></a>重要 API
 * [AddRef 函式](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)

@@ -6,12 +6,12 @@ keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用
 ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f41c7b706f4c088142a77092cf176ed543e21567
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 4402200726da93bb820946c9849d8c15bd1c5d8d
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854774"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448388"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -39,43 +39,6 @@ ms.locfileid: "83854774"
 
 > [!NOTE]
 > 啟用 Developer 模式需要系統管理員權限。 如果您的裝置是由組織所擁有，此選項可能會停用。
-
-以下是在傳統型裝置系列上的 [設定] 頁面：
-
-![請移至 [設定] 並選擇 [更新與安全性]，然後選擇 [適用於開發人員] 以檢視您的選項](images/devmode-pc-options.png)
-
-## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>應該選擇哪一個設定：側載應用程式或開發人員模式？
-
-> [!NOTE]
-> 從 Windows 測試人員組建 18956 開始，側載選項已遭移除，而開發人員模式現在是切換開關。 請參閱下一區段中側載相關的詳細資訊。
-
- 您可以啟用裝置來進行開發，或直接用於側載。
-
--   「Microsoft Store 應用程式」為預設設定。 如果您不開發應用程式，或使用您的公司所發行的特殊內部應用程式，請讓此設定保持作用中狀態。
--   「側載」是安裝並執行或測試未經 Microsoft Store 認證的應用程式。 例如，僅供公司內部使用的 app。
--   「開發人員模式」可讓您側載應用程式，也可從 Visual Studio 以偵錯模式執行應用程式。
-
-根據預設，您只能從 Microsoft Store 安裝通用 Windows 平台 (UWP) 應用程式。 變更這些設定來使用開發人員功能，可以變更裝置的安全性層級。 您不應該從未驗證的來源安裝 app。
-
-### <a name="sideload-apps"></a>側載 app
-
-> [!NOTE]
-> 從 Windows 測試人員組建 18956 開始，預設會啟用側載。 您現在可以將已簽署的 MSIX 套件部署到裝置，而不需要特殊設定。
-
-通常是需要在受管理裝置上安裝自訂應用程式而不透過 Microsoft Store 的公司或學校，或是需要執行的應用程式並非來自 Microsoft 的人員，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用「UWP 應用程式」設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載應用程式](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和[在 Microsoft Intune 基本概念](https://docs.microsoft.com/mem/intune/fundamentals/)。
-
-裝置系列特定的資訊
-
--   在傳統型裝置系列上：您可以執行使用套件 ("Add-AppDevPackage.ps1") 建立的 Windows PowerShell 指令碼，來安裝應用程式套件 (.appx) 以及執行該應用程式所需的任何憑證。 如需詳細資訊，請參閱[封裝 UWP app](/windows/msix/package/packaging-uwp-apps)。
-
--   在行動裝置系列上：如果已經安裝所需的憑證，您便可以點選檔案來安裝任何透過電子郵件傳送給您或位於 SD 記憶卡上的 .appx。
-
-
-因為您無法在不具受信任憑證的裝置上安裝應用程式，所以 [側載應用程式] 會是比 [開發人員模式] 更安全的選項。
-
-> [!NOTE]
-> 如果您要側載應用程式，您應該仍然只安裝來自受信任來源的應用程式。 當您安裝未經 Microsoft Store 認證的側載應用程式時，即表示您同意您已具備側載該應用程式所需的一切權限，並且為安裝和執行該應用程式所造成的任何損害負全責。 請參閱這份[隱私權聲明](https://privacy.microsoft.com/privacystatement)的 Windows &gt; Microsoft Store 小節。
-
 
 ### <a name="developer-mode"></a>開發人員模式
 
@@ -106,6 +69,26 @@ ms.locfileid: "83854774"
 - [Xbox 的裝置入口網站](../xbox-apps/device-portal-xbox.md)
 
 如果您遇到啟用開發人員模式或裝置入口網站方面的問題，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)論壇，以尋找這些問題的因應措施，或造訪[無法安裝開發人員模式套件或啟動裝置入口網站](#failure-to-install-developer-mode-package)，以取得其他詳細資訊及了解要允許哪些 WSUS KB 才能將開發人員模式套件解除封鎖。
+
+### <a name="sideload-apps"></a>側載 app
+
+> [!NOTE]
+> 從最新的 Windows 10 更新起，預設會啟用側載。 您現在可以將已簽署的 MSIX 套件部署到裝置，而不需要特殊設定。 如果您使用舊版的 Windows 10，則預設設定只會允許您執行來自 Microsoft Store 的應用程式，而且必須啟用側載才能安裝來自非 Microsoft 來源的應用程式。
+
+通常是需要在受管理裝置上安裝自訂應用程式而不透過 Microsoft Store 的公司或學校，或是需要執行的應用程式並非來自 Microsoft 的人員，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用「UWP 應用程式」設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載應用程式](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和[在 Microsoft Intune 基本概念](https://docs.microsoft.com/mem/intune/fundamentals/)。
+
+裝置系列特定的資訊
+
+-   在傳統型裝置系列上：您可以執行使用套件 ("Add-AppDevPackage.ps1") 建立的 Windows PowerShell 指令碼，來安裝應用程式套件 (.appx) 以及執行該應用程式所需的任何憑證。 如需詳細資訊，請參閱[封裝 UWP app](/windows/msix/package/packaging-uwp-apps)。
+
+-   在行動裝置系列上：如果已經安裝所需的憑證，您便可以點選檔案來安裝任何透過電子郵件傳送給您或位於 SD 記憶卡上的 .appx。
+
+
+因為您無法在不具受信任憑證的裝置上安裝應用程式，所以 [側載應用程式] 會是比 [開發人員模式] 更安全的選項。
+
+> [!NOTE]
+> 如果您要側載應用程式，您應該仍然只安裝來自受信任來源的應用程式。 當您安裝未經 Microsoft Store 認證的側載應用程式時，即表示您同意您已具備側載該應用程式所需的一切權限，並且為安裝和執行該應用程式所造成的任何損害負全責。 請參閱這份[隱私權聲明](https://privacy.microsoft.com/privacystatement)的 Windows &gt; Microsoft Store 小節。
+
 
 ### <a name="ssh"></a>SSH
 

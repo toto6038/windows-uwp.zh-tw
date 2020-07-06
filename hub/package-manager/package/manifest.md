@@ -1,17 +1,15 @@
 ---
 title: 建立封裝資訊清單
-description: ''
-author: denelon
-ms.author: denelon
+description: 如果您想要將軟體封裝提交至 Windows 封裝管理員存放庫，請從建立封裝資訊清單開始。
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eceb29abbdc7f765628dbd8dbd6f6d0be21f132
-ms.sourcegitcommit: e2689c72d5b381eafdb1075090d1961f4c1cb37a
+ms.openlocfilehash: 7ecc6687527ca330f466e6a97ef14c0b5c9b56cf
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84055152"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334616"
 ---
 # <a name="create-your-package-manifest"></a>建立封裝資訊清單
 
@@ -58,7 +56,7 @@ License: string # The open source license or copyright.
 InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
 Installers:
   - Arch: string # Enumeration of supported architectures.
-  - URL: string # Path to download installation file.
+  - Url: string # Path to download installation file.
   - Sha256: string # SHA256 calculated from installer.
 ManifestVersion: 0.1.0
 ```
@@ -164,6 +162,17 @@ ManifestVersion: 0.1.0
 
 > [!NOTE]
 > 如果您的安裝程式是 .exe，且其為使用 Nullsoft 或 Inno 所建立，則可以改為指定這些值。 當指定 Nullsoft 或 Inno 時，用戶端會自動為安裝程式設定「無訊息」和「無訊息處理程序」的安裝行為。
+
+## <a name="installer-switches"></a>安裝程式參數
+
+您通常可藉由從命令列將 `-?` 傳遞至安裝程式，找出安裝程式可使用的無訊息 `Switches`。 以下是一些可用於不同安裝程式類型的常見無訊息 `Swtiches`。
+
+| 安裝程式 | 命令  | 文件 |  
+| :--- | :-- | :--- |  
+| MSI | `/q` | [MSI 錄製進行](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| InstallShield | `/s`  | [InstallShield 命令列參數](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
+| Inno 設定 | `/SILENT or /VERYSILENT` | [Inno 安裝文件](https://jrsoftware.org/ishelp/) |
+| Nullsoft | `/S` | [Nullsoft 無訊息安裝程式/解除安裝程式](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |
 
 ## <a name="tips-and-best-practices"></a>訣竅和最佳做法
 

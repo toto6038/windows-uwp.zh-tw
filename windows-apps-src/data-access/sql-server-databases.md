@@ -1,16 +1,16 @@
 ---
 title: 在 UWP 應用程式中使用 SQL Server 資料庫
 description: 在 UWP 應用程式中使用 SQL Server 資料庫。
-ms.date: 03/28/2019
+ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, uwp, SQL Server, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 54907dac63580794b7df42fa2e61162d16be8a1b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d5c5c0f107a9e9a2adb0587b544a2c74b8321886
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302562"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448338"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP 應用程式中使用 SQL Server 資料庫
 您的應用程式可以直接連線到 SQL Server 資料庫，然後使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) 命名空間中的類別儲存和擷取資料。
@@ -29,9 +29,12 @@ ms.locfileid: "75302562"
 
 在資訊清單設計工具中，開啟 UWP 專案的 **Package.appxmanifest** 檔案。
 
-如果要使用 Windows 驗證對 SQL Server 進行驗證，請在 [功能]  索引標籤中，選取 [企業驗證]  核取方塊。
+如果要使用 Windows 驗證對 SQL Server 進行驗證，請在 [功能] 索引標籤中，選取 [企業驗證] 核取方塊。
 
 ![企業驗證功能](images/enterprise-authentication.png)
+
+> [!IMPORTANT]
+> 不論您是否使用 Windows 驗證，也都必須選取 [網際網路 (用戶端和伺服器)]、[網際網路 (用戶端)] 和 [私人網路 (用戶端和伺服器)]。
 
 <a id="use-data" />
 
@@ -223,7 +226,7 @@ public MainPage()
 
 ## <a name="trouble-connecting-to-your-database"></a>無法連線到您的資料庫？
 
-在大部分情況中，SQL Server 設定有些方面需要變更。 如果您能從另一種桌面應用程式 (例如 Windows Forms 或 WPF 應用程式) 連線到您的資料庫，請確定您啟用 SQL Server 的 TCP/IP。 您可以在 [電腦管理]  主控台執行。
+在大部分情況中，SQL Server 設定有些方面需要變更。 如果您能從另一種桌面應用程式 (例如 Windows Forms 或 WPF 應用程式) 連線到您的資料庫，請確定您啟用 SQL Server 的 TCP/IP。 您可以在 [電腦管理] 主控台執行。
 
 ![電腦管理](images/computer-management.png)
 
