@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 6a52e12f9d60ee4abb4b1aed3043a69c25845267
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9d08dd0f43f1c505124203028c69326e10eea26c
+ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71317099"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85882881"
 ---
 # <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>第 1 部分：將 Contoso Expenses 應用程式移轉到 .NET Core 3
 
@@ -28,13 +28,13 @@ ms.locfileid: "71317099"
 
 在本節中，您會將 Contoso Expenses 應用程式中的 ContosoExpenses 專案遷移至 .NET Core 3。 若要這麼做，您可建立新的專案檔，其中包含與現有 ContosoExpenses 專案相同的檔案，但以 .NET Core 3 為目標 (而不是 .NET Framework 4.7.2)。 這可讓您透過應用程式的 .NET Framework 與 .NET Core 版本，維護單一方案。
 
-1. 確認 ContosoExpenses 專案目前以 .NET Framework 4.7.2 為目標。 在 [方案總管] 中，以滑鼠右鍵按一下 **ContosoExpenses** 專案，選擇 [屬性]  並確認 [應用程式]  索引標籤上的 [目標架構]  屬性已設定為 .NET Framework 4.7.2。
+1. 確認 ContosoExpenses 專案目前以 .NET Framework 4.7.2 為目標。 在 [方案總管] 中，以滑鼠右鍵按一下 **ContosoExpenses** 專案，選擇 [屬性] 並確認 [應用程式] 索引標籤上的 [目標架構] 屬性已設定為 .NET Framework 4.7.2。
 
     ![專案的 .NET Framework 4.7.2 版](images/wpf-modernize-tutorial/NETFramework472.png)
 
 3. 在 [Windows 檔案總管] 中，瀏覽至 **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses** 資料夾，然後建立名為 **ContosoExpenses.Core.csproj** 的新文字檔。
 
-4. 在檔案上按一下滑鼠右鍵，選擇 [開啟方式]  ，然後在您選擇的文字編輯器 (例如 [記事本]、Visual Studio Code 或 Visual Studio) 中加以開啟。
+4. 在檔案上按一下滑鼠右鍵，選擇 [開啟方式]，然後在您選擇的文字編輯器 (例如 [記事本]、Visual Studio Code 或 Visual Studio) 中加以開啟。
 
 5. 將下列文字複製到檔案並加以儲存。
 
@@ -52,7 +52,7 @@ ms.locfileid: "71317099"
 
 6. 關閉檔案，然後回到 Visual Studio 中的 **ContosoExpenses** 方案。
 
-7. 以滑鼠右鍵按一下 **ContosoExpenses** 方案，然後選擇 [新增] -> [現有專案]  。 選取您剛在 `C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses` 資料夾中建立的 **ContosoExpenses.Core.csproj** 檔案，將其新增至方案。
+7. 以滑鼠右鍵按一下 **ContosoExpenses** 方案，然後選擇 [新增] -> [現有專案]。 選取您剛在 `C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses` 資料夾中建立的 **ContosoExpenses.Core.csproj** 檔案，將其新增至方案。
 
 **ContosoExpenses.Core.csproj** 包含下列元素：
 
@@ -68,7 +68,7 @@ ms.locfileid: "71317099"
 
 若要將 **ContosoExpenses.Data** 專案遷移到 .NET Standard：
 
-1. 在 Visual Studio 中，以滑鼠右鍵按一下 **ContosoExpenses.Data** 專案，然後選擇 [卸載專案]  。 再次以滑鼠右鍵按一下專案，然後選擇 [編輯 ContosoExpenses.Data.cspro]  。
+1. 在 Visual Studio 中，以滑鼠右鍵按一下 **ContosoExpenses.Data** 專案，然後選擇 [卸載專案]。 再次以滑鼠右鍵按一下專案，然後選擇 [編輯 ContosoExpenses.Data.cspro]。
 
 2. 刪除專案檔案的整個內容。
 
@@ -84,7 +84,7 @@ ms.locfileid: "71317099"
     </Project>
     ```
 
-4. 以滑鼠右鍵按一下 [ContosoExpenses.Data]  專案，然後選擇 [重新載入專案]  。
+4. 以滑鼠右鍵按一下 [ContosoExpenses.Data] 專案，然後選擇 [重新載入專案]。
 
 ## <a name="configure-nuget-packages-and-dependencies"></a>設定 NuGet 套件和相依性
 
@@ -92,11 +92,11 @@ ms.locfileid: "71317099"
 
 若要設定 **ContosoExpenses.Data** 專案的 NuGet 套件：
 
-1. 在 **ContosoExpenses.Data** 專案中，展開 [相依性]  節點。 請注意，缺少 **NuGet** 區段。
+1. 在 **ContosoExpenses.Data** 專案中，展開 [相依性] 節點。 請注意，缺少 **NuGet** 區段。
 
     ![NuGet 套件](images/wpf-modernize-tutorial/NuGetPackages.png)
 
-    如果您在 [方案總管]  中開啟 **Packages.config**，您會在其使用完整的 .NET Framework 時，找到 NuGet 套件所用專案的「舊」參考。
+    如果您在 [方案總管] 中開啟 **Packages.config**，您會在其使用完整的 .NET Framework 時，找到 NuGet 套件所用專案的「舊」參考。
 
     ![相依性和套件](images/wpf-modernize-tutorial/Packages.png)
 
@@ -112,11 +112,11 @@ ms.locfileid: "71317099"
 
 2. 在 **ContosoExpenses.Data** 專案中，刪除 **Packages.config** 檔案。
 
-4. 在 **ContosoExpenses.Data** 專案中，以滑鼠右鍵按一下 [相依性]  節點，然後選擇 [管理 NuGet 套件]  。
+4. 在 **ContosoExpenses.Data** 專案中，以滑鼠右鍵按一下 [相依性] 節點，然後選擇 [管理 NuGet 套件]。
 
   ![管理 NuGet 套件](images/wpf-modernize-tutorial/ManageNugetNETCORE3.png)
 
-5. 在 [NuGet 套件管理員]  視窗中，按一下 [瀏覽]  。 搜尋 `Bogus` 套件，並安裝最新的穩定版本。
+5. 在 [NuGet 套件管理員] 視窗中，按一下 [瀏覽]。 搜尋 `Bogus` 套件，並安裝最新的穩定版本。
 
     ![假造的 NuGet 套件](images/wpf-modernize-tutorial/Bogus.png)
 
@@ -154,9 +154,9 @@ ms.locfileid: "71317099"
 
 2. 在 **ContosoExpenses.Core** 專案中，刪除 **Packages.config** 檔案。
 
-3. 以滑鼠右鍵按一下 [ContosoExpenses.Core]  專案，然後選擇 [管理 NuGet 專案]  。
+3. 以滑鼠右鍵按一下 [ContosoExpenses.Core] 專案，然後選擇 [管理 NuGet 專案]。
 
-4. 在 [NuGet 套件管理員]  視窗中，按一下 [瀏覽]  。 搜尋 `Unity` 套件，並安裝最新的穩定版本。
+4. 在 [NuGet 套件管理員] 視窗中，按一下 [瀏覽]。 搜尋 `Unity` 套件，並安裝最新的穩定版本。
 
     ![Unity 套件](images/wpf-modernize-tutorial/UnityPackage.png)
 
@@ -164,9 +164,9 @@ ms.locfileid: "71317099"
 
     ![MvvmLightsLibs 套件](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
 
-6. 在 **ContosoExpenses.Core** 專案中，以滑鼠右鍵按一下 [相依性]  節點，然後選擇 [新增參考]  。
+6. 在 **ContosoExpenses.Core** 專案中，以滑鼠右鍵按一下 [相依性] 節點，然後選擇 [新增參考]。
 
-7. 在 [專案] > [方案]  類別中，選取 [ContosoExpenses.Data]  ，然後按一下 [確定]  。
+7. 在 [專案] > [方案] 類別中，選取 [ContosoExpenses.Data]，然後按一下 [確定]。
 
     ![新增參考](images/wpf-modernize-tutorial/AddReference.png)
 
@@ -178,15 +178,15 @@ ms.locfileid: "71317099"
 
 發生此問題的原因是 .NET Core 3.0 引進的新 .csproj 格式將組件資訊儲存在專案檔案中，而不是 **AssemblyInfo.cs** 檔案中。 若要修正這些錯誤，請停用此行為，並且讓專案繼續使用 **AssemblyInfo.cs** 檔案。
 
-1. 在 Visual Studio 中，以滑鼠右鍵按一下 [ContosoExpenses.Core]  專案，然後選擇 [卸載專案]  。 再次以滑鼠右鍵按一下專案，然後選擇 [編輯 ContosoExpenses.Core.csproj]  。
+1. 在 Visual Studio 中，以滑鼠右鍵按一下 [ContosoExpenses.Core] 專案，然後選擇 [卸載專案]。 再次以滑鼠右鍵按一下專案，然後選擇 [編輯 ContosoExpenses.Core.csproj]。
 
-1. 在 [PropertyGroup]  區段中新增下列專案並儲存檔案。
+1. 在 [PropertyGroup] 區段中新增下列專案並儲存檔案。
 
     ```XML
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     ```
 
-    新增此元素之後，[PropertyGroup]  區段現在應該如下所示：
+    新增此元素之後，[PropertyGroup] 區段現在應該如下所示：
 
     ```XML
     <PropertyGroup>
@@ -197,17 +197,17 @@ ms.locfileid: "71317099"
     </PropertyGroup>
     ```
 
-3. 以滑鼠右鍵按一下 [ContosoExpenses.Core]  專案，然後選擇 [重新載入專案]  。
+3. 以滑鼠右鍵按一下 [ContosoExpenses.Core] 專案，然後選擇 [重新載入專案]。
 
-4. 以滑鼠右鍵按一下 [ContosoExpenses.Data]  專案，然後選擇 [卸載專案]  。 再次以滑鼠右鍵按一下專案，然後選擇 [編輯 ContosoExpenses.Data.cspro]  。
+4. 以滑鼠右鍵按一下 [ContosoExpenses.Data] 專案，然後選擇 [卸載專案]。 再次以滑鼠右鍵按一下專案，然後選擇 [編輯 ContosoExpenses.Data.cspro]。
 
-5. 在 [PropertyGroup]  區段中新增相同輸入內容並儲存檔案。
+5. 在 [PropertyGroup] 區段中新增相同輸入內容並儲存檔案。
 
     ```xml
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     ```
 
-    新增此元素之後，[PropertyGroup]  區段現在應該如下所示：
+    新增此元素之後，[PropertyGroup] 區段現在應該如下所示：
 
     ```xml
     <PropertyGroup>
@@ -216,7 +216,7 @@ ms.locfileid: "71317099"
     </PropertyGroup>
     ```
 
-6. 以滑鼠右鍵按一下 [ContosoExpenses.Data]  專案，然後選擇 [重新載入專案]  。
+6. 以滑鼠右鍵按一下 [ContosoExpenses.Data] 專案，然後選擇 [重新載入專案]。
 
 ## <a name="add-the-windows-compatibility-pack"></a>新增 Windows 相容性套件
 
@@ -230,13 +230,13 @@ ms.locfileid: "71317099"
 
 若要解決這些錯誤，請安裝 [Windows 相容性](https://www.nuget.org/packages/Microsoft.Windows.Compatibility) NuGet 套件。 此套件可支援要在 .NET Standard 程式庫中使用的許多 Windows 專屬 API。 使用此套件之後，此程式庫將不再跨平台，但仍會以 .NET Standard 為目標。 
 
-1. 以滑鼠右鍵按一下 [ContosoExpenses.Data]  專案。
-2. 選擇 [管理 NuGet 套件]  。
-3. 在 [NuGet 套件管理員]  視窗中，按一下 [瀏覽]  。 搜尋 `Microsoft.Windows.Compatibility` 套件，並安裝最新的穩定版本。
+1. 以滑鼠右鍵按一下 [ContosoExpenses.Data] 專案。
+2. 選擇 [管理 NuGet 套件]。
+3. 在 [NuGet 套件管理員] 視窗中，按一下 [瀏覽]。 搜尋 `Microsoft.Windows.Compatibility` 套件，並安裝最新的穩定版本。
 
-    ![](images/wpf-modernize-tutorial/WindowsCompatibilityPack.png)
+    ![安裝 NuGet 套件](images/wpf-modernize-tutorial/WindowsCompatibilityPack.png)
 
-4. 現在，以滑鼠右鍵按一下 [ContosoExpenses.Data]  專案，然後選擇 [建置]  ，再次嘗試編譯專案。
+4. 現在，以滑鼠右鍵按一下 [ContosoExpenses.Data] 專案，然後選擇 [建置]，再次嘗試編譯專案。
 
 這次建置程序將會完成，而不會發生任何錯誤。
 
@@ -244,9 +244,9 @@ ms.locfileid: "71317099"
 
 專案現已成功建立，您已準備好執行和測試應用程式，以查看是否有任何執行階段錯誤。
 
-1. 以滑鼠右鍵按一下 [ContosoExpenses.Core]  專案，然後選擇 [設定為啟動專案]  。
+1. 以滑鼠右鍵按一下 [ContosoExpenses.Core] 專案，然後選擇 [設定為啟動專案]。
 
-2. 按 F5 以在偵錯工具中啟動 [ContosoExpenses.Core]  專案。 您會看到類似下面的例外狀況。
+2. 按 F5 以在偵錯工具中啟動 [ContosoExpenses.Core] 專案。 您會看到類似下面的例外狀況。
 
     ![Visual Studio 中顯示的例外狀況](images/wpf-modernize-tutorial/ExceptionNETCore3.png)
 
@@ -254,7 +254,7 @@ ms.locfileid: "71317099"
 
 3. 停止偵錯工具。
 
-4. 以滑鼠右鍵按一下 [ContosoExpenses.Core]  專案，然後選擇 [卸載專案]  。 再次以滑鼠右鍵按一下專案，然後選擇 [編輯 ContosoExpenses.Core.csproj]  。
+4. 以滑鼠右鍵按一下 [ContosoExpenses.Core] 專案，然後選擇 [卸載專案]。 再次以滑鼠右鍵按一下專案，然後選擇 [編輯 ContosoExpenses.Core.csproj]。
 
 5. 在關閉 **Project** 元素之前，新增下列輸入內容：
 
@@ -266,15 +266,15 @@ ms.locfileid: "71317099"
     </ItemGroup>
     ```
 
-6. 以滑鼠右鍵按一下 [ContosoExpenses.Core]  專案，然後選擇 [重新載入專案]  。
+6. 以滑鼠右鍵按一下 [ContosoExpenses.Core] 專案，然後選擇 [重新載入專案]。
 
-7. 若要將 Contoso.ico 指派給應用程式，以滑鼠右鍵按一下 [ContosoExpenses.Core]  專案，然後選擇 [屬性]  。 在開啟的頁面中，按一下 [圖示]  下方的下拉式清單，然後選取 `Images\contoso.ico`。
+7. 若要將 Contoso.ico 指派給應用程式，以滑鼠右鍵按一下 [ContosoExpenses.Core] 專案，然後選擇 [屬性]。 在開啟的頁面中，按一下 [圖示] 下方的下拉式清單，然後選取 `Images\contoso.ico`。
 
     ![專案屬性中的 Contoso 圖示](images/wpf-modernize-tutorial/ContosoIco.png)
 
 8. 按一下 **[儲存]** 。
 
-9. 按 F5 以在偵錯工具中啟動 [ContosoExpenses.Core]  專案。 確認應用程式現已執行。
+9. 按 F5 以在偵錯工具中啟動 [ContosoExpenses.Core] 專案。 確認應用程式現已執行。
 
 ## <a name="next-steps"></a>接下來的步驟
 

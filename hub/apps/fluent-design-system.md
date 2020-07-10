@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: 6cc020930e3b768f74ddb7cdfef3338ae537bd5d
-ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
+ms.openlocfilehash: 7d340b3db12aef964a65860855acc0f0722cda64
+ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791015"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85882932"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>適用於 Windows 的 Fluent Design 系統應用程式建立者
 
@@ -58,7 +58,7 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
 </Grid>
 ```
 
-![](images/fluent/xaml-example.png)
+![XAML 範例](images/fluent/xaml-example.png)
 
 
 > 如果您是 UWP 開發的新手，請參閱我們的[開始使用 UWP 頁面](/windows/uwp/get-started)。
