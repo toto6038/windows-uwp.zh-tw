@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d00a41c5a58935a4ecfe623c71a1264a2dc1132
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6db47510b28e42ab1ef638af6a980eb4ca7290d4
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71339618"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493163"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>ListView 與 GridView 資料虛擬化
 
@@ -41,7 +41,7 @@ ms.locfileid: "71339618"
 
 像這樣的資料來源是可以持續擴充的記憶體內清單。 項目控制項會要求項目使用標準 [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist) 索引子和計數屬性。 計數應該代表項目在本機的數量，而不是資料集的實際大小。
 
-當項目控制項接近現有資料的結尾時，它會呼叫 [**ISupportIncrementalLoading.HasMoreItems**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems)。 如果傳回 **true**，則它會呼叫 [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) 傳遞要載入的建議項目數。 根據您載入資料的來源位置 (本機磁碟機、網路或雲端)，您可以選擇載入與建議不同的項目數。 例如，如果您的服務支援 50 個項目的批次，但是項目控制項只要求 10 個，則您可以載入 50 個。 從後端載入資料、將它新增到您的清單，以及透過 [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) 或 [**IObservableVector&lt;T&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) 引發變更通知，項目控制項就能知道新的項目。 也會傳回您實際載入的項目計數。 如果載入比建議還少的項目，或項目控制項臨時被進一步移動瀏覽/捲動，您的資料來源會再次呼叫更多項目，且循環會繼續。 若要深入了解，您可以藉由下載適用於 Windows 8.1 的 [XAML 資料繫結範例](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5)，並在 Windows 10 應用程式中重複使用其原始程式碼。
+當項目控制項接近現有資料的結尾時，它會呼叫 [**ISupportIncrementalLoading.HasMoreItems**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems)。 如果傳回 **true**，則它會呼叫 [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) 傳遞要載入的建議項目數。 根據您載入資料的來源位置 (本機磁碟機、網路或雲端)，您可以選擇載入與建議不同的項目數。 例如，如果您的服務支援 50 個項目的批次，但是項目控制項只要求 10 個，則您可以載入 50 個。 從後端載入資料、將它新增到您的清單，以及透過 [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) 或 [**IObservableVector&lt;T&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) 引發變更通知，項目控制項就能知道新的項目。 也會傳回您實際載入的項目計數。 如果載入比建議還少的項目，或項目控制項臨時被進一步移動瀏覽/捲動，您的資料來源會再次呼叫更多項目，且循環會繼續。 若要深入了解，您可以藉由下載適用於 Windows 8.1 的 [XAML 資料繫結範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20data%20binding%20sample%20(Windows%208))，並在 Windows 10 應用程式中重複使用其原始程式碼。
 
 ## <a name="random-access-data-virtualization"></a>隨機存取資料虛擬化
 

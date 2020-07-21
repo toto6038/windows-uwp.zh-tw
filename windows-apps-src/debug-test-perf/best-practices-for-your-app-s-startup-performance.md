@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 38e9d49d9ec717bc1d28305d83d12e2696a32b3b
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74254678"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492853"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
 
@@ -323,7 +323,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 > End Class
 > ```
 
-如需使用延長式啟動顯示畫面的範例，請參閱[啟動顯示畫面範例](https://code.msdn.microsoft.com/windowsapps/Splash-screen-sample-89c1dc78)。
+如需使用延長式啟動顯示畫面的範例，請參閱[啟動顯示畫面範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Splash%20screen%20sample%20(Windows%208))。
 
 ### <a name="phase-3"></a>階段 3
 

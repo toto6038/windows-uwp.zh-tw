@@ -1,14 +1,14 @@
 ---
 title: WinUI 2.2 版本資訊
 description: WinUI 2.2 的版本資訊，包括新功能和錯誤修正。
-ms.date: 04/15/2020
+ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 2272046bc59865ebcf7958a165805d9ca4c7efce
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 6706b0202057b9a3419ec45a43a5f6d4d574327b
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580465"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493093"
 ---
 # <a name="windows-ui-library-22"></a>Windows UI 程式庫 2.2
 

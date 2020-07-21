@@ -1,14 +1,14 @@
 ---
 title: WinUI 2.1 版本資訊
 description: WinUI 2.1 的版本資訊，包括新功能和錯誤修正。
-ms.date: 04/15/2020
+ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: f62dd912d76f8045a46d467f49167cdc426b75c2
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: f362c4ae7654d6ef3b888b908c4779fce62af5fe
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580615"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493083"
 ---
 # <a name="windows-ui-library-21"></a>Windows UI 程式庫 2.1
 
