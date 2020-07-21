@@ -1,43 +1,43 @@
 ---
-title: 逐步解說如何建立C++/cx Windows 執行階段元件，並從 JavaScript 或呼叫它C#
+title: 建立 C++/CX Windows 執行階段元件，並從 JavaScript 或 C# 呼叫該元件的逐步解說
 description: 本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b4cd9bb5921209be852e183e1fa7a93ea18816a
-ms.sourcegitcommit: 5618242614997045593821fdbe5ed8878fd8c01e
+ms.openlocfilehash: 605b8cf927067da78785ec470cfdbe27852205fd
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80578690"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493183"
 ---
-# <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>逐步解說如何建立C++/cx Windows 執行階段元件，並從 JavaScript 或呼叫它C#
+# <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>建立 C++/CX Windows 執行階段元件，並從 JavaScript 或 C# 呼叫該元件的逐步解說
 
 > [!NOTE]
-> 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 若要瞭解如何使用C++/WinRT 建立 Windows 執行階段元件，請參閱[在/WinRT 中C++撰寫事件](../cpp-and-winrt-apis/author-events.md)。
+> 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 若要瞭解如何使用 c + +/WinRT 建立 Windows 執行階段元件，請參閱[使用 c + +/WinRT Windows 執行階段元件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)。
 
-本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。 開始本逐步解說之前，請確定您了解一些概念，例如：抽象二進位介面 (Abstract Binary Interface, ABI)、ref 類別，以及讓 ref 類別更容易使用的 Visual C++ 元件擴充功能。 如需詳細資訊，請參閱[Windows 執行階段C++元件與/Cx](creating-windows-runtime-components-in-cpp.md)和[視覺C++語言C++參考（/cx）](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)。
+本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。 開始本逐步解說之前，請確定您了解一些概念，例如：抽象二進位介面 (ABI)、ref 類別，以及讓 ref 類別更容易使用的 Visual C++ 元件擴充功能。 如需詳細資訊，請參閱[使用 c + +/cx Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md)和[Visual C++ 語言參考（c + +/cx）](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)。
 
 ## <a name="creating-the-c-component-dll"></a>建立 C++ 元件 DLL
-在這個範例中，我們會先建立元件專案，但您也可以先建立 JavaScript 專案。 順序並不重要。
+此範例會先建立元件專案，但您也可以先建立 JavaScript 專案。 順序並不重要。
 
-請注意，此元件的主要類別包含屬性和方法定義的範例，以及事件宣告。 提供這些項目只是為了顯示其進行方式。 這些並不是必要的項目，而且在這個範例中，我們會以自己的程式碼取代所有產生的程式碼。
+請注意，元件的主要類別包含屬性和方法定義的範例，以及事件宣告。 提供這些項目只是為了示範它的進行方式。 這些並不是必要項目，而且在此範例中，我們會以自己的程式碼來取代所有產生的程式碼。
 
-### <a name="to-create-the-c-component-project"></a>**建立C++元件專案**
-1. 在 Visual Studio 功能表列上，依序選擇 [檔案]、[新增] 及 [專案]。
+### <a name="to-create-the-c-component-project"></a>**建立 C++ 元件專案**
+1. 在 [Visual Studio] 功能表列上，選擇 [檔案] **、[新增]、[專案**]。
 
-2. 在 [**新增專案**] 對話方塊的左窗格中，展開 [**Visual C++** ]，然後選取通用 Windows app 的節點。
+2. 在 [**新增專案**] 對話方塊的左窗格中，展開 [**Visual C++**]，然後選取通用 Windows app 的節點。
 
-3. 在中央窗格中，選取 [ **Windows 執行階段元件**]，然後將專案命名為 WINRT\_CPP。
+3. 在中央窗格中，選取 [ **Windows 執行階段元件**]，然後將專案命名為 WinRT \_ CPP。
 
-4. 選擇 [確定] 按鈕。
+4. 選擇 [確定] **** 按鈕。
 
-## <a name="to-add-an-activatable-class-to-the-component"></a>**若要將可啟動的類別加入至元件**
-可啟用的類別是用戶端程式碼可以使用 **new** 運算式 (在 Visual Basic 中是 **New**，在 C++ 中則是 **ref new**) 建立的類別。 在您的元件中，您會將它宣告為 **public ref class sealed**。 實際上，Class1.h 和 .cpp 檔案已經有 ref 類別。 您可以變更名稱，但在這個範例中，我們會使用預設名稱 -- Class1。 如有必要，您可以在元件中定義其他 ref 類別或一般類別。 如需 ref 類別的詳細資訊，請參閱[類型系統 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
+## <a name="to-add-an-activatable-class-to-the-component"></a>**將可啟用的類別加入至元件**
+可啟用的類別是用戶端程式碼可以使用 **new** 運算式 (在 Visual Basic 中是 **New**，在 C++ 中則是 **ref new**) 建立的類別。 在您的元件中，您會將它宣告為 **public ref class sealed**。 事實上，Class1.h 和 .cpp 檔案已經有 ref 類別。 您可以變更名稱，但在這個範例中，我們會使用預設名稱 -- Class1。 如有必要，您可以在元件中定義其他 ref 類別或一般類別。 如需 ref 類別的詳細資訊，請參閱[類型系統 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
 
-將這些 \#include 指示詞新增至 Class1. h：
+將這些 include 指示詞新增 \# 至 Class1. h：
 
 ```cpp
 #include <collection.h>
@@ -48,19 +48,19 @@ ms.locfileid: "80578690"
 
 collection.h 是 C++ 具象類別 (例如 Platform::Collections::Vector 類別和 Platform::Collections::Map 類別，這會實作 Windows 執行階段所定義之非語言相關的介面) 的標頭檔。 amp 標頭是用來在 GPU 上執行計算。 它們沒有 Windows 執行階段的對等用法，不過沒關係，因為它們是私用的。 一般而言，基於效能考量，您應該在元件內部使用 ISO C++ 程式碼和標準程式庫，因為它只是必須以 Windows 執行階段類型表示的 Windows 執行階段介面。
 
-## <a name="to-add-a-delegate-at-namespace-scope"></a>若要在命名空間範圍加入委派
-委派是可定義方法的參數和傳回型別的建構。 事件是特定委派類型的執行個體，而且訂閱事件的所有事件處理常式方法都必須包含在委派中指定的簽章。 下列程式碼會定義使用 int 並傳回 void 的委派類型。 接著，程式碼會宣告此類型的公用事件，這讓用戶端程式碼能夠在事件引發時提供所叫用的方法。
+## <a name="to-add-a-delegate-at-namespace-scope"></a>在命名空間範圍內加入委派
+委派是可定義方法的參數和傳回類型的建構。 事件是特定委派類型的執行個體，而且訂閱事件的所有事件處理常式方法都必須包含委派中所指定的簽章。 下列程式碼會定義使用 int 並傳回 void 的委派類型。 接著，程式碼會宣告此類型的公用事件，這讓用戶端程式碼能夠在事件引發時提供所叫用的方法。
 
-在 Class1 宣告之前，於 Class1.h 中的命名空間範圍加入下列委派宣告。
+在 Class1 宣告之前，於 Class1.h 的命名空間範圍內加入下列委派宣告。
 
 ```cpp
 public delegate void PrimeFoundHandler(int result);
 ```
 
-如果在 Visual Studio 中貼上程式碼時，程式碼並未正確對齊，請按 Ctrl+K+D 修正整個檔案的縮排格式。
+如果在 Visual Studio 中貼上程式碼時，程式碼並未正確對齊，請按 Ctrl+K+D 來修正整個檔案的縮排格式。
 
-## <a name="to-add-the-public-members"></a>若要加入公用成員
-這個類別會公開三個公用方法和一個公用事件。 第一個方法是同步方法，因為執行的速度非常快。 另外兩個方法是非同步方法，因為可能需要一些時間才能執行完畢，如此才不會阻擋 UI 執行緒。 這些方法會傳回 IAsyncOperationWithProgress 和 IAsyncActionWithProgress。 前者是定義傳回結果的非同步方法，而後者是定義傳回 void 的非同步方法。 這些介面也可讓用戶端程式碼接收作業的進度更新。
+## <a name="to-add-the-public-members"></a>加入公用成員
+這個類別會公開三個公用方法和一個公用事件。 第一個方法是同步方法，因為它一律會以飛快的速度來執行。 另外兩個方法是非同步方法，因為可能需要一些時間才能執行完畢，如此才不會阻擋 UI 執行緒。 這些方法會傳回 IAsyncOperationWithProgress 和 IAsyncActionWithProgress。 前者會定義傳回結果的非同步方法，而後者則會定義傳回 void 的非同步方法。 這些介面也可讓用戶端程式碼接收作業進度的更新。
 
 ```cpp
 public:
@@ -77,8 +77,8 @@ public:
         event PrimeFoundHandler^ primeFoundEvent;
 
 ```
-## <a name="to-add-the-private-members"></a>若要加入私用成員
-這個類別包含三個私用成員：兩個用於數值計算的 Helper 方法以及一個 CoreDispatcher 物件，後者是用來從背景工作執行緒將事件叫用封送處理回 UI 執行緒。
+## <a name="to-add-the-private-members"></a>加入私用成員
+此類別包含三個私用成員：兩個用於數值計算的 Helper 方法以及一個 CoreDispatcher 物件，後者是用來從背景工作執行緒將事件叫用封送處理回 UI 執行緒。
 
 ```cpp
 private:
@@ -86,7 +86,7 @@ private:
         Windows::UI::Core::CoreDispatcher^ m_dispatcher;
 ```
 
-### <a name="to-add-the-header-and-namespace-directives"></a>若要加入標題和命名空間指示詞
+### <a name="to-add-the-header-and-namespace-directives"></a>加入標題和命名空間指示詞
 1. 在 Class1.cpp 中，加入下列 #include 指示詞：
 
 ```cpp
@@ -104,8 +104,8 @@ using namespace Windows::Foundation;
 using namespace Windows::UI::Core;
 ```
 
-## <a name="to-add-the-implementation-for-computeresult"></a>若要加入 ComputeResult 的實作
-在 Class1.cpp 中加入下列方法實作。 這個方法會使用呼叫執行緒同步執行，因為它使用 C++ AMP 並利用 GPU 平行處理計算，因此執行速度非常快。 如需詳細資訊，請參閱 C++ AMP 概觀。 結果會附加至 Platform::Collections::Vector<T> 具象類型，它會在傳回時隱含轉換為 Windows::Foundation::Collections::IVector<T>。
+## <a name="to-add-the-implementation-for-computeresult"></a>加入 ComputeResult 的實作
+在 Class1.cpp 中，加入下列方法實作。 這個方法會在呼叫執行緒上同步執行，因為它會使用 C++ AMP 在 GPU 上平行處理計算，因此執行速度非常快。 如需詳細資訊，請參閱＜C++ AMP 概觀＞。 結果會附加至 Platform::Collections::Vector<T> 具象類型，它會在傳回時隱含轉換為 Windows::Foundation::Collections::IVector<T>。
 
 ```cpp
 //Public API
@@ -137,10 +137,10 @@ IVector<double>^ Class1::ComputeResult(double input)
     return res;
 }
 ```
-## <a name="to-add-the-implementation-for-getprimesordered-and-its-helper-method"></a>若要加入 GetPrimesOrdered 及其 Helper 方法的實作
+## <a name="to-add-the-implementation-for-getprimesordered-and-its-helper-method"></a>加入 GetPrimesOrdered 及其 Helper 方法的實作
 在 Class1.cpp 中，加入 GetPrimesOrdered 及 is_prime Helper 方法的實作。 GetPrimesOrdered 會使用 concurrent_vector 類別和 parallel_for 函式迴圈來劃分工作，並利用程式執行所在電腦上的最大資源來產生結果。 經過計算、儲存及排序之後的結果會加入 Platform::Collections::Vector<T>，並以 Windows::Foundation::Collections::IVector<T> 的形式傳回至用戶端程式碼。
 
-請注意進度報告程式的程式碼，進度報告程式可讓用戶端連接進度列或其他 UI，讓使用者得知作業還要多久才完成。 使用進度報告也必須付出代價。 您必須在元件端引發事件，並且要使用 UI 執行緒處理事件，而且每個反覆項目都必須儲存進度值。 要將這個代價降到最低的其中一種方式，就是限制進度事件的引發頻率。 如果不願意付出這個代價，或者如果您無法評估作業要多久才完成，請考慮使用進度環來表示作業正在進行中，但是直到完成為止都不會顯示剩餘的時間。
+請注意進度報告程式的程式碼，它可讓用戶端連接進度列或其他 UI，讓使用者得知作業還要多久才完成。 使用進度報告也必須付出代價。 您必須在元件端引發事件，並在 UI 執行緒上處理該事件，而且每個反覆項目都必須儲存進度值。 將這個代價降到最低的其中一種方式，就是限制引發進度事件的頻率。 如果不願意付出這個代價，或者您無法評估作業要多久才能完成，請考慮使用進度環來表示作業正在進行中，但直到完成為止都不會顯示剩餘的時間。
 
 ```cpp
 // Determines whether the input value is prime.
@@ -206,8 +206,8 @@ IAsyncOperationWithProgress<IVector<int>^, double>^ Class1::GetPrimesOrdered(int
 }
 ```
 
-## <a name="to-add-the-implementation-for-getprimesunordered"></a>若要加入 GetPrimesUnordered 的實作
-建立 C++ 元件的最後一個步驟是在 Class1.cpp 中加入 GetPrimesUnordered 的實作。 這個方法會將找到的每個結果傳回而不等待，直到找到所有結果為止。 事件處理常式中的每個結果都會傳回並即時顯示在 UI 上。 同樣地，請注意這裡也使用了進度報告程式。 這個方法也會使用 is_prime Helper 方法。
+## <a name="to-add-the-implementation-for-getprimesunordered"></a>加入 GetPrimesUnordered 的實作
+建立 C++ 元件的最後一個步驟是在 Class1.cpp 中加入 GetPrimesUnordered 的實作。 這個方法會傳回找到的每個結果，而不會等待直到找到所有結果為止。 事件處理常式中的每個結果都會傳回並即時顯示於 UI 上。 同樣地，請注意這裡也使用了進度報告程式。 這個方法也會使用 is_prime Helper 方法。
 
 ```cpp
 // This method returns no value. Instead, it fires an event each time a
@@ -269,30 +269,30 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 
 ## <a name="creating-a-javascript-client-app-visual-studio-2017"></a>建立 JavaScript 用戶端應用程式（Visual Studio 2017）
 
-如果您想要建立C#用戶端，則可以略過本節。
+如果您想要建立 c # 用戶端，則可以略過本節。
 
 > [!NOTE]
 > Visual Studio 2019 不支援通用 Windows 平臺（UWP）專案。 請參閱[Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects)。 若要遵循此章節的指示，建議您使用 Visual Studio 2017。 請參閱[Visual Studio 2017 中的 JavaScript](/visualstudio/javascript/javascript-in-vs-2017)。
 
-### <a name="to-create-a-javascript-project"></a>若要建立 JavaScript 專案
+### <a name="to-create-a-javascript-project"></a>建立 JavaScript 專案
 1. 在方案總管（在 Visual Studio 2017 中，請參閱上面的**注意事項**），開啟方案節點的快捷方式功能表，然後選擇 [**加入]、[新增專案**]。
 
-2. 展開 \[JavaScript\] \(它可能是以巢狀方式置於 \[其他語言\] 底下\)，然後選擇 \[空白應用程式 \(通用 Windows\)\]。
+2. 展開 \[JavaScript\] (它可能是以巢狀方式置於 **\[其他語言\]** 底下)，然後選擇 **\[空白應用程式 (通用 Windows)\]**。
 
-3. 選擇 [**確定]** 按鈕，以接受預設名稱&mdash;App1&mdash;。
+3. &mdash; &mdash; 選擇 [**確定]** 按鈕，接受預設名稱 App1。
 
-4. 開啟 App1 專案節點的捷徑功能表，然後選擇 [設定為啟始專案]。
+4. 開啟 App1 專案節點的捷徑功能表，然後選擇 **\[設定為啟始專案\]**。
 
 5. 將專案參考加入至 WinRT_CPP：
 
-6. 開啟 [參考] 節點的捷徑功能表，然後選擇 [加入參考]。
+6. 開啟 [參考] 節點的捷徑功能表，然後選擇 **\[加入參考\]**。
 
-7. 在 [參考管理員] 對話方塊的左窗格中，依序選取 [專案] 和 [方案]。
+7. 在 \[參考管理員\] 對話方塊的左窗格中，依序選取 **\[專案\]** 和 **\[方案\]**。
 
-8. 在中央窗格，選取 [WinRT_CPP]，然後選擇 [確定] 按鈕。
+8. 在中央窗格，選取 [WinRT_CPP]，然後選擇 **\[確定\]** 按鈕。
 
-## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>若要加入可叫用 JavaScript 事件處理常式的 HTML
-將此 HTML 貼到 default.html 頁面的 <body> 節點中：
+## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>加入可叫用 JavaScript 事件處理常式的 HTML
+將此 HTML 貼到 <body> default.html 頁面的節點：
 
 ```HTML
 <div id="LogButtonDiv">
@@ -328,7 +328,7 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
  </div>
 ```
 
-## <a name="to-add-styles"></a>若要加入樣式
+## <a name="to-add-styles"></a>加入樣式
 移除 default.css 中的 body 樣式，然後加入下列樣式：
 
 ```css
@@ -362,8 +362,8 @@ font-size:smaller;
 }
 ```
 
-## <a name="to-add-the-javascript-event-handlers-that-call-into-the-component-dll"></a>若要加入可呼叫元件 DLL 的 JavaScript 事件處理常式
-在 default.js 檔案的結尾加入下列函式。 選擇主頁面上的按鈕時，就會呼叫這些函式。 注意 JavaScript 如何啟用 C++類別，然後呼叫其方法並使用傳回值來填入 HTML 標籤。
+## <a name="to-add-the-javascript-event-handlers-that-call-into-the-component-dll"></a>加入可呼叫元件 DLL 的 JavaScript 事件處理常式
+在 default.js 檔案的結尾加入下列函式。 選擇主頁面上的按鈕時，就會呼叫這些函式。 請注意 JavaScript 啟用 C++ 類別的方式，然後呼叫其方法並使用傳回值來填入 HTML 標籤。
 
 ```JavaScript
 var nativeObject = new WinRT_CPP.Class1();
@@ -443,26 +443,26 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 
 按 F5 以執行應用程式。
 
-## <a name="creating-a-c-client-app"></a>建立 C# 用戶端應用程式
+## <a name="creating-a-c-client-app"></a>建立 C# 用戶端 App
 
-### <a name="to-create-a-c-project"></a>若要建立 C# 專案
-1. 在 [方案總管] 中，開啟 [方案] 節點的捷徑功能表，然後依序選擇 [加入] 和 [新增專案]。
+### <a name="to-create-a-c-project"></a>建立 C# 專案
+1. 在 [方案總管] 中，開啟 [方案] 節點的捷徑功能表，然後依序選擇 **\[加入\] 和 \[新增專案\]**。
 
-2. 展開 \[Visual C#\] (它可能是以巢狀方式置於 \[其他語言\] 底下\)、選取 \[Windows\]，接著選取左窗格中的 \[通用\]，然後選取中間窗格的 \[空白應用程式\]。
+2. 展開 \[Visual C#\] (它可能是以巢狀方式置於 **\[其他語言\]** 底下)、選取 **\[Windows\]**，接著選取左窗格中的 **\[通用\]**，然後選取中間窗格的 **\[空白應用程式\]**。
 
-3. 將這個 app 命名為 CS_Client，然後選擇 [確定] 按鈕。
+3. 將這個 app 命名為 CS_Client，然後選擇 **\[確定\]** 按鈕。
 
-4. 開啟 CS_Client 專案節點的捷徑功能表，然後選擇 [設定為啟始專案]。
+4. 開啟 CS_Client 專案節點的捷徑功能表，然後選擇 **\[設定為啟始專案\]**。
 
 5. 將專案參考加入至 WinRT_CPP：
 
-   - 開啟 [參考] 節點的捷徑功能表，然後選擇 [加入參考]。
+   - 開啟 [**參考**] 節點的快捷方式功能表，然後選擇 [**加入參考**]。
 
-   - 在 [參考管理員] 對話方塊的左窗格中，依序選取 [專案] 和 [方案]。
+   - 在 **\[參考管理員\]** 對話方塊的左窗格中，依序選取 **\[專案\]** 和 **\[方案\]**。
 
-   - 在中央窗格，選取 [WinRT_CPP]，然後選擇 [確定] 按鈕。
+   - 在中央窗格中，選取 [WinRT_CPP]，然後選擇 [**確定]** 按鈕。
 
-## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>若要加入可定義使用者介面的 XAML
+## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>加入定義使用者介面的 XAML
 將下列程式碼複製到 MainPage.xaml 中的 Grid 元素。
 
 ```xaml
@@ -483,7 +483,7 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 </ScrollViewer>
 ```
 
-## <a name="to-add-the-event-handlers-for-the-buttons"></a>若要為按鈕加入事件處理常式
+## <a name="to-add-the-event-handlers-for-the-buttons"></a>為按鈕加入事件處理常式
 在 [方案總管] 中，開啟 MainPage.xaml.cs (這個檔案可能是以巢狀方式置於 MainPage.xaml 底下。) 針對 System.Text 加入 using 指示詞，然後在 MainPage 類別中加入事件處理常式以進行 Logarithm 計算。
 
 ```csharp
@@ -542,7 +542,7 @@ async private void PrimesOrderedButton_Click_1(object sender, RoutedEventArgs e)
 }
 ```
 
-為未排序的結果加入事件處理常式，並且為清除結果的按鈕加入事件處理常式，方便您可以再次執行程式碼。
+為未排序的結果加入事件處理常式，並為清除結果的按鈕加入事件處理常式，方便您再次執行程式碼。
 
 ```csharp
 private void PrimesUnOrderedButton_Click_1(object sender, RoutedEventArgs e)
@@ -584,7 +584,7 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ```
 
 ## <a name="running-the-app"></a>執行應用程式
-在 [方案總管] 中開啟專案節點的捷徑功能表，然後選擇 [設定為啟始專案]，選取 C# 專案或 JavaScript 專案做為啟始專案。 然後，您可以按 F5 開始執行並偵錯，或是按 Ctrl+F5 開始執行而不偵錯。
+在 [方案總管] 中開啟專案節點的捷徑功能表，然後選擇 **\[設定為啟始專案\]**，選取 C# 專案或 JavaScript 專案做為啟始專案。 然後，按 F5 開始執行並偵錯，或是按 Ctrl+F5 開始執行而不偵錯。
 
 ## <a name="inspecting-your-component-in-object-browser-optional"></a>在物件瀏覽器中檢查您的元件 (選擇性)
 在 [物件瀏覽器] 中，您可以檢查 .winmd 檔案中定義的所有 Windows 執行階段類型。 這包含 Platform 命名空間和預設命名空間中的類型。 不過，由於 Platform::Collections 命名空間中的類型是定義於標頭檔 collections.h (而非 winmd 檔案) 中，因此它們不會出現在 [物件瀏覽器] 中。
@@ -592,23 +592,23 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ### <a name="to-inspect-a-component"></a>**檢查元件**
 1. 在功能表列上，依序選擇 **[檢視] 和 [物件瀏覽器]** (Ctrl+Alt+J)。
 
-2. 在 [物件瀏覽器] 的左窗格中，展開 [WinRT\_CPP] 節點，顯示在您的元件上定義的類型和方法。
+2. 在物件瀏覽器的左窗格中，展開 [WinRT \_ CPP] 節點，顯示在您的元件上定義的類型和方法。
 
-## <a name="debugging-tips"></a>偵錯提示
+## <a name="debugging-tips"></a>偵錯秘訣
 若想獲得較佳的偵錯經驗，請從公用 Microsoft 符號伺服器下載偵錯符號：
 
-### <a name="to-download-debugging-symbols"></a>**下載調試符號**
-1. 在功能表列上，依序選擇 [工具] 和 [選項]。
+### <a name="to-download-debugging-symbols"></a>**下載偵錯符號**
+1. 在功能表列上，選擇 [**工具]、[選項**]。
 
-2. 在 [選項] 對話方塊中，展開 [偵錯]，然後選取 [符號]。
+2. 在 **\[選項\]** 對話方塊中，展開 **\[偵錯\]**，然後選取 **\[符號\]**。
 
-3. 選取 [Microsoft 符號伺服器]，然後選擇 [確定] 按鈕。
+3. 選取 **\[Microsoft 符號伺服器\]**，然後選擇 **\[確定\]** 按鈕。
 
 第一次下載這些符號時可能需要一些時間。 若要縮短下載時間，當您下次按 F5 時，請指定用來快取符號的本機目錄。
 
-對含有元件 DLL 的 JavaScript 方案進行偵錯時，您可以設定偵錯工具為啟用逐步執行指令碼或是逐步執行元件中的原生程式碼，但不可兩者同時啟用。 若要變更設定，請在 [方案總管] 中開啟 JavaScript 專案節點的捷徑功能表，然後依序選擇 [屬性]、[偵錯] 及 [偵錯工具類型]。
+對含有元件 DLL 的 JavaScript 方案進行偵錯時，您可以設定偵錯工具以啟用逐步執行指令碼或逐步執行元件中的機器碼，但不可兩者同時啟用。 若要變更設定，請在 [方案總管] 中開啟 JavaScript 專案節點的捷徑功能表，然後依序選擇 **\[屬性\]、\[偵錯\] 及 \[偵錯工具類型\]**。
 
-請務必在封裝設計工具中選取適當的功能。 您可以藉由開啟 Package.appxmanifest 檔案來開啟封裝設計工具。 例如，如果您嘗試以程式設計方式存取 [圖片] 資料夾中的檔案，請務必在封裝設計工具中的 [功能] 窗格中選取 [圖片庫] 核取方塊 。
+請務必在封裝設計工具中選取適當的功能。 您可以藉由開啟 Package.appxmanifest 檔案來開啟封裝設計工具。 例如，如果您嘗試以程式設計方式存取 [圖片] 資料夾中的檔案，請務必在封裝設計工具中的 **\[功能\]** 窗格中選取 **\[圖片庫\]** 核取方塊 。
 
 如果 JavaScript 程式碼無法辨識元件中的公用屬性或方法，請確定您在 JavaScript 中使用 Camel 命名法的大小寫慣例。 例如，`ComputeResult` C++ 方法必須當做 JavaScript 中的 `computeResult` 來參考。
 

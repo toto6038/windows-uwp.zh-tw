@@ -2,16 +2,16 @@
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: 感應器方向
 description: 取自 Accelerometer、Gyrometer、Compass、Inclinometer 以及 OrientationSensor 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。
-ms.date: 05/24/2017
+ms.date: 07/03/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4659aaba330d3b41451e91e450ff601e3fcf5407
-ms.sourcegitcommit: 42a2d9e47f682ba42d91fed587f4d5924bde9c9a
+ms.openlocfilehash: b61b7bcd18419ec9be719b5f565e5503953be7c3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85840762"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493465"
 ---
 # <a name="sensor-orientation"></a>感應器方向
 
@@ -26,7 +26,12 @@ ms.locfileid: "85840762"
 
 為了了解感應器的參考軸線，您必須區分顯示方向與裝置方向。 顯示方向就是螢幕上顯示的方向文字與影像，而裝置方向則是裝置的實際位置。
 
-在下列圖表中，裝置和顯示方向都是[橫向](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)（顯示的感應器軸專屬於橫向方向），正 Z 軸會向外擴充裝置。
+> [!NOTE]
+> 正 Z 軸會從裝置畫面延伸，如下圖所示。
+> :::image type="content" source="images/sensor-orientation-zaxis-1-small.png" alt-text="適用于膝上型電腦的 Z 軸":::
+
+在下列圖表中，裝置和顯示方向都是[橫向](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)（顯示的感應器軸專屬於橫向方向）。
+
 
 此圖表顯示[橫向](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)的顯示和裝置方向。
 
@@ -34,11 +39,11 @@ ms.locfileid: "85840762"
 
 下圖顯示[LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)中的顯示和裝置方向。
 
-![顯示方向與裝置方向為 LandscapeFlipped](images/sensor-orientation-b-small.jpg)
+:::image type="content" source="images/sensor-orientation-b-small.jpg" alt-text="顯示方向與裝置方向為 LandscapeFlipped":::
 
 這個最後的圖表會顯示裝置方向為[LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)時的橫向顯示方向。
 
-![顯示方向為 Landscape，而裝置方向為 LandscapeFlipped](images/sensor-orientation-c-small.jpg)
+:::image type="content" source="images/sensor-orientation-c-small.jpg" alt-text="顯示方向為 Landscape，而裝置方向為 LandscapeFlipped":::
 
 使用 [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) 方法搭配 [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation) 屬性，即可透過 [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) 類別查詢方向值。 接著與 [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) 列舉比較就能建立邏輯。 記住您支援哪些方向，就必須支援將參考軸線轉換為該方向。
 
@@ -48,10 +53,10 @@ ms.locfileid: "85840762"
 
 | 方向 | 橫向優先 | 直向優先 |
 |-------------|-----------------|----------------|
-| **橫向** | ![方向為 Landscape 的橫向優先裝置](images/sensor-orientation-0-small.jpg) | ![方向為 Landscape 的直向優先裝置](images/sensor-orientation-1-small.jpg) |
-| **縱向** | ![方向為 Portrait 的橫向優先裝置](images/sensor-orientation-2-small.jpg) | ![方向為 Portrait 的直向優先裝置](images/sensor-orientation-3-small.jpg) |
-| **LandscapeFlipped** | ![方向為 LandscapeFlipped 的橫向優先裝置](images/sensor-orientation-4-small.jpg) | ![方向為 LandscapeFlipped 的直向優先裝置](images/sensor-orientation-5-small.jpg) | 
-| **PortraitFlipped** | ![方向為 PortraitFlipped 的橫向優先裝置](images/sensor-orientation-6-small.jpg)| ![方向為 PortraitFlipped 的直向優先裝置](images/sensor-orientation-7-small.jpg) |
+| **橫向** | :::image type="content" source="images/sensor-orientation-0-small.jpg" alt-text="方向為 Landscape 的橫向優先裝置"::: | :::image type="content" source="images/sensor-orientation-1-small.jpg" alt-text="方向為 Landscape 的直向優先裝置"::: |
+| **直向** | :::image type="content" source="images/sensor-orientation-2-small.jpg" alt-text="方向為 Portrait 的橫向優先裝置"::: | :::image type="content" source="images/sensor-orientation-3-small.jpg" alt-text="方向為 Portrait 的直向優先裝置"::: |
+| **LandscapeFlipped** | :::image type="content" source="images/sensor-orientation-4-small.jpg" alt-text="方向為 LandscapeFlipped 的橫向優先裝置"::: | :::image type="content" source="images/sensor-orientation-5-small.jpg" alt-text="方向為 LandscapeFlipped 的直向優先裝置":::
+| **PortraitFlipped** | :::image type="content" source="images/sensor-orientation-6-small.jpg" alt-text="方向為 PortraitFlipped 的橫向優先裝置"::: | :::image type="content" source="images/sensor-orientation-7-small.jpg" alt-text="方向為 PortraitFlipped 的直向優先裝置"::: |
 
 ## <a name="devices-broadcasting-display-and-headless-devices"></a>廣播顯示畫面和無周邊裝置的裝置
 
@@ -66,7 +71,7 @@ ms.locfileid: "85840762"
 | 顯示方向 | 指南針朝向的參考軸線 | 面向北方的 API 指南針朝向 (先橫向) | 面向北方的 API 指南針朝向 (先直向) |指南針朝向調整 (先橫向) | 指南針朝向調整 (先直向) |
 |---------------------|------------------------------------|---------------------------------------------------------|--------------------------------------------------------|------------------------------------------------|-----------------------------------------------|
 | 橫向           | -Z | 0   | 270 | 朝向               | (朝向 + 90) % 360  |
-| 縱向            |  Y | 90  | 0   | (朝向 + 270) % 360 |  朝向              |
+| 直向            |  Y | 90  | 0   | (朝向 + 270) % 360 |  朝向              |
 | LandscapeFlipped    |  Z | 180 | 90  | (朝向 + 180) % 360 | (朝向 + 270) % 360 |
 | PortraitFlipped     |  Y | 270 | 180 | (朝向 + 90) % 360  | (朝向 + 180) % 360 |
 
@@ -111,7 +116,7 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 | 參考軸線        |  X |  Y | Z |
 |-----------------------|----|----|---|
 | **橫向**         |  X |  Y | Z |
-| **縱向**          |  Y | -X | Z |
+| **直向**          |  Y | -X | Z |
 | **LandscapeFlipped**  | -X | -y | Z |
 | **PortraitFlipped**   | -y |  X | Z |
 
@@ -161,18 +166,18 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) 資料必須以不同方式變更。 請將這些不同的方向視為逆時針旋轉到 Z 軸，因此我們需要反轉旋轉以取回使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
 
-![尤拉公式](images/eulers-formula.png)
+:::image type="content" source="images/eulers-formula.png" alt-text="尤拉公式":::
 
 若要取得您想要的相對方向，請將參考物件比對絕對物件相乘。 請注意，這個數學公式不可以交換。
 
-![將參考物件比對絕對物件相乘](images/orientation-formula.png)
+:::image type="content" source="images/orientation-formula.png" alt-text="將參考物件比對絕對物件相乘":::
 
 在前面的運算式中，絕對物件是由感應器資料傳回。
 
 | 顯示方向  | 延著 Z 軸逆時針旋轉 | 參考四元數 (反向旋轉) | 參考旋轉矩陣 (反向旋轉) |
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
 | **橫向**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
-| **縱向**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
+| **直向**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
 | **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
 

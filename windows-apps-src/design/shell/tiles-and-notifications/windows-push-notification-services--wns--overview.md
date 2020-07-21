@@ -7,12 +7,12 @@ ms.date: 03/06/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fa70346dc6033ac1f879a1c2429c3c4222b8c0ec
-ms.sourcegitcommit: 368660812e143de5def5e5328a2eadb178cd5544
+ms.openlocfilehash: 41f258124824e6dc7d11aae085365e0d50d8a0f2
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85129105"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493263"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀 
 
@@ -86,7 +86,7 @@ Windows Push Notification Services （WNS）可讓協力廠商開發人員從他
 
 ### <a name="important-notes"></a>重要事項
 
--   我們不保證應用程式的通知通道 URI 一律保持相同。 我們建議每次執行應用程式時要求新通道，並在 URI 變更時更新本身的服務。 開發人員不得修改通道 URI，而是要將它視為黑箱字串。 在這個時候，通道 URI 會在 30 天後到期。 如果您的 Windows 10 應用程式會在背景中定期更新其通道，您可以下載適用於 Windows 8.1 的[推播與定期通知範例](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603)，並重複使用其原始原始碼和/或其示範的模式。
+-   我們不保證應用程式的通知通道 URI 一律保持相同。 我們建議每次執行應用程式時要求新通道，並在 URI 變更時更新本身的服務。 開發人員不得修改通道 URI，而是要將它視為黑箱字串。 在這個時候，通道 URI 會在 30 天後到期。 如果您的 Windows 10 應用程式會在背景中定期更新其通道，您可以下載適用於 Windows 8.1 的[推播與定期通知範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208))，並重複使用其原始原始碼和/或其示範的模式。
 -   雲端服務與用戶端應用程式之間的介面要由您 (開發人員) 實作。 我們建議應用程式完成與本身服務的驗證程序，並透過安全通訊協定 (像是 HTTPS) 傳輸資料。
 -   雲端服務務必確定通道 URI 使用「notify.windows.com」網域，這一點非常重要。 在任何情況下服務都不可以將通知推播至其他任何網域的通道。 如果應用程式的回呼遭到竄改，惡意攻擊者可能會提交通道 URI 來詐騙 WNS。 在不檢查網域的情況下，您的雲端服務可能會在不知情的情況下洩漏此攻擊者的資訊。
 -   如果您的雲端服務嘗試將通知傳遞到已過期的通道，WNS 將傳回[回應碼 410](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))。 您回應這該代碼的方式為讓您的服務不繼續嘗試傳送通知到該 URI。

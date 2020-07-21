@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0991a8a06054b6136dfc1fd65c15dbeb66e6fd
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 8f07e7901bf89ed73087833c92b7a3ba29165fec
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684264"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493443"
 ---
 # <a name="make-your-app-localizable"></a>讓您的應用程式可當地語系化
 
@@ -50,9 +50,9 @@ ms.locfileid: "75684264"
 
 簡而言之，請將您的字串構築為可在所有內容中使用的片段。 有時候字串可能必須是完整的句子。
 
-請考慮下列字串：「無法同步處理 {0}。」
+請考慮下列字串：「 {0} 無法同步處理」。
 
-各種單字可以取代 {0}，例如「約會」、「工作」或「檔」。 雖然這個範例似乎對於英文沒有問題，但可能不見得適用於所有案例中的對應句子，例如德文。 請注意，在下列德文句子中，範本字串 ("Der"、"Die"、"Das") 中的部分字詞需要符合參數化的字詞：
+各種單字可以取代，例如「約會」、「工作」 {0} 或「檔」。 雖然這個範例似乎對於英文沒有問題，但可能不見得適用於所有案例中的對應句子，例如德文。 請注意，在下列德文句子中，範本字串 ("Der"、"Die"、"Das") 中的部分字詞需要符合參數化的字詞：
 
 | 英文                                    | 德文                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -60,7 +60,7 @@ ms.locfileid: "75684264"
 | The task could not be synchronized. (工作不能同步。)        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized. (文件不能同步。)    | Das Dokument konnte nicht synchronisiert werden. |
 
-另舉一個例子，請考慮「在 {0} 分鐘內提醒我」句子。 使用 "minute(s)" (分鐘) 適用於英文，但其他語言可能會使用不同的詞彙。 例如，波蘭文會根據上下文使用 "minuta"、"minuty" 或 "minut"。
+另舉一個例子，請考慮「在幾分鐘內提醒我」句子 {0} 。 使用 "minute(s)" (分鐘) 適用於英文，但其他語言可能會使用不同的詞彙。 例如，波蘭文會根據上下文使用 "minuta"、"minuty" 或 "minut"。
 
 若要解決這個問題，請將完整句子當地語系化，而不是單一字詞。 這看起來好像是額外的工作而且不是很好的解決方案，但卻是最佳解決方案，因為：
 
@@ -72,7 +72,7 @@ ms.locfileid: "75684264"
 
 避免使用您預設語言中的俚語和象徵物。 定族群 (例如，文化特性和年齡) 使用的語言，由於只有該族群使用，所以很難了解或翻譯。 同樣地，不見得人人都能理解隱喻的深層含意。 例如，只有滑雪愛好者才知道 &quot;bluebird&quot; 的其中含意，但是非滑雪愛好者，就不明白其中的含意。
 
-不要使用技術專業用語、縮寫或首字母縮略字。 來自其他文化特性或地區且沒有相關技術背景的使用者或人員很難了解技術專業語言，而且不容易翻譯這種語言。 一般人不會在日常交談中使用這些字詞。 技術性的語言通常會出現在錯誤訊息中，用來識別硬體和軟體問題，但您的字串應「只有在使用者需要該層級的資訊，並且可採取動作或尋找能採取動作的人員」時，才以技術性的語言呈現。
+不要使用技術專業用語、縮寫或首字母縮略字。 來自其他文化特性或地區且沒有相關技術背景的使用者或人員很難了解技術專業語言，而且不容易翻譯這種語言。 一般人不會在日常交談中使用這些字詞。 技術性的語言通常會出現在錯誤訊息中，用來識別硬體和軟體問題，但您的字串應「只有在使用者需要該層級的資訊，並且可採取動作或尋找能採取動作的人員」** 時，才以技術性的語言呈現。
 
 在您的字串中使用非正式的口吻或語調是有效的選擇。 您可以在您的預設資源檔 (.resw) 中使用註解表示該意圖。
 
@@ -80,7 +80,7 @@ ms.locfileid: "75684264"
 
 虛擬當地語系化您的應用程式，以發現任何可當地語系化性問題。 虛擬當地語系化是一種當地語系化的測試執行，或公開測試。 您會產生一組並未真正翻譯的資源。他們只是看起來像是已翻譯而已。 您的字串長度會比預設語言要長 40% (舉例)，當中還帶有分隔符號，讓您可以瞥見他們在 UI 中是否遭到截斷。
 
-## <a name="deployment-considerations"></a>部署考量因素
+## <a name="deployment-considerations"></a>部署考量
 
 當您安裝包含當地語系化語言資料的應用程式時，您可能會發現只有預設語言可供應用程式使用，即使您一開始包含多個語言的資源也是一樣。 這是因為安裝程式已優化，只會安裝符合裝置目前語言和文化特性的語言資源。 因此，如果您的裝置設定為 en-us，則只有 en-us 語言資源會隨您的應用程式一起安裝。
 
@@ -94,14 +94,14 @@ ms.locfileid: "75684264"
 將 [產生應用程式套件組合] 屬性設為 [永不]，以停用自動產生 .appxbundle：
 
 1. 在 Visual Studio 中，以滑鼠右鍵按一下專案名稱
-2. 選取 [**儲存**] -> **建立應用程式套件 ...**
-3. 在 [**建立您的套件**] 對話方塊中，選取 [**我要使用新的應用程式名稱來建立要上傳至 Microsoft Store 的封裝**]，然後按 **[下一步]** 。
+2. 選取 [**儲存**] [  ->  **建立應用程式套件 ...** ]
+3. 在 [**建立您的套件**] 對話方塊中，選取 [**我要使用新的應用程式名稱來建立要上傳至 Microsoft Store 的封裝**]，然後按 **[下一步]**。
 4. 在 [**選取應用程式名稱**] 對話方塊中，為您的套件選取/建立應用程式名稱。
 5. 在 [**選取和設定套件**] 對話方塊中，將 [**產生應用程式**配套] 設定為 [**永不**]。
 
 ## <a name="geopolitical-awareness"></a>地緣政治感知
 
-避免在地圖或參照地區時引發政治爭議。 地圖可能包含有爭議性的地區或國家邊界，而它們經常會成為政治爭議的來源。 請注意，任何用來選取國家的 UI 都要將它表示為「國家/地區」&quot;&quot;。 在清單中將有爭議性的領土標籤列為「國家/地區」&quot;&quot;&mdash;像是在地址表單中&mdash;，可能會冒犯某些使用者。
+避免在地圖或參照地區時引發政治爭議。 地圖可能包含有爭議性的地區或國家邊界，而它們經常會成為政治爭議的來源。 請注意，任何用來選取國家的 UI 都要將它表示為「國家/地區」&quot;&quot;。 在清單中將有爭議性的領土標籤列為「國家」&quot;&quot;&mdash;像是在地址表單中&mdash;，可能會冒犯某些使用者。
 
 ## <a name="language--and-region-changed-events"></a>語言和地區變更事件
 
@@ -115,7 +115,7 @@ ms.locfileid: "75684264"
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-此範例中的格式化字串在英文 (美國) 中可正常運作。 但，例如，在德文 (德國) 中則不適當，因為日期和月份的顯示順序是相反的。 請確定 translator 知道每個參數的意圖，讓它們可以根據目的語言，適當地反轉格式字串中格式專案的順序（例如，"{1} {0}"）。
+此範例中的格式化字串在英文 (美國) 中可正常運作。 但，例如，在德文 (德國) 中則不適當，因為日期和月份的顯示順序是相反的。 請確定 translator 知道每個參數的意圖，讓它們可以 {1} 根據目的語言，適當地反轉格式字串（例如，""）中格式專案的順序 {0} 。
 
 ## <a name="dont-over-localize"></a>不要過度當地語系化
 
@@ -134,7 +134,7 @@ ms.locfileid: "75684264"
 
 請考慮採用下列選項。
 
-- **您可以直接在專案中開啟資源檔來進行轉譯。** 這個方式適用於含有少量字串，且需要翻譯為兩到三種語言的專案。 如果開發人員了解多種語言，而且願意處理翻譯程序，則適用這個案例。 這個處理方式的好處是非常快速，不需要工具，而且可以將錯譯的風險降至最低。 但無法擴充。 特別是使用不同語言的資源很容易就變得不同步，因而產生不良的使用者經驗且不易維護。
+- **直接在專案中開啟資源檔案進行翻譯。** 這個方式適用於含有少量字串，且需要翻譯為兩到三種語言的專案。 如果開發人員了解多種語言，而且願意處理翻譯程序，則適用這個案例。 這個處理方式的好處是非常快速，不需要工具，而且可以將錯譯的風險降至最低。 但無法擴充。 特別是使用不同語言的資源很容易就變得不同步，因而產生不良的使用者經驗且不易維護。
 - **字串資源檔的格式為 XML 或 ResJSON，因此可以使用任何文字編輯器來傳遞以進行翻譯。翻譯後的檔案會複製回專案。** 這個處理方式的風險在於翻譯人員可能會意外編輯 XML 標記，但是它讓翻譯人員可以在 Microsoft Visual Studio 專案以外的地方進行處理。 這個處理方式適合需要翻譯少數語言的專案。 XLIFF 格式是特別設計用於當地語系化的 XML 格式，一些當地語系化廠商或當地語系化工具應該都能支援。 您可以使用[多語應用程式工具組](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10))，從其他資源檔案 (如 .resw 或 .resjson) 產生 XLIFF 檔案。
 
 > [!NOTE]
@@ -147,13 +147,13 @@ ms.locfileid: "75684264"
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>保持便捷鍵和標籤一致
 
-「同步處理」協助工具中使用的便捷鍵與顯示當地語系化的便捷鍵是一項挑戰，因為這兩個字串資源分屬於兩個不同的區段。 請務必提供標籤字串的批註，例如： `Make sure that the emphasized shortcut key  is synchronized with the access key.`
+「同步處理」協助工具中使用的便捷鍵與顯示當地語系化的便捷鍵是一項挑戰，因為這兩個字串資源分屬於兩個不同的區段。 請務必提供標籤字串的批註，例如：`Make sure that the emphasized shortcut key  is synchronized with the access key.`
 
 ## <a name="support-furigana-for-japanese-strings-that-can-be-sorted"></a>支援可以排序的日文字串假名註解
 
 日文漢字字元具備可根據使用他們的字詞而有一個以上閱讀方式 (發音) 的屬性。 這會在嘗試排序日文命名的物件 (例如，應用程式名稱、檔案、歌曲等) 時發生問題。 日文漢字過去通常是以機器可以了解的順序 (稱為 XJIS) 來排序。 可惜因為這個排序順序不是拼音的順序，所以對人們而言不是很有用。
 
-「假名註解」可以藉由允許使用者或建立者為他們所使用的字元指定拼音來解決這個問題。 如果您使用下列程序將假名註解加入應用程式名稱，可以確定它會在應用程式清單的正確位置進行排序。 如果應用程式名稱包含漢字字元，而且當使用者的 UI 語言或排序順序設定為日文時未提供假名註解，則 Windows 會盡最大的努力產生適當的發音。 不過，要排序的應用程式名稱可能會包含少見或獨特的讀法，而不是較常見的讀法。 因此，日文應用程式 (特別是名稱中包含漢字字元的應用程式) 的最佳做法是，在日文當地語系化程序期間提供假名註解版的應用程式名稱。
+藉由允許使用者或建立者為其所使用的字元指定拼音，可以解決此問題的*漢字*。 如果您使用下列程序將假名註解加入應用程式名稱，可以確定它會在應用程式清單的正確位置進行排序。 如果應用程式名稱包含漢字字元，而且當使用者的 UI 語言或排序順序設定為日文時未提供假名註解，則 Windows 會盡最大的努力產生適當的發音。 不過，要排序的應用程式名稱可能會包含少見或獨特的讀法，而不是較常見的讀法。 因此，日文應用程式 (特別是名稱中包含漢字字元的應用程式) 的最佳做法是，在日文當地語系化程序期間提供假名註解版的應用程式名稱。
 
 1. 新增 "ms-resource:Appname" 做為「套件顯示名稱」與「應用程式顯示名稱」。
 2. 在 strings 底下建立 ja-JP 資料夾，然後新增兩個資源檔案，如下所示：
@@ -183,11 +183,11 @@ ms.locfileid: "75684264"
 ## <a name="related-topics"></a>相關主題
 
 - [全球化指導方針](guidelines-and-checklist-for-globalizing-your-app.md)
-- [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
+- [當地語系化您的 UI 及應用程式套件資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
 - [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [調整配置和字型並支援 RTL](adjust-layout-and-fonts--and-support-rtl.md)
-- [更新影像以回應辨識符號值變更事件](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
+- [更新影像以回應限定詞值變更事件](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 
 ## <a name="samples"></a>範例
 
-- [應用程式資源和當地語系化範例](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)
+- [應用程式資源和當地語系化範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Application%20resources%20and%20localization%20sample%20(Windows%208))

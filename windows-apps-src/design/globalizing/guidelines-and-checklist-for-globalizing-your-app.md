@@ -8,12 +8,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: f08c8178781c82e8961fd180d4b75912359b4da9
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: d71cf2289654860b47aef18c117ac9d6d36fab0a
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730269"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493243"
 ---
 # <a name="guidelines-for-globalization"></a>全球化指導方針
 
@@ -55,4 +55,4 @@ ms.locfileid: "82730269"
 
 ## <a name="samples"></a>範例
 
-* [全球化喜好設定範例](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
+* [全球化喜好設定範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Globalization%20preferences%20sample%20(Windows%208))

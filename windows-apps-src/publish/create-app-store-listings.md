@@ -1,21 +1,21 @@
 ---
-Description: 應用程式提交流程的商店清單區段，可讓您提供客戶在 Microsoft Store 中觀看應用程式清單時所看到的文字和影像。
+Description: 您可以在應用程式提交程序的 \[Store 清單\] 區段中，提供客戶在 Microsoft Store 中檢視您應用程式清單時會看到的文字和影像。
 title: 建立應用程式 Store 清單
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp, 清單, 描述, Store 頁面, 版本資訊, 標題
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e9c7f56dd799b568e12a887355ec19561f207ea
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 6e8ba40129197f77b2bbbd3950a6bcf214bae787
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210374"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493013"
 ---
 # <a name="create-app-store-listings"></a>建立應用程式 Store 清單
 
-您可以在**應用程式提交程序**的 [\[Store 清單\]](app-submissions.md) 區段中，提供客戶在 Microsoft Store 中檢視您應用程式清單時會看到的文字和[影像](app-screenshots-and-images.md)。
+您可以在[應用程式提交程序](app-submissions.md)的 **\[Store 清單\]** 區段中，提供客戶在 Microsoft Store 中檢視您應用程式清單時會看到的文字和[影像](app-screenshots-and-images.md)。
 
 **Store 清單**中的許多欄位都是選填的，但我們建議盡可能地提供多個影像及更多資訊，讓您的清單更為出色。完成 **Store 清單**步驟的最低需求是一段文字描述，以及至少一張[螢幕擷取畫面](app-screenshots-and-images.md#screenshots).
 
@@ -26,16 +26,16 @@ ms.locfileid: "79210374"
 
 ## <a name="store-listing-languages"></a>Microsoft Store清單語言
 
-您必須完成至少一種語言的 **\[Microsoft Store清單\]** 頁面。 我們建議您使用套件支援的每個語言提供一個Microsoft Store清單，但您可以彈性地移除不想提供Microsoft Store清單的語言。 您也可以使用不受您套件支援的其他語言，建立Microsoft Store清單。
+您必須至少完成一種語言的**商店清單**頁面。 我們建議您使用套件支援的每個語言提供一個Microsoft Store清單，但您可以彈性地移除不想提供Microsoft Store清單的語言。 您也可以使用不受您套件支援的其他語言，建立Microsoft Store清單。
 
 > [!NOTE]
 > 如果您提交的內容已經包含套件，我們會在提交概觀頁面顯示您套件支援的[語言](supported-languages.md) (除非您移除其中的任何語言)。
 
-若要為您的Microsoft Store清單新增或移除語言，請在提交概觀頁面按一下 [**新增/移除語言**]。 若您已上傳套件，則會在 [**套件支援的語言**] 區段中看到列出這些套件的語言。 若要移除其中一或多個語言，請按一下 **\[移除\]** 。 如果您稍後決定包含您先前從此區段移除的語言，您可以按一下 **\[新增\]** 。
+若要為您的Microsoft Store清單新增或移除語言，請在提交概觀頁面按一下 [**新增/移除語言**]。 若您已上傳套件，則會在 [**套件支援的語言**] 區段中看到列出這些套件的語言。 若要移除一或多個這些語言，請按一下 [**移除**]。 如果您稍後決定要包含先前從這個區段移除的語言，您可以按一下 [**新增**]。
 
-在 **\[其他Microsoft Store清單語言\]** 區段中，您可以按一下 **\[管理其他語言\]** 以新增或移除您套件*未*包含的語言。 針對您想要新增的語言核取其方塊，然後按一下 **\[更新\]** 。 您已經選取的語言將會顯示在 **\[其他Microsoft Store清單語言\]** 區段中。 若要移除其中一或多個語言，按一下 **\[移除\]** (或按一下 **\[管理其他語言\]** ，然後針對想要移除的語言取消核取其方塊)。
+在 [**其他商店清單語言**] 區段中，您可以按一下 [**管理其他語言**] 來新增或移除套件中*未*包含的語言。 針對您想要新增的語言核取其方塊，然後按一下 **\[更新\]**。 您選取的語言將會顯示在 [**其他商店清單語言**] 區段中。 若要移除一或多個這些語言，請按一下 [**移除**] （或按一下 [**管理其他語言**]，然後取消核取您想要移除的語言方塊）。
 
-完成選擇後，按一下 **\[儲存\]** ，以返回提交概觀頁面。
+當您完成選取後，請按一下 [**儲存**] 以返回 [提交總覽] 頁面。
 
 ## <a name="add-and-edit-store-listing-info"></a>新增和編輯商店清單資訊
 
@@ -60,7 +60,7 @@ ms.locfileid: "79210374"
 
 如需讓描述更為出色的一些提示，請參閱[撰寫一份出色的應用程式描述](write-a-great-app-description.md)。
 
-<span id="release-notes" />
+<a name="release-notes"></a>
 
 ## <a name="whats-new-in-this-version"></a>此版本中的新功能
 
@@ -79,7 +79,7 @@ ms.locfileid: "79210374"
 
 如需詳細資訊，請參閱[應用程式螢幕擷取畫面與影像](app-screenshots-and-images.md#screenshots)。
 
-## <a name="store-logos"></a>Microsoft Store標誌。
+## <a name="store-logos"></a>儲存標誌
 
 Microsoft Store標誌是選用影像，您可以上傳以強化應用程式對客戶顯示的外觀。 您也可以選擇性地指定只能將您在此處上傳的影像用於針對 Windows 10 (包括 Xbox) 客戶的應用程式 Store 清單中，而不是允許 Microsoft Store 使用您應用程式套件中的標誌影像。
 
@@ -94,7 +94,7 @@ Microsoft Store標誌是選用影像，您可以上傳以強化應用程式對�
 
 如需詳細資訊，請參閱[尾端和其他資產](app-screenshots-and-images.md#trailers-and-additional-assets)。
 
-<a id="supplemental-information" />
+<a name="supplemental-information"></a>
 
 ## <a name="supplemental-fields"></a>補充欄位
 
@@ -128,14 +128,14 @@ Microsoft Store標誌是選用影像，您可以上傳以強化應用程式對�
 
 ### <a name="additional-system-requirements"></a>其他系統需求
 
-如有需要，您可以描述您的 App 為正常運作所需的硬體組態 (除了您在 **App 屬性**之 [\[系統需求\]](enter-app-properties.md#system-requirements) 區段中提供的資訊之外)。 如果不是每部電腦都有您應用程式所需的硬體，這項資訊尤其重要。 例如，如果您的應用程式必須搭配 3D 印表機或微控制器等外接式 USB 硬體才能正常運作，我們建議在此處輸入這些項目。 您在這裡輸入的資訊會向在 Windows 10 1607 版或更新版本 (包括 Xbox) 上，檢視應用程式 Store 清單的客戶顯示，而且還會顯示您在產品的 [屬性] 頁面上指示的需求。
+如有需要，您可以描述應用程式正常運作所需的硬體設定（超出您在 [[應用程式屬性](enter-app-properties.md#system-requirements)] 的 [**系統需求**] 區段中提供的資訊）。 如果不是每部電腦都有您應用程式所需的硬體，這項資訊尤其重要。 例如，如果您的應用程式必須搭配 3D 印表機或微控制器等外接式 USB 硬體才能正常運作，我們建議在此處輸入這些項目。 您在這裡輸入的資訊會向在 Windows 10 1607 版或更新版本 (包括 Xbox) 上，檢視應用程式 Store 清單的客戶顯示，而且還會顯示您在產品的 [屬性] 頁面上指示的需求。
 
-您最多可以為 **\[最低硬體\]** 和 **\[建議的硬體\]** 輸入 11 個項目。 它們會在您的 Store 清單中，以項目符號清單的形式讓客戶看見。 讓它們保持簡潔有力，每個項目只使用數個文字來說明 (不超過 200 個字元)。
+您最多可以為**最低硬體**和**建議的硬體**輸入11個專案。 它們會在您的 Store 清單中，以項目符號清單的形式讓客戶看見。 讓它們保持簡潔有力，每個項目只使用數個文字來說明 (不超過 200 個字元)。
 
 > [!NOTE]
 > 其他系統需求將在 Store 清單中以項目符號的形式出現，所以不要再新增您自己的項目符號。
 
-<span id="shared-fields" />
+<a name="shared-fields"></a>
 
 ## <a name="additional-information"></a>其他資訊
 
@@ -153,21 +153,21 @@ Microsoft Store標誌是選用影像，您可以上傳以強化應用程式對�
 
 ### <a name="additional-license-terms"></a>其他授權條款
 
-如果您想要讓客戶根據與**應用程式開發人員合約**連結的 [\[標準應用程式授權條款\]](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) 取得應用程式的授權，請將這個欄位保留空白。
+如果您想要讓您的應用程式以**標準應用程式授權條款**（從[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)連結至）的條款授權給客戶，請將此欄位保留空白。
 
-如果您的授權條款與 **「標準應用程式授權條款」** 不同，請在這裡輸入。
+如果您的授權條款與**標準應用程式授權條款**不同，請在這裡輸入。
 
 如果您在此欄位輸入單一 URL，則客戶會看到連結，按一下該連結可以讀取其他授權條款。 如果您的其他授權條款非常冗長時，或者如果您想要包含可按一下的連結或格式化的其他授權條款，這非常有用。
 
-您在此欄位最多可輸入 10,000 個字元的文字。 如果您在此欄位輸入文字，客戶會看到以純文字形式顯示的這些額外授權條款。
+您在此欄位最多可輸入 10,000 個字元的文字。  如果您在此欄位輸入文字，客戶會看到以純文字形式顯示的這些額外授權條款。
 
 ### <a name="developed-by"></a>開發者
 
-在此輸入文字，如果您想要將 **\[開發者\]** 欄位包含在您的應用程式Microsoft Store清單中 ( **\[發行者\]** 欄位會列出與您帳戶相關聯的發行者顯示名稱，無論您是否提供 **\[開發者\]** 欄位值。)
+在此輸入文字，如果您想要將 **\[開發者\]** 欄位包含在您的應用程式Microsoft Store清單中  (**\[發行者\]** 欄位會列出與您帳戶相關聯的發行者顯示名稱，無論您是否提供 **\[開發者\]** 欄位值。)
 
 這個欄位有 255 個字元的限制。
  
-<span id="privacy-policy" />
+<a name="privacy-policy"></a>
 
 > [!NOTE]
 > **隱私權原則**、**網站**和**支援連絡資訊**欄位現在位於[內容](enter-app-properties.md)頁面。

@@ -4,24 +4,24 @@ title: 使用陀螺儀
 description: 了解如何使用陀螺儀來偵測使用者的移動變化。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5898d4157b216175c77356e5a27b4c58d049d9a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8a6ad3b98c559dff8781c96a98a6428a4d1f95a4
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259632"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493123"
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺儀
 
 
 **重要 API**
 
--   [**Windows 裝置。感應器**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**陀螺儀**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
-**抽樣**
+**範例**
 
 -   如需更完整的實作，請參閱[陀螺儀範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer)。
 
@@ -31,7 +31,7 @@ ms.locfileid: "74259632"
 
 ## <a name="prerequisites"></a>必要條件
 
-您應該熟悉 Extensible Application Markup Language （XAML）、Microsoft 視覺效果C#和事件。
+您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 
 您使用的裝置或模擬器必須支援陀螺儀。
 
@@ -39,9 +39,9 @@ ms.locfileid: "74259632"
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單陀螺儀應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-###  <a name="instructions"></a>指示
+###  <a name="instructions"></a>Instructions
 
--   從 [Visual C#] 專案範本中選擇 [空白應用程式 (通用 Windows)] 來建立一個新專案。
+-   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -136,11 +136,11 @@ ms.locfileid: "74259632"
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **GyrometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="GyrometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:GyrometerCS"`。
 
--   按 F5 或選取 [偵錯] >  [開始偵錯] 以建置、部署及執行 App。
+-   按 F5 或選取 [ **Debug**]  >  [**開始調試**程式]，以建立、部署和執行應用程式。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更陀螺儀值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯] >  [停止偵錯] 以停止 App。
+-   若要停止應用程式，請返回 Visual Studio，然後按 Shift + F5**或選取 [** 偵測]  >  [**停止調試**程式] 來停止應用程式。
 
 ###  <a name="explanation"></a>說明
 
@@ -180,4 +180,4 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
  ## <a name="related-topics"></a>相關主題
 
-* [陀螺儀範例](https://code.msdn.microsoft.com/windowsapps/Gyrometer-Sensor-Sample-4fe891d9)
+* [陀螺儀範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Gyrometer%20sensor%20sample%20(Windows%208))

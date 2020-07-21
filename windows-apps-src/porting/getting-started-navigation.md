@@ -4,14 +4,14 @@ description: 瀏覽入門
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dcbc8f6737c2b7450e42ed01a752087d6e9034c1
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 22d2f73ba6a14ace1319285ca436db4738f84548
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259142"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493293"
 ---
 # <a name="getting-started-navigation"></a>開始使用：瀏覽
 
@@ -20,9 +20,9 @@ ms.locfileid: "74259142"
 
 iOS 提供 **UINavigationController** 類別來協助 app 內瀏覽：您可以推入及彈出檢視控制項來建立 **UIViewControllers** 的階層以定義您的 app。
 
-相反地，包含多個 views 的 Windows 10 應用程式會採用更多 web 網站的流覽方式。 您可以想像您的使用者透過不斷點按控制項，從一個頁面跳至不同的頁面來使用 app。 如需詳細資訊，請參閱[瀏覽設計基本知識](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)。
+相反地，包含多個檢視的 Windows 10 app 會採取類似網站的方式進行瀏覽。 您可以想像您的使用者透過不斷點按控制項，從一個頁面跳至不同的頁面來使用 app。 如需詳細資訊，請參閱[瀏覽設計基本知識](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)。
 
-在 Windows 10 應用程式中管理此導覽的其中一種方式是使用[**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)類別。 下列逐步解說會說明如何嘗試使用這種方式。
+在 Windows 10 app 中管理這類瀏覽的其中一種方式是使用 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 類別。 下列逐步解說會說明如何嘗試使用這種方式。
 
 讓我們繼續之前開始的方案，開啟 **MainPage.xaml** 檔案，然後在 \[**設計**\] 檢視中新增一個按鈕。 將按鈕的 \[**Content**\] 屬性從「Button」變更為「Go To Page」。 然後為按鈕的 **Click** 事件建立一個處理常式，如下圖中所示。 如果您不記得怎麼做，請檢閱上一節中的逐步解說 (提示：按兩下 \[**設計**\] 檢視中的按鈕)。
 
@@ -32,9 +32,9 @@ iOS 提供 **UINavigationController** 類別來協助 app 內瀏覽：您可以�
 
 ![在 Visual Studio 中新增頁面](images/ios-to-uwp/vs-add-new-page.png)
 
-接下來，將按鈕新增到 BlankPage.xaml 檔案。 讓我們使用 AppBarButton 控制項，並為它提供一個返回箭頭影像：在 \[**XAML**\] 檢視中，於 ` <AppBarButton Icon="Back"/>` 元素之間新增 `<Grid> </Grid>`。
+接下來，將按鈕新增到 BlankPage.xaml 檔案。 讓我們使用 AppBarButton 控制項，並為它提供一個返回箭頭影像：在 \[**XAML**\] 檢視中，於 `<Grid> </Grid>` 元素之間新增 ` <AppBarButton Icon="Back"/>`。
 
-現在，讓我們將事件處理常式新增至按鈕：在**設計**視圖中按兩下控制項，Microsoft Visual Studio 將文字 [AppBarButton\_按一下] 加入至**按一下**方塊（如下圖所示），然後在 BlankPage.xaml.cs 檔案中加入和顯示對應的事件處理常式。
+現在，讓我們將事件處理常式新增至按鈕：在**設計**視圖中按兩下控制項，Microsoft Visual Studio 將文字 "AppBarButton \_ click" 加入至**按一下**方塊（如下圖所示），然後在 BlankPage.xaml.cs 檔案中加入和顯示對應的事件處理常式。
 
 ![在 Visual Studio 中新增上一頁按鈕及其 Click 事件](images/ios-to-uwp/vs-add-back-button.png)
 
@@ -79,9 +79,9 @@ public BlankPage()
 
 您也可以取得或設定 **Frame** 類別的 [**CacheSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.cachesize) 屬性，以管理瀏覽記錄可以快取的頁面數。
 
-如需瀏覽的詳細資訊，請參閱[瀏覽](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)和 [XAML 個人特質動畫範例](https://code.msdn.microsoft.com/windowsapps/Personality-Animations-3f857919)。
+如需瀏覽的詳細資訊，請參閱[瀏覽](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)和 [XAML 個人特質動畫範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20personality%20animations%20sample%20(Windows%208))。
 
-**請注意**  如需使用 JAVASCRIPT 和 HTML 流覽 UWP 應用程式的相關資訊，請參閱[快速入門：使用單頁導覽](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10))。
+**注意**   如需使用 JavaScript 和 HTML 流覽 UWP 應用程式的相關資訊，請參閱[快速入門：使用單頁導覽](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10))。
  
 ### <a name="next-step"></a>後續步驟
 

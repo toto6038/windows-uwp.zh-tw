@@ -1,28 +1,28 @@
 ---
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
-description: 在 Microsoft Store analytics API 中使用這個方法，以取得指定的日期範圍和其他選用的篩選器的每月的應用程式使用量資料。
+description: 在 Microsoft Store 分析 API 中使用此方法，以取得給定日期範圍和其他選擇性篩選的每月應用程式使用量資料。
 title: 取得每月應用程式使用量
 ms.date: 08/15/2018
 ms.topic: article
-keywords: windows 10、 uwp、 存放區服務、 Microsoft Store 分析 API，使用方式
+keywords: windows 10，uwp，存放服務，Microsoft Store 分析 API，使用方式
 ms.localizationpriority: medium
-ms.openlocfilehash: 48ad049b3f310f8b375a28d9695dd9280d686c43
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a1b82e1f538a0abfda8cb8d4f7ac677464025c8e
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662923"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492813"
 ---
 # <a name="get-monthly-app-usage"></a>取得每月應用程式使用量
 
-若要取得 JSON 格式指定的日期範圍 （過去 90 天只） 和其他選用的篩選條件期間的應用程式 （不包括 Xbox 多人遊戲） 的彙總使用方式資料，Microsoft Store 分析 API 中使用這個方法。 這項資訊也會提供[使用量報告](../publish/usage-report.md)在合作夥伴中心。
+在 Microsoft Store 分析 API 中使用此方法，可在指定的日期範圍（僅限過去90天）和其他選擇性篩選器中，取得應用程式 JSON 格式的匯總使用量資料（不包括 Xbox 多人遊戲）。 您也可以在合作夥伴中心的[使用方式報告](../publish/usage-report.md)中取得這項資訊。
 
 ## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未這樣做，請先完成 Microsoft Store 分析 API 的所有[先決條件](access-analytics-data-using-windows-store-services.md#prerequisites)。
-* [取得 Azure AD 存取權杖](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* [取得 Azure AD 存取權杖](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您有 60 分鐘的使用時間，之後其便會到期。 權杖到期之後，您可以取得新的權杖。
 
 ## <a name="request"></a>要求
 
@@ -33,30 +33,30 @@ ms.locfileid: "57662923"
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/usagemonthly``` |
 
 
-### <a name="request-header"></a>要求的標頭
+### <a name="request-header"></a>要求標頭
 
-| 標頭        | 類型   | 描述                                                                 |
+| 頁首        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數     | 類型   |  描述                                                                                                    |  必要  |
+| 參數     | 類型   |  說明                                                                                                    |  必要  |
 |---------------|--------|-----------------------------------------------------------------------------------------------------------------|------------|
 | applicationId | 字串 | 您想要擷取評論資料之應用程式的　[Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 |  是       |
-| startDate     | date   | 要擷取評論資料之日期範圍的開始日期。 預設為目前的日期。                   |  否        |
-| endDate       | date   | 要擷取評論資料之日期範圍的結束日期。 預設為目前的日期。                     |  否        |
-| top           | 整數    | 要在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。                          |  否        |
-| skip          | 整數    | 在查詢中要略過的資料列數目。 使用此參數來循頁瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。                         |  否        |  
-| filter        |字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含欄位名稱從回應主體和 eq 或 ne 運算子相關聯的值，而且陳述式可以使用結合和或。 必須以篩選參數中的單引號括住的字串值。 您可以在回應本文中指定下列欄位： <ul><li>**市場**</li><li>**裝置類型**</li><li>**PackageVersion**</li></ul>                                                                                                                                              | 否         |  
-| orderby       | 字串 | 將結果資料值排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。<em>field</em> 參數可以是下列其中一個字串：<ul><li>**日期**</li><li>**applicationId**</li><li>**應用程式名稱**</li><li>**市場**</li><li>**PackageVersion**</li><li>**裝置類型**</li><li>**訂閱名稱**</li><li>**monthlySessionCount**</li><li>**engagementDurationMinutes**</li><li>**monthlyActiveUsers**</li><li>**monthlyActiveDevices**</li><li>**monthlyNewUsers**</li><li>**averageDailyActiveUsers**</li><li>**averageDailyActiveDevices**</li></ul><p><em>order</em> 參數為選擇性，並可以是 **asc** 或 **desc**，以指定每個欄位的遞增或遞減順序。 預設為 **asc**。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否        |
-| groupby       | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以在回應本文中指定下列欄位：<ul><li>**應用程式名稱**</li><li>**訂閱名稱**</li><li>**裝置類型**</li><li>**PackageVersion**</li><li>**市場**</li><li>**日期**</li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li>**applicationId**</li><li>**訂閱名稱**</li><li>**monthlySessionCount**</li><li>**engagementDurationMinutes**</li><li>**monthlyActiveUsers**</li><li>**monthlyActiveDevices**</li><li>**monthlyNewUsers**</li><li>**averageDailyActiveUsers**</li><li>**averageDailyActiveDevices**</li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  否        |
+| startDate     | date   | 要擷取評論資料之日期範圍的開始日期。 預設值是目前的日期。                   |  否        |
+| endDate       | date   | 要擷取評論資料之日期範圍的結束日期。 預設值是目前的日期。                     |  否        |
+| top           | int    | 在要求中傳回的資料列數目。 如果未指定，最大值和預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。                          |  否        |
+| skip          | int    | 在查詢中要略過的資料列數目。 使用此參數來瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。                         |  否        |  
+| filter        |字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 eq 或 ne 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 and 或 or 結合。 篩選 參數中的字串值必須由單引號括住。 您可以在回應本文中指定下列欄位： <ul><li>**細分**</li><li>**deviceType**</li><li>**packageVersion**</li></ul>                                                                                                                                              | 否         |  
+| orderby       | 字串 | 將結果資料值排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>，其中 <em>field</em> 參數可以是下列其中一個字串︰<ul><li>**date**</li><li>**applicationId**</li><li>**applicationName**</li><li>**細分**</li><li>**packageVersion**</li><li>**deviceType**</li><li>**subscriptionName**</li><li>**monthlySessionCount**</li><li>**engagementDurationMinutes**</li><li>**monthlyActiveUsers**</li><li>**monthlyActiveDevices**</li><li>**monthlyNewUsers**</li><li>**averageDailyActiveUsers**</li><li>**averageDailyActiveDevices**</li></ul><p><em>order</em> 參數為選擇性，並可以是 **asc** 或 **desc**，以指定每個欄位的遞增或遞減順序。 預設值是**asc**。</p><p>以下是範例<em>orderby</em>字串： <em>orderby = date，市</em></p> |  否        |
+| groupby       | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以在回應本文中指定下列欄位：<ul><li>**applicationName**</li><li>**subscriptionName**</li><li>**deviceType**</li><li>**packageVersion**</li><li>**細分**</li><li>**date**</li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li>**applicationId**</li><li>**subscriptionName**</li><li>**monthlySessionCount**</li><li>**engagementDurationMinutes**</li><li>**monthlyActiveUsers**</li><li>**monthlyActiveDevices**</li><li>**monthlyNewUsers**</li><li>**averageDailyActiveUsers**</li><li>**averageDailyActiveDevices**</li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如： <em> &amp; Groupby = ageGroup、市場 &amp; aggregationLevel = 周</em></p> |  否        |
 
 
 ### <a name="request-example"></a>要求範例
 
-下列範例會示範每月的應用程式使用方式資料的要求。 將 *applicationId* 值以您應用程式的市集識別碼取代。
+下列範例示範取得每月應用程式使用量資料的要求。 將 *applicationId* 值取代為您 App 的 Store 識別碼。
 
 ```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/usagemonthly?applicationId=XXXXXXXXXXXX&startDate=2018-06-01&endDate=2018-07-01 HTTP/1.1  
@@ -66,40 +66,40 @@ Authorization: Bearer <your access token>
 ## <a name="response"></a>回應
 
 
-### <a name="response-body"></a>回應主體
+### <a name="response-body"></a>回應本文
 
 | 值      | 類型   | 描述                                                                                                                         |
 |------------|--------|-------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | 陣列  | 包含彙總使用方式資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下表。 |
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串會包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的評論資料，就會傳回此值。                 |
-| TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                          |
+| 值      | array  | 包含匯總使用方式資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下表。 |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的評論資料，就會傳回此值。                 |
+| TotalCount | int    | 查詢之資料結果的資料列總數。                                                                          |
 
  
-### <a name="usage-values"></a>使用量值
+### <a name="usage-values"></a>使用值
 
 *Value* 陣列中的元素包含下列值。
 
 | 值                     | 類型    | 描述                                                                                 |
 |---------------------------|---------|---------------------------------------------------------------------------------------------|
-| date                      | 字串  | 日期範圍中的使用量資料的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。                          |
-| applicationId             | 字串  | 應用程式，您要為其擷取使用量資料存放區識別碼。                            |
-| applicationName           | 字串  | 應用程式的顯示名稱。                                                                |
-| market                    | 字串  | ISO 3166 國碼的市場區隔客戶使用您的應用程式的位置。                   |
-| packageVersion            | 字串  | 發生使用封裝的版本。                                            |
-| deviceType                | 字串  | 下列字串的其中一個指定使用狀況的發生位置的裝置的類型：<ul><li>**PC**</li><li>**電話**</li><li>**主控台**</li><li>**平板電腦**</li><li>**IoT**</li><li>**伺服器**</li><li>**全像攝影版**</li><li>**未知**</li></ul>                                                                                                                           |
-| subscriptionName          | 字串  | 表示使用方式是否透過 Xbox Game Pass。                                              |
-| monthlySessionCount       | 長整數    | 在該月期間的使用者工作階段數目。                                              |
-| engagementDurationMinutes | double  | 分鐘的使用者正在使用您的應用程式由不同的一段時間，應用程式啟動時開始測量 （處理序啟動），而結束時終止 （處理序結束） 或在閒置一段時間之後。                               |
-| monthlyActiveUsers        | 長整數    | 使用應用程式該月的客戶數目。                                           |
-| monthlyActiveDevices      | 長整數    | 執行您的應用程式不同的一段時間，啟動應用程式啟動時 （處理序啟動） 和結束時終止 （處理序結束） 的裝置或一段閒置時間之後數。                                                        |
-| monthlyNewUsers           | 長整數    | 該月第一次使用您的應用程式的客戶數目。                    |
-| averageDailyActiveUsers   | double  | 客戶使用應用程式每日平均數目。                             |
-| averageDailyActiveDevices | double  | 平均每日的所有使用者用來與您的應用程式互動的裝置數。 |
+| date                      | 字串  | 使用量資料的日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。                          |
+| applicationId             | 字串  | 您正在抓取其使用方式資料之應用程式的存放區識別碼。                            |
+| applicationName           | 字串  | App 的顯示名稱。                                                                |
+| market                    | 字串  | 客戶使用您的應用程式之市場的 ISO 3166 國家/地區代碼。                   |
+| packageVersion            | 字串  | 發生使用的封裝版本。                                            |
+| deviceType                | 字串  | 下列其中一個字串，指定發生使用的裝置類型：<ul><li>**PC**</li><li>**來電**</li><li>**主控台-Xbox One**</li><li>**主控台-Xbox 系列 X**</li><li>**平板電腦**</li><li>**IoT**</li><li>**Server**</li><li>**全息影像**</li><li>**Unknown**</li></ul>                                                                                                                           |
+| subscriptionName          | 字串  | 指出使用量是否通過 Xbox 遊戲 Pass。                                              |
+| monthlySessionCount       | long    | 該月份期間的使用者會話數目。                                              |
+| engagementDurationMinutes | double  | 使用者主動使用您的應用程式的分鐘數（以不同的時間為單位），從應用程式啟動時開始（進程開始）並于終止時結束（程式結束），或在一段時間沒有活動之後結束。                               |
+| monthlyActiveUsers        | long    | 使用當月應用程式的客戶數目。                                           |
+| monthlyActiveDevices      | long    | 執行應用程式的裝置數目已有一段不同的時間，從應用程式啟動時開始（進程開始），到終止時結束（程式結束），或在一段時間沒有活動之後啟動。                                                        |
+| monthlyNewUsers           | long    | 第一次使用您的應用程式的客戶數目。                    |
+| averageDailyActiveUsers   | double  | 每天使用應用程式的客戶平均數目。                             |
+| averageDailyActiveDevices | double  | 所有使用者每日用來與您的應用程式互動的平均裝置數。 |
 
 
 ### <a name="response-example"></a>回應範例
 
-下列範例示範這個要求的一個範例 JSON 回應主體。
+下列範例針對此要求示範範例 JSON 回應主體。
 
 ```http
 {
@@ -144,8 +144,8 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務的存取分析資料](access-analytics-data-using-windows-store-services.md)
-* [取得每日的應用程式 ussage](get-app-usage-daily.md)
-* [取得應用程式售出](get-app-acquisitions.md)
-* [取得附加元件併購](get-in-app-acquisitions.md)
+* [使用 Microsoft Store 服務存取分析資料](access-analytics-data-using-windows-store-services.md)
+* [取得每日應用程式 ussage](get-app-usage-daily.md)
+* [取得應用程式下載數](get-app-acquisitions.md)
+* [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)

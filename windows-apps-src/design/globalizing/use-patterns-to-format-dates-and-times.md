@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 183fa684f81f1e3289e9e197020ce7c6cba5ebdf
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: da4d9b2c7380a085efdcb234ad210eafca40b1c3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258122"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493603"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>使用範本和模式來設定日期和時間的格式
 
@@ -21,11 +21,11 @@ ms.locfileid: "74258122"
 
 ## <a name="introduction"></a>簡介
 
-[  **DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別提供不同的方式來適當地設定世界各地語言和地區的日期和時間格式。 您可以使用年、月、日等等的標準格式。 或者您也可以將格式範本傳遞到 *DateTimeFormatter* 建構函式的 **formatTemplate** 引數，例如 "longdate" 或 "month day"。
+[**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別提供不同的方式來適當地設定世界各地語言和地區的日期和時間格式。 您可以使用年、月、日等等的標準格式。 或者您也可以將格式範本傳遞到 **DateTimeFormatter** 建構函式的 *formatTemplate* 引數，例如 "longdate" 或 "month day"。
 
 但當您想要對所希望顯示之 [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) 物件的元件順序與格式有更多控制時，您可以將格式模式傳遞到建構函式的 *formatTemplate* 引數。 格式模式使用一種特殊的語法，可讓您取得 **DateTime** 物件的個別元件&mdash;例如，單純月份的名稱，或年份的值&mdash;以使用任何您選擇的自訂格式顯示他們。 此外，模式也可以當地語系化以配合其他語言和地區。
 
-**請注意**  這只是格式模式的總覽。 如需格式範本和格式模式更完整的討論，請參閱 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別的＜備註＞一節。
+**注意**   這只是格式模式的總覽。 如需格式範本和格式模式更完整的討論，請參閱 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別的＜備註＞一節。
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>格式範本和格式模式的不同
 
@@ -59,7 +59,7 @@ Ja-JP: "{month.integer}月{day.integer}日"
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-上面的格式器會針對括弧內的個別元件，{}傳回特定文化特性的值。 但格式模式中的元件順序則不變。 您得到的就是您想要的，而這可能不見得適用每個文化： 此格式器針對英文 (美國) 有效，但針對法文 (法國) 和日文則無效。
+上述格式器會針對括弧內的個別元件，傳回文化特性的特定值 {} 。 但格式模式中的元件順序則不變。 您得到的就是您想要的，而這可能不見得適用每個文化： 此格式器針對英文 (美國) 有效，但針對法文 (法國) 和日文則無效。
 
 ``` syntax
 En-US: January 1
@@ -76,14 +76,14 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
 
 以下是區分格式範本和格式模式的摘要。
 
-**格式化範本，例如「月份日」**
+**格式範本，例如 "month day"。**
 
 -   [DateTime](/uwp/api/windows.foundation.datetime?branch=live) 格式的抽象表示，包含任何順序的月份值和日期值等。
 -   確定可以為 Windows 支援的所有語言-地區值傳回有效的標準格式。
 -   確定可以為指定的語言-地區提供文化上適當的格式化字串。
 -   並非所有元件組合都是有效的。 例如，"dayofweek day" 是無效的組合。
 
-**格式模式，例如 "{month. full} {day. integer}"**
+**格式模式，例如 "{month.full} {day.integer}"。**
 
 -   有明確順序的字串，以完整月份名稱後面加上空格，空格後面再加上日期整數的順序表示，或任何您指定的特定格式模式。
 -   可能無法對應任何語言-地區組的有效標準格式。
@@ -113,7 +113,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` 是參考資源檔（. .resw）中可當地語系化資源的資源識別碼。 若為預設語言 [英文（美國）]，則會設定為值為 "{0} |{1}"和批註，指出"{0}"為日期，而"{1}"為時間。 如此一來，翻譯人員便可以視需要調整格式項目。 例如，如果在某些語言或地區中，時間在日期之前是較自然的樣式，他們就可以變更項目的順序。 或者，他們可以使用某種其他分隔字元來取代 "|"。
+`CustomDateTimeFormatString`這是參考資源檔（. .resw）中可當地語系化資源的資源識別碼。 針對預設語言 [英文（美國）]，這會設定為 "|" 的值，加上 {0} {1} 批註，表示 " {0} " 為日期，而 " {1} " 為時間。 如此一來，翻譯人員便可以視需要調整格式項目。 例如，如果在某些語言或地區中，時間在日期之前是較自然的樣式，他們就可以變更項目的順序。 或者，他們可以使用某種其他分隔字元來取代 "|"。
 
 另一種實作此範例的方法便是查詢兩個格式器以取得其格式模式，將他們結合在一起，然後使用結合後的格式模式建構第三個格式器。
 
@@ -135,10 +135,10 @@ string output = patternFormatter.Format(System.DateTime.Now);
 
 ## <a name="important-apis"></a>重要 API
 
-* [Windows.globalization.datetimeformatting](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+* [Windows.Globalization.DateTimeFormatting](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
-* [從中](/uwp/api/windows.foundation.datetime?branch=live)
+* [DateTime](/uwp/api/windows.foundation.datetime?branch=live)
 
 ## <a name="related-topics"></a>相關主題
 
-* [日期和時間格式設定範例](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)
+* [日期和時間格式化範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208))
