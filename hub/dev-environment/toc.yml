@@ -12,7 +12,7 @@
         - name: 開始使用自動化
           href: ../python/scripting.md
         - name: 開始使用資料庫
-          href: ../python/databases.md
+          href: 'https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
         - name: 常見問題集
           href: ../python/faqs.md
         - name: 資源
@@ -30,7 +30,7 @@
         - name: 開始使用 Web 架構
           href: ../nodejs/web-frameworks.md
         - name: 開始使用資料庫
-          href: ../nodejs/databases.md
+          href: '.https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
         - name: 開始使用容器
           href: ../nodejs/containers.md
     - name: 使用 Android 進行開發
@@ -92,10 +92,10 @@
         - name: 變更開發環境
           href: mac-to-windows.md
         - name: 鍵盤快速鍵
-          href: 'mac-to-windows.md#keyboard-shortcuts'
+          href: mac-to-windows.md#keyboard-shortcuts
         - name: 軌跡板快速鍵
-          href: 'mac-to-windows.md#trackpad-shortcuts'
+          href: mac-to-windows.md#trackpad-shortcuts
         - name: 終端機和殼層
-          href: 'mac-to-windows.md#terminal-and-shell'
+          href: mac-to-windows.md#terminal-and-shell
         - name: 應用程式和公用程式
-          href: 'mac-to-windows.md#apps-and-utilities'
+          href: mac-to-windows.md#apps-and-utilities
