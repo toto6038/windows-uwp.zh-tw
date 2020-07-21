@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c593ea76535bec6a9d8ab41f0bcd4f2299162615
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
+ms.openlocfilehash: fc695b483eefef4210432d5ce55a23ae201740bc
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437198"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493143"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
@@ -324,7 +324,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[Image 和 ImageBrush](images-imagebrushes.md) 
 
-範例程式碼：[XAML 影像範例](https://code.msdn.microsoft.com/windowsapps/0f5d56ae-5e57-48e1-9cd9-993115b027b9)
+範例程式碼：[XAML 控制項庫](https://docs.microsoft.com/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/)
 
 ## <a name="graphics-and-ink"></a>圖形與筆墨
 
@@ -353,7 +353,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 作法：[繪製形狀](../../graphics/drawing-shapes.md) 
 
-範例程式碼：[XAML 向量繪製範例](https://code.msdn.microsoft.com/windowsapps/Drawing-bfc39296)
+範例程式碼：[XAML 向量繪製範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20vector-based%20drawing%20sample%20(Windows%208))
 
 ## <a name="layout-controls"></a>配置控制項
 
@@ -453,7 +453,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[捲動和移動瀏覽控制項指南](scroll-controls.md) 
 
-範例程式碼：[XAML 捲動、移動瀏覽和縮放範例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+範例程式碼：[XAML 捲動、移動瀏覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample%20(Windows%208))
 
 ### <a name="stack-panel"></a>堆疊面板
 可以將子元素按水平或垂直方向排列到單行中的配置面板。
@@ -591,7 +591,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰網頁檢視的指導方針 
 
-範例程式碼：[XAML WebView 控制項範例](https://code.msdn.microsoft.com/windowsapps/XAML-WebView-control-sample-58ad63f7)
+範例程式碼：[XAML WebView 控制項範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20WebView%20control%20sample%20(Windows%208))
 
 ### <a name="semantic-zoom"></a>語意式縮放
 
@@ -612,7 +612,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[語意式縮放控制項指南](semantic-zoom.md)
 
-範例程式碼：[XAML GridView 群組和 SemanticZoom 範例](https://code.msdn.microsoft.com/windowsapps/groupedgridview-77c59e8e)
+範例程式碼：[XAML GridView 群組和 SemanticZoom 範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20GridView%20grouping%20and%20SemanticZoom%20sample%20(Windows%208))
 
 ## <a name="progress-controls"></a>進度控制項
 
@@ -682,7 +682,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[文字控制項](text-controls.md)、[密碼方塊控制項指南](password-box.md) 
 
-範例程式碼：[XAML 文字顯示範例](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)、[XAML 文字編輯範例](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
+範例程式碼：[XAML 文字顯示範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))、[XAML 文字編輯範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
 
 ### <a name="rich-edit-box"></a>Rich Edit 方塊
 讓使用者能夠編輯 RTF 文件 (內容包括格式化文字、超連結及影像等) 的控制項。
@@ -695,7 +695,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[文字控制項](text-controls.md)、[Rich Edit 方塊控制項指南](rich-edit-box.md)
 
-範例程式碼：[XAML 文字範例](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+範例程式碼：[XAML 文字範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### <a name="search-box"></a>搜尋方塊
 請參閱＜自動建議方塊＞。

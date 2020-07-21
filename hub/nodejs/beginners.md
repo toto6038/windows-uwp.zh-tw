@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 node, 適合初學者在 windows 上使用 node, 使用 windows 上的 node 進行開發, 在 windows 上使用 nodejs 的開發人員
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 433eb5701696f590f10d8b3276481098b9ec073d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d40d701dc3ae973e0834d0b329527e69854b9e36
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75657080"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492863"
 ---
 # <a name="get-started-using-nodejs-on-windows-for-beginners"></a>適合初學者在 Windows 上開始使用 Node.js
 
@@ -57,7 +57,7 @@ Node.js 是主要用來建立 Web 應用程式的 JavaScript 執行階段。 換
     console.log(msg);
     ```
 
-5. 使用 Node.js 執行 "app.js" 檔案。 選取 [檢視]   > [終端機]  (或選取 Ctrl+`，使用倒單引號字元)，在 VS Code 內開啟您的終端機。 如果您需要變更預設終端機，選取下拉式功能表，然後選擇 [選取預設殼層]  。
+5. 使用 Node.js 執行 "app.js" 檔案。 選取 [檢視] > [終端機] (或選取 Ctrl+`，使用倒單引號字元)，在 VS Code 內開啟您的終端機。 如果您需要變更預設終端機，選取下拉式功能表，然後選擇 [選取預設殼層]。
 
 6. 在終端機中輸入：`node app.js`。 您應該會看到以下輸出："Hello World"。
 
@@ -69,7 +69,7 @@ Node.js 是主要用來建立 Web 應用程式的 JavaScript 執行階段。 換
 
 ## <a name="set-up-a-basic-web-app-framework-by-using-express"></a>使用 Express 設定基本的 Web 應用程式架構
 
-Express 是有彈性且有效率的最小 Node.js 架構，可讓您更輕鬆地開發 Web 應用程式，以處理多種類型的要求，例如 GET、PUT、POST 和 DELETE。 Express 隨附一個應用程式產生器，可自動為您的應用程式建立檔案架構。
+Express 是最小、具彈性且精簡的 Node.js 架構，讓您能夠更輕鬆地開發 Web 應用程式來處理多種類型的要求 (例如 GET、PUT、POST 及 DELETE)。 Express 具有應用程式產生器，可自動為您的應用程式建立檔案架構。
 
 使用 Express.js 建立專案：
 
@@ -78,26 +78,26 @@ Express 是有彈性且有效率的最小 Node.js 架構，可讓您更輕鬆地
 3. 使用 Express 建立 HelloWorld 專案範本：`npx express-generator HelloWorld --view=pug`
 
 >[!NOTE]
-> 我們在此處使用 `npx` 命令來執行 Express.js Node 套件，而不需實際加以安裝 (或根據您的想法暫時安裝)。 如果您嘗試使用 `express` 命令，或使用 `express --version` 來檢查已安裝的 Express 版本，您將會收到「找不到 Express」的回應。 如果您想要全域安裝 Express 以便重複使用，請使用：`npm install -g express-generator`。 您可以使用 `npm list`，來檢視 npm 已安裝的套件清單。 其將依深度列出 (巢狀目錄的深度數)。 您安裝的套件將位於深度 0。 該套件的相依性將位於深度 1、進一步的相依性將位於深度 2，依此類推。 若要深入了解，請參閱 Stackoverflow 上的 [npx 與 npm 之間的差異？](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) \(英文\)。
+> 我們在此處使用 `npx` 命令來執行 Express.js Node 套件，而不需實際加以安裝 (或根據您的想法暫時安裝)。 如果您嘗試使用 `express` 命令，或使用 `express --version` 來檢查已安裝的 Express 版本，您將會收到「找不到 Express」的回應。 如果您想要全域安裝 Express 以便重複使用，請使用：`npm install -g express-generator`。 您可以使用 `npm list`，來檢視 npm 已安裝的套件清單。 系統將依深度 (巢狀目錄深度數) 列出它們。 您所安裝的套件將會位於深度 0。 該套件的相依性將會位於深度 1，進一步的相依性則會位於深度 2，依此類推。 若要深入了解，請參閱 Stackoverflow 上的 [npx 與 npm 之間的差異？](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) \(英文\)。
 
 4. 使用下列命令，在 VS Code 中開啟專案，以檢查 Express 所包含的檔案和資料夾：`code .`
 
-   Express 所產生的檔案將建立一個 Web 應用程式，其使用的架構乍看之下可能讓人有點不知所措。 您將在 VS Code 的 [Explorer]  視窗看到 (Ctrl+Shift+E 來檢視) 已產生下列檔案和資料夾：
+   Express 所產生的檔案將建立一個 Web 應用程式，其使用的架構乍看之下可能讓人有點不知所措。 您將在 VS Code 的 [Explorer] 視窗看到 (Ctrl+Shift+E 來檢視) 已產生下列檔案和資料夾：
 
-   - `bin`。 包含啟動應用程式的可執行檔。 其會引發伺服器 (如果未提供替代方法，則在連接埠 3000 上)，並設定基本錯誤處理。 
-   - `public`。 包含所有公開存取的檔案，包括 JavaScript 檔案、CSS 樣式表、字型檔案、影像，以及使用者連線到您的網站時所需的任何其他資產。
-   - `routes`。 包含應用程式的所有路由處理常式。 系統會在此資料夾中自動產生兩個檔案 (`index.js` 和 `users.js`)，以作為如何分隔應用程式路由設定的範例。
-   - `views`。 包含您的範本引擎所使用的檔案。 Express 已設定為在呼叫轉譯方法時，在這裡尋找相符的檢視。 預設範本引擎為 Jade，但建議使用 Pug 而非 Jade，因此我們使用了 `--view` 旗標來變更檢視 (範本) 引擎。 您可以使用 `express --help`，來檢視 `--view` 旗標選項及其他項目。
-   - `app.js`。 應用程式的起點。 它會載入一切並開始服務使用者要求。 其基本上就是將各個部分保存在一起的黏著劑。
-   - `package.json`。 包含專案描述、指令碼管理員及應用程式資訊清單。 其主要用途是追蹤您應用程式的相依性及其各自版本。
+   - `bin`. 包含會啟動您應用程式的可執行檔。 它會引發伺服器 (若未提供替代連接埠，即會在連接埠 3000 上引發)，並設定基本錯誤處理。 
+   - `public`. 包含所有可公開存取的檔案，包括 JavaScript 檔案、CSS 樣式表、字型檔案、影像，以及人們連線到您網站時所需的任何其他資產。
+   - `routes`. 包含適用於應用程式的所有路由處理常式。 系統會在此資料夾中自動產生 `index.js` 和 `users.js` 這兩個檔案，以作為如何分離應用程式路由設定的範例。
+   - `views`. 包含您範本引擎所使用的檔案。 Express 已被設定為會在系統呼叫轉譯方法時，在這裡尋找相符的檢視。 預設的範本引擎為 Jade，但 Jade 已經由 Pug 取代，因此我們會使用 `--view` 旗標來變更檢視 (範本) 引擎。 您可以使用 `express --help` 來查看 `--view` 旗標選項，以及其他選項。
+   - `app.js`. 您應用程式的起點。 它會載入所有項目，並開始處理使用者要求。 基本上，它就是將所有組件黏合在一起的膠水。
+   - `package.json`. 包含專案描述、指令碼管理員，以及應用程式資訊清單。 它的主要用途是追蹤您應用程式的相依性及其各自版本。
 
-5. 您現在必須安裝 Express 用來建置及執行 HelloWorld Express 應用程式的相依性 (針對執行伺服器等工作所使用的套件，如 `package.json` 檔案中所定義)。 在 VS Code 中，選取 [檢視]   > [終端機]  (或選取 Ctrl + '，使用倒單引號字元) 來開啟終端機，確定您仍位於 'HelloWorld' 專案目錄中。 使用下列命令來安裝 Express 套件相依性：
+5. 您現在必須安裝 Express 用來建置及執行 HelloWorld Express 應用程式的相依性 (針對執行伺服器等工作所使用的套件，如 `package.json` 檔案中所定義)。 在 VS Code 中，選取 [檢視] > [終端機] (或選取 Ctrl + '，使用倒單引號字元) 來開啟終端機，確定您仍位於 'HelloWorld' 專案目錄中。 使用下列命令來安裝 Express 套件相依性：
 
 ```bash
 npm install
 ```
 
-6. 此時，您已為多頁 Web 應用程式設定了架構，以存取各種不同的 API 和 HTTP 公用程式方法及中介軟體，讓您更能夠輕鬆地建立強固的 API。 在虛擬伺服器上，輸入下列命令來啟動 Express 應用程式：
+6. 現在您已設定多頁 Web 應用程式的架構，其可存取大量的不同 API 與 HTTP 公用程式方法及中介軟體，使其能更輕鬆地建立強固的 API。 在虛擬伺服器上，輸入下列命令來啟動 Express 應用程式：
 
 ```bash
 npx cross-env DEBUG=HelloWorld:* npm start
@@ -110,25 +110,25 @@ npx cross-env DEBUG=HelloWorld:* npm start
 
    ![在瀏覽器中執行之 Express 應用程式的螢幕擷取畫面](../images/express-app.png)
 
-8. 現在您的 HelloWorld Express 應用程式正在瀏覽器中本機執行，請嘗試在您的專案目錄中開啟 [檢視] 資料夾，然後選取 'index.pug' 檔案來進行變更。 開啟之後，將 `h1= title` 變更為 `h1= "Hello World!"`，然後選取 [儲存]  (Ctrl+S)。 在網頁瀏覽器上重新整理 **localhost:3000** URL，以檢視您的變更。
+8. 現在您的 HelloWorld Express 應用程式正在瀏覽器中本機執行，請嘗試在您的專案目錄中開啟 [檢視] 資料夾，然後選取 'index.pug' 檔案來進行變更。 開啟之後，將 `h1= title` 變更為 `h1= "Hello World!"`，然後選取 [儲存] (Ctrl+S)。 在網頁瀏覽器上重新整理 **localhost:3000** URL，以檢視您的變更。
 
 9. 若要停止執行 Express 應用程式，在終端機中輸入：**Ctrl+C**
 
 ## <a name="try-using-a-nodejs-module"></a>嘗試使用 Node.js 模組
 
-Node.js 提供工具以協助您開發伺服器端 Web 應用程式，部分為內建工具，但可透過 npm 取得更多工具。 這些模組可協助執行許多工作：
+Node.js 具有可協助您開發伺服器端 Web 應用程式的工具，部分已經內建，還有許多其他工具可透過 npm 取得。 這些模組有助於進行許多工作：
 
-|工具               |適用範圍                                                                                                  |
+|工具               |用途                                                                                                  |
 |:----------------- |:---------------------------------------------------------------------------------------------------------|
-|gm、sharp          |影像操作，包括編輯、調整大小、壓縮等，直接在您的 JavaScript 程式碼中進行 |
+|gm、sharp          |影像操作，包括直接在您的 JavaScript 程式碼中編輯、調整大小、壓縮等操作 |
 |PDFKit             |產生 PDF                                                                                            |
 |validator.js       |字串驗證                                                                                         |
-|imagemin、UglifyJS2|縮小尺寸                                                                                              |
+|imagemin、UglifyJS2|縮製                                                                                              |
 |spritesmith        |產生原件工作表                                                                                   |
 |winston            |記錄                                                                                                  |
 |commander.js       |建立命令列應用程式                                                                       |
 
-讓我們使用內建的 OS 模組來取得有關電腦作業系統的一些資訊：
+讓我們使用內建的作業系統模組，來取得一些有關您電腦作業系統的資訊：
 
 1) 在您的命令列中，開啟 Node.js CLI。 輸入 `node` 之後，您將會看到 `>` 提示，如此就能知道您使用的是 Node.js
 
@@ -148,5 +148,5 @@ Node.js 提供工具以協助您開發伺服器端 Web 應用程式，部分為�
 在本指南中，您已了解如何使用 Node.js 來執行的一些基本事項、嘗試使用 VS Code 中的 Node.js 命令列、使用 Express.js 建立簡單的 Web 應用程式並在網頁瀏覽器中本機執行，然後嘗試使用一些內建的 Node.js 模組。 若要深入了解如何安裝及使用一些熱門的 Node.js Web 架構，請繼續進行下一份指南，其中涵蓋 Next.js (以 React 為基礎的伺服器轉譯 Web 架構)、Nuxt.js (以 Vue 為基礎的伺服器轉譯 Web 架構)，以及 Gatsby (以 React 為基礎的靜態轉譯 Web 架構)。 您也可以跳到了解如何使用 MongoDB 或 PostgreSQL 資料庫或 Docker 容器。
 
 - [開始使用 Windows 上的 Node.js Web 架構](./web-frameworks.md)
-- [開始將 Node.js 應用程式連線到資料庫](./databases.md)
+- [開始將 Node.js 應用程式連線到資料庫](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
 - [開始在 Node.js 中使用 Docker 容器](./containers.md)
