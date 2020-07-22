@@ -1,24 +1,145 @@
 ---
-title: WinUI 3.0 預覽版 1 (2020 年 5月)
-description: WinUI 3.0 預覽版的概觀。
-ms.date: 05/14/2020
+title: WinUI 3 預覽版 2 (2020 年 7 月)
+description: WinUI 3 預覽版 2 的概觀。
+ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: cbf61c618685501957e7dec081ae132995f15df5
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: 6dd29b7da0ce2d0f3a08538d392792337f1e1b5a
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448378"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493049"
 ---
-# <a name="windows-ui-library-30-preview-1-may-2020"></a>Windows UI 程式庫 3.0 預覽版 1 (2020 年 5月)
+# <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI 程式庫 3 預覽版 2 (2020 年 7 月)
 
-Windows UI 程式庫 (WinUI) 3.0 是一項重大更新，WinUI 將轉換為所有 Windows 應用程式類型 (從 Win32 到 UWP) 適用的完整 UX 架構。
+Windows UI 程式庫 (WinUI) 3 是同時適用於 Windows 桌面和 UWP 應用程式的原生使用者體驗 (UX)。
+
+**WinUI 3 預覽版 2** 是品質和穩定性驅動的版本，著重於修正預覽版 1 的錯誤和已知問題。
+
+**請參閱[預覽版 2 的限制和已知問題](#preview-2-limitations-and-known-issues)** 。
 
 > [!Important]
-> WinUI 3.0 預覽版的目的是進行早期評估，並從開發人員社群收集意見反應。 **不會**用於生產應用程式。
+> WinUI 3 預覽版的目的是進行早期評估，並從開發人員社群收集意見反應。 **不會**用於生產應用程式。
 >
-> **請參閱[預覽版 1 的限制和已知問題](#preview-1-limitations-and-known-issues)** 。
-## <a name="new-features-in-winui-30-preview-1"></a>WinUI 3.0 預覽版 1 中的新功能
+> 我們會繼續從 2020 年到 2021 年初提供 WinUI 3 的預覽版本，在這個日期之後，第一個正式版本就會推出。
+>
+> 請使用 [WinUI GitHub 存放庫](https://github.com/microsoft/microsoft-ui-xaml)以提供意見反應及記錄建議和問題。
+
+## <a name="install-winui-3-preview-2"></a>安裝 WinUI 3 預覽版 2
+
+WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用以 WinUI 為基礎的使用者介面以及包含 WinUI 程式庫的 NuGet 套件，來建置應用程式。 若要安裝 WinUI 3 預覽版 2，請遵循下列步驟。
+
+> [!NOTE]
+> 您也可以複製 WinUI 3 預覽版 2 版本的 [XAML 控制項資源庫](#xaml-controls-gallery-winui-3-preview-2-branch)，並加以建置。
+
+1. 確定您的開發電腦已安裝 Windows 10 1803 (組建 17134) 或較新版本。
+
+2. 安裝 [Visual Studio 2019 (16.7 預覽版 3 版本)](https://visualstudio.microsoft.com/vs/preview)
+
+    安裝 Visual Studio 時，您必須包含下列工作負載：
+    - .NET 桌面開發
+    - 通用 Windows 平台開發
+
+    若要建立 C++ 應用程式，您也必須包含下列工作負載：
+    - 使用 C++ 的傳統型開發
+    - *C++ (v142) 通用 Windows 平台工具*，通用 Windows 平台工作負載的選用元件 (請參閱右側窗格中 [通用 Windows 平台開發] 區段底下的 [安裝詳細資料])
+
+3. 如果您想要建立適用於 C#/.NET 5 和 C++/Win32 應用程式的桌面 WinUI 專案，您也必須同時安裝 x64 和 x86 版本的 .NET 5 預覽版 5：
+
+    - x64：[https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe)
+    - x86：[https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe)
+
+4. 下載及安裝 [WinUI 3 預覽版 2 VSIX 套件](https://aka.ms/winui3/previewdownload)。 此 VSIX 套件會將 WinUI 3 專案範本和 NuGet 套件 (包含 WinUI 3 程式庫) 新增至 Visual Studio 2019。
+
+    如需如何將 VSIX 套件新增至 Visual Studio 的指示，請參閱[尋找和使用 Visual Studio 擴充功能](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box)。
+
+## <a name="create-winui-projects"></a>建立 WinUI 專案
+
+安裝 WinUI 3 預覽版 2 VSIX 套件之後，您就可以在 Visual Studio 中使用其中一個 WinUI 專案範本來建立新的專案。 若要在 [建立新專案] 對話方塊中存取 WinUI 專案範本，請將語言篩選為 **C++** 或 **C#** ，將平台篩選為 **Windows**，以及將專案類型篩選為 **WinUI**。 或者，您可以搜尋「WinUI」並選取其中一個可用的 C# 或 C++ 範本。
+
+![WinUI 專案範本](images/winui-projects-csharp.png)
+
+如需開始使用 WinUI 專案範本的詳細資訊，請參閱下列文章：
+
+- [開始使用適用於桌面應用程式的 WinUI 3](get-started-winui3-for-desktop.md)
+- [開始使用適用於 UWP 應用程式的 WinUI 3](get-started-winui3-for-uwp.md)
+
+除了[限制和已知問題](#preview-2-limitations-and-known-issues)之外，使用 WinUI 專案建置應用程式類似於使用 XAML 和 WinUI 2.x 建置 UWP 應用程式。 因此，適用於 UWP 應用程式的指引和文件，以及 Windows SDK 中的 **Windows.UI** WinRT 命名空間都適用。
+
+如果您使用 WinUI 3 預覽版 1 建立專案，您可以將專案升級為使用預覽版 2。 在 [GitHub 存放庫](https://aka.ms/winui3/upgrade-instructions)上參閱詳細指示。
+
+### <a name="project-templates-for-winui-3"></a>WinUI 3 的專案範本
+
+您可以使用這些 WinUI 專案範本來建立應用程式。
+
+| 範本 | Language | 說明 |
+|----------|----------|-------------|
+| 已封裝的空白應用程式 (WinUI in Desktop) | C# 和 C++ | 使用以 WinUI 為基礎的使用者介面，建立桌面 .NET 5 (C#) 或原生 Win32 (C++) 應用程式。 產生的專案包含一個基本視窗，該視窗是從 WinUI 程式庫中的 **Microsoft.UI.Xaml.Window** 類別衍生，您可以用來開始建置您的 UI。 如需此專案類型的詳細資訊，請參閱[開始使用適用於桌面應用程式的 WinUI 3](get-started-winui3-for-desktop.md)。<p></p>解決方案也包含 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。  |
+| 空白應用程式 (WinUI in UWP)  | C# 和 C++ | 建立具有以 WinUI 為基礎的使用者介面的 UWP 應用程式。 產生的專案包含一個基本頁面，該頁面是從 WinUI 程式庫中的 **Microsoft.UI.Xaml.Controls.Page** 類別衍生，您可以用來開始建置您的 UI。 如需此專案類型的詳細資訊，請參閱[開始使用適用於 UWP 應用程式的 WinUI 3](get-started-winui3-for-uwp.md)。 |
+
+您可以使用這些 WinUI 專案範本來建置可供以 WinUI 為基礎的應用程式載入及使用的元件。
+
+| 範本 | Language | 說明 |
+|----------|----------|-------------|
+| 類別庫 (WinUI in Desktop) | 僅限 C# | 在 C# 中建立 .NET 5 受控類別庫 (DLL)，可供具有以 WinUI 為基礎的使用者介面的其他 .NET 5 桌面應用程式使用。  |
+| 類別庫 (WinUI in UWP)  | 僅限 C# | 在 C# 中建立受控類別程式庫 (DLL)，可供具有以 WinUI 為基礎的使用者介面的其他 UWP 應用程式使用。 |
+| Windows 執行階段元件 (WinUI in UWP) | C# 和 C++ | 建立以 C# 或 C++/WinRT 撰寫的 [Windows 執行階段元件](/windows/uwp/winrt-components/)，可以由具有以 WinUI 為基礎的使者介面的任何 UWP 應用程式取用，不論該應用程式是以何種程式設計語言撰寫。 |
+
+### <a name="item-templates-for-winui-3"></a>WinUI 3 的項目範本
+
+您可以在 WinUI 專案中使用下列項目範本。 若要存取這些 WinUI 專案範本，請以滑鼠右鍵按一下 [方案總管] 中的專案節點，選取 [新增]  ->  [新項目]，然後按一下 [新增新項目] 對話方塊中的 [WinUI]。
+
+![WinUI 項目範本](images/winui-items-csharp.png)
+
+| 範本 | Language | 說明 |
+|----------|----------|-------------|
+| 空白頁面 (WinUI) | C# 和 C++ | 新增 XAML 檔案和程式碼檔案，該檔案會定義衍生自 WinUI 程式庫中 **Microsoft.UI.Xaml.Controls.Page** 類別的新頁面。 |
+| 空白視窗 (WinUI in Desktop) | C# 和 C++ | 新增 XAML 檔案和程式碼檔案，該檔案會定義衍生自 WinUI 程式庫中 **Microsoft.UI.Xaml.Window** 類別的新視窗。 |
+| 自訂控制項 (WinUI) | C# 和 C++ | 新增程式碼檔案，以使用預設樣式建立樣板化控制項。 樣板化控制項衍生自 WinUI 程式庫中的 **Microsoft.UI.Xaml.Controls.Control** 類別。<p></p>如需示範如何使用這個項目範本的逐步解說，請參閱 [使用 C++/WinRT 製作，適用於 UWP 和 WinUI 3 應用程式的樣板化 XAML 控制項](xaml-templated-controls-cppwinrt-winui3.md)。 如需樣板化控制項的詳細資訊，請參閱[自訂 XAML 控制項](https://docs.microsoft.com/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
+| 資源字典 (WinUI) | C# 和 C++ | 新增 XAML 資源的空白索引鍵集合。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。 |
+| 資源檔 (WinUI) | C# 和 C++ | 新增檔案，用於儲存應用程式的字串和條件式資源。 您可以使用此項目來協助將您的應用程式當地語系化。 如需詳細資料，請參閱[將您 UI 和應用程式套件資訊清單中的字串當地語系化](/windows/uwp/app-resources/localize-strings-ui-manifest)。 |
+| 使用者控制項 (WinUI) | C# 和 C++ | 新增 XAML 檔案和程式碼檔案，以建立衍生自 WinUI 程式庫中 **Microsoft.UI.Xaml.Controls.UserControl** 類別的使用者控制項。 一般而言，使用者控制項會封裝相關的現有控制項，並提供自己的邏輯。<p></p>如需使用者控制項的詳細資訊，請參閱[自訂 XAML 控制項](https://docs.microsoft.com/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
+
+## <a name="bug-fixes-and-other-improvements-in-winui-3-preview-2"></a>WinUI 3 預覽版 2 中的錯誤修正和其他改良功能
+
+這是適用於預覽版 2 的錯誤修正和其他更新完整清單。 如需此版本中已解決的最重要錯誤修正清單，請參閱我們的[版本公告](https://aka.ms/winui3/preview2-announcement)。
+
+- [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) 和 [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) 現在會如預期般的在 C# 桌面應用程式中運作
+  - 這會清除在後端中更新時未在 UI 中更新的集合控制項相關其他問題。
+  - *感謝 @hshristov 在 GitHub 上提出[類似的問題](https://github.com/microsoft/microsoft-ui-xaml/issues/2490)！*
+- 預覽版 2 現在與適用於桌面應用程式的 [.NET 5 預覽版 5](https://docs.microsoft.com/dotnet/api/?view=net-5.0) 相容
+- WinUI 3 現在與 [WinUI 2.4](../winui2/release-notes/winui-2.4.md) 同位，其中包含新的控制項和功能，例如[階層式 NavigationView](../winui2/release-notes/winui-2.4.md#hierarchical-navigation) 和 [ProgressRing](../winui2/release-notes/winui-2.4.md#progressring)。
+- 損毀已修正：搭配觸控使用 [TabView](/windows/uwp/design/controls-and-patterns/tab-view)
+- [XAML 控制項庫範例](#xaml-controls-gallery-winui-3-preview-2-branch)中的 [NavigationView](/windows/uwp/design/controls-and-patterns/navigationview) 現在使用左側模式，而不是左側精簡模式
+- 損毀已修正：在輸入驗證和 [RichEditBox](/windows/uwp/design/controls-and-patterns/rich-edit-box) 中輸入太快
+  - *感謝 @paulovilla 在 GitHub 上提出[這個問題](https://github.com/microsoft/microsoft-ui-xaml/issues/2563)！*
+- 損毀已修正：當 [TextBox](/windows/uwp/design/controls-and-patterns/text-box) 功能表開啟時，與 XAML UI 互動
+- 在瀏覽至多個頁面之後，[XAML 控制項庫範例](#xaml-controls-gallery-winui-3-preview-2-branch)標題文字已不再變得混亂
+- 搭配觸控使用 [WebView2](https://docs.microsoft.com/microsoft-edge/webview2/) 不再讓您在位置上有些微位移
+- WinUIEdit.dll 中的類別已從 Windows.UI.Text 命名空間移至 Microsoft.UI.Text 命名空間
+- 損毀已修正：在多重選取模式 (Windows 10 版本 1803) 中選取 [TreeView](/windows/uwp/design/controls-and-patterns/tree-view) 中的項目
+- 點、矩形和大小成員現在會在適用於桌面應用程式的 API C# 投影中進行雙重輸入。
+  - *感謝 @dotMorten 在 GitHub 上提出[這個問題](https://github.com/microsoft/microsoft-ui-xaml/issues/2474)！*
+- 損毀已修正：搭配 .rtf 檔案使用 [RichEditBox](/windows/uwp/design/controls-and-patterns/rich-edit-box)
+- [TabView](/windows/uwp/design/controls-and-patterns/tab-view) 關閉按鈕不會再有空白的工具提示
+- [影像](/windows/uwp/design/controls-and-patterns/images-imagebrushes)控制項現在會正確呈現 SVG 檔案
+  - *感謝 @mqudsi 在 GitHub 上提出[這個問題](https://github.com/microsoft/microsoft-ui-xaml/issues/2565)！*
+- 損毀已修正：使用/瀏覽至 Page 元素
+- 使用觸控來選取 [NavigationView](/windows/uwp/design/controls-and-patterns/navigationview) 中的項目，現在會取消選取所有其他項目 (在單一選取模式中)
+- 損毀已修正：不會再發生由於明確設定大小[滑桿](/windows/uwp/design/controls-and-patterns/slider)控制項上設定的值所造成的 LayoutSliderException 
+  - *感謝 @hig-dev 在 GitHub 上提出[這個問題](https://github.com/microsoft/microsoft-ui-xaml/issues/477)！*
+- 損毀已修正：使用 [ColorPicker](/windows/uwp/design/controls-and-patterns/color-picker) 會在關機時造成損毀
+- 損毀已修正：使用 [Pivot](/windows/uwp/design/controls-and-patterns/pivot) 會在關機時造成損毀
+- 損毀已修正：[NavigationView](/windows/uwp/design/controls-and-patterns/navigationview) 因為 Windows 10 版本 1803 中遺失資源而造成損毀
+- 損毀已修正：專注於 [RichEditBox](/windows/uwp/design/controls-and-patterns/rich-edit-box) 自訂編輯器 
+- 損毀已修正：[SemanticZoom](/windows/uwp/design/controls-and-patterns/semantic-zoom) 
+- 繫結現在會如預期般在具有隱含 Mode=OneWay 的標記中運作
+  - *感謝 @tomasfabian 在 GitHub 上提出[這個問題](https://github.com/microsoft/microsoft-ui-xaml/issues/2630)！*
+- 已修正動畫：[XAML 控制項庫範例](#xaml-controls-gallery-winui-3-preview-2-branch)中的新功能
+
+## <a name="new-features-and-capabilities-introduced-in-winui-3-preview-1"></a>WinUI 3 預覽版 1 中引進的新特性和功能
+
+下列功能是在 WinUI 3 預覽版 1 中引進，並繼續在 WinUI 3 預覽版 2 中受支援。
 
 - 能夠使用 WinUI 建立桌面應用程式，包括適用於 Win32 應用程式的 [.NET 5](https://github.com/dotnet/core/tree/master/release-notes/5.0)
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
@@ -32,85 +153,26 @@ Windows UI 程式庫 (WinUI) 3.0 是一項重大更新，WinUI 將轉換為所�
 - SwapChainPanel
 - 遷移開放原始碼所需的改良功能
 
-如需有關 WinUI 3.0 和 WinUI 藍圖優點的詳細資訊，請參閱 GitHub 上的 [Windows UI 程式庫藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
+如需有關 WinUI 3 和 WinUI 藍圖優點的詳細資訊，請參閱 GitHub 上的 [Windows UI 程式庫藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
 
 ### <a name="provide-feedback-and-suggestions"></a>提供意見反應和建議
 
 我們歡迎您在 [WinUI GitHub 存放庫](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose) 中提供意見反應。
 
-## <a name="try-winui-30-preview-1"></a>試用 WinUI 3.0 預覽版 1
+## <a name="preview-2-limitations-and-known-issues"></a>預覽版 2 的限制和已知問題
 
-設定您的開發環境 (如需詳細指示，請參閱[設定您的開發環境](#configure-your-dev-environment))、從下列連結安裝 WinUI 3.0 預覽版 1 VSIX，然後試用 WinUI 3.0 專案範本。
+預覽版 2 版本僅供預覽。 特別是與桌面版 Win32 應用程式相關的案例都是新項目。 請預期會有錯誤、限制和其他問題。
 
-<table>
-<tr>
-<td align="center">
-<a href="https://aka.ms/winui3/previewdownload"><img src="images/downloadbuttontx.png" alt="Download the WinUI 3.0 Preview 1 VSIX"/></a>
-<!--
-<br/>
-<a href="https://aka.ms/winui3/previewdownload">Download the WinUI 3.0 Preview 1 VSIX</a>
--->
-</td>
-</tr>
-</table>
-
-您也可以複製 WinUI 3.0 預覽版 1 版本的 [Xaml 控制項資源庫](#xaml-controls-gallery-winui-30-preview-1-branch)，並加以建置。
-
-### <a name="configure-your-dev-environment"></a>設定您的開發環境
-
-確定您的開發電腦已安裝 Windows 10 2018 年 4 月更新 (1803 版 - 組建 17134) 或較新版本。
-
-安裝 Visual Studio 2019 (16.7 預覽版 1 版本)。 您可以從 [Visual Studio Preview](https://visualstudio.microsoft.com/vs/preview) 下載此版本。
-
-安裝 Visual Studio Preview 時，您必須包含下列工作負載：
-
-- .NET 桌面開發
-- 通用 Windows 平台開發
-
-若要建立 C++ 應用程式，您也必須包含下列工作負載：
-
-- 使用 C++ 的傳統型開發
-- 適用於通用 Windows 平台工作負載的「C++ (v142) 通用 Windows 平台工具」選用元件
-
-### <a name="visual-studio-project-templates"></a>Visual Studio 專案範本
-
-若要存取 WinUI 3.0 預覽版 1 和專案範本，請移至 **https://aka.ms/winui3/previewdownload**
-
-下載 Visual Studio 擴充功能 (`.vsix`)，將 WinUI 專案範本和 NuGget 套件新增至 Visual Studio 2019。
-
-如需如何將 `.vsix` 新增至 Visual Studio 的指示，請參閱[尋找和使用 Visual Studio 擴充功能](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box)。
-
-安裝 `.vsix` 擴充功能之後，您可以藉由搜尋 "WinUI" 並選取其中一個可用的 C# 或 C++ 範本來建立新的 WinUI 3.0 專案。
-
-![WinUI 3.0 Visual Studio 範本](images/WinUI3Templates.png)<br/>
-WinUI 3.0 Visual Studio 範本的範例
-
-### <a name="visual-studio-project-configuration"></a>Visual Studio 專案組態
-
-當您使用其中一個 WinUI 3.0 預覽版 1 範本建立專案時，請將**目標版本**設定為 Windows 10 1903 版 (組建 18362)，並將**最低版本**設定為 Windows 10 1803 版 (組建17134)。
-
-若要在建立專案之後變更這些值，請以滑鼠右鍵按一下**方案總管**中的專案，然後選取 [屬性]。
-
-### <a name="creating-a-desktop-win32-app-with-winui-30-preview-1"></a>使用 WinUI 3.0 預覽版 1 建立桌面版的 Win32 應用程式
-
-請參閱[開始使用適用於桌面應用程式的 WinUI 3.0](get-started-winui3-for-desktop.md)。
-
-除了以下所述的限制和已知問題之外，使用 WinUI 3.0 預覽版 1 建立應用程式非常類似於使用 Xaml 和 WinUI 2.x 建立 UWP 應用程式，因此，適用大部分 UWP 應用程式和 `Windows.UI` API 的指引和文件。
-
-## <a name="preview-1-limitations-and-known-issues"></a>預覽版 1 的限制和已知問題
-
-預覽版 1 版本僅供預覽。 特別是與桌面版 Win32 應用程式相關的案例都是新項目。 請預期會有錯誤、限制和問題。
-
-下列項目是 WinUI 3.0 預覽版 1 的一些已知問題。 如果您發現下面未列出的問題，請在 [WinUI GitHub 存放庫](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose)中參與現有問題或提出新問題，來讓我們知道。
+下列項目是 WinUI 3 預覽版 2 的一些已知問題。 如果您發現下面未列出的問題，請在 [WinUI GitHub 存放庫](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose)中參與現有問題或提出新問題，來讓我們知道。
 
 ### <a name="platform-and-os-support"></a>平台和 OS 支援
 
-WinUI 3.0 預覽版 1 可與執行 Windows 10 2018 年 4 月更新 (1803 版 - 組建 17134) 和更新版本的電腦相容。
+WinUI 3 預覽版 2 可與執行 Windows 10 2018 年 4 月更新 (版本 1803 - 組建 17134) 和更新版本的電腦相容。
 
 ### <a name="developer-tools"></a>開發人員工具
 
 - 目前僅支援 C# 和 C++/WinRT 應用程式
-- 桌面應用程式支援 .NET 5 和 C# 8，而且必須加以封裝。
+- 桌面應用程式支援 .NET 5 和 C# 8，而且必須加以封裝
 - UWP 應用程式支援 .NET Native 和 C# 7.3
 - Intellisense 不完整
 - 沒有視覺化設計工具
@@ -118,46 +180,52 @@ WinUI 3.0 預覽版 1 可與執行 Windows 10 2018 年 4 月更新 (1803 版 - �
 - 沒有即時視覺化樹狀結構
 - 尚不支援使用 VS Code 進行開發
 - 不支援新的 C++/CX 應用程式，不過，您現有的應用程式仍可繼續運作 (請盡速移至 C++/WinRT)
-- WinUI 3.0 內容只能出現在每個程序的一個視窗中，或每個應用程式的一個 ApplicationView 中
+- WinUI 3 內容只能出現在每個程序的一個視窗中，或每個應用程式的一個 ApplicationView 中
 - 不支援未封裝的桌面部署
 - 沒有 ARM64 支援
+- UWP 應用程式中的 C# 自訂控制項：`Themes/Generic.xaml` 不會自動產生。 若要解決這個問題，您可以在類別中手動建立 [佈景主題] 資料夾，並且將 XAML 檔案放在該資料夾內部，將檔案稱為 `Generic.xaml`。
+- 將 WinUI 自訂控制項新增至您的專案之後，您的檔案可能會遺失 "CustomControl" 標頭。 若要解決這個問題，您可以手動將該標頭新增至您的 `pch.h` 檔案。
+- 新增 DataGrid、其他 Windows 社群工具組控制項和第三方程式庫控制項，可能會導致組建失敗。 若要解決這個問題，請將這個合併的字典新增至您的 `App.xaml` 檔案：
+  ```xaml
+  <ResourceDictionary Source="ms-appx:///<library_name>/Themes/Generic.xaml"/>
+  ```
 
 ### <a name="missing-platform-features"></a>缺少平台功能
 
-- 不支援 Xbox
-- 不支援 HoloLens
-- 不支援視窗型快顯視窗
-- 沒有筆跡支援
+- Xbox 支援
+- HoloLens 支援
+- 視窗型快顯
+- 筆跡支援
 - 背景壓克力
 - MediaElement 和 MediaPlayerElement
 - RenderTargetBitmap
 - MapControl
-- 具有 NavigationView 的階層式導覽
 - SwapChainPanel 不支援透明度
 - 全域顯示 (Global Reveal) 會使用回溯行為 (實心筆刷)
 - 此版本不支援 XAML Islands
 - 第三方生態系統程式庫的功能不完整
 - IME 無法運作
-- 無法呼叫 Windows.UI.Text 命名空間的方法
 
 ### <a name="known-issues"></a>已知問題
 
 - 在 C# 傳統型應用程式中：
-   - 對於 Windows 物件的弱式參考 (包含 Xaml 物件)，您必須使用 `WinRT.WeakReference<T>`，而不是 `System.WeakReference<T>`。
-   - [Point](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[Rect](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)和 [Size](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) 結構的成員類型是 Float 而不是 Double。
+  - 對於 Windows 物件的弱式參考 (包含 XAML 物件)，您必須使用 `WinRT.WeakReference<T>`，而不是 `System.WeakReference<T>`。
 
+## <a name="xaml-controls-gallery-winui-3-preview-2-branch"></a>XAML 控制項庫 (WinUI 3 預覽版 2 分支)
 
-## <a name="xaml-controls-gallery-winui-30-preview-1-branch"></a>Xaml 控制項資源庫 (WinUI 3.0 預覽版 1 分支)
+如需包含所有 WinUI 3 預覽版 2 控制項和功能的範例應用程式，請參閱 [XAML 控制項資源庫的 WinUI 3 預覽版 2 分支](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)。
 
-如需包含所有 WinUI 3.0 預覽版 1 控制項和功能的範例應用程式，請參閱 [Xaml 控制項資源庫的 WinUI 3.0 預覽版 1 分支](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)。
-
-![WinUI 3.0 預覽版 1 Xaml 控制項資源庫應用程式](images/WinUI3XamlControlsGallery.png)<br/>
-WinUI 3.0 預覽版 1 Xaml 控制項資源庫應用程式的範例
+![WinUI 3 預覽版 2 XAML 控制項庫應用程式](images/WinUI3XamlControlsGalleryP2.png)<br/>
+WinUI 3 預覽版 2 XAML 控制項庫應用程式的範例
 
 若要下載範例，請使用下列命令來複製 **winui3preview** 分支：
 
-> `git clone --single-branch --branch winui3preview https://github.com/microsoft/Xaml-Controls-Gallery.git`
+```
+git clone --single-branch --branch winui3preview https://github.com/microsoft/Xaml-Controls-Gallery.git
+```
 
 複製之後，請確定您已切換至本機 Git 環境中的 **winui3preview**分支：
 
-> `git checkout winui3preview`
+```
+git checkout winui3preview
+```

@@ -10,12 +10,12 @@ metadata:
   ms.prod: dev-environment
   ms.technology: windows-node
   ms.topic: landing-page
-  ms.openlocfilehash: 32c477cf230b7f8b5490b6f8ae7d227b6000aa77
-  ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+  ms.openlocfilehash: 6af50395c4ffd8e9ea0b2e0eb9543be3e47367f7
+  ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/29/2020
-  ms.locfileid: "72314802"
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86493453"
 landingContent:
 - title: 設定您的 Node.js 開發環境
   linkLists:
@@ -53,16 +53,10 @@ landingContent:
       url: ./web-frameworks.md#get-started-with-gatsbyjs
 - title: 開始使用資料庫
   linkLists:
-  - linkListType: concept
-    links:
-    - text: MongoDB 與 PostgreSQL 的比較
-      url: ./databases.md
   - linkListType: quickstart
     links:
-    - text: 開始使用 MongoDB
-      url: ./databases.md#install-mongodb
-    - text: 開始使用 PostgreSQL
-      url: ./databases.md#install-postgresql
+    - text: 安裝及執行 MySQL、PostgreSQL、SQLite、Microsoft SQL Server、MongoDB 或 Redis
+      url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
 - title: 開始使用容器
   linkLists:
   - linkListType: concept

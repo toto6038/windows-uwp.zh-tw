@@ -7,12 +7,12 @@ keywords: windows win32, 傳統型應用程式
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d052ad0f670bccd9b32d2e3643520dd6129ed22a
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: 20399b9a6398b1f17f74d2de74cc4b5e4ba270ac
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262739"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492993"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>建置 Windows PC 適用的傳統型應用程式
 
@@ -20,9 +20,7 @@ ms.locfileid: "84262739"
 
 ## <a name="platforms-for-desktop-apps"></a>適用於傳統型應用程式的平台
 
-建立適用於 Windows PC 的傳統型應用程式有四個主要平台。 每個平台都提供一個應用程式模型，該模型定義應用程式的生命週期、一組完整的 UI 控制項，以及用來使用 Windows 功能的一組全方位受控或原生 API 的存取權限。
-
-下表為這些平台的簡介。 如需這些平台的深入比較以及每個平台的其他資源，請參閱[選擇您的應用程式平台](choose-your-platform.md)。
+建立適用於 Windows PC 的傳統型應用程式有四個主要平台。 每個平台都提供一個應用程式模型，該模型定義應用程式的生命週期、完整 UI 架構、一組 UI 控制項 (可讓您建立像是 Word、Excel 和 Photoshop 的桌面應用程式)，以及用來使用 Windows 功能的一組全方位受控或原生 API 的存取權限。 如需這些平台的深入比較以及每個平台的其他資源，請參閱[選擇您的應用程式平台](choose-your-platform.md)。
 
 <br/>
 
@@ -46,8 +44,8 @@ ms.locfileid: "84262739"
 <td><a href="/windows/uwp/get-started/">開始使用</a><br/><a href="/uwp/">API 參考</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">範例</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows/win32/">Win32</a></td>
-<td><p>這是適用於原生 C/C++ Windows 應用程式的首選平台，該應用程式需要直接存取 Windows 和硬體。</p></td>
+<td><a href="https://docs.microsoft.com/windows/win32/">C++/Win32</a></td>
+<td><p>這是適用於原生 Windows 應用程式的首選平台，該應用程式需要直接存取 Windows 和硬體。</p></td>
 <td><a href="/windows/win32/desktop-programming/">開始使用</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API 參考</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">範例</a></td>
 </tr>
 <tr class="odd">
@@ -64,7 +62,7 @@ ms.locfileid: "84262739"
 </table>
 
 > [!NOTE]
-> 所有這些應用程式平台都提供完整的使用者介面架構和一組 UI 控制項，可讓您建立在傳統 Windows 桌面上執行的桌面應用程式 (例如 Word、Excel 和 Photoshop)，並充分利用該環境的特定功能。 在 Windows 10 上，所有這些平台都支援使用 Windows UI (WinUI) 程式庫來建立其使用者介面。 若要深入了解適用於桌面應用程式的 WinUI，請參閱[本節](choose-your-platform.md#windows-ui-library)。
+> 在 Windows 10 上，所有這些平台都支援使用 Windows UI (WinUI) 程式庫來建立使用者介面。 若要深入了解適用於桌面應用程式的 WinUI，請參閱[本節](choose-your-platform.md#windows-ui-library)。
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>更新現有適用於 Windows 10 的傳統型應用程式
 
@@ -94,6 +92,7 @@ ms.locfileid: "84262739"
 | 文章 | 說明 |
 |---------|-------------|
 | [選擇您的應用程式平台](choose-your-platform.md) | 提供主要傳統型應用程式平台的深入比較，並可協助您選擇適合您需求的平台。 本文也會針對每個平台的文件提供實用的連結。 |
+| [適用於 Windows 應用程式的 Visual Studio 專案範本](visual-studio-templates.md) | 描述專案和項目範本，Visual Studio 提供這些項目協助您使用 C\# 或 C++ 來建置適用於 Windows 10 裝置的應用程式。 |
 | [傳統型應用程式現代化](/windows/apps/desktop/modernize) | 說明可在任何傳統型應用程式中使用的最新 Windows 10 和 UWP 開發功能，包括 WPF、Windows Forms 和 C++ Win32 應用程式。 |
 | [功能和技術](/windows/apps/features-and-technologies) | 提供可透過每個主要傳統型應用程式平台存取的 Windows 功能概觀，並提供相關文件的連結。 |
 

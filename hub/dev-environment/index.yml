@@ -9,12 +9,12 @@ metadata:
   ms.date: 06/12/2020
   ms.prod: dev-environment
   ms.topic: landing-page
-  ms.openlocfilehash: 4d30b505c4ced08a906f443a65d0e7d0a34a5e01
-  ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
+  ms.openlocfilehash: 68b448a5d7e6c9b56112ec0a0160a3681849d4ef
+  ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 06/12/2020
-  ms.locfileid: "84746730"
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86493173"
 landingContent:
 - title: 開始使用 Python
   linkLists:
@@ -28,8 +28,8 @@ landingContent:
       url: ../python/web-frameworks.md
     - text: 設定自動化指令碼
       url: ../python/scripting.md
-    - text: 使用 WSL 設定資料庫
-      url: ../python/databases.md
+    - text: 使用 WSL 連線資料庫
+      url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
   - linkListType: tutorial
     links:
     - text: 適用 Python 基本知識
@@ -58,8 +58,8 @@ landingContent:
       url: ../nodejs/beginners.md
     - text: 開發 Web 應用程式
       url: ../nodejs/web-frameworks.md
-    - text: 連線資料庫
-      url: ../nodejs/databases.md
+    - text: 使用 WSL 連線資料庫
+      url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
     - text: 使用 Docker 容器
       url: ../nodejs/containers.md
   - linkListType: tutorial
