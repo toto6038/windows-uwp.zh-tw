@@ -8,44 +8,20 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 8775113c22716259f9449899b577481738dc6c0f
-ms.sourcegitcommit: da1c0ae251883987f105bc2919b2d67846194bc5
+ms.openlocfilehash: 7393d4d1bae227bf3b586a54fba5d43ca2dcb53e
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85198516"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493403"
 ---
-# <a name="get-started-with-winui-30-for-desktop-apps"></a>開始使用適用於桌面應用程式的 WinUI 3.0
+# <a name="get-started-with-winui-3-for-desktop-apps"></a>開始使用適用於桌面應用程式的 WinUI 3
 
-WinUI 3.0 預覽版 1 引進了新的專案範本，可讓您使用完全以 WinUI 為基礎的使用者介面來建立受控的桌面版 C#/.NET 和原生 C++/Win32 桌面應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3.0 提供的視窗、控制項和其他 UI 類型來實作。
-
-WinUI 3.0 Preview 1 會將下列專案範本新增至 Visual Studio 2019，以便建置使用 WinUI 3.0 的桌面應用程式：
-
-* 適用於以 .NET 5 為目標的 C# 應用程式和程式庫的專案範本：
-  * **已封裝的空白應用程式 (WinUI in Desktop)**
-  * **類別庫 (WinUI in Desktop)**
-
-* 適用於 C++ /Win32 應用程式的專案範本：
-  * **已封裝的空白應用程式 (WinUI in Desktop)**
-
-應用程式專案範本會產生 WinUI 應用程式專案和 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建立至 [MSIX 套件](https://docs.microsoft.com/windows/msix/overview)以進行部署。
+WinUI 3 預覽版 2 引進了新的專案範本，可讓您使用完全以 WinUI 為基礎的使用者介面來建立受控的桌面版 C#/.NET Core 和原生 C++/Win32 桌面應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和其他 UI 類型來實作。 如需專案範本的完整清單，請參閱[本節](index.md#project-templates-for-winui-3)。
 
 ## <a name="prerequisites"></a>必要條件
 
-若要使用本文所述的桌面板 WinUI 3 專案範本，請遵循下列指示來設定您的開發電腦：
-
-1. 請確定您的開發電腦已安裝 Windows 10 1803 版 (組建 17134) 或更新版本。 適用於桌面應用程式的 WinUI 3 需要 1803 版或更新版本的作業系統。
-
-2. 安裝 Visual Studio 2019 (16.7 預覽版 1 版本)。 如需詳細資訊，請參閱[這些指示](index.md#configure-your-dev-environment)。
-
-3. 安裝 .NET 5 預覽版 4 的 x64 和 x86 版本：
-    * x64：[https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe)
-    * x86：[https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe)
-
-    > [!NOTE]
-    > WinUI 3.0 Preview 1 需要 .NET 5 Preview 4。 WinUI 3.0 Preview 1 不支援較新的 .NET 5 預覽版本。
-
-4. 安裝 VSIX 擴充功能，其中包含適用於 Visual Studio 2019 的 WinUI 3.0 預覽版 1 專案範本。 如需詳細資訊，請參閱[這些指示](index.md#visual-studio-project-templates)。
+若要使用本文所述適用於桌面的 WinUI 3 專案範本，請遵循[這裡](index.md#install-winui-3-preview-2)的指示來設定您的開發電腦以及安裝 WinUI 3 預覽版 2。
 
 ## <a name="create-a-winui-3-desktop-app-for-c-and-net-5"></a>建立適用於 C# 和 .NET 5 的 WinUI 3 桌面應用程式
 
@@ -69,18 +45,11 @@ WinUI 3.0 Preview 1 會將下列專案範本新增至 Visual Studio 2019，以�
 
         ![應用程式專案](images/WinUI-csharp-appproject.png)
 
-    * **專案名稱 (封裝)** ：這是 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建立至 MSIX 套件以進行部署。 此專案包含您應用程式的[封裝資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，而且是您解決方案預設的啟始專案。
+    * **專案名稱 (封裝)** ：這是 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](https://docs.microsoft.com/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。 此專案包含您應用程式的[封裝資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，而且是您解決方案預設的啟始專案。
 
         ![應用程式專案](images/WinUI-csharp-packageproject.png)
 
-7. 若要將新項目新增至您的應用程式專案，請以滑鼠右鍵按一下 [方案總管] 中的 **專案名稱 (桌面)** 專案節點，然後選取 [新增] -> [新增項目]。 在 [新增項目] 對話方塊中選取 [WinUI] 索引標籤，選擇您要新增的專案，然後按一下 [新增]。 您可以選擇下列項目類型：
-
-    * **空白頁**
-    * **空白視窗**
-    * **自訂控制項**
-    * **資源字典**
-    * **資源檔**
-    * **使用者控制項**
+7. 若要將新項目新增至您的應用程式專案，請以滑鼠右鍵按一下 [方案總管] 中的 **專案名稱 (桌面)** 專案節點，然後選取 [新增] -> [新增項目]。 在 [新增項目] 對話方塊中選取 [WinUI] 索引標籤，選擇您要新增的專案，然後按一下 [新增]。 如需可用項目的詳細資訊，請參閱[本節](index.md#item-templates-for-winui-3)。
 
     ![新增項目](images/WinUI-csharp-newitem.png)
 
@@ -108,18 +77,11 @@ WinUI 3.0 Preview 1 會將下列專案範本新增至 Visual Studio 2019，以�
 
         ![應用程式專案](images/WinUI-cpp-appproject.png)
 
-    * **專案名稱 (封裝)** ：這是 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建立至 MSIX 套件以進行部署。 此專案包含您應用程式的[封裝資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，而且是您解決方案預設的啟始專案。
+    * **專案名稱 (封裝)** ：這是 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](https://docs.microsoft.com/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。 此專案包含您應用程式的[封裝資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，而且是您解決方案預設的啟始專案。
 
         ![封裝專案](images/WinUI-cpp-packageproject.png)
 
-7. 若要將新項目新增至您的應用程式專案，請以滑鼠右鍵按一下 [方案總管] 中的 **專案名稱 (桌面)** 專案節點，然後選取 [新增] -> [新增項目]。 在 [新增項目] 對話方塊中選取 [WinUI] 索引標籤，選擇您要新增的專案，然後按一下 [新增]。 您可以選擇下列項目類型：
-
-    * **空白頁**
-    * **空白視窗**
-    * **自訂控制項**
-    * **資源字典**
-    * **資源檔**
-    * **使用者控制項**
+7. 若要將新項目新增至您的應用程式專案，請以滑鼠右鍵按一下 [方案總管] 中的 **專案名稱 (桌面)** 專案節點，然後選取 [新增] -> [新增項目]。 在 [新增項目] 對話方塊中選取 [WinUI] 索引標籤，選擇您要新增的專案，然後按一下 [新增]。 如需可用項目的詳細資訊，請參閱[本節](index.md#item-templates-for-winui-3)。
 
     ![新增項目](images/WinUI-cpp-newitem.png)
 
@@ -127,8 +89,8 @@ WinUI 3.0 Preview 1 會將下列專案範本新增至 Visual Studio 2019，以�
 
 ## <a name="known-issues-and-limitations"></a>已知的問題和限制
 
-如需預覽版 1 中的已知問題和限制清單，請參閱[本節](index.md#preview-1-limitations-and-known-issues)。
+如需已知問題和限制的清單，請參閱[本節](index.md#preview-2-limitations-and-known-issues)。
 
 ## <a name="related-topics"></a>相關主題
 
-* [WinUI 3.0](index.md)
+* [Windows UI 程式庫 3](index.md)

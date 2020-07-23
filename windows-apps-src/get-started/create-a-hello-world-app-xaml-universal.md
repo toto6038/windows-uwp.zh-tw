@@ -6,14 +6,14 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, first app, hello world, 第一個應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 93c78845a218620a8a46fc4439733734099b9853
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 7c4d4ba374c68509c0378e769262afda0dae7422
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73847608"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492833"
 ---
-# <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world App (XAML)
+# <a name="create-a-hello-world-app-xaml"></a>建立 "Hello, World!" 應用程式 (XAML)
 
 本教學課程會教您如何使用 XAML 和 C# 建立適用於 Windows 10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。 透過 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的應用程式。
 
@@ -29,7 +29,7 @@ ms.locfileid: "73847608"
 
 -   [什麼是 Windows 通用應用程式？](universal-application-platform-guide.md)
 -   [下載 Visual Studio 2017 (和 Windows 10)](https://developer.microsoft.com/windows/downloads)。 如果您需要協助，請了解如何[開始設定](get-set-up.md)。
--   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以在 [視窗]  功能表中使用 [重設視窗配置]  命令來重設它。
+-   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以在 [視窗] 功能表中使用 [重設視窗配置] 命令來重設它。
 
 > [!NOTE]
 > 本教學課程使用 Visual Studio Community 2017。 如果您使用不同版本的 Visual Studio，它的外觀可能會略有不同。
@@ -42,58 +42,58 @@ ms.locfileid: "73847608"
 
 1.  啟動 Visual Studio。
 
-2.  從 [檔案]  功能表，選取 [新增] > [專案]  來開啟 [新增專案]  對話方塊。
+2.  從 [檔案] 功能表，選取 [新增] > [專案] 來開啟 [新增專案] 對話方塊。
 
-3.  從左邊的範本清單中，選擇 [已安裝] > [Visual C#] > [Windows 通用]  來查看 UWP 專案範本的清單。
+3.  從左邊的範本清單中，選擇 [已安裝] > [Visual C#] > [Windows 通用] 來查看 UWP 專案範本的清單。
 
-    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP 應用程式的元件。 您可以重複安裝程序並加入 UWP 支援，方法是按一下 [新增專案]  對話方塊上的 [開啟 Visual Studio 安裝程式]  。 請參閱[開始設定](get-set-up.md)。)
+    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP 應用程式的元件。 您可以重複安裝程序並加入 UWP 支援，方法是按一下 [新增專案] 對話方塊上的 [開啟 Visual Studio 安裝程式]。 請參閱[開始設定](get-set-up.md)。)
 
     ![如何重複安裝程序](images/win10-cs-install.png)
 
-4.  選擇 [空白應用程式 (通用 Windows)]  範本，然後輸入 "HelloWorld" 作為 [名稱]  。 選取 [確定]  。
+4.  選擇 [空白應用程式 (通用 Windows)] 範本，然後輸入 "HelloWorld" 作為 [名稱]。 選取 [確定]。
 
     ![[新增專案] 視窗](images/win10-cs-01.png)
 
 > [!NOTE]
-> 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]  。 開發人員模式是啟用某些功能的特殊設定，例如，直接執行應用程式的權限，而非只執行來自 Microsoft Store 的。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](enable-your-device-for-development.md)。 若要繼續使用此指南，請選取 [開發人員模式]  ，按一下 [是]  ，並關閉對話方塊。
+> 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]。 開發人員模式是啟用某些功能的特殊設定，例如，直接執行應用程式的權限，而非只執行來自 Microsoft Store 的。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](enable-your-device-for-development.md)。 若要繼續使用此指南，請選取 [開發人員模式]，按一下 [是]，並關閉對話方塊。
 
  ![啟用開發人員模式對話方塊](images/win10-cs-00.png)
 
-5.  [目標版本/最小版本] 對話方塊隨即出現。 在這個教學課程中使用預設設定即可，因此請選取 [確定]  來建立專案。
+5.  [目標版本/最小版本] 對話方塊隨即出現。 在這個教學課程中使用預設設定即可，因此請選取 [確定] 來建立專案。
 
     ![[方案總管] 視窗](images/win10-cs-02.png)
 
-6.  當您的新專案開啟時，其檔案會顯示在右邊的 [方案總管]  窗格中。 您可能需要選擇 [方案總管]  索引標籤 (而不是 [屬性]  索引標籤)，才能看到您的檔案。
+6.  當您的新專案開啟時，其檔案會顯示在右邊的 [方案總管] 窗格中。 您可能需要選擇 [方案總管] 索引標籤 (而不是 [屬性] 索引標籤)，才能看到您的檔案。
 
     ![[方案總管] 視窗](images/win10-cs-03.png)
 
-雖然 [空白應用程式 (通用 Windows)]  是最基本的範本，它仍然包含許多檔案。 這些檔案對於所有使用 C# 的 UWP app 都是必要的。 您在 Visual Studio 中建立的每個專案都包含這些檔案。
+雖然 [空白應用程式 (通用 Windows)] 是最基本的範本，它仍然包含許多檔案。 這些檔案對於所有使用 C# 的 UWP app 都是必要的。 您在 Visual Studio 中建立的每個專案都包含這些檔案。
 
 
 ### <a name="whats-in-the-files"></a>檔案提供哪些內容？
 
-若要檢視和編輯專案中的檔案，請在 [方案總管]  中按兩下該檔案。 像展開資料夾一樣展開 XAML 檔案，以檢視它的關聯程式碼檔案。 XAML 檔案會在分割檢視中開啟，同時顯示設計介面與 XAML 編輯器。
+若要檢視和編輯專案中的檔案，請在 [方案總管] 中按兩下該檔案。 像展開資料夾一樣展開 XAML 檔案，以檢視它的關聯程式碼檔案。 XAML 檔案會在分割檢視中開啟，同時顯示設計介面與 XAML 編輯器。
 > [!NOTE]
 > 什麼是 XAML？ Extensible Application Markup Language (XAML) 是一種用來定義您 App 使用者介面的語言。 您可以手動輸入它，或使用 Visual Studio 設計工具來建立它。 .xaml 檔案具有一個包含邏輯的 .xaml.cs 程式碼後置檔案。 XAML 與程式碼後置一起構成完整的類別。 如需詳細資訊，請參閱 [XAML 概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)。
 
-「App.xaml 和 App.xaml.cs」 
+「App.xaml 和 App.xaml.cs」
 
 -   App.xaml 是宣告整個應用程式使用資源的檔案。
 -   App.xaml.cs 是 App.xaml 的程式碼後置檔案。 它就像所有程式碼後置頁面一樣，包含一個呼叫 `InitializeComponent` 方法的建構函式。 您不需要撰寫 `InitializeComponent` 方法。 它是由 Visual Studio 產生的，而且主要用途是初始化 XAML 檔案中宣告的元素。
 -   App.xaml.cs 是您 App 的進入點。
 -   App.xaml.cs 也包含處理應用程式[啟用](../launch-resume/activate-an-app.md)和[暫停](../launch-resume/suspend-an-app.md)的方法。
 
-「MainPage.xaml」 
+「MainPage.xaml」
 
 -   MainPage.xaml 是您為 App 定義 UI 的地方。 您可以使用 XAML 標記直接新增元素，或是使用 Visual Studio 提供的設計工具。
 -   MainPage.xaml.cs 是 MainPage.xaml 的程式碼後置頁面。 其正是您新增應用程式邏輯和事件處理常式的位置。
 -   這兩個檔案一起定義名為 `MainPage` 的新類別，這是繼承自 `HelloWorld` 命名空間中的 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)。
 
-「Package.appxmanifest」 
+「Package.appxmanifest」
 -   一個描述您 App 的資訊清單檔案：其名稱、描述、磚、開始頁面等。
 -   包含您應用程式所包含的相依性、資源和檔案的清單。
 
-「一組標誌影像」 
+「一組標誌影像」
 -   Assets/Square150x150Logo.scale-200.png 和 Wide310x150Logo.scale-200.png 會在 [開始] 功能表中代表您的應用程式 (無論是 [中] 還是 [寬] 大小)。
 -   Assets/Square44x44Logo.png 會在 [開始] 功能表的應用程式清單、工作列，以及工作管理員中代表您的應用程式。
 -   Assets/StoreLogo.png 會在 Microsoft Store 中代表您的應用程式。
@@ -112,11 +112,11 @@ ms.locfileid: "73847608"
 
     ![[方案總管] 視窗](images/win10-cs-04.png)
 
-2.  按一下左邊的垂直 [工具箱]  索引標籤來開啟 UI 控制項清單。 (您可以按一下其標題列中的釘選圖示來讓它保持可見)。
+2.  按一下左邊的垂直 [工具箱] 索引標籤來開啟 UI 控制項清單。 (您可以按一下其標題列中的釘選圖示來讓它保持可見)。
 
     ![[方案總管] 視窗](images/win10-cs-05.png)
 
-3.  展開 [通用 XAML 控制項]  ，然後將 [按鈕]  拖曳到設計畫布的中間。
+3.  展開 [通用 XAML 控制項]，然後將 [按鈕] 拖曳到設計畫布的中間。
 
     ![[方案總管] 視窗](images/win10-cs-06.png)
 
@@ -155,12 +155,12 @@ ms.locfileid: "73847608"
 
 **在本機電腦上開始偵錯**
 
-1.  在 [標準]  工具列上的目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 上，確定已選取 [本機電腦]  。 (這是預設選項)。
-2.  按一下工具列上的 [開始偵錯]  按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
+1.  在 [標準] 工具列上的目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 上，確定已選取 [本機電腦]。 (這是預設選項)。
+2.  按一下工具列上的 [開始偵錯] 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
 
    –或–
 
-   從 [偵錯]  功能表，按一下 [開始偵錯]  。
+   從 [偵錯] 功能表，按一下 [開始偵錯]。
 
    –或–
 
@@ -172,17 +172,17 @@ ms.locfileid: "73847608"
 
 ![最初的應用程式畫面](images/win10-cs-08.png)
 
-按下 Windows 鍵以開啟 [開始]  功能表，然後顯示所有應用程式。 請注意，在本機部署應用程式會將其磚加入 [開始]  功能表。 若要在稍後再次執行該應用程式 (不使用偵錯模式)，請點選或按一下它在 [開始]  功能表中的磚。
+按下 Windows 鍵以開啟 [開始] 功能表，然後顯示所有應用程式。 請注意，在本機部署應用程式會將其磚加入 [開始] 功能表。 若要在稍後再次執行該應用程式 (不使用偵錯模式)，請點選或按一下它在 [開始] 功能表中的磚。
 
 應用程式還沒有太多功能，但是恭喜您，您已經建置您的第一個 UWP app 了！
 
 **停止偵錯**
 
-   按一下工具列中的 [停止偵錯]  按鈕 (![停止偵錯按鈕](images/stopdebug.png))。
+   按一下工具列中的 [停止偵錯] 按鈕 (![停止偵錯按鈕](images/stopdebug.png))。
 
    –或–
 
-   從 [偵錯]  功能表，按一下 [停止偵錯]  。
+   從 [偵錯] 功能表，按一下 [停止偵錯]。
 
    –或–
 
@@ -196,7 +196,7 @@ ms.locfileid: "73847608"
 
 2.  按兩下設計畫布上的按鈕控制項，讓 Visual Studio 為您的按鈕建立事件處理常式。
 
-  當然，您也可以手動建立所有的程式碼。 或者，您可以按一下按鈕來選取它，然後查看右下方的 [屬性]  窗格。 如果您切換到 [事件]  (小閃電圖示)，則可以新增事件處理常式的名稱。
+  當然，您也可以手動建立所有的程式碼。 或者，您可以按一下按鈕來選取它，然後查看右下方的 [屬性] 窗格。 如果您切換到 [事件] (小閃電圖示)，則可以新增事件處理常式的名稱。
 
 3.  編輯 *MainPage.xaml.cs* 程式碼後置頁面中的事件處理常式程式碼。 這是開始有趣的地方。 預設的事件處理常式看起來就像這樣：
 

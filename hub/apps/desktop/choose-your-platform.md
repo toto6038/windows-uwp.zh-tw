@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: c14b092b9cce9ce7e3b180eaedef657e2d3d03db
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 778c15bc511404fad9cf5713876f89c7fef56165
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580005"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493003"
 ---
 # <a name="choose-your-app-platform"></a>選擇您的應用程式平台
 
@@ -39,6 +39,7 @@ UWP 是適用於 Windows 10 應用程式和遊戲的先進平台。 它是高度
 如需 UWP 的詳細資訊，請參閱下列文章：
 
 * [開始使用](/windows/uwp/get-started/)
+* [專案範本](visual-studio-templates.md#uwp-templates)
 * [設計與 UI](/windows/uwp/design/)
 * [技術和功能](/windows/uwp/develop/)
 * [API 參考](/uwp/)
@@ -50,7 +51,8 @@ WPF 是針對受管理 Windows 應用程式所建立的平台，可存取 .NET C
 
 如需 WPF 的詳細資訊，請參閱下列文章：
 
-* [使用者入門 (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)。
+* [使用者入門 (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)
+* [專案範本](visual-studio-templates.md#net-templates)
 * [建立您的第一個應用程式 (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [建立您的第一個應用程式 (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [將 WPF 應用程式遷移至 .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
@@ -64,6 +66,7 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 如需 Windows Forms 的詳細資訊，請參閱下列文章：
 
 * [Windows Form 使用者入門](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [專案範本](visual-studio-templates.md#net-templates)
 * [建立您的第一個 Windows Forms 應用程式](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [教學課程：建立圖片檢視器](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
 * [API 參照 (.NET)](https://docs.microsoft.com/dotnet/api/index)
@@ -84,6 +87,7 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 如需詳細資訊，請參閱下列文章：
 
 * [開始使用](/windows/win32/desktop-programming/)
+* [專案範本](visual-studio-templates.md#cwin32-templates)
 * [建立您的第一個 Win32 和 C++ 應用程式](/windows/win32/learnwin32/learn-to-program-for-windows/)
 * [技術和功能](/windows/win32/desktop-app-technologies)
 * [API 參考](/windows/win32/apiindex/windows-api-list/)
@@ -97,7 +101,7 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 
 * UWP 應用程式可以使用 WinUI 控制項來取代 Windows SDK 所提供的 UWP 控制項。
 * 您可以將現有的 WPF、Windows Forms 和 C++/Win32 應用程式更新為使用 [XAML Islands](modernize/xaml-islands.md)，以在應用程式中裝載 WinUI 2.x 控制項。
-* 從 [WinUi 3.0 預覽版 1](../winui/winui3/index.md) 開始，您可以建立 [.NET 和 C++ /Win32 應用程式來使用完全以 WinUI 為基礎的 UI](../winui/winui3/get-started-winui3-for-desktop.md)。
+* 從 [WinUi 3.0](../winui/winui3/index.md) 開始，您可以建立 [.NET 和 C++ /Win32 應用程式來使用完全以 WinUI 為基礎的 UI](../winui/winui3/get-started-winui3-for-desktop.md)。
 
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>平台比較：UWP、WPF 和 Windows Forms
 

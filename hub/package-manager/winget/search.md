@@ -4,12 +4,12 @@ description: 查詢可以可安裝的應用程式來源
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 366d2176fe9465495d8ed8f2eeb7912229bd07f1
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 7038f9b31c4c0446e3af56cac2d118598347d4d3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334471"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493253"
 ---
 # <a name="search-command-winget"></a>search 命令 (winget)
 
@@ -48,7 +48,7 @@ ms.locfileid: "85334471"
 | **--name**      |  將搜尋限制為應用程式的名稱。 |
 | **--moniker**  |    將搜尋限制為指定的別名。 |
 | **--tag**    |  將搜尋限制為針對應用程式所列出的標籤。 |
-| **--command**   |   將搜尋限制為應用程式的名稱。 |
+| **--command**   |   將搜尋限制為針對應用程式所列出的命令。 |
 
 該字串將被視為子字串。 根據預設，搜尋也不會區分大小寫。 例如，`winget search micro` 可能會傳回下列內容：
 

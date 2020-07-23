@@ -6,14 +6,14 @@ ms.date: 09/12/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a161a5e26bd647a37b06a270ef6714d54bc16d80
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 88ae290bf88a21aa2846697833d099df663915f6
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74467415"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492962"
 ---
-# <a name="create-a-hello-world-app-js"></a>建立 "Hello, world" 應用程式 (JS)
+# <a name="create-a-hello-world-app-js"></a>建立 "Hello, World!" 應用程式 (JS)
 
 本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 "Hello, world" 應用程式。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
 
@@ -33,39 +33,39 @@ ms.locfileid: "74467415"
 
 -   [什麼是 UWP 應用程式？](universal-application-platform-guide.md)。
 -   若要完成這個教學課程，您需要 Windows 10 與 Visual Studio。 [開始設定](get-set-up.md)。
--   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 [視窗]  功能表中的 [重設視窗配置]  命令來重設它。
+-   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 [視窗] 功能表中的 [重設視窗配置] 命令來重設它。
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步驟 1：在 Visual Studio 中建立新專案。
 
 1.  啟動 Visual Studio 2017。
 
-2.  從 [檔案]  功能表，選取 [新增] > [專案]  來開啟 [建立新專案]  對話方塊。
+2.  從 [檔案] 功能表，選取 [新增] > [專案] 來開啟 [建立新專案] 對話方塊。
 
-3.  選取 [空白應用程式 (通用 Windows) JavaScript]  ，然後選取 [下一步]  。
+3.  選取 [空白應用程式 (通用 Windows) JavaScript]，然後選取 [下一步]。
 
-    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP 應用程式的元件。 您可以重複安裝程序並新增 UWP 支援，方法是在 [建立新專案]  對話方塊中，選取 [開啟 Visual Studio 安裝程式]  。 請參閱[開始設定](get-set-up.md)。
+    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP 應用程式的元件。 您可以重複安裝程序並新增 UWP 支援，方法是在 [建立新專案] 對話方塊中，選取 [開啟 Visual Studio 安裝程式]。 請參閱[開始設定](get-set-up.md)。
 
-4.  在 [設定新專案]  對話方塊中，輸入 **HelloWorld** 作為**專案名稱**，然後選取 [建立]  。
+4.  在 [設定新專案] 對話方塊中，輸入 **HelloWorld** 作為**專案名稱**，然後選取 [建立]。
 
 > [!NOTE]
-> 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]  。 開發人員模式是啟用某些功能的特殊設定，例如，直接執行應用程式的權限，而非只執行來自 Microsoft Store 的。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](enable-your-device-for-development.md)。 若要繼續使用此指南，請選取 [開發人員模式]  ，選取 [是]  ，然後關閉對話方塊。
+> 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]。 開發人員模式是啟用某些功能的特殊設定，例如，直接執行應用程式的權限，而非只執行來自 Microsoft Store 的。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](enable-your-device-for-development.md)。 若要繼續使用此指南，請選取 [開發人員模式]，選取 [是]，然後關閉對話方塊。
 
  ![啟用開發人員模式對話方塊](images/win10-cs-00.png)
 
-5.  [目標版本/最小版本] 對話方塊隨即出現。 在這個教學課程中使用預設設定即可，因此請選取 [確定]  來建立專案。
+5.  [目標版本/最小版本] 對話方塊隨即出現。 在這個教學課程中使用預設設定即可，因此請選取 [確定] 來建立專案。
 
     ![[方案總管] 視窗](images/win10-cs-02.png)
 
-6.  當您的新專案開啟時，其檔案會顯示在右邊的 [方案總管]  窗格中。 您可能需要選擇 [方案總管]  索引標籤 (而不是 [屬性]  索引標籤)，才能看到您的檔案。
+6.  當您的新專案開啟時，其檔案會顯示在右邊的 [方案總管] 窗格中。 您可能需要選擇 [方案總管] 索引標籤 (而不是 [屬性] 索引標籤)，才能看到您的檔案。
 
     ![[方案總管] 視窗](images/win10-js-02.png)
 
-雖然 [空白應用程式 (通用 Windows)]  是最基本的範本，但它仍然包含許多檔案。 這些檔案對於所有使用 JavaScript 的 UWP app 都是必要的。 您在 Visual Studio 中建立的每個專案都包含這些檔案。
+雖然 [空白應用程式 (通用 Windows)] 是最基本的範本，但它仍然包含許多檔案。 這些檔案對於所有使用 JavaScript 的 UWP app 都是必要的。 您在 Visual Studio 中建立的每個專案都包含這些檔案。
 
 
 ### <a name="whats-in-the-files"></a>檔案提供哪些內容？
 
-若要檢視和編輯您專案中的檔案，請在 [方案總管]  中按兩下該檔案。
+若要檢視和編輯您專案中的檔案，請在 [方案總管] 中按兩下該檔案。
 
 *default.css*
 
@@ -79,8 +79,8 @@ ms.locfileid: "74467415"
 
 - 應用程式的網頁，當應用程式啟動時會載入並顯示。
 
-「一組標誌影像」 
--   Assets/Square150x150Logo.scale-200.png 代表 [開始]  功能表中您的應用程式。
+「一組標誌影像」
+-   Assets/Square150x150Logo.scale-200.png 代表 [開始] 功能表中您的應用程式。
 -   Assets/StoreLogo.png 會在 Microsoft Store 中代表您的應用程式。
 -   Assets/SplashScreen.scale-200.png 是您 App 啟動時顯示的啟動顯示畫面。
 
