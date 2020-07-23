@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, 學習 python, windows 上適用於初學者的 python, 利用 microsoft store 安裝 python, python 搭配 vs code, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 688ae004dad8653e70d86b3b91652b6898c1e9d3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5dee553fedc81f0b482d4b79f4d7d8be3a7bb106
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74881279"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493493"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>開始在 Windows 上使用適用於初學者的 Python
 
@@ -202,7 +202,7 @@ Pygame 是用於撰寫遊戲的熱門 Python 套件 - 鼓勵學生學習程式�
 
 ### <a name="working-with-python-in-vs-code"></a>在 VS Code 中使用 Python
 
-- [在 VS Code中編輯 Python](https://code.visualstudio.com/docs/python/editing)：深入了解如何利用 VS Code 的自動完成和 Python 的 IntelliSense 支援，包括如何自訂其行為...，或只是關閉它們。
+- [在 VS Code中編輯 Python](https://code.visualstudio.com/docs/python/editing)：深入了解如何利用 VS Code 的自動完成和 Python 的 IntelliSense 支援，包括如何自訂其行為...，或只是將其關閉。
 
 - [Linting Python](https://code.visualstudio.com/docs/python/linting)：Linting 是執行程式的過程，其會分析程式碼找出潛在錯誤。 了解 VS Code 針對 Python 提供的各種不同形式的 linting 支援，以及如何進行設定。
 

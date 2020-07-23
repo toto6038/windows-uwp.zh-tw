@@ -2,23 +2,23 @@
 title: 開始使用 Windows UI 程式庫
 description: 如何安裝及使用 Windows UI 程式庫。
 ms.topic: reference
-ms.date: 05/08/2020
+ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk
-ms.openlocfilehash: d96efb2f3de3084d74e06e70ff2811a944604f56
-ms.sourcegitcommit: 47899c30a39087bca1f058a4395cf58daacf5ae9
+ms.openlocfilehash: 336439d35c74073db490772dbfdae4ca3e580625
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345472"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492953"
 ---
-# <a name="getting-started-with-the-windows-ui-library"></a>開始使用 Windows UI 程式庫
+# <a name="getting-started-with-the-windows-ui-2x-library"></a>開始使用 Windows UI 2.x 程式庫
 
 [WinUI 2.4](release-notes/winui-2.4.md) 是 WinUI 的最新穩定版本，生產環境中的應用程式應使用此版本。
 
 程式庫會以 NuGet 套件的形式來提供，可供新增至任何新的或現有的 Visual Studio 專案。
 
 > [!NOTE]
-> 如需有關試用 WinUI 3.0 早期預覽版的詳細資訊，請參閱 [WinUI 3.0 Preview 1](../winui3/index.md)。
+> 如需試用 WinUI 3 早期預覽版的詳細資訊，請參閱 [Windows UI 程式庫 3 預覽版 2 (2020 年 7 月)](../winui3/index.md)。
 
 ## <a name="download-and-install-the-windows-ui-library"></a>下載並安裝 Windows UI 程式庫
 

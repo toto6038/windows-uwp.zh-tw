@@ -5,20 +5,22 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a20ae3df6ae83723550bf365aadab99b1b3b7b
-ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
+ms.openlocfilehash: 5ba06ece905e6a91a2279f0fe78e867a8f943bb3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2020
-ms.locfileid: "84756525"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492933"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
+
 可有效地繫結至 XAML 控制項屬性稱為「可觀察的」屬性。 這個主意是以軟體設計模式為基礎稱為「觀察者模式」。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作可觀察屬性，以及將 XAML 控制項繫結至這些屬性的方法 (如需背景資訊，請參閱[資料繫結](/windows/uwp/data-binding))。
 
 > [!IMPORTANT]
 > 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
 ## <a name="what-does-observable-mean-for-a-property"></a>對一個屬性來說，*可觀察*的意義是什麼？
+
 比方說一個名為 **BookSku** 的執行階段類別有個名為 **Title** 的屬性。 如果 **BookSku** 選擇引發 [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件，每當變更 **Title** 的值時，則 **Title** 是可觀察的屬性。 它是 **BookSku** 的行為 (引發或不引發事件)，判斷是哪一個，如果有的話，其屬性則為可觀察的。
 
 XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯示新的值，可繫結至並處理這些事件。
@@ -27,7 +29,8 @@ XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯
 > 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="create-a-blank-app-bookstore"></a>建立空白的應用程式 (Bookstore)
-請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **空白的應用程式 (C++/WinRT)** 專案，並將它命名為 *Bookstore*。
+
+請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **空白的應用程式 (C++/WinRT)** 專案，並將它命名為 *Bookstore*。 確定已取消核取 [將方案和專案放置於同一個目錄]。 以 Windows SDK 最新的正式推出版本 (即非預覽版本) 為目標。
 
 我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 我們在相同的編譯單位裡撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且我們會使用 C++/WinRT 撰寫和使用它。
 
@@ -240,7 +243,7 @@ namespace winrt::Bookstore::implementation
 ...
 ```
 
-在 `\Bookstore\Bookstore\MainPage.cpp` 中，呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (使用實作類型) 將一個投影類型的新執行個體指派給 m_mainViewModel。 指派一個初始值給本書的標題。 適用於 MainViewModel 屬性的實作存取子。 最後，更新按鈕事件處理常式中的本書標題。 也會移除 **MyProperty** 屬性。
+在 `\Bookstore\Bookstore\MainPage.cpp` 中，如下列清單所示，進行下列變更。 呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (搭配 **BookstoreViewModel** 實作類型) 將一個 **BookstoreViewModel** 投影類型的新執行個體指派給 *m_mainViewModel*。 如先前所見，**BookstoreViewModel** 建構函式會建立新的 **BookSku** 物件做為私人資料成員，一開始就將其標題設定為 `L"Atticus"`。 在按鈕的事件處理常式 (**ClickHandler**) 中，將書籍的標題更新為其已發佈的標題。 最後，實作 **MainViewModel** 屬性的存取子。 也會移除 **MyProperty** 屬性。
 
 ```cppwinrt
 // MainPage.cpp

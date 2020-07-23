@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 Node, wsl 上的 Node, linux 或 windows 上的 Node, 在 windows 上安裝 Node, nodejs 與 vs code, 在 windows 上使用 Node 進行開發, 在 windows 上使用 nodejs 進行開發, 在 WSL 上安裝 Node, Windows 子系統 Linux 版上的 NodeJS
 ms.localizationpriority: medium
 ms.date: 06/09/2020
-ms.openlocfilehash: 494db609db577bd2b199f828fcf80e80a5c8c624
-ms.sourcegitcommit: 22ed0d4edad5e6bab352e641cf86cf455cf83825
+ms.openlocfilehash: e8fb06cb1e68d5dfa7f23e6966f917c96eb79859
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133971"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493273"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 設定您的 Node.js 開發環境
 
@@ -36,7 +36,7 @@ ms.locfileid: "85133971"
 
 新的 Windows 終端機可啟用多個索引標籤 (在多個 Linux 命令列、Windows 命令提示字元、PowerShell、Azure CLI 等之間快速切換)、建立自訂按鍵繫結 (開啟或關閉索引標籤、複製+貼上等的快速鍵)、使用搜尋功能及自訂佈景主題 (色彩配置、字型樣式和大小、背景影像/柔邊/透明度)。 [深入了解](https://docs.microsoft.com/windows/terminal)。
 
-1. [在 Microsoft Store 中取得 Windows 終端機 (預覽)](https://www.microsoft.com/store/apps/9n0dx20hk701) \(英文\)：透過 Microsoft Store 安裝，就會自動處理更新。
+1. 在 Microsoft Store 中取得 [Windows 終端機](https://www.microsoft.com/store/apps/9n0dx20hk701)：透過 Microsoft Store 安裝，就會自動處理更新。
 
 2. 安裝之後，開啟 Windows 終端機，然後選取 [設定]，以使用 `settings.json` 檔案來自訂終端機。
 
@@ -140,5 +140,5 @@ ms.locfileid: "85133971"
 
 - [適用於初學者的 Node.js 入門](./beginners.md)
 - [開始使用 Windows 上的 Node.js Web 架構](./web-frameworks.md)
-- [開始將 Node.js 應用程式連線到資料庫](./databases.md)
+- [開始將 Node.js 應用程式連線到資料庫](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
 - [開始在 Node.js 中使用 Docker 容器](./containers.md)

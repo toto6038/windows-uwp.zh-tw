@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 已投影, 投影, 實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c162b7ae9cd588bea1062ed8c953d94d1b691c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: de461f94897110aaf1ff06b3863a7112c61fda1f
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "70393768"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492943"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 取用 API
 
@@ -280,7 +280,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-如需在 Windows 執行階段元件中實作取用 API 的更多詳細資料、程式碼和逐步解說，請參閱[以 C++/WinRT 撰寫事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)。
+如需更多詳細資料、程式碼和使用 Windows 執行階段元件中實作的 API 的逐步解說，請參閱[使用 C++/WinRT 的 Windows 執行階段元件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)和[在 C++/WinRT 中撰寫事件](/windows/uwp/cpp-and-winrt-apis/author-events)。
 
 ## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>如果 API 是在取用的專案中實作
 從 XAML UI 使用的類型必須是執行階段類別，即使它與 XAML 位於相同專案中。
@@ -449,7 +449,8 @@ struct MyPage : Page
 * [winrt::Windows::Foundation::IUnknown 結構](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相關主題
-* [以 C++/WinRT 撰寫事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md)
-* [C++/WinRT 的簡介](intro-to-using-cpp-with-winrt.md)
-* [XAML 控制項；繫結至一個 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [以 C++/WinRT 撰寫事件](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [C++/WinRT 與 ABI 之間的互通性](/windows/uwp/cpp-and-winrt-apis/interop-winrt-abi)
+* [C++/WinRT 的簡介](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+* [使用 C++/WinRT 的 Windows 執行階段元件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
+* [XAML 控制項；繫結至一個 C++/WinRT 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)

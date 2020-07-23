@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: dbe40498d128fa483f2c414e088060ec90fc1c22
-ms.sourcegitcommit: c4f912ba0313ae49632f81e38d7d2d983ac132ad
+ms.openlocfilehash: 8c2133c4f1132b55d62149ad5aaf42e04fc5da5b
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84200793"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493316"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 UWP 控制項
 
@@ -63,12 +63,7 @@ ms.locfileid: "84200793"
     1. 以滑鼠右鍵按一下 [MyUWPApp]  專案，然後選擇 [管理 NuGet 套件]  。
     2. 選取 [瀏覽]  索引標籤、搜尋 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 套件，然後安裝此套件的 v6.0.0 或更新版本。
 
-4. 以滑鼠右鍵按一下 [MyUWPApp]  節點，然後選取 [屬性]  。 在 [通用屬性]   -> [C++/WinRT]  頁面上，設定下列屬性，然後按一下 [套用]  。
-
-    * 將 [詳細程度]  設定為 [正常]  。
-    * 將 [最佳化]  設定為 [否]  。
-
-    當您完成時，[屬性] 頁面看起來應該像這樣。
+4. 以滑鼠右鍵按一下 [MyUWPApp]  節點，然後選取 [屬性]  。 在 [通用屬性] -> [C++/WinRT] 頁面上，將 [詳細程度] 屬性設定為 [一般]，然後按一下 [套用]。 當您完成時，[屬性] 頁面看起來應該像這樣。
 
     ![C++/WinRT 專案屬性](images/xaml-islands/xaml-island-cpp-1.png)
 
@@ -260,6 +255,9 @@ ms.locfileid: "84200793"
             }
         }
         ```
+
+        > [!NOTE]
+        > 當專案屬性的 [通用屬性] -> [C++/WinRT] 頁面上的 [已最佳化] 屬性設定為 [是] 時，就需要 `#include "App.g.cpp"` 陳述式。 這是新 C++/WinRT 專案的預設值。 如需**已最佳化** 屬性效果的詳細資訊，請參閱[本節](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
 4. 將新的標頭檔新增至名為 **app.base.h** 的 **MyUWPApp** 專案。
 5. 將下列程式碼新增至 **app.base.h** 檔案、儲存檔案，然後加以關閉。

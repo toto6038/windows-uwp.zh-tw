@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: c5f8b9548bba704a7035b014ca3728db8bcbcc16
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 7282f85d5dcc093cbdabb1e03471ed533136fa7f
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80662388"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493573"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
@@ -18,19 +18,23 @@ ms.locfileid: "80662388"
 
 ## <a name="porting-strategies"></a>移植策略
 
-如果您想要將 C++/CX 程式碼逐漸移植到 C++/WinRT，您可以使用此策略。 C++/CX 和 C++/WinRT 程式碼可以共存在相同的專案中，但 XAML 編譯器支援與 Windows 執行階段元件除外。 對於這些兩個例外狀況，您必須將相同專案中的目標設為 C++/CX 或 C++/WinRT。
+如果您想要將 C++/CX 程式碼逐漸移植到 C++/WinRT，您可以使用此策略。 C++/CX 和 C++/WinRT 程式碼可以共存在相同的專案中，但 XAML 編譯器支援與 Windows 執行階段元件除外。 對於這些兩個例外狀況，您必須將相同專案中的目標設為 C++/CX 或 C++/WinRT。 這表示您所有的 XAML 頁面類型都必須完全是 C++/CX 或是 C++/WinRT。 您仍然可以在相同專案內的 XAML 頁面類型外混合 C++/CX 和 C++/WinRT。
 
 > [!IMPORTANT]
-> 如果您的專案組建了 XAML 應用程式，那麼其中一種建議的工作流程是，先使用一個 C++/WinRT 專案範本，在 Visual Studio 中建立新項目 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 然後，開始從 C++/CX 專案複製原始程式碼和標記。 您可以使用 [專案]  \> [新增項目...]  來新增 XAML 頁面\>**Visual C++**  > **空白頁 (C++/WinRT)** 。
+> 如果您的專案組建了 XAML 應用程式，那麼其中一種建議的工作流程是，先使用一個 C++/WinRT 專案範本，在 Visual Studio 中建立新項目 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 然後，開始從 C++/CX 專案複製原始程式碼和標記。 您可以使用 [專案]\> [新增項目...] 來新增 XAML 頁面\>**Visual C++**  > **空白頁 (C++/WinRT)** 。
 >
 > 或者，您可以使用 Windows 執行階段元件，在移植 XAML C++/CX 專案時，將程式碼從中分解出來。 請盡可能將 C++/CX 程式碼移動到元件中，再將 XAML 專案變更為 C++/WinRT。 或是將 XAML 專案保留為 C++/CX，而建立新的 C++/WinRT 元件，並開始將 C++/CX 程式碼從 XAML 專案移植到元件中。 您也可以在同個解決方案中，一起使用 C++/CX 元件專案與 C++/WinRT 元件專案，從應用程式專案中參照這兩個元件專案，並逐漸從一個專案移植到另一個專案。 如需在相同專案中使用兩種語言投影的更多詳細資料，請參閱 [C++/WinRT 與 C++/CX 之間的互通性](interop-winrt-cx.md)。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 以及根命名空間 **Windows** 的 Windows SDK 宣告類型。 投影到 C++/WinRT 的 Windows 類型有與 Windows 類型相同的完整名稱，但它放在 C++ **winrt** 命名空間。 這些不同的命名空間，可讓您以自己的速度從 C++/CX 移植至 C++/WinRT。
 
-請記住上述例外狀況，將 C++/CX 專案移植到 C++/WinRT 的第一個步驟是手動新增 C++/WinRT 支援 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 若要這麼做，請將 [Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)安裝到您的專案中。 在 Visual Studio 中開啟專案，按一下 [專案]  \>[管理 NuGet 套件...]  \>[瀏覽]  、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝]  以安裝適用於該專案的套件。 該變更的其中一個效果，是會關閉專案中支援的 C++/CX。 最好關閉支援，這樣組建訊息有助於找出 (並移植) C++/CX 上所有的相依性，或您可以重新開啟支援 (在專案屬性中，**C/C++** \>**一般**\>**使用 Windows 執行階段擴充功能**\>**是 (/ZW)** )，請逐漸移植。
+## <a name="first-steps-in-porting-a-ccx-project-to-cwinrt"></a>將 C++/CX 專案移植到 C++/WinRT 的首要步驟
 
-或者，在 Visual Studio 中使用 C++/WinRT 專案屬性頁面，將下列屬性新增至 `.vcxproj` 檔案檔案。 如需類似自訂選項 (可微調 `cppwinrt.exe` 工具的行為) 清單，請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)。
+請記住上述例外狀況，將 C++/CX 專案移植到 C++/WinRT 的第一個步驟是手動新增 C++/WinRT 支援 (請參閱[適用於 C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 若要這麼做，請將 [Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)安裝到您的專案中。 在 Visual Studio 中開啟專案，按一下 [專案]\>[管理 NuGet 套件...]\>[瀏覽]、在搜尋方塊中輸入或貼上 **Microsoft.Windows.CppWinRT**、在搜尋結果中選取項目，然後按一下 [安裝] 以安裝適用於該專案的套件。 該變更的其中一個效果，是會關閉專案中支援的 C++/CX。
+
+如果您可以一次移植，建議您關閉支援，讓組建訊息協助您在 C++/CX 上尋找 (及移植) 所有相依性。
+
+或者，如果您需要逐漸移植，則再次開啟支援 (在專案屬性中，[C/C++] \> [一般] \> [使用 Windows 執行階段擴充功能] \> [是 (/ZW)])。 或者，(此外，若為 XAML 專案)，請使用 Visual Studio 中的 C++/WinRT 專案屬性頁面，將下列屬性手動新增至您的 `.vcxproj` 檔案 (在專案屬性中，[通用屬性] \> [C++/WinRT] \> [專案語言] \> [C++/CX])。 如需類似自訂選項 (可微調 `cppwinrt.exe` 工具的行為) 清單，請參閱 Microsoft.Windows.CppWinRT NuGet 套件[讀我檔案](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)。 請記住，每當您需要將 **Midl 檔案 (.idl)** 的內容處理到 Stub 檔案時，就必須將該屬性值變更回 **C++/WinRT**。
 
 ```xml
 <syntaxhighlight lang="xml">
@@ -40,7 +44,7 @@ ms.locfileid: "80662388"
 </syntaxhighlight>
 ```
 
-接下來，務必將專案屬性 [一般]  \>[目標平台版本]  設為 10.0.17134.0 (Windows 10，版本 1803) 或更高版本。
+接下來，務必將專案屬性 [一般]\>[目標平台版本] 設為 10.0.17134.0 (Windows 10，版本 1803) 或更高版本。
 
 在您先行編譯的標頭檔案 (通常是 `pch.h`) 中，加入 `winrt/base.h`。
 
@@ -56,7 +60,7 @@ ms.locfileid: "80662388"
 
 ### <a name="xaml-markup-files"></a>XAML 標記檔案
 
-| | C++/CX | C++/WinRT |
+| 檔案原點 | C++/CX | C++/WinRT |
 | - | - | - |
 | **開發人員 XAML 檔案** | MyPage.xaml<br/>MyPage.xaml.h<br/>MyPage.xaml.cpp | MyPage.xaml<br/>MyPage.h<br/>MyPage.cpp<br/>MyPage.idl (請參閱下方) |
 | **產生的 XAML 檔案** | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp<br/>MyPage.g.h |
@@ -246,7 +250,7 @@ private:
 };
 ```
 
-C++/WinRT 物件是值；讓您可以在堆疊上配置它，或做為物件的欄位。 您「從不」  使用 `ref new` (或 `new`) 配置 C++/WinRT 物件。 幕後仍持續呼叫 **RoActivateInstance**。
+C++/WinRT 物件是值；讓您可以在堆疊上配置它，或做為物件的欄位。 您「從不」使用 `ref new` (或 `new`) 配置 C++/WinRT 物件。 幕後仍持續呼叫 **RoActivateInstance**。
 
 ```cppwinrt
 using namespace winrt::Windows::Storage::Streams;
@@ -327,7 +331,7 @@ boxes.resize(10, nullptr); // 10 empty references.
 **std::map** 的 `[]` 下標運算子運作方式如下。
 
 - 如果在對應中找到索引鍵，則會傳回現有值的參考 (您可加以覆寫)。
-- 如果在對應中找不到索引鍵，則在由索引鍵 (如可移動，則已移動) 和「預設建構值」  組成的對應中建立新項目，並傳回此值的參考 (您可接著覆寫)。
+- 如果在對應中找不到索引鍵，則在由索引鍵 (如可移動，則已移動) 和「預設建構值」組成的對應中建立新項目，並傳回此值的參考 (您可接著覆寫)。
 
 換句話說，`[]` 運算子一律會在對應中建立專案。 這不同於 C#、Java 和 JavaScript。
 
@@ -371,7 +375,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 
 ## <a name="derived-classes"></a>衍生類別
 
-為了從執行階段類別衍生，基底類別必須「可組合」  。 C++/CX 不要求您採取任何特殊步驟，即可讓類別變為可組合，而 C++/WinRT 則會要求您採取步驟。 您可使用[未密封的關鍵字](/uwp/midl-3/intro#base-classes)，指出您希望類別可作為基底類別使用。
+為了從執行階段類別衍生，基底類別必須「可組合」。 C++/CX 不要求您採取任何特殊步驟，即可讓類別變為可組合，而 C++/WinRT 則會要求您採取步驟。 您可使用[未密封的關鍵字](/uwp/midl-3/intro#base-classes)，指出您希望類別可作為基底類別使用。
 
 ```idl
 unsealed runtimeclass BasePage : Windows.UI.Xaml.Controls.Page
@@ -473,7 +477,7 @@ C++/CX 會自動將純量 Box 處理為物件。 C++/WinRT 會要求您明確地
 
 字串在某些方面是實值類型，而在其他方面則是參考類型。 C++/CX 和 C++/WinRT 會以不同的方式處理字串。
 
-ABI 類型 [**HSTRING**](/windows/win32/winrt/hstring) 是參考計數字串的指標。 但是它並非衍生自 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，因此在技術上並不是「物件」  。 此外, null **HSTRING** 代表空字串。 將非衍生自 **IInspectable** 的項目包裝在 [**IReference\<T\>** ](/uwp/api/windows.foundation.ireference_t_)內，即可完成 Box 處理，而 Windows 執行階段會以 [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) 物件形式提供標準實作 (自訂類型會回報為 [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype))。
+ABI 類型 [**HSTRING**](/windows/win32/winrt/hstring) 是參考計數字串的指標。 但是它並非衍生自 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，因此在技術上並不是「物件」。 此外, null **HSTRING** 代表空字串。 將非衍生自 **IInspectable** 的項目包裝在 [**IReference\<T\>** ](/uwp/api/windows.foundation.ireference_t_) 內，即可完成 Box 處理，而 Windows 執行階段會以 [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) 物件形式提供標準實作 (自訂類型會回報為 [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype))。
 
 C++/CX 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT 會將字串投影為實值類型。 這表示已進行 Box 處理的 null 字串可以有不同的表示法 (取決於您達成的方式)。
 
@@ -699,7 +703,7 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 
 C++/CX 和 C++/WinR 會延遲為標準 **std::wstringstream** 以便建立字串。
 
-| | C++/CX | C++/WinRT |
+| 操作 | C++/CX | C++/WinRT |
 |-|-|-|
 | 附加字串，保留 null | `stream.print(s->Data(), s->Length);` | `stream << std::wstring_view{ s };` |
 | 附加字串，在第一個 null 停止 | `stream << s->Data();` | `stream << s.c_str();` |
@@ -722,16 +726,16 @@ C++/CX 和 C++/WinR 會延遲為標準 **std::wstringstream** 以便建立字串
 ## <a name="important-apis"></a>重要 API
 * [winrt::delegate struct template](/uwp/cpp-ref-for-winrt/delegate)
 * [winrt::hresult_error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
-* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt 命名空間](/uwp/cpp-ref-for-winrt/winrt)
 
 ## <a name="related-topics"></a>相關主題
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [以 C++/WinRT 撰寫事件](author-events.md)
-* [透過 C++/WinRT 的並行和非同步作業](concurrency.md)
-* [使用 C++/WinRT 取用 API](consume-apis.md)
-* [藉由在 C++/WinRT 使用委派來處理事件](handle-events.md)
-* [C++/WinRT 與 C++/CX 之間的互通性](interop-winrt-cx.md)
+* [以 C++/WinRT 撰寫事件](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [透過 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [使用 C++/WinRT 取用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)
+* [藉由在 C++/WinRT 使用委派來處理事件](/windows/uwp/cpp-and-winrt-apis/handle-events)
+* [C++/WinRT 與 C++/CX 之間的互通性](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)
 * [Microsoft 介面定義語言 3.0 參考資料](/uwp/midl-3)
-* 從 WRL 移到 [C++/WinRT](move-to-winrt-from-wrl.md)
-* [C++/WinRT 中的字串處理](strings.md)
+* 從 WRL 移到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl)
+* [C++/WinRT 中的字串處理](/windows/uwp/cpp-and-winrt-apis/strings)
