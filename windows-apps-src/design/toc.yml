@@ -1,4 +1,4 @@
-- name: 概觀
+- name: 總覽
   href: index.md
 - name: 設計基本知識
   items:
@@ -96,7 +96,7 @@
           href: controls-and-patterns/rating.md
         - name: 滑桿
           href: controls-and-patterns/slider.md
-        - name: 切換
+        - name: 切換開關
           href: controls-and-patterns/toggles.md
     - name: 集合
       items:
@@ -360,7 +360,7 @@
                   items:
                     - name: 概觀
                       href: shell/tiles-and-notifications/toast-desktop-apps.md
-                    - name: 'C# 應用程式'
+                    - name: C# 應用程式
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL 應用程式
                       href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
