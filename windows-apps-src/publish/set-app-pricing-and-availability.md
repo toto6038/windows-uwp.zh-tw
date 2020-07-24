@@ -6,27 +6,27 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 價格, 提供, 可搜尋的, 免費試用, 試用, 試用版, 應用程式, 發行日期
 ms.localizationpriority: medium
-ms.openlocfilehash: 715e4c677b3b3e62b9ff515396d3582c3fd99184
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: e9f516aeabae142c1975de2f9df343a43e642bab
+ms.sourcegitcommit: c0a859e4b8b46dea33e381ed5ae5197437902a41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210554"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87120112"
 ---
 # <a name="set-app-pricing-and-availability"></a>設定應用程式價格與可用性
 
 
-您可以從 **app 提交程序**的 [\[價格與可用性\]](app-submissions.md) 頁面決定您的 app 價格、您是否提供免費試用，以及客戶如何、何時、何處可取得您的 app。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
+您可以從 [app 提交程序](app-submissions.md)的 **\[價格與可用性\]** 頁面決定您的 app 價格、您是否提供免費試用，以及客戶如何、何時、何處可取得您的 app。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
 
 
 ## <a name="markets"></a>市場
 
-Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 根據預設，我們會在所有可能的市場提供您的應用程式。 如果您想要的話，可以選擇想要提供應用程式的特定市場。 
+Microsoft Store 觸及全球超過240個國家和地區的客戶。 根據預設，我們會在所有可能的市場提供您的應用程式。 如果您想要的話，可以選擇想要提供應用程式的特定市場。 
 
 如需詳細資訊，請參閱[定義市場選取項目](define-pricing-and-market-selection.md)。
 
 
-## <a name="visibility"></a>可視性
+## <a name="visibility"></a>可見性
 
 **\[可見度\]** 區段可讓您設定如何搜尋和取得您的應用程式，包括人們是否可以在 Microsoft Store 中找到您的應用程式或甚至是查看其 Store 清單。
 
@@ -35,14 +35,14 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 根據預�
 
 ## <a name="schedule"></a>排程
 
-根據預設 (除非您已選取**可見度**區段的其中一個 [\[在 Microsoft Store 推出此應用程式，但不供搜尋\]](choose-visibility-options.md#discoverability) 選項)，您的應用程式將在通過認證並完成發行程序後，會立即對客戶提供。 若要選擇其他日期，請選取 [**顯示選項**] 展開這個區段。 
+根據預設 (除非您已選取[可見度](choose-visibility-options.md#discoverability)區段的其中一個 **\[在 Microsoft Store 推出此應用程式，但不供搜尋\]** 選項)，您的應用程式將在通過認證並完成發行程序後，會立即對客戶提供。 若要選擇其他日期，請選取 [**顯示選項**] 展開這個區段。 
 
 如需詳細資訊，請參閱[設定精確發行時間表](configure-precise-release-scheduling.md)。
 
 
-## <a name="pricing"></a>Pricing
+## <a name="pricing"></a>定價
 
-您必須選取應用程式的基本價格 (除非您已選取**可見度**區段中， **\[在 Microsoft Store 推出此應用程式，但不供搜尋\]** 下方的 [\[停止取得\]](choose-visibility-options.md#discoverability) 選項)，選擇是否 **\[免費\]** 提供，或是其中一個可用的價格區間。 您也可以排程價格變更，表示應用程式的價格應變更的日期和時間。 此外，您可以選擇針對特定市場自訂這些變更。 
+您必須選取應用程式的基本價格 (除非您已選取[可見度](choose-visibility-options.md#discoverability)區段中，**\[在 Microsoft Store 推出此應用程式，但不供搜尋\]** 下方的 **\[停止取得\]** 選項)，選擇是否 **\[免費\]** 提供，或是其中一個可用的價格區間。 您也可以排程價格變更，表示應用程式的價格應變更的日期和時間。 此外，您可以選擇針對特定市場自訂這些變更。 Microsoft 會定期更新建議的價格，以考慮不同市場中的貨幣波動。 當建議的價格變更時，如果您選取的價格不符合新的建議值，[定價] 區域將會顯示警告指示器。 您的產品價格不會變更，您可以控制何時及是否要更新這些價格。 
 
 如需詳細資訊，請參閱[設定與排程應用程價格](set-and-schedule-app-pricing.md)。
 
@@ -57,20 +57,20 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 根據預�
 
 選擇 [**限時**]，讓客戶免費試用您的應用程式幾天，如 [**1 天**]、[**7 天**]、[**15 天**] 或 [**30 天**]。 您可以新增程式碼來[排除或限制試用版中的功能](../monetize/in-app-purchases-and-trials.md)，或者您可以讓客戶在該期間存取完整的功能。 
 > [!NOTE]
->Windows 10 build 10.0.10586 或更早版本的客戶，或 Windows Phone 8.1 和更早版本的客戶不會看到  時間限制的試用版。
+> 限時試用不會對使用 Windows 10 組建 10.0.10586 或較舊版本的客戶顯示，或是使用 Windows Phone 8.1 和較舊版本的客戶。
 
 ### <a name="unlimited"></a>無限制
 
 選擇 [**無限制**]，讓客戶無限期免費存取您的應用程式。 您會想要鼓勵他們購買完整版本，所以請務必新增程式碼以[排除或限制試用版中的功能](../monetize/in-app-purchases-and-trials.md)。
 
-### <a name="start-and-end-dates"></a>開始和結束日期
+### <a name="start-and-end-dates"></a>[開始和結束日期]
 
 根據預設，您的試用將在應用程式發行時提供，而且不會停止提供。 您可以依喜好指定開始和結束提供試用的日期和時間。 
 
 >[!NOTE]
 > 這些日期僅適用於使用 Windows 10 (包括 Xbox) 的客戶。 如果您的 App 適用於使用較舊作業系統版本的客戶，只要您的產品可供使用，也會持續提供試用給這些客戶。 
 
-若要設定何時將試用提供給 Windows 10 的客戶，請將 **\[開始於\]** 和/或 **\[結束於\]** 下拉式清單變更為 **\[於\]** ，然後選擇日期和時間。 如果您這樣做，可以選擇 [**UTC**]，如此您選擇的時間會是全球定位時間 (UTC)，或選擇 [**當地**]，如此將會使用市場所在時區的時間。 (請注意，對於包含多個時區的市場，只會使用該市場中的一個時區。 針對美國，會使用東部時區。）如果您想要為任何市場設定不同的日期，可以**針對特定市場選取 [自訂**]。
+若要設定何時將試用提供給 Windows 10 的客戶，請將 **\[開始於\]** 和/或 **\[結束於\]** 下拉式清單變更為 **\[於\]**，然後選擇日期和時間。 如果您這樣做，可以選擇 [**UTC**]，如此您選擇的時間會是全球定位時間 (UTC)，或選擇 [**當地**]，如此將會使用市場所在時區的時間。 (請注意，對於包含多個時區的市場，只會使用該市場中的一個時區。 針對美國，會使用東部時區。）如果您想要為任何市場設定不同的日期，可以**針對特定市場選取 [自訂**]。
 
 
 ## <a name="sale-pricing"></a>銷售定價
@@ -89,6 +89,6 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 根據預�
 
 ## <a name="publish-date"></a>發佈日期
 
-之前， **\[發佈日期\]** 區段出現在這個頁面上。 這項功能現在可在[提交選項](manage-submission-options.md)頁面中找到，位於 **\[發佈暫停選項\]** 區段中。 (請注意，為了控制您的應用程式何時應發佈至 Microsoft Store，我們建議使用 [\[定價和可用性\]](configure-precise-release-scheduling.md) 頁面的 **\[排程\]** 區段)。
+之前，**\[發佈日期\]** 區段出現在這個頁面上。 這項功能現在可在[提交選項](manage-submission-options.md)頁面中找到，位於 **\[發佈暫停選項\]** 區段中。 (請注意，為了控制您的應用程式何時應發佈至 Microsoft Store，我們建議使用 **\[定價和可用性\]** 頁面的 [\[排程\]](configure-precise-release-scheduling.md) 區段)。
 
 

@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0df5f6c2e12b3b2e761ce45f95930dc179ef367f
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 026dd160ade3fa89af48e4f3ab8efaa85a80f490
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258257"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997755"
 ---
 # <a name="set-speech-recognition-timeouts"></a>設定語音辨識逾時
 
@@ -31,7 +31,7 @@ ms.locfileid: "74258257"
 -   BabbleTimeout - SpeechRecognizer 在假設語音輸入已結束並且完成辨識作業之前，繼續聆聽無法辨識音效 (babble) 的時間長度。
 -   EndSilenceTimeout - SpeechRecognizer 偵測靜音 (在產生辨識結果之前) 並且假設語音輸入已結束的時間長度。
 
-**請注意**，您可以根據每個辨識器來設定  的超時。
+**注意**   您可以根據每個辨識器來設定超時。
 
  
 
@@ -44,14 +44,8 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 ## <a name="related-articles"></a>相關文章
 
-
 * [語音互動](speech-interactions.md)
+
 **範例**
+
 * [語音辨識和語音合成範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
-
- 
-
-
-
-

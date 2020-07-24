@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5192177edf284d1fe6e0c6eb06bf8713fbff8b4e
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 8ecdd882357a7e20506ab6116748d57ab0dde33f
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218378"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997715"
 ---
 # <a name="speech-recognition"></a>語音辨識
 
@@ -221,7 +221,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 網頁搜尋文法類似聽寫文法，包含大量使用者可能說出的字詞與片語。 不過，已將它最佳化，可辨識使用者在搜尋 Web 時常用的詞彙。
 
 > [!NOTE]
-> 因為預先定義的聽寫和 web 搜尋文法可能很大，而且因為它們在線上（而不是在裝置上），效能可能不如在裝置上安裝自訂文法的速度快。     
+> 由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。     
 
 這些預先定義的文法可用來辨識最多 10 秒鐘的語音輸入，而您不需要花費任何編寫的精力。 但是，它們需要連線到網路。
 
@@ -229,7 +229,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 以下說明如何測試是否已啟用語音輸入，並開啟 \[設定\] -> \[隱私權\] -> \[語音、筆跡與輸入\] 頁面 (如果未啟用)。
 
-首先，我們會將全域變數 (HResultPrivacyStatementDeclined) 初始化為 0x80045509 的 HResult 值。 請參閱[C\# 或 Visual Basic 中的例外狀況處理](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10))。
+首先，我們會將全域變數 (HResultPrivacyStatementDeclined) 初始化為 0x80045509 的 HResult 值。 請參閱[C \# 或 Visual Basic 中的例外狀況處理](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10))。
 
 ```csharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
@@ -278,9 +278,9 @@ catch (Exception exception)
 
 使用語音命令定義 (VCD) XML 檔案，定義使用者在啟用您 app 時可以說出以起始動作的命令。 如需詳細資訊，請參閱[透過 Cortana 使用語音命令啟動前景應用程式](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。
 
-請參閱[**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
+請參閱[ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
-**請注意**  您所使用之條件約束類型的類型，取決於您想要建立之辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制類型在應用程式中的用途。
+**注意**   您所使用之條件約束類型的類型，取決於您想要建立之辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制類型在應用程式中的用途。
 若要開始使用條件約束，請參閱[定義自訂辨識條件約束](define-custom-recognition-constraints.md)。
 
 預先定義的通用 Windows app 聽寫文法可以辨識一個語言中大部分的字詞和簡短片語。 將語音辨識器物件具現化而沒有搭配自訂限制式時，預設會啟用該預先定義的聽寫文法。
@@ -316,15 +316,15 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 如果您使用的是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式：
 
--   **\[正在聆聽\]** 畫面。
--   **[正在思考]** 畫面。
--   **\[聽到您說\]** 畫面或錯誤畫面。
+-   **接聽**畫面。
+-   **思考**畫面。
+-   **聽到您說**的是畫面或錯誤畫面。
 
 如果您使用的是以字詞或片語清單為基礎的限制式，或是以 SRGS 文法檔為基礎的限制式：
 
--   **\[正在聆聽\]** 畫面。
--   **[您說的是]** 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
--   **\[聽到您說\]** 畫面或錯誤畫面。
+-   **接聽**畫面。
+-   如果使用者所說的內容可能會被視為一個以上的可能結果，**就表示您說**的是畫面。
+-   **聽到您說**的是畫面或錯誤畫面。
 
 下列影像針對使用以 SGRS 文法檔為基礎之條件約束的語音辨識器，顯示其畫面之間流程的範例。 在這個範例中，語音辨識是成功的。
 
@@ -368,17 +368,8 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
-
-**能夠**
 * [語音互動](speech-interactions.md)
-**設計人員**
-* [語音設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
+
 **範例**
+
 * [語音辨識和語音合成範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
-
- 
-
-
-
-

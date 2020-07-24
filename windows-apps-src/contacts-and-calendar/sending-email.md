@@ -6,22 +6,22 @@ keywords: 連絡人, 電子郵件, 傳送
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 524e1f12c3da0d9d06e73d84e08e2d54efde9a7e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e7839a26afca81913e50296ac5ed9bb9210edbf2
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361222"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997895"
 ---
 # <a name="send-email"></a>傳送電子郵件
 
 示範如何啟動 [撰寫電子郵件] 對話方塊，讓使用者傳送電子郵件訊息。 您可以在顯示該對話方塊之前，使用資料預先填入電子郵件的欄位。 在使用者點選 [傳送] 按鈕之前，不會將訊息傳送出去。
 
-**在這篇文章**
+**本文內容**
 
--   [啟動 compose 電子郵件 對話方塊](#launch-the-compose-email-dialog)
+-   [啟動 [撰寫電子郵件] 對話方塊](#launch-the-compose-email-dialog)
 -   [摘要和後續步驟](#summary-and-next-steps)
--   [相關的主題](#related-topics)
+-   [相關主題](#related-topics)
 
 ## <a name="launch-the-compose-email-dialog"></a>啟動 [撰寫電子郵件] 對話方塊
 
@@ -47,16 +47,13 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> 您使用新增至電子郵件的附件[EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)類別只會出現在郵件應用程式。 如果使用者已設定為其預設郵件程式的任何其他郵件程式，撰寫視窗會顯示不含附件。 這是已知的問題。
+> 使用[EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)類別新增至電子郵件的附件，只會顯示在郵件應用程式中。 如果使用者將任何其他郵件程式設定為其預設的郵件程式，則會顯示 [撰寫] 視窗，但不含附件。 這是已知的問題。
 
-## <a name="summary-and-next-steps"></a>摘要與後續步驟
+## <a name="summary-and-next-steps"></a>摘要和後續步驟
 
 本主題已經示範如何啟動 [撰寫電子郵件] 對話方塊。 如需有關如何選取連絡人做為電子郵件訊息收件者的資訊，請參閱[選取連絡人](selecting-contacts.md)。 請參閱 [**PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) 來選取要做為電子郵件附件的檔案。
 
 ## <a name="related-topics"></a>相關主題
 
 * [選取連絡人](selecting-contacts.md)
-* [如何在呼叫檔案選擇器之後繼續您的 Windows Phone 應用程式](https://docs.microsoft.com/previous-versions/windows/apps/dn614994(v=win.10))
- 
-
  
