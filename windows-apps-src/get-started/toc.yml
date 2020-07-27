@@ -23,11 +23,13 @@
     - name: 您的第一個應用程式
       href: ../get-started/your-first-app.md
       items:
-        - name: '建立 "Hello, world" 應用程式 (C#)'
+        - name: '"Hello, World!" C# 中的應用程式'
           href: ../get-started/create-a-hello-world-app-xaml-universal.md
-        - name: '建立 "Hello, world" 應用程式 (C++)'
+        - name: '"Hello, World!" C++/WinRT 中的應用程式'
+          href: ../get-started/create-a-basic-windows-10-app-in-cppwinrt.md
+        - name: '"Hello, World!" 應用程式'
           href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
-        - name: '建立 "Hello, world" 應用程式 (JS)'
+        - name: '"Hello, World!" JavaScript 中的應用程式'
           href: ../get-started/create-a-hello-world-app-js-uwp.md
     - name: 建置複雜的應用程式
       href: ../get-started/plan-your-app.md

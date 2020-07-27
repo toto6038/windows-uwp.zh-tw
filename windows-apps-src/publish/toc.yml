@@ -178,14 +178,12 @@
       href: ../publish/insights-report.md
     - name: 廣告績效報告
       href: ../publish/advertising-performance-report.md
-    - name: 廣告行銷活動報告
-      href: ../publish/ad-campaign-report.md
     - name: 下載分析報告
       href: ../publish/download-analytic-reports.md
-- name: 獲得報酬
+- name: 取得付款
   href: ../publish/getting-paid-apps.md
   items:
-    - name: 設定您的支出及納稅申報表
+    - name: 設定支出帳戶和稅賦形式
       href: ../publish/setting-up-your-payout-account-and-tax-forms.md
     - name: 支付臨界值、方法和時間範圍
       href: ../publish/payment-thresholds-methods-and-timeframes.md
@@ -210,3 +208,5 @@
       href: ../publish/store-app-quality.md
     - name: 開發人員管理辦法
       href: ../publish/store-developer-code-of-conduct.md
+    - name: Microsoft Store 產品排名、刊登位置和行銷揭露聲明
+      href: 'https://aka.ms/disclosurepolicypdf'
