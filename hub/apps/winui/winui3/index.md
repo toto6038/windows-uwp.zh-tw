@@ -3,12 +3,12 @@ title: WinUI 3 預覽版 2 (2020 年 7 月)
 description: WinUI 3 預覽版 2 的概觀。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 6dd29b7da0ce2d0f3a08538d392792337f1e1b5a
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 0acea4520f10d5f64baa29cb64fdf0ba1cc4552e
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493049"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997955"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI 程式庫 3 預覽版 2 (2020 年 7 月)
 
@@ -72,14 +72,14 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
 
 您可以使用這些 WinUI 專案範本來建立應用程式。
 
-| 範本 | Language | 說明 |
+| 範本 | Language | 描述 |
 |----------|----------|-------------|
 | 已封裝的空白應用程式 (WinUI in Desktop) | C# 和 C++ | 使用以 WinUI 為基礎的使用者介面，建立桌面 .NET 5 (C#) 或原生 Win32 (C++) 應用程式。 產生的專案包含一個基本視窗，該視窗是從 WinUI 程式庫中的 **Microsoft.UI.Xaml.Window** 類別衍生，您可以用來開始建置您的 UI。 如需此專案類型的詳細資訊，請參閱[開始使用適用於桌面應用程式的 WinUI 3](get-started-winui3-for-desktop.md)。<p></p>解決方案也包含 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。  |
 | 空白應用程式 (WinUI in UWP)  | C# 和 C++ | 建立具有以 WinUI 為基礎的使用者介面的 UWP 應用程式。 產生的專案包含一個基本頁面，該頁面是從 WinUI 程式庫中的 **Microsoft.UI.Xaml.Controls.Page** 類別衍生，您可以用來開始建置您的 UI。 如需此專案類型的詳細資訊，請參閱[開始使用適用於 UWP 應用程式的 WinUI 3](get-started-winui3-for-uwp.md)。 |
 
 您可以使用這些 WinUI 專案範本來建置可供以 WinUI 為基礎的應用程式載入及使用的元件。
 
-| 範本 | Language | 說明 |
+| 範本 | Language | 描述 |
 |----------|----------|-------------|
 | 類別庫 (WinUI in Desktop) | 僅限 C# | 在 C# 中建立 .NET 5 受控類別庫 (DLL)，可供具有以 WinUI 為基礎的使用者介面的其他 .NET 5 桌面應用程式使用。  |
 | 類別庫 (WinUI in UWP)  | 僅限 C# | 在 C# 中建立受控類別程式庫 (DLL)，可供具有以 WinUI 為基礎的使用者介面的其他 UWP 應用程式使用。 |
@@ -103,6 +103,9 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
 ## <a name="bug-fixes-and-other-improvements-in-winui-3-preview-2"></a>WinUI 3 預覽版 2 中的錯誤修正和其他改良功能
 
 這是適用於預覽版 2 的錯誤修正和其他更新完整清單。 如需此版本中已解決的最重要錯誤修正清單，請參閱我們的[版本公告](https://aka.ms/winui3/preview2-announcement)。
+
+> [!NOTE]
+> WinUI 3 預覽版 2 使用 WinUI 2 程式庫的 2.4.2 版。 
 
 - [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) 和 [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) 現在會如預期般的在 C# 桌面應用程式中運作
   - 這會清除在後端中更新時未在 UI 中更新的集合控制項相關其他問題。
