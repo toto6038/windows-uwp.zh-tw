@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: c8eb384be08addd75e77f37d6fb579a179e68581
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: 0db89408d5bc0af8b9101768a6498e70f9be6147
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448348"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997935"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 應用程式中使用 SQLite 資料庫
 您可以使用 SQLite 在使用者的裝置上儲存和擷取輕量資料庫中的資料。 本指南會示範怎麼做。
@@ -75,7 +75,7 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 ![SQLite 套件](images/sqlite-package.png)
 
-繼續進行本指南中的[在 SQLite 資料庫中新增和擷取資料](#use-data)一節。
+繼續進行本指南中的[在 SQLite 資料庫中新增和擷取資料](/windows/uwp/data-access/sqlite-databases#add-and-retrieve-data-in-a-sqlite-database)一節。
 
 ### <a name="the-minimum-version-of-your-project-targets-the-fall-creators-update"></a>您專案的最低版本是以 Fall Creators Update 為目標
 
@@ -122,7 +122,6 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 ![SQLite 套件](images/sqlite-package-v2.png)
 
-<a id="use-data" />
 
 ## <a name="add-and-retrieve-data-in-a-sqlite-database"></a>在 SQLite 資料庫中新增和擷取資料
 
@@ -173,7 +172,6 @@ using Microsoft.Data.Sqlite;
 using System.Collections.Generic;
 ```
 
-<a id="initialize" />
 
 ### <a name="initialize-the-sqlite-database"></a>初始化 SQLite 資料庫
 
@@ -217,7 +215,6 @@ public App()
 }
 ```
 
-<a id="insert" />
 
 ### <a name="insert-data-into-the-sqlite-database"></a>將資料插入 SQLite 資料庫
 
@@ -247,7 +244,6 @@ public static void AddData(string inputText)
 }
 ```
 
-<a id="retrieve" />
 
 ### <a name="retrieve-data-from-the-sqlite-database"></a>從 SQLite 資料庫擷取資料
 

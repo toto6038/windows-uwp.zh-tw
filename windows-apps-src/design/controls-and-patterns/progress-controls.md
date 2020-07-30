@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 34eca0c822b0da96cae39463777c5c3e9888240c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 25ca05dc6c604d40092cdc28d186de4b835774b2
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970803"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997995"
 ---
 # <a name="progress-controls"></a>進度控制項
 
@@ -213,7 +213,3 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 - [ProgressBar 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
 - [ProgressRing 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
-
-**適用於開發人員 (XAML)**
-- [新增進度控制項](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
-- [如何為 Windows Phone 建立自訂不確定的進度列](https://msdn.microsoft.com/library/windows/apps/gg442303.aspx)

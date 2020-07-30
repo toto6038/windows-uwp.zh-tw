@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ed202bca80518333201595987c4af631f82f0853
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a1de8437c5b463b13e3adb8c4d7eb7161663f4d6
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970783"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997965"
 ---
 # <a name="sliders"></a>滑桿
 
@@ -73,10 +73,6 @@ ms.locfileid: "82970783"
 </td>
 </tr>
 </table>
-
-Windows Phone 上用來控制音量的滑桿。
-
-![Windows Phone 上用來控制音量的滑桿](images/control-examples/slider-phone.png)
 
 用來變更 Windows 顯示設定中文字大小的滑桿。
 
