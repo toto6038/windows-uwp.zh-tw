@@ -5,12 +5,12 @@ ms.date: 05/22/2020
 ms.topic: article
 keywords: windows 10 s, 永遠連線, ARM, ARM64, x86 模擬
 ms.localizationpriority: medium
-ms.openlocfilehash: 006de4f1f04ffb98d46b6ceb981d3d0fba311026
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 679afeb1915bfcb84445ca97453a884654249a0e
+ms.sourcegitcommit: 2aa82d60d7f9edf7ae7f9a550a8d044e2040c08a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854744"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87443348"
 ---
 # <a name="windows-10-on-arm"></a>Windows 10 on ARM
 原本 Windows 10 (與 Windows 10 行動裝置版有所區別) 只能在搭載 x86 與 x64 處理器的電腦上執行。 現在，Windows 10 desktop 可以在具有秋季建立者更新或更新版本的 ARM64 處理器支援的機器上執行。 ARM CPU 架構的省電本質可讓這些電腦擁有全天候的電池使用時間及行動數據網路支援。 這些電腦會提供極佳的應用程式相容性，可讓您執行現有未修改狀態的 x86 win32 應用程式。 如需詳細資訊或示範，請查看[適用于 Always CONNECTED 電腦的 Channel 9 影片](https://channel9.msdn.com/Events/Build/2017/P4171)。
@@ -41,15 +41,15 @@ Visual Studio 2019 提供數個適用于 Windows 10 on ARM 的工具下載。 �
 
 ### <a name="visual-c-redistributable"></a>Visual C++ 可轉散發套件
 
-適用于 ARM 應用程式的 Visual C++ 可轉散發套件。 請造訪 [ [Visual Studio downlaods] 頁面](https://visualstudio.microsoft.com/downloads/)向下滾動至 [**所有下載**]、開啟 [**其他工具和**架構]，然後流覽至 Microsoft Visual C++ 可轉散發套件，以**用於 Visual Studio 2019**專案。 選取 [ **ARM64** ] 選項按鈕，然後按一下 [**下載**]。
+適用于 ARM 應用程式的 Visual C++ 可轉散發套件。 請造訪[Visual Studio 下載] 頁面](https://visualstudio.microsoft.com/downloads/)向下滾動到**所有下載**，開啟**其他工具和**架構，然後流覽至**適用于 Visual Studio 2019**專案的 Microsoft Visual C++ 可轉散發套件。 選取 [ **ARM64** ] 選項按鈕，然後按一下 [**下載**]。
 
 ### <a name="remote-tools"></a>遠端工具
 
-Visual Studio 遠端工具適用于 ARM 應用程式。 流覽 [ [Visual Studio downlaods] 頁面](https://visualstudio.microsoft.com/downloads/)，向下**Visual Studio 2019**的 [**所有下載**]，開啟 [工具]，然後導覽至 [ **Visual Studio 遠端工具 2019** ] 專案。 選取 [*ARM64* ] 選項按鈕，然後按一下 [**下載**]。
+Visual Studio 遠端工具適用于 ARM 應用程式。 流覽[Visual Studio 下載] 頁面](https://visualstudio.microsoft.com/downloads/)，向下**Visual Studio 2019**的 [**所有下載**] 中，開啟 [工具]，然後導覽至 [ **Visual Studio 遠端工具 2019** ] 專案。 選取 [*ARM64* ] 選項按鈕，然後按一下 [**下載**]。
 
 
 ## <a name="in-this-section"></a>本節內容
-|主題 | 描述 |
+|主題 | 說明 |
 |-----|-----|
 |[x86 模擬在 ARM 上的運作方式](apps-on-arm-x86-emulation.md)|概觀詳述在 ARM 上如何模擬 x86 應用程式。|
 |[對 ARM 上的 x86 應用程式進行疑難排解](apps-on-arm-troubleshooting-x86.md)|在 ARM 上執行 x86 應用程式的一般問題，以及修正這些問題。 |
@@ -57,7 +57,7 @@ Visual Studio 遠端工具適用于 ARM 應用程式。 流覽 [ [Visual Studio 
 |[ARM 上的程式相容性疑難排解員](apps-on-arm-program-compat-troubleshooter.md)|如果您的應用程式在 ARM 上無法正常運作時調整相容性設定的指引。 |
 
 ## <a name="related-topics"></a>相關主題
-|主題 | 描述 |
+|主題 | 說明 |
 |-----|-----|
 |[使用 WDK 建置 ARM64 驅動程式](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)|建置 ARM64 驅動程式的指示。 |
 | [偵錯 ARM 上的 x86 應用程式](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64) | 用於偵錯 ARM 上的 x86 應用程式的指引。 |
