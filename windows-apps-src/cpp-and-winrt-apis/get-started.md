@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: 968c347927edf0ad44476ec4bdca97aae19bb9a4
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 3e17e3f8107e82547ec0d367099f621e5b2e590a
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493033"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997845"
 ---
 # <a name="get-started-with-cwinrt"></a>開始使用 C++/WinRT
 
@@ -71,7 +71,9 @@ int main()
 標頭包含投影到 C++/WinRT 的 Windows API。 也就是說，C++/WinRT 針對每個 Windows 類型定義 C++- 適用的對等項目 (稱為「投影類型」)。 投影類型有相同的完整名稱做為 Windows 類型，但它放在 C++ **winrt** 命名空間。 在預先編譯的標頭中包含這些標頭，會減少增量的建置時間。
 
 > [!IMPORTANT]
-> 每當您要使用 Windows 命名空間的類型，請包含對應的 C++/WinRT Windows 命名空間標頭檔案，如上所示。 「對應」標頭的名稱和類型命名空間的名稱相同。 例如，使用適用於 [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) 執行階段類別 `#include <winrt/Windows.Foundation.Collections.h>` 的 C++/WinRT 投影。 如果您包含 `winrt/Windows.Foundation.Collections.h`，則不必再包含 `winrt/Windows.Foundation.h`。 每個 C++/WinRT 投影標頭自動包含其父系命名空間標頭檔案；讓您不需要明確包含它。 不過，如果您這麼做，也不會有任何錯誤。
+> 每當您要使用 Windows 命名空間的類型，您必須 `#include` 對應的 C++/WinRT Windows 命名空間標頭檔案，如上所示。 「對應」標頭的名稱和類型命名空間的名稱相同。 例如，使用適用於 [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) 執行階段類別 (包括 `winrt/Windows.Foundation.Collections.h` 標頭) 的 C++/WinRT 投影。
+> 
+> C++/WinRT 投影標頭往往會自動包含其父命名空間標頭檔。 例如，`winrt/Windows.Foundation.Collections.h` 會包含 `winrt/Windows.Foundation.h`。 但您不應該依賴此行為，因為它是會隨著時間變更的實作詳細資料。 您必須明確包含所需的任何標頭。
 
 ```cppwinrt
 using namespace winrt;

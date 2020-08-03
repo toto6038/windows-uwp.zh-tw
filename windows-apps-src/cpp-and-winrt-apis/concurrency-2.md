@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a0ea1ec70f4ae4255030541a6513541db1fb99
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ff00264d0806e7fbdfcabd000ec68857b1485dcd
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267506"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296150"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>採用 C++/WinRT 的更進階並行和非同步
 
@@ -81,11 +81,14 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     co_await winrt::resume_background();
     // Do compute-bound work here.
 
-    co_await winrt::resume_foreground(textblock.Dispatcher()); // Switch to the foreground thread associated with textblock.
+    // Switch to the foreground thread associated with textblock.
+    co_await winrt::resume_foreground(textblock.Dispatcher());
 
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
 ```
+
+**winrt::resume_foreground** 函式會採用選擇性的 priority 參數。 如果您使用該參數，則上面顯示的模式是適當的。 如果沒有，則您可以選擇將 `co_await winrt::resume_foreground(someDispatcherObject);` 簡化為僅 `co_await someDispatcherObject;`。
 
 ## <a name="execution-contexts-resuming-and-switching-in-a-coroutine"></a>在協同程式中執行內容、繼續和切換
 
@@ -145,7 +148,7 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 }
 ```
 
-在此案例中，**StorageFile::OpenAsync** 的呼叫效率有點差。 因此，必須在繼續時 (C++/WinRT 會在此時間點之後還原 UI 執行緒內容) 將內容切換至背景執行緒 (以便讓處理常式能夠將執行傳回給呼叫者)。 但在此情況下，則不需要在 UI 執行緒上進行切換，直到我們即將更新 UI 時才有需要。 在呼叫 **winrt::resume_background** 之前  所呼叫的 Windows 執行階段 API 越多，便會產生更多不必要的來回內容切換。 其解決辦法是不要在這之前呼叫任何  Windows 執行階段 API。 將這些 API 全都移到 **winrt::resume_background** 之後。
+在此案例中，**StorageFile::OpenAsync** 的呼叫效率有點差。 因此，必須在繼續時 (C++/WinRT 會在此時間點之後還原 UI 執行緒內容) 將內容切換至背景執行緒 (以便讓處理常式能夠將執行傳回給呼叫者)。 但在此情況下，則不需要在 UI 執行緒上進行切換，直到我們即將更新 UI 時才有需要。 在呼叫 **winrt::resume_background** 之前所呼叫的 Windows 執行階段 API 越多，便會產生更多不必要的來回內容切換。 其解決辦法是不要在這之前呼叫任何 Windows 執行階段 API。 將這些 API 全都移到 **winrt::resume_background** 之後。
 
 ```cppwinrt
 IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
@@ -261,7 +264,7 @@ int main()
 }
 ```
 
-上述範例會在私人執行緒上建立佇列 (包含在控制器內)，然後將控制器傳遞至協同程式。 協同程式可以使用佇列在私人執行緒上等候 (暫停和繼續)。  **DispatcherQueue** 的另一個常見用法是在目前的 UI 執行緒上，針對傳統型或 Win32 應用程式建立佇列。
+上述範例會在私人執行緒上建立佇列 (包含在控制器內)，然後將控制器傳遞至協同程式。 協同程式可以使用佇列在私人執行緒上等候 (暫停和繼續)。 **DispatcherQueue** 的另一個常見用法是在目前的 UI 執行緒上，針對傳統型或 Win32 應用程式建立佇列。
 
 ```cppwinrt
 DispatcherQueueController CreateDispatcherQueueController()
@@ -311,7 +314,7 @@ winrt::fire_and_forget RunAsync(DispatcherQueue queue)
 }
 ```
 
-對 **winrt::resume_foreground** 的呼叫一律會「佇列處理」  ，然後回溯堆疊。 您也可以選擇性地設定繼續優先順序。
+對 **winrt::resume_foreground** 的呼叫一律會「佇列處理」，然後回溯堆疊。 您也可以選擇性地設定繼續優先順序。
 
 ```cppwinrt
 winrt::fire_and_forget RunAsync(DispatcherQueue queue)
@@ -651,11 +654,11 @@ winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, Medi
 }
 ```
 
-第一個引數 (sender  ) 保留未命名，因為我們永遠不會用到。 因此，我們可以安全地將其保留以作為參考。 但會看到 args  以值的形式傳遞。 請參閱上述的[參數傳遞](concurrency.md#parameter-passing)一節。
+第一個引數 (sender) 保留未命名，因為我們永遠不會用到。 因此，我們可以安全地將其保留以作為參考。 但會看到 args 以值的形式傳遞。 請參閱上述的[參數傳遞](concurrency.md#parameter-passing)一節。
 
 ## <a name="awaiting-a-kernel-handle"></a>等候核心控制碼
 
-C++/WinRT 提供 **resume_on_signal** 類別，您可以將其用於暫止，直到核心事件收到信號為止。 您需負責確保控制碼在 `co_await resume_on_signal(h)` 傳回前保持有效。 **resume_on_signal** 本身無法為您執行這項操作，因為即使在 **resume_on_signal** 開始前，您都可能遺失控制碼，如第一個範例所示。
+C++/WinRT 提供 [**winrt::resume_on_signal**](/uwp/cpp-ref-for-winrt/resume-on-signal) 類別，您可以將其用於暫止，直到核心事件收到信號為止。 您需負責確保控制碼在 `co_await resume_on_signal(h)` 傳回前保持有效。 **resume_on_signal** 本身無法為您執行這項操作，因為即使在 **resume_on_signal** 開始前，您都可能遺失控制碼，如第一個範例所示。
 
 ```cppwinrt
 IAsyncAction Async(HANDLE event)
@@ -667,7 +670,7 @@ IAsyncAction Async(HANDLE event)
 
 傳入的 **HANDLE** 只有在函式傳回前有效，且此函式 (也就是協同程式) 會在第一個暫停點傳回 (此案例中的第一個 `co_await`)。 在等候 **DoWorkAsync** 時，控制權已交回給呼叫端、呼叫框架已超出範圍，且您不再得知當協同程式繼續時，控制碼是否有效。
 
-就技術上而言，我們的協同程式會以值的形式接收其參數 (請參閱上述的[參數傳遞](concurrency.md#parameter-passing))。 但在此情況，我們需要更進一步，才能遵守該指引的「精神」  (而不只是字面意義)。 我們需要傳遞強式參考 (也就是擁有權) 和控制碼。 方法如下。
+就技術上而言，我們的協同程式會以值的形式接收其參數 (請參閱上述的[參數傳遞](concurrency.md#parameter-passing))。 但在此情況，我們需要更進一步，才能遵守該指引的「精神」 (而不只是字面意義)。 我們需要傳遞強式參考 (也就是擁有權) 和控制碼。 方法如下。
 
 ```cppwinrt
 IAsyncAction Async(winrt::handle event)
@@ -712,6 +715,21 @@ IAsyncAction SampleCaller()
     event.close(); // Our handle is closed, but Async still has a valid handle.
 
     co_await async; // Will wake up when *event* is signaled.
+}
+```
+
+您可以將 timeout 值傳遞至 **resume_on_signal**，如此範例所示。
+
+```cppwinrt
+winrt::handle event = ...
+
+if (co_await winrt::resume_on_signal(event.get(), std::literals::2s))
+{
+    puts("signaled");
+}
+else
+{
+    puts("timed out");
 }
 ```
 

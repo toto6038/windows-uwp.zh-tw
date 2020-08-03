@@ -5,12 +5,12 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 傳遞, 參數, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c5ce6a30e68fe6fc26316bc2f41c6e2556b98ef
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 51cde2332d3d9df9d1f488aa7f8246f9e1e2ed36
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255252"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997975"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>將參數傳入到 ABI 界限
 
@@ -57,7 +57,7 @@ Windows 執行階段集合已是 **IIterable** 狀態。
 
 請注意，**IIterable\<U\>** 和 **std::vector\<U\>** 是不允許的項目，即使 **U** 可轉換成 **T** 也一樣。針對 **std::vector\<U\>** ，您可以使用雙重迭代器版本 (詳細資料如下)。
 
-在某些情況下，您擁有的物件可能已實作您想要的 **IIterable**。 例如，[**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) 產生的 **IVectorView\<StorageFile\>** 會實作 **IIterable<StorageFile>** 。 但也會實作 **IIterable<IStorageItem>** ；您只需要明確要求即可。
+在某些情況下，您擁有的物件可能已實作您想要的 **IIterable**。 例如，[**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) 產生的 **IVectorView\<StorageFile\>** 會實作 **IIterable\<StorageFile\>** 。 但也會實作 **IIterable\<IStorageItem\>** ；您只需要明確要求即可。
 
 ```cppwinrt
 IVectorView<StorageFile> pickedFiles{ co_await filePicker.PickMultipleFilesAsync() };
@@ -96,7 +96,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 **winrt::param::vector_view\<T\>** 和 **winrt::param::async_vector_view\<T\>** 可讓參數更容易地傳遞至採用 **IVectorView\<T\>** 的 API。
 
-您可以使用 [**IVector\<T\>.GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview) 從 **IVector** 中取得 **IVectorView**。
+您可以使用 [**IVector\<T\>.GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview) 從 **IVector** 取得 **IVectorView**。
 
 |您可以傳遞的類型|同步|Async|附註|
 |-|-|-|-|
@@ -154,7 +154,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 ## <a name="array-parameters"></a>陣列參數
 
-**winrt::array_view\<T\>** 不在 **winrt::param** 命名空間中，但其會用於 C 樣式陣列 (亦稱為「一致陣列」  ) 的參數。
+**winrt::array_view\<T\>** 不在 **winrt::param** 命名空間中，但其會用於 C 樣式陣列&mdash;亦稱為*一致陣列*的參數。
 
 |您可以傳遞的類型|附註|
 |-|-|

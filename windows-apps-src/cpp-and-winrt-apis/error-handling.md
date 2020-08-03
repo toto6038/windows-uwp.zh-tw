@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, error, handling, exception, 標準, 投影, 錯誤, 處理, 例外狀況
 ms.localizationpriority: medium
-ms.openlocfilehash: 37819d1626d3adc6f5647f447567a9273e72668d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1092427659cfbf2fb7d1b5dbfc9cb8802dcfeccd
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68270134"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296165"
 ---
 # <a name="error-handling-with-cwinrt"></a>使用 C++/WinRT 處理錯誤
 
@@ -19,9 +19,9 @@ ms.locfileid: "68270134"
 ## <a name="avoid-catching-and-throwing-exceptions"></a>避免攔截和擲回例外狀況
 我們建議您繼續撰寫[異常安全程式碼](/cpp/cpp/how-to-design-for-exception-safety)，但您想要盡可能避免攔截和擲回例外狀況。 如果沒有例外狀況的處理常式，則 Windows 會自動產生錯誤報告 (包括損毀的小型傾印)，這有助於您追蹤問題出在哪裡。
 
-不要擲回您希望攔截的例外狀況。 且不要對預期失敗使用例外狀況。 「只有在發生未預期執行階段錯誤時」  才擲回例外狀況，並使用錯誤/結果碼處理其他所有項目 &mdash; 直接且接近失敗的來源。 如此一來，當例外狀況被「擲回時」  ，您便知道原因是您程式碼中的錯誤，或者系統中例外的錯誤狀態。
+不要擲回您希望攔截的例外狀況。 且不要對預期失敗使用例外狀況。 「只有在發生未預期執行階段錯誤時」才擲回例外狀況，並使用錯誤/結果碼處理其他所有項目 &mdash; 直接且接近失敗的來源。 如此一來，當例外狀況被「擲回時」，您便知道原因是您程式碼中的錯誤，或者系統中例外的錯誤狀態。
 
-請考量存取 Windows 登錄的案例。 如果您的應用程式無法從登錄讀取值，這是可以預期的，且您應該適當地處理它。 不要擲回例外狀況；而是傳回 `bool` 或 `enum` 值，指出值未讀取可能的原因。 無法將值「寫入」  登錄，換句話說，問題可能已超過可在您應用程式中合理地處理的範圍。 在這類案例中，您不想讓應用程式繼續，所以例外狀況產生的錯誤報告會是最快速的方式，防止您的應用程式造成任何損害。
+請考量存取 Windows 登錄的案例。 如果您的應用程式無法從登錄讀取值，這是可以預期的，且您應該適當地處理它。 不要擲回例外狀況；而是傳回 `bool` 或 `enum` 值，指出值未讀取可能的原因。 無法將值「寫入」登錄，換句話說，問題可能已超過可在您應用程式中合理地處理的範圍。 在這類案例中，您不想讓應用程式繼續，所以例外狀況產生的錯誤報告會是最快速的方式，防止您的應用程式造成任何損害。
 
 舉另一個範例，請考慮從 [**StorageFile.GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync#Windows_Storage_StorageFile_GetThumbnailAsync_Windows_Storage_FileProperties_ThumbnailMode_) 的呼叫擷取一個縮圖影像，然後將該縮圖傳遞至 [**BitmapSource.SetSourceAsync**](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync#Windows_UI_Xaml_Media_Imaging_BitmapSource_SetSourceAsync_Windows_Storage_Streams_IRandomAccessStream_)。 如果該呼叫序列會讓您將 `nullptr` 傳遞到 **SetSourceAsync** (無法讀取影像檔案；附檔名或許讓它看起來像是包含影像的資料，但實際上並沒有)，則將會導致擲回不正確的指標例外狀況。 如果在您的程式碼中找出像這樣的案例，而不是作為例外狀況攔截並處理案例，請改為檢查從 **GetThumbnailAsync** 傳回的 `nullptr`。
 
@@ -30,7 +30,7 @@ ms.locfileid: "68270134"
 但更可能的是，效能受影響涉及執行階段額外負荷，這是為了確保在擲回例外狀況的罕見情況下，會呼叫適當的解構函式。 此保證措施的代價依是否實際擲回例外狀況而定。 因此，您應該確保編譯器知道哪些函式可能擲回例外狀況。 如果編譯器可以證明，特定函式 (`noexcept` 規格) 不會有任何例外狀況，便能最佳化它所產生的程式碼。
 
 ## <a name="catching-exceptions"></a>攔截例外狀況
-在 [Windows 執行階段 ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) 層出現的錯誤狀況，是以 HRESULT 值的格式傳回。 但是，您不需要在程式碼中處理 HRESULT。 在使用端上針對 API 所產生的 C++/WinRT 投影程式碼，在 ABI 層偵測到錯誤 HRESULT 程式碼且將程式碼轉換為 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 例外狀況，您可以攔截並處理。 如果您確定  要處理 HRESULTS，請使用 **winrt::hresult** 型別。
+在 [Windows 執行階段 ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) 層出現的錯誤狀況，是以 HRESULT 值的格式傳回。 但是，您不需要在程式碼中處理 HRESULT。 在使用端上針對 API 所產生的 C++/WinRT 投影程式碼，在 ABI 層偵測到錯誤 HRESULT 程式碼且將程式碼轉換為 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 例外狀況，您可以攔截並處理。 如果您確定要處理 HRESULTS，請使用 **winrt::hresult** 型別。
 
 例如，如果使用者剛好從圖片媒體櫃刪除一個影像，而您的應用程式正在逐一查看該集合時，則投影會擲回例外狀況。 在此情況下，您必須攔截並處理該例外狀況。 以下程式碼範例顯示此案例。
 
@@ -58,7 +58,7 @@ IAsyncAction MakeThumbnailsAsync()
         }
         catch (winrt::hresult_error const& ex)
         {
-            winrt::hresult hr = ex.to_abi(); // HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND).
+            winrt::hresult hr = ex.code(); // HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND).
             winrt::hstring message = ex.message(); // The system cannot find the file specified.
         }
     }
@@ -66,6 +66,8 @@ IAsyncAction MakeThumbnailsAsync()
 ```
 
 呼叫使用 `co_await` 的函式時，請在協同程式裡使用此相同模式。 此 HRESULT 例外狀況轉換的另一個範例是，在元件 API 傳回 E_OUTOFMEMORY (造成擲回 **std::bad_alloc**) 時。
+
+若您只是要查看 HRESULT 程式碼，建議使用 [**winrt::hresult_error::code**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function)。 [**winrt::hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function) 函式另一方面會轉換為 COM 錯誤物件，並將狀態推送至 COM 執行緒本機存放區。
 
 ## <a name="throwing-exceptions"></a>擲回例外狀況
 在某些情況下，如果您決定指定函式的呼叫失敗，則您的應用程式將無法復原 (您將無法如預期般再依賴它來運作)。 下列程式碼範例使用 [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) 值作為從 [**CreateEvent**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-createeventa) 傳回的 HANDLE 包裝函式。 然後將控制代碼 (從它建立 `bool` 值) 傳遞至 [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 函式範本。 **winrt::check_bool** 處理 `bool`，或任何可轉換為 `false` (錯誤狀況)，或 `true` (成功狀況) 的值。
@@ -94,7 +96,7 @@ winrt::check_bool(::SetEvent(h.get()));
 ## <a name="throwing-exceptions-when-authoring-an-api"></a>在撰寫 API 時擲回例外狀況
 所有 [Windows 執行階段應用程式二進位介面](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types)界限 (或 ABI 界限) 都必須是 *noexcept*&mdash;這表示例外狀況絕對不能在該處逸出。 當您撰寫 API 時，您應該一律使用 C++ `noexcept` 關鍵字來標記 ABI 界限。 `noexcept` 在 C++ 中有特定行為。 如果 C++ 例外狀況命中 `noexcept` 界限，則此程序會因為 **std::terminate** 而立即失敗。 這種行為通常是理想的做法，因為未處理的例外狀況幾乎一律暗指程序中不明的狀態。
 
-例外狀況不得跨 ABI 界限，因此在實作中出現的錯誤狀況，是以 HRESULT 錯誤碼格式跨 ABI 層傳回。 您使用 C++/WinRT 撰寫 API 時，系統會為您產生程式碼，將您在實作中「擲回」  的任何例外狀況轉換成 HRESULT。 所產生的程式碼中是以此模式使用 [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 函式。
+例外狀況不得跨 ABI 界限，因此在實作中出現的錯誤狀況，是以 HRESULT 錯誤碼格式跨 ABI 層傳回。 您使用 C++/WinRT 撰寫 API 時，系統會為您產生程式碼，將您在實作中「擲回」的任何例外狀況轉換成 HRESULT。 所產生的程式碼中是以此模式使用 [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) 函式。
 
 ```cppwinrt
 HRESULT DoWork() noexcept

@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc12d76cf34b5a631435a7535567aab0cafb0f44
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: dcccc862768b276c3c7965e51e8b2c30dca61e59
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970373"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998005"
 ---
 # <a name="media-player"></a>媒體播放器
 
@@ -85,7 +85,7 @@ Windows 10 入門 app 中的媒體播放器。
 
 在大部分使用情況下 (特別是在較大的螢幕上 )，建議使用下面的雙列控制項配置。 此配置可提供更多空間供控制項使用，並且可讓使用者更容易操作時間軸。
 
-![手機上雙列 MTC 控制項範例](images/controls/mtc_double_inprod.png)
+![雙列 MTC 控制項範例](images/controls/mtc_double_inprod.png)
 
 **系統媒體傳輸控制項**
 

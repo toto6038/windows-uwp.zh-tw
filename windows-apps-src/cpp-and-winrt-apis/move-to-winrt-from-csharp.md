@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 遷移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 21032a99c389e968728fe2dac2875475efc351c4
-ms.sourcegitcommit: 379fd00bfcc6c5f1e3c7e379a367b08641a7f961
+ms.openlocfilehash: 734173812ff5a853abfb93eb34fcfa43b9f16872
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819014"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296198"
 ---
 # <a name="move-to-cwinrt-from-c"></a>從 C# 移到 C++/WinRT
 
@@ -274,6 +274,34 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 | 存取結果 | `s = builder.ToString();` | `ws = builder.str();` |
 
 另請參閱[移植 **BuildClipboardFormatsOutputString** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)，以及[移植 **DisplayChangedFormats** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats)。
+
+### <a name="running-code-on-the-main-ui-thread"></a>在主要 UI 執行緒上執行程式碼 
+
+此範例取自[條碼掃描器範例](/samples/microsoft/windows-universal-samples/barcodescanner/)。
+
+當您想要在 C# 專案的主要 UI 執行緒上執行作業時，通常會使用 [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) 方法，如下所示。
+
+```csharp
+private async void Watcher_Added(DeviceWatcher sender, DeviceInformation args)
+{
+    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+    {
+        // Do work on the main UI thread here.
+    });
+}
+```
+
+使用 C++/WinRT 來表達更為容易。 請注意，我們接受參數值是假設我們想要在第一個暫止點 (此案例中為 `co_await`) 之後存取它們。 如需詳細資訊，請參閱[參數傳遞](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)。
+
+```cppwinrt
+winrt::fire_and_forget Watcher_Added(DeviceWatcher sender, winrt::DeviceInformation args)
+{
+    co_await Dispatcher();
+    // Do work on the main UI thread here.
+}
+```
+
+如果您需要以預設值以外的優先順序來執行工作，請參閱 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) 函式，其有採用 priority 的多載。 如需示範如何等候對 **winrt::resume_foreground** 呼叫的程式碼範例，請參閱[考量使用執行緒親和性程式設計](/windows/uwp/cpp-and-winrt-apis/concurrency-2#programming-with-thread-affinity-in-mind)。
 
 ## <a name="porting-related-tasks-that-are-specific-to-cwinrt"></a>C++/WinRT 特定的移植相關工作
 

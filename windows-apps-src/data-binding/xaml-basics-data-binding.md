@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 707c2ed110498f4ef18fea31ace87d1fd2434112
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d8f8d869bd18b6d3e6897d91b2616bc4eb1335d0
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67820337"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997835"
 ---
 # <a name="create-data-bindings"></a>建立資料繫結
 
@@ -18,7 +18,7 @@ ms.locfileid: "67820337"
 
 在本教學課程中，您將了解如何將重複使用文字取代成資料繫結，以及建立 UI 與資料之間的其他直接連結。 您也將瞭解如何格式化或轉換資料以供顯示，以及讓 UI 和資料保持同步。當您完成本教學課程時，您將能夠改善 XAML 和 C# 程式碼的簡單性和組織，讓您更輕鬆地進行維護和擴充。
 
-您將會從簡化版的 PhotoLab 範例開始著手。 這個簡易使用包含完整的資料層以及基本的 XAML 頁面配置，但省去次要功能，讓程式碼更易於瀏覽。 本教學課程不會一直建置到完整的應用程式，因此請務必查看最終版本來了解各項功能，例如自訂動畫和電話支援。 您可以在 [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) 存放庫的根資料夾中找到最終版本。 
+您將會從簡化版的 PhotoLab 範例開始著手。 這個簡易使用包含完整的資料層以及基本的 XAML 頁面配置，但省去次要功能，讓程式碼更易於瀏覽。 本教學課程不會一直建置到完整的應用程式，因此請務必查看最終版本來了解各項功能，例如自訂動畫和彈性配置。 您可以在 [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) 存放庫的根資料夾中找到最終版本。 
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -171,7 +171,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-**Images** 屬性的值永不變更，但由於該屬性的類型為 **ObservableCollection\<T\>** ，集合的內容  卻可能變更，繫結將會自動發現變更並更新 UI。 
+**Images** 屬性的值永不變更，但由於該屬性的類型為 **ObservableCollection\<T\>** ，集合的*內容*卻可能變更，繫結將會自動發現變更並更新 UI。 
 
 為了測試這點，我們要暫時加入一個按鈕來刪除目前選取的影像。 這個按鈕不在最終版本中，因為選取影像就會帶您前往詳細資料頁面。 不過，**ObservableCollection\<T\>** 的行為在最終 PhotoLab 範例中仍然很重要，因為 XAML 是在頁面建構函式中進行初始化 (透過 **InitializeComponent** 方法呼叫)，而 **Images** 集合則是後來在 **OnNavigatedTo** 方法中填入。 
 
@@ -428,7 +428,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 1. 在 MainPage.xaml 中，尋找名為 **ImageGridView** 的 **GridView**，並加入 **ItemClick** 值。 
 
     > [!TIP] 
-    > 如果您鍵入下方變更，而不是以複製/貼上方式進行，您將會看到 IntelliSense 快顯視窗顯示 "\<新事件處理常式\>"。 如果您按下 Tab 鍵，其中會填入預設方法處理常式名稱的值，並自動移除下一個步驟中顯示的方法。 接著可以按 F12 瀏覽至程式碼後置中的方法。 
+    > 如果您鍵入下方變更，而不是以複製/貼上方式進行，您將會看到 IntelliSense 快顯視窗顯示 "\<New Event Handler\>"。 如果您按下 Tab 鍵，其中會填入預設方法處理常式名稱的值，並自動移除下一個步驟中顯示的方法。 接著可以按 F12 瀏覽至程式碼後置中的方法。 
 
     **之前：**
     ```xaml

@@ -4,7 +4,7 @@ title: 命令列
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
-ms.date: 05/19/2017
+ms.date: 07/23/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 97507e0d9a954bc102bd4d2bcd825369df4cced7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: f7b2c260d20c95012297c1f78037626844f6badf
+ms.sourcegitcommit: 83225cd9f3ef184277fc293d09982ecd511cc088
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970043"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87160883"
 ---
 # <a name="command-bar"></a>命令列
 
@@ -54,10 +54,6 @@ CommandBar 控制項是一般用途、彈性、輕量的控制項，它可以顯
 展開的命令列。
 
 ![展開的命令列](images/control-examples/command-bar-photos.png)
-
-Windows Phone 上 Outlook 行事曆中的命令列
-
-![Outlook 行事曆 app 中的命令列](images/control-examples/command-bar-calendar-phone.png)
 
 ## <a name="anatomy"></a>結構
 
@@ -121,7 +117,7 @@ CommandBar 控制項有 3 個可用來新增命令與內容的屬性：[PrimaryC
 
 您能以程式設計方式控制在 PrimaryCommands 與 SecondaryCommands 之間移動命令。
 
-- 如果有會顯示在各頁面上的命令，最好將該命令保持在一致的位置。 
+- 如果有會顯示在各頁面上的命令，最好將該命令保持在一致的位置。
 - 我們建議將 [接受]、[是]、[確定] 命令放在 [拒絕]、[否] 和 [取消] 的左邊。  一致性可讓使用者自信地在系統中移動，幫助他們將 app 瀏覽的知識從某個 app 運用到另一個 app。
 
 ### <a name="app-bar-buttons"></a>應用程式列按鈕
@@ -260,7 +256,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 變更 ClosedDisplayMode 來提供更多或較少的提示給使用者，會影響周圍元素的配置。 相反地，當 CommandBar 在關閉和開啟之間轉換時，並不會影響其他元素的配置。
 
 ## <a name="placement"></a>放置
-命令列可以放置在 app 視窗頂端、底部或內嵌在裡面。
+命令列可以放在應用程式視窗的頂端、應用程式視窗底部，以及內嵌，方法是將它們內嵌在配置控制項中 (例如 ```Grid.row```)。
 
 ![應用程式列放置範例 1](images/AppbarGuidelines_Placement1.png)
 

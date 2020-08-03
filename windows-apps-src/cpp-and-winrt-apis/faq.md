@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f5ad82831b6b07e0bbc2127947f777f0cd50e5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 23f1733f5710d86c8481899f5865d0c190e21885
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81759921"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296196"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -28,7 +28,7 @@ ms.locfileid: "81759921"
 如需完整的變更集合 (包括重大變更)，請參閱 [C++/WinRT 2.0 中的新聞和變更](news.md#news-and-changes-in-cwinrt-20)。 例如，如果您在 Windows 執行階段集合上使用範圍型 `for`，則您現在必須 `#include <winrt/Windows.Foundation.Collections.h>`。
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>我的新專案為什麼不會編譯？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134
-如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，並將 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803) 設定為目標，則新建立的 C++/WinRT 專案可能無法完成，並出現錯誤「error C3861: 'from_abi': identifier not found」  ，以及其他源自 base.h  的錯誤。 解決辦法是將 Windows SDK 的較新 (更一致) 版本設定為目標，或將專案屬性設定為 [C/C++]   > [語言]   > [一致性模式:  否] (此外，如果 **/permissive-** 顯示在 [其他選項]  底下的專案屬性 [C/C++]   > [命令列]  中，請加以刪除)。
+如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，並將 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803) 設定為目標，則新建立的 C++/WinRT 專案可能無法完成，並出現錯誤「error C3861: 'from_abi': identifier not found」，以及其他源自 base.h 的錯誤。 解決辦法是將 Windows SDK 的較新 (更一致) 版本設定為目標，或將專案屬性設定為 [C/C++] > [語言] > [一致性模式:否] (此外，如果 **/permissive-** 顯示在 [其他選項] 底下的專案屬性 [C/C++] > [命令列] 中，請加以刪除)。
 
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>如何解決建置錯誤「C++/WinRT VSIX 不再提供專案建置支援。  請將專案參考新增至 Microsoft.Windows.CppWinRT Nuget 套件」？
 將 **Microsoft.Windows.CppWinRT** NuGet 套件安裝到您的專案中。 如需詳細資訊，請參閱[舊版 VSIX 擴充功能](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
@@ -40,13 +40,13 @@ C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGe
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>C++/WinRT Visual Studio 擴充功能 (VSIX) 有何需求？
 若為 VSIX 擴充功能的版本 1.0.190128.4 和更新版本，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。 若為其他版本，則請參閱[舊版 VSIX 擴充功能](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
-## <a name="whats-a-runtime-class"></a>什麼是「執行階段類別」  ？
+## <a name="whats-a-runtime-class"></a>什麼是「執行階段類別」？
 執行階段類別是可透過現代化 COM 介面啟動與使用的類型 (通常是跨可執行檔邊界的)。 不過，執行階段類別也可在實作它的編譯單位中使用。 您可以在介面定義語言 (IDL) 中宣告執行階段類別，並可以在使用 C++/WinRT 的標準 C++ 中實作它。
 
-## <a name="what-do-the-projected-type-and-the-implementation-type-mean"></a>「投影類型」  和「實作類型」  是什麼意思？
-如果您只「取用」  Windows 執行階段類別 (執行階段類別)，則您可以專用「投影類型」  來處理。 C++/WinRT 是「語言投影」  ，因此投影類型是 Windows 執行階段介面一部分，其使用 C++/WinRT「投影」  到 C++ 裡。 如需詳細資訊，請參閱[使用 C++/WinRT 使用 API](consume-apis.md)。
+## <a name="what-do-the-projected-type-and-the-implementation-type-mean"></a>「投影類型」和「實作類型」是什麼意思？
+如果您只「取用」 Windows 執行階段類別 (執行階段類別)，則您可以專用「投影類型」來處理。 C++/WinRT 是「語言投影」，因此投影類型是 Windows 執行階段介面一部分，其使用 C++/WinRT「投影」到 C++ 裡。 如需詳細資訊，請參閱[使用 C++/WinRT 使用 API](consume-apis.md)。
 
-「實作類型」  包含執行階段類別的實作，因此它僅在實作執行階段類別的專案中可用。 當您在實作執行階段類別的專案中執行時 (Windows 執行階段元件專案，或使用 XAML UI 的專案)，請務必將熟悉適用於執行階段類別的實作類型間的區別，且代表執行階段類別的投影類型投影至 C++/WinRT。 如需詳細資訊，請參閱[使用 C++/WinRT 撰寫 API](author-apis.md)。
+「實作類型」包含執行階段類別的實作，因此它僅在實作執行階段類別的專案中可用。 當您在實作執行階段類別的專案中執行時 (Windows 執行階段元件專案，或使用 XAML UI 的專案)，請務必將熟悉適用於執行階段類別的實作類型間的區別，且代表執行階段類別的投影類型投影至 C++/WinRT。 如需詳細資訊，請參閱[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
 ## <a name="do-i-need-to-declare-a-constructor-in-my-runtime-classs-idl"></a>我需要在執行階段類別的 IDL 中宣告一個建構函式嗎？
 只有當設計此執行階段類別從其實作編譯單位之外來使用 (它是 Windows 執行階段元件，旨在供給 Windows 執行階段用戶端應用程式的一般使用)。 如需 IDL 中完整的目的與宣告建構函式結果的詳細資訊，請參閱[執行階段類別建構函式](author-apis.md#runtime-class-constructors)。
@@ -72,7 +72,7 @@ C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGe
 
 如果您嘗試透過任何投影類型的建構函式(而非其 **std::nullptr_t** 建構函式) 具現化本機上實作的執行階段類別，也可能會發生此錯誤。 若要執行此操作，您將需要通常稱為統一建構的 C++/WinRT 2.0 功能。 如果您想要加入這項功能，請參閱[加入統一建構和直接實作存取。](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)，以取得詳細資訊和程式碼範例。
 
-如您想以「不」  需要統一建構的方式具現化本機上實作的執行階段類別，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md)。
+如您想以「不」需要統一建構的方式具現化本機上實作的執行階段類別，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md)。
 
 ## <a name="should-i-implement-windowsfoundationiclosable-and-if-so-how"></a>我是否應該實作 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，該如何進行？
 如果在其解構程式中您有釋出資源的執行階段類別，且設計該執行階段類別從其實作編譯單位之外使用 (它是 Windows 執行階段元件，旨在供給 Windows 執行階段用戶端應用程式的一般使用)，我們建議您也實作 **IClosable** 以便支援不確定完成的語言使用您的執行階段類別。 請確定不論是否解構函式都會釋出您的資源，[**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close)，或兩者都呼叫。 可以任意呼叫 **IClosable::Close** 數次。
@@ -88,7 +88,7 @@ C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGe
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>我可以使用 LLVM/Clang 來編譯 C++/WinRT 嗎？
 我們對於 C++/WinRT 不支援 LLVM 和 Clang toolchain，但我們在內部使用它來驗證 C++/WinRT 的標準一致性。 例如，如果您想要模擬我們在內部的操作，您可能會嘗試實驗，例如如下所述。
 
-移至 [LLVM 下載頁面](https://releases.llvm.org/download.html)，尋找 [下載 LLVM 6.0.0]   > [預先建置的二進位檔]  ，然後下載 **Clang for Windows (64 位元)** 。 在安裝期間，選擇新增 LLVM 到 PATH 系統變數，讓您可以從命令提示字元叫用它。 基於此實驗的目的，您可以略過 (如果您看到) 任何「找不到 MSBuild 工具組目錄」和/或「MSVC 整合安裝失敗」錯誤。 有各種不同的方式可叫用 LLVM/Clang;，以下範例顯示的只是一種方式。
+移至 [LLVM 下載頁面](https://releases.llvm.org/download.html)，尋找 [下載 LLVM 6.0.0] > [預先建置的二進位檔]，然後下載 **Clang for Windows (64 位元)** 。 在安裝期間，選擇新增 LLVM 到 PATH 系統變數，讓您可以從命令提示字元叫用它。 基於此實驗的目的，您可以略過 (如果您看到) 任何「找不到 MSBuild 工具組目錄」和/或「MSVC 整合安裝失敗」錯誤。 有各種不同的方式可叫用 LLVM/Clang;，以下範例顯示的只是一種方式。
 
 ```cmd
 C:\ExperimentWithLLVMClang>type main.cpp
@@ -120,7 +120,7 @@ windows.com
 Visual Studio 是我們支援和為 C++/WinRT 建議的開發工具。 請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>為什麼針對唯讀屬性產生的實作函式沒有 `const` 限定詞？
-當您在 [MIDL 3.0](/uwp/midl-3/) 中宣告唯讀屬性時，您預期 `cppwinrt.exe` 工具會為您產生限定 `const` (const 函式會將「此」  指標視為 const) 的實作函式。
+當您在 [MIDL 3.0](/uwp/midl-3/) 中宣告唯讀屬性時，您預期 `cppwinrt.exe` 工具會為您產生限定 `const` (const 函式會將「此」指標視為 const) 的實作函式。
 
 我們無疑會建議您盡可能使用 const，但 `cppwinrt.exe` 工具本身不會嘗試推斷哪些實作函式理論上可能是 const，哪些可能不是。 您可以和本範例一樣選擇讓任何實作函式成為 const。
 
@@ -183,7 +183,7 @@ a.f();
 
 標頭檔 `winrt/Windows.UI.Xaml.Media.Animation.h` 會宣告名為 **GetCurrentTime** 的方法，而 `windows.h` (透過 `winbase.h`) 會定義名為 **GetCurrentTime** 的巨集。 當兩者發生衝突時，C++ 編譯器會產生「*錯誤 C4002：函式類巨集引動過程 GetCurrentTime 有太多引數*」。
 
-同樣地，`winrt/Windows.Globalization.h` 會宣告名為 **TRY** 的方法，而 `afx.h` 會定義名為 **GetCurrentTime** 的巨集。 當這些有所衝突時，C++編譯器會產生「錯誤 C2334：'{' 前面有非預期的權杖；略過顯示的函式主體  」。
+同樣地，`winrt/Windows.Globalization.h` 會宣告名為 **TRY** 的方法，而 `afx.h` 會定義名為 **GetCurrentTime** 的巨集。 當這些有所衝突時，C++編譯器會產生「錯誤 C2334：'{' 前面有非預期的權杖；略過顯示的函式主體」。
 
 若要解決其中一個問題，或同時解決這兩個問題，您可以執行此操作。
 
@@ -197,6 +197,9 @@ a.f();
 #pragma pop_macro("TRY")
 #pragma pop_macro("GetCurrentTime")
 ```
+
+## <a name="how-do-i-speed-up-symbol-loading"></a>我如何加速符號載入的速度？
+在 Visual Studio 中，[工具]  >  [選項]  >  [偵錯]  >  [符號] > 勾選 [僅載入指定的模組]。 接著，您可以在堆疊清單中的 DLL 上按一下滑鼠右鍵，並載入個別模組。
 
 > [!NOTE]
 > 如果本主題無法解答您的問題，則您可藉由造訪 [Visual Studio C++ 開發人員社群](https://developercommunity.visualstudio.com/spaces/62/index.html)，或[在 Stack Overflow 上使用 `c++-winrt` 標籤](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)來尋找說明。
