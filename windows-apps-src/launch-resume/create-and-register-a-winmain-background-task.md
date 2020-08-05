@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 14c447312361166148da6a5a8c2b20165fabbe97
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 1e06a87ce771f603721c928b984d0f57d8e45013
+ms.sourcegitcommit: 1d53d89bd3d044f4a2dc290b93c1ad15a088b361
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80487522"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87547310"
 ---
 # <a name="create-and-register-a-winmain-com-background-task"></a>建立並註冊 winmain COM 背景工作
 
@@ -22,7 +22,7 @@ ms.locfileid: "80487522"
 > 從 Windows 10 版本2004開始提供 BackgroundTaskBuilder. SetTaskEntryPointClsid 方法。
 
 > [!NOTE]
-> 此案例不適用於封裝的 WinMain 應用程式。 UWP 應用程式會在嘗試執行此案例時遇到錯誤。
+> 此案例僅適用于已封裝的 WinMain 應用程式。 UWP 應用程式會在嘗試執行此案例時遇到錯誤。
 
 **重要 API**
 
@@ -41,11 +41,11 @@ ms.locfileid: "80487522"
 2.  在該新類別中，執行[**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)介面。 [**IBackgroundTask**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是必要的進入點，會在觸發指定的事件時呼叫;這是每個背景工作中的必要方法。
 
 > [!NOTE]
-> 背景工作類別本身&mdash;，而且背景工作專案&mdash;中的所有其他類別都必須是**公用**的。
+> 背景工作類別本身 &mdash; 和背景工作專案中的所有其他類別都 &mdash; 必須是**公用**的。
 
 下列範例程式碼顯示的是一個基本的背景工作類別，它會計算質數，並將它寫入檔案，直到要求取消為止。
 
-C++/WinRT 範例會將背景工作類別實作為[**COM coclass**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory)。
+C + +/WinRT 範例會將背景工作類別實作為[**COM coclass**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory)。
 
 
 <details>
@@ -264,9 +264,9 @@ namespace PackagedWinMainBackgroundTaskSample {
 
 ## <a name="add-the-support-code-to-instantiate-the-com-class"></a>新增支援程式碼以具現化 COM 類別
 
-為了讓背景工作啟用到完全信任的 winmain 應用程式中，背景工作類別必須具有支援程式碼，如此一來，COM 才會瞭解如何啟動應用程式進程（如果它不在執行中），然後瞭解進程的哪個實例是目前用來處理該背景工作之新啟用的伺服器。
+為了讓背景工作啟用到完全信任的 winmain 應用程式中，背景工作類別必須具有支援程式碼，如此一來，COM 才會瞭解如何啟動應用程式進程（如果它不在執行中），然後瞭解進程的哪個實例目前是伺服器，以處理該背景工作的新啟用。
 
-1.  COM 必須瞭解如何啟動應用程式進程（如果尚未執行）。 裝載背景工作程式碼的應用程式進程必須在封裝資訊清單中宣告。 下列範例程式碼示範如何在**SampleBackgroundApp**內裝載**SampleTask** 。 當背景工作在沒有執行中的進程時啟動時，將會以進程引數 **"-StartSampleTaskServer"** 啟動**SampleBackgroundApp** 。
+1.  COM 必須瞭解如何啟動應用程式進程（如果尚未執行）。 裝載背景工作程式碼的應用程式進程必須在封裝資訊清單中宣告。 下列範例程式碼示範如何在**SampleBackgroundApp.exe**內裝載**SampleTask** 。 當背景工作在沒有執行中的進程時啟動時， **SampleBackgroundApp.exe**將會以處理常式引數 **"-StartSampleTaskServer"** 啟動。
 
 ```xml
 
@@ -1058,15 +1058,15 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
-* [建立及註冊同處理序序背景工作](create-and-register-an-inproc-background-task.md)。
-* [將跨進程背景工作轉換成同進程背景工作](convert-out-of-process-background-task.md)
+* [建立並註冊同進程背景](create-and-register-an-inproc-background-task.md)工作。
+* [將跨處理序背景工作轉換成同處理序背景工作](convert-out-of-process-background-task.md)
 
 **背景工作指引**
 
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 UWP 應用程式中觸發暫止、繼續和背景事件（在進行調試時）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 
 **背景工作 API 參考**
 
-* [**ApplicationModel 背景**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
