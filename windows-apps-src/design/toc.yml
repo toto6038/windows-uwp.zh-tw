@@ -1,4 +1,4 @@
-- name: 總覽
+- name: 概觀
   href: index.md
 - name: 設計基本知識
   items:
@@ -450,6 +450,18 @@
           href: input/respond-to-the-presence-of-the-touch-keyboard.md
         - name: 使用輸入範圍來變更觸控式鍵盤
           href: input/use-input-scope-to-change-the-touch-keyboard.md
+    - name: 文字輸入
+      items:
+        - name: 自訂文字輸入
+          href: input/custom-text-input.md
+        - name: 文字大小調整
+          href: input/text-scaling.md
+        - name: 選取文字和影像
+          href: input/guidelines-for-textselection.md
+        - name: 輸入法編輯器
+          href: input/input-method-editors.md
+        - name: 輸入法編輯器需求
+          href: input/input-method-editor-requirements.md
     - name: 遊戲台與遙控器
       href: input/gamepad-and-remote-interactions.md
     - name: Touchpad
@@ -497,10 +509,6 @@
       href: input/input-injection.md
     - name: 識別輸入裝置
       href: input/identify-input-devices.md
-    - name: 自訂文字輸入
-      href: input/custom-text-input.md
-    - name: 文字大小調整
-      href: input/text-scaling.md
     - name: 拖放
       href: input/drag-and-drop.md
     - name: 視覺化縮放和調整大小
@@ -509,8 +517,6 @@
       href: input/guidelines-for-panning.md
     - name: 旋轉
       href: input/guidelines-for-rotation.md
-    - name: 選取文字和影像
-      href: input/guidelines-for-textselection.md
     - name: 目標
       href: input/guidelines-for-targeting.md
     - name: 視覺化回饋
@@ -527,7 +533,7 @@
   items:
     - name: 概觀
       href: usability/index.md
-    - name: 協助工具
+    - name: 協助工具選項
       href: accessibility/accessibility.md
       items:
         - name: 概觀
