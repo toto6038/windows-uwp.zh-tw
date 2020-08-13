@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 32472f698381f4b109f280f0b964f00cdbcec66a
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: e1580bdc62585cb777334c217419b4de6a691add
+ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606197"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162563"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在應用程式資訊清單中宣告背景工作
 
@@ -21,7 +21,7 @@ ms.locfileid: "82606197"
 **重要 API**
 
 -   [**BackgroundTasks 結構描述**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**ApplicationModel 背景**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。
 
@@ -90,7 +90,7 @@ ms.locfileid: "82606197"
 
 2.  變更 Task Type 屬性清單以表示使用這個背景工作的工作登錄類型。 如果使用多個觸發程序類型來登錄背景工作，請針對每一個觸發程序類型，新增其他 Task 元素與 Type 屬性。
 
-    **請注意**  ，請務必列出您所使用的每個觸發程式類型，否則背景工作不會向未宣告的觸發程式類型註冊（ [**register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法將會失敗並擲回例外狀況）。
+    **注意**   請務必列出您所使用的每個觸發程式類型，或背景工作不會向未宣告的觸發程式類型註冊 ([**register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法將會失敗，並擲回例外狀況) 。
 
     這個程式碼片段範例指出系統事件觸發程序和推播通知的用法：
 
@@ -107,7 +107,7 @@ ms.locfileid: "82606197"
 
 針對每一個由應用程式註冊的其他背景工作類別，重複步驟 2。
 
-下列範例是取自[背景工作範例]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 複製此範例的 Extensions 區段，並視需要進行修改，以在應用程式資訊清單中宣告背景工作。
+下列範例是取自[背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 複製此範例的 Extensions 區段，並視需要進行修改，以在應用程式資訊清單中宣告背景工作。
 
 ```xml
 <Applications>
@@ -209,7 +209,7 @@ ms.locfileid: "82606197"
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>每次觸發程序透過 SupportsMultipleInstances 屬性引發時，在新的處理序中執行
 
-此範例會宣告在新處理序中執行的背景工作，這個新的處理序在每次引發新的觸發程序時取得本身的資源限制 (記憶體、CPU)。 注意啟用此行為的 `SupportsMultipleInstances` 使用方式。 若要使用此屬性，您必須以 SDK ' 10.0.15063 ' （Windows 10 建立者更新）或更高版本為目標。
+此範例會宣告在新處理序中執行的背景工作，這個新的處理序在每次引發新的觸發程序時取得本身的資源限制 (記憶體、CPU)。 注意啟用此行為的 `SupportsMultipleInstances` 使用方式。 若要使用此屬性，您必須將 SDK 版本 ' 10.0.15063 ' 設為目標 (Windows 10 建立者更新) 或更高版本。
 
 ```xml
 <Package

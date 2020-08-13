@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: d2b6ba88587f4f536d4fe6fc2750a520166fde18
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: f660c17cd981ca830f0751819d01bf2141408ecc
+ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606347"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162553"
 ---
 # <a name="handle-a-cancelled-background-task"></a>處理已取消的背景工作
 
@@ -67,7 +67,7 @@ void ExampleBackgroundTask::OnCanceled(
 }
 ```
 
-將名** \_為 CancelRequested**的旗標變數新增至背景工作類別。 此變數將用來指示何時提出取消要求。
+將名為** \_ CancelRequested**的旗標變數新增至背景工作類別。 此變數將用來指示何時提出取消要求。
 
 ```csharp
 volatile bool _CancelRequested = false;
@@ -83,9 +83,9 @@ private:
     volatile bool CancelRequested;
 ```
 
-在您于步驟1中建立的**OnCanceled**方法中，將旗標變數** \_CancelRequested**設定為**true**。
+在您于步驟1中建立的**OnCanceled**方法中，將旗標變數** \_ CancelRequested**設定為**true**。
 
-完整的[背景工作範例]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9) **OnCanceled**方法會將** \_CancelRequested**設定為**true** ，並寫入可能有用的 debug 輸出。
+完整的[背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) **OnCanceled**方法會將** \_ CancelRequested**設定為**true** ，並寫入可能有用的 debug 輸出。
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -131,9 +131,9 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>藉由結束背景工作來處理取消
 
-收到取消要求時，執行背景工作的方法必須藉由辨識** \_cancelRequested**設定為**true**來停止工作和結束。 對於同進程背景工作，這表示從**OnBackgroundActivated**方法傳回。 對於跨進程背景工作，這表示會從**Run**方法傳回。
+收到取消要求時，執行背景工作的方法必須藉由辨識** \_ cancelRequested**設定為**true**來停止工作和結束。 對於同進程背景工作，這表示從**OnBackgroundActivated**方法傳回。 對於跨進程背景工作，這表示會從**Run**方法傳回。
 
-修改背景工作類別的程式碼，以便在旗標變數運作時檢查旗標變數。 如果** \_cancelRequested**變成 true，請停止工作繼續進行。
+修改背景工作類別的程式碼，以便在旗標變數運作時檢查旗標變數。 如果** \_ cancelRequested**變成 true，請停止工作繼續進行。
 
 [背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)包含的檢查會在背景工作取消時停止定期計時器回呼。
 
@@ -257,7 +257,7 @@ else
 
 您可以下載[背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)，查看方法內容中的這些程式碼範例。
 
-為了方便說明，範例程式碼只會顯示[背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)中的部分「**執行**方法」（和「回呼計時器」）。
+為了方便說明，範例程式碼只會顯示 (的部分**執行**方法，以及從[背景工作範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)) 的回呼計時器。
 
 ## <a name="run-method-example"></a>Run 方法範例
 
