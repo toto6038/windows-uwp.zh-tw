@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 強式, 弱式, 參考
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc991ff485d9e4ba90264e1b8082a40e0f4ab801
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c8ca914737698c22d52657d20ee655d20491b3e8
+ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267485"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88180763"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的強式和弱式參考
 
@@ -105,7 +105,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-C++/WinRT 類別會直接或間接從 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 範本衍生。 因此，C++/WinRT 物件可以呼叫其受保護的 [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 成員函式來對其 this  指標擷取強式參考。 請注意，您不需要在上述程式碼範例中確實使用 `strong_this` 變數，只要呼叫 **get_strong** 來累加 C++/WinRT 物件的參考計數，並讓其隱含的 this  指標保持有效即可。
+C++/WinRT 類別會直接或間接從 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 範本衍生。 因此，C++/WinRT 物件可以呼叫其受保護的 [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 成員函式，以擷取其 this 指標的強式參考。 請注意，您不需要在上述程式碼範例中確實使用 `strong_this` 變數，只要呼叫 **get_strong** 來累加 C++/WinRT 物件的參考計數，並讓其隱含的 this  指標保持有效即可。
 
 > [!IMPORTANT]
 > 由於 **get_strong** 是 **winrt::implements** 結構範本的成員函式，因此您只能從直接或間接衍生自 **winrt::implements** 的類別 (例如 C++/WinRT 類別) 中呼叫該函式。 如需有關衍生自 **winrt::implements** 的資訊和範例，請參閱[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
@@ -253,7 +253,7 @@ event_source.Event([this](auto&& ...)
 
 ### <a name="the-solution"></a>解決方案
 
-解決方案是擷取強式參考 (或者，如我們所見，若弱式參考更為適當，則擷取之)。 強式參考「會」  累加參考計數，並且「會」  讓目前物件存留下來。 您只需宣告擷取變數 (在此範例中稱為 `strong_this`)，並藉由對 [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 發出呼叫來將其初始化，此呼叫會對我們的 this  指標擷取強式參考。
+解決方案是擷取強式參考 (或者，如我們所見，若弱式參考更為適當，則擷取之)。 強式參考「會」  累加參考計數，並且「會」  讓目前物件存留下來。 您只需宣告擷取變數 (在此範例中稱為 `strong_this`)，並藉由對 [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 發出呼叫來將其初始化，此呼叫會擷取我們的 this 指標的強式參考。
 
 > [!IMPORTANT]
 > 由於 **get_strong** 是 **winrt::implements** 結構範本的成員函式，因此您只能從直接或間接衍生自 **winrt::implements** 的類別 (例如 C++/WinRT 類別) 中呼叫該函式。 如需有關衍生自 **winrt::implements** 的資訊和範例，請參閱[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。

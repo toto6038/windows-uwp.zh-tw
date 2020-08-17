@@ -5,17 +5,17 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5d74e99526ed5531db92ba88a1053e07a3fc993b
+ms.sourcegitcommit: c7f33dbe9516d28664df1b91e03edca3cb9fb0c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66360077"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87871684"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函式
 
 > [!NOTE]
-> 針對如何在應用程式中以 **{x:Bind}** 使用資料繫結 (以及 **{x:Bind}** 和 **{Binding}** 的完整比較) 的相關資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
+> 如需有關如何在應用程式中搭配使用資料繫結與 **{x:Bind}** (以及完整比較 **{x:Bind}** 和 **{Binding}** ) 的一般資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)和 [{x:Bind} 標記延伸](../xaml-platform/x-bind-markup-extension.md)。
 
 從 Windows 10 版本 1607 開始， **{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這可以：
 
@@ -61,7 +61,7 @@ class ColorEntry
 
 ## <a name="path-to-the-function"></a>函式的路徑
 
-函式的路徑是以和其他屬性路徑相同的方式指定，且可以包含句點 (.)、索引子或轉換來找出該函式。
+[函式的路徑](../xaml-platform/x-bind-markup-extension.md#property-path)是以和其他屬性路徑相同的方式指定，且可以包含[點 (.)](../xaml-platform/x-bind-markup-extension.md#property-path-resolution)、[索引子](../xaml-platform/x-bind-markup-extension.md#collections)或[轉換](../xaml-platform/x-bind-markup-extension.md#casting)來找出該函式。
 
 靜態函式可以使用 XMLNamespace:ClassName.MethodName 語法來指定。 例如，使用下列語法繫結至程式碼後置中的靜態函式。
 
@@ -120,7 +120,7 @@ namespace MyNamespace
 ```
 
 ```csharp
-public class Person:INotifyPropertyChanged
+public class Person : INotifyPropertyChanged
 {
     //Implementation for an Icon property and a CancellationToken property with PropertyChanged notifications
     ...
@@ -183,3 +183,6 @@ public class Person:INotifyPropertyChanged
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```
+
+## <a name="see-also"></a>請參閱
+* [{x:Bind} 標記延伸](../xaml-platform/x-bind-markup-extension.md)

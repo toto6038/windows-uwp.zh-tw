@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Windows 10 中的協助工具, 建置無障礙 win32 應用程式, 建置無障礙 UWP 應用程式, 建置無障礙 WPF 應用程式, 建置無障礙 WinForms 應用程式
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 2739546061febcfc96403ed5520fdcbd8bc2c462
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 04dc3571f6b2d8ddf57a3695330070d7c5b5061e
+ms.sourcegitcommit: 9beb6cce7375b726ad90ee84b72754268ae2819a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76725931"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88047785"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的協助工具
 
@@ -140,7 +140,7 @@ ms.locfileid: "76725931"
       取代 MSDN 程式碼庫的新範例瀏覽器。
    :::column-end:::
    :::column:::
-      [MSDN 程式碼庫 (已淘汰)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+      [MSDN 程式碼庫 (GitHub 封存)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample)
 
       下載適用於 Windows、Windows Phone、Microsoft Azure、Office、SharePoint、Silverlight 和其他產品的範例。
    :::column-end:::

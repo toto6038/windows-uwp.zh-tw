@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: 設定 windows, 開發環境, 開發工具, 開發路徑, Microsoft, Windows, 開發人員, 秘訣, 效能, WSL, 終端機, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: e62ca938a23910290a8c63682fc2fde77ec0ea92
-ms.sourcegitcommit: 1e06168ada5ce6013b1d07c428548f084464a286
+ms.openlocfilehash: 4c9311c8aacf708e92feaea0b26ac20a01403257
+ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87363722"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162573"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>在 Windows 10 上設定開發環境
 
@@ -87,8 +87,8 @@ ms.locfileid: "87363722"
     :::column:::
        [![Windows 封裝管理員](../images/winget.png)](https://docs.microsoft.com/windows/package-manager/)<br>
         **[Windows 封裝管理員](https://docs.microsoft.com/windows/package-manager/)**<br>
-        使用 WinGet (完整封裝管理員) 搭配您的命令列，在 Windows 10 上安裝應用程式。<br>
-        [安裝 WinGet (公開預覽)](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
+        使用 winget.exe 用戶端 (完整封裝管理員) 搭配您的命令列，在 Windows 10 上安裝應用程式。<br>
+        [安裝 Windows 封裝管理員 (公開預覽)](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
     :::column-end:::
     :::column:::
        [![PowerToys](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>

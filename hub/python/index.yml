@@ -3,19 +3,19 @@ title: Windows 文件上的 Python
 summary: 開始使用 Windows 搭配 Python 進行開發，包括設定開發環境、指令碼和自動化、建立 Web 應用程式和常見問題。
 metadata:
   author: mattwojo
-  description: 在 Windows 上開始使用 Python 進行開發。
+  description: 在 Windows 上開始使用 Python 進行開發。 請參閱資源來設定您的開發環境、建立 Web 應用程式，以及連線至資料庫。
   manager: jken
   ms.author: mattwoj
   ms.date: 09/15/2019
   ms.prod: dev-environment
   ms.technology: windows-python
   ms.topic: landing-page
-  ms.openlocfilehash: e9bf81f267010fa7500a60fcf327ab7540683efa
-  ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+  ms.openlocfilehash: 5c19f6fba69ede76c6a29a1fd3dda7637d40373f
+  ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 07/20/2020
-  ms.locfileid: "86493583"
+  ms.lasthandoff: 08/15/2020
+  ms.locfileid: "88243250"
 landingContent:
 - title: 初學者入門
   linkLists:
