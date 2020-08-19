@@ -6,21 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 網路功能, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 005dc30bc71d6d9087a3cc15880ffa3936d0a7f7
-ms.sourcegitcommit: 22ed0d4edad5e6bab352e641cf86cf455cf83825
+ms.openlocfilehash: 6b0dd6168d932d1c131ca6bcd4530795c6ed1ba3
+ms.sourcegitcommit: b408494ebe8489b9ba84fb8bfd893d90c8524020
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133961"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88576851"
 ---
 # <a name="networking-for-games"></a>遊戲的網路功能
-
-
 
 了解如何在您的 DirectX 遊戲中開發與納入網路功能。
 
 ## <a name="concepts-at-a-glance"></a>概念一覽
-
 
 不論您的 DirectX 遊戲是簡單的獨立遊戲或大型的多人遊戲，都可在遊戲中使用多種不同的網路功能。 最簡單的網路運用就是將使用者名稱與遊戲分數儲存在中央網路伺服器。
 
@@ -30,28 +27,26 @@ ms.locfileid: "85133961"
 
 對於單人遊戲，通常會使用中央 Web 伺服器或服務來儲存使用者名稱、遊戲分數與其他資訊。 在這些遊戲中，因為網路傳輸的速度與延遲不會直接影響遊戲運作，因此不是太重要。
 
-網路狀況會隨時改變，因此所有使用網路功能 API 的遊戲都必須能處理可能發生的網路例外狀況。 若要深入了解如何處理網路例外狀況，請參閱[網路功能基本知識](https://docs.microsoft.com/windows/uwp/networking/networking-basics)。
+網路狀況會隨時改變，因此所有使用網路功能 API 的遊戲都必須能處理可能發生的網路例外狀況。 若要深入了解如何處理網路例外狀況，請參閱[網路功能基本知識](/windows/uwp/networking/networking-basics)。
 
 防火牆與 Web Proxy 很常見，且可能影響網路功能的使用。 使用網路的遊戲必須預備好能正確處理防火牆與 Proxy。
 
 對於行動裝置，在漫遊或資料成本昂貴的計量付費網路中的，監控可用的網路資源及操作行為是很重要的。
 
-網路隔離是 Windows 使用的應用程式安全性模型的一部分。 Windows 會主動探索網路界限並為網路隔離強制網路存取限制。 應用程式必須宣告網路隔離功能，才能定義網路存取的範圍。 若未宣告這些功能，應用程式將無法存取網路資源。 若要 深入了解 Windows 如何強制執行應用程式的網路隔離，請參閱[如何設定網路隔離功能](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))。
+網路隔離是 Windows 使用的應用程式安全性模型的一部分。 Windows 會主動探索網路界限並為網路隔離強制網路存取限制。 應用程式必須宣告網路隔離功能，才能定義網路存取的範圍。 若未宣告這些功能，應用程式將無法存取網路資源。 若要 深入了解 Windows 如何強制執行應用程式的網路隔離，請參閱[如何設定網路隔離功能](/previous-versions/windows/apps/hh770532(v=win.10))。
 
 ## <a name="design-considerations"></a>設計考量
 
-
 DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API 是很重要的。 Windows 支援各種不同的網路 API，讓您的 應用程式可以透過網際網路或私人網路與其他電腦或裝置通訊。 您首先要做的是找出應用程式所需的網路功能。
 
-適用於遊戲的熱門網路 API 包含：
+這些是更受歡迎的遊戲網路 Api。
 
--   TCP 與通訊端 - 提供可靠的連線。 在不需安全性的遊戲中使用 TCP。 TCP 能輕鬆擴充伺服器，因此常用於使用基礎結構 (主從式架構或網際網路點對點) 模型的遊戲。 Wi-Fi Direct 與藍牙上的臨機 (本機點對點) 遊戲也可使用 TCP。 TCP 常用於遊戲物件動作、角色互動、文字交談與其他作業。 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)類別會提供可用於 Microsoft Store 遊戲的 TCP 通訊端。 **StreamSocket** 類別與 [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) 命名空間中的相關類別搭配使用。
--   使用 SSL 的 TCP 與通訊端 - 提供能防竊聽的可靠連線。 針對需要安全性的遊戲使用 TCP 連線搭配 SSL。 SSL 的加密與額外負荷會增加延遲並影響效能，請只在需要安全性時使用。 TCP 搭配 SSL 常用於登入、購買與交易資產、遊戲角色建立與管理。 [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 類別提供支援 SSL 的 TCP 通訊端。
--   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)類別會提供可用於 Microsoft Store 遊戲的 UDP 通訊端。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) 命名空間中的相關類別搭配使用。
--   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)類別提供現代化的 HTTP 用戶端 API，以用於 Microsoft Store 遊戲。 **HttpClient** 類別與 [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空間中的相關類別搭配使用。
+-   TCP 與通訊端 - 提供可靠的連線。 在不需安全性的遊戲中使用 TCP。 TCP 能輕鬆擴充伺服器，因此常用於使用基礎結構 (主從式架構或網際網路點對點) 模型的遊戲。 Wi-Fi Direct 與藍牙上的臨機 (本機點對點) 遊戲也可使用 TCP。 TCP 常用於遊戲物件動作、角色互動、文字交談與其他作業。 [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket)類別提供可用於 Microsoft Store 遊戲的 TCP 通訊端。 **StreamSocket** 類別與 [**Windows::Networking::Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空間中的相關類別搭配使用。
+-   使用 SSL 的 TCP 與通訊端 - 提供能防竊聽的可靠連線。 針對需要安全性的遊戲使用 TCP 連線搭配 SSL。 SSL 的加密與額外負荷會增加延遲並影響效能，請只在需要安全性時使用。 TCP 搭配 SSL 常用於登入、購買與交易資產、遊戲角色建立與管理。 [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) 類別提供支援 SSL 的 TCP 通訊端。
+-   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)類別提供可用於 Microsoft Store 遊戲的 UDP 通訊端。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空間中的相關類別搭配使用。
+-   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient)類別提供新式 HTTP 用戶端 API，可用於 Microsoft Store 遊戲中。 **HttpClient** 類別與 [**Windows::Web::Http**](/uwp/api/Windows.Web.Http) 命名空間中的相關類別搭配使用。
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>處理您的 DirectX 遊戲中的網路例外狀況
-
 
 當您的 DirectX 遊戲中發生網路例外狀況時，表示有嚴重的問題或失敗。 使用網路 API 時，有許多原因會導致例外狀況發生。 例外狀況通常是因為網路連線變更，或是遠端主機或伺服器發生其他網路問題。
 
@@ -75,60 +70,57 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 網路 API 支援不同的方法來抓取例外狀況發生原因的更詳細資訊。
 
 -   擷取導致例外狀況的錯誤 **HRESULT** 值的方法。 可能的 **HRESULT** 值的可能性清單過大且未指定。 使用任何網路 API 都可擷取 **HRESULT** 值。
--   將 **HRESULT** 值轉換為列舉值的協助程式方法。 可能的列舉值清單已指定，而且相對過小。 [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) 的通訊端類別可使用協助程式方法。
+-   將 **HRESULT** 值轉換為列舉值的協助程式方法。 可能的列舉值清單已指定，而且相對過小。 [**Windows::Networking::Sockets**](/uwp/api/Windows.Networking.Sockets) 的通訊端類別可使用協助程式方法。
 
 ### <a name="exceptions-in-windowsnetworkingsockets"></a>Windows.Networking.Sockets 中的例外狀況
 
-如果傳送的字串不是有效的主機名稱 (包含不允許在主機名稱中使用的字元)，與通訊端一起使用的 [**HostName**](https://docs.microsoft.com/uwp/api/Windows.Networking.HostName) 類別的建構函式會發生例外狀況。 如果 app 取得使用者在遊戲的對等連線為 **HostName** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
+如果傳送的字串不是有效的主機名稱 (包含不允許在主機名稱中使用的字元)，與通訊端一起使用的 [**HostName**](/uwp/api/Windows.Networking.HostName) 類別的建構函式會發生例外狀況。 如果 app 取得使用者在遊戲的對等連線為 **HostName** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
 
 新增程式碼以驗證使用者輸入的主機名稱字串
 
-```cpp
+```cppcx
+// Define some variables at the class level.
+Windows::Networking::HostName^ remoteHost;
 
-    // Define some variables at the class level.
-    Windows::Networking::HostName^ remoteHost;
+bool isHostnameFromUser = false;
+bool isHostnameValid = false;
 
-    bool isHostnameFromUser = false;
-    bool isHostnameValid = false;
+///...
 
-    ///...
+// If the value of 'remoteHostname' is set by the user in a control as input 
+// and is therefore untrusted input and could contain errors. 
+// If we can't create a valid hostname, we notify the user in statusText 
+// about the incorrect input.
 
-    // If the value of 'remoteHostname' is set by the user in a control as input 
-    // and is therefore untrusted input and could contain errors. 
-    // If we can't create a valid hostname, we notify the user in statusText 
-    // about the incorrect input.
+String ^hostString = remoteHostname;
 
-    String ^hostString = remoteHostname;
+try 
+{
+    remoteHost = ref new Windows::Networking:Host(hostString);
+    isHostnameValid = true;
+}
+catch (InvalidArgumentException ^ex)
+{
+    statusText->Text = "You entered a bad hostname, please re-enter a valid hostname.";
+    return;
+}
 
-    try 
-    {
-        remoteHost = ref new Windows::Networking:Host(hostString);
-        isHostnameValid = true;
-    }
-    catch (InvalidArgumentException ^ex)
-    {
-        statusText->Text = "You entered a bad hostname, please re-enter a valid hostname.";
-        return;
-    }
+isHostnameFromUser = true;
 
-    isHostnameFromUser = true;
-
-
-    // ... Continue with code to execute with a valid hostname.
+// ... Continue with code to execute with a valid hostname.
 ```
 
-[**Windows.Networking.Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) 命名空間有便利的協助程式方法及列舉，在使用通訊端時用來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
+[**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空間有便利的協助程式方法及列舉，在使用通訊端時用來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
 
-[**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 作業中若發生錯誤，會導致例外狀況。 例外狀況的原因是以 **HRESULT** 值表示的錯誤值。 使用 [**SocketError.GetStatus**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.socketerror.getstatus) 方法，將通訊端作業的網路錯誤轉換為 [**SocketErrorStatus**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketErrorStatus) 列舉值。 大多數 **SocketErrorStatus** 列舉值對應原始 Windows 通訊端作業傳回的錯誤。 app 可以篩選特定 **SocketErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
+[**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 作業中若發生錯誤，會導致例外狀況。 例外狀況的原因是以 **HRESULT** 值表示的錯誤值。 使用 [**SocketError.GetStatus**](/uwp/api/windows.networking.sockets.socketerror.getstatus) 方法，將通訊端作業的網路錯誤轉換為 [**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus) 列舉值。 大多數 **SocketErrorStatus** 列舉值對應原始 Windows 通訊端作業傳回的錯誤。 app 可以篩選特定 **SocketErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
 
-針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 對於大部分的參數驗證錯誤，傳回的**HRESULT**是**E \_ INVALIDARG**。
+針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大部分的參數驗證錯誤，傳回的 **HRESULT** 為 **E \_ INVALIDARG**。
 
 新增程式碼以處理嘗試建立串流通訊端連線時發生的例外狀況
 
-```cpp
+```cppcx
 using namespace Windows::Networking;
 using namespace Windows::Networking::Sockets;
-
     
     // Define some more variables at the class level.
 
@@ -222,14 +214,13 @@ using namespace Windows::Networking::Sockets;
 
 ### <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http 中的例外狀況
 
-如果傳送的字串不是有效的 URI (包含不允許在 URI 中使用的字元)，與 [**Windows::Web::Http::HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 一起使用的 [**Windows::Foundation::Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 類別的建構函式會發生例外狀況。 在 C++ 中，沒有可以嘗試將字串剖析為 URI 的方法。 如果 app 取得使用者為 **Windows::Foundation::Uri** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的 URI。
+如果傳送的字串不是有效的 URI (包含不允許在 URI 中使用的字元)，與 [**Windows::Web::Http::HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) 一起使用的 [**Windows::Foundation::Uri**](/uwp/api/Windows.Foundation.Uri) 類別的建構函式會發生例外狀況。 在 C++ 中，沒有可以嘗試將字串剖析為 URI 的方法。 如果 app 取得使用者為 **Windows::Foundation::Uri** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的 URI。
 
-您的應用程式也應檢查 URI 中的配置是 HTTP 或 HTTPS，因為 [**Windows::Web::Http::HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 僅支援這些配置。
+您的應用程式也應檢查 URI 中的配置是 HTTP 或 HTTPS，因為 [**Windows::Web::Http::HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) 僅支援這些配置。
 
 新增程式碼以驗證使用者輸入的 URI 字串
 
-```cpp
-
+```cppcx
     // Define some variables at the class level.
     Windows::Foundation::Uri^ resourceUri;
 
@@ -269,15 +260,15 @@ using namespace Windows::Networking::Sockets;
     // ... Continue with code to execute with a valid URI.
 ```
 
-[**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/windows.web.http) 命名空間缺少便利的函式。 所以使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
+[**Windows::Web::Http**](/uwp/api/windows.web.http) 命名空間缺少便利的函式。 所以使用 [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
 
-在使用 C++ 的 app 中，[**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) 代表 app 執行期間發生例外狀況時的錯誤。 [**Platform：： Exception：： hresult**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult)屬性會傳回指派給特定例外狀況的**HResult** 。 [**Platform：： Exception：： Message**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message)屬性會傳回與**HRESULT**值相關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
+在使用 C++ 的 app 中，[**Platform::Exception**](/cpp/cppcx/platform-exception-class) 代表 app 執行期間發生例外狀況時的錯誤。 [**Platform：： Exception：： HResult**](/cpp/cppcx/platform-exception-class#hresult)屬性會傳回指派給特定例外狀況的**HResult** 。 [**Platform：： Exception：： Message**](/cpp/cppcx/platform-exception-class#message)屬性會傳回與**HRESULT**值相關聯的系統提供的字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
-對於大部分的參數驗證錯誤，傳回的**HRESULT**是**E \_ INVALIDARG**。 針對某些不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**。
+針對大部分的參數驗證錯誤，傳回的 **HRESULT** 為 **E \_ INVALIDARG**。 針對某些不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**。
 
-新增程式碼以處理嘗試使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 連線至 HTTP 伺服器時發生的例外狀況
+新增程式碼以處理嘗試使用 [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) 連線至 HTTP 伺服器時發生的例外狀況
 
-```cpp
+```cppcx
 using namespace Windows::Foundation;
 using namespace Windows::Web::Http;
     
@@ -361,34 +352,31 @@ using namespace Windows::Web::Http;
             }
         }
     });
-    
-
 ```
 
 ## <a name="related-topics"></a>相關主題
 
+### <a name="other-resources"></a>其他資源
 
-**其他資源**
+* [使用資料包通訊端進行連線](/previous-versions/windows/apps/jj635238(v=win.10))
+* [利用資料流通訊端連線到網路資源](/previous-versions/windows/apps/jj150599(v=win.10))
+* [連線到網路服務](/previous-versions/windows/apps/hh452976(v=win.10))
+* [連線到 Web 服務](/previous-versions/windows/apps/hh761504(v=win.10))
+* [網路功能基本知識](/windows/uwp/networking/networking-basics)
+* [如何設定網路隔離功能](/previous-versions/windows/apps/hh770532(v=win.10))
+* [如何啟用回送以及偵錯網路隔離](/previous-versions/windows/apps/hh780593(v=win.10))
 
-* [使用資料包通訊端進行連線](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
-* [利用資料流通訊端連線到網路資源](https://docs.microsoft.com/previous-versions/windows/apps/jj150599(v=win.10))
-* [連線到網路服務](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
-* [連線到 Web 服務](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
-* [網路功能基本知識](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
-* [如何設定網路隔離功能](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-* [如何啟用回送以及偵錯網路隔離](https://docs.microsoft.com/previous-versions/windows/apps/hh780593(v=win.10))
+### <a name="reference"></a>參考
 
-**參考**
+* [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket)
+* [HttpClient](/uwp/api/Windows.Web.Http.HttpClient)
+* [StreamSocket](/uwp/api/Windows.Networking.Sockets.StreamSocket)
+* [Windows：： Web：： Http 命名空間](/uwp/api/Windows.Web.Http)
+* [Windows：：網路：： Socket 命名空間](/uwp/api/Windows.Networking.Sockets)
 
-* [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)
-* [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)
-* [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)
-* [**Windows：： Web：： Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)
-* [**Windows：：網路：：通訊端**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
+### <a name="sample-apps"></a>範例應用程式
 
-**範例**
-
-* [DatagramSocket 範例](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/ControlChannelTrigger%20StreamSocket%20sample%20(Windows%208))
+* [DatagramSocket 範例](/samples/microsoft/windows-universal-samples/datagramsocket/)
 * [HttpClient 範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/HttpClient%20sample)
 * [鄰近性範例](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/Proximity%20sample%20(Windows%208))
-* [StreamSocket 範例](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
+* [StreamSocket 範例](/samples/microsoft/windows-universal-samples/streamsocket/)
