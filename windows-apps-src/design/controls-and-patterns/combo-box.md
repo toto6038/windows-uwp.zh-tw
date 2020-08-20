@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: f484df97c6d29281941c8eed7b91fd0b156fff60
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 65f65fc62f839e379535f4e1a3df8a188620fed9
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968776"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502355"
 ---
 # <a name="combo-box-and-list-box"></a>下拉式方塊和清單方塊
 
@@ -23,7 +23,7 @@ ms.locfileid: "82968776"
 
 關閉下拉式方塊後，它會顯示目前的選取項目，若沒有已選取的項目則是空的。 當使用者展開下拉式方塊時，它會顯示可選取的項目清單。
 
-![精簡狀態下的下拉式清單範例](images/combo_box_collapsed.png)
+![精簡狀態下的下拉式清單範例](images/combo-box-expand.gif)
 
 > _精簡狀態下具有標頭的下拉式方塊。_
 
