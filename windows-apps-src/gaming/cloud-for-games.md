@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 雲端服務
 ms.localizationpriority: medium
-ms.openlocfilehash: 94d5f8e76e6141f61344c53f29f95ad0bda2cb18
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 3d959c490474a6280d878be9679abafc31b565d8
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684428"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846858"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>針對 UWP 遊戲使用雲端服務
 
@@ -51,7 +51,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
         <th>開發人員</th>
         <th>描述</th>
         <th>主要遊戲案例</th>
-        <th>進一步了解</th>
+        <th>深入了解</th>
     </tr>
     <tr>
         <td><a href="https://www.tencent.com">Tencent 遊戲</a></td>
@@ -62,13 +62,13 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
         </td>
         <td>
             <ul>
-                <li><a href="https://customers.microsoft.com/story/tencent-telecommunications-azure-service-fabric-windows-server-en">Tencent 遊戲和 Microsoft 建立了雲端遊戲解決方案</a>
-                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=38m33s">使用 Service Fabric 建立遊戲： Tencent 的執行詳細資料（影片）</a>
+                <li><a href="https://customers.microsoft.com/story/tencent-telecommunications-azure-service-fabric-windows-server-en">Tencent 遊戲和 Microsoft 打造的雲端遊戲解決方案</a>
+                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=38m33s">使用 Service Fabric 建立遊戲： Tencent 的執行詳細資料 (影片) </a>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.halowaypoint.com/">343產業</a></td>
+        <td><a href="https://www.halowaypoint.com/">343 Industries</a></td>
         <td><b>Halo 5: Guardians</b> 使用 Azure Cosmos DB (透過 DocumentDB API) 實作 <a href="https://www.halowaypoint.com/spartan-companies">Halo: Spartan Companies</a> 做為其社交遊戲平台，選取此技術是因為其自動索引功能所提供的速度及彈性。</td>
         <td>
             <ul>
@@ -76,12 +76,12 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
         </td>
         <td>
             <ul>
-                <li><a href="https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/">使用 Azure Cosmos DB （透過 DOCUMENTDB API）實行的社交遊戲</a>
+                <li><a href="https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/">使用 Azure Cosmos DB (透過 DocumentDB API 執行的社交遊戲) </a>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><a href="https://web.ageofascent.com/">Illyriad 遊戲</a></td>
+        <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
         <td>Illyriad Games 建立了 <b>Age of Ascent</b>，一款大型多人線上 (MMO) 史詩 3D 太空遊戲，可在具有現代化瀏覽器的裝置上進行。 因此這款遊戲可在電腦、膝上型電腦、手機和其他行動裝置上進行，而不需要外掛程式。遊戲使用 ASP.NET Core、HTML5、WebGL 及 Azure。</td>
         <td>
             <ul>
@@ -89,15 +89,15 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
         </td>
         <td>
             <ul>
-                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">使用 Service Fabric 建立遊戲： MMO 遊戲的年齡（影片）</a>
-                <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">使用 Azure Service Fabric 以微服務管理遊戲元件（影片）</a> 
-                <li><a href="/Blogs/Azure/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">與上升開發人員的年齡訪談（影片）</a>
+                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">使用 Service Fabric 建立遊戲： MMO 遊戲的最長時間 (影片) </a>
+                <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">使用 Azure Service Fabric (影片將遊戲元件管理為微服務) </a> 
+                <li><a href="/Blogs/Azure/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">訪談開發人員的年齡 (影片) </a>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.nextgames.com/">下一場遊戲</a></td>
-        <td>Next Games 是 <b>The Walking Dead: No Man's Land</b> 電玩遊戲的製作者，此遊戲是根據 AMC 的原創影集改編。 The Walking Dead 遊戲使用 Azure 做為後端。 它在首個週末便達到 1,000,000 次的下載次數，並在首週便拿下美國 App Store 中 iPhone 與 iPad 免費 App 的第 1 名、12 個國家/地區中免費 App 的第 1 名，以及 13 個國家/地區中免費遊戲的第 1 名。
+        <td><a href="https://www.nextgames.com/">下一個遊戲</a></td>
+        <td>Next Games 是 <b>The Walking Dead: No Man's Land</b> 電玩遊戲的製作者，此遊戲是根據 AMC 的原創影集改編。 The Walking Dead 遊戲使用 Azure 做為後端。 它在首個週末便達到 1,000,000 次的下載次數，並在首週便拿下美國 App Store 中 iPhone 與 iPad 免費 App 的第 1 名、12 個國家中免費 App 的第 1 名，以及 13 個國家中免費遊戲的第 1 名。
         </td>
         <td>
             <ul>
@@ -105,13 +105,13 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
         </td>
         <td>
             <ul>
-                <li><a href="https://azure.microsoft.com/blog/how-we-built-it-next-games-global-online-gaming-platform-on-azure/">如何建立它：下一場遊戲的全球線上遊戲平臺（含影片的 blog）</a>
-                <li>「未通過」會<a href="https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/">使用 Azure Cosmos DB （透過 DOCUMENTDB API）來加速開發週期，並提供更吸引人的遊戲</a>
+                <li><a href="https://azure.microsoft.com/blog/how-we-built-it-next-games-global-online-gaming-platform-on-azure/">我們如何建立它：下一場在 Azure 上的全球線上遊戲平臺 (使用影片的 blog) </a>
+                <li><a href="https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/">在結束時，透過 DocumentDB API 使用 Azure Cosmos DB () ，以加速開發週期和更吸引人的遊戲</a>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.crimecoast.com/">圖元小隊</a></td>
+        <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
         <td>Pixel Squad 使用 Unity 遊戲引擎與 Azure 開發 <b>Crime Coast</b>。 <b>Crime Coast</b> 是一款社交策略遊戲，可在 Android、iOS 和 Windows 平台上取得。 他們在遊戲中使用 Azure Blob 儲存體、受管理的 Azure Redis Cache、負載平衡的 IIS VM 陣列，以及 Microsoft 通知中樞。 了解他們如何管理調整，並處理同時湧入的 5000 名玩家。
         </td>
         <td>
@@ -120,8 +120,8 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
         </td>
         <td>
             <ul>
-                <li><a href="https://channel9.msdn.com/Blogs/The-Game-Blog/BizSpark-Interview-with-Pixel-Squad-How-the-used-Azure-Cloud-Services-to-make-an-MMO-with-a-3-man-te">犯罪 COAST MMO 遊戲使用 Azure 雲端服務</a>
-             的方式</ul>
+                <li><a href="https://channel9.msdn.com/Blogs/The-Game-Blog/BizSpark-Interview-with-Pixel-Squad-How-the-used-Azure-Cloud-Services-to-make-an-MMO-with-a-3-man-te">犯罪 Coast MMO 遊戲如何使用 Azure 雲端服務</a>
+            </ul>
         </td>
     </tr> 
 </table>
@@ -129,9 +129,9 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
     
 ### <a name="other-links"></a>其他連結
 
-* [Io-interactive 製作和 Azure：建立只有使用雲端才可行的遊戲功能（例如難以捉摸目標）](https://channel9.msdn.com/Series/Hitman)
-* [Azure 作為部主任、遊戲 Troopers 和 InnoSpark 的秘密 sauce](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
-* [使用 Azure Bizspark 計畫的遊戲新創公司](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
+* [Hitman 和 Azure：建立像 Elusive Target 一樣的遊戲功能，只有使用雲端才可能實現這些功能](https://channel9.msdn.com/Series/Hitman)
+* [Azure 是 Hitcents、Game Troopers 及 InnoSpark 的幕後秘訣](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
+* [使用 Azure 的 Bizspark 計畫遊戲新創公司](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
 ## <a name="how-to-design-your-cloud-backend"></a>如何設計雲端後台
@@ -142,39 +142,39 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 
 首先，您需要了解最適合您遊戲的服務層級。 了解以下三種服務的差異，有助於您決定建置後端所要採取的方法。
 
-* [基礎結構即服務（IaaS）](https://azure.microsoft.com/overview/what-is-iaas/)
+* [基礎結構即服務 (IaaS) ](https://azure.microsoft.com/overview/what-is-iaas/)
 
     基礎結構即服務 (IaaS) 是即時運算基礎結構，透過網際網路進行佈建及管理。 想像一下能根據需求讓許多電腦隨時快速相應增加和減少的可能性。 IaaS 協助您避免購買和管理自己的實體伺服器及其他資料中心基礎結構的成本和複雜度。
 
-* [平臺即服務（PaaS）](https://azure.microsoft.com/overview/what-is-paas/)
+* [ (PaaS) 的平臺即服務 ](https://azure.microsoft.com/overview/what-is-paas/)
 
     平台即服務 (PaaS) 就像 IaaS，不過它也包含基礎結構 (例如伺服器、儲存體和網路) 的管理。 因此在不購買實體伺服器與資料中心基礎結構的基礎上，您也不需要購買和管理軟體授權、基礎的應用程式基礎結構、中介軟體、開發工具或其他資源。
 
-* [軟體即服務（SaaS）](https://azure.microsoft.com/overview/what-is-saas/)
+* [軟體即服務 (SaaS) ](https://azure.microsoft.com/overview/what-is-saas/)
 
-    軟體即服務 (SaaS) 可讓使用者透過網際網路連接至雲端式應用程式並使用這些應用程式。 這可提供您按照隨用即付方式向雲端解決方案提供者購買的完整軟體解決方案。  例如，電子郵件、行事曆和辦公室工具 (例如 Microsoft Office 365) 等解決方案便是。 您為自己的組織租用應用程式，您的使用者再透過網際網路 (通常使用網頁瀏覽器) 連接至該應用程式。 所有的基礎結構、中介軟體、應用程式軟體及應用程式資料都位於服務提供者的資料中心。 服務提供者會管理硬體和軟體，並在適當服務合約的規範下，確保遊戲以及您的資料的可用性與安全性。 SaaS 可讓您的組織以最低的先期成本來快速啟動並執行應用程式。
+    軟體即服務 (SaaS) 可讓使用者透過網際網路連線至雲端應用程式並加以使用。 這可提供您按照隨用即付方式向雲端解決方案提供者購買的完整軟體解決方案。  常見的範例包括電子郵件、行事曆和 office 工具 (例如 Microsoft 365 Office 應用程式) 。 您為自己的組織租用應用程式，您的使用者再透過網際網路 (通常使用網頁瀏覽器) 連接至該應用程式。 所有的基礎結構、中介軟體、應用程式軟體和應用程式資料都位於服務提供者的資料中心。 服務提供者會管理硬體和軟體，並在適當服務合約的規範下，確保遊戲以及您的資料的可用性與安全性。 SaaS 可讓您的組織以最低的前期成本快速啟動並執行應用程式。
 
 
 ### <a name="design-your-game-infrastructure-using-azure"></a>使用 Azure 設計遊戲基礎結構
 
 以下是可以針對遊戲使用 Azure 雲端供應項目的一些方法。 Azure 可以搭配 Windows、Linux，以及 Ruby、Python、Java 和 PHP 等常見的開放原始碼技術使用。 如需詳細資訊，請參閱[用於遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)。
 
-| 需求                 | 活動案例                            | 產品供應項目                      | 產品功能                                    |
+| 規格需求                 | 活動案例                            | 產品供應項目                      | 產品功能                                    |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | 在雲端託管您的網域     | 有效率地回應 DNS 查詢            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 以具有高效能和可用性的方式託管您的網域  |
 | 登入、身分識別驗證      | 已驗證玩家登入和玩家身分識別  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | 使用多重要素驗證來單一登入至任何雲端與內部部署 Web 應用程式            | 
-| 使用基礎結構即服務 (IaaS) 模型的遊戲      | 遊戲託管於雲端的虛擬機器上       | [Azure Vm](https://azure.microsoft.com/services/virtual-machines/) | 做為具有內建虛擬網路和負載平衡的遊戲伺服器，在 1 部到數千部虛擬機器執行個體之間進行調整。搭配混合式一致性的內部部署系統           |
+| 使用基礎結構即服務 (IaaS) 模型的遊戲      | 遊戲託管於雲端的虛擬機器上       | [Azure VM](https://azure.microsoft.com/services/virtual-machines/) | 做為具有內建虛擬網路和負載平衡的遊戲伺服器，在 1 部到數千部虛擬機器執行個體之間進行調整。搭配混合式一致性的內部部署系統           |
 | 使用平台即服務 (PaaS) 模型的網路或行動裝置遊戲            | 遊戲託管於受管理的平台上                | [Azure App Service](https://azure.microsoft.com/services/app-service/) | 適用於網站或行動裝置遊戲的 PaaS (代表具有中介軟體/開發工具/BI/DB 管理的 Azure VM)   |
 | 高度可用的可調整多層式架構 (N-Tier) 雲端遊戲，提供更多對作業系統的控制權 (PaaS)        | 遊戲託管於受管理的平台上                | [Azure 雲端服務](https://azure.microsoft.com/services/app-service/) | 為了支援可調整、可靠且運作成本低的應用程式而設計的 PaaS   |
 | 提升效能及可用性的跨區域負載平衡 | 路由傳送傳入遊戲要求。 可以當做第一層負載平衡。       | [Azure 流量管理員](https://azure.microsoft.com/services/traffic-manager/) | 提供多個自動容錯移轉選項，並且有能力依均等方式或加權值分散您的流量。 可以順暢地結合內部部署與雲端系統。 |
 | 遊戲資料的雲端儲存體       | 最新的遊戲資料將儲存於雲端中，並會傳送到用戶端裝置 | [Azure Blob 儲存體](https://azure.microsoft.com/services/storage/blobs/)| 無限制的可儲存檔案類型。適用於大量未結構化資料 (例如影像、音訊、視訊等等) 的物件儲存體。  |
-| 暫時資料儲存體表格| 遊戲交易 (遊戲狀態的變更) 會暫時儲存在表格中 | [Azure 表格儲存體](https://azure.microsoft.com/services/storage/tables/)| 遊戲資料可根據遊戲的需求，以彈性的結構描述進行儲存 |
+| 暫時資料儲存體表格| 遊戲交易 (遊戲狀態的變更) 會暫時儲存在表格中 | [Azure 資料表儲存體](https://azure.microsoft.com/services/storage/tables/)| 遊戲資料可根據遊戲的需求，以彈性的結構描述進行儲存 |
 | 佇列遊戲交易/要求| 遊戲交易會以佇列的形式處理 | [Azure 佇列儲存體](https://azure.microsoft.com/services/storage/queues/)| 佇列可以緩衝未預期的突發流量，並且能防止伺服器在遊戲期間因突然湧入大量要求而造成效能遲緩   |
 | 可調整的關聯式遊戲資料庫| 結構化的關聯式資料儲存體，例如傳輸到資料庫中的遊戲內交易 | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| SQL 資料庫即服務 ([與 VM 上的 SQL 比較](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
 | 可調整的分散式低延遲遊戲資料庫| 使用彈性結構描述快速讀取、寫入及查詢遊戲與玩家資料 | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)| 低延遲 NoSQL 文件資料庫即服務   |
 | 使用自己的資料中心搭配 Azure 服務 | 遊戲將擷取自您的資料中心並傳送到用戶端裝置 | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | 可讓您的組織從自己的資料中心傳遞 Azure 服務，以協助完成更多工作  |
 | 大型資料區塊傳輸| 大型檔案 (例如遊戲影像、音訊及視訊) 可以透過 Azure CDN 從最近的內容傳遞網路 (CDN) pop 位置傳送給使用者    | [Azure 內容傳遞網路](https://azure.microsoft.com/services/cdn/) | Azure CDN 建置在大型集中式節點的現代化網路拓樸上，能夠處理突發的流量尖峰和大量負載以大幅增加速度與可用性，並產生顯著的使用者體驗改善  |
-| 低度延遲               | 執行快取以建置快速、可調整的遊戲，並針對隔離資料取得更多的控制和保證，也可以用於改善遊戲的配對功能。 | [Azure Redis 快取](https://azure.microsoft.com/services/cache/) | 高輸送量、穩定的低延遲資料存取，可提供快速、可調整的 Azure 應用程式  |
+| 低延遲               | 執行快取以建置快速、可調整的遊戲，並針對隔離資料取得更多的控制和保證，也可以用於改善遊戲的配對功能。 | [Azure Redis 快取](https://azure.microsoft.com/services/cache/) | 高輸送量、穩定的低延遲資料存取，可提供快速、可調整的 Azure 應用程式  |
 | 高延展性、低延遲 | 以低延遲的讀取和寫入來處理遊戲使用者數量的波動 | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | 可以提供最複雜、低延遲、密集資料的案例及可靠的調整，以同時處理更多的使用者。 針對無狀態 App 的需求，Service Fabric 可讓您在不需要個別建立儲存區或快取的情況下建置遊戲 |
 | 能夠每秒從裝置收集數以百萬計事件的能力                         | 能夠每秒從裝置記錄數以百萬計的事件 | [Azure 事件中樞](https://azure.microsoft.com/services/event-hubs/) | 來自遊戲、網站、App 及裝置的雲端級別遙測擷取  |
 | 即時處理遊戲資料  | 執行玩家資料的即時分析以改善遊戲| [Azure 串流分析](https://azure.microsoft.com/services/stream-analytics/) | 在雲端即時串流處理  |
@@ -182,32 +182,32 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 | 收集與分析遊戲資料| 大量平行處理來自關聯式與非關聯式資料庫的資料 | [Azure 資料倉儲](https://azure.microsoft.com/services/sql-data-warehouse/)| 彈性資料倉儲即服務與企業級功能   |
 | 吸引使用者以增加使用量和留客率| 從任何後端傳送目標式推播通知至任何平台，以激發興趣並鼓勵特定遊戲活動 | [Azure 通知中樞](https://azure.microsoft.com/services/notification-hubs/)| 快速廣播推送，使接觸範圍擴及所有主要平台上的數百萬行動裝置 &mdash; iOS、Android、Windows、Kindle、Baidu。 您的遊戲可以裝載於任何後端 &mdash; 雲端或內部部署。|
 | 串流媒體內容至您當地與全球的目標對象，同時保護您的內容| 可以從所有裝置上廣播高品質的遊戲預告片及電影短片| [Azure 媒體服務](https://azure.microsoft.com/services/media-services/)| 使用整合式內容傳遞網路功能的隨選及直播視訊串流。 使用一個播放器滿足您所有的播放需求，包括內容保護與加密。| 
-| 開發、散發和 Beta 測試您的行動應用程式 | 測試和散發您的行動應用程式。 應用程式效能及使用者體驗管理。 | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| 將當機報告及使用者計量與應用程式散發及使用者意見反應平台整合。 支援 Android、Cordova、iOS、OS X、Unity、Windows 及 Xamarin 應用程式。 此外，請考慮針對結合豐富分析、損毀報告、推播通知、應用程式散發等的應用程式[Visual Studio Mobile Center](https://visualstudio.microsoft.com/app-center/) &mdash; 任務控制。 |
+| 開發、散發和 Beta 測試您的行動應用程式 | 測試和散發您的行動應用程式。 應用程式效能及使用者體驗管理。 | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| 將當機報告及使用者計量與應用程式散發及使用者意見反應平台整合。 支援 Android、Cordova、iOS、OS X、Unity、Windows 及 Xamarin 應用程式。 此外，請針對應用程式結合豐富多樣分析、當機報告、推播通知、應用程式散發等功能的應用程式考慮 [Visual Studio Mobile Center](https://visualstudio.microsoft.com/app-center/) &mdash; 任務控制項。 |
 | 建立行銷活動以增加使用量和留客率  | 根據資料分析傳送推播通知給目標玩家，以激發興趣並鼓勵特定遊戲活動 | [Mobile Engagement](https://azure.microsoft.com/services/mobile-engagement/) - 將於 2018 年 3 月淘汰，目前僅供現有客戶使用 |  增加所有主要平台 (iOS、Android、Windows、Windows Phone) 上的遊戲時間與使用者留存率 |
 
 
 ##  <a name="startup-and-developer-resources"></a>新創公司與開發人員資源
 
-* [適用于新創公司的 Microsoft](https://startups.microsoft.com)
+* [Microsoft for Startups](https://startups.microsoft.com)
 
     Microsoft for Startups 新創火花計畫提供技術以及上市優勢以協助加快新創公司的成長。 其中一個優勢包含 Azure 免費帳戶。 您有 $200 美元額度可探索服務 30 天、12 個月的熱門免費服務，以及始終免費的 25 項服務以上。 如需詳細資訊，請參閱[使用 Azure 免費帳戶將您的新創想法帶入生活中](https://azure.microsoft.com/free/startups/)。
     
 * [開發人員計畫](e2e.md#developer-programs)
 
-    Microsoft 提供數個可協助您開發及發行遊戲的開發人員計畫，例如 [ID@Xbox](https://www.xbox.com/Developers/id) 和 [Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator)。
+    Microsoft 提供數種開發人員計畫，像是 [ID@Xbox](https://www.xbox.com/Developers/id) [Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator) ，以協助您開發和發佈遊戲。
 
 ## <a name="learning-resources"></a>學習資源
 
 * //組建 2016：[CodeLabs &mdash; 使用 Microsoft Azure App Service 與 Microsoft SQL Azure 後端儲存 Unity 中的遊戲分數](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* 組建2017：[使用 Microsoft Azure 傳遞世界級的遊戲體驗：從光暈、io-interactive 製作和走貨等標題學習的課程（影片）](https://channel9.msdn.com/Events/Build/2017/P4062)
+* //組建 2017：[使用 Microsoft Azure提供世界級遊戲體驗：從 Halo、Hitman 和 Walking Dead 等遊戲學習的課程 (影片)](https://channel9.msdn.com/Events/Build/2017/P4062)
 * 可重複使用的一組設計要使用 Azure GitHub 來支援一般遊戲工作負載的建置組塊、專案、服務及最佳做法：[Azure 上的遊戲建置組塊](https://github.com/MicrosoftDX/nether)
-* [Azure 上的遊戲服務（影片）](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
+* [Azure 上的遊戲服務 (影片)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 
 ## <a name="tools-and-other-useful-links"></a>工具及其他實用連結
 
 * [MSDN 論壇 &mdash; Azure 平臺](https://social.msdn.microsoft.com/Forums/azure/home?category=windowsazureplatform)
-* [以雲端為基礎的負載測試工具](https://visualstudio.microsoft.com/team-services/cloud-load-testing/)
-* [Sdk 和命令列工具](https://azure.microsoft.com/downloads/)
+* [雲端式負載測試工具](https://visualstudio.microsoft.com/team-services/cloud-load-testing/)
+* [SDK 和命令列工具](https://azure.microsoft.com/downloads/)
     
 ## <a name="software-as-a-service-for-game-backend"></a>適用於遊戲後端的軟體即服務
 
@@ -222,9 +222,9 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 ## <a name="related-links"></a>相關連結
 
 * [Windows 10 遊戲開發指南](https://docs.microsoft.com/windows/uwp/gaming/e2e)
-* [適用于遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)
+* [用於遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
-* [適用于新創公司的 Microsoft](https://startups.microsoft.com)
+* [Microsoft for Startups](https://startups.microsoft.com)
 * [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
