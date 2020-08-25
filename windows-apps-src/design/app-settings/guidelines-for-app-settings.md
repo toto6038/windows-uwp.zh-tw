@@ -4,16 +4,16 @@ title: 應用程式設定的指導方針
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b27094a5861151b907dc7787828068122e4a54
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 418c33952c4be6be08683b5e396f423f771bb997
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233980"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502375"
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
 
@@ -46,13 +46,13 @@ ms.locfileid: "83233980"
 
 若為瀏覽窗格配置，應用程式設定應為瀏覽選項清單的最後一個項目，而且釘選到底部。
 
-![瀏覽窗格的應用程式設定進入點](images/appsettings-entrypoint-navpane.png)
+![瀏覽窗格的應用程式設定進入點](images/appsettings-nav-settings.png)
 
 **應用程式列**
 
-如果您使用[應用程式列](../controls-and-patterns/app-bars.md)或工具列，將設定的進入點放在 [更多] 功能表中的最後一個項目。 如果更容易找到設定進入點對您的應用程式而言很重要，請將進入點直接放在應用程式列上，不要放在溢位內。
+如果您使用[應用程式列](../controls-and-patterns/app-bars.md)或工具列，請將設定的進入點放在 [更多] 溢位功能表中作為最後項目的其中一個。 如果更容易找到設定進入點對您的應用程式而言很重要，請將進入點直接放在應用程式列上，不要放在溢位內。
 
-![應用程式列的應用程式設定進入點](images/appsettings-entrypoint-tabs.png)
+![應用程式列的應用程式設定進入點](../controls-and-patterns/images/appbar_rs2_overflow_icons.png)
 
 **中樞**
 
@@ -69,15 +69,10 @@ ms.locfileid: "83233980"
 ## <a name="layout"></a>版面配置
 
 
-無論在桌面或行動裝置上，應用程式設定視窗都應開啟全螢幕並填滿整個視窗。 如果您的應用程式設定功能表最多有四個最上層群組，這些群組應該重疊顯示下一欄。
-
-桌上型電腦：
+應用程式設定視窗都應開啟全螢幕並填滿整個視窗。 如果您的應用程式設定功能表最多有四個最上層群組，這些群組應該重疊顯示下一欄。
 
 ![桌上型電腦的應用程式設定頁面配置](images/appsettings-layout-navpane-desktop.png)
 
-行動電話：
-
-![手機上的應用程式設定頁面配置](images/appsettings-layout-navpane-mobile.png)
 
 ## <a name="color-mode-settings"></a>「色彩模式」設定
 

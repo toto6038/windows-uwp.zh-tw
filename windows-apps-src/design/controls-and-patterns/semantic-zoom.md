@@ -4,19 +4,19 @@ title: 語意式縮放
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 35613366078531a9e342df0b4314d049fde844e9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3398be1569143e253b2b9cb9ee25133ee7fe5fd9
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081567"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502335"
 ---
 # <a name="semantic-zoom"></a>語意式縮放
 
@@ -59,17 +59,17 @@ ms.locfileid: "80081567"
 </tr>
 </table>
 
+**XAML 控制項庫**
+
+控制項庫中的 [SemanticZoom] 區段會示範瀏覽體驗，讓使用者能夠快速放大和縮小控制項類型的群組區段。 
+
+![XAMl 控制項庫中使用的語意式縮放範例](images/semanticzoom-gallery.gif)
+
 **相片應用程式**
 
 以下是相片 app 中使用的語意式縮放。 相片是依月份分組。 選取預設方格檢視中的月份標頭時，會縮小月份清單檢視以供快速瀏覽。
 
 ![相片 app 中使用的語意式縮放](images/control-examples/semantic-zoom-photos.png)
-
-**通訊錄**
-
-通訊錄為另一個使用語意式縮放來更輕鬆地瀏覽資料集的範例。 您可以使用縮小檢視以快速跳到您需要的字母 (左側影像)，而放大檢視則會顯示個別的資料項目 (右側影像)。
-
-![用於連絡人清單的語意式縮放範例](images/semanticzoom-win10.png)
 
 ## <a name="create-a-semantic-zoom"></a>建立語意式縮放
 

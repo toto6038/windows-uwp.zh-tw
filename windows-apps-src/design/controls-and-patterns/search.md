@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c6eb22fbe0488fa9a36160ce9e704d10727e4c9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8bb01c76879bd00e10286ef429415cf4817315b7
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66364477"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502402"
 ---
 # <a name="search-and-find-in-page"></a>搜尋和在頁面中尋找
 
@@ -24,7 +24,7 @@ ms.locfileid: "66364477"
 
 搜尋是使用者在您的 app 中尋找內容的主要方法之一。 本文中的指導方針涵蓋搜尋體驗、搜尋範圍、實作，以及在內容中搜尋的範例等元素。
 
-> **重要 API**：[AutoSuggestBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) \(英文\)
+> **重要 API**: [AutoSuggestBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
 
 ## <a name="elements-of-the-search-experience"></a>搜尋體驗的元素
 
@@ -56,7 +56,7 @@ ms.locfileid: "66364477"
 
 部分常見的搜尋範圍包括：
 
-**全域**和**關聯式/精簡。**   跨多個雲端和本機內容的來源進行搜尋。 包含 URL、文件、媒體、動作、app 等不同結果。
+**全域**和**關聯式/精簡。**  跨多個雲端和本機內容的來源進行搜尋。 包含 URL、文件、媒體、動作、app 等不同結果。
 
 **網路。**   搜尋網路索引。 結果包含頁面、實體和解答。
 
@@ -87,13 +87,12 @@ ms.locfileid: "66364477"
 
 按一下搜尋圖示之前：
 
-![搜尋圖示和已折疊之搜尋方塊的範例](images/search-icon-collapsed.png)
+![搜尋圖示和已折疊之搜尋方塊的範例](images/search-icon-collapsed-maps.png)
 
- 
 
 按一下搜尋圖示之後：
 
-![搜尋圖示和已展開之搜尋方塊的範例](images/search-icon-expanded.png)
+![在瀏覽功能表中搜尋的範例](images/search-icon-expanded-maps.png)
 
  
 
@@ -120,13 +119,13 @@ ms.locfileid: "66364477"
 
 在 app 畫布上當作輸入的搜尋：
 
-![在 app 畫布上搜尋的範例](images/search-canvas-contacts.png)
+![在 app 畫布上搜尋的範例](images/search-app-canvas.png)
 
  
 
-瀏覽窗格中的搜尋：
+在地圖應用程式的瀏覽窗格中搜尋：
 
-![在瀏覽功能表中搜尋的範例](images/search-navmenu.png)
+![在瀏覽功能表中搜尋的範例](images/search-icon-expanded-maps.png)
 
  
 
@@ -146,10 +145,10 @@ ms.locfileid: "66364477"
 -   在您的應用程式中放置具有「在頁面中尋找」功能的命令列，讓使用者可以搜尋頁面上的文字。 如需位置詳細資料，請參閱「範例」一節。
 
     -   可提供「在頁面中尋找」的應用程式在命令列中應含有所有必要的控制項。
-    -   如果您的應用程式含有許多超越「在頁面中尋找」的功能，您可以在最上層的命令列中提供 [尋找]  按鈕，以做為另一個含有所有「在頁面中尋找」控制項之命令列的進入點。
+    -   如果您的應用程式含有許多超越「在頁面中尋找」的功能，您可以在最上層的命令列中提供 **\[尋找\]** 按鈕，以做為另一個含有所有「在頁面中尋找」控制項之命令列的進入點。
     -   當使用者在與觸控式鍵盤互動時，「在頁面中尋找」命令列應維持可見。 當使用者點選輸入方塊時，觸控式鍵盤就會顯示。 [在頁面中尋找] 命令列應該上移，才不會被觸控式鍵盤遮掩。
 
-    -   在使用者與檢視互動時，「在頁面中尋找」應維持可用。 使用「在頁面中尋找」時，使用者必須與檢視中文字互動。 例如，使用者可能想放大或縮小文件，或是移動瀏覽檢視以讀取文字。 一旦使用者開始使用「在頁面中尋找」時，命令列應維持可用，並提供一個結束「在頁面中尋找」的 [關閉]  按鈕。
+    -   在使用者與檢視互動時，「在頁面中尋找」應維持可用。 使用「在頁面中尋找」時，使用者必須與檢視中文字互動。 例如，使用者可能想放大或縮小文件，或是移動瀏覽檢視以讀取文字。 一旦使用者開始使用「在頁面中尋找」時，命令列應維持可用，並提供一個結束「在頁面中尋找」的 **\[關閉\]** 按鈕。
 
     -   啟用鍵盤快速鍵 (CTRL+F)。 實作鍵盤快速鍵 CTRL+F 可以讓使用者快速叫用「在頁面中尋找」命令列。
 
@@ -159,7 +158,7 @@ ms.locfileid: "66364477"
         -   [上一頁] 和 [下一頁] 按鈕
         -   相符項目計數
         -   關閉 (桌面專用)
-    -   檢視應強調顯示相符項目，並且要能捲動以顯示畫面上的下一個相符項目。 使用者可以使用 [上一頁]  和 [下一頁]  按鈕和捲軸在文件中快速移動，或是使用觸控直接操作。
+    -   檢視應強調顯示相符項目，並且要能捲動以顯示畫面上的下一個相符項目。 使用者可以使用 **\[上一頁\]** 和 **\[下一頁\]** 按鈕和捲軸在文件中快速移動，或是使用觸控直接操作。
 
     -   「尋找和取代」功能應和基本的「在頁面中尋找」功能相輔相成。 對於擁有「尋找和取代」功能的應用程式，請確認「在頁面中尋找」不會影響「尋找和取代」功能。
 

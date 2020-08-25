@@ -1,6 +1,6 @@
 ---
 title: 在 Windows 上使用 Python 進行開發的資源
-description: 在 Windows 上使用 Python 進行開發的資源清單。
+description: 了解在 Windows 上使用 Python 進行開發的實用資源，例如線上課程和網頁程式開發。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, microsoft, windows 10, 教學課程, 線上課程, 部落格, 事件
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 24bda3a9eb76dac2e584540161e551ce6bb7ff4e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 136da1d69a61cb90c9c80cab5d7ecd822d64820d
+ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683661"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243240"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>在 Windows 上使用 Python 進行開發的資源
 
@@ -59,7 +59,7 @@ ms.locfileid: "75683661"
 
 - [Real Python](https://realpython.com/)：Python 開發人員資源中心 — Python 教學課程、影片課程、測驗、書籍、程式碼範例等。
 
-## <a name="web-development"></a>Web 開發
+## <a name="web-development"></a>Web 程式開發
 
 - [Flask Web 架構文件](https://flask.palletsprojects.com/en/1.1.x/)：Flask 每個元件的快速入門、教學課程和描述，以及完整的 API 參考。
 

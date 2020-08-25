@@ -5,12 +5,12 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, 互通性, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: c786256efb5488fff65a8e2bdb4c5d2ca0fa181c
-ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
+ms.openlocfilehash: d3fa04f0aabe001dc87ce4292dff7557432583a6
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88180793"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502283"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT 與 C++/CX 之間的互通性
 
@@ -27,7 +27,9 @@ ms.locfileid: "88180793"
 
 ## <a name="the-from_cx-and-to_cx-functions"></a>**from_cx** 和 **to_cx** 函式
 
-以下是名為 `interop_helpers.h` 之標頭檔的原始程式碼清單，其中包含兩個轉換 Helper 函式。 下列各節將說明這些函式，以及如何在您的專案中建立和使用標頭檔。
+以下是名為 `interop_helpers.h` 之標頭檔的原始程式碼清單，其中包含兩個轉換 Helper 函式。 當您逐步移植專案時，會有部分仍留在 C++/CX 中，有部分已移植到 C++/WinRT。 您可以使用這些 helper 函式，在這兩個部分之間的界限點上，於 C++/CX 和 C++/WinRT 之間雙向轉換專案中的物件。
+
+在所列程式碼後面的各節會說明這兩個函式，以及如何在專案中建立和使用標頭檔。
 
 ```cppwinrt
 // interop_helpers.h
@@ -39,8 +41,7 @@ T from_cx(Platform::Object^ from)
     T to{ nullptr };
 
     winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
-        ->QueryInterface(winrt::guid_of<T>(),
-            reinterpret_cast<void**>(winrt::put_abi(to))));
+        ->QueryInterface(winrt::guid_of<T>(), winrt::put_abi(to)));
 
     return to;
 }
@@ -99,11 +100,9 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 或者，如果除此之外還有 XAML 專案，您可以在 Visual Studio 中使用 C++/WinRT 專案屬性頁來新增 C++/CX 支援。 在專案屬性中，瀏覽至 [通用屬性]\>[C++/WinRT]\>[專案語言]\>[C++/CX]。 這麼做會將下列屬性新增至您的 `.vcxproj` 檔案。
 
 ```xml
-<syntaxhighlight lang="xml">
   <PropertyGroup Label="Globals">
     <CppWinRTProjectLanguage>C++/CX</CppWinRTProjectLanguage>
   </PropertyGroup>
-</syntaxhighlight>
 ```
 
 > [!IMPORTANT]
