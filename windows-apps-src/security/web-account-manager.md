@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: e5b835c837ca750f2ccc1ebad9ec119047b02ce7
-ms.sourcegitcommit: 97d2ef33253af210ad2d4f036b4820056ff03f62
+ms.openlocfilehash: 7cf4cfa4b87842cd7113b36220cdfdff69449a3a
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85441625"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846788"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 
-本文說明如何使用**[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** ，將您的通用 WINDOWS 平臺（UWP）應用程式連接到外部身分識別提供者（例如 Microsoft 或 Facebook），方法是使用 Windows 10 Web 帳戶管理員 api。 您將了解如何要求使用者的權限以使用其 Microsoft 帳戶，取得存取權杖，並利用它來執行基本操作 (例如取得個人檔案資料，或上傳檔案到他們的 OneDrive 帳戶)。 取得使用者權限的步驟，與透過任何支援 Web 帳戶管理員的身分識別提供者存取類似。
+本文說明如何使用 **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** 將通用 WINDOWS 平臺 (UWP) 應用程式連線到外部識別提供者（例如 Microsoft 或 Facebook），並使用 Windows 10 Web 帳戶管理員 api。 您將了解如何要求使用者的權限以使用其 Microsoft 帳戶，取得存取權杖，並利用它來執行基本操作 (例如取得個人檔案資料，或上傳檔案到他們的 OneDrive 帳戶)。 取得使用者權限的步驟，與透過任何支援 Web 帳戶管理員的身分識別提供者存取類似。
 
 > [!NOTE]
 > 如需完整的程式碼範例，請參閱 [GitHub 上的 WebAccountManagement 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)。
@@ -24,7 +24,7 @@ ms.locfileid: "85441625"
 
 首先，在 Visual Studio 中建立新的空白應用程式。 
 
-其次，為了要連線到身分識別提供者，您必須將應用程式與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下您的專案，並選擇 [ **store**  >  ] [**關聯應用程式] 與 [存放區**]，然後遵循 wizard 的指示 
+其次，為了要連線到身分識別提供者，您必須將應用程式與市集建立關聯。 若要這樣做，請以滑鼠右鍵按一下您的專案，選擇 [**存放區**  >  **關聯應用程式與存放區**]，然後依照嚮導的指示進行。 
 
 接下來，建立非常基本的 UI，並在其中包含一個簡單的 XAML 按鈕以及兩個文字方塊。
 
@@ -76,11 +76,11 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 窗格之所以為空白，是因為系統僅提供 UI 殼層 - 開發人員必須以程式設計方式將身分識別提供者填入窗格。 
 
 > [!TIP]
-> （選擇性）您可以使用**[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** ，而不是**[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，這會傳回**[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**，以查詢作業的狀態。 
+> （選擇性）您可以使用 **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** （而不是 **[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**）來查詢作業的狀態，這會傳回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**。 
 
 ## <a name="register-for-accountcommandsrequested"></a>註冊 AccountCommandsRequested
 
-若要將命令加入到窗格中，我們可以從註冊 AccountCommandsRequested 事件處理常式開始。 這會告訴系統在使用者要求查看窗格（例如，按一下我們的 XAML 按鈕）時，執行我們的組建邏輯。 
+若要將命令加入到窗格中，我們可以從註冊 AccountCommandsRequested 事件處理常式開始。 如此一來，當使用者要求查看窗格時，系統就會執行組建邏輯 (例如，按一下) 的 XAML 按鈕。 
 
 在程式碼後置中，覆寫 OnNavigatedTo 和 OnNavigatedFrom 事件，然後將下列程式碼新增到它們︰ 
 
@@ -133,7 +133,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 請注意，我們也會傳送字串「consumers」到選擇性的 *authority* 參數。 這是因為 Microsoft 提供兩種不同類型的驗證 - 針對「consumers (消費者)」的 Microsoft 帳戶 (MSA)，針對「organizations (組織)」的 Azure Active Directory (AAD)。 「consumers (消費者)」授權表示我們想要 MSA 選項。 如果您是在開發企業應用程式，請改為使用「organizations (組織)」字串。
 
-最後，建立新的**[WebAccountProviderCommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** ，將提供者新增至**AccountsSettingsPane** ，如下所示： 
+最後，建立新的**[WebAccountProviderCommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** ，如下所示，將提供者新增至**AccountsSettingsPane** ： 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -172,13 +172,13 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-在此範例中，我們會將字串 "wl. basic" 傳遞至_範圍_參數。 範圍代表您從特定使用者提供的服務要求所要求的資訊類型。 某些範圍僅提供使用者基本資訊的存取，例如姓名和電子郵件地址，有些範圍可能授與敏感資訊的存取權，像是使用者的相片或電子郵件收件匣。 一般而言，您的 app 應該使用達成其功能所需的最低權限範圍。 服務提供者會提供文件，說明需要哪些範圍以取得權杖來使用他們的服務。 
+在此範例中，我們會將字串 "wl. basic" 傳遞至 _範圍_ 參數。 範圍代表您從特定使用者提供的服務要求所要求的資訊類型。 某些範圍僅提供使用者基本資訊的存取，例如姓名和電子郵件地址，有些範圍可能授與敏感資訊的存取權，像是使用者的相片或電子郵件收件匣。 一般而言，您的 app 應該使用達成其功能所需的最低權限範圍。 服務提供者會提供文件，說明需要哪些範圍以取得權杖來使用他們的服務。 
 
-* 針對 Office 365 和 Outlook.com 範圍，請參閱[使用 v2.0 驗證端點驗證 Office 365 和 Outlook.com API](https://developer.microsoft.com/graph/docs/concepts/auth_overview)。 
+* 如 Microsoft 365 和 Outlook.com 範圍，請參閱 [使用 Outlook REST API (2.0 版) ](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api)。 
 * 若為 OneDrive 範圍，請參閱 [OneDrive 驗證與登入](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> 或者，如果您的應用程式使用登入提示（以預設的電子郵件地址填入使用者欄位）或其他與登入體驗相關的特殊屬性，請將它列在**[WebTokenRequest. AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 屬性中。 這會導致系統在快取 web 帳戶時忽略屬性，這可防止快取中的帳戶不符。
+> （選擇性）如果您的應用程式使用登入提示 (將預設電子郵件地址填入 [使用者] 欄位) 或其他與登入體驗相關的特殊屬性，請在 [ **[WebTokenRequest AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** ] 屬性中列出。 這會導致系統在快取 web 帳戶時忽略該屬性，以避免在快取中發生帳戶不符的情況。
 
 如果您是在開發企業應用程式，您可以連線 Azure Active Directory (AAD) 執行個體，並使用 Microsoft Graph API，而不是使用一般的 MSA 服務。 在這個案例中，請改為使用以下程式碼： 
 
@@ -338,7 +338,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>移除儲存的帳戶
 
-如果您保留 Web 帳戶，建議您讓使用者能夠將自己的帳戶與您的 app 解除關聯。 如此一來，他們就可以有效地「登出」應用程式：啟動時，將不會再自動載入其帳戶資訊。 若要這樣做，請先移除儲存空間中的任何儲存的帳戶和提供者資訊。 接著呼叫 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 以清除快取，並使任何應用程式可能擁有的現有權杖無效。 
+如果您保留 Web 帳戶，建議您讓使用者能夠將自己的帳戶與您的 app 解除關聯。 如此一來，他們就可以有效地「登出」應用程式：在啟動時，將不會再自動載入他們的帳戶資訊。 若要這樣做，請先移除儲存空間中的任何儲存的帳戶和提供者資訊。 接著呼叫 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 以清除快取，並使任何應用程式可能擁有的現有權杖無效。 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
@@ -351,7 +351,7 @@ private async Task SignOutAccountAsync(WebAccount account)
 
 ## <a name="add-providers-that-dont-support-webaccountmanager"></a>新增不支援 WebAccountManager 的提供者
 
-例如，如果您想要將驗證從服務整合到您的應用程式，但該服務不支援 WebAccountManager-Google + 或 Twitter，您仍然可以手動將該提供者新增至**AccountsSettingsPane**。 若要這樣做，請建立新的 WebAccountProvider 物件，並提供您自己的名稱及 .png 圖示，然後將它新增到 WebAccountProviderCommands 清單。 以下是一些虛設常式程式碼︰ 
+例如，如果您想要將驗證從服務整合到您的應用程式，但該服務不支援 WebAccountManager-Google + 或 Twitter，您仍然可以手動將該提供者新增至 **AccountsSettingsPane**。 若要這樣做，請建立新的 WebAccountProvider 物件，並提供您自己的名稱及 .png 圖示，然後將它新增到 WebAccountProviderCommands 清單。 以下是一些虛設常式程式碼︰ 
 
  ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -373,7 +373,7 @@ private async void GetTwitterTokenAsync(WebAccountProviderCommand command)
 ```
 
 > [!NOTE] 
-> 這僅會將圖示加入到 **AccountsSettingsPane**，並在按一下圖示時執行您指定的方法 (在此案例中為 GetTwitterTokenAsync)。 您必須提供會處理實際驗證的程式碼。 如需詳細資訊，請參閱[Web 驗證訊息代理](web-authentication-broker.md)程式，它會提供 helper 方法以使用 REST 服務進行驗證。 
+> 這僅會將圖示加入到 **AccountsSettingsPane**，並在按一下圖示時執行您指定的方法 (在此案例中為 GetTwitterTokenAsync)。 您必須提供會處理實際驗證的程式碼。 如需詳細資訊，請參閱 [Web 驗證訊息代理](web-authentication-broker.md)程式，其提供使用 REST 服務進行驗證的 helper 方法。 
 
 ## <a name="add-a-custom-header"></a>新增自訂標頭
 
@@ -398,7 +398,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 您可以將自訂命令加入到 AccountsSettingsPane，該命令在支援的 WebAccountProviders 底下會顯示為連結。 自訂命令非常適合用於與使用者關連的簡單工作，例如顯示隱私權原則，或針對遇到問題的使用者啟動支援頁面。 
 
-以下是範例： 
+以下為範例： 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)

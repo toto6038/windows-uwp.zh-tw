@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 集合 API, Microsoft Store 購買 API, 檢視產品, 授與產品
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d0df7780943717d8e01f0efcf1583efe05608af
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0e4bfa74b693c9571d9bb2818e0d8527388600a2
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259221"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846708"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服務的產品權利
 
@@ -23,40 +23,40 @@ ms.locfileid: "74259221"
 -   Microsoft Store 購買 API：[將免費產品授與使用者](grant-free-products.md)、[取得使用者的訂閱](get-subscriptions-for-a-user.md)，以及[變更使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)。
 
 > [!NOTE]
-> Microsoft Store 集合 API 及購買 API 會使用 Azure Active Directory (Azure AD) 驗證來存取客戶的擁有權資訊。 若要使用這些 API，您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域管理員](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。
+> Microsoft Store 集合 API 及購買 API 會使用 Azure Active Directory (Azure AD) 驗證來存取客戶的擁有權資訊。 若要使用這些 API，您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域管理員](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)權限。 如果您已經使用 Microsoft 365 或 Microsoft 的其他商務服務，則您已經有 Azure AD 目錄。
 
 ## <a name="overview"></a>概觀
 
 下列步驟描述使用 Microsoft Store 集合 API 和購買 API 的端對端程序：
 
 1.  [在 Azure AD 中設定應用程式](#step-1)。
-2.  [在合作夥伴中心將您的 Azure AD 應用程式識別碼關聯至您的應用](#step-2)程式。
+2.  [在合作夥伴中心中，將您的 Azure AD 應用程式識別碼與應用](#step-2)程式產生關聯。
 3.  在您的服務中，[建立代表您發行者身分識別的 Azure AD 存取權杖](#step-3)。
-4.  在您的用戶端 Windows 應用程式中，建立代表目前使用者身分識別的[MICROSOFT STORE 識別碼金鑰](#step-4)，並將此金鑰傳回給您的服務。
+4.  在您的用戶端 Windows 應用程式中， [建立 MICROSOFT STORE 識別碼金鑰](#step-4) 以代表目前使用者的身分識別，並將此金鑰傳遞回您的服務。
 5.  在您擁有必要的 Azure AD 存取權杖和 Microsoft Store 識別碼金鑰之後，[從您的服務呼叫 Microsoft Store 集合 API 或購買 API](#step-5)。
 
 此端對端程式牽涉到兩個執行不同工作的軟體元件：
 
-* **您的服務**。 這是在您的商務環境內容中安全執行的應用程式，而且可以使用您選擇的任何開發平臺來執行。 您的服務會負責建立案例所需的 Azure AD 存取權杖，以及呼叫 Microsoft Store 集合 API 和購買 API 的 REST Uri。
-* **您的用戶端 Windows 應用程式**。 這是您想要存取及管理客戶權利資訊（包括應用程式附加元件）的應用程式。 此應用程式會負責建立您從服務呼叫 Microsoft Store 集合 API 和購買 API 所需的 Microsoft Store 識別碼金鑰。
+* **您的服務**。 這是在您商務環境環境中安全執行的應用程式，而且可以使用您選擇的任何開發平臺來執行。 您的服務會負責建立案例所需的 Azure AD 存取權杖，以及呼叫 Microsoft Store 收集 API 和購買 API 的 REST Uri。
+* **您的用戶端 Windows 應用程式**。 這是您要用來存取和管理客戶權利資訊 (包括應用程式) 附加元件的應用程式。 此應用程式負責建立 Microsoft Store 識別碼金鑰，您必須從您的服務呼叫 Microsoft Store 收集 API 和購買 API。
 
 <span id="step-1"/>
 
 ## <a name="step-1-configure-an-application-in-azure-ad"></a>步驟1：在 Azure AD 中設定應用程式
 
-您必須先建立 Azure AD Web 應用程式、取得應用程式的租使用者識別碼和應用程式識別碼，然後再產生金鑰，才能使用 Microsoft Store 的集合 API 或購買 API。 Azure AD Web 應用程式代表您要從中呼叫 Microsoft Store 集合 API 或購買 API 的服務。 您需要租使用者識別碼、應用程式識別碼和金鑰，才能產生呼叫 API 所需的 Azure AD 存取權杖。
+您必須先建立 Azure AD Web 應用程式、取出應用程式的租使用者識別碼和應用程式識別碼，並產生金鑰，才能使用 Microsoft Store 收集 API 或購買 API。 Azure AD Web 應用程式代表您要從中呼叫 Microsoft Store 收集 API 或購買 API 的服務。 您需要租使用者識別碼、應用程式識別碼和金鑰，才能產生您需要呼叫 API Azure AD 存取權杖。
 
 > [!NOTE]
-> 您只需要執行本節中的工作一次。 當您更新 Azure AD 應用程式資訊清單，並擁有您的租使用者識別碼、應用程式識別碼和用戶端密碼之後，每當您需要建立新的 Azure AD 存取權杖時，都可以重複使用這些值。
+> 您只需要執行本節中的工作一次。 當您更新 Azure AD 應用程式資訊清單，且擁有您的租使用者識別碼、應用程式識別碼和用戶端密碼之後，您可以在需要建立新的 Azure AD 存取權杖時重複使用這些值。
 
-1.  如果您尚未這麼做，請遵循[整合應用程式與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)中的指示，向 Azure AD 註冊**Web 應用程式/API**應用程式。
+1.  如果您尚未這麼做，請遵循 [整合應用程式與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications) 中的指示，向 Azure AD 註冊 **Web 應用程式/API** 應用程式。
     > [!NOTE]
-    > 當您註冊應用程式時，您必須選擇 [ **Web 應用程式/API** ] 做為 [應用程式類型]，才能抓取應用程式的金鑰（也稱為*用戶端密碼*）。 為了呼叫 Microsoft Store 集合 API 或購買 API，當您在稍後的步驟中向 Azure AD 要求存取權杖時，必須提供用戶端密碼。
+    > 當您註冊應用程式時，您必須選擇 [ **Web 應用程式/API** ] 作為 [應用程式類型]，讓您可以取出金鑰 (也稱為應用程式的 *用戶端密碼*) 。 為了呼叫 Microsoft Store 集合 API 或購買 API，當您在稍後的步驟中向 Azure AD 要求存取權杖時，必須提供用戶端密碼。
 
-2.  在[Azure 管理入口網站](https://portal.azure.com/)中，流覽至 [ **Azure Active Directory**]。 選取您的目錄，按一下左側流覽窗格中的 [**應用程式註冊**]，然後選取您的應用程式。
-3.  您會進入應用程式的主要註冊頁面。 在此頁面上，複製 [**應用程式識別碼**] 值，以供稍後使用。
-4.  建立稍後將需要的金鑰（這就是所謂的*用戶端密碼*）。 在左窗格中，依序按一下 [**設定**] 和 [**金鑰**]。 在此頁面上，完成[建立金鑰](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)的步驟。 複製此金鑰以供稍後使用。
-5.  將數個必要的物件 Uri 新增至您的[應用程式資訊清單](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest)。 在左窗格中，按一下 [**資訊清單**]。 按一下 [**編輯**]，將 `"identifierUris"` 區段取代為下列文字，然後按一下 [**儲存**]。
+2.  在 [Azure 管理入口網站](https://portal.azure.com/)中，流覽至 **Azure Active Directory**。 選取您的目錄，按一下左方流覽窗格中的 [ **應用程式註冊** ]，然後選取您的應用程式。
+3.  您會進入應用程式的主要註冊頁面。 在此頁面上，複製 [ **應用程式識別碼** ] 值以供稍後使用。
+4.  建立稍後將需要的金鑰 (這全都稱為 *用戶端密碼*) 。 在左窗格中，按一下 [ **設定** ]，然後按一下 [機 **碼**]。 在此頁面上，完成 [建立金鑰](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)的步驟。 複製此金鑰以供稍後使用。
+5.  在您的 [應用程式資訊清單](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest)中新增數個必要的物件 uri。 在左窗格中，按一下 [資訊清單]。 按一下 [ **編輯**]，將 `"identifierUris"` 區段取代為下列文字，然後按一下 [ **儲存**]。
 
     ```json
     "identifierUris" : [                                
@@ -70,15 +70,15 @@ ms.locfileid: "74259221"
 
 <span id="step-2"/>
 
-## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-partner-center"></a>步驟2：將您的 Azure AD 應用程式識別碼與合作夥伴中心內的用戶端應用程式建立關聯
+## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-partner-center"></a>步驟2：將您的 Azure AD 應用程式識別碼與合作夥伴中心中的用戶端應用程式產生關聯
 
-在您可以使用 Microsoft Store 集合 API 或購買 API 來設定應用程式或附加元件的擁有權和購買之前，您必須先將您的 Azure AD 應用程式識別碼與合作夥伴中心內的應用程式（或包含附加元件的應用程式）建立關聯。
+在您可以使用 Microsoft Store 收集 API 或購買 API 來設定應用程式或附加元件的擁有權和購買之前，您必須將 Azure AD 應用程式識別碼與應用程式建立關聯 (或合作夥伴中心中包含附加元件) 的應用程式。
 
 > [!NOTE]
 > 您只需要執行此工作一次。
 
-1.  登入[合作夥伴中心](https://partner.microsoft.com/dashboard)，然後選取您的應用程式。
-2.  移至 [**服務**] &gt; [**產品集合和購買**] 頁面，然後在其中一個可用的 [**用戶端識別碼**] 欄位中輸入您的 Azure AD 應用程式識別碼。
+1.  登入 [合作夥伴中心](https://partner.microsoft.com/dashboard) ，然後選取您的應用程式。
+2.  移至 [ **服務** &gt; **產品集合和購買** ] 頁面，然後在其中一個可用的 [ **用戶端識別碼** ] 欄位中輸入您的 Azure AD 應用程式識別碼。
 
 <span id="step-3"/>
 
@@ -122,7 +122,7 @@ grant_type=client_credentials
 
 請針對每個權杖指定下列參數資料：
 
-* 針對 [*用戶端\_識別碼*] 和 [*用戶端\_秘密*參數]，為您從[Azure 管理入口網站](https://portal.azure.com/)取得的應用程式指定應用程式識別碼和用戶端密碼。 為了要建立 Microsoft Store 集合 API 或購買 API 所需驗證層級的存取權杖，這兩個參數都是必要的。
+* 若為 *用戶端 \_ 識別碼* 和 *用戶端 \_ 秘密* 參數，請為您從 [Azure 管理入口網站](https://portal.azure.com/)取出的應用程式指定應用程式識別碼和用戶端密碼。 為了要建立 Microsoft Store 集合 API 或購買 API 所需驗證層級的存取權杖，這兩個參數都是必要的。
 
 * 對於 *resource* 參數，指定[上一節](#access-tokens)中列出的其中一個對象 URI，視您要建立的存取權杖類型而定。
 
@@ -149,11 +149,11 @@ grant_type=client_credentials
 
 2.  在您的應用程式程式碼中，呼叫其中一個方法來擷取 Microsoft Store 識別碼金鑰：
 
-  * 如果您的 app 使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) 命名空間中的 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store) 類別來管理在應用程式內購買，請使用 [StoreContext.GetCustomerCollectionsIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getcustomercollectionsidasync) 方法。
+  * 如果您的 app 使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中的 [StoreContext](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) 類別來管理在應用程式內購買，請使用 [StoreContext.GetCustomerCollectionsIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getcustomercollectionsidasync) 方法。
 
-  * 如果您的 app 使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 命名空間中的 [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 類別來管理在應用程式內購買，請使用 [CurrentApp.GetCustomerCollectionsIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomercollectionsidasync) 方法。
+  * 如果您的 app 使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 命名空間中的 [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 類別來管理在應用程式內購買，請使用 [CurrentApp.GetCustomerCollectionsIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomercollectionsidasync) 方法。
 
-    將您的 Azure AD 存取權杖傳遞給方法的 *serviceTicket* 參數。 如果您將管理的服務內容中的匿名使用者識別碼維護為目前應用程式的發行者，您也可以將使用者識別碼傳遞至*publisherUserId*參數，以將目前使用者與新的 Microsoft Store 識別碼金鑰產生關聯（使用者識別碼將內嵌在金鑰中）。 否則，如果您不需要將使用者識別碼與 Microsoft Store 識別碼金鑰建立關聯，您可以將任何字串值傳遞至*publisherUserId*參數。
+    將您的 Azure AD 存取權杖傳遞給方法的 *serviceTicket* 參數。 如果您在做為目前應用程式發行者的服務內容中維護匿名使用者識別碼，您也可以將使用者識別碼傳遞給 *publisherUserId* 參數，以將目前使用者與新的 Microsoft Store 識別碼金鑰建立關聯 (使用者識別碼將內嵌在金鑰) 中。 否則，如果您不需要將使用者識別碼與 Microsoft Store 識別碼索引鍵建立關聯，您可以將任何字串值傳遞給 *publisherUserId* 參數。
 
 3.  在您的應用程式成功建立「Microsoft Store 識別碼」金鑰之後，將金鑰傳遞回您的服務。
 
@@ -167,11 +167,11 @@ grant_type=client_credentials
 
 2.  在您的應用程式程式碼中，呼叫其中一個方法來擷取 Microsoft Store 識別碼金鑰：
 
-  * 如果您的 app 使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) 命名空間中的 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store) 類別來管理 App 內購買，請使用 [StoreContext.GetCustomerPurchaseIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getcustomerpurchaseidasync) 方法。
+  * 如果您的 app 使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中的 [StoreContext](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) 類別來管理 App 內購買，請使用 [StoreContext.GetCustomerPurchaseIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getcustomerpurchaseidasync) 方法。
 
-  * 如果您的 app 使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 命名空間中的 [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 類別來管理在應用程式內購買，請使用 [CurrentApp.GetCustomerPurchaseIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomerpurchaseidasync) 方法。
+  * 如果您的 app 使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 命名空間中的 [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 類別來管理在應用程式內購買，請使用 [CurrentApp.GetCustomerPurchaseIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomerpurchaseidasync) 方法。
 
-    將您的 Azure AD 存取權杖傳遞給方法的 *serviceTicket* 參數。 如果您將管理的服務內容中的匿名使用者識別碼維護為目前應用程式的發行者，您也可以將使用者識別碼傳遞至*publisherUserId*參數，以將目前使用者與新的 Microsoft Store 識別碼金鑰產生關聯（使用者識別碼將內嵌在金鑰中）。 否則，如果您不需要將使用者識別碼與 Microsoft Store 識別碼金鑰建立關聯，您可以將任何字串值傳遞至*publisherUserId*參數。
+    將您的 Azure AD 存取權杖傳遞給方法的 *serviceTicket* 參數。 如果您在做為目前應用程式發行者的服務內容中維護匿名使用者識別碼，您也可以將使用者識別碼傳遞給 *publisherUserId* 參數，以將目前使用者與新的 Microsoft Store 識別碼金鑰建立關聯 (使用者識別碼將內嵌在金鑰) 中。 否則，如果您不需要將使用者識別碼與 Microsoft Store 識別碼索引鍵建立關聯，您可以將任何字串值傳遞給 *publisherUserId* 參數。
 
 3.  在您的應用程式成功建立「Microsoft Store 識別碼」金鑰之後，將金鑰傳遞回您的服務。
 
@@ -179,7 +179,7 @@ grant_type=client_credentials
 
 下圖說明建立 Microsoft Store 識別碼金鑰的程式。
 
-  ![建立 Windows Store 識別碼金鑰](images/b2b-1.png)
+  ![建立 Windows Store 識別碼機碼](images/b2b-1.png)
 
 <span id="step-5"/>
 
@@ -188,10 +188,10 @@ grant_type=client_credentials
 在您的服務擁有可存取特定使用者的產品擁有權資訊的 Microsoft Store 識別碼之後，依照下列指示讓您的服務呼叫 Microsoft Store 集合 API 或購買 API。
 
 * [查詢產品](query-for-products.md)
-* [報告可耗用的產品](report-consumable-products-as-fulfilled.md)
+* [將消費性產品回報為已完成](report-consumable-products-as-fulfilled.md)
 * [授與免費產品](grant-free-products.md)
-* [取得使用者的訂閱](get-subscriptions-for-a-user.md)
-* [變更使用者的訂用帳戶計費狀態](change-the-billing-state-of-a-subscription-for-a-user.md)
+* [取得使用者訂閱](get-subscriptions-for-a-user.md)
+* [變更使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)
 
 請針對每個案例，將下列資訊傳遞給 API：
 
@@ -200,7 +200,7 @@ grant_type=client_credentials
 
 ### <a name="diagram"></a>圖表
 
-下圖說明從您的服務呼叫 Microsoft Store 集合 API 或購買 API 中的方法的程式。
+下圖說明從您的服務呼叫 Microsoft Store collection API 或購買 API 中的方法的程式。
 
   ![呼叫集合或購買 API](images/b2b-2.png)
 
@@ -208,15 +208,15 @@ grant_type=client_credentials
 
 Microsoft Store 識別碼金鑰就是 JSON Web 權杖 (JWT)，代表您想要存取其產品擁有權資訊之使用者的身分識別。 當您使用 Base64 來解碼時，Microsoft Store 識別碼金鑰會包含下列宣告。
 
-* `iat`：&nbsp;&nbsp;&nbsp;識別發出金鑰的時間。 此宣告可以用來判斷權杖的存在時間。 此值會顯示為 Epoch 時間。
-* `iss`：&nbsp;&nbsp;&nbsp;識別簽發者。 其值與 `aud` 宣告的值相同。
-* `aud`：&nbsp;&nbsp;&nbsp;識別物件。 必須為下列其中一個值：`https://collections.mp.microsoft.com/v6.0/keys` 或 `https://purchase.mp.microsoft.com/v6.0/keys`。
-* `exp`：&nbsp;&nbsp;&nbsp;識別到期時間，或之後，將不再接受金鑰來處理更新金鑰以外的任何專案。 此宣告的值會顯示為 Epoch 時間。
-* `nbf`：&nbsp;&nbsp;&nbsp;識別將接受權杖以進行處理的時間。 此宣告的值會顯示為 Epoch 時間。
-* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`：&nbsp;&nbsp;&nbsp;識別開發人員的用戶端識別碼。
-* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`：&nbsp;&nbsp;&nbsp;不透明的承載（加密和 Base64 編碼），其中包含僅供 Microsoft Store 服務使用的資訊。
-* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`：&nbsp;&nbsp;&nbsp;在服務內容中識別目前使用者的使用者識別碼。 此值與您傳遞給*用來建立金鑰的方法*之選擇性 [publisherUserId](#step-4) 參數的值相同。
-* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri`：&nbsp;&nbsp;&nbsp;可用來更新金鑰的 URI。
+* `iat`： &nbsp; &nbsp; &nbsp; 識別發出金鑰的時間。 此宣告可以用來判斷權杖的存在時間。 此值會顯示為 Epoch 時間。
+* `iss`： &nbsp; &nbsp; &nbsp; 識別簽發者。 其值與 `aud` 宣告的值相同。
+* `aud`： &nbsp; &nbsp; &nbsp; 識別物件。 必須為下列其中一個值：`https://collections.mp.microsoft.com/v6.0/keys` 或 `https://purchase.mp.microsoft.com/v6.0/keys`。
+* `exp`： &nbsp; &nbsp; &nbsp; 識別到期時間或之後，在這段時間之後，將不再接受金鑰的處理，除了更新金鑰以外。 此宣告的值會顯示為 Epoch 時間。
+* `nbf`： &nbsp; &nbsp; &nbsp; 識別將接受標記以進行處理的時間。 此宣告的值會顯示為 Epoch 時間。
+* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`： &nbsp; &nbsp; &nbsp; 識別開發人員的用戶端識別碼。
+* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`： &nbsp; &nbsp; &nbsp; 透明承載 (加密和 Base64 編碼的) ，其中包含僅供 Microsoft Store 服務使用的資訊。
+* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`： &nbsp; &nbsp; &nbsp; 在您的服務內容中識別目前使用者的使用者識別碼。 此值與您傳遞給[用來建立金鑰的方法](#step-4)之選擇性 *publisherUserId* 參數的值相同。
+* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri`： &nbsp; &nbsp; &nbsp; 您可以用來更新金鑰的 URI。
 
 以下是已解碼的 Microsoft Store 識別碼金鑰標頭範例。
 
@@ -247,11 +247,11 @@ Microsoft Store 識別碼金鑰就是 JSON Web 權杖 (JWT)，代表您想要存
 ## <a name="related-topics"></a>相關主題
 
 * [查詢產品](query-for-products.md)
-* [報告可耗用的產品](report-consumable-products-as-fulfilled.md)
+* [將消費性產品回報為已完成](report-consumable-products-as-fulfilled.md)
 * [授與免費產品](grant-free-products.md)
-* [取得使用者的訂閱](get-subscriptions-for-a-user.md)
-* [變更使用者的訂用帳戶計費狀態](change-the-billing-state-of-a-subscription-for-a-user.md)
+* [取得使用者訂閱](get-subscriptions-for-a-user.md)
+* [變更使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [更新 Microsoft Store 識別碼金鑰](renew-a-windows-store-id-key.md)
 * [整合應用程式與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app)
-* [瞭解 Azure Active Directory 應用程式資訊清單]( https://go.microsoft.com/fwlink/?LinkId=722500)
+* [了解 Azure Active Directory 應用程式資訊清單]( https://go.microsoft.com/fwlink/?LinkId=722500)
 * [支援的權杖和宣告類型](https://docs.microsoft.com/azure/active-directory/develop/id-tokens)

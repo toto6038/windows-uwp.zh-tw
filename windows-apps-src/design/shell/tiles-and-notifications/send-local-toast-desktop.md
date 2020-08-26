@@ -1,23 +1,23 @@
 ---
-Description: '瞭解 Win32 c # 應用程式如何傳送本機快顯通知，並處理使用者按一下快顯通知。'
+Description: '瞭解 Win32 c # 應用程式如何傳送本機快顯通知，以及如何處理使用者按一下快顯通知。'
 title: 從傳統型 C# 應用程式傳送本機快顯通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
-keywords: 'windows 10，uwp，win32，桌面，快顯通知，傳送快顯通知，傳送本機快顯，桌面橋接器，msix，sparse 封裝，c #，c 升，快顯通知，wpf'
+keywords: 'windows 10、uwp、win32、desktop、快顯通知、傳送快顯通知、傳送本機快顯通知、桌面橋接器、msix、sparse 套件、c #、c 清晰、快顯通知、wpf、傳送快顯通知 wpf、傳送快顯通知 winforms、傳送快顯通知 c #、傳送通知 wpf、傳送通知 c #、快顯通知 wpf、通知 c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1eef86045f44fa75363b54fa58e3e7089d64e0
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 8a339a4f2dca52a9bc04b1bba92f149a3e627878
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997925"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846748"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
 
-桌面應用程式（包括封裝的[MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)應用程式、使用[稀疏套件](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)來取得套件識別的應用程式，以及傳統的非封裝 Win32 應用程式）都可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，由於不同的啟用配置，桌面應用程式有一些特殊的步驟，如果您不使用 MSIX 或 sparse 封裝，則可能缺少套件身分識別。
+傳統型應用程式 (包括封裝 [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統的非封裝 Win32 應用程式) 可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，由於不同的啟用配置以及如果您不是使用 MSIX 或稀疏套件，桌面應用程式可能會有一些特殊步驟。
 
 > [!IMPORTANT]
 > 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 對於其他傳統型語言，請參閱[傳統型 C++ WRL](send-local-toast-desktop-cpp-wrl.md)。
@@ -27,16 +27,16 @@ ms.locfileid: "86997925"
 
 `Microsoft.Toolkit.Uwp.Notifications`在您的專案中安裝[NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)。
 
-此[通知程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)會新增相容性程式庫程式碼，以使用來自桌面應用程式的快顯通知。 它也會參考 UWP Sdk，並可讓您使用 c # 來建立通知，而不是原始的 XML。 本快速入門的其餘部分取決於通知程式庫。
+此 [通知程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 會新增相容性程式庫程式碼，以使用來自桌面應用程式的快顯通知。 它也會參考 UWP Sdk，並可讓您使用 c # （而不是原始 XML）來建立通知。 本快速入門的其餘部分取決於通知程式庫。
 
 
-## <a name="step-2-implement-the-activator"></a>步驟2：執行 activator
+## <a name="step-2-implement-the-activator"></a>步驟2：執行啟動項
 
 您必須執行快顯通知的處理常式，以便在使用者按一下您的快顯通知時，您的應用程式可以執行某些動作。 您的快顯通知若要保留在控制中心 (因為可能在您的應用程式關閉幾天時，使用者才按下快顯通知)，此為必要步驟。 這個類別可以放在專案的任何位置。
 
-建立新的**MyNotificationActivator**類別並擴充**NotificationActivator**類別。 新增下面所列的三個屬性，並使用許多線上 GUID 產生器的其中一個來為您的應用程式建立唯一的 GUID CLSID。 此 CLSID (類別識別碼) 是控制中心得知 COM 啟用哪個類別的方式。
+建立新的 **MyNotificationActivator** 類別，並擴充 **NotificationActivator** 類別。 新增下列三個屬性，並使用許多線上 GUID 產生器中的其中一個來為您的應用程式建立唯一的 GUID CLSID。 此 CLSID (類別識別碼) 是控制中心得知 COM 啟用哪個類別的方式。
 
-**MyNotificationActivator.cs** （建立此檔案）
+**MyNotificationActivator.cs** (建立此檔案) 
 
 ```csharp
 // The GUID CLSID must be unique to your app. Create a new GUID if copying this code.
@@ -55,18 +55,18 @@ public class MyNotificationActivator : NotificationActivator
 
 ## <a name="step-3-register-with-notification-platform"></a>步驟3：向通知平臺註冊
 
-接著，您必須向通知平台註冊。 視您使用的是 MSIX/sparse 封裝或傳統 Win32 而定，會有不同的步驟。 如果兩者都支援，您必須完成兩個步驟 (但不需要分支程式碼，我們的程式庫會為您處理！)。
+接著，您必須向通知平台註冊。 有不同的步驟取決於您使用的是 MSIX/sparse 封裝或傳統 Win32。 如果兩者都支援，您必須完成兩個步驟 (但不需要分支程式碼，我們的程式庫會為您處理！)。
 
 
 #### <a name="msixsparse-packages"></a>[MSIX/sparse 封裝](#tab/msix-sparse)
 
-如果您使用[MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)或[sparse 封裝](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)（或支援兩者），請在您的**package.appxmanifest.xml**中新增：
+如果您使用的是 [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) 或 [sparse 封裝](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者，如果您同時支援這兩個) ，請在 **package.appxmanifest**中新增：
 
 1. **xmlns:com** 的宣告
 2. **xmlns:desktop** 的宣告
 3. 在 **IgnorableNamespaces** 屬性中，**com** 和 **desktop**
-4. **com：** com 啟動項的延伸模組，使用步驟 #2 中的 GUID。 請務必包含 `Arguments="-ToastActivated"`，讓您知道您的啟動是來自快顯通知
-5. **desktop：** **toastNotificationActivation**的副檔名，以宣告您的快顯啟動項 CLSID （步驟 #2 的 GUID）。
+4. com：使用步驟 #2 中的 GUID 之 COM 啟動項的**擴充**功能。 請務必包含 `Arguments="-ToastActivated"`，讓您知道您的啟動是來自快顯通知
+5. **desktop：** **toastNotificationActivation** 的擴充功能，可將您的快顯啟動程式 CLSID (步驟 #2) 的 GUID。
 
 「Package.appxmanifest」
 
@@ -106,13 +106,13 @@ public class MyNotificationActivator : NotificationActivator
 
 #### <a name="classic-win32"></a>[傳統型 Win32](#tab/classic)
 
-如果您使用的是傳統 Win32 （或如果您同時支援這兩者），您必須在啟動應用程式的快捷方式中，宣告您的應用程式使用者模型識別碼（AUMID）和快顯啟動器 CLSID （步驟 #2 的 GUID）。
+如果您使用的是傳統 Win32 (或同時支援這兩個) ，您必須宣告應用程式使用者模型識別碼 (AUMID) 和快顯啟動程式 CLSID (您應用程式快捷方式中的步驟 #2) 中的 GUID。
 
 選擇可識別您的 Win32 應用程式的唯一 AUMID。 這通常是 [CompanyName].[AppName] 的形式，但您應確保這在所有應用程式中都是唯一的 (可以在結尾處加上幾個數字)。
 
 ### <a name="step-31-wix-installer"></a>步驟3.1： WiX 安裝程式
 
-如果您為安裝程式使用 WiX，請編輯 **Product.wxs** 檔案以新增兩個捷徑內容到您的 [開始] 功能表捷徑，如下所示。 請確定步驟 #2 的 GUID 包含在中，如下所示 `{}` 。
+如果您為安裝程式使用 WiX，請編輯 **Product.wxs** 檔案以新增兩個捷徑內容到您的 [開始] 功能表捷徑，如下所示。 請確定步驟 #2 中的 GUID 包含在中， `{}` 如下所示。
 
 **Product.wxs**
 
@@ -134,14 +134,14 @@ public class MyNotificationActivator : NotificationActivator
 
 ### <a name="step-32-register-aumid-and-com-server"></a>步驟3.2：註冊 AUMID 和 COM 伺服器
 
-然後，不論您的安裝程式為何，在應用程式的啟動代碼中（呼叫任何通知 Api 之前），請呼叫**RegisterAumidAndComServer**方法，並在步驟 #2 和您的 AUMID 中指定您的通知啟動程式類別。
+然後，不論您的安裝程式，在您的應用程式啟動程式碼中 (在) 呼叫任何通知 Api 之前，請呼叫 **RegisterAumidAndComServer** 方法，並從步驟 #2 指定您的通知啟動程式類別和上面使用的 AUMID。
 
 ```csharp
 // Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
 DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivator>("YourCompany.YourApp");
 ```
 
-如果您同時支援 MSIX/sparse 封裝和傳統的 Win32，您可以隨意呼叫這個方法，而不需要這麼做。 如果您是在 MSIX/sparse 封裝中執行，這個方法只會立即傳回。 不需要分支程式碼。
+如果您同時支援 MSIX/sparse 封裝和傳統 Win32，則可以隨意呼叫這個方法，而不需要。 如果您是在 MSIX/sparse 套件中執行，這個方法只會立即傳回。 不需要分支程式碼。
 
 這個方法可讓您呼叫 Compat API 來傳送和管理通知，而不需要持續提供 AUMID。 它會插入 COM 伺服器的 LocalServer32 登錄機碼。
 
@@ -150,9 +150,9 @@ DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivat
 
 ## <a name="step-4-register-com-activator"></a>步驟4：註冊 COM 啟動項
 
-針對 MSIX/sparse 封裝和傳統 Win32 應用程式，您必須註冊您的 notification activator 類型，才能處理快顯啟動。
+針對 MSIX/sparse 封裝和傳統 Win32 應用程式，您必須註冊您的通知啟動程式類型，才能處理快顯通知。
 
-在您應用程式的啟動程式碼中，呼叫下列**RegisterActivator**方法，傳入您在步驟 #2 中建立的**NotificationActivator**類別的執行。 必須呼叫此方法，您才能接收快顯通知啟用。
+在您應用程式的啟動程式碼中，呼叫下列 **RegisterActivator** 方法，並傳入您在步驟 #2 中建立之 **NotificationActivator** 類別的實作為。 必須呼叫此方法，您才能接收快顯通知啟用。
 
 ```csharp
 // Register COM server and activator type
@@ -167,10 +167,10 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 > [!NOTE]
 > 安裝 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，讓您可以使用如下所示的 C# 來建構通知，而不是使用原始 XML。
 
-請確定您使用的是下面所見的**ToastContent** （如果您要手動製作 XML，則是 ToastGeneric 範本），因為舊版 Windows 8.1 快顯通知範本將不會啟動您在步驟 #2 中建立的 COM notification activator。
+如果您要製作 XML) ，請務必使用下列 (或 ToastGeneric **範本，因為** 舊版 Windows 8.1 快顯通知範本將不會啟動您在步驟 #2 中建立的 COM 通知啟動程式。
 
 > [!IMPORTANT]
-> 只有在其資訊清單中具有網際網路功能的 MSIX/sparse 套件應用程式中，才支援 Http 映射。 傳統型 Win32 應用程式不支援 http 影像；您必須將影像下載至本機應用程式資料，並在本機參考它。
+> 只有在其資訊清單中具有網際網路功能的 MSIX/sparse 封裝應用程式才支援 Http 映射。 傳統型 Win32 應用程式不支援 http 影像；您必須將影像下載至本機應用程式資料，並在本機參考它。
 
 ```csharp
 // Construct the visuals of the toast (using Notifications library)
@@ -338,7 +338,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="step-8-deploying-and-debugging"></a>步驟8：部署和調試
 
-若要部署和檢查您的 MSIX 應用程式，請參閱[執行、debug 和測試已封裝的桌面應用程式](/windows/uwp/porting/desktop-to-uwp-debug)。
+若要部署和 MSIX 應用程式，請參閱 [執行、偵測和測試已封裝的桌面應用程式](/windows/uwp/porting/desktop-to-uwp-debug)。
 
 若要部署和偵錯您的傳統型 Win32 應用程式，在正常偵錯前，您必須透過安裝程式安裝一次您的應用程式，以便顯示包含您的 AUMID 與 CLSID 的 [開始] 畫面捷徑。 [開始] 畫面捷徑出現後，您可以使用 Visual Studio 的 F5 來偵錯。
 
@@ -346,7 +346,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 如果您的通知會顯示，但不會保留在控制中心 (快顯視窗關閉後就消失)，這表示您未正確實作 COM 啟動者。
 
-如果您已安裝 MSIX/sparse 封裝和傳統 Win32 應用程式，請注意 MSIX/sparse 套件應用程式會在處理快顯啟動時取代傳統的 Win32 應用程式。 這表示，當您按一下時，來自傳統 Win32 應用程式的快顯通知仍會啟動 MSIX/sparse 套件應用程式。 卸載 MSIX/sparse 套件應用程式會將啟動還原回傳統的 Win32 應用程式。
+如果您已安裝 MSIX/sparse 封裝和傳統 Win32 應用程式，請注意 MSIX/sparse 封裝應用程式會在處理快顯快顯時取代傳統的 Win32 應用程式。 這表示，從傳統的 Win32 應用程式快顯通知時，仍會啟動 MSIX/sparse 封裝應用程式。 卸載 MSIX/sparse 封裝應用程式將會還原回傳統的 Win32 應用程式。
 
 
 ## <a name="known-issues"></a>已知問題
