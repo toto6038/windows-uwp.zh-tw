@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d7805e7ae936e5c7427b54f2eb9b0ad4b4c3e9
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: c871149f764024de41309f21dbd036848633a2af
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257379"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846728"
 ---
 # <a name="modernize-your-desktop-apps"></a>讓您的傳統型應用程式現代化
 
@@ -97,7 +97,7 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 
 Microsoft Graph 是 API 的集合，您可以用來為與數百萬使用者資料互動的組織和取用者建置應用程式。 Microsoft Graph 會公開 REST API 和用戶端程式庫，以存取下列位置上的資料：
 * Azure Active Directory
-* Office 365 服務：SharePoint、OneDrive、Outlook/Exchange、Microsoft Teams、OneNote、Planner 及 Excel
+* Microsoft 365 Office 應用程式：SharePoint、OneDrive、Outlook/Exchange、Microsoft Teams、OneNote、Planner 及 Excel
 * Enterprise Mobility + Security 服務：Identity Manager、Intune、Advanced Threat Analytics 及進階威脅防護。
 * Windows 10 服務：活動和裝置
 

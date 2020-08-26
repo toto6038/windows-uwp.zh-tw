@@ -1379,6 +1379,8 @@
               href: ../launch-resume/create-and-register-an-inproc-background-task.md
             - name: 建立及註冊跨處理序的背景工作
               href: ../launch-resume/create-and-register-a-background-task.md
+            - name: 建立並註冊 winmain COM 背景工作
+              href: ../launch-resume/create-and-register-a-winmain-background-task.md
             - name: 將跨處理序背景工作移植到同處理序背景工作
               href: ../launch-resume/convert-out-of-process-background-task.md
             - name: 偵錯背景工作
