@@ -1,17 +1,17 @@
 ---
-Description: 關於廣告活動的常見問題
-title: 關於廣告活動的常見問題
+title: 查看您應用程式的 ad 活動相關常見問題的解答，包括成本、帳單、自訂和支援。
+description: 關於廣告活動的常見問題
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eec32cab8da41b6069862484372ae8bc55ad1a0c
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 9294ea5928b5da9feb1c94e6b134dc45ccb1c053
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506822"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943008"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
 
@@ -24,15 +24,15 @@ ms.locfileid: "77506822"
 
 ### <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>我該如何針對我的廣告行銷活動增加所允許的每月最大預算金額？
 
-如果您計畫每月在您的廣告行銷活動上花費超過 $10,000，請連絡 [aiacare@microsoft.com](mailto:aiacare@microsoft.com)。 我們會將您升級為 Premium 帳戶，這可讓您每個行銷活動的花費上限為 $50,000。 Premium 帳戶也提供您額外的功能，像是設定行銷活動的開始與結束日期，以及指定行銷活動的連結網址。
+如果您計畫在一個月內花費超過 $10000 的廣告活動，請聯絡 [aiacare@microsoft.com](mailto:aiacare@microsoft.com) 。 我們會將您升級為 Premium 帳戶，這可讓您每個行銷活動的花費上限為 $50,000。 Premium 帳戶也提供您額外的功能，像是設定行銷活動的開始與結束日期，以及指定行銷活動的連結網址。
 
 ### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>我能夠在我的 App 中執行我其他一個 App 的廣告嗎？
 
-是的。 這些廣告通稱為*自家廣告*，而您可以免費執行它們！ 如需社群廣告的詳細資訊，請查看[這篇文章](about-house-ads.md)。
+是。 這些廣告通稱為*自家廣告*，而您可以免費執行它們！ 如需社群廣告的詳細資訊，請查看[這篇文章](about-house-ads.md)。
 
 ### <a name="can-i-cross-promote-my-app-with-apps-from-other-developers-in-the-store"></a>我可以利用市集中其他開發人員的 app 宣傳我的 app 嗎？
 
-是的。 我們會呼叫這些*社群廣告*，您就可以免費執行它們。 在您[選擇加入社群廣告](about-community-ads.md#opt-in-to-community-ads)後，您可以[建立免費社群廣告行銷活動](create-an-ad-campaign-for-your-app.md)且您的 app 將會與其他同樣加入社群廣告的開發人員共用推銷廣告空間。 如需詳細資訊，請查看[這篇文章](about-community-ads.md)。
+是。 我們會呼叫這些*社群廣告*，您就可以免費執行它們。 在您[選擇加入社群廣告](about-community-ads.md#opt-in-to-community-ads)後，您可以[建立免費社群廣告行銷活動](create-an-ad-campaign-for-your-app.md)且您的 app 將會與其他同樣加入社群廣告的開發人員共用推銷廣告空間。 如需詳細資訊，請查看[這篇文章](about-community-ads.md)。
 
 ### <a name="how-can-i-customize-my-ad"></a>如何自訂我的廣告？
 
@@ -40,7 +40,7 @@ ms.locfileid: "77506822"
 
 ### <a name="where-will-my-ad-appear"></a>我的廣告會在哪裡顯示？
 
-您的廣告會出現在年齡分級與 OS 版本和您的 app 相同的 app 中。 當您在 Microsoft Store 中發佈應用程式時，會設定這些屬性。 若為「通用」行銷活動，您的廣告也會出現在 MSN.com、Outlook.com、Skype、和其他 Microsoft 進階內容中。
+您的廣告會出現在年齡分級與 OS 版本和您的 app 相同的 app 中。 當您在 Microsoft Store 中發佈應用程式時，您可以設定這些屬性。 若為「通用」行銷活動，您的廣告也會出現在 MSN.com、Outlook.com、Skype、和其他 Microsoft 進階內容中。
 
 目前下列國家與地區支援廣告活動：
 
@@ -58,9 +58,9 @@ ms.locfileid: "77506822"
 
 如果距上次收費日期之後 30 天內，您帳戶的收費累積少於美金 50 元，將會在次月提早向您收取這些費用。 這可以確保您的帳戶不會有累計收費超過一個月的廣告活動餘款。
 
-如果您不希望等待付費，您可以選取 **\[帳單摘要\]** 頁面上的 **\[立即付費\]** ( **\[促銷活動\]**  >  **\[帳單記錄\]** )，立即支付您的帳單。 您的付款方式將會收取 **\[未支付金額\]** 下列出的金額。
+如果您不想要等待計費，您可以在 [**帳單摘要**] 頁面上選取 [**立即收取**帳單] (**促銷**  >  **帳單記錄**) ，立即支付帳單費用。 您的付款方法將會依 [ **未開立帳單金額**] 下所列的金額向您收費。
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>我要如何刪除信用卡或編輯信用卡的詳細資料？
 
-請移至[https://commerce.microsoft.com](https://commerce.microsoft.com)，使用您的 Microsoft 帳戶認證登入，然後進行必要的變更。
+移至 [https://commerce.microsoft.com](https://commerce.microsoft.com) ，使用您的 Microsoft 帳戶認證登入，並進行必要的變更。
 

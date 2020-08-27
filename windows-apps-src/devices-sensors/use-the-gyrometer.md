@@ -1,17 +1,17 @@
 ---
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: 使用陀螺儀
-description: 了解如何使用陀螺儀來偵測使用者的移動變化。
+description: 瞭解如何使用陀螺儀 API，在您的應用程式中整合陀螺儀輸入，以偵測使用者移動的變更，例如角度速度和旋轉動作。
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6ad3b98c559dff8781c96a98a6428a4d1f95a4
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 10d65a6b752c904d7145c3c5e09194dab7c8e0a5
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493123"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943088"
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺儀
 
@@ -136,11 +136,11 @@ ms.locfileid: "86493123"
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **GyrometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="GyrometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:GyrometerCS"`。
 
--   按 F5 或選取 [ **Debug**]  >  [**開始調試**程式]，以建立、部署和執行應用程式。
+-   按 F5 或選取 [ **Debug**  >  **開始調試**程式]，以建立、部署和執行應用程式。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更陀螺儀值。
 
--   若要停止應用程式，請返回 Visual Studio，然後按 Shift + F5**或選取 [** 偵測]  >  [**停止調試**程式] 來停止應用程式。
+-   返回 Visual Studio 並按 Shift + F5 或選取 [ **Debug**停止錯] 以停止應用程式，以停止應用程式  >  **Stop Debugging** 。
 
 ###  <a name="explanation"></a>說明
 

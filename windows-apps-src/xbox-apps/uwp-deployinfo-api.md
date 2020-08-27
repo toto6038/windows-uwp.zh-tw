@@ -1,15 +1,15 @@
 ---
 title: 裝置入口網站部署資訊 API 參考
-description: 了解如何以程式設計方式存取部署資訊 API。
+description: 瞭解如何使用 Xbox 裝置入口網站 REST API deployinfo 來要求一或多個已安裝套件的部署資訊。
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 7543b41c6ee1d9c07f4540012f84dccc10bb4d76
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5260125625ced6c258a683bcfb9b552e57d07f06
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638003"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942998"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>對於一或多個安裝的套件要求部署資訊。
 
@@ -55,11 +55,11 @@ POST | /ext/app/deployinfo
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 | 成功
+200 | Success
 4XX | 錯誤碼
 5XX | 錯誤碼
 <br />
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Xbox

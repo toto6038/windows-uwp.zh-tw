@@ -1,6 +1,6 @@
 ---
-Description: 瞭解流暢動作如何使用方向和引力。
 title: 方向和引力-Windows 應用程式中的動畫
+description: 藉由觀看範例，瞭解如何使用移動方向、導覽方向，以及動畫場景中的重力。
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ddcfac5e36500a8fc6dc41c7c86037f5a1483203
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a9b6fbc639ac225e68a6ae1b008537cba6f72ead
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970643"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943108"
 ---
 # <a name="directionality-and-gravity"></a>方向性和重力
 
@@ -43,8 +43,8 @@ ms.locfileid: "82970643"
 
 :::row:::
     :::column:::
-移動方向對應于實體動作。 就像大自然中，物件可在任何世界軸 (X、Y、Z) 移動。 這就是我們想像螢幕上物件如何移動的情況。
-當您移動物件時，請避免發生非自然衝突。 請記住，物件來自並移至的位置，而且一律支援可能用於場景中的較高層級結構，例如 [捲軸] 或 [版面配置階層]。
+移動方向對應到實體動作。 就像大自然中，物件可在任何世界軸 (X、Y、Z) 移動。 這就是我們想像螢幕上物件如何移動的情況。
+當您移動物件時，請避免非自然衝突。 請記住，物件來自和移至，而且一律支援可在場景中使用的較高層級的結構，例如滾動方向或版面配置階層。
     :::column-end:::
     :::column:::
         ![後進方向](images/Direction.gif)
@@ -59,7 +59,7 @@ ms.locfileid: "82970643"
 
 要往回瀏覽，就往反方向移動 (B 到 A)。 當使用者往回瀏覽時，它們會預期儘速返回到先前的狀態。 時間更快速、更直接，並開始減速。
 
-在往返瀏覽期間，當選定項目停留在螢幕上時，套用這些原則。
+在此，會套用這些原則，因為在向前和向後流覽時，所選取的專案會留在螢幕上。
 
 ![連續動作的 UI 範例](images/continuous3.gif)
 
@@ -75,23 +75,23 @@ ms.locfileid: "82970643"
 
 :::row:::
     :::column:::
-**向前**以不會與外寄內容衝突的方式來輸入場景的慶祝內容。 內容減速進入場景。
+**向前** 復原以與外寄內容不衝突的方式來輸入場景的慶祝內容。 內容減速到場景中。
     :::column-end:::
     :::column:::
-        ![方向向前](images/forwardIN.gif)
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-**向前快**轉內容很快就會結束。 物件的加速畫面。
-    :::column-end:::
-    :::column:::
-        ![向外方向](images/forwardOUT.gif)
+        ![向前前進方向](images/forwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-**後**置與正向，但相反。
+**向前輸出** 內容很快就結束。 物件會加速螢幕。
+    :::column-end:::
+    :::column:::
+        ![順向輸出方向](images/forwardOUT.gif)
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+**往回** 和向前復原相同，但是反轉。
     :::column-end:::
     :::column:::
         ![後進方向](images/backwardIN.gif)
@@ -99,10 +99,10 @@ ms.locfileid: "82970643"
 :::row-end:::
 :::row:::
     :::column:::
-**向外**與順向外，但相反。
+**反向** 與順向的相同，但反轉。
     :::column-end:::
     :::column:::
-        ![方向向外](images/backwardOUT.gif)
+        ![方向反向](images/backwardOUT.gif)
     :::column-end:::
 :::row-end:::
 

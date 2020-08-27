@@ -1,23 +1,23 @@
 ---
 title: 用來進行遊戲程式設計的 Visual Studio 工具
-description: Visual Studio 中提供的 DirectX 特定工具概觀。
+description: 瞭解 Visual Studio 中提供的 DirectX 遊戲程式設計工具，包括影像編輯器、模型編輯器和著色器設計工具。
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, visual studio, 工具, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: f4ff471ae4c45761a1c1dad5819e97c8245746a1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c97c24eca55cf43559b9f518eaf2fbc4656aa374
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368128"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942804"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>用來進行遊戲程式設計的 Visual Studio 工具
 
 
 
-**摘要**
+**總結**
 
 -   [從範本建立 DirectX 遊戲專案](user-interface.md)
 -   適用於 DirectX 遊戲程式設計的 Visual Studio 工具
@@ -45,14 +45,14 @@ ms.locfileid: "66368128"
 
 如需詳細資訊，請參閱[使用紋理與影像](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015)。
 
-> **附註**  影像編輯器不是要編輯應用程式的完整功能映像的取代項目，但適用於許多簡單的檢視和編輯案例。
+> **注意**   影像編輯器不適合用來取代完整的功能影像編輯應用程式，但適用于許多簡單的觀賞和編輯案例。
 
  
 
 ## <a name="model-editor"></a>模型編輯器
 
 
-您可以使用模型編輯器，從頭開始建立基本的 3D 模型，或者從功能完整的 3D 模型工具中檢視和修改更複雜的 3D 模型。 模型編輯器支援數個在 DirectX 應用程式開發時使用的 3D 模型格式。 您可以建立[組建自訂檔](#build-customizations-for-3d-assets)，在建置期間將這些檔案轉換成 .cmo 檔案。
+您可以使用模型編輯器，從頭開始建立基本的 3D 模型，或者從功能完整的 3D 模型工具中檢視和修改更複雜的 3D 模型。 模型編輯器支援數個用在 DirectX 應用程式開發的 3D 模型格式。 您可以建立[組建自訂檔](#build-customizations-for-3d-assets)，在建置期間將這些檔案轉換成 .cmo 檔案。
 
 -   .fbx
 -   .dae
@@ -64,7 +64,7 @@ ms.locfileid: "66368128"
 
 如需詳細資訊，請參閱[使用 3D 模型](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015)。
 
-> **附註**  模型編輯器並不打算編輯應用程式的完整功能模型取代，但適用於許多簡單的檢視和編輯案例。
+> **注意**   模型編輯器不會取代完整的功能模型編輯應用程式，但適用于許多簡單的觀賞和編輯案例。
 
  
 
@@ -114,9 +114,9 @@ float3 LambertLighting(
 ## <a name="build-customizations-for-3d-assets"></a>適用於 3D 資產的組建自訂
 
 
-您可以將組建自訂新增到專案，如此一來，Visual Studio 便能將資源轉換成可使用的格式。 在此之後，您就可以將資產載入 App， 並藉由建立並填入 DirectX 資源 (就像您在任何其他 DirectX App 中所做的動作) 來使用它們。
+您可以將組建自訂新增到專案，如此一來，Visual Studio 便能將資源轉換成可使用的格式。 之後，您可以將資產載入至應用程式，並建立和填寫 DirectX 資源來使用它們，就像在任何其他 DirectX 應用程式中一樣。
 
-若要新增組建自訂，您可以在 \[方案總管\] 中以滑鼠右鍵按一下專案，然後選取 \[組建自訂\]。   您可以將下列組建自訂類型新增到專案。
+若要加入組建自訂，請在 **方案總管** 中的專案上按一下滑鼠右鍵，然後選取 [ **組建自訂 ...**]。您可以將下列類型的組建自訂新增至您的專案。
 
 -   影像內容管線會取得影像檔做為輸入並輸出 DirectDraw 表面 (.dds) 檔案。
 -   網格內容管線會取得網格檔 (例如 .fbx) 並輸出 .cmo 網格檔。

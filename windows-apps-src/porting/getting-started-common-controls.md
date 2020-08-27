@@ -1,17 +1,17 @@
 ---
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-description: 開始使用常用控制項
 title: 開始使用常用控制項
+description: 查看常見通用 Windows 平臺 (UWP) 控制項及其對等 iOS 控制項的相關主題連結清單。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 979dabe193fc1ab6ecaa8c31a70ca2364448986e
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 86debeae4a4d8d3e3fb1a4084a3cf1ebef10f9d6
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493283"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943067"
 ---
 # <a name="getting-started-common-controls"></a>開始使用：常用控制項
 
@@ -22,7 +22,7 @@ ms.locfileid: "86493283"
 
 UWP 控制項的好處是它們可以感應正在執行的所在裝置類型，並適當地變更其外觀和功能。 例如，如果您的專案使用 [**DatePicker**](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10)) 控制項，它會有足夠的智慧自行最佳化，以便在桌上型電腦與手機 (舉例) 上有不同的外觀和行為。 您不需要執行任何動作：控制項會在執行階段自我調整。
 
-| iOS 控制項 (類別/通訊協定) | 對等的 UWP 控制項 |
+| iOS 控制項 (類別/通訊協定) | 對等 UWP 控制項 |
 |------------------------------|--------------------------------------|
 | 活動指示器 (**UIActivityIndicatorView**) | [**ProgressRing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) <br/> 另請參閱[快速入門：新增進度控制項](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10)) |
 | 廣告橫幅檢視 (**ADBannerView**) 和廣告檢視委派 (**ADBannerViewDelegate**) | [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) <br/> 另請參閱[在您的應用程式中顯示廣告](../monetize/display-ads-in-your-app.md) |
